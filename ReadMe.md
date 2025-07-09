@@ -13,3 +13,11 @@ MAC Issues (Kristen):
 python3 -m mkdocs build
 python3 -m mkdocs serve
 ```
+
+### Docker
+```
+docker build --no-cache -t  jsl-scripting-index .
+```
+```
+docker run --rm -it -p 8000:8000 jsl-scripting-index:latest
+```

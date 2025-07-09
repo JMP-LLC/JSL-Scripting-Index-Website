@@ -1,0 +1,605 @@
+# Window Object
+
+
+
+### Bring Window To Front
+
+**Sintaxis:** obj << Bring Window To Front
+
+**Descripción:** Lleva la ventana al frente.
+
+```js
+
+Names Default To Here( 1 );
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+w << Run Script( "Bivariate" );
+w << Bring Window To Front;
+
+```
+
+### Close Window
+
+**Sintaxis:** obj << Close Window( <"NoSave"> )
+
+**Descripción:** Cierra la ventana.
+
+```js
+
+Names Default To Here( 1 );
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Wait( 2 );
+w << Close Window;
+
+```
+
+### Get Content Size
+
+**Sintaxis:** obj << Get Content Size
+
+**Descripción:** Devuelve el tamaño del contenido de dentro de la ventana.
+
+```js
+
+Names Default To Here( 1 );
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+c = w << Get Content Size();
+Show( c );
+
+```
+
+### Get On Close
+
+**Sintaxis:** obj << Get On Close
+
+**Descripción:** Devuelve el script o función que se ejecutará cuando se cierre la ventana.
+
+```js
+
+Names Default To Here( 1 );
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+w << On Close(
+	// Modal dialogs return Button(1) if OK is pressed, Button(-1) if canceled
+	New Window( "Are you sure?",
+		<<modal,
+		V List Box(
+			Text Box( "Press OK to allow the window to close" ),
+			H List Box( Button Box( "OK" ), Button Box( "Cancel" ) )
+		)
+	)["button"] == 1
+);
+Show( w << Get On Close );
+
+```
+
+### Get Page Setup
+
+**Sintaxis:** obj << Get Page Setup
+
+**Descripción:** Obtiene la información de configuración de página para PDF
+
+```js
+
+Names Default To Here( 1 );
+//This message applies to all display box objects
+w = New Window( "Window", Text Box( "Page Setup Test" ) );
+w << get page setup();
+
+```
+
+### Get Project
+
+**Sintaxis:** project = obj << Get Project()
+
+**Descripción:** Devuelve el proyecto principal de la ventana, o Empty() si no está en un proyecto.
+
+**JMP Versión agregada:** 14
+
+```js
+
+Names Default To Here( 1 );
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+c = w << Get Project();
+Show( c );
+
+```
+
+### Get Show Window
+
+**Sintaxis:** obj << Get Show Window
+
+**Descripción:** Devuelve la visibilidad de la ventana.
+
+```js
+
+Names Default To Here( 1 );
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Wait( 1 );
+w << Show Window( 0 );
+Wait( 2 );
+Print( w << Get Show Window() );
+
+```
+
+### Get Web Support
+
+**Sintaxis:** obj << Get Web Support
+
+**Descripción:** Devuelve un número que indica el nivel de compatibilidad del HTML interactivo para el objeto de visualización. 1 significa que algunos o todos los elementos son compatibles. 0 significa que no existe compatibilidad.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = Bivariate( Y( :Weight ), X( :Height ) );
+s = obj << Get Web Support();
+Show( s );
+
+```
+
+### Get Window Icon
+
+**Sintaxis:** obj << Get Window Icon
+
+**Descripción:** Devuelve el icono de la ventana.
+
+```js
+
+Names Default To Here( 1 );
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+t = w << Get Window Icon;
+Show( t );
+
+```
+
+### Get Window Position
+
+**Sintaxis:** obj << Get Window Position
+
+**Descripción:** Devuelve la posición de la ventana.
+
+```js
+
+Names Default To Here( 1 );
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+p = w << Get Window Position();
+Show( p );
+
+```
+
+### Get Window Size
+
+**Sintaxis:** obj << Get Window Size
+
+**Descripción:** Devuelve el tamaño de la ventana.
+
+```js
+
+Names Default To Here( 1 );
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+s = w << Get Window Size();
+Show( s );
+
+```
+
+### Get Window Title
+
+**Sintaxis:** obj << Get Window Title
+
+**Descripción:** Devuelve el título de la ventana.
+
+```js
+
+Names Default To Here( 1 );
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+t = w << Get Window Title;
+Show( t );
+
+```
+
+### Get Window View
+
+**Sintaxis:** obj << Get Window View
+
+**Descripción:** Devuelve la vista de la ventana actual. La ventana puede ser "Visible", "Invisible" o "Privado".
+
+```js
+
+Names Default To Here( 1 );
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Print( w << Get Window View() );
+
+```
+
+### Is Modal Dialog
+
+**Sintaxis:** obj << Is Modal Dialog
+
+**Descripción:** Devuelve verdadero si la ventana es un cuadro de diálogo modal. Solo es útil cuando se llama desde una rellamada del controlador de ventanas.
+
+```js
+
+Names Default To Here( 1 );
+With Window Handler(
+	New Window( "Modal Window", <<Modal ),
+	Function( {win},
+		Print( win << Is Modal Dialog() );
+		win << close window();
+	)
+);
+
+```
+
+### Maximize Window
+
+**Sintaxis:** obj << Maximize Window( <state=0|1> )
+
+**Descripción:** Maximiza la ventana. El argumento predeterminado es 1.
+
+```js
+
+Names Default To Here( 1 );
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Wait( 1 );
+w << Maximize Window( 1 );
+Wait( 1 );
+w << Maximize Window( 0 );
+
+```
+
+### Minimize Window
+
+**Sintaxis:** obj << Minimize Window( <state=0|1> )
+
+**Descripción:** Minimiza la ventana. El argumento predeterminado es 1.
+
+```js
+
+Names Default To Here( 1 );
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Wait( 1 );
+w << Minimize Window( 1 );
+Wait( 1 );
+w << Minimize Window( 0 );
+
+```
+
+### Move Window
+
+**Sintaxis:** obj << Move Window( x,y )
+
+**Descripción:** Desplaza la ventana a la posición especificada.
+
+```js
+
+Names Default To Here( 1 );
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Wait( 2 );
+w << Move Window( 500, 500 );
+
+```
+
+### On Close
+
+**Sintaxis:** obj << On Close( script )
+
+**Descripción:** Establece un script o función para que se ejecuten al cerrar la ventana. Este script debe devolver 1 para permitir el cierre o 0 para evitar que la ventana se cierre.
+
+**Cerrar función**
+
+```js
+
+Names Default To Here( 1 );
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+w << On Close(
+	Function( {this}, 
+        // Modal dialogs return Button(1) if OK is pressed, Button(-1) if cancelled
+		New Window( "Are you sure?",
+			<<modal,
+			V List Box(
+				Text Box( "Press OK to allow " || (this << Get Window Title) || " to close" ),
+				H List Box( Button Box( "OK" ), Button Box( "Cancel" ) )
+			)
+		)["button"] == 1
+	)
+);
+
+```
+
+**Cerrar script**
+
+```js
+
+Names Default To Here( 1 );
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+w << On Close(
+    // Modal dialogs return Button(1) if OK is pressed, Button(-1) if canceled
+	New Window( "Are you sure?",
+		<<modal,
+		V List Box(
+			Text Box( "Press OK to allow the window to close" ),
+			H List Box( Button Box( "OK" ), Button Box( "Cancel" ) )
+		)
+	)["button"] == 1
+);
+
+```
+
+### Optimize Display
+
+**Sintaxis:** obj << Optimize Display
+
+**Descripción:** Establece la ventana y los anchos de columna de una tabla de datos en un tamaño óptimo.
+
+**JMP Versión agregada:** 14
+
+```js
+
+Names Default To Here( 1 );
+//This message applies to Data Table objects
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Optimize Display;
+
+```
+
+### Pad Window
+
+**Sintaxis:** obj << Pad Window( bool )
+
+**Descripción:** Activa o desactiva los márgenes de ventana.
+
+```js
+
+Names Default To Here( 1 );
+//This message applies to all display box objects
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = distribution( Column( :height ) );
+r = d << report;
+r << Pad Window( 0 );
+
+```
+
+### Print Window
+
+**Sintaxis:** obj << Print Window
+
+**Descripción:** Imprime la ventana.
+
+```js
+
+Names Default To Here( 1 );
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+w << Print Window;
+
+```
+
+### Save Window Report
+
+**Sintaxis:** obj << Save Window Report( pathname, <embed data(0|1)> )
+
+**Descripción:** Guarda la ventana de informes actual en un archivo de informes JMP (.jrp).
+
+**JMP Versión agregada:** 16
+
+```js
+
+Names Default To Here( 1 );
+//This message can be sent to any display box object but will be applied to the report window
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+d = distribution( Column( :height ) );
+d << Save Window Report( "$DOCUMENTS/test.jrp", embed data( 1 ) );
+
+```
+
+### Set Content Size
+
+**Sintaxis:** obj << Set Content Size( x,y )
+
+**Descripción:** Establece el tamaño del contenido de dentro de la ventana.
+
+```js
+
+Names Default To Here( 1 );
+//This message applies to all display box objects
+w = New Window( "Test",
+	lb = List Box( {"a", "b", "c", "d"} ),
+	Button Box( "Enable 2nd item",
+		lb << enable item( 2, 1 );
+		Show( lb << item enabled( 2 ) );
+	),
+	Button Box( "Disable 2nd item",
+		lb << enable item( 2, 0 );
+		Show( lb << item enabled( 2 ) );
+	)
+);
+Wait( 2 );
+w << Set Content Size( 400, 300 );
+
+```
+
+### Set Main Window
+
+**Sintaxis:** obj << Set Main Window
+
+**Descripción:** Establece la ventana como la ventana principal de JMP y la ventana principal anterior como una ventana normal
+
+```js
+
+Names Default To Here( 1 );
+//This message applies to all display box objects
+w = New Window( "Main Window", Text Box( "Main JMP Window" ) );
+w << Set Main Window;
+
+```
+
+### Set Page Setup
+
+**Sintaxis:** obj << Set Page Setup( <margins(left, top, right, bottom)>, <scale(s)>, <portrait(0|1)>, <paper size(p)>, <Table of Contents(always, never, default)>  )
+
+**Descripción:** Establece la información de configuración de página que se utiliza durante la impresión o al guardar como PDF. Opcionalmente, se puede generar un índice a partir de los cuadros de esquema.
+
+```js
+
+Names Default To Here( 1 );
+//This message applies to all display box objects
+w = New Window( "Window", Outline Box( "TOC", Text Box( "Page Setup Test" ) ) );
+w << Set page setup(
+	margins( 1, 1, 1, 1 ),
+	scale( 1 ),
+	portrait( 1 ),
+	paper size( "Letter" ),
+	Table of Contents( "always" )
+);
+w << Save pdf( "$DOCUMENTS\test.pdf" );
+
+```
+
+### Set Print Footers
+
+**Sintaxis:** obj << Set Print Footers( left footer, center footer, right header )
+
+**Descripción:** Establece los pies de página de la izquierda, el centro y la derecha para la salida impresa
+
+```js
+
+Names Default To Here( 1 );
+//This message applies to all display box objects
+w = New Window( "Window", Text Box( "Footer Test" ) );
+w << Set Print Footers(
+	"Today is: &d;"/*left*/, "&wt;"/*center*/,
+	"Page &pn; of &pc;"/*right*/
+);
+w << Print Window;
+
+```
+
+### Set Print Headers
+
+**Sintaxis:** obj << Set Print Headers( left header, center header, right header )
+
+**Descripción:** Establece los encabezados de página de la izquierda, el centro y la derecha para la salida impresa
+
+```js
+
+Names Default To Here( 1 );
+//This message applies to all display box objects
+w = New Window( "Window", Text Box( "Header Test" ) );
+w << Set Print Headers(
+	"Today is: &d;"/*left*/, "&wt;"/*center*/,
+	"Page &pn; of &pc;"/*right*/
+);
+w << Print Window;
+
+```
+
+### Set Window Icon
+
+**Sintaxis:** obj << Set Window Icon( icon name )
+
+**Descripción:** Establece el icono de la ventana.
+
+```js
+
+Names Default To Here( 1 );
+//This message applies to all display box objects
+w = New Window( "Example", ex = Button Box( "New Analysis" ) );
+w << Set Window Icon( "Scatter3D" );
+
+```
+
+### Set Window Size
+
+**Sintaxis:** obj << Set Window Size( x,y )
+
+**Descripción:** Establece el tamaño de la ventana.
+
+```js
+
+Names Default To Here( 1 );
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+w << Set Window Size( 800, 1200 );
+
+```
+
+### Set Window Title
+
+**Sintaxis:** obj << Set Window Title
+
+**Descripción:** Establece el título de la ventana.
+
+```js
+
+Names Default To Here( 1 );
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+w << Set Window Title( "New Title" );
+
+```
+
+### Show Window
+
+**Sintaxis:** obj << Show Window( state=0|1 )
+
+**Descripción:** Muestra u oculta la ventana. Esto es útil para ocultar temporalmente las ventanas. Opción activada de forma predeterminada.
+
+```js
+
+Names Default To Here( 1 );
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+Wait( 1 );
+w << Show Window( 0 );
+Wait( 2 );
+w << Show Window( 1 );
+
+```
+
+### Size Window
+
+**Sintaxis:** obj << Size Window( x,y )
+
+**Descripción:** Establece el tamaño de la ventana.
+
+```js
+
+Names Default To Here( 1 );
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+w << Size Window( 500, 500 );
+
+```
+
+### Zoom Window
+
+**Sintaxis:** obj << Zoom Window
+
+**Descripción:** Aumenta el tamaño de la ventana hasta que pueda mostrar todo su contenido.
+
+```js
+
+Names Default To Here( 1 );
+//This message applies to all display box objects
+w = Open( "$SAMPLE_DATA/Big Class.jmp" );
+w << Set Window Size( 80, 120 );
+Wait( 2 );
+w << Zoom Window;
+
+```
+

@@ -1,0 +1,2170 @@
+# Bubble Plot
+
+
+
+### Action
+
+**Syntax:** obj << Action
+
+**Description:** All-purpose trapdoor within a platform to insert expressions to evaluate. Temporarily sets the DisplayBox and DataTable contexts to the Platform.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
+
+```
+
+### Apply Preset
+
+**Syntax:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+
+**Description:** Apply a previously created preset to the object, updating the options and customizations to match the saved settings.
+
+**JMP Version Added:** 18
+
+**Anonymous preset**
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
+dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
+obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
+Wait( 1 );
+obj2 << Apply Preset( preset );
+
+```
+
+**Search by name**
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+
+```
+
+**Search within folder(s)**
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+
+```
+
+### Auto Stretching
+
+**Syntax:** obj << Auto Stretching( "Auto"|"On"|"Off" )
+
+**Description:** Sets the auto stretching behavior of the report.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country )
+);
+obj << Auto Stretching( "Off" );
+
+```
+
+### Automatic Recalc
+
+**Syntax:** obj << Automatic Recalc( state=0|1 )
+
+**Description:** Redoes the analysis automatically for exclude and data changes. If the Automatic Recalc option is turned on, you should consider using Wait(0) commands to ensure that the exclude and data changes take effect before the recalculation.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country )
+);
+obj << Automatic Recalc( 1 );
+dt << Select Rows( 5 ) << Exclude( 1 );
+
+```
+
+### Broadcast
+
+**Syntax:** obj << Broadcast(message)
+
+**Description:** Broadcasts a message to a platform. If return results from individual objects are tables, they are concatenated if possible, and the final format is identical to either the result from the Save Combined Table option in a Table Box or the result from the Concatenate option using a Source column. Other than those, results are stored in a list and returned.
+
+**JMP Version Added:** 18
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Quality Control/Diameter.jmp" );
+objs = Control Chart Builder(
+	Variables( Subgroup( :DAY ), Y( :DIAMETER ) ),
+	By( :OPERATOR )
+);
+objs[1] << Broadcast( Save Summaries );
+
+```
+
+### Bubble Plot
+
+**Syntax:** Bubble Plot( X( column ), Y( column ), <Sizes( column )>, <Time( column )>, <ID( column )>, <Coloring( column ) )
+
+**Description:** Produces a two-dimensional scatterplot of bubbles that can be animated over a time variable. Additional variables can be used to size and color the bubbles.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country )
+);
+
+```
+
+### Bubble Size
+
+**Syntax:** obj << Bubble Size( number )
+
+**Description:** Changes the size of the bubbles on the scatterplot.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country )
+);
+obj << Bubble Size( 50 );
+
+```
+
+### By
+
+**Syntax:** obj = Bubble Plot(...<By( column(s) )>...)
+
+**Description:** Produce multiple reports, one for each level of the variable(s).
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country ),
+	By( _bycol )
+);
+
+```
+
+### Color Levels
+
+**Syntax:** obj << Color Levels
+
+**Description:** Set the levels for the continuous legend.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country ),
+	Coloring( :Pop )
+);
+obj << Color Levels( [100000 1000000 10000000] );
+
+```
+
+### Color Theme
+
+**Syntax:** obj << Color Theme
+
+**Description:** Sets the color theme of the bubbles.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country ),
+	Time( :Year ),
+	Coloring( :Region )
+);
+obj << Color Theme( "White to Red" );
+
+```
+
+### Color as Sum
+
+**Syntax:** obj << Color as Sum( state=0|1 )
+
+**Description:** Uses the sum of the Color variable rather than the mean of the Color variable as the Color role.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Time( :Year ),
+	Coloring( :Pop ),
+	ID( :Region )
+);
+obj << Color as Sum( 1 );
+
+```
+
+### Coloring
+
+**Syntax:** obj = Bubble Plot(...<Coloring( column )>...)
+
+**Description:** Colors the bubbles according to the selected variable.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country ),
+	Coloring( :Pop )
+);
+
+```
+
+### Column Switcher
+
+**Syntax:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+
+**Description:** Adds a control panel for changing the platform&apos;s variables
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher(
+	:marital status,
+	{:sex, :country, :marital status}
+);
+
+```
+
+### Combine
+
+**Syntax:** obj << Combine( <id> )
+
+**Description:** Combines the selected bubbles (or given ID) in a group into their larger bubble. This option is only available when two ID variables are used.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Region, :Country ),
+	Time( :Year )
+);
+dt << Select Where( :Region == "Europe" );
+obj << Split;
+Wait( 2 );
+obj << Combine( "Europe" );
+
+```
+
+### Combine All
+
+**Syntax:** obj << Combine All
+
+**Description:** Combines all constituent bubbles in a group into their larger bubble. This option is only available when two ID variables are used.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Region, :Country ),
+	Time( :Year )
+);
+obj << Split All;
+Wait( 2 );
+obj << Combine All;
+
+```
+
+### Copy ByGroup Script
+
+**Syntax:** obj << Copy ByGroup Script
+
+**Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country ),
+	By( _bycol )
+);
+obj[1] << Copy ByGroup Script;
+
+```
+
+### Copy Script
+
+**Syntax:** obj << Copy Script
+
+**Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country )
+);
+obj << Copy Script;
+
+```
+
+### Data Table Window
+
+**Syntax:** obj << Data Table Window
+
+**Description:** Move the data table window for this analysis to the front.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country )
+);
+obj << Data Table Window;
+
+```
+
+### Draw
+
+**Syntax:** obj << Draw( "Filled"|"Outlined"|"Filled and Outlined" )
+
+**Description:** Set the display mode for the bubbles.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country )
+);
+obj << Draw( "Outlined" );
+
+```
+
+### Fit to Window
+
+**Syntax:** obj << Fit to Window( "Auto"|"On"|"Off" )
+
+**Description:** Sets the auto stretching behavior of the report.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country )
+);
+obj << Fit to Window( "Off" );
+
+```
+
+### Freq
+
+**Syntax:** obj = Bubble Plot(...<Freq( column )>...)
+
+**Description:** Weights computations when computing position, size, and colors of bubbles.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country )
+);
+dtSummary = dt << Summary(
+	Group( :Country ),
+	Mean( :"Portion 0-19"n ),
+	Mean( :"Portion60+"n ),
+	Sum( :Pop ),
+	Freq( "None" ),
+	Weight( "None" )
+);
+dtSummary << Bubble Plot(
+	X( :"Mean(Portion 0-19)"n ),
+	Y( :"Mean(Portion60+)"n ),
+	Sizes( :"Sum(Pop)"n ),
+	Freq( :N Rows )
+);
+
+```
+
+### Get By Levels
+
+**Syntax:** obj << Get By Levels
+
+**Description:** Returns an associative array mapping the by group columns to their values.
+
+**JMP Version Added:** 18
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv << Get By Levels;
+
+```
+
+### Get ByGroup Script
+
+**Syntax:** obj << Get ByGroup Script
+
+**Description:** Creates a script (JSL) to produce this analysis and returns it as an expression.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country ),
+	By( _bycol )
+);
+t = obj[1] << Get ByGroup Script;
+Show( t );
+
+```
+
+### Get Container
+
+**Syntax:** obj << Get Container
+
+**Description:** Returns a reference to the container box that holds the content for the object.
+
+**General**
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country )
+);
+t = obj << Get Container;
+Show( (t << XPath( "//OutlineBox" )) << Get Title );
+
+```
+
+**Platform with Filter**
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+gb = Graph Builder(
+	Show Control Panel( 0 ),
+	Variables( X( :height ), Y( :weight ) ),
+	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
+	Local Data Filter(
+		Add Filter(
+			columns( :age, :sex, :height ),
+			Where( :age == {12, 13, 14} ),
+			Where( :sex == "F" ),
+			Where( :height >= 55 ),
+			Display( :age, N Items( 6 ) )
+		)
+	)
+);
+New Window( "platform boxes",
+	H List Box(
+		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
+		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
+	)
+);
+
+```
+
+### Get Custom Path
+
+**Syntax:** obj << Get Custom Path
+
+**Description:** Returns the custom path for the bubbles as a matrix. A path matrix has three columns for x, y, and flags for each point in the path. The flag values are 0 for control, 1 for move, 2 for line segment, 3 for cubic Bézier segment, and are negative if the point also closes the path.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country )
+);
+obj << Set Custom Path( "M-1,-1 L-1,1 L0,0.5 L1,1 L1,-1 L0,-0.5 L-1,-1 Z" );
+obj << Set Shape( "Custom" );
+obj << Get Custom Path();
+
+```
+
+### Get Data Table
+
+**Syntax:** obj << Get Data Table
+
+**Description:** Returns a reference to the data table.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country )
+);
+t = obj << Get Datatable;
+Show( N Rows( t ) );
+
+```
+
+### Get Draw
+
+**Syntax:** obj << Get Draw
+
+**Description:** Returns the display mode for the bubbles.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country )
+);
+obj << Get Draw();
+
+```
+
+### Get Group Platform
+
+**Syntax:** obj << Get Group Platform
+
+**Description:** Return the Group Platform object if this platform is part of a Group. Otherwise, returns Empty().
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( Y( :weight ), X( :height ), By( :sex ) );
+group = biv[1] << Get Group Platform;
+Wait( 1 );
+group << Layout( "Arrange in Tabs" );
+
+```
+
+### Get Label
+
+**Syntax:** obj << Get Label
+
+**Description:** Returns the mode for drawing bubble labels.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country )
+);
+obj << Get Label();
+
+```
+
+### Get Script
+
+**Syntax:** obj << Get Script
+
+**Description:** Creates a script (JSL) to produce this analysis and returns it as an expression.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country )
+);
+t = obj << Get Script;
+Show( t );
+
+```
+
+### Get Script With Data Table
+
+**Syntax:** obj << Get Script With Data Table
+
+**Description:** Creates a script(JSL) to produce this analysis specifically referencing this data table and returns it as an expression.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country )
+);
+t = obj << Get Script With Data Table;
+Show( t );
+
+```
+
+### Get Shape
+
+**Syntax:** obj << Get Shape
+
+**Description:** Returns the shape for the bubbles.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country )
+);
+obj << Set Shape( "Triangle" );
+obj << Get Shape();
+
+```
+
+### Get Timing
+
+**Syntax:** obj << Get Timing
+
+**Description:** Times the platform launch.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country )
+);
+t = obj << Get Timing;
+Show( t );
+
+```
+
+### Get Web Support
+
+**Syntax:** obj << Get Web Support
+
+**Description:** Return a number indicating the level of Interactive HTML support for the display object. 1 means some or all elements are supported. 0 means no support.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+s = obj << Get Web Support();
+Show( s );
+
+```
+
+### Get Where Expr
+
+**Syntax:** obj << Get Where Expr
+
+**Description:** Returns the Where expression for the data subset, if the platform was launched with By() or Where(). Otherwise, returns Empty()
+
+**JMP Version Added:** 18
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
+Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+
+```
+
+### Go
+
+**Syntax:** obj << Go
+
+**Description:** Initiates the animation when a Time variable is used.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country ),
+	Time( :Year )
+);
+dt << Select Where( (:Country == 3300) | (:Country == 4120) );
+obj << Go;
+
+```
+
+### ID
+
+**Syntax:** obj = Bubble Plot(...<ID( column(s) )>...)
+
+**Description:** Identify rows that should be aggregated and shown as a single bubble.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country )
+);
+
+```
+
+### Ignore Platform Preferences
+
+**Syntax:** Ignore Platform Preferences( state=0|1 )
+
+**Description:** Ignores the current settings of the platform&apos;s preferences. The message is ignored when sent to the platform after creation.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Ignore Platform Preferences( 1 ),
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
+
+```
+
+### Label
+
+**Syntax:** obj << Label( "None"|"Selected"|"All" )
+
+**Description:** Set the mode for drawing bubble labels.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country )
+);
+obj << Label( "All" );
+
+```
+
+### Label Offset
+
+**Syntax:** obj << Label Offset( {pt, x offset, y offset}, ... )
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Region, :Country ),
+	Time( :Year )
+);
+dt << Select Where( :Region == "Europe" | :Region == "North America" );
+obj << Label Offset( {4, -75, -43}, {7, 80, -34} );
+
+```
+
+### Legend
+
+**Syntax:** obj << Legend( state=0|1 )
+
+**Description:** Displays the color legend when a coloring column is used. On by default.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country ),
+	Time( :Year ),
+	Coloring( :Region )
+);
+obj << Legend( 1 );
+
+```
+
+### Local Data Filter
+
+**Syntax:** obj << Local Data Filter
+
+**Description:** To filter data to specific groups or ranges, but local to this platform
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
+
+```
+
+### Lock Scales
+
+**Syntax:** obj << Lock Scales( state=0|1 )
+
+**Description:** Locks axis, gradient, and size ranges so they do not change in response to data or filtering changes. On by default.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country )
+);
+obj << Lock Scales( 0 );
+dt << Data Filter(
+	Mode( Select( 0 ), Show( 0 ), Include( 1 ) ),
+	Add Filter( Columns( :Region ) )
+);
+
+```
+
+### New JSL Preset
+
+**Syntax:** New JSL Preset( preset )
+
+**Description:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
+
+**JMP Version Added:** 18
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
+Wait( 1 );
+obj << Apply Preset( preset );
+
+```
+
+### New Preset
+
+**Syntax:** obj = New Preset()
+
+**Description:** Create an anonymous preset representing the options and customizations applied to the object. This object can be passed to Apply Preset to copy the settings to another object of the same type.
+
+**JMP Version Added:** 18
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
+
+```
+
+### Orient Shapes
+
+**Syntax:** obj << Orient Shapes( state=0|1 )
+
+**Description:** Orient the shape so that the top points in the direction of the movement.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country ),
+	Time( :Year )
+);
+obj << Set Shape( "Triangle" );
+obj << Orient Shapes( 1 );
+
+```
+
+### Paste Local Data Filter
+
+**Syntax:** obj << Paste Local Data Filter
+
+**Description:** Apply the local data filter from the clipboard to the current report.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+filter = dist << Local Data Filter(
+	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
+);
+filter << Copy Local Data Filter;
+dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
+Wait( 1 );
+dist2 << Paste Local Data Filter;
+
+```
+
+### Prev
+
+**Syntax:** obj << Prev
+
+**Description:** Moves the Time variable one step backward in the animation.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country ),
+	Time( :Year )
+);
+dt << Select Where( (:Country == 3300) | (:Country == 4120) );
+obj << Time Index( 19 );
+obj << Prev;
+
+```
+
+### Redo Analysis
+
+**Syntax:** obj << Redo Analysis
+
+**Description:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country )
+);
+obj << Redo Analysis;
+
+```
+
+### Redo ByGroup Analysis
+
+**Syntax:** obj << Redo ByGroup Analysis
+
+**Description:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country ),
+	By( _bycol )
+);
+obj[1] << Redo ByGroup Analysis;
+
+```
+
+### Relaunch Analysis
+
+**Syntax:** obj << Relaunch Analysis
+
+**Description:** Opens the platform launch window and recalls the settings that were used to create the report.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country )
+);
+obj << Relaunch Analysis;
+
+```
+
+### Relaunch ByGroup
+
+**Syntax:** obj << Relaunch ByGroup
+
+**Description:** Opens the platform launch window and recalls the settings that were used to create the report.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country ),
+	By( _bycol )
+);
+obj[1] << Relaunch ByGroup;
+
+```
+
+### Remove Column Switcher
+
+**Syntax:** obj << Remove Column Switcher
+
+**Description:** Removes the most recent Column Switcher that has been added to the platform.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher(
+	:marital status,
+	{:sex, :country, :marital status}
+);
+Wait( 2 );
+obj << Remove Column Switcher;
+
+```
+
+### Remove Local Data Filter
+
+**Syntax:** obj << Remove Local Data Filter
+
+**Description:** If a local data filter has been created, this removes it and restores the platform to use all the data in the data table directly
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dist = dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
+Wait( 2 );
+dist << remove local data filter;
+
+```
+
+### Render Preset
+
+**Syntax:** Render Preset( preset )
+
+**Description:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
+
+**JMP Version Added:** 18
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
+
+```
+
+### Report
+
+**Syntax:** obj << Report;
+
+Report( obj )
+
+**Description:** Returns a reference to the report object.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country )
+);
+r = obj << Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
+
+```
+
+### Report View
+
+**Syntax:** obj << Report View( "Full"|"Summary" )
+
+**Description:** The report view determines the level of detail visible in a platform report. Full shows all of the detail, while Summary shows only select content, dependent on the platform. For customized behavior, display boxes support a <<Set Summary Behavior message.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country )
+);
+obj << Report View( "Summary" );
+
+```
+
+### Revert Color Theme
+
+**Syntax:** obj << Revert Color Theme
+
+**Description:** Reverts the custom color theme, returning to the default theme from column properties or preferences.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country ),
+	Time( :Year ),
+	Coloring( :Region )
+);
+obj << Color Theme( "White to Red" );
+Wait( 2 );
+obj << Revert Color Theme();
+
+```
+
+### Save ByGroup Script to Data Table
+
+**Syntax:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+
+**Description:** Creates a JSL script to produce this analysis, and save it as a table property in the data table. You can specify a name for the script. The Append Suffix option appends a numeric suffix to the script name, which differentiates the script from an existing script with the same name. The Prompt option prompts the user to specify a script name. The Replace option replaces an existing script with the same name.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country ),
+	By( _bycol )
+);
+obj[1] << Save ByGroup Script to Data Table;
+
+```
+
+### Save ByGroup Script to Journal
+
+**Syntax:** obj << Save ByGroup Script to Journal
+
+**Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country ),
+	By( _bycol )
+);
+obj[1] << Save ByGroup Script to Journal;
+
+```
+
+### Save ByGroup Script to Script Window
+
+**Syntax:** obj << Save ByGroup Script to Script Window
+
+**Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country ),
+	By( _bycol )
+);
+obj[1] << Save ByGroup Script to Script Window;
+
+```
+
+### Save Script for All Objects
+
+**Syntax:** obj << Save Script for All Objects
+
+**Description:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country )
+);
+obj << Save Script for All Objects;
+
+```
+
+### Save Script for All Objects To Data Table
+
+**Syntax:** obj << Save Script for All Objects To Data Table( <name> )
+
+**Description:** Saves a script for all report objects to the current data table. This option is useful when you have multiple reports in the window. The script is named after the first platform unless you specify the script name in quotes.
+
+**Example 1**
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country ),
+	By( _bycol )
+);
+obj[1] << Save Script for All Objects To Data Table;
+
+```
+
+**Example 2**
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country ),
+	By( _bycol )
+);
+obj[1] << Save Script for All Objects To Data Table( "My Script" );
+
+```
+
+### Save Script to Data Table
+
+**Syntax:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+
+**Description:** Create a JSL script to produce this analysis, and save it as a table property in the data table.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country )
+);
+obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+
+```
+
+### Save Script to Journal
+
+**Syntax:** obj << Save Script to Journal
+
+**Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country )
+);
+obj << Save Script to Journal;
+
+```
+
+### Save Script to Report
+
+**Syntax:** obj << Save Script to Report
+
+**Description:** Create a JSL script to produce this analysis, and show it in the report itself. Useful to preserve a printed record of what was done.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country )
+);
+obj << Save Script to Report;
+
+```
+
+### Save Script to Script Window
+
+**Syntax:** obj << Save Script to Script Window
+
+**Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country )
+);
+obj << Save Script to Script Window;
+
+```
+
+### Selectable Across Gaps
+
+**Syntax:** obj << Selectable Across Gaps( state=0|1 )
+
+**Description:** Allows bubbles to be selectable and keeps the bubble selected during time periods where data is missing. When this option is off, bubbles are not selectable during time periods where data is missing.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country ),
+	Time( :Year )
+);
+dt << Select Where( :Country == 3300 );
+obj << Selectable Across Gaps( 1 );
+obj << Trail Bubbles( 1 );
+obj << Go;
+
+```
+
+### SendToByGroup
+
+**Syntax:** SendToByGroup( {":Column == level"}, command );
+
+**Description:** Sends platform commands or display customization commands to each level of a by-group.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	By( :Sex ),
+	SendToByGroup(
+		{:sex == "F"},
+		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
+	),
+	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
+);
+
+```
+
+### SendToEmbeddedScriptable
+
+**Syntax:** SendToEmbeddedScriptable( Dispatch( "Outline name", "Element name", command );
+
+**Description:** SendToEmbeddedScriptable restores settings of embedded scriptable objects.
+
+```js
+
+Names Default To Here( 1 );
+
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
+dt << Life Distribution(
+	Y( :Time ),
+	Censor( :Censor ),
+	Censor Code( 1 ),
+	<<Fit Weibull,
+	SendToEmbeddedScriptable(
+		Dispatch(
+			{"Statistics", "Parametric Estimate - Weibull", "Profilers",
+			"Density Profiler"},
+			{1, Confidence Intervals( 0 ), Term Value(
+				Time( 6000, Lock( 0 ), Show( 1 ) )
+			)}
+		)
+	)
+);
+
+```
+
+### SendToReport
+
+**Syntax:** SendToReport( Dispatch( "Outline name", "Element name", Element type, command );
+
+**Description:** Send To Report is used in tandem with the Dispatch command to customize the appearance of a report.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :age ) ),
+	Continuous Distribution( Column( :weight ) ),
+	SendToReport(
+		Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} )
+	)
+);
+
+```
+
+### Set Custom Path
+
+**Syntax:** obj << Set Custom Path
+
+**Description:** Set the custom path for the bubbles. The path can be specified with an N x 3 matrix or with a text representation. A path matrix has three columns for x, y, and flags for each point in the path. The flag values are 0 for control, 1 for move, 2 for line segment, 3 for cubic Bézier segment, and are negative if the point also closes the path. Path text supports SVG syntax.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country )
+);
+obj << Set Custom Path( "M-1,-1 L-1,1 L0,0.5 L1,1 L1,-1 L0,-0.5 L-1,-1 Z" );
+obj << Set Shape( "Custom" );
+
+```
+
+### Set Shape
+
+**Syntax:** obj << Set Shape( "Circle"|"Triangle"|"Square"|"Diamond"|"Arrow"|"Custom" )
+
+**Description:** Set the shape for the bubbles.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country )
+);
+obj << Set Shape( "Triangle" );
+
+```
+
+### Show Roles
+
+**Syntax:** obj << Show Roles( state=0|1 )
+
+**Description:** Displays the variables used for each role in a legend across the top of the report.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country ),
+	Time( :Year ),
+	Coloring( :Region )
+);
+obj << Show Roles( 1 );
+
+```
+
+### Show Time Annotation
+
+**Syntax:** obj << Show Time Annotation( state=0|1 )
+
+**Description:** Shows the current time as an annotation in an animated Bubble Plot. On by default.
+
+**JMP Version Added:** 15
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country ),
+	Time( :Year ),
+	Coloring( :Region )
+);
+Wait( 1 );
+obj << Show Time Annotation( 0 );
+
+```
+
+### Size as Sum
+
+**Syntax:** obj << Size as Sum( state=0|1 )
+
+**Description:** Uses the sum of the Size variable rather than the mean of the Size variable as the Size role. On by default.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country )
+);
+obj << Size as Sum( 1 );
+
+```
+
+### Sizes
+
+**Syntax:** obj = Bubble Plot(...<Sizes( column )>...)
+
+**Description:** Column to use as the size of the bubbles. If not specified, bubble size is proportional to the number of observations.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country )
+);
+
+```
+
+### Speed
+
+**Syntax:** obj << Speed( number )
+
+**Description:** Changes the speed of the bubble movement over time.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country ),
+	Time( :Year )
+);
+dt << Select Where( (:Country == 3300) | (:Country == 4120) );
+obj << Speed( 100 );
+obj << Go;
+
+```
+
+### Split
+
+**Syntax:** obj << Split( <id> )
+
+**Description:** Splits the selected bubble (or given ID) into its constituent parts. This option is only available when two ID variables are used.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Region, :Country ),
+	Time( :Year )
+);
+dt << Select Where( :Region == "Europe" );
+Wait( 2 );
+obj << Split;
+Wait( 2 );
+obj << Split( "Asia" );
+
+```
+
+### Split All
+
+**Syntax:** obj << Split All
+
+**Description:** Splits all bubbles into their constituent parts. This option is only available when two ID variables are used.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Region, :Country ),
+	Time( :Year )
+);
+Wait( 2 );
+obj << Split All;
+
+```
+
+### Step
+
+**Syntax:** obj << Step
+
+**Description:** Moves the Time variable one step forward in the animation.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country ),
+	Time( :Year )
+);
+dt << Select Where( (:Country == 3300) | (:Country == 4120) );
+obj << Step;
+
+```
+
+### Stop
+
+**Syntax:** obj << Stop
+
+**Description:** Stops the animation when a Time variable is used.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country ),
+	Time( :Year )
+);
+dt << Select Where( :Country == 4120 );
+obj << Go;
+Wait( 2 );
+obj << Stop;
+
+```
+
+### Sync to Data Table Changes
+
+**Syntax:** obj << Sync to Data Table Changes
+
+**Description:** Sync with the exclude and data changes that have been made.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+Wait( 1 );
+dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
+dist << Sync To Data Table Changes;
+
+```
+
+### Time
+
+**Syntax:** obj = Bubble Plot(...<Time( column )>...)
+
+**Description:** Maintains separate coordinates, sizes, and colors for each unique time period.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Region, :Country ),
+	Time( :Year )
+);
+
+```
+
+### Time Index
+
+**Syntax:** obj << Time Index( number )
+
+**Description:** Sets the value of the Time variable on the scatterplot.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country ),
+	Time( :Year )
+);
+obj << Time Index( 19 );
+
+```
+
+### Title
+
+**Syntax:** obj << Title( "new title" )
+
+**Description:** Sets the title of the platform.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country )
+);
+obj << Title( "My Platform" );
+
+```
+
+### Title Position
+
+**Syntax:** obj << Title Position( X,Y )
+
+**Description:** Sets the position of the title. A Time variable must be specified to see this option.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country ),
+	Time( :Year )
+);
+obj << Title Position( 0.8, 0.06 );
+
+```
+
+### Toggle Animation
+
+**Syntax:** obj << Toggle Animation
+
+**Description:** Toggles the current animation state
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country ),
+	Time( :Year )
+);
+dt << Select Where( :Country == 4120 );
+obj << Go;
+Wait( 2 );
+obj << Toggle Animation;
+
+```
+
+### Top Report
+
+**Syntax:** obj << Top Report
+
+**Description:** Returns a reference to the root node in the report.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country )
+);
+r = obj << Top Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
+
+```
+
+### Trail Bubbles
+
+**Syntax:** obj << Trail Bubbles( "None"|"Selected"|"All" )
+
+**Description:** Shows the past history of bubbles as a semi-transparent trail. To show trail bubbles, a Time column must be specified and a bubble must first be selected.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country ),
+	Time( :Year )
+);
+dt << Select Where( (:Country == 3300) | (:Country == 4120) );
+obj << Trail Bubbles( 1 );
+obj << Go;
+
+```
+
+### Trail Lines
+
+**Syntax:** obj << Trail Lines( "None"|"Selected"|"All" )
+
+**Description:** Shows the past history of bubbles as connected line segments. To show trail bubbles, a Time column must be specified and a bubble must first be selected.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country ),
+	Time( :Year )
+);
+dt << Select Where( (:Country == 3300) | (:Country == 4120) );
+obj << Trail Lines( 1 );
+obj << Go;
+
+```
+
+### Transform Column
+
+**Syntax:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+
+**Description:** Create a transform column in the local context of an object, usually a platform. The transform column is active only for the lifetime of the platform.
+
+**JMP Version Added:** 16
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	Transform Column( "age^2", Format( "Fixed Dec", 5, 0 ), Formula( :age * :age ) ),
+	Continuous Distribution( Column( :"age^2"n ) )
+);
+
+```
+
+### View Web XML
+
+**Syntax:** obj << View Web XML
+
+**Description:** Returns the XML code that is used to create the interactive HTML report.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+xml = obj << View Web XML;
+
+```
+
+### Window View
+
+**Syntax:** obj = Bubble Plot(...Window View( "Visible"|"Invisible"|"Private" )...)
+
+**Description:** Set the type of the window to be created for the report. By default a Visible report window will be created. An Invisible window will not appear on screen, but is discoverable by functions such as Window(). A Private window responds to most window messages but is not discoverable and must be addressed through the report object
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( Window View( "Private" ), Y( :weight ), X( :height ), Fit Line );
+eqn = Report( biv )["Linear Fit", Text Edit Box( 1 )] << Get Text;
+biv << Close Window;
+New Window( "Bivariate Equation",
+	Outline Box( "Big Class Linear Fit", Text Box( eqn, <<Set Base Font( "Title" ) ) )
+);
+
+```
+
+### X
+
+**Syntax:** obj = Bubble Plot(...X( column )...)
+
+**Description:** Column to use as the x coordinate of the bubbles in the plot.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country )
+);
+
+```
+
+### X as Sum
+
+**Syntax:** obj << X as Sum( state=0|1 )
+
+**Description:** Uses the sum of the X variable rather than the mean of the X variable as the X role.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country )
+);
+obj << X as Sum( 1 );
+
+```
+
+### Y
+
+**Syntax:** obj = Bubble Plot(...Y( column )...)
+
+**Description:** Column to use as the y coordinate of the bubbles in the plot.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country )
+);
+
+```
+
+### Y as Sum
+
+**Syntax:** obj << Y as Sum( state=0|1 )
+
+**Description:** Uses the sum of the Y variable rather than the mean of the Y variable as the Y role.
+
+```js
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/PopAgeGroup.jmp" );
+obj = dt << Bubble Plot(
+	X( :"Portion 0-19"n ),
+	Y( :"Portion60+"n ),
+	Sizes( :Pop ),
+	ID( :Country )
+);
+obj << Y as Sum( 1 );
+
+```
+
