@@ -1,0 +1,370 @@
+# Constant Stress ALT Design
+
+
+
+### ALT Plan
+
+**Syntax:** ALT Plan
+
+### Factor
+
+**Syntax:** obj << Factor
+
+**Beschreibung:** Fügt einen Faktor mit den angegebenen Eigenschaften hinzu.
+
+```js
+
+Names Default To Here( 1 );
+d = Constant Stress ALT Design(
+	Factors(
+		Factor(
+			Factor Name( "X1" ),
+			Number of Levels( 3 ),
+			Factor Transformation( "Arrhenius Celsius" ),
+			Low Usage Condition( 20 ),
+			High Usage Condition( 30 ),
+			Low Test Condition( 90 ),
+			High Test Condition( 110 ),
+
+		),
+		Factor(
+			Factor Name( "X2" ),
+			Number of Levels( 3 ),
+			Factor Transformation( "Log" ),
+			Low Usage Condition( 20 ),
+			High Usage Condition( 30 ),
+			Low Test Condition( 90 ),
+			High Test Condition( 110 ),
+
+		)
+	)
+);
+
+```
+
+### Factor Name
+
+**Syntax:** obj << Factor Name
+
+**Beschreibung:** Legt den Namen des Faktors fest.
+
+```js
+
+Names Default To Here( 1 );
+d = Constant Stress ALT Design(
+	Factors(
+		Factor(
+			Factor Name( "X1" ),
+			Number of Levels( 3 ),
+			Factor Transformation( "Arrhenius Celsius" ),
+			Low Usage Condition( 20 ),
+			High Usage Condition( 30 ),
+			Low Test Condition( 90 ),
+			High Test Condition( 110 ),
+
+		),
+		Factor(
+			Factor Name( "X2" ),
+			Number of Levels( 3 ),
+			Factor Transformation( "Log" ),
+			Low Usage Condition( 20 ),
+			High Usage Condition( 30 ),
+			Low Test Condition( 90 ),
+			High Test Condition( 110 ),
+
+		)
+	)
+);
+
+```
+
+### Factor Transformation
+
+**Syntax:** obj << Factor Transformation( Arrhenius Celsius|Arrhenius Fahrenheit|Arrhenius Kelvin|Reciprocal|Log|Root|None )
+
+**Beschreibung:** Legt die Transformationsfunktion für die Stufen des Faktors fest.
+
+```js
+
+Names Default To Here( 1 );
+d = Constant Stress ALT Design(
+	Factors(
+		Factor(
+			Factor Name( "X1" ),
+			Number of Levels( 3 ),
+			Factor Transformation( "Arrhenius Celsius" ),
+			Low Usage Condition( 20 ),
+			High Usage Condition( 30 ),
+			Low Test Condition( 90 ),
+			High Test Condition( 110 ),
+
+		),
+		Factor(
+			Factor Name( "X2" ),
+			Number of Levels( 3 ),
+			Factor Transformation( "Log" ),
+			Low Usage Condition( 20 ),
+			High Usage Condition( 30 ),
+			Low Test Condition( 90 ),
+			High Test Condition( 110 ),
+
+		)
+	)
+);
+
+```
+
+### Factors
+
+**Syntax:** Factors
+
+**Beschreibung:** Erstellt die Faktortabelle in der CSALT-Plattform.
+
+```js
+
+Names Default To Here( 1 );
+d = Constant Stress ALT Design(
+	Factors(
+		Factor(
+			Factor Name( "X1" ),
+			Number of Levels( 3 ),
+			Factor Transformation( "Arrhenius Celsius" ),
+			Low Usage Condition( 20 ),
+			High Usage Condition( 30 ),
+			Low Test Condition( 90 ),
+			High Test Condition( 110 ),
+
+		),
+		Factor(
+			Factor Name( "X2" ),
+			Number of Levels( 3 ),
+			Factor Transformation( "Log" ),
+			Low Usage Condition( 20 ),
+			High Usage Condition( 30 ),
+			Low Test Condition( 90 ),
+			High Test Condition( 110 ),
+
+		)
+	)
+);
+
+```
+
+### High Test Condition
+
+**Syntax:** obj << High Test Condition
+
+**Beschreibung:** Legt die höchste Teststufe für den Faktor fest.
+
+```js
+
+Names Default To Here( 1 );
+d = Constant Stress ALT Design(
+	Factors(
+		Factor(
+			Factor Name( "X1" ),
+			Number of Levels( 3 ),
+			Factor Transformation( "Arrhenius Celsius" ),
+			Low Usage Condition( 20 ),
+			High Usage Condition( 30 ),
+			Low Test Condition( 90 ),
+			High Test Condition( 110 ),
+
+		),
+		Factor(
+			Factor Name( "X2" ),
+			Number of Levels( 3 ),
+			Factor Transformation( "Log" ),
+			Low Usage Condition( 20 ),
+			High Usage Condition( 30 ),
+			Low Test Condition( 90 ),
+			High Test Condition( 110 ),
+
+		)
+	)
+);
+
+```
+
+### High Usage Condition
+
+**Syntax:** obj << High Usage Condition
+
+**Beschreibung:** Legt den Wert für die Anwendungsbedingung für die schwerste Nutzung für den Faktor fest. Dieser Wert kann der gleiche sein wie die Anwendungsbedingung für die leichteste Nutzung.
+
+```js
+
+Names Default To Here( 1 );
+d = Constant Stress ALT Design(
+	Factors(
+		Factor(
+			Factor Name( "X1" ),
+			Number of Levels( 3 ),
+			Factor Transformation( "Arrhenius Celsius" ),
+			Low Usage Condition( 20 ),
+			High Usage Condition( 30 ),
+			Low Test Condition( 90 ),
+			High Test Condition( 110 ),
+
+		),
+		Factor(
+			Factor Name( "X2" ),
+			Number of Levels( 3 ),
+			Factor Transformation( "Log" ),
+			Low Usage Condition( 20 ),
+			High Usage Condition( 30 ),
+			Low Test Condition( 90 ),
+			High Test Condition( 110 ),
+
+		)
+	)
+);
+
+```
+
+### Low Test Condition
+
+**Syntax:** obj << Low Test Condition
+
+**Beschreibung:** Legt die niedrigste Teststufe für den Faktor fest.
+
+```js
+
+Names Default To Here( 1 );
+d = Constant Stress ALT Design(
+	Factors(
+		Factor(
+			Factor Name( "X1" ),
+			Number of Levels( 3 ),
+			Factor Transformation( "Arrhenius Celsius" ),
+			Low Usage Condition( 20 ),
+			High Usage Condition( 30 ),
+			Low Test Condition( 90 ),
+			High Test Condition( 110 ),
+
+		),
+		Factor(
+			Factor Name( "X2" ),
+			Number of Levels( 3 ),
+			Factor Transformation( "Log" ),
+			Low Usage Condition( 20 ),
+			High Usage Condition( 30 ),
+			Low Test Condition( 90 ),
+			High Test Condition( 110 ),
+
+		)
+	)
+);
+
+```
+
+### Low Usage Condition
+
+**Syntax:** obj << Low Usage Condition
+
+**Beschreibung:** Legt den Wert für die Anwendungsbedingung für leichteste Nutzung für den Faktor fest. Dieser Wert kann der gleiche sein wie die Anwendungsbedingung für schwerste Nutzung.
+
+```js
+
+Names Default To Here( 1 );
+d = Constant Stress ALT Design(
+	Factors(
+		Factor(
+			Factor Name( "X1" ),
+			Number of Levels( 3 ),
+			Factor Transformation( "Arrhenius Celsius" ),
+			Low Usage Condition( 20 ),
+			High Usage Condition( 30 ),
+			Low Test Condition( 90 ),
+			High Test Condition( 110 ),
+
+		),
+		Factor(
+			Factor Name( "X2" ),
+			Number of Levels( 3 ),
+			Factor Transformation( "Log" ),
+			Low Usage Condition( 20 ),
+			High Usage Condition( 30 ),
+			Low Test Condition( 90 ),
+			High Test Condition( 110 ),
+
+		)
+	)
+);
+
+```
+
+### Number of Levels
+
+**Syntax:** obj << Number of Levels
+
+**Beschreibung:** Legt die Anzahl der Stufen für den Faktor fest. Wird hauptsächlich für balancierte Designs verwendet.
+
+```js
+
+Names Default To Here( 1 );
+d = Constant Stress ALT Design(
+	Factors(
+		Factor(
+			Factor Name( "X1" ),
+			Number of Levels( 3 ),
+			Factor Transformation( "Arrhenius Celsius" ),
+			Low Usage Condition( 20 ),
+			High Usage Condition( 30 ),
+			Low Test Condition( 90 ),
+			High Test Condition( 110 ),
+
+		),
+		Factor(
+			Factor Name( "X2" ),
+			Number of Levels( 3 ),
+			Factor Transformation( "Log" ),
+			Low Usage Condition( 20 ),
+			High Usage Condition( 30 ),
+			Low Test Condition( 90 ),
+			High Test Condition( 110 ),
+
+		)
+	)
+);
+
+```
+
+### Save Script to Script Window
+
+**Syntax:** obj << Save Script to Script Window
+
+**Beschreibung:** Skript erstellen, das dieses Design reproduziert.
+
+```js
+
+Names Default To Here( 1 );
+d = Constant Stress ALT Design(
+	Factors(
+		Factor(
+			Factor Name( "X1" ),
+			Number of Levels( 3 ),
+			Factor Transformation( "Arrhenius Celsius" ),
+			Low Usage Condition( 20 ),
+			High Usage Condition( 30 ),
+			Low Test Condition( 90 ),
+			High Test Condition( 110 ),
+
+		),
+		Factor(
+			Factor Name( "X2" ),
+			Number of Levels( 3 ),
+			Factor Transformation( "Log" ),
+			Low Usage Condition( 20 ),
+			High Usage Condition( 30 ),
+			Low Test Condition( 90 ),
+			High Test Condition( 110 ),
+
+		)
+	),
+	ALT Plan(),
+	Save Script to Script Window
+);
+
+```
+
