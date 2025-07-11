@@ -1,0 +1,16 @@
+site_name: JMP Scripting Index
+theme: 
+  name: readthedocs
+  highlightjs: true
+  locale: en
+  hljs_languages:
+    - js
+site_url: https://jsl.jmp.com
+copyright: © 2025 JMP Statistical Discovery LLC. All Rights Reserved.
+use_directory_urls: false
+plugins:
+  - search:
+      prebuild_index: true
+  
+
+

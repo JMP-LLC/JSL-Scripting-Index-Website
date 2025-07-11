@@ -8,8 +8,11 @@ site_url: https://jsl.jmp.com
 copyright: Copyright 2025 JMP Statistical Discovery LLC. All Rights Reserved.
 use_directory_urls: false
 plugins:
+  - search:
+      prebuild_index: true
   - i18n:
       docs_structure: folder
+      reconfigure_search: true
       fallback_to_default: false
       languages:
         - locale: en
@@ -18,7 +21,7 @@ plugins:
           build: true
         - locale: fr
           name: Français
-          build: true
+          build: false
         - locale: it
           name: Italiano
           build: true
@@ -30,12 +33,12 @@ plugins:
           build: true
         - locale: ja
           name: 日本語
-          build: true
+          build: false
         - locale: ko
           name: 한국어
-          build: true
+          build: false
         - locale: zh_CN
           name: 简体中文
-          build: true
+          build: false
 
 
