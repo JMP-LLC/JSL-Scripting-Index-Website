@@ -3,6 +3,8 @@
  */
 $(document).ready(function() {
   // https://clipboardjs.com/
+  var selector_panel = document.querySelector('ul > li.toctree-l1:nth-child(3)');
+  selector_panel.classList.add("current");
   var selectors = document.querySelectorAll('pre code');
   var copyButton = '<div class="clipboard"><span class="btn-neutral btn-clipboard" title="Copy to clipboard">⧉</span></div>';
   Array.prototype.forEach.call(selectors, function(selector){
@@ -21,7 +23,7 @@ $(document).ready(function() {
     var tippyInstance = tippy(
       e.trigger,
       {
-        content: 'Copied',
+        content: 'Copié',
         showOnCreate: true,
         trigger: 'manual',
       },

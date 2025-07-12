@@ -23,7 +23,7 @@ $(document).ready(function() {
     var tippyInstance = tippy(
       e.trigger,
       {
-        content: 'Copiada',
+        content: 'Kopiert',
         showOnCreate: true,
         trigger: 'manual',
       },
