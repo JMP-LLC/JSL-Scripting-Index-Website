@@ -5,6 +5,7 @@ theme:
   locale: fr
   hljs_languages:
     - js
+  logo: img/JMPScriptingIndexLogo.svg
 site_url: https://jsl.jmp.com
 copyright: © 2025 JMP Statistical Discovery LLC. Tous droits réservés.
 use_directory_urls: false

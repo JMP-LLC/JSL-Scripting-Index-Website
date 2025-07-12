@@ -4,13 +4,25 @@ theme:
   highlightjs: true
   locale: en
   hljs_languages:
-    - js
+    - python
+  logo: img/JMPScriptingIndexLogo.svg
+  collapse_navigation: false
+  navigation_depth: 6
+  include_homepage_in_sidebar: false
 site_url: https://jsl.jmp.com
 copyright: © 2025 JMP Statistical Discovery LLC. All Rights Reserved.
 use_directory_urls: false
 plugins:
   - search:
       prebuild_index: true
+extra_css:
+  - jmpstyle.css
+extra_javascript:
+  - js/syntaxhighlighting.js
+  - js/popper.min.js
+  - js/tippy.js
+  - js/extra.js
+  - js/clipboard.js
   
 
 

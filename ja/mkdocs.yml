@@ -1,12 +1,13 @@
-site_name: JMP SkriptIndex
+site_name: JMP スクリプトの索引
 theme: 
   name: readthedocs
   highlightjs: true
-  locale: de
+  locale: ja
   hljs_languages:
     - js
+  logo: img/JMPScriptingIndexLogo.svg
 site_url: https://jsl.jmp.com
-copyright: © 2025 JMP Statistical Discovery LLC. Alle Rechte vorbehalten.
+copyright: © 2025 JMP Statistical Discovery LLC. All Rights Reserved.
 use_directory_urls: false
 plugins:
   - search:

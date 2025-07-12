@@ -1,0 +1,291 @@
+# Trigonometric
+
+
+
+## 関数
+
+### ATan
+
+**構文:** y = ArcTangent( x1, <x2=1> )
+
+**説明:** x1/x2に対する逆正接関数の値を戻す。戻り値は[-Pi()/2, Pi()/2]の範囲内。
+
+**JMP追加されたバージョン:** バージョン14より前
+
+```jsl
+
+Names Default To Here( 1 );
+4 * ArcTangent( 1 );
+
+```
+
+### ArCos
+
+**構文:** y = ArcCosine( x )
+
+**説明:** xに対する逆余弦関数の値を戻す。xは[-1, 1]の範囲内で、戻り値は[0, Pi()]の範囲内。
+
+**JMP追加されたバージョン:** バージョン14より前
+
+```jsl
+
+Names Default To Here( 1 );
+ArcCosine( 0.5 );
+
+```
+
+### ArSin
+
+**構文:** y = ArcSine( x )
+
+**説明:** xに対する逆正弦関数の値を戻す。xは[-1, 1]の範囲内で、戻り値は[-Pi()/2, Pi()/2]の範囲内。
+
+**JMP追加されたバージョン:** バージョン14より前
+
+```jsl
+
+Names Default To Here( 1 );
+ArcSine( 0.5 );
+
+```
+
+### ArcCosH
+
+**構文:** y = ArcCosH( x )
+
+**説明:** xに対する逆双曲余弦関数の値を戻す。
+
+**JMP追加されたバージョン:** バージョン14より前
+
+```jsl
+
+Names Default To Here( 1 );
+ArcCosH( 1 );
+
+```
+
+### ArcCosine
+
+**構文:** y = ArcCosine( x )
+
+**説明:** xに対する逆余弦関数の値を戻す。xは[-1, 1]の範囲内で、戻り値は[0, Pi()]の範囲内。
+
+**JMP追加されたバージョン:** バージョン14より前
+
+```jsl
+
+Names Default To Here( 1 );
+ArcCosine( 0.5 );
+
+```
+
+### ArcSinH
+
+**構文:** y = ArcSinH( x )
+
+**説明:** xに対する逆双曲正弦関数の値を戻す。
+
+**JMP追加されたバージョン:** バージョン14より前
+
+```jsl
+
+Names Default To Here( 1 );
+ArcSinH( 1 );
+
+```
+
+### ArcSine
+
+**構文:** y = ArcSine( x )
+
+**説明:** xに対する逆正弦関数の値を戻す。xは[-1, 1]の範囲内で、戻り値は[-Pi()/2, Pi()/2]の範囲内。
+
+**JMP追加されたバージョン:** バージョン14より前
+
+```jsl
+
+Names Default To Here( 1 );
+ArcSine( 0.5 );
+
+```
+
+### ArcTan
+
+**構文:** y = ArcTangent( x1, <x2=1> )
+
+**説明:** x1/x2に対する逆正接関数の値を戻す。戻り値は[-Pi()/2, Pi()/2]の範囲内。
+
+**JMP追加されたバージョン:** バージョン14より前
+
+```jsl
+
+Names Default To Here( 1 );
+4 * ArcTangent( 1 );
+
+```
+
+### ArcTanH
+
+**構文:** y = ArcTanH( x )
+
+**説明:** xに対する逆双曲正接関数の値を戻す。
+
+**JMP追加されたバージョン:** バージョン14より前
+
+```jsl
+
+Names Default To Here( 1 );
+ArcTanH( 0.5 );
+
+```
+
+### ArcTangent
+
+**構文:** y = ArcTangent( x1, <x2=1> )
+
+**説明:** x1/x2に対する逆正接関数の値を戻す。戻り値は[-Pi()/2, Pi()/2]の範囲内。
+
+**JMP追加されたバージョン:** バージョン14より前
+
+```jsl
+
+Names Default To Here( 1 );
+4 * ArcTangent( 1 );
+
+```
+
+### Cos
+
+**構文:** y = Cosine( x )
+
+**説明:** xに対する余弦関数(cos)の値を戻す。xはラジアンで表した角度。
+
+**JMP追加されたバージョン:** バージョン14より前
+
+```jsl
+
+Names Default To Here( 1 );
+Cosine( Pi() / 2 );
+
+```
+
+### CosH
+
+**構文:** y = CosH( x )
+
+**説明:** xに対する双曲余弦関数の値を戻す。
+
+**JMP追加されたバージョン:** バージョン14より前
+
+```jsl
+
+Names Default To Here( 1 );
+CosH( 1 );
+
+```
+
+### Cosine
+
+**構文:** y = Cosine( x )
+
+**説明:** xに対する余弦関数(cos)の値を戻す。xはラジアンで表した角度。
+
+**JMP追加されたバージョン:** バージョン14より前
+
+```jsl
+
+Names Default To Here( 1 );
+Cosine( Pi() / 2 );
+
+```
+
+### Sin
+
+**構文:** y = Sine( x )
+
+**説明:** xに対する正弦関数(sin)の値を戻す。xはラジアンで表した角度。
+
+**JMP追加されたバージョン:** バージョン14より前
+
+```jsl
+
+Names Default To Here( 1 );
+Sine( Pi() / 6 );
+
+```
+
+### SinH
+
+**構文:** y = SinH( x )
+
+**説明:** xに対する双曲正弦関数の値を戻す。
+
+**JMP追加されたバージョン:** バージョン14より前
+
+```jsl
+
+Names Default To Here( 1 );
+SinH( 1 );
+
+```
+
+### Sine
+
+**構文:** y = Sine( x )
+
+**説明:** xに対する正弦関数(sin)の値を戻す。xはラジアンで表した角度。
+
+**JMP追加されたバージョン:** バージョン14より前
+
+```jsl
+
+Names Default To Here( 1 );
+Sine( Pi() / 6 );
+
+```
+
+### Tan
+
+**構文:** y = Tangent( x )
+
+**説明:** xに対する正接関数(tan)の値を戻す。xはラジアンで表した角度。
+
+**JMP追加されたバージョン:** バージョン14より前
+
+```jsl
+
+Names Default To Here( 1 );
+Tangent( Pi() / 4 );
+
+```
+
+### TanH
+
+**構文:** y = TanH( x )
+
+**説明:** xに対する双曲正接関数の値を戻す。
+
+**JMP追加されたバージョン:** バージョン14より前
+
+```jsl
+
+Names Default To Here( 1 );
+TanH( 1 );
+
+```
+
+### Tangent
+
+**構文:** y = Tangent( x )
+
+**説明:** xに対する正接関数(tan)の値を戻す。xはラジアンで表した角度。
+
+**JMP追加されたバージョン:** バージョン14より前
+
+```jsl
+
+Names Default To Here( 1 );
+Tangent( Pi() / 4 );
+
+```
+

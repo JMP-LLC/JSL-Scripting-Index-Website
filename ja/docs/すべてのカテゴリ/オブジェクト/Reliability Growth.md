@@ -1,0 +1,2151 @@
+# Reliability Growth
+
+
+
+## 共有されるメッセージ
+
+### Action
+
+**構文:** obj << Action
+
+**説明:** 評価する式を挿入するための、プラットフォーム内の汎用トラップドア。プラットフォームに一時的にディスプレイボックスおよびデータテーブルのコンテキストを設定する。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
+
+```
+
+### Apply Preset
+
+**構文:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+
+**説明:** 作成されたプリセットをオブジェクトに適用する。保存された設定に合わせてオプションとカスタマイズが更新される。
+
+**JMP追加されたバージョン:** 18
+
+**フォルダ内で検索**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
+
+```
+
+**匿名のプリセット**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
+dt2 = Open( "$SAMPLE_DATA/Dogs.jmp" );
+obj2 = dt2 << Oneway( Y( :LogHist0 ), X( :drug ) );
+Wait( 1 );
+obj2 << Apply Preset( preset );
+
+```
+
+**名前で検索**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ) );
+Wait( 1 );
+obj << Apply Preset( "Sample Presets", "Compare Distributions" );
+
+```
+
+### Automatic Recalc
+
+**構文:** obj << Automatic Recalc( state=0|1 )
+
+**説明:** データの除外や変更があった場合に分析を自動的にやり直す。Automatic Recalcオプションがオンになっている場合で、データの除外や変更が再計算の前に確実に適用されるようにするには、Wait(0)コマンドを使用すること。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+obj << Crow AMSAA;
+obj << Automatic Recalc( 1 );
+dt << Select Rows( 5 ) << Exclude( 1 );
+
+```
+
+### Column Switcher
+
+**構文:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+
+**説明:** プラットフォームの変数を変更するための設定パネルを追加する。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher(
+	:marital status,
+	{:sex, :country, :marital status}
+);
+
+```
+
+### Copy Script
+
+**構文:** obj << Copy Script
+
+**説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+obj << Crow AMSAA;
+obj << Copy Script;
+
+```
+
+### Data Table Window
+
+**構文:** obj << Data Table Window
+
+**説明:** この分析に使用したデータテーブルのウィンドウを手前に表示する。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+obj << Crow AMSAA;
+obj << Data Table Window;
+
+```
+
+### Get By Levels
+
+**構文:** obj << Get By Levels
+
+**説明:** By列が指定されている場合、列名をキー、データ値を値とした連想配列を戻す。
+
+**JMP追加されたバージョン:** 18
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv << Get By Levels;
+
+```
+
+### Get Container
+
+**構文:** obj << Get Container
+
+**説明:** オブジェクトのコンテンツを含んだコンテナボックスの参照を戻す。
+
+**フィルタのあるプラットフォーム**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+gb = Graph Builder(
+	Show Control Panel( 0 ),
+	Variables( X( :height ), Y( :weight ) ),
+	Elements( Points( X, Y, Legend( 1 ) ), Smoother( X, Y, Legend( 2 ) ) ),
+	Local Data Filter(
+		Add Filter(
+			columns( :age, :sex, :height ),
+			Where( :age == {12, 13, 14} ),
+			Where( :sex == "F" ),
+			Where( :height >= 55 ),
+			Display( :age, N Items( 6 ) )
+		)
+	)
+);
+New Window( "platform boxes",
+	H List Box(
+		Outline Box( "Report(platform)", Report( gb ) << Get Picture ),
+		Outline Box( "platform << Get Container", (gb << Get Container) << Get Picture )
+	)
+);
+
+```
+
+**一般**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+obj << Crow AMSAA;
+t = obj << Get Container;
+Show( (t << XPath( "//OutlineBox" )) << Get Title );
+
+```
+
+### Get Data Table
+
+**構文:** obj << Get Data Table
+
+**説明:** データテーブルへの参照を戻す。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+obj << Crow AMSAA;
+t = obj << Get Datatable;
+Show( N Rows( t ) );
+
+```
+
+### Get Script
+
+**構文:** obj << Get Script
+
+**説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+obj << Crow AMSAA;
+t = obj << Get Script;
+Show( t );
+
+```
+
+### Get Script With Data Table
+
+**構文:** obj << Get Script With Data Table
+
+**説明:** この分析を再現するスクリプト(JSL)をデータテーブルへの参照も含めて生成し、それを式として戻す。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+obj << Crow AMSAA;
+t = obj << Get Script With Data Table;
+Show( t );
+
+```
+
+### Get Timing
+
+**構文:** obj << Get Timing
+
+**説明:** プラットフォームの起動にかかった時間を取得する。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+obj << Crow AMSAA;
+t = obj << Get Timing;
+Show( t );
+
+```
+
+### Get Web Support
+
+**構文:** obj << Get Web Support
+
+**説明:** ディスプレイオブジェクトにおけるインタラクティブHTMLサポートのレベルを数値で戻す。1は、一部または全部の要素がサポートされていることを示し、0は、サポートされないことを示す。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+s = obj << Get Web Support();
+Show( s );
+
+```
+
+### Get Where Expr
+
+**構文:** obj << Get Where Expr
+
+**説明:** プラットフォームがBy()またはWhere()を使って起動された場合に、データをサブセットするためのWhere式を戻す。By()やWhere()が使われていない場合はEmpty()を戻す。
+
+**JMP追加されたバージョン:** 18
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+biv = dt << Bivariate( X( :height ), Y( :weight ), By( :sex ) );
+biv2 = dt << Bivariate( X( :height ), Y( :weight ), Where( :age < 14 & :height > 60 ) );
+Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
+
+```
+
+### Ignore Platform Preferences
+
+**構文:** Ignore Platform Preferences( state=0|1 )
+
+**説明:** プラットフォームに対する現在の環境設定を無視する。このメッセージは、プラットフォームを呼び出した後に、そのプラットフォームに送られた場合、無視される。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Bivariate(
+	Ignore Platform Preferences( 1 ),
+	Y( :height ),
+	X( :weight ),
+	Action( Distribution( Y( :height, :weight ), Histograms Only ) )
+);
+
+```
+
+### Local Data Filter
+
+**構文:** obj << Local Data Filter
+
+**説明:** このプラットフォームに対してのみ有効なフィルタで、データを特定のグループまたは範囲にフィルタリングする。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
+
+```
+
+### New JSL Preset
+
+**構文:** New JSL Preset( preset )
+
+**説明:** For testing purposes, create a preset directly from a JSL expression. Like <<New Preset, it will return a Platform Preset that can be applied using <<Apply Preset. But it allows you to specify the full JSL expression for the preset to test outside of normal operation. You will get an Assert on apply if the platform names do not match, but that is expected.
+
+**JMP追加されたバージョン:** 18
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+preset = obj << New JSL Preset( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) );
+Wait( 1 );
+obj << Apply Preset( preset );
+
+```
+
+### New Preset
+
+**構文:** obj = New Preset()
+
+**説明:** オブジェクトに適用されているオプションとカスタマイズをプリセットとしてまとめる。このオブジェクトをApply Presetに渡すことで、同じ種類のオブジェクトに設定をコピーすることができる。
+
+**JMP追加されたバージョン:** 18
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :height ), X( :sex ), t Test( 1 ) );
+preset = obj << New Preset();
+
+```
+
+### Paste Local Data Filter
+
+**構文:** obj << Paste Local Data Filter
+
+**説明:** クリップボードにあるローカルデータフィルタを現在のレポートに適用する。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+filter = dist << Local Data Filter(
+	Add Filter( columns( :Region ), Where( :Region == "MW" ) )
+);
+filter << Copy Local Data Filter;
+dist2 = Distribution( Continuous Distribution( Column( :Lead ) ) );
+Wait( 1 );
+dist2 << Paste Local Data Filter;
+
+```
+
+### Redo Analysis
+
+**構文:** obj << Redo Analysis
+
+**説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+obj << Crow AMSAA;
+obj << Redo Analysis;
+
+```
+
+### Relaunch Analysis
+
+**構文:** obj << Relaunch Analysis
+
+**説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+obj << Crow AMSAA;
+obj << Relaunch Analysis;
+
+```
+
+### Remove Column Switcher
+
+**構文:** obj << Remove Column Switcher
+
+**説明:** プラットフォームに最後に追加された列スイッチャーを削除する。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+obj = dt << Contingency( Y( :size ), X( :marital status ) );
+ColumnSwitcherObject = obj << Column Switcher(
+	:marital status,
+	{:sex, :country, :marital status}
+);
+Wait( 2 );
+obj << Remove Column Switcher;
+
+```
+
+### Remove Local Data Filter
+
+**構文:** obj << Remove Local Data Filter
+
+**説明:** すでに作成されているローカルデータフィルタを削除し、プラットフォームはデータテーブル内のすべてのデータを使用した状態に戻る。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Car Poll.jmp" );
+dist = dt << Distribution(
+	Nominal Distribution( Column( :country ) ),
+	Local Data Filter(
+		Add Filter( columns( :sex ), Where( :sex == "Female" ) ),
+		Mode( Show( 1 ), Include( 1 ) )
+	)
+);
+Wait( 2 );
+dist << remove local data filter;
+
+```
+
+### Render Preset
+
+**構文:** Render Preset( preset )
+
+**説明:** For testing purposes, show the platform rerun script that would be used when applying a platform preset to the platform in the log. No changes are made to the platform.
+
+**JMP追加されたバージョン:** 18
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Oneway( Y( :Height ), X( :Age ) );
+obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
+
+```
+
+### Report
+
+**構文:** obj << Report;
+
+Report( obj )
+
+**説明:** レポートオブジェクトへの参照を戻す。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+obj << Crow AMSAA;
+r = obj << Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
+
+```
+
+### Report View
+
+**構文:** obj << Report View( "完全"|"要約" )
+
+**説明:** レポートビューは、プラットフォームレポートの詳細を表示するかどうかを決定する。Fullはすべての詳細を表示し、Summaryはプラットフォームにより限定されたものだけを表示する。 動作をカスタマイズするため、各ディスプレイボックスは<<Set Summary Behaviorメッセージをサポートする。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+obj << Crow AMSAA;
+obj << Report View( "Summary" );
+
+```
+
+### Save Script for All Objects
+
+**構文:** obj << Save Script for All Objects
+
+**説明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+obj << Crow AMSAA;
+obj << Save Script for All Objects;
+
+```
+
+### Save Script for All Objects To Data Table
+
+**構文:** obj << Save Script for All Objects To Data Table( <name> )
+
+**説明:** すべてのレポートオブジェクトを再現するスクリプトを現在のデータテーブルに保存する。このオプションは、ウィンドウ内にレポートが複数ある場合に便利。作成されるスクリプトの名前は、引用符で囲んで指定しない限り、1つ目のプラットフォーム名となる。
+
+**例 1**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Reliability Growth(
+	Input Format( Time to Event ),
+	Time to Event( :Hours ),
+	By( _bycol )
+);
+obj << Crow AMSAA;
+obj[1] << Save Script for All Objects To Data Table;
+
+```
+
+**例 2**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+dt << New Column( "_bycol",
+	Character,
+	Nominal,
+	set values( Repeat( {"A", "B"}, N Rows( dt ) )[1 :: N Rows( dt )] )
+);
+obj = dt << Reliability Growth(
+	Input Format( Time to Event ),
+	Time to Event( :Hours ),
+	By( _bycol )
+);
+obj << Crow AMSAA;
+obj[1] << Save Script for All Objects To Data Table( "My Script" );
+
+```
+
+### Save Script to Data Table
+
+**構文:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+
+**説明:** この分析を再現するJSLスクリプトを生成し、データテーブルのテーブルプロパティとして保存する。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+obj << Crow AMSAA;
+obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) );
+
+```
+
+### Save Script to Journal
+
+**構文:** obj << Save Script to Journal
+
+**説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+obj << Crow AMSAA;
+obj << Save Script to Journal;
+
+```
+
+### Save Script to Report
+
+**構文:** obj << Save Script to Report
+
+**説明:** この分析を再現するJSLスクリプトを生成し、レポートウィンドウに表示する。分析手順の記録を結果と一緒に残せる。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+obj << Crow AMSAA;
+obj << Save Script to Report;
+
+```
+
+### Save Script to Script Window
+
+**構文:** obj << Save Script to Script Window
+
+**説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+obj << Crow AMSAA;
+obj << Save Script to Script Window;
+
+```
+
+### SendToByGroup
+
+**構文:** SendToByGroup( {":Column == level"}, command );
+
+**説明:** プラットフォームコマンドまたは表示のカスタマイズコマンドをByグループの各水準に送る。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	By( :Sex ),
+	SendToByGroup(
+		{:sex == "F"},
+		Continuous Distribution( Column( :weight ), Normal Quantile Plot( 1 ) )
+	),
+	SendToByGroup( {:sex == "M"}, Continuous Distribution( Column( :weight ) ) )
+);
+
+```
+
+### SendToEmbeddedScriptable
+
+**構文:** SendToEmbeddedScriptable( Dispatch( "Outline name", "Element name", command );
+
+**説明:** SendToEmbeddedScriptableは、埋め込まれたスクリプト可能なオブジェクトの設定を復元する。
+
+```jsl
+
+Names Default To Here( 1 );
+
+dt = Open( "$SAMPLE_DATA/Reliability/Fan.jmp" );
+dt << Life Distribution(
+	Y( :Time ),
+	Censor( :Censor ),
+	Censor Code( 1 ),
+	<<Fit Weibull,
+	SendToEmbeddedScriptable(
+		Dispatch(
+			{"Statistics", "Parametric Estimate - Weibull", "Profilers", "Density Profiler"},
+			{1, Confidence Intervals( 0 ), Term Value( Time( 6000, Lock( 0 ), Show( 1 ) ) )}
+		)
+	)
+);
+
+```
+
+### SendToReport
+
+**構文:** SendToReport( Dispatch( "Outline name", "Element name", Element type, command );
+
+**説明:** Send To Reportはレポートの表示をカスタマイズするためにDispatchコマンドと一緒に使用される。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+dt << Distribution(
+	Nominal Distribution( Column( :age ) ),
+	Continuous Distribution( Column( :weight ) ),
+	SendToReport( Dispatch( "age", "Distrib Nom Hist", FrameBox, {Frame Size( 178, 318 )} ) )
+);
+
+```
+
+### Sync to Data Table Changes
+
+**構文:** obj << Sync to Data Table Changes
+
+**説明:** 除外やデータの変更が行われた場合に同期する。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Cities.jmp" );
+dist = Distribution( Continuous Distribution( Column( :POP ) ) );
+Wait( 1 );
+dt << Delete Rows( dt << Get Rows Where( :Region == "W" ) );
+dist << Sync To Data Table Changes;
+
+```
+
+### Title
+
+**構文:** obj << Title( "new title" )
+
+**説明:** プラットフォームのタイトルを設定する。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+obj << Crow AMSAA;
+obj << Title( "My Platform" );
+
+```
+
+### Top Report
+
+**構文:** obj << Top Report
+
+**説明:** レポート内のルートノードへの参照を戻す。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+obj << Crow AMSAA;
+r = obj << Top Report;
+t = r[Outline Box( 1 )] << Get Title;
+Show( t );
+
+```
+
+### View Web XML
+
+**構文:** obj << View Web XML
+
+**説明:** インタラクティブHTMLレポートの作成に使うXMLコードを戻す。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
+obj = dt << Bivariate( Y( :Weight ), X( :Height ) );
+xml = obj << View Web XML;
+
+```
+
+## 関連するコンストラクター
+
+### Reliability Growth
+
+**構文:** obj = Reliability Growth( Input Format( Time to Event ), Time to Event( column, <column> ), <Event Count( column )>, <Phase( column )> );
+
+
+
+obj = Reliability Growth( Input Format( Dates ), Timestamp( column, <column> ), <Event Count( column )>, <Phase( column )> );
+
+
+
+obj = Reliability Growth( Input Format( Concurrent Systems ), Time to Event( column, column, ... ), System ID( column ), <Phase( column )> )
+
+
+
+obj = Reliability Growth( Input Format( Parallel Systems ), Time to Event( column, column, ... ), <Event Count( column )>, System ID( column ), <Phase( column )> )
+
+**説明:** 設計に改善が組み込まれている修復可能なシステムにおいて、時間の経過に伴う信頼性の変化をモデル化する。 このプラットフォームでは複数の入力形式を使用できる。指定の詳細は各形式を参照。
+
+**イベントまでの時間**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+obj << Crow AMSAA;
+
+```
+
+**並列システム**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/Parallel Systems Multiple Phases.jmp" );
+obj = dt << Reliability Growth(
+	Input Format( Parallel Systems ),
+	Time to Event( :Hours ),
+	Event Count( :Fixes ),
+	System ID( :System ID ),
+	Phase( :Phase )
+);
+obj << Piecewise Weibull NHPP with Different Intercepts;
+
+```
+
+**並行システム**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/Concurrent Systems.jmp" );
+obj = dt << Reliability Growth(
+	Input Format( Concurrent Systems ),
+	Time to Event( :Prototype 1, :Prototype 2 ),
+	System ID( :Failed System ),
+
+);
+obj << Crow AMSAA;
+
+```
+
+**日付**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/BrakeReliability.jmp" );
+obj = dt << Reliability Growth(
+	Input Format( Dates ),
+	Timestamp( :Date ),
+	Event Count( :Fixes )
+);
+
+```
+
+## 項目のメッセージ
+
+### Crow AMSAA
+
+**構文:** obj << Crow AMSAA
+
+**説明:** Crow-AMSAAモデルをあてはめる。 デフォルトではオン。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+obj << Crow AMSAA;
+
+```
+
+### Crow AMSAA with Modified MLE
+
+**構文:** obj << Crow AMSAA with Modified MLE
+
+**説明:** ベータ(beta, β)の推定値をバイアスに対して修正したCrow-AMSAAモデルをあてはめる。 デフォルトではオン。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+obj << Crow AMSAA with Modified MLE;
+
+```
+
+### Distinct Phase Weibull NHPP
+
+**構文:** obj << Distinct Phase Weibull NHPP
+
+**説明:** フェーズ別Weibull-NHPPモデルをあてはめる。このモデルでは、すべてのシステムが各フェーズ内では同じCrow-AMSAAモデルに従うと仮定される。このモデルでは、フェーズごとにβパラメータとλパラメータが異なると仮定される。ただし、これらのパラメータは全システムでは同じとしている。 デフォルトではオン。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/Parallel Systems Different Intercepts.jmp" );
+obj = dt << Reliability Growth(
+	Input Format( Parallel Systems ),
+	Time to Event( :Hours ),
+	Event Count( :Fixes ),
+	System ID( :System ID ),
+	Phase( :Phase )
+);
+obj << Distinct Phase Weibull NHPP;
+
+```
+
+### Distinct System Weibull NHPP
+
+**構文:** obj << Distinct System Weibull NHPP
+
+**説明:** システム別Weibull-NHPPモデルをあてはめる。このモデルでは、各システムが、異なるパラメータを持つCrow-AMSAAモデルに従うと仮定される。 デフォルトではオン。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/Parallel Systems One Phase.jmp" );
+obj = dt << Reliability Growth(
+	Input Format( Parallel Systems ),
+	Time to Event( :Hours ),
+	Event Count( :Repairs ),
+	System ID( :System ID )
+);
+obj << Distinct System Weibull NHPP;
+
+```
+
+### Distinct Weibull NHPP
+
+**構文:** obj << Distinct Weibull NHPP
+
+**説明:** 個別Weibull-NHPPモデルをあてはめる。このモデルでは、各システムが各フェーズで別々のCrow-AMSAAモデルに従うと仮定される。このモデルでは、システムとフェーズの組み合わせごとに、それぞれ1つのβパラメータと1つのλパラメータを含む。 デフォルトではオン。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/Parallel Systems Different Intercepts.jmp" );
+obj = dt << Reliability Growth(
+	Input Format( Parallel Systems ),
+	Time to Event( :Hours ),
+	Event Count( :Fixes ),
+	System ID( :System ID ),
+	Phase( :Phase )
+);
+obj << Distinct Weibull NHPP;
+
+```
+
+### Fixed Parameter Crow AMSAA
+
+**構文:** obj << Fixed Parameter Crow AMSAA( <lambda ( number )>, <beta ( number )> )
+
+**説明:** パラメータ指定のCrow-AMSAAモデルをあてはめる。 デフォルトではオン。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+obj << Fixed Parameter Crow AMSAA( lambda( .02 ) );
+
+```
+
+### Get Results
+
+**構文:** obj << Get Results
+
+**説明:** モデル推定の結果を含む名前付きリストを戻す。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+obj << Crow AMSAA;
+Show( obj << Get Results );
+
+```
+
+### Identical System Weibull NHPP
+
+**構文:** obj << Identical System Weibull NHPP
+
+**説明:** 同一システムWeibull-NHPPモデルをあてはめる。このモデルでは、各システムが、1つの同じCrow-AMSAAモデルに従うと仮定される。つまり、システム間の観測された違いは、ランダム性に起因すると考える。 デフォルトではオン。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/Parallel Systems One Phase.jmp" );
+obj = dt << Reliability Growth(
+	Input Format( Parallel Systems ),
+	Time to Event( :Hours ),
+	Event Count( :Repairs ),
+	System ID( :System ID )
+);
+obj << Identical System Weibull NHPP;
+
+```
+
+### Piecewise Weibull NHPP
+
+**構文:** obj << Piecewise Weibull NHPP
+
+**説明:** 区分Weibull-NHPPモデルをあてはめる。 デフォルトではオン。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/TurbineEngineDesign1.jmp" );
+obj = dt << Reliability Growth(
+	Input Format( Time to Event ),
+	Time to Event( :Day ),
+	Event Count( :Fixes ),
+	Phase( :Design Phase )
+);
+obj << Piecewise Weibull NHPP;
+
+```
+
+### Piecewise Weibull NHPP Change Point Detection
+
+**構文:** obj << Piecewise Weibull NHPP Change Point Detection
+
+**説明:** データにおける変化点を推定し、区分Weibull-NHPPモデルをあてはめる。このオプションは、フェーズ変数が指定されている場合には使用できない。 デフォルトではオン。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/BrakeReliability.jmp" );
+obj = dt << Reliability Growth(
+	Input Format( Dates ),
+	Timestamp( :Date ),
+	Event Count( :Fixes )
+);
+obj << Piecewise Weibull NHPP Change Point Detection;
+
+```
+
+### Piecewise Weibull NHPP with Different Intercepts
+
+**構文:** obj << Piecewise Weibull NHPP with Different Intercepts
+
+**説明:** システムごとに異なる切片をもつ区分Weibull-NHPPモデルをあてはめる。このモデルでは、各システムは、複数のフェーズで同じ区分Weibull-NHPPモデルに従う。ただし、このシステムごとの区分Weibull-NHPPモデルは、フェーズごとにβパラメータが異なり、全フェーズでλパラメータが同じと仮定されている。 デフォルトではオン。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/Parallel Systems Multiple Phases.jmp" );
+obj = dt << Reliability Growth(
+	Input Format( Parallel Systems ),
+	Time to Event( :Hours ),
+	Event Count( :Fixes ),
+	System ID( :System ID ),
+	Phase( :Phase )
+);
+obj << Piecewise Weibull NHPP with Different Intercepts;
+
+```
+
+### Reinitialized Weibull NHPP
+
+**構文:** obj << Reinitialized Weibull NHPP
+
+**説明:** 再初期化Weibull-NHPPモデルをあてはめる。 デフォルトではオン。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/ProductionEquipment.jmp" );
+obj = dt << Reliability Growth(
+	Input Format( Time to Event ),
+	Time to Event( :Hours of Operation ),
+	Event Count( :Fixes ),
+	Phase( :Design Stage )
+);
+obj << Reinitialized Weibull NHPP;
+
+```
+
+## Crow AMSAA
+
+### 項目のメッセージ
+
+#### Achieved MTBF
+
+**構文:** scrobj << Achieved MTBF( state=0|1 )
+
+**説明:** 「最終時点の平均故障間隔」レポートの表示/非表示を切り替える。有意水準(α)を指定するには、オプションのalpha引数を使う。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+Report( obj )["Observed Data"] << Close( 1 );
+report = obj << Crow AMSAA;
+report << Achieved MTBF( .01 );
+
+```
+
+#### Goodness of Fit
+
+**構文:** scrobj << Goodness of Fit( state=0|1 )
+
+**説明:** 「適合度」レポートの表示/非表示を切り替える。このレポートには、「データがCrow-AMSAAモデルに従っている」という帰無仮説に対する検定が表示される。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+Report( obj )["Observed Data"] << Close( 1 );
+report = obj << Crow AMSAA;
+report << Goodness of Fit( 1 );
+
+```
+
+#### Show Cumulative Events Plot
+
+**構文:** scrobj << Show Cumulative Events Plot( state=0|1 )
+
+**説明:** 「累積イベント数」プロットの表示/非表示を切り替える。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+Report( obj )["Observed Data"] << Close( 1 );
+report = obj << Crow AMSAA;
+report << Show Cumulative Events Plot( 1 );
+
+```
+
+#### Show Intensity Plot
+
+**構文:** scrobj << Show Intensity Plot( state=0|1 )
+
+**説明:** 強度プロットの表示/非表示を切り替える。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+Report( obj )["Observed Data"] << Close( 1 );
+report = obj << Crow AMSAA;
+report << Show Intensity Plot( 1 );
+
+```
+
+#### Show MTBF Plot
+
+**構文:** scrobj << Show MTBF Plot( state=0|1 )
+
+**説明:** 平均故障間隔プロットの表示/非表示を切り替える。 デフォルトではオン。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+Report( obj )["Observed Data"] << Close( 1 );
+report = obj << Crow AMSAA;
+report << Show MTBF Plot( 0 );
+
+```
+
+#### Show Profilers
+
+**構文:** scrobj << Show Profilers( state=0|1 )
+
+**説明:** 平均故障間隔、故障強度、累積イベント数に対するプロファイルの表示/非表示を切り替える。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+Report( obj )["Observed Data"] << Close( 1 );
+report = obj << Crow AMSAA;
+report << Show Profilers( 1 );
+
+```
+
+## Cumulative Events Plot
+
+### 関連するコンストラクター
+
+#### Cumulative Events Plot
+
+**構文:** obj << Cumulative Events Plot( ... );
+
+scrobj = obj << Cumulative Events Plot
+
+**説明:** 「累積イベント数」グラフ上でモデルの表示/非表示の切り替えを可能にする。引数なしで指定した場合、プロットへのスクリプト可能な参照を戻す。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+obj << Crow AMSAA;
+plot = obj << Cumulative Events Plot;
+plot << Crow AMSAA( 0 );
+
+```
+
+### 項目のメッセージ
+
+#### Crow AMSAA
+
+**構文:** obj << Cumulative Events Plot( Crow AMSAA( state=0|1 ) );
+
+obj << Mean Time Between Failures Plot( Crow AMSAA( state=0|1 ) );
+
+scrobj << Crow AMSAA( state=0|1 ) )
+
+**説明:** 「累積イベント数」または「平均故障間隔」プロットにおいて、Crow-AMSAAモデルの表示/非表示を切り替える。 デフォルトではオン。
+
+**例 1**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+Report( obj )["Mean Time Between Failures"] << Close( 0 );
+obj << Crow AMSAA;
+Wait( 1 );
+obj << Cumulative Events Plot( Crow AMSAA( 0 ) );
+obj << Mean Time Between Failures Plot( Crow AMSAA( 0 ) );
+
+```
+
+**例 2**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+Report( obj )["Mean Time Between Failures"] << Close( 0 );
+obj << Crow AMSAA;
+Wait( 1 );
+cep = obj << Cumulative Events Plot;
+cep << Crow AMSAA( 0 );
+mtbf = obj << Mean Time Between Failures Plot;
+mtbf << Crow AMSAA( 0 );
+
+```
+
+#### Crow AMSAA with Modified MLE
+
+**構文:** obj << Cumulative Events Plot( Crow AMSAA with Modified MLE( state=0|1 ) );
+
+obj << Mean Time Between Failures Plot( Crow AMSAA with Modified MLE( state=0|1 ) );
+
+scrobj << Crow AMSAA with Modified MLE( state=0|1 ) )
+
+**説明:** 「累積イベント数」または「平均故障間隔」プロットにおいて、修正Crow-AMSAAモデルの表示/非表示を切り替える。このモデルは、Crow-AMSAAモデルにおいて、ベータ(beta, β)の推定値をバイアスに対して修正したものである。 デフォルトではオン。
+
+**例 1**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+Report( obj )["Mean Time Between Failures"] << Close( 0 );
+obj << Crow AMSAA with Modified MLE;
+Wait( 1 );
+obj << Cumulative Events Plot( Crow AMSAA with Modified MLE( 0 ) );
+obj << Mean Time Between Failures Plot( Crow AMSAA with Modified MLE( 0 ) );
+
+```
+
+**例 2**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+Report( obj )["Mean Time Between Failures"] << Close( 0 );
+obj << Crow AMSAA with Modified MLE;
+Wait( 1 );
+cep = obj << Cumulative Events Plot;
+cep << Crow AMSAA with Modified MLE( 0 );
+mtbf = obj << Mean Time Between Failures Plot;
+mtbf << Crow AMSAA with Modified MLE( 0 );
+
+```
+
+#### Fixed Parameter Crow AMSAA
+
+**構文:** obj << Cumulative Events Plot( Fixed Parameter Crow AMSAA( state=0|1 ) );
+
+obj << Mean Time Between Failures Plot( Fixed Parameter Crow AMSAA( state=0|1 ) );
+
+scrobj << Fixed Parameter Crow AMSAA( state=0|1 ) )
+
+**説明:** 「累積イベント数」または「平均故障間隔」プロットにおいて、パラメータ指定のCrow-AMSAAモデルの表示/非表示を切り替える。 デフォルトではオン。
+
+**例 1**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+Report( obj )["Mean Time Between Failures"] << Close( 0 );
+obj << Fixed Parameter Crow AMSAA;
+Wait( 1 );
+obj << Cumulative Events Plot( Fixed Parameter Crow AMSAA( 0 ) );
+obj << Mean Time Between Failures Plot( Fixed Parameter Crow AMSAA( 0 ) );
+
+```
+
+**例 2**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+Report( obj )["Mean Time Between Failures"] << Close( 0 );
+obj << Fixed Parameter Crow AMSAA;
+Wait( 1 );
+cep = obj << Cumulative Events Plot;
+cep << Fixed Parameter Crow AMSAA( 0 );
+mtbf = obj << Mean Time Between Failures Plot;
+mtbf << Fixed Parameter Crow AMSAA( 0 );
+
+```
+
+#### Piecewise Weibull NHPP
+
+**構文:** obj << Cumulative Events Plot( Piecewise Weibull NHPP( state=0|1 ) );
+
+obj << Mean Time Between Failures Plot( Piecewise Weibull NHPP( state=0|1 ) );
+
+scrobj << Piecewise Weibull NHPP( state=0|1 ) )
+
+**説明:** 「累積イベント数」または「平均故障間隔」プロットにおいて、区分Weibull-NHPPモデルの表示/非表示を切り替える。 デフォルトではオン。
+
+**例 1**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/TurbineEngineDesign1.jmp" );
+obj = dt << Reliability Growth(
+	Input Format( Time to Event ),
+	Time to Event( :Day ),
+	Event Count( :Fixes ),
+	Phase( :Design Phase )
+);
+Report( obj )["Mean Time Between Failures"] << Close( 0 );
+obj << Piecewise Weibull NHPP;
+Wait( 1 );
+obj << Cumulative Events Plot( Piecewise Weibull NHPP( 0 ) );
+obj << Mean Time Between Failures Plot( Piecewise Weibull NHPP( 0 ) );
+
+```
+
+**例 2**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/TurbineEngineDesign1.jmp" );
+obj = dt << Reliability Growth(
+	Input Format( Time to Event ),
+	Time to Event( :Day ),
+	Event Count( :Fixes ),
+	Phase( :Design Phase )
+);
+Report( obj )["Mean Time Between Failures"] << Close( 0 );
+obj << Piecewise Weibull NHPP;
+Wait( 1 );
+cep = obj << Cumulative Events Plot;
+cep << Piecewise Weibull NHPP( 0 );
+mtbf = obj << Mean Time Between Failures Plot;
+mtbf << Piecewise Weibull NHPP( 0 );
+
+```
+
+#### Piecewise Weibull NHPP Change Point Detection
+
+**構文:** obj << Cumulative Events Plot( Piecewise Weibull NHPP Change Point Detection( state=0|1 ) );
+
+obj << Mean Time Between Failures Plot( Piecewise Weibull NHPP Change Point Detection( state=0|1 ) );
+
+scrobj << Piecewise Weibull NHPP Change Point Detection( state=0|1 ) )
+
+**説明:** 「累積イベント数」または「平均故障間隔」プロットにおいて、再初期化Weibull-NHPPモデルの表示/非表示を切り替える。 デフォルトではオン。
+
+**例 1**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/BrakeReliability.jmp" );
+obj = dt << Reliability Growth(
+	Input Format( Dates ),
+	Timestamp( :Date ),
+	Event Count( :Fixes )
+);
+Report( obj )["Mean Time Between Failures"] << Close( 0 );
+obj << Piecewise Weibull NHPP Change Point Detection;
+Wait( 1 );
+obj << Cumulative Events Plot( Piecewise Weibull NHPP Change Point Detection( 0 ) );
+obj << Mean Time Between Failures Plot( Piecewise Weibull NHPP Change Point Detection( 0 ) );
+
+```
+
+**例 2**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/BrakeReliability.jmp" );
+obj = dt << Reliability Growth(
+	Input Format( Dates ),
+	Timestamp( :Date ),
+	Event Count( :Fixes )
+);
+Report( obj )["Mean Time Between Failures"] << Close( 0 );
+obj << Piecewise Weibull NHPP Change Point Detection;
+Wait( 1 );
+cep = obj << Cumulative Events Plot;
+cep << Piecewise Weibull NHPP Change Point Detection( 0 );
+mtbf = obj << Mean Time Between Failures Plot;
+mtbf << Piecewise Weibull NHPP Change Point Detection( 0 );
+
+```
+
+#### Reinitialized Weibull NHPP
+
+**構文:** obj << Cumulative Events Plot( Reinitialized Weibull NHPP( state=0|1 ) );
+
+obj << Mean Time Between Failures Plot( Reinitialized Weibull NHPP( state=0|1 ) );
+
+scrobj << Reinitialized Weibull NHPP( state=0|1 ) )
+
+**説明:** 「累積イベント数」または「平均故障間隔」プロットにおいて、再初期化Weibull-NHPPモデルの表示/非表示を切り替える。 デフォルトではオン。
+
+**例 1**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/ProductionEquipment.jmp" );
+obj = dt << Reliability Growth(
+	Input Format( Time to Event ),
+	Time to Event( :Hours of Operation ),
+	Event Count( :Fixes ),
+	Phase( :Design Stage )
+);
+Report( obj )["Mean Time Between Failures"] << Close( 0 );
+obj << Reinitialized Weibull NHPP;
+Wait( 1 );
+obj << Cumulative Events Plot( Reinitialized Weibull NHPP( 0 ) );
+obj << Mean Time Between Failures Plot( Reinitialized Weibull NHPP( 0 ) );
+
+```
+
+**例 2**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/ProductionEquipment.jmp" );
+obj = dt << Reliability Growth(
+	Input Format( Time to Event ),
+	Time to Event( :Hours of Operation ),
+	Event Count( :Fixes ),
+	Phase( :Design Stage )
+);
+Report( obj )["Mean Time Between Failures"] << Close( 0 );
+obj << Reinitialized Weibull NHPP;
+Wait( 1 );
+cep = obj << Cumulative Events Plot;
+cep << Reinitialized Weibull NHPP( 0 );
+mtbf = obj << Mean Time Between Failures Plot;
+mtbf << Reinitialized Weibull NHPP( 0 );
+
+```
+
+## Fixed Parameter Crow AMSAA
+
+### 項目のメッセージ
+
+#### Show Cumulative Events Plot
+
+**構文:** scrobj << Show Cumulative Events Plot( state=0|1 )
+
+**説明:** 「累積イベント数」プロットの表示/非表示を切り替える。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+Report( obj )["Observed Data"] << Close( 1 );
+report = obj << Crow AMSAA;
+report << Show Cumulative Events Plot( 1 );
+
+```
+
+#### Show Intensity Plot
+
+**構文:** scrobj << Show Intensity Plot( state=0|1 )
+
+**説明:** 強度プロットの表示/非表示を切り替える。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+Report( obj )["Observed Data"] << Close( 1 );
+report = obj << Crow AMSAA;
+report << Show Intensity Plot( 1 );
+
+```
+
+#### Show MTBF Plot
+
+**構文:** scrobj << Show MTBF Plot( state=0|1 )
+
+**説明:** 平均故障間隔プロットの表示/非表示を切り替える。 デフォルトではオン。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+Report( obj )["Observed Data"] << Close( 1 );
+report = obj << Crow AMSAA;
+report << Show MTBF Plot( 0 );
+
+```
+
+#### Show Profilers
+
+**構文:** scrobj << Show Profilers( state=0|1 )
+
+**説明:** 平均故障間隔、故障強度、累積イベント数に対するプロファイルの表示/非表示を切り替える。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+Report( obj )["Observed Data"] << Close( 1 );
+report = obj << Crow AMSAA;
+report << Show Profilers( 1 );
+
+```
+
+#### beta
+
+**構文:** obj << Fixed Parameter Crow AMSAA( beta( number ) )
+
+**説明:** ベータ(beta, β)パラメータの固定値を指定する。引数が欠測値の場合、パラメータは固定されない。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+Report( obj )["Observed Data"] << Close( 1 );
+obj << Fixed Parameter Crow AMSAA( Beta( 0.8 ) );
+Report( obj )["Crow-AMSAA"] << Close( 1 );
+
+```
+
+#### lambda
+
+**構文:** obj << Fixed Parameter Crow AMSAA( lambda( number ) )
+
+**説明:** ラムダ(lambda, λ)パラメータの固定値を指定する。引数が欠測値の場合、パラメータは固定されない。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+Report( obj )["Observed Data"] << Close( 1 );
+obj << Fixed Parameter Crow AMSAA( lambda( 0.02 ) );
+Report( obj )["Crow-AMSAA"] << Close( 1 );
+
+```
+
+## Mean Time Between Failures Plot
+
+### 関連するコンストラクター
+
+#### Mean Time Between Failures Plot
+
+**構文:** obj << Mean Time Between Failures Plot( ... );
+
+scrobj = obj << Mean Time Between Failures Plot
+
+**説明:** 「平均故障間隔」プロット上でモデルの表示/非表示の切り替えを可能にする。引数なしで指定した場合、プロットへのスクリプト可能な参照を戻す。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+obj << Crow AMSAA;
+Report( obj )["Mean Time Between Failures"] << Close( 0 );
+plot = obj << Mean Time Between Failures Plot;
+plot << Crow AMSAA( 0 );
+
+```
+
+### 項目のメッセージ
+
+#### Crow AMSAA
+
+**構文:** obj << Cumulative Events Plot( Crow AMSAA( state=0|1 ) );
+
+obj << Mean Time Between Failures Plot( Crow AMSAA( state=0|1 ) );
+
+scrobj << Crow AMSAA( state=0|1 ) )
+
+**説明:** 「累積イベント数」または「平均故障間隔」プロットにおいて、Crow-AMSAAモデルの表示/非表示を切り替える。 デフォルトではオン。
+
+**例 1**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+Report( obj )["Mean Time Between Failures"] << Close( 0 );
+obj << Crow AMSAA;
+Wait( 1 );
+obj << Cumulative Events Plot( Crow AMSAA( 0 ) );
+obj << Mean Time Between Failures Plot( Crow AMSAA( 0 ) );
+
+```
+
+**例 2**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+Report( obj )["Mean Time Between Failures"] << Close( 0 );
+obj << Crow AMSAA;
+Wait( 1 );
+cep = obj << Cumulative Events Plot;
+cep << Crow AMSAA( 0 );
+mtbf = obj << Mean Time Between Failures Plot;
+mtbf << Crow AMSAA( 0 );
+
+```
+
+#### Crow AMSAA with Modified MLE
+
+**構文:** obj << Cumulative Events Plot( Crow AMSAA with Modified MLE( state=0|1 ) );
+
+obj << Mean Time Between Failures Plot( Crow AMSAA with Modified MLE( state=0|1 ) );
+
+scrobj << Crow AMSAA with Modified MLE( state=0|1 ) )
+
+**説明:** 「累積イベント数」または「平均故障間隔」プロットにおいて、修正Crow-AMSAAモデルの表示/非表示を切り替える。このモデルは、Crow-AMSAAモデルにおいて、ベータ(beta, β)の推定値をバイアスに対して修正したものである。 デフォルトではオン。
+
+**例 1**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+Report( obj )["Mean Time Between Failures"] << Close( 0 );
+obj << Crow AMSAA with Modified MLE;
+Wait( 1 );
+obj << Cumulative Events Plot( Crow AMSAA with Modified MLE( 0 ) );
+obj << Mean Time Between Failures Plot( Crow AMSAA with Modified MLE( 0 ) );
+
+```
+
+**例 2**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+Report( obj )["Mean Time Between Failures"] << Close( 0 );
+obj << Crow AMSAA with Modified MLE;
+Wait( 1 );
+cep = obj << Cumulative Events Plot;
+cep << Crow AMSAA with Modified MLE( 0 );
+mtbf = obj << Mean Time Between Failures Plot;
+mtbf << Crow AMSAA with Modified MLE( 0 );
+
+```
+
+#### Customize Average MTBF
+
+**構文:** obj << Mean Time Between Failures( Options( Sample MTBF Type( "Customized Average MTBF" ), Customize Average MTBF( vector ) ) );
+
+scrobj << Options( Sample MTBF Type( "Customized Average MTBF" ), Customize Average MTBF( vector ) )
+
+**説明:** 平均故障間隔の計算に使う互いに素な区間の集合を指定する。
+
+**例 1**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+obj << Mean Time Between Failures Plot(
+	Options(
+		Sample MTBF Type( "Customized Average MTBF" ),
+		Customize Average MTBF( [2500, 5000, 7500, 11000] )
+	)
+);
+(obj << report)["Mean Time Between Failures"] << Close( 0 );
+
+```
+
+**例 2**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+plot = obj << Mean Time Between Failures Plot;
+plot << Options(
+	Sample MTBF Type( "Customized Average MTBF" ),
+	Customize Average MTBF( [2500, 5000, 7500, 11000] )
+);
+(obj << report)["Mean Time Between Failures"] << Close( 0 );
+
+```
+
+#### Fixed Parameter Crow AMSAA
+
+**構文:** obj << Cumulative Events Plot( Fixed Parameter Crow AMSAA( state=0|1 ) );
+
+obj << Mean Time Between Failures Plot( Fixed Parameter Crow AMSAA( state=0|1 ) );
+
+scrobj << Fixed Parameter Crow AMSAA( state=0|1 ) )
+
+**説明:** 「累積イベント数」または「平均故障間隔」プロットにおいて、パラメータ指定のCrow-AMSAAモデルの表示/非表示を切り替える。 デフォルトではオン。
+
+**例 1**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+Report( obj )["Mean Time Between Failures"] << Close( 0 );
+obj << Fixed Parameter Crow AMSAA;
+Wait( 1 );
+obj << Cumulative Events Plot( Fixed Parameter Crow AMSAA( 0 ) );
+obj << Mean Time Between Failures Plot( Fixed Parameter Crow AMSAA( 0 ) );
+
+```
+
+**例 2**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+Report( obj )["Mean Time Between Failures"] << Close( 0 );
+obj << Fixed Parameter Crow AMSAA;
+Wait( 1 );
+cep = obj << Cumulative Events Plot;
+cep << Fixed Parameter Crow AMSAA( 0 );
+mtbf = obj << Mean Time Between Failures Plot;
+mtbf << Fixed Parameter Crow AMSAA( 0 );
+
+```
+
+#### Interval Size
+
+**構文:** obj << Mean Time Between Failures( Options( Sample MTBF Type( "Equal Interval Average MTBF" ), Interval Size( number ) ) );
+
+scrobj << Options( Sample MTBF Type( "Equal Interval Average MTBF" ), Interval Size( number ) )
+
+**説明:** 平均故障間隔の計算に使う区間のサイズを指定する。
+
+**例 1**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+Report( obj )["Mean Time Between Failures"] << Close( 0 );
+obj << Mean Time Between Failures Plot(
+	Options( Sample MTBF Type( "Equal Interval Average MTBF" ), Interval Size( 2500 ) )
+);
+
+```
+
+**例 2**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+Report( obj )["Mean Time Between Failures"] << Close( 0 );
+plot = obj << Mean Time Between Failures Plot;
+plot << Options( Sample MTBF Type( "Equal Interval Average MTBF" ), Interval Size( 2500 ) );
+
+```
+
+#### Options
+
+**構文:** obj << Mean Time Between Failures( Options( ... ) );
+
+scrobj << Options( ... )
+
+**説明:** 「平均故障間隔」プロットを設定できる。
+
+**例 1**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/TurbineEngineDesign1.jmp" );
+obj = dt << Reliability Growth(
+	Input Format( Time to Event ),
+	Time to Event( :Day ),
+	Event Count( :Fixes ),
+	Phase( :Design Phase )
+);
+Report( obj )["Mean Time Between Failures"] << Close( 0 );
+obj << Mean Time Between Failures Plot(
+	Options( Sample MTBF Type( "Equal Interval Average MTBF" ) )
+);
+
+```
+
+**例 2**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/TurbineEngineDesign1.jmp" );
+obj = dt << Reliability Growth(
+	Input Format( Time to Event ),
+	Time to Event( :Day ),
+	Event Count( :Fixes ),
+	Phase( :Design Phase )
+);
+Report( obj )["Mean Time Between Failures"] << Close( 0 );
+mtbf = obj << Mean Time Between Failures Plot;
+mtbf << Options( Sample MTBF Type( "Equal Interval Average MTBF" ) );
+
+```
+
+#### Piecewise Weibull NHPP
+
+**構文:** obj << Cumulative Events Plot( Piecewise Weibull NHPP( state=0|1 ) );
+
+obj << Mean Time Between Failures Plot( Piecewise Weibull NHPP( state=0|1 ) );
+
+scrobj << Piecewise Weibull NHPP( state=0|1 ) )
+
+**説明:** 「累積イベント数」または「平均故障間隔」プロットにおいて、区分Weibull-NHPPモデルの表示/非表示を切り替える。 デフォルトではオン。
+
+**例 1**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/TurbineEngineDesign1.jmp" );
+obj = dt << Reliability Growth(
+	Input Format( Time to Event ),
+	Time to Event( :Day ),
+	Event Count( :Fixes ),
+	Phase( :Design Phase )
+);
+Report( obj )["Mean Time Between Failures"] << Close( 0 );
+obj << Piecewise Weibull NHPP;
+Wait( 1 );
+obj << Cumulative Events Plot( Piecewise Weibull NHPP( 0 ) );
+obj << Mean Time Between Failures Plot( Piecewise Weibull NHPP( 0 ) );
+
+```
+
+**例 2**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/TurbineEngineDesign1.jmp" );
+obj = dt << Reliability Growth(
+	Input Format( Time to Event ),
+	Time to Event( :Day ),
+	Event Count( :Fixes ),
+	Phase( :Design Phase )
+);
+Report( obj )["Mean Time Between Failures"] << Close( 0 );
+obj << Piecewise Weibull NHPP;
+Wait( 1 );
+cep = obj << Cumulative Events Plot;
+cep << Piecewise Weibull NHPP( 0 );
+mtbf = obj << Mean Time Between Failures Plot;
+mtbf << Piecewise Weibull NHPP( 0 );
+
+```
+
+#### Piecewise Weibull NHPP Change Point Detection
+
+**構文:** obj << Cumulative Events Plot( Piecewise Weibull NHPP Change Point Detection( state=0|1 ) );
+
+obj << Mean Time Between Failures Plot( Piecewise Weibull NHPP Change Point Detection( state=0|1 ) );
+
+scrobj << Piecewise Weibull NHPP Change Point Detection( state=0|1 ) )
+
+**説明:** 「累積イベント数」または「平均故障間隔」プロットにおいて、再初期化Weibull-NHPPモデルの表示/非表示を切り替える。 デフォルトではオン。
+
+**例 1**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/BrakeReliability.jmp" );
+obj = dt << Reliability Growth(
+	Input Format( Dates ),
+	Timestamp( :Date ),
+	Event Count( :Fixes )
+);
+Report( obj )["Mean Time Between Failures"] << Close( 0 );
+obj << Piecewise Weibull NHPP Change Point Detection;
+Wait( 1 );
+obj << Cumulative Events Plot( Piecewise Weibull NHPP Change Point Detection( 0 ) );
+obj << Mean Time Between Failures Plot( Piecewise Weibull NHPP Change Point Detection( 0 ) );
+
+```
+
+**例 2**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/BrakeReliability.jmp" );
+obj = dt << Reliability Growth(
+	Input Format( Dates ),
+	Timestamp( :Date ),
+	Event Count( :Fixes )
+);
+Report( obj )["Mean Time Between Failures"] << Close( 0 );
+obj << Piecewise Weibull NHPP Change Point Detection;
+Wait( 1 );
+cep = obj << Cumulative Events Plot;
+cep << Piecewise Weibull NHPP Change Point Detection( 0 );
+mtbf = obj << Mean Time Between Failures Plot;
+mtbf << Piecewise Weibull NHPP Change Point Detection( 0 );
+
+```
+
+#### Reinitialized Weibull NHPP
+
+**構文:** obj << Cumulative Events Plot( Reinitialized Weibull NHPP( state=0|1 ) );
+
+obj << Mean Time Between Failures Plot( Reinitialized Weibull NHPP( state=0|1 ) );
+
+scrobj << Reinitialized Weibull NHPP( state=0|1 ) )
+
+**説明:** 「累積イベント数」または「平均故障間隔」プロットにおいて、再初期化Weibull-NHPPモデルの表示/非表示を切り替える。 デフォルトではオン。
+
+**例 1**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/ProductionEquipment.jmp" );
+obj = dt << Reliability Growth(
+	Input Format( Time to Event ),
+	Time to Event( :Hours of Operation ),
+	Event Count( :Fixes ),
+	Phase( :Design Stage )
+);
+Report( obj )["Mean Time Between Failures"] << Close( 0 );
+obj << Reinitialized Weibull NHPP;
+Wait( 1 );
+obj << Cumulative Events Plot( Reinitialized Weibull NHPP( 0 ) );
+obj << Mean Time Between Failures Plot( Reinitialized Weibull NHPP( 0 ) );
+
+```
+
+**例 2**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/ProductionEquipment.jmp" );
+obj = dt << Reliability Growth(
+	Input Format( Time to Event ),
+	Time to Event( :Hours of Operation ),
+	Event Count( :Fixes ),
+	Phase( :Design Stage )
+);
+Report( obj )["Mean Time Between Failures"] << Close( 0 );
+obj << Reinitialized Weibull NHPP;
+Wait( 1 );
+cep = obj << Cumulative Events Plot;
+cep << Reinitialized Weibull NHPP( 0 );
+mtbf = obj << Mean Time Between Failures Plot;
+mtbf << Reinitialized Weibull NHPP( 0 );
+
+```
+
+#### Sample MTBF Type
+
+**構文:** obj << Mean Time Between Failures( Options( Sample MTBF Type( "Equal Interval Average MTBF"|"Customized Average MTBF" ) ) );
+
+scrobj << Options( Sample MTBF Type( "Equal Interval Average MTBF"|"Customized Average MTBF" ) )
+
+**説明:** 「平均故障間隔」プロットの計算方法を指定する。
+
+**例 1**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/TurbineEngineDesign1.jmp" );
+obj = dt << Reliability Growth(
+	Input Format( Time to Event ),
+	Time to Event( :Day ),
+	Event Count( :Fixes ),
+	Phase( :Design Phase )
+);
+Report( obj )["Mean Time Between Failures"] << Close( 0 );
+obj << Mean Time Between Failures Plot(
+	Options( Sample MTBF Type( "Equal Interval Average MTBF" ) )
+);
+
+```
+
+**例 2**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/TurbineEngineDesign1.jmp" );
+obj = dt << Reliability Growth(
+	Input Format( Time to Event ),
+	Time to Event( :Day ),
+	Event Count( :Fixes ),
+	Phase( :Design Phase )
+);
+Report( obj )["Mean Time Between Failures"] << Close( 0 );
+mtbf = obj << Mean Time Between Failures Plot;
+mtbf << Options( Sample MTBF Type( "Equal Interval Average MTBF" ) );
+
+```
+
+## Reliability Growth Report
+
+### 項目のメッセージ
+
+#### Show Cumulative Events Plot
+
+**構文:** scrobj << Show Cumulative Events Plot( state=0|1 )
+
+**説明:** 「累積イベント数」プロットの表示/非表示を切り替える。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+Report( obj )["Observed Data"] << Close( 1 );
+report = obj << Crow AMSAA;
+report << Show Cumulative Events Plot( 1 );
+
+```
+
+#### Show Intensity Plot
+
+**構文:** scrobj << Show Intensity Plot( state=0|1 )
+
+**説明:** 強度プロットの表示/非表示を切り替える。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+Report( obj )["Observed Data"] << Close( 1 );
+report = obj << Crow AMSAA;
+report << Show Intensity Plot( 1 );
+
+```
+
+#### Show MTBF Plot
+
+**構文:** scrobj << Show MTBF Plot( state=0|1 )
+
+**説明:** 平均故障間隔プロットの表示/非表示を切り替える。 デフォルトではオン。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+Report( obj )["Observed Data"] << Close( 1 );
+report = obj << Crow AMSAA;
+report << Show MTBF Plot( 0 );
+
+```
+
+#### Show Profilers
+
+**構文:** scrobj << Show Profilers( state=0|1 )
+
+**説明:** 平均故障間隔、故障強度、累積イベント数に対するプロファイルの表示/非表示を切り替える。
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/Reliability/NewEngineOperation.jmp" );
+obj = dt << Reliability Growth( Input Format( Time to Event ), Time to Event( :Hours ) );
+Report( obj )["Observed Data"] << Close( 1 );
+report = obj << Crow AMSAA;
+report << Show Profilers( 1 );
+
+```
+

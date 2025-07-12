@@ -1,0 +1,12 @@
+# Remove
+
+
+
+## Mensajes del elemento
+
+### Remove
+
+**Sintaxis:** obj << Remove
+
+**JMP Versión agregada:** 18
+

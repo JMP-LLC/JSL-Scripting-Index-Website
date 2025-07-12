@@ -1,0 +1,30 @@
+
+.wy-side-nav-search{
+    background-color: #0378CD;
+
+}
+.wy-menu-vertical li.toctree-l2 a, .wy-menu-vertical li.toctree-l3 a, .wy-menu-vertical li.toctree-l4 a, .wy-menu-vertical li.toctree-l5 a, .wy-menu-vertical li.toctree-l6 a{
+    color: black !important;
+}
+
+.caption-text{
+    color: #FFFFFF
+}
+body{
+    background-color: black;
+}
+.clipboard {
+    position: relative;
+    display: block;
+    float: right;
+    right: 1.5rem;
+    top: 1rem;
+    line-height: 0px;
+    width: 0px;
+}
+
+.clipboard:hover {
+  color: var(--md-accent-fg-color);
+  transition: color 125ms;
+  cursor: pointer;
+}

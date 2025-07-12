@@ -1,0 +1,185 @@
+# Comparison
+
+
+
+## 関数
+
+### Equal
+
+**構文:** z = x == y == ...; z = Equal( x, y, ... )
+
+**説明:** すべての引数が右隣の引数と等しい場合に1、それ以外の場合は0を戻す。
+
+**JMP追加されたバージョン:** バージョン14より前
+
+```jsl
+
+Names Default To Here( 1 );
+1 == 1;
+
+```
+
+### Greater
+
+**構文:** z = x > y > ... ; z = Greater( x, y, ... )
+
+**説明:** すべての引数が右隣の引数より大きい場合に1、それ以外の場合は0を戻す。
+
+**JMP追加されたバージョン:** バージョン14より前
+
+```jsl
+
+Names Default To Here( 1 );
+3 > 2 > 1;
+
+```
+
+### Greater or Equal
+
+**構文:** z = x >= y >= ... ; z = Greater or Equal( x, y, ... )
+
+**説明:** すべての引数が右隣の引数以上になっている場合に1、それ以外の場合は0を戻す。
+
+**JMP追加されたバージョン:** バージョン14より前
+
+```jsl
+
+Names Default To Here( 1 );
+3 >= 2 >= 2;
+
+```
+
+### Is Missing
+
+**構文:** y = Is Missing( x )
+
+**説明:** 引数xが欠測値の場合に1、それ以外の場合は0を戻す。
+
+**JMP追加されたバージョン:** バージョン14より前
+
+```jsl
+
+Names Default To Here( 1 );
+Is Missing( . );
+
+```
+
+### Is Same Color
+
+**構文:** x = Is Same Color( color1, color2, ... )
+
+**説明:** 色が等しいかどうかを比較する。
+
+**JMP追加されたバージョン:** 18
+
+**例 1**
+
+```jsl
+
+Names Default To Here( 1 );
+Is Same Color( "black", 0 );
+
+```
+
+**例 2**
+
+```jsl
+
+Names Default To Here( 1 );
+Is Same Color( "red", "green", "blue" );
+
+```
+
+**例 3**
+
+```jsl
+
+Names Default To Here( 1 );
+Is Same Color( "red", To Color Space( "hls", "red" ) );
+
+```
+
+**例 4**
+
+```jsl
+
+Names Default To Here( 1 );
+Is Same Color( To Color Space( "LUV", "red" ), "red" );
+
+```
+
+### Less
+
+**構文:** z = x < y < ... ; z = Less( x, y, ... )
+
+**説明:** すべての引数が右隣の引数より小さい場合に1、それ以外の場合は0を戻す。
+
+**JMP追加されたバージョン:** バージョン14より前
+
+```jsl
+
+Names Default To Here( 1 );
+[1 1 1] < [0 1 2];
+
+```
+
+### Less LessEqual
+
+**構文:** z = x < y <= ... ; z = Less LessEqual( x, y, ... )
+
+**説明:** 第1引数が第2引数より小さく、かつ第1引数以外の各引数が次の引数以下の場合に1、それ以外の場合は0を戻す。
+
+**JMP追加されたバージョン:** バージョン14より前
+
+```jsl
+
+Names Default To Here( 1 );
+1 < 2 <= 2;
+
+```
+
+### Less or Equal
+
+**構文:** z = x <= y <= ... ; z = Less or Equal( x, y, ... )
+
+**説明:** すべての引数が右隣の引数以下になっている場合に1、それ以外の場合は0を戻す。
+
+**JMP追加されたバージョン:** バージョン14より前
+
+```jsl
+
+Names Default To Here( 1 );
+1 <= 2 <= 2;
+
+```
+
+### LessEqual Less
+
+**構文:** z = x <= y < ... ; z = LessEqual Less( x, y, ... )
+
+**説明:** 第1引数が第2引数以下で、かつ第1引数以外の各引数が次の引数より小さい場合に1、それ以外の場合は0を戻す。
+
+**JMP追加されたバージョン:** バージョン14より前
+
+```jsl
+
+Names Default To Here( 1 );
+2 <= 2 < 3;
+
+```
+
+### Not Equal
+
+**構文:** z = x != y != ...; z = Not Equal( x, y, ... )
+
+**説明:** すべての引数が、右隣の引数と等しくない場合に1、それ以外の場合は0を戻す。
+
+**JMP追加されたバージョン:** バージョン14より前
+
+```jsl
+
+Names Default To Here( 1 );
+1 != 2 != 1;
+
+```
+
