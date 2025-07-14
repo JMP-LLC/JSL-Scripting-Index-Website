@@ -2,7 +2,7 @@ site_name: JMP SkriptIndex
 theme: 
   name: readthedocs
   highlightjs: true
-  locale: de
+  locale: ko
   hljs_languages:
     - js
   logo: img/JMPScriptingIndexLogo.svg

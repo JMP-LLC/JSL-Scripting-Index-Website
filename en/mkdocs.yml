@@ -16,7 +16,7 @@ plugins:
   - search:
       prebuild_index: true
 extra_css:
-  - jmpstyle.css
+  - css/jmpstyle.css
 extra_javascript:
   - js/syntaxhighlighting.js
   - js/popper.min.js

@@ -1,0 +1,61 @@
+.wy-side-nav-search {
+  background-color: #0378cd;
+}
+.wy-menu-vertical li.toctree-l2 a,
+.wy-menu-vertical li.toctree-l3 a,
+.wy-menu-vertical li.toctree-l4 a,
+.wy-menu-vertical li.toctree-l5 a,
+.wy-menu-vertical li.toctree-l6 a {
+  color: black !important;
+}
+
+.caption-text {
+  color: #ffffff;
+  font-size: 16px;
+}
+body {
+  background-color: black;
+}
+.clipboard {
+  position: relative;
+  display: block;
+  float: right;
+  right: 1.5rem;
+  top: 1rem;
+  line-height: 0px;
+  width: 0px;
+}
+
+.clipboard:hover {
+  color: var(--md-accent-fg-color);
+  transition: color 125ms;
+  cursor: pointer;
+}
+.toctree-l1 > a,
+.toctree-l2 > a {
+  font-size: 16px;
+}
+
+.toctree-l3 > a {
+  font-size: 14px;
+}
+.toctree-l4 > a,
+.toctree-l5 > a,
+.toctree-l6 > a {
+  font-size: 12px;
+}
+
+@font-face {
+  font-family: "Anova";
+  src: url("AnovaUI-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+* {
+  font-family: "Anova", sans-serif !important;
+  --md-text-font: "Anova" !important;
+}
+.rst-content code, .rst-content tt, code, .hljs-title, .hljs-string, .hljs-number, .hljs-variable {
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, Courier, monospace !important;
+}
+
