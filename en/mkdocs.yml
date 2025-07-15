@@ -5,7 +5,7 @@ theme:
   locale: en
   hljs_languages:
     - python
-  logo: img/JMPScriptingIndexLogo.svg
+  logo: img/JMPScriptingIndexLogoTest.svg
   collapse_navigation: false
   navigation_depth: 6
   include_homepage_in_sidebar: false

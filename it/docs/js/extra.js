@@ -15,12 +15,14 @@ $(document).ready(function() {
   var lastDivChild4 = lastDivChild3.nextSibling;
   var lastDivChild5 = lastDivChild4.nextSibling;
   var lastDivChild6 = lastDivChild5.nextSibling;
+  var lastDivChild7 = lastDivChild6.nextSibling;
   lastDivChild1.remove();
   lastDivChild2.remove();
   lastDivChild3.remove();
   lastDivChild4.remove();
   lastDivChild5.remove();
   lastDivChild6.remove();
+  lastDivChild7.remove();
   Array.prototype.forEach.call(selectors, function(selector){
     selector.insertAdjacentHTML('beforebegin', copyButton);
   });

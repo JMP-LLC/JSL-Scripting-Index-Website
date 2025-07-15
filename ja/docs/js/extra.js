@@ -10,17 +10,7 @@ $(document).ready(function() {
 
   var lastDiv = document.querySelector('div[role="contentinfo"]');
   var lastDivChild1 = lastDiv.nextSibling;
-  var lastDivChild2 = lastDivChild1.nextSibling;
-  var lastDivChild3 = lastDivChild2.nextSibling;
-  var lastDivChild4 = lastDivChild3.nextSibling;
-  var lastDivChild5 = lastDivChild4.nextSibling;
-  var lastDivChild6 = lastDivChild5.nextSibling;
   lastDivChild1.remove();
-  lastDivChild2.remove();
-  lastDivChild3.remove();
-  lastDivChild4.remove();
-  lastDivChild5.remove();
-  lastDivChild6.remove();
   Array.prototype.forEach.call(selectors, function(selector){
     selector.insertAdjacentHTML('beforebegin', copyButton);
   });

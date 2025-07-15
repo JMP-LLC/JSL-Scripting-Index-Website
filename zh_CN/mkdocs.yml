@@ -24,3 +24,4 @@ extra_javascript:
 plugins:
   - search:
       prebuild_index: true
+      separator: '[\s\u200b\-]'
