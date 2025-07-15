@@ -6,7 +6,7 @@
 
 ### By
 
-**Sintaxis:** obj << By( column(s) )
+**Sintaxis:** obj &lt;&lt; By( column(s) )
 
 **JMP Versión agregada:** 15
 
@@ -28,7 +28,7 @@ obj = dt << Model Driven Multivariate Control Chart(
 
 ### Process
 
-**Sintaxis:** obj << Process( column(s) )
+**Sintaxis:** obj &lt;&lt; Process( column(s) )
 
 **JMP Versión agregada:** 15
 
@@ -44,7 +44,7 @@ obj = dt << Model Driven Multivariate Control Chart(
 
 ### Time ID
 
-**Sintaxis:** obj << Time ID( column )
+**Sintaxis:** obj &lt;&lt; Time ID( column )
 
 **JMP Versión agregada:** 15
 
@@ -117,7 +117,7 @@ obj << Show Alarm Report( 1 );
 
 ### Change Point Detection
 
-**Sintaxis:** obj << Change Point Detection( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Change Point Detection( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico de detección de fase de los estadísticos de prueba por número de fila y una matriz de gráficos de dispersión.
 
@@ -134,7 +134,7 @@ obj << Change Point Detection( 1 );
 
 ### Diagnose the Process
 
-**Sintaxis:** obj << Diagnose the Process( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Diagnose the Process( state=0|1 )
 
 **Descripción:** Muestra u oculta los gráficos de diagnóstico.
 
@@ -175,7 +175,7 @@ obj = dt << Model Driven Multivariate Control Chart(
 
 ### Normalized DModX Plot
 
-**Sintaxis:** obj << Normalized DModX Plot( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Normalized DModX Plot( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico de los valores DModX normalizados. DModX mide la distancia de cada observación al modelo PCA o PLS.
 
@@ -194,7 +194,7 @@ obj << Normalized DModX Plot( 1 );
 
 ### Parallel Coord Plot
 
-**Sintaxis:** obj << Parallel Coord Plot( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Parallel Coord Plot( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico de coordenadas paralelas de las variables.
 
@@ -213,7 +213,7 @@ obj << Parallel Coord Plot( Show Mean( 1 ) );
 
 ### Score Plot
 
-**Sintaxis:** obj << Score Plot( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Score Plot( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico de puntuaciones de los componentes principales o factores de mínimos cuadrados parciales.
 
@@ -232,7 +232,7 @@ obj << Score Plot( 1 );
 
 ### Set Alpha Level
 
-**Sintaxis:** obj << Set Alpha Level( "0.01"|"0.05"|"0.10"|"0.50"|"Otro…" )
+**Sintaxis:** obj &lt;&lt; Set Alpha Level( "0.01"|"0.05"|"0.10"|"0.50"|"Otro…" )
 
 **Descripción:** Especifica el nivel de significación que se utiliza para calcular los límites de decisión.
 
@@ -251,7 +251,7 @@ obj << Set Alpha Level( 0.1 );
 
 ### Set Component
 
-**Sintaxis:** obj << Set Component( number )
+**Sintaxis:** obj &lt;&lt; Set Component( number )
 
 **Descripción:** Le permite establecer el número de componentes para los gráficos T², DModX y SPE.
 
@@ -270,7 +270,7 @@ obj << Set Component( 2 );
 
 ### Set α Level
 
-**Sintaxis:** obj << Set α Level( "0.01"|"0.05"|"0.10"|"0.50"|"Otro…" )
+**Sintaxis:** obj &lt;&lt; Set α Level( "0.01"|"0.05"|"0.10"|"0.50"|"Otro…" )
 
 **Descripción:** Especifica el nivel de significación que se utiliza para calcular los límites de decisión.
 
@@ -287,7 +287,7 @@ obj << Set Alpha Level( 0.1 );
 
 ### Show Alarm Report
 
-**Sintaxis:** obj << Show Alarm Report( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Show Alarm Report( state=0|1 )
 
 **Descripción:** Muestra u oculta el informe de tasa de alarmas.
 
@@ -309,7 +309,7 @@ obj << Show Alarm Report( 1 );
 
 ### Show Excluded Rows
 
-**Sintaxis:** obj << Show Excluded Rows( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Show Excluded Rows( state=0|1 )
 
 **Descripción:** Muestra u oculta las filas excluidas en los gráficos. Cuando se selecciona esta opción, las filas excluidas se incluyen en el conteo de puntos fuera de control, pero se excluyen de los cálculos numéricos. Opción activada de forma predeterminada.
 
@@ -328,7 +328,7 @@ obj << Show Excluded Rows( 0 );
 
 ### Show History Summary Statistics
 
-**Sintaxis:** obj << Show History Summary Statistics( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Show History Summary Statistics( state=0|1 )
 
 **Descripción:** Muestra u oculta estadísticos de resumen que contienen valores propios, cargas de componentes principales, y medias y desviaciones estándar de variables del proceso. Las medias y desviaciones estándar se calculan a partir de datos históricos y se utilizan para calcular puntuaciones de componentes principales, T cuadrado, el error de predicción al cuadrado (SPE) y estadísticos DModX para los datos actuales.
 
@@ -347,7 +347,7 @@ obj << Show History Summary Statistics( 1 );
 
 ### Show Monitoring Plots
 
-**Sintaxis:** obj << Show Monitoring Plots( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Show Monitoring Plots( state=0|1 )
 
 **Descripción:** Muestra u oculta los gráficos de supervisión del proceso seleccionado.
 
@@ -366,7 +366,7 @@ obj << Show Monitoring Plots( 0 );
 
 ### Squared Prediction Error Plot
 
-**Sintaxis:** obj << Squared Prediction Error Plot( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Squared Prediction Error Plot( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico del error de predicción al cuadrado (SPE). SPE mide la suma de los residuos al cuadrado del modelo PCA o PLS.
 
@@ -385,7 +385,7 @@ obj << Squared Prediction Error Plot( 1 );
 
 ### T² Plot
 
-**Sintaxis:** obj << T² Plot( state=0|1 )
+**Sintaxis:** obj &lt;&lt; T² Plot( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico para el estadístico T². T² mide la distancia de una observación con respecto al centro de un modelo PCA o PLS. Opción activada de forma predeterminada.
 
@@ -404,7 +404,7 @@ obj << T Square Plot( 0 );
 
 ### Action
 
-**Sintaxis:** obj << Action
+**Sintaxis:** obj &lt;&lt; Action
 
 **Descripción:** Trampa multiuso dentro de una plataforma para insertar expresiones que se desean evaluar. Temporalmente establece los contextos de cuadros de visualización y tablas de datos en la plataforma.
 
@@ -422,7 +422,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descripción:** Aplica al objeto un preajuste creado previamente, actualizando las opciones y personalizaciones para que coincidan con la configuración guardada.
 
@@ -469,7 +469,7 @@ obj2 << Apply Preset( preset );
 
 ### Automatic Recalc
 
-**Sintaxis:** obj << Automatic Recalc( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Descripción:** Rehace automáticamente el análisis para modificaciones de datos y de exclusión. Si está activada la opción Recálculo automático, le recomendamos que utilice los comandos Wait(0) para asegurarse de que las modificaciones de datos y de exclusión surtan efecto antes del recálculo.
 
@@ -487,7 +487,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**Sintaxis:** obj << Broadcast(message)
+**Sintaxis:** obj &lt;&lt; Broadcast(message)
 
 **Descripción:** Difunde un mensaje a una plataforma. Si los resultados devueltos de objetos individuales son tablas, se concatenan si es posible y el formato final es idéntico al resultado de la opción Guardar tabla combinada en un cuadro de tabla o al resultado de la opción Concatenar mediante una columna de origen. Los demás resultados se almacenan en una lista y se devuelven.
 
@@ -507,7 +507,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**Sintaxis:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Sintaxis:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Descripción:** Añade un panel de control para cambiar las variables de la plataforma
 
@@ -525,7 +525,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**Sintaxis:** obj << Copy ByGroup Script
+**Sintaxis:** obj &lt;&lt; Copy ByGroup Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -548,7 +548,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Sintaxis:** obj << Copy Script
+**Sintaxis:** obj &lt;&lt; Copy Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -565,7 +565,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Sintaxis:** obj << Data Table Window
+**Sintaxis:** obj &lt;&lt; Data Table Window
 
 **Descripción:** Mueve al frente la ventana de la tabla de datos que se utiliza en este análisis.
 
@@ -582,7 +582,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Sintaxis:** obj << Get By Levels
+**Sintaxis:** obj &lt;&lt; Get By Levels
 
 **Descripción:** Devuelve un arreglo asociativo que asigna las columnas Por grupo a sus valores.
 
@@ -599,7 +599,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Sintaxis:** obj << Get ByGroup Script
+**Sintaxis:** obj &lt;&lt; Get ByGroup Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -623,7 +623,7 @@ Show( t );
 
 ### Get Container
 
-**Sintaxis:** obj << Get Container
+**Sintaxis:** obj &lt;&lt; Get Container
 
 **Descripción:** Devuelve una referencia al cuadro contenedor que incluye el contenido del objeto.
 
@@ -672,7 +672,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Sintaxis:** obj << Get Data Table
+**Sintaxis:** obj &lt;&lt; Get Data Table
 
 **Descripción:** Devuelve una referencia a la tabla de datos.
 
@@ -690,7 +690,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**Sintaxis:** obj << Get Group Platform
+**Sintaxis:** obj &lt;&lt; Get Group Platform
 
 **Descripción:** Devuelve el objeto Plataforma grupal si esta plataforma forma parte de un grupo. De lo contrario, devuelve Empty().
 
@@ -707,7 +707,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**Sintaxis:** obj << Get Script
+**Sintaxis:** obj &lt;&lt; Get Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -725,7 +725,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Sintaxis:** obj << Get Script With Data Table
+**Sintaxis:** obj &lt;&lt; Get Script With Data Table
 
 **Descripción:** Crea un script (JSL) para generar este análisis haciendo referencia específica a esta tabla de datos y lo devuelve en forma de expresión.
 
@@ -743,7 +743,7 @@ Show( t );
 
 ### Get Timing
 
-**Sintaxis:** obj << Get Timing
+**Sintaxis:** obj &lt;&lt; Get Timing
 
 **Descripción:** Determina el tiempo de inicio de una plataforma.
 
@@ -761,7 +761,7 @@ Show( t );
 
 ### Get Web Support
 
-**Sintaxis:** obj << Get Web Support
+**Sintaxis:** obj &lt;&lt; Get Web Support
 
 **Descripción:** Devuelve un número que indica el nivel de compatibilidad del HTML interactivo para el objeto de visualización. 1 significa que algunos o todos los elementos son compatibles. 0 significa que no existe compatibilidad.
 
@@ -777,7 +777,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Sintaxis:** obj << Get Where Expr
+**Sintaxis:** obj &lt;&lt; Get Where Expr
 
 **Descripción:** Devuelve la expresión Where para el subconjunto de datos, si la plataforma se inició con By() o Where(). De lo contrario, devuelve Empty().
 
@@ -814,7 +814,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Sintaxis:** obj << Local Data Filter
+**Sintaxis:** obj &lt;&lt; Local Data Filter
 
 **Descripción:** Para filtrar los datos según grupos o rangos determinados, pero locales para esta plataforma.
 
@@ -870,7 +870,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Sintaxis:** obj << Paste Local Data Filter
+**Sintaxis:** obj &lt;&lt; Paste Local Data Filter
 
 **Descripción:** Se aplica el filtro de datos locales del portapapeles al informe actual.
 
@@ -891,7 +891,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**Sintaxis:** obj << Redo Analysis
+**Sintaxis:** obj &lt;&lt; Redo Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -908,7 +908,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**Sintaxis:** obj << Redo ByGroup Analysis
+**Sintaxis:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -931,7 +931,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**Sintaxis:** obj << Relaunch Analysis
+**Sintaxis:** obj &lt;&lt; Relaunch Analysis
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -948,7 +948,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**Sintaxis:** obj << Relaunch ByGroup
+**Sintaxis:** obj &lt;&lt; Relaunch ByGroup
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -971,7 +971,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**Sintaxis:** obj << Remove Column Switcher
+**Sintaxis:** obj &lt;&lt; Remove Column Switcher
 
 **Descripción:** Quita el Cambiador de columnas más reciente que se haya agregado a la plataforma.
 
@@ -991,7 +991,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Sintaxis:** obj << Remove Local Data Filter
+**Sintaxis:** obj &lt;&lt; Remove Local Data Filter
 
 **Descripción:** Si se ha creado un filtro de datos local, esto lo eliminará y restaurará la plataforma para usar todos los datos de la tabla de datos directamente.
 
@@ -1030,9 +1030,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Sintaxis:** obj << Report;
-
-Report( obj )
+**Sintaxis:** obj &lt;&lt; Report;Report( obj )
 
 **Descripción:** Devuelve una referencia al objeto informe.
 
@@ -1051,7 +1049,7 @@ Show( t );
 
 ### Report View
 
-**Sintaxis:** obj << Report View( "Completa"|"Resumen" )
+**Sintaxis:** obj &lt;&lt; Report View( "Completa"|"Resumen" )
 
 **Descripción:** La vista del informe determina el nivel de detalle visible en el informe de una plataforma. Full muestra todos los detalles, mientras que Summary solo muestra el contenido seleccionado, con independencia de la plataforma. Para el comportamiento personalizado, los cuadros de visualización admiten un mensaje <<Set Summary Behavior.
 
@@ -1068,7 +1066,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**Sintaxis:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis, y lo guarda como propiedad de tabla en la tabla de datos. Puede especificar un nombre para el script. La opción Append Suffix añade un sufijo numérico al nombre del script, que diferencia el script de un script existente que tenga el mismo nombre. La opción Prompt solicita al usuario que especifique un nombre de script. La opción Replace reemplaza un script existente que tenga el mismo nombre.
 
@@ -1091,7 +1089,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Sintaxis:** obj << Save ByGroup Script to Journal
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -1114,7 +1112,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Sintaxis:** obj << Save ByGroup Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -1137,7 +1135,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**Sintaxis:** obj << Save Script for All Objects
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects
 
 **Descripción:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -1154,7 +1152,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Sintaxis:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descripción:** Guarda un script para todos los objetos de informe en la tabla de datos actual. Esta opción es útil cuando tiene varios informes en la ventana. El script recibe el nombre de la primera plataforma a menos que especifique el nombre del script entre comillas.
 
@@ -1198,7 +1196,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Sintaxis:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis y lo guarda en forma de propiedad de tabla en la tabla de datos.
 
@@ -1215,7 +1213,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Sintaxis:** obj << Save Script to Journal
+**Sintaxis:** obj &lt;&lt; Save Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -1232,7 +1230,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Sintaxis:** obj << Save Script to Report
+**Sintaxis:** obj &lt;&lt; Save Script to Report
 
 **Descripción:** Crea un script JSL para generar este análisis y lo muestra en el propio informe. Resulta útil para conservar un registro impreso de lo que se ha hecho.
 
@@ -1249,7 +1247,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Sintaxis:** obj << Save Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -1331,7 +1329,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Sintaxis:** obj << Sync to Data Table Changes
+**Sintaxis:** obj &lt;&lt; Sync to Data Table Changes
 
 **Descripción:** Realiza una sincronización con las modificaciones de datos y de exclusión que se hayan realizado.
 
@@ -1348,7 +1346,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Sintaxis:** obj << Title( "new title" )
+**Sintaxis:** obj &lt;&lt; Title( "new title" )
 
 **Descripción:** Establece el título de la plataforma.
 
@@ -1365,7 +1363,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Sintaxis:** obj << Top Report
+**Sintaxis:** obj &lt;&lt; Top Report
 
 **Descripción:** Devuelve una referencia al nodo raíz del informe.
 
@@ -1384,7 +1382,7 @@ Show( t );
 
 ### Transform Column
 
-**Sintaxis:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Sintaxis:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Descripción:** Crea una columna de transformación en el contexto local de un objeto (una plataforma por lo general). La columna de transformación solo está activa mientras esté en uso la plataforma.
 
@@ -1405,7 +1403,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**Sintaxis:** obj << View Web XML
+**Sintaxis:** obj &lt;&lt; View Web XML
 
 **Descripción:** Devuelve el código XML que se utiliza para crear el informe HTML interactivo.
 
@@ -1420,9 +1418,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**Sintaxis:** obj = Model Driven Multivariate Control Chart(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Model Driven Multivariate Control Chart(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Establece el tipo de ventana que se creará para el informe. De forma predeterminada, se creará una ventana de informe Visible. Una ventana Invisible no aparecerá en pantalla, pero se puede detectar mediante funciones como Window(). Una ventana Private responde a la mayoría de los mensajes de ventana pero no es detectable y se debe abordar a través del objeto de informe.
 

@@ -2,8 +2,6 @@
 
 
 
-## Funktionen
-
 ### Abs
 
 **Syntax:** y = Abs( x )
@@ -66,7 +64,7 @@ Floor( 1.2 );
 
 ### Integrate
 
-**Syntax:** y = Integrate( expr, varname, lowLimit, upLimit, <<Tolerance(1e-10), <<StoreInfo(list), <<StartingValue(val) )
+**Syntax:** y = Integrate( expr, varname, lowLimit, upLimit, &lt;&lt;Tolerance(1e-10), &lt;&lt;StoreInfo(list), &lt;&lt;StartingValue(val) )
 
 **Beschreibung:** Integriert einen Ausdruck in Bezug auf einen skalaren Wert und verwendet die adaptive Quadraturmethode von Gander und Gautschi (2000). Wenn der mit varname angegebenen Variablen ein Wert zugewiesen ist oder das optionale Argument <<StartingValue() einen Startwert angibt, wird dieser Wert als typischer Wert zur Verbesserung der Genauigkeit des Integrals verwendet. Um unendliche Integrationsbereiche anzugeben, setzen Sie lowLimit, upLimit oder beide auf fehlend. Wenn <<StoreInfo() angegeben ist, enthält das Argument von <<StoreInfo() diagnostische Kennwerte der numerischen Integrationsroutine. Wenn <<Toleranz() angegeben ist, wird das Argument von <<Toleranz() als Toleranzniveau in der Auto-Integrationsfunktion verwendet, mit der das Integral ausgewertet wird. Kleinere Werte führen zu längeren Laufzeiten, jedoch präziseren Ergebnissen.
 
@@ -160,7 +158,7 @@ Normal Integrate(
 
 ### Num Deriv
 
-**Syntax:** y = Num Deriv( f( x, ... ),  <parnum>)
+**Syntax:** y = Num Deriv( f( x, ... ), &lt;parnum&gt;)
 
 **Beschreibung:** Gibt die numerische Ableitung der Funktion f( x,... ) in Bezug auf eines ihrer Argumente zurück. Sie können dieses Argument als zweites Argument in der Funktion Num Derivangeben. Wenn kein zweites Argument angegeben ist, wird die Ableitung nach dem ersten Argument der Funktion genommen. Die Ableitung wird mithilfe von numerischen Werten, die im Funktionsausdruck f( x,... ) angegeben sind, ausgewertet.
 
@@ -193,7 +191,7 @@ Num Deriv2( f( 2 ) );
 
 ### Round
 
-**Syntax:** y = Round( x, <n> )
+**Syntax:** y = Round( x, &lt;n&gt; )
 
 **Beschreibung:** Rundet x auf n Ziffern nach dem Dezimalkomma (oder 0 Ziffern, wenn n nicht angegeben ist). Beachten Sie, dass das Argument n negativ sein kann.
 

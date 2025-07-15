@@ -6,7 +6,7 @@
 
 ### Close Outline
 
-**구문:** obj << Close Outline( state=0|1 )
+**구문:** obj &lt;&lt; Close Outline( state=0|1 )
 
 **설명:** 열 전환기 개요 상자를 열거나 닫습니다.
 
@@ -22,7 +22,7 @@ ColumnSwitcherObject << Close Outline( 1 );
 
 ### Get Current
 
-**구문:** obj << Get Current
+**구문:** obj &lt;&lt; Get Current
 
 **설명:** 현재 변수의 이름을 가져옵니다.
 
@@ -39,7 +39,7 @@ ColumnSwitcherObject << Get Current/*country*/ ;
 
 ### Get Layout
 
-**구문:** obj << Get Layout
+**구문:** obj &lt;&lt; Get Layout
 
 **설명:** 여러 열 전환기의 레이아웃을 가져옵니다. 값은 세로(0) 또는 가로(1)입니다.
 
@@ -62,7 +62,7 @@ If( cs2 << Get Layout() == 1,
 
 ### Get List
 
-**구문:** obj << Get List
+**구문:** obj &lt;&lt; Get List
 
 **설명:** 사용 가능한 변수 목록을 가져옵니다.
 
@@ -78,7 +78,7 @@ ColumnSwitcherObject << Get List/*{"sex","country","marital status"}*/ ;
 
 ### Get Original
 
-**구문:** obj << Get Original
+**구문:** obj &lt;&lt; Get Original
 
 **설명:** 원래 변수의 이름을 가져옵니다.
 
@@ -95,7 +95,7 @@ ColumnSwitcherObject << Get Original/*marital status*/ ;
 
 ### Get Speed
 
-**구문:** obj << Get Speed
+**구문:** obj &lt;&lt; Get Speed
 
 **설명:** fpm = obj<<getSpeed /* in Frames Per Minute */;
 
@@ -111,7 +111,7 @@ FPM = ColumnSwitcherObject << Get Speed;
 
 ### Link Platform
 
-**구문:** obj << Link Platform( platform )
+**구문:** obj &lt;&lt; Link Platform( platform )
 
 **설명:** 이 열 전환기에 플랫폼을 연결합니다.
 
@@ -132,7 +132,7 @@ columnSwitcher << Link Platform( gb );
 
 ### Make Column Switch Handler
 
-**구문:** handler = cs << Make Column Switch Handler( function(pre), function(post) )
+**구문:** handler = cs &lt;&lt; Make Column Switch Handler( function(pre), function(post) )
 
 **설명:** 열 전환 전/후에 호출되는 콜백 함수를 사용하여 열 전환에 대한 처리기를 생성합니다. 콜백 함수는 이전 열, 다음 열 및 열 전환기를 받습니다. 전환을 허용하려면 전환 전에 지정된 함수에서 0이 아닌 값을 반환해야 합니다. 0을 반환하면 전환할 수 없습니다. 전환 후에 호출된 함수는 값을 반환하지 않아야 합니다.
 
@@ -170,7 +170,7 @@ columnSwitcher << Run;
 
 ### Next
 
-**구문:** obj << Next
+**구문:** obj &lt;&lt; Next
 
 **설명:** 열 전환기 선택을 다음 사용 가능한 선택으로 변경합니다.
 
@@ -186,7 +186,7 @@ ColumnSwitcherObject << Next;
 
 ### Pause
 
-**구문:** obj << Pause
+**구문:** obj &lt;&lt; Pause
 
 **설명:** 애니메이션을 일시 중지합니다.
 
@@ -204,7 +204,7 @@ ColumnSwitcherObject << Pause;
 
 ### Previous
 
-**구문:** obj << Previous
+**구문:** obj &lt;&lt; Previous
 
 **설명:** 열 전환기 선택을 이전 사용 가능한 선택으로 변경합니다.
 
@@ -220,7 +220,7 @@ ColumnSwitcherObject << Previous;
 
 ### Remove Column Switcher
 
-**구문:** obj << Remove Column Switcher
+**구문:** obj &lt;&lt; Remove Column Switcher
 
 **설명:** 이 열 전환기를 제거합니다.
 
@@ -238,7 +238,7 @@ ColumnSwitcherObject << Remove Column Switcher;
 
 ### Retain Axis Settings
 
-**구문:** obj << Retain Axis Settings( state=0|1 )
+**구문:** obj &lt;&lt; Retain Axis Settings( state=0|1 )
 
 **설명:** 일부 그래프는 열 이름을 기반으로 축 사용자 정의를 저장합니다. 기본적으로 이러한 사용자 정의는 열을 전환하면 제거됩니다. 이 옵션을 활성화하면 전환할 때 열이 업데이트되어 사용자 정의가 새 그래프에 적용됩니다.
 
@@ -265,7 +265,7 @@ Graph Builder(
 
 ### Run
 
-**구문:** obj << Run
+**구문:** obj &lt;&lt; Run
 
 **설명:** 애니메이션을 시작합니다.
 
@@ -281,7 +281,7 @@ ColumnSwitcherObject << Run;
 
 ### Script
 
-**구문:** obj << Script( script )
+**구문:** obj &lt;&lt; Script( script )
 
 **설명:** 열이 전환될 때 실행되는 스크립트를 설정합니다.
 
@@ -301,7 +301,7 @@ Wait( 5/*seconds, while it animates*/ );
 
 ### Set Current
 
-**구문:** obj << Set Current( string )
+**구문:** obj &lt;&lt; Set Current( string )
 
 **설명:** 현재 변수를 설정합니다.
 
@@ -317,7 +317,7 @@ ColumnSwitcherObject << Set Current( "country" );
 
 ### Set Layout
 
-**구문:** obj << Set Layout( 0 = Vertical | 1 = Horizontal )
+**구문:** obj &lt;&lt; Set Layout( 0 = Vertical | 1 = Horizontal )
 
 **설명:** 여러 열 전환기의 레이아웃을 세로(0) 또는 가로(1)로 설정합니다.
 
@@ -337,7 +337,7 @@ cs1 << Set Layout( 1 );
 
 ### Set N Lines
 
-**구문:** obj << Set N Lines( number )
+**구문:** obj &lt;&lt; Set N Lines( number )
 
 **설명:** 열 이름 목록 상자의 줄 수를 설정합니다.
 
@@ -353,7 +353,7 @@ ColumnSwitcherObject << Set N Lines( 20 );
 
 ### Set Script
 
-**구문:** obj << Set Script( script )
+**구문:** obj &lt;&lt; Set Script( script )
 
 **설명:** 열이 전환될 때 실행되는 스크립트를 설정합니다.
 
@@ -373,7 +373,7 @@ Wait( 5/*seconds, while it animates*/ );
 
 ### Set Size
 
-**구문:** obj << Set Size( number )
+**구문:** obj &lt;&lt; Set Size( number )
 
 **설명:** 열 이름 목록 상자의 픽셀 너비를 설정합니다.
 
@@ -389,7 +389,7 @@ ColumnSwitcherObject << Set Size( 300 );
 
 ### Set Speed
 
-**구문:** obj << Set Speed( number )
+**구문:** obj &lt;&lt; Set Speed( number )
 
 **설명:** obj<<setSpeed(60) /* in Frames Per Minute */;
 
@@ -405,7 +405,7 @@ ColumnSwitcherObject << Set Speed( 60 );/*FPM*/ColumnSwitcherObject << Run;
 
 ### Title
 
-**구문:** obj << Title( string )
+**구문:** obj &lt;&lt; Title( string )
 
 **설명:** 열 전환기 개요 상자의 제목을 설정합니다.
 

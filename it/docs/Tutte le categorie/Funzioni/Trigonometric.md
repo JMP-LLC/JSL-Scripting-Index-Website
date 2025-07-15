@@ -2,11 +2,9 @@
 
 
 
-## Funzioni
-
 ### ATan
 
-**Sintassi:** y = ArcTangent( x1, <x2=1> )
+**Sintassi:** y = ArcTangent( x1, &lt;x2=1&gt; )
 
 **Descrizione:** Restituisce la tangente trigonometrica inversa di x1/x2, dove il risultato è nel range [-Pi()/2, Pi()/2].
 
@@ -111,7 +109,7 @@ ArcSine( 0.5 );
 
 ### ArcTan
 
-**Sintassi:** y = ArcTangent( x1, <x2=1> )
+**Sintassi:** y = ArcTangent( x1, &lt;x2=1&gt; )
 
 **Descrizione:** Restituisce la tangente trigonometrica inversa di x1/x2, dove il risultato è nel range [-Pi()/2, Pi()/2].
 
@@ -141,7 +139,7 @@ ArcTanH( 0.5 );
 
 ### ArcTangent
 
-**Sintassi:** y = ArcTangent( x1, <x2=1> )
+**Sintassi:** y = ArcTangent( x1, &lt;x2=1&gt; )
 
 **Descrizione:** Restituisce la tangente trigonometrica inversa di x1/x2, dove il risultato è nel range [-Pi()/2, Pi()/2].
 

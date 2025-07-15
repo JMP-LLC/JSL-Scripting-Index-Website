@@ -8,7 +8,7 @@
 
 #### Authentication Method
 
-**语法:** obj << Authentication Method(method)
+**语法:** obj &lt;&lt; Authentication Method(method)
 
 **说明:** 强制一个身份验证方法。有效值包括:
 
@@ -61,7 +61,7 @@ request << Authentication Method( "KERBEROS" );
 
 #### Blob
 
-**语法:** obj << Blob( binary data, <content-type> )
+**语法:** obj &lt;&lt; Blob( binary data, &lt;content-type&gt; )
 
 **说明:** 该项将设置请求中的 Blob 值。Blob 值将用作文档的正文。请求内容类型标头将自动设置为“Content-Type: application/octet-stream”。
 
@@ -84,7 +84,7 @@ data = request << Send;
 
 #### Bypass Proxy
 
-**语法:** obj << Bypass Proxy(localhost)
+**语法:** obj &lt;&lt; Bypass Proxy(localhost)
 
 **说明:** 不使用代理的主机的逗号分隔列表（若指定了一个）。唯一的通配符是单个 * 字符，它匹配所有主机，可以有效地禁用代理。该列表中的每个名称匹配为包含主机名的域或主机名本身。例如，local.com 匹配 local.com、local.com:80 和 www.local.com，但不匹配 www.notlocal.com。
 
@@ -103,7 +103,7 @@ request << Bypass Proxy( "localhost" );
 
 #### Certificates
 
-**语法:** obj << Certificates(certificate file)
+**语法:** obj &lt;&lt; Certificates(certificate file)
 
 **说明:** 使用指定的证书文件进行验证。文件可能包含多个 CA 证书。证书必须采用 PEM 格式。
 
@@ -120,7 +120,7 @@ request << Certificates( "c:\certs\my_certificate.crt" );
 
 #### Cookie
 
-**语法:** obj << Cookie([[ key=> value ]]
+**语法:** obj &lt;&lt; Cookie([[ key=&gt; value ]]
 
 **说明:** 设置请求中的 Cookie。
 
@@ -141,7 +141,7 @@ data = request << Send;
 
 #### Cookie File
 
-**语法:** obj << Cookie File(<path>, <"replace" | "rename" | "append">)
+**语法:** obj &lt;&lt; Cookie File(&lt;path&gt;, &lt;"replace" | "rename" | "append"&gt;)
 
 **说明:** 指定备用 Cookie 文件。
 
@@ -158,7 +158,7 @@ data = request << Cookie File( "$DESKTOP\..\cookie.txt" );
 
 #### Curlrc
 
-**语法:** obj << Curlrc(<true | false>)
+**语法:** obj &lt;&lt; Curlrc(&lt;true | false&gt;)
 
 **说明:** 配置请求以使用标准 .curl 文件。
 
@@ -177,7 +177,7 @@ request << Curlrc( "true" );
 
 #### Curlrc File
 
-**语法:** obj << Curlrc File(<path>)
+**语法:** obj &lt;&lt; Curlrc File(&lt;path&gt;)
 
 **说明:** 配置请求以使用备用 .curlrc 文件。
 
@@ -197,7 +197,7 @@ request << Curlrc( "true" );
 
 #### DNS Timeout
 
-**语法:** obj << DNS Timeout(seconds)
+**语法:** obj &lt;&lt; DNS Timeout(seconds)
 
 **说明:** 连接的默认 DNS 缓存超时为 60 秒。可以调整该值以适应 DNS 缓存。设置为 0 可以完全禁用缓存，或设置为 -1 可以使缓存的条目保留在内存中。
 
@@ -222,7 +222,7 @@ obj = New Window( "Mastering JMP", img );
 
 #### Decode64 Char
 
-**语法:** obj << Decode64 Char( value )
+**语法:** obj &lt;&lt; Decode64 Char( value )
 
 **说明:** 使用 Base 64 编码进行字符串解码
 
@@ -241,7 +241,7 @@ data = request << Decode64 Char(
 
 #### Download
 
-**语法:** obj << Download( path, <"replace" | "rename" | "append"> )
+**语法:** obj &lt;&lt; Download( path, &lt;"replace" | "rename" | "append"&gt; )
 
 **说明:** 将 HTTP 响应下载至文件。从 Web 服务下载文件时很有用。replace 选项会覆盖任何现有文件。当找到重复名称时，rename 选项使用顺序文件名 (file, file(1), file(2)...)。append 选项会追加至现有文件。使用 show progress 显示带有已下载文件百分比的可取消进度条。
 
@@ -266,7 +266,7 @@ If( !Is Empty( file ),
 
 #### Encode64 Char
 
-**语法:** obj << Encode64 Char( value )
+**语法:** obj &lt;&lt; Encode64 Char( value )
 
 **说明:** 使用 Base 64 编码进行字符串编码
 
@@ -283,7 +283,7 @@ data = request << Encode64 Char( "Man is distinguished, not only by his reason, 
 
 #### File
 
-**语法:** obj << File ( path, <content-type> )
+**语法:** obj &lt;&lt; File ( path, &lt;content-type&gt; )
 
 **说明:** 该项将在请求中设置“文件”值。“文件”内容将用作文档的正文。请求内容类型标头将自动根据文件扩展名或 application/octet-stream（若未找到）设置为适当的内容。
 
@@ -305,7 +305,7 @@ data = request << Send;
 
 #### Form
 
-**语法:** obj << Form(Fields([[ key=> value ]], <URI Encode(1 | 0 | Safe(...))>), Files({ key1, {path1, path2, ..}, key2, {path3, path4} }))
+**语法:** obj &lt;&lt; Form(Fields([[ key=&gt; value ]], &lt;URI Encode(1 | 0 | Safe(...))&gt;), Files({ key1, {path1, path2, ..}, key2, {path3, path4} }))
 
 **说明:** 设置请求中的表单数据值。该表单将用作文档的正文。表单数据可以具有字段和文件元素。
 
@@ -336,7 +336,7 @@ data = request << Send;
 
 #### Get Certificate Info
 
-**语法:** obj << Get Certificate Info
+**语法:** obj &lt;&lt; Get Certificate Info
 
 **说明:** 显示有关证书的详细信息，例如颁发它的人员、何时到期，以及其他可确保证书可信的信息。
 
@@ -353,7 +353,7 @@ request << Get Certificate Info;
 
 #### Get Last URL
 
-**语法:** obj << Get Last URL
+**语法:** obj &lt;&lt; Get Last URL
 
 **说明:** 获取请求中使用的最后的 URL。用于查找重定向 URL。
 
@@ -372,7 +372,7 @@ Write( Char( request << Get Last URL ) );
 
 #### Get MIME Type
 
-**语法:** mimetype = obj << Get MIME Type
+**语法:** mimetype = obj &lt;&lt; Get MIME Type
 
 **说明:** “发送”（或“下载”）与请求一起使用之后，该项可用于检索返回数据的 MIME 类型。
 
@@ -391,7 +391,7 @@ Write( request << Get Mime Type() || "\!n" );
 
 #### Get Method
 
-**语法:** obj << Get Last Method
+**语法:** obj &lt;&lt; Get Last Method
 
 **说明:** 获取请求中使用的最后一个 HTTP 方法。
 
@@ -415,7 +415,7 @@ Write( Char( request << Get Method ) || "\!n" );
 
 #### Get Response Headers
 
-**语法:** obj << Get Response Headers
+**语法:** obj &lt;&lt; Get Response Headers
 
 **说明:** 响应标头是发送请求之后返回的键/值对的关联数组。HTTP 标头定义位于此处: https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html。“Date”、“Expires”和“Last-Modified”键将转换为 JMP 日期。“Age”和“Content-Length”键将转换为数字。所有其他值为字符。
 
@@ -441,7 +441,7 @@ For( i = 1, i <= N Items( keys ), i++,
 
 #### Get Status
 
-**语法:** obj << Get Status
+**语法:** obj &lt;&lt; Get Status
 
 **说明:** "Send"之后返回请求的状态。若没有连接错误，该状态为 HTTP 状态。否则，它为连接状态。200-299 为成功。
 
@@ -462,7 +462,7 @@ If( request << Get Status == 200,
 
 #### Get Status Message
 
-**语法:** obj << Get Status Message
+**语法:** obj &lt;&lt; Get Status Message
 
 **说明:** "Send"消息之后返回请求的状态消息。若没有连接错误，该状态消息为 HTTP 状态消息。否则，它为连接状态消息。状态 200-299 为成功。
 
@@ -481,7 +481,7 @@ Write( "\!n" || Char( request << Get Status Message ) || "\!n" );
 
 #### Get Status Msg
 
-**语法:** obj << Get Status Msg
+**语法:** obj &lt;&lt; Get Status Msg
 
 **说明:** "Send"之后返回请求的状态消息。该项是 GetStatusMessage 的别名。若没有连接错误，该状态消息为 HTTP 状态消息。否则，它为连接状态消息。状态 200-299 为成功。
 
@@ -500,7 +500,7 @@ Write( "\!n" || Char( request << Get Status Msg ) || "\!n" );
 
 #### Get Warning Headers
 
-**语法:** obj << Get Warning Headers
+**语法:** obj &lt;&lt; Get Warning Headers
 
 **说明:** 从请求中获取警告标头值（若有）。
 
@@ -528,7 +528,7 @@ If( !Is Empty( warning_headers ),
 
 #### GetVersion
 
-**语法:** request << GetVersion
+**语法:** request &lt;&lt; GetVersion
 
 **说明:** 返回 JMP 中正在使用的 cURL 的当前版本
 
@@ -543,7 +543,7 @@ Write( New HTTP Request() << GetVersion );
 
 #### Has Client Error
 
-**语法:** obj << Has Client Error
+**语法:** obj &lt;&lt; Has Client Error
 
 **说明:** 若 HTTP 状态为 400-499，则为真。
 
@@ -565,7 +565,7 @@ Write( msg );
 
 #### Has Error
 
-**语法:** obj << Has Error
+**语法:** obj &lt;&lt; Has Error
 
 **说明:** 若 HTTP 状态为 400-599，则为真。
 
@@ -587,7 +587,7 @@ Write( msg );
 
 #### Has Information
 
-**语法:** obj << Has Information
+**语法:** obj &lt;&lt; Has Information
 
 **说明:** 若 HTTP 状态为 100-199，则为真。
 
@@ -610,7 +610,7 @@ Write( msg );
 
 #### Has Redirection
 
-**语法:** obj << Has Redirection
+**语法:** obj &lt;&lt; Has Redirection
 
 **说明:** 若 HTTP 状态为 300-399，则为真。
 
@@ -633,7 +633,7 @@ Write( msg );
 
 #### Has Server Error
 
-**语法:** obj << Has Server Error
+**语法:** obj &lt;&lt; Has Server Error
 
 **说明:** 若 HTTP 状态为 500-599，则为真。
 
@@ -655,7 +655,7 @@ Write( msg );
 
 #### Has Warning
 
-**语法:** obj << Has Warning
+**语法:** obj &lt;&lt; Has Warning
 
 **说明:** 若 HTTP 状态具有警告标头，则为真
 
@@ -683,7 +683,7 @@ If( !request << Has Warning,
 
 #### Headers
 
-**语法:** obj << Headers({header 1}, {header 2} | [[ key=> value, key2=>value2 ]])
+**语法:** obj &lt;&lt; Headers({header 1}, {header 2} | [[ key=&gt; value, key2=&gt;value2 ]])
 
 **说明:** HTTP 标头定义位于此处:
 
@@ -712,7 +712,7 @@ Write( json || "\!n" );
 
 #### Insecure
 
-**语法:** obj << Insecure(<"true"> | <"false">) | <"prompt">
+**语法:** obj &lt;&lt; Insecure(&lt;"true"&gt; | &lt;"false"&gt;) | &lt;"prompt"&gt;
 
 **说明:** 默认情况下，证书验证为开启。若设置为 true，这将允许请求在没有证书验证的情况下完成。若设置为 prompt，这将允许用户接受证书并根据需要完成请求。
 
@@ -737,7 +737,7 @@ obj = New Window( "Mastering JMP", img );
 
 #### Is Success
 
-**语法:** obj << Is Success
+**语法:** obj &lt;&lt; Is Success
 
 **说明:** 若 HTTP 状态为 200-299，则为真。
 
@@ -761,7 +761,7 @@ If( request << Is Success,
 
 #### Is Successful
 
-**语法:** obj << Is Successful
+**语法:** obj &lt;&lt; Is Successful
 
 **说明:** 若 HTTP 状态为 200-299，则为真。
 
@@ -791,7 +791,7 @@ If( request << Is Successful,
 
 #### Is Valid
 
-**语法:** obj << Is Valid
+**语法:** obj &lt;&lt; Is Valid
 
 **说明:** 请求有效
 
@@ -808,7 +808,7 @@ data = request << Is Valid();
 
 #### Is Verbose
 
-**语法:** obj << Is Verbose
+**语法:** obj &lt;&lt; Is Verbose
 
 **说明:** 请求自动记录状态消息吗
 
@@ -825,7 +825,7 @@ data = request << Is Verbose();
 
 #### JSON
 
-**语法:** obj << JSON( json data )
+**语法:** obj &lt;&lt; JSON( json data )
 
 **说明:** 该项将设置请求中的 JSON 字符串值。JSON 字符串将用作文档的正文。请求内容类型标头将自动设置为“Content-Type: application/json”。您可以使用 As JSON Expr 方法将关联数组转换为 JSON 字符串。
 
@@ -846,7 +846,7 @@ data = request << Send;
 
 #### Max Redirect
 
-**语法:** obj << Max Redirect(...)
+**语法:** obj &lt;&lt; Max Redirect(...)
 
 **说明:** 指定请求将遵循的重定向数。
 
@@ -868,7 +868,7 @@ data = request << Send;
 
 #### Method
 
-**语法:** obj << Method("Post" | "Get" | "Put" | "Patch"| "Delete")
+**语法:** obj &lt;&lt; Method("Post" | "Get" | "Put" | "Patch"| "Delete")
 
 **说明:** 设置请求的方法。当前支持 Get、Post、Put、Patch、Delete 和 Head。
 
@@ -891,7 +891,7 @@ dt << Delete Rows();
 
 #### Netrc
 
-**语法:** obj << Netrc(<true | false>)
+**语法:** obj &lt;&lt; Netrc(&lt;true | false&gt;)
 
 **说明:** 配置请求以使用标准 .netrc 文件。
 
@@ -942,7 +942,7 @@ request << Netrc( "true" );
 
 #### Netrc File
 
-**语法:** obj << Netrc File(<path>)
+**语法:** obj &lt;&lt; Netrc File(&lt;path&gt;)
 
 **说明:** 配置请求以使用备用 .netrc 文件。
 
@@ -992,7 +992,7 @@ request << Netrc( "true" );
 
 #### Password
 
-**语法:** obj << Password(passwd)
+**语法:** obj &lt;&lt; Password(passwd)
 
 **说明:** 设置请求的密码用于基本身份验证。该值与请求用户名一起使用，用户名和密码以“:”连接 (name:password) 并传递给 Web 服务。此外，此处可以使用编码（例如 Kerberos V5 编码）的用户名/密码值。
 
@@ -1015,7 +1015,7 @@ data = request << Send;
 
 #### Proxy Server
 
-**语法:** obj << Proxy Server(proxy_url)
+**语法:** obj &lt;&lt; Proxy Server(proxy_url)
 
 **说明:** 代理 URL 可以采用相同的方式指定为代理环境变量，包括协议前缀 (http://) 和嵌入的用户 + 密码。
 
@@ -1033,7 +1033,7 @@ request << Proxy Server( url );
 
 #### Proxy User
 
-**语法:** obj << Proxy User(username:password)
+**语法:** obj &lt;&lt; Proxy User(username:password)
 
 **说明:** 代理字符串中可能提供的用户和密码采用 URL 解码。这允许您使用 %40 传入特殊字符（例如 @）或使用 %3a 传入冒号。
 
@@ -1052,7 +1052,7 @@ request << Proxy User( "clark%20kent:superman" );
 
 #### Query String
 
-**语法:** obj << Query String([[ key=> value ]], <URI Encode(1|0|Safe(...))>)
+**语法:** obj &lt;&lt; Query String([[ key=&gt; value ]], &lt;URI Encode(1|0|Safe(...))&gt;)
 
 **说明:** 设置请求中的“查询字符串”值。该项是字符数据的关联数组键/值集合。当键/值对发送至 Web 服务时它们经过 URL 编码（转义）。
 
@@ -1073,7 +1073,7 @@ data = request << Send;
 
 #### Reset
 
-**语法:** obj << Reset(URL(...), Method(...), <Form(<Fields(...)>, <Files(...)>)> | <File(...)> | <Blob(...)> | <JSON(...)>, <QueryString(...)>, <Headers(...)>, <Username(...)>, <Password(...)>)
+**语法:** obj &lt;&lt; Reset(URL(...), Method(...), &lt;Form(&lt;Fields(...)&gt;, &lt;Files(...)&gt;)&gt; | &lt;File(...)&gt; | &lt;Blob(...)&gt; | &lt;JSON(...)&gt;, &lt;QueryString(...)&gt;, &lt;Headers(...)&gt;, &lt;Username(...)&gt;, &lt;Password(...)&gt;)
 
 **说明:** 将请求重置为新值。
 
@@ -1092,7 +1092,7 @@ json2 = request << Send;
 
 #### Run
 
-**语法:** obj << Run
+**语法:** obj &lt;&lt; Run
 
 **说明:** 运行请求。该项是 Send 的别名。Run will be either character data or binary BLOB. You can check the return with the Is String JSL 函数的返回值。
 
@@ -1111,7 +1111,7 @@ Write( json || "\!n" );
 
 #### SSL Version
 
-**语法:** obj << SSL Version (version)
+**语法:** obj &lt;&lt; SSL Version (version)
 
 **说明:** "DEFAULT"  Use the default negotiated version (recommended).
 
@@ -1160,7 +1160,7 @@ request << SSL Version( "1+" );
 
 #### Secure
 
-**语法:** obj << Secure(<"true"> | <"false">) | <"prompt">
+**语法:** obj &lt;&lt; Secure(&lt;"true"&gt; | &lt;"false"&gt;) | &lt;"prompt"&gt;
 
 **说明:** 默认情况下，证书验证为开启。若设置为 false，这将允许请求在没有证书验证的情况下完成。若设置为 prompt，这将允许用户接受证书并根据需要完成请求。
 
@@ -1185,7 +1185,7 @@ obj = New Window( "Mastering JMP", img );
 
 #### Send
 
-**语法:** obj << Send(<"text" | "blob">, <"show progress download" | "show progress upload" | "show progress both" | "show progress">)
+**语法:** obj &lt;&lt; Send(&lt;"text" | "blob"&gt;, &lt;"show progress download" | "show progress upload" | "show progress both" | "show progress"&gt;)
 
 **说明:** 发送请求。Send 的返回值将为字符数据或二进制 BLOB。您可以使用 Is String JSL 函数检查返回。使用 show progress download 将显示带有已下载数据进度的可取消进度条。使用 show progress upload 将显示带有已上载数据进度的可取消进度条。使用 show progress both 将显示带有已上载和已下载数据进度的可取消进度条。使用 show progress 将显示带有已上载或已下载（或两者）进度的可取消进度条。对于发布表单，show progress 将显示上载和下载进度。对于发布文件，show progress 将显示上载进度。对于检索数据，show progress 将显示下载进度。
 
@@ -1204,7 +1204,7 @@ Write( json || "\!n" );
 
 #### Text
 
-**语法:** obj << Text( text data, <content-type>)
+**语法:** obj &lt;&lt; Text( text data, &lt;content-type&gt;)
 
 **说明:** 该项将设置请求中的文本字符串值。文本字符串将用作文档的正文。请求内容类型标头将自动设置为“Content-Type: text/plain”。
 
@@ -1225,7 +1225,7 @@ data = request << Send;
 
 #### Timeout
 
-**语法:** obj << Timeout(seconds)
+**语法:** obj &lt;&lt; Timeout(seconds)
 
 **说明:** 请求操作完成的默认超时是 60 秒。可以调整该值以适应更耗时的 Web 服务操作。
 
@@ -1250,7 +1250,7 @@ obj = New Window( "Mastering JMP", img );
 
 #### URL
 
-**语法:** obj << URL(path)
+**语法:** obj &lt;&lt; URL(path)
 
 **说明:** 创建请求时（或与“重置”一起使用），该项可以用作参数。obj = HTTP Request(URL("http://google.com"));
 
@@ -1272,7 +1272,7 @@ s = New HTTP Request(
 
 #### Use Cookies
 
-**语法:** obj << Use Cookies(<true | false>))
+**语法:** obj &lt;&lt; Use Cookies(&lt;true | false&gt;))
 
 **说明:** 配置请求在会话中使用 cookie。默认值为 true。
 
@@ -1289,7 +1289,7 @@ data = request << Use Cookies( "false" );
 
 #### UserPwd
 
-**语法:** obj << UserPwd(clark kent:superman)
+**语法:** obj &lt;&lt; UserPwd(clark kent:superman)
 
 **说明:** 应用于身份验证的请求设置用户和密码字段。其格式为 [用户名]:[密码]。用户和密码字符串没有经过 URL 解码，因此无法使用该选项发送包含冒号的用户名。
 
@@ -1312,7 +1312,7 @@ data = request << Send;
 
 #### Username
 
-**语法:** obj << Username(name)
+**语法:** obj &lt;&lt; Username(name)
 
 **说明:** 设置请求的用户名用于基本身份验证。该值与请求密码一起使用，用户名和密码以“:”连接 (name:password) 并传递给 Web 服务。
 
@@ -1336,7 +1336,7 @@ data = request << Send;
 
 #### Verbose
 
-**语法:** obj << Verbose(<"true"> | <"false">)
+**语法:** obj &lt;&lt; Verbose(&lt;"true"&gt; | &lt;"false"&gt;)
 
 **说明:** 将大量错误消息写入日志。默认值为 true。
 
@@ -1364,7 +1364,7 @@ Write( "\!n" || Char( request << Get Status Message ) || "\!n" );
 
 #### Verify SSL
 
-**语法:** obj << Verify SSL(<"true"> | <"false">)
+**语法:** obj &lt;&lt; Verify SSL(&lt;"true"&gt; | &lt;"false"&gt;)
 
 **说明:** 证书验证已开启。若设置为 false，将允许不带证书验证完成请求。
 
@@ -1389,7 +1389,7 @@ obj = New Window( "Mastering JMP", img );
 
 #### XML
 
-**语法:** obj << XML( xml data )
+**语法:** obj &lt;&lt; XML( xml data )
 
 **说明:** 该项将设置请求中的 xml 字符串值。xml 字符串将用作文档的正文。请求内容类型标头将自动设置为“Content-Type: application/xml”。
 
@@ -1424,7 +1424,7 @@ data = request << Send;
 
 #### Add
 
-**语法:** obj << Add(request, <label>)
+**语法:** obj &lt;&lt; Add(request, &lt;label&gt;)
 
 **说明:** 将 HTTP 请求添加至 MultiHTTPRequest。可以使用可选标签。当执行并行下载时这很有用。所有 HTTP 请求会在使用前进行验证。
 
@@ -1464,7 +1464,7 @@ For( i = 1, i <= N Items( http_requests ), i++,
 
 #### Download
 
-**语法:** obj << Download(<"show progress">, <"detailed">)
+**语法:** obj &lt;&lt; Download(&lt;"show progress"&gt;, &lt;"detailed"&gt;)
 
 **说明:** 并行将 HTTP 响应下载至文件。对从一个或多个 Web 服务一次下载多个文件很有用。使用 show progress 将显示带有已下载文件进度的可取消进度条。使用 details 将显示单个下载进度。
 
@@ -1533,7 +1533,7 @@ promise << On Error( process_error );
 
 #### Get Requests
 
-**语法:** obj << Get Requests()
+**语法:** obj &lt;&lt; Get Requests()
 
 **JMP添加的版本:** 17
 
@@ -1564,7 +1564,7 @@ http_requests = requests << Get Requests();
 
 #### Has Error
 
-**语法:** obj << Has Error
+**语法:** obj &lt;&lt; Has Error
 
 **说明:** 若多请求有错误，则返回 true。若其任何 HTTP 请求有错误，则多请求有错误。
 
@@ -1596,7 +1596,7 @@ Show( requests << Has Error );
 
 #### Is Success
 
-**语法:** obj << Is Success
+**语法:** obj &lt;&lt; Is Success
 
 **说明:** 若多请求成功，则返回 true。若其所有 HTTP 请求都成功，则多请求成功。
 
@@ -1620,7 +1620,7 @@ Show( requests << Is Successful );
 
 #### Is Successful
 
-**语法:** obj << Is Successful
+**语法:** obj &lt;&lt; Is Successful
 
 **说明:** 若多请求成功，则返回 true。若其所有 HTTP 请求都成功，则多请求成功。
 
@@ -1644,7 +1644,7 @@ Show( requests << Is Successful );
 
 #### Is Valid
 
-**语法:** obj << Is Valid
+**语法:** obj &lt;&lt; Is Valid
 
 **说明:** 多请求有效。若其所有 HTTP 请求都有效，则多请求有效。
 
@@ -1675,7 +1675,7 @@ Show( requests << Is Valid() );
 
 #### Reset
 
-**语法:** obj << Reset()
+**语法:** obj &lt;&lt; Reset()
 
 **说明:** 重置多个请求。这将重置已添加的任何 HTTP 请求。
 
@@ -1710,7 +1710,7 @@ requests << Reset();
 
 #### Send
 
-**语法:** obj << Send(<"text" | "blob">, <"show progress download" | "show progress upload" | "show progress both" | "show progress">)
+**语法:** obj &lt;&lt; Send(&lt;"text" | "blob"&gt;, &lt;"show progress download" | "show progress upload" | "show progress both" | "show progress"&gt;)
 
 **说明:** Send 的返回值将为字符数据或二进制 BLOB。您可以使用 Is String JSL 函数检查返回。使用 show progress download 将显示带有已下载数据进度的可取消进度条。使用 show progress upload 将显示带有已上载数据进度的可取消进度条。使用 show progress both 将显示带有已上载和已下载数据进度的可取消进度条。使用 show progress 将显示带有已上载或已下载（或两者）进度的可取消进度条。对于发布表单，show progress 将显示上载和下载进度。对于发布文件，show progress 将显示上载进度。对于检索数据，show progress 将显示下载进度。
 
@@ -1881,7 +1881,7 @@ addSentimentColumns( dt2, "Name", 1, 1 );
 
 #### Authorization Fields
 
-**语法:** oauth2 << Authorization Fields(...)
+**语法:** oauth2 &lt;&lt; Authorization Fields(...)
 
 **说明:** 授权字段是要在 OAuth2 授权 URL 的查询字符串中使用的键值对的联合数组。
 
@@ -1908,7 +1908,7 @@ oauth2 << Authorization Fields( auth_fields );
 
 #### Authorization URL
 
-**语法:** oauth2 << Authorization URL(...)
+**语法:** oauth2 &lt;&lt; Authorization URL(...)
 
 **说明:** 设置 OAuth2 授权 URL。
 
@@ -1926,7 +1926,7 @@ oauth2 << Authorization URL( auth_url );
 
 #### Browser Type
 
-**语法:** oauth2 << Browser Type("Default" | "Embedded" | "External")
+**语法:** oauth2 &lt;&lt; Browser Type("Default" | "Embedded" | "External")
 
 **说明:** “默认”选项是使用嵌入式浏览器进行 OAuth2 身份验证，除非使用 Google 进行身份验证。“嵌入”选项是使用嵌入式浏览器进行 OAuth2 身份验证，除非使用 Google 进行身份验证（当前与“默认”相同）。“外部”选项是使用外部浏览器进行 OAuth2 身份验证，并将生成的代码/URL 复制到文本区域以便完成身份验证。
 
@@ -1977,7 +1977,7 @@ data = request << Send;
 
 #### Client Id
 
-**语法:** oauth2 << Client Id(...)
+**语法:** oauth2 &lt;&lt; Client Id(...)
 
 **说明:** 设置 OAuth2 客户端 ID，它是在 Web 服务创建期间使用的公共标识符。
 
@@ -1998,7 +1998,7 @@ oauth2 << Client Id( client_id );
 
 #### Client Secret
 
-**语法:** oauth2 << Client Secret(...)
+**语法:** oauth2 &lt;&lt; Client Secret(...)
 
 **说明:** 设置在 Web 服务创建期间创建的 OAuth2 客户端密钥。
 
@@ -2019,7 +2019,7 @@ oauth2 << Client Secret( client_secret );
 
 #### Code Verifier
 
-**语法:** oauth2 << Code Verifier(<"cdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._~">
+**语法:** oauth2 &lt;&lt; Code Verifier(&lt;"cdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._~"&gt;
 
 **说明:** 代码验证程序是一个加密随机字符串，客户端在交换访问令牌的授权代码时使用它来识别自身。它的最小长度是 43 个字符，最大长度是 128 个字符。
 
@@ -2036,7 +2036,7 @@ oauth2 << Code Verifier( "cdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123
 
 #### Get Access Token
 
-**语法:** oauth2 << Get Access Token()
+**语法:** oauth2 &lt;&lt; Get Access Token()
 
 **说明:** 获取当前 OAuth2 访问令牌。若需要，这将初始化与授权服务器的通信。
 
@@ -2082,7 +2082,7 @@ access_token = oauth2 << Get Access Token();
 
 #### Get Auth Response Error
 
-**语法:** oauth2 << Get Authentication Response Error()
+**语法:** oauth2 &lt;&lt; Get Authentication Response Error()
 
 **说明:** 获取 OAuth2 响应错误。
 
@@ -2099,19 +2099,19 @@ error = oauth2 << Get Authentication Response Error();
 
 #### Get Auth Response Fields
 
-**语法:** obj << Get Auth Response Fields
+**语法:** obj &lt;&lt; Get Auth Response Fields
 
 **JMP添加的版本:** 15
 
 #### Get Authentication Response Error
 
-**语法:** obj << Get Authentication Response Error
+**语法:** obj &lt;&lt; Get Authentication Response Error
 
 **JMP添加的版本:** 18
 
 #### Get Authorization Header
 
-**语法:** oauth2 << Get Authorization Header
+**语法:** oauth2 &lt;&lt; Get Authorization Header
 
 **说明:** 获取以下格式的标头:
 
@@ -2222,7 +2222,7 @@ If( !Is Empty( data ),
 
 #### Get Authorization Response Fields
 
-**语法:** oauth2 << Get Authorization Response Fields()
+**语法:** oauth2 &lt;&lt; Get Authorization Response Fields()
 
 **说明:** 从授权服务器获取当前 OAuth2 响应值。
 
@@ -2268,7 +2268,7 @@ auth_response = oauth2 << Get Authorization Response Fields();
 
 #### Get Code
 
-**语法:** oauth2 << Get Code()
+**语法:** oauth2 &lt;&lt; Get Code()
 
 **说明:** 获取当前 OAuth2 代码。若需要，这将初始化与授权服务器的通信。
 
@@ -2314,7 +2314,7 @@ code = oauth2 << Get Code();
 
 #### Get Grant Type
 
-**语法:** oauth2 << Get Grant Type()
+**语法:** oauth2 &lt;&lt; Get Grant Type()
 
 **说明:** 获取当前 OAuth2 授权类型。
 
@@ -2334,7 +2334,7 @@ Show( grant );
 
 #### Get Grant Types
 
-**语法:** oauth2 << Get Grant Types
+**语法:** oauth2 &lt;&lt; Get Grant Types
 
 **说明:** 获取支持的 JMP OAuth2 授权类型。
 
@@ -2355,7 +2355,7 @@ Show( grant_types );
 
 #### Get ID Token
 
-**语法:** oauth2 << Get ID Token()
+**语法:** oauth2 &lt;&lt; Get ID Token()
 
 **说明:** 获取当前 OAuth2 ID 令牌。若需要，这将初始化与授权服务器的通信。
 
@@ -2401,7 +2401,7 @@ id_token = oauth2 << Get ID Token();
 
 #### Get Refresh Token
 
-**语法:** oauth2 << Get Refresh Token()
+**语法:** oauth2 &lt;&lt; Get Refresh Token()
 
 **说明:** 获取当前 OAuth2 刷新令牌。若需要，这将初始化与授权服务器的通信。
 
@@ -2447,7 +2447,7 @@ refresh_token = oauth2 << Get Refresh Token();
 
 #### Get Scope
 
-**语法:** oauth2 << Get Scope()
+**语法:** oauth2 &lt;&lt; Get Scope()
 
 **说明:** 获取当前 OAuth2 范围。
 
@@ -2493,7 +2493,7 @@ code = oauth2 << Get Scope();
 
 #### Get Window Title
 
-**语法:** oauth2 << Get Window Title
+**语法:** oauth2 &lt;&lt; Get Window Title
 
 **说明:** 获取 OAuth2 窗口标题。
 
@@ -2511,7 +2511,7 @@ title = oauth2 << Get Window Title;
 
 #### Grant Type
 
-**语法:** oauth2 << Grant Type("Authorization Code" | "Client Credentials" | "Refresh Token")
+**语法:** oauth2 &lt;&lt; Grant Type("Authorization Code" | "Client Credentials" | "Refresh Token")
 
 **说明:** 请求的授予类型必须为 JMP 和 OAuth2 授权提供程序支持的授予类型之一。
 
@@ -2530,13 +2530,13 @@ Show( grant );
 
 #### Has Auth Response  Error
 
-**语法:** obj << Has Auth Response  Error
+**语法:** obj &lt;&lt; Has Auth Response Error
 
 **JMP添加的版本:** 18
 
 #### Has Authentication Response  Error
 
-**语法:** oauth2 << Has Authentication Response Error()
+**语法:** oauth2 &lt;&lt; Has Authentication Response Error()
 
 **说明:** 检查 OAuth2 身份验证响应错误。
 
@@ -2555,7 +2555,7 @@ If( oauth2 << Has Authentication Response Error(),
 
 #### Is Expired
 
-**语法:** oauth2 << Is Expired()
+**语法:** oauth2 &lt;&lt; Is Expired()
 
 **说明:** 返回当前 OAuth2 访问令牌是否已到期。
 
@@ -2601,7 +2601,7 @@ expired = oauth2 << Is Expired();
 
 #### Login Hint
 
-**语法:** oauth2 << Login Hint(hint)
+**语法:** oauth2 &lt;&lt; Login Hint(hint)
 
 **说明:** 设置 login_hint 值。login_hint 是身份验证请求中的 OPTIONAL 参数，作为最终用户登录时可能使用的登录标识符的“提示”提供给授权服务器（若需要）。
 
@@ -2618,7 +2618,7 @@ oauth2 << Login Hint( "jmp_user@jmp.com" );
 
 #### Password
 
-**语法:** oauth2 << Password(...)
+**语法:** oauth2 &lt;&lt; Password(...)
 
 **说明:** 为密码授予类型设置 OAuth2 密码。
 
@@ -2632,7 +2632,7 @@ Names Default To Here( 1 );
 
 #### Redirect URL
 
-**语法:** oauth2 << Redirect URL(...)
+**语法:** oauth2 &lt;&lt; Redirect URL(...)
 
 **说明:** 设置在 Web 服务创建期间使用的 OAuth2 重定向 URL。
 
@@ -2650,7 +2650,7 @@ oauth2 << Redirect URL( redirect_url );
 
 #### Scope
 
-**语法:** oauth2 << Scope(...)
+**语法:** oauth2 &lt;&lt; Scope(...)
 
 **说明:** 设置 OAuth2 范围，一种限制应用程序访问帐户的方式。
 
@@ -2675,7 +2675,7 @@ oauth2 << Authorization Fields( auth_fields );
 
 #### Set Window Title
 
-**语法:** oauth2 << Set Window Title(title)
+**语法:** oauth2 &lt;&lt; Set Window Title(title)
 
 **说明:** 设置 OAuth2 窗口标题。
 
@@ -2692,7 +2692,7 @@ oauth2 << Set Window Title( "Authorization Window" );
 
 #### Token Fields
 
-**语法:** obj << Token Fields
+**语法:** obj &lt;&lt; Token Fields
 
 **说明:** 要在 OAuth2 令牌 URL 的查询字符串中使用的键值对的关联数组。
 
@@ -2717,7 +2717,7 @@ oauth2 << Token Fields( token_fields );
 
 #### Token URL
 
-**语法:** oauth2 << Token URL(...)
+**语法:** oauth2 &lt;&lt; Token URL(...)
 
 **说明:** 设置 OAuth2 令牌 URL。
 
@@ -2735,7 +2735,7 @@ oauth2 << Token URL( token_url );
 
 #### Use Default Window Title
 
-**语法:** oauth2 << Use Default Window Title(1 | 0)
+**语法:** oauth2 &lt;&lt; Use Default Window Title(1 | 0)
 
 **说明:** 获取 OAuth2 窗口标题。
 
@@ -2753,7 +2753,7 @@ title = oauth2 << Get Window Title;
 
 #### Username
 
-**语法:** oauth2 << Username(...)
+**语法:** oauth2 &lt;&lt; Username(...)
 
 **说明:** 为密码授予类型设置 OAuth2 用户名。
 

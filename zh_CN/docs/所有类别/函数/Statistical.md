@@ -2,8 +2,6 @@
 
 
 
-## 函数
-
 ### ARIMA Forecast
 
 **语法:** x = ARIMA Forecast( dtcol, length, model, estimates, from, to )
@@ -30,7 +28,7 @@ ARIMA Forecast(
 
 ### Arc Finder
 
-**语法:** Arc Finder( Group( lot, wafer ), X( col ), Y( col ), <optional arguments> )
+**语法:** Arc Finder( Group( lot, wafer ), X( col ), Y( col ), &lt;optional arguments&gt; )
 
 **说明:** 查找点数据中的弧线并创建表示弧线的新列。
 
@@ -64,7 +62,7 @@ dt << Graph Builder(
 
 ### Best Partition
 
-**语法:** {c1, c2, g2} = Best Partition( xIndices, yIndices, <<Ordered, <<ContinuousY, <<ContinuousX )
+**语法:** {c1, c2, g2} = Best Partition( xIndices, yIndices, &lt;&lt;Ordered, &lt;&lt;ContinuousY, &lt;&lt;ContinuousX )
 
 **说明:** 确定最优分组（实验函数）。
 
@@ -84,7 +82,7 @@ Names Default To Here( 1 );
 
 ### Col At
 
-**语法:** y = Col At( col, index, <byVar, ...>, < <<relative(bool)>, < <<skip missing(expr)> )
+**语法:** y = Col At( col, index, &lt;byVar, ...&gt;, &lt; &lt;&lt;relative(bool)&gt;, &lt; &lt;&lt;skip missing(expr)&gt; )
 
 **说明:** 返回 col 在其 byVar 组中行位置 index 处的值。skip missing 表达式计算结果为缺失值的行不包括在索引中。
 
@@ -102,7 +100,7 @@ New Column( "Relative to Last Height", Formula( :height / Col At( :height, -1, :
 
 ### Col Cumulative Sum
 
-**语法:** y = Col Cumulative Sum( xCol, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**语法:** y = Col Cumulative Sum( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **说明:** 返回当前行的累积和。无需预先对“依据”变量排序。
 
@@ -137,7 +135,7 @@ dt << New Column( "Col Cumulative Sum for each Sex grouped by Excluded",
 
 ### Col Interpolate
 
-**语法:** y = Col Interpolate( v, xCol, yCol, <byVar, ...>, < <<method(linear|nearest|previous|next)>, < <<extrapolate(bool)> )
+**语法:** y = Col Interpolate( v, xCol, yCol, &lt;byVar, ...&gt;, &lt; &lt;&lt;method(linear|nearest|previous|next)&gt;, &lt; &lt;&lt;extrapolate(bool)&gt; )
 
 **说明:** 返回 yCol 内的内插值，对应于 v 的位置（xCol]. Values outside the range of xCol）。范围之外的值将缺失，除非 extrapolate 已启用，在这种情况下将返回最近的 yCol 值。
 
@@ -156,7 +154,7 @@ dt << New Column( "gnp30",
 
 ### Col Max
 
-**语法:** y = Col Maximum( xCol, <byVar, <Excluded( Row State() )>, ...> )
+**语法:** y = Col Maximum( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt; )
 
 **说明:** 返回列中各行的最大值。结果会在内部缓存，因此可高效进行多次计算。可选 byVar 参数指定按组计算。注意: byVar 参数应在列公式或 For Each Row() 函数中使用。
 
@@ -210,7 +208,7 @@ dt << New Column( "Col Max for each Sex grouped by Excluded",
 
 ### Col Maximum
 
-**语法:** y = Col Maximum( xCol, <byVar, <Excluded( Row State() )>, ...> )
+**语法:** y = Col Maximum( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt; )
 
 **说明:** 返回列中各行的最大值。结果会在内部缓存，因此可高效进行多次计算。可选 byVar 参数指定按组计算。注意: byVar 参数应在列公式或 For Each Row() 函数中使用。
 
@@ -264,7 +262,7 @@ dt << New Column( "Col Max for each Sex grouped by Excluded",
 
 ### Col Mean
 
-**语法:** y = Col Mean( xCol, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**语法:** y = Col Mean( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **说明:** 返回列中各行的样本均值。结果会在内部缓存，因此可高效进行多次计算。可选 byVar 参数指定按组计算。注意: byVar 参数应在列公式或 For Each Row() 函数中使用。
 
@@ -328,7 +326,7 @@ dt << New Column( "Col Mean for each Sex grouped by Excluded",
 
 ### Col Median
 
-**语法:** y = Col Median( xCol, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**语法:** y = Col Median( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **说明:** 返回列中各行的指定中位数。顺序会在内部缓存，因此可高效进行多重计算。
 
@@ -382,7 +380,7 @@ dt << New Column( "Col Median for each Sex grouped by Excluded",
 
 ### Col Min
 
-**语法:** y = Col Minimum( xCol, <byVar, <Excluded( Row State() )>, ...> )
+**语法:** y = Col Minimum( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt; )
 
 **说明:** 返回列中各行的最小值。结果会在内部缓存，因此可高效进行多次计算。可选 byVar 参数指定按组计算。注意: byVar 参数应在列公式或 For Each Row() 函数中使用。
 
@@ -436,7 +434,7 @@ dt << New Column( "Col Min for each Sex grouped by Excluded",
 
 ### Col Minimum
 
-**语法:** y = Col Minimum( xCol, <byVar, <Excluded( Row State() )>, ...> )
+**语法:** y = Col Minimum( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt; )
 
 **说明:** 返回列中各行的最小值。结果会在内部缓存，因此可高效进行多次计算。可选 byVar 参数指定按组计算。注意: byVar 参数应在列公式或 For Each Row() 函数中使用。
 
@@ -490,7 +488,7 @@ dt << New Column( "Col Min for each Sex grouped by Excluded",
 
 ### Col Mode
 
-**语法:** y = Col Mode( xCol, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**语法:** y = Col Mode( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **说明:** 返回列中各行的样本众数，若有多个众数，选择最小值。结果会在内部缓存，因此可高效进行多次计算。可选 byVar 参数指定按组计算。注意: byVar 参数应在列公式或 For Each Row() 函数中使用。
 
@@ -544,7 +542,7 @@ dt << New Column( "Col Mode for each Sex grouped by Excluded",
 
 ### Col Moving Average
 
-**语法:** y = Col Moving Average( xCol, <weighting=0.25>, <before=-1>, <after=0>, <partial window is missing=1>, <byVar, <Excluded( Row State() )>, ...> )
+**语法:** y = Col Moving Average( xCol, &lt;weighting=0.25&gt;, &lt;before=-1&gt;, &lt;after=0&gt;, &lt;partial window is missing=1&gt;, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt; )
 
 **说明:** 返回基于当前行的给定区间的移动平均值。对于权重乘数，1 表示等同加权，0 表示线性加权，其他值则充当指数权重乘数。无需预先对“依据”变量排序。
 
@@ -579,7 +577,7 @@ dt << New Column( "Col Moving Average for each Sex grouped by Excluded",
 
 ### Col N Missing
 
-**语法:** y = Col N Missing( xCol, <byVar, <Excluded( Row State() )>, ...> )
+**语法:** y = Col N Missing( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt; )
 
 **说明:** 返回列中各行的缺失值的数目。结果会在内部缓存，因此可高效进行多次计算。可选 byVar 参数指定按组计算。注意: byVar 参数应在列公式或 For Each Row() 函数中使用。
 
@@ -634,7 +632,7 @@ dt << New Column( "Col N Missing for each Sex grouped by Excluded",
 
 ### Col N Unique
 
-**语法:** y = Col N Unique( xCol, <byVar, ...>, < <<score missing(bool)> )
+**语法:** y = Col N Unique( xCol, &lt;byVar, ...&gt;, &lt; &lt;&lt;score missing(bool)&gt; )
 
 **说明:** 返回列中唯一值的数量。若请求了缺失值，则所有缺失值代码都计为一个值。
 
@@ -651,7 +649,7 @@ New Column( "N unique height by age", Formula( Col N Unique( :height, :age ) ) )
 
 ### Col Number
 
-**语法:** y = Col Number( xCol, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**语法:** y = Col Number( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **说明:** 返回列中各行的非缺失值的数目。结果会在内部缓存，因此可高效进行多次计算。可选 byVar 参数指定按组计算。注意: byVar 参数应在列公式或 For Each Row() 函数中使用。
 
@@ -706,7 +704,7 @@ dt << New Column( "Col Number for each Sex grouped by Excluded",
 
 ### Col Quantile
 
-**语法:** y = Col Quantile( xCol, p, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**语法:** y = Col Quantile( xCol, p, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **说明:** 返回列中各行的指定分位数。顺序会在内部缓存，因此可高效进行多重计算。
 
@@ -762,7 +760,7 @@ dt << New Column( "Col Quantile for each Sex grouped by Excluded",
 
 ### Col Rank
 
-**语法:** y = Col Rank( xCol, <byVar, <Excluded( Row State() )>, ...>, < <<tie("average"|"row"|"minimum"|"maximum"|"arbitrary")> )
+**语法:** y = Col Rank( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt;tie("average"|"row"|"minimum"|"maximum"|"arbitrary")&gt; )
 
 **说明:** 返回秩，范围从最小值 1 开始，除非由 <<Tie 参数指定，否则行阶平局被打破。“average”生成并列秩的平均值，“minimum”生成并列秩的最小值。对于“row”和“arbitrary”，每行具有唯一秩。
 
@@ -795,7 +793,7 @@ dt << New Column( "Col Rank for each Sex grouped by Excluded",
 
 ### Col Score
 
-**语法:** y = Col Score( xCol, <byVar, ...>, < <<score missing(bool)> )
+**语法:** y = Col Score( xCol, &lt;byVar, ...&gt;, &lt; &lt;&lt;score missing(bool)&gt; )
 
 **说明:** 返回每个唯一值的整数得分，这些值按照任何相关列属性进行排序。
 
@@ -812,7 +810,7 @@ New Column( "Score Height by age", Formula( Col Score( :height, :age ) ) );
 
 ### Col Sequence
 
-**语法:** y = Col Sequence( <byVar, ...>, < <<skip missing(expr)>, < <<sequence(start=1, end=unbounded, incr=1, repeat=1)>)
+**语法:** y = Col Sequence( &lt;byVar, ...&gt;, &lt; &lt;&lt;skip missing(expr)&gt;, &lt; &lt;&lt;sequence(start=1, end=unbounded, incr=1, repeat=1)&gt;)
 
 **说明:** 返回该行在其 byVar 组中的位置，且依据 skip missing 和任何 sequence 参数进行了调整。
 
@@ -832,7 +830,7 @@ New Column( "Row within sex, 60+",
 
 ### Col Simple Exponential Smoothing
 
-**语法:** y = Col Simple Exponential Smoothing( xCol, alpha, <byVar, ...> )
+**语法:** y = Col Simple Exponential Smoothing( xCol, alpha, &lt;byVar, ...&gt; )
 
 **说明:** 使用平滑权重 alpha 返回当前行的简单指数平滑预测。无需预先对“依据”变量排序。公式为 Predicted Value[t]=alpha * Observed Value[t-1] + (1-alpha) * Predicted Value[t-1]，其中 Predicted Value[1] = Observed Value[1]。
 
@@ -849,7 +847,7 @@ Col Simple Exponential Smoothing( :Column1, .7 );
 
 ### Col Standardize
 
-**语法:** y = Col Standardize( xCol, <byVar, <Excluded( Row State() )>, ...> )
+**语法:** y = Col Standardize( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt; )
 
 **说明:** 返回值减去列均值除以列中各行的列标准差。若指定了“依据”组列，则根据该“依据”组的均值和标准差对值进行标准化。
 
@@ -894,7 +892,7 @@ dt << New Column( "Col Standardize for each Sex grouped by Excluded",
 
 ### Col Std Dev
 
-**语法:** y = Col Std Dev( xCol, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**语法:** y = Col Std Dev( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **说明:** 返回列中各行的样本标准差。结果会在内部缓存，因此可高效进行多次计算。可选 byVar 参数指定按组计算。注意: byVar 参数应在列公式或 For Each Row() 函数中使用。
 
@@ -960,7 +958,7 @@ dt << New Column( "Col Standard Deviation for each Sex grouped by Excluded",
 
 ### Col Sum
 
-**语法:** y = Col Sum( xCol, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**语法:** y = Col Sum( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **说明:** 返回列中各行的和。结果会在内部缓存，因此可高效进行多次计算。可选 byVar 参数指定按组计算。注意: byVar 参数应在列公式或 For Each Row() 函数中使用。
 
@@ -1039,7 +1037,7 @@ Cumulative Sum( [1 1 1 1 . 10 20] );
 
 ### Fit Censored
 
-**语法:** result = FitCensored( Distribution(name), YLow(vector) | Y(vector), <YHigh(vector)>, <Weight(vector)>, <X(matrix)>, <Z(matrix)>, <HoldParm(vector)>, <Use random sample to compute initial values(percent)>, <Use first N observations to compute initial values(nobs)> )
+**语法:** result = FitCensored( Distribution(name), YLow(vector) | Y(vector), &lt;YHigh(vector)&gt;, &lt;Weight(vector)&gt;, &lt;X(matrix)&gt;, &lt;Z(matrix)&gt;, &lt;HoldParm(vector)&gt;, &lt;Use random sample to compute initial values(percent)&gt;, &lt;Use first N observations to compute initial values(nobs)&gt; )
 
 **说明:** 使用删失数据拟合分布。所需的参数为 Distribution 以及 YLow 或 Y。函数返回一个列表，其中包含参数估计值、协方差矩阵、对数似然、AICc、BIC 和一条收敛消息。X 和 Z 参数分别为位置和尺度指定回归设计矩阵。当数据向量较大时，两个可选参数可用于指定样本来计算初始值。您可以指定 percent 的观测，或前 nobs 个观测，但总样本大小必须大于 100。
 
@@ -1153,7 +1151,7 @@ mthlst;
 
 ### KDE
 
-**语法:** {Estimates, Bins, Counts, ActualBandwidth, Error} = KDE( Vector, <<weights, <<bandwidth( 0 ), <<bandwidth scale( 1 ), <<bandwidth selection( 0 ), <<kernel )
+**语法:** {Estimates, Bins, Counts, ActualBandwidth, Error} = KDE( Vector, &lt;&lt;weights, &lt;&lt;bandwidth( 0 ), &lt;&lt;bandwidth scale( 1 ), &lt;&lt;bandwidth selection( 0 ), &lt;&lt;kernel )
 
 **说明:** 返回具有自动带宽选择的核密度估计量。可选 weights 参数必须是与 Vector 参数长度相等的一个向量。可选 bandwidth 参数必须为非负实数或零，为零时会强制使用 bandwidth selection 参数的值。可选 bandwidth scale 参数必须为正实数。可选 bandwidth selection 参数必须为 0、1、2 或 3，分别对应于 Sheather and Jones、Normal Reference、Silverman rule of thumb 或 Oversmoother。可选 kernel 参数可以为 0、1、2、3 或 4，分别对应于 Gaussian、Epanechnikov、Biweight、Triangular 或 Rectangular。
 
@@ -1328,7 +1326,7 @@ Eval List( {Min( Pi(), e() ), Min( [33 44 22] )} );
 
 ### Moving Average
 
-**语法:** y = Moving Average( x, weighting, <before=-1>, <after=0>, <partial window is missing=0> )
+**语法:** y = Moving Average( x, weighting, &lt;before=-1&gt;, &lt;after=0&gt;, &lt;partial window is missing=0&gt; )
 
 **说明:** 返回输入矩阵的移动平均矩阵。“before”和“after”确定要平均的项的范围（“窗口”），其中“before”可为 -1 以指示所有先验项。若“weighting”为 1，则所有项都具有相同权重。若“weighting”为 0，则各项具有线性递增权重。否则，“weighting”为指数权重 (EWMA) 的参数。“partial window is missing”指示在并非所有邻近值都存在时（可能出现在末尾或接近缺失值的位置）是否报告平均值。若“partial window is missing”非零，则改为为这种不完全窗口报告缺失值。
 
@@ -1363,7 +1361,7 @@ N Missing( 1, 2, ., 3, [11 22 . .], 4 );
 
 ### Normal Tolerance Factor
 
-**语法:** q = Normal Tolerance Factor( 1-alpha, p, n, <One Sided> )
+**语法:** q = Normal Tolerance Factor( 1-alpha, p, n, &lt;One Sided&gt; )
 
 **说明:** 计算构造 1-alpha 置信区间的容差因子，以包含正态分布中样本大小为 n 的均值的比例 p。可通过一个选项来请求单侧容差区间的因子。
 
@@ -1498,7 +1496,7 @@ Eval List( {Sum( Pi(), e() ), Sum( [33 44 22 20 30] )} );
 
 ### Summarize
 
-**语法:** Summarize( <dt>, nameBy=By( colBy ), name1=statName1( col1 ), ... )
+**语法:** Summarize( &lt;dt&gt;, nameBy=By( colBy ), name1=statName1( col1 ), ... )
 
 **说明:** 计算跨越“依据”列的各种汇总统计量。统计量名称为计数、总和、均值、最大值、最小值、标准差、相关性、分位数、第一个。仅为数值列计算统计量。结果以矩阵形式储存在指定名称的变量中。
 

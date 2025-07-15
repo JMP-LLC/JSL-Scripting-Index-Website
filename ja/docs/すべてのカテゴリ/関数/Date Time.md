@@ -2,11 +2,9 @@
 
 
 
-## 関数
-
 ### Abbrev Date
 
-**構文:** s = Abbrev Date( datetime, <format> )
+**構文:** s = Abbrev Date( datetime, &lt;format&gt; )
 
 **説明:** 日付時間値を、OSで指定されているロケールの省略形式で戻す。
 
@@ -51,7 +49,7 @@ As Date( Date DMY( 15, 7, 2000 ) );
 
 ### Date Difference
 
-**構文:** delta = Date Difference( dt1, dt2, intervalName, <alignment="start"> )
+**構文:** delta = Date Difference( dt1, dt2, intervalName, &lt;alignment="start"&gt; )
 
 **説明:** 2つの日付時間値の差を戻す。intervalName に指定できる値は、「年」、「四半期」、「月」、「週」、「日」、「時間」、「分」、秒」、 数値」。alignment が "Start"の場合は、期首の差を求める。一方、"Actual"の場合は期間全体の差を求める。alignment が "Fractional" の場合は、期間「年」、「四半期」、「月」の長さの平均を使用して求めた差の小数部分も含めて戻す。
 
@@ -86,7 +84,7 @@ Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "frac
 
 ### Date Increment
 
-**構文:** d = Date Increment( datetime, intervalName, <incr=1>, <alignment="start"> )
+**構文:** d = Date Increment( datetime, intervalName, &lt;incr=1&gt;, &lt;alignment="start"&gt; )
 
 **説明:**  incrの期数を加算した日付時間値を戻す。 intervalName として指定できる値は、「年」、「四半期」、「月」、「週」、「日」、「時間」、「分」、「秒」、「数値」。alignment が"Start" の場合、指定された期間の単位以下は切り捨てられ、"Actual"の場合は単位以下の値も保持される。alignmentが"Fractional"の場合は、期間「年」、「四半期」、「月」の長さの平均を使って求めた小数点以下の incr の値も含めて戻される。
 
@@ -196,9 +194,7 @@ v = Days In Month( 2016, 2 );
 
 ### Format
 
-**構文:** s = Format( x, formatString, <options> )
-
-s = Format( x, "Format Pattern", pattern, <options> )
+**構文:** s = Format( x, formatString, &lt;options&gt; )s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
 
 **説明:** 数を指定の形式で戻す。形式には、[列情報]ダイアログボックス内の「最適」("Best")や「h:m:s」などがある。p値、通貨、日付、時間、地図などの他のオプションについては、トピックのヘルプを参照のこと。
 
@@ -244,9 +240,7 @@ result = "Revenue increase: " || amt || " or " || pct || ".";
 
 ### Format Date
 
-**構文:** s = Format( x, formatString, <options> )
-
-s = Format( x, "Format Pattern", pattern, <options> )
+**構文:** s = Format( x, formatString, &lt;options&gt; )s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
 
 **説明:** 数を指定の形式で戻す。形式には、[列情報]ダイアログボックス内の「最適」("Best")や「h:m:s」などがある。p値、通貨、日付、時間、地図などの他のオプションについては、トピックのヘルプを参照のこと。
 
@@ -302,7 +296,7 @@ Show( it );
 
 ### Hour
 
-**構文:** hr = Hour( datetime, <12> )
+**構文:** hr = Hour( datetime, &lt;12&gt; )
 
 **説明:** 日付時間値の時間の値を、12時間式(12,1～11)または24時間式(0～23)で戻す。
 
@@ -332,7 +326,7 @@ ISO Year( Today() );
 
 ### In Days
 
-**構文:** y = In Days( <x=1> )
+**構文:** y = In Days( &lt;x=1&gt; )
 
 **説明:** xを日数から秒数に変換する。
 
@@ -347,7 +341,7 @@ In Days( 1.5 );
 
 ### In Hours
 
-**構文:** y = In Hours( <x=1> )
+**構文:** y = In Hours( &lt;x=1&gt; )
 
 **説明:** xを時数から秒数に変換する。
 
@@ -362,7 +356,7 @@ In Hours( 0.5 );
 
 ### In Minutes
 
-**構文:** y = In Minutes( <x=1> )
+**構文:** y = In Minutes( &lt;x=1&gt; )
 
 **説明:** xを分の数から秒数に変換する。
 
@@ -377,7 +371,7 @@ In Minutes( 1 );
 
 ### In Weeks
 
-**構文:** y = In Weeks( <x=1> )
+**構文:** y = In Weeks( &lt;x=1&gt; )
 
 **説明:** xを週数から秒数に変換する。
 
@@ -392,7 +386,7 @@ In Weeks( 1 );
 
 ### In Years
 
-**構文:** y = In Years( <x=1> )
+**構文:** y = In Years( &lt;x=1&gt; )
 
 **説明:** xを年数から秒数に変換する。
 
@@ -407,9 +401,7 @@ In Years( 1 );
 
 ### Informat
 
-**構文:** dt = In Format( s, formatString, < <<Use Locale(b=1)>, < <<Restrict > )
-
-dt = In Format( s, "Format Pattern", pattern, < <<Use Locale(b=1)> )
+**構文:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; )dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
 
 **説明:** 与えられた形式の文字列を解析する。日付時間形式の場合は、値がAs Date()で囲まれたものとして表現され、日付がddMonyyyy形式で戻される。「最適な」formatString 形式とともに使用できるオプションの<<Restrictは、整数、小数、および指数表現の変換のみ許可する。
 
@@ -482,7 +474,7 @@ v = Is Leap Year( 2016 );
 
 ### Long Date
 
-**構文:** s = Long Date( datetime, <format> )
+**構文:** s = Long Date( datetime, &lt;format&gt; )
 
 **説明:** 日付時間値を、OSで指定されているロケールの長い形式で戻す。
 
@@ -497,7 +489,7 @@ Long Date( Today() );
 
 ### MDYHMS
 
-**構文:** s = MDYHMS( datetime, <format> )
+**構文:** s = MDYHMS( datetime, &lt;format&gt; )
 
 **説明:** 日付時間値の値を、月、日、年、時間、分、秒の順序で戻す。
 
@@ -557,9 +549,7 @@ Nth Day Of Week in the Month( Date MDY( 11, 28, 2019 ) );
 
 ### Parse Date
 
-**構文:** dt = In Format( s, formatString, < <<Use Locale(b=1)>, < <<Restrict > )
-
-dt = In Format( s, "Format Pattern", pattern, < <<Use Locale(b=1)> )
+**構文:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; )dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
 
 **説明:** 与えられた形式の文字列を解析する。日付時間形式の場合は、値がAs Date()で囲まれたものとして表現され、日付がddMonyyyy形式で戻される。「Best」formatString 形式とともに使用できるオプションの<<Restrictは、整数、小数、および指数表現の変換のみ許可する。
 
@@ -647,7 +637,7 @@ Second( Today() );
 
 ### Short Date
 
-**構文:** s = Short Date( datetime, <format> )
+**構文:** s = Short Date( datetime, &lt;format&gt; )
 
 **説明:** 日付時間値を、OSで指定されているロケールの短い形式で戻す（MM/DD/YYYY）。
 
@@ -710,7 +700,7 @@ As Date( Today() );
 
 ### Week Of Year
 
-**構文:** d = Week Of Year( datetime, <rule=1> )
+**構文:** d = Week Of Year( datetime, &lt;rule=1&gt; )
 
 **説明:** 日付時間値に対して、年において何番目の週であるかを戻す。その際、3つのルールのいずれかを適用する。デフォルト(ルール1)では、週は日曜日から始まり、年の最初の日曜日が第2週となる。第1週は一部だけの週となるかまたは存在しない(たとえば2006年)。ルール2では、最初の日曜日が第1週となり、その前にある日は第0週となる。ルール3は、ISO方式の週番号を戻す。週は月曜日から始まり、その年に入ってからの4日間を含む最初の週が第1週となる。ISO方式の場合、年の最初の3日間または最後の3日間が前年または翌年の週番号に属する場合がある。
 

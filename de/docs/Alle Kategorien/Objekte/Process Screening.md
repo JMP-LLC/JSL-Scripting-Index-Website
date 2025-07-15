@@ -56,7 +56,7 @@ obj = dt << Process Screening(
 
 ### Alarm Graph
 
-**Syntax:** obj << Alarm Graph( state=0|1 )
+**Syntax:** obj &lt;&lt; Alarm Graph( state=0|1 )
 
 **Beschreibung:** Zeigt oder verbirgt ein Diagramm der Alarme, mit den Prozessen, die Alarme haben, auf der Y-Achse und der Zeit des Auftretens auf der X-Achse.
 
@@ -128,7 +128,7 @@ obj = dt << Process Screening(
 
 ### Chart Options Drift Graph
 
-**Syntax:** obj << Chart Options Drift Graph( options )
+**Syntax:** obj &lt;&lt; Chart Options Drift Graph( options )
 
 **Beschreibung:** Ermöglicht Ihnen, ein Skript mit zusätzlichen Optionen für die Diagramme zu erstellen, die von der Option „Driftgraph ausgewählt“ erzeugt werden.
 
@@ -151,7 +151,7 @@ obj << Chart Options Drift Graph( Show Markers( 1 ), Connect Points( 0 ) );
 
 ### Chart Options Graphlet
 
-**Syntax:** obj << Chart Options Graphlet( options )
+**Syntax:** obj &lt;&lt; Chart Options Graphlet( options )
 
 **Beschreibung:** Ermöglicht Ihnen, ein Skript mit zusätzlichen Optionen für Graphlets zu erstellen.
 
@@ -187,7 +187,7 @@ obj = dt << Process Screening(
 
 ### Chart Options as Selected
 
-**Syntax:** obj << Chart Options as Selected( options )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( options )
 
 **Beschreibung:** Ermöglicht Ihnen, ein Skript mit zusätzlichen Optionen für die Diagramme zu erstellen, die von der Option „Diagramm wie ausgewählt anzeigen“ erzeugt werden.
 
@@ -210,7 +210,7 @@ obj << Chart Options as Selected( Show Markers( 0 ) );
 
 ### Chart Options for Selected
 
-**Syntax:** obj << Chart Options for Selected( options )
+**Syntax:** obj &lt;&lt; Chart Options for Selected( options )
 
 **Beschreibung:** Ermöglicht Ihnen, ein Skript mit zusätzlichen Optionen für die Diagramme zu erstellen, die von der Option „Diagramm für Ausgewählte anzeigen“ erzeugt werden.
 
@@ -233,7 +233,7 @@ obj << Chart Options for Selected( Show Markers( 1 ) );
 
 ### Color Out of Spec Values
 
-**Syntax:** obj << Color Out of Spec Values
+**Syntax:** obj &lt;&lt; Color Out of Spec Values
 
 **Beschreibung:** Färbt Werte in der Datentabelle basierend auf den Spezifikationsgrenzen. Blau zeigt an, dass der Wert unter der unteren Spezifikationsgrenze ist. Rot zeigt an, dass der Wert über der oberen Spezifikationsgrenze ist.
 
@@ -250,7 +250,7 @@ obj << Color Out of Spec Values;
 
 ### Color Selected Items
 
-**Syntax:** obj << Color Selected Items( color )
+**Syntax:** obj &lt;&lt; Color Selected Items( color )
 
 **Beschreibung:** Wendet die angegebene Farbe auf die ausgewählten Zeilen in der Zusammenfassungstabelle an.
 
@@ -271,7 +271,7 @@ obj << Find and Select( "NPN2" );
 
 ### Control Chart Builder
 
-**Syntax:** obj << Control Chart Builder
+**Syntax:** obj &lt;&lt; Control Chart Builder
 
 **Beschreibung:** Öffnet ein Fenster „Qualitätsregelkarte erstellen“ für die Prozesse, die Sie in der Zusammenfassungstabelle ausgewählt haben.
 
@@ -290,9 +290,7 @@ obj = dt << Process Screening(
 
 ### Control Chart Type
 
-**Syntax:** obj = Process Screening(...Control Chart Type( "Indiv and MR"|"XBar and R"|"XBar and S"|"XBar MR and R"|"XBar MR and S"|"Count"|"Nonnegative Continuous"|"Proportion" )...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Process Screening(...Control Chart Type( "Indiv and MR"|"XBar and R"|"XBar and S"|"XBar MR and R"|"XBar MR and S"|"Count"|"Nonnegative Continuous"|"Proportion" )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Gibt eine von fünf Arten von Qualitätsregelkartenberechnungen an. Standardmäßig „EinzeIwerte und MR“.
 
@@ -310,7 +308,7 @@ obj = dt << Process Screening(
 
 ### Count
 
-**Syntax:** obj << Count( state=0|1 )
+**Syntax:** obj &lt;&lt; Count( state=0|1 )
 
 **Beschreibung:** Blendet die Spalte „Anzahl“ in der Zusammenfassungstabelle ein oder aus. Diese Spalte enthält die Anzahl der Beobachtungen. Standardmäßig ein.
 
@@ -328,7 +326,7 @@ obj << Count( 0 );
 
 ### Cp
 
-**Syntax:** obj << Cp( state=0|1 )
+**Syntax:** obj &lt;&lt; Cp( state=0|1 )
 
 **Beschreibung:** Blendet die Spalte „Cp“ in der Zusammenfassungstabelle ein oder aus. Diese Spalte enthält die mögliche Fähigkeit, wenn Ziel- und Abweichungsprobleme gelöst sind.
 
@@ -344,7 +342,7 @@ obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Cp( 1 ) );
 
 ### Cpk
 
-**Syntax:** obj << Cpk( state=0|1 )
+**Syntax:** obj &lt;&lt; Cpk( state=0|1 )
 
 **Beschreibung:** Blendet die Spalte „Cpk“ in der Zusammenfassungstabelle ein oder aus. Diese Spalte enthält den Cpk-Prozessfähigkeitsindex kurzer Läufe basierend auf Innerhalb-Sigma und ausgehend von einer Normalverteilung. Standardmäßig ein.
 
@@ -408,7 +406,7 @@ obj = dt << Process Screening(
 
 ### Drift Graph Selected
 
-**Syntax:** obj << Drift Graph Selected( <{ process list }> )
+**Syntax:** obj &lt;&lt; Drift Graph Selected( &lt;{ process list }&gt; )
 
 **Beschreibung:** Zeigt einen Driftgraphen für jeden Prozess, den Sie in der Zusammenfassungstabelle auswählen. Die gezeichneten Werte sind die Steigungsschätzungen aus einem doppel-exponentiellen Holt-Glättungsmodell.
 
@@ -443,7 +441,7 @@ obj << Drift Graph Selected( {{:DIAMETER, "C334", 2}, {:DIAMETER, "A455", 1}} );
 
 ### Drift Summaries
 
-**Syntax:** obj << Drift Summaries( state=0|1 )
+**Syntax:** obj &lt;&lt; Drift Summaries( state=0|1 )
 
 **Beschreibung:** Blendet die Drift-Zusammenfassungsspalten in der Zusammenfassungstabelle ein oder aus. Diese Spalten enthalten die mittlere Drift aufwärts, die mittlere Drift abwärts und die mittlere Drift absolut.
 
@@ -463,7 +461,7 @@ obj = dt << Process Screening(
 
 ### Enable All Tests
 
-**Syntax:** obj << Enable All Tests
+**Syntax:** obj &lt;&lt; Enable All Tests
 
 **Beschreibung:** Schließt alle Nelson-Tests in die Alarmraten und -häufigkeiten ein.
 
@@ -481,7 +479,7 @@ obj = dt << Process Screening(
 
 ### Expected Out of Spec Rate
 
-**Syntax:** obj << Expected Out of Spec Rate( state=0|1 )
+**Syntax:** obj &lt;&lt; Expected Out of Spec Rate( state=0|1 )
 
 **Beschreibung:** Blendet die Spalte „Erwarteter Anteil außerhalb der Spezifikation“ in der Zusammenfassungstabelle ein oder aus. Diese Spalte enthält den erwarteten Anteil der Beobachtungen, die außerhalb der Spezifikationsgrenzen liegen. Der Wert für den erwarteten Anteil außerhalb der Spezifikation geht von einem stabilen und normalverteilten Prozess aus und verwendet das Gesamt-Sigma.
 
@@ -500,7 +498,7 @@ obj = dt << Process Screening(
 
 ### Filter Where
 
-**Syntax:** obj << Filter Where( condition )
+**Syntax:** obj &lt;&lt; Filter Where( condition )
 
 **Beschreibung:** Filtert und entfernt die Prozesse in der Zusammenfassungstabelle. Der Filter basiert auf der angegebenen Bedingung.
 
@@ -523,7 +521,7 @@ obj << Filter Where( Stability Index > 1.3 | Mean <= 4.3 );
 
 ### Find and Select
 
-**Syntax:** obj << Find and Select( condition )
+**Syntax:** obj &lt;&lt; Find and Select( condition )
 
 **Beschreibung:** Findet alle Spalten und Gruppen, in denen die Suchzeichenfolge vorkommt, und wählt diese Prozesse in der Zusammenfassungstabelle aus.
 
@@ -541,7 +539,7 @@ obj = dt << Process Screening(
 
 ### Goal Plot
 
-**Syntax:** obj << Goal Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; Goal Plot( state=0|1 )
 
 **Beschreibung:** Blendet ein Diagramm ein oder aus, das für jede Variable einen Punkt enthält. Die spez.-normalisierte mittlere Verschiebung befindet sich auf der horizontalen Achse und die spez.-normalisierte Standardabweichung auf der vertikalen Achse. Diese Option ist nur verfügbar, wenn für mindestens eine Prozessvariable Spezifikationsgrenzen angegeben sind.
 
@@ -637,7 +635,7 @@ obj = dt << Process Screening(
 
 ### Largest Downshift
 
-**Syntax:** obj << Largest Downshift( state=0|1 )
+**Syntax:** obj &lt;&lt; Largest Downshift( state=0|1 )
 
 **Beschreibung:** Blendet die Spalten „Größte Verschiebung nach unten“ und „Position der Verschiebung nach unten“ in der Zusammenfassungstabelle ein oder aus. Diese Spalten enthalten die größte Verschiebung nach unten in der Serie, die größer ist als Innerhalb-Sigma, und die Position in der Serie, an der diese Verschiebung aufgetreten ist.
 
@@ -655,7 +653,7 @@ obj = dt << Process Screening(
 
 ### Largest Upshift
 
-**Syntax:** obj << Largest Upshift( state=0|1 )
+**Syntax:** obj &lt;&lt; Largest Upshift( state=0|1 )
 
 **Beschreibung:** Blendet die Spalten „Größte Verschiebung nach oben“ und „Position der Verschiebung nach oben“ in der Zusammenfassungstabelle ein oder aus. Diese Spalten enthalten die größte Verschiebung nach oben in der Serie, die größer ist als Innerhalb-Sigma, und die Position in der Serie, an der diese Verschiebung aufgetreten ist.
 
@@ -673,7 +671,7 @@ obj = dt << Process Screening(
 
 ### Latest Out of Spec
 
-**Syntax:** obj << Latest Out of Spec( state=0|1 )
+**Syntax:** obj &lt;&lt; Latest Out of Spec( state=0|1 )
 
 **Beschreibung:** Blendet die Spalte „Zuletzt außerhalb der Spez.“ in der Zusammenfassungstabelle ein oder aus. Diese Spalte enthält die Anzahl der Beobachtungen zwischen der letzten Beobachtung, die außerhalb der Spezifikationsgrenzen liegt, und der finalen Beobachtung. Wenn die letzte Beobachtung außerhalb der Spezifikationsgrenzen liegt, ist der Wert von „Zuletzt außerhalb der Spez.“ gleich 1. Standardmäßig ein.
 
@@ -712,7 +710,7 @@ obj << Save Shift Table;
 
 ### Maximum
 
-**Syntax:** obj << Maximum( state=0|1 )
+**Syntax:** obj &lt;&lt; Maximum( state=0|1 )
 
 **Beschreibung:** Shows or hides the Maximum for Count and Nonnegative Continuous chart types. Standardmäßig ein.
 
@@ -735,7 +733,7 @@ obj << Maximum( 0 );
 
 ### Mean
 
-**Syntax:** obj << Mean( state=0|1 )
+**Syntax:** obj &lt;&lt; Mean( state=0|1 )
 
 **Beschreibung:** Blendet die Spalte „Mittelwert“ in der Zusammenfassungstabelle ein oder aus. Diese Spalte enthält den Mittelwert der Prozessdaten. Standardmäßig ein.
 
@@ -775,7 +773,7 @@ obj = dt << Process Screening(
 
 ### Moving Range Limit Exceeded
 
-**Syntax:** obj << Moving Range Limit Exceeded( state=0|1 )
+**Syntax:** obj &lt;&lt; Moving Range Limit Exceeded( state=0|1 )
 
 **Beschreibung:** Blendet die Spalte „Grenze der gleitenden Spannweite überschritten“ in der Zusammenfassungstabelle ein oder aus. Diese Spalte enthält die Anzahl der Untergruppen, die die Grenze der gleitenden Spannweite in der Berechnung der Drei-Wege-Qualitätsregelkarte überschreiten.
 
@@ -794,7 +792,7 @@ obj = dt << Process Screening(
 
 ### N Subgroups
 
-**Syntax:** obj << N Subgroups( state=0|1 )
+**Syntax:** obj &lt;&lt; N Subgroups( state=0|1 )
 
 **Beschreibung:** Blendet die Spalte „N Untergruppen“ in der Zusammenfassungstabelle ein oder aus. Diese Spalte enthält die Anzahl der Untergruppen. Standardmäßig ein.
 
@@ -815,7 +813,7 @@ obj << N Subgroups( 0 );
 
 ### Out of Spec Count
 
-**Syntax:** obj << Out of Spec Count( state=0|1 )
+**Syntax:** obj &lt;&lt; Out of Spec Count( state=0|1 )
 
 **Beschreibung:** Blendet die Spalte „Außerhalb-Spez.-Anzahl“ in der Zusammenfassungstabelle ein oder aus. Diese Spalte enthält die Anzahl der Beobachtungen, die außerhalb der Spezifikationsgrenzen liegen. Standardmäßig ein.
 
@@ -833,7 +831,7 @@ obj << Out of Spec Count( 1 );
 
 ### Out of Spec Rate
 
-**Syntax:** obj << Out of Spec Rate( state=0|1 )
+**Syntax:** obj &lt;&lt; Out of Spec Rate( state=0|1 )
 
 **Beschreibung:** Blendet die Spalte „Außerhalb-Spez.-Rate“ in der Zusammenfassungstabelle ein oder aus. Diese Spalte enthält den Anteil der Beobachtungen, die außerhalb der Spezifikationsgrenzen liegen. Standardmäßig ein.
 
@@ -851,9 +849,7 @@ obj << Out of Spec Rate( 1 );
 
 ### Outlier Threshold
 
-**Syntax:** obj = Process Screening(...Outlier Threshold( number=5 )...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Process Screening(...Outlier Threshold( number=5 )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Gibt die Anzahl von Innerhalb-Sigma-Einheiten an, die eine Beobachtung mindestens von seinen beiden Nachbarn entfernt sein muss, um als Ausreißer behandelt zu werden. Standardmäßig „5“.
 
@@ -873,7 +869,7 @@ obj = dt << Process Screening(
 
 ### Overall Sigma
 
-**Syntax:** obj << Overall Sigma( state=0|1 )
+**Syntax:** obj &lt;&lt; Overall Sigma( state=0|1 )
 
 **Beschreibung:** Blendet die Spalte „Gesamt-Sigma“ in der Zusammenfassungstabelle ein oder aus. Diese Spalte enthält eine Schätzung der Standardabweichung basierend auf allen Beobachtungen. Standardmäßig ein.
 
@@ -891,7 +887,7 @@ obj << Overall Sigma( 0 );
 
 ### Performance Graph Boundaries
 
-**Syntax:** obj << Performance Graph Boundaries( <Capability Ppk boundary, Stability Ratio boundary> )
+**Syntax:** obj &lt;&lt; Performance Graph Boundaries( &lt;Capability Ppk boundary, Stability Ratio boundary&gt; )
 
 **Beschreibung:** Gibt die Grenzen für die Regionen des Fähigkeits-Ppk und Stabilitätsverhältnisses im Prozessleistungsgraphen an. Wenn keine Argumente angegeben werden, öffnet diese Option ein Fenster, in dem Sie die Grenzen angeben können.
 
@@ -911,7 +907,7 @@ obj << Performance Graph Boundaries( 1.7, 1.2 );
 
 ### Ppk
 
-**Syntax:** obj << Ppk( state=0|1 )
+**Syntax:** obj &lt;&lt; Ppk( state=0|1 )
 
 **Beschreibung:** Blendet die Spalte „Ppk“ in der Zusammenfassungstabelle ein oder aus. Diese Spalte enthält den Ppk-Prozessfähigkeitsindex langer Läufe basierend auf dem Gesamt-Sigma und ausgehend von einer Normalverteilung. Standardmäßig ein.
 
@@ -929,7 +925,7 @@ obj << Ppk( 1 );
 
 ### Ppk Capability Boundary
 
-**Syntax:** obj << Ppk Capability Boundary( number=1.33 )
+**Syntax:** obj &lt;&lt; Ppk Capability Boundary( number=1.33 )
 
 **Beschreibung:** Gibt eine Grenze zwischen den fähigen und den unfähigen Regionen für Fähigkeits-Ppk im Prozessleistungsgraphen an. Standardmäßig „1.33“.
 
@@ -948,7 +944,7 @@ obj = dt << Process Screening(
 
 ### Process Capability
 
-**Syntax:** obj << Process Capability
+**Syntax:** obj &lt;&lt; Process Capability
 
 **Beschreibung:** Öffnet ein Berichtsfenster „Prozessfähigkeit“, in dem detaillierte Berichte über Einzelwerte für die Prozesse angezeigt werden, die Sie in der Zusammenfassungstabelle ausgewählt haben.
 
@@ -966,7 +962,7 @@ obj = dt << Process Screening(
 
 ### Process Performance Graph
 
-**Syntax:** obj << Process Performance Graph( state=0|1 )
+**Syntax:** obj &lt;&lt; Process Performance Graph( state=0|1 )
 
 **Beschreibung:** Zeigt einen Graphen des Prozessfähigkeits-Ppk nach Stabilitätsverhältnis mit vier farblich gekennzeichneten Quadranten oder blendet ihn aus. Standardmäßig deutet ein Stabilitätsverhältnis über 1,5 darauf hin, dass der Prozess instabil ist, und ein Ppk kleiner als 1,33 deutet darauf hin, dass der Prozess nicht fähig ist.
 
@@ -984,7 +980,7 @@ obj = dt << Process Screening(
 
 ### Process Potential Graph
 
-**Syntax:** obj << Process Potential Graph( state=0|1 )
+**Syntax:** obj &lt;&lt; Process Potential Graph( state=0|1 )
 
 **Beschreibung:** Zeigt den Prozesspotenzialgraphen an oder blendet ihn aus, der Cp auf der vertikalen Achse und % Messsigma^2 auf der horizontalen Achse darstellt. Dieser Graph zeigt den relativen Nutzen aus der Verbesserung des Messsystems oder des Prozesses.
 
@@ -1011,7 +1007,7 @@ obj = dt << Process Screening(
 
 ### Range Limit Exceeded
 
-**Syntax:** obj << Range Limit Exceeded( state=0|1 )
+**Syntax:** obj &lt;&lt; Range Limit Exceeded( state=0|1 )
 
 **Beschreibung:** Blendet die Spalte „Bereichsgrenze überschritten“ in der Zusammenfassungstabelle ein oder aus. Diese Spalte enthält die Anzahl der Untergruppen, die die obere Eingriffsgrenze in der Berechnung der R-, S- oder MR-Qualitätsregelkarte überschreiten.
 
@@ -1029,7 +1025,7 @@ obj = dt << Process Screening(
 
 ### Relaunch Selected Processes
 
-**Syntax:** obj << Relaunch Selected Processes
+**Syntax:** obj &lt;&lt; Relaunch Selected Processes
 
 **Beschreibung:** Relaunches the Process Screening platform to create a new report that contains only the selected processes from the original report.
 
@@ -1074,7 +1070,7 @@ obj = dt << Process Screening(
 
 ### Remove Selected Items
 
-**Syntax:** obj << Remove Selected Items
+**Syntax:** obj &lt;&lt; Remove Selected Items
 
 **Beschreibung:** Entfernt die in der Zusammenfassungstabelle ausgewählten Zeilen und führt die Analyse ohne diese Prozesse aus.
 
@@ -1096,7 +1092,7 @@ obj << Remove Selected Items;
 
 ### Reset Filter
 
-**Syntax:** obj << Reset Filter
+**Syntax:** obj &lt;&lt; Reset Filter
 
 **Beschreibung:** Entfernt jeden Filter, der aktuell auf die Zusammenfassungstabelle angewendet ist.
 
@@ -1116,7 +1112,7 @@ obj << Reset Filter;
 
 ### RowStates
 
-**Syntax:** obj << RowStates( matrix )
+**Syntax:** obj &lt;&lt; RowStates( matrix )
 
 **Beschreibung:** Legt die Zeileneigenschaften für die Zeilen in der Zusammenfassungstabelle fest. Die Eingabe ist eine mx2-Matrix. Die erste Spalte enthält Zeilennummern (nullbasiert in ursprünglicher Reihenfolge) und die zweite Spalte enthält numerische Zeileneigenschaftswerte. Weitere Informationen über numerische Zeileneigenschaftswerte finden Sie im JMP-Benutzerhandbuch.
 
@@ -1141,7 +1137,7 @@ obj << SendToReport( Dispatch( {}, "", TableBox, {Sort By Column( 2, 1 )} ) );
 
 ### Save Details Table
 
-**Syntax:** obj << Save Details Table
+**Syntax:** obj &lt;&lt; Save Details Table
 
 **Beschreibung:** Erstellt eine neue Datentabelle, die die Testalarminformationen für jede Kombination aus Prozess- und Gruppierungsvariablen enthält.
 
@@ -1156,7 +1152,7 @@ obj << Save Details Table;
 
 ### Save Selected Details
 
-**Syntax:** obj << Save Selected Details
+**Syntax:** obj &lt;&lt; Save Selected Details
 
 **Beschreibung:** Erstellt eine neue Datentabelle, die die Testalarminformationen für die ausgewählten Zeilen in der Zusammenfassungstabelle enthält.
 
@@ -1175,7 +1171,7 @@ obj << Save Selected Details;
 
 ### Save Shift Table
 
-**Syntax:** obj << Save Shift Table
+**Syntax:** obj &lt;&lt; Save Shift Table
 
 **Beschreibung:** Creates a new data table that contains the saved shift gap data. This option requires that the Make Detailed Shift Data option is specified in the launch script.
 
@@ -1196,7 +1192,7 @@ obj << Save Shift Table;
 
 ### Save Summary Table
 
-**Syntax:** obj << Save Summary Table
+**Syntax:** obj &lt;&lt; Save Summary Table
 
 **Beschreibung:** Erstellt eine neue Datentabelle, die alle Prozesszusammenfassungsinformationen für alle Variablen und Gruppen enthält.
 
@@ -1211,7 +1207,7 @@ obj << Save Summary Table;
 
 ### Save Summary Table with Graphs
 
-**Syntax:** obj << Save Summary Table with Graphs
+**Syntax:** obj &lt;&lt; Save Summary Table with Graphs
 
 **Beschreibung:** Erstellt eine neue Datentabelle, die alle Prozesszusammenfassungsinformationen und eine Spalte mit schnellen Graphen enthält.
 
@@ -1228,7 +1224,7 @@ obj << Save Summary Table with Graphs;
 
 ### Select All
 
-**Syntax:** obj << Select All
+**Syntax:** obj &lt;&lt; Select All
 
 **Beschreibung:** Wählt alle Spalten und Gruppen aus und führt nachfolgende Befehle für sie aus.
 
@@ -1242,7 +1238,7 @@ obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Sel
 
 ### Select Where
 
-**Syntax:** obj << Select Where( condition )
+**Syntax:** obj &lt;&lt; Select Where( condition )
 
 **Beschreibung:** Wählt Prozessspalten in der Zusammenfassungstabelle aus. Die ausgewählten Spalten entsprechen der angegebenen Bedingung.
 
@@ -1262,7 +1258,7 @@ obj = dt << Process Screening(
 
 ### Set Scrolling
 
-**Syntax:** obj << Set Scrolling( number=50 )
+**Syntax:** obj &lt;&lt; Set Scrolling( number=50 )
 
 **Beschreibung:** Gibt an, wie viele Zeilen in der Zusammenfassungstabelle mit Bildlauf angezeigt werden sollen. Standardmäßig „50“.
 
@@ -1282,7 +1278,7 @@ obj = dt << Process Screening(
 
 ### Shift Graph
 
-**Syntax:** obj << Shift Graph( state=0|1 )
+**Syntax:** obj &lt;&lt; Shift Graph( state=0|1 )
 
 **Beschreibung:** Zeigt oder verbirgt ein Diagramm des zeitlichen Auftretens aller Prozessverschiebungen, die die Anzahl der Innerhalb-Sigma-Einheiten überschreiten, die durch die Option „Verschiebungsschwelle“ festgelegt sind. Grüne Symbole kennzeichnen Verschiebungen nach oben und rote Symbole Verschiebungen nach unten.
 
@@ -1300,9 +1296,7 @@ obj << Shift Graph( 1 );
 
 ### Shift Lambda
 
-**Syntax:** obj = Process Screening(...Shift Lambda( number=.3 )...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Process Screening(...Shift Lambda( number=.3 )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Gibt die Gewichtung an, die im exponentiell gewichteten gleitenden Mittelwert (EWMA) für die Verschiebungserkennung verwendet wird. Standardmäßig „.3“.
 
@@ -1323,9 +1317,7 @@ obj = dt << Process Screening(
 
 ### Shift Threshold
 
-**Syntax:** obj = Process Screening(...Shift Threshold( number=3 )...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Process Screening(...Shift Threshold( number=3 )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Gibt die Anzahl von Innerhalb-Sigma-Einheiten an, die eine Verschiebung überschreiten muss, um im Verschiebungsgraphen angezeigt zu werden. Standardmäßig „3“.
 
@@ -1344,7 +1336,7 @@ obj = dt << Process Screening(
 
 ### Show Charts as Selected
 
-**Syntax:** obj << Show Charts as Selected( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Charts as Selected( state=0|1 )
 
 **Beschreibung:** Erstellt kleine Graphen der Prozesse, die in der Zusammenfassungstabelle ausgewählt sind. Die Graphen werden in einem Bericht „Diagramme wie ausgewählt“ angezeigt, der automatisch aktualisiert wird, wenn Sie Prozesse in der Zusammenfassungstabelle aus- oder abwählen.
 
@@ -1364,7 +1356,7 @@ obj << Select Where( :MACHINE == "A455" );
 
 ### Show Charts for Selected
 
-**Syntax:** obj << Show Charts for Selected( <process list> )
+**Syntax:** obj &lt;&lt; Show Charts for Selected( &lt;process list&gt; )
 
 **Beschreibung:** Erstellt kleine Graphen der Prozesse, die in der Zusammenfassungstabelle ausgewählt werden. Die Graphen werden in einem Bericht „Diagramme für Ausgewählte“ angezeigt, in dem viele Prozesse gleichzeitig angezeigt und verglichen werden können.
 
@@ -1412,7 +1404,7 @@ obj = dt << Process Screening(
 
 ### Show Shifts in Graphs
 
-**Syntax:** obj << Show Shifts in Graphs( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Shifts in Graphs( state=0|1 )
 
 **Beschreibung:** Blendet die Position der Verschiebungen in den schnellen Graphen mit grünen und roten vertikalen Linien ein oder aus.
 
@@ -1432,7 +1424,7 @@ obj = dt << Process Screening(
 
 ### Show Tests
 
-**Syntax:** obj << Show Tests( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Tests( state=0|1 )
 
 **Beschreibung:** Zeigt die unter „Tests wählen“ ausgewählten Nelson-Tests an oder blendet sie aus. Standardmäßig ein.
 
@@ -1476,7 +1468,7 @@ obj = dt << Process Screening(
 
 ### Spec Centered Mean
 
-**Syntax:** obj << Spec Centered Mean( state=0|1 )
+**Syntax:** obj &lt;&lt; Spec Centered Mean( state=0|1 )
 
 **Beschreibung:** Blendet die Spalte „(Mittelwert-Ziel)/Spez.bereich“ in der Zusammenfassungstabelle ein oder aus. Diese Spalte enthält den Mittelwert relativ zu den Spezifikationsgrenzen.
 
@@ -1492,7 +1484,7 @@ obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Spec Centered Me
 
 ### Spec Limits
 
-**Syntax:** obj << Spec Limits( state=0|1 )
+**Syntax:** obj &lt;&lt; Spec Limits( state=0|1 )
 
 **Beschreibung:** Blendet die Spalten mit den Spezifikationsgrenzen in der Zusammenfassungstabelle ein oder aus. Diese Spalten enthalten die untere Spezifikationsgrenze (USG), die obere Spezifikationsgrenze (OSG) und die Zielwerte.
 
@@ -1508,7 +1500,7 @@ obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Spec Limits( 1 )
 
 ### Spec Scaled Std Dev
 
-**Syntax:** obj << Spec Scaled Std Dev( state=0|1 )
+**Syntax:** obj &lt;&lt; Spec Scaled Std Dev( state=0|1 )
 
 **Beschreibung:** Blendet die Spalte „Std.-Abw./Spez.bereich“ in der Zusammenfassungstabelle ein oder aus. Diese Spalte enthält die Gesamt-Standardabweichung dividiert durch den Bereich der Spezifikationsgrenzen.
 
@@ -1524,7 +1516,7 @@ obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Spec Scaled Std 
 
 ### Stability Index
 
-**Syntax:** obj << Stability Index( state=0|1 )
+**Syntax:** obj &lt;&lt; Stability Index( state=0|1 )
 
 **Beschreibung:** Blendet die Spalte „Stabilitätsindex“ in der Zusammenfassungstabelle ein oder aus. Diese Spalte ist ein Maß für die Stabilität eines Prozesses, wobei ein stabiler Prozess einen Stabilitätsindex nahe 1 hat. Standardmäßig ein.
 
@@ -1542,7 +1534,7 @@ obj << Stability Index( 0 );
 
 ### Stability Index Boundary
 
-**Syntax:** obj << Stability Index Boundary( number=1.25 )
+**Syntax:** obj &lt;&lt; Stability Index Boundary( number=1.25 )
 
 **Beschreibung:** Gibt die Grenze zwischen den stabilen und den instabilen Regionen für den Stabilitätsindex im Prozessleistungsgraphen an. Standardmäßig „1.25“.
 
@@ -1564,7 +1556,7 @@ obj << Stability Index Boundary( 1.5 );
 
 ### Stability Ratio
 
-**Syntax:** obj << Stability Ratio( state=0|1 )
+**Syntax:** obj &lt;&lt; Stability Ratio( state=0|1 )
 
 **Beschreibung:** Blendet die Spalte „Stabilitätsverhältnis“ in der Zusammenfassungstabelle ein oder aus. Diese Spalte ist ein Maß für die Stabilität eines Prozesses, wobei ein stabiler Prozess ein Stabilitätsverhältnis nahe 1 hat.
 
@@ -1581,9 +1573,7 @@ obj << Stability Ratio( 1 );
 
 ### Subgroup Sample Size
 
-**Syntax:** obj = Process Screening(...Subgroup Sample Size( number=5 )...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Process Screening(...Subgroup Sample Size( number=5 )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Gibt die Anzahl der Beobachtungen in jeder Untergruppe an. Die minimale Untergruppengröße ist 2. Standardmäßig „5“.
 
@@ -1601,7 +1591,7 @@ obj = dt << Process Screening(
 
 ### Summary
 
-**Syntax:** obj << Summary( state=0|1 )
+**Syntax:** obj &lt;&lt; Summary( state=0|1 )
 
 **Beschreibung:** Blendet die Zusammenfassungstabelle im Bericht ein oder aus. Standardmäßig ein.
 
@@ -1621,7 +1611,7 @@ obj << Summary( 1 );
 
 ### Target Index
 
-**Syntax:** obj << Target Index( state=0|1 )
+**Syntax:** obj &lt;&lt; Target Index( state=0|1 )
 
 **Beschreibung:** Blendet die Spalte „Zielindex“ in der Zusammenfassungstabelle ein oder aus. Diese Spalte enthält die Anzahl der kurzfristigen Standardabweichungen, um die der Prozessmittelwert vom Zielwert abweicht.
 
@@ -1637,7 +1627,7 @@ obj = dt << Process Screening( Y( :NPN1, :PNP1, :PNP2, :NPN2 ), Target Index( 1 
 
 ### Test 1
 
-**Syntax:** obj << Test 1( state=0|1 )
+**Syntax:** obj &lt;&lt; Test 1( state=0|1 )
 
 **Beschreibung:** Blendet die Spalte Test1 in der Zusammenfassungstabelle ein oder aus. Dieser Test wird ausgelöst, wenn ein Punkt um mehr als drei Standardabweichungen von der Mittellinie abweicht. Standardmäßig ein.
 
@@ -1651,7 +1641,7 @@ obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Tes
 
 ### Test 2
 
-**Syntax:** obj << Test 2( state=0|1 )
+**Syntax:** obj &lt;&lt; Test 2( state=0|1 )
 
 **Beschreibung:** Blendet die Spalte Test2 in der Zusammenfassungstabelle ein oder aus. Dieser Test wird ausgelöst, wenn neun oder mehr aufeinanderfolgende Punkte auf der gleichen Seite der Mittellinie liegen.
 
@@ -1665,7 +1655,7 @@ obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Tes
 
 ### Test 3
 
-**Syntax:** obj << Test 3( state=0|1 )
+**Syntax:** obj &lt;&lt; Test 3( state=0|1 )
 
 **Beschreibung:** Blendet die Spalte Test3 in der Zusammenfassungstabelle ein oder aus. Dieser Test wird ausgelöst, wenn sechs oder mehr aufeinanderfolgende Punkte kontinuierlich ansteigen oder abfallen.
 
@@ -1679,7 +1669,7 @@ obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Tes
 
 ### Test 4
 
-**Syntax:** obj << Test 4( state=0|1 )
+**Syntax:** obj &lt;&lt; Test 4( state=0|1 )
 
 **Beschreibung:** Blendet die Spalte Test4 in der Zusammenfassungstabelle ein oder aus. Dieser Test wird ausgelöst, wenn vierzehn aufeinanderfolgende Punkte die Richtung wechseln: ansteigend und dann abfallend oder abfallend und dann ansteigend.
 
@@ -1693,7 +1683,7 @@ obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Tes
 
 ### Test 5
 
-**Syntax:** obj << Test 5( state=0|1 )
+**Syntax:** obj &lt;&lt; Test 5( state=0|1 )
 
 **Beschreibung:** Blendet die Spalte Test5 in der Zusammenfassungstabelle ein oder aus. Dieser Test wird ausgelöst, wenn zwei von drei aufeinanderfolgenden Punkten auf derselben Seite der Mittellinie um mehr als zwei Standardabweichungen von der Mittellinie abweichen.
 
@@ -1707,7 +1697,7 @@ obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Tes
 
 ### Test 6
 
-**Syntax:** obj << Test 6( state=0|1 )
+**Syntax:** obj &lt;&lt; Test 6( state=0|1 )
 
 **Beschreibung:** Blendet die Spalte Test6 in der Zusammenfassungstabelle ein oder aus. Dieser Test wird ausgelöst, wenn vier von fünf aufeinanderfolgenden Punkten auf derselben Seite der Mittellinie um mehr als eine Standardabweichung von der Mittellinie abweichen.
 
@@ -1721,7 +1711,7 @@ obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Tes
 
 ### Test 7
 
-**Syntax:** obj << Test 7( state=0|1 )
+**Syntax:** obj &lt;&lt; Test 7( state=0|1 )
 
 **Beschreibung:** Blendet die Spalte Test7 in der Zusammenfassungstabelle ein oder aus. Dieser Test wird ausgelöst, wenn fünfzehn aufeinanderfolgende Punkte auf beiden Seiten der Mittellinie alle innerhalb einer Standardabweichung von der Mittellinie liegen.
 
@@ -1735,7 +1725,7 @@ obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Tes
 
 ### Test 8
 
-**Syntax:** obj << Test 8( state=0|1 )
+**Syntax:** obj &lt;&lt; Test 8( state=0|1 )
 
 **Beschreibung:** Blendet die Spalte Test8 in der Zusammenfassungstabelle ein oder aus. Dieser Test wird ausgelöst, wenn acht aufeinanderfolgende Punkte auf beiden Seiten der Mittellinie alle außerhalb einer Standardabweichung von der Mittellinie liegen.
 
@@ -1749,7 +1739,7 @@ obj = dt << Process Screening( Y( :DIAMETER ), Grouping( :MACHINE, :Phase ), Tes
 
 ### Test Action
 
-**Syntax:** obj << Test Action( state=0|1 )
+**Syntax:** obj &lt;&lt; Test Action( state=0|1 )
 
 **Beschreibung:** Shows or hides the Action column in the summary table. This test is triggered when a point is greater than an Upper Action Limit or less than a Lower Action Limit. Standardmäßig ein.
 
@@ -1773,7 +1763,7 @@ obj << Test Action( 0 );
 
 ### Test Alert
 
-**Syntax:** obj << Test Alert( state=0|1 )
+**Syntax:** obj &lt;&lt; Test Alert( state=0|1 )
 
 **Beschreibung:** Shows or hides the Alert column in the summary table. This test is triggered when a point is greater than the Upper Alert Limit or less than the Lower Alert Limit.
 
@@ -1797,7 +1787,7 @@ obj << Test Alert( 1 );
 
 ### Test Alert Increasing
 
-**Syntax:** obj << Test Alert Increasing( state=0|1 )
+**Syntax:** obj &lt;&lt; Test Alert Increasing( state=0|1 )
 
 **Beschreibung:** Shows or hides the Alert Increasing column in the summary table. This column counts where the process is increasing and the previous point is above the upper alert limit or if a process is decreasing and the previous point is below the lower alert limit.
 
@@ -1822,9 +1812,7 @@ obj << Test Alert Increasing( 0 );
 
 ### Use Limits Table
 
-**Syntax:** obj = Process Screening(...Use Limits Table( state=0|1, data table, <options>)...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Process Screening(...Use Limits Table( state=0|1, data table, &lt;options&gt;)...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Importiert historische Eingriffsgrenzen und Spezifikationsgrenzen aus einer Datentabelle.
 
@@ -1876,9 +1864,7 @@ dt << Process Screening(
 
 ### Use Medians instead of Means
 
-**Syntax:** obj = Process Screening(...Use Medians instead of Means( state=0|1 )...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Process Screening(...Use Medians instead of Means( state=0|1 )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Schätzt die Mittellinie anhand des Medians der Beobachtungen, um den Effekt von Ausreißern auf die Tests zu verringern.
 
@@ -1923,7 +1909,7 @@ dt << Process Screening(
 
 ### Within Sigma
 
-**Syntax:** obj << Within Sigma( state=0|1 )
+**Syntax:** obj &lt;&lt; Within Sigma( state=0|1 )
 
 **Beschreibung:** Blendet die Spalte „Innerhalb-Sigma“ in der Zusammenfassungstabelle ein oder aus. Diese Spalte enthält eine Schätzung der Standardabweichung basierend auf der Streuung innerhalb der Untergruppen. Standardmäßig ein.
 
@@ -1943,7 +1929,7 @@ obj << Within Sigma( 1 );
 
 ### Action
 
-**Syntax:** obj << Action
+**Syntax:** obj &lt;&lt; Action
 
 **Beschreibung:** Allzwecköffnung innerhalb einer Plattform zum Einfügen von auszuwertenden Ausdrücken. Setzt die Kontexte für Anzeigefeld und Datentabelle kurzzeitig auf die Plattform.
 
@@ -1961,7 +1947,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Syntax:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntax:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Beschreibung:** Wendet eine zuvor erstellte Voreinstellung auf das Objekt an und aktualisiert die Optionen und Anpassungen entsprechend den gespeicherten Einstellungen.
 
@@ -2008,7 +1994,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**Syntax:** obj << Automatic Recalc( state=0|1 )
+**Syntax:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Beschreibung:** Wiederholt die Analyse bei Ausschluss und Datenänderungen automatisch. Wenn die Option „Automatic Recalc“ eingeschaltet ist, sollten Sie in Betracht ziehen, Wait(0)-Befehle zu verwenden, um sicherzustellen, dass die Ausschlüsse und Datenänderungen vor der Neuberechnung wirksam werden.
 
@@ -2024,7 +2010,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**Syntax:** obj << Broadcast(message)
+**Syntax:** obj &lt;&lt; Broadcast(message)
 
 **Beschreibung:** Sendet eine Meldung an eine Plattform. Wenn es sich bei den zurückgegebenen Ergebnissen von einzelnen Objekten um Tabellen handelt, werden sie, wenn möglich, verkettet. Das endgültige Format ist entweder identisch mit dem Ergebnis der Option „Kombinierte Tabelle speichern“ in einem Tabellenfeld oder mit dem Ergebnis der Option „Verketten“ mithilfe einer Quellspalte. Ansonsten werden die Ergebnisse in einer Liste gespeichert und zurückgegeben.
 
@@ -2044,7 +2030,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**Syntax:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Syntax:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Beschreibung:** Fügt ein Bedienfeld zum Ändern der Variablen der Plattform hinzu
 
@@ -2062,7 +2048,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**Syntax:** obj << Copy ByGroup Script
+**Syntax:** obj &lt;&lt; Copy ByGroup Script
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und legt es in der Zwischenablage ab.
 
@@ -2086,7 +2072,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Syntax:** obj << Copy Script
+**Syntax:** obj &lt;&lt; Copy Script
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und legt es in der Zwischenablage ab.
 
@@ -2101,7 +2087,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Syntax:** obj << Data Table Window
+**Syntax:** obj &lt;&lt; Data Table Window
 
 **Beschreibung:** Zeigt das Fenster mit der Datentabelle für diese Analyse im Vordergrund an.
 
@@ -2116,7 +2102,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Syntax:** obj << Get By Levels
+**Syntax:** obj &lt;&lt; Get By Levels
 
 **Beschreibung:** Gibt ein assoziatives Array zurück, das die Nach-Gruppenspalten ihren Werten zuordnet.
 
@@ -2133,7 +2119,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Syntax:** obj << Get ByGroup Script
+**Syntax:** obj &lt;&lt; Get ByGroup Script
 
 **Beschreibung:** Erstellt ein Skript (JSL) zum Erzeugen dieser Analyse und gibt es als Ausdruck zurück.
 
@@ -2158,7 +2144,7 @@ Show( t );
 
 ### Get Container
 
-**Syntax:** obj << Get Container
+**Syntax:** obj &lt;&lt; Get Container
 
 **Beschreibung:** Gibt einen Verweis auf das Containerfeld zurück, das den Inhalt des Objekts enthält.
 
@@ -2205,7 +2191,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Syntax:** obj << Get Data Table
+**Syntax:** obj &lt;&lt; Get Data Table
 
 **Beschreibung:** Gibt eine Referenz auf die Datentabelle zurück.
 
@@ -2221,7 +2207,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**Syntax:** obj << Get Group Platform
+**Syntax:** obj &lt;&lt; Get Group Platform
 
 **Beschreibung:** Plattformobjekt der Gruppe zurückgeben, wenn diese Plattform Teil einer Gruppe ist. Andernfalls wird Empty() zurückgegeben.
 
@@ -2238,7 +2224,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**Syntax:** obj << Get Script
+**Syntax:** obj &lt;&lt; Get Script
 
 **Beschreibung:** Erstellt ein Skript (JSL) zum Erzeugen dieser Analyse und gibt es als Ausdruck zurück.
 
@@ -2254,7 +2240,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Syntax:** obj << Get Script With Data Table
+**Syntax:** obj &lt;&lt; Get Script With Data Table
 
 **Beschreibung:** Erstellt ein Skript (JSL) zum Erzeugen dieser Analyse und referenziert dabei spezifisch diese Datentabelle und gibt das Skript als Ausdruck zurück.
 
@@ -2270,7 +2256,7 @@ Show( t );
 
 ### Get Timing
 
-**Syntax:** obj << Get Timing
+**Syntax:** obj &lt;&lt; Get Timing
 
 **Beschreibung:** Steuert den Start der Plattform zeitlich.
 
@@ -2286,7 +2272,7 @@ Show( t );
 
 ### Get Web Support
 
-**Syntax:** obj << Get Web Support
+**Syntax:** obj &lt;&lt; Get Web Support
 
 **Beschreibung:** Gibt eine Zahl zurück, die angibt, ob für das Anzeigeobjekt interaktive HTML unterstützt wird. 1 bedeutet einige oder alle Elemente werden unterstützt. 0 bedeutet keine Unterstützung.
 
@@ -2302,7 +2288,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Syntax:** obj << Get Where Expr
+**Syntax:** obj &lt;&lt; Get Where Expr
 
 **Beschreibung:** Gibt den Ausdruck Where für die Teilmenge der Daten zurück, wenn die Plattform mit By() oder Where() gestartet wurde. Andernfalls wird Empty() zurückgegeben.
 
@@ -2339,7 +2325,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Syntax:** obj << Local Data Filter
+**Syntax:** obj &lt;&lt; Local Data Filter
 
 **Beschreibung:** Filtert Daten für bestimmte Gruppen oder Bereiche, aber nur lokal in dieser Plattform.
 
@@ -2395,7 +2381,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Syntax:** obj << Paste Local Data Filter
+**Syntax:** obj &lt;&lt; Paste Local Data Filter
 
 **Beschreibung:** Lokalen Datenfilter aus der Zwischenablage auf den aktuellen Bericht anwenden.
 
@@ -2416,7 +2402,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**Syntax:** obj << Redo Analysis
+**Syntax:** obj &lt;&lt; Redo Analysis
 
 **Beschreibung:** Führt die gleiche Analyse in einem neuen Fenster aus. Die Analyse ist unterschiedlich, wenn sich die Daten verändert haben.
 
@@ -2431,7 +2417,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**Syntax:** obj << Redo ByGroup Analysis
+**Syntax:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Beschreibung:** Führt die gleiche Analyse in einem neuen Fenster aus. Die Analyse ist unterschiedlich, wenn sich die Daten verändert haben.
 
@@ -2455,7 +2441,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**Syntax:** obj << Relaunch Analysis
+**Syntax:** obj &lt;&lt; Relaunch Analysis
 
 **Beschreibung:** Öffnet das Plattform-Startfenster und ruft die Einstellungen ab, die zum Erstellen des Berichts verwendet wurden.
 
@@ -2470,7 +2456,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**Syntax:** obj << Relaunch ByGroup
+**Syntax:** obj &lt;&lt; Relaunch ByGroup
 
 **Beschreibung:** Öffnet das Plattform-Startfenster und ruft die Einstellungen ab, die zum Erstellen des Berichts verwendet wurden.
 
@@ -2494,7 +2480,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**Syntax:** obj << Remove Column Switcher
+**Syntax:** obj &lt;&lt; Remove Column Switcher
 
 **Beschreibung:** Entfernt den letzten Spaltenwechsler, der der Plattform hinzugefügt wurde.
 
@@ -2514,7 +2500,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Syntax:** obj << Remove Local Data Filter
+**Syntax:** obj &lt;&lt; Remove Local Data Filter
 
 **Beschreibung:** Wenn ein lokaler Filter verwendet wurde, wird dieser entfernt und die Plattform verwendet wieder direkt alle Daten aus der Datentabelle
 
@@ -2553,9 +2539,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Syntax:** obj << Report;
-
-Report( obj )
+**Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Beschreibung:** Gibt eine Referenz auf das Berichtsobjekt zurück.
 
@@ -2572,7 +2556,7 @@ Show( t );
 
 ### Report View
 
-**Syntax:** obj << Report View( "Vollständig"|"Übersicht" )
+**Syntax:** obj &lt;&lt; Report View( "Vollständig"|"Übersicht" )
 
 **Beschreibung:** Die Berichtsanzeige legt das Detailniveau für einen Plattformbericht fest. Full zeigt alle Details an, während Summary abhängig von der Plattform nur ausgewählte Inhalte anzeigt. Für benutzerdefiniertes Verhalten unterstützen Anzeigefelder eine Meldung <<Set Summary Behavior.
 
@@ -2587,7 +2571,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**Syntax:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und speichert sie als Tabelleneigenschaft in der Datentabelle. Sie können einen Namen für das Skript angeben. Die Option Append Suffix hängt ein numerisches Suffix an den Skriptnamen an, das das Skript von einem vorhandenen Skript mit dem gleichen Namen unterscheidet. Die Option Prompt fordert den Benutzer auf, einen Skriptnamen anzugeben. Die Option Replace ersetzt ein vorhandenes Skript mit dem gleichen Namen.
 
@@ -2611,7 +2595,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Syntax:** obj << Save ByGroup Script to Journal
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und fügt eine Schaltfläche mit diesem Skript zum Journal hinzu.
 
@@ -2635,7 +2619,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Syntax:** obj << Save ByGroup Script to Script Window
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und hängt es an das Textfenster mit dem aktuellen Skript an.
 
@@ -2659,7 +2643,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**Syntax:** obj << Save Script for All Objects
+**Syntax:** obj &lt;&lt; Save Script for All Objects
 
 **Beschreibung:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -2674,7 +2658,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Syntax:** obj << Save Script for All Objects To Data Table( <name> )
+**Syntax:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Beschreibung:** Speichert ein Skript für alle Berichtsobjekte in der aktuellen Datentabelle. Diese Option ist nützlich, wenn Sie mehrere Berichte im Fenster haben. Das Skript wird nach der ersten Plattform benannt, sofern Sie keine Skriptnamen in Anführungszeichen angeben.
 
@@ -2720,7 +2704,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Syntax:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und speichert es als Tabelleneigenschaft in der Datentabelle.
 
@@ -2735,7 +2719,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Syntax:** obj << Save Script to Journal
+**Syntax:** obj &lt;&lt; Save Script to Journal
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und fügt eine Schaltfläche mit diesem Skript zum Journal hinzu.
 
@@ -2750,7 +2734,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Syntax:** obj << Save Script to Report
+**Syntax:** obj &lt;&lt; Save Script to Report
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und zeigt es im Bericht selbst an. Nützlich zum Anlegen eines gedruckten Nachweises der durchgeführten Aktivitäten.
 
@@ -2765,7 +2749,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Syntax:** obj << Save Script to Script Window
+**Syntax:** obj &lt;&lt; Save Script to Script Window
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und hängt es an das Textfenster mit dem aktuellen Skript an.
 
@@ -2845,7 +2829,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Syntax:** obj << Sync to Data Table Changes
+**Syntax:** obj &lt;&lt; Sync to Data Table Changes
 
 **Beschreibung:** Mit Ausgeschlossenen und vorgenommenen Datenänderungen synchronisieren.
 
@@ -2862,7 +2846,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Syntax:** obj << Title( "new title" )
+**Syntax:** obj &lt;&lt; Title( "new title" )
 
 **Beschreibung:** Legt den Titel für die Plattform fest.
 
@@ -2877,7 +2861,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Syntax:** obj << Top Report
+**Syntax:** obj &lt;&lt; Top Report
 
 **Beschreibung:** Gibt eine Referenz auf den Stammknoten im Bericht zurück.
 
@@ -2894,7 +2878,7 @@ Show( t );
 
 ### Transform Column
 
-**Syntax:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Syntax:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Beschreibung:** Transformationsspalte im lokalen Kontext eines Objekts erstellen, üblicherweise als Plattform. Die Transformationsspalte ist nur für die Lebensdauer der Plattform aktiv.
 
@@ -2915,7 +2899,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**Syntax:** obj << View Web XML
+**Syntax:** obj &lt;&lt; View Web XML
 
 **Beschreibung:** Gibt den XML-Code zurück, der zum Erstellen des interaktiven HTML-Berichts verwendet wird.
 
@@ -2930,9 +2914,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**Syntax:** obj = Process Screening(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Process Screening(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Typ des Fensters festlegen, das für den Bericht erstellt werden soll. Standardmäßig wird ein Berichtsfenster vom Typ Visible erstellt. Ein Fenster vom Typ Invisible wird auf dem Bildschirm nicht angezeigt, kann jedoch von Funktionen wie Window() erkannt werden. Ein Fenster vom Typ Private reagiert auf die meisten Fenstermeldungen, kann jedoch nicht erkannt werden und muss über das Berichtsobjekt adressiert werden.
 
@@ -2953,9 +2935,7 @@ New Window( "Bivariate Equation",
 
 ### By
 
-**Syntax:** obj = Process Screening(...<By( column(s) )>...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Process Screening(...&lt;By( column(s) )&gt;...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 ```jsl
 
@@ -2976,9 +2956,7 @@ obj = dt << Process Screening(
 
 ### Grouping
 
-**Syntax:** obj = Process Screening(...<Grouping( column(s) )>...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Process Screening(...&lt;Grouping( column(s) )&gt;...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Analysiert jede Prozessvariable in jeder Kombination von Stufen der angegebenen Gruppierungsspalten.
 
@@ -2992,9 +2970,7 @@ obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 
 
 ### Process Variables
 
-**Syntax:** obj = Process Screening(...Process Variables( column(s) )...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Process Screening(...Process Variables( column(s) )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Gibt die Spalten der Prozessdaten an, die die zu analysierenden Messungen enthalten.
 
@@ -3008,9 +2984,7 @@ obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 
 
 ### Subgroup
 
-**Syntax:** obj = Process Screening(...<Subgroup( column(s) )>...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Process Screening(...&lt;Subgroup( column(s) )&gt;...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Weist eine oder mehr Untergruppenvariablen zu.
 
@@ -3029,9 +3003,7 @@ obj = dt << Process Screening(
 
 ### Time
 
-**Syntax:** obj = Process Screening(...<Time( column )>...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Process Screening(...&lt;Time( column )&gt;...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Weist eine Spalte zu, die die zeitliche Reihenfolge für die Daten angibt. Die Prozessdaten werden vor der Durchführung von Berechnungen nach der Zeitvariablen sortiert.
 
@@ -3051,9 +3023,7 @@ obj = dt << Process Screening(
 
 ### n Trials
 
-**Syntax:** obj = Process Screening(...<n Trials( column )>...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Process Screening(...&lt;n Trials( column )&gt;...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Weist eine Spalte zu, die die Anzahl der Versuche enthält. Diese Zahl wird als Nenner des Anteils der Defekten bei einem P-Diagramm verwendet.
 
@@ -3093,9 +3063,7 @@ obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 
 
 #### Circle Alarm Points
 
-**Syntax:** obj << Chart Options as Selected( Circle Alarm Points( state=0|1 ) ); 
-
- obj << Chart Options for Selected( Circle Alarm Points( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Circle Alarm Points( state=0|1 ) ); obj &lt;&lt; Chart Options for Selected( Circle Alarm Points( state=0|1 ) )
 
 **Beschreibung:** Blendet rote Kreise um Punkte ein oder aus, die sich in einem Alarmzustand befinden. Der entsprechende Alarmcode wird neben jedem eingekreisten Punkt angezeigt. Diese Option ist für Driftgraphen nicht verfügbar. Standardmäßig ein.
 
@@ -3141,11 +3109,7 @@ obj << Chart Options as Selected( Circle Alarm Points( 1 ) );
 
 #### Connect Points
 
-**Syntax:** obj << Chart Options as Selected( Connect Points( state=0|1 ) ); 
-
- obj << Chart Options for Selected( Connect Points( state=0|1 ) ); 
-
- obj << Chart Options Drift Graph( Connect Points( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Connect Points( state=0|1 ) ); obj &lt;&lt; Chart Options for Selected( Connect Points( state=0|1 ) ); obj &lt;&lt; Chart Options Drift Graph( Connect Points( state=0|1 ) )
 
 **Beschreibung:** Zeigt Linien an oder blendet sie aus, die die Punkte verbinden. Standardmäßig ein.
 
@@ -3210,9 +3174,7 @@ obj << Chart Options as Selected( Connect Points( 0 ) );
 
 #### Dispersion Chart
 
-**Syntax:** obj << Chart Options as Selected( Dispersion Chart( state=0|1 ) ); 
-
- obj << Chart Options for Selected( Dispersion Chart( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Dispersion Chart( state=0|1 ) ); obj &lt;&lt; Chart Options for Selected( Dispersion Chart( state=0|1 ) )
 
 **Beschreibung:** Zeigt oder verbirgt eine Regelkarte für Spannweite, Standardabweichung oder gleitende Spannweiten zusätzlich zur Regelkarte für jeden Prozess. Diese Option ist für Driftgraphen nicht verfügbar.
 
@@ -3257,11 +3219,7 @@ obj << Chart Options as Selected( Dispersion Chart( 1 ) );
 
 #### Frame Size
 
-**Syntax:** obj << Chart Options as Selected( Frame Size( width=500, height=170 ) ); 
-
- obj << Chart Options for Selected( Frame Size( width=500, height=170 ) ); 
-
- obj << Chart Options Drift Graph( Frame Size( width=500, height=170 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Frame Size( width=500, height=170 ) ); obj &lt;&lt; Chart Options for Selected( Frame Size( width=500, height=170 ) ); obj &lt;&lt; Chart Options Drift Graph( Frame Size( width=500, height=170 ) )
 
 **Beschreibung:** Legt die Größe des Graphen fest. Standardmäßig „500,170“.
 
@@ -3323,11 +3281,7 @@ obj << Chart Options as Selected( Frame Size( 500, 400 ) );
 
 #### Number of Plots Across
 
-**Syntax:** obj << Chart Options as Selected( Number of Plots Across( number=1 ) ); 
-
- obj << Chart Options for Selected( Number of Plots Across( number=1 ) ); 
-
- obj << Chart Options Drift Graph( Number of Plots Across( number=1 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Number of Plots Across( number=1 ) ); obj &lt;&lt; Chart Options for Selected( Number of Plots Across( number=1 ) ); obj &lt;&lt; Chart Options Drift Graph( Number of Plots Across( number=1 ) )
 
 **Beschreibung:** Gibt das Layout für die Diagramme an. Standardmäßig „1“.
 
@@ -3389,11 +3343,7 @@ obj << Chart Options as Selected( Number of Plots Across( 2 ) );
 
 #### Remove
 
-**Syntax:** obj << Chart Options as Selected( Remove ); 
-
- obj << Chart Options for Selected( Remove ); 
-
- obj << Chart Options Drift Graph( Remove )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Remove ); obj &lt;&lt; Chart Options for Selected( Remove ); obj &lt;&lt; Chart Options Drift Graph( Remove )
 
 **Beschreibung:** Entfernt die Diagramme aus dem Bericht.
 
@@ -3456,11 +3406,7 @@ obj << Chart Options as Selected( Remove );
 
 #### Show Centerline
 
-**Syntax:** obj << Chart Options as Selected( Show Centerline( state=0|1 ) ); 
-
- obj << Chart Options for Selected( Show Centerline( state=0|1 ) ); 
-
- obj << Chart Options Drift Graph( Show Centerline( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Show Centerline( state=0|1 ) ); obj &lt;&lt; Chart Options for Selected( Show Centerline( state=0|1 ) ); obj &lt;&lt; Chart Options Drift Graph( Show Centerline( state=0|1 ) )
 
 **Beschreibung:** Blendet für den Mittelwert des Prozesses eine durchgezogene grüne Linie ein oder aus. Standardmäßig ein.
 
@@ -3524,11 +3470,7 @@ obj << Chart Options as Selected( Show Centerline( 0 ) );
 
 #### Show Control Limits
 
-**Syntax:** obj << Chart Options as Selected( Show Control Limits( state=0|1 ) ); 
-
- obj << Chart Options for Selected( Show Control Limits( state=0|1 ) ); 
-
- obj << Chart Options Drift Graph( Show Control Limits( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Show Control Limits( state=0|1 ) ); obj &lt;&lt; Chart Options for Selected( Show Control Limits( state=0|1 ) ); obj &lt;&lt; Chart Options Drift Graph( Show Control Limits( state=0|1 ) )
 
 **Beschreibung:** Blendet die obere und untere Eingriffsgrenzen ein oder aus. Standardmäßig ein.
 
@@ -3592,11 +3534,7 @@ obj << Chart Options as Selected( Show Control Limits( 0 ) );
 
 #### Show Markers
 
-**Syntax:** obj << Chart Options as Selected( Show Markers( state=0|1 ) ); 
-
- obj << Chart Options for Selected( Show Markers( state=0|1 ) ); 
-
- obj << Chart Options Drift Graph( Show Markers( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Show Markers( state=0|1 ) ); obj &lt;&lt; Chart Options for Selected( Show Markers( state=0|1 ) ); obj &lt;&lt; Chart Options Drift Graph( Show Markers( state=0|1 ) )
 
 **Beschreibung:** Zeigt die Einzelpunkte in den Diagrammen an oder blendet sie aus.
 
@@ -3659,11 +3597,7 @@ obj << Chart Options as Selected( Show Markers( 0 ) );
 
 #### Show Spec Limits
 
-**Syntax:** obj << Chart Options as Selected( Show Spec Limits( state=0|1 ) ); 
-
- obj << Chart Options for Selected( Show Spec Limits( state=0|1 ) ); 
-
- obj << Chart Options Drift Graph( Show Spec Limits( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Show Spec Limits( state=0|1 ) ); obj &lt;&lt; Chart Options for Selected( Show Spec Limits( state=0|1 ) ); obj &lt;&lt; Chart Options Drift Graph( Show Spec Limits( state=0|1 ) )
 
 **Beschreibung:** Blendet die untere und obere Spezifikationsgrenze als gepunktete blaue Linien ein oder aus.
 
@@ -3747,9 +3681,7 @@ obj << Chart Options as Selected( Show Spec Limits( 1 ) );
 
 #### Show Zones
 
-**Syntax:** obj << Chart Options as Selected( Show Zones( state=0|1 ) ); 
-
- obj << Chart Options for Selected( Show Zones( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Show Zones( state=0|1 ) ); obj &lt;&lt; Chart Options for Selected( Show Zones( state=0|1 ) )
 
 **Beschreibung:** Blendet die Zonen mit einer und zwei Standardabweichungen in den Diagrammen ein oder aus. Diese Option ist für Driftgraphen nicht verfügbar.
 
@@ -3791,11 +3723,7 @@ obj = dt << Process Screening(
 
 #### V Axis Label
 
-**Syntax:** obj << Chart Options as Selected( V Axis Label( state=0|1 ) ); 
-
- obj << Chart Options for Selected( V Axis Label( state=0|1 ) ); 
-
- obj << Chart Options Drift Graph( V Axis Label( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( V Axis Label( state=0|1 ) ); obj &lt;&lt; Chart Options for Selected( V Axis Label( state=0|1 ) ); obj &lt;&lt; Chart Options Drift Graph( V Axis Label( state=0|1 ) )
 
 **Beschreibung:** Blendet die vertikale Achsenbeschriftung in jedem Diagramm ein oder aus. Standardmäßig ein.
 
@@ -3864,9 +3792,7 @@ obj << Chart Options as Selected( V Axis Label( 1 ) );
 
 #### Circle Alarm Points
 
-**Syntax:** obj << Chart Options as Selected( Circle Alarm Points( state=0|1 ) ); 
-
- obj << Chart Options for Selected( Circle Alarm Points( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Circle Alarm Points( state=0|1 ) ); obj &lt;&lt; Chart Options for Selected( Circle Alarm Points( state=0|1 ) )
 
 **Beschreibung:** Blendet rote Kreise um Punkte ein oder aus, die sich in einem Alarmzustand befinden. Der entsprechende Alarmcode wird neben jedem eingekreisten Punkt angezeigt. Diese Option ist für Driftgraphen nicht verfügbar. Standardmäßig ein.
 
@@ -3912,11 +3838,7 @@ obj << Chart Options as Selected( Circle Alarm Points( 1 ) );
 
 #### Connect Points
 
-**Syntax:** obj << Chart Options as Selected( Connect Points( state=0|1 ) ); 
-
- obj << Chart Options for Selected( Connect Points( state=0|1 ) ); 
-
- obj << Chart Options Drift Graph( Connect Points( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Connect Points( state=0|1 ) ); obj &lt;&lt; Chart Options for Selected( Connect Points( state=0|1 ) ); obj &lt;&lt; Chart Options Drift Graph( Connect Points( state=0|1 ) )
 
 **Beschreibung:** Zeigt Linien an oder blendet sie aus, die die Punkte verbinden. Standardmäßig ein.
 
@@ -3981,9 +3903,7 @@ obj << Chart Options as Selected( Connect Points( 0 ) );
 
 #### Dispersion Chart
 
-**Syntax:** obj << Chart Options as Selected( Dispersion Chart( state=0|1 ) ); 
-
- obj << Chart Options for Selected( Dispersion Chart( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Dispersion Chart( state=0|1 ) ); obj &lt;&lt; Chart Options for Selected( Dispersion Chart( state=0|1 ) )
 
 **Beschreibung:** Zeigt oder verbirgt eine Regelkarte für Spannweite, Standardabweichung oder gleitende Spannweiten zusätzlich zur Regelkarte für jeden Prozess. Diese Option ist für Driftgraphen nicht verfügbar.
 
@@ -4028,11 +3948,7 @@ obj << Chart Options as Selected( Dispersion Chart( 1 ) );
 
 #### Frame Size
 
-**Syntax:** obj << Chart Options as Selected( Frame Size( width=500, height=170 ) ); 
-
- obj << Chart Options for Selected( Frame Size( width=500, height=170 ) ); 
-
- obj << Chart Options Drift Graph( Frame Size( width=500, height=170 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Frame Size( width=500, height=170 ) ); obj &lt;&lt; Chart Options for Selected( Frame Size( width=500, height=170 ) ); obj &lt;&lt; Chart Options Drift Graph( Frame Size( width=500, height=170 ) )
 
 **Beschreibung:** Legt die Größe des Graphen fest. Standardmäßig „500,170“.
 
@@ -4094,11 +4010,7 @@ obj << Chart Options as Selected( Frame Size( 500, 400 ) );
 
 #### Number of Plots Across
 
-**Syntax:** obj << Chart Options as Selected( Number of Plots Across( number=1 ) ); 
-
- obj << Chart Options for Selected( Number of Plots Across( number=1 ) ); 
-
- obj << Chart Options Drift Graph( Number of Plots Across( number=1 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Number of Plots Across( number=1 ) ); obj &lt;&lt; Chart Options for Selected( Number of Plots Across( number=1 ) ); obj &lt;&lt; Chart Options Drift Graph( Number of Plots Across( number=1 ) )
 
 **Beschreibung:** Gibt das Layout für die Diagramme an. Standardmäßig „1“.
 
@@ -4160,11 +4072,7 @@ obj << Chart Options as Selected( Number of Plots Across( 2 ) );
 
 #### Remove
 
-**Syntax:** obj << Chart Options as Selected( Remove ); 
-
- obj << Chart Options for Selected( Remove ); 
-
- obj << Chart Options Drift Graph( Remove )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Remove ); obj &lt;&lt; Chart Options for Selected( Remove ); obj &lt;&lt; Chart Options Drift Graph( Remove )
 
 **Beschreibung:** Entfernt die Diagramme aus dem Bericht.
 
@@ -4227,11 +4135,7 @@ obj << Chart Options as Selected( Remove );
 
 #### Show Centerline
 
-**Syntax:** obj << Chart Options as Selected( Show Centerline( state=0|1 ) ); 
-
- obj << Chart Options for Selected( Show Centerline( state=0|1 ) ); 
-
- obj << Chart Options Drift Graph( Show Centerline( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Show Centerline( state=0|1 ) ); obj &lt;&lt; Chart Options for Selected( Show Centerline( state=0|1 ) ); obj &lt;&lt; Chart Options Drift Graph( Show Centerline( state=0|1 ) )
 
 **Beschreibung:** Blendet für den Mittelwert des Prozesses eine durchgezogene grüne Linie ein oder aus. Standardmäßig ein.
 
@@ -4295,11 +4199,7 @@ obj << Chart Options as Selected( Show Centerline( 0 ) );
 
 #### Show Control Limits
 
-**Syntax:** obj << Chart Options as Selected( Show Control Limits( state=0|1 ) ); 
-
- obj << Chart Options for Selected( Show Control Limits( state=0|1 ) ); 
-
- obj << Chart Options Drift Graph( Show Control Limits( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Show Control Limits( state=0|1 ) ); obj &lt;&lt; Chart Options for Selected( Show Control Limits( state=0|1 ) ); obj &lt;&lt; Chart Options Drift Graph( Show Control Limits( state=0|1 ) )
 
 **Beschreibung:** Blendet die obere und untere Eingriffsgrenzen ein oder aus. Standardmäßig ein.
 
@@ -4363,11 +4263,7 @@ obj << Chart Options as Selected( Show Control Limits( 0 ) );
 
 #### Show Markers
 
-**Syntax:** obj << Chart Options as Selected( Show Markers( state=0|1 ) ); 
-
- obj << Chart Options for Selected( Show Markers( state=0|1 ) ); 
-
- obj << Chart Options Drift Graph( Show Markers( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Show Markers( state=0|1 ) ); obj &lt;&lt; Chart Options for Selected( Show Markers( state=0|1 ) ); obj &lt;&lt; Chart Options Drift Graph( Show Markers( state=0|1 ) )
 
 **Beschreibung:** Zeigt die Einzelpunkte in den Diagrammen an oder blendet sie aus.
 
@@ -4430,11 +4326,7 @@ obj << Chart Options as Selected( Show Markers( 0 ) );
 
 #### Show Spec Limits
 
-**Syntax:** obj << Chart Options as Selected( Show Spec Limits( state=0|1 ) ); 
-
- obj << Chart Options for Selected( Show Spec Limits( state=0|1 ) ); 
-
- obj << Chart Options Drift Graph( Show Spec Limits( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Show Spec Limits( state=0|1 ) ); obj &lt;&lt; Chart Options for Selected( Show Spec Limits( state=0|1 ) ); obj &lt;&lt; Chart Options Drift Graph( Show Spec Limits( state=0|1 ) )
 
 **Beschreibung:** Blendet die untere und obere Spezifikationsgrenze als gepunktete blaue Linien ein oder aus.
 
@@ -4518,9 +4410,7 @@ obj << Chart Options as Selected( Show Spec Limits( 1 ) );
 
 #### Show Zones
 
-**Syntax:** obj << Chart Options as Selected( Show Zones( state=0|1 ) ); 
-
- obj << Chart Options for Selected( Show Zones( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Show Zones( state=0|1 ) ); obj &lt;&lt; Chart Options for Selected( Show Zones( state=0|1 ) )
 
 **Beschreibung:** Blendet die Zonen mit einer und zwei Standardabweichungen in den Diagrammen ein oder aus. Diese Option ist für Driftgraphen nicht verfügbar.
 
@@ -4562,11 +4452,7 @@ obj = dt << Process Screening(
 
 #### V Axis Label
 
-**Syntax:** obj << Chart Options as Selected( V Axis Label( state=0|1 ) ); 
-
- obj << Chart Options for Selected( V Axis Label( state=0|1 ) ); 
-
- obj << Chart Options Drift Graph( V Axis Label( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( V Axis Label( state=0|1 ) ); obj &lt;&lt; Chart Options for Selected( V Axis Label( state=0|1 ) ); obj &lt;&lt; Chart Options Drift Graph( V Axis Label( state=0|1 ) )
 
 **Beschreibung:** Blendet die vertikale Achsenbeschriftung in jedem Diagramm ein oder aus. Standardmäßig ein.
 
@@ -4635,9 +4521,7 @@ obj << Chart Options as Selected( V Axis Label( 1 ) );
 
 #### Circle Alarm Points
 
-**Syntax:** obj << Chart Options as Selected( Circle Alarm Points( state=0|1 ) ); 
-
- obj << Chart Options for Selected( Circle Alarm Points( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Circle Alarm Points( state=0|1 ) ); obj &lt;&lt; Chart Options for Selected( Circle Alarm Points( state=0|1 ) )
 
 **Beschreibung:** Blendet rote Kreise um Punkte ein oder aus, die sich in einem Alarmzustand befinden. Der entsprechende Alarmcode wird neben jedem eingekreisten Punkt angezeigt. Diese Option ist für Driftgraphen nicht verfügbar. Standardmäßig ein.
 
@@ -4683,11 +4567,7 @@ obj << Chart Options as Selected( Circle Alarm Points( 1 ) );
 
 #### Connect Points
 
-**Syntax:** obj << Chart Options as Selected( Connect Points( state=0|1 ) ); 
-
- obj << Chart Options for Selected( Connect Points( state=0|1 ) ); 
-
- obj << Chart Options Drift Graph( Connect Points( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Connect Points( state=0|1 ) ); obj &lt;&lt; Chart Options for Selected( Connect Points( state=0|1 ) ); obj &lt;&lt; Chart Options Drift Graph( Connect Points( state=0|1 ) )
 
 **Beschreibung:** Zeigt Linien an oder blendet sie aus, die die Punkte verbinden. Standardmäßig ein.
 
@@ -4752,9 +4632,7 @@ obj << Chart Options as Selected( Connect Points( 0 ) );
 
 #### Dispersion Chart
 
-**Syntax:** obj << Chart Options as Selected( Dispersion Chart( state=0|1 ) ); 
-
- obj << Chart Options for Selected( Dispersion Chart( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Dispersion Chart( state=0|1 ) ); obj &lt;&lt; Chart Options for Selected( Dispersion Chart( state=0|1 ) )
 
 **Beschreibung:** Zeigt oder verbirgt eine Regelkarte für Spannweite, Standardabweichung oder gleitende Spannweiten zusätzlich zur Regelkarte für jeden Prozess. Diese Option ist für Driftgraphen nicht verfügbar.
 
@@ -4799,11 +4677,7 @@ obj << Chart Options as Selected( Dispersion Chart( 1 ) );
 
 #### Frame Size
 
-**Syntax:** obj << Chart Options as Selected( Frame Size( width=500, height=170 ) ); 
-
- obj << Chart Options for Selected( Frame Size( width=500, height=170 ) ); 
-
- obj << Chart Options Drift Graph( Frame Size( width=500, height=170 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Frame Size( width=500, height=170 ) ); obj &lt;&lt; Chart Options for Selected( Frame Size( width=500, height=170 ) ); obj &lt;&lt; Chart Options Drift Graph( Frame Size( width=500, height=170 ) )
 
 **Beschreibung:** Legt die Größe des Graphen fest. Standardmäßig „500,170“.
 
@@ -4865,11 +4739,7 @@ obj << Chart Options as Selected( Frame Size( 500, 400 ) );
 
 #### Number of Plots Across
 
-**Syntax:** obj << Chart Options as Selected( Number of Plots Across( number=1 ) ); 
-
- obj << Chart Options for Selected( Number of Plots Across( number=1 ) ); 
-
- obj << Chart Options Drift Graph( Number of Plots Across( number=1 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Number of Plots Across( number=1 ) ); obj &lt;&lt; Chart Options for Selected( Number of Plots Across( number=1 ) ); obj &lt;&lt; Chart Options Drift Graph( Number of Plots Across( number=1 ) )
 
 **Beschreibung:** Gibt das Layout für die Diagramme an. Standardmäßig „1“.
 
@@ -4931,11 +4801,7 @@ obj << Chart Options as Selected( Number of Plots Across( 2 ) );
 
 #### Remove
 
-**Syntax:** obj << Chart Options as Selected( Remove ); 
-
- obj << Chart Options for Selected( Remove ); 
-
- obj << Chart Options Drift Graph( Remove )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Remove ); obj &lt;&lt; Chart Options for Selected( Remove ); obj &lt;&lt; Chart Options Drift Graph( Remove )
 
 **Beschreibung:** Entfernt die Diagramme aus dem Bericht.
 
@@ -4998,11 +4864,7 @@ obj << Chart Options as Selected( Remove );
 
 #### Show Centerline
 
-**Syntax:** obj << Chart Options as Selected( Show Centerline( state=0|1 ) ); 
-
- obj << Chart Options for Selected( Show Centerline( state=0|1 ) ); 
-
- obj << Chart Options Drift Graph( Show Centerline( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Show Centerline( state=0|1 ) ); obj &lt;&lt; Chart Options for Selected( Show Centerline( state=0|1 ) ); obj &lt;&lt; Chart Options Drift Graph( Show Centerline( state=0|1 ) )
 
 **Beschreibung:** Blendet für den Mittelwert des Prozesses eine durchgezogene grüne Linie ein oder aus. Standardmäßig ein.
 
@@ -5066,11 +4928,7 @@ obj << Chart Options as Selected( Show Centerline( 0 ) );
 
 #### Show Control Limits
 
-**Syntax:** obj << Chart Options as Selected( Show Control Limits( state=0|1 ) ); 
-
- obj << Chart Options for Selected( Show Control Limits( state=0|1 ) ); 
-
- obj << Chart Options Drift Graph( Show Control Limits( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Show Control Limits( state=0|1 ) ); obj &lt;&lt; Chart Options for Selected( Show Control Limits( state=0|1 ) ); obj &lt;&lt; Chart Options Drift Graph( Show Control Limits( state=0|1 ) )
 
 **Beschreibung:** Blendet die obere und untere Eingriffsgrenzen ein oder aus. Standardmäßig ein.
 
@@ -5134,11 +4992,7 @@ obj << Chart Options as Selected( Show Control Limits( 0 ) );
 
 #### Show Markers
 
-**Syntax:** obj << Chart Options as Selected( Show Markers( state=0|1 ) ); 
-
- obj << Chart Options for Selected( Show Markers( state=0|1 ) ); 
-
- obj << Chart Options Drift Graph( Show Markers( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Show Markers( state=0|1 ) ); obj &lt;&lt; Chart Options for Selected( Show Markers( state=0|1 ) ); obj &lt;&lt; Chart Options Drift Graph( Show Markers( state=0|1 ) )
 
 **Beschreibung:** Zeigt die Einzelpunkte in den Diagrammen an oder blendet sie aus.
 
@@ -5201,11 +5055,7 @@ obj << Chart Options as Selected( Show Markers( 0 ) );
 
 #### Show Spec Limits
 
-**Syntax:** obj << Chart Options as Selected( Show Spec Limits( state=0|1 ) ); 
-
- obj << Chart Options for Selected( Show Spec Limits( state=0|1 ) ); 
-
- obj << Chart Options Drift Graph( Show Spec Limits( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Show Spec Limits( state=0|1 ) ); obj &lt;&lt; Chart Options for Selected( Show Spec Limits( state=0|1 ) ); obj &lt;&lt; Chart Options Drift Graph( Show Spec Limits( state=0|1 ) )
 
 **Beschreibung:** Blendet die untere und obere Spezifikationsgrenze als gepunktete blaue Linien ein oder aus.
 
@@ -5289,9 +5139,7 @@ obj << Chart Options as Selected( Show Spec Limits( 1 ) );
 
 #### Show Zones
 
-**Syntax:** obj << Chart Options as Selected( Show Zones( state=0|1 ) ); 
-
- obj << Chart Options for Selected( Show Zones( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Show Zones( state=0|1 ) ); obj &lt;&lt; Chart Options for Selected( Show Zones( state=0|1 ) )
 
 **Beschreibung:** Blendet die Zonen mit einer und zwei Standardabweichungen in den Diagrammen ein oder aus. Diese Option ist für Driftgraphen nicht verfügbar.
 
@@ -5333,11 +5181,7 @@ obj = dt << Process Screening(
 
 #### V Axis Label
 
-**Syntax:** obj << Chart Options as Selected( V Axis Label( state=0|1 ) ); 
-
- obj << Chart Options for Selected( V Axis Label( state=0|1 ) ); 
-
- obj << Chart Options Drift Graph( V Axis Label( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( V Axis Label( state=0|1 ) ); obj &lt;&lt; Chart Options for Selected( V Axis Label( state=0|1 ) ); obj &lt;&lt; Chart Options Drift Graph( V Axis Label( state=0|1 ) )
 
 **Beschreibung:** Blendet die vertikale Achsenbeschriftung in jedem Diagramm ein oder aus. Standardmäßig ein.
 
@@ -5406,9 +5250,7 @@ obj << Chart Options as Selected( V Axis Label( 1 ) );
 
 #### Circle Alarm Points
 
-**Syntax:** obj << Chart Options as Selected( Circle Alarm Points( state=0|1 ) ); 
-
- obj << Chart Options for Selected( Circle Alarm Points( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Circle Alarm Points( state=0|1 ) ); obj &lt;&lt; Chart Options for Selected( Circle Alarm Points( state=0|1 ) )
 
 **Beschreibung:** Blendet rote Kreise um Punkte ein oder aus, die sich in einem Alarmzustand befinden. Der entsprechende Alarmcode wird neben jedem eingekreisten Punkt angezeigt. Diese Option ist für Driftgraphen nicht verfügbar. Standardmäßig ein.
 
@@ -5454,11 +5296,7 @@ obj << Chart Options as Selected( Circle Alarm Points( 1 ) );
 
 #### Connect Points
 
-**Syntax:** obj << Chart Options as Selected( Connect Points( state=0|1 ) ); 
-
- obj << Chart Options for Selected( Connect Points( state=0|1 ) ); 
-
- obj << Chart Options Drift Graph( Connect Points( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Connect Points( state=0|1 ) ); obj &lt;&lt; Chart Options for Selected( Connect Points( state=0|1 ) ); obj &lt;&lt; Chart Options Drift Graph( Connect Points( state=0|1 ) )
 
 **Beschreibung:** Zeigt Linien an oder blendet sie aus, die die Punkte verbinden. Standardmäßig ein.
 
@@ -5523,9 +5361,7 @@ obj << Chart Options as Selected( Connect Points( 0 ) );
 
 #### Dispersion Chart
 
-**Syntax:** obj << Chart Options as Selected( Dispersion Chart( state=0|1 ) ); 
-
- obj << Chart Options for Selected( Dispersion Chart( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Dispersion Chart( state=0|1 ) ); obj &lt;&lt; Chart Options for Selected( Dispersion Chart( state=0|1 ) )
 
 **Beschreibung:** Zeigt oder verbirgt eine Regelkarte für Spannweite, Standardabweichung oder gleitende Spannweiten zusätzlich zur Regelkarte für jeden Prozess. Diese Option ist für Driftgraphen nicht verfügbar.
 
@@ -5570,11 +5406,7 @@ obj << Chart Options as Selected( Dispersion Chart( 1 ) );
 
 #### Frame Size
 
-**Syntax:** obj << Chart Options as Selected( Frame Size( width=500, height=170 ) ); 
-
- obj << Chart Options for Selected( Frame Size( width=500, height=170 ) ); 
-
- obj << Chart Options Drift Graph( Frame Size( width=500, height=170 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Frame Size( width=500, height=170 ) ); obj &lt;&lt; Chart Options for Selected( Frame Size( width=500, height=170 ) ); obj &lt;&lt; Chart Options Drift Graph( Frame Size( width=500, height=170 ) )
 
 **Beschreibung:** Legt die Größe des Graphen fest. Standardmäßig „500,170“.
 
@@ -5636,11 +5468,7 @@ obj << Chart Options as Selected( Frame Size( 500, 400 ) );
 
 #### Number of Plots Across
 
-**Syntax:** obj << Chart Options as Selected( Number of Plots Across( number=1 ) ); 
-
- obj << Chart Options for Selected( Number of Plots Across( number=1 ) ); 
-
- obj << Chart Options Drift Graph( Number of Plots Across( number=1 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Number of Plots Across( number=1 ) ); obj &lt;&lt; Chart Options for Selected( Number of Plots Across( number=1 ) ); obj &lt;&lt; Chart Options Drift Graph( Number of Plots Across( number=1 ) )
 
 **Beschreibung:** Gibt das Layout für die Diagramme an. Standardmäßig „1“.
 
@@ -5702,11 +5530,7 @@ obj << Chart Options as Selected( Number of Plots Across( 2 ) );
 
 #### Remove
 
-**Syntax:** obj << Chart Options as Selected( Remove ); 
-
- obj << Chart Options for Selected( Remove ); 
-
- obj << Chart Options Drift Graph( Remove )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Remove ); obj &lt;&lt; Chart Options for Selected( Remove ); obj &lt;&lt; Chart Options Drift Graph( Remove )
 
 **Beschreibung:** Entfernt die Diagramme aus dem Bericht.
 
@@ -5769,11 +5593,7 @@ obj << Chart Options as Selected( Remove );
 
 #### Show Centerline
 
-**Syntax:** obj << Chart Options as Selected( Show Centerline( state=0|1 ) ); 
-
- obj << Chart Options for Selected( Show Centerline( state=0|1 ) ); 
-
- obj << Chart Options Drift Graph( Show Centerline( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Show Centerline( state=0|1 ) ); obj &lt;&lt; Chart Options for Selected( Show Centerline( state=0|1 ) ); obj &lt;&lt; Chart Options Drift Graph( Show Centerline( state=0|1 ) )
 
 **Beschreibung:** Blendet für den Mittelwert des Prozesses eine durchgezogene grüne Linie ein oder aus. Standardmäßig ein.
 
@@ -5837,11 +5657,7 @@ obj << Chart Options as Selected( Show Centerline( 0 ) );
 
 #### Show Control Limits
 
-**Syntax:** obj << Chart Options as Selected( Show Control Limits( state=0|1 ) ); 
-
- obj << Chart Options for Selected( Show Control Limits( state=0|1 ) ); 
-
- obj << Chart Options Drift Graph( Show Control Limits( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Show Control Limits( state=0|1 ) ); obj &lt;&lt; Chart Options for Selected( Show Control Limits( state=0|1 ) ); obj &lt;&lt; Chart Options Drift Graph( Show Control Limits( state=0|1 ) )
 
 **Beschreibung:** Blendet die obere und untere Eingriffsgrenzen ein oder aus. Standardmäßig ein.
 
@@ -5905,11 +5721,7 @@ obj << Chart Options as Selected( Show Control Limits( 0 ) );
 
 #### Show Markers
 
-**Syntax:** obj << Chart Options as Selected( Show Markers( state=0|1 ) ); 
-
- obj << Chart Options for Selected( Show Markers( state=0|1 ) ); 
-
- obj << Chart Options Drift Graph( Show Markers( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Show Markers( state=0|1 ) ); obj &lt;&lt; Chart Options for Selected( Show Markers( state=0|1 ) ); obj &lt;&lt; Chart Options Drift Graph( Show Markers( state=0|1 ) )
 
 **Beschreibung:** Zeigt die Einzelpunkte in den Diagrammen an oder blendet sie aus.
 
@@ -5972,11 +5784,7 @@ obj << Chart Options as Selected( Show Markers( 0 ) );
 
 #### Show Spec Limits
 
-**Syntax:** obj << Chart Options as Selected( Show Spec Limits( state=0|1 ) ); 
-
- obj << Chart Options for Selected( Show Spec Limits( state=0|1 ) ); 
-
- obj << Chart Options Drift Graph( Show Spec Limits( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Show Spec Limits( state=0|1 ) ); obj &lt;&lt; Chart Options for Selected( Show Spec Limits( state=0|1 ) ); obj &lt;&lt; Chart Options Drift Graph( Show Spec Limits( state=0|1 ) )
 
 **Beschreibung:** Blendet die untere und obere Spezifikationsgrenze als gepunktete blaue Linien ein oder aus.
 
@@ -6060,9 +5868,7 @@ obj << Chart Options as Selected( Show Spec Limits( 1 ) );
 
 #### Show Zones
 
-**Syntax:** obj << Chart Options as Selected( Show Zones( state=0|1 ) ); 
-
- obj << Chart Options for Selected( Show Zones( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( Show Zones( state=0|1 ) ); obj &lt;&lt; Chart Options for Selected( Show Zones( state=0|1 ) )
 
 **Beschreibung:** Blendet die Zonen mit einer und zwei Standardabweichungen in den Diagrammen ein oder aus. Diese Option ist für Driftgraphen nicht verfügbar.
 
@@ -6104,11 +5910,7 @@ obj = dt << Process Screening(
 
 #### V Axis Label
 
-**Syntax:** obj << Chart Options as Selected( V Axis Label( state=0|1 ) ); 
-
- obj << Chart Options for Selected( V Axis Label( state=0|1 ) ); 
-
- obj << Chart Options Drift Graph( V Axis Label( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Chart Options as Selected( V Axis Label( state=0|1 ) ); obj &lt;&lt; Chart Options for Selected( V Axis Label( state=0|1 ) ); obj &lt;&lt; Chart Options Drift Graph( V Axis Label( state=0|1 ) )
 
 **Beschreibung:** Blendet die vertikale Achsenbeschriftung in jedem Diagramm ein oder aus. Standardmäßig ein.
 

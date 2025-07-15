@@ -2,11 +2,9 @@
 
 
 
-## 函数
-
 ### Close
 
-**语法:** Close( <dataTableRef|name>, <NoSave|Save( "path" )> )
+**语法:** Close( &lt;dataTableRef|name&gt;, &lt;NoSave|Save( "path" )&gt; )
 
 **说明:** 关闭第一个参数所引用的数据表，它默认为当前项目中的当前数据表（若项目中没有运行脚本则没有项目）。
 
@@ -31,7 +29,7 @@ Close( exdt, NoSave );
 
 ### Close All
 
-**语法:** Close All( <Project(title|index|box|window)>, Data Tables | Reports | Journals, <invisible | private>, <NoSave|Save> )
+**语法:** Close All( &lt;Project(title|index|box|window)&gt;, Data Tables | Reports | Journals, &lt;invisible | private&gt;, &lt;NoSave|Save&gt; )
 
 **说明:** 关闭特定类型的所有打开的资源: 数据表、记录或报表。
 
@@ -53,7 +51,7 @@ Close All( Data Tables, NoSave );
 
 ### Convert File Path
 
-**语法:** path = Convert File Path( path, <absolute|relative>, <posix|windows>, <base( path )>, <search> )
+**语法:** path = Convert File Path( path, &lt;absolute|relative&gt;, &lt;posix|windows&gt;, &lt;base( path )&gt;, &lt;search&gt; )
 
 **说明:** 返回转换的路径。
 
@@ -75,7 +73,7 @@ For Each( {pv},
 
 ### Copy Directory
 
-**语法:** rc = Copy Directory( from, to, <recursive(0|1)> )
+**语法:** rc = Copy Directory( from, to, &lt;recursive(0|1)&gt; )
 
 **说明:** 将文件从一个目录复制到另一个目录，可选择是否复制子目录。目录名称将在 to 路径中创建，不应是 to 路径的一部分。若目录已复制，则返回 1，若目录无法复制，则返回 0。若路径无效或不存在，则抛出错误。
 
@@ -140,7 +138,7 @@ Format( date, "ddmonyyyy:h:m:s" );/* 1 1 0 date:time */
 
 ### Create Excel Workbook
 
-**语法:** Create Excel Workbook(<Workbook Name>, <{List of open tables}>, <Optional list of worksheet names> )
+**语法:** Create Excel Workbook(&lt;Workbook Name&gt;, &lt;{List of open tables}&gt;, &lt;Optional list of worksheet names&gt; )
 
 **说明:** 基于打开的 JMP 数据表生成 Excel 工作簿
 
@@ -189,7 +187,7 @@ Format( Creation Date( "$SAMPLE_DATA/Big Class.jmp" ), "ddmonyyyy:h:m:s" );
 
 ### Delete Directory
 
-**语法:** rc = Delete Directory( path, <Allow Undo( boolean )> )
+**语法:** rc = Delete Directory( path, &lt;Allow Undo( boolean )&gt; )
 
 **说明:** 删除目录及其文件和子目录。若目录已删除，则返回 1。若无法删除目录或路径无效，则返回 0。
 
@@ -211,7 +209,7 @@ Format( date, "ddmonyyyy:h:m:s" );/* 1 1 0 date:time */
 
 ### Delete File
 
-**语法:** rc = Delete File( path, <Allow Undo( boolean )> )
+**语法:** rc = Delete File( path, &lt;Allow Undo( boolean )&gt; )
 
 **说明:** 删除文件。若文件已删除，则返回 1。若无法删除文件，则返回 0。当路径无效或不存在时抛出错误。
 
@@ -281,7 +279,7 @@ File Size( "$SAMPLE_DATA/Big Class.jmp" );
 
 ### Files In Directory
 
-**语法:** y = Files In Directory( "path", <recursive(0|1)>, <include hidden(0|1)> )
+**语法:** y = Files In Directory( "path", &lt;recursive(0|1)&gt;, &lt;include hidden(0|1)&gt; )
 
 **说明:** 返回 path 指定的目录中的文件名列表。若未指定 Recursive 参数，则列表中包括目录名称。
 
@@ -309,7 +307,7 @@ Filter Each( {fn}, Files In Directory( "$SAMPLE_DATA", recursive( 1 ) ),
 
 ### Find All
 
-**语法:** Find All( <Project(title|index|box|window)>, Data Tables | Reports | Journals, <invisible | private> )
+**语法:** Find All( &lt;Project(title|index|box|window)&gt;, Data Tables | Reports | Journals, &lt;invisible | private&gt; )
 
 **说明:** 查找特定类型的所有打开的资源: 数据表、记录或报表。
 
@@ -471,7 +469,7 @@ Google Sheet Export(
 
 ### Google Sheet Import
 
-**语法:** Google Sheet Import(Email(address), Spreadsheet(url|id), <Sheets("sheetName1", ... "sheetNameN")>, <Sheet Settings( Has Column Headers(Boolean), Data Starts on Row(n), Cell Range(range), Import Cell Colors(Boolean), Supress Empty Columns(Boolean))>)
+**语法:** Google Sheet Import(Email(address), Spreadsheet(url|id), &lt;Sheets("sheetName1", ... "sheetNameN")&gt;, &lt;Sheet Settings( Has Column Headers(Boolean), Data Starts on Row(n), Cell Range(range), Import Cell Colors(Boolean), Supress Empty Columns(Boolean))&gt;)
 
 **说明:** 打开 Google Sheet 文件。
 
@@ -589,7 +587,7 @@ If( x == JSON Literal( true ),
 
 ### JSON To Data Table
 
-**语法:** dt = JSON To Data Table( jsonstring, <Invisible( boolean ) | Private( boolean )>, <Guess(Stack(Boolean)|"Tall"|"Wide")>, <JSON Settings(...)> )
+**语法:** dt = JSON To Data Table( jsonstring, &lt;Invisible( boolean ) | Private( boolean )&gt;, &lt;Guess(Stack(Boolean)|"Tall"|"Wide")&gt;, &lt;JSON Settings(...)&gt; )
 
 **说明:** 将 JSON 文本转换为 JMP 数据表
 
@@ -639,7 +637,7 @@ Format( Last Modification Date( "$SAMPLE_DATA/Big Class.jmp" ), "ddmonyyyy:h:m:s
 
 ### Load Text File
 
-**语法:** text = Load Text File( path, <Charset("best guess", <force("throw" | "alert" | "silent")>)>, <LineSeparator("\!N")>, <XMLParse>|<SASODSXML>|<JSON>|<BLOB( <readOffsetFromBegin(0)>|<readOffsetFromEnd(42)>, <readLength(2147483647)>, <base64Compressed( 1 /* 0: ascii~hex */)> )> )
+**语法:** text = Load Text File( path, &lt;Charset("best guess", &lt;force("throw" | "alert" | "silent")&gt;)&gt;, &lt;LineSeparator("\!N")&gt;, &lt;XMLParse&gt;|&lt;SASODSXML&gt;|&lt;JSON&gt;|&lt;BLOB( &lt;readOffsetFromBegin(0)&gt;|&lt;readOffsetFromEnd(42)&gt;, &lt;readLength(2147483647)&gt;, &lt;base64Compressed( 1 /* 0: ascii~hex */)&gt; )&gt; )
 
 **说明:** 将整个文本文件读入到一个 JSL 变量。Load Text File() 提示指定文件名。Load Text File( path ) 返回字符串。XMLParse 选项将 XML 转换为表达式树。SASODSXML 解析为 SAS ODS 默认 XML。[{JSON}] 选项将 JSON 转换为表达式树。BLOB 参数在 JSL Blob 变量中返回二进制数据；BLOB 的可选的命名参数允许从文件读取子字符串。
 
@@ -710,7 +708,7 @@ Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
 
 ### Open
 
-**语法:** Open( filePath, <data table options | Excel import options | text import options | SAS import options | HTML import options | esriShapeFile import options | PDF import options | other file options > )
+**语法:** Open( filePath, &lt;data table options | Excel import options | text import options | SAS import options | HTML import options | esriShapeFile import options | PDF import options | other file options &gt; )
 
 **说明:** 返回对数据表或其他 JMP 文件或基于文件创建的对象的引用。若未指定路径，则“打开”对话框显示。若指定了文件夹路径，则打开系统文件浏览器并且不返回对象。请参阅语法参考获取可用选项的完整说明。
 
@@ -950,7 +948,7 @@ Show( l );
 
 ### Pick Directory
 
-**语法:** path = Pick Directory( <prompt>, <path>, <Show Files( boolean )> )
+**语法:** path = Pick Directory( &lt;prompt&gt;, &lt;path&gt;, &lt;Show Files( boolean )&gt; )
 
 **说明:** 使用“打开目录”窗口提示用户，返回选定目录的路径名。可选 prompt 字符串显示在窗口的顶部。Show Files 可以是任意的三个参数，并接受布尔参数。1 会显示“选择目录”窗口中的文件，0 不会。默认值为 0。path 字符串指定“选择目录”窗口最初显示的目录。若您使用 path 字符串，则它必须在 prompt 字符串之后，但 Show Files 可以介于它们之间。
 
@@ -976,7 +974,7 @@ Pick Directory( "Select a directory" );
 
 ### Pick File
 
-**语法:** path = Pick File( <prompt>, <initial directory>, <filterList>, <first filter>, <saveFlag=0|1>, <default file>, <multiple> )
+**语法:** path = Pick File( &lt;prompt&gt;, &lt;initial directory&gt;, &lt;filterList&gt;, &lt;first filter&gt;, &lt;saveFlag=0|1&gt;, &lt;default file&gt;, &lt;multiple&gt; )
 
 **说明:** 使用“打开”窗口提示用户，返回选定文件的路径名。filterList 参数是“Label|suffix1;suffix2;...”形式的字符串列表。first filter 参数指定初始显示的过滤器。第五个参数指定窗口会充当保存 (saveFlag = 1) 还是打开 (saveFlag = 0) 窗口。default file 参数指定初始选择的文件。若 saveFlag 为 0，则 multiple 参数允许选择多个文件。
 
@@ -1086,7 +1084,7 @@ Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
 
 ### Save Text File
 
-**语法:** f = Save Text File( path, text|blob, <mode("replace"|"append")> )
+**语法:** f = Save Text File( path, text|blob, &lt;mode("replace"|"append")&gt; )
 
 **说明:** 创建一个文本文件，其文件名由 path 参数指定，内容由 text 字符串参数指定。若保存成功，Save Text File() 函数返回已创建文件的路径名。
 
@@ -1139,7 +1137,7 @@ Show( Convert File Path( "Iris.jmp", search ) );
 
 ### Set Path Variable
 
-**语法:** Set Path Variable( name, <value> )
+**语法:** Set Path Variable( name, &lt;value&gt; )
 
 **说明:** 设置路径变量，即在路径名中要替换的比如 SAMPLE_DATA 这样的名称。
 
@@ -1154,7 +1152,7 @@ Set Path Variable( "SAMPLE_DATA", Get Path Variable( "SAMPLE_DATA" ) );
 
 ### TripleS Import
 
-**语法:** TripleSImport( <path to xml file> )
+**语法:** TripleSImport( &lt;path to xml file&gt; )
 
 **说明:** 打开 3S 文件。3S 格式包含 xml 或 sss 文件以及 csv 文件或 dat/asc 文件。这两个文件必须具有使用适当扩展名的相同名称并且必须位于同一目录中。指定 xml 或 sss 文件路径以导入数据。
 

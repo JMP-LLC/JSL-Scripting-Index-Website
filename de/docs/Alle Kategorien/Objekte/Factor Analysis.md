@@ -6,7 +6,7 @@
 
 ### Bartlett's Test of Sphericity
 
-**Syntax:** obj << Bartlett&apos;s Test of Sphericity( state=0|1 )
+**Syntax:** obj &lt;&lt; Bartlett&apos;s Test of Sphericity( state=0|1 )
 
 **Beschreibung:** Blendet einen Bericht des Homogenitätstests ein oder aus, der bestimmt, ob die Eigenwerte gleiche Varianzen haben.
 
@@ -31,7 +31,7 @@ obj << Bartlett's Test of Sphericity( 1 );
 
 ### Eigenvalues
 
-**Syntax:** obj << Eigenvalues( state=0|1 )
+**Syntax:** obj &lt;&lt; Eigenvalues( state=0|1 )
 
 **Beschreibung:** Zeigt eine Tabelle der Eigenwerte der ursprünglichen Korrelation, Kovarianz oder unskalierten Matrix an oder blendet sie aus. Die Tabelle enthält den Prozentwert der Gesamtvarianz, der von jedem Eigenwert dargestellt wird, ein Balkendiagramm, in dem der prozentuale Beitrag dargestellt wird, und den kumulierten Prozentsatz, der von jedem nachfolgenden Eigenwert beigetragen wird. Standardmäßig ein.
 
@@ -55,7 +55,7 @@ obj << Eigenvalues( 0 );
 
 ### Fit
 
-**Syntax:** obj << Fit( "PC"|"ML", "ONE"|"SMC", number, rotation method )
+**Syntax:** obj &lt;&lt; Fit( "PC"|"ML", "ONE"|"SMC", number, rotation method )
 
 **Beschreibung:** Passt ein Modell der Faktorenanalyse mithilfe der angegebenen Faktormethode, A-priori-Kommunalität, Anzahl von Faktoren und Rotationsmethode an. Die verfügbaren Faktormethoden sind Hauptachse (PC) und Maximum-Likelihood (ML). Sie können alle A-priori-Kommunalitäten gleich 1 (ONE) oder gleich den quadrierten multiplen Korrelationskoeffizienten (SMC) setzen. Die verfügbaren Rotationsmethoden sind Varimax, Biquartimax, Equamax, Faktorparsimax, Orthomax, Parsimax, Quartimax, Biquartimin, Covarimin, Obbiquartimax, Obequamax, Obfaktorparsimax, Oblimin, Obparsimax, Obquartimax, Obvarimax und Promax.
 
@@ -76,7 +76,7 @@ obj << Fit( "ML", "SMC", 2, "Varimax" );
 
 ### Kaiser-Meyer-Olkin Test
 
-**Syntax:** obj << "Kaiser-Meyer-Olkin Test"n( state=0|1 )
+**Syntax:** obj &lt;&lt; "Kaiser-Meyer-Olkin Test"n( state=0|1 )
 
 **Beschreibung:** Zeigt die Ergebnisse des Kaiser-Meyer-Olkin-Tests (KMO) an oder blendet sie aus. Der Test ist ein Indikator für den Anteil der Varianz, der eine gemeinsame Varianz sein kann, möglicherweise aufgrund von zugrunde liegenden Faktoren.
 
@@ -101,7 +101,7 @@ obj << "Kaiser-Meyer-Olkin Test"n( 1 );
 
 ### Scree Plot
 
-**Syntax:** obj << Scree Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; Scree Plot( state=0|1 )
 
 **Beschreibung:** Blendet einen Linien-Plot der Eigenwerte für jede Komponente ein oder aus. Standardmäßig ein.
 
@@ -157,9 +157,7 @@ obj = dt << Factor Analysis(
 
 ### Variance Scaling
 
-**Syntax:** obj = Factor Analysis(...Variance Scaling( "Correlations"| "Covariances"| "Unscaled")...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Factor Analysis(...Variance Scaling( "Correlations"| "Covariances"| "Unscaled")...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Gibt die Methode an, die zum Skalieren der Varianz verwendet wird.
 
@@ -183,7 +181,7 @@ obj = dt << Factor Analysis(
 
 ### Action
 
-**Syntax:** obj << Action
+**Syntax:** obj &lt;&lt; Action
 
 **Beschreibung:** Allzwecköffnung innerhalb einer Plattform zum Einfügen von auszuwertenden Ausdrücken. Setzt die Kontexte für Anzeigefeld und Datentabelle kurzzeitig auf die Plattform.
 
@@ -201,7 +199,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Syntax:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntax:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Beschreibung:** Wendet eine zuvor erstellte Voreinstellung auf das Objekt an und aktualisiert die Optionen und Anpassungen entsprechend den gespeicherten Einstellungen.
 
@@ -248,7 +246,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**Syntax:** obj << Automatic Recalc( state=0|1 )
+**Syntax:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Beschreibung:** Wiederholt die Analyse bei Ausschluss und Datenänderungen automatisch. Wenn die Option „Automatic Recalc“ eingeschaltet ist, sollten Sie in Betracht ziehen, Wait(0)-Befehle zu verwenden, um sicherzustellen, dass die Ausschlüsse und Datenänderungen vor der Neuberechnung wirksam werden.
 
@@ -271,7 +269,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**Syntax:** obj << Broadcast(message)
+**Syntax:** obj &lt;&lt; Broadcast(message)
 
 **Beschreibung:** Sendet eine Meldung an eine Plattform. Wenn es sich bei den zurückgegebenen Ergebnissen von einzelnen Objekten um Tabellen handelt, werden sie, wenn möglich, verkettet. Das endgültige Format ist entweder identisch mit dem Ergebnis der Option „Kombinierte Tabelle speichern“ in einem Tabellenfeld oder mit dem Ergebnis der Option „Verketten“ mithilfe einer Quellspalte. Ansonsten werden die Ergebnisse in einer Liste gespeichert und zurückgegeben.
 
@@ -291,7 +289,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**Syntax:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Syntax:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Beschreibung:** Fügt ein Bedienfeld zum Ändern der Variablen der Plattform hinzu
 
@@ -309,7 +307,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**Syntax:** obj << Copy ByGroup Script
+**Syntax:** obj &lt;&lt; Copy ByGroup Script
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und legt es in der Zwischenablage ab.
 
@@ -337,7 +335,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Syntax:** obj << Copy Script
+**Syntax:** obj &lt;&lt; Copy Script
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und legt es in der Zwischenablage ab.
 
@@ -359,7 +357,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Syntax:** obj << Data Table Window
+**Syntax:** obj &lt;&lt; Data Table Window
 
 **Beschreibung:** Zeigt das Fenster mit der Datentabelle für diese Analyse im Vordergrund an.
 
@@ -381,7 +379,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Syntax:** obj << Get By Levels
+**Syntax:** obj &lt;&lt; Get By Levels
 
 **Beschreibung:** Gibt ein assoziatives Array zurück, das die Nach-Gruppenspalten ihren Werten zuordnet.
 
@@ -398,7 +396,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Syntax:** obj << Get ByGroup Script
+**Syntax:** obj &lt;&lt; Get ByGroup Script
 
 **Beschreibung:** Erstellt ein Skript (JSL) zum Erzeugen dieser Analyse und gibt es als Ausdruck zurück.
 
@@ -427,7 +425,7 @@ Show( t );
 
 ### Get Container
 
-**Syntax:** obj << Get Container
+**Syntax:** obj &lt;&lt; Get Container
 
 **Beschreibung:** Gibt einen Verweis auf das Containerfeld zurück, das den Inhalt des Objekts enthält.
 
@@ -481,7 +479,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Syntax:** obj << Get Data Table
+**Syntax:** obj &lt;&lt; Get Data Table
 
 **Beschreibung:** Gibt eine Referenz auf die Datentabelle zurück.
 
@@ -504,7 +502,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**Syntax:** obj << Get Group Platform
+**Syntax:** obj &lt;&lt; Get Group Platform
 
 **Beschreibung:** Plattformobjekt der Gruppe zurückgeben, wenn diese Plattform Teil einer Gruppe ist. Andernfalls wird Empty() zurückgegeben.
 
@@ -521,7 +519,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**Syntax:** obj << Get Script
+**Syntax:** obj &lt;&lt; Get Script
 
 **Beschreibung:** Erstellt ein Skript (JSL) zum Erzeugen dieser Analyse und gibt es als Ausdruck zurück.
 
@@ -544,7 +542,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Syntax:** obj << Get Script With Data Table
+**Syntax:** obj &lt;&lt; Get Script With Data Table
 
 **Beschreibung:** Erstellt ein Skript (JSL) zum Erzeugen dieser Analyse und referenziert dabei spezifisch diese Datentabelle und gibt das Skript als Ausdruck zurück.
 
@@ -567,7 +565,7 @@ Show( t );
 
 ### Get Timing
 
-**Syntax:** obj << Get Timing
+**Syntax:** obj &lt;&lt; Get Timing
 
 **Beschreibung:** Steuert den Start der Plattform zeitlich.
 
@@ -590,7 +588,7 @@ Show( t );
 
 ### Get Web Support
 
-**Syntax:** obj << Get Web Support
+**Syntax:** obj &lt;&lt; Get Web Support
 
 **Beschreibung:** Gibt eine Zahl zurück, die angibt, ob für das Anzeigeobjekt interaktive HTML unterstützt wird. 1 bedeutet einige oder alle Elemente werden unterstützt. 0 bedeutet keine Unterstützung.
 
@@ -606,7 +604,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Syntax:** obj << Get Where Expr
+**Syntax:** obj &lt;&lt; Get Where Expr
 
 **Beschreibung:** Gibt den Ausdruck Where für die Teilmenge der Daten zurück, wenn die Plattform mit By() oder Where() gestartet wurde. Andernfalls wird Empty() zurückgegeben.
 
@@ -643,7 +641,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Syntax:** obj << Local Data Filter
+**Syntax:** obj &lt;&lt; Local Data Filter
 
 **Beschreibung:** Filtert Daten für bestimmte Gruppen oder Bereiche, aber nur lokal in dieser Plattform.
 
@@ -699,7 +697,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Syntax:** obj << Paste Local Data Filter
+**Syntax:** obj &lt;&lt; Paste Local Data Filter
 
 **Beschreibung:** Lokalen Datenfilter aus der Zwischenablage auf den aktuellen Bericht anwenden.
 
@@ -720,7 +718,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**Syntax:** obj << Redo Analysis
+**Syntax:** obj &lt;&lt; Redo Analysis
 
 **Beschreibung:** Führt die gleiche Analyse in einem neuen Fenster aus. Die Analyse ist unterschiedlich, wenn sich die Daten verändert haben.
 
@@ -742,7 +740,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**Syntax:** obj << Redo ByGroup Analysis
+**Syntax:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Beschreibung:** Führt die gleiche Analyse in einem neuen Fenster aus. Die Analyse ist unterschiedlich, wenn sich die Daten verändert haben.
 
@@ -770,7 +768,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**Syntax:** obj << Relaunch Analysis
+**Syntax:** obj &lt;&lt; Relaunch Analysis
 
 **Beschreibung:** Öffnet das Plattform-Startfenster und ruft die Einstellungen ab, die zum Erstellen des Berichts verwendet wurden.
 
@@ -792,7 +790,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**Syntax:** obj << Relaunch ByGroup
+**Syntax:** obj &lt;&lt; Relaunch ByGroup
 
 **Beschreibung:** Öffnet das Plattform-Startfenster und ruft die Einstellungen ab, die zum Erstellen des Berichts verwendet wurden.
 
@@ -820,7 +818,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**Syntax:** obj << Remove Column Switcher
+**Syntax:** obj &lt;&lt; Remove Column Switcher
 
 **Beschreibung:** Entfernt den letzten Spaltenwechsler, der der Plattform hinzugefügt wurde.
 
@@ -840,7 +838,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Syntax:** obj << Remove Local Data Filter
+**Syntax:** obj &lt;&lt; Remove Local Data Filter
 
 **Beschreibung:** Wenn ein lokaler Filter verwendet wurde, wird dieser entfernt und die Plattform verwendet wieder direkt alle Daten aus der Datentabelle
 
@@ -879,9 +877,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Syntax:** obj << Report;
-
-Report( obj )
+**Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Beschreibung:** Gibt eine Referenz auf das Berichtsobjekt zurück.
 
@@ -905,7 +901,7 @@ Show( t );
 
 ### Report View
 
-**Syntax:** obj << Report View( "Vollständig"|"Übersicht" )
+**Syntax:** obj &lt;&lt; Report View( "Vollständig"|"Übersicht" )
 
 **Beschreibung:** Die Berichtsanzeige legt das Detailniveau für einen Plattformbericht fest. Full zeigt alle Details an, während Summary abhängig von der Plattform nur ausgewählte Inhalte anzeigt. Für benutzerdefiniertes Verhalten unterstützen Anzeigefelder eine Meldung <<Set Summary Behavior.
 
@@ -927,7 +923,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**Syntax:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und speichert sie als Tabelleneigenschaft in der Datentabelle. Sie können einen Namen für das Skript angeben. Die Option Append Suffix hängt ein numerisches Suffix an den Skriptnamen an, das das Skript von einem vorhandenen Skript mit dem gleichen Namen unterscheidet. Die Option Prompt fordert den Benutzer auf, einen Skriptnamen anzugeben. Die Option Replace ersetzt ein vorhandenes Skript mit dem gleichen Namen.
 
@@ -955,7 +951,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Syntax:** obj << Save ByGroup Script to Journal
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und fügt eine Schaltfläche mit diesem Skript zum Journal hinzu.
 
@@ -983,7 +979,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Syntax:** obj << Save ByGroup Script to Script Window
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und hängt es an das Textfenster mit dem aktuellen Skript an.
 
@@ -1011,7 +1007,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**Syntax:** obj << Save Script for All Objects
+**Syntax:** obj &lt;&lt; Save Script for All Objects
 
 **Beschreibung:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -1033,7 +1029,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Syntax:** obj << Save Script for All Objects To Data Table( <name> )
+**Syntax:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Beschreibung:** Speichert ein Skript für alle Berichtsobjekte in der aktuellen Datentabelle. Diese Option ist nützlich, wenn Sie mehrere Berichte im Fenster haben. Das Skript wird nach der ersten Plattform benannt, sofern Sie keine Skriptnamen in Anführungszeichen angeben.
 
@@ -1087,7 +1083,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Syntax:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und speichert es als Tabelleneigenschaft in der Datentabelle.
 
@@ -1109,7 +1105,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Syntax:** obj << Save Script to Journal
+**Syntax:** obj &lt;&lt; Save Script to Journal
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und fügt eine Schaltfläche mit diesem Skript zum Journal hinzu.
 
@@ -1131,7 +1127,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Syntax:** obj << Save Script to Report
+**Syntax:** obj &lt;&lt; Save Script to Report
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und zeigt es im Bericht selbst an. Nützlich zum Anlegen eines gedruckten Nachweises der durchgeführten Aktivitäten.
 
@@ -1153,7 +1149,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Syntax:** obj << Save Script to Script Window
+**Syntax:** obj &lt;&lt; Save Script to Script Window
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und hängt es an das Textfenster mit dem aktuellen Skript an.
 
@@ -1240,7 +1236,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Syntax:** obj << Sync to Data Table Changes
+**Syntax:** obj &lt;&lt; Sync to Data Table Changes
 
 **Beschreibung:** Mit Ausgeschlossenen und vorgenommenen Datenänderungen synchronisieren.
 
@@ -1257,7 +1253,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Syntax:** obj << Title( "new title" )
+**Syntax:** obj &lt;&lt; Title( "new title" )
 
 **Beschreibung:** Legt den Titel für die Plattform fest.
 
@@ -1279,7 +1275,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Syntax:** obj << Top Report
+**Syntax:** obj &lt;&lt; Top Report
 
 **Beschreibung:** Gibt eine Referenz auf den Stammknoten im Bericht zurück.
 
@@ -1303,7 +1299,7 @@ Show( t );
 
 ### Transform Column
 
-**Syntax:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Syntax:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Beschreibung:** Transformationsspalte im lokalen Kontext eines Objekts erstellen, üblicherweise als Plattform. Die Transformationsspalte ist nur für die Lebensdauer der Plattform aktiv.
 
@@ -1324,7 +1320,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**Syntax:** obj << View Web XML
+**Syntax:** obj &lt;&lt; View Web XML
 
 **Beschreibung:** Gibt den XML-Code zurück, der zum Erstellen des interaktiven HTML-Berichts verwendet wird.
 
@@ -1339,9 +1335,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**Syntax:** obj = Factor Analysis(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Factor Analysis(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Typ des Fensters festlegen, das für den Bericht erstellt werden soll. Standardmäßig wird ein Berichtsfenster vom Typ Visible erstellt. Ein Fenster vom Typ Invisible wird auf dem Bildschirm nicht angezeigt, kann jedoch von Funktionen wie Window() erkannt werden. Ein Fenster vom Typ Private reagiert auf die meisten Fenstermeldungen, kann jedoch nicht erkannt werden und muss über das Berichtsobjekt adressiert werden.
 
@@ -1362,7 +1356,7 @@ New Window( "Bivariate Equation",
 
 ### Columns
 
-**Syntax:** obj << Columns( column(s) )
+**Syntax:** obj &lt;&lt; Columns( column(s) )
 
 ```jsl
 
@@ -1381,7 +1375,7 @@ obj = dt << Factor Analysis(
 
 ### Freq
 
-**Syntax:** obj << Freq( column )
+**Syntax:** obj &lt;&lt; Freq( column )
 
 ```jsl
 
@@ -1402,7 +1396,7 @@ obj = dt << Factor Analysis(
 
 ### Weight
 
-**Syntax:** obj << Weight( column )
+**Syntax:** obj &lt;&lt; Weight( column )
 
 ```jsl
 
@@ -1423,7 +1417,7 @@ obj = dt << Factor Analysis(
 
 ### Y
 
-**Syntax:** obj << Y( column(s) )
+**Syntax:** obj &lt;&lt; Y( column(s) )
 
 ```jsl
 
@@ -1469,7 +1463,7 @@ obj = dt << Factor Analysis(
 
 #### Arrow Lines
 
-**Syntax:** obj << (Fit[number] << Arrow Lines( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Arrow Lines( state=0|1 ))
 
 **Beschreibung:** Blendet die Pfeillinien im Graphen ein oder aus. Standardmäßig ein.
 
@@ -1494,7 +1488,7 @@ obj << (Fit[1] << Arrow Lines( 0 ));
 
 #### Copy Model Specification for SEM
 
-**Syntax:** obj << (Fit[number] << Copy Model Specification for SEM)
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Copy Model Specification for SEM)
 
 **Beschreibung:** Kopiert Faktordefinitionen in die Zwischenablage. Sie können die Faktordefinitionen dann mit unabhängigen Daten in die SEM-Plattform kopieren, um das Modell zu bestätigen.
 
@@ -1516,7 +1510,7 @@ obj2 << Paste Model Specification;
 
 #### Eigenvalues
 
-**Syntax:** obj << (Fit[number] << Eigenvalues( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Eigenvalues( state=0|1 ))
 
 **Beschreibung:** Blendet die Eigenwerte der reduzierten Korrelationsmatrix und den Prozentwert der gemeinsamen Varianz, für die sie verantwortlich sind, ein oder aus.
 
@@ -1538,7 +1532,7 @@ obj << (Fit[1] << Eigenvalues( 1 ));
 
 #### Factor Loading Plot
 
-**Syntax:** obj << (Fit[number] << Factor Loading Plot( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Factor Loading Plot( state=0|1 ))
 
 **Beschreibung:** Zeigt ein Diagramm der rotierten Faktorladungen an oder blendet es aus. Wenn mehr als zwei Faktoren modelliert werden, ist das Faktorladungsdiagramm eine Matrix von Diagrammen. Standardmäßig ein.
 
@@ -1563,7 +1557,7 @@ obj << (Fit[1] << Factor Loading Plot( 0 ));
 
 #### Factor Structure
 
-**Syntax:** obj << (Fit[number] << Factor Structure( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Factor Structure( state=0|1 ))
 
 **Beschreibung:** Blendet die Matrix der Korrelationen zwischen Variablen und gemeinsamen Faktoren ein oder aus. Diese Option ist nur bei schiefwinkligen Rotationen verfügbar. Standardmäßig ein.
 
@@ -1588,7 +1582,7 @@ obj << (Fit[1] << Factor Structure( 0 ));
 
 #### Final Communality Estimates
 
-**Syntax:** obj << (Fit[number] << Final Communality Estimates( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Final Communality Estimates( state=0|1 ))
 
 **Beschreibung:** Blendet Schätzer der Kommunalitäten nach der Anpassung des Faktormodells ein oder aus. Wenn die Faktoren orthogonal sind, entspricht der endgültige Kommunalitätsschätzwert für eine Variable der Summe der quadrierten Ladungen für die Variable. Standardmäßig ein.
 
@@ -1611,7 +1605,7 @@ obj << (Fit[1] << Final Communality Estimates( 0 ));
 
 #### Interfactor Correlations
 
-**Syntax:** obj << (Fit[number] << Interfactor Correlations( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Interfactor Correlations( state=0|1 ))
 
 **Beschreibung:** Blendet die Matrix von Korrelationen zwischen Faktoren ein oder aus. Diese Option ist nur bei schiefwinkligen Rotationen verfügbar.
 
@@ -1635,7 +1629,7 @@ obj << (Fit[1] << Interfactor Correlations( 1 ));
 
 #### Measures of Factor Scores
 
-**Syntax:** obj << (Fit[number] << Measures of Factor Scores( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Measures of Factor Scores( state=0|1 ))
 
 **Beschreibung:** Blendet die Maße der Faktor-Score-Determinierung ein oder aus, einschließlich der Scores multiples r, multiple r² und minimale Korrelation.
 
@@ -1661,7 +1655,7 @@ obj << (Fit[1] << Measures of Factor Scores( 1 ));
 
 #### Measures of Fit
 
-**Syntax:** obj << (Fit[number] << Measures of Fit( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Measures of Fit( state=0|1 ))
 
 **Beschreibung:** Blendet die Anpassungsmaße ein oder aus, einschließlich Chi-Quadrat ohne Bartletts Korrektur, AIC, BIC, Tucker-Lewis-Index und die Wurzel der mittleren quadratischen Abweichung der Approximation. Diese Option ist nur verfügbar, wenn Maximum-Likelihood als Faktormethode ausgewählt ist. Standardmäßig ein.
 
@@ -1686,7 +1680,7 @@ obj << (Fit[1] << Measures of Fit( 0 ));
 
 #### Prior Communality
 
-**Syntax:** obj << (Fit[number] << Prior Communality( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Prior Communality( state=0|1 ))
 
 **Beschreibung:** Blendet einen anfänglichen Schätzer der Kommunalität für jede Variable ein oder aus.
 
@@ -1708,7 +1702,7 @@ obj << (Fit[1] << Prior Communality( 1 ));
 
 #### Remove Fit
 
-**Syntax:** obj << (Fit[number] << Remove Fit)
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Remove Fit)
 
 **Beschreibung:** Entfernt die angegebene Anpassung aus dem Bericht.
 
@@ -1731,7 +1725,7 @@ obj << (Fit[1] << Remove Fit);
 
 #### Rotated Factor Loading
 
-**Syntax:** obj << (Fit[number] << Rotated Factor Loading( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Rotated Factor Loading( state=0|1 ))
 
 **Beschreibung:** Blendet die Faktorladungsmatrix nach der Rotation ein oder aus. Wenn die Rotation orthogonal ist, sind diese Werte die Korrelationen zwischen den Variablen und den rotierten Faktoren. Standardmäßig ein.
 
@@ -1756,7 +1750,7 @@ obj << (Fit[1] << Rotated Factor Loading( 0 ));
 
 #### Rotation Matrix
 
-**Syntax:** obj << (Fit[number] << Rotation Matrix( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Rotation Matrix( state=0|1 ))
 
 **Beschreibung:** Zeigt die Werte an oder blendet sie aus, die zum Rotieren des Faktorladungsdiagramms und der Faktorladungsmatrix verwendet werden.
 
@@ -1778,7 +1772,7 @@ obj << (Fit[1] << Rotation Matrix( 1 ));
 
 #### Save Factor Scores
 
-**Syntax:** obj << (Fit[number] << Save Factor Scores( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Save Factor Scores( state=0|1 ))
 
 **Beschreibung:** Speichert neue Formelspalten in der ursprünglichen Datentabelle. Die neuen Spalten enthalten die Formeln für die Faktor-Scores, die mithilfe der Thurstone-Methode geschätzt werden.
 
@@ -1802,7 +1796,7 @@ obj << (Fit[1] << Save Factor Scores);
 
 #### Save Factor Scores with Imputation
 
-**Syntax:** obj << (Fit[number] << Save Factor Scores with Imputation( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Save Factor Scores with Imputation( state=0|1 ))
 
 **Beschreibung:** Speichert neue Formelspalten in der ursprünglichen Datentabelle. Die neuen Spalten enthalten die Formeln für die Faktor-Scores mit imputierten Werten für fehlende Werte.
 
@@ -1823,7 +1817,7 @@ obj << (Fit[1] << Save Factor Scores with Imputation);
 
 #### Score Plot
 
-**Syntax:** obj << (Fit[number] << Score Plot( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Score Plot( state=0|1 ))
 
 **Beschreibung:** Zeigt ein Streudiagramm der geschätzten Faktor-Scores an oder blendet es aus. Wenn mehr als zwei Faktoren modelliert werden, ist das Score-Diagramm eine Matrix von Diagrammen.
 
@@ -1847,7 +1841,7 @@ obj << (Fit[1] << Score Plot( 1 ));
 
 #### Score Plot with Imputation
 
-**Syntax:** obj << (Fit[number] << Score Plot with Imputation( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Score Plot with Imputation( state=0|1 ))
 
 **Beschreibung:** Zeigt ein Streudiagramm der geschätzten Faktor-Scores mit eingesetzten Werten für fehlende Werte an oder blendet es aus.
 
@@ -1868,7 +1862,7 @@ obj << (Fit[1] << Score Plot with Imputation( 1 ));
 
 #### Significance Test
 
-**Syntax:** obj << (Fit[number] << Significance Test( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Significance Test( state=0|1 ))
 
 **Beschreibung:** Zeigt die Ergebnisse von zwei Signifikanztests an oder blendet sie aus. Der erste testet die Nullhypothese, dass es keine gemeinsamen Faktoren gibt, und der zweite testet die Nullhypothese, dass eine angegebene Anzahl von Faktoren ausreichend ist. Standardmäßig ein.
 
@@ -1893,7 +1887,7 @@ obj << (Fit[1] << Significance Test( 0 ));
 
 #### Standard Score Coefficients
 
-**Syntax:** obj << (Fit[number] << Standard Score Coefficients( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Standard Score Coefficients( state=0|1 ))
 
 **Beschreibung:** Zeigt eine Tabelle der Multiplikatoren an oder blendet sie aus, die verwendet werden, um Faktor-Scores beim Speichern rotierter Faktoren in der Quelldatentabelle zu schätzen.
 
@@ -1915,7 +1909,7 @@ obj << (Fit[1] << Standard Score Coefficients( 1 ));
 
 #### Target Matrix
 
-**Syntax:** obj << (Fit[number] << Target Matrix( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Target Matrix( state=0|1 ))
 
 **Beschreibung:** Zeigt die Matrix an oder blendet sie aus, zu der das Varimax-Faktormuster rotiert wird. Diese Option ist nur bei der Promax-Rotation verfügbar.
 
@@ -1937,7 +1931,7 @@ obj << (Fit[1] << Target Matrix( 1 ));
 
 #### Unrotated Factor Loading
 
-**Syntax:** obj << (Fit[number] << Unrotated Factor Loading( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Unrotated Factor Loading( state=0|1 ))
 
 **Beschreibung:** Blendet die Faktorladungsmatrix vor der Rotation ein oder aus.
 
@@ -1959,7 +1953,7 @@ obj << (Fit[1] << Unrotated Factor Loading( 1 ));
 
 #### Unsorted and Rotated Factor Loading
 
-**Syntax:** obj << (Fit[number] << Unsorted and Rotated Factor Loading( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Unsorted and Rotated Factor Loading( state=0|1 ))
 
 **Beschreibung:** Blendet die unsortierte Faktorladungsmatrix nach der Rotation ein oder aus.
 
@@ -1985,7 +1979,7 @@ obj << (Fit[1] << Unsorted and Rotated Factor Loading( 1 ));
 
 #### Unsorted and Unrotated Factor Loading
 
-**Syntax:** obj << (Fit[number] << Unsorted and Unrotated Factor Loading( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Unsorted and Unrotated Factor Loading( state=0|1 ))
 
 **Beschreibung:** Blendet die Faktorladungsmatrix vor dem Sortieren und der Rotation ein oder aus.
 
@@ -2009,7 +2003,7 @@ obj << (Fit[1] << Unsorted and Unrotated Factor Loading( 1 ));
 
 #### Variance Explained by Each Factor
 
-**Syntax:** obj << (Fit[number] << Variance Explained by Each Factor( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Variance Explained by Each Factor( state=0|1 ))
 
 **Beschreibung:** Blendet die Varianz, den Prozentsatz und den kumulierten Prozentsatz der gemeinsamen Varianz ein oder aus, die von jedem rotierten Faktor erklärt wird. Diese Option ist nur bei orthogonalen Rotationen verfügbar. Standardmäßig ein.
 

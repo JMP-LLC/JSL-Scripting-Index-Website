@@ -6,7 +6,7 @@
 
 ### Action
 
-**语法:** obj << Action
+**语法:** obj &lt;&lt; Action
 
 **说明:** 平台内用于插入表达式以求值的所有用途的陷门。暂时将 DisplayBox 和 DataTable 上下文设置为平台。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**语法:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**语法:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **说明:** 将以前创建的预设应用到对象，从而更新选项和定制以匹配保存的设置。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**语法:** obj << Automatic Recalc( state=0|1 )
+**语法:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **说明:** 对排除和数据更改自动重新执行分析。若启用了“自动重新计算”选项，则应考虑使用 Wait(0) 命令来确保排除和数据更改在重新计算前生效。
 
@@ -94,7 +94,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**语法:** obj << Broadcast(message)
+**语法:** obj &lt;&lt; Broadcast(message)
 
 **说明:** 将消息广播到平台。若各个对象的返回结果是表，则它们会尽可能拼接，并且最终格式与表框中“保存合并表”选项的结果或使用“源”列的“拼接”选项的结果相同。除此之外，结果存储在列表中并返回。
 
@@ -114,7 +114,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**语法:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**语法:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **说明:** 添加用于更改平台变量的控制面板
 
@@ -132,7 +132,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**语法:** obj << Copy ByGroup Script
+**语法:** obj &lt;&lt; Copy ByGroup Script
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其置于剪贴板上。
 
@@ -160,7 +160,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**语法:** obj << Copy Script
+**语法:** obj &lt;&lt; Copy Script
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其置于剪贴板上。
 
@@ -182,7 +182,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**语法:** obj << Data Table Window
+**语法:** obj &lt;&lt; Data Table Window
 
 **说明:** 将该分析的数据表窗口移动到前面。
 
@@ -204,7 +204,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**语法:** obj << Get By Levels
+**语法:** obj &lt;&lt; Get By Levels
 
 **说明:** 返回将“依据”组列映射到其值的关联数组。
 
@@ -221,7 +221,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**语法:** obj << Get ByGroup Script
+**语法:** obj &lt;&lt; Get ByGroup Script
 
 **说明:** 创建生成该分析的脚本 (JSL)，并将其作为表达式返回。
 
@@ -250,7 +250,7 @@ Show( t );
 
 ### Get Container
 
-**语法:** obj << Get Container
+**语法:** obj &lt;&lt; Get Container
 
 **说明:** 返回对保留对象内容的容器框的引用。
 
@@ -304,7 +304,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**语法:** obj << Get Data Table
+**语法:** obj &lt;&lt; Get Data Table
 
 **说明:** 返回对该数据表的引用。
 
@@ -327,7 +327,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**语法:** obj << Get Group Platform
+**语法:** obj &lt;&lt; Get Group Platform
 
 **说明:** 若该平台是组的一部分，则返回组平台对象。否则返回 Empty()。
 
@@ -344,7 +344,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**语法:** obj << Get Script
+**语法:** obj &lt;&lt; Get Script
 
 **说明:** 创建生成该分析的脚本 (JSL)，并将其作为表达式返回。
 
@@ -367,7 +367,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**语法:** obj << Get Script With Data Table
+**语法:** obj &lt;&lt; Get Script With Data Table
 
 **说明:** 创建生成该分析的脚本 (JSL) 以专门引用该数据表，并将其作为表达式返回。
 
@@ -390,7 +390,7 @@ Show( t );
 
 ### Get Timing
 
-**语法:** obj << Get Timing
+**语法:** obj &lt;&lt; Get Timing
 
 **说明:** 平台启动过程计时。
 
@@ -413,7 +413,7 @@ Show( t );
 
 ### Get Web Support
 
-**语法:** obj << Get Web Support
+**语法:** obj &lt;&lt; Get Web Support
 
 **说明:** 返回一个数字，指示显示对象的交互式 HTML 支持的水平。1 表示支持部分或全部元素。0 表示不支持。
 
@@ -429,7 +429,7 @@ Show( s );
 
 ### Get Where Expr
 
-**语法:** obj << Get Where Expr
+**语法:** obj &lt;&lt; Get Where Expr
 
 **说明:** 若平台是使用 By() 或 Where() 启动的，则返回数据子集的 Where 表达式。否则返回 Empty()
 
@@ -466,7 +466,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**语法:** obj << Local Data Filter
+**语法:** obj &lt;&lt; Local Data Filter
 
 **说明:** 将数据过滤到特定的组或范围，但在该平台中是本地的
 
@@ -522,7 +522,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**语法:** obj << Paste Local Data Filter
+**语法:** obj &lt;&lt; Paste Local Data Filter
 
 **说明:** 将剪贴板中的本地数据过滤器应用于当前报表。
 
@@ -543,7 +543,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**语法:** obj << Redo Analysis
+**语法:** obj &lt;&lt; Redo Analysis
 
 **说明:** 在新窗口中重新运行相同的分析。若数据发生更改，分析也将不同。
 
@@ -565,7 +565,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**语法:** obj << Redo ByGroup Analysis
+**语法:** obj &lt;&lt; Redo ByGroup Analysis
 
 **说明:** 在新窗口中重新运行相同的分析。若数据发生更改，分析也将不同。
 
@@ -593,7 +593,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**语法:** obj << Relaunch Analysis
+**语法:** obj &lt;&lt; Relaunch Analysis
 
 **说明:** 打开平台启动窗口并重新调用曾用于创建报表的设置。
 
@@ -615,7 +615,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**语法:** obj << Relaunch ByGroup
+**语法:** obj &lt;&lt; Relaunch ByGroup
 
 **说明:** 打开平台启动窗口并重新调用曾用于创建报表的设置。
 
@@ -643,7 +643,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**语法:** obj << Remove Column Switcher
+**语法:** obj &lt;&lt; Remove Column Switcher
 
 **说明:** 删除已添加至平台的最近使用的“列切换器”。
 
@@ -663,7 +663,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**语法:** obj << Remove Local Data Filter
+**语法:** obj &lt;&lt; Remove Local Data Filter
 
 **说明:** 若已创建本地数据过滤器，这会将它删除并将平台恢复为直接使用数据表中的所有数据
 
@@ -702,9 +702,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**语法:** obj << Report;
-
-Report( obj )
+**语法:** obj &lt;&lt; Report;Report( obj )
 
 **说明:** 返回对该报表对象的引用。
 
@@ -728,7 +726,7 @@ Show( t );
 
 ### Report View
 
-**语法:** obj << Report View( "完全"|"汇总" )
+**语法:** obj &lt;&lt; Report View( "完全"|"汇总" )
 
 **说明:** 报表视图确定平台报表中可见的详细程度。Full 显示所有详细信息，而 Summary 仅显示根据平台确定的选定内容。对于定制行为，显示框支持 <<Set Summary Behavior 消息。
 
@@ -750,7 +748,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**语法:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**语法:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **说明:** 创建生成该分析的 JSL 脚本并将其保存为数据表中的表属性。您可以为脚本指定一个名称。Append Suffix 选项在脚本名称后追加一个数字后缀，用于将该脚本与现有的同名脚本区别出来。Prompt 选项提示用户指定脚本名称。Replace 选项会替换同名的现有脚本。
 
@@ -778,7 +776,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**语法:** obj << Save ByGroup Script to Journal
+**语法:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **说明:** 创建生成该分析的 JSL 脚本，并将一个按钮添加至包含该脚本的记录中。
 
@@ -806,7 +804,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**语法:** obj << Save ByGroup Script to Script Window
+**语法:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其追加至当前的脚本文本窗口中。
 
@@ -834,7 +832,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**语法:** obj << Save Script for All Objects
+**语法:** obj &lt;&lt; Save Script for All Objects
 
 **说明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -856,7 +854,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**语法:** obj << Save Script for All Objects To Data Table( <name> )
+**语法:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **说明:** 将所有报表对象的脚本保存至当前数据表。当您在该窗口中具有多个报表时，该选项很有用。除非您在引号中指定脚本名称，否则脚本将以第一个平台命名。
 
@@ -910,7 +908,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**语法:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**语法:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其作为表属性保存至数据表中。
 
@@ -932,7 +930,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**语法:** obj << Save Script to Journal
+**语法:** obj &lt;&lt; Save Script to Journal
 
 **说明:** 创建生成该分析的 JSL 脚本，并将一个按钮添加至包含该脚本的记录中。
 
@@ -954,7 +952,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**语法:** obj << Save Script to Report
+**语法:** obj &lt;&lt; Save Script to Report
 
 **说明:** 创建生成该分析的 JSL 脚本，并在报表中显示。有助于保留打印的已完成操作记录。
 
@@ -976,7 +974,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**语法:** obj << Save Script to Script Window
+**语法:** obj &lt;&lt; Save Script to Script Window
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其追加至当前的脚本文本窗口中。
 
@@ -1063,7 +1061,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**语法:** obj << Sync to Data Table Changes
+**语法:** obj &lt;&lt; Sync to Data Table Changes
 
 **说明:** 与已进行的排除和数据的更改同步。
 
@@ -1080,7 +1078,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**语法:** obj << Title( "new title" )
+**语法:** obj &lt;&lt; Title( "new title" )
 
 **说明:** 设置平台的标题。
 
@@ -1102,7 +1100,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**语法:** obj << Top Report
+**语法:** obj &lt;&lt; Top Report
 
 **说明:** 返回对报表中根节点的引用。
 
@@ -1126,7 +1124,7 @@ Show( t );
 
 ### Transform Column
 
-**语法:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**语法:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **说明:** 在对象（通常是平台）的本地上下文中创建变换列。变换列仅在平台的生命周期内是活动的。
 
@@ -1147,7 +1145,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**语法:** obj << View Web XML
+**语法:** obj &lt;&lt; View Web XML
 
 **说明:** 返回用于创建交互式 HTML 报表的 XML 代码。
 
@@ -1162,9 +1160,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**语法:** obj = Fit Life by X(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Fit Life by X(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 设置要为报表创建的窗口类型。默认情况下将创建 Visible 报表窗口。Invisible 窗口将不显示在屏幕上，但可被函数（例如 Window()）发现。Private 窗口会响应大多数窗口消息，但不可发现并且必须通过报表对象处理
 
@@ -1185,7 +1181,7 @@ New Window( "Bivariate Equation",
 
 ### Fit Life by X
 
-**语法:** Fit Life by X( Y( column ), X( column ), Relationship( string ), Distribution( string ), <Censor( column )> )
+**语法:** Fit Life by X( Y( column ), X( column ), Relationship( string ), Distribution( string ), &lt;Censor( column )&gt; )
 
 **说明:** 分析通过单一回归因子参数化的事件时间数据的分布。分析选项包括加速失效模型、组间寿命分布和回归因子变换。
 
@@ -1208,7 +1204,7 @@ obj = dt << Fit Life by X(
 
 ### By
 
-**语法:** obj << By( column(s) )
+**语法:** obj &lt;&lt; By( column(s) )
 
 ```jsl
 
@@ -1233,7 +1229,7 @@ obj = dt << Fit Life by X(
 
 ### Censor
 
-**语法:** obj << Censor( column )
+**语法:** obj &lt;&lt; Censor( column )
 
 ```jsl
 
@@ -1252,7 +1248,7 @@ obj = dt << Fit Life by X(
 
 ### Freq
 
-**语法:** obj << Freq( column )
+**语法:** obj &lt;&lt; Freq( column )
 
 ```jsl
 
@@ -1273,7 +1269,7 @@ obj = dt << Fit Life by X(
 
 ### Time to Event
 
-**语法:** obj << Time to Event( column(s) )
+**语法:** obj &lt;&lt; Time to Event( column(s) )
 
 ```jsl
 
@@ -1292,7 +1288,7 @@ obj = dt << Fit Life by X(
 
 ### X
 
-**语法:** obj << X( column )
+**语法:** obj &lt;&lt; X( column )
 
 ```jsl
 
@@ -1311,7 +1307,7 @@ obj = dt << Fit Life by X(
 
 ### Y
 
-**语法:** obj << Y( column(s) )
+**语法:** obj &lt;&lt; Y( column(s) )
 
 ```jsl
 
@@ -1332,7 +1328,7 @@ obj = dt << Fit Life by X(
 
 ### Add Density Curve to Scatterplot
 
-**语法:** obj << Add Density Curve to Scatterplot( number )
+**语法:** obj &lt;&lt; Add Density Curve to Scatterplot( number )
 
 **说明:** 在 X 变量的指定值处将密度曲线添加至散点图。将为图例中选定的每个分布绘制密度曲线。图例位于散点图的右侧。
 
@@ -1355,7 +1351,7 @@ obj << Add Density Curve to Scatterplot( 50 );
 
 ### Add Quantile Line to Scatterplot
 
-**语法:** obj << Add Quantile Line to Scatterplot( quantile )
+**语法:** obj &lt;&lt; Add Quantile Line to Scatterplot( quantile )
 
 **说明:** 在散点图的指定分位数处添加一条线。将为图例中选定的每个分布绘制一条分位数线。图例位于散点图的右侧。
 
@@ -1378,9 +1374,7 @@ obj << Add Quantile Line to Scatterplot( 0.1 );
 
 ### Censor Code
 
-**语法:** obj = Fit Life by X(...Censor Code( value=1 )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Fit Life by X(...Censor Code( value=1 )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 标识“删失”列中指定右删失观测的值。 默认为“1”。
 
@@ -1424,7 +1418,7 @@ obj = dt << Fit Life by X(
 
 ### Density
 
-**语法:** obj << Density( Weibull|Lognormal|Loglogistic|Frechet| SEV|Normal|Logistic|LEV, t, x )
+**语法:** obj &lt;&lt; Density( Weibull|Lognormal|Loglogistic|Frechet| SEV|Normal|Logistic|LEV, t, x )
 
 **说明:** 返回指定分布在寿命值为 t 和协变量值为 x 时的密度。
 
@@ -1468,7 +1462,7 @@ obj = dt << Fit Life by X(
 
 ### Fit All Distributions
 
-**语法:** obj << Fit All Distributions
+**语法:** obj &lt;&lt; Fit All Distributions
 
 **说明:** 拟合数据的所有可用分布。
 
@@ -1492,7 +1486,7 @@ obj << Fit All Distributions;
 
 ### Fit Exponential
 
-**语法:** obj << Fit Exponential
+**语法:** obj &lt;&lt; Fit Exponential
 
 **说明:** 拟合数据指数分布。
 
@@ -1516,7 +1510,7 @@ obj << Fit Exponential;
 
 ### Fit Frechet
 
-**语法:** obj << Fit Frechet
+**语法:** obj &lt;&lt; Fit Frechet
 
 **说明:** 拟合数据 Fréchet 分布。
 
@@ -1540,7 +1534,7 @@ obj << Fit Frechet;
 
 ### Fit LEV
 
-**语法:** obj << Fit LEV
+**语法:** obj &lt;&lt; Fit LEV
 
 **说明:** 拟合数据最大极值 (LEV) 分布。
 
@@ -1564,7 +1558,7 @@ obj << Fit LEV;
 
 ### Fit Logistic
 
-**语法:** obj << Fit Logistic
+**语法:** obj &lt;&lt; Fit Logistic
 
 **说明:** 拟合数据 Logistic 分布。
 
@@ -1588,7 +1582,7 @@ obj << Fit Logistic;
 
 ### Fit Loglogistic
 
-**语法:** obj << Fit Loglogistic
+**语法:** obj &lt;&lt; Fit Loglogistic
 
 **说明:** 拟合数据 Logistic 分布。
 
@@ -1612,7 +1606,7 @@ obj << Fit Loglogistic;
 
 ### Fit Lognormal
 
-**语法:** obj << Fit Lognormal
+**语法:** obj &lt;&lt; Fit Lognormal
 
 **说明:** 拟合数据对数正态分布。
 
@@ -1636,7 +1630,7 @@ obj << Fit Lognormal;
 
 ### Fit Normal
 
-**语法:** obj << Fit Normal
+**语法:** obj &lt;&lt; Fit Normal
 
 **说明:** 拟合数据正态分布。
 
@@ -1660,7 +1654,7 @@ obj << Fit Normal;
 
 ### Fit SEV
 
-**语法:** obj << Fit SEV
+**语法:** obj &lt;&lt; Fit SEV
 
 **说明:** 拟合数据最小极值 (SEV) 分布。
 
@@ -1684,7 +1678,7 @@ obj << Fit SEV;
 
 ### Fit Weibull
 
-**语法:** obj << Fit Weibull
+**语法:** obj &lt;&lt; Fit Weibull
 
 **说明:** 拟合数据 Weibull 分布。
 
@@ -1708,7 +1702,7 @@ obj << Fit Weibull;
 
 ### Get Results
 
-**语法:** obj << Get Results
+**语法:** obj &lt;&lt; Get Results
 
 **说明:** 返回每个分布拟合的估计值、标准误差、协方差矩阵和收敛结果。
 
@@ -1732,7 +1726,7 @@ Show( r );
 
 ### Hazard
 
-**语法:** obj << Hazard( Weibull|Lognormal|Loglogistic|Frechet| SEV|Normal|Logistic|LEV, t, x )
+**语法:** obj &lt;&lt; Hazard( Weibull|Lognormal|Loglogistic|Frechet| SEV|Normal|Logistic|LEV, t, x )
 
 **说明:** 返回指定分布在寿命值为 t 和协变量值为 x 时的危险率。
 
@@ -1755,7 +1749,7 @@ Show( h );
 
 ### Maximum Iterations
 
-**语法:** obj << Maximum Iterations( number )
+**语法:** obj &lt;&lt; Maximum Iterations( number )
 
 **说明:** 指定用于查找收敛的最大迭代次数。
 
@@ -1778,7 +1772,7 @@ obj = dt << Fit Life by X(
 
 ### Nested Model Tests
 
-**语法:** obj << Nested Model Tests( Saturated Location|Location|Location and Scale|Saturated Location and Scale|Regression|No Effect )
+**语法:** obj &lt;&lt; Nested Model Tests( Saturated Location|Location|Location and Scale|Saturated Location and Scale|Regression|No Effect )
 
 **说明:** 将非参数叠加图、嵌套模型检验以及多重概率图追加至报表。
 
@@ -1800,7 +1794,7 @@ obj = dt << Fit Life by X(
 
 ### Probability
 
-**语法:** obj << Probability( Weibull|Lognormal|Loglogistic|Frechet| SEV|Normal|Logistic|LEV, t, x )
+**语法:** obj &lt;&lt; Probability( Weibull|Lognormal|Loglogistic|Frechet| SEV|Normal|Logistic|LEV, t, x )
 
 **说明:** 返回指定分布在寿命值为 t 和协变量值为 x 时的概率。
 
@@ -1823,7 +1817,7 @@ Show( p );
 
 ### Quantile
 
-**语法:** obj << Quantile( Weibull|Lognormal|Loglogistic|Frechet| SEV|Normal|Logistic|LEV, p, x )
+**语法:** obj &lt;&lt; Quantile( Weibull|Lognormal|Loglogistic|Frechet| SEV|Normal|Logistic|LEV, p, x )
 
 **说明:** 返回指定分布在概率为 p 和协变量值为 x 时的分位数。
 
@@ -1846,7 +1840,7 @@ Show( q );
 
 ### Rejection Sampler Maximum Trials
 
-**语法:** obj << Rejection Sampler Maximum Trials( number=10000 )
+**语法:** obj &lt;&lt; Rejection Sampler Maximum Trials( number=10000 )
 
 **说明:** 默认为“10000”。
 
@@ -1875,7 +1869,7 @@ obj = dt << Fit Life by X(
 
 ### Set Level of Quantile Line CI Bands
 
-**语法:** obj << Set Level of Quantile Line CI Bands( alpha=0.95 )
+**语法:** obj &lt;&lt; Set Level of Quantile Line CI Bands( alpha=0.95 )
 
 **说明:** 指定分位数线周围置信区间的置信水平。
 
@@ -1902,7 +1896,7 @@ obj << Set Level of Quantile Line CI Bands( .90 );
 
 ### Set Scale
 
-**语法:** obj << Set Scale( Weibull|Lognormal|Loglogistic|Frechet|SEV |Normal|Logistic|LEV|Linear )
+**语法:** obj &lt;&lt; Set Scale( Weibull|Lognormal|Loglogistic|Frechet|SEV |Normal|Logistic|LEV|Linear )
 
 **说明:** 指定用于“非参数叠加”图的尺度。
 
@@ -1926,7 +1920,7 @@ obj << Set Scale( Logistic );
 
 ### Set Scriptables
 
-**语法:** obj << Set Scriptables( {<Distribution Comparisons( options )>, <Quantile Comparisons( options )>, <Hazard Comparisons( options )>, <Density Comparisons( options )>} )
+**语法:** obj &lt;&lt; Set Scriptables( {&lt;Distribution Comparisons( options )&gt;, &lt;Quantile Comparisons( options )&gt;, &lt;Hazard Comparisons( options )&gt;, &lt;Density Comparisons( options )&gt;} )
 
 **说明:** 在输出的不同部分设置刻画器中的可编写脚本选项。
 
@@ -1950,7 +1944,7 @@ obj << Set Scriptables(
 
 ### Show Density Curves
 
-**语法:** obj << Show Density Curves( state=0|1 )
+**语法:** obj &lt;&lt; Show Density Curves( state=0|1 )
 
 **说明:** 显示或隐藏散点图中的密度曲线。
 
@@ -1973,7 +1967,7 @@ obj << Show Density Curves( 1 );
 
 ### Show Overlay by Levels
 
-**语法:** obj << Show Overlay by Levels( state=0|1 )
+**语法:** obj &lt;&lt; Show Overlay by Levels( state=0|1 )
 
 **说明:** 显示或隐藏“按水平叠加”图。
 
@@ -2004,7 +1998,7 @@ obj << Show Overlay by Levels( 1 );
 
 ### Show Points
 
-**语法:** obj << Show Points( state=0|1 )
+**语法:** obj &lt;&lt; Show Points( state=0|1 )
 
 **说明:** 显示或隐藏“非参数叠加”图和“多重概率图”中的数据点。若隐藏了这些点，则改为显示阶梯函数。 默认开启。
 
@@ -2030,7 +2024,7 @@ obj << Show Points( 1 );
 
 ### Show Quantile Line CI Bands
 
-**语法:** obj << Show Quantile Line CI Bands( state=0|1 )
+**语法:** obj &lt;&lt; Show Quantile Line CI Bands( state=0|1 )
 
 **说明:** 显示或隐藏分位数线周围的置信区间。
 
@@ -2056,7 +2050,7 @@ obj << Show Quantile Line CI Bands( 1 );
 
 ### Show Surface Plot
 
-**语法:** obj << Show Surface Plot( state=0|1 )
+**语法:** obj &lt;&lt; Show Surface Plot( state=0|1 )
 
 **说明:** 显示或隐藏报表的各个分布结果部分中的曲面图。曲面图显示在各个分布的“分布”、“分位数”、“危险率”和“密度”部分中。
 
@@ -2086,7 +2080,7 @@ obj << Show Surface Plot( 1 );
 
 ### TAF
 
-**语法:** obj << TAF( Weibull|Lognormal|Loglogistic|Frechet, value, x )
+**语法:** obj &lt;&lt; TAF( Weibull|Lognormal|Loglogistic|Frechet, value, x )
 
 **说明:** 返回指定分布、加速条件 x 和基线条件值的时间加速因子。
 
@@ -2109,7 +2103,7 @@ Show( af );
 
 ### Tabbed Individual Report
 
-**语法:** obj << Tabbed Individual Report( state=0|1 )
+**语法:** obj &lt;&lt; Tabbed Individual Report( state=0|1 )
 
 **说明:** 将各个报表组织进选项卡面板。 默认开启。
 
@@ -2136,7 +2130,7 @@ obj << Tabbed Individual Report( 0 );
 
 ### Tabbed Overall Report
 
-**语法:** obj << Tabbed Overall Report( state=0|1 )
+**语法:** obj &lt;&lt; Tabbed Overall Report( state=0|1 )
 
 **说明:** 将总体报表组织成图、比较和总体报表的结果部分的选项卡面板。
 
@@ -2160,7 +2154,7 @@ obj << Tabbed Overall Report( 1 );
 
 ### Time Acceleration Baseline
 
-**语法:** obj << Time Acceleration Baseline( number )
+**语法:** obj &lt;&lt; Time Acceleration Baseline( number )
 
 **说明:** 指定加速因子的使用条件。
 
@@ -2182,7 +2176,7 @@ obj << Time Acceleration Baseline( 20 );
 
 ### Transposed Axes
 
-**语法:** obj << Transposed Axes( state=0|1 )
+**语法:** obj &lt;&lt; Transposed Axes( state=0|1 )
 
 **说明:** 指定加速因子显示在垂直轴而不是水平轴上。
 
@@ -2205,7 +2199,7 @@ obj << Transposed Axes( 1 );
 
 ### Use Transformation Scale
 
-**语法:** obj << Use Transformation Scale( state=0|1 )
+**语法:** obj &lt;&lt; Use Transformation Scale( state=0|1 )
 
 **说明:** 指定变换尺度用于散点图中的加速因子轴。该选项可在加速因子轴的线性尺度和非线性尺度之间切换。 默认开启。
 

@@ -24,7 +24,7 @@ feed = Open Datafeed(
 
 ### Close
 
-**Sintassi:** obj << Close
+**Sintassi:** obj &lt;&lt; Close
 
 **Descrizione:** (Solo Windows) Chiude l&apos;oggetto dell&apos;alimentazione dei dati e la relativa finestra.
 
@@ -42,7 +42,7 @@ feed << Close;
 
 ### Connect
 
-**Sintassi:** obj << Connect( Port(  "com1"|"com2"|"lpt1"... ), Parity( even|odd|none ), Baud rate( 4800|9600 ), Data bits( 8|7 ), <Stop bits( 0|1|2 )>, <DTR_DSR( 0|1 )>, <RTS_CTS( 0|1 )>, <XON_XOFF( 1|0 )> )
+**Sintassi:** obj &lt;&lt; Connect( Port( "com1"|"com2"|"lpt1"... ), Parity( even|odd|none ), Baud rate( 4800|9600 ), Data bits( 8|7 ), &lt;Stop bits( 0|1|2 )&gt;, &lt;DTR_DSR( 0|1 )&gt;, &lt;RTS_CTS( 0|1 )&gt;, &lt;XON_XOFF( 1|0 )&gt; )
 
 **Descrizione:** (Solo Windows) Configura le impostazioni della porta per la connessione al dispositivo.
 
@@ -58,7 +58,7 @@ feed = Open Datafeed(
 
 ### Disconnect
 
-**Sintassi:** obj << Disconnect
+**Sintassi:** obj &lt;&lt; Disconnect
 
 **Descrizione:** (Solo Windows) Scollega la periferica dalla coda dell&apos;alimentazione dei dati ma lascia attivo l&apos;oggetto dell&apos;alimentazione dei dati.
 
@@ -75,7 +75,7 @@ feed << Disconnect;
 
 ### EOL
 
-**Sintassi:** obj << EOL( "CR"|"LF"|"CRLF" )
+**Sintassi:** obj &lt;&lt; EOL( "CR"|"LF"|"CRLF" )
 
 **Descrizione:** (Solo Windows) Imposta il valore di fine riga usato come separatore quando si analizzano righe di dati in ingresso. Il valore è anche utilizzato come terminatore per le righe di dati in uscita. CR = carattere ASCII 13 (Ritorno a capo). LF = carattere ASCII 10 (Avanzamento riga). CRLF utilizzerà sia CR che LF in sequenza.
 
@@ -101,7 +101,7 @@ For( exi = 0, exi < 5, exi++,
 
 ### Get Container
 
-**Sintassi:** obj << Get Container
+**Sintassi:** obj &lt;&lt; Get Container
 
 **Descrizione:** Restituisce un riferimento al riquadro contenitore che racchiude il contenuto dell&apos;oggetto.
 
@@ -119,7 +119,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Line
 
-**Sintassi:** line = obj << Get Line
+**Sintassi:** line = obj &lt;&lt; Get Line
 
 **Descrizione:** (Solo Windows) Restituisce una riga dalla coda dell&apos;alimentazione di dati e la rimuove.
 
@@ -138,7 +138,7 @@ exfeed = Open Datafeed(
 
 ### Get Lines
 
-**Sintassi:** list = obj << Get Lines
+**Sintassi:** list = obj &lt;&lt; Get Lines
 
 **Descrizione:** (Solo Windows) Restituisce sotto forma di elenco tutte le righe dalla coda di alimentazione dei dati e le rimuove.
 
@@ -162,7 +162,7 @@ For( exi = 0, exi < 5, exi++,
 
 ### Print Queue
 
-**Sintassi:** obj << Print Queue
+**Sintassi:** obj &lt;&lt; Print Queue
 
 **Descrizione:** (Solo Windows) Stampa la coda interna di messaggi nella finestra Log.
 
@@ -179,7 +179,7 @@ exfeed << print queue;/* or red triangle menu item */;
 
 ### Queue Line
 
-**Sintassi:** obj << Queue Line( string )
+**Sintassi:** obj &lt;&lt; Queue Line( string )
 
 **Descrizione:** (Solo Windows) Invia una riga alla fine della coda dell&apos;alimentazione di dati.
 
@@ -203,7 +203,7 @@ For( exi = 0, exi < 5, exi++,
 
 ### Restart
 
-**Sintassi:** obj << Restart
+**Sintassi:** obj &lt;&lt; Restart
 
 **Descrizione:** (Solo Windows) Riavvia l&apos;elaborazione delle righe in coda.
 
@@ -222,7 +222,7 @@ feed << Restart;
 
 ### Set Script
 
-**Sintassi:** obj << Set Script( script )
+**Sintassi:** obj &lt;&lt; Set Script( script )
 
 **Descrizione:** (Solo Windows) Assegna lo script che sarà eseguito ogni volta che viene ricevuta una riga di dati.
 
@@ -238,7 +238,7 @@ feed = Open Datafeed(
 
 ### Stop
 
-**Sintassi:** obj << Stop
+**Sintassi:** obj &lt;&lt; Stop
 
 **Descrizione:** (Solo Windows) Interrompe l&apos;elaborazione delle righe in coda.
 
@@ -255,7 +255,7 @@ feed << Stop;
 
 ### Write
 
-**Sintassi:** obj << Write( string )
+**Sintassi:** obj &lt;&lt; Write( string )
 
 **Descrizione:** (Solo Windows) Invia una stringa alla periferica di alimentazione dei dati.
 
@@ -278,7 +278,7 @@ exfeed << Write( "Ready" );
 
 ### Write Line
 
-**Sintassi:** obj << Write Line( string )
+**Sintassi:** obj &lt;&lt; Write Line( string )
 
 **Descrizione:** (Solo Windows) Invia la stringa alla periferica di alimentazione dei dati. Se per l&apos;alimentazione dei dati è stato impostato EOL, le stringhe sono terminate dal valore EOL specificato. Se non è stato impostato EOL, la riga viene terminata con CRLF.
 
@@ -301,7 +301,7 @@ exfeed << Write Line( "Ready" );
 
 ### Write Lines
 
-**Sintassi:** obj << Write Lines( list )
+**Sintassi:** obj &lt;&lt; Write Lines( list )
 
 **Descrizione:** (Solo Windows) Invia un elenco di stringhe alla periferica di alimentazione dei dati. Se per l&apos;alimentazione dei dati è stato impostato EOL, ogni stringa è separata dal valore EOL. Se non è stato impostato EOL, ogni riga è separata con CRLF.
 

@@ -48,7 +48,7 @@ d = Constant Stress ALT Design(
 
 ### Factor
 
-**Syntax:** obj << Factor
+**Syntax:** obj &lt;&lt; Factor
 
 **Description:** Adds a factor with the specified properties.
 
@@ -84,7 +84,7 @@ d = Constant Stress ALT Design(
 
 ### Factor Name
 
-**Syntax:** obj << Factor Name
+**Syntax:** obj &lt;&lt; Factor Name
 
 **Description:** Sets the name of the factor.
 
@@ -120,7 +120,7 @@ d = Constant Stress ALT Design(
 
 ### Factor Transformation
 
-**Syntax:** obj << Factor Transformation( Arrhenius Celsius|Arrhenius Fahrenheit|Arrhenius Kelvin|Reciprocal|Log|Root|None )
+**Syntax:** obj &lt;&lt; Factor Transformation( Arrhenius Celsius|Arrhenius Fahrenheit|Arrhenius Kelvin|Reciprocal|Log|Root|None )
 
 **Description:** Sets the transformation function for the levels of the factor.
 
@@ -156,7 +156,7 @@ d = Constant Stress ALT Design(
 
 ### High Test Condition
 
-**Syntax:** obj << High Test Condition
+**Syntax:** obj &lt;&lt; High Test Condition
 
 **Description:** Sets the highest testing level for the factor.
 
@@ -192,7 +192,7 @@ d = Constant Stress ALT Design(
 
 ### High Usage Condition
 
-**Syntax:** obj << High Usage Condition
+**Syntax:** obj &lt;&lt; High Usage Condition
 
 **Description:** Sets the highest level for the usage condition for the factor. This value can be the same as the lowest usage condition.
 
@@ -228,7 +228,7 @@ d = Constant Stress ALT Design(
 
 ### Low Test Condition
 
-**Syntax:** obj << Low Test Condition
+**Syntax:** obj &lt;&lt; Low Test Condition
 
 **Description:** Sets the lowest testing level for the factor.
 
@@ -264,7 +264,7 @@ d = Constant Stress ALT Design(
 
 ### Low Usage Condition
 
-**Syntax:** obj << Low Usage Condition
+**Syntax:** obj &lt;&lt; Low Usage Condition
 
 **Description:** Sets the lowest level for the usage condition for the factor. This value can be the same as the highest usage condition.
 
@@ -300,7 +300,7 @@ d = Constant Stress ALT Design(
 
 ### Number of Levels
 
-**Syntax:** obj << Number of Levels
+**Syntax:** obj &lt;&lt; Number of Levels
 
 **Description:** Sets the number of levels for the factor. Primarily used for balanced designs.
 
@@ -336,7 +336,7 @@ d = Constant Stress ALT Design(
 
 ### Save Script to Script Window
 
-**Syntax:** obj << Save Script to Script Window
+**Syntax:** obj &lt;&lt; Save Script to Script Window
 
 **Description:** Create a Script that will reproduce this design.
 

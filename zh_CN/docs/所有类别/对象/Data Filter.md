@@ -6,7 +6,7 @@
 
 ### Data Filter
 
-**语法:** Data Filter( <local>, <invisible>, <Add Filter>, <Mode>, <Show Window(0 | 1)>, <no outline box(0 | 1)> )
+**语法:** Data Filter( &lt;local&gt;, &lt;invisible&gt;, &lt;Add Filter&gt;, &lt;Mode&gt;, &lt;Show Window(0 | 1)&gt;, &lt;no outline box(0 | 1)&gt; )
 
 **说明:** 创建或显示“数据过滤器”，您可以在其中以交互方式选择复杂的数据子集。Mode 选项确定受过滤器中的选择影响的行状态。Add Filter 命令将添加具有指定 Columns 和 Where 子句的过滤器组。当存在多个过滤器组时，组合行为由 Group By AND 选项确定。若指定了 Local 关键字，则过滤器可以嵌入在报表中以过滤一个或多个平台但不影响其他报表。
 
@@ -25,7 +25,7 @@ obj = dt << Data Filter(
 
 ### Add Filter Columns
 
-**语法:** obj << Add Filter Columns( Add Filter Columns( column ) )
+**语法:** obj &lt;&lt; Add Filter Columns( Add Filter Columns( column ) )
 
 **说明:** 添加一个或多个过滤器列。
 
@@ -43,7 +43,7 @@ obj << Add Filter Columns( :State );
 
 ### Filter Column
 
-**语法:** obj << Filter Column( column(s) )
+**语法:** obj &lt;&lt; Filter Column( column(s) )
 
 **说明:** 添加过滤器列。
 
@@ -62,7 +62,7 @@ obj << Filter Column( :State );
 
 ### Filter Columns
 
-**语法:** obj << Filter Columns( column(s) )
+**语法:** obj &lt;&lt; Filter Columns( column(s) )
 
 **说明:** 添加一个或多个过滤器列。
 
@@ -80,7 +80,7 @@ obj << Filter Columns( :State, :OZONE );
 
 ### Filter Group
 
-**语法:** obj << Filter Group( column(s) )
+**语法:** obj &lt;&lt; Filter Group( column(s) )
 
 ```jsl
 
@@ -97,7 +97,7 @@ obj = dt << Data Filter(
 
 ### Add Favorites
 
-**语法:** obj << Add Favorites( name or string )
+**语法:** obj &lt;&lt; Add Favorites( name or string )
 
 **说明:** 将当前过滤器选择与给定名称相关联，并保存至收藏夹列表
 
@@ -138,7 +138,7 @@ Show( fav1 );
 
 ### Add Filter
 
-**语法:** obj << Add Filter( columns( column, ... ), <Where( clause )> )
+**语法:** obj &lt;&lt; Add Filter( columns( column, ... ), &lt;Where( clause )&gt; )
 
 **说明:** 在新的“或”组中添加一个或多个过滤器列。
 
@@ -158,7 +158,7 @@ obj << Add Filter(
 
 ### Animation
 
-**语法:** obj << Animation( <Animate Column( column )>, <Animate Rate( number )>, <Forward|Backward|Bounce> )
+**语法:** obj &lt;&lt; Animation( &lt;Animate Column( column )&gt;, &lt;Animate Rate( number )&gt;, &lt;Forward|Backward|Bounce&gt; )
 
 **说明:** 循环通过指定列的排序值以选择和取消选择行。
 
@@ -178,7 +178,7 @@ obj << Animation( Animate Column( :Region ), Bounce );
 
 ### Apply Favorites
 
-**语法:** obj << Apply Favorites( name or string )
+**语法:** obj &lt;&lt; Apply Favorites( name or string )
 
 **说明:** 将保存在命名收藏夹中的过滤器选择应用于数据过滤。
 
@@ -206,7 +206,7 @@ df << apply favorites( "FemaleAverageHt" );
 
 ### Auto clear
 
-**语法:** obj << Auto clear( state=0|1 )
+**语法:** obj &lt;&lt; Auto clear( state=0|1 )
 
 **说明:** 过滤时先清除所有当前选定的行，然后进行新的选择。
 
@@ -224,7 +224,7 @@ obj << (filter column( :sex ) << Where( :sex == "M" ));
 
 ### Clear
 
-**语法:** obj << Clear
+**语法:** obj &lt;&lt; Clear
 
 **说明:** 清除当前选定的行。
 
@@ -241,7 +241,7 @@ obj << Clear;
 
 ### Clear Selection
 
-**语法:** obj << Clear Selection
+**语法:** obj &lt;&lt; Clear Selection
 
 **说明:** 清除该列过滤器的选择。
 
@@ -257,7 +257,7 @@ obj << (Filter Column( :Region ) << Clear Selection);
 
 ### Close
 
-**语法:** obj << Close
+**语法:** obj &lt;&lt; Close
 
 **说明:** 关闭数据过滤器。
 
@@ -276,7 +276,7 @@ obj << Close;
 
 ### Conditional
 
-**语法:** obj << Conditional( state=0|1 )
+**语法:** obj &lt;&lt; Conditional( state=0|1 )
 
 **说明:** 该选项标记分类列过滤器是否按条件排序。选择一个类别将把下一个列过滤器的类别限制在仅所选类别中的类别。
 
@@ -293,7 +293,7 @@ obj << conditional( 1 );
 
 ### Copy Local Data Filter
 
-**语法:** obj << Copy Local Data Filter
+**语法:** obj &lt;&lt; Copy Local Data Filter
 
 **说明:** 将本地数据过滤器的脚本复制到剪贴板。
 
@@ -316,7 +316,7 @@ dist2 << Paste Local Data Filter;
 
 ### Copy Script
 
-**语法:** obj << Copy Script
+**语法:** obj &lt;&lt; Copy Script
 
 **说明:** 创建 JSL 脚本以生成过滤窗口，并将该脚本置于剪贴板中。
 
@@ -334,7 +334,7 @@ obj << Copy Script;
 
 ### Count Excluded Rows
 
-**语法:** obj << Count Excluded Rows( state=0|1 )
+**语法:** obj &lt;&lt; Count Excluded Rows( state=0|1 )
 
 **说明:** 若清除该选项，则数据过滤器中的列值和计数将不包括数据表中具有已排除行状态的行。
 
@@ -399,7 +399,7 @@ New Window( "Hierarchical Data Filter",
 
 ### Data Table Window
 
-**语法:** obj << Data Table Window
+**语法:** obj &lt;&lt; Data Table Window
 
 **说明:** 显示用于该过滤对话框的数据表。
 
@@ -417,7 +417,7 @@ obj << Data Table Window;
 
 ### Delete
 
-**语法:** obj << Delete( {column(s)} )
+**语法:** obj &lt;&lt; Delete( {column(s)} )
 
 **说明:** 删除数据过滤器中现有过滤器指定的列。
 
@@ -455,7 +455,7 @@ obj << (Filter Column( :State ) << delete);
 
 ### Delete All
 
-**语法:** obj << Delete All
+**语法:** obj &lt;&lt; Delete All
 
 **说明:** 删除数据过滤器中的所有现有过滤器。
 
@@ -475,7 +475,7 @@ obj << Delete All;
 
 ### Display
 
-**语法:** obj << Display( column, <Invisible(0 | 1)>, <options> )
+**语法:** obj &lt;&lt; Display( column, &lt;Invisible(0 | 1)&gt;, &lt;options&gt; )
 
 **说明:** 更改列水平在过滤器中显示的方式。分类列支持显示类型选项“区组显示”、“列表显示”、“单一类别显示”、“复选框显示”或“单选框显示”。选项 NItems(n) 将设置可滚动视图中可见项的个数。连续列支持选项 NBins(n) 和 Height(h)。
 
@@ -494,7 +494,7 @@ obj << Display( :Region, N Items( 4 ) );
 
 ### Extend Where
 
-**语法:** obj << Extend Where
+**语法:** obj &lt;&lt; Extend Where
 
 **说明:** 基于该列过滤器的指定条件扩大选择。
 
@@ -510,7 +510,7 @@ obj << (Filter Column( :Region ) << Extend Where( :Region = "W" ));
 
 ### Get Data Table
 
-**语法:** obj << Get Data Table
+**语法:** obj &lt;&lt; Get Data Table
 
 **说明:** 返回与过滤器关联的数据表。
 
@@ -531,7 +531,7 @@ regionfilter = obj << Get Data Table();
 
 ### Get Filter Column
 
-**语法:** obj << Get Filter Column( column, <index> )
+**语法:** obj &lt;&lt; Get Filter Column( column, &lt;index&gt; )
 
 **说明:** 返回命名列的过滤器列对象。若相同的列使用了多次，则 index 参数将返回指定的发生次数
 
@@ -553,7 +553,7 @@ regionfilter << Invert Selection;
 
 ### Get Filtered Rows
 
-**语法:** obj << Get Filtered Rows
+**语法:** obj &lt;&lt; Get Filtered Rows
 
 **说明:** 返回满足当前过滤条件的行号矩阵。
 
@@ -571,7 +571,7 @@ obj << Get Filtered Rows;
 
 ### Get Script
 
-**语法:** obj << Get Script
+**语法:** obj &lt;&lt; Get Script
 
 **说明:** 以文本形式获取数据过滤器脚本。
 
@@ -590,7 +590,7 @@ Show( txt );
 
 ### Get where clause
 
-**语法:** obj << Get where clause
+**语法:** obj &lt;&lt; Get where clause
 
 **说明:** 获取过滤器选择的说明性文本。
 
@@ -607,13 +607,13 @@ txt = obj << get where clause;
 
 ### Grouped by AND
 
-**语法:** obj << Grouped by AND( state=0|1 )
+**语法:** obj &lt;&lt; Grouped by AND( state=0|1 )
 
 **说明:** 通过“与”连接各组过滤器项
 
 ### Inverse
 
-**语法:** obj << Inverse( state=0|1 )
+**语法:** obj &lt;&lt; Inverse( state=0|1 )
 
 **说明:** 反转数据表中行的当前选择状态。
 
@@ -632,7 +632,7 @@ obj << Inverse( 1 );
 
 ### Invert Selection
 
-**语法:** obj << Invert Selection
+**语法:** obj &lt;&lt; Invert Selection
 
 **说明:** 反转该列过滤器的选择。
 
@@ -648,7 +648,7 @@ obj << (Filter Column( :Region ) << invert selection);
 
 ### Make Filter Change Handler
 
-**语法:** rs = df << Make Filter Change Handler(function(a) );
+**语法:** rs = df &lt;&lt; Make Filter Change Handler(function(a) );
 
 **说明:** 创建数据过滤器处理程序以处理过滤器发生更改的通知。过滤的行数在函数的参数中返回。
 
@@ -667,7 +667,7 @@ rs = filter << Make Filter Change Handler( f );
 
 ### Match
 
-**语法:** obj << Match( Filter Columns(:a, :b, :c, ...), where( conditions ) )
+**语法:** obj &lt;&lt; Match( Filter Columns(:a, :b, :c, ...), where( conditions ) )
 
 **说明:** 设置各组的过滤条件。
 
@@ -687,7 +687,7 @@ obj << Match( Filter Columns( :BP 12M ), Where( :BP 12M > 181.9 & :BP 12M < 192.
 
 ### Mode
 
-**语法:** obj << Mode( Select|Show|Include (state = 0|1) )
+**语法:** obj &lt;&lt; Mode( Select|Show|Include (state = 0|1) )
 
 **说明:** 设置通过数据过滤器选择行时使用的操作或模式。
 
@@ -703,7 +703,7 @@ obj << Add Filter( Columns( :Region ), Where( :Region == "N" ) );
 
 ### On Clear
 
-**语法:** obj << On Clear
+**语法:** obj &lt;&lt; On Clear
 
 **说明:** 设置清除过滤器之后要执行的脚本或函数。
 
@@ -722,7 +722,7 @@ df << Mode( Include( 1 ), Select( 0 ), Show( 0 ) );
 
 ### Remove Favorites
 
-**语法:** obj << Remove Favorites( name or string )
+**语法:** obj &lt;&lt; Remove Favorites( name or string )
 
 **说明:** 从收藏夹列表中删除命名的收藏夹
 
@@ -772,7 +772,7 @@ df << remove favorites();
 
 ### Report
 
-**语法:** obj << Report
+**语法:** obj &lt;&lt; Report
 
 **说明:** 返回对该报表对象的引用。
 
@@ -798,7 +798,7 @@ Show( t );
 
 ### Save Script to Data Table
 
-**语法:** obj << Save Script to Data Table
+**语法:** obj &lt;&lt; Save Script to Data Table
 
 **说明:** 创建 JSL 脚本以生成过滤窗口，并将该脚本作为表属性保存到数据表中。
 
@@ -816,7 +816,7 @@ obj << Save Script to Data Table;
 
 ### Save Script to Journal
 
-**语法:** obj << Save Script to Journal
+**语法:** obj &lt;&lt; Save Script to Journal
 
 **说明:** 创建 JSL 脚本以生成过滤窗口，并将一个按钮添加至包含该脚本的记录中。
 
@@ -834,7 +834,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Script Window
 
-**语法:** obj << Save Script to Script Window
+**语法:** obj &lt;&lt; Save Script to Script Window
 
 **说明:** 创建 JSL 脚本以生成过滤窗口，并将该脚本追加至当前脚本文本窗口中。
 
@@ -852,7 +852,7 @@ obj << Save Script to Script Window;
 
 ### Save Where Clause to Clipboard
 
-**语法:** obj << Save Where Clause to Clipboard
+**语法:** obj &lt;&lt; Save Where Clause to Clipboard
 
 **说明:** 根据过滤条件创建 Where 子句，并将其置于剪贴板中。
 
@@ -868,7 +868,7 @@ obj << Save Where Clause To Clipboard;
 
 ### Save Where Clause to Data Table
 
-**语法:** obj << Save Where Clause to Data Table
+**语法:** obj &lt;&lt; Save Where Clause to Data Table
 
 **说明:** 根据过滤条件创建 Where 子句，并将其作为表属性保存到数据表中。
 
@@ -884,7 +884,7 @@ obj << Save Where Clause To Data Table;
 
 ### Save Where Clause to Formula Column
 
-**语法:** obj << Save Where Clause to Formula Column
+**语法:** obj &lt;&lt; Save Where Clause to Formula Column
 
 **说明:** 创建一个指示符列，它具有等价于过滤条件的公式。满足过滤条件的行具有值 1，所有其他行具有值 0。
 
@@ -902,7 +902,7 @@ obj << Save Where Clause To Formula Column;
 
 ### Save Where Clause to Journal
 
-**语法:** obj << Save Where Clause to Journal
+**语法:** obj &lt;&lt; Save Where Clause to Journal
 
 **说明:** 根据过滤条件创建 Where 子句，并将其追加至记录。
 
@@ -918,7 +918,7 @@ obj << Save Where Clause To Journal;
 
 ### Save Where Clause to Row State Column
 
-**语法:** obj << Save Where Clause to Row State Column
+**语法:** obj &lt;&lt; Save Where Clause to Row State Column
 
 **说明:** 创建一个行状态列，其包含的公式等价于过滤条件。
 
@@ -934,7 +934,7 @@ obj << Save Where Clause To Row State Column;
 
 ### Save Where Clause to Script Window
 
-**语法:** obj << Save Where Clause to Script Window
+**语法:** obj &lt;&lt; Save Where Clause to Script Window
 
 **说明:** 根据过滤条件创建 Where 子句，并将其追加至当前脚本文本窗口中。
 
@@ -950,7 +950,7 @@ obj << Save Where Clause To Script Window;
 
 ### Save and restore current row states
 
-**语法:** obj << Save and restore current row states( state=0|1 )
+**语法:** obj &lt;&lt; Save and restore current row states( state=0|1 )
 
 **说明:** 保存数据表的当前行状态，然后在关闭数据过滤器时恢复这些状态。
 
@@ -969,7 +969,7 @@ obj << Close;
 
 ### Select Missing
 
-**语法:** obj << Select Missing( state=0|1 )
+**语法:** obj &lt;&lt; Select Missing( state=0|1 )
 
 **说明:** 将缺失行添加至该连续列过滤器的选择。
 
@@ -985,7 +985,7 @@ obj << (Filter Column( :CO ) << Select Missing);
 
 ### Set Include
 
-**语法:** obj << Set Include( state=0|1 )
+**语法:** obj &lt;&lt; Set Include( state=0|1 )
 
 **说明:** 选中或取消选中包括模式。
 
@@ -1002,7 +1002,7 @@ obj << set Include( 0 );
 
 ### Set Select
 
-**语法:** obj << Set Select( state=0|1 )
+**语法:** obj &lt;&lt; Set Select( state=0|1 )
 
 **说明:** 选中或取消选中选择模式。
 
@@ -1019,7 +1019,7 @@ obj << set select( 0 );
 
 ### Set Show
 
-**语法:** obj << Set Show( state=0|1 )
+**语法:** obj &lt;&lt; Set Show( state=0|1 )
 
 **说明:** 选中或取消选中显示模式。
 
@@ -1036,7 +1036,7 @@ obj << set Show( 0 );
 
 ### Show Controls
 
-**语法:** obj << Show Controls( state=0|1 )
+**语法:** obj &lt;&lt; Show Controls( state=0|1 )
 
 **说明:** 显示或隐藏用于修改数据过滤器选项的控件。
 
@@ -1057,13 +1057,13 @@ obj << Show Controls( 0 );
 
 ### Show Counts
 
-**语法:** obj << Show Counts( state=0|1 )
+**语法:** obj &lt;&lt; Show Counts( state=0|1 )
 
 **JMP添加的版本:** 16
 
 ### Show Histograms and Bars
 
-**语法:** obj << Show Histograms and Bars( state=0|1 )
+**语法:** obj &lt;&lt; Show Histograms and Bars( state=0|1 )
 
 **说明:** Show Histograms and Bars for filter columns where available
 
@@ -1083,7 +1083,7 @@ obj << Show Histograms and Bars( 0 );
 
 ### Show Modes
 
-**语法:** obj << Show Modes( state=0|1 )
+**语法:** obj &lt;&lt; Show Modes( state=0|1 )
 
 **说明:** 显示或隐藏用于更改数据过滤器模式的控件，它控制数据过滤器的选择/显示/包括行为。
 
@@ -1104,7 +1104,7 @@ obj << Show Modes( 0 );
 
 ### Show Subset
 
-**语法:** obj << Show Subset
+**语法:** obj &lt;&lt; Show Subset
 
 **说明:** 在单独的数据表窗口中显示过滤数据。
 
@@ -1120,7 +1120,7 @@ obj << Show Subset;
 
 ### Stretch Width
 
-**语法:** obj << Stretch Width( "Manual" | "Window" )
+**语法:** obj &lt;&lt; Stretch Width( "Manual" | "Window" )
 
 **说明:** 设置过滤器的水平拉伸行为。默认情况下，可以手动更改过滤器宽度。若设置为“窗口”，则宽度会随窗口大小变得更大或更小。
 
@@ -1168,17 +1168,17 @@ New Window( "Shared Local Filter",
 
 ### Title
 
-**语法:** obj << Title
+**语法:** obj &lt;&lt; Title
 
 ### Unstructured Text
 
-**语法:** obj << Unstructured Text
+**语法:** obj &lt;&lt; Unstructured Text
 
 **JMP添加的版本:** 16
 
 ### Use Floating Window
 
-**语法:** obj << Use Floating Window( state=0|1 )
+**语法:** obj &lt;&lt; Use Floating Window( state=0|1 )
 
 **说明:** 切换该过滤器窗口，使其在其数据表及相关窗口上浮动，或使用可与其他窗口并排的窗口。
 
@@ -1193,7 +1193,7 @@ obj << Use Floating Window;
 
 ### Where
 
-**语法:** obj << Where
+**语法:** obj &lt;&lt; Where
 
 **说明:** 基于该列过滤器的指定条件选择行。
 
@@ -1209,7 +1209,7 @@ obj << (Filter Column( :Lead ) << Where( :Lead >= .4 & :Lead <= 1.4 ));
 
 ### columns
 
-**语法:** obj << columns( columns )
+**语法:** obj &lt;&lt; columns( columns )
 
 **说明:** 添加过滤器列。它是另一个用于添加过滤器列的命令。
 
@@ -1231,7 +1231,7 @@ obj << Columns( :Region, :SO2, :CO, :State );
 
 #### Blocks Display
 
-**语法:** obj << Blocks Display( state=0|1 )
+**语法:** obj &lt;&lt; Blocks Display( state=0|1 )
 
 **说明:** 将每个水平显示为可选择的块。
 
@@ -1253,7 +1253,7 @@ regionobj << Blocks Display;
 
 #### Check Box Display
 
-**语法:** obj << Check Box Display( state=0|1 )
+**语法:** obj &lt;&lt; Check Box Display( state=0|1 )
 
 **说明:** 用复选框显示每个水平，以及频数计数和直条。
 
@@ -1275,13 +1275,13 @@ regionobj << Check Box Display;
 
 #### Clear Find
 
-**语法:** obj << Clear Find
+**语法:** obj &lt;&lt; Clear Find
 
 **JMP添加的版本:** 15
 
 #### Clear Selection
 
-**语法:** obj << Clear Selection
+**语法:** obj &lt;&lt; Clear Selection
 
 **说明:** 清除对于给定列有效的任何选择。
 
@@ -1302,13 +1302,13 @@ regionobj << Clear Selection;
 
 #### Continuous
 
-**语法:** obj << Continuous( state=0|1 )
+**语法:** obj &lt;&lt; Continuous( state=0|1 )
 
 **JMP添加的版本:** 16
 
 #### Delete
 
-**语法:** obj << Delete
+**语法:** obj &lt;&lt; Delete
 
 **说明:** 从“数据过滤器”控制面板中删除变量。
 
@@ -1329,7 +1329,7 @@ regionobj << Delete;
 
 #### Extend Where
 
-**语法:** obj << Extend Where
+**语法:** obj &lt;&lt; Extend Where
 
 **说明:** 使用表达式选择行，从而添加至当前选择中。
 
@@ -1350,7 +1350,7 @@ regionobj << Extend Where( :Region == {"MW"} );
 
 #### Find
 
-**语法:** obj << Find(Set Text("string"), <options>)
+**语法:** obj &lt;&lt; Find(Set Text("string"), &lt;options&gt;)
 
 **说明:** 提供一个文本框，您可以在其中为选定列输入搜索字符串。
 
@@ -1373,19 +1373,19 @@ regionobj << Find( Set Text( "w" ) );
 
 #### Get Selected Items
 
-**语法:** obj << Get Selected Items
+**语法:** obj &lt;&lt; Get Selected Items
 
 **JMP添加的版本:** 15
 
 #### Get Visible Items
 
-**语法:** obj << Get Visible Items
+**语法:** obj &lt;&lt; Get Visible Items
 
 **JMP添加的版本:** 19
 
 #### Invert Selection
 
-**语法:** obj << Invert Selection
+**语法:** obj &lt;&lt; Invert Selection
 
 **说明:** 对于给定列，取消选择任何选定值并选择以前未选定的所有值。
 
@@ -1406,7 +1406,7 @@ regionobj << Invert Selection;
 
 #### List Display
 
-**语法:** obj << List Display( state=0|1 )
+**语法:** obj &lt;&lt; List Display( state=0|1 )
 
 **说明:** 在列表中显示每个水平，以及频数计数和直条。
 
@@ -1428,19 +1428,19 @@ regionobj << List Display;
 
 #### Multiple Response
 
-**语法:** obj << Multiple Response( state=0|1 )
+**语法:** obj &lt;&lt; Multiple Response( state=0|1 )
 
 **JMP添加的版本:** 16
 
 #### Nominal/Ordinal
 
-**语法:** obj << Nominal/Ordinal( state=0|1 )
+**语法:** obj &lt;&lt; Nominal/Ordinal( state=0|1 )
 
 **JMP添加的版本:** 16
 
 #### Order By Count
 
-**语法:** obj << Order By Count( state=0|1 )
+**语法:** obj &lt;&lt; Order By Count( state=0|1 )
 
 **说明:** 按计数的降序对值排序。
 
@@ -1463,7 +1463,7 @@ regionobj << Order by Count;
 
 #### Radio Box Display
 
-**语法:** obj << Radio Box Display( state=0|1 )
+**语法:** obj &lt;&lt; Radio Box Display( state=0|1 )
 
 **说明:** 用单选框显示每个水平，以及频数计数和直条。
 
@@ -1487,7 +1487,7 @@ regionobj << Radio Box Display;
 
 #### Select Filter Item
 
-**语法:** obj << Select Filter Item
+**语法:** obj &lt;&lt; Select Filter Item
 
 **说明:** 选择给定过滤器项。选择的过滤器用作当前动画对象。
 
@@ -1508,7 +1508,7 @@ popobj << Select Filter Item;
 
 #### Single Category Display
 
-**语法:** obj << Single Category Display( state=0|1 )
+**语法:** obj &lt;&lt; Single Category Display( state=0|1 )
 
 **说明:** 在组合框菜单中显示每个水平和频数计数。
 
@@ -1530,13 +1530,13 @@ regionobj << Single Category Display;
 
 #### Unstructured Text
 
-**语法:** obj << Unstructured Text( state=0|1 )
+**语法:** obj &lt;&lt; Unstructured Text( state=0|1 )
 
 **JMP添加的版本:** 16
 
 #### Where
 
-**语法:** obj << Where
+**语法:** obj &lt;&lt; Where
 
 **说明:** 使用表达式选择行。
 
@@ -1561,7 +1561,7 @@ regionobj << Where( :Region == {"MW"} );
 
 #### Clear Selection
 
-**语法:** obj << Clear Selection
+**语法:** obj &lt;&lt; Clear Selection
 
 **说明:** 清除对于给定列有效的任何选择。
 
@@ -1582,13 +1582,13 @@ regionobj << Clear Selection;
 
 #### Continuous
 
-**语法:** obj << Continuous( state=0|1 )
+**语法:** obj &lt;&lt; Continuous( state=0|1 )
 
 **JMP添加的版本:** 16
 
 #### Delete
 
-**语法:** obj << Delete
+**语法:** obj &lt;&lt; Delete
 
 **说明:** 从“数据过滤器”控制面板中删除变量。
 
@@ -1609,7 +1609,7 @@ regionobj << Delete;
 
 #### Extend Where
 
-**语法:** obj << Extend Where
+**语法:** obj &lt;&lt; Extend Where
 
 **说明:** 使用表达式选择行，从而添加至当前选择中。
 
@@ -1630,7 +1630,7 @@ regionobj << Extend Where( :Region == {"MW"} );
 
 #### Invert Selection
 
-**语法:** obj << Invert Selection
+**语法:** obj &lt;&lt; Invert Selection
 
 **说明:** 对于给定列，取消选择任何选定值并选择以前未选定的所有值。
 
@@ -1651,19 +1651,19 @@ regionobj << Invert Selection;
 
 #### Multiple Response
 
-**语法:** obj << Multiple Response( state=0|1 )
+**语法:** obj &lt;&lt; Multiple Response( state=0|1 )
 
 **JMP添加的版本:** 16
 
 #### Nominal/Ordinal
 
-**语法:** obj << Nominal/Ordinal( state=0|1 )
+**语法:** obj &lt;&lt; Nominal/Ordinal( state=0|1 )
 
 **JMP添加的版本:** 16
 
 #### Reset Zoom
 
-**语法:** obj << Reset Zoom
+**语法:** obj &lt;&lt; Reset Zoom
 
 **说明:** 将过滤器显示的最小值和最大值重置为默认值。
 
@@ -1697,7 +1697,7 @@ fc << Reset Zoom;
 
 #### Select Filter Item
 
-**语法:** obj << Select Filter Item
+**语法:** obj &lt;&lt; Select Filter Item
 
 **说明:** 选择给定过滤器项。选择的过滤器用作当前动画对象。
 
@@ -1718,7 +1718,7 @@ popobj << Select Filter Item;
 
 #### Select Missing
 
-**语法:** obj << Select Missing
+**语法:** obj &lt;&lt; Select Missing
 
 **说明:** 选择包含缺失值的行。
 
@@ -1742,13 +1742,13 @@ ozoneobj << Select Missing;
 
 #### Unstructured Text
 
-**语法:** obj << Unstructured Text( state=0|1 )
+**语法:** obj &lt;&lt; Unstructured Text( state=0|1 )
 
 **JMP添加的版本:** 16
 
 #### Where
 
-**语法:** obj << Where
+**语法:** obj &lt;&lt; Where
 
 **说明:** 使用表达式选择行。
 
@@ -1769,7 +1769,7 @@ regionobj << Where( :Region == {"MW"} );
 
 #### Zoom to Selection
 
-**语法:** obj << Zoom to Selection
+**语法:** obj &lt;&lt; Zoom to Selection
 
 **说明:** 基于当前选择的区间来设置过滤器显示的最小值和最大值。
 
@@ -1806,7 +1806,7 @@ fc << Zoom to Selection;
 
 #### Blocks Display
 
-**语法:** obj << Blocks Display( state=0|1 )
+**语法:** obj &lt;&lt; Blocks Display( state=0|1 )
 
 **说明:** 将每个水平显示为可选择的块。
 
@@ -1828,7 +1828,7 @@ regionobj << Blocks Display;
 
 #### Check Box Display
 
-**语法:** obj << Check Box Display( state=0|1 )
+**语法:** obj &lt;&lt; Check Box Display( state=0|1 )
 
 **说明:** 用复选框显示每个水平，以及频数计数和直条。
 
@@ -1850,13 +1850,13 @@ regionobj << Check Box Display;
 
 #### Clear Find
 
-**语法:** obj << Clear Find
+**语法:** obj &lt;&lt; Clear Find
 
 **JMP添加的版本:** 15
 
 #### Clear Selection
 
-**语法:** obj << Clear Selection
+**语法:** obj &lt;&lt; Clear Selection
 
 **说明:** 清除对于给定列有效的任何选择。
 
@@ -1877,13 +1877,13 @@ regionobj << Clear Selection;
 
 #### Continuous
 
-**语法:** obj << Continuous( state=0|1 )
+**语法:** obj &lt;&lt; Continuous( state=0|1 )
 
 **JMP添加的版本:** 16
 
 #### Delete
 
-**语法:** obj << Delete
+**语法:** obj &lt;&lt; Delete
 
 **说明:** 从“数据过滤器”控制面板中删除变量。
 
@@ -1904,7 +1904,7 @@ regionobj << Delete;
 
 #### Extend Where
 
-**语法:** obj << Extend Where
+**语法:** obj &lt;&lt; Extend Where
 
 **说明:** 使用表达式选择行，从而添加至当前选择中。
 
@@ -1925,7 +1925,7 @@ regionobj << Extend Where( :Region == {"MW"} );
 
 #### Find
 
-**语法:** obj << Find(Set Text("string"), <options>)
+**语法:** obj &lt;&lt; Find(Set Text("string"), &lt;options&gt;)
 
 **说明:** 提供一个文本框，您可以在其中为选定列输入搜索字符串。
 
@@ -1948,19 +1948,19 @@ regionobj << Find( Set Text( "w" ) );
 
 #### Get Selected Items
 
-**语法:** obj << Get Selected Items
+**语法:** obj &lt;&lt; Get Selected Items
 
 **JMP添加的版本:** 15
 
 #### Get Visible Items
 
-**语法:** obj << Get Visible Items
+**语法:** obj &lt;&lt; Get Visible Items
 
 **JMP添加的版本:** 19
 
 #### Invert Selection
 
-**语法:** obj << Invert Selection
+**语法:** obj &lt;&lt; Invert Selection
 
 **说明:** 对于给定列，取消选择任何选定值并选择以前未选定的所有值。
 
@@ -1981,7 +1981,7 @@ regionobj << Invert Selection;
 
 #### List Display
 
-**语法:** obj << List Display( state=0|1 )
+**语法:** obj &lt;&lt; List Display( state=0|1 )
 
 **说明:** 在列表中显示每个水平，以及频数计数和直条。
 
@@ -2003,7 +2003,7 @@ regionobj << List Display;
 
 #### Match All
 
-**语法:** obj << Match All
+**语法:** obj &lt;&lt; Match All
 
 **说明:** 选择其值与所有选中值匹配的行。
 
@@ -2027,7 +2027,7 @@ sportsobj << Match All;
 
 #### Match Any
 
-**语法:** obj << Match Any
+**语法:** obj &lt;&lt; Match Any
 
 **说明:** 选择其值与任意选中值匹配的行。默认情况下，该选项是选中的。
 
@@ -2051,7 +2051,7 @@ sportsobj << Match Any;
 
 #### Match At Least
 
-**语法:** dfitem << Match At Least(n);
+**语法:** dfitem &lt;&lt; Match At Least(n);
 
 **说明:** 选择其值与至少 n 个选中值匹配的行。
 
@@ -2075,7 +2075,7 @@ sportsobj << Match At Least( 1 );
 
 #### Match At Most
 
-**语法:** dfitem << Match At Most(n);
+**语法:** dfitem &lt;&lt; Match At Most(n);
 
 **说明:** 选择其值与至多 n 个选中值匹配的行。
 
@@ -2099,7 +2099,7 @@ sportsobj << Match At Most( 1 );
 
 #### Match Between
 
-**语法:** dfitem << Match Between(n, m);
+**语法:** dfitem &lt;&lt; Match Between(n, m);
 
 **说明:** 选择其值与 n 至 m 个选中值匹配的行。
 
@@ -2123,7 +2123,7 @@ sportsobj << Match Between( 1, 2 );
 
 #### Match Exactly
 
-**语法:** obj << Match Exactly
+**语法:** obj &lt;&lt; Match Exactly
 
 **说明:** 选择其值与选中值精确匹配的行。
 
@@ -2147,7 +2147,7 @@ sportsobj << Match Exactly;
 
 #### Match None
 
-**语法:** obj << Match None
+**语法:** obj &lt;&lt; Match None
 
 **说明:** 选择其值与选中值均不匹配的行。
 
@@ -2171,7 +2171,7 @@ sportsobj << Match None;
 
 #### Match Only
 
-**语法:** obj << Match Only
+**语法:** obj &lt;&lt; Match Only
 
 **说明:** 选择其值仅与选中值匹配的行。
 
@@ -2195,19 +2195,19 @@ sportsobj << Match Only;
 
 #### Multiple Response
 
-**语法:** obj << Multiple Response( state=0|1 )
+**语法:** obj &lt;&lt; Multiple Response( state=0|1 )
 
 **JMP添加的版本:** 16
 
 #### Nominal/Ordinal
 
-**语法:** obj << Nominal/Ordinal( state=0|1 )
+**语法:** obj &lt;&lt; Nominal/Ordinal( state=0|1 )
 
 **JMP添加的版本:** 16
 
 #### Order By Count
 
-**语法:** obj << Order By Count( state=0|1 )
+**语法:** obj &lt;&lt; Order By Count( state=0|1 )
 
 **说明:** 按计数的降序对值排序。
 
@@ -2230,7 +2230,7 @@ regionobj << Order by Count;
 
 #### Radio Box Display
 
-**语法:** obj << Radio Box Display( state=0|1 )
+**语法:** obj &lt;&lt; Radio Box Display( state=0|1 )
 
 **说明:** 用单选框显示每个水平，以及频数计数和直条。
 
@@ -2254,7 +2254,7 @@ regionobj << Radio Box Display;
 
 #### Select Filter Item
 
-**语法:** obj << Select Filter Item
+**语法:** obj &lt;&lt; Select Filter Item
 
 **说明:** 选择给定过滤器项。选择的过滤器用作当前动画对象。
 
@@ -2275,7 +2275,7 @@ popobj << Select Filter Item;
 
 #### Single Category Display
 
-**语法:** obj << Single Category Display( state=0|1 )
+**语法:** obj &lt;&lt; Single Category Display( state=0|1 )
 
 **说明:** 在组合框菜单中显示每个水平和频数计数。
 
@@ -2297,13 +2297,13 @@ regionobj << Single Category Display;
 
 #### Unstructured Text
 
-**语法:** obj << Unstructured Text( state=0|1 )
+**语法:** obj &lt;&lt; Unstructured Text( state=0|1 )
 
 **JMP添加的版本:** 16
 
 #### Where
 
-**语法:** obj << Where
+**语法:** obj &lt;&lt; Where
 
 **说明:** 使用表达式选择行。
 
@@ -2328,7 +2328,7 @@ regionobj << Where( :Region == {"MW"} );
 
 #### Add Missing
 
-**语法:** obj << Add Missing
+**语法:** obj &lt;&lt; Add Missing
 
 **说明:** 添加缺失值作为非结构化文本的可选择选项。
 
@@ -2360,7 +2360,7 @@ illness_obj << Add Missing;
 
 #### Blocks Display
 
-**语法:** obj << Blocks Display( state=0|1 )
+**语法:** obj &lt;&lt; Blocks Display( state=0|1 )
 
 **说明:** 将每个水平显示为可选择的块。
 
@@ -2382,7 +2382,7 @@ regionobj << Blocks Display;
 
 #### Check Box Display
 
-**语法:** obj << Check Box Display( state=0|1 )
+**语法:** obj &lt;&lt; Check Box Display( state=0|1 )
 
 **说明:** 用复选框显示每个水平，以及频数计数和直条。
 
@@ -2404,7 +2404,7 @@ regionobj << Check Box Display;
 
 #### Clear Filter Texts List
 
-**语法:** obj << Clear Filter Texts List
+**语法:** obj &lt;&lt; Clear Filter Texts List
 
 **说明:** 清除非结构化文本过滤器项的过滤器列表。
 
@@ -2436,7 +2436,7 @@ illness_obj << Clear Filter Texts List;
 
 #### Clear Selection
 
-**语法:** obj << Clear Selection
+**语法:** obj &lt;&lt; Clear Selection
 
 **说明:** 清除对于给定列有效的任何选择。
 
@@ -2457,13 +2457,13 @@ regionobj << Clear Selection;
 
 #### Continuous
 
-**语法:** obj << Continuous( state=0|1 )
+**语法:** obj &lt;&lt; Continuous( state=0|1 )
 
 **JMP添加的版本:** 16
 
 #### Delete
 
-**语法:** obj << Delete
+**语法:** obj &lt;&lt; Delete
 
 **说明:** 从“数据过滤器”控制面板中删除变量。
 
@@ -2484,7 +2484,7 @@ regionobj << Delete;
 
 #### Extend Where
 
-**语法:** obj << Extend Where
+**语法:** obj &lt;&lt; Extend Where
 
 **说明:** 使用表达式选择行，从而添加至当前选择中。
 
@@ -2505,19 +2505,19 @@ regionobj << Extend Where( :Region == {"MW"} );
 
 #### Get Selected Items
 
-**语法:** obj << Get Selected Items
+**语法:** obj &lt;&lt; Get Selected Items
 
 **JMP添加的版本:** 15
 
 #### Get Visible Items
 
-**语法:** obj << Get Visible Items
+**语法:** obj &lt;&lt; Get Visible Items
 
 **JMP添加的版本:** 19
 
 #### Invert Selection
 
-**语法:** obj << Invert Selection
+**语法:** obj &lt;&lt; Invert Selection
 
 **说明:** 对于给定列，取消选择任何选定值并选择以前未选定的所有值。
 
@@ -2538,7 +2538,7 @@ regionobj << Invert Selection;
 
 #### List Display
 
-**语法:** obj << List Display( state=0|1 )
+**语法:** obj &lt;&lt; List Display( state=0|1 )
 
 **说明:** 在列表中显示每个水平，以及频数计数和直条。
 
@@ -2560,7 +2560,7 @@ regionobj << List Display;
 
 #### Match All
 
-**语法:** obj << Match All
+**语法:** obj &lt;&lt; Match All
 
 **说明:** 选择其值与所有选中值匹配的行。
 
@@ -2584,7 +2584,7 @@ sportsobj << Match All;
 
 #### Match Any
 
-**语法:** obj << Match Any
+**语法:** obj &lt;&lt; Match Any
 
 **说明:** 选择其值与任意选中值匹配的行。默认情况下，该选项是选中的。
 
@@ -2608,7 +2608,7 @@ sportsobj << Match Any;
 
 #### Match At Least
 
-**语法:** dfitem << Match At Least(n);
+**语法:** dfitem &lt;&lt; Match At Least(n);
 
 **说明:** 选择其值与至少 n 个选中值匹配的行。
 
@@ -2632,7 +2632,7 @@ sportsobj << Match At Least( 1 );
 
 #### Match At Most
 
-**语法:** dfitem << Match At Most(n);
+**语法:** dfitem &lt;&lt; Match At Most(n);
 
 **说明:** 选择其值与至多 n 个选中值匹配的行。
 
@@ -2656,7 +2656,7 @@ sportsobj << Match At Most( 1 );
 
 #### Match Between
 
-**语法:** dfitem << Match Between(n, m);
+**语法:** dfitem &lt;&lt; Match Between(n, m);
 
 **说明:** 选择其值与 n 至 m 个选中值匹配的行。
 
@@ -2680,7 +2680,7 @@ sportsobj << Match Between( 1, 2 );
 
 #### Match Exactly
 
-**语法:** obj << Match Exactly
+**语法:** obj &lt;&lt; Match Exactly
 
 **说明:** 选择其值与选中值精确匹配的行。
 
@@ -2704,7 +2704,7 @@ sportsobj << Match Exactly;
 
 #### Match None
 
-**语法:** obj << Match None
+**语法:** obj &lt;&lt; Match None
 
 **说明:** 选择其值与选中值均不匹配的行。
 
@@ -2728,7 +2728,7 @@ sportsobj << Match None;
 
 #### Match Only
 
-**语法:** obj << Match Only
+**语法:** obj &lt;&lt; Match Only
 
 **说明:** 选择其值仅与选中值匹配的行。
 
@@ -2752,19 +2752,19 @@ sportsobj << Match Only;
 
 #### Multiple Response
 
-**语法:** obj << Multiple Response( state=0|1 )
+**语法:** obj &lt;&lt; Multiple Response( state=0|1 )
 
 **JMP添加的版本:** 16
 
 #### Nominal/Ordinal
 
-**语法:** obj << Nominal/Ordinal( state=0|1 )
+**语法:** obj &lt;&lt; Nominal/Ordinal( state=0|1 )
 
 **JMP添加的版本:** 16
 
 #### Order By Count
 
-**语法:** obj << Order By Count( state=0|1 )
+**语法:** obj &lt;&lt; Order By Count( state=0|1 )
 
 **说明:** 按计数的降序对值排序。
 
@@ -2787,7 +2787,7 @@ regionobj << Order by Count;
 
 #### Radio Box Display
 
-**语法:** obj << Radio Box Display( state=0|1 )
+**语法:** obj &lt;&lt; Radio Box Display( state=0|1 )
 
 **说明:** 用单选框显示每个水平，以及频数计数和直条。
 
@@ -2811,7 +2811,7 @@ regionobj << Radio Box Display;
 
 #### Select Filter Item
 
-**语法:** obj << Select Filter Item
+**语法:** obj &lt;&lt; Select Filter Item
 
 **说明:** 选择给定过滤器项。选择的过滤器用作当前动画对象。
 
@@ -2832,7 +2832,7 @@ popobj << Select Filter Item;
 
 #### Show Filter Text Edit Box
 
-**语法:** obj << Show Filter Text Edit Box( state=0|1 )
+**语法:** obj &lt;&lt; Show Filter Text Edit Box( state=0|1 )
 
 **说明:** 显示或隐藏用于定义文本过滤器条件的文本编辑框。
 
@@ -2864,7 +2864,7 @@ illness_obj << Show Filter Text Edit Box( 0 );
 
 #### Single Category Display
 
-**语法:** obj << Single Category Display( state=0|1 )
+**语法:** obj &lt;&lt; Single Category Display( state=0|1 )
 
 **说明:** 在组合框菜单中显示每个水平和频数计数。
 
@@ -2886,13 +2886,13 @@ regionobj << Single Category Display;
 
 #### Unstructured Text
 
-**语法:** obj << Unstructured Text( state=0|1 )
+**语法:** obj &lt;&lt; Unstructured Text( state=0|1 )
 
 **JMP添加的版本:** 16
 
 #### Where
 
-**语法:** obj << Where
+**语法:** obj &lt;&lt; Where
 
 **说明:** 使用表达式选择行。
 

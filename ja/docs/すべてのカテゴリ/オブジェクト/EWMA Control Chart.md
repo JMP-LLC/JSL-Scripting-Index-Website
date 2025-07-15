@@ -6,7 +6,7 @@
 
 ### Action
 
-**構文:** obj << Action
+**構文:** obj &lt;&lt; Action
 
 **説明:** 評価する式を挿入するための、プラットフォーム内の汎用トラップドア。プラットフォームに一時的にディスプレイボックスおよびデータテーブルのコンテキストを設定する。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**構文:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**構文:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **説明:** 作成されたプリセットをオブジェクトに適用する。保存された設定に合わせてオプションとカスタマイズが更新される。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**構文:** obj << Automatic Recalc( state=0|1 )
+**構文:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **説明:** データの除外や変更があった場合に分析を自動的にやり直す。Automatic Recalcオプションがオンになっている場合で、データの除外や変更が再計算の前に確実に適用されるようにするには、Wait(0)コマンドを使用すること。
 
@@ -87,7 +87,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**構文:** obj << Broadcast(message)
+**構文:** obj &lt;&lt; Broadcast(message)
 
 **説明:** メッセージをプラットフォームに一括適用する。個々のオブジェクトから戻される結果がデータテーブルである場合は、可能な限り連結する。その最終的な形式は、Table BoxのSave Combined Tableオプションの結果と同じになるか、またはソース列を使用したConcanateオプションの結果と同じになる。それ以外の場合、結果はリストの形で戻される。
 
@@ -107,7 +107,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Copy ByGroup Script
 
-**構文:** obj << Copy ByGroup Script
+**構文:** obj &lt;&lt; Copy ByGroup Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -127,7 +127,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**構文:** obj << Copy Script
+**構文:** obj &lt;&lt; Copy Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -142,7 +142,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**構文:** obj << Data Table Window
+**構文:** obj &lt;&lt; Data Table Window
 
 **説明:** この分析に使用したデータテーブルのウィンドウを手前に表示する。
 
@@ -157,7 +157,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**構文:** obj << Get By Levels
+**構文:** obj &lt;&lt; Get By Levels
 
 **説明:** By列が指定されている場合、列名をキー、データ値を値とした連想配列を戻す。
 
@@ -174,7 +174,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**構文:** obj << Get ByGroup Script
+**構文:** obj &lt;&lt; Get ByGroup Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -195,7 +195,7 @@ Show( t );
 
 ### Get Container
 
-**構文:** obj << Get Container
+**構文:** obj &lt;&lt; Get Container
 
 **説明:** オブジェクトのコンテンツを含んだコンテナボックスの参照を戻す。
 
@@ -242,7 +242,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**構文:** obj << Get Data Table
+**構文:** obj &lt;&lt; Get Data Table
 
 **説明:** データテーブルへの参照を戻す。
 
@@ -258,7 +258,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**構文:** obj << Get Group Platform
+**構文:** obj &lt;&lt; Get Group Platform
 
 **説明:** 該当のプラットフォームがグループに属している場合に、Group Platformオブジェクトを戻す。それ以外の場合はEmpty()を戻す。
 
@@ -275,7 +275,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**構文:** obj << Get Script
+**構文:** obj &lt;&lt; Get Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -291,7 +291,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**構文:** obj << Get Script With Data Table
+**構文:** obj &lt;&lt; Get Script With Data Table
 
 **説明:** この分析を再現するスクリプト(JSL)をデータテーブルへの参照も含めて生成し、それを式として戻す。
 
@@ -307,7 +307,7 @@ Show( t );
 
 ### Get Timing
 
-**構文:** obj << Get Timing
+**構文:** obj &lt;&lt; Get Timing
 
 **説明:** プラットフォームの起動にかかった時間を取得する。
 
@@ -323,7 +323,7 @@ Show( t );
 
 ### Get Web Support
 
-**構文:** obj << Get Web Support
+**構文:** obj &lt;&lt; Get Web Support
 
 **説明:** ディスプレイオブジェクトにおけるインタラクティブHTMLサポートのレベルを数値で戻す。1は、一部または全部の要素がサポートされていることを示し、0は、サポートされないことを示す。
 
@@ -339,7 +339,7 @@ Show( s );
 
 ### Get Where Expr
 
-**構文:** obj << Get Where Expr
+**構文:** obj &lt;&lt; Get Where Expr
 
 **説明:** プラットフォームがBy()またはWhere()を使って起動された場合に、データをサブセットするためのWhere式を戻す。By()やWhere()が使われていない場合はEmpty()を戻す。
 
@@ -412,7 +412,7 @@ preset = obj << New Preset();
 
 ### Redo Analysis
 
-**構文:** obj << Redo Analysis
+**構文:** obj &lt;&lt; Redo Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -427,7 +427,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**構文:** obj << Redo ByGroup Analysis
+**構文:** obj &lt;&lt; Redo ByGroup Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -447,7 +447,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**構文:** obj << Relaunch Analysis
+**構文:** obj &lt;&lt; Relaunch Analysis
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -462,7 +462,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**構文:** obj << Relaunch ByGroup
+**構文:** obj &lt;&lt; Relaunch ByGroup
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -499,9 +499,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**構文:** obj << Report;
-
-Report( obj )
+**構文:** obj &lt;&lt; Report;Report( obj )
 
 **説明:** レポートオブジェクトへの参照を戻す。
 
@@ -518,7 +516,7 @@ Show( t );
 
 ### Report View
 
-**構文:** obj << Report View( "完全"|"要約" )
+**構文:** obj &lt;&lt; Report View( "完全"|"要約" )
 
 **説明:** レポートビューは、プラットフォームレポートの詳細を表示するかどうかを決定する。Fullはすべての詳細を表示し、Summaryはプラットフォームにより限定されたものだけを表示する。 動作をカスタマイズするため、各ディスプレイボックスは<<Set Summary Behaviorメッセージをサポートする。
 
@@ -533,7 +531,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**構文:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** 分析を再現するためのJSLスクリプトを作成し、データテーブルにテーブルプロパティとして保存する。スクリプトの名前を指定できる。Append Suffixオプションは、スクリプト名に数字の接尾辞を追加する。これにより、同名のスクリプトが存在していても区別できる。Promptオプションは、ユーザにスクリプト名の指定を促す。Replaceオプションは、同名の既存のスクリプトを置き換える。
 
@@ -553,7 +551,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**構文:** obj << Save ByGroup Script to Journal
+**構文:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -573,7 +571,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**構文:** obj << Save ByGroup Script to Script Window
+**構文:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -593,7 +591,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**構文:** obj << Save Script for All Objects
+**構文:** obj &lt;&lt; Save Script for All Objects
 
 **説明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -608,7 +606,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**構文:** obj << Save Script for All Objects To Data Table( <name> )
+**構文:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **説明:** すべてのレポートオブジェクトを再現するスクリプトを現在のデータテーブルに保存する。このオプションは、ウィンドウ内にレポートが複数ある場合に便利。作成されるスクリプトの名前は、引用符で囲んで指定しない限り、1つ目のプラットフォーム名となる。
 
@@ -646,7 +644,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**構文:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** この分析を再現するJSLスクリプトを生成し、データテーブルのテーブルプロパティとして保存する。
 
@@ -661,7 +659,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**構文:** obj << Save Script to Journal
+**構文:** obj &lt;&lt; Save Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -676,7 +674,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**構文:** obj << Save Script to Report
+**構文:** obj &lt;&lt; Save Script to Report
 
 **説明:** この分析を再現するJSLスクリプトを生成し、レポートウィンドウに表示する。分析手順の記録を結果と一緒に残せる。
 
@@ -691,7 +689,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**構文:** obj << Save Script to Script Window
+**構文:** obj &lt;&lt; Save Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -771,7 +769,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**構文:** obj << Sync to Data Table Changes
+**構文:** obj &lt;&lt; Sync to Data Table Changes
 
 **説明:** 除外やデータの変更が行われた場合に同期する。
 
@@ -788,7 +786,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**構文:** obj << Title( "new title" )
+**構文:** obj &lt;&lt; Title( "new title" )
 
 **説明:** プラットフォームのタイトルを設定する。
 
@@ -803,7 +801,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**構文:** obj << Top Report
+**構文:** obj &lt;&lt; Top Report
 
 **説明:** レポート内のルートノードへの参照を戻す。
 
@@ -820,7 +818,7 @@ Show( t );
 
 ### Transform Column
 
-**構文:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**構文:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **説明:** オブジェクトのローカルコンテキスト(通常はプラットフォーム)内に変換列を作成する。この変換列は、それを作成したプラットフォームの中のみで使用可能。
 
@@ -839,7 +837,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**構文:** obj << View Web XML
+**構文:** obj &lt;&lt; View Web XML
 
 **説明:** インタラクティブHTMLレポートの作成に使うXMLコードを戻す。
 
@@ -875,7 +873,7 @@ New Window( "Bivariate Equation",
 
 ### By
 
-**構文:** obj = EWMA Control Chart(...<By( column(s) )>...)
+**構文:** obj = EWMA Control Chart(...&lt;By( column(s) )&gt;...)
 
 **説明:** 起動時にBy列を指定する。
 
@@ -896,7 +894,7 @@ obj = dt << EWMA Control Chart( Y( :Gap ), By( _bycol ) );
 
 ### Subgroup
 
-**構文:** obj = EWMA Control Chart(...<Subgroup( column )>...)
+**構文:** obj = EWMA Control Chart(...&lt;Subgroup( column )&gt;...)
 
 **説明:** 起動時にサブグループ列を指定する。
 
@@ -930,7 +928,7 @@ obj = dt << EWMA Control Chart( Y( :Gap ) );
 
 ### EWMA Control Chart
 
-**構文:** EWMA Control Chart( Y( column ), <Subgroup( column )>, <By( column )>, <Center Data( 1 )> )
+**構文:** EWMA Control Chart( Y( column ), &lt;Subgroup( column )&gt;, &lt;By( column )&gt;, &lt;Center Data( 1 )&gt; )
 
 **説明:** 指数加重移動平均の管理図と、個々の測定値またはサブグループ平均の管理図を作成する。EWMA管理図は、フィードバック制御管理図とも呼ばれている。
 
@@ -995,7 +993,7 @@ obj = dt << EWMA Control Chart( Y( :Gap ), Lambda( 0.2 ), Center Data( 1 ) );
 
 ### Connect Thru Missing
 
-**構文:** obj << Connect Thru Missing( state=0|1 )
+**構文:** obj &lt;&lt; Connect Thru Missing( state=0|1 )
 
 **説明:** 標本に欠測値または除外されている行がある場合に、それらの区間で点を折れ線でつなぐ。
 
@@ -1013,7 +1011,7 @@ obj << Connect Thru Missing( 1 );
 
 ### Constant Limits
 
-**構文:** obj << Constant Limits( state=0|1 )
+**構文:** obj &lt;&lt; Constant Limits( state=0|1 )
 
 **説明:** 漸近表現を使ってEWMAの一定の限界を計算する。
 
@@ -1031,7 +1029,7 @@ obj << Constant Limits( 1 );
 
 ### Control Panel
 
-**構文:** obj << Control Panel( state=0|1 )
+**構文:** obj &lt;&lt; Control Panel( state=0|1 )
 
 **説明:** パラメータの現在の値をレポートとして表示する。これらのパラメータ値は変更可能。 デフォルトではオン。
 
@@ -1048,7 +1046,7 @@ obj << Control Panel( 0 );
 
 ### Get Limits
 
-**構文:** obj << Get Limits( filename )
+**構文:** obj &lt;&lt; Get Limits( filename )
 
 **説明:** 選択されたデータテーブルから管理限界を読み込み、管理図の管理限界に設定する。
 
@@ -1073,7 +1071,7 @@ obj << Get Limits( dtLimits );
 
 ### K Sigma
 
-**構文:** obj << K Sigma( K value=3 )
+**構文:** obj &lt;&lt; K Sigma( K value=3 )
 
 **説明:** Kの値を設定する。Kにシグマを掛けた値を平均に加えた値と、平均から引いた値が管理限界となる。 デフォルトの値は"3"。
 
@@ -1091,7 +1089,7 @@ obj << K Sigma( 4 );
 
 ### Lambda
 
-**構文:** obj << Lambda( number=0.2 )
+**構文:** obj &lt;&lt; Lambda( number=0.2 )
 
 **説明:** 事前の標本に対する重みである平滑化定数を指定する。 デフォルトの値は"0.2"。
 
@@ -1108,7 +1106,7 @@ obj << Lambda( 0.5 );
 
 ### Lambda Slider
 
-**構文:** obj << Lambda Slider( state=0|1 )
+**構文:** obj &lt;&lt; Lambda Slider( state=0|1 )
 
 **説明:** 設定パネルのLambdaスライダの表示/非表示を切り替える。
 
@@ -1125,7 +1123,7 @@ obj << Lambda Slider( 1 );
 
 ### Overlay Charts
 
-**構文:** obj << Overlay Charts( state=0|1 )
+**構文:** obj &lt;&lt; Overlay Charts( state=0|1 )
 
 **説明:** EWMA管理図に個々の点(データが要約されている場合はXBarの点)を重ね合わせる。
 
@@ -1142,7 +1140,7 @@ obj << Overlay Charts( 1 );
 
 ### Parameters Report
 
-**構文:** obj << Parameters Report( state=0|1 )
+**構文:** obj &lt;&lt; Parameters Report( state=0|1 )
 
 **説明:** パラメータレポートを表示または非表示にする。
 
@@ -1159,7 +1157,7 @@ obj << Parameters Report( 1 );
 
 ### Reset to Defaults
 
-**構文:** obj << Reset to Defaults
+**構文:** obj &lt;&lt; Reset to Defaults
 
 **説明:** すべてのパラメータをデフォルト値に戻す。
 
@@ -1178,7 +1176,7 @@ obj << Reset to Defaults();
 
 ### Restart EWMA after Empty Subgroup
 
-**構文:** obj << Restart EWMA after Empty Subgroup( state=0|1 )
+**構文:** obj &lt;&lt; Restart EWMA after Empty Subgroup( state=0|1 )
 
 **説明:** 欠測または除外されたサブグループの後でEWMA統計量の計算を再開する。
 
@@ -1198,7 +1196,7 @@ obj << Restart EWMA after empty subgroup( 1 );
 
 ### Save Limits
 
-**構文:** obj << Save Limits( "列に"|"新しいテーブルに" )
+**構文:** obj &lt;&lt; Save Limits( "列に"|"新しいテーブルに" )
 
 **説明:** 管理図のパラメータを列プロパティまたは新しいデータテーブルのいずれかに保存する。
 
@@ -1224,7 +1222,7 @@ obj << Save Limits( "in New Table" );
 
 ### Save Sigma
 
-**構文:** obj << Save Sigma
+**構文:** obj &lt;&lt; Save Sigma
 
 **説明:** 管理図で使用されているシグマを、データテーブルの列に列プロパティとして保存する。
 
@@ -1241,7 +1239,7 @@ obj << Save Sigma;
 
 ### Save Summaries
 
-**構文:** obj << Save Summaries
+**構文:** obj &lt;&lt; Save Summaries
 
 **説明:** 各サブグループの要約統計量と限界値を含む新しいテーブルを作成する。
 
@@ -1258,7 +1256,7 @@ obj << Save Summaries;
 
 ### Show ARL
 
-**構文:** obj << Show ARL( state=0|1 )
+**構文:** obj &lt;&lt; Show ARL( state=0|1 )
 
 **説明:** EWMA管理図とX管理図から計算された平均連長(ARL)のレポートの表示/非表示を切り替える。
 
@@ -1275,7 +1273,7 @@ obj << Show ARL( 1 );
 
 ### Show Center Line
 
-**構文:** obj << Show Center Line( state=0|1 )
+**構文:** obj &lt;&lt; Show Center Line( state=0|1 )
 
 **説明:** 中心線の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1309,7 +1307,7 @@ obj = dt << EWMA Control Chart( Y( :Gap ), Subgroup( :Sample ), Show Excluded Re
 
 ### Show Limits
 
-**構文:** obj << Show Limits( state=0|1 )
+**構文:** obj &lt;&lt; Show Limits( state=0|1 )
 
 **説明:** 限界の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1326,7 +1324,7 @@ obj << Show Limits( 0 );
 
 ### Show Residuals Chart
 
-**構文:** obj << Show Residuals Chart( state=0|1 )
+**構文:** obj &lt;&lt; Show Residuals Chart( state=0|1 )
 
 **説明:** 残差グラフの表示/非表示を切り替える。
 
@@ -1343,7 +1341,7 @@ obj << Show Residuals Chart( 0 );
 
 ### Show Shift Lines
 
-**構文:** obj << Show Shift Lines( state=0|1 )
+**構文:** obj &lt;&lt; Show Shift Lines( state=0|1 )
 
 **説明:** 管理図にシフトを示す縦線を表示する。シフト線は、シフトの始まりを示す。データでシフトが検出された場合のみ使用可能。 デフォルトではオン。
 
@@ -1361,7 +1359,7 @@ obj << Show Shift Lines( 0 );
 
 ### Show X Chart
 
-**構文:** obj << Show X Chart( state=0|1 )
+**構文:** obj &lt;&lt; Show X Chart( state=0|1 )
 
 **説明:** X管理図の表示/非表示を切り替える。このX管理図は、EWMA管理図の下に表示される。 デフォルトではオン。
 
@@ -1378,7 +1376,7 @@ obj << Show X Chart( 0 );
 
 ### Show X Limits on Overlay Charts
 
-**構文:** obj << Show X Limits on Overlay Charts( state=0|1 )
+**構文:** obj &lt;&lt; Show X Limits on Overlay Charts( state=0|1 )
 
 **説明:** [管理図の重ね合わせ]オプションが選択されている場合に、EWMA管理図に位置の管理図の限界線を重ね合わせる。
 
@@ -1398,7 +1396,7 @@ obj = dt << EWMA Control Chart(
 
 ### Sigma
 
-**構文:** obj << Sigma( number )
+**構文:** obj &lt;&lt; Sigma( number )
 
 **説明:** 既知の標準偏差の値を指定する。デフォルトの値は、Y列の移動範囲の平均から求められた値。サブグループ変数がある場合、Sigmaパラメータはサブグループ平均の移動範囲の平均から求められた値に設定される。
 
@@ -1415,7 +1413,7 @@ obj << Sigma( 2 );
 
 ### Target
 
-**構文:** obj << Target( number )
+**構文:** obj &lt;&lt; Target( number )
 
 **説明:** 既知の平均値を指定する。これは、管理図の中心線の値。デフォルトでは、このパラメータはY列の「仕様限界」列プロパティで「目標値」に設定されています。Y列の「仕様限界」列プロパティで目標値が設定されていない場合は、Y列の全体平均に設定されます。
 
@@ -1432,7 +1430,7 @@ obj << Target( 14.65 );
 
 ### Test Beyond Limits
 
-**構文:** obj << Test Beyond Limits( state=0|1 )
+**構文:** obj &lt;&lt; Test Beyond Limits( state=0|1 )
 
 **説明:** EWMA管理図とX管理図で、上側限界を上回る点、または下側限界を下回る点を赤い円で囲む。
 
@@ -1449,7 +1447,7 @@ obj << Test Beyond Limits( 1 );
 
 ### Use Overall Mean for Target
 
-**構文:** obj << Use Overall Mean for Target( state=0|1 )
+**構文:** obj &lt;&lt; Use Overall Mean for Target( state=0|1 )
 
 **説明:** 全体平均を目標値に設定する。注: [仕様限界]列プロパティを使って目標値を設定した場合のみ適用可能。
 

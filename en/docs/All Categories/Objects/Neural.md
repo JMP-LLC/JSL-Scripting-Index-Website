@@ -6,7 +6,7 @@
 
 ### Neural
 
-**Syntax:** Neural( Y( column ), X( columns ), <Validation( column )> )
+**Syntax:** Neural( Y( column ), X( columns ), &lt;Validation( column )&gt; )
 
 **Description:** Predicts one or more response variables using a flexible function of the input variables. The flexible framework incorporates layering and s-shaped functions.
 
@@ -26,7 +26,7 @@ obj = dt << Neural(
 
 ### By
 
-**Syntax:** obj = Neural(...<By( column(s) )>...)
+**Syntax:** obj = Neural(...&lt;By( column(s) )&gt;...)
 
 **Description:** Performs a separate analysis for each level of the specified column.
 
@@ -68,7 +68,7 @@ obj = dt << Neural(
 
 ### Freq
 
-**Syntax:** obj = Neural(...<Freq( column )>...)
+**Syntax:** obj = Neural(...&lt;Freq( column )&gt;...)
 
 **Description:** Specifies a column whose values assign a frequency to each row for the analysis.
 
@@ -106,7 +106,7 @@ obj = dt << Neural(
 
 ### Validation
 
-**Syntax:** obj = Neural(...<Validation( column )>...)
+**Syntax:** obj = Neural(...&lt;Validation( column )&gt;...)
 
 **Description:** Specifies a numeric column that defines the validation sets. This column should contain at most three distinct values.
 
@@ -163,7 +163,7 @@ obj = dt << Neural(
 
 ### Fit
 
-**Syntax:** obj << Fit( NTanH|NLinear|NTanH2|NLinear2|NGaussian|NGaussian2( number ) )
+**Syntax:** obj &lt;&lt; Fit( NTanH|NLinear|NTanH2|NLinear2|NGaussian|NGaussian2( number ) )
 
 **Description:** Specifies and fits the hidden layer structure of the neural network to the data. Multiple layers and non-TanH activation functions are only available in JMP Pro. To specify multiple layers and activation functions, separate the arguments with commas.
 
@@ -181,7 +181,7 @@ obj << Fit( NTanH( 4 ) );
 
 ### Go
 
-**Syntax:** obj << Go
+**Syntax:** obj &lt;&lt; Go
 
 **Description:** Starts solving the neural net model.
 
@@ -223,7 +223,7 @@ obj = dt << Neural( Y( :weight ), X( :height, :age ), Informative Missing( 1 ), 
 
 ### Learning Rate
 
-**Syntax:** obj << Learning Rate( fraction )
+**Syntax:** obj &lt;&lt; Learning Rate( fraction )
 
 **Description:** Specifies the scaling factor for boosting. A learning rate close to 1 results in faster convergence on a final model, but also has a higher tendency to overfit data. This option is available only in JMP Pro.
 
@@ -263,7 +263,7 @@ obj << Go;
 
 ### N Boost
 
-**Syntax:** obj << N Boost( number )
+**Syntax:** obj &lt;&lt; N Boost( number )
 
 **Description:** Specifies the maximum number of models that are used for boosting. This option is available only in JMP Pro.
 
@@ -283,7 +283,7 @@ obj << SendToReport( Dispatch( {}, "Model Launch", OutlineBox, {Close( 0 )} ) );
 
 ### Penalty Method
 
-**Syntax:** obj << Penalty Method( "Squared"|"Absolute"|"Weight Decay"|"NoPenalty" )
+**Syntax:** obj &lt;&lt; Penalty Method( "Squared"|"Absolute"|"Weight Decay"|"NoPenalty" )
 
 **Description:** Specifies a penalty method to impose a penalty on the likelihood during the fitting process. A penalty parameter mitigates the tendency in neural networks to overfit the data. The Squared option works well if you think most of your X variables are contributing to the predictive ability of the model. The Absolute option and the Weight Decay option work well if you have a large number of X variables and you think that a few contribute more than others.
 
@@ -303,7 +303,7 @@ obj << SendToReport( Dispatch( {}, "Model Launch", OutlineBox, {Close( 0 )} ) );
 
 ### Robust Fit
 
-**Syntax:** obj << Robust Fit( state=0|1 )
+**Syntax:** obj &lt;&lt; Robust Fit( state=0|1 )
 
 **Description:** Trains the model using least absolute deviations instead of least squares. This option is useful if you want to minimize the impact of response outliers. This option is available only for continuous responses in JMP Pro.
 
@@ -343,7 +343,7 @@ obj << Go;
 
 ### Transform Covariates
 
-**Syntax:** obj << Transform Covariates( state=0|1 )
+**Syntax:** obj &lt;&lt; Transform Covariates( state=0|1 )
 
 **Description:** Transforms all continuous variables to near normality using either the Johnson Su or Johnson Sb distribution. Transforming the continuous variables helps to mitigate the negative effects of outliers or heavily skewed distributions. This option is available only in JMP Pro.
 
@@ -363,7 +363,7 @@ obj << SendToReport( Dispatch( {}, "Model Launch", OutlineBox, {Close( 0 )} ) );
 
 ### Validation Method
 
-**Syntax:** obj = Neural(...Validation Method( "Excluded Rows Holdback"|"Holdback", <fraction = 0.3333>|"KFold", <number = 5> )...);
+**Syntax:** obj = Neural(...Validation Method( "Excluded Rows Holdback"|"Holdback", &lt;fraction = 0.3333&gt;|"KFold", &lt;number = 5&gt; )...);
 
 **Description:** Specifies the method used for model validation.
 
@@ -384,7 +384,7 @@ obj = dt << Neural(
 
 ### Action
 
-**Syntax:** obj << Action
+**Syntax:** obj &lt;&lt; Action
 
 **Description:** All-purpose trapdoor within a platform to insert expressions to evaluate. Temporarily sets the DisplayBox and DataTable contexts to the Platform.
 
@@ -402,7 +402,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Syntax:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntax:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Description:** Apply a previously created preset to the object, updating the options and customizations to match the saved settings.
 
@@ -447,7 +447,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Broadcast
 
-**Syntax:** obj << Broadcast(message)
+**Syntax:** obj &lt;&lt; Broadcast(message)
 
 **Description:** Broadcasts a message to a platform. If return results from individual objects are tables, they are concatenated if possible, and the final format is identical to either the result from the Save Combined Table option in a Table Box or the result from the Concatenate option using a Source column. Other than those, results are stored in a list and returned.
 
@@ -465,7 +465,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**Syntax:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Syntax:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Description:** Adds a control panel for changing the platform&apos;s variables
 
@@ -483,7 +483,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**Syntax:** obj << Copy ByGroup Script
+**Syntax:** obj &lt;&lt; Copy ByGroup Script
 
 **Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
 
@@ -508,7 +508,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Syntax:** obj << Copy Script
+**Syntax:** obj &lt;&lt; Copy Script
 
 **Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
 
@@ -527,7 +527,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Syntax:** obj << Data Table Window
+**Syntax:** obj &lt;&lt; Data Table Window
 
 **Description:** Move the data table window for this analysis to the front.
 
@@ -546,7 +546,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Syntax:** obj << Get By Levels
+**Syntax:** obj &lt;&lt; Get By Levels
 
 **Description:** Returns an associative array mapping the by group columns to their values.
 
@@ -561,7 +561,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Syntax:** obj << Get ByGroup Script
+**Syntax:** obj &lt;&lt; Get ByGroup Script
 
 **Description:** Creates a script (JSL) to produce this analysis and returns it as an expression.
 
@@ -587,7 +587,7 @@ Show( t );
 
 ### Get Container
 
-**Syntax:** obj << Get Container
+**Syntax:** obj &lt;&lt; Get Container
 
 **Description:** Returns a reference to the container box that holds the content for the object.
 
@@ -638,7 +638,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Syntax:** obj << Get Data Table
+**Syntax:** obj &lt;&lt; Get Data Table
 
 **Description:** Returns a reference to the data table.
 
@@ -658,7 +658,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**Syntax:** obj << Get Group Platform
+**Syntax:** obj &lt;&lt; Get Group Platform
 
 **Description:** Return the Group Platform object if this platform is part of a Group. Otherwise, returns Empty().
 
@@ -675,7 +675,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**Syntax:** obj << Get Script
+**Syntax:** obj &lt;&lt; Get Script
 
 **Description:** Creates a script (JSL) to produce this analysis and returns it as an expression.
 
@@ -695,7 +695,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Syntax:** obj << Get Script With Data Table
+**Syntax:** obj &lt;&lt; Get Script With Data Table
 
 **Description:** Creates a script(JSL) to produce this analysis specifically referencing this data table and returns it as an expression.
 
@@ -715,7 +715,7 @@ Show( t );
 
 ### Get Timing
 
-**Syntax:** obj << Get Timing
+**Syntax:** obj &lt;&lt; Get Timing
 
 **Description:** Times the platform launch.
 
@@ -735,7 +735,7 @@ Show( t );
 
 ### Get Web Support
 
-**Syntax:** obj << Get Web Support
+**Syntax:** obj &lt;&lt; Get Web Support
 
 **Description:** Return a number indicating the level of Interactive HTML support for the display object. 1 means some or all elements are supported. 0 means no support.
 
@@ -751,7 +751,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Syntax:** obj << Get Where Expr
+**Syntax:** obj &lt;&lt; Get Where Expr
 
 **Description:** Returns the Where expression for the data subset, if the platform was launched with By() or Where(). Otherwise, returns Empty()
 
@@ -786,7 +786,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Syntax:** obj << Local Data Filter
+**Syntax:** obj &lt;&lt; Local Data Filter
 
 **Description:** To filter data to specific groups or ranges, but local to this platform
 
@@ -838,7 +838,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Syntax:** obj << Paste Local Data Filter
+**Syntax:** obj &lt;&lt; Paste Local Data Filter
 
 **Description:** Apply the local data filter from the clipboard to the current report.
 
@@ -859,7 +859,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**Syntax:** obj << Redo Analysis
+**Syntax:** obj &lt;&lt; Redo Analysis
 
 **Description:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
 
@@ -878,7 +878,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**Syntax:** obj << Redo ByGroup Analysis
+**Syntax:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Description:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
 
@@ -903,7 +903,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**Syntax:** obj << Relaunch Analysis
+**Syntax:** obj &lt;&lt; Relaunch Analysis
 
 **Description:** Opens the platform launch window and recalls the settings that were used to create the report.
 
@@ -922,7 +922,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**Syntax:** obj << Relaunch ByGroup
+**Syntax:** obj &lt;&lt; Relaunch ByGroup
 
 **Description:** Opens the platform launch window and recalls the settings that were used to create the report.
 
@@ -947,7 +947,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**Syntax:** obj << Remove Column Switcher
+**Syntax:** obj &lt;&lt; Remove Column Switcher
 
 **Description:** Removes the most recent Column Switcher that has been added to the platform.
 
@@ -967,7 +967,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Syntax:** obj << Remove Local Data Filter
+**Syntax:** obj &lt;&lt; Remove Local Data Filter
 
 **Description:** If a local data filter has been created, this removes it and restores the platform to use all the data in the data table directly
 
@@ -1004,9 +1004,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Syntax:** obj << Report;
-
-Report( obj )
+**Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Description:** Returns a reference to the report object.
 
@@ -1027,7 +1025,7 @@ Show( t );
 
 ### Report View
 
-**Syntax:** obj << Report View( "Full"|"Summary" )
+**Syntax:** obj &lt;&lt; Report View( "Full"|"Summary" )
 
 **Description:** The report view determines the level of detail visible in a platform report. Full shows all of the detail, while Summary shows only select content, dependent on the platform. For customized behavior, display boxes support a <<Set Summary Behavior message.
 
@@ -1046,7 +1044,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**Syntax:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description:** Creates a JSL script to produce this analysis, and save it as a table property in the data table. You can specify a name for the script. The Append Suffix option appends a numeric suffix to the script name, which differentiates the script from an existing script with the same name. The Prompt option prompts the user to specify a script name. The Replace option replaces an existing script with the same name.
 
@@ -1071,7 +1069,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Syntax:** obj << Save ByGroup Script to Journal
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
 
@@ -1096,7 +1094,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Syntax:** obj << Save ByGroup Script to Script Window
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
 
@@ -1121,7 +1119,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**Syntax:** obj << Save Script for All Objects
+**Syntax:** obj &lt;&lt; Save Script for All Objects
 
 **Description:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -1140,7 +1138,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Syntax:** obj << Save Script for All Objects To Data Table( <name> )
+**Syntax:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Description:** Saves a script for all report objects to the current data table. This option is useful when you have multiple reports in the window. The script is named after the first platform unless you specify the script name in quotes.
 
@@ -1188,7 +1186,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Syntax:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description:** Create a JSL script to produce this analysis, and save it as a table property in the data table.
 
@@ -1207,7 +1205,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Syntax:** obj << Save Script to Journal
+**Syntax:** obj &lt;&lt; Save Script to Journal
 
 **Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
 
@@ -1226,7 +1224,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Syntax:** obj << Save Script to Report
+**Syntax:** obj &lt;&lt; Save Script to Report
 
 **Description:** Create a JSL script to produce this analysis, and show it in the report itself. Useful to preserve a printed record of what was done.
 
@@ -1245,7 +1243,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Syntax:** obj << Save Script to Script Window
+**Syntax:** obj &lt;&lt; Save Script to Script Window
 
 **Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
 
@@ -1329,7 +1327,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Syntax:** obj << Sync to Data Table Changes
+**Syntax:** obj &lt;&lt; Sync to Data Table Changes
 
 **Description:** Sync with the exclude and data changes that have been made.
 
@@ -1346,7 +1344,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Syntax:** obj << Title( "new title" )
+**Syntax:** obj &lt;&lt; Title( "new title" )
 
 **Description:** Sets the title of the platform.
 
@@ -1365,7 +1363,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Syntax:** obj << Top Report
+**Syntax:** obj &lt;&lt; Top Report
 
 **Description:** Returns a reference to the root node in the report.
 
@@ -1386,7 +1384,7 @@ Show( t );
 
 ### Transform Column
 
-**Syntax:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Syntax:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Description:** Create a transform column in the local context of an object, usually a platform. The transform column is active only for the lifetime of the platform.
 
@@ -1403,7 +1401,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**Syntax:** obj << View Web XML
+**Syntax:** obj &lt;&lt; View Web XML
 
 **Description:** Returns the XML code that is used to create the interactive HTML report.
 
@@ -1441,7 +1439,7 @@ New Window( "Bivariate Equation",
 
 #### Categorical Profiler
 
-**Syntax:** obj << (fit[number] << Categorical Profiler( state=0|1 ))
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Categorical Profiler( state=0|1 ))
 
 **Description:** Shows or hides a prediction profiler with all categorical responses combined into a single profiler row.
 
@@ -1461,7 +1459,7 @@ obj << (Fit[1] << Categorical Profiler( 1 ));
 
 #### Contour Profiler
 
-**Syntax:** obj << (fit[number] << Contour Profiler( state=0|1 ))
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Contour Profiler( state=0|1 ))
 
 **Description:** Shows or hides the contour profiler, which shows the contours of the response graphically for two factors at a time. Available only when the model contains more than one continuous factor.
 
@@ -1481,7 +1479,7 @@ obj << (Fit[1] << Contour Profiler( 1 ));
 
 #### Decision Threshold
 
-**Syntax:** obj << fit([number] << Decision Threshold( state = 0|1, Set Probability Threshold( number ) ))
+**Syntax:** obj &lt;&lt; fit([number] &lt;&lt; Decision Threshold( state = 0|1, Set Probability Threshold( number ) ))
 
 **Description:** Shows or hides the distribution of fitted probabilities and actual versus predicted tables for each model. You can change the probability threshold to explore how different thresholds affect the classification results.
 
@@ -1504,7 +1502,7 @@ obj << (Fit[1] << Decision Threshold( 1, Set Probability Threshold( .7 ) ));
 
 #### Diagram
 
-**Syntax:** obj << (fit[number] << Diagram( state=0|1 ))
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Diagram( state=0|1 ))
 
 **Description:** Shows or hides a diagram that represents the hidden layer structure.
 
@@ -1524,7 +1522,7 @@ obj << (Fit[1] << Diagram( 1 ));
 
 #### Get Average Absolute Error Test
 
-**Syntax:** obj << (fit[number] << Get Average Absolute Error Test)
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Get Average Absolute Error Test)
 
 **Description:** Returns the Mean Abs Dev statistic for the test set. This option is available only when using a validation set in JMP Pro.
 
@@ -1549,7 +1547,7 @@ Show( ae );
 
 #### Get Average Absolute Error Training
 
-**Syntax:** obj << (fit[number] << Get Average Absolute Error Training)
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Get Average Absolute Error Training)
 
 **Description:** Returns the Mean Abs Dev statistic for the training set.
 
@@ -1570,7 +1568,7 @@ Show( ae );
 
 #### Get Average Absolute Error Validation
 
-**Syntax:** obj << (fit[number] << Get Average Absolute Error Validation)
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Get Average Absolute Error Validation)
 
 **Description:** Returns the Mean Abs Dev statistic for the validation set. This option is available only when using a validation set.
 
@@ -1591,7 +1589,7 @@ Show( ae );
 
 #### Get Average Log Error Test
 
-**Syntax:** obj << (fit[number] << Get Average Log Error Test)
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Get Average Log Error Test)
 
 **Description:** Returns the average of -log(p), where p equals the probability of response attributed by the model that the response actually occurred, for the test set. This option is available only when using a validation set in JMP Pro.
 
@@ -1616,7 +1614,7 @@ Show( avg );
 
 #### Get Average Log Error Training
 
-**Syntax:** obj << (fit[number] << Get Average Log Error Training)
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Get Average Log Error Training)
 
 **Description:** Returns the average of -log(p), where p equals the probability of response attributed by the model that the response actually occurred, for the training set.
 
@@ -1637,7 +1635,7 @@ Show( avg );
 
 #### Get Average Log Error Validation
 
-**Syntax:** obj << (fit[number] << Get Average Log Error Validation)
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Get Average Log Error Validation)
 
 **Description:** Returns the average of -log(p), where p equals the probability of response attributed by the model that the response actually occurred, for the validation set. This option is available only when using a validation set.
 
@@ -1658,7 +1656,7 @@ Show( avg );
 
 #### Get Confusion Matrix Test
 
-**Syntax:** obj << (fit[number] << Get Confusion Matrix Test)
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Get Confusion Matrix Test)
 
 **Description:** Returns the confusion matrix for the test set. This option is available only when using a validation set in JMP Pro.
 
@@ -1683,7 +1681,7 @@ Show( cm );
 
 #### Get Confusion Matrix Training
 
-**Syntax:** obj << (fit[number] << Get Confusion Matrix Training)
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Get Confusion Matrix Training)
 
 **Description:** Returns the confusion matrix for the training set.
 
@@ -1704,7 +1702,7 @@ Show( cm );
 
 #### Get Confusion Matrix Validation
 
-**Syntax:** obj << (fit[number] << Get Confusion Matrix Validation)
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Get Confusion Matrix Validation)
 
 **Description:** Returns the confusion matrix for the validation set. This option is available only when using a validation set.
 
@@ -1725,7 +1723,7 @@ Show( cm );
 
 #### Get Confusion Rates Test
 
-**Syntax:** obj << (fit[number] << Get Confusion Rates Test)
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Get Confusion Rates Test)
 
 **Description:** Returns the confusion rates for the test set. This option is available only when using a validation set in JMP Pro.
 
@@ -1750,7 +1748,7 @@ Show( cr );
 
 #### Get Confusion Rates Training
 
-**Syntax:** obj << (fit[number] << Get Confusion Rates Training)
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Get Confusion Rates Training)
 
 **Description:** Returns the confusion rates for the training set.
 
@@ -1771,7 +1769,7 @@ Show( cr );
 
 #### Get Confusion Rates Validation
 
-**Syntax:** obj << (fit[number] << Get Confusion Rates Validation)
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Get Confusion Rates Validation)
 
 **Description:** Returns the confusion rates for the validation set. This option is available only when using a validation set.
 
@@ -1792,7 +1790,7 @@ Show( cr );
 
 #### Get Gen RSquare Test
 
-**Syntax:** obj << (fit[number] << Get Gen RSquare Test)
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Get Gen RSquare Test)
 
 **Description:** Returns the generalized R-square statistic for the test set. This option is available only when using a validation set in JMP Pro.
 
@@ -1817,7 +1815,7 @@ Show( rt );
 
 #### Get Gen RSquare Training
 
-**Syntax:** obj << (fit[number] << Get Gen RSquare Training)
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Get Gen RSquare Training)
 
 **Description:** Returns the generalized R-square statistic for the training set.
 
@@ -1838,7 +1836,7 @@ Show( rt );
 
 #### Get Gen RSquare Validation
 
-**Syntax:** obj << (fit[number] << Get Gen RSquare Validation)
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Get Gen RSquare Validation)
 
 **Description:** Returns the generalized R-square statistic for the validation set. This option is available only when using a validation set.
 
@@ -1859,7 +1857,7 @@ Show( rt );
 
 #### Get MM SAS DATA Step
 
-**Syntax:** text = obj << (fit[number] << Get MM SAS Data Step)
+**Syntax:** text = obj &lt;&lt; (fit[number] &lt;&lt; Get MM SAS Data Step)
 
 **Description:** Creates SAS code that you can register in the SAS Model Manager.
 
@@ -1879,7 +1877,7 @@ code = obj << (Fit[1] << Get MM SAS Data Step);
 
 #### Get Measures
 
-**Syntax:** obj << (fit[number] << Get Measures)
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Get Measures)
 
 **Description:** Returns summary measures of fit from the model.
 
@@ -1900,7 +1898,7 @@ obj << (Fit[1] << Get Measures);
 
 #### Get Misclassification Rate Test
 
-**Syntax:** obj << (fit[number] << Get Misclassification Rate Test)
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Get Misclassification Rate Test)
 
 **Description:** Returns the misclassification rate for the test set. This option is available only when using a validation set in JMP Pro.
 
@@ -1925,7 +1923,7 @@ Show( mr );
 
 #### Get Misclassification Rate Training
 
-**Syntax:** obj << (fit[number] << Get Misclassification Rate Training)
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Get Misclassification Rate Training)
 
 **Description:** Returns the misclassification rate for the training set.
 
@@ -1946,7 +1944,7 @@ Show( mrt );
 
 #### Get Misclassification Rate Validation
 
-**Syntax:** obj << (fit[number] << Get Misclassification Rate Validation)
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Get Misclassification Rate Validation)
 
 **Description:** Returns the misclassification rate for the validation set. This option is available only when using a validation set.
 
@@ -1967,7 +1965,7 @@ Show( mrt );
 
 #### Get NBoost
 
-**Syntax:** obj << (fit[number] << Get NBoost)
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Get NBoost)
 
 **Description:** Returns the number of models that were used for boosting.
 
@@ -1988,7 +1986,7 @@ Show( n );
 
 #### Get Precision Recall Area Test
 
-**Syntax:** obj << (fit[number] << Get Precision Recall Area Test)
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Get Precision Recall Area Test)
 
 **Description:** Returns the area under the precision-recall curve for the test set. The precision-recall curve must be displayed before the area is computed. This option is available only when using a validation set in JMP Pro.
 
@@ -2014,7 +2012,7 @@ Show( ra );
 
 #### Get Precision Recall Area Training
 
-**Syntax:** obj << (fit[number] << Get Precision Recall Area Training)
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Get Precision Recall Area Training)
 
 **Description:** Returns the area under the precision-recall curve for the training set. The precision-recall curve must be displayed before the area is computed.
 
@@ -2036,7 +2034,7 @@ Show( ra );
 
 #### Get Precision Recall Area Validation
 
-**Syntax:** obj << (fit[number] << Get Precision Recall Area Validation)
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Get Precision Recall Area Validation)
 
 **Description:** Returns the area under the precision-recall curve for the validation set. The precision-recall curve must be displayed before the area is computed. This option is available only when using a validation set.
 
@@ -2058,7 +2056,7 @@ Show( ra );
 
 #### Get Prediction Formula
 
-**Syntax:** obj << (fit[number] << Get Prediction Formula)
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Get Prediction Formula)
 
 **Description:** Constructs a script to create a prediction formula column and returns it.
 
@@ -2078,7 +2076,7 @@ obj << (Fit[1] << Get Prediction Formula);
 
 #### Get RMS Error Test
 
-**Syntax:** obj << (fit[number] << Get RMS Error Test)
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Get RMS Error Test)
 
 **Description:** Returns the square root of the mean square of the test errors. This option is available only when using a validation set in JMP Pro.
 
@@ -2103,7 +2101,7 @@ Show( re );
 
 #### Get RMS Error Training
 
-**Syntax:** obj << (fit[number] << Get RMS Error Training)
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Get RMS Error Training)
 
 **Description:** Returns the square root of the mean square of the training errors.
 
@@ -2124,7 +2122,7 @@ Show( re );
 
 #### Get RMS Error Validation
 
-**Syntax:** obj << (fit[number] << Get RMS Error Validation)
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Get RMS Error Validation)
 
 **Description:** Returns the square root of the mean square of the validation errors. This option is available only when using a validation set.
 
@@ -2145,7 +2143,7 @@ Show( re );
 
 #### Get ROC Area Test
 
-**Syntax:** obj << (fit[number] << Get ROC Area Test)
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Get ROC Area Test)
 
 **Description:** Returns the area under the Receiver Operator Characteristic (ROC) curve for the test data. The ROC curve needs to be displayed before the area is computed. This option is available only when using a validation set in JMP Pro.
 
@@ -2171,7 +2169,7 @@ Show( ra );
 
 #### Get ROC Area Training
 
-**Syntax:** obj << (fit[number] << Get ROC Area Training)
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Get ROC Area Training)
 
 **Description:** Returns the area under the Receiver Operator Characteristic (ROC) curve for the training data set. The ROC curve needs to be displayed before the area is computed.
 
@@ -2193,7 +2191,7 @@ Show( ra );
 
 #### Get ROC Area Validation
 
-**Syntax:** obj << (fit[number] << Get ROC Area Validation)
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Get ROC Area Validation)
 
 **Description:** Returns the area under the Receiver Operator Characteristic (ROC) curve for the validation data set. The ROC curve needs to be displayed before the area is computed. This option is available only when using a validation set.
 
@@ -2215,7 +2213,7 @@ Show( ra );
 
 #### Get RSquare Test
 
-**Syntax:** obj << (fit[number] << Get RSquare Test)
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Get RSquare Test)
 
 **Description:** Returns the entropy R-square statistic for the test set. This option is available only when using a validation set in JMP Pro.
 
@@ -2240,7 +2238,7 @@ Show( rt );
 
 #### Get RSquare Training
 
-**Syntax:** obj << (fit[number] << Get RSquare Training)
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Get RSquare Training)
 
 **Description:** Returns the entropy R-square statistic for the training set.
 
@@ -2262,7 +2260,7 @@ Show( rt );
 
 #### Get RSquare Validation
 
-**Syntax:** obj << (fit[number] << Get RSquare Validation)
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Get RSquare Validation)
 
 **Description:** Returns the entropy R-square statistic for the validation set. This option is available only when using a validation set.
 
@@ -2284,7 +2282,7 @@ Show( rt );
 
 #### Get SAS DATA Step
 
-**Syntax:** text = obj << (fit[number] << Get SAS Data Step)
+**Syntax:** text = obj &lt;&lt; (fit[number] &lt;&lt; Get SAS Data Step)
 
 **Description:** Creates SAS code that you can use to score a new data set.
 
@@ -2304,7 +2302,7 @@ code = obj << (Fit[1] << Get SAS Data Step);
 
 #### Get Seconds
 
-**Syntax:** obj << (fit[number] << Get Seconds)
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Get Seconds)
 
 **Description:** Returns the number of seconds used to complete the analysis.
 
@@ -2325,7 +2323,7 @@ Show( s );
 
 #### Lift Curve
 
-**Syntax:** obj << (fit[number] << Lift Curve( state=0|1 ))
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Lift Curve( state=0|1 ))
 
 **Description:** Shows or hides the Lift Curve plot. A lift curve plots the lift versus the portion of the observations and provides another view of the predictive ability of a model. If you used validation, a plot is shown for each of the training, validation, and test sets.
 
@@ -2345,7 +2343,7 @@ obj << (Fit[1] << Lift Curve( 1 ));
 
 #### Make SAS DATA Step
 
-**Syntax:** obj << (fit[number] << Make SAS Data Step)
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Make SAS Data Step)
 
 **Description:** Creates SAS code that you can use to score a new data set.
 
@@ -2365,7 +2363,7 @@ obj << (Fit[1] << Make SAS Data Step);
 
 #### Plot Actual by Predicted
 
-**Syntax:** obj << (fit[number] << Plot Actual by Predicted( state=0|1 ))
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Plot Actual by Predicted( state=0|1 ))
 
 **Description:** Shows or hides a plot with the actual values on the vertical axis and the predicted values on the horizontal axis. This option is available only for continuous responses. If you used validation, a plot is shown for each of the training, validation, and test sets.
 
@@ -2385,7 +2383,7 @@ obj << (Fit[1] << Plot Actual By Predicted( 1 ));
 
 #### Plot Residual by Predicted
 
-**Syntax:** obj << (fit[number] << Plot Residual by Predicted( state= 0|1 ))
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Plot Residual by Predicted( state= 0|1 ))
 
 **Description:** Shows or hides a plot with the residuals on the vertical axis and the predicted values on the horizontal axis. This option is available only for continuous responses. If you used validation, a plot is shown for each of the training, validation, and test sets.
 
@@ -2405,7 +2403,7 @@ obj << (Fit[1] << Plot Residual By Predicted( 1 ));
 
 #### Precision Recall Curve
 
-**Syntax:** obj << (fit[number] << Precision Recall Curve( state=0|1 ))
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Precision Recall Curve( state=0|1 ))
 
 **Description:** Shows or hides the Precision-Recall Curve plot that contains a curve for each level of the response variable. A precision-recall curve plots the precision values against the recall values at a variety of thresholds. If you used validation, a plot is shown for each of the training, validation, and test sets.
 
@@ -2425,7 +2423,7 @@ obj << (Fit[1] << Precision Recall Curve( 1 ));
 
 #### Profiler
 
-**Syntax:** obj << (fit[number] << Profiler( state=0|1 ))
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Profiler( state=0|1 ))
 
 **Description:** Shows or hides the prediction profiler, which is used to graphically explore the prediction equation by slicing it one factor at a time. The prediction profiler contains features for optimization.
 
@@ -2445,7 +2443,7 @@ obj << (Fit[1] << Profiler( 1 ));
 
 #### Publish Prediction Formula
 
-**Syntax:** obj << (fit[number] << Publish Prediction Formula)
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Publish Prediction Formula)
 
 **Description:** Creates prediction formulas and saves them as formula column scripts in the Formula Depot platform.
 
@@ -2465,7 +2463,7 @@ obj << (Fit[1] << Publish Prediction Formula);
 
 #### ROC Curve
 
-**Syntax:** obj << (fit[number] << ROC Curve( state=0|1 ))
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; ROC Curve( state=0|1 ))
 
 **Description:** Shows or hides the Receiver Operating Characteristic (ROC) curve for each level of the response variable. The ROC curve is a plot of sensitivity versus (1 - specificity). If you used validation, a plot is shown for each of the training, validation, and test sets.
 
@@ -2485,7 +2483,7 @@ obj << (Fit[1] << ROC Curve( 1 ));
 
 #### Remove Fit
 
-**Syntax:** obj << (fit[number] << Remove Fit)
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Remove Fit)
 
 **Description:** Removes the entire model report.
 
@@ -2506,7 +2504,7 @@ obj << (Fit[1] << Remove Fit);
 
 #### Save Fast Formulas
 
-**Syntax:** obj << (fit[number] << Save Fast Formulas)
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Save Fast Formulas)
 
 **Description:** Saves a new formula column to the data table. The column contains a formula for the predicted response that includes embedded formulas for the hidden layer nodes. This option produces formulas that evaluate quickly, but cannot be used by the interactive version of the profiler.
 
@@ -2526,7 +2524,7 @@ obj << (Fit[1] << Save Fast Formulas);
 
 #### Save Formulas
 
-**Syntax:** obj << (fit[number] << Save Formulas)
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Save Formulas)
 
 **Description:** Saves new formula columns to the data table. There are separate formula columns for the predicted response and the hidden layer nodes.
 
@@ -2546,7 +2544,7 @@ obj << (Fit[1] << Save Formulas);
 
 #### Save Profile Formulas
 
-**Syntax:** obj << (fit[number] << Save Profile Formulas)
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Save Profile Formulas)
 
 **Description:** Saves a new formula column to the data table. The column contains a formula for the predicted response that includes embedded formulas for the hidden layer nodes. This option produces formulas that can be used by the interactive version of the profiler.
 
@@ -2566,7 +2564,7 @@ obj << (Fit[1] << Save Profile Formulas);
 
 #### Save Transformed Covariates
 
-**Syntax:** obj << (fit[number] << Save Transformed Covariates)
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Save Transformed Covariates)
 
 **Description:** Saves new formula columns to the data table. The new columns contain the formulas that are used to transform the covariates. This option is available only in JMP Pro and when the Transform Covariates option is specified in the launch.
 
@@ -2587,7 +2585,7 @@ obj << (Fit[1] << Save Transformed Covariates);
 
 #### Save Validation
 
-**Syntax:** obj << (fit[number] << Save Validation)
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Save Validation)
 
 **Description:** Saves a new column to the data table. The column identifies which rows were used in the training and validation sets.
 
@@ -2607,7 +2605,7 @@ obj << (Fit[1] << Save Validation);
 
 #### Show Estimates
 
-**Syntax:** obj << (fit[number] << Show Estimates( state=0|1 ))
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Show Estimates( state=0|1 ))
 
 **Description:** Shows or hides a report of the parameter estimates.
 
@@ -2627,7 +2625,7 @@ obj << (Fit[1] << Show Estimates( 1 ));
 
 #### Surface Profiler
 
-**Syntax:** obj << (fit[number] << Surface Profiler( state=0|1 ))
+**Syntax:** obj &lt;&lt; (fit[number] &lt;&lt; Surface Profiler( state=0|1 ))
 
 **Description:** Shows or hides a three-dimensional surface plot. This option is available only for models with two or more X variables.
 

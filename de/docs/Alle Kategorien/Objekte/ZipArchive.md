@@ -6,7 +6,7 @@
 
 ### Dir
 
-**Syntax:** memlist = obj << Dir
+**Syntax:** memlist = obj &lt;&lt; Dir
 
 **Beschreibung:** Gibt die Liste der Memberdateien in einem Zip-Archiv zurück.
 
@@ -24,7 +24,7 @@ dirlist[1] || ": " || text;
 
 ### Read
 
-**Syntax:** memdata = obj << Read( memname, <Format(blob|string)>, <Encoding(charset)> )
+**Syntax:** memdata = obj &lt;&lt; Read( memname, &lt;Format(blob|string)&gt;, &lt;Encoding(charset)&gt; )
 
 **Beschreibung:** Liest ein Member eines Zip-Archivs in eine Zeichenkette oder ein Blob aus.
 
@@ -42,7 +42,7 @@ dirlist[1] || ": " || text;
 
 ### Write
 
-**Syntax:** actual name = obj << Write( memname, memdata, < "replace" > )
+**Syntax:** actual name = obj &lt;&lt; Write( memname, memdata, &lt; "replace" &gt; )
 
 **Beschreibung:** Schreibt einen Text oder Blob in eine Memberdatei eines Zip-Archivs. Wenn der optionale Parameter „replace“ angegeben ist und es eine bestehende Datei mit diesem Namen gibt, wird die Memberdatei ersetzt. Ansonsten wird der Name dieses Members geändert, um ein Überschreiben des vorhandenen Members zu verhindern. Der tatsächlich verwendete Name wird zurückgegeben.
 
@@ -62,7 +62,7 @@ dirlist[1] || ": " || text;
 
 ### Open
 
-**Syntax:** Open( filePath, <data table options | Excel import options | text import options | SAS import options | HTML import options | esriShapeFile import options | PDF import options | other file options > )
+**Syntax:** Open( filePath, &lt;data table options | Excel import options | text import options | SAS import options | HTML import options | esriShapeFile import options | PDF import options | other file options &gt; )
 
 **Beschreibung:** Gibt eine Referenz auf eine Datentabelle oder eine andere JMP-Datei oder auf ein über eine Datei erstelltes Objekt zurück. Wenn kein Pfad angegeben ist, wird das Dialogfeld „Öffnen“ angezeigt. Wenn ein Ordnerpfad angegeben ist, wird der Dateibrowser des Systems geöffnet und kein Objekt zurückgegeben. Eine vollständige Beschreibung der verfügbaren Optionen finden Sie in der Syntaxreferenz.
 

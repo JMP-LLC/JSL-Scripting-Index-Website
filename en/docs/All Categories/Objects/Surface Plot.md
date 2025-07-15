@@ -27,7 +27,7 @@ obj = dt << Surface Plot(
 
 ### By
 
-**Syntax:** obj << By( column(s) )
+**Syntax:** obj &lt;&lt; By( column(s) )
 
 **Description:** Produce multiple reports, one for each level of the variable(s).
 
@@ -52,7 +52,7 @@ obj = dt << Surface Plot(
 
 ### Factors
 
-**Syntax:** obj << Factors( column(s) )
+**Syntax:** obj &lt;&lt; Factors( column(s) )
 
 **Description:** Variables that will be available for the X, Y, and Z coordinates in the 3D graph.
 
@@ -68,9 +68,7 @@ obj = dt << Surface Plot( Factors( :silane, :silica, :hardness ) );
 
 ### Clip Sheet
 
-**Syntax:** obj << Clip Sheet( state=0|1 ); 
-
-obj << Clip Sheet1( state=0|1 )
+**Syntax:** obj &lt;&lt; Clip Sheet( state=0|1 ); obj &lt;&lt; Clip Sheet1( state=0|1 )
 
 **Description:** Clips the surface at the ranges of the columns that are used in the first response column formula.
 
@@ -92,9 +90,7 @@ obj << Clip Sheet( 1 );
 
 ### Clip Sheet1
 
-**Syntax:** obj << Clip Sheet( state=0|1 ); 
-
-obj << Clip Sheet1( state=0|1 )
+**Syntax:** obj &lt;&lt; Clip Sheet( state=0|1 ); obj &lt;&lt; Clip Sheet1( state=0|1 )
 
 **Description:** Clips the surface at the ranges of the columns that are used in the first response column formula.
 
@@ -116,7 +112,7 @@ obj << Clip Sheet( 1 );
 
 ### Clip Sheet2
 
-**Syntax:** obj << Clip Sheet2( state=0|1 )
+**Syntax:** obj &lt;&lt; Clip Sheet2( state=0|1 )
 
 **Description:** Clips the surface at the ranges of the columns that are used in the second response column formula.
 
@@ -139,7 +135,7 @@ obj << Clip Sheet2( 1 );
 
 ### Clip Sheet3
 
-**Syntax:** obj << Clip Sheet3( state=0|1 )
+**Syntax:** obj &lt;&lt; Clip Sheet3( state=0|1 )
 
 **Description:** Clips the surface at the ranges of the columns that are used in the third response column formula.
 
@@ -162,7 +158,7 @@ obj << Clip Sheet3( 1 );
 
 ### Clip Sheet4
 
-**Syntax:** obj << Clip Sheet4( state=0|1 )
+**Syntax:** obj &lt;&lt; Clip Sheet4( state=0|1 )
 
 **Description:** Clips the surface at the ranges of the columns that are used in the fourth response column formula.
 
@@ -188,9 +184,7 @@ obj << Clip Sheet4( 1 );
 
 ### Contour Color
 
-**Syntax:** obj << Contour Color( color ); 
-
-obj << Contour Color1( color )
+**Syntax:** obj &lt;&lt; Contour Color( color ); obj &lt;&lt; Contour Color1( color )
 
 **Description:** Specifies the color of the contour on the surface for the first response.
 
@@ -207,9 +201,7 @@ obj << Contour Color( {255, 128, 0} );
 
 ### Contour Color1
 
-**Syntax:** obj << Contour Color( color ); 
-
-obj << Contour Color1( color )
+**Syntax:** obj &lt;&lt; Contour Color( color ); obj &lt;&lt; Contour Color1( color )
 
 **Description:** Specifies the color of the contour on the surface for the first response.
 
@@ -226,7 +218,7 @@ obj << Contour Color( {255, 128, 0} );
 
 ### Contour Color2
 
-**Syntax:** obj << Contour Color2( color )
+**Syntax:** obj &lt;&lt; Contour Color2( color )
 
 **Description:** Specifies the color of the contour on the surface for the second response.
 
@@ -246,7 +238,7 @@ obj << Contour Color2( {255, 128, 0} );
 
 ### Contour Color3
 
-**Syntax:** obj << Contour Color3( color )
+**Syntax:** obj &lt;&lt; Contour Color3( color )
 
 **Description:** Specifies the color of the contour on the surface for the third response.
 
@@ -266,7 +258,7 @@ obj << Contour Color3( {255, 0, 0} );
 
 ### Contour Color4
 
-**Syntax:** obj << Contour Color4( color )
+**Syntax:** obj &lt;&lt; Contour Color4( color )
 
 **Description:** Specifies the color of the contour on the surface for the fourth response.
 
@@ -290,7 +282,7 @@ obj << Contour Color4( {100, 0, 200} );
 
 ### Control Panel
 
-**Syntax:** obj << Control Panel( state=0|1 )
+**Syntax:** obj &lt;&lt; Control Panel( state=0|1 )
 
 **Description:** Shows or hides the Control Panel, which includes the controls for appearance, independent variables, and dependent variables. On by default.
 
@@ -311,9 +303,7 @@ obj << Control Panel( 0 );
 
 ### Data points Color
 
-**Syntax:** obj << Data Points Color( color ); 
-
-obj << Data Points Color1( color )
+**Syntax:** obj &lt;&lt; Data Points Color( color ); obj &lt;&lt; Data Points Color1( color )
 
 **Description:** Changes the color of the data points for the first dependent variable drawn on the surface.
 
@@ -330,9 +320,7 @@ obj << Data Points Color( {0, 0, 255} );
 
 ### Data points Color1
 
-**Syntax:** obj << Data Points Color( color ); 
-
-obj << Data Points Color1( color )
+**Syntax:** obj &lt;&lt; Data Points Color( color ); obj &lt;&lt; Data Points Color1( color )
 
 **Description:** Changes the color of the data points for the first dependent variable drawn on the surface.
 
@@ -349,7 +337,7 @@ obj << Data Points Color( {0, 0, 255} );
 
 ### Data points Color2
 
-**Syntax:** obj << Data points Color2( color )
+**Syntax:** obj &lt;&lt; Data points Color2( color )
 
 **Description:** Changes the color of the data points for the second dependent variable drawn on the surface.
 
@@ -366,7 +354,7 @@ obj << Data Points Color2( {0, 0, 255} );
 
 ### Data points Color3
 
-**Syntax:** obj << Data points Color3( color )
+**Syntax:** obj &lt;&lt; Data points Color3( color )
 
 **Description:** Changes the color of the data points for the third dependent variable drawn on the surface.
 
@@ -385,7 +373,7 @@ obj << Data Points Color3( {255, 0, 0} );
 
 ### Data points Color4
 
-**Syntax:** obj << Data points Color4( color )
+**Syntax:** obj &lt;&lt; Data points Color4( color )
 
 **Description:** Changes the color of the data points for the forth dependent variable drawn on the surface.
 
@@ -411,9 +399,7 @@ obj << Frame3D( Set Rotation( -79.3688859847019, -1.23001727812475, 27.709687956
 
 ### Datapoints Choice
 
-**Syntax:** obj << Datapoints Choice( "Off"|"Points"|"Needles"|"Mesh"|"Surface" ); 
-
-obj << Datapoints Choice1( "Off"|"Points"|"Needles"|"Mesh"|"Surface" )
+**Syntax:** obj &lt;&lt; Datapoints Choice( "Off"|"Points"|"Needles"|"Mesh"|"Surface" ); obj &lt;&lt; Datapoints Choice1( "Off"|"Points"|"Needles"|"Mesh"|"Surface" )
 
 **Description:** Specifies how points are displayed on the surface for the first response. The default style is the Points option.
 
@@ -434,9 +420,7 @@ obj << Datapoints Choice( "Needles" );
 
 ### Datapoints Choice1
 
-**Syntax:** obj << Datapoints Choice( "Off"|"Points"|"Needles"|"Mesh"|"Surface" ); 
-
-obj << Datapoints Choice1( "Off"|"Points"|"Needles"|"Mesh"|"Surface" )
+**Syntax:** obj &lt;&lt; Datapoints Choice( "Off"|"Points"|"Needles"|"Mesh"|"Surface" ); obj &lt;&lt; Datapoints Choice1( "Off"|"Points"|"Needles"|"Mesh"|"Surface" )
 
 **Description:** Specifies how points are displayed on the surface for the first response. The default style is the Points option.
 
@@ -457,7 +441,7 @@ obj << Datapoints Choice( "Needles" );
 
 ### Datapoints Choice2
 
-**Syntax:** obj << Datapoints Choice2( "Off"|"Points"|"Needles"|"Mesh"|"Surface" )
+**Syntax:** obj &lt;&lt; Datapoints Choice2( "Off"|"Points"|"Needles"|"Mesh"|"Surface" )
 
 **Description:** Specifies how points are displayed on the surface for the second response. The default style is the Points option.
 
@@ -479,7 +463,7 @@ obj << Datapoints Choice2( "Off" );
 
 ### Datapoints Choice3
 
-**Syntax:** obj << Datapoints Choice3( "Off"|"Points"|"Needles"|"Mesh"|"Surface" )
+**Syntax:** obj &lt;&lt; Datapoints Choice3( "Off"|"Points"|"Needles"|"Mesh"|"Surface" )
 
 **Description:** Specifies how points are displayed on the surface for the third response. The default style is the Points option.
 
@@ -500,7 +484,7 @@ obj << Datapoints Choice3( "Mesh" );
 
 ### Datapoints Choice4
 
-**Syntax:** obj << Datapoints Choice4( "Off"|"Points"|"Needles"|"Mesh"|"Surface" )
+**Syntax:** obj &lt;&lt; Datapoints Choice4( "Off"|"Points"|"Needles"|"Mesh"|"Surface" )
 
 **Description:** Specifies how points are displayed on the surface for the fourth response. The default style is the Points option.
 
@@ -524,7 +508,7 @@ obj << Datapoints Choice4( "Surface" );
 
 ### Dependent Variables Points
 
-**Syntax:** obj << Dependent Variables Points( state=0|1 )
+**Syntax:** obj &lt;&lt; Dependent Variables Points( state=0|1 )
 
 **Description:** Shows or hides the options for points in the Dependent Variables controls. On by default.
 
@@ -545,7 +529,7 @@ obj << Dependent Variables Points( 0 );
 
 ### Dependent Variables Response Grid
 
-**Syntax:** obj << Dependent Variables Response Grid( state=0|1 )
+**Syntax:** obj &lt;&lt; Dependent Variables Response Grid( state=0|1 )
 
 **Description:** Shows or hides the grid options in the Dependent Variables controls. On by default.
 
@@ -566,7 +550,7 @@ obj << Dependent Variables Response Grid( 0 );
 
 ### Equation
 
-**Syntax:** obj << Equation( equation1, <equation2>, <equation3>, <equation4>  )
+**Syntax:** obj &lt;&lt; Equation( equation1, &lt;equation2&gt;, &lt;equation3&gt;, &lt;equation4&gt; )
 
 **Description:** Assigns equations to the sheets in a specified order in the Dependent Variables section. To skip a response, specify a missing value using a period.
 
@@ -585,7 +569,7 @@ obj << Show Formula( 1 );
 
 ### Fit to Window
 
-**Syntax:** obj << Fit to Window( "Auto"|"On"|"Off" )
+**Syntax:** obj &lt;&lt; Fit to Window( "Auto"|"On"|"Off" )
 
 **Description:** Sets the auto stretching behavior of the report.
 
@@ -606,7 +590,7 @@ obj << Fit to Window( "Off" );
 
 ### Formula
 
-**Syntax:** obj << Formula( column, <column>, <column>, <column>  )
+**Syntax:** obj &lt;&lt; Formula( column, &lt;column&gt;, &lt;column&gt;, &lt;column&gt; )
 
 **Description:** Assigns formulas in columns to the sheets in a specified order in the Dependent Variables section.
 
@@ -625,7 +609,7 @@ obj << Formula( :Pred Formula ABRASION, :Pred Formula ELONG );
 
 ### Frame3D
 
-**Syntax:** obj << Frame3D( Scatterplot 3D options )
+**Syntax:** obj &lt;&lt; Frame3D( Scatterplot 3D options )
 
 **Description:** Changes the display options on the surface. This option uses messages from the Scatterplot 3D platform. See full description under Scatterplot 3D for details.
 
@@ -647,7 +631,7 @@ obj << Frame3D(
 
 ### Hide Lights Border
 
-**Syntax:** obj << Hide Lights Border( state=0|1 )
+**Syntax:** obj &lt;&lt; Hide Lights Border( state=0|1 )
 
 **Description:** Shows or hides the lighting controls.
 
@@ -662,7 +646,7 @@ obj << Hide Lights Border( 1 );
 
 ### Iso Value
 
-**Syntax:** obj << Iso Value( id, value )
+**Syntax:** obj &lt;&lt; Iso Value( id, value )
 
 **Description:** Changes the value of the isosurface slider for a particular dependent variable. The id argument identifies the dependent variable using a zero-based index.
 
@@ -680,7 +664,7 @@ obj << Iso Value( 1, 1500 );
 
 ### Lock Z Scale
 
-**Syntax:** obj << Lock Z Scale( state=0|1 )
+**Syntax:** obj &lt;&lt; Lock Z Scale( state=0|1 )
 
 **Description:** Locks the Z axis to its current values.
 
@@ -694,9 +678,7 @@ obj << Lock Z Scale( 1 );
 
 ### Mesh Color
 
-**Syntax:** obj << Mesh Color( color ); 
-
-obj << Mesh Color1( color )
+**Syntax:** obj &lt;&lt; Mesh Color( color ); obj &lt;&lt; Mesh Color1( color )
 
 **Description:** Specifies the color of the surface mesh for the first dependent variable. This option is available only when a value other than Off is selected for the Mesh option.
 
@@ -713,9 +695,7 @@ obj << Mesh Color( {0, 0, 255} );
 
 ### Mesh Color1
 
-**Syntax:** obj << Mesh Color( color ); 
-
-obj << Mesh Color1( color )
+**Syntax:** obj &lt;&lt; Mesh Color( color ); obj &lt;&lt; Mesh Color1( color )
 
 **Description:** Specifies the color of the surface mesh for the first dependent variable. This option is available only when a value other than Off is selected for the Mesh option.
 
@@ -732,7 +712,7 @@ obj << Mesh Color( {0, 0, 255} );
 
 ### Mesh Color2
 
-**Syntax:** obj << Mesh Color2( color )
+**Syntax:** obj &lt;&lt; Mesh Color2( color )
 
 **Description:** Specifies the color of the surface mesh for the second dependent variable. This option is available only when a value other than Off is selected for the Mesh option.
 
@@ -750,7 +730,7 @@ obj << Mesh Color2( {255, 0, 0} );
 
 ### Mesh Color3
 
-**Syntax:** obj << Mesh Color3( color )
+**Syntax:** obj &lt;&lt; Mesh Color3( color )
 
 **Description:** Specifies the color of the surface mesh for the third dependent variable. This option is available only when a value other than Off is selected for the Mesh option.
 
@@ -770,7 +750,7 @@ obj << Mesh Color3( {50, 0, 100} );
 
 ### Mesh Color4
 
-**Syntax:** obj << Mesh Color4( color )
+**Syntax:** obj &lt;&lt; Mesh Color4( color )
 
 **Description:** Specifies the color of the surface mesh for the fourth dependent variable. This option is available only when a value other than Off is selected for the Mesh option.
 
@@ -793,7 +773,7 @@ obj << Mesh Color4( {0, 250, 0} );
 
 ### Mode
 
-**Syntax:** obj << Mode( "Sheet, points"|"Isosurface"|"Density grid" )
+**Syntax:** obj &lt;&lt; Mode( "Sheet, points"|"Isosurface"|"Density grid" )
 
 **Description:** Specifies how surfaces are displayed on the plot. The Sheets, points option shows sheets, points, and lines on the surface. The Isosurface options uses a formula with three independent variables.
 
@@ -815,11 +795,7 @@ obj << Mode( "Isosurface" );
 
 ### Resolution
 
-**Syntax:** obj << Resolution( number )
-
-obj << X Resolution( number )
-
-obj << Y Resolution( number )
+**Syntax:** obj &lt;&lt; Resolution( number )obj &lt;&lt; X Resolution( number )obj &lt;&lt; Y Resolution( number )
 
 **Description:** Changes the resolution that is used to draw the surface plot.
 
@@ -838,7 +814,7 @@ obj << Resolution( 12 );
 
 ### Response
 
-**Syntax:** obj << Response( column, <column>, <column>, <column>  )
+**Syntax:** obj &lt;&lt; Response( column, &lt;column&gt;, &lt;column&gt;, &lt;column&gt; )
 
 **Description:** Identifies up to four response columns for plotting overlaid points. To skip a response, use any quoted string as a placeholder.
 
@@ -856,9 +832,7 @@ obj << Response( :Pred Formula ABRASION, "", :Pred Formula ELONG );
 
 ### Response Column Color Theme
 
-**Syntax:** obj << Response Column Color Theme( color theme ); 
-
-obj << Response Column Color Theme1( color theme )
+**Syntax:** obj &lt;&lt; Response Column Color Theme( color theme ); obj &lt;&lt; Response Column Color Theme1( color theme )
 
 **Description:** Changes the color theme of the surface for the first response. This option is available only for point response columns that use a continuous gradient.
 
@@ -880,9 +854,7 @@ obj << Response Column Color Theme( "Jet" );
 
 ### Response Column Color Theme1
 
-**Syntax:** obj << Response Column Color Theme( color theme ); 
-
-obj << Response Column Color Theme1( color theme )
+**Syntax:** obj &lt;&lt; Response Column Color Theme( color theme ); obj &lt;&lt; Response Column Color Theme1( color theme )
 
 **Description:** Changes the color theme of the surface for the first response. This option is available only for point response columns that use a continuous gradient.
 
@@ -904,7 +876,7 @@ obj << Response Column Color Theme( "Jet" );
 
 ### Response Column Color Theme2
 
-**Syntax:** obj << Response Column Color Theme2( color theme )
+**Syntax:** obj &lt;&lt; Response Column Color Theme2( color theme )
 
 **Description:** Changes the color theme of the surface for the second response. This option is available only for point response columns that use a continuous gradient.
 
@@ -926,7 +898,7 @@ obj << Response Column Color Theme2( "White to Black" );
 
 ### Response Column Color Theme3
 
-**Syntax:** obj << Response Column Color Theme3( color theme )
+**Syntax:** obj &lt;&lt; Response Column Color Theme3( color theme )
 
 **Description:** Changes the color theme of the surface for the third response. This option is available only for point response columns that use a continuous gradient.
 
@@ -948,7 +920,7 @@ obj << Response Column Color Theme3( "Blue to Gray to Red" );
 
 ### Response Column Color Theme4
 
-**Syntax:** obj << Response Column Color Theme4( color theme )
+**Syntax:** obj &lt;&lt; Response Column Color Theme4( color theme )
 
 **Description:** Changes the color theme of the surface for the fourth response. This option is available only for point response columns that use a continuous gradient.
 
@@ -976,9 +948,7 @@ obj << Response Column Color Theme4( "White to Red" );
 
 ### Response Column Fill
 
-**Syntax:** obj << Response Column Fill( "Solid"|"Continuous Gradients"|"Discrete Gradients" ); 
-
-obj << Response Column Fill1( "Solid"|"Continuous Gradients"|"Discrete Gradients" )
+**Syntax:** obj &lt;&lt; Response Column Fill( "Solid"|"Continuous Gradients"|"Discrete Gradients" ); obj &lt;&lt; Response Column Fill1( "Solid"|"Continuous Gradients"|"Discrete Gradients" )
 
 **Description:** Specifies if the first surface is colored using a solid color, continuous gradients, or discrete gradients. This option is available only if the surface is generated using a dependent point response column.
 
@@ -999,9 +969,7 @@ obj << Response Column Fill( "Discrete Gradients" );
 
 ### Response Column Fill1
 
-**Syntax:** obj << Response Column Fill( "Solid"|"Continuous Gradients"|"Discrete Gradients" ); 
-
-obj << Response Column Fill1( "Solid"|"Continuous Gradients"|"Discrete Gradients" )
+**Syntax:** obj &lt;&lt; Response Column Fill( "Solid"|"Continuous Gradients"|"Discrete Gradients" ); obj &lt;&lt; Response Column Fill1( "Solid"|"Continuous Gradients"|"Discrete Gradients" )
 
 **Description:** Specifies if the first surface is colored using a solid color, continuous gradients, or discrete gradients. This option is available only if the surface is generated using a dependent point response column.
 
@@ -1022,7 +990,7 @@ obj << Response Column Fill( "Discrete Gradients" );
 
 ### Response Column Fill2
 
-**Syntax:** obj << Response Column Fill2( "Solid"|"Continuous Gradients"|"Discrete Gradients" )
+**Syntax:** obj &lt;&lt; Response Column Fill2( "Solid"|"Continuous Gradients"|"Discrete Gradients" )
 
 **Description:** Specifies if the second surface is colored using a solid color, continuous gradients, or discrete gradients. This option is available only if the surface is generated using a dependent point response column.
 
@@ -1043,7 +1011,7 @@ obj << Response Column Fill2( "Continuous Gradients" );
 
 ### Response Column Fill3
 
-**Syntax:** obj << Response Column Fill3( "Solid"|"Continuous Gradients"|"Discrete Gradients" )
+**Syntax:** obj &lt;&lt; Response Column Fill3( "Solid"|"Continuous Gradients"|"Discrete Gradients" )
 
 **Description:** Specifies if the third surface is colored using a solid color, continuous gradients, or discrete gradients. This option is available only if the surface is generated using a dependent point response column.
 
@@ -1064,7 +1032,7 @@ obj << Response Column Fill3( "Discrete Gradients" );
 
 ### Response Column Fill4
 
-**Syntax:** obj << Response Column Fill4( "Solid"|"Continuous Gradients"|"Discrete Gradients" )
+**Syntax:** obj &lt;&lt; Response Column Fill4( "Solid"|"Continuous Gradients"|"Discrete Gradients" )
 
 **Description:** Specifies if the fourth surface is colored using a solid color, continuous gradients, or discrete gradients. This option is available only if the surface is generated using a dependent point response column.
 
@@ -1091,9 +1059,7 @@ obj << Response Column Fill4( "Continuous Gradients" );
 
 ### Response Column Gradient Lines
 
-**Syntax:** obj << Response Column Gradient Lines( state=0|1 ); 
-
-obj << Response Column Gradient Lines1( state=0|1 )
+**Syntax:** obj &lt;&lt; Response Column Gradient Lines( state=0|1 ); obj &lt;&lt; Response Column Gradient Lines1( state=0|1 )
 
 **Description:** Shows or hides lines between the gradient levels on the surface for the first response. This option is available only if the surface is generated using discrete gradients with a dependent point column response. On by default.
 
@@ -1115,9 +1081,7 @@ obj << Response Column Gradient Lines( 0 );
 
 ### Response Column Gradient Lines1
 
-**Syntax:** obj << Response Column Gradient Lines( state=0|1 ); 
-
-obj << Response Column Gradient Lines1( state=0|1 )
+**Syntax:** obj &lt;&lt; Response Column Gradient Lines( state=0|1 ); obj &lt;&lt; Response Column Gradient Lines1( state=0|1 )
 
 **Description:** Shows or hides lines between the gradient levels on the surface for the first response. This option is available only if the surface is generated using discrete gradients with a dependent point column response. On by default.
 
@@ -1139,7 +1103,7 @@ obj << Response Column Gradient Lines( 0 );
 
 ### Response Column Gradient Lines2
 
-**Syntax:** obj << Response Column Gradient Lines2( state=0|1 )
+**Syntax:** obj &lt;&lt; Response Column Gradient Lines2( state=0|1 )
 
 **Description:** Shows or hides lines between the gradient levels on the surface for the second response. This option is available only if the surface is generated using discrete gradients with a dependent point column response. On by default.
 
@@ -1161,7 +1125,7 @@ obj << Response Column Gradient Lines2( 0 );
 
 ### Response Column Gradient Lines3
 
-**Syntax:** obj << Response Column Gradient Lines3( state=0|1 )
+**Syntax:** obj &lt;&lt; Response Column Gradient Lines3( state=0|1 )
 
 **Description:** Shows or hides lines between the gradient levels on the surface for the third response. This option is available only if the surface is generated using discrete gradients with a dependent point column response. On by default.
 
@@ -1184,7 +1148,7 @@ obj << Response Column Gradient Lines3( 1 );
 
 ### Response Column Gradient Lines4
 
-**Syntax:** obj << Response Column Gradient Lines4( state=0|1 )
+**Syntax:** obj &lt;&lt; Response Column Gradient Lines4( state=0|1 )
 
 **Description:** Shows or hides lines between the gradient levels on the surface for the fourth response. This option is available only if the surface is generated using discrete gradients with a dependent point column response. On by default.
 
@@ -1213,9 +1177,7 @@ obj << Response Column Gradient Lines4( 1 );
 
 ### Response Column Gradients
 
-**Syntax:** obj << Response Column Gradients( number ); 
-
-obj << Response Column Gradients1( number )
+**Syntax:** obj &lt;&lt; Response Column Gradients( number ); obj &lt;&lt; Response Column Gradients1( number )
 
 **Description:** Specifies the number of gradients on the surface for the first response. This option is available only if the surface is generated using discrete gradients with a dependent point response column.
 
@@ -1237,9 +1199,7 @@ obj << Response Column Gradients( 9 );
 
 ### Response Column Gradients1
 
-**Syntax:** obj << Response Column Gradients( number ); 
-
-obj << Response Column Gradients1( number )
+**Syntax:** obj &lt;&lt; Response Column Gradients( number ); obj &lt;&lt; Response Column Gradients1( number )
 
 **Description:** Specifies the number of gradients on the surface for the first response. This option is available only if the surface is generated using discrete gradients with a dependent point response column.
 
@@ -1261,7 +1221,7 @@ obj << Response Column Gradients( 9 );
 
 ### Response Column Gradients2
 
-**Syntax:** obj << Response Column Gradients2( number )
+**Syntax:** obj &lt;&lt; Response Column Gradients2( number )
 
 **Description:** Specifies the number of gradients on the surface for the second response. This option is available only if the surface is generated using discrete gradients with a dependent point response column.
 
@@ -1283,7 +1243,7 @@ obj << Response Column Gradients2( 8 );
 
 ### Response Column Gradients3
 
-**Syntax:** obj << Response Column Gradients3( number )
+**Syntax:** obj &lt;&lt; Response Column Gradients3( number )
 
 **Description:** Specifies the number of gradients on the surface for the third response. This option is available only if the surface is generated using discrete gradients with a dependent point response column.
 
@@ -1305,7 +1265,7 @@ obj << Response Column Gradients3( 7 );
 
 ### Response Column Gradients4
 
-**Syntax:** obj << Response Column Gradients4( number )
+**Syntax:** obj &lt;&lt; Response Column Gradients4( number )
 
 **Description:** Specifies the number of gradients on the surface for the fourth response. This option is available only if the surface is generated using discrete gradients with a dependent point response column.
 
@@ -1333,9 +1293,7 @@ obj << Response Column Gradients4( 10 );
 
 ### Scale response axes independently
 
-**Syntax:** obj = Surface Plot(...Scale response axes indenpendently( state=0|1 )...); 
-
-obj << Scale response axes independently( state=0|1 )
+**Syntax:** obj = Surface Plot(...Scale response axes indenpendently( state=0|1 )...); obj &lt;&lt; Scale response axes independently( state=0|1 )
 
 **Description:** Specifies whether there is a separate scale for each response or if the axis scale for all responses matches the scale for the first response entered in the launch window.
 
@@ -1358,7 +1316,7 @@ obj << Scale response axes independently( 0 );
 
 ### Set Z Variable
 
-**Syntax:** obj << Set Z Variable( column )
+**Syntax:** obj &lt;&lt; Set Z Variable( column )
 
 **Description:** Sets the specified column as the Z variable on the surface plot. This option is available only for isosurfaces.
 
@@ -1378,7 +1336,7 @@ obj << Set Z Variable( :SILANE );
 
 ### SetVariableAxis
 
-**Syntax:** obj << SetVariableAxis( column, <Current Value( number )>, <Axis Data( axis options )> )
+**Syntax:** obj &lt;&lt; SetVariableAxis( column, &lt;Current Value( number )&gt;, &lt;Axis Data( axis options )&gt; )
 
 **Description:** Specifies attributes for the specified independent variable axis.
 
@@ -1396,7 +1354,7 @@ obj << Set Variable Axis( :SILANE, Axis Data( {Format( "Fixed", 8, 1 )} ) );
 
 ### SetXVariable
 
-**Syntax:** obj << SetXVariable( column )
+**Syntax:** obj &lt;&lt; SetXVariable( column )
 
 **Description:** Sets the specified column as the X variable on the surface plot.
 
@@ -1412,7 +1370,7 @@ obj << Set X Variable( :SULFUR );
 
 ### SetYVariable
 
-**Syntax:** obj << SetYVariable( column )
+**Syntax:** obj &lt;&lt; SetYVariable( column )
 
 **Description:** Sets the specified column as the Y variable on the surface plot.
 
@@ -1428,7 +1386,7 @@ obj << Set Y Variable( :SULFUR );
 
 ### SetZAxis
 
-**Syntax:** obj << SetZAxis( column, Current Value( number ), <Axis Data( axis options )> )
+**Syntax:** obj &lt;&lt; SetZAxis( column, Current Value( number ), &lt;Axis Data( axis options )&gt; )
 
 **Description:** Specifies attributes for the Z axis.
 
@@ -1444,9 +1402,7 @@ obj << Set Z Axis( :Pred Formula ABRASION, Axis Data( {Format( "Fixed", 8, 1 )} 
 
 ### Show Contour
 
-**Syntax:** obj << Show Contour( "Off"|"Below"|"Above"|"On Surface" ); 
-
-obj << Show Contour1( "Off"|"Below|Above"|"On Surface" )
+**Syntax:** obj &lt;&lt; Show Contour( "Off"|"Below"|"Above"|"On Surface" ); obj &lt;&lt; Show Contour1( "Off"|"Below|Above"|"On Surface" )
 
 **Description:** Specifies the placement of the contour lines on the plot in relation to the surface for the first response.
 
@@ -1467,9 +1423,7 @@ obj << Show Contour( "On Surface" );
 
 ### Show Contour1
 
-**Syntax:** obj << Show Contour( "Off"|"Below"|"Above"|"On Surface" ); 
-
-obj << Show Contour1( "Off"|"Below|Above"|"On Surface" )
+**Syntax:** obj &lt;&lt; Show Contour( "Off"|"Below"|"Above"|"On Surface" ); obj &lt;&lt; Show Contour1( "Off"|"Below|Above"|"On Surface" )
 
 **Description:** Specifies the placement of the contour lines on the plot in relation to the surface for the first response.
 
@@ -1490,7 +1444,7 @@ obj << Show Contour( "On Surface" );
 
 ### Show Contour2
 
-**Syntax:** obj << Show Contour2( "Off"|"Below"|"Above"|"On Surface" )
+**Syntax:** obj &lt;&lt; Show Contour2( "Off"|"Below"|"Above"|"On Surface" )
 
 **Description:** Specifies the placement of the contour lines on the plot in relation to the surface for the second response.
 
@@ -1511,7 +1465,7 @@ obj << Show Contour2( "Above" );
 
 ### Show Contour3
 
-**Syntax:** obj << Show Contour3( "Off"|"Below"|"Above"|"On Surface" )
+**Syntax:** obj &lt;&lt; Show Contour3( "Off"|"Below"|"Above"|"On Surface" )
 
 **Description:** Specifies the placement of the contour lines on the plot in relation to the surface for the third response.
 
@@ -1533,7 +1487,7 @@ obj << Show Contour3( "Below" );
 
 ### Show Contour4
 
-**Syntax:** obj << Show Contour4( "Off"|"Below"|"Above"|"On Surface" )
+**Syntax:** obj &lt;&lt; Show Contour4( "Off"|"Below"|"Above"|"On Surface" )
 
 **Description:** Specifies the placement of the contour lines on the plot in relation to the surface for the fourth response.
 
@@ -1555,9 +1509,7 @@ obj << Show Contour4( "On Surface" );
 
 ### Show Mesh
 
-**Syntax:** obj << Show Mesh( "Off"|"X"|"Y"|"X and Y" ); 
-
-obj << Show Mesh1( "Off"|"X"|"Y"|"X and Y" )
+**Syntax:** obj &lt;&lt; Show Mesh( "Off"|"X"|"Y"|"X and Y" ); obj &lt;&lt; Show Mesh1( "Off"|"X"|"Y"|"X and Y" )
 
 **Description:** Specifies the style of the surface mesh for the first response.
 
@@ -1577,9 +1529,7 @@ obj << Show Mesh( "X and Y" );
 
 ### Show Mesh1
 
-**Syntax:** obj << Show Mesh( "Off"|"X"|"Y"|"X and Y" ); 
-
-obj << Show Mesh1( "Off"|"X"|"Y"|"X and Y" )
+**Syntax:** obj &lt;&lt; Show Mesh( "Off"|"X"|"Y"|"X and Y" ); obj &lt;&lt; Show Mesh1( "Off"|"X"|"Y"|"X and Y" )
 
 **Description:** Specifies the style of the surface mesh for the first response.
 
@@ -1599,7 +1549,7 @@ obj << Show Mesh( "X and Y" );
 
 ### Show Mesh2
 
-**Syntax:** obj << Show Mesh2( "Off"|"X and Y"|"X"|"Y" )
+**Syntax:** obj &lt;&lt; Show Mesh2( "Off"|"X and Y"|"X"|"Y" )
 
 **Description:** Specifies the style of the surface mesh for the second response.
 
@@ -1619,7 +1569,7 @@ obj << Show Mesh2( "X" );
 
 ### Show Mesh3
 
-**Syntax:** obj << Show Mesh3( "Off"|"X and Y"|"X"|"Y" )
+**Syntax:** obj &lt;&lt; Show Mesh3( "Off"|"X and Y"|"X"|"Y" )
 
 **Description:** Specifies the style of the surface mesh for the third response.
 
@@ -1639,7 +1589,7 @@ obj << Show Mesh3( "Y" );
 
 ### Show Mesh4
 
-**Syntax:** obj << Show Mesh4( "Off"|"X and Y"|"X"|"Y" )
+**Syntax:** obj &lt;&lt; Show Mesh4( "Off"|"X and Y"|"X"|"Y" )
 
 **Description:** Specifies the style of the surface mesh for the fourth response.
 
@@ -1659,9 +1609,7 @@ obj << Show Mesh4( "X and Y" );
 
 ### Show Surface
 
-**Syntax:** obj << Show Surface( "Off"|"Both sides"|"Above only"|"Below only" ); 
-
-obj << Show Surface1( "Off"|"Both sides"|"Above only"|"Below only" )
+**Syntax:** obj &lt;&lt; Show Surface( "Off"|"Both sides"|"Above only"|"Below only" ); obj &lt;&lt; Show Surface1( "Off"|"Both sides"|"Above only"|"Below only" )
 
 **Description:** Specifies how the surface for the first response appears. This option is available only for surfaces that are generated by a formula column response.
 
@@ -1682,9 +1630,7 @@ obj << Show Surface( "Below Only" );
 
 ### Show Surface1
 
-**Syntax:** obj << Show Surface( "Off"|"Both sides"|"Above only"|"Below only" ); 
-
-obj << Show Surface1( "Off"|"Both sides"|"Above only"|"Below only" )
+**Syntax:** obj &lt;&lt; Show Surface( "Off"|"Both sides"|"Above only"|"Below only" ); obj &lt;&lt; Show Surface1( "Off"|"Both sides"|"Above only"|"Below only" )
 
 **Description:** Specifies how the surface for the first response appears. This option is available only for surfaces that are generated by a formula column response.
 
@@ -1705,7 +1651,7 @@ obj << Show Surface( "Below Only" );
 
 ### Show Surface2
 
-**Syntax:** obj << Show Surface2( "Off"|"Both sides"|"Above only"|"Below only" )
+**Syntax:** obj &lt;&lt; Show Surface2( "Off"|"Both sides"|"Above only"|"Below only" )
 
 **Description:** Specifies how the surface for the second response appears. This option is available only for surfaces that are generated by a formula column response.
 
@@ -1726,7 +1672,7 @@ obj << Show Surface2( "Both Sides" );
 
 ### Show Surface3
 
-**Syntax:** obj << Show Surface3( "Off"|"Both sides"|"Above only"|"Below only" )
+**Syntax:** obj &lt;&lt; Show Surface3( "Off"|"Both sides"|"Above only"|"Below only" )
 
 **Description:** Specifies how the surface for the third response appears. This option is available only for surfaces that are generated by a formula column response.
 
@@ -1747,7 +1693,7 @@ obj << Show Surface3( "Above Only" );
 
 ### Show Surface4
 
-**Syntax:** obj << Show Surface4( "Off"|"Both sides"|"Above only"|"Below only" )
+**Syntax:** obj &lt;&lt; Show Surface4( "Off"|"Both sides"|"Above only"|"Below only" )
 
 **Description:** Specifies how the surface for the fourth response appears. This option is available only for surfaces that are generated by a formula column response.
 
@@ -1768,7 +1714,7 @@ obj << Show Surface4( "Both Sides" );
 
 ### Show formula
 
-**Syntax:** obj << Show formula( state=0|1 )
+**Syntax:** obj &lt;&lt; Show formula( state=0|1 )
 
 **Description:** Shows or hides the formula for all dependent variables that currently appear in the surface plot.
 
@@ -1782,9 +1728,7 @@ obj << Show Formula( 1 );
 
 ### Surface Alpha
 
-**Syntax:** obj << Surface Alpha( number ); 
-
-obj << Surface Alpha1( number )
+**Syntax:** obj &lt;&lt; Surface Alpha( number ); obj &lt;&lt; Surface Alpha1( number )
 
 **Description:** Specifies the opacity of the isosurface for the first response variable.
 
@@ -1806,9 +1750,7 @@ obj << Surface Alpha( 0.25 );
 
 ### Surface Alpha1
 
-**Syntax:** obj << Surface Alpha( number ); 
-
-obj << Surface Alpha1( number )
+**Syntax:** obj &lt;&lt; Surface Alpha( number ); obj &lt;&lt; Surface Alpha1( number )
 
 **Description:** Specifies the opacity of the isosurface for the first response variable.
 
@@ -1830,7 +1772,7 @@ obj << Surface Alpha( 0.25 );
 
 ### Surface Alpha2
 
-**Syntax:** obj << Surface Alpha2( number )
+**Syntax:** obj &lt;&lt; Surface Alpha2( number )
 
 **Description:** Specifies the opacity of the isosurface for the second response variable.
 
@@ -1853,7 +1795,7 @@ obj << Surface Alpha2( 0.3 );
 
 ### Surface Alpha3
 
-**Syntax:** obj << Surface Alpha3( number )
+**Syntax:** obj &lt;&lt; Surface Alpha3( number )
 
 **Description:** Specifies the opacity of the isosurface for the third response variable.
 
@@ -1876,7 +1818,7 @@ obj << Surface Alpha3( 0.75 );
 
 ### Surface Alpha4
 
-**Syntax:** obj << Surface Alpha4( number )
+**Syntax:** obj &lt;&lt; Surface Alpha4( number )
 
 **Description:** Specifies the opacity of the isosurface for the fourth response variable.
 
@@ -1899,9 +1841,7 @@ obj << Surface Alpha4( 0.90 );
 
 ### Surface Color
 
-**Syntax:** obj << Surface Color( color ); 
-
-obj << Surface Color1( color )
+**Syntax:** obj &lt;&lt; Surface Color( color ); obj &lt;&lt; Surface Color1( color )
 
 **Description:** Specifies the color of the surface for the first response when the fill type is solid.
 
@@ -1917,7 +1857,7 @@ obj << Surface Color( {0, 0, 255} );
 
 ### Surface Color Method
 
-**Syntax:** obj << Surface Color Method( "Solid"|formula, <"Solid"|formula>, <"Solid"|formula>, <"Solid"|formula> )
+**Syntax:** obj &lt;&lt; Surface Color Method( "Solid"|formula, &lt;"Solid"|formula&gt;, &lt;"Solid"|formula&gt;, &lt;"Solid"|formula&gt; )
 
 **Description:** Specifies the method that is used for coloring each of the four possible surfaces. Note that the formula can differ from the formula that is used to draw the surface.
 
@@ -1938,9 +1878,7 @@ obj << Surface Color Theme2( "Blue to Gray to Red" );
 
 ### Surface Color Range
 
-**Syntax:** obj << Surface Color Range( "Data"|"Axis" ); 
-
-obj << Surface Color Range1( "Data"|"Axis" )
+**Syntax:** obj &lt;&lt; Surface Color Range( "Data"|"Axis" ); obj &lt;&lt; Surface Color Range1( "Data"|"Axis" )
 
 **Description:** Specifies the endpoints for the color gradient on the surface for the first response. This option is available only when a gradient is used.
 
@@ -1963,9 +1901,7 @@ obj << Surface Color Range( "Axis" );
 
 ### Surface Color Range1
 
-**Syntax:** obj << Surface Color Range( "Data"|"Axis" ); 
-
-obj << Surface Color Range1( "Data"|"Axis" )
+**Syntax:** obj &lt;&lt; Surface Color Range( "Data"|"Axis" ); obj &lt;&lt; Surface Color Range1( "Data"|"Axis" )
 
 **Description:** Specifies the endpoints for the color gradient on the surface for the first response. This option is available only when a gradient is used.
 
@@ -1988,7 +1924,7 @@ obj << Surface Color Range( "Axis" );
 
 ### Surface Color Range2
 
-**Syntax:** obj << Surface Color Range2( "Data"|"Axis" )
+**Syntax:** obj &lt;&lt; Surface Color Range2( "Data"|"Axis" )
 
 **Description:** Specifies the endpoints for the color gradient on the surface for the second response. This option is available only when a gradient is used.
 
@@ -2011,7 +1947,7 @@ obj << Surface Color Range2( "Data" );
 
 ### Surface Color Range3
 
-**Syntax:** obj << Surface Color Range3( "Data"|"Axis" )
+**Syntax:** obj &lt;&lt; Surface Color Range3( "Data"|"Axis" )
 
 **Description:** Specifies the endpoints for the color gradient on the surface for the third response. This option is available only when a gradient is used.
 
@@ -2034,7 +1970,7 @@ obj << Surface Color Range3( "Axis" );
 
 ### Surface Color Range4
 
-**Syntax:** obj << Surface Color Range4( "Data"|"Axis" )
+**Syntax:** obj &lt;&lt; Surface Color Range4( "Data"|"Axis" )
 
 **Description:** Specifies the endpoints for the color gradient on the surface for the fourth response. This option is available only when a gradient is used.
 
@@ -2057,9 +1993,7 @@ obj << Surface Color Range4( "Data" );
 
 ### Surface Color Theme
 
-**Syntax:** obj << Surface Color Theme( color theme ); 
-
-obj << Surface Color Theme1( color theme )
+**Syntax:** obj &lt;&lt; Surface Color Theme( color theme ); obj &lt;&lt; Surface Color Theme1( color theme )
 
 **Description:** Specifies the color theme of the surface for the first response. This option is available only for formula response columns that use a gradient.
 
@@ -2077,9 +2011,7 @@ obj << Surface Color Theme( "Blue to Gray to Red" );
 
 ### Surface Color Theme1
 
-**Syntax:** obj << Surface Color Theme( color theme ); 
-
-obj << Surface Color Theme1( color theme )
+**Syntax:** obj &lt;&lt; Surface Color Theme( color theme ); obj &lt;&lt; Surface Color Theme1( color theme )
 
 **Description:** Specifies the color theme of the surface for the first response. This option is available only for formula response columns that use a gradient.
 
@@ -2097,7 +2029,7 @@ obj << Surface Color Theme( "Blue to Gray to Red" );
 
 ### Surface Color Theme2
 
-**Syntax:** obj << Surface Color Theme2( color theme )
+**Syntax:** obj &lt;&lt; Surface Color Theme2( color theme )
 
 **Description:** Specifies the color theme of the surface for the second response. This option is available only for formula response columns that use a gradient.
 
@@ -2118,7 +2050,7 @@ obj << Surface Color Theme2( "White to Black" );
 
 ### Surface Color Theme3
 
-**Syntax:** obj << Surface Color Theme3( color theme )
+**Syntax:** obj &lt;&lt; Surface Color Theme3( color theme )
 
 **Description:** Specifies the color theme of the surface for the third response. This option is available only for formula response columns that use a gradient.
 
@@ -2139,7 +2071,7 @@ obj << Surface Color Theme3( "Spectral" );
 
 ### Surface Color Theme4
 
-**Syntax:** obj << Surface Color Theme4( color theme )
+**Syntax:** obj &lt;&lt; Surface Color Theme4( color theme )
 
 **Description:** Specifies the color theme of the surface for the fourth response. This option is available only for formula response columns that use a gradient.
 
@@ -2163,9 +2095,7 @@ obj << Surface Color Theme4( "Jet" );
 
 ### Surface Color1
 
-**Syntax:** obj << Surface Color( color ); 
-
-obj << Surface Color1( color )
+**Syntax:** obj &lt;&lt; Surface Color( color ); obj &lt;&lt; Surface Color1( color )
 
 **Description:** Specifies the color of the surface for the first response when the fill type is solid.
 
@@ -2181,7 +2111,7 @@ obj << Surface Color( {0, 0, 255} );
 
 ### Surface Color2
 
-**Syntax:** obj << Surface Color2( color )
+**Syntax:** obj &lt;&lt; Surface Color2( color )
 
 **Description:** Specifies the color of the surface for the second response when the fill type is solid.
 
@@ -2199,7 +2129,7 @@ obj << Surface Color2( {255, 128, 0} );
 
 ### Surface Color3
 
-**Syntax:** obj << Surface Color3( color )
+**Syntax:** obj &lt;&lt; Surface Color3( color )
 
 **Description:** Specifies the color of the surface for the third response when the fill type is solid.
 
@@ -2217,7 +2147,7 @@ obj << Surface Color3( {255, 0, 0} );
 
 ### Surface Color4
 
-**Syntax:** obj << Surface Color4( color )
+**Syntax:** obj &lt;&lt; Surface Color4( color )
 
 **Description:** Specifies the color of the surface for the fourth response when the fill type is solid.
 
@@ -2238,9 +2168,7 @@ obj << Surface Color4( {100, 0, 200} );
 
 ### Surface Gradient Type
 
-**Syntax:** obj << Surface Gradient Type( "Solid"|"Continuous Gradients"|"Discrete Gradients" ); 
-
-obj << Surface Gradient Type1( "Solid"|"Continuous Gradients"|"Discrete Gradients" )
+**Syntax:** obj &lt;&lt; Surface Gradient Type( "Solid"|"Continuous Gradients"|"Discrete Gradients" ); obj &lt;&lt; Surface Gradient Type1( "Solid"|"Continuous Gradients"|"Discrete Gradients" )
 
 **Description:** Specifies the fill type of the surface for the first response.
 
@@ -2257,9 +2185,7 @@ obj << Surface Color Method( ":Pred Formula ABRASION" );
 
 ### Surface Gradient Type1
 
-**Syntax:** obj << Surface Gradient Type( "Solid"|"Continuous Gradients"|"Discrete Gradients" ); 
-
-obj << Surface Gradient Type1( "Solid"|"Continuous Gradients"|"Discrete Gradients" )
+**Syntax:** obj &lt;&lt; Surface Gradient Type( "Solid"|"Continuous Gradients"|"Discrete Gradients" ); obj &lt;&lt; Surface Gradient Type1( "Solid"|"Continuous Gradients"|"Discrete Gradients" )
 
 **Description:** Specifies the fill type of the surface for the first response.
 
@@ -2276,7 +2202,7 @@ obj << Surface Color Method( ":Pred Formula ABRASION" );
 
 ### Surface Gradient Type2
 
-**Syntax:** obj << Surface Gradient Type2( "Solid"|"Continuous Gradients"|"Discrete Gradients" )
+**Syntax:** obj &lt;&lt; Surface Gradient Type2( "Solid"|"Continuous Gradients"|"Discrete Gradients" )
 
 **Description:** Specifies the fill type of the surface for the second response.
 
@@ -2296,7 +2222,7 @@ obj << Surface Color Method( "Solid", ":Pred Formula MODULUS" );
 
 ### Surface Gradient Type3
 
-**Syntax:** obj << Surface Gradient Type3( "Solid"|"Continuous Gradients"|"Discrete Gradients" )
+**Syntax:** obj &lt;&lt; Surface Gradient Type3( "Solid"|"Continuous Gradients"|"Discrete Gradients" )
 
 **Description:** Specifies the fill type of the surface for the third response.
 
@@ -2316,7 +2242,7 @@ obj << Surface Color Method( "Solid", "Solid", ":Pred Formula ELONG" );
 
 ### Surface Gradient Type4
 
-**Syntax:** obj << Surface Gradient Type4( "Solid"|"Continuous Gradients"|"Discrete Gradients" )
+**Syntax:** obj &lt;&lt; Surface Gradient Type4( "Solid"|"Continuous Gradients"|"Discrete Gradients" )
 
 **Description:** Specifies the fill type of the surface for the fourth response.
 
@@ -2339,9 +2265,7 @@ obj << Surface Color Method( "Solid", "Solid", "Solid", ":Pred Formula HARDNESS"
 
 ### Surface Gradients
 
-**Syntax:** obj << Surface Gradients( number ); 
-
-obj << Surface Gradients1( number )
+**Syntax:** obj &lt;&lt; Surface Gradients( number ); obj &lt;&lt; Surface Gradients1( number )
 
 **Description:** Specifies the number of gradient lines on the surface of the first response. This option is available only if discrete gradients are used.
 
@@ -2361,9 +2285,7 @@ obj << Surface Gradients( 9 );
 
 ### Surface Gradients1
 
-**Syntax:** obj << Surface Gradients( number ); 
-
-obj << Surface Gradients1( number )
+**Syntax:** obj &lt;&lt; Surface Gradients( number ); obj &lt;&lt; Surface Gradients1( number )
 
 **Description:** Specifies the number of gradient lines on the surface of the first response. This option is available only if discrete gradients are used.
 
@@ -2383,7 +2305,7 @@ obj << Surface Gradients( 9 );
 
 ### Surface Gradients2
 
-**Syntax:** obj << Surface Gradients2( number )
+**Syntax:** obj &lt;&lt; Surface Gradients2( number )
 
 **Description:** Specifies the number of gradient lines on the surface of the second response. This option is available only if discrete gradients are used.
 
@@ -2404,7 +2326,7 @@ obj << Surface Gradients2( 8 );
 
 ### Surface Gradients3
 
-**Syntax:** obj << Surface Gradients3( number )
+**Syntax:** obj &lt;&lt; Surface Gradients3( number )
 
 **Description:** Specifies the number of gradient lines on the surface of the third response. This option is available only if discrete gradients are used.
 
@@ -2425,7 +2347,7 @@ obj << Surface Gradients3( 10 );
 
 ### Surface Gradients4
 
-**Syntax:** obj << Surface Gradients4( number )
+**Syntax:** obj &lt;&lt; Surface Gradients4( number )
 
 **Description:** Specifies the number of gradient lines on the surface of the fourth response. This option is available only if discrete gradients are used.
 
@@ -2449,9 +2371,7 @@ obj << Surface Gradients4( 9 );
 
 ### Surface Lighting
 
-**Syntax:** obj << Surface Lighting( "None"|"Low Reflection"|"Normal" ); 
-
-obj << Surface Lighting1( "None"|"Low Reflection"|"Normal" )
+**Syntax:** obj &lt;&lt; Surface Lighting( "None"|"Low Reflection"|"Normal" ); obj &lt;&lt; Surface Lighting1( "None"|"Low Reflection"|"Normal" )
 
 **Description:** Specifies the surface lighting on the surface for the first response. This option is available only with continuous and discrete gradients.
 
@@ -2468,9 +2388,7 @@ obj << Surface Lighting( "Low Reflection" );
 
 ### Surface Lighting1
 
-**Syntax:** obj << Surface Lighting( "None"|"Low Reflection"|"Normal" ); 
-
-obj << Surface Lighting1( "None"|"Low Reflection"|"Normal" )
+**Syntax:** obj &lt;&lt; Surface Lighting( "None"|"Low Reflection"|"Normal" ); obj &lt;&lt; Surface Lighting1( "None"|"Low Reflection"|"Normal" )
 
 **Description:** Specifies the surface lighting on the surface for the first response. This option is available only with continuous and discrete gradients.
 
@@ -2487,7 +2405,7 @@ obj << Surface Lighting( "Low Reflection" );
 
 ### Surface Lighting2
 
-**Syntax:** obj << Surface Lighting2( "None"|"Low Reflection"|"Normal" )
+**Syntax:** obj &lt;&lt; Surface Lighting2( "None"|"Low Reflection"|"Normal" )
 
 **Description:** Specifies the surface lighting on the surface for the second response. This option is available only with continuous and discrete gradients.
 
@@ -2505,7 +2423,7 @@ obj << Surface Lighting2( "Normal" );
 
 ### Surface Lighting3
 
-**Syntax:** obj << Surface Lighting3( "None"|"Low Reflection"|"Normal" )
+**Syntax:** obj &lt;&lt; Surface Lighting3( "None"|"Low Reflection"|"Normal" )
 
 **Description:** Specifies the surface lighting on the surface for the third response. This option is available only with continuous and discrete gradients.
 
@@ -2528,7 +2446,7 @@ obj << Surface Lighting3( "Low Reflection" );
 
 ### Surface Lighting4
 
-**Syntax:** obj << Surface Lighting4( "None"|"Low Reflection"|"Normal" )
+**Syntax:** obj &lt;&lt; Surface Lighting4( "None"|"Low Reflection"|"Normal" )
 
 **Description:** Specifies the surface lighting on the surface for the fourth response. This option is available only with continuous and discrete gradients.
 
@@ -2551,7 +2469,7 @@ obj << Surface Lighting4( "Normal" );
 
 ### Surface Selector
 
-**Syntax:** obj << Surface Selector( state=0|1 )
+**Syntax:** obj &lt;&lt; Surface Selector( state=0|1 )
 
 **Description:** Shows or hides the surface options in the Dependent Variables controls. On by default.
 
@@ -2572,7 +2490,7 @@ obj << Surface Selector( 0 );
 
 ### X Grid
 
-**Syntax:** obj << X Grid( state=0|1 )
+**Syntax:** obj &lt;&lt; X Grid( state=0|1 )
 
 **Description:** Shows or hides a grid that is perpendicular to the X axis.
 
@@ -2592,11 +2510,7 @@ obj << X Grid( 1 );
 
 ### X Resolution
 
-**Syntax:** obj << Resolution( number )
-
-obj << X Resolution( number )
-
-obj << Y Resolution( number )
+**Syntax:** obj &lt;&lt; Resolution( number )obj &lt;&lt; X Resolution( number )obj &lt;&lt; Y Resolution( number )
 
 **Description:** Changes the resolution that is used to draw the surface plot.
 
@@ -2615,7 +2529,7 @@ obj << Resolution( 12 );
 
 ### XRotate
 
-**Syntax:** obj << XRotate( degrees )
+**Syntax:** obj &lt;&lt; XRotate( degrees )
 
 **Description:** Rotates the surface plot on the X axis.
 
@@ -2631,7 +2545,7 @@ obj << XRotate( 30 );
 
 ### Y Grid
 
-**Syntax:** obj << Y Grid( state=0|1 )
+**Syntax:** obj &lt;&lt; Y Grid( state=0|1 )
 
 **Description:** Shows or hides a grid that is perpendicular to the Y axis.
 
@@ -2651,11 +2565,7 @@ obj << Y Grid( 1 );
 
 ### Y Resolution
 
-**Syntax:** obj << Resolution( number )
-
-obj << X Resolution( number )
-
-obj << Y Resolution( number )
+**Syntax:** obj &lt;&lt; Resolution( number )obj &lt;&lt; X Resolution( number )obj &lt;&lt; Y Resolution( number )
 
 **Description:** Changes the resolution that is used to draw the surface plot.
 
@@ -2674,7 +2584,7 @@ obj << Resolution( 12 );
 
 ### YRotate
 
-**Syntax:** obj << YRotate( degrees )
+**Syntax:** obj &lt;&lt; YRotate( degrees )
 
 **Description:** Rotates the surface plot on the Y axis.
 
@@ -2690,7 +2600,7 @@ obj << YRotate( 20 );
 
 ### Z Grid
 
-**Syntax:** obj << Z Grid( state=0|1 )
+**Syntax:** obj &lt;&lt; Z Grid( state=0|1 )
 
 **Description:** Shows or hides a grid that is perpendicular to the Z axis.
 
@@ -2710,7 +2620,7 @@ obj << Z Grid( 1 );
 
 ### Z Grid Position
 
-**Syntax:** obj << Z Grid Position( fraction )
+**Syntax:** obj &lt;&lt; Z Grid Position( fraction )
 
 **Description:** Moves the Z grid to the percent specified.
 
@@ -2727,7 +2637,7 @@ obj << Z Grid Position( 0.733 );
 
 ### ZRotate
 
-**Syntax:** obj << ZRotate( degrees )
+**Syntax:** obj &lt;&lt; ZRotate( degrees )
 
 **Description:** Rotates the surface plot on the Z axis.
 
@@ -2745,7 +2655,7 @@ obj << ZRotate( 45 );
 
 ### Action
 
-**Syntax:** obj << Action
+**Syntax:** obj &lt;&lt; Action
 
 **Description:** All-purpose trapdoor within a platform to insert expressions to evaluate. Temporarily sets the DisplayBox and DataTable contexts to the Platform.
 
@@ -2763,7 +2673,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Syntax:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntax:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Description:** Apply a previously created preset to the object, updating the options and customizations to match the saved settings.
 
@@ -2808,7 +2718,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Broadcast
 
-**Syntax:** obj << Broadcast(message)
+**Syntax:** obj &lt;&lt; Broadcast(message)
 
 **Description:** Broadcasts a message to a platform. If return results from individual objects are tables, they are concatenated if possible, and the final format is identical to either the result from the Save Combined Table option in a Table Box or the result from the Concatenate option using a Source column. Other than those, results are stored in a list and returned.
 
@@ -2826,7 +2736,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**Syntax:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Syntax:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Description:** Adds a control panel for changing the platform&apos;s variables
 
@@ -2844,7 +2754,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**Syntax:** obj << Copy ByGroup Script
+**Syntax:** obj &lt;&lt; Copy ByGroup Script
 
 **Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
 
@@ -2870,7 +2780,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Syntax:** obj << Copy Script
+**Syntax:** obj &lt;&lt; Copy Script
 
 **Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
 
@@ -2890,7 +2800,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Syntax:** obj << Data Table Window
+**Syntax:** obj &lt;&lt; Data Table Window
 
 **Description:** Move the data table window for this analysis to the front.
 
@@ -2910,7 +2820,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Syntax:** obj << Get By Levels
+**Syntax:** obj &lt;&lt; Get By Levels
 
 **Description:** Returns an associative array mapping the by group columns to their values.
 
@@ -2925,7 +2835,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Syntax:** obj << Get ByGroup Script
+**Syntax:** obj &lt;&lt; Get ByGroup Script
 
 **Description:** Creates a script (JSL) to produce this analysis and returns it as an expression.
 
@@ -2952,7 +2862,7 @@ Show( t );
 
 ### Get Container
 
-**Syntax:** obj << Get Container
+**Syntax:** obj &lt;&lt; Get Container
 
 **Description:** Returns a reference to the container box that holds the content for the object.
 
@@ -3004,7 +2914,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Syntax:** obj << Get Data Table
+**Syntax:** obj &lt;&lt; Get Data Table
 
 **Description:** Returns a reference to the data table.
 
@@ -3025,7 +2935,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**Syntax:** obj << Get Group Platform
+**Syntax:** obj &lt;&lt; Get Group Platform
 
 **Description:** Return the Group Platform object if this platform is part of a Group. Otherwise, returns Empty().
 
@@ -3042,7 +2952,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**Syntax:** obj << Get Script
+**Syntax:** obj &lt;&lt; Get Script
 
 **Description:** Creates a script (JSL) to produce this analysis and returns it as an expression.
 
@@ -3063,7 +2973,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Syntax:** obj << Get Script With Data Table
+**Syntax:** obj &lt;&lt; Get Script With Data Table
 
 **Description:** Creates a script(JSL) to produce this analysis specifically referencing this data table and returns it as an expression.
 
@@ -3084,7 +2994,7 @@ Show( t );
 
 ### Get Timing
 
-**Syntax:** obj << Get Timing
+**Syntax:** obj &lt;&lt; Get Timing
 
 **Description:** Times the platform launch.
 
@@ -3105,7 +3015,7 @@ Show( t );
 
 ### Get Web Support
 
-**Syntax:** obj << Get Web Support
+**Syntax:** obj &lt;&lt; Get Web Support
 
 **Description:** Return a number indicating the level of Interactive HTML support for the display object. 1 means some or all elements are supported. 0 means no support.
 
@@ -3121,7 +3031,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Syntax:** obj << Get Where Expr
+**Syntax:** obj &lt;&lt; Get Where Expr
 
 **Description:** Returns the Where expression for the data subset, if the platform was launched with By() or Where(). Otherwise, returns Empty()
 
@@ -3156,7 +3066,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Syntax:** obj << Local Data Filter
+**Syntax:** obj &lt;&lt; Local Data Filter
 
 **Description:** To filter data to specific groups or ranges, but local to this platform
 
@@ -3208,7 +3118,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Syntax:** obj << Paste Local Data Filter
+**Syntax:** obj &lt;&lt; Paste Local Data Filter
 
 **Description:** Apply the local data filter from the clipboard to the current report.
 
@@ -3229,7 +3139,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**Syntax:** obj << Redo Analysis
+**Syntax:** obj &lt;&lt; Redo Analysis
 
 **Description:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
 
@@ -3249,7 +3159,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**Syntax:** obj << Redo ByGroup Analysis
+**Syntax:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Description:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
 
@@ -3275,7 +3185,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**Syntax:** obj << Relaunch Analysis
+**Syntax:** obj &lt;&lt; Relaunch Analysis
 
 **Description:** Opens the platform launch window and recalls the settings that were used to create the report.
 
@@ -3295,7 +3205,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**Syntax:** obj << Relaunch ByGroup
+**Syntax:** obj &lt;&lt; Relaunch ByGroup
 
 **Description:** Opens the platform launch window and recalls the settings that were used to create the report.
 
@@ -3321,7 +3231,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**Syntax:** obj << Remove Column Switcher
+**Syntax:** obj &lt;&lt; Remove Column Switcher
 
 **Description:** Removes the most recent Column Switcher that has been added to the platform.
 
@@ -3341,7 +3251,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Syntax:** obj << Remove Local Data Filter
+**Syntax:** obj &lt;&lt; Remove Local Data Filter
 
 **Description:** If a local data filter has been created, this removes it and restores the platform to use all the data in the data table directly
 
@@ -3378,9 +3288,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Syntax:** obj << Report;
-
-Report( obj )
+**Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Description:** Returns a reference to the report object.
 
@@ -3402,7 +3310,7 @@ Show( t );
 
 ### Report View
 
-**Syntax:** obj << Report View( "Full"|"Summary" )
+**Syntax:** obj &lt;&lt; Report View( "Full"|"Summary" )
 
 **Description:** The report view determines the level of detail visible in a platform report. Full shows all of the detail, while Summary shows only select content, dependent on the platform. For customized behavior, display boxes support a <<Set Summary Behavior message.
 
@@ -3422,7 +3330,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**Syntax:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description:** Creates a JSL script to produce this analysis, and save it as a table property in the data table. You can specify a name for the script. The Append Suffix option appends a numeric suffix to the script name, which differentiates the script from an existing script with the same name. The Prompt option prompts the user to specify a script name. The Replace option replaces an existing script with the same name.
 
@@ -3448,7 +3356,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Syntax:** obj << Save ByGroup Script to Journal
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
 
@@ -3474,7 +3382,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Syntax:** obj << Save ByGroup Script to Script Window
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
 
@@ -3500,7 +3408,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**Syntax:** obj << Save Script for All Objects
+**Syntax:** obj &lt;&lt; Save Script for All Objects
 
 **Description:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -3520,7 +3428,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Syntax:** obj << Save Script for All Objects To Data Table( <name> )
+**Syntax:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Description:** Saves a script for all report objects to the current data table. This option is useful when you have multiple reports in the window. The script is named after the first platform unless you specify the script name in quotes.
 
@@ -3570,7 +3478,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Syntax:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description:** Create a JSL script to produce this analysis, and save it as a table property in the data table.
 
@@ -3590,7 +3498,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Syntax:** obj << Save Script to Journal
+**Syntax:** obj &lt;&lt; Save Script to Journal
 
 **Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
 
@@ -3610,7 +3518,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Syntax:** obj << Save Script to Report
+**Syntax:** obj &lt;&lt; Save Script to Report
 
 **Description:** Create a JSL script to produce this analysis, and show it in the report itself. Useful to preserve a printed record of what was done.
 
@@ -3630,7 +3538,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Syntax:** obj << Save Script to Script Window
+**Syntax:** obj &lt;&lt; Save Script to Script Window
 
 **Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
 
@@ -3715,7 +3623,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Syntax:** obj << Sync to Data Table Changes
+**Syntax:** obj &lt;&lt; Sync to Data Table Changes
 
 **Description:** Sync with the exclude and data changes that have been made.
 
@@ -3732,7 +3640,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Syntax:** obj << Title( "new title" )
+**Syntax:** obj &lt;&lt; Title( "new title" )
 
 **Description:** Sets the title of the platform.
 
@@ -3752,7 +3660,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Syntax:** obj << Top Report
+**Syntax:** obj &lt;&lt; Top Report
 
 **Description:** Returns a reference to the root node in the report.
 
@@ -3774,7 +3682,7 @@ Show( t );
 
 ### Transform Column
 
-**Syntax:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Syntax:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Description:** Create a transform column in the local context of an object, usually a platform. The transform column is active only for the lifetime of the platform.
 
@@ -3791,7 +3699,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**Syntax:** obj << View Web XML
+**Syntax:** obj &lt;&lt; View Web XML
 
 **Description:** Returns the XML code that is used to create the interactive HTML report.
 
@@ -3829,7 +3737,7 @@ New Window( "Bivariate Equation",
 
 #### Surface Frame3D
 
-**Syntax:** Surface Frame3D( <commands passed to Frame3D> )
+**Syntax:** Surface Frame3D( &lt;commands passed to Frame3D&gt; )
 
 **Description:** Sends display commands to the 3D plot.
 
@@ -3850,11 +3758,7 @@ obj = Surface Plot(
 
 #### Add Ellipsoid
 
-**Syntax:** obj << Add Ellipsoid( 4x4 matrix )
-
-obj << Add Ellipsoid(3x3 cov,3x1 means)
-
-obj << Add Ellipsoid(3x3 corr,3x1 means,3x1 std dev)
+**Syntax:** obj &lt;&lt; Add Ellipsoid( 4x4 matrix )obj &lt;&lt; Add Ellipsoid(3x3 cov,3x1 means)obj &lt;&lt; Add Ellipsoid(3x3 corr,3x1 means,3x1 std dev)
 
 **Description:** Draws an ellipsoid on the plot.
 
@@ -3880,7 +3784,7 @@ obj << Frame3D(
 
 #### Add Markers
 
-**Syntax:** obj << Add Markers( [ nx1 X matrix ], [ nx1 Y matrix ], [ nx1 Z matrix ] )
+**Syntax:** obj &lt;&lt; Add Markers( [ nx1 X matrix ], [ nx1 Y matrix ], [ nx1 Z matrix ] )
 
 **Description:** Draws n markers on the plot.
 
@@ -3900,7 +3804,7 @@ obj << Frame3D( Add Markers( [2 3 4], [5 6 7], [1 8 9] ) );
 
 #### Add Vector
 
-**Syntax:** obj << Add Vector( [ 3xn from matrix ], [ 3xn to matrix ], FromCap( CutOff|Sphere|Point|Feather ), ToCap( CutOff|Sphere|Point|Feather ), Facets( Triangle|Square|Round ), Shaft Color( color ), Shaft Thickness( number ), From Thickness( number ), To Thickness( number ), From Color( number ), To Color( number ) ) )
+**Syntax:** obj &lt;&lt; Add Vector( [ 3xn from matrix ], [ 3xn to matrix ], FromCap( CutOff|Sphere|Point|Feather ), ToCap( CutOff|Sphere|Point|Feather ), Facets( Triangle|Square|Round ), Shaft Color( color ), Shaft Thickness( number ), From Thickness( number ), To Thickness( number ), From Color( number ), To Color( number ) ) )
 
 **Description:** Draws a vector or arrow on the plot.
 
@@ -3920,7 +3824,7 @@ obj << Frame3D( Add Vector( [4.5 2 1], [7.5 4 6], FromCap( "Feather" ), ToCap( "
 
 #### Get Axes
 
-**Syntax:** obj << Get Axes
+**Syntax:** obj &lt;&lt; Get Axes
 
 **Description:** Returns the state of displaying the axes on the plot.
 
@@ -3941,7 +3845,7 @@ Show( s );
 
 #### Get Box
 
-**Syntax:** obj << Get Box
+**Syntax:** obj &lt;&lt; Get Box
 
 **Description:** Returns the state of displaying the box frame on the plot.
 
@@ -3962,7 +3866,7 @@ Show( s );
 
 #### Get Grab Handles
 
-**Syntax:** obj << Get Grab Handles
+**Syntax:** obj &lt;&lt; Get Grab Handles
 
 **Description:** Returns the state of displaying the grab handles on the plot.
 
@@ -3983,7 +3887,7 @@ Show( s );
 
 #### Get Graph Size
 
-**Syntax:** obj << Get Graph Size
+**Syntax:** obj &lt;&lt; Get Graph Size
 
 **Description:** Returns the size of the graph.
 
@@ -4004,7 +3908,7 @@ Show( s );
 
 #### Get Grids
 
-**Syntax:** obj << Get Grids
+**Syntax:** obj &lt;&lt; Get Grids
 
 **Description:** Returns the state of displaying the grids on the plot.
 
@@ -4025,7 +3929,7 @@ Show( s );
 
 #### Get Hide Lights Border
 
-**Syntax:** obj << Get Hide Lights Border
+**Syntax:** obj &lt;&lt; Get Hide Lights Border
 
 **Description:** Returns the state of the lights border around the plot.
 
@@ -4046,7 +3950,7 @@ Show( state );
 
 #### Get Line Scale
 
-**Syntax:** obj << Get Line Scale
+**Syntax:** obj &lt;&lt; Get Line Scale
 
 **Description:** Returns the line width for the plot.
 
@@ -4067,7 +3971,7 @@ Show( w );
 
 #### Get Marker Quality
 
-**Syntax:** obj << Get Marker Quality
+**Syntax:** obj &lt;&lt; Get Marker Quality
 
 **Description:** Returns the marker characteristics such as shape and shade for the plot.
 
@@ -4088,7 +3992,7 @@ Show( q );
 
 #### Get Marker Scale
 
-**Syntax:** obj << Get Marker Scale
+**Syntax:** obj &lt;&lt; Get Marker Scale
 
 **Description:** Returns the marker size for the plot.
 
@@ -4109,7 +4013,7 @@ Show( s );
 
 #### Get Marker Transparency
 
-**Syntax:** obj << Get Marker Transparency
+**Syntax:** obj &lt;&lt; Get Marker Transparency
 
 **Description:** Returns the marker transparency for the plot.
 
@@ -4130,7 +4034,7 @@ Show( t );
 
 #### Get Rotation
 
-**Syntax:** obj << Get Rotation
+**Syntax:** obj &lt;&lt; Get Rotation
 
 **Description:** Returns the current rotation for the frame.
 
@@ -4151,7 +4055,7 @@ Show( r );
 
 #### Get Text Scale
 
-**Syntax:** obj << Get Text Scale
+**Syntax:** obj &lt;&lt; Get Text Scale
 
 **Description:** Returns the text size for the plot.
 
@@ -4172,7 +4076,7 @@ Show( s );
 
 #### Get View Ortho
 
-**Syntax:** obj << Get View Ortho
+**Syntax:** obj &lt;&lt; Get View Ortho
 
 **Description:** Returns the state of the orthographic view for the plot.
 
@@ -4193,7 +4097,7 @@ Show( o );
 
 #### Get View Perspective
 
-**Syntax:** obj << Get View Perspective
+**Syntax:** obj &lt;&lt; Get View Perspective
 
 **Description:** Returns the view perspective for the plot.
 
@@ -4214,7 +4118,7 @@ Show( p );
 
 #### Get View Zoom
 
-**Syntax:** obj << Get View Zoom
+**Syntax:** obj &lt;&lt; Get View Zoom
 
 **Description:** Returns the current zoom for the plot.
 
@@ -4235,7 +4139,7 @@ Show( z );
 
 #### Get Wall Color
 
-**Syntax:** obj << Get Wall Color
+**Syntax:** obj &lt;&lt; Get Wall Color
 
 **Description:** Returns the wall color for the plot.
 
@@ -4256,7 +4160,7 @@ Show( c );
 
 #### Get Walls
 
-**Syntax:** obj << Get Walls
+**Syntax:** obj &lt;&lt; Get Walls
 
 **Description:** Returns the state of displaying the walls on the plot.
 
@@ -4277,7 +4181,7 @@ Show( s );
 
 #### Get X Axis Color
 
-**Syntax:** obj << Get X Axis Color
+**Syntax:** obj &lt;&lt; Get X Axis Color
 
 **Description:** Returns the x axis color for the plot.
 
@@ -4298,7 +4202,7 @@ Show( c );
 
 #### Get X Axis Label
 
-**Syntax:** obj << Get X Axis Label
+**Syntax:** obj &lt;&lt; Get X Axis Label
 
 **Description:** Returns the label for the X Axis on the plot.
 
@@ -4319,7 +4223,7 @@ Show( label );
 
 #### Get Y Axis Color
 
-**Syntax:** obj << Get Y Axis Color
+**Syntax:** obj &lt;&lt; Get Y Axis Color
 
 **Description:** Returns the y axis color for the plot.
 
@@ -4340,7 +4244,7 @@ Show( c );
 
 #### Get Y Axis Label
 
-**Syntax:** obj << Get Y Axis Label
+**Syntax:** obj &lt;&lt; Get Y Axis Label
 
 **Description:** Returns the label for the Y Axis on the plot.
 
@@ -4361,7 +4265,7 @@ Show( label );
 
 #### Get Z Axis Color
 
-**Syntax:** obj << Get Z Axis Color
+**Syntax:** obj &lt;&lt; Get Z Axis Color
 
 **Description:** Returns the z axis color for the plot.
 
@@ -4382,7 +4286,7 @@ Show( c );
 
 #### Get Z Axis Label
 
-**Syntax:** obj << Get Z Axis Label
+**Syntax:** obj &lt;&lt; Get Z Axis Label
 
 **Description:** Returns the label for the Z Axis on the plot.
 
@@ -4403,7 +4307,7 @@ Show( label );
 
 #### Legend
 
-**Syntax:** obj << Legend( state=0|1 )
+**Syntax:** obj &lt;&lt; Legend( state=0|1 )
 
 **Description:** Displays or hides the legend on the plot.
 
@@ -4426,7 +4330,7 @@ obj << Frame3D( Legend( 1 ) );
 
 #### Set Axes
 
-**Syntax:** obj << Set Axes( state=0|1 )
+**Syntax:** obj &lt;&lt; Set Axes( state=0|1 )
 
 **Description:** Shows or hides the x, y, and z axes on the plot. On by default.
 
@@ -4446,7 +4350,7 @@ obj << Frame3D( Set Axes( 1 ) );
 
 #### Set Box
 
-**Syntax:** obj << Set Box( state=0|1 )
+**Syntax:** obj &lt;&lt; Set Box( state=0|1 )
 
 **Description:** Shows or hides the box frame on the plot. On by default.
 
@@ -4466,7 +4370,7 @@ obj << Frame3D( Set Box( 1 ) );
 
 #### Set Graph Size
 
-**Syntax:** obj << Set Graph Size( x, y )
+**Syntax:** obj &lt;&lt; Set Graph Size( x, y )
 
 **Description:** Sets the size of the graph.
 
@@ -4486,7 +4390,7 @@ obj << Frame3D( Set Graph Size( 700, 800 ) );
 
 #### Set Grids
 
-**Syntax:** obj << Set Grids( state=0|1 )
+**Syntax:** obj &lt;&lt; Set Grids( state=0|1 )
 
 **Description:** Shows or hides the grids on the plot. On by default.
 
@@ -4506,7 +4410,7 @@ obj << Frame3D( Set Grids( 1 ) );
 
 #### Set Hide Lights Border
 
-**Syntax:** obj << Set Hide Lights Border( state=0|1 )
+**Syntax:** obj &lt;&lt; Set Hide Lights Border( state=0|1 )
 
 **Description:** Hides or displays the lights border around the plot. On by default.
 
@@ -4526,7 +4430,7 @@ obj << Frame3D( Set Hide Lights Border( 0 ) );
 
 #### Set Line Scale
 
-**Syntax:** obj << Set Line Scale( number )
+**Syntax:** obj &lt;&lt; Set Line Scale( number )
 
 **Description:** Sets the line width for the grid on the plot.
 
@@ -4546,7 +4450,7 @@ obj << Frame3D( Set Line Scale( 6.5 ) );
 
 #### Set Marker Quality
 
-**Syntax:** obj << Set Marker Quality( number )
+**Syntax:** obj &lt;&lt; Set Marker Quality( number )
 
 **Description:** Sets the marker characteristics such as shape and shade for the plot.
 
@@ -4566,7 +4470,7 @@ obj << Frame3D( Set Marker Scale( 3 ), Set Marker Quality( 0.2625 ) );
 
 #### Set Marker Scale
 
-**Syntax:** obj << Set Marker Scale( number )
+**Syntax:** obj &lt;&lt; Set Marker Scale( number )
 
 **Description:** Sets the marker size for the plot.
 
@@ -4586,7 +4490,7 @@ obj << Frame3D( Set Marker Scale( 3.5 ) );
 
 #### Set Marker Transparency
 
-**Syntax:** obj << Set Marker Transparency( fraction )
+**Syntax:** obj &lt;&lt; Set Marker Transparency( fraction )
 
 **Description:** Sets the marker transparency for the plot.
 
@@ -4606,7 +4510,7 @@ obj << Frame3D( Set Marker Transparency( 0.4125 ) );
 
 #### Set Oscillation
 
-**Syntax:** obj << Set Oscillation( X, Y, Z, duration )
+**Syntax:** obj &lt;&lt; Set Oscillation( X, Y, Z, duration )
 
 **Description:** Sets oscillation rate on the plot.
 
@@ -4626,7 +4530,7 @@ obj << Frame3D( Set Rotation( -60, -3, 35 ), Set Oscillation( -54, 0, 38, 100 ) 
 
 #### Set Rotation
 
-**Syntax:** obj << Set Rotation( X, Y, Z )
+**Syntax:** obj &lt;&lt; Set Rotation( X, Y, Z )
 
 **Description:** Rotates the frame to the specified coordinates.
 
@@ -4646,7 +4550,7 @@ obj << Frame3D( Set Rotation( -60, -3, 35 ) );
 
 #### Set Spin
 
-**Syntax:** obj << Set Spin(  dx, dy, sx, sy  )
+**Syntax:** obj &lt;&lt; Set Spin( dx, dy, sx, sy )
 
 **Description:** Spins the graph on a specified axis. The values dx and dy are a delta motion of the mouse from the point, (sx, sy).
 
@@ -4666,7 +4570,7 @@ obj << Frame3D( Set Spin( .01, .01, 0, 0 ) );
 
 #### Set Text Scale
 
-**Syntax:** obj << Set Text Scale( number )
+**Syntax:** obj &lt;&lt; Set Text Scale( number )
 
 **Description:** Sets the text size for the axis text on the plot.
 
@@ -4686,7 +4590,7 @@ obj << Frame3D( Set Text Scale( 1.4 ) );
 
 #### Set View Ortho
 
-**Syntax:** obj << Set View Ortho( state=0|1 )
+**Syntax:** obj &lt;&lt; Set View Ortho( state=0|1 )
 
 **Description:** Displays the plot orthographically or linearly.
 
@@ -4706,7 +4610,7 @@ obj << Frame3D( Set View Ortho( 1 ) );
 
 #### Set View Perspective
 
-**Syntax:** obj << Set View Perspective( fraction )
+**Syntax:** obj &lt;&lt; Set View Perspective( fraction )
 
 **Description:** Sets the view perspective on the plot.
 
@@ -4726,7 +4630,7 @@ obj << Frame3D( Set View Perspective( 0.275 ) );
 
 #### Set View Zoom
 
-**Syntax:** obj << Set View Zoom( number )
+**Syntax:** obj &lt;&lt; Set View Zoom( number )
 
 **Description:** Sets the zoom on the plot.
 
@@ -4748,7 +4652,7 @@ obj << Frame3D( Set View Zoom( 2 ) );
 
 #### Set Wall Color
 
-**Syntax:** obj << Set Wall Color( number )
+**Syntax:** obj &lt;&lt; Set Wall Color( number )
 
 **Description:** Sets the wall color on the plot.
 
@@ -4768,7 +4672,7 @@ obj << Frame3D( Set Wall Color( -16775543 ) );
 
 #### Set Walls
 
-**Syntax:** obj << Set Walls( state=0|1 )
+**Syntax:** obj &lt;&lt; Set Walls( state=0|1 )
 
 **Description:** Shows or hides the walls on the plot. On by default.
 
@@ -4788,7 +4692,7 @@ obj << Frame3D( Set Walls( 1 ) );
 
 #### Set X Axis Color
 
-**Syntax:** obj << Set X Axis Color( color )
+**Syntax:** obj &lt;&lt; Set X Axis Color( color )
 
 **Description:** Sets the x axis color on the plot.
 
@@ -4808,7 +4712,7 @@ obj << Frame3D( Set X Axis Color( 5 ) );
 
 #### Set X Axis Label
 
-**Syntax:** obj << Set X Axis Label( string )
+**Syntax:** obj &lt;&lt; Set X Axis Label( string )
 
 **Description:** Sets the label for the X Axis on the plot.
 
@@ -4828,7 +4732,7 @@ obj << Frame3D( Set X Axis Label( "Iris Sepal Length" ) );
 
 #### Set Y Axis Color
 
-**Syntax:** obj << Set Y Axis Color( color )
+**Syntax:** obj &lt;&lt; Set Y Axis Color( color )
 
 **Description:** Sets the y axis color on the plot.
 
@@ -4848,7 +4752,7 @@ obj << Frame3D( Set Y Axis Color( 11 ) );
 
 #### Set Y Axis Label
 
-**Syntax:** obj << Set Y Axis Label( string )
+**Syntax:** obj &lt;&lt; Set Y Axis Label( string )
 
 **Description:** Sets the label for the Y Axis on the plot.
 
@@ -4868,7 +4772,7 @@ obj << Frame3D( Set Y Axis Label( "Iris Petal Length" ) );
 
 #### Set Z Axis Color
 
-**Syntax:** obj << Set Z Axis Color( color )
+**Syntax:** obj &lt;&lt; Set Z Axis Color( color )
 
 **Description:** Sets the z axis color on the plot.
 
@@ -4888,7 +4792,7 @@ obj << Frame3D( Set Z Axis Color( "Green" ) );
 
 #### Set Z Axis Label
 
-**Syntax:** obj << Set Z Axis Label( string )
+**Syntax:** obj &lt;&lt; Set Z Axis Label( string )
 
 **Description:** Sets the label for the Z Axis on the plot.
 
@@ -4908,7 +4812,7 @@ obj << Frame3D( Set Z Axis Label( "Iris Sepal Width" ) );
 
 #### XAxis
 
-**Syntax:** obj << XAxis( Min( number ), Max( number ), Inc( number ), Format( ) )
+**Syntax:** obj &lt;&lt; XAxis( Min( number ), Max( number ), Inc( number ), Format( ) )
 
 **Description:** Sets the values for the X Axis on the plot.
 
@@ -4928,7 +4832,7 @@ obj << Frame3D( XAxis( Min( 3 ), Max( 10 ) ) );
 
 #### YAxis
 
-**Syntax:** obj << YAxis( Min( number ), Max( number ), Inc( number ), Format( ) )
+**Syntax:** obj &lt;&lt; YAxis( Min( number ), Max( number ), Inc( number ), Format( ) )
 
 **Description:** Sets the values for the Y Axis on the plot.
 
@@ -4948,7 +4852,7 @@ obj << Frame3D( YAxis( Min( 1 ), Max( 10 ), Inc( 0.5 ) ) );
 
 #### Z Axis
 
-**Syntax:** obj << Z Axis( Min( number ), Max( number ), Inc( number ), Format( ) )
+**Syntax:** obj &lt;&lt; Z Axis( Min( number ), Max( number ), Inc( number ), Format( ) )
 
 **Description:** Sets the values for the Z Axis on the plot.
 
@@ -4968,7 +4872,7 @@ obj << Frame3D( ZAxis( Min( 1 ), Max( 5 ), Inc( 0.25 ) ) );
 
 #### get light active
 
-**Syntax:** obj << get light active( light number )
+**Syntax:** obj &lt;&lt; get light active( light number )
 
 **Description:** Returns the specified light activation shining on the plot.
 
@@ -4989,7 +4893,7 @@ Show( p );
 
 #### get light color
 
-**Syntax:** obj << get light color( light number )
+**Syntax:** obj &lt;&lt; get light color( light number )
 
 **Description:** Returns the specified light color shining on the plot as a list {red, green, blue}.
 
@@ -5010,7 +4914,7 @@ Show( c );
 
 #### get light position
 
-**Syntax:** obj << get light position( light number )
+**Syntax:** obj &lt;&lt; get light position( light number )
 
 **Description:** Returns the specified light position shining on the plot as a list {x, y, z}.
 
@@ -5031,7 +4935,7 @@ Show( p );
 
 #### set light active
 
-**Syntax:** obj << set light active( light number, state=0|1 )
+**Syntax:** obj &lt;&lt; set light active( light number, state=0|1 )
 
 **Description:** Turns on the specified light shining on the plot.
 
@@ -5051,7 +4955,7 @@ obj << Frame3D( Set Hide Lights Border( 0 ), Set Light Active( 4, 1 ) );
 
 #### set light color
 
-**Syntax:** obj << set light color( light number, red value, green value, blue value )
+**Syntax:** obj &lt;&lt; set light color( light number, red value, green value, blue value )
 
 **Description:** Sets the color of the light shining on the plot.
 
@@ -5071,7 +4975,7 @@ obj << Frame3D( Set Hide Lights Border( 0 ), Set Light Color( 2, 240, 50, 70 ) )
 
 #### set light position
 
-**Syntax:** obj << set light position( light number, X, Y, Z )
+**Syntax:** obj &lt;&lt; set light position( light number, X, Y, Z )
 
 **Description:** Sets the light position shining on the plot.
 

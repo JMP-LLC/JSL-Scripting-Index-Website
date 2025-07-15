@@ -2,8 +2,6 @@
 
 
 
-## 函数
-
 ### R Connect
 
 **语法:** RConnection = R Connect()
@@ -173,7 +171,7 @@ R name = R JMP Name to R Name( a b c );
 
 ### R Send
 
-**语法:** R Send( name, <R Name( as_name ) | "as_name"> )
+**语法:** R Send( name, &lt;R Name( as_name ) | "as_name"&gt; )
 
 **说明:** 将数据发送至 R，其中 name 参数可以代表下列任何 JMP 数据类型 (numeric | string | matrix | list | data table | data table column)。
 
@@ -210,7 +208,7 @@ R Submit( "dt" );
 
 ### R Send File
 
-**语法:** R Send File( filename, <R Name( name )> )
+**语法:** R Send File( filename, &lt;R Name( name )&gt; )
 
 **说明:** 将数据文件发送至 R，其中 filename 参数是一个字符串，用于指定将要发送至 R 的文件的路径名。
 

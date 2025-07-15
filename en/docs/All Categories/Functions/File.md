@@ -2,11 +2,9 @@
 
 
 
-## Functions
-
 ### Close
 
-**Syntax:** Close( <dataTableRef|name>, <NoSave|Save( "path" )> )
+**Syntax:** Close( &lt;dataTableRef|name&gt;, &lt;NoSave|Save( "path" )&gt; )
 
 **Description:** Closes the data table referenced by the first argument, which defaults to the current data table in the current project (or no project if not running the script in a project).
 
@@ -29,7 +27,7 @@ Close( exdt, NoSave );
 
 ### Close All
 
-**Syntax:** Close All( <Project(title|index|box|window)>, Data Tables | Reports | Journals, <invisible | private>, <NoSave|Save> )
+**Syntax:** Close All( &lt;Project(title|index|box|window)&gt;, Data Tables | Reports | Journals, &lt;invisible | private&gt;, &lt;NoSave|Save&gt; )
 
 **Description:** Closes all open resources of a specific type: data tables, journals, or reports.
 
@@ -49,7 +47,7 @@ Close All( Data Tables, NoSave );
 
 ### Convert File Path
 
-**Syntax:** path = Convert File Path( path, <absolute|relative>, <posix|windows>, <base( path )>, <search> )
+**Syntax:** path = Convert File Path( path, &lt;absolute|relative&gt;, &lt;posix|windows&gt;, &lt;base( path )&gt;, &lt;search&gt; )
 
 **Description:** Returns the converted path.
 
@@ -69,7 +67,7 @@ For Each( {pv},
 
 ### Copy Directory
 
-**Syntax:** rc = Copy Directory( from, to, <recursive(0|1)> )
+**Syntax:** rc = Copy Directory( from, to, &lt;recursive(0|1)&gt; )
 
 **Description:** Copies files from one directory to another, optionally copying subdirectories. The directory name will be created at the to-path and should not be part of the to-path. Returns 1 if the directory was copied or 0 if the directory was unable to be copied. Throws an error if the path is invalid or does not exist.
 
@@ -128,7 +126,7 @@ Format( date, "ddmonyyyy:h:m:s" );/* 1 1 0 date:time */
 
 ### Create Excel Workbook
 
-**Syntax:** Create Excel Workbook(<Workbook Name>, <{List of open tables}>, <Optional list of worksheet names> )
+**Syntax:** Create Excel Workbook(&lt;Workbook Name&gt;, &lt;{List of open tables}&gt;, &lt;Optional list of worksheet names&gt; )
 
 **Description:** Generate an Excel Workbook from open JMP Data Tables
 
@@ -173,7 +171,7 @@ Format( Creation Date( "$SAMPLE_DATA/Big Class.jmp" ), "ddmonyyyy:h:m:s" );
 
 ### Delete Directory
 
-**Syntax:** rc = Delete Directory( path, <Allow Undo( boolean )> )
+**Syntax:** rc = Delete Directory( path, &lt;Allow Undo( boolean )&gt; )
 
 **Description:** Deletes a directory and its files and subdirectories. Returns 1 if the directory was deleted. Returns 0 if directory was unable to be deleted or the path is invalid.
 
@@ -193,7 +191,7 @@ Format( date, "ddmonyyyy:h:m:s" );/* 1 1 0 date:time */
 
 ### Delete File
 
-**Syntax:** rc = Delete File( path, <Allow Undo( boolean )> )
+**Syntax:** rc = Delete File( path, &lt;Allow Undo( boolean )&gt; )
 
 **Description:** Deletes a file. Returns 1 if the file was deleted. Returns 0 if file was unable to be deleted. Throws an error when path is invalid or does not exist.
 
@@ -255,7 +253,7 @@ File Size( "$SAMPLE_DATA/Big Class.jmp" );
 
 ### Files In Directory
 
-**Syntax:** y = Files In Directory( "path", <recursive(0|1)>, <include hidden(0|1)> )
+**Syntax:** y = Files In Directory( "path", &lt;recursive(0|1)&gt;, &lt;include hidden(0|1)&gt; )
 
 **Description:** Returns the list of file names in a directory that is specified by path. If the Recursive argument is not specified, directory names are included in the list.
 
@@ -281,7 +279,7 @@ Filter Each( {fn}, Files In Directory( "$SAMPLE_DATA", recursive( 1 ) ),
 
 ### Find All
 
-**Syntax:** Find All( <Project(title|index|box|window)>, Data Tables | Reports | Journals, <invisible | private> )
+**Syntax:** Find All( &lt;Project(title|index|box|window)&gt;, Data Tables | Reports | Journals, &lt;invisible | private&gt; )
 
 **Description:** Finds all open resources of a specific type: data tables, journals, or reports.
 
@@ -431,7 +429,7 @@ Google Sheet Export(
 
 ### Google Sheet Import
 
-**Syntax:** Google Sheet Import(Email(address), Spreadsheet(url|id), <Sheets("sheetName1", ... "sheetNameN")>, <Sheet Settings( Has Column Headers(Boolean), Data Starts on Row(n), Cell Range(range), Import Cell Colors(Boolean), Supress Empty Columns(Boolean))>)
+**Syntax:** Google Sheet Import(Email(address), Spreadsheet(url|id), &lt;Sheets("sheetName1", ... "sheetNameN")&gt;, &lt;Sheet Settings( Has Column Headers(Boolean), Data Starts on Row(n), Cell Range(range), Import Cell Colors(Boolean), Supress Empty Columns(Boolean))&gt;)
 
 **Description:** Opens a Google Sheet file.
 
@@ -537,7 +535,7 @@ If( x == JSON Literal( true ),
 
 ### JSON To Data Table
 
-**Syntax:** dt = JSON To Data Table( jsonstring, <Invisible( boolean ) | Private( boolean )>, <Guess(Stack(Boolean)|"Tall"|"Wide")>, <JSON Settings(...)> )
+**Syntax:** dt = JSON To Data Table( jsonstring, &lt;Invisible( boolean ) | Private( boolean )&gt;, &lt;Guess(Stack(Boolean)|"Tall"|"Wide")&gt;, &lt;JSON Settings(...)&gt; )
 
 **Description:** Convert JSON text to a JMP data table
 
@@ -581,7 +579,7 @@ Format( Last Modification Date( "$SAMPLE_DATA/Big Class.jmp" ), "ddmonyyyy:h:m:s
 
 ### Load Text File
 
-**Syntax:** text = Load Text File( path, <Charset("best guess", <force("throw" | "alert" | "silent")>)>, <LineSeparator("\!N")>, <XMLParse>|<SASODSXML>|<JSON>|<BLOB( <readOffsetFromBegin(0)>|<readOffsetFromEnd(42)>, <readLength(2147483647)>, <base64Compressed( 1 /* 0: ascii~hex */)> )> )
+**Syntax:** text = Load Text File( path, &lt;Charset("best guess", &lt;force("throw" | "alert" | "silent")&gt;)&gt;, &lt;LineSeparator("\!N")&gt;, &lt;XMLParse&gt;|&lt;SASODSXML&gt;|&lt;JSON&gt;|&lt;BLOB( &lt;readOffsetFromBegin(0)&gt;|&lt;readOffsetFromEnd(42)&gt;, &lt;readLength(2147483647)&gt;, &lt;base64Compressed( 1 /* 0: ascii~hex */)&gt; )&gt; )
 
 **Description:** Reads a whole text file into a JSL variable. Load Text File() prompts for a file name. Load Text File( path ) returns a string. The XMLParse option converts XML into an expression tree. The SASODSXML parses as SAS ODS default XML. The [{JSON}] option converts JSON into an expression tree. The BLOB argument returns binary data in a JSL Blob variable; optional named parameters to BLOB enable reading a substring from the file.
 
@@ -646,7 +644,7 @@ Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
 
 ### Open
 
-**Syntax:** Open( filePath, <data table options | Excel import options | text import options | SAS import options | HTML import options | esriShapeFile import options | PDF import options | other file options > )
+**Syntax:** Open( filePath, &lt;data table options | Excel import options | text import options | SAS import options | HTML import options | esriShapeFile import options | PDF import options | other file options &gt; )
 
 **Description:** Returns a reference to a data table or other JMP file or object created from a file. If no path is specified, the Open dialog appears. If a folder path is specified, the system file browser is opened and no object is returned. Refer to the Syntax Reference for a complete description of available options.
 
@@ -882,7 +880,7 @@ Show( l );
 
 ### Pick Directory
 
-**Syntax:** path = Pick Directory( <prompt>, <path>, <Show Files( boolean )> )
+**Syntax:** path = Pick Directory( &lt;prompt&gt;, &lt;path&gt;, &lt;Show Files( boolean )&gt; )
 
 **Description:** Prompts the user with an Open Directory window, returning the pathname of the chosen directory. The optional prompt string is shown at the top of the window. Show Files can be any of the three arguments, and takes a Boolean argument. 1 shows files in the Pick Directory window, 0 does not. The default value is 0. The path string specifies the directory that the Pick Directory window initially displays. If you use the path string, it must follow the prompt string, but Show Files can be between them.
 
@@ -906,7 +904,7 @@ Pick Directory( "Select a directory" );
 
 ### Pick File
 
-**Syntax:** path = Pick File( <prompt>, <initial directory>, <filterList>, <first filter>, <saveFlag=0|1>, <default file>, <multiple> )
+**Syntax:** path = Pick File( &lt;prompt&gt;, &lt;initial directory&gt;, &lt;filterList&gt;, &lt;first filter&gt;, &lt;saveFlag=0|1&gt;, &lt;default file&gt;, &lt;multiple&gt; )
 
 **Description:** Prompts the user with an Open window, returning the pathname of the chosen file. The filterList argument is a list of strings of the form: "Label|suffix1;suffix2;...". The first filter argument specifies which filter is initially shown. The fifth argument indicates whether the window should function as a save (saveFlag = 1) or open (saveFlag = 0) window. The default file argument specifies the file that is initially selected. The multiple argument allows multiple files to be selected if saveFlag is 0.
 
@@ -1010,7 +1008,7 @@ Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
 
 ### Save Text File
 
-**Syntax:** f = Save Text File( path, text|blob, <mode("replace"|"append")> )
+**Syntax:** f = Save Text File( path, text|blob, &lt;mode("replace"|"append")&gt; )
 
 **Description:** Creates a text file with the file name that is specified by the path argument and contents specified by the text string argument. If the save is successful, the Save Text File() function returns the pathname of the created file.
 
@@ -1057,7 +1055,7 @@ Show( Convert File Path( "Iris.jmp", search ) );
 
 ### Set Path Variable
 
-**Syntax:** Set Path Variable( name, <value> )
+**Syntax:** Set Path Variable( name, &lt;value&gt; )
 
 **Description:** Sets a path variable, which is a name like SAMPLE_DATA that is substituted for when found in pathnames.
 
@@ -1070,7 +1068,7 @@ Set Path Variable( "SAMPLE_DATA", Get Path Variable( "SAMPLE_DATA" ) );
 
 ### TripleS Import
 
-**Syntax:** TripleSImport( <path to xml file> )
+**Syntax:** TripleSImport( &lt;path to xml file&gt; )
 
 **Description:** Opens Triple-S files. The Triple-S format comprises an xml or sss file and either a csv file or a dat/asc file. Both files must have the same name with the appropriate extension and must be in the same directory. Specify the xml or sss filepath to import the data.
 

@@ -6,7 +6,7 @@
 
 ### Action
 
-**语法:** obj << Action
+**语法:** obj &lt;&lt; Action
 
 **说明:** 平台内用于插入表达式以求值的所有用途的陷门。暂时将 DisplayBox 和 DataTable 上下文设置为平台。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**语法:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**语法:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **说明:** 将以前创建的预设应用到对象，从而更新选项和定制以匹配保存的设置。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**语法:** obj << Automatic Recalc( state=0|1 )
+**语法:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **说明:** 对排除和数据更改自动重新执行分析。若启用了“自动重新计算”选项，则应考虑使用 Wait(0) 命令来确保排除和数据更改在重新计算前生效。
 
@@ -93,7 +93,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**语法:** obj << Broadcast(message)
+**语法:** obj &lt;&lt; Broadcast(message)
 
 **说明:** 将消息广播到平台。若各个对象的返回结果是表，则它们会尽可能拼接，并且最终格式与表框中“保存合并表”选项的结果或使用“源”列的“拼接”选项的结果相同。除此之外，结果存储在列表中并返回。
 
@@ -113,7 +113,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**语法:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**语法:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **说明:** 添加用于更改平台变量的控制面板
 
@@ -131,7 +131,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**语法:** obj << Copy ByGroup Script
+**语法:** obj &lt;&lt; Copy ByGroup Script
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其置于剪贴板上。
 
@@ -158,7 +158,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**语法:** obj << Copy Script
+**语法:** obj &lt;&lt; Copy Script
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其置于剪贴板上。
 
@@ -179,7 +179,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**语法:** obj << Data Table Window
+**语法:** obj &lt;&lt; Data Table Window
 
 **说明:** 将该分析的数据表窗口移动到前面。
 
@@ -200,7 +200,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**语法:** obj << Get By Levels
+**语法:** obj &lt;&lt; Get By Levels
 
 **说明:** 返回将“依据”组列映射到其值的关联数组。
 
@@ -217,7 +217,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**语法:** obj << Get ByGroup Script
+**语法:** obj &lt;&lt; Get ByGroup Script
 
 **说明:** 创建生成该分析的脚本 (JSL)，并将其作为表达式返回。
 
@@ -245,7 +245,7 @@ Show( t );
 
 ### Get Container
 
-**语法:** obj << Get Container
+**语法:** obj &lt;&lt; Get Container
 
 **说明:** 返回对保留对象内容的容器框的引用。
 
@@ -298,7 +298,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**语法:** obj << Get Data Table
+**语法:** obj &lt;&lt; Get Data Table
 
 **说明:** 返回对该数据表的引用。
 
@@ -320,7 +320,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**语法:** obj << Get Group Platform
+**语法:** obj &lt;&lt; Get Group Platform
 
 **说明:** 若该平台是组的一部分，则返回组平台对象。否则返回 Empty()。
 
@@ -337,7 +337,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**语法:** obj << Get Script
+**语法:** obj &lt;&lt; Get Script
 
 **说明:** 创建生成该分析的脚本 (JSL)，并将其作为表达式返回。
 
@@ -359,7 +359,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**语法:** obj << Get Script With Data Table
+**语法:** obj &lt;&lt; Get Script With Data Table
 
 **说明:** 创建生成该分析的脚本 (JSL) 以专门引用该数据表，并将其作为表达式返回。
 
@@ -381,7 +381,7 @@ Show( t );
 
 ### Get Timing
 
-**语法:** obj << Get Timing
+**语法:** obj &lt;&lt; Get Timing
 
 **说明:** 平台启动过程计时。
 
@@ -403,7 +403,7 @@ Show( t );
 
 ### Get Web Support
 
-**语法:** obj << Get Web Support
+**语法:** obj &lt;&lt; Get Web Support
 
 **说明:** 返回一个数字，指示显示对象的交互式 HTML 支持的水平。1 表示支持部分或全部元素。0 表示不支持。
 
@@ -419,7 +419,7 @@ Show( s );
 
 ### Get Where Expr
 
-**语法:** obj << Get Where Expr
+**语法:** obj &lt;&lt; Get Where Expr
 
 **说明:** 若平台是使用 By() 或 Where() 启动的，则返回数据子集的 Where 表达式。否则返回 Empty()
 
@@ -456,7 +456,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**语法:** obj << Local Data Filter
+**语法:** obj &lt;&lt; Local Data Filter
 
 **说明:** 将数据过滤到特定的组或范围，但在该平台中是本地的
 
@@ -512,7 +512,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**语法:** obj << Paste Local Data Filter
+**语法:** obj &lt;&lt; Paste Local Data Filter
 
 **说明:** 将剪贴板中的本地数据过滤器应用于当前报表。
 
@@ -533,7 +533,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**语法:** obj << Redo Analysis
+**语法:** obj &lt;&lt; Redo Analysis
 
 **说明:** 在新窗口中重新运行相同的分析。若数据发生更改，分析也将不同。
 
@@ -554,7 +554,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**语法:** obj << Redo ByGroup Analysis
+**语法:** obj &lt;&lt; Redo ByGroup Analysis
 
 **说明:** 在新窗口中重新运行相同的分析。若数据发生更改，分析也将不同。
 
@@ -581,7 +581,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**语法:** obj << Relaunch Analysis
+**语法:** obj &lt;&lt; Relaunch Analysis
 
 **说明:** 打开平台启动窗口并重新调用曾用于创建报表的设置。
 
@@ -602,7 +602,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**语法:** obj << Relaunch ByGroup
+**语法:** obj &lt;&lt; Relaunch ByGroup
 
 **说明:** 打开平台启动窗口并重新调用曾用于创建报表的设置。
 
@@ -629,7 +629,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**语法:** obj << Remove Column Switcher
+**语法:** obj &lt;&lt; Remove Column Switcher
 
 **说明:** 删除已添加至平台的最近使用的“列切换器”。
 
@@ -649,7 +649,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**语法:** obj << Remove Local Data Filter
+**语法:** obj &lt;&lt; Remove Local Data Filter
 
 **说明:** 若已创建本地数据过滤器，这会将它删除并将平台恢复为直接使用数据表中的所有数据
 
@@ -688,9 +688,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**语法:** obj << Report;
-
-Report( obj )
+**语法:** obj &lt;&lt; Report;Report( obj )
 
 **说明:** 返回对该报表对象的引用。
 
@@ -713,7 +711,7 @@ Show( t );
 
 ### Report View
 
-**语法:** obj << Report View( "完全"|"汇总" )
+**语法:** obj &lt;&lt; Report View( "完全"|"汇总" )
 
 **说明:** 报表视图确定平台报表中可见的详细程度。Full 显示所有详细信息，而 Summary 仅显示根据平台确定的选定内容。对于定制行为，显示框支持 <<Set Summary Behavior 消息。
 
@@ -734,7 +732,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**语法:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**语法:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **说明:** 创建生成该分析的 JSL 脚本并将其保存为数据表中的表属性。您可以为脚本指定一个名称。Append Suffix 选项在脚本名称后追加一个数字后缀，用于将该脚本与现有的同名脚本区别出来。Prompt 选项提示用户指定脚本名称。Replace 选项会替换同名的现有脚本。
 
@@ -761,7 +759,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**语法:** obj << Save ByGroup Script to Journal
+**语法:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **说明:** 创建生成该分析的 JSL 脚本，并将一个按钮添加至包含该脚本的记录中。
 
@@ -788,7 +786,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**语法:** obj << Save ByGroup Script to Script Window
+**语法:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其追加至当前的脚本文本窗口中。
 
@@ -815,7 +813,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**语法:** obj << Save Script for All Objects
+**语法:** obj &lt;&lt; Save Script for All Objects
 
 **说明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -836,7 +834,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**语法:** obj << Save Script for All Objects To Data Table( <name> )
+**语法:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **说明:** 将所有报表对象的脚本保存至当前数据表。当您在该窗口中具有多个报表时，该选项很有用。除非您在引号中指定脚本名称，否则脚本将以第一个平台命名。
 
@@ -888,7 +886,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**语法:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**语法:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其作为表属性保存至数据表中。
 
@@ -909,7 +907,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**语法:** obj << Save Script to Journal
+**语法:** obj &lt;&lt; Save Script to Journal
 
 **说明:** 创建生成该分析的 JSL 脚本，并将一个按钮添加至包含该脚本的记录中。
 
@@ -930,7 +928,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**语法:** obj << Save Script to Report
+**语法:** obj &lt;&lt; Save Script to Report
 
 **说明:** 创建生成该分析的 JSL 脚本，并在报表中显示。有助于保留打印的已完成操作记录。
 
@@ -951,7 +949,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**语法:** obj << Save Script to Script Window
+**语法:** obj &lt;&lt; Save Script to Script Window
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其追加至当前的脚本文本窗口中。
 
@@ -1037,7 +1035,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**语法:** obj << Sync to Data Table Changes
+**语法:** obj &lt;&lt; Sync to Data Table Changes
 
 **说明:** 与已进行的排除和数据的更改同步。
 
@@ -1054,7 +1052,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**语法:** obj << Title( "new title" )
+**语法:** obj &lt;&lt; Title( "new title" )
 
 **说明:** 设置平台的标题。
 
@@ -1075,7 +1073,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**语法:** obj << Top Report
+**语法:** obj &lt;&lt; Top Report
 
 **说明:** 返回对报表中根节点的引用。
 
@@ -1098,7 +1096,7 @@ Show( t );
 
 ### Transform Column
 
-**语法:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**语法:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **说明:** 在对象（通常是平台）的本地上下文中创建变换列。变换列仅在平台的生命周期内是活动的。
 
@@ -1119,7 +1117,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**语法:** obj << View Web XML
+**语法:** obj &lt;&lt; View Web XML
 
 **说明:** 返回用于创建交互式 HTML 报表的 XML 代码。
 
@@ -1134,9 +1132,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**语法:** obj = EMP Measurement Systems Analysis(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = EMP Measurement Systems Analysis(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 设置要为报表创建的窗口类型。默认情况下将创建 Visible 报表窗口。Invisible 窗口将不显示在屏幕上，但可被函数（例如 Window()）发现。Private 窗口会响应大多数窗口消息，但不可发现并且必须通过报表对象处理
 
@@ -1179,9 +1175,7 @@ obj = dt << EMP Measurement Systems Analysis(
 
 ### By
 
-**语法:** obj = EMP Measurement Systems Analysis(...<By( column(s) )>...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = EMP Measurement Systems Analysis(...&lt;By( column(s) )&gt;...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 生成多个报表，每个报表对应变量的每个水平。
 
@@ -1202,9 +1196,7 @@ EMP Measurement Systems Analysis(
 
 ### Grouping
 
-**语法:** obj = EMP Measurement Systems Analysis(...<Grouping( column(s) )>...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = EMP Measurement Systems Analysis(...&lt;Grouping( column(s) )&gt;...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定分类列作为分组变量。
 
@@ -1244,9 +1236,7 @@ obj = dt << EMP Measurement Systems Analysis(
 
 ### Measurement
 
-**语法:** obj = EMP Measurement Systems Analysis(...Measurement( column(s) )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = EMP Measurement Systems Analysis(...Measurement( column(s) )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定测量值的连续列。
 
@@ -1286,9 +1276,7 @@ obj = dt << EMP Measurement Systems Analysis(
 
 ### Part
 
-**语法:** obj = EMP Measurement Systems Analysis(...Part( column )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = EMP Measurement Systems Analysis(...Part( column )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定标明部件或单元的分类列。
 
@@ -1328,9 +1316,7 @@ obj = dt << EMP Measurement Systems Analysis(
 
 ### Sample ID
 
-**语法:** obj = EMP Measurement Systems Analysis(...Sample ID( column )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = EMP Measurement Systems Analysis(...Sample ID( column )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定标明部件或单元的分类列。
 
@@ -1370,9 +1356,7 @@ obj = dt << EMP Measurement Systems Analysis(
 
 ### Standard
 
-**语法:** obj = EMP Measurement Systems Analysis(...<Standard( column )>...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = EMP Measurement Systems Analysis(...&lt;Standard( column )&gt;...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定一个标准或引用列，它包含被测量部件的已知值。
 
@@ -1392,9 +1376,7 @@ obj = dt << EMP Measurement Systems Analysis(
 
 ### X
 
-**语法:** obj = EMP Measurement Systems Analysis(...<X( column(s) )>...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = EMP Measurement Systems Analysis(...&lt;X( column(s) )&gt;...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定分类列作为分组变量。
 
@@ -1434,9 +1416,7 @@ obj = dt << EMP Measurement Systems Analysis(
 
 ### Y
 
-**语法:** obj = EMP Measurement Systems Analysis(...Y( column(s) )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = EMP Measurement Systems Analysis(...Y( column(s) )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定测量值的连续列。
 
@@ -1527,7 +1507,7 @@ obj = dt << EMP Measurement Systems Analysis(
 
 ### Edit MSA Metadata
 
-**语法:** obj << Edit MSA Metadata( :column( Lower Tolerance( number ), Upper Tolerance( number ), <Historical Mean( number ), Historical Process Sigma( number )> ) )
+**语法:** obj &lt;&lt; Edit MSA Metadata( :column( Lower Tolerance( number ), Upper Tolerance( number ), &lt;Historical Mean( number ), Historical Process Sigma( number )&gt; ) )
 
 **说明:** 打开一个窗口，允许您添加或编辑所有分析的容差范围、容差限值、历史均值和历史过程 sigma。报表将自动更新。
 
@@ -1598,7 +1578,7 @@ obj << (EMP MSA Analysis[1] << Variance Components( 1 ));
 
 ### Save All Metadata to Table
 
-**语法:** obj << Save All Metadata to Table( < MSA( state=0|1 ) >, < Measurement Sigma( state=0|1 ) >, < Tolerance as Specs( state=0|1 ) > )
+**语法:** obj &lt;&lt; Save All Metadata to Table( &lt; MSA( state=0|1 ) &gt;, &lt; Measurement Sigma( state=0|1 ) &gt;, &lt; Tolerance as Specs( state=0|1 ) &gt; )
 
 **说明:** 创建一个新数据表，其中包含测量数据每列的 MSA 元数据和“测量值 Sigma”。该表为高格式，每个测量变量都包含一行。有一个选项用于将容差下限和上限值保存为数据表中的附加列。
 
@@ -1620,7 +1600,7 @@ obj << Save All Metadata to Table;
 
 ### Save Metadata as Column Properties
 
-**语法:** obj << Save Metadata as Column Properties( < MSA( state=0|1 ) >, < Measurement Sigma( state=0|1 ) >, < Tolerance as Specs( state=0|1 ) > )
+**语法:** obj &lt;&lt; Save Metadata as Column Properties( &lt; MSA( state=0|1 ) &gt;, &lt; Measurement Sigma( state=0|1 ) &gt;, &lt; Tolerance as Specs( state=0|1 ) &gt; )
 
 **说明:** 对于测量数据的每一列，将 MSA 元数据和“测量值 Sigma”保存为原始数据表中列的列属性。有一个选项用于将容差下限和上限值保存为“规格限”列属性。
 
@@ -1642,9 +1622,7 @@ obj << Save Metadata as Column Properties;
 
 ### Set Alpha Level
 
-**语法:** obj = EMP Measurement Systems Analysis(...Set Alpha Level( number )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = EMP Measurement Systems Analysis(...Set Alpha Level( number )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定用于偏倚比较和复测误差比较报表的 alpha 水平。 默认为“0.05”。
 
@@ -1666,9 +1644,7 @@ obj << (EMP MSA Analysis[1] << Bias Comparison( 1 ));
 
 ### Set Random Seed
 
-**语法:** obj = EMP Measurement Systems Analysis(...Set Random Seed( number )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = EMP Measurement Systems Analysis(...Set Random Seed( number )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 将随机种子设置为特定值，以确保使用相同种子的所有后续试验都是可再现的。
 
@@ -1690,9 +1666,7 @@ obj << (EMP MSA Analysis[1] << "Test-Retest Error Comparison"n( 1 ));
 
 ### Sigma Multiplier
 
-**语法:** obj = EMP Measurement Systems Analysis(...Sigma Multiplier( number=6 )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = EMP Measurement Systems Analysis(...Sigma Multiplier( number=6 )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定乘以 sigma 的常数值。 默认为“6”。
 
@@ -1718,7 +1692,7 @@ obj = dt << EMP Measurement Systems Analysis(
 
 #### AIAG Labels
 
-**语法:** obj << (EMP MSA Analysis[number] << "AIAG Gauge R&R Results"n(1, AIAG Labels( state=0|1 )))
+**语法:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; "AIAG Gauge R&R Results"n(1, AIAG Labels( state=0|1 )))
 
 **说明:** 显示或隐藏“AIAG 量具 R&R 结果”表中的标签。这些标签由美国汽车工业行动集团 (AIAG) 定义。 默认开启。
 
@@ -1739,7 +1713,7 @@ obj << (EMP MSA Analysis[1] << "AIAG Gauge R&R Results"n( 1, AIAG Labels( 0 ) ))
 
 #### Discrimination Ratio
 
-**语法:** obj << (EMP MSA Analysis[number] << "AIAG Gauge R&R Results"n(1, Discrimination Ratio( state=0|1 )))
+**语法:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; "AIAG Gauge R&R Results"n(1, Discrimination Ratio( state=0|1 )))
 
 **说明:** 显示或隐藏给定模型的分辨比率。
 
@@ -1764,7 +1738,7 @@ obj << (EMP MSA Analysis[1] << "AIAG Gauge R&R Results"n( 1, Discrimination Rati
 
 #### Show Connected Means
 
-**语法:** obj << (EMP MSA Analysis[number] << Average Chart( 1, Show Connected Means( state=0|1 )))
+**语法:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Average Chart( 1, Show Connected Means( state=0|1 )))
 
 **说明:** 显示或隐藏“平均图”上连接平均测量值的线。 默认开启。
 
@@ -1785,7 +1759,7 @@ obj << (EMP MSA Analysis[1] << Average Chart( 1, Show Connected Means( 0 ) ));
 
 #### Show Control Limits
 
-**语法:** obj << (EMP MSA Analysis[number] << Average Chart( 1, Show Control Limits( state=0|1 )))
+**语法:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Average Chart( 1, Show Control Limits( state=0|1 )))
 
 **说明:** 显示或隐藏“平均图”上的控制限。 默认开启。
 
@@ -1806,7 +1780,7 @@ obj << (EMP MSA Analysis[1] << Average Chart( 1, Show Control Limits( 0 ) ));
 
 #### Show Control Limits Shading
 
-**语法:** obj << (EMP MSA Analysis[number] << Average Chart( 1, Show Control Limits Shading( state=0|1 )))
+**语法:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Average Chart( 1, Show Control Limits Shading( state=0|1 )))
 
 **说明:** 显示或隐藏“平均图”上控制限之间的着色。 默认开启。
 
@@ -1827,7 +1801,7 @@ obj << (EMP MSA Analysis[1] << Average Chart( 1, Show Control Limits Shading( 0 
 
 #### Show Data
 
-**语法:** obj << (EMP MSA Analysis[number] << Average Chart( 1, Show Data( state=0|1 )))
+**语法:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Average Chart( 1, Show Data( state=0|1 )))
 
 **说明:** 显示或隐藏“平均图”上的数据点。
 
@@ -1848,7 +1822,7 @@ obj << (EMP MSA Analysis[1] << Average Chart( 1, Show Data( 1 ) ));
 
 #### Show Grand Mean
 
-**语法:** obj << (EMP MSA Analysis[number] << Average Chart( 1, Show Grand Mean( state=0|1 )))
+**语法:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Average Chart( 1, Show Grand Mean( state=0|1 )))
 
 **说明:** 显示或隐藏“平均图”上 Y 变量的总均值。 默认开启。
 
@@ -1869,7 +1843,7 @@ obj << (EMP MSA Analysis[1] << Average Chart( 1, Show Grand Mean( 0 ) ));
 
 #### Show Separators
 
-**语法:** obj << (EMP MSA Analysis[number] << Average Chart( 1, Show Separators( state=0|1 )))
+**语法:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Average Chart( 1, Show Separators( state=0|1 )))
 
 **说明:** 显示或隐藏“平均图”上分隔 X 变量的垂直线。 默认开启。
 
@@ -1894,7 +1868,7 @@ obj << (EMP MSA Analysis[1] << Average Chart( 1, Show Separators( 0 ) ));
 
 #### Show Average Dispersion
 
-**语法:** obj << (EMP MSA Analysis[number] << Dispersion Chart( 1, Show Average Dispersion( state=0|1 )))
+**语法:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Dispersion Chart( 1, Show Average Dispersion( state=0|1 )))
 
 **说明:** 显示或隐藏散度图上的平均极差或标准差。 默认开启。
 
@@ -1915,7 +1889,7 @@ obj << (EMP MSA Analysis[1] << Dispersion Chart( 1, Show Average Dispersion( 0 )
 
 #### Show Connected Points
 
-**语法:** obj << (EMP MSA Analysis[number] << Dispersion Chart( 1, Show Connected Points( state=0|1 )))
+**语法:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Dispersion Chart( 1, Show Connected Points( state=0|1 )))
 
 **说明:** 显示或隐藏散度图上连接所有极差或标准差的线。 默认开启。
 
@@ -1936,7 +1910,7 @@ obj << (EMP MSA Analysis[1] << Dispersion Chart( 1, Show Connected Points( 0 ) )
 
 #### Show Control Limits
 
-**语法:** obj << (EMP MSA Analysis[number] << Dispersion Chart( 1, Show Control Limits( state=0|1 )))
+**语法:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Dispersion Chart( 1, Show Control Limits( state=0|1 )))
 
 **说明:** 显示或隐藏散度图上的控制限。 默认开启。
 
@@ -1957,7 +1931,7 @@ obj << (EMP MSA Analysis[1] << Dispersion Chart( 1, Show Control Limits( 0 ) ));
 
 #### Show Control Limits Shading
 
-**语法:** obj << (EMP MSA Analysis[number] << Dispersion Chart( 1, Show Control Limits Shading( state=0|1 )))
+**语法:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Dispersion Chart( 1, Show Control Limits Shading( state=0|1 )))
 
 **说明:** 显示或隐藏散度图上控制限之间的着色。 默认开启。
 
@@ -1978,7 +1952,7 @@ obj << (EMP MSA Analysis[1] << Dispersion Chart( 1, Show Control Limits Shading(
 
 #### Show Separators
 
-**语法:** obj << (EMP MSA Analysis[number] << Dispersion Chart( 1, Show Separators( state=0|1 )))
+**语法:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Dispersion Chart( 1, Show Separators( state=0|1 )))
 
 **说明:** 显示或隐藏散度图上分隔 X 变量的垂直线。 默认开启。
 
@@ -2003,7 +1977,7 @@ obj << (EMP MSA Analysis[1] << Dispersion Chart( 1, Show Separators( 0 ) ));
 
 #### Show Avg Bias Points
 
-**语法:** obj << (EMP MSA Analysis[number] << Linearity and Bias Results( 1, Show Avg Bias Points( state=0|1 )))
+**语法:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Linearity and Bias Results( 1, Show Avg Bias Points( state=0|1 )))
 
 **说明:** 在图形中显示或隐藏平均偏倚点。 默认开启。
 
@@ -2030,7 +2004,7 @@ obj << (EMP MSA Analysis[1] << Linearity and Bias Results( 1, Show Avg Bias Poin
 
 #### Show Bias Points
 
-**语法:** obj << (EMP MSA Analysis[number] << Linearity and Bias Results( 1, Show Bias Points( state=0|1 )))
+**语法:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Linearity and Bias Results( 1, Show Bias Points( state=0|1 )))
 
 **说明:** 在图形中显示或隐藏偏倚点。 默认开启。
 
@@ -2057,7 +2031,7 @@ obj << (EMP MSA Analysis[1] << Linearity and Bias Results( 1, Show Bias Points( 
 
 #### Show Fit Confidence Curves
 
-**语法:** obj << (EMP MSA Analysis[number] << Linearity and Bias Results( 1, Show Fit Confidence Curves( state=0|1 )))
+**语法:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Linearity and Bias Results( 1, Show Fit Confidence Curves( state=0|1 )))
 
 **说明:** 在图形中显示或隐藏拟合置信度曲线。 默认开启。
 
@@ -2093,7 +2067,7 @@ obj << (EMP MSA Analysis[1] << Linearity and Bias Results(
 
 #### Show Line of Fit
 
-**语法:** obj << (EMP MSA Analysis[number] << Linearity and Bias Results( 1, Show Line of Fit( state=0|1 )))
+**语法:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Linearity and Bias Results( 1, Show Line of Fit( state=0|1 )))
 
 **说明:** 在图形中显示或隐藏拟合线。 默认开启。
 
@@ -2120,7 +2094,7 @@ obj << (EMP MSA Analysis[1] << Linearity and Bias Results( 1, Show Line of Fit( 
 
 #### Show Overall Avg Bias Line
 
-**语法:** obj << (EMP MSA Analysis[number] << Linearity and Bias Results( 1, Show Overall Avg Bias Line( state=0|1 )))
+**语法:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Linearity and Bias Results( 1, Show Overall Avg Bias Line( state=0|1 )))
 
 **说明:** 在图形中显示或隐藏总平均偏倚线。 默认开启。
 
@@ -2160,7 +2134,7 @@ obj << (EMP MSA Analysis[1] << Linearity and Bias Results(
 
 #### AIAG 量具 R&R 结果
 
-**语法:** obj << (EMP MSA Analysis[number] << "AIAG Gauge R&R Results"n( state=0|1 ))
+**语法:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; "AIAG Gauge R&R Results"n( state=0|1 ))
 
 **说明:** 显示或隐藏一个报表，它将测量值中的变异性划分为部件变异和测量系统变异。“再现性”的计算包括交互作用。
 
@@ -2189,7 +2163,7 @@ obj << (EMP MSA Analysis[1] << "AIAG Gauge R&R Results"n( 1 ));
 
 #### Apply Preset
 
-**语法:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**语法:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **说明:** 将以前创建的预设应用到对象，从而更新选项和定制以匹配保存的设置。
 
@@ -2227,7 +2201,7 @@ obj2 << (EMP MSA Analysis[1] << Apply Preset( preset ));
 
 #### Average Chart
 
-**语法:** obj << (EMP MSA Analysis[number] << Average Chart( state=0|1 ))
+**语法:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Average Chart( state=0|1 ))
 
 **说明:** 显示或隐藏部件和 X 变量的每个组合的平均测量值图。 默认开启。
 
@@ -2248,7 +2222,7 @@ obj << (EMP MSA Analysis[1] << Average Chart( 0 ));
 
 #### Bias Comparison
 
-**语法:** obj << (EMP MSA Analysis[number] << Bias Comparison( state=0|1 ))
+**语法:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Bias Comparison( state=0|1 ))
 
 **说明:** 显示或隐藏“均值分析”图，用于检验 X 变量是否具有不同的平均值。
 
@@ -2269,7 +2243,7 @@ obj << (EMP MSA Analysis[1] << Bias Comparison( 1 ));
 
 #### Dispersion Chart
 
-**语法:** obj << (EMP MSA Analysis[number] << Dispersion Chart( state=0|1 ))
+**语法:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Dispersion Chart( state=0|1 ))
 
 **说明:** 显示或隐藏指定的散度图。默认散度图是“极差图”。 默认开启。
 
@@ -2290,7 +2264,7 @@ obj << (EMP MSA Analysis[1] << Dispersion Chart( 0 ));
 
 #### EMP Results
 
-**语法:** obj << (EMP MSA Analysis[number] << EMP Results( state=0|1 ))
+**语法:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; EMP Results( state=0|1 ))
 
 **说明:** 显示或隐藏计算若干统计量的报表，以帮助您对测量系统进行评估和分类。
 
@@ -2311,7 +2285,7 @@ obj << (EMP MSA Analysis[1] << EMP Results( 1 ));
 
 #### EMP 量具 R&R 结果
 
-**语法:** obj << (EMP MSA Analysis[number] << "EMP Gauge R&R Results"n( state=0|1 ))
+**语法:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; "EMP Gauge R&R Results"n( state=0|1 ))
 
 **说明:** 显示或隐藏一个报表，它将测量值中的变异性划分为部件变异和测量系统变异。该报表中的计算基于方差而不是极差。
 
@@ -2332,7 +2306,7 @@ obj << (EMP MSA Analysis[1] << "EMP Gauge R&R Results"n( 1 ));
 
 #### Edit MSA Metadata
 
-**语法:** obj << (EMP MSA Analysis[number] << Linearity and Bias Results( state=0|1 ))
+**语法:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Linearity and Bias Results( state=0|1 ))
 
 **说明:** 打开一个窗口，允许您添加或编辑所有分析的容差范围、容差限值、历史均值和历史过程 sigma。报表将自动更新。
 
@@ -2359,7 +2333,7 @@ obj << (EMP MSA Analysis[1] << Edit MSA Metadata(
 
 #### Effective Resolution
 
-**语法:** obj << (EMP MSA Analysis[number] << Effective Resolution( state=0|1 ))
+**语法:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Effective Resolution( state=0|1 ))
 
 **说明:** 显示或隐藏包含测量系统分辨率结果的表，该表帮助您确定测量值增量是否合适。
 
@@ -2380,7 +2354,7 @@ obj << (EMP MSA Analysis[1] << Effective Resolution( 1 ));
 
 #### Linearity and Bias Results
 
-**语法:** obj << (EMP MSA Analysis[number] << Linearity and Bias Results( state=0|1 ))
+**语法:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Linearity and Bias Results( state=0|1 ))
 
 **说明:** 根据回归分析显示或隐藏图形和汇总，使用标准列作为 X 变量，偏倚作为 Y 变量。
 
@@ -2403,7 +2377,7 @@ obj << (EMP MSA Analysis[1] << Linearity and Bias Results( 1 ));
 
 #### Misclassification Probabilities
 
-**语法:** obj << (EMP MSA Analysis[number] << Misclassification Probabilties( state=0|1 ))
+**语法:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Misclassification Probabilties( state=0|1 ))
 
 **说明:** 显示或隐藏包含给定模型误分类概率的报表。
 
@@ -2451,7 +2425,7 @@ preset = obj << (EMP MSA Analysis[1] << New Preset);
 
 #### Parallelism Plots
 
-**语法:** obj << (EMP MSA Analysis[number] << Parallelism Plots( state=0|1 ))
+**语法:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Parallelism Plots( state=0|1 ))
 
 **说明:** 显示或隐藏反映每个部件的平均测量值的叠加图。
 
@@ -2472,7 +2446,7 @@ obj << (EMP MSA Analysis[1] << Parallelism Plots( 1 ));
 
 #### Shift Detection Profiler
 
-**语法:** obj << (EMP MSA Analysis[number] << Shift Detection Profiler( state=0|1 ))
+**语法:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Shift Detection Profiler( state=0|1 ))
 
 **说明:** 显示或隐藏一组交互式图，您可以调整它们以查看在过程行为图中得到警告的概率。
 
@@ -2493,7 +2467,7 @@ obj << (EMP MSA Analysis[1] << Shift Detection Profiler( 1 ));
 
 #### Show Monitor Classification Legend
 
-**语法:** obj << (EMP MSA Analysis[number] << Show Monitor Classification Legend( state=0|1 ))
+**语法:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Show Monitor Classification Legend( state=0|1 ))
 
 **说明:** 显示或隐藏“EMP 结果”报表中的监控等级图例。 默认开启。
 
@@ -2516,7 +2490,7 @@ obj << (EMP MSA Analysis[1] << Show Monitor Classification Legend( 0 ));
 
 #### Show Part Legend
 
-**语法:** obj << (EMP MSA Analysis[number] << Show Part Legend( state=0|1 ))
+**语法:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Show Part Legend( state=0|1 ))
 
 **说明:** 显示或隐藏平均图和散度图的部件图例。 默认开启。
 
@@ -2537,7 +2511,7 @@ obj << (EMP MSA Analysis[1] << Show Part Legend( 0 ));
 
 #### Show Shift Detection Profiler Legend
 
-**语法:** obj << (EMP MSA Analysis[number] << Show Shift Detection Profiler Legend( state=0|1 ))
+**语法:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Show Shift Detection Profiler Legend( state=0|1 ))
 
 **说明:** 显示或隐藏“偏移检测刻画器”中的图例。 默认开启。
 
@@ -2560,7 +2534,7 @@ obj << (EMP MSA Analysis[1] << Show Shift Detection Profiler Legend( 0 ));
 
 #### Test-Retest Error Comparison
 
-**语法:** obj << (EMP MSA Analysis[number] << "Test-Retest Error Comparison"n( state=0|1 ))
+**语法:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; "Test-Retest Error Comparison"n( state=0|1 ))
 
 **说明:** 显示或隐藏“方差均值分析”图或“极差均值分析”图，用于检验任何组是否具有不同的复测误差水平。
 
@@ -2581,7 +2555,7 @@ obj << (EMP MSA Analysis[1] << "Test-Retest Error Comparison"n( 1 ));
 
 #### Variance Components
 
-**语法:** obj << (EMP MSA Analysis[number] << Variance Components( state=0|1 ))
+**语法:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Variance Components( state=0|1 ))
 
 **说明:** 显示或隐藏包含给定模型的方差分量估计值的报表。
 

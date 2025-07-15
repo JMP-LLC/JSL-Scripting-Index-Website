@@ -6,7 +6,7 @@
 
 ### Action
 
-**構文:** obj << Action
+**構文:** obj &lt;&lt; Action
 
 **説明:** 評価する式を挿入するための、プラットフォーム内の汎用トラップドア。プラットフォームに一時的にディスプレイボックスおよびデータテーブルのコンテキストを設定する。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**構文:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**構文:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **説明:** 作成されたプリセットをオブジェクトに適用する。保存された設定に合わせてオプションとカスタマイズが更新される。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**構文:** obj << Automatic Recalc( state=0|1 )
+**構文:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **説明:** データの除外や変更があった場合に分析を自動的にやり直す。Automatic Recalcオプションがオンになっている場合で、データの除外や変更が再計算の前に確実に適用されるようにするには、Wait(0)コマンドを使用すること。
 
@@ -88,7 +88,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Column Switcher
 
-**構文:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**構文:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **説明:** プラットフォームの変数を変更するための設定パネルを追加する。
 
@@ -106,7 +106,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy Script
 
-**構文:** obj << Copy Script
+**構文:** obj &lt;&lt; Copy Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -122,7 +122,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**構文:** obj << Data Table Window
+**構文:** obj &lt;&lt; Data Table Window
 
 **説明:** この分析に使用したデータテーブルのウィンドウを手前に表示する。
 
@@ -138,7 +138,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**構文:** obj << Get By Levels
+**構文:** obj &lt;&lt; Get By Levels
 
 **説明:** By列が指定されている場合、列名をキー、データ値を値とした連想配列を戻す。
 
@@ -155,7 +155,7 @@ biv << Get By Levels;
 
 ### Get Container
 
-**構文:** obj << Get Container
+**構文:** obj &lt;&lt; Get Container
 
 **説明:** オブジェクトのコンテンツを含んだコンテナボックスの参照を戻す。
 
@@ -203,7 +203,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**構文:** obj << Get Data Table
+**構文:** obj &lt;&lt; Get Data Table
 
 **説明:** データテーブルへの参照を戻す。
 
@@ -220,7 +220,7 @@ Show( N Rows( t ) );
 
 ### Get Script
 
-**構文:** obj << Get Script
+**構文:** obj &lt;&lt; Get Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -237,7 +237,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**構文:** obj << Get Script With Data Table
+**構文:** obj &lt;&lt; Get Script With Data Table
 
 **説明:** この分析を再現するスクリプト(JSL)をデータテーブルへの参照も含めて生成し、それを式として戻す。
 
@@ -254,7 +254,7 @@ Show( t );
 
 ### Get Timing
 
-**構文:** obj << Get Timing
+**構文:** obj &lt;&lt; Get Timing
 
 **説明:** プラットフォームの起動にかかった時間を取得する。
 
@@ -271,7 +271,7 @@ Show( t );
 
 ### Get Web Support
 
-**構文:** obj << Get Web Support
+**構文:** obj &lt;&lt; Get Web Support
 
 **説明:** ディスプレイオブジェクトにおけるインタラクティブHTMLサポートのレベルを数値で戻す。1は、一部または全部の要素がサポートされていることを示し、0は、サポートされないことを示す。
 
@@ -287,7 +287,7 @@ Show( s );
 
 ### Get Where Expr
 
-**構文:** obj << Get Where Expr
+**構文:** obj &lt;&lt; Get Where Expr
 
 **説明:** プラットフォームがBy()またはWhere()を使って起動された場合に、データをサブセットするためのWhere式を戻す。By()やWhere()が使われていない場合はEmpty()を戻す。
 
@@ -324,7 +324,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**構文:** obj << Local Data Filter
+**構文:** obj &lt;&lt; Local Data Filter
 
 **説明:** このプラットフォームに対してのみ有効なフィルタで、データを特定のグループまたは範囲にフィルタリングする。
 
@@ -380,7 +380,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**構文:** obj << Paste Local Data Filter
+**構文:** obj &lt;&lt; Paste Local Data Filter
 
 **説明:** クリップボードにあるローカルデータフィルタを現在のレポートに適用する。
 
@@ -401,7 +401,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**構文:** obj << Redo Analysis
+**構文:** obj &lt;&lt; Redo Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -417,7 +417,7 @@ obj << Redo Analysis;
 
 ### Relaunch Analysis
 
-**構文:** obj << Relaunch Analysis
+**構文:** obj &lt;&lt; Relaunch Analysis
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -433,7 +433,7 @@ obj << Relaunch Analysis;
 
 ### Remove Column Switcher
 
-**構文:** obj << Remove Column Switcher
+**構文:** obj &lt;&lt; Remove Column Switcher
 
 **説明:** プラットフォームに最後に追加された列スイッチャーを削除する。
 
@@ -453,7 +453,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**構文:** obj << Remove Local Data Filter
+**構文:** obj &lt;&lt; Remove Local Data Filter
 
 **説明:** すでに作成されているローカルデータフィルタを削除し、プラットフォームはデータテーブル内のすべてのデータを使用した状態に戻る。
 
@@ -492,9 +492,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**構文:** obj << Report;
-
-Report( obj )
+**構文:** obj &lt;&lt; Report;Report( obj )
 
 **説明:** レポートオブジェクトへの参照を戻す。
 
@@ -512,7 +510,7 @@ Show( t );
 
 ### Report View
 
-**構文:** obj << Report View( "完全"|"要約" )
+**構文:** obj &lt;&lt; Report View( "完全"|"要約" )
 
 **説明:** レポートビューは、プラットフォームレポートの詳細を表示するかどうかを決定する。Fullはすべての詳細を表示し、Summaryはプラットフォームにより限定されたものだけを表示する。 動作をカスタマイズするため、各ディスプレイボックスは<<Set Summary Behaviorメッセージをサポートする。
 
@@ -528,7 +526,7 @@ obj << Report View( "Summary" );
 
 ### Save Script for All Objects
 
-**構文:** obj << Save Script for All Objects
+**構文:** obj &lt;&lt; Save Script for All Objects
 
 **説明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -544,7 +542,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**構文:** obj << Save Script for All Objects To Data Table( <name> )
+**構文:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **説明:** すべてのレポートオブジェクトを再現するスクリプトを現在のデータテーブルに保存する。このオプションは、ウィンドウ内にレポートが複数ある場合に便利。作成されるスクリプトの名前は、引用符で囲んで指定しない限り、1つ目のプラットフォーム名となる。
 
@@ -584,7 +582,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**構文:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** この分析を再現するJSLスクリプトを生成し、データテーブルのテーブルプロパティとして保存する。
 
@@ -600,7 +598,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**構文:** obj << Save Script to Journal
+**構文:** obj &lt;&lt; Save Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -616,7 +614,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**構文:** obj << Save Script to Report
+**構文:** obj &lt;&lt; Save Script to Report
 
 **説明:** この分析を再現するJSLスクリプトを生成し、レポートウィンドウに表示する。分析手順の記録を結果と一緒に残せる。
 
@@ -632,7 +630,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**構文:** obj << Save Script to Script Window
+**構文:** obj &lt;&lt; Save Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -713,7 +711,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**構文:** obj << Sync to Data Table Changes
+**構文:** obj &lt;&lt; Sync to Data Table Changes
 
 **説明:** 除外やデータの変更が行われた場合に同期する。
 
@@ -730,7 +728,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**構文:** obj << Title( "new title" )
+**構文:** obj &lt;&lt; Title( "new title" )
 
 **説明:** プラットフォームのタイトルを設定する。
 
@@ -746,7 +744,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**構文:** obj << Top Report
+**構文:** obj &lt;&lt; Top Report
 
 **説明:** レポート内のルートノードへの参照を戻す。
 
@@ -764,7 +762,7 @@ Show( t );
 
 ### View Web XML
 
-**構文:** obj << View Web XML
+**構文:** obj &lt;&lt; View Web XML
 
 **説明:** インタラクティブHTMLレポートの作成に使うXMLコードを戻す。
 
@@ -781,7 +779,7 @@ xml = obj << View Web XML;
 
 ### Control Chart Builder
 
-**構文:** Control Chart Builder( Class( "Shewhart Variables"|"Shewhart Attribute"|"Short Run"|"Rare Event" ), Variables( variables ), <Chart( Position( number ), Points( Statistic( "statistic" ), <points options> ), Limits( Sigma( "sigma" ), <limits options> )> ) ) )
+**構文:** Control Chart Builder( Class( "Shewhart Variables"|"Shewhart Attribute"|"Short Run"|"Rare Event" ), Variables( variables ), &lt;Chart( Position( number ), Points( Statistic( "statistic" ), &lt;points options&gt; ), Limits( Sigma( "sigma" ), &lt;limits options&gt; )&gt; ) ) )
 
 **説明:** 工程の安定性や予測可能性を特定するための管理図をインタラクティブに作成できるようにする。[管理図ビルダー]プラットフォームで作成できる管理図は、IMR、XBar、短期操業管理図、ランチャート、P、NP、C、U、Laney P&apos;、Laney U&apos;、Levey-Jennings、平均のIMR管理図、三元管理図、まれなイベントの管理図。
 
@@ -1304,7 +1302,7 @@ obj = dt << Control Chart Builder(
 
 ### Add Limits
 
-**構文:** obj << Chart( Position( number ), Add Limits( {LCL( number ), Avg( number ), UCL( number )} ) )
+**構文:** obj &lt;&lt; Chart( Position( number ), Add Limits( {LCL( number ), Avg( number ), UCL( number )} ) )
 
 **説明:** 管理図に、管理限界を追加する。追加された管理限界は破線で表示される。
 
@@ -1321,7 +1319,7 @@ obj << Chart( Position( 1 ), Add Limits( {LCL( 17.5 ), Avg( 20.25 ), UCL( 23 )} 
 
 ### Add Spec Limits
 
-**構文:** obj << Chart( Position( number ), Add Spec Limits( {LSL( number ), Target( number ), USL( number )} ) )
+**構文:** obj &lt;&lt; Chart( Position( number ), Add Spec Limits( {LSL( number ), Target( number ), USL( number )} ) )
 
 **説明:** 各Y変数の仕様限界を設定する。
 
@@ -1338,7 +1336,7 @@ obj << Chart( Position( 1 ), Add Spec Limits( {LSL( 18 ), Target( 20.1 ), USL( 2
 
 ### Alarm Script
 
-**構文:** obj << Alarm Script( Write( "..." )|Speak( "..." )|Mail( address, subject,"..." ) )
+**構文:** obj &lt;&lt; Alarm Script( Write( "..." )|Speak( "..." )|Mail( address, subject,"..." ) )
 
 **説明:** 管理図上の点がテストで不合格になるたびにメッセージを送信する。メッセージは、ログに送ったり、音声で伝えたり、メールで送ったりすることができる。
 
@@ -1369,7 +1367,7 @@ obj << Alarm Script(
 
 ### Chart
 
-**構文:** obj << Chart( Position( number ), <Points( Statistic(),... )>, <Set Control Limits( { LCL(), UCL(), Avg() } )>, <Add Limits( { LCL(), UCL(), Avg() } )>, <Add Spec Limits( { LSL(), USL(), Target() } )>, <Limits( Sigma(), ... )>, <Warnings( Test number( state=0|1 ) )> )
+**構文:** obj &lt;&lt; Chart( Position( number ), &lt;Points( Statistic(),... )&gt;, &lt;Set Control Limits( { LCL(), UCL(), Avg() } )&gt;, &lt;Add Limits( { LCL(), UCL(), Avg() } )&gt;, &lt;Add Spec Limits( { LSL(), USL(), Target() } )&gt;, &lt;Limits( Sigma(), ... )&gt;, &lt;Warnings( Test number( state=0|1 ) )&gt; )
 
 **説明:** Position引数で指定された管理図に対して、警告、限界、および点の属性を設定する。
 
@@ -1397,7 +1395,7 @@ obj = dt << Control Chart Builder(
 
 ### Class
 
-**構文:** obj << Class( "Shewhart Variables"|"Shewhart Attribute"|"Short Run"|"Rare Event" )
+**構文:** obj &lt;&lt; Class( "Shewhart Variables"|"Shewhart Attribute"|"Short Run"|"Rare Event" )
 
 **説明:** 点の種類やシグマの計算方法についての種類クラスを指定する。
 
@@ -1417,7 +1415,7 @@ obj = dt << Control Chart Builder(
 
 ### Color By Product
 
-**構文:** obj << Color By Product( state=0|1 )
+**構文:** obj &lt;&lt; Color By Product( state=0|1 )
 
 **説明:** 「製品/部品」列の水準ごとに点を色分けする。 デフォルトではオン。
 
@@ -1438,7 +1436,7 @@ obj << Color By Product( 1 );
 
 ### Connect Thru Missing
 
-**構文:** obj << Connect Thru Missing( state=0|1 )
+**構文:** obj &lt;&lt; Connect Thru Missing( state=0|1 )
 
 **説明:** 標本に欠測値や除外されている行がある場合に、それらの欠測の区間で、非欠測の点を折れ線でつなぐかどうかを指定する。
 
@@ -1456,7 +1454,7 @@ obj << Connect Thru Missing( 1 );
 
 ### Customize Tests
 
-**構文:** obj << Customize Tests( Test 1 | Test 2 | Test 3 | Test 4 | Test 5 | Test 6 | Test 7 | Test 8 (n, label) )
+**構文:** obj &lt;&lt; Customize Tests( Test 1 | Test 2 | Test 3 | Test 4 | Test 5 | Test 6 | Test 7 | Test 8 (n, label) )
 
 **説明:** Western Electricテストに対して、テストの選択、ラベルのカスタマイズ、シグマを何倍するかの設定を行う。
 
@@ -1476,7 +1474,7 @@ obj = dt << Control Chart Builder(
 
 ### Fit to Window
 
-**構文:** obj << Fit to Window( "自動"|"オン"|"オフ"|"縦横比を保持"="オフ" )
+**構文:** obj &lt;&lt; Fit to Window( "自動"|"オン"|"オフ"|"縦横比を保持"="オフ" )
 
 **説明:** レポートの自動伸縮の動作を設定する。 デフォルトの値は"オフ"。
 
@@ -1492,7 +1490,7 @@ obj << Fit to Window( "On" );
 
 ### Get Control Limits
 
-**構文:** obj << Get Control Limits( filename )
+**構文:** obj &lt;&lt; Get Control Limits( filename )
 
 **説明:** 選択されたデータテーブルから管理限界を読み込み、管理図の管理限界に設定する。
 
@@ -1514,7 +1512,7 @@ obj << Get Control Limits( "$SAMPLE_DATA/Quality Control/CoatingLimits.jmp" );
 
 ### Get Product Statistics
 
-**構文:** obj << Get Product Statistics( filename )
+**構文:** obj &lt;&lt; Get Product Statistics( filename )
 
 **説明:** 指定のデータテーブルから、短期操業管理図の目標値とシグマの値を読み込む。
 
@@ -1535,7 +1533,7 @@ obj << Get Product Statistics( "$SAMPLE_DATA/Quality Control/CoatingProductInfo.
 
 ### Get Spec Limits
 
-**構文:** obj << Get Spec Limits( filename )
+**構文:** obj &lt;&lt; Get Spec Limits( filename )
 
 **説明:** ファイルに保存されている仕様限界を読み込む。
 
@@ -1552,7 +1550,7 @@ obj << Get Spec Limits( "$SAMPLE_DATA/CitySpecLimits.jmp" );
 
 ### Graph Borders
 
-**構文:** obj << Graph Borders( state=0|1 )
+**構文:** obj &lt;&lt; Graph Borders( state=0|1 )
 
 **説明:** グラフパネル間のスペースに対して、境界線の表示/非表示を切り替える。
 
@@ -1573,7 +1571,7 @@ obj << Graph Borders( 1 );
 
 ### Graph Spacing
 
-**構文:** obj << Graph Spacing( gap=2 )
+**構文:** obj &lt;&lt; Graph Spacing( gap=2 )
 
 **説明:** グラフパネル間のスペースに対して、その幅を指定する。 デフォルトの値は"2"。
 
@@ -1592,7 +1590,7 @@ obj << Graph Spacing( 5 );
 
 ### Graph Spacing Color
 
-**構文:** obj << Graph Spacing Color( color )
+**構文:** obj &lt;&lt; Graph Spacing Color( color )
 
 **説明:** グラフパネル間のスペースに対して、その色を指定する。
 
@@ -1611,7 +1609,7 @@ obj << Graph Spacing Color( "Red" );
 
 ### Graph Spacing Transparency
 
-**構文:** obj << Graph Spacing Transparency( number )
+**構文:** obj &lt;&lt; Graph Spacing Transparency( number )
 
 **説明:** グラフパネル間のスペースに対して、その透明度を指定する。値は0～1。
 
@@ -1630,7 +1628,7 @@ obj << Graph Spacing Transparency( 0.3 );
 
 ### Include Missing Categories
 
-**構文:** obj << Include Missing Categories( state=0|1 )
+**構文:** obj &lt;&lt; Include Missing Categories( state=0|1 )
 
 **説明:** 名義尺度および順序尺度の変数に欠測値がある場合、それを1つの水準として扱う。 デフォルトではオン。
 
@@ -1649,7 +1647,7 @@ obj << Include Missing Categories( 0 );
 
 ### K Sigma
 
-**構文:** obj << K Sigma( value=3 )
+**構文:** obj &lt;&lt; K Sigma( value=3 )
 
 **説明:** Kの値を設定する。Kにシグマを掛けた値を平均に加えた値と、平均から引いた値が管理限界となる。 デフォルトの値は"3"。
 
@@ -1670,7 +1668,7 @@ obj << K Sigma( 3 );
 
 ### Limits
 
-**構文:** obj << Chart( Position( number ), Limits( Sigma( "sigma" ), <Zones( state=0|1 )>, <Shade Zones( state=0|1 )>, <Set Control Limits( state=0|1 )>, <Show Upper Limit( state=0|1 )>, <Show Lower Limit( state=0|1 )>, <Show Center Line( state=0|1 )> ) )
+**構文:** obj &lt;&lt; Chart( Position( number ), Limits( Sigma( "sigma" ), &lt;Zones( state=0|1 )&gt;, &lt;Shade Zones( state=0|1 )&gt;, &lt;Set Control Limits( state=0|1 )&gt;, &lt;Show Upper Limit( state=0|1 )&gt;, &lt;Show Lower Limit( state=0|1 )&gt;, &lt;Show Center Line( state=0|1 )&gt; ) )
 
 **説明:** 管理図における管理限界の属性を変更するオプションが表示される。sigma引数には、管理図の種類に応じて次のいずれかの値を割り当てることができる: 範囲、標準偏差、移動範囲、メディアン移動範囲、Levey-Jennings、Poisson(C, U)、二項(P, NP)、負の二項(G)、Weibull (T)、Laney(P’)、Laney(U’)。
 
@@ -1694,7 +1692,7 @@ obj << Chart(
 
 ### Limits Label Precision
 
-**構文:** obj << Limits Label Precision( number )
+**構文:** obj &lt;&lt; Limits Label Precision( number )
 
 **説明:** 管理限界の表示精度を指定する。この表示精度は、データに対する相対的な大きさである。
 
@@ -1714,7 +1712,7 @@ obj << Limits Label Precision( 5 );
 
 ### OC Curve
 
-**構文:** obj << OC Curve
+**構文:** obj &lt;&lt; OC Curve
 
 **説明:** 管理図の管理限界とシグマから計算した検査特性曲線(OC曲線)を新しいウィンドウに表示する。
 
@@ -1730,7 +1728,7 @@ obj << OC Curve;
 
 ### Points
 
-**構文:** obj << Chart( Position( number ), Points( Statistic( "statistic" ), <Individual Points( state=0|1 )>, <Box Plots( state=0|1 )>, <Show Connect Line( state=0|1 )>, <Show Points( state=0|1 )> ) )
+**構文:** obj &lt;&lt; Chart( Position( number ), Points( Statistic( "statistic" ), &lt;Individual Points( state=0|1 )&gt;, &lt;Box Plots( state=0|1 )&gt;, &lt;Show Connect Line( state=0|1 )&gt;, &lt;Show Points( state=0|1 )&gt; ) )
 
 **説明:** 管理図における点の属性を変更するオプションが表示される。statistic引数には、管理図の種類に応じて次においずれかの値を割り当てることができる: 平均、範囲、標準偏差、平均(移動範囲)、標準偏差(移動範囲)、個々の測定値、移動範囲、度数、割合、中心化、標準化、中心化(範囲)範囲、標準化(範囲)。
 
@@ -1752,7 +1750,7 @@ obj << Chart( Position( 2 ), Points( Statistic( "Standard Deviation" ) ) );
 
 ### Product Statistics
 
-**構文:** obj << Product Statistics( ( column ) ( Product Level( l1 ( Target( number ), Sigma ( number ) ), <l2 ( Target( number ), Sigma ( number ) )) ), < (column ( Product Level( ... ) ) ) > )
+**構文:** obj &lt;&lt; Product Statistics( ( column ) ( Product Level( l1 ( Target( number ), Sigma ( number ) ), &lt;l2 ( Target( number ), Sigma ( number ) )) ), &lt; (column ( Product Level( ... ) ) ) &gt; )
 
 **説明:** 短期操業におけるの製品の目標値とシグマを設定する。
 
@@ -1775,7 +1773,7 @@ obj << Product Statistics(
 
 ### Range Span
 
-**構文:** obj << Range Span( value=2 )
+**構文:** obj &lt;&lt; Range Span( value=2 )
 
 **説明:** 移動範囲管理図で使用する[移動範囲の区間]オプションの値を設定する。 デフォルトの値は"2"。
 
@@ -1793,7 +1791,7 @@ obj << Range Span( 3 );
 
 ### Rerun All Tests
 
-**構文:** obj << Rerun All Tests
+**構文:** obj &lt;&lt; Rerun All Tests
 
 **説明:** 現在選択されているテストと関連する警告スクリプトをすべて再実行する。
 
@@ -1827,7 +1825,7 @@ obj << Rerun All Tests;
 
 ### Save Control Limits
 
-**構文:** obj << Save Control Limits( "列に"|"新しいテーブルに"|"新しい縦長形式テーブルに" )
+**構文:** obj &lt;&lt; Save Control Limits( "列に"|"新しいテーブルに"|"新しい縦長形式テーブルに" )
 
 **説明:** 列プロパティまたは新しいデータテーブルに管理限界を保存する。
 
@@ -1854,7 +1852,7 @@ obj << Save Control Limits( "in New Table" );
 
 ### Save Product Statistics
 
-**構文:** obj << Save Product Statistics
+**構文:** obj &lt;&lt; Save Product Statistics
 
 **説明:** 列を新しいデータテーブルに保存する。新しいデータテーブルには、「部品/製品」列の水準ごとに、製品の統計量(目標値とシグマ)が含まれる。
 
@@ -1875,7 +1873,7 @@ obj << Save Product Statistics;
 
 ### Save Spec Limits
 
-**構文:** obj << Save Spec Limits
+**構文:** obj &lt;&lt; Save Spec Limits
 
 **説明:** 仕様限界を新しいデータテーブルに保存する。このオプションは、「仕様限界」列プロパティ、JSLのGet Spec Limitsによるファイルの読み込み、または仕様限界の設定を使って、仕様限界を設定した場合のみ使用可能。
 
@@ -1893,7 +1891,7 @@ obj << Save Spec Limits;
 
 ### Save Summaries
 
-**構文:** obj << Save Summaries
+**構文:** obj &lt;&lt; Save Summaries
 
 **説明:** 各管理図の新しいデータテーブルを保存する。データテーブルには、各標本に対応する行と、標本ラベル・標本サイズに対応する行、また、「製品/部品」列が指定されている場合は製品の水準の列が含まれる。管理図ごとに、プロットされた個々の点、管理図の種類、UCL、平均、LCL、および選択したテストで検出されたものの列も含まれる。
 
@@ -1911,7 +1909,7 @@ obj << Save Summaries;
 
 ### Set Control Limits
 
-**構文:** obj << Chart( Position( number ), Set Control Limits( {LCL( number ), Avg( number ), UCL( number )} ) )
+**構文:** obj &lt;&lt; Chart( Position( number ), Set Control Limits( {LCL( number ), Avg( number ), UCL( number )} ) )
 
 **説明:** 指定した管理図に対して、管理限界を設定する。
 
@@ -1928,7 +1926,7 @@ obj << Chart( Position( 1 ), Set Control Limits( {LCL( 19 ), Avg( 20 ), UCL( 21 
 
 ### Set Last N Subgroups
 
-**構文:** obj << Set Last N Subgroups( number )
+**構文:** obj &lt;&lt; Set Last N Subgroups( number )
 
 **説明:** 横軸を変更して、グラフ上の最後にある指定した数のサブグループだけが表示されるようにする。除外された行や非表示の行は、指定した数のサブグループにはカウントされない。複数の水準を持つフェーズ変数がある場合、このオプションは使用できない。
 
@@ -1946,7 +1944,7 @@ obj << Set Last n Subgroups( 5 );
 
 ### Set Sigma
 
-**構文:** obj << Set Sigma( value )
+**構文:** obj &lt;&lt; Set Sigma( value )
 
 **説明:** 管理図で使用するシグマの値を設定する。
 
@@ -1965,7 +1963,7 @@ obj << Set Sigma( 1.8 );
 
 ### Set Subgroup Size
 
-**構文:** obj << Set Subgroup Size(  integer  )
+**構文:** obj &lt;&lt; Set Subgroup Size( integer )
 
 **説明:** 1サブグループあたりの行数を指定する。
 
@@ -1982,7 +1980,7 @@ obj << Set Subgroup Size( 4 );
 
 ### Show Alarm Report
 
-**構文:** obj << Show Alarm Report( state=0|1 )
+**構文:** obj &lt;&lt; Show Alarm Report( state=0|1 )
 
 **説明:** 警告が出されている標本の個数と割合を示した表を表示する。
 
@@ -2000,7 +1998,7 @@ obj << Show Alarm Report( 1 );
 
 ### Show Capability
 
-**構文:** obj << Show Capability( state=0|1 )
+**構文:** obj &lt;&lt; Show Capability( state=0|1 )
 
 **説明:** 「工程能力分析」レポートの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2025,7 +2023,7 @@ obj << Show Capability( 0 );
 
 ### Show Center Line
 
-**構文:** obj << Chart( Position( number ),  Limits( Show Center Line( state=0|1 ) ) )
+**構文:** obj &lt;&lt; Chart( Position( number ), Limits( Show Center Line( state=0|1 ) ) )
 
 **説明:** 中心線の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2042,7 +2040,7 @@ obj << Chart( Position( 1 ), Limits( Show Center Line( 0 ) ) );
 
 ### Show Control Panel
 
-**構文:** obj << Show Control Panel( state=0|1 )
+**構文:** obj &lt;&lt; Show Control Panel( state=0|1 )
 
 **説明:** 設定パネルの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2061,7 +2059,7 @@ obj << Show Control Panel( 0 );
 
 ### Show Excluded Region
 
-**構文:** obj << Show Excluded Region( state=0|1 )
+**構文:** obj &lt;&lt; Show Excluded Region( state=0|1 )
 
 **説明:** 標本が除外されている領域を表示または非表示にする。 デフォルトではオン。
 
@@ -2082,7 +2080,7 @@ obj << Show Excluded Region( 0 );
 
 ### Show Limit Labels
 
-**構文:** obj << Show Limit Labels( state=0|1 )
+**構文:** obj &lt;&lt; Show Limit Labels( state=0|1 )
 
 **説明:** グラフ内の限界値のラベルの表示/非表示を切り替える。
 
@@ -2100,7 +2098,7 @@ obj << Show Limit Labels( 1 );
 
 ### Show Limit Summaries
 
-**構文:** obj << Show Limit Summaries( state=0|1 )
+**構文:** obj &lt;&lt; Show Limit Summaries( state=0|1 )
 
 **説明:** 「限界の要約」レポートを表示する。このレポートには、管理限界(LCLとUCL)、中心線(平均)が表示される。他にも、プロットされている点の統計量の名前、管理限界の計算方法、および、管理図の標本サイズも表示される。 デフォルトではオン。
 
@@ -2119,7 +2117,7 @@ obj << Show Limit Summaries( 0 );
 
 ### Show Lower Limit
 
-**構文:** obj << Chart( Position( number ),  Limits( Show Lower Limit( state=0|1 ) ) )
+**構文:** obj &lt;&lt; Chart( Position( number ), Limits( Show Lower Limit( state=0|1 ) ) )
 
 **説明:** 下側管理限界の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2138,7 +2136,7 @@ obj = dt << Control Chart Builder(
 
 ### Show Product Separators
 
-**構文:** obj << Show Product Separators( state=0|1 )
+**構文:** obj &lt;&lt; Show Product Separators( state=0|1 )
 
 **説明:** グラフに、製品の変更を示す縦の点線を表示する。 デフォルトではオン。
 
@@ -2159,7 +2157,7 @@ obj << Show Product Separators( 0 );
 
 ### Show Sigma Report
 
-**構文:** obj << Show Sigma Report( state=0|1 )
+**構文:** obj &lt;&lt; Show Sigma Report( state=0|1 )
 
 **説明:** 全体シグマ・群内シグマ・安定指数・平均の表を表示する。三元管理図の場合は、「群間シグマ」と「群間+群内シグマ」も表示する。
 
@@ -2177,7 +2175,7 @@ obj << Show Sigma Report( 1 );
 
 ### Show Two Shewhart or Short Run Charts
 
-**構文:** obj << Show Two Shewhart or Short Run Charts( state=0|1 )
+**構文:** obj &lt;&lt; Show Two Shewhart or Short Run Charts( state=0|1 )
 
 **説明:** 位置図とばらつき図の両方を表示する。値が0の場合、ばらつき図は表示されない。 デフォルトではオン。
 
@@ -2196,7 +2194,7 @@ obj = dt << Control Chart Builder(
 
 ### Show Upper Limit
 
-**構文:** obj << Chart( Position( number ),  Limits( Show Upper Limit( state=0|1 ) ) )
+**構文:** obj &lt;&lt; Chart( Position( number ), Limits( Show Upper Limit( state=0|1 ) ) )
 
 **説明:** 上側管理限界の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2215,7 +2213,7 @@ obj = dt << Control Chart Builder(
 
 ### Size
 
-**構文:** obj << Size( width, height )
+**構文:** obj &lt;&lt; Size( width, height )
 
 **説明:** グラフのサイズを設定する。
 
@@ -2233,7 +2231,7 @@ obj << Size( 808, 586 );
 
 ### Sort by Subgroup
 
-**構文:** obj << Sort by Subgroup( state=0|1 )
+**構文:** obj &lt;&lt; Sort by Subgroup( state=0|1 )
 
 **説明:** 計算を行う前に、サブグループ変数、または枝分かれサブグループ変数の組み合わせによって工程データを並べ替える。このオプションは、サブグループ変数が指定されている場合のみ利用可能。
 
@@ -2253,7 +2251,7 @@ obj << Sort by Subgroup( 1 );
 
 ### Test Excluded Subgroups
 
-**構文:** obj << Test Excluded Subgroups( state=0|1 )
+**構文:** obj &lt;&lt; Test Excluded Subgroups( state=0|1 )
 
 **説明:** 完全に除外されているサブグループを、テストの計算に含めるかどうかを指定する。このオプションは、[除外されている領域を表示]オプションが選択されている場合にのみ使用できる。 デフォルトではオン。
 
@@ -2277,7 +2275,7 @@ dt << Select Rows( Index( 21, 24 ) ) << Exclude;
 
 ### Use Event Chooser
 
-**構文:** obj << Use Event Chooser( state=0|1 )
+**構文:** obj &lt;&lt; Use Event Chooser( state=0|1 )
 
 **説明:** 順序尺度の数値データに対して、イベントの選択を行うチェックボックスを並べたGUIを表示する。。なお、この[イベントの選択を使用]オプションは、連続尺度でない数値のY変数を使った計数値管理図にのみ使用できる。
 
@@ -2312,7 +2310,7 @@ obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
 
 ### Variables
 
-**構文:** obj << Variables( Y( column ), <Subgroup( column)>, <Phase( column )>, <Part( column )> )
+**構文:** obj &lt;&lt; Variables( Y( column ), &lt;Subgroup( column)&gt;, &lt;Phase( column )&gt;, &lt;Part( column )&gt; )
 
 **説明:** 各列に役割を割り当てる。
 
@@ -2329,7 +2327,7 @@ obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
 
 ### n Trials
 
-**構文:** obj << n Trials( column | integer )
+**構文:** obj &lt;&lt; n Trials( column | integer )
 
 **説明:** 計数値管理図において、ロットサイズを割り当てる。
 

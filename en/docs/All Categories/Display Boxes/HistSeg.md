@@ -6,7 +6,7 @@
 
 ### Hist Seg
 
-**Syntax:** b = Hist Seg([data], <[freq data]>,<[weight data]>, <vertical=0|1>, <Row States()>)
+**Syntax:** b = Hist Seg([data], &lt;[freq data]&gt;,&lt;[weight data]&gt;, &lt;vertical=0|1&gt;, &lt;Row States()&gt;)
 
 **Description:** Returns a hist seg.
 
@@ -32,7 +32,7 @@ seg = (frame << Find Seg( Hist Seg( 1 ) ));
 
 ### Child
 
-**Syntax:** seg2 = obj << Child
+**Syntax:** seg2 = obj &lt;&lt; Child
 
 **Description:** Returns the first child of the display seg.
 
@@ -57,7 +57,7 @@ seg << Child; // not many segs support children
 
 ### Class Name
 
-**Syntax:** classname = obj << Class Name
+**Syntax:** classname = obj &lt;&lt; Class Name
 
 **Description:** Returns the name of the display class for the display seg.
 
@@ -82,7 +82,7 @@ seg << Class Name;
 
 ### Clip Shape
 
-**Syntax:** seg << Clip Shape(Boundaries(Shape File, [ID(string)]) | Path([string] | [matrix]) | Empty())
+**Syntax:** seg &lt;&lt; Clip Shape(Boundaries(Shape File, [ID(string)]) | Path([string] | [matrix]) | Empty())
 
 **Description:** Clips the geometry by the given shape. The shape can be specified using a shape file or a path. An optional ID can be specified with a shape file to select a single shape from the file, otherwise the union of all shapes is used as the clipping region. A clipping path can be specified with an N x 3 matrix or with a text representation. A path matrix has three columns for x, y, and flags for each point in the path. The flag values are 0 for control, 1 for move, 2 for line segment, 3 for cubic Bézier segment, and are negative if the point also closes the path. Path text supports SVG syntax.
 
@@ -110,7 +110,7 @@ cs << Clip Shape( Boundaries( "US States" ) );
 
 ### Delete
 
-**Syntax:** obj << Delete
+**Syntax:** obj &lt;&lt; Delete
 
 **Description:** Delete the display seg.
 
@@ -135,7 +135,7 @@ seg << Delete;
 
 ### Frame
 
-**Syntax:** FrameBox = obj << Frame
+**Syntax:** FrameBox = obj &lt;&lt; Frame
 
 **Description:** Returns the frame box that the display seg is in.
 
@@ -160,7 +160,7 @@ seg << Frame;
 
 ### Get Clip Shape
 
-**Syntax:** obj << Get Clip Shape
+**Syntax:** obj &lt;&lt; Get Clip Shape
 
 **Description:** Returns the current clipping shape
 
@@ -189,7 +189,7 @@ cs << Get Clip Shape();
 
 ### Get Description
 
-**Syntax:** description = obj << Get Description
+**Syntax:** description = obj &lt;&lt; Get Description
 
 **Description:** Gets the description for the display seg.
 
@@ -214,7 +214,7 @@ seg << get description();
 
 ### Get Fill Pattern
 
-**Syntax:** obj << Get Fill Pattern
+**Syntax:** obj &lt;&lt; Get Fill Pattern
 
 ```jsl
 
@@ -237,7 +237,7 @@ seg << Get Fill Pattern;
 
 ### Get Line Color
 
-**Syntax:** color = obj << Get Line Color( color )
+**Syntax:** color = obj &lt;&lt; Get Line Color( color )
 
 **Description:** Gets the color of the bar outlines.
 
@@ -262,7 +262,7 @@ seg << Get Line Color;
 
 ### Get Line Style
 
-**Syntax:** linestyle = obj << Get Line Style( pen style )
+**Syntax:** linestyle = obj &lt;&lt; Get Line Style( pen style )
 
 **Description:** Gets the line style of the bar outlines.
 
@@ -287,7 +287,7 @@ seg << Get Line Style;
 
 ### Get Line Width
 
-**Syntax:** integer = obj << Get Line Width( number )
+**Syntax:** integer = obj &lt;&lt; Get Line Width( number )
 
 **Description:** Gets the width of the bar outlines
 
@@ -312,7 +312,7 @@ seg << Get Line Width;
 
 ### Get Transparency
 
-**Syntax:** 0.0 to 1.0 = obj << Get Transparency( number )
+**Syntax:** 0.0 to 1.0 = obj &lt;&lt; Get Transparency( number )
 
 **Description:** Gets the transparency for the hist seg.
 
@@ -337,7 +337,7 @@ seg << Get Transparency;
 
 ### Histogram Color
 
-**Syntax:** obj << Histogram Color( color )
+**Syntax:** obj &lt;&lt; Histogram Color( color )
 
 **Description:** Sets the color of the histogram bars.
 
@@ -362,7 +362,7 @@ seg << Histogram Color( "Red" );
 
 ### Line Color
 
-**Syntax:** obj << Line Color( color )
+**Syntax:** obj &lt;&lt; Line Color( color )
 
 **Description:** Sets the color of the bar outlines.
 
@@ -387,7 +387,7 @@ seg << Set Line Color( "Green" );
 
 ### Line Style
 
-**Syntax:** obj << Line Style( linestyle )
+**Syntax:** obj &lt;&lt; Line Style( linestyle )
 
 **Description:** Sets the line style of the bar outlines.
 
@@ -412,7 +412,7 @@ seg << Set Line Style( "dashed" );
 
 ### Line Width
 
-**Syntax:** obj << Line Width( integer )
+**Syntax:** obj &lt;&lt; Line Width( integer )
 
 **Description:** Sets the width of the bar outlines
 
@@ -437,7 +437,7 @@ seg << Set Line Width( 3 );
 
 ### Parent
 
-**Syntax:** seg2 = obj << Parent
+**Syntax:** seg2 = obj &lt;&lt; Parent
 
 **Description:** Returns the parent of the display seg.
 
@@ -462,7 +462,7 @@ seg << Parent;
 
 ### Save Color Preference
 
-**Syntax:** obj << Save Color Preference
+**Syntax:** obj &lt;&lt; Save Color Preference
 
 **Description:** Sets the current bar color as the default color for histogram bars.
 
@@ -487,7 +487,7 @@ seg << Save Color Preference;
 
 ### Set Description
 
-**Syntax:** obj << Set Description( description )
+**Syntax:** obj &lt;&lt; Set Description( description )
 
 **Description:** Sets the description for the display seg.
 
@@ -512,7 +512,7 @@ seg << set description( "my seg" );
 
 ### Set Fill Pattern
 
-**Syntax:** obj << Set Fill Pattern
+**Syntax:** obj &lt;&lt; Set Fill Pattern
 
 ```jsl
 
@@ -535,7 +535,7 @@ seg << Set Fill Pattern( "h wave medium" );
 
 ### Set Line Color
 
-**Syntax:** obj << Set Line Color( color )
+**Syntax:** obj &lt;&lt; Set Line Color( color )
 
 **Description:** Sets the color of the bar outlines.
 
@@ -560,7 +560,7 @@ seg << Set Line Color( "Green" );
 
 ### Set Line Style
 
-**Syntax:** obj << Set Line Style( linestyle )
+**Syntax:** obj &lt;&lt; Set Line Style( linestyle )
 
 **Description:** Sets the line style of the bar outlines.
 
@@ -585,7 +585,7 @@ seg << Set Line Style( "dashed" );
 
 ### Set Line Width
 
-**Syntax:** obj << Set Line Width( integer )
+**Syntax:** obj &lt;&lt; Set Line Width( integer )
 
 **Description:** Sets the width of the bar outlines
 
@@ -610,7 +610,7 @@ seg << Set Line Width( 3 );
 
 ### Set Transparency
 
-**Syntax:** obj << Set Transparency( 0.0 to 1.0 )
+**Syntax:** obj &lt;&lt; Set Transparency( 0.0 to 1.0 )
 
 **Description:** Sets the transparency for the hist seg.
 
@@ -635,7 +635,7 @@ seg << Set Transparency( .5 );
 
 ### Sib
 
-**Syntax:** seg2 = obj << Sib
+**Syntax:** seg2 = obj &lt;&lt; Sib
 
 **Description:** Returns the sibling of the display seg.
 
@@ -660,7 +660,7 @@ seg << Sib;
 
 ### Sib Append
 
-**Syntax:** obj << Sib Append( seg2 )
+**Syntax:** obj &lt;&lt; Sib Append( seg2 )
 
 **Description:** Adds a display seg immediately after the display seg.
 
@@ -698,7 +698,7 @@ mapSeg << Sib Append( Line Seg( xval, yval, <<line color( "Green" ), <<line widt
 
 ### Sib Prepend
 
-**Syntax:** obj << Sib Prepend( seg2 )
+**Syntax:** obj &lt;&lt; Sib Prepend( seg2 )
 
 **Description:** Adds a display seg immediately before the display seg.
 
@@ -736,7 +736,7 @@ seg << Sib Prepend( Line Seg( xval, yval, <<line color( "Green" ), <<line width(
 
 ### Subset
 
-**Syntax:** obj << Subset
+**Syntax:** obj &lt;&lt; Subset
 
 **Description:** Creates a subset data table based on the current selection.
 
@@ -761,7 +761,7 @@ seg << Subset;
 
 ### Transparency
 
-**Syntax:** obj << Transparency( 0.0 to 1.0 )
+**Syntax:** obj &lt;&lt; Transparency( 0.0 to 1.0 )
 
 **Description:** Sets the transparency for the hist seg.
 
@@ -788,9 +788,7 @@ seg << Set Transparency( .5 );
 
 ### Enabled
 
-**Syntax:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**Syntax:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Description:** An object that is not enabled will not respond to keyboard or mouse input. This property is inherited by child objects, so a container object that is disabled will cause all descendent objects to be disabled.
 
@@ -822,9 +820,7 @@ New Window( "enabled",
 
 ### Get Enabled
 
-**Syntax:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**Syntax:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Description:** An object that is not enabled will not respond to keyboard or mouse input. This property is inherited by child objects, so a container object that is disabled will cause all descendent objects to be disabled.
 
@@ -856,7 +852,7 @@ New Window( "enabled",
 
 ### Get Namespace
 
-**Syntax:** obj << Get Namespace
+**Syntax:** obj &lt;&lt; Get Namespace
 
 **Description:** Returns the namespace associated with this display object.
 
@@ -874,7 +870,7 @@ Show( ns:x, x );
 
 ### Get Properties
 
-**Syntax:** obj << Get Properties
+**Syntax:** obj &lt;&lt; Get Properties
 
 **Description:** Returns an associative array that contains the display box&apos;s properties and their values.
 
@@ -888,7 +884,7 @@ bb << Get Properties;
 
 ### Get Property
 
-**Syntax:** obj << Get Property( "property" )
+**Syntax:** obj &lt;&lt; Get Property( "property" )
 
 **Description:** Returns the current setting for the named property.
 
@@ -902,7 +898,7 @@ bb << Get Property( "Enabled" );
 
 ### Get Property List
 
-**Syntax:** obj << Get Property List
+**Syntax:** obj &lt;&lt; Get Property List
 
 **Description:** Returns a list of properties the display box has.
 
@@ -916,7 +912,7 @@ bb << Get Property List;
 
 ### Set Property
 
-**Syntax:** obj << Set Property( "property", value )
+**Syntax:** obj &lt;&lt; Set Property( "property", value )
 
 **Description:** Sets the value for the named property for the display box.
 

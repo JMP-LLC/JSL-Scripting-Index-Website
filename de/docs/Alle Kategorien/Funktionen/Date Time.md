@@ -2,11 +2,9 @@
 
 
 
-## Funktionen
-
 ### Abbrev Date
 
-**Syntax:** s = Abbrev Date( datetime, <format> )
+**Syntax:** s = Abbrev Date( datetime, &lt;format&gt; )
 
 **Beschreibung:** Gibt die kurze Darstellung eines Datum/Uhrzeit-Werts entsprechend dem Gebietsschema zurück.
 
@@ -51,7 +49,7 @@ As Date( Date DMY( 15, 7, 2000 ) );
 
 ### Date Difference
 
-**Syntax:** delta = Date Difference( dt1, dt2, intervalName, <alignment="start"> )
+**Syntax:** delta = Date Difference( dt1, dt2, intervalName, &lt;alignment="start"&gt; )
 
 **Beschreibung:** Gibt die Differenz in Intervallen von zwei Datums-/Uhrzeitwerten zurück. Unterstützte Werte von intervalName sind „Jahr“, „Quartal“, „Monat“, „Woche“, „Tag“, „Stunde“, „Minute“, „Sekunde“ und „Numerisch“. alignment = "Start" schließt vollständige oder partielle Intervalle ein, während "Actual" nur vollständige Intervalle einschließt. alignment = "Fractional" gibt fraktionelle Differenzen zurück, wobei für die Dauer der Intervalle „Jahr“, „Quartal“ und „Monat“ Mittelwerte verwendet werden.
 
@@ -86,7 +84,7 @@ Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "frac
 
 ### Date Increment
 
-**Syntax:** d = Date Increment( datetime, intervalName, <incr=1>, <alignment="start"> )
+**Syntax:** d = Date Increment( datetime, intervalName, &lt;incr=1&gt;, &lt;alignment="start"&gt; )
 
 **Beschreibung:** Gibt einen neuen Datums-/Uhrzeitwert zurück, indem incr Intervalle hinzugefügt werden. Unterstützte Werte von intervalName sind „Jahr“, „Quartal“, „Monat“, „Woche“, „Tag“, „Stunde“, „Minute“, „Sekunde“ und „Numerisch“. alignment = "Start" schneidet das nächste Intervall vor dem Hinzufügen des Inkrements ab, während "Actual" die vollständige Eingabe für Datum/Uhrzeit beibehält. alignment = "Fractional" gestattet incr fraktionelle Werte, wobei für die Dauer der Intervalle „Jahr“, „Quartal“ und „Monat“ Mittelwerte verwendet werden.
 
@@ -196,9 +194,7 @@ v = Days In Month( 2016, 2 );
 
 ### Format
 
-**Syntax:** s = Format( x, formatString, <options> )
-
-s = Format( x, "Format Pattern", pattern, <options> )
+**Syntax:** s = Format( x, formatString, &lt;options&gt; )s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
 
 **Beschreibung:** Gibt die Zahl im angegebenen Format zurück. Formate umfassen Elemente im Dialogfeld „Spalteninfo“ wie „Bestes“ und „h:m:s“. Weitere Optionen wie p-Wert, Währung, Datum und Uhrzeit und geografische Formate finden Sie in den Hilfethemen.
 
@@ -244,9 +240,7 @@ Show( Format( 88.54, "Best" ), Format( 88.54, "Best", "Full Precision" ) );
 
 ### Format Date
 
-**Syntax:** s = Format( x, formatString, <options> )
-
-s = Format( x, "Format Pattern", pattern, <options> )
+**Syntax:** s = Format( x, formatString, &lt;options&gt; )s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
 
 **Beschreibung:** Gibt die Zahl im angegebenen Format zurück. Formate umfassen Elemente im Dialogfeld „Spalteninfo“ wie „Bestes“ und „h:m:s“. Weitere Optionen wie p-Wert, Währung, Datum und Uhrzeit und geografische Formate finden Sie in den Hilfethemen.
 
@@ -302,7 +296,7 @@ Show( it );
 
 ### Hour
 
-**Syntax:** hr = Hour( datetime, <12> )
+**Syntax:** hr = Hour( datetime, &lt;12&gt; )
 
 **Beschreibung:** Gibt den Stundenanteil eines Datum/Uhrzeit-Werts zurück, im 12-Stundenmodus (12, 1 bis 11) oder im 24-Stundenmodus (0 bis 23).
 
@@ -332,7 +326,7 @@ ISO Year( Today() );
 
 ### In Days
 
-**Syntax:** y = In Days( <x=1> )
+**Syntax:** y = In Days( &lt;x=1&gt; )
 
 **Beschreibung:** Wandelt x von einer Anzahl von Tagen in die entsprechende Anzahl Sekunden um.
 
@@ -347,7 +341,7 @@ In Days( 1.5 );
 
 ### In Hours
 
-**Syntax:** y = In Hours( <x=1> )
+**Syntax:** y = In Hours( &lt;x=1&gt; )
 
 **Beschreibung:** Wandelt x von einer Anzahl von Stunden in die entsprechende Anzahl Sekunden um.
 
@@ -362,7 +356,7 @@ In Hours( 0.5 );
 
 ### In Minutes
 
-**Syntax:** y = In Minutes( <x=1> )
+**Syntax:** y = In Minutes( &lt;x=1&gt; )
 
 **Beschreibung:** Wandelt x von einer Anzahl von Minuten in die entsprechende Anzahl Sekunden um.
 
@@ -377,7 +371,7 @@ In Minutes( 1 );
 
 ### In Weeks
 
-**Syntax:** y = In Weeks( <x=1> )
+**Syntax:** y = In Weeks( &lt;x=1&gt; )
 
 **Beschreibung:** Wandelt x von einer Anzahl von Wochen in die entsprechende Anzahl Sekunden um.
 
@@ -392,7 +386,7 @@ In Weeks( 1 );
 
 ### In Years
 
-**Syntax:** y = In Years( <x=1> )
+**Syntax:** y = In Years( &lt;x=1&gt; )
 
 **Beschreibung:** Wandelt x von einer Anzahl von Jahren in die entsprechende Anzahl Sekunden um.
 
@@ -407,9 +401,7 @@ In Years( 1 );
 
 ### Informat
 
-**Syntax:** dt = In Format( s, formatString, < <<Use Locale(b=1)>, < <<Restrict > )
-
-dt = In Format( s, "Format Pattern", pattern, < <<Use Locale(b=1)> )
+**Syntax:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; )dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
 
 **Beschreibung:** Analysiert eine Zeichenkette eines vorgegebenen Formats. Wenn das Format ein Datum/Uhrzeit-Format ist, werden der Wert als Ausdruck As Date() und das Datum im Format ttMonjjjj zurückgegeben. Das optionale Argument <<Restrict, das mit dem „Besten“ formatString verwendet wird, gestattet die Konvertierung nur mit ganzen Zahlen, Dezimalzahlen und wissenschaftlichen Formaten.
 
@@ -482,7 +474,7 @@ v = Is Leap Year( 2016 );
 
 ### Long Date
 
-**Syntax:** s = Long Date( datetime, <format> )
+**Syntax:** s = Long Date( datetime, &lt;format&gt; )
 
 **Beschreibung:** Gibt die lange Darstellung eines Datum/Uhrzeit-Werts entsprechend dem Gebietsschema zurück.
 
@@ -497,7 +489,7 @@ Long Date( Today() );
 
 ### MDYHMS
 
-**Syntax:** s = MDYHMS( datetime, <format> )
+**Syntax:** s = MDYHMS( datetime, &lt;format&gt; )
 
 **Beschreibung:** Gibt eine Darstellung eines Datum/Uhrzeit-Werts in folgender Reihenfolge zurück: Monat, Tag, Jahr, Stunde, Minute, Sekunde.
 
@@ -557,9 +549,7 @@ Nth Day Of Week in the Month( Date MDY( 11, 28, 2019 ) );
 
 ### Parse Date
 
-**Syntax:** dt = In Format( s, formatString, < <<Use Locale(b=1)>, < <<Restrict > )
-
-dt = In Format( s, "Format Pattern", pattern, < <<Use Locale(b=1)> )
+**Syntax:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; )dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
 
 **Beschreibung:** Analysiert eine Zeichenkette eines vorgegebenen Formats. Wenn das Format ein Datum/Uhrzeit-Format ist, werden der Wert als Ausdruck As Date() und das Datum im Format ttMonjjjj zurückgegeben. Das optionale Argument <<Restrict, das mit dem „Besten“ formatString verwendet wird, gestattet die Konvertierung nur mit ganzen Zahlen, Dezimalzahlen und wissenschaftlichen Formaten.
 
@@ -647,7 +637,7 @@ Second( Today() );
 
 ### Short Date
 
-**Syntax:** s = Short Date( datetime, <format> )
+**Syntax:** s = Short Date( datetime, &lt;format&gt; )
 
 **Beschreibung:** Gibt die numerische (MM/TT/JJJJ) Darstellung eines Datum/Uhrzeit-Werts entsprechend dem Gebietsschema zurück.
 
@@ -710,7 +700,7 @@ As Date( Today() );
 
 ### Week Of Year
 
-**Syntax:** d = Week Of Year( datetime, <rule=1> )
+**Syntax:** d = Week Of Year( datetime, &lt;rule=1&gt; )
 
 **Beschreibung:** Gibt die Woche des Jahres eines Datum/Uhrzeit-Werts mithilfe einer von drei Regeln zurück. Standardmäßig (Regel 1) beginnen die Wochen mit dem Sonntag, wobei der erste Sonntag des Jahres Woche 2 ist. Woche 1 ist eine Teilwoche oder leer (wie im Jahr 2006). Bei Regel 2 ist der erste Sonntag Woche 1 und die vorherigen Tage sind Woche 0. Bei Regel 3 wird die ISO-Wochennummer zurückgegeben. Dabei beginnen die Wochen mit dem Montag und Woche 1 ist die erste Woche des Jahres mit vier Tagen in dem Jahr. Bei ISO-Wochen ist es möglich, dass die ersten oder letzten drei Tage des Jahres zur Wochennummer des nachfolgenden bzw. vorherigen Jahres gehören.
 

@@ -6,7 +6,7 @@
 
 ### Set Window Title
 
-**Syntax:** obj << Set Window Title
+**Syntax:** obj &lt;&lt; Set Window Title
 
 **Beschreibung:** Legt den Fenstertitel fest.
 
@@ -23,7 +23,7 @@ w << Set Window Title( "New Title" );
 
 ### Bring Window To Front
 
-**Syntax:** obj << Bring Window To Front
+**Syntax:** obj &lt;&lt; Bring Window To Front
 
 **Beschreibung:** Zeigt das Fenster im Vordergrund an.
 
@@ -39,7 +39,7 @@ w << Bring Window To Front;
 
 ### Close Window
 
-**Syntax:** obj << Close Window( <"NoSave"> )
+**Syntax:** obj &lt;&lt; Close Window( &lt;"NoSave"&gt; )
 
 **Beschreibung:** Schließt das Fenster.
 
@@ -55,7 +55,7 @@ w << Close Window;
 
 ### Get Content Size
 
-**Syntax:** obj << Get Content Size
+**Syntax:** obj &lt;&lt; Get Content Size
 
 **Beschreibung:** Gibt die Inhaltsgröße innerhalb des Fensters zurück.
 
@@ -71,7 +71,7 @@ Show( c );
 
 ### Get On Close
 
-**Syntax:** obj << Get On Close
+**Syntax:** obj &lt;&lt; Get On Close
 
 **Beschreibung:** Gibt das Skript oder die Funktion zurück, das/die beim Schließen des Fensters ausgeführt wird.
 
@@ -96,7 +96,7 @@ Show( w << Get On Close );
 
 ### Get Page Setup
 
-**Syntax:** obj << Get Page Setup
+**Syntax:** obj &lt;&lt; Get Page Setup
 
 **Beschreibung:** Informationen für die Seiteneinrichtung für PDFs abrufen
 
@@ -111,7 +111,7 @@ w << get page setup();
 
 ### Get Project
 
-**Syntax:** project = obj << Get Project()
+**Syntax:** project = obj &lt;&lt; Get Project()
 
 **Beschreibung:** Gibt das übergeordnete Projekt des Fensters zurück, oder Leer(), wenn sich das Fenster nicht in einem Projekt befindet.
 
@@ -129,7 +129,7 @@ Show( c );
 
 ### Get Show Window
 
-**Syntax:** obj << Get Show Window
+**Syntax:** obj &lt;&lt; Get Show Window
 
 **Beschreibung:** Gibt die Sichtbarkeit des Fensters zurück.
 
@@ -147,7 +147,7 @@ Print( w << Get Show Window() );
 
 ### Get Web Support
 
-**Syntax:** obj << Get Web Support
+**Syntax:** obj &lt;&lt; Get Web Support
 
 **Beschreibung:** Gibt eine Zahl zurück, die angibt, ob für das Anzeigeobjekt interaktive HTML unterstützt wird. 1 bedeutet einige oder alle Elemente werden unterstützt. 0 bedeutet keine Unterstützung.
 
@@ -163,7 +163,7 @@ Show( s );
 
 ### Get Window Icon
 
-**Syntax:** obj << Get Window Icon
+**Syntax:** obj &lt;&lt; Get Window Icon
 
 **Beschreibung:** Gibt das Fenstersymbol zurück.
 
@@ -179,7 +179,7 @@ Show( t );
 
 ### Get Window Position
 
-**Syntax:** obj << Get Window Position
+**Syntax:** obj &lt;&lt; Get Window Position
 
 **Beschreibung:** Gibt die Position des Fensters zurück.
 
@@ -195,7 +195,7 @@ Show( p );
 
 ### Get Window Size
 
-**Syntax:** obj << Get Window Size
+**Syntax:** obj &lt;&lt; Get Window Size
 
 **Beschreibung:** Gibt die Größe des Fensters zurück.
 
@@ -211,7 +211,7 @@ Show( s );
 
 ### Get Window Title
 
-**Syntax:** obj << Get Window Title
+**Syntax:** obj &lt;&lt; Get Window Title
 
 **Beschreibung:** Gibt den Fenstertitel zurück.
 
@@ -227,7 +227,7 @@ Show( t );
 
 ### Get Window View
 
-**Syntax:** obj << Get Window View
+**Syntax:** obj &lt;&lt; Get Window View
 
 **Beschreibung:** Gibt die aktuelle Fensteransicht zurück. Fenster können „sichtbar“, „unsichtbar“ oder „privat“ sein.
 
@@ -242,7 +242,7 @@ Print( w << Get Window View() );
 
 ### Is Modal Dialog
 
-**Syntax:** obj << Is Modal Dialog
+**Syntax:** obj &lt;&lt; Is Modal Dialog
 
 **Beschreibung:** Gibt „wahr“ zurück, wenn das Fenster ein modales Dialogfeld ist. Nur nützlich bei Aufruf aus einem Fenster-Handler-Rückruf.
 
@@ -261,7 +261,7 @@ With Window Handler(
 
 ### Maximize Window
 
-**Syntax:** obj << Maximize Window( <state=0|1> )
+**Syntax:** obj &lt;&lt; Maximize Window( &lt;state=0|1&gt; )
 
 **Beschreibung:** Maximiert das Fenster. Das Standardargument ist 1.
 
@@ -279,7 +279,7 @@ w << Maximize Window( 0 );
 
 ### Minimize Window
 
-**Syntax:** obj << Minimize Window( <state=0|1> )
+**Syntax:** obj &lt;&lt; Minimize Window( &lt;state=0|1&gt; )
 
 **Beschreibung:** Minimiert das Fenster. Das Standardargument ist 1.
 
@@ -297,7 +297,7 @@ w << Minimize Window( 0 );
 
 ### Move Window
 
-**Syntax:** obj << Move Window( x,y )
+**Syntax:** obj &lt;&lt; Move Window( x,y )
 
 **Beschreibung:** Verschiebt das Fenster an die angegebene Position.
 
@@ -313,7 +313,7 @@ w << Move Window( 500, 500 );
 
 ### On Close
 
-**Syntax:** obj << On Close( script )
+**Syntax:** obj &lt;&lt; On Close( script )
 
 **Beschreibung:** Legt ein Skript oder eine Funktion fest, das bzw. die beim Schließen des Fensters ausgeführt wird. Dieses Skript muss 1 zurückgeben, um das Schließen zu gestatten, oder 0, um zu verhindern, dass das Fenster geschlossen wird.
 
@@ -361,7 +361,7 @@ w << On Close(
 
 ### Optimize Display
 
-**Syntax:** obj << Optimize Display
+**Syntax:** obj &lt;&lt; Optimize Display
 
 **Beschreibung:** Legt für die Spaltenbreiten und das Fenster der Datentabelle eine optimale Größe fest.
 
@@ -378,7 +378,7 @@ dt << Optimize Display;
 
 ### Pad Window
 
-**Syntax:** obj << Pad Window( bool )
+**Syntax:** obj &lt;&lt; Pad Window( bool )
 
 **Beschreibung:** Schaltet die Fensteranpassung ein oder aus.
 
@@ -395,7 +395,7 @@ r << Pad Window( 0 );
 
 ### Print Window
 
-**Syntax:** obj << Print Window
+**Syntax:** obj &lt;&lt; Print Window
 
 **Beschreibung:** Druckt das Fenster.
 
@@ -410,7 +410,7 @@ w << Print Window;
 
 ### Save Window Report
 
-**Syntax:** obj << Save Window Report( pathname, <embed data(0|1)> )
+**Syntax:** obj &lt;&lt; Save Window Report( pathname, &lt;embed data(0|1)&gt; )
 
 **Beschreibung:** Speichert das aktuelle Berichtsfenster in einer JMP-Berichtsdatei (*.jrp).
 
@@ -428,7 +428,7 @@ d << Save Window Report( "$DOCUMENTS/test.jrp", embed data( 1 ) );
 
 ### Set Content Size
 
-**Syntax:** obj << Set Content Size( x,y )
+**Syntax:** obj &lt;&lt; Set Content Size( x,y )
 
 **Beschreibung:** Legt die Inhaltsgröße innerhalb des Fensters fest.
 
@@ -454,7 +454,7 @@ w << Set Content Size( 400, 300 );
 
 ### Set Main Window
 
-**Syntax:** obj << Set Main Window
+**Syntax:** obj &lt;&lt; Set Main Window
 
 **Beschreibung:** Fenster als Hauptfenster in JMP festlegen und bisheriges Hauptfenster als normales Fenster festlegen.
 
@@ -469,7 +469,7 @@ w << Set Main Window;
 
 ### Set Page Setup
 
-**Syntax:** obj << Set Page Setup( <margins(left, top, right, bottom)>, <scale(s)>, <portrait(0|1)>, <paper size(p)>, <Table of Contents(always, never, default)>  )
+**Syntax:** obj &lt;&lt; Set Page Setup( &lt;margins(left, top, right, bottom)&gt;, &lt;scale(s)&gt;, &lt;portrait(0|1)&gt;, &lt;paper size(p)&gt;, &lt;Table of Contents(always, never, default)&gt; )
 
 **Beschreibung:** Legt die Informationen für die Seiteneinrichtung fest, die beim Drucken oder Speichern als PDF verwendet werden. Ein Inhaltsverzeichnis kann optional aus Gliederungsfeldern erstellt werden.
 
@@ -491,7 +491,7 @@ w << Save pdf( "$DOCUMENTS\test.pdf" );
 
 ### Set Print Footers
 
-**Syntax:** obj << Set Print Footers( left footer, center footer, right header )
+**Syntax:** obj &lt;&lt; Set Print Footers( left footer, center footer, right header )
 
 **Beschreibung:** Legt die linke, mittlere und rechte Fußzeile für den Ausdruck fest.
 
@@ -510,7 +510,7 @@ w << Print Window;
 
 ### Set Print Headers
 
-**Syntax:** obj << Set Print Headers( left header, center header, right header )
+**Syntax:** obj &lt;&lt; Set Print Headers( left header, center header, right header )
 
 **Beschreibung:** Legt die linke, mittlere und rechte Kopfzeile für den Ausdruck fest.
 
@@ -529,7 +529,7 @@ w << Print Window;
 
 ### Set Window Icon
 
-**Syntax:** obj << Set Window Icon( icon name )
+**Syntax:** obj &lt;&lt; Set Window Icon( icon name )
 
 **Beschreibung:** Legt das Fenstersymbol fest.
 
@@ -544,7 +544,7 @@ w << Set Window Icon( "Scatter3D" );
 
 ### Set Window Size
 
-**Syntax:** obj << Set Window Size( x,y )
+**Syntax:** obj &lt;&lt; Set Window Size( x,y )
 
 **Beschreibung:** Legt die Größe des Fensters fest.
 
@@ -559,7 +559,7 @@ w << Set Window Size( 800, 1200 );
 
 ### Show Window
 
-**Syntax:** obj << Show Window( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Window( state=0|1 )
 
 **Beschreibung:** Blendet das Fenster ein oder aus. Dies ist nützlich, um Fenster kurzzeitig auszublenden. Standardmäßig ein.
 
@@ -577,7 +577,7 @@ w << Show Window( 1 );
 
 ### Size Window
 
-**Syntax:** obj << Size Window( x,y )
+**Syntax:** obj &lt;&lt; Size Window( x,y )
 
 **Beschreibung:** Legt die Größe des Fensters fest.
 
@@ -592,7 +592,7 @@ w << Size Window( 500, 500 );
 
 ### Zoom Window
 
-**Syntax:** obj << Zoom Window
+**Syntax:** obj &lt;&lt; Zoom Window
 
 **Beschreibung:** Ändert die Größe des Fensters, so dass es groß genug ist, um seinen gesamten Inhalt anzuzeigen.
 

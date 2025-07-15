@@ -6,7 +6,7 @@
 
 ### Create JPIP CMD
 
-**構文:** obj << Create JPIP CMD()
+**構文:** obj &lt;&lt; Create JPIP CMD()
 
 **説明:** Pythonのpipコマンドの、jpipコマンドラインラッパースクリプトを作成する。ディレクトリ選択ダイアログが表示されるので、生成されるスクリプトの保存先を指定する。このスクリプトはpipの全機能を提供すると同時に、JMPの隔離されたPython環境に対して必要な環境変数を正しく設定する。
 
@@ -34,7 +34,7 @@ Python Create JPIP CMD();
 
 ### Disconnect
 
-**構文:** obj << Disconnect
+**構文:** obj &lt;&lt; Disconnect
 
 **説明:** 注: この機能は、JMP 18で廃止されました。指定しても処理を行いません。
 
@@ -42,7 +42,7 @@ Python Create JPIP CMD();
 
 ### Execute
 
-**構文:** list = obj << Execute( { list of Inputs }, { list of Outputs }, statements < , echo( 1 | 0 ) > )
+**構文:** list = obj &lt;&lt; Execute( { list of Inputs }, { list of Outputs }, statements &lt; , echo( 1 | 0 ) &gt; )
 
 **説明:** 入力値のリストを送り、ステートメントを実行し、結果のリストを戻す。オプションのecho()パラメータのデフォルト値は真(true)。echoパラメータは、Pythonソースのログへのエコーを制御する。True (1)はソースのエコーを有効にし、0はログへのエコーを抑制する。
 
@@ -122,7 +122,7 @@ Show( v, m, ml, x1, x2, y1, y2, z1, z2 );
 
 ### Get
 
-**構文:** y = obj << Get( name )
+**構文:** y = obj &lt;&lt; Get( name )
 
 **説明:** Pythonからデータを取得する。引数nameには、数値、文字列、行列、リスト、ディクショナリ、データテーブル、データフレーム、日付時間、numpy.datetime64といったデータタイプのものを指定することができる。
 
@@ -178,7 +178,7 @@ Close( dt1 );
 
 ### Get Version
 
-**構文:** version = obj << Get Version
+**構文:** version = obj &lt;&lt; Get Version
 
 **説明:** 現在接続しているPythonのバージョン番号を戻す。
 
@@ -195,7 +195,7 @@ Show( version );
 
 ### Install Packages
 
-**構文:** obj << Install Packages( packages )
+**構文:** obj &lt;&lt; Install Packages( packages )
 
 **説明:** これは、Pythonパッケージを、JMPのsite-packagesディレクトリにインストールするラッパー。シンプルなパッケージインストール以外の処理を行うには、Python Create JPIP CMD()を参照して、Directory Pick()で選択されたディレクトリ内にコマンドラインpipラッパースクリプトを作成する。また、[スクリプトの索引]のPythonカテゴリにあるjmputils.jpipを参照し、JMPのPythonスクリプトウィンドウからインストールを実行することもできる。
 
@@ -234,7 +234,7 @@ Python Install Packages( {"numpy", "pandas"} );
 
 ### Is Connected
 
-**構文:** x = obj << Is Connected
+**構文:** x = obj &lt;&lt; Is Connected
 
 **説明:** 注: この関数は、JMP 18で廃止された。常に1を戻す。
 
@@ -251,7 +251,7 @@ Show( x );
 
 ### JMP Name To Python Name
 
-**構文:** Python Name = PythonConnection << JMP Name To Python Name( JMP name )
+**構文:** Python Name = PythonConnection &lt;&lt; JMP Name To Python Name( JMP name )
 
 **説明:** JMPの変数名を、Pythonの変数命名規則に従ってPythonの変数名にマップする。
 
@@ -268,7 +268,7 @@ Show( Python Name );
 
 ### Reset
 
-**構文:** PythonConnection << Reset
+**構文:** PythonConnection &lt;&lt; Reset
 
 **説明:** Reset the shared Python environment.
 
@@ -289,7 +289,7 @@ PythonConnection << Submit( "print(pi)" );
 
 ### Send
 
-**構文:** y = obj << Send( name, <Python Name( name )> )
+**構文:** y = obj &lt;&lt; Send( name, &lt;Python Name( name )&gt; )
 
 **説明:** Pythonにデータを送る。引数nameには、数値、文字列、行列、リスト、データテーブル、日付のいずれかを表すものを指定する。
 
@@ -325,7 +325,7 @@ PythonConnection << Submit( "print(dt)" );
 
 ### Send File
 
-**構文:** y = obj << Send File( filename, <Python Name( name )> )
+**構文:** y = obj &lt;&lt; Send File( filename, &lt;Python Name( name )&gt; )
 
 **説明:** Pythonにデータファイルを送る。引数filenameは、Pythonに送られるファイルのパス名。
 
@@ -345,7 +345,7 @@ PythonConnection << Submit( "print(Baseball)" );
 
 ### Set
 
-**構文:** y = obj << Set( name, <Python Name( name )> )
+**構文:** y = obj &lt;&lt; Set( name, &lt;Python Name( name )&gt; )
 
 **説明:** Pythonにデータを送る。引数nameには、数値、文字列、行列、リスト、データテーブル、日付のいずれかを表すものを指定する。
 
@@ -381,7 +381,7 @@ PythonConnection << Submit( "print(dt)" );
 
 ### Submit
 
-**構文:** obj << Submit( statements < , echo( 1 | 0 ) > )
+**構文:** obj &lt;&lt; Submit( statements &lt; , echo( 1 | 0 ) &gt; )
 
 **説明:** Pythonにステートメントをサブミットする。ステートメントは、文字列の値、または文字列の値のリスト。オプションのecho()パラメータのデフォルトはTrue。echoパラメータは、Pythonソースのログへのエコーを制御する。True (1)はソースのエコーを有効にし、0はログへのエコーを抑制する。
 
@@ -405,7 +405,7 @@ Show( getStr, getNum );
 
 ### Submit File
 
-**構文:** obj << Submit File( path )
+**構文:** obj &lt;&lt; Submit File( path )
 
 **説明:** path引数によって指定されたファイルにあるステートメントを、Pythonで実行する。
 

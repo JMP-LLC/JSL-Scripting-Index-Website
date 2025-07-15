@@ -6,7 +6,7 @@
 
 ### Socket
 
-**構文:** socketHandle = Socket( <STREAM | DGRAM> )
+**構文:** socketHandle = Socket( &lt;STREAM | DGRAM&gt; )
 
 **説明:** このコンピュータまたはネットワーク上の別のコンピュータとソケット通信するためのソケット変数を作成する。デフォルトの引数はSTREAM。各自のWebサイトで試してみてください。
 
@@ -51,7 +51,7 @@ If( rc[2] == "ok",
 
 ### Accept
 
-**構文:** obj << Accept
+**構文:** obj &lt;&lt; Accept
 
 **説明:** 接続待機中のソケットへの、リモートコンピュータからの接続を許可する。
 
@@ -69,7 +69,7 @@ rc = skt << accept();
 
 ### Accept Fast
 
-**構文:** obj << Accept Fast
+**構文:** obj &lt;&lt; Accept Fast
 
 **説明:** 接続待機中のソケットへの、リモートコンピュータからの接続を許可する。
 
@@ -92,7 +92,7 @@ rc = skt << AcceptFast();
 
 ### Bind
 
-**構文:** obj << Bind
+**構文:** obj &lt;&lt; Bind
 
 **説明:** 接続待機の準備として、コンピュータのポートをソケットに割り当てる。
 
@@ -108,7 +108,7 @@ rc = skt << bind( "localhost", "80" );
 
 ### Close
 
-**構文:** obj << Close
+**構文:** obj &lt;&lt; Close
 
 **説明:** ソケットを閉じる。ソケットは次に使用するときには再作成する必要がある。接続されたソケットはローカルまたはリモートで閉じることができる。接続待機中のソケットはローカルで閉じる。
 
@@ -121,7 +121,7 @@ x = Socket();/* use the socket...*/ x << Close();
 
 ### Connect
 
-**構文:** obj << Connect
+**構文:** obj &lt;&lt; Connect
 
 **説明:** リモートコンピュータに接続する。
 
@@ -181,7 +181,7 @@ Show( Length( blob ) );
 
 ### GetPeerName
 
-**構文:** obj << GetPeerName
+**構文:** obj &lt;&lt; GetPeerName
 
 **説明:** リモートコンピュータの名前を取得する。
 
@@ -197,7 +197,7 @@ Show( rc, tCall << getPeerName );
 
 ### GetSockName
 
-**構文:** obj << GetSockName
+**構文:** obj &lt;&lt; GetSockName
 
 **説明:** ローカルコンピュータの名前を取得する。
 
@@ -213,7 +213,7 @@ Show( rc, tCall << getSockName );
 
 ### Ioctl
 
-**構文:** obj << Ioctl
+**構文:** obj &lt;&lt; Ioctl
 
 **説明:** ソケットをノンブロッキングモードに切り替え、どれだけのデータが読み取り待機中かを確認する。
 
@@ -231,7 +231,7 @@ len = skt << Ioctl( FIONREAD ); // how much data available
 
 ### Listen
 
-**構文:** obj << Listen
+**構文:** obj &lt;&lt; Listen
 
 **説明:** ソケットを接続待機モードにする。リモートコンピュータからの接続を許可するにはAcceptを使用する。
 
@@ -338,7 +338,7 @@ conskt << close; // nothing else to send to the browser
 
 ### Recv
 
-**構文:** obj << Recv
+**構文:** obj &lt;&lt; Recv
 
 **説明:** リモートコンピュータからデータを受信する。受信する最大バイトを指定する。ソケットがブロッキングモードの場合、処理が完了するかまたは接続がリモートに閉じられるまで何も戻されない。ノンブロッキングモードの場合、0バイトおよびWould Block戻りコードが発生する可能性がある。
 
@@ -360,7 +360,7 @@ rc = skt << recv( 1000 ); // specifie the UPPER limit on the amount of data retu
 
 ### RecvFrom
 
-**構文:** obj << RecvFrom
+**構文:** obj &lt;&lt; RecvFrom
 
 **説明:** (DGramサポート。このメッセージがどのようなときに必要なのか不明な場合は、使用しないでください。) リモートコンピュータからDgram型通信を受け取る。
 
@@ -426,7 +426,7 @@ Show( result );
 
 ### Send
 
-**構文:** obj << Send
+**構文:** obj &lt;&lt; Send
 
 **説明:** リモートコンピュータにデータを送信する。
 
@@ -443,7 +443,7 @@ rc = skt << Send( Char To Blob( "Hello World" ) );
 
 ### SendTo
 
-**構文:** obj << SendTo
+**構文:** obj &lt;&lt; SendTo
 
 **説明:** (DGramサポート。このメッセージがどのようなときに必要なのか不明な場合は、使用しないでください。) リモートコンピュータにDgram型通信を送る。
 

@@ -2,8 +2,6 @@
 
 
 
-## 함수
-
 ### Beta Binomial Distribution
 
 **구문:** cumprob = Beta Binomial Distribution( k, p, n, delta )
@@ -368,7 +366,7 @@ New Window( "Example: Gamma Poisson Quantile",
 
 ### Hypergeometric Distribution
 
-**구문:** cumprob = Hypergeometric Distribution( N, K, n, x, <r> )
+**구문:** cumprob = Hypergeometric Distribution( N, K, n, x, &lt;r&gt; )
 
 **설명:** 초기하 분포 확률 변수가 x보다 작거나 같을 확률을 반환합니다. 여기서 N은 모집단 크기, K는 관심 범주의 항목 수, n은 표본 크기, x는 관심 있는 사건의 수, r은 선택적 승산비입니다.
 
@@ -407,7 +405,7 @@ New Window( "Example: Hypergeometric Distribution",
 
 ### Hypergeometric Probability
 
-**구문:** prob = Hypergeometric Probability( N, K, n, x, <r> )
+**구문:** prob = Hypergeometric Probability( N, K, n, x, &lt;r&gt; )
 
 **설명:** 초기하 분포 확률 변수가 x와 같을 확률을 반환합니다. 여기서 N은 모집단 크기, K는 관심 범주의 항목 수, n은 표본 크기, x는 관심 있는 사건의 수, r은 선택적 승산비입니다.
 

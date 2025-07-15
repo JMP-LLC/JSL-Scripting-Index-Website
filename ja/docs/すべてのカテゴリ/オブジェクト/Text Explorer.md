@@ -6,7 +6,7 @@
 
 ### Action
 
-**構文:** obj << Action
+**構文:** obj &lt;&lt; Action
 
 **説明:** 評価する式を挿入するための、プラットフォーム内の汎用トラップドア。プラットフォームに一時的にディスプレイボックスおよびデータテーブルのコンテキストを設定する。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**構文:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**構文:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **説明:** 作成されたプリセットをオブジェクトに適用する。保存された設定に合わせてオプションとカスタマイズが更新される。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**構文:** obj << Automatic Recalc( state=0|1 )
+**構文:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **説明:** データの除外や変更があった場合に分析を自動的にやり直す。Automatic Recalcオプションがオンになっている場合で、データの除外や変更が再計算の前に確実に適用されるようにするには、Wait(0)コマンドを使用すること。
 
@@ -87,7 +87,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**構文:** obj << Broadcast(message)
+**構文:** obj &lt;&lt; Broadcast(message)
 
 **説明:** メッセージをプラットフォームに一括適用する。個々のオブジェクトから戻される結果がデータテーブルである場合は、可能な限り連結する。その最終的な形式は、Table BoxのSave Combined Tableオプションの結果と同じになるか、またはソース列を使用したConcanateオプションの結果と同じになる。それ以外の場合、結果はリストの形で戻される。
 
@@ -107,7 +107,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**構文:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**構文:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **説明:** プラットフォームの変数を変更するための設定パネルを追加する。
 
@@ -125,7 +125,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**構文:** obj << Copy ByGroup Script
+**構文:** obj &lt;&lt; Copy ByGroup Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -145,7 +145,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**構文:** obj << Copy Script
+**構文:** obj &lt;&lt; Copy Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -160,7 +160,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**構文:** obj << Data Table Window
+**構文:** obj &lt;&lt; Data Table Window
 
 **説明:** この分析に使用したデータテーブルのウィンドウを手前に表示する。
 
@@ -175,7 +175,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**構文:** obj << Get By Levels
+**構文:** obj &lt;&lt; Get By Levels
 
 **説明:** By列が指定されている場合、列名をキー、データ値を値とした連想配列を戻す。
 
@@ -192,7 +192,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**構文:** obj << Get ByGroup Script
+**構文:** obj &lt;&lt; Get ByGroup Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -213,7 +213,7 @@ Show( t );
 
 ### Get Container
 
-**構文:** obj << Get Container
+**構文:** obj &lt;&lt; Get Container
 
 **説明:** オブジェクトのコンテンツを含んだコンテナボックスの参照を戻す。
 
@@ -260,7 +260,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**構文:** obj << Get Data Table
+**構文:** obj &lt;&lt; Get Data Table
 
 **説明:** データテーブルへの参照を戻す。
 
@@ -276,7 +276,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**構文:** obj << Get Group Platform
+**構文:** obj &lt;&lt; Get Group Platform
 
 **説明:** 該当のプラットフォームがグループに属している場合に、Group Platformオブジェクトを戻す。それ以外の場合はEmpty()を戻す。
 
@@ -293,7 +293,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**構文:** obj << Get Script
+**構文:** obj &lt;&lt; Get Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -309,7 +309,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**構文:** obj << Get Script With Data Table
+**構文:** obj &lt;&lt; Get Script With Data Table
 
 **説明:** この分析を再現するスクリプト(JSL)をデータテーブルへの参照も含めて生成し、それを式として戻す。
 
@@ -325,7 +325,7 @@ Show( t );
 
 ### Get Timing
 
-**構文:** obj << Get Timing
+**構文:** obj &lt;&lt; Get Timing
 
 **説明:** プラットフォームの起動にかかった時間を取得する。
 
@@ -341,7 +341,7 @@ Show( t );
 
 ### Get Web Support
 
-**構文:** obj << Get Web Support
+**構文:** obj &lt;&lt; Get Web Support
 
 **説明:** ディスプレイオブジェクトにおけるインタラクティブHTMLサポートのレベルを数値で戻す。1は、一部または全部の要素がサポートされていることを示し、0は、サポートされないことを示す。
 
@@ -357,7 +357,7 @@ Show( s );
 
 ### Get Where Expr
 
-**構文:** obj << Get Where Expr
+**構文:** obj &lt;&lt; Get Where Expr
 
 **説明:** プラットフォームがBy()またはWhere()を使って起動された場合に、データをサブセットするためのWhere式を戻す。By()やWhere()が使われていない場合はEmpty()を戻す。
 
@@ -394,7 +394,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**構文:** obj << Local Data Filter
+**構文:** obj &lt;&lt; Local Data Filter
 
 **説明:** このプラットフォームに対してのみ有効なフィルタで、データを特定のグループまたは範囲にフィルタリングする。
 
@@ -450,7 +450,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**構文:** obj << Paste Local Data Filter
+**構文:** obj &lt;&lt; Paste Local Data Filter
 
 **説明:** クリップボードにあるローカルデータフィルタを現在のレポートに適用する。
 
@@ -471,7 +471,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**構文:** obj << Redo Analysis
+**構文:** obj &lt;&lt; Redo Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -486,7 +486,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**構文:** obj << Redo ByGroup Analysis
+**構文:** obj &lt;&lt; Redo ByGroup Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -506,7 +506,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**構文:** obj << Relaunch Analysis
+**構文:** obj &lt;&lt; Relaunch Analysis
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -521,7 +521,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**構文:** obj << Relaunch ByGroup
+**構文:** obj &lt;&lt; Relaunch ByGroup
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -541,7 +541,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**構文:** obj << Remove Column Switcher
+**構文:** obj &lt;&lt; Remove Column Switcher
 
 **説明:** プラットフォームに最後に追加された列スイッチャーを削除する。
 
@@ -561,7 +561,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**構文:** obj << Remove Local Data Filter
+**構文:** obj &lt;&lt; Remove Local Data Filter
 
 **説明:** すでに作成されているローカルデータフィルタを削除し、プラットフォームはデータテーブル内のすべてのデータを使用した状態に戻る。
 
@@ -600,9 +600,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**構文:** obj << Report;
-
-Report( obj )
+**構文:** obj &lt;&lt; Report;Report( obj )
 
 **説明:** レポートオブジェクトへの参照を戻す。
 
@@ -619,7 +617,7 @@ Show( t );
 
 ### Report View
 
-**構文:** obj << Report View( "完全"|"要約" )
+**構文:** obj &lt;&lt; Report View( "完全"|"要約" )
 
 **説明:** レポートビューは、プラットフォームレポートの詳細を表示するかどうかを決定する。Fullはすべての詳細を表示し、Summaryはプラットフォームにより限定されたものだけを表示する。 動作をカスタマイズするため、各ディスプレイボックスは<<Set Summary Behaviorメッセージをサポートする。
 
@@ -634,7 +632,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**構文:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** 分析を再現するためのJSLスクリプトを作成し、データテーブルにテーブルプロパティとして保存する。スクリプトの名前を指定できる。Append Suffixオプションは、スクリプト名に数字の接尾辞を追加する。これにより、同名のスクリプトが存在していても区別できる。Promptオプションは、ユーザにスクリプト名の指定を促す。Replaceオプションは、同名の既存のスクリプトを置き換える。
 
@@ -654,7 +652,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**構文:** obj << Save ByGroup Script to Journal
+**構文:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -674,7 +672,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**構文:** obj << Save ByGroup Script to Script Window
+**構文:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -694,7 +692,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**構文:** obj << Save Script for All Objects
+**構文:** obj &lt;&lt; Save Script for All Objects
 
 **説明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -709,7 +707,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**構文:** obj << Save Script for All Objects To Data Table( <name> )
+**構文:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **説明:** すべてのレポートオブジェクトを再現するスクリプトを現在のデータテーブルに保存する。このオプションは、ウィンドウ内にレポートが複数ある場合に便利。作成されるスクリプトの名前は、引用符で囲んで指定しない限り、1つ目のプラットフォーム名となる。
 
@@ -747,7 +745,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**構文:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** この分析を再現するJSLスクリプトを生成し、データテーブルのテーブルプロパティとして保存する。
 
@@ -762,7 +760,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**構文:** obj << Save Script to Journal
+**構文:** obj &lt;&lt; Save Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -777,7 +775,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**構文:** obj << Save Script to Report
+**構文:** obj &lt;&lt; Save Script to Report
 
 **説明:** この分析を再現するJSLスクリプトを生成し、レポートウィンドウに表示する。分析手順の記録を結果と一緒に残せる。
 
@@ -792,7 +790,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**構文:** obj << Save Script to Script Window
+**構文:** obj &lt;&lt; Save Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -872,7 +870,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**構文:** obj << Sync to Data Table Changes
+**構文:** obj &lt;&lt; Sync to Data Table Changes
 
 **説明:** 除外やデータの変更が行われた場合に同期する。
 
@@ -889,7 +887,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**構文:** obj << Title( "new title" )
+**構文:** obj &lt;&lt; Title( "new title" )
 
 **説明:** プラットフォームのタイトルを設定する。
 
@@ -904,7 +902,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**構文:** obj << Top Report
+**構文:** obj &lt;&lt; Top Report
 
 **説明:** レポート内のルートノードへの参照を戻す。
 
@@ -921,7 +919,7 @@ Show( t );
 
 ### Transform Column
 
-**構文:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**構文:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **説明:** オブジェクトのローカルコンテキスト(通常はプラットフォーム)内に変換列を作成する。この変換列は、それを作成したプラットフォームの中のみで使用可能。
 
@@ -940,7 +938,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**構文:** obj << View Web XML
+**構文:** obj &lt;&lt; View Web XML
 
 **説明:** インタラクティブHTMLレポートの作成に使うXMLコードを戻す。
 
@@ -976,7 +974,7 @@ New Window( "Bivariate Equation",
 
 ### By
 
-**構文:** obj << By( column(s) )
+**構文:** obj &lt;&lt; By( column(s) )
 
 **説明:** 変数の水準ごとに1つずつ、複数のレポートを作成する。
 
@@ -997,7 +995,7 @@ obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), By( _bycol ) )
 
 ### ID
 
-**構文:** obj << ID( column )
+**構文:** obj &lt;&lt; ID( column )
 
 **説明:** 「積み重ねた文書単語行列の保存」出力データテーブル、および「潜在クラス分析」レポートにおいて、別々の回答者を識別するために使用される列。
 
@@ -1017,7 +1015,7 @@ obj << Save Stacked DTM For Association;
 
 ### Text Columns
 
-**構文:** obj << Text Columns( column(s) )
+**構文:** obj &lt;&lt; Text Columns( column(s) )
 
 **説明:** 処理対象の文書を含むテキスト列。この列に含まれる各行におけるデータが1つの文書として扱われる。
 
@@ -1033,7 +1031,7 @@ obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 
 ### Validation
 
-**構文:** obj << Validation( column )
+**構文:** obj &lt;&lt; Validation( column )
 
 **説明:** 2～3つの異なる値を含む数値列。値が2つある場合は、小さい方の値を学習セット、大きい方の値を検証セットとする。値が3つある場合は、小さい方から学習セット・検証セット・テストセットとする。値が4つ以上ある場合、小さい方から3つの値が使用され、残りは無視される。
 
@@ -1075,7 +1073,7 @@ obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 
 ### Add Delimiters
 
-**構文:** obj << Add Delimiters( "string" )
+**構文:** obj &lt;&lt; Add Delimiters( "string" )
 
 **説明:** 語を分割する区切り文字のデフォルトのリストに、ユーザが指定した文字列を追加する。
 
@@ -1093,7 +1091,7 @@ obj << Add Delimiters( "{}" );
 
 ### Add Phrase Exceptions
 
-**構文:** obj << Add Phrase Exceptions( list )
+**構文:** obj &lt;&lt; Add Phrase Exceptions( list )
 
 **説明:** 単語のリストから削除する句を、リスト形式で追加する。
 
@@ -1111,7 +1109,7 @@ obj << Add Phrase Exceptions( {"every time"} );
 
 ### Add Phrases
 
-**構文:** obj << Add Phrases( list )
+**構文:** obj &lt;&lt; Add Phrases( list )
 
 **説明:** 1つの単語のように分析する句を、リスト形式で指定する。指定された句それぞれは、1つの単語として単語のリストに追加される。また、それに伴い、単語の数も更新される。
 
@@ -1126,7 +1124,7 @@ obj << Add Phrases( {"twice a day", "every time"} );
 
 ### Add Recode Exceptions
 
-**構文:** obj << Add Recode Exceptions( { {pair1}, {pair2}, ...} )
+**構文:** obj &lt;&lt; Add Recode Exceptions( { {pair1}, {pair2}, ...} )
 
 **説明:** 削除すべき、再コード化されたテキスト文字列のリストを追加する。
 
@@ -1144,7 +1142,7 @@ obj << Add Recode Exceptions( {"neglagent", "negligent"} );
 
 ### Add Recodes
 
-**構文:** obj << Add Recodes( { {pair1}, {pair2}, ...} )
+**構文:** obj &lt;&lt; Add Recodes( { {pair1}, {pair2}, ...} )
 
 **説明:** 再コード化する単語のペアのリストを追加する。
 
@@ -1160,7 +1158,7 @@ obj << Show Recodes( 1 );
 
 ### Add Stem Exceptions
 
-**構文:** obj << Add Stem Exceptions( list )
+**構文:** obj &lt;&lt; Add Stem Exceptions( list )
 
 **説明:** 語幹抽出から除外する単語を、リスト形式で追加する。
 
@@ -1178,7 +1176,7 @@ obj << Add Stem Exceptions( {"care", "brush", "like"} );
 
 ### Add Stem Overrides
 
-**構文:** obj << Add Stem Overrides( list )
+**構文:** obj &lt;&lt; Add Stem Overrides( list )
 
 **説明:** 常に語幹抽出する単語のリストを追加する。
 
@@ -1197,7 +1195,7 @@ obj << Add Stem Exceptions( {"care", "brush", "like"} );
 
 ### Add Stop Word Exceptions
 
-**構文:** obj << Add Stop Word Exceptions( list )
+**構文:** obj &lt;&lt; Add Stop Word Exceptions( list )
 
 **説明:** ストップワードから除外する単語を、リスト形式で追加する。
 
@@ -1214,7 +1212,7 @@ obj << Add Stop Word Exceptions( {"again", "are"} );
 
 ### Add Stop Words
 
-**構文:** obj << Add Stop Words( list )
+**構文:** obj &lt;&lt; Add Stop Words( list )
 
 **説明:** 単語のリストから削除し、分析で無視する単語を、リストの形式で追加する。
 
@@ -1231,7 +1229,7 @@ obj << Add Stop Words( {"use", "feel", "like"} );
 
 ### Cloud Width
 
-**構文:** obj << Cloud Width( number )
+**構文:** obj &lt;&lt; Cloud Width( number )
 
 **説明:** ワードクラウドの幅を、指定されたピクセル数に設定する。
 
@@ -1247,7 +1245,7 @@ obj << Cloud Width( 150 );
 
 ### Coloring
 
-**構文:** obj << Coloring( "なし"|"単色"|"グレー濃淡"|"任意の色"|"列の値による色分け..." )
+**構文:** obj &lt;&lt; Coloring( "なし"|"単色"|"グレー濃淡"|"任意の色"|"列の値による色分け..." )
 
 **説明:** ワードクラウドにおける単語の色分けを指定する。
 
@@ -1263,7 +1261,7 @@ obj << Coloring( "Arbitrary Colors" );
 
 ### Custom Stemmer
 
-**構文:** obj << Custom Stemmer( Function( {string, dot}, ... ) )
+**構文:** obj &lt;&lt; Custom Stemmer( Function( {string, dot}, ... ) )
 
 **説明:** 関数内に指定された方法に従って，語幹抽出を実行する。その関数には、stringとdotという2つの引数を指定すること。引数stringは、文書内における単語を意味する。この単語がどのようなパターンを持っているときに、どのように変換するかを関数内で指定する。dotによって、変換後の文字列にドットを付け加えることができる。変換後の文字列には、ドットを最後に付け加えておいたほうがよい。語幹抽出が行われた場合、文書内の単語ごとに指定された関数の処理が適用される。
 
@@ -1307,7 +1305,7 @@ obj << Customize Regex();
 
 ### Discriminant Analysis
 
-**構文:** obj << Discriminant Analysis( Maximum Number of Terms( number ), Minimum Number of Terms( number ), Weighting( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ), Number oc Singular Vectors( number ), Column( :column name ) )
+**構文:** obj &lt;&lt; Discriminant Analysis( Maximum Number of Terms( number ), Minimum Number of Terms( number ), Weighting( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ), Number oc Singular Vectors( number ), Column( :column name ) )
 
 **説明:** 文書単語行列に基づく線形判別分析によって、各文書が指定された列のカテゴリをどのように分類するを分析する。
 
@@ -1331,7 +1329,7 @@ obj << Discriminant Analysis(
 
 ### Font
 
-**構文:** obj << Font( font )
+**構文:** obj &lt;&lt; Font( font )
 
 **説明:** ワードクラウドにおける単語のフォント、スタイル、サイズを指定する。
 
@@ -1347,7 +1345,7 @@ obj << Font( "Arial Narrow", 11, "Plain" );
 
 ### Include Builtin Phrases
 
-**構文:** obj << Include Builtin Phrases( state=0|1 )
+**構文:** obj &lt;&lt; Include Builtin Phrases( state=0|1 )
 
 **説明:** トークン化処理で使用される句に、ビルトインの句が含まれることを指定する。 デフォルトではオン。
 
@@ -1363,7 +1361,7 @@ obj << Include Builtin Phrases( 0 );
 
 ### Include Builtin Stop Words
 
-**構文:** obj << Include Builtin Stop Words( state=0|1 )
+**構文:** obj &lt;&lt; Include Builtin Stop Words( state=0|1 )
 
 **説明:** トークン化処理で使用されるストップワードに、ビルトインのストップワードが含まれることを指定する。 デフォルトではオン。
 
@@ -1393,7 +1391,7 @@ obj = dt << Text Explorer( TextColumns( :Reasons Not to Floss ), Language( "Germ
 
 ### Latent Class Analysis
 
-**構文:** obj << Latent Class Analysis( Number of Clusters( number ), Maximum Number of Terms( number ), Minimum Term Frequency( number ) )
+**構文:** obj &lt;&lt; Latent Class Analysis( Number of Clusters( number ), Maximum Number of Terms( number ), Minimum Term Frequency( number ) )
 
 **説明:** 2値の文書単語行列に対して潜在クラス分析を行う。潜在クラス分析では、類似の文書が同じクラスターに属する確率が高くなるように、潜在クラスモデルが推定される。
 
@@ -1413,11 +1411,7 @@ obj << Latent Class Analysis(
 
 ### Latent Semantic Analysis
 
-**構文:** obj << Latent Semantic Analysis( Maximum Number of Terms( number ), Minimum Term Frequency( number ), Weighting( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ), Number of Singular Vectors( number ), Centering and Scaling( "Centered and Scaled",|"Centered"|"Uncentered" ) ); 
-
- 
-
-obj << SVD( Maximum Number of Terms( number ), Minimum Term Frequency( number ), Weighting( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ), Number of Singular Vectors( number ), Centering and Scaling( "Centered and Scaled",|"Centered"|"Uncentered" ) )
+**構文:** obj &lt;&lt; Latent Semantic Analysis( Maximum Number of Terms( number ), Minimum Term Frequency( number ), Weighting( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ), Number of Singular Vectors( number ), Centering and Scaling( "Centered and Scaled",|"Centered"|"Uncentered" ) ); obj &lt;&lt; SVD( Maximum Number of Terms( number ), Minimum Term Frequency( number ), Weighting( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ), Number of Singular Vectors( number ), Centering and Scaling( "Centered and Scaled",|"Centered"|"Uncentered" ) )
 
 **説明:** 文書単語行列の疎特異値分解を実行する。
 
@@ -1459,7 +1453,7 @@ obj << SVD(
 
 ### Layout
 
-**構文:** obj << Layout( "度数順"|"アルファベット順"|"中心から配置" )
+**構文:** obj &lt;&lt; Layout( "度数順"|"アルファベット順"|"中心から配置" )
 
 **説明:** ワードクラウドにおける単語の配置を指定する。
 
@@ -1543,7 +1537,7 @@ obj = dt << Text Explorer(
 
 ### Minimum Frequency for Phrase
 
-**構文:** obj << Minimum Frequency for Phrase( number )
+**構文:** obj &lt;&lt; Minimum Frequency for Phrase( number )
 
 **説明:** 引数numberに、下限を指定する。ここに指定された下限以上の出現回数をもつ句のみが、句のリストに表示される。デフォルト値は0である。
 
@@ -1558,7 +1552,7 @@ obj << Minimum Frequency for Phrase( 5 );
 
 ### Phrases Alphabetical
 
-**構文:** obj << Phrases Alphabetical( state=0|1 )
+**構文:** obj &lt;&lt; Phrases Alphabetical( state=0|1 )
 
 **説明:** 句のリストにおいて、文字コード順に並べて句を表示する。デフォルトでは、度数の降順で表示されている。
 
@@ -1573,11 +1567,7 @@ obj << Phrases Alphabetical( 1 );
 
 ### Rotated SVD
 
-**構文:** obj << Topic Analysis( Number of Topics ( number ) ) 
-
- 
-
-obj << Rotated SVD( Number of Topics( number ) )
+**構文:** obj &lt;&lt; Topic Analysis( Number of Topics ( number ) ) obj &lt;&lt; Rotated SVD( Number of Topics( number ) )
 
 **説明:** 文書単語行列に対する特異値分解の結果をVarimax回転する。この結果で得られる単語の塊を、「トピック」とみなす。
 
@@ -1627,11 +1617,7 @@ obj << Rotated SVD( Number of Topics( 5 ) );
 
 ### SVD
 
-**構文:** obj << Latent Semantic Analysis( Maximum Number of Terms( number ), Minimum Term Frequency( number ), Weighting( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ), Number of Singular Vectors( number ), Centering and Scaling( "Centered and Scaled",|"Centered"|"Uncentered" ) ); 
-
- 
-
-obj << SVD( Maximum Number of Terms( number ), Minimum Term Frequency( number ), Weighting( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ), Number of Singular Vectors( number ), Centering and Scaling( "Centered and Scaled",|"Centered"|"Uncentered" ) )
+**構文:** obj &lt;&lt; Latent Semantic Analysis( Maximum Number of Terms( number ), Minimum Term Frequency( number ), Weighting( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ), Number of Singular Vectors( number ), Centering and Scaling( "Centered and Scaled",|"Centered"|"Uncentered" ) ); obj &lt;&lt; SVD( Maximum Number of Terms( number ), Minimum Term Frequency( number ), Weighting( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ), Number of Singular Vectors( number ), Centering and Scaling( "Centered and Scaled",|"Centered"|"Uncentered" ) )
 
 **説明:** 文書単語行列の疎特異値分解を実行する。
 
@@ -1673,7 +1659,7 @@ obj << SVD(
 
 ### Save DTM Formula
 
-**構文:** obj << Save DTM Formula( Maximum Number of Terms( number ), Minimum Term Frequency( number ), Weight( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ) )
+**構文:** obj &lt;&lt; Save DTM Formula( Maximum Number of Terms( number ), Minimum Term Frequency( number ), Weight( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ) )
 
 **説明:** Text Score 関数による計算式の列をデータテーブルに保存する。この計算式では、ベクトルが使われる。ベクトルの長さは、ユーザーが指定した単語の最大数、単語の最小度数、および重みのオプションに依存する。
 
@@ -1693,7 +1679,7 @@ obj << Save DTM Formula(
 
 ### Save Document Term Matrix
 
-**構文:** obj << Save Document Term Matrix( Maximum Number of Terms( number ), Minimum Term Frequency( number ), Weight( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ) )
+**構文:** obj &lt;&lt; Save Document Term Matrix( Maximum Number of Terms( number ), Minimum Term Frequency( number ), Weight( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ) )
 
 **説明:** 文書単語行列の各列をデータテーブルに保存する。保存される列の数は、ユーザーが指定した単語の最大数、単語の最小度数、および重みのオプションに依存する。
 
@@ -1713,7 +1699,7 @@ obj << Save Document Term Matrix(
 
 ### Save Stacked DTM for Association
 
-**構文:** obj << Save Stacked DTM for Association
+**構文:** obj &lt;&lt; Save Stacked DTM for Association
 
 **説明:** 縦に積み重ねた文書単語行列を新しいデータテーブルに保存する。テキストエクスプローラの起動ウィンドウでID変数を指定しておくと、作成されるデータテーブルにそのID変数の値も保存される。
 
@@ -1729,7 +1715,7 @@ obj << Save Stacked DTM For Association;
 
 ### Save Term Table
 
-**構文:** obj << Save Term Table
+**構文:** obj &lt;&lt; Save Term Table
 
 **説明:** 「単語と句のリスト」における単語リストのJMPデータテーブルを作成する。このJMPデータテーブルには、各単語、各単語の出現回数、そして、各単語を含む文書数が含まれる。
 
@@ -1745,7 +1731,7 @@ obj << Save Term Table;
 
 ### SaveRegexColumn
 
-**構文:** obj << SaveRegexColumn( text )
+**構文:** obj &lt;&lt; SaveRegexColumn( text )
 
 **説明:** 指定されたカスタム正規表現を、データテーブルの新しい列に保存する。
 
@@ -1781,7 +1767,7 @@ dt << Text Explorer(
 
 ### Score Terms by Column
 
-**構文:** obj << Score Terms by Column( column )
+**構文:** obj &lt;&lt; Score Terms by Column( column )
 
 **説明:** 指定した列の数値データに基づくスコアを、［単語テーブルの保存］オプションで作成したデータテーブルに保存する。スコアは、指定した列の数値データから単語ごとに算出される。このスコアは、指定した列の数値データを、単語の出現頻度で重み付けして平均した値である。
 
@@ -1797,7 +1783,7 @@ obj << Score Terms By Column( :Salary );
 
 ### Sentiment Analysis
 
-**構文:** obj << Sentiment Analysis( state=0|1 )
+**構文:** obj &lt;&lt; Sentiment Analysis( state=0|1 )
 
 **説明:** 辞書に基づく感情分析を行う。辞書に登録されている感情語を文書から抜き出し、各文書における肯定的感情、否定的感情、全体的感情をスコアリングする。
 
@@ -1814,7 +1800,7 @@ sent = obj << Sentiment Analysis( 1 );
 
 ### Set Delimiters
 
-**構文:** obj << Set Delimiters( "string" )
+**構文:** obj &lt;&lt; Set Delimiters( "string" )
 
 **説明:** 語を分割する区切り文字のデフォルトのリストを、ユーザが指定した文字列で置換する。
 
@@ -1831,7 +1817,7 @@ obj << Set Delimiters( " " );
 
 ### Set Regex
 
-**構文:** obj << Set Regex( ... )
+**構文:** obj &lt;&lt; Set Regex( ... )
 
 **説明:** [Regex]によるトークン化で使用するデフォルトの正規表現を置換する。
 
@@ -1846,7 +1832,7 @@ obj << Set Regex( Library( "Words" ) );
 
 ### Show Delimiters
 
-**構文:** obj << Show Delimiters( state=0|1 )
+**構文:** obj &lt;&lt; Show Delimiters( state=0|1 )
 
 **説明:** トークン化処理に使用された区切り文字の表示／非表示を切り替える。このオプションは、トークン化の方法が［基本ワード］であった場合のみ利用できる。
 
@@ -1863,7 +1849,7 @@ obj << Show Delimiters( 1 );
 
 ### Show Filters for all Tables
 
-**構文:** obj << Show Filters for all Tables( state=0|1 )
+**構文:** obj &lt;&lt; Show Filters for all Tables( state=0|1 )
 
 **説明:** レポート内の表の検索に使用できるフィルタの表示／非表示を切り替える。このオプションは、以下の表に適用される。ストップワード、指定した句、語幹の例外、単語と句のリスト、語幹レポート。
 
@@ -1881,7 +1867,7 @@ obj << Show Filters for All Tables( 1 );
 
 ### Show Legend
 
-**構文:** obj << Show Legend( state=0|1 )
+**構文:** obj &lt;&lt; Show Legend( state=0|1 )
 
 **説明:** ワードクラウドにおいて、凡例の表示／非表示を切り替える。 デフォルトではオン。
 
@@ -1899,7 +1885,7 @@ obj << Show Legend( 0 );
 
 ### Show Phrase List
 
-**構文:** obj << Show Phrase List( state=0|1 )
+**構文:** obj &lt;&lt; Show Phrase List( state=0|1 )
 
 **説明:** 「単語と句のリスト」レポートにおいて、句リストの表示／非表示を切り替える。 デフォルトではオン。
 
@@ -1915,7 +1901,7 @@ obj << Show Phrase List( 0 );
 
 ### Show Recodes
 
-**構文:** obj << Show Recodes( state=0|1 )
+**構文:** obj &lt;&lt; Show Recodes( state=0|1 )
 
 **説明:** 再コード化する単語のリストの表示／非表示を切り替える。
 
@@ -1933,7 +1919,7 @@ obj << Show Recodes( 1 );
 
 ### Show Selected Rows
 
-**構文:** obj << Show Selected Rows
+**構文:** obj &lt;&lt; Show Selected Rows
 
 **説明:** 現在選択されている文書のテキストを表示するウィンドウを開く。
 
@@ -1950,7 +1936,7 @@ obj << Show Selected Rows( 1 );
 
 ### Show Specified Phrases
 
-**構文:** obj << Show Specified Phrases( state=0|1 )
+**構文:** obj &lt;&lt; Show Specified Phrases( state=0|1 )
 
 **説明:** 「指定した句」レポートの表示／非表示を切り替える。このレポートには、ユーザーが単語としてカウントするように指定した句の一覧が表示される。
 
@@ -1967,7 +1953,7 @@ Report( obj )["Specified Phrases"] << Close( 0 );
 
 ### Show Stem Exceptions
 
-**構文:** obj << Show Stem Exceptions( state=0|1 )
+**構文:** obj &lt;&lt; Show Stem Exceptions( state=0|1 )
 
 **説明:** 語幹抽出から除外される単語の表示／非表示を切り替える。
 
@@ -1983,7 +1969,7 @@ obj << Show Stem Exceptions( 1 );
 
 ### Show Stem Report
 
-**構文:** obj << Show Stem Report( state=0|1 )
+**構文:** obj &lt;&lt; Show Stem Report( state=0|1 )
 
 **説明:** 語幹抽出したの2つの表を含むレポートの表示／非表示を切り替える。
 
@@ -2000,7 +1986,7 @@ obj << Show Stem Report( 1 );
 
 ### Show Stop Words
 
-**構文:** obj << Show Stop Words( state=0|1 )
+**構文:** obj &lt;&lt; Show Stop Words( state=0|1 )
 
 **説明:** 分析でストップワードとする単語のリストの表示／非表示を切り替える。
 
@@ -2016,7 +2002,7 @@ obj << Show Stop Words( 1 );
 
 ### Show Summary Counts
 
-**構文:** obj << Show Summary Counts( state=0|1 )
+**構文:** obj &lt;&lt; Show Summary Counts( state=0|1 )
 
 **説明:** レポートの先頭にある要約表の表示／非表示を切り替える。 デフォルトではオン。
 
@@ -2032,7 +2018,7 @@ obj << Show Summary Counts( 0 );
 
 ### Show Term List
 
-**構文:** obj << Show Term List( state=0|1 )
+**構文:** obj &lt;&lt; Show Term List( state=0|1 )
 
 **説明:** 「単語と句のリスト」レポートにおいて、単語リストの表示／非表示を切り替える。 デフォルトではオン。
 
@@ -2048,7 +2034,7 @@ obj << Show Term List( 0 );
 
 ### Show Term and Phrase Options
 
-**構文:** obj << Show Term and Phrase Options( state=0|1 )
+**構文:** obj &lt;&lt; Show Term and Phrase Options( state=0|1 )
 
 **説明:** 「単語と句のリスト」レポートのボタンの表示／非表示を切り替える。これらのボタンは、各リストのポップアップメニューで利用可能なオプションをボタンで表示したものである。
 
@@ -2064,7 +2050,7 @@ obj << Show Term and Phrase Options( 1 );
 
 ### Show Word Cloud
 
-**構文:** obj << Show Word Cloud( state=0|1 )
+**構文:** obj &lt;&lt; Show Word Cloud( state=0|1 )
 
 **説明:** ワードクラウドの表示／非表示を切り替える。
 
@@ -2096,7 +2082,7 @@ obj << Stemming( "Stem All Terms" );
 
 ### Term Selection
 
-**構文:** obj << Term Selection( Models( Model( Response Column( <column> ), <other models> )), Model Choice( <index> ))
+**構文:** obj &lt;&lt; Term Selection( Models( Model( Response Column( &lt;column&gt; ), &lt;other models&gt; )), Model Choice( &lt;index&gt; ))
 
 **説明:** 単語選択分析を実行する。指定された応答変数を説明するのに最良な単語を選択する。また、この単語選択分析では、応答変数が何かしらの判定である場合、感情分析にもなる。
 
@@ -2154,7 +2140,7 @@ term = obj << Term Selection(
 
 ### Terms Alphabetical
 
-**構文:** obj << Terms Alphabetical( state=0|1 )
+**構文:** obj &lt;&lt; Terms Alphabetical( state=0|1 )
 
 **説明:** 単語のリストにおいて、文字コード順に並べて単語を表示する。デフォルトでは、度数の降順で表示されている。
 
@@ -2185,11 +2171,7 @@ obj << Tokenizing( "Basic Words" );
 
 ### Topic Analysis
 
-**構文:** obj << Topic Analysis( Number of Topics ( number ) ) 
-
- 
-
-obj << Rotated SVD( Number of Topics( number ) )
+**構文:** obj &lt;&lt; Topic Analysis( Number of Topics ( number ) ) obj &lt;&lt; Rotated SVD( Number of Topics( number ) )
 
 **説明:** 文書単語行列に対する特異値分解の結果をVarimax回転する。この結果で得られる単語の塊を、「トピック」とみなす。
 
@@ -2260,7 +2242,7 @@ obj << Treat Numbers as Words( 1 );
 
 #### Discriminant Analysis
 
-**構文:** obj << Discriminant Analysis( Maximum Number of Terms( number ), Minimum Number of Terms( number ), Weighting( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ), Number oc Singular Vectors( number ), Column( :column name ) )
+**構文:** obj &lt;&lt; Discriminant Analysis( Maximum Number of Terms( number ), Minimum Number of Terms( number ), Weighting( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ), Number oc Singular Vectors( number ), Column( :column name ) )
 
 **説明:** 文書単語行列に基づく線形判別分析によって、各文書が指定された列のカテゴリをどのように分類するを分析する。
 
@@ -2283,7 +2265,7 @@ obj2 = obj << Discriminant Analysis(
 
 #### Canonical Plot
 
-**構文:** obj << Canonical Plot( state=0|1, N Canon( number ) )
+**構文:** obj &lt;&lt; Canonical Plot( state=0|1, N Canon( number ) )
 
 **説明:** 正準スコアをプロットしたグラフの表示/非表示を切り替える。正準スコアは、分析変数の線形結合のなかで、グループを最も分離するものである。
 
@@ -2307,7 +2289,7 @@ obj2 << Canonical Plot( 1, N Canon( 3 ) );
 
 #### Remove
 
-**構文:** obj << Remove
+**構文:** obj &lt;&lt; Remove
 
 **説明:** 「テキストエクスプローラ」レポートウィンドウから「判別分析」レポートを削除する。
 
@@ -2332,7 +2314,7 @@ obj2 << Remove;
 
 #### Save Canonical Scores
 
-**構文:** obj << Save Canonical Scores( N Canon( number ) )
+**構文:** obj &lt;&lt; Save Canonical Scores( N Canon( number ) )
 
 **説明:** データテーブルの新しい列に正準スコアを保存する。正準スコアは、分析変数の線形結合のなかで、グループを最も分離するものである。
 
@@ -2356,7 +2338,7 @@ obj2 << Save Canonical Scores( N Canon( 3 ) );
 
 #### Save Probabilities
 
-**構文:** obj << Save Probabilities
+**構文:** obj &lt;&lt; Save Probabilities
 
 **説明:** データテーブルの新しい列に、各グループに属する確率を保存する。確率が最も高いグループを示す列も作成される。
 
@@ -2380,7 +2362,7 @@ obj2 << Save Probabilities;
 
 #### Save Probability Formulas
 
-**構文:** obj << Save Probability Formulas
+**構文:** obj &lt;&lt; Save Probability Formulas
 
 **説明:** データテーブルの新しい列に、判別分析で求めれた、各グループに属する確率を求める計算式を保存する。この計算式では、Text Score関数が使われる。確率が最も大きいグループを示す列も作成される。
 
@@ -2408,7 +2390,7 @@ obj2 << Save Probability Formulas;
 
 #### Latent Class Analysis
 
-**構文:** obj << Latent Class Analysis( Number of Clusters( number ), Maximum Number of Terms( number ), Minimum Term Frequency( number ) )
+**構文:** obj &lt;&lt; Latent Class Analysis( Number of Clusters( number ), Maximum Number of Terms( number ), Minimum Term Frequency( number ) )
 
 **説明:** 2値の文書単語行列に対して潜在クラス分析を行う。潜在クラス分析では、類似の文書が同じクラスターに属する確率が高くなるように、潜在クラスモデルが推定される。
 
@@ -2429,7 +2411,7 @@ obj2 = obj << Latent Class Analysis(
 
 #### Cluster Mixture Probabilities
 
-**構文:** obj << Cluster Mixture Probabilities( state=0|1 )
+**構文:** obj &lt;&lt; Cluster Mixture Probabilities( state=0|1 )
 
 **説明:** 各行が各クラスターに属する確率の表の表示／非表示を切り替える。 デフォルトではオン。
 
@@ -2452,7 +2434,7 @@ obj2 << Cluster Mixture Probabilities( 0 );
 
 #### Cluster Probabilities by Row
 
-**構文:** obj << Cluster Probabilities by Row( state=0|1 )
+**構文:** obj &lt;&lt; Cluster Probabilities by Row( state=0|1 )
 
 **説明:** 「行ごとのクラスター確率」表の表示／非表示を切り替える。この法には、各データテーブル行に対して、クラスターに属する確率が含まれる。「最尤クラスター」列は、属する確率が最も高いクラスターを示す。 デフォルトではオン。
 
@@ -2473,7 +2455,7 @@ obj2 << Cluster Probabilities by row( 0 );
 
 #### Color by Cluster
 
-**構文:** obj << Color by Cluster
+**構文:** obj &lt;&lt; Color by Cluster
 
 **説明:** データテーブルの各行を、最尤クラスター（クラスターに属する確率が最も大きいクラスター）に従って色付けします。
 
@@ -2493,7 +2475,7 @@ obj2 << Color by Cluster;
 
 #### MDS Plot
 
-**構文:** obj << MDS Plot( state=0|1 )
+**構文:** obj &lt;&lt; MDS Plot( state=0|1 )
 
 **説明:** 多次元尺度構成プロットの表示／非表示を切り替える。これは、クラスターの類似性を2次元上に表したグラフである。 デフォルトではオン。
 
@@ -2514,7 +2496,7 @@ obj2 << MDS Plot( 0 );
 
 #### Remove
 
-**構文:** obj << Remove
+**構文:** obj &lt;&lt; Remove
 
 **説明:** 「テキストエクスプローラ」レポートから「潜在クラス分析」レポートを削除する。
 
@@ -2535,7 +2517,7 @@ obj2 << Remove;
 
 #### Rename Clusters
 
-**構文:** obj << Rename Clusters( "name1", "name2", ...  )
+**構文:** obj &lt;&lt; Rename Clusters( "name1", "name2", ... )
 
 **説明:** 1つまたは複数のクラスターに内容のわかりやすい名前を付けることができる。
 
@@ -2558,7 +2540,7 @@ obj2 << Rename Clusters( "First", "Second", "Third", "Fourth", "Fifth" );
 
 #### Save Probabilities
 
-**構文:** obj << Save Probabilities
+**構文:** obj &lt;&lt; Save Probabilities
 
 **説明:** 文書が各クラスターに属する確率をデータテーブルの新しい列に保存する。
 
@@ -2578,7 +2560,7 @@ obj2 << Save Probabilities;
 
 #### Save Probability Formulas
 
-**構文:** obj << Save Probability Formulas
+**構文:** obj &lt;&lt; Save Probability Formulas
 
 **説明:** データテーブルに、クラスターに属する確率を求める計算式の列と、その確率が最大となっているクラスターを求める計算式の列を保存する。
 
@@ -2598,7 +2580,7 @@ obj2 << Save Probability Formulas;
 
 #### Set Random Seed
 
-**構文:** obj << Latent Class Analysis( Set Random Seed( number ) )
+**構文:** obj &lt;&lt; Latent Class Analysis( Set Random Seed( number ) )
 
 **説明:** 分析における乱数シード値を設定する。
 
@@ -2620,7 +2602,7 @@ obj2 = obj << Latent Class Analysis(
 
 #### Term Probabilities by Cluster
 
-**構文:** obj << Term Probabilities by Cluster( state=0|1 )
+**構文:** obj &lt;&lt; Term Probabilities by Cluster( state=0|1 )
 
 **説明:** 「クラスターごとの単語確率」表の表示／非表示を切り替える。ここで計算される確率は、ある文書が特定のクラスターに属すると仮定した場合に、その文書に該当の単語が含まれる条件付き確率である。 デフォルトではオン。
 
@@ -2641,7 +2623,7 @@ obj2 << Term Probabilities by Cluster( 0 );
 
 #### Top Terms by Cluster
 
-**構文:** obj << Top Terms by Cluster( state=0|1 )
+**構文:** obj &lt;&lt; Top Terms by Cluster( state=0|1 )
 
 **説明:** 各クラスターにおいて最もスコアの高い10個の単語を示した表の表示／非表示を切り替える。 デフォルトではオン。
 
@@ -2664,7 +2646,7 @@ obj2 << Top Terms by Cluster( 0 );
 
 #### Word Clouds by Cluster
 
-**構文:** obj << Word Clouds by Cluster( state=0|1 )
+**構文:** obj &lt;&lt; Word Clouds by Cluster( state=0|1 )
 
 **説明:** 各クラスターに1つずつのワードクラウドの表示／非表示を切り替えます。
 
@@ -2690,11 +2672,7 @@ obj2 << Word Clouds by Cluster( 1 );
 
 #### Rotated SVD
 
-**構文:** obj << Topic Analysis( Number of Topics ( number ) ) 
-
- 
-
-obj << Rotated SVD( Number of Topics( number ) )
+**構文:** obj &lt;&lt; Topic Analysis( Number of Topics ( number ) ) obj &lt;&lt; Rotated SVD( Number of Topics( number ) )
 
 **説明:** 文書単語行列に対する特異値分解の結果をVarimax回転する。この結果で得られる単語の塊を、「トピック」とみなす。
 
@@ -2721,11 +2699,7 @@ obj3 = obj2 << Topic Analysis( Number of Topics( 5 ) );
 
 #### Topic Analysis
 
-**構文:** obj << Topic Analysis( Number of Topics ( number ) ) 
-
- 
-
-obj << Rotated SVD( Number of Topics( number ) )
+**構文:** obj &lt;&lt; Topic Analysis( Number of Topics ( number ) ) obj &lt;&lt; Rotated SVD( Number of Topics( number ) )
 
 **説明:** 文書単語行列に対する特異値分解の結果をVarimax回転する。この結果で得られる単語の塊を、「トピック」とみなす。
 
@@ -2754,7 +2728,7 @@ obj3 = obj2 << Topic Analysis( Number of Topics( 5 ) );
 
 #### Remove
 
-**構文:** obj << Remove
+**構文:** obj &lt;&lt; Remove
 
 **説明:** 特異値分解のレポートから「トピック分析」レポートを削除する。
 
@@ -2785,7 +2759,7 @@ obj3 << Remove;
 
 #### Rename Topics
 
-**構文:** obj << Rename Topics
+**構文:** obj &lt;&lt; Rename Topics
 
 **説明:** 1つまたは複数のトピックに内容のわかりやすい名前を付けることができる。
 
@@ -2816,7 +2790,7 @@ obj3 << Rename Topics( "Too Busy", "Less Often", "Difficult", "Bed", "Week" );
 
 #### Rotation Matrix
 
-**構文:** obj << Rotation Matrix( state=0|1 )
+**構文:** obj &lt;&lt; Rotation Matrix( state=0|1 )
 
 **説明:** Varimax回転を行う回転行列の表示／非表示を切り替える。
 
@@ -2847,7 +2821,7 @@ Report( obj )["Rotation Matrix"] << Close( 0 );
 
 #### Save Document Topic Vectors
 
-**構文:** obj << Save Document Topic Vectors
+**構文:** obj &lt;&lt; Save Document Topic Vectors
 
 **説明:** トピック分析の特異ベクトルを、データテーブルの新しい列に保存する。
 
@@ -2877,7 +2851,7 @@ obj3 << Save Document Topic Vectors;
 
 #### Save Item Topic Vectors
 
-**構文:** obj << Save Item Topic Vectors
+**構文:** obj &lt;&lt; Save Item Topic Vectors
 
 **説明:** 単語のデータテーブルに、トピックベクトルを保存する。
 
@@ -2907,7 +2881,7 @@ obj3 << Save Item Topic Vectors;
 
 #### Save Term Topic Vectors
 
-**構文:** obj << Save Term Topic Vectors
+**構文:** obj &lt;&lt; Save Term Topic Vectors
 
 **説明:** トピック分析のトピックベクトルを、新しいデータテーブルに保存する。単語のデータテーブルがすでに開いている場合は、そのデータテーブルに列を追加する。
 
@@ -2938,7 +2912,7 @@ obj3 << Save Term Topic Vectors;
 
 #### Save Topic Vector Formula
 
-**構文:** obj << Save Topic Vector Formula
+**構文:** obj &lt;&lt; Save Topic Vector Formula
 
 **説明:** 回転後の特異値分解の結果を含む計算式をデータテーブルに保存する。その際、ベクトルによって計算式を構成する。その計算式では、Text Score関数を用いる。
 
@@ -2968,7 +2942,7 @@ obj3 << Save Topic Vector Formula;
 
 #### Save Transaction Topic Vectors
 
-**構文:** obj << Save Transaction Topic Vectors
+**構文:** obj &lt;&lt; Save Transaction Topic Vectors
 
 **説明:** ユーザが指定した次元での特異値ベクトルを回転したもの（トピックベクトル）を、データテーブルの新しい列に保存する。
 
@@ -2998,7 +2972,7 @@ obj3 << Save Transaction Topic Vectors;
 
 #### Top Loadings by Topic
 
-**構文:** obj << Top Loadings by Topic( state=0|1 )
+**構文:** obj &lt;&lt; Top Loadings by Topic( state=0|1 )
 
 **説明:** 「トピック別上位負荷量」レポートの表示／非表示を切り替える。この表では、トピックごとに単語の負荷量が表示される。その際、各トピックで絶対値で負荷量が大きなものだけを表示する。 デフォルトではオン。
 
@@ -3029,7 +3003,7 @@ obj3 << Top Loadings by Topic( 0 );
 
 #### Topic Loadings
 
-**構文:** obj << Topic Loadings( state=0|1 )
+**構文:** obj &lt;&lt; Topic Loadings( state=0|1 )
 
 **説明:** 「トピック負荷量」レポートの表示／非表示を切り替える。この表は、各単語のトピックに対する負荷量の行列である。 デフォルトではオン。
 
@@ -3061,7 +3035,7 @@ obj3 << Topic Loadings( 0 );
 
 #### Topic Scatterplot Matrix
 
-**構文:** obj << Topic Scatterplot Matrix( state=0|1 )
+**構文:** obj &lt;&lt; Topic Scatterplot Matrix( state=0|1 )
 
 **説明:** 回転後の特異値分解ベクトルの散布図行列の表示/非表示を切り替える。
 
@@ -3092,7 +3066,7 @@ obj3 << Topic Scatterplot Matrix( 1 );
 
 #### Topic Scores
 
-**構文:** obj << Topic Scores( state=0|1 )
+**構文:** obj &lt;&lt; Topic Scores( state=0|1 )
 
 **説明:** 「トピックスコア」レポートの表示／非表示を切り替える。この表は、文書ごとの各トピックのスコアである。 デフォルトではオン。
 
@@ -3124,7 +3098,7 @@ obj3 << Topic Scores( 0 );
 
 #### Topic Scores Plots
 
-**構文:** obj << Topic Scores Plots( state=0|1 )
+**構文:** obj &lt;&lt; Topic Scores Plots( state=0|1 )
 
 **説明:** 「トピックスコアのプロット」レポートの表示／非表示を切り替える。 デフォルトではオン。
 
@@ -3156,7 +3130,7 @@ obj3 << Topic Scores Plots( 0 );
 
 #### Variance Explained by Each Topic
 
-**構文:** obj << Variance Explained by Each Topic( state=0|1 )
+**構文:** obj &lt;&lt; Variance Explained by Each Topic( state=0|1 )
 
 **説明:** 各トピックによって説明される分散を示した表の表示／非表示を切り替えます。また、この表には、各トピックによって説明される変動の割合と累積%が示される。
 
@@ -3188,7 +3162,7 @@ Report( obj )["Variance Explained by Each Topic"] << Close( 0 );
 
 #### Word Clouds by Topic
 
-**構文:** obj << Word Clouds by Topic( state=0|1 )
+**構文:** obj &lt;&lt; Word Clouds by Topic( state=0|1 )
 
 **説明:** 各トピックに1つずつのワードクラウドの表示／非表示を切り替える。
 
@@ -3224,11 +3198,7 @@ Report( obj )["Word Clouds by Topic"] << Close( 0 );
 
 #### Latent Semantic Analysis
 
-**構文:** obj << Latent Semantic Analysis( Maximum Number of Terms( number ), Minimum Term Frequency( number ), Weighting( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ), Number of Singular Vectors( number ), Centering and Scaling( "Centered and Scaled",|"Centered"|"Uncentered" ) ); 
-
- 
-
-obj << SVD( Maximum Number of Terms( number ), Minimum Term Frequency( number ), Weighting( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ), Number of Singular Vectors( number ), Centering and Scaling( "Centered and Scaled",|"Centered"|"Uncentered" ) )
+**構文:** obj &lt;&lt; Latent Semantic Analysis( Maximum Number of Terms( number ), Minimum Term Frequency( number ), Weighting( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ), Number of Singular Vectors( number ), Centering and Scaling( "Centered and Scaled",|"Centered"|"Uncentered" ) ); obj &lt;&lt; SVD( Maximum Number of Terms( number ), Minimum Term Frequency( number ), Weighting( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ), Number of Singular Vectors( number ), Centering and Scaling( "Centered and Scaled",|"Centered"|"Uncentered" ) )
 
 **説明:** 文書単語行列の疎特異値分解を実行する。
 
@@ -3249,11 +3219,7 @@ obj2 = obj << Latent Semantic Analysis(
 
 #### SVD
 
-**構文:** obj << Latent Semantic Analysis( Maximum Number of Terms( number ), Minimum Term Frequency( number ), Weighting( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ), Number of Singular Vectors( number ), Centering and Scaling( "Centered and Scaled",|"Centered"|"Uncentered" ) ); 
-
- 
-
-obj << SVD( Maximum Number of Terms( number ), Minimum Term Frequency( number ), Weighting( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ), Number of Singular Vectors( number ), Centering and Scaling( "Centered and Scaled",|"Centered"|"Uncentered" ) )
+**構文:** obj &lt;&lt; Latent Semantic Analysis( Maximum Number of Terms( number ), Minimum Term Frequency( number ), Weighting( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ), Number of Singular Vectors( number ), Centering and Scaling( "Centered and Scaled",|"Centered"|"Uncentered" ) ); obj &lt;&lt; SVD( Maximum Number of Terms( number ), Minimum Term Frequency( number ), Weighting( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ), Number of Singular Vectors( number ), Centering and Scaling( "Centered and Scaled",|"Centered"|"Uncentered" ) )
 
 **説明:** 文書単語行列の疎特異値分解を実行する。
 
@@ -3276,7 +3242,7 @@ obj2 = obj << Latent Semantic Analysis(
 
 #### Cluster Documents
 
-**構文:** obj << Cluster Documents( state=0|1 )
+**構文:** obj &lt;&lt; Cluster Documents( state=0|1 )
 
 **説明:** データ内の文書の階層型クラスター分析の表示/非表示を切り替える。
 
@@ -3300,7 +3266,7 @@ obj2 << Cluster Documents( 1 );
 
 #### Cluster Items
 
-**構文:** obj << Cluster Items( state=0|1 )
+**構文:** obj &lt;&lt; Cluster Items( state=0|1 )
 
 **説明:** データ内の単語の階層型クラスター分析の表示/非表示を切り替える。
 
@@ -3319,7 +3285,7 @@ obj2 << Cluster Items( 1 );
 
 #### Cluster Terms
 
-**構文:** obj << Cluster Terms( state=0|1 )
+**構文:** obj &lt;&lt; Cluster Terms( state=0|1 )
 
 **説明:** データ内の単語の階層型クラスター分析の表示/非表示を切り替える。
 
@@ -3343,7 +3309,7 @@ obj2 << obj << Cluster Terms( 1 );
 
 #### Cluster Transactions
 
-**構文:** obj << Cluster Transactions( state=0|1 )
+**構文:** obj &lt;&lt; Cluster Transactions( state=0|1 )
 
 **説明:** データ内の文書の階層型クラスター分析の表示/非表示を切り替える。
 
@@ -3362,7 +3328,7 @@ obj2 << Cluster Transactions( 1 );
 
 #### Remove
 
-**構文:** obj << Remove
+**構文:** obj &lt;&lt; Remove
 
 **説明:** 「テキストエクスプローラ」レポートウィンドウから特異値分解の結果を削除する。
 
@@ -3387,9 +3353,7 @@ obj2 << Remove;
 
 #### Rotated SVD
 
-**構文:** obj << Topic Analysis( Number of Topics ( number ) )   
-
-obj << Rotated SVD( Number of Topics( number ) )
+**構文:** obj &lt;&lt; Topic Analysis( Number of Topics ( number ) ) obj &lt;&lt; Rotated SVD( Number of Topics( number ) )
 
 **説明:** 文書単語行列に対する特異値分解の結果をVarimax回転する。この結果で得られる単語の塊を、「トピック」とみなす。
 
@@ -3416,7 +3380,7 @@ obj2 << Topic Analysis( Number of Topics( 5 ) );
 
 #### SVD Scatterplot Matrix
 
-**構文:** obj << SVD Scatterplot Matrix( state=0|1, Number of Vectors( number ) )
+**構文:** obj &lt;&lt; SVD Scatterplot Matrix( state=0|1, Number of Vectors( number ) )
 
 **説明:** 該当の特異値分解の結果をもとにした文書と単語の散布図の表示/非表示を切り替える。
 
@@ -3440,7 +3404,7 @@ obj2 << SVD Scatterplot Matrix( 1, Number of Vectors( 8 ) );
 
 #### Save Document Singular Vectors
 
-**構文:** obj << Save Document Singular Vectors(number)
+**構文:** obj &lt;&lt; Save Document Singular Vectors(number)
 
 **説明:** 特異値分解の特異ベクトルを、指定された次元だけ、データテーブルの新しい列に保存する。
 
@@ -3464,7 +3428,7 @@ obj2 << Save Document Singular Vectors( 5 );
 
 #### Save Item SVD
 
-**構文:** obj << Save Item SVD
+**構文:** obj &lt;&lt; Save Item SVD
 
 **説明:** 単語のデータテーブルに、指定された次元までの特異ベクトルを保存する。この特異ベクトルは、文書単語行列の右特異ベクトルである。
 
@@ -3488,7 +3452,7 @@ obj2 << Save Item SVD( 5 );
 
 #### Save Item Singular Vectors
 
-**構文:** obj << Save Item Singular Vectors
+**構文:** obj &lt;&lt; Save Item Singular Vectors
 
 **説明:** 単語のデータテーブルに、指定された次元までの特異ベクトルを保存する。この特異ベクトルは、文書単語行列の右特異ベクトルである。
 
@@ -3512,7 +3476,7 @@ obj2 << Save Item Singular Vectors( 5 );
 
 #### Save Singular Vector Formula
 
-**構文:** obj << Save Singular Vector Formula
+**構文:** obj &lt;&lt; Save Singular Vector Formula
 
 **説明:** 特異値分解の文書に対する結果の計算式をデータテーブルに保存する。その際、ベクトルによって計算式を構成する。その計算式では、Text Score関数を用いる。
 
@@ -3536,7 +3500,7 @@ obj2 << Save Singular Vector Formula;
 
 #### Save Term Singular Vectors
 
-**構文:** obj << Save Term Singular Vectors( number )
+**構文:** obj &lt;&lt; Save Term Singular Vectors( number )
 
 **説明:** 特異値分解で求められた特異ベクトルを、指定された次元だけ、新しいデータテーブルに保存する。各列は単語に対応する。単語のデータテーブルがすでに開いている場合は、そのデータテーブルに列を追加する。
 
@@ -3560,7 +3524,7 @@ obj2 << Save Term Singular Vectors( 5 );
 
 #### Save Transaction SVD
 
-**構文:** obj << Save Transaction SVD
+**構文:** obj &lt;&lt; Save Transaction SVD
 
 **説明:** 文書のデータテーブルに、指定された次元までの特異ベクトルを保存する。この特異ベクトルは、文書単語行列の左特異ベクトルである。
 
@@ -3584,7 +3548,7 @@ obj2 << Save Transaction SVD( 5 );
 
 #### Save Transaction Singular Vectors
 
-**構文:** obj << Save Transaction Singular Vectors
+**構文:** obj &lt;&lt; Save Transaction Singular Vectors
 
 **説明:** 文書のデータテーブルに、指定された次元までの特異ベクトルを保存する。この特異ベクトルは、文書単語行列の左特異ベクトルである。
 
@@ -3608,7 +3572,7 @@ obj2 << Save Transaction Singular Vectors( 5 );
 
 #### Select Near Neighbors
 
-**構文:** obj << Select Near Neighbors( number=10 )
+**構文:** obj &lt;&lt; Select Near Neighbors( number=10 )
 
 **説明:** 「特異値分解プロット」で選択されている点について、その点のk近傍点を選択する。 デフォルトの値は"10"。
 
@@ -3633,9 +3597,7 @@ obj2 << Select Near Neighbors( 8 );
 
 #### Topic Analysis
 
-**構文:** obj << Topic Analysis( Number of Topics ( number ) )   
-
-obj << Rotated SVD( Number of Topics( number ) )
+**構文:** obj &lt;&lt; Topic Analysis( Number of Topics ( number ) ) obj &lt;&lt; Rotated SVD( Number of Topics( number ) )
 
 **説明:** 文書単語行列に対する特異値分解の結果をVarimax回転する。この結果で得られる単語の塊を、「トピック」とみなす。
 
@@ -3685,7 +3647,7 @@ sent = obj << Sentiment Analysis( 1 );
 
 #### Add Feature Words
 
-**構文:** obj << Add Feature Words( list )
+**構文:** obj &lt;&lt; Add Feature Words( list )
 
 **説明:** 特徴としてスコアをつける単語のリストを追加する。
 
@@ -3703,7 +3665,7 @@ sent << Add Feature Words( {"floss"} );
 
 #### Add Intensifier Exception Words
 
-**構文:** obj << Add Intensifier Exception Words( list )
+**構文:** obj &lt;&lt; Add Intensifier Exception Words( list )
 
 **説明:** 分析から削除する強意語を、リストで指定する。
 
@@ -3722,7 +3684,7 @@ sent << Add Intensifier Exception Words( {"almost"} );
 
 #### Add Intensifier Words
 
-**構文:** obj << Add Intensifier Words( {{<word, multiplier>}, {<word>, <multiplier>}, ... } )
+**構文:** obj &lt;&lt; Add Intensifier Words( {{&lt;word, multiplier&gt;}, {&lt;word&gt;, &lt;multiplier&gt;}, ... } )
 
 **説明:** 指定された単語を、強意語として登録する。登録された単語は、感情分析において強意語として処理される。乗数は、通常は-2～2の範囲にある浮動小数点数。
 
@@ -3741,7 +3703,7 @@ sent << Add Intensifier Words( {{"extreme", 1.8}, {"extremely", 1.8}} );
 
 #### Add Negation Exception Words
 
-**構文:** obj << Add Negation Exception Words( list )
+**構文:** obj &lt;&lt; Add Negation Exception Words( list )
 
 **説明:** 分析から削除する否定語を、リストで指定する。
 
@@ -3760,7 +3722,7 @@ sent << Add Negation Exception Words( {"without"} );
 
 #### Add Negation Words
 
-**構文:** obj << Add Negation Words( list )
+**構文:** obj &lt;&lt; Add Negation Words( list )
 
 **説明:** 指定された単語を、否定語として登録する。登録された単語は、感情分析において否定語として処理される。
 
@@ -3779,7 +3741,7 @@ sent << Add Negation Words( {"dont"} );
 
 #### Add Sentiment Exception Words
 
-**構文:** obj << Add Sentiment Exception Words( list )
+**構文:** obj &lt;&lt; Add Sentiment Exception Words( list )
 
 **説明:** 分析から削除する感情語を、リストで指定する。
 
@@ -3798,7 +3760,7 @@ sent << Add Sentiment Exception Words( {"easy"} );
 
 #### Add Sentiment Words
 
-**構文:** obj << Add Sentiment Words( {{<word>, <score>}, {<word>, <score>}, ... } )
+**構文:** obj &lt;&lt; Add Sentiment Words( {{&lt;word&gt;, &lt;score&gt;}, {&lt;word&gt;, &lt;score&gt;}, ... } )
 
 **説明:** 指定された単語を、感情語として登録する。登録された単語は、感情分析において感情語として処理される。スコアは、-100～100の範囲にある整数。
 
@@ -3817,7 +3779,7 @@ sent << Add Sentiment Words( {{"difficult", -70}, {"necessary", -20}} );
 
 #### Include Builtin Intensifier Terms
 
-**構文:** obj << Include Builtin Intensifier Terms( state=0|1 )
+**構文:** obj &lt;&lt; Include Builtin Intensifier Terms( state=0|1 )
 
 **説明:** 感情分析で使用される強意語に、ビルトインの強意語を含めるかどうかを指定する。 デフォルトではオン。
 
@@ -3836,7 +3798,7 @@ sent << Include Builtin Intensifier Terms( 0 );
 
 #### Include Builtin Negation Terms
 
-**構文:** obj << Include Builtin Negation Terms( state=0|1 )
+**構文:** obj &lt;&lt; Include Builtin Negation Terms( state=0|1 )
 
 **説明:** 感情分析に使用される否定語に、ビルトインの否定語を含めるかどうかを指定する。 デフォルトではオン。
 
@@ -3855,7 +3817,7 @@ sent << Include Builtin Negation Terms( 0 );
 
 #### Include Builtin Sentiment Terms
 
-**構文:** obj << Include Builtin Sentiment Terms( state=0|1 )
+**構文:** obj &lt;&lt; Include Builtin Sentiment Terms( state=0|1 )
 
 **説明:** 感情分析で使用される感情語に、ビルトインの感情語を含めるかどうかを指定する。 デフォルトではオン。
 
@@ -3874,7 +3836,7 @@ sent << Include Builtin Sentiment Terms( 0 );
 
 #### Parse Documents
 
-**構文:** obj << Parse Documents( state=0|1 )
+**構文:** obj &lt;&lt; Parse Documents( state=0|1 )
 
 **説明:** 文書の解析に自然言語処理（NLP）を用いることを指定する。 デフォルトではオン。
 
@@ -3893,7 +3855,7 @@ sent << Parse Documents( 0 );
 
 #### Save Count of Sentiment Scores by Document
 
-**構文:** obj << Save Count of Sentiment Scores by Document
+**構文:** obj &lt;&lt; Save Count of Sentiment Scores by Document
 
 **説明:** 感情語ごとにデータテーブルに列を保存する。各列には、文書における各感情語の出現回数が含まれる。
 
@@ -3911,7 +3873,7 @@ sent << Save Count of Sentiment Scores by Document;
 
 #### Save Document Scores
 
-**構文:** obj << Save Document Scores
+**構文:** obj &lt;&lt; Save Document Scores
 
 **説明:** データテーブルの新しい列に、文書のスコアを保存する。
 
@@ -3929,7 +3891,7 @@ sent << Save Document Scores;
 
 #### Score Column
 
-**構文:** obj << Score Column( column )
+**構文:** obj &lt;&lt; Score Column( column )
 
 **説明:** ここで指定した列に含まれる既知の情報が、算出された感情と比較される。
 
@@ -3947,7 +3909,7 @@ sent << Score Column( :Gender );
 
 #### Scoring
 
-**構文:** obj << Scoring( "尺度化"|"最小値/最大値" )
+**構文:** obj &lt;&lt; Scoring( "尺度化"|"最小値/最大値" )
 
 **説明:** 文書のスコアを計算するための計算方法を指定する。［尺度化］オプションは、肯定的な句と否定的な句のスコアを合計し、その合計を句の数で割る。［最小値/最大値］オプションは、肯定的最大値と否定的最小値を足す。
 
@@ -3966,7 +3928,7 @@ sent << Scoring( "Min Max" );
 
 #### Show Feature Finder
 
-**構文:** obj << Show Feature Finder( state=0|1 )
+**構文:** obj &lt;&lt; Show Feature Finder( state=0|1 )
 
 **説明:** 選択した特徴によって感情をフィルタリングすることができるレポートの表示／非表示を切り替える。 デフォルトではオン。
 
@@ -3986,7 +3948,7 @@ sent << Show Feature Finder( 0 );
 
 #### Show Intensifier Terms
 
-**構文:** obj << Show Intensifier Terms( state=0|1 )
+**構文:** obj &lt;&lt; Show Intensifier Terms( state=0|1 )
 
 **説明:** 登録されている強意語の一覧表の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -4006,7 +3968,7 @@ sent << Show Intensifier Terms( 0 );
 
 #### Show Negation Terms
 
-**構文:** obj << Show Negation Terms( state=0|1 )
+**構文:** obj &lt;&lt; Show Negation Terms( state=0|1 )
 
 **説明:** 登録されている否定語の一覧表の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -4026,7 +3988,7 @@ sent << Show Negation Terms( 0 );
 
 #### Show Sentiment Cloud
 
-**構文:** obj << Show Sentiment Cloud( state=0|1 )
+**構文:** obj &lt;&lt; Show Sentiment Cloud( state=0|1 )
 
 **説明:** 感情語のワードクラウドの表示/非表示を切り替える。
 
@@ -4044,7 +4006,7 @@ sent << Show Sentiment Cloud( 1 );
 
 #### Show Sentiment Terms
 
-**構文:** obj << Show Sentiment Terms( state=0|1 )
+**構文:** obj &lt;&lt; Show Sentiment Terms( state=0|1 )
 
 **説明:** 登録されている感情語の一覧表の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -4068,7 +4030,7 @@ sent << Show Sentiment Terms( 0 );
 
 #### Term Selection
 
-**構文:** obj << Term Selection( Models( Model( Response Column( <column> ), <other models> )), Model Choice( <index> ))
+**構文:** obj &lt;&lt; Term Selection( Models( Model( Response Column( &lt;column&gt; ), &lt;other models&gt; )), Model Choice( &lt;index&gt; ))
 
 **説明:** 単語選択分析を実行する。指定された応答変数を説明するのに最良な単語を選択する。また、この単語選択分析では、応答変数が何かしらの判定である場合、感情分析にもなる。
 
@@ -4128,7 +4090,7 @@ term = obj << Term Selection(
 
 #### Model Choice
 
-**構文:** obj << Term Selection( Model Choice(<index>) )
+**構文:** obj &lt;&lt; Term Selection( Model Choice(&lt;index&gt;) )
 
 **説明:** 要約のレポートにおいて現在のモデルがどれかを指定する。
 
@@ -4186,7 +4148,7 @@ term = obj << Term Selection(
 
 #### Models
 
-**構文:** obj << Term Selection( Models( Model( Response Column( <column> ), <other models> )))
+**構文:** obj &lt;&lt; Term Selection( Models( Model( Response Column( &lt;column&gt; ), &lt;other models&gt; )))
 
 **説明:** モデルを生成するのに必要な情報を指定する。
 
@@ -4244,7 +4206,7 @@ term = obj << Term Selection(
 
 #### Remove
 
-**構文:** obj << Remove
+**構文:** obj &lt;&lt; Remove
 
 **説明:** 「テキストエクスプローラ」レポートウィンドウから、単語選択分析のレポートを削除する。
 
@@ -4304,7 +4266,7 @@ term << Remove;
 
 #### Save Document Scores
 
-**構文:** obj << Save Document Scores
+**構文:** obj &lt;&lt; Save Document Scores
 
 **説明:** データテーブルの新しい列に、文書のスコアを保存する。
 
@@ -4363,7 +4325,7 @@ term << Save Document Scores;
 
 #### Save Prediction Formulas
 
-**構文:** obj << Save Prediction Formulas
+**構文:** obj &lt;&lt; Save Prediction Formulas
 
 **説明:** 単語選択分析で求められたモデルの予測式を含む列を、元のデータテーブルに保存します。
 
@@ -4422,7 +4384,7 @@ term << Save Prediction Formulas;
 
 #### Save Term Score DTM
 
-**構文:** obj << Save Term Score DTM
+**構文:** obj &lt;&lt; Save Term Score DTM
 
 **説明:** 単語選択分析で選択された単語に関して、元のデータテーブルにモデル係数の列を保存する。
 
@@ -4481,7 +4443,7 @@ term << Save Term Score DTM;
 
 #### Show Term Cloud
 
-**構文:** obj << Show Term Cloud( state=0|1 )
+**構文:** obj &lt;&lt; Show Term Cloud( state=0|1 )
 
 **説明:** 単語選択分析で選択された単語だけからなるワードクラウドの表示／非表示を切り替えます。
 

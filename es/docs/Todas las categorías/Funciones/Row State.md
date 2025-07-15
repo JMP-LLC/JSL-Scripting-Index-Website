@@ -2,8 +2,6 @@
 
 
 
-## Funciones
-
 ### As Row State
 
 **Sintaxis:** rs = As Row State( x )
@@ -27,7 +25,7 @@ For Each Row(
 
 ### Color Of
 
-**Sintaxis:** y = Color Of( <rs> ); Color Of( <Row State( <r> )> ) = y
+**Sintaxis:** y = Color Of( &lt;rs&gt; ); Color Of( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **Descripción:** Devuelve la componente de color del valor de estado de la fila indicado, ya sea en forma de índice positivo de la paleta de colores de JMP o un valor negativo codificado RGB. Si se usa Color Of como L-value, sirve para cambiar el color de la fila actual (o la fila r-ésima) de la tabla de datos actual.
 
@@ -78,7 +76,7 @@ Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 
 ### Excluded
 
-**Sintaxis:** y = Excluded( <rs> ); Excluded( <Row State( <r> )> ) = y
+**Sintaxis:** y = Excluded( &lt;rs&gt; ); Excluded( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **Descripción:** Devuelve el componente de exclusión del valor de estado de fila especificado, 0 o 1. Si la función Excluded() se usa como L-value, cambia el estado de exclusión de la fila actual (o la r-ésima) de la tabla de datos actual.
 
@@ -114,7 +112,7 @@ Excluded( Row State( 3 ) );
 
 ### Hidden
 
-**Sintaxis:** y = Hidden( <rs> ); Hidden( <Row State( <r> )> ) = y
+**Sintaxis:** y = Hidden( &lt;rs&gt; ); Hidden( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **Descripción:** Devuelve el componente de ocultación del valor de estado fila especificado, 0 o 1. Si la función Hidden se usa como L-value, cambia el estado de ocultación de la fila actual (o la r-ésima) de la tabla de datos actual.
 
@@ -166,7 +164,7 @@ Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 
 ### Labeled
 
-**Sintaxis:** y = Labeled( <rs> ); Labeled( <Row State( <r> )> ) = y
+**Sintaxis:** y = Labeled( &lt;rs&gt; ); Labeled( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **Descripción:** Devuelve el componente de etiquetado del valor de estado de fila especificado, 0 o 1. Si la función Labeled se usa como L-value, cambia el estado de la etiqueta de la fila actual (o la r-ésima) de la tabla de datos actual.
 
@@ -202,7 +200,7 @@ Labeled( Row State( 3 ) );
 
 ### Marker Of
 
-**Sintaxis:** y = Marker Of( <rs> ); Marker Of( <Row State( <r> )> ) = y
+**Sintaxis:** y = Marker Of( &lt;rs&gt; ); Marker Of( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **Descripción:** Devuelve el componente de marcación del valor de estado de fila especificado. Si la función Marker Of se usa como L-value, cambia el estado de marcación de la fila actual (o la r-ésima) de la tabla de datos actual.
 
@@ -238,7 +236,7 @@ Marker Of( Row State( 3 ) );
 
 ### Row State
 
-**Sintaxis:** y = Row State( <dt>, <r> ); Row State( <dt>, <r> ) = y
+**Sintaxis:** y = Row State( &lt;dt&gt;, &lt;r&gt; ); Row State( &lt;dt&gt;, &lt;r&gt; ) = y
 
 **Descripción:** Devuelve el estado de la fila actual o de la fila r-ésima de la tabla de datos actual. Si la función Row State() se usa como L-value, cambia el estado de la fila actual (o la r-ésima) de la tabla de datos actual.
 
@@ -255,7 +253,7 @@ Color To RGB( Color Of( Row State( 3 ) ) );
 
 ### Selected
 
-**Sintaxis:** y = Selected( <rs> );Selected( <Row State( <r> )> ) = y
+**Sintaxis:** y = Selected( &lt;rs&gt; );Selected( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **Descripción:** Devuelve el componente seleccionado del valor de estado de fila especificado, 0 o 1. Si se usa Selected como L-value, cambia el estado de selección de la fila actual (o la r-ésima) de la tabla de datos actual.
 

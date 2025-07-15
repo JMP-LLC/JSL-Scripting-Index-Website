@@ -2,8 +2,6 @@
 
 
 
-## 함수
-
 ### Add Color Theme
 
 **설명:** 새 사용자 색상 테마를 생성하고 테마 선택기에 등록합니다.
@@ -73,7 +71,7 @@ New Window( "Example",
 
 ### Back Color
 
-**구문:** Back Color( <name|index|rgbList> )
+**구문:** Back Color( &lt;name|index|rgbList&gt; )
 
 **설명:** Text() 함수의 지우기 모드에 대한 배경 색상을 설정합니다.
 
@@ -93,7 +91,7 @@ New Window( "Example",
 
 ### Blend Colors
 
-**구문:** color = Blend Colors( color1, color2, <percent2>, <colorSpace>, <hueDirection> )
+**구문:** color = Blend Colors( color1, color2, &lt;percent2&gt;, &lt;colorSpace&gt;, &lt;hueDirection&gt; )
 
 **설명:** 구성 가능한 백분율 및 색상 공간으로 두 색상을 혼합합니다.
 
@@ -231,7 +229,7 @@ Show( Char To Path( "M10 10 L50 10 L30 50 Z M20 20 L40 20 L30 40 Z" ) );
 
 ### Circle
 
-**구문:** Circle( {x, y}, radius|PixelRadius( px ), ..., <"FILL"> )
+**구문:** Circle( {x, y}, radius|PixelRadius( px ), ..., &lt;"FILL"&gt; )
 
 **설명:** {x, y}를 중심으로 원을 그립니다. 반지름은 세로 축에 기반한 정수로 지정하거나 픽셀 수로 지정할 수 있습니다. 픽셀 기반 반지름은 세로 축이 변경되어도 크기가 변하지 않는 원을 생성합니다. 인수를 임의의 순서로 반복하여 원을 여러 개 그릴 수 있습니다. "FILL"을 사용할 경우 마지막에 지정해야 하며 이 인수는 펜 색상으로 원을 그리는 것이 아니라 채우기 색상으로 원을 채웁니다.
 
@@ -256,7 +254,7 @@ New Window( "Example",
 
 ### Color Difference
 
-**구문:** color = Color Difference( color1, color2, <difference metric>)
+**구문:** color = Color Difference( color1, color2, &lt;difference metric&gt;)
 
 **설명:** 지정된 색상 차이 측정 기준에 따라 두 색상의 차이를 반환합니다.
 
@@ -357,7 +355,7 @@ Color To RGB( HLS Color( 30 / 360, 0.5, 1 ) );
 
 ### Contour
 
-**구문:** Contour( xVector, yVector, zGridMatrix, zContours, < <<zColor( color, option )>, < <<Fill|Fill Between|Fill Below|Fill Above>, < <<Transparency(vector)> )
+**구문:** Contour( xVector, yVector, zGridMatrix, zContours, &lt; &lt;&lt;zColor( color, option )&gt;, &lt; &lt;&lt;Fill|Fill Between|Fill Below|Fill Above&gt;, &lt; &lt;&lt;Transparency(vector)&gt; )
 
 **설명:** 지정된 값 격자를 사용하여 등고선을 그립니다. 지정된 색상 수가 등고선 수보다 작으면 "색상 보간" 또는 "색상 순환" 옵션으로 색상 적용 방법을 결정합니다.
 
@@ -416,7 +414,7 @@ New Window( "Example",
 
 ### Contour Function
 
-**구문:** Contour Function( zExpr, xName, yName, z|zMatrix, < <<XGrid( min, max, incr )>, < <<YGrid( min, max, incr )>, < <<ZColor( color, option )>, < <<ZLabeled>, < <<Filled>, < <<FillBetween>, < <<Ternary>, < <<Transparency( t )> )
+**구문:** Contour Function( zExpr, xName, yName, z|zMatrix, &lt; &lt;&lt;XGrid( min, max, incr )&gt;, &lt; &lt;&lt;YGrid( min, max, incr )&gt;, &lt; &lt;&lt;ZColor( color, option )&gt;, &lt; &lt;&lt;ZLabeled&gt;, &lt; &lt;&lt;Filled&gt;, &lt; &lt;&lt;FillBetween&gt;, &lt; &lt;&lt;Ternary&gt;, &lt; &lt;&lt;Transparency( t )&gt; )
 
 **설명:** xName 및 yName 값으로 구성된 격자에서 표현식을 실행하고 등고선을 그립니다. color는 숫자, 행렬, RGB 값 목록, 색상 이름 목록 또는 색상 테마로 지정할 수 있습니다. 투명도 t는 숫자 또는 행렬로 지정할 수 있습니다. Ternary 옵션을 지정하면 등고선이 삼원 좌표계에 고정됩니다.
 
@@ -464,7 +462,7 @@ New Window( "Example",
 
 ### Drag Line
 
-**구문:** Drag Line( xMatrixName, yMatrixName, <dragScript>, <MouseUpScript> )
+**구문:** Drag Line( xMatrixName, yMatrixName, &lt;dragScript&gt;, &lt;MouseUpScript&gt; )
 
 **설명:** 지정된 점에 다중선을 그립니다. 하지만 Line과 달리 점은 화면에서 드래그할 수 있어 (LValue) 행렬 인수의 값이 업데이트될 수 있습니다.
 
@@ -486,7 +484,7 @@ New Window( "Example",
 
 ### Drag Marker
 
-**구문:** Drag Marker( xMatrixName, yMatrixName, <dragScript>, <MouseUpScript> )
+**구문:** Drag Marker( xMatrixName, yMatrixName, &lt;dragScript&gt;, &lt;MouseUpScript&gt; )
 
 **설명:** 지정된 지점에 이동 가능한 표식을 그립니다. 표식이 이동되면 행렬 값이 업데이트됩니다.
 
@@ -508,7 +506,7 @@ New Window( "Example",
 
 ### Drag Polygon
 
-**구문:** Drag Polygon( xMatrixName, yMatrixName, <dragScript>, <MouseUpScript> )
+**구문:** Drag Polygon( xMatrixName, yMatrixName, &lt;dragScript&gt;, &lt;MouseUpScript&gt; )
 
 **설명:** 표시된 지점에 채워진 다각형을 그립니다. 화면에서 점을 드래그하여 (LValue) 행렬 인수의 값을 업데이트할 수 있습니다.
 
@@ -530,7 +528,7 @@ New Window( "Example",
 
 ### Drag Rect
 
-**구문:** Drag Rect( xMatrixName, yMatrixName, <dragScript>, <MouseUpScript> )
+**구문:** Drag Rect( xMatrixName, yMatrixName, &lt;dragScript&gt;, &lt;MouseUpScript&gt; )
 
 **설명:** 지정된 점에 직사각형을 그립니다. 하지만 Rect와 달리 이러한 모퉁이는 화면에서 가로로 드래그할 수 있어 (LValue) 행렬 인수의 값이 업데이트될 수 있습니다.
 
@@ -552,7 +550,7 @@ New Window( "Example",
 
 ### Drag Text
 
-**구문:** Drag Text( xMatrixName, yMatrixName, text, <dragScript>, <MouseUpScript> )
+**구문:** Drag Text( xMatrixName, yMatrixName, text, &lt;dragScript&gt;, &lt;MouseUpScript&gt; )
 
 **설명:** 지정된 점에 텍스트를 그립니다. 하지만 Text() 함수와 달리 화면에서 점을 드래그하여 xMatrixName 및 yMatrixName 행렬 인수의 값을 업데이트할 수 있습니다. text 인수는 문자열 인수 또는 문자열 목록일 수 있습니다.
 
@@ -574,7 +572,7 @@ New Window( "Example",
 
 ### Fill Color
 
-**구문:** Fill Color( <name|index|rgbList> )
+**구문:** Fill Color( &lt;name|index|rgbList&gt; )
 
 **설명:** 채우기 영역 그리기에 대한 색상을 설정합니다.
 
@@ -647,7 +645,7 @@ Get Color Theme Detail( "JMP Default" );
 
 ### Get Color Theme Names
 
-**구문:** {list of names} = Get Color Theme Names(<kind>)
+**구문:** {list of names} = Get Color Theme Names(&lt;kind&gt;)
 
 **설명:** 선택적 파라미터 kind와 매칭되는 색상 테마 문자열 목록을 반환합니다. kind는 "continuous", "categorical", "sequential", "diverging", "qualitative" 또는 "chromatic" 중 하나입니다.
 
@@ -673,7 +671,7 @@ Get Color Theme Names( "sequential" );
 
 ### Gradient Function
 
-**구문:** Gradient Function( zExpr, xName, yName, zLimits, zColor( color list or matrix ), < <<XGrid( min, max, incr )>, < <<YGrid( min, max, incr )>, < <<Transparency( t )> )
+**구문:** Gradient Function( zExpr, xName, yName, zLimits, zColor( color list or matrix ), &lt; &lt;&lt;XGrid( min, max, incr )&gt;, &lt; &lt;&lt;YGrid( min, max, incr )&gt;, &lt; &lt;&lt;Transparency( t )&gt; )
 
 **설명:** 그래프를 두 색상의 그래디언트로 채웁니다. zExpr 인수는 xName 및 yName 변수에 대한 함수입니다. 벡터 zLimits는 zExpr 값의 범위를 지정합니다. zColor 인수는 그라데이션을 생성하기 위해 함께 사용할 두 색상을 정의하는 벡터 또는 목록입니다. Transparency는 전체 격자에 적용되는 단일 값입니다.
 
@@ -755,7 +753,7 @@ New Window( "Color Wheel",
 
 ### Handle
 
-**구문:** Handle( xPos, yPos, dragScript, <mouseUpScript> )
+**구문:** Handle( xPos, yPos, dragScript, &lt;mouseUpScript&gt; )
 
 **설명:** xPos 및 yPos에 지정된 좌표에 정사각형 표식을 그리고 마우스로 표식을 누르면 반복적으로 dragScript 표현식을 실행합니다. 스크립트를 실행하기 전에 전역 x 및 y가 마우스 값으로 설정되고 이후 원래 값으로 복원됩니다. mouseUpScript 표현식은 마우스 버튼을 놓으면 실행됩니다.
 
@@ -783,7 +781,7 @@ New Window( "Example",
 
 ### Heat Color
 
-**구문:** y = Heat Color( x ); y = Heat Color( x, < <<theme> )
+**구문:** y = Heat Color( x ); y = Heat Color( x, &lt; &lt;&lt;theme&gt; )
 
 **설명:** 0에서 1 사이의 값에 해당하는 색상을 반환합니다. 기본 테마는 "파랑-회색-빨강"입니다. 셀 그림에 지원되는 모든 색상 테마가 지원됩니다. 행렬 인수가 지원됩니다.
 
@@ -833,7 +831,7 @@ New Window( "Example",
 
 ### In Polygon
 
-**구문:** b = In Polygon( x, y, xMatrix, <yMatrix> )
+**구문:** b = In Polygon( x, y, xMatrix, &lt;yMatrix&gt; )
 
 **설명:** 점 (x,y)가 벡터 인수로 정의되는 다각형 안에 있으면 1을 반환하고 그렇지 않으면 0을 반환합니다.
 
@@ -848,7 +846,7 @@ In Polygon( 11, 22, [10 20 30], [10 30 20] );
 
 ### Level Color
 
-**구문:** y = Level Color( i ); y = Level Color( i, n ); y = Level Color( i, n, <theme> ); y = Level Color( i, <theme> )
+**구문:** y = Level Color( i ); y = Level Color( i, n ); y = Level Color( i, n, &lt;theme&gt; ); y = Level Color( i, &lt;theme&gt; )
 
 **설명:** 범주 색상을 반환합니다. 여기서 i는 범주 수준이고 n은 범주 수(선택 사항)이며 theme는 열 정보 대화상자의 값 색상 콤보 상자에 있는 색상 테마입니다. "JMP 기본값"은 기본 테마입니다. 범주 인덱스는 1보다 크거나 같고 호출에 지정되거나 테마에 정의된 범주 수보다 작거나 같아야 합니다. 두 번째 인수가 문자이면 색상 테마이고 n이 지정되지 않은 것입니다.
 
@@ -870,7 +868,7 @@ New Window( "Color Bar",
 
 ### Line
 
-**구문:** Line( {x1, y1}, {x2, y2}, ..., < <<Value Space( 0|1 ) >, < <<Smooth( tension, domain, min response, max response ) > ); Line( xMatrix, yMatrix, < <<Value Space(0 | 1) >, < <<Smooth( tension, domain, min response, max response ) > )
+**구문:** Line( {x1, y1}, {x2, y2}, ..., &lt; &lt;&lt;Value Space( 0|1 ) &gt;, &lt; &lt;&lt;Smooth( tension, domain, min response, max response ) &gt; ); Line( xMatrix, yMatrix, &lt; &lt;&lt;Value Space(0 | 1) &gt;, &lt; &lt;&lt;Smooth( tension, domain, min response, max response ) &gt; )
 
 **설명:** 하나의 선 또는 연결된 선을 그립니다. 기본적으로 끝점을 연결하는 직선을 그립니다. Value Space 옵션을 설정한 경우 선은 기본 축 척도에 지정된 투영을 따릅니다. Smooth 옵션을 설정한 경우에는 tension, domain dimension, min response 및 max response에 의해 제약되어 연결이 평활됩니다.
 
@@ -1017,7 +1015,7 @@ g << Set Y Axis( {Format( "Best", 15 ), Show Major Ticks( 0 ), Rotated Labels( "
 
 ### Marker
 
-**구문:** Marker( <rs>, {x1, y1}, {x2, y2}, ... ); Marker( <rs>, xMatrix, yMatrix )
+**구문:** Marker( &lt;rs&gt;, {x1, y1}, {x2, y2}, ... ); Marker( &lt;rs&gt;, xMatrix, yMatrix )
 
 **설명:** 표시된 좌표에 표식을 그립니다.
 
@@ -1052,7 +1050,7 @@ New Window( "Example",
 
 ### Mousetrap
 
-**구문:** Mousetrap( dragScript, <mouseUpScript> )
+**구문:** Mousetrap( dragScript, &lt;mouseUpScript&gt; )
 
 **설명:** 마우스로 그래프 안쪽을 누르는 동안 다른 그래프 개체에 의해 처리되지 않은 dragScript 표현식을 반복적으로 실행합니다. 스크립트를 실행하기 전에 전역 x 및 y가 마우스 값으로 설정되고 이후 원래 값으로 복원됩니다. mouseUpScript 표현식은 마우스 버튼을 놓으면 실행됩니다.
 
@@ -1078,7 +1076,7 @@ New Window( "Example",
 
 ### New Heat Image
 
-**구문:** New Heat Image( Matrix, <Color Theme / gradient ( ... )>
+**구문:** New Heat Image( Matrix, &lt;Color Theme / gradient ( ... )&gt;
 
 **설명:** 행렬과 색상 테마 또는 그래디언트를 기반으로 히트맵 이미지를 생성합니다.
 
@@ -1119,7 +1117,7 @@ New Window( "small and big",
 
 ### Normal Contour
 
-**구문:** Normal Contour( prob, meanMatrix, stdMatrix, corrMatrix, <colorsMatrix>, <fill=0> )
+**구문:** Normal Contour( prob, meanMatrix, stdMatrix, corrMatrix, &lt;colorsMatrix&gt;, &lt;fill=0&gt; )
 
 **설명:** k개 모집단 및 두 개의 변수에 대한 정규 확률 등고선을 그립니다. prob 인수는 스칼라 확률 또는 확률 행렬일 수 있습니다. meanMatrix 및 stdsMatrix 인수는 k x 2 행렬이고 corrMatrix 인수는 k x 1 벡터입니다. colorsMatrix 인수는 k 등고선의 색상을 지정합니다. 색상은 JSL 색상(JSL 색상 정수 값 또는 JSL 색상 함수(예: RGB Color() 또는 HLS Color() 함수)의 반환 값)으로 지정해야 합니다. fill 인수는 등고선 채우기 색상에 대한 투명도를 지정합니다.
 
@@ -1147,7 +1145,7 @@ New Window( "Example",
 
 ### Oval
 
-**구문:** Oval( left, top, right, bottom, <fill=0> )
+**구문:** Oval( left, top, right, bottom, &lt;fill=0&gt; )
 
 **설명:** 지정한 직사각형 내에 타원을 그립니다. fill이 0이 아닌 경우 타원을 채웁니다.
 
@@ -1170,7 +1168,7 @@ New Window( "Example",
 
 ### Path
 
-**구문:** Path( pathMatrix|pathText, <fill=0> )
+**구문:** Path( pathMatrix|pathText, &lt;fill=0&gt; )
 
 **설명:** 지정된 경로를 따라 스트로크를 그리거나(채우기가 0일 경우) 지정된 경로의 내부를 칠합니다(채우기가 0이 아닐 경우). N x 3 행렬 또는 텍스트 표현을 사용하여 경로를 지정할 수 있습니다. 경로 행렬에는 경로의 각 점에 대한 x, y 및 플래그에 해당하는 세 개의 열이 있습니다. 플래그 값은 제어의 경우 0, 이동의 경우 1, 선분의 경우 2, 3차 Bézier 세그먼트의 경우 3이며 점이 경로를 닫는 경우에는 음수입니다. 경로 텍스트는 SVG 구문을 지원합니다.
 
@@ -1206,7 +1204,7 @@ Path To Char( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] );
 
 ### Pen Color
 
-**구문:** Pen Color( <name|index|rgbList> )
+**구문:** Pen Color( &lt;name|index|rgbList&gt; )
 
 **설명:** 선 그리기에 대한 색상을 설정합니다.
 
@@ -1226,7 +1224,7 @@ New Window( "Example",
 
 ### Pen Size
 
-**구문:** Pen Size( <x> )
+**구문:** Pen Size( &lt;x&gt; )
 
 **설명:** 선 그리기에 대한 펜 크기(픽셀)를 설정합니다.
 
@@ -1246,7 +1244,7 @@ New Window( "Example",
 
 ### Pick Color
 
-**구문:** color = Pick Color( <window title>, <name|index|rgbList> )
+**구문:** color = Pick Color( &lt;window title&gt;, &lt;name|index|rgbList&gt; )
 
 **설명:** 표준 색상 선택기를 사용하여 선택된 색상을 반환합니다.
 
@@ -1269,7 +1267,7 @@ New Window( "Example",
 
 ### Pick Color Theme
 
-**구문:** theme = Pick Color Theme( <window title>, <Color Theme(name|specification)>, <Type("Continuous" | "Sequential" | "Bad to Good" | "Categorical")>)
+**구문:** theme = Pick Color Theme( &lt;window title&gt;, &lt;Color Theme(name|specification)&gt;, &lt;Type("Continuous" | "Sequential" | "Bad to Good" | "Categorical")&gt;)
 
 **설명:** 표준 색상 테마 선택기를 사용하여 선택된 색상 테마를 반환합니다. 초기 테마는 명시적으로 지정하거나, Type을 지정하여 환경 설정의 테마를 사용할 수 있습니다.
 
@@ -1406,7 +1404,7 @@ New Window( "Example",
 
 ### Pixel Path
 
-**구문:** PixelPath( h, v, pathMatrix|pathText, <fill=0>, <scale=1.0>, <orient={0.0,1.0}> )
+**구문:** PixelPath( h, v, pathMatrix|pathText, &lt;fill=0&gt;, &lt;scale=1.0&gt;, &lt;orient={0.0,1.0}&gt; )
 
 **설명:** 지정된 픽셀 기반 경로를 따라 스트로크를 그리거나(채우기가 0일 경우) 지정된 경로의 내부를 칠합니다(채우기가 0이 아닐 경우). N x 3 행렬 또는 텍스트 표현을 사용하여 경로를 지정할 수 있습니다. 경로 행렬에는 경로의 각 점에 대한 x, y 및 플래그에 해당하는 세 개의 열이 있습니다. 플래그 값은 제어의 경우 0, 이동의 경우 1, 선분의 경우 2, 3차 Bézier 세그먼트의 경우 3이며 점이 경로를 닫는 경우에는 음수입니다. 경로 텍스트는 SVG 구문을 지원합니다. 경로는 선택적 모수에 따라 축 공간에 지정된 방향을 사용하여 해당 원점을 중심으로 척도화 및 변환됩니다.
 
@@ -1440,7 +1438,7 @@ New Window( "Example",
 
 ### Pixel Text
 
-**구문:** Pixel Text( <properties>, {h, v}, text, ... )
+**구문:** Pixel Text( &lt;properties&gt;, {h, v}, text, ... )
 
 **설명:** {h, v} 픽셀 위치로 이동하고 text 인수에 지정된 텍스트를 그립니다. 명명된 특성 인수에는 Center Justified, Right Justified, Top Align, Bottom Align, Erased, Boxed, Counterclockwise, Clockwise가 포함됩니다. 위치 인수, 명명된 인수 및 문자열을 임의 순서로 지정할 수 있습니다.
 
@@ -1470,7 +1468,7 @@ New Window( "Example",
 
 ### Polygon
 
-**구문:** Polygon( {x1, y1}, {x2, y2}, ..., <<fill(bool) ); Polygon( xMatrix, <yMatrix>, <<fill(bool) )
+**구문:** Polygon( {x1, y1}, {x2, y2}, ..., &lt;&lt;fill(bool) ); Polygon( xMatrix, &lt;yMatrix&gt;, &lt;&lt;fill(bool) )
 
 **설명:** 점에 지정된 다각형을 그립니다.
 
@@ -1491,9 +1489,7 @@ New Window( "Example",
 
 ### Polygon Area
 
-**구문:** area = Polygon Area( {x1, y1}, {x2, y2}, ... );
-
-area = Polygon Area( xMatrix, yMatrix )
+**구문:** area = Polygon Area( {x1, y1}, {x2, y2}, ... );area = Polygon Area( xMatrix, yMatrix )
 
 **설명:** 지정된 다각형의 영역을 계산합니다.
 
@@ -1519,9 +1515,7 @@ area = Polygon Area( [10 20 30], [10 30 20] );
 
 ### Polygon Centroid
 
-**구문:** {cx, cy} = Polygon Centroid( {x1, y1}, {x2, y2}, ... );
-
-centroid = Polygon Centroid( xMatrix, yMatrix )
+**구문:** {cx, cy} = Polygon Centroid( {x1, y1}, {x2, y2}, ... );centroid = Polygon Centroid( xMatrix, yMatrix )
 
 **설명:** 지정된 다각형의 중심을 계산합니다.
 
@@ -1547,7 +1541,7 @@ centroid = Polygon Centroid( [10 20 30], [10 30 20] );
 
 ### Polygon Simplify
 
-**구문:** rows = Polygon Simplify( xMatrix|xyMatrix, <yMatrix>, <<<detail factor(f=200)>, <<<multiple(ids)>, <<<geodesic(bool)> )
+**구문:** rows = Polygon Simplify( xMatrix|xyMatrix, &lt;yMatrix&gt;, &lt;&lt;&lt;detail factor(f=200)&gt;, &lt;&lt;&lt;multiple(ids)&gt;, &lt;&lt;&lt;geodesic(bool)&gt; )
 
 **설명:** 다각형에서 상세 정보가 적은 점을 제거하고 나머지 점의 인덱스를 반환합니다. detail factor는 상세 오차 공차에 반비례합니다. multiple(ids)은 여러 다각형을 함께 단순화하여 공통 모서리를 일관되게 처리해야 함을 나타냅니다. ids는 점당 하나의 행으로 구성된 행렬입니다. geodesic(1)는 거리 측정 좌표가 위도와 경도임을 나타냅니다.
 
@@ -1659,7 +1653,7 @@ New Window( "RGB Color Example",
 
 ### Rect
 
-**구문:** Rect( left, top, right, bottom, <fill=0> ); Rect( {left, top}, {right, bottom} )
+**구문:** Rect( left, top, right, bottom, &lt;fill=0&gt; ); Rect( {left, top}, {right, bottom} )
 
 **설명:** fill이 0이 아닌 경우 채워진 직사각형을 그립니다.
 
@@ -1682,7 +1676,7 @@ New Window( "Example",
 
 ### Remove Color Theme
 
-**구문:** Remove Color Theme("Name"|{"Name", <flags>, {color, ...}, <{position, ...}>})
+**구문:** Remove Color Theme("Name"|{"Name", &lt;flags&gt;, {color, ...}, &lt;{position, ...}&gt;})
 
 **설명:** 이름 또는 전체 색상 테마 개체를 기준으로 전역 목록에서 사용자 색상 테마를 제거합니다.
 
@@ -1697,9 +1691,7 @@ Remove Color Theme( "Yellow To Blue" );
 
 ### Text
 
-**구문:** Text( <properties>, {x, y}, text, ... )
-
-Text( {left, top, right, bottom}, text )
+**구문:** Text( &lt;properties&gt;, {x, y}, text, ... )Text( {left, top, right, bottom}, text )
 
 **설명:** {x, y} 위치로 이동하여 text 인수에 지정된 텍스트를 그립니다. 명명된 특성 인수에는 Center Justified, Right Justified, Erased, Boxed, Counterclockwise, Clockwise가 포함됩니다. 위치 인수, 명명된 인수 및 문자열을 임의 순서로 혼합할 수 있습니다. 4개의 x, y 좌표를 사용하여 텍스트를 그릴 상자를 설명할 수도 있습니다. 이 경우 특성이 사용되지 않습니다.
 
@@ -1735,7 +1727,7 @@ New Window( "Example",
 
 ### Text Color
 
-**구문:** Text Color( <name|index|rgbList> )
+**구문:** Text Color( &lt;name|index|rgbList&gt; )
 
 **설명:** 텍스트 그리기에 대한 색상을 설정합니다.
 
@@ -1755,7 +1747,7 @@ New Window( "Example",
 
 ### Text Font
 
-**구문:** {nm, sz, st, an} = Text Font(fontName, <size>, <"bold italic underline strikeout">, <angle>
+**구문:** {nm, sz, st, an} = Text Font(fontName, &lt;size&gt;, &lt;"bold italic underline strikeout"&gt;, &lt;angle&gt;
 
 **설명:** 이후 Text() 그리기에 사용되는 글꼴을 설정합니다. 현재 글꼴 설정을 가져오려면 인수 없이 사용합니다. 각도는 시계 방향 각도입니다.
 
@@ -1842,7 +1834,7 @@ To Color Space( {0.941, 0.196, 0.274, "lRGB", 0.871, 0.032, 0.061}, "HLS" );
 
 ### Transparency
 
-**구문:** Transparency( <alpha> )
+**구문:** Transparency( &lt;alpha&gt; )
 
 **설명:** 그리기 명령에 사용되는 투명도를 설정합니다. 알파 범위는 0(투명)에서 1(불투명, 기본값) 사이입니다. 일부 운영 체제에서는 이를 지원하지 않습니다.
 
@@ -1908,7 +1900,7 @@ New Window( "Example",
 
 ### X Function
 
-**구문:** X Function( xExpr, yName, <properties> )
+**구문:** X Function( xExpr, yName, &lt;properties&gt; )
 
 **설명:** yName의 Y 축 범위에서 X 함수 xExpr을 그립니다. 추가 명명된 특성 인수에는 Min(최소 X), Max(최대 Y), Fill(채우기 패턴, 채울 값), Inc(증분 상한)가 포함됩니다.
 
@@ -1968,7 +1960,7 @@ New Window( "Example",
 
 ### X Scale
 
-**구문:** X Scale( <xMin>, <xMax> )
+**구문:** X Scale( &lt;xMin&gt;, &lt;xMax&gt; )
 
 **설명:** 그래픽 프레임에 대한 새 척도를 설정합니다.
 
@@ -2030,7 +2022,7 @@ New Window( "Spiral",
 
 ### Y Function
 
-**구문:** Y Function( yExpr, xName, <properties> )
+**구문:** Y Function( yExpr, xName, &lt;properties&gt; )
 
 **설명:** xName의 X 축 범위에서 변수 Y 함수 yExpr을 그립니다. 추가 명명된 특성 인수에는 Min(최소 X), Max(최대 X), Fill(채우기 패턴, 채울 값), Inc(증분 상한)가 포함됩니다.
 
@@ -2090,7 +2082,7 @@ New Window( "Example",
 
 ### Y Scale
 
-**구문:** Y Scale( <yMin>, <yMax> )
+**구문:** Y Scale( &lt;yMin&gt;, &lt;yMax&gt; )
 
 **설명:** 그래픽 프레임에 대한 새 척도를 설정합니다.
 

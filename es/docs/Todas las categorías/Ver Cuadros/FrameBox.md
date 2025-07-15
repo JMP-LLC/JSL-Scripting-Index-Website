@@ -6,7 +6,7 @@
 
 ### Add Graphics Script
 
-**Sintaxis:** obj << Add Graphics Script( <"Back" | "Front" | position>, <Description("name")>, <"Selected Layer">, <Scale IDs(XID, YID)>, script )
+**Sintaxis:** obj &lt;&lt; Add Graphics Script( &lt;"Back" | "Front" | position&gt;, &lt;Description("name")&gt;, &lt;"Selected Layer"&gt;, &lt;Scale IDs(XID, YID)&gt;, script )
 
 **Descripción:** Introduce un script que dibujará dentro de este marco. Los elementos seleccionados siempre están por encima de los no seleccionados. Si especifica una capa seleccionada, este script se ejecuta durante la segunda pasada de dibujo cuando se tracen los elementos seleccionados.
 
@@ -84,7 +84,7 @@ Report( b )[Frame Box( 1 )] << Add Graphics Script(
 
 ### Add Image
 
-**Sintaxis:** obj << Add Image( image | open("image filename"), <bounds( left(value), top(value), bottom(value), right(value) ) | move(centerX, centerY)> )
+**Sintaxis:** obj &lt;&lt; Add Image( image | open("image filename"), &lt;bounds( left(value), top(value), bottom(value), right(value) ) | move(centerX, centerY)&gt; )
 
 **Descripción:** 
 
@@ -114,7 +114,7 @@ w = New Window( "View Image",
 
 ### Append Seg
 
-**Sintaxis:** obj << Append Seg( display seg )
+**Sintaxis:** obj &lt;&lt; Append Seg( display seg )
 
 **Descripción:** Agrega un segmento de visualización al cuadro del marco
 
@@ -133,7 +133,7 @@ gb2 << append seg( Current Report()[FrameBox( 1 )] << find seg( Marker Seg( 1 ) 
 
 ### Background Map
 
-**Sintaxis:** obj << Background Map( <Images("None" | "Simple Earth" | "Detailed Earth" | "Nasa Server" | ("Web Map Service", url, layer) , <Transparency(0-1)> )> | <Boundaries("None" | Shape File)> )
+**Sintaxis:** obj &lt;&lt; Background Map( &lt;Images("None" | "Simple Earth" | "Detailed Earth" | "Nasa Server" | ("Web Map Service", url, layer) , &lt;Transparency(0-1)&gt; )&gt; | &lt;Boundaries("None" | Shape File)&gt; )
 
 **Descripción:** 
 
@@ -172,7 +172,7 @@ framebox << Background Map(
 
 ### Bottom
 
-**Sintaxis:** obj << Bottom( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Bottom( state=0|1 )
 
 **Descripción:** Muestra u oculta un borde de la parte inferior del marco.
 
@@ -189,7 +189,7 @@ framebox << Bottom( 0 );
 
 ### Child Seg
 
-**Sintaxis:** obj << Child Seg
+**Sintaxis:** obj &lt;&lt; Child Seg
 
 **Descripción:** Devuelve el hijo del segmento de visualización del cuadro del marco
 
@@ -205,7 +205,7 @@ rbiv[Frame Box( 1 )] << Child Seg();
 
 ### Copy Customizations
 
-**Sintaxis:** obj << Copy Customizations
+**Sintaxis:** obj &lt;&lt; Copy Customizations
 
 **Descripción:** Copia un script que contiene las personalizaciones del gráfico.
 
@@ -227,7 +227,7 @@ framebox2 << Paste Customizations;
 
 ### Copy Frame Contents
 
-**Sintaxis:** obj << Copy Frame Contents
+**Sintaxis:** obj &lt;&lt; Copy Frame Contents
 
 **Descripción:** Crea un texto de diario que contiene la configuración del marco y lo copia al portapapeles.
 
@@ -249,7 +249,7 @@ framebox2 << Paste Frame Contents;
 
 ### Copy Frame Settings
 
-**Sintaxis:** obj << Copy Frame Settings
+**Sintaxis:** obj &lt;&lt; Copy Frame Settings
 
 **Descripción:** Crea un script que contiene la configuración del marco y lo copia al portapapeles.
 
@@ -271,7 +271,7 @@ framebox2 << Paste Frame Settings;
 
 ### Copy Polygons
 
-**Sintaxis:** obj << Copy Polygons
+**Sintaxis:** obj &lt;&lt; Copy Polygons
 
 **Descripción:** Guarda en el portapapeles una copia de los polígonos del marco.
 
@@ -292,7 +292,7 @@ framebox << Copy Polygons;
 
 ### Customize
 
-**Sintaxis:** obj << Customize
+**Sintaxis:** obj &lt;&lt; Customize
 
 **Descripción:** Cambia las propiedades del contenido del gráfico.
 
@@ -309,7 +309,7 @@ framebox << Customize;
 
 ### Dispatch Segs
 
-**Sintaxis:** obj << Dispatch Segs( command )
+**Sintaxis:** obj &lt;&lt; Dispatch Segs( command )
 
 **Descripción:** Envía un comando a todos los elementos visuales ("segmentos") del cuadro de visualización.
 
@@ -317,7 +317,7 @@ framebox << Customize;
 
 ### DispatchSeg
 
-**Sintaxis:** obj << DispatchSeg( command )
+**Sintaxis:** obj &lt;&lt; DispatchSeg( command )
 
 **Descripción:** Envía un comando al cuadro de visualización.
 
@@ -343,7 +343,7 @@ Distribution(
 
 ### Edit Graphics Script
 
-**Sintaxis:** obj << Edit Graphics Script
+**Sintaxis:** obj &lt;&lt; Edit Graphics Script
 
 **Descripción:** Edita los scripts ya instalados en el marco.
 
@@ -365,7 +365,7 @@ framebox << Edit Graphics Script;
 
 ### Fill Selection Mode
 
-**Sintaxis:** obj << Fill Selection Mode( "Modo preferido"|"Con patrón seleccionado"|"Más oscuro seleccionado"|"Seleccionados con contorno"|"Seleccionado del mismo color"|"No seleccionados atenuados" )
+**Sintaxis:** obj &lt;&lt; Fill Selection Mode( "Modo preferido"|"Con patrón seleccionado"|"Más oscuro seleccionado"|"Seleccionados con contorno"|"Seleccionado del mismo color"|"No seleccionados atenuados" )
 
 **Descripción:** Establece el estilo de selección para los rellenos.
 
@@ -385,7 +385,7 @@ framebox << Fill Selection Mode( "Selected Darker" );
 
 ### Find Seg
 
-**Sintaxis:** obj << Find Seg( display seg )
+**Sintaxis:** obj &lt;&lt; Find Seg( display seg )
 
 ```jsl
 
@@ -400,13 +400,13 @@ ms << delete;
 
 ### Find Segs
 
-**Sintaxis:** obj << Find Segs
+**Sintaxis:** obj &lt;&lt; Find Segs
 
 **JMP Versión agregada:** 15
 
 ### Frame Size
 
-**Sintaxis:** obj << Frame Size
+**Sintaxis:** obj &lt;&lt; Frame Size
 
 **Descripción:** Cambia el tamaño de marco.
 
@@ -423,7 +423,7 @@ framebox << Frame Size( 300, 300 );
 
 ### Get Background Fill
 
-**Sintaxis:** obj << Get Background Fill
+**Sintaxis:** obj &lt;&lt; Get Background Fill
 
 **Descripción:** Devuelve el estado (0|1) del color de relleno de fondo del gráfico.
 
@@ -446,7 +446,7 @@ val1 = framebox << Get Background Fill;
 
 ### Get Fill Selection Mode
 
-**Sintaxis:** obj << Get Fill Selection Mode
+**Sintaxis:** obj &lt;&lt; Get Fill Selection Mode
 
 **Descripción:** Devuelve el estilo de selección para los rellenos.
 
@@ -467,7 +467,7 @@ framebox << Get Fill Selection Mode;
 
 ### Get Image
 
-**Sintaxis:** image = obj << Get Image
+**Sintaxis:** image = obj &lt;&lt; Get Image
 
 **Descripción:** Devuelve una referencia a la imagen de fondo.
 
@@ -497,7 +497,7 @@ Print( fb << Get Image );
 
 ### Get Marker Selection Mode
 
-**Sintaxis:** obj << Get Marker Selection Mode
+**Sintaxis:** obj &lt;&lt; Get Marker Selection Mode
 
 **Descripción:** Devuelve el estilo de selección del marcador.
 
@@ -516,7 +516,7 @@ framebox << Get Marker Selection Mode;
 
 ### Get Marker Size
 
-**Sintaxis:** obj << Get Marker Size
+**Sintaxis:** obj &lt;&lt; Get Marker Size
 
 **Descripción:** Devuelve el tamaño de marcador gráfico.
 
@@ -534,7 +534,7 @@ Print( framebox << Get Marker Size() );
 
 ### Get Polygons
 
-**Sintaxis:** obj << Get Polygons
+**Sintaxis:** obj &lt;&lt; Get Polygons
 
 **Descripción:** Devuelve una lista de los polígonos del marco.
 
@@ -555,7 +555,7 @@ Print( framebox << Get Polygons );
 
 ### Grid Line Order
 
-**Sintaxis:** obj << Grid Line Order( position )
+**Sintaxis:** obj &lt;&lt; Grid Line Order( position )
 
 **Descripción:** Dibuja líneas de cuadrícula delante o detrás de otros objetos del gráfico
 
@@ -574,7 +574,7 @@ framebox << Grid Line Order( 1 );
 
 ### Hover Label Editor
 
-**Sintaxis:** obj << Hover Label Editor
+**Sintaxis:** obj &lt;&lt; Hover Label Editor
 
 **Descripción:** Muestra la ventana Editor de etiquetas flotantes.
 
@@ -582,7 +582,7 @@ framebox << Grid Line Order( 1 );
 
 ### Left
 
-**Sintaxis:** obj << Left( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Left( state=0|1 )
 
 **Descripción:** Muestra u oculta un borde de la izquierda del marco.
 
@@ -599,7 +599,7 @@ framebox << Left( 0 );
 
 ### Line Width Scale
 
-**Sintaxis:** obj << Line Width Scale( 0|scale )
+**Sintaxis:** obj &lt;&lt; Line Width Scale( 0|scale )
 
 **Descripción:** Establece el grosor de línea al valor introducido. Un valor de 0 significa que la escala del grosor de línea está determinada por la escala del tamaño de fuente.
 
@@ -616,13 +616,13 @@ framebox << Line Width Scale( 2.0 );
 
 ### Make table of graphs like this
 
-**Sintaxis:** obj << Make table of graphs like this
+**Sintaxis:** obj &lt;&lt; Make table of graphs like this
 
 **Descripción:** crea una tabla de datos de gráficos
 
 ### Marker Drawing Mode
 
-**Sintaxis:** obj << Marker Drawing Mode( "Normal"|"Rápido"|"Con contorno" )
+**Sintaxis:** obj &lt;&lt; Marker Drawing Mode( "Normal"|"Rápido"|"Con contorno" )
 
 **Descripción:** Establece el estilo del marcador.
 
@@ -639,13 +639,13 @@ framebox << Marker Drawing Mode( "outlined" );
 
 ### Marker Label Color Style
 
-**Sintaxis:** obj << Marker Label Color Style( "Modo preferido"|"Color del marcador"|"Color del marcador atenuado"|"Color fijo" )
+**Sintaxis:** obj &lt;&lt; Marker Label Color Style( "Modo preferido"|"Color del marcador"|"Color del marcador atenuado"|"Color fijo" )
 
 **Descripción:** Cambia el color de las etiquetas del marcador
 
 ### Marker Selection Mode
 
-**Sintaxis:** obj << Marker Selection Mode( "Modo preferido"|"No seleccionados atenuados"|"Seleccionados más grandes"|"Seleccionados con halo"|"Seleccionados con contorno"|"Seleccionado del mismo color" )
+**Sintaxis:** obj &lt;&lt; Marker Selection Mode( "Modo preferido"|"No seleccionados atenuados"|"Seleccionados más grandes"|"Seleccionados con halo"|"Seleccionados con contorno"|"Seleccionado del mismo color" )
 
 **Descripción:** Establece el estilo de selección del marcador.
 
@@ -663,7 +663,7 @@ framebox << Marker Selection Mode( "Selected Haloed" );
 
 ### Marker Size
 
-**Sintaxis:** obj << Marker Size( 0=dot/1=small/2=medium/... )
+**Sintaxis:** obj &lt;&lt; Marker Size( 0=dot/1=small/2=medium/... )
 
 **Descripción:** Establece el tamaño del marcador.
 
@@ -680,7 +680,7 @@ framebox << Marker Size( 4 );
 
 ### Name Selection in Column
 
-**Sintaxis:** obj << Name Selection in Column
+**Sintaxis:** obj &lt;&lt; Name Selection in Column
 
 **Descripción:** Etiquetar las filas seleccionadas y guardar el valor (etiqueta) en una columna.
 
@@ -700,7 +700,7 @@ framebox << Name Selection in Column;
 
 ### Paste Background Image
 
-**Sintaxis:** obj << Paste Background Image
+**Sintaxis:** obj &lt;&lt; Paste Background Image
 
 **Descripción:** Pega al portapapeles la imagen de fondo guardada en memoria.
 
@@ -733,7 +733,7 @@ fb2 << Paste Background Image;
 
 ### Paste Customizations
 
-**Sintaxis:** obj << Paste Customizations
+**Sintaxis:** obj &lt;&lt; Paste Customizations
 
 **Descripción:** Pega un script que contiene las personalizaciones del gráfico.
 
@@ -755,7 +755,7 @@ framebox2 << Paste Customizations;
 
 ### Paste Frame Contents
 
-**Sintaxis:** obj << Paste Frame Contents
+**Sintaxis:** obj &lt;&lt; Paste Frame Contents
 
 **Descripción:** El portapapeles contiene texto de diario para el contenido del marco. Analícelo e instálelo en el marco.
 
@@ -777,7 +777,7 @@ framebox2 << Paste Frame Contents;
 
 ### Paste Frame Settings
 
-**Sintaxis:** obj << Paste Frame Settings
+**Sintaxis:** obj &lt;&lt; Paste Frame Settings
 
 **Descripción:** Pega en el marco el contenido del portapapeles.
 
@@ -799,7 +799,7 @@ framebox2 << Paste Frame Settings;
 
 ### Paste Graphlet
 
-**Sintaxis:** obj << Paste Graphlet
+**Sintaxis:** obj &lt;&lt; Paste Graphlet
 
 **Descripción:** Agrega una personalización del graphlet basada en el contenido del portapapeles.
 
@@ -846,7 +846,7 @@ gpin << Launch Graphlet;
 
 ### Reference Line Order
 
-**Sintaxis:** obj << Reference Line Order( position )
+**Sintaxis:** obj &lt;&lt; Reference Line Order( position )
 
 **Descripción:** Dibuja líneas de referencia delante o detrás de otros objetos del gráfico
 
@@ -865,7 +865,7 @@ framebox << Reference Line Order( 1 );
 
 ### Remove Graphics Script
 
-**Sintaxis:** obj << Remove Graphics Script( position )
+**Sintaxis:** obj &lt;&lt; Remove Graphics Script( position )
 
 **Descripción:** Elimina el script de gráficos asociado al marco en la position indicada.
 
@@ -893,7 +893,7 @@ framebox << Remove Graphics Script( 2 );
 
 ### Reorder Segs
 
-**Sintaxis:** obj << Reorder Segs( List of integers representing the current segs in the new order. )
+**Sintaxis:** obj &lt;&lt; Reorder Segs( List of integers representing the current segs in the new order. )
 
 **Descripción:** Reordena los segmentos que están en un gráfico.
 
@@ -923,7 +923,7 @@ For( blink = 1, blink < 4, blink++,
 
 ### Right
 
-**Sintaxis:** obj << Right( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Right( state=0|1 )
 
 **Descripción:** Muestra u oculta un borde de la derecha del marco.
 
@@ -940,7 +940,7 @@ framebox << Right( 0 );
 
 ### Right Y Axis
 
-**Sintaxis:** obj << Right Y Axis( < Min( min ) >, < Max( max ) >, < Inc( n ) >, ... )
+**Sintaxis:** obj &lt;&lt; Right Y Axis( &lt; Min( min ) &gt;, &lt; Max( max ) &gt;, &lt; Inc( n ) &gt;, ... )
 
 **Descripción:** Aplica uno o más cambios del eje Y derecho en un único mensaje. Abre la ventana de configuración del eje Y derecho si no se indican argumentos..
 
@@ -993,7 +993,7 @@ framebox << Right Y Axis(
 
 ### Row Colors
 
-**Sintaxis:** obj << Row Colors( color )
+**Sintaxis:** obj &lt;&lt; Row Colors( color )
 
 **Descripción:** Establece el color de las filas seleccionadas.
 
@@ -1011,7 +1011,7 @@ framebox << Row Colors( "Red" );
 
 ### Row Editor
 
-**Sintaxis:** obj << Row Editor
+**Sintaxis:** obj &lt;&lt; Row Editor
 
 **Descripción:** Visualiza la ventana del editor de fila y empieza en el primer punto seleccionado.
 
@@ -1028,7 +1028,7 @@ framebox << Row Editor;
 
 ### Row Exclude
 
-**Sintaxis:** obj << Row Exclude
+**Sintaxis:** obj &lt;&lt; Row Exclude
 
 **Descripción:** Excluye (o anula la exclusión de) las filas correspondientes de la tabla de datos.
 
@@ -1046,7 +1046,7 @@ framebox << Row Exclude( 1 );
 
 ### Row Hide
 
-**Sintaxis:** obj << Row Hide
+**Sintaxis:** obj &lt;&lt; Row Hide
 
 **Descripción:** Oculta (o muestra) las filas correspondientes de la tabla de datos.
 
@@ -1064,7 +1064,7 @@ framebox << Row Hide( 1 );
 
 ### Row Hide and Exclude
 
-**Sintaxis:** obj << Row Hide and Exclude
+**Sintaxis:** obj &lt;&lt; Row Hide and Exclude
 
 **Descripción:** Oculta y excluye (o muestra y anula la exclusión) de las filas correspondientes en la tabla de datos.
 
@@ -1082,7 +1082,7 @@ framebox << Row Hide and Exclude( 1 );
 
 ### Row Label
 
-**Sintaxis:** obj << Row Label
+**Sintaxis:** obj &lt;&lt; Row Label
 
 **Descripción:** Etiqueta (o elimina la etiqueta de) las filas correspondientes de la tabla de datos.
 
@@ -1100,7 +1100,7 @@ framebox << Row Label( 1 );
 
 ### Row Legend
 
-**Sintaxis:** obj << Row Legend( Color( 0|1), Marker( 0|1 ), <Color theme( string )>, <Marker theme( string )>, < Continuous scale(0|1)>, <Reverse scale(0|1)>, <Excluded Row( 0|1 ), <Make window with legend> )
+**Sintaxis:** obj &lt;&lt; Row Legend( Color( 0|1), Marker( 0|1 ), &lt;Color theme( string )&gt;, &lt;Marker theme( string )&gt;, &lt; Continuous scale(0|1)&gt;, &lt;Reverse scale(0|1)&gt;, &lt;Excluded Row( 0|1 ), &lt;Make window with legend&gt; )
 
 **Descripción:** Colorea las filas de acuerdo a una columna de datos e inserta una leyenda a la derecha del marco.
 
@@ -1117,7 +1117,7 @@ framebox << Row Legend( "age", color( 1 ), Marker( 1 ) );
 
 ### Row Markers
 
-**Sintaxis:** obj << Row Markers( marker )
+**Sintaxis:** obj &lt;&lt; Row Markers( marker )
 
 **Descripción:** Establece el marcador de las filas seleccionadas.
 
@@ -1135,7 +1135,7 @@ framebox << Row Markers( 3 );
 
 ### Scale with Font
 
-**Sintaxis:** obj << Scale with Font
+**Sintaxis:** obj &lt;&lt; Scale with Font
 
 **Descripción:** Ajusta la escala del grosor de línea con la escala del tamaño de fuente. Equivalente a <<Escala de grosor de línea (0).
 
@@ -1152,7 +1152,7 @@ framebox << Scale with Font;
 
 ### Seg Count
 
-**Sintaxis:** obj << Seg Count( <seg type> )
+**Sintaxis:** obj &lt;&lt; Seg Count( &lt;seg type&gt; )
 
 ```jsl
 
@@ -1166,7 +1166,7 @@ rbiv[Frame Box( 1 )] << Seg Count( MarkerSeg );
 
 ### Select Matching Cells
 
-**Sintaxis:** obj << Select Matching Cells
+**Sintaxis:** obj &lt;&lt; Select Matching Cells
 
 **Descripción:** Selecciona puntos que tengan etiquetas similares en las filas seleccionadas
 
@@ -1185,7 +1185,7 @@ framebox << Select Matching Cells;
 
 ### Select Similar
 
-**Sintaxis:** obj << Select Similar
+**Sintaxis:** obj &lt;&lt; Select Similar
 
 **Descripción:** Selecciona las filas que tienen valores de datos similares a la columna seleccionada.
 
@@ -1204,7 +1204,7 @@ framebox << Select Similar;
 
 ### Set Background Fill
 
-**Sintaxis:** obj << Set Background Fill( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Set Background Fill( state=0|1 )
 
 **Descripción:** Habilita o deshabilita la opción de rellenar el fondo del gráfico con el color de fondo.
 
@@ -1226,7 +1226,7 @@ framebox << Set Background Fill( 0 );
 
 ### Set Graphlet
 
-**Sintaxis:** obj << Set Graphlet
+**Sintaxis:** obj &lt;&lt; Set Graphlet
 
 **Descripción:** Define la visualización incrustada de la etiqueta flotante (graphlet) para este gráfico.
 
@@ -1309,7 +1309,7 @@ gpin << Launch Graphlet;
 
 ### Set Gridlet
 
-**Sintaxis:** obj << Set Gridlet
+**Sintaxis:** obj &lt;&lt; Set Gridlet
 
 **Descripción:** Define la cuadrícula de contenido de la etiqueta flotante (gridlet) para este gráfico.
 
@@ -1463,7 +1463,7 @@ frame << Add Pin Annotation(
 
 ### Set Textlet
 
-**Sintaxis:** obj << Set Textlet
+**Sintaxis:** obj &lt;&lt; Set Textlet
 
 **Descripción:** Define el contenido de texto enriquecido de la etiqueta flotante (textlet) para este gráfico.
 
@@ -1508,7 +1508,7 @@ gpin = frame << Add Pin Annotation(
 
 ### Size to Isometric
 
-**Sintaxis:** obj << Size to Isometric
+**Sintaxis:** obj &lt;&lt; Size to Isometric
 
 **Descripción:** Cambia el tamaño del marco de manera que el número real de unidades por píxel sea el mismo en las direcciones X e Y.
 
@@ -1525,7 +1525,7 @@ framebox << Size To Isometric;
 
 ### Ternary X Title
 
-**Sintaxis:** obj << Ternary X Title( text )
+**Sintaxis:** obj &lt;&lt; Ternary X Title( text )
 
 **Descripción:** Establece el título del Eje X para un marco ternario.
 
@@ -1533,7 +1533,7 @@ framebox << Size To Isometric;
 
 ### Ternary Y Title
 
-**Sintaxis:** obj << Ternary Y Title( text )
+**Sintaxis:** obj &lt;&lt; Ternary Y Title( text )
 
 **Descripción:** Establece el título del Eje Y para un marco ternario.
 
@@ -1541,7 +1541,7 @@ framebox << Size To Isometric;
 
 ### Ternary Y1 Title
 
-**Sintaxis:** obj << Ternary Y1 Title( text )
+**Sintaxis:** obj &lt;&lt; Ternary Y1 Title( text )
 
 **Descripción:** Establece el título del Eje Y1 para un marco ternario.
 
@@ -1549,7 +1549,7 @@ framebox << Size To Isometric;
 
 ### Top
 
-**Sintaxis:** obj << Top( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Top( state=0|1 )
 
 **Descripción:** Muestra u oculta un borde de la parte superior del marco.
 
@@ -1566,7 +1566,7 @@ framebox << Top( 0 );
 
 ### Transparency
 
-**Sintaxis:** obj << Transparency
+**Sintaxis:** obj &lt;&lt; Transparency
 
 **Descripción:** Establece la transparencia del marco.
 
@@ -1583,7 +1583,7 @@ framebox << Transparency( 0.5 );
 
 ### X Axis
 
-**Sintaxis:** obj << X Axis( < Min( min ) >, < Max( max ) >, < Inc( n ) >, ... )
+**Sintaxis:** obj &lt;&lt; X Axis( &lt; Min( min ) &gt;, &lt; Max( max ) &gt;, &lt; Inc( n ) &gt;, ... )
 
 **Descripción:** Aplica uno o más cambios del eje X en un único mensaje. Abre la ventana de configuración del eje X si no se indican argumentos.
 
@@ -1638,7 +1638,7 @@ framebox << X Axis(
 
 ### Y Axis
 
-**Sintaxis:** obj << Y Axis( < Min( min ) >, < Max( max ) >, < Inc( n ) >, ... )
+**Sintaxis:** obj &lt;&lt; Y Axis( &lt; Min( min ) &gt;, &lt; Max( max ) &gt;, &lt; Inc( n ) &gt;, ... )
 
 **Descripción:** Aplica uno o más cambios del eje Y en un único mensaje. Abre la ventana de configuración del eje Y si no se indican argumentos.
 
@@ -1695,7 +1695,7 @@ framebox << Y Axis(
 
 ### Add Line Annotation
 
-**Sintaxis:** obj << Add Line Annotation
+**Sintaxis:** obj &lt;&lt; Add Line Annotation
 
 **Descripción:** Agrega una línea encima del cuadro de visualización.
 
@@ -1712,7 +1712,7 @@ rbiv << Add Line Annotation( Line( 160, 235, 240, 235 ) );
 
 ### Add Pin Annotation
 
-**Sintaxis:** obj << Add Pin Annotation
+**Sintaxis:** obj &lt;&lt; Add Pin Annotation
 
 **Descripción:** Añade una anotación anclada sobre un cuadro de visualización. La mayoría de los atributos (como Index Row, UniqueID y FoundPt) están diseñados solo para uso interno.
 
@@ -1745,7 +1745,7 @@ dt << Bivariate(
 
 ### Add Polygon Annotation
 
-**Sintaxis:** obj << Add Polygon Annotation
+**Sintaxis:** obj &lt;&lt; Add Polygon Annotation
 
 **Descripción:** Agrega un polígono encima del cuadro de visualización.
 
@@ -1766,7 +1766,7 @@ rbiv << Add Polygon Annotation(
 
 ### Add Simple Shape Annotation
 
-**Sintaxis:** obj << Add Simple Shape Annotation
+**Sintaxis:** obj &lt;&lt; Add Simple Shape Annotation
 
 **Descripción:** Agrega una forma simple encima del cuadro de visualización.
 
@@ -1784,7 +1784,7 @@ rbiv << Add Simple Shape Annotation( Rectangle( 70, 180, 95, 215 ) );
 
 ### Add Text Annotation
 
-**Sintaxis:** obj << Add Text Annotation
+**Sintaxis:** obj &lt;&lt; Add Text Annotation
 
 **Descripción:** Agrega texto encima del cuadro de visualización.
 
@@ -1804,7 +1804,7 @@ rbiv << Add Text Annotation(
 
 ### Append
 
-**Sintaxis:** obj << Append( db2 )
+**Sintaxis:** obj &lt;&lt; Append( db2 )
 
 **Descripción:** Agrega db2 al árbol de visualización después de db.
 
@@ -1821,9 +1821,7 @@ rbiv << append( Text Box( "=== below ===" ) );
 
 ### Background Color
 
-**Sintaxis:** obj << Background Color( color );
-
-color = obj << Get Background Color
+**Sintaxis:** obj &lt;&lt; Background Color( color );color = obj &lt;&lt; Get Background Color
 
 **Descripción:** Si hay un color de fondo definido, el cuadro se rellena con el color de fondo antes de dibujar su contenido. Si no hay un color de fondo definido, el fondo y el contenido de los cuadros contenedores es transparente.
 
@@ -1845,9 +1843,7 @@ tb << Background Color( "Yellow" );
 
 ### Border
 
-**Sintaxis:** obj << Border( sides );
-
-sides = obj << Get Border
+**Sintaxis:** obj &lt;&lt; Border( sides );sides = obj &lt;&lt; Get Border
 
 **Descripción:** Los bordes son líneas sólidas trazadas alrededor de la parte externa de un cuadro de visualización. Si se proporciona un único valor, se aplicará a todos los lados. Si se especifican dos valores, se aplicarán a los bordes horizontales y verticales.
 
@@ -1867,9 +1863,7 @@ tb << Border( 1 );
 
 ### Border Color
 
-**Sintaxis:** obj << Border Color( color );
-
-color = obj << Get Border Color
+**Sintaxis:** obj &lt;&lt; Border Color( color );color = obj &lt;&lt; Get Border Color
 
 **Descripción:** Color opcional para sustituir el color predeterminado de los bordes de los cuadros.
 
@@ -1891,7 +1885,7 @@ tb << Border Color( "Light Red" );
 
 ### Bring Window To Front
 
-**Sintaxis:** obj << Bring Window To Front
+**Sintaxis:** obj &lt;&lt; Bring Window To Front
 
 **Descripción:** Lleva la ventana al frente.
 
@@ -1907,7 +1901,7 @@ w << Bring Window To Front;
 
 ### Child
 
-**Sintaxis:** obj << Child
+**Sintaxis:** obj &lt;&lt; Child
 
 **Descripción:** Devuelve el hijo del cuadro de visualización.
 
@@ -1927,7 +1921,7 @@ Print( axisChild << Class Name() );
 
 ### Class Name
 
-**Sintaxis:** obj << Class Name
+**Sintaxis:** obj &lt;&lt; Class Name
 
 **Descripción:** Devuelve el nombre de la clase de visualización del cuadro de visualización.
 
@@ -1945,7 +1939,7 @@ axisbox << Class Name();
 
 ### Clone Box
 
-**Sintaxis:** obj << Clone Box
+**Sintaxis:** obj &lt;&lt; Clone Box
 
 **Descripción:** Crea una nueva copia del cuadro de visualización.
 
@@ -1964,7 +1958,7 @@ rbiv << append( clonedBox );
 
 ### Close Window
 
-**Sintaxis:** obj << Close Window( <"NoSave"> )
+**Sintaxis:** obj &lt;&lt; Close Window( &lt;"NoSave"&gt; )
 
 **Descripción:** Cierra la ventana.
 
@@ -1980,7 +1974,7 @@ w << Close Window;
 
 ### Copy Data
 
-**Sintaxis:** obj << Copy Data
+**Sintaxis:** obj &lt;&lt; Copy Data
 
 **Descripción:** Copia los datos delimitados por tabuladores desde una matriz o una tabla al portapapeles.
 
@@ -1994,7 +1988,7 @@ mat << CopyData;
 
 ### Copy Graph
 
-**Sintaxis:** obj << Copy Graph
+**Sintaxis:** obj &lt;&lt; Copy Graph
 
 **Descripción:** Copia al portapapeles una imagen del gráfico y los ejes.
 
@@ -2012,7 +2006,7 @@ rbiv = biv << report;
 
 ### Copy Picture
 
-**Sintaxis:** obj << Copy Picture
+**Sintaxis:** obj &lt;&lt; Copy Picture
 
 **Descripción:** Copia al portapapeles una imagen del cuadro de visualización.
 
@@ -2029,7 +2023,7 @@ rbiv << Copy Picture();
 
 ### Delete Box
 
-**Sintaxis:** obj << Delete Box
+**Sintaxis:** obj &lt;&lt; Delete Box
 
 **Descripción:** Borra el cuadro de visualización.
 
@@ -2047,7 +2041,7 @@ axisbox << Delete Box();
 
 ### Deselect
 
-**Sintaxis:** obj << Deselect
+**Sintaxis:** obj &lt;&lt; Deselect
 
 **Descripción:** Anula la selección de este objeto para su utilización por parte de los comandos del menú Editar.
 
@@ -2073,7 +2067,7 @@ refresh = Function( {},
 
 ### Dispatch
 
-**Sintaxis:** obj << Dispatch( {outline node, ...}, display element, display element type, command )
+**Sintaxis:** obj &lt;&lt; Dispatch( {outline node, ...}, display element, display element type, command )
 
 **Descripción:** Envía command a una parte específica del árbol de visualización.
 
@@ -2090,9 +2084,7 @@ rbiv << Dispatch( {}, "Bivar Plot", FrameBox, {Marker Size( 3 )} );
 
 ### Enabled
 
-**Sintaxis:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**Sintaxis:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Descripción:** Un objeto que no esté habilitado no responderá a la entrada del teclado o el ratón. Esta propiedad la heredan los objetos hijo, por lo que un objeto contenedor que esté deshabilitado provocará que todos los objetos descendientes se deshabiliten.
 
@@ -2124,7 +2116,7 @@ New Window( "enabled",
 
 ### Find
 
-**Sintaxis:** obj << Find
+**Sintaxis:** obj &lt;&lt; Find
 
 **Descripción:** Devuelve el cuadro de visualización con el argument indicado.
 
@@ -2142,7 +2134,7 @@ axisbox << Delete();
 
 ### Get Annotation
 
-**Sintaxis:** obj << Get Annotation
+**Sintaxis:** obj &lt;&lt; Get Annotation
 
 **Descripción:** Devuelve la primera anotación anclada a este cuadro de visualización. Se puede acceder a otras anotaciones utilizando Sib() en el resultado.
 
@@ -2164,9 +2156,7 @@ annotation << delete;
 
 ### Get Background Color
 
-**Sintaxis:** obj << Background Color( color );
-
-color = obj << Get Background Color
+**Sintaxis:** obj &lt;&lt; Background Color( color );color = obj &lt;&lt; Get Background Color
 
 **Descripción:** Si hay un color de fondo definido, el cuadro se rellena con el color de fondo antes de dibujar su contenido. Si no hay un color de fondo definido, el fondo y el contenido de los cuadros contenedores es transparente.
 
@@ -2188,9 +2178,7 @@ tb << Background Color( "Yellow" );
 
 ### Get Border
 
-**Sintaxis:** obj << Border( sides );
-
-sides = obj << Get Border
+**Sintaxis:** obj &lt;&lt; Border( sides );sides = obj &lt;&lt; Get Border
 
 **Descripción:** Los bordes son líneas sólidas trazadas alrededor de la parte externa de un cuadro de visualización. Si se proporciona un único valor, se aplicará a todos los lados. Si se especifican dos valores, se aplicarán a los bordes horizontales y verticales.
 
@@ -2210,9 +2198,7 @@ tb << Border( 1 );
 
 ### Get Border Color
 
-**Sintaxis:** obj << Border Color( color );
-
-color = obj << Get Border Color
+**Sintaxis:** obj &lt;&lt; Border Color( color );color = obj &lt;&lt; Get Border Color
 
 **Descripción:** Color opcional para sustituir el color predeterminado de los bordes de los cuadros.
 
@@ -2234,7 +2220,7 @@ tb << Border Color( "Light Red" );
 
 ### Get Content Size
 
-**Sintaxis:** obj << Get Content Size
+**Sintaxis:** obj &lt;&lt; Get Content Size
 
 **Descripción:** Devuelve el tamaño del contenido de dentro de la ventana.
 
@@ -2250,7 +2236,7 @@ Show( c );
 
 ### Get Display Path
 
-**Sintaxis:** obj << Get Display Path( parent box, <receiver expr>, <Mode("XPath"|"Subscript")> )
+**Sintaxis:** obj &lt;&lt; Get Display Path( parent box, &lt;receiver expr&gt;, &lt;Mode("XPath"|"Subscript")&gt; )
 
 **Descripción:** Obtiene una expresión relativamente robusta para navegar entre parent box y obj. No está garantizado que esta ruta sea estable en todas las versiones de JMP. receiver expr se incorpora en la expresión de salida si se proporciona. De lo contrario, se utiliza la expresión proporcionada para parent box. Como se muestra en el ejemplo, este mensaje es especialmente útil para aumentar la robustez de una ruta que ya tenga disponible. El modo predeterminado es XPath.
 
@@ -2286,9 +2272,7 @@ subscript expr << Select;
 
 ### Get Enabled
 
-**Sintaxis:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**Sintaxis:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Descripción:** Un objeto que no esté habilitado no responderá a la entrada del teclado o el ratón. Esta propiedad la heredan los objetos hijo, por lo que un objeto contenedor que esté deshabilitado provocará que todos los objetos descendientes se deshabiliten.
 
@@ -2320,7 +2304,7 @@ New Window( "enabled",
 
 ### Get HTML
 
-**Sintaxis:** obj << Get HTML( <format> )
+**Sintaxis:** obj &lt;&lt; Get HTML( &lt;format&gt; )
 
 **Descripción:** Devuelve una cadena con el código fuente HTML para el cuadro de visualización.
 
@@ -2350,7 +2334,7 @@ Web( "$TEMP/Oneway.html", JMPWindow );
 
 ### Get Height
 
-**Sintaxis:** width = obj << Get Height
+**Sintaxis:** width = obj &lt;&lt; Get Height
 
 **Descripción:** Devuelve la altura del cuadro de visualización.
 
@@ -2368,9 +2352,7 @@ fb << Get Height;
 
 ### Get Horizontal Alignment
 
-**Sintaxis:** obj << Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );
-
-"Default"|"Left"|"Center"|"Right" = obj << Get Horizontal Alignment
+**Sintaxis:** obj &lt;&lt; Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );"Default"|"Left"|"Center"|"Right" = obj &lt;&lt; Get Horizontal Alignment
 
 **Descripción:** La alineación horizontal controla el posicionamiento del cuadro dentro de un contenedor si el cuadro no ocupa todo el espacio.
 
@@ -2390,7 +2372,7 @@ lb << Horizontal Alignment( "Right" );
 
 ### Get Journal
 
-**Sintaxis:** obj << Get Journal
+**Sintaxis:** obj &lt;&lt; Get Journal
 
 **Descripción:** Devuelve una cadena con el código fuente del diario para el cuadro de visualización.
 
@@ -2407,9 +2389,7 @@ Print( rbiv << Get Journal );
 
 ### Get Margin
 
-**Sintaxis:** obj << Margin( sides );
-
-sides = obj << Get Margin
+**Sintaxis:** obj &lt;&lt; Margin( sides );sides = obj &lt;&lt; Get Margin
 
 **Descripción:** El margen añade espacio entre el borde del cuadro y los cuadros adyacentes. Use argumentos con nombre o proporcione una lista de valores. Si se proporciona un único valor, se aplicará a todos los lados. Si se especifican dos valores, se aplicarán a los márgenes horizontal y vertical.
 
@@ -2430,7 +2410,7 @@ tb << Margin( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ### Get Max Size
 
-**Sintaxis:** width,height = obj << Get Max Size
+**Sintaxis:** width,height = obj &lt;&lt; Get Max Size
 
 **Descripción:** Devuelve el tamaño máximo de este cuadro de visualización para la autoexpansión.
 
@@ -2448,7 +2428,7 @@ fb << Get Max Size;
 
 ### Get Min Size
 
-**Sintaxis:** width,height = obj << Get Min Size
+**Sintaxis:** width,height = obj &lt;&lt; Get Min Size
 
 **Descripción:** Devuelve el tamaño mínimo de este cuadro de visualización para la autoexpansión.
 
@@ -2466,7 +2446,7 @@ fb << Get Min Size;
 
 ### Get Namespace
 
-**Sintaxis:** obj << Get Namespace
+**Sintaxis:** obj &lt;&lt; Get Namespace
 
 **Descripción:** Devuelve el espacio de nombres asociado a este objeto de visualización.
 
@@ -2484,7 +2464,7 @@ Show( ns:x, x );
 
 ### Get On Close
 
-**Sintaxis:** obj << Get On Close
+**Sintaxis:** obj &lt;&lt; Get On Close
 
 **Descripción:** Devuelve el script o función que se ejecutará cuando se cierre la ventana.
 
@@ -2509,9 +2489,7 @@ Show( w << Get On Close );
 
 ### Get Padding
 
-**Sintaxis:** obj << Padding( sides );
-
-sides = obj << Get Padding
+**Sintaxis:** obj &lt;&lt; Padding( sides );sides = obj &lt;&lt; Get Padding
 
 **Descripción:** El espaciado interno añade espacio entre el contenido y el borde del cuadro. Use argumentos con nombre o proporcione una lista de valores. Si se proporciona un único valor, se aplicará a todos los lados. Si se especifican dos valores, se aplicarán al espaciado interno horizontal y vertical.
 
@@ -2532,7 +2510,7 @@ tb << Padding( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ### Get Page Setup
 
-**Sintaxis:** obj << Get Page Setup
+**Sintaxis:** obj &lt;&lt; Get Page Setup
 
 **Descripción:** Obtiene la información de configuración de página para PDF
 
@@ -2547,7 +2525,7 @@ w << get page setup();
 
 ### Get Picture
 
-**Sintaxis:** obj << Get Picture( <Scale(factor)>, <Type("Bitmap" | "Scalable")>, <View("Picture" | "Screen" | "Print"), <Appearance("Default" | "Current")>, <SubRect(Left(number), Top(number), Right(number), Bottom(number))> )
+**Sintaxis:** obj &lt;&lt; Get Picture( &lt;Scale(factor)&gt;, &lt;Type("Bitmap" | "Scalable")&gt;, &lt;View("Picture" | "Screen" | "Print"), &lt;Appearance("Default" | "Current")&gt;, &lt;SubRect(Left(number), Top(number), Right(number), Bottom(number))&gt; )
 
 **Descripción:** Captura db como un objeto de imagen. El argumento Scale opcional representará la imagen con una resolución a escala. El escalado requiere que el cuadro de visualización sea ajustable. El argumento Type determina si el resultado será una imagen vectorial escalable o un mapa de bits. De forma predeterminada, se devuelve una imagen escalable, adecuada para guardarla en formatos vectoriales como PDF. La opción View cambia el comportamiento de algunos cuadros. La opción predeterminada de "Picture" dibuja el informe como sería al exportarlo a un formato de imagen, mostrando completamente las áreas desplazadas. El modo de visualización de "Screen" dibuja el informe como se ve en pantalla, y "Print" dibuja el informe como se ve al imprimirse, sin ninguna de las funciones de configuración de páginas. La opción SubRect capturará una porción de la imagen resultante en lugar de una imagen completa. La opción Appearance puede cambiar de los colores de salida "Default" a los colores "Current" como se ven en pantalla. Las opciones View, SubRect y Appearance solo son compatibles para Type "Bitmap".
 
@@ -2605,7 +2583,7 @@ New Window( "Example",
 
 ### Get Project
 
-**Sintaxis:** project = obj << Get Project()
+**Sintaxis:** project = obj &lt;&lt; Get Project()
 
 **Descripción:** Devuelve el proyecto principal de la ventana, o Empty() si no está en un proyecto.
 
@@ -2623,7 +2601,7 @@ Show( c );
 
 ### Get Properties
 
-**Sintaxis:** obj << Get Properties
+**Sintaxis:** obj &lt;&lt; Get Properties
 
 **Descripción:** Devuelve un arreglo asociativo que contiene las propiedades del cuadro de visualización y sus valores.
 
@@ -2637,7 +2615,7 @@ bb << Get Properties;
 
 ### Get Property
 
-**Sintaxis:** obj << Get Property( "property" )
+**Sintaxis:** obj &lt;&lt; Get Property( "property" )
 
 **Descripción:** Devuelve la configuración actual de la property con nombre.
 
@@ -2651,7 +2629,7 @@ bb << Get Property( "Enabled" );
 
 ### Get Property List
 
-**Sintaxis:** obj << Get Property List
+**Sintaxis:** obj &lt;&lt; Get Property List
 
 **Descripción:** Devuelve una lista de propiedades que tiene el cuadro de visualización.
 
@@ -2665,7 +2643,7 @@ bb << Get Property List;
 
 ### Get RTF
 
-**Sintaxis:** obj << Get RTF( <format> )
+**Sintaxis:** obj &lt;&lt; Get RTF( &lt;format&gt; )
 
 **Descripción:** Devuelve una cadena con el código fuente RTF para el cuadro de visualización.
 
@@ -2695,7 +2673,7 @@ Open( "$TEMP/Oneway.rtf" );
 
 ### Get Row States
 
-**Sintaxis:** rs = obj << Get Row States( <dt> )
+**Sintaxis:** rs = obj &lt;&lt; Get Row States( &lt;dt&gt; )
 
 **Descripción:** Devuelve un vector que contiene el estado de fila de cada fila de la tabla de datos indicada o de la tabla de datos actual. Los estados de fila pueden proceder de la tabla o del contexto de filtro del cuadro.
 
@@ -2784,7 +2762,7 @@ updatetext();
 
 ### Get Show Window
 
-**Sintaxis:** obj << Get Show Window
+**Sintaxis:** obj &lt;&lt; Get Show Window
 
 **Descripción:** Devuelve la visibilidad de la ventana.
 
@@ -2802,7 +2780,7 @@ Print( w << Get Show Window() );
 
 ### Get Size
 
-**Sintaxis:** width,height = obj << Get Size
+**Sintaxis:** width,height = obj &lt;&lt; Get Size
 
 **Descripción:** Devuelve el tamaño del cuadro de visualización.
 
@@ -2820,7 +2798,7 @@ Print( fb << Get Size );
 
 ### Get Stretch
 
-**Sintaxis:** x,y = obj << Get Stretch
+**Sintaxis:** x,y = obj &lt;&lt; Get Stretch
 
 **Descripción:** Devuelve las marcas de ajuste para este cuadro de visualización en las direcciones horizontales y verticales.
 
@@ -2846,7 +2824,7 @@ spacer << Get Stretch();
 
 ### Get Text
 
-**Sintaxis:** obj << Get Text
+**Sintaxis:** obj &lt;&lt; Get Text
 
 **Descripción:** Devuelve una cadena con el texto del cuadro de visualización.
 
@@ -2861,9 +2839,7 @@ a << Set Text( win << Get Text );
 
 ### Get Text Color
 
-**Sintaxis:** obj << Text Color( color );
-
-color = obj << Get Text Color
+**Sintaxis:** obj &lt;&lt; Text Color( color );color = obj &lt;&lt; Get Text Color
 
 **Descripción:** El texto se dibujará con el color del texto si se ha establecido. Si no se ha establecido la propiedad, el cuadro heredará el color de texto del cuadro contenedor.
 
@@ -2885,15 +2861,11 @@ tb << Text Color( "Red" );
 
 ### Get UI Only
 
-**Sintaxis:** obj << UI Only( state=0|1 );
-
-state = obj << Get UI Only
+**Sintaxis:** obj &lt;&lt; UI Only( state=0|1 );state = obj &lt;&lt; Get UI Only
 
 ### Get User Resizable
 
-**Sintaxis:** obj << User Resizable;
-
-obj << Get User Resizable
+**Sintaxis:** obj &lt;&lt; User Resizable;obj &lt;&lt; Get User Resizable
 
 **Descripción:** Si el usuario puede cambiar el tamaño del cuadro, el cursor cambiará cerca de los bordes inferior y derecho para permitir que cambie el tamaño arrastrando y colocando.
 
@@ -2930,9 +2902,7 @@ scroll << User Resizable( {0, 0} );
 
 ### Get Vertical Alignment
 
-**Sintaxis:** obj << Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );
-
-"Default"|"Top"|"Center"|"Bottom" = obj << Get Vertical Alignment
+**Sintaxis:** obj &lt;&lt; Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );"Default"|"Top"|"Center"|"Bottom" = obj &lt;&lt; Get Vertical Alignment
 
 **Descripción:** La alineación vertical controla el posicionamiento del cuadro dentro de un contenedor si el cuadro no ocupa todo el espacio.
 
@@ -2954,9 +2924,7 @@ lb << Vertical Alignment( "Bottom" );
 
 ### Get Visibility
 
-**Sintaxis:** obj << Visibility( "Visible"|"Hidden"|"Collapse" );
-
-"Visible"|"Hidden"|"Collapse" = obj << Get Visibility
+**Sintaxis:** obj &lt;&lt; Visibility( "Visible"|"Hidden"|"Collapse" );"Visible"|"Hidden"|"Collapse" = obj &lt;&lt; Get Visibility
 
 **Descripción:** La visibilidad determina si se muestra un cuadro y si ocupa espacio. El valor predeterminado de "Visible" significa que se mostrará el objeto.  Un cuadro "Hidden" no se muestra pero ocupa espacio, mientras que un cuadro "Collapsed" no ocupa espacio en la presentación.
 
@@ -2977,7 +2945,7 @@ Show( tb << Get Visibility );
 
 ### Get Web Support
 
-**Sintaxis:** obj << Get Web Support
+**Sintaxis:** obj &lt;&lt; Get Web Support
 
 **Descripción:** Devuelve un número que indica el nivel de compatibilidad del HTML interactivo para el objeto de visualización. 1 significa que algunos o todos los elementos son compatibles. 0 significa que no existe compatibilidad.
 
@@ -2993,7 +2961,7 @@ Show( s );
 
 ### Get Width
 
-**Sintaxis:** width = obj << Get Width
+**Sintaxis:** width = obj &lt;&lt; Get Width
 
 **Descripción:** Devuelve el ancho del cuadro de visualización.
 
@@ -3011,7 +2979,7 @@ fb << Get Width;
 
 ### Get Window Icon
 
-**Sintaxis:** obj << Get Window Icon
+**Sintaxis:** obj &lt;&lt; Get Window Icon
 
 **Descripción:** Devuelve el icono de la ventana.
 
@@ -3027,7 +2995,7 @@ Show( t );
 
 ### Get Window Position
 
-**Sintaxis:** obj << Get Window Position
+**Sintaxis:** obj &lt;&lt; Get Window Position
 
 **Descripción:** Devuelve la posición de la ventana.
 
@@ -3043,7 +3011,7 @@ Show( p );
 
 ### Get Window Size
 
-**Sintaxis:** obj << Get Window Size
+**Sintaxis:** obj &lt;&lt; Get Window Size
 
 **Descripción:** Devuelve el tamaño de la ventana.
 
@@ -3059,7 +3027,7 @@ Show( s );
 
 ### Get Window Title
 
-**Sintaxis:** obj << Get Window Title
+**Sintaxis:** obj &lt;&lt; Get Window Title
 
 **Descripción:** Devuelve el título de la ventana.
 
@@ -3075,7 +3043,7 @@ Show( t );
 
 ### Get Window View
 
-**Sintaxis:** obj << Get Window View
+**Sintaxis:** obj &lt;&lt; Get Window View
 
 **Descripción:** Devuelve la vista de la ventana actual. La ventana puede ser "Visible", "Invisible" o "Privado".
 
@@ -3090,7 +3058,7 @@ Print( w << Get Window View() );
 
 ### Get XML
 
-**Sintaxis:** obj << Get XML( <English(0|1)>, <NoData(0|1)> )
+**Sintaxis:** obj &lt;&lt; Get XML( &lt;English(0|1)&gt;, &lt;NoData(0|1)&gt; )
 
 **Descripción:** Recupera el árbol de visualización formateado como XML. De forma predeterminada, las cadenas de caracteres se devuelven en el idioma local, y el XML incluye valores de datos en algunas casillas. Utilice la opción English para devolver cadenas de caracteres en inglés cuando estén disponibles. Utilice la opción NoData para omitir los valores de los datos en los cuadros, que pueden ser muy grandes para algunos árboles de visualización.
 
@@ -3105,7 +3073,7 @@ a << set text( win << get xml );
 
 ### GetOffset
 
-**Sintaxis:** x,y = obj << GetOffset
+**Sintaxis:** x,y = obj &lt;&lt; GetOffset
 
 **Descripción:** Devuelve el desplazamiento de este cuadro de visualización en relación con el cuadro progenitor. Puede utilizar el mensaje <<progenitor en un bucle para acumular varios desplazamientos.
 
@@ -3150,9 +3118,7 @@ New Window( "example",
 
 ### Horizontal Alignment
 
-**Sintaxis:** obj << Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );
-
-"Default"|"Left"|"Center"|"Right" = obj << Get Horizontal Alignment
+**Sintaxis:** obj &lt;&lt; Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );"Default"|"Left"|"Center"|"Right" = obj &lt;&lt; Get Horizontal Alignment
 
 **Descripción:** La alineación horizontal controla el posicionamiento del cuadro dentro de un contenedor si el cuadro no ocupa todo el espacio.
 
@@ -3172,7 +3138,7 @@ lb << Horizontal Alignment( "Right" );
 
 ### Inval
 
-**Sintaxis:** obj << Inval
+**Sintaxis:** obj &lt;&lt; Inval
 
 **Descripción:** Invalida el cuadro de visualización. La ventana se actualizará cuando se envíe el mensaje <<Actualizar o llegue el momento de la actualización por parte del sistema operativo.
 
@@ -3214,7 +3180,7 @@ New Window( "Inval example",
 
 ### Is Dirty
 
-**Sintaxis:** obj << Is Dirty
+**Sintaxis:** obj &lt;&lt; Is Dirty
 
 **Descripción:** Obtiene el estado modificado del documento. 1 significa que se ha modificado el documento y preguntará si quiere guardar; 0 significa que no se ha modificado el documento.
 
@@ -3233,7 +3199,7 @@ Show( ww << Is Dirty );
 
 ### Is Modal Dialog
 
-**Sintaxis:** obj << Is Modal Dialog
+**Sintaxis:** obj &lt;&lt; Is Modal Dialog
 
 **Descripción:** Devuelve verdadero si la ventana es un cuadro de diálogo modal. Solo es útil cuando se llama desde una rellamada del controlador de ventanas.
 
@@ -3252,7 +3218,7 @@ With Window Handler(
 
 ### Journal
 
-**Sintaxis:** obj << Journal
+**Sintaxis:** obj &lt;&lt; Journal
 
 **Descripción:** Crea un diario desde el cuadro de visualización.
 
@@ -3269,7 +3235,7 @@ rbiv << journal;
 
 ### Journal Window
 
-**Sintaxis:** obj << Journal Window
+**Sintaxis:** obj &lt;&lt; Journal Window
 
 **Descripción:** Abre una ventana diario de la ventana.
 
@@ -3284,7 +3250,7 @@ w << Journal Window;
 
 ### Launch
 
-**Sintaxis:** obj << Launch
+**Sintaxis:** obj &lt;&lt; Launch
 
 **Descripción:** Evalúa el argument indicado en el contexto del cuadro de visualización.
 
@@ -3306,7 +3272,7 @@ ob3 << launch( Bivariate( Y( :height ), X( :weight ) ) );
 
 ### Make RowState Handler
 
-**Sintaxis:** rs = obj << Make RowState Handler( <dt>, function(a) )
+**Sintaxis:** rs = obj &lt;&lt; Make RowState Handler( &lt;dt&gt;, function(a) )
 
 **Descripción:** Crea un controlador de estado de fila para la tabla de datos indicada o la tabla de datos actual. Se llama a la función cuando cambian los estados de fila en el contexto de filtro del cuadro. El argumento de la función contiene los números de filas que han cambiado, o -1 si ha cambiado el filtro de estado de fila.
 
@@ -3395,9 +3361,7 @@ updatetext();
 
 ### Margin
 
-**Sintaxis:** obj << Margin( sides );
-
-sides = obj << Get Margin
+**Sintaxis:** obj &lt;&lt; Margin( sides );sides = obj &lt;&lt; Get Margin
 
 **Descripción:** El margen añade espacio entre el borde del cuadro y los cuadros adyacentes. Use argumentos con nombre o proporcione una lista de valores. Si se proporciona un único valor, se aplicará a todos los lados. Si se especifican dos valores, se aplicarán a los márgenes horizontal y vertical.
 
@@ -3418,7 +3382,7 @@ tb << Margin( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ### Maximize Window
 
-**Sintaxis:** obj << Maximize Window( <state=0|1> )
+**Sintaxis:** obj &lt;&lt; Maximize Window( &lt;state=0|1&gt; )
 
 **Descripción:** Maximiza la ventana. El argumento predeterminado es 1.
 
@@ -3436,7 +3400,7 @@ w << Maximize Window( 0 );
 
 ### Minimize Window
 
-**Sintaxis:** obj << Minimize Window( <state=0|1> )
+**Sintaxis:** obj &lt;&lt; Minimize Window( &lt;state=0|1&gt; )
 
 **Descripción:** Minimiza la ventana. El argumento predeterminado es 1.
 
@@ -3454,7 +3418,7 @@ w << Minimize Window( 0 );
 
 ### Move Window
 
-**Sintaxis:** obj << Move Window( x,y )
+**Sintaxis:** obj &lt;&lt; Move Window( x,y )
 
 **Descripción:** Desplaza la ventana a la posición especificada.
 
@@ -3470,7 +3434,7 @@ w << Move Window( 500, 500 );
 
 ### Next
 
-**Sintaxis:** obj << Next
+**Sintaxis:** obj &lt;&lt; Next
 
 **Descripción:** Devuelve el cuadro de visualización después de este cuadro de visualización.
 
@@ -3488,7 +3452,7 @@ Print( next << Class Name() );
 
 ### On Close
 
-**Sintaxis:** obj << On Close( script )
+**Sintaxis:** obj &lt;&lt; On Close( script )
 
 **Descripción:** Establece un script o función para que se ejecuten al cerrar la ventana. Este script debe devolver 1 para permitir el cierre o 0 para evitar que la ventana se cierre.
 
@@ -3536,7 +3500,7 @@ w << On Close(
 
 ### Optimize Display
 
-**Sintaxis:** obj << Optimize Display
+**Sintaxis:** obj &lt;&lt; Optimize Display
 
 **Descripción:** Establece la ventana y los anchos de columna de una tabla de datos en un tamaño óptimo.
 
@@ -3553,7 +3517,7 @@ dt << Optimize Display;
 
 ### Pad Window
 
-**Sintaxis:** obj << Pad Window( bool )
+**Sintaxis:** obj &lt;&lt; Pad Window( bool )
 
 **Descripción:** Activa o desactiva los márgenes de ventana.
 
@@ -3570,9 +3534,7 @@ r << Pad Window( 0 );
 
 ### Padding
 
-**Sintaxis:** obj << Padding( sides );
-
-sides = obj << Get Padding
+**Sintaxis:** obj &lt;&lt; Padding( sides );sides = obj &lt;&lt; Get Padding
 
 **Descripción:** El espaciado interno añade espacio entre el contenido y el borde del cuadro. Use argumentos con nombre o proporcione una lista de valores. Si se proporciona un único valor, se aplicará a todos los lados. Si se especifican dos valores, se aplicarán al espaciado interno horizontal y vertical.
 
@@ -3593,7 +3555,7 @@ tb << Padding( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ### Page Break
 
-**Sintaxis:** obj << Page Break
+**Sintaxis:** obj &lt;&lt; Page Break
 
 **Descripción:** Inserta un salto de página antes del cuadro de visualización.
 
@@ -3619,7 +3581,7 @@ ob3 << Page Break;
 
 ### Parent
 
-**Sintaxis:** obj << Parent
+**Sintaxis:** obj &lt;&lt; Parent
 
 **Descripción:** Devuelve el progenitor de este cuadro de visualización.
 
@@ -3638,7 +3600,7 @@ Print( axisParent << Class Name() );
 
 ### Prepend
 
-**Sintaxis:** obj << Prepend( db2 )
+**Sintaxis:** obj &lt;&lt; Prepend( db2 )
 
 **Descripción:** Agrega db2 al árbol de visualización antes de db.
 
@@ -3655,7 +3617,7 @@ rbiv << prepend( Text Box( "=== above ===" ) );
 
 ### Prev Sib
 
-**Sintaxis:** obj << Prev Sib
+**Sintaxis:** obj &lt;&lt; Prev Sib
 
 **Descripción:** Devuelve el hermano anterior del cuadro de visualización.
 
@@ -3676,7 +3638,7 @@ Print( axisSibling << Class Name() );
 
 ### Print Window
 
-**Sintaxis:** obj << Print Window
+**Sintaxis:** obj &lt;&lt; Print Window
 
 **Descripción:** Imprime la ventana.
 
@@ -3691,7 +3653,7 @@ w << Print Window;
 
 ### Reshow
 
-**Sintaxis:** obj << Reshow
+**Sintaxis:** obj &lt;&lt; Reshow
 
 **Descripción:** Invalida el cuadro de visualización y actualiza la ventana con el contenido nuevo. Consulte los mensajes <<Inval y <<Actualizar ventana si desea más control sobre los tiempos de actualización.
 
@@ -3720,7 +3682,7 @@ New Window( "Reshow example",
 
 ### Save Capture
 
-**Sintaxis:** obj << Save Capture( <"path">, <format>, <Add Sibling(n)> )
+**Sintaxis:** obj &lt;&lt; Save Capture( &lt;"path"&gt;, &lt;format&gt;, &lt;Add Sibling(n)&gt; )
 
 **Descripción:** Guarda una captura de pantalla del cuadro de visualización en la path especificada. Si no se indica path, se abrirá la ventana Guardar como.
 
@@ -3737,7 +3699,7 @@ rbiv << Save Capture( "$TEMP/jmp_example.png", "png" );
 
 ### Save HTML
 
-**Sintaxis:** obj << Save HTML( <pathname>, <format> )
+**Sintaxis:** obj &lt;&lt; Save HTML( &lt;pathname&gt;, &lt;format&gt; )
 
 **Descripción:** Guarda el código fuente HTML y las carpetas de los gráficos en el format especificado.
 
@@ -3754,7 +3716,7 @@ rbiv << Save HTML( "$TEMP/jmp_example.html" );
 
 ### Save Interactive HTML
 
-**Sintaxis:** obj << Save Interactive HTML( <pathname>, <Boolean> )
+**Sintaxis:** obj &lt;&lt; Save Interactive HTML( &lt;pathname&gt;, &lt;Boolean&gt; )
 
 **Descripción:** Guarda el HTML interactivo con datos en un archivo. El argumento Boolean representa el informe que es estático.
 
@@ -3771,7 +3733,7 @@ rbiv << Save Interactive HTML( "$TEMP/jmp_example.html" );
 
 ### Save Journal
 
-**Sintaxis:** obj << Save Journal( <pathname> )
+**Sintaxis:** obj &lt;&lt; Save Journal( &lt;pathname&gt; )
 
 **Descripción:** Guarda el código fuente del diario para el cuadro de visualización.
 
@@ -3788,7 +3750,7 @@ rbiv << Save Journal( "$TEMP/jmp_example.jrn" );
 
 ### Save MSWord
 
-**Sintaxis:** obj << Save MSWord( <pathname>, <format> )
+**Sintaxis:** obj &lt;&lt; Save MSWord( &lt;pathname&gt;, &lt;format&gt; )
 
 **Descripción:** Guarda el cuadro de visualización como documento de Microsoft Word. (Solo para Windows)
 
@@ -3805,7 +3767,7 @@ rbiv << Save MSWord( "$TEMP/jmp_example.doc" );
 
 ### Save PDF
 
-**Sintaxis:** obj << Save PDF( <pathname>, <Show Page Setup(0|1)>, <Portrait(0|1)> )
+**Sintaxis:** obj &lt;&lt; Save PDF( &lt;pathname&gt;, &lt;Show Page Setup(0|1)&gt;, &lt;Portrait(0|1)&gt; )
 
 **Descripción:** Guarda un PDF del cuadro de visualización.
 
@@ -3822,7 +3784,7 @@ rbiv << Save PDF( "$TEMP/jmp_example.pdf" );
 
 ### Save Picture
 
-**Sintaxis:** obj << Save Picture( <pathname>, <format>, <Scale(factor)>, <Type("Bitmap" | "Scalable")>, <View("Picture" | "Screen" | "Print"), <Appearance("Default" | "Current")>, <SubRect(Left(number), Top(number), Right(number), Bottom(number))> )
+**Sintaxis:** obj &lt;&lt; Save Picture( &lt;pathname&gt;, &lt;format&gt;, &lt;Scale(factor)&gt;, &lt;Type("Bitmap" | "Scalable")&gt;, &lt;View("Picture" | "Screen" | "Print"), &lt;Appearance("Default" | "Current")&gt;, &lt;SubRect(Left(number), Top(number), Right(number), Bottom(number))&gt; )
 
 **Descripción:** Guarda una imagen del cuadro de visualización. Los formatos compatibles con EMF (Windows), PICT (Macintosh), JPEG o JPG, GIF o PNG. El argumento Scale opcional representará la imagen con una resolución a escala. El escalado requiere que el cuadro de visualización sea ajustable. El argumento Type determina si el resultado será una imagen vectorial escalable o un mapa de bits. De forma predeterminada, se devuelve una imagen escalable, adecuada para guardarla en formatos vectoriales como PDF. La opción View cambia el comportamiento de algunos cuadros. La opción predeterminada de "Picture" dibuja el informe como sería al exportarlo a un formato de imagen, mostrando completamente las áreas desplazadas. El modo de visualización de "Screen" dibuja el informe como se ve en pantalla, y "Print" dibuja el informe como se ve al imprimirse, sin ninguna de las funciones de configuración de páginas. La opción SubRect capturará una porción de la imagen resultante en lugar de una imagen completa. La opción Appearance puede cambiar de los colores de salida "Default" a los colores "Current" como se ven en pantalla. Las opciones View, SubRect y Appearance solo son compatibles con Type"Bitmap".
 
@@ -3892,7 +3854,7 @@ New Window( "Example",
 
 ### Save Presentation
 
-**Sintaxis:** obj << Save Presentation( "filename.pptx", <Template("path\to\my_template.pptx")>, <Insert(Begin|End|#) | Replace(Begin|End|#) | Append>, <Outline Titles(None|Hide|TopLeft|TopRight|BottomLeft|BottomRight)>, <"EMF"|"PNG"|"JPG"|"Native"> )
+**Sintaxis:** obj &lt;&lt; Save Presentation( "filename.pptx", &lt;Template("path\to\my_template.pptx")&gt;, &lt;Insert(Begin|End|#) | Replace(Begin|End|#) | Append&gt;, &lt;Outline Titles(None|Hide|TopLeft|TopRight|BottomLeft|BottomRight)&gt;, &lt;"EMF"|"PNG"|"JPG"|"Native"&gt; )
 
 **Descripción:** Guarda las tablas del cuadro de visualización y las diapositivas de los gráficos en una presentación. La presentación puede abrirse con Microsoft PowerPoint u otro software de presentaciones.
 
@@ -3909,7 +3871,7 @@ Open( "$TEMP/jmp_example.pptx" );
 
 ### Save RTF
 
-**Sintaxis:** obj << Save RTF( <pathname>, <format> )
+**Sintaxis:** obj &lt;&lt; Save RTF( &lt;pathname&gt;, &lt;format&gt; )
 
 **Descripción:** Guarda el código fuente RTF con los gráficos en el format especificado.
 
@@ -3926,7 +3888,7 @@ rbiv << Save RTF( "$TEMP/jmp_example.rtf", "png" );
 
 ### Save Text
 
-**Sintaxis:** obj << Save Text( <pathname>, <format> )
+**Sintaxis:** obj &lt;&lt; Save Text( &lt;pathname&gt;, &lt;format&gt; )
 
 **Descripción:** Guarda un archivo con el texto del cuadro de visualización.
 
@@ -3941,7 +3903,7 @@ a << save text( "$TEMP/jmp_example.txt" );
 
 ### Save Window Report
 
-**Sintaxis:** obj << Save Window Report( pathname, <embed data(0|1)> )
+**Sintaxis:** obj &lt;&lt; Save Window Report( pathname, &lt;embed data(0|1)&gt; )
 
 **Descripción:** Guarda la ventana de informes actual en un archivo de informes JMP (.jrp).
 
@@ -3959,7 +3921,7 @@ d << Save Window Report( "$DOCUMENTS/test.jrp", embed data( 1 ) );
 
 ### Scroll Window
 
-**Sintaxis:** obj << Scroll Window( DisplayBox | <Relative(<v> | <h>,<v>)> | <Absolute(<v> | <h>,<v>) )
+**Sintaxis:** obj &lt;&lt; Scroll Window( DisplayBox | &lt;Relative(&lt;v&gt; | &lt;h&gt;,&lt;v&gt;)&gt; | &lt;Absolute(&lt;v&gt; | &lt;h&gt;,&lt;v&gt;) )
 
 **Descripción:** Ajusta la barra de desplazamiento de la ventana para mostrar el DisplayBox indicado, o bien desplaza un número relativo de píxeles o desplaza hasta una ubicación de píxeles absoluta. En lugar de un número de píxeles, se pueden utilizar las palabras clave "Start" o "End".
 
@@ -4034,7 +3996,7 @@ Wait( 1 );
 
 ### Select
 
-**Sintaxis:** obj << Select
+**Sintaxis:** obj &lt;&lt; Select
 
 **Descripción:** Selecciona este objeto para que lo utilicen los comandos del menú Editar.
 
@@ -4049,7 +4011,7 @@ ex << Select;
 
 ### Set Content Size
 
-**Sintaxis:** obj << Set Content Size( x,y )
+**Sintaxis:** obj &lt;&lt; Set Content Size( x,y )
 
 **Descripción:** Establece el tamaño del contenido de dentro de la ventana.
 
@@ -4075,7 +4037,7 @@ w << Set Content Size( 400, 300 );
 
 ### Set Dirty
 
-**Sintaxis:** obj << Set Dirty
+**Sintaxis:** obj &lt;&lt; Set Dirty
 
 **Descripción:** Establece el estado modificado del documento. 0 no preguntará si quiere guardar; 1 sí.
 
@@ -4094,7 +4056,7 @@ Show( ww << Is Dirty );
 
 ### Set Height
 
-**Sintaxis:** obj << Set Height( width )
+**Sintaxis:** obj &lt;&lt; Set Height( width )
 
 **Descripción:** Establece la altura del cuadro de visualización.
 
@@ -4112,7 +4074,7 @@ fb << Set Height( 150 );
 
 ### Set Main Window
 
-**Sintaxis:** obj << Set Main Window
+**Sintaxis:** obj &lt;&lt; Set Main Window
 
 **Descripción:** Establece la ventana como la ventana principal de JMP y la ventana principal anterior como una ventana normal
 
@@ -4127,7 +4089,7 @@ w << Set Main Window;
 
 ### Set Max Size
 
-**Sintaxis:** obj << Set Max Size( width,height )
+**Sintaxis:** obj &lt;&lt; Set Max Size( width,height )
 
 **Descripción:** Establece el tamaño máximo de este cuadro de visualización para la autoexpansión.
 
@@ -4146,7 +4108,7 @@ fb << Get Max Size;
 
 ### Set Min Size
 
-**Sintaxis:** obj << Set Min Size( width,height )
+**Sintaxis:** obj &lt;&lt; Set Min Size( width,height )
 
 **Descripción:** Establece el tamaño mínimo de este cuadro de visualización para la autoexpansión.
 
@@ -4165,7 +4127,7 @@ fb << Get Min Size;
 
 ### Set Page Setup
 
-**Sintaxis:** obj << Set Page Setup( <margins(left, top, right, bottom)>, <scale(s)>, <portrait(0|1)>, <paper size(p)>, <Table of Contents(always, never, default)>  )
+**Sintaxis:** obj &lt;&lt; Set Page Setup( &lt;margins(left, top, right, bottom)&gt;, &lt;scale(s)&gt;, &lt;portrait(0|1)&gt;, &lt;paper size(p)&gt;, &lt;Table of Contents(always, never, default)&gt; )
 
 **Descripción:** Establece la información de configuración de página que se utiliza durante la impresión o al guardar como PDF. Opcionalmente, se puede generar un índice a partir de los cuadros de esquema.
 
@@ -4187,7 +4149,7 @@ w << Save pdf( "$DOCUMENTS\test.pdf" );
 
 ### Set Print Footers
 
-**Sintaxis:** obj << Set Print Footers( left footer, center footer, right header )
+**Sintaxis:** obj &lt;&lt; Set Print Footers( left footer, center footer, right header )
 
 **Descripción:** Establece los pies de página de la izquierda, el centro y la derecha para la salida impresa
 
@@ -4206,7 +4168,7 @@ w << Print Window;
 
 ### Set Print Headers
 
-**Sintaxis:** obj << Set Print Headers( left header, center header, right header )
+**Sintaxis:** obj &lt;&lt; Set Print Headers( left header, center header, right header )
 
 **Descripción:** Establece los encabezados de página de la izquierda, el centro y la derecha para la salida impresa
 
@@ -4225,7 +4187,7 @@ w << Print Window;
 
 ### Set Property
 
-**Sintaxis:** obj << Set Property( "property", value )
+**Sintaxis:** obj &lt;&lt; Set Property( "property", value )
 
 **Descripción:** Establece el valor de la property con nombre para el cuadro de visualización.
 
@@ -4239,7 +4201,7 @@ bb << Set Property( "Enabled", 0 );
 
 ### Set Report Title
 
-**Sintaxis:** obj << Set Report Title( "string" )
+**Sintaxis:** obj &lt;&lt; Set Report Title( "string" )
 
 **Descripción:** Cambia el título del informe.
 
@@ -4256,7 +4218,7 @@ rbiv << Set Report Title( "New Title" );
 
 ### Set Stretch
 
-**Sintaxis:** obj << Set Stretch( x,y )
+**Sintaxis:** obj &lt;&lt; Set Stretch( x,y )
 
 **Descripción:** Establece el comportamiento de ajuste horizontal y vertical del cuadro. Los cuadros que se ajustan con Window cambiarán de tamaño en función del tamaño de la ventana o el divisor. Los cuadros que se ajustan a Fill se ajustarán hasta llenar el espacio disponible en su contenedor. Los cuadros con el ajuste establecido en Off no se ajustarán por lo general. La mayoría de los cuadros tienen Neutral como valor predeterminado, lo que significa que se determinará su compartimiento en función de sus cuadros hijo.
 
@@ -4304,7 +4266,7 @@ New Window( "Stretch",
 
 ### Set Summary Behavior
 
-**Sintaxis:** obj << Set Summary Behavior( "Default"|"Visible"|"Collapse" )
+**Sintaxis:** obj &lt;&lt; Set Summary Behavior( "Default"|"Visible"|"Collapse" )
 
 **Descripción:** Sets the behavior of the box when a report is viewed in Summary mode.
 
@@ -4323,7 +4285,7 @@ tb << Set Summary Behavior( "Visible" );
 
 ### Set Width
 
-**Sintaxis:** obj << Set Width( width )
+**Sintaxis:** obj &lt;&lt; Set Width( width )
 
 **Descripción:** Establece el ancho del cuadro de visualización.
 
@@ -4341,7 +4303,7 @@ fb << Set Width( 400 );
 
 ### Set Window Icon
 
-**Sintaxis:** obj << Set Window Icon( icon name )
+**Sintaxis:** obj &lt;&lt; Set Window Icon( icon name )
 
 **Descripción:** Establece el icono de la ventana.
 
@@ -4356,7 +4318,7 @@ w << Set Window Icon( "Scatter3D" );
 
 ### Set Window Size
 
-**Sintaxis:** obj << Set Window Size( x,y )
+**Sintaxis:** obj &lt;&lt; Set Window Size( x,y )
 
 **Descripción:** Establece el tamaño de la ventana.
 
@@ -4371,7 +4333,7 @@ w << Set Window Size( 800, 1200 );
 
 ### Set Window Title
 
-**Sintaxis:** obj << Set Window Title( "string" )
+**Sintaxis:** obj &lt;&lt; Set Window Title( "string" )
 
 **Descripción:** Cambia el título de la ventana.
 
@@ -4388,7 +4350,7 @@ rbiv << Set Window Title( "New Title" );
 
 ### Show Properties
 
-**Sintaxis:** obj << Show Properties
+**Sintaxis:** obj &lt;&lt; Show Properties
 
 **Descripción:** Muestra un editor de propiedades para los cuadros de visualización
 
@@ -4405,7 +4367,7 @@ rbiv << Show Properties();
 
 ### Show Tree Structure
 
-**Sintaxis:** obj << Show Tree Structure
+**Sintaxis:** obj &lt;&lt; Show Tree Structure
 
 **Descripción:** Muestra una estructura de árbol jerárquica del cuadro de visualización y sus nodos relacionados.
 
@@ -4422,7 +4384,7 @@ rbiv << Show Tree Structure();
 
 ### Show Window
 
-**Sintaxis:** obj << Show Window( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Show Window( state=0|1 )
 
 **Descripción:** Muestra u oculta la ventana. Esto es útil para ocultar temporalmente las ventanas. Opción activada de forma predeterminada.
 
@@ -4440,7 +4402,7 @@ w << Show Window( 1 );
 
 ### Sib
 
-**Sintaxis:** obj << Sib
+**Sintaxis:** obj &lt;&lt; Sib
 
 **Descripción:** Devuelve el hermano del cuadro de visualización.
 
@@ -4459,7 +4421,7 @@ Print( axisSibling << Class Name() );
 
 ### Sib Append
 
-**Sintaxis:** obj << Sib Append( Display box, Horizontal|Vertical )
+**Sintaxis:** obj &lt;&lt; Sib Append( Display box, Horizontal|Vertical )
 
 **Descripción:** Agrega un cuadro de visualización justo después de este cuadro de visualización.
 
@@ -4481,7 +4443,7 @@ fb << sib append( Text Box( "=== below ===" ), "Vertical" );
 
 ### Sib Prepend
 
-**Sintaxis:** obj << Sib Prepend( Display box, Horizontal|Vertical )
+**Sintaxis:** obj &lt;&lt; Sib Prepend( Display box, Horizontal|Vertical )
 
 **Descripción:** Agrega un cuadro de visualización justo antes de este cuadro de visualización.
 
@@ -4503,7 +4465,7 @@ fb << sib prepend( Text Box( "=== above ===" ), "Vertical" );
 
 ### Size Window
 
-**Sintaxis:** obj << Size Window( x,y )
+**Sintaxis:** obj &lt;&lt; Size Window( x,y )
 
 **Descripción:** Establece el tamaño de la ventana.
 
@@ -4518,9 +4480,7 @@ w << Size Window( 500, 500 );
 
 ### Text Color
 
-**Sintaxis:** obj << Text Color( color );
-
-color = obj << Get Text Color
+**Sintaxis:** obj &lt;&lt; Text Color( color );color = obj &lt;&lt; Get Text Color
 
 **Descripción:** El texto se dibujará con el color del texto si se ha establecido. Si no se ha establecido la propiedad, el cuadro heredará el color de texto del cuadro contenedor.
 
@@ -4542,7 +4502,7 @@ tb << Text Color( "Red" );
 
 ### Top Parent
 
-**Sintaxis:** obj << Top Parent
+**Sintaxis:** obj &lt;&lt; Top Parent
 
 **Descripción:** Devuelve el progenitor raíz de este cuadro de visualización.
 
@@ -4560,13 +4520,11 @@ Print( rootParent << Class Name() );
 
 ### UI Only
 
-**Sintaxis:** obj << UI Only( state=0|1 );
-
-state = obj << Get UI Only
+**Sintaxis:** obj &lt;&lt; UI Only( state=0|1 );state = obj &lt;&lt; Get UI Only
 
 ### Update Window
 
-**Sintaxis:** obj << Update Window
+**Sintaxis:** obj &lt;&lt; Update Window
 
 **Descripción:** Actualiza la ventana manteniendo el cuadro de visualización si hay regiones invalidadas. El mensaje <<Invalidar crea regiones invalidadas.
 
@@ -4618,9 +4576,7 @@ New Window( "rect",
 
 ### User Resizable
 
-**Sintaxis:** obj << User Resizable;
-
-obj << Get User Resizable
+**Sintaxis:** obj &lt;&lt; User Resizable;obj &lt;&lt; Get User Resizable
 
 **Descripción:** Si el usuario puede cambiar el tamaño del cuadro, el cursor cambiará cerca de los bordes inferior y derecho para permitir que cambie el tamaño arrastrando y colocando.
 
@@ -4657,9 +4613,7 @@ scroll << User Resizable( {0, 0} );
 
 ### Vertical Alignment
 
-**Sintaxis:** obj << Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );
-
-"Default"|"Top"|"Center"|"Bottom" = obj << Get Vertical Alignment
+**Sintaxis:** obj &lt;&lt; Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );"Default"|"Top"|"Center"|"Bottom" = obj &lt;&lt; Get Vertical Alignment
 
 **Descripción:** La alineación vertical controla el posicionamiento del cuadro dentro de un contenedor si el cuadro no ocupa todo el espacio.
 
@@ -4681,9 +4635,7 @@ lb << Vertical Alignment( "Bottom" );
 
 ### Visibility
 
-**Sintaxis:** obj << Visibility( "Visible"|"Hidden"|"Collapse" );
-
-"Visible"|"Hidden"|"Collapse" = obj << Get Visibility
+**Sintaxis:** obj &lt;&lt; Visibility( "Visible"|"Hidden"|"Collapse" );"Visible"|"Hidden"|"Collapse" = obj &lt;&lt; Get Visibility
 
 **Descripción:** La visibilidad determina si se muestra un cuadro y si ocupa espacio. El valor predeterminado de "Visible" significa que se mostrará el objeto.  Un cuadro "Hidden" no se muestra pero ocupa espacio, mientras que un cuadro "Collapsed" no ocupa espacio en la presentación.
 
@@ -4704,7 +4656,7 @@ Show( tb << Get Visibility );
 
 ### Window Class Name
 
-**Sintaxis:** obj << Window Class Name
+**Sintaxis:** obj &lt;&lt; Window Class Name
 
 **Descripción:** Devuelve el nombre de la clase de la ventana correspondiente al cuadro de visualización.
 
@@ -4722,7 +4674,7 @@ Show( rbiv << Window Class Name() );
 
 ### XPath
 
-**Sintaxis:** obj << XPath( XPath expression, <English(0|1)>, <NoData(0|1)> )
+**Sintaxis:** obj &lt;&lt; XPath( XPath expression, &lt;English(0|1)&gt;, &lt;NoData(0|1)&gt; )
 
 **Descripción:** Aplica una expresión XPath a la representación XML del árbol de visualización y devuelve los resultados. De forma predeterminada, las cadenas de caracteres se devuelven en el idioma local y el XML incluye valores de datos en algunas casillas. Utilice la opción English para devolver cadenas de caracteres en inglés cuando estén disponibles. Utilice la opción NoData para omitir los valores de datos en los cuadros, lo que resulta útil para el rendimiento cuando la consulta se basa únicamente en los atributos de los cuadros.
 
@@ -4802,7 +4754,7 @@ biv = dt << Run Script( "Bivariate" );
 
 ### Zoom Window
 
-**Sintaxis:** obj << Zoom Window
+**Sintaxis:** obj &lt;&lt; Zoom Window
 
 **Descripción:** Aumenta el tamaño de la ventana hasta que pueda mostrar todo su contenido.
 

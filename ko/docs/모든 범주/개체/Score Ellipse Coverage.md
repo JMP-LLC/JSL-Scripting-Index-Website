@@ -6,13 +6,13 @@
 
 ### Remove Fit
 
-**구문:** obj << Remove Fit
+**구문:** obj &lt;&lt; Remove Fit
 
 **JMP추가된 버전:** 15
 
 ### Shaded Contour
 
-**구문:** obj << Shaded Contour( state=0|1 )
+**구문:** obj &lt;&lt; Shaded Contour( state=0|1 )
 
 **설명:** 음영 등고선을 표시하거나 숨깁니다.
 

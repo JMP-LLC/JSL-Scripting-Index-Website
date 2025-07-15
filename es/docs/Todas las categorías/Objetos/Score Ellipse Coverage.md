@@ -6,13 +6,13 @@
 
 ### Remove Fit
 
-**Sintaxis:** obj << Remove Fit
+**Sintaxis:** obj &lt;&lt; Remove Fit
 
 **JMP Versión agregada:** 15
 
 ### Shaded Contour
 
-**Sintaxis:** obj << Shaded Contour( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Shaded Contour( state=0|1 )
 
 **Descripción:** Muestra u oculta el contorno sombreado.
 

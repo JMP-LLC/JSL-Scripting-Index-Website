@@ -6,7 +6,7 @@
 
 ### K Nearest Neighbor Outliers
 
-**Syntax:** obj << K Nearest Neighbor Outliers
+**Syntax:** obj &lt;&lt; K Nearest Neighbor Outliers
 
 **Beschreibung:** Findet für jeden Punkt den Abstand zu seinem k-ten nächsten Nachbarn.
 
@@ -23,13 +23,13 @@ obj << k Nearest Neighbor Outliers( K( 5 ) );
 
 ### Multivariate k Nearest Neighbor Outliers
 
-**Syntax:** obj << Multivariate k Nearest Neighbor Outliers
+**Syntax:** obj &lt;&lt; Multivariate k Nearest Neighbor Outliers
 
 **JMP Version hinzugefügt:** 14
 
 ### Quantile Range Outliers
 
-**Syntax:** obj << Quantile Range Outliers
+**Syntax:** obj &lt;&lt; Quantile Range Outliers
 
 **Beschreibung:** Findet Werte, die sich mehr als ein Vielfaches eines Interquantilabstands außerhalb der Quantile befinden.
 
@@ -44,7 +44,7 @@ obj << Quantile Range Outliers;
 
 ### Robust Fit Outliers
 
-**Syntax:** obj << Robust Fit Outliers
+**Syntax:** obj &lt;&lt; Robust Fit Outliers
 
 **Beschreibung:** Findet mithilfe von robusten Schätzwerten des Zentrums und der Streuung Werte, die mehr als ein Vielfaches des Streuungsmaßes vom Zentrum entfernt sind.
 
@@ -59,7 +59,7 @@ obj << Robust Fit Outliers;
 
 ### Robust PCA Outliers
 
-**Syntax:** obj << Robust PCA Outliers
+**Syntax:** obj &lt;&lt; Robust PCA Outliers
 
 **Beschreibung:** Zerlegt robuste Daten in eine Matrix niederen Ranges und eine dünn besetzte Matrix der Residuen. Ausreißer werden in den Residuen erkannt. Es können auch fehlende Werte eingesetzt werden.
 
@@ -78,7 +78,7 @@ obj << Robust PCA Outliers;
 
 ### Action
 
-**Syntax:** obj << Action
+**Syntax:** obj &lt;&lt; Action
 
 **Beschreibung:** Allzwecköffnung innerhalb einer Plattform zum Einfügen von auszuwertenden Ausdrücken. Setzt die Kontexte für Anzeigefeld und Datentabelle kurzzeitig auf die Plattform.
 
@@ -96,7 +96,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Syntax:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntax:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Beschreibung:** Wendet eine zuvor erstellte Voreinstellung auf das Objekt an und aktualisiert die Optionen und Anpassungen entsprechend den gespeicherten Einstellungen.
 
@@ -143,7 +143,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**Syntax:** obj << Automatic Recalc( state=0|1 )
+**Syntax:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Beschreibung:** Wiederholt die Analyse bei Ausschluss und Datenänderungen automatisch. Wenn die Option „Automatic Recalc“ eingeschaltet ist, sollten Sie in Betracht ziehen, Wait(0)-Befehle zu verwenden, um sicherzustellen, dass die Ausschlüsse und Datenänderungen vor der Neuberechnung wirksam werden.
 
@@ -159,7 +159,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**Syntax:** obj << Broadcast(message)
+**Syntax:** obj &lt;&lt; Broadcast(message)
 
 **Beschreibung:** Sendet eine Meldung an eine Plattform. Wenn es sich bei den zurückgegebenen Ergebnissen von einzelnen Objekten um Tabellen handelt, werden sie, wenn möglich, verkettet. Das endgültige Format ist entweder identisch mit dem Ergebnis der Option „Kombinierte Tabelle speichern“ in einem Tabellenfeld oder mit dem Ergebnis der Option „Verketten“ mithilfe einer Quellspalte. Ansonsten werden die Ergebnisse in einer Liste gespeichert und zurückgegeben.
 
@@ -179,7 +179,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**Syntax:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Syntax:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Beschreibung:** Fügt ein Bedienfeld zum Ändern der Variablen der Plattform hinzu
 
@@ -197,7 +197,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**Syntax:** obj << Copy ByGroup Script
+**Syntax:** obj &lt;&lt; Copy ByGroup Script
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und legt es in der Zwischenablage ab.
 
@@ -217,7 +217,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Syntax:** obj << Copy Script
+**Syntax:** obj &lt;&lt; Copy Script
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und legt es in der Zwischenablage ab.
 
@@ -232,7 +232,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Syntax:** obj << Data Table Window
+**Syntax:** obj &lt;&lt; Data Table Window
 
 **Beschreibung:** Zeigt das Fenster mit der Datentabelle für diese Analyse im Vordergrund an.
 
@@ -247,7 +247,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Syntax:** obj << Get By Levels
+**Syntax:** obj &lt;&lt; Get By Levels
 
 **Beschreibung:** Gibt ein assoziatives Array zurück, das die Nach-Gruppenspalten ihren Werten zuordnet.
 
@@ -264,7 +264,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Syntax:** obj << Get ByGroup Script
+**Syntax:** obj &lt;&lt; Get ByGroup Script
 
 **Beschreibung:** Erstellt ein Skript (JSL) zum Erzeugen dieser Analyse und gibt es als Ausdruck zurück.
 
@@ -285,7 +285,7 @@ Show( t );
 
 ### Get Container
 
-**Syntax:** obj << Get Container
+**Syntax:** obj &lt;&lt; Get Container
 
 **Beschreibung:** Gibt einen Verweis auf das Containerfeld zurück, das den Inhalt des Objekts enthält.
 
@@ -332,7 +332,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Syntax:** obj << Get Data Table
+**Syntax:** obj &lt;&lt; Get Data Table
 
 **Beschreibung:** Gibt eine Referenz auf die Datentabelle zurück.
 
@@ -348,7 +348,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**Syntax:** obj << Get Group Platform
+**Syntax:** obj &lt;&lt; Get Group Platform
 
 **Beschreibung:** Plattformobjekt der Gruppe zurückgeben, wenn diese Plattform Teil einer Gruppe ist. Andernfalls wird Empty() zurückgegeben.
 
@@ -365,7 +365,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**Syntax:** obj << Get Script
+**Syntax:** obj &lt;&lt; Get Script
 
 **Beschreibung:** Erstellt ein Skript (JSL) zum Erzeugen dieser Analyse und gibt es als Ausdruck zurück.
 
@@ -381,7 +381,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Syntax:** obj << Get Script With Data Table
+**Syntax:** obj &lt;&lt; Get Script With Data Table
 
 **Beschreibung:** Erstellt ein Skript (JSL) zum Erzeugen dieser Analyse und referenziert dabei spezifisch diese Datentabelle und gibt das Skript als Ausdruck zurück.
 
@@ -397,7 +397,7 @@ Show( t );
 
 ### Get Timing
 
-**Syntax:** obj << Get Timing
+**Syntax:** obj &lt;&lt; Get Timing
 
 **Beschreibung:** Steuert den Start der Plattform zeitlich.
 
@@ -413,7 +413,7 @@ Show( t );
 
 ### Get Web Support
 
-**Syntax:** obj << Get Web Support
+**Syntax:** obj &lt;&lt; Get Web Support
 
 **Beschreibung:** Gibt eine Zahl zurück, die angibt, ob für das Anzeigeobjekt interaktive HTML unterstützt wird. 1 bedeutet einige oder alle Elemente werden unterstützt. 0 bedeutet keine Unterstützung.
 
@@ -429,7 +429,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Syntax:** obj << Get Where Expr
+**Syntax:** obj &lt;&lt; Get Where Expr
 
 **Beschreibung:** Gibt den Ausdruck Where für die Teilmenge der Daten zurück, wenn die Plattform mit By() oder Where() gestartet wurde. Andernfalls wird Empty() zurückgegeben.
 
@@ -466,7 +466,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Syntax:** obj << Local Data Filter
+**Syntax:** obj &lt;&lt; Local Data Filter
 
 **Beschreibung:** Filtert Daten für bestimmte Gruppen oder Bereiche, aber nur lokal in dieser Plattform.
 
@@ -522,7 +522,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Syntax:** obj << Paste Local Data Filter
+**Syntax:** obj &lt;&lt; Paste Local Data Filter
 
 **Beschreibung:** Lokalen Datenfilter aus der Zwischenablage auf den aktuellen Bericht anwenden.
 
@@ -543,7 +543,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**Syntax:** obj << Redo Analysis
+**Syntax:** obj &lt;&lt; Redo Analysis
 
 **Beschreibung:** Führt die gleiche Analyse in einem neuen Fenster aus. Die Analyse ist unterschiedlich, wenn sich die Daten verändert haben.
 
@@ -558,7 +558,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**Syntax:** obj << Redo ByGroup Analysis
+**Syntax:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Beschreibung:** Führt die gleiche Analyse in einem neuen Fenster aus. Die Analyse ist unterschiedlich, wenn sich die Daten verändert haben.
 
@@ -578,7 +578,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**Syntax:** obj << Relaunch Analysis
+**Syntax:** obj &lt;&lt; Relaunch Analysis
 
 **Beschreibung:** Öffnet das Plattform-Startfenster und ruft die Einstellungen ab, die zum Erstellen des Berichts verwendet wurden.
 
@@ -593,7 +593,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**Syntax:** obj << Relaunch ByGroup
+**Syntax:** obj &lt;&lt; Relaunch ByGroup
 
 **Beschreibung:** Öffnet das Plattform-Startfenster und ruft die Einstellungen ab, die zum Erstellen des Berichts verwendet wurden.
 
@@ -613,7 +613,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**Syntax:** obj << Remove Column Switcher
+**Syntax:** obj &lt;&lt; Remove Column Switcher
 
 **Beschreibung:** Entfernt den letzten Spaltenwechsler, der der Plattform hinzugefügt wurde.
 
@@ -633,7 +633,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Syntax:** obj << Remove Local Data Filter
+**Syntax:** obj &lt;&lt; Remove Local Data Filter
 
 **Beschreibung:** Wenn ein lokaler Filter verwendet wurde, wird dieser entfernt und die Plattform verwendet wieder direkt alle Daten aus der Datentabelle
 
@@ -672,9 +672,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Syntax:** obj << Report;
-
-Report( obj )
+**Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Beschreibung:** Gibt eine Referenz auf das Berichtsobjekt zurück.
 
@@ -691,7 +689,7 @@ Show( t );
 
 ### Report View
 
-**Syntax:** obj << Report View( "Vollständig"|"Übersicht" )
+**Syntax:** obj &lt;&lt; Report View( "Vollständig"|"Übersicht" )
 
 **Beschreibung:** Die Berichtsanzeige legt das Detailniveau für einen Plattformbericht fest. Full zeigt alle Details an, während Summary abhängig von der Plattform nur ausgewählte Inhalte anzeigt. Für benutzerdefiniertes Verhalten unterstützen Anzeigefelder eine Meldung <<Set Summary Behavior.
 
@@ -706,7 +704,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**Syntax:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und speichert sie als Tabelleneigenschaft in der Datentabelle. Sie können einen Namen für das Skript angeben. Die Option Append Suffix hängt ein numerisches Suffix an den Skriptnamen an, das das Skript von einem vorhandenen Skript mit dem gleichen Namen unterscheidet. Die Option Prompt fordert den Benutzer auf, einen Skriptnamen anzugeben. Die Option Replace ersetzt ein vorhandenes Skript mit dem gleichen Namen.
 
@@ -726,7 +724,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Syntax:** obj << Save ByGroup Script to Journal
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und fügt eine Schaltfläche mit diesem Skript zum Journal hinzu.
 
@@ -746,7 +744,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Syntax:** obj << Save ByGroup Script to Script Window
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und hängt es an das Textfenster mit dem aktuellen Skript an.
 
@@ -766,7 +764,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**Syntax:** obj << Save Script for All Objects
+**Syntax:** obj &lt;&lt; Save Script for All Objects
 
 **Beschreibung:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -781,7 +779,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Syntax:** obj << Save Script for All Objects To Data Table( <name> )
+**Syntax:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Beschreibung:** Speichert ein Skript für alle Berichtsobjekte in der aktuellen Datentabelle. Diese Option ist nützlich, wenn Sie mehrere Berichte im Fenster haben. Das Skript wird nach der ersten Plattform benannt, sofern Sie keine Skriptnamen in Anführungszeichen angeben.
 
@@ -819,7 +817,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Syntax:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und speichert es als Tabelleneigenschaft in der Datentabelle.
 
@@ -834,7 +832,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Syntax:** obj << Save Script to Journal
+**Syntax:** obj &lt;&lt; Save Script to Journal
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und fügt eine Schaltfläche mit diesem Skript zum Journal hinzu.
 
@@ -849,7 +847,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Syntax:** obj << Save Script to Report
+**Syntax:** obj &lt;&lt; Save Script to Report
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und zeigt es im Bericht selbst an. Nützlich zum Anlegen eines gedruckten Nachweises der durchgeführten Aktivitäten.
 
@@ -864,7 +862,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Syntax:** obj << Save Script to Script Window
+**Syntax:** obj &lt;&lt; Save Script to Script Window
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und hängt es an das Textfenster mit dem aktuellen Skript an.
 
@@ -944,7 +942,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Syntax:** obj << Sync to Data Table Changes
+**Syntax:** obj &lt;&lt; Sync to Data Table Changes
 
 **Beschreibung:** Mit Ausgeschlossenen und vorgenommenen Datenänderungen synchronisieren.
 
@@ -961,7 +959,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Syntax:** obj << Title( "new title" )
+**Syntax:** obj &lt;&lt; Title( "new title" )
 
 **Beschreibung:** Legt den Titel für die Plattform fest.
 
@@ -976,7 +974,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Syntax:** obj << Top Report
+**Syntax:** obj &lt;&lt; Top Report
 
 **Beschreibung:** Gibt eine Referenz auf den Stammknoten im Bericht zurück.
 
@@ -993,7 +991,7 @@ Show( t );
 
 ### Transform Column
 
-**Syntax:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Syntax:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Beschreibung:** Transformationsspalte im lokalen Kontext eines Objekts erstellen, üblicherweise als Plattform. Die Transformationsspalte ist nur für die Lebensdauer der Plattform aktiv.
 
@@ -1014,7 +1012,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**Syntax:** obj << View Web XML
+**Syntax:** obj &lt;&lt; View Web XML
 
 **Beschreibung:** Gibt den XML-Code zurück, der zum Erstellen des interaktiven HTML-Berichts verwendet wird.
 
@@ -1029,9 +1027,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**Syntax:** obj = Explore Outliers(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Explore Outliers(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Typ des Fensters festlegen, das für den Bericht erstellt werden soll. Standardmäßig wird ein Berichtsfenster vom Typ Visible erstellt. Ein Fenster vom Typ Invisible wird auf dem Bildschirm nicht angezeigt, kann jedoch von Funktionen wie Window() erkannt werden. Ein Fenster vom Typ Private reagiert auf die meisten Fenstermeldungen, kann jedoch nicht erkannt werden und muss über das Berichtsobjekt adressiert werden.
 
@@ -1052,7 +1048,7 @@ New Window( "Bivariate Equation",
 
 ### By
 
-**Syntax:** obj << By( column(s) )
+**Syntax:** obj &lt;&lt; By( column(s) )
 
 ```jsl
 
@@ -1069,7 +1065,7 @@ obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ), By( _b
 
 ### Columns
 
-**Syntax:** obj << Columns( column(s) )
+**Syntax:** obj &lt;&lt; Columns( column(s) )
 
 ```jsl
 
@@ -1081,7 +1077,7 @@ obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 
 ### Label
 
-**Syntax:** obj << Label( column )
+**Syntax:** obj &lt;&lt; Label( column )
 
 **JMP Version hinzugefügt:** 16
 
@@ -1095,7 +1091,7 @@ obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 
 ### Validation
 
-**Syntax:** obj << Validation( column )
+**Syntax:** obj &lt;&lt; Validation( column )
 
 **JMP Version hinzugefügt:** 16
 
@@ -1109,7 +1105,7 @@ obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 
 ### Y
 
-**Syntax:** obj << Y( column(s) )
+**Syntax:** obj &lt;&lt; Y( column(s) )
 
 ```jsl
 
@@ -1141,19 +1137,19 @@ obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 
 #### Close
 
-**Syntax:** obj << Close
+**Syntax:** obj &lt;&lt; Close
 
 **JMP Version hinzugefügt:** 16
 
 #### Exclude Selected Rows
 
-**Syntax:** obj << Exclude Selected Rows
+**Syntax:** obj &lt;&lt; Exclude Selected Rows
 
 **JMP Version hinzugefügt:** 16
 
 #### Impute Missing
 
-**Syntax:** obj << Impute Missing( state=0 )
+**Syntax:** obj &lt;&lt; Impute Missing( state=0 )
 
 **Beschreibung:** Wenn es fehlende Werte gibt, wird robuste PCA verwendet, um diese Werte einzusetzen, bevor die Analyse mit K nächsten Nachbarn durchgeführt wird. Standardmäßig ein.
 
@@ -1161,7 +1157,7 @@ obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 
 #### K
 
-**Syntax:** obj << K( number=8 )
+**Syntax:** obj &lt;&lt; K( number=8 )
 
 **Beschreibung:** Die Anzahl von Zeilen mit nächsten Nachbarn, die für jede Zeile in der Tabelle gefunden werden soll. Standardmäßig „8“.
 
@@ -1169,7 +1165,7 @@ obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 
 #### Save NN Distances
 
-**Syntax:** obj << Save NN Distances
+**Syntax:** obj &lt;&lt; Save NN Distances
 
 **Beschreibung:** Speichert neue Spalten in der Datentabelle mit Distanzen zum k-ten nächsten Nachbarn.
 
@@ -1187,7 +1183,7 @@ obj << Save NN Distances;
 
 #### Scatterplot Matrix
 
-**Syntax:** obj << Scatterplot Matrix
+**Syntax:** obj &lt;&lt; Scatterplot Matrix
 
 **Beschreibung:** Öffnet ein Fenster mit einer Streudiagrammmatrix für alle Spalten.
 
@@ -1207,13 +1203,13 @@ obj << Scatterplot Matrix;
 
 #### Close
 
-**Syntax:** obj << Close
+**Syntax:** obj &lt;&lt; Close
 
 **JMP Version hinzugefügt:** 16
 
 #### Exclude Selected Rows
 
-**Syntax:** obj << Exclude Selected Rows
+**Syntax:** obj &lt;&lt; Exclude Selected Rows
 
 **JMP Version hinzugefügt:** 16
 
@@ -1223,7 +1219,7 @@ obj << Scatterplot Matrix;
 
 #### Add Highest Nines to Missing Value Codes
 
-**Syntax:** obj << Add Highest Nines to Missing Value Codes( ALL or column1, column2, ... )
+**Syntax:** obj &lt;&lt; Add Highest Nines to Missing Value Codes( ALL or column1, column2, ... )
 
 **Beschreibung:** Wählt die als Argumente aufgeführten Spalten aus und findet die höchsten Neunen in jeder Spalte. Erstellt für diese Werte in jeder ausgewählten Spalte eine Eigenschaft „Fehlende-Werte-Codes“.
 
@@ -1243,7 +1239,7 @@ dt:PS_RPNBR << Get Column Properties;
 
 #### Add to Missing Value Codes
 
-**Syntax:** obj << Add to Missing Value Codes( ALL or column1, column2, ... )
+**Syntax:** obj &lt;&lt; Add to Missing Value Codes( ALL or column1, column2, ... )
 
 **Beschreibung:** Wählt die als Argumente aufgeführten Spalten aus und fügt in diesen Spalten für Ausreißer eine Eigenschaft „Fehlende-Werte-Codes“ hinzu.
 
@@ -1261,7 +1257,7 @@ obj << Add to Missing Value Codes( :"Q-E"n, :"ZN-E"n );
 
 #### Change Highest Nines to Missing
 
-**Syntax:** obj << Change Highest Nines to Missing( ALL or column1, column2, ... )
+**Syntax:** obj &lt;&lt; Change Highest Nines to Missing( ALL or column1, column2, ... )
 
 **Beschreibung:** Wählt die als Argumente aufgeführten Spalten aus und findet die höchsten Neunen in diesen Spalten. Ändert die höchsten Neunen in fehlend. Hinweis: Dadurch wird die Datentabelle verändert.
 
@@ -1279,7 +1275,7 @@ obj << Change Highest Nines to Missing( :PS_RPNBR );
 
 #### Change to Missing
 
-**Syntax:** obj << Change to Missing( ALL or column1, column2, ... )
+**Syntax:** obj &lt;&lt; Change to Missing( ALL or column1, column2, ... )
 
 **Beschreibung:** Wählt die als Argumente aufgeführten Spalten aus. Ändert in den ausgewählten Spalten die als Ausreißer identifizierten Werte in fehlende Werte.
 
@@ -1298,7 +1294,7 @@ obj << Change to Missing( :"Q-E"n, :"ZN-E"n );
 
 #### Close
 
-**Syntax:** obj << Close
+**Syntax:** obj &lt;&lt; Close
 
 **Beschreibung:** Entfernt einen Abschnitt der Analyse und öffnet die Befehlsübersicht erneut.
 
@@ -1318,7 +1314,7 @@ obj << Close;
 
 #### Color Cells
 
-**Syntax:** obj << Color Cells( ALL or column1, column2, ... )
+**Syntax:** obj &lt;&lt; Color Cells( ALL or column1, column2, ... )
 
 **Beschreibung:** Wählt die als Argumente aufgeführten Spalten aus. In den ausgewählten Spalten werden die Zellen, die Ausreißern entsprechen, farblich gekennzeichnet.
 
@@ -1336,7 +1332,7 @@ obj << Color Cells( :"Q-E"n, :"ZN-E"n );
 
 #### Color Rows
 
-**Syntax:** obj << Color Rows( ALL or column1, column2, ... )
+**Syntax:** obj &lt;&lt; Color Rows( ALL or column1, column2, ... )
 
 **Beschreibung:** Wählt die als Argumente aufgeführten Spalten aus. Weist in den ausgewählten Spalten den Zeilen, die Ausreißern entsprechen, die Zeileneigenschaft „Farbe“ zu.
 
@@ -1344,7 +1340,7 @@ obj << Color Cells( :"Q-E"n, :"ZN-E"n );
 
 #### Exclude Rows
 
-**Syntax:** obj << Exclude Rows( ALL or column1, column2, ... )
+**Syntax:** obj &lt;&lt; Exclude Rows( ALL or column1, column2, ... )
 
 **Beschreibung:** Wählt die als Argumente aufgeführten Spalten aus. Schließt in den ausgewählten Spalten die Zeilen aus, die als Ausreißer identifizierte Werte enthalten.
 
@@ -1362,7 +1358,7 @@ obj << Exclude Rows( :"Q-E"n, :"ZN-E"n );
 
 #### Formula Columns
 
-**Syntax:** obj << Formula Columns( ALL or column1, column2, ... )
+**Syntax:** obj &lt;&lt; Formula Columns( ALL or column1, column2, ... )
 
 **Beschreibung:** Erstellt neue Formelspalten aus den ausgewählten Spalten, indem Ausreißer in fehlend geändert werden.
 
@@ -1381,7 +1377,7 @@ obj << Formula Columns( Suffix( "Culled" ) );
 
 #### Formula Script
 
-**Syntax:** obj << Formula Script( ALL or column1, column2, ... )
+**Syntax:** obj &lt;&lt; Formula Script( ALL or column1, column2, ... )
 
 **Beschreibung:** Erstellt ein Skript zum Erzeugen neuer Formelspalten aus den ausgewählten Spalten, indem Ausreißer in fehlend geändert werden.
 
@@ -1400,7 +1396,7 @@ obj << Formula Script( Suffix( "Culled" ) );
 
 #### Get Quantile Outliers
 
-**Syntax:** obj << Get Quantile Outliers
+**Syntax:** obj &lt;&lt; Get Quantile Outliers
 
 **Beschreibung:** Gibt eine Liste mit einer Liste der Spalten zurück, die Ausreißer enthalten, und einer Liste von Vektoren, die in diesen Spalten Ausreißerwerte enthalten.
 
@@ -1416,7 +1412,7 @@ obj << Get Quantile Outliers;
 
 #### Q
 
-**Syntax:** obj << Q( number=3 )
+**Syntax:** obj &lt;&lt; Q( number=3 )
 
 **Beschreibung:** Legt das Vielfache Q für den Interquantilabstand fest. Werte, die mehr als den Q-fachen Interquantilabstand außerhalb vorher festgelegter Quantile liegen, gelten als Ausreißer. Verwenden Sie „Erneut abfragen“, um die Einstellung anzuwenden. Standardmäßig „3“.
 
@@ -1433,7 +1429,7 @@ obj << Quantile Range Outliers( Q( 4 ) );
 
 #### Rescan
 
-**Syntax:** obj << Rescan
+**Syntax:** obj &lt;&lt; Rescan
 
 **Beschreibung:** Wird nach dem Ändern der Einstellungen verwendet, um die Kriterien neu zu berechnen und die Daten neu abzufragen, um Ausreißer zu erkennen.
 
@@ -1452,7 +1448,7 @@ obj << Rescan;
 
 #### Restrict search to integers
 
-**Syntax:** obj << Restrict search to integers( state=0|1 )
+**Syntax:** obj &lt;&lt; Restrict search to integers( state=0|1 )
 
 **Beschreibung:** Schränkt Ausreißerwerte auf ganzzahlige Werte ein. Diese Einstellung begrenzt die Suche nach Ausreißern, um branchenspezifische Fehlende-Werte-Codes und Fehlercodes zu finden. Ausreißer, die mit Hilfe des Quantilabstands und der robusten Anpassung ermittelt wurden. Standardmäßig ausgeschaltet.
 
@@ -1469,7 +1465,7 @@ obj = dt << Explore Outliers(
 
 #### Save Quantile Outlier Limits
 
-**Syntax:** obj << Save Quantile Outlier Limits
+**Syntax:** obj &lt;&lt; Save Quantile Outlier Limits
 
 **Beschreibung:** Öffnet eine neue Datentabelle mit den Berichtsinformationen zu Ausreißern bezüglich des Quantilabstands und einer Spalte mit Ausreißerwerten.
 
@@ -1485,7 +1481,7 @@ obj << Save Quantile Outlier Limits;
 
 #### Select Rows
 
-**Syntax:** obj << Select Rows( ALL or column1, column2, ... )
+**Syntax:** obj &lt;&lt; Select Rows( ALL or column1, column2, ... )
 
 **Beschreibung:** Wählt die als Argumente aufgeführten Spalten aus und wählt die Zeilen aus, die in irgendeiner dieser Spalten Ausreißerwerte haben.
 
@@ -1503,7 +1499,7 @@ obj << Select Rows( :"Q-E"n, :"ZN-E"n );
 
 #### Show only columns with outliers
 
-**Syntax:** obj << Show only columns with outliers( state=0|1 )
+**Syntax:** obj &lt;&lt; Show only columns with outliers( state=0|1 )
 
 **Beschreibung:** Begrenzt die Liste von Spalten im Bericht auf diejenigen, die Ausreißer enthalten. Verfügbar für die Ausreißer, die mit Hilfe des Quantilabstands und der robusten Anpassung ermittelt wurden. Standardmäßig ausgeschaltet.
 
@@ -1520,7 +1516,7 @@ obj = dt << Explore Outliers(
 
 #### Tail Quantile
 
-**Syntax:** obj << Tail Quantile( number=.10 )
+**Syntax:** obj &lt;&lt; Tail Quantile( number=.10 )
 
 **Beschreibung:** Legt den Quantilwert für die Enden jeder Verteilung fest. Die Quantile werden bei der Berechnung des Interquantilabstands verwendet. Verwenden Sie „Erneut abfragen“, um die Einstellung anzuwenden. Standardmäßig „.10“.
 
@@ -1541,7 +1537,7 @@ obj << Quantile Range Outliers( Tail Quantile( 0.2 ) );
 
 #### Add to Missing Value Codes
 
-**Syntax:** obj << Add to Missing Value Codes( ALL or column1, column2, ... )
+**Syntax:** obj &lt;&lt; Add to Missing Value Codes( ALL or column1, column2, ... )
 
 **Beschreibung:** Wählt die als Argumente aufgeführten Spalten aus und fügt in diesen Spalten für Ausreißer eine Eigenschaft „Fehlende-Werte-Codes“ hinzu.
 
@@ -1559,7 +1555,7 @@ obj << Add to Missing Value Codes( :"Q-E"n, :"ZN-E"n );
 
 #### Cauchy
 
-**Syntax:** obj << Cauchy( state=0|1 )
+**Syntax:** obj &lt;&lt; Cauchy( state=0|1 )
 
 **Beschreibung:** Verwendet eine Cauchy-Verteilung, um das robuste Zentrum und die Streuung der Werte zu schätzen. Das robuste Zentrum und die Streuung dienen dazu, Ausreißer zu bestimmen.
 
@@ -1576,7 +1572,7 @@ obj << Rescan;
 
 #### Change to Missing
 
-**Syntax:** obj << Change to Missing( ALL or column1, column2, ... )
+**Syntax:** obj &lt;&lt; Change to Missing( ALL or column1, column2, ... )
 
 **Beschreibung:** Wählt die als Argumente aufgeführten Spalten aus. Ändert in den ausgewählten Spalten die als Ausreißer identifizierten Werte in fehlende Werte.
 
@@ -1595,7 +1591,7 @@ obj << Change to Missing( :"Q-E"n, :"ZN-E"n );
 
 #### Close
 
-**Syntax:** obj << Close
+**Syntax:** obj &lt;&lt; Close
 
 **Beschreibung:** Entfernt einen Abschnitt der Analyse und öffnet die Befehlsübersicht erneut.
 
@@ -1614,7 +1610,7 @@ obj << Close;
 
 #### Color Cells
 
-**Syntax:** obj << Color Cells( ALL or column1, column2, ... )
+**Syntax:** obj &lt;&lt; Color Cells( ALL or column1, column2, ... )
 
 **Beschreibung:** Wählt die als Argumente aufgeführten Spalten aus. In den ausgewählten Spalten werden die Zellen, die Ausreißern entsprechen, farblich gekennzeichnet.
 
@@ -1632,7 +1628,7 @@ obj << Color Cells( :"Q-E"n, :"ZN-E"n );
 
 #### Color Rows
 
-**Syntax:** obj << Color Rows( ALL or column1, column2, ... )
+**Syntax:** obj &lt;&lt; Color Rows( ALL or column1, column2, ... )
 
 **Beschreibung:** Wählt die als Argumente aufgeführten Spalten aus. Weist in den ausgewählten Spalten den Zeilen, die Ausreißern entsprechen, die Zeileneigenschaft „Farbe“ zu.
 
@@ -1651,7 +1647,7 @@ obj << Color Rows( :"Q-E"n, :"ZN-E"n );
 
 #### Exclude Rows
 
-**Syntax:** obj << Exclude Rows( ALL or column1, column2, ... )
+**Syntax:** obj &lt;&lt; Exclude Rows( ALL or column1, column2, ... )
 
 **Beschreibung:** Wählt die als Argumente aufgeführten Spalten aus. Schließt in den ausgewählten Spalten die Zeilen aus, die als Ausreißer identifizierte Werte enthalten.
 
@@ -1669,7 +1665,7 @@ obj << Exclude Rows( :"Q-E"n, :"ZN-E"n );
 
 #### Formula Columns
 
-**Syntax:** obj << Formula Columns( ALL or column1, column2, ... )
+**Syntax:** obj &lt;&lt; Formula Columns( ALL or column1, column2, ... )
 
 **Beschreibung:** Erstellt neue Formelspalten aus den ausgewählten Spalten, indem Ausreißer in fehlend geändert werden.
 
@@ -1688,7 +1684,7 @@ obj << Formula Columns( Suffix( "Culled" ) );
 
 #### Formula Script
 
-**Syntax:** obj << Formula Script( ALL or column1, column2, ... )
+**Syntax:** obj &lt;&lt; Formula Script( ALL or column1, column2, ... )
 
 **Beschreibung:** Erstellt ein Skript zum Erzeugen neuer Formelspalten aus den ausgewählten Spalten, indem Ausreißer in fehlend geändert werden.
 
@@ -1707,7 +1703,7 @@ obj << Formula Script( Suffix( "Culled" ) );
 
 #### Huber
 
-**Syntax:** obj << Huber( state=0|1 )
+**Syntax:** obj &lt;&lt; Huber( state=0|1 )
 
 **Beschreibung:** Verwendet eine Huber-Schätzung, um das robuste Zentrum und die Streuung der Werte zu schätzen. Das robuste Zentrum und die Streuung dienen dazu, Ausreißer zu bestimmen.
 
@@ -1724,7 +1720,7 @@ obj << Rescan;
 
 #### K Sigma
 
-**Syntax:** obj << K Sigma( number=4 )
+**Syntax:** obj &lt;&lt; K Sigma( number=4 )
 
 **Beschreibung:** Legt den k-Sigma-Wert fest, mit dem Ausreißer als k-Faches der robusten Streuung vom robusten Zentrum entfernt definiert werden. Standardmäßig „4“.
 
@@ -1743,7 +1739,7 @@ obj << Rescan;
 
 #### Quartile
 
-**Syntax:** obj << Quartile( state=0|1 )
+**Syntax:** obj &lt;&lt; Quartile( state=0|1 )
 
 **Beschreibung:** Verwendet den Median, um das robuste Zentrum und den Interquartilabstand dividiert durch 1,349 um die robuste Streuung zu schätzen. Das robuste Zentrum und die Streuung dienen dazu, Ausreißer zu bestimmen.
 
@@ -1760,7 +1756,7 @@ obj << Rescan;
 
 #### Rescan
 
-**Syntax:** obj << Rescan
+**Syntax:** obj &lt;&lt; Rescan
 
 **Beschreibung:** Wird nach dem Ändern der Einstellungen verwendet, um die Kriterien neu zu berechnen und die Daten neu abzufragen, um Ausreißer zu erkennen.
 
@@ -1779,7 +1775,7 @@ obj << Rescan;
 
 #### Save Robust Outlier Limits
 
-**Syntax:** obj << Save Robust Outlier Limits
+**Syntax:** obj &lt;&lt; Save Robust Outlier Limits
 
 **Beschreibung:** Öffnet eine neue Datentabelle, die Informationen aus dem Bericht „Robuste Schätzer und Ausreißer“ enthält.
 
@@ -1795,7 +1791,7 @@ obj << Save Robust Outlier Limits;
 
 #### Select Rows
 
-**Syntax:** obj << Select Rows( ALL or column1, column2, ... )
+**Syntax:** obj &lt;&lt; Select Rows( ALL or column1, column2, ... )
 
 **Beschreibung:** Wählt die als Argumente aufgeführten Spalten aus und wählt die Zeilen aus, die in irgendeiner dieser Spalten Ausreißerwerte haben.
 
@@ -1817,7 +1813,7 @@ obj << Select Rows( :"Q-E"n, :"ZN-E"n );
 
 #### Center
 
-**Syntax:** obj << Center( state=1 )
+**Syntax:** obj &lt;&lt; Center( state=1 )
 
 **Beschreibung:** Gibt an, ob die Daten vor der Analyse mithilfe des Medians zentriert werden sollen. Standardmäßig ein.
 
@@ -1825,7 +1821,7 @@ obj << Select Rows( :"Q-E"n, :"ZN-E"n );
 
 #### Close
 
-**Syntax:** obj << Close
+**Syntax:** obj &lt;&lt; Close
 
 **Beschreibung:** Entfernt die RPCA-Analyse aus dem Plattformbericht.
 
@@ -1833,7 +1829,7 @@ obj << Select Rows( :"Q-E"n, :"ZN-E"n );
 
 #### Lambda
 
-**Syntax:** obj << Lambda( number )
+**Syntax:** obj &lt;&lt; Lambda( number )
 
 **Beschreibung:** Tuning der robusten PCA mit kleineren Werten bewirkt eine größere Empfindlichkeit beim Deklarieren von Ausreißern. Standard-Lambda = 2/Wurzel von(max(nRow,nCol))
 
@@ -1841,7 +1837,7 @@ obj << Select Rows( :"Q-E"n, :"ZN-E"n );
 
 #### MaxIt
 
-**Syntax:** obj << MaxIt( number )
+**Syntax:** obj &lt;&lt; MaxIt( number )
 
 **Beschreibung:** Die maximale Anzahl von SWZ-Iterationen, die zulässig sind, bevor das Konvergieren fehlschlägt.
 
@@ -1849,7 +1845,7 @@ obj << Select Rows( :"Q-E"n, :"ZN-E"n );
 
 #### Outlier Threshold
 
-**Syntax:** obj << Outlier Threshold( number=2 )
+**Syntax:** obj &lt;&lt; Outlier Threshold( number=2 )
 
 **Beschreibung:** Gibt an, dass jedes skalierte Residuum mit einem größeren Absolutwert als dieser Schwellenwert so wie im Ausreißerbericht gezeigt angezeigt wird. Standardmäßig „2“.
 
@@ -1857,7 +1853,7 @@ obj << Select Rows( :"Q-E"n, :"ZN-E"n );
 
 #### Randomized SVD Dim
 
-**Syntax:** obj << Randomized SVD Dim( state=0|1 )
+**Syntax:** obj &lt;&lt; Randomized SVD Dim( state=0|1 )
 
 **Beschreibung:** Gibt die Anzahl von Dimensionen in der randomisierten SWZ an, auf die die vielen Variablen reduziert werden sollen.
 
@@ -1865,7 +1861,7 @@ obj << Select Rows( :"Q-E"n, :"ZN-E"n );
 
 #### Save Cleaned
 
-**Syntax:** obj << Save Cleaned( Trim(<threshold>),Impute(<threshold>),Make Missing(<threshold>),Color Impute(0|1)--if none specified it will prompt with dialog )
+**Syntax:** obj &lt;&lt; Save Cleaned( Trim(&lt;threshold&gt;),Impute(&lt;threshold&gt;),Make Missing(&lt;threshold&gt;),Color Impute(0|1)--if none specified it will prompt with dialog )
 
 **Beschreibung:** Erstellt einen neuen Satz Spalten mit eingesetzten fehlenden Werten und modifizierten Ausreißern. Trim(Arg) findet skalierte Residuen größer als Arg und ändert die skalierten Residuen in den entsprechenden Zellen in das vorzeichenbehaftete Arg. Impute(Arg) findet skalierte Residuen größer als Arg und ändert die skalierten Residuen in den entsprechenden Zellen in die Approximation niederen Ranges. Missing(Wert) findet alle skalierten Residuen größer als Arg und ändert skalierte Residuen in den entsprechenden Zellen in fehlend.
 
@@ -1885,7 +1881,7 @@ obj << Save Cleaned( Trim( 25 ), Impute( 50 ), Make Missing( 100 ) );
 
 #### Save Large Outliers
 
-**Syntax:** obj << Save Large Outliers
+**Syntax:** obj &lt;&lt; Save Large Outliers
 
 **Beschreibung:** Erstellt eine neue Datentabelle mit den Ausreißern aus dem Bericht.
 
@@ -1905,7 +1901,7 @@ obj << Save Large Outliers;
 
 #### Save Low Rank Approx
 
-**Syntax:** obj << Save Low Rank Approx
+**Syntax:** obj &lt;&lt; Save Low Rank Approx
 
 **Beschreibung:** Erstellt einen neuen Satz Spalten mit der Approximation niederen Ranges, die aus der Singulärwertzerlegung abgerufen wird.
 
@@ -1925,7 +1921,7 @@ obj << Save Low Rank Approx;
 
 #### Save Residuals
 
-**Syntax:** obj << Save Residuals
+**Syntax:** obj &lt;&lt; Save Residuals
 
 **Beschreibung:** Erstellt einen neuen Satz Spalten mit den Residuen, die die Beobachtungen minus der Approximation niederen Ranges sind.
 
@@ -1945,7 +1941,7 @@ obj << Save Residuals;
 
 #### Save Scaled Residuals
 
-**Syntax:** obj << Save Scaled Residuals
+**Syntax:** obj &lt;&lt; Save Scaled Residuals
 
 **Beschreibung:** Erstellt einen neuen Satz Spalten mit den skalierten Residuen, die die skalierten Beobachtungen minus der Approximation niederen Ranges sind.
 
@@ -1965,7 +1961,7 @@ obj << Save Scaled Residuals;
 
 #### Scale
 
-**Syntax:** obj << Scale( state=1 )
+**Syntax:** obj &lt;&lt; Scale( state=1 )
 
 **Beschreibung:** Gibt an, ob die Daten vor der Analyse mithilfe eines Interquantilabstands analog zur Standardabweichung skaliert werden sollen. Standardmäßig ein.
 
@@ -1973,7 +1969,7 @@ obj << Save Scaled Residuals;
 
 #### Tolerance
 
-**Syntax:** obj << Tolerance( number )
+**Syntax:** obj &lt;&lt; Tolerance( number )
 
 **Beschreibung:** Gibt das Konvergenzkriterium an, das festlegt, wann der Algorithmus gestoppt werden soll. Die Standardwerte für das Konvergenzkriterium werden basierend auf der im Startfenster angegebenen Anzahl von Spalten festgelegt.
 
@@ -1981,7 +1977,7 @@ obj << Save Scaled Residuals;
 
 #### Use Randomized SVD
 
-**Syntax:** obj << Use Randomized SVD( state=0|1 )
+**Syntax:** obj &lt;&lt; Use Randomized SVD( state=0|1 )
 
 **Beschreibung:** Reduziert die Dimensionalität mithilfe der randomisierten SWZ. Dieser Ansatz kann die Berechnungen bei sehr vielen Variablen beschleunigen.
 

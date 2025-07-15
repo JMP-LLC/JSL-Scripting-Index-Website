@@ -6,7 +6,7 @@
 
 ### Add Frame
 
-**Syntax:** obj << Add Frame
+**Syntax:** obj &lt;&lt; Add Frame
 
 **Beschreibung:** Fügt einem animierten Bild einen neuen Frame hinzu. Der Frame enthält nur dann Inhalt, wenn „Pixel festlegen“ verwendet wird. Ein optionales Dauer-Argument kann angegeben werden, das die Frame-Dauer in Millisekunden angibt. Wenn das Dauer-Argument weggelassen wird, wird die Dauer des aktuellen Frames als Dauer des hinzugefügten Frames verwendet. Wenn keine anderen Frames vorhanden sind, wird eine Standarddauer von 100 Millisekunden verwendet.
 
@@ -37,7 +37,7 @@ win << Close Window();
 
 ### Crop
 
-**Syntax:** obj << Crop( Left( number ), Right( number ), Top( number ), Bottom( number ) )
+**Syntax:** obj &lt;&lt; Crop( Left( number ), Right( number ), Top( number ), Bottom( number ) )
 
 **Beschreibung:** Modifies the image to be the sub-image at the specified pixel coordinates within the existing image.
 
@@ -54,7 +54,7 @@ obj2 = New Window( "Cropped", img );
 
 ### Filter
 
-**Syntax:** obj << Filter( despeckle|edge|enhance|median|negate|normalize|sharpen|contrast|gamma|reduce noise|gaussian blur|canny, <number> )
+**Syntax:** obj &lt;&lt; Filter( despeckle|edge|enhance|median|negate|normalize|sharpen|contrast|gamma|reduce noise|gaussian blur|canny, &lt;number&gt; )
 
 **Beschreibung:** Filtert das Bild basierend auf dem angegebenen Algorithmus. Filtern ist nützlich, um Rauschen im Bild zu bereinigen. Kontrast, Gamma und Rauschreduktion benötigen einen zusätzlichen (numerischen) Parameter. Gaußscher Weichzeichner benötigt zwei: Radius und Sigma.
 
@@ -179,7 +179,7 @@ refilter();
 
 ### Flip Both
 
-**Syntax:** obj << Flip Both
+**Syntax:** obj &lt;&lt; Flip Both
 
 **Beschreibung:** Spiegelt das Bild horizontal und vertikal.
 
@@ -196,7 +196,7 @@ obj2 = New Window( "Diagonal Flip", img );
 
 ### Flip Horizontal
 
-**Syntax:** obj << Flip Horizontal
+**Syntax:** obj &lt;&lt; Flip Horizontal
 
 **Beschreibung:** Spiegelt das Bild horizontal.
 
@@ -213,7 +213,7 @@ obj2 = New Window( "Horizontal Flip", img );
 
 ### Flip Vertical
 
-**Syntax:** obj << Flip Vertical
+**Syntax:** obj &lt;&lt; Flip Vertical
 
 **Beschreibung:** Spiegelt das Bild vertikal.
 
@@ -230,7 +230,7 @@ obj2 = New Window( "Vertical Flip", img );
 
 ### Get Current Frame
 
-**Syntax:** obj << Get Current Frame
+**Syntax:** obj &lt;&lt; Get Current Frame
 
 **Beschreibung:** Legt die aktuelle Frameanzahl fest. Bei den meisten Bildern ist der Wert 0. Bei animierten GIF-Bildern kann dieser Wert zwischen 0 und der Framezahl minus 1 liegen. Aktionen wie getPixels und setPixels werden mit dem aktuellen Frame ausgeführt.
 
@@ -244,7 +244,7 @@ num = img << Get Current Frame();
 
 ### Get EXIF
 
-**Syntax:** obj << Get EXIF
+**Syntax:** obj &lt;&lt; Get EXIF
 
 **Beschreibung:** Ruft EXIF-Daten ab, die intern mit dem Bild gespeichert sind. Ein Array aus Schlüssel/Wert-Paaren wird zurückgegeben.
 
@@ -266,7 +266,7 @@ While( !Is Empty( key ),
 
 ### Get Frame Durations
 
-**Syntax:** obj << Get Frame Durations
+**Syntax:** obj &lt;&lt; Get Frame Durations
 
 **Beschreibung:** Gibt eine Matrix der Pausendauer zwischen jedem Frame zurück. Die Zeit ist in Millisekunden angegeben.
 
@@ -280,7 +280,7 @@ durs = img << Get Frame Durations();
 
 ### Get N Frames
 
-**Syntax:** obj << Get N Frames
+**Syntax:** obj &lt;&lt; Get N Frames
 
 **Beschreibung:** Gibt die Anzahl der Frames im Bild zurück. Bei den meisten Bildern ist dies 1. Bei animierten GIF-Dateien können es mehrere sein.
 
@@ -294,7 +294,7 @@ num = img << Get N Frames();
 
 ### Get N Loops
 
-**Syntax:** obj << Get N Loops
+**Syntax:** obj &lt;&lt; Get N Loops
 
 **Beschreibung:** Gibt an, wie häufig ein animiertes Bild seine Sequenz durchlaufen soll. Der Wert 0 gibt an, dass es auf unbestimmte Zeit laufen soll.
 
@@ -308,15 +308,11 @@ loops = img << Get N Loops();
 
 ### Get Path
 
-**Syntax:** obj << Get Path
+**Syntax:** obj &lt;&lt; Get Path
 
 ### Get Pixels
 
-**Syntax:** mat = img << Get Pixels();
-
-{r, g, b} = img << Get Pixels("rgb");
-
-{r, g, b, a} = img << Get Pixels("rgba")
+**Syntax:** mat = img &lt;&lt; Get Pixels();{r, g, b} = img &lt;&lt; Get Pixels("rgb");{r, g, b, a} = img &lt;&lt; Get Pixels("rgba")
 
 **Beschreibung:** Wenn keine Farbkennung angegeben wird, wird eine Matrix der JSL-Farben mit den Pixelwerten zurückgegeben. Die Farbkennung rgb gibt eine Liste mit drei Matrizen mit jeweils rot, grün und blau zurück. Bei Angabe von rgba werden der Alphakanal (Transparenz) sowie rot, grün und blau zurückgegeben.
 
@@ -356,9 +352,7 @@ win = New Window( "tile(40,40)", img );
 
 ### GetSize
 
-**Syntax:** {w,h} = pic << Get Size 
-
-{w,h} = pic << Size
+**Syntax:** {w,h} = pic &lt;&lt; Get Size {w,h} = pic &lt;&lt; Size
 
 **Beschreibung:** Gibt eine Liste mit der Breite und Höhe des Bilds zurück.
 
@@ -374,7 +368,7 @@ Show( s );
 
 ### Remove Frame
 
-**Syntax:** obj << Remove Frame
+**Syntax:** obj &lt;&lt; Remove Frame
 
 **Beschreibung:** Entfernt einen Frame von einem animierten Bild. Der Index des zu entfernenden Frames wird übergeben.
 
@@ -388,7 +382,7 @@ img << Remove Frame( 0 );
 
 ### Rotate
 
-**Syntax:** obj << Rotate( angle )
+**Syntax:** obj &lt;&lt; Rotate( angle )
 
 **Beschreibung:** Dreht das Bild um den angegebenen Drehwinkel.
 
@@ -405,7 +399,7 @@ obj2 = New Window( "Rotated", img );
 
 ### Save Image
 
-**Syntax:** obj << Save Image( filePath, image type )
+**Syntax:** obj &lt;&lt; Save Image( filePath, image type )
 
 **Beschreibung:** Speichert das Bild am angegebenen Speicherort und mit dem angegebenen Dateinamen. Der zweite Parameter gibt an, welche Art von Bild gespeichert werden soll, unabhängig von der Erweiterung im Dateinamen. Gültige Bildtypen sind u.a. PNG, JPG, GIF, TIFF, BMP und PDF. Wird kein Bildtyp angegeben oder wird der angegebene Bildtyp nicht erkannt, wird das Bild als PNG-Datei gespeichert.
 
@@ -420,7 +414,7 @@ img << Save Image( "$TEMP/Mediterranean.jpg", "jpg" );
 
 ### Scale
 
-**Syntax:** obj << Scale( scale | xscale, yscale )
+**Syntax:** obj &lt;&lt; Scale( scale | xscale, yscale )
 
 **Beschreibung:** Wendet einen Skalierungsfaktor auf die Breite und Höhe des Bilds an oder skaliert die Breite (xscale) und Höhe (yscale) unabhängig voneinander.
 
@@ -450,13 +444,13 @@ obj2 = New Window( "Tile scaled by 2 vertically and by 0.5 horizontally", img );
 
 ### Set Blob
 
-**Syntax:** obj << Set Blob
+**Syntax:** obj &lt;&lt; Set Blob
 
 **Beschreibung:** Legt das Bild aus einem Blob fest.
 
 ### Set Current Frame
 
-**Syntax:** obj << Set Current Frame( frame )
+**Syntax:** obj &lt;&lt; Set Current Frame( frame )
 
 **Beschreibung:** Legt die aktuelle Frameanzahl fest. Bei den meisten Bildern ist dies 0. Bei animierten GIF-Bildern kann dieser Wert zwischen 0 und der Framezahl minus 1 liegen. Aktionen wie getPixels und setPixels werden mit dem aktuellen Frame ausgeführt.
 
@@ -477,7 +471,7 @@ win << Close Window();
 
 ### Set Frame Duration
 
-**Syntax:** obj << Set Frame Duration( duration )
+**Syntax:** obj &lt;&lt; Set Frame Duration( duration )
 
 **Beschreibung:** Legt die Dauer des aktuellen Frames in einem animierten Bild fest. Die Zeit ist in Millisekunden angegeben.
 
@@ -492,7 +486,7 @@ durs = img << Get Frame Durations();
 
 ### Set N Loops
 
-**Syntax:** obj << Set N Loops( loops )
+**Syntax:** obj &lt;&lt; Set N Loops( loops )
 
 **Beschreibung:** Legt fest, wie häufig ein animiertes Bild seine Sequenz durchlaufen soll. Der Wert 0 gibt an, dass das Bild auf unbestimmte Zeit laufen soll.
 
@@ -507,9 +501,7 @@ loops = img << Get N Loops();
 
 ### Set Pixels
 
-**Syntax:** img << Set Pixels(jslmat);
-
-img << Set Pixels ("rgb", {r, g, b})
+**Syntax:** img &lt;&lt; Set Pixels(jslmat);img &lt;&lt; Set Pixels ("rgb", {r, g, b})
 
 **Beschreibung:** Legt die Pixelmatrix bzw. die Pixelmatrizen für das Bild fest. Wenn eine Matrix ohne Farbkennung angegeben wird, wird die Matrix als eine Matrix der JSL-Farben behandelt. Es kann eine Farbkennung wie rgb angegeben werden, um darauf hinzuweisen, dass die folgenden Matrizen jeweils rot, grün und blau sind. In diesem Fall muss die Größe aller angegebenen Matrizen gleich sein.
 
@@ -545,7 +537,7 @@ win2 = New Window( "Gray Scale", img );
 
 ### SetSize
 
-**Syntax:** obj << SetSize( {width, height} )
+**Syntax:** obj &lt;&lt; SetSize( {width, height} )
 
 **Beschreibung:** Legt die Bildgröße basierend auf der angegebenen Breite und Höhe fest.
 
@@ -561,9 +553,7 @@ obj2 = New Window( "Larger tile(40,40)", img );
 
 ### Size
 
-**Syntax:** {w,h} = pic << Get Size 
-
-{w,h} = pic << Size
+**Syntax:** {w,h} = pic &lt;&lt; Get Size {w,h} = pic &lt;&lt; Size
 
 **Beschreibung:** Gibt eine Liste mit der Breite und Höhe des Bilds zurück.
 
@@ -579,7 +569,7 @@ Show( s );
 
 ### Transparency
 
-**Syntax:** obj << Transparency( fraction )
+**Syntax:** obj &lt;&lt; Transparency( fraction )
 
 **Beschreibung:** Wendet Transparenz auf ein Bild an. Gültige Werte liegen zwischen 0,0 (transparent) und 1,0 (undurchsichtig).
 
@@ -598,9 +588,7 @@ win << reshow;
 
 ### New Image
 
-**Syntax:** img = Open( filepath, jpg|png|gif|bmp|tif )
-
-New Image(<width, height>, <existing image> )
+**Syntax:** img = Open( filepath, jpg|png|gif|bmp|tif )New Image(&lt;width, height&gt;, &lt;existing image&gt; )
 
 **Beschreibung:** Ein Bildobjekt, das verwendet werden kann, um ein Bild zu einem Rahmen oder einem Anzeigefeld hinzuzufügen.
 
@@ -614,7 +602,7 @@ obj = New Window( "tile(40,40)", img );
 
 ### Open
 
-**Syntax:** Open( filePath, <data table options | Excel import options | text import options | SAS import options | HTML import options | esriShapeFile import options | PDF import options | other file options > )
+**Syntax:** Open( filePath, &lt;data table options | Excel import options | text import options | SAS import options | HTML import options | esriShapeFile import options | PDF import options | other file options &gt; )
 
 **Beschreibung:** Gibt eine Referenz auf eine Datentabelle oder eine andere JMP-Datei oder auf ein über eine Datei erstelltes Objekt zurück. Wenn kein Pfad angegeben ist, wird das Dialogfeld „Öffnen“ angezeigt. Wenn ein Ordnerpfad angegeben ist, wird der Dateibrowser des Systems geöffnet und kein Objekt zurückgegeben. Eine vollständige Beschreibung der verfügbaren Optionen finden Sie in der Syntaxreferenz.
 

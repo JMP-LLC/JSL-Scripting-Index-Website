@@ -6,7 +6,7 @@
 
 ### Action
 
-**语法:** obj << Action
+**语法:** obj &lt;&lt; Action
 
 **说明:** 平台内用于插入表达式以求值的所有用途的陷门。暂时将 DisplayBox 和 DataTable 上下文设置为平台。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**语法:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**语法:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **说明:** 将以前创建的预设应用到对象，从而更新选项和定制以匹配保存的设置。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Column Switcher
 
-**语法:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**语法:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **说明:** 添加用于更改平台变量的控制面板
 
@@ -89,7 +89,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy Script
 
-**语法:** obj << Copy Script
+**语法:** obj &lt;&lt; Copy Script
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其置于剪贴板上。
 
@@ -103,7 +103,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**语法:** obj << Data Table Window
+**语法:** obj &lt;&lt; Data Table Window
 
 **说明:** 将该分析的数据表窗口移动到前面。
 
@@ -117,7 +117,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**语法:** obj << Get By Levels
+**语法:** obj &lt;&lt; Get By Levels
 
 **说明:** 返回将“依据”组列映射到其值的关联数组。
 
@@ -134,7 +134,7 @@ biv << Get By Levels;
 
 ### Get Container
 
-**语法:** obj << Get Container
+**语法:** obj &lt;&lt; Get Container
 
 **说明:** 返回对保留对象内容的容器框的引用。
 
@@ -180,7 +180,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**语法:** obj << Get Data Table
+**语法:** obj &lt;&lt; Get Data Table
 
 **说明:** 返回对该数据表的引用。
 
@@ -195,7 +195,7 @@ Show( N Rows( t ) );
 
 ### Get Script
 
-**语法:** obj << Get Script
+**语法:** obj &lt;&lt; Get Script
 
 **说明:** 创建生成该分析的脚本 (JSL)，并将其作为表达式返回。
 
@@ -210,7 +210,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**语法:** obj << Get Script With Data Table
+**语法:** obj &lt;&lt; Get Script With Data Table
 
 **说明:** 创建生成该分析的脚本 (JSL) 以专门引用该数据表，并将其作为表达式返回。
 
@@ -225,7 +225,7 @@ Show( t );
 
 ### Get Timing
 
-**语法:** obj << Get Timing
+**语法:** obj &lt;&lt; Get Timing
 
 **说明:** 平台启动过程计时。
 
@@ -240,7 +240,7 @@ Show( t );
 
 ### Get Web Support
 
-**语法:** obj << Get Web Support
+**语法:** obj &lt;&lt; Get Web Support
 
 **说明:** 返回一个数字，指示显示对象的交互式 HTML 支持的水平。1 表示支持部分或全部元素。0 表示不支持。
 
@@ -256,7 +256,7 @@ Show( s );
 
 ### Get Where Expr
 
-**语法:** obj << Get Where Expr
+**语法:** obj &lt;&lt; Get Where Expr
 
 **说明:** 若平台是使用 By() 或 Where() 启动的，则返回数据子集的 Where 表达式。否则返回 Empty()
 
@@ -329,7 +329,7 @@ preset = obj << New Preset();
 
 ### Redo Analysis
 
-**语法:** obj << Redo Analysis
+**语法:** obj &lt;&lt; Redo Analysis
 
 **说明:** 在新窗口中重新运行相同的分析。若数据发生更改，分析也将不同。
 
@@ -343,7 +343,7 @@ obj << Redo Analysis;
 
 ### Relaunch Analysis
 
-**语法:** obj << Relaunch Analysis
+**语法:** obj &lt;&lt; Relaunch Analysis
 
 **说明:** 打开平台启动窗口并重新调用曾用于创建报表的设置。
 
@@ -357,7 +357,7 @@ obj << Relaunch Analysis;
 
 ### Remove Column Switcher
 
-**语法:** obj << Remove Column Switcher
+**语法:** obj &lt;&lt; Remove Column Switcher
 
 **说明:** 删除已添加至平台的最近使用的“列切换器”。
 
@@ -394,9 +394,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**语法:** obj << Report;
-
-Report( obj )
+**语法:** obj &lt;&lt; Report;Report( obj )
 
 **说明:** 返回对该报表对象的引用。
 
@@ -412,7 +410,7 @@ Show( t );
 
 ### Report View
 
-**语法:** obj << Report View( "完全"|"汇总" )
+**语法:** obj &lt;&lt; Report View( "完全"|"汇总" )
 
 **说明:** 报表视图确定平台报表中可见的详细程度。Full 显示所有详细信息，而 Summary 仅显示根据平台确定的选定内容。对于定制行为，显示框支持 <<Set Summary Behavior 消息。
 
@@ -426,7 +424,7 @@ obj << Report View( "Summary" );
 
 ### Save Script for All Objects
 
-**语法:** obj << Save Script for All Objects
+**语法:** obj &lt;&lt; Save Script for All Objects
 
 **说明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -440,7 +438,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**语法:** obj << Save Script for All Objects To Data Table( <name> )
+**语法:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **说明:** 将所有报表对象的脚本保存至当前数据表。当您在该窗口中具有多个报表时，该选项很有用。除非您在引号中指定脚本名称，否则脚本将以第一个平台命名。
 
@@ -466,7 +464,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**语法:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**语法:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其作为表属性保存至数据表中。
 
@@ -480,7 +478,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**语法:** obj << Save Script to Journal
+**语法:** obj &lt;&lt; Save Script to Journal
 
 **说明:** 创建生成该分析的 JSL 脚本，并将一个按钮添加至包含该脚本的记录中。
 
@@ -494,7 +492,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**语法:** obj << Save Script to Report
+**语法:** obj &lt;&lt; Save Script to Report
 
 **说明:** 创建生成该分析的 JSL 脚本，并在报表中显示。有助于保留打印的已完成操作记录。
 
@@ -508,7 +506,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**语法:** obj << Save Script to Script Window
+**语法:** obj &lt;&lt; Save Script to Script Window
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其追加至当前的脚本文本窗口中。
 
@@ -587,7 +585,7 @@ dt << Distribution(
 
 ### Title
 
-**语法:** obj << Title( "new title" )
+**语法:** obj &lt;&lt; Title( "new title" )
 
 **说明:** 设置平台的标题。
 
@@ -601,7 +599,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**语法:** obj << Top Report
+**语法:** obj &lt;&lt; Top Report
 
 **说明:** 返回对报表中根节点的引用。
 
@@ -617,7 +615,7 @@ Show( t );
 
 ### View Web XML
 
-**语法:** obj << View Web XML
+**语法:** obj &lt;&lt; View Web XML
 
 **说明:** 返回用于创建交互式 HTML 报表的 XML 代码。
 
@@ -634,7 +632,7 @@ xml = obj << View Web XML;
 
 ### Excel Profiler
 
-**语法:** Excel Profiler(  Workbook( filename ), <Model( string )> ) )
+**语法:** Excel Profiler( Workbook( filename ), &lt;Model( string )&gt; ) )
 
 **说明:** 提供一种机制，可将 Excel 数据传输到 JMP 中以便使用刻画器进行分析。
 
@@ -649,9 +647,7 @@ obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
 
 ### Noise Factors
 
-**语法:** obj = Excel Profiler(...<Noise Factors( column(s) )>...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Excel Profiler(...&lt;Noise Factors( column(s) )&gt;...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定噪声因子，这些噪声因子必须是作为公式列成分的列。噪声因子用于研究与这些因子的传递变异相关的稳健性（或平稳性）。生成的刻画器包括公式对噪声因子的导数。
 
@@ -715,9 +711,7 @@ obj = dt << Contour Profiler(
 
 ### Prediction Formula
 
-**语法:** obj = Excel Profiler(...Prediction Formula( column(s) )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Excel Profiler(...Prediction Formula( column(s) )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定包含公式的响应列。
 
@@ -730,9 +724,7 @@ obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
 
 ### Y
 
-**语法:** obj = Excel Profiler(...Y( column(s) )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Excel Profiler(...Y( column(s) )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定包含公式的响应列。
 
@@ -747,7 +739,7 @@ obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
 
 ### Formulas for OPTMODEL
 
-**语法:** obj << Formulas for OPTMODEL
+**语法:** obj &lt;&lt; Formulas for OPTMODEL
 
 **说明:** 将模型的预测公式保存到新文件中作为 PROC OPTMODEL 的 SAS 语句。
 
@@ -761,7 +753,7 @@ obj << Formulas for OPTMODEL;
 
 ### Model
 
-**语法:** obj << Model( string )
+**语法:** obj &lt;&lt; Model( string )
 
 **说明:** 标识工作簿中要运行的模型。若没有指定模型，并且工作簿中只有一个模型，则 Excel 刻画器将会运行该模型。
 
@@ -774,7 +766,7 @@ obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ), Model( "Dem
 
 ### Prediction Profiler
 
-**语法:** obj << Prediction Profiler( state=0|1 )
+**语法:** obj &lt;&lt; Prediction Profiler( state=0|1 )
 
 **说明:** 显示或隐藏“预测刻画器”。
 
@@ -788,7 +780,7 @@ obj << Prediction Profiler( 1 );
 
 ### Save Expanded Formulas
 
-**语法:** obj << Save Expanded Formulas
+**语法:** obj &lt;&lt; Save Expanded Formulas
 
 **说明:** 将新公式列保存至数据表。新列包含用作 Y 变量的公式中的已解析公式引用，以查看底层变量。仅在启动窗口中选择“展开中间公式”选项或在“刻画器”脚本中指定 Expand 消息后才可用。
 
@@ -803,7 +795,7 @@ obj << Save Expanded Formulas;
 
 ### Show Formulas
 
-**语法:** obj << Show Formulas
+**语法:** obj &lt;&lt; Show Formulas
 
 **说明:** 打开脚本窗口，它包含正在刻画的所有公式的 JSL。
 
@@ -817,7 +809,7 @@ obj << Show Formulas;
 
 ### Workbook
 
-**语法:** obj << Workbook( text )
+**语法:** obj &lt;&lt; Workbook( text )
 
 **说明:** 指定包含要用于刻画器的模型的 Excel 电子表格。
 

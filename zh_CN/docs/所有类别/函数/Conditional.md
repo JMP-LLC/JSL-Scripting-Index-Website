@@ -2,8 +2,6 @@
 
 
 
-## 函数
-
 ### And
 
 **语法:** y = x1 & x2; y = And( x1, x2, ... )
@@ -87,7 +85,7 @@ For( i = 1, i <= 10, i++,
 
 ### Filter Each
 
-**语法:** list = Filter Each({<value>, <index>} | {<element>, <index | {row, col}>} | {<key | {key, value}>, <index>} | {<values | {value1, ..., valueN}>, <index>}, list | matrix | associative array | expression | Across( container1, ..., <containerN>, <Count( "Longest" | "Shortest" | "Enforce Equal" | n )> ), <locals list>, body)
+**语法:** list = Filter Each({&lt;value&gt;, &lt;index&gt;} | {&lt;element&gt;, &lt;index | {row, col}&gt;} | {&lt;key | {key, value}&gt;, &lt;index&gt;} | {&lt;values | {value1, ..., valueN}&gt;, &lt;index&gt;}, list | matrix | associative array | expression | Across( container1, ..., &lt;containerN&gt;, &lt;Count( "Longest" | "Shortest" | "Enforce Equal" | n )&gt; ), &lt;locals list&gt;, body)
 
 **说明:** 不仅执行 For Each 函数的所有操作，而且还会根据布尔值结果从原始容器返回过滤值列表。结果的类型将与输入容器的类型匹配。对于矩阵输入，将返回行向量矩阵，因为无法知道矩阵的大小。
 
@@ -154,7 +152,7 @@ Trim( s );
 
 ### For Each
 
-**语法:** For Each({<value>, <index>} | {<element>, <index | {row, col}>} | {<key | {key, value}>, <index>} | {<values | {value1, ..., valueN}>, <index>}, list | matrix | associative array | expression | Across( container1, ..., <containerN>, <Count( "Longest" | "Shortest" | "Enforce Equal" | n )> ), <locals list>, body)
+**语法:** For Each({&lt;value&gt;, &lt;index&gt;} | {&lt;element&gt;, &lt;index | {row, col}&gt;} | {&lt;key | {key, value}&gt;, &lt;index&gt;} | {&lt;values | {value1, ..., valueN}&gt;, &lt;index&gt;}, list | matrix | associative array | expression | Across( container1, ..., &lt;containerN&gt;, &lt;Count( "Longest" | "Shortest" | "Enforce Equal" | n )&gt; ), &lt;locals list&gt;, body)
 
 **说明:** 迭代容器（列表、矩阵、关联数组或表达式），并在每次迭代时提供值、元素或键。在每次迭代时也可以使用索引号。对于“关联数组”容器，可以使用两项列表来访问键和值。对于“矩阵”容器，默认情况下提供线性索引，但是可以使用两项列表来访问行索引和列索引。这些符号仅在循环主体内提供，并带有内置的“本地”块。还提供了一个“本地”列表，在设置第一个迭代符号后将其初始化。
 
@@ -250,7 +248,7 @@ For Each( {element, index}, 10 :: 15, Show( element, index ) );
 
 ### For Each Row
 
-**语法:** y = For Each Row( <dt>, body )
+**语法:** y = For Each Row( &lt;dt&gt;, body )
 
 **说明:** 针对当前数据表中的每一行，迭代计算 body 表达式。
 
@@ -266,7 +264,7 @@ For Each Row( :height = -:height );
 
 ### If
 
-**语法:** y = If( condition1, result1, <condition2, result2>, ..., <elseResult> )
+**语法:** y = If( condition1, result1, &lt;condition2, result2&gt;, ..., &lt;elseResult&gt; )
 
 **说明:** 对每对参数的第一个求值并返回与求值结果为非零的第一个 condition 参数关联的 result 表达式的求值结果。condition 参数按顺序求值。若所有 condition 参数的求值结果为零，则计算可选 elseResult 并且返回该结果。若未指定 elseResult，则没有条件为真，返回缺失值。若所有 condition 参数的计算结果为缺失值，则返回缺失值。
 
@@ -284,7 +282,7 @@ If( Random Uniform() < 0.5,
 
 ### IfMZ
 
-**语法:** y = IfMZ( condition1, result1, <condition2, result2>, ..., <elseResult> )
+**语法:** y = IfMZ( condition1, result1, &lt;condition2, result2&gt;, ..., &lt;elseResult&gt; )
 
 **说明:** 对每对参数的第一个求值并返回与第一个求值结果为非零的第一个 condition 参数关联的 result 表达式的求值结果。condition 参数按顺序求值。若所有 condition 参数的求值结果为零或缺失值，则计算可选 elseResult 并且返回该结果。若未指定 elseResult，则没有条件为真，返回缺失值。（IfMZ() 等价于 If()，其中求值的 condition 参数的缺失值视为零。）
 
@@ -304,7 +302,7 @@ Show( If( x == 1, 10, x == 2, 20, 30 ) );
 
 ### IfMax
 
-**语法:** y = IfMax( expr1, result1, expr2, result2, ..., <allMissingResult> )
+**语法:** y = IfMax( expr1, result1, expr2, result2, ..., &lt;allMissingResult&gt; )
 
 **说明:** 对每对参数的第一个参数求值，返回与其中最大值对应的结果表达式的值。若存在结值，则返回第一个最大值。若所有表达式均缺失，则返回空（参数数量为偶数时）或最后一个参数（参数数量为奇数时）。检验表达式的求值结果必须为数值，但结果表达式的求值结果可以是任何对象。
 
@@ -322,7 +320,7 @@ highestScorer = IfMax( TomScore, "Tom", JonScore, "Jon", TimScore, "Tim", "Noone
 
 ### IfMin
 
-**语法:** y = IfMin( expr1, result1, expr2, result2, ..., <allMissingResult> )
+**语法:** y = IfMin( expr1, result1, expr2, result2, ..., &lt;allMissingResult&gt; )
 
 **说明:** 对每对参数的第一个参数求值，返回与其中最小值对应的结果表达式的值。若存在结值，则返回第一个最小值。若所有表达式均缺失，则返回空（参数数量为偶数时）或最后一个参数（参数数量为奇数时）。检验表达式的求值结果必须为数值，但结果表达式的求值结果可以是任何对象。
 
@@ -340,11 +338,7 @@ lowestScorer = IfMin( TomScore, "Tom", JonScore, "Jon", TimScore, "Tim", "Noone"
 
 ### Interpolate
 
-**语法:** y = Interpolate(x|xmatrix|xlist, x1, y1, x2, y2);
-
-y = Interpolate(x | xmatrix | xlist, xmatrix, ymatrix);
-
-z = Interpolate({ x, y }, xvector, yvector, zmatrix)
+**语法:** y = Interpolate(x|xmatrix|xlist, x1, y1, x2, y2);y = Interpolate(x | xmatrix | xlist, xmatrix, ymatrix);z = Interpolate({ x, y }, xvector, yvector, zmatrix)
 
 **说明:** 查找 x 介于其间的 xi 参数，并使用线性内插法将相应的 yi 参数插入。注意: xi 参数必须按顺序指定。
 
@@ -745,7 +739,7 @@ OrMZ( 1 < 2, 3 < 2 );
 
 ### Return
 
-**语法:** Return(<Expr>, ..., <ExprN>)
+**语法:** Return(&lt;Expr&gt;, ..., &lt;ExprN&gt;)
 
 **说明:** 从用户定义的函数返回表达式值。
 
@@ -794,9 +788,7 @@ Show( f( 7, 15 ) );
 
 ### Step
 
-**语法:** y = Step( x, x1, y1, x2, y2, ... )
-
-y = Step( x, [x1, x2, ...], [y1, y2, ...] )
+**语法:** y = Step( x, x1, y1, x2, y2, ... )y = Step( x, [x1, x2, ...], [y1, y2, ...] )
 
 **说明:** 找出 xi 小于等于 x 参数的最大一个 xi 值并返回对应的 yi 参数。注意: xi 参数必须按顺序指定。
 
@@ -829,7 +821,7 @@ For( i = 1, i <= 10, i++,
 
 ### Transform Each
 
-**语法:** list = Transform Each({<value>, <index>} | {<element>, <index | {row, col}>} | {<key | {key, value}>, <index>} | {<values | {value1, ..., valueN}>, <index>}, list | matrix | associative array | expression | Across( container1, ..., <containerN>, <Count( "Longest" | "Shortest" | "Enforce Equal" | n )> ), <Output( "List" | "Matrix" | "Associative Array" | "Expression", <expr head name> )>, <locals list>, body)
+**语法:** list = Transform Each({&lt;value&gt;, &lt;index&gt;} | {&lt;element&gt;, &lt;index | {row, col}&gt;} | {&lt;key | {key, value}&gt;, &lt;index&gt;} | {&lt;values | {value1, ..., valueN}&gt;, &lt;index&gt;}, list | matrix | associative array | expression | Across( container1, ..., &lt;containerN&gt;, &lt;Count( "Longest" | "Shortest" | "Enforce Equal" | n )&gt; ), &lt;Output( "List" | "Matrix" | "Associative Array" | "Expression", &lt;expr head name&gt; )&gt;, &lt;locals list&gt;, body)
 
 **说明:** 不仅执行 For Each 函数的所有操作，而且还会在每次迭代时返回包含结果的容器。默认情况下，返回与输入容器类型匹配的容器，但可以使用 Output 参数进行更改。对于列表或表达式输出，没有结果时将使用 Empty()。对于矩阵输出，没有结果或结果为非数值时，将使用数值缺失值。对于关联数组输出，若没有结果，则键将不存在。使用 Continue() 时，等效于该迭代不返回任何值。
 

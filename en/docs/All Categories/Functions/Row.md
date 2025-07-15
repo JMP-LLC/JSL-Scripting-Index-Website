@@ -2,11 +2,9 @@
 
 
 
-## Functions
-
 ### As Table
 
-**Syntax:** dt = As Table( matrix, <matrix2,...> < <<invisible/private>, < <<Column Names(name list) > )
+**Syntax:** dt = As Table( matrix, &lt;matrix2,...&gt; &lt; &lt;&lt;invisible/private&gt;, &lt; &lt;&lt;Column Names(name list) &gt; )
 
 **Description:** Converts a matrix into a data table. The invisible option can be used to avoid displaying the table.
 
@@ -19,7 +17,7 @@ As Table( [1 2 3, 4 5 6] );
 
 ### Col Stored Value
 
-**Syntax:** y = Col Stored Value( <dt>, xCol, <row=Row()> )
+**Syntax:** y = Col Stored Value( &lt;dt&gt;, xCol, &lt;row=Row()&gt; )
 
 **Description:** Returns column value that has not had column properties applied to it. If row option is not specified, then the current row is assumed.
 
@@ -38,9 +36,7 @@ Show( y1, y2, y3, y4 );
 
 ### Column
 
-**Syntax:** y = Column( name|number );
-
-y = Column( dataTable, name|number, <"formatted"> )
+**Syntax:** y = Column( name|number );y = Column( dataTable, name|number, &lt;"formatted"&gt; )
 
 **Description:** Returns a reference to the specified data table column. The keyword "formatted" allows accessing formatted data, like the value label.
 
@@ -85,7 +81,7 @@ Column Name( 4 );
 
 ### Count
 
-**Syntax:** y = Count( start, end, s, <n=1> )
+**Syntax:** y = Count( start, end, s, &lt;n=1&gt; )
 
 **Description:** Returns the ith value in the sequence of numbers from start to end taking s steps and repeating each number n times, where i is determined by the value of the Row() function. Being dependent on the Row() function, the Count() function is generally used in column formulas.
 
@@ -107,7 +103,7 @@ For Each Row(
 
 ### Current Data Table
 
-**Syntax:** dt = Current Data Table( <Project(title|index|box|window)> ); Current Data Table( dt )
+**Syntax:** dt = Current Data Table( &lt;Project(title|index|box|window)&gt; ); Current Data Table( dt )
 
 **Description:** Returns the current data table or makes the specified data table current if there is one specified.
 
@@ -140,7 +136,7 @@ Data Table( 1 );
 
 ### Dif
 
-**Syntax:** y = Dif( x, <n=1> )
+**Syntax:** y = Dif( x, &lt;n=1&gt; )
 
 **Description:** Returns x - Lag( x, n ), also known as the "first difference". Being dependent on Row(), Dif() is mainly useful in column formulas.
 
@@ -168,7 +164,7 @@ Dim( [11 22, 33 44, 55 66] );
 
 ### Get Data Table
 
-**Syntax:** dt = Get Data Table( <Project(title|index|box|window)>, name|index )
+**Syntax:** dt = Get Data Table( &lt;Project(title|index|box|window)&gt;, name|index )
 
 **Description:** Returns a reference to the specified data table.
 
@@ -191,7 +187,7 @@ Get Data Table( 1 );
 
 ### Get Data Table List
 
-**Syntax:** tableList = Get Data Table List( <Project(title|index|box|window)> )
+**Syntax:** tableList = Get Data Table List( &lt;Project(title|index|box|window)&gt; )
 
 **Description:** Returns a list of all open data tables.
 
@@ -226,7 +222,7 @@ Get Data Table List( Project( project ) );
 
 ### Lag
 
-**Syntax:** y = Lag( <x>, <n=1> )
+**Syntax:** y = Lag( &lt;x&gt;, &lt;n=1&gt; )
 
 **Description:** Returns the value of the x argument with the current row set to Row() - n. Being dependent on Row(), Lag() is mainly useful in column formulas.
 
@@ -299,7 +295,7 @@ d;
 
 ### New Column
 
-**Syntax:** dc = New Column( name, <"Numeric"|"Character"|"RowState"|"Expression">, <"Continuous"|"Ordinal"|"Nominal"|"Multiple Response"|"Unstructured Text"|"Vector"|"None">, <Width( n )|Format(format name, width, precision)>, <Like(:other column)>, <actions> )
+**Syntax:** dc = New Column( name, &lt;"Numeric"|"Character"|"RowState"|"Expression"&gt;, &lt;"Continuous"|"Ordinal"|"Nominal"|"Multiple Response"|"Unstructured Text"|"Vector"|"None"&gt;, &lt;Width( n )|Format(format name, width, precision)&gt;, &lt;Like(:other column)&gt;, &lt;actions&gt; )
 
 **Description:** Creates a new column in the current data table. The optional actions arguments are any messages that data columns support.
 
@@ -325,7 +321,7 @@ New Column( "example", "Numeric", "Continuous", Width( 5 ), <<Set Each Value( 10
 
 ### New Column by Text Matching
 
-**Syntax:** dc = New Column by Text Matching( Column(:name), Set Regex(), <Output Column Name("Name")>, <Use Result(0 | 1)> )
+**Syntax:** dc = New Column by Text Matching( Column(:name), Set Regex(), &lt;Output Column Name("Name")&gt;, &lt;Use Result(0 | 1)&gt; )
 
 **Description:** Creates a new column by performing a regular expression pattern match on an existing column.
 
@@ -344,7 +340,7 @@ New Column by Text Matching(
 
 ### New Table
 
-**Syntax:** dt = New Table( name, <visibility("private"|"invisible"|"visible")>, <Enable Filter Views(bool)>, <actions> )
+**Syntax:** dt = New Table( name, &lt;visibility("private"|"invisible"|"visible")&gt;, &lt;Enable Filter Views(bool)&gt;, &lt;actions&gt; )
 
 **Description:** Creates a new data table. "Invisible" hides the data table from view but lists it in the JMP Home Window. "Private" hides the table completely. "Visible" is the default, and creates a normal table that is visible and listed in the JMP Home Window. The optional actions arguments are any messages that data tables support.
 
@@ -391,7 +387,7 @@ Row() = 3;
 
 ### Sequence
 
-**Syntax:** y = Sequence( start, end, <incr=1>, <n=1> )
+**Syntax:** y = Sequence( start, end, &lt;incr=1&gt;, &lt;n=1&gt; )
 
 **Description:** Returns the Row()th item in the sequence of numbers from start to end incremented by incr. Each number in the sequence is repeated n times. Because of its dependence on Row(), the Sequence() function is mainly useful in column formulas. To create sequences as JSL matrices, see Index().
 
@@ -405,7 +401,7 @@ Sequence( 1, 9, 2 );
 
 ### Subscribe to Data Table List
 
-**Syntax:** aSub = Subscribe to Data Table List( <subscriber name | "">, <OnOpen(fn) | OnClose(fn) | On Rename(fn)>)
+**Syntax:** aSub = Subscribe to Data Table List( &lt;subscriber name | ""&gt;, &lt;OnOpen(fn) | OnClose(fn) | On Rename(fn)&gt;)
 
 **Description:** Subscribe to the data table list to be notified when a new data table has been added or closed.
 
@@ -469,7 +465,7 @@ Names Default To Here( 1 );
 
 ### Suppress Formula Eval
 
-**Syntax:** Suppress Formula Eval( <suppress=1> )
+**Syntax:** Suppress Formula Eval( &lt;suppress=1&gt; )
 
 **Description:** Suppresses the evaluation of formulas in all data tables if the argument if nonzero.
 
@@ -482,7 +478,7 @@ Suppress Formula Eval( 1 );
 
 ### Unsubscribe to Data Table List
 
-**Syntax:** aSub = Unsubscribe to Data Table List(<subscriber name>, <"OnOpen" | "OnClose" | "OnRename" | "ALL">)
+**Syntax:** aSub = Unsubscribe to Data Table List(&lt;subscriber name&gt;, &lt;"OnOpen" | "OnClose" | "OnRename" | "ALL"&gt;)
 
 **Description:** Remove a subscription to the data table list that had been added thru the command "subscribe to data table list".
 

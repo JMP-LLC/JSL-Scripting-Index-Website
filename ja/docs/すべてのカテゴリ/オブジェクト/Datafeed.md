@@ -24,7 +24,7 @@ feed = Open Datafeed(
 
 ### Close
 
-**構文:** obj << Close
+**構文:** obj &lt;&lt; Close
 
 **説明:** (Windowsのみ) データフィードオブジェクトおよびそのウィンドウを閉じる。
 
@@ -42,7 +42,7 @@ feed << Close;
 
 ### Connect
 
-**構文:** obj << Connect( Port(  "com1"|"com2"|"lpt1"... ), Parity( even|odd|none ), Baud rate( 4800|9600 ), Data bits( 8|7 ), <Stop bits( 0|1|2 )>, <DTR_DSR( 0|1 )>, <RTS_CTS( 0|1 )>, <XON_XOFF( 1|0 )> )
+**構文:** obj &lt;&lt; Connect( Port( "com1"|"com2"|"lpt1"... ), Parity( even|odd|none ), Baud rate( 4800|9600 ), Data bits( 8|7 ), &lt;Stop bits( 0|1|2 )&gt;, &lt;DTR_DSR( 0|1 )&gt;, &lt;RTS_CTS( 0|1 )&gt;, &lt;XON_XOFF( 1|0 )&gt; )
 
 **説明:** (Windowsのみ) デバイスを接続するためのポートの設定を行う。
 
@@ -58,7 +58,7 @@ feed = Open Datafeed(
 
 ### Disconnect
 
-**構文:** obj << Disconnect
+**構文:** obj &lt;&lt; Disconnect
 
 **説明:** (Windowsのみ) データフィードのキューとデバイスとの接続を切断する。ただし、データフィードオブジェクトはアクティブのまま。
 
@@ -75,7 +75,7 @@ feed << Disconnect;
 
 ### EOL
 
-**構文:** obj << EOL( "CR"|"LF"|"CRLF" )
+**構文:** obj &lt;&lt; EOL( "CR"|"LF"|"CRLF" )
 
 **説明:** (Windowsのみ) 入ってくるデータ行を解析する際に、区切り文字として使用する行の終わりの値を指定する。データを送る場合にもデータ行の終わりとして使用される。CR = ASCIIコード 13 (Carriage Return)。LF = ASCIIコード 10 (Line Feed)。CRLFはCRとLF両方を続けて使用する。
 
@@ -101,7 +101,7 @@ For( exi = 0, exi < 5, exi++,
 
 ### Get Container
 
-**構文:** obj << Get Container
+**構文:** obj &lt;&lt; Get Container
 
 **説明:** オブジェクトのコンテンツを含んだコンテナボックスの参照を戻す。
 
@@ -119,7 +119,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Line
 
-**構文:** line = obj << Get Line
+**構文:** line = obj &lt;&lt; Get Line
 
 **説明:** (Windowsのみ) データフィードのキューからラインを取得し、そのラインをキューから削除する。
 
@@ -138,7 +138,7 @@ exfeed = Open Datafeed(
 
 ### Get Lines
 
-**構文:** list = obj << Get Lines
+**構文:** list = obj &lt;&lt; Get Lines
 
 **説明:** (Windowsのみ) データフィードのキューのデータすべてをリストにして戻し、それらをキューから削除する。
 
@@ -162,7 +162,7 @@ For( exi = 0, exi < 5, exi++,
 
 ### Print Queue
 
-**構文:** obj << Print Queue
+**構文:** obj &lt;&lt; Print Queue
 
 **説明:** (Windowsのみ) 内部のメッセージのキューをログウィンドウに表示する。
 
@@ -179,7 +179,7 @@ exfeed << print queue;/* or red triangle menu item */;
 
 ### Queue Line
 
-**構文:** obj << Queue Line( string )
+**構文:** obj &lt;&lt; Queue Line( string )
 
 **説明:** (Windowsのみ) データフィードのキューの最後に1行のデータを送る。
 
@@ -203,7 +203,7 @@ For( exi = 0, exi < 5, exi++,
 
 ### Restart
 
-**構文:** obj << Restart
+**構文:** obj &lt;&lt; Restart
 
 **説明:** (Windowsのみ) キューにあるデータの処理を再開する。
 
@@ -222,7 +222,7 @@ feed << Restart;
 
 ### Set Script
 
-**構文:** obj << Set Script( script )
+**構文:** obj &lt;&lt; Set Script( script )
 
 **説明:** (Windowsのみ) データ行を受け取るたびに実行されるスクリプトを設定する。
 
@@ -238,7 +238,7 @@ feed = Open Datafeed(
 
 ### Stop
 
-**構文:** obj << Stop
+**構文:** obj &lt;&lt; Stop
 
 **説明:** (Windowsのみ) キューにあるデータの処理を停止する。
 
@@ -255,7 +255,7 @@ feed << Stop;
 
 ### Write
 
-**構文:** obj << Write( string )
+**構文:** obj &lt;&lt; Write( string )
 
 **説明:** (Windowsのみ) データフィードの機器に文字列を送る。
 
@@ -278,7 +278,7 @@ exfeed << Write( "Ready" );
 
 ### Write Line
 
-**構文:** obj << Write Line( string )
+**構文:** obj &lt;&lt; Write Line( string )
 
 **説明:** (Windowsのみ) データフィードの機器に文字列を送る。データフィードにEOLが指定されている場合、文字列は指定されたEOL値で終わる。EOLが指定されていない場合は、行はCRLFで終わる。
 
@@ -301,7 +301,7 @@ exfeed << Write Line( "Ready" );
 
 ### Write Lines
 
-**構文:** obj << Write Lines( list )
+**構文:** obj &lt;&lt; Write Lines( list )
 
 **説明:** (Windowsのみ) データフィードの機器に文字列のリストを送る。データフィードにEOLが指定されている場合、各文字列は指定されたEOL値で区切られる。EOLが指定されていない場合は、各行はCRLFで区切られる。
 

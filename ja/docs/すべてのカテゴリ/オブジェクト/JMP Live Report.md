@@ -6,7 +6,7 @@
 
 ### Get Description
 
-**構文:** string = jmplivepost << Get Description()
+**構文:** string = jmplivepost &lt;&lt; Get Description()
 
 **説明:** JMP Liveレポート、JMP Liveフォルダ、またはJMP Live投稿の説明を文字列として取得する。
 
@@ -48,7 +48,7 @@ Write( "\!nDescription: ", report << Get Description );
 
 ### Get ID
 
-**構文:** string = jmplivepost << Get ID()
+**構文:** string = jmplivepost &lt;&lt; Get ID()
 
 **説明:** JMP Liveレポート、JMP Liveフォルダ、またはJMP Live投稿のIDを文字列として取得する。
 
@@ -91,7 +91,7 @@ Write( "\!n\!nID: ", report << Get ID );
 
 ### Get Path
 
-**構文:** string = jmplivepost << Get Path()
+**構文:** string = jmplivepost &lt;&lt; Get Path()
 
 **説明:** このJMP Liveレポート、フォルダ、または投稿のパスを文字列として取得する。
 
@@ -134,7 +134,7 @@ Write( "\!n\!nPath: ", report << Get Path );
 
 ### Get Title
 
-**構文:** string = jmplivepost << Get Title()
+**構文:** string = jmplivepost &lt;&lt; Get Title()
 
 **説明:** JMP Liveレポート、JMP Liveフォルダ、またはJMP Live投稿のタイトルを文字列として取得する。
 
@@ -177,7 +177,7 @@ Write( "\!nTitle: ", report << Get Title );
 
 ### Get Type
 
-**構文:** string = jmplivepost << Get Type()
+**構文:** string = jmplivepost &lt;&lt; Get Type()
 
 **説明:** 特定の種類の投稿（フォルダ、データ、レポート）を取得する。
 
@@ -221,7 +221,7 @@ Write( "\!nType: ", report << Get Type );
 
 ### Get URL
 
-**構文:** string = jmplivepost << Get URL()
+**構文:** string = jmplivepost &lt;&lt; Get URL()
 
 **説明:** JMP Liveレポート、JMP Liveフォルダ、またはJMP Live投稿のURLを文字列として取得する。
 
@@ -264,7 +264,7 @@ Write( "\!nURL: ", report << Get URL );
 
 ### Set Description
 
-**構文:** success = jmplivepost << Set Description("string value")
+**構文:** success = jmplivepost &lt;&lt; Set Description("string value")
 
 **説明:** JMP Liveレポート、JMP Liveフォルダ、またはJMP Live投稿の説明の文字列を設定する。成功か失敗かを示す真(true）または偽(false)を戻す。
 
@@ -314,7 +314,7 @@ Write( "\!nDecription: ", report << Get Description );
 
 ### Set Title
 
-**構文:** success = jmplivepost << Set Title("New Title")
+**構文:** success = jmplivepost &lt;&lt; Set Title("New Title")
 
 **説明:** JMP Liveレポート、JMP Liveフォルダ、またはJMP Live投稿のタイトルを設定する。成功か失敗かを示す真(true）または偽(false)を戻す。
 

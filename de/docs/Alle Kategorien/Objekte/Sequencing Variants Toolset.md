@@ -6,25 +6,25 @@
 
 ### Arguments
 
-**Syntax:** obj << Arguments
+**Syntax:** obj &lt;&lt; Arguments
 
 **Beschreibung:** Ermöglicht die Angabe von Optionen zur Ausführung der Plattform aus dem Skriptfenster.
 
 ### Run Cmd
 
-**Syntax:** obj << Run Cmd
+**Syntax:** obj &lt;&lt; Run Cmd
 
 **Beschreibung:** Legt die Toolset-Aufgabe für die Sequenzierungsvarianten fest, die im Skriptfenster ausgeführt werden soll.
 
 ### Run Spec
 
-**Syntax:** obj << Run Spec
+**Syntax:** obj &lt;&lt; Run Spec
 
 **Beschreibung:** Legt die Toolset-Aufgabe für die Sequenzierungsvarianten fest, die im Schnittstellenfenster ausgeführt werden soll.
 
 ### Specification
 
-**Syntax:** obj << Specification
+**Syntax:** obj &lt;&lt; Specification
 
 **Beschreibung:** Ermöglicht die Spezifikation einer Aufgabe.
 
@@ -32,7 +32,7 @@
 
 ### Action
 
-**Syntax:** obj << Action
+**Syntax:** obj &lt;&lt; Action
 
 **Beschreibung:** Allzwecköffnung innerhalb einer Plattform zum Einfügen von auszuwertenden Ausdrücken. Setzt die Kontexte für Anzeigefeld und Datentabelle kurzzeitig auf die Plattform.
 
@@ -50,7 +50,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Syntax:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntax:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Beschreibung:** Wendet eine zuvor erstellte Voreinstellung auf das Objekt an und aktualisiert die Optionen und Anpassungen entsprechend den gespeicherten Einstellungen.
 
@@ -97,7 +97,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Copy Script
 
-**Syntax:** obj << Copy Script
+**Syntax:** obj &lt;&lt; Copy Script
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und legt es in der Zwischenablage ab.
 
@@ -110,7 +110,7 @@ obj << Copy Script;
 
 ### Get By Levels
 
-**Syntax:** obj << Get By Levels
+**Syntax:** obj &lt;&lt; Get By Levels
 
 **Beschreibung:** Gibt ein assoziatives Array zurück, das die Nach-Gruppenspalten ihren Werten zuordnet.
 
@@ -127,7 +127,7 @@ biv << Get By Levels;
 
 ### Get Container
 
-**Syntax:** obj << Get Container
+**Syntax:** obj &lt;&lt; Get Container
 
 **Beschreibung:** Gibt einen Verweis auf das Containerfeld zurück, das den Inhalt des Objekts enthält.
 
@@ -172,7 +172,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Syntax:** obj << Get Data Table
+**Syntax:** obj &lt;&lt; Get Data Table
 
 **Beschreibung:** Gibt eine Referenz auf die Datentabelle zurück.
 
@@ -186,7 +186,7 @@ Show( N Rows( t ) );
 
 ### Get Script
 
-**Syntax:** obj << Get Script
+**Syntax:** obj &lt;&lt; Get Script
 
 **Beschreibung:** Erstellt ein Skript (JSL) zum Erzeugen dieser Analyse und gibt es als Ausdruck zurück.
 
@@ -200,7 +200,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Syntax:** obj << Get Script With Data Table
+**Syntax:** obj &lt;&lt; Get Script With Data Table
 
 **Beschreibung:** Erstellt ein Skript (JSL) zum Erzeugen dieser Analyse und referenziert dabei spezifisch diese Datentabelle und gibt das Skript als Ausdruck zurück.
 
@@ -214,7 +214,7 @@ Show( t );
 
 ### Get Timing
 
-**Syntax:** obj << Get Timing
+**Syntax:** obj &lt;&lt; Get Timing
 
 **Beschreibung:** Steuert den Start der Plattform zeitlich.
 
@@ -228,7 +228,7 @@ Show( t );
 
 ### Get Web Support
 
-**Syntax:** obj << Get Web Support
+**Syntax:** obj &lt;&lt; Get Web Support
 
 **Beschreibung:** Gibt eine Zahl zurück, die angibt, ob für das Anzeigeobjekt interaktive HTML unterstützt wird. 1 bedeutet einige oder alle Elemente werden unterstützt. 0 bedeutet keine Unterstützung.
 
@@ -244,7 +244,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Syntax:** obj << Get Where Expr
+**Syntax:** obj &lt;&lt; Get Where Expr
 
 **Beschreibung:** Gibt den Ausdruck Where für die Teilmenge der Daten zurück, wenn die Plattform mit By() oder Where() gestartet wurde. Andernfalls wird Empty() zurückgegeben.
 
@@ -334,9 +334,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Syntax:** obj << Report;
-
-Report( obj )
+**Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Beschreibung:** Gibt eine Referenz auf das Berichtsobjekt zurück.
 
@@ -351,7 +349,7 @@ Show( t );
 
 ### Save Script for All Objects
 
-**Syntax:** obj << Save Script for All Objects
+**Syntax:** obj &lt;&lt; Save Script for All Objects
 
 **Beschreibung:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -364,7 +362,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Syntax:** obj << Save Script for All Objects To Data Table( <name> )
+**Syntax:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Beschreibung:** Speichert ein Skript für alle Berichtsobjekte in der aktuellen Datentabelle. Diese Option ist nützlich, wenn Sie mehrere Berichte im Fenster haben. Das Skript wird nach der ersten Plattform benannt, sofern Sie keine Skriptnamen in Anführungszeichen angeben.
 
@@ -388,7 +386,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Syntax:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und speichert es als Tabelleneigenschaft in der Datentabelle.
 
@@ -401,7 +399,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Syntax:** obj << Save Script to Journal
+**Syntax:** obj &lt;&lt; Save Script to Journal
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und fügt eine Schaltfläche mit diesem Skript zum Journal hinzu.
 
@@ -414,7 +412,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Syntax:** obj << Save Script to Report
+**Syntax:** obj &lt;&lt; Save Script to Report
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und zeigt es im Bericht selbst an. Nützlich zum Anlegen eines gedruckten Nachweises der durchgeführten Aktivitäten.
 
@@ -427,7 +425,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Syntax:** obj << Save Script to Script Window
+**Syntax:** obj &lt;&lt; Save Script to Script Window
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und hängt es an das Textfenster mit dem aktuellen Skript an.
 
@@ -505,7 +503,7 @@ dt << Distribution(
 
 ### Title
 
-**Syntax:** obj << Title( "new title" )
+**Syntax:** obj &lt;&lt; Title( "new title" )
 
 **Beschreibung:** Legt den Titel für die Plattform fest.
 
@@ -518,7 +516,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Syntax:** obj << Top Report
+**Syntax:** obj &lt;&lt; Top Report
 
 **Beschreibung:** Gibt eine Referenz auf den Stammknoten im Bericht zurück.
 
@@ -533,7 +531,7 @@ Show( t );
 
 ### View Web XML
 
-**Syntax:** obj << View Web XML
+**Syntax:** obj &lt;&lt; View Web XML
 
 **Beschreibung:** Gibt den XML-Code zurück, der zum Erstellen des interaktiven HTML-Berichts verwendet wird.
 
@@ -560,31 +558,31 @@ xml = obj << View Web XML;
 
 #### Auto Send Output to Files List
 
-**Syntax:** obj << Auto Send Output to Files List( state=0|1 )
+**Syntax:** obj &lt;&lt; Auto Send Output to Files List( state=0|1 )
 
 **Beschreibung:** Sendet Ausgabedateien an den Dateilistenbereich.
 
 #### Bam Files
 
-**Syntax:** obj << Bam Files
+**Syntax:** obj &lt;&lt; Bam Files
 
 **Beschreibung:** Gibt BAM-Dateien an.
 
 #### Bcf Files
 
-**Syntax:** obj << Bcf Files
+**Syntax:** obj &lt;&lt; Bcf Files
 
 **Beschreibung:** Gibt BCF-Dateien an.
 
 #### Caller
 
-**Syntax:** obj << Caller( "Multiallelisch"|"Konsens"="Multiallelisch" )
+**Syntax:** obj &lt;&lt; Caller( "Multiallelisch"|"Konsens"="Multiallelisch" )
 
 **Beschreibung:** Standardmäßig „Multiallelisch“.
 
 #### Copy Task Specification
 
-**Syntax:** obj << Copy Task Specification
+**Syntax:** obj &lt;&lt; Copy Task Specification
 
 **Beschreibung:** Kopiert die aktuellen Toolset-Spezifikationen für die Sequenzierungsvarianten in die Zwischenablage.
 
@@ -592,91 +590,91 @@ xml = obj << View Web XML;
 
 #### Files
 
-**Syntax:** obj << Files
+**Syntax:** obj &lt;&lt; Files
 
 **Beschreibung:** In SamTools auszuführende Eingabedateien laden.
 
 #### Ploidy
 
-**Syntax:** obj << Ploidy( number=2 )
+**Syntax:** obj &lt;&lt; Ploidy( number=2 )
 
 **Beschreibung:** Standardmäßig „2“.
 
 #### Recall in Task Specification
 
-**Syntax:** obj << Recall in Task Specification
+**Syntax:** obj &lt;&lt; Recall in Task Specification
 
 **Beschreibung:** Legt für die Aufgabenspezifikation im Aufgabenspezifikationsbericht das angegebene Modell fest.
 
 #### Ref Files
 
-**Syntax:** obj << Ref Files
+**Syntax:** obj &lt;&lt; Ref Files
 
 **Beschreibung:** Gibt Referenzgenomdateien an.
 
 #### Remove Run
 
-**Syntax:** obj << ( Run[number] << Remove Run( state=0|1 ) )
+**Syntax:** obj &lt;&lt; ( Run[number] &lt;&lt; Remove Run( state=0|1 ) )
 
 **Beschreibung:** Entfernt den angegebenen Lauf aus dem Berichtsfenster.
 
 #### Results Folder
 
-**Syntax:** obj << Results Folder
+**Syntax:** obj &lt;&lt; Results Folder
 
 **Beschreibung:** Gibt den Ergebnisordner an.
 
 #### Sam Files
 
-**Syntax:** obj << Sam Files
+**Syntax:** obj &lt;&lt; Sam Files
 
 **Beschreibung:** Gibt SAM-Dateien an.
 
 #### Send Output to Files List
 
-**Syntax:** obj << Send Output to Files List( state=0|1 )
+**Syntax:** obj &lt;&lt; Send Output to Files List( state=0|1 )
 
 **Beschreibung:** Sendet Ausgabedateien an den Dateilistenbereich.
 
 #### Sort Reads By
 
-**Syntax:** obj << Sort Reads By( "Koordinaten"|"Alphanumerisch"|"Lexikografisch"="Koordinaten" )
+**Syntax:** obj &lt;&lt; Sort Reads By( "Koordinaten"|"Alphanumerisch"|"Lexikografisch"="Koordinaten" )
 
 **Beschreibung:** Standardmäßig „Koordinaten“.
 
 #### Summary
 
-**Syntax:** obj << Summary( state=0|1 )
+**Syntax:** obj &lt;&lt; Summary( state=0|1 )
 
 **Beschreibung:** Blendet einen Bericht ein oder aus, der Details des Laufs enthält. Standardmäßig ein.
 
 #### Target Regions
 
-**Syntax:** obj << Target Regions
+**Syntax:** obj &lt;&lt; Target Regions
 
 **Beschreibung:** Legt Zielregionen fest. Die Angabe von Regionen erfordert, dass die BAM-Datei nach Koordinaten sortiert und indiziert ist.
 
 #### Task
 
-**Syntax:** obj << Task( "Index Fasta"|"SAM in BAM konvertieren"|"Reads sortieren"|"MateKoordinaten hinzufügen"|"Duplikate entfernen"|"Dateien zusammenführen"|"Index BAM"|"BAM in SAM konvertieren"|"Zugeordnete Reads extrahieren"|"Nicht zugeordnete Reads extrahieren"|"Zielregionen extrahieren"|"Einwandfrei Ausgerichtete extrahieren"|"Ersten Reads extrahieren"|"Nichtübereinstimmungen und Einfügungen kennzeichnen"|"Ausrichtung zählen"|"Ausrichtung nach Flag zählen"|"Ausrichtung nach Referenz zählen"|"Statistik generieren"|"Qualität der Basenausrichtung generieren"|"Read-Tiefe generieren"|"Komprimieren mit Bgzip"|"Dekomprimieren mit Bgzip"|"Genotyp-Likelihoods generieren"|"Genotyp-Aufrufe generieren"|"Bcf in Vcf konvertieren"|"Vcf in Bcf konvertieren" )
+**Syntax:** obj &lt;&lt; Task( "Index Fasta"|"SAM in BAM konvertieren"|"Reads sortieren"|"MateKoordinaten hinzufügen"|"Duplikate entfernen"|"Dateien zusammenführen"|"Index BAM"|"BAM in SAM konvertieren"|"Zugeordnete Reads extrahieren"|"Nicht zugeordnete Reads extrahieren"|"Zielregionen extrahieren"|"Einwandfrei Ausgerichtete extrahieren"|"Ersten Reads extrahieren"|"Nichtübereinstimmungen und Einfügungen kennzeichnen"|"Ausrichtung zählen"|"Ausrichtung nach Flag zählen"|"Ausrichtung nach Referenz zählen"|"Statistik generieren"|"Qualität der Basenausrichtung generieren"|"Read-Tiefe generieren"|"Komprimieren mit Bgzip"|"Dekomprimieren mit Bgzip"|"Genotyp-Likelihoods generieren"|"Genotyp-Aufrufe generieren"|"Bcf in Vcf konvertieren"|"Vcf in Bcf konvertieren" )
 
 **Beschreibung:** Legt die Aufgabe für die Ausführung fest.
 
 #### Title
 
-**Syntax:** obj << Title
+**Syntax:** obj &lt;&lt; Title
 
 **Beschreibung:** Legt einen Titel fest.
 
 #### Unthreaded
 
-**Syntax:** obj << Unthreaded( state=0|1 )
+**Syntax:** obj &lt;&lt; Unthreaded( state=0|1 )
 
 **Beschreibung:** Verwenden Sie nur den Haupt-Thread für Berechnungen.
 
 #### Vcf Files
 
-**Syntax:** obj << Vcf Files
+**Syntax:** obj &lt;&lt; Vcf Files
 
 **Beschreibung:** Gibt VCF-Dateien an.
 
@@ -686,91 +684,91 @@ xml = obj << View Web XML;
 
 #### Auto Send Output to Files List
 
-**Syntax:** obj << Auto Send Output to Files List( state=0|1 )
+**Syntax:** obj &lt;&lt; Auto Send Output to Files List( state=0|1 )
 
 **Beschreibung:** Sendet Ausgabedateien an den Dateilistenbereich.
 
 #### Bam Files
 
-**Syntax:** obj << Bam Files
+**Syntax:** obj &lt;&lt; Bam Files
 
 **Beschreibung:** Gibt BAM-Dateien an.
 
 #### Bcf Files
 
-**Syntax:** obj << Bcf Files
+**Syntax:** obj &lt;&lt; Bcf Files
 
 **Beschreibung:** Gibt BCF-Dateien an.
 
 #### Caller
 
-**Syntax:** obj << Caller( "Multiallelisch"|"Konsens"="Multiallelisch" )
+**Syntax:** obj &lt;&lt; Caller( "Multiallelisch"|"Konsens"="Multiallelisch" )
 
 **Beschreibung:** Standardmäßig „Multiallelisch“.
 
 #### Files
 
-**Syntax:** obj << Files
+**Syntax:** obj &lt;&lt; Files
 
 **Beschreibung:** In SamTools auszuführende Eingabedateien laden.
 
 #### Ploidy
 
-**Syntax:** obj << Ploidy( number=2 )
+**Syntax:** obj &lt;&lt; Ploidy( number=2 )
 
 **Beschreibung:** Gibt eine positive Zahl an, die die Ploidie-Stufe anzeigt. Standardmäßig „2“.
 
 #### Ref Files
 
-**Syntax:** obj << Ref Files
+**Syntax:** obj &lt;&lt; Ref Files
 
 **Beschreibung:** Gibt Referenzgenomdateien an.
 
 #### Results Folder
 
-**Syntax:** obj << Results Folder
+**Syntax:** obj &lt;&lt; Results Folder
 
 **Beschreibung:** Gibt den Ergebnisordner an.
 
 #### Sam Files
 
-**Syntax:** obj << Sam Files
+**Syntax:** obj &lt;&lt; Sam Files
 
 **Beschreibung:** Gibt SAM-Dateien an.
 
 #### Sort Reads By
 
-**Syntax:** obj << Sort Reads By( "Koordinaten"|"Alphanumerisch"|"Lexikografisch"="Koordinaten" )
+**Syntax:** obj &lt;&lt; Sort Reads By( "Koordinaten"|"Alphanumerisch"|"Lexikografisch"="Koordinaten" )
 
 **Beschreibung:** Standardmäßig „Koordinaten“.
 
 #### Target Regions
 
-**Syntax:** obj << Target Regions
+**Syntax:** obj &lt;&lt; Target Regions
 
 **Beschreibung:** Legt Zielregionen fest. Die Angabe von Regionen erfordert, dass die BAM-Datei nach Koordinaten sortiert und indiziert ist.
 
 #### Task
 
-**Syntax:** obj << Task( "Index Fasta"|"SAM in BAM konvertieren"|"Reads sortieren"|"MateKoordinaten hinzufügen"|"Duplikate entfernen"|"Dateien zusammenführen"|"Index BAM"|"BAM in SAM konvertieren"|"Zugeordnete Reads extrahieren"|"Nicht zugeordnete Reads extrahieren"|"Zielregionen extrahieren"|"Einwandfrei Ausgerichtete extrahieren"|"Ersten Reads extrahieren"|"Nichtübereinstimmungen und Einfügungen kennzeichnen"|"Ausrichtung zählen"|"Ausrichtung nach Flag zählen"|"Ausrichtung nach Referenz zählen"|"Statistik generieren"|"Qualität der Basenausrichtung generieren"|"Read-Tiefe generieren"|"Komprimieren mit Bgzip"|"Dekomprimieren mit Bgzip"|"Genotyp-Likelihoods generieren"|"Genotyp-Aufrufe generieren"|"Bcf in Vcf konvertieren"|"Vcf in Bcf konvertieren"="Index Fasta" )
+**Syntax:** obj &lt;&lt; Task( "Index Fasta"|"SAM in BAM konvertieren"|"Reads sortieren"|"MateKoordinaten hinzufügen"|"Duplikate entfernen"|"Dateien zusammenführen"|"Index BAM"|"BAM in SAM konvertieren"|"Zugeordnete Reads extrahieren"|"Nicht zugeordnete Reads extrahieren"|"Zielregionen extrahieren"|"Einwandfrei Ausgerichtete extrahieren"|"Ersten Reads extrahieren"|"Nichtübereinstimmungen und Einfügungen kennzeichnen"|"Ausrichtung zählen"|"Ausrichtung nach Flag zählen"|"Ausrichtung nach Referenz zählen"|"Statistik generieren"|"Qualität der Basenausrichtung generieren"|"Read-Tiefe generieren"|"Komprimieren mit Bgzip"|"Dekomprimieren mit Bgzip"|"Genotyp-Likelihoods generieren"|"Genotyp-Aufrufe generieren"|"Bcf in Vcf konvertieren"|"Vcf in Bcf konvertieren"="Index Fasta" )
 
 **Beschreibung:** Legt die Aufgabe für die Ausführung fest. Standardmäßig „Index Fasta“.
 
 #### Title
 
-**Syntax:** obj << Title
+**Syntax:** obj &lt;&lt; Title
 
 **Beschreibung:** Legt einen Titel fest.
 
 #### Unthreaded
 
-**Syntax:** obj << Unthreaded( state=0|1 )
+**Syntax:** obj &lt;&lt; Unthreaded( state=0|1 )
 
 **Beschreibung:** Verwenden Sie nur den Haupt-Thread für Berechnungen.
 
 #### Vcf Files
 
-**Syntax:** obj << Vcf Files
+**Syntax:** obj &lt;&lt; Vcf Files
 
 **Beschreibung:** Gibt VCF-Dateien an.
 

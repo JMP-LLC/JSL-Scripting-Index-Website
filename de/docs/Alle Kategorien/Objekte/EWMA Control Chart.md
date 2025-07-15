@@ -55,7 +55,7 @@ obj = dt << EWMA Control Chart( Y( :Gap ), Lambda( 0.2 ), Center Data( 1 ) );
 
 ### Connect Thru Missing
 
-**Syntax:** obj << Connect Thru Missing( state=0|1 )
+**Syntax:** obj &lt;&lt; Connect Thru Missing( state=0|1 )
 
 **Beschreibung:** Verbindet Punkte, wenn einige Stichproben fehlende Werte oder ausgeschlossene Zeilen haben.
 
@@ -73,7 +73,7 @@ obj << Connect Thru Missing( 1 );
 
 ### Constant Limits
 
-**Syntax:** obj << Constant Limits( state=0|1 )
+**Syntax:** obj &lt;&lt; Constant Limits( state=0|1 )
 
 **Beschreibung:** Verwendet einen asymptotischen Ausdruck, um konstante EWMA-Grenzen zu bilden.
 
@@ -91,7 +91,7 @@ obj << Constant Limits( 1 );
 
 ### Control Panel
 
-**Syntax:** obj << Control Panel( state=0|1 )
+**Syntax:** obj &lt;&lt; Control Panel( state=0|1 )
 
 **Beschreibung:** Blendet einen Bericht ein oder aus, der die aktuellen Werte der Parameter enthält, und ermöglicht Ihnen, diese zu ändern. Standardmäßig ein.
 
@@ -108,7 +108,7 @@ obj << Control Panel( 0 );
 
 ### Get Limits
 
-**Syntax:** obj << Get Limits( filename )
+**Syntax:** obj &lt;&lt; Get Limits( filename )
 
 **Beschreibung:** Importiert Eingriffsgrenzen aus einer ausgewählten Datentabelle und ersetzt berechnete Grenzen im Diagramm.
 
@@ -133,7 +133,7 @@ obj << Get Limits( dtLimits );
 
 ### K Sigma
 
-**Syntax:** obj << K Sigma( K value=3 )
+**Syntax:** obj &lt;&lt; K Sigma( K value=3 )
 
 **Beschreibung:** Legt den K-Wert fest, der mit Sigma multipliziert werden soll, um die Eingriffsgrenzen um den Mittelwert zu bilden. Standardmäßig „3“.
 
@@ -151,7 +151,7 @@ obj << K Sigma( 4 );
 
 ### Lambda
 
-**Syntax:** obj << Lambda( number=0.2 )
+**Syntax:** obj &lt;&lt; Lambda( number=0.2 )
 
 **Beschreibung:** Gibt die Glättungskonstante für die Gewichtung vorheriger Stichproben an. Standardmäßig „0.2“.
 
@@ -168,7 +168,7 @@ obj << Lambda( 0.5 );
 
 ### Lambda Slider
 
-**Syntax:** obj << Lambda Slider( state=0|1 )
+**Syntax:** obj &lt;&lt; Lambda Slider( state=0|1 )
 
 **Beschreibung:** Blendet den Lambda-Schieberegler im Bedienelement ein oder aus.
 
@@ -185,7 +185,7 @@ obj << Lambda Slider( 1 );
 
 ### Overlay Charts
 
-**Syntax:** obj << Overlay Charts( state=0|1 )
+**Syntax:** obj &lt;&lt; Overlay Charts( state=0|1 )
 
 **Beschreibung:** Überlagert einzelne Punkte oder Xquer-Punkte, wenn die Daten zusammengefasst werden, in der EWMA-Regelkarte.
 
@@ -202,7 +202,7 @@ obj << Overlay Charts( 1 );
 
 ### Parameters Report
 
-**Syntax:** obj << Parameters Report( state=0|1 )
+**Syntax:** obj &lt;&lt; Parameters Report( state=0|1 )
 
 **Beschreibung:** Zeigt den Parameterbericht an oder blendet ihn aus.
 
@@ -219,7 +219,7 @@ obj << Parameters Report( 1 );
 
 ### Reset to Defaults
 
-**Syntax:** obj << Reset to Defaults
+**Syntax:** obj &lt;&lt; Reset to Defaults
 
 **Beschreibung:** Setzt alle Parameter auf die Standardwerte zurück.
 
@@ -238,7 +238,7 @@ obj << Reset to Defaults();
 
 ### Restart EWMA after Empty Subgroup
 
-**Syntax:** obj << Restart EWMA after Empty Subgroup( state=0|1 )
+**Syntax:** obj &lt;&lt; Restart EWMA after Empty Subgroup( state=0|1 )
 
 **Beschreibung:** Startet die Berechnung der EWMA-Kenngröße nach jeder fehlenden oder ausgeschlossenen Untergruppe neu.
 
@@ -258,7 +258,7 @@ obj << Restart EWMA after empty subgroup( 1 );
 
 ### Save Limits
 
-**Syntax:** obj << Save Limits( "In Spalte"|"In neuer Tabelle" )
+**Syntax:** obj &lt;&lt; Save Limits( "In Spalte"|"In neuer Tabelle" )
 
 **Beschreibung:** Speichert Regelkartenparameter entweder in einer Spalteneigenschaft oder in einer neuen Datentabelle.
 
@@ -284,7 +284,7 @@ obj << Save Limits( "in New Table" );
 
 ### Save Sigma
 
-**Syntax:** obj << Save Sigma
+**Syntax:** obj &lt;&lt; Save Sigma
 
 **Beschreibung:** Speichert das Sigma aus der Qualitätsregelkarte als Spalteneigenschaft in der Datentabelle.
 
@@ -301,7 +301,7 @@ obj << Save Sigma;
 
 ### Save Summaries
 
-**Syntax:** obj << Save Summaries
+**Syntax:** obj &lt;&lt; Save Summaries
 
 **Beschreibung:** Erstellt eine neue Tabelle, die statistische Kenngrößen und Grenzen für jede Untergruppe enthält.
 
@@ -318,7 +318,7 @@ obj << Save Summaries;
 
 ### Show ARL
 
-**Syntax:** obj << Show ARL( state=0|1 )
+**Syntax:** obj &lt;&lt; Show ARL( state=0|1 )
 
 **Beschreibung:** Blendet einen Bericht mit der ARL (Average Run Length, Mittlere Stichprobenanzahl) ein oder aus, die aus der zugehörigen EWMA- und X-Regelkarte berechnet wurde.
 
@@ -335,7 +335,7 @@ obj << Show ARL( 1 );
 
 ### Show Center Line
 
-**Syntax:** obj << Show Center Line( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Center Line( state=0|1 )
 
 **Beschreibung:** Zeigt die Mittellinie im Graphen an oder blendet sie aus. Standardmäßig ein.
 
@@ -371,7 +371,7 @@ obj = dt << EWMA Control Chart( Y( :Gap ), Subgroup( :Sample ), Show Excluded Re
 
 ### Show Limits
 
-**Syntax:** obj << Show Limits( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Limits( state=0|1 )
 
 **Beschreibung:** Blendet die Grenzen ein oder aus. Standardmäßig ein.
 
@@ -388,7 +388,7 @@ obj << Show Limits( 0 );
 
 ### Show Residuals Chart
 
-**Syntax:** obj << Show Residuals Chart( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Residuals Chart( state=0|1 )
 
 **Beschreibung:** Zeigt ein Diagramm der Residuen an oder blendet es aus.
 
@@ -405,7 +405,7 @@ obj << Show Residuals Chart( 0 );
 
 ### Show Shift Lines
 
-**Syntax:** obj << Show Shift Lines( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Shift Lines( state=0|1 )
 
 **Beschreibung:** Zeigt vertikale Linien an oder blendet sie aus, die Prozessverschiebungen im Diagramm kennzeichnen. Verschiebungslinien werden zu Beginn einer Verschiebung gezeichnet. Nur verfügbar, wenn eine Verschiebung in den Daten erkannt wird. Standardmäßig ein.
 
@@ -423,7 +423,7 @@ obj << Show Shift Lines( 0 );
 
 ### Show X Chart
 
-**Syntax:** obj << Show X Chart( state=0|1 )
+**Syntax:** obj &lt;&lt; Show X Chart( state=0|1 )
 
 **Beschreibung:** Zeigt die Lagekarte unter der EWMA-Regelkarte an oder blendet sie aus. Standardmäßig ein.
 
@@ -440,7 +440,7 @@ obj << Show X Chart( 0 );
 
 ### Show X Limits on Overlay Charts
 
-**Syntax:** obj << Show X Limits on Overlay Charts( state=0|1 )
+**Syntax:** obj &lt;&lt; Show X Limits on Overlay Charts( state=0|1 )
 
 **Beschreibung:** Überlagert Grenzen von der Lagekarte in der EWMA-Regelkarte, wenn die Option „Diagramme überlagern“ ausgewählt ist.
 
@@ -460,7 +460,7 @@ obj = dt << EWMA Control Chart(
 
 ### Sigma
 
-**Syntax:** obj << Sigma( number )
+**Syntax:** obj &lt;&lt; Sigma( number )
 
 **Beschreibung:** Gibt den bekannten Wert der Standardabweichung an. Standardmäßig ist für diesen Parameter die mittlere gleitende Spannweite der Y-Spalte festgelegt. Wenn es eine Untergruppenvariable gibt, wird der Sigma-Parameter auf den Mittelwert der gleitenden Spannweiten der Untergruppenmittelwerte gesetzt.
 
@@ -477,7 +477,7 @@ obj << Sigma( 2 );
 
 ### Target
 
-**Syntax:** obj << Target( number )
+**Syntax:** obj &lt;&lt; Target( number )
 
 **Beschreibung:** Gibt den bekannten Wert des Mittelwerts an. Dies ist der Wert der Mittellinie im Diagramm. Standardmäßig ist für diesen Parameter der Zielwert in der Spalteneigenschaft „Spez.-Grenzen“ der Y-Spalte festgelegt. Wenn die Y-Spalte in der Spalteneigenschaft „Spez.-Grenzen“ keinen Zielwert hat, wird für diesen Parameter der Gesamtmittelwert der Y-Spalte festgelegt.
 
@@ -494,7 +494,7 @@ obj << Target( 14.65 );
 
 ### Test Beyond Limits
 
-**Syntax:** obj << Test Beyond Limits( state=0|1 )
+**Syntax:** obj &lt;&lt; Test Beyond Limits( state=0|1 )
 
 **Beschreibung:** Zeigt einen roten Kreis um jeden Punkt an, der in den EWMA- und X-Regelkarten über der oberen Grenze oder unter der unteren Grenze liegt, oder blendet ihn aus.
 
@@ -511,7 +511,7 @@ obj << Test Beyond Limits( 1 );
 
 ### Use Overall Mean for Target
 
-**Syntax:** obj << Use Overall Mean for Target( state=0|1 )
+**Syntax:** obj &lt;&lt; Use Overall Mean for Target( state=0|1 )
 
 **Beschreibung:** Legt das Ziel am Gesamtmittelwert fest. Hinweis: Trifft nur zu, wenn das Ziel mit einer Spalteneigenschaft „Spez.-Grenzen“ für das Ziel festgelegt wird.
 
@@ -531,7 +531,7 @@ obj << Use Overall Mean for Target();
 
 ### Action
 
-**Syntax:** obj << Action
+**Syntax:** obj &lt;&lt; Action
 
 **Beschreibung:** Allzwecköffnung innerhalb einer Plattform zum Einfügen von auszuwertenden Ausdrücken. Setzt die Kontexte für Anzeigefeld und Datentabelle kurzzeitig auf die Plattform.
 
@@ -549,7 +549,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Syntax:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntax:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Beschreibung:** Wendet eine zuvor erstellte Voreinstellung auf das Objekt an und aktualisiert die Optionen und Anpassungen entsprechend den gespeicherten Einstellungen.
 
@@ -596,7 +596,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**Syntax:** obj << Automatic Recalc( state=0|1 )
+**Syntax:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Beschreibung:** Wiederholt die Analyse bei Ausschluss und Datenänderungen automatisch. Wenn die Option „Automatic Recalc“ eingeschaltet ist, sollten Sie in Betracht ziehen, Wait(0)-Befehle zu verwenden, um sicherzustellen, dass die Ausschlüsse und Datenänderungen vor der Neuberechnung wirksam werden.
 
@@ -612,7 +612,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**Syntax:** obj << Broadcast(message)
+**Syntax:** obj &lt;&lt; Broadcast(message)
 
 **Beschreibung:** Sendet eine Meldung an eine Plattform. Wenn es sich bei den zurückgegebenen Ergebnissen von einzelnen Objekten um Tabellen handelt, werden sie, wenn möglich, verkettet. Das endgültige Format ist entweder identisch mit dem Ergebnis der Option „Kombinierte Tabelle speichern“ in einem Tabellenfeld oder mit dem Ergebnis der Option „Verketten“ mithilfe einer Quellspalte. Ansonsten werden die Ergebnisse in einer Liste gespeichert und zurückgegeben.
 
@@ -632,7 +632,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Copy ByGroup Script
 
-**Syntax:** obj << Copy ByGroup Script
+**Syntax:** obj &lt;&lt; Copy ByGroup Script
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und legt es in der Zwischenablage ab.
 
@@ -652,7 +652,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Syntax:** obj << Copy Script
+**Syntax:** obj &lt;&lt; Copy Script
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und legt es in der Zwischenablage ab.
 
@@ -667,7 +667,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Syntax:** obj << Data Table Window
+**Syntax:** obj &lt;&lt; Data Table Window
 
 **Beschreibung:** Zeigt das Fenster mit der Datentabelle für diese Analyse im Vordergrund an.
 
@@ -682,7 +682,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Syntax:** obj << Get By Levels
+**Syntax:** obj &lt;&lt; Get By Levels
 
 **Beschreibung:** Gibt ein assoziatives Array zurück, das die Nach-Gruppenspalten ihren Werten zuordnet.
 
@@ -699,7 +699,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Syntax:** obj << Get ByGroup Script
+**Syntax:** obj &lt;&lt; Get ByGroup Script
 
 **Beschreibung:** Erstellt ein Skript (JSL) zum Erzeugen dieser Analyse und gibt es als Ausdruck zurück.
 
@@ -720,7 +720,7 @@ Show( t );
 
 ### Get Container
 
-**Syntax:** obj << Get Container
+**Syntax:** obj &lt;&lt; Get Container
 
 **Beschreibung:** Gibt einen Verweis auf das Containerfeld zurück, das den Inhalt des Objekts enthält.
 
@@ -767,7 +767,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Syntax:** obj << Get Data Table
+**Syntax:** obj &lt;&lt; Get Data Table
 
 **Beschreibung:** Gibt eine Referenz auf die Datentabelle zurück.
 
@@ -783,7 +783,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**Syntax:** obj << Get Group Platform
+**Syntax:** obj &lt;&lt; Get Group Platform
 
 **Beschreibung:** Plattformobjekt der Gruppe zurückgeben, wenn diese Plattform Teil einer Gruppe ist. Andernfalls wird Empty() zurückgegeben.
 
@@ -800,7 +800,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**Syntax:** obj << Get Script
+**Syntax:** obj &lt;&lt; Get Script
 
 **Beschreibung:** Erstellt ein Skript (JSL) zum Erzeugen dieser Analyse und gibt es als Ausdruck zurück.
 
@@ -816,7 +816,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Syntax:** obj << Get Script With Data Table
+**Syntax:** obj &lt;&lt; Get Script With Data Table
 
 **Beschreibung:** Erstellt ein Skript (JSL) zum Erzeugen dieser Analyse und referenziert dabei spezifisch diese Datentabelle und gibt das Skript als Ausdruck zurück.
 
@@ -832,7 +832,7 @@ Show( t );
 
 ### Get Timing
 
-**Syntax:** obj << Get Timing
+**Syntax:** obj &lt;&lt; Get Timing
 
 **Beschreibung:** Steuert den Start der Plattform zeitlich.
 
@@ -848,7 +848,7 @@ Show( t );
 
 ### Get Web Support
 
-**Syntax:** obj << Get Web Support
+**Syntax:** obj &lt;&lt; Get Web Support
 
 **Beschreibung:** Gibt eine Zahl zurück, die angibt, ob für das Anzeigeobjekt interaktive HTML unterstützt wird. 1 bedeutet einige oder alle Elemente werden unterstützt. 0 bedeutet keine Unterstützung.
 
@@ -864,7 +864,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Syntax:** obj << Get Where Expr
+**Syntax:** obj &lt;&lt; Get Where Expr
 
 **Beschreibung:** Gibt den Ausdruck Where für die Teilmenge der Daten zurück, wenn die Plattform mit By() oder Where() gestartet wurde. Andernfalls wird Empty() zurückgegeben.
 
@@ -937,7 +937,7 @@ preset = obj << New Preset();
 
 ### Redo Analysis
 
-**Syntax:** obj << Redo Analysis
+**Syntax:** obj &lt;&lt; Redo Analysis
 
 **Beschreibung:** Führt die gleiche Analyse in einem neuen Fenster aus. Die Analyse ist unterschiedlich, wenn sich die Daten verändert haben.
 
@@ -952,7 +952,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**Syntax:** obj << Redo ByGroup Analysis
+**Syntax:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Beschreibung:** Führt die gleiche Analyse in einem neuen Fenster aus. Die Analyse ist unterschiedlich, wenn sich die Daten verändert haben.
 
@@ -972,7 +972,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**Syntax:** obj << Relaunch Analysis
+**Syntax:** obj &lt;&lt; Relaunch Analysis
 
 **Beschreibung:** Öffnet das Plattform-Startfenster und ruft die Einstellungen ab, die zum Erstellen des Berichts verwendet wurden.
 
@@ -987,7 +987,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**Syntax:** obj << Relaunch ByGroup
+**Syntax:** obj &lt;&lt; Relaunch ByGroup
 
 **Beschreibung:** Öffnet das Plattform-Startfenster und ruft die Einstellungen ab, die zum Erstellen des Berichts verwendet wurden.
 
@@ -1024,9 +1024,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Syntax:** obj << Report;
-
-Report( obj )
+**Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Beschreibung:** Gibt eine Referenz auf das Berichtsobjekt zurück.
 
@@ -1043,7 +1041,7 @@ Show( t );
 
 ### Report View
 
-**Syntax:** obj << Report View( "Vollständig"|"Übersicht" )
+**Syntax:** obj &lt;&lt; Report View( "Vollständig"|"Übersicht" )
 
 **Beschreibung:** Die Berichtsanzeige legt das Detailniveau für einen Plattformbericht fest. Full zeigt alle Details an, während Summary abhängig von der Plattform nur ausgewählte Inhalte anzeigt. Für benutzerdefiniertes Verhalten unterstützen Anzeigefelder eine Meldung <<Set Summary Behavior.
 
@@ -1058,7 +1056,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**Syntax:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und speichert sie als Tabelleneigenschaft in der Datentabelle. Sie können einen Namen für das Skript angeben. Die Option Append Suffix hängt ein numerisches Suffix an den Skriptnamen an, das das Skript von einem vorhandenen Skript mit dem gleichen Namen unterscheidet. Die Option Prompt fordert den Benutzer auf, einen Skriptnamen anzugeben. Die Option Replace ersetzt ein vorhandenes Skript mit dem gleichen Namen.
 
@@ -1078,7 +1076,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Syntax:** obj << Save ByGroup Script to Journal
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und fügt eine Schaltfläche mit diesem Skript zum Journal hinzu.
 
@@ -1098,7 +1096,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Syntax:** obj << Save ByGroup Script to Script Window
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und hängt es an das Textfenster mit dem aktuellen Skript an.
 
@@ -1118,7 +1116,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**Syntax:** obj << Save Script for All Objects
+**Syntax:** obj &lt;&lt; Save Script for All Objects
 
 **Beschreibung:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -1133,7 +1131,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Syntax:** obj << Save Script for All Objects To Data Table( <name> )
+**Syntax:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Beschreibung:** Speichert ein Skript für alle Berichtsobjekte in der aktuellen Datentabelle. Diese Option ist nützlich, wenn Sie mehrere Berichte im Fenster haben. Das Skript wird nach der ersten Plattform benannt, sofern Sie keine Skriptnamen in Anführungszeichen angeben.
 
@@ -1171,7 +1169,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Syntax:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und speichert es als Tabelleneigenschaft in der Datentabelle.
 
@@ -1186,7 +1184,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Syntax:** obj << Save Script to Journal
+**Syntax:** obj &lt;&lt; Save Script to Journal
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und fügt eine Schaltfläche mit diesem Skript zum Journal hinzu.
 
@@ -1201,7 +1199,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Syntax:** obj << Save Script to Report
+**Syntax:** obj &lt;&lt; Save Script to Report
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und zeigt es im Bericht selbst an. Nützlich zum Anlegen eines gedruckten Nachweises der durchgeführten Aktivitäten.
 
@@ -1216,7 +1214,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Syntax:** obj << Save Script to Script Window
+**Syntax:** obj &lt;&lt; Save Script to Script Window
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und hängt es an das Textfenster mit dem aktuellen Skript an.
 
@@ -1296,7 +1294,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Syntax:** obj << Sync to Data Table Changes
+**Syntax:** obj &lt;&lt; Sync to Data Table Changes
 
 **Beschreibung:** Mit Ausgeschlossenen und vorgenommenen Datenänderungen synchronisieren.
 
@@ -1313,7 +1311,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Syntax:** obj << Title( "new title" )
+**Syntax:** obj &lt;&lt; Title( "new title" )
 
 **Beschreibung:** Legt den Titel für die Plattform fest.
 
@@ -1328,7 +1326,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Syntax:** obj << Top Report
+**Syntax:** obj &lt;&lt; Top Report
 
 **Beschreibung:** Gibt eine Referenz auf den Stammknoten im Bericht zurück.
 
@@ -1345,7 +1343,7 @@ Show( t );
 
 ### Transform Column
 
-**Syntax:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Syntax:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Beschreibung:** Transformationsspalte im lokalen Kontext eines Objekts erstellen, üblicherweise als Plattform. Die Transformationsspalte ist nur für die Lebensdauer der Plattform aktiv.
 
@@ -1366,7 +1364,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**Syntax:** obj << View Web XML
+**Syntax:** obj &lt;&lt; View Web XML
 
 **Beschreibung:** Gibt den XML-Code zurück, der zum Erstellen des interaktiven HTML-Berichts verwendet wird.
 
@@ -1381,9 +1379,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**Syntax:** obj = EWMA Control Chart(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = EWMA Control Chart(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Typ des Fensters festlegen, das für den Bericht erstellt werden soll. Standardmäßig wird ein Berichtsfenster vom Typ Visible erstellt. Ein Fenster vom Typ Invisible wird auf dem Bildschirm nicht angezeigt, kann jedoch von Funktionen wie Window() erkannt werden. Ein Fenster vom Typ Private reagiert auf die meisten Fenstermeldungen, kann jedoch nicht erkannt werden und muss über das Berichtsobjekt adressiert werden.
 
@@ -1404,7 +1400,7 @@ New Window( "Bivariate Equation",
 
 ### By
 
-**Syntax:** obj = EWMA Control Chart(...<By( column(s) )>...)
+**Syntax:** obj = EWMA Control Chart(...&lt;By( column(s) )&gt;...)
 
 **Beschreibung:** Gibt die Nach-Spalte beim Starten an.
 
@@ -1427,7 +1423,7 @@ obj = dt << EWMA Control Chart( Y( :Gap ), By( _bycol ) );
 
 ### Subgroup
 
-**Syntax:** obj = EWMA Control Chart(...<Subgroup( column )>...)
+**Syntax:** obj = EWMA Control Chart(...&lt;Subgroup( column )&gt;...)
 
 **Beschreibung:** Gibt die Untergruppenspalte beim Start an.
 
@@ -1465,7 +1461,7 @@ obj = dt << EWMA Control Chart( Y( :Gap ) );
 
 ### EWMA Control Chart
 
-**Syntax:** EWMA Control Chart( Y( column ), <Subgroup( column )>, <By( column )>, <Center Data( 1 )> )
+**Syntax:** EWMA Control Chart( Y( column ), &lt;Subgroup( column )&gt;, &lt;By( column )&gt;, &lt;Center Data( 1 )&gt; )
 
 **Beschreibung:** Erstellt eine Regelkarte, die die exponentiell gewichteten gleitenden Mittelwerte darstellt, und eine Regelkarte, die entweder die einzelnen Beobachtungen oder die Mittelwerte der Untergruppen darstellt. Eine EWMA-Regelkarte wird auch Feedback-Qualitätsregelkarte genannt.
 

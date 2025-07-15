@@ -6,7 +6,7 @@
 
 ### Action
 
-**语法:** obj << Action
+**语法:** obj &lt;&lt; Action
 
 **说明:** 平台内用于插入表达式以求值的所有用途的陷门。暂时将 DisplayBox 和 DataTable 上下文设置为平台。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**语法:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**语法:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **说明:** 将以前创建的预设应用到对象，从而更新选项和定制以匹配保存的设置。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**语法:** obj << Automatic Recalc( state=0|1 )
+**语法:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **说明:** 对排除和数据更改自动重新执行分析。若启用了“自动重新计算”选项，则应考虑使用 Wait(0) 命令来确保排除和数据更改在重新计算前生效。
 
@@ -96,7 +96,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**语法:** obj << Broadcast(message)
+**语法:** obj &lt;&lt; Broadcast(message)
 
 **说明:** 将消息广播到平台。若各个对象的返回结果是表，则它们会尽可能拼接，并且最终格式与表框中“保存合并表”选项的结果或使用“源”列的“拼接”选项的结果相同。除此之外，结果存储在列表中并返回。
 
@@ -116,7 +116,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**语法:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**语法:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **说明:** 添加用于更改平台变量的控制面板
 
@@ -134,7 +134,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**语法:** obj << Copy ByGroup Script
+**语法:** obj &lt;&lt; Copy ByGroup Script
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其置于剪贴板上。
 
@@ -164,7 +164,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**语法:** obj << Copy Script
+**语法:** obj &lt;&lt; Copy Script
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其置于剪贴板上。
 
@@ -188,7 +188,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**语法:** obj << Data Table Window
+**语法:** obj &lt;&lt; Data Table Window
 
 **说明:** 将该分析的数据表窗口移动到前面。
 
@@ -212,7 +212,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**语法:** obj << Get By Levels
+**语法:** obj &lt;&lt; Get By Levels
 
 **说明:** 返回将“依据”组列映射到其值的关联数组。
 
@@ -229,7 +229,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**语法:** obj << Get ByGroup Script
+**语法:** obj &lt;&lt; Get ByGroup Script
 
 **说明:** 创建生成该分析的脚本 (JSL)，并将其作为表达式返回。
 
@@ -260,7 +260,7 @@ Show( t );
 
 ### Get Container
 
-**语法:** obj << Get Container
+**语法:** obj &lt;&lt; Get Container
 
 **说明:** 返回对保留对象内容的容器框的引用。
 
@@ -316,7 +316,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**语法:** obj << Get Data Table
+**语法:** obj &lt;&lt; Get Data Table
 
 **说明:** 返回对该数据表的引用。
 
@@ -341,7 +341,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**语法:** obj << Get Group Platform
+**语法:** obj &lt;&lt; Get Group Platform
 
 **说明:** 若该平台是组的一部分，则返回组平台对象。否则返回 Empty()。
 
@@ -358,7 +358,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**语法:** obj << Get Script
+**语法:** obj &lt;&lt; Get Script
 
 **说明:** 创建生成该分析的脚本 (JSL)，并将其作为表达式返回。
 
@@ -383,7 +383,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**语法:** obj << Get Script With Data Table
+**语法:** obj &lt;&lt; Get Script With Data Table
 
 **说明:** 创建生成该分析的脚本 (JSL) 以专门引用该数据表，并将其作为表达式返回。
 
@@ -408,7 +408,7 @@ Show( t );
 
 ### Get Timing
 
-**语法:** obj << Get Timing
+**语法:** obj &lt;&lt; Get Timing
 
 **说明:** 平台启动过程计时。
 
@@ -433,7 +433,7 @@ Show( t );
 
 ### Get Web Support
 
-**语法:** obj << Get Web Support
+**语法:** obj &lt;&lt; Get Web Support
 
 **说明:** 返回一个数字，指示显示对象的交互式 HTML 支持的水平。1 表示支持部分或全部元素。0 表示不支持。
 
@@ -449,7 +449,7 @@ Show( s );
 
 ### Get Where Expr
 
-**语法:** obj << Get Where Expr
+**语法:** obj &lt;&lt; Get Where Expr
 
 **说明:** 若平台是使用 By() 或 Where() 启动的，则返回数据子集的 Where 表达式。否则返回 Empty()
 
@@ -486,7 +486,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**语法:** obj << Local Data Filter
+**语法:** obj &lt;&lt; Local Data Filter
 
 **说明:** 将数据过滤到特定的组或范围，但在该平台中是本地的
 
@@ -542,7 +542,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**语法:** obj << Paste Local Data Filter
+**语法:** obj &lt;&lt; Paste Local Data Filter
 
 **说明:** 将剪贴板中的本地数据过滤器应用于当前报表。
 
@@ -563,7 +563,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**语法:** obj << Redo Analysis
+**语法:** obj &lt;&lt; Redo Analysis
 
 **说明:** 在新窗口中重新运行相同的分析。若数据发生更改，分析也将不同。
 
@@ -587,7 +587,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**语法:** obj << Redo ByGroup Analysis
+**语法:** obj &lt;&lt; Redo ByGroup Analysis
 
 **说明:** 在新窗口中重新运行相同的分析。若数据发生更改，分析也将不同。
 
@@ -617,7 +617,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**语法:** obj << Relaunch Analysis
+**语法:** obj &lt;&lt; Relaunch Analysis
 
 **说明:** 打开平台启动窗口并重新调用曾用于创建报表的设置。
 
@@ -641,7 +641,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**语法:** obj << Relaunch ByGroup
+**语法:** obj &lt;&lt; Relaunch ByGroup
 
 **说明:** 打开平台启动窗口并重新调用曾用于创建报表的设置。
 
@@ -671,7 +671,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**语法:** obj << Remove Column Switcher
+**语法:** obj &lt;&lt; Remove Column Switcher
 
 **说明:** 删除已添加至平台的最近使用的“列切换器”。
 
@@ -691,7 +691,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**语法:** obj << Remove Local Data Filter
+**语法:** obj &lt;&lt; Remove Local Data Filter
 
 **说明:** 若已创建本地数据过滤器，这会将它删除并将平台恢复为直接使用数据表中的所有数据
 
@@ -730,9 +730,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**语法:** obj << Report;
-
-Report( obj )
+**语法:** obj &lt;&lt; Report;Report( obj )
 
 **说明:** 返回对该报表对象的引用。
 
@@ -758,7 +756,7 @@ Show( t );
 
 ### Report View
 
-**语法:** obj << Report View( "完全"|"汇总" )
+**语法:** obj &lt;&lt; Report View( "完全"|"汇总" )
 
 **说明:** 报表视图确定平台报表中可见的详细程度。Full 显示所有详细信息，而 Summary 仅显示根据平台确定的选定内容。对于定制行为，显示框支持 <<Set Summary Behavior 消息。
 
@@ -782,7 +780,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**语法:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**语法:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **说明:** 创建生成该分析的 JSL 脚本并将其保存为数据表中的表属性。您可以为脚本指定一个名称。Append Suffix 选项在脚本名称后追加一个数字后缀，用于将该脚本与现有的同名脚本区别出来。Prompt 选项提示用户指定脚本名称。Replace 选项会替换同名的现有脚本。
 
@@ -812,7 +810,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**语法:** obj << Save ByGroup Script to Journal
+**语法:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **说明:** 创建生成该分析的 JSL 脚本，并将一个按钮添加至包含该脚本的记录中。
 
@@ -842,7 +840,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**语法:** obj << Save ByGroup Script to Script Window
+**语法:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其追加至当前的脚本文本窗口中。
 
@@ -872,7 +870,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**语法:** obj << Save Script for All Objects
+**语法:** obj &lt;&lt; Save Script for All Objects
 
 **说明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -896,7 +894,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**语法:** obj << Save Script for All Objects To Data Table( <name> )
+**语法:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **说明:** 将所有报表对象的脚本保存至当前数据表。当您在该窗口中具有多个报表时，该选项很有用。除非您在引号中指定脚本名称，否则脚本将以第一个平台命名。
 
@@ -954,7 +952,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**语法:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**语法:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其作为表属性保存至数据表中。
 
@@ -978,7 +976,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**语法:** obj << Save Script to Journal
+**语法:** obj &lt;&lt; Save Script to Journal
 
 **说明:** 创建生成该分析的 JSL 脚本，并将一个按钮添加至包含该脚本的记录中。
 
@@ -1002,7 +1000,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**语法:** obj << Save Script to Report
+**语法:** obj &lt;&lt; Save Script to Report
 
 **说明:** 创建生成该分析的 JSL 脚本，并在报表中显示。有助于保留打印的已完成操作记录。
 
@@ -1026,7 +1024,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**语法:** obj << Save Script to Script Window
+**语法:** obj &lt;&lt; Save Script to Script Window
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其追加至当前的脚本文本窗口中。
 
@@ -1115,7 +1113,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**语法:** obj << Sync to Data Table Changes
+**语法:** obj &lt;&lt; Sync to Data Table Changes
 
 **说明:** 与已进行的排除和数据的更改同步。
 
@@ -1132,7 +1130,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**语法:** obj << Title( "new title" )
+**语法:** obj &lt;&lt; Title( "new title" )
 
 **说明:** 设置平台的标题。
 
@@ -1156,7 +1154,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**语法:** obj << Top Report
+**语法:** obj &lt;&lt; Top Report
 
 **说明:** 返回对报表中根节点的引用。
 
@@ -1182,7 +1180,7 @@ Show( t );
 
 ### Transform Column
 
-**语法:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**语法:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **说明:** 在对象（通常是平台）的本地上下文中创建变换列。变换列仅在平台的生命周期内是活动的。
 
@@ -1203,7 +1201,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**语法:** obj << View Web XML
+**语法:** obj &lt;&lt; View Web XML
 
 **说明:** 返回用于创建交互式 HTML 报表的 XML 代码。
 
@@ -1218,9 +1216,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**语法:** obj = Bootstrap Forest(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Bootstrap Forest(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 设置要为报表创建的窗口类型。默认情况下将创建 Visible 报表窗口。Invisible 窗口将不显示在屏幕上，但可被函数（例如 Window()）发现。Private 窗口会响应大多数窗口消息，但不可发现并且必须通过报表对象处理
 
@@ -1266,7 +1262,7 @@ obj = dt << Bootstrap Forest(
 
 ### By
 
-**语法:** obj << By( column(s) )
+**语法:** obj &lt;&lt; By( column(s) )
 
 ```jsl
 
@@ -1293,7 +1289,7 @@ obj = dt << Bootstrap Forest(
 
 ### Factor
 
-**语法:** obj << Factor( column(s) )
+**语法:** obj &lt;&lt; Factor( column(s) )
 
 ```jsl
 
@@ -1314,7 +1310,7 @@ obj = dt << Bootstrap Forest(
 
 ### Freq
 
-**语法:** obj << Freq( column )
+**语法:** obj &lt;&lt; Freq( column )
 
 ```jsl
 
@@ -1337,7 +1333,7 @@ obj = dt << Bootstrap Forest(
 
 ### Response
 
-**语法:** obj << Response( column(s) )
+**语法:** obj &lt;&lt; Response( column(s) )
 
 ```jsl
 
@@ -1358,7 +1354,7 @@ obj = dt << Bootstrap Forest(
 
 ### Validation
 
-**语法:** obj << Validation( column )
+**语法:** obj &lt;&lt; Validation( column )
 
 ```jsl
 
@@ -1379,7 +1375,7 @@ obj = dt << Bootstrap Forest(
 
 ### Weight
 
-**语法:** obj << Weight( column )
+**语法:** obj &lt;&lt; Weight( column )
 
 ```jsl
 
@@ -1402,7 +1398,7 @@ obj = dt << Bootstrap Forest(
 
 ### X
 
-**语法:** obj << X( column(s) )
+**语法:** obj &lt;&lt; X( column(s) )
 
 ```jsl
 
@@ -1423,7 +1419,7 @@ obj = dt << Bootstrap Forest(
 
 ### Y
 
-**语法:** obj << Y( column(s) )
+**语法:** obj &lt;&lt; Y( column(s) )
 
 ```jsl
 
@@ -1446,7 +1442,7 @@ obj = dt << Bootstrap Forest(
 
 ### Column Contributions
 
-**语法:** obj << Column Contributions( state=0|1 )
+**语法:** obj &lt;&lt; Column Contributions( state=0|1 )
 
 **说明:** 显示或隐藏包含每个输入列及其对拟合相应贡献的报表。
 
@@ -1470,7 +1466,7 @@ obj << Column Contributions( 1 );
 
 ### Decision Threshold
 
-**语法:** obj << Decision Threshold( state = 0|1, Set Probability Threshold( number ) )
+**语法:** obj &lt;&lt; Decision Threshold( state = 0|1, Set Probability Threshold( number ) )
 
 **说明:** 显示或隐藏每个模型的拟合概率分布和预测值 - 实际值表。您可以更改概率阈值，以探索不同的阈值如何影响分类结果。
 
@@ -1491,7 +1487,7 @@ obj << Decision Threshold( 1 );
 
 ### Early Stopping
 
-**语法:** obj << Early Stopping( state=0|1 )
+**语法:** obj &lt;&lt; Early Stopping( state=0|1 )
 
 **说明:** 当额外的层不能改善验证统计量时，将提前停止迭代。 默认开启。
 
@@ -1512,7 +1508,7 @@ obj = dt << Bootstrap Forest(
 
 ### Get Average Absolute Error Test
 
-**语法:** obj << Get Average Absolute Error Test
+**语法:** obj &lt;&lt; Get Average Absolute Error Test
 
 **说明:** 返回测试集的绝对偏差的均值统计量。 仅在使用验证集时可用。
 
@@ -1597,7 +1593,7 @@ Show( aabs );
 
 ### Get Average Absolute Error Training
 
-**语法:** obj << Get Average Absolute Error Training
+**语法:** obj &lt;&lt; Get Average Absolute Error Training
 
 **说明:** 返回训练集的绝对偏差的均值统计量。
 
@@ -1668,7 +1664,7 @@ Show( aabs );
 
 ### Get Average Absolute Error Validation
 
-**语法:** obj << Get Average Absolute Error Validation
+**语法:** obj &lt;&lt; Get Average Absolute Error Validation
 
 **说明:** 返回验证集的绝对偏差的均值统计量。 仅在使用验证集时可用。
 
@@ -1743,7 +1739,7 @@ Show( aabs );
 
 ### Get Average Log Error Test
 
-**语法:** obj << Get Average Log Error Test
+**语法:** obj &lt;&lt; Get Average Log Error Test
 
 **说明:** 返回测试集的 -log(p) 均值，其中 p 等于归因于模型的响应实际发生的概率。 仅在使用验证集时可用。
 
@@ -1829,7 +1825,7 @@ Show( avg );
 
 ### Get Average Log Error Training
 
-**语法:** obj << Get Average Log Error Training
+**语法:** obj &lt;&lt; Get Average Log Error Training
 
 **说明:** 返回训练集的 -log(p) 均值，其中 p 等于模型归因的响应实际发生的概率。
 
@@ -1900,7 +1896,7 @@ Show( avg );
 
 ### Get Average Log Error Validation
 
-**语法:** obj << Get Average Log Error Validation
+**语法:** obj &lt;&lt; Get Average Log Error Validation
 
 **说明:** 返回验证集的 -log(p) 均值，其中 p 等于模型归因的响应实际发生的概率。 仅在使用验证集时可用。
 
@@ -1976,7 +1972,7 @@ Show( avg );
 
 ### Get Confusion Matrix Test
 
-**语法:** obj << Get Confusion Matrix Test
+**语法:** obj &lt;&lt; Get Confusion Matrix Test
 
 **说明:** 返回测试集的混淆矩阵。 仅在使用验证集时可用。
 
@@ -2061,7 +2057,7 @@ Show( cm );
 
 ### Get Confusion Matrix Training
 
-**语法:** obj << Get Confusion Matrix Training
+**语法:** obj &lt;&lt; Get Confusion Matrix Training
 
 **说明:** 返回训练集的混淆矩阵。
 
@@ -2138,7 +2134,7 @@ Show( cm );
 
 ### Get Confusion Matrix Validation
 
-**语法:** obj << Get Confusion Matrix Validation
+**语法:** obj &lt;&lt; Get Confusion Matrix Validation
 
 **说明:** 返回验证集的混淆矩阵。 仅在使用验证集时可用。
 
@@ -2216,7 +2212,7 @@ Show( cm );
 
 ### Get Confusion Rates Test
 
-**语法:** obj << Get Confusion Rates Test
+**语法:** obj &lt;&lt; Get Confusion Rates Test
 
 **说明:** 返回测试集的混淆率。 仅在使用验证集时可用。
 
@@ -2301,7 +2297,7 @@ Show( cr );
 
 ### Get Confusion Rates Training
 
-**语法:** obj << Get Confusion Rates Training
+**语法:** obj &lt;&lt; Get Confusion Rates Training
 
 **说明:** 返回训练集的混淆率。
 
@@ -2378,7 +2374,7 @@ Show( cr );
 
 ### Get Confusion Rates Validation
 
-**语法:** obj << Get Confusion Rates Validation
+**语法:** obj &lt;&lt; Get Confusion Rates Validation
 
 **说明:** 返回验证集的混淆率。 仅在使用验证集时可用。
 
@@ -2456,7 +2452,7 @@ Show( cr );
 
 ### Get Gen RSquare Test
 
-**语法:** obj << Get Gen RSquare Test
+**语法:** obj &lt;&lt; Get Gen RSquare Test
 
 **说明:** 返回测试集的广义 R 方。 仅在使用验证集时可用。
 
@@ -2541,7 +2537,7 @@ Show( r );
 
 ### Get Gen RSquare Training
 
-**语法:** obj << Get Gen RSquare Training
+**语法:** obj &lt;&lt; Get Gen RSquare Training
 
 **说明:** 返回训练集的广义 R 方。
 
@@ -2618,7 +2614,7 @@ Show( r );
 
 ### Get Gen RSquare Validation
 
-**语法:** obj << Get Gen RSquare Validation
+**语法:** obj &lt;&lt; Get Gen RSquare Validation
 
 **说明:** 返回验证集的广义 R 方。 仅在使用验证集时可用。
 
@@ -2696,7 +2692,7 @@ Show( r );
 
 ### Get MM SAS DATA Step
 
-**语法:** obj << Get MM SAS DATA Step
+**语法:** obj &lt;&lt; Get MM SAS DATA Step
 
 **说明:** 创建可在 SAS Model Manager 中注册的 SAS 代码，并将其返回到“日志”窗口。
 
@@ -2720,7 +2716,7 @@ code = obj << Get MM SAS Data Step;
 
 ### Get MM Tolerant SAS DATA Step
 
-**语法:** obj << Get MM Tolerant SAS DATA Step
+**语法:** obj &lt;&lt; Get MM Tolerant SAS DATA Step
 
 **说明:** 为包含缺失值的数据创建可在 SAS Model Manager 中注册的 SAS 代码，并将其返回到日志窗口。
 
@@ -2744,7 +2740,7 @@ code = obj << Get MM Tolerant SAS Data Step;
 
 ### Get Measures
 
-**语法:** obj << Get Measures
+**语法:** obj &lt;&lt; Get Measures
 
 **说明:** 从模型返回拟合测度汇总。
 
@@ -2770,7 +2766,7 @@ obj << Get Measures;
 
 ### Get Microseconds
 
-**语法:** obj << Get Microseconds
+**语法:** obj &lt;&lt; Get Microseconds
 
 **说明:** 返回完成分析所用的毫秒数。
 
@@ -2795,7 +2791,7 @@ Show( time );
 
 ### Get Misclassification Rate Test
 
-**语法:** obj << Get Misclassification Rate Test
+**语法:** obj &lt;&lt; Get Misclassification Rate Test
 
 **说明:** 返回测试集的误分类率。 仅在使用验证集时可用。
 
@@ -2880,7 +2876,7 @@ Show( rate );
 
 ### Get Misclassification Rate Training
 
-**语法:** obj << Get Misclassification Rate Training
+**语法:** obj &lt;&lt; Get Misclassification Rate Training
 
 **说明:** 返回训练集的误分类率。
 
@@ -2952,7 +2948,7 @@ Show( rate );
 
 ### Get Misclassification Rate Validation
 
-**语法:** obj << Get Misclassification Rate Validation
+**语法:** obj &lt;&lt; Get Misclassification Rate Validation
 
 **说明:** 返回验证集的误分类率。 仅在使用验证集时可用。
 
@@ -3031,7 +3027,7 @@ Show( rate );
 
 ### Get Precision Recall Area Test
 
-**语法:** obj << Get Precision Recall Area Test
+**语法:** obj &lt;&lt; Get Precision Recall Area Test
 
 **说明:** 返回测试集的精度-召回曲线下的面积。精度-召回曲线必须在计算面积之前显示。 仅在使用验证集时可用。
 
@@ -3095,7 +3091,7 @@ Show( area );
 
 ### Get Precision Recall Area Training
 
-**语法:** obj << Get Precision Recall Area Training
+**语法:** obj &lt;&lt; Get Precision Recall Area Training
 
 **说明:** 返回训练集的精度-召回曲线下的面积。精度-召回曲线必须在计算面积之前显示。
 
@@ -3155,7 +3151,7 @@ Show( area );
 
 ### Get Precision Recall Area Validation
 
-**语法:** obj << Get Precision Recall Area Validation
+**语法:** obj &lt;&lt; Get Precision Recall Area Validation
 
 **说明:** 返回验证集的精度-召回曲线下的面积。精度-召回曲线必须在计算面积之前显示。 仅在使用验证集时可用。
 
@@ -3216,7 +3212,7 @@ Show( area );
 
 ### Get Prediction Formula
 
-**语法:** obj << Get Prediction Formula
+**语法:** obj &lt;&lt; Get Prediction Formula
 
 **说明:** 构造一个脚本，以便创建预测公式列并返回它。
 
@@ -3240,7 +3236,7 @@ obj << Get Prediction Formula;
 
 ### Get RMS Error Test
 
-**语法:** obj << Get RMS Error Test
+**语法:** obj &lt;&lt; Get RMS Error Test
 
 **说明:** 返回检验误差的均方平方根。 仅在使用验证集时可用。
 
@@ -3265,7 +3261,7 @@ Show( rms );
 
 ### Get RMS Error Training
 
-**语法:** obj << Get RMS Error Training
+**语法:** obj &lt;&lt; Get RMS Error Training
 
 **说明:** 返回训练误差的均方平方根。
 
@@ -3290,7 +3286,7 @@ Show( rms );
 
 ### Get RMS Error Validation
 
-**语法:** obj << Get RMS Error Validation
+**语法:** obj &lt;&lt; Get RMS Error Validation
 
 **说明:** 返回验证误差的均方平方根。 仅在使用验证集时可用。
 
@@ -3315,7 +3311,7 @@ Show( rms );
 
 ### Get ROC Area Test
 
-**语法:** obj << Get ROC Area Test
+**语法:** obj &lt;&lt; Get ROC Area Test
 
 **说明:** 返回测试数据的受试者操作特征 (ROC) 曲线下的面积。首先需要显示 ROC 曲线，然后才会计算该面积。 仅在使用验证集时可用。
 
@@ -3379,7 +3375,7 @@ Show( area );
 
 ### Get ROC Area Training
 
-**语法:** obj << Get ROC Area Training
+**语法:** obj &lt;&lt; Get ROC Area Training
 
 **说明:** 返回训练数据集的受试者操作特征 (ROC) 曲线下的面积。首先需要显示 ROC 曲线，然后才会计算该面积。
 
@@ -3439,7 +3435,7 @@ Show( area );
 
 ### Get ROC Area Validation
 
-**语法:** obj << Get ROC Area Validation
+**语法:** obj &lt;&lt; Get ROC Area Validation
 
 **说明:** 返回验证数据集的受试者操作特征 (ROC) 曲线下的面积。首先需要显示 ROC 曲线，然后才会计算该面积。 仅在使用验证集时可用。
 
@@ -3500,7 +3496,7 @@ Show( area );
 
 ### Get RSquare Test
 
-**语法:** obj << Get RSquare Test
+**语法:** obj &lt;&lt; Get RSquare Test
 
 **说明:** 返回测试集的 R 方。 仅在使用验证集时可用。
 
@@ -3525,7 +3521,7 @@ Show( r );
 
 ### Get RSquare Training
 
-**语法:** obj << Get RSquare Training
+**语法:** obj &lt;&lt; Get RSquare Training
 
 **说明:** 返回训练集的 R 方。
 
@@ -3550,7 +3546,7 @@ Show( r );
 
 ### Get RSquare Validation
 
-**语法:** obj << Get RSquare Validation
+**语法:** obj &lt;&lt; Get RSquare Validation
 
 **说明:** 返回验证集的 R 方。 仅在使用验证集时可用。
 
@@ -3575,7 +3571,7 @@ Show( r );
 
 ### Get SAS DATA Step
 
-**语法:** obj << Get SAS DATA Step
+**语法:** obj &lt;&lt; Get SAS DATA Step
 
 **说明:** 创建 SAS DATA 步以便对数据评分，并将其返回到“日志”窗口。
 
@@ -3599,7 +3595,7 @@ code = obj << Get SAS Data Step;
 
 ### Get Seconds
 
-**语法:** obj << Get Seconds
+**语法:** obj &lt;&lt; Get Seconds
 
 **说明:** 返回完成分析所用的秒数。
 
@@ -3624,7 +3620,7 @@ Show( time );
 
 ### Get Tolerant Prediction Formula
 
-**语法:** obj << Get Tolerant Prediction Formula
+**语法:** obj &lt;&lt; Get Tolerant Prediction Formula
 
 **说明:** 构造一个脚本，以便创建容差预测公式列并返回它。
 
@@ -3648,7 +3644,7 @@ obj << Get Tolerant Prediction Formula;
 
 ### Get Tolerant SAS DATA Step
 
-**语法:** obj << Get Tolerant SAS DATA Step
+**语法:** obj &lt;&lt; Get Tolerant SAS DATA Step
 
 **说明:** 创建 SAS DATA 步以便对包含缺失值的数据进行评分，并将其返回到“日志”窗口。缺失值被随机分配给树分支。
 
@@ -3672,7 +3668,7 @@ code = obj << Get Tolerant SAS Data Step;
 
 ### Go
 
-**语法:** obj << Go
+**语法:** obj &lt;&lt; Go
 
 **说明:** 在所有参数均已设置之后开始迭代。
 
@@ -3695,9 +3691,7 @@ obj = dt << Bootstrap Forest(
 
 ### Informative Missing
 
-**语法:** obj = Bootstrap Forest(...Informative Missing( state=0|1 )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Bootstrap Forest(...Informative Missing( state=0|1 )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 对于分类变量，将缺失视为一个类别。对于连续变量，将缺失视为低或高（取拟合较优者）。 默认开启。
 
@@ -3754,7 +3748,7 @@ obj = dt << Uplift(
 
 ### Lift Curve
 
-**语法:** obj << Lift Curve( state=0|1 )
+**语法:** obj &lt;&lt; Lift Curve( state=0|1 )
 
 **说明:** 显示或隐藏“提升曲线”图。提升曲线绘制提升与观测对应部分的关系，并提供另一种方式来展示模型预测的能力。若您使用了验证，则会为训练集、验证集和测试集分别显示一个图。
 
@@ -3773,7 +3767,7 @@ obj << Lift Curve( 1 );
 
 ### Make SAS DATA Step
 
-**语法:** obj << Make SAS DATA Step
+**语法:** obj &lt;&lt; Make SAS DATA Step
 
 **说明:** 创建 SAS DATA 步以便对数据评分，并将其返回到脚本窗口。
 
@@ -3797,7 +3791,7 @@ obj << Make SAS Data Step;
 
 ### Make Tolerant SAS DATA Step
 
-**语法:** obj << Make Tolerant SAS DATA Step
+**语法:** obj &lt;&lt; Make Tolerant SAS DATA Step
 
 **说明:** 创建 SAS DATA 步以便对包含缺失值的数据进行评分，并将其返回到脚本窗口。缺失值被随机分配给树分支。
 
@@ -3821,7 +3815,7 @@ obj << Make Tolerant SAS Data Step;
 
 ### Maximum Number of Terms
 
-**语法:** obj << Maximum Number of Terms( number )
+**语法:** obj &lt;&lt; Maximum Number of Terms( number )
 
 **说明:** 设置运行多个模型时尝试使用的最大项数。
 
@@ -3864,9 +3858,7 @@ obj = dt << Bootstrap Forest(
 
 ### Method
 
-**语法:** Method( "Bootstrap Forest" )
-
-<b>启动窗口项: 是</b>
+**语法:** Method( "Bootstrap Forest" )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 确定用于分割数据的方法。“决策树”是默认方法。
 
@@ -4032,9 +4024,7 @@ obj = dt << Bootstrap Forest(
 
 ### Ordinal Restricts Order
 
-**语法:** obj = Bootstrap Forest(...Ordinal Restricts Order( state=0|1 )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Bootstrap Forest(...Ordinal Restricts Order( state=0|1 )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 对于有序型列，仅考虑保留顺序的拆分。 默认开启。
 
@@ -4087,7 +4077,7 @@ obj = dt << Uplift(
 
 ### Plot Actual by Predicted
 
-**语法:** obj << Plot Actual by Predicted( state=0|1 )
+**语法:** obj &lt;&lt; Plot Actual by Predicted( state=0|1 )
 
 **说明:** 显示或隐藏使用训练数据的图，其中 X 轴标绘预测值，Y 轴标绘实际值。
 
@@ -4134,7 +4124,7 @@ obj = dt << Bootstrap Forest(
 
 ### Precision Recall Curve
 
-**语法:** obj << Precision Recall Curve( state=0|1 )
+**语法:** obj &lt;&lt; Precision Recall Curve( state=0|1 )
 
 **说明:** 显示或隐藏“精度-召回曲线”图，它包含响应变量每个水平的曲线。精度-召回曲线绘制不同阈值下的精度值和召回值。若您使用了验证，则会为训练集、验证集和测试集分别显示一个图。
 
@@ -4153,7 +4143,7 @@ obj << Precision Recall Curve( 1 );
 
 ### Profiler
 
-**语法:** obj << Profiler( state=0|1 )
+**语法:** obj &lt;&lt; Profiler( state=0|1 )
 
 **说明:** 显示或隐藏预测刻画器，它用于通过从预测方程中一次分离出一个因子来图形化探索该预测方程。预测刻画器包含进行优化的特征。
 
@@ -4173,7 +4163,7 @@ obj << Profiler( 1 );
 
 ### Publish Prediction Formula
 
-**语法:** obj << Publish Prediction Formula
+**语法:** obj &lt;&lt; Publish Prediction Formula
 
 **说明:** 创建预测公式并将它们保存为“公式存储库”平台中的公式列脚本。
 
@@ -4197,7 +4187,7 @@ obj << Publish Prediction Formula;
 
 ### Publish Tolerant Prediction Formula
 
-**语法:** obj << Publish Tolerant Prediction Formula
+**语法:** obj &lt;&lt; Publish Tolerant Prediction Formula
 
 **说明:** 生成即使有缺失值时仍能进行预测的预测公式，并将其发布为“公式存储库”中的公式列脚本。
 
@@ -4221,7 +4211,7 @@ obj << Publish Tolerant Prediction Formula;
 
 ### ROC Curve
 
-**语法:** obj << ROC Curve( state=0|1 )
+**语法:** obj &lt;&lt; ROC Curve( state=0|1 )
 
 **说明:** 显示或隐藏响应变量每个水平的“受试者操作特征”(ROC) 曲线。ROC 曲线是（1 - 特异度）-灵敏度图。若您使用了验证，则会为训练集、验证集和测试集分别显示一个图。
 
@@ -4240,7 +4230,7 @@ obj << ROC Curve( 1 );
 
 ### Save Cumulative Details
 
-**语法:** obj << Save Cumulative Details
+**语法:** obj &lt;&lt; Save Cumulative Details
 
 **说明:** 在新数据表中保存验证 R 方以及树编号。仅在使用验证列时可用。
 
@@ -4264,7 +4254,7 @@ obj << Save Cumulative Details;
 
 ### Save Predicteds
 
-**语法:** obj << Save Predicteds
+**语法:** obj &lt;&lt; Save Predicteds
 
 **说明:** 在数据表的新列中保存预测值。
 
@@ -4288,7 +4278,7 @@ obj << Save Predicteds;
 
 ### Save Prediction Formula
 
-**语法:** obj << Save Prediction Formula
+**语法:** obj &lt;&lt; Save Prediction Formula
 
 **说明:** 在数据表的新列中保存预测公式。
 
@@ -4312,7 +4302,7 @@ obj << Save Prediction Formula;
 
 ### Save Residuals
 
-**语法:** obj << Save Residuals
+**语法:** obj &lt;&lt; Save Residuals
 
 **说明:** 在数据表的新列中保存残差。
 
@@ -4336,7 +4326,7 @@ obj << Save Residuals;
 
 ### Save Tolerant Prediction Formula
 
-**语法:** obj << Save Tolerant Prediction Formula
+**语法:** obj &lt;&lt; Save Tolerant Prediction Formula
 
 **说明:** 保存公式，该公式在数据表中的新列有缺失值的情况下也进行预测。
 
@@ -4360,7 +4350,7 @@ obj << Save Tolerant Prediction Formula;
 
 ### Set Random Seed
 
-**语法:** obj << Set Random Seed( number )
+**语法:** obj &lt;&lt; Set Random Seed( number )
 
 **说明:** 指定一个随机种子，以便将来启动该平台时重现结果。
 
@@ -4427,7 +4417,7 @@ obj = dt << Uplift(
 
 ### Show Trees
 
-**语法:** obj << Show Trees( "无"|"显示名称"|"显示名称类别"|"显示名称类别估计值" )
+**语法:** obj &lt;&lt; Show Trees( "无"|"显示名称"|"显示名称类别"|"显示名称类别估计值" )
 
 **说明:** 显示包含各个树的列表，可以在每个节点只显示名称、显示名称和类别或显示名称、类别和估计值。
 
@@ -4453,7 +4443,7 @@ obj << Show Trees( Show names categories );
 
 ### Specify Profit Matrix
 
-**语法:** obj << Specify Profit Matrix
+**语法:** obj &lt;&lt; Specify Profit Matrix
 
 **说明:** 使您能够指定与正确或错误的分类决策相关的利润或成本。
 
@@ -4582,9 +4572,7 @@ obj = dt << Uplift(
 
 ### Validation Portion
 
-**语法:** obj = Bootstrap Forest(...Validation Portion( fraction=0 )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Bootstrap Forest(...Validation Portion( fraction=0 )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 通过随机选择行构成验证集，每行的选中概率为 p（小数）。 默认为“0”。
 

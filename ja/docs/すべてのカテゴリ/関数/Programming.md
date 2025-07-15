@@ -2,8 +2,6 @@
 
 
 
-## 関数
-
 ### Add Custom Functions
 
 **構文:** Add Custom Functions({f1, f2, ...} | f)
@@ -40,13 +38,7 @@ Show( b );
 
 ### As Column
 
-**構文:** y = :name;
-
-y = dataTable:name;
-
-y = As Column( name );
-
-y = As Column( dataTable, name )
+**構文:** y = :name;y = dataTable:name;y = As Column( name );y = As Column( dataTable, name )
 
 **説明:** 指定したデータテーブルまたは現在のデータテーブル内の指定の列にアクセスする。そのような列またはデータテーブルが見つからない場合はエラーを戻す。
 
@@ -218,9 +210,7 @@ As Scoped( Here, z );
 
 ### Associative Array
 
-**構文:** y = Associative Array( {{key1, value1}, ...} );
-
-y = Associative Array( keys, values )
+**構文:** y = Associative Array( {{key1, value1}, ...} );y = Associative Array( keys, values )
 
 **説明:** 連想配列(「辞書」または「ハッシュマップ」ともいう)を作成する。引数を2つ指定する場合、keyおよびvalueとしてリスト、行列、またはデータテーブル列が指定できる。
 
@@ -237,7 +227,7 @@ ex << get contents;
 
 ### Choose Closest
 
-**構文:** Choose Closest(source string, {canonical strings...}, <Ignore Case(ignore=1|0)>, <Ignore Nonprintable(ignore=1|0)>, <Ignore Whitespace(ignore=1|0)>, <Max Edit Count(count)>, <Max Edit Ratio([0..1])>, <Min String Length(<count=3>)>, <Replace Unmatched(replace=0|1)>, <Unmatched Value(<value="">)>)
+**構文:** Choose Closest(source string, {canonical strings...}, &lt;Ignore Case(ignore=1|0)&gt;, &lt;Ignore Nonprintable(ignore=1|0)&gt;, &lt;Ignore Whitespace(ignore=1|0)&gt;, &lt;Max Edit Count(count)&gt;, &lt;Max Edit Ratio([0..1])&gt;, &lt;Min String Length(&lt;count=3&gt;)&gt;, &lt;Replace Unmatched(replace=0|1)&gt;, &lt;Unmatched Value(&lt;value=""&gt;)&gt;)
 
 **説明:** 指定のルールに従って最も近い文字列を選択し、戻す。
 
@@ -361,7 +351,7 @@ Delete Classes( "complex" );
 
 ### Clear Globals
 
-**構文:** Clear Globals( < varname, ... > )
+**構文:** Clear Globals( &lt; varname, ... &gt; )
 
 **説明:** 現在定義されているすべてのグローバル変数の値をクリアする。
 
@@ -391,7 +381,7 @@ Clear Log();
 
 ### Clear Symbols
 
-**構文:** Clear Symbols( < varname, ... > )
+**構文:** Clear Symbols( &lt; varname, ... &gt; )
 
 **説明:** 現在定義されているすべての記号をクリアする。
 
@@ -422,7 +412,7 @@ Show( Is Log Open() );
 
 ### Define Class
 
-**構文:** Define Class("class name", <Base Class{ "base class name", ... }>, <Show( All( boolean ) | ( Members( boolean ) | Methods( boolean ) | Functions( boolean ) )+ )>, { method* | member* | function* } )
+**構文:** Define Class("class name", &lt;Base Class{ "base class name", ... }&gt;, &lt;Show( All( boolean ) | ( Members( boolean ) | Methods( boolean ) | Functions( boolean ) )+ )&gt;, { method* | member* | function* } )
 
 **説明:** 新しいクラスを定義する。
 
@@ -476,7 +466,7 @@ Delete Classes( complex );
 
 ### Delete Classes
 
-**構文:** Delete Classes( <Force( boolean )>, <class reference, ...> )
+**構文:** Delete Classes( &lt;Force( boolean )&gt;, &lt;class reference, ...&gt; )
 
 **説明:** すべてのクラスの定義、もしくは指定した1つまたは複数のクラスの定義を削除する。
 
@@ -508,7 +498,7 @@ Show Classes();
 
 ### Delete Globals
 
-**構文:** Delete Globals( < varname, ... > )
+**構文:** Delete Globals( &lt; varname, ... &gt; )
 
 **説明:** 現在定義されているグローバル変数とその値をすべて削除する。
 
@@ -523,7 +513,7 @@ Delete Globals();
 
 ### Delete Namespaces
 
-**構文:** Delete Namespaces( <Force( boolean )>, <namespace reference, ...> )
+**構文:** Delete Namespaces( &lt;Force( boolean )&gt;, &lt;namespace reference, ...&gt; )
 
 **説明:** すべての名前空間、もしくは指定した1つまたは複数の名前空間を削除する。
 
@@ -553,7 +543,7 @@ Show Namespaces();
 
 ### Delete Symbols
 
-**構文:** Delete Symbols( < varname, ... > )
+**構文:** Delete Symbols( &lt; varname, ... &gt; )
 
 **説明:** 現在定義されているすべての記号とその値を削除する。
 
@@ -583,7 +573,7 @@ Eval( Expr( 1 + 2 ) );
 
 ### Eval Insert
 
-**構文:** y = Eval Insert( string, <startChar="^">, <endChar=startChar> )
+**構文:** y = Eval Insert( string, &lt;startChar="^"&gt;, &lt;endChar=startChar&gt; )
 
 **説明:** startChar/endCharのペアで囲まれた部分文字列を探し、その部分文字列を、それを評価した値で置き換える。
 
@@ -598,7 +588,7 @@ Eval Insert( "Today is ^As Date( Today())^" );
 
 ### Eval Insert Into
 
-**構文:** Eval Insert Into( l_string, <startChar="^">, <endChar=startChar> )
+**構文:** Eval Insert Into( l_string, &lt;startChar="^"&gt;, &lt;endChar=startChar&gt; )
 
 **説明:** startChar/endCharのペアで囲まれた部分文字列を探し、その部分文字列を、それを評価した値で置き換える。引数l_stringは、置換後の文字列に置き換えられる。
 
@@ -643,7 +633,7 @@ Eval List( {x, y} );
 
 ### Exit
 
-**構文:** Quit(<"No Save">); Exit(<"No Save">)
+**構文:** Quit(&lt;"No Save"&gt;); Exit(&lt;"No Save"&gt;)
 
 **説明:** JMPを終了する。
 
@@ -679,7 +669,7 @@ First( 11, 22 );
 
 ### Function
 
-**構文:** y = Function( {arg1=val1, ...}, <{local1=val1, ...}>, expr )
+**構文:** y = Function( {arg1=val1, ...}, &lt;{local1=val1, ...}&gt;, expr )
 
 **説明:** 関数を定義する。複数の引数arg1,...、それらのデフォルト値val1,...、およびオプションでローカル変数を指定できる。引数のデフォルト値を設定した場合は、関数を呼ぶときにそれらの引数の指定を省略できる。Return()を使用した場合、そこで評価された値が関数の戻り値として戻される。
 
@@ -727,7 +717,7 @@ posorneg( -5.5 );
 
 ### Get Class Names
 
-**構文:** Get Class Names( < <class reference>, ... > )
+**構文:** Get Class Names( &lt; &lt;class reference&gt;, ... &gt; )
 
 **説明:** 現在定義されているすべてのクラスの名前をリストで戻す。
 
@@ -756,7 +746,7 @@ Delete Classes( "aa", "bb" );
 
 ### Get Classes
 
-**構文:** Get Classes( < <class reference>, ... > )
+**構文:** Get Classes( &lt; &lt;class reference&gt;, ... &gt; )
 
 **説明:** 現在定義されているクラスすべてに対して、参照をリストで戻す。
 
@@ -786,7 +776,7 @@ Delete Classes( "aa", "bb" );
 
 ### Get Custom Functions
 
-**構文:** Get Custom Functions(<{function 1 full name, function 2 full name, ...} | function full name>)
+**構文:** Get Custom Functions(&lt;{function 1 full name, function 2 full name, ...} | function full name&gt;)
 
 **説明:** カスタム関数のリストを取得する。
 
@@ -846,7 +836,7 @@ Get Locale Setting( "Decimal Separator" );
 
 ### Get Log
 
-**構文:** list = Get Log( <N> )
+**構文:** list = Get Log( &lt;N&gt; )
 
 **説明:** ログから行のリストを戻す。パラメータが指定されていない場合は、ログのすべての行を戻す。Nが正の値である場合は、ログの最初のN行を戻す。Nが負の値である場合は、ログの最後のN行を戻す。Nが0の場合は、行を戻さない。
 
@@ -863,7 +853,7 @@ tailcontents = Get Log( -5 );
 
 ### Get Namespace Names
 
-**構文:** Get Namespace Names( < <namespace reference>, ... > )
+**構文:** Get Namespace Names( &lt; &lt;namespace reference&gt;, ... &gt; )
 
 **説明:** 現在定義されているすべての名前空間の名前をリストで戻す。
 
@@ -893,7 +883,7 @@ nsbb << Delete;
 
 ### Get Namespaces
 
-**構文:** Get Namespaces( < <namespace reference>, ... > )
+**構文:** Get Namespaces( &lt; &lt;namespace reference&gt;, ... &gt; )
 
 **説明:** 現在定義されているすべての名前空間への参照をリストで戻す。
 
@@ -924,7 +914,7 @@ nsbb << Delete;
 
 ### Get Punctuation Characters
 
-**構文:** Get Punctuation Characters(<Exclude Chars(chars) | Include Chars(chars)>)
+**構文:** Get Punctuation Characters(&lt;Exclude Chars(chars) | Include Chars(chars)&gt;)
 
 **説明:** 単語に対する区切り文字としてよく使われている文字を列挙した文字列を戻す。,:;.?!\/#@&~()[]<>"*`%$+=^|{}の他に、Unicodeの句読点も含まれる。
 
@@ -1003,7 +993,7 @@ Get Whitespace Characters();
 
 ### Include
 
-**構文:** y = Include( filepath, < <<Parse Only>, < <<New Context>, < <<Names Default to Here> )
+**構文:** y = Include( filepath, &lt; &lt;&lt;Parse Only&gt;, &lt; &lt;&lt;New Context&gt;, &lt; &lt;&lt;Names Default to Here&gt; )
 
 **説明:** 指定のファイルに保存されているJSLを実行する。Parse Onlyを指定した場合、スクリプトは解析されるだけで実行されない。New Contextを指定した場合、含まれているJSLが独自の名前空間で実行される。親スクリプトとそれに含まれるスクリプトの両方がグローバル名前空間を使用している場合は、New ContextとNames Default to Hereを指定すれば名前の競合を防げる。
 
@@ -1232,7 +1222,7 @@ Names Default To Here( 1 );
 
 ### Map Value
 
-**構文:** Map Value(string | number, {key1, value1...|{key1...},{value1...}}, <Unmatched(value)>)
+**構文:** Map Value(string | number, {key1, value1...|{key1...},{value1...}}, &lt;Unmatched(value)&gt;)
 
 **説明:** 第1引数を評価し、マップされた結果またはデフォルト値を戻す。
 
@@ -1545,7 +1535,7 @@ Add Custom Functions(
 
 ### New Namespace
 
-**構文:** ns = New Namespace( <name>, <list of expressions> )
+**構文:** ns = New Namespace( &lt;name&gt;, &lt;list of expressions&gt; )
 
 **説明:** 引数nameに指定された名前で新しい名前空間を作成する。nameが指定されていない場合は、匿名で作成する。
 
@@ -1641,7 +1631,7 @@ Delete Classes( "complex" );
 
 ### Open Log
 
-**構文:** Open Log( <bring window to top> )
+**構文:** Open Log( &lt;bring window to top&gt; )
 
 **説明:** ログウィンドウを開く。
 
@@ -1715,7 +1705,7 @@ Print( 355 / 113, Pi() );
 
 ### Quit
 
-**構文:** Quit(<"No Save">); Exit(<"No Save">)
+**構文:** Quit(&lt;"No Save"&gt;); Exit(&lt;"No Save"&gt;)
 
 **説明:** JMPを終了する。
 
@@ -1736,7 +1726,7 @@ If(
 
 ### Recode
 
-**構文:** recode(string|number|list, {<transform>, ...}, <Multiple Response (Separator(sepChar))>, <By Word(Delimiters(<chars>)>)
+**構文:** recode(string|number|list, {&lt;transform&gt;, ...}, &lt;Multiple Response (Separator(sepChar))&gt;, &lt;By Word(Delimiters(&lt;chars&gt;)&gt;)
 
 **説明:** リストとして記述された変換を入力値に適用し、結果を戻す。Multiple ResponseとBy Wordオプションは、与えられた文字データをいくつかの入力値に分割する。それぞれの入力値に対して変換が適用される。
 
@@ -1811,7 +1801,7 @@ Remove Custom Functions( {"custom:Add", "custom:Sub"} );
 
 ### Save Log
 
-**構文:** f = Save Log( <path> )
+**構文:** f = Save Log( &lt;path&gt; )
 
 **説明:** 指定のファイルの場所にログの内容を書き込む。書き込み処理が完了すると、作成されたファイルの名前を戻す。
 
@@ -1828,7 +1818,7 @@ Substr( exlogText, 1, 30 );
 
 ### Send
 
-**構文:** r = obj << msg( args ); r = obj << msg; r = Send( obj, msg )
+**構文:** r = obj &lt;&lt; msg( args ); r = obj &lt;&lt; msg; r = Send( obj, msg )
 
 **説明:** オブジェクトにメッセージを(式の形で)送る。
 
@@ -1844,7 +1834,7 @@ Bivariate( Y( :weight ), X( :height ) ) << Fit Line;
 
 ### Set Environment Variable
 
-**構文:** value = Set Environment Variable( string, < string> )
+**構文:** value = Set Environment Variable( string, &lt; string&gt; )
 
 **説明:** オペレーティングシステムの環境変数の値を設定する。第2引数が欠測値または空白の場合、環境変数は削除される。
 
@@ -1878,7 +1868,7 @@ Show( 355 / 113, Pi() );
 
 ### Show Classes
 
-**構文:** Show Classes( < <class name | class reference>, ... > )
+**構文:** Show Classes( &lt; &lt;class name | class reference&gt;, ... &gt; )
 
 **説明:** ユーザが定義したクラスの内容を表示する。
 
@@ -1945,7 +1935,7 @@ Show Globals();
 
 ### Show Namespaces
 
-**構文:** Show Namespaces( < <namespace reference>, ... > )
+**構文:** Show Namespaces( &lt; &lt;namespace reference&gt;, ... &gt; )
 
 **説明:** ユーザが定義した名前空間(名前のあるものと匿名のものすべて)の内容を表示する。
 
@@ -2034,7 +2024,7 @@ ex;
 
 ### Throw
 
-**構文:** Throw(<message>, <Boolean>)
+**構文:** Throw(&lt;message&gt;, &lt;Boolean&gt;)
 
 **説明:** 外側にあるTry()に実行の制御を移す。そうしないと、スクリプトの実行は停止される。messageが感嘆符で始まる場合、致命的なエラーであり、Try()は検出できないことを示す。2番目の引数には、トレースバックを含めるためのオプションのブール値を指定する。
 
@@ -2071,7 +2061,7 @@ Print( "AFTER TRY message not reached" );
 
 ### Try
 
-**構文:** y = Try( expr, <catchExpr> )
+**構文:** y = Try( expr, &lt;catchExpr&gt; )
 
 **説明:** 引数exprを評価して戻す。評価によってThrow()または内部例外が生じた場合は、catchExprの評価を戻す。catchExprとしてexception_msgを指定した場合、そのメッセージが戻される。
 
@@ -2164,7 +2154,7 @@ Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 ### Wait
 
-**構文:** Wait( <x> )
+**構文:** Wait( &lt;x&gt; )
 
 **説明:** 実行に移る前に、x秒待機する。xのデフォルト値は3秒。xが0以上の場合、JMPは、待ち時間に加えて、オペレーティングシステムのイベント（画面の描画など）や、保留中のコールバック（計算式の評価など）を完了させる。xが0未満の場合、画面の描画や保留中のOSイベントが完了したことを確認してから、次に進む。
 
@@ -2223,7 +2213,7 @@ w << close Window();
 
 ### Where
 
-**構文:** Where( <dt>, clause )
+**構文:** Where( &lt;dt&gt;, clause )
 
 **説明:** Where節に指定された条件に一致する要素の通し番号(通常は行番号)を戻す。オプションのdtを指定すると、評価時にCurrent Data Tableが変更される。これらのWhere節は、データフィルタで条件を指定する際に使用されている。これは、通常、Loc、<<Get Rows Where、<<Select Whereを使用するよりも、処理時間が文字会。なお、Where節の条件が評価される時に、数列や記号を変更される場合にこの関数の動作がどうなるかは定義されていない。
 

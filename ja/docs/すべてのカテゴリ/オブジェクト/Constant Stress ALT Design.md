@@ -48,7 +48,7 @@ d = Constant Stress ALT Design(
 
 ### Factor
 
-**構文:** obj << Factor
+**構文:** obj &lt;&lt; Factor
 
 **説明:** 指定された設定を持つ因子を1つ追加する。
 
@@ -84,7 +84,7 @@ d = Constant Stress ALT Design(
 
 ### Factor Name
 
-**構文:** obj << Factor Name
+**構文:** obj &lt;&lt; Factor Name
 
 **説明:** 因子の名前を指定する。
 
@@ -120,7 +120,7 @@ d = Constant Stress ALT Design(
 
 ### Factor Transformation
 
-**構文:** obj << Factor Transformation( Arrhenius Celsius|Arrhenius Fahrenheit|Arrhenius Kelvin|Reciprocal|Log|Root|None )
+**構文:** obj &lt;&lt; Factor Transformation( Arrhenius Celsius|Arrhenius Fahrenheit|Arrhenius Kelvin|Reciprocal|Log|Root|None )
 
 **説明:** 因子に対する変換式を指定する。
 
@@ -156,7 +156,7 @@ d = Constant Stress ALT Design(
 
 ### High Test Condition
 
-**構文:** obj << High Test Condition
+**構文:** obj &lt;&lt; High Test Condition
 
 **説明:** 因子の最高試験水準を指定する。
 
@@ -192,7 +192,7 @@ d = Constant Stress ALT Design(
 
 ### High Usage Condition
 
-**構文:** obj << High Usage Condition
+**構文:** obj &lt;&lt; High Usage Condition
 
 **説明:** 因子の使用条件に対する最高値を指定する。最低使用条件と同じでもかまわない。
 
@@ -228,7 +228,7 @@ d = Constant Stress ALT Design(
 
 ### Low Test Condition
 
-**構文:** obj << Low Test Condition
+**構文:** obj &lt;&lt; Low Test Condition
 
 **説明:** 因子の最低試験水準を指定する。
 
@@ -264,7 +264,7 @@ d = Constant Stress ALT Design(
 
 ### Low Usage Condition
 
-**構文:** obj << Low Usage Condition
+**構文:** obj &lt;&lt; Low Usage Condition
 
 **説明:** 因子の使用条件に対する最低値を指定する。最高使用条件と同じでもかまわない。
 
@@ -300,7 +300,7 @@ d = Constant Stress ALT Design(
 
 ### Number of Levels
 
-**構文:** obj << Number of Levels
+**構文:** obj &lt;&lt; Number of Levels
 
 **説明:** 因子の水準数を指定する。主に釣合い型計画を作成するときに、因子の水準数についての情報が使われる。
 
@@ -336,7 +336,7 @@ d = Constant Stress ALT Design(
 
 ### Save Script to Script Window
 
-**構文:** obj << Save Script to Script Window
+**構文:** obj &lt;&lt; Save Script to Script Window
 
 **説明:** この計画を再現するスクリプトを作成する。
 

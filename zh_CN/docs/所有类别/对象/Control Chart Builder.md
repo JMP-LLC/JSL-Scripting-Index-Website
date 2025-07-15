@@ -6,7 +6,7 @@
 
 ### Action
 
-**语法:** obj << Action
+**语法:** obj &lt;&lt; Action
 
 **说明:** 平台内用于插入表达式以求值的所有用途的陷门。暂时将 DisplayBox 和 DataTable 上下文设置为平台。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**语法:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**语法:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **说明:** 将以前创建的预设应用到对象，从而更新选项和定制以匹配保存的设置。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**语法:** obj << Automatic Recalc( state=0|1 )
+**语法:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **说明:** 对排除和数据更改自动重新执行分析。若启用了“自动重新计算”选项，则应考虑使用 Wait(0) 命令来确保排除和数据更改在重新计算前生效。
 
@@ -88,7 +88,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Column Switcher
 
-**语法:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**语法:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **说明:** 添加用于更改平台变量的控制面板
 
@@ -106,7 +106,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy Script
 
-**语法:** obj << Copy Script
+**语法:** obj &lt;&lt; Copy Script
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其置于剪贴板上。
 
@@ -122,7 +122,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**语法:** obj << Data Table Window
+**语法:** obj &lt;&lt; Data Table Window
 
 **说明:** 将该分析的数据表窗口移动到前面。
 
@@ -138,7 +138,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**语法:** obj << Get By Levels
+**语法:** obj &lt;&lt; Get By Levels
 
 **说明:** 返回将“依据”组列映射到其值的关联数组。
 
@@ -155,7 +155,7 @@ biv << Get By Levels;
 
 ### Get Container
 
-**语法:** obj << Get Container
+**语法:** obj &lt;&lt; Get Container
 
 **说明:** 返回对保留对象内容的容器框的引用。
 
@@ -203,7 +203,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**语法:** obj << Get Data Table
+**语法:** obj &lt;&lt; Get Data Table
 
 **说明:** 返回对该数据表的引用。
 
@@ -220,7 +220,7 @@ Show( N Rows( t ) );
 
 ### Get Script
 
-**语法:** obj << Get Script
+**语法:** obj &lt;&lt; Get Script
 
 **说明:** 创建生成该分析的脚本 (JSL)，并将其作为表达式返回。
 
@@ -237,7 +237,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**语法:** obj << Get Script With Data Table
+**语法:** obj &lt;&lt; Get Script With Data Table
 
 **说明:** 创建生成该分析的脚本 (JSL) 以专门引用该数据表，并将其作为表达式返回。
 
@@ -254,7 +254,7 @@ Show( t );
 
 ### Get Timing
 
-**语法:** obj << Get Timing
+**语法:** obj &lt;&lt; Get Timing
 
 **说明:** 平台启动过程计时。
 
@@ -271,7 +271,7 @@ Show( t );
 
 ### Get Web Support
 
-**语法:** obj << Get Web Support
+**语法:** obj &lt;&lt; Get Web Support
 
 **说明:** 返回一个数字，指示显示对象的交互式 HTML 支持的水平。1 表示支持部分或全部元素。0 表示不支持。
 
@@ -287,7 +287,7 @@ Show( s );
 
 ### Get Where Expr
 
-**语法:** obj << Get Where Expr
+**语法:** obj &lt;&lt; Get Where Expr
 
 **说明:** 若平台是使用 By() 或 Where() 启动的，则返回数据子集的 Where 表达式。否则返回 Empty()
 
@@ -324,7 +324,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**语法:** obj << Local Data Filter
+**语法:** obj &lt;&lt; Local Data Filter
 
 **说明:** 将数据过滤到特定的组或范围，但在该平台中是本地的
 
@@ -380,7 +380,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**语法:** obj << Paste Local Data Filter
+**语法:** obj &lt;&lt; Paste Local Data Filter
 
 **说明:** 将剪贴板中的本地数据过滤器应用于当前报表。
 
@@ -401,7 +401,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**语法:** obj << Redo Analysis
+**语法:** obj &lt;&lt; Redo Analysis
 
 **说明:** 在新窗口中重新运行相同的分析。若数据发生更改，分析也将不同。
 
@@ -417,7 +417,7 @@ obj << Redo Analysis;
 
 ### Relaunch Analysis
 
-**语法:** obj << Relaunch Analysis
+**语法:** obj &lt;&lt; Relaunch Analysis
 
 **说明:** 打开平台启动窗口并重新调用曾用于创建报表的设置。
 
@@ -433,7 +433,7 @@ obj << Relaunch Analysis;
 
 ### Remove Column Switcher
 
-**语法:** obj << Remove Column Switcher
+**语法:** obj &lt;&lt; Remove Column Switcher
 
 **说明:** 删除已添加至平台的最近使用的“列切换器”。
 
@@ -453,7 +453,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**语法:** obj << Remove Local Data Filter
+**语法:** obj &lt;&lt; Remove Local Data Filter
 
 **说明:** 若已创建本地数据过滤器，这会将它删除并将平台恢复为直接使用数据表中的所有数据
 
@@ -492,9 +492,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**语法:** obj << Report;
-
-Report( obj )
+**语法:** obj &lt;&lt; Report;Report( obj )
 
 **说明:** 返回对该报表对象的引用。
 
@@ -512,7 +510,7 @@ Show( t );
 
 ### Report View
 
-**语法:** obj << Report View( "完全"|"汇总" )
+**语法:** obj &lt;&lt; Report View( "完全"|"汇总" )
 
 **说明:** 报表视图确定平台报表中可见的详细程度。Full 显示所有详细信息，而 Summary 仅显示根据平台确定的选定内容。对于定制行为，显示框支持 <<Set Summary Behavior 消息。
 
@@ -528,7 +526,7 @@ obj << Report View( "Summary" );
 
 ### Save Script for All Objects
 
-**语法:** obj << Save Script for All Objects
+**语法:** obj &lt;&lt; Save Script for All Objects
 
 **说明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -544,7 +542,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**语法:** obj << Save Script for All Objects To Data Table( <name> )
+**语法:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **说明:** 将所有报表对象的脚本保存至当前数据表。当您在该窗口中具有多个报表时，该选项很有用。除非您在引号中指定脚本名称，否则脚本将以第一个平台命名。
 
@@ -584,7 +582,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**语法:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**语法:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其作为表属性保存至数据表中。
 
@@ -600,7 +598,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**语法:** obj << Save Script to Journal
+**语法:** obj &lt;&lt; Save Script to Journal
 
 **说明:** 创建生成该分析的 JSL 脚本，并将一个按钮添加至包含该脚本的记录中。
 
@@ -616,7 +614,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**语法:** obj << Save Script to Report
+**语法:** obj &lt;&lt; Save Script to Report
 
 **说明:** 创建生成该分析的 JSL 脚本，并在报表中显示。有助于保留打印的已完成操作记录。
 
@@ -632,7 +630,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**语法:** obj << Save Script to Script Window
+**语法:** obj &lt;&lt; Save Script to Script Window
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其追加至当前的脚本文本窗口中。
 
@@ -713,7 +711,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**语法:** obj << Sync to Data Table Changes
+**语法:** obj &lt;&lt; Sync to Data Table Changes
 
 **说明:** 与已进行的排除和数据的更改同步。
 
@@ -730,7 +728,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**语法:** obj << Title( "new title" )
+**语法:** obj &lt;&lt; Title( "new title" )
 
 **说明:** 设置平台的标题。
 
@@ -746,7 +744,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**语法:** obj << Top Report
+**语法:** obj &lt;&lt; Top Report
 
 **说明:** 返回对报表中根节点的引用。
 
@@ -764,7 +762,7 @@ Show( t );
 
 ### View Web XML
 
-**语法:** obj << View Web XML
+**语法:** obj &lt;&lt; View Web XML
 
 **说明:** 返回用于创建交互式 HTML 报表的 XML 代码。
 
@@ -781,7 +779,7 @@ xml = obj << View Web XML;
 
 ### Control Chart Builder
 
-**语法:** Control Chart Builder( Class( "Shewhart Variables"|"Shewhart Attribute"|"Short Run"|"Rare Event" ), Variables( variables ), <Chart( Position( number ), Points( Statistic( "statistic" ), <points options> ), Limits( Sigma( "sigma" ), <limits options> )> ) ) )
+**语法:** Control Chart Builder( Class( "Shewhart Variables"|"Shewhart Attribute"|"Short Run"|"Rare Event" ), Variables( variables ), &lt;Chart( Position( number ), Points( Statistic( "statistic" ), &lt;points options&gt; ), Limits( Sigma( "sigma" ), &lt;limits options&gt; )&gt; ) ) )
 
 **说明:** 允许您以交互方式创建控制图，它们用于确定过程是否稳定和可预测。“控制图生成器”平台可用于创建以下类型的控制图: IMR、均值、短期运行、运行、P、NP、C、U、Laney P&apos;、Laney U&apos;、Levey-Jennings、基于均值的 IMR、三因子和稀有事件图。
 
@@ -1304,7 +1302,7 @@ obj = dt << Control Chart Builder(
 
 ### Add Limits
 
-**语法:** obj << Chart( Position( number ), Add Limits( {LCL( number ), Avg( number ), UCL( number )} ) )
+**语法:** obj &lt;&lt; Chart( Position( number ), Add Limits( {LCL( number ), Avg( number ), UCL( number )} ) )
 
 **说明:** 为指定图添加一组额外的限值。添加的限值显示为虚线。
 
@@ -1321,7 +1319,7 @@ obj << Chart( Position( 1 ), Add Limits( {LCL( 17.5 ), Avg( 20.25 ), UCL( 23 )} 
 
 ### Add Spec Limits
 
-**语法:** obj << Chart( Position( number ), Add Spec Limits( {LSL( number ), Target( number ), USL( number )} ) )
+**语法:** obj &lt;&lt; Chart( Position( number ), Add Spec Limits( {LSL( number ), Target( number ), USL( number )} ) )
 
 **说明:** 设置每个 Y 变量的规格限。
 
@@ -1338,7 +1336,7 @@ obj << Chart( Position( 1 ), Add Spec Limits( {LSL( 18 ), Target( 20.1 ), USL( 2
 
 ### Alarm Script
 
-**语法:** obj << Alarm Script( Write( "..." )|Speak( "..." )|Mail( address, subject,"..." ) )
+**语法:** obj &lt;&lt; Alarm Script( Write( "..." )|Speak( "..." )|Mail( address, subject,"..." ) )
 
 **说明:** 每当控制图上的点未能通过给定检验时就发送消息。消息可以发送至日志、可语音播报或通过电子邮件发送。
 
@@ -1369,7 +1367,7 @@ obj << Alarm Script(
 
 ### Chart
 
-**语法:** obj << Chart( Position( number ), <Points( Statistic(),... )>, <Set Control Limits( { LCL(), UCL(), Avg() } )>, <Add Limits( { LCL(), UCL(), Avg() } )>, <Add Spec Limits( { LSL(), USL(), Target() } )>, <Limits( Sigma(), ... )>, <Warnings( Test number( state=0|1 ) )> )
+**语法:** obj &lt;&lt; Chart( Position( number ), &lt;Points( Statistic(),... )&gt;, &lt;Set Control Limits( { LCL(), UCL(), Avg() } )&gt;, &lt;Add Limits( { LCL(), UCL(), Avg() } )&gt;, &lt;Add Spec Limits( { LSL(), USL(), Target() } )&gt;, &lt;Limits( Sigma(), ... )&gt;, &lt;Warnings( Test number( state=0|1 ) )&gt; )
 
 **说明:** 为 Position 参数指定的图设置警告、限值和点特性。
 
@@ -1397,7 +1395,7 @@ obj = dt << Control Chart Builder(
 
 ### Class
 
-**语法:** obj << Class( "Shewhart Variables"|"Shewhart Attribute"|"Short Run"|"Rare Event" )
+**语法:** obj &lt;&lt; Class( "Shewhart Variables"|"Shewhart Attribute"|"Short Run"|"Rare Event" )
 
 **说明:** 指定点和 sigma 统计量组合的类或系列。
 
@@ -1417,7 +1415,7 @@ obj = dt << Control Chart Builder(
 
 ### Color By Product
 
-**语法:** obj << Color By Product( state=0|1 )
+**语法:** obj &lt;&lt; Color By Product( state=0|1 )
 
 **说明:** 给按产品变量的水平标绘的点着色。 默认开启。
 
@@ -1438,7 +1436,7 @@ obj << Color By Product( 1 );
 
 ### Connect Thru Missing
 
-**语法:** obj << Connect Thru Missing( state=0|1 )
+**语法:** obj &lt;&lt; Connect Thru Missing( state=0|1 )
 
 **说明:** 确定在某些样本包含缺失值或排除行时是否连接点和线。
 
@@ -1456,7 +1454,7 @@ obj << Connect Thru Missing( 1 );
 
 ### Customize Tests
 
-**语法:** obj << Customize Tests( Test 1 | Test 2 | Test 3 | Test 4 | Test 5 | Test 6 | Test 7 | Test 8 (n, label) )
+**语法:** obj &lt;&lt; Customize Tests( Test 1 | Test 2 | Test 3 | Test 4 | Test 5 | Test 6 | Test 7 | Test 8 (n, label) )
 
 **说明:** 允许您选择、定制标签，以及为 Western Electric 检验设置基于 sigma 距离的参数。
 
@@ -1476,7 +1474,7 @@ obj = dt << Control Chart Builder(
 
 ### Fit to Window
 
-**语法:** obj << Fit to Window( "自动"|"开"|"关"|"保留纵横比"="关" )
+**语法:** obj &lt;&lt; Fit to Window( "自动"|"开"|"关"|"保留纵横比"="关" )
 
 **说明:** 设置报表的自动拉伸行为。 默认为“关”。
 
@@ -1492,7 +1490,7 @@ obj << Fit to Window( "On" );
 
 ### Get Control Limits
 
-**语法:** obj << Get Control Limits( filename )
+**语法:** obj &lt;&lt; Get Control Limits( filename )
 
 **说明:** 从选定的数据表导入控制限，并替换图表上的计算限值。
 
@@ -1514,7 +1512,7 @@ obj << Get Control Limits( "$SAMPLE_DATA/Quality Control/CoatingLimits.jmp" );
 
 ### Get Product Statistics
 
-**语法:** obj << Get Product Statistics( filename )
+**语法:** obj &lt;&lt; Get Product Statistics( filename )
 
 **说明:** 从指定的数据表导入短期运行产品目标和 Sigma 的值。
 
@@ -1535,7 +1533,7 @@ obj << Get Product Statistics( "$SAMPLE_DATA/Quality Control/CoatingProductInfo.
 
 ### Get Spec Limits
 
-**语法:** obj << Get Spec Limits( filename )
+**语法:** obj &lt;&lt; Get Spec Limits( filename )
 
 **说明:** 从文件导入规格限。
 
@@ -1552,7 +1550,7 @@ obj << Get Spec Limits( "$SAMPLE_DATA/CitySpecLimits.jmp" );
 
 ### Graph Borders
 
-**语法:** obj << Graph Borders( state=0|1 )
+**语法:** obj &lt;&lt; Graph Borders( state=0|1 )
 
 **说明:** 显示或隐藏内部图形面板边框。
 
@@ -1573,7 +1571,7 @@ obj << Graph Borders( 1 );
 
 ### Graph Spacing
 
-**语法:** obj << Graph Spacing( gap=2 )
+**语法:** obj &lt;&lt; Graph Spacing( gap=2 )
 
 **说明:** 指定图形面板之间空间的大小。 默认为“2”。
 
@@ -1592,7 +1590,7 @@ obj << Graph Spacing( 5 );
 
 ### Graph Spacing Color
 
-**语法:** obj << Graph Spacing Color( color )
+**语法:** obj &lt;&lt; Graph Spacing Color( color )
 
 **说明:** 指定图形面板之间空间的颜色。
 
@@ -1611,7 +1609,7 @@ obj << Graph Spacing Color( "Red" );
 
 ### Graph Spacing Transparency
 
-**语法:** obj << Graph Spacing Transparency( number )
+**语法:** obj &lt;&lt; Graph Spacing Transparency( number )
 
 **说明:** 指定图形面板之间空间的透明度级别。必须介于 0 和 1 之间。
 
@@ -1630,7 +1628,7 @@ obj << Graph Spacing Transparency( 0.3 );
 
 ### Include Missing Categories
 
-**语法:** obj << Include Missing Categories( state=0|1 )
+**语法:** obj &lt;&lt; Include Missing Categories( state=0|1 )
 
 **说明:** 当数据包含缺失值时为名义型和有序型变量额外包含一个水平。 默认开启。
 
@@ -1649,7 +1647,7 @@ obj << Include Missing Categories( 0 );
 
 ### K Sigma
 
-**语法:** obj << K Sigma( value=3 )
+**语法:** obj &lt;&lt; K Sigma( value=3 )
 
 **说明:** 设置 K 值用以乘上 sigma，以形成关于平均值的控制限。 默认为“3”。
 
@@ -1670,7 +1668,7 @@ obj << K Sigma( 3 );
 
 ### Limits
 
-**语法:** obj << Chart( Position( number ), Limits( Sigma( "sigma" ), <Zones( state=0|1 )>, <Shade Zones( state=0|1 )>, <Set Control Limits( state=0|1 )>, <Show Upper Limit( state=0|1 )>, <Show Lower Limit( state=0|1 )>, <Show Center Line( state=0|1 )> ) )
+**语法:** obj &lt;&lt; Chart( Position( number ), Limits( Sigma( "sigma" ), &lt;Zones( state=0|1 )&gt;, &lt;Shade Zones( state=0|1 )&gt;, &lt;Set Control Limits( state=0|1 )&gt;, &lt;Show Upper Limit( state=0|1 )&gt;, &lt;Show Lower Limit( state=0|1 )&gt;, &lt;Show Center Line( state=0|1 )&gt; ) )
 
 **说明:** 提供用于更改图的限值特征的选项。根据图类型，您可以指定以下值之一作为 sigma 参数: 极差、标准差、移动极差、移动极差中位数、Levey-Jennings、Poisson、二项、负二项、Weibull、Laney P 素数或 Laney U 素数。
 
@@ -1694,7 +1692,7 @@ obj << Chart(
 
 ### Limits Label Precision
 
-**语法:** obj << Limits Label Precision( number )
+**语法:** obj &lt;&lt; Limits Label Precision( number )
 
 **说明:** 指定相对于数据的限值中显示的精度。
 
@@ -1714,7 +1712,7 @@ obj << Limits Label Precision( 5 );
 
 ### OC Curve
 
-**语法:** obj << OC Curve
+**语法:** obj &lt;&lt; OC Curve
 
 **说明:** 在新窗口中显示一个使用控制图中的控制限和 Sigma 的操作特征曲线。
 
@@ -1730,7 +1728,7 @@ obj << OC Curve;
 
 ### Points
 
-**语法:** obj << Chart( Position( number ), Points( Statistic( "statistic" ), <Individual Points( state=0|1 )>, <Box Plots( state=0|1 )>, <Show Connect Line( state=0|1 )>, <Show Points( state=0|1 )> ) )
+**语法:** obj &lt;&lt; Chart( Position( number ), Points( Statistic( "statistic" ), &lt;Individual Points( state=0|1 )&gt;, &lt;Box Plots( state=0|1 )&gt;, &lt;Show Connect Line( state=0|1 )&gt;, &lt;Show Points( state=0|1 )&gt; ) )
 
 **说明:** 提供用于更改图的点特征的选项。根据图类型，您可以为 statistic 参数指定以下值之一: 平均值、极差、标准差、基于均值的移动极差、基于标准差的移动极差、单值、移动极差、计数、比例、中心化、标准化、中心化极差或标准化极差。
 
@@ -1752,7 +1750,7 @@ obj << Chart( Position( 2 ), Points( Statistic( "Standard Deviation" ) ) );
 
 ### Product Statistics
 
-**语法:** obj << Product Statistics( ( column ) ( Product Level( l1 ( Target( number ), Sigma ( number ) ), <l2 ( Target( number ), Sigma ( number ) )) ), < (column ( Product Level( ... ) ) ) > )
+**语法:** obj &lt;&lt; Product Statistics( ( column ) ( Product Level( l1 ( Target( number ), Sigma ( number ) ), &lt;l2 ( Target( number ), Sigma ( number ) )) ), &lt; (column ( Product Level( ... ) ) ) &gt; )
 
 **说明:** 设置短期运行产品的目标和 Sigma 的值。
 
@@ -1775,7 +1773,7 @@ obj << Product Statistics(
 
 ### Range Span
 
-**语法:** obj << Range Span( value=2 )
+**语法:** obj &lt;&lt; Range Span( value=2 )
 
 **说明:** 设置“移动极差”图中使用的“极差跨度”选项的值。 默认为“2”。
 
@@ -1793,7 +1791,7 @@ obj << Range Span( 3 );
 
 ### Rerun All Tests
 
-**语法:** obj << Rerun All Tests
+**语法:** obj &lt;&lt; Rerun All Tests
 
 **说明:** 重新运行所有当前选定的检验以及所有关联的警报脚本。
 
@@ -1827,7 +1825,7 @@ obj << Rerun All Tests;
 
 ### Save Control Limits
 
-**语法:** obj << Save Control Limits( "在列中"|"在新表中"|"在高型表中" )
+**语法:** obj &lt;&lt; Save Control Limits( "在列中"|"在新表中"|"在高型表中" )
 
 **说明:** 将控制限保存至列属性或新数据表。
 
@@ -1854,7 +1852,7 @@ obj << Save Control Limits( "in New Table" );
 
 ### Save Product Statistics
 
-**语法:** obj << Save Product Statistics
+**语法:** obj &lt;&lt; Save Product Statistics
 
 **说明:** 将列保存至新数据表。新数据表包含部件/产品变量的每个水平的产品统计量（目标和 sigma）。
 
@@ -1875,7 +1873,7 @@ obj << Save Product Statistics;
 
 ### Save Spec Limits
 
-**语法:** obj << Save Spec Limits
+**语法:** obj &lt;&lt; Save Spec Limits
 
 **说明:** 将规格限保存到新的数据表。只有在使用“规格限”列属性，通过 JSL、“获取规格限”文件的导入或“设置规格限”选项设置了规格限时，该选项才可用。
 
@@ -1893,7 +1891,7 @@ obj << Save Spec Limits;
 
 ### Save Summaries
 
-**语法:** obj << Save Summaries
+**语法:** obj &lt;&lt; Save Summaries
 
 **说明:** 为每个图保存一个新的数据表。若指定了产品/部件变量，该数据表中为每个样本包括一行并包括一些列来表示样本标签、样本大小和产品级别。对于每个图，还有列对应标绘的各个点、图类型、上控制限、平均值、下控制限和未通过的选定检验。
 
@@ -1911,7 +1909,7 @@ obj << Save Summaries;
 
 ### Set Control Limits
 
-**语法:** obj << Chart( Position( number ), Set Control Limits( {LCL( number ), Avg( number ), UCL( number )} ) )
+**语法:** obj &lt;&lt; Chart( Position( number ), Set Control Limits( {LCL( number ), Avg( number ), UCL( number )} ) )
 
 **说明:** 设置指定图的控制限。
 
@@ -1928,7 +1926,7 @@ obj << Chart( Position( 1 ), Set Control Limits( {LCL( 19 ), Avg( 20 ), UCL( 21 
 
 ### Set Last N Subgroups
 
-**语法:** obj << Set Last N Subgroups( number )
+**语法:** obj &lt;&lt; Set Last N Subgroups( number )
 
 **说明:** 更改水平轴以便仅显示图形上后 N 个子组。指定子组的数量不考虑排除或隐藏的观测。当存在具有多个水平的“阶段”变量时，该选项不可用。
 
@@ -1946,7 +1944,7 @@ obj << Set Last n Subgroups( 5 );
 
 ### Set Sigma
 
-**语法:** obj << Set Sigma( value )
+**语法:** obj &lt;&lt; Set Sigma( value )
 
 **说明:** 设置“控制图”中使用的 sigma 值。
 
@@ -1965,7 +1963,7 @@ obj << Set Sigma( 1.8 );
 
 ### Set Subgroup Size
 
-**语法:** obj << Set Subgroup Size(  integer  )
+**语法:** obj &lt;&lt; Set Subgroup Size( integer )
 
 **说明:** 指定每个子组的行数。
 
@@ -1982,7 +1980,7 @@ obj << Set Subgroup Size( 4 );
 
 ### Show Alarm Report
 
-**语法:** obj << Show Alarm Report( state=0|1 )
+**语法:** obj &lt;&lt; Show Alarm Report( state=0|1 )
 
 **说明:** 显示或隐藏报警率和失控样本的表。
 
@@ -2000,7 +1998,7 @@ obj << Show Alarm Report( 1 );
 
 ### Show Capability
 
-**语法:** obj << Show Capability( state=0|1 )
+**语法:** obj &lt;&lt; Show Capability( state=0|1 )
 
 **说明:** 显示或隐藏“过程能力分析”报表。 默认开启。
 
@@ -2025,7 +2023,7 @@ obj << Show Capability( 0 );
 
 ### Show Center Line
 
-**语法:** obj << Chart( Position( number ),  Limits( Show Center Line( state=0|1 ) ) )
+**语法:** obj &lt;&lt; Chart( Position( number ), Limits( Show Center Line( state=0|1 ) ) )
 
 **说明:** 显示或隐藏中心线。 默认开启。
 
@@ -2042,7 +2040,7 @@ obj << Chart( Position( 1 ), Limits( Show Center Line( 0 ) ) );
 
 ### Show Control Panel
 
-**语法:** obj << Show Control Panel( state=0|1 )
+**语法:** obj &lt;&lt; Show Control Panel( state=0|1 )
 
 **说明:** 显示或隐藏控制面板。 默认开启。
 
@@ -2061,7 +2059,7 @@ obj << Show Control Panel( 0 );
 
 ### Show Excluded Region
 
-**语法:** obj << Show Excluded Region( state=0|1 )
+**语法:** obj &lt;&lt; Show Excluded Region( state=0|1 )
 
 **说明:** 显示或隐藏图中已排除样本的区域。 默认开启。
 
@@ -2082,7 +2080,7 @@ obj << Show Excluded Region( 0 );
 
 ### Show Limit Labels
 
-**语法:** obj << Show Limit Labels( state=0|1 )
+**语法:** obj &lt;&lt; Show Limit Labels( state=0|1 )
 
 **说明:** 在图形上显示或隐藏限值标签。
 
@@ -2100,7 +2098,7 @@ obj << Show Limit Labels( 1 );
 
 ### Show Limit Summaries
 
-**语法:** obj << Show Limit Summaries( state=0|1 )
+**语法:** obj &lt;&lt; Show Limit Summaries( state=0|1 )
 
 **说明:** 显示或隐藏“限值汇总”报表。该报表包含图的控制限（“下控制限”和“上控制限”）、中心线（“平均值”）、标绘的点和限值以及“样本大小”。 默认开启。
 
@@ -2119,7 +2117,7 @@ obj << Show Limit Summaries( 0 );
 
 ### Show Lower Limit
 
-**语法:** obj << Chart( Position( number ),  Limits( Show Lower Limit( state=0|1 ) ) )
+**语法:** obj &lt;&lt; Chart( Position( number ), Limits( Show Lower Limit( state=0|1 ) ) )
 
 **说明:** 显示或隐藏下控制限。 默认开启。
 
@@ -2138,7 +2136,7 @@ obj = dt << Control Chart Builder(
 
 ### Show Product Separators
 
-**语法:** obj << Show Product Separators( state=0|1 )
+**语法:** obj &lt;&lt; Show Product Separators( state=0|1 )
 
 **说明:** 显示或隐藏图形上指示产品已更改的垂直虚线。 默认开启。
 
@@ -2159,7 +2157,7 @@ obj << Show Product Separators( 0 );
 
 ### Show Sigma Report
 
-**语法:** obj << Show Sigma Report( state=0|1 )
+**语法:** obj &lt;&lt; Show Sigma Report( state=0|1 )
 
 **说明:** 显示或隐藏“总 Sigma”、“组内 Sigma”、“稳定性指标”和“均值”的表。对于三因子图，还显示“组间 Sigma”和“组间组内 Sigma”。
 
@@ -2177,7 +2175,7 @@ obj << Show Sigma Report( 1 );
 
 ### Show Two Shewhart or Short Run Charts
 
-**语法:** obj << Show Two Shewhart or Short Run Charts( state=0|1 )
+**语法:** obj &lt;&lt; Show Two Shewhart or Short Run Charts( state=0|1 )
 
 **说明:** 显示位置图和散度图。该选项的值为 0 时不显示散度图。 默认开启。
 
@@ -2196,7 +2194,7 @@ obj = dt << Control Chart Builder(
 
 ### Show Upper Limit
 
-**语法:** obj << Chart( Position( number ),  Limits( Show Upper Limit( state=0|1 ) ) )
+**语法:** obj &lt;&lt; Chart( Position( number ), Limits( Show Upper Limit( state=0|1 ) ) )
 
 **说明:** 显示或隐藏上控制限。 默认开启。
 
@@ -2215,7 +2213,7 @@ obj = dt << Control Chart Builder(
 
 ### Size
 
-**语法:** obj << Size( width, height )
+**语法:** obj &lt;&lt; Size( width, height )
 
 **说明:** 设置图形大小。
 
@@ -2233,7 +2231,7 @@ obj << Size( 808, 586 );
 
 ### Sort by Subgroup
 
-**语法:** obj << Sort by Subgroup( state=0|1 )
+**语法:** obj &lt;&lt; Sort by Subgroup( state=0|1 )
 
 **说明:** 在执行计算之前，按子组变量或嵌套子组变量的组合对过程数据进行排序。仅当指定了“子组”变量时，该选项才可用。
 
@@ -2253,7 +2251,7 @@ obj << Sort by Subgroup( 1 );
 
 ### Test Excluded Subgroups
 
-**语法:** obj << Test Excluded Subgroups( state=0|1 )
+**语法:** obj &lt;&lt; Test Excluded Subgroups( state=0|1 )
 
 **说明:** 在检验计算中包括或排除完全排除的子组。仅当选定“显示已排除区域”选项时该选项才可用。 默认开启。
 
@@ -2277,7 +2275,7 @@ dt << Select Rows( Index( 21, 24 ) ) << Exclude;
 
 ### Use Event Chooser
 
-**语法:** obj << Use Event Chooser( state=0|1 )
+**语法:** obj &lt;&lt; Use Event Chooser( state=0|1 )
 
 **说明:** 将有序型数值数据分类并提供单个数值型水平建模选择。“使用事件选择器”选项仅可用于包含数值型非连续 Y 变量的“计数图”。
 
@@ -2312,7 +2310,7 @@ obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
 
 ### Variables
 
-**语法:** obj << Variables( Y( column ), <Subgroup( column)>, <Phase( column )>, <Part( column )> )
+**语法:** obj &lt;&lt; Variables( Y( column ), &lt;Subgroup( column)&gt;, &lt;Phase( column )&gt;, &lt;Part( column )&gt; )
 
 **说明:** 为角色指定指示变量。
 
@@ -2329,7 +2327,7 @@ obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
 
 ### n Trials
 
-**语法:** obj << n Trials( column | integer )
+**语法:** obj &lt;&lt; n Trials( column | integer )
 
 **说明:** 为计数控制图分配批大小。
 

@@ -6,7 +6,7 @@
 
 ### Action
 
-**구문:** obj << Action
+**구문:** obj &lt;&lt; Action
 
 **설명:** 실행할 표현식을 삽입하기 위한 플랫폼 내의 다목적 트랩도어. 임시로 표시 상자 및 데이터 테이블 유형을 플랫폼에 설정합니다.
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**구문:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**구문:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **설명:** 이전에 생성된 사전 설정을 개체에 적용하여 옵션과 사용자 정의를 저장된 설정과 일치하도록 업데이트합니다.
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Automatic Recalc
 
-**구문:** obj << Automatic Recalc( state=0|1 )
+**구문:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **설명:** 제외 항목 및 데이터 변경이 있을 때 분석을 자동으로 다시 실행합니다. 자동 재계산 옵션이 설정된 경우 재계산하기 전에 제외 항목 및 데이터 변경이 적용되게 하려면 Wait(0) 명령을 사용하는 것이 좋습니다.
 
@@ -87,7 +87,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**구문:** obj << Broadcast(message)
+**구문:** obj &lt;&lt; Broadcast(message)
 
 **설명:** 플랫폼에 메시지를 브로드캐스트합니다. 개별 개체의 반환 결과가 테이블인 경우 가능하면 테이블이 연결되고 최종 형식은 테이블 상자의 &apos;결합 테이블 저장&apos; 옵션 결과 또는 소스 열을 사용한 &apos;연결&apos; 옵션 결과와 동일합니다. 그 외의 경우에는 결과가 목록에 저장되어 반환됩니다.
 
@@ -104,7 +104,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**구문:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**구문:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **설명:** 플랫폼 변수를 변경하기 위한 제어판을 추가합니다.
 
@@ -119,7 +119,7 @@ ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country,
 
 ### Copy ByGroup Script
 
-**구문:** obj << Copy ByGroup Script
+**구문:** obj &lt;&lt; Copy ByGroup Script
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 클립보드에 넣습니다.
 
@@ -139,7 +139,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**구문:** obj << Copy Script
+**구문:** obj &lt;&lt; Copy Script
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 클립보드에 넣습니다.
 
@@ -154,7 +154,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**구문:** obj << Data Table Window
+**구문:** obj &lt;&lt; Data Table Window
 
 **설명:** 이 분석에 대한 데이터 테이블 창을 앞으로 가져옵니다.
 
@@ -169,7 +169,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**구문:** obj << Get By Levels
+**구문:** obj &lt;&lt; Get By Levels
 
 **설명:** 기준 그룹 열을 값에 매핑하는 연관 배열을 반환합니다.
 
@@ -186,7 +186,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**구문:** obj << Get ByGroup Script
+**구문:** obj &lt;&lt; Get ByGroup Script
 
 **설명:** 이 분석을 수행하기 위한 스크립트(JSL)를 생성하고 표현식으로 반환합니다.
 
@@ -207,7 +207,7 @@ Show( t );
 
 ### Get Container
 
-**구문:** obj << Get Container
+**구문:** obj &lt;&lt; Get Container
 
 **설명:** 개체의 콘텐츠를 담고 있는 컨테이너 상자에 대한 참조를 반환합니다.
 
@@ -254,7 +254,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**구문:** obj << Get Data Table
+**구문:** obj &lt;&lt; Get Data Table
 
 **설명:** 데이터 테이블에 대한 참조를 반환합니다.
 
@@ -270,7 +270,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**구문:** obj << Get Group Platform
+**구문:** obj &lt;&lt; Get Group Platform
 
 **설명:** 이 플랫폼이 그룹의 일부인 경우 그룹 플랫폼 개체를 반환하고, 그렇지 않은 경우 Empty()를 반환합니다.
 
@@ -287,7 +287,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**구문:** obj << Get Script
+**구문:** obj &lt;&lt; Get Script
 
 **설명:** 이 분석을 수행하기 위한 스크립트(JSL)를 생성하고 표현식으로 반환합니다.
 
@@ -303,7 +303,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**구문:** obj << Get Script With Data Table
+**구문:** obj &lt;&lt; Get Script With Data Table
 
 **설명:** 이 데이터 테이블을 참조하는 분석을 수행하기 위한 스크립트(JSL)를 생성하고 표현식으로 반환합니다.
 
@@ -319,7 +319,7 @@ Show( t );
 
 ### Get Timing
 
-**구문:** obj << Get Timing
+**구문:** obj &lt;&lt; Get Timing
 
 **설명:** 플랫폼 시작 시간을 설정합니다.
 
@@ -335,7 +335,7 @@ Show( t );
 
 ### Get Web Support
 
-**구문:** obj << Get Web Support
+**구문:** obj &lt;&lt; Get Web Support
 
 **설명:** 표시 개체에 대한 대화식 HTML 지원 수준을 나타내는 숫자를 반환합니다. 1은 일부 또는 모든 요소가 지원됨을 의미하고 0은 지원되지 않음을 의미합니다.
 
@@ -351,7 +351,7 @@ Show( s );
 
 ### Get Where Expr
 
-**구문:** obj << Get Where Expr
+**구문:** obj &lt;&lt; Get Where Expr
 
 **설명:** By() 또는 Where()를 사용하여 플랫폼이 시작된 경우 데이터 부분집합에 대한 Where 표현식을 반환하고, 그렇지 않은 경우 Empty()를 반환합니다.
 
@@ -388,7 +388,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**구문:** obj << Local Data Filter
+**구문:** obj &lt;&lt; Local Data Filter
 
 **설명:** 데이터를 특정 그룹 또는 범위로 필터링합니다. 이 플랫폼에서만 사용 가능합니다.
 
@@ -444,7 +444,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**구문:** obj << Paste Local Data Filter
+**구문:** obj &lt;&lt; Paste Local Data Filter
 
 **설명:** 클립보드의 로컬 데이터 필터를 현재 보고서에 적용합니다.
 
@@ -463,7 +463,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**구문:** obj << Redo Analysis
+**구문:** obj &lt;&lt; Redo Analysis
 
 **설명:** 동일한 분석을 새 창에서 다시 실행합니다. 데이터가 변경된 경우에는 분석결과가 달라집니다.
 
@@ -478,7 +478,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**구문:** obj << Redo ByGroup Analysis
+**구문:** obj &lt;&lt; Redo ByGroup Analysis
 
 **설명:** 동일한 분석을 새 창에서 다시 실행합니다. 데이터가 변경된 경우에는 분석결과가 달라집니다.
 
@@ -498,7 +498,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**구문:** obj << Relaunch Analysis
+**구문:** obj &lt;&lt; Relaunch Analysis
 
 **설명:** 플랫폼 시작 창을 열고 보고서를 생성하는 데 사용된 설정을 불러옵니다.
 
@@ -513,7 +513,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**구문:** obj << Relaunch ByGroup
+**구문:** obj &lt;&lt; Relaunch ByGroup
 
 **설명:** 플랫폼 시작 창을 열고 보고서를 생성하는 데 사용된 설정을 불러옵니다.
 
@@ -533,7 +533,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**구문:** obj << Remove Column Switcher
+**구문:** obj &lt;&lt; Remove Column Switcher
 
 **설명:** 플랫폼에 추가된 가장 최근 열 전환기를 제거합니다.
 
@@ -550,7 +550,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**구문:** obj << Remove Local Data Filter
+**구문:** obj &lt;&lt; Remove Local Data Filter
 
 **설명:** 로컬 데이터 필터가 생성된 경우 로컬 데이터 필터를 제거하고 데이터 테이블의 모든 데이터를 직접 사용하도록 플랫폼을 복원합니다.
 
@@ -589,9 +589,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**구문:** obj << Report;
-
-Report( obj )
+**구문:** obj &lt;&lt; Report;Report( obj )
 
 **설명:** 보고서 개체에 대한 참조를 반환합니다.
 
@@ -608,7 +606,7 @@ Show( t );
 
 ### Report View
 
-**구문:** obj << Report View( "전체"|"요약" )
+**구문:** obj &lt;&lt; Report View( "전체"|"요약" )
 
 **설명:** 보고서 보기는 플랫폼 보고서에 표시되는 상세 수준을 결정합니다. Full은 모든 상세 정보를 표시하고 Summary는 플랫폼에 따라 선택된 콘텐츠만 표시합니다. 사용자 정의된 동작의 경우 표시 상자는 <<Set Summary Behavior 메시지를 지원합니다.
 
@@ -623,7 +621,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**구문:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**구문:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 데이터 테이블에 테이블 특성으로 저장합니다. 스크립트 이름을 지정할 수 있습니다. Append Suffix 옵션은 스크립트 이름에 숫자 접미사를 추가하여 이름이 같은 기존 스크립트와 구분합니다. Prompt 옵션은 사용자에게 스크립트 이름을 지정하라는 메시지를 표시합니다. Replace 옵션은 이름이 같은 기존 스크립트를 바꿉니다.
 
@@ -643,7 +641,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**구문:** obj << Save ByGroup Script to Journal
+**구문:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 이 스크립트가 포함된 저널에 버튼을 추가합니다.
 
@@ -663,7 +661,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**구문:** obj << Save ByGroup Script to Script Window
+**구문:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 현재 스크립트 텍스트 창에 추가합니다.
 
@@ -683,7 +681,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**구문:** obj << Save Script for All Objects
+**구문:** obj &lt;&lt; Save Script for All Objects
 
 **설명:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -698,7 +696,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**구문:** obj << Save Script for All Objects To Data Table( <name> )
+**구문:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **설명:** 모든 보고서 개체에 대한 스크립트를 현재 데이터 테이블에 저장합니다. 이 옵션은 창에 여러 보고서가 있을 때 유용합니다. 스크립트 이름을 따옴표로 묶어 지정하는 경우 외에는 첫 번째 플랫폼 이름을 따라 스크립트 이름이 지정됩니다.
 
@@ -736,7 +734,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**구문:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**구문:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 데이터 테이블에 테이블 특성으로 저장합니다.
 
@@ -751,7 +749,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**구문:** obj << Save Script to Journal
+**구문:** obj &lt;&lt; Save Script to Journal
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 이 스크립트가 포함된 저널에 버튼을 추가합니다.
 
@@ -766,7 +764,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**구문:** obj << Save Script to Report
+**구문:** obj &lt;&lt; Save Script to Report
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 보고서 자체에 표시합니다. 수행된 작업에 대한 인쇄된 기록을 유지하려는 경우에 유용합니다.
 
@@ -781,7 +779,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**구문:** obj << Save Script to Script Window
+**구문:** obj &lt;&lt; Save Script to Script Window
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 현재 스크립트 텍스트 창에 추가합니다.
 
@@ -857,7 +855,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**구문:** obj << Sync to Data Table Changes
+**구문:** obj &lt;&lt; Sync to Data Table Changes
 
 **설명:** 제외 항목 및 데이터 변경 사항과 동기화합니다.
 
@@ -874,7 +872,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**구문:** obj << Title( "new title" )
+**구문:** obj &lt;&lt; Title( "new title" )
 
 **설명:** 플랫폼의 제목을 설정합니다.
 
@@ -889,7 +887,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**구문:** obj << Top Report
+**구문:** obj &lt;&lt; Top Report
 
 **설명:** 보고서의 루트 노드에 대한 참조를 반환합니다.
 
@@ -906,7 +904,7 @@ Show( t );
 
 ### Transform Column
 
-**구문:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**구문:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **설명:** 개체의 로컬 컨텍스트(대개 플랫폼)에서 변환 열을 생성합니다. 변환 열은 플랫폼의 수명 동안에만 활성화됩니다.
 
@@ -927,7 +925,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**구문:** obj << View Web XML
+**구문:** obj &lt;&lt; View Web XML
 
 **설명:** 대화식 HTML 보고서를 생성하는 데 사용된 XML 코드를 반환합니다.
 
@@ -942,9 +940,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**구문:** obj = Scatterplot 3D(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Scatterplot 3D(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 보고서에 대해 생성할 창 유형을 설정합니다. 기본적으로 Visible 보고서 창이 생성됩니다. Invisible 창은 화면에 나타나지 않지만 Window()와 같은 함수로 검색할 수 있습니다. Private 창은 대부분의 창 메시지에 응답하지만 검색할 수 없으며 보고서 개체를 통해 처리해야 합니다.
 
@@ -981,7 +977,7 @@ obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Peta
 
 ### By
 
-**구문:** obj << By( column(s) )
+**구문:** obj &lt;&lt; By( column(s) )
 
 **설명:** 변수의 각 수준에 대해 하나씩 여러 보고서를 생성합니다.
 
@@ -1000,7 +996,7 @@ obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Peta
 
 ### Coloring
 
-**구문:** obj << Coloring( column )
+**구문:** obj &lt;&lt; Coloring( column )
 
 **설명:** 선택한 변수에 따라 표식에 색상을 적용합니다.
 
@@ -1017,7 +1013,7 @@ obj = dt << Scatterplot 3D(
 
 ### Columns
 
-**구문:** obj << Columns( column(s) )
+**구문:** obj &lt;&lt; Columns( column(s) )
 
 **설명:** 3D 그래프의 X, Y, Z 좌표에 사용할 수 있는 변수입니다.
 
@@ -1031,7 +1027,7 @@ obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Peta
 
 ### Freq
 
-**구문:** obj << Freq( column )
+**구문:** obj &lt;&lt; Freq( column )
 
 **설명:** 분석을 위해 각 행에 빈도를 할당하는 값이 들어 있는 열입니다.
 
@@ -1046,7 +1042,7 @@ obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Peta
 
 ### Weight
 
-**구문:** obj << Weight( column )
+**구문:** obj &lt;&lt; Weight( column )
 
 **설명:** 분석을 위해 각 행에 가중치를 할당하는 값이 들어 있는 열입니다.
 
@@ -1064,7 +1060,7 @@ obj = dt << Scatterplot 3D(
 
 ### Y
 
-**구문:** obj << Y( column(s) )
+**구문:** obj &lt;&lt; Y( column(s) )
 
 **설명:** 3D 그래프의 X, Y, Z 좌표에 사용할 수 있는 변수입니다.
 
@@ -1080,7 +1076,7 @@ obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Peta
 
 ### Biplot Rays
 
-**구문:** obj << Biplot Rays( state=0|1 )
+**구문:** obj &lt;&lt; Biplot Rays( state=0|1 )
 
 **설명:** 그래프에 행렬도 선을 표시하거나 숨깁니다. 주성분에서는 기본적으로 설정되어 있습니다.
 
@@ -1096,7 +1092,7 @@ obj << Biplot Rays( 1 );
 
 ### Circle Size
 
-**구문:** obj << Circle Size( number=0.2 )
+**구문:** obj &lt;&lt; Circle Size( number=0.2 )
 
 **설명:** "점 크기 지정"이 설정되거나 가중치 또는 빈도 역할이 사용되는 경우 표식 크기를 설정합니다. 기본값은 "0.2"입니다.
 
@@ -1117,7 +1113,7 @@ obj = dt << Scatterplot 3D(
 
 ### Connect Points
 
-**구문:** obj << Connect Points( state=0|1, <group column name> )
+**구문:** obj &lt;&lt; Connect Points( state=0|1, &lt;group column name&gt; )
 
 **설명:** 점을 연결하는 선을 표시하거나 숨깁니다. 점을 그룹화할 수 있습니다(선택 사항).
 
@@ -1132,7 +1128,7 @@ obj << Connect Points( 1, :Species );
 
 ### Drop Line Thickness
 
-**구문:** obj << Drop Line Thickness( fraction=0.03 )
+**구문:** obj &lt;&lt; Drop Line Thickness( fraction=0.03 )
 
 **설명:** 수직선 두께를 설정합니다. 기본값은 "0.03"입니다.
 
@@ -1149,7 +1145,7 @@ obj << Drop Line Thickness( 0.8 );
 
 ### Drop Lines
 
-**구문:** obj << Drop Lines( state=0|1 )
+**구문:** obj &lt;&lt; Drop Lines( state=0|1 )
 
 **설명:** 첫 번째 및 세 번째 변수로 정의된 밑면에서 그래프의 각 점까지 선을 그리거나 숨깁니다.
 
@@ -1164,7 +1160,7 @@ obj << Drop Lines( 1 );
 
 ### Ellipsoid Coverage
 
-**구문:** obj << Ellipsoid Coverage( fraction=0.5 )
+**구문:** obj &lt;&lt; Ellipsoid Coverage( fraction=0.5 )
 
 **설명:** 타원의 범위를 설정합니다. 예를 들어 0.5는 데이터의 밀도가 가장 높은 절반을 포함합니다. 기본값은 "0.5"입니다.
 
@@ -1180,7 +1176,7 @@ obj << Normal Contour Ellipsoids( 1, :Species );
 
 ### Ellipsoid Transparency
 
-**구문:** obj << Ellipsoid Transparency( fraction=0.5 )
+**구문:** obj &lt;&lt; Ellipsoid Transparency( fraction=0.5 )
 
 **설명:** 타원의 투명도를 설정합니다. 0[투명] 및 1[불투명]로 지정할 수 있습니다. 기본값은 "0.5"입니다.
 
@@ -1196,7 +1192,7 @@ obj << Normal Contour Ellipsoids( 1, :Species );
 
 ### Frame3D
 
-**구문:** obj << Frame3D( <commands passed to Frame3D> )
+**구문:** obj &lt;&lt; Frame3D( &lt;commands passed to Frame3D&gt; )
 
 **설명:** 표시 명령을 3D 그림으로 보냅니다.
 
@@ -1211,7 +1207,7 @@ obj << Frame3D( Set View Zoom( 0.9075 ) );
 
 ### Jitter
 
-**구문:** obj << Jitter( state=0|1 )
+**구문:** obj &lt;&lt; Jitter( state=0|1 )
 
 **설명:** 산점도에서 점을 조금 이동하여 점을 지터링합니다. 기본적으로 설정되어 있습니다.
 
@@ -1225,11 +1221,11 @@ obj = Scatterplot 3D( Y( :Petal length, :Petal width, :Species ), Jitter( 0 ) );
 
 ### Legend
 
-**구문:** obj << Legend( <Legend Model ID> )
+**구문:** obj &lt;&lt; Legend( &lt;Legend Model ID&gt; )
 
 ### Nonpar Density Contour
 
-**구문:** obj << Nonpar Density Contour( state=0|1, <group column name> )
+**구문:** obj &lt;&lt; Nonpar Density Contour( state=0|1, &lt;group column name&gt; )
 
 **설명:** 점 주변에 95% 커널 등고선 셸을 그립니다.
 
@@ -1244,7 +1240,7 @@ obj << Nonpar Density Contour( 1, :Species );
 
 ### Nonpar Density Contour Settings
 
-**구문:** obj << Nonpar Density Contour Settings( surface, on=0|1, <quantile>, <transparency>, <color> )
+**구문:** obj &lt;&lt; Nonpar Density Contour Settings( surface, on=0|1, &lt;quantile&gt;, &lt;transparency&gt;, &lt;color&gt; )
 
 **설명:** 등위면에 대한 설정
 
@@ -1260,7 +1256,7 @@ obj << Nonpar Density Contour Settings( 1, 1, .5, .6, Green );
 
 ### Normal Contour Ellipsoids
 
-**구문:** obj << Normal Contour Ellipsoids( state=0|1, <group column name> )
+**구문:** obj &lt;&lt; Normal Contour Ellipsoids( state=0|1, &lt;group column name&gt; )
 
 **설명:** 정규 등고선 타원을 표시하거나 숨깁니다.
 
@@ -1275,7 +1271,7 @@ obj << Normal Contour Ellipsoids( 1, :Species );
 
 ### Principal Components
 
-**구문:** obj << Principal Components( state=0|1 )
+**구문:** obj &lt;&lt; Principal Components( state=0|1 )
 
 **설명:** 그래프에 주성분 보고서와 선을 모두 표시합니다.
 
@@ -1290,7 +1286,7 @@ obj << Principal Components;
 
 ### Remove Prin Comp
 
-**구문:** obj << Remove Prin Comp
+**구문:** obj &lt;&lt; Remove Prin Comp
 
 **설명:** 그래프에서 주성분 보고서와 선을 제거합니다.
 
@@ -1307,7 +1303,7 @@ obj << Remove Prin Comp;
 
 ### Rotated Components
 
-**구문:** obj << Rotated Components( PC|ML, ONE|SMC , number, Varimax| Biquartimax| Quartimax|Equamax|Orthomax| Factorparsimax... )
+**구문:** obj &lt;&lt; Rotated Components( PC|ML, ONE|SMC , number, Varimax| Biquartimax| Quartimax|Equamax|Orthomax| Factorparsimax... )
 
 **설명:** 회전된 주성분이 포함된 보고서를 표시합니다. 여기서 성분은 좌표 공간과 더 밀접하게 정렬됩니다. 두 번째 모수는 사전 공통분에 사용되는 대각을 정의하며 SMC 또는 ONE(주성분)일 수 있습니다.
 
@@ -1322,7 +1318,7 @@ obj << Rotated Components( PC, ONE, 3, Varimax );
 
 ### Save Prin Components
 
-**구문:** obj << Save Prin Components( number )
+**구문:** obj &lt;&lt; Save Prin Components( number )
 
 **설명:** 주성분을 데이터 테이블에 새 열로 저장합니다.
 
@@ -1338,7 +1334,7 @@ obj << Save Prin Components( 3 );
 
 ### Save Rotated Components
 
-**구문:** obj << Save Rotated Components
+**구문:** obj &lt;&lt; Save Rotated Components
 
 **설명:** 회전한 주성분을 데이터 테이블에 새 열로 저장합니다.
 
@@ -1354,7 +1350,7 @@ obj << Save Rotated Components;
 
 ### Show Controls
 
-**구문:** obj << Show Controls( state=0|1 )
+**구문:** obj &lt;&lt; Show Controls( state=0|1 )
 
 **설명:** 산점도 아래쪽에 제어판을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -1369,7 +1365,7 @@ obj << Show Controls( 1 );
 
 ### Show Points
 
-**구문:** obj << Show Points( state=0|1 )
+**구문:** obj &lt;&lt; Show Points( state=0|1 )
 
 **설명:** 산점도에 점을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -1384,7 +1380,7 @@ obj << Show Points( 1 );
 
 ### Show Ray Labels
 
-**구문:** obj << Show Ray Labels( state=0|1 )
+**구문:** obj &lt;&lt; Show Ray Labels( state=0|1 )
 
 **설명:** 선에 라벨을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -1401,7 +1397,7 @@ obj << Show Ray Labels( 1 );
 
 ### Sized Points
 
-**구문:** obj << Sized Points( state=0|1 )
+**구문:** obj &lt;&lt; Sized Points( state=0|1 )
 
 **설명:** 산점도의 점을 확장하거나 축소합니다.
 
@@ -1416,7 +1412,7 @@ obj << Sized Points( 1 );
 
 ### Std Prin Components
 
-**구문:** obj << Std Prin Components( state=0|1 )
+**구문:** obj &lt;&lt; Std Prin Components( state=0|1 )
 
 **설명:** 그래프에 표준화 주성분 보고서와 선을 모두 표시합니다.
 
@@ -1451,11 +1447,7 @@ obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal widt
 
 #### Add Ellipsoid
 
-**구문:** obj << Add Ellipsoid( 4x4 matrix )
-
-obj << Add Ellipsoid(3x3 cov,3x1 means)
-
-obj << Add Ellipsoid(3x3 corr,3x1 means,3x1 std dev)
+**구문:** obj &lt;&lt; Add Ellipsoid( 4x4 matrix )obj &lt;&lt; Add Ellipsoid(3x3 cov,3x1 means)obj &lt;&lt; Add Ellipsoid(3x3 corr,3x1 means,3x1 std dev)
 
 **설명:** 그림에 타원을 그립니다.
 
@@ -1478,7 +1470,7 @@ obj << Frame3D(
 
 #### Add Markers
 
-**구문:** obj << Add Markers( [ nx1 X matrix ], [ nx1 Y matrix ], [ nx1 Z matrix ] )
+**구문:** obj &lt;&lt; Add Markers( [ nx1 X matrix ], [ nx1 Y matrix ], [ nx1 Z matrix ] )
 
 **설명:** 그림에 n개의 표식을 그립니다.
 
@@ -1495,7 +1487,7 @@ obj << Frame3D( Add Markers( [2 3 4], [5 6 7], [1 8 9] ) );
 
 #### Add Vector
 
-**구문:** obj << Add Vector( [ 3xn from matrix ], [ 3xn to matrix ], FromCap( CutOff|Sphere|Point|Feather ), ToCap( CutOff|Sphere|Point|Feather ), Facets( Triangle|Square|Round ), Shaft Color( color ), Shaft Thickness( number ), From Thickness( number ), To Thickness( number ), From Color( number ), To Color( number ) ) )
+**구문:** obj &lt;&lt; Add Vector( [ 3xn from matrix ], [ 3xn to matrix ], FromCap( CutOff|Sphere|Point|Feather ), ToCap( CutOff|Sphere|Point|Feather ), Facets( Triangle|Square|Round ), Shaft Color( color ), Shaft Thickness( number ), From Thickness( number ), To Thickness( number ), From Color( number ), To Color( number ) ) )
 
 **설명:** 그림에 벡터 또는 화살표를 그립니다.
 
@@ -1512,7 +1504,7 @@ obj << Frame3D( Add Vector( [4.5 2 1], [7.5 4 6], FromCap( "Feather" ), ToCap( "
 
 #### Get Axes
 
-**구문:** obj << Get Axes
+**구문:** obj &lt;&lt; Get Axes
 
 **설명:** 그림에 축을 표시하는 상태를 반환합니다.
 
@@ -1530,7 +1522,7 @@ Show( s );
 
 #### Get Box
 
-**구문:** obj << Get Box
+**구문:** obj &lt;&lt; Get Box
 
 **설명:** 그림에 상자 프레임을 표시하는 상태를 반환합니다.
 
@@ -1548,7 +1540,7 @@ Show( s );
 
 #### Get Grab Handles
 
-**구문:** obj << Get Grab Handles
+**구문:** obj &lt;&lt; Get Grab Handles
 
 **설명:** 그림에 손잡이 핸들을 표시하는 상태를 반환합니다.
 
@@ -1566,7 +1558,7 @@ Show( s );
 
 #### Get Graph Size
 
-**구문:** obj << Get Graph Size
+**구문:** obj &lt;&lt; Get Graph Size
 
 **설명:** 그래프 크기를 반환합니다.
 
@@ -1584,7 +1576,7 @@ Show( s );
 
 #### Get Grids
 
-**구문:** obj << Get Grids
+**구문:** obj &lt;&lt; Get Grids
 
 **설명:** 그림에 격자를 표시하는 상태를 반환합니다.
 
@@ -1602,7 +1594,7 @@ Show( s );
 
 #### Get Hide Lights Border
 
-**구문:** obj << Get Hide Lights Border
+**구문:** obj &lt;&lt; Get Hide Lights Border
 
 **설명:** 그림 주위의 조명 테두리의 상태를 반환합니다.
 
@@ -1620,7 +1612,7 @@ Show( state );
 
 #### Get Line Scale
 
-**구문:** obj << Get Line Scale
+**구문:** obj &lt;&lt; Get Line Scale
 
 **설명:** 그림에 대한 선 너비를 반환합니다.
 
@@ -1638,7 +1630,7 @@ Show( w );
 
 #### Get Marker Quality
 
-**구문:** obj << Get Marker Quality
+**구문:** obj &lt;&lt; Get Marker Quality
 
 **설명:** 그림에 대한 형태 및 음영과 같은 표식 특성을 반환합니다.
 
@@ -1656,7 +1648,7 @@ Show( q );
 
 #### Get Marker Scale
 
-**구문:** obj << Get Marker Scale
+**구문:** obj &lt;&lt; Get Marker Scale
 
 **설명:** 그림에 대한 표식 크기를 반환합니다.
 
@@ -1674,7 +1666,7 @@ Show( s );
 
 #### Get Marker Transparency
 
-**구문:** obj << Get Marker Transparency
+**구문:** obj &lt;&lt; Get Marker Transparency
 
 **설명:** 그림에 대한 표식 투명도를 반환합니다.
 
@@ -1692,7 +1684,7 @@ Show( t );
 
 #### Get Rotation
 
-**구문:** obj << Get Rotation
+**구문:** obj &lt;&lt; Get Rotation
 
 **설명:** 프레임에 대한 현재 회전을 반환합니다.
 
@@ -1710,7 +1702,7 @@ Show( r );
 
 #### Get Text Scale
 
-**구문:** obj << Get Text Scale
+**구문:** obj &lt;&lt; Get Text Scale
 
 **설명:** 그림에 대한 텍스트 크기를 반환합니다.
 
@@ -1728,7 +1720,7 @@ Show( s );
 
 #### Get View Ortho
 
-**구문:** obj << Get View Ortho
+**구문:** obj &lt;&lt; Get View Ortho
 
 **설명:** 그림에 대한 직교 보기의 상태를 반환합니다.
 
@@ -1746,7 +1738,7 @@ Show( o );
 
 #### Get View Perspective
 
-**구문:** obj << Get View Perspective
+**구문:** obj &lt;&lt; Get View Perspective
 
 **설명:** 그림에 대한 보기 투시를 반환합니다.
 
@@ -1764,7 +1756,7 @@ Show( p );
 
 #### Get View Zoom
 
-**구문:** obj << Get View Zoom
+**구문:** obj &lt;&lt; Get View Zoom
 
 **설명:** 그림에 대한 현재 확대/축소를 반환합니다.
 
@@ -1782,7 +1774,7 @@ Show( z );
 
 #### Get Wall Color
 
-**구문:** obj << Get Wall Color
+**구문:** obj &lt;&lt; Get Wall Color
 
 **설명:** 그림에 대한 벽 색상을 반환합니다.
 
@@ -1800,7 +1792,7 @@ Show( c );
 
 #### Get Walls
 
-**구문:** obj << Get Walls
+**구문:** obj &lt;&lt; Get Walls
 
 **설명:** 그림에 벽을 표시하는 상태를 반환합니다.
 
@@ -1818,7 +1810,7 @@ Show( s );
 
 #### Get X Axis Color
 
-**구문:** obj << Get X Axis Color
+**구문:** obj &lt;&lt; Get X Axis Color
 
 **설명:** 그림에 대한 x 축 색상을 반환합니다.
 
@@ -1836,7 +1828,7 @@ Show( c );
 
 #### Get X Axis Label
 
-**구문:** obj << Get X Axis Label
+**구문:** obj &lt;&lt; Get X Axis Label
 
 **설명:** 그림의 X 축에 대한 라벨을 반환합니다.
 
@@ -1854,7 +1846,7 @@ Show( label );
 
 #### Get Y Axis Color
 
-**구문:** obj << Get Y Axis Color
+**구문:** obj &lt;&lt; Get Y Axis Color
 
 **설명:** 그림에 대한 y 축 색상을 반환합니다.
 
@@ -1872,7 +1864,7 @@ Show( c );
 
 #### Get Y Axis Label
 
-**구문:** obj << Get Y Axis Label
+**구문:** obj &lt;&lt; Get Y Axis Label
 
 **설명:** 그림의 Y 축에 대한 라벨을 반환합니다.
 
@@ -1890,7 +1882,7 @@ Show( label );
 
 #### Get Z Axis Color
 
-**구문:** obj << Get Z Axis Color
+**구문:** obj &lt;&lt; Get Z Axis Color
 
 **설명:** 그림에 대한 z 축 색상을 반환합니다.
 
@@ -1908,7 +1900,7 @@ Show( c );
 
 #### Get Z Axis Label
 
-**구문:** obj << Get Z Axis Label
+**구문:** obj &lt;&lt; Get Z Axis Label
 
 **설명:** 그림의 Z 축에 대한 라벨을 반환합니다.
 
@@ -1926,7 +1918,7 @@ Show( label );
 
 #### Set Axes
 
-**구문:** obj << Set Axes( state=0|1 )
+**구문:** obj &lt;&lt; Set Axes( state=0|1 )
 
 **설명:** 그림에 X, Y, Z 축을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -1943,7 +1935,7 @@ obj << Frame3D( Set Axes( 1 ) );
 
 #### Set Box
 
-**구문:** obj << Set Box( state=0|1 )
+**구문:** obj &lt;&lt; Set Box( state=0|1 )
 
 **설명:** 그림에 상자 프레임을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -1960,7 +1952,7 @@ obj << Frame3D( Set Box( 1 ) );
 
 #### Set Graph Size
 
-**구문:** obj << Set Graph Size( x, y )
+**구문:** obj &lt;&lt; Set Graph Size( x, y )
 
 **설명:** 그래프 크기를 설정합니다.
 
@@ -1977,7 +1969,7 @@ obj << Frame3D( Set Graph Size( 700, 800 ) );
 
 #### Set Grids
 
-**구문:** obj << Set Grids( state=0|1 )
+**구문:** obj &lt;&lt; Set Grids( state=0|1 )
 
 **설명:** 그림에 격자를 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -1994,7 +1986,7 @@ obj << Frame3D( Set Grids( 1 ) );
 
 #### Set Hide Lights Border
 
-**구문:** obj << Set Hide Lights Border( state=0|1 )
+**구문:** obj &lt;&lt; Set Hide Lights Border( state=0|1 )
 
 **설명:** 그림 주위에 조명 테두리를 숨기거나 표시합니다. 기본적으로 설정되어 있습니다.
 
@@ -2011,7 +2003,7 @@ obj << Frame3D( Set Hide Lights Border( 0 ) );
 
 #### Set Line Scale
 
-**구문:** obj << Set Line Scale( number )
+**구문:** obj &lt;&lt; Set Line Scale( number )
 
 **설명:** 그림의 격자에 대한 선 너비를 설정합니다.
 
@@ -2028,7 +2020,7 @@ obj << Frame3D( Set Line Scale( 6.5 ) );
 
 #### Set Marker Quality
 
-**구문:** obj << Set Marker Quality( number )
+**구문:** obj &lt;&lt; Set Marker Quality( number )
 
 **설명:** 그림에 대한 형태 및 음영과 같은 표식 특성을 설정합니다.
 
@@ -2045,7 +2037,7 @@ obj << Frame3D( Set Marker Scale( 3 ), Set Marker Quality( 0.2625 ) );
 
 #### Set Marker Scale
 
-**구문:** obj << Set Marker Scale( number )
+**구문:** obj &lt;&lt; Set Marker Scale( number )
 
 **설명:** 그림에 대한 표식 크기를 설정합니다.
 
@@ -2062,7 +2054,7 @@ obj << Frame3D( Set Marker Scale( 3.5 ) );
 
 #### Set Marker Transparency
 
-**구문:** obj << Set Marker Transparency( fraction )
+**구문:** obj &lt;&lt; Set Marker Transparency( fraction )
 
 **설명:** 그림에 대한 표식 투명도를 설정합니다.
 
@@ -2079,7 +2071,7 @@ obj << Frame3D( Set Marker Transparency( 0.4125 ) );
 
 #### Set Oscillation
 
-**구문:** obj << Set Oscillation( X, Y, Z, duration )
+**구문:** obj &lt;&lt; Set Oscillation( X, Y, Z, duration )
 
 **설명:** 그림의 진동 비율을 설정합니다.
 
@@ -2096,7 +2088,7 @@ obj << Frame3D( Set Rotation( -60, -3, 35 ), Set Oscillation( -54, 0, 38, 100 ) 
 
 #### Set Rotation
 
-**구문:** obj << Set Rotation( X, Y, Z )
+**구문:** obj &lt;&lt; Set Rotation( X, Y, Z )
 
 **설명:** 지정한 좌표로 프레임을 회전합니다.
 
@@ -2113,7 +2105,7 @@ obj << Frame3D( Set Rotation( -60, -3, 35 ) );
 
 #### Set Spin
 
-**구문:** obj << Set Spin(  dx, dy, sx, sy  )
+**구문:** obj &lt;&lt; Set Spin( dx, dy, sx, sy )
 
 **설명:** 지정된 축에서 그래프를 스핀합니다. dx 및 dy 값은 점 (sx, sy)로부터의 마우스 델타 움직임입니다.
 
@@ -2130,7 +2122,7 @@ obj << Frame3D( Set Spin( .01, .01, 0, 0 ) );
 
 #### Set Text Scale
 
-**구문:** obj << Set Text Scale( number )
+**구문:** obj &lt;&lt; Set Text Scale( number )
 
 **설명:** 그림의 축 텍스트에 대한 텍스트 크기를 설정합니다.
 
@@ -2147,7 +2139,7 @@ obj << Frame3D( Set Text Scale( 1.4 ) );
 
 #### Set View Ortho
 
-**구문:** obj << Set View Ortho( state=0|1 )
+**구문:** obj &lt;&lt; Set View Ortho( state=0|1 )
 
 **설명:** 그림을 직교로 또는 선형으로 표시합니다.
 
@@ -2164,7 +2156,7 @@ obj << Frame3D( Set View Ortho( 1 ) );
 
 #### Set View Perspective
 
-**구문:** obj << Set View Perspective( fraction )
+**구문:** obj &lt;&lt; Set View Perspective( fraction )
 
 **설명:** 그림의 보기 투시를 설정합니다.
 
@@ -2181,7 +2173,7 @@ obj << Frame3D( Set View Perspective( 0.275 ) );
 
 #### Set View Zoom
 
-**구문:** obj << Set View Zoom( number )
+**구문:** obj &lt;&lt; Set View Zoom( number )
 
 **설명:** 그림에 대한 확대/축소를 설정합니다.
 
@@ -2200,7 +2192,7 @@ obj << Frame3D( Set View Zoom( 2 ) );
 
 #### Set Wall Color
 
-**구문:** obj << Set Wall Color( number )
+**구문:** obj &lt;&lt; Set Wall Color( number )
 
 **설명:** 그림의 벽 색상을 설정합니다.
 
@@ -2217,7 +2209,7 @@ obj << Frame3D( Set Wall Color( -16775543 ) );
 
 #### Set Walls
 
-**구문:** obj << Set Walls( state=0|1 )
+**구문:** obj &lt;&lt; Set Walls( state=0|1 )
 
 **설명:** 그림에 벽을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2234,7 +2226,7 @@ obj << Frame3D( Set Walls( 1 ) );
 
 #### Set X Axis Color
 
-**구문:** obj << Set X Axis Color( color )
+**구문:** obj &lt;&lt; Set X Axis Color( color )
 
 **설명:** 그림의 X 축 색상을 설정합니다.
 
@@ -2251,7 +2243,7 @@ obj << Frame3D( Set X Axis Color( 5 ) );
 
 #### Set X Axis Label
 
-**구문:** obj << Set X Axis Label( string )
+**구문:** obj &lt;&lt; Set X Axis Label( string )
 
 **설명:** 그림의 X 축에 대한 라벨을 설정합니다.
 
@@ -2268,7 +2260,7 @@ obj << Frame3D( Set X Axis Label( "Iris Sepal Length" ) );
 
 #### Set Y Axis Color
 
-**구문:** obj << Set Y Axis Color( color )
+**구문:** obj &lt;&lt; Set Y Axis Color( color )
 
 **설명:** 그림의 Y 축 색상을 설정합니다.
 
@@ -2285,7 +2277,7 @@ obj << Frame3D( Set Y Axis Color( 11 ) );
 
 #### Set Y Axis Label
 
-**구문:** obj << Set Y Axis Label( string )
+**구문:** obj &lt;&lt; Set Y Axis Label( string )
 
 **설명:** 그림의 Y 축에 대한 라벨을 설정합니다.
 
@@ -2302,7 +2294,7 @@ obj << Frame3D( Set Y Axis Label( "Iris Petal Length" ) );
 
 #### Set Z Axis Color
 
-**구문:** obj << Set Z Axis Color( color )
+**구문:** obj &lt;&lt; Set Z Axis Color( color )
 
 **설명:** 그림의 Z 축 색상을 설정합니다.
 
@@ -2319,7 +2311,7 @@ obj << Frame3D( Set Z Axis Color( "Green" ) );
 
 #### Set Z Axis Label
 
-**구문:** obj << Set Z Axis Label( string )
+**구문:** obj &lt;&lt; Set Z Axis Label( string )
 
 **설명:** 그림의 Z 축에 대한 라벨을 설정합니다.
 
@@ -2336,7 +2328,7 @@ obj << Frame3D( Set Z Axis Label( "Iris Sepal Width" ) );
 
 #### XAxis
 
-**구문:** obj << XAxis( Min( number ), Max( number ), Inc( number ), Format( ) )
+**구문:** obj &lt;&lt; XAxis( Min( number ), Max( number ), Inc( number ), Format( ) )
 
 **설명:** 그림의 X 축에 대한 값을 설정합니다.
 
@@ -2353,7 +2345,7 @@ obj << Frame3D( XAxis( Min( 3 ), Max( 10 ) ) );
 
 #### YAxis
 
-**구문:** obj << YAxis( Min( number ), Max( number ), Inc( number ), Format( ) )
+**구문:** obj &lt;&lt; YAxis( Min( number ), Max( number ), Inc( number ), Format( ) )
 
 **설명:** 그림의 Y 축에 대한 값을 설정합니다.
 
@@ -2370,7 +2362,7 @@ obj << Frame3D( YAxis( Min( 1 ), Max( 10 ), Inc( 0.5 ) ) );
 
 #### Z Axis
 
-**구문:** obj << Z Axis( Min( number ), Max( number ), Inc( number ), Format( ) )
+**구문:** obj &lt;&lt; Z Axis( Min( number ), Max( number ), Inc( number ), Format( ) )
 
 **설명:** 그림의 Z 축에 대한 값을 설정합니다.
 
@@ -2387,7 +2379,7 @@ obj << Frame3D( ZAxis( Min( 1 ), Max( 5 ), Inc( 0.25 ) ) );
 
 #### get light active
 
-**구문:** obj << get light active( light number )
+**구문:** obj &lt;&lt; get light active( light number )
 
 **설명:** 그림의 지정된 조명 활성화 샤이닝을 반환합니다.
 
@@ -2405,7 +2397,7 @@ Show( p );
 
 #### get light color
 
-**구문:** obj << get light color( light number )
+**구문:** obj &lt;&lt; get light color( light number )
 
 **설명:** 그림의 지정된 조명 색상 샤이닝을 목록 {빨간색, 녹색, 파란색}으로 반환합니다.
 
@@ -2423,7 +2415,7 @@ Show( c );
 
 #### get light position
 
-**구문:** obj << get light position( light number )
+**구문:** obj &lt;&lt; get light position( light number )
 
 **설명:** 그림의 지정된 조명 위치 샤이닝을 목록 {x, y, z}로 반환합니다.
 
@@ -2441,7 +2433,7 @@ Show( p );
 
 #### set light active
 
-**구문:** obj << set light active( light number, state=0|1 )
+**구문:** obj &lt;&lt; set light active( light number, state=0|1 )
 
 **설명:** 그림에 지정된 조명 샤이닝을 설정합니다.
 
@@ -2458,7 +2450,7 @@ obj << Frame3D( Set Hide Lights Border( 0 ), Set Light Active( 4, 1 ) );
 
 #### set light color
 
-**구문:** obj << set light color( light number, red value, green value, blue value )
+**구문:** obj &lt;&lt; set light color( light number, red value, green value, blue value )
 
 **설명:** 그림의 조명 샤이닝 색상을 설정합니다.
 
@@ -2475,7 +2467,7 @@ obj << Frame3D( Set Hide Lights Border( 0 ), Set Light Color( 2, 240, 50, 70 ) )
 
 #### set light position
 
-**구문:** obj << set light position( light number, X, Y, Z )
+**구문:** obj &lt;&lt; set light position( light number, X, Y, Z )
 
 **설명:** 그림의 조명 위치 샤이닝을 설정합니다.
 

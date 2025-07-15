@@ -6,7 +6,7 @@
 
 ### Remove
 
-**構文:** obj << Remove
+**構文:** obj &lt;&lt; Remove
 
 **JMP追加されたバージョン:** 18
 

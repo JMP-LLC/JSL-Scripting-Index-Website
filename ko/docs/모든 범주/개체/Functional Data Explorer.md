@@ -6,7 +6,7 @@
 
 ### Action
 
-**구문:** obj << Action
+**구문:** obj &lt;&lt; Action
 
 **설명:** 실행할 표현식을 삽입하기 위한 플랫폼 내의 다목적 트랩도어. 임시로 표시 상자 및 데이터 테이블 유형을 플랫폼에 설정합니다.
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**구문:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**구문:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **설명:** 이전에 생성된 사전 설정을 개체에 적용하여 옵션과 사용자 정의를 저장된 설정과 일치하도록 업데이트합니다.
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Automatic Recalc
 
-**구문:** obj << Automatic Recalc( state=0|1 )
+**구문:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **설명:** 제외 항목 및 데이터 변경이 있을 때 분석을 자동으로 다시 실행합니다. 자동 재계산 옵션이 설정된 경우 재계산하기 전에 제외 항목 및 데이터 변경이 적용되게 하려면 Wait(0) 명령을 사용하는 것이 좋습니다.
 
@@ -87,7 +87,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**구문:** obj << Broadcast(message)
+**구문:** obj &lt;&lt; Broadcast(message)
 
 **설명:** 플랫폼에 메시지를 브로드캐스트합니다. 개별 개체의 반환 결과가 테이블인 경우 가능하면 테이블이 연결되고 최종 형식은 테이블 상자의 &apos;결합 테이블 저장&apos; 옵션 결과 또는 소스 열을 사용한 &apos;연결&apos; 옵션 결과와 동일합니다. 그 외의 경우에는 결과가 목록에 저장되어 반환됩니다.
 
@@ -104,7 +104,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**구문:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**구문:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **설명:** 플랫폼 변수를 변경하기 위한 제어판을 추가합니다.
 
@@ -119,7 +119,7 @@ ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country,
 
 ### Copy ByGroup Script
 
-**구문:** obj << Copy ByGroup Script
+**구문:** obj &lt;&lt; Copy ByGroup Script
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 클립보드에 넣습니다.
 
@@ -139,7 +139,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**구문:** obj << Copy Script
+**구문:** obj &lt;&lt; Copy Script
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 클립보드에 넣습니다.
 
@@ -154,7 +154,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**구문:** obj << Data Table Window
+**구문:** obj &lt;&lt; Data Table Window
 
 **설명:** 이 분석에 대한 데이터 테이블 창을 앞으로 가져옵니다.
 
@@ -169,7 +169,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**구문:** obj << Get By Levels
+**구문:** obj &lt;&lt; Get By Levels
 
 **설명:** 기준 그룹 열을 값에 매핑하는 연관 배열을 반환합니다.
 
@@ -186,7 +186,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**구문:** obj << Get ByGroup Script
+**구문:** obj &lt;&lt; Get ByGroup Script
 
 **설명:** 이 분석을 수행하기 위한 스크립트(JSL)를 생성하고 표현식으로 반환합니다.
 
@@ -207,7 +207,7 @@ Show( t );
 
 ### Get Container
 
-**구문:** obj << Get Container
+**구문:** obj &lt;&lt; Get Container
 
 **설명:** 개체의 콘텐츠를 담고 있는 컨테이너 상자에 대한 참조를 반환합니다.
 
@@ -254,7 +254,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**구문:** obj << Get Data Table
+**구문:** obj &lt;&lt; Get Data Table
 
 **설명:** 데이터 테이블에 대한 참조를 반환합니다.
 
@@ -270,7 +270,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**구문:** obj << Get Group Platform
+**구문:** obj &lt;&lt; Get Group Platform
 
 **설명:** 이 플랫폼이 그룹의 일부인 경우 그룹 플랫폼 개체를 반환하고, 그렇지 않은 경우 Empty()를 반환합니다.
 
@@ -287,7 +287,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**구문:** obj << Get Script
+**구문:** obj &lt;&lt; Get Script
 
 **설명:** 이 분석을 수행하기 위한 스크립트(JSL)를 생성하고 표현식으로 반환합니다.
 
@@ -303,7 +303,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**구문:** obj << Get Script With Data Table
+**구문:** obj &lt;&lt; Get Script With Data Table
 
 **설명:** 이 데이터 테이블을 참조하는 분석을 수행하기 위한 스크립트(JSL)를 생성하고 표현식으로 반환합니다.
 
@@ -319,7 +319,7 @@ Show( t );
 
 ### Get Timing
 
-**구문:** obj << Get Timing
+**구문:** obj &lt;&lt; Get Timing
 
 **설명:** 플랫폼 시작 시간을 설정합니다.
 
@@ -335,7 +335,7 @@ Show( t );
 
 ### Get Web Support
 
-**구문:** obj << Get Web Support
+**구문:** obj &lt;&lt; Get Web Support
 
 **설명:** 표시 개체에 대한 대화식 HTML 지원 수준을 나타내는 숫자를 반환합니다. 1은 일부 또는 모든 요소가 지원됨을 의미하고 0은 지원되지 않음을 의미합니다.
 
@@ -351,7 +351,7 @@ Show( s );
 
 ### Get Where Expr
 
-**구문:** obj << Get Where Expr
+**구문:** obj &lt;&lt; Get Where Expr
 
 **설명:** By() 또는 Where()를 사용하여 플랫폼이 시작된 경우 데이터 부분집합에 대한 Where 표현식을 반환하고, 그렇지 않은 경우 Empty()를 반환합니다.
 
@@ -388,7 +388,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**구문:** obj << Local Data Filter
+**구문:** obj &lt;&lt; Local Data Filter
 
 **설명:** 데이터를 특정 그룹 또는 범위로 필터링합니다. 이 플랫폼에서만 사용 가능합니다.
 
@@ -444,7 +444,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**구문:** obj << Paste Local Data Filter
+**구문:** obj &lt;&lt; Paste Local Data Filter
 
 **설명:** 클립보드의 로컬 데이터 필터를 현재 보고서에 적용합니다.
 
@@ -463,7 +463,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**구문:** obj << Redo Analysis
+**구문:** obj &lt;&lt; Redo Analysis
 
 **설명:** 동일한 분석을 새 창에서 다시 실행합니다. 데이터가 변경된 경우에는 분석결과가 달라집니다.
 
@@ -478,7 +478,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**구문:** obj << Redo ByGroup Analysis
+**구문:** obj &lt;&lt; Redo ByGroup Analysis
 
 **설명:** 동일한 분석을 새 창에서 다시 실행합니다. 데이터가 변경된 경우에는 분석결과가 달라집니다.
 
@@ -498,7 +498,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**구문:** obj << Relaunch Analysis
+**구문:** obj &lt;&lt; Relaunch Analysis
 
 **설명:** 플랫폼 시작 창을 열고 보고서를 생성하는 데 사용된 설정을 불러옵니다.
 
@@ -513,7 +513,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**구문:** obj << Relaunch ByGroup
+**구문:** obj &lt;&lt; Relaunch ByGroup
 
 **설명:** 플랫폼 시작 창을 열고 보고서를 생성하는 데 사용된 설정을 불러옵니다.
 
@@ -533,7 +533,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**구문:** obj << Remove Column Switcher
+**구문:** obj &lt;&lt; Remove Column Switcher
 
 **설명:** 플랫폼에 추가된 가장 최근 열 전환기를 제거합니다.
 
@@ -550,7 +550,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**구문:** obj << Remove Local Data Filter
+**구문:** obj &lt;&lt; Remove Local Data Filter
 
 **설명:** 로컬 데이터 필터가 생성된 경우 로컬 데이터 필터를 제거하고 데이터 테이블의 모든 데이터를 직접 사용하도록 플랫폼을 복원합니다.
 
@@ -589,9 +589,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**구문:** obj << Report;
-
-Report( obj )
+**구문:** obj &lt;&lt; Report;Report( obj )
 
 **설명:** 보고서 개체에 대한 참조를 반환합니다.
 
@@ -608,7 +606,7 @@ Show( t );
 
 ### Report View
 
-**구문:** obj << Report View( "전체"|"요약" )
+**구문:** obj &lt;&lt; Report View( "전체"|"요약" )
 
 **설명:** 보고서 보기는 플랫폼 보고서에 표시되는 상세 수준을 결정합니다. Full은 모든 상세 정보를 표시하고 Summary는 플랫폼에 따라 선택된 콘텐츠만 표시합니다. 사용자 정의된 동작의 경우 표시 상자는 <<Set Summary Behavior 메시지를 지원합니다.
 
@@ -623,7 +621,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**구문:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**구문:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 데이터 테이블에 테이블 특성으로 저장합니다. 스크립트 이름을 지정할 수 있습니다. Append Suffix 옵션은 스크립트 이름에 숫자 접미사를 추가하여 이름이 같은 기존 스크립트와 구분합니다. Prompt 옵션은 사용자에게 스크립트 이름을 지정하라는 메시지를 표시합니다. Replace 옵션은 이름이 같은 기존 스크립트를 바꿉니다.
 
@@ -643,7 +641,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**구문:** obj << Save ByGroup Script to Journal
+**구문:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 이 스크립트가 포함된 저널에 버튼을 추가합니다.
 
@@ -663,7 +661,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**구문:** obj << Save ByGroup Script to Script Window
+**구문:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 현재 스크립트 텍스트 창에 추가합니다.
 
@@ -683,7 +681,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**구문:** obj << Save Script for All Objects
+**구문:** obj &lt;&lt; Save Script for All Objects
 
 **설명:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -698,7 +696,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**구문:** obj << Save Script for All Objects To Data Table( <name> )
+**구문:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **설명:** 모든 보고서 개체에 대한 스크립트를 현재 데이터 테이블에 저장합니다. 이 옵션은 창에 여러 보고서가 있을 때 유용합니다. 스크립트 이름을 따옴표로 묶어 지정하는 경우 외에는 첫 번째 플랫폼 이름을 따라 스크립트 이름이 지정됩니다.
 
@@ -736,7 +734,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**구문:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**구문:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 데이터 테이블에 테이블 특성으로 저장합니다.
 
@@ -751,7 +749,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**구문:** obj << Save Script to Journal
+**구문:** obj &lt;&lt; Save Script to Journal
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 이 스크립트가 포함된 저널에 버튼을 추가합니다.
 
@@ -766,7 +764,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**구문:** obj << Save Script to Report
+**구문:** obj &lt;&lt; Save Script to Report
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 보고서 자체에 표시합니다. 수행된 작업에 대한 인쇄된 기록을 유지하려는 경우에 유용합니다.
 
@@ -781,7 +779,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**구문:** obj << Save Script to Script Window
+**구문:** obj &lt;&lt; Save Script to Script Window
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 현재 스크립트 텍스트 창에 추가합니다.
 
@@ -857,7 +855,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**구문:** obj << Sync to Data Table Changes
+**구문:** obj &lt;&lt; Sync to Data Table Changes
 
 **설명:** 제외 항목 및 데이터 변경 사항과 동기화합니다.
 
@@ -874,7 +872,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**구문:** obj << Title( "new title" )
+**구문:** obj &lt;&lt; Title( "new title" )
 
 **설명:** 플랫폼의 제목을 설정합니다.
 
@@ -889,7 +887,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**구문:** obj << Top Report
+**구문:** obj &lt;&lt; Top Report
 
 **설명:** 보고서의 루트 노드에 대한 참조를 반환합니다.
 
@@ -906,7 +904,7 @@ Show( t );
 
 ### Transform Column
 
-**구문:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**구문:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **설명:** 개체의 로컬 컨텍스트(대개 플랫폼)에서 변환 열을 생성합니다. 변환 열은 플랫폼의 수명 동안에만 활성화됩니다.
 
@@ -927,7 +925,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**구문:** obj << View Web XML
+**구문:** obj &lt;&lt; View Web XML
 
 **설명:** 대화식 HTML 보고서를 생성하는 데 사용된 XML 코드를 반환합니다.
 
@@ -942,9 +940,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**구문:** obj = Functional Data Explorer(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Functional Data Explorer(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 보고서에 대해 생성할 창 유형을 설정합니다. 기본적으로 Visible 보고서 창이 생성됩니다. Invisible 창은 화면에 나타나지 않지만 Window()와 같은 함수로 검색할 수 있습니다. Private 창은 대부분의 창 메시지에 응답하지만 검색할 수 없으며 보고서 개체를 통해 처리해야 합니다.
 
@@ -981,7 +977,7 @@ obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME 
 
 ### By
 
-**구문:** obj = Functional Data Explorer(...<By( column(s) )>...)
+**구문:** obj = Functional Data Explorer(...&lt;By( column(s) )&gt;...)
 
 **설명:** 지정된 열의 각 수준에 대해 별도의 분석을 수행합니다.
 
@@ -1004,7 +1000,7 @@ obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME 
 
 ### Freq
 
-**구문:** obj = Functional Data Explorer(...<Freq( column )>...)
+**구문:** obj = Functional Data Explorer(...&lt;Freq( column )&gt;...)
 
 **설명:** 분석을 위해 각 행에 빈도를 할당하는 값이 들어 있는 열을 지정합니다.
 
@@ -1023,7 +1019,7 @@ obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME 
 
 ### Function
 
-**구문:** obj = Functional Data Explorer(...<Function( column )>...)
+**구문:** obj = Functional Data Explorer(...&lt;Function( column )&gt;...)
 
 **설명:** 각 개별 함수를 식별하는 ID 변수를 지정합니다.
 
@@ -1041,7 +1037,7 @@ obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME 
 
 ### ID
 
-**구문:** obj = Functional Data Explorer(...<ID( column )>...)
+**구문:** obj = Functional Data Explorer(...&lt;ID( column )&gt;...)
 
 **설명:** 각 개별 함수를 식별하는 ID 변수를 지정합니다.
 
@@ -1059,7 +1055,7 @@ obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME 
 
 ### Input
 
-**구문:** obj = Functional Data Explorer(...<Input( column )>...)
+**구문:** obj = Functional Data Explorer(...&lt;Input( column )&gt;...)
 
 **설명:** 입력 변수를 지정합니다.
 
@@ -1095,7 +1091,7 @@ obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME 
 
 ### Supplementary
 
-**구문:** obj = Functional Data Explorer(...<Supplementary( column(s) )>...)
+**구문:** obj = Functional Data Explorer(...&lt;Supplementary( column(s) )&gt;...)
 
 **설명:** 하나 이상의 보조 변수를 지정합니다. 보조 변수는 플랫폼에서 계산에 사용되지 않으며 변수를 포함해도 결과에 영향을 주지 않습니다. 이러한 변수는 데이터 해석을 개선하거나 향후 분석에 사용될 수 있습니다.
 
@@ -1119,7 +1115,7 @@ obj = dt << Functional Data Explorer(
 
 ### Validation
 
-**구문:** obj = Functional Data Explorer(...<Validation( column )>...)
+**구문:** obj = Functional Data Explorer(...&lt;Validation( column )&gt;...)
 
 **설명:** 검증 데이터 집합을 정의하는 숫자 열을 지정합니다. 이 열에는 최대 세 개의 구분되는 값이 포함되어야 합니다.
 
@@ -1143,7 +1139,7 @@ obj = dt << Functional Data Explorer(
 
 ### X
 
-**구문:** obj = Functional Data Explorer(...<X( column )>...)
+**구문:** obj = Functional Data Explorer(...&lt;X( column )&gt;...)
 
 **설명:** 입력 변수를 지정합니다.
 
@@ -1179,7 +1175,7 @@ obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME 
 
 ### Z
 
-**구문:** obj = Functional Data Explorer(...<Z( column(s) )>...)
+**구문:** obj = Functional Data Explorer(...&lt;Z( column(s) )&gt;...)
 
 **설명:** 하나 이상의 보조 변수를 지정합니다. 보조 변수는 플랫폼에서 계산에 사용되지 않으며 변수를 포함해도 결과에 영향을 주지 않습니다. 이러한 변수는 데이터 해석을 개선하거나 향후 분석에 사용될 수 있습니다.
 
@@ -1205,7 +1201,7 @@ obj = dt << Functional Data Explorer(
 
 ### B Splines
 
-**구문:** obj << B Splines
+**구문:** obj &lt;&lt; B Splines
 
 **설명:** B-스플라인 모형을 데이터에 적합시킵니다.
 
@@ -1221,7 +1217,7 @@ obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME 
 
 ### B Splines Model Controls
 
-**구문:** obj << B Splines Model Controls
+**구문:** obj &lt;&lt; B Splines Model Controls
 
 **설명:** B-스플라인 모형을 적합시키기 전에 모형 제어 패널을 엽니다. 매듭 수와 스플라인 차수를 지정할 수 있습니다.
 
@@ -1237,7 +1233,7 @@ obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME 
 
 ### Baseline Correction
 
-**구문:** obj << Baseline Correction
+**구문:** obj &lt;&lt; Baseline Correction
 
 **설명:** Subtracts a baseline function from each individual function. You can perform automated baseline correction using either the statistics-sensitive nonlinear iterative peak-clipping (SNIP) or the alternating reweighted least squares solution technique. There is also an option to load a known baseline function from a data table.
 
@@ -1245,7 +1241,7 @@ obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME 
 
 ### Data Processing
 
-**구문:** obj << Data Processing( <options> )
+**구문:** obj &lt;&lt; Data Processing( &lt;options&gt; )
 
 **설명:** 데이터에 대한 전처리 단계를 수행할 수 있는 데이터 처리 옵션을 지정합니다. 이 옵션에는 정리, 변환, 맞춤, 스펙트럼 및 대상 함수 작업이 포함됩니다.
 
@@ -1261,7 +1257,7 @@ obj = dt << Functional Data Explorer( Y( :pH ), X( :Time ), ID( :BatchID ), Data
 
 ### Direct Functional PCA
 
-**구문:** obj << Direct Functional PCA
+**구문:** obj &lt;&lt; Direct Functional PCA
 
 **설명:** 기저 함수 모형을 적합시키지 않고 함수 PCA를 직접 수행합니다. 이 옵션을 사용하려면 입력 데이터가 균등한 간격의 격자에 있어야 합니다.
 
@@ -1283,7 +1279,7 @@ obj = dt << Functional Data Explorer(
 
 ### Fourier Basis
 
-**구문:** obj << Fourier Basis
+**구문:** obj &lt;&lt; Fourier Basis
 
 **설명:** 벌점 B-스플라인 모형을 데이터에 적합시킵니다.
 
@@ -1299,7 +1295,7 @@ obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME 
 
 ### Fourier Basis Model Controls
 
-**구문:** obj << Fourier Basis Model Controls
+**구문:** obj &lt;&lt; Fourier Basis Model Controls
 
 **설명:** Fourier 기저 모형을 적합시키기 전에 모형 제어 패널을 엽니다. Fourier 쌍 개수와 주기를 지정할 수 있습니다.
 
@@ -1320,7 +1316,7 @@ obj = dt << Functional Data Explorer(
 
 ### Multivariate Curve Resolution
 
-**구문:** obj << Multivariate Curve Resolution
+**구문:** obj &lt;&lt; Multivariate Curve Resolution
 
 **설명:** MCR(다변량 곡선 해상도)을 수행합니다. 이 옵션을 사용하려면 입력 데이터가 균등한 간격의 격자에 있어야 합니다.
 
@@ -1328,7 +1324,7 @@ obj = dt << Functional Data Explorer(
 
 ### Nonnegative SVD
 
-**구문:** obj << Nonnegative SVD
+**구문:** obj &lt;&lt; Nonnegative SVD
 
 **설명:** Performs a nonnegative singular value decomposition (SVD) on the stacked matrix of functions. A nonnegative SVD constrains the matrix decomposition so that the scores and loadings are greater than or equal to zero.
 
@@ -1336,7 +1332,7 @@ obj = dt << Functional Data Explorer(
 
 ### P Splines
 
-**구문:** obj << P Splines
+**구문:** obj &lt;&lt; P Splines
 
 **설명:** 벌점 B-스플라인 모형을 데이터에 적합시킵니다.
 
@@ -1352,7 +1348,7 @@ obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME 
 
 ### P Splines Model Controls
 
-**구문:** obj << P Splines Model Controls
+**구문:** obj &lt;&lt; P Splines Model Controls
 
 **설명:** P-스플라인 모형을 적합시키기 전에 모형 제어 패널을 엽니다. 매듭 수와 스플라인 차수를 지정할 수 있습니다.
 
@@ -1368,7 +1364,7 @@ obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME 
 
 ### Peak Finding
 
-**구문:** obj << Peak Finding
+**구문:** obj &lt;&lt; Peak Finding
 
 **설명:** 직접 또는 지정된 모수 모형을 사용하여 정상점을 찾고 요약합니다.
 
@@ -1376,7 +1372,7 @@ obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME 
 
 ### Penalized Nonnegative SVD
 
-**구문:** obj << Penalized Nonnegative SVD
+**구문:** obj &lt;&lt; Penalized Nonnegative SVD
 
 **설명:** 벌점 비음 SVD를 수행하여 함수 PCA를 생성합니다. 이 옵션을 사용하려면 입력 데이터가 균등한 간격의 격자에 있어야 합니다.
 
@@ -1384,7 +1380,7 @@ obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME 
 
 ### Penalized SVD
 
-**구문:** obj << Penalized SVD
+**구문:** obj &lt;&lt; Penalized SVD
 
 **설명:** 벌점 SVD를 수행하여 함수 PCA를 생성합니다. 이 옵션을 사용하려면 입력 데이터가 균등한 간격의 격자에 있어야 합니다.
 
@@ -1392,7 +1388,7 @@ obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME 
 
 ### Plot Mean Function
 
-**구문:** obj << Plot Mean Function( state=0|1 )
+**구문:** obj &lt;&lt; Plot Mean Function( state=0|1 )
 
 **설명:** 요약 보고서에 평균 함수 그림을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -1410,7 +1406,7 @@ obj << Plot Mean Function( 0 );
 
 ### Plot Median Function
 
-**구문:** obj << Plot Median Function( state=0|1 )
+**구문:** obj &lt;&lt; Plot Median Function( state=0|1 )
 
 **설명:** 요약 보고서에 중앙값 함수 그림을 표시하거나 숨깁니다.
 
@@ -1431,7 +1427,7 @@ obj = dt << Functional Data Explorer(
 
 ### Plot Standard Deviation Function
 
-**구문:** obj << Plot Standard Deviation Function( state=0|1 )
+**구문:** obj &lt;&lt; Plot Standard Deviation Function( state=0|1 )
 
 **설명:** 요약 보고서에 표준편차 함수 그림을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -1449,7 +1445,7 @@ obj << Plot Standard Deviation Function( 0 );
 
 ### Save Data
 
-**구문:** obj << Save Data
+**구문:** obj &lt;&lt; Save Data
 
 **설명:** 처리된 데이터를 쌓인 형식의 별도 데이터 테이블에 저장합니다.
 
@@ -1466,7 +1462,7 @@ obj << Save Data;
 
 ### Unconstrained MCR
 
-**구문:** obj << Unconstrained MCR
+**구문:** obj &lt;&lt; Unconstrained MCR
 
 **설명:** 무제약 MCR(다변량 곡선 해상도)을 수행합니다. 이 옵션을 사용하려면 입력 데이터가 균등한 간격의 격자에 있어야 합니다.
 
@@ -1474,7 +1470,7 @@ obj << Save Data;
 
 ### Wavelets
 
-**구문:** obj << Wavelets
+**구문:** obj &lt;&lt; Wavelets
 
 **설명:** 여러 소파동 모형을 데이터에 적합시킵니다. 이 옵션을 사용하려면 입력 데이터가 균등한 간격의 격자에 있어야 합니다. 데이터 간격이 균등하지 않으면 소파동 루틴이 시작되기 전에 자동으로 격자가 생성됩니다.
 
@@ -1494,7 +1490,7 @@ obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME 
 
 #### Align 0 to 1
 
-**구문:** obj << Data Processing( Align 0 to 1 )
+**구문:** obj &lt;&lt; Data Processing( Align 0 to 1 )
 
 **설명:** 0 ~ 1 내에 놓이도록 입력(X) 범위에 출력 함수(Y)를 정렬합니다.
 
@@ -1515,7 +1511,7 @@ obj = dt << Functional Data Explorer(
 
 #### Align Maximum
 
-**구문:** obj << Data Processing( Align Maximum )
+**구문:** obj &lt;&lt; Data Processing( Align Maximum )
 
 **설명:** 관측된 최대 입력 값(X)을 사용하여 출력 함수(Y)를 정렬합니다.
 
@@ -1536,7 +1532,7 @@ obj = dt << Functional Data Explorer(
 
 #### Align Minimum
 
-**구문:** obj << Data Processing( Align Minimum )
+**구문:** obj &lt;&lt; Data Processing( Align Minimum )
 
 **설명:** 관측된 최소 입력 값(X)을 사용하여 출력 함수(Y)를 정렬합니다.
 
@@ -1557,7 +1553,7 @@ obj = dt << Functional Data Explorer(
 
 #### Align by Function
 
-**구문:** obj << Data Processing( Align by Function )
+**구문:** obj &lt;&lt; Data Processing( Align by Function )
 
 **설명:** 각 함수의 범위가 입력(X) 범위 위에 오도록 출력 함수(Y)를 정렬합니다.
 
@@ -1578,7 +1574,7 @@ obj = dt << Functional Data Explorer(
 
 #### Baseline Correction
 
-**구문:** obj << Data Processing( Baseline Correction( Model( Linear|Quadratic|Cubic|Fit Exponential 2P|Fit Exponential 3P ), Correction Region( ), Baseline Regions( vector ), Anchor Points( vector ) ) )
+**구문:** obj &lt;&lt; Data Processing( Baseline Correction( Model( Linear|Quadratic|Cubic|Fit Exponential 2P|Fit Exponential 3P ), Correction Region( ), Baseline Regions( vector ), Anchor Points( vector ) ) )
 
 **설명:** 각 함수에서 기준 모형을 적합시키고 제거합니다. 기준 모형, 수정 영역, 기준 영역 및 앵커 지점을 지정할 수 있습니다.
 
@@ -1616,7 +1612,7 @@ obj = dt << Functional Data Explorer(
 
 #### Center
 
-**구문:** obj << Data Processing( Center )
+**구문:** obj &lt;&lt; Data Processing( Center )
 
 **설명:** 결과를 가운데에 맞춥니다.
 
@@ -1637,7 +1633,7 @@ obj = dt << Functional Data Explorer(
 
 #### Dynamic Time Warping
 
-**구문:** obj << Data Processing( Dynamic Time Warping( Reference( number ) ) )
+**구문:** obj &lt;&lt; Data Processing( Dynamic Time Warping( Reference( number ) ) )
 
 **설명:** DTW(동적 시간 뒤틀림)를 사용하여 출력 함수를 정렬합니다. DTW는 둘 이상의 함수를 서로 맞추기 위해 최적의 뒤틀림을 찾는 함수 맞춤 기법입니다.
 
@@ -1658,7 +1654,7 @@ obj = dt << Functional Data Explorer(
 
 #### Exp
 
-**구문:** obj << Data Processing( Exp )
+**구문:** obj &lt;&lt; Data Processing( Exp )
 
 **설명:** 결과의 지수 함수를 계산하여 데이터를 변환합니다.
 
@@ -1674,7 +1670,7 @@ obj = dt << Functional Data Explorer( Y( :pH ), X( :Time ), ID( :BatchID ), Data
 
 #### Filter X
 
-**구문:** obj << Data Processing( Filter X( [lower, upper] ) )
+**구문:** obj &lt;&lt; Data Processing( Filter X( [lower, upper] ) )
 
 **설명:** 지정된 구간을 벗어나는 입력(X) 값을 제거합니다.
 
@@ -1691,7 +1687,7 @@ obj << Data Processing( Filter X( [5, 50] ) );
 
 #### Filter Y
 
-**구문:** obj << Data Processing( Filter Y( [lower, upper] ) )
+**구문:** obj &lt;&lt; Data Processing( Filter Y( [lower, upper] ) )
 
 **설명:** 지정된 구간을 벗어나는 출력(Y) 값을 제거합니다.
 
@@ -1708,7 +1704,7 @@ obj << Data Processing( Filter Y( [., 100] ) );
 
 #### Load Targets
 
-**구문:** obj << Data Processing( Load Targets( "level" ) )
+**구문:** obj &lt;&lt; Data Processing( Load Targets( "level" ) )
 
 **설명:** 대상 함수를 지정합니다.
 
@@ -1729,7 +1725,7 @@ obj = dt << Functional Data Explorer(
 
 #### Log
 
-**구문:** obj << Data Processing( Log )
+**구문:** obj &lt;&lt; Data Processing( Log )
 
 **설명:** 결과의 자연 로그를 계산하여 데이터를 변환합니다.
 
@@ -1745,7 +1741,7 @@ obj = dt << Functional Data Explorer( Y( :Air ), X( :Time ), ID( :BatchID ), Dat
 
 #### Log X
 
-**구문:** obj << Data Processing( Log X )
+**구문:** obj &lt;&lt; Data Processing( Log X )
 
 **설명:** 입력의 자연 로그를 계산하여 데이터를 변환합니다.
 
@@ -1761,7 +1757,7 @@ obj = dt << Functional Data Explorer( Y( :Air ), X( :Time ), ID( :BatchID ), Dat
 
 #### Logit
 
-**구문:** obj << Data Processing( Logit )
+**구문:** obj &lt;&lt; Data Processing( Logit )
 
 **설명:** 결과의 로짓 함수를 계산하여 데이터를 변환합니다. 출력 값은 0에서 1 사이여야 합니다.
 
@@ -1783,7 +1779,7 @@ obj = dt << Functional Data Explorer(
 
 #### MSC
 
-**구문:** obj << Data Processing( MSC )
+**구문:** obj &lt;&lt; Data Processing( MSC )
 
 **설명:** 승법 산포 수정 방법을 데이터에 적용합니다. 이 방법은 각 개별 함수(ID 변수의 수준)에 대해 단순 선형 회귀를 적합시킵니다. 여기서 반응은 함수의 출력 값이고 회귀변수는 평균 함수의 출력 값입니다.
 
@@ -1804,7 +1800,7 @@ obj = dt << Functional Data Explorer(
 
 #### Negation
 
-**구문:** obj << Data Processing( Negation )
+**구문:** obj &lt;&lt; Data Processing( Negation )
 
 **설명:** 결과에 음수를 취해 데이터를 변환합니다.
 
@@ -1825,7 +1821,7 @@ obj = dt << Functional Data Explorer(
 
 #### Range 0 to 1
 
-**구문:** obj << Data Processing( Range 0 to 1 )
+**구문:** obj &lt;&lt; Data Processing( Range 0 to 1 )
 
 **설명:** 0 ~ 1 범위 내에 들어가도록 결과를 척도화합니다.
 
@@ -1846,11 +1842,7 @@ obj = dt << Functional Data Explorer(
 
 #### Reduce
 
-**구문:** obj << Data Processing( Reduce( Grid( number ) ) ); 
-
-obj << Data Processing( Reduce( Bin( number ) ) ); 
-
-obj << Data Processing( Reduce( Thin( number ) ) )
+**구문:** obj &lt;&lt; Data Processing( Reduce( Grid( number ) ) ); obj &lt;&lt; Data Processing( Reduce( Bin( number ) ) ); obj &lt;&lt; Data Processing( Reduce( Thin( number ) ) )
 
 **설명:** 다양한 기법 중 하나를 사용하여 입력(X)에 대한 데이터를 줄입니다.
 
@@ -1867,7 +1859,7 @@ obj << Data Processing( Reduce( Thin( 2 ) ) );
 
 #### Remove Selected
 
-**구문:** obj << Data Processing( Remove Selected )
+**구문:** obj &lt;&lt; Data Processing( Remove Selected )
 
 **설명:** 선택한 값을 제거합니다.
 
@@ -1886,7 +1878,7 @@ obj << Data Processing( Remove Selected );
 
 #### Remove Unselected
 
-**구문:** obj << Data Processing( Remove Unselected )
+**구문:** obj &lt;&lt; Data Processing( Remove Unselected )
 
 **설명:** 선택 취소한 값을 제거합니다.
 
@@ -1905,7 +1897,7 @@ obj << Data Processing( Remove Unselected );
 
 #### Remove Value
 
-**구문:** obj << Data Processing( Remove Value( number ) )
+**구문:** obj &lt;&lt; Data Processing( Remove Value( number ) )
 
 **설명:** 지정된 반응 값을 가진 관측값을 제거합니다.
 
@@ -1923,7 +1915,7 @@ obj << Data Processing( Remove Value( 30 ) );
 
 #### Remove Zeros
 
-**구문:** obj << Data Processing( Remove Zeros )
+**구문:** obj &lt;&lt; Data Processing( Remove Zeros )
 
 **설명:** 반응 값이 0인 관측값을 제거합니다.
 
@@ -1944,7 +1936,7 @@ obj = dt << Functional Data Explorer(
 
 #### Row Alignment
 
-**구문:** obj << Data Processing( Row Alignment )
+**구문:** obj &lt;&lt; Data Processing( Row Alignment )
 
 **설명:** 입력 값을 행 번호로 바꿉니다.
 
@@ -1965,7 +1957,7 @@ obj = dt << Functional Data Explorer(
 
 #### SNV
 
-**구문:** obj << Data Processing( SNV )
+**구문:** obj &lt;&lt; Data Processing( SNV )
 
 **설명:** 표준 정규 변량 방법을 데이터에 적용합니다. 이 방법은 평균 0, 표준편차 1이 되도록 각 개별 함수(ID 변수의 수준)를 중심에 맞추고 척도를 조정하여 출력을 표준화합니다.
 
@@ -1986,7 +1978,7 @@ obj = dt << Functional Data Explorer(
 
 #### Savitzky-Golay Filter
 
-**구문:** obj << Data Processing( "Savitzky-Golay Filter"n )
+**구문:** obj &lt;&lt; Data Processing( "Savitzky-Golay Filter"n )
 
 **설명:** Savitzky-Golay 필터를 각 함수에 적용합니다. 이 옵션을 사용하려면 입력 데이터가 균등한 간격의 격자에 있어야 합니다.
 
@@ -2007,7 +1999,7 @@ obj = dt << Functional Data Explorer(
 
 #### Savitzky-Golay First Derivative
 
-**구문:** obj << Data Processing( "Savitzky-Golay First Derivative"n )
+**구문:** obj &lt;&lt; Data Processing( "Savitzky-Golay First Derivative"n )
 
 **설명:** Savitzky-Golay 필터에서 1차 도함수를 반환합니다. 이 옵션을 사용하려면 입력 데이터가 균등한 간격의 격자에 있어야 합니다.
 
@@ -2028,7 +2020,7 @@ obj = dt << Functional Data Explorer(
 
 #### Savitzky-Golay Second Derivative
 
-**구문:** obj << Data Processing( "Savitzky-Golay Second Derivative"n )
+**구문:** obj &lt;&lt; Data Processing( "Savitzky-Golay Second Derivative"n )
 
 **설명:** Savitzky-Golay 필터에서 2차 도함수를 반환합니다. 이 옵션을 사용하려면 입력 데이터가 균등한 간격의 격자에 있어야 합니다.
 
@@ -2049,7 +2041,7 @@ obj = dt << Functional Data Explorer(
 
 #### Square
 
-**구문:** obj << Data Processing( Square )
+**구문:** obj &lt;&lt; Data Processing( Square )
 
 **설명:** 결과의 제곱을 계산하여 데이터를 변환합니다.
 
@@ -2065,7 +2057,7 @@ obj = dt << Functional Data Explorer( Y( :pH ), X( :Time ), ID( :BatchID ), Data
 
 #### Square Root
 
-**구문:** obj << Data Processing( Square Root )
+**구문:** obj &lt;&lt; Data Processing( Square Root )
 
 **설명:** 결과의 제곱근을 계산하여 데이터를 변환합니다. 출력 값은 음수가 아니어야 합니다.
 
@@ -2081,7 +2073,7 @@ obj = dt << Functional Data Explorer( Y( :pH ), X( :Time ), ID( :BatchID ), Data
 
 #### Standardize
 
-**구문:** obj << Data Processing( Standardize )
+**구문:** obj &lt;&lt; Data Processing( Standardize )
 
 **설명:** 중심화 및 척도화를 통해 출력을 표준화합니다.
 
@@ -2106,9 +2098,7 @@ obj = dt << Functional Data Explorer(
 
 #### Diagnostic Plots
 
-**구문:** obj<< Model Name( Functional DOE Analysis( Diagnostic Plots( state=0|1 ) ) ); 
-
-scrobj << Diagnostic Plots( state=0|1 )
+**구문:** obj&lt;&lt; Model Name( Functional DOE Analysis( Diagnostic Plots( state=0|1 ) ) ); scrobj &lt;&lt; Diagnostic Plots( state=0|1 )
 
 **설명:** 함수 DOE 분석 보고서에 실제값 대 예측값 그림과 잔차 그림을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2134,9 +2124,7 @@ Report( obj )["FDOE Diagnostic Plots"] << Close( 0 );
 
 #### FDOE Profiler
 
-**구문:** obj << Model Name( Functional DOE Analysis( FDOE Profiler( state=0|1 ) ) ); 
-
-scrobj << FDOE Profiler( state=0|1 )
+**구문:** obj &lt;&lt; Model Name( Functional DOE Analysis( FDOE Profiler( state=0|1 ) ) ); scrobj &lt;&lt; FDOE Profiler( state=0|1 )
 
 **설명:** 보조 변수 값에 따라 반응이 어떻게 변하는지 탐색할 수 있는 FDOE 프로파일러를 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2163,7 +2151,7 @@ scrobj << FDOE Profiler( 1 );
 
 #### Generalized Regression FPC Model
 
-**구문:** obj << Model Name( Functional DOE Analysis( Generalized Regression FPC Model( FPC Number( number ), commands )))
+**구문:** obj &lt;&lt; Model Name( Functional DOE Analysis( Generalized Regression FPC Model( FPC Number( number ), commands )))
 
 **설명:** &apos;함수 DOE 분석&apos; 옵션을 사용하여 생성되는 일반화 회귀 모형의 설정을 지정합니다. 기본 설정과 다른 설정을 지정하려면 이 명령을 사용합니다.
 
@@ -2200,9 +2188,7 @@ Report( obj )["Generalized Regression for FPC Scores"] << Close( 0 );
 
 #### Generalized Regression for FPC Scores
 
-**구문:** obj << Model Name( Functional DOE Analysis( Generalized Regression for FPC Scores( state=0|1 ) ) ); 
-
-scrobj << Generalized Regression for FPC Scores( state=0|1 )
+**구문:** obj &lt;&lt; Model Name( Functional DOE Analysis( Generalized Regression for FPC Scores( state=0|1 ) ) ); scrobj &lt;&lt; Generalized Regression for FPC Scores( state=0|1 )
 
 **설명:** 각 FPC 스코어에 대한 일반화 회귀 보고서를 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2228,11 +2214,7 @@ scrobj << Generalized Regression for FPC Scores( 0 );
 
 #### Save Prediction Formula
 
-**구문:** obj << Model Name( Functional DOE Analysis( Save Prediction Formula ) ); 
-
-obj << Wavelets( Wavelets DOE Analysis( 1, Save Prediction Formula ) ); 
-
-scrobj << Save Prediction Formula
+**구문:** obj &lt;&lt; Model Name( Functional DOE Analysis( Save Prediction Formula ) ); obj &lt;&lt; Wavelets( Wavelets DOE Analysis( 1, Save Prediction Formula ) ); scrobj &lt;&lt; Save Prediction Formula
 
 **설명:** 예측 계산식을 현재 데이터 테이블의 새 열에 저장합니다. 원래 데이터 형식이 &apos;함수 행&apos; 또는 &apos;함수 열&apos;인 경우 이 옵션은 쌓인 형식의 원래 데이터와 예측 계산식 열을 포함하는 새 데이터 테이블을 생성합니다.
 
@@ -2290,11 +2272,7 @@ scrobj << Save Prediction Formula;
 
 #### Save Residual Formula
 
-**구문:** obj << Model Name( Functional DOE Analysis( Save Residual Formula ) ); 
-
-obj << Wavelets( Wavelets DOE Analysis( 1, Save Residual Formula ) ); 
-
-scrobj << Save Residual Formula
+**구문:** obj &lt;&lt; Model Name( Functional DOE Analysis( Save Residual Formula ) ); obj &lt;&lt; Wavelets( Wavelets DOE Analysis( 1, Save Residual Formula ) ); scrobj &lt;&lt; Save Residual Formula
 
 **설명:** 잔차 계산식을 현재 데이터 테이블의 새 열에 저장합니다. 원래 데이터 형식이 &apos;함수 행&apos; 또는 &apos;함수 열&apos;인 경우 이 옵션은 쌓인 형식의 원래 데이터와 잔차 계산식 열을 포함하는 새 데이터 테이블을 생성합니다.
 
@@ -2356,9 +2334,7 @@ scrobj << Save Residual Formula;
 
 #### Customize Number of FPCs
 
-**구문:** obj << Model Name( Functional PCA( 1, Customize Number of FPCs( number ) ) ); 
-
-scrobj << Customize Number of FPCs( number )
+**구문:** obj &lt;&lt; Model Name( Functional PCA( 1, Customize Number of FPCs( number ) ) ); scrobj &lt;&lt; Customize Number of FPCs( number )
 
 **설명:** 함수 PCA에 표시할 FPC 스코어 수를 지정합니다. FPC 스코어 수를 지정하면 함수 요약 보고서도 업데이트됩니다.
 
@@ -2385,9 +2361,7 @@ scrobj << Customize Number of FPCs( 2 );
 
 #### Diagnostic Plots
 
-**구문:** obj << Model Name( Functional PCA( 1, Diagnostic Plots( state=0|1 ) ); 
-
-scrobj << Diagnostic Plots( state=0|1 )
+**구문:** obj &lt;&lt; Model Name( Functional PCA( 1, Diagnostic Plots( state=0|1 ) ); scrobj &lt;&lt; Diagnostic Plots( state=0|1 )
 
 **설명:** 함수 PCA 보고서에 FPCA 진단 그림을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2415,9 +2389,7 @@ Report( obj )["FPCA Diagnostic Plots"] << Close( 0 );
 
 #### FPC Profiler
 
-**구문:** obj << Model Name( Functional PCA( 1, FPC Profiler( state=0|1 ) ) ); 
-
-scrobj << FPC Profiler( state=0|1 )
+**구문:** obj &lt;&lt; Model Name( Functional PCA( 1, FPC Profiler( state=0|1 ) ) ); scrobj &lt;&lt; FPC Profiler( state=0|1 )
 
 **설명:** FPC 스코어 프로파일러를 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2444,9 +2416,7 @@ scrobj << FPC Profiler( 1 );
 
 #### Score Plot
 
-**구문:** obj << Model Name( Functional PCA( 1, Score Plot( state=0|1 ) ) ); 
-
-scrobj << Score Plot( state=0|1 )
+**구문:** obj &lt;&lt; Model Name( Functional PCA( 1, Score Plot( state=0|1 ) ) ); scrobj &lt;&lt; Score Plot( state=0|1 )
 
 **설명:** FPC 스코어 그림을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2477,9 +2447,7 @@ scrobj << Score Plot( 1 );
 
 #### AICc
 
-**구문:** obj << Model Name( AICc ); 
-
-scrobj << AICc
+**구문:** obj &lt;&lt; Model Name( AICc ); scrobj &lt;&lt; AICc
 
 **설명:** AICc를 B-스플라인, P-스플라인, Fourier 기저 모형에 대한 모형 선택 기준으로 지정합니다.
 
@@ -2495,9 +2463,7 @@ obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME 
 
 #### BIC
 
-**구문:** obj << Model Name( BIC ); 
-
-scrobj << BIC
+**구문:** obj &lt;&lt; Model Name( BIC ); scrobj &lt;&lt; BIC
 
 **설명:** BIC를 B-스플라인, P-스플라인, Fourier 기저 모형에 대한 모형 선택 기준으로 지정합니다.
 
@@ -2513,9 +2479,7 @@ obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME 
 
 #### Basis Function Coefficients
 
-**구문:** obj << Model Name( Basis Function Coefficients( state=0|1 ) ); 
-
-scrobj << Basis Function Coefficients( state=0|1 )
+**구문:** obj &lt;&lt; Model Name( Basis Function Coefficients( state=0|1 ) ); scrobj &lt;&lt; Basis Function Coefficients( state=0|1 )
 
 **설명:** 해당 모형 적합에 대한 기저 함수 계수 보고서를 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2540,9 +2504,7 @@ Report( obj )["Basis Function Coefficients"] << Close( 0 );
 
 #### Diagnostic Plots
 
-**구문:** obj << Model Name( Diagnostic Plots( state=0|1 ) ); 
-
-scrobj << Diagnostic Plots( state=0|1 )
+**구문:** obj &lt;&lt; Model Name( Diagnostic Plots( state=0|1 ) ); scrobj &lt;&lt; Diagnostic Plots( state=0|1 )
 
 **설명:** 진단 그림 보고서를 표시하거나 숨깁니다. 소파동 또는 직접 함수 PCA 모형에는 이 옵션을 사용할 수 없습니다. 기본적으로 설정되어 있습니다.
 
@@ -2567,9 +2529,7 @@ Report( obj )["B-Spline Diagnostic Plots"] << Close( 0 );
 
 #### Function Summaries
 
-**구문:** obj << Model Name( Function Summaries( state=0|1 ) ); 
-
-scrobj << Function Summaries( state=0|1 )
+**구문:** obj &lt;&lt; Model Name( Function Summaries( state=0|1 ) ); scrobj &lt;&lt; Function Summaries( state=0|1 )
 
 **설명:** 함수 요약 보고서를 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2594,9 +2554,7 @@ Report( obj )["Function Summaries"] << Close( 0 );
 
 #### Functional DOE Analysis
 
-**구문:** obj << Model Name( Functional DOE Analysis( ... ) ); 
-
-scrobj << Functional DOE Analysis( ... )
+**구문:** obj &lt;&lt; Model Name( Functional DOE Analysis( ... ) ); scrobj &lt;&lt; Functional DOE Analysis( ... )
 
 **설명:** FDE 플랫폼 내에서 일반화 회귀 보고서를 시작합니다. 보조 변수를 모형 효과로 사용하여 일반화 회귀 모형이 각 FPC 스코어 함수에 적합됩니다.
 
@@ -2618,9 +2576,7 @@ obj = dt << Functional Data Explorer(
 
 #### Functional PCA
 
-**구문:** obj << Model Name( Functional PCA( state= 0|1 ) ); 
-
-scrobj << Functional PCA( state=0|1 )
+**구문:** obj &lt;&lt; Model Name( Functional PCA( state= 0|1 ) ); scrobj &lt;&lt; Functional PCA( state=0|1 )
 
 **설명:** 함수 PCA 보고서를 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2643,9 +2599,7 @@ scrobj << Functional PCA( 1 );
 
 #### GCV
 
-**구문:** obj << Model Name( GCV ); 
-
-scrobj << GCV
+**구문:** obj &lt;&lt; Model Name( GCV ); scrobj &lt;&lt; GCV
 
 **설명:** GCV(일반화 교차 검증)를 B-스플라인, P-스플라인, Fourier 기저 모형에 대한 모형 선택 기준으로 지정합니다.
 
@@ -2661,9 +2615,7 @@ obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME 
 
 #### Plot Basis
 
-**구문:** obj << Model Name( Plot Basis( state=0|1 ) ); 
-
-scrobj << Plot Basis( state=0|1 )
+**구문:** obj &lt;&lt; Model Name( Plot Basis( state=0|1 ) ); scrobj &lt;&lt; Plot Basis( state=0|1 )
 
 **설명:** 모든 기저 함수 그림을 하나의 그래프에 표시하거나 숨깁니다. 소파동 또는 직접 함수 PCA 모형에는 이 옵션을 사용할 수 없습니다.
 
@@ -2684,9 +2636,7 @@ obj = dt << Functional Data Explorer(
 
 #### Random Coefficients
 
-**구문:** obj << Model Name( Random Coefficients( state=0|1 ) ); 
-
-scrobj << Random Coefficients( state=0|1 )
+**구문:** obj &lt;&lt; Model Name( Random Coefficients( state=0|1 ) ); scrobj &lt;&lt; Random Coefficients( state=0|1 )
 
 **설명:** 함수별 랜덤 계수 보고서를 표시하거나 숨깁니다. 이 보고서에는 각 기저 함수 및 함수 공정 조합에 대해 추정된 랜덤 계수 테이블이 포함됩니다. 소파동 또는 직접 함수 PCA 모형에는 이 옵션을 사용할 수 없습니다. 기본적으로 설정되어 있습니다.
 
@@ -2708,7 +2658,7 @@ Report( obj )["Random Coefficients by Function"] << Close( 0 );
 
 #### Remove Fit
 
-**구문:** obj << (Model["B Splines" | "P Splines" | "Fourier Basis" | "Wavelets" | "Direct Functional PCA"] << Remove Fit)
+**구문:** obj &lt;&lt; (Model["B Splines" | "P Splines" | "Fourier Basis" | "Wavelets" | "Direct Functional PCA"] &lt;&lt; Remove Fit)
 
 **설명:** 지정된 적합을 보고서에서 제거합니다.
 
@@ -2726,9 +2676,7 @@ obj << (Model["Fourier Basis"] << Remove Fit);
 
 #### Save Data
 
-**구문:** obj << Model Name( Save Data ); 
-
-scrobj << Save Data
+**구문:** obj &lt;&lt; Model Name( Save Data ); scrobj &lt;&lt; Save Data
 
 **설명:** 처리된 데이터를 새 데이터 테이블에 저장합니다. 처리된 데이터는 쌓인 데이터 형식으로 저장됩니다.
 
@@ -2768,15 +2716,13 @@ scrobj << Save Data;
 
 #### Save Script Options
 
-**구문:** obj << Save Script Options( "Save Script Saves Steps"|"Save Script Saves State"="Save Script Saves Steps" )
+**구문:** obj &lt;&lt; Save Script Options( "Save Script Saves Steps"|"Save Script Saves State"="Save Script Saves Steps" )
 
 **설명:** Specifies the type of script that is saved for reproducing the peak finding results. 기본값은 "Save Script Saves Steps"입니다.
 
 #### Wavelets DOE Analysis
 
-**구문:** obj << Wavelets( Wavelets DOE Analysis( state=0|1 ) ); 
-
-scrobj << Wavelets DOE Analysis( state=0|1 )
+**구문:** obj &lt;&lt; Wavelets( Wavelets DOE Analysis( state=0|1 ) ); scrobj &lt;&lt; Wavelets DOE Analysis( state=0|1 )
 
 **설명:** FDE 플랫폼 내에서 일반화 회귀 보고서를 시작합니다. 보조 변수를 모형 효과로 사용하여 일반화 회귀 모형이 소파동 계수에 적합됩니다.
 
@@ -2802,7 +2748,7 @@ obj = dt << Functional Data Explorer(
 
 #### Customize Peak Summaries
 
-**구문:** obj << Peak Finding( Customize Peak Summaries(stat1(0|1), ..., statN(0|1)) )
+**구문:** obj &lt;&lt; Peak Finding( Customize Peak Summaries(stat1(0|1), ..., statN(0|1)) )
 
 **설명:** 함수 요약 보고서에 표시된 요약 통계량을 사용자 정의합니다.
 
@@ -2823,7 +2769,7 @@ obj = dt << Functional Data Explorer(
 
 #### Save Summaries
 
-**구문:** obj << Peak Finding( Save Summaries )
+**구문:** obj &lt;&lt; Peak Finding( Save Summaries )
 
 **설명:** 함수 주성분 스코어를 포함하여 각 함수에 대한 모형 요약 통계량을 저장합니다.
 
@@ -2848,11 +2794,7 @@ obj = dt << Functional Data Explorer(
 
 #### Control Chart Builder
 
-**구문:** obj << B Splines( Control Chart Builder )
-
-obj << P Splines( Control Chart Builder )
-
-obj << Fourier Basis( Control Chart Builder )
+**구문:** obj &lt;&lt; B Splines( Control Chart Builder )obj &lt;&lt; P Splines( Control Chart Builder )obj &lt;&lt; Fourier Basis( Control Chart Builder )
 
 **설명:** 관리도 빌더를 사용하여 함수 주성분을 분석합니다.
 
@@ -2873,11 +2815,7 @@ obj = dt << Functional Data Explorer(
 
 #### Customize Function Summaries
 
-**구문:** obj << B Splines( Customize Function Summaries(stat1(0|1), ..., statN(0|1)) )
-
-obj << P Splines( Customize Function Summaries(stat1(0|1), ..., statN(0|1)) )
-
-obj << Fourier Basis( Customize Function Summaries(stat1(0|1), ..., statN(0|1)) )
+**구문:** obj &lt;&lt; B Splines( Customize Function Summaries(stat1(0|1), ..., statN(0|1)) )obj &lt;&lt; P Splines( Customize Function Summaries(stat1(0|1), ..., statN(0|1)) )obj &lt;&lt; Fourier Basis( Customize Function Summaries(stat1(0|1), ..., statN(0|1)) )
 
 **설명:** 함수 요약 보고서에 표시된 요약 통계량을 사용자 정의합니다.
 
@@ -2908,11 +2846,7 @@ obj = dt << Functional Data Explorer(
 
 #### Save Summaries
 
-**구문:** obj << B Splines( Save Summaries )
-
-obj << P Splines( Save Summaries )
-
-obj << Fourier Basis( Save Summaries )
+**구문:** obj &lt;&lt; B Splines( Save Summaries )obj &lt;&lt; P Splines( Save Summaries )obj &lt;&lt; Fourier Basis( Save Summaries )
 
 **설명:** 함수 주성분 스코어를 포함하여 각 함수에 대한 모형 요약 통계량을 저장합니다.
 
@@ -2937,9 +2871,7 @@ obj = dt << Functional Data Explorer(
 
 #### Diagnostic Plots
 
-**구문:** obj << Wavelets( Wavelets DOE Analysis( 1, Diagnostic Plots( state=0|1 ) ) ); 
-
-scrobj << Diagnostic Plots( state=0|1 )
+**구문:** obj &lt;&lt; Wavelets( Wavelets DOE Analysis( 1, Diagnostic Plots( state=0|1 ) ) ); scrobj &lt;&lt; Diagnostic Plots( state=0|1 )
 
 **설명:** 소파동 DOE 분석에 실제값 대 예측값 그림과 잔차 그림을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2965,9 +2897,7 @@ Report( obj )["FDOE Diagnostic Plots"] << Close( 0 );
 
 #### FDOE Profiler
 
-**구문:** obj << Wavelets( Wavelets DOE Analysis( 1, FDOE Profiler( state=0|1 ) ) ); 
-
-scrobj << FDOE Profiler( state=0|1 )
+**구문:** obj &lt;&lt; Wavelets( Wavelets DOE Analysis( 1, FDOE Profiler( state=0|1 ) ) ); scrobj &lt;&lt; FDOE Profiler( state=0|1 )
 
 **설명:** 보조 변수 값에 따라 반응이 어떻게 변하는지 탐색할 수 있는 FDOE 프로파일러를 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2992,9 +2922,7 @@ scrobj << FDOE Profiler( 1 );
 
 #### Generalized Regression for Wavelets Coefficients
 
-**구문:** obj << Wavelets( Wavelets DOE Analysis( 1, Generalized Regression for Wavelets Coefficients( state=0|1 ) ) ); 
-
-scrobj << Generalized Regression for Wavelets Coefficients( state=0|1 )
+**구문:** obj &lt;&lt; Wavelets( Wavelets DOE Analysis( 1, Generalized Regression for Wavelets Coefficients( state=0|1 ) ) ); scrobj &lt;&lt; Generalized Regression for Wavelets Coefficients( state=0|1 )
 
 **설명:** 각 소파동 계수에 대한 일반화 회귀 보고서를 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -3023,11 +2951,7 @@ Report( obj )["Generalized Regression for Wavelets Coefficients"] << Close( 0 );
 
 #### Save Prediction Formula
 
-**구문:** obj << Model Name( Functional DOE Analysis( Save Prediction Formula ) ); 
-
-obj << Wavelets( Wavelets DOE Analysis( 1, Save Prediction Formula ) ); 
-
-scrobj << Save Prediction Formula
+**구문:** obj &lt;&lt; Model Name( Functional DOE Analysis( Save Prediction Formula ) ); obj &lt;&lt; Wavelets( Wavelets DOE Analysis( 1, Save Prediction Formula ) ); scrobj &lt;&lt; Save Prediction Formula
 
 **설명:** 예측 계산식을 현재 데이터 테이블의 새 열에 저장합니다. 원래 데이터 형식이 &apos;함수 행&apos; 또는 &apos;함수 열&apos;인 경우 이 옵션은 쌓인 형식의 원래 데이터와 예측 계산식 열을 포함하는 새 데이터 테이블을 생성합니다.
 
@@ -3085,11 +3009,7 @@ scrobj << Save Prediction Formula;
 
 #### Save Residual Formula
 
-**구문:** obj << Model Name( Functional DOE Analysis( Save Residual Formula ) ); 
-
-obj << Wavelets( Wavelets DOE Analysis( 1, Save Residual Formula ) ); 
-
-scrobj << Save Residual Formula
+**구문:** obj &lt;&lt; Model Name( Functional DOE Analysis( Save Residual Formula ) ); obj &lt;&lt; Wavelets( Wavelets DOE Analysis( 1, Save Residual Formula ) ); scrobj &lt;&lt; Save Residual Formula
 
 **설명:** 잔차 계산식을 현재 데이터 테이블의 새 열에 저장합니다. 원래 데이터 형식이 &apos;함수 행&apos; 또는 &apos;함수 열&apos;인 경우 이 옵션은 쌓인 형식의 원래 데이터와 잔차 계산식 열을 포함하는 새 데이터 테이블을 생성합니다.
 

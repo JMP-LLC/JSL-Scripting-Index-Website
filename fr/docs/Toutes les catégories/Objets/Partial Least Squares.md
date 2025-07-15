@@ -6,7 +6,7 @@
 
 ### By
 
-**Syntaxe :** obj << By( column(s) )
+**Syntaxe :** obj &lt;&lt; By( column(s) )
 
 ```jsl
 
@@ -28,7 +28,7 @@ obj = dt << Partial Least Squares(
 
 ### Factor
 
-**Syntaxe :** obj << Factor( column(s) )
+**Syntaxe :** obj &lt;&lt; Factor( column(s) )
 
 ```jsl
 
@@ -44,7 +44,7 @@ obj = dt << Partial Least Squares(
 
 ### Freq
 
-**Syntaxe :** obj << Freq( column )
+**Syntaxe :** obj &lt;&lt; Freq( column )
 
 ```jsl
 
@@ -66,7 +66,7 @@ obj = dt << Partial Least Squares(
 
 ### Response
 
-**Syntaxe :** obj << Response( column(s) )
+**Syntaxe :** obj &lt;&lt; Response( column(s) )
 
 ```jsl
 
@@ -82,7 +82,7 @@ obj = dt << Partial Least Squares(
 
 ### Validation
 
-**Syntaxe :** obj << Validation( column )
+**Syntaxe :** obj &lt;&lt; Validation( column )
 
 ```jsl
 
@@ -98,7 +98,7 @@ obj = dt << Partial Least Squares(
 
 ### X
 
-**Syntaxe :** obj << X( column(s) )
+**Syntaxe :** obj &lt;&lt; X( column(s) )
 
 ```jsl
 
@@ -114,7 +114,7 @@ obj = dt << Partial Least Squares(
 
 ### Y
 
-**Syntaxe :** obj << Y( column(s) )
+**Syntaxe :** obj &lt;&lt; Y( column(s) )
 
 ```jsl
 
@@ -171,9 +171,7 @@ obj = dt << Partial Least Squares(
 
 ### Centering
 
-**Syntaxe :** obj = Partial Least Squares(...Centering( state=0|1)...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Partial Least Squares(...Centering( state=0|1)...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Centre toutes les variables Y et les effets du modèle en soustrayant la moyenne de chaque colonne. Actif par défaut.
 
@@ -196,7 +194,7 @@ obj = dt << Partial Least Squares(
 
 ### Fit
 
-**Syntaxe :** obj << Fit( SVD( Fast|Classical ), Method( NIPALS|SIMPLS ), Number of Factors( number ) )
+**Syntaxe :** obj &lt;&lt; Fit( SVD( Fast|Classical ), Method( NIPALS|SIMPLS ), Number of Factors( number ) )
 
 **Description :** Ajuste le modèle des moindres carrés partiels avec une méthode et un nombre de facteurs spécifiés.
 
@@ -218,7 +216,7 @@ obj = dt << Partial Least Squares(
 
 ### Go
 
-**Syntaxe :** obj << Go
+**Syntaxe :** obj &lt;&lt; Go
 
 **Description :** Lance l&apos;ajustement du modèle des moindres carrés partiels.
 
@@ -239,9 +237,7 @@ obj << Go;
 
 ### Imputation Method
 
-**Syntaxe :** obj = Partial Least Squares(...Imputation Method( "Moyenne"|"EM" )...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Partial Least Squares(...Imputation Method( "Moyenne"|"EM" )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Spécifie la méthode d&apos;imputation. La méthode Moyenne remplace les valeurs manquantes par la moyenne des valeurs non manquantes dans la même colonne. La méthode EM utilise une approche itérative Espérance-Maximisation (EM) pour imputer les valeurs manquantes.
 
@@ -263,9 +259,7 @@ obj = dt << Partial Least Squares(
 
 ### Impute Missing Data
 
-**Syntaxe :** obj = Partial Least Squares(...Impute Missing Data( state=0|1 )...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Partial Least Squares(...Impute Missing Data( state=0|1 )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Remplace les valeurs de données manquantes dans les réponses et les régresseurs par des valeurs non manquantes pour éviter que les lignes ayant des valeurs manquantes ne soient exclues de l&apos;analyse.
 
@@ -285,7 +279,7 @@ obj = Partial Least Squares(
 
 ### Initial Number of Factors
 
-**Syntaxe :** obj << Partial Least Squares( Validation Method(...Initial Number of Factors( number )...) )
+**Syntaxe :** obj &lt;&lt; Partial Least Squares( Validation Method(...Initial Number of Factors( number )...) )
 
 **Description :** Spécifie le nombre initial de facteurs pour la validation croisée.
 
@@ -308,9 +302,7 @@ obj << Go;
 
 ### Max Iterations
 
-**Syntaxe :** obj = Partial Least Squares(...Max Iterations( number=1 )...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Partial Least Squares(...Max Iterations( number=1 )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Spécifie le nombre maximum d&apos;itérations à exécuter dans la boucle d&apos;imputation EM. "1" par défaut.
 
@@ -354,7 +346,7 @@ obj = dt << Partial Least Squares(
 
 ### Model Dialog
 
-**Syntaxe :** obj << Model Dialog
+**Syntaxe :** obj &lt;&lt; Model Dialog
 
 **Description :** Ouvre la fenêtre de lancement du modèle linéaire. Vous pouvez ajuster un modèle des moindres carrés partiels à partir de la fenêtre de lancement en sélectionnant la méthode d&apos;analyse statistique Moindres carrés partiels.
 
@@ -373,7 +365,7 @@ obj << Model Dialog;
 
 ### SVD
 
-**Syntaxe :** obj << SVD( Fast|Classical )
+**Syntaxe :** obj &lt;&lt; SVD( Fast|Classical )
 
 **Description :** Définit l&apos;implémentation de l&apos;algorithme SVD permettant de calculer le modèle des moindres carrés partiels Rapide ou Classique. L&apos;option Rapide implémente la routine SVD de Lanczos et l&apos;option Classique implémente la routine de Golub-Kahan.
 
@@ -398,9 +390,7 @@ obj << Fit( SVD( Classical ), Method( SIMPLS ) );
 
 ### Scaling
 
-**Syntaxe :** obj = Partial Least Squares(...Scaling( state=0|1)...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Partial Least Squares(...Scaling( state=0|1)...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Met à l&apos;échelle toutes les variables Y et les coefficients du modèle en divisant chaque colonne par son écart-type. Actif par défaut.
 
@@ -423,7 +413,7 @@ obj = dt << Partial Least Squares(
 
 ### Set Random Seed
 
-**Syntaxe :** obj << Set Random Seed( number )
+**Syntaxe :** obj &lt;&lt; Set Random Seed( number )
 
 **Description :** Spécifie la graine aléatoire pour exécuter le modèle des moindres carrés partiels avec validation croisée.
 
@@ -446,7 +436,7 @@ obj = dt << Partial Least Squares(
 
 ### Validation Method
 
-**Syntaxe :** obj << Validation Method( KFold( number )|Holdback( fraction )|"Leave-One-Out"|None, Initial Number of Factors( number )  )
+**Syntaxe :** obj &lt;&lt; Validation Method( KFold( number )|Holdback( fraction )|"Leave-One-Out"|None, Initial Number of Factors( number ) )
 
 **Description :** Définit la méthode utilisée pour la validation du modèle.
 
@@ -470,7 +460,7 @@ obj = dt << Partial Least Squares(
 
 ### Action
 
-**Syntaxe :** obj << Action
+**Syntaxe :** obj &lt;&lt; Action
 
 **Description :** Trappe tout usage dans une plate-forme pour y insérer les expressions à calculer. Définit provisoirement les contextes des boîtes d’affichage et des tables de données dans la plate-forme.
 
@@ -488,7 +478,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Syntaxe :** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntaxe :** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Description :** Appliquez une préconfiguration créée précédemment à l&apos;objet, ce qui met à jour les options et les personnalisations pour correspondre aux paramètres enregistrés.
 
@@ -535,7 +525,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Broadcast
 
-**Syntaxe :** obj << Broadcast(message)
+**Syntaxe :** obj &lt;&lt; Broadcast(message)
 
 **Description :** Diffuse un message sur une plate-forme. Si les résultats de renvoi des objets individuels sont des tables, elles sont concaténées si possible, et le format final est identique au résultat de l&apos;option Enregistrer la table de données combinée dans une boîte de tableau ou au résultat de l&apos;option Concaténer avec une colonne Source. Sinon, les résultats sont stockés dans une liste et renvoyés.
 
@@ -555,7 +545,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**Syntaxe :** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Syntaxe :** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Description :** Ajoute un panneau de contrôle pour changer les variables de la plate-forme.
 
@@ -573,7 +563,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**Syntaxe :** obj << Copy ByGroup Script
+**Syntaxe :** obj &lt;&lt; Copy ByGroup Script
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis le place dans le presse-papiers.
 
@@ -598,7 +588,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Syntaxe :** obj << Copy Script
+**Syntaxe :** obj &lt;&lt; Copy Script
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis le place dans le presse-papiers.
 
@@ -617,7 +607,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Syntaxe :** obj << Data Table Window
+**Syntaxe :** obj &lt;&lt; Data Table Window
 
 **Description :** Déplace en premier plan la fenêtre de la table de données utilisée dans cette analyse.
 
@@ -636,7 +626,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Syntaxe :** obj << Get By Levels
+**Syntaxe :** obj &lt;&lt; Get By Levels
 
 **Description :** Renvoie un tableau associatif de mappage des colonnes par groupe à leurs valeurs.
 
@@ -653,7 +643,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Syntaxe :** obj << Get ByGroup Script
+**Syntaxe :** obj &lt;&lt; Get ByGroup Script
 
 **Description :** Crée un script (JSL) pour produire cette analyse et la renvoyer sous forme d’une expression.
 
@@ -679,7 +669,7 @@ Show( t );
 
 ### Get Container
 
-**Syntaxe :** obj << Get Container
+**Syntaxe :** obj &lt;&lt; Get Container
 
 **Description :** Renvoie une référence à la zone conteneur où se trouve le contenu de l&apos;objet.
 
@@ -732,7 +722,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Syntaxe :** obj << Get Data Table
+**Syntaxe :** obj &lt;&lt; Get Data Table
 
 **Description :** Renvoie une référence à la table de données.
 
@@ -752,7 +742,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**Syntaxe :** obj << Get Group Platform
+**Syntaxe :** obj &lt;&lt; Get Group Platform
 
 **Description :** Renvoie l&apos;objet de Plate-forme de groupe si cette plate-forme fait partie d&apos;un groupe. Sinon, renvoie Empty().
 
@@ -769,7 +759,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**Syntaxe :** obj << Get Script
+**Syntaxe :** obj &lt;&lt; Get Script
 
 **Description :** Crée un script (JSL) pour produire cette analyse et la renvoyer sous forme d’une expression.
 
@@ -789,7 +779,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Syntaxe :** obj << Get Script With Data Table
+**Syntaxe :** obj &lt;&lt; Get Script With Data Table
 
 **Description :** Crée un script (JSL) pour produire cette analyse faisant spécifiquement référence à cette table de données et la renvoyer sous forme d’une expression.
 
@@ -809,7 +799,7 @@ Show( t );
 
 ### Get Timing
 
-**Syntaxe :** obj << Get Timing
+**Syntaxe :** obj &lt;&lt; Get Timing
 
 **Description :** Détermine une heure de lancement de la plate-forme.
 
@@ -829,7 +819,7 @@ Show( t );
 
 ### Get Web Support
 
-**Syntaxe :** obj << Get Web Support
+**Syntaxe :** obj &lt;&lt; Get Web Support
 
 **Description :** Renvoyer un nombre indiquant le niveau de support HTML interactif pour l&apos;objet d&apos;affichage. 1 signifie que tout ou partie des éléments sont pris en charge. 0 signifie qu&apos;il n&apos;y a aucun support.
 
@@ -845,7 +835,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Syntaxe :** obj << Get Where Expr
+**Syntaxe :** obj &lt;&lt; Get Where Expr
 
 **Description :** Renvoie l&apos;expression Where pour le sous-ensemble de données, si la plate-forme a été lancée avec By() ou Where(). Sinon, renvoie la Empty()
 
@@ -886,7 +876,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Syntaxe :** obj << Local Data Filter
+**Syntaxe :** obj &lt;&lt; Local Data Filter
 
 **Description :** Permet de filtrer les données locales, dans la plate-forme concernée, par groupes ou étendues spécifiques
 
@@ -942,7 +932,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Syntaxe :** obj << Paste Local Data Filter
+**Syntaxe :** obj &lt;&lt; Paste Local Data Filter
 
 **Description :** Appliquer le filtre des données locales du presse-papiers au rapport actif.
 
@@ -963,7 +953,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**Syntaxe :** obj << Redo Analysis
+**Syntaxe :** obj &lt;&lt; Redo Analysis
 
 **Description :** Exécute à nouveau cette même analyse dans une nouvelle fenêtre. L&apos;analyse sera différente si les données ont été modifiées.
 
@@ -982,7 +972,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**Syntaxe :** obj << Redo ByGroup Analysis
+**Syntaxe :** obj &lt;&lt; Redo ByGroup Analysis
 
 **Description :** Exécute à nouveau cette même analyse dans une nouvelle fenêtre. L&apos;analyse sera différente si les données ont été modifiées.
 
@@ -1007,7 +997,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**Syntaxe :** obj << Relaunch Analysis
+**Syntaxe :** obj &lt;&lt; Relaunch Analysis
 
 **Description :** Ouvre la fenêtre de lancement de la plate-forme et rappelle les paramètres utilisés pour créer le rapport.
 
@@ -1026,7 +1016,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**Syntaxe :** obj << Relaunch ByGroup
+**Syntaxe :** obj &lt;&lt; Relaunch ByGroup
 
 **Description :** Ouvre la fenêtre de lancement de la plate-forme et rappelle les paramètres utilisés pour créer le rapport.
 
@@ -1051,7 +1041,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**Syntaxe :** obj << Remove Column Switcher
+**Syntaxe :** obj &lt;&lt; Remove Column Switcher
 
 **Description :** Supprime le sélecteur de colonne le plus récent ajouté à la plate-forme.
 
@@ -1071,7 +1061,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Syntaxe :** obj << Remove Local Data Filter
+**Syntaxe :** obj &lt;&lt; Remove Local Data Filter
 
 **Description :** Permet de supprimer un filtre de données locales créé précédemment et rétablit toutes les valeurs des données directement dans la table de données utilisée dans la plate-forme.
 
@@ -1110,9 +1100,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Syntaxe :** obj << Report;
-
-Report( obj )
+**Syntaxe :** obj &lt;&lt; Report;Report( obj )
 
 **Description :** Renvoie une référence à l’objet rapport.
 
@@ -1133,7 +1121,7 @@ Show( t );
 
 ### Report View
 
-**Syntaxe :** obj << Report View( "Complet"|"Résumé" )
+**Syntaxe :** obj &lt;&lt; Report View( "Complet"|"Résumé" )
 
 **Description :** L&apos;affichage du rapport détermine le niveau de détail visible dans un rapport de plate-forme. Full affiche tous les détails, alors que Summary affiche uniquement le contenu sélectionné, selon la plate-forme. Pour un comportement personnalisé, les boîtes d&apos;affichage prennent en charge un message <<Set Summary Behavior.
 
@@ -1152,7 +1140,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**Syntaxe :** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntaxe :** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;enregistre sous forme de propriété de table dans la table de données. Vous pouvez spécifier un nom pour le script. L&apos;option Append Suffix ajoute un suffixe numérique au nom du script, ce qui différentie le script d&apos;un script existant portant le même nom. L&apos;option Prompt invite l&apos;utilisateur à spécifier un nom de script. L&apos;option Replace remplace un script existant avec le même nom.
 
@@ -1177,7 +1165,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Syntaxe :** obj << Save ByGroup Script to Journal
+**Syntaxe :** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis ajoute un bouton dans le journal qui contient ce script.
 
@@ -1202,7 +1190,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Syntaxe :** obj << Save ByGroup Script to Script Window
+**Syntaxe :** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;ajoute à la fenêtre de script active.
 
@@ -1227,7 +1215,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**Syntaxe :** obj << Save Script for All Objects
+**Syntaxe :** obj &lt;&lt; Save Script for All Objects
 
 **Description :** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -1246,7 +1234,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Syntaxe :** obj << Save Script for All Objects To Data Table( <name> )
+**Syntaxe :** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Description :** Enregistre un script pour tous les objets de rapport dans la table de données active. Cette option est utile lorsque vous avez plusieurs rapports dans la fenêtre. Le script est nommé d&apos;après la première plate-forme, sauf si vous spécifiez le nom du script entre guillemets.
 
@@ -1294,7 +1282,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Syntaxe :** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntaxe :** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;enregistre sous forme de propriété de tableau dans la table de données.
 
@@ -1313,7 +1301,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Syntaxe :** obj << Save Script to Journal
+**Syntaxe :** obj &lt;&lt; Save Script to Journal
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis ajoute un bouton dans le journal qui contient ce script.
 
@@ -1332,7 +1320,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Syntaxe :** obj << Save Script to Report
+**Syntaxe :** obj &lt;&lt; Save Script to Report
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;affiche dans le rapport lui-même. Utile pour conserver une trace écrite de ce qui a été effectué.
 
@@ -1351,7 +1339,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Syntaxe :** obj << Save Script to Script Window
+**Syntaxe :** obj &lt;&lt; Save Script to Script Window
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;ajoute à la fenêtre de script active.
 
@@ -1440,7 +1428,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Syntaxe :** obj << Sync to Data Table Changes
+**Syntaxe :** obj &lt;&lt; Sync to Data Table Changes
 
 **Description :** Sync avec l&apos;exclusion et les modifications apportées aux données.
 
@@ -1457,7 +1445,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Syntaxe :** obj << Title( "new title" )
+**Syntaxe :** obj &lt;&lt; Title( "new title" )
 
 **Description :** Définit le titre de la plate-forme.
 
@@ -1476,7 +1464,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Syntaxe :** obj << Top Report
+**Syntaxe :** obj &lt;&lt; Top Report
 
 **Description :** Renvoie une référence au nœud racine dans le rapport.
 
@@ -1497,7 +1485,7 @@ Show( t );
 
 ### Transform Column
 
-**Syntaxe :** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Syntaxe :** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Description :** Créez une colonne de transformation dans le contexte local d&apos;un objet, généralement une plate-forme. La colonne de transformation est active uniquement pendant la durée de vie de la plateforme.
 
@@ -1518,7 +1506,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**Syntaxe :** obj << View Web XML
+**Syntaxe :** obj &lt;&lt; View Web XML
 
 **Description :** Renvoie le code XML utilisé pour créer le rapport au format HTML interactif.
 
@@ -1533,9 +1521,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**Syntaxe :** obj = Partial Least Squares(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Partial Least Squares(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Définir le type de fenêtre à créer pour le rapport. Par défaut, une fenêtre de rapport Visible sera créée. Une fenêtre Invisible ne s&apos;affichera pas à l&apos;écran, mais sera visible par les fonctions comme Window(). Une fenêtre Private répond à la plupart des messages de fenêtre mais n&apos;est pas visible et doit être adressée au moyen de l&apos;objet rapport
 
@@ -1565,7 +1551,7 @@ New Window( "Bivariate Equation",
 
 #### Coefficient Plots
 
-**Syntaxe :** obj << (Fit[number] << Coefficient Plots( state=0|1 ))
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Coefficient Plots( state=0|1 ))
 
 **Description :** Affiche ou masque les graphiques des coefficients du modèle pour chaque réponse dans l&apos;ensemble des variables X. Il y a un graphique pour les données centrées et mises à l&apos;échelle et un graphique pour les données d&apos;origine.
 
@@ -1587,7 +1573,7 @@ obj << (Fit[1] << Coefficient Plots( 1 ));
 
 #### Correlation Loading Plot
 
-**Syntaxe :** obj << (Fit[number] << Correlation Loading Plot( state=0|1 ))
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Correlation Loading Plot( state=0|1 ))
 
 **Description :** Affiche ou masque un nuage de points seul ou une matrice de nuages de points des loadings X et Y superposés sur le même graphique. La matrice de nuages de points est affichée si le nombre de facteurs est supérieur à 2.
 
@@ -1629,7 +1615,7 @@ obj << (Fit[1] << Correlation Loading Plot( 4 ));
 
 #### Diagnostics Plots
 
-**Syntaxe :** obj << (Fit[number] << Diagnostics Plots( state=0|1 ))
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Diagnostics Plots( state=0|1 ))
 
 **Description :** Affiche ou masque les graphiques de diagnostic.
 
@@ -1651,7 +1637,7 @@ obj << (Fit[1] << Diagnostics Plots( 1 ));
 
 #### Distance Plots
 
-**Syntaxe :** obj << (Fit[number] << Distance Plots( state=0|1 ))
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Distance Plots( state=0|1 ))
 
 **Description :** Affiche ou masque les graphiques de distance. Il y a un graphique de la distance de chaque observation au modèle X, un graphique de la distance de chaque observation au modèle Y, et une nuage de points des distances aux modèles X et Y.
 
@@ -1673,7 +1659,7 @@ obj << (Fit[1] << Distance Plots( 1 ));
 
 #### Fit Line
 
-**Syntaxe :** obj << (Fit[number] << Fit Line( state=0|1 ))
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Fit Line( state=0|1 ))
 
 **Description :** Affiche ou masque une ligne d&apos;ajustement qui passe par les points des graphiques des scores X-Y. Actif par défaut.
 
@@ -1696,7 +1682,7 @@ obj << (Fit[1] << Fit Line( 0 ));
 
 #### Get Measures
 
-**Syntaxe :** obj << (Fit[number] << Get Measures)
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Get Measures)
 
 **Description :** Renvoie les mesures d&apos;ajustement résumées à partir du modèle.
 
@@ -1720,7 +1706,7 @@ obj << (Fit[1] << Get Measures);
 
 #### Loading Plots
 
-**Syntaxe :** obj << (Fit[number] << Loading Plots( state=0|1 ))
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Loading Plots( state=0|1 ))
 
 **Description :** Affiche ou masque les graphiques des loadings X et Y pour chaque facteur extrait. Il y a des graphiques distincts pour les variables X et Y.
 
@@ -1742,7 +1728,7 @@ obj << (Fit[1] << Loading Plots( 1 ));
 
 #### Loading Scatterplot Matrices
 
-**Syntaxe :** obj << (Fit[number] << Loading Scatterplot Matrices( state=0|1 ))
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Loading Scatterplot Matrices( state=0|1 ))
 
 **Description :** Affiche ou masque des matrices de nuages de points des loadings X et Y. Il y a des matrices de nuages de points distinctes pour les variables X et Y.
 
@@ -1764,7 +1750,7 @@ obj << (Fit[1] << Loading Scatterplot Matrices( 1 ));
 
 #### Make Model Using VIP
 
-**Syntaxe :** obj << (Fit[number] << Make Model Using VIP)
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Make Model Using VIP)
 
 **Description :** Ouvre et remplit une fenêtre de lancement avec les réponses appropriées entrées en Y et les variables dont les VIP dépassent le seuil spécifié entrées en X.
 
@@ -1786,7 +1772,7 @@ obj << (Fit[1] << Make Model Using VIP);
 
 #### Model Driven Multivariate Control Chart for Saved X Scores
 
-**Syntaxe :** obj << (Fit[number] << Model Driven Multivariate Control Chart for Saved X Scores)
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Model Driven Multivariate Control Chart for Saved X Scores)
 
 **Description :** Enregistre les formules pour chaque score X et lance la fenêtre de lancement Carte de contrôle multivariée déterminée par modèle (MDMCC).
 
@@ -1810,7 +1796,7 @@ obj << (Fit[1] << Model Driven Multivariate Control Chart for Saved X Scores);
 
 #### Percent Variation Plots
 
-**Syntaxe :** obj << (Fit[number] << Percent Variation Plots( state=0|1 ))
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Percent Variation Plots( state=0|1 ))
 
 **Description :** Affiche ou masque les graphiques du pourcentage de variation expliqué pour les Effets de X et pour les Réponses Y.
 
@@ -1832,7 +1818,7 @@ obj << (Fit[1] << Percent variation plots( 1 ));
 
 #### Profiler
 
-**Syntaxe :** obj << (Fit[number] << Profiler( state=0|1 ))
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Profiler( state=0|1 ))
 
 **Description :** Affiche ou masque un profileur pour chaque réponse.
 
@@ -1854,7 +1840,7 @@ obj << (Fit[1] << Profiler( 1 ));
 
 #### Profiler for Predicteds
 
-**Syntaxe :** obj << (Fit[number] << Model Driven Multivariate Control Chart for Saved X Scores)
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Model Driven Multivariate Control Chart for Saved X Scores)
 
 **Description :** Enregistre les formules pour chaque Y en tant que fonction du score X et ouvre la fenêtre de lancement du Profileur.
 
@@ -1878,7 +1864,7 @@ obj << (Fit[1] << Profiler for Predicteds);
 
 #### Publish Prediction Formula
 
-**Syntaxe :** obj << (Fit[number] << Publish Prediction Formula)
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Publish Prediction Formula)
 
 **Description :** Crée une formule de prévision et la publie sous la forme d&apos;un script de colonne de formule dans la plate-forme Dépôt des formules.
 
@@ -1900,7 +1886,7 @@ obj << (Fit[1] << Publish Prediction Formula);
 
 #### Publish Score Formula
 
-**Syntaxe :** obj << (Fit[number] << Publish Score Formula)
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Publish Score Formula)
 
 **Description :** Crée des formules de score X et Y et les enregistre sous la forme de scripts de colonne de formule dans la plate-forme Dépôt des formules.
 
@@ -1922,7 +1908,7 @@ obj << (Fit[1] << Publish Score Formula);
 
 #### Remove Fit
 
-**Syntaxe :** obj << (Fit[number] << Remove Fit)
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Remove Fit)
 
 **Description :** Supprime le rapport du modèle du rapport principal de la plate-forme.
 
@@ -1945,7 +1931,7 @@ obj << (Fit[1] << Remove Fit);
 
 #### Save Distance
 
-**Syntaxe :** obj << (Fit[number] << Save Distance)
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Save Distance)
 
 **Description :** Enregistre de nouvelles colonnes dans la table de données d&apos;origine. Les nouvelles colonnes contiennent les valeurs de Distance par rapport au modèle X (DModX) et de Distance par rapport au modèle Y (DModY).
 
@@ -1967,7 +1953,7 @@ obj << (Fit[1] << Save Distance);
 
 #### Save Distance as X Score Formula
 
-**Syntaxe :** obj << (Fit[number] << Save Distance as X Score Formula)
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Save Distance as X Score Formula)
 
 **Description :** Enregistre de nouvelles colonnes de formule dans la table de données d&apos;origine. Les nouvelles colonnes contiennent les formules de Distance par rapport au modèle X (DModX) et de Distance par rapport au modèle Y (DModY) qui sont des fonctions des formules de score X.
 
@@ -1991,7 +1977,7 @@ obj << (Fit[1] << Save Distance as X Score Formula);
 
 #### Save Imputation
 
-**Syntaxe :** obj << (Fit[number] << Save Imputation)
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Save Imputation)
 
 **Description :** Enregistre des colonnes dans une nouvelle table de données. Pour chaque variable X et Y, il y a une colonne qui contient la colonne de données d&apos;origine avec les valeurs manquantes remplacées par leurs valeurs imputées.
 
@@ -2014,7 +2000,7 @@ obj << (Fit[1] << Save Imputation);
 
 #### Save Indiv Confidence Limit Formula
 
-**Syntaxe :** obj << (Fit[number] << Save Indiv Confidence Limit Formula)
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Save Indiv Confidence Limit Formula)
 
 **Description :** Enregistre de nouvelles colonnes de formule dans la table de données d&apos;origine. Pour chaque variable Y, il y a des colonnes pour les limites de confiance inférieure et supérieure pour une prévision individuelle qui sont des fonctions des formules de score X. Le niveau par défaut pour alpha est 0,05, ce qui crée des limites de confiance de 95 %.
 
@@ -2036,7 +2022,7 @@ obj << (Fit[1] << Save Indiv Confidence Limit Formula);
 
 #### Save Loadings
 
-**Syntaxe :** obj << (Fit[number] << Save Loadings)
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Save Loadings)
 
 **Description :** Enregistre des colonnes dans deux nouvelles tables de données. Il y a une table de données qui contient les loadings pour les variables X et une table de données qui contient les loadings pour les variables Y.
 
@@ -2058,7 +2044,7 @@ obj << (Fit[1] << Save Loadings);
 
 #### Save Mean Confidence Limit Formula
 
-**Syntaxe :** obj << (Fit[number] << Save Mean Confidence Limit Formula( <alpha=0.05> ))
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Save Mean Confidence Limit Formula( &lt;alpha=0.05&gt; ))
 
 **Description :** Enregistre de nouvelles colonnes de formule dans la table de données d&apos;origine. Pour chaque variable Y, il y a des colonnes pour les limites de confiance inférieure et supérieure pour la réponse moyenne qui sont des fonctions des formules de score X. Le niveau par défaut pour alpha est 0,05, ce qui crée des limites de confiance de 95 %.
 
@@ -2080,7 +2066,7 @@ obj << (Fit[1] << Save Mean Confidence Limit Formula);
 
 #### Save Percent Variation Explained For X Effects
 
-**Syntaxe :** obj << (Fit[number] << Save Percent Variation Explained For X Effects)
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Save Percent Variation Explained For X Effects)
 
 **Description :** Enregistre des colonnes dans une nouvelle table de données. Pour chaque variable X, il y a une colonne qui contient le pourcentage de variation expliqué sur l&apos;ensemble des facteurs extraits.
 
@@ -2102,7 +2088,7 @@ obj << (Fit[1] << Save Percent Variation Explained For X Effects);
 
 #### Save Percent Variation Explained For Y Responses
 
-**Syntaxe :** obj << (Fit[number] << Save Percent Variation Explained For Y Responses)
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Save Percent Variation Explained For Y Responses)
 
 **Description :** Enregistre des colonnes dans une nouvelle table de données. Pour chaque variable Y, il y a une colonne qui contient le pourcentage de variation expliqué sur l&apos;ensemble des facteurs extraits.
 
@@ -2124,7 +2110,7 @@ obj << (Fit[1] << Save Percent Variation Explained For Y Responses);
 
 #### Save Prediction As X Score Formula
 
-**Syntaxe :** obj << (Fit[number] << Save Prediction as X Score Formula)
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Save Prediction as X Score Formula)
 
 **Description :** Enregistre des nouvelles colonnes de formule dans la table de données d&apos;origine. Pour chaque variable Y, il y a une colonne qui contient une formule de prévision qui est une fonction des formules de score X.
 
@@ -2146,7 +2132,7 @@ obj << (Fit[1] << Save Prediction as X Score Formula);
 
 #### Save Prediction Formula
 
-**Syntaxe :** obj << (Fit[number] << Save Prediction Formula)
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Save Prediction Formula)
 
 **Description :** Enregistre des nouvelles colonnes de formule dans la table de données d&apos;origine. Pour chaque variable Y, il y a une colonne qui contient une formule de prévision qui est une fonction des variables X.
 
@@ -2168,7 +2154,7 @@ obj << (Fit[1] << Save Prediction Formula);
 
 #### Save Score Formula
 
-**Syntaxe :** obj << (Fit[number] << Save Score Formula)
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Save Score Formula)
 
 **Description :** Enregistre de nouvelles colonnes de formule dans la table de données d&apos;origine. Pour chaque facteur extrait, il y a une colonne qui contient une formule de score X et une colonne qui contient une formule de score Y. Les formules de score X sont des fonctions des variables X et les formules de score Y sont des fonctions des formules de score X.
 
@@ -2190,7 +2176,7 @@ obj << (Fit[1] << Save Score Formula);
 
 #### Save Scores
 
-**Syntaxe :** obj << (Fit[number] << Save Scores)
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Save Scores)
 
 **Description :** Enregistre de nouvelles colonnes dans la table de données d&apos;origine. Pour chaque facteur extrait, il y a une colonne qui contient les scores X et une colonne qui contient les scores Y.
 
@@ -2212,7 +2198,7 @@ obj << (Fit[1] << Save Scores);
 
 #### Save Standard Errors of Prediction Formula
 
-**Syntaxe :** obj << (Fit[number] << Save Standard Errors of Prediction Formula)
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Save Standard Errors of Prediction Formula)
 
 **Description :** Enregistre des nouvelles colonnes de formule dans la table de données d&apos;origine. Pour chaque variable Y, il y a une colonne qui contient la formule de l&apos;erreur standard de la moyenne prévue qui est une fonction des variables X.
 
@@ -2234,7 +2220,7 @@ obj << (Fit[1] << Save Standard Errors of Prediction Formula);
 
 #### Save Standardized Loadings
 
-**Syntaxe :** obj << (Fit[number] << Save Standardized Loadings)
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Save Standardized Loadings)
 
 **Description :** Enregistre des colonnes dans deux nouvelles tables de données. Il y a une table de données qui contient les loadings standardisés pour les variables X et une table de données qui contient les loadings standardisés pour les variables Y.
 
@@ -2256,7 +2242,7 @@ obj << (Fit[1] << Save Standardized Loadings);
 
 #### Save Standardized Scores
 
-**Syntaxe :** obj << (Fit[number] << Save Standardized Scores)
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Save Standardized Scores)
 
 **Description :** Enregistre de nouvelles colonnes dans la table de données d&apos;origine. Les nouvelles colonnes contiennent les scores standardisés X et Y pour chaque facteur extrait.
 
@@ -2278,7 +2264,7 @@ obj << (Fit[1] << Save Standardized Scores);
 
 #### Save T Square
 
-**Syntaxe :** obj << (Fit[number] << Save T Square)
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Save T Square)
 
 **Description :** Enregistre une nouvelle colonne de formule dans la table de données d&apos;origine. La nouvelle colonne contient la formule du T carré comme fonction des variables X.
 
@@ -2300,7 +2286,7 @@ obj << (Fit[1] << Save T Square);
 
 #### Save T Square as X Score Formula
 
-**Syntaxe :** obj << (Fit[number] << Save T Square as X Score Formula)
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Save T Square as X Score Formula)
 
 **Description :** Enregistre une nouvelle colonne de formule dans la table de données d&apos;origine. La nouvelle colonne contient la formule du T carré comme fonction des formules de score X.
 
@@ -2324,7 +2310,7 @@ obj << (Fit[1] << Save T Square as X Score Formula);
 
 #### Save Validation
 
-**Syntaxe :** obj << (Fit[number] << Save Validation)
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Save Validation)
 
 **Description :** Enregistre une nouvelle colonne dans la table de données d&apos;origine. La nouvelle colonne contient des nombres qui indiquent comment chaque observation a été utilisée dans la validation.
 
@@ -2346,7 +2332,7 @@ obj << (Fit[1] << Save Validation);
 
 #### Save X Predicted Values
 
-**Syntaxe :** obj << (Fit[number] << Save X Predicted Values)
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Save X Predicted Values)
 
 **Description :** Enregistre de nouvelles colonnes dans la table de données d&apos;origine. Pour chaque variable X, il y a une colonne qui contient les valeurs X prévues.
 
@@ -2368,7 +2354,7 @@ obj << (Fit[1] << Save X Predicted Values);
 
 #### Save X Prediction as X Score Formula
 
-**Syntaxe :** obj << (Fit[number] << Save X Prediction as X Score Formula)
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Save X Prediction as X Score Formula)
 
 **Description :** Enregistre des nouvelles colonnes de formule dans la table de données d&apos;origine. Pour chaque variable X, il y a une colonne qui contient une formule de prévision qui est une fonction des formules de score X.
 
@@ -2392,7 +2378,7 @@ obj << (Fit[1] << Save X Prediction as X Score Formula);
 
 #### Save X Residuals
 
-**Syntaxe :** obj << (Fit[number] << Save X Residuals)
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Save X Residuals)
 
 **Description :** Enregistre de nouvelles colonnes dans la table de données d&apos;origine. Pour chaque variable X, il y a une colonne qui contient les valeurs du résidu X.
 
@@ -2414,11 +2400,11 @@ obj << (Fit[1] << Save X Residuals);
 
 #### Save X Score Formula
 
-**Syntaxe :** obj << Save X Score Formula
+**Syntaxe :** obj &lt;&lt; Save X Score Formula
 
 #### Save X Weights
 
-**Syntaxe :** obj << (Fit[number] << Save X Weights)
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Save X Weights)
 
 **Description :** Enregistre des colonnes dans une nouvelle table de données. Pour chaque facteur extrait, il y a une colonne qui contient les pondérations des variables X.
 
@@ -2440,7 +2426,7 @@ obj << (Fit[1] << Save X Weights);
 
 #### Save Y Predicted Values
 
-**Syntaxe :** obj << (Fit[number] << Save Y Predicted Values)
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Save Y Predicted Values)
 
 **Description :** Enregistre de nouvelles colonnes dans la table de données d&apos;origine. Pour chaque variable Y, il y a une colonne qui contient les valeurs Y prévues.
 
@@ -2462,7 +2448,7 @@ obj << (Fit[1] << Save Y Predicted Values);
 
 #### Save Y Residuals
 
-**Syntaxe :** obj << (Fit[number] << Save Y Residuals)
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Save Y Residuals)
 
 **Description :** Enregistre de nouvelles colonnes dans la table de données d&apos;origine. Pour chaque variable Y, il y a une colonne qui contient les valeurs du résidu Y.
 
@@ -2484,7 +2470,7 @@ obj << (Fit[1] << Save Y Residuals);
 
 #### Score Scatterplot Matrices
 
-**Syntaxe :** obj << (Fit[number] << Score Scatterplot Matrices( state=0|1 ))
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Score Scatterplot Matrices( state=0|1 ))
 
 **Description :** Affiche ou masque une matrice de nuages de points des scores X et une matrice de nuages de points des scores Y.
 
@@ -2506,7 +2492,7 @@ obj << (Fit[1] << Score Scatterplot Matrices( 1 ));
 
 #### Set VIP Threshold
 
-**Syntaxe :** obj << (Fit[number] << Set VIP Threshold( number=0.8 ))
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Set VIP Threshold( number=0.8 ))
 
 **Description :** Définit le niveau de seuil du Graphique d&apos;importance des variables, de la table de données Importance des variables, et du graphique VIP par rapport aux graphiques des coefficients. "0.8" par défaut.
 
@@ -2530,7 +2516,7 @@ obj << (Fit[1] << Set VIP Threshold( 0.5 ));
 
 #### Show Confidence Band
 
-**Syntaxe :** obj << (Fit[number] << Show Confidence Band( state=0|1 ))
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Show Confidence Band( state=0|1 ))
 
 **Description :** Affiche ou masque les bandes de confiance à 95 % pour les lignes d&apos;ajustement sur les graphiques des scores X-Y.
 
@@ -2552,7 +2538,7 @@ obj << (Fit[1] << Show Confidence Band( 1 ));
 
 #### Spectral Profiler
 
-**Syntaxe :** obj << (Fit[number] << Spectral Profiler( state=0|1 ))
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Spectral Profiler( state=0|1 ))
 
 **Description :** Affiche ou masque un profileur unique où toutes les variables de réponse apparaissent dans la première cellule du graphique.
 
@@ -2574,7 +2560,7 @@ obj << (Fit[1] << Spectral Profiler( 1 ));
 
 #### T Square Plot
 
-**Syntaxe :** obj << (Fit[number] << T Square Plot( state=0|1 ))
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; T Square Plot( state=0|1 ))
 
 **Description :** Affiche ou masque un graphique des statistiques du T carré pour chaque observation, ainsi qu&apos;une limite de contrôle.
 
@@ -2596,7 +2582,7 @@ obj << (Fit[1] << T Square Plot( 1 ));
 
 #### VIP vs Coefficients Plots
 
-**Syntaxe :** obj << (Fit[number] << VIP vs Coefficients Plots( state=0|1 ))
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; VIP vs Coefficients Plots( state=0|1 ))
 
 **Description :** Affiche ou masque un graphique des statistiques du graphique VIP par rapport aux coefficients du modèle.
 
@@ -2618,7 +2604,7 @@ obj << (Fit[1] << VIP vs Coefficients Plots( 1 ));
 
 #### Variable Importance Plot
 
-**Syntaxe :** obj << (Fit[number] << Variable Importance Plot( state=0|1 ))
+**Syntaxe :** obj &lt;&lt; (Fit[number] &lt;&lt; Variable Importance Plot( state=0|1 ))
 
 **Description :** Affiche ou masque un graphique qui résume la contribution apportée par chaque variable au modèle.
 

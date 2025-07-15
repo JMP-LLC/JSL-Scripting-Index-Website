@@ -23,7 +23,7 @@ Show( x );
 
 ### Control
 
-**Syntax:** obj << Control( Echo( Boolean ) )
+**Syntax:** obj &lt;&lt; Control( Echo( Boolean ) )
 
 **Description:** Changes the control options for R.
 
@@ -38,7 +38,7 @@ RConnection << Submit( "rnorm(10)" );
 
 ### Disconnect
 
-**Syntax:** obj << Disconnect
+**Syntax:** obj &lt;&lt; Disconnect
 
 **Description:** Deprecated in JMP 19 and has no effect.
 
@@ -52,7 +52,7 @@ RConnection << Disconnect;
 
 ### Execute
 
-**Syntax:** list = obj << Execute( { list of Inputs }, { list of Outputs }, statements )
+**Syntax:** list = obj &lt;&lt; Execute( { list of Inputs }, { list of Outputs }, statements )
 
 **Description:** Sends a list of inputs, executes statements and returns a list of outputs.
 
@@ -77,7 +77,7 @@ Show( v, m, rc, x, z, a, d );
 
 ### Get
 
-**Syntax:** y = obj << Get( name )
+**Syntax:** y = obj &lt;&lt; Get( name )
 
 **Description:** Returns data from R, where the name argument can represent any of the following R data types ( numeric | string | matrix | list | data frame).
 
@@ -98,7 +98,7 @@ Close( dt1, No Save );
 
 ### Get Graphics
 
-**Syntax:** R graphics = obj << Get Graphics( format )
+**Syntax:** R graphics = obj &lt;&lt; Get Graphics( format )
 
 **Description:** DEPRECATED in JMP 19 and has no effect. As a replacement, set device to a file name such as png("r_plot.png"), and then open the file to retrieve the image. This option will be removed from JMP 20. Code below shows workaround.
 
@@ -119,7 +119,7 @@ rc = Delete File( img_path );
 
 ### Get Version
 
-**Syntax:** version = obj << Get Version
+**Syntax:** version = obj &lt;&lt; Get Version
 
 **Description:** Returns the version number of R used in the current connection.
 
@@ -134,7 +134,7 @@ Show( version );
 
 ### Is Connected
 
-**Syntax:** x = obj << Is Connected
+**Syntax:** x = obj &lt;&lt; Is Connected
 
 **Description:** Returns 1 if there is an active R connection; otherwise, returns 0.
 
@@ -164,7 +164,7 @@ Show( RName );
 
 ### Send
 
-**Syntax:** y = obj << Send( name, <R Name( name )> )
+**Syntax:** y = obj &lt;&lt; Send( name, &lt;R Name( name )&gt; )
 
 **Description:** Sends data to R, where the name argument can represent any of the following JMP data types ( numeric | string | matrix | list | data table).
 
@@ -183,7 +183,7 @@ RConnection << Submit( "dt" );
 
 ### Send File
 
-**Syntax:** y = obj << Send File( filename, <R Name( name )> )
+**Syntax:** y = obj &lt;&lt; Send File( filename, &lt;R Name( name )&gt; )
 
 **Description:** Sends a data file to R, where the filename argument is a string specifying a pathname to the file to be sent to R.
 
@@ -200,7 +200,7 @@ RConnection << Send File( dtname );
 
 ### Set
 
-**Syntax:** y = obj << Set( name, <R Name( name )> )
+**Syntax:** y = obj &lt;&lt; Set( name, &lt;R Name( name )&gt; )
 
 **Description:** Sends data to R, where the name argument can represent any of the following JMP data types ( numeric | string | matrix | list | data table).
 
@@ -219,7 +219,7 @@ RConnection << Submit( "dt" );
 
 ### Submit
 
-**Syntax:** obj << Submit( statements )
+**Syntax:** obj &lt;&lt; Submit( statements )
 
 **Description:** Submit statements to R. Statements can be in the form of a string value or list of string values.
 
@@ -251,7 +251,7 @@ rc = Delete File( img_path );
 
 ### Submit File
 
-**Syntax:** obj << Submit File( path )
+**Syntax:** obj &lt;&lt; Submit File( path )
 
 **Description:** Submits statements to R using a file specified by the path argument.
 

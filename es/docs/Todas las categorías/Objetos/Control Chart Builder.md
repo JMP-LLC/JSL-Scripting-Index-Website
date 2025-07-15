@@ -6,7 +6,7 @@
 
 ### Control Chart Builder
 
-**Sintaxis:** Control Chart Builder( Class( "Shewhart Variables"|"Shewhart Attribute"|"Short Run"|"Rare Event" ), Variables( variables ), <Chart( Position( number ), Points( Statistic( "statistic" ), <points options> ), Limits( Sigma( "sigma" ), <limits options> )> ) ) )
+**Sintaxis:** Control Chart Builder( Class( "Shewhart Variables"|"Shewhart Attribute"|"Short Run"|"Rare Event" ), Variables( variables ), &lt;Chart( Position( number ), Points( Statistic( "statistic" ), &lt;points options&gt; ), Limits( Sigma( "sigma" ), &lt;limits options&gt; )&gt; ) ) )
 
 **Descripción:** Permite crear interactivamente gráficos de control, que se utilizan para determinar si un proceso es estable y predecible. La plataforma Constructor de gráficos de control se puede utilizar para crear los siguientes tipos de gráficos de control: IMR, X-Barra, de corrida corta, de tiempo, P, NP, C, U, Laney P&apos;, Laney U&apos;, Levey-Jennings, IMR sobre gráficos de medias, de tres vías y de eventos raros.
 
@@ -548,7 +548,7 @@ obj = dt << Control Chart Builder(
 
 ### Add Limits
 
-**Sintaxis:** obj << Chart( Position( number ), Add Limits( {LCL( number ), Avg( number ), UCL( number )} ) )
+**Sintaxis:** obj &lt;&lt; Chart( Position( number ), Add Limits( {LCL( number ), Avg( number ), UCL( number )} ) )
 
 **Descripción:** Agrega un conjunto adicional de límites para el gráfico especificado. Los límites agregados se muestran como líneas discontinuas.
 
@@ -565,7 +565,7 @@ obj << Chart( Position( 1 ), Add Limits( {LCL( 17.5 ), Avg( 20.25 ), UCL( 23 )} 
 
 ### Add Spec Limits
 
-**Sintaxis:** obj << Chart( Position( number ), Add Spec Limits( {LSL( number ), Target( number ), USL( number )} ) )
+**Sintaxis:** obj &lt;&lt; Chart( Position( number ), Add Spec Limits( {LSL( number ), Target( number ), USL( number )} ) )
 
 **Descripción:** Establece los límites de especificación para cada variable Y.
 
@@ -582,7 +582,7 @@ obj << Chart( Position( 1 ), Add Spec Limits( {LSL( 18 ), Target( 20.1 ), USL( 2
 
 ### Alarm Script
 
-**Sintaxis:** obj << Alarm Script( Write( "..." )|Speak( "..." )|Mail( address, subject,"..." ) )
+**Sintaxis:** obj &lt;&lt; Alarm Script( Write( "..." )|Speak( "..." )|Mail( address, subject,"..." ) )
 
 **Descripción:** Envía un mensaje siempre que un punto de un gráfico de control falla una prueba determinada. El mensaje se puede enviar al registro, se puede leer por voz o se puede enviar por correo electrónico.
 
@@ -613,7 +613,7 @@ obj << Alarm Script(
 
 ### Chart
 
-**Sintaxis:** obj << Chart( Position( number ), <Points( Statistic(),... )>, <Set Control Limits( { LCL(), UCL(), Avg() } )>, <Add Limits( { LCL(), UCL(), Avg() } )>, <Add Spec Limits( { LSL(), USL(), Target() } )>, <Limits( Sigma(), ... )>, <Warnings( Test number( state=0|1 ) )> )
+**Sintaxis:** obj &lt;&lt; Chart( Position( number ), &lt;Points( Statistic(),... )&gt;, &lt;Set Control Limits( { LCL(), UCL(), Avg() } )&gt;, &lt;Add Limits( { LCL(), UCL(), Avg() } )&gt;, &lt;Add Spec Limits( { LSL(), USL(), Target() } )&gt;, &lt;Limits( Sigma(), ... )&gt;, &lt;Warnings( Test number( state=0|1 ) )&gt; )
 
 **Descripción:** Establece los atributos de advertencia, límite y punto para el gráfico especificado en el argumento Position.
 
@@ -641,7 +641,7 @@ obj = dt << Control Chart Builder(
 
 ### Class
 
-**Sintaxis:** obj << Class( "Shewhart Variables"|"Shewhart Attribute"|"Short Run"|"Rare Event" )
+**Sintaxis:** obj &lt;&lt; Class( "Shewhart Variables"|"Shewhart Attribute"|"Short Run"|"Rare Event" )
 
 **Descripción:** Especifica la clase o familia de combinaciones de puntos y estadísticos de sigma.
 
@@ -661,7 +661,7 @@ obj = dt << Control Chart Builder(
 
 ### Color By Product
 
-**Sintaxis:** obj << Color By Product( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Color By Product( state=0|1 )
 
 **Descripción:** Colorea los puntos representados por el nivel de la variable del producto. Opción activada de forma predeterminada.
 
@@ -682,7 +682,7 @@ obj << Color By Product( 1 );
 
 ### Connect Thru Missing
 
-**Sintaxis:** obj << Connect Thru Missing( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Connect Thru Missing( state=0|1 )
 
 **Descripción:** Determina si los puntos y las líneas están conectados cuando algunas muestras tienen valores faltantes o filas excluidas.
 
@@ -700,7 +700,7 @@ obj << Connect Thru Missing( 1 );
 
 ### Customize Tests
 
-**Sintaxis:** obj << Customize Tests( Test 1 | Test 2 | Test 3 | Test 4 | Test 5 | Test 6 | Test 7 | Test 8 (n, label) )
+**Sintaxis:** obj &lt;&lt; Customize Tests( Test 1 | Test 2 | Test 3 | Test 4 | Test 5 | Test 6 | Test 7 | Test 8 (n, label) )
 
 **Descripción:** Le permite seleccionar, personalizar etiquetas y establecer los parámetros de distancia basados en sigma para las pruebas de la Western Electric.
 
@@ -720,7 +720,7 @@ obj = dt << Control Chart Builder(
 
 ### Fit to Window
 
-**Sintaxis:** obj << Fit to Window( "Automático"|"Activo"|"Desactivado"|"Mantener relación de aspecto"="Desactivado" )
+**Sintaxis:** obj &lt;&lt; Fit to Window( "Automático"|"Activo"|"Desactivado"|"Mantener relación de aspecto"="Desactivado" )
 
 **Descripción:** Establece el comportamiento del ajuste automático de tamaño del informe. "Desactivado" de forma predeterminada.
 
@@ -736,7 +736,7 @@ obj << Fit to Window( "On" );
 
 ### Get Control Limits
 
-**Sintaxis:** obj << Get Control Limits( filename )
+**Sintaxis:** obj &lt;&lt; Get Control Limits( filename )
 
 **Descripción:** Importa los límites de control de una tabla de datos seleccionada y sustituye los límites calculados en el gráfico.
 
@@ -758,7 +758,7 @@ obj << Get Control Limits( "$SAMPLE_DATA/Quality Control/CoatingLimits.jmp" );
 
 ### Get Product Statistics
 
-**Sintaxis:** obj << Get Product Statistics( filename )
+**Sintaxis:** obj &lt;&lt; Get Product Statistics( filename )
 
 **Descripción:** Importa valores objetivo y sigma para el producto de corrida corta de una tabla de datos especificada.
 
@@ -779,7 +779,7 @@ obj << Get Product Statistics( "$SAMPLE_DATA/Quality Control/CoatingProductInfo.
 
 ### Get Spec Limits
 
-**Sintaxis:** obj << Get Spec Limits( filename )
+**Sintaxis:** obj &lt;&lt; Get Spec Limits( filename )
 
 **Descripción:** Importa los límites de especificación desde un archivo.
 
@@ -796,7 +796,7 @@ obj << Get Spec Limits( "$SAMPLE_DATA/CitySpecLimits.jmp" );
 
 ### Graph Borders
 
-**Sintaxis:** obj << Graph Borders( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Graph Borders( state=0|1 )
 
 **Descripción:** Muestra u oculta los bordes internos del panel de gráficos.
 
@@ -817,7 +817,7 @@ obj << Graph Borders( 1 );
 
 ### Graph Spacing
 
-**Sintaxis:** obj << Graph Spacing( gap=2 )
+**Sintaxis:** obj &lt;&lt; Graph Spacing( gap=2 )
 
 **Descripción:** Especifica la cantidad de espacio que habrá entre los paneles del gráfico. "2" de forma predeterminada.
 
@@ -836,7 +836,7 @@ obj << Graph Spacing( 5 );
 
 ### Graph Spacing Color
 
-**Sintaxis:** obj << Graph Spacing Color( color )
+**Sintaxis:** obj &lt;&lt; Graph Spacing Color( color )
 
 **Descripción:** Especifica el color del espacio que habrá entre los paneles del gráfico.
 
@@ -855,7 +855,7 @@ obj << Graph Spacing Color( "Red" );
 
 ### Graph Spacing Transparency
 
-**Sintaxis:** obj << Graph Spacing Transparency( number )
+**Sintaxis:** obj &lt;&lt; Graph Spacing Transparency( number )
 
 **Descripción:** Especifica el nivel de transparencia del espacio que habrá entre los paneles del gráfico. Debe estar entre 0 y 1.
 
@@ -874,7 +874,7 @@ obj << Graph Spacing Transparency( 0.3 );
 
 ### Include Missing Categories
 
-**Sintaxis:** obj << Include Missing Categories( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Include Missing Categories( state=0|1 )
 
 **Descripción:** Incluye un nivel adicional para las variables nominales y ordinales cuando los datos contienen valores faltantes. Opción activada de forma predeterminada.
 
@@ -893,7 +893,7 @@ obj << Include Missing Categories( 0 );
 
 ### K Sigma
 
-**Sintaxis:** obj << K Sigma( value=3 )
+**Sintaxis:** obj &lt;&lt; K Sigma( value=3 )
 
 **Descripción:** Establece el valor K que se multiplicará por sigma para formar los límites de control acerca de la media. "3" de forma predeterminada.
 
@@ -914,7 +914,7 @@ obj << K Sigma( 3 );
 
 ### Limits
 
-**Sintaxis:** obj << Chart( Position( number ), Limits( Sigma( "sigma" ), <Zones( state=0|1 )>, <Shade Zones( state=0|1 )>, <Set Control Limits( state=0|1 )>, <Show Upper Limit( state=0|1 )>, <Show Lower Limit( state=0|1 )>, <Show Center Line( state=0|1 )> ) )
+**Sintaxis:** obj &lt;&lt; Chart( Position( number ), Limits( Sigma( "sigma" ), &lt;Zones( state=0|1 )&gt;, &lt;Shade Zones( state=0|1 )&gt;, &lt;Set Control Limits( state=0|1 )&gt;, &lt;Show Upper Limit( state=0|1 )&gt;, &lt;Show Lower Limit( state=0|1 )&gt;, &lt;Show Center Line( state=0|1 )&gt; ) )
 
 **Descripción:** Ofrece opciones para cambiar las características de los límites del gráfico. En función del tipo de gráfico, puede asignar uno de los siguientes valores como argumento sigma: rango, desviación estándar, rango móvil, rango móvil de la mediana, Levey-Jennings, Poisson, binominal, binomial negativa, Weibull, Laney P Prime o Laney U Prime.
 
@@ -938,7 +938,7 @@ obj << Chart(
 
 ### Limits Label Precision
 
-**Sintaxis:** obj << Limits Label Precision( number )
+**Sintaxis:** obj &lt;&lt; Limits Label Precision( number )
 
 **Descripción:** Especifica la precisión que se muestra en los límites relativos a los datos.
 
@@ -958,7 +958,7 @@ obj << Limits Label Precision( 5 );
 
 ### OC Curve
 
-**Sintaxis:** obj << OC Curve
+**Sintaxis:** obj &lt;&lt; OC Curve
 
 **Descripción:** Muestra en una nueva ventana una curva característica operativa (OCC) mediante los límites de control y sigma del gráfico de control.
 
@@ -974,7 +974,7 @@ obj << OC Curve;
 
 ### Points
 
-**Sintaxis:** obj << Chart( Position( number ), Points( Statistic( "statistic" ), <Individual Points( state=0|1 )>, <Box Plots( state=0|1 )>, <Show Connect Line( state=0|1 )>, <Show Points( state=0|1 )> ) )
+**Sintaxis:** obj &lt;&lt; Chart( Position( number ), Points( Statistic( "statistic" ), &lt;Individual Points( state=0|1 )&gt;, &lt;Box Plots( state=0|1 )&gt;, &lt;Show Connect Line( state=0|1 )&gt;, &lt;Show Points( state=0|1 )&gt; ) )
 
 **Descripción:** Ofrece opciones para cambiar las características de los puntos del gráfico. En función del tipo de gráfico, puede asignar uno de los siguientes valores al argumento statistic: media, rango, desviación estándar, rango móvil sobre medias, rango móvil sobre desviación estándar, individual, rango móvil, conteo, proporción, centrado, estandarizado, rango centrado o rango estandarizado.
 
@@ -996,7 +996,7 @@ obj << Chart( Position( 2 ), Points( Statistic( "Standard Deviation" ) ) );
 
 ### Product Statistics
 
-**Sintaxis:** obj << Product Statistics( ( column ) ( Product Level( l1 ( Target( number ), Sigma ( number ) ), <l2 ( Target( number ), Sigma ( number ) )) ), < (column ( Product Level( ... ) ) ) > )
+**Sintaxis:** obj &lt;&lt; Product Statistics( ( column ) ( Product Level( l1 ( Target( number ), Sigma ( number ) ), &lt;l2 ( Target( number ), Sigma ( number ) )) ), &lt; (column ( Product Level( ... ) ) ) &gt; )
 
 **Descripción:** Establece los valores para los valores objetivo y sigma del producto de corrida corta.
 
@@ -1019,7 +1019,7 @@ obj << Product Statistics(
 
 ### Range Span
 
-**Sintaxis:** obj << Range Span( value=2 )
+**Sintaxis:** obj &lt;&lt; Range Span( value=2 )
 
 **Descripción:** Establece el valor de la opción Rango de alcance que se utiliza en los gráficos de rangos móviles. "2" de forma predeterminada.
 
@@ -1037,7 +1037,7 @@ obj << Range Span( 3 );
 
 ### Rerun All Tests
 
-**Sintaxis:** obj << Rerun All Tests
+**Sintaxis:** obj &lt;&lt; Rerun All Tests
 
 **Descripción:** Vuelve a ejecutar todas las pruebas seleccionadas actualmente y cualquier script de alarma asociado.
 
@@ -1071,7 +1071,7 @@ obj << Rerun All Tests;
 
 ### Save Control Limits
 
-**Sintaxis:** obj << Save Control Limits( "en columna"|"en nueva tabla"|"en una nueva tabla alta" )
+**Sintaxis:** obj &lt;&lt; Save Control Limits( "en columna"|"en nueva tabla"|"en una nueva tabla alta" )
 
 **Descripción:** Guarda los límites de control en una propiedad de columna o en una nueva tabla de datos.
 
@@ -1098,7 +1098,7 @@ obj << Save Control Limits( "in New Table" );
 
 ### Save Product Statistics
 
-**Sintaxis:** obj << Save Product Statistics
+**Sintaxis:** obj &lt;&lt; Save Product Statistics
 
 **Descripción:** Guarda las columnas en una nueva tabla de datos. La nueva tabla de datos contiene los estadísticos de producto (objetivo y sigma) para cada nivel de la variable de pieza o producto.
 
@@ -1119,7 +1119,7 @@ obj << Save Product Statistics;
 
 ### Save Spec Limits
 
-**Sintaxis:** obj << Save Spec Limits
+**Sintaxis:** obj &lt;&lt; Save Spec Limits
 
 **Descripción:** Guarda los límites de especificación en una tabla de datos nueva. Esta opción solo está disponible si ha establecido límites de especificación con una propiedad de columna Límites de especificación, a través de JSL, la importación de archivos de Obtener límites de especificación o la opción Establecer límites de especificación.
 
@@ -1137,7 +1137,7 @@ obj << Save Spec Limits;
 
 ### Save Summaries
 
-**Sintaxis:** obj << Save Summaries
+**Sintaxis:** obj &lt;&lt; Save Summaries
 
 **Descripción:** Guarda una nueva tabla de datos para cada gráfico. La tabla de datos incluye una fila para cada muestra y columnas para la etiqueta de la muestra, el tamaño muestral y el nivel de producto, si se especifica una variable de producto o pieza. Para cada gráfico, también hay columnas para el punto individual representado, tipo de gráfico, UCL, media, LCL y cualquier prueba seleccionada que esté fallando.
 
@@ -1155,7 +1155,7 @@ obj << Save Summaries;
 
 ### Set Control Limits
 
-**Sintaxis:** obj << Chart( Position( number ), Set Control Limits( {LCL( number ), Avg( number ), UCL( number )} ) )
+**Sintaxis:** obj &lt;&lt; Chart( Position( number ), Set Control Limits( {LCL( number ), Avg( number ), UCL( number )} ) )
 
 **Descripción:** Establece los límites de control para el gráfico especificado.
 
@@ -1172,7 +1172,7 @@ obj << Chart( Position( 1 ), Set Control Limits( {LCL( 19 ), Avg( 20 ), UCL( 21 
 
 ### Set Last N Subgroups
 
-**Sintaxis:** obj << Set Last N Subgroups( number )
+**Sintaxis:** obj &lt;&lt; Set Last N Subgroups( number )
 
 **Descripción:** Cambia el eje horizontal para mostrar solo los N últimos subgrupos del gráfico. El número de subgrupos especificados no tiene en cuenta las observaciones excluidas u ocultas. Esta opción no está disponible cuando existe una variable de fase con más de un nivel.
 
@@ -1190,7 +1190,7 @@ obj << Set Last n Subgroups( 5 );
 
 ### Set Sigma
 
-**Sintaxis:** obj << Set Sigma( value )
+**Sintaxis:** obj &lt;&lt; Set Sigma( value )
 
 **Descripción:** Establece el valor sigma utilizado en el gráfico de control.
 
@@ -1209,7 +1209,7 @@ obj << Set Sigma( 1.8 );
 
 ### Set Subgroup Size
 
-**Sintaxis:** obj << Set Subgroup Size(  integer  )
+**Sintaxis:** obj &lt;&lt; Set Subgroup Size( integer )
 
 **Descripción:** Especifica el número de filas por subgrupo.
 
@@ -1226,7 +1226,7 @@ obj << Set Subgroup Size( 4 );
 
 ### Show Alarm Report
 
-**Sintaxis:** obj << Show Alarm Report( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Show Alarm Report( state=0|1 )
 
 **Descripción:** Muestra u oculta la tabla de tasas de alarmas y muestras fuera de control.
 
@@ -1244,7 +1244,7 @@ obj << Show Alarm Report( 1 );
 
 ### Show Capability
 
-**Sintaxis:** obj << Show Capability( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Show Capability( state=0|1 )
 
 **Descripción:** Muestra u oculta el informe Análisis de capacidad del proceso. Opción activada de forma predeterminada.
 
@@ -1269,7 +1269,7 @@ obj << Show Capability( 0 );
 
 ### Show Center Line
 
-**Sintaxis:** obj << Chart( Position( number ),  Limits( Show Center Line( state=0|1 ) ) )
+**Sintaxis:** obj &lt;&lt; Chart( Position( number ), Limits( Show Center Line( state=0|1 ) ) )
 
 **Descripción:** Muestra u oculta la línea central. Opción activada de forma predeterminada.
 
@@ -1286,7 +1286,7 @@ obj << Chart( Position( 1 ), Limits( Show Center Line( 0 ) ) );
 
 ### Show Control Panel
 
-**Sintaxis:** obj << Show Control Panel( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Show Control Panel( state=0|1 )
 
 **Descripción:** Muestra u oculta el panel de control. Opción activada de forma predeterminada.
 
@@ -1305,7 +1305,7 @@ obj << Show Control Panel( 0 );
 
 ### Show Excluded Region
 
-**Sintaxis:** obj << Show Excluded Region( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Show Excluded Region( state=0|1 )
 
 **Descripción:** Muestra u oculta las regiones del gráfico donde se han excluido las muestras. Opción activada de forma predeterminada.
 
@@ -1326,7 +1326,7 @@ obj << Show Excluded Region( 0 );
 
 ### Show Limit Labels
 
-**Sintaxis:** obj << Show Limit Labels( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Show Limit Labels( state=0|1 )
 
 **Descripción:** Muestra u oculta las etiquetas de límite en el gráfico.
 
@@ -1344,7 +1344,7 @@ obj << Show Limit Labels( 1 );
 
 ### Show Limit Summaries
 
-**Sintaxis:** obj << Show Limit Summaries( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Show Limit Summaries( state=0|1 )
 
 **Descripción:** Muestra u oculta el informe Resúmenes de límites. Este informe contiene los límites de control (LCL y UCL), la línea central (media), los puntos y límites representados y el tamaño muestral del gráfico. Opción activada de forma predeterminada.
 
@@ -1363,7 +1363,7 @@ obj << Show Limit Summaries( 0 );
 
 ### Show Lower Limit
 
-**Sintaxis:** obj << Chart( Position( number ),  Limits( Show Lower Limit( state=0|1 ) ) )
+**Sintaxis:** obj &lt;&lt; Chart( Position( number ), Limits( Show Lower Limit( state=0|1 ) ) )
 
 **Descripción:** Muestra u oculta el límite de control inferior. Opción activada de forma predeterminada.
 
@@ -1382,7 +1382,7 @@ obj = dt << Control Chart Builder(
 
 ### Show Product Separators
 
-**Sintaxis:** obj << Show Product Separators( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Show Product Separators( state=0|1 )
 
 **Descripción:** Muestra u oculta las líneas verticales discontinuas en el gráfico que indican que el producto ha cambiado. Opción activada de forma predeterminada.
 
@@ -1403,7 +1403,7 @@ obj << Show Product Separators( 0 );
 
 ### Show Sigma Report
 
-**Sintaxis:** obj << Show Sigma Report( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Show Sigma Report( state=0|1 )
 
 **Descripción:** Muestra u oculta la tabla de Sigma global, Sigma intra, Índice de estabilidad y Media. En el caso de los gráficos de tres vías, también se muestran el sigma inter y el sigma inter e intra.
 
@@ -1421,7 +1421,7 @@ obj << Show Sigma Report( 1 );
 
 ### Show Two Shewhart or Short Run Charts
 
-**Sintaxis:** obj << Show Two Shewhart or Short Run Charts( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Show Two Shewhart or Short Run Charts( state=0|1 )
 
 **Descripción:** Muestra la localización y el gráfico de dispersión. Cuando el valor de esta opción es 0, no se muestra el gráfico de dispersión. Opción activada de forma predeterminada.
 
@@ -1440,7 +1440,7 @@ obj = dt << Control Chart Builder(
 
 ### Show Upper Limit
 
-**Sintaxis:** obj << Chart( Position( number ),  Limits( Show Upper Limit( state=0|1 ) ) )
+**Sintaxis:** obj &lt;&lt; Chart( Position( number ), Limits( Show Upper Limit( state=0|1 ) ) )
 
 **Descripción:** Muestra u oculta el límite de control superior. Opción activada de forma predeterminada.
 
@@ -1459,7 +1459,7 @@ obj = dt << Control Chart Builder(
 
 ### Size
 
-**Sintaxis:** obj << Size( width, height )
+**Sintaxis:** obj &lt;&lt; Size( width, height )
 
 **Descripción:** Establece el tamaño del gráfico.
 
@@ -1477,7 +1477,7 @@ obj << Size( 808, 586 );
 
 ### Sort by Subgroup
 
-**Sintaxis:** obj << Sort by Subgroup( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Sort by Subgroup( state=0|1 )
 
 **Descripción:** Ordena los datos del proceso según la variable de subgrupo, o la combinación de variables de subgrupo anidadas, antes de realizar los cálculos. Esta opción solo está disponible si se ha especificado una variable de subgrupo.
 
@@ -1497,7 +1497,7 @@ obj << Sort by Subgroup( 1 );
 
 ### Test Excluded Subgroups
 
-**Sintaxis:** obj << Test Excluded Subgroups( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Test Excluded Subgroups( state=0|1 )
 
 **Descripción:** Incluye o excluye subgrupos completamente excluidos en el cálculo de las pruebas. Esta opción solo está disponible cuando se selecciona la opción Mostrar región excluida. Opción activada de forma predeterminada.
 
@@ -1521,7 +1521,7 @@ dt << Select Rows( Index( 21, 24 ) ) << Exclude;
 
 ### Use Event Chooser
 
-**Sintaxis:** obj << Use Event Chooser( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Use Event Chooser( state=0|1 )
 
 **Descripción:** Categoriza datos numéricos ordinales y ofrece selecciones de modelización de nivel numérico individuales. La opción Utilizar Selector de eventos solo está disponible para los Gráficos por atributos que incluyan variables Y numéricas no continuas.
 
@@ -1556,7 +1556,7 @@ obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
 
 ### Variables
 
-**Sintaxis:** obj << Variables( Y( column ), <Subgroup( column)>, <Phase( column )>, <Part( column )> )
+**Sintaxis:** obj &lt;&lt; Variables( Y( column ), &lt;Subgroup( column)&gt;, &lt;Phase( column )&gt;, &lt;Part( column )&gt; )
 
 **Descripción:** Asigna las variables indicadas a los papeles.
 
@@ -1573,7 +1573,7 @@ obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
 
 ### n Trials
 
-**Sintaxis:** obj << n Trials( column | integer )
+**Sintaxis:** obj &lt;&lt; n Trials( column | integer )
 
 **Descripción:** Asigna un tamaño de lote para un gráfico de control por atributos.
 
@@ -1595,7 +1595,7 @@ obj = dt << Control Chart Builder(
 
 ### Action
 
-**Sintaxis:** obj << Action
+**Sintaxis:** obj &lt;&lt; Action
 
 **Descripción:** Trampa multiuso dentro de una plataforma para insertar expresiones que se desean evaluar. Temporalmente establece los contextos de cuadros de visualización y tablas de datos en la plataforma.
 
@@ -1613,7 +1613,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descripción:** Aplica al objeto un preajuste creado previamente, actualizando las opciones y personalizaciones para que coincidan con la configuración guardada.
 
@@ -1660,7 +1660,7 @@ obj2 << Apply Preset( preset );
 
 ### Automatic Recalc
 
-**Sintaxis:** obj << Automatic Recalc( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Descripción:** Rehace automáticamente el análisis para modificaciones de datos y de exclusión. Si está activada la opción Recálculo automático, le recomendamos que utilice los comandos Wait(0) para asegurarse de que las modificaciones de datos y de exclusión surtan efecto antes del recálculo.
 
@@ -1677,7 +1677,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Column Switcher
 
-**Sintaxis:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Sintaxis:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Descripción:** Añade un panel de control para cambiar las variables de la plataforma
 
@@ -1695,7 +1695,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy Script
 
-**Sintaxis:** obj << Copy Script
+**Sintaxis:** obj &lt;&lt; Copy Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -1711,7 +1711,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Sintaxis:** obj << Data Table Window
+**Sintaxis:** obj &lt;&lt; Data Table Window
 
 **Descripción:** Mueve al frente la ventana de la tabla de datos que se utiliza en este análisis.
 
@@ -1727,7 +1727,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Sintaxis:** obj << Get By Levels
+**Sintaxis:** obj &lt;&lt; Get By Levels
 
 **Descripción:** Devuelve un arreglo asociativo que asigna las columnas Por grupo a sus valores.
 
@@ -1744,7 +1744,7 @@ biv << Get By Levels;
 
 ### Get Container
 
-**Sintaxis:** obj << Get Container
+**Sintaxis:** obj &lt;&lt; Get Container
 
 **Descripción:** Devuelve una referencia al cuadro contenedor que incluye el contenido del objeto.
 
@@ -1792,7 +1792,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Sintaxis:** obj << Get Data Table
+**Sintaxis:** obj &lt;&lt; Get Data Table
 
 **Descripción:** Devuelve una referencia a la tabla de datos.
 
@@ -1809,7 +1809,7 @@ Show( N Rows( t ) );
 
 ### Get Script
 
-**Sintaxis:** obj << Get Script
+**Sintaxis:** obj &lt;&lt; Get Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -1826,7 +1826,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Sintaxis:** obj << Get Script With Data Table
+**Sintaxis:** obj &lt;&lt; Get Script With Data Table
 
 **Descripción:** Crea un script (JSL) para generar este análisis haciendo referencia específica a esta tabla de datos y lo devuelve en forma de expresión.
 
@@ -1843,7 +1843,7 @@ Show( t );
 
 ### Get Timing
 
-**Sintaxis:** obj << Get Timing
+**Sintaxis:** obj &lt;&lt; Get Timing
 
 **Descripción:** Determina el tiempo de inicio de una plataforma.
 
@@ -1860,7 +1860,7 @@ Show( t );
 
 ### Get Web Support
 
-**Sintaxis:** obj << Get Web Support
+**Sintaxis:** obj &lt;&lt; Get Web Support
 
 **Descripción:** Devuelve un número que indica el nivel de compatibilidad del HTML interactivo para el objeto de visualización. 1 significa que algunos o todos los elementos son compatibles. 0 significa que no existe compatibilidad.
 
@@ -1876,7 +1876,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Sintaxis:** obj << Get Where Expr
+**Sintaxis:** obj &lt;&lt; Get Where Expr
 
 **Descripción:** Devuelve la expresión Where para el subconjunto de datos, si la plataforma se inició con By() o Where(). De lo contrario, devuelve Empty().
 
@@ -1913,7 +1913,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Sintaxis:** obj << Local Data Filter
+**Sintaxis:** obj &lt;&lt; Local Data Filter
 
 **Descripción:** Para filtrar los datos según grupos o rangos determinados, pero locales para esta plataforma.
 
@@ -1969,7 +1969,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Sintaxis:** obj << Paste Local Data Filter
+**Sintaxis:** obj &lt;&lt; Paste Local Data Filter
 
 **Descripción:** Se aplica el filtro de datos locales del portapapeles al informe actual.
 
@@ -1990,7 +1990,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**Sintaxis:** obj << Redo Analysis
+**Sintaxis:** obj &lt;&lt; Redo Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -2006,7 +2006,7 @@ obj << Redo Analysis;
 
 ### Relaunch Analysis
 
-**Sintaxis:** obj << Relaunch Analysis
+**Sintaxis:** obj &lt;&lt; Relaunch Analysis
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -2022,7 +2022,7 @@ obj << Relaunch Analysis;
 
 ### Remove Column Switcher
 
-**Sintaxis:** obj << Remove Column Switcher
+**Sintaxis:** obj &lt;&lt; Remove Column Switcher
 
 **Descripción:** Quita el Cambiador de columnas más reciente que se haya agregado a la plataforma.
 
@@ -2042,7 +2042,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Sintaxis:** obj << Remove Local Data Filter
+**Sintaxis:** obj &lt;&lt; Remove Local Data Filter
 
 **Descripción:** Si se ha creado un filtro de datos local, esto lo eliminará y restaurará la plataforma para usar todos los datos de la tabla de datos directamente.
 
@@ -2081,9 +2081,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Sintaxis:** obj << Report;
-
-Report( obj )
+**Sintaxis:** obj &lt;&lt; Report;Report( obj )
 
 **Descripción:** Devuelve una referencia al objeto informe.
 
@@ -2101,7 +2099,7 @@ Show( t );
 
 ### Report View
 
-**Sintaxis:** obj << Report View( "Completa"|"Resumen" )
+**Sintaxis:** obj &lt;&lt; Report View( "Completa"|"Resumen" )
 
 **Descripción:** La vista del informe determina el nivel de detalle visible en el informe de una plataforma. Full muestra todos los detalles, mientras que Summary solo muestra el contenido seleccionado, con independencia de la plataforma. Para el comportamiento personalizado, los cuadros de visualización admiten un mensaje <<Set Summary Behavior.
 
@@ -2117,7 +2115,7 @@ obj << Report View( "Summary" );
 
 ### Save Script for All Objects
 
-**Sintaxis:** obj << Save Script for All Objects
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects
 
 **Descripción:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -2133,7 +2131,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Sintaxis:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descripción:** Guarda un script para todos los objetos de informe en la tabla de datos actual. Esta opción es útil cuando tiene varios informes en la ventana. El script recibe el nombre de la primera plataforma a menos que especifique el nombre del script entre comillas.
 
@@ -2173,7 +2171,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Sintaxis:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis y lo guarda en forma de propiedad de tabla en la tabla de datos.
 
@@ -2189,7 +2187,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Sintaxis:** obj << Save Script to Journal
+**Sintaxis:** obj &lt;&lt; Save Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -2205,7 +2203,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Sintaxis:** obj << Save Script to Report
+**Sintaxis:** obj &lt;&lt; Save Script to Report
 
 **Descripción:** Crea un script JSL para generar este análisis y lo muestra en el propio informe. Resulta útil para conservar un registro impreso de lo que se ha hecho.
 
@@ -2221,7 +2219,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Sintaxis:** obj << Save Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -2302,7 +2300,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Sintaxis:** obj << Sync to Data Table Changes
+**Sintaxis:** obj &lt;&lt; Sync to Data Table Changes
 
 **Descripción:** Realiza una sincronización con las modificaciones de datos y de exclusión que se hayan realizado.
 
@@ -2319,7 +2317,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Sintaxis:** obj << Title( "new title" )
+**Sintaxis:** obj &lt;&lt; Title( "new title" )
 
 **Descripción:** Establece el título de la plataforma.
 
@@ -2335,7 +2333,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Sintaxis:** obj << Top Report
+**Sintaxis:** obj &lt;&lt; Top Report
 
 **Descripción:** Devuelve una referencia al nodo raíz del informe.
 
@@ -2353,7 +2351,7 @@ Show( t );
 
 ### View Web XML
 
-**Sintaxis:** obj << View Web XML
+**Sintaxis:** obj &lt;&lt; View Web XML
 
 **Descripción:** Devuelve el código XML que se utiliza para crear el informe HTML interactivo.
 

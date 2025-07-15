@@ -6,7 +6,7 @@
 
 ### Action
 
-**语法:** obj << Action
+**语法:** obj &lt;&lt; Action
 
 **说明:** 平台内用于插入表达式以求值的所有用途的陷门。暂时将 DisplayBox 和 DataTable 上下文设置为平台。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**语法:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**语法:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **说明:** 将以前创建的预设应用到对象，从而更新选项和定制以匹配保存的设置。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**语法:** obj << Automatic Recalc( state=0|1 )
+**语法:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **说明:** 对排除和数据更改自动重新执行分析。若启用了“自动重新计算”选项，则应考虑使用 Wait(0) 命令来确保排除和数据更改在重新计算前生效。
 
@@ -87,7 +87,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**语法:** obj << Broadcast(message)
+**语法:** obj &lt;&lt; Broadcast(message)
 
 **说明:** 将消息广播到平台。若各个对象的返回结果是表，则它们会尽可能拼接，并且最终格式与表框中“保存合并表”选项的结果或使用“源”列的“拼接”选项的结果相同。除此之外，结果存储在列表中并返回。
 
@@ -107,7 +107,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**语法:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**语法:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **说明:** 添加用于更改平台变量的控制面板
 
@@ -125,7 +125,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**语法:** obj << Copy ByGroup Script
+**语法:** obj &lt;&lt; Copy ByGroup Script
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其置于剪贴板上。
 
@@ -148,7 +148,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**语法:** obj << Copy Script
+**语法:** obj &lt;&lt; Copy Script
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其置于剪贴板上。
 
@@ -163,7 +163,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**语法:** obj << Data Table Window
+**语法:** obj &lt;&lt; Data Table Window
 
 **说明:** 将该分析的数据表窗口移动到前面。
 
@@ -178,7 +178,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**语法:** obj << Get By Levels
+**语法:** obj &lt;&lt; Get By Levels
 
 **说明:** 返回将“依据”组列映射到其值的关联数组。
 
@@ -195,7 +195,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**语法:** obj << Get ByGroup Script
+**语法:** obj &lt;&lt; Get ByGroup Script
 
 **说明:** 创建生成该分析的脚本 (JSL)，并将其作为表达式返回。
 
@@ -219,7 +219,7 @@ Show( t );
 
 ### Get Container
 
-**语法:** obj << Get Container
+**语法:** obj &lt;&lt; Get Container
 
 **说明:** 返回对保留对象内容的容器框的引用。
 
@@ -266,7 +266,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**语法:** obj << Get Data Table
+**语法:** obj &lt;&lt; Get Data Table
 
 **说明:** 返回对该数据表的引用。
 
@@ -282,7 +282,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**语法:** obj << Get Group Platform
+**语法:** obj &lt;&lt; Get Group Platform
 
 **说明:** 若该平台是组的一部分，则返回组平台对象。否则返回 Empty()。
 
@@ -299,7 +299,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**语法:** obj << Get Script
+**语法:** obj &lt;&lt; Get Script
 
 **说明:** 创建生成该分析的脚本 (JSL)，并将其作为表达式返回。
 
@@ -315,7 +315,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**语法:** obj << Get Script With Data Table
+**语法:** obj &lt;&lt; Get Script With Data Table
 
 **说明:** 创建生成该分析的脚本 (JSL) 以专门引用该数据表，并将其作为表达式返回。
 
@@ -331,7 +331,7 @@ Show( t );
 
 ### Get Timing
 
-**语法:** obj << Get Timing
+**语法:** obj &lt;&lt; Get Timing
 
 **说明:** 平台启动过程计时。
 
@@ -347,7 +347,7 @@ Show( t );
 
 ### Get Web Support
 
-**语法:** obj << Get Web Support
+**语法:** obj &lt;&lt; Get Web Support
 
 **说明:** 返回一个数字，指示显示对象的交互式 HTML 支持的水平。1 表示支持部分或全部元素。0 表示不支持。
 
@@ -363,7 +363,7 @@ Show( s );
 
 ### Get Where Expr
 
-**语法:** obj << Get Where Expr
+**语法:** obj &lt;&lt; Get Where Expr
 
 **说明:** 若平台是使用 By() 或 Where() 启动的，则返回数据子集的 Where 表达式。否则返回 Empty()
 
@@ -400,7 +400,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**语法:** obj << Local Data Filter
+**语法:** obj &lt;&lt; Local Data Filter
 
 **说明:** 将数据过滤到特定的组或范围，但在该平台中是本地的
 
@@ -456,7 +456,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**语法:** obj << Paste Local Data Filter
+**语法:** obj &lt;&lt; Paste Local Data Filter
 
 **说明:** 将剪贴板中的本地数据过滤器应用于当前报表。
 
@@ -477,7 +477,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**语法:** obj << Redo Analysis
+**语法:** obj &lt;&lt; Redo Analysis
 
 **说明:** 在新窗口中重新运行相同的分析。若数据发生更改，分析也将不同。
 
@@ -492,7 +492,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**语法:** obj << Redo ByGroup Analysis
+**语法:** obj &lt;&lt; Redo ByGroup Analysis
 
 **说明:** 在新窗口中重新运行相同的分析。若数据发生更改，分析也将不同。
 
@@ -515,7 +515,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**语法:** obj << Relaunch Analysis
+**语法:** obj &lt;&lt; Relaunch Analysis
 
 **说明:** 打开平台启动窗口并重新调用曾用于创建报表的设置。
 
@@ -530,7 +530,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**语法:** obj << Relaunch ByGroup
+**语法:** obj &lt;&lt; Relaunch ByGroup
 
 **说明:** 打开平台启动窗口并重新调用曾用于创建报表的设置。
 
@@ -553,7 +553,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**语法:** obj << Remove Column Switcher
+**语法:** obj &lt;&lt; Remove Column Switcher
 
 **说明:** 删除已添加至平台的最近使用的“列切换器”。
 
@@ -573,7 +573,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**语法:** obj << Remove Local Data Filter
+**语法:** obj &lt;&lt; Remove Local Data Filter
 
 **说明:** 若已创建本地数据过滤器，这会将它删除并将平台恢复为直接使用数据表中的所有数据
 
@@ -612,9 +612,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**语法:** obj << Report;
-
-Report( obj )
+**语法:** obj &lt;&lt; Report;Report( obj )
 
 **说明:** 返回对该报表对象的引用。
 
@@ -631,7 +629,7 @@ Show( t );
 
 ### Report View
 
-**语法:** obj << Report View( "完全"|"汇总" )
+**语法:** obj &lt;&lt; Report View( "完全"|"汇总" )
 
 **说明:** 报表视图确定平台报表中可见的详细程度。Full 显示所有详细信息，而 Summary 仅显示根据平台确定的选定内容。对于定制行为，显示框支持 <<Set Summary Behavior 消息。
 
@@ -646,7 +644,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**语法:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**语法:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **说明:** 创建生成该分析的 JSL 脚本并将其保存为数据表中的表属性。您可以为脚本指定一个名称。Append Suffix 选项在脚本名称后追加一个数字后缀，用于将该脚本与现有的同名脚本区别出来。Prompt 选项提示用户指定脚本名称。Replace 选项会替换同名的现有脚本。
 
@@ -669,7 +667,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**语法:** obj << Save ByGroup Script to Journal
+**语法:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **说明:** 创建生成该分析的 JSL 脚本，并将一个按钮添加至包含该脚本的记录中。
 
@@ -692,7 +690,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**语法:** obj << Save ByGroup Script to Script Window
+**语法:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其追加至当前的脚本文本窗口中。
 
@@ -715,7 +713,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**语法:** obj << Save Script for All Objects
+**语法:** obj &lt;&lt; Save Script for All Objects
 
 **说明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -730,7 +728,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**语法:** obj << Save Script for All Objects To Data Table( <name> )
+**语法:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **说明:** 将所有报表对象的脚本保存至当前数据表。当您在该窗口中具有多个报表时，该选项很有用。除非您在引号中指定脚本名称，否则脚本将以第一个平台命名。
 
@@ -774,7 +772,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**语法:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**语法:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其作为表属性保存至数据表中。
 
@@ -789,7 +787,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**语法:** obj << Save Script to Journal
+**语法:** obj &lt;&lt; Save Script to Journal
 
 **说明:** 创建生成该分析的 JSL 脚本，并将一个按钮添加至包含该脚本的记录中。
 
@@ -804,7 +802,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**语法:** obj << Save Script to Report
+**语法:** obj &lt;&lt; Save Script to Report
 
 **说明:** 创建生成该分析的 JSL 脚本，并在报表中显示。有助于保留打印的已完成操作记录。
 
@@ -819,7 +817,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**语法:** obj << Save Script to Script Window
+**语法:** obj &lt;&lt; Save Script to Script Window
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其追加至当前的脚本文本窗口中。
 
@@ -899,7 +897,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**语法:** obj << Sync to Data Table Changes
+**语法:** obj &lt;&lt; Sync to Data Table Changes
 
 **说明:** 与已进行的排除和数据的更改同步。
 
@@ -916,7 +914,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**语法:** obj << Title( "new title" )
+**语法:** obj &lt;&lt; Title( "new title" )
 
 **说明:** 设置平台的标题。
 
@@ -931,7 +929,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**语法:** obj << Top Report
+**语法:** obj &lt;&lt; Top Report
 
 **说明:** 返回对报表中根节点的引用。
 
@@ -948,7 +946,7 @@ Show( t );
 
 ### Transform Column
 
-**语法:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**语法:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **说明:** 在对象（通常是平台）的本地上下文中创建变换列。变换列仅在平台的生命周期内是活动的。
 
@@ -969,7 +967,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**语法:** obj << View Web XML
+**语法:** obj &lt;&lt; View Web XML
 
 **说明:** 返回用于创建交互式 HTML 报表的 XML 代码。
 
@@ -984,9 +982,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**语法:** obj = Scatterplot 3D(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Scatterplot 3D(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 设置要为报表创建的窗口类型。默认情况下将创建 Visible 报表窗口。Invisible 窗口将不显示在屏幕上，但可被函数（例如 Window()）发现。Private 窗口会响应大多数窗口消息，但不可发现并且必须通过报表对象处理
 
@@ -1023,7 +1019,7 @@ obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Peta
 
 ### By
 
-**语法:** obj << By( column(s) )
+**语法:** obj &lt;&lt; By( column(s) )
 
 **说明:** 生成多个报表，每个报表对应变量的每个水平。
 
@@ -1045,7 +1041,7 @@ obj = dt << Scatterplot 3D(
 
 ### Coloring
 
-**语法:** obj << Coloring( column )
+**语法:** obj &lt;&lt; Coloring( column )
 
 **说明:** 根据所选的变量对标记着色。
 
@@ -1062,7 +1058,7 @@ obj = dt << Scatterplot 3D(
 
 ### Columns
 
-**语法:** obj << Columns( column(s) )
+**语法:** obj &lt;&lt; Columns( column(s) )
 
 **说明:** 可用于 3D 图形中 X、Y 和 Z 坐标的变量。
 
@@ -1076,7 +1072,7 @@ obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Peta
 
 ### Freq
 
-**语法:** obj << Freq( column )
+**语法:** obj &lt;&lt; Freq( column )
 
 **说明:** 其数值为分析中的每一行都分配一个频数的列。
 
@@ -1094,7 +1090,7 @@ obj = dt << Scatterplot 3D(
 
 ### Weight
 
-**语法:** obj << Weight( column )
+**语法:** obj &lt;&lt; Weight( column )
 
 **说明:** 其数值为分析中的每一行都分配一个权重的列。
 
@@ -1112,7 +1108,7 @@ obj = dt << Scatterplot 3D(
 
 ### Y
 
-**语法:** obj << Y( column(s) )
+**语法:** obj &lt;&lt; Y( column(s) )
 
 **说明:** 可用于 3D 图形中 X、Y 和 Z 坐标的变量。
 
@@ -1128,7 +1124,7 @@ obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Peta
 
 ### Biplot Rays
 
-**语法:** obj << Biplot Rays( state=0|1 )
+**语法:** obj &lt;&lt; Biplot Rays( state=0|1 )
 
 **说明:** 显示或隐藏图形中的双标图射线。默认情况下显示主成分的双标图射线。
 
@@ -1144,7 +1140,7 @@ obj << Biplot Rays( 1 );
 
 ### Circle Size
 
-**语法:** obj << Circle Size( number=0.2 )
+**语法:** obj &lt;&lt; Circle Size( number=0.2 )
 
 **说明:** 在设置“设置大小的点”或者使用“权重”或“频数”角色时设置标记大小。 默认为“0.2”。
 
@@ -1165,7 +1161,7 @@ obj = dt << Scatterplot 3D(
 
 ### Connect Points
 
-**语法:** obj << Connect Points( state=0|1, <group column name> )
+**语法:** obj &lt;&lt; Connect Points( state=0|1, &lt;group column name&gt; )
 
 **说明:** 显示或隐藏各点的连接线，可以选择对点分组。
 
@@ -1180,7 +1176,7 @@ obj << Connect Points( 1, :Species );
 
 ### Drop Line Thickness
 
-**语法:** obj << Drop Line Thickness( fraction=0.03 )
+**语法:** obj &lt;&lt; Drop Line Thickness( fraction=0.03 )
 
 **说明:** 设置垂线的线条粗细。 默认为“0.03”。
 
@@ -1197,7 +1193,7 @@ obj << Drop Line Thickness( 0.8 );
 
 ### Drop Lines
 
-**语法:** obj << Drop Lines( state=0|1 )
+**语法:** obj &lt;&lt; Drop Lines( state=0|1 )
 
 **说明:** 绘制或隐藏从图形底面（由第一个和第三个变量定义）至每个点的线条。
 
@@ -1212,7 +1208,7 @@ obj << Drop Lines( 1 );
 
 ### Ellipsoid Coverage
 
-**语法:** obj << Ellipsoid Coverage( fraction=0.5 )
+**语法:** obj &lt;&lt; Ellipsoid Coverage( fraction=0.5 )
 
 **说明:** 设置椭圆的覆盖率。例如，0.5 覆盖数据的大半部分。 默认为“0.5”。
 
@@ -1228,7 +1224,7 @@ obj << Normal Contour Ellipsoids( 1, :Species );
 
 ### Ellipsoid Transparency
 
-**语法:** obj << Ellipsoid Transparency( fraction=0.5 )
+**语法:** obj &lt;&lt; Ellipsoid Transparency( fraction=0.5 )
 
 **说明:** 设置椭圆的透明度。0 [清晰] 和 1 [不透明]。 默认为“0.5”。
 
@@ -1244,7 +1240,7 @@ obj << Normal Contour Ellipsoids( 1, :Species );
 
 ### Frame3D
 
-**语法:** obj << Frame3D( <commands passed to Frame3D> )
+**语法:** obj &lt;&lt; Frame3D( &lt;commands passed to Frame3D&gt; )
 
 **说明:** 将显示命令发送至三维图。
 
@@ -1259,7 +1255,7 @@ obj << Frame3D( Set View Zoom( 0.9075 ) );
 
 ### Jitter
 
-**语法:** obj << Jitter( state=0|1 )
+**语法:** obj &lt;&lt; Jitter( state=0|1 )
 
 **说明:** 通过在散点图上轻微移动点，随机散布各点。 默认开启。
 
@@ -1273,11 +1269,11 @@ obj = Scatterplot 3D( Y( :Petal length, :Petal width, :Species ), Jitter( 0 ) );
 
 ### Legend
 
-**语法:** obj << Legend( <Legend Model ID> )
+**语法:** obj &lt;&lt; Legend( &lt;Legend Model ID&gt; )
 
 ### Nonpar Density Contour
 
-**语法:** obj << Nonpar Density Contour( state=0|1, <group column name> )
+**语法:** obj &lt;&lt; Nonpar Density Contour( state=0|1, &lt;group column name&gt; )
 
 **说明:** 在点周围绘制 95% 核等高线外壳。
 
@@ -1292,7 +1288,7 @@ obj << Nonpar Density Contour( 1, :Species );
 
 ### Nonpar Density Contour Settings
 
-**语法:** obj << Nonpar Density Contour Settings( surface, on=0|1, <quantile>, <transparency>, <color> )
+**语法:** obj &lt;&lt; Nonpar Density Contour Settings( surface, on=0|1, &lt;quantile&gt;, &lt;transparency&gt;, &lt;color&gt; )
 
 **说明:** 等值面的设置
 
@@ -1308,7 +1304,7 @@ obj << Nonpar Density Contour Settings( 1, 1, .5, .6, Green );
 
 ### Normal Contour Ellipsoids
 
-**语法:** obj << Normal Contour Ellipsoids( state=0|1, <group column name> )
+**语法:** obj &lt;&lt; Normal Contour Ellipsoids( state=0|1, &lt;group column name&gt; )
 
 **说明:** 显示或隐藏正态等高线椭圆。
 
@@ -1323,7 +1319,7 @@ obj << Normal Contour Ellipsoids( 1, :Species );
 
 ### Principal Components
 
-**语法:** obj << Principal Components( state=0|1 )
+**语法:** obj &lt;&lt; Principal Components( state=0|1 )
 
 **说明:** 显示主成分报表和图中的射线。
 
@@ -1338,7 +1334,7 @@ obj << Principal Components;
 
 ### Remove Prin Comp
 
-**语法:** obj << Remove Prin Comp
+**语法:** obj &lt;&lt; Remove Prin Comp
 
 **说明:** 删除主成分报表和图中的射线。
 
@@ -1355,7 +1351,7 @@ obj << Remove Prin Comp;
 
 ### Rotated Components
 
-**语法:** obj << Rotated Components( PC|ML, ONE|SMC , number, Varimax| Biquartimax| Quartimax|Equamax|Orthomax| Factorparsimax... )
+**语法:** obj &lt;&lt; Rotated Components( PC|ML, ONE|SMC , number, Varimax| Biquartimax| Quartimax|Equamax|Orthomax| Factorparsimax... )
 
 **说明:** 显示含旋转主成分的报表，其中各成分与坐标空间的对齐度更高。第二个参数定义了在先验公因子方差中使用的对角线，可以为 SMC 或 ONE（主成分）。
 
@@ -1370,7 +1366,7 @@ obj << Rotated Components( PC, ONE, 3, Varimax );
 
 ### Save Prin Components
 
-**语法:** obj << Save Prin Components( number )
+**语法:** obj &lt;&lt; Save Prin Components( number )
 
 **说明:** 在数据表的新列中保存主成分
 
@@ -1386,7 +1382,7 @@ obj << Save Prin Components( 3 );
 
 ### Save Rotated Components
 
-**语法:** obj << Save Rotated Components
+**语法:** obj &lt;&lt; Save Rotated Components
 
 **说明:** 在数据表的新列中保存旋转后的主成分
 
@@ -1402,7 +1398,7 @@ obj << Save Rotated Components;
 
 ### Show Controls
 
-**语法:** obj << Show Controls( state=0|1 )
+**语法:** obj &lt;&lt; Show Controls( state=0|1 )
 
 **说明:** 显示或隐藏散点图底部的控制面板。 默认开启。
 
@@ -1417,7 +1413,7 @@ obj << Show Controls( 1 );
 
 ### Show Points
 
-**语法:** obj << Show Points( state=0|1 )
+**语法:** obj &lt;&lt; Show Points( state=0|1 )
 
 **说明:** 显示或隐藏散点图中的点。 默认开启。
 
@@ -1432,7 +1428,7 @@ obj << Show Points( 1 );
 
 ### Show Ray Labels
 
-**语法:** obj << Show Ray Labels( state=0|1 )
+**语法:** obj &lt;&lt; Show Ray Labels( state=0|1 )
 
 **说明:** 显示或隐藏射线上的标签。 默认开启。
 
@@ -1449,7 +1445,7 @@ obj << Show Ray Labels( 1 );
 
 ### Sized Points
 
-**语法:** obj << Sized Points( state=0|1 )
+**语法:** obj &lt;&lt; Sized Points( state=0|1 )
 
 **说明:** 增大或收缩散点图中的点。
 
@@ -1464,7 +1460,7 @@ obj << Sized Points( 1 );
 
 ### Std Prin Components
 
-**语法:** obj << Std Prin Components( state=0|1 )
+**语法:** obj &lt;&lt; Std Prin Components( state=0|1 )
 
 **说明:** 显示标准化主成分报表和图中的射线。
 
@@ -1499,11 +1495,7 @@ obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal widt
 
 #### Add Ellipsoid
 
-**语法:** obj << Add Ellipsoid( 4x4 matrix )
-
-obj << Add Ellipsoid(3x3 cov,3x1 means)
-
-obj << Add Ellipsoid(3x3 corr,3x1 means,3x1 std dev)
+**语法:** obj &lt;&lt; Add Ellipsoid( 4x4 matrix )obj &lt;&lt; Add Ellipsoid(3x3 cov,3x1 means)obj &lt;&lt; Add Ellipsoid(3x3 corr,3x1 means,3x1 std dev)
 
 **说明:** 在图上绘制椭圆。
 
@@ -1526,7 +1518,7 @@ obj << Frame3D(
 
 #### Add Markers
 
-**语法:** obj << Add Markers( [ nx1 X matrix ], [ nx1 Y matrix ], [ nx1 Z matrix ] )
+**语法:** obj &lt;&lt; Add Markers( [ nx1 X matrix ], [ nx1 Y matrix ], [ nx1 Z matrix ] )
 
 **说明:** 在图上绘制 n 个标记。
 
@@ -1543,7 +1535,7 @@ obj << Frame3D( Add Markers( [2 3 4], [5 6 7], [1 8 9] ) );
 
 #### Add Vector
 
-**语法:** obj << Add Vector( [ 3xn from matrix ], [ 3xn to matrix ], FromCap( CutOff|Sphere|Point|Feather ), ToCap( CutOff|Sphere|Point|Feather ), Facets( Triangle|Square|Round ), Shaft Color( color ), Shaft Thickness( number ), From Thickness( number ), To Thickness( number ), From Color( number ), To Color( number ) ) )
+**语法:** obj &lt;&lt; Add Vector( [ 3xn from matrix ], [ 3xn to matrix ], FromCap( CutOff|Sphere|Point|Feather ), ToCap( CutOff|Sphere|Point|Feather ), Facets( Triangle|Square|Round ), Shaft Color( color ), Shaft Thickness( number ), From Thickness( number ), To Thickness( number ), From Color( number ), To Color( number ) ) )
 
 **说明:** 在图上绘制向量或箭头。
 
@@ -1560,7 +1552,7 @@ obj << Frame3D( Add Vector( [4.5 2 1], [7.5 4 6], FromCap( "Feather" ), ToCap( "
 
 #### Get Axes
 
-**语法:** obj << Get Axes
+**语法:** obj &lt;&lt; Get Axes
 
 **说明:** 返回在图上显示轴的这种状态。
 
@@ -1578,7 +1570,7 @@ Show( s );
 
 #### Get Box
 
-**语法:** obj << Get Box
+**语法:** obj &lt;&lt; Get Box
 
 **说明:** 返回在图上显示各方块的边框的这种状态。
 
@@ -1596,7 +1588,7 @@ Show( s );
 
 #### Get Grab Handles
 
-**语法:** obj << Get Grab Handles
+**语法:** obj &lt;&lt; Get Grab Handles
 
 **说明:** 返回在图上显示抓取控点的这种状态。
 
@@ -1614,7 +1606,7 @@ Show( s );
 
 #### Get Graph Size
 
-**语法:** obj << Get Graph Size
+**语法:** obj &lt;&lt; Get Graph Size
 
 **说明:** 返回图形大小。
 
@@ -1632,7 +1624,7 @@ Show( s );
 
 #### Get Grids
 
-**语法:** obj << Get Grids
+**语法:** obj &lt;&lt; Get Grids
 
 **说明:** 返回在图上显示网格的这种状态。
 
@@ -1650,7 +1642,7 @@ Show( s );
 
 #### Get Hide Lights Border
 
-**语法:** obj << Get Hide Lights Border
+**语法:** obj &lt;&lt; Get Hide Lights Border
 
 **说明:** 返回图四周光源边框的状态。
 
@@ -1668,7 +1660,7 @@ Show( state );
 
 #### Get Line Scale
 
-**语法:** obj << Get Line Scale
+**语法:** obj &lt;&lt; Get Line Scale
 
 **说明:** 返回图的线条粗细。
 
@@ -1686,7 +1678,7 @@ Show( w );
 
 #### Get Marker Quality
 
-**语法:** obj << Get Marker Quality
+**语法:** obj &lt;&lt; Get Marker Quality
 
 **说明:** 返回图的标记特性，如形状和颜色。
 
@@ -1704,7 +1696,7 @@ Show( q );
 
 #### Get Marker Scale
 
-**语法:** obj << Get Marker Scale
+**语法:** obj &lt;&lt; Get Marker Scale
 
 **说明:** 返回图的标记大小。
 
@@ -1722,7 +1714,7 @@ Show( s );
 
 #### Get Marker Transparency
 
-**语法:** obj << Get Marker Transparency
+**语法:** obj &lt;&lt; Get Marker Transparency
 
 **说明:** 返回图的标记透明度。
 
@@ -1740,7 +1732,7 @@ Show( t );
 
 #### Get Rotation
 
-**语法:** obj << Get Rotation
+**语法:** obj &lt;&lt; Get Rotation
 
 **说明:** 返回框架的当前旋转。
 
@@ -1758,7 +1750,7 @@ Show( r );
 
 #### Get Text Scale
 
-**语法:** obj << Get Text Scale
+**语法:** obj &lt;&lt; Get Text Scale
 
 **说明:** 返回图的文本大小。
 
@@ -1776,7 +1768,7 @@ Show( s );
 
 #### Get View Ortho
 
-**语法:** obj << Get View Ortho
+**语法:** obj &lt;&lt; Get View Ortho
 
 **说明:** 返回图的正射视图状态。
 
@@ -1794,7 +1786,7 @@ Show( o );
 
 #### Get View Perspective
 
-**语法:** obj << Get View Perspective
+**语法:** obj &lt;&lt; Get View Perspective
 
 **说明:** 返回图的视图透视。
 
@@ -1812,7 +1804,7 @@ Show( p );
 
 #### Get View Zoom
 
-**语法:** obj << Get View Zoom
+**语法:** obj &lt;&lt; Get View Zoom
 
 **说明:** 返回图的当前缩放。
 
@@ -1830,7 +1822,7 @@ Show( z );
 
 #### Get Wall Color
 
-**语法:** obj << Get Wall Color
+**语法:** obj &lt;&lt; Get Wall Color
 
 **说明:** 返回图的墙壁颜色。
 
@@ -1848,7 +1840,7 @@ Show( c );
 
 #### Get Walls
 
-**语法:** obj << Get Walls
+**语法:** obj &lt;&lt; Get Walls
 
 **说明:** 返回在图上显示墙壁的这种状态。
 
@@ -1866,7 +1858,7 @@ Show( s );
 
 #### Get X Axis Color
 
-**语法:** obj << Get X Axis Color
+**语法:** obj &lt;&lt; Get X Axis Color
 
 **说明:** 返回图的 x 轴颜色。
 
@@ -1884,7 +1876,7 @@ Show( c );
 
 #### Get X Axis Label
 
-**语法:** obj << Get X Axis Label
+**语法:** obj &lt;&lt; Get X Axis Label
 
 **说明:** 返回图中 X 轴的标签。
 
@@ -1902,7 +1894,7 @@ Show( label );
 
 #### Get Y Axis Color
 
-**语法:** obj << Get Y Axis Color
+**语法:** obj &lt;&lt; Get Y Axis Color
 
 **说明:** 返回图的 y 轴颜色。
 
@@ -1920,7 +1912,7 @@ Show( c );
 
 #### Get Y Axis Label
 
-**语法:** obj << Get Y Axis Label
+**语法:** obj &lt;&lt; Get Y Axis Label
 
 **说明:** 返回图中 Y 轴的标签。
 
@@ -1938,7 +1930,7 @@ Show( label );
 
 #### Get Z Axis Color
 
-**语法:** obj << Get Z Axis Color
+**语法:** obj &lt;&lt; Get Z Axis Color
 
 **说明:** 返回图的 z 轴颜色。
 
@@ -1956,7 +1948,7 @@ Show( c );
 
 #### Get Z Axis Label
 
-**语法:** obj << Get Z Axis Label
+**语法:** obj &lt;&lt; Get Z Axis Label
 
 **说明:** 返回图中 Z 轴的标签。
 
@@ -1974,7 +1966,7 @@ Show( label );
 
 #### Set Axes
 
-**语法:** obj << Set Axes( state=0|1 )
+**语法:** obj &lt;&lt; Set Axes( state=0|1 )
 
 **说明:** 显示或隐藏图中的 x、y 和 z 轴。默认情况下显示。
 
@@ -1991,7 +1983,7 @@ obj << Frame3D( Set Axes( 1 ) );
 
 #### Set Box
 
-**语法:** obj << Set Box( state=0|1 )
+**语法:** obj &lt;&lt; Set Box( state=0|1 )
 
 **说明:** 显示或隐藏图中各方块的边框。默认情况下显示。
 
@@ -2008,7 +2000,7 @@ obj << Frame3D( Set Box( 1 ) );
 
 #### Set Graph Size
 
-**语法:** obj << Set Graph Size( x, y )
+**语法:** obj &lt;&lt; Set Graph Size( x, y )
 
 **说明:** 设置图形大小。
 
@@ -2025,7 +2017,7 @@ obj << Frame3D( Set Graph Size( 700, 800 ) );
 
 #### Set Grids
 
-**语法:** obj << Set Grids( state=0|1 )
+**语法:** obj &lt;&lt; Set Grids( state=0|1 )
 
 **说明:** 显示或隐藏图中的网格。默认情况下显示。
 
@@ -2042,7 +2034,7 @@ obj << Frame3D( Set Grids( 1 ) );
 
 #### Set Hide Lights Border
 
-**语法:** obj << Set Hide Lights Border( state=0|1 )
+**语法:** obj &lt;&lt; Set Hide Lights Border( state=0|1 )
 
 **说明:** 隐藏或显示图四周的光源边框。默认情况下显示。
 
@@ -2059,7 +2051,7 @@ obj << Frame3D( Set Hide Lights Border( 0 ) );
 
 #### Set Line Scale
 
-**语法:** obj << Set Line Scale( number )
+**语法:** obj &lt;&lt; Set Line Scale( number )
 
 **说明:** 设置图中网格的线条粗细。
 
@@ -2076,7 +2068,7 @@ obj << Frame3D( Set Line Scale( 6.5 ) );
 
 #### Set Marker Quality
 
-**语法:** obj << Set Marker Quality( number )
+**语法:** obj &lt;&lt; Set Marker Quality( number )
 
 **说明:** 设置图的标记特性，如形状和颜色。
 
@@ -2093,7 +2085,7 @@ obj << Frame3D( Set Marker Scale( 3 ), Set Marker Quality( 0.2625 ) );
 
 #### Set Marker Scale
 
-**语法:** obj << Set Marker Scale( number )
+**语法:** obj &lt;&lt; Set Marker Scale( number )
 
 **说明:** 设置图的标记大小。
 
@@ -2110,7 +2102,7 @@ obj << Frame3D( Set Marker Scale( 3.5 ) );
 
 #### Set Marker Transparency
 
-**语法:** obj << Set Marker Transparency( fraction )
+**语法:** obj &lt;&lt; Set Marker Transparency( fraction )
 
 **说明:** 设置图的标记透明度。
 
@@ -2127,7 +2119,7 @@ obj << Frame3D( Set Marker Transparency( 0.4125 ) );
 
 #### Set Oscillation
 
-**语法:** obj << Set Oscillation( X, Y, Z, duration )
+**语法:** obj &lt;&lt; Set Oscillation( X, Y, Z, duration )
 
 **说明:** 设置图中的振动率。
 
@@ -2144,7 +2136,7 @@ obj << Frame3D( Set Rotation( -60, -3, 35 ), Set Oscillation( -54, 0, 38, 100 ) 
 
 #### Set Rotation
 
-**语法:** obj << Set Rotation( X, Y, Z )
+**语法:** obj &lt;&lt; Set Rotation( X, Y, Z )
 
 **说明:** 将框架旋转至指定的坐标。
 
@@ -2161,7 +2153,7 @@ obj << Frame3D( Set Rotation( -60, -3, 35 ) );
 
 #### Set Spin
 
-**语法:** obj << Set Spin(  dx, dy, sx, sy  )
+**语法:** obj &lt;&lt; Set Spin( dx, dy, sx, sy )
 
 **说明:** 使图形沿指定轴旋转。值 dx 和 dy 是鼠标基于点 (sx, sy) 的移动量。
 
@@ -2178,7 +2170,7 @@ obj << Frame3D( Set Spin( .01, .01, 0, 0 ) );
 
 #### Set Text Scale
 
-**语法:** obj << Set Text Scale( number )
+**语法:** obj &lt;&lt; Set Text Scale( number )
 
 **说明:** 设置图中轴文本的大小。
 
@@ -2195,7 +2187,7 @@ obj << Frame3D( Set Text Scale( 1.4 ) );
 
 #### Set View Ortho
 
-**语法:** obj << Set View Ortho( state=0|1 )
+**语法:** obj &lt;&lt; Set View Ortho( state=0|1 )
 
 **说明:** 正射或线性显示图。
 
@@ -2212,7 +2204,7 @@ obj << Frame3D( Set View Ortho( 1 ) );
 
 #### Set View Perspective
 
-**语法:** obj << Set View Perspective( fraction )
+**语法:** obj &lt;&lt; Set View Perspective( fraction )
 
 **说明:** 设置图中的视图透视。
 
@@ -2229,7 +2221,7 @@ obj << Frame3D( Set View Perspective( 0.275 ) );
 
 #### Set View Zoom
 
-**语法:** obj << Set View Zoom( number )
+**语法:** obj &lt;&lt; Set View Zoom( number )
 
 **说明:** 设置图中的缩放。
 
@@ -2248,7 +2240,7 @@ obj << Frame3D( Set View Zoom( 2 ) );
 
 #### Set Wall Color
 
-**语法:** obj << Set Wall Color( number )
+**语法:** obj &lt;&lt; Set Wall Color( number )
 
 **说明:** 设置图的墙壁颜色。
 
@@ -2265,7 +2257,7 @@ obj << Frame3D( Set Wall Color( -16775543 ) );
 
 #### Set Walls
 
-**语法:** obj << Set Walls( state=0|1 )
+**语法:** obj &lt;&lt; Set Walls( state=0|1 )
 
 **说明:** 显示或隐藏图中的墙壁。默认情况下显示。
 
@@ -2282,7 +2274,7 @@ obj << Frame3D( Set Walls( 1 ) );
 
 #### Set X Axis Color
 
-**语法:** obj << Set X Axis Color( color )
+**语法:** obj &lt;&lt; Set X Axis Color( color )
 
 **说明:** 设置图的 x 轴颜色。
 
@@ -2299,7 +2291,7 @@ obj << Frame3D( Set X Axis Color( 5 ) );
 
 #### Set X Axis Label
 
-**语法:** obj << Set X Axis Label( string )
+**语法:** obj &lt;&lt; Set X Axis Label( string )
 
 **说明:** 设置图中 X 轴的标签。
 
@@ -2316,7 +2308,7 @@ obj << Frame3D( Set X Axis Label( "Iris Sepal Length" ) );
 
 #### Set Y Axis Color
 
-**语法:** obj << Set Y Axis Color( color )
+**语法:** obj &lt;&lt; Set Y Axis Color( color )
 
 **说明:** 设置图的 y 轴颜色。
 
@@ -2333,7 +2325,7 @@ obj << Frame3D( Set Y Axis Color( 11 ) );
 
 #### Set Y Axis Label
 
-**语法:** obj << Set Y Axis Label( string )
+**语法:** obj &lt;&lt; Set Y Axis Label( string )
 
 **说明:** 设置图中 Y 轴的标签。
 
@@ -2350,7 +2342,7 @@ obj << Frame3D( Set Y Axis Label( "Iris Petal Length" ) );
 
 #### Set Z Axis Color
 
-**语法:** obj << Set Z Axis Color( color )
+**语法:** obj &lt;&lt; Set Z Axis Color( color )
 
 **说明:** 设置图的 z 轴颜色。
 
@@ -2367,7 +2359,7 @@ obj << Frame3D( Set Z Axis Color( "Green" ) );
 
 #### Set Z Axis Label
 
-**语法:** obj << Set Z Axis Label( string )
+**语法:** obj &lt;&lt; Set Z Axis Label( string )
 
 **说明:** 设置图中 Z 轴的标签。
 
@@ -2384,7 +2376,7 @@ obj << Frame3D( Set Z Axis Label( "Iris Sepal Width" ) );
 
 #### XAxis
 
-**语法:** obj << XAxis( Min( number ), Max( number ), Inc( number ), Format( ) )
+**语法:** obj &lt;&lt; XAxis( Min( number ), Max( number ), Inc( number ), Format( ) )
 
 **说明:** 设置图中 X 轴的值。
 
@@ -2401,7 +2393,7 @@ obj << Frame3D( XAxis( Min( 3 ), Max( 10 ) ) );
 
 #### YAxis
 
-**语法:** obj << YAxis( Min( number ), Max( number ), Inc( number ), Format( ) )
+**语法:** obj &lt;&lt; YAxis( Min( number ), Max( number ), Inc( number ), Format( ) )
 
 **说明:** 设置图中 Y 轴的值。
 
@@ -2418,7 +2410,7 @@ obj << Frame3D( YAxis( Min( 1 ), Max( 10 ), Inc( 0.5 ) ) );
 
 #### Z Axis
 
-**语法:** obj << Z Axis( Min( number ), Max( number ), Inc( number ), Format( ) )
+**语法:** obj &lt;&lt; Z Axis( Min( number ), Max( number ), Inc( number ), Format( ) )
 
 **说明:** 设置图中 Z 轴的值。
 
@@ -2435,7 +2427,7 @@ obj << Frame3D( ZAxis( Min( 1 ), Max( 5 ), Inc( 0.25 ) ) );
 
 #### get light active
 
-**语法:** obj << get light active( light number )
+**语法:** obj &lt;&lt; get light active( light number )
 
 **说明:** 返回图中发出的指定光源激活。
 
@@ -2453,7 +2445,7 @@ Show( p );
 
 #### get light color
 
-**语法:** obj << get light color( light number )
+**语法:** obj &lt;&lt; get light color( light number )
 
 **说明:** 将图中的指定光源颜色作为列表返回 {red, green, blue}。
 
@@ -2471,7 +2463,7 @@ Show( c );
 
 #### get light position
 
-**语法:** obj << get light position( light number )
+**语法:** obj &lt;&lt; get light position( light number )
 
 **说明:** 将图中的指定光源位置作为列表返回 {x, y, z}。
 
@@ -2489,7 +2481,7 @@ Show( p );
 
 #### set light active
 
-**语法:** obj << set light active( light number, state=0|1 )
+**语法:** obj &lt;&lt; set light active( light number, state=0|1 )
 
 **说明:** 开启指定的光源在图上发光。
 
@@ -2506,7 +2498,7 @@ obj << Frame3D( Set Hide Lights Border( 0 ), Set Light Active( 4, 1 ) );
 
 #### set light color
 
-**语法:** obj << set light color( light number, red value, green value, blue value )
+**语法:** obj &lt;&lt; set light color( light number, red value, green value, blue value )
 
 **说明:** 设置图中光源的颜色。
 
@@ -2523,7 +2515,7 @@ obj << Frame3D( Set Hide Lights Border( 0 ), Set Light Color( 2, 240, 50, 70 ) )
 
 #### set light position
 
-**语法:** obj << set light position( light number, X, Y, Z )
+**语法:** obj &lt;&lt; set light position( light number, X, Y, Z )
 
 **说明:** 设置图中光源的位置。
 

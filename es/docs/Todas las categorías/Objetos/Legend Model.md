@@ -6,7 +6,7 @@
 
 ### Get Fill Color
 
-**Sintaxis:** obj << Get Fill Color
+**Sintaxis:** obj &lt;&lt; Get Fill Color
 
 **Descripción:** Devuelve el color de relleno del elemento de modelo de leyenda que está vinculado a un segmento de visualización en el gráfico.
 
@@ -29,7 +29,7 @@ Show( item << Get Fill Color );
 
 ### Get Gradient Settings
 
-**Sintaxis:** obj << Get Gradient Settings
+**Sintaxis:** obj &lt;&lt; Get Gradient Settings
 
 **Descripción:** Devuelve una lista de configuración del gradiente para el elemento de modelo de leyenda que está vinculado a un segmento de visualización en el gráfico.
 
@@ -52,7 +52,7 @@ Print( item << Get Gradient Settings );
 
 ### Get Label
 
-**Sintaxis:** obj << Get Label
+**Sintaxis:** obj &lt;&lt; Get Label
 
 **Descripción:** Devuelve la etiqueta del elemento de la leyenda.
 
@@ -75,7 +75,7 @@ Print( item << Get Label );
 
 ### Get Marker Size Settings
 
-**Sintaxis:** obj << Get Marker Size Settings
+**Sintaxis:** obj &lt;&lt; Get Marker Size Settings
 
 **Descripción:** Devuelve una lista de configuración del tamaño de marcador para el elemento de modelo de leyenda que está vinculado a un segmento de visualización en el gráfico.
 
@@ -98,7 +98,7 @@ Print( item << Get Marker Size Settings );
 
 ### Get Pen Settings
 
-**Sintaxis:** obj << Get Pen Settings
+**Sintaxis:** obj &lt;&lt; Get Pen Settings
 
 **Descripción:** Devuelve una lista de configuración de la pluma para el elemento de modelo de leyenda que está vinculado a un segmento de visualización en el gráfico.
 
@@ -121,7 +121,7 @@ Print( item << Get Pen Settings );
 
 ### Get Type
 
-**Sintaxis:** obj << Get Type
+**Sintaxis:** obj &lt;&lt; Get Type
 
 **Descripción:** Devuelve el tipo de elemento de modelo de leyenda. Los tipos son: "Ninguno", "Marcador", "Línea H", "Línea V", "Paso", "Barra", "Diagrama de caja V", "Intervalo H", "Intervalo V", "Diagrama de caja de barra H", "Diagrama de caja de barra V", "Gráfico OHLC", "Diagrama de caja H", "Gradiente", "Gradiente de densidad", "Relleno y línea", "Tamaño de marcador", "Tamaño de línea", "Línea del gradiente", "Contorno del gradiente", "Color de marca", "Tamaño de marcador categórico" y "Tamaño de celda".
 
@@ -144,7 +144,7 @@ Print( item << Get Type );
 
 ### Set Label
 
-**Sintaxis:** obj << Set Label( text )
+**Sintaxis:** obj &lt;&lt; Set Label( text )
 
 **Descripción:** Establece la etiqueta para el elemento de modelo de leyenda que está vinculado a un segmento de visualización en el gráfico.
 
@@ -167,7 +167,7 @@ For Each( {item, index}, items[1], item << Set Label( "Item " || Char( index ) )
 
 ### Set Properties
 
-**Sintaxis:** obj << Set Properties
+**Sintaxis:** obj &lt;&lt; Set Properties
 
 **Descripción:** Establece las propiedades de visualización arbitraria para el elemento de modelo de leyenda que está vinculado a un segmento de visualización en el gráfico.
 

@@ -6,7 +6,7 @@
 
 ### Add Image
 
-**Syntax:** obj << Add Image("path to image" | File("path to image"), <Title(...)>,<Description(...)>)
+**Syntax:** obj &lt;&lt; Add Image("path to image" | File("path to image"), &lt;Title(...)&gt;,&lt;Description(...)&gt;)
 
 **Beschreibung:** Fügt ein Bild hinzu, das im Webbericht veröffentlicht werden soll. Optionale Argumente sind u.a. Titel und Beschreibung.
 
@@ -26,7 +26,7 @@ webreport << Add Image(
 
 ### Add Report
 
-**Syntax:** obj << Add Report( jmpreport, <Title(...)>, <Description(...)>, <Publish Data(0|1)>, <Enable Warnings(0|1)>, <Optimization("Interactivity" | "Performance")> )
+**Syntax:** obj &lt;&lt; Add Report( jmpreport, &lt;Title(...)&gt;, &lt;Description(...)&gt;, &lt;Publish Data(0|1)&gt;, &lt;Enable Warnings(0|1)&gt;, &lt;Optimization("Interactivity" | "Performance")&gt; )
 
 **Beschreibung:** Fügt einen Bericht hinzu, der im Webbericht veröffentlicht werden soll. Optionale Argumente sind u.a. Titel und Beschreibung.
 
@@ -48,7 +48,7 @@ webreport << Add Report( jmpreport );
 
 ### Add Reports
 
-**Syntax:** obj << Add Reports( reports )
+**Syntax:** obj &lt;&lt; Add Reports( reports )
 
 **Beschreibung:** Fügt einem Webbericht eine Liste von JMP-Berichten hinzu und verwendet dabei Standardoptionen.
 
@@ -82,7 +82,7 @@ If( N Items( windows ) > 0,
 
 ### Description
 
-**Syntax:** obj << Description(...)
+**Syntax:** obj &lt;&lt; Description(...)
 
 **Beschreibung:** Legt die Beschreibung des Webberichts fest.
 
@@ -118,7 +118,7 @@ If( !Is Empty( file ),
 
 ### Index
 
-**Syntax:** obj << Index( Title(...), <Description(...)>, <Timestamp(1 | 0)>, <Font(name, style)>, <Logo(image path)>, <CSS(css path)>, <Theme(Default | Orange | Blue | Red | Green | Black)>, <Style(LargeList | SmallList | Grid | Custom)> )
+**Syntax:** obj &lt;&lt; Index( Title(...), &lt;Description(...)&gt;, &lt;Timestamp(1 | 0)&gt;, &lt;Font(name, style)&gt;, &lt;Logo(image path)&gt;, &lt;CSS(css path)&gt;, &lt;Theme(Default | Orange | Blue | Red | Green | Black)&gt;, &lt;Style(LargeList | SmallList | Grid | Custom)&gt; )
 
 **Beschreibung:** Fügt dem Webbericht eine benutzerdefinierte Indexseite hinzu.
 
@@ -159,7 +159,7 @@ If( !Is Empty( file ),
 
 ### Reset
 
-**Syntax:** obj << Reset()
+**Syntax:** obj &lt;&lt; Reset()
 
 **Beschreibung:** Setzt den Webbericht auf neue Werte zurück. Dadurch werden alle öffentlichen Bezeichnungen, Dateispeicherorte und andere gespeicherte Informationen gelöscht.
 
@@ -193,7 +193,7 @@ webreport << Add Report( jmpreport );
 
 ### Save
 
-**Syntax:** obj << Save ("directory path", <Replace(<0>|<1>)>, <Publish Data(<0>|<1>)>)
+**Syntax:** obj &lt;&lt; Save ("directory path", &lt;Replace(&lt;0&gt;|&lt;1&gt;)&gt;, &lt;Publish Data(&lt;0&gt;|&lt;1&gt;)&gt;)
 
 **Beschreibung:** Speichert den Webbericht im angegebenen Verzeichnis. Wenn erfolgreich, wird der Dateiname des Speicherorts des veröffentlichten Berichts zurückgegeben. Ein lokal gespeicherter Webbericht kann eingebettete Benutzerdaten enthalten. Wenn Sie für den Wert von Publish Data die Option „falsch“ auswählen, werden in Berichten keine Benutzerdaten eingebettet, sondern stattdessen statische Bilder verwendet. Standardmäßig ist die Einstellung „wahr“.
 
@@ -219,7 +219,7 @@ If( !Is Empty( file ),
 
 ### Title
 
-**Syntax:** obj << Title(...)
+**Syntax:** obj &lt;&lt; Title(...)
 
 **Beschreibung:** Legt den Titel für den Webbericht fest.
 

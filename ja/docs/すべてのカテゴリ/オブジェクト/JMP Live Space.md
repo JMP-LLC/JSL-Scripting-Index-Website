@@ -6,7 +6,7 @@
 
 ### Get Description
 
-**構文:** string = jmplivespace << Get Description()
+**構文:** string = jmplivespace &lt;&lt; Get Description()
 
 **説明:** JMP Liveスペースの説明を取得する
 
@@ -27,7 +27,7 @@ Write( "Description: ", space << Get Description );
 
 ### Get Key
 
-**構文:** string = jmplivespace << Get Key()
+**構文:** string = jmplivespace &lt;&lt; Get Key()
 
 **説明:** JMP Liveスペースのスペースキーを取得する
 
@@ -48,7 +48,7 @@ Write( "Key: ", space << Get Key );
 
 ### Get Name
 
-**構文:** string = jmplivespace << Get Name()
+**構文:** string = jmplivespace &lt;&lt; Get Name()
 
 **説明:** JMP Liveスペースの名前を取得する
 
@@ -69,7 +69,7 @@ Write( "Name: ", space << Get Name );
 
 ### Get Type
 
-**構文:** string = jmplivespace << Get Type()
+**構文:** string = jmplivespace &lt;&lt; Get Type()
 
 **説明:** JMP Liveスペースのタイプ(個人または標準)を取得する
 

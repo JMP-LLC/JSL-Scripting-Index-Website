@@ -22,7 +22,7 @@ nb = Notebook();
 
 ### Enable Inline Logging
 
-**構文:** obj << Enable Inline Logging( 0|1 )
+**構文:** obj &lt;&lt; Enable Inline Logging( 0|1 )
 
 **説明:** ノートブックのブロックにおける出力のログを有効または無効にする。
 
@@ -39,7 +39,7 @@ nb << Enable Inline Logging( 0 );
 
 ### Export to a Workflow
 
-**構文:** obj << Export to a Workflow( <Create(wfb name)>|<AddTo(wfb name)> )
+**構文:** obj &lt;&lt; Export to a Workflow( &lt;Create(wfb name)&gt;|&lt;AddTo(wfb name)&gt; )
 
 **説明:** ノートブックのブロックをワークフローに書き出す。
 
@@ -60,7 +60,7 @@ nb << Export to a Workflow;
 
 ### Get Window
 
-**構文:** obj << Get Window
+**構文:** obj &lt;&lt; Get Window
 
 **説明:** ノートブックのウィンドウを戻す。
 
@@ -77,7 +77,7 @@ nb << Get Window;
 
 ### Import .ipynb File
 
-**構文:** obj << Import .ipynb File( file path )
+**構文:** obj &lt;&lt; Import .ipynb File( file path )
 
 **説明:** 指定した.ipynbファイルをノートブックのブロックとしてロードする。
 
@@ -94,7 +94,7 @@ nb << Import .ipynb File( NOTEBOOKPATH );
 
 ### Run All Scripts
 
-**構文:** obj << Run All Scripts
+**構文:** obj &lt;&lt; Run All Scripts
 
 **説明:** ノートブックのすべてを実行する。
 
@@ -116,7 +116,7 @@ nb << Run All Scripts;
 
 ### Show Embedded Log
 
-**構文:** obj << Show Embedded Log( 0|1 )
+**構文:** obj &lt;&lt; Show Embedded Log( 0|1 )
 
 **説明:** ノートブックに埋め込みんだログの表示を有効または無効にする。
 
@@ -133,7 +133,7 @@ nb << Show Embedded Log( 1 );
 
 ### Title
 
-**構文:** obj << Title( title )
+**構文:** obj &lt;&lt; Title( title )
 
 **説明:** ノートブックのタイトルを設定する。
 
@@ -170,7 +170,7 @@ block = nb << Add New Block( "JSL", "Open (\!"$SAMPLE_DATA/Big Class.jmp\!")" );
 
 #### Block Name
 
-**構文:** obj << Block Name( name )
+**構文:** obj &lt;&lt; Block Name( name )
 
 **説明:** このブロックのタイトルを設定/取得する。
 
@@ -188,7 +188,7 @@ block << Block Name( "Test Block Name" );
 
 #### Duplicate Block
 
-**構文:** obj << Duplicate Block
+**構文:** obj &lt;&lt; Duplicate Block
 
 **説明:** このブロックを複製し、兄弟として追加する。
 
@@ -206,7 +206,7 @@ block << Duplicate Block;
 
 #### Get Content
 
-**構文:** obj << Get Content
+**構文:** obj &lt;&lt; Get Content
 
 **説明:** ブロックの内容を取得する。
 
@@ -224,7 +224,7 @@ Show( block << Get Content );
 
 #### Get Output
 
-**構文:** obj << Get Output
+**構文:** obj &lt;&lt; Get Output
 
 **説明:** ブロックの出力の表示ツリーを取得する。
 
@@ -247,7 +247,7 @@ block2 << Get Output;
 
 #### Import .ipynb File
 
-**構文:** obj << Import .ipynb File( file path )
+**構文:** obj &lt;&lt; Import .ipynb File( file path )
 
 **説明:** 指定した.ipynbファイルをブロックとして読み込み、このセクションに追加する。
 
@@ -263,7 +263,7 @@ section << Import .ipynb File( NOTEBOOKPATH );
 
 #### Line Count
 
-**構文:** obj << Line Count( number )
+**構文:** obj &lt;&lt; Line Count( number )
 
 **説明:** このブロックに表示される行の最大数を設定する。この行数を超えるとスクロールが可能になる。自動的に調整するには、0に設定する。
 
@@ -281,7 +281,7 @@ block << Line Count( 1 );
 
 #### Move Block Down
 
-**構文:** obj << Move Block Down
+**構文:** obj &lt;&lt; Move Block Down
 
 **説明:** リスト内でこのブロックを1つ下に移動させる。
 
@@ -302,7 +302,7 @@ block << Move Block Down;
 
 #### Move Block Up
 
-**構文:** obj << Move Block Up
+**構文:** obj &lt;&lt; Move Block Up
 
 **説明:** リスト内でこのブロックを1つ上に移動させる。
 
@@ -323,7 +323,7 @@ block2 << Move Block Up;
 
 #### Popout Results
 
-**構文:** obj << Popout Results
+**構文:** obj &lt;&lt; Popout Results
 
 **説明:** このブロックの現在の出力を新しいウィンドウに送る。
 
@@ -346,7 +346,7 @@ block2 << Popout Results;
 
 #### Remove Block
 
-**構文:** obj << Remove Block
+**構文:** obj &lt;&lt; Remove Block
 
 **説明:** このブロックを親から削除する。
 
@@ -364,7 +364,7 @@ block << Remove Block;
 
 #### Remove Section
 
-**構文:** obj << Remove Section
+**構文:** obj &lt;&lt; Remove Section
 
 **説明:** このセクションを親から削除する。
 
@@ -380,7 +380,7 @@ section << Remove Section;
 
 #### Run Script
 
-**構文:** obj << Run Script
+**構文:** obj &lt;&lt; Run Script
 
 **説明:** 現在のブロックの内容を実行する。
 
@@ -399,7 +399,7 @@ block << Run Script;
 
 #### Run Section
 
-**構文:** obj << Run Section
+**構文:** obj &lt;&lt; Run Section
 
 **説明:** このセクションの子を順番に実行する。
 
@@ -417,7 +417,7 @@ section << Run Section;
 
 #### Set Content
 
-**構文:** obj << Set Content( content )
+**構文:** obj &lt;&lt; Set Content( content )
 
 **説明:** ブロックの内容を設定する。
 

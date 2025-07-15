@@ -6,19 +6,7 @@
 
 ### Run Program
 
-**구문:** obj = Run Program(
-
-    Executable( "path/etc.exe" ),
-
-  < Options( {"/a", "/b etc" } ) >,
-
-  < Parameter( optParm ) >,
-
-  < Read Function( Function( {this, optParm}, etc ) | "text" | "blob" ) >,
-
-  < Write Function( Function( {this, optParm}, etc ) ) >
-
-)
+**구문:** obj = Run Program( Executable( "path/etc.exe" ), &lt; Options( {"/a", "/b etc" } ) &gt;, &lt; Parameter( optParm ) &gt;, &lt; Read Function( Function( {this, optParm}, etc ) | "text" | "blob" ) &gt;, &lt; Write Function( Function( {this, optParm}, etc ) ) &gt;)
 
 **설명:** stdin 및 stdout을 사용하여 외부 프로그램을 제어합니다.
 
@@ -37,7 +25,7 @@ RP = Run Program(
 
 ### Can Read
 
-**구문:** bool = obj << Can Read
+**구문:** bool = obj &lt;&lt; Can Read
 
 **설명:** Returns 1 if the RunProgram object can be read from and 0 if not.
 
@@ -54,13 +42,13 @@ Show( value );
 
 ### Can Write
 
-**구문:** bool = obj << Can Write
+**구문:** bool = obj &lt;&lt; Can Write
 
 **설명:** Returns boolean for whether or not the RunProgram object can be written to via standard input.
 
 ### Is Read EOF
 
-**구문:** bool = obj << Is Read EOF
+**구문:** bool = obj &lt;&lt; Is Read EOF
 
 **설명:** Returns 1 if the program has finished writing to standard output and 0 if not.
 
@@ -77,7 +65,7 @@ Show( value );
 
 ### Read
 
-**구문:** value = obj << Read( < "blob" > )
+**구문:** value = obj &lt;&lt; Read( &lt; "blob" &gt; )
 
 **설명:** Read standard output from executable as text or blob.
 
@@ -101,13 +89,13 @@ rp = Run Program(
 
 ### Write
 
-**구문:** obj << Write( string )
+**구문:** obj &lt;&lt; Write( string )
 
 **설명:** Write text to the program&apos;s standard input.
 
 ### Write EOF
 
-**구문:** obj << Write EOF
+**구문:** obj &lt;&lt; Write EOF
 
 **설명:** Write the end of file for the RunProgram object.
 

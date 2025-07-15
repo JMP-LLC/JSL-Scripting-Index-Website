@@ -6,7 +6,7 @@
 
 ### Add Line Annotation
 
-**구문:** obj << Add Line Annotation
+**구문:** obj &lt;&lt; Add Line Annotation
 
 **설명:** 표시 상자 위쪽에 선을 추가합니다.
 
@@ -23,7 +23,7 @@ rbiv << Add Line Annotation( Line( 160, 235, 240, 235 ) );
 
 ### Add Pin Annotation
 
-**구문:** obj << Add Pin Annotation
+**구문:** obj &lt;&lt; Add Pin Annotation
 
 **설명:** 표시 상자 위쪽에 고정된 주석을 추가합니다. 대부분의 속성(예: Index Row, UniqueID 및 FoundPt)은 내부에서만 사용하도록 되어 있습니다.
 
@@ -56,7 +56,7 @@ dt << Bivariate(
 
 ### Add Polygon Annotation
 
-**구문:** obj << Add Polygon Annotation
+**구문:** obj &lt;&lt; Add Polygon Annotation
 
 **설명:** 표시 상자 위쪽에 다각형을 추가합니다.
 
@@ -77,7 +77,7 @@ rbiv << Add Polygon Annotation(
 
 ### Add Simple Shape Annotation
 
-**구문:** obj << Add Simple Shape Annotation
+**구문:** obj &lt;&lt; Add Simple Shape Annotation
 
 **설명:** 표시 상자 위쪽에 원 모양을 추가합니다.
 
@@ -95,7 +95,7 @@ rbiv << Add Simple Shape Annotation( Rectangle( 70, 180, 95, 215 ) );
 
 ### Add Text Annotation
 
-**구문:** obj << Add Text Annotation
+**구문:** obj &lt;&lt; Add Text Annotation
 
 **설명:** 표시 상자 위쪽에 텍스트를 추가합니다.
 
@@ -115,7 +115,7 @@ rbiv << Add Text Annotation(
 
 ### Append
 
-**구문:** obj << Append( db2 )
+**구문:** obj &lt;&lt; Append( db2 )
 
 **설명:** 표시 트리에서 db 뒤에 db2를 추가합니다.
 
@@ -132,9 +132,7 @@ rbiv << append( Text Box( "=== below ===" ) );
 
 ### Border
 
-**구문:** obj << Border( sides );
-
-sides = obj << Get Border
+**구문:** obj &lt;&lt; Border( sides );sides = obj &lt;&lt; Get Border
 
 **설명:** 테두리는 표시 상자 바깥쪽을 둘러싸는 실선입니다. 값을 하나만 제공하면 모든 변에 적용되고, 값을 두 개 지정하면 가로 및 세로 테두리에 적용됩니다.
 
@@ -154,9 +152,7 @@ tb << Border( 1 );
 
 ### Border Color
 
-**구문:** obj << Border Color( color );
-
-color = obj << Get Border Color
+**구문:** obj &lt;&lt; Border Color( color );color = obj &lt;&lt; Get Border Color
 
 **설명:** 상자 테두리의 기본 색상을 재정의하는 선택적 색상입니다.
 
@@ -178,7 +174,7 @@ tb << Border Color( "Light Red" );
 
 ### Bring Window To Front
 
-**구문:** obj << Bring Window To Front
+**구문:** obj &lt;&lt; Bring Window To Front
 
 **설명:** 창을 맨 앞으로 가져옵니다.
 
@@ -194,7 +190,7 @@ w << Bring Window To Front;
 
 ### Child
 
-**구문:** obj << Child
+**구문:** obj &lt;&lt; Child
 
 **설명:** 표시 상자의 하위 항목을 반환합니다.
 
@@ -214,7 +210,7 @@ Print( axisChild << Class Name() );
 
 ### Class Name
 
-**구문:** obj << Class Name
+**구문:** obj &lt;&lt; Class Name
 
 **설명:** 표시 상자에 대한 표시 클래스의 이름을 반환합니다.
 
@@ -232,7 +228,7 @@ axisbox << Class Name();
 
 ### Clone Box
 
-**구문:** obj << Clone Box
+**구문:** obj &lt;&lt; Clone Box
 
 **설명:** 표시 상자의 새 복사본을 만듭니다.
 
@@ -251,7 +247,7 @@ rbiv << append( clonedBox );
 
 ### Close Window
 
-**구문:** obj << Close Window( <"NoSave"> )
+**구문:** obj &lt;&lt; Close Window( &lt;"NoSave"&gt; )
 
 **설명:** 창을 닫습니다.
 
@@ -267,7 +263,7 @@ w << Close Window;
 
 ### Copy Data
 
-**구문:** obj << Copy Data
+**구문:** obj &lt;&lt; Copy Data
 
 **설명:** 행렬 또는 테이블로부터 탭으로 구분된 데이터를 클립보드에 복사합니다.
 
@@ -281,7 +277,7 @@ mat << CopyData;
 
 ### Copy Graph
 
-**구문:** obj << Copy Graph
+**구문:** obj &lt;&lt; Copy Graph
 
 **설명:** 그래프 및 축을 그림으로 클립보드에 복사합니다.
 
@@ -299,7 +295,7 @@ rbiv = biv << report;
 
 ### Copy Picture
 
-**구문:** obj << Copy Picture
+**구문:** obj &lt;&lt; Copy Picture
 
 **설명:** 표시 상자 그림을 클립보드에 저장합니다.
 
@@ -316,7 +312,7 @@ rbiv << Copy Picture();
 
 ### Delete Box
 
-**구문:** obj << Delete Box
+**구문:** obj &lt;&lt; Delete Box
 
 **설명:** 표시 상자를 삭제합니다.
 
@@ -334,7 +330,7 @@ axisbox << Delete Box();
 
 ### Deselect
 
-**구문:** obj << Deselect
+**구문:** obj &lt;&lt; Deselect
 
 **설명:** 편집 메뉴 명령에서 사용할 수 있도록 이 개체를 선택 취소합니다.
 
@@ -360,7 +356,7 @@ refresh = Function( {},
 
 ### Dispatch
 
-**구문:** obj << Dispatch( {outline node, ...}, display element, display element type, command )
+**구문:** obj &lt;&lt; Dispatch( {outline node, ...}, display element, display element type, command )
 
 **설명:** command를 표시 트리의 특정 부분으로 전송합니다.
 
@@ -377,9 +373,7 @@ rbiv << Dispatch( {}, "Bivar Plot", FrameBox, {Marker Size( 3 )} );
 
 ### Enabled
 
-**구문:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**구문:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **설명:** 활성화되지 않은 개체는 키보드 또는 마우스 입력에 응답하지 않습니다. 이 특성은 하위 개체에 상속되므로 컨테이너 개체가 비활성화되면 모든 하위 개체가 비활성화됩니다.
 
@@ -407,7 +401,7 @@ New Window( "enabled",
 
 ### Find
 
-**구문:** obj << Find
+**구문:** obj &lt;&lt; Find
 
 **설명:** 지정된 argument를 가진 표시 상자를 반환합니다.
 
@@ -425,7 +419,7 @@ axisbox << Delete();
 
 ### Get Annotation
 
-**구문:** obj << Get Annotation
+**구문:** obj &lt;&lt; Get Annotation
 
 **설명:** 이 표시 상자에 고정된 첫 번째 주석을 반환합니다. 결과에 Sib()를 사용하여 다른 주석에 액세스할 수 있습니다.
 
@@ -447,9 +441,7 @@ annotation << delete;
 
 ### Get Border
 
-**구문:** obj << Border( sides );
-
-sides = obj << Get Border
+**구문:** obj &lt;&lt; Border( sides );sides = obj &lt;&lt; Get Border
 
 **설명:** 테두리는 표시 상자 바깥쪽을 둘러싸는 실선입니다. 값을 하나만 제공하면 모든 변에 적용되고, 값을 두 개 지정하면 가로 및 세로 테두리에 적용됩니다.
 
@@ -469,9 +461,7 @@ tb << Border( 1 );
 
 ### Get Border Color
 
-**구문:** obj << Border Color( color );
-
-color = obj << Get Border Color
+**구문:** obj &lt;&lt; Border Color( color );color = obj &lt;&lt; Get Border Color
 
 **설명:** 상자 테두리의 기본 색상을 재정의하는 선택적 색상입니다.
 
@@ -493,7 +483,7 @@ tb << Border Color( "Light Red" );
 
 ### Get Content Size
 
-**구문:** obj << Get Content Size
+**구문:** obj &lt;&lt; Get Content Size
 
 **설명:** 창 안의 내용 크기를 반환합니다.
 
@@ -509,7 +499,7 @@ Show( c );
 
 ### Get Display Path
 
-**구문:** obj << Get Display Path( parent box, <receiver expr>, <Mode("XPath"|"Subscript")> )
+**구문:** obj &lt;&lt; Get Display Path( parent box, &lt;receiver expr&gt;, &lt;Mode("XPath"|"Subscript")&gt; )
 
 **설명:** parent box와 obj 간 탐색을 위해 비교적 로버스트한 표현식을 가져옵니다. 이 경로는 전체 JMP 릴리스에서 안정적인 것은 아닙니다. receiver expr은 출력 표현식이 제공된 경우 여기에 포함됩니다. 그렇지 않은 경우 parent box에 제공된 표현식이 대신 사용됩니다. 예에서 볼 수 있듯이 이 메시지는 주로 이미 사용 가능한 경로의 강건성을 높이는 데 유용합니다. XPath 모드가 기본값입니다.
 
@@ -545,9 +535,7 @@ subscript expr << Select;
 
 ### Get Enabled
 
-**구문:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**구문:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **설명:** 활성화되지 않은 개체는 키보드 또는 마우스 입력에 응답하지 않습니다. 이 특성은 하위 개체에 상속되므로 컨테이너 개체가 비활성화되면 모든 하위 개체가 비활성화됩니다.
 
@@ -575,7 +563,7 @@ New Window( "enabled",
 
 ### Get HTML
 
-**구문:** obj << Get HTML( <format> )
+**구문:** obj &lt;&lt; Get HTML( &lt;format&gt; )
 
 **설명:** 표시 상자에 대한 HTML 소스가 포함된 문자열을 반환합니다.
 
@@ -605,7 +593,7 @@ Web( "$TEMP/Oneway.html", JMPWindow );
 
 ### Get Height
 
-**구문:** width = obj << Get Height
+**구문:** width = obj &lt;&lt; Get Height
 
 **설명:** 표시 상자의 높이를 반환합니다.
 
@@ -623,9 +611,7 @@ fb << Get Height;
 
 ### Get Horizontal Alignment
 
-**구문:** obj << Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );
-
-"Default"|"Left"|"Center"|"Right" = obj << Get Horizontal Alignment
+**구문:** obj &lt;&lt; Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );"Default"|"Left"|"Center"|"Right" = obj &lt;&lt; Get Horizontal Alignment
 
 **설명:** 가로 맞춤은 상자가 전체 공간을 채우지 않을 경우 컨테이너 내에서의 상자 위치를 제어합니다.
 
@@ -645,7 +631,7 @@ lb << Horizontal Alignment( "Right" );
 
 ### Get Journal
 
-**구문:** obj << Get Journal
+**구문:** obj &lt;&lt; Get Journal
 
 **설명:** 표시 상자에 대한 저널 소스가 포함된 문자열을 반환합니다.
 
@@ -662,9 +648,7 @@ Print( rbiv << Get Journal );
 
 ### Get Margin
 
-**구문:** obj << Margin( sides );
-
-sides = obj << Get Margin
+**구문:** obj &lt;&lt; Margin( sides );sides = obj &lt;&lt; Get Margin
 
 **설명:** 여백은 상자 테두리와 인접 상자 사이에 공백을 추가합니다. 명명된 인수를 사용하거나 값 목록을 제공하십시오. 값을 하나만 제공하면 모든 측면에 적용되고, 값을 두 개 지정하면 가로 및 세로 여백에 적용됩니다.
 
@@ -685,7 +669,7 @@ tb << Margin( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ### Get Max Size
 
-**구문:** width,height = obj << Get Max Size
+**구문:** width,height = obj &lt;&lt; Get Max Size
 
 **설명:** 이 표시 상자를 자동으로 늘릴 수 있는 최대 크기를 반환합니다.
 
@@ -703,7 +687,7 @@ fb << Get Max Size;
 
 ### Get Min Size
 
-**구문:** width,height = obj << Get Min Size
+**구문:** width,height = obj &lt;&lt; Get Min Size
 
 **설명:** 이 표시 상자를 자동으로 늘릴 수 있는 최소 크기를 반환합니다.
 
@@ -721,7 +705,7 @@ fb << Get Min Size;
 
 ### Get Namespace
 
-**구문:** obj << Get Namespace
+**구문:** obj &lt;&lt; Get Namespace
 
 **설명:** 이 표시 개체와 연결된 네임스페이스를 반환합니다.
 
@@ -739,7 +723,7 @@ Show( ns:x, x );
 
 ### Get On Close
 
-**구문:** obj << Get On Close
+**구문:** obj &lt;&lt; Get On Close
 
 **설명:** 창을 닫을 때 실행되는 스크립트 또는 함수를 반환합니다.
 
@@ -764,9 +748,7 @@ Show( w << Get On Close );
 
 ### Get Padding
 
-**구문:** obj << Padding( sides );
-
-sides = obj << Get Padding
+**구문:** obj &lt;&lt; Padding( sides );sides = obj &lt;&lt; Get Padding
 
 **설명:** 안쪽 여백은 상자 내용과 테두리 사이에 공백을 추가합니다. 명명된 인수를 사용하거나 값 목록을 제공하십시오. 값을 하나만 제공하면 모든 측면에 적용되고, 값을 두 개 지정하면 가로 및 세로 안쪽 여백에 적용됩니다.
 
@@ -787,7 +769,7 @@ tb << Padding( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ### Get Page Setup
 
-**구문:** obj << Get Page Setup
+**구문:** obj &lt;&lt; Get Page Setup
 
 **설명:** PDF에 대한 페이지 설정 정보를 가져옵니다.
 
@@ -802,7 +784,7 @@ w << get page setup();
 
 ### Get Picture
 
-**구문:** obj << Get Picture( <Scale(factor)>, <Type("Bitmap" | "Scalable")>, <View("Picture" | "Screen" | "Print"), <Appearance("Default" | "Current")>, <SubRect(Left(number), Top(number), Right(number), Bottom(number))> )
+**구문:** obj &lt;&lt; Get Picture( &lt;Scale(factor)&gt;, &lt;Type("Bitmap" | "Scalable")&gt;, &lt;View("Picture" | "Screen" | "Print"), &lt;Appearance("Default" | "Current")&gt;, &lt;SubRect(Left(number), Top(number), Right(number), Bottom(number))&gt; )
 
 **설명:** db를 이미지 개체로 캡처합니다. 선택적 Scale 인수는 이미지를 배율이 조정된 해상도로 렌더링합니다. 배율을 조정하려면 표시 상자를 늘릴 수 있어야 합니다. Type 인수는 결과가 확장 가능한 벡터 이미지인지 아니면 비트맵인지 결정합니다. 기본적으로 PDF와 같은 벡터 형식으로 저장하는 데 적합한 확장 가능 이미지가 반환됩니다. View 옵션은 일부 상자의 동작을 변경합니다. "Picture"(기본값) 옵션은 스크롤된 영역이 전체 표시된 상태에서 이미지 형식으로 내보내는 것처럼 보고서를 그립니다. "Screen" 보기 모드는 보고서를 화면에 표시된 대로 그리고, "Print"는 페이지 설정 기능 없이 인쇄할 때처럼 보고서를 그립니다. SubRect 옵션은 전체 이미지가 아니라 결과 이미지의 일부를 캡처합니다. Appearance 옵션은 "Default" 출력 색상에서 화면에 표시된 "Current" 색상으로 변경할 수 있습니다. View, SubRect 및 Appearance 옵션은 Type "Bitmap"에만 지원됩니다.
 
@@ -860,7 +842,7 @@ New Window( "Example", rbiv << Get Picture( Scale( 1.5 ) ) );
 
 ### Get Project
 
-**구문:** project = obj << Get Project()
+**구문:** project = obj &lt;&lt; Get Project()
 
 **설명:** 창의 상위 프로젝트 또는 Empty()(프로젝트에 없는 경우)를 반환합니다.
 
@@ -878,7 +860,7 @@ Show( c );
 
 ### Get Properties
 
-**구문:** obj << Get Properties
+**구문:** obj &lt;&lt; Get Properties
 
 **설명:** 표시 상자의 특성 및 해당 값이 포함된 연관 배열을 반환합니다.
 
@@ -892,7 +874,7 @@ bb << Get Properties;
 
 ### Get Property
 
-**구문:** obj << Get Property( "property" )
+**구문:** obj &lt;&lt; Get Property( "property" )
 
 **설명:** property의 현재 설정을 반환합니다.
 
@@ -906,7 +888,7 @@ bb << Get Property( "Enabled" );
 
 ### Get Property List
 
-**구문:** obj << Get Property List
+**구문:** obj &lt;&lt; Get Property List
 
 **설명:** 표시 상자의 특성 목록을 반환합니다.
 
@@ -920,7 +902,7 @@ bb << Get Property List;
 
 ### Get RTF
 
-**구문:** obj << Get RTF( <format> )
+**구문:** obj &lt;&lt; Get RTF( &lt;format&gt; )
 
 **설명:** 표시 상자에 대한 RTF 소스가 포함된 문자열을 반환합니다.
 
@@ -950,7 +932,7 @@ Open( "$TEMP/Oneway.rtf" );
 
 ### Get Row States
 
-**구문:** rs = obj << Get Row States( <dt> )
+**구문:** rs = obj &lt;&lt; Get Row States( &lt;dt&gt; )
 
 **설명:** 지정된 데이터 테이블 또는 현재 데이터 테이블의 모든 행에 대한 행 상태를 포함하는 벡터를 반환합니다. 행 상태는 테이블에서 가져오거나, 상자의 필터 컨텍스트에서 가져올 수 있습니다.
 
@@ -1039,7 +1021,7 @@ updatetext();
 
 ### Get Show Window
 
-**구문:** obj << Get Show Window
+**구문:** obj &lt;&lt; Get Show Window
 
 **설명:** 창 표시 여부를 반환합니다.
 
@@ -1057,7 +1039,7 @@ Print( w << Get Show Window() );
 
 ### Get Size
 
-**구문:** width,height = obj << Get Size
+**구문:** width,height = obj &lt;&lt; Get Size
 
 **설명:** 표시 상자의 크기를 반환합니다.
 
@@ -1075,7 +1057,7 @@ Print( fb << Get Size );
 
 ### Get Stretch
 
-**구문:** x,y = obj << Get Stretch
+**구문:** x,y = obj &lt;&lt; Get Stretch
 
 **설명:** 이 표시 상자에 대한 가로 및 세로 방향의 늘이기 플래그를 반환합니다.
 
@@ -1097,7 +1079,7 @@ spacer << Get Stretch();
 
 ### Get Text
 
-**구문:** obj << Get Text
+**구문:** obj &lt;&lt; Get Text
 
 **설명:** 표시 상자의 텍스트가 포함된 문자열을 반환합니다.
 
@@ -1112,9 +1094,7 @@ a << Set Text( win << Get Text );
 
 ### Get Text Color
 
-**구문:** obj << Text Color( color );
-
-color = obj << Get Text Color
+**구문:** obj &lt;&lt; Text Color( color );color = obj &lt;&lt; Get Text Color
 
 **설명:** 텍스트 색상이 설정되어 있으면 해당 색상을 사용하여 텍스트를 그립니다. 특성이 설정되어 있지 않으면 포함하는 상자의 텍스트 색상을 상속합니다.
 
@@ -1136,15 +1116,11 @@ tb << Text Color( "Red" );
 
 ### Get UI Only
 
-**구문:** obj << UI Only( state=0|1 );
-
-state = obj << Get UI Only
+**구문:** obj &lt;&lt; UI Only( state=0|1 );state = obj &lt;&lt; Get UI Only
 
 ### Get Vertical Alignment
 
-**구문:** obj << Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );
-
-"Default"|"Top"|"Center"|"Bottom" = obj << Get Vertical Alignment
+**구문:** obj &lt;&lt; Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );"Default"|"Top"|"Center"|"Bottom" = obj &lt;&lt; Get Vertical Alignment
 
 **설명:** 세로 맞춤은 상자가 전체 공간을 채우지 않을 경우 컨테이너 내에서의 상자 위치를 제어합니다.
 
@@ -1166,9 +1142,7 @@ lb << Vertical Alignment( "Bottom" );
 
 ### Get Visibility
 
-**구문:** obj << Visibility( "Visible"|"Hidden"|"Collapse" );
-
-"Visible"|"Hidden"|"Collapse" = obj << Get Visibility
+**구문:** obj &lt;&lt; Visibility( "Visible"|"Hidden"|"Collapse" );"Visible"|"Hidden"|"Collapse" = obj &lt;&lt; Get Visibility
 
 **설명:** 표시 여부는 상자 표시 여부 및 상자가 공간을 차지하는지 여부를 결정합니다. 기본값 "Visible"은 개체가 표시된다는 것을 의미합니다. "Hidden" 상자는 표시되지는 않아도 공간을 차지하는 반면 "Collapsed" 상자는 레이아웃에서 공간을 차지하지 않습니다.
 
@@ -1189,7 +1163,7 @@ Show( tb << Get Visibility );
 
 ### Get Web Support
 
-**구문:** obj << Get Web Support
+**구문:** obj &lt;&lt; Get Web Support
 
 **설명:** 표시 개체에 대한 대화식 HTML 지원 수준을 나타내는 숫자를 반환합니다. 1은 일부 또는 모든 요소가 지원됨을 의미하고 0은 지원되지 않음을 의미합니다.
 
@@ -1205,7 +1179,7 @@ Show( s );
 
 ### Get Window Icon
 
-**구문:** obj << Get Window Icon
+**구문:** obj &lt;&lt; Get Window Icon
 
 **설명:** 창 아이콘을 반환합니다.
 
@@ -1221,7 +1195,7 @@ Show( t );
 
 ### Get Window Position
 
-**구문:** obj << Get Window Position
+**구문:** obj &lt;&lt; Get Window Position
 
 **설명:** 창 위치를 반환합니다.
 
@@ -1237,7 +1211,7 @@ Show( p );
 
 ### Get Window Size
 
-**구문:** obj << Get Window Size
+**구문:** obj &lt;&lt; Get Window Size
 
 **설명:** 창 크기를 반환합니다.
 
@@ -1253,7 +1227,7 @@ Show( s );
 
 ### Get Window Title
 
-**구문:** obj << Get Window Title
+**구문:** obj &lt;&lt; Get Window Title
 
 **설명:** 창 제목을 반환합니다.
 
@@ -1269,7 +1243,7 @@ Show( t );
 
 ### Get Window View
 
-**구문:** obj << Get Window View
+**구문:** obj &lt;&lt; Get Window View
 
 **설명:** 현재 창 보기를 반환합니다. 창은 "Visible"(표시), "Invisible"(숨김) 또는 "Private"(비공개)일 수 있습니다.
 
@@ -1284,7 +1258,7 @@ Print( w << Get Window View() );
 
 ### Get XML
 
-**구문:** obj << Get XML( <English(0|1)>, <NoData(0|1)> )
+**구문:** obj &lt;&lt; Get XML( &lt;English(0|1)&gt;, &lt;NoData(0|1)&gt; )
 
 **설명:** XML 형식의 표시 트리를 가져옵니다. 기본적으로 문자열은 로컬 언어로 반환되고 XML에는 일부 상자 내의 데이터 값이 포함됩니다. 가능한 경우 영어 문자열을 반환하려면 English 옵션을 사용합니다. 상자 내의 데이터 값을 생략하려면 NoData 옵션을 사용합니다. 이러한 값은 일부 표시 트리의 경우 매우 클 수 있습니다.
 
@@ -1299,7 +1273,7 @@ a << set text( win << get xml );
 
 ### GetOffset
 
-**구문:** x,y = obj << GetOffset
+**구문:** x,y = obj &lt;&lt; GetOffset
 
 **설명:** 상위 상자를 기준으로 이 표시 상자의 오프셋을 반환합니다. 여러 개의 오프셋을 누적하려면 루프에 <<parent 메시지를 사용해야 합니다.
 
@@ -1343,9 +1317,7 @@ New Window( "example",
 
 ### Horizontal Alignment
 
-**구문:** obj << Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );
-
-"Default"|"Left"|"Center"|"Right" = obj << Get Horizontal Alignment
+**구문:** obj &lt;&lt; Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );"Default"|"Left"|"Center"|"Right" = obj &lt;&lt; Get Horizontal Alignment
 
 **설명:** 가로 맞춤은 상자가 전체 공간을 채우지 않을 경우 컨테이너 내에서의 상자 위치를 제어합니다.
 
@@ -1365,7 +1337,7 @@ lb << Horizontal Alignment( "Right" );
 
 ### Inval
 
-**구문:** obj << Inval
+**구문:** obj &lt;&lt; Inval
 
 **설명:** 표시 상자를 무효화합니다. <<UpdateWindow 메시지가 전송되거나 운영 체제에 업데이트 시간이 있는 경우 창이 업데이트됩니다.
 
@@ -1407,7 +1379,7 @@ New Window( "Inval example",
 
 ### Is Dirty
 
-**구문:** obj << Is Dirty
+**구문:** obj &lt;&lt; Is Dirty
 
 **설명:** 문서의 수정된 상태를 가져옵니다. 1은 문서가 수정되었음을 의미하며 저장 여부를 묻습니다. 0은 문서가 수정되지 않았음을 의미합니다.
 
@@ -1426,7 +1398,7 @@ Show( ww << Is Dirty );
 
 ### Is Modal Dialog
 
-**구문:** obj << Is Modal Dialog
+**구문:** obj &lt;&lt; Is Modal Dialog
 
 **설명:** 창이 모달 대화상자이면 true를 반환합니다. 창 처리기 콜백에서 호출한 경우에만 유용합니다.
 
@@ -1445,7 +1417,7 @@ With Window Handler(
 
 ### Journal
 
-**구문:** obj << Journal
+**구문:** obj &lt;&lt; Journal
 
 **설명:** 표시 상자에서 저널을 생성합니다.
 
@@ -1462,7 +1434,7 @@ rbiv << journal;
 
 ### Journal Window
 
-**구문:** obj << Journal Window
+**구문:** obj &lt;&lt; Journal Window
 
 **설명:** 창의 저널 창을 엽니다.
 
@@ -1477,7 +1449,7 @@ w << Journal Window;
 
 ### Launch
 
-**구문:** obj << Launch
+**구문:** obj &lt;&lt; Launch
 
 **설명:** 지정된 argument를 표시 상자의 컨텍스트에서 실행합니다.
 
@@ -1499,7 +1471,7 @@ ob3 << launch( Bivariate( Y( :height ), X( :weight ) ) );
 
 ### Make RowState Handler
 
-**구문:** rs = obj << Make RowState Handler( <dt>, function(a) )
+**구문:** rs = obj &lt;&lt; Make RowState Handler( &lt;dt&gt;, function(a) )
 
 **설명:** 지정된 데이터 테이블 또는 현재 데이터 테이블에 대한 행 상태 처리기를 생성합니다. 이 함수는 상자의 필터 컨텍스트에서 행 상태가 변경되면 호출됩니다. 함수의 인수는 변경된 행 번호를 보유하거나, 행 상태 필터가 변경된 경우 -1을 보유합니다.
 
@@ -1588,9 +1560,7 @@ updatetext();
 
 ### Margin
 
-**구문:** obj << Margin( sides );
-
-sides = obj << Get Margin
+**구문:** obj &lt;&lt; Margin( sides );sides = obj &lt;&lt; Get Margin
 
 **설명:** 여백은 상자 테두리와 인접 상자 사이에 공백을 추가합니다. 명명된 인수를 사용하거나 값 목록을 제공하십시오. 값을 하나만 제공하면 모든 측면에 적용되고, 값을 두 개 지정하면 가로 및 세로 여백에 적용됩니다.
 
@@ -1611,7 +1581,7 @@ tb << Margin( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ### Maximize Window
 
-**구문:** obj << Maximize Window( <state=0|1> )
+**구문:** obj &lt;&lt; Maximize Window( &lt;state=0|1&gt; )
 
 **설명:** 창을 최대화합니다. 기본 인수는 1입니다.
 
@@ -1629,7 +1599,7 @@ w << Maximize Window( 0 );
 
 ### Minimize Window
 
-**구문:** obj << Minimize Window( <state=0|1> )
+**구문:** obj &lt;&lt; Minimize Window( &lt;state=0|1&gt; )
 
 **설명:** 창을 최소화합니다. 기본 인수는 1입니다.
 
@@ -1647,7 +1617,7 @@ w << Minimize Window( 0 );
 
 ### Move Window
 
-**구문:** obj << Move Window( x,y )
+**구문:** obj &lt;&lt; Move Window( x,y )
 
 **설명:** 창을 지정된 위치로 이동합니다.
 
@@ -1663,7 +1633,7 @@ w << Move Window( 500, 500 );
 
 ### Next
 
-**구문:** obj << Next
+**구문:** obj &lt;&lt; Next
 
 **설명:** 이 표시 상자 뒤의 표시 상자를 반환합니다.
 
@@ -1681,7 +1651,7 @@ Print( next << Class Name() );
 
 ### On Close
 
-**구문:** obj << On Close( script )
+**구문:** obj &lt;&lt; On Close( script )
 
 **설명:** 창을 닫을 때 실행할 스크립트 또는 함수를 설정합니다. 이 스크립트는 닫기를 허용하려면 1을 반환하고, 창이 닫히지 않게 하려면 0을 반환해야 합니다.
 
@@ -1729,7 +1699,7 @@ w << On Close(
 
 ### Optimize Display
 
-**구문:** obj << Optimize Display
+**구문:** obj &lt;&lt; Optimize Display
 
 **설명:** 데이터 테이블의 열 너비 및 창을 최적 크기로 설정합니다.
 
@@ -1746,7 +1716,7 @@ dt << Optimize Display;
 
 ### Pad Window
 
-**구문:** obj << Pad Window( bool )
+**구문:** obj &lt;&lt; Pad Window( bool )
 
 **설명:** 창 안쪽 여백을 설정 또는 해제합니다.
 
@@ -1763,9 +1733,7 @@ r << Pad Window( 0 );
 
 ### Padding
 
-**구문:** obj << Padding( sides );
-
-sides = obj << Get Padding
+**구문:** obj &lt;&lt; Padding( sides );sides = obj &lt;&lt; Get Padding
 
 **설명:** 안쪽 여백은 상자 내용과 테두리 사이에 공백을 추가합니다. 명명된 인수를 사용하거나 값 목록을 제공하십시오. 값을 하나만 제공하면 모든 측면에 적용되고, 값을 두 개 지정하면 가로 및 세로 안쪽 여백에 적용됩니다.
 
@@ -1786,7 +1754,7 @@ tb << Padding( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ### Page Break
 
-**구문:** obj << Page Break
+**구문:** obj &lt;&lt; Page Break
 
 **설명:** 표시 상자 앞에 페이지 구분을 삽입합니다.
 
@@ -1812,7 +1780,7 @@ ob3 << Page Break;
 
 ### Parent
 
-**구문:** obj << Parent
+**구문:** obj &lt;&lt; Parent
 
 **설명:** 이 표시 상자의 상위 항목을 반환합니다.
 
@@ -1831,7 +1799,7 @@ Print( axisParent << Class Name() );
 
 ### Prepend
 
-**구문:** obj << Prepend( db2 )
+**구문:** obj &lt;&lt; Prepend( db2 )
 
 **설명:** 표시 트리에서 db 앞에 db2를 추가합니다.
 
@@ -1848,7 +1816,7 @@ rbiv << prepend( Text Box( "=== above ===" ) );
 
 ### Prev Sib
 
-**구문:** obj << Prev Sib
+**구문:** obj &lt;&lt; Prev Sib
 
 **설명:** 표시 상자의 이전 형제 항목을 반환합니다.
 
@@ -1869,7 +1837,7 @@ Print( axisSibling << Class Name() );
 
 ### Print Window
 
-**구문:** obj << Print Window
+**구문:** obj &lt;&lt; Print Window
 
 **설명:** 창을 인쇄합니다.
 
@@ -1884,7 +1852,7 @@ w << Print Window;
 
 ### Reshow
 
-**구문:** obj << Reshow
+**구문:** obj &lt;&lt; Reshow
 
 **설명:** 표시 상자를 무효화하고 창을 새 내용으로 업데이트합니다. 업데이트 시기에 대한 추가 제어가 필요한 경우 <<Inval 및 <<UpdateWindow 메시지를 참조하십시오.
 
@@ -1913,7 +1881,7 @@ New Window( "Reshow example",
 
 ### Save Capture
 
-**구문:** obj << Save Capture( <"path">, <format>, <Add Sibling(n)> )
+**구문:** obj &lt;&lt; Save Capture( &lt;"path"&gt;, &lt;format&gt;, &lt;Add Sibling(n)&gt; )
 
 **설명:** 표시 상자의 화면 캡처를 지정된 path에 저장합니다. path를 제공하지 않으면 다른 이름으로 저장 창이 나타납니다.
 
@@ -1930,7 +1898,7 @@ rbiv << Save Capture( "$TEMP/jmp_example.png", "png" );
 
 ### Save HTML
 
-**구문:** obj << Save HTML( <pathname>, <format> )
+**구문:** obj &lt;&lt; Save HTML( &lt;pathname&gt;, &lt;format&gt; )
 
 **설명:** HTML 소스를 지정된 format의 그래픽을 포함하는 폴더와 함께 저장합니다.
 
@@ -1947,7 +1915,7 @@ rbiv << Save HTML( "$TEMP/jmp_example.html" );
 
 ### Save Interactive HTML
 
-**구문:** obj << Save Interactive HTML( <pathname>, <Boolean> )
+**구문:** obj &lt;&lt; Save Interactive HTML( &lt;pathname&gt;, &lt;Boolean&gt; )
 
 **설명:** 데이터가 포함된 대화식 HTML을 파일에 저장합니다. Boolean 인수는 보고서가 정적임을 나타냅니다.
 
@@ -1964,7 +1932,7 @@ rbiv << Save Interactive HTML( "$TEMP/jmp_example.html" );
 
 ### Save Journal
 
-**구문:** obj << Save Journal( <pathname> )
+**구문:** obj &lt;&lt; Save Journal( &lt;pathname&gt; )
 
 **설명:** 표시 상자에 대한 저널 소스를 저장합니다.
 
@@ -1981,7 +1949,7 @@ rbiv << Save Journal( "$TEMP/jmp_example.jrn" );
 
 ### Save MSWord
 
-**구문:** obj << Save MSWord( <pathname>, <format> )
+**구문:** obj &lt;&lt; Save MSWord( &lt;pathname&gt;, &lt;format&gt; )
 
 **설명:** 표시 상자를 Microsoft Word 문서로 저장합니다(Windows만 해당).
 
@@ -1998,7 +1966,7 @@ rbiv << Save MSWord( "$TEMP/jmp_example.doc" );
 
 ### Save PDF
 
-**구문:** obj << Save PDF( <pathname>, <Show Page Setup(0|1)>, <Portrait(0|1)> )
+**구문:** obj &lt;&lt; Save PDF( &lt;pathname&gt;, &lt;Show Page Setup(0|1)&gt;, &lt;Portrait(0|1)&gt; )
 
 **설명:** 표시 상자의 PDF를 저장합니다.
 
@@ -2015,7 +1983,7 @@ rbiv << Save PDF( "$TEMP/jmp_example.pdf" );
 
 ### Save Picture
 
-**구문:** obj << Save Picture( <pathname>, <format>, <Scale(factor)>, <Type("Bitmap" | "Scalable")>, <View("Picture" | "Screen" | "Print"), <Appearance("Default" | "Current")>, <SubRect(Left(number), Top(number), Right(number), Bottom(number))> )
+**구문:** obj &lt;&lt; Save Picture( &lt;pathname&gt;, &lt;format&gt;, &lt;Scale(factor)&gt;, &lt;Type("Bitmap" | "Scalable")&gt;, &lt;View("Picture" | "Screen" | "Print"), &lt;Appearance("Default" | "Current")&gt;, &lt;SubRect(Left(number), Top(number), Right(number), Bottom(number))&gt; )
 
 **설명:** 표시 상자 그림을 저장합니다. 지원되는 형식은 EMF(Windows), PICT(Macintosh), JPEG, JPG, GIF 또는 PNG입니다. 선택적 Scale 인수는 이미지를 배율이 조정된 해상도로 렌더링합니다. 배율을 조정하려면 표시 상자를 늘릴 수 있어야 합니다. Type 인수는 결과가 확장 가능한 벡터 이미지인지 아니면 비트맵인지 결정합니다. 기본적으로 PDF와 같은 벡터 형식으로 저장하는 데 적합한 확장 가능 이미지가 반환됩니다. View 옵션은 일부 상자의 동작을 변경합니다. "Picture"(기본값) 옵션은 스크롤된 영역이 전체 표시된 상태에서 이미지 형식으로 내보내는 것처럼 보고서를 그립니다. "Screen" 보기 모드는 보고서를 화면에 표시된 대로 그리고, "Print"는 페이지 설정 기능 없이 인쇄할 때처럼 보고서를 그립니다. SubRect 옵션은 전체 이미지가 아니라 결과 이미지의 일부를 캡처합니다. Appearance 옵션은 "Default" 출력 색상에서 화면에 표시된 "Current" 색상으로 변경할 수 있습니다. View, SubRect 및 Appearance 옵션은 Type "Bitmap"에만 지원됩니다.
 
@@ -2072,7 +2040,7 @@ New Window( "scaled image", New Image( "$TEMP/jmp_example_scale.png" ) );
 
 ### Save Presentation
 
-**구문:** obj << Save Presentation( "filename.pptx", <Template("path\to\my_template.pptx")>, <Insert(Begin|End|#) | Replace(Begin|End|#) | Append>, <Outline Titles(None|Hide|TopLeft|TopRight|BottomLeft|BottomRight)>, <"EMF"|"PNG"|"JPG"|"Native"> )
+**구문:** obj &lt;&lt; Save Presentation( "filename.pptx", &lt;Template("path\to\my_template.pptx")&gt;, &lt;Insert(Begin|End|#) | Replace(Begin|End|#) | Append&gt;, &lt;Outline Titles(None|Hide|TopLeft|TopRight|BottomLeft|BottomRight)&gt;, &lt;"EMF"|"PNG"|"JPG"|"Native"&gt; )
 
 **설명:** 표시 상자 테이블 및 그래프 슬라이드를 프레젠테이션에 저장합니다. 프레젠테이션은 Microsoft PowerPoint나 기타 프레젠테이션 소프트웨어에서 열 수 있습니다.
 
@@ -2089,7 +2057,7 @@ Open( "$TEMP/jmp_example.pptx" );
 
 ### Save RTF
 
-**구문:** obj << Save RTF( <pathname>, <format> )
+**구문:** obj &lt;&lt; Save RTF( &lt;pathname&gt;, &lt;format&gt; )
 
 **설명:** RTF 소스를 지정된 format의 그래픽과 함께 저장합니다.
 
@@ -2106,7 +2074,7 @@ rbiv << Save RTF( "$TEMP/jmp_example.rtf", "png" );
 
 ### Save Text
 
-**구문:** obj << Save Text( <pathname>, <format> )
+**구문:** obj &lt;&lt; Save Text( &lt;pathname&gt;, &lt;format&gt; )
 
 **설명:** 표시 상자의 텍스트가 포함된 파일을 저장합니다.
 
@@ -2121,7 +2089,7 @@ a << save text( "$TEMP/jmp_example.txt" );
 
 ### Save Window Report
 
-**구문:** obj << Save Window Report( pathname, <embed data(0|1)> )
+**구문:** obj &lt;&lt; Save Window Report( pathname, &lt;embed data(0|1)&gt; )
 
 **설명:** 현재 보고서 창을 JMP 보고서 파일(.jrp)에 저장합니다.
 
@@ -2139,7 +2107,7 @@ d << Save Window Report( "$DOCUMENTS/test.jrp", embed data( 1 ) );
 
 ### Scroll Window
 
-**구문:** obj << Scroll Window( DisplayBox | <Relative(<v> | <h>,<v>)> | <Absolute(<v> | <h>,<v>) )
+**구문:** obj &lt;&lt; Scroll Window( DisplayBox | &lt;Relative(&lt;v&gt; | &lt;h&gt;,&lt;v&gt;)&gt; | &lt;Absolute(&lt;v&gt; | &lt;h&gt;,&lt;v&gt;) )
 
 **설명:** 창 스크롤 막대를 조정하여 지정된 표시 상자를 보기 영역으로 가져오거나, 상대 픽셀 수로 스크롤하거나, 절대 픽셀 위치로 스크롤합니다. 픽셀 수 대신 "Start" 또는 "End" 키워드를 사용할 수 있습니다.
 
@@ -2214,7 +2182,7 @@ Wait( 1 );
 
 ### Select
 
-**구문:** obj << Select
+**구문:** obj &lt;&lt; Select
 
 **설명:** 편집 메뉴 명령에서 사용할 수 있도록 이 개체를 선택합니다.
 
@@ -2229,7 +2197,7 @@ ex << Select;
 
 ### Set Content Size
 
-**구문:** obj << Set Content Size( x,y )
+**구문:** obj &lt;&lt; Set Content Size( x,y )
 
 **설명:** 창 안의 내용 크기를 설정합니다.
 
@@ -2255,7 +2223,7 @@ w << Set Content Size( 400, 300 );
 
 ### Set Dirty
 
-**구문:** obj << Set Dirty
+**구문:** obj &lt;&lt; Set Dirty
 
 **설명:** 문서의 수정된 상태를 설정합니다. 0은 저장 여부를 묻지 않고 1은 저장 여부를 묻습니다.
 
@@ -2274,7 +2242,7 @@ Show( ww << Is Dirty );
 
 ### Set Height
 
-**구문:** obj << Set Height( width )
+**구문:** obj &lt;&lt; Set Height( width )
 
 **설명:** 표시 상자의 높이를 설정합니다.
 
@@ -2292,7 +2260,7 @@ fb << Set Height( 150 );
 
 ### Set Main Window
 
-**구문:** obj << Set Main Window
+**구문:** obj &lt;&lt; Set Main Window
 
 **설명:** 창을 JMP의 주 창으로 설정하고 이전 주 창을 일반 창으로 설정합니다.
 
@@ -2307,7 +2275,7 @@ w << Set Main Window;
 
 ### Set Max Size
 
-**구문:** obj << Set Max Size( width,height )
+**구문:** obj &lt;&lt; Set Max Size( width,height )
 
 **설명:** 이 표시 상자를 자동으로 늘릴 수 있는 최대 크기를 설정합니다.
 
@@ -2326,7 +2294,7 @@ fb << Get Max Size;
 
 ### Set Min Size
 
-**구문:** obj << Set Min Size( width,height )
+**구문:** obj &lt;&lt; Set Min Size( width,height )
 
 **설명:** 이 표시 상자를 자동으로 늘릴 수 있는 최소 크기를 설정합니다.
 
@@ -2345,7 +2313,7 @@ fb << Get Min Size;
 
 ### Set Page Setup
 
-**구문:** obj << Set Page Setup( <margins(left, top, right, bottom)>, <scale(s)>, <portrait(0|1)>, <paper size(p)>, <Table of Contents(always, never, default)>  )
+**구문:** obj &lt;&lt; Set Page Setup( &lt;margins(left, top, right, bottom)&gt;, &lt;scale(s)&gt;, &lt;portrait(0|1)&gt;, &lt;paper size(p)&gt;, &lt;Table of Contents(always, never, default)&gt; )
 
 **설명:** pdf로 저장하거나 인쇄하는 동안 사용되는 페이지 설정 정보를 지정합니다. 필요한 경우 개요 상자에서 목차를 생성할 수도 있습니다.
 
@@ -2367,7 +2335,7 @@ w << Save pdf( "$DOCUMENTS\test.pdf" );
 
 ### Set Print Footers
 
-**구문:** obj << Set Print Footers( left footer, center footer, right header )
+**구문:** obj &lt;&lt; Set Print Footers( left footer, center footer, right header )
 
 **설명:** 인쇄된 출력에 대한 왼쪽, 가운데 및 오른쪽 바닥글을 설정합니다.
 
@@ -2386,7 +2354,7 @@ w << Print Window;
 
 ### Set Print Headers
 
-**구문:** obj << Set Print Headers( left header, center header, right header )
+**구문:** obj &lt;&lt; Set Print Headers( left header, center header, right header )
 
 **설명:** 인쇄된 출력에 대한 왼쪽, 가운데 및 오른쪽 머리글을 설정합니다.
 
@@ -2405,7 +2373,7 @@ w << Print Window;
 
 ### Set Property
 
-**구문:** obj << Set Property( "property", value )
+**구문:** obj &lt;&lt; Set Property( "property", value )
 
 **설명:** 표시 상자에 대한 property의 값을 설정합니다.
 
@@ -2419,7 +2387,7 @@ bb << Set Property( "Enabled", 0 );
 
 ### Set Report Title
 
-**구문:** obj << Set Report Title( "string" )
+**구문:** obj &lt;&lt; Set Report Title( "string" )
 
 **설명:** 보고서 제목을 변경합니다.
 
@@ -2436,7 +2404,7 @@ rbiv << Set Report Title( "New Title" );
 
 ### Set Stretch
 
-**구문:** obj << Set Stretch( x,y )
+**구문:** obj &lt;&lt; Set Stretch( x,y )
 
 **설명:** 상자의 가로 및 세로 늘이기 동작을 설정합니다. Window와 함께 늘어나는 상자는 창 또는 분할 도구 크기가 변경되면 크기가 조정됩니다. Fill을 위해 늘어나는 상자는 컨테이너의 사용 가능한 공간을 채우기 위해 늘어납니다. 일반적으로 늘이기 설정이 Off인 상자는 늘어나지 않습니다. 대부분의 상자는 Neutral을 기본값으로 설정하며, 이는 하위 상자를 기준으로 동작을 결정한다는 의미입니다.
 
@@ -2484,7 +2452,7 @@ New Window( "Stretch",
 
 ### Set Summary Behavior
 
-**구문:** obj << Set Summary Behavior( "Default"|"Visible"|"Collapse" )
+**구문:** obj &lt;&lt; Set Summary Behavior( "Default"|"Visible"|"Collapse" )
 
 **설명:** Sets the behavior of the box when a report is viewed in Summary mode.
 
@@ -2503,7 +2471,7 @@ tb << Set Summary Behavior( "Visible" );
 
 ### Set Width
 
-**구문:** obj << Set Width( width )
+**구문:** obj &lt;&lt; Set Width( width )
 
 **설명:** 표시 상자의 너비를 설정합니다.
 
@@ -2521,7 +2489,7 @@ fb << Set Width( 400 );
 
 ### Set Window Icon
 
-**구문:** obj << Set Window Icon( icon name )
+**구문:** obj &lt;&lt; Set Window Icon( icon name )
 
 **설명:** 창 아이콘을 설정합니다.
 
@@ -2536,7 +2504,7 @@ w << Set Window Icon( "Scatter3D" );
 
 ### Set Window Size
 
-**구문:** obj << Set Window Size( x,y )
+**구문:** obj &lt;&lt; Set Window Size( x,y )
 
 **설명:** 창 크기를 설정합니다.
 
@@ -2551,7 +2519,7 @@ w << Set Window Size( 800, 1200 );
 
 ### Set Window Title
 
-**구문:** obj << Set Window Title( "string" )
+**구문:** obj &lt;&lt; Set Window Title( "string" )
 
 **설명:** 창 제목을 변경합니다.
 
@@ -2568,7 +2536,7 @@ rbiv << Set Window Title( "New Title" );
 
 ### Show Properties
 
-**구문:** obj << Show Properties
+**구문:** obj &lt;&lt; Show Properties
 
 **설명:** 표시 상자에 대한 특성 편집기를 표시합니다.
 
@@ -2585,7 +2553,7 @@ rbiv << Show Properties();
 
 ### Show Tree Structure
 
-**구문:** obj << Show Tree Structure
+**구문:** obj &lt;&lt; Show Tree Structure
 
 **설명:** 표시 상자의 계층적 트리 구조 및 관련 노드를 표시합니다.
 
@@ -2602,7 +2570,7 @@ rbiv << Show Tree Structure();
 
 ### Show Window
 
-**구문:** obj << Show Window( state=0|1 )
+**구문:** obj &lt;&lt; Show Window( state=0|1 )
 
 **설명:** 창을 표시하거나 숨깁니다. 창을 임시로 숨길 때 유용합니다. 기본적으로 설정되어 있습니다.
 
@@ -2620,7 +2588,7 @@ w << Show Window( 1 );
 
 ### Sib
 
-**구문:** obj << Sib
+**구문:** obj &lt;&lt; Sib
 
 **설명:** 표시 상자의 형제 항목을 반환합니다.
 
@@ -2639,7 +2607,7 @@ Print( axisSibling << Class Name() );
 
 ### Sib Append
 
-**구문:** obj << Sib Append( Display box, Horizontal|Vertical )
+**구문:** obj &lt;&lt; Sib Append( Display box, Horizontal|Vertical )
 
 **설명:** 이 표시 상자 바로 뒤에 표시 상자를 추가합니다.
 
@@ -2658,7 +2626,7 @@ fb << sib append( Text Box( "=== below ===" ), "Vertical" );
 
 ### Sib Prepend
 
-**구문:** obj << Sib Prepend( Display box, Horizontal|Vertical )
+**구문:** obj &lt;&lt; Sib Prepend( Display box, Horizontal|Vertical )
 
 **설명:** 이 표시 상자 바로 앞에 표시 상자를 추가합니다.
 
@@ -2680,7 +2648,7 @@ fb << sib prepend( Text Box( "=== above ===" ), "Vertical" );
 
 ### Size Window
 
-**구문:** obj << Size Window( x,y )
+**구문:** obj &lt;&lt; Size Window( x,y )
 
 **설명:** 창 크기를 설정합니다.
 
@@ -2695,9 +2663,7 @@ w << Size Window( 500, 500 );
 
 ### Text Color
 
-**구문:** obj << Text Color( color );
-
-color = obj << Get Text Color
+**구문:** obj &lt;&lt; Text Color( color );color = obj &lt;&lt; Get Text Color
 
 **설명:** 텍스트 색상이 설정되어 있으면 해당 색상을 사용하여 텍스트를 그립니다. 특성이 설정되어 있지 않으면 포함하는 상자의 텍스트 색상을 상속합니다.
 
@@ -2719,7 +2685,7 @@ tb << Text Color( "Red" );
 
 ### Top Parent
 
-**구문:** obj << Top Parent
+**구문:** obj &lt;&lt; Top Parent
 
 **설명:** 이 표시 상자의 루트 상위 항목을 반환합니다.
 
@@ -2737,13 +2703,11 @@ Print( rootParent << Class Name() );
 
 ### UI Only
 
-**구문:** obj << UI Only( state=0|1 );
-
-state = obj << Get UI Only
+**구문:** obj &lt;&lt; UI Only( state=0|1 );state = obj &lt;&lt; Get UI Only
 
 ### Update Window
 
-**구문:** obj << Update Window
+**구문:** obj &lt;&lt; Update Window
 
 **설명:** 무효화된 영역이 있는 경우 표시 상자가 포함된 창을 업데이트합니다. <<Inval 메시지는 무효화된 영역을 생성합니다.
 
@@ -2795,9 +2759,7 @@ New Window( "rect",
 
 ### Vertical Alignment
 
-**구문:** obj << Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );
-
-"Default"|"Top"|"Center"|"Bottom" = obj << Get Vertical Alignment
+**구문:** obj &lt;&lt; Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );"Default"|"Top"|"Center"|"Bottom" = obj &lt;&lt; Get Vertical Alignment
 
 **설명:** 세로 맞춤은 상자가 전체 공간을 채우지 않을 경우 컨테이너 내에서의 상자 위치를 제어합니다.
 
@@ -2819,9 +2781,7 @@ lb << Vertical Alignment( "Bottom" );
 
 ### Visibility
 
-**구문:** obj << Visibility( "Visible"|"Hidden"|"Collapse" );
-
-"Visible"|"Hidden"|"Collapse" = obj << Get Visibility
+**구문:** obj &lt;&lt; Visibility( "Visible"|"Hidden"|"Collapse" );"Visible"|"Hidden"|"Collapse" = obj &lt;&lt; Get Visibility
 
 **설명:** 표시 여부는 상자 표시 여부 및 상자가 공간을 차지하는지 여부를 결정합니다. 기본값 "Visible"은 개체가 표시된다는 것을 의미합니다. "Hidden" 상자는 표시되지는 않아도 공간을 차지하는 반면 "Collapsed" 상자는 레이아웃에서 공간을 차지하지 않습니다.
 
@@ -2842,7 +2802,7 @@ Show( tb << Get Visibility );
 
 ### Window Class Name
 
-**구문:** obj << Window Class Name
+**구문:** obj &lt;&lt; Window Class Name
 
 **설명:** 표시 상자에 대한 창 클래스의 이름을 반환합니다.
 
@@ -2860,7 +2820,7 @@ Show( rbiv << Window Class Name() );
 
 ### XPath
 
-**구문:** obj << XPath( XPath expression, <English(0|1)>, <NoData(0|1)> )
+**구문:** obj &lt;&lt; XPath( XPath expression, &lt;English(0|1)&gt;, &lt;NoData(0|1)&gt; )
 
 **설명:** 표시 트리의 XML 표현에 XPath 표현식을 적용하고 결과를 반환합니다. 기본적으로 문자열은 로컬 언어로 반환되고 XML에는 일부 상자 내의 데이터 값이 포함됩니다. 가능한 경우 영어 문자열을 반환하려면 English 옵션을 사용합니다. 상자 내의 데이터 값을 생략하려면 NoData 옵션을 사용합니다. 쿼리가 상자 속성만 기반으로 할 때 이렇게 하면 성능에 유용합니다.
 
@@ -2938,7 +2898,7 @@ biv = dt << Run Script( "Bivariate" );
 
 ### Zoom Window
 
-**구문:** obj << Zoom Window
+**구문:** obj &lt;&lt; Zoom Window
 
 **설명:** 모든 내용을 표시할 수 있도록 창 크기를 조정합니다.
 
@@ -2992,7 +2952,7 @@ scene << update;
 
 ### ArcBall
 
-**구문:** obj << ArcBall( list,radius )
+**구문:** obj &lt;&lt; ArcBall( list,radius )
 
 **설명:** 지정된 목록에 마우스 왼쪽 버튼 클릭 및 드래그를 사용한 회전을 허용하는 개체를 그립니다.
 
@@ -3015,7 +2975,7 @@ scene << Update;
 
 ### Background Color
 
-**구문:** obj << Background Color( red, green, blue )
+**구문:** obj &lt;&lt; Background Color( red, green, blue )
 
 **설명:** 장면 상자의 배경 색상을 설정합니다.
 
@@ -3036,7 +2996,7 @@ scene << Background Color( 0, 0, 0 );
 
 ### Begin
 
-**구문:** obj << Begin
+**구문:** obj &lt;&lt; Begin
 
 **설명:** primitive의 시작 위치를 지정합니다. OpenGL 명령 glBegin을 사용합니다.
 
@@ -3064,7 +3024,7 @@ New Window( "Example", scene );
 
 ### BlendFunc
 
-**구문:** obj << BlendFunc( source factor,destination factor )
+**구문:** obj &lt;&lt; BlendFunc( source factor,destination factor )
 
 **설명:** 혼합에 사용되는 함수를 설정합니다. OpenGL 명령 glBlendFunc를 사용합니다.
 
@@ -3095,7 +3055,7 @@ New Window( "Example", scene );
 
 ### CallList
 
-**구문:** obj << CallList( list )
+**구문:** obj &lt;&lt; CallList( list )
 
 **설명:** 지정된 목록에 개체를 그립니다. OpenGL 명령 glCallList를 사용합니다.
 
@@ -3119,7 +3079,7 @@ scene << update;
 
 ### Clear
 
-**구문:** obj << Clear
+**구문:** obj &lt;&lt; Clear
 
 **설명:** 배경 색상이 보이도록 장면을 지웁니다.
 
@@ -3156,7 +3116,7 @@ While( 1,
 
 ### ClipPlane
 
-**구문:** obj << ClipPlane( clip_plane0|clip_plane1|clip_plane2|clip_plane3|clip_plane4|clip_plane5,x,y,z,d )
+**구문:** obj &lt;&lt; ClipPlane( clip_plane0|clip_plane1|clip_plane2|clip_plane3|clip_plane4|clip_plane5,x,y,z,d )
 
 **설명:** clipping plane을 생성합니다. OpenGL 명령 glClipPlane을 사용합니다.
 
@@ -3182,7 +3142,7 @@ scene << Update;
 
 ### Color
 
-**구문:** obj << Color( r,g,b,<a> )
+**구문:** obj &lt;&lt; Color( r,g,b,&lt;a&gt; )
 
 **설명:** 색상을 설정합니다. 알파 계층이 작동하려면 혼합이 설정되어 있어야 합니다. OpenGL 명령 glColor를 사용합니다.
 
@@ -3213,7 +3173,7 @@ New Window( "Example", scene );
 
 ### ColorMask
 
-**구문:** obj << ColorMask( red=0|1,green=0|1,blue=0|1,alpha=0|1 )
+**구문:** obj &lt;&lt; ColorMask( red=0|1,green=0|1,blue=0|1,alpha=0|1 )
 
 **설명:** 다음에 나오는 개체에 색상 마스크를 적용합니다. OpenGL 명령 glColorMask를 사용합니다.
 
@@ -3259,7 +3219,7 @@ scene << update;
 
 ### ColorMaterial
 
-**구문:** obj << ColorMaterial( Front|Back|Front_And_Back,Emission|Ambient|Diffuse|Specular|Ambient_And_Diffuse )
+**구문:** obj &lt;&lt; ColorMaterial( Front|Back|Front_And_Back,Emission|Ambient|Diffuse|Specular|Ambient_And_Diffuse )
 
 **설명:** 다음에 나오는 개체에 color material을 적용합니다. OpenGL 명령 glColorMaterial을 사용합니다.
 
@@ -3296,7 +3256,7 @@ scene << update;
 
 ### CullFace
 
-**구문:** obj << CullFace( front|back|front_and_back )
+**구문:** obj &lt;&lt; CullFace( front|back|front_and_back )
 
 **설명:** 선별이 활성화되어야 하는 위치를 설정합니다. OpenGL 명령 glCullFace를 사용합니다.
 
@@ -3335,7 +3295,7 @@ scene << update;
 
 ### Cylinder
 
-**구문:** obj << Cylinder( base radius,top radius,height,slices,stacks )
+**구문:** obj &lt;&lt; Cylinder( base radius,top radius,height,slices,stacks )
 
 **설명:** 원기둥을 생성합니다. OpenGL 유틸리티 명령 gluCylinder를 사용합니다.
 
@@ -3358,7 +3318,7 @@ scene << Update;
 
 ### DepthFunc
 
-**구문:** obj << DepthFunc( nevert|lesst|equalt|lequalt|greatert|notequalt|gequalt|always )
+**구문:** obj &lt;&lt; DepthFunc( nevert|lesst|equalt|lequalt|greatert|notequalt|gequalt|always )
 
 **설명:** 깊이 버퍼 비교에 사용할 깊이 함수를 설정합니다. OpenGL 명령 glDepthFunc를 사용합니다.
 
@@ -3397,7 +3357,7 @@ scene << update;
 
 ### DepthMask
 
-**구문:** obj << DepthMask( state=0|1 )
+**구문:** obj &lt;&lt; DepthMask( state=0|1 )
 
 **설명:** 깊이 버퍼에 쓸 수 있는지 여부를 설정합니다. OpenGL 명령 glDepthMask를 사용합니다.
 
@@ -3436,7 +3396,7 @@ scene << update;
 
 ### DepthRange
 
-**구문:** obj << DepthRange( near,far )
+**구문:** obj &lt;&lt; DepthRange( near,far )
 
 **설명:** 깊이 범위를 설정합니다. 이 범위를 벗어난 항목은 그리지 않습니다. OpenGL 명령 glDepthRange를 사용합니다.
 
@@ -3475,7 +3435,7 @@ scene << update;
 
 ### Disable
 
-**구문:** obj << Disable
+**구문:** obj &lt;&lt; Disable
 
 **설명:** 다양한 OpenGL 기능을 비활성화합니다. OpenGL 명령 glDisable을 사용합니다.
 
@@ -3522,7 +3482,7 @@ refresh();
 
 ### Disk
 
-**구문:** obj << Disk( inner radius,outer radius,slices,rings )
+**구문:** obj &lt;&lt; Disk( inner radius,outer radius,slices,rings )
 
 **설명:** 원반을 생성합니다. OpenGL 유틸리티 명령 gluDisk를 사용합니다.
 
@@ -3545,7 +3505,7 @@ scene << Update;
 
 ### Enable
 
-**구문:** obj << Enable
+**구문:** obj &lt;&lt; Enable
 
 **설명:** 다양한 OpenGL 기능을 활성화합니다. OpenGL 명령 glEnable을 사용합니다.
 
@@ -3592,7 +3552,7 @@ refresh();
 
 ### End
 
-**구문:** obj << End
+**구문:** obj &lt;&lt; End
 
 **설명:** primitive의 마지막 위치를 지정합니다. OpenGL 명령 glEnd를 사용합니다.
 
@@ -3620,7 +3580,7 @@ New Window( "Example", scene );
 
 ### EvalCoord1
 
-**구문:** obj << EvalCoord1( u )
+**구문:** obj &lt;&lt; EvalCoord1( u )
 
 **설명:** 1차원 맵을 실행합니다. OpenGL 명령 glEvalCoord1d를 사용합니다.
 
@@ -3653,7 +3613,7 @@ New Window( "Example", curve );
 
 ### EvalCoord2
 
-**구문:** obj << EvalCoord2( u,v )
+**구문:** obj &lt;&lt; EvalCoord2( u,v )
 
 **설명:** 1차원 맵을 실행합니다. OpenGL 명령 glEvalCoord2d를 사용합니다.
 
@@ -3699,7 +3659,7 @@ New Window( "Example", sb );
 
 ### EvalMesh1
 
-**구문:** obj << EvalMesh1( mode,i1,i2 )
+**구문:** obj &lt;&lt; EvalMesh1( mode,i1,i2 )
 
 **설명:** 1차원 mesh를 실행합니다. OpenGL 명령 glEvalMesh1을 사용합니다.
 
@@ -3729,7 +3689,7 @@ New Window( "Example", spline );
 
 ### EvalMesh2
 
-**구문:** obj << EvalMesh2( mode,i1,i2,j1,j2 )
+**구문:** obj &lt;&lt; EvalMesh2( mode,i1,i2,j1,j2 )
 
 **설명:** 2차원 mesh를 실행합니다. OpenGL 명령 glEvalMesh2를 사용합니다.
 
@@ -3762,7 +3722,7 @@ New Window( "Example", sb );
 
 ### EvalPoint1
 
-**구문:** obj << EvalPoint1( i )
+**구문:** obj &lt;&lt; EvalPoint1( i )
 
 **설명:** 1차원 mesh의 단일 점을 실행합니다. OpenGL 명령 glEvalPoint1을 사용합니다.
 
@@ -3795,7 +3755,7 @@ New Window( "Example", curve );
 
 ### EvalPoint2
 
-**구문:** obj << EvalPoint2( i,j )
+**구문:** obj &lt;&lt; EvalPoint2( i,j )
 
 **설명:** 2차원 mesh의 단일 점을 실행합니다. OpenGL 명령 glEvalPoint2를 사용합니다.
 
@@ -3841,7 +3801,7 @@ New Window( "Example", sb );
 
 ### Fog
 
-**구문:** obj << Fog( fog_mode|fog_density|fog_start|fog_end|fog_index|fog_color,p1,<p2>,<p3>,<p4> )
+**구문:** obj &lt;&lt; Fog( fog_mode|fog_density|fog_start|fog_end|fog_index|fog_color,p1,&lt;p2&gt;,&lt;p3&gt;,&lt;p4&gt; )
 
 **설명:** fog를 생성합니다. OpenGL 명령 glFog를 사용합니다.
 
@@ -3888,7 +3848,7 @@ refresh();
 
 ### Frame
 
-**구문:** obj << Frame( x0,x1,y0,y1,z0,z1,farside )
+**구문:** obj &lt;&lt; Frame( x0,x1,y0,y1,z0,z1,farside )
 
 **설명:** 프레임을 그립니다.
 
@@ -3908,7 +3868,7 @@ scene << frame( -0.8, 0.8, -0.8, 0.8, 0.0, 0.0, 1 );
 
 ### FrontFace
 
-**구문:** obj << FrontFace( cw|ccw )
+**구문:** obj &lt;&lt; FrontFace( cw|ccw )
 
 **설명:** 앞 또는 뒤를 향할 다각형을 설정합니다. 개체 선별과 함께 사용됩니다. OpenGL 명령 glFrontFace를 사용합니다.
 
@@ -3948,7 +3908,7 @@ scene << update;
 
 ### Frustum
 
-**구문:** obj << Frustum( left,right,bottom,top,near,far )
+**구문:** obj &lt;&lt; Frustum( left,right,bottom,top,near,far )
 
 **설명:** 카메라에 사용되는 파라미터를 설정합니다. OpenGL 명령 glFrustum을 사용합니다.
 
@@ -3984,7 +3944,7 @@ scene << update;
 
 ### Get Background Color
 
-**구문:** color = obj << Get Background Color
+**구문:** color = obj &lt;&lt; Get Background Color
 
 **설명:** 장면 상자의 배경 색상을 반환합니다.
 
@@ -4006,7 +3966,7 @@ scene << Get Background Color();
 
 ### Get Show ArcBall
 
-**구문:** obj << Get Show ArcBall
+**구문:** obj &lt;&lt; Get Show ArcBall
 
 **설명:** 아크볼의 표시 상태를 반환합니다.
 
@@ -4031,7 +3991,7 @@ scene << Get Show ArcBall();
 
 ### Get Width
 
-**구문:** pixels = obj << Get Width
+**구문:** pixels = obj &lt;&lt; Get Width
 
 **설명:** 상자의 너비를 반환합니다.
 
@@ -4067,7 +4027,7 @@ scene << Get Width();
 
 ### Height
 
-**구문:** obj << Height( pixels )
+**구문:** obj &lt;&lt; Height( pixels )
 
 **설명:** 상자의 높이를 설정합니다.
 
@@ -4103,7 +4063,7 @@ scene << Height( 150 );
 
 ### Light
 
-**구문:** obj << Light( light0|light1|light2|light3|light4|light5|light6|light7,ambient|diffuse|specular|position,x|r,y|g,z|b,<a> )
+**구문:** obj &lt;&lt; Light( light0|light1|light2|light3|light4|light5|light6|light7,ambient|diffuse|specular|position,x|r,y|g,z|b,&lt;a&gt; )
 
 **설명:** 지정된 파라미터를 사용하여 광원을 생성합니다. OpenGL 명령 glLight를 사용합니다.
 
@@ -4135,7 +4095,7 @@ scene << update;
 
 ### LightModel
 
-**구문:** obj << LightModel( light_model_ambient|light_model_local_viewer|light_model_two_side,r,g,b,a )
+**구문:** obj &lt;&lt; LightModel( light_model_ambient|light_model_local_viewer|light_model_two_side,r,g,b,a )
 
 **설명:** light model에 사용되는 파라미터를 설정합니다. OpenGL 명령 glLightModel을 사용합니다.
 
@@ -4171,7 +4131,7 @@ scene << update;
 
 ### LineStipple
 
-**구문:** obj << LineStipple( factor,pattern )
+**구문:** obj &lt;&lt; LineStipple( factor,pattern )
 
 **설명:** 선 점묘 패턴을 설정합니다. OpenGL 명령 glLineStipple을 사용합니다.
 
@@ -4196,7 +4156,7 @@ scene << Disable( LINE_STIPPLE );
 
 ### LineWidth
 
-**구문:** obj << LineWidth( width )
+**구문:** obj &lt;&lt; LineWidth( width )
 
 **설명:** 선 너비를 설정합니다. OpenGL 명령 glLineWidth를 사용합니다.
 
@@ -4223,7 +4183,7 @@ scene << End();
 
 ### LoadIdentity
 
-**구문:** obj << LoadIdentity
+**구문:** obj &lt;&lt; LoadIdentity
 
 **설명:** 현재 행렬을 identity matrix로 설정합니다. OpenGL 명령 glLoadIdentity를 사용합니다.
 
@@ -4251,7 +4211,7 @@ scene << update;
 
 ### LoadMatrix
 
-**구문:** obj << LoadMatrix( matrix )
+**구문:** obj &lt;&lt; LoadMatrix( matrix )
 
 **설명:** 현재 행렬을 지정된 행렬로 설정합니다. OpenGL 명령 glLoadMatrix를 사용합니다.
 
@@ -4280,7 +4240,7 @@ scene << update;
 
 ### LoadName
 
-**구문:** obj << LoadName( i )
+**구문:** obj &lt;&lt; LoadName( i )
 
 **설명:** picker와 함께 사용하며 다음에 나오는 개체를 식별하는 정수를 불러옵니다. OpenGL 명령 glLoadName을 사용합니다.
 
@@ -4316,7 +4276,7 @@ Print( view << Pick( 50, 200, 1, 1, 4, 1 ) );
 
 ### LookAt
 
-**구문:** obj << LookAt( eye x,eye y,eye z,center x,center y,center z,up x,up y,up z )
+**구문:** obj &lt;&lt; LookAt( eye x,eye y,eye z,center x,center y,center z,up x,up y,up z )
 
 **설명:** 카메라가 봐야 할 위치를 설정합니다. OpenGL 유틸리티 명령 gluLookAt을 사용합니다.
 
@@ -4340,7 +4300,7 @@ scene << Update;
 
 ### Map1
 
-**구문:** obj << Map1( target,u1,u2,stride,order,points )
+**구문:** obj &lt;&lt; Map1( target,u1,u2,stride,order,points )
 
 **설명:** 1차원 실행기를 정의합니다. OpenGL 명령 glMap1d를 사용합니다.
 
@@ -4370,7 +4330,7 @@ New Window( "Example", spline );
 
 ### Map2
 
-**구문:** obj << Map2( target,u1,u2,ustride,uorder,v1,v2,vstride,vorder,points )
+**구문:** obj &lt;&lt; Map2( target,u1,u2,ustride,uorder,v1,v2,vstride,vorder,points )
 
 **설명:** 2차원 실행기를 정의합니다. OpenGL 명령 glMap2d를 사용합니다.
 
@@ -4403,7 +4363,7 @@ New Window( "Example", sb );
 
 ### MapGrid1
 
-**구문:** obj << MapGrid1( un,u1,u2 )
+**구문:** obj &lt;&lt; MapGrid1( un,u1,u2 )
 
 **설명:** 1차원 mesh를 정의합니다. OpenGL 명령 glMapGrid1d를 사용합니다.
 
@@ -4433,7 +4393,7 @@ New Window( "Example", spline );
 
 ### MapGrid2
 
-**구문:** obj << MapGrid2( un,u1,u2,vn,v1,v2 )
+**구문:** obj &lt;&lt; MapGrid2( un,u1,u2,vn,v1,v2 )
 
 **설명:** 2차원 mesh를 정의합니다. OpenGL 명령 glMapGrid2d를 사용합니다.
 
@@ -4466,7 +4426,7 @@ New Window( "Example", sb );
 
 ### Material
 
-**구문:** obj << Material
+**구문:** obj &lt;&lt; Material
 
 **설명:** 다음에 나오는 개체에 사용할 재료 유형을 지정합니다. OpenGL 명령 glMaterial을 사용합니다.
 
@@ -4499,7 +4459,7 @@ scene << update;
 
 ### MatrixMode
 
-**구문:** obj << MatrixMode( modelview|projection|texture )
+**구문:** obj &lt;&lt; MatrixMode( modelview|projection|texture )
 
 **설명:** 작업을 수행할 행렬을 설정합니다. OpenGL 명령 glMatrixMode를 사용합니다.
 
@@ -4528,7 +4488,7 @@ scene << update;
 
 ### MultMatrix
 
-**구문:** obj << MultMatrix( matrix )
+**구문:** obj &lt;&lt; MultMatrix( matrix )
 
 **설명:** 현재 행렬에 지정된 행렬을 곱합니다. OpenGL 명령 glMultMatrix를 사용합니다.
 
@@ -4554,7 +4514,7 @@ scene << update;
 
 ### Normal
 
-**구문:** obj << Normal( x,y,z )
+**구문:** obj &lt;&lt; Normal( x,y,z )
 
 **설명:** current normal을 설정합니다. OpenGL 명령 glNormal을 사용합니다.
 
@@ -4601,7 +4561,7 @@ scene << update;
 
 ### Ortho
 
-**구문:** obj << Ortho( left,right,bottom,top,near,far )
+**구문:** obj &lt;&lt; Ortho( left,right,bottom,top,near,far )
 
 **설명:** 장면을 직교 보기로 설정합니다. OpenGL 명령 glOrtho를 사용합니다.
 
@@ -4632,7 +4592,7 @@ scene << update;
 
 ### Ortho2D
 
-**구문:** obj << Ortho2D( left,right,bottom,top )
+**구문:** obj &lt;&lt; Ortho2D( left,right,bottom,top )
 
 **설명:** 장면을 2D 직교 보기로 설정합니다. OpenGL 유틸리티 명령 gluOrtho2d를 사용합니다.
 
@@ -4659,7 +4619,7 @@ scene << Update;
 
 ### PartialDisk
 
-**구문:** obj << PartialDisk( inner radius,outer radius,slices,rings,start angle,sweep angle )
+**구문:** obj &lt;&lt; PartialDisk( inner radius,outer radius,slices,rings,start angle,sweep angle )
 
 **설명:** 부분 원반을 생성합니다. OpenGL 유틸리티 명령 gluPartialDisk를 사용합니다.
 
@@ -4682,7 +4642,7 @@ scene << Update;
 
 ### Perspective
 
-**구문:** obj << Perspective( angle,z near,z far )
+**구문:** obj &lt;&lt; Perspective( angle,z near,z far )
 
 **설명:** 보기의 관점을 설정합니다. OpenGL 유틸리티 명령 gluPerspective를 사용합니다.
 
@@ -4702,7 +4662,7 @@ scene << Text( center, baseline, 0.2, "Hello, World." );
 
 ### Pick
 
-**구문:** name = obj << Pick( x center,y center,pick width,pick height,buffer size,only return the names=0|1 )
+**구문:** name = obj &lt;&lt; Pick( x center,y center,pick width,pick height,buffer size,only return the names=0|1 )
 
 **설명:** 마우스의 2D 좌표 아래에 있는 명명된 개체를 반환합니다.
 
@@ -4738,7 +4698,7 @@ Print( view << Pick( 50, 200, 1, 1, 4, 1 ) );
 
 ### PointSize
 
-**구문:** obj << PointSize( size )
+**구문:** obj &lt;&lt; PointSize( size )
 
 **설명:** 점 크기를 설정합니다. OpenGL 명령 glPointSize를 사용합니다.
 
@@ -4771,7 +4731,7 @@ scene << End();
 
 ### PolygonMode
 
-**구문:** obj << PolygonMode( front|back|front_and_back,point|line|fill )
+**구문:** obj &lt;&lt; PolygonMode( front|back|front_and_back,point|line|fill )
 
 **설명:** 래스터화에 사용되는 모드를 설정합니다. OpenGL 명령 glPolygonMode를 사용합니다.
 
@@ -4803,7 +4763,7 @@ scene << update;
 
 ### PolygonOffset
 
-**구문:** obj << PolygonOffset( factor,units )
+**구문:** obj &lt;&lt; PolygonOffset( factor,units )
 
 **설명:** 다각형의 오프셋을 설정합니다. OpenGL 명령 glPolygonOffset을 사용합니다.
 
@@ -4839,7 +4799,7 @@ scene << update;
 
 ### PopAttrib
 
-**구문:** obj << PopAttrib
+**구문:** obj &lt;&lt; PopAttrib
 
 **설명:** 현재 속성을 Pops합니다. OpenGL 명령 glPopAttrib를 사용합니다.
 
@@ -4878,7 +4838,7 @@ scene << update;
 
 ### PopMatrix
 
-**구문:** obj << PopMatrix
+**구문:** obj &lt;&lt; PopMatrix
 
 **설명:** 현재 행렬을 Pops합니다. OpenGL 명령 glPopMatrix를 사용합니다.
 
@@ -4911,7 +4871,7 @@ scene << Update;
 
 ### PopName
 
-**구문:** obj << PopName
+**구문:** obj &lt;&lt; PopName
 
 **설명:** picker와 함께 사용하며 다음에 나오는 개체를 식별하는 정수를 pop합니다. OpenGL 명령 glPopName을 사용합니다.
 
@@ -4947,7 +4907,7 @@ Print( view << Pick( 50, 200, 1, 1, 4, 1 ) );
 
 ### PushAttrib
 
-**구문:** obj << PushAttrib( mask )
+**구문:** obj &lt;&lt; PushAttrib( mask )
 
 **설명:** 현재 속성을 Pushes합니다. OpenGL 명령 glPushAttrib를 사용합니다.
 
@@ -4986,7 +4946,7 @@ scene << update;
 
 ### PushMatrix
 
-**구문:** obj << PushMatrix
+**구문:** obj &lt;&lt; PushMatrix
 
 **설명:** 현재 행렬을 Pushes합니다. OpenGL 명령 glPushMatrix를 사용합니다.
 
@@ -5019,7 +4979,7 @@ scene << Update;
 
 ### PushName
 
-**구문:** obj << PushName( i )
+**구문:** obj &lt;&lt; PushName( i )
 
 **설명:** picker와 함께 사용하며 다음에 나오는 개체를 식별하는 정수를 push합니다. OpenGL 명령 glPushName을 사용합니다.
 
@@ -5055,7 +5015,7 @@ Print( view << Pick( 50, 200, 1, 1, 4, 1 ) );
 
 ### QuadricDrawStyle
 
-**구문:** obj << QuadricDrawStyle( point|line|silhouette|fill )
+**구문:** obj &lt;&lt; QuadricDrawStyle( point|line|silhouette|fill )
 
 **설명:** 2차 곡선에 사용할 그리기 스타일 유형을 설정합니다. OpenGL 유틸리티 명령 gluQuadricDrawStyle을 사용합니다.
 
@@ -5089,7 +5049,7 @@ scene << update;
 
 ### QuadricNormals
 
-**구문:** obj << QuadricNormals( none|flat|smooth )
+**구문:** obj &lt;&lt; QuadricNormals( none|flat|smooth )
 
 **설명:** 2차 곡선에 사용할 normals 유형을 설정합니다. OpenGL 유틸리티 명령 gluQuadricNormals를 사용합니다.
 
@@ -5123,7 +5083,7 @@ scene << update;
 
 ### QuadricOrientation
 
-**구문:** obj << QuadricOrientation( outside|inside )
+**구문:** obj &lt;&lt; QuadricOrientation( outside|inside )
 
 **설명:** 2차 곡선에 사용할 방향 유형을 설정합니다. OpenGL 유틸리티 명령 gluQuadricOrientation을 사용합니다.
 
@@ -5157,13 +5117,13 @@ scene << update;
 
 ### QuadricTexture
 
-**구문:** obj << QuadricTexture
+**구문:** obj &lt;&lt; QuadricTexture
 
 **JMP추가된 버전:** 16
 
 ### Rect
 
-**구문:** obj << Rect( x1,y1,x2,y2 )
+**구문:** obj &lt;&lt; Rect( x1,y1,x2,y2 )
 
 **설명:** 직사각형을 생성합니다. OpenGL 명령 glRect를 사용합니다.
 
@@ -5184,7 +5144,7 @@ scene << CallList( shape );
 
 ### Rotate
 
-**구문:** obj << Rotate( angle,x,y,z )
+**구문:** obj &lt;&lt; Rotate( angle,x,y,z )
 
 **설명:** 현재 행렬에 지정된 회전 각도를 곱합니다. OpenGL 명령 glRotate를 사용합니다.
 
@@ -5205,7 +5165,7 @@ scene << Text( center, baseline, 0.2, "Hello, World." );
 
 ### Scale
 
-**구문:** obj << Scale( x,y,z )
+**구문:** obj &lt;&lt; Scale( x,y,z )
 
 **설명:** 현재 행렬에 지정된 척도를 곱합니다. OpenGL 명령 glScale을 사용합니다.
 
@@ -5226,7 +5186,7 @@ scene << Text( center, baseline, 0.2, "Hello, World." );
 
 ### Scissor
 
-**구문:** obj << Scissor( x,y,width,height )
+**구문:** obj &lt;&lt; Scissor( x,y,width,height )
 
 **설명:** scissor 보기 내에 나타나는 항목만 그립니다. OpenGL 명령 glScissor를 사용합니다.
 
@@ -5249,7 +5209,7 @@ scene << Disable( scissor_test );
 
 ### ShadeModel
 
-**구문:** obj << ShadeModel( flat|smooth )
+**구문:** obj &lt;&lt; ShadeModel( flat|smooth )
 
 **설명:** 다음에 나오는 개체에 사용할 음영 유형을 지정합니다. OpenGL 명령 glShadeModel을 사용합니다.
 
@@ -5276,7 +5236,7 @@ scene << Update;
 
 ### Show ArcBall
 
-**구문:** obj << Show ArcBall( "드래그하는 중"|"항상"|"안 함" )
+**구문:** obj &lt;&lt; Show ArcBall( "드래그하는 중"|"항상"|"안 함" )
 
 **설명:** 아크볼의 표시 상태를 설정합니다.
 
@@ -5300,13 +5260,13 @@ scene << Update;
 
 ### SortList
 
-**구문:** obj << SortList
+**구문:** obj &lt;&lt; SortList
 
 **JMP추가된 버전:** 16
 
 ### Sphere
 
-**구문:** obj << Sphere( radius,slices,stacks )
+**구문:** obj &lt;&lt; Sphere( radius,slices,stacks )
 
 **설명:** 구를 생성합니다. OpenGL 유틸리티 명령 gluSphere를 사용합니다.
 
@@ -5341,7 +5301,7 @@ scene << update;
 
 ### Suppress Context Menu
 
-**구문:** obj << Suppress Context Menu( state=0|1 )
+**구문:** obj &lt;&lt; Suppress Context Menu( state=0|1 )
 
 **설명:** 장면 상자 컨텍스트 메뉴가 나타나지 않도록 합니다.
 
@@ -5365,7 +5325,7 @@ scene << Suppress Context Menu( 1 );
 
 ### Text
 
-**구문:** obj << Text( left|center|right,top|middle|baseline|bottom,size,"string" )
+**구문:** obj &lt;&lt; Text( left|center|right,top|middle|baseline|bottom,size,"string" )
 
 **설명:** SceneBox에 표시할 수 있는 텍스트를 생성합니다.
 
@@ -5385,7 +5345,7 @@ scene << Text( center, baseline, 0.2, "Hello, World." );
 
 ### Translate
 
-**구문:** obj << Translate( x,y,z )
+**구문:** obj &lt;&lt; Translate( x,y,z )
 
 **설명:** 현재 행렬에 지정된 변환을 곱합니다. OpenGL 명령 glTranslate를 사용합니다.
 
@@ -5405,7 +5365,7 @@ scene << Text( center, baseline, 0.2, "Hello, World." );
 
 ### Update
 
-**구문:** obj << Update
+**구문:** obj &lt;&lt; Update
 
 **설명:** 장면을 렌더링합니다.
 
@@ -5442,7 +5402,7 @@ While( 1,
 
 ### Use Hardware Acceleration
 
-**구문:** obj << Use Hardware Acceleration( state=0|1 )
+**구문:** obj &lt;&lt; Use Hardware Acceleration( state=0|1 )
 
 **설명:** 하드웨어 가속을 사용하면 표시 속도가 빨라집니다. 상태가 좋지 않은 경우 새 그래픽 드라이버(하드웨어 벤더가 제공)가 필요할 수 있습니다.
 
@@ -5491,7 +5451,7 @@ While( 1,
 
 ### Vertex
 
-**구문:** obj << Vertex( x,y,z )
+**구문:** obj &lt;&lt; Vertex( x,y,z )
 
 **설명:** primitive의 꼭지점을 지정합니다.
 
@@ -5519,7 +5479,7 @@ New Window( "Example", scene );
 
 ### Width
 
-**구문:** obj << Width( pixels )
+**구문:** obj &lt;&lt; Width( pixels )
 
 **설명:** 상자의 너비를 설정합니다.
 

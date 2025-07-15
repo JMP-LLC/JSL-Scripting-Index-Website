@@ -22,7 +22,7 @@ obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :He
 
 ### By
 
-**Syntax:** obj << By( column(s) )
+**Syntax:** obj &lt;&lt; By( column(s) )
 
 ```jsl
 
@@ -42,7 +42,7 @@ obj = Multivariate(
 
 ### Freq
 
-**Syntax:** obj << Freq( column )
+**Syntax:** obj &lt;&lt; Freq( column )
 
 ```jsl
 
@@ -58,7 +58,7 @@ obj = Multivariate(
 
 ### Weight
 
-**Syntax:** obj << Weight( column )
+**Syntax:** obj &lt;&lt; Weight( column )
 
 ```jsl
 
@@ -74,7 +74,7 @@ obj = Multivariate(
 
 ### Y
 
-**Syntax:** obj << Y( column(s) )
+**Syntax:** obj &lt;&lt; Y( column(s) )
 
 ```jsl
 
@@ -88,7 +88,7 @@ obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :He
 
 ### CI of Correlation
 
-**Syntax:** obj << CI of Correlation( state=0|1 )
+**Syntax:** obj &lt;&lt; CI of Correlation( state=0|1 )
 
 **Description:** Shows or hides a report of the correlations between each Y variable and the confidence intervals for each correlation.
 
@@ -103,7 +103,7 @@ obj << CI of Correlation( 1 );
 
 ### Cluster the Correlations
 
-**Syntax:** obj << Cluster the Correlations( state=0|1 )
+**Syntax:** obj &lt;&lt; Cluster the Correlations( state=0|1 )
 
 **Description:** Shows or hides a color map on clustered correlations, starting at blue for negatively correlated and moving to red as the correlations approach one.
 
@@ -118,7 +118,7 @@ obj << Cluster the Correlations( 1 );
 
 ### Color Map on Correlations
 
-**Syntax:** obj << Color Map on Correlations( state=0|1 )
+**Syntax:** obj &lt;&lt; Color Map on Correlations( state=0|1 )
 
 **Description:** Shows or hides a color map on correlations, starting at blue for negatively correlated and moving to red as the correlations approach one.
 
@@ -133,7 +133,7 @@ obj << Color Map on Correlations( 1 );
 
 ### Color Map on Hoeffding's D
 
-**Syntax:** obj << Color Map on Hoeffding&apos;s D( state=0|1 )
+**Syntax:** obj &lt;&lt; Color Map on Hoeffding&apos;s D( state=0|1 )
 
 **Description:** Shows or hides a color map on Hoeffding&apos;s D nonparametric correlations, starting at blue for negatively correlated and moving to red as the correlations approach one.
 
@@ -148,7 +148,7 @@ obj << Color Map on Hoeffding's D( 1 );
 
 ### Color Map on Kendall's Tau
 
-**Syntax:** obj << Color Map on Kendall&apos;s Tau( state=0|1 )
+**Syntax:** obj &lt;&lt; Color Map on Kendall&apos;s Tau( state=0|1 )
 
 **Description:** Shows or hides a color map on Kendall&apos;s Tau nonparametric correlations, starting at blue for negatively correlated and moving to red as the correlations approach one.
 
@@ -163,7 +163,7 @@ obj << Color Map on Kendall's Tau( 1 );
 
 ### Color Map on Kendall's τ
 
-**Syntax:** obj << Color Map on Kendall&apos;s τ( state=0|1 )
+**Syntax:** obj &lt;&lt; Color Map on Kendall&apos;s τ( state=0|1 )
 
 **Description:** Shows or hides a color map on Kendall&apos;s Tau nonparametric correlations, starting at blue for negatively correlated and moving to red as the correlations approach one.
 
@@ -178,7 +178,7 @@ obj << Color Map on Kendall's Tau( 1 );
 
 ### Color Map on Pairwise Correlations
 
-**Syntax:** obj << Color Map on Pairwise Correlations( state=0|1 )
+**Syntax:** obj &lt;&lt; Color Map on Pairwise Correlations( state=0|1 )
 
 **Description:** Shows or hides a color map on the pairwise correlations, starting at blue for negatively correlated and moving to red as the correlations approach one.
 
@@ -193,7 +193,7 @@ obj << Color Map on Pairwise Correlations( 1 );
 
 ### Color Map on Spearman's Rho
 
-**Syntax:** obj << Color Map on Spearman&apos;s Rho( state=0|1 )
+**Syntax:** obj &lt;&lt; Color Map on Spearman&apos;s Rho( state=0|1 )
 
 **Description:** Shows or hides a color map on Spearman&apos;s Rho nonparametric correlations, starting at blue for negatively correlated and moving to red as the correlations approach one.
 
@@ -208,7 +208,7 @@ obj << Color Map on Spearman's Rho( 1 );
 
 ### Color Map on Spearman's ρ
 
-**Syntax:** obj << Color Map on Spearman&apos;s ρ( state=0|1 )
+**Syntax:** obj &lt;&lt; Color Map on Spearman&apos;s ρ( state=0|1 )
 
 **Description:** Shows or hides a color map on Spearman&apos;s Rho nonparametric correlations, starting at blue for negatively correlated and moving to red as the correlations approach one.
 
@@ -223,7 +223,7 @@ obj << Color Map on Spearman's Rho( 1 );
 
 ### Color Map on p-Values
 
-**Syntax:** obj << Color Map on p-Values( state=0|1 )
+**Syntax:** obj &lt;&lt; Color Map on p-Values( state=0|1 )
 
 **Description:** Shows or hides a color map on p-values, starting at red for p-values close to zero and moving to blue as the p-values approach one.
 
@@ -238,7 +238,7 @@ obj << "Color Map on p-Values"n( 1 );
 
 ### Correlation Probability
 
-**Syntax:** obj << Correlation Probability( state=0|1 )
+**Syntax:** obj &lt;&lt; Correlation Probability( state=0|1 )
 
 **Description:** Shows or hides a matrix of p-values that each correspond to a test of the null hypothesis that the true correlation between the variables is zero.
 
@@ -253,7 +253,7 @@ obj << Correlation Probability( 1 );
 
 ### Correlations Multivariate
 
-**Syntax:** obj << Correlations Multivariate( state=0|1 )
+**Syntax:** obj &lt;&lt; Correlations Multivariate( state=0|1 )
 
 **Description:** Shows or hides a matrix of correlation coefficients that summarize the strength of the linear relationships between each pair of Y variables. On by default.
 
@@ -268,7 +268,7 @@ obj << Correlations Multivariate( 1 );
 
 ### Covariance Matrix
 
-**Syntax:** obj << Covariance Matrix( state=0|1 )
+**Syntax:** obj &lt;&lt; Covariance Matrix( state=0|1 )
 
 **Description:** Shows or hides a matrix of covariances for each pair of Y variables.
 
@@ -283,7 +283,7 @@ obj << Covariance Matrix( 1 );
 
 ### Create SAS Job
 
-**Syntax:** obj << Create SAS Job
+**Syntax:** obj &lt;&lt; Create SAS Job
 
 **Description:** Creates SAS Proc Mixed code to run similar estimation methods through SAS.
 
@@ -298,7 +298,7 @@ obj << Create SAS Job();
 
 ### Cronbach's Alpha
 
-**Syntax:** obj << Cronbach&apos;s Alpha( state=0|1 )
+**Syntax:** obj &lt;&lt; Cronbach&apos;s Alpha( state=0|1 )
 
 **Description:** Shows or hides a report of Cronbach&apos;s alpha for the entire set of variables as well as the alpha if each Y variable was individually excluded.
 
@@ -313,7 +313,7 @@ obj << Cronbach's alpha( 1 );
 
 ### Cronbach's α
 
-**Syntax:** obj << Cronbach&apos;s α( state=0|1 )
+**Syntax:** obj &lt;&lt; Cronbach&apos;s α( state=0|1 )
 
 **Description:** Shows or hides a report of Cronbach&apos;s alpha for the entire set of variables as well as the alpha if each Y variable was individually excluded.
 
@@ -328,7 +328,7 @@ obj << Cronbach's alpha( 1 );
 
 ### Ellipsoid 3D Plot
 
-**Syntax:** obj << Ellipsoid 3D Plot( column1, column2, column3 )
+**Syntax:** obj &lt;&lt; Ellipsoid 3D Plot( column1, column2, column3 )
 
 **Description:** Shows or hides a surface plot that displays a 95% ellipsoid for three chosen Y variables.
 
@@ -343,7 +343,7 @@ obj << Ellipsoid 3D Plot( :Ether, :Chloroform, :Benzene );
 
 ### Get Correlation Matrix
 
-**Syntax:** obj << Get Correlation Matrix
+**Syntax:** obj &lt;&lt; Get Correlation Matrix
 
 **Description:** Returns the correlation matrix.
 
@@ -359,7 +359,7 @@ Show( corr );
 
 ### Get Inv Correlation Matrix
 
-**Syntax:** obj << Get Inv Correlation Matrix
+**Syntax:** obj &lt;&lt; Get Inv Correlation Matrix
 
 **Description:** Returns the inverse correlation matrix.
 
@@ -375,7 +375,7 @@ Show( icorr );
 
 ### Hoeffding's D
 
-**Syntax:** obj << Hoeffding&apos;s D( state=0|1 )
+**Syntax:** obj &lt;&lt; Hoeffding&apos;s D( state=0|1 )
 
 **Description:** Shows or hides a report of Hoeffding&apos;s D statistic for every pair of Y variables.
 
@@ -390,7 +390,7 @@ obj << Hoeffding's D( 1 );
 
 ### Hotelling's T Square Test
 
-**Syntax:** obj << Hotelling&apos;s T Square Test
+**Syntax:** obj &lt;&lt; Hotelling&apos;s T Square Test
 
 **Description:** Performs a one-sample test for the mean of the multivariate distribution of the Y variables, given the specified mean vector under the null hypothesis.
 
@@ -405,7 +405,7 @@ obj << Hotelling's T Square Test( 1, 0.7, 0.5, 0, -1 );
 
 ### Impute Missing Data
 
-**Syntax:** obj << Impute Missing Data
+**Syntax:** obj &lt;&lt; Impute Missing Data
 
 **Description:** Imputes missing values for all the Y variables and creates a new data table containing both the existing values and newly imputed missing data values.
 
@@ -420,7 +420,7 @@ obj << Impute Missing Data;
 
 ### Inverse Correlations
 
-**Syntax:** obj << Inverse Correlations( state=0|1 )
+**Syntax:** obj &lt;&lt; Inverse Correlations( state=0|1 )
 
 **Description:** Shows or hides a matrix of the inverse correlations between each Y variable.
 
@@ -435,7 +435,7 @@ obj << Inverse Correlations( 1 );
 
 ### Jackknife Distances
 
-**Syntax:** obj << Jackknife Distances( state = 0|1, <Save Jackknife Distances> )
+**Syntax:** obj &lt;&lt; Jackknife Distances( state = 0|1, &lt;Save Jackknife Distances&gt; )
 
 **Description:** Shows or hides a graph of the jackknife distances for each row, together with a reference line that indicates possible outliers.
 
@@ -450,7 +450,7 @@ obj << Jackknife Distances( 1 );
 
 ### Kendall's Tau
 
-**Syntax:** obj << Kendall&apos;s Tau( state=0|1 )
+**Syntax:** obj &lt;&lt; Kendall&apos;s Tau( state=0|1 )
 
 **Description:** Shows or hides a report of Kendall&apos;s Tau statistic for every pair of Y variables.
 
@@ -465,7 +465,7 @@ obj << Kendall's Tau( 1 );
 
 ### Kendall's τ
 
-**Syntax:** obj << Kendall&apos;s τ( state=0|1 )
+**Syntax:** obj &lt;&lt; Kendall&apos;s τ( state=0|1 )
 
 **Description:** Shows or hides a report of Kendall&apos;s Tau statistic for every pair of Y variables.
 
@@ -480,7 +480,7 @@ obj << Kendall's Tau( 1 );
 
 ### Mahalanobis Distances
 
-**Syntax:** obj << Mahalanobis Distances( state = 0|1, <Save Outlier Distances> )
+**Syntax:** obj &lt;&lt; Mahalanobis Distances( state = 0|1, &lt;Save Outlier Distances&gt; )
 
 **Description:** Shows or hides a graph of the Mahalanobis distances for each row, together with a reference line that indicates possible outliers.
 
@@ -509,7 +509,7 @@ obj = Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), Matrix Format( "Lower Tr
 
 ### Multivariate Simple Statistics
 
-**Syntax:** obj << Multivariate Simple Statistics( state=0|1 )
+**Syntax:** obj &lt;&lt; Multivariate Simple Statistics( state=0|1 )
 
 **Description:** Shows or hides a multivariate simple statistics report, where the statistics are calculated by excluding any row that has a missing value.
 
@@ -524,7 +524,7 @@ obj << Multivariate Simple Statistics( 1 );
 
 ### Pairwise Correlations
 
-**Syntax:** obj << Pairwise Correlations( state=0|1 )
+**Syntax:** obj &lt;&lt; Pairwise Correlations( state=0|1 )
 
 **Description:** Shows or hides a report of the pairwise correlations for each combination of Y variables.
 
@@ -539,7 +539,7 @@ obj << Pairwise Correlations( 1 );
 
 ### Parallel Coord Plot
 
-**Syntax:** obj << Parallel Coord Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; Parallel Coord Plot( state=0|1 )
 
 **Description:** Shows or hides a parallel coordinate plot of the variables.
 
@@ -554,7 +554,7 @@ obj << Parallel Coord Plot( 1 );
 
 ### Partial Correlation Diagram
 
-**Syntax:** obj << Partial Correlation Diagram( state=0|1 )
+**Syntax:** obj &lt;&lt; Partial Correlation Diagram( state=0|1 )
 
 **Description:** Shows or hides the Partial Correlation Diagram report. This option performs an eigenvalue decomposition on the partial correlation matrix and uses the results to give a visual representation of the partial correlations.
 
@@ -569,7 +569,7 @@ obj << Partial Correlation Diagram( 1 );
 
 ### Partial Correlation Probability
 
-**Syntax:** obj << Partial Correlation Probability( state=0|1 )
+**Syntax:** obj &lt;&lt; Partial Correlation Probability( state=0|1 )
 
 **Description:** Shows or hides a matrix of p-values that each correspond to a test of the null hypothesis that the true partial correlation between the variables is zero.
 
@@ -584,7 +584,7 @@ obj << Partial Correlation Probability( 1 );
 
 ### Partial Correlations
 
-**Syntax:** obj << Partial Correlations( state=0|1 )
+**Syntax:** obj &lt;&lt; Partial Correlations( state=0|1 )
 
 **Description:** Shows or hides a matrix of partial correlations between each Y variable.
 
@@ -599,7 +599,7 @@ obj << Partial Correlations( 1 );
 
 ### Save Imputed Formula
 
-**Syntax:** obj << Save Imputed Formula
+**Syntax:** obj &lt;&lt; Save Imputed Formula
 
 **Description:** Imputes values where the Y column values are missing. Creates and saves a new column with an imputation formula to the original data table.
 
@@ -614,7 +614,7 @@ obj << Save Imputed Formula;
 
 ### Scatterplot Matrix
 
-**Syntax:** obj << Scatterplot Matrix( state=0|1 )
+**Syntax:** obj &lt;&lt; Scatterplot Matrix( state=0|1 )
 
 **Description:** Shows or hides a scatterplot matrix for each pair of Y variables. On by default.
 
@@ -631,7 +631,7 @@ obj = Multivariate(
 
 ### Set Alpha Level
 
-**Syntax:** obj << Set Alpha Level( "0.01"|"0.05"|"0.10"|"0.50"|"Other…"=0.05 )
+**Syntax:** obj &lt;&lt; Set Alpha Level( "0.01"|"0.05"|"0.10"|"0.50"|"Other…"=0.05 )
 
 **Description:** Changes the alpha level for the confidence intervals about each correlation. "0.05" by default.
 
@@ -647,7 +647,7 @@ obj << CI of Correlation( 1 );
 
 ### Set α Level
 
-**Syntax:** obj << Set α Level( "0.01"|"0.05"|"0.10"|"0.50"|"Other…"=0.05 )
+**Syntax:** obj &lt;&lt; Set α Level( "0.01"|"0.05"|"0.10"|"0.50"|"Other…"=0.05 )
 
 **Description:** Changes the alpha level for the confidence intervals about each correlation. "0.05" by default.
 
@@ -663,7 +663,7 @@ obj << CI of Correlation( 1 );
 
 ### Spearman's Rho
 
-**Syntax:** obj << Spearman&apos;s Rho( state=0|1 )
+**Syntax:** obj &lt;&lt; Spearman&apos;s Rho( state=0|1 )
 
 **Description:** Shows or hides a report of Spearman&apos;s Rho statistic for each pair of Y variables.
 
@@ -678,7 +678,7 @@ obj << Spearman's Rho( 1 );
 
 ### Spearman's ρ
 
-**Syntax:** obj << Spearman&apos;s ρ( state=0|1 )
+**Syntax:** obj &lt;&lt; Spearman&apos;s ρ( state=0|1 )
 
 **Description:** Shows or hides a report of Spearman&apos;s Rho statistic for each pair of Y variables.
 
@@ -693,7 +693,7 @@ obj << Spearman's Rho( 1 );
 
 ### Standardized Alpha
 
-**Syntax:** obj << Standardized Alpha( state=0|1 )
+**Syntax:** obj &lt;&lt; Standardized Alpha( state=0|1 )
 
 **Description:** Shows or hides a report of Cronbach&apos;s standardized alpha for the entire set of variables as well as the standardized alpha if each Y variable was individually excluded.
 
@@ -708,7 +708,7 @@ obj << Standardized alpha( 1 );
 
 ### Standardized α
 
-**Syntax:** obj << Standardized α( state=0|1 )
+**Syntax:** obj &lt;&lt; Standardized α( state=0|1 )
 
 **Description:** Shows or hides a report of Cronbach&apos;s standardized alpha for the entire set of variables as well as the standardized alpha if each Y variable was individually excluded.
 
@@ -723,7 +723,7 @@ obj << Standardized alpha( 1 );
 
 ### T Square
 
-**Syntax:** obj << T Square( state = 0|1, <Save T Square> )
+**Syntax:** obj &lt;&lt; T Square( state = 0|1, &lt;Save T Square&gt; )
 
 **Description:** Shows or hides a graph of the T² values for each row, together with a reference line indicating possible outliers.
 
@@ -738,7 +738,7 @@ obj << T Square( 1 );
 
 ### T²
 
-**Syntax:** obj << T²( state = 0|1, <Save T Square> )
+**Syntax:** obj &lt;&lt; T²( state = 0|1, &lt;Save T Square&gt; )
 
 **Description:** Shows or hides a graph of the T² values for each row, together with a reference line indicating possible outliers.
 
@@ -753,7 +753,7 @@ obj << T Square( 1 );
 
 ### Univariate Simple Statistics
 
-**Syntax:** obj << Univariate Simple Statistics( state=0|1 )
+**Syntax:** obj &lt;&lt; Univariate Simple Statistics( state=0|1 )
 
 **Description:** Shows or hides a univariate simple statistics report, where the statistics are calculated for each column independently from other columns that might have missing data.
 
@@ -790,7 +790,7 @@ obj = Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), Variance Estimation( "ML
 
 ### Action
 
-**Syntax:** obj << Action
+**Syntax:** obj &lt;&lt; Action
 
 **Description:** All-purpose trapdoor within a platform to insert expressions to evaluate. Temporarily sets the DisplayBox and DataTable contexts to the Platform.
 
@@ -808,7 +808,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Syntax:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntax:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Description:** Apply a previously created preset to the object, updating the options and customizations to match the saved settings.
 
@@ -853,7 +853,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Automatic Recalc
 
-**Syntax:** obj << Automatic Recalc( state=0|1 )
+**Syntax:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Description:** Redoes the analysis automatically for exclude and data changes. If the Automatic Recalc option is turned on, you should consider using Wait(0) commands to ensure that the exclude and data changes take effect before the recalculation.
 
@@ -869,7 +869,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**Syntax:** obj << Broadcast(message)
+**Syntax:** obj &lt;&lt; Broadcast(message)
 
 **Description:** Broadcasts a message to a platform. If return results from individual objects are tables, they are concatenated if possible, and the final format is identical to either the result from the Save Combined Table option in a Table Box or the result from the Concatenate option using a Source column. Other than those, results are stored in a list and returned.
 
@@ -887,7 +887,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**Syntax:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Syntax:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Description:** Adds a control panel for changing the platform&apos;s variables
 
@@ -905,7 +905,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**Syntax:** obj << Copy ByGroup Script
+**Syntax:** obj &lt;&lt; Copy ByGroup Script
 
 **Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
 
@@ -928,7 +928,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Syntax:** obj << Copy Script
+**Syntax:** obj &lt;&lt; Copy Script
 
 **Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
 
@@ -943,7 +943,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Syntax:** obj << Data Table Window
+**Syntax:** obj &lt;&lt; Data Table Window
 
 **Description:** Move the data table window for this analysis to the front.
 
@@ -958,7 +958,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Syntax:** obj << Get By Levels
+**Syntax:** obj &lt;&lt; Get By Levels
 
 **Description:** Returns an associative array mapping the by group columns to their values.
 
@@ -973,7 +973,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Syntax:** obj << Get ByGroup Script
+**Syntax:** obj &lt;&lt; Get ByGroup Script
 
 **Description:** Creates a script (JSL) to produce this analysis and returns it as an expression.
 
@@ -997,7 +997,7 @@ Show( t );
 
 ### Get Container
 
-**Syntax:** obj << Get Container
+**Syntax:** obj &lt;&lt; Get Container
 
 **Description:** Returns a reference to the container box that holds the content for the object.
 
@@ -1044,7 +1044,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Syntax:** obj << Get Data Table
+**Syntax:** obj &lt;&lt; Get Data Table
 
 **Description:** Returns a reference to the data table.
 
@@ -1060,7 +1060,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**Syntax:** obj << Get Group Platform
+**Syntax:** obj &lt;&lt; Get Group Platform
 
 **Description:** Return the Group Platform object if this platform is part of a Group. Otherwise, returns Empty().
 
@@ -1077,7 +1077,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**Syntax:** obj << Get Script
+**Syntax:** obj &lt;&lt; Get Script
 
 **Description:** Creates a script (JSL) to produce this analysis and returns it as an expression.
 
@@ -1093,7 +1093,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Syntax:** obj << Get Script With Data Table
+**Syntax:** obj &lt;&lt; Get Script With Data Table
 
 **Description:** Creates a script(JSL) to produce this analysis specifically referencing this data table and returns it as an expression.
 
@@ -1109,7 +1109,7 @@ Show( t );
 
 ### Get Timing
 
-**Syntax:** obj << Get Timing
+**Syntax:** obj &lt;&lt; Get Timing
 
 **Description:** Times the platform launch.
 
@@ -1125,7 +1125,7 @@ Show( t );
 
 ### Get Web Support
 
-**Syntax:** obj << Get Web Support
+**Syntax:** obj &lt;&lt; Get Web Support
 
 **Description:** Return a number indicating the level of Interactive HTML support for the display object. 1 means some or all elements are supported. 0 means no support.
 
@@ -1141,7 +1141,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Syntax:** obj << Get Where Expr
+**Syntax:** obj &lt;&lt; Get Where Expr
 
 **Description:** Returns the Where expression for the data subset, if the platform was launched with By() or Where(). Otherwise, returns Empty()
 
@@ -1176,7 +1176,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Syntax:** obj << Local Data Filter
+**Syntax:** obj &lt;&lt; Local Data Filter
 
 **Description:** To filter data to specific groups or ranges, but local to this platform
 
@@ -1228,7 +1228,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Syntax:** obj << Paste Local Data Filter
+**Syntax:** obj &lt;&lt; Paste Local Data Filter
 
 **Description:** Apply the local data filter from the clipboard to the current report.
 
@@ -1249,7 +1249,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**Syntax:** obj << Redo Analysis
+**Syntax:** obj &lt;&lt; Redo Analysis
 
 **Description:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
 
@@ -1264,7 +1264,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**Syntax:** obj << Redo ByGroup Analysis
+**Syntax:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Description:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
 
@@ -1287,7 +1287,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**Syntax:** obj << Relaunch Analysis
+**Syntax:** obj &lt;&lt; Relaunch Analysis
 
 **Description:** Opens the platform launch window and recalls the settings that were used to create the report.
 
@@ -1302,7 +1302,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**Syntax:** obj << Relaunch ByGroup
+**Syntax:** obj &lt;&lt; Relaunch ByGroup
 
 **Description:** Opens the platform launch window and recalls the settings that were used to create the report.
 
@@ -1325,7 +1325,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**Syntax:** obj << Remove Column Switcher
+**Syntax:** obj &lt;&lt; Remove Column Switcher
 
 **Description:** Removes the most recent Column Switcher that has been added to the platform.
 
@@ -1345,7 +1345,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Syntax:** obj << Remove Local Data Filter
+**Syntax:** obj &lt;&lt; Remove Local Data Filter
 
 **Description:** If a local data filter has been created, this removes it and restores the platform to use all the data in the data table directly
 
@@ -1382,9 +1382,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Syntax:** obj << Report;
-
-Report( obj )
+**Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Description:** Returns a reference to the report object.
 
@@ -1401,7 +1399,7 @@ Show( t );
 
 ### Report View
 
-**Syntax:** obj << Report View( "Full"|"Summary" )
+**Syntax:** obj &lt;&lt; Report View( "Full"|"Summary" )
 
 **Description:** The report view determines the level of detail visible in a platform report. Full shows all of the detail, while Summary shows only select content, dependent on the platform. For customized behavior, display boxes support a <<Set Summary Behavior message.
 
@@ -1416,7 +1414,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**Syntax:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description:** Creates a JSL script to produce this analysis, and save it as a table property in the data table. You can specify a name for the script. The Append Suffix option appends a numeric suffix to the script name, which differentiates the script from an existing script with the same name. The Prompt option prompts the user to specify a script name. The Replace option replaces an existing script with the same name.
 
@@ -1439,7 +1437,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Syntax:** obj << Save ByGroup Script to Journal
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
 
@@ -1462,7 +1460,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Syntax:** obj << Save ByGroup Script to Script Window
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
 
@@ -1485,7 +1483,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**Syntax:** obj << Save Script for All Objects
+**Syntax:** obj &lt;&lt; Save Script for All Objects
 
 **Description:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -1500,7 +1498,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Syntax:** obj << Save Script for All Objects To Data Table( <name> )
+**Syntax:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Description:** Saves a script for all report objects to the current data table. This option is useful when you have multiple reports in the window. The script is named after the first platform unless you specify the script name in quotes.
 
@@ -1544,7 +1542,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Syntax:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description:** Create a JSL script to produce this analysis, and save it as a table property in the data table.
 
@@ -1559,7 +1557,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Syntax:** obj << Save Script to Journal
+**Syntax:** obj &lt;&lt; Save Script to Journal
 
 **Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
 
@@ -1574,7 +1572,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Syntax:** obj << Save Script to Report
+**Syntax:** obj &lt;&lt; Save Script to Report
 
 **Description:** Create a JSL script to produce this analysis, and show it in the report itself. Useful to preserve a printed record of what was done.
 
@@ -1589,7 +1587,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Syntax:** obj << Save Script to Script Window
+**Syntax:** obj &lt;&lt; Save Script to Script Window
 
 **Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
 
@@ -1669,7 +1667,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Syntax:** obj << Sync to Data Table Changes
+**Syntax:** obj &lt;&lt; Sync to Data Table Changes
 
 **Description:** Sync with the exclude and data changes that have been made.
 
@@ -1686,7 +1684,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Syntax:** obj << Title( "new title" )
+**Syntax:** obj &lt;&lt; Title( "new title" )
 
 **Description:** Sets the title of the platform.
 
@@ -1701,7 +1699,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Syntax:** obj << Top Report
+**Syntax:** obj &lt;&lt; Top Report
 
 **Description:** Returns a reference to the root node in the report.
 
@@ -1718,7 +1716,7 @@ Show( t );
 
 ### Transform Column
 
-**Syntax:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Syntax:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Description:** Create a transform column in the local context of an object, usually a platform. The transform column is active only for the lifetime of the platform.
 
@@ -1735,7 +1733,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**Syntax:** obj << View Web XML
+**Syntax:** obj &lt;&lt; View Web XML
 
 **Description:** Returns the XML code that is used to create the interactive HTML report.
 
@@ -1773,7 +1771,7 @@ New Window( "Bivariate Equation",
 
 #### 3D Score Plot
 
-**Syntax:** obj << 3D Score Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; 3D Score Plot( state=0|1 )
 
 **Description:** Shows or hides a 3-D scatterplot of the principal components as rays in a three-dimensional space.
 
@@ -1788,7 +1786,7 @@ obj << Principal Components( "on Correlations", "3D Score Plot"n );
 
 #### Bartlett Test
 
-**Syntax:** obj << Bartlett Test( state=0|1 )
+**Syntax:** obj &lt;&lt; Bartlett Test( state=0|1 )
 
 **Description:** Shows or hides a report of the results of the homogeneity test for each of the principal components.
 
@@ -1803,7 +1801,7 @@ obj << Principal Components( "on Correlations", Bartlett Test( 1 ) );
 
 #### Eigenvectors
 
-**Syntax:** obj << Eigenvectors( state=0|1 )
+**Syntax:** obj &lt;&lt; Eigenvectors( state=0|1 )
 
 **Description:** Shows or hides a report of the eigenvectors for each of the principal components.
 
@@ -1818,7 +1816,7 @@ obj << Principal Components( "on Correlations", Eigenvectors( 1 ) );
 
 #### Factor Rotation
 
-**Syntax:** obj << Factor Rotation( <ML|PC>, 1|SMC, n Rotated, Varimax|Biquartimax| Equamax| Factorparsimax| Orthomax| Parsimax| Quartimax| Biquartimin| Covarimin| Obbiquartimax| Obequamax| Obfactorparsimax| Obequamax| Obfactorparsimax| Oblimin| Obparsimax| Obquartimax| Obvarimax| Quartimin| Promax )
+**Syntax:** obj &lt;&lt; Factor Rotation( &lt;ML|PC&gt;, 1|SMC, n Rotated, Varimax|Biquartimax| Equamax| Factorparsimax| Orthomax| Parsimax| Quartimax| Biquartimin| Covarimin| Obbiquartimax| Obequamax| Obfactorparsimax| Obequamax| Obfactorparsimax| Oblimin| Obparsimax| Obquartimax| Obvarimax| Quartimin| Promax )
 
 **Description:** Shows or hides a report of the factor rotation pattern for the principal components.
 
@@ -1836,7 +1834,7 @@ obj << Principal Components(
 
 #### Loading Plot
 
-**Syntax:** obj << Loading Plot( number )
+**Syntax:** obj &lt;&lt; Loading Plot( number )
 
 **Description:** Shows or hides a matrix of plots that are two-dimensional representations of factor loadings.
 
@@ -1851,7 +1849,7 @@ obj << Principal Components( "on Correlations", Loading Plot( 2 ) );
 
 #### Save Principal Components
 
-**Syntax:** obj << Save Principal Components( number )
+**Syntax:** obj &lt;&lt; Save Principal Components( number )
 
 **Description:** Saves the given number of principal components to new columns in the data table.
 
@@ -1866,7 +1864,7 @@ obj << Principal Components( "on Correlations", Save Principal Components( 3 ) )
 
 #### Save Principal Components with Imputation
 
-**Syntax:** obj << Save Principal Components with Imputation( number )
+**Syntax:** obj &lt;&lt; Save Principal Components with Imputation( number )
 
 **Description:** Saves the given number of principal components computed using imputation on missing values to new columns in the data table.
 
@@ -1884,7 +1882,7 @@ obj << Principal Components(
 
 #### Save Rotated Components
 
-**Syntax:** obj << Save Rotated Components
+**Syntax:** obj &lt;&lt; Save Rotated Components
 
 **Description:** Saves the rotated components to new columns in the data table.
 
@@ -1903,7 +1901,7 @@ obj << Principal Components(
 
 #### Save Rotated Components with Imputation
 
-**Syntax:** obj << Save Rotated Components with Imputation
+**Syntax:** obj &lt;&lt; Save Rotated Components with Imputation
 
 **Description:** Saves the rotated components computed using imputation on missing values to new columns in the data table. Note: This option is only available after the Factor Rotation has been run.
 
@@ -1922,7 +1920,7 @@ obj << Principal Components(
 
 #### Score Plot
 
-**Syntax:** obj << Score Plot( number )
+**Syntax:** obj &lt;&lt; Score Plot( number )
 
 **Description:** Shows or hides a matrix of scatterplots that contain the scores for each pair of the specified number of principal components.
 
@@ -1937,7 +1935,7 @@ obj << Principal Components( "on Correlations", Score Plot( 2 ) );
 
 #### Score Plot with Imputation
 
-**Syntax:** obj << Score Plot with Imputation( number )
+**Syntax:** obj &lt;&lt; Score Plot with Imputation( number )
 
 **Description:** Shows or hides a matrix of scatterplots that contain the scores for each pair of the specified number of principal components, using imputation for missing values.
 
@@ -1952,7 +1950,7 @@ obj << Principal Components( "on Correlations", Score Plot with Imputation( 2 ) 
 
 #### Scree Plot
 
-**Syntax:** obj << Scree Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; Scree Plot( state=0|1 )
 
 **Description:** Shows or hides a line plot of the eigenvalues for each component.
 
@@ -1988,7 +1986,7 @@ obj = Multivariate(
 
 #### Ellipse Alpha
 
-**Syntax:** obj << Ellipse Alpha( "0.90"|"0.95"|"0.99"|"Other…" )
+**Syntax:** obj &lt;&lt; Ellipse Alpha( "0.90"|"0.95"|"0.99"|"Other…" )
 
 **Description:** Changes the alpha level for the density ellipses on the scatterplot matrix between each Y variable.
 
@@ -2022,7 +2020,7 @@ obj = Multivariate(
 
 #### Ellipse α
 
-**Syntax:** obj << Ellipse α( "0.90"|"0.95"|"0.99"|"Other…" )
+**Syntax:** obj &lt;&lt; Ellipse α( "0.90"|"0.95"|"0.99"|"Other…" )
 
 **Description:** Changes the alpha level for the density ellipses on the scatterplot matrix between each Y variable.
 
@@ -2039,7 +2037,7 @@ obj = Multivariate(
 
 #### Ellipses Coverage
 
-**Syntax:** obj << Ellipses Coverage( "0.90"|"0.95"|"0.99"|"Other…" )
+**Syntax:** obj &lt;&lt; Ellipses Coverage( "0.90"|"0.95"|"0.99"|"Other…" )
 
 **Description:** Changes the alpha level for the density ellipses on the scatterplot matrix between each Y variable.
 
@@ -2056,7 +2054,7 @@ obj = Multivariate(
 
 #### Ellipses Transparency
 
-**Syntax:** obj << Ellipses Transparency( "0.20"|"0.40"|"0.60"|"Other…" )
+**Syntax:** obj &lt;&lt; Ellipses Transparency( "0.20"|"0.40"|"0.60"|"Other…" )
 
 **Description:** Changes the transparency for the shaded density ellipses on the scatterplot matrix between each Y variable.
 
@@ -2073,7 +2071,7 @@ obj = Multivariate(
 
 #### Fit Line
 
-**Syntax:** obj << Fit Line( state=0|1 )
+**Syntax:** obj &lt;&lt; Fit Line( state=0|1 )
 
 **Description:** Shows or hides the regression line and confidence interval on the scatterplot matrix.
 

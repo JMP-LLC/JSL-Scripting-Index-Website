@@ -6,7 +6,7 @@
 
 ### Get Label
 
-**Sintassi:** obj << Get Label
+**Sintassi:** obj &lt;&lt; Get Label
 
 **Descrizione:** Restituisce l&apos;etichetta dell&apos;elemento della legenda
 
@@ -29,7 +29,7 @@ Print( item << Get Label );
 
 ### Get Position
 
-**Sintassi:** obj << Get Position
+**Sintassi:** obj &lt;&lt; Get Position
 
 **Descrizione:** Restituisce la posizione sequenziale di un elemento nella legenda o un codice negativo se non viene visualizzato. Codici: -1 = Nascosto dall&apos;utente, -2 = Nascosto da Visualizzazione se, -3 = Nascosto da Dipendenza, -4 = Nascosto da Impostazione iniziale
 
@@ -52,7 +52,7 @@ Print( item << Get Position );
 
 ### Get Type
 
-**Sintassi:** obj << Get Type
+**Sintassi:** obj &lt;&lt; Get Type
 
 **Descrizione:** Restituisce il tipo di elemento della legenda. I tipi sono: "Nessuno", "Indicatore:", "Linea H", "Linea V", "Passo", "Barra", "Box plot V", "Intervallo H", "Intervallo V", "Box plot barra H", "Box plot barra V", "Diagramma OHLC", "Box plot H", "Gradiente", "Gradiente di densità", "Riempi e Linea", "Dimensione indicatore:", "Dimensione linea", "Linea gradiente", "Gradiente profilo isometrico", "Colore indicatore", "Dimensione indicatore categorica", "Dimensione cella".
 
@@ -75,7 +75,7 @@ Print( item << Get Type );
 
 ### Set Label
 
-**Sintassi:** obj << Set Label( text )
+**Sintassi:** obj &lt;&lt; Set Label( text )
 
 **Descrizione:** Imposta l&apos;etichetta di un elemento nella legenda.
 
@@ -98,7 +98,7 @@ item << Set Label( "Label Set Through Script" );
 
 ### Set Visible
 
-**Sintassi:** obj << Set Visible( state=0|1 )
+**Sintassi:** obj &lt;&lt; Set Visible( state=0|1 )
 
 **Descrizione:** Imposta la visibilità di un elemento nella legenda.
 

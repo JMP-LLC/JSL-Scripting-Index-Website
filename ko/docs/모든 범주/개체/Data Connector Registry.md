@@ -6,7 +6,7 @@
 
 ### Get
 
-**구문:** Data Connector Registry() << Get ( name )
+**구문:** Data Connector Registry() &lt;&lt; Get ( name )
 
 **설명:** 레지스트리에서 데이터 커넥터를 가져옵니다.
 
@@ -22,7 +22,7 @@ dc = Data Connector Registry() << Get( "com.jmp.sql_server" );
 
 ### Get Available
 
-**구문:** Data Connector Registry() << Get Available()
+**구문:** Data Connector Registry() &lt;&lt; Get Available()
 
 **설명:** 레지스트리의 사용 가능한 데이터 커넥터 목록을 가져옵니다.
 
@@ -38,7 +38,7 @@ list = Data Connector Registry() << Get Available();
 
 ### Get Metadata
 
-**구문:** Data Connector Registry() << Get Metadata ( name )
+**구문:** Data Connector Registry() &lt;&lt; Get Metadata ( name )
 
 **설명:** 레지스트리에서 데이터 커넥터 메타데이터를 가져옵니다.
 
@@ -54,7 +54,7 @@ metadata = Data Connector Registry() << Get Metadata( "com.jmp.sql_server" );
 
 ### Register
 
-**구문:** Data Connector Registry() << Register( Path(path), <Name(name)>, <Description(Description)> )
+**구문:** Data Connector Registry() &lt;&lt; Register( Path(path), &lt;Name(name)&gt;, &lt;Description(Description)&gt; )
 
 **설명:** 레지스트리에 데이터 커넥터를 추가합니다.
 
@@ -70,7 +70,7 @@ Data Connector Registry() << Register( Path( "$DOCUMENTS/my connector.jmpdc" ), 
 
 ### Unregister
 
-**구문:** Data Connector Registry() << Unregister ( name )
+**구문:** Data Connector Registry() &lt;&lt; Unregister ( name )
 
 **설명:** 레지스트리에서 데이터 커넥터를 제거합니다.
 

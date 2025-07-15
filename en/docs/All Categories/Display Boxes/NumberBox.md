@@ -6,7 +6,7 @@
 
 ### Get Base Font
 
-**Syntax:** font = obj << Get Base Font
+**Syntax:** font = obj &lt;&lt; Get Base Font
 
 **Description:** Returns the base font used for text drawn by the box. Base fonts are predefined names such as Title, Text, Annotation, and others, which are specified in the Preferences for fonts.
 
@@ -24,7 +24,7 @@ fontobj << Get Base Font;
 
 ### Get Font
 
-**Syntax:** obj << Get Font
+**Syntax:** obj &lt;&lt; Get Font
 
 ```jsl
 
@@ -40,7 +40,7 @@ fontobj << Get Font;
 
 ### Get Font Name
 
-**Syntax:** obj << Get Font Name
+**Syntax:** obj &lt;&lt; Get Font Name
 
 **Description:** Returns the name of the font.
 
@@ -59,7 +59,7 @@ fontobj << Get Font Name;
 
 ### Get Font Scale
 
-**Syntax:** obj << Get Font Scale
+**Syntax:** obj &lt;&lt; Get Font Scale
 
 **Description:** Returns the current scale factor for font.
 
@@ -77,7 +77,7 @@ fontobj << Get Font Scale;
 
 ### Get Font Size
 
-**Syntax:** obj << Get Font Size
+**Syntax:** obj &lt;&lt; Get Font Size
 
 **Description:** Returns the size of the font.
 
@@ -95,7 +95,7 @@ fontobj << Get Font Size;
 
 ### Get Font Style
 
-**Syntax:** obj << Get Font Style
+**Syntax:** obj &lt;&lt; Get Font Style
 
 **Description:** Returns the font style name.
 
@@ -115,7 +115,7 @@ fontobj << Get Font Style;
 
 ### Get Format
 
-**Syntax:** format = obj << Get Format
+**Syntax:** format = obj &lt;&lt; Get Format
 
 **Description:** Returns the format of the number to display.
 
@@ -132,7 +132,7 @@ numbox << Get Format();
 
 ### Get Tip
 
-**Syntax:** "string" = obj << Get Tip
+**Syntax:** "string" = obj &lt;&lt; Get Tip
 
 **Description:** Returns the tooltip of the Number Box.
 
@@ -150,7 +150,7 @@ numbox << Get Tip();
 
 ### Get Width
 
-**Syntax:** width = obj << Get Width
+**Syntax:** width = obj &lt;&lt; Get Width
 
 **Description:** Returns how many characters wide the number edit box is.
 
@@ -167,7 +167,7 @@ numbox << Get Width;
 
 ### Set Base Font
 
-**Syntax:** obj << Set Base Font( "Text"|"Heading"|"Title"|"Small"|"Mono"|"Formula Editor"|"Annotation"|"Axis"|"Marker"|"Axis Title"|"Graph Label"|"Legend"|"Graph Title"|"Caption"|"Data Table"|"Hover Label" )
+**Syntax:** obj &lt;&lt; Set Base Font( "Text"|"Heading"|"Title"|"Small"|"Mono"|"Formula Editor"|"Annotation"|"Axis"|"Marker"|"Axis Title"|"Graph Label"|"Legend"|"Graph Title"|"Caption"|"Data Table"|"Hover Label" )
 
 **Description:** Sets the base font for text drawn by the box.
 
@@ -186,7 +186,7 @@ fontobj << Set Base Font( "Title" );
 
 ### Set Font
 
-**Syntax:** obj << Set Font( fontName, <size>, <"bold italic underline strikeout">, <angle> )
+**Syntax:** obj &lt;&lt; Set Font( fontName, &lt;size&gt;, &lt;"bold italic underline strikeout"&gt;, &lt;angle&gt; )
 
 **Example 1**
 
@@ -218,7 +218,7 @@ fontobj << Set Font( "Arial Black", 12, "Italic Underline" );
 
 ### Set Font Name
 
-**Syntax:** obj << Set Font Name( fontname )
+**Syntax:** obj &lt;&lt; Set Font Name( fontname )
 
 **Description:** Sets the font for text strings.
 
@@ -236,7 +236,7 @@ fontobj << Set Font Name( "Arial Black" );
 
 ### Set Font Scale
 
-**Syntax:** obj << Set Font Scale( f )
+**Syntax:** obj &lt;&lt; Set Font Scale( f )
 
 **Description:** Sets a scale factor for the current font. The scale factor will be applied to the size that is determined from the base font and point size.
 
@@ -255,7 +255,7 @@ fontobj << Set Font Scale( 2.0 );
 
 ### Set Font Size
 
-**Syntax:** obj << Set Font Size( n )
+**Syntax:** obj &lt;&lt; Set Font Size( n )
 
 **Description:** Sets the font size in points for text strings.
 
@@ -273,7 +273,7 @@ fontobj << Set Font Size( 14 );
 
 ### Set Font Style
 
-**Syntax:** obj << Set Font Style( style )
+**Syntax:** obj &lt;&lt; Set Font Style( style )
 
 **Description:** Sets the font style for text strings. To set more than one style at once, place them in the same string, separated by spaces (see Example 2 below).
 
@@ -307,7 +307,7 @@ fontobj << Set Font Style( "Italic Bold Underline" );
 
 ### Set Format
 
-**Syntax:** obj << Set Format( "format", <width, <decimal places>>, <"Use thousands separator"> )
+**Syntax:** obj &lt;&lt; Set Format( "format", &lt;width, &lt;decimal places&gt;&gt;, &lt;"Use thousands separator"&gt; )
 
 **Description:** Set the format of the number to display.
 
@@ -324,7 +324,7 @@ numbox << Set Format( Format( Fixed, 7, 3 ) );
 
 ### Set Tip
 
-**Syntax:** obj << Set Tip( text )
+**Syntax:** obj &lt;&lt; Set Tip( text )
 
 **Description:** Sets the tooltip of the Number Box.
 
@@ -341,7 +341,7 @@ numbox << Set Tip( "Example Tooltip" );
 
 ### Set Width
 
-**Syntax:** obj << Set Width( width )
+**Syntax:** obj &lt;&lt; Set Width( width )
 
 **Description:** Sets the number edit box to be n characters wide.
 
@@ -361,7 +361,7 @@ numbox << Set Width( 10 );
 
 ### Add Line Annotation
 
-**Syntax:** obj << Add Line Annotation
+**Syntax:** obj &lt;&lt; Add Line Annotation
 
 **Description:** Adds a line on top of the display box.
 
@@ -378,7 +378,7 @@ rbiv << Add Line Annotation( Line( 160, 235, 240, 235 ) );
 
 ### Add Pin Annotation
 
-**Syntax:** obj << Add Pin Annotation
+**Syntax:** obj &lt;&lt; Add Pin Annotation
 
 **Description:** Adds a pinned annotation on top of a display box. Most attributes (such as Index Row, UniqueID and FoundPt) are designed for internal use only.
 
@@ -411,7 +411,7 @@ dt << Bivariate(
 
 ### Add Polygon Annotation
 
-**Syntax:** obj << Add Polygon Annotation
+**Syntax:** obj &lt;&lt; Add Polygon Annotation
 
 **Description:** Adds a polygon on top of the display box.
 
@@ -432,7 +432,7 @@ rbiv << Add Polygon Annotation(
 
 ### Add Simple Shape Annotation
 
-**Syntax:** obj << Add Simple Shape Annotation
+**Syntax:** obj &lt;&lt; Add Simple Shape Annotation
 
 **Description:** Adds a simple shape on top of the display box.
 
@@ -450,7 +450,7 @@ rbiv << Add Simple Shape Annotation( Rectangle( 70, 180, 95, 215 ) );
 
 ### Add Text Annotation
 
-**Syntax:** obj << Add Text Annotation
+**Syntax:** obj &lt;&lt; Add Text Annotation
 
 **Description:** Adds text on top of the display box.
 
@@ -470,7 +470,7 @@ rbiv << Add Text Annotation(
 
 ### Append
 
-**Syntax:** obj << Append( db2 )
+**Syntax:** obj &lt;&lt; Append( db2 )
 
 **Description:** Add db2 to the display tree after db.
 
@@ -487,9 +487,7 @@ rbiv << append( Text Box( "=== below ===" ) );
 
 ### Background Color
 
-**Syntax:** obj << Background Color( color );
-
-color = obj << Get Background Color
+**Syntax:** obj &lt;&lt; Background Color( color );color = obj &lt;&lt; Get Background Color
 
 **Description:** If the background color is set, the box is filled with the background color prior to drawing its content. If the background color is not set, the background and content of the containing boxes show through.
 
@@ -509,9 +507,7 @@ tb << Background Color( "Yellow" );
 
 ### Border
 
-**Syntax:** obj << Border( sides );
-
-sides = obj << Get Border
+**Syntax:** obj &lt;&lt; Border( sides );sides = obj &lt;&lt; Get Border
 
 **Description:** Borders are solid lines drawn around the outside of a display box. If a single value is provided, it will be applied to all sides. If two values are specified, they will be applied to horizontal and vertical borders.
 
@@ -531,9 +527,7 @@ tb << Border( 1 );
 
 ### Border Color
 
-**Syntax:** obj << Border Color( color );
-
-color = obj << Get Border Color
+**Syntax:** obj &lt;&lt; Border Color( color );color = obj &lt;&lt; Get Border Color
 
 **Description:** Optional color to override the default color for box borders.
 
@@ -553,7 +547,7 @@ tb << Border Color( "Light Red" );
 
 ### Bring Window To Front
 
-**Syntax:** obj << Bring Window To Front
+**Syntax:** obj &lt;&lt; Bring Window To Front
 
 **Description:** Brings the window to the front.
 
@@ -569,7 +563,7 @@ w << Bring Window To Front;
 
 ### Child
 
-**Syntax:** obj << Child
+**Syntax:** obj &lt;&lt; Child
 
 **Description:** Returns the child of the display box.
 
@@ -589,7 +583,7 @@ Print( axisChild << Class Name() );
 
 ### Class Name
 
-**Syntax:** obj << Class Name
+**Syntax:** obj &lt;&lt; Class Name
 
 **Description:** Returns the name of the display class for the display box.
 
@@ -607,7 +601,7 @@ axisbox << Class Name();
 
 ### Clone Box
 
-**Syntax:** obj << Clone Box
+**Syntax:** obj &lt;&lt; Clone Box
 
 **Description:** Makes a new copy of the display box.
 
@@ -626,7 +620,7 @@ rbiv << append( clonedBox );
 
 ### Close Window
 
-**Syntax:** obj << Close Window( <"NoSave"> )
+**Syntax:** obj &lt;&lt; Close Window( &lt;"NoSave"&gt; )
 
 **Description:** Closes the window.
 
@@ -642,7 +636,7 @@ w << Close Window;
 
 ### Copy Data
 
-**Syntax:** obj << Copy Data
+**Syntax:** obj &lt;&lt; Copy Data
 
 **Description:** copies the tab-delimited data from a matrix or table to the clip board.
 
@@ -656,7 +650,7 @@ mat << CopyData;
 
 ### Copy Graph
 
-**Syntax:** obj << Copy Graph
+**Syntax:** obj &lt;&lt; Copy Graph
 
 **Description:** Puts a picture of the graph and axes on the clipboard.
 
@@ -674,7 +668,7 @@ rbiv = biv << report;
 
 ### Copy Picture
 
-**Syntax:** obj << Copy Picture
+**Syntax:** obj &lt;&lt; Copy Picture
 
 **Description:** Puts a picture of the display box on the clipboard.
 
@@ -691,7 +685,7 @@ rbiv << Copy Picture();
 
 ### Delete Box
 
-**Syntax:** obj << Delete Box
+**Syntax:** obj &lt;&lt; Delete Box
 
 **Description:** Delete the display box.
 
@@ -709,7 +703,7 @@ axisbox << Delete Box();
 
 ### Deselect
 
-**Syntax:** obj << Deselect
+**Syntax:** obj &lt;&lt; Deselect
 
 **Description:** Deselects this object for use by Edit menu commands.
 
@@ -735,7 +729,7 @@ refresh = Function( {},
 
 ### Dispatch
 
-**Syntax:** obj << Dispatch( {outline node, ...}, display element, display element type, command )
+**Syntax:** obj &lt;&lt; Dispatch( {outline node, ...}, display element, display element type, command )
 
 **Description:** Send command to a specific part of a display tree.
 
@@ -752,9 +746,7 @@ rbiv << Dispatch( {}, "Bivar Plot", FrameBox, {Marker Size( 3 )} );
 
 ### Enabled
 
-**Syntax:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**Syntax:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Description:** An object that is not enabled will not respond to keyboard or mouse input. This property is inherited by child objects, so a container object that is disabled will cause all descendent objects to be disabled.
 
@@ -786,7 +778,7 @@ New Window( "enabled",
 
 ### Find
 
-**Syntax:** obj << Find
+**Syntax:** obj &lt;&lt; Find
 
 **Description:** Returns a display box with the given argument.
 
@@ -804,7 +796,7 @@ axisbox << Delete();
 
 ### Get Annotation
 
-**Syntax:** obj << Get Annotation
+**Syntax:** obj &lt;&lt; Get Annotation
 
 **Description:** Returns the first annotation that is anchored to this display box. Other annotations can be accessed by using Sib() on the result.
 
@@ -826,9 +818,7 @@ annotation << delete;
 
 ### Get Background Color
 
-**Syntax:** obj << Background Color( color );
-
-color = obj << Get Background Color
+**Syntax:** obj &lt;&lt; Background Color( color );color = obj &lt;&lt; Get Background Color
 
 **Description:** If the background color is set, the box is filled with the background color prior to drawing its content. If the background color is not set, the background and content of the containing boxes show through.
 
@@ -848,9 +838,7 @@ tb << Background Color( "Yellow" );
 
 ### Get Border
 
-**Syntax:** obj << Border( sides );
-
-sides = obj << Get Border
+**Syntax:** obj &lt;&lt; Border( sides );sides = obj &lt;&lt; Get Border
 
 **Description:** Borders are solid lines drawn around the outside of a display box. If a single value is provided, it will be applied to all sides. If two values are specified, they will be applied to horizontal and vertical borders.
 
@@ -870,9 +858,7 @@ tb << Border( 1 );
 
 ### Get Border Color
 
-**Syntax:** obj << Border Color( color );
-
-color = obj << Get Border Color
+**Syntax:** obj &lt;&lt; Border Color( color );color = obj &lt;&lt; Get Border Color
 
 **Description:** Optional color to override the default color for box borders.
 
@@ -892,7 +878,7 @@ tb << Border Color( "Light Red" );
 
 ### Get Content Size
 
-**Syntax:** obj << Get Content Size
+**Syntax:** obj &lt;&lt; Get Content Size
 
 **Description:** Returns the content size within the window.
 
@@ -908,7 +894,7 @@ Show( c );
 
 ### Get Display Path
 
-**Syntax:** obj << Get Display Path( parent box, <receiver expr>, <Mode("XPath"|"Subscript")> )
+**Syntax:** obj &lt;&lt; Get Display Path( parent box, &lt;receiver expr&gt;, &lt;Mode("XPath"|"Subscript")&gt; )
 
 **Description:** Gets a relatively robust expression to navigate between parent box and obj. This path is not guaranteed to be stable across JMP releases. The receiver expr is incorporated into the output expression if provided. If not, the expression provided for parent box is used instead. As shown in the example, this message is mainly useful for increasing the robustness of a path you already have available. The XPath mode is default.
 
@@ -944,9 +930,7 @@ subscript expr << Select;
 
 ### Get Enabled
 
-**Syntax:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**Syntax:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Description:** An object that is not enabled will not respond to keyboard or mouse input. This property is inherited by child objects, so a container object that is disabled will cause all descendent objects to be disabled.
 
@@ -978,7 +962,7 @@ New Window( "enabled",
 
 ### Get HTML
 
-**Syntax:** obj << Get HTML( <format> )
+**Syntax:** obj &lt;&lt; Get HTML( &lt;format&gt; )
 
 **Description:** Returns a string containing HTML source for the display box.
 
@@ -1008,7 +992,7 @@ Web( "$TEMP/Oneway.html", JMPWindow );
 
 ### Get Height
 
-**Syntax:** width = obj << Get Height
+**Syntax:** width = obj &lt;&lt; Get Height
 
 **Description:** Returns the height of the display box.
 
@@ -1026,9 +1010,7 @@ fb << Get Height;
 
 ### Get Horizontal Alignment
 
-**Syntax:** obj << Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );
-
-"Default"|"Left"|"Center"|"Right" = obj << Get Horizontal Alignment
+**Syntax:** obj &lt;&lt; Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );"Default"|"Left"|"Center"|"Right" = obj &lt;&lt; Get Horizontal Alignment
 
 **Description:** Horizontal alignment controls the positioning of the box within a container if the box does not fill the entire space.
 
@@ -1048,7 +1030,7 @@ lb << Horizontal Alignment( "Right" );
 
 ### Get Journal
 
-**Syntax:** obj << Get Journal
+**Syntax:** obj &lt;&lt; Get Journal
 
 **Description:** Returns a string containing journal source for the display box.
 
@@ -1065,9 +1047,7 @@ Print( rbiv << Get Journal );
 
 ### Get Margin
 
-**Syntax:** obj << Margin( sides );
-
-sides = obj << Get Margin
+**Syntax:** obj &lt;&lt; Margin( sides );sides = obj &lt;&lt; Get Margin
 
 **Description:** Margin adds space between the border of the box and adjacent boxes. Use named arguments, or provide a list of values. If a single value is provided, it will be applied to all sides. If two values are specified, they will be applied to horizontal and vertical margins.
 
@@ -1088,7 +1068,7 @@ tb << Margin( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ### Get Max Size
 
-**Syntax:** width,height = obj << Get Max Size
+**Syntax:** width,height = obj &lt;&lt; Get Max Size
 
 **Description:** Returns the maximum size of this display box for purposes of auto-stretching.
 
@@ -1106,7 +1086,7 @@ fb << Get Max Size;
 
 ### Get Min Size
 
-**Syntax:** width,height = obj << Get Min Size
+**Syntax:** width,height = obj &lt;&lt; Get Min Size
 
 **Description:** Returns the minimum size of this display box for purposes of auto-stretching.
 
@@ -1124,7 +1104,7 @@ fb << Get Min Size;
 
 ### Get Namespace
 
-**Syntax:** obj << Get Namespace
+**Syntax:** obj &lt;&lt; Get Namespace
 
 **Description:** Returns the namespace associated with this display object.
 
@@ -1142,7 +1122,7 @@ Show( ns:x, x );
 
 ### Get On Close
 
-**Syntax:** obj << Get On Close
+**Syntax:** obj &lt;&lt; Get On Close
 
 **Description:** Returns the script or function that will run when the window closes.
 
@@ -1167,9 +1147,7 @@ Show( w << Get On Close );
 
 ### Get Padding
 
-**Syntax:** obj << Padding( sides );
-
-sides = obj << Get Padding
+**Syntax:** obj &lt;&lt; Padding( sides );sides = obj &lt;&lt; Get Padding
 
 **Description:** Padding adds space between the content and the border of the box. Use named arguments, or provide a list of values. If a single value is provided, it will be applied to all sides. If two values are specified, they will be applied to horizontal and vertical padding.
 
@@ -1190,7 +1168,7 @@ tb << Padding( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ### Get Page Setup
 
-**Syntax:** obj << Get Page Setup
+**Syntax:** obj &lt;&lt; Get Page Setup
 
 **Description:** Get page setup information for PDF
 
@@ -1205,7 +1183,7 @@ w << get page setup();
 
 ### Get Picture
 
-**Syntax:** obj << Get Picture( <Scale(factor)>, <Type("Bitmap" | "Scalable")>, <View("Picture" | "Screen" | "Print"), <Appearance("Default" | "Current")>, <SubRect(Left(number), Top(number), Right(number), Bottom(number))> )
+**Syntax:** obj &lt;&lt; Get Picture( &lt;Scale(factor)&gt;, &lt;Type("Bitmap" | "Scalable")&gt;, &lt;View("Picture" | "Screen" | "Print"), &lt;Appearance("Default" | "Current")&gt;, &lt;SubRect(Left(number), Top(number), Right(number), Bottom(number))&gt; )
 
 **Description:** Captures db as an Image Object. The optional Scale argument will render the image at a scaled resolution. Scaling requires that the display box be stretchable. The Type argument determines whether the result will be a scalable vector image or a bitmap. By default a scalable image is returned, which is suitable for saving to vector formats like PDF. The View option changes the behavior of some boxes. The default option of "Picture" draws the report as it would when exporting to an image format, with scrolled areas fully shown. View mode of "Screen" draws the report as seen on-screen, and "Print" draws the report as it does when printing, without any of the page setup features. The SubRect option will capture a portion of the resulting image rather than a full image. The Appearance option can change from the "Default" output colors to the "Current" colors as seen on-screen. The View, SubRect, and Appearance options are only supported for Type "Bitmap".
 
@@ -1263,7 +1241,7 @@ New Window( "Example",
 
 ### Get Project
 
-**Syntax:** project = obj << Get Project()
+**Syntax:** project = obj &lt;&lt; Get Project()
 
 **Description:** Returns the parent project of the window, or Empty() if it is not in a project.
 
@@ -1279,7 +1257,7 @@ Show( c );
 
 ### Get Properties
 
-**Syntax:** obj << Get Properties
+**Syntax:** obj &lt;&lt; Get Properties
 
 **Description:** Returns an associative array that contains the display box&apos;s properties and their values.
 
@@ -1293,7 +1271,7 @@ bb << Get Properties;
 
 ### Get Property
 
-**Syntax:** obj << Get Property( "property" )
+**Syntax:** obj &lt;&lt; Get Property( "property" )
 
 **Description:** Returns the current setting for the named property.
 
@@ -1307,7 +1285,7 @@ bb << Get Property( "Enabled" );
 
 ### Get Property List
 
-**Syntax:** obj << Get Property List
+**Syntax:** obj &lt;&lt; Get Property List
 
 **Description:** Returns a list of properties the display box has.
 
@@ -1321,7 +1299,7 @@ bb << Get Property List;
 
 ### Get RTF
 
-**Syntax:** obj << Get RTF( <format> )
+**Syntax:** obj &lt;&lt; Get RTF( &lt;format&gt; )
 
 **Description:** Returns a string containing RTF source for the display box.
 
@@ -1351,7 +1329,7 @@ Open( "$TEMP/Oneway.rtf" );
 
 ### Get Row States
 
-**Syntax:** rs = obj << Get Row States( <dt> )
+**Syntax:** rs = obj &lt;&lt; Get Row States( &lt;dt&gt; )
 
 **Description:** Returns a vector containing the row state for every row in the given data table or the current data table. The row states can come from the table, or from the filter context of the box.
 
@@ -1440,7 +1418,7 @@ updatetext();
 
 ### Get Show Window
 
-**Syntax:** obj << Get Show Window
+**Syntax:** obj &lt;&lt; Get Show Window
 
 **Description:** Returns the visibility of the window.
 
@@ -1458,7 +1436,7 @@ Print( w << Get Show Window() );
 
 ### Get Size
 
-**Syntax:** width,height = obj << Get Size
+**Syntax:** width,height = obj &lt;&lt; Get Size
 
 **Description:** Returns the size of the display box.
 
@@ -1476,7 +1454,7 @@ Print( fb << Get Size );
 
 ### Get Stretch
 
-**Syntax:** x,y = obj << Get Stretch
+**Syntax:** x,y = obj &lt;&lt; Get Stretch
 
 **Description:** Returns the stretching flags for this display box in the horizontal and vertical directions.
 
@@ -1500,7 +1478,7 @@ spacer << Get Stretch();
 
 ### Get Text
 
-**Syntax:** obj << Get Text
+**Syntax:** obj &lt;&lt; Get Text
 
 **Description:** Returns a string containing the text of the display box.
 
@@ -1515,9 +1493,7 @@ a << Set Text( win << Get Text );
 
 ### Get Text Color
 
-**Syntax:** obj << Text Color( color );
-
-color = obj << Get Text Color
+**Syntax:** obj &lt;&lt; Text Color( color );color = obj &lt;&lt; Get Text Color
 
 **Description:** Text will be drawn using the text color if it has been set. If the property has not been set, the box will inherit the text color of the containing box.
 
@@ -1537,15 +1513,11 @@ tb << Text Color( "Red" );
 
 ### Get UI Only
 
-**Syntax:** obj << UI Only( state=0|1 );
-
-state = obj << Get UI Only
+**Syntax:** obj &lt;&lt; UI Only( state=0|1 );state = obj &lt;&lt; Get UI Only
 
 ### Get Vertical Alignment
 
-**Syntax:** obj << Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );
-
-"Default"|"Top"|"Center"|"Bottom" = obj << Get Vertical Alignment
+**Syntax:** obj &lt;&lt; Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );"Default"|"Top"|"Center"|"Bottom" = obj &lt;&lt; Get Vertical Alignment
 
 **Description:** Vertical alignment controls the positioning of the box within a container if the box does not fill the entire space.
 
@@ -1567,9 +1539,7 @@ lb << Vertical Alignment( "Bottom" );
 
 ### Get Visibility
 
-**Syntax:** obj << Visibility( "Visible"|"Hidden"|"Collapse" );
-
-"Visible"|"Hidden"|"Collapse" = obj << Get Visibility
+**Syntax:** obj &lt;&lt; Visibility( "Visible"|"Hidden"|"Collapse" );"Visible"|"Hidden"|"Collapse" = obj &lt;&lt; Get Visibility
 
 **Description:** Visibility determines whether a box is shown and whether it takes up space. The default value of "Visible" means that the object will be shown.  A "Hidden" box is not shown but still takes up space, while a "Collapsed" box takes up no space in the layout.
 
@@ -1590,7 +1560,7 @@ Show( tb << Get Visibility );
 
 ### Get Web Support
 
-**Syntax:** obj << Get Web Support
+**Syntax:** obj &lt;&lt; Get Web Support
 
 **Description:** Return a number indicating the level of Interactive HTML support for the display object. 1 means some or all elements are supported. 0 means no support.
 
@@ -1606,7 +1576,7 @@ Show( s );
 
 ### Get Window Icon
 
-**Syntax:** obj << Get Window Icon
+**Syntax:** obj &lt;&lt; Get Window Icon
 
 **Description:** Returns the window icon.
 
@@ -1622,7 +1592,7 @@ Show( t );
 
 ### Get Window Position
 
-**Syntax:** obj << Get Window Position
+**Syntax:** obj &lt;&lt; Get Window Position
 
 **Description:** Returns the position of the window.
 
@@ -1638,7 +1608,7 @@ Show( p );
 
 ### Get Window Size
 
-**Syntax:** obj << Get Window Size
+**Syntax:** obj &lt;&lt; Get Window Size
 
 **Description:** Returns the size of the window.
 
@@ -1654,7 +1624,7 @@ Show( s );
 
 ### Get Window Title
 
-**Syntax:** obj << Get Window Title
+**Syntax:** obj &lt;&lt; Get Window Title
 
 **Description:** Returns the window title.
 
@@ -1670,7 +1640,7 @@ Show( t );
 
 ### Get Window View
 
-**Syntax:** obj << Get Window View
+**Syntax:** obj &lt;&lt; Get Window View
 
 **Description:** Returns the current window view. Windows can be "Visible", "Invisible", or "Private".
 
@@ -1685,7 +1655,7 @@ Print( w << Get Window View() );
 
 ### Get XML
 
-**Syntax:** obj << Get XML( <English(0|1)>, <NoData(0|1)> )
+**Syntax:** obj &lt;&lt; Get XML( &lt;English(0|1)&gt;, &lt;NoData(0|1)&gt; )
 
 **Description:** Retrieves the display tree formatted as XML. By default, strings are returned in the local language, and the XML includes data values within some boxes. Use the English option to return English strings where available. Use the NoData option to omit the data values within boxes, which can be very large for some display trees.
 
@@ -1700,7 +1670,7 @@ a << set text( win << get xml );
 
 ### GetOffset
 
-**Syntax:** x,y = obj << GetOffset
+**Syntax:** x,y = obj &lt;&lt; GetOffset
 
 **Description:** Returns the offset of this display box relative to the parent box. You might need to use the <<parent message in a loop to accumulate several offsets.
 
@@ -1745,9 +1715,7 @@ New Window( "example",
 
 ### Horizontal Alignment
 
-**Syntax:** obj << Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );
-
-"Default"|"Left"|"Center"|"Right" = obj << Get Horizontal Alignment
+**Syntax:** obj &lt;&lt; Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );"Default"|"Left"|"Center"|"Right" = obj &lt;&lt; Get Horizontal Alignment
 
 **Description:** Horizontal alignment controls the positioning of the box within a container if the box does not fill the entire space.
 
@@ -1767,7 +1735,7 @@ lb << Horizontal Alignment( "Right" );
 
 ### Inval
 
-**Syntax:** obj << Inval
+**Syntax:** obj &lt;&lt; Inval
 
 **Description:** Invalidate the displaybox.  The window will update when either the <<UpdateWindow message is sent or the operating system has time for the update.
 
@@ -1809,7 +1777,7 @@ New Window( "Inval example",
 
 ### Is Dirty
 
-**Syntax:** obj << Is Dirty
+**Syntax:** obj &lt;&lt; Is Dirty
 
 **Description:** Gets the document&apos;s modified status. 1 means the document has been modified and will prompt for saving; 0 means the document is not modified.
 
@@ -1826,7 +1794,7 @@ Show( ww << Is Dirty );
 
 ### Is Modal Dialog
 
-**Syntax:** obj << Is Modal Dialog
+**Syntax:** obj &lt;&lt; Is Modal Dialog
 
 **Description:** Returns true if the window is a modal dialog. Only useful when called from a window handler callback.
 
@@ -1845,7 +1813,7 @@ With Window Handler(
 
 ### Journal
 
-**Syntax:** obj << Journal
+**Syntax:** obj &lt;&lt; Journal
 
 **Description:** Makes a journal from the display box.
 
@@ -1862,7 +1830,7 @@ rbiv << journal;
 
 ### Journal Window
 
-**Syntax:** obj << Journal Window
+**Syntax:** obj &lt;&lt; Journal Window
 
 **Description:** Opens a journal window of the window.
 
@@ -1877,7 +1845,7 @@ w << Journal Window;
 
 ### Launch
 
-**Syntax:** obj << Launch
+**Syntax:** obj &lt;&lt; Launch
 
 **Description:** Evaluates the given argument in the context of the display box.
 
@@ -1899,7 +1867,7 @@ ob3 << launch( Bivariate( Y( :height ), X( :weight ) ) );
 
 ### Make RowState Handler
 
-**Syntax:** rs = obj << Make RowState Handler( <dt>, function(a) )
+**Syntax:** rs = obj &lt;&lt; Make RowState Handler( &lt;dt&gt;, function(a) )
 
 **Description:** Creates a row state handler for the given data table or the current data table. The function is called when the row states change in the filter context of the box. The argument of the function holds the rows numbers that have changed, or -1 if the row state filter has changed.
 
@@ -1988,9 +1956,7 @@ updatetext();
 
 ### Margin
 
-**Syntax:** obj << Margin( sides );
-
-sides = obj << Get Margin
+**Syntax:** obj &lt;&lt; Margin( sides );sides = obj &lt;&lt; Get Margin
 
 **Description:** Margin adds space between the border of the box and adjacent boxes. Use named arguments, or provide a list of values. If a single value is provided, it will be applied to all sides. If two values are specified, they will be applied to horizontal and vertical margins.
 
@@ -2011,7 +1977,7 @@ tb << Margin( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ### Maximize Window
 
-**Syntax:** obj << Maximize Window( <state=0|1> )
+**Syntax:** obj &lt;&lt; Maximize Window( &lt;state=0|1&gt; )
 
 **Description:** Maximizes the window. Default argument is 1.
 
@@ -2029,7 +1995,7 @@ w << Maximize Window( 0 );
 
 ### Minimize Window
 
-**Syntax:** obj << Minimize Window( <state=0|1> )
+**Syntax:** obj &lt;&lt; Minimize Window( &lt;state=0|1&gt; )
 
 **Description:** Minimizes the window. Default argument is 1.
 
@@ -2047,7 +2013,7 @@ w << Minimize Window( 0 );
 
 ### Move Window
 
-**Syntax:** obj << Move Window( x,y )
+**Syntax:** obj &lt;&lt; Move Window( x,y )
 
 **Description:** Moves the window to the specified position.
 
@@ -2063,7 +2029,7 @@ w << Move Window( 500, 500 );
 
 ### Next
 
-**Syntax:** obj << Next
+**Syntax:** obj &lt;&lt; Next
 
 **Description:** Returns the display box after this display box.
 
@@ -2081,7 +2047,7 @@ Print( next << Class Name() );
 
 ### On Close
 
-**Syntax:** obj << On Close( script )
+**Syntax:** obj &lt;&lt; On Close( script )
 
 **Description:** Sets a script or function to run upon closing the window. This script should return 1 to allow the close, or 0 to prevent the window from closing.
 
@@ -2129,7 +2095,7 @@ w << On Close(
 
 ### Optimize Display
 
-**Syntax:** obj << Optimize Display
+**Syntax:** obj &lt;&lt; Optimize Display
 
 **Description:** Sets a data table&apos;s column widths and window to an optimum size.
 
@@ -2144,7 +2110,7 @@ dt << Optimize Display;
 
 ### Pad Window
 
-**Syntax:** obj << Pad Window( bool )
+**Syntax:** obj &lt;&lt; Pad Window( bool )
 
 **Description:** Turns window padding on or off.
 
@@ -2161,9 +2127,7 @@ r << Pad Window( 0 );
 
 ### Padding
 
-**Syntax:** obj << Padding( sides );
-
-sides = obj << Get Padding
+**Syntax:** obj &lt;&lt; Padding( sides );sides = obj &lt;&lt; Get Padding
 
 **Description:** Padding adds space between the content and the border of the box. Use named arguments, or provide a list of values. If a single value is provided, it will be applied to all sides. If two values are specified, they will be applied to horizontal and vertical padding.
 
@@ -2184,7 +2148,7 @@ tb << Padding( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ### Page Break
 
-**Syntax:** obj << Page Break
+**Syntax:** obj &lt;&lt; Page Break
 
 **Description:** Inserts a page break before the display box.
 
@@ -2210,7 +2174,7 @@ ob3 << Page Break;
 
 ### Parent
 
-**Syntax:** obj << Parent
+**Syntax:** obj &lt;&lt; Parent
 
 **Description:** Returns the parent of this display box.
 
@@ -2229,7 +2193,7 @@ Print( axisParent << Class Name() );
 
 ### Prepend
 
-**Syntax:** obj << Prepend( db2 )
+**Syntax:** obj &lt;&lt; Prepend( db2 )
 
 **Description:** Add db2 to the display tree before db.
 
@@ -2246,7 +2210,7 @@ rbiv << prepend( Text Box( "=== above ===" ) );
 
 ### Prev Sib
 
-**Syntax:** obj << Prev Sib
+**Syntax:** obj &lt;&lt; Prev Sib
 
 **Description:** Returns the previous sibling of the display box.
 
@@ -2265,7 +2229,7 @@ Print( axisSibling << Class Name() );
 
 ### Print Window
 
-**Syntax:** obj << Print Window
+**Syntax:** obj &lt;&lt; Print Window
 
 **Description:** Prints the window.
 
@@ -2280,7 +2244,7 @@ w << Print Window;
 
 ### Reshow
 
-**Syntax:** obj << Reshow
+**Syntax:** obj &lt;&lt; Reshow
 
 **Description:** Invalidate the displaybox and update the window with the new content.  See <<Inval and <<UpdateWindow messages if more control over timing of the update is required.
 
@@ -2309,7 +2273,7 @@ New Window( "Reshow example",
 
 ### Save Capture
 
-**Syntax:** obj << Save Capture( <"path">, <format>, <Add Sibling(n)> )
+**Syntax:** obj &lt;&lt; Save Capture( &lt;"path"&gt;, &lt;format&gt;, &lt;Add Sibling(n)&gt; )
 
 **Description:** Saves a screen capture of the display box at the specified path. If a path is not given, the Save As window appears.
 
@@ -2326,7 +2290,7 @@ rbiv << Save Capture( "$TEMP/jmp_example.png", "png" );
 
 ### Save HTML
 
-**Syntax:** obj << Save HTML( <pathname>, <format> )
+**Syntax:** obj &lt;&lt; Save HTML( &lt;pathname&gt;, &lt;format&gt; )
 
 **Description:** Saves HTML source and folder of graphics in format specified.
 
@@ -2343,7 +2307,7 @@ rbiv << Save HTML( "$TEMP/jmp_example.html" );
 
 ### Save Interactive HTML
 
-**Syntax:** obj << Save Interactive HTML( <pathname>, <Boolean> )
+**Syntax:** obj &lt;&lt; Save Interactive HTML( &lt;pathname&gt;, &lt;Boolean&gt; )
 
 **Description:** Saves Interactive HTML with Data to a file. The Boolean argument represents the report being static.
 
@@ -2360,7 +2324,7 @@ rbiv << Save Interactive HTML( "$TEMP/jmp_example.html" );
 
 ### Save Journal
 
-**Syntax:** obj << Save Journal( <pathname> )
+**Syntax:** obj &lt;&lt; Save Journal( &lt;pathname&gt; )
 
 **Description:** Saves journal source for the display box.
 
@@ -2377,7 +2341,7 @@ rbiv << Save Journal( "$TEMP/jmp_example.jrn" );
 
 ### Save MSWord
 
-**Syntax:** obj << Save MSWord( <pathname>, <format> )
+**Syntax:** obj &lt;&lt; Save MSWord( &lt;pathname&gt;, &lt;format&gt; )
 
 **Description:** Saves the display box as a Microsoft Word document. (Windows Only)
 
@@ -2394,7 +2358,7 @@ rbiv << Save MSWord( "$TEMP/jmp_example.doc" );
 
 ### Save PDF
 
-**Syntax:** obj << Save PDF( <pathname>, <Show Page Setup(0|1)>, <Portrait(0|1)> )
+**Syntax:** obj &lt;&lt; Save PDF( &lt;pathname&gt;, &lt;Show Page Setup(0|1)&gt;, &lt;Portrait(0|1)&gt; )
 
 **Description:** Saves a PDF of the display box.
 
@@ -2411,7 +2375,7 @@ rbiv << Save PDF( "$TEMP/jmp_example.pdf" );
 
 ### Save Picture
 
-**Syntax:** obj << Save Picture( <pathname>, <format>, <Scale(factor)>, <Type("Bitmap" | "Scalable")>, <View("Picture" | "Screen" | "Print"), <Appearance("Default" | "Current")>, <SubRect(Left(number), Top(number), Right(number), Bottom(number))> )
+**Syntax:** obj &lt;&lt; Save Picture( &lt;pathname&gt;, &lt;format&gt;, &lt;Scale(factor)&gt;, &lt;Type("Bitmap" | "Scalable")&gt;, &lt;View("Picture" | "Screen" | "Print"), &lt;Appearance("Default" | "Current")&gt;, &lt;SubRect(Left(number), Top(number), Right(number), Bottom(number))&gt; )
 
 **Description:** Saves a picture of the display box. Supported formats are EMF(Windows), PICT(Macintosh), JPEG or JPG, GIF, or PNG. The optional Scale argument will render the image at a scaled resolution. Scaling requires that the display box be stretchable. The Type argument determines whether the result will be a scalable vector image or a bitmap. By default a scalable image is returned, which is suitable for saving to vector formats like PDF. The View option changes the behavior of some boxes. The default option of "Picture" draws the report as it would when exporting to an image format, with scrolled areas fully shown. View mode of "Screen" draws the report as seen on-screen, and "Print" draws the report as it does when printing, without any of the page setup features. The SubRect option will capture a portion of the resulting image rather than a full image. The Appearance option can change from the "Default" output colors to the "Current" colors as seen on-screen. The View, SubRect, and Appearance options are only supported for Type "Bitmap".
 
@@ -2481,7 +2445,7 @@ New Window( "Example",
 
 ### Save Presentation
 
-**Syntax:** obj << Save Presentation( "filename.pptx", <Template("path\to\my_template.pptx")>, <Insert(Begin|End|#) | Replace(Begin|End|#) | Append>, <Outline Titles(None|Hide|TopLeft|TopRight|BottomLeft|BottomRight)>, <"EMF"|"PNG"|"JPG"|"Native"> )
+**Syntax:** obj &lt;&lt; Save Presentation( "filename.pptx", &lt;Template("path\to\my_template.pptx")&gt;, &lt;Insert(Begin|End|#) | Replace(Begin|End|#) | Append&gt;, &lt;Outline Titles(None|Hide|TopLeft|TopRight|BottomLeft|BottomRight)&gt;, &lt;"EMF"|"PNG"|"JPG"|"Native"&gt; )
 
 **Description:** Saves the display box tables and graphs slides in a presentation. The presentation can be opened with Microsoft PowerPoint or other presentation software.
 
@@ -2498,7 +2462,7 @@ Open( "$TEMP/jmp_example.pptx" );
 
 ### Save RTF
 
-**Syntax:** obj << Save RTF( <pathname>, <format> )
+**Syntax:** obj &lt;&lt; Save RTF( &lt;pathname&gt;, &lt;format&gt; )
 
 **Description:** Saves RTF source with graphics in format specified.
 
@@ -2515,7 +2479,7 @@ rbiv << Save RTF( "$TEMP/jmp_example.rtf", "png" );
 
 ### Save Text
 
-**Syntax:** obj << Save Text( <pathname>, <format> )
+**Syntax:** obj &lt;&lt; Save Text( &lt;pathname&gt;, &lt;format&gt; )
 
 **Description:** Saves a file containing the text of the display box.
 
@@ -2530,7 +2494,7 @@ a << save text( "$TEMP/jmp_example.txt" );
 
 ### Save Window Report
 
-**Syntax:** obj << Save Window Report( pathname, <embed data(0|1)> )
+**Syntax:** obj &lt;&lt; Save Window Report( pathname, &lt;embed data(0|1)&gt; )
 
 **Description:** Saves the current report window to a JMP report file (.jrp).
 
@@ -2546,7 +2510,7 @@ d << Save Window Report( "$DOCUMENTS/test.jrp", embed data( 1 ) );
 
 ### Scroll Window
 
-**Syntax:** obj << Scroll Window( DisplayBox | <Relative(<v> | <h>,<v>)> | <Absolute(<v> | <h>,<v>) )
+**Syntax:** obj &lt;&lt; Scroll Window( DisplayBox | &lt;Relative(&lt;v&gt; | &lt;h&gt;,&lt;v&gt;)&gt; | &lt;Absolute(&lt;v&gt; | &lt;h&gt;,&lt;v&gt;) )
 
 **Description:** Adjust the window scrollbar to bring the given DisplayBox into view, or scroll a relative number of pixels, or scroll to an absolute pixel location. In place of a number of pixels the keywords "Start" or "End" can be used.
 
@@ -2621,7 +2585,7 @@ Wait( 1 );
 
 ### Select
 
-**Syntax:** obj << Select
+**Syntax:** obj &lt;&lt; Select
 
 **Description:** Selects this object for use by Edit menu commands.
 
@@ -2636,7 +2600,7 @@ ex << Select;
 
 ### Set Content Size
 
-**Syntax:** obj << Set Content Size( x,y )
+**Syntax:** obj &lt;&lt; Set Content Size( x,y )
 
 **Description:** Sets the content size within the window.
 
@@ -2662,7 +2626,7 @@ w << Set Content Size( 400, 300 );
 
 ### Set Dirty
 
-**Syntax:** obj << Set Dirty
+**Syntax:** obj &lt;&lt; Set Dirty
 
 **Description:** Sets the document&apos;s modified status. 0 will not prompt for saving; 1 will prompt.
 
@@ -2679,7 +2643,7 @@ Show( ww << Is Dirty );
 
 ### Set Height
 
-**Syntax:** obj << Set Height( width )
+**Syntax:** obj &lt;&lt; Set Height( width )
 
 **Description:** Sets the height of the display box.
 
@@ -2697,7 +2661,7 @@ fb << Set Height( 150 );
 
 ### Set Main Window
 
-**Syntax:** obj << Set Main Window
+**Syntax:** obj &lt;&lt; Set Main Window
 
 **Description:** Set the window to be the main window in JMP and sets the prior main window to be a normal window
 
@@ -2712,7 +2676,7 @@ w << Set Main Window;
 
 ### Set Max Size
 
-**Syntax:** obj << Set Max Size( width,height )
+**Syntax:** obj &lt;&lt; Set Max Size( width,height )
 
 **Description:** Sets the maximum size of this display box for purposes of auto-stretching.
 
@@ -2731,7 +2695,7 @@ fb << Get Max Size;
 
 ### Set Min Size
 
-**Syntax:** obj << Set Min Size( width,height )
+**Syntax:** obj &lt;&lt; Set Min Size( width,height )
 
 **Description:** Sets the minimum size of this display box for purposes of auto-stretching.
 
@@ -2750,7 +2714,7 @@ fb << Get Min Size;
 
 ### Set Page Setup
 
-**Syntax:** obj << Set Page Setup( <margins(left, top, right, bottom)>, <scale(s)>, <portrait(0|1)>, <paper size(p)>, <Table of Contents(always, never, default)>  )
+**Syntax:** obj &lt;&lt; Set Page Setup( &lt;margins(left, top, right, bottom)&gt;, &lt;scale(s)&gt;, &lt;portrait(0|1)&gt;, &lt;paper size(p)&gt;, &lt;Table of Contents(always, never, default)&gt; )
 
 **Description:** Sets the page setup information that is used during printing or saving as pdf. A Table of Contents can optionally be generated from Outline Boxes.
 
@@ -2772,7 +2736,7 @@ w << Save pdf( "$DOCUMENTS\test.pdf" );
 
 ### Set Print Footers
 
-**Syntax:** obj << Set Print Footers( left footer, center footer, right header )
+**Syntax:** obj &lt;&lt; Set Print Footers( left footer, center footer, right header )
 
 **Description:** Sets the left, center, and right footers for printed output
 
@@ -2791,7 +2755,7 @@ w << Print Window;
 
 ### Set Print Headers
 
-**Syntax:** obj << Set Print Headers( left header, center header, right header )
+**Syntax:** obj &lt;&lt; Set Print Headers( left header, center header, right header )
 
 **Description:** Sets the left, center, and right headers for printed output
 
@@ -2810,7 +2774,7 @@ w << Print Window;
 
 ### Set Property
 
-**Syntax:** obj << Set Property( "property", value )
+**Syntax:** obj &lt;&lt; Set Property( "property", value )
 
 **Description:** Sets the value for the named property for the display box.
 
@@ -2824,7 +2788,7 @@ bb << Set Property( "Enabled", 0 );
 
 ### Set Report Title
 
-**Syntax:** obj << Set Report Title( "string" )
+**Syntax:** obj &lt;&lt; Set Report Title( "string" )
 
 **Description:** Changes the report title.
 
@@ -2841,7 +2805,7 @@ rbiv << Set Report Title( "New Title" );
 
 ### Set Stretch
 
-**Syntax:** obj << Set Stretch( x,y )
+**Syntax:** obj &lt;&lt; Set Stretch( x,y )
 
 **Description:** Sets the horizontal and vertical stretching behavior of the box. Boxes that stretch with Window will resize as the window or splitter size changes. Boxes that stretch to Fill will stretch to fill available space in their container. Boxes with stretching turned Off generally will not stretch. Most boxes default to Neutral, which means that they will determine their behavior based on their child boxes.
 
@@ -2887,7 +2851,7 @@ ts << Set Stretch( "Window", "Window" );
 
 ### Set Summary Behavior
 
-**Syntax:** obj << Set Summary Behavior( "Default"|"Visible"|"Collapse" )
+**Syntax:** obj &lt;&lt; Set Summary Behavior( "Default"|"Visible"|"Collapse" )
 
 **Description:** Sets the behavior of the box when a report is viewed in Summary mode.
 
@@ -2906,7 +2870,7 @@ tb << Set Summary Behavior( "Visible" );
 
 ### Set Window Icon
 
-**Syntax:** obj << Set Window Icon( icon name )
+**Syntax:** obj &lt;&lt; Set Window Icon( icon name )
 
 **Description:** Sets the window icon.
 
@@ -2921,7 +2885,7 @@ w << Set Window Icon( "Scatter3D" );
 
 ### Set Window Size
 
-**Syntax:** obj << Set Window Size( x,y )
+**Syntax:** obj &lt;&lt; Set Window Size( x,y )
 
 **Description:** Sets the size of the window.
 
@@ -2936,7 +2900,7 @@ w << Set Window Size( 800, 1200 );
 
 ### Set Window Title
 
-**Syntax:** obj << Set Window Title( "string" )
+**Syntax:** obj &lt;&lt; Set Window Title( "string" )
 
 **Description:** Changes the window title.
 
@@ -2953,7 +2917,7 @@ rbiv << Set Window Title( "New Title" );
 
 ### Show Properties
 
-**Syntax:** obj << Show Properties
+**Syntax:** obj &lt;&lt; Show Properties
 
 **Description:** Displays a property editor for display boxes
 
@@ -2970,7 +2934,7 @@ rbiv << Show Properties();
 
 ### Show Tree Structure
 
-**Syntax:** obj << Show Tree Structure
+**Syntax:** obj &lt;&lt; Show Tree Structure
 
 **Description:** Displays a hierarchical tree structure of the display box and its related nodes.
 
@@ -2987,7 +2951,7 @@ rbiv << Show Tree Structure();
 
 ### Show Window
 
-**Syntax:** obj << Show Window( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Window( state=0|1 )
 
 **Description:** Shows or hides the window. This is useful for hiding windows temporarily. On by default.
 
@@ -3005,7 +2969,7 @@ w << Show Window( 1 );
 
 ### Sib
 
-**Syntax:** obj << Sib
+**Syntax:** obj &lt;&lt; Sib
 
 **Description:** Returns the sibling of the display box.
 
@@ -3024,7 +2988,7 @@ Print( axisSibling << Class Name() );
 
 ### Sib Append
 
-**Syntax:** obj << Sib Append( Display box, Horizontal|Vertical )
+**Syntax:** obj &lt;&lt; Sib Append( Display box, Horizontal|Vertical )
 
 **Description:** Adds a display box immediately after this display box.
 
@@ -3046,7 +3010,7 @@ fb << sib append( Text Box( "=== below ===" ), "Vertical" );
 
 ### Sib Prepend
 
-**Syntax:** obj << Sib Prepend( Display box, Horizontal|Vertical )
+**Syntax:** obj &lt;&lt; Sib Prepend( Display box, Horizontal|Vertical )
 
 **Description:** Adds a display box immediately before this display box.
 
@@ -3068,7 +3032,7 @@ fb << sib prepend( Text Box( "=== above ===" ), "Vertical" );
 
 ### Size Window
 
-**Syntax:** obj << Size Window( x,y )
+**Syntax:** obj &lt;&lt; Size Window( x,y )
 
 **Description:** Sets the size of the window.
 
@@ -3083,9 +3047,7 @@ w << Size Window( 500, 500 );
 
 ### Text Color
 
-**Syntax:** obj << Text Color( color );
-
-color = obj << Get Text Color
+**Syntax:** obj &lt;&lt; Text Color( color );color = obj &lt;&lt; Get Text Color
 
 **Description:** Text will be drawn using the text color if it has been set. If the property has not been set, the box will inherit the text color of the containing box.
 
@@ -3105,7 +3067,7 @@ tb << Text Color( "Red" );
 
 ### Top Parent
 
-**Syntax:** obj << Top Parent
+**Syntax:** obj &lt;&lt; Top Parent
 
 **Description:** Returns the root parent of this display box.
 
@@ -3123,13 +3085,11 @@ Print( rootParent << Class Name() );
 
 ### UI Only
 
-**Syntax:** obj << UI Only( state=0|1 );
-
-state = obj << Get UI Only
+**Syntax:** obj &lt;&lt; UI Only( state=0|1 );state = obj &lt;&lt; Get UI Only
 
 ### Update Window
 
-**Syntax:** obj << Update Window
+**Syntax:** obj &lt;&lt; Update Window
 
 **Description:** Update the window holding the displaybox if there are invalidated regions.  The <<Inval message creates invalidated regions.
 
@@ -3181,9 +3141,7 @@ New Window( "rect",
 
 ### Vertical Alignment
 
-**Syntax:** obj << Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );
-
-"Default"|"Top"|"Center"|"Bottom" = obj << Get Vertical Alignment
+**Syntax:** obj &lt;&lt; Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );"Default"|"Top"|"Center"|"Bottom" = obj &lt;&lt; Get Vertical Alignment
 
 **Description:** Vertical alignment controls the positioning of the box within a container if the box does not fill the entire space.
 
@@ -3205,9 +3163,7 @@ lb << Vertical Alignment( "Bottom" );
 
 ### Visibility
 
-**Syntax:** obj << Visibility( "Visible"|"Hidden"|"Collapse" );
-
-"Visible"|"Hidden"|"Collapse" = obj << Get Visibility
+**Syntax:** obj &lt;&lt; Visibility( "Visible"|"Hidden"|"Collapse" );"Visible"|"Hidden"|"Collapse" = obj &lt;&lt; Get Visibility
 
 **Description:** Visibility determines whether a box is shown and whether it takes up space. The default value of "Visible" means that the object will be shown.  A "Hidden" box is not shown but still takes up space, while a "Collapsed" box takes up no space in the layout.
 
@@ -3228,7 +3184,7 @@ Show( tb << Get Visibility );
 
 ### Window Class Name
 
-**Syntax:** obj << Window Class Name
+**Syntax:** obj &lt;&lt; Window Class Name
 
 **Description:** Returns the name of the window class for the display box.
 
@@ -3246,7 +3202,7 @@ Show( rbiv << Window Class Name() );
 
 ### XPath
 
-**Syntax:** obj << XPath( XPath expression, <English(0|1)>, <NoData(0|1)> )
+**Syntax:** obj &lt;&lt; XPath( XPath expression, &lt;English(0|1)&gt;, &lt;NoData(0|1)&gt; )
 
 **Description:** Applies an XPath expression to the XML representation of the display tree and returns the results. By default, strings are returned in the local language, and the XML includes data values within some boxes. Use the English option to return English strings where available. Use the NoData option to omit the data values within boxes, which is useful for performance when your query is based only on box attributes.
 
@@ -3326,7 +3282,7 @@ biv = dt << Run Script( "Bivariate" );
 
 ### Zoom Window
 
-**Syntax:** obj << Zoom Window
+**Syntax:** obj &lt;&lt; Zoom Window
 
 **Description:** Resizes the window to be large enough to show all of its contents.
 

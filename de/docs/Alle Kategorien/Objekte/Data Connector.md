@@ -6,7 +6,7 @@
 
 ### Dump
 
-**Syntax:** res = obj << Dump()
+**Syntax:** res = obj &lt;&lt; Dump()
 
 **Beschreibung:** Ruft den Inhalt dieses Datenkonnektors als Spezifikationszeichenkette ab, die den Typ und alle Nicht-Standardwerte angibt.
 
@@ -24,7 +24,7 @@ New Data Connector(
 
 ### Get
 
-**Syntax:** res = obj << Get( OPTION )
+**Syntax:** res = obj &lt;&lt; Get( OPTION )
 
 **Beschreibung:** Ruft den Wert einer Option ab.
 
@@ -40,7 +40,7 @@ dc << Get( Supports Schemas );
 
 ### Open
 
-**Syntax:** res = obj << Open()
+**Syntax:** res = obj &lt;&lt; Open()
 
 **Beschreibung:** Öffnet eine neue Datentabelle wie von diesem Datenkonnektor angegeben.
 
@@ -57,7 +57,7 @@ New Data Connector(
 
 ### Save
 
-**Syntax:** obj << Save( file path )
+**Syntax:** obj &lt;&lt; Save( file path )
 
 **Beschreibung:** Speichert den Inhalt dieses Datenkonnektors in einer Datei. Der Inhalt der Datei ist derselbe wie das Ergebnis von << Dump().
 
@@ -75,7 +75,7 @@ New Data Connector(
 
 ### Set
 
-**Syntax:** obj << Set( < Option1( value1 ) >, ..., < OptionN( valueN ) > )
+**Syntax:** obj &lt;&lt; Set( &lt; Option1( value1 ) &gt;, ..., &lt; OptionN( valueN ) &gt; )
 
 **Beschreibung:** Legt den Wert einer beliebigen Anzahl von Optionen fest.
 
@@ -92,7 +92,7 @@ Show( dc << Get( Block Fetch ), dc << Get( Supports Schemas ) );
 
 ### Type
 
-**Syntax:** res = obj << Type()
+**Syntax:** res = obj &lt;&lt; Type()
 
 **Beschreibung:** Ruft den Typ des Datenkonnektors ab.
 

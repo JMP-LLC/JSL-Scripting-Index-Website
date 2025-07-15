@@ -2,8 +2,6 @@
 
 
 
-## 函数
-
 ### As Row State
 
 **语法:** rs = As Row State( x )
@@ -27,7 +25,7 @@ For Each Row(
 
 ### Color Of
 
-**语法:** y = Color Of( <rs> ); Color Of( <Row State( <r> )> ) = y
+**语法:** y = Color Of( &lt;rs&gt; ); Color Of( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **说明:** 返回指定行状态值的颜色分量，可能为正的 JMP 调色板索引值或负的 RGB 编码值。若 Color Of 用作 L 值，则会更改当前数据表当前行（或第 r 行）的颜色。
 
@@ -78,7 +76,7 @@ Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 
 ### Excluded
 
-**语法:** y = Excluded( <rs> ); Excluded( <Row State( <r> )> ) = y
+**语法:** y = Excluded( &lt;rs&gt; ); Excluded( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **说明:** 返回指定行状态值的排除与否状态部分（0 或 1）。若 Excluded() 函数用作 L 值，则会更改当前数据表中当前行（或第 r 行）的排除状态。
 
@@ -114,7 +112,7 @@ Excluded( Row State( 3 ) );
 
 ### Hidden
 
-**语法:** y = Hidden( <rs> ); Hidden( <Row State( <r> )> ) = y
+**语法:** y = Hidden( &lt;rs&gt; ); Hidden( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **说明:** 返回指定行状态值的隐藏与否状态部分（0 或 1）。若 Hidden 用作 L 值，则会更改当前数据表中当前行（或第 r 行）的隐藏状态。
 
@@ -166,7 +164,7 @@ Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 
 ### Labeled
 
-**语法:** y = Labeled( <rs> ); Labeled( <Row State( <r> )> ) = y
+**语法:** y = Labeled( &lt;rs&gt; ); Labeled( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **说明:** 返回指定行状态值的添加标签与否状态部分（0 或 1）。若 Labeled 用作 L 值，则会更改当前数据表中当前行（或第 r 行）的标签状态。
 
@@ -202,7 +200,7 @@ Labeled( Row State( 3 ) );
 
 ### Marker Of
 
-**语法:** y = Marker Of( <rs> ); Marker Of( <Row State( <r> )> ) = y
+**语法:** y = Marker Of( &lt;rs&gt; ); Marker Of( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **说明:** 返回指定行状态值的标记状态部分。若 Marker Of 用作 L 值，则会更改当前数据表中当前行（或第 r 行）的标记。
 
@@ -238,7 +236,7 @@ Marker Of( Row State( 3 ) );
 
 ### Row State
 
-**语法:** y = Row State( <dt>, <r> ); Row State( <dt>, <r> ) = y
+**语法:** y = Row State( &lt;dt&gt;, &lt;r&gt; ); Row State( &lt;dt&gt;, &lt;r&gt; ) = y
 
 **说明:** 返回当前数据表中当前行（或第 r 行）的行状态。若 Row State() 函数用作 L 值，则它会更改当前数据表中当前行（或第 r 行）的行状态。
 
@@ -255,7 +253,7 @@ Color To RGB( Color Of( Row State( 3 ) ) );
 
 ### Selected
 
-**语法:** y = Selected( <rs> );Selected( <Row State( <r> )> ) = y
+**语法:** y = Selected( &lt;rs&gt; );Selected( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **说明:** 返回指定行状态值的选定与否状态部分（0 或 1）。若 Selected 用作 L 值，则会更改当前数据表中当前行（或第 r 行）的选定状态。
 

@@ -8,7 +8,7 @@
 
 #### Action
 
-**Sintassi:** action  << Action(...)
+**Sintassi:** action &lt;&lt; Action(...)
 
 **Descrizione:** Imposta il nome dell&apos;operazione CAS. Il Messaggio di operazione CAS può accettare una specifica completa actionset.action.
 
@@ -30,7 +30,7 @@ rc = cas << Submit( action );
 
 #### Action Set
 
-**Sintassi:** action  << Action Set(...)
+**Sintassi:** action &lt;&lt; Action Set(...)
 
 **Descrizione:** Imposta il gruppo di operazioni per l&apos;operazione CAS. Le operazioni CAS sono raggruppate per insieme di operazioni. Ciò è facoltativo in quanto il messaggio di operazione CAS può accettare una specifica completa actionset.action.
 
@@ -47,7 +47,7 @@ action << Action Set( "builtins" );
 
 #### Authorization
 
-**Sintassi:** action << Authorization(<1|0>)
+**Sintassi:** action &lt;&lt; Authorization(&lt;1|0&gt;)
 
 **Descrizione:** Imposta un requisito di autorizzazione per un&apos;operazione CAS. Le operazioni CAS richiedono automaticamente Connetti, Accesso, Autorizzazione e Sessione.
 
@@ -73,7 +73,7 @@ action = New CAS Action( Action( "dataStep.runCode" ), JSON( runCode ), Authoriz
 
 #### Connection
 
-**Sintassi:** action << Connection(<1|0>)
+**Sintassi:** action &lt;&lt; Connection(&lt;1|0&gt;)
 
 **Descrizione:** Imposta un requisito di connessione per un&apos;operazione CAS. Le operazioni CAS richiedono automaticamente Connetti, Accesso, Autorizzazione e Sessione.
 
@@ -99,7 +99,7 @@ action = New CAS Action( Action( "dataStep.runCode" ), JSON( runCode ), Connecti
 
 #### Endpoint
 
-**Sintassi:** action << Endpoint(...)
+**Sintassi:** action &lt;&lt; Endpoint(...)
 
 **Descrizione:** Imposta il punto finale dell&apos;operazione CAS. Un punto finale è la risorsa relativa all&apos;URL base del server CAS. Nel caso di http://cloud.example.com:8777/cas/sessions, /cas/sessions è il punto finale. Per la maggior parte delle operazioni CAS usa il Messaggio dell&apos;operazione in cui sarà automaticamente selezionato il punto finale corretto.
 
@@ -116,7 +116,7 @@ action << Endpoint( "/cas/sessions" );
 
 #### File
 
-**Sintassi:** action << File(...)
+**Sintassi:** action &lt;&lt; File(...)
 
 **Descrizione:** Imposta il parametro file per un&apos;operazione CAS. Qualsiasi variabile di percorso nel nome del file è espansa. L&apos;operazione CAS sposta automaticamente qualsiasi argomento JSON in un argomento Parametri JSON se si utilizza il messaggio File.
 
@@ -155,7 +155,7 @@ If( rc,
 
 #### Get Changed Resources
 
-**Sintassi:** action << Get Changed Resources()
+**Sintassi:** action &lt;&lt; Get Changed Resources()
 
 **Descrizione:** Ottiene le risorse modificate da un&apos;operazione eseguita come array associativo.
 
@@ -186,7 +186,7 @@ Write( "\!Changed Resources: " || Char( action << Get Changed Resources ) || "\!
 
 #### Get Disposition
 
-**Sintassi:** action << Get Disposition()
+**Sintassi:** action &lt;&lt; Get Disposition()
 
 **Descrizione:** Ottiene la disposizione da un&apos;operazione eseguita come array associativo.
 
@@ -217,7 +217,7 @@ Write( "\!Disposition: " || Char( action << Get Disposition ) || "\!n" );
 
 #### Get JSON
 
-**Sintassi:** action << Get JSON()
+**Sintassi:** action &lt;&lt; Get JSON()
 
 **Descrizione:** Ottiene i valori restituiti da un&apos;operazione CAS eseguita come stringa JSON.
 
@@ -243,7 +243,7 @@ Write( "\!nJSON: " || Char( action << Get JSON ) || "\!n" );
 
 #### Get Log
 
-**Sintassi:** action << Get Log()
+**Sintassi:** action &lt;&lt; Get Log()
 
 **Descrizione:** Ottiene il log da un&apos;operazione CAS eseguita.
 
@@ -269,7 +269,7 @@ Write( "\!Log: " || Char( action << Get Log ) || "\!n" );
 
 #### Get Log Entries
 
-**Sintassi:** action << Get Log Entries()
+**Sintassi:** action &lt;&lt; Get Log Entries()
 
 **Descrizione:** Ottiene il log come elenco di voci da un&apos;operazione CAS eseguita.
 
@@ -295,7 +295,7 @@ Write( "\!Log Entries: " || Char( action << Get Log Entries ) || "\!n" );
 
 #### Get Metrics
 
-**Sintassi:** action << Get Metrics
+**Sintassi:** action &lt;&lt; Get Metrics
 
 **Descrizione:** Ottiene la metrica da un&apos;operazione eseguita come array associativo.
 
@@ -326,7 +326,7 @@ Write( "\!Get Metrics: " || Char( action << Get Metrics ) || "\!n" );
 
 #### Get Results
 
-**Sintassi:** action << Get Results()
+**Sintassi:** action &lt;&lt; Get Results()
 
 **Descrizione:** Ottiene i risultati da un&apos;operazione eseguita come array associativo.
 
@@ -357,7 +357,7 @@ Write( "\!Results: " || Char( action << Get Results ) || "\!n" );
 
 #### JSON
 
-**Sintassi:** action << JSON(...)
+**Sintassi:** action &lt;&lt; JSON(...)
 
 **Descrizione:** Imposta l&apos;argomento JSON per l&apos;operazione CAS. Le operazioni CAS utilizzeranno le stringhe JSON o gli array associativi JSL come argomenti. Gli argomenti JSON sono documentati per ogni operazione CAS SAS.
 
@@ -382,7 +382,7 @@ rc = cas << Submit( action );
 
 #### JSON Parameters
 
-**Sintassi:** action << JSON Parameters(...)
+**Sintassi:** action &lt;&lt; JSON Parameters(...)
 
 **Descrizione:** Imposta l&apos;argomento del parametro JSON per l&apos;operazione CAS. Le operazioni CAS quali carica.tabella utilizzano un file in combinazione con i parametri JSON per spostare una tabella in CAS. L&apos;operazione CAS sposterà automaticamente qualsiasi argomento JSON in un argomento Parametri JSON se si utilizza il messaggio File.
 
@@ -421,7 +421,7 @@ If( rc,
 
 #### Login
 
-**Sintassi:** action << Login(<1|0>s))
+**Sintassi:** action &lt;&lt; Login(&lt;1|0&gt;s))
 
 **Descrizione:** Imposta un requisito di accesso per un&apos;operazione CAS. Le operazioni CAS richiedono automaticamente Connetti, Accesso, Autorizzazione e Sessione.
 
@@ -447,7 +447,7 @@ action = New CAS Action( Action( "dataStep.runCode" ), JSON( runCode ), Login( 1
 
 #### Make Report
 
-**Sintassi:** action << Make Report
+**Sintassi:** action &lt;&lt; Make Report
 
 **Descrizione:** Genera un report da un&apos;operazione CAS eseguita.
 
@@ -476,7 +476,7 @@ action << Make Report();
 
 #### Method
 
-**Sintassi:** action << Method(<"PUT" | "POST" | "GET" | "PATCH"| "HEAD">)
+**Sintassi:** action &lt;&lt; Method(&lt;"PUT" | "POST" | "GET" | "PATCH"| "HEAD"&gt;)
 
 **Descrizione:** Imposta il metodo HTTP per l&apos;operazione CAS. I metodi HTTP includono "METTI", "PUBBLICA", "OTTIENI", "PATCH", "TESTA". Per la maggior parte delle operazioni CAS, sarà selezionato automaticamente il metodo HTTP corretto.
 
@@ -493,7 +493,7 @@ action << Method( "PUT" );
 
 #### Session
 
-**Sintassi:** action << Session(<1|0>)
+**Sintassi:** action &lt;&lt; Session(&lt;1|0&gt;)
 
 **Descrizione:** Imposta un requisito di sessione per un&apos;operazione CAS. Le operazioni CAS richiedono automaticamente Connetti, Accesso, Autorizzazione e Sessione.
 
@@ -519,7 +519,7 @@ action = New CAS Action( Action( "dataStep.runCode" ), JSON( runCode ), Session(
 
 #### Timeout
 
-**Sintassi:** action << Timeout(120)
+**Sintassi:** action &lt;&lt; Timeout(120)
 
 **Descrizione:** Imposta un nuovo valore di timeout nell&apos;azione CAS.
 
@@ -553,7 +553,7 @@ action << Make Report();
 
 #### Code
 
-**Sintassi:** action << Code(...)
+**Sintassi:** action &lt;&lt; Code(...)
 
 **Descrizione:** Imposta il codice del passo di DATA da eseguire. Il server CAS è in grado di eseguire un sottoinsieme del codice del passo di DATA SAS. Consultare la documentazione SAS per limitazioni specifiche.
 
@@ -580,7 +580,7 @@ cas << Submit( action );
 
 #### File
 
-**Sintassi:** action << File(...)
+**Sintassi:** action &lt;&lt; File(...)
 
 **Descrizione:** Imposta il codice del passo di DATA da eseguire. Tutte le variabili di percorso sono espanse. Il server CAS può eseguire un sottoinsieme del codice del passo di DATA SAS. Consultare la documentazione SAS per specifiche limitazioni.
 
@@ -609,7 +609,7 @@ cas << Submit( action );
 
 #### Get Changed Resources
 
-**Sintassi:** action << Get Changed Resources
+**Sintassi:** action &lt;&lt; Get Changed Resources
 
 **Descrizione:** Ottiene le risorse modificate da un&apos;operazione eseguita come un elenco.
 
@@ -637,7 +637,7 @@ Write( "\!Get Changed Resources: " || Char( action << Get Changed Resources ) ||
 
 #### Get Disposition
 
-**Sintassi:** action << Get Disposition
+**Sintassi:** action &lt;&lt; Get Disposition
 
 **Descrizione:** Ottiene la disposizione da un&apos;operazione eseguita come array associativo.
 
@@ -665,7 +665,7 @@ Write( "\!Get Disposition: " || Char( action << Get Disposition ) || "\!n" );
 
 #### Get JSON
 
-**Sintassi:** action << Get JSON
+**Sintassi:** action &lt;&lt; Get JSON
 
 **Descrizione:** Ottiene i valori restituiti da un&apos;operazione CAS eseguita come stringa JSON.
 
@@ -693,7 +693,7 @@ Write( "\!nJSON: " || Char( action << Get JSON ) || "\!n" );
 
 #### Get Log
 
-**Sintassi:** action << Get Log
+**Sintassi:** action &lt;&lt; Get Log
 
 **Descrizione:** Ottiene il log da un&apos;operazione CAS eseguita.
 
@@ -721,7 +721,7 @@ Write( "\!nLog: " || Char( action << Get Log ) || "\!n" );
 
 #### Get Log Entries
 
-**Sintassi:** action << Get Log Entries
+**Sintassi:** action &lt;&lt; Get Log Entries
 
 **Descrizione:** Ottiene il log come elenco di voci da un&apos;operazione CAS eseguita.
 
@@ -749,7 +749,7 @@ Write( "\!Get Log Entries: " || Char( action << Get Log Entries ) || "\!n" );
 
 #### Get Metrics
 
-**Sintassi:** action << Get Metrics
+**Sintassi:** action &lt;&lt; Get Metrics
 
 **Descrizione:** Ottiene le metriche da un&apos;operazione eseguita come array associativo.
 
@@ -777,7 +777,7 @@ Write( "\!Get Metrics: " || Char( action << Get Metrics ) || "\!n" );
 
 #### Get Output Data Sets
 
-**Sintassi:** action << Get Output Data Sets()
+**Sintassi:** action &lt;&lt; Get Output Data Sets()
 
 **Descrizione:** Ottiene un elenco di data set di output (libreria.nometabella) prodotto dall&apos;operazione eseguita.
 
@@ -806,7 +806,7 @@ Show( output_ds );
 
 #### Get Results
 
-**Sintassi:** action << Get Results
+**Sintassi:** action &lt;&lt; Get Results
 
 **Descrizione:** Ottiene i risultati da un&apos;operazione eseguita come array associativo.
 
@@ -834,7 +834,7 @@ Write( "\!Get Results: " || Char( action << Get Results ) || "\!n" );
 
 #### Has Output Data Sets
 
-**Sintassi:** action << Has Output Data Sets
+**Sintassi:** action &lt;&lt; Has Output Data Sets
 
 **Descrizione:** Restituisce 1 se l&apos;operazione del passo di DATA CAS ha prodotto dati di output.
 
@@ -863,7 +863,7 @@ Show( has_output );
 
 #### NThreads
 
-**Sintassi:** action << NThreads(<integer|"MAX">)
+**Sintassi:** action &lt;&lt; NThreads(&lt;integer|"MAX"&gt;)
 
 **Descrizione:** Specifica il numero di thread usati per eseguire il programma. Per server distribuiti questo valore specifica il numero di thread su ogni worker da usare per eseguire il programma.
 
@@ -890,7 +890,7 @@ cas << Submit( action );
 
 #### Single
 
-**Sintassi:** action << Single(<NO|NOINPUT|YES>)
+**Sintassi:** action &lt;&lt; Single(&lt;NO|NOINPUT|YES&gt;)
 
 **Descrizione:** Specifica quando restringere l&apos;esecuzione a un singolo thread. "NO" specifica di eseguire il programma nel numero di thread specificato dal parametro nThreads. "NOINPUT" specifica di eseguire il programma in un thread quando non esistono data set di input. Quando esistono data set di input, il parametro nThreads specifica il numero di thread da usare. Per server distribuiti, se il programma non presenta data set di input, il programma viene eseguito in un thread su un worker. Altrimenti, il parametro nThreads specifica il numero di thread da usare. "SÌ" specifica di ignorare il parametro nThreads e di eseguire il programma in un thread. Per server distribuiti il programma viene eseguito in un thread su un worker. L&apos;opzione predefinita è "NO".
 
@@ -921,7 +921,7 @@ cas << Submit( action );
 
 #### Connect
 
-**Sintassi:** cas << Connect(<URL(..)>,<Username(...)>, <Password(...)>, <Prompt(Always | Never | IfNeeded>), <Session("session id")>, <Proxy Server("http://my_proxy:80")>, <Proxy User("proxy_username")>, <Bypass Proxy("http://localhost:80")>, <Certificates("my_certificates.crt")>, <Verify Certificates(1 | 0)>, <No Verify Certificates(1 | 0)>, <Timeout(seconds)>, <Authorization Method("BASIC" | "BEARER")>)
+**Sintassi:** cas &lt;&lt; Connect(&lt;URL(..)&gt;,&lt;Username(...)&gt;, &lt;Password(...)&gt;, &lt;Prompt(Always | Never | IfNeeded&gt;), &lt;Session("session id")&gt;, &lt;Proxy Server("http://my_proxy:80")&gt;, &lt;Proxy User("proxy_username")&gt;, &lt;Bypass Proxy("http://localhost:80")&gt;, &lt;Certificates("my_certificates.crt")&gt;, &lt;Verify Certificates(1 | 0)&gt;, &lt;No Verify Certificates(1 | 0)&gt;, &lt;Timeout(seconds)&gt;, &lt;Authorization Method("BASIC" | "BEARER")&gt;)
 
 **Descrizione:** Si connette a un nuovo server CAS. CAS Connect utilizza gli argomenti URL, Nome utente, Password e facoltativamente Richiedi e Sessione. Richiedi può essere Se necessario, Sempre o Mai. URL, nome utente e password possono essere omessi se l&apos;argomento di Richiedi è Se necessario o Sempre. Il valore di default per Richiedi è Mai. L’argomento Sessione può essere utilizzato per riconnettersi a una sessione CAS esistente. La sessione deve essere valida per l&apos;URL, il nome utente e la password utilizzati nella connessione. L&apos;argomento facoltativo Certificati è utile per fornire certificati affidabili per connessioni https a CAS. L&apos;argomento facoltativo Verifica certificati o Nessuna verifica certificato è utile per accettare temporaneamente certificati autofirmati. L&apos;argomento facoltativo Proxy Server è utile per fornire un host proxy in un ambiente proxy. L&apos;argomento facoltativo Utente proxy è utile per fornire informazioni su utente e password per un ambiente proxy. L&apos;argomento facoltativo Ignora proxy è utilizzato per ignorare il proxy per alcuni host. L&apos;argomento facoltativo Timeout imposta un valore di timeout per le operazioni di connessione a CAS. L&apos;argomento facoltativo Metodo di autorizzazione specifica come JMP si connette a CAS. Dipende dal deployment CAS.
 
@@ -947,7 +947,7 @@ cas = CAS Connect(
 
 #### Delete Table
 
-**Sintassi:** cas << Delete Table(tablename, <Quiet(0|1), reMACs(0|1), Remove(0|1)>)
+**Sintassi:** cas &lt;&lt; Delete Table(tablename, &lt;Quiet(0|1), reMACs(0|1), Remove(0|1)&gt;)
 
 **Descrizione:** Questa azione elimina la tabella del filesystem. La tabella in memoria non è interessata. Specificando Nessuna info si eliminano gli errori per tabelle non esistenti. Specificando remACs si rimuovono i controlli di accesso per una tabella. Specificando Rimuovi si rimuove anche la tabella dalla memoria.
 
@@ -965,7 +965,7 @@ cas << Delete Table( "Casuser", "Big Class" );
 
 #### Disconnect
 
-**Sintassi:** cas << Disconnect(<Terminate | NoTerminate>)
+**Sintassi:** cas &lt;&lt; Disconnect(&lt;Terminate | NoTerminate&gt;)
 
 **Descrizione:** Disconnette da un server CAS e facoltativamente termina la sessione. Per impostazione predefinita, la sessione termina quando ci si disconnette.
 
@@ -984,7 +984,7 @@ cas << Disconnect( Terminate( 1 ) ); //disconnect CAS and terminate
 
 #### Export Data
 
-**Sintassi:** cas << Export Data(jmp_data_table, cas_libref, cas_dataset, <named_arguments>)
+**Sintassi:** cas &lt;&lt; Export Data(jmp_data_table, cas_libref, cas_dataset, &lt;named_arguments&gt;)
 
 **Descrizione:** Esporta una tabella in un server CAS. jmp_data_table è la tabella di dati di JMP da esportare mentre cas_libref e cas_dataset sono le posizioni di destinazione sul server CAS. L&apos;argomento denominato facoltativo è Save(1|0). Quando una tabella viene esportata in CAS non viene mantenuta nel file system CAS a meno che si utilizzi l&apos;opzione Salva. La maggior parte delle operazioni CAS avviene in memoria.
 
@@ -1001,7 +1001,7 @@ cas << Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "Casuser", "Big Class"
 
 #### Get Data Sets
 
-**Sintassi:** cas << Get Data Sets(<"caslib">)
+**Sintassi:** cas &lt;&lt; Get Data Sets(&lt;"caslib"&gt;)
 
 **Descrizione:** Ottiene un elenco di data set CAS disponibili. Questi data set sono presenti nel file system CAS. L&apos;argomento facoltativo limita l&apos;elenco dei data set alla libreria CAS. Se non viene utilizzato alcun argomento, l&apos;elenco dei data set contiene il nome del data set completo (libreria.dataset). Se si utilizza l&apos;argomento, l&apos;elenco dei data set è un elenco di nomi di data set.
 
@@ -1023,7 +1023,7 @@ Show( datasets );
 
 #### Get Libraries
 
-**Sintassi:** cas << Get Libraries()
+**Sintassi:** cas &lt;&lt; Get Libraries()
 
 **Descrizione:** Ottiene un elenco di librerie CAS disponibili.
 
@@ -1041,7 +1041,7 @@ Show( libraries );
 
 #### Get Session
 
-**Sintassi:** cas << Get Session()
+**Sintassi:** cas &lt;&lt; Get Session()
 
 **Descrizione:** Ottiene l&apos;ID di sessione dal server CAS. Può essere utilizzato per successive connessioni fino a quando la sessione CAS rimane disponibile.
 
@@ -1066,7 +1066,7 @@ cas = CAS Connect(
 
 #### Get Sessions
 
-**Sintassi:** cas << Get Sessions()
+**Sintassi:** cas &lt;&lt; Get Sessions()
 
 **Descrizione:** Ottiene le sessioni disponibili per l&apos;utente corrente.
 
@@ -1085,7 +1085,7 @@ Show( session_ids );
 
 #### Import Data
 
-**Sintassi:** cas << Import Data(libref, dataset, <named_arguments>)
+**Sintassi:** cas &lt;&lt; Import Data(libref, dataset, &lt;named_arguments&gt;)
 
 **Descrizione:** Importa una tabella da un server CAS. Gli argomenti facoltativi sono Invisible(0|1), Private(0|1) e UseLabelsForVarNames(0|1).
 
@@ -1103,7 +1103,7 @@ cas << Import Data( "Casuser.Big Class" );
 
 #### Is Connected
 
-**Sintassi:** cas << Is Connected()
+**Sintassi:** cas &lt;&lt; Is Connected()
 
 **Descrizione:** Restituisce 1 se esiste una connessione al server CAS attiva, in caso contrario 0.
 
@@ -1121,7 +1121,7 @@ Show( connected );
 
 #### Remove Table
 
-**Sintassi:** cas << Remove Table(tablename, <Quiet(0|1), reMACs(0|1), Delete(0|1)>)
+**Sintassi:** cas &lt;&lt; Remove Table(tablename, &lt;Quiet(0|1), reMACs(0|1), Delete(0|1)&gt;)
 
 **Descrizione:** Questa operazione ignora la tabella in memoria. Il file creato con l&apos;operazione di salvataggio non è coinvolto. Se si specifica l&apos;eliminazione, la tabella sarà eliminata anche dal file system.
 
@@ -1139,7 +1139,7 @@ cas << Remove Table( "Casuser", "Big Class" );
 
 #### Submit
 
-**Sintassi:** cas << Submit(action)
+**Sintassi:** cas &lt;&lt; Submit(action)
 
 **Descrizione:** Esegue un&apos;operazione CAS sul server CAS.
 
@@ -1162,7 +1162,7 @@ rc = cas << Submit( action );
 
 #### Terminate
 
-**Sintassi:** cas << Terminate(sessionId))
+**Sintassi:** cas &lt;&lt; Terminate(sessionId))
 
 **Descrizione:** Termina una sessione CAS di proprietà dell&apos;utente corrente. Un utente non può interrompere un ID di sessione connesso
 
@@ -1182,7 +1182,7 @@ cas << Terminate( session_id );
 
 #### Terminate Sessions
 
-**Sintassi:** cas << Terminate Sessions()
+**Sintassi:** cas &lt;&lt; Terminate Sessions()
 
 **Descrizione:** Termina tutte le sessioni CAS di proprietà dell&apos;utente corrente.
 

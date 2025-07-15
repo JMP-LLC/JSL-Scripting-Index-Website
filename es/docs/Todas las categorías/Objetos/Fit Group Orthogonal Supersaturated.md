@@ -6,7 +6,7 @@
 
 ### X
 
-**Sintaxis:** obj << X( column(s) )
+**Sintaxis:** obj &lt;&lt; X( column(s) )
 
 **JMP Versión agregada:** 15
 
@@ -22,7 +22,7 @@ dt << Fit Group Orthogonal Supersaturated( X( 1 :: 7 ), Y( :Response ) );
 
 ### Y
 
-**Sintaxis:** obj << Y( column(s) )
+**Sintaxis:** obj &lt;&lt; Y( column(s) )
 
 **JMP Versión agregada:** 15
 
@@ -58,7 +58,7 @@ dt << Fit Group Orthogonal Supersaturated( X( 1 :: 7 ), Y( :Response ) );
 
 ### Action
 
-**Sintaxis:** obj << Action
+**Sintaxis:** obj &lt;&lt; Action
 
 **Descripción:** Trampa multiuso dentro de una plataforma para insertar expresiones que se desean evaluar. Temporalmente establece los contextos de cuadros de visualización y tablas de datos en la plataforma.
 
@@ -76,7 +76,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descripción:** Aplica al objeto un preajuste creado previamente, actualizando las opciones y personalizaciones para que coincidan con la configuración guardada.
 
@@ -123,7 +123,7 @@ obj2 << Apply Preset( preset );
 
 ### Automatic Recalc
 
-**Sintaxis:** obj << Automatic Recalc( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Descripción:** Rehace automáticamente el análisis para modificaciones de datos y de exclusión. Si está activada la opción Recálculo automático, le recomendamos que utilice los comandos Wait(0) para asegurarse de que las modificaciones de datos y de exclusión surtan efecto antes del recálculo.
 
@@ -141,7 +141,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Column Switcher
 
-**Sintaxis:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Sintaxis:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Descripción:** Añade un panel de control para cambiar las variables de la plataforma
 
@@ -159,7 +159,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy Script
 
-**Sintaxis:** obj << Copy Script
+**Sintaxis:** obj &lt;&lt; Copy Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -176,7 +176,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Sintaxis:** obj << Data Table Window
+**Sintaxis:** obj &lt;&lt; Data Table Window
 
 **Descripción:** Mueve al frente la ventana de la tabla de datos que se utiliza en este análisis.
 
@@ -193,7 +193,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Sintaxis:** obj << Get By Levels
+**Sintaxis:** obj &lt;&lt; Get By Levels
 
 **Descripción:** Devuelve un arreglo asociativo que asigna las columnas Por grupo a sus valores.
 
@@ -210,7 +210,7 @@ biv << Get By Levels;
 
 ### Get Container
 
-**Sintaxis:** obj << Get Container
+**Sintaxis:** obj &lt;&lt; Get Container
 
 **Descripción:** Devuelve una referencia al cuadro contenedor que incluye el contenido del objeto.
 
@@ -259,7 +259,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Sintaxis:** obj << Get Data Table
+**Sintaxis:** obj &lt;&lt; Get Data Table
 
 **Descripción:** Devuelve una referencia a la tabla de datos.
 
@@ -277,7 +277,7 @@ Show( N Rows( t ) );
 
 ### Get Script
 
-**Sintaxis:** obj << Get Script
+**Sintaxis:** obj &lt;&lt; Get Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -295,7 +295,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Sintaxis:** obj << Get Script With Data Table
+**Sintaxis:** obj &lt;&lt; Get Script With Data Table
 
 **Descripción:** Crea un script (JSL) para generar este análisis haciendo referencia específica a esta tabla de datos y lo devuelve en forma de expresión.
 
@@ -313,7 +313,7 @@ Show( t );
 
 ### Get Timing
 
-**Sintaxis:** obj << Get Timing
+**Sintaxis:** obj &lt;&lt; Get Timing
 
 **Descripción:** Determina el tiempo de inicio de una plataforma.
 
@@ -331,7 +331,7 @@ Show( t );
 
 ### Get Web Support
 
-**Sintaxis:** obj << Get Web Support
+**Sintaxis:** obj &lt;&lt; Get Web Support
 
 **Descripción:** Devuelve un número que indica el nivel de compatibilidad del HTML interactivo para el objeto de visualización. 1 significa que algunos o todos los elementos son compatibles. 0 significa que no existe compatibilidad.
 
@@ -347,7 +347,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Sintaxis:** obj << Get Where Expr
+**Sintaxis:** obj &lt;&lt; Get Where Expr
 
 **Descripción:** Devuelve la expresión Where para el subconjunto de datos, si la plataforma se inició con By() o Where(). De lo contrario, devuelve Empty().
 
@@ -420,7 +420,7 @@ preset = obj << New Preset();
 
 ### Redo Analysis
 
-**Sintaxis:** obj << Redo Analysis
+**Sintaxis:** obj &lt;&lt; Redo Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -437,7 +437,7 @@ obj << Redo Analysis;
 
 ### Relaunch Analysis
 
-**Sintaxis:** obj << Relaunch Analysis
+**Sintaxis:** obj &lt;&lt; Relaunch Analysis
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -454,7 +454,7 @@ obj << Relaunch Analysis;
 
 ### Remove Column Switcher
 
-**Sintaxis:** obj << Remove Column Switcher
+**Sintaxis:** obj &lt;&lt; Remove Column Switcher
 
 **Descripción:** Quita el Cambiador de columnas más reciente que se haya agregado a la plataforma.
 
@@ -491,9 +491,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Sintaxis:** obj << Report;
-
-Report( obj )
+**Sintaxis:** obj &lt;&lt; Report;Report( obj )
 
 **Descripción:** Devuelve una referencia al objeto informe.
 
@@ -512,7 +510,7 @@ Show( t );
 
 ### Save Script for All Objects
 
-**Sintaxis:** obj << Save Script for All Objects
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects
 
 **Descripción:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -529,7 +527,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Sintaxis:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descripción:** Guarda un script para todos los objetos de informe en la tabla de datos actual. Esta opción es útil cuando tiene varios informes en la ventana. El script recibe el nombre de la primera plataforma a menos que especifique el nombre del script entre comillas.
 
@@ -571,7 +569,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Sintaxis:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis y lo guarda en forma de propiedad de tabla en la tabla de datos.
 
@@ -588,7 +586,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Sintaxis:** obj << Save Script to Journal
+**Sintaxis:** obj &lt;&lt; Save Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -605,7 +603,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Sintaxis:** obj << Save Script to Report
+**Sintaxis:** obj &lt;&lt; Save Script to Report
 
 **Descripción:** Crea un script JSL para generar este análisis y lo muestra en el propio informe. Resulta útil para conservar un registro impreso de lo que se ha hecho.
 
@@ -622,7 +620,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Sintaxis:** obj << Save Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -704,7 +702,7 @@ dt << Distribution(
 
 ### Title
 
-**Sintaxis:** obj << Title( "new title" )
+**Sintaxis:** obj &lt;&lt; Title( "new title" )
 
 **Descripción:** Establece el título de la plataforma.
 
@@ -721,7 +719,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Sintaxis:** obj << Top Report
+**Sintaxis:** obj &lt;&lt; Top Report
 
 **Descripción:** Devuelve una referencia al nodo raíz del informe.
 
@@ -740,7 +738,7 @@ Show( t );
 
 ### View Web XML
 
-**Sintaxis:** obj << View Web XML
+**Sintaxis:** obj &lt;&lt; View Web XML
 
 **Descripción:** Devuelve el código XML que se utiliza para crear el informe HTML interactivo.
 

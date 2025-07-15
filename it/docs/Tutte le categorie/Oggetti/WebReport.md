@@ -6,7 +6,7 @@
 
 ### Add Image
 
-**Sintassi:** obj << Add Image("path to image" | File("path to image"), <Title(...)>,<Description(...)>)
+**Sintassi:** obj &lt;&lt; Add Image("path to image" | File("path to image"), &lt;Title(...)&gt;,&lt;Description(...)&gt;)
 
 **Descrizione:** Aggiunge un&apos;immagine da pubblicare nel report Web. Gli argomenti facoltativi comprendono il titolo e la descrizione.
 
@@ -26,7 +26,7 @@ webreport << Add Image(
 
 ### Add Report
 
-**Sintassi:** obj << Add Report( jmpreport, <Title(...)>, <Description(...)>, <Publish Data(0|1)>, <Enable Warnings(0|1)>, <Optimization("Interactivity" | "Performance")> )
+**Sintassi:** obj &lt;&lt; Add Report( jmpreport, &lt;Title(...)&gt;, &lt;Description(...)&gt;, &lt;Publish Data(0|1)&gt;, &lt;Enable Warnings(0|1)&gt;, &lt;Optimization("Interactivity" | "Performance")&gt; )
 
 **Descrizione:** Aggiunge un report da pubblicare nel report Web. Gli argomenti facoltativi comprendono il titolo e la descrizione.
 
@@ -48,7 +48,7 @@ webreport << Add Report( jmpreport );
 
 ### Add Reports
 
-**Sintassi:** obj << Add Reports( reports )
+**Sintassi:** obj &lt;&lt; Add Reports( reports )
 
 **Descrizione:** Aggiunge un elenco di report di JMP a un report Web utilizzando le opzioni predefinite.
 
@@ -82,7 +82,7 @@ If( N Items( windows ) > 0,
 
 ### Description
 
-**Sintassi:** obj << Description(...)
+**Sintassi:** obj &lt;&lt; Description(...)
 
 **Descrizione:** Imposta la descrizione del report Web.
 
@@ -118,7 +118,7 @@ If( !Is Empty( file ),
 
 ### Index
 
-**Sintassi:** obj << Index( Title(...), <Description(...)>, <Timestamp(1 | 0)>, <Font(name, style)>, <Logo(image path)>, <CSS(css path)>, <Theme(Default | Orange | Blue | Red | Green | Black)>, <Style(LargeList | SmallList | Grid | Custom)> )
+**Sintassi:** obj &lt;&lt; Index( Title(...), &lt;Description(...)&gt;, &lt;Timestamp(1 | 0)&gt;, &lt;Font(name, style)&gt;, &lt;Logo(image path)&gt;, &lt;CSS(css path)&gt;, &lt;Theme(Default | Orange | Blue | Red | Green | Black)&gt;, &lt;Style(LargeList | SmallList | Grid | Custom)&gt; )
 
 **Descrizione:** Aggiunge una pagina di indice personalizzata al report Web.
 
@@ -159,7 +159,7 @@ If( !Is Empty( file ),
 
 ### Reset
 
-**Sintassi:** obj << Reset()
+**Sintassi:** obj &lt;&lt; Reset()
 
 **Descrizione:** Reimposta il report Web a nuovi valori cancellando una eventuale designazione pubblica, percorsi di file e altre informazioni memorizzate nella cache.
 
@@ -193,7 +193,7 @@ webreport << Add Report( jmpreport );
 
 ### Save
 
-**Sintassi:** obj << Save ("directory path", <Replace(<0>|<1>)>, <Publish Data(<0>|<1>)>)
+**Sintassi:** obj &lt;&lt; Save ("directory path", &lt;Replace(&lt;0&gt;|&lt;1&gt;)&gt;, &lt;Publish Data(&lt;0&gt;|&lt;1&gt;)&gt;)
 
 **Descrizione:** Salva il report Web nella directory specificata. Al termine, viene restituito il nome del file del percorso del report pubblicato. Un report Web salvato localmente può contenere dati dell&apos;utente incorporati. Impostando il valore Publish Data su falso si crea un report usando immagini statiche invece di incorporare dati dell&apos;utente. L&apos;impostazione di default è vero.
 
@@ -219,7 +219,7 @@ If( !Is Empty( file ),
 
 ### Title
 
-**Sintassi:** obj << Title(...)
+**Sintassi:** obj &lt;&lt; Title(...)
 
 **Descrizione:** Imposta il titolo del report Web.
 

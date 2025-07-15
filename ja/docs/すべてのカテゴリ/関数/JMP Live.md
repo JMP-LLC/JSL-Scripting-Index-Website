@@ -2,11 +2,9 @@
 
 
 
-## 関数
-
 ### New JMP Live
 
-**構文:** New JMP Live(Connection("Connection Name"), <Prompt("No" | "If Needed")>)
+**構文:** New JMP Live(Connection("Connection Name"), &lt;Prompt("No" | "If Needed")&gt;)
 
 **説明:** 保存されている接続情報を使ってJMP Liveへの接続を開始する。Connectionはオプションで、「接続の管理」でデフォルトに指定されている接続がデフォルトで使用される。Connectionが指定されている場合は、名前で接続先が検索される。Promptはオプションで、デフォルトは「No」。Promptの有効な値は「Yes」、「No」、「If Needed」。「Yes」にするとログイン情報を求めるプロンプトが必ず表示される。「No」にするとログイン情報を求めるプロンプトは表示されない。「If Needed」にすると現在保存されているログイン情報が有効でない場合のみプロンプトが表示される。JMP Live接続オブジェクトを戻す。
 
@@ -41,7 +39,7 @@ jmplive = New JMP Live( Connection( "MyJMPLive" ), Prompt( If Needed ) );
 
 ### New JMP Live Content
 
-**構文:** obj = New JMP Live Content(jmpreport|Image(path_to_image)|Data(jmpdatatable)|Map(jmpmap), <Title(...)>, <Description(...)>, <Publish Data(0|1)>, <Enable Warnings(0|1)>, <Optimization("Interactivity" | "Performance")>
+**構文:** obj = New JMP Live Content(jmpreport|Image(path_to_image)|Data(jmpdatatable)|Map(jmpmap), &lt;Title(...)&gt;, &lt;Description(...)&gt;, &lt;Publish Data(0|1)&gt;, &lt;Enable Warnings(0|1)&gt;, &lt;Optimization("Interactivity" | "Performance")&gt;
 
 **説明:** JMP Liveで発行するインタラクティブなコンテンツを作成する。
 

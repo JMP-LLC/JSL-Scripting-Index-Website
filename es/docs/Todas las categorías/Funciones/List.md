@@ -2,8 +2,6 @@
 
 
 
-## Funciones
-
 ### As List
 
 **Sintaxis:** y = As List( matrix )
@@ -21,7 +19,7 @@ As List( [11 22 33, 44 55 66] );
 
 ### Concat Items
 
-**Sintaxis:** string = Concat Items( {list of strings}, <separatorString> )
+**Sintaxis:** string = Concat Items( {list of strings}, &lt;separatorString&gt; )
 
 **Descripción:** Concatena una lista de cadenas de caracteres en una sola, separándolas con el separador indicado o con un espacio en blanco si no se especifica ninguno.
 
@@ -64,7 +62,7 @@ Eval List( {x, y} );
 
 ### Insert
 
-**Sintaxis:** z = Insert( x, y, <i> )
+**Sintaxis:** z = Insert( x, y, &lt;i&gt; )
 
 **Descripción:** Devuelve una copia de la lista x con y insertado en la i-ésima posición o añadido al final si no se especifica el argumento opcional i.
 
@@ -80,7 +78,7 @@ z = Insert( z, 99, 2 );
 
 ### Insert Into
 
-**Sintaxis:** Insert Into( x, y, <i> )
+**Sintaxis:** Insert Into( x, y, &lt;i&gt; )
 
 **Descripción:** Modifica la lista, el arreglo asociativo o el cuadro de visualización x con y insertada en la colección. Las listas y cuadros de visualización admiten una variable i opcional para especificar la posición, o se añadirán los elementos si no se especifica la posición. Tenga en cuenta de que el argumento x debe ser una variable.
 
@@ -136,7 +134,7 @@ Is List( {1, 2, 3} );
 
 ### Items
 
-**Sintaxis:** wl = Items(<[first last]>, s, <delim>, <Include Boundary Delimiters(0|1)>)
+**Sintaxis:** wl = Items(&lt;[first last]&gt;, s, &lt;delim&gt;, &lt;Include Boundary Delimiters(0|1)&gt;)
 
 **Descripción:** Devuelve una lista de subcadenas de caracteres (posiblemente vacías) separadas por exactamente uno de cualquiera de los caracteres especificados en el argumento delim. En ausencia del argumento delim, se usa el carácter de espacio. Si el argumento delim es una cadena de caracteres vacía, cada carácter se trata como un elemento aparte.
 
@@ -279,7 +277,7 @@ N Items( hlist );
 
 ### Remove
 
-**Sintaxis:** y = Remove( x, <i>, <n=1> ); y = Remove( x, {list} )
+**Sintaxis:** y = Remove( x, &lt;i&gt;, &lt;n=1&gt; ); y = Remove( x, {list} )
 
 **Descripción:** Devuelve una copia de la lista x, eliminando n elementos a partir del elemento i-ésimo o eliminando una lista de elementos especificada en el argumento list.
 
@@ -294,7 +292,7 @@ Remove( {11, 22, 33, 44, 55}, 3, 2 );
 
 ### Remove From
 
-**Sintaxis:** Remove From( x, <i>, <n=1> )
+**Sintaxis:** Remove From( x, &lt;i&gt;, &lt;n=1&gt; )
 
 **Descripción:** Modifica la lista, el arreglo asociativo o el cuadro de visualización x quitando elementos. Los arreglos asociativos especifican el elemento que se quitará mediante un valor clave i. Las listas y cuadros de visualización empiezan quitando elementos por el que está en posición i. Una lista quitará múltiples elementos de una vez si se especifica la opción n. Tenga en cuenta que el argumento x debe ser una variable.
 
@@ -458,7 +456,7 @@ Show( Set Unique( :sports ) );
 
 ### Shift
 
-**Sintaxis:** y = Shift( x, <n=1> )
+**Sintaxis:** y = Shift( x, &lt;n=1&gt; )
 
 **Descripción:** Devuelve una copia de la lista x con los primeros n elementos movidos al final de la lista o bien, si n es negativo, los últimos n elementos movidos al principio.
 
@@ -473,7 +471,7 @@ Shift( {11, 22, 33, 44, 55}, 2 );
 
 ### Shift Into
 
-**Sintaxis:** Shift Into( x, <n=1> )
+**Sintaxis:** Shift Into( x, &lt;n=1&gt; )
 
 **Descripción:** Modifica la lista o el cuadro de visualización x con los primeros n elementos desplazados hasta el final de la lista, o, si n es negativo, los últimos n elementos se desplazarán al inicio. Tenga en cuenta que el argumento x debe ser una variable.
 
@@ -537,9 +535,7 @@ ex;
 
 ### Substitute
 
-**Sintaxis:** y = Substitute( x, patternExpr1, replacementExpr1, ... )
-
-y = Substitute( x, patternString1, replacementString1, ..., < <<IGNORECASE > )
+**Sintaxis:** y = Substitute( x, patternExpr1, replacementExpr1, ... )y = Substitute( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
 
 **Descripción:** Devuelve una copia de la cadena, lista o expresión x, donde cada una de las instancias de cada expresión de patrón está sustituida por la expresión de sustitución correspondiente. El argumento opcional <<IGNORECASE habilita la búsqueda de coincidencias sin distinguir entre mayúsculas y minúsculas si x es una cadena.
 
@@ -604,9 +600,7 @@ Substitute( "Apple,APPLE,apple", "apple", "orange", <<IGNORECASE );
 
 ### Substitute Into
 
-**Sintaxis:** Substitute Into( x, patternExpr1, replacementExpr1, ... )
-
-Substitute Into( x, patternString1, replacementString1, ..., < <<IGNORECASE > )
+**Sintaxis:** Substitute Into( x, patternExpr1, replacementExpr1, ... )Substitute Into( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
 
 **Descripción:** Modifica la cadena, lista o expresión x, donde cada una de las instancias de cada expresión de patrón está sustituida por la expresión de sustitución correspondiente. Tenga en cuenta que el argumento x debe ser una variable. El argumento opcional <<IGNORECASE habilita la búsqueda de coincidencias sin distinguir entre mayúsculas y minúsculas si x es una cadena.
 
@@ -658,7 +652,7 @@ Show( s );
 
 ### Words
 
-**Sintaxis:** wl = Words( <[first last]>, s, <delim>)
+**Sintaxis:** wl = Words( &lt;[first last]&gt;, s, &lt;delim&gt;)
 
 **Descripción:** Devuelve una lista de subcadenas de caracteres separadas por cualquiera de los caracteres especificados en el argumento delim. En ausencia del argumento delim, se usa el carácter de espacio. Si el argumento delim es una cadena de caracteres vacía, cada carácter se trata como una palabra aparte.
 

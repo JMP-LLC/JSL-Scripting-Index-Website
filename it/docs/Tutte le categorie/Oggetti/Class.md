@@ -6,7 +6,7 @@
 
 ### Define Class
 
-**Sintassi:** Define Class("class name", <Base Class{ "base class name", ... }>, <Show( All( boolean ) | ( Members( boolean ) | Methods( boolean ) | Functions( boolean ) )+ )>, { method* | member* | function* } )
+**Sintassi:** Define Class("class name", &lt;Base Class{ "base class name", ... }&gt;, &lt;Show( All( boolean ) | ( Members( boolean ) | Methods( boolean ) | Functions( boolean ) )+ )&gt;, { method* | member* | function* } )
 
 **Descrizione:** Crea una classe in cui tutti i metodi e le variabili delle classi creati sono definito solo entro il nome della classe specificato.
 
@@ -31,7 +31,7 @@ clref = New Object( Test() );
 
 ### Clone
 
-**Sintassi:** obj << Clone
+**Sintassi:** obj &lt;&lt; Clone
 
 **Descrizione:** Clona il contenuto di un riferimento della classe per creare un nuovo oggetto
 
@@ -59,7 +59,7 @@ Show( clref == nclref );
 
 ### Contains
 
-**Sintassi:** obj << Contains( string )
+**Sintassi:** obj &lt;&lt; Contains( string )
 
 **Descrizione:** Restituisce 1 se la classe contiene l&apos;espressione stringa specificata e 0 in caso contrario.
 
@@ -85,7 +85,7 @@ result = clref << Contains( "nObs" );
 
 ### Delete Class
 
-**Sintassi:** clref << Delete Class( < Force( boolean ) > )
+**Sintassi:** clref &lt;&lt; Delete Class( &lt; Force( boolean ) &gt; )
 
 **Descrizione:** Elimina questa classe.
 
@@ -112,7 +112,7 @@ Show( clref );
 
 ### Equal
 
-**Sintassi:** obj << Equal( classref )
+**Sintassi:** obj &lt;&lt; Equal( classref )
 
 **Descrizione:** Confronta l&apos;argomento di riferimento della classe con il riferimento della classe target per l&apos;uguaglianza
 
@@ -141,7 +141,7 @@ Show( clref << Equal( nclref ) );
 
 ### First
 
-**Sintassi:** obj << First
+**Sintassi:** obj &lt;&lt; First
 
 **Descrizione:** Restituisce l&apos;espressione stringa come primo elemento in questa classe.
 
@@ -167,7 +167,7 @@ result = clref << First;
 
 ### Get Contents
 
-**Sintassi:** obj << Get Contents
+**Sintassi:** obj &lt;&lt; Get Contents
 
 **Descrizione:** Restituisce un elenco degli elementi in questa classe. Ciascun elemento è un elenco a due voci, costituito dalla chiave e dal suo valore associato.
 
@@ -193,7 +193,7 @@ result = clref << Get Contents;
 
 ### Get Keys
 
-**Sintassi:** obj << Get Keys
+**Sintassi:** obj &lt;&lt; Get Keys
 
 **Descrizione:** Restituisce un elenco delle chiavi in questa classe. Una chiave è una rappresentazione in forma di stringa di un singolo elemento contenuto nella classe.
 
@@ -219,7 +219,7 @@ result = clref << Get Keys;
 
 ### Get Name
 
-**Sintassi:** obj << Get Name
+**Sintassi:** obj &lt;&lt; Get Name
 
 **Descrizione:** Restituisce il nome di questa classe.
 
@@ -245,7 +245,7 @@ class name = clref << Get Name;
 
 ### Get Value
 
-**Sintassi:** obj << Get Value( string )
+**Sintassi:** obj &lt;&lt; Get Value( string )
 
 **Descrizione:** Restituisce il valore dell&apos;elemento specificato in questa classe. La chiave dell&apos;elemento è una stringa.
 
@@ -271,7 +271,7 @@ result = clref << Get Value( "nObs" );
 
 ### Get Values
 
-**Sintassi:** obj << Get Values
+**Sintassi:** obj &lt;&lt; Get Values
 
 **Descrizione:** Restituisce un elenco dei valori che corrispondono a ciascun elemento in questa classe.
 
@@ -297,7 +297,7 @@ result = clref << Get Values;
 
 ### Insert
 
-**Sintassi:** obj << Insert( string, value )
+**Sintassi:** obj &lt;&lt; Insert( string, value )
 
 **Descrizione:** Inserisce in questa classe un&apos;espressione stringa avente il valore specificato.
 
@@ -324,7 +324,7 @@ Show( clref );
 
 ### Lock Class
 
-**Sintassi:** obj << Lock Class( <string, | {string, ...}>* )
+**Sintassi:** obj &lt;&lt; Lock Class( &lt;string, | {string, ...}&gt;* )
 
 **Descrizione:** Blocca tutti i membri del metodo o i membri nominati specificati in questa classe ed evita che vengano aggiunti, modificati o rimossi.
 
@@ -351,7 +351,7 @@ Try( clref:nObs = 40, "clref is locked." );
 
 ### N Items
 
-**Sintassi:** obj << N Items
+**Sintassi:** obj &lt;&lt; N Items
 
 **Descrizione:** Restituisce il numero di elementi contenuti in questa classe.
 
@@ -377,7 +377,7 @@ n = clref << N Items;
 
 ### Next
 
-**Sintassi:** obj << Next( string )
+**Sintassi:** obj &lt;&lt; Next( string )
 
 **Descrizione:** Restituisce l&apos;espressione stringa come elemento successivo dopo la chiave specificata in questa classe.
 
@@ -403,7 +403,7 @@ result = clref << Next( "addition" );
 
 ### Remove
 
-**Sintassi:** obj << Remove( <string | {string, ...}>* )
+**Sintassi:** obj &lt;&lt; Remove( &lt;string | {string, ...}&gt;* )
 
 **Descrizione:** Rimuove l&apos;espressione stringa specificata dalla classe.
 
@@ -430,7 +430,7 @@ Show( clref );
 
 ### Show Contents
 
-**Sintassi:** obj << Show Contents
+**Sintassi:** obj &lt;&lt; Show Contents
 
 **Descrizione:** Mostra il contenuto di una classe del log di JMP.
 
@@ -456,7 +456,7 @@ result = clref << Show Contents;
 
 ### Unlock Class
 
-**Sintassi:** obj << Unlock Class( <string | {string, ...}>* )
+**Sintassi:** obj &lt;&lt; Unlock Class( &lt;string | {string, ...}&gt;* )
 
 **Descrizione:** Sblocca una classe bloccata contenente i membri del metodo a cui era stato evitato di essere aggiunti, modificato o rimossi.
 

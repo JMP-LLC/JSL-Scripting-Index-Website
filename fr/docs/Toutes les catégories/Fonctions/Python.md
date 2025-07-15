@@ -2,8 +2,6 @@
 
 
 
-## Fonctions
-
 ### Python Connect
 
 **Syntaxe :** PythonConnection = Python Connect ()
@@ -51,7 +49,7 @@ conn << Create JPIP CMD();
 
 ### Python Execute
 
-**Syntaxe :** Python Execute( { list of Inputs }, { list of Outputs }, statements < , echo( 1 | 0 ) > )
+**Syntaxe :** Python Execute( { list of Inputs }, { list of Outputs }, statements &lt; , echo( 1 | 0 ) &gt; )
 
 **Description :** Envoie une liste des entrées, exécute les instructions et renvoie une liste des sorties. Le paramètre facultatif echo() est défini par défaut sur Vrai. Le paramètre echo contrôle l&apos;affichage du code source Python dans le log. La valeur logique Vrai (1) active l&apos;affichage du code source, tandis que 0 supprime l&apos;affichage dans le log.
 
@@ -324,7 +322,7 @@ Python Submit( "print(pi)" );
 
 ### Python Send
 
-**Syntaxe :** Python Send( name, <Python Name( name ) | "as_name" > )
+**Syntaxe :** Python Send( name, &lt;Python Name( name ) | "as_name" &gt; )
 
 **Description :** Sends data to Python, where the name argument can represent any of the following JMP data types ( numeric | string | matrix | list | data table | data table column | date ).
 
@@ -371,7 +369,7 @@ Python Submit( "print(dt)" );
 
 ### Python Send File
 
-**Syntaxe :** Python Send File( filename, <Python Name( name )> )
+**Syntaxe :** Python Send File( filename, &lt;Python Name( name )&gt; )
 
 **Description :** Envoie un fichier de données à Python, où l’argument de filename est une chaîne qui indique un chemin d’accès vers le fichier à envoyer à Python.
 
@@ -390,7 +388,7 @@ Python Submit( "print(Baseball)" );
 
 ### Python Submit
 
-**Syntaxe :** Python Submit( statements < , echo( 1 | 0 ) > )
+**Syntaxe :** Python Submit( statements &lt; , echo( 1 | 0 ) &gt; )
 
 **Description :** Soumet des instructions à Python. Les instructions peuvent être sous forme de chaînes de caractères ou d&apos;une liste de chaînes de caractères. Le paramètre facultatif echo() est défini par défaut sur 1. Le paramètre echo contrôle l&apos;affichage du code source Python dans le log. La valeur logique Vrai (1) active l&apos;affichage du code source, tandis que 0 supprime l&apos;affichage dans le log.
 

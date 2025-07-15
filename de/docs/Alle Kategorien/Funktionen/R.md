@@ -2,8 +2,6 @@
 
 
 
-## Funktionen
-
 ### R Connect
 
 **Syntax:** RConnection = R Connect()
@@ -173,7 +171,7 @@ R name = R JMP Name to R Name( a b c );
 
 ### R Send
 
-**Syntax:** R Send( name, <R Name( as_name ) | "as_name"> )
+**Syntax:** R Send( name, &lt;R Name( as_name ) | "as_name"&gt; )
 
 **Beschreibung:** Sendet Daten an R. Das Argument name kann jeden der folgenden JMP-Datentypen darstellen (numeric | string | matrix | list | data table | data table column).
 
@@ -210,7 +208,7 @@ w = R Get( "weight" );
 
 ### R Send File
 
-**Syntax:** R Send File( filename, <R Name( name )> )
+**Syntax:** R Send File( filename, &lt;R Name( name )&gt; )
 
 **Beschreibung:** Sendet eine Datendatei an R; dabei ist das filename-Argument eine Zeichenkette, die den Pfadnamen der an R zu sendenden Datei angibt.
 

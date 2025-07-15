@@ -2,11 +2,9 @@
 
 
 
-## Funktionen
-
 ### As SQL Expr
 
-**Syntax:** y = As SQL Expr( x, <style> )
+**Syntax:** y = As SQL Expr( x, &lt;style&gt; )
 
 **Beschreibung:** Gibt eine Zeichenkette zurück, die den Ausdruck – konvertiert in eine gültige SQL-Syntax – zur Verwendung in einer SQL-Select-Anweisung enthält.
 
@@ -36,7 +34,7 @@ Close Database Connection( databaseConnectionHandle );
 
 ### Create Database Connection
 
-**Syntax:** dbc = Create Database Connection( dataSourceName|"Connect Dialog", <DriverPrompt(true|false)> )
+**Syntax:** dbc = Create Database Connection( dataSourceName|"Connect Dialog", &lt;DriverPrompt(true|false)&gt; )
 
 **Beschreibung:** Erstellt eine Datenbankverbindung und gibt einen Handle auf die Verbindung zurück. Wenn DriverPrompt wahr ist, wird der Benutzer über die Eingabeaufforderung des ODBC-Treibers aufgefordert, gegebenenfalls seine Benutzerdaten einzugeben.
 
@@ -53,7 +51,7 @@ dbc = Create Database Connection(
 
 ### Execute SQL
 
-**Syntax:** dt = Execute SQL(databaseConnectionHandle|dataConnector,  "SELECT ..."|"SQLFILE=..."|tableName, <invisible(0|1)>, <outputTableName>, <Batch Submit(0|1)> )
+**Syntax:** dt = Execute SQL(databaseConnectionHandle|dataConnector, "SELECT ..."|"SQLFILE=..."|tableName, &lt;invisible(0|1)&gt;, &lt;outputTableName&gt;, &lt;Batch Submit(0|1)&gt; )
 
 **Beschreibung:** Führt SQL mit einer Datenbankverbindung aus, die von „Datenbankverbindung erstellen“ oder einem Datenkonnektor zurückgegeben wurde. Die Aktivierung von „Batch absenden“ ermöglicht den Empfang mehrerer Ergebnisse von mehreren SQL-Anweisungen und die Rückgabe einer Liste mit den Ergebnissen (nur unterstützende Treiber).
 
@@ -98,7 +96,7 @@ resultList = Execute SQL(
 
 ### New Data Connector
 
-**Syntax:** result = New Data Connector( Type( type ) | ID( id ) | File( path ) | Spec( string ) | Base( data connector ), < Option1( value1 ) >, ..., < OptionN( valueN ) > )
+**Syntax:** result = New Data Connector( Type( type ) | ID( id ) | File( path ) | Spec( string ) | Base( data connector ), &lt; Option1( value1 ) &gt;, ..., &lt; OptionN( valueN ) &gt; )
 
 **Beschreibung:** Erstellt ein Konfigurationsobjekt für einen Datenkonnektor.
 
@@ -141,11 +139,7 @@ New SQL Query( Connection( dc ) ) << Modify;
 
 ### New SQL Query
 
-**Syntax:** obj = New SQL Query( Connection( "ODBC:my_connection_string" ), Select( Column( "mycolumn", "t1" ) ), From( Table( "my_table", Schema( "my_schema" ), Alias( "t1" ) ) ) );
-
-
-
-		obj = New SQL Query( Connection( "ODBC:my_connection_string;" ), CustomSQL( "SELECT c1, c2, c3 FROM my_table;" ) )
+**Syntax:** obj = New SQL Query( Connection( "ODBC:my_connection_string" ), Select( Column( "mycolumn", "t1" ) ), From( Table( "my_table", Schema( "my_schema" ), Alias( "t1" ) ) ) ); obj = New SQL Query( Connection( "ODBC:my_connection_string;" ), CustomSQL( "SELECT c1, c2, c3 FROM my_table;" ) )
 
 **Beschreibung:** Erstellt ein SQL-Abfrageobjekt für die angegebene Verbindung, Spalten und Tabelle oder für die angegebene benutzerdefinierte SQL-Abfrage. Erzeugen Sie mit der Funktion „Abfrage erstellen“ Skripte, die Abfragen erstellen.
 
@@ -165,7 +159,7 @@ obj = New SQL Query(
 
 ### Open Database
 
-**Syntax:** dt = Open Database( dataSourceName|"Connect Dialog", "SELECT ..."|"SQLFILE=..."|tableName, <invisible | private>, <outputTableName> )
+**Syntax:** dt = Open Database( dataSourceName|"Connect Dialog", "SELECT ..."|"SQLFILE=..."|tableName, &lt;invisible | private&gt;, &lt;outputTableName&gt; )
 
 **Beschreibung:** Öffnet eine Datentabelle mittels ODBC, führt das vorgegebene SQL aus und legt die Daten in einer Datentabelle mit dem angegebenen Ausgabetabellennamen ab.
 
@@ -184,9 +178,7 @@ Open Database(
 
 ### Query
 
-**Syntax:** result = Query( < < dt1 | Table( dt1, alias1 ) >, ..., < dtN | Table( dtN, aliasN ) > >,
-
-     <Private|Invisible>, <Scalar>, sqlStatement )
+**Syntax:** result = Query( &lt; &lt; dt1 | Table( dt1, alias1 ) &gt;, ..., &lt; dtN | Table( dtN, aliasN ) &gt; &gt;, &lt;Private|Invisible&gt;, &lt;Scalar&gt;, sqlStatement )
 
 **Beschreibung:** Eine SQL-Abfrage auf JMP-Datentabellen durchführen. sqlStatement (die SQL-Abfrage, wahrscheinlich eine SELECT-Anweisung) ist erforderlich und muss das letzte Argument sein. Von der SQL-Anweisung referenzierte JMP-Datentabellen müssen als Argumente an Query() übergeben werden, wobei mittels Table(dt, "Alias") ein Alias für die Tabelle erstellt wird, den die SQL ggf. verwenden kann. „Unsichtbar“ oder „Privat“ kann übergeben werden, um die Sichtbarkeit der resultierenden Datentabelle zu steuern. Wenn die SQL-Anweisung einen einzelnen Wert zurückgibt, übergeben Sie „Skalar“, wodurch statt einer Datentabelle der einzelne Wert zurückgegeben wird.
 
@@ -226,11 +218,7 @@ retval = Query( Scalar, "SELECT SQRT(152399025);" );
 
 ### New SQL Query
 
-**Syntax:** obj = New SQL Query( Connection( "ODBC:DSN=SampleDSN" ), Select( Column( "mycolumn", "t1" ) ), From( Table( "my_table", Schema( "my_schema" ), Alias( "t1" ) ) ) );
-
-
-
-obj = New SQL Query( Connection( "ODBC:DSN=SampleDSN;" ), Custom SQL( "SELECT c1, c2, c3 FROM my_table;" ) )
+**Syntax:** obj = New SQL Query( Connection( "ODBC:DSN=SampleDSN" ), Select( Column( "mycolumn", "t1" ) ), From( Table( "my_table", Schema( "my_schema" ), Alias( "t1" ) ) ) );obj = New SQL Query( Connection( "ODBC:DSN=SampleDSN;" ), Custom SQL( "SELECT c1, c2, c3 FROM my_table;" ) )
 
 **Beschreibung:** Erstellt ein SQL-Abfrageobjekt für die angegebene Verbindung, Spalten und Tabelle oder für die angegebene benutzerdefinierte SQL-Abfrage. Erzeugen Sie mit der Funktion „Abfrage erstellen“ Skripte, die Abfragen erstellen.
 
@@ -251,7 +239,7 @@ obj = New SQL Query(
 
 #### CustomSQL
 
-**Syntax:** obj << Custom SQL( sql )
+**Syntax:** obj &lt;&lt; Custom SQL( sql )
 
 **Beschreibung:** Macht aus der Abfrage eine benutzerdefinierte SQL-Abfrage und legt die SQL fest.
 
@@ -268,7 +256,7 @@ obj << Custom SQL( "SELECT c4, c5, c6 FROM my_table;" );
 
 #### GenerateSQL
 
-**Syntax:** sql = obj << Generate SQL
+**Syntax:** sql = obj &lt;&lt; Generate SQL
 
 **Beschreibung:** Generiert die SQL-Anweisung für die Abfrage und gibt sie zurück.
 
@@ -285,7 +273,7 @@ sql = obj << Generate SQL;
 
 #### Modify
 
-**Syntax:** obj << Modify
+**Syntax:** obj &lt;&lt; Modify
 
 **Beschreibung:** Öffnet die Abfrage in „Abfrage erstellen“.
 
@@ -298,7 +286,7 @@ query << Modify;
 
 #### PostQueryScript
 
-**Syntax:** obj << Post Query Script( script_as_text )
+**Syntax:** obj &lt;&lt; Post Query Script( script_as_text )
 
 **Beschreibung:** Legt das JSL-Skript fest, das nach jeder Ausführung der Abfrage ausgeführt werden soll.
 
@@ -315,7 +303,7 @@ obj << Post Query Script( "show( queryResult << Get As Matrix );" );
 
 #### QueryName
 
-**Syntax:** obj << Query Name( <newName> )
+**Syntax:** obj &lt;&lt; Query Name( &lt;newName&gt; )
 
 **Beschreibung:** Ruft den Namen der Abfrage ab oder legt ihn fest. Der Name der Abfrage wird als Name der Datentabelle verwendet, die aus der Abfrage resultiert.
 
@@ -334,7 +322,7 @@ Show( name );
 
 #### Run
 
-**Syntax:** result = obj << Run( <Private|Invisible>, <UpdateTable(table)>, <OnRunComplete(script)>, <OnRunCanceled(script)>, <OnError(script)> )
+**Syntax:** result = obj &lt;&lt; Run( &lt;Private|Invisible&gt;, &lt;UpdateTable(table)&gt;, &lt;OnRunComplete(script)&gt;, &lt;OnRunCanceled(script)&gt;, &lt;OnError(script)&gt; )
 
 **Beschreibung:** Abfrage ausführen. Die Abfrage kann abhängig von der Voreinstellung unter „Abfrage erstellen“ im Vordergrund oder im Hintergrund ausgeführt werden. Wenn „UpdateTable“ angegeben ist, wird die Abfrage im Vordergrund ausgeführt. Wenn die Abfrage im Vordergrund ausgeführt wird, ist der Rückgabewert der Ausführung die aus der Abfrage resultierende Datentabelle. Wenn die Abfrage im Hintergrund ausgeführt wird oder einen Fehler aufweist, gibt die Ausführung keinen Wert zurück. Mit den Argumenten OnRunComplete, OnRunCanceled und OnError führen Sie ein Skript aus, wenn die Abfrage beendet ist.
 
@@ -347,7 +335,7 @@ query << Run;
 
 #### Run Background
 
-**Syntax:** result = obj << Run Background( <OnRunComplete(script), <Private|Invisible>>, <OnRunCanceled(script)>, <OnError(script)> )
+**Syntax:** result = obj &lt;&lt; Run Background( &lt;OnRunComplete(script), &lt;Private|Invisible&gt;&gt;, &lt;OnRunCanceled(script)&gt;, &lt;OnError(script)&gt; )
 
 **Beschreibung:** Abfrage im Hintergrund ausführen. Die aus der Abfrage resultierende Datentabelle wird nach Abschluss der Abfrage geöffnet. Mit den Argumenten OnRunComplete, OnRunCanceled und OnError führen Sie ein Skript aus, wenn die Abfrage beendet ist. „Privat“ kann nur angegeben werden, wenn auch ein OnRunComplete-Skript angegeben ist. Bei der Ausführung im Hintergrund wird kein Wert zurückgegeben.
 
@@ -369,7 +357,7 @@ query << Run Background( OnRunComplete( MyRunCompleteFunc ) );
 
 #### Run Foreground
 
-**Syntax:** result = obj << Run Foreground( <Private|Invisible>, <UpdateTable(table)>, <OnRunComplete(script)>, <OnRunCanceled(script)>, <OnError(script)> )
+**Syntax:** result = obj &lt;&lt; Run Foreground( &lt;Private|Invisible&gt;, &lt;UpdateTable(table)&gt;, &lt;OnRunComplete(script)&gt;, &lt;OnRunCanceled(script)&gt;, &lt;OnError(script)&gt; )
 
 **Beschreibung:** Abfrage im Vordergrund ausführen. Wenn die Abfrage erfolgreich ist oder mit einem Teilergebnis abgebrochen wird, wird bei der Abfrage im Vordergrund die aus der Abfrage resultierende Datentabelle zurückgegeben. Wenn die Abfrage fehlschlägt, wird bei der Abfrage im Vordergrund kein Wert zurückgegeben. Mit den Argumenten OnRunComplete, OnRunCanceled und OnError führen Sie ein Skript aus, wenn die Abfrage beendet ist.
 
@@ -391,7 +379,7 @@ query << Run Foreground( OnRunComplete( MyRunCompleteFunc ) );
 
 #### Save
 
-**Syntax:** obj << Save
+**Syntax:** obj &lt;&lt; Save
 
 **Beschreibung:** Speichert die Abfrage in der zugehörigen Datei. Das Speichern schlägt fehl, wenn die Abfrage noch keine zugehörige Datei hat.
 
@@ -406,7 +394,7 @@ obj << Save;
 
 #### Save As
 
-**Syntax:** obj << Save As( path, <ReplaceExisting(0|1)> )
+**Syntax:** obj &lt;&lt; Save As( path, &lt;ReplaceExisting(0|1)&gt; )
 
 **Beschreibung:** Speichert die Abfrage in der angegebenen Datei. Wenn die Datei bereits vorhanden ist, schlägt das Speichern fehl, sofern die vorhandene Datei nicht ersetzt werden soll.
 

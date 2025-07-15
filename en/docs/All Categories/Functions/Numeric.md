@@ -2,8 +2,6 @@
 
 
 
-## Functions
-
 ### Abs
 
 **Syntax:** y = Abs( x )
@@ -58,7 +56,7 @@ Floor( 1.2 );
 
 ### Integrate
 
-**Syntax:** y = Integrate( expr, varname, lowLimit, upLimit, <<Tolerance(1e-10), <<StoreInfo(list), <<StartingValue(val) )
+**Syntax:** y = Integrate( expr, varname, lowLimit, upLimit, &lt;&lt;Tolerance(1e-10), &lt;&lt;StoreInfo(list), &lt;&lt;StartingValue(val) )
 
 **Description:** Integrates an expression with respect to a scalar value, using adaptive quadrature method from Gander and Gautschi (2000). If the variable specified with varname has a value assigned to it or the <<StartingValue() optional argument specifies a starting value, that value is used as a typical value to improve the accuracy of the integral. To specify infinite ranges of integration, set lowLimit, upLimit, or both to missing. If <<StoreInfo() is specified, the argument of <<StoreInfo() will contain diagnostics of the numerical integration routine. If <<Tolerance() is specified, the argument of <<Tolerance() is used as the tolerance level in the autointegration function used to evaluate the integral. Smaller values result in longer run time but more precise results.
 
@@ -142,7 +140,7 @@ Normal Integrate(
 
 ### Num Deriv
 
-**Syntax:** y = Num Deriv( f( x, ... ),  <parnum>)
+**Syntax:** y = Num Deriv( f( x, ... ), &lt;parnum&gt;)
 
 **Description:** Returns the numerical derivative of the f( x,... ) function with respect to one of its arguments. You can specify that argument as the second argument in the Num Deriv function. If no second argument is specified, the derivative is taken with respect to the function&apos;s first argument. The derivative is evaluated using numeric values specified in the f( x,... ) function expression.
 
@@ -171,7 +169,7 @@ Num Deriv2( f( 2 ) );
 
 ### Round
 
-**Syntax:** y = Round( x, <n> )
+**Syntax:** y = Round( x, &lt;n&gt; )
 
 **Description:** Rounds x to n digits after the decimal point (or 0 digits if n is not specified). Note that the n argument can be negative.
 

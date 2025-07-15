@@ -6,7 +6,7 @@
 
 ### Get Fill Color
 
-**Sintassi:** obj << Get Fill Color
+**Sintassi:** obj &lt;&lt; Get Fill Color
 
 **Descrizione:** Restituisce il colore di riempimento dell&apos;elemento Modello legenda che è collegato a un segmento di visualizzazione nel grafico.
 
@@ -29,7 +29,7 @@ Show( item << Get Fill Color );
 
 ### Get Gradient Settings
 
-**Sintassi:** obj << Get Gradient Settings
+**Sintassi:** obj &lt;&lt; Get Gradient Settings
 
 **Descrizione:** Restituisce un elenco di impostazioni del gradiente per l&apos;elemento Modello legenda che è collegato a un segmento di visualizzazione nel grafico.
 
@@ -52,7 +52,7 @@ Print( item << Get Gradient Settings );
 
 ### Get Label
 
-**Sintassi:** obj << Get Label
+**Sintassi:** obj &lt;&lt; Get Label
 
 **Descrizione:** Restituisce l&apos;etichetta dell&apos;elemento modello della legenda
 
@@ -75,7 +75,7 @@ Print( item << Get Label );
 
 ### Get Marker Size Settings
 
-**Sintassi:** obj << Get Marker Size Settings
+**Sintassi:** obj &lt;&lt; Get Marker Size Settings
 
 **Descrizione:** Restituisce un elenco di impostazioni della dimensione dell&apos;indicatore per l&apos;elemento Modello legenda che è collegato a un segmento di visualizzazione nel grafico.
 
@@ -98,7 +98,7 @@ Print( item << Get Marker Size Settings );
 
 ### Get Pen Settings
 
-**Sintassi:** obj << Get Pen Settings
+**Sintassi:** obj &lt;&lt; Get Pen Settings
 
 **Descrizione:** Restituisce un elenco di impostazioni della penna per l&apos;elemento Modello legenda che è collegato a un segmento di visualizzazione nel grafico.
 
@@ -121,7 +121,7 @@ Print( item << Get Pen Settings );
 
 ### Get Type
 
-**Sintassi:** obj << Get Type
+**Sintassi:** obj &lt;&lt; Get Type
 
 **Descrizione:** Restituisce il tipo di elemento Modello legenda. I tipi sono: "Nessuno", "Indicatore", "Linea H", "Linea V", "Passo", "Barra", "Box plot V", "Intervallo H", "Intervallo V", "Box plot barra H", "Box plot barra V", "Diagramma OHLC", "Box plot H", "Gradiente", "Gradiente di densità", "Riempi e Linea", "Dimensione indicatore", "Dimensione linea", "Linea gradiente", "Gradiente profilo isometrico", "Colore indicatore", "Dimensione indicatore categorica", "Dimensione cella".
 
@@ -144,7 +144,7 @@ Print( item << Get Type );
 
 ### Set Label
 
-**Sintassi:** obj << Set Label( text )
+**Sintassi:** obj &lt;&lt; Set Label( text )
 
 **Descrizione:** Imposta l&apos;etichetta per l&apos;elemento Modello legenda che è collegato a un segmento di visualizzazione nel grafico.
 
@@ -167,7 +167,7 @@ For Each( {item, index}, items[1], item << Set Label( "Item " || Char( index ) )
 
 ### Set Properties
 
-**Sintassi:** obj << Set Properties
+**Sintassi:** obj &lt;&lt; Set Properties
 
 **Descrizione:** Imposta le proprietà di visualizzazione arbitrarie per l&apos;elemento Modello legenda che è collegato a un segmento di visualizzazione nel grafico.
 

@@ -6,7 +6,7 @@
 
 ### Action
 
-**構文:** obj << Action
+**構文:** obj &lt;&lt; Action
 
 **説明:** 評価する式を挿入するための、プラットフォーム内の汎用トラップドア。プラットフォームに一時的にディスプレイボックスおよびデータテーブルのコンテキストを設定する。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**構文:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**構文:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **説明:** 作成されたプリセットをオブジェクトに適用する。保存された設定に合わせてオプションとカスタマイズが更新される。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Copy Script
 
-**構文:** obj << Copy Script
+**構文:** obj &lt;&lt; Copy Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -84,7 +84,7 @@ obj << Copy Script;
 
 ### Get By Levels
 
-**構文:** obj << Get By Levels
+**構文:** obj &lt;&lt; Get By Levels
 
 **説明:** By列が指定されている場合、列名をキー、データ値を値とした連想配列を戻す。
 
@@ -101,7 +101,7 @@ biv << Get By Levels;
 
 ### Get Container
 
-**構文:** obj << Get Container
+**構文:** obj &lt;&lt; Get Container
 
 **説明:** オブジェクトのコンテンツを含んだコンテナボックスの参照を戻す。
 
@@ -146,7 +146,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**構文:** obj << Get Data Table
+**構文:** obj &lt;&lt; Get Data Table
 
 **説明:** データテーブルへの参照を戻す。
 
@@ -160,7 +160,7 @@ Show( N Rows( t ) );
 
 ### Get Script
 
-**構文:** obj << Get Script
+**構文:** obj &lt;&lt; Get Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -174,7 +174,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**構文:** obj << Get Script With Data Table
+**構文:** obj &lt;&lt; Get Script With Data Table
 
 **説明:** この分析を再現するスクリプト(JSL)をデータテーブルへの参照も含めて生成し、それを式として戻す。
 
@@ -188,7 +188,7 @@ Show( t );
 
 ### Get Timing
 
-**構文:** obj << Get Timing
+**構文:** obj &lt;&lt; Get Timing
 
 **説明:** プラットフォームの起動にかかった時間を取得する。
 
@@ -202,7 +202,7 @@ Show( t );
 
 ### Get Web Support
 
-**構文:** obj << Get Web Support
+**構文:** obj &lt;&lt; Get Web Support
 
 **説明:** ディスプレイオブジェクトにおけるインタラクティブHTMLサポートのレベルを数値で戻す。1は、一部または全部の要素がサポートされていることを示し、0は、サポートされないことを示す。
 
@@ -218,7 +218,7 @@ Show( s );
 
 ### Get Where Expr
 
-**構文:** obj << Get Where Expr
+**構文:** obj &lt;&lt; Get Where Expr
 
 **説明:** プラットフォームがBy()またはWhere()を使って起動された場合に、データをサブセットするためのWhere式を戻す。By()やWhere()が使われていない場合はEmpty()を戻す。
 
@@ -308,9 +308,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**構文:** obj << Report;
-
-Report( obj )
+**構文:** obj &lt;&lt; Report;Report( obj )
 
 **説明:** レポートオブジェクトへの参照を戻す。
 
@@ -325,7 +323,7 @@ Show( t );
 
 ### Save Script for All Objects
 
-**構文:** obj << Save Script for All Objects
+**構文:** obj &lt;&lt; Save Script for All Objects
 
 **説明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -338,7 +336,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**構文:** obj << Save Script for All Objects To Data Table( <name> )
+**構文:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **説明:** すべてのレポートオブジェクトを再現するスクリプトを現在のデータテーブルに保存する。このオプションは、ウィンドウ内にレポートが複数ある場合に便利。作成されるスクリプトの名前は、引用符で囲んで指定しない限り、1つ目のプラットフォーム名となる。
 
@@ -362,7 +360,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**構文:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** この分析を再現するJSLスクリプトを生成し、データテーブルのテーブルプロパティとして保存する。
 
@@ -375,7 +373,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**構文:** obj << Save Script to Journal
+**構文:** obj &lt;&lt; Save Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -388,7 +386,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**構文:** obj << Save Script to Report
+**構文:** obj &lt;&lt; Save Script to Report
 
 **説明:** この分析を再現するJSLスクリプトを生成し、レポートウィンドウに表示する。分析手順の記録を結果と一緒に残せる。
 
@@ -401,7 +399,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**構文:** obj << Save Script to Script Window
+**構文:** obj &lt;&lt; Save Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -479,7 +477,7 @@ dt << Distribution(
 
 ### Title
 
-**構文:** obj << Title( "new title" )
+**構文:** obj &lt;&lt; Title( "new title" )
 
 **説明:** プラットフォームのタイトルを設定する。
 
@@ -492,7 +490,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**構文:** obj << Top Report
+**構文:** obj &lt;&lt; Top Report
 
 **説明:** レポート内のルートノードへの参照を戻す。
 
@@ -507,7 +505,7 @@ Show( t );
 
 ### View Web XML
 
-**構文:** obj << View Web XML
+**構文:** obj &lt;&lt; View Web XML
 
 **説明:** インタラクティブHTMLレポートの作成に使うXMLコードを戻す。
 
@@ -532,25 +530,25 @@ xml = obj << View Web XML;
 
 ### Arguments
 
-**構文:** obj << Arguments
+**構文:** obj &lt;&lt; Arguments
 
 **説明:** スクリプトウィンドウからプラットフォームを実行する際に、のオプションを指定する。
 
 ### Run Cmd
 
-**構文:** obj << Run Cmd
+**構文:** obj &lt;&lt; Run Cmd
 
 **説明:** スクリプトによって、バリアント配列解析ツールセットの実行に関する設定を指定する。
 
 ### Run Spec
 
-**構文:** obj << Run Spec
+**構文:** obj &lt;&lt; Run Spec
 
 **説明:** 設定のウィンドウにおいて、バリアント配列解析ツールセットの実行に関する設定を指定する。
 
 ### Specification
 
-**構文:** obj << Specification
+**構文:** obj &lt;&lt; Specification
 
 **説明:** タスクの指定を可能にする。
 
@@ -560,31 +558,31 @@ xml = obj << View Web XML;
 
 #### Auto Send Output to Files List
 
-**構文:** obj << Auto Send Output to Files List( state=0|1 )
+**構文:** obj &lt;&lt; Auto Send Output to Files List( state=0|1 )
 
 **説明:** 出力ファイルをファイルリストのパネルに送る。
 
 #### Bam Files
 
-**構文:** obj << Bam Files
+**構文:** obj &lt;&lt; Bam Files
 
 **説明:** BAMファイルを指定する。
 
 #### Bcf Files
 
-**構文:** obj << Bcf Files
+**構文:** obj &lt;&lt; Bcf Files
 
 **説明:** BCFファイルを指定する。
 
 #### Caller
 
-**構文:** obj << Caller( "複アレル"|"コンセンサス"="複アレル" )
+**構文:** obj &lt;&lt; Caller( "複アレル"|"コンセンサス"="複アレル" )
 
 **説明:** デフォルトの値は"複アレル"。
 
 #### Copy Task Specification
 
-**構文:** obj << Copy Task Specification
+**構文:** obj &lt;&lt; Copy Task Specification
 
 **説明:** 現在のバリアント配列解析ツールセットに対する設定をクリップボードにコピーする。
 
@@ -592,91 +590,91 @@ xml = obj << View Web XML;
 
 #### Files
 
-**構文:** obj << Files
+**構文:** obj &lt;&lt; Files
 
 **説明:** SAMtoolsで実行する入力ファイルをロードする。
 
 #### Ploidy
 
-**構文:** obj << Ploidy( number=2 )
+**構文:** obj &lt;&lt; Ploidy( number=2 )
 
 **説明:** デフォルトの値は"2"。
 
 #### Recall in Task Specification
 
-**構文:** obj << Recall in Task Specification
+**構文:** obj &lt;&lt; Recall in Task Specification
 
 **説明:** 「タスクの指定」レポートにおいて、タスクの指定を指定されたモデルに設定する。
 
 #### Ref Files
 
-**構文:** obj << Ref Files
+**構文:** obj &lt;&lt; Ref Files
 
 **説明:** 参照ゲノムファイルを指定する。
 
 #### Remove Run
 
-**構文:** obj << ( Run[number] << Remove Run( state=0|1 ) )
+**構文:** obj &lt;&lt; ( Run[number] &lt;&lt; Remove Run( state=0|1 ) )
 
 **説明:** レポートウィンドウから、当該の実行のレポートを削除する。
 
 #### Results Folder
 
-**構文:** obj << Results Folder
+**構文:** obj &lt;&lt; Results Folder
 
 **説明:** 結果フォルダを指定する。
 
 #### Sam Files
 
-**構文:** obj << Sam Files
+**構文:** obj &lt;&lt; Sam Files
 
 **説明:** SAMファイルを指定する。
 
 #### Send Output to Files List
 
-**構文:** obj << Send Output to Files List( state=0|1 )
+**構文:** obj &lt;&lt; Send Output to Files List( state=0|1 )
 
 **説明:** 出力ファイルをファイルリストのパネルに送る。
 
 #### Sort Reads By
 
-**構文:** obj << Sort Reads By( "座標"|"英数字"|"文字コード"="座標" )
+**構文:** obj &lt;&lt; Sort Reads By( "座標"|"英数字"|"文字コード"="座標" )
 
 **説明:** デフォルトの値は"座標"。
 
 #### Summary
 
-**構文:** obj << Summary( state=0|1 )
+**構文:** obj &lt;&lt; Summary( state=0|1 )
 
 **説明:** 実行に関する詳細の表示/非表示を切り替える。 デフォルトではオン。
 
 #### Target Regions
 
-**構文:** obj << Target Regions
+**構文:** obj &lt;&lt; Target Regions
 
 **説明:** ターゲット領域を設定する。領域を指定するには、BAMファイルが座標で並べ替えられ、インデックスが作成されている必要がある。
 
 #### Task
 
-**構文:** obj << Task( "FASTAのインデックス作成"|"SAMをBAMに変換"|"リードの並べ替え"|"メイト座標の追加"|"重複を削除する"|"ファイルのマージ"|"BAMのインデックス作成"|"BAMをSAMに変換"|"マップされたリードの抽出"|"マップされていないリードの抽出"|"ターゲット領域の抽出"|"正常なアラインメントの抽出"|"最初のリードを抽出"|"不一致と挿入にタグを付ける"|"アラインメントをカウント"|"フラグ別にアラインメントをカウント"|"参照別にアラインメントをカウント"|"統計量の生成"|"塩基アラインメント品質の生成"|"リード深度の生成"|"Bgzipに圧縮"|"Bgzipを解凍"|"遺伝子型尤度の生成"|"遺伝子型コールの生成"|"BCFをVCFに変換"|"VCFをBCFに変換" )
+**構文:** obj &lt;&lt; Task( "FASTAのインデックス作成"|"SAMをBAMに変換"|"リードの並べ替え"|"メイト座標の追加"|"重複を削除する"|"ファイルのマージ"|"BAMのインデックス作成"|"BAMをSAMに変換"|"マップされたリードの抽出"|"マップされていないリードの抽出"|"ターゲット領域の抽出"|"正常なアラインメントの抽出"|"最初のリードを抽出"|"不一致と挿入にタグを付ける"|"アラインメントをカウント"|"フラグ別にアラインメントをカウント"|"参照別にアラインメントをカウント"|"統計量の生成"|"塩基アラインメント品質の生成"|"リード深度の生成"|"Bgzipに圧縮"|"Bgzipを解凍"|"遺伝子型尤度の生成"|"遺伝子型コールの生成"|"BCFをVCFに変換"|"VCFをBCFに変換" )
 
 **説明:** 実行するタスクを決定する。
 
 #### Title
 
-**構文:** obj << Title
+**構文:** obj &lt;&lt; Title
 
 **説明:** タイトルを設定する。
 
 #### Unthreaded
 
-**構文:** obj << Unthreaded( state=0|1 )
+**構文:** obj &lt;&lt; Unthreaded( state=0|1 )
 
 **説明:** メインスレッドだけを計算に使用する。
 
 #### Vcf Files
 
-**構文:** obj << Vcf Files
+**構文:** obj &lt;&lt; Vcf Files
 
 **説明:** VCFファイルを指定する。
 
@@ -686,91 +684,91 @@ xml = obj << View Web XML;
 
 #### Auto Send Output to Files List
 
-**構文:** obj << Auto Send Output to Files List( state=0|1 )
+**構文:** obj &lt;&lt; Auto Send Output to Files List( state=0|1 )
 
 **説明:** 出力ファイルをファイルリストのパネルに送る。
 
 #### Bam Files
 
-**構文:** obj << Bam Files
+**構文:** obj &lt;&lt; Bam Files
 
 **説明:** BAMファイルを指定する。
 
 #### Bcf Files
 
-**構文:** obj << Bcf Files
+**構文:** obj &lt;&lt; Bcf Files
 
 **説明:** BCFファイルを指定する。
 
 #### Caller
 
-**構文:** obj << Caller( "複アレル"|"コンセンサス"="複アレル" )
+**構文:** obj &lt;&lt; Caller( "複アレル"|"コンセンサス"="複アレル" )
 
 **説明:** デフォルトの値は"複アレル"。
 
 #### Files
 
-**構文:** obj << Files
+**構文:** obj &lt;&lt; Files
 
 **説明:** SAMtoolsで実行する入力ファイルをロードする。
 
 #### Ploidy
 
-**構文:** obj << Ploidy( number=2 )
+**構文:** obj &lt;&lt; Ploidy( number=2 )
 
 **説明:** 倍数性を示す正の数値を指定する。 デフォルトの値は"2"。
 
 #### Ref Files
 
-**構文:** obj << Ref Files
+**構文:** obj &lt;&lt; Ref Files
 
 **説明:** 参照ゲノムファイルを指定する。
 
 #### Results Folder
 
-**構文:** obj << Results Folder
+**構文:** obj &lt;&lt; Results Folder
 
 **説明:** 結果フォルダを指定する。
 
 #### Sam Files
 
-**構文:** obj << Sam Files
+**構文:** obj &lt;&lt; Sam Files
 
 **説明:** SAMファイルを指定する。
 
 #### Sort Reads By
 
-**構文:** obj << Sort Reads By( "座標"|"英数字"|"文字コード"="座標" )
+**構文:** obj &lt;&lt; Sort Reads By( "座標"|"英数字"|"文字コード"="座標" )
 
 **説明:** デフォルトの値は"座標"。
 
 #### Target Regions
 
-**構文:** obj << Target Regions
+**構文:** obj &lt;&lt; Target Regions
 
 **説明:** ターゲット領域を設定する。領域を指定するには、BAMファイルが座標で並べ替えられ、インデックスが作成されている必要がある。
 
 #### Task
 
-**構文:** obj << Task( "FASTAのインデックス作成"|"SAMをBAMに変換"|"リードの並べ替え"|"メイト座標の追加"|"重複を削除する"|"ファイルのマージ"|"BAMのインデックス作成"|"BAMをSAMに変換"|"マップされたリードの抽出"|"マップされていないリードの抽出"|"ターゲット領域の抽出"|"正常なアラインメントの抽出"|"最初のリードを抽出"|"不一致と挿入にタグを付ける"|"アラインメントをカウント"|"フラグ別にアラインメントをカウント"|"参照別にアラインメントをカウント"|"統計量の生成"|"塩基アラインメント品質の生成"|"リード深度の生成"|"Bgzipに圧縮"|"Bgzipを解凍"|"遺伝子型尤度の生成"|"遺伝子型コールの生成"|"BCFをVCFに変換"|"VCFをBCFに変換"="FASTAのインデックス作成" )
+**構文:** obj &lt;&lt; Task( "FASTAのインデックス作成"|"SAMをBAMに変換"|"リードの並べ替え"|"メイト座標の追加"|"重複を削除する"|"ファイルのマージ"|"BAMのインデックス作成"|"BAMをSAMに変換"|"マップされたリードの抽出"|"マップされていないリードの抽出"|"ターゲット領域の抽出"|"正常なアラインメントの抽出"|"最初のリードを抽出"|"不一致と挿入にタグを付ける"|"アラインメントをカウント"|"フラグ別にアラインメントをカウント"|"参照別にアラインメントをカウント"|"統計量の生成"|"塩基アラインメント品質の生成"|"リード深度の生成"|"Bgzipに圧縮"|"Bgzipを解凍"|"遺伝子型尤度の生成"|"遺伝子型コールの生成"|"BCFをVCFに変換"|"VCFをBCFに変換"="FASTAのインデックス作成" )
 
 **説明:** 実行するタスクを決定する。 デフォルトの値は"FASTAのインデックス作成"。
 
 #### Title
 
-**構文:** obj << Title
+**構文:** obj &lt;&lt; Title
 
 **説明:** タイトルを設定する。
 
 #### Unthreaded
 
-**構文:** obj << Unthreaded( state=0|1 )
+**構文:** obj &lt;&lt; Unthreaded( state=0|1 )
 
 **説明:** メインスレッドだけを計算に使用する。
 
 #### Vcf Files
 
-**構文:** obj << Vcf Files
+**構文:** obj &lt;&lt; Vcf Files
 
 **説明:** VCFファイルを指定する。
 

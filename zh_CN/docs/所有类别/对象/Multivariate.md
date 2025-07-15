@@ -6,7 +6,7 @@
 
 ### Action
 
-**语法:** obj << Action
+**语法:** obj &lt;&lt; Action
 
 **说明:** 平台内用于插入表达式以求值的所有用途的陷门。暂时将 DisplayBox 和 DataTable 上下文设置为平台。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**语法:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**语法:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **说明:** 将以前创建的预设应用到对象，从而更新选项和定制以匹配保存的设置。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**语法:** obj << Automatic Recalc( state=0|1 )
+**语法:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **说明:** 对排除和数据更改自动重新执行分析。若启用了“自动重新计算”选项，则应考虑使用 Wait(0) 命令来确保排除和数据更改在重新计算前生效。
 
@@ -87,7 +87,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**语法:** obj << Broadcast(message)
+**语法:** obj &lt;&lt; Broadcast(message)
 
 **说明:** 将消息广播到平台。若各个对象的返回结果是表，则它们会尽可能拼接，并且最终格式与表框中“保存合并表”选项的结果或使用“源”列的“拼接”选项的结果相同。除此之外，结果存储在列表中并返回。
 
@@ -107,7 +107,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**语法:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**语法:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **说明:** 添加用于更改平台变量的控制面板
 
@@ -125,7 +125,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**语法:** obj << Copy ByGroup Script
+**语法:** obj &lt;&lt; Copy ByGroup Script
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其置于剪贴板上。
 
@@ -148,7 +148,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**语法:** obj << Copy Script
+**语法:** obj &lt;&lt; Copy Script
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其置于剪贴板上。
 
@@ -163,7 +163,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**语法:** obj << Data Table Window
+**语法:** obj &lt;&lt; Data Table Window
 
 **说明:** 将该分析的数据表窗口移动到前面。
 
@@ -178,7 +178,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**语法:** obj << Get By Levels
+**语法:** obj &lt;&lt; Get By Levels
 
 **说明:** 返回将“依据”组列映射到其值的关联数组。
 
@@ -195,7 +195,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**语法:** obj << Get ByGroup Script
+**语法:** obj &lt;&lt; Get ByGroup Script
 
 **说明:** 创建生成该分析的脚本 (JSL)，并将其作为表达式返回。
 
@@ -219,7 +219,7 @@ Show( t );
 
 ### Get Container
 
-**语法:** obj << Get Container
+**语法:** obj &lt;&lt; Get Container
 
 **说明:** 返回对保留对象内容的容器框的引用。
 
@@ -266,7 +266,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**语法:** obj << Get Data Table
+**语法:** obj &lt;&lt; Get Data Table
 
 **说明:** 返回对该数据表的引用。
 
@@ -282,7 +282,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**语法:** obj << Get Group Platform
+**语法:** obj &lt;&lt; Get Group Platform
 
 **说明:** 若该平台是组的一部分，则返回组平台对象。否则返回 Empty()。
 
@@ -299,7 +299,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**语法:** obj << Get Script
+**语法:** obj &lt;&lt; Get Script
 
 **说明:** 创建生成该分析的脚本 (JSL)，并将其作为表达式返回。
 
@@ -315,7 +315,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**语法:** obj << Get Script With Data Table
+**语法:** obj &lt;&lt; Get Script With Data Table
 
 **说明:** 创建生成该分析的脚本 (JSL) 以专门引用该数据表，并将其作为表达式返回。
 
@@ -331,7 +331,7 @@ Show( t );
 
 ### Get Timing
 
-**语法:** obj << Get Timing
+**语法:** obj &lt;&lt; Get Timing
 
 **说明:** 平台启动过程计时。
 
@@ -347,7 +347,7 @@ Show( t );
 
 ### Get Web Support
 
-**语法:** obj << Get Web Support
+**语法:** obj &lt;&lt; Get Web Support
 
 **说明:** 返回一个数字，指示显示对象的交互式 HTML 支持的水平。1 表示支持部分或全部元素。0 表示不支持。
 
@@ -363,7 +363,7 @@ Show( s );
 
 ### Get Where Expr
 
-**语法:** obj << Get Where Expr
+**语法:** obj &lt;&lt; Get Where Expr
 
 **说明:** 若平台是使用 By() 或 Where() 启动的，则返回数据子集的 Where 表达式。否则返回 Empty()
 
@@ -400,7 +400,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**语法:** obj << Local Data Filter
+**语法:** obj &lt;&lt; Local Data Filter
 
 **说明:** 将数据过滤到特定的组或范围，但在该平台中是本地的
 
@@ -456,7 +456,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**语法:** obj << Paste Local Data Filter
+**语法:** obj &lt;&lt; Paste Local Data Filter
 
 **说明:** 将剪贴板中的本地数据过滤器应用于当前报表。
 
@@ -477,7 +477,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**语法:** obj << Redo Analysis
+**语法:** obj &lt;&lt; Redo Analysis
 
 **说明:** 在新窗口中重新运行相同的分析。若数据发生更改，分析也将不同。
 
@@ -492,7 +492,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**语法:** obj << Redo ByGroup Analysis
+**语法:** obj &lt;&lt; Redo ByGroup Analysis
 
 **说明:** 在新窗口中重新运行相同的分析。若数据发生更改，分析也将不同。
 
@@ -515,7 +515,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**语法:** obj << Relaunch Analysis
+**语法:** obj &lt;&lt; Relaunch Analysis
 
 **说明:** 打开平台启动窗口并重新调用曾用于创建报表的设置。
 
@@ -530,7 +530,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**语法:** obj << Relaunch ByGroup
+**语法:** obj &lt;&lt; Relaunch ByGroup
 
 **说明:** 打开平台启动窗口并重新调用曾用于创建报表的设置。
 
@@ -553,7 +553,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**语法:** obj << Remove Column Switcher
+**语法:** obj &lt;&lt; Remove Column Switcher
 
 **说明:** 删除已添加至平台的最近使用的“列切换器”。
 
@@ -573,7 +573,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**语法:** obj << Remove Local Data Filter
+**语法:** obj &lt;&lt; Remove Local Data Filter
 
 **说明:** 若已创建本地数据过滤器，这会将它删除并将平台恢复为直接使用数据表中的所有数据
 
@@ -612,9 +612,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**语法:** obj << Report;
-
-Report( obj )
+**语法:** obj &lt;&lt; Report;Report( obj )
 
 **说明:** 返回对该报表对象的引用。
 
@@ -631,7 +629,7 @@ Show( t );
 
 ### Report View
 
-**语法:** obj << Report View( "完全"|"汇总" )
+**语法:** obj &lt;&lt; Report View( "完全"|"汇总" )
 
 **说明:** 报表视图确定平台报表中可见的详细程度。Full 显示所有详细信息，而 Summary 仅显示根据平台确定的选定内容。对于定制行为，显示框支持 <<Set Summary Behavior 消息。
 
@@ -646,7 +644,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**语法:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**语法:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **说明:** 创建生成该分析的 JSL 脚本并将其保存为数据表中的表属性。您可以为脚本指定一个名称。Append Suffix 选项在脚本名称后追加一个数字后缀，用于将该脚本与现有的同名脚本区别出来。Prompt 选项提示用户指定脚本名称。Replace 选项会替换同名的现有脚本。
 
@@ -669,7 +667,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**语法:** obj << Save ByGroup Script to Journal
+**语法:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **说明:** 创建生成该分析的 JSL 脚本，并将一个按钮添加至包含该脚本的记录中。
 
@@ -692,7 +690,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**语法:** obj << Save ByGroup Script to Script Window
+**语法:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其追加至当前的脚本文本窗口中。
 
@@ -715,7 +713,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**语法:** obj << Save Script for All Objects
+**语法:** obj &lt;&lt; Save Script for All Objects
 
 **说明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -730,7 +728,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**语法:** obj << Save Script for All Objects To Data Table( <name> )
+**语法:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **说明:** 将所有报表对象的脚本保存至当前数据表。当您在该窗口中具有多个报表时，该选项很有用。除非您在引号中指定脚本名称，否则脚本将以第一个平台命名。
 
@@ -774,7 +772,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**语法:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**语法:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其作为表属性保存至数据表中。
 
@@ -789,7 +787,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**语法:** obj << Save Script to Journal
+**语法:** obj &lt;&lt; Save Script to Journal
 
 **说明:** 创建生成该分析的 JSL 脚本，并将一个按钮添加至包含该脚本的记录中。
 
@@ -804,7 +802,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**语法:** obj << Save Script to Report
+**语法:** obj &lt;&lt; Save Script to Report
 
 **说明:** 创建生成该分析的 JSL 脚本，并在报表中显示。有助于保留打印的已完成操作记录。
 
@@ -819,7 +817,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**语法:** obj << Save Script to Script Window
+**语法:** obj &lt;&lt; Save Script to Script Window
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其追加至当前的脚本文本窗口中。
 
@@ -899,7 +897,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**语法:** obj << Sync to Data Table Changes
+**语法:** obj &lt;&lt; Sync to Data Table Changes
 
 **说明:** 与已进行的排除和数据的更改同步。
 
@@ -916,7 +914,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**语法:** obj << Title( "new title" )
+**语法:** obj &lt;&lt; Title( "new title" )
 
 **说明:** 设置平台的标题。
 
@@ -931,7 +929,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**语法:** obj << Top Report
+**语法:** obj &lt;&lt; Top Report
 
 **说明:** 返回对报表中根节点的引用。
 
@@ -948,7 +946,7 @@ Show( t );
 
 ### Transform Column
 
-**语法:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**语法:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **说明:** 在对象（通常是平台）的本地上下文中创建变换列。变换列仅在平台的生命周期内是活动的。
 
@@ -969,7 +967,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**语法:** obj << View Web XML
+**语法:** obj &lt;&lt; View Web XML
 
 **说明:** 返回用于创建交互式 HTML 报表的 XML 代码。
 
@@ -984,9 +982,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**语法:** obj = Multivariate(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Multivariate(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 设置要为报表创建的窗口类型。默认情况下将创建 Visible 报表窗口。Invisible 窗口将不显示在屏幕上，但可被函数（例如 Window()）发现。Private 窗口会响应大多数窗口消息，但不可发现并且必须通过报表对象处理
 
@@ -1023,7 +1019,7 @@ obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :He
 
 ### By
 
-**语法:** obj << By( column(s) )
+**语法:** obj &lt;&lt; By( column(s) )
 
 ```jsl
 
@@ -1043,7 +1039,7 @@ obj = Multivariate(
 
 ### Columns
 
-**语法:** obj << Columns( column(s) )
+**语法:** obj &lt;&lt; Columns( column(s) )
 
 ```jsl
 
@@ -1055,7 +1051,7 @@ obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :He
 
 ### Freq
 
-**语法:** obj << Freq( column )
+**语法:** obj &lt;&lt; Freq( column )
 
 ```jsl
 
@@ -1071,7 +1067,7 @@ obj = Multivariate(
 
 ### Weight
 
-**语法:** obj << Weight( column )
+**语法:** obj &lt;&lt; Weight( column )
 
 ```jsl
 
@@ -1087,7 +1083,7 @@ obj = Multivariate(
 
 ### Y
 
-**语法:** obj << Y( column(s) )
+**语法:** obj &lt;&lt; Y( column(s) )
 
 ```jsl
 
@@ -1101,7 +1097,7 @@ obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :He
 
 ### CI of Correlation
 
-**语法:** obj << CI of Correlation( state=0|1 )
+**语法:** obj &lt;&lt; CI of Correlation( state=0|1 )
 
 **说明:** 显示或隐藏每个 Y 变量之间相关性以及每个相关性的置信区间的报表。
 
@@ -1116,7 +1112,7 @@ obj << CI of Correlation( 1 );
 
 ### Cluster the Correlations
 
-**语法:** obj << Cluster the Correlations( state=0|1 )
+**语法:** obj &lt;&lt; Cluster the Correlations( state=0|1 )
 
 **说明:** 显示或隐藏聚类相关性色图，随着相关性接近 1，颜色从代表负相关的蓝色开始逐渐过渡到红色。
 
@@ -1131,7 +1127,7 @@ obj << Cluster the Correlations( 1 );
 
 ### Color Map on Correlations
 
-**语法:** obj << Color Map on Correlations( state=0|1 )
+**语法:** obj &lt;&lt; Color Map on Correlations( state=0|1 )
 
 **说明:** 显示或隐藏相关性色图，随着相关性接近 1，颜色从代表负相关的蓝色开始逐渐过渡到红色。
 
@@ -1146,7 +1142,7 @@ obj << Color Map on Correlations( 1 );
 
 ### Color Map on Hoeffding's D
 
-**语法:** obj << Color Map on Hoeffding&apos;s D( state=0|1 )
+**语法:** obj &lt;&lt; Color Map on Hoeffding&apos;s D( state=0|1 )
 
 **说明:** 显示或隐藏 Hoeffding D 非参数相关性色图，随着相关性接近 1，颜色从代表负相关的蓝色开始逐渐过渡到红色。
 
@@ -1163,7 +1159,7 @@ obj << Color Map on Hoeffding's D( 1 );
 
 ### Color Map on Kendall's Tau
 
-**语法:** obj << Color Map on Kendall&apos;s Tau( state=0|1 )
+**语法:** obj &lt;&lt; Color Map on Kendall&apos;s Tau( state=0|1 )
 
 **说明:** 显示或隐藏 Kendall Tau 非参数相关性色图，随着相关性接近 1，颜色从代表负相关的蓝色开始逐渐过渡到红色。
 
@@ -1180,7 +1176,7 @@ obj << Color Map on Kendall's Tau( 1 );
 
 ### Color Map on Kendall's τ
 
-**语法:** obj << Color Map on Kendall&apos;s τ( state=0|1 )
+**语法:** obj &lt;&lt; Color Map on Kendall&apos;s τ( state=0|1 )
 
 **说明:** 显示或隐藏 Kendall Tau 非参数相关性色图，随着相关性接近 1，颜色从代表负相关的蓝色开始逐渐过渡到红色。
 
@@ -1197,7 +1193,7 @@ obj << Color Map on Kendall's Tau( 1 );
 
 ### Color Map on Pairwise Correlations
 
-**语法:** obj << Color Map on Pairwise Correlations( state=0|1 )
+**语法:** obj &lt;&lt; Color Map on Pairwise Correlations( state=0|1 )
 
 **说明:** 显示或隐藏配对相关性色图，随着相关性接近 1，颜色从代表负相关的蓝色开始逐渐过渡到红色。
 
@@ -1214,7 +1210,7 @@ obj << Color Map on Pairwise Correlations( 1 );
 
 ### Color Map on Spearman's Rho
 
-**语法:** obj << Color Map on Spearman&apos;s Rho( state=0|1 )
+**语法:** obj &lt;&lt; Color Map on Spearman&apos;s Rho( state=0|1 )
 
 **说明:** 显示或隐藏 Spearman Rho 非参数相关性色图，随着相关性接近 1，颜色从代表负相关的蓝色开始逐渐过渡到红色。
 
@@ -1231,7 +1227,7 @@ obj << Color Map on Spearman's Rho( 1 );
 
 ### Color Map on Spearman's ρ
 
-**语法:** obj << Color Map on Spearman&apos;s ρ( state=0|1 )
+**语法:** obj &lt;&lt; Color Map on Spearman&apos;s ρ( state=0|1 )
 
 **说明:** 显示或隐藏 Spearman Rho 非参数相关性色图，随着相关性接近 1，颜色从代表负相关的蓝色开始逐渐过渡到红色。
 
@@ -1248,7 +1244,7 @@ obj << Color Map on Spearman's Rho( 1 );
 
 ### Color Map on p-Values
 
-**语法:** obj << Color Map on p-Values( state=0|1 )
+**语法:** obj &lt;&lt; Color Map on p-Values( state=0|1 )
 
 **说明:** 显示或隐藏 p 值色图，随着 p 值接近 1，颜色从代表 p 值接近 0 的红色开始逐渐过渡到蓝色。
 
@@ -1263,7 +1259,7 @@ obj << "Color Map on p-Values"n( 1 );
 
 ### Correlation Probability
 
-**语法:** obj << Correlation Probability( state=0|1 )
+**语法:** obj &lt;&lt; Correlation Probability( state=0|1 )
 
 **说明:** 显示或隐藏一个 p 值矩阵，其中每个 p 值对应于变量之间的真实相关性为零的原假设的检验。
 
@@ -1278,7 +1274,7 @@ obj << Correlation Probability( 1 );
 
 ### Correlations Multivariate
 
-**语法:** obj << Correlations Multivariate( state=0|1 )
+**语法:** obj &lt;&lt; Correlations Multivariate( state=0|1 )
 
 **说明:** 显示或隐藏相关系数矩阵，该矩阵汇总每对 Y 变量之间线性关系的强度。 默认开启。
 
@@ -1293,7 +1289,7 @@ obj << Correlations Multivariate( 1 );
 
 ### Covariance Matrix
 
-**语法:** obj << Covariance Matrix( state=0|1 )
+**语法:** obj &lt;&lt; Covariance Matrix( state=0|1 )
 
 **说明:** 显示或隐藏每对 Y 变量的协方差矩阵。
 
@@ -1308,7 +1304,7 @@ obj << Covariance Matrix( 1 );
 
 ### Create SAS Job
 
-**语法:** obj << Create SAS Job
+**语法:** obj &lt;&lt; Create SAS Job
 
 **说明:** 创建 SAS Proc Mixed 代码以通过 SAS 运行类似的估计方法。
 
@@ -1323,7 +1319,7 @@ obj << Create SAS Job();
 
 ### Cronbach's Alpha
 
-**语法:** obj << Cronbach&apos;s Alpha( state=0|1 )
+**语法:** obj &lt;&lt; Cronbach&apos;s Alpha( state=0|1 )
 
 **说明:** 显示或隐藏整个变量集的 Cronbach alpha 以及每个 Y 变量单独被排除时的 alpha 的报表。
 
@@ -1338,7 +1334,7 @@ obj << Cronbach's alpha( 1 );
 
 ### Cronbach's α
 
-**语法:** obj << Cronbach&apos;s α( state=0|1 )
+**语法:** obj &lt;&lt; Cronbach&apos;s α( state=0|1 )
 
 **说明:** 显示或隐藏整个变量集的 Cronbach alpha 以及每个 Y 变量单独被排除时的 alpha 的报表。
 
@@ -1353,7 +1349,7 @@ obj << Cronbach's alpha( 1 );
 
 ### Ellipsoid 3D Plot
 
-**语法:** obj << Ellipsoid 3D Plot( column1, column2, column3 )
+**语法:** obj &lt;&lt; Ellipsoid 3D Plot( column1, column2, column3 )
 
 **说明:** 显示或隐藏展现三个选定 Y 变量的 95% 椭圆的曲面图。
 
@@ -1368,7 +1364,7 @@ obj << Ellipsoid 3D Plot( :Ether, :Chloroform, :Benzene );
 
 ### Get Correlation Matrix
 
-**语法:** obj << Get Correlation Matrix
+**语法:** obj &lt;&lt; Get Correlation Matrix
 
 **说明:** 返回相关性矩阵。
 
@@ -1384,7 +1380,7 @@ Show( corr );
 
 ### Get Inv Correlation Matrix
 
-**语法:** obj << Get Inv Correlation Matrix
+**语法:** obj &lt;&lt; Get Inv Correlation Matrix
 
 **说明:** 返回逆相关性矩阵。
 
@@ -1400,7 +1396,7 @@ Show( icorr );
 
 ### Hoeffding's D
 
-**语法:** obj << Hoeffding&apos;s D( state=0|1 )
+**语法:** obj &lt;&lt; Hoeffding&apos;s D( state=0|1 )
 
 **说明:** 显示或隐藏每对 Y 变量的 Hoeffding D 统计量的报表。
 
@@ -1415,7 +1411,7 @@ obj << Hoeffding's D( 1 );
 
 ### Hotelling's T Square Test
 
-**语法:** obj << Hotelling&apos;s T Square Test
+**语法:** obj &lt;&lt; Hotelling&apos;s T Square Test
 
 **说明:** 在原假设下给定指定的均值向量，对 Y 变量的多元分布的均值执行单样本检验。
 
@@ -1430,7 +1426,7 @@ obj << Hotelling's T Square Test( 1, 0.7, 0.5, 0, -1 );
 
 ### Impute Missing Data
 
-**语法:** obj << Impute Missing Data
+**语法:** obj &lt;&lt; Impute Missing Data
 
 **说明:** 填补所有 Y 变量的缺失值，并创建新的数据表，其中包含现有值和新填补的缺失数据值。
 
@@ -1445,7 +1441,7 @@ obj << Impute Missing Data;
 
 ### Inverse Correlations
 
-**语法:** obj << Inverse Correlations( state=0|1 )
+**语法:** obj &lt;&lt; Inverse Correlations( state=0|1 )
 
 **说明:** 显示或隐藏每个 Y 变量间的逆相关性矩阵。
 
@@ -1460,7 +1456,7 @@ obj << Inverse Correlations( 1 );
 
 ### Jackknife Distances
 
-**语法:** obj << Jackknife Distances( state = 0|1, <Save Jackknife Distances> )
+**语法:** obj &lt;&lt; Jackknife Distances( state = 0|1, &lt;Save Jackknife Distances&gt; )
 
 **说明:** 显示或隐藏图形，该图展示每一行的 jackknife 距离及指示潜在离群值的参考线。
 
@@ -1475,7 +1471,7 @@ obj << Jackknife Distances( 1 );
 
 ### Kendall's Tau
 
-**语法:** obj << Kendall&apos;s Tau( state=0|1 )
+**语法:** obj &lt;&lt; Kendall&apos;s Tau( state=0|1 )
 
 **说明:** 显示或隐藏每对 Y 变量的 Kendall Tau 统计量的报表。
 
@@ -1490,7 +1486,7 @@ obj << Kendall's Tau( 1 );
 
 ### Kendall's τ
 
-**语法:** obj << Kendall&apos;s τ( state=0|1 )
+**语法:** obj &lt;&lt; Kendall&apos;s τ( state=0|1 )
 
 **说明:** 显示或隐藏每对 Y 变量的 Kendall Tau 统计量的报表。
 
@@ -1505,7 +1501,7 @@ obj << Kendall's Tau( 1 );
 
 ### Mahalanobis Distances
 
-**语法:** obj << Mahalanobis Distances( state = 0|1, <Save Outlier Distances> )
+**语法:** obj &lt;&lt; Mahalanobis Distances( state = 0|1, &lt;Save Outlier Distances&gt; )
 
 **说明:** 显示或隐藏图形，该图展示每一行的 Mahalanobis 距离及指示潜在离群值的参考线。
 
@@ -1520,9 +1516,7 @@ obj << Mahalanobis Distances( 1 );
 
 ### Matrix Format
 
-**语法:** obj = Multivariate(...Matrix Format( "下三角"|"上三角"|"正方形" )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Multivariate(...Matrix Format( "下三角"|"上三角"|"正方形" )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定变量在散点图矩阵中的显示方式。
 
@@ -1536,7 +1530,7 @@ obj = Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), Matrix Format( "Lower Tr
 
 ### Multivariate Simple Statistics
 
-**语法:** obj << Multivariate Simple Statistics( state=0|1 )
+**语法:** obj &lt;&lt; Multivariate Simple Statistics( state=0|1 )
 
 **说明:** 显示或隐藏多元简单统计量报表，在计算统计量时排除具有缺失值的行。
 
@@ -1551,7 +1545,7 @@ obj << Multivariate Simple Statistics( 1 );
 
 ### Pairwise Correlations
 
-**语法:** obj << Pairwise Correlations( state=0|1 )
+**语法:** obj &lt;&lt; Pairwise Correlations( state=0|1 )
 
 **说明:** 显示或隐藏每个 Y 变量组合的配对相关性的报表。
 
@@ -1566,7 +1560,7 @@ obj << Pairwise Correlations( 1 );
 
 ### Parallel Coord Plot
 
-**语法:** obj << Parallel Coord Plot( state=0|1 )
+**语法:** obj &lt;&lt; Parallel Coord Plot( state=0|1 )
 
 **说明:** 显示或隐藏变量的平行坐标图。
 
@@ -1581,7 +1575,7 @@ obj << Parallel Coord Plot( 1 );
 
 ### Partial Correlation Diagram
 
-**语法:** obj << Partial Correlation Diagram( state=0|1 )
+**语法:** obj &lt;&lt; Partial Correlation Diagram( state=0|1 )
 
 **说明:** 显示或隐藏“偏相关性关系图”报表。该选项对偏相关性矩阵执行特征值分解，并使用结果给出偏相关性的直观表示。
 
@@ -1596,7 +1590,7 @@ obj << Partial Correlation Diagram( 1 );
 
 ### Partial Correlation Probability
 
-**语法:** obj << Partial Correlation Probability( state=0|1 )
+**语法:** obj &lt;&lt; Partial Correlation Probability( state=0|1 )
 
 **说明:** 显示或隐藏一个 p 值矩阵，其中每个 p 值对应于变量之间的真实偏相关性为零的原假设的检验。
 
@@ -1613,7 +1607,7 @@ obj << Partial Correlation Probability( 1 );
 
 ### Partial Correlations
 
-**语法:** obj << Partial Correlations( state=0|1 )
+**语法:** obj &lt;&lt; Partial Correlations( state=0|1 )
 
 **说明:** 显示或隐藏每个 Y 变量间的偏相关性矩阵。
 
@@ -1628,7 +1622,7 @@ obj << Partial Correlations( 1 );
 
 ### Save Imputed Formula
 
-**语法:** obj << Save Imputed Formula
+**语法:** obj &lt;&lt; Save Imputed Formula
 
 **说明:** 插补 Y 列值缺失的值。创建带有插补公式的新列并将其保存至原始数据表。
 
@@ -1643,7 +1637,7 @@ obj << Save Imputed Formula;
 
 ### Scatterplot Matrix
 
-**语法:** obj << Scatterplot Matrix( state=0|1 )
+**语法:** obj &lt;&lt; Scatterplot Matrix( state=0|1 )
 
 **说明:** 显示或隐藏每对 Y 变量的散点图矩阵。 默认开启。
 
@@ -1660,7 +1654,7 @@ obj = Multivariate(
 
 ### Set Alpha Level
 
-**语法:** obj << Set Alpha Level( "0.01"|"0.05"|"0.10"|"0.50"|"其他..."=0.05 )
+**语法:** obj &lt;&lt; Set Alpha Level( "0.01"|"0.05"|"0.10"|"0.50"|"其他..."=0.05 )
 
 **说明:** 更改有关每个相关性的置信区间的 Alpha 水平。 默认为“0.05”。
 
@@ -1676,7 +1670,7 @@ obj << CI of Correlation( 1 );
 
 ### Set α Level
 
-**语法:** obj << Set α Level( "0.01"|"0.05"|"0.10"|"0.50"|"其他..."=0.05 )
+**语法:** obj &lt;&lt; Set α Level( "0.01"|"0.05"|"0.10"|"0.50"|"其他..."=0.05 )
 
 **说明:** 更改有关每个相关性的置信区间的 Alpha 水平。 默认为“0.05”。
 
@@ -1692,7 +1686,7 @@ obj << CI of Correlation( 1 );
 
 ### Spearman's Rho
 
-**语法:** obj << Spearman&apos;s Rho( state=0|1 )
+**语法:** obj &lt;&lt; Spearman&apos;s Rho( state=0|1 )
 
 **说明:** 显示或隐藏每对 Y 变量的 Spearman Rho 统计量的报表。
 
@@ -1707,7 +1701,7 @@ obj << Spearman's Rho( 1 );
 
 ### Spearman's ρ
 
-**语法:** obj << Spearman&apos;s ρ( state=0|1 )
+**语法:** obj &lt;&lt; Spearman&apos;s ρ( state=0|1 )
 
 **说明:** 显示或隐藏每对 Y 变量的 Spearman Rho 统计量的报表。
 
@@ -1722,7 +1716,7 @@ obj << Spearman's Rho( 1 );
 
 ### Standardized Alpha
 
-**语法:** obj << Standardized Alpha( state=0|1 )
+**语法:** obj &lt;&lt; Standardized Alpha( state=0|1 )
 
 **说明:** 显示或隐藏整个变量集的 Cronbach 标准化 alpha 以及每个 Y 变量单独被排除时的标准化 alpha 的报表。
 
@@ -1737,7 +1731,7 @@ obj << Standardized alpha( 1 );
 
 ### Standardized α
 
-**语法:** obj << Standardized α( state=0|1 )
+**语法:** obj &lt;&lt; Standardized α( state=0|1 )
 
 **说明:** 显示或隐藏整个变量集的 Cronbach 标准化 alpha 以及每个 Y 变量单独被排除时的标准化 alpha 的报表。
 
@@ -1752,7 +1746,7 @@ obj << Standardized alpha( 1 );
 
 ### T Square
 
-**语法:** obj << T Square( state = 0|1, <Save T Square> )
+**语法:** obj &lt;&lt; T Square( state = 0|1, &lt;Save T Square&gt; )
 
 **说明:** 显示或隐藏图形，该图展示每一行的 T² 值及指示潜在离群值的参考线。
 
@@ -1767,7 +1761,7 @@ obj << T Square( 1 );
 
 ### T²
 
-**语法:** obj << T²( state = 0|1, <Save T Square> )
+**语法:** obj &lt;&lt; T²( state = 0|1, &lt;Save T Square&gt; )
 
 **说明:** 显示或隐藏图形，该图展示每一行的 T² 值及指示潜在离群值的参考线。
 
@@ -1782,7 +1776,7 @@ obj << T Square( 1 );
 
 ### Univariate Simple Statistics
 
-**语法:** obj << Univariate Simple Statistics( state=0|1 )
+**语法:** obj &lt;&lt; Univariate Simple Statistics( state=0|1 )
 
 **说明:** 显示或隐藏一元简单统计量报表，在为每一列计算统计量时不用考虑可能有缺失数据的其他列。
 
@@ -1797,9 +1791,7 @@ obj << Univariate Simple Statistics( 1 );
 
 ### Variance Estimation
 
-**语法:** Variance Estimation( REML|ML|Robust|Row-wise|Pairwise )
-
-<b>启动窗口项: 是</b>
+**语法:** Variance Estimation( REML|ML|Robust|Row-wise|Pairwise )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 设置用于计算相关性的估计方法。
 
@@ -1823,7 +1815,7 @@ obj = Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), Variance Estimation( "ML
 
 #### 3D Score Plot
 
-**语法:** obj << 3D Score Plot( state=0|1 )
+**语法:** obj &lt;&lt; 3D Score Plot( state=0|1 )
 
 **说明:** 显示或隐藏三维散点图，主成分在三维空间中显示为射线。
 
@@ -1838,7 +1830,7 @@ obj << Principal Components( "on Correlations", "3D Score Plot"n );
 
 #### Bartlett Test
 
-**语法:** obj << Bartlett Test( state=0|1 )
+**语法:** obj &lt;&lt; Bartlett Test( state=0|1 )
 
 **说明:** 显示或隐藏每个主成分的齐性检验结果的报表。
 
@@ -1855,7 +1847,7 @@ obj << Principal Components( "on Correlations", Bartlett Test( 1 ) );
 
 #### Eigenvectors
 
-**语法:** obj << Eigenvectors( state=0|1 )
+**语法:** obj &lt;&lt; Eigenvectors( state=0|1 )
 
 **说明:** 显示或隐藏每个主成分的特征向量的报表。
 
@@ -1870,7 +1862,7 @@ obj << Principal Components( "on Correlations", Eigenvectors( 1 ) );
 
 #### Factor Rotation
 
-**语法:** obj << Factor Rotation( <ML|PC>, 1|SMC, n Rotated, Varimax|Biquartimax| Equamax| Factorparsimax| Orthomax| Parsimax| Quartimax| Biquartimin| Covarimin| Obbiquartimax| Obequamax| Obfactorparsimax| Obequamax| Obfactorparsimax| Oblimin| Obparsimax| Obquartimax| Obvarimax| Quartimin| Promax )
+**语法:** obj &lt;&lt; Factor Rotation( &lt;ML|PC&gt;, 1|SMC, n Rotated, Varimax|Biquartimax| Equamax| Factorparsimax| Orthomax| Parsimax| Quartimax| Biquartimin| Covarimin| Obbiquartimax| Obequamax| Obfactorparsimax| Obequamax| Obfactorparsimax| Oblimin| Obparsimax| Obquartimax| Obvarimax| Quartimin| Promax )
 
 **说明:** 显示或隐藏主成分的因子旋转模式的报表。
 
@@ -1888,7 +1880,7 @@ obj << Principal Components(
 
 #### Loading Plot
 
-**语法:** obj << Loading Plot( number )
+**语法:** obj &lt;&lt; Loading Plot( number )
 
 **说明:** 显示或隐藏因子载荷二维表示的图矩阵。
 
@@ -1903,7 +1895,7 @@ obj << Principal Components( "on Correlations", Loading Plot( 2 ) );
 
 #### Save Principal Components
 
-**语法:** obj << Save Principal Components( number )
+**语法:** obj &lt;&lt; Save Principal Components( number )
 
 **说明:** 在数据表的新列中保存指定数量的主成分。
 
@@ -1918,7 +1910,7 @@ obj << Principal Components( "on Correlations", Save Principal Components( 3 ) )
 
 #### Save Principal Components with Imputation
 
-**语法:** obj << Save Principal Components with Imputation( number )
+**语法:** obj &lt;&lt; Save Principal Components with Imputation( number )
 
 **说明:** 使用插补缺失值后计算出的指定数量的主成分，并将其保存到数据表的新列中。
 
@@ -1936,7 +1928,7 @@ obj << Principal Components(
 
 #### Save Rotated Components
 
-**语法:** obj << Save Rotated Components
+**语法:** obj &lt;&lt; Save Rotated Components
 
 **说明:** 将旋转成分保存至数据表中的新列。
 
@@ -1955,7 +1947,7 @@ obj << Principal Components(
 
 #### Save Rotated Components with Imputation
 
-**语法:** obj << Save Rotated Components with Imputation
+**语法:** obj &lt;&lt; Save Rotated Components with Imputation
 
 **说明:** 在数据表的新列中保存插补缺失值后计算出的旋转成分。注意: 该选项仅在运行了“因子旋转”后可用。
 
@@ -1974,7 +1966,7 @@ obj << Principal Components(
 
 #### Score Plot
 
-**语法:** obj << Score Plot( number )
+**语法:** obj &lt;&lt; Score Plot( number )
 
 **说明:** 显示或隐藏一个散点图矩阵，其中包含每对指定数量的主成分的得分。
 
@@ -1989,7 +1981,7 @@ obj << Principal Components( "on Correlations", Score Plot( 2 ) );
 
 #### Score Plot with Imputation
 
-**语法:** obj << Score Plot with Imputation( number )
+**语法:** obj &lt;&lt; Score Plot with Imputation( number )
 
 **说明:** 显示或隐藏一个散点图矩阵，其中包含每对指定数量的主成分的得分，缺失值将通过补缺法补齐。
 
@@ -2004,7 +1996,7 @@ obj << Principal Components( "on Correlations", Score Plot with Imputation( 2 ) 
 
 #### Scree Plot
 
-**语法:** obj << Scree Plot( state=0|1 )
+**语法:** obj &lt;&lt; Scree Plot( state=0|1 )
 
 **说明:** 显示或隐藏每个成分特征值的线图。
 
@@ -2040,7 +2032,7 @@ obj = Multivariate(
 
 #### Ellipse Alpha
 
-**语法:** obj << Ellipse Alpha( "0.90"|"0.95"|"0.99"|"其他..." )
+**语法:** obj &lt;&lt; Ellipse Alpha( "0.90"|"0.95"|"0.99"|"其他..." )
 
 **说明:** 更改散点图矩阵上每两个 Y 变量间的密度椭圆的 Alpha 水平。
 
@@ -2074,7 +2066,7 @@ obj = Multivariate(
 
 #### Ellipse α
 
-**语法:** obj << Ellipse α( "0.90"|"0.95"|"0.99"|"其他..." )
+**语法:** obj &lt;&lt; Ellipse α( "0.90"|"0.95"|"0.99"|"其他..." )
 
 **说明:** 更改散点图矩阵上每两个 Y 变量间的密度椭圆的 Alpha 水平。
 
@@ -2091,7 +2083,7 @@ obj = Multivariate(
 
 #### Ellipses Coverage
 
-**语法:** obj << Ellipses Coverage( "0.90"|"0.95"|"0.99"|"其他..." )
+**语法:** obj &lt;&lt; Ellipses Coverage( "0.90"|"0.95"|"0.99"|"其他..." )
 
 **说明:** 更改散点图矩阵上每两个 Y 变量间的密度椭圆的 Alpha 水平。
 
@@ -2108,7 +2100,7 @@ obj = Multivariate(
 
 #### Ellipses Transparency
 
-**语法:** obj << Ellipses Transparency( "0.20"|"0.40"|"0.60"|"其他..." )
+**语法:** obj &lt;&lt; Ellipses Transparency( "0.20"|"0.40"|"0.60"|"其他..." )
 
 **说明:** 更改散点图矩阵上每两个 Y 变量间的着色密度椭圆的透明度。
 
@@ -2125,7 +2117,7 @@ obj = Multivariate(
 
 #### Fit Line
 
-**语法:** obj << Fit Line( state=0|1 )
+**语法:** obj &lt;&lt; Fit Line( state=0|1 )
 
 **说明:** 在散点图矩阵上显示或隐藏回归线和置信区间。
 

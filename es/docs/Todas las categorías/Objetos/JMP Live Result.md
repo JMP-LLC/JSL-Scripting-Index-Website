@@ -6,7 +6,7 @@
 
 ### As Scriptable
 
-**Sintaxis:** jmplivereport = jmpliveresult << As Scriptable()
+**Sintaxis:** jmplivereport = jmpliveresult &lt;&lt; As Scriptable()
 
 **Descripción:** Dependiendo de la operación que provocó el resultado de JMP Live, devuelve un informe de JMP Live, carpeta de JMP Live o publicación de JMP Live para poder realizar más operaciones de scripts.
 
@@ -33,7 +33,7 @@ If( worked == 1,
 
 ### Get Error Message
 
-**Sintaxis:** messagetext = jmpliveresult << Get Error Message()
+**Sintaxis:** messagetext = jmpliveresult &lt;&lt; Get Error Message()
 
 **Descripción:** Obtiene cualquier mensaje generado por la última operación como una cadena de caracteres.
 
@@ -53,7 +53,7 @@ Write( "\!nHTTP Status Code: ", httpstatus, " Message: ", httpmessage );
 
 ### Get HTTP Status
 
-**Sintaxis:** statuscode = jmpliveresult << Get HTTP Status()
+**Sintaxis:** statuscode = jmpliveresult &lt;&lt; Get HTTP Status()
 
 **Descripción:** Obtiene el código de estado HTTP de la última operación. Se trata de un código de enteros estándar del sector.
 
@@ -73,7 +73,7 @@ Write( "\!nHTTP Status Code: ", httpstatus, " Message: ", httpmessage );
 
 ### Get JMP Live
 
-**Sintaxis:** liveconnection = jmpliveresult << Get JMP Live()
+**Sintaxis:** liveconnection = jmpliveresult &lt;&lt; Get JMP Live()
 
 **Descripción:** Recupera el objeto de conexión de JMP Live subyacente.
 
@@ -98,7 +98,7 @@ Write( "\!nConnection Name: ", name );
 
 ### Get Response Type
 
-**Sintaxis:** responsevalue = jmpliveresult << Get Response Type()
+**Sintaxis:** responsevalue = jmpliveresult &lt;&lt; Get Response Type()
 
 **Descripción:** Obtiene el tipo de respuesta generada por la última operación como una cadena de caracteres.
 
@@ -125,7 +125,7 @@ If( worked == 1,
 
 ### Succeeded
 
-**Sintaxis:** success = jmpliveresult << Succeeded()
+**Sintaxis:** success = jmpliveresult &lt;&lt; Succeeded()
 
 **Descripción:** Devuelve si la última acción se realizó correctamente (1) o no (0).
 

@@ -381,7 +381,7 @@ print(jmp.current())
 
 ### eval
 
-**構文:** result = eval(<string>|<Expression>)
+**構文:** result = eval(&lt;string&gt;|&lt;Expression&gt;)
 
 **説明:** 引数を評価し、その結果を戻す。
 
@@ -400,7 +400,7 @@ print(result)
 
 ### from_dataframe
 
-**構文:** result = jmp.from_dataframe(<library.Dataframe>, allow_copy=<boolean>, allow_csv_fallback=<boolean>)
+**構文:** result = jmp.from_dataframe(&lt;library.Dataframe&gt;, allow_copy=&lt;boolean&gt;, allow_csv_fallback=&lt;boolean&gt;)
 
 **説明:** プロトコルに準拠したライブラリのデータフレームからjmp.DataTableオブジェクトを戻す。
 
@@ -546,7 +546,7 @@ print(dt)
 
 ### from_dataframe_using_csv
 
-**構文:** result = jmp.from_dataframe_using_csv(<library.Dataframe>)
+**構文:** result = jmp.from_dataframe_using_csv(&lt;library.Dataframe&gt;)
 
 **説明:** 指定されたCSV変換メソッドを使って、ライブラリのデータフレームからjmp.DataTableオブジェクトを戻す。
 
@@ -581,7 +581,7 @@ print(dt)
 
 ### open
 
-**構文:** obj = jmp.open(&apos;file_path&apos; < , visibility=&apos;Invisible | Private&apos; )
+**構文:** obj = jmp.open(&apos;file_path&apos; &lt; , visibility=&apos;Invisible | Private&apos; )
 
 **説明:** file_pathにあるファイルを開く。.jmpファイル、またはJMPデータテーブルに読み込まれるファイルである場合は、DataTableオブジェクトが戻される。それ以外の場合は、成功(True)または失敗(False)が戻される。オプションのvisibilityパラメータは、開いたファイルをビューに表示するかどうかを制御する。invisible(非表示)にすると、ビューには表示されないが、[最近使ったファイル]メニューやホームウィンドウには表示される。Privateのテーブルの場合、戻される参照がそのテーブルへの唯一の参照となり、どのファイルリストにも表示されない。
 
@@ -717,7 +717,7 @@ print(pi)
 
 ### run_jsl
 
-**構文:** result = jmp.run_jsl(&apos;JSL script contents&apos; <, echo = True | False | None > )
+**構文:** result = jmp.run_jsl(&apos;JSL script contents&apos; &lt;, echo = True | False | None &gt; )
 
 **説明:** Python環境の中からJSLスクリプト(JSLのPythonインターフェース関数を含む)を実行する。オプションのecho=パラメータがFalse (偽)またはNone (なし)に設定されている場合、指定されたJSLソースコードによるログへのエコーを停止する。Python Send() / Get()でサポートされるのと同じJSLオブジェクトタイプに対して結果を戻す。スクリプトのエラーまたはサポートされていないJSLオブジェクトタイプの場合、None (なし)を戻す。
 
@@ -894,7 +894,7 @@ jmp.run_jsl("""
 
 #### _do_as_data_source
 
-**構文:** def _do_as_data_source(self) -> jmp.DataSource:
+**構文:** def _do_as_data_source(self) -&gt; jmp.DataSource:
 
 **説明:** Subclasses should override this function to create a connection. The returned connection, in the form of a subclass of jmp.DataSource, enables integration with Query Builder.
 
@@ -950,7 +950,7 @@ New SQL Query(
 
 #### _do_open
 
-**構文:** def _do_open(self) -> jmp.DataTable:
+**構文:** def _do_open(self) -&gt; jmp.DataTable:
 
 **説明:** Subclasses can override this function to open a table directly. This function implements the Open message in JSL (New Data Connector(...) << Open()).
 
@@ -1038,7 +1038,7 @@ New Data Connector(
 
 #### __init__
 
-**構文:** field = jmp.DataConnectorField(type, <default=DEFAULT_VALUE,> <tooltip="TOOLTIP" | None,> <ui_name="UI NAME" | None,> <credential="CREDENTIAL TYPE" | None,> <sensitive=True | False,> <mask_input=True | False>)
+**構文:** field = jmp.DataConnectorField(type, &lt;default=DEFAULT_VALUE,&gt; &lt;tooltip="TOOLTIP" | None,&gt; &lt;ui_name="UI NAME" | None,&gt; &lt;credential="CREDENTIAL TYPE" | None,&gt; &lt;sensitive=True | False,&gt; &lt;mask_input=True | False&gt;)
 
 **説明:** DataConnectorField defines a field.
 
@@ -1267,7 +1267,7 @@ New Data Connector( Type( "Python:__main__:ExampleConnectorType" ) ) << Open();
 
 #### get_schemas
 
-**構文:** def get_schemas(self) -> Sequence[str] | None:
+**構文:** def get_schemas(self) -&gt; Sequence[str] | None:
 
 **説明:** Subclasses can override this function to provide a list of the schemas in the data source. If this function is not overridden or it returns None, the data source is assumed to not support schemas.
 
@@ -1319,7 +1319,7 @@ New SQL Query(
 
 #### get_tables
 
-**構文:** def get_tables(self, schema: str) -> Sequence[str]:
+**構文:** def get_tables(self, schema: str) -&gt; Sequence[str]:
 
 **説明:** Subclasses should override this function to provide a list of the tables in the data source. If schemas are supported, this list should include only the tables under the schema that is passed. If schemas are not supported, the schema parameter should be ignored.
 
@@ -1367,7 +1367,7 @@ New SQL Query(
 
 #### open_table
 
-**構文:** def open_table(self, schema: str, table: str) -> jmp.DataTable | str:
+**構文:** def open_table(self, schema: str, table: str) -&gt; jmp.DataTable | str:
 
 **説明:** Subclasses should override this function to get the table data for the named table. If schemas are not supported, the value of the schema argument can be ignored. The function should return a jmp.DataTable or a string containing a path to a file in a data format supported by JMP.
 
@@ -1460,7 +1460,7 @@ New SQL Query(
 
 #### open_table_with_settings
 
-**構文:** def open_table_with_settings(self, schema: str, table: str, settings: str | None) -> (jmp.DataTable, str | None):
+**構文:** def open_table_with_settings(self, schema: str, table: str, settings: str | None) -&gt; (jmp.DataTable, str | None):
 
 **説明:** サブクラスは、open_tableの代わりにこの関数をオーバーライドして、テーブルを開く設定のカスタム処理を指定する。この関数は、open_tableに似ているが、既存の設定とともに呼び出すこともできる。データテーブルを戻すが、新しい設定がある場合はそれも戻す。欠けている設定は、Noneと表される。
 
@@ -1831,9 +1831,7 @@ print(f'Data length of dt[-1] (weight column): {dt[-1].data_length}')
 
 #### display_width
 
-**構文:** col_obj.display_width
-
-col_obj.display_width = <int>
+**構文:** col_obj.display_widthcol_obj.display_width = &lt;int&gt;
 
 **説明:** 列の表示幅を変更する。
 
@@ -1870,9 +1868,7 @@ print(f"Updated Data Type of dt['age']: {dt['age'].dtype}")
 
 #### format
 
-**構文:** col_obj.format
-
-col_obj.format = tuple< <string>|<int>, ... >
+**構文:** col_obj.formatcol_obj.format = tuple&lt; &lt;string&gt;|&lt;int&gt;, ... &gt;
 
 **説明:** 形式の取得
 
@@ -1914,9 +1910,7 @@ print(dt[3].format)
 
 #### formula
 
-**構文:** col_obj.formula
-
-col_obj.formula = <Expression | string>
+**構文:** col_obj.formulacol_obj.formula = &lt;Expression | string&gt;
 
 **説明:** Expressionオブジェクトまたは有効なJSLを表す文字列で列の計算式を設定する。
 
@@ -1969,9 +1963,7 @@ print(f"Updated Modeling Type of dt['age']: {dt['age'].mtype}")
 
 #### name
 
-**構文:** col_obj.name
-
-col_obj.name = <string>
+**構文:** col_obj.namecol_obj.name = &lt;string&gt;
 
 **説明:** 列名のプロパティ。読み取りと設定が可能。
 
@@ -2110,7 +2102,7 @@ print(column2)
 
 #### __init__
 
-**構文:** dt = jmp.DataTable(<name=&apos;table_name&apos;>, <rows=n>, <visibility=&apos;Invisible&apos; | &apos;Private&apos; )
+**構文:** dt = jmp.DataTable(&lt;name=&apos;table_name&apos;&gt;, &lt;rows=n&gt;, &lt;visibility=&apos;Invisible&apos; | &apos;Private&apos; )
 
 **説明:** table_nameの名前とn個の行を持つ新しいデータテーブルを作成する。行数だけを指定したり、キーワード付きのパラメータで順番を逆にして指定することも可能。
 
@@ -2244,7 +2236,7 @@ print(dt)
 
 #### add_rows
 
-**構文:** add_rows(rows, <at=-1>)
+**構文:** add_rows(rows, &lt;at=-1&gt;)
 
 **説明:** DataTableに行を追加する。rowsは必須。atは任意。atが0の場合はテーブルの先頭に行を挿入する。<0の場合はテーブルの末尾に追加する。atがmの場合は、 m 行目(0から始まるインデックス)に挿入する。
 
@@ -2262,9 +2254,7 @@ dt.add_rows(2, at=12) # 0-based indexing
 
 #### cell_height
 
-**構文:** dt.cell_height
-
-dt.cell_height = <int>
+**構文:** dt.cell_heightdt.cell_height = &lt;int&gt;
 
 **説明:** データテーブルにおける各セルの縦幅を設定する。
 
@@ -2283,7 +2273,7 @@ print(dt.cell_height)
 
 #### close
 
-**構文:** dt.close( <save= True | False>)
+**構文:** dt.close( &lt;save= True | False&gt;)
 
 **説明:** DataTableオブジェクトのCloseメソッド。JSLと同様に、パラメータなしで呼び出された場合は、ファイルとして保存しようとする。一時テーブルとして作成されたものなど、保存せずに破棄したい場合は、dt.close(False)、またはdt.close(save=False)を使用する。
 
@@ -2338,9 +2328,7 @@ print(r)
 
 #### name
 
-**構文:** dt.name
-
-dt.name = &apos;string&apos;
+**構文:** dt.namedt.name = &apos;string&apos;
 
 **説明:** nameプロパティは、データテーブル名の設定と取得のどちらにも使用できる。
 
@@ -2373,17 +2361,7 @@ print(f'Number of columns: {dt.ncols}')
 
 #### new_column
 
-**構文:** dt.new_column(  name=&apos;column_name&apos;,
-
-                            dtype=jmp.Numeric | .Character | .RowState | .Expression,
-
-                            mtype=jmp.ModelingType.Continuous | ... | TypeNone
-
-                            dlen=len   cell type&apos;s data length especially for numeric
-
-                                    8(double),4(int32),2(int16),1(int8)
-
-                            where=n insert column after column n
+**構文:** dt.new_column( name=&apos;column_name&apos;, dtype=jmp.Numeric | .Character | .RowState | .Expression, mtype=jmp.ModelingType.Continuous | ... | TypeNone dlen=len cell type&apos;s data length especially for numeric 8(double),4(int32),2(int16),1(int8) where=n insert column after column n
 
 **説明:** 新しいデータテーブル列を作成する。オプションで、名前、列のタイプ、データの長さ、尺度を指定できる。
 
@@ -2447,9 +2425,7 @@ print(f'Number of rows: {dt.nrows}')
 
 #### row_states
 
-**構文:** dt.row_states
-
-dt.row_states = [state1, state2, ..., stateN]
+**構文:** dt.row_statesdt.row_states = [state1, state2, ..., stateN]
 
 **説明:** データテーブルのすべての行に行属性を設定する。
 
@@ -2504,7 +2480,7 @@ print(dt.row_states)
 
 #### save
 
-**構文:** dt.save( < path=&apos;file_path&apos; > )
+**構文:** dt.save( &lt; path=&apos;file_path&apos; &gt; )
 
 **説明:** テーブル名を使ってデータテーブルを現在のディレクトリに保存する。オプションのパス引数を指定すると、別の場所または名前で保存できる。
 
@@ -2522,9 +2498,7 @@ dt.save('BC_lowercase.jmp')
 
 #### scripts
 
-**構文:** dt.scripts
-
-dt.scripts = <dict<str : <str | Expression>>>
+**構文:** dt.scriptsdt.scripts = &lt;dict&lt;str : &lt;str | Expression&gt;&gt;&gt;
 
 **説明:** scriptsプロパティは、データテーブルスクリプトの読み取りと書き込みに対応している。
 
@@ -2707,7 +2681,7 @@ print(expr1 == expr3)
 
 #### __init__
 
-**構文:** Expression(jsl=<string>)
+**構文:** Expression(jsl=&lt;string&gt;)
 
 **説明:** 新しいExpressionオブジェクトを作成する。
 
@@ -2764,9 +2738,7 @@ print(expr)
 
 #### jsl
 
-**構文:** expr_obj.jsl
-
-expr_obj.jsl = <string>
+**構文:** expr_obj.jslexpr_obj.jsl = &lt;string&gt;
 
 **説明:** Expression jslプロパティは読み込みと設定が可能。
 
@@ -2837,7 +2809,7 @@ print(image1 == image3)
 
 #### __init__
 
-**構文:** jmp.Image(path=<string>)
+**構文:** jmp.Image(path=&lt;string&gt;)
 
 **説明:** 新しいImageオブジェクトを作成する。
 
@@ -2901,7 +2873,7 @@ print(image)
 
 #### __init__
 
-**構文:** prj = jmp.Project(<name=&apos;Project name&apos;>)
+**構文:** prj = jmp.Project(&lt;name=&apos;Project name&apos;&gt;)
 
 **説明:** JMPのプロジェクトとそのファイルにアクセスできる新しいProjectオブジェクトを作成する。
 
@@ -3109,9 +3081,7 @@ print(rs1 == rs3)
 
 #### __init__
 
-**構文:** jmp.RowState(selected?=<boolean>, hidden?=<booleane>, labeled?=<boolean>, excluded?=<boolean>, color?=<int>, marker?=<int>)
-
-jmp.RowState(value=<int>)
+**構文:** jmp.RowState(selected?=&lt;boolean&gt;, hidden?=&lt;booleane&gt;, labeled?=&lt;boolean&gt;, excluded?=&lt;boolean&gt;, color?=&lt;int&gt;, marker?=&lt;int&gt;)jmp.RowState(value=&lt;int&gt;)
 
 **説明:** 新しいRowStateオブジェクトを作成する。RowStateは、JMPデータテーブルの行が持ち得る6つの特性(選択、表示、除外、ラベル、色、マーカー)を保持したオブジェクト。
 
@@ -3168,9 +3138,7 @@ print(rs)
 
 #### color
 
-**構文:** rs_obj.color
-
-rs_obj.color = <int>
+**構文:** rs_obj.colorrs_obj.color = &lt;int&gt;
 
 **説明:** RowStateのcolorプロパティは、読み込みと設定が可能。色は0～84から選択する。(0～15は基本色、16～31はやや暗い、32～47はやや明るい、48～63は暗い、64～79は明るい、80～84はグレー)
 
@@ -3189,9 +3157,7 @@ print(rs)
 
 #### excluded
 
-**構文:** rs_obj.excluded
-
-rs_obj.excluded = <boolean>
+**構文:** rs_obj.excludedrs_obj.excluded = &lt;boolean&gt;
 
 **説明:** RowStateのexcludedプロパティは、読み込みと設定が可能。
 
@@ -3210,9 +3176,7 @@ print(rs)
 
 #### hidden
 
-**構文:** rs_obj.hidden
-
-rs_obj.hidden = <boolean>
+**構文:** rs_obj.hiddenrs_obj.hidden = &lt;boolean&gt;
 
 **説明:** RowStateのhiddenプロパティは、読み込みと設定が可能。
 
@@ -3231,9 +3195,7 @@ print(rs)
 
 #### labeled
 
-**構文:** rs_obj.labeled
-
-rs_obj.labeled = <boolean>
+**構文:** rs_obj.labeledrs_obj.labeled = &lt;boolean&gt;
 
 **説明:** RowStateのlabeledプロパティは、読み込みと設定が可能。
 
@@ -3252,9 +3214,7 @@ print(rs)
 
 #### marker
 
-**構文:** rs_obj.marker
-
-rs_obj.marker = <int>
+**構文:** rs_obj.markerrs_obj.marker = &lt;int&gt;
 
 **説明:** RowStateのmarkerプロパティは、読み込みと設定が可能。マーカーは0～31から選択する。
 
@@ -3273,9 +3233,7 @@ print(rs)
 
 #### selected
 
-**構文:** rs_obj.selected
-
-rs_obj.selected = <boolean>
+**構文:** rs_obj.selectedrs_obj.selected = &lt;boolean&gt;
 
 **説明:** RowStateのselectedプロパティは、読み込みと設定が可能。
 
@@ -3708,7 +3666,7 @@ print( jmp.here.values() )
 
 #### get_credentials()
 
-**構文:** jmp.live.get_credentials(<credential_name>)
+**構文:** jmp.live.get_credentials(&lt;credential_name&gt;)
 
 **説明:** JMP Liveのデータリフレッシュスクリプトの中で、指定した名前のログイン情報(名前を指定しない場合はデフォルトのログイン情報)を戻す。戻り値は、ユーザ名(username)、パスワード(password)、キーファイルパス(key_file_path)を含んだ辞書型のデータ。
 
@@ -4198,7 +4156,7 @@ print(jmp.current())
 
 #### eval
 
-**構文:** result = eval(<string>|<Expression>)
+**構文:** result = eval(&lt;string&gt;|&lt;Expression&gt;)
 
 **説明:** 引数を評価し、その結果を戻す。
 
@@ -4217,7 +4175,7 @@ print(result)
 
 #### from_dataframe
 
-**構文:** result = jmp.from_dataframe(<library.Dataframe>, allow_copy=<boolean>, allow_csv_fallback=<boolean>)
+**構文:** result = jmp.from_dataframe(&lt;library.Dataframe&gt;, allow_copy=&lt;boolean&gt;, allow_csv_fallback=&lt;boolean&gt;)
 
 **説明:** プロトコルに準拠したライブラリのデータフレームからjmp.DataTableオブジェクトを戻す。
 
@@ -4363,7 +4321,7 @@ print(dt)
 
 #### from_dataframe_using_csv
 
-**構文:** result = jmp.from_dataframe_using_csv(<library.Dataframe>)
+**構文:** result = jmp.from_dataframe_using_csv(&lt;library.Dataframe&gt;)
 
 **説明:** 指定されたCSV変換メソッドを使って、ライブラリのデータフレームからjmp.DataTableオブジェクトを戻す。
 
@@ -4398,7 +4356,7 @@ print(dt)
 
 #### open
 
-**構文:** obj = jmp.open(&apos;file_path&apos; < , visibility=&apos;Invisible | Private&apos; )
+**構文:** obj = jmp.open(&apos;file_path&apos; &lt; , visibility=&apos;Invisible | Private&apos; )
 
 **説明:** file_pathにあるファイルを開く。.jmpファイル、またはJMPデータテーブルに読み込まれるファイルである場合は、DataTableオブジェクトが戻される。それ以外の場合は、成功(True)または失敗(False)が戻される。オプションのvisibilityパラメータは、開いたファイルをビューに表示するかどうかを制御する。invisible(非表示)にすると、ビューには表示されないが、[最近使ったファイル]メニューやホームウィンドウには表示される。Privateのテーブルの場合、戻される参照がそのテーブルへの唯一の参照となり、どのファイルリストにも表示されない。
 
@@ -4534,7 +4492,7 @@ print(pi)
 
 #### run_jsl
 
-**構文:** result = jmp.run_jsl(&apos;JSL script contents&apos; <, echo = True | False | None > )
+**構文:** result = jmp.run_jsl(&apos;JSL script contents&apos; &lt;, echo = True | False | None &gt; )
 
 **説明:** Python環境の中からJSLスクリプト(JSLのPythonインターフェース関数を含む)を実行する。オプションのecho=パラメータがFalse (偽)またはNone (なし)に設定されている場合、指定されたJSLソースコードによるログへのエコーを停止する。Python Send() / Get()でサポートされるのと同じJSLオブジェクトタイプに対して結果を戻す。スクリプトのエラーまたはサポートされていないJSLオブジェクトタイプの場合、None (なし)を戻す。
 
@@ -4617,7 +4575,7 @@ print( jmp.table('Big Class') )
 
 #### __init__
 
-**構文:** jmpex.R.R( <&apos;rpy2&apos;> )
+**構文:** jmpex.R.R( &lt;&apos;rpy2&apos;&gt; )
 
 **説明:** R拡張クラスオブジェクトを作成する関数。オプションのパラメータでRサポートのバックエンドを指定する。現在サポートされているのは、rpy2のみ。引数が指定されなかった場合は、これがデフォルトとして使用される。
 

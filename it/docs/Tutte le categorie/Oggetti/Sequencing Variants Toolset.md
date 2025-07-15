@@ -14,7 +14,7 @@
 
 ### Action
 
-**Sintassi:** obj << Action
+**Sintassi:** obj &lt;&lt; Action
 
 **Descrizione:** Trapdoor generica all&apos;interno di una piattaforma per inserire espressioni da valutare. Imposta temporaneamente i contesti del riquadro di visualizzazione e della tabella di dati per la piattaforma.
 
@@ -32,7 +32,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Sintassi:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintassi:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descrizione:** Applica all’oggetto una preimpostazione precedentemente creata, aggiornando le opzioni e le personalizzazioni in base alle impostazioni salvate.
 
@@ -79,13 +79,13 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Arguments
 
-**Sintassi:** obj << Arguments
+**Sintassi:** obj &lt;&lt; Arguments
 
 **Descrizione:** Consente di specificare le opzioni per eseguire la piattaforma dalla finestra di scripting.
 
 ### Copy Script
 
-**Sintassi:** obj << Copy Script
+**Sintassi:** obj &lt;&lt; Copy Script
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo inserisce negli Appunti.
 
@@ -98,7 +98,7 @@ obj << Copy Script;
 
 ### Get By Levels
 
-**Sintassi:** obj << Get By Levels
+**Sintassi:** obj &lt;&lt; Get By Levels
 
 **Descrizione:** Restituisce un array associativo che mappa le colonne del gruppo di By ai rispettivi valori.
 
@@ -115,7 +115,7 @@ biv << Get By Levels;
 
 ### Get Container
 
-**Sintassi:** obj << Get Container
+**Sintassi:** obj &lt;&lt; Get Container
 
 **Descrizione:** Restituisce un riferimento al riquadro contenitore che racchiude il contenuto dell&apos;oggetto.
 
@@ -160,7 +160,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Sintassi:** obj << Get Data Table
+**Sintassi:** obj &lt;&lt; Get Data Table
 
 **Descrizione:** Restituisce un riferimento alla tabella di dati.
 
@@ -174,7 +174,7 @@ Show( N Rows( t ) );
 
 ### Get Script
 
-**Sintassi:** obj << Get Script
+**Sintassi:** obj &lt;&lt; Get Script
 
 **Descrizione:** Crea uno script (JSL) per generare questa analisi e la restituisce come espressione.
 
@@ -188,7 +188,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Sintassi:** obj << Get Script With Data Table
+**Sintassi:** obj &lt;&lt; Get Script With Data Table
 
 **Descrizione:** Crea uno script (JSL) per generare questa analisi facendo specifico riferimento a questa tabella di dati e la restituisce come espressione.
 
@@ -202,7 +202,7 @@ Show( t );
 
 ### Get Timing
 
-**Sintassi:** obj << Get Timing
+**Sintassi:** obj &lt;&lt; Get Timing
 
 **Descrizione:** Determina il tempo di avvio della piattaforma.
 
@@ -216,7 +216,7 @@ Show( t );
 
 ### Get Web Support
 
-**Sintassi:** obj << Get Web Support
+**Sintassi:** obj &lt;&lt; Get Web Support
 
 **Descrizione:** Restituisce un numero indicante il livello di supporto HTML interattivo per l&apos;oggetto visualizzato. 1 significa che alcuni o tutti gli elementi sono supportati. 0 significa nessun supporto.
 
@@ -232,7 +232,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Sintassi:** obj << Get Where Expr
+**Sintassi:** obj &lt;&lt; Get Where Expr
 
 **Descrizione:** Restituisce l&apos;espressione Where per il sottoinsieme di dati, se la piattaforma è stata avviata con By() o Where(). Altrimenti, restituisce Vuoto()
 
@@ -324,9 +324,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Sintassi:** obj << Report;
-
-Report( obj )
+**Sintassi:** obj &lt;&lt; Report;Report( obj )
 
 **Descrizione:** Restituisce un riferimento all&apos;oggetto del report.
 
@@ -341,19 +339,19 @@ Show( t );
 
 ### Run Cmd
 
-**Sintassi:** obj << Run Cmd
+**Sintassi:** obj &lt;&lt; Run Cmd
 
 **Descrizione:** Determina l&apos;attività del set di strumenti delle varianti di sequenziamento da eseguire dalla finestra di scripting.
 
 ### Run Spec
 
-**Sintassi:** obj << Run Spec
+**Sintassi:** obj &lt;&lt; Run Spec
 
 **Descrizione:** Determina l&apos;attività del set di strumenti delle varianti di sequenziamento da eseguire dalla finestra dell&apos;interfaccia.
 
 ### Save Script for All Objects
 
-**Sintassi:** obj << Save Script for All Objects
+**Sintassi:** obj &lt;&lt; Save Script for All Objects
 
 **Descrizione:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -366,7 +364,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Sintassi:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintassi:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descrizione:** Salva uno script per tutti gli oggetti del report nella tabella di dati corrente. Questa opzione è utile quando sono presenti più report nella finestra. Lo script prende il nome dalla prima piattaforma, a meno che non si specifichi il nome dello script tra apici.
 
@@ -390,7 +388,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Sintassi:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintassi:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo salva come una proprietà di tabella nella tabella di dati.
 
@@ -403,7 +401,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Sintassi:** obj << Save Script to Journal
+**Sintassi:** obj &lt;&lt; Save Script to Journal
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e aggiunge un pulsante con lo script al journal.
 
@@ -416,7 +414,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Sintassi:** obj << Save Script to Report
+**Sintassi:** obj &lt;&lt; Save Script to Report
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo mostra nel report. Utile per avere una copia stampata di quanto è stato fatto.
 
@@ -429,7 +427,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Sintassi:** obj << Save Script to Script Window
+**Sintassi:** obj &lt;&lt; Save Script to Script Window
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo aggiunge alla finestra di testo dello script corrente.
 
@@ -507,13 +505,13 @@ dt << Distribution(
 
 ### Specification
 
-**Sintassi:** obj << Specification
+**Sintassi:** obj &lt;&lt; Specification
 
 **Descrizione:** Consente di specificare un&apos;attività.
 
 ### Title
 
-**Sintassi:** obj << Title( "new title" )
+**Sintassi:** obj &lt;&lt; Title( "new title" )
 
 **Descrizione:** Imposta il titolo della piattaforma.
 
@@ -526,7 +524,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Sintassi:** obj << Top Report
+**Sintassi:** obj &lt;&lt; Top Report
 
 **Descrizione:** Restituisce un riferimento al nodo principale nel report.
 
@@ -541,7 +539,7 @@ Show( t );
 
 ### View Web XML
 
-**Sintassi:** obj << View Web XML
+**Sintassi:** obj &lt;&lt; View Web XML
 
 **Descrizione:** Restituisce il codice XML utilizzato per creare il report HTML interattivo.
 
@@ -560,31 +558,31 @@ xml = obj << View Web XML;
 
 #### Auto Send Output to Files List
 
-**Sintassi:** obj << Auto Send Output to Files List( state=0|1 )
+**Sintassi:** obj &lt;&lt; Auto Send Output to Files List( state=0|1 )
 
 **Descrizione:** Invia i file di output al riquadro dell&apos;elenco di file.
 
 #### Bam Files
 
-**Sintassi:** obj << Bam Files
+**Sintassi:** obj &lt;&lt; Bam Files
 
 **Descrizione:** Specifica i file BAM.
 
 #### Bcf Files
 
-**Sintassi:** obj << Bcf Files
+**Sintassi:** obj &lt;&lt; Bcf Files
 
 **Descrizione:** Specifica i file BCF.
 
 #### Caller
 
-**Sintassi:** obj << Caller( "Multiallelico"|"Consenso"="Multiallelico" )
+**Sintassi:** obj &lt;&lt; Caller( "Multiallelico"|"Consenso"="Multiallelico" )
 
 **Descrizione:** "Multiallelico", per impostazione predefinita.
 
 #### Copy Task Specification
 
-**Sintassi:** obj << Copy Task Specification
+**Sintassi:** obj &lt;&lt; Copy Task Specification
 
 **Descrizione:** Copia negli Appunti le specifiche del set di strumenti delle varianti di sequenziamento correnti.
 
@@ -592,91 +590,91 @@ xml = obj << View Web XML;
 
 #### Files
 
-**Sintassi:** obj << Files
+**Sintassi:** obj &lt;&lt; Files
 
 **Descrizione:** Carica i file di input da eseguire in samtools.
 
 #### Ploidy
 
-**Sintassi:** obj << Ploidy( number=2 )
+**Sintassi:** obj &lt;&lt; Ploidy( number=2 )
 
 **Descrizione:** "2", per impostazione predefinita.
 
 #### Recall in Task Specification
 
-**Sintassi:** obj << Recall in Task Specification
+**Sintassi:** obj &lt;&lt; Recall in Task Specification
 
 **Descrizione:** Imposta la specifica dell&apos;attività nel report Specifica dell&apos;attività al modello specificato.
 
 #### Ref Files
 
-**Sintassi:** obj << Ref Files
+**Sintassi:** obj &lt;&lt; Ref Files
 
 **Descrizione:** Specifica i file del genoma di riferimento.
 
 #### Remove Run
 
-**Sintassi:** obj << ( Run[number] << Remove Run( state=0|1 ) )
+**Sintassi:** obj &lt;&lt; ( Run[number] &lt;&lt; Remove Run( state=0|1 ) )
 
 **Descrizione:** Rimuove il report dell&apos;esecuzione specificato dalla finestra del report.
 
 #### Results Folder
 
-**Sintassi:** obj << Results Folder
+**Sintassi:** obj &lt;&lt; Results Folder
 
 **Descrizione:** Specifica la cartella dei risultati.
 
 #### Sam Files
 
-**Sintassi:** obj << Sam Files
+**Sintassi:** obj &lt;&lt; Sam Files
 
 **Descrizione:** Specifica i file SAM.
 
 #### Send Output to Files List
 
-**Sintassi:** obj << Send Output to Files List( state=0|1 )
+**Sintassi:** obj &lt;&lt; Send Output to Files List( state=0|1 )
 
 **Descrizione:** Invia i file di output al riquadro dell&apos;elenco di file.
 
 #### Sort Reads By
 
-**Sintassi:** obj << Sort Reads By( "Coordinate"|"Alfanumerico"|"Lessicografico"="Coordinate" )
+**Sintassi:** obj &lt;&lt; Sort Reads By( "Coordinate"|"Alfanumerico"|"Lessicografico"="Coordinate" )
 
 **Descrizione:** "Coordinate", per impostazione predefinita.
 
 #### Summary
 
-**Sintassi:** obj << Summary( state=0|1 )
+**Sintassi:** obj &lt;&lt; Summary( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un report che contiene dettagli dell&apos;esecuzione. Per impostazione predefinita l&apos;opzione è attivata.
 
 #### Target Regions
 
-**Sintassi:** obj << Target Regions
+**Sintassi:** obj &lt;&lt; Target Regions
 
 **Descrizione:** Imposta le regioni target. La specifica delle regioni richiede che il file BAM sia ordinato per coordinate e indicizzato.
 
 #### Task
 
-**Sintassi:** obj << Task( "Indice Fasta"|"Converti SAM in BAM"|"Ordina letture"|"Aggiungi coordinate Mate"|"Rimuovi duplicati"|"Unisci file"|"Indice BAM"|"Converti BAM in SAM"|"Estrai letture mappate"|"Estrai letture non mappate"|"Estrai regioni target"|"Estrai correttamente allineati"|"Estrai prima lettura"|"Contrassegna discrepanze e inserimenti"|"Allineamento conteggi"|"Allineamento conteggi per flag"|"Allineamento conteggi per riferimento"|"Genera statistiche"|"Genera qualità dell&apos;allineamento delle basi"|"Genera profondità di lettura"|"Comprimi con Bgzip"|"Decomprimi con Bgzip"|"Genera verosimiglianze del genotipo"|"Genera chiamate del genotipo"|"Converti Bcf in Vcf"|"Converti Vcf in Bcf" )
+**Sintassi:** obj &lt;&lt; Task( "Indice Fasta"|"Converti SAM in BAM"|"Ordina letture"|"Aggiungi coordinate Mate"|"Rimuovi duplicati"|"Unisci file"|"Indice BAM"|"Converti BAM in SAM"|"Estrai letture mappate"|"Estrai letture non mappate"|"Estrai regioni target"|"Estrai correttamente allineati"|"Estrai prima lettura"|"Contrassegna discrepanze e inserimenti"|"Allineamento conteggi"|"Allineamento conteggi per flag"|"Allineamento conteggi per riferimento"|"Genera statistiche"|"Genera qualità dell&apos;allineamento delle basi"|"Genera profondità di lettura"|"Comprimi con Bgzip"|"Decomprimi con Bgzip"|"Genera verosimiglianze del genotipo"|"Genera chiamate del genotipo"|"Converti Bcf in Vcf"|"Converti Vcf in Bcf" )
 
 **Descrizione:** Determina l&apos;attività da eseguire.
 
 #### Title
 
-**Sintassi:** obj << Title
+**Sintassi:** obj &lt;&lt; Title
 
 **Descrizione:** Imposta un titolo.
 
 #### Unthreaded
 
-**Sintassi:** obj << Unthreaded( state=0|1 )
+**Sintassi:** obj &lt;&lt; Unthreaded( state=0|1 )
 
 **Descrizione:** Usa solo il thread principale per i calcoli
 
 #### Vcf Files
 
-**Sintassi:** obj << Vcf Files
+**Sintassi:** obj &lt;&lt; Vcf Files
 
 **Descrizione:** Specifica i file VCF.
 
@@ -686,91 +684,91 @@ xml = obj << View Web XML;
 
 #### Auto Send Output to Files List
 
-**Sintassi:** obj << Auto Send Output to Files List( state=0|1 )
+**Sintassi:** obj &lt;&lt; Auto Send Output to Files List( state=0|1 )
 
 **Descrizione:** Invia i file di output al riquadro dell&apos;elenco di file.
 
 #### Bam Files
 
-**Sintassi:** obj << Bam Files
+**Sintassi:** obj &lt;&lt; Bam Files
 
 **Descrizione:** Specifica i file BAM.
 
 #### Bcf Files
 
-**Sintassi:** obj << Bcf Files
+**Sintassi:** obj &lt;&lt; Bcf Files
 
 **Descrizione:** Specifica i file BCF.
 
 #### Caller
 
-**Sintassi:** obj << Caller( "Multiallelico"|"Consenso"="Multiallelico" )
+**Sintassi:** obj &lt;&lt; Caller( "Multiallelico"|"Consenso"="Multiallelico" )
 
 **Descrizione:** "Multiallelico", per impostazione predefinita.
 
 #### Files
 
-**Sintassi:** obj << Files
+**Sintassi:** obj &lt;&lt; Files
 
 **Descrizione:** Carica i file di input da eseguire in samtools.
 
 #### Ploidy
 
-**Sintassi:** obj << Ploidy( number=2 )
+**Sintassi:** obj &lt;&lt; Ploidy( number=2 )
 
 **Descrizione:** Specifica un numero positivo che indica il livello di ploidia. "2", per impostazione predefinita.
 
 #### Ref Files
 
-**Sintassi:** obj << Ref Files
+**Sintassi:** obj &lt;&lt; Ref Files
 
 **Descrizione:** Specifica i file del genoma di riferimento.
 
 #### Results Folder
 
-**Sintassi:** obj << Results Folder
+**Sintassi:** obj &lt;&lt; Results Folder
 
 **Descrizione:** Specifica la cartella dei risultati.
 
 #### Sam Files
 
-**Sintassi:** obj << Sam Files
+**Sintassi:** obj &lt;&lt; Sam Files
 
 **Descrizione:** Specifica i file SAM.
 
 #### Sort Reads By
 
-**Sintassi:** obj << Sort Reads By( "Coordinate"|"Alfanumerico"|"Lessicografico"="Coordinate" )
+**Sintassi:** obj &lt;&lt; Sort Reads By( "Coordinate"|"Alfanumerico"|"Lessicografico"="Coordinate" )
 
 **Descrizione:** "Coordinate", per impostazione predefinita.
 
 #### Target Regions
 
-**Sintassi:** obj << Target Regions
+**Sintassi:** obj &lt;&lt; Target Regions
 
 **Descrizione:** Imposta le regioni target. La specifica delle regioni richiede che il file BAM sia ordinato per coordinate e indicizzato.
 
 #### Task
 
-**Sintassi:** obj << Task( "Indice Fasta"|"Converti SAM in BAM"|"Ordina letture"|"Aggiungi coordinate Mate"|"Rimuovi duplicati"|"Unisci file"|"Indice BAM"|"Converti BAM in SAM"|"Estrai letture mappate"|"Estrai letture non mappate"|"Estrai regioni target"|"Estrai correttamente allineati"|"Estrai prima lettura"|"Contrassegna discrepanze e inserimenti"|"Allineamento conteggi"|"Allineamento conteggi per flag"|"Allineamento conteggi per riferimento"|"Genera statistiche"|"Genera qualità dell&apos;allineamento delle basi"|"Genera profondità di lettura"|"Comprimi con Bgzip"|"Decomprimi con Bgzip"|"Genera verosimiglianze del genotipo"|"Genera chiamate del genotipo"|"Converti Bcf in Vcf"|"Converti Vcf in Bcf"="Indice Fasta" )
+**Sintassi:** obj &lt;&lt; Task( "Indice Fasta"|"Converti SAM in BAM"|"Ordina letture"|"Aggiungi coordinate Mate"|"Rimuovi duplicati"|"Unisci file"|"Indice BAM"|"Converti BAM in SAM"|"Estrai letture mappate"|"Estrai letture non mappate"|"Estrai regioni target"|"Estrai correttamente allineati"|"Estrai prima lettura"|"Contrassegna discrepanze e inserimenti"|"Allineamento conteggi"|"Allineamento conteggi per flag"|"Allineamento conteggi per riferimento"|"Genera statistiche"|"Genera qualità dell&apos;allineamento delle basi"|"Genera profondità di lettura"|"Comprimi con Bgzip"|"Decomprimi con Bgzip"|"Genera verosimiglianze del genotipo"|"Genera chiamate del genotipo"|"Converti Bcf in Vcf"|"Converti Vcf in Bcf"="Indice Fasta" )
 
 **Descrizione:** Determina l&apos;attività da eseguire. "Indice Fasta", per impostazione predefinita.
 
 #### Title
 
-**Sintassi:** obj << Title
+**Sintassi:** obj &lt;&lt; Title
 
 **Descrizione:** Imposta un titolo.
 
 #### Unthreaded
 
-**Sintassi:** obj << Unthreaded( state=0|1 )
+**Sintassi:** obj &lt;&lt; Unthreaded( state=0|1 )
 
 **Descrizione:** Usa solo il thread principale per i calcoli
 
 #### Vcf Files
 
-**Sintassi:** obj << Vcf Files
+**Sintassi:** obj &lt;&lt; Vcf Files
 
 **Descrizione:** Specifica i file VCF.
 

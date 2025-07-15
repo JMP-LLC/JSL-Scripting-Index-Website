@@ -6,7 +6,7 @@
 
 ### Add Line Annotation
 
-**语法:** obj << Add Line Annotation
+**语法:** obj &lt;&lt; Add Line Annotation
 
 **说明:** 在显示框上添加线条。
 
@@ -23,7 +23,7 @@ rbiv << Add Line Annotation( Line( 160, 235, 240, 235 ) );
 
 ### Add Pin Annotation
 
-**语法:** obj << Add Pin Annotation
+**语法:** obj &lt;&lt; Add Pin Annotation
 
 **说明:** 在显示框顶部添加固定注解。大多数特性（例如“Index Row”、“UniqueID”和“FoundPt”）专为内部使用设计。
 
@@ -56,7 +56,7 @@ dt << Bivariate(
 
 ### Add Polygon Annotation
 
-**语法:** obj << Add Polygon Annotation
+**语法:** obj &lt;&lt; Add Polygon Annotation
 
 **说明:** 在显示框上添加多边形。
 
@@ -77,7 +77,7 @@ rbiv << Add Polygon Annotation(
 
 ### Add Simple Shape Annotation
 
-**语法:** obj << Add Simple Shape Annotation
+**语法:** obj &lt;&lt; Add Simple Shape Annotation
 
 **说明:** 在显示框上添加简单形状。
 
@@ -95,7 +95,7 @@ rbiv << Add Simple Shape Annotation( Rectangle( 70, 180, 95, 215 ) );
 
 ### Add Text Annotation
 
-**语法:** obj << Add Text Annotation
+**语法:** obj &lt;&lt; Add Text Annotation
 
 **说明:** 在显示框上添加文本。
 
@@ -115,7 +115,7 @@ rbiv << Add Text Annotation(
 
 ### Append
 
-**语法:** obj << Append( db2 )
+**语法:** obj &lt;&lt; Append( db2 )
 
 **说明:** 将“db2”添加到显示树的“db”之后。
 
@@ -132,9 +132,7 @@ rbiv << append( Text Box( "=== below ===" ) );
 
 ### Background Color
 
-**语法:** obj << Background Color( color );
-
-color = obj << Get Background Color
+**语法:** obj &lt;&lt; Background Color( color );color = obj &lt;&lt; Get Background Color
 
 **说明:** 若背景颜色已设置，在绘制框内容之前将使用背景颜色填满框。若未设置背景颜色，包含框的背景和内容将显现。
 
@@ -156,9 +154,7 @@ tb << Background Color( "Yellow" );
 
 ### Border
 
-**语法:** obj << Border( sides );
-
-sides = obj << Get Border
+**语法:** obj &lt;&lt; Border( sides );sides = obj &lt;&lt; Get Border
 
 **说明:** 边框是沿显示框四周绘制的实线。若提供单个值，它将应用于所有边。若指定两个值，它们将应用于水平和垂直边框。
 
@@ -178,9 +174,7 @@ tb << Border( 1 );
 
 ### Border Color
 
-**语法:** obj << Border Color( color );
-
-color = obj << Get Border Color
+**语法:** obj &lt;&lt; Border Color( color );color = obj &lt;&lt; Get Border Color
 
 **说明:** 用于覆盖框边框默认颜色的可选颜色。
 
@@ -202,7 +196,7 @@ tb << Border Color( "Light Red" );
 
 ### Bring Window To Front
 
-**语法:** obj << Bring Window To Front
+**语法:** obj &lt;&lt; Bring Window To Front
 
 **说明:** 将窗口移至最前面。
 
@@ -218,7 +212,7 @@ w << Bring Window To Front;
 
 ### Child
 
-**语法:** obj << Child
+**语法:** obj &lt;&lt; Child
 
 **说明:** 返回该显示框的子级项。
 
@@ -238,7 +232,7 @@ Print( axisChild << Class Name() );
 
 ### Class Name
 
-**语法:** obj << Class Name
+**语法:** obj &lt;&lt; Class Name
 
 **说明:** 返回显示框的显示类的名称。
 
@@ -256,7 +250,7 @@ axisbox << Class Name();
 
 ### Clone Box
 
-**语法:** obj << Clone Box
+**语法:** obj &lt;&lt; Clone Box
 
 **说明:** 创建显示框的新副本。
 
@@ -275,7 +269,7 @@ rbiv << append( clonedBox );
 
 ### Close Window
 
-**语法:** obj << Close Window( <"NoSave"> )
+**语法:** obj &lt;&lt; Close Window( &lt;"NoSave"&gt; )
 
 **说明:** 关闭窗口。
 
@@ -291,7 +285,7 @@ w << Close Window;
 
 ### Copy Data
 
-**语法:** obj << Copy Data
+**语法:** obj &lt;&lt; Copy Data
 
 **说明:** 将矩阵或表中的制表符分隔数据复制到剪贴板。
 
@@ -305,7 +299,7 @@ mat << CopyData;
 
 ### Copy Graph
 
-**语法:** obj << Copy Graph
+**语法:** obj &lt;&lt; Copy Graph
 
 **说明:** 将包含图形和坐标轴的图片置于剪贴板中。
 
@@ -323,7 +317,7 @@ rbiv = biv << report;
 
 ### Copy Picture
 
-**语法:** obj << Copy Picture
+**语法:** obj &lt;&lt; Copy Picture
 
 **说明:** 将显示框图片置于剪贴板中。
 
@@ -340,7 +334,7 @@ rbiv << Copy Picture();
 
 ### Delete Box
 
-**语法:** obj << Delete Box
+**语法:** obj &lt;&lt; Delete Box
 
 **说明:** 删除该显示框。
 
@@ -358,7 +352,7 @@ axisbox << Delete Box();
 
 ### Deselect
 
-**语法:** obj << Deselect
+**语法:** obj &lt;&lt; Deselect
 
 **说明:** 取消选择用于“编辑”菜单命令的该对象。
 
@@ -384,7 +378,7 @@ refresh = Function( {},
 
 ### Dispatch
 
-**语法:** obj << Dispatch( {outline node, ...}, display element, display element type, command )
+**语法:** obj &lt;&lt; Dispatch( {outline node, ...}, display element, display element type, command )
 
 **说明:** 将“command”发送到显示树的特定部分。
 
@@ -401,9 +395,7 @@ rbiv << Dispatch( {}, "Bivar Plot", FrameBox, {Marker Size( 3 )} );
 
 ### Enabled
 
-**语法:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**语法:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **说明:** 未启用的对象不会响应键盘或鼠标输入。子对象会继承该属性，所以禁用的容器对象会导致所有子孙对象都被禁用。
 
@@ -435,7 +427,7 @@ New Window( "enabled",
 
 ### Find
 
-**语法:** obj << Find
+**语法:** obj &lt;&lt; Find
 
 **说明:** 返回使用指定的“argument”的显示框。
 
@@ -453,7 +445,7 @@ axisbox << Delete();
 
 ### Get Annotation
 
-**语法:** obj << Get Annotation
+**语法:** obj &lt;&lt; Get Annotation
 
 **说明:** 返回固定到该显示框的第一个注解。可以通过对结果使用 Sib() 来访问其他注解。
 
@@ -475,9 +467,7 @@ annotation << delete;
 
 ### Get Background Color
 
-**语法:** obj << Background Color( color );
-
-color = obj << Get Background Color
+**语法:** obj &lt;&lt; Background Color( color );color = obj &lt;&lt; Get Background Color
 
 **说明:** 若背景颜色已设置，在绘制框内容之前将使用背景颜色填满框。若未设置背景颜色，包含框的背景和内容将显现。
 
@@ -499,9 +489,7 @@ tb << Background Color( "Yellow" );
 
 ### Get Border
 
-**语法:** obj << Border( sides );
-
-sides = obj << Get Border
+**语法:** obj &lt;&lt; Border( sides );sides = obj &lt;&lt; Get Border
 
 **说明:** 边框是沿显示框四周绘制的实线。若提供单个值，它将应用于所有边。若指定两个值，它们将应用于水平和垂直边框。
 
@@ -521,9 +509,7 @@ tb << Border( 1 );
 
 ### Get Border Color
 
-**语法:** obj << Border Color( color );
-
-color = obj << Get Border Color
+**语法:** obj &lt;&lt; Border Color( color );color = obj &lt;&lt; Get Border Color
 
 **说明:** 用于覆盖框边框默认颜色的可选颜色。
 
@@ -545,7 +531,7 @@ tb << Border Color( "Light Red" );
 
 ### Get Content Size
 
-**语法:** obj << Get Content Size
+**语法:** obj &lt;&lt; Get Content Size
 
 **说明:** 返回窗口中内容的大小。
 
@@ -561,7 +547,7 @@ Show( c );
 
 ### Get Display Path
 
-**语法:** obj << Get Display Path( parent box, <receiver expr>, <Mode("XPath"|"Subscript")> )
+**语法:** obj &lt;&lt; Get Display Path( parent box, &lt;receiver expr&gt;, &lt;Mode("XPath"|"Subscript")&gt; )
 
 **说明:** 获取相对稳健的表达式以在 parent box 和 obj 之间导航。该路径不能保证在 JMP 版本之间是稳定的。receiver expr 归入到输出表达式（若提供）。若未提供，则改用为 parent box 提供的表达式。如示例中所示，该消息主要用于增加已有路径的稳健性。默认为 XPath 模式。
 
@@ -597,9 +583,7 @@ xpath expr << Select;
 
 ### Get Enabled
 
-**语法:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**语法:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **说明:** 未启用的对象不会响应键盘或鼠标输入。子对象会继承该属性，所以禁用的容器对象会导致所有子孙对象都被禁用。
 
@@ -631,7 +615,7 @@ New Window( "enabled",
 
 ### Get HTML
 
-**语法:** obj << Get HTML( <format> )
+**语法:** obj &lt;&lt; Get HTML( &lt;format&gt; )
 
 **说明:** 返回包含显示框的 HTML 源的字符串。
 
@@ -661,7 +645,7 @@ Web( "$TEMP/Oneway.html", JMPWindow );
 
 ### Get Height
 
-**语法:** width = obj << Get Height
+**语法:** width = obj &lt;&lt; Get Height
 
 **说明:** 返回显示框的高度。
 
@@ -679,9 +663,7 @@ fb << Get Height;
 
 ### Get Horizontal Alignment
 
-**语法:** obj << Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );
-
-"Default"|"Left"|"Center"|"Right" = obj << Get Horizontal Alignment
+**语法:** obj &lt;&lt; Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );"Default"|"Left"|"Center"|"Right" = obj &lt;&lt; Get Horizontal Alignment
 
 **说明:** 水平对齐控制框在容器中的位置（若框未占满整个空间）。
 
@@ -701,7 +683,7 @@ lb << Horizontal Alignment( "Right" );
 
 ### Get Journal
 
-**语法:** obj << Get Journal
+**语法:** obj &lt;&lt; Get Journal
 
 **说明:** 返回包含显示框的记录源的字符串。
 
@@ -718,9 +700,7 @@ Print( rbiv << Get Journal );
 
 ### Get Margin
 
-**语法:** obj << Margin( sides );
-
-sides = obj << Get Margin
+**语法:** obj &lt;&lt; Margin( sides );sides = obj &lt;&lt; Get Margin
 
 **说明:** 边距在框和邻接框的边框之间添加空白。使用命名参数，或提供值列表。若提供单个值，它将应用于所有边。若指定两个值，它们将应用于水平和垂直边距。
 
@@ -741,7 +721,7 @@ tb << Margin( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ### Get Max Size
 
-**语法:** width,height = obj << Get Max Size
+**语法:** width,height = obj &lt;&lt; Get Max Size
 
 **说明:** 返回该显示框的最大自动拉伸尺寸。
 
@@ -759,7 +739,7 @@ fb << Get Max Size;
 
 ### Get Min Size
 
-**语法:** width,height = obj << Get Min Size
+**语法:** width,height = obj &lt;&lt; Get Min Size
 
 **说明:** 返回该显示框的最小自动拉伸尺寸。
 
@@ -777,7 +757,7 @@ fb << Get Min Size;
 
 ### Get Namespace
 
-**语法:** obj << Get Namespace
+**语法:** obj &lt;&lt; Get Namespace
 
 **说明:** 返回与该显示对象关联的命名空间。
 
@@ -795,7 +775,7 @@ Show( ns:x, x );
 
 ### Get On Close
 
-**语法:** obj << Get On Close
+**语法:** obj &lt;&lt; Get On Close
 
 **说明:** 返回当窗口关闭时将运行的脚本或函数。
 
@@ -820,9 +800,7 @@ Show( w << Get On Close );
 
 ### Get Padding
 
-**语法:** obj << Padding( sides );
-
-sides = obj << Get Padding
+**语法:** obj &lt;&lt; Padding( sides );sides = obj &lt;&lt; Get Padding
 
 **说明:** 填充在内容和框的边框之间添加空白。使用命名参数，或提供值列表。若提供单个值，它将应用于所有边。若指定两个值，它们将应用于水平和垂直填充。
 
@@ -843,7 +821,7 @@ tb << Padding( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ### Get Page Setup
 
-**语法:** obj << Get Page Setup
+**语法:** obj &lt;&lt; Get Page Setup
 
 **说明:** 获取 PDF 的页面设置信息
 
@@ -858,7 +836,7 @@ w << get page setup();
 
 ### Get Picture
 
-**语法:** obj << Get Picture( <Scale(factor)>, <Type("Bitmap" | "Scalable")>, <View("Picture" | "Screen" | "Print"), <Appearance("Default" | "Current")>, <SubRect(Left(number), Top(number), Right(number), Bottom(number))> )
+**语法:** obj &lt;&lt; Get Picture( &lt;Scale(factor)&gt;, &lt;Type("Bitmap" | "Scalable")&gt;, &lt;View("Picture" | "Screen" | "Print"), &lt;Appearance("Default" | "Current")&gt;, &lt;SubRect(Left(number), Top(number), Right(number), Bottom(number))&gt; )
 
 **说明:** 将 db 捕获为图像对象。可选 Scale 参数将以统一尺度的分辨率呈现图像。统一尺度要求显示框可伸缩。Type 参数确定结果将是可缩放矢量图像还是位图。默认返回可缩放图像，它适合保存为矢量格式，例如 PDF。View 选项更改某些框的行为。"Picture" 的默认选项按照导出为图像格式时的方式绘制报表，其滚动区域完全显示。"Screen" 的视图模式按照屏幕上看到的方式绘制报表，"Print" 按照打印时的方式绘制报表，而没有任何页面设置功能。SubRect 选项将捕获生成的图像的一部分而不是整个图像。Appearance 选项可以从 "Default" 输出颜色更改为屏幕上看到的 "Current" 颜色。仅 Type "Bitmap"Appearance 支持 View、SubRect 和 Appearance 选项。
 
@@ -916,7 +894,7 @@ New Window( "Example", rbiv << Get Picture );
 
 ### Get Project
 
-**语法:** project = obj << Get Project()
+**语法:** project = obj &lt;&lt; Get Project()
 
 **说明:** 返回窗口的父项目，若它不在项目中则返回 Empty()。
 
@@ -934,7 +912,7 @@ Show( c );
 
 ### Get Properties
 
-**语法:** obj << Get Properties
+**语法:** obj &lt;&lt; Get Properties
 
 **说明:** 返回包含显示框的属性及其值的关联数组。
 
@@ -948,7 +926,7 @@ bb << Get Properties;
 
 ### Get Property
 
-**语法:** obj << Get Property( "property" )
+**语法:** obj &lt;&lt; Get Property( "property" )
 
 **说明:** 返回已命名的“property”的当前设置。
 
@@ -962,7 +940,7 @@ bb << Get Property( "Enabled" );
 
 ### Get Property List
 
-**语法:** obj << Get Property List
+**语法:** obj &lt;&lt; Get Property List
 
 **说明:** 返回显示框具有的属性列表。
 
@@ -976,7 +954,7 @@ bb << Get Property List;
 
 ### Get RTF
 
-**语法:** obj << Get RTF( <format> )
+**语法:** obj &lt;&lt; Get RTF( &lt;format&gt; )
 
 **说明:** 返回包含显示框的 RTF 源的字符串。
 
@@ -1006,7 +984,7 @@ Open( "$TEMP/Oneway.rtf" );
 
 ### Get Row States
 
-**语法:** rs = obj << Get Row States( <dt> )
+**语法:** rs = obj &lt;&lt; Get Row States( &lt;dt&gt; )
 
 **说明:** 返回一个向量，它包含给定数据表或当前数据表中每行的行状态。行状态可以来自表或来自框的过滤器上下文。
 
@@ -1095,7 +1073,7 @@ updatetext();
 
 ### Get Show Window
 
-**语法:** obj << Get Show Window
+**语法:** obj &lt;&lt; Get Show Window
 
 **说明:** 返回窗口的可见性。
 
@@ -1113,7 +1091,7 @@ Print( w << Get Show Window() );
 
 ### Get Size
 
-**语法:** width,height = obj << Get Size
+**语法:** width,height = obj &lt;&lt; Get Size
 
 **说明:** 返回显示框大小。
 
@@ -1131,7 +1109,7 @@ Print( fb << Get Size );
 
 ### Get Stretch
 
-**语法:** x,y = obj << Get Stretch
+**语法:** x,y = obj &lt;&lt; Get Stretch
 
 **说明:** 返回该显示框在水平和垂直方向的拉伸标志。
 
@@ -1157,7 +1135,7 @@ spacer << Get Stretch();
 
 ### Get Text
 
-**语法:** obj << Get Text
+**语法:** obj &lt;&lt; Get Text
 
 **说明:** 返回包含显示框的文本的字符串。
 
@@ -1172,9 +1150,7 @@ a << Set Text( win << Get Text );
 
 ### Get Text Color
 
-**语法:** obj << Text Color( color );
-
-color = obj << Get Text Color
+**语法:** obj &lt;&lt; Text Color( color );color = obj &lt;&lt; Get Text Color
 
 **说明:** 将使用文本颜色（若已设置）绘制文本。若未设置属性，则框将继承包含框的文本颜色。
 
@@ -1196,15 +1172,11 @@ tb << Text Color( "Red" );
 
 ### Get UI Only
 
-**语法:** obj << UI Only( state=0|1 );
-
-state = obj << Get UI Only
+**语法:** obj &lt;&lt; UI Only( state=0|1 );state = obj &lt;&lt; Get UI Only
 
 ### Get User Resizable
 
-**语法:** obj << User Resizable;
-
-obj << Get User Resizable
+**语法:** obj &lt;&lt; User Resizable;obj &lt;&lt; Get User Resizable
 
 **说明:** 若用户可以调整该框的大小，则光标将在底部和右边缘附近改变，允许拖放式调整大小。
 
@@ -1241,9 +1213,7 @@ scroll << User Resizable( {0, 0} );
 
 ### Get Vertical Alignment
 
-**语法:** obj << Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );
-
-"Default"|"Top"|"Center"|"Bottom" = obj << Get Vertical Alignment
+**语法:** obj &lt;&lt; Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );"Default"|"Top"|"Center"|"Bottom" = obj &lt;&lt; Get Vertical Alignment
 
 **说明:** 垂直对齐控制在容器中的位置（若框未占满整个空间）。
 
@@ -1265,9 +1235,7 @@ lb << Vertical Alignment( "Bottom" );
 
 ### Get Visibility
 
-**语法:** obj << Visibility( "Visible"|"Hidden"|"Collapse" );
-
-"Visible"|"Hidden"|"Collapse" = obj << Get Visibility
+**语法:** obj &lt;&lt; Visibility( "Visible"|"Hidden"|"Collapse" );"Visible"|"Hidden"|"Collapse" = obj &lt;&lt; Get Visibility
 
 **说明:** 可见性决定框是否显示以及框是否占据空间。"Visible" 的默认值表示将显示对象。"Hidden" 框为不显示但仍占据空间，而 "Collapsed" 框不在布局中占据空间。
 
@@ -1288,7 +1256,7 @@ Show( tb << Get Visibility );
 
 ### Get Web Support
 
-**语法:** obj << Get Web Support
+**语法:** obj &lt;&lt; Get Web Support
 
 **说明:** 返回一个数字，指示显示对象的交互式 HTML 支持的水平。1 表示支持部分或全部元素。0 表示不支持。
 
@@ -1304,7 +1272,7 @@ Show( s );
 
 ### Get Width
 
-**语法:** width = obj << Get Width
+**语法:** width = obj &lt;&lt; Get Width
 
 **说明:** 返回显示框的宽度。
 
@@ -1322,7 +1290,7 @@ fb << Get Width;
 
 ### Get Window Icon
 
-**语法:** obj << Get Window Icon
+**语法:** obj &lt;&lt; Get Window Icon
 
 **说明:** 返回窗口图标。
 
@@ -1338,7 +1306,7 @@ Show( t );
 
 ### Get Window Position
 
-**语法:** obj << Get Window Position
+**语法:** obj &lt;&lt; Get Window Position
 
 **说明:** 返回窗口的位置。
 
@@ -1354,7 +1322,7 @@ Show( p );
 
 ### Get Window Size
 
-**语法:** obj << Get Window Size
+**语法:** obj &lt;&lt; Get Window Size
 
 **说明:** 返回窗口大小。
 
@@ -1370,7 +1338,7 @@ Show( s );
 
 ### Get Window Title
 
-**语法:** obj << Get Window Title
+**语法:** obj &lt;&lt; Get Window Title
 
 **说明:** 返回窗口标题。
 
@@ -1386,7 +1354,7 @@ Show( t );
 
 ### Get Window View
 
-**语法:** obj << Get Window View
+**语法:** obj &lt;&lt; Get Window View
 
 **说明:** 返回当前窗口视图。窗口可以为“可见”、“不可见”或“私有”。
 
@@ -1401,7 +1369,7 @@ Print( w << Get Window View() );
 
 ### Get XML
 
-**语法:** obj << Get XML( <English(0|1)>, <NoData(0|1)> )
+**语法:** obj &lt;&lt; Get XML( &lt;English(0|1)&gt;, &lt;NoData(0|1)&gt; )
 
 **说明:** 检索 XML 格式的显示树。默认情况下，字符串以本地语言返回，XML 在某些框中包括数据值。使用 English 选项返回可用的英语字符串。使用 NoData 选项省略框中的数据值，对于某些显示树来说，这些数据值可能非常大。
 
@@ -1416,7 +1384,7 @@ a << set text( win << get xml );
 
 ### GetOffset
 
-**语法:** x,y = obj << GetOffset
+**语法:** x,y = obj &lt;&lt; GetOffset
 
 **说明:** 返回相对于父框该显示框的偏移。您可能需要在循环中使用 <<Parent 消息来累积若干偏移。
 
@@ -1461,9 +1429,7 @@ New Window( "example",
 
 ### Horizontal Alignment
 
-**语法:** obj << Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );
-
-"Default"|"Left"|"Center"|"Right" = obj << Get Horizontal Alignment
+**语法:** obj &lt;&lt; Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );"Default"|"Left"|"Center"|"Right" = obj &lt;&lt; Get Horizontal Alignment
 
 **说明:** 水平对齐控制框在容器中的位置（若框未占满整个空间）。
 
@@ -1483,7 +1449,7 @@ lb << Horizontal Alignment( "Right" );
 
 ### Inval
 
-**语法:** obj << Inval
+**语法:** obj &lt;&lt; Inval
 
 **说明:** 使显示框无效。若 <<UpdateWindow 消息已发送或操作系统有时间更新，窗口将更新。
 
@@ -1525,7 +1491,7 @@ New Window( "Inval example",
 
 ### Is Dirty
 
-**语法:** obj << Is Dirty
+**语法:** obj &lt;&lt; Is Dirty
 
 **说明:** 获取文档的修改状态。1 表示文档已修改并且将提示保存；0 表示文档未修改。
 
@@ -1544,7 +1510,7 @@ Show( ww << Is Dirty );
 
 ### Is Modal Dialog
 
-**语法:** obj << Is Modal Dialog
+**语法:** obj &lt;&lt; Is Modal Dialog
 
 **说明:** 若窗口是模态对话框，则返回 true。仅当从窗口处理程序回调调用时有用。
 
@@ -1563,7 +1529,7 @@ With Window Handler(
 
 ### Journal
 
-**语法:** obj << Journal
+**语法:** obj &lt;&lt; Journal
 
 **说明:** 从显示框生成记录。
 
@@ -1580,7 +1546,7 @@ rbiv << journal;
 
 ### Journal Window
 
-**语法:** obj << Journal Window
+**语法:** obj &lt;&lt; Journal Window
 
 **说明:** 打开窗口的记录窗口。
 
@@ -1595,7 +1561,7 @@ w << Journal Window;
 
 ### Launch
 
-**语法:** obj << Launch
+**语法:** obj &lt;&lt; Launch
 
 **说明:** 在显示框的上下文中对指定的“argument”求值。
 
@@ -1617,7 +1583,7 @@ ob3 << launch( Bivariate( Y( :height ), X( :weight ) ) );
 
 ### Make RowState Handler
 
-**语法:** rs = obj << Make RowState Handler( <dt>, function(a) )
+**语法:** rs = obj &lt;&lt; Make RowState Handler( &lt;dt&gt;, function(a) )
 
 **说明:** 为给定的数据表或当前数据表创建行状态处理程序。当框的过滤器上下文中的行状态更改时调用该函数。函数的参数保存已更改的行号，若行状态过滤器已更改，则保存 -1。
 
@@ -1706,9 +1672,7 @@ updatetext();
 
 ### Margin
 
-**语法:** obj << Margin( sides );
-
-sides = obj << Get Margin
+**语法:** obj &lt;&lt; Margin( sides );sides = obj &lt;&lt; Get Margin
 
 **说明:** 边距在框和邻接框的边框之间添加空白。使用命名参数，或提供值列表。若提供单个值，它将应用于所有边。若指定两个值，它们将应用于水平和垂直边距。
 
@@ -1729,7 +1693,7 @@ tb << Margin( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ### Maximize Window
 
-**语法:** obj << Maximize Window( <state=0|1> )
+**语法:** obj &lt;&lt; Maximize Window( &lt;state=0|1&gt; )
 
 **说明:** 最大化窗口。默认参数为 1。
 
@@ -1747,7 +1711,7 @@ w << Maximize Window( 0 );
 
 ### Minimize Window
 
-**语法:** obj << Minimize Window( <state=0|1> )
+**语法:** obj &lt;&lt; Minimize Window( &lt;state=0|1&gt; )
 
 **说明:** 最小化窗口。默认参数为 1。
 
@@ -1765,7 +1729,7 @@ w << Minimize Window( 0 );
 
 ### Move Window
 
-**语法:** obj << Move Window( x,y )
+**语法:** obj &lt;&lt; Move Window( x,y )
 
 **说明:** 将窗口移至指定位置。
 
@@ -1781,7 +1745,7 @@ w << Move Window( 500, 500 );
 
 ### Next
 
-**语法:** obj << Next
+**语法:** obj &lt;&lt; Next
 
 **说明:** 返回该显示框后的显示框。
 
@@ -1799,7 +1763,7 @@ Print( next << Class Name() );
 
 ### On Close
 
-**语法:** obj << On Close( script )
+**语法:** obj &lt;&lt; On Close( script )
 
 **说明:** 设置脚本或函数以在关闭窗口时运行。该脚本应返回 1 以允许关闭，或返回 0 以阻止窗口关闭。
 
@@ -1847,7 +1811,7 @@ w << On Close(
 
 ### Optimize Display
 
-**语法:** obj << Optimize Display
+**语法:** obj &lt;&lt; Optimize Display
 
 **说明:** 将数据表的列宽度和窗口设置为最佳大小。
 
@@ -1864,7 +1828,7 @@ dt << Optimize Display;
 
 ### Pad Window
 
-**语法:** obj << Pad Window( bool )
+**语法:** obj &lt;&lt; Pad Window( bool )
 
 **说明:** 开启或关闭窗口填充。
 
@@ -1881,9 +1845,7 @@ r << Pad Window( 0 );
 
 ### Padding
 
-**语法:** obj << Padding( sides );
-
-sides = obj << Get Padding
+**语法:** obj &lt;&lt; Padding( sides );sides = obj &lt;&lt; Get Padding
 
 **说明:** 填充在内容和框的边框之间添加空白。使用命名参数，或提供值列表。若提供单个值，它将应用于所有边。若指定两个值，它们将应用于水平和垂直填充。
 
@@ -1904,7 +1866,7 @@ tb << Padding( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ### Page Break
 
-**语法:** obj << Page Break
+**语法:** obj &lt;&lt; Page Break
 
 **说明:** 在显示框之前插入分页符。
 
@@ -1930,7 +1892,7 @@ ob3 << Page Break;
 
 ### Parent
 
-**语法:** obj << Parent
+**语法:** obj &lt;&lt; Parent
 
 **说明:** 返回该显示框的父级项。
 
@@ -1949,7 +1911,7 @@ Print( axisParent << Class Name() );
 
 ### Prepend
 
-**语法:** obj << Prepend( db2 )
+**语法:** obj &lt;&lt; Prepend( db2 )
 
 **说明:** 将“db2”添加到显示树的“db”之前。
 
@@ -1966,7 +1928,7 @@ rbiv << prepend( Text Box( "=== above ===" ) );
 
 ### Prev Sib
 
-**语法:** obj << Prev Sib
+**语法:** obj &lt;&lt; Prev Sib
 
 **说明:** 返回该显示框的前一个平级项。
 
@@ -1987,7 +1949,7 @@ Print( axisSibling << Class Name() );
 
 ### Print Window
 
-**语法:** obj << Print Window
+**语法:** obj &lt;&lt; Print Window
 
 **说明:** 打印窗口。
 
@@ -2002,7 +1964,7 @@ w << Print Window;
 
 ### Reshow
 
-**语法:** obj << Reshow
+**语法:** obj &lt;&lt; Reshow
 
 **说明:** 使显示框无效并用新内容更新窗口。若随着更新需要更多的控件，请参见 <<Inval 和 <<UpdateWindow 消息。
 
@@ -2031,7 +1993,7 @@ New Window( "Reshow example",
 
 ### Save Capture
 
-**语法:** obj << Save Capture( <"path">, <format>, <Add Sibling(n)> )
+**语法:** obj &lt;&lt; Save Capture( &lt;"path"&gt;, &lt;format&gt;, &lt;Add Sibling(n)&gt; )
 
 **说明:** 在指定的 path 处保存显示框抓屏图。若未指定 path，则显示“另存为”窗口。
 
@@ -2048,7 +2010,7 @@ rbiv << Save Capture( "$TEMP/jmp_example.png", "png" );
 
 ### Save HTML
 
-**语法:** obj << Save HTML( <pathname>, <format> )
+**语法:** obj &lt;&lt; Save HTML( &lt;pathname&gt;, &lt;format&gt; )
 
 **说明:** 以指定的“format”格式保存 HTML 源和图形文件夹。
 
@@ -2065,7 +2027,7 @@ rbiv << Save HTML( "$TEMP/jmp_example.html" );
 
 ### Save Interactive HTML
 
-**语法:** obj << Save Interactive HTML( <pathname>, <Boolean> )
+**语法:** obj &lt;&lt; Save Interactive HTML( &lt;pathname&gt;, &lt;Boolean&gt; )
 
 **说明:** 将带数据的交互式 HTML 保存至文件。Boolean 参数表示报表为静态。
 
@@ -2082,7 +2044,7 @@ rbiv << Save Interactive HTML( "$TEMP/jmp_example.html" );
 
 ### Save Journal
 
-**语法:** obj << Save Journal( <pathname> )
+**语法:** obj &lt;&lt; Save Journal( &lt;pathname&gt; )
 
 **说明:** 保存显示框的记录源。
 
@@ -2099,7 +2061,7 @@ rbiv << Save Journal( "$TEMP/jmp_example.jrn" );
 
 ### Save MSWord
 
-**语法:** obj << Save MSWord( <pathname>, <format> )
+**语法:** obj &lt;&lt; Save MSWord( &lt;pathname&gt;, &lt;format&gt; )
 
 **说明:** 将显示框保存为 Microsoft Word 文档（仅限于 Windows）。
 
@@ -2116,7 +2078,7 @@ rbiv << Save MSWord( "$TEMP/jmp_example.doc" );
 
 ### Save PDF
 
-**语法:** obj << Save PDF( <pathname>, <Show Page Setup(0|1)>, <Portrait(0|1)> )
+**语法:** obj &lt;&lt; Save PDF( &lt;pathname&gt;, &lt;Show Page Setup(0|1)&gt;, &lt;Portrait(0|1)&gt; )
 
 **说明:** 将显示框保存为 PDF 文件。
 
@@ -2133,7 +2095,7 @@ rbiv << Save PDF( "$TEMP/jmp_example.pdf" );
 
 ### Save Picture
 
-**语法:** obj << Save Picture( <pathname>, <format>, <Scale(factor)>, <Type("Bitmap" | "Scalable")>, <View("Picture" | "Screen" | "Print"), <Appearance("Default" | "Current")>, <SubRect(Left(number), Top(number), Right(number), Bottom(number))> )
+**语法:** obj &lt;&lt; Save Picture( &lt;pathname&gt;, &lt;format&gt;, &lt;Scale(factor)&gt;, &lt;Type("Bitmap" | "Scalable")&gt;, &lt;View("Picture" | "Screen" | "Print"), &lt;Appearance("Default" | "Current")&gt;, &lt;SubRect(Left(number), Top(number), Right(number), Bottom(number))&gt; )
 
 **说明:** 保存显示框的图片。支持的格式包括 EMF(Windows)、PICT(Macintosh)、JPEG 或 JPG、GIF 或 PNG。可选的 Scale 参数将以统一尺度的分辨率呈现图像。统一尺度要求显示框可伸缩。Type 参数确定结果将是可缩放矢量图像还是位图。默认返回可缩放图像，它适合保存为矢量格式，例如 PDF。View 选项更改某些框的行为。"Picture" 的默认选项按照导出为图像格式时的方式绘制报表，其滚动区域完全显示。"Screen" 的视图模式按照屏幕上看到的方式绘制报表，"Print" 按照打印时的方式绘制报表，而没有任何页面设置功能。SubRect 选项将捕获生成的图像的一部分而不是整个图像。Appearance 选项可以从 "Default" 输出颜色更改为屏幕上看到的 "Current" 颜色。只有 Type "Bitmap" 支持 View、SubRect 和 Appearance 选项。
 
@@ -2203,7 +2165,7 @@ rbiv << Save Picture( "$TEMP/jmp_example.png", "png" );
 
 ### Save Presentation
 
-**语法:** obj << Save Presentation( "filename.pptx", <Template("path\to\my_template.pptx")>, <Insert(Begin|End|#) | Replace(Begin|End|#) | Append>, <Outline Titles(None|Hide|TopLeft|TopRight|BottomLeft|BottomRight)>, <"EMF"|"PNG"|"JPG"|"Native"> )
+**语法:** obj &lt;&lt; Save Presentation( "filename.pptx", &lt;Template("path\to\my_template.pptx")&gt;, &lt;Insert(Begin|End|#) | Replace(Begin|End|#) | Append&gt;, &lt;Outline Titles(None|Hide|TopLeft|TopRight|BottomLeft|BottomRight)&gt;, &lt;"EMF"|"PNG"|"JPG"|"Native"&gt; )
 
 **说明:** 在演示文稿中保存显示框表和图形幻灯片。演示文稿可以使用 Microsoft PowerPoint 或其他演示文稿软件打开。
 
@@ -2220,7 +2182,7 @@ Open( "$TEMP/jmp_example.pptx" );
 
 ### Save RTF
 
-**语法:** obj << Save RTF( <pathname>, <format> )
+**语法:** obj &lt;&lt; Save RTF( &lt;pathname&gt;, &lt;format&gt; )
 
 **说明:** 以指定的“format”格式保存带图形的 RTF 源。
 
@@ -2237,7 +2199,7 @@ rbiv << Save RTF( "$TEMP/jmp_example.rtf", "png" );
 
 ### Save Text
 
-**语法:** obj << Save Text( <pathname>, <format> )
+**语法:** obj &lt;&lt; Save Text( &lt;pathname&gt;, &lt;format&gt; )
 
 **说明:** 保存包含显示框的文本的文件。
 
@@ -2252,7 +2214,7 @@ a << save text( "$TEMP/jmp_example.txt" );
 
 ### Save Window Report
 
-**语法:** obj << Save Window Report( pathname, <embed data(0|1)> )
+**语法:** obj &lt;&lt; Save Window Report( pathname, &lt;embed data(0|1)&gt; )
 
 **说明:** 将当前报表窗口保存至 JMP 报表文件 (.jrp)。
 
@@ -2270,7 +2232,7 @@ d << Save Window Report( "$DOCUMENTS/test.jrp", embed data( 1 ) );
 
 ### Scroll Window
 
-**语法:** obj << Scroll Window( DisplayBox | <Relative(<v> | <h>,<v>)> | <Absolute(<v> | <h>,<v>) )
+**语法:** obj &lt;&lt; Scroll Window( DisplayBox | &lt;Relative(&lt;v&gt; | &lt;h&gt;,&lt;v&gt;)&gt; | &lt;Absolute(&lt;v&gt; | &lt;h&gt;,&lt;v&gt;) )
 
 **说明:** 调整窗口滚动条以显示给定的 DisplayBox，或滚动相对像素数，或滚动至绝对像素位置。可以使用关键字 "Start" 或 "End" 来代替像素数。
 
@@ -2345,7 +2307,7 @@ Wait( 1 );
 
 ### Select
 
-**语法:** obj << Select
+**语法:** obj &lt;&lt; Select
 
 **说明:** 选择该对象，以供“编辑”菜单命令使用。
 
@@ -2360,7 +2322,7 @@ ex << Select;
 
 ### Set Content Size
 
-**语法:** obj << Set Content Size( x,y )
+**语法:** obj &lt;&lt; Set Content Size( x,y )
 
 **说明:** 设置窗口中内容的大小。
 
@@ -2386,7 +2348,7 @@ w << Set Content Size( 400, 300 );
 
 ### Set Dirty
 
-**语法:** obj << Set Dirty
+**语法:** obj &lt;&lt; Set Dirty
 
 **说明:** 设置文档的修改状态。0 将不提示保存；1 将提示。
 
@@ -2405,7 +2367,7 @@ Show( ww << Is Dirty );
 
 ### Set Height
 
-**语法:** obj << Set Height( width )
+**语法:** obj &lt;&lt; Set Height( width )
 
 **说明:** 设置显示框的高度。
 
@@ -2423,7 +2385,7 @@ fb << Set Height( 150 );
 
 ### Set Main Window
 
-**语法:** obj << Set Main Window
+**语法:** obj &lt;&lt; Set Main Window
 
 **说明:** 将窗口设置为 JMP 中的主窗口，并将之前的主窗口设置为常规窗口
 
@@ -2438,7 +2400,7 @@ w << Set Main Window;
 
 ### Set Max Size
 
-**语法:** obj << Set Max Size( width,height )
+**语法:** obj &lt;&lt; Set Max Size( width,height )
 
 **说明:** 设置该显示框的最大自动拉伸尺寸。
 
@@ -2457,7 +2419,7 @@ fb << Get Max Size;
 
 ### Set Min Size
 
-**语法:** obj << Set Min Size( width,height )
+**语法:** obj &lt;&lt; Set Min Size( width,height )
 
 **说明:** 设置该显示框的最小自动拉伸尺寸。
 
@@ -2476,7 +2438,7 @@ fb << Get Min Size;
 
 ### Set Page Setup
 
-**语法:** obj << Set Page Setup( <margins(left, top, right, bottom)>, <scale(s)>, <portrait(0|1)>, <paper size(p)>, <Table of Contents(always, never, default)>  )
+**语法:** obj &lt;&lt; Set Page Setup( &lt;margins(left, top, right, bottom)&gt;, &lt;scale(s)&gt;, &lt;portrait(0|1)&gt;, &lt;paper size(p)&gt;, &lt;Table of Contents(always, never, default)&gt; )
 
 **说明:** 设置打印或保存为 pdf 时使用的页面设置信息。可以选择从分级显示项框生成目录。
 
@@ -2498,7 +2460,7 @@ w << Save pdf( "$DOCUMENTS\test.pdf" );
 
 ### Set Print Footers
 
-**语法:** obj << Set Print Footers( left footer, center footer, right header )
+**语法:** obj &lt;&lt; Set Print Footers( left footer, center footer, right header )
 
 **说明:** 为打印输出设置居左、居中和居右的页脚
 
@@ -2517,7 +2479,7 @@ w << Print Window;
 
 ### Set Print Headers
 
-**语法:** obj << Set Print Headers( left header, center header, right header )
+**语法:** obj &lt;&lt; Set Print Headers( left header, center header, right header )
 
 **说明:** 为打印输出设置居左、居中和居右的页眉
 
@@ -2536,7 +2498,7 @@ w << Print Window;
 
 ### Set Property
 
-**语法:** obj << Set Property( "property", value )
+**语法:** obj &lt;&lt; Set Property( "property", value )
 
 **说明:** 设置显示框的已命名的“property”的值。
 
@@ -2550,7 +2512,7 @@ bb << Set Property( "Enabled", 0 );
 
 ### Set Report Title
 
-**语法:** obj << Set Report Title( "string" )
+**语法:** obj &lt;&lt; Set Report Title( "string" )
 
 **说明:** 更改报表标题。
 
@@ -2567,7 +2529,7 @@ rbiv << Set Report Title( "New Title" );
 
 ### Set Stretch
 
-**语法:** obj << Set Stretch( x,y )
+**语法:** obj &lt;&lt; Set Stretch( x,y )
 
 **说明:** 设置框的水平和垂直拉伸行为。随 Window 拉伸的框将随窗口或拆分窗口大小更改调整大小。拉伸 Fill 的框将拉伸以填充它们容器中的可用空间。拉伸设置为 Off 的框通常情况下不拉伸。大多数框默认设置为 Neutral，这表示它们将根据其子框确定行为。
 
@@ -2615,7 +2577,7 @@ ts << Set Stretch( "Window", "Window" );
 
 ### Set Summary Behavior
 
-**语法:** obj << Set Summary Behavior( "Default"|"Visible"|"Collapse" )
+**语法:** obj &lt;&lt; Set Summary Behavior( "Default"|"Visible"|"Collapse" )
 
 **说明:** Sets the behavior of the box when a report is viewed in Summary mode.
 
@@ -2634,7 +2596,7 @@ tb << Set Summary Behavior( "Visible" );
 
 ### Set Width
 
-**语法:** obj << Set Width( width )
+**语法:** obj &lt;&lt; Set Width( width )
 
 **说明:** 设置显示框的宽度。
 
@@ -2652,7 +2614,7 @@ fb << Set Width( 400 );
 
 ### Set Window Icon
 
-**语法:** obj << Set Window Icon( icon name )
+**语法:** obj &lt;&lt; Set Window Icon( icon name )
 
 **说明:** 设置窗口图标。
 
@@ -2667,7 +2629,7 @@ w << Set Window Icon( "Scatter3D" );
 
 ### Set Window Size
 
-**语法:** obj << Set Window Size( x,y )
+**语法:** obj &lt;&lt; Set Window Size( x,y )
 
 **说明:** 设置窗口大小。
 
@@ -2682,7 +2644,7 @@ w << Set Window Size( 800, 1200 );
 
 ### Set Window Title
 
-**语法:** obj << Set Window Title( "string" )
+**语法:** obj &lt;&lt; Set Window Title( "string" )
 
 **说明:** 更改窗口标题。
 
@@ -2699,7 +2661,7 @@ rbiv << Set Window Title( "New Title" );
 
 ### Show Properties
 
-**语法:** obj << Show Properties
+**语法:** obj &lt;&lt; Show Properties
 
 **说明:** 为显示框显示属性编辑器
 
@@ -2716,7 +2678,7 @@ rbiv << Show Properties();
 
 ### Show Tree Structure
 
-**语法:** obj << Show Tree Structure
+**语法:** obj &lt;&lt; Show Tree Structure
 
 **说明:** 显示该显示框及其相关节点的层次树状结构。
 
@@ -2733,7 +2695,7 @@ rbiv << Show Tree Structure();
 
 ### Show Window
 
-**语法:** obj << Show Window( state=0|1 )
+**语法:** obj &lt;&lt; Show Window( state=0|1 )
 
 **说明:** 显示或隐藏窗口。该功能可用于临时隐藏窗口。 默认开启。
 
@@ -2751,7 +2713,7 @@ w << Show Window( 1 );
 
 ### Sib
 
-**语法:** obj << Sib
+**语法:** obj &lt;&lt; Sib
 
 **说明:** 返回该显示框的平级项。
 
@@ -2770,7 +2732,7 @@ Print( axisSibling << Class Name() );
 
 ### Sib Append
 
-**语法:** obj << Sib Append( Display box, Horizontal|Vertical )
+**语法:** obj &lt;&lt; Sib Append( Display box, Horizontal|Vertical )
 
 **说明:** 紧接在该显示框之后添加一个显示框。
 
@@ -2792,7 +2754,7 @@ fb << sib append( Text Box( "=== below ===" ), "Vertical" );
 
 ### Sib Prepend
 
-**语法:** obj << Sib Prepend( Display box, Horizontal|Vertical )
+**语法:** obj &lt;&lt; Sib Prepend( Display box, Horizontal|Vertical )
 
 **说明:** 紧接在该显示框之前添加一个显示框。
 
@@ -2814,7 +2776,7 @@ fb << sib prepend( Text Box( "=== above ===" ), "Vertical" );
 
 ### Size Window
 
-**语法:** obj << Size Window( x,y )
+**语法:** obj &lt;&lt; Size Window( x,y )
 
 **说明:** 设置窗口大小。
 
@@ -2829,9 +2791,7 @@ w << Size Window( 500, 500 );
 
 ### Text Color
 
-**语法:** obj << Text Color( color );
-
-color = obj << Get Text Color
+**语法:** obj &lt;&lt; Text Color( color );color = obj &lt;&lt; Get Text Color
 
 **说明:** 将使用文本颜色（若已设置）绘制文本。若未设置属性，则框将继承包含框的文本颜色。
 
@@ -2853,7 +2813,7 @@ tb << Text Color( "Red" );
 
 ### Top Parent
 
-**语法:** obj << Top Parent
+**语法:** obj &lt;&lt; Top Parent
 
 **说明:** 返回该显示框的根级。
 
@@ -2871,13 +2831,11 @@ Print( rootParent << Class Name() );
 
 ### UI Only
 
-**语法:** obj << UI Only( state=0|1 );
-
-state = obj << Get UI Only
+**语法:** obj &lt;&lt; UI Only( state=0|1 );state = obj &lt;&lt; Get UI Only
 
 ### Update Window
 
-**语法:** obj << Update Window
+**语法:** obj &lt;&lt; Update Window
 
 **说明:** 若有失效的区域，则更新包含显示框的窗口。<<Inval 消息创建失效区域。
 
@@ -2929,9 +2887,7 @@ New Window( "rect",
 
 ### User Resizable
 
-**语法:** obj << User Resizable;
-
-obj << Get User Resizable
+**语法:** obj &lt;&lt; User Resizable;obj &lt;&lt; Get User Resizable
 
 **说明:** 若用户可以调整该框的大小，则光标将在底部和右边缘附近改变，允许拖放式调整大小。
 
@@ -2968,9 +2924,7 @@ scroll << User Resizable( {0, 0} );
 
 ### Vertical Alignment
 
-**语法:** obj << Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );
-
-"Default"|"Top"|"Center"|"Bottom" = obj << Get Vertical Alignment
+**语法:** obj &lt;&lt; Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );"Default"|"Top"|"Center"|"Bottom" = obj &lt;&lt; Get Vertical Alignment
 
 **说明:** 垂直对齐控制在容器中的位置（若框未占满整个空间）。
 
@@ -2992,9 +2946,7 @@ lb << Vertical Alignment( "Bottom" );
 
 ### Visibility
 
-**语法:** obj << Visibility( "Visible"|"Hidden"|"Collapse" );
-
-"Visible"|"Hidden"|"Collapse" = obj << Get Visibility
+**语法:** obj &lt;&lt; Visibility( "Visible"|"Hidden"|"Collapse" );"Visible"|"Hidden"|"Collapse" = obj &lt;&lt; Get Visibility
 
 **说明:** 可见性决定框是否显示以及框是否占据空间。"Visible" 的默认值表示将显示对象。"Hidden" 框为不显示但仍占据空间，而 "Collapsed" 框不在布局中占据空间。
 
@@ -3015,7 +2967,7 @@ Show( tb << Get Visibility );
 
 ### Window Class Name
 
-**语法:** obj << Window Class Name
+**语法:** obj &lt;&lt; Window Class Name
 
 **说明:** 返回显示框的窗口类的名称。
 
@@ -3033,7 +2985,7 @@ Show( rbiv << Window Class Name() );
 
 ### XPath
 
-**语法:** obj << XPath( XPath expression, <English(0|1)>, <NoData(0|1)> )
+**语法:** obj &lt;&lt; XPath( XPath expression, &lt;English(0|1)&gt;, &lt;NoData(0|1)&gt; )
 
 **说明:** 将 XPath 表达式应用于显示树的 XML 表示并返回结果。默认情况下，字符串以本地语言返回，XML 在某些框中包括数据值。使用 English 选项返回可用的英语字符串。使用 NoData 选项来省略框中的数据值，当您的查询仅基于框特性时，这些数据值对性能很有用。
 
@@ -3113,7 +3065,7 @@ biv = dt << Run Script( "Bivariate" );
 
 ### Zoom Window
 
-**语法:** obj << Zoom Window
+**语法:** obj &lt;&lt; Zoom Window
 
 **说明:** 调整窗口大小，使其大到足够显示其所有内容。
 
@@ -3168,7 +3120,7 @@ tb << Select;
 
 ### Add Row
 
-**语法:** obj << Add Row( {values,...} )
+**语法:** obj &lt;&lt; Add Row( {values,...} )
 
 **说明:** 将数据行添加至表
 
@@ -3187,7 +3139,7 @@ tb << add row( {"b", 2} );
 
 ### Bootstrap
 
-**语法:** obj << Bootstrap( nsample, Random Seed(number), Fractional Weights(0|1), Split Selected Column(0|1), Discard Stacked Table if Split Works(0|1) )
+**语法:** obj &lt;&lt; Bootstrap( nsample, Random Seed(number), Fractional Weights(0|1), Split Selected Column(0|1), Discard Stacked Table if Split Works(0|1) )
 
 **说明:** Bootstrap 该分析: 使用不同的再抽样权重多次重复该分析并按照选择收集表。
 
@@ -3207,7 +3159,7 @@ obj << Fit Line;
 
 ### Copy Selected Table Rows
 
-**语法:** obj << Copy Selected Table Rows
+**语法:** obj &lt;&lt; Copy Selected Table Rows
 
 **说明:** 将选定行的内容复制到剪贴板
 
@@ -3215,7 +3167,7 @@ obj << Fit Line;
 
 ### Copy Table
 
-**语法:** obj << Copy Table
+**语法:** obj &lt;&lt; Copy Table
 
 **说明:** 将表内容复制到剪贴板
 
@@ -3223,7 +3175,7 @@ obj << Fit Line;
 
 ### Delete Row
 
-**语法:** obj << Delete Row( row number )
+**语法:** obj &lt;&lt; Delete Row( row number )
 
 **说明:** 删除表中的数据行
 
@@ -3242,7 +3194,7 @@ tb << delete row( 1 );
 
 ### Filter Where
 
-**语法:** obj << Filter Where
+**语法:** obj &lt;&lt; Filter Where
 
 **说明:** 基于该行的值过滤表中的行。
 
@@ -3265,7 +3217,7 @@ tb << filter where( "Elevation (meters)"n < 4000 | Mountain == "K2" );
 
 ### Get
 
-**语法:** obj << Get
+**语法:** obj &lt;&lt; Get
 
 **说明:** 以列表形式返回表中条目。
 
@@ -3282,7 +3234,7 @@ Print( tb << Get );
 
 ### Get As Matrix
 
-**语法:** obj << Get As Matrix( <"Visible"> )
+**语法:** obj &lt;&lt; Get As Matrix( &lt;"Visible"&gt; )
 
 **说明:** 以矩阵形式返回表的数值条目。若指定了 Visible 选项，则仅包括可见列。
 
@@ -3299,7 +3251,7 @@ Print( tb << Get As Matrix );
 
 ### Get Base Data Font
 
-**语法:** font = obj << Get Base Data Font
+**语法:** font = obj &lt;&lt; Get Base Data Font
 
 **说明:** 返回该框绘制的文本所用的基本字体。基本字体包括“Title”、“Text”、“Annotation”之类的预定义名称，以及在字体“首选项”中指定的那些字体。
 
@@ -3319,7 +3271,7 @@ tb << Get Base Data Font;
 
 ### Get Base Title Font
 
-**语法:** font = obj << Get Base Title Font
+**语法:** font = obj &lt;&lt; Get Base Title Font
 
 **说明:** 返回该框绘制的文本所用的基本字体。基本字体包括“Title”、“Text”、“Annotation”之类的预定义名称，以及在字体“首选项”中指定的那些字体。
 
@@ -3339,7 +3291,7 @@ tb << Get Base Title Font;
 
 ### Get Click Sort
 
-**语法:** 0|1 = obj << Get Click Sort
+**语法:** 0|1 = obj &lt;&lt; Get Click Sort
 
 **说明:** 若表可以通过单次点击列标题排序，则返回 1，否则返回 0
 
@@ -3359,7 +3311,7 @@ tb << Get Click Sort;
 
 ### Get Column Borders
 
-**语法:** obj << Get Column Borders( state=0|1 )
+**语法:** obj &lt;&lt; Get Column Borders( state=0|1 )
 
 **说明:** 若当前正在绘制列边框，则返回 1
 
@@ -3379,7 +3331,7 @@ tb << Get Column Borders;
 
 ### Get Column Group Borders
 
-**语法:** obj << Get Column Group Borders( state=0|1 )
+**语法:** obj &lt;&lt; Get Column Group Borders( state=0|1 )
 
 ```jsl
 
@@ -3400,7 +3352,7 @@ tb << Get Column Group Borders;
 
 ### Get Context Menu Item State
 
-**语法:** 0|1|-1 = obj << Get Context Menu Item State( index )
+**语法:** 0|1|-1 = obj &lt;&lt; Get Context Menu Item State( index )
 
 **说明:** 获取 index 菜单项的上下文菜单项状态。状态可以是正常 (0)、选中 (1) 或禁用 (-1)
 
@@ -3422,7 +3374,7 @@ tb << Get Context Menu Item State( 2 );
 
 ### Get Context Menu Script
 
-**语法:** list = obj << Get Context Menu Script
+**语法:** list = obj &lt;&lt; Get Context Menu Script
 
 **说明:** 返回附加到调用对象的上下文菜单脚本。
 
@@ -3445,7 +3397,7 @@ tb << Set Context Menu Script(
 
 ### Get Context Menu Submenu
 
-**语法:** obj << Get Context Menu Submenu( index )
+**语法:** obj &lt;&lt; Get Context Menu Submenu( index )
 
 **说明:** 返回给定菜单项下面的子菜单数
 
@@ -3470,7 +3422,7 @@ tb << Get Context Menu Submenu( 2 );
 
 ### Get Data Font Name
 
-**语法:** obj << Get Data Font Name
+**语法:** obj &lt;&lt; Get Data Font Name
 
 **说明:** 返回字体名称。
 
@@ -3491,7 +3443,7 @@ tb << Get Data Font Name;
 
 ### Get Data Font Scale
 
-**语法:** obj << Get Data Font Scale
+**语法:** obj &lt;&lt; Get Data Font Scale
 
 **说明:** 返回字体的当前缩放因子。
 
@@ -3511,7 +3463,7 @@ tb << Get Data Font Scale;
 
 ### Get Data Font Size
 
-**语法:** obj << Get Data Font Size
+**语法:** obj &lt;&lt; Get Data Font Size
 
 **说明:** 返回字体大小。
 
@@ -3531,7 +3483,7 @@ tb << Get Data Font Size;
 
 ### Get Data Font Style
 
-**语法:** obj << Get Data Font Style
+**语法:** obj &lt;&lt; Get Data Font Style
 
 **说明:** 返回字体样式名称。
 
@@ -3553,7 +3505,7 @@ tb << Get Data Font Style;
 
 ### Get Font
 
-**语法:** obj << Get Font
+**语法:** obj &lt;&lt; Get Font
 
 ```jsl
 
@@ -3571,7 +3523,7 @@ tb << Get Font;
 
 ### Get Heading Column Borders
 
-**语法:** obj << Get Heading Column Borders( state=0|1 )
+**语法:** obj &lt;&lt; Get Heading Column Borders( state=0|1 )
 
 **说明:** 若表的列标题当前有边框，则返回 1
 
@@ -3591,9 +3543,7 @@ tb << Get Heading Column Borders;
 
 ### Get Heading Underline Color
 
-**语法:** obj << Heading Underline Color( color );
-
-color = obj << Get Heading Underline Color
+**语法:** obj &lt;&lt; Heading Underline Color( color );color = obj &lt;&lt; Get Heading Underline Color
 
 **JMP添加的版本:** 19
 
@@ -3615,7 +3565,7 @@ Show( tb << Get Heading Underline Color );
 
 ### Get Locked Columns
 
-**语法:** obj << Get Locked Columns
+**语法:** obj &lt;&lt; Get Locked Columns
 
 **说明:** 无法使用手形光标拖动或在其前放置列的列数。
 
@@ -3636,7 +3586,7 @@ tb << get locked columns();
 
 ### Get Names
 
-**语法:** obj << Get Names
+**语法:** obj &lt;&lt; Get Names
 
 **说明:** 返回列名列表
 
@@ -3656,9 +3606,7 @@ tb << Get Names();
 
 ### Get Row Border Color
 
-**语法:** obj << Row Border Color( color );
-
-color = obj << Get Row Border Color
+**语法:** obj &lt;&lt; Row Border Color( color );color = obj &lt;&lt; Get Row Border Color
 
 **JMP添加的版本:** 19
 
@@ -3680,7 +3628,7 @@ Show( tb << Get Row Border Color );
 
 ### Get Row Borders
 
-**语法:** obj << Get Row Borders( state=0|1 )
+**语法:** obj &lt;&lt; Get Row Borders( state=0|1 )
 
 **说明:** 若在每行上下绘制线条，则返回 1
 
@@ -3700,7 +3648,7 @@ tb << Get Row Borders;
 
 ### Get Row Change Function
 
-**语法:** obj << Get Row Change Function
+**语法:** obj &lt;&lt; Get Row Change Function
 
 **说明:** 返回当选择行时进行求值的表达式。
 
@@ -3722,9 +3670,7 @@ tb << get row change function;
 
 ### Get Row Height Scale
 
-**语法:** obj << Row Height Scale( number );
-
-number = obj << Get Row Height Scale
+**语法:** obj &lt;&lt; Row Height Scale( number );number = obj &lt;&lt; Get Row Height Scale
 
 **说明:** 调整表行的默认高度。默认值为 1。
 
@@ -3747,9 +3693,7 @@ tb << Get Row Height Scale();
 
 ### Get Row Vertical Alignment
 
-**语法:** obj << Row Vertical Alignment( "顶部"|"中心"|"基线"|"底部" );
-
-"顶部"|"中心"|"基线"|"底部" = obj << Get Row Vertical Alignment
+**语法:** obj &lt;&lt; Row Vertical Alignment( "顶部"|"中心"|"基线"|"底部" );"顶部"|"中心"|"基线"|"底部" = obj &lt;&lt; Get Row Vertical Alignment
 
 **说明:** 设置表行中文本或数字的垂直对齐
 
@@ -3773,7 +3717,7 @@ tb << Row Height Scale( 3 );
 
 ### Get Selectable Rows
 
-**语法:** obj << Get Selectable Rows
+**语法:** obj &lt;&lt; Get Selectable Rows
 
 **说明:** 若表框当前允许行选择，则返回真
 
@@ -3793,7 +3737,7 @@ tb << Get Selectable Rows();
 
 ### Get Selected Row Color
 
-**语法:** obj << Get Selected Row Color
+**语法:** obj &lt;&lt; Get Selected Row Color
 
 **说明:** 获取选定行的背景颜色
 
@@ -3815,7 +3759,7 @@ Color To RGB( tb << Get Selected Row Color );
 
 ### Get Selected Rows
 
-**语法:** obj << Get Selected Rows
+**语法:** obj &lt;&lt; Get Selected Rows
 
 **说明:** 返回所选行号的矩阵。
 
@@ -3836,7 +3780,7 @@ Print( tb << Get Selected Rows() );
 
 ### Get Shade Alternate Rows
 
-**语法:** obj << Get Shade Alternate Rows( state=0|1 )
+**语法:** obj &lt;&lt; Get Shade Alternate Rows( state=0|1 )
 
 **说明:** 若每隔一行着色，则返回 1
 
@@ -3856,7 +3800,7 @@ tb << Get Shade Alternate Rows;
 
 ### Get Shade Cells
 
-**语法:** obj << Get Shade Cells( state=0|1 )
+**语法:** obj &lt;&lt; Get Shade Cells( state=0|1 )
 
 **说明:** 若表的单元格区域有着色背景，则返回 1
 
@@ -3876,7 +3820,7 @@ tb << Get Shade Cells;
 
 ### Get Shade Headings
 
-**语法:** obj << Get Shade Headings( state=0|1 )
+**语法:** obj &lt;&lt; Get Shade Headings( state=0|1 )
 
 **说明:** 若表的列标题当前着色，则返回 1
 
@@ -3896,7 +3840,7 @@ tb << Get Shade Headings;
 
 ### Get Title Font
 
-**语法:** obj << Get Title Font
+**语法:** obj &lt;&lt; Get Title Font
 
 ```jsl
 
@@ -3914,7 +3858,7 @@ tb << Get Title Font;
 
 ### Get Title Font Name
 
-**语法:** obj << Get Title Font Name
+**语法:** obj &lt;&lt; Get Title Font Name
 
 **说明:** 返回字体名称。
 
@@ -3935,7 +3879,7 @@ tb << Get Title Font Name;
 
 ### Get Title Font Scale
 
-**语法:** obj << Get Title Font Scale
+**语法:** obj &lt;&lt; Get Title Font Scale
 
 **说明:** 返回字体的当前缩放因子。
 
@@ -3955,7 +3899,7 @@ tb << Get Title Font Scale;
 
 ### Get Title Font Size
 
-**语法:** obj << Get Title Font Size
+**语法:** obj &lt;&lt; Get Title Font Size
 
 **说明:** 返回字体大小。
 
@@ -3975,7 +3919,7 @@ tb << Get Title Font Size;
 
 ### Get Title Font Style
 
-**语法:** obj << Get Title Font Style
+**语法:** obj &lt;&lt; Get Title Font Style
 
 **说明:** 返回字体样式名称。
 
@@ -3997,7 +3941,7 @@ tb << Get Title Font Style;
 
 ### Get Underline Headings
 
-**语法:** obj << Get Underline Headings( state=0|1 )
+**语法:** obj &lt;&lt; Get Underline Headings( state=0|1 )
 
 **说明:** 若列标题带下划线，则返回 1
 
@@ -4017,7 +3961,7 @@ tb << Get Underline Headings;
 
 ### Group By Column
 
-**语法:** obj << Group By Column( <column index or title>, <ascending=0|1> )
+**语法:** obj &lt;&lt; Group By Column( &lt;column index or title&gt;, &lt;ascending=0|1&gt; )
 
 **说明:** 将具有相同值的所有行分组在一起，并根据这些组对表排序。默认排序顺序是降序。
 
@@ -4036,9 +3980,7 @@ dtb << set click sort( 1 );
 
 ### Heading Underline Color
 
-**语法:** obj << Heading Underline Color( color );
-
-color = obj << Get Heading Underline Color
+**语法:** obj &lt;&lt; Heading Underline Color( color );color = obj &lt;&lt; Get Heading Underline Color
 
 **JMP添加的版本:** 19
 
@@ -4060,7 +4002,7 @@ Show( tb << Get Heading Underline Color );
 
 ### Insert Row
 
-**语法:** obj << Insert Row( row number, {values,...} )
+**语法:** obj &lt;&lt; Insert Row( row number, {values,...} )
 
 **说明:** 将数据行插入表
 
@@ -4079,7 +4021,7 @@ tb << insert row( 1, {"b", 2} );
 
 ### Make Combined Data Table
 
-**语法:** obj << Make Combined Data Table
+**语法:** obj &lt;&lt; Make Combined Data Table
 
 **说明:** 创建一个数据表，该表同时在报表中搜索具有相同列的表，然后将所有这些表合并入该新数据表中。
 
@@ -4099,7 +4041,7 @@ tb << Make Combined Data Table;
 
 ### Make Into Data Table
 
-**语法:** obj << Make Into Data Table( <Invisible(bool) | Private(bool)> )
+**语法:** obj &lt;&lt; Make Into Data Table( &lt;Invisible(bool) | Private(bool)&gt; )
 
 **说明:** 创建新数据表，其包含 TableBox 中的值。
 
@@ -4131,7 +4073,7 @@ tb << Make Into Data Table( invisible( 1 ) );
 
 ### Reorder Columns
 
-**语法:** obj << Reorder Columns( from column index,to column index )
+**语法:** obj &lt;&lt; Reorder Columns( from column index,to column index )
 
 **说明:** 对将 from column index 置于 to column index 的列重新排序。
 
@@ -4149,7 +4091,7 @@ tb << Reorder Columns( 1, 3 );
 
 ### Reset Filter
 
-**语法:** obj << Reset Filter
+**语法:** obj &lt;&lt; Reset Filter
 
 **说明:** 清除现有的“过滤符合条件的行”消息并显示表中的所有行。
 
@@ -4174,7 +4116,7 @@ tb << Reset Filter;
 
 ### Reset Style
 
-**语法:** obj << Reset Style
+**语法:** obj &lt;&lt; Reset Style
 
 **说明:** 根据首选项设置重置表样式
 
@@ -4195,9 +4137,7 @@ tb << Reset Style;
 
 ### Row Border Color
 
-**语法:** obj << Row Border Color( color );
-
-color = obj << Get Row Border Color
+**语法:** obj &lt;&lt; Row Border Color( color );color = obj &lt;&lt; Get Row Border Color
 
 **JMP添加的版本:** 19
 
@@ -4219,9 +4159,7 @@ Show( tb << Get Row Border Color );
 
 ### Row Height Scale
 
-**语法:** obj << Row Height Scale( number );
-
-number = obj << Get Row Height Scale
+**语法:** obj &lt;&lt; Row Height Scale( number );number = obj &lt;&lt; Get Row Height Scale
 
 **说明:** 调整表行的默认高度。默认值为 1。
 
@@ -4244,9 +4182,7 @@ tb << Get Row Height Scale();
 
 ### Row Vertical Alignment
 
-**语法:** obj << Row Vertical Alignment( "顶部"|"中心"|"基线"|"底部" );
-
-"顶部"|"中心"|"基线"|"底部" = obj << Get Row Vertical Alignment
+**语法:** obj &lt;&lt; Row Vertical Alignment( "顶部"|"中心"|"基线"|"底部" );"顶部"|"中心"|"基线"|"底部" = obj &lt;&lt; Get Row Vertical Alignment
 
 **说明:** 设置表行中文本或数字的垂直对齐
 
@@ -4270,7 +4206,7 @@ tb << Row Height Scale( 3 );
 
 ### Select Where
 
-**语法:** obj << Select Where
+**语法:** obj &lt;&lt; Select Where
 
 **说明:** 基于该行的值选择表中的行。
 
@@ -4293,7 +4229,7 @@ tb << select where( "Elevation (meters)"n < 4000 | Mountain == "K2" );
 
 ### Set Base Data Font
 
-**语法:** obj << Set Base Data Font( "文本"|"题头"|"标题"|"小字体"|"单字"|"公式编辑器"|"注解"|"轴"|"标记"|"轴标题"|"图形标签"|"图例"|"图形标题"|"说明文字"|"数据表"|"悬停标签" )
+**语法:** obj &lt;&lt; Set Base Data Font( "文本"|"题头"|"标题"|"小字体"|"单字"|"公式编辑器"|"注解"|"轴"|"标记"|"轴标题"|"图形标签"|"图例"|"图形标题"|"说明文字"|"数据表"|"悬停标签" )
 
 **说明:** 设置该框绘制的文本的基本字体。
 
@@ -4314,7 +4250,7 @@ tb << Set Base Data Font( "Data" );
 
 ### Set Base Title Font
 
-**语法:** obj << Set Base Title Font( "文本"|"题头"|"标题"|"小字体"|"单字"|"公式编辑器"|"注解"|"轴"|"标记"|"轴标题"|"图形标签"|"图例"|"图形标题"|"说明文字"|"数据表"|"悬停标签" )
+**语法:** obj &lt;&lt; Set Base Title Font( "文本"|"题头"|"标题"|"小字体"|"单字"|"公式编辑器"|"注解"|"轴"|"标记"|"轴标题"|"图形标签"|"图例"|"图形标题"|"说明文字"|"数据表"|"悬停标签" )
 
 **说明:** 设置该框绘制的文本的基本字体。
 
@@ -4335,7 +4271,7 @@ tb << Set Base Title Font( "Title" );
 
 ### Set Cell Changed Function
 
-**语法:** obj << Set Cell Changed Function( Function({thisBox, col box, row}, <script>;) )
+**语法:** obj &lt;&lt; Set Cell Changed Function( Function({thisBox, col box, row}, &lt;script&gt;;) )
 
 **说明:** 设置一个函数，每当用户编辑表列中的单元格时将调用该函数
 
@@ -4362,7 +4298,7 @@ tb << Set Cell Changed Function(
 
 ### Set Click Sort
 
-**语法:** obj << Set Click Sort( <state=0|1> )
+**语法:** obj &lt;&lt; Set Click Sort( &lt;state=0|1&gt; )
 
 **说明:** 允许表通过单次点击列标题排序
 
@@ -4382,7 +4318,7 @@ tb << Set Click Sort( 1 );
 
 ### Set Column Borders
 
-**语法:** obj << Set Column Borders( state=0|1 )
+**语法:** obj &lt;&lt; Set Column Borders( state=0|1 )
 
 **说明:** 在每列的两边绘制一条线
 
@@ -4402,7 +4338,7 @@ tb << Set Column Borders( 1 );
 
 ### Set Column Group Borders
 
-**语法:** obj << Set Column Group Borders( state=0|1 )
+**语法:** obj &lt;&lt; Set Column Group Borders( state=0|1 )
 
 ```jsl
 
@@ -4423,7 +4359,7 @@ tb << Set Column Group Borders( 1 );
 
 ### Set Context Menu Item State
 
-**语法:** obj << Set Context Menu Item State( index, 0|1|-1 )
+**语法:** obj &lt;&lt; Set Context Menu Item State( index, 0|1|-1 )
 
 **说明:** 将 index 处的上下文菜单项设置为正常 (0)、选中 (1) 或禁用 (-1)
 
@@ -4444,7 +4380,7 @@ tb << Set Context Menu Item State( 2, -1 );
 
 ### Set Context Menu Script
 
-**语法:** obj << Set Context Menu Script( {"string",script,"string",script, ...} )
+**语法:** obj &lt;&lt; Set Context Menu Script( {"string",script,"string",script, ...} )
 
 **说明:** 将带有指定选项和脚本的上下文菜单添加到框。
 
@@ -4467,7 +4403,7 @@ tb << Set Context Menu Script(
 
 ### Set Context Menu Submenu
 
-**语法:** obj << Set Context Menu Submenu( index, submenu count )
+**语法:** obj &lt;&lt; Set Context Menu Submenu( index, submenu count )
 
 **说明:** 将“index”菜单项转换为带“submenu count”个菜单项的子菜单
 
@@ -4491,7 +4427,7 @@ tb << Set Context Menu Submenu( 2, 3 );
 
 ### Set Data Font
 
-**语法:** obj << Set Data Font( fontName, <size>, <"bold italic underline strikeout">, <angle> )
+**语法:** obj &lt;&lt; Set Data Font( fontName, &lt;size&gt;, &lt;"bold italic underline strikeout"&gt;, &lt;angle&gt; )
 
 **示例 1**
 
@@ -4527,7 +4463,7 @@ tb << Set Data Font( "Arial Black", 12, "Italic Underline" );
 
 ### Set Data Font Name
 
-**语法:** obj << Set Data Font Name( fontname )
+**语法:** obj &lt;&lt; Set Data Font Name( fontname )
 
 **说明:** 设置文本字符串的字体。
 
@@ -4547,7 +4483,7 @@ tb << Set Data Font Name( "Arial Black" );
 
 ### Set Data Font Scale
 
-**语法:** obj << Set Data Font Scale( f )
+**语法:** obj &lt;&lt; Set Data Font Scale( f )
 
 **说明:** 设置当前字体的比例因子。比例因子将应用到由基本字体和磅值决定的字号。
 
@@ -4568,7 +4504,7 @@ tb << Set Data Font Scale( 2.0 );
 
 ### Set Data Font Size
 
-**语法:** obj << Set Data Font Size( n )
+**语法:** obj &lt;&lt; Set Data Font Size( n )
 
 **说明:** 以磅为单位设置文本字符串的字体大小。
 
@@ -4588,7 +4524,7 @@ tb << Set Data Font Size( 14 );
 
 ### Set Data Font Style
 
-**语法:** obj << Set Data Font Style( style )
+**语法:** obj &lt;&lt; Set Data Font Style( style )
 
 **说明:** 设置文本字符串的字体样式。要一次设置多种样式，将它们放置在同一个字符串中，用空格分隔（请参见下面的示例 2）。
 
@@ -4626,7 +4562,7 @@ tb << Set Data Font Style( "Italic Bold Underline" );
 
 ### Set Heading Column Borders
 
-**语法:** obj << Set Heading Column Borders( state=0|1 )
+**语法:** obj &lt;&lt; Set Heading Column Borders( state=0|1 )
 
 **说明:** 标题中的列边框
 
@@ -4646,7 +4582,7 @@ tb << Set Heading Column Borders( 1 );
 
 ### Set Locked Columns
 
-**语法:** obj << Set Locked Columns( number )
+**语法:** obj &lt;&lt; Set Locked Columns( number )
 
 **说明:** 锁定前 n 列，从而禁止使用手形光标拖动这些列或在其前放置列。
 
@@ -4666,7 +4602,7 @@ tb << set locked columns( 1 );
 
 ### Set Row Borders
 
-**语法:** obj << Set Row Borders( state=0|1 )
+**语法:** obj &lt;&lt; Set Row Borders( state=0|1 )
 
 **说明:** 在每行的上下绘制一条线
 
@@ -4686,7 +4622,7 @@ tb << Set Row Borders( 1 );
 
 ### Set Row Change Function
 
-**语法:** obj << Set Row Change Function( Function( {thisBox}, <script> ) )
+**语法:** obj &lt;&lt; Set Row Change Function( Function( {thisBox}, &lt;script&gt; ) )
 
 **说明:** 设置当选择行时进行求值的表达式。
 
@@ -4707,7 +4643,7 @@ tb << set row change function( Function( {thisBox}, Print( thisBox << get select
 
 ### Set Scrollable
 
-**语法:** obj << Set Scrollable( rows, columns )
+**语法:** obj &lt;&lt; Set Scrollable( rows, columns )
 
 **说明:** 启用或禁用 TableBox 的滚动功能。
 
@@ -4727,7 +4663,7 @@ tb << Set Scrollable( 3, 0 );
 
 ### Set Selectable Rows
 
-**语法:** obj << Set Selectable Rows( state=0|1 )
+**语法:** obj &lt;&lt; Set Selectable Rows( state=0|1 )
 
 **说明:** 将该 TableBox 中的行设置为可选或不可选。
 
@@ -4747,7 +4683,7 @@ tb << Set Selectable Rows();
 
 ### Set Selected Row Color
 
-**语法:** obj << Set Selected Row Color( color )
+**语法:** obj &lt;&lt; Set Selected Row Color( color )
 
 **说明:** 设置选定行的背景颜色，仅在设置了“设置可选行”时有效
 
@@ -4769,7 +4705,7 @@ tb << Set Selected Row Color( "Red" );
 
 ### Set Selected Rows
 
-**语法:** obj << Set Selected Rows( row matrix )
+**语法:** obj &lt;&lt; Set Selected Rows( row matrix )
 
 **说明:** 选择指定行并取消选择其他行。
 
@@ -4789,7 +4725,7 @@ tb << Set Selected Rows( [1, 4] );
 
 ### Set Shade Alternate Rows
 
-**语法:** obj << Set Shade Alternate Rows( state=0|1 )
+**语法:** obj &lt;&lt; Set Shade Alternate Rows( state=0|1 )
 
 **说明:** 在表中每隔一行为行添加背景色
 
@@ -4809,7 +4745,7 @@ tb << Set Shade Alternate Rows( 1 );
 
 ### Set Shade Cells
 
-**语法:** obj << Set Shade Cells( state=0|1 )
+**语法:** obj &lt;&lt; Set Shade Cells( state=0|1 )
 
 **说明:** 为表中的每个单元格添加背景色
 
@@ -4829,7 +4765,7 @@ tb << Set Shade Cells( 1 );
 
 ### Set Shade Headings
 
-**语法:** obj << Set Shade Headings( state=0|1 )
+**语法:** obj &lt;&lt; Set Shade Headings( state=0|1 )
 
 **说明:** 为列标题添加背景色
 
@@ -4849,7 +4785,7 @@ tb << Set Shade Headings( 1 );
 
 ### Set Title Font
 
-**语法:** obj << Set Title Font( fontName, <size>, <"bold italic underline strikeout">, <angle> )
+**语法:** obj &lt;&lt; Set Title Font( fontName, &lt;size&gt;, &lt;"bold italic underline strikeout"&gt;, &lt;angle&gt; )
 
 **示例 1**
 
@@ -4885,7 +4821,7 @@ tb << Set Title Font( "Arial Black", 12, "Italic Underline" );
 
 ### Set Title Font Name
 
-**语法:** obj << Set Title Font Name( fontname )
+**语法:** obj &lt;&lt; Set Title Font Name( fontname )
 
 **说明:** 设置文本字符串的字体。
 
@@ -4905,7 +4841,7 @@ tb << Set Title Font Name( "Arial Black" );
 
 ### Set Title Font Scale
 
-**语法:** obj << Set Title Font Scale( f )
+**语法:** obj &lt;&lt; Set Title Font Scale( f )
 
 **说明:** 设置当前字体的比例因子。比例因子将应用到由基本字体和磅值决定的字号。
 
@@ -4926,7 +4862,7 @@ tb << Set Title Font Scale( 2.0 );
 
 ### Set Title Font Size
 
-**语法:** obj << Set Title Font Size( n )
+**语法:** obj &lt;&lt; Set Title Font Size( n )
 
 **说明:** 以磅为单位设置文本字符串的字体大小。
 
@@ -4946,7 +4882,7 @@ tb << Set Title Font Size( 14 );
 
 ### Set Title Font Style
 
-**语法:** obj << Set Title Font Style( style )
+**语法:** obj &lt;&lt; Set Title Font Style( style )
 
 **说明:** 设置文本字符串的字体样式。要一次设置多种样式，将它们放置在同一个字符串中，用空格分隔（请参见下面的示例 2）。
 
@@ -4984,7 +4920,7 @@ tb << Set Title Font Style( "Italic Bold Underline" );
 
 ### Set Underline Headings
 
-**语法:** obj << Set Underline Headings( state=0|1 )
+**语法:** obj &lt;&lt; Set Underline Headings( state=0|1 )
 
 **说明:** 在列标题下面绘制一条线
 
@@ -5004,7 +4940,7 @@ tb << Set Underline Headings( 1 );
 
 ### Simulate
 
-**语法:** obj << Simulate( nsample, Random Seed(number), Out(column), In(column), Update(<columns>) )
+**语法:** obj &lt;&lt; Simulate( nsample, Random Seed(number), Out(column), In(column), Update(&lt;columns&gt;) )
 
 **说明:** 通过用具有模拟公式的列替换某列来执行模拟。
 
@@ -5033,7 +4969,7 @@ dtlst[2] << Distribution( Y( :height ) );
 
 ### Sort By Column
 
-**语法:** obj << Sort By Column( <column index or title>, <ascending=0|1> )
+**语法:** obj &lt;&lt; Sort By Column( &lt;column index or title&gt;, &lt;ascending=0|1&gt; )
 
 **说明:** 根据给定列中的值对表中的所有行排序。默认排序顺序为降序。
 

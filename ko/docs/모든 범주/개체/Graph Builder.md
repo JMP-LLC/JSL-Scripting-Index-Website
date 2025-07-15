@@ -6,7 +6,7 @@
 
 ### Action
 
-**구문:** obj << Action
+**구문:** obj &lt;&lt; Action
 
 **설명:** 실행할 표현식을 삽입하기 위한 플랫폼 내의 다목적 트랩도어. 임시로 표시 상자 및 데이터 테이블 유형을 플랫폼에 설정합니다.
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**구문:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**구문:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **설명:** 이전에 생성된 사전 설정을 개체에 적용하여 옵션과 사용자 정의를 저장된 설정과 일치하도록 업데이트합니다.
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Automatic Recalc
 
-**구문:** obj << Automatic Recalc( state=0|1 )
+**구문:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **설명:** 제외 항목 및 데이터 변경이 있을 때 분석을 자동으로 다시 실행합니다. 자동 재계산 옵션이 설정된 경우 재계산하기 전에 제외 항목 및 데이터 변경이 적용되게 하려면 Wait(0) 명령을 사용하는 것이 좋습니다.
 
@@ -87,7 +87,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**구문:** obj << Broadcast(message)
+**구문:** obj &lt;&lt; Broadcast(message)
 
 **설명:** 플랫폼에 메시지를 브로드캐스트합니다. 개별 개체의 반환 결과가 테이블인 경우 가능하면 테이블이 연결되고 최종 형식은 테이블 상자의 &apos;결합 테이블 저장&apos; 옵션 결과 또는 소스 열을 사용한 &apos;연결&apos; 옵션 결과와 동일합니다. 그 외의 경우에는 결과가 목록에 저장되어 반환됩니다.
 
@@ -104,7 +104,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**구문:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**구문:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **설명:** 플랫폼 변수를 변경하기 위한 제어판을 추가합니다.
 
@@ -119,7 +119,7 @@ ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country,
 
 ### Copy ByGroup Script
 
-**구문:** obj << Copy ByGroup Script
+**구문:** obj &lt;&lt; Copy ByGroup Script
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 클립보드에 넣습니다.
 
@@ -143,7 +143,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**구문:** obj << Copy Script
+**구문:** obj &lt;&lt; Copy Script
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 클립보드에 넣습니다.
 
@@ -158,7 +158,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**구문:** obj << Data Table Window
+**구문:** obj &lt;&lt; Data Table Window
 
 **설명:** 이 분석에 대한 데이터 테이블 창을 앞으로 가져옵니다.
 
@@ -173,7 +173,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**구문:** obj << Get By Levels
+**구문:** obj &lt;&lt; Get By Levels
 
 **설명:** 기준 그룹 열을 값에 매핑하는 연관 배열을 반환합니다.
 
@@ -190,7 +190,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**구문:** obj << Get ByGroup Script
+**구문:** obj &lt;&lt; Get ByGroup Script
 
 **설명:** 이 분석을 수행하기 위한 스크립트(JSL)를 생성하고 표현식으로 반환합니다.
 
@@ -215,7 +215,7 @@ Show( t );
 
 ### Get Container
 
-**구문:** obj << Get Container
+**구문:** obj &lt;&lt; Get Container
 
 **설명:** 개체의 콘텐츠를 담고 있는 컨테이너 상자에 대한 참조를 반환합니다.
 
@@ -262,7 +262,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**구문:** obj << Get Data Table
+**구문:** obj &lt;&lt; Get Data Table
 
 **설명:** 데이터 테이블에 대한 참조를 반환합니다.
 
@@ -278,7 +278,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**구문:** obj << Get Group Platform
+**구문:** obj &lt;&lt; Get Group Platform
 
 **설명:** 이 플랫폼이 그룹의 일부인 경우 그룹 플랫폼 개체를 반환하고, 그렇지 않은 경우 Empty()를 반환합니다.
 
@@ -295,7 +295,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**구문:** obj << Get Script
+**구문:** obj &lt;&lt; Get Script
 
 **설명:** 이 분석을 수행하기 위한 스크립트(JSL)를 생성하고 표현식으로 반환합니다.
 
@@ -311,7 +311,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**구문:** obj << Get Script With Data Table
+**구문:** obj &lt;&lt; Get Script With Data Table
 
 **설명:** 이 데이터 테이블을 참조하는 분석을 수행하기 위한 스크립트(JSL)를 생성하고 표현식으로 반환합니다.
 
@@ -327,7 +327,7 @@ Show( t );
 
 ### Get Timing
 
-**구문:** obj << Get Timing
+**구문:** obj &lt;&lt; Get Timing
 
 **설명:** 플랫폼 시작 시간을 설정합니다.
 
@@ -343,7 +343,7 @@ Show( t );
 
 ### Get Web Support
 
-**구문:** obj << Get Web Support
+**구문:** obj &lt;&lt; Get Web Support
 
 **설명:** 표시 개체에 대한 대화식 HTML 지원 수준을 나타내는 숫자를 반환합니다. 1은 일부 또는 모든 요소가 지원됨을 의미하고 0은 지원되지 않음을 의미합니다.
 
@@ -359,7 +359,7 @@ Show( s );
 
 ### Get Where Expr
 
-**구문:** obj << Get Where Expr
+**구문:** obj &lt;&lt; Get Where Expr
 
 **설명:** By() 또는 Where()를 사용하여 플랫폼이 시작된 경우 데이터 부분집합에 대한 Where 표현식을 반환하고, 그렇지 않은 경우 Empty()를 반환합니다.
 
@@ -396,7 +396,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**구문:** obj << Local Data Filter
+**구문:** obj &lt;&lt; Local Data Filter
 
 **설명:** 데이터를 특정 그룹 또는 범위로 필터링합니다. 이 플랫폼에서만 사용 가능합니다.
 
@@ -452,7 +452,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**구문:** obj << Paste Local Data Filter
+**구문:** obj &lt;&lt; Paste Local Data Filter
 
 **설명:** 클립보드의 로컬 데이터 필터를 현재 보고서에 적용합니다.
 
@@ -471,7 +471,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**구문:** obj << Redo Analysis
+**구문:** obj &lt;&lt; Redo Analysis
 
 **설명:** 동일한 분석을 새 창에서 다시 실행합니다. 데이터가 변경된 경우에는 분석결과가 달라집니다.
 
@@ -486,7 +486,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**구문:** obj << Redo ByGroup Analysis
+**구문:** obj &lt;&lt; Redo ByGroup Analysis
 
 **설명:** 동일한 분석을 새 창에서 다시 실행합니다. 데이터가 변경된 경우에는 분석결과가 달라집니다.
 
@@ -510,7 +510,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**구문:** obj << Relaunch Analysis
+**구문:** obj &lt;&lt; Relaunch Analysis
 
 **설명:** 플랫폼 시작 창을 열고 보고서를 생성하는 데 사용된 설정을 불러옵니다.
 
@@ -525,7 +525,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**구문:** obj << Relaunch ByGroup
+**구문:** obj &lt;&lt; Relaunch ByGroup
 
 **설명:** 플랫폼 시작 창을 열고 보고서를 생성하는 데 사용된 설정을 불러옵니다.
 
@@ -549,7 +549,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**구문:** obj << Remove Column Switcher
+**구문:** obj &lt;&lt; Remove Column Switcher
 
 **설명:** 플랫폼에 추가된 가장 최근 열 전환기를 제거합니다.
 
@@ -566,7 +566,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**구문:** obj << Remove Local Data Filter
+**구문:** obj &lt;&lt; Remove Local Data Filter
 
 **설명:** 로컬 데이터 필터가 생성된 경우 로컬 데이터 필터를 제거하고 데이터 테이블의 모든 데이터를 직접 사용하도록 플랫폼을 복원합니다.
 
@@ -605,9 +605,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**구문:** obj << Report;
-
-Report( obj )
+**구문:** obj &lt;&lt; Report;Report( obj )
 
 **설명:** 보고서 개체에 대한 참조를 반환합니다.
 
@@ -624,7 +622,7 @@ Show( t );
 
 ### Report View
 
-**구문:** obj << Report View( "전체"|"요약" )
+**구문:** obj &lt;&lt; Report View( "전체"|"요약" )
 
 **설명:** 보고서 보기는 플랫폼 보고서에 표시되는 상세 수준을 결정합니다. Full은 모든 상세 정보를 표시하고 Summary는 플랫폼에 따라 선택된 콘텐츠만 표시합니다. 사용자 정의된 동작의 경우 표시 상자는 <<Set Summary Behavior 메시지를 지원합니다.
 
@@ -639,7 +637,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**구문:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**구문:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 데이터 테이블에 테이블 특성으로 저장합니다. 스크립트 이름을 지정할 수 있습니다. Append Suffix 옵션은 스크립트 이름에 숫자 접미사를 추가하여 이름이 같은 기존 스크립트와 구분합니다. Prompt 옵션은 사용자에게 스크립트 이름을 지정하라는 메시지를 표시합니다. Replace 옵션은 이름이 같은 기존 스크립트를 바꿉니다.
 
@@ -663,7 +661,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**구문:** obj << Save ByGroup Script to Journal
+**구문:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 이 스크립트가 포함된 저널에 버튼을 추가합니다.
 
@@ -687,7 +685,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**구문:** obj << Save ByGroup Script to Script Window
+**구문:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 현재 스크립트 텍스트 창에 추가합니다.
 
@@ -711,7 +709,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**구문:** obj << Save Script for All Objects
+**구문:** obj &lt;&lt; Save Script for All Objects
 
 **설명:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -726,7 +724,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**구문:** obj << Save Script for All Objects To Data Table( <name> )
+**구문:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **설명:** 모든 보고서 개체에 대한 스크립트를 현재 데이터 테이블에 저장합니다. 이 옵션은 창에 여러 보고서가 있을 때 유용합니다. 스크립트 이름을 따옴표로 묶어 지정하는 경우 외에는 첫 번째 플랫폼 이름을 따라 스크립트 이름이 지정됩니다.
 
@@ -772,7 +770,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**구문:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**구문:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 데이터 테이블에 테이블 특성으로 저장합니다.
 
@@ -787,7 +785,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**구문:** obj << Save Script to Journal
+**구문:** obj &lt;&lt; Save Script to Journal
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 이 스크립트가 포함된 저널에 버튼을 추가합니다.
 
@@ -802,7 +800,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**구문:** obj << Save Script to Report
+**구문:** obj &lt;&lt; Save Script to Report
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 보고서 자체에 표시합니다. 수행된 작업에 대한 인쇄된 기록을 유지하려는 경우에 유용합니다.
 
@@ -817,7 +815,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**구문:** obj << Save Script to Script Window
+**구문:** obj &lt;&lt; Save Script to Script Window
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 현재 스크립트 텍스트 창에 추가합니다.
 
@@ -893,7 +891,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**구문:** obj << Sync to Data Table Changes
+**구문:** obj &lt;&lt; Sync to Data Table Changes
 
 **설명:** 제외 항목 및 데이터 변경 사항과 동기화합니다.
 
@@ -910,7 +908,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**구문:** obj << Title( "new title" )
+**구문:** obj &lt;&lt; Title( "new title" )
 
 **설명:** 플랫폼의 제목을 설정합니다.
 
@@ -925,7 +923,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**구문:** obj << Top Report
+**구문:** obj &lt;&lt; Top Report
 
 **설명:** 보고서의 루트 노드에 대한 참조를 반환합니다.
 
@@ -942,7 +940,7 @@ Show( t );
 
 ### Transform Column
 
-**구문:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**구문:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **설명:** 개체의 로컬 컨텍스트(대개 플랫폼)에서 변환 열을 생성합니다. 변환 열은 플랫폼의 수명 동안에만 활성화됩니다.
 
@@ -963,7 +961,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**구문:** obj << View Web XML
+**구문:** obj &lt;&lt; View Web XML
 
 **설명:** 대화식 HTML 보고서를 생성하는 데 사용된 XML 코드를 반환합니다.
 
@@ -978,9 +976,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**구문:** obj = Graph Builder(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Graph Builder(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 보고서에 대해 생성할 창 유형을 설정합니다. 기본적으로 Visible 보고서 창이 생성됩니다. Invisible 창은 화면에 나타나지 않지만 Window()와 같은 함수로 검색할 수 있습니다. Private 창은 대부분의 창 메시지에 응답하지만 검색할 수 없으며 보고서 개체를 통해 처리해야 합니다.
 
@@ -1001,7 +997,7 @@ New Window( "Bivariate Equation",
 
 ### Graph Builder
 
-**구문:** Graph Builder( Variables( X(column ), Y( column ), <Group X( column )>, <Group Y( column )>, <Shape( column )>, <Color( column )>, <Overlay( column )>, <Freq( column )> ), <Elements(...)> ) )
+**구문:** Graph Builder( Variables( X(column ), Y( column ), &lt;Group X( column )&gt;, &lt;Group Y( column )&gt;, &lt;Shape( column )&gt;, &lt;Color( column )&gt;, &lt;Overlay( column )&gt;, &lt;Freq( column )&gt; ), &lt;Elements(...)&gt; ) )
 
 **설명:** 데이터 탐색에 사용할 수 있는 대화식 그래픽 인터페이스를 제공합니다. 열을 그래프 영역으로 드래그하여 산점도, 등고선 그림, 막대 차트, 영역 차트, 상자 그림, 히스토그램, 히트맵, 파이 차트, 트리맵, 모자이크 그림, 맵 등 다양한 그래프를 생성할 수 있습니다.
 
@@ -1017,7 +1013,7 @@ gb = Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X
 
 ### Add Element
 
-**구문:** obj << Add Element( xposition, yposition, {Type(element name), X(i=1), Y(i=1), options...} )
+**구문:** obj &lt;&lt; Add Element( xposition, yposition, {Type(element name), X(i=1), Y(i=1), options...} )
 
 **설명:** 지정된 X 및 Y 위치에 새 그래프 요소를 추가합니다. 요소 규격에는 요소 이름이 포함됩니다. 요소 이름은 데이터 역할이 해당 옵션 값에 사용합니다.
 
@@ -1033,7 +1029,7 @@ gb << Add Element( 1, 1, {Type( "Line Of Fit" ), X, Y, Degree( "Quadratic" )} );
 
 ### Add Variable
 
-**구문:** obj << Add Variable( {column, Role(role), Position(p=1), Inner Position(i=1)}, < <<Method("insert"|"merge"|"replace")> )
+**구문:** obj &lt;&lt; Add Variable( {column, Role(role), Position(p=1), Inner Position(i=1)}, &lt; &lt;&lt;Method("insert"|"merge"|"replace")&gt; )
 
 **설명:** 지정된 역할 및 위치를 사용하여 그래프 빌더 모형에 새 변수를 추가합니다.
 
@@ -1049,7 +1045,7 @@ gb << Add Variable( {:age, Role( "Wrap" )} );
 
 ### Auto Stretching
 
-**구문:** obj << Auto Stretching( state=0|1 )
+**구문:** obj &lt;&lt; Auto Stretching( state=0|1 )
 
 **설명:** 포함 창을 사용하여 그래프 자동 늘리기 설정/해제 간에 전환합니다. 기본적으로 설정되어 있습니다.
 
@@ -1064,7 +1060,7 @@ gb << Auto Stretching( 0 );
 
 ### Back Color
 
-**구문:** obj << Back Color( color )
+**구문:** obj &lt;&lt; Back Color( color )
 
 **설명:** 그래프 주변의 전체 배경에 대한 색상을 설정합니다.
 
@@ -1079,7 +1075,7 @@ gb << Back Color( "Yellow" );
 
 ### Categorical Color Theme
 
-**구문:** obj << Categorical Color Theme
+**구문:** obj &lt;&lt; Categorical Color Theme
 
 **설명:** 범주에 사용되는 색상 테마를 설정합니다.
 
@@ -1094,7 +1090,7 @@ gb << Categorical Color Theme( "Pastel" );
 
 ### Continuous Color Theme
 
-**구문:** obj << Continuous Color Theme
+**구문:** obj &lt;&lt; Continuous Color Theme
 
 **설명:** 그래디언트에 사용되는 색상 테마를 설정합니다.
 
@@ -1109,7 +1105,7 @@ gb << Continuous Color Theme( "White to Black" );
 
 ### Done
 
-**구문:** obj << Done
+**구문:** obj &lt;&lt; Done
 
 **설명:** 제어판을 숨기고 모든 행 표집을 끕니다.
 
@@ -1126,9 +1122,7 @@ gb << Done;
 
 ### Elements
 
-**구문:** Elements( Points( X, Y )| Box plot( X, Y, Jitter( state=0|1 ), Outliers( state=0|1 ), Box Style( "Outlier"|"Quantile" ) )|Line( X, Y, Row Order( number ), Summary Statistic( ) )| Histogram( X, Y)| Bar( X, Y, Bar Style(), Summary Statistic() )| Contour(X, Y)| Smoother(X, Y)|Map Shapes(Summary Statistic() ))
-
-<b>실행기 항목: 예</b>
+**구문:** Elements( Points( X, Y )| Box plot( X, Y, Jitter( state=0|1 ), Outliers( state=0|1 ), Box Style( "Outlier"|"Quantile" ) )|Line( X, Y, Row Order( number ), Summary Statistic( ) )| Histogram( X, Y)| Bar( X, Y, Bar Style(), Summary Statistic() )| Contour(X, Y)| Smoother(X, Y)|Map Shapes(Summary Statistic() ))&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 시각화 요소를 식별합니다.
 
@@ -1145,7 +1139,7 @@ gb = dt << Graph Builder(
 
 ### Error Bar Offset
 
-**구문:** obj << Error Bar Offset
+**구문:** obj &lt;&lt; Error Bar Offset
 
 **설명:** 오차 막대의 오프셋을 설정하기 위한 대화상자를 엽니다.
 
@@ -1163,7 +1157,7 @@ gb << Error Bar Offset( 0.01 );
 
 ### Extend Axis to Zero
 
-**구문:** obj << Extend Axis to Zero( multiplier=1 )
+**구문:** obj &lt;&lt; Extend Axis to Zero( multiplier=1 )
 
 **설명:** 0을 포함하도록 축 척도를 확장하는 데 사용할 승수입니다. 기본값은 "1"입니다.
 
@@ -1183,7 +1177,7 @@ gb = dt << Graph Builder(
 
 ### Extend Dual Axes to Zero
 
-**구문:** obj << Extend Dual Axes to Zero( multiplier=2 )
+**구문:** obj &lt;&lt; Extend Dual Axes to Zero( multiplier=2 )
 
 **설명:** 왼쪽 축과 오른쪽 축이 모두 있을 때 0을 포함하도록 축 척도를 확장하는 데 사용할 승수입니다. 기본값은 "2"입니다.
 
@@ -1204,7 +1198,7 @@ gb = dt << Graph Builder(
 
 ### Extend Parallel Y Axes to Zero
 
-**구문:** obj << Extend Parallel Y Axes to Zero( multiplier=3 )
+**구문:** obj &lt;&lt; Extend Parallel Y Axes to Zero( multiplier=3 )
 
 **설명:** &apos;평행 Y 축&apos; 모드에서 0을 포함하도록 축 척도를 확장하는 데 사용할 승수입니다. 기본값은 "3"입니다.
 
@@ -1227,7 +1221,7 @@ gb = dt << Graph Builder(
 
 ### Fit to Window
 
-**구문:** obj << Fit to Window( "자동"|"켜짐"|"해제"|"화면비율 유지" )
+**구문:** obj &lt;&lt; Fit to Window( "자동"|"켜짐"|"해제"|"화면비율 유지" )
 
 **설명:** 보고서 자동 늘이기 동작을 설정합니다.
 
@@ -1242,7 +1236,7 @@ gb << Fit to Window( "Off" );
 
 ### Get Element
 
-**구문:** obj << Get Element( xposition, yposition, i )
+**구문:** obj &lt;&lt; Get Element( xposition, yposition, i )
 
 **설명:** 지정된 x 및 y 위치에 대해 지정된 그래프 요소를 반환합니다.
 
@@ -1257,7 +1251,7 @@ gb << Get Element( 1, 1, 1 );
 
 ### Get Elements
 
-**구문:** obj << Get Elements( xposition, yposition )
+**구문:** obj &lt;&lt; Get Elements( xposition, yposition )
 
 **설명:** 지정된 x 및 y 위치에 대해 지정된 요소 목록을 반환합니다.
 
@@ -1272,7 +1266,7 @@ gb << Get Elements( 1, 1 );
 
 ### Get Legend Display
 
-**구문:** obj << Get Legend Display
+**구문:** obj &lt;&lt; Get Legend Display
 
 **설명:** 쿼리하거나 수정할 수 있는 그래프에 대한 범례 표시 상자를 반환합니다.
 
@@ -1295,7 +1289,7 @@ item << Set Visible( 0 );
 
 ### Get Legend Server
 
-**구문:** obj << Get Legend Server
+**구문:** obj &lt;&lt; Get Legend Server
 
 **설명:** 그래프의 범례 표시 및 해당 표시 세그먼트에 사용되는 정보가 포함된 개체를 반환합니다.
 
@@ -1318,7 +1312,7 @@ Show( items );
 
 ### Get N Elements
 
-**구문:** obj << Get N Elements( xposition, yposition )
+**구문:** obj &lt;&lt; Get N Elements( xposition, yposition )
 
 **설명:** 지정된 x 및 y 위치에 대한 그래프 요소 수를 반환합니다.
 
@@ -1348,7 +1342,7 @@ gb << Get N Positions( "X" );
 
 ### Get N Variables
 
-**구문:** n = obj << Get N Variables
+**구문:** n = obj &lt;&lt; Get N Variables
 
 **설명:** 사용 중인 변수 수를 반환합니다.
 
@@ -1363,7 +1357,7 @@ gb << Get N Variables();
 
 ### Get Variable
 
-**구문:** obj << Get Variable( index )
+**구문:** obj &lt;&lt; Get Variable( index )
 
 **설명:** 변수 규격을 반환합니다.
 
@@ -1378,7 +1372,7 @@ gb << Get Variable( 1 );
 
 ### Get Variables
 
-**구문:** list = obj << Get Variables
+**구문:** list = obj &lt;&lt; Get Variables
 
 **설명:** 사용 중인 변수에 대한 변수 지정 목록의 목록을 반환합니다.
 
@@ -1393,7 +1387,7 @@ gb << Get Variables();
 
 ### Graph Spacing
 
-**구문:** obj << Graph Spacing( gap=1 )
+**구문:** obj &lt;&lt; Graph Spacing( gap=1 )
 
 **설명:** 그래프 패널 사이의 간격 크기를 설정합니다. 기본값은 "1"입니다.
 
@@ -1409,7 +1403,7 @@ gb << Graph Spacing( 3 );
 
 ### Grid Color
 
-**구문:** obj << Grid Color( color )
+**구문:** obj &lt;&lt; Grid Color( color )
 
 **설명:** 그래프의 격자선에 대한 색상을 설정합니다.
 
@@ -1428,7 +1422,7 @@ gb << Grid Color( "Red" );
 
 ### Grid Transparency
 
-**구문:** obj << Grid Transparency( fraction=1 )
+**구문:** obj &lt;&lt; Grid Transparency( fraction=1 )
 
 **설명:** 격자선의 투명도를 설정합니다. 기본값은 "1"입니다.
 
@@ -1447,7 +1441,7 @@ gb << Grid Transparency( 0.2 );
 
 ### Include Missing Categories
 
-**구문:** obj << Include Missing Categories( state=0|1 )
+**구문:** obj &lt;&lt; Include Missing Categories( state=0|1 )
 
 **설명:** 결측값을 범주형 변수에 대한 별도의 수준으로 처리합니다.
 
@@ -1464,7 +1458,7 @@ gb << Include Missing Categories( 1 );
 
 ### Launch Analysis
 
-**구문:** obj << Launch Analysis
+**구문:** obj &lt;&lt; Launch Analysis
 
 **설명:** 현재 변수를 사용하여 분석을 시작합니다.
 
@@ -1479,7 +1473,7 @@ gb << Launch Analysis;
 
 ### Legend Floating Offset
 
-**구문:** obj << Legend Floating Offset
+**구문:** obj &lt;&lt; Legend Floating Offset
 
 **설명:** 범례 위치가 "부동"으로 설정된 경우 범례의 오프셋(픽셀)을 설정합니다.
 
@@ -1496,7 +1490,7 @@ gb << Legend Position( "Inside Floating" );
 
 ### Legend Position
 
-**구문:** obj << Legend Position( "오른쪽"|"아래쪽"|"내부 왼쪽"|"내부 오른쪽"|"내부 왼쪽 아래"|"내부 오른쪽 아래"|"내부 부동" )
+**구문:** obj &lt;&lt; Legend Position( "오른쪽"|"아래쪽"|"내부 왼쪽"|"내부 오른쪽"|"내부 왼쪽 아래"|"내부 오른쪽 아래"|"내부 부동" )
 
 **설명:** 범례 위치를 설정합니다.
 
@@ -1511,7 +1505,7 @@ gb << Legend Position( "Bottom" );
 
 ### Legend Settings
 
-**구문:** obj << Legend Settings
+**구문:** obj &lt;&lt; Legend Settings
 
 **설명:** 범례 특성을 수정하는 대화상자를 엽니다.
 
@@ -1527,7 +1521,7 @@ gb << Legend Settings();
 
 ### Level Fill Color
 
-**구문:** obj << Level Fill Color( color )
+**구문:** obj &lt;&lt; Level Fill Color( color )
 
 **설명:** 그래프의 수준 이름에 대한 색상을 설정합니다.
 
@@ -1542,7 +1536,7 @@ gb << Level Fill Color( {103, 214, 214} );
 
 ### Level Frame Color
 
-**구문:** obj << Level Frame Color( color )
+**구문:** obj &lt;&lt; Level Frame Color( color )
 
 **설명:** 그래프 수준 이름 주변의 선에 대한 색상을 설정합니다.
 
@@ -1557,7 +1551,7 @@ gb << Level Frame Color( "Blue" );
 
 ### Level Spacing Color
 
-**구문:** obj << Level Spacing Color( color )
+**구문:** obj &lt;&lt; Level Spacing Color( color )
 
 **설명:** 수준 라벨 사이 간격의 색상을 설정합니다.
 
@@ -1572,7 +1566,7 @@ gb << Level Spacing Color( "Blue" );
 
 ### Level Spacing Transparency
 
-**구문:** obj << Level Spacing Transparency( fraction=1 )
+**구문:** obj &lt;&lt; Level Spacing Transparency( fraction=1 )
 
 **설명:** 수준 라벨 사이 간격의 투명도를 설정합니다. 기본값은 "1"입니다.
 
@@ -1587,7 +1581,7 @@ gb << Level Spacing Transparency( .2 );
 
 ### Level Text Color
 
-**구문:** obj << Level Text Color( color )
+**구문:** obj &lt;&lt; Level Text Color( color )
 
 **설명:** 그래프의 수준 이름 텍스트에 대한 색상을 설정합니다.
 
@@ -1602,7 +1596,7 @@ gb << Level Text Color( "Red" );
 
 ### Level Transparency
 
-**구문:** obj << Level Transparency( fraction=1 )
+**구문:** obj &lt;&lt; Level Transparency( fraction=1 )
 
 **설명:** 그래프의 수준 이름 프레임에 대한 투명도를 설정합니다. 기본값은 "1"입니다.
 
@@ -1617,7 +1611,7 @@ gb << Level Transparency( .2 );
 
 ### Level Underline
 
-**구문:** obj << Level Underline( state=0|1 )
+**구문:** obj &lt;&lt; Level Underline( state=0|1 )
 
 **설명:** 그래프의 수준 이름에 밑줄을 적용하거나 밑줄을 제거합니다.
 
@@ -1633,7 +1627,7 @@ gb << Level Underline( 1 );
 
 ### Lighten large fills
 
-**구문:** obj << Lighten large fills( state=0|1 )
+**구문:** obj &lt;&lt; Lighten large fills( state=0|1 )
 
 **설명:** 큰 영역을 채우는 파이, 트리맵 및 모자이크 요소의 색상을 자동으로 연하게 합니다. 기본적으로 설정되어 있습니다.
 
@@ -1650,7 +1644,7 @@ gb << Lighten large fills( 1 );
 
 ### Link Page Axes
 
-**구문:** obj << Link Page Axes( "없음"|"X만"|"Y만"|"X 및 Y" )
+**구문:** obj &lt;&lt; Link Page Axes( "없음"|"X만"|"Y만"|"X 및 Y" )
 
 **설명:** 페이지 그룹 수준 전반에 걸쳐 연결되는 축을 설정합니다.
 
@@ -1669,7 +1663,7 @@ gb << Link Page Axes( "Y Only" );
 
 ### Lock Scales
 
-**구문:** obj << Lock Scales( state=0|1 )
+**구문:** obj &lt;&lt; Lock Scales( state=0|1 )
 
 **설명:** 축 및 그래디언트 범위를 잠가 데이터 또는 필터링의 변화에 따라 변경되지 않도록 합니다.
 
@@ -1684,7 +1678,7 @@ gb << Lock Scales( 1 );
 
 ### Make into Data Table
 
-**구문:** obj << Make into Data Table
+**구문:** obj &lt;&lt; Make into Data Table
 
 **설명:** 그래프 이미지를 포함하는 새 데이터 테이블을 생성합니다.
 
@@ -1699,7 +1693,7 @@ gb << Make into Data Table;
 
 ### Order Statistic
 
-**구문:** obj << Order Statistic( "N"|"평균"|"중앙값"|"최빈값"|"기하평균"|"최소값"|"최대값"|"범위"|"합"|"누적합"|"누적 백분율"|"% 총계"|"% 요인"|"% 총 합계"|"표준편차"|"분산"|"표준 오차"|"CV"|"사분위수 범위"|"중앙 절대 편차"|"1사분위수"|"3사분위수"="평균" )
+**구문:** obj &lt;&lt; Order Statistic( "N"|"평균"|"중앙값"|"최빈값"|"기하평균"|"최소값"|"최대값"|"범위"|"합"|"누적합"|"누적 백분율"|"% 총계"|"% 요인"|"% 총 합계"|"표준편차"|"분산"|"표준 오차"|"CV"|"사분위수 범위"|"중앙 절대 편차"|"1사분위수"|"3사분위수"="평균" )
 
 **설명:** 그래프의 변수에 대해 Order By 메시지를 사용할 경우 사용되는 요약 통계량을 기반으로 기본 순서를 설정합니다. 기본값은 "평균"입니다.
 
@@ -1717,7 +1711,7 @@ gb = dt << Graph Builder(
 
 ### Overlay Auto Line Styles Limit
 
-**구문:** obj << Overlay Auto Line Styles Limit( count=6 )
+**구문:** obj &lt;&lt; Overlay Auto Line Styles Limit( count=6 )
 
 **설명:** 색상 변수가 있는 경우 중첩 인코딩에 자동 설정의 선 스타일을 사용할 중첩 수준 수를 제한합니다. 기본값은 "6"입니다.
 
@@ -1737,7 +1731,7 @@ gb = dt << Graph Builder(
 
 ### Overlay Auto Marker Styles Limit
 
-**구문:** obj << Overlay Auto Marker Styles Limit( count=62 )
+**구문:** obj &lt;&lt; Overlay Auto Marker Styles Limit( count=62 )
 
 **설명:** 색상 변수가 있는 경우 중첩 인코딩에 자동 설정의 표식 스타일을 사용할 중첩 수준 수를 제한합니다. 기본값은 "62"입니다.
 
@@ -1757,7 +1751,7 @@ gb = dt << Graph Builder(
 
 ### Page Count Limit
 
-**구문:** obj << Page Count Limit( count=200 )
+**구문:** obj &lt;&lt; Page Count Limit( count=200 )
 
 **설명:** 의도치 않은 성능 저하를 방지하기 위해 페이지 변수에 대해 생성되는 페이지의 최대 개수를 설정합니다. 기본값은 "200"입니다.
 
@@ -1774,7 +1768,7 @@ gb << Page Count Limit( 5 );
 
 ### Page Gap Size
 
-**구문:** obj << Page Gap Size( gap=25 )
+**구문:** obj &lt;&lt; Page Gap Size( gap=25 )
 
 **설명:** 페이지 그룹 사이의 간격 크기를 설정합니다. 기본값은 "25"입니다.
 
@@ -1789,7 +1783,7 @@ gb << Page Gap Size( 3 );
 
 ### Page Level Fill Color
 
-**구문:** obj << Page Level Fill Color( color )
+**구문:** obj &lt;&lt; Page Level Fill Color( color )
 
 **설명:** 그래프의 수준 이름에 대한 색상을 설정합니다.
 
@@ -1804,7 +1798,7 @@ gb << Page Level Fill Color( {103, 214, 214} );
 
 ### Page Level Frame Color
 
-**구문:** obj << Page Level Frame Color( color )
+**구문:** obj &lt;&lt; Page Level Frame Color( color )
 
 **설명:** 그래프 수준 이름 주변의 선에 대한 색상을 설정합니다.
 
@@ -1819,7 +1813,7 @@ gb << Page Level Frame Color( "Blue" );
 
 ### Page Level Text Color
 
-**구문:** obj << Page Level Text Color( color )
+**구문:** obj &lt;&lt; Page Level Text Color( color )
 
 **설명:** 그래프의 수준 이름 텍스트에 대한 색상을 설정합니다.
 
@@ -1834,7 +1828,7 @@ gb << Page Level Text Color( "Red" );
 
 ### Page Level Transparency
 
-**구문:** obj << Page Level Transparency( fraction=1 )
+**구문:** obj &lt;&lt; Page Level Transparency( fraction=1 )
 
 **설명:** 그래프의 수준 이름 프레임에 대한 투명도를 설정합니다. 기본값은 "1"입니다.
 
@@ -1849,7 +1843,7 @@ gb << Page Level Transparency( .2 );
 
 ### Page Level Underline
 
-**구문:** obj << Page Level Underline( state=0|1 )
+**구문:** obj &lt;&lt; Page Level Underline( state=0|1 )
 
 **설명:** 그래프의 수준 이름에 밑줄을 적용하거나 밑줄을 제거합니다.
 
@@ -1865,7 +1859,7 @@ gb << Page Level Underline( 1 );
 
 ### Parallel Axis Merging
 
-**구문:** obj << Parallel Axis Merging( "항상"|"유사성 낮음"|"유사성 중간"|"유사성 높음"|"안 함" )
+**구문:** obj &lt;&lt; Parallel Axis Merging( "항상"|"유사성 낮음"|"유사성 중간"|"유사성 높음"|"안 함" )
 
 **설명:** 자동 척도 결합 설정에 평행 독립 대신 평행 병합을 선택해야 하는 시기를 결정합니다.
 
@@ -1880,7 +1874,7 @@ gb << Parallel Axis Merging( "Never" );
 
 ### Parallel Y Axes
 
-**구문:** obj << Parallel Y Axes( state=0|1 )
+**구문:** obj &lt;&lt; Parallel Y Axes( state=0|1 )
 
 **설명:** 모든 Y 축이 같은 그래프를 공유합니다. 평행 좌표와 비슷하지만 X 변수를 지원합니다.
 
@@ -1899,7 +1893,7 @@ gb << Parallel Y Axes( 1 );
 
 ### Random Seed
 
-**구문:** obj << Random Seed( number )
+**구문:** obj &lt;&lt; Random Seed( number )
 
 **설명:** 랜덤 지터에 대해 특정 시드값을 설정합니다.
 
@@ -1941,7 +1935,7 @@ Graph Builder(
 
 ### Remove Element
 
-**구문:** obj << Remove Element( xposition, yposition, i )
+**구문:** obj &lt;&lt; Remove Element( xposition, yposition, i )
 
 **설명:** 지정된 X 및 Y 위치에 있는 그래프 요소를 제거합니다.
 
@@ -1957,7 +1951,7 @@ gb << Remove Element( 1, 1, 2 );
 
 ### Remove Variable
 
-**구문:** obj << Remove Variable( index | {column, Role(role), Position(p=1), Inner Position(i=1)} )
+**구문:** obj &lt;&lt; Remove Variable( index | {column, Role(role), Position(p=1), Inner Position(i=1)} )
 
 **설명:** 그래프 빌더 모형에서 인덱스 또는 지정된 열 이름, 역할 및 위치로 지정된 변수를 제거합니다.
 
@@ -1975,7 +1969,7 @@ gb << Remove Variable( 3 );
 
 ### Replicate Linked Page Axes
 
-**구문:** obj << Replicate Linked Page Axes( state=0|1 )
+**구문:** obj &lt;&lt; Replicate Linked Page Axes( state=0|1 )
 
 **설명:** 격자의 연결된 페이지 축을 각 그래프에 대해 한 번씩 표시할지 아니면 그래프의 각 행 또는 열에 대해 한 번씩 표시할지를 결정합니다.
 
@@ -1995,7 +1989,7 @@ gb << Replicate Linked Page Axes( 1 );
 
 ### Sampling
 
-**구문:** obj << Sampling( number )
+**구문:** obj &lt;&lt; Sampling( number )
 
 **설명:** 지정된 비율 또는 개수를 사용하여 데이터의 부분집합을 무작위로 선택합니다. 데이터가 크고 그래프가 계속 변경될 때 유용합니다.
 
@@ -2010,7 +2004,7 @@ gb << Sampling( 20 );
 
 ### Set Alpha Level
 
-**구문:** obj << Set Alpha Level( 0.10|0.05|0.01|Other... )
+**구문:** obj &lt;&lt; Set Alpha Level( 0.10|0.05|0.01|Other... )
 
 **설명:** 신뢰 곡선에 사용되는 유의 수준을 변경합니다.
 
@@ -2025,7 +2019,7 @@ gb << Set Alpha Level( 0.10 );
 
 ### Set α Level
 
-**구문:** obj << Set α Level( 0.10|0.05|0.01|Other... )
+**구문:** obj &lt;&lt; Set α Level( 0.10|0.05|0.01|Other... )
 
 **설명:** 신뢰 곡선에 사용되는 유의 수준을 변경합니다.
 
@@ -2040,7 +2034,7 @@ gb << Set Alpha Level( 0.10 );
 
 ### Show Control Panel
 
-**구문:** obj << Show Control Panel( state=0|1 )
+**구문:** obj &lt;&lt; Show Control Panel( state=0|1 )
 
 **설명:** 제어판을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2055,7 +2049,7 @@ gb << Show Control Panel( 1 );
 
 ### Show Excluded Rows
 
-**구문:** obj << Show Excluded Rows( state=0|1 )
+**구문:** obj &lt;&lt; Show Excluded Rows( state=0|1 )
 
 **설명:** 제외된 행을 그림에 표시하거나 숨깁니다. 이 옵션을 선택하면 제외된 행이 관리이탈 점 개수에 포함되지만 수치 계산에서는 제외됩니다.
 
@@ -2072,7 +2066,7 @@ gb << Show Excluded Rows( 1 );
 
 ### Show Footer
 
-**구문:** obj << Show Footer( state=0|1 )
+**구문:** obj &lt;&lt; Show Footer( state=0|1 )
 
 **설명:** 바닥글 텍스트를 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2087,7 +2081,7 @@ gb << Show Footer( 0 );
 
 ### Show Legend
 
-**구문:** obj << Show Legend( state=0|1 )
+**구문:** obj &lt;&lt; Show Legend( state=0|1 )
 
 **설명:** 그래프 오른쪽에 범례를 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2102,7 +2096,7 @@ gb << Show Legend( 1 );
 
 ### Show Subtitle
 
-**구문:** obj << Show Subtitle( state=0|1 )
+**구문:** obj &lt;&lt; Show Subtitle( state=0|1 )
 
 **설명:** 그래프 부제목을 표시하거나 숨깁니다.
 
@@ -2119,7 +2113,7 @@ gb << Show Subtitle( 1 );
 
 ### Show Title
 
-**구문:** obj << Show Title( state=0|1 )
+**구문:** obj &lt;&lt; Show Title( state=0|1 )
 
 **설명:** 그래프 제목을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2136,7 +2130,7 @@ gb << Show Title( 0 );
 
 ### Show X Axis
 
-**구문:** obj << Show X Axis( state=0|1 )
+**구문:** obj &lt;&lt; Show X Axis( state=0|1 )
 
 **설명:** X 축을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2153,7 +2147,7 @@ gb << Show X Axis( 0 );
 
 ### Show X Axis Title
 
-**구문:** obj << Show X Axis Title( state=0|1 )
+**구문:** obj &lt;&lt; Show X Axis Title( state=0|1 )
 
 **설명:** X 축 제목을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2170,7 +2164,7 @@ gb << Show X Axis Title( 0 );
 
 ### Show Y Axis
 
-**구문:** obj << Show Y Axis( state=0|1 )
+**구문:** obj &lt;&lt; Show Y Axis( state=0|1 )
 
 **설명:** Y 축을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2187,7 +2181,7 @@ gb << Show Y Axis( 0 );
 
 ### Show Y Axis Title
 
-**구문:** obj << Show Y Axis Title( state=0|1 )
+**구문:** obj &lt;&lt; Show Y Axis Title( state=0|1 )
 
 **설명:** Y 축 제목을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2204,7 +2198,7 @@ gb << Show Y Axis Title( 0 );
 
 ### Size
 
-**구문:** obj << Size( width, height )
+**구문:** obj &lt;&lt; Size( width, height )
 
 **설명:** 그래프 크기를 설정합니다.
 
@@ -2219,7 +2213,7 @@ gb << Size( 808, 586 );
 
 ### Spacing Borders
 
-**구문:** obj << Spacing Borders( 0|1=0 )
+**구문:** obj &lt;&lt; Spacing Borders( 0|1=0 )
 
 **설명:** 내부 그래프 패널의 테두리를 설정합니다. 기본값은 "0"입니다.
 
@@ -2234,7 +2228,7 @@ gb << Spacing Borders( 1 );
 
 ### Subtitle Alignment
 
-**구문:** obj << Subtitle Alignment( "왼쪽"|"가운데"|"오른쪽"|"자동" )
+**구문:** obj &lt;&lt; Subtitle Alignment( "왼쪽"|"가운데"|"오른쪽"|"자동" )
 
 **설명:** 그래프 부제목의 맞춤을 설정합니다.
 
@@ -2251,7 +2245,7 @@ gb << Subtitle Alignment( "Left" );
 
 ### Subtitle Span
 
-**구문:** obj << Subtitle Span( "전체"|"그래프 내용" )
+**구문:** obj &lt;&lt; Subtitle Span( "전체"|"그래프 내용" )
 
 **설명:** 그래프 부제목의 범위를 설정합니다.
 
@@ -2286,7 +2280,7 @@ gb = dt << Graph Builder(
 
 ### Title Alignment
 
-**구문:** obj << Title Alignment( "왼쪽"|"가운데"|"오른쪽" )
+**구문:** obj &lt;&lt; Title Alignment( "왼쪽"|"가운데"|"오른쪽" )
 
 **설명:** 그래프 제목의 맞춤을 설정합니다.
 
@@ -2303,7 +2297,7 @@ gb << Title Alignment( "Left" );
 
 ### Title Fill Color
 
-**구문:** obj << Title Fill Color( color )
+**구문:** obj &lt;&lt; Title Fill Color( color )
 
 **설명:** 그래프의 제목 배경 채우기에 대한 색상을 설정합니다.
 
@@ -2318,7 +2312,7 @@ gb << Title Fill Color( "Cyan" );
 
 ### Title Frame Color
 
-**구문:** obj << Title Frame Color( color )
+**구문:** obj &lt;&lt; Title Frame Color( color )
 
 **설명:** 그래프 제목 프레임 주변의 선에 대한 색상을 설정합니다.
 
@@ -2333,7 +2327,7 @@ gb << Title Frame Color( "Blue" );
 
 ### Title Span
 
-**구문:** obj << Title Span( "전체"|"그래프 내용" )
+**구문:** obj &lt;&lt; Title Span( "전체"|"그래프 내용" )
 
 **설명:** 그래프 제목의 범위를 설정합니다.
 
@@ -2350,7 +2344,7 @@ gb << Title Span( "Graph" );
 
 ### Title Text Color
 
-**구문:** obj << Title Text Color( color )
+**구문:** obj &lt;&lt; Title Text Color( color )
 
 **설명:** 그래프의 제목 텍스트에 대한 색상을 설정합니다.
 
@@ -2365,7 +2359,7 @@ gb << Title Text Color( "Red" );
 
 ### Title Transparency
 
-**구문:** obj << Title Transparency( fraction=1 )
+**구문:** obj &lt;&lt; Title Transparency( fraction=1 )
 
 **설명:** 그래프의 제목 프레임에 대한 투명도를 설정합니다. 기본값은 "1"입니다.
 
@@ -2380,7 +2374,7 @@ gb << Title Transparency( .2 );
 
 ### Title Underline
 
-**구문:** obj << Title Underline( state=0|1 )
+**구문:** obj &lt;&lt; Title Underline( state=0|1 )
 
 **설명:** 그래프의 제목에 밑줄을 적용하거나 밑줄을 제거합니다.
 
@@ -2396,7 +2390,7 @@ gb << Title Underline( 1 );
 
 ### Update Element
 
-**구문:** obj << Update Element( xposition, yposition, i, {options} )
+**구문:** obj &lt;&lt; Update Element( xposition, yposition, i, {options} )
 
 **설명:** 기존 요소의 특성을 수정합니다.
 
@@ -2412,7 +2406,7 @@ gb << Update Element( 1, 1, 1, {Summary Statistic( "Mean" ), Error Bars( "Range"
 
 ### Use row colors for levels
 
-**구문:** obj << Use row colors for levels( state=0|1 )
+**구문:** obj &lt;&lt; Use row colors for levels( state=0|1 )
 
 **설명:** 각 수준마다 고유 색상이 있는 경우 범례 수준을 행 색상으로 초기화합니다. 기본적으로 설정되어 있습니다.
 
@@ -2429,9 +2423,7 @@ gb << Use row colors for levels( 1 );
 
 ### Variables
 
-**구문:** Variables( X(column ), Y( column ), <Group X( column )>, <Group Y( column )>, <Shape( column )>, <Color( column )>, <Overlay( column )>, <Freq( column )> )
-
-<b>실행기 항목: 예</b>
+**구문:** Variables( X(column ), Y( column ), &lt;Group X( column )&gt;, &lt;Group Y( column )&gt;, &lt;Shape( column )&gt;, &lt;Color( column )&gt;, &lt;Overlay( column )&gt;, &lt;Freq( column )&gt; )&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 시각화에 사용되는 변수를 정의합니다.
 
@@ -2445,7 +2437,7 @@ gb = dt << Graph Builder( Variables( Color( :SAT Verbal ), Shape( :State ) ) );
 
 ### X Group Edge
 
-**구문:** obj << X Group Edge( "위쪽"|"아래쪽" )
+**구문:** obj &lt;&lt; X Group Edge( "위쪽"|"아래쪽" )
 
 **설명:** X 그룹에 대한 축을 위쪽 또는 아래쪽으로 이동합니다. 기본값은 "Top"입니다.
 
@@ -2461,7 +2453,7 @@ gb << X Group Edge( "Bottom" );
 
 ### Y Group Edge
 
-**구문:** obj << Y Group Edge( "왼쪽"|"오른쪽" )
+**구문:** obj &lt;&lt; Y Group Edge( "왼쪽"|"오른쪽" )
 
 **설명:** Y 그룹에 대한 축을 왼쪽 또는 오른쪽으로 이동합니다. 기본값은 "Right"입니다.
 
@@ -2480,7 +2472,7 @@ gb << Y Group Edge( "Left" );
 
 ### Y Group Level Orientation
 
-**구문:** obj << Y Group Level Orientation( "수평"|"수직" )
+**구문:** obj &lt;&lt; Y Group Level Orientation( "수평"|"수직" )
 
 **설명:** Y 그룹 수준 라벨 텍스트가 가로 방향인지 아니면 세로 방향인지(회전됨)를 결정합니다.
 
@@ -2499,7 +2491,7 @@ gb << Y Group Level Orientation( "Horizontal" );
 
 ### Y Group Title Orientation
 
-**구문:** obj << Y Group Title Orientation( "수평"|"수직" )
+**구문:** obj &lt;&lt; Y Group Title Orientation( "수평"|"수직" )
 
 **설명:** Y 그룹 제목 라벨 텍스트가 가로 방향인지 아니면 세로 방향인지(회전됨)를 결정합니다.
 
@@ -2522,7 +2514,7 @@ gb << Y Group Title Orientation( "Horizontal" );
 
 #### Area
 
-**구문:** obj << Area
+**구문:** obj &lt;&lt; Area
 
 **설명:** 영역: 범주별로 요약된 반응을 표시합니다.
 
@@ -2536,7 +2528,7 @@ Graph Builder( Variables( X( :age ), Y( :weight ) ), Elements( Area( X, Y ) ) );
 
 #### Bar
 
-**구문:** obj << Bar
+**구문:** obj &lt;&lt; Bar
 
 **설명:** 막대: 범주별로 요약된 반응을 표시합니다.
 
@@ -2550,7 +2542,7 @@ Graph Builder( Variables( X( :age ), Y( :weight ) ), Elements( Bar( X, Y ) ) );
 
 #### Box Plot
 
-**구문:** obj << Box Plot
+**구문:** obj &lt;&lt; Box Plot
 
 **설명:** 상자 그림: 사분위수 및 이상치를 사용하여 변수 분포의 요약 보기를 표시합니다.
 
@@ -2564,7 +2556,7 @@ Graph Builder( Variables( X( :age ), Y( :weight ) ), Elements( Box Plot( X, Y ) 
 
 #### Caption Box
 
-**구문:** obj << Caption Box
+**구문:** obj &lt;&lt; Caption Box
 
 **설명:** 캡션 상자: 데이터에 대한 요약 통계량 값을 표시합니다.
 
@@ -2578,7 +2570,7 @@ Graph Builder( Variables( X( :age ), Y( :weight ) ), Elements( Line( X, Y ), Cap
 
 #### Contour
 
-**구문:** obj << Contour
+**구문:** obj &lt;&lt; Contour
 
 **설명:** 등고선: 데이터 밀도의 영역(또는 색상 변수가 포함된 값 등고선)을 표시합니다. X가 범주형일 경우 바이올린 그림을 생성합니다.
 
@@ -2592,7 +2584,7 @@ Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Contour( X, Y 
 
 #### Ellipse
 
-**구문:** obj << Ellipse
+**구문:** obj &lt;&lt; Ellipse
 
 **설명:** 타원: 이변량 정규 밀도 타원을 표시합니다.
 
@@ -2606,7 +2598,7 @@ Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Ellipse( X, Y 
 
 #### Formula
 
-**구문:** obj << Formula
+**구문:** obj &lt;&lt; Formula
 
 **설명:** 계산식: 열 계산식으로 정의된 함수를 표시합니다.
 
@@ -2623,7 +2615,7 @@ Graph Builder(
 
 #### Heatmap
 
-**구문:** obj << Heatmap
+**구문:** obj &lt;&lt; Heatmap
 
 **설명:** 히트맵: X 및 Y 범주에 대한 색상을 사용하여 총계를 표시합니다.
 
@@ -2637,7 +2629,7 @@ Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Heatmap( X, Y 
 
 #### Histogram
 
-**구문:** obj << Histogram
+**구문:** obj &lt;&lt; Histogram
 
 **설명:** 히스토그램: 계급화를 사용하여 변수 분포를 표시합니다.
 
@@ -2651,7 +2643,7 @@ Graph Builder( Variables( X( :weight ) ), Elements( Histogram( X ) ) );
 
 #### Line
 
-**구문:** obj << Line
+**구문:** obj &lt;&lt; Line
 
 **설명:** 선: 범주별로 요약된 반응을 표시합니다.
 
@@ -2665,7 +2657,7 @@ Graph Builder( Variables( X( :age ), Y( :weight ) ), Elements( Line( X, Y ) ) );
 
 #### Line Of Fit
 
-**구문:** obj << Line Of Fit
+**구문:** obj &lt;&lt; Line Of Fit
 
 **설명:** 적합선: 연속 X 및 Y에 대한 신뢰 구간과 함께 선형 회귀를 표시합니다. 범주형 X에 대해 평균을 적합시킵니다.
 
@@ -2679,7 +2671,7 @@ Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Line of Fit( X
 
 #### Map Shapes
 
-**구문:** obj << Map Shapes
+**구문:** obj &lt;&lt; Map Shapes
 
 **설명:** 맵 셰이프: 일반적으로 색상 변수를 사용하여 맵 셰이프 변수로 정의된 영역을 표시합니다.
 
@@ -2693,7 +2685,7 @@ Graph Builder( Variables( Color( :SAT Verbal ), Shape( :State ) ), Elements( Map
 
 #### Mosaic
 
-**구문:** obj << Mosaic
+**구문:** obj &lt;&lt; Mosaic
 
 **설명:** 모자이크: X 및 Y 범주에 대한 크기를 사용하여 총계를 표시합니다.
 
@@ -2707,7 +2699,7 @@ Graph Builder( Variables( X( :age ), Y( :sex ) ), Elements( Mosaic( X, Y ) ) );
 
 #### Parallel
 
-**구문:** obj << Parallel
+**구문:** obj &lt;&lt; Parallel
 
 **설명:** 병렬: 각 행에 대해 연결선과 함께 병렬 축을 따라 여러 변수를 표시합니다.
 
@@ -2724,7 +2716,7 @@ Graph Builder(
 
 #### Pie
 
-**구문:** obj << Pie
+**구문:** obj &lt;&lt; Pie
 
 **설명:** 파이: 전체의 부분을 표시합니다.
 
@@ -2738,7 +2730,7 @@ Graph Builder( Variables( X( :age ) ), Elements( Pie( X ) ) );
 
 #### Points
 
-**구문:** obj << Points
+**구문:** obj &lt;&lt; Points
 
 **설명:** 점: 데이터 값의 산점도를 표시합니다.
 
@@ -2752,7 +2744,7 @@ Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y )
 
 #### Smoother
 
-**구문:** obj << Smoother
+**구문:** obj &lt;&lt; Smoother
 
 **설명:** 평활기: 데이터를 통과하는 평활 곡선을 표시합니다. 알 수 없는 관계를 가진 연속형 X 및 Y에 가장 적합합니다.
 
@@ -2766,7 +2758,7 @@ Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Smoother( X, Y
 
 #### Treemap
 
-**구문:** obj << Treemap
+**구문:** obj &lt;&lt; Treemap
 
 **설명:** 트리맵: 많은 범주를 기준으로 요약된 반응을 표시합니다.
 

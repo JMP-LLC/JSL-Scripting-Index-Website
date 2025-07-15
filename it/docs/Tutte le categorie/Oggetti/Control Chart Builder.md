@@ -6,7 +6,7 @@
 
 ### Control Chart Builder
 
-**Sintassi:** Control Chart Builder( Class( "Shewhart Variables"|"Shewhart Attribute"|"Short Run"|"Rare Event" ), Variables( variables ), <Chart( Position( number ), Points( Statistic( "statistic" ), <points options> ), Limits( Sigma( "sigma" ), <limits options> )> ) ) )
+**Sintassi:** Control Chart Builder( Class( "Shewhart Variables"|"Shewhart Attribute"|"Short Run"|"Rare Event" ), Variables( variables ), &lt;Chart( Position( number ), Points( Statistic( "statistic" ), &lt;points options&gt; ), Limits( Sigma( "sigma" ), &lt;limits options&gt; )&gt; ) ) )
 
 **Descrizione:** Consente di creare in modo interattivo carte di controllo, utilizzate per determinare se un processo è stabile e prevedibile. La piattaforma Costruttore di carte di controllo può essere utilizzata per creare i seguenti tipi di carte di controllo: IMR, BarraX, Esecuzione breve, Sequenziale, P, NP, C, U, Laney P&apos;, Laney U&apos;, Levey-Jennings, IMR sulle medie, A tre vie ed Evento raro.
 
@@ -450,7 +450,7 @@ obj = dt << Control Chart Builder(
 
 ### Action
 
-**Sintassi:** obj << Action
+**Sintassi:** obj &lt;&lt; Action
 
 **Descrizione:** Trapdoor generica all&apos;interno di una piattaforma per inserire espressioni da valutare. Imposta temporaneamente i contesti del riquadro di visualizzazione e della tabella di dati per la piattaforma.
 
@@ -468,7 +468,7 @@ dt << Bivariate(
 
 ### Add Limits
 
-**Sintassi:** obj << Chart( Position( number ), Add Limits( {LCL( number ), Avg( number ), UCL( number )} ) )
+**Sintassi:** obj &lt;&lt; Chart( Position( number ), Add Limits( {LCL( number ), Avg( number ), UCL( number )} ) )
 
 **Descrizione:** Aggiunge una serie supplementare di limiti per il grafico specificato, in cui i limiti aggiunti compaiono come linee tratteggiate.
 
@@ -485,7 +485,7 @@ obj << Chart( Position( 1 ), Add Limits( {LCL( 17.5 ), Avg( 20.25 ), UCL( 23 )} 
 
 ### Add Spec Limits
 
-**Sintassi:** obj << Chart( Position( number ), Add Spec Limits( {LSL( number ), Target( number ), USL( number )} ) )
+**Sintassi:** obj &lt;&lt; Chart( Position( number ), Add Spec Limits( {LSL( number ), Target( number ), USL( number )} ) )
 
 **Descrizione:** Imposta i limiti di specifica per ciascuna variabile Y.
 
@@ -502,7 +502,7 @@ obj << Chart( Position( 1 ), Add Spec Limits( {LSL( 18 ), Target( 20.1 ), USL( 2
 
 ### Alarm Script
 
-**Sintassi:** obj << Alarm Script( Write( "..." )|Speak( "..." )|Mail( address, subject,"..." ) )
+**Sintassi:** obj &lt;&lt; Alarm Script( Write( "..." )|Speak( "..." )|Mail( address, subject,"..." ) )
 
 **Descrizione:** Invia un messaggio ogni volta che un punto su una carta di controllo non supera un determinato test. Il messaggio può essere inviato al log, può essere pronunciato o inviato via e-mail.
 
@@ -533,7 +533,7 @@ obj << Alarm Script(
 
 ### Apply Preset
 
-**Sintassi:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintassi:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descrizione:** Applica all’oggetto una preimpostazione precedentemente creata, aggiornando le opzioni e le personalizzazioni in base alle impostazioni salvate.
 
@@ -580,7 +580,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Automatic Recalc
 
-**Sintassi:** obj << Automatic Recalc( state=0|1 )
+**Sintassi:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Descrizione:** Ripete l&apos;analisi automaticamente per l&apos;esclusione e le modifiche ai dati. Se l&apos;opzione Ricalcolo automatico è attivata, si consiglia di usare i comandi Attendi(0) per garantire che le modifiche di esclusione e di dati abbiano effetto prima del ricalcolo.
 
@@ -597,7 +597,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Chart
 
-**Sintassi:** obj << Chart( Position( number ), <Points( Statistic(),... )>, <Set Control Limits( { LCL(), UCL(), Avg() } )>, <Add Limits( { LCL(), UCL(), Avg() } )>, <Add Spec Limits( { LSL(), USL(), Target() } )>, <Limits( Sigma(), ... )>, <Warnings( Test number( state=0|1 ) )> )
+**Sintassi:** obj &lt;&lt; Chart( Position( number ), &lt;Points( Statistic(),... )&gt;, &lt;Set Control Limits( { LCL(), UCL(), Avg() } )&gt;, &lt;Add Limits( { LCL(), UCL(), Avg() } )&gt;, &lt;Add Spec Limits( { LSL(), USL(), Target() } )&gt;, &lt;Limits( Sigma(), ... )&gt;, &lt;Warnings( Test number( state=0|1 ) )&gt; )
 
 **Descrizione:** Imposta gli attributi di avvertimento, limite e punto per la carta che è specificata dall’argomento Position.
 
@@ -625,7 +625,7 @@ obj = dt << Control Chart Builder(
 
 ### Class
 
-**Sintassi:** obj << Class( "Shewhart Variables"|"Shewhart Attribute"|"Short Run"|"Rare Event" )
+**Sintassi:** obj &lt;&lt; Class( "Shewhart Variables"|"Shewhart Attribute"|"Short Run"|"Rare Event" )
 
 **Descrizione:** Specifica la classe o famiglia di combinazioni statistiche punto e sigma.
 
@@ -645,7 +645,7 @@ obj = dt << Control Chart Builder(
 
 ### Color By Product
 
-**Sintassi:** obj << Color By Product( state=0|1 )
+**Sintassi:** obj &lt;&lt; Color By Product( state=0|1 )
 
 **Descrizione:** Colora i punti rappresentati in base al livello della variabile Prodotto. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -666,7 +666,7 @@ obj << Color By Product( 1 );
 
 ### Column Switcher
 
-**Sintassi:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Sintassi:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Descrizione:** Aggiunge un pannello di controllo per modificare le variabili della piattaforma
 
@@ -684,7 +684,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Connect Thru Missing
 
-**Sintassi:** obj << Connect Thru Missing( state=0|1 )
+**Sintassi:** obj &lt;&lt; Connect Thru Missing( state=0|1 )
 
 **Descrizione:** Determina se i punti e le linee sono connessi quando alcuni campioni hanno valori mancanti o righe escluse.
 
@@ -702,7 +702,7 @@ obj << Connect Thru Missing( 1 );
 
 ### Copy Script
 
-**Sintassi:** obj << Copy Script
+**Sintassi:** obj &lt;&lt; Copy Script
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo inserisce negli Appunti.
 
@@ -718,7 +718,7 @@ obj << Copy Script;
 
 ### Customize Tests
 
-**Sintassi:** obj << Customize Tests( Test 1 | Test 2 | Test 3 | Test 4 | Test 5 | Test 6 | Test 7 | Test 8 (n, label) )
+**Sintassi:** obj &lt;&lt; Customize Tests( Test 1 | Test 2 | Test 3 | Test 4 | Test 5 | Test 6 | Test 7 | Test 8 (n, label) )
 
 **Descrizione:** Consente di selezionare, personalizzare etichette e impostare i parametri di distanza su base sigma per i test Western Electric.
 
@@ -738,7 +738,7 @@ obj = dt << Control Chart Builder(
 
 ### Data Table Window
 
-**Sintassi:** obj << Data Table Window
+**Sintassi:** obj &lt;&lt; Data Table Window
 
 **Descrizione:** Sposta in primo piano la finestra della tabella di dati per questa analisi.
 
@@ -754,7 +754,7 @@ obj << Data Table Window;
 
 ### Fit to Window
 
-**Sintassi:** obj << Fit to Window( "Automatica"|"Attivato"|"Disattivato"|"Mantieni proporzioni"="Disattivato" )
+**Sintassi:** obj &lt;&lt; Fit to Window( "Automatica"|"Attivato"|"Disattivato"|"Mantieni proporzioni"="Disattivato" )
 
 **Descrizione:** Imposta il comportamento di espansione automatica del report. "Disattivato", per impostazione predefinita.
 
@@ -770,7 +770,7 @@ obj << Fit to Window( "On" );
 
 ### Get By Levels
 
-**Sintassi:** obj << Get By Levels
+**Sintassi:** obj &lt;&lt; Get By Levels
 
 **Descrizione:** Restituisce un array associativo che mappa le colonne del gruppo di By ai rispettivi valori.
 
@@ -787,7 +787,7 @@ biv << Get By Levels;
 
 ### Get Container
 
-**Sintassi:** obj << Get Container
+**Sintassi:** obj &lt;&lt; Get Container
 
 **Descrizione:** Restituisce un riferimento al riquadro contenitore che racchiude il contenuto dell&apos;oggetto.
 
@@ -835,7 +835,7 @@ New Window( "platform boxes",
 
 ### Get Control Limits
 
-**Sintassi:** obj << Get Control Limits( filename )
+**Sintassi:** obj &lt;&lt; Get Control Limits( filename )
 
 **Descrizione:** Importa i limiti di controllo da una tabella di dati selezionata e sostituisce i limiti calcolati sul grafico.
 
@@ -857,7 +857,7 @@ obj << Get Control Limits( "$SAMPLE_DATA/Quality Control/CoatingLimits.jmp" );
 
 ### Get Data Table
 
-**Sintassi:** obj << Get Data Table
+**Sintassi:** obj &lt;&lt; Get Data Table
 
 **Descrizione:** Restituisce un riferimento alla tabella di dati.
 
@@ -874,7 +874,7 @@ Show( N Rows( t ) );
 
 ### Get Product Statistics
 
-**Sintassi:** obj << Get Product Statistics( filename )
+**Sintassi:** obj &lt;&lt; Get Product Statistics( filename )
 
 **Descrizione:** Importa da una tabella di dati specificata i valori target e Sigma di prodotto di esecuzione breve.
 
@@ -895,7 +895,7 @@ obj << Get Product Statistics( "$SAMPLE_DATA/Quality Control/CoatingProductInfo.
 
 ### Get Script
 
-**Sintassi:** obj << Get Script
+**Sintassi:** obj &lt;&lt; Get Script
 
 **Descrizione:** Crea uno script (JSL) per generare questa analisi e la restituisce come espressione.
 
@@ -912,7 +912,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Sintassi:** obj << Get Script With Data Table
+**Sintassi:** obj &lt;&lt; Get Script With Data Table
 
 **Descrizione:** Crea uno script (JSL) per generare questa analisi facendo specifico riferimento a questa tabella di dati e la restituisce come espressione.
 
@@ -929,7 +929,7 @@ Show( t );
 
 ### Get Spec Limits
 
-**Sintassi:** obj << Get Spec Limits( filename )
+**Sintassi:** obj &lt;&lt; Get Spec Limits( filename )
 
 **Descrizione:** Importa i limiti di specifica da un file.
 
@@ -946,7 +946,7 @@ obj << Get Spec Limits( "$SAMPLE_DATA/CitySpecLimits.jmp" );
 
 ### Get Timing
 
-**Sintassi:** obj << Get Timing
+**Sintassi:** obj &lt;&lt; Get Timing
 
 **Descrizione:** Determina il tempo di avvio della piattaforma.
 
@@ -963,7 +963,7 @@ Show( t );
 
 ### Get Web Support
 
-**Sintassi:** obj << Get Web Support
+**Sintassi:** obj &lt;&lt; Get Web Support
 
 **Descrizione:** Restituisce un numero indicante il livello di supporto HTML interattivo per l&apos;oggetto visualizzato. 1 significa che alcuni o tutti gli elementi sono supportati. 0 significa nessun supporto.
 
@@ -979,7 +979,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Sintassi:** obj << Get Where Expr
+**Sintassi:** obj &lt;&lt; Get Where Expr
 
 **Descrizione:** Restituisce l&apos;espressione Where per il sottoinsieme di dati, se la piattaforma è stata avviata con By() o Where(). Altrimenti, restituisce Vuoto()
 
@@ -997,7 +997,7 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ### Graph Borders
 
-**Sintassi:** obj << Graph Borders( state=0|1 )
+**Sintassi:** obj &lt;&lt; Graph Borders( state=0|1 )
 
 **Descrizione:** Mostra/Nasconde i bordi interni del riquadro del grafico.
 
@@ -1018,7 +1018,7 @@ obj << Graph Borders( 1 );
 
 ### Graph Spacing
 
-**Sintassi:** obj << Graph Spacing( gap=2 )
+**Sintassi:** obj &lt;&lt; Graph Spacing( gap=2 )
 
 **Descrizione:** Specifica la quantità di spazio tra i riquadri del grafico. "2", per impostazione predefinita.
 
@@ -1037,7 +1037,7 @@ obj << Graph Spacing( 5 );
 
 ### Graph Spacing Color
 
-**Sintassi:** obj << Graph Spacing Color( color )
+**Sintassi:** obj &lt;&lt; Graph Spacing Color( color )
 
 **Descrizione:** Specifica il colore dello spazio tra i riquadri del grafico.
 
@@ -1056,7 +1056,7 @@ obj << Graph Spacing Color( "Red" );
 
 ### Graph Spacing Transparency
 
-**Sintassi:** obj << Graph Spacing Transparency( number )
+**Sintassi:** obj &lt;&lt; Graph Spacing Transparency( number )
 
 **Descrizione:** Specifica il livello di trasparenza dello spazio tra i riquadri del grafico. Deve essere tra 0 e 1.
 
@@ -1094,7 +1094,7 @@ dt << Bivariate(
 
 ### Include Missing Categories
 
-**Sintassi:** obj << Include Missing Categories( state=0|1 )
+**Sintassi:** obj &lt;&lt; Include Missing Categories( state=0|1 )
 
 **Descrizione:** Include un livello extra per le variabili nominali e ordinali quando i dati contengono valori mancanti. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1113,7 +1113,7 @@ obj << Include Missing Categories( 0 );
 
 ### K Sigma
 
-**Sintassi:** obj << K Sigma( value=3 )
+**Sintassi:** obj &lt;&lt; K Sigma( value=3 )
 
 **Descrizione:** Imposta il valore K da moltiplicare per sigma per formare i limiti di controllo sulla media. "3", per impostazione predefinita.
 
@@ -1134,7 +1134,7 @@ obj << K Sigma( 3 );
 
 ### Limits
 
-**Sintassi:** obj << Chart( Position( number ), Limits( Sigma( "sigma" ), <Zones( state=0|1 )>, <Shade Zones( state=0|1 )>, <Set Control Limits( state=0|1 )>, <Show Upper Limit( state=0|1 )>, <Show Lower Limit( state=0|1 )>, <Show Center Line( state=0|1 )> ) )
+**Sintassi:** obj &lt;&lt; Chart( Position( number ), Limits( Sigma( "sigma" ), &lt;Zones( state=0|1 )&gt;, &lt;Shade Zones( state=0|1 )&gt;, &lt;Set Control Limits( state=0|1 )&gt;, &lt;Show Upper Limit( state=0|1 )&gt;, &lt;Show Lower Limit( state=0|1 )&gt;, &lt;Show Center Line( state=0|1 )&gt; ) )
 
 **Descrizione:** Offre opzioni per modificare le caratteristiche dei limiti del grafico. A seconda del tipo di grafico, è possibile assegnare uno dei seguenti valori come argomento sigma: Range, Deviazione standard, Range mobile, Range mobile mediano, Levey-Jennings, Poisson, Binomiale, Binomiale negativo, Weibull, Laney P Prime o Laney U Prime.
 
@@ -1158,7 +1158,7 @@ obj << Chart(
 
 ### Limits Label Precision
 
-**Sintassi:** obj << Limits Label Precision( number )
+**Sintassi:** obj &lt;&lt; Limits Label Precision( number )
 
 **Descrizione:** Specifica la precisione che viene visualizzata nei limiti relativi ai dati.
 
@@ -1178,7 +1178,7 @@ obj << Limits Label Precision( 5 );
 
 ### Local Data Filter
 
-**Sintassi:** obj << Local Data Filter
+**Sintassi:** obj &lt;&lt; Local Data Filter
 
 **Descrizione:** Filtra dati in specifici gruppi o range, ma localmente in questa piattaforma
 
@@ -1236,7 +1236,7 @@ preset = obj << New Preset();
 
 ### OC Curve
 
-**Sintassi:** obj << OC Curve
+**Sintassi:** obj &lt;&lt; OC Curve
 
 **Descrizione:** Mostra in una nuova finestra una curva caratteristica operativa utilizzando i limiti di controllo e sigma dalla carta di controllo.
 
@@ -1252,7 +1252,7 @@ obj << OC Curve;
 
 ### Paste Local Data Filter
 
-**Sintassi:** obj << Paste Local Data Filter
+**Sintassi:** obj &lt;&lt; Paste Local Data Filter
 
 **Descrizione:** Applicare il filtro sui dati locali dagli Appunti al report corrente.
 
@@ -1273,7 +1273,7 @@ dist2 << Paste Local Data Filter;
 
 ### Points
 
-**Sintassi:** obj << Chart( Position( number ), Points( Statistic( "statistic" ), <Individual Points( state=0|1 )>, <Box Plots( state=0|1 )>, <Show Connect Line( state=0|1 )>, <Show Points( state=0|1 )> ) )
+**Sintassi:** obj &lt;&lt; Chart( Position( number ), Points( Statistic( "statistic" ), &lt;Individual Points( state=0|1 )&gt;, &lt;Box Plots( state=0|1 )&gt;, &lt;Show Connect Line( state=0|1 )&gt;, &lt;Show Points( state=0|1 )&gt; ) )
 
 **Descrizione:** Offre opzioni per modificare le caratteristiche dei punti del grafico. A seconda del tipo di grafico, è possibile assegnare uno dei seguenti valori per l’argomento statistic: Media, Range, Deviazione standard, Range mobile sulle medie, Range mobile sulla deviazione standard, Individuale, Range mobile, Conteggio, Proporzione, Centrato, Standardizzato, Range su Centrato o Range su standardizzato.
 
@@ -1295,7 +1295,7 @@ obj << Chart( Position( 2 ), Points( Statistic( "Standard Deviation" ) ) );
 
 ### Product Statistics
 
-**Sintassi:** obj << Product Statistics( ( column ) ( Product Level( l1 ( Target( number ), Sigma ( number ) ), <l2 ( Target( number ), Sigma ( number ) )) ), < (column ( Product Level( ... ) ) ) > )
+**Sintassi:** obj &lt;&lt; Product Statistics( ( column ) ( Product Level( l1 ( Target( number ), Sigma ( number ) ), &lt;l2 ( Target( number ), Sigma ( number ) )) ), &lt; (column ( Product Level( ... ) ) ) &gt; )
 
 **Descrizione:** Imposta i valori per Sigma e Target di prodotto per esecuzione breve.
 
@@ -1318,7 +1318,7 @@ obj << Product Statistics(
 
 ### Range Span
 
-**Sintassi:** obj << Range Span( value=2 )
+**Sintassi:** obj &lt;&lt; Range Span( value=2 )
 
 **Descrizione:** Imposta il valore dell&apos;opzione di estensione del range utilizzato nei grafici di range mobile. "2", per impostazione predefinita.
 
@@ -1336,7 +1336,7 @@ obj << Range Span( 3 );
 
 ### Redo Analysis
 
-**Sintassi:** obj << Redo Analysis
+**Sintassi:** obj &lt;&lt; Redo Analysis
 
 **Descrizione:** Ripete questa stessa analisi in una nuova finestra. L&apos;analisi sarà differente se i dati sono stati modificati.
 
@@ -1352,7 +1352,7 @@ obj << Redo Analysis;
 
 ### Relaunch Analysis
 
-**Sintassi:** obj << Relaunch Analysis
+**Sintassi:** obj &lt;&lt; Relaunch Analysis
 
 **Descrizione:** Apre la finestra di avvio della piattaforma e richiama le impostazioni utilizzate per creare il report.
 
@@ -1368,7 +1368,7 @@ obj << Relaunch Analysis;
 
 ### Remove Column Switcher
 
-**Sintassi:** obj << Remove Column Switcher
+**Sintassi:** obj &lt;&lt; Remove Column Switcher
 
 **Descrizione:** Rimuove l&apos;ultimo Scambia colonne che è stato aggiunto alla piattaforma.
 
@@ -1388,7 +1388,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Sintassi:** obj << Remove Local Data Filter
+**Sintassi:** obj &lt;&lt; Remove Local Data Filter
 
 **Descrizione:** Se è stato creato un filtro di dati locali viene rimosso per ripristinare la piattaforma e utilizzare direttamente tutti i dati nella tabella di dati
 
@@ -1427,9 +1427,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Sintassi:** obj << Report;
-
-Report( obj )
+**Sintassi:** obj &lt;&lt; Report;Report( obj )
 
 **Descrizione:** Restituisce un riferimento all&apos;oggetto del report.
 
@@ -1447,7 +1445,7 @@ Show( t );
 
 ### Report View
 
-**Sintassi:** obj << Report View( "Completo"|"Riepilogo" )
+**Sintassi:** obj &lt;&lt; Report View( "Completo"|"Riepilogo" )
 
 **Descrizione:** La visualizzazione Report determina il livello di dettaglio visibile in un report della piattaforma. Full mostra tutti i dettagli mentre Summary mostra solo contenuti selezionati, in base alla piattaforma. Per un comportamento personalizzato, i riquadri di visualizzazione supportano un messaggio <<Set Summary Behavior.
 
@@ -1463,7 +1461,7 @@ obj << Report View( "Summary" );
 
 ### Rerun All Tests
 
-**Sintassi:** obj << Rerun All Tests
+**Sintassi:** obj &lt;&lt; Rerun All Tests
 
 **Descrizione:** Esegue di nuovo tutti i test al momento selezionati ed eventuali script di allarme associati.
 
@@ -1497,7 +1495,7 @@ obj << Rerun All Tests;
 
 ### Save Control Limits
 
-**Sintassi:** obj << Save Control Limits( "nella colonna "|"nella nuova tabella"|"in nuova tabella verticale" )
+**Sintassi:** obj &lt;&lt; Save Control Limits( "nella colonna "|"nella nuova tabella"|"in nuova tabella verticale" )
 
 **Descrizione:** Salva i limiti di controllo in una proprietà della colonna o in una nuova tabella di dati.
 
@@ -1524,7 +1522,7 @@ obj << Save Control Limits( "in New Table" );
 
 ### Save Product Statistics
 
-**Sintassi:** obj << Save Product Statistics
+**Sintassi:** obj &lt;&lt; Save Product Statistics
 
 **Descrizione:** Salva le colonne in una nuova tabella di dati. La nuova tabella di dati contiene le statistiche del prodotto (target e sigma) per ciascun livello della variabile Parte/Prodotto.
 
@@ -1545,7 +1543,7 @@ obj << Save Product Statistics;
 
 ### Save Script for All Objects
 
-**Sintassi:** obj << Save Script for All Objects
+**Sintassi:** obj &lt;&lt; Save Script for All Objects
 
 **Descrizione:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -1561,7 +1559,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Sintassi:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintassi:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descrizione:** Salva uno script per tutti gli oggetti del report nella tabella di dati corrente. Questa opzione è utile quando sono presenti più report nella finestra. Lo script prende il nome dalla prima piattaforma, a meno che non si specifichi il nome dello script tra apici.
 
@@ -1601,7 +1599,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Sintassi:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintassi:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo salva come una proprietà di tabella nella tabella di dati.
 
@@ -1617,7 +1615,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Sintassi:** obj << Save Script to Journal
+**Sintassi:** obj &lt;&lt; Save Script to Journal
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e aggiunge un pulsante con lo script al journal.
 
@@ -1633,7 +1631,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Sintassi:** obj << Save Script to Report
+**Sintassi:** obj &lt;&lt; Save Script to Report
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo mostra nel report. Utile per avere una copia stampata di quanto è stato fatto.
 
@@ -1649,7 +1647,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Sintassi:** obj << Save Script to Script Window
+**Sintassi:** obj &lt;&lt; Save Script to Script Window
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo aggiunge alla finestra di testo dello script corrente.
 
@@ -1665,7 +1663,7 @@ obj << Save Script to Script Window;
 
 ### Save Spec Limits
 
-**Sintassi:** obj << Save Spec Limits
+**Sintassi:** obj &lt;&lt; Save Spec Limits
 
 **Descrizione:** Salva i limiti di specifica in una nuova tabella di dati. Questa opzione è disponibile solo se i limiti di specifica sono stati impostati, con una proprietà della colonna Limiti di specifica, tramite JSL, Ottieni importazione file limiti di specifica o l&apos;opzione Imposta limiti di specifica.
 
@@ -1683,7 +1681,7 @@ obj << Save Spec Limits;
 
 ### Save Summaries
 
-**Sintassi:** obj << Save Summaries
+**Sintassi:** obj &lt;&lt; Save Summaries
 
 **Descrizione:** Salva una nuova tabella di dati per ogni grafico. La tabella di dati include una riga per ogni campione e colonne per l’etichetta del campione, la dimensione campionaria e il livello di prodotto, se è specificata una variabile Prodotto/Parte. Per ogni grafico, esistono anche colonne per il singolo punto rappresentato, il tipo di carta, UCL, Media, LCL e tutti i test selezionati che hanno esito negativo.
 
@@ -1766,7 +1764,7 @@ dt << Distribution(
 
 ### Set Control Limits
 
-**Sintassi:** obj << Chart( Position( number ), Set Control Limits( {LCL( number ), Avg( number ), UCL( number )} ) )
+**Sintassi:** obj &lt;&lt; Chart( Position( number ), Set Control Limits( {LCL( number ), Avg( number ), UCL( number )} ) )
 
 **Descrizione:** Imposta i limiti di controllo per la carta specificata.
 
@@ -1783,7 +1781,7 @@ obj << Chart( Position( 1 ), Set Control Limits( {LCL( 19 ), Avg( 20 ), UCL( 21 
 
 ### Set Last N Subgroups
 
-**Sintassi:** obj << Set Last N Subgroups( number )
+**Sintassi:** obj &lt;&lt; Set Last N Subgroups( number )
 
 **Descrizione:** Modifica l&apos;asse orizzontale per mostrare solo gli ultimi N sottogruppi del grafico. Il numero di sottogruppi specificati non tiene conto delle osservazioni escluse o nascoste. Questa opzione non è disponibile quando è presente una variabile Fase con più di un livello.
 
@@ -1801,7 +1799,7 @@ obj << Set Last n Subgroups( 5 );
 
 ### Set Sigma
 
-**Sintassi:** obj << Set Sigma( value )
+**Sintassi:** obj &lt;&lt; Set Sigma( value )
 
 **Descrizione:** Imposta il valore sigma utilizzato nella carta di controllo.
 
@@ -1820,7 +1818,7 @@ obj << Set Sigma( 1.8 );
 
 ### Set Subgroup Size
 
-**Sintassi:** obj << Set Subgroup Size(  integer  )
+**Sintassi:** obj &lt;&lt; Set Subgroup Size( integer )
 
 **Descrizione:** Specifica il numero di righe per sottogruppo.
 
@@ -1837,7 +1835,7 @@ obj << Set Subgroup Size( 4 );
 
 ### Show Alarm Report
 
-**Sintassi:** obj << Show Alarm Report( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Alarm Report( state=0|1 )
 
 **Descrizione:** Mostra o nasconde la tabella delle frequenze di allarmi e campioni fuori controllo.
 
@@ -1855,7 +1853,7 @@ obj << Show Alarm Report( 1 );
 
 ### Show Capability
 
-**Sintassi:** obj << Show Capability( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Capability( state=0|1 )
 
 **Descrizione:** Mostra o nasconde il report dell’analisi di capability del processo. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1880,7 +1878,7 @@ obj << Show Capability( 0 );
 
 ### Show Center Line
 
-**Sintassi:** obj << Chart( Position( number ),  Limits( Show Center Line( state=0|1 ) ) )
+**Sintassi:** obj &lt;&lt; Chart( Position( number ), Limits( Show Center Line( state=0|1 ) ) )
 
 **Descrizione:** Mostra o nasconde la linea centrale. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1897,7 +1895,7 @@ obj << Chart( Position( 1 ), Limits( Show Center Line( 0 ) ) );
 
 ### Show Control Panel
 
-**Sintassi:** obj << Show Control Panel( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Control Panel( state=0|1 )
 
 **Descrizione:** Mostra/Nasconde il pannello di controllo. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1916,7 +1914,7 @@ obj << Show Control Panel( 0 );
 
 ### Show Excluded Region
 
-**Sintassi:** obj << Show Excluded Region( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Excluded Region( state=0|1 )
 
 **Descrizione:** Mostra o nasconde le regioni del grafico in cui sono stati esclusi i campioni. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1937,7 +1935,7 @@ obj << Show Excluded Region( 0 );
 
 ### Show Limit Labels
 
-**Sintassi:** obj << Show Limit Labels( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Limit Labels( state=0|1 )
 
 **Descrizione:** Mostra o nasconde le etichette dei limiti sul grafico.
 
@@ -1955,7 +1953,7 @@ obj << Show Limit Labels( 1 );
 
 ### Show Limit Summaries
 
-**Sintassi:** obj << Show Limit Summaries( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Limit Summaries( state=0|1 )
 
 **Descrizione:** Mostra o nasconde il report Riepiloghi dei limiti. Questo report contiene i limiti di controllo (LCL e UCL), la linea centrale (Media), i punti e limiti rappresentati e la dimensione campionaria del grafico. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1974,7 +1972,7 @@ obj << Show Limit Summaries( 0 );
 
 ### Show Lower Limit
 
-**Sintassi:** obj << Chart( Position( number ),  Limits( Show Lower Limit( state=0|1 ) ) )
+**Sintassi:** obj &lt;&lt; Chart( Position( number ), Limits( Show Lower Limit( state=0|1 ) ) )
 
 **Descrizione:** Mostra o nasconde il limite di controllo inferiore. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1993,7 +1991,7 @@ obj = dt << Control Chart Builder(
 
 ### Show Product Separators
 
-**Sintassi:** obj << Show Product Separators( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Product Separators( state=0|1 )
 
 **Descrizione:** Mostra o nasconde linee verticali tratteggiate sul grafico che indicano il cambio del prodotto. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -2014,7 +2012,7 @@ obj << Show Product Separators( 0 );
 
 ### Show Sigma Report
 
-**Sintassi:** obj << Show Sigma Report( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Sigma Report( state=0|1 )
 
 **Descrizione:** Mostra o nasconde la tabella di Sigma generale, Entro Sigma, Indice di stabilità e Media. Per le carte a tre vie, vengono mostrate anche Tra Sigma e Tra ed entro Sigma.
 
@@ -2032,7 +2030,7 @@ obj << Show Sigma Report( 1 );
 
 ### Show Two Shewhart or Short Run Charts
 
-**Sintassi:** obj << Show Two Shewhart or Short Run Charts( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Two Shewhart or Short Run Charts( state=0|1 )
 
 **Descrizione:** Mostra sia il grafico di posizione sia il grafico di dispersione. Quando il valore di questa opzione è 0, il grafico di dispersione non viene mostrato. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -2051,7 +2049,7 @@ obj = dt << Control Chart Builder(
 
 ### Show Upper Limit
 
-**Sintassi:** obj << Chart( Position( number ),  Limits( Show Upper Limit( state=0|1 ) ) )
+**Sintassi:** obj &lt;&lt; Chart( Position( number ), Limits( Show Upper Limit( state=0|1 ) ) )
 
 **Descrizione:** Mostra o nasconde il limite di controllo superiore. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -2070,7 +2068,7 @@ obj = dt << Control Chart Builder(
 
 ### Size
 
-**Sintassi:** obj << Size( width, height )
+**Sintassi:** obj &lt;&lt; Size( width, height )
 
 **Descrizione:** Imposta le dimensioni del grafico.
 
@@ -2088,7 +2086,7 @@ obj << Size( 808, 586 );
 
 ### Sort by Subgroup
 
-**Sintassi:** obj << Sort by Subgroup( state=0|1 )
+**Sintassi:** obj &lt;&lt; Sort by Subgroup( state=0|1 )
 
 **Descrizione:** Ordina i dati del processo in base alla variabile di sottogruppo o alla combinazione di variabili di sottogruppo nidificate, prima di eseguire i calcoli. Questa opzione è disponibile solo se è specificata una variabile di sottogruppo.
 
@@ -2108,7 +2106,7 @@ obj << Sort by Subgroup( 1 );
 
 ### Sync to Data Table Changes
 
-**Sintassi:** obj << Sync to Data Table Changes
+**Sintassi:** obj &lt;&lt; Sync to Data Table Changes
 
 **Descrizione:** Sincronizza con l&apos;esclusione e le modifiche ai dati effettuate.
 
@@ -2125,7 +2123,7 @@ dist << Sync To Data Table Changes;
 
 ### Test Excluded Subgroups
 
-**Sintassi:** obj << Test Excluded Subgroups( state=0|1 )
+**Sintassi:** obj &lt;&lt; Test Excluded Subgroups( state=0|1 )
 
 **Descrizione:** Include o esclude nel calcolo dei test i sottogruppi completamente esclusi. Questa opzione è disponibile solo quando è selezionata l’opzione Mostra regione esclusa. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -2149,7 +2147,7 @@ dt << Select Rows( Index( 21, 24 ) ) << Exclude;
 
 ### Title
 
-**Sintassi:** obj << Title( "new title" )
+**Sintassi:** obj &lt;&lt; Title( "new title" )
 
 **Descrizione:** Imposta il titolo della piattaforma.
 
@@ -2165,7 +2163,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Sintassi:** obj << Top Report
+**Sintassi:** obj &lt;&lt; Top Report
 
 **Descrizione:** Restituisce un riferimento al nodo principale nel report.
 
@@ -2183,7 +2181,7 @@ Show( t );
 
 ### Use Event Chooser
 
-**Sintassi:** obj << Use Event Chooser( state=0|1 )
+**Sintassi:** obj &lt;&lt; Use Event Chooser( state=0|1 )
 
 **Descrizione:** Classifica dati numerici ordinali e offre selezioni di modellizzazione individuali a livello numerico. L’opzione Usa Selettore di eventi è disponibile solo per grafici degli attributi che includono variabili Y numeriche non continue.
 
@@ -2218,7 +2216,7 @@ obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
 
 ### Variables
 
-**Sintassi:** obj << Variables( Y( column ), <Subgroup( column)>, <Phase( column )>, <Part( column )> )
+**Sintassi:** obj &lt;&lt; Variables( Y( column ), &lt;Subgroup( column)&gt;, &lt;Phase( column )&gt;, &lt;Part( column )&gt; )
 
 **Descrizione:** Assegna le variabili indicate ai ruoli.
 
@@ -2235,7 +2233,7 @@ obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
 
 ### View Web XML
 
-**Sintassi:** obj << View Web XML
+**Sintassi:** obj &lt;&lt; View Web XML
 
 **Descrizione:** Restituisce il codice XML utilizzato per creare il report HTML interattivo.
 
@@ -2250,7 +2248,7 @@ xml = obj << View Web XML;
 
 ### n Trials
 
-**Sintassi:** obj << n Trials( column | integer )
+**Sintassi:** obj &lt;&lt; n Trials( column | integer )
 
 **Descrizione:** Assegna una dimensione di lotto a una carta di controllo degli attributi.
 

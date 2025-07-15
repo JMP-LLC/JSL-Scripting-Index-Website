@@ -6,7 +6,7 @@
 
 ### Hist Seg
 
-**Syntaxe :** b = Hist Seg([data], <[freq data]>,<[weight data]>, <vertical=0|1>, <Row States()>)
+**Syntaxe :** b = Hist Seg([data], &lt;[freq data]&gt;,&lt;[weight data]&gt;, &lt;vertical=0|1&gt;, &lt;Row States()&gt;)
 
 **Description :** Renvoie un seg d&apos;histogramme.
 
@@ -32,7 +32,7 @@ seg = (frame << Find Seg( Hist Seg( 1 ) ));
 
 ### Child
 
-**Syntaxe :** seg2 = obj << Child
+**Syntaxe :** seg2 = obj &lt;&lt; Child
 
 **Description :** Renvoie le premier enfant du seg affiché.
 
@@ -57,7 +57,7 @@ seg << Child; // not many segs support children
 
 ### Class Name
 
-**Syntaxe :** classname = obj << Class Name
+**Syntaxe :** classname = obj &lt;&lt; Class Name
 
 **Description :** Renvoie le nom de la classe d’affichage associée au seg d’affichage.
 
@@ -82,7 +82,7 @@ seg << Class Name;
 
 ### Clip Shape
 
-**Syntaxe :** seg << Clip Shape(Boundaries(Shape File, [ID(string)]) | Path([string] | [matrix]) | Empty())
+**Syntaxe :** seg &lt;&lt; Clip Shape(Boundaries(Shape File, [ID(string)]) | Path([string] | [matrix]) | Empty())
 
 **Description :** Coupe la géométrie selon la forme donnée. La forme peut être spécifiée à l&apos;aide d&apos;un fichier de forme ou d&apos;un chemin. Afin de sélectionner une seule forme, un ID facultatif peut être spécifié au moyen d&apos;un fichier de forme, sinon l&apos;union de toutes les formes sera utilisée pour définir la région de détourage. Un chemin de détourage peut être spécifié par une matrice N x 3 ou par une représentation textuelle. Une matrice de chemin a trois colonnes pour x, y et les indicateurs pour chaque point du chemin. Les valeurs des indicateurs sont 0 pour le contrôle, 1 pour le déplacement, 2 pour le segment de ligne, 3 pour le segment cubique de Bézier et sont négatives si le point ferme aussi le chemin. Le texte de chemin autorise la syntaxe SVG.
 
@@ -112,7 +112,7 @@ cs << Clip Shape( Boundaries( "US States" ) );
 
 ### Delete
 
-**Syntaxe :** obj << Delete
+**Syntaxe :** obj &lt;&lt; Delete
 
 **Description :** Supprimer le seg d’affichage.
 
@@ -137,7 +137,7 @@ seg << Delete;
 
 ### Frame
 
-**Syntaxe :** FrameBox = obj << Frame
+**Syntaxe :** FrameBox = obj &lt;&lt; Frame
 
 **Description :** Renvoie le cadre qui contient le seg affiché.
 
@@ -162,7 +162,7 @@ seg << Frame;
 
 ### Get Clip Shape
 
-**Syntaxe :** obj << Get Clip Shape
+**Syntaxe :** obj &lt;&lt; Get Clip Shape
 
 **Description :** Renvoie la forme de détourage actuelle
 
@@ -193,7 +193,7 @@ cs << Get Clip Shape();
 
 ### Get Description
 
-**Syntaxe :** description = obj << Get Description
+**Syntaxe :** description = obj &lt;&lt; Get Description
 
 **Description :** Obtient la description du seg d&apos;affichage.
 
@@ -218,7 +218,7 @@ seg << get description();
 
 ### Get Fill Pattern
 
-**Syntaxe :** obj << Get Fill Pattern
+**Syntaxe :** obj &lt;&lt; Get Fill Pattern
 
 ```jsl
 
@@ -241,7 +241,7 @@ seg << Get Fill Pattern;
 
 ### Get Line Color
 
-**Syntaxe :** color = obj << Get Line Color( color )
+**Syntaxe :** color = obj &lt;&lt; Get Line Color( color )
 
 **Description :** Obtient la couleur du contour des barres.
 
@@ -266,7 +266,7 @@ seg << Get Line Color;
 
 ### Get Line Style
 
-**Syntaxe :** linestyle = obj << Get Line Style( pen style )
+**Syntaxe :** linestyle = obj &lt;&lt; Get Line Style( pen style )
 
 **Description :** Obtient le style de trait du contour des barres.
 
@@ -291,7 +291,7 @@ seg << Get Line Style;
 
 ### Get Line Width
 
-**Syntaxe :** integer = obj << Get Line Width( number )
+**Syntaxe :** integer = obj &lt;&lt; Get Line Width( number )
 
 **Description :** Obtient la largeur du contour des barres.
 
@@ -316,7 +316,7 @@ seg << Get Line Width;
 
 ### Get Transparency
 
-**Syntaxe :** 0.0 to 1.0 = obj << Get Transparency( number )
+**Syntaxe :** 0.0 to 1.0 = obj &lt;&lt; Get Transparency( number )
 
 **Description :** Obtient la transparence du seg d&apos;histogramme.
 
@@ -341,7 +341,7 @@ seg << Get Transparency;
 
 ### Histogram Color
 
-**Syntaxe :** obj << Histogram Color( color )
+**Syntaxe :** obj &lt;&lt; Histogram Color( color )
 
 **Description :** Définit la couleur des barres de l&apos;histogramme.
 
@@ -366,7 +366,7 @@ seg << Histogram Color( "Red" );
 
 ### Line Color
 
-**Syntaxe :** obj << Line Color( color )
+**Syntaxe :** obj &lt;&lt; Line Color( color )
 
 **Description :** Définit la couleur du contour des barres.
 
@@ -391,7 +391,7 @@ seg << Set Line Color( "Green" );
 
 ### Line Style
 
-**Syntaxe :** obj << Line Style( style de ligne )
+**Syntaxe :** obj &lt;&lt; Line Style( style de ligne )
 
 **Description :** Définit le style de trait du contour des barres.
 
@@ -416,7 +416,7 @@ seg << Set Line Style( "dashed" );
 
 ### Line Width
 
-**Syntaxe :** obj << Line Width( integer )
+**Syntaxe :** obj &lt;&lt; Line Width( integer )
 
 **Description :** Définit la largeur du contour des barres.
 
@@ -441,7 +441,7 @@ seg << Set Line Width( 3 );
 
 ### Parent
 
-**Syntaxe :** seg2 = obj << Parent
+**Syntaxe :** seg2 = obj &lt;&lt; Parent
 
 **Description :** Renvoie le parent du seg affiché.
 
@@ -466,7 +466,7 @@ seg << Parent;
 
 ### Save Color Preference
 
-**Syntaxe :** obj << Save Color Preference
+**Syntaxe :** obj &lt;&lt; Save Color Preference
 
 **Description :** Définit la couleur de la barre active en tant que couleur par défaut des barres d&apos;histogramme.
 
@@ -491,7 +491,7 @@ seg << Save Color Preference;
 
 ### Set Description
 
-**Syntaxe :** obj << Set Description( description )
+**Syntaxe :** obj &lt;&lt; Set Description( description )
 
 **Description :** Définit la description du seg d&apos;affichage.
 
@@ -516,7 +516,7 @@ seg << set description( "my seg" );
 
 ### Set Fill Pattern
 
-**Syntaxe :** obj << Set Fill Pattern
+**Syntaxe :** obj &lt;&lt; Set Fill Pattern
 
 ```jsl
 
@@ -539,7 +539,7 @@ seg << Set Fill Pattern( "h wave medium" );
 
 ### Set Line Color
 
-**Syntaxe :** obj << Set Line Color( color )
+**Syntaxe :** obj &lt;&lt; Set Line Color( color )
 
 **Description :** Définit la couleur du contour des barres.
 
@@ -564,7 +564,7 @@ seg << Set Line Color( "Green" );
 
 ### Set Line Style
 
-**Syntaxe :** obj << Set Line Style( style de ligne )
+**Syntaxe :** obj &lt;&lt; Set Line Style( style de ligne )
 
 **Description :** Définit le style de trait du contour des barres.
 
@@ -589,7 +589,7 @@ seg << Set Line Style( "dashed" );
 
 ### Set Line Width
 
-**Syntaxe :** obj << Set Line Width( integer )
+**Syntaxe :** obj &lt;&lt; Set Line Width( integer )
 
 **Description :** Définit la largeur du contour des barres.
 
@@ -614,7 +614,7 @@ seg << Set Line Width( 3 );
 
 ### Set Transparency
 
-**Syntaxe :** obj << Set Transparency( 0.0 to 1.0 )
+**Syntaxe :** obj &lt;&lt; Set Transparency( 0.0 to 1.0 )
 
 **Description :** Définit la transparence du seg d&apos;histogramme.
 
@@ -639,7 +639,7 @@ seg << Set Transparency( .5 );
 
 ### Sib
 
-**Syntaxe :** seg2 = obj << Sib
+**Syntaxe :** seg2 = obj &lt;&lt; Sib
 
 **Description :** Renvoie le frère du seg affiché.
 
@@ -664,7 +664,7 @@ seg << Sib;
 
 ### Sib Append
 
-**Syntaxe :** obj << Sib Append( seg2 )
+**Syntaxe :** obj &lt;&lt; Sib Append( seg2 )
 
 **Description :** Ajoute un seg d&apos;affichage immédiatement après le seg affiché.
 
@@ -704,7 +704,7 @@ mapSeg << Sib Append(
 
 ### Sib Prepend
 
-**Syntaxe :** obj << Sib Prepend( seg2 )
+**Syntaxe :** obj &lt;&lt; Sib Prepend( seg2 )
 
 **Description :** Ajoute un seg d&apos;affichage immédiatement avant le seg affiché.
 
@@ -744,7 +744,7 @@ seg << Sib Prepend(
 
 ### Subset
 
-**Syntaxe :** obj << Subset
+**Syntaxe :** obj &lt;&lt; Subset
 
 **Description :** Crée un sous-ensemble de la table de données basé sur la sélection actuelle.
 
@@ -769,7 +769,7 @@ seg << Subset;
 
 ### Transparency
 
-**Syntaxe :** obj << Transparency( 0.0 to 1.0 )
+**Syntaxe :** obj &lt;&lt; Transparency( 0.0 to 1.0 )
 
 **Description :** Définit la transparence du seg d&apos;histogramme.
 
@@ -796,9 +796,7 @@ seg << Set Transparency( .5 );
 
 ### Enabled
 
-**Syntaxe :** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**Syntaxe :** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Description :** Un objet qui n&apos;est pas activé ne répondra pas aux commandes du clavier ou de la souris. Cette propriété est héritée par les objets enfants, donc le fait de désactiver un objet de type conteneur entraînera la désactivation de tous les objets descendants.
 
@@ -830,9 +828,7 @@ New Window( "enabled",
 
 ### Get Enabled
 
-**Syntaxe :** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**Syntaxe :** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Description :** Un objet qui n&apos;est pas activé ne répondra pas aux commandes du clavier ou de la souris. Cette propriété est héritée par les objets enfants, donc le fait de désactiver un objet de type conteneur entraînera la désactivation de tous les objets descendants.
 
@@ -864,7 +860,7 @@ New Window( "enabled",
 
 ### Get Namespace
 
-**Syntaxe :** obj << Get Namespace
+**Syntaxe :** obj &lt;&lt; Get Namespace
 
 **Description :** Renvoie l&apos;espace de noms associé à cet objet d&apos;affichage.
 
@@ -882,7 +878,7 @@ Show( ns:x, x );
 
 ### Get Properties
 
-**Syntaxe :** obj << Get Properties
+**Syntaxe :** obj &lt;&lt; Get Properties
 
 **Description :** Renvoie un tableau associatif qui contient les propriétés de la boîte d&apos;affichage et leurs valeurs.
 
@@ -896,7 +892,7 @@ bb << Get Properties;
 
 ### Get Property
 
-**Syntaxe :** obj << Get Property( "property" )
+**Syntaxe :** obj &lt;&lt; Get Property( "property" )
 
 **Description :** Renvoie le paramètre actuel pour la property nommée.
 
@@ -910,7 +906,7 @@ bb << Get Property( "Enabled" );
 
 ### Get Property List
 
-**Syntaxe :** obj << Get Property List
+**Syntaxe :** obj &lt;&lt; Get Property List
 
 **Description :** Renvoie la liste des propriétés de la boîte d&apos;affichage.
 
@@ -924,7 +920,7 @@ bb << Get Property List;
 
 ### Set Property
 
-**Syntaxe :** obj << Set Property( "property", value )
+**Syntaxe :** obj &lt;&lt; Set Property( "property", value )
 
 **Description :** Définit la valeur pour la property nommée pour la boîte d&apos;affichage.
 

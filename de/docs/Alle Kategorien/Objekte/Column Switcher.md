@@ -6,7 +6,7 @@
 
 ### Close Outline
 
-**Syntax:** obj << Close Outline( state=0|1 )
+**Syntax:** obj &lt;&lt; Close Outline( state=0|1 )
 
 **Beschreibung:** Öffnet oder schließt das Gliederungsfeld für den Spaltenwechsler
 
@@ -25,7 +25,7 @@ ColumnSwitcherObject << Close Outline( 1 );
 
 ### Get Current
 
-**Syntax:** obj << Get Current
+**Syntax:** obj &lt;&lt; Get Current
 
 **Beschreibung:** Ruft den Namen der aktuellen Variablen ab
 
@@ -45,7 +45,7 @@ ColumnSwitcherObject << Get Current/*country*/ ;
 
 ### Get Layout
 
-**Syntax:** obj << Get Layout
+**Syntax:** obj &lt;&lt; Get Layout
 
 **Beschreibung:** Ruft das Layout für mehrere Spaltenwechsler ab. Vertikal(0) bzw. horizontal(1).
 
@@ -71,7 +71,7 @@ If( cs2 << Get Layout() == 1,
 
 ### Get List
 
-**Syntax:** obj << Get List
+**Syntax:** obj &lt;&lt; Get List
 
 **Beschreibung:** Ruft die Liste der verfügbaren Variablen ab
 
@@ -90,7 +90,7 @@ ColumnSwitcherObject << Get List/*{"sex","country","marital status"}*/ ;
 
 ### Get Original
 
-**Syntax:** obj << Get Original
+**Syntax:** obj &lt;&lt; Get Original
 
 **Beschreibung:** Ruft den Namen der ursprünglichen Variablen ab
 
@@ -110,7 +110,7 @@ ColumnSwitcherObject << Get Original/*marital status*/ ;
 
 ### Get Speed
 
-**Syntax:** obj << Get Speed
+**Syntax:** obj &lt;&lt; Get Speed
 
 **Beschreibung:** fpm = obj<<getSpeed /* in Frames Per Minute */;
 
@@ -129,7 +129,7 @@ FPM = ColumnSwitcherObject << Get Speed;
 
 ### Link Platform
 
-**Syntax:** obj << Link Platform( platform )
+**Syntax:** obj &lt;&lt; Link Platform( platform )
 
 **Beschreibung:** Verknüpft eine Plattform mit diesem Spaltenwechsler.
 
@@ -150,7 +150,7 @@ columnSwitcher << Link Platform( gb );
 
 ### Make Column Switch Handler
 
-**Syntax:** handler = cs << Make Column Switch Handler( function(pre), function(post) )
+**Syntax:** handler = cs &lt;&lt; Make Column Switch Handler( function(pre), function(post) )
 
 **Beschreibung:** Erstellt einen Handler für Spaltenwechsel mit Rückruffunktionen, die vor und nach einem Spaltenwechsel aufgerufen werden. Die Rückruffunktionen empfangen die vorherige Spalte, die nächste Spalte und den Spaltenwechsler. Die für vor dem Spaltenwechsel angegebene Funktion sollte einen Wert ungleich Null zurückgeben, damit der Wechsel gestattet wird. Eine Rückgabe von 0 verhindert den Wechsel. Die nach dem Wechsel aufgerufene Funktion sollte keinen Wert zurückgeben.
 
@@ -188,7 +188,7 @@ columnSwitcher << Run;
 
 ### Next
 
-**Syntax:** obj << Next
+**Syntax:** obj &lt;&lt; Next
 
 **Beschreibung:** Ändert die Auswahl des Spaltenwechslers zur nächsten verfügbaren Auswahl
 
@@ -207,7 +207,7 @@ ColumnSwitcherObject << Next;
 
 ### Pause
 
-**Syntax:** obj << Pause
+**Syntax:** obj &lt;&lt; Pause
 
 **Beschreibung:** Animation anhalten
 
@@ -228,7 +228,7 @@ ColumnSwitcherObject << Pause;
 
 ### Previous
 
-**Syntax:** obj << Previous
+**Syntax:** obj &lt;&lt; Previous
 
 **Beschreibung:** Ändert die Auswahl des Spaltenwechslers zur vorherigen verfügbaren Auswahl
 
@@ -247,7 +247,7 @@ ColumnSwitcherObject << Previous;
 
 ### Remove Column Switcher
 
-**Syntax:** obj << Remove Column Switcher
+**Syntax:** obj &lt;&lt; Remove Column Switcher
 
 **Beschreibung:** Diesen Spaltenwechsler entfernen
 
@@ -268,7 +268,7 @@ ColumnSwitcherObject << Remove Column Switcher;
 
 ### Retain Axis Settings
 
-**Syntax:** obj << Retain Axis Settings( state=0|1 )
+**Syntax:** obj &lt;&lt; Retain Axis Settings( state=0|1 )
 
 **Beschreibung:** Einige Graphen speichern Achsenanpassungen auf der Grundlage des Namens der Spalte. Standardmäßig werden diese Anpassungen beim Spaltenwechsel entfernt. Wenn diese Option aktiviert ist, wird die Spalte beim Wechsel aktualisiert, so dass die Anpassungen auf den neuen Graphen angewendet werden.
 
@@ -296,7 +296,7 @@ Graph Builder(
 
 ### Run
 
-**Syntax:** obj << Run
+**Syntax:** obj &lt;&lt; Run
 
 **Beschreibung:** Animation starten
 
@@ -315,7 +315,7 @@ ColumnSwitcherObject << Run;
 
 ### Script
 
-**Syntax:** obj << Script( script )
+**Syntax:** obj &lt;&lt; Script( script )
 
 **Beschreibung:** Skript festlegen, das beim Wechseln der Spalte ausgeführt wird
 
@@ -340,7 +340,7 @@ Wait( 5/*seconds, while it animates*/ );
 
 ### Set Current
 
-**Syntax:** obj << Set Current( string )
+**Syntax:** obj &lt;&lt; Set Current( string )
 
 **Beschreibung:** Legt die aktuelle Variable fest
 
@@ -359,7 +359,7 @@ ColumnSwitcherObject << Set Current( "country" );
 
 ### Set Layout
 
-**Syntax:** obj << Set Layout( 0 = Vertical | 1 = Horizontal )
+**Syntax:** obj &lt;&lt; Set Layout( 0 = Vertical | 1 = Horizontal )
 
 **Beschreibung:** Legt für das Layout für mehrere Spaltenwechsler vertikal(0) bzw. horizontal(1) fest.
 
@@ -382,7 +382,7 @@ cs1 << Set Layout( 1 );
 
 ### Set N Lines
 
-**Syntax:** obj << Set N Lines( number )
+**Syntax:** obj &lt;&lt; Set N Lines( number )
 
 **Beschreibung:** Legt die Anzahl der Linien im Listenfeld der Spaltennamen fest
 
@@ -401,7 +401,7 @@ ColumnSwitcherObject << Set N Lines( 20 );
 
 ### Set Script
 
-**Syntax:** obj << Set Script( script )
+**Syntax:** obj &lt;&lt; Set Script( script )
 
 **Beschreibung:** Skript festlegen, das beim Wechseln der Spalte ausgeführt wird
 
@@ -426,7 +426,7 @@ Wait( 5/*seconds, while it animates*/ );
 
 ### Set Size
 
-**Syntax:** obj << Set Size( number )
+**Syntax:** obj &lt;&lt; Set Size( number )
 
 **Beschreibung:** Legt die Pixelbreite des Listenfelds der Spaltennamen fest
 
@@ -445,7 +445,7 @@ ColumnSwitcherObject << Set Size( 300 );
 
 ### Set Speed
 
-**Syntax:** obj << Set Speed( number )
+**Syntax:** obj &lt;&lt; Set Speed( number )
 
 **Beschreibung:** obj<<setSpeed(60) /* in Frames Per Minute */;
 
@@ -464,7 +464,7 @@ ColumnSwitcherObject << Set Speed( 60 );/*FPM*/ColumnSwitcherObject << Run;
 
 ### Title
 
-**Syntax:** obj << Title( string )
+**Syntax:** obj &lt;&lt; Title( string )
 
 **Beschreibung:** Legt den Titel für das Gliederungsfeld für den Spaltenwechsel fest
 

@@ -6,7 +6,7 @@
 
 ### Load DLL
 
-**構文:** dll = Load DLL( file path | Base Name( file path without extension ), < AutoDeclare( bool | Quiet | Verbose) | Quiet | Verbose )> )
+**構文:** dll = Load DLL( file path | Base Name( file path without extension ), &lt; AutoDeclare( bool | Quiet | Verbose) | Quiet | Verbose )&gt; )
 
 **説明:** 指定のパスによって示されたDLLをロードする。
 
@@ -27,7 +27,7 @@ If( Host is( "Windows" ),
 
 ### Call DLL
 
-**構文:** obj << Call DLL( function name, signature, args )
+**構文:** obj &lt;&lt; Call DLL( function name, signature, args )
 
 **説明:** 指定されたシグネチャーおよび引数を用いて、DLLの指定された関数を呼び出す。
 
@@ -46,7 +46,7 @@ If( Host is( "Windows" ),
 
 ### Declare Function
 
-**構文:** obj << Declare Function( name, Convention( STDCALL| CDECL| Pascal ), Alias( string ), Arg( Int8| UInt8| Int16| UInt16| Int32| UInt32| Int64| UInt64| Float| Double| AnsiString| UnicodeString| Struct| IntPtr| UIntPtr| ObjPtr, string ), Returns( type ); )
+**構文:** obj &lt;&lt; Declare Function( name, Convention( STDCALL| CDECL| Pascal ), Alias( string ), Arg( Int8| UInt8| Int16| UInt16| Int32| UInt32| Int64| UInt64| Float| Double| AnsiString| UnicodeString| Struct| IntPtr| UIntPtr| ObjPtr, string ), Returns( type ); )
 
 **説明:** DLL関数の戻り値と引数のタイプを宣言する。この宣言により、JSLでDLL関数を正常に呼び出されるようにする。
 
@@ -73,7 +73,7 @@ If( Host is( "Windows" ),
 
 ### Get Declaration JSL
 
-**構文:** obj << Get Declaration JSL
+**構文:** obj &lt;&lt; Get Declaration JSL
 
 **説明:** DLLから宣言を取得し、ログに表示する。このメッセージは、関数_JMP_Declarations()を含むDLLにのみ適用される。
 
@@ -87,7 +87,7 @@ dll = Load DLL( /*DLL with JSL keyword*/ );
 
 ### Show Functions
 
-**構文:** obj << Show Functions
+**構文:** obj &lt;&lt; Show Functions
 
 **説明:** 宣言された関数のリストをログに表示する。
 
@@ -113,7 +113,7 @@ If( Host is( "Windows" ),
 
 ### Unload DLL
 
-**構文:** obj << Unload DLL
+**構文:** obj &lt;&lt; Unload DLL
 
 **説明:** DLLをアンロードする。
 

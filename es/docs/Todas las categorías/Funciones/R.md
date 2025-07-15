@@ -2,8 +2,6 @@
 
 
 
-## Funciones
-
 ### R Connect
 
 **Sintaxis:** RConnection = R Connect()
@@ -173,7 +171,7 @@ R name = R JMP Name to R Name( a b c );
 
 ### R Send
 
-**Sintaxis:** R Send( name, <R Name( as_name ) | "as_name"> )
+**Sintaxis:** R Send( name, &lt;R Name( as_name ) | "as_name"&gt; )
 
 **Descripción:** Envía datos a R, donde el argumento name puede representar cualquiera de los tipos de datos de JMP (numérico | cadena | matriz | lista | tabla de datos | columna de tabla de datos) siguientes.
 
@@ -210,7 +208,7 @@ R Submit( "dt" );
 
 ### R Send File
 
-**Sintaxis:** R Send File( filename, <R Name( name )> )
+**Sintaxis:** R Send File( filename, &lt;R Name( name )&gt; )
 
 **Descripción:** Envía un archivo de datos a R. El argumento filename es una cadena de caracteres que especifica el nombre de la ruta del archivo que se debe enviar a R.
 

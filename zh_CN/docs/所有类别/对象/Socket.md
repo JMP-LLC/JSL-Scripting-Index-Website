@@ -6,7 +6,7 @@
 
 ### Socket
 
-**语法:** socketHandle = Socket( <STREAM | DGRAM> )
+**语法:** socketHandle = Socket( &lt;STREAM | DGRAM&gt; )
 
 **说明:** 创建可与本机或其他联网计算机进行套接字通信的套接字变量。默认参数为 STREAM。尝试访问您公司的网站。
 
@@ -51,7 +51,7 @@ If( rc[2] == "ok",
 
 ### Accept
 
-**语法:** obj << Accept
+**语法:** obj &lt;&lt; Accept
 
 **说明:** 在监听套接字上接受远程计算机的连接
 
@@ -69,7 +69,7 @@ rc = skt << accept();
 
 ### Accept Fast
 
-**语法:** obj << Accept Fast
+**语法:** obj &lt;&lt; Accept Fast
 
 **说明:** 在监听套接字上接受远程计算机的连接
 
@@ -92,7 +92,7 @@ rc = skt << AcceptFast();
 
 ### Bind
 
-**语法:** obj << Bind
+**语法:** obj &lt;&lt; Bind
 
 **说明:** 将套接字绑定至计算机端口以备监听连接。
 
@@ -108,7 +108,7 @@ rc = skt << bind( "localhost", "80" );
 
 ### Close
 
-**语法:** obj << Close
+**语法:** obj &lt;&lt; Close
 
 **说明:** 关闭套接字。要再次使用套接字，应先重新创建它。连接的套接字可在本地或远程关闭。监听套接字可在本地关闭。
 
@@ -121,7 +121,7 @@ x = Socket();/* use the socket...*/ x << Close();
 
 ### Connect
 
-**语法:** obj << Connect
+**语法:** obj &lt;&lt; Connect
 
 **说明:** 连接至远程计算机。
 
@@ -181,7 +181,7 @@ Show( Length( blob ) );
 
 ### GetPeerName
 
-**语法:** obj << GetPeerName
+**语法:** obj &lt;&lt; GetPeerName
 
 **说明:** 获取远程计算机的名称。
 
@@ -197,7 +197,7 @@ Show( rc, tCall << getPeerName );
 
 ### GetSockName
 
-**语法:** obj << GetSockName
+**语法:** obj &lt;&lt; GetSockName
 
 **说明:** 获取本地计算机的名称。
 
@@ -213,7 +213,7 @@ Show( rc, tCall << getSockName );
 
 ### Ioctl
 
-**语法:** obj << Ioctl
+**语法:** obj &lt;&lt; Ioctl
 
 **说明:** 将套接字切换为非阻塞模式，或确定正等待读取的数据量。
 
@@ -231,7 +231,7 @@ len = skt << Ioctl( FIONREAD ); // how much data available
 
 ### Listen
 
-**语法:** obj << Listen
+**语法:** obj &lt;&lt; Listen
 
 **说明:** 将套接字置于监听模式。使用“接受”接受远程服务器的连接。
 
@@ -338,7 +338,7 @@ conskt << close; // nothing else to send to the browser
 
 ### Recv
 
-**语法:** obj << Recv
+**语法:** obj &lt;&lt; Recv
 
 **说明:** 从远程计算机接收数据。指定您想接收的最大字节数。若套接字处于阻塞模式，将不返回接收，直到出现一些数据或连接远程关闭。在非阻塞模式下，可能产生零字节以及“Would Block”返回代码。
 
@@ -360,7 +360,7 @@ rc = skt << recv( 1000 ); // specifie the UPPER limit on the amount of data retu
 
 ### RecvFrom
 
-**语法:** obj << RecvFrom
+**语法:** obj &lt;&lt; RecvFrom
 
 **说明:** （DGram 支持，若您不了解该消息，则尽量避免使用它。）从远程计算机接收 DGram。
 
@@ -426,7 +426,7 @@ Show( result );
 
 ### Send
 
-**语法:** obj << Send
+**语法:** obj &lt;&lt; Send
 
 **说明:** 将数据发送至远程计算机。
 
@@ -443,7 +443,7 @@ rc = skt << Send( Char To Blob( "Hello World" ) );
 
 ### SendTo
 
-**语法:** obj << SendTo
+**语法:** obj &lt;&lt; SendTo
 
 **说明:** （DGram 支持，若您不了解该消息，则尽量避免使用它。）向远程计算机发送 DGram。
 

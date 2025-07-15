@@ -6,7 +6,7 @@
 
 ### Create Objects
 
-**Sintaxis:** obj << Create Objects
+**Sintaxis:** obj &lt;&lt; Create Objects
 
 **Descripción:** Crea los objetos de la instancia del módulo.  Esta operación sólo puede efectuarse dentro del script para un módulo de aplicación JMP.
 
@@ -19,7 +19,7 @@ Names Default To Here( 1 );
 
 ### Get Box
 
-**Sintaxis:** obj << Get Box
+**Sintaxis:** obj &lt;&lt; Get Box
 
 **Descripción:** Obtiene el cuadro de visualización para la instancia del módulo.
 
@@ -37,7 +37,7 @@ inst << Get Box;
 
 ### Get Namespace
 
-**Sintaxis:** obj << Get Namespace
+**Sintaxis:** obj &lt;&lt; Get Namespace
 
 **Descripción:** Obtiene el espacio de nombres para la instancia del módulo.
 
@@ -51,7 +51,7 @@ app = JMP App();
 
 ### Get User Data
 
-**Sintaxis:** obj << Get User Data
+**Sintaxis:** obj &lt;&lt; Get User Data
 
 **Descripción:** Devuelve los datos del usuario asociados con la instancia del módulo.
 
@@ -64,7 +64,7 @@ Names Default To Here( 1 );
 
 ### Set User Data
 
-**Sintaxis:** inst << Set User Data(expr)
+**Sintaxis:** inst &lt;&lt; Set User Data(expr)
 
 **Descripción:** Guarda un valor JSL en la instancia del módulo de la aplicación JMP; el valor puede ser un número, una cadena, un arreglo asociativo u otro tipo JSL.
 

@@ -22,7 +22,7 @@ obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
 
 ### By
 
-**Syntax:** obj << By( column(s) )
+**Syntax:** obj &lt;&lt; By( column(s) )
 
 ```jsl
 
@@ -39,7 +39,7 @@ obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ), By( 
 
 ### Freq
 
-**Syntax:** obj << Freq( column )
+**Syntax:** obj &lt;&lt; Freq( column )
 
 ```jsl
 
@@ -56,7 +56,7 @@ obj = dt << Categorical(
 
 ### Grouping Category
 
-**Syntax:** obj << Grouping Category( column(s) )
+**Syntax:** obj &lt;&lt; Grouping Category( column(s) )
 
 ```jsl
 
@@ -68,7 +68,7 @@ obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
 
 ### ID
 
-**Syntax:** obj << ID( column )
+**Syntax:** obj &lt;&lt; ID( column )
 
 ```jsl
 
@@ -80,7 +80,7 @@ obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
 
 ### Sample Size
 
-**Syntax:** obj << Sample Size( column )
+**Syntax:** obj &lt;&lt; Sample Size( column )
 
 ```jsl
 
@@ -92,7 +92,7 @@ obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
 
 ### X
 
-**Syntax:** obj << X( column(s) )
+**Syntax:** obj &lt;&lt; X( column(s) )
 
 ```jsl
 
@@ -106,7 +106,7 @@ obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
 
 ### Agreement Statistic
 
-**Syntax:** obj << Agreement Statistic( state=0|1 )
+**Syntax:** obj &lt;&lt; Agreement Statistic( state=0|1 )
 
 **Description:** Tests how closely raters agree with one another and if the lack of agreement is symmetrical. Available only for a Rater Agreement response. On by default.
 
@@ -140,7 +140,7 @@ obj = dt << Categorical( Aligned Responses( :First Survey, :Second Survey ), Fre
 
 ### Arrange in Rows
 
-**Syntax:** obj << Arrange in Rows( number )
+**Syntax:** obj &lt;&lt; Arrange in Rows( number )
 
 **Description:** Arranges the reports so that they go across the page. Specify the number of reports to appear in each row.
 
@@ -162,7 +162,7 @@ obj << Arrange in Rows( 1 );
 
 ### Binomial
 
-**Syntax:** obj << Binomial( state=0|1 )
+**Syntax:** obj &lt;&lt; Binomial( state=0|1 )
 
 **Description:** Performs a chi-square test of independence of response levels assuming a binomial distribution for each category. Note: Available only for multiple responses.
 
@@ -177,7 +177,7 @@ obj << Homogeneity Test( 1 );
 
 ### Cell Chisq
 
-**Syntax:** obj << Cell Chisq( state=0|1 )
+**Syntax:** obj &lt;&lt; Cell Chisq( state=0|1 )
 
 **Description:** Shows or hides p-values for each cell in the table for a chi-square test of independence. The p-values are colored and shaded according to whether the count is larger or smaller than the expected count.
 
@@ -192,7 +192,7 @@ obj << Cell Chisq( 1 );
 
 ### Cell Chisq FDR
 
-**Syntax:** obj << Cell Chisq FDR( state=0|1 )
+**Syntax:** obj &lt;&lt; Cell Chisq FDR( state=0|1 )
 
 **Description:** Shows or hides false discovery rate (FDR) adjusted p-values for each cell in the table for a chi-square test of independence. The FDR adjusted p-values are colored and shaded according to whether the count is larger or smaller than the expected count.
 
@@ -207,7 +207,7 @@ obj << Cell Chisq( 1 );
 
 ### ChiSquare Test Choices
 
-**Syntax:** obj << ChiSquare Test Choices( "Both LR and Pearson"|"LR Only"|"Pearson Only" )
+**Syntax:** obj &lt;&lt; ChiSquare Test Choices( "Both LR and Pearson"|"LR Only"|"Pearson Only" )
 
 **Description:** Specifies which tests are displayed in the tests for homogeneity, either the Likelihood Ratio Chi-Squared, the Pearson Chi-Squared, or both. Available only for a single response.
 
@@ -223,7 +223,7 @@ obj << Test Response Homogeneity( 1 );
 
 ### Compare Each Cell
 
-**Syntax:** obj << Compare Each Cell( state=0|1 )
+**Syntax:** obj &lt;&lt; Compare Each Cell( state=0|1 )
 
 **Description:** Compares each level of the response versus all other levels combined across levels of a grouping variable.
 
@@ -238,7 +238,7 @@ obj << Compare Each Cell( 1 );
 
 ### Compare Each Cell FDR
 
-**Syntax:** obj << Compare Each Cell FDR( state=0|1 )
+**Syntax:** obj &lt;&lt; Compare Each Cell FDR( state=0|1 )
 
 **Description:** Compares each level of the response versus all other levels combined across levels of a grouping variable, with false discovery rate (FDR) adjustment.
 
@@ -253,7 +253,7 @@ obj << Compare Each Cell FDR( 1 );
 
 ### Compare Each Sample
 
-**Syntax:** obj << Compare Each Sample( state=0|1 )
+**Syntax:** obj &lt;&lt; Compare Each Sample( state=0|1 )
 
 **Description:** Compares responses across levels of a grouping variable.
 
@@ -268,7 +268,7 @@ obj << Compare Each Sample( 1 );
 
 ### Compare Each Sample FDR
 
-**Syntax:** obj << Compare Each Sample FDR( state=0|1 )
+**Syntax:** obj &lt;&lt; Compare Each Sample FDR( state=0|1 )
 
 **Description:** Compares responses across levels of a grouping variable with false discovery rate (FDR) adjustment.
 
@@ -283,7 +283,7 @@ obj << Compare Each Sample FDR( 1 );
 
 ### Conditional Association
 
-**Syntax:** obj << Conditional Association( state=0|1 )
+**Syntax:** obj &lt;&lt; Conditional Association( state=0|1 )
 
 **Description:** Shows or hides the rate of having a response in a column given the same response in a row. Available only for Multiple Response, Multiple Delimited, and Multiple Response by ID models with Unique Occurrences within ID selected.
 
@@ -323,7 +323,7 @@ obj = dt << Categorical(
 
 ### Confidence Limits Format
 
-**Syntax:** obj << Confidence Limits Format( format, <options> )
+**Syntax:** obj &lt;&lt; Confidence Limits Format( format, &lt;options&gt; )
 
 **Description:** Formats the confidence limits for Share and Rate in the table. The default value is "Percent", 6, 2.
 
@@ -344,7 +344,7 @@ obj << Confidence Limits Format( "Percent", 6, 0 );
 
 ### Contents Summary
 
-**Syntax:** obj << Contents Summary( state=0|1 )
+**Syntax:** obj &lt;&lt; Contents Summary( state=0|1 )
 
 **Description:** Collects all tests and p-values into one report.
 
@@ -373,7 +373,7 @@ Categorical( X( :Trial 1 ), Count Missing Responses( 1 ), Responses( :Trial 4 ) 
 
 ### Count Test
 
-**Syntax:** obj << Count Test( state=0|1 )
+**Syntax:** obj &lt;&lt; Count Test( state=0|1 )
 
 **Description:** Performs a chi-square test of independence of rates using Poisson regression. Note: Available only for multiple responses.
 
@@ -388,7 +388,7 @@ obj << Count Test( 1 );
 
 ### Crosstab
 
-**Syntax:** obj << Crosstab( state=0|1 )
+**Syntax:** obj &lt;&lt; Crosstab( state=0|1 )
 
 **Description:** Generates a cross tabulation of counts with the response levels defining  the columns and the grouping variable levels defining the rows. On by default.
 
@@ -404,7 +404,7 @@ obj << Crosstab( 1 );
 
 ### Crosstab Transposed
 
-**Syntax:** obj << Crosstab Transposed( state=0|1 )
+**Syntax:** obj &lt;&lt; Crosstab Transposed( state=0|1 )
 
 **Description:** Generates a cross tabulation of counts with the response levels defining  the rows and the grouping variable levels defining the columns.
 
@@ -419,7 +419,7 @@ obj << Crosstab Transposed( 1 );
 
 ### Exclude Nonresponses
 
-**Syntax:** obj << Exclude Nonresponses( state=0|1 )
+**Syntax:** obj &lt;&lt; Exclude Nonresponses( state=0|1 )
 
 **Description:** Excludes nonresponses for count and homogeneity tests when comparing multiple response categories. Empty or missing cells are treated as nonresponses. Using a separate category for none-of-these is recommended.
 
@@ -439,7 +439,7 @@ obj << Exclude Nonresponses( 1 );
 
 ### FDR Adjusted PValues
 
-**Syntax:** obj << FDR Adjusted PValues( state=0|1 )
+**Syntax:** obj &lt;&lt; FDR Adjusted PValues( state=0|1 )
 
 **Description:** False discovery rate adjusted p-values (Benjamini and Hochberg, 1995) are used when there are many p-values and it becomes easy for some tests to be significant by chance alone.
 
@@ -458,7 +458,7 @@ obj << FDR Adjusted PValues( 1 );
 
 ### Filter
 
-**Syntax:** obj << Filter( state=0|1 )
+**Syntax:** obj &lt;&lt; Filter( state=0|1 )
 
 **Description:** Filters data to specific groups or ranges, locally.
 
@@ -482,7 +482,7 @@ obj << Filter( 0 );
 
 ### Force Crosstab Shading
 
-**Syntax:** obj << Force Crosstab Shading( state=0|1 )
+**Syntax:** obj &lt;&lt; Force Crosstab Shading( state=0|1 )
 
 **Description:** Uses shading on Crosstab reports even if Global Preferences are set not to shade. On by default.
 
@@ -499,7 +499,7 @@ obj << Force Crosstab Shading( 1 );
 
 ### Force Labels Horizontal
 
-**Syntax:** obj << Force Labels Horizontal( state=0|1 )
+**Syntax:** obj &lt;&lt; Force Labels Horizontal( state=0|1 )
 
 **Description:** Uses horizontal labels on the crosstab table regardless of the length of the text. The label text is wrapped rather than rotated.
 
@@ -515,13 +515,13 @@ obj << Force Labels Horizontal( 1 );
 
 ### Format Elements
 
-**Syntax:** obj << Format Elements
+**Syntax:** obj &lt;&lt; Format Elements
 
 **Description:** Opens a window that enables you to specify formats for various elements of the report.
 
 ### Frequencies
 
-**Syntax:** obj << Frequencies( state=0|1 )
+**Syntax:** obj &lt;&lt; Frequencies( state=0|1 )
 
 **Description:** Shows or hides the Frequency table in the report. On by default.
 
@@ -541,7 +541,7 @@ obj << Frequencies( 1 );
 
 ### Frequencies Format
 
-**Syntax:** obj << Frequencies Format( format, <options> )
+**Syntax:** obj &lt;&lt; Frequencies Format( format, &lt;options&gt; )
 
 **Description:** Formats the Frequency values in the table. The default value is "Fixed Dec", 7, 0.
 
@@ -557,7 +557,7 @@ obj << Frequencies Format( "Fixed Dec", 7, 2 );
 
 ### Frequency Chart
 
-**Syntax:** obj << Frequency Chart( state=0|1 )
+**Syntax:** obj &lt;&lt; Frequency Chart( state=0|1 )
 
 **Description:** Shows or hides the Frequency Chart in the report.
 
@@ -590,7 +590,7 @@ obj = dt << Categorical(
 
 ### Hide Nonsignificant
 
-**Syntax:** obj << Hide Nonsignificant( state=0|1 )
+**Syntax:** obj &lt;&lt; Hide Nonsignificant( state=0|1 )
 
 **Description:** Suppresses reports that are non-significant.
 
@@ -614,13 +614,13 @@ obj << Hide Nonsignificant( 1 );
 
 ### Highlight Cells
 
-**Syntax:** obj << Highlight Cells
+**Syntax:** obj &lt;&lt; Highlight Cells
 
 **Description:** Highlights the cells that satisfy the specified conditions.
 
 ### Homogeneity Test
 
-**Syntax:** obj << Homogeneity Test( state=0|1 )
+**Syntax:** obj &lt;&lt; Homogeneity Test( state=0|1 )
 
 **Description:** Performs a chi-square test of independence of response levels assuming a binomial distribution for each category. Note: Available only for multiple responses.
 
@@ -694,7 +694,7 @@ obj = dt << Categorical(
 
 ### Mean Confidence Interval
 
-**Syntax:** obj << Mean Confidence Interval( state=0|1 )
+**Syntax:** obj &lt;&lt; Mean Confidence Interval( state=0|1 )
 
 **Description:** Shows or hides the confidence interval for the means
 
@@ -709,7 +709,7 @@ obj << Mean Confidence Interval( 1 );
 
 ### Mean Score
 
-**Syntax:** obj << Mean Score( state=0|1 )
+**Syntax:** obj &lt;&lt; Mean Score( state=0|1 )
 
 **Description:** Displays the mean score, based on raw numeric codes or value scores, in the crosstab table.
 
@@ -724,7 +724,7 @@ obj << Mean Score( 1 );
 
 ### Mean Score Comparisons
 
-**Syntax:** obj << Mean Score Comparisons( state=0|1 )
+**Syntax:** obj &lt;&lt; Mean Score Comparisons( state=0|1 )
 
 **Description:** Compares the mean scores across grouping categories.
 
@@ -739,7 +739,7 @@ obj << Mean Score Comparisons( 1 );
 
 ### Mean Score Comparisons FDR
 
-**Syntax:** obj << Mean Score Comparisons FDR( state=0|1 )
+**Syntax:** obj &lt;&lt; Mean Score Comparisons FDR( state=0|1 )
 
 **Description:** Compares the mean scores across grouping categories.
 
@@ -754,7 +754,7 @@ obj << Mean Score Comparisons FDR( 1 );
 
 ### Mean Score Comparisons as Suffix
 
-**Syntax:** obj << Mean Score Comparisons as Suffix( state=0|1 )
+**Syntax:** obj &lt;&lt; Mean Score Comparisons as Suffix( state=0|1 )
 
 **Description:** Compares the mean scores across grouping categories.
 
@@ -769,7 +769,7 @@ obj << Mean Score Comparisons Suffixed( 1 );
 
 ### Mean Std Error
 
-**Syntax:** obj << Mean Std Error( state=0|1 )
+**Syntax:** obj &lt;&lt; Mean Std Error( state=0|1 )
 
 **Description:** Shows or hides the standard error for the means
 
@@ -784,7 +784,7 @@ obj << Mean Std Error( 1 );
 
 ### Means Format
 
-**Syntax:** obj << Means Format( format, <options> )
+**Syntax:** obj &lt;&lt; Means Format( format, &lt;options&gt; )
 
 **Description:** Formats the mean scores in the table. The default value is "Fixed", 6, 2.
 
@@ -871,7 +871,7 @@ obj = dt << Categorical(
 
 ### Order by Significance
 
-**Syntax:** obj << Order by Significance( state=0|1 )
+**Syntax:** obj &lt;&lt; Order by Significance( state=0|1 )
 
 **Description:** Reorders the reports so that the most significant reports are at the top.
 
@@ -895,7 +895,7 @@ obj << Order by Significance( 1 );
 
 ### Poisson
 
-**Syntax:** obj << Poisson( state=0|1 )
+**Syntax:** obj &lt;&lt; Poisson( state=0|1 )
 
 **Description:** Performs a chi-square test of independence of rates using Poisson regression. Note: Available only for multiple responses.
 
@@ -910,7 +910,7 @@ obj << Count Test( 1 );
 
 ### Rate Confidence Interval
 
-**Syntax:** obj << Rate Confidence Interval( state=0|1 )
+**Syntax:** obj &lt;&lt; Rate Confidence Interval( state=0|1 )
 
 **Description:** Shows or hides the confidence interval for the rate probability. The confidence interval is a normal interval using the standard errors from the Poisson linear model.
 
@@ -925,7 +925,7 @@ obj << Rate Confidence Interval( 1 );
 
 ### Rate Per Case
 
-**Syntax:** obj << Rate Per Case( state=0|1 )
+**Syntax:** obj &lt;&lt; Rate Per Case( state=0|1 )
 
 **Description:** Shows or hides the Rate per Case table in the report. On by default.
 
@@ -948,7 +948,7 @@ obj << Rate Per Case( 1 );
 
 ### Rate per Case Responding
 
-**Syntax:** obj << Rate per Case Responding( state=0|1 )
+**Syntax:** obj &lt;&lt; Rate per Case Responding( state=0|1 )
 
 **Description:** Shows or hides the rate of response per case responding (excluding missing).
 
@@ -983,7 +983,7 @@ obj = dt << Categorical( Rater Agreement( :First Survey, :Second Survey ), Freq(
 
 ### Relative Risk
 
-**Syntax:** obj << Relative Risk( state=0|1, {}, {level of interest} )
+**Syntax:** obj &lt;&lt; Relative Risk( state=0|1, {}, {level of interest} )
 
 **Description:** Shows or hides the relative risks for a two-level grouping variable for each level of the response. Available when the grouping variable has two levels and either the response has two levels or is a multiple response and the Unique occurrences within ID option has been selected.
 
@@ -1040,7 +1040,7 @@ obj = dt << Categorical(
 
 ### Response Levels
 
-**Syntax:** obj << Response Levels( state=0|1 )
+**Syntax:** obj &lt;&lt; Response Levels( state=0|1 )
 
 **Description:** Shows or hides data levels for each response. On by default.
 
@@ -1071,7 +1071,7 @@ obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
 
 ### Save Contingency Table
 
-**Syntax:** obj << Save Contingency Table
+**Syntax:** obj &lt;&lt; Save Contingency Table
 
 **Description:** Saves the values in the crosstab table to a new data table. The new table uses the original column names.
 
@@ -1086,13 +1086,13 @@ obj << Save Contingency Table;
 
 ### Save DocX File
 
-**Syntax:** obj << Save DocX File
+**Syntax:** obj &lt;&lt; Save DocX File
 
 **Description:** Undocumented and Experimental Feature
 
 ### Save Excel File
 
-**Syntax:** obj << Save Excel File
+**Syntax:** obj &lt;&lt; Save Excel File
 
 **Description:** Saves the tables to an Excel spreadsheet file.
 
@@ -1110,7 +1110,7 @@ obj << Save Excel File(
 
 ### Save Frequencies
 
-**Syntax:** obj << Save Frequencies
+**Syntax:** obj &lt;&lt; Save Frequencies
 
 **Description:** Saves the frequencies to a new table.
 
@@ -1125,7 +1125,7 @@ obj << Save Frequencies;
 
 ### Save Mean Scores
 
-**Syntax:** obj << Save Mean Scores
+**Syntax:** obj &lt;&lt; Save Mean Scores
 
 **Description:** Saves the mean scores for each sample group to a new table.
 
@@ -1140,7 +1140,7 @@ obj << Save Mean Scores;
 
 ### Save Rate Per Case
 
-**Syntax:** obj << Save Rate Per Case
+**Syntax:** obj &lt;&lt; Save Rate Per Case
 
 **Description:** Saves the rate per case to a new table.
 
@@ -1162,7 +1162,7 @@ obj << Save Rate Per Case;
 
 ### Save Share of Responses
 
-**Syntax:** obj << Save Share of Responses
+**Syntax:** obj &lt;&lt; Save Share of Responses
 
 **Description:** Saves the share of responses to a new table.
 
@@ -1177,7 +1177,7 @@ obj << Save Share of Responses;
 
 ### Save Stacked Table
 
-**Syntax:** obj << Save Stacked Table
+**Syntax:** obj &lt;&lt; Save Stacked Table
 
 **Description:** Saves the values in the crosstab table to a new data table. The new table uses general column names.
 
@@ -1192,7 +1192,7 @@ obj << Save Stacked Table;
 
 ### Save Test Homogeneity
 
-**Syntax:** obj << Save Test Homogeneity
+**Syntax:** obj &lt;&lt; Save Test Homogeneity
 
 **Description:** Saves the results from the tests for homogeneity to a new table.
 
@@ -1207,7 +1207,7 @@ obj << Save Test Homogeneity;
 
 ### Save Test Rates
 
-**Syntax:** obj << Save Test Rates
+**Syntax:** obj &lt;&lt; Save Test Rates
 
 **Description:** Saves the results of the Test Multiple Response option to a new data table.
 
@@ -1229,7 +1229,7 @@ obj << Save Test Rates;
 
 ### Save Transposed Frequencies
 
-**Syntax:** obj << Save Transposed Frequencies
+**Syntax:** obj &lt;&lt; Save Transposed Frequencies
 
 **Description:** Saves the transposed frequencies to a new table.
 
@@ -1244,7 +1244,7 @@ obj << Save Transposed Frequencies;
 
 ### Save Transposed Rate Per Case
 
-**Syntax:** obj << Save Transposed Rate Per Case
+**Syntax:** obj &lt;&lt; Save Transposed Rate Per Case
 
 **Description:** Saves the transformed rate per case to a new table.
 
@@ -1266,7 +1266,7 @@ obj << Save Transposed Rate Per Case;
 
 ### Save Transposed Share of Responses
 
-**Syntax:** obj << Save Transposed Share of Responses
+**Syntax:** obj &lt;&lt; Save Transposed Share of Responses
 
 **Description:** Saves the transposed share of responses to a new table.
 
@@ -1281,7 +1281,7 @@ obj << Save Transposed Share of Responses;
 
 ### Save tTests and pValues
 
-**Syntax:** obj << Save tTests and pValues
+**Syntax:** obj &lt;&lt; Save tTests and pValues
 
 **Description:** Save t tests and p-values from the Compare Means tests to a new data table.
 
@@ -1296,7 +1296,7 @@ obj << Save ttests and pvalues;
 
 ### Share Chart
 
-**Syntax:** obj << Share Chart( state=0|1 )
+**Syntax:** obj &lt;&lt; Share Chart( state=0|1 )
 
 **Description:** Shows or hides the Share Chart in the report.
 
@@ -1316,7 +1316,7 @@ obj << Share Chart( 1 );
 
 ### Share Confidence Interval
 
-**Syntax:** obj << Share Confidence Interval( state=0|1 )
+**Syntax:** obj &lt;&lt; Share Confidence Interval( state=0|1 )
 
 **Description:** Shows or hides the confidence interval for the share response probability. The confidence interval is constructed using Wilson&apos;s Score test method.
 
@@ -1331,7 +1331,7 @@ obj << Share Confidence Interval( 1 );
 
 ### Share Of Responses
 
-**Syntax:** obj << Share Of Responses( state=0|1 )
+**Syntax:** obj &lt;&lt; Share Of Responses( state=0|1 )
 
 **Description:** Shows or hides the Share of Responses table in the report. On by default.
 
@@ -1351,7 +1351,7 @@ obj << Share of Responses( 1 );
 
 ### Shares and Rates Format
 
-**Syntax:** obj << Shares and Rates Format( format, <options> )
+**Syntax:** obj &lt;&lt; Shares and Rates Format( format, &lt;options&gt; )
 
 **Description:** Formats the Share, Rate, and Rate per Response values in the table. The default value is "Percent", 6, 1.
 
@@ -1389,7 +1389,7 @@ obj << Shorten Labels( 1 );
 
 ### Show Columns Used in Report
 
-**Syntax:** obj << Show Columns Used in Report( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Columns Used in Report( state=0|1 )
 
 **Description:** Shows or hides Columns Used in Report information. This option affects only columns that have an SPSS or SAS Name or SPSS or SAS Label Column Property.
 
@@ -1405,13 +1405,13 @@ obj << Show Columns Used in Report( 1 );
 
 ### Show Highlight Legend
 
-**Syntax:** obj << Show Highlight Legend( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Highlight Legend( state=0|1 )
 
 **Description:** On by default.
 
 ### Show Supercategories
 
-**Syntax:** obj << Show Supercategories( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Supercategories( state=0|1 )
 
 **Description:** Shows or hides supercategories. On by default.
 
@@ -1437,7 +1437,7 @@ obj << Show Supercategories( 1 );
 
 ### Show Warnings
 
-**Syntax:** obj << Show Warnings( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Warnings( state=0|1 )
 
 **Description:** Shows warnings for chi-square tests related to small sample size.
 
@@ -1456,7 +1456,7 @@ obj << Show Warnings( 1 );
 
 ### Std Dev Format
 
-**Syntax:** obj << Std Dev Format( format, <options> )
+**Syntax:** obj &lt;&lt; Std Dev Format( format, &lt;options&gt; )
 
 **Description:** Formats the standard deviation scores in the table. The default value is "Fixed", 6, 2.
 
@@ -1473,7 +1473,7 @@ obj << Std Dev Format( "Fixed", 6, 4 );
 
 ### Std Dev Score
 
-**Syntax:** obj << Std Dev Score( state=0|1 )
+**Syntax:** obj &lt;&lt; Std Dev Score( state=0|1 )
 
 **Description:** Displays the standard deviation score, based on raw numeric codes or value scores, in the crosstab table
 
@@ -1488,7 +1488,7 @@ obj << Std Dev Score( 1 );
 
 ### Structured
 
-**Syntax:** obj = Categorical(...Structured( Column * nestedColumn ... + rightColumn, sideColumn + lowerColumns...  )...)
+**Syntax:** obj = Categorical(...Structured( Column * nestedColumn ... + rightColumn, sideColumn + lowerColumns... )...)
 
 **Description:** Generates a structured cross tabulation of two or more variables.
 
@@ -1504,7 +1504,7 @@ obj = dt << Categorical(
 
 ### Supercategories
 
-**Syntax:** obj << Supercategories( column, ({Group (name, {level1, level2, ... levelN})}) )
+**Syntax:** obj &lt;&lt; Supercategories( column, ({Group (name, {level1, level2, ... levelN})}) )
 
 **Description:** Specifies supercategories to locally aggregate response categories.
 
@@ -1527,7 +1527,7 @@ obj = dt << Categorical(
 
 ### Test Response Homogeneity
 
-**Syntax:** obj << Test Response Homogeneity( state=0|1 )
+**Syntax:** obj &lt;&lt; Test Response Homogeneity( state=0|1 )
 
 **Description:** Tests the response column for homogeneity, giving both Likelihood Ratio and Pearson Chi-Squared tests. Available only for a single response.
 
@@ -1542,7 +1542,7 @@ obj << Test Response Homogeneity( 1 );
 
 ### Total Cases
 
-**Syntax:** obj << Total Cases( state=0|1 )
+**Syntax:** obj &lt;&lt; Total Cases( state=0|1 )
 
 **Description:** For multiple-response variables, shows the total number of cases in the crosstab table. On by default.
 
@@ -1564,7 +1564,7 @@ obj << Total Cases( 1 );
 
 ### Total Cases Responding
 
-**Syntax:** obj << Total Cases Responding( state=0|1 )
+**Syntax:** obj &lt;&lt; Total Cases Responding( state=0|1 )
 
 **Description:** For multiple-response variables, shows the total number of cases who responded at least once in the crosstab table. On by default.
 
@@ -1586,7 +1586,7 @@ obj << Total Cases Responding( 1 );
 
 ### Total Responses
 
-**Syntax:** obj << Total Responses( state=0|1 )
+**Syntax:** obj &lt;&lt; Total Responses( state=0|1 )
 
 **Description:** Shows the total number of responses in the crosstab table. On by default.
 
@@ -1603,13 +1603,13 @@ obj << Total Responses( 1 );
 
 ### Totals First
 
-**Syntax:** obj << Totals First( state=0|1 )
+**Syntax:** obj &lt;&lt; Totals First( state=0|1 )
 
 **Description:** Shows the Response Totals near the top or left of the crosstab, but only if the totals are the same across multiple tables down each column.
 
 ### Transition Report
 
-**Syntax:** obj << Transition Report( state=0|1 )
+**Syntax:** obj &lt;&lt; Transition Report( state=0|1 )
 
 **Description:** Shows or hides a report showing how the categories have changed across time. Available only for a Repeated Measures model. On by default.
 
@@ -1624,7 +1624,7 @@ obj << Transition Report( 1 );
 
 ### Transposed Freq Chart
 
-**Syntax:** obj << Transposed Freq Chart( state=0|1 )
+**Syntax:** obj &lt;&lt; Transposed Freq Chart( state=0|1 )
 
 **Description:** Shows or hides a transposed frequency chart that contains a column for each response level and horizontal rows for the different sample levels.
 
@@ -1662,7 +1662,7 @@ obj = dt << Categorical(
 
 ### Action
 
-**Syntax:** obj << Action
+**Syntax:** obj &lt;&lt; Action
 
 **Description:** All-purpose trapdoor within a platform to insert expressions to evaluate. Temporarily sets the DisplayBox and DataTable contexts to the Platform.
 
@@ -1680,7 +1680,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Syntax:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntax:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Description:** Apply a previously created preset to the object, updating the options and customizations to match the saved settings.
 
@@ -1725,7 +1725,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Automatic Recalc
 
-**Syntax:** obj << Automatic Recalc( state=0|1 )
+**Syntax:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Description:** Redoes the analysis automatically for exclude and data changes. If the Automatic Recalc option is turned on, you should consider using Wait(0) commands to ensure that the exclude and data changes take effect before the recalculation.
 
@@ -1741,7 +1741,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**Syntax:** obj << Broadcast(message)
+**Syntax:** obj &lt;&lt; Broadcast(message)
 
 **Description:** Broadcasts a message to a platform. If return results from individual objects are tables, they are concatenated if possible, and the final format is identical to either the result from the Save Combined Table option in a Table Box or the result from the Concatenate option using a Source column. Other than those, results are stored in a list and returned.
 
@@ -1759,7 +1759,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**Syntax:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Syntax:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Description:** Adds a control panel for changing the platform&apos;s variables
 
@@ -1777,7 +1777,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**Syntax:** obj << Copy ByGroup Script
+**Syntax:** obj &lt;&lt; Copy ByGroup Script
 
 **Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
 
@@ -1797,7 +1797,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Syntax:** obj << Copy Script
+**Syntax:** obj &lt;&lt; Copy Script
 
 **Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
 
@@ -1812,7 +1812,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Syntax:** obj << Data Table Window
+**Syntax:** obj &lt;&lt; Data Table Window
 
 **Description:** Move the data table window for this analysis to the front.
 
@@ -1827,7 +1827,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Syntax:** obj << Get By Levels
+**Syntax:** obj &lt;&lt; Get By Levels
 
 **Description:** Returns an associative array mapping the by group columns to their values.
 
@@ -1842,7 +1842,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Syntax:** obj << Get ByGroup Script
+**Syntax:** obj &lt;&lt; Get ByGroup Script
 
 **Description:** Creates a script (JSL) to produce this analysis and returns it as an expression.
 
@@ -1863,7 +1863,7 @@ Show( t );
 
 ### Get Container
 
-**Syntax:** obj << Get Container
+**Syntax:** obj &lt;&lt; Get Container
 
 **Description:** Returns a reference to the container box that holds the content for the object.
 
@@ -1910,7 +1910,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Syntax:** obj << Get Data Table
+**Syntax:** obj &lt;&lt; Get Data Table
 
 **Description:** Returns a reference to the data table.
 
@@ -1926,7 +1926,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**Syntax:** obj << Get Group Platform
+**Syntax:** obj &lt;&lt; Get Group Platform
 
 **Description:** Return the Group Platform object if this platform is part of a Group. Otherwise, returns Empty().
 
@@ -1943,7 +1943,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**Syntax:** obj << Get Script
+**Syntax:** obj &lt;&lt; Get Script
 
 **Description:** Creates a script (JSL) to produce this analysis and returns it as an expression.
 
@@ -1959,7 +1959,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Syntax:** obj << Get Script With Data Table
+**Syntax:** obj &lt;&lt; Get Script With Data Table
 
 **Description:** Creates a script(JSL) to produce this analysis specifically referencing this data table and returns it as an expression.
 
@@ -1975,7 +1975,7 @@ Show( t );
 
 ### Get Timing
 
-**Syntax:** obj << Get Timing
+**Syntax:** obj &lt;&lt; Get Timing
 
 **Description:** Times the platform launch.
 
@@ -1991,7 +1991,7 @@ Show( t );
 
 ### Get Web Support
 
-**Syntax:** obj << Get Web Support
+**Syntax:** obj &lt;&lt; Get Web Support
 
 **Description:** Return a number indicating the level of Interactive HTML support for the display object. 1 means some or all elements are supported. 0 means no support.
 
@@ -2007,7 +2007,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Syntax:** obj << Get Where Expr
+**Syntax:** obj &lt;&lt; Get Where Expr
 
 **Description:** Returns the Where expression for the data subset, if the platform was launched with By() or Where(). Otherwise, returns Empty()
 
@@ -2042,7 +2042,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Syntax:** obj << Local Data Filter
+**Syntax:** obj &lt;&lt; Local Data Filter
 
 **Description:** To filter data to specific groups or ranges, but local to this platform
 
@@ -2094,7 +2094,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Syntax:** obj << Paste Local Data Filter
+**Syntax:** obj &lt;&lt; Paste Local Data Filter
 
 **Description:** Apply the local data filter from the clipboard to the current report.
 
@@ -2115,7 +2115,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**Syntax:** obj << Redo Analysis
+**Syntax:** obj &lt;&lt; Redo Analysis
 
 **Description:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
 
@@ -2130,7 +2130,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**Syntax:** obj << Redo ByGroup Analysis
+**Syntax:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Description:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
 
@@ -2150,7 +2150,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**Syntax:** obj << Relaunch Analysis
+**Syntax:** obj &lt;&lt; Relaunch Analysis
 
 **Description:** Opens the platform launch window and recalls the settings that were used to create the report.
 
@@ -2165,7 +2165,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**Syntax:** obj << Relaunch ByGroup
+**Syntax:** obj &lt;&lt; Relaunch ByGroup
 
 **Description:** Opens the platform launch window and recalls the settings that were used to create the report.
 
@@ -2185,7 +2185,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**Syntax:** obj << Remove Column Switcher
+**Syntax:** obj &lt;&lt; Remove Column Switcher
 
 **Description:** Removes the most recent Column Switcher that has been added to the platform.
 
@@ -2205,7 +2205,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Syntax:** obj << Remove Local Data Filter
+**Syntax:** obj &lt;&lt; Remove Local Data Filter
 
 **Description:** If a local data filter has been created, this removes it and restores the platform to use all the data in the data table directly
 
@@ -2242,9 +2242,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Syntax:** obj << Report;
-
-Report( obj )
+**Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Description:** Returns a reference to the report object.
 
@@ -2261,7 +2259,7 @@ Show( t );
 
 ### Report View
 
-**Syntax:** obj << Report View( "Full"|"Summary" )
+**Syntax:** obj &lt;&lt; Report View( "Full"|"Summary" )
 
 **Description:** The report view determines the level of detail visible in a platform report. Full shows all of the detail, while Summary shows only select content, dependent on the platform. For customized behavior, display boxes support a <<Set Summary Behavior message.
 
@@ -2276,7 +2274,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**Syntax:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description:** Creates a JSL script to produce this analysis, and save it as a table property in the data table. You can specify a name for the script. The Append Suffix option appends a numeric suffix to the script name, which differentiates the script from an existing script with the same name. The Prompt option prompts the user to specify a script name. The Replace option replaces an existing script with the same name.
 
@@ -2296,7 +2294,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Syntax:** obj << Save ByGroup Script to Journal
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
 
@@ -2316,7 +2314,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Syntax:** obj << Save ByGroup Script to Script Window
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
 
@@ -2336,7 +2334,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**Syntax:** obj << Save Script for All Objects
+**Syntax:** obj &lt;&lt; Save Script for All Objects
 
 **Description:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -2351,7 +2349,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Syntax:** obj << Save Script for All Objects To Data Table( <name> )
+**Syntax:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Description:** Saves a script for all report objects to the current data table. This option is useful when you have multiple reports in the window. The script is named after the first platform unless you specify the script name in quotes.
 
@@ -2389,7 +2387,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Syntax:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description:** Create a JSL script to produce this analysis, and save it as a table property in the data table.
 
@@ -2404,7 +2402,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Syntax:** obj << Save Script to Journal
+**Syntax:** obj &lt;&lt; Save Script to Journal
 
 **Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
 
@@ -2419,7 +2417,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Syntax:** obj << Save Script to Report
+**Syntax:** obj &lt;&lt; Save Script to Report
 
 **Description:** Create a JSL script to produce this analysis, and show it in the report itself. Useful to preserve a printed record of what was done.
 
@@ -2434,7 +2432,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Syntax:** obj << Save Script to Script Window
+**Syntax:** obj &lt;&lt; Save Script to Script Window
 
 **Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
 
@@ -2514,7 +2512,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Syntax:** obj << Sync to Data Table Changes
+**Syntax:** obj &lt;&lt; Sync to Data Table Changes
 
 **Description:** Sync with the exclude and data changes that have been made.
 
@@ -2531,7 +2529,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Syntax:** obj << Title( "new title" )
+**Syntax:** obj &lt;&lt; Title( "new title" )
 
 **Description:** Sets the title of the platform.
 
@@ -2546,7 +2544,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Syntax:** obj << Top Report
+**Syntax:** obj &lt;&lt; Top Report
 
 **Description:** Returns a reference to the root node in the report.
 
@@ -2563,7 +2561,7 @@ Show( t );
 
 ### Transform Column
 
-**Syntax:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Syntax:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Description:** Create a transform column in the local context of an object, usually a platform. The transform column is active only for the lifetime of the platform.
 
@@ -2580,7 +2578,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**Syntax:** obj << View Web XML
+**Syntax:** obj &lt;&lt; View Web XML
 
 **Description:** Returns the XML code that is used to create the interactive HTML report.
 

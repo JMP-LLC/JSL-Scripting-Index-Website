@@ -2,8 +2,6 @@
 
 
 
-## Funciones
-
 ### And
 
 **Sintaxis:** y = x1 & x2; y = And( x1, x2, ... )
@@ -87,7 +85,7 @@ For( i = 1, i <= 10, i++,
 
 ### Filter Each
 
-**Sintaxis:** list = Filter Each({<value>, <index>} | {<element>, <index | {row, col}>} | {<key | {key, value}>, <index>} | {<values | {value1, ..., valueN}>, <index>}, list | matrix | associative array | expression | Across( container1, ..., <containerN>, <Count( "Longest" | "Shortest" | "Enforce Equal" | n )> ), <locals list>, body)
+**Sintaxis:** list = Filter Each({&lt;value&gt;, &lt;index&gt;} | {&lt;element&gt;, &lt;index | {row, col}&gt;} | {&lt;key | {key, value}&gt;, &lt;index&gt;} | {&lt;values | {value1, ..., valueN}&gt;, &lt;index&gt;}, list | matrix | associative array | expression | Across( container1, ..., &lt;containerN&gt;, &lt;Count( "Longest" | "Shortest" | "Enforce Equal" | n )&gt; ), &lt;locals list&gt;, body)
 
 **Descripción:** Realiza lo mismo que la función Para cada, pero también devuelve una lista de valores filtrados del contenedor original basada en un resultado de valores booleanos. El tipo de resultado coincidirá con el tipo de contenedor de entrada. Para la entrada Matriz, se devolverá una matriz de vectores fila, puesto que no se puede saber el tamaño de la matriz.
 
@@ -158,7 +156,7 @@ Trim( s );
 
 ### For Each
 
-**Sintaxis:** For Each({<value>, <index>} | {<element>, <index | {row, col}>} | {<key | {key, value}>, <index>} | {<values | {value1, ..., valueN}>, <index>}, list | matrix | associative array | expression | Across( container1, ..., <containerN>, <Count( "Longest" | "Shortest" | "Enforce Equal" | n )> ), <locals list>, body)
+**Sintaxis:** For Each({&lt;value&gt;, &lt;index&gt;} | {&lt;element&gt;, &lt;index | {row, col}&gt;} | {&lt;key | {key, value}&gt;, &lt;index&gt;} | {&lt;values | {value1, ..., valueN}&gt;, &lt;index&gt;}, list | matrix | associative array | expression | Across( container1, ..., &lt;containerN&gt;, &lt;Count( "Longest" | "Shortest" | "Enforce Equal" | n )&gt; ), &lt;locals list&gt;, body)
 
 **Descripción:** Itera sobre un contenedor, ya sea una lista, matriz, arreglo asociativo o expresión y proporciona el valor, elemento o clave en cada iteración. El número de índice también está disponible en cada iteración. Para los contenedores de tipo arreglo asociativo, se puede acceder a la clave y el valor utilizando una lista de dos elementos. Para los contenedores de tipo matriz, se proporciona un índice lineal de forma predeterminada, pero se puede utilizar una lista de dos elementos para acceder a los índices de fila y columna. Estos símbolos solo se proporcionan dentro del cuerpo del bucle, con un bloqueo local integrado. También se puede proporcionar una lista de locales, que se inicializan después de establecer los primeros símbolos de iteración.
 
@@ -262,7 +260,7 @@ For Each( {element, index}, 10 :: 15, Show( element, index ) );
 
 ### For Each Row
 
-**Sintaxis:** y = For Each Row( <dt>, body )
+**Sintaxis:** y = For Each Row( &lt;dt&gt;, body )
 
 **Descripción:** Evalúa la expresión del cuerpo iterativamente para cada fila de la tabla de datos actual.
 
@@ -278,7 +276,7 @@ For Each Row( :height = -:height );
 
 ### If
 
-**Sintaxis:** y = If( condition1, result1, <condition2, result2>, ..., <elseResult> )
+**Sintaxis:** y = If( condition1, result1, &lt;condition2, result2&gt;, ..., &lt;elseResult&gt; )
 
 **Descripción:** Evalúa la primera de cada pareja de argumentos y devuelve la evaluación de la expresión result asociada al primer argumento de condition que evalúa como un resultado distinto de cero. Los argumentos de condition se evalúan en orden. Si todos los argumentos de condition evalúan como cero, se evalúa el elseResult opcional y se devuelve el resultado. Si no se especifica ningún elseResult, y ninguna de las condiciones son verdaderas, se devuelve un valor faltante. Si todos los argumentos de condition evalúan como faltante, se devuelve un valor faltante.
 
@@ -296,7 +294,7 @@ If( Random Uniform() < 0.5,
 
 ### IfMZ
 
-**Sintaxis:** y = IfMZ( condition1, result1, <condition2, result2>, ..., <elseResult> )
+**Sintaxis:** y = IfMZ( condition1, result1, &lt;condition2, result2&gt;, ..., &lt;elseResult&gt; )
 
 **Descripción:** Evalúa la primera de cada pareja de argumentos y devuelve la evaluación de la expresión result asociada al primer argumento de condition que evalúa como un resultado distinto de cero. Los argumentos de condition se evalúan en orden. Si todos los argumentos de condition evalúan como cero o faltante, se evalúa el elseResult opcional y se devuelve el resultado. Si no se especifica ningún elseResult, y ninguna de las condiciones son verdaderas, se devuelve un valor faltante. (IfMZ() equivale a If() donde los valores faltantes de los argumentos de condition evaluados se consideran cero.)
 
@@ -316,7 +314,7 @@ Show( If( x == 1, 10, x == 2, 20, 30 ) );
 
 ### IfMax
 
-**Sintaxis:** y = IfMax( expr1, result1, expr2, result2, ..., <allMissingResult> )
+**Sintaxis:** y = IfMax( expr1, result1, expr2, result2, ..., &lt;allMissingResult&gt; )
 
 **Descripción:** Evalúa el primero de cada par de argumentos y devuelve la evaluación de la expresión resultado que resulta asociada al máximo de las expresiones. Si se produce un empate, devuelve el primer máximo. En caso de que no haya ninguna expresión, si el número de argumentos es par, devuelve Vacío, y si es impar, el último argumento. Las expresiones de prueba deben dar un resultado numérico, pero las expresiones resultado pueden ser cualesquiera.
 
@@ -342,7 +340,7 @@ highestScorer = IfMax(
 
 ### IfMin
 
-**Sintaxis:** y = IfMin( expr1, result1, expr2, result2, ..., <allMissingResult> )
+**Sintaxis:** y = IfMin( expr1, result1, expr2, result2, ..., &lt;allMissingResult&gt; )
 
 **Descripción:** Evalúa el primero de cada par de argumentos y devuelve la evaluación de la expresión resultado que resulta asociada al mínimo de las expresiones. Si se produce un empate, devuelve el primer mínimo. En caso de que no haya ninguna expresión, si el número de argumentos es par, devuelve Vacío, y si es impar, el último argumento. Las expresiones de prueba deben dar un resultado numérico, pero las expresiones resultado pueden ser cualesquiera.
 
@@ -368,11 +366,7 @@ lowestScorer = IfMin(
 
 ### Interpolate
 
-**Sintaxis:** y = Interpolate(x|xmatrix|xlist, x1, y1, x2, y2);
-
-y = Interpolate(x | xmatrix | xlist, xmatrix, ymatrix);
-
-z = Interpolate({ x, y }, xvector, yvector, zmatrix)
+**Sintaxis:** y = Interpolate(x|xmatrix|xlist, x1, y1, x2, y2);y = Interpolate(x | xmatrix | xlist, xmatrix, ymatrix);z = Interpolate({ x, y }, xvector, yvector, zmatrix)
 
 **Descripción:** Encuentra los argumentos xi tales que x está entre ellos e interpola linealmente los argumentos yi correspondientes. Nótese que los argumentos xi se deben especificar por orden.
 
@@ -777,7 +771,7 @@ OrMZ( 1 < 2, 3 < 2 );
 
 ### Return
 
-**Sintaxis:** Return(<Expr>, ..., <ExprN>)
+**Sintaxis:** Return(&lt;Expr&gt;, ..., &lt;ExprN&gt;)
 
 **Descripción:** Devuelve un valor de expresión de una función definida por el usuario
 
@@ -826,9 +820,7 @@ Show( f( 7, 15 ) );
 
 ### Step
 
-**Sintaxis:** y = Step( x, x1, y1, x2, y2, ... )
-
-y = Step( x, [x1, x2, ...], [y1, y2, ...] )
+**Sintaxis:** y = Step( x, x1, y1, x2, y2, ... )y = Step( x, [x1, x2, ...], [y1, y2, ...] )
 
 **Descripción:** Devuelve el argumento yi correspondiente al valor xi más grande que cumple que xi es menor o igual que el argumento x. Nótese que los argumentos xi se deben especificar en orden.
 
@@ -861,7 +853,7 @@ For( i = 1, i <= 10, i++,
 
 ### Transform Each
 
-**Sintaxis:** list = Transform Each({<value>, <index>} | {<element>, <index | {row, col}>} | {<key | {key, value}>, <index>} | {<values | {value1, ..., valueN}>, <index>}, list | matrix | associative array | expression | Across( container1, ..., <containerN>, <Count( "Longest" | "Shortest" | "Enforce Equal" | n )> ), <Output( "List" | "Matrix" | "Associative Array" | "Expression", <expr head name> )>, <locals list>, body)
+**Sintaxis:** list = Transform Each({&lt;value&gt;, &lt;index&gt;} | {&lt;element&gt;, &lt;index | {row, col}&gt;} | {&lt;key | {key, value}&gt;, &lt;index&gt;} | {&lt;values | {value1, ..., valueN}&gt;, &lt;index&gt;}, list | matrix | associative array | expression | Across( container1, ..., &lt;containerN&gt;, &lt;Count( "Longest" | "Shortest" | "Enforce Equal" | n )&gt; ), &lt;Output( "List" | "Matrix" | "Associative Array" | "Expression", &lt;expr head name&gt; )&gt;, &lt;locals list&gt;, body)
 
 **Descripción:** Realiza lo mismo que la función Para cada, pero también devuelve un contenedor con el resultado de cada iteración. De forma predeterminada, devuelve un contenedor que coincide con el tipo de contenedor de entrada, pero se puede modificar mediante el argumento Salida. Para la salida Lista o Expresión, se utilizará Empty() cuando no haya ningún resultado. Para la salida Matriz, se utiliza un valor faltante numérico cuando no haya ningún resultado o cuando el resultado sea no numérico. En el caso de la salida Arreglo asociativo, la clave no existirá cuando no haya ningún resultado. Utilizar Continue() equivale a no devolver ningún valor para cada iteración.
 

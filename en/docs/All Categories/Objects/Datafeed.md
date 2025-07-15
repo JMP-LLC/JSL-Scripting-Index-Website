@@ -24,7 +24,7 @@ feed = Open Datafeed(
 
 ### Close
 
-**Syntax:** obj << Close
+**Syntax:** obj &lt;&lt; Close
 
 **Description:** (Windows only) Closes the data feed object and its window.
 
@@ -42,7 +42,7 @@ feed << Close;
 
 ### Connect
 
-**Syntax:** obj << Connect( Port(  "com1"|"com2"|"lpt1"... ), Parity( even|odd|none ), Baud rate( 4800|9600 ), Data bits( 8|7 ), <Stop bits( 0|1|2 )>, <DTR_DSR( 0|1 )>, <RTS_CTS( 0|1 )>, <XON_XOFF( 1|0 )> )
+**Syntax:** obj &lt;&lt; Connect( Port( "com1"|"com2"|"lpt1"... ), Parity( even|odd|none ), Baud rate( 4800|9600 ), Data bits( 8|7 ), &lt;Stop bits( 0|1|2 )&gt;, &lt;DTR_DSR( 0|1 )&gt;, &lt;RTS_CTS( 0|1 )&gt;, &lt;XON_XOFF( 1|0 )&gt; )
 
 **Description:** (Windows only) Sets up port settings for the connection to the device.
 
@@ -58,7 +58,7 @@ feed = Open Datafeed(
 
 ### Disconnect
 
-**Syntax:** obj << Disconnect
+**Syntax:** obj &lt;&lt; Disconnect
 
 **Description:** (Windows only) Disconnects the device from the data feed queue but leaves the data feed object active.
 
@@ -75,7 +75,7 @@ feed << Disconnect;
 
 ### EOL
 
-**Syntax:** obj << EOL( "CR"|"LF"|"CRLF" )
+**Syntax:** obj &lt;&lt; EOL( "CR"|"LF"|"CRLF" )
 
 **Description:** (Windows only) Sets the line ending value used as a separator when parsing incoming lines of data. The value is also used as the terminator in outgoing lines of data. CR = ASCII character 13 (Carriage Return). LF = ASCII character 10 (Line Feed). CRLF will use both CR and LF in sequence.
 
@@ -101,7 +101,7 @@ For( exi = 0, exi < 5, exi++,
 
 ### Get Container
 
-**Syntax:** obj << Get Container
+**Syntax:** obj &lt;&lt; Get Container
 
 **Description:** Returns a reference to the container box that holds the content for the object.
 
@@ -119,7 +119,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Line
 
-**Syntax:** line = obj << Get Line
+**Syntax:** line = obj &lt;&lt; Get Line
 
 **Description:** (Windows only) Returns and removes one line from the data feed queue.
 
@@ -138,7 +138,7 @@ exfeed = Open Datafeed(
 
 ### Get Lines
 
-**Syntax:** list = obj << Get Lines
+**Syntax:** list = obj &lt;&lt; Get Lines
 
 **Description:** (Windows only) Returns as a list and removes all lines from the data feed queue.
 
@@ -162,7 +162,7 @@ For( exi = 0, exi < 5, exi++,
 
 ### Print Queue
 
-**Syntax:** obj << Print Queue
+**Syntax:** obj &lt;&lt; Print Queue
 
 **Description:** (Windows only) Prints the internal queue of messages to the log window.
 
@@ -179,7 +179,7 @@ exfeed << print queue;/* or red triangle menu item */;
 
 ### Queue Line
 
-**Syntax:** obj << Queue Line( string )
+**Syntax:** obj &lt;&lt; Queue Line( string )
 
 **Description:** (Windows only) Sends one line to the end of the data feed queue.
 
@@ -203,7 +203,7 @@ For( exi = 0, exi < 5, exi++,
 
 ### Restart
 
-**Syntax:** obj << Restart
+**Syntax:** obj &lt;&lt; Restart
 
 **Description:** (Windows only) Restarts processing queued lines.
 
@@ -222,7 +222,7 @@ feed << Restart;
 
 ### Set Script
 
-**Syntax:** obj << Set Script( script )
+**Syntax:** obj &lt;&lt; Set Script( script )
 
 **Description:** (Windows only) Assigns the script that is run each time a line of data is received.
 
@@ -238,7 +238,7 @@ feed = Open Datafeed(
 
 ### Stop
 
-**Syntax:** obj << Stop
+**Syntax:** obj &lt;&lt; Stop
 
 **Description:** (Windows only) Stops processing queued lines.
 
@@ -255,7 +255,7 @@ feed << Stop;
 
 ### Write
 
-**Syntax:** obj << Write( string )
+**Syntax:** obj &lt;&lt; Write( string )
 
 **Description:** (Windows only) Sends a string to the data feed device.
 
@@ -276,7 +276,7 @@ exfeed << Write( "Ready" );
 
 ### Write Line
 
-**Syntax:** obj << Write Line( string )
+**Syntax:** obj &lt;&lt; Write Line( string )
 
 **Description:** (Windows only) Sends the string to the data feed device. If EOL has been set for the data feed, the strings are terminated by the EOL value specified. If EOL has not been set, the line is terminated with CRLF.
 
@@ -297,7 +297,7 @@ exfeed << Write Line( "Ready" );
 
 ### Write Lines
 
-**Syntax:** obj << Write Lines( list )
+**Syntax:** obj &lt;&lt; Write Lines( list )
 
 **Description:** (Windows only) Sends a list of strings to the data feed device. If EOL has been set for the data feed, each string is separated by the EOL value. If EOL has not been set, each line is separated with CRLF.
 

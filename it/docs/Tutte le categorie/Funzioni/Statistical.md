@@ -2,8 +2,6 @@
 
 
 
-## Funzioni
-
 ### ARIMA Forecast
 
 **Sintassi:** x = ARIMA Forecast( dtcol, length, model, estimates, from, to )
@@ -30,7 +28,7 @@ ARIMA Forecast(
 
 ### Arc Finder
 
-**Sintassi:** Arc Finder( Group( lot, wafer ), X( col ), Y( col ), <optional arguments> )
+**Sintassi:** Arc Finder( Group( lot, wafer ), X( col ), Y( col ), &lt;optional arguments&gt; )
 
 **Descrizione:** Trova gli archi nei punti di dati e crea una nuova colonna che identifica gli archi.
 
@@ -64,7 +62,7 @@ dt << Graph Builder(
 
 ### Best Partition
 
-**Sintassi:** {c1, c2, g2} = Best Partition( xIndices, yIndices, <<Ordered, <<ContinuousY, <<ContinuousX )
+**Sintassi:** {c1, c2, g2} = Best Partition( xIndices, yIndices, &lt;&lt;Ordered, &lt;&lt;ContinuousY, &lt;&lt;ContinuousX )
 
 **Descrizione:** Determina il raggruppamento ottimale (funzione sperimentale).
 
@@ -84,7 +82,7 @@ Names Default To Here( 1 );
 
 ### Col At
 
-**Sintassi:** y = Col At( col, index, <byVar, ...>, < <<relative(bool)>, < <<skip missing(expr)> )
+**Sintassi:** y = Col At( col, index, &lt;byVar, ...&gt;, &lt; &lt;&lt;relative(bool)&gt;, &lt; &lt;&lt;skip missing(expr)&gt; )
 
 **Descrizione:** Restituisce il valore di col nella posizione della riga index all&apos;interno del gruppo byVar. Le righe in cui l&apos;espressione skip missing ha un valore mancante non sono incluse nell&apos;indicizzazione.
 
@@ -102,7 +100,7 @@ New Column( "Relative to Last Height", Formula( :height / Col At( :height, -1, :
 
 ### Col Cumulative Sum
 
-**Sintassi:** y = Col Cumulative Sum( xCol, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**Sintassi:** y = Col Cumulative Sum( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **Descrizione:** Restituisce la somma cumulativa per la riga corrente. Le variabili BY non devono essere preordinate.
 
@@ -137,7 +135,7 @@ dt << New Column( "Col Cumulative Sum for each Sex grouped by Excluded",
 
 ### Col Interpolate
 
-**Sintassi:** y = Col Interpolate( v, xCol, yCol, <byVar, ...>, < <<method(linear|nearest|previous|next)>, < <<extrapolate(bool)> )
+**Sintassi:** y = Col Interpolate( v, xCol, yCol, &lt;byVar, ...&gt;, &lt; &lt;&lt;method(linear|nearest|previous|next)&gt;, &lt; &lt;&lt;extrapolate(bool)&gt; )
 
 **Descrizione:** Restituisce un valore interpolato all&apos;interno di yCol, corrispondente alla posizione di v con xCol]. Values outside the range of xCol mancanti a meno che extrapolate non sia attivo, nel qual caso verrà restituito il valore yCol più prossimo.
 
@@ -156,7 +154,7 @@ dt << New Column( "gnp30",
 
 ### Col Max
 
-**Sintassi:** y = Col Maximum( xCol, <byVar, <Excluded( Row State() )>, ...> )
+**Sintassi:** y = Col Maximum( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt; )
 
 **Descrizione:** Restituisce il valore massimo tra le righe in una colonna. Il risultato viene memorizzato nella cache interna in modo che le valutazioni multiple siano efficienti. Gli argomenti byVar opzionali specificano i gruppi di By per il calcolo. Tenere presente che gli argomenti byVar devono essere usati in una colonna formula o in una funzione For Each Row() .
 
@@ -210,7 +208,7 @@ dt << New Column( "Col Max for each Sex grouped by Excluded",
 
 ### Col Maximum
 
-**Sintassi:** y = Col Maximum( xCol, <byVar, <Excluded( Row State() )>, ...> )
+**Sintassi:** y = Col Maximum( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt; )
 
 **Descrizione:** Restituisce il valore massimo tra le righe in una colonna. Il risultato viene memorizzato nella cache interna in modo che le valutazioni multiple siano efficienti. Gli argomenti byVar opzionali specificano i gruppi di By per il calcolo. Tenere presente che gli argomenti byVar devono essere usati in una colonna formula o in una funzione For Each Row() .
 
@@ -264,7 +262,7 @@ dt << New Column( "Col Max for each Sex grouped by Excluded",
 
 ### Col Mean
 
-**Sintassi:** y = Col Mean( xCol, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**Sintassi:** y = Col Mean( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **Descrizione:** Restituisce la media campione tra le righe in una colonna. Il risultato viene memorizzato nella cache internamente in modo che valutazioni multiple siano efficienti. Gli argomenti byVar opzionali specificano i gruppi di By per il calcolo. Tenere presente che gli argomenti byVar devono essere usati in una colonna formula o in una funzione For Each Row() .
 
@@ -328,7 +326,7 @@ dt << New Column( "Col Mean for each Sex grouped by Excluded",
 
 ### Col Median
 
-**Sintassi:** y = Col Median( xCol, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**Sintassi:** y = Col Median( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **Descrizione:** Restituisce la mediana specificata tra le righe in una colonna. L&apos;ordinamento è memorizzato internamente nella cache per consentire l&apos;efficacia di valutazioni multiple.
 
@@ -382,7 +380,7 @@ dt << New Column( "Col Median for each Sex grouped by Excluded",
 
 ### Col Min
 
-**Sintassi:** y = Col Minimum( xCol, <byVar, <Excluded( Row State() )>, ...> )
+**Sintassi:** y = Col Minimum( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt; )
 
 **Descrizione:** Restituisce il valore minimo tra le righe in una colonna. Il risultato viene memorizzato nella cache interna in modo che valutazioni multiple siano efficienti. Gli argomenti byVar opzionali specificano i gruppi di By per il calcolo. Tenere presente che gli argomenti byVar devono essere usati in una colonna formula o in una funzione For Each Row() .
 
@@ -436,7 +434,7 @@ dt << New Column( "Col Min for each Sex grouped by Excluded",
 
 ### Col Minimum
 
-**Sintassi:** y = Col Minimum( xCol, <byVar, <Excluded( Row State() )>, ...> )
+**Sintassi:** y = Col Minimum( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt; )
 
 **Descrizione:** Restituisce il valore minimo tra le righe in una colonna. Il risultato viene memorizzato nella cache interna in modo che valutazioni multiple siano efficienti. Gli argomenti byVar opzionali specificano i gruppi di By per il calcolo. Tenere presente che gli argomenti byVar devono essere usati in una colonna formula o in una funzione For Each Row() .
 
@@ -490,7 +488,7 @@ dt << New Column( "Col Min for each Sex grouped by Excluded",
 
 ### Col Mode
 
-**Sintassi:** y = Col Mode( xCol, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**Sintassi:** y = Col Mode( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **Descrizione:** Restituisce la moda campionaria tra le righe in una colonna selezionando la più piccola nel caso di più mode. Il risultato viene memorizzato nella cache internamente in modo che valutazioni multiple siano efficienti. Gli argomenti byVar opzionali specificano i gruppi di By per il calcolo. Tenere presente che gli argomenti byVar devono essere usati in una formula o in una funzione For Each Row() di colonna.
 
@@ -544,7 +542,7 @@ dt << New Column( "Col Mode for each Sex grouped by Excluded",
 
 ### Col Moving Average
 
-**Sintassi:** y = Col Moving Average( xCol, <weighting=0.25>, <before=-1>, <after=0>, <partial window is missing=1>, <byVar, <Excluded( Row State() )>, ...> )
+**Sintassi:** y = Col Moving Average( xCol, &lt;weighting=0.25&gt;, &lt;before=-1&gt;, &lt;after=0&gt;, &lt;partial window is missing=1&gt;, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt; )
 
 **Descrizione:** Restituisce la media mobile su un dato intervallo in base alla riga corrente. Per il moltiplicatore del peso, 1 significa ponderazione uguale, 0 significa ponderazione lineare e altri valori agiscono da moltiplicatore di ponderazione esponenziale. Le variabili BY non devono essere preordinate.
 
@@ -579,7 +577,7 @@ dt << New Column( "Col Moving Average for each Sex grouped by Excluded",
 
 ### Col N Missing
 
-**Sintassi:** y = Col N Missing( xCol, <byVar, <Excluded( Row State() )>, ...> )
+**Sintassi:** y = Col N Missing( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt; )
 
 **Descrizione:** Restituisce il numero di valori mancanti tra le righe in una colonna. Il risultato viene memorizzato nella cache internamente in modo che valutazioni multiple siano efficienti. Gli argomenti opzionali byVar specificano i gruppi di By per il calcolo. Tenere presente che gli argomenti byVar devono essere usati in una colonna formula o in una funzione For Each Row() .
 
@@ -634,7 +632,7 @@ dt << New Column( "Col N Missing for each Sex grouped by Excluded",
 
 ### Col N Unique
 
-**Sintassi:** y = Col N Unique( xCol, <byVar, ...>, < <<score missing(bool)> )
+**Sintassi:** y = Col N Unique( xCol, &lt;byVar, ...&gt;, &lt; &lt;&lt;score missing(bool)&gt; )
 
 **Descrizione:** Restituisce il numero di valori univoci in una colonna. Se vengono richiesti valori mancanti, tutti i codici dei valori mancanti vengono contati come un unico valore.
 
@@ -651,7 +649,7 @@ New Column( "N unique height by age", Formula( Col N Unique( :height, :age ) ) )
 
 ### Col Number
 
-**Sintassi:** y = Col Number( xCol, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**Sintassi:** y = Col Number( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **Descrizione:** Restituisce il numero di valori non mancanti tra le righe in una colonna. Il risultato viene memorizzato nella cache internamente in modo che valutazioni multiple siano efficienti. Gli argomenti byVar opzionali specificano i gruppi di By per il calcolo. Tenere presente che gli argomenti byVar devono essere usati in una colonna formula o in una funzione For Each Row() .
 
@@ -706,7 +704,7 @@ dt << New Column( "Col Number for each Sex grouped by Excluded",
 
 ### Col Quantile
 
-**Sintassi:** y = Col Quantile( xCol, p, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**Sintassi:** y = Col Quantile( xCol, p, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **Descrizione:** Restituisce il quantile specificato tra le righe in una colonna. L&apos;ordinamento è memorizzato internamente nella cache per consentire l&apos;efficacia di valutazioni multiple.
 
@@ -762,7 +760,7 @@ dt << New Column( "Col Quantile for each Sex grouped by Excluded",
 
 ### Col Rank
 
-**Sintassi:** y = Col Rank( xCol, <byVar, <Excluded( Row State() )>, ...>, < <<tie("average"|"row"|"minimum"|"maximum"|"arbitrary")> )
+**Sintassi:** y = Col Rank( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt;tie("average"|"row"|"minimum"|"maximum"|"arbitrary")&gt; )
 
 **Descrizione:** Restituisce il rango, che va da 1 come il più basso, con tie-break ("ridistribuzione" di valori uguali) dato dall&apos;ordine delle righe, a meno che non sia specificato dall&apos;argomento <<Tie. "media" produce la media per i ranghi pari e "minimo" produce il più basso dei ranghi pari. Con "riga" e "arbitrario" ogni riga ha un rango univoco.
 
@@ -795,7 +793,7 @@ dt << New Column( "Col Rank for each Sex grouped by Excluded",
 
 ### Col Score
 
-**Sintassi:** y = Col Score( xCol, <byVar, ...>, < <<score missing(bool)> )
+**Sintassi:** y = Col Score( xCol, &lt;byVar, ...&gt;, &lt; &lt;&lt;score missing(bool)&gt; )
 
 **Descrizione:** Restituisce uno score intero per ogni valore univoco, ordinato in base alle proprietà delle colonne rilevanti.
 
@@ -812,7 +810,7 @@ New Column( "Score Height by age", Formula( Col Score( :height, :age ) ) );
 
 ### Col Sequence
 
-**Sintassi:** y = Col Sequence( <byVar, ...>, < <<skip missing(expr)>, < <<sequence(start=1, end=unbounded, incr=1, repeat=1)>)
+**Sintassi:** y = Col Sequence( &lt;byVar, ...&gt;, &lt; &lt;&lt;skip missing(expr)&gt;, &lt; &lt;&lt;sequence(start=1, end=unbounded, incr=1, repeat=1)&gt;)
 
 **Descrizione:** Restituisce la posizione di questa riga all&apos;interno del suo gruppo byVar, corretta da skip missing e dai parametri sequence.
 
@@ -832,7 +830,7 @@ New Column( "Row within sex, 60+",
 
 ### Col Simple Exponential Smoothing
 
-**Sintassi:** y = Col Simple Exponential Smoothing( xCol, alpha, <byVar, ...> )
+**Sintassi:** y = Col Simple Exponential Smoothing( xCol, alpha, &lt;byVar, ...&gt; )
 
 **Descrizione:** Restituisce la previsione di smoothing esponenziale semplice per la riga corrente, usando il peso di smoothing alfa. Le variabili By non necessitano di essere preordinate. La formula è Valore previsto[t]=alfa * Valore osservato[t-1] + (1-alfa) * Valore previsto[t-1], con Valore previsto[1] = Valore osservato[1].
 
@@ -849,7 +847,7 @@ Col Simple Exponential Smoothing( :Column1, .7 );
 
 ### Col Standardize
 
-**Sintassi:** y = Col Standardize( xCol, <byVar, <Excluded( Row State() )>, ...> )
+**Sintassi:** y = Col Standardize( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt; )
 
 **Descrizione:** Restituisce i valori meno la media di colonna divisi per la deviazione standard delle righe di una colonna. Se sono specificate colonne per gruppo, i valori sono standardizzati rispetto alla media e alla deviazione standard dei gruppi.
 
@@ -894,7 +892,7 @@ dt << New Column( "Col Standardize for each Sex grouped by Excluded",
 
 ### Col Std Dev
 
-**Sintassi:** y = Col Std Dev( xCol, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**Sintassi:** y = Col Std Dev( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **Descrizione:** Restituisce la deviazione standard campionaria tra le righe in una colonna. Il risultato viene memorizzato nella cache interna in modo che valutazioni multiple siano efficienti. Gli argomenti byVar opzionali specificano i gruppi di By per il calcolo. Tenere presente che gli argomenti byVar devono essere usati un una colonna formula o in una funzione For Each Row() .
 
@@ -960,7 +958,7 @@ dt << New Column( "Col Standard Deviation for each Sex grouped by Excluded",
 
 ### Col Sum
 
-**Sintassi:** y = Col Sum( xCol, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**Sintassi:** y = Col Sum( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **Descrizione:** Restituisce la somma tra le righe in una colonna. Il risultato viene memorizzato nella cache intera in modo che valutazioni multiple siano efficienti. Gli argomenti byVar opzionali specificano i gruppi di By per il calcolo. Tenere presente che gli argomenti byVar devono essere usati in una colonna formula o in una funzione For Each Row().
 
@@ -1039,7 +1037,7 @@ Cumulative Sum( [1 1 1 1 . 10 20] );
 
 ### Fit Censored
 
-**Sintassi:** result = FitCensored( Distribution(name), YLow(vector) | Y(vector), <YHigh(vector)>, <Weight(vector)>, <X(matrix)>, <Z(matrix)>, <HoldParm(vector)>, <Use random sample to compute initial values(percent)>, <Use first N observations to compute initial values(nobs)> )
+**Sintassi:** result = FitCensored( Distribution(name), YLow(vector) | Y(vector), &lt;YHigh(vector)&gt;, &lt;Weight(vector)&gt;, &lt;X(matrix)&gt;, &lt;Z(matrix)&gt;, &lt;HoldParm(vector)&gt;, &lt;Use random sample to compute initial values(percent)&gt;, &lt;Use first N observations to compute initial values(nobs)&gt; )
 
 **Descrizione:** Stima una distribuzione utilizzando dati con censura. Gli argomenti richiesti sono Distribution e o YLow o Y. La funzione restituisce un elenco che contiene stime dei parametri, matrice di covarianza, log-verosimiglianza, AICc, BIC e un messaggio di convergenza. Gli argomenti X e Z specificano matrici di regressione del piano rispettivamente per la posizione e la scala. Quando il vettore dei dati è grande, è possibile utilizzare due argomenti facoltativi per specificare un campione per calcolare i valori iniziali. Puoi specificare un percent delle osservazioni o le prime nobs osservazioni, ma la dimensione campionaria totale deve essere maggiore di 100.
 
@@ -1153,7 +1151,7 @@ mthlst;
 
 ### KDE
 
-**Sintassi:** {Estimates, Bins, Counts, ActualBandwidth, Error} = KDE( Vector, <<weights, <<bandwidth( 0 ), <<bandwidth scale( 1 ), <<bandwidth selection( 0 ), <<kernel )
+**Sintassi:** {Estimates, Bins, Counts, ActualBandwidth, Error} = KDE( Vector, &lt;&lt;weights, &lt;&lt;bandwidth( 0 ), &lt;&lt;bandwidth scale( 1 ), &lt;&lt;bandwidth selection( 0 ), &lt;&lt;kernel )
 
 **Descrizione:** Restituisce uno stimatore kernel della densità con selezione automatica della bandwidth. L&apos;argomento facoltativo weights deve essere un vettore della stessa lunghezza dell&apos;argomento Vector. L&apos;argomento facoltativo bandwidth deve essere un numero reale non negativo o zero, obbligando a utilizzare il valore dell&apos;argomento bandwidth selection. L&apos;argomento facoltativo bandwidth scale deve essere un numero reale positivo. L&apos;argomento facoltativo bandwidth selection deve essere 0, 1, 2, o 3, in corrispondenza rispettivamente di Sheather e Jones, Riferimento normale, regola del pollice di Sliverman o Oversmoother. L&apos;argomento facoltativo kernel accetta i valori 0, 1, 2, 3, o 4, corrispondenti rispettivamente a Gaussiano, Epanechnikov, Bipeso, Triangolare o Rettangolare.
 
@@ -1328,7 +1326,7 @@ Eval List( {Min( Pi(), e() ), Min( [33 44 22] )} );
 
 ### Moving Average
 
-**Sintassi:** y = Moving Average( x, weighting, <before=-1>, <after=0>, <partial window is missing=0> )
+**Sintassi:** y = Moving Average( x, weighting, &lt;before=-1&gt;, &lt;after=0&gt;, &lt;partial window is missing=0&gt; )
 
 **Descrizione:** Restituisce una matrice di medie mobili per la matrice di input. before e after determinano il range ("finestra") di elementi alla media, dove before può essere -1 per indicare tutti gli elementi a priori. Se weighting è 1, tutti gli elementi hanno uguale peso. Se weighting è 0, gli elementi hanno pesi linearmente incrementali. Altrimenti weighting è il parametro per la ponderazione esponenziale (EWMA). partial window is missing indica se le medie vengono riportate quando non tutti i vicini sono presenti, fatto che può verificarsi alle estremità o vicino a valori mancanti. Se partial window is missing non è zero, vengono riportati i valori mancanti per tali finestre parziali.
 
@@ -1363,7 +1361,7 @@ N Missing( 1, 2, ., 3, [11 22 . .], 4 );
 
 ### Normal Tolerance Factor
 
-**Sintassi:** q = Normal Tolerance Factor( 1-alpha, p, n, <One Sided> )
+**Sintassi:** q = Normal Tolerance Factor( 1-alpha, p, n, &lt;One Sided&gt; )
 
 **Descrizione:** Calcola il fattore di tolleranza per costruire un intervallo di confidenza 1-alfa per contenere la proporzione p delle medie con dimensione campionaria n dalla distribuzione normale. È possibile richiedere il fattore per un intervallo di tolleranza unilaterale.
 
@@ -1498,7 +1496,7 @@ Eval List( {Sum( Pi(), e() ), Sum( [33 44 22 20 30] )} );
 
 ### Summarize
 
-**Sintassi:** Summarize( <dt>, nameBy=By( colBy ), name1=statName1( col1 ), ... )
+**Sintassi:** Summarize( &lt;dt&gt;, nameBy=By( colBy ), name1=statName1( col1 ), ... )
 
 **Descrizione:** Calcola diverse statistiche di riepilogo per una colonna &apos;By&apos;. I nomi delle statistiche sono Count, Sum, Mean, Max o Maximum, Min o Minimum, StdDev, Corr, Quantile, First. Le statistiche possono essere calcolate solo per colonne numeriche. I risultati sono memorizzati come matrici in variabili con i nomi specificati.
 

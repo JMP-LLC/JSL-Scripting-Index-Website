@@ -6,7 +6,7 @@
 
 ### Get Description
 
-**구문:** string = jmplivepost << Get Description()
+**구문:** string = jmplivepost &lt;&lt; Get Description()
 
 **설명:** JMP Live 보고서, JMP Live 폴더 또는 JMP Live 게시물의 설명을 문자열로 가져옵니다.
 
@@ -48,7 +48,7 @@ Write( "\!nDescription: ", report << Get Description );
 
 ### Get ID
 
-**구문:** string = jmplivepost << Get ID()
+**구문:** string = jmplivepost &lt;&lt; Get ID()
 
 **설명:** 이 JMP Live 보고서, JMP Live 폴더 또는 JMP Live 게시물의 ID를 문자열로 가져옵니다.
 
@@ -91,7 +91,7 @@ Write( "\!n\!nID: ", report << Get ID );
 
 ### Get Path
 
-**구문:** string = jmplivepost << Get Path()
+**구문:** string = jmplivepost &lt;&lt; Get Path()
 
 **설명:** 이 JMP Live 보고서, 폴더 또는 게시물의 경로를 문자열로 가져옵니다.
 
@@ -134,7 +134,7 @@ Write( "\!n\!nPath: ", report << Get Path );
 
 ### Get Title
 
-**구문:** string = jmplivepost << Get Title()
+**구문:** string = jmplivepost &lt;&lt; Get Title()
 
 **설명:** JMP Live 보고서, JMP Live 폴더 또는 JMP Live 게시물의 제목을 문자열로 가져옵니다.
 
@@ -177,7 +177,7 @@ Write( "\!nTitle: ", report << Get Title );
 
 ### Get Type
 
-**구문:** string = jmplivepost << Get Type()
+**구문:** string = jmplivepost &lt;&lt; Get Type()
 
 **설명:** 특정 유형의 게시물 가져오기(폴더, 데이터 또는 보고서)
 
@@ -221,7 +221,7 @@ Write( "\!nType: ", report << Get Type );
 
 ### Get URL
 
-**구문:** string = jmplivepost << Get URL()
+**구문:** string = jmplivepost &lt;&lt; Get URL()
 
 **설명:** 이 JMP Live 보고서, JMP Live 폴더 또는 JMP Live 게시물의 URL을 문자열로 가져옵니다.
 
@@ -264,7 +264,7 @@ Write( "\!nURL: ", report << Get URL );
 
 ### Set Description
 
-**구문:** success = jmplivepost << Set Description("string value")
+**구문:** success = jmplivepost &lt;&lt; Set Description("string value")
 
 **설명:** 문자열이 주어지면 JMP Live 보고서, JMP Live 폴더 또는 JMP Live 게시물의 설명을 설정하고 성공/실패에 대해 true/false를 각각 반환합니다.
 
@@ -314,7 +314,7 @@ Write( "\!nDecription: ", report << Get Description );
 
 ### Set Title
 
-**구문:** success = jmplivepost << Set Title("New Title")
+**구문:** success = jmplivepost &lt;&lt; Set Title("New Title")
 
 **설명:** JMP Live 보고서, JMP Live 폴더 또는 JMP Live 게시물의 제목을 설정하고 성공/실패에 대해 true/false를 각각 반환합니다.
 

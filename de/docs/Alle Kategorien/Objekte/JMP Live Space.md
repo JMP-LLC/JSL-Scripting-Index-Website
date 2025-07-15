@@ -6,7 +6,7 @@
 
 ### Get Description
 
-**Syntax:** string = jmplivespace << Get Description()
+**Syntax:** string = jmplivespace &lt;&lt; Get Description()
 
 **Beschreibung:** Ruft die Beschreibung des JMP Live-Arbeitsbereichs ab
 
@@ -27,7 +27,7 @@ Write( "Description: ", space << Get Description );
 
 ### Get Key
 
-**Syntax:** string = jmplivespace << Get Key()
+**Syntax:** string = jmplivespace &lt;&lt; Get Key()
 
 **Beschreibung:** Ruft den Arbeitsbereichsschlüssel für den JMP Live-Arbeitsbereich ab
 
@@ -48,7 +48,7 @@ Write( "Key: ", space << Get Key );
 
 ### Get Name
 
-**Syntax:** string = jmplivespace << Get Name()
+**Syntax:** string = jmplivespace &lt;&lt; Get Name()
 
 **Beschreibung:** Ruft den Namen des JMP Live-Arbeitsbereichs ab
 
@@ -69,7 +69,7 @@ Write( "Name: ", space << Get Name );
 
 ### Get Type
 
-**Syntax:** string = jmplivespace << Get Type()
+**Syntax:** string = jmplivespace &lt;&lt; Get Type()
 
 **Beschreibung:** Ruft den Typ des JMP Live-Arbeitsbereichs (persönlich oder normal) ab
 

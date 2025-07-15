@@ -75,7 +75,7 @@ If( !Check SAS Dependencies(),
 
 ### SAS Connect
 
-**構文:** SAS Connect(<( data_connector_or_id )>, <Prompt( Always|Never|IfNeeded )>)
+**構文:** SAS Connect(&lt;( data_connector_or_id )&gt;, &lt;Prompt( Always|Never|IfNeeded )&gt;)
 
 **説明:** SAS接続を開く。
 
@@ -160,7 +160,7 @@ If( Check SAS Dependencies(),
 
 #### Get Log
 
-**構文:** obj << Get Log
+**構文:** obj &lt;&lt; Get Log
 
 **説明:** アクティブなSASサーバー接続のログウィンドウの内容を含んだ文字列を戻す。
 
@@ -183,7 +183,7 @@ Show( log );
 
 #### Get Output
 
-**構文:** obj << Get Output
+**構文:** obj &lt;&lt; Get Output
 
 **説明:** アクティブなSASサーバー接続のログウィンドウの内容を含んだ文字列を戻す。
 
@@ -202,7 +202,7 @@ Show( out );
 
 #### Get Output Datasets
 
-**構文:** obj << Get Output Datasets
+**構文:** obj &lt;&lt; Get Output Datasets
 
 **説明:** アクティブなSASサーバー接続のログウィンドウの内容を含んだ文字列を戻す。
 
@@ -231,7 +231,7 @@ Show( data );
 
 #### Connect
 
-**構文:** sas << Connect( <( data_connector_or_id )>, <Prompt( Always|Never|IfNeeded )>)
+**構文:** sas &lt;&lt; Connect( &lt;( data_connector_or_id )&gt;, &lt;Prompt( Always|Never|IfNeeded )&gt;)
 
 **説明:** 切断されたSASサーバー接続オブジェクトへの接続を再試行する。
 
@@ -249,7 +249,7 @@ sas << Connect();
 
 #### Current CAS Connection
 
-**構文:** result = sas << Current CAS Connection()
+**構文:** result = sas &lt;&lt; Current CAS Connection()
 
 **説明:** 現在のCASサーバー接続を取得する。
 
@@ -280,7 +280,7 @@ Show( connected );
 
 #### Data Set Exists
 
-**構文:** result = sas << Data Set Exists( libref, dsname )
+**構文:** result = sas &lt;&lt; Data Set Exists( libref, dsname )
 
 **説明:** SASデータセットが存在する場合は1を戻す。
 
@@ -310,7 +310,7 @@ Show( result );
 
 #### Disconnect
 
-**構文:** obj << Disconnect
+**構文:** obj &lt;&lt; Disconnect
 
 **説明:** このSASサーバーへの接続を切断する。
 
@@ -327,9 +327,7 @@ sas << Disconnect();
 
 #### Export Data
 
-**構文:** y = sas << Export Data( dt, libref, dataset, <named_arguments> );
-
-y = sas << SAS Export Data( dt, libref.dataset, <named_arguments> )
+**構文:** y = sas &lt;&lt; Export Data( dt, libref, dataset, &lt;named_arguments&gt; );y = sas &lt;&lt; SAS Export Data( dt, libref.dataset, &lt;named_arguments&gt; )
 
 **説明:** JMPデータテーブルをSASデータセットとしてアクティブなSASサーバー接続に書き出す。オプションの名前付き引数には、Columns(list|col1,col2,...,coln)、文字値の引数のPassword、AlterPassword、ReadPassword、WritePassword、ブール値の引数のHonorExcludedRows、PreserveSASColumnNames、PreserveSASFormats、ReplaceExisting、ExistingAlterPassword、SaveJMPMetadataがある。書き出しが正常に行われた場合は1、そうでない場合は0を戻す。
 
@@ -345,7 +343,7 @@ sas << Export Data( Open( "$SAMPLE_DATA/Big Class.jmp" ), "WORK", "BIGCLASS" );
 
 #### Get Data Sets
 
-**構文:** result = sas << Get Data Sets( libref )
+**構文:** result = sas &lt;&lt; Get Data Sets( libref )
 
 **説明:** SASライブラリで定義されているデータセットのリストを戻す。
 
@@ -362,7 +360,7 @@ Show( result );
 
 #### Get Host Name
 
-**構文:** var = sas << Get Host Name( )
+**構文:** var = sas &lt;&lt; Get Host Name( )
 
 **説明:** SASサーバーのホスト名を取得する。
 
@@ -379,7 +377,7 @@ Show( result );
 
 #### Get Lib Refs
 
-**構文:** result = sas << Get Lib Refs()
+**構文:** result = sas &lt;&lt; Get Lib Refs()
 
 **説明:** アクティブなSASサーバー接続から、現在定義されているSASライブラリ参照名のリストを戻す。
 
@@ -396,7 +394,7 @@ Show( result );
 
 #### Get Log
 
-**構文:** result = sas << Get Log()
+**構文:** result = sas &lt;&lt; Get Log()
 
 **説明:** アクティブなSASサーバー接続のログウィンドウの内容を含んだ文字列を戻す。
 
@@ -418,7 +416,7 @@ Show( result );
 
 #### Get Macro Var
 
-**構文:** var = sas << GetMacroVar( "name" )
+**構文:** var = sas &lt;&lt; GetMacroVar( "name" )
 
 **説明:** SASマクロ変数の値を取得する。
 
@@ -435,7 +433,7 @@ Show( result );
 
 #### Get Macro Var Names
 
-**構文:** var = sas << GetMacroVarNames( )
+**構文:** var = sas &lt;&lt; GetMacroVarNames( )
 
 **説明:** SASマクロ変数のリストを取得する。
 
@@ -452,7 +450,7 @@ Show( result );
 
 #### Get Option Names
 
-**構文:** var = sas << GetOptionNames( )
+**構文:** var = sas &lt;&lt; GetOptionNames( )
 
 **説明:** SASオプションのリストを取得する。
 
@@ -469,7 +467,7 @@ Show( result );
 
 #### Get Option Value
 
-**構文:** var = sas << Get Option Value( "name" )
+**構文:** var = sas &lt;&lt; Get Option Value( "name" )
 
 **説明:** SASオプションの値を取得する。
 
@@ -486,7 +484,7 @@ Show( result );
 
 #### Get Output
 
-**構文:** result = sas << Get Output()
+**構文:** result = sas &lt;&lt; Get Output()
 
 **説明:** アクティブなSASサーバー接続に最後にサブミットされたSASコードのアウトプットを含んだ文字列を戻す。
 
@@ -504,7 +502,7 @@ Show( result );
 
 #### Get Results
 
-**構文:** result = sas << Get Results()
+**構文:** result = sas &lt;&lt; Get Results()
 
 **説明:** このサーバーへの最後のサブミットの結果を取得する。
 
@@ -522,7 +520,7 @@ Show( result );
 
 #### Get Submit Status
 
-**構文:** result = sas << Get Submit Status()
+**構文:** result = sas &lt;&lt; Get Submit Status()
 
 **説明:** このサーバーへの最後のサブミットのステータスを取得する。
 
@@ -540,9 +538,7 @@ Show( result );
 
 #### Get Var Info
 
-**構文:** result = sas << Get Var Info( libref, dataset );
-
-result = sas << Get Var Info( libref.dataset )
+**構文:** result = sas &lt;&lt; Get Var Info( libref, dataset );result = sas &lt;&lt; Get Var Info( libref.dataset )
 
 **説明:** SASデータセットの変数に関する情報を取得する。
 
@@ -559,9 +555,7 @@ Show( result );
 
 #### Get Var Names
 
-**構文:** result = sas << Get Var Names( libref, dataset );
-
-result = sas << SAS Get Var Names( libref.dataset )
+**構文:** result = sas &lt;&lt; Get Var Names( libref, dataset );result = sas &lt;&lt; SAS Get Var Names( libref.dataset )
 
 **説明:** アクティブなSASサーバー接続から、指定されたデータセットに含まれる変数の名前を取得する。
 
@@ -578,7 +572,7 @@ Show( result );
 
 #### Get Version
 
-**構文:** ver = sas << GetVersion( < Long > )
+**構文:** ver = sas &lt;&lt; GetVersion( &lt; Long &gt; )
 
 **説明:** SASのバージョンを取得する。
 
@@ -595,7 +589,7 @@ Show( result );
 
 #### Get Work Folder
 
-**構文:** obj << Get Work Folder
+**構文:** obj &lt;&lt; Get Work Folder
 
 **説明:** サーバー上のWORKライブラリのフォルダを取得する。
 
@@ -612,9 +606,7 @@ Show( result );
 
 #### Import Data
 
-**構文:** dt = sas << Import Data( libref, dataset, <named_arguments> );
-
-dt = sas << Import Data( libref.dataset|path, <named_arguments> )
+**構文:** dt = sas &lt;&lt; Import Data( libref, dataset, &lt;named_arguments&gt; );dt = sas &lt;&lt; Import Data( libref.dataset|path, &lt;named_arguments&gt; )
 
 **説明:** アクティブなSASサーバー接続からSASデータセットをJMPデータテーブルに読み込む。オプションの名前付き引数には、Sample(<named_arguments>)、Columns(list|col1,col2,...,coln)、文字値の引数のWhere、ブール値の引数のConvertCustomFormats、Invisible、UseLabelsForVarNames、SQLTableVariableがある。JMPデータテーブルオブジェクトを戻す。
 
@@ -630,7 +622,7 @@ dt = sas << Import Data( "SASHELP.CLASS" );
 
 #### List Output Data Sets
 
-**構文:** sas << List Output Data Sets(sas code)
+**構文:** sas &lt;&lt; List Output Data Sets(sas code)
 
 **説明:** 指定されたSASコードの出力データセットを一覧表示する。
 
@@ -653,7 +645,7 @@ Show( datasets );
 
 #### Name
 
-**構文:** serverName = sas << Name
+**構文:** serverName = sas &lt;&lt; Name
 
 **説明:** サーバーの名前を戻す。
 
@@ -670,7 +662,7 @@ Show( serverName );
 
 #### Submit
 
-**構文:** result = sas << Submit( <GetSASLog(<True|False|OnError>, <OnSubmitComplete(script)>, <OpenOutputDatasets(<All|None, UseLabelsForVarNames(1|0),dataset1,dataset2,...,datasetN>)>, <ODSFormat>, <ODS Style>, <Title>, <OpenODSResults>, <NoOutputWindow>
+**構文:** result = sas &lt;&lt; Submit( &lt;GetSASLog(&lt;True|False|OnError&gt;, &lt;OnSubmitComplete(script)&gt;, &lt;OpenOutputDatasets(&lt;All|None, UseLabelsForVarNames(1|0),dataset1,dataset2,...,datasetN&gt;)&gt;, &lt;ODSFormat&gt;, &lt;ODS Style&gt;, &lt;Title&gt;, &lt;OpenODSResults&gt;, &lt;NoOutputWindow&gt;
 
 **説明:** アクティブなSASサーバー接続にSASコードをサブミットする。処理が正常に行われた場合は1、それ以外の場合は0を戻す。
 
@@ -691,7 +683,7 @@ sas << Submit(
 
 #### Submit File
 
-**構文:** result = sas << Submit File( "filename.sas" )
+**構文:** result = sas &lt;&lt; Submit File( "filename.sas" )
 
 **説明:** SASコードを含むファイルをアクティブなSASサーバー接続にサブミットする。オプションの名前付きの引数は、SASサブミットのものと同じ。処理が正常に行われた場合は1、そうでない場合は0を戻す。
 

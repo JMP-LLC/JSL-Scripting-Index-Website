@@ -2,8 +2,6 @@
 
 
 
-## Functions
-
 ### ARIMA Forecast
 
 **Syntax:** x = ARIMA Forecast( dtcol, length, model, estimates, from, to )
@@ -28,7 +26,7 @@ ARIMA Forecast(
 
 ### Arc Finder
 
-**Syntax:** Arc Finder( Group( lot, wafer ), X( col ), Y( col ), <optional arguments> )
+**Syntax:** Arc Finder( Group( lot, wafer ), X( col ), Y( col ), &lt;optional arguments&gt; )
 
 **Description:** Finds the arcs in the point data and creates a new column identifying the arcs.
 
@@ -60,7 +58,7 @@ dt << Graph Builder(
 
 ### Best Partition
 
-**Syntax:** {c1, c2, g2} = Best Partition( xIndices, yIndices, <<Ordered, <<ContinuousY, <<ContinuousX )
+**Syntax:** {c1, c2, g2} = Best Partition( xIndices, yIndices, &lt;&lt;Ordered, &lt;&lt;ContinuousY, &lt;&lt;ContinuousX )
 
 **Description:** Determines the optimal grouping (experimental function).
 
@@ -78,7 +76,7 @@ Names Default To Here( 1 );
 
 ### Col At
 
-**Syntax:** y = Col At( col, index, <byVar, ...>, < <<relative(bool)>, < <<skip missing(expr)> )
+**Syntax:** y = Col At( col, index, &lt;byVar, ...&gt;, &lt; &lt;&lt;relative(bool)&gt;, &lt; &lt;&lt;skip missing(expr)&gt; )
 
 **Description:** Returns the value of col at row position index within its byVar group. Rows where the skip missing expression evaluates to a missing value are not included in the indexing.
 
@@ -94,7 +92,7 @@ New Column( "Relative to Last Height", Formula( :height / Col At( :height, -1, :
 
 ### Col Cumulative Sum
 
-**Syntax:** y = Col Cumulative Sum( xCol, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**Syntax:** y = Col Cumulative Sum( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **Description:** Returns the cumulative sum for the current row. By variables do not need to be presorted.
 
@@ -127,7 +125,7 @@ dt << New Column( "Col Cumulative Sum for each Sex grouped by Excluded",
 
 ### Col Interpolate
 
-**Syntax:** y = Col Interpolate( v, xCol, yCol, <byVar, ...>, < <<method(linear|nearest|previous|next)>, < <<extrapolate(bool)> )
+**Syntax:** y = Col Interpolate( v, xCol, yCol, &lt;byVar, ...&gt;, &lt; &lt;&lt;method(linear|nearest|previous|next)&gt;, &lt; &lt;&lt;extrapolate(bool)&gt; )
 
 **Description:** Returns an interpolated value within yCol, corresponding to the position of v with xCol. Values outside the range of xCol will be missing unless extrapolate is on, in which case the nearest yCol value will be returned.
 
@@ -144,7 +142,7 @@ dt << New Column( "gnp30",
 
 ### Col Max
 
-**Syntax:** y = Col Maximum( xCol, <byVar, <Excluded( Row State() )>, ...> )
+**Syntax:** y = Col Maximum( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt; )
 
 **Description:** Returns the maximum value across rows in a column. The result is cached internally so that multiple evaluations will be efficient. The optional byVar arguments specify by groups for the calculation. Note that byVar arguments should be used in a column formula or in a For Each Row() function.
 
@@ -196,7 +194,7 @@ dt << New Column( "Col Max for each Sex grouped by Excluded",
 
 ### Col Maximum
 
-**Syntax:** y = Col Maximum( xCol, <byVar, <Excluded( Row State() )>, ...> )
+**Syntax:** y = Col Maximum( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt; )
 
 **Description:** Returns the maximum value across rows in a column. The result is cached internally so that multiple evaluations will be efficient. The optional byVar arguments specify by groups for the calculation. Note that byVar arguments should be used in a column formula or in a For Each Row() function.
 
@@ -248,7 +246,7 @@ dt << New Column( "Col Max for each Sex grouped by Excluded",
 
 ### Col Mean
 
-**Syntax:** y = Col Mean( xCol, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**Syntax:** y = Col Mean( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **Description:** Returns the sample mean across rows in a column. The result is cached internally so that multiple evaluations will be efficient. The optional byVar arguments specify by groups for the calculation. Note that byVar arguments should be used in a column formula or in a For Each Row() function.
 
@@ -310,7 +308,7 @@ dt << New Column( "Col Mean for each Sex grouped by Excluded",
 
 ### Col Median
 
-**Syntax:** y = Col Median( xCol, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**Syntax:** y = Col Median( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **Description:** Returns the specified median across rows in a column. The ordering is cached internally so that multiple evaluations will be efficient.
 
@@ -362,7 +360,7 @@ dt << New Column( "Col Median for each Sex grouped by Excluded",
 
 ### Col Min
 
-**Syntax:** y = Col Minimum( xCol, <byVar, <Excluded( Row State() )>, ...> )
+**Syntax:** y = Col Minimum( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt; )
 
 **Description:** Returns the minimum value across rows in a column. The result is cached internally so that multiple evaluations will be efficient. The optional byVar arguments specify by groups for the calculation. Note that byVar arguments should be used in a column formula or in a For Each Row() function.
 
@@ -414,7 +412,7 @@ dt << New Column( "Col Min for each Sex grouped by Excluded",
 
 ### Col Minimum
 
-**Syntax:** y = Col Minimum( xCol, <byVar, <Excluded( Row State() )>, ...> )
+**Syntax:** y = Col Minimum( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt; )
 
 **Description:** Returns the minimum value across rows in a column. The result is cached internally so that multiple evaluations will be efficient. The optional byVar arguments specify by groups for the calculation. Note that byVar arguments should be used in a column formula or in a For Each Row() function.
 
@@ -466,7 +464,7 @@ dt << New Column( "Col Min for each Sex grouped by Excluded",
 
 ### Col Mode
 
-**Syntax:** y = Col Mode( xCol, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**Syntax:** y = Col Mode( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **Description:** Returns the sample mode across rows in a column, selecting the smallest in the case of multiple modes. The result is cached internally so that multiple evaluations will be efficient. The optional byVar arguments specify by groups for the calculation. Note that byVar arguments should be used in a column formula or in a For Each Row() function.
 
@@ -518,7 +516,7 @@ dt << New Column( "Col Mode for each Sex grouped by Excluded",
 
 ### Col Moving Average
 
-**Syntax:** y = Col Moving Average( xCol, <weighting=0.25>, <before=-1>, <after=0>, <partial window is missing=1>, <byVar, <Excluded( Row State() )>, ...> )
+**Syntax:** y = Col Moving Average( xCol, &lt;weighting=0.25&gt;, &lt;before=-1&gt;, &lt;after=0&gt;, &lt;partial window is missing=1&gt;, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt; )
 
 **Description:** Returns the moving average over a given interval based at the current row. For the weight multiplier, 1 means equal weighting, 0 means linear weighting, and other values act as an exponential weighting multiplier. By variables do not need to be presorted.
 
@@ -551,7 +549,7 @@ dt << New Column( "Col Moving Average for each Sex grouped by Excluded",
 
 ### Col N Missing
 
-**Syntax:** y = Col N Missing( xCol, <byVar, <Excluded( Row State() )>, ...> )
+**Syntax:** y = Col N Missing( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt; )
 
 **Description:** Returns the number of missing values across rows in a column. The result is cached internally so that multiple evaluations will be efficient. The optional byVar arguments specify by groups for the calculation. Note that byVar arguments should be used in a column formula or in a For Each Row() function.
 
@@ -604,7 +602,7 @@ dt << New Column( "Col N Missing for each Sex grouped by Excluded",
 
 ### Col N Unique
 
-**Syntax:** y = Col N Unique( xCol, <byVar, ...>, < <<score missing(bool)> )
+**Syntax:** y = Col N Unique( xCol, &lt;byVar, ...&gt;, &lt; &lt;&lt;score missing(bool)&gt; )
 
 **Description:** Returns the number of unique values in a column. If missing values are requested, all missing value codes are counted as a single value.
 
@@ -619,7 +617,7 @@ New Column( "N unique height by age", Formula( Col N Unique( :height, :age ) ) )
 
 ### Col Number
 
-**Syntax:** y = Col Number( xCol, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**Syntax:** y = Col Number( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **Description:** Returns the number of nonmissing values across rows in a column. The result is cached internally so that multiple evaluations will be efficient. The optional byVar arguments specify by groups for the calculation. Note that byVar arguments should be used in a column formula or in a For Each Row() function.
 
@@ -672,7 +670,7 @@ dt << New Column( "Col Number for each Sex grouped by Excluded",
 
 ### Col Quantile
 
-**Syntax:** y = Col Quantile( xCol, p, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**Syntax:** y = Col Quantile( xCol, p, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **Description:** Returns the specified quantile across rows in a column. The ordering is cached internally so that multiple evaluations will be efficient.
 
@@ -726,7 +724,7 @@ dt << New Column( "Col Quantile for each Sex grouped by Excluded",
 
 ### Col Rank
 
-**Syntax:** y = Col Rank( xCol, <byVar, <Excluded( Row State() )>, ...>, < <<tie("average"|"row"|"minimum"|"maximum"|"arbitrary")> )
+**Syntax:** y = Col Rank( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt;tie("average"|"row"|"minimum"|"maximum"|"arbitrary")&gt; )
 
 **Description:** Returns the rank, ranging from 1 as the lowest, with row-order tie-breaking unless specified by the <<Tie argument. "average" produces the average for tied ranks, and "minimum" produces the lowest of tied ranks. For "row" and "arbitrary" each row has a unique rank.
 
@@ -757,7 +755,7 @@ dt << New Column( "Col Rank for each Sex grouped by Excluded",
 
 ### Col Score
 
-**Syntax:** y = Col Score( xCol, <byVar, ...>, < <<score missing(bool)> )
+**Syntax:** y = Col Score( xCol, &lt;byVar, ...&gt;, &lt; &lt;&lt;score missing(bool)&gt; )
 
 **Description:** Returns an integer score for each unique value, ordering according to any relevant column properties.
 
@@ -772,7 +770,7 @@ New Column( "Score Height by age", Formula( Col Score( :height, :age ) ) );
 
 ### Col Sequence
 
-**Syntax:** y = Col Sequence( <byVar, ...>, < <<skip missing(expr)>, < <<sequence(start=1, end=unbounded, incr=1, repeat=1)>)
+**Syntax:** y = Col Sequence( &lt;byVar, ...&gt;, &lt; &lt;&lt;skip missing(expr)&gt;, &lt; &lt;&lt;sequence(start=1, end=unbounded, incr=1, repeat=1)&gt;)
 
 **Description:** Returns the position of this row within its byVar group, adjusted by skip missing and any sequence parameters.
 
@@ -790,7 +788,7 @@ New Column( "Row within sex, 60+",
 
 ### Col Simple Exponential Smoothing
 
-**Syntax:** y = Col Simple Exponential Smoothing( xCol, alpha, <byVar, ...> )
+**Syntax:** y = Col Simple Exponential Smoothing( xCol, alpha, &lt;byVar, ...&gt; )
 
 **Description:** Returns the simple exponential smoothing prediction for the current row, using smoothing weight alpha. By variables do not need to be presorted. Formula is Predicted Value[t]=alpha * Observed Value[t-1] + (1-alpha) * Predicted Value[t-1], with Predicted Value[1] = Observed Value[1].
 
@@ -805,7 +803,7 @@ Col Simple Exponential Smoothing( :Column1, .7 );
 
 ### Col Standardize
 
-**Syntax:** y = Col Standardize( xCol, <byVar, <Excluded( Row State() )>, ...> )
+**Syntax:** y = Col Standardize( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt; )
 
 **Description:** Returns the value minus the column mean divided by the column standard deviation across rows in a column. If by-group columns are specified, the value is standardized against the mean and standard deviation of the by-group.
 
@@ -848,7 +846,7 @@ dt << New Column( "Col Standardize for each Sex grouped by Excluded",
 
 ### Col Std Dev
 
-**Syntax:** y = Col Std Dev( xCol, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**Syntax:** y = Col Std Dev( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **Description:** Returns the sample standard deviation across rows in a column. The result is cached internally so that multiple evaluations will be efficient. The optional byVar arguments specify by groups for the calculation. Note that byVar arguments should be used in a column formula or in a For Each Row() function.
 
@@ -912,7 +910,7 @@ dt << New Column( "Col Standard Deviation for each Sex grouped by Excluded",
 
 ### Col Sum
 
-**Syntax:** y = Col Sum( xCol, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**Syntax:** y = Col Sum( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **Description:** Returns the sum across rows in a column. The result is cached internally so that multiple evaluations will be efficient. The optional byVar arguments specify by groups for the calculation. Note that byVar arguments should be used in a column formula or in a For Each Row() function.
 
@@ -987,7 +985,7 @@ Cumulative Sum( [1 1 1 1 . 10 20] );
 
 ### Fit Censored
 
-**Syntax:** result = FitCensored( Distribution(name), YLow(vector) | Y(vector), <YHigh(vector)>, <Weight(vector)>, <X(matrix)>, <Z(matrix)>, <HoldParm(vector)>, <Use random sample to compute initial values(percent)>, <Use first N observations to compute initial values(nobs)> )
+**Syntax:** result = FitCensored( Distribution(name), YLow(vector) | Y(vector), &lt;YHigh(vector)&gt;, &lt;Weight(vector)&gt;, &lt;X(matrix)&gt;, &lt;Z(matrix)&gt;, &lt;HoldParm(vector)&gt;, &lt;Use random sample to compute initial values(percent)&gt;, &lt;Use first N observations to compute initial values(nobs)&gt; )
 
 **Description:** Fits a distribution using censored data. The required arguments are Distribution and either YLow or Y. The function returns a list that contains parameter estimates, covariance matrix, log-likelihood, AICc, BIC, and a convergence message. The X and Z arguments specify regression design matrices for location and scale, respectively. When the data vector is large, two optional arguments can be used to specify a sample to compute the initial values. You can specify a percent of the observations or the first nobs observations, but the total sample size must be greater than 100.
 
@@ -1093,7 +1091,7 @@ mthlst;
 
 ### KDE
 
-**Syntax:** {Estimates, Bins, Counts, ActualBandwidth, Error} = KDE( Vector, <<weights, <<bandwidth( 0 ), <<bandwidth scale( 1 ), <<bandwidth selection( 0 ), <<kernel )
+**Syntax:** {Estimates, Bins, Counts, ActualBandwidth, Error} = KDE( Vector, &lt;&lt;weights, &lt;&lt;bandwidth( 0 ), &lt;&lt;bandwidth scale( 1 ), &lt;&lt;bandwidth selection( 0 ), &lt;&lt;kernel )
 
 **Description:** Returns a kernel density estimator with automatic bandwidth selection. The optional weights argument must be a vector of the same length as the Vector argument. The optional bandwidth argument must be a nonnegative real number or zero, which forces the use of the value of the bandwidth selection argument. The optional bandwidth scale argument must be a positive real number. The optional bandwidth selection argument must be either 0, 1, 2, or 3, corresponding to Sheather and Jones, Normal Reference, Silverman rule of thumb, or Oversmoother, respectively. The optional kernel argument accepts the values 0, 1, 2, 3, or 4, corresponding to Gaussian, Epanechnikov, Biweight, Triangular, or Rectangular, respectively.
 
@@ -1252,7 +1250,7 @@ Eval List( {Min( Pi(), e() ), Min( [33 44 22] )} );
 
 ### Moving Average
 
-**Syntax:** y = Moving Average( x, weighting, <before=-1>, <after=0>, <partial window is missing=0> )
+**Syntax:** y = Moving Average( x, weighting, &lt;before=-1&gt;, &lt;after=0&gt;, &lt;partial window is missing=0&gt; )
 
 **Description:** Returns a matrix of moving averages for the input matrix. before and after determine the range ("window") of items to average, where before can be -1 to indicate all prior items. If weighting is 1, all items have equal weight. If weighting is 0, items have linearly incremental weights. Otherwise, weighting is the parameter for exponential weighting (EWMA). partial window is missing indicates whether averages are reported when not all neighbors are present, which can occur at the ends or near missing values. If partial window is missing is nonzero, missing values are reported instead for such partial windows.
 
@@ -1283,7 +1281,7 @@ N Missing( 1, 2, ., 3, [11 22 . .], 4 );
 
 ### Normal Tolerance Factor
 
-**Syntax:** q = Normal Tolerance Factor( 1-alpha, p, n, <One Sided> )
+**Syntax:** q = Normal Tolerance Factor( 1-alpha, p, n, &lt;One Sided&gt; )
 
 **Description:** Computes the tolerance factor for constructing a 1-alpha confidence interval to contain proportion p of the means with sample size n from the normal distribution. There is an option to request the factor for a one-sided tolerance interval.
 
@@ -1402,7 +1400,7 @@ Eval List( {Sum( Pi(), e() ), Sum( [33 44 22 20 30] )} );
 
 ### Summarize
 
-**Syntax:** Summarize( <dt>, nameBy=By( colBy ), name1=statName1( col1 ), ... )
+**Syntax:** Summarize( &lt;dt&gt;, nameBy=By( colBy ), name1=statName1( col1 ), ... )
 
 **Description:** Calculates various summary statistics across a By column. The statistic names are Count, Sum, Mean, Max or Maximum, Min or Minimum, StdDev, Corr, Quantile, First. The statistics can be calculated only for numeric columns. The results are stored as matrices in variables with the specified names.
 

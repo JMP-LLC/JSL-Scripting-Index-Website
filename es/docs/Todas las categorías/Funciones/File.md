@@ -2,11 +2,9 @@
 
 
 
-## Funciones
-
 ### Close
 
-**Sintaxis:** Close( <dataTableRef|name>, <NoSave|Save( "path" )> )
+**Sintaxis:** Close( &lt;dataTableRef|name&gt;, &lt;NoSave|Save( "path" )&gt; )
 
 **Descripción:** Cierra la tabla de datos a la que hace referencia el primer argumento, que es la tabla de datos actual del proyecto actual de forma predeterminada (o de ningún proyecto si no se ejecuta el script en un proyecto).
 
@@ -31,7 +29,7 @@ Close( exdt, NoSave );
 
 ### Close All
 
-**Sintaxis:** Close All( <Project(title|index|box|window)>, Data Tables | Reports | Journals, <invisible | private>, <NoSave|Save> )
+**Sintaxis:** Close All( &lt;Project(title|index|box|window)&gt;, Data Tables | Reports | Journals, &lt;invisible | private&gt;, &lt;NoSave|Save&gt; )
 
 **Descripción:** Busca todos los recursos abiertos de un tipo específico: tablas de datos, diarios o informes.
 
@@ -53,7 +51,7 @@ Close All( Data Tables, NoSave );
 
 ### Convert File Path
 
-**Sintaxis:** path = Convert File Path( path, <absolute|relative>, <posix|windows>, <base( path )>, <search> )
+**Sintaxis:** path = Convert File Path( path, &lt;absolute|relative&gt;, &lt;posix|windows&gt;, &lt;base( path )&gt;, &lt;search&gt; )
 
 **Descripción:** Devuelve la ruta convertida.
 
@@ -75,7 +73,7 @@ For Each( {pv},
 
 ### Copy Directory
 
-**Sintaxis:** rc = Copy Directory( from, to, <recursive(0|1)> )
+**Sintaxis:** rc = Copy Directory( from, to, &lt;recursive(0|1)&gt; )
 
 **Descripción:** Copia archivos de un directorio a otro y, opcionalmente, copia los subdirectorios. El nombre del directorio se creará en la ruta de acceso de to y no puede formar parte de ella. Devuelve 1 si se ha copiado el directorio o 0 si no se ha podido copiar el directorio. Lanza un error si la ruta no es válida o no existe.
 
@@ -140,7 +138,7 @@ Format( date, "ddmonyyyy:h:m:s" );/* 1 1 0 date:time */
 
 ### Create Excel Workbook
 
-**Sintaxis:** Create Excel Workbook(<Workbook Name>, <{List of open tables}>, <Optional list of worksheet names> )
+**Sintaxis:** Create Excel Workbook(&lt;Workbook Name&gt;, &lt;{List of open tables}&gt;, &lt;Optional list of worksheet names&gt; )
 
 **Descripción:** Genera una hoja de Excel a partir de las tablas de datos JMP abiertas
 
@@ -189,7 +187,7 @@ Format( Creation Date( "$SAMPLE_DATA/Big Class.jmp" ), "ddmonyyyy:h:m:s" );
 
 ### Delete Directory
 
-**Sintaxis:** rc = Delete Directory( path, <Allow Undo( boolean )> )
+**Sintaxis:** rc = Delete Directory( path, &lt;Allow Undo( boolean )&gt; )
 
 **Descripción:** Elimina un directorio y todos sus archivos y subdirectorios. Devuelve 1 si se ha eliminado el directorio. Devuelve 0 si no se ha podido eliminar el directorio o si la ruta de acceso no es válida.
 
@@ -211,7 +209,7 @@ Format( date, "ddmonyyyy:h:m:s" );/* 1 1 0 date:time */
 
 ### Delete File
 
-**Sintaxis:** rc = Delete File( path, <Allow Undo( boolean )> )
+**Sintaxis:** rc = Delete File( path, &lt;Allow Undo( boolean )&gt; )
 
 **Descripción:** Elimina un archivo. Devuelve 1 si se ha eliminado el archivo. Devuelve 0 si no se ha podido eliminar el archivo. Lanza un error cuando la ruta de acceso no es válida o no existe.
 
@@ -281,7 +279,7 @@ File Size( "$SAMPLE_DATA/Big Class.jmp" );
 
 ### Files In Directory
 
-**Sintaxis:** y = Files In Directory( "path", <recursive(0|1)>, <include hidden(0|1)> )
+**Sintaxis:** y = Files In Directory( "path", &lt;recursive(0|1)&gt;, &lt;include hidden(0|1)&gt; )
 
 **Descripción:** Devuelve la lista de nombres de archivo de un directorio especificado por path. Si no se especifica el argumento Recursive, se incluyen los nombres de directorio en la lista.
 
@@ -309,7 +307,7 @@ Filter Each( {fn}, Files In Directory( "$SAMPLE_DATA", recursive( 1 ) ),
 
 ### Find All
 
-**Sintaxis:** Find All( <Project(title|index|box|window)>, Data Tables | Reports | Journals, <invisible | private> )
+**Sintaxis:** Find All( &lt;Project(title|index|box|window)&gt;, Data Tables | Reports | Journals, &lt;invisible | private&gt; )
 
 **Descripción:** Busca todos los recursos abiertos de un tipo específico: tablas de datos, diarios o informes.
 
@@ -471,7 +469,7 @@ Google Sheet Export(
 
 ### Google Sheet Import
 
-**Sintaxis:** Google Sheet Import(Email(address), Spreadsheet(url|id), <Sheets("sheetName1", ... "sheetNameN")>, <Sheet Settings( Has Column Headers(Boolean), Data Starts on Row(n), Cell Range(range), Import Cell Colors(Boolean), Supress Empty Columns(Boolean))>)
+**Sintaxis:** Google Sheet Import(Email(address), Spreadsheet(url|id), &lt;Sheets("sheetName1", ... "sheetNameN")&gt;, &lt;Sheet Settings( Has Column Headers(Boolean), Data Starts on Row(n), Cell Range(range), Import Cell Colors(Boolean), Supress Empty Columns(Boolean))&gt;)
 
 **Descripción:** Abre un archivo Google Sheet.
 
@@ -589,7 +587,7 @@ If( x == JSON Literal( true ),
 
 ### JSON To Data Table
 
-**Sintaxis:** dt = JSON To Data Table( jsonstring, <Invisible( boolean ) | Private( boolean )>, <Guess(Stack(Boolean)|"Tall"|"Wide")>, <JSON Settings(...)> )
+**Sintaxis:** dt = JSON To Data Table( jsonstring, &lt;Invisible( boolean ) | Private( boolean )&gt;, &lt;Guess(Stack(Boolean)|"Tall"|"Wide")&gt;, &lt;JSON Settings(...)&gt; )
 
 **Descripción:** Convertir texto JSON en una tabla de datos de JMP
 
@@ -639,7 +637,7 @@ Format( Last Modification Date( "$SAMPLE_DATA/Big Class.jmp" ), "ddmonyyyy:h:m:s
 
 ### Load Text File
 
-**Sintaxis:** text = Load Text File( path, <Charset("best guess", <force("throw" | "alert" | "silent")>)>, <LineSeparator("\!N")>, <XMLParse>|<SASODSXML>|<JSON>|<BLOB( <readOffsetFromBegin(0)>|<readOffsetFromEnd(42)>, <readLength(2147483647)>, <base64Compressed( 1 /* 0: ascii~hex */)> )> )
+**Sintaxis:** text = Load Text File( path, &lt;Charset("best guess", &lt;force("throw" | "alert" | "silent")&gt;)&gt;, &lt;LineSeparator("\!N")&gt;, &lt;XMLParse&gt;|&lt;SASODSXML&gt;|&lt;JSON&gt;|&lt;BLOB( &lt;readOffsetFromBegin(0)&gt;|&lt;readOffsetFromEnd(42)&gt;, &lt;readLength(2147483647)&gt;, &lt;base64Compressed( 1 /* 0: ascii~hex */)&gt; )&gt; )
 
 **Descripción:** Lee un archivo de texto completo y lo coloca en una variable de JSL. Load Text File() solicita un nombre de archivo. Load Text File( path ) devuelve una cadena de caracteres. La opción XMLParse convierte XML en un árbol de expresiones. SASODSXML analiza el archivo como XML predeterminado de ODS SAS. La opción [{JSON}] convierte JSON en un árbol de expresiones. El argumento BLOB devuelve datos binarios en una variable BLOB de JSL. Los parámetros opcionales con nombre para BLOB permiten leer una subcadena de caracteres del archivo.
 
@@ -710,7 +708,7 @@ Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
 
 ### Open
 
-**Sintaxis:** Open( filePath, <data table options | Excel import options | text import options | SAS import options | HTML import options | esriShapeFile import options | PDF import options | other file options > )
+**Sintaxis:** Open( filePath, &lt;data table options | Excel import options | text import options | SAS import options | HTML import options | esriShapeFile import options | PDF import options | other file options &gt; )
 
 **Descripción:** Devuelve una referencia a una tabla de datos u otro archivo JMP o un objeto creado a partir de un archivo. Si no se especifica ninguna ruta, aparece el cuadro de diálogo Abrir. Si se especifica una ruta de carpetas, se abre el explorador de archivos del sistema y no se devuelve ningún objeto. Consulte la referencia de sintaxis para obtener una descripción completa de las opciones disponibles.
 
@@ -950,7 +948,7 @@ Show( l );
 
 ### Pick Directory
 
-**Sintaxis:** path = Pick Directory( <prompt>, <path>, <Show Files( boolean )> )
+**Sintaxis:** path = Pick Directory( &lt;prompt&gt;, &lt;path&gt;, &lt;Show Files( boolean )&gt; )
 
 **Descripción:** Muestra al usuario una ventana Abrir directorio y devuelve el nombre de la ruta del directorio seleccionado. La cadena de caracteres opcional prompt se muestra en la parte superior de la ventana. Show Files puede ser cualquiera de los tres argumentos, y utiliza un argumento booleano. 1 muestra los archivos en la ventana Seleccionar directorio y 0 no los muestra. El valor predeterminado es 0. La cadena de caracteres path especifica el directorio que muestra inicialmente la ventana Seleccionar directorio. Si se utiliza la cadena de caracteres path, debe ir a continuación de la cadena de caracteres prompt, pero Show Files puede aparecer entre ellas.
 
@@ -976,7 +974,7 @@ Pick Directory( "Select a directory" );
 
 ### Pick File
 
-**Sintaxis:** path = Pick File( <prompt>, <initial directory>, <filterList>, <first filter>, <saveFlag=0|1>, <default file>, <multiple> )
+**Sintaxis:** path = Pick File( &lt;prompt&gt;, &lt;initial directory&gt;, &lt;filterList&gt;, &lt;first filter&gt;, &lt;saveFlag=0|1&gt;, &lt;default file&gt;, &lt;multiple&gt; )
 
 **Descripción:** Aparece una ventana Abrir que devuelve el nombre de la ruta del archivo seleccionado. El argumento filterList es una lista de cadenas de caracteres con la estructura: "Etiqueta|sufijo1;sufijo2;...". El argumento first filter especifica qué filtro de archivos se debe mostrar inicialmente. El quinto argumento indica si la ventana debe funcionar como ventana para guardar (saveFlag = 1) o para abrir (saveFlag = 0). El argumento default file especifica el archivo seleccionado inicialmente. El argumento multiple permite seleccionar varios archivos siempre que saveFlag sea 0.
 
@@ -1086,7 +1084,7 @@ Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
 
 ### Save Text File
 
-**Sintaxis:** f = Save Text File( path, text|blob, <mode("replace"|"append")> )
+**Sintaxis:** f = Save Text File( path, text|blob, &lt;mode("replace"|"append")&gt; )
 
 **Descripción:** Crea un archivo de texto con el nombre del archivo especificado en el argumento path y los contenidos indicados en el argumento de cadena de caracteres text. Si se guarda correctamente, la función Save Text File() devuelve el nombre de la ruta del archivo creado.
 
@@ -1139,7 +1137,7 @@ Show( Convert File Path( "Iris.jmp", search ) );
 
 ### Set Path Variable
 
-**Sintaxis:** Set Path Variable( name, <value> )
+**Sintaxis:** Set Path Variable( name, &lt;value&gt; )
 
 **Descripción:** Establece una variable de ruta, que es un nombre como SAMPLE_DATA, que se sustituye cuando se encuentra en nombres de rutas.
 
@@ -1154,7 +1152,7 @@ Set Path Variable( "SAMPLE_DATA", Get Path Variable( "SAMPLE_DATA" ) );
 
 ### TripleS Import
 
-**Sintaxis:** TripleSImport( <path to xml file> )
+**Sintaxis:** TripleSImport( &lt;path to xml file&gt; )
 
 **Descripción:** Abre archivos Triple-S. El formato Triple-S comprende un archivo xml o sss y un archivo csv o un archivo dat/asc. Ambos archivos deben tener el mismo nombre con la extensión adecuada y deben estar en el mismo directorio. Especifique la ruta de acceso de xml o sss para importar los datos.
 

@@ -2,8 +2,6 @@
 
 
 
-## Funktionen
-
 ### Add Custom Functions
 
 **Syntax:** Add Custom Functions({f1, f2, ...} | f)
@@ -40,13 +38,7 @@ Show( b );
 
 ### As Column
 
-**Syntax:** y = :name;
-
-y = dataTable:name;
-
-y = As Column( name );
-
-y = As Column( dataTable, name )
+**Syntax:** y = :name;y = dataTable:name;y = As Column( name );y = As Column( dataTable, name )
 
 **Beschreibung:** Greift auf die angegebene Spalte in der angegebenen oder aktuellen Datentabelle zu. Ein Fehler wird ausgegeben, wenn die Spalte oder Datentabelle nicht gefunden wird.
 
@@ -218,9 +210,7 @@ As Scoped( Here, z );
 
 ### Associative Array
 
-**Syntax:** y = Associative Array( {{key1, value1}, ...} );
-
-y = Associative Array( keys, values )
+**Syntax:** y = Associative Array( {{key1, value1}, ...} );y = Associative Array( keys, values )
 
 **Beschreibung:** Erstellt ein assoziatives Array, das auch als Wörterbuch oder Hashmap bekannt ist. Im Format mit zwei Argumenten können Schlüssel und Werte eine Liste, eine Matrix oder eine Spalte in einer Datentabelle sein.
 
@@ -237,7 +227,7 @@ ex << get contents;
 
 ### Choose Closest
 
-**Syntax:** Choose Closest(source string, {canonical strings...}, <Ignore Case(ignore=1|0)>, <Ignore Nonprintable(ignore=1|0)>, <Ignore Whitespace(ignore=1|0)>, <Max Edit Count(count)>, <Max Edit Ratio([0..1])>, <Min String Length(<count=3>)>, <Replace Unmatched(replace=0|1)>, <Unmatched Value(<value="">)>)
+**Syntax:** Choose Closest(source string, {canonical strings...}, &lt;Ignore Case(ignore=1|0)&gt;, &lt;Ignore Nonprintable(ignore=1|0)&gt;, &lt;Ignore Whitespace(ignore=1|0)&gt;, &lt;Max Edit Count(count)&gt;, &lt;Max Edit Ratio([0..1])&gt;, &lt;Min String Length(&lt;count=3&gt;)&gt;, &lt;Replace Unmatched(replace=0|1)&gt;, &lt;Unmatched Value(&lt;value=""&gt;)&gt;)
 
 **Beschreibung:** Die nächste Zeichenkette innerhalb der vorgegebenen Regeln auswählen und zurückgeben. 
 
@@ -361,7 +351,7 @@ Delete Classes( "complex" );
 
 ### Clear Globals
 
-**Syntax:** Clear Globals( < varname, ... > )
+**Syntax:** Clear Globals( &lt; varname, ... &gt; )
 
 **Beschreibung:** Löscht die Werte aller aktuell definierten globalen Variablen.
 
@@ -391,7 +381,7 @@ Clear Log();
 
 ### Clear Symbols
 
-**Syntax:** Clear Symbols( < varname, ... > )
+**Syntax:** Clear Symbols( &lt; varname, ... &gt; )
 
 **Beschreibung:** Löscht die Werte aller aktuell definierten Variablen.
 
@@ -422,7 +412,7 @@ Show( Is Log Open() );
 
 ### Define Class
 
-**Syntax:** Define Class("class name", <Base Class{ "base class name", ... }>, <Show( All( boolean ) | ( Members( boolean ) | Methods( boolean ) | Functions( boolean ) )+ )>, { method* | member* | function* } )
+**Syntax:** Define Class("class name", &lt;Base Class{ "base class name", ... }&gt;, &lt;Show( All( boolean ) | ( Members( boolean ) | Methods( boolean ) | Functions( boolean ) )+ )&gt;, { method* | member* | function* } )
 
 **Beschreibung:** Neue Klasse definieren
 
@@ -476,7 +466,7 @@ Delete Classes( complex );
 
 ### Delete Classes
 
-**Syntax:** Delete Classes( <Force( boolean )>, <class reference, ...> )
+**Syntax:** Delete Classes( &lt;Force( boolean )&gt;, &lt;class reference, ...&gt; )
 
 **Beschreibung:** Löscht alle Klassendefinitionen oder eine oder mehrere spezifische Namensdefinitionen.
 
@@ -508,7 +498,7 @@ Show Classes();
 
 ### Delete Globals
 
-**Syntax:** Delete Globals( < varname, ... > )
+**Syntax:** Delete Globals( &lt; varname, ... &gt; )
 
 **Beschreibung:** Löscht alle aktuell definierten globalen Variablen und ihre Werte.
 
@@ -523,7 +513,7 @@ Delete Globals();
 
 ### Delete Namespaces
 
-**Syntax:** Delete Namespaces( <Force( boolean )>, <namespace reference, ...> )
+**Syntax:** Delete Namespaces( &lt;Force( boolean )&gt;, &lt;namespace reference, ...&gt; )
 
 **Beschreibung:** Löscht alle Namensräume oder einen oder mehrere spezifische Namensräume.
 
@@ -553,7 +543,7 @@ Show Namespaces();
 
 ### Delete Symbols
 
-**Syntax:** Delete Symbols( < varname, ... > )
+**Syntax:** Delete Symbols( &lt; varname, ... &gt; )
 
 **Beschreibung:** Löscht alle aktuell definierten Variablen und ihre Werte.
 
@@ -583,7 +573,7 @@ Eval( Expr( 1 + 2 ) );
 
 ### Eval Insert
 
-**Syntax:** y = Eval Insert( string, <startChar="^">, <endChar=startChar> )
+**Syntax:** y = Eval Insert( string, &lt;startChar="^"&gt;, &lt;endChar=startChar&gt; )
 
 **Beschreibung:** Sucht nach Teilzeichenketten, die durch das Paar startChar/endChar eingeschlossen sind, und ersetzt diese durch den ausgewerteten Ausdruck.
 
@@ -598,7 +588,7 @@ Eval Insert( "Today is ^As Date( Today())^" );
 
 ### Eval Insert Into
 
-**Syntax:** Eval Insert Into( l_string, <startChar="^">, <endChar=startChar> )
+**Syntax:** Eval Insert Into( l_string, &lt;startChar="^"&gt;, &lt;endChar=startChar&gt; )
 
 **Beschreibung:** Sucht nach Teilzeichenketten, die durch das Paar startChar/endChar eingeschlossen sind, und ersetzt diese durch den ausgewerteten Ausdruck, dabei wird l_string ersetzt.
 
@@ -643,7 +633,7 @@ Eval List( {x, y} );
 
 ### Exit
 
-**Syntax:** Quit(<"No Save">); Exit(<"No Save">)
+**Syntax:** Quit(&lt;"No Save"&gt;); Exit(&lt;"No Save"&gt;)
 
 **Beschreibung:** Beendet JMP.
 
@@ -679,7 +669,7 @@ First( 11, 22 );
 
 ### Function
 
-**Syntax:** y = Function( {arg1=val1, ...}, <{local1=val1, ...}>, expr )
+**Syntax:** y = Function( {arg1=val1, ...}, &lt;{local1=val1, ...}&gt;, expr )
 
 **Beschreibung:** Definiert eine Funktion mit den angegebenen Argumenten, Standardwerten und optionalen lokalen Variablen. Argumente mit Standardwerten sind bei Aufruf der Funktion optional. Wenn im Skript der Funktion Return() verwendet wird, wird der Ausdruck innerhalb zurückgegeben.
 
@@ -727,7 +717,7 @@ posorneg( -5.5 );
 
 ### Get Class Names
 
-**Syntax:** Get Class Names( < <class reference>, ... > )
+**Syntax:** Get Class Names( &lt; &lt;class reference&gt;, ... &gt; )
 
 **Beschreibung:** Gibt eine Liste von Namen sämtlicher derzeit definierter Klassen zurück.
 
@@ -756,7 +746,7 @@ Delete Classes( "aa", "bb" );
 
 ### Get Classes
 
-**Syntax:** Get Classes( < <class reference>, ... > )
+**Syntax:** Get Classes( &lt; &lt;class reference&gt;, ... &gt; )
 
 **Beschreibung:** Gibt eine Liste von Referenzen auf alle gegenwärtig definierten Klassen zurück.
 
@@ -786,7 +776,7 @@ Delete Classes( "aa", "bb" );
 
 ### Get Custom Functions
 
-**Syntax:** Get Custom Functions(<{function 1 full name, function 2 full name, ...} | function full name>)
+**Syntax:** Get Custom Functions(&lt;{function 1 full name, function 2 full name, ...} | function full name&gt;)
 
 **Beschreibung:** Eine Liste der benutzerdefinierten Funktionen abrufen
 
@@ -846,7 +836,7 @@ Get Locale Setting( "Decimal Separator" );
 
 ### Get Log
 
-**Syntax:** list = Get Log( <N> )
+**Syntax:** list = Get Log( &lt;N&gt; )
 
 **Beschreibung:** Gibt eine Liste von Zeilen aus dem Log zurück. Wenn kein Parameter angegeben ist, werden alle Zeilen aus dem Log zurückgegeben. Wenn das numerische Argument N positiv ist, dann werden die ersten N Zeilen aus dem Log zurückgegeben. Wenn N negativ ist, werden die letzten N Zeilen aus dem Log zurückgegeben. Wenn N null ist, werden keine Zeilen zurückgegeben.
 
@@ -863,7 +853,7 @@ tailcontents = Get Log( -5 );
 
 ### Get Namespace Names
 
-**Syntax:** Get Namespace Names( < <namespace reference>, ... > )
+**Syntax:** Get Namespace Names( &lt; &lt;namespace reference&gt;, ... &gt; )
 
 **Beschreibung:** Gibt eine Liste von Namen sämtlicher derzeit definierter Namensräume zurück.
 
@@ -893,7 +883,7 @@ nsbb << Delete;
 
 ### Get Namespaces
 
-**Syntax:** Get Namespaces( < <namespace reference>, ... > )
+**Syntax:** Get Namespaces( &lt; &lt;namespace reference&gt;, ... &gt; )
 
 **Beschreibung:** Gibt eine Liste von Referenzen auf alle gegenwärtig definierten Namensräume zurück.
 
@@ -924,7 +914,7 @@ nsbb << Delete;
 
 ### Get Punctuation Characters
 
-**Syntax:** Get Punctuation Characters(<Exclude Chars(chars) | Include Chars(chars)>)
+**Syntax:** Get Punctuation Characters(&lt;Exclude Chars(chars) | Include Chars(chars)&gt;)
 
 **Beschreibung:** Gibt eine Zeichenkette mit den Zeichensetzungszeichen zurück, die üblicherweise zum Trennen von Wörtern verwendet werden. Dazu gehören ,:;.?!\/#@&~()[]<>"*`%$+=^|{} und häufig verwendete Unicode-Zeichensetzung.
 
@@ -1003,7 +993,7 @@ Get Whitespace Characters();
 
 ### Include
 
-**Syntax:** y = Include( filepath, < <<Parse Only>, < <<New Context>, < <<Names Default to Here> )
+**Syntax:** y = Include( filepath, &lt; &lt;&lt;Parse Only&gt;, &lt; &lt;&lt;New Context&gt;, &lt; &lt;&lt;Names Default to Here&gt; )
 
 **Beschreibung:** Führt JSL in der angegebenen Datei aus. Wenn Parse Only angegeben ist, wird das Skript analysiert und nicht ausgeführt. Wenn New Context angegeben ist, wird die enthaltene JSL im eigenen eindeutigen Namensraum ausgeführt. Wenn sowohl das übergeordnete als auch das eingeschlossene Skript den globalen Namensraum verwenden, dann geben Sie New Context und Names Default to Here an, um Namenskonflikte zu vermeiden.
 
@@ -1232,7 +1222,7 @@ Names Default To Here( 1 );
 
 ### Map Value
 
-**Syntax:** Map Value(string | number, {key1, value1...|{key1...},{value1...}}, <Unmatched(value)>)
+**Syntax:** Map Value(string | number, {key1, value1...|{key1...},{value1...}}, &lt;Unmatched(value)&gt;)
 
 **Beschreibung:** Den Ausgangswert auswerten und das zugeordnete Ergebnis oder einen Standardwert zurückgeben.
 
@@ -1545,7 +1535,7 @@ Add Custom Functions(
 
 ### New Namespace
 
-**Syntax:** ns = New Namespace( <name>, <list of expressions> )
+**Syntax:** ns = New Namespace( &lt;name&gt;, &lt;list of expressions&gt; )
 
 **Beschreibung:** Erstellt einen neuen Namensraum mit dem vom Argument name angegebenen Namen oder mit einem anonymen Namen, sofern name nicht angegeben ist.
 
@@ -1641,7 +1631,7 @@ Delete Classes( "complex" );
 
 ### Open Log
 
-**Syntax:** Open Log( <bring window to top> )
+**Syntax:** Open Log( &lt;bring window to top&gt; )
 
 **Beschreibung:** Log-Fenster öffnen
 
@@ -1715,7 +1705,7 @@ Print( 355 / 113, Pi() );
 
 ### Quit
 
-**Syntax:** Quit(<"No Save">); Exit(<"No Save">)
+**Syntax:** Quit(&lt;"No Save"&gt;); Exit(&lt;"No Save"&gt;)
 
 **Beschreibung:** Beendet JMP.
 
@@ -1736,7 +1726,7 @@ If(
 
 ### Recode
 
-**Syntax:** recode(string|number|list, {<transform>, ...}, <Multiple Response (Separator(sepChar))>, <By Word(Delimiters(<chars>)>)
+**Syntax:** recode(string|number|list, {&lt;transform&gt;, ...}, &lt;Multiple Response (Separator(sepChar))&gt;, &lt;By Word(Delimiters(&lt;chars&gt;)&gt;)
 
 **Beschreibung:** Wendet die aufgeführten Transformationen auf die Eingabewerte an und gibt das Ergebnis zurück. Die Optionen Mehrfachantwort und Nach Wort teilen die gelieferten Zeichendaten in kleinere Eingabewerte auf. Sobald die Eingabewerte bestimmt sind, werden die Transformationen auf diese Werte separat angewendet.
 
@@ -1811,7 +1801,7 @@ Remove Custom Functions( {"custom:Add", "custom:Sub"} );
 
 ### Save Log
 
-**Syntax:** f = Save Log( <path> )
+**Syntax:** f = Save Log( &lt;path&gt; )
 
 **Beschreibung:** Schreibt den Inhalt des Logs in den angegebenen Speicherort einer Datei. Wenn der Schreibvorgang erfolgreich ist, gibt diese Funktion den Namen der erstellten Datei zurück.
 
@@ -1828,7 +1818,7 @@ Substr( exlogText, 1, 30 );
 
 ### Send
 
-**Syntax:** r = obj << msg( args ); r = obj << msg; r = Send( obj, msg )
+**Syntax:** r = obj &lt;&lt; msg( args ); r = obj &lt;&lt; msg; r = Send( obj, msg )
 
 **Beschreibung:** Sendet eine Mitteilung (in Form eines Ausdrucks) an ein Objekt.
 
@@ -1844,7 +1834,7 @@ Bivariate( Y( :weight ), X( :height ) ) << Fit Line;
 
 ### Set Environment Variable
 
-**Syntax:** value = Set Environment Variable( string, < string> )
+**Syntax:** value = Set Environment Variable( string, &lt; string&gt; )
 
 **Beschreibung:** Legt den Wert der angegebenen Umgebungsvariablen im Betriebssystem fest. Wenn das zweite Argument fehlt oder die Zeichenkette leer ist, wird die Umgebungsvariable gelöscht.
 
@@ -1878,7 +1868,7 @@ Show( 355 / 113, Pi() );
 
 ### Show Classes
 
-**Syntax:** Show Classes( < <class name | class reference>, ... > )
+**Syntax:** Show Classes( &lt; &lt;class name | class reference&gt;, ... &gt; )
 
 **Beschreibung:** Zeigt den Inhalt aller benutzerdefinierten Klassen an.
 
@@ -1945,7 +1935,7 @@ Show Globals();
 
 ### Show Namespaces
 
-**Syntax:** Show Namespaces( < <namespace reference>, ... > )
+**Syntax:** Show Namespaces( &lt; &lt;namespace reference&gt;, ... &gt; )
 
 **Beschreibung:** Zeigt den Inhalt aller benutzerdefinierten Namensräume an, sowohl der benannten als auch der anonymen Namenräume.
 
@@ -2034,7 +2024,7 @@ ex;
 
 ### Throw
 
-**Syntax:** Throw(<message>, <Boolean>)
+**Syntax:** Throw(&lt;message&gt;, &lt;Boolean&gt;)
 
 **Beschreibung:** Leitet die Ausführung zum eingeschlossenen Try() um. Andernfalls wird die Skriptausführung gestoppt. Wenn message mit einem Ausrufezeichen beginnt, kommt es zu einem schwerwiegenden Fehler, der von Try() nicht erfasst werden kann. Das zweite Argument ist ein optionaler Boolescher Wert zum Erstellen eines Traceback.
 
@@ -2071,7 +2061,7 @@ Try( If( Random Uniform() < 0.5, 1, Throw() ), "thrown" );
 
 ### Try
 
-**Syntax:** y = Try( expr, <catchExpr> )
+**Syntax:** y = Try( expr, &lt;catchExpr&gt; )
 
 **Beschreibung:** Wertet das Argument expr aus und gibt es zurück, sofern die Auswertung nicht einen Throw() oder eine interne Ausnahme verursacht. Dann wird die Auswertung von catchExpr zurückgegeben. Wenn Sie exception_msg als catchExpr verwenden, wird eine Liste mit weiteren Informationen zu dem Fehler zurückgegeben.
 
@@ -2164,7 +2154,7 @@ Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 ### Wait
 
-**Syntax:** Wait( <x> )
+**Syntax:** Wait( &lt;x&gt; )
 
 **Beschreibung:** Wartet x Sekunden, bevor die Ausführung fortgesetzt wird. Der Standardwert für x ist 3 Sekunden. Wenn x 0 oder größer ist, schließt JMP alle Betriebssystemereignisse (z. B. das Zeichnen auf dem Bildschirm) sowie alle anstehenden Rückrufe (z. B. Formelauswertung) zusätzlich zur Wartezeit ab. Wenn x kleiner als 0 ist, werden nur die Bildschirmzeichnung und die anstehenden Bertriebssystemereignisse vor dem Fortfahren definitiv abgeschlossen.
 
@@ -2223,7 +2213,7 @@ w << close Window();
 
 ### Where
 
-**Syntax:** Where( <dt>, clause )
+**Syntax:** Where( &lt;dt&gt;, clause )
 
 **Beschreibung:** Gibt Indizes (üblicherweise Zeilennummern) zurück, die der vorgegebenen Where-Klausel entsprechen. Das optionale dt ändert die Current Data Table während der Auswertung. Diese Klauseln werden von JMP häufig unter Verwendung des Datenfilters geschrieben. Das ist häufig schneller als die Verwendung von Loc, <<Get Rows Where oder <<Select Where. Das Verhalten ist undefiniert, wenn die Klausel die Sequenzen oder Symbole während der Auswertung ändert.
 

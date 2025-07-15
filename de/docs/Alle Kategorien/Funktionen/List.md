@@ -2,8 +2,6 @@
 
 
 
-## Funktionen
-
 ### As List
 
 **Syntax:** y = As List( matrix )
@@ -21,7 +19,7 @@ As List( [11 22 33, 44 55 66] );
 
 ### Concat Items
 
-**Syntax:** string = Concat Items( {list of strings}, <separatorString> )
+**Syntax:** string = Concat Items( {list of strings}, &lt;separatorString&gt; )
 
 **Beschreibung:** Verbindet eine Liste von Zeichenketten zu einer langen Zeichenkette, wobei jede Zeichenkette durch das Trennzeichen bzw. ein Leerzeichen, wenn kein Trennzeichen angegebenen wurde, getrennt wird.
 
@@ -64,7 +62,7 @@ Eval List( {x, y} );
 
 ### Insert
 
-**Syntax:** z = Insert( x, y, <i> )
+**Syntax:** z = Insert( x, y, &lt;i&gt; )
 
 **Beschreibung:** Gibt eine Kopie der Liste x mit y an der i-ten Position oder ans Ende angehängt zurück, wenn das optionale Argument i nicht angegeben ist.
 
@@ -80,7 +78,7 @@ z = Insert( z, 99, 2 );
 
 ### Insert Into
 
-**Syntax:** Insert Into( x, y, <i> )
+**Syntax:** Insert Into( x, y, &lt;i&gt; )
 
 **Beschreibung:** Ändert eine Liste, ein assoziatives Array oder ein Anzeigefeld x, wobei y in die Sammlung eingefügt wird. Listen und Anzeigefelder unterstützen optional i, um die Position anzugeben, oder die Elemente werden angehängt, wenn die Position nicht angegeben ist. Beachten Sie, dass das Argument x eine Variable sein muss.
 
@@ -136,7 +134,7 @@ Is List( {1, 2, 3} );
 
 ### Items
 
-**Syntax:** wl = Items(<[first last]>, s, <delim>, <Include Boundary Delimiters(0|1)>)
+**Syntax:** wl = Items(&lt;[first last]&gt;, s, &lt;delim&gt;, &lt;Include Boundary Delimiters(0|1)&gt;)
 
 **Beschreibung:** Gibt eine Liste von (möglicherweise leeren) Teilzeichenketten zurück, die durch genau ein beliebiges der Zeichen im Argument delim getrennt werden. Wenn delim fehlt, wird das Leerzeichen verwendet. Wenn delim die leere Zeichenkette ist, wird jedes Zeichen als eigenes Element behandelt.
 
@@ -279,7 +277,7 @@ N Items( hlist );
 
 ### Remove
 
-**Syntax:** y = Remove( x, <i>, <n=1> ); y = Remove( x, {list} )
+**Syntax:** y = Remove( x, &lt;i&gt;, &lt;n=1&gt; ); y = Remove( x, {list} )
 
 **Beschreibung:** Gibt eine Kopie der Liste x zurück, löscht dabei n Elemente mit Beginn bei dem i-ten Element, oder löscht eine Liste mit Elementen, die vom Argument list angegeben sind.
 
@@ -294,7 +292,7 @@ Remove( {11, 22, 33, 44, 55}, 3, 2 );
 
 ### Remove From
 
-**Syntax:** Remove From( x, <i>, <n=1> )
+**Syntax:** Remove From( x, &lt;i&gt;, &lt;n=1&gt; )
 
 **Beschreibung:** Ändert eine Liste, ein assoziatives Array oder ein Anzeigefeld x durch Entfernen von Elementen. Bei assoziativen Arrays wird das zu entfernende Element durch einen Schlüsselwert i angegeben. Bei Listen und Anzeigefeldern erfolgt das Entfernen ab dem Element an Position i. Bei einer Liste werden mehrere Elemente gleichzeitig entfernt, wenn die Option n angegeben ist. Beachten Sie, dass das Argument x eine Variable sein muss.
 
@@ -458,7 +456,7 @@ Show( Set Unique( :sports ) );
 
 ### Shift
 
-**Syntax:** y = Shift( x, <n=1> )
+**Syntax:** y = Shift( x, &lt;n=1&gt; )
 
 **Beschreibung:** Gibt eine Kopie der Liste x zurück, wobei die ersten n Elemente ans Ende der Liste verschoben werden, oder, wenn n negativ ist, werden die letzten n Elemente an den Anfang der Liste verschoben.
 
@@ -473,7 +471,7 @@ Shift( {11, 22, 33, 44, 55}, 2 );
 
 ### Shift Into
 
-**Syntax:** Shift Into( x, <n=1> )
+**Syntax:** Shift Into( x, &lt;n=1&gt; )
 
 **Beschreibung:** Ändert eine Liste oder ein Anzeigefeld x, wobei die ersten n Elemente ans Ende der Liste verschoben werden, bzw. wenn n negativ ist, werden die letzten n Elemente an den Anfang der Liste verschoben. Beachten Sie, dass das Argument x eine Variable sein muss.
 
@@ -537,9 +535,7 @@ ex;
 
 ### Substitute
 
-**Syntax:** y = Substitute( x, patternExpr1, replacementExpr1, ... )
-
-y = Substitute( x, patternString1, replacementString1, ..., < <<IGNORECASE > )
+**Syntax:** y = Substitute( x, patternExpr1, replacementExpr1, ... )y = Substitute( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
 
 **Beschreibung:** Gibt eine Kopie von Zeichenkette, Liste oder Ausdruck x zurück und ersetzt Vorkommen jedes Musterausdrucks mit dem entsprechenden Ersetzungsausdruck. Das optionale Argument <<IGNORECASE ermöglicht den Abgleich ohne Beachtung der Groß- und Kleinschreibung, wenn x eine Zeichenkette ist.
 
@@ -604,9 +600,7 @@ Substitute( "Apple,APPLE,apple", "apple", "orange", <<IGNORECASE );
 
 ### Substitute Into
 
-**Syntax:** Substitute Into( x, patternExpr1, replacementExpr1, ... )
-
-Substitute Into( x, patternString1, replacementString1, ..., < <<IGNORECASE > )
+**Syntax:** Substitute Into( x, patternExpr1, replacementExpr1, ... )Substitute Into( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
 
 **Beschreibung:** Ändert Zeichenkette, Liste oder Ausdruck x und ersetzt Vorkommen jedes Musterausdrucks mit dem entsprechenden Ersetzungsausdruck. Das Argument x muss eine Variable sein. Das optionale Argument <<IGNORECASE ermöglicht den Abgleich ohne Beachtung der Groß- und Kleinschreibung, wenn x eine Zeichenkette ist.
 
@@ -658,7 +652,7 @@ Show( s );
 
 ### Words
 
-**Syntax:** wl = Words( <[first last]>, s, <delim>)
+**Syntax:** wl = Words( &lt;[first last]&gt;, s, &lt;delim&gt;)
 
 **Beschreibung:** Gibt eine Liste von Teilzeichenketten zurück, die durch ein beliebiges der Zeichen im Argument delim getrennt werden. Wenn delim fehlt, wird das Leerzeichen verwendet. Wenn delim die leere Zeichenkette ist, wird jedes Zeichen als eigenes Wort behandelt.
 

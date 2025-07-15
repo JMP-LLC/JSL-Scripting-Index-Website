@@ -6,7 +6,7 @@
 
 ### Action
 
-**구문:** obj << Action
+**구문:** obj &lt;&lt; Action
 
 **설명:** 실행할 표현식을 삽입하기 위한 플랫폼 내의 다목적 트랩도어. 임시로 표시 상자 및 데이터 테이블 유형을 플랫폼에 설정합니다.
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**구문:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**구문:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **설명:** 이전에 생성된 사전 설정을 개체에 적용하여 옵션과 사용자 정의를 저장된 설정과 일치하도록 업데이트합니다.
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Broadcast
 
-**구문:** obj << Broadcast(message)
+**구문:** obj &lt;&lt; Broadcast(message)
 
 **설명:** 플랫폼에 메시지를 브로드캐스트합니다. 개별 개체의 반환 결과가 테이블인 경우 가능하면 테이블이 연결되고 최종 형식은 테이블 상자의 &apos;결합 테이블 저장&apos; 옵션 결과 또는 소스 열을 사용한 &apos;연결&apos; 옵션 결과와 동일합니다. 그 외의 경우에는 결과가 목록에 저장되어 반환됩니다.
 
@@ -88,7 +88,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**구문:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**구문:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **설명:** 플랫폼 변수를 변경하기 위한 제어판을 추가합니다.
 
@@ -103,7 +103,7 @@ ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country,
 
 ### Copy ByGroup Script
 
-**구문:** obj << Copy ByGroup Script
+**구문:** obj &lt;&lt; Copy ByGroup Script
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 클립보드에 넣습니다.
 
@@ -129,7 +129,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**구문:** obj << Copy Script
+**구문:** obj &lt;&lt; Copy Script
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 클립보드에 넣습니다.
 
@@ -149,7 +149,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**구문:** obj << Data Table Window
+**구문:** obj &lt;&lt; Data Table Window
 
 **설명:** 이 분석에 대한 데이터 테이블 창을 앞으로 가져옵니다.
 
@@ -169,7 +169,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**구문:** obj << Get By Levels
+**구문:** obj &lt;&lt; Get By Levels
 
 **설명:** 기준 그룹 열을 값에 매핑하는 연관 배열을 반환합니다.
 
@@ -186,7 +186,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**구문:** obj << Get ByGroup Script
+**구문:** obj &lt;&lt; Get ByGroup Script
 
 **설명:** 이 분석을 수행하기 위한 스크립트(JSL)를 생성하고 표현식으로 반환합니다.
 
@@ -213,7 +213,7 @@ Show( t );
 
 ### Get Container
 
-**구문:** obj << Get Container
+**구문:** obj &lt;&lt; Get Container
 
 **설명:** 개체의 콘텐츠를 담고 있는 컨테이너 상자에 대한 참조를 반환합니다.
 
@@ -265,7 +265,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**구문:** obj << Get Data Table
+**구문:** obj &lt;&lt; Get Data Table
 
 **설명:** 데이터 테이블에 대한 참조를 반환합니다.
 
@@ -286,7 +286,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**구문:** obj << Get Group Platform
+**구문:** obj &lt;&lt; Get Group Platform
 
 **설명:** 이 플랫폼이 그룹의 일부인 경우 그룹 플랫폼 개체를 반환하고, 그렇지 않은 경우 Empty()를 반환합니다.
 
@@ -303,7 +303,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**구문:** obj << Get Script
+**구문:** obj &lt;&lt; Get Script
 
 **설명:** 이 분석을 수행하기 위한 스크립트(JSL)를 생성하고 표현식으로 반환합니다.
 
@@ -324,7 +324,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**구문:** obj << Get Script With Data Table
+**구문:** obj &lt;&lt; Get Script With Data Table
 
 **설명:** 이 데이터 테이블을 참조하는 분석을 수행하기 위한 스크립트(JSL)를 생성하고 표현식으로 반환합니다.
 
@@ -345,7 +345,7 @@ Show( t );
 
 ### Get Timing
 
-**구문:** obj << Get Timing
+**구문:** obj &lt;&lt; Get Timing
 
 **설명:** 플랫폼 시작 시간을 설정합니다.
 
@@ -366,7 +366,7 @@ Show( t );
 
 ### Get Web Support
 
-**구문:** obj << Get Web Support
+**구문:** obj &lt;&lt; Get Web Support
 
 **설명:** 표시 개체에 대한 대화식 HTML 지원 수준을 나타내는 숫자를 반환합니다. 1은 일부 또는 모든 요소가 지원됨을 의미하고 0은 지원되지 않음을 의미합니다.
 
@@ -382,7 +382,7 @@ Show( s );
 
 ### Get Where Expr
 
-**구문:** obj << Get Where Expr
+**구문:** obj &lt;&lt; Get Where Expr
 
 **설명:** By() 또는 Where()를 사용하여 플랫폼이 시작된 경우 데이터 부분집합에 대한 Where 표현식을 반환하고, 그렇지 않은 경우 Empty()를 반환합니다.
 
@@ -419,7 +419,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**구문:** obj << Local Data Filter
+**구문:** obj &lt;&lt; Local Data Filter
 
 **설명:** 데이터를 특정 그룹 또는 범위로 필터링합니다. 이 플랫폼에서만 사용 가능합니다.
 
@@ -475,7 +475,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**구문:** obj << Paste Local Data Filter
+**구문:** obj &lt;&lt; Paste Local Data Filter
 
 **설명:** 클립보드의 로컬 데이터 필터를 현재 보고서에 적용합니다.
 
@@ -494,7 +494,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**구문:** obj << Redo Analysis
+**구문:** obj &lt;&lt; Redo Analysis
 
 **설명:** 동일한 분석을 새 창에서 다시 실행합니다. 데이터가 변경된 경우에는 분석결과가 달라집니다.
 
@@ -514,7 +514,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**구문:** obj << Redo ByGroup Analysis
+**구문:** obj &lt;&lt; Redo ByGroup Analysis
 
 **설명:** 동일한 분석을 새 창에서 다시 실행합니다. 데이터가 변경된 경우에는 분석결과가 달라집니다.
 
@@ -540,7 +540,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**구문:** obj << Relaunch Analysis
+**구문:** obj &lt;&lt; Relaunch Analysis
 
 **설명:** 플랫폼 시작 창을 열고 보고서를 생성하는 데 사용된 설정을 불러옵니다.
 
@@ -560,7 +560,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**구문:** obj << Relaunch ByGroup
+**구문:** obj &lt;&lt; Relaunch ByGroup
 
 **설명:** 플랫폼 시작 창을 열고 보고서를 생성하는 데 사용된 설정을 불러옵니다.
 
@@ -586,7 +586,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**구문:** obj << Remove Column Switcher
+**구문:** obj &lt;&lt; Remove Column Switcher
 
 **설명:** 플랫폼에 추가된 가장 최근 열 전환기를 제거합니다.
 
@@ -603,7 +603,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**구문:** obj << Remove Local Data Filter
+**구문:** obj &lt;&lt; Remove Local Data Filter
 
 **설명:** 로컬 데이터 필터가 생성된 경우 로컬 데이터 필터를 제거하고 데이터 테이블의 모든 데이터를 직접 사용하도록 플랫폼을 복원합니다.
 
@@ -642,9 +642,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**구문:** obj << Report;
-
-Report( obj )
+**구문:** obj &lt;&lt; Report;Report( obj )
 
 **설명:** 보고서 개체에 대한 참조를 반환합니다.
 
@@ -666,7 +664,7 @@ Show( t );
 
 ### Report View
 
-**구문:** obj << Report View( "전체"|"요약" )
+**구문:** obj &lt;&lt; Report View( "전체"|"요약" )
 
 **설명:** 보고서 보기는 플랫폼 보고서에 표시되는 상세 수준을 결정합니다. Full은 모든 상세 정보를 표시하고 Summary는 플랫폼에 따라 선택된 콘텐츠만 표시합니다. 사용자 정의된 동작의 경우 표시 상자는 <<Set Summary Behavior 메시지를 지원합니다.
 
@@ -686,7 +684,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**구문:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**구문:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 데이터 테이블에 테이블 특성으로 저장합니다. 스크립트 이름을 지정할 수 있습니다. Append Suffix 옵션은 스크립트 이름에 숫자 접미사를 추가하여 이름이 같은 기존 스크립트와 구분합니다. Prompt 옵션은 사용자에게 스크립트 이름을 지정하라는 메시지를 표시합니다. Replace 옵션은 이름이 같은 기존 스크립트를 바꿉니다.
 
@@ -712,7 +710,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**구문:** obj << Save ByGroup Script to Journal
+**구문:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 이 스크립트가 포함된 저널에 버튼을 추가합니다.
 
@@ -738,7 +736,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**구문:** obj << Save ByGroup Script to Script Window
+**구문:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 현재 스크립트 텍스트 창에 추가합니다.
 
@@ -764,7 +762,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**구문:** obj << Save Script for All Objects
+**구문:** obj &lt;&lt; Save Script for All Objects
 
 **설명:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -784,7 +782,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**구문:** obj << Save Script for All Objects To Data Table( <name> )
+**구문:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **설명:** 모든 보고서 개체에 대한 스크립트를 현재 데이터 테이블에 저장합니다. 이 옵션은 창에 여러 보고서가 있을 때 유용합니다. 스크립트 이름을 따옴표로 묶어 지정하는 경우 외에는 첫 번째 플랫폼 이름을 따라 스크립트 이름이 지정됩니다.
 
@@ -834,7 +832,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**구문:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**구문:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 데이터 테이블에 테이블 특성으로 저장합니다.
 
@@ -854,7 +852,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**구문:** obj << Save Script to Journal
+**구문:** obj &lt;&lt; Save Script to Journal
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 이 스크립트가 포함된 저널에 버튼을 추가합니다.
 
@@ -874,7 +872,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**구문:** obj << Save Script to Report
+**구문:** obj &lt;&lt; Save Script to Report
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 보고서 자체에 표시합니다. 수행된 작업에 대한 인쇄된 기록을 유지하려는 경우에 유용합니다.
 
@@ -894,7 +892,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**구문:** obj << Save Script to Script Window
+**구문:** obj &lt;&lt; Save Script to Script Window
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 현재 스크립트 텍스트 창에 추가합니다.
 
@@ -975,7 +973,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**구문:** obj << Sync to Data Table Changes
+**구문:** obj &lt;&lt; Sync to Data Table Changes
 
 **설명:** 제외 항목 및 데이터 변경 사항과 동기화합니다.
 
@@ -992,7 +990,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**구문:** obj << Title( "new title" )
+**구문:** obj &lt;&lt; Title( "new title" )
 
 **설명:** 플랫폼의 제목을 설정합니다.
 
@@ -1012,7 +1010,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**구문:** obj << Top Report
+**구문:** obj &lt;&lt; Top Report
 
 **설명:** 보고서의 루트 노드에 대한 참조를 반환합니다.
 
@@ -1034,7 +1032,7 @@ Show( t );
 
 ### Transform Column
 
-**구문:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**구문:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **설명:** 개체의 로컬 컨텍스트(대개 플랫폼)에서 변환 열을 생성합니다. 변환 열은 플랫폼의 수명 동안에만 활성화됩니다.
 
@@ -1055,7 +1053,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**구문:** obj << View Web XML
+**구문:** obj &lt;&lt; View Web XML
 
 **설명:** 대화식 HTML 보고서를 생성하는 데 사용된 XML 코드를 반환합니다.
 
@@ -1070,9 +1068,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**구문:** obj = Uplift(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Uplift(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 보고서에 대해 생성할 창 유형을 설정합니다. 기본적으로 Visible 보고서 창이 생성됩니다. Invisible 창은 화면에 나타나지 않지만 Window()와 같은 함수로 검색할 수 있습니다. Private 창은 대부분의 창 메시지에 응답하지만 검색할 수 없으며 보고서 개체를 통해 처리해야 합니다.
 
@@ -1093,7 +1089,7 @@ New Window( "Bivariate Equation",
 
 ### Uplift
 
-**구문:** Uplift( Y( column ), X( columns ), Treatment( column )  )
+**구문:** Uplift( Y( column ), X( columns ), Treatment( column ) )
 
 **설명:** 처리 차이를 최대화하기 위한 분할을 선택하는 재귀 분할 트리를 적합시킵니다. 이 모형은 처리에 반응할 확률이 가장 높은 개인 그룹을 식별합니다.
 
@@ -1139,7 +1135,7 @@ obj = dt << Uplift(
 
 ### By
 
-**구문:** obj << By( column(s) )
+**구문:** obj &lt;&lt; By( column(s) )
 
 ```jsl
 
@@ -1162,7 +1158,7 @@ obj = Uplift(
 
 ### Factor
 
-**구문:** obj << Factor( column(s) )
+**구문:** obj &lt;&lt; Factor( column(s) )
 
 ```jsl
 
@@ -1179,7 +1175,7 @@ obj = Uplift(
 
 ### Freq
 
-**구문:** obj << Freq( column )
+**구문:** obj &lt;&lt; Freq( column )
 
 ```jsl
 
@@ -1198,7 +1194,7 @@ obj = Uplift(
 
 ### Response
 
-**구문:** obj << Response( column(s) )
+**구문:** obj &lt;&lt; Response( column(s) )
 
 ```jsl
 
@@ -1215,7 +1211,7 @@ obj = Uplift(
 
 ### Treatment
 
-**구문:** obj << Treatment( column )
+**구문:** obj &lt;&lt; Treatment( column )
 
 ```jsl
 
@@ -1232,7 +1228,7 @@ obj = Uplift(
 
 ### Validation
 
-**구문:** obj << Validation( column )
+**구문:** obj &lt;&lt; Validation( column )
 
 ```jsl
 
@@ -1249,7 +1245,7 @@ obj = Uplift(
 
 ### Weight
 
-**구문:** obj << Weight( column )
+**구문:** obj &lt;&lt; Weight( column )
 
 ```jsl
 
@@ -1268,7 +1264,7 @@ obj = Uplift(
 
 ### X
 
-**구문:** obj << X( column(s) )
+**구문:** obj &lt;&lt; X( column(s) )
 
 ```jsl
 
@@ -1285,7 +1281,7 @@ obj = Uplift(
 
 ### Y
 
-**구문:** obj << Y( column(s) )
+**구문:** obj &lt;&lt; Y( column(s) )
 
 ```jsl
 
@@ -1304,7 +1300,7 @@ obj = Uplift(
 
 ### Color Points
 
-**구문:** obj << Color Points
+**구문:** obj &lt;&lt; Color Points
 
 **설명:** 해당 분류에 따라 점에 색상을 적용합니다.
 
@@ -1324,7 +1320,7 @@ obj << Color Points;
 
 ### Column Contributions
 
-**구문:** obj << Column Contributions( state=0|1 )
+**구문:** obj &lt;&lt; Column Contributions( state=0|1 )
 
 **설명:** 각 입력 열 및 적합에 대한 해당 열의 기여도가 포함된 보고서를 표시하거나 숨깁니다.
 
@@ -1344,7 +1340,7 @@ obj << Column Contributions( 1 );
 
 ### Get Average Absolute Error Test
 
-**구문:** obj << Get Average Absolute Error Test
+**구문:** obj &lt;&lt; Get Average Absolute Error Test
 
 **설명:** 테스트 데이터 집합의 평균 절대 편차 통계량을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
@@ -1429,7 +1425,7 @@ Show( aabs );
 
 ### Get Average Absolute Error Training
 
-**구문:** obj << Get Average Absolute Error Training
+**구문:** obj &lt;&lt; Get Average Absolute Error Training
 
 **설명:** 훈련 데이터 집합의 평균 절대 편차 통계량을 반환합니다.
 
@@ -1500,7 +1496,7 @@ Show( aabs );
 
 ### Get Average Absolute Error Validation
 
-**구문:** obj << Get Average Absolute Error Validation
+**구문:** obj &lt;&lt; Get Average Absolute Error Validation
 
 **설명:** 검증 데이터 집합의 평균 절대 편차 통계량을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
@@ -1575,7 +1571,7 @@ Show( aabs );
 
 ### Get Average Log Error Test
 
-**구문:** obj << Get Average Log Error Test
+**구문:** obj &lt;&lt; Get Average Log Error Test
 
 **설명:** -log(p)의 평균을 반환합니다. 여기서 p는 테스트 데이터 집합에 대해 반응이 실제로 발생한 모형에 기인하는 반응의 확률과 동일합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
@@ -1661,7 +1657,7 @@ Show( avg );
 
 ### Get Average Log Error Training
 
-**구문:** obj << Get Average Log Error Training
+**구문:** obj &lt;&lt; Get Average Log Error Training
 
 **설명:** -log(p)의 평균을 반환합니다. 여기서 p는 훈련 데이터 집합에 대해 반응이 실제로 발생한 모형에 기인하는 반응의 확률과 동일합니다.
 
@@ -1732,7 +1728,7 @@ Show( avg );
 
 ### Get Average Log Error Validation
 
-**구문:** obj << Get Average Log Error Validation
+**구문:** obj &lt;&lt; Get Average Log Error Validation
 
 **설명:** -log(p)의 평균을 반환합니다. 여기서 p는 검증 데이터 집합에 대해 반응이 실제로 발생한 모형에 기인하는 반응의 확률과 동일합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
@@ -1808,7 +1804,7 @@ Show( avg );
 
 ### Get Confusion Matrix Test
 
-**구문:** obj << Get Confusion Matrix Test
+**구문:** obj &lt;&lt; Get Confusion Matrix Test
 
 **설명:** 테스트 데이터 집합에 대한 혼동 행렬을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
@@ -1893,7 +1889,7 @@ Show( cm );
 
 ### Get Confusion Matrix Training
 
-**구문:** obj << Get Confusion Matrix Training
+**구문:** obj &lt;&lt; Get Confusion Matrix Training
 
 **설명:** 훈련 데이터 집합에 대한 혼동 행렬을 반환합니다.
 
@@ -1970,7 +1966,7 @@ Show( cm );
 
 ### Get Confusion Matrix Validation
 
-**구문:** obj << Get Confusion Matrix Validation
+**구문:** obj &lt;&lt; Get Confusion Matrix Validation
 
 **설명:** 검증 데이터 집합에 대한 혼동 행렬을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
@@ -2048,7 +2044,7 @@ Show( cm );
 
 ### Get Confusion Rates Test
 
-**구문:** obj << Get Confusion Rates Test
+**구문:** obj &lt;&lt; Get Confusion Rates Test
 
 **설명:** 테스트 데이터 집합에 대한 혼동 비율을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
@@ -2133,7 +2129,7 @@ Show( cr );
 
 ### Get Confusion Rates Training
 
-**구문:** obj << Get Confusion Rates Training
+**구문:** obj &lt;&lt; Get Confusion Rates Training
 
 **설명:** 훈련 데이터 집합에 대한 혼동 비율을 반환합니다.
 
@@ -2210,7 +2206,7 @@ Show( cr );
 
 ### Get Confusion Rates Validation
 
-**구문:** obj << Get Confusion Rates Validation
+**구문:** obj &lt;&lt; Get Confusion Rates Validation
 
 **설명:** 검증 데이터 집합에 대한 혼동 비율을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
@@ -2288,7 +2284,7 @@ Show( cr );
 
 ### Get Difference Formula
 
-**구문:** obj << Get Difference Formula
+**구문:** obj &lt;&lt; Get Difference Formula
 
 **설명:** 차이 계산식을 생성하기 위한 스크립트를 생성한 후 반환합니다.
 
@@ -2308,7 +2304,7 @@ obj << Get Difference Formula;
 
 ### Get Gen RSquare Test
 
-**구문:** obj << Get Gen RSquare Test
+**구문:** obj &lt;&lt; Get Gen RSquare Test
 
 **설명:** 테스트 데이터 집합에 대한 일반화 R²을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
@@ -2393,7 +2389,7 @@ Show( r );
 
 ### Get Gen RSquare Training
 
-**구문:** obj << Get Gen RSquare Training
+**구문:** obj &lt;&lt; Get Gen RSquare Training
 
 **설명:** 훈련 데이터 집합에 대한 일반화 R²을 반환합니다.
 
@@ -2470,7 +2466,7 @@ Show( r );
 
 ### Get Gen RSquare Validation
 
-**구문:** obj << Get Gen RSquare Validation
+**구문:** obj &lt;&lt; Get Gen RSquare Validation
 
 **설명:** 검증 데이터 집합에 대한 일반화 R²을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
@@ -2548,7 +2544,7 @@ Show( r );
 
 ### Get Measures
 
-**구문:** obj << Get Measures
+**구문:** obj &lt;&lt; Get Measures
 
 **설명:** 모형에서 적합 측도 요약을 반환합니다.
 
@@ -2570,7 +2566,7 @@ obj << Get Measures;
 
 ### Get Microseconds
 
-**구문:** obj << Get Microseconds
+**구문:** obj &lt;&lt; Get Microseconds
 
 **설명:** 분석을 완료하는 데 사용된 시간(마이크로초)을 반환합니다.
 
@@ -2591,7 +2587,7 @@ Show( time );
 
 ### Get Misclassification Rate Test
 
-**구문:** obj << Get Misclassification Rate Test
+**구문:** obj &lt;&lt; Get Misclassification Rate Test
 
 **설명:** 테스트 데이터 집합에 대한 오분류 비율을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
@@ -2676,7 +2672,7 @@ Show( rate );
 
 ### Get Misclassification Rate Training
 
-**구문:** obj << Get Misclassification Rate Training
+**구문:** obj &lt;&lt; Get Misclassification Rate Training
 
 **설명:** 훈련 데이터 집합에 대한 오분류 비율을 반환합니다.
 
@@ -2748,7 +2744,7 @@ Show( rate );
 
 ### Get Misclassification Rate Validation
 
-**구문:** obj << Get Misclassification Rate Validation
+**구문:** obj &lt;&lt; Get Misclassification Rate Validation
 
 **설명:** 검증 데이터 집합에 대한 오분류 비율을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
@@ -2827,7 +2823,7 @@ Show( rate );
 
 ### Get Precision Recall Area Test
 
-**구문:** obj << Get Precision Recall Area Test
+**구문:** obj &lt;&lt; Get Precision Recall Area Test
 
 **설명:** 테스트 데이터 집합에 대한 정밀도-재현율 곡선 아래 면적을 반환합니다. 면적을 계산하려면 정밀도-재현율 곡선이 표시되어 있어야 합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
@@ -2891,7 +2887,7 @@ Show( area );
 
 ### Get Precision Recall Area Training
 
-**구문:** obj << Get Precision Recall Area Training
+**구문:** obj &lt;&lt; Get Precision Recall Area Training
 
 **설명:** 훈련 데이터 집합에 대한 정밀도-재현율 곡선 아래 면적을 반환합니다. 면적을 계산하려면 정밀도-재현율 곡선이 표시되어 있어야 합니다.
 
@@ -2951,7 +2947,7 @@ Show( area );
 
 ### Get Precision Recall Area Validation
 
-**구문:** obj << Get Precision Recall Area Validation
+**구문:** obj &lt;&lt; Get Precision Recall Area Validation
 
 **설명:** 검증 데이터 집합에 대한 정밀도-재현율 곡선 아래 면적을 반환합니다. 면적을 계산하려면 정밀도-재현율 곡선이 표시되어 있어야 합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
@@ -3012,7 +3008,7 @@ Show( area );
 
 ### Get Prediction Formula
 
-**구문:** obj << Get Prediction Formula
+**구문:** obj &lt;&lt; Get Prediction Formula
 
 **설명:** 예측 계산식 열을 생성하는 스크립트를 생성하여 반환합니다.
 
@@ -3032,7 +3028,7 @@ obj << Get Prediction Formula;
 
 ### Get RMS Error Test
 
-**구문:** obj << Get RMS Error Test
+**구문:** obj &lt;&lt; Get RMS Error Test
 
 **설명:** 테스트 오차에 대한 평균 제곱의 제곱근을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
@@ -3053,7 +3049,7 @@ Show( rms );
 
 ### Get RMS Error Training
 
-**구문:** obj << Get RMS Error Training
+**구문:** obj &lt;&lt; Get RMS Error Training
 
 **설명:** 훈련 오차에 대한 평균 제곱의 제곱근을 반환합니다.
 
@@ -3074,7 +3070,7 @@ Show( rms );
 
 ### Get RMS Error Validation
 
-**구문:** obj << Get RMS Error Validation
+**구문:** obj &lt;&lt; Get RMS Error Validation
 
 **설명:** 검증 오차에 대한 평균 제곱의 제곱근을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
@@ -3095,7 +3091,7 @@ Show( rms );
 
 ### Get ROC Area Test
 
-**구문:** obj << Get ROC Area Test
+**구문:** obj &lt;&lt; Get ROC Area Test
 
 **설명:** 테스트 데이터의 ROC(Receiver Operator Characteristic) 곡선 아래 면적을 반환합니다. 면적을 계산하기 전에 ROC 곡선을 표시해야 합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
@@ -3159,7 +3155,7 @@ Show( area );
 
 ### Get ROC Area Training
 
-**구문:** obj << Get ROC Area Training
+**구문:** obj &lt;&lt; Get ROC Area Training
 
 **설명:** 훈련 데이터 집합의 ROC(Receiver Operator Characteristic) 곡선 아래 면적을 반환합니다. 면적을 계산하기 전에 ROC 곡선을 표시해야 합니다.
 
@@ -3219,7 +3215,7 @@ Show( area );
 
 ### Get ROC Area Validation
 
-**구문:** obj << Get ROC Area Validation
+**구문:** obj &lt;&lt; Get ROC Area Validation
 
 **설명:** 검증 데이터 집합의 ROC(Receiver Operator Characteristic) 곡선 아래 면적을 반환합니다. 면적을 계산하기 전에 ROC 곡선을 표시해야 합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
@@ -3280,7 +3276,7 @@ Show( area );
 
 ### Get RSquare Test
 
-**구문:** obj << Get RSquare Test
+**구문:** obj &lt;&lt; Get RSquare Test
 
 **설명:** 테스트 데이터 집합에 대한 R²을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
@@ -3301,7 +3297,7 @@ Show( r );
 
 ### Get RSquare Training
 
-**구문:** obj << Get RSquare Training
+**구문:** obj &lt;&lt; Get RSquare Training
 
 **설명:** 훈련 데이터 집합에 대한 R²을 반환합니다.
 
@@ -3322,7 +3318,7 @@ Show( r );
 
 ### Get RSquare Validation
 
-**구문:** obj << Get RSquare Validation
+**구문:** obj &lt;&lt; Get RSquare Validation
 
 **설명:** 검증 데이터 집합에 대한 R²을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
@@ -3343,7 +3339,7 @@ Show( r );
 
 ### Get Seconds
 
-**구문:** obj << Get Seconds
+**구문:** obj &lt;&lt; Get Seconds
 
 **설명:** 분석을 완료하는 데 사용된 시간(초)을 반환합니다.
 
@@ -3364,7 +3360,7 @@ Show( time );
 
 ### Get Tolerant Prediction Formula
 
-**구문:** obj << Get Tolerant Prediction Formula
+**구문:** obj &lt;&lt; Get Tolerant Prediction Formula
 
 **설명:** 허용 예측 계산식 열을 생성하기 위한 스크립트를 생성한 후 로그 창에 반환합니다.
 
@@ -3384,7 +3380,7 @@ obj << Get Tolerant Prediction Formula;
 
 ### Go
 
-**구문:** obj << Go
+**구문:** obj &lt;&lt; Go
 
 **설명:** K 폴드 교차 검증이 선택된 후 반복을 시작합니다. JMP Pro를 사용하는 경우 Go는 검증 열이 지정된 후 반복을 시작합니다.
 
@@ -3400,9 +3396,7 @@ obj << Go;
 
 ### Informative Missing
 
-**구문:** obj = Uplift(...Informative Missing( state=0|1 )...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Uplift(...Informative Missing( state=0|1 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 범주형 변수의 경우 결측값을 범주로 처리합니다. 연속형 변수의 경우 결측값을 낮음 또는 높음으로 처리합니다(둘 중 더 적합한 것으로). 기본적으로 설정되어 있습니다.
 
@@ -3459,7 +3453,7 @@ obj = dt << Uplift(
 
 ### Leaf Report
 
-**구문:** obj << Leaf Report( state=0|1 )
+**구문:** obj &lt;&lt; Leaf Report( state=0|1 )
 
 **설명:** 잎 노드의 평균 및 개수(연속형 반응) 또는 반응률 및 개수(범주형 반응)가 포함된 보고서를 표시하거나 숨깁니다.
 
@@ -3480,7 +3474,7 @@ obj << Leaf Report( 1 );
 
 ### Lock Columns
 
-**구문:** obj << Lock Columns( state=0|1, columns )
+**구문:** obj &lt;&lt; Lock Columns( state=0|1, columns )
 
 **설명:** 지정된 열을 잠가 분할에 사용되지 않도록 합니다.
 
@@ -3522,7 +3516,7 @@ obj << Lock Columns( 1 );
 
 ### Minimum Size Split
 
-**구문:** obj << Minimum Size Split( number )
+**구문:** obj &lt;&lt; Minimum Size Split( number )
 
 **설명:** 그룹을 분할할지 여부를 결정할 때의 최소 그룹 크기를 설정합니다.
 
@@ -3589,9 +3583,7 @@ obj = dt << Bootstrap Forest(
 
 ### Ordinal Restricts Order
 
-**구문:** obj = Uplift(...Ordinal Restricts Order( state=0|1 )...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Uplift(...Ordinal Restricts Order( state=0|1 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 순서형 열의 경우 순서를 유지하는 분할만 고려합니다. 기본적으로 설정되어 있습니다.
 
@@ -3644,7 +3636,7 @@ obj = dt << Uplift(
 
 ### Plot Actual by Predicted
 
-**구문:** obj << Plot Actual by Predicted( state=0|1 )
+**구문:** obj &lt;&lt; Plot Actual by Predicted( state=0|1 )
 
 **설명:** X 축에 예측값이 있고 Y 축에 실제값이 있는 훈련 데이터를 사용하여 그림을 표시하거나 숨깁니다.
 
@@ -3663,7 +3655,7 @@ obj << Plot Actual By Predicted;
 
 ### Profiler
 
-**구문:** obj << Profiler( state=0|1 )
+**구문:** obj &lt;&lt; Profiler( state=0|1 )
 
 **설명:** 예측 방정식을 한 번에 한 요인씩 분할하여 시각적으로 탐색하는 데 사용되는 예측 프로파일러를 표시하거나 숨깁니다. 예측 프로파일러에는 최적화를 위한 기능이 포함되어 있습니다.
 
@@ -3683,7 +3675,7 @@ obj << Profiler( 1 );
 
 ### Prune Worst
 
-**구문:** obj << Prune Worst
+**구문:** obj &lt;&lt; Prune Worst
 
 **설명:** 최소 판별 능력이 있는 최종 분할을 제거합니다.
 
@@ -3705,7 +3697,7 @@ obj << Prune Worst;
 
 ### Publish Difference Formula
 
-**구문:** obj << Publish Difference Formula
+**구문:** obj &lt;&lt; Publish Difference Formula
 
 **설명:** 차이 계산식을 생성하여 계산식 저장소에 계산식 열 스크립트로 게시합니다.
 
@@ -3725,7 +3717,7 @@ obj << Publish Difference Formula;
 
 ### Publish Prediction Formula
 
-**구문:** obj << Publish Prediction Formula
+**구문:** obj &lt;&lt; Publish Prediction Formula
 
 **설명:** 예측 계산식을 생성하여 계산식 저장소 플랫폼에 계산식 열 스크립트로 저장합니다.
 
@@ -3745,7 +3737,7 @@ obj << Publish Prediction Formula;
 
 ### Publish Tolerant Prediction Formula
 
-**구문:** obj << Publish Tolerant Prediction Formula
+**구문:** obj &lt;&lt; Publish Tolerant Prediction Formula
 
 **설명:** 결측값이 있는 경우에도 예측하는 예측 계산식을 생성하여 계산식 저장소에 계산식 열 스크립트로 게시합니다.
 
@@ -3765,7 +3757,7 @@ obj << Publish Tolerant Prediction Formula;
 
 ### Save Difference
 
-**구문:** obj << Save Difference
+**구문:** obj &lt;&lt; Save Difference
 
 **설명:** 예측 처리 차이를 저장합니다.
 
@@ -3785,7 +3777,7 @@ obj << Save Difference;
 
 ### Save Difference Formula
 
-**구문:** obj << Save Difference Formula
+**구문:** obj &lt;&lt; Save Difference Formula
 
 **설명:** 예측 처리 차이와 함께 계산식 열을 저장합니다.
 
@@ -3805,7 +3797,7 @@ obj << Save Difference Formula;
 
 ### Save Leaf Label Formula
 
-**구문:** obj << Save Leaf Label Formula
+**구문:** obj &lt;&lt; Save Leaf Label Formula
 
 **설명:** 잎 라벨 계산식을 데이터 테이블의 새 열에 저장합니다.
 
@@ -3825,7 +3817,7 @@ obj << Save Leaf Label Formula;
 
 ### Save Leaf Labels
 
-**구문:** obj << Save Leaf Labels
+**구문:** obj &lt;&lt; Save Leaf Labels
 
 **설명:** 잎 라벨을 데이터 테이블의 새 열에 저장합니다.
 
@@ -3845,7 +3837,7 @@ obj << Save Leaf Labels;
 
 ### Save Leaf Number Formula
 
-**구문:** obj << Save Leaf Number Formula
+**구문:** obj &lt;&lt; Save Leaf Number Formula
 
 **설명:** 잎 번호 계산식을 데이터 테이블의 새 열에 저장합니다.
 
@@ -3865,7 +3857,7 @@ obj << Save Leaf Number Formula;
 
 ### Save Leaf Numbers
 
-**구문:** obj << Save Leaf Numbers
+**구문:** obj &lt;&lt; Save Leaf Numbers
 
 **설명:** 잎 번호를 데이터 테이블의 새 열에 저장합니다.
 
@@ -3885,7 +3877,7 @@ obj << Save Leaf Numbers;
 
 ### Save Predicteds
 
-**구문:** obj << Save Predicteds
+**구문:** obj &lt;&lt; Save Predicteds
 
 **설명:** 예측값을 데이터 테이블의 새 열에 저장합니다.
 
@@ -3905,7 +3897,7 @@ obj << Save Predicteds;
 
 ### Save Prediction Formula
 
-**구문:** obj << Save Prediction Formula
+**구문:** obj &lt;&lt; Save Prediction Formula
 
 **설명:** 예측 계산식을 데이터 테이블의 새 열에 저장합니다.
 
@@ -3925,7 +3917,7 @@ obj << Save Prediction Formula;
 
 ### Save Residuals
 
-**구문:** obj << Save Residuals
+**구문:** obj &lt;&lt; Save Residuals
 
 **설명:** 잔차를 데이터 테이블의 새 열에 저장합니다.
 
@@ -3945,7 +3937,7 @@ obj << Save Residuals;
 
 ### Save Tolerant Prediction Formula
 
-**구문:** obj << Save Tolerant Prediction Formula
+**구문:** obj &lt;&lt; Save Tolerant Prediction Formula
 
 **설명:** 데이터 테이블의 새 열에 결측값이 있는 경우에도 예측하는 계산식을 저장합니다.
 
@@ -3965,7 +3957,7 @@ obj << Save Tolerant Prediction Formula;
 
 ### Set Random Seed
 
-**구문:** obj << Set Random Seed( number )
+**구문:** obj &lt;&lt; Set Random Seed( number )
 
 **설명:** 이후 플랫폼 실행에 대한 결과를 재현하는 데 사용할 난수 시드값을 지정합니다.
 
@@ -4032,7 +4024,7 @@ obj = dt << Uplift(
 
 ### Show Fit Details
 
-**구문:** obj << Show Fit Details( state=0|1 )
+**구문:** obj &lt;&lt; Show Fit Details( state=0|1 )
 
 **설명:** 보고서를 모든 측정값에 대한 정의, 오분류 비율 및 혼동 행렬과 함께 표시하거나 숨깁니다.
 
@@ -4053,7 +4045,7 @@ obj << Show Fit Details( 1 );
 
 ### Show Graph
 
-**구문:** obj << Show Graph( state=0|1 )
+**구문:** obj &lt;&lt; Show Graph( state=0|1 )
 
 **설명:** 분할 그래프를 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -4075,7 +4067,7 @@ obj << ShowGraph( 1 );
 
 ### Show Points
 
-**구문:** obj << Show Points( state=0|1 )
+**구문:** obj &lt;&lt; Show Points( state=0|1 )
 
 **설명:** 분할 그래프에 점(1 또는 on) 또는 색상 패널(0 또는 off)을 표시합니다. 기본적으로 설정되어 있습니다.
 
@@ -4097,7 +4089,7 @@ obj << ShowPoints( 1 );
 
 ### Show Split Candidates
 
-**구문:** obj << Show Split Candidates( state=0|1 )
+**구문:** obj &lt;&lt; Show Split Candidates( state=0|1 )
 
 **설명:** 최종 분할에서 후보 보고서를 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -4118,7 +4110,7 @@ obj << Show Split Candidates( 1 );
 
 ### Show Split Stats
 
-**구문:** obj << Show Split Stats( state=0|1 )
+**구문:** obj &lt;&lt; Show Split Stats( state=0|1 )
 
 **설명:** 개수 및 분할 통계량을 표시하거나 숨깁니다. 표시된 통계량은 G² 또는 평균과 표준편차를 포함합니다. 기본적으로 설정되어 있습니다.
 
@@ -4140,7 +4132,7 @@ obj << Show Split Stats( 1 );
 
 ### Show Tree
 
-**구문:** obj << Show Tree( state=0|1 )
+**구문:** obj &lt;&lt; Show Tree( state=0|1 )
 
 **설명:** 분할 정보와 함께 트리 구조를 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -4160,7 +4152,7 @@ obj << ShowTree( 1 );
 
 ### Small Tree View
 
-**구문:** obj << Small Tree View( state=0|1 )
+**구문:** obj &lt;&lt; Small Tree View( state=0|1 )
 
 **설명:** 분할 그래프 오른쪽에 소형 버전의 분할 트리를 표시하거나 숨깁니다.
 
@@ -4180,7 +4172,7 @@ obj << Small Tree View( 1 );
 
 ### Sort Split Candidates
 
-**구문:** obj << Sort Split Candidates( state=0|1 )
+**구문:** obj &lt;&lt; Sort Split Candidates( state=0|1 )
 
 **설명:** 유의도를 기준으로 후보를 정렬합니다.
 
@@ -4202,7 +4194,7 @@ obj << Sort Split Candidates;
 
 ### Split Best
 
-**구문:** obj << Split Best( <number of splits> )
+**구문:** obj &lt;&lt; Split Best( &lt;number of splits&gt; )
 
 **설명:** 트리를 최적 분할 지점에서 분할합니다.
 
@@ -4238,7 +4230,7 @@ obj << Split Best( 2 );
 
 ### Split History
 
-**구문:** obj << Split History( state=0|1 )
+**구문:** obj &lt;&lt; Split History( state=0|1 )
 
 **설명:** 각 분할을 X 축에 나타내고 모형에 대한 해당 R² 값을 Y 축에 나타내는 그래프를 표시하거나 숨깁니다.
 
@@ -4274,7 +4266,7 @@ obj << Split History;
 
 ### Uplift Graph
 
-**구문:** obj << Uplift Graph( state=0|1 )
+**구문:** obj &lt;&lt; Uplift Graph( state=0|1 )
 
 **설명:** 정렬된 종점 잎 간에 업리프트를 표시합니다.
 
@@ -4369,9 +4361,7 @@ obj = dt << Uplift(
 
 ### Validation Portion
 
-**구문:** obj = Uplift(...Validation Portion( fraction=0 )...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Uplift(...Validation Portion( fraction=0 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 무작위로 행을 선택하여 검증 데이터 집합을 구성합니다. 각 행이 선택될 확률은 p(분수)입니다. 기본값은 "0"입니다.
 

@@ -2,11 +2,9 @@
 
 
 
-## Functions
-
 ### Alignment Cell Box
 
-**Syntax:** y = Alignment Cell Box( row, col, nRow, nCol, <Sides(left+2*top+4*right+8*bottom=15)> <RowSpan(nRow matrix)> <ColSpan(nCol matrix)>, matrix or list of strings )
+**Syntax:** y = Alignment Cell Box( row, col, nRow, nCol, &lt;Sides(left+2*top+4*right+8*bottom=15)&gt; &lt;RowSpan(nRow matrix)&gt; &lt;ColSpan(nCol matrix)&gt;, matrix or list of strings )
 
 **Description:** Returns a reference to a display box that contains the row (or column) contents that are contained inside of an Alignment Grid Box.
 
@@ -122,7 +120,7 @@ ashape = Alpha Shape( triang );
 
 ### Border Box
 
-**Syntax:** y = Border Box( <Left( pix )>, <Right( pix )>, <Top( pix )>, <Bottom( pix )>, <Sides( 0 )>, displayBoxArg )
+**Syntax:** y = Border Box( &lt;Left( pix )&gt;, &lt;Right( pix )&gt;, &lt;Top( pix )&gt;, &lt;Bottom( pix )&gt;, &lt;Sides( 0 )&gt;, displayBoxArg )
 
 **Description:** Returns a display box to add space around the argument display box.
 
@@ -142,7 +140,7 @@ New Window( "Example",
 
 ### Box Plot Seg
 
-**Syntax:** b = Box Plot Seg(<data>, <frequency>, <weight>, <vertical=0|1>)
+**Syntax:** b = Box Plot Seg(&lt;data&gt;, &lt;frequency&gt;, &lt;weight&gt;, &lt;vertical=0|1&gt;)
 
 **Description:** Returns a display seg representing a box plot based on the passed in x and y values.
 
@@ -159,7 +157,7 @@ seg = (g[FrameBox( 1 )] << Find Seg( "Box Plot Seg" ));
 
 ### Busy Light
 
-**Syntax:** y = Busy Light( < <<Automatic(0|1)>, <Size(x, y)>, < <<Disable> )
+**Syntax:** y = Busy Light( &lt; &lt;&lt;Automatic(0|1)&gt;, &lt;Size(x, y)&gt;, &lt; &lt;&lt;Disable&gt; )
 
 **Description:** Creates a rotating image to indicate a busy process.
 
@@ -198,7 +196,7 @@ New Window( "Calendar Box Example", Calendar Box() );
 
 ### Check Box
 
-**Syntax:** y = Check Box( {item, ...}, <script> )
+**Syntax:** y = Check Box( {item, ...}, &lt;script&gt; )
 
 **Description:** Returns a display box to show one or more check boxes.
 
@@ -257,7 +255,7 @@ dt = New Window( "Example",
 
 ### Col List Box
 
-**Syntax:** y = Col List Box( <Data Table( name )>, <all>|<character|numeric>, <width( pix )>, <grouped>, <maxSelected( n )>, <nlines( n )>, <MaxItems( n )>, <MinItems( n )>, <onChange( expr )>, < <<Modeling Type({"Any","Continuous","Nominal","Ordinal","Multiple Response","Unstructured Text","Vector","None","Row State"}) >, < << Set Data Type(Any|Numeric|Character)>, <script> )
+**Syntax:** y = Col List Box( &lt;Data Table( name )&gt;, &lt;all&gt;|&lt;character|numeric&gt;, &lt;width( pix )&gt;, &lt;grouped&gt;, &lt;maxSelected( n )&gt;, &lt;nlines( n )&gt;, &lt;MaxItems( n )&gt;, &lt;MinItems( n )&gt;, &lt;onChange( expr )&gt;, &lt; &lt;&lt;Modeling Type({"Any","Continuous","Nominal","Ordinal","Multiple Response","Unstructured Text","Vector","None","Row State"}) &gt;, &lt; &lt;&lt; Set Data Type(Any|Numeric|Character)&gt;, &lt;script&gt; )
 
 **Description:** Returns a display box to show list box to select data table columns. Use the <<Modeling Type message to allow specialty modeling types or to restrict the types allowed. The default value of "Any" will allow any column with a classic modeling type ("Continuous", "Nominal", "Ordinal").
 
@@ -323,7 +321,7 @@ New Window( "test",
 
 ### Column Dialog
 
-**Syntax:** y = Column Dialog( <var = ColList("Label", <Min Col(min)>, <Max Col(max)>, <Width(w)>, <Data Type("Numeric"|"Character"|"Any")>, <Modeling Type({<"Continuous">, <"Nominal">, <"Ordinal">, <"None">, <"Multiple Response">, <"Unstructured Text">, <"Vector">})> )>, <var=EditText("string")>, <var=EditNumber(num)>, <var=Check Box( "Text", 0|1)>, <var=RadioButtons( "a", "b" )>, <var=Combo Box("choice1", ...)>, <HList(box, ...)>, <VList(box, ...)>, <LineUp(ncol, box, ...)>, <Text Box("string")>, <Window Title("title")>, <Window Icon("icon string")>, <Dialog Description("description")>, <Recall(script)>, <Help Script(script)>)
+**Syntax:** y = Column Dialog( &lt;var = ColList("Label", &lt;Min Col(min)&gt;, &lt;Max Col(max)&gt;, &lt;Width(w)&gt;, &lt;Data Type("Numeric"|"Character"|"Any")&gt;, &lt;Modeling Type({&lt;"Continuous"&gt;, &lt;"Nominal"&gt;, &lt;"Ordinal"&gt;, &lt;"None"&gt;, &lt;"Multiple Response"&gt;, &lt;"Unstructured Text"&gt;, &lt;"Vector"&gt;})&gt; )&gt;, &lt;var=EditText("string")&gt;, &lt;var=EditNumber(num)&gt;, &lt;var=Check Box( "Text", 0|1)&gt;, &lt;var=RadioButtons( "a", "b" )&gt;, &lt;var=Combo Box("choice1", ...)&gt;, &lt;HList(box, ...)&gt;, &lt;VList(box, ...)&gt;, &lt;LineUp(ncol, box, ...)&gt;, &lt;Text Box("string")&gt;, &lt;Window Title("title")&gt;, &lt;Window Icon("icon string")&gt;, &lt;Dialog Description("description")&gt;, &lt;Recall(script)&gt;, &lt;Help Script(script)&gt;)
 
 **Description:** Prompts the user with a modal window with fields to select columns of a data table. The specification can include several types of input boxes as well as container boxes to organize the window.
 
@@ -359,7 +357,7 @@ Column Dialog(
 
 ### Combo Box
 
-**Syntax:** y = Combo Box( {item <( tipstr )>, ...}, <script> )
+**Syntax:** y = Combo Box( {item &lt;( tipstr )&gt;, ...}, &lt;script&gt; )
 
 **Description:** Returns a display box to show a combo box with a popup menu. Each item in the combo box can have an optional tooltip that is specified as a string inside of parentheses following the item text string.
 
@@ -393,7 +391,7 @@ New Window( "Example",
 
 ### Contour Seg
 
-**Syntax:** me = Contour Seg( Triangulation, [ levels ], < zColor([colors], <Cycle Colors|Interpolate Colors>) >, < Transparency([] | t) >
+**Syntax:** me = Contour Seg( Triangulation, [ levels ], &lt; zColor([colors], &lt;Cycle Colors|Interpolate Colors&gt;) &gt;, &lt; Transparency([] | t) &gt;
 
 **Description:** Returns a display seg representing contours of a Triangulation.  Optional colors can be specified for each level as a matrix or list.  The transparency can be specified as a number or matrix.
 
@@ -420,7 +418,7 @@ New Window( "Contour Seg Example",
 
 ### Current Report
 
-**Syntax:** y = Current Report( <Project(title|index|box|window)> )
+**Syntax:** y = Current Report( &lt;Project(title|index|box|window)&gt; )
 
 **Description:** Returns a display box reference to the current report in the current project (or no project when not running the script in a project).
 
@@ -437,7 +435,7 @@ Current Report();
 
 ### Current Window
 
-**Syntax:** y = Current Window( <Project(title|index|box|window)> )
+**Syntax:** y = Current Window( &lt;Project(title|index|box|window)&gt; )
 
 **Description:** Returns a reference to the current window in the current project (or no project when not running the script in a project).
 
@@ -534,7 +532,7 @@ New Window( "Selection Filter",
 
 ### Data Grid Box
 
-**Syntax:** y = Data Grid Box(  )
+**Syntax:** y = Data Grid Box( )
 
 **Description:** Returns a display box that can hold a data table.
 
@@ -694,7 +692,7 @@ New Window( "Example",
 
 ### Expr As Picture
 
-**Syntax:** y = Expr As Picture( expr( ... ), <width in pixels>, <Max Matrix Size( dim )> )
+**Syntax:** y = Expr As Picture( expr( ... ), &lt;width in pixels&gt;, &lt;Max Matrix Size( dim )&gt; )
 
 **Description:** Returns an image containing the specified expression as a formula picture. The default width is 600 pixels and the default max matrix size is 100.
 
@@ -714,7 +712,7 @@ New Window( "Example",
 
 ### Filter Col Selector
 
-**Syntax:** y = Filter Col Selector(<Data Table(name)>, <width(pixels)>, <nlines(n)>, <script>, <onchange(expr)>)
+**Syntax:** y = Filter Col Selector(&lt;Data Table(name)&gt;, &lt;width(pixels)&gt;, &lt;nlines(n)&gt;, &lt;script&gt;, &lt;onchange(expr)&gt;)
 
 **Description:** Returns a display box that contains a list of items. Control allows column filtering.
 
@@ -774,7 +772,7 @@ Print( Get Project List() << Get Window Title() );
 
 ### Get Window
 
-**Syntax:** window = Get Window( <Project(title|index|box|window)>, <Type(string)>, title|index|box )
+**Syntax:** window = Get Window( &lt;Project(title|index|box|window)&gt;, &lt;Type(string)&gt;, title|index|box )
 
 **Description:** Returns a reference to a specific open window by title, index, or box.
 
@@ -814,7 +812,7 @@ window = Get Window( Project( project ), "Big Class" );
 
 ### Get Window List
 
-**Syntax:** windowList = Get Window List( <Project(title|index|box|window)>, <Type(string)> )
+**Syntax:** windowList = Get Window List( &lt;Project(title|index|box|window)&gt;, &lt;Type(string)&gt; )
 
 **Description:** Returns a list of all open windows.
 
@@ -950,7 +948,7 @@ New Window( "Example",
 
 ### H Center Box
 
-**Syntax:** y = H Center Box( <childbox> )
+**Syntax:** y = H Center Box( &lt;childbox&gt; )
 
 **Description:** Returns a display box with the childbox display box argument centered in the horizontal space defined by the maximum size of that child and all the other siblings of the center box.
 
@@ -975,7 +973,7 @@ New Window( "test",
 
 ### H List Box
 
-**Syntax:** y = H List Box( <Align( center|bottom )>, displayBox, ... )
+**Syntax:** y = H List Box( &lt;Align( center|bottom )&gt;, displayBox, ... )
 
 **Description:** Returns a display box that arranges the display boxes provided by the arguments in a horizontal layout. The <<Hold message tells the sheet to own the report(s) that will be excerpted. The optional Align argument allows for bottom or center alignment of the contents inside the display box.
 
@@ -990,7 +988,7 @@ New Window( "Example",
 
 ### H Scroll Box
 
-**Syntax:** y = H Scroll Box( <Size( x )>, displayBox )
+**Syntax:** y = H Scroll Box( &lt;Size( x )&gt;, displayBox )
 
 **Description:** Returns a display box that positions a larger child box using a horizontal scroll bar.
 
@@ -1017,7 +1015,7 @@ New Window( "Example",
 
 ### H Sheet Box
 
-**Syntax:** y = H Sheet Box( <<Hold( rpt ), displayBox, ... )
+**Syntax:** y = H Sheet Box( &lt;&lt;Hold( rpt ), displayBox, ... )
 
 **Description:** Returns a display box that arranges the display boxes provided by the arguments in a horizontal layout. The <<Hold message tells the sheet to own the report(s) that will be excerpted. The optional Align argument allows for right or center alignment of the contents inside the display box.
 
@@ -1065,7 +1063,7 @@ New Window( "Example",
 
 ### H Splitter Box
 
-**Syntax:** y = H Splitter Box( <Size(x,y)>, displayBox, ... )
+**Syntax:** y = H Splitter Box( &lt;Size(x,y)&gt;, displayBox, ... )
 
 **Description:** Returns a display box that arranges other display boxes horizontally, with interactive control of sizes. Child sizes are specified as a proportion of the width or height of the Splitter Box. The optional Size argument is only used for the top-most Splitter Box; lower level boxes are sized like any other child box.
 
@@ -1116,7 +1114,7 @@ New Window( "Example",
 
 ### Hist Seg
 
-**Syntax:** b = Hist Seg([data], <[freq data]>,<[weight data]>, <vertical=0|1>, <Row States()>)
+**Syntax:** b = Hist Seg([data], &lt;[freq data]&gt;,&lt;[weight data]&gt;, &lt;vertical=0|1&gt;, &lt;Row States()&gt;)
 
 **Description:** Returns a hist seg
 
@@ -1195,7 +1193,7 @@ frenchBox << Set( 1 );
 
 ### If Seg
 
-**Syntax:** seg = If Seg(<state=0|1>)
+**Syntax:** seg = If Seg(&lt;state=0|1&gt;)
 
 **Description:** Returns a display seg that shows or hides display seg children.
 
@@ -1256,7 +1254,7 @@ New Window( "Distribution of Height",
 
 ### Line Seg
 
-**Syntax:** ls = Line Seg(x values, y values, <Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) >, < Sizes( s ) > )>)
+**Syntax:** ls = Line Seg(x values, y values, &lt;Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) &gt;, &lt; Sizes( s ) &gt; )&gt;)
 
 **Description:** Returns a display seg with lines connecting all of the x and y values.
 
@@ -1321,7 +1319,7 @@ seg = (frame << Find Seg( "Lines Seg" ));
 
 ### Lineup Box
 
-**Syntax:** y = Lineup Box( <NCol( nc )>, <Spacing( pixels, <vspace> )>, displayBoxArgs, ... )
+**Syntax:** y = Lineup Box( &lt;NCol( nc )&gt;, &lt;Spacing( pixels, &lt;vspace&gt; )&gt;, displayBoxArgs, ... )
 
 **Description:** Returns a display box to show an alignment of boxes in nc columns. The optional Spacing argument specifies the horizontal and vertical space around the display boxes. If the vspace argument is used, vspace is the vertical space and pixels is the horizontal space.
 
@@ -1341,7 +1339,7 @@ New Window( "Example",
 
 ### Lineup Ruler Box
 
-**Syntax:** y = Lineup Box( <Widths( {width1, width2, ...} )>, displayBoxArgs, ... )
+**Syntax:** y = Lineup Box( &lt;Widths( {width1, width2, ...} )&gt;, displayBoxArgs, ... )
 
 **Description:** Returns a display box that sets the column widths of the Lineup Boxes that it contains.
 
@@ -1377,7 +1375,7 @@ New Window( "Lineup Ruler",
 
 ### List Box
 
-**Syntax:** y = List Box( {item, ...}, <width( pixels )>, <maxSelected( 9999 )>, <nlines( 12 )>, <script> )
+**Syntax:** y = List Box( {item, ...}, &lt;width( pixels )&gt;, &lt;maxSelected( 9999 )&gt;, &lt;nlines( 12 )&gt;, &lt;script&gt; )
 
 **Description:** Returns a display box to show a list box of selection items. If item itself is a two-item list containing the item name and a string specifying a modeling type or sorting order, such as "Ordinal" or "Ascending", the appropriate icon will show up next to that item in the list box.
 
@@ -1408,7 +1406,7 @@ New Window( "Example",
 
 ### Marker Seg
 
-**Syntax:** me = Marker Seg( x, y, < Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) >, < Sizes( s ) > )
+**Syntax:** me = Marker Seg( x, y, &lt; Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) &gt;, &lt; Sizes( s ) &gt; )
 
 **Description:** Returns a display seg with markers for all of the x and y values.
 
@@ -1526,7 +1524,7 @@ New Window( "Marker Seg Example",
 
 ### Matrix Box
 
-**Syntax:** y = Matrix Box( matrix, < <<Column Names( "c1", "c2", ... )>, < <<Row Names( "r1", "r2", ... )> )
+**Syntax:** y = Matrix Box( matrix, &lt; &lt;&lt;Column Names( "c1", "c2", ... )&gt;, &lt; &lt;&lt;Row Names( "r1", "r2", ... )&gt; )
 
 **Description:** Returns a display box to show a matrix of numbers.
 
@@ -1589,7 +1587,7 @@ New Window( "Example",
 
 ### Move to Project
 
-**Syntax:** Move to Project(<Source(project)>, <Destination(project)>, <Windows({list of windows to move})>)
+**Syntax:** Move to Project(&lt;Source(project)&gt;, &lt;Destination(project)&gt;, &lt;Windows({list of windows to move})&gt;)
 
 **Description:** Moves one or more windows into a project, out of a project, or between projects. Only one of Source and Destination must be specified; the other will default to the current project. (Use only Source to move windows into the current project, and only Destination to move windows out of it.) A data table window will be moved together with its dependent reports, though only one need be specified in the Windows argument. If omitted, the Windows argument defaults to all open windows in the source project.
 
@@ -1620,17 +1618,7 @@ project << Close Window();
 
 ### New Image
 
-**Syntax:** img = New Image()
-
-img = New Image( width, height )
-
-img = New Image( pathname )
-
-img = New Image( picture )
-
-img = New Image( matrix of JSL color pixels ) 
-
-img = New Image( rgb|r|g|rgba, {i, i, i} )
+**Syntax:** img = New Image()img = New Image( width, height )img = New Image( pathname )img = New Image( picture )img = New Image( matrix of JSL color pixels ) img = New Image( rgb|r|g|rgba, {i, i, i} )
 
 **Description:** Returns a new image which can then be edited through JSL commands. If a path is specified to an existing image file, the file should be a .JPG, .PNG, .GIF, .BMP or .TIF file.
 
@@ -1674,7 +1662,7 @@ New Window( "image", image3 );
 
 ### New Project
 
-**Syntax:** project = new Project( <project messages> )
+**Syntax:** project = new Project( &lt;project messages&gt; )
 
 **Description:** Creates a new empty project window. One or more project messages can be included as arguments in order to create a project in one step.
 
@@ -1760,7 +1748,7 @@ project = New Project(
 
 ### New Window
 
-**Syntax:** w = New Window( title, < <<Type("Report" | "Dialog" | "Modal Dialog" | "Journal" | "Launcher" | "Script")>, < << Return Result>, < << On Open(expr | function | method)>, < << On Close(expr | function | method)>, < <<On Validate(expr | function | method)>, < <<Show Menu(0 | 1)>, < <<Show Toolbars(0 | 1)>, < <<Suppress AutoHide(0 | 1)>, < <<Window View("Visible" | "Invisible")>, < <<Language("C" | "JavaScript" | "JSL" | "JSON" | "Python" | "R" | "SAS"  | "SQL" | "Text" | "XML")>, < <<Size(x, y)>, displayBox | script)
+**Syntax:** w = New Window( title, &lt; &lt;&lt;Type("Report" | "Dialog" | "Modal Dialog" | "Journal" | "Launcher" | "Script")&gt;, &lt; &lt;&lt; Return Result&gt;, &lt; &lt;&lt; On Open(expr | function | method)&gt;, &lt; &lt;&lt; On Close(expr | function | method)&gt;, &lt; &lt;&lt;On Validate(expr | function | method)&gt;, &lt; &lt;&lt;Show Menu(0 | 1)&gt;, &lt; &lt;&lt;Show Toolbars(0 | 1)&gt;, &lt; &lt;&lt;Suppress AutoHide(0 | 1)&gt;, &lt; &lt;&lt;Window View("Visible" | "Invisible")&gt;, &lt; &lt;&lt;Language("C" | "JavaScript" | "JSL" | "JSON" | "Python" | "R" | "SAS" | "SQL" | "Text" | "XML")&gt;, &lt; &lt;&lt;Size(x, y)&gt;, displayBox | script)
 
 **Description:** Creates a window containing the specified display box or script. A report window is created by default, unless the Type option is specified. A window of Type("Modal Dialog") halts execution until the dialog is responded to. On Open, On Validate, and Return Result are available only for modal windows. On Open() evaluates its expression, function, or class method when the window is created. If On Close() returns false, the window is prevented from closing. On Validate() runs its expression, function, or class method when the OK button is clicked. If the expression returns true, the window is closed. Otherwise, the window remains open. Return Result changes the window&apos;s return value when it closes to match that of the deprecated Dialog() function. For window types that support toolbars, use Show Toolbars to specify changes from the default behavior. The options Show Menu and Suppress AutoHide are Windows only. The Window View("Invisible") option can be used for any window other than a Modal Dialog. A window of Type("Script") creates a JSL document unless the <<Language option is specified.
 
@@ -1945,7 +1933,7 @@ New Window( "Example",
 
 ### Number Edit Box
 
-**Syntax:** y = Number Edit Box( initValue, <width> )
+**Syntax:** y = Number Edit Box( initValue, &lt;width&gt; )
 
 **Description:** Returns an edit box that accepts only numeric input. Specify the optional width argument to set the width of the box in characters.
 
@@ -1959,7 +1947,7 @@ x = neb << get;
 
 ### Outline Box
 
-**Syntax:** y = Outline Box( title, <command script pairs list>, displayBox, ... )
+**Syntax:** y = Outline Box( title, &lt;command script pairs list&gt;, displayBox, ... )
 
 **Description:** Creates an outline element in the report, returning the display box reference. To include a menu in the outline node, specify the command script pairs list, a list specifying menu commands and associated scripts.
 
@@ -2051,7 +2039,7 @@ New Window( "Example", Picture Box( pict ) );
 
 ### Pie Seg
 
-**Syntax:** ps = Pie Seg(<{ xorigin, yorigin }>, <radius>, <style("pie", "ring", "coxcomb")>, values)
+**Syntax:** ps = Pie Seg(&lt;{ xorigin, yorigin }&gt;, &lt;radius&gt;, &lt;style("pie", "ring", "coxcomb")&gt;, values)
 
 **Description:** Creates a Pie Seg at the specified origin, with the specified radius, based on values specified in matrix format.
 
@@ -2154,7 +2142,7 @@ New Window( "Example",
 
 ### Radio Box
 
-**Syntax:** y = Radio Box( {item, ...}, <script> )
+**Syntax:** y = Radio Box( {item, ...}, &lt;script&gt; )
 
 **Description:** Returns a display box to show a set of radio buttons.
 
@@ -2257,7 +2245,7 @@ exScene << update;
 
 ### Script Box
 
-**Syntax:** y = Script Box( <s>, <"C" | "JavaScript" | "JSL" | "JSON" | "Python" | "R" | "SAS" | "SQL" | "Text" | "XML">, <width>, <height> )
+**Syntax:** y = Script Box( &lt;s&gt;, &lt;"C" | "JavaScript" | "JSL" | "JSON" | "Python" | "R" | "SAS" | "SQL" | "Text" | "XML"&gt;, &lt;width&gt;, &lt;height&gt; )
 
 **Description:** Returns a display box to edit a script. By default the editor has JSL syntax highlighting and behavior.
 
@@ -2285,7 +2273,7 @@ New Window( "This is a python script box", Script );
 
 ### Scroll Box
 
-**Syntax:** y = Scroll Box( <Size( x, y )>, displayBox )
+**Syntax:** y = Scroll Box( &lt;Size( x, y )&gt;, displayBox )
 
 **Description:** Returns a display box that positions a larger child box using scroll bars.
 
@@ -2332,7 +2320,7 @@ Clear Global Window Handler();
 
 ### Shape Seg
 
-**Syntax:** me = Shape Seg( {Path(<path>), ...}, < Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) > )
+**Syntax:** me = Shape Seg( {Path(&lt;path&gt;), ...}, &lt; Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) &gt; )
 
 **Description:** Returns a display seg with a collection of shapes.  Each shape draws a stroke along the given path if fill is 0, or paints the interior of the given path if fill is not 0. The path can be specified with an N x 3 matrix or with a text representation. A path matrix has three columns for x, y, and flags for each point in the path. The flag values are 0 for control, 1 for move, 2 for line segment, 3 for cubic Bézier segment, and are negative if the point also closes the path. Path text supports SVG syntax.
 
@@ -2400,7 +2388,7 @@ New Window( "Example",
 
 ### Slider Box
 
-**Syntax:** box = Slider Box(minValue, maxValue, variable, script, <set width(n)>, <rescale slider(minValue, maxValue)>)
+**Syntax:** box = Slider Box(minValue, maxValue, variable, script, &lt;set width(n)&gt;, &lt;rescale slider(minValue, maxValue)&gt;)
 
 **Description:** Returns a display box that shows a slider control that ranges from minValue to maxValue. As the slider&apos;s position changes, its value is placed into variable and the script is run.
 
@@ -2424,7 +2412,7 @@ New Window( "Example",
 
 ### Spacer Box
 
-**Syntax:** y = Spacer Box( <Size( x, y )>, <Color( c )>)
+**Syntax:** y = Spacer Box( &lt;Size( x, y )&gt;, &lt;Color( c )&gt;)
 
 **Description:** Returns a display box that can be used to maintain space between other display boxes or fill a cell in a Lineup Box. The Size arguments are specified in pixels, and the Color argument is any valid JSL color.
 
@@ -2445,7 +2433,7 @@ New Window( "Example",
 
 ### Spin Box
 
-**Syntax:** y = Spin Box( <script> )
+**Syntax:** y = Spin Box( &lt;script&gt; )
 
 **Description:** Returns a display box to show a button with up/down controls.  The script argument is invoked with an argument that indicates the direction of the arrow clicked (negative is down, positive is up).  A magnitude of 1 indicates a single click, while larger values can be used to indicate a repeating action.
 
@@ -2524,7 +2512,7 @@ New Window( "Example",
 
 ### Tab Page Box
 
-**Syntax:** y = Tab Page Box( <Title("string")>, <Tip(0|1)>,  <Closeable(0|1)>, <Icon("string")>, <Moveable(0|1)>, contents)
+**Syntax:** y = Tab Page Box( &lt;Title("string")&gt;, &lt;Tip(0|1)&gt;, &lt;Closeable(0|1)&gt;, &lt;Icon("string")&gt;, &lt;Moveable(0|1)&gt;, contents)
 
 **Description:** Returns a display box that that can be used in a Tab Box or as a stand-alone container with title. Recognized options include Title(string) to specify a title, Tip(string) to specify a tooltip, Closeable(0|1) to specify whether the page can be closed, Icon(string) to specify the icon, and Moveable(0|1) to specify whether the page can be moved.
 
@@ -2563,7 +2551,7 @@ New Window( "Example",
 
 ### Text Box
 
-**Syntax:** y = Text Box( text, <<Justify Text( strPos ), <<Set Wrap( width ) )
+**Syntax:** y = Text Box( text, &lt;&lt;Justify Text( strPos ), &lt;&lt;Set Wrap( width ) )
 
 **Description:** Constructs a display box that contains the text in the string argument text. The optional arguments are available to control the text justification or set the text wrap width. The argument for Justify Text should be a string containing left, right, or center.
 
@@ -2600,7 +2588,7 @@ New Window( "Justification Example",
 
 ### Text Edit Box
 
-**Syntax:** y = Text Edit Box( text, <<Password Style( bool ), <<Set Script( script ), <<Set Width( value ) )
+**Syntax:** y = Text Edit Box( text, &lt;&lt;Password Style( bool ), &lt;&lt;Set Script( script ), &lt;&lt;Set Width( value ) )
 
 **Description:** Constructs an editable box that contains the quoted string text, returning the display box reference. The optional arguments are available to control the display of the text, to attach a script to the text box, and to set the width in pixels of the text box. Specifying Set Width(-1) forces a resize to content. Note that a script can be attached to the text edit box either by adding the script as an optional argument or by sending the Set Script message.
 
@@ -2654,7 +2642,7 @@ If(
 
 ### Tree Box
 
-**Syntax:** tree = Tree Box( <{rootnodes}>, <Size( x, y )>, <Multiselect( 0|1 )> )
+**Syntax:** tree = Tree Box( &lt;{rootnodes}&gt;, &lt;Size( x, y )&gt;, &lt;Multiselect( 0|1 )&gt; )
 
 **Description:** Constructs a display box to show hierarchical information.
 
@@ -2680,7 +2668,7 @@ New Window( "TreeBox", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
 
 ### Tree Node
 
-**Syntax:** node = Tree Node( <label> )
+**Syntax:** node = Tree Node( &lt;label&gt; )
 
 **Description:** Constructs a tree node intended for display within a Tree Box.
 
@@ -2706,7 +2694,7 @@ New Window( "TreeBox Nodes", tree = Tree Box( {root1, root2}, Size( 300, 200 ) )
 
 ### Triangulation
 
-**Syntax:** triangulation = Triangulation( X(Column1, Column2), < Y(Column) > )
+**Syntax:** triangulation = Triangulation( X(Column1, Column2), &lt; Y(Column) &gt; )
 
 **Description:** Returns an object containing the Delaunay triangulation of the given point set. The optional Y will be averaged for duplicate points, and all points in the output will be unique.
 
@@ -2753,7 +2741,7 @@ New Window( "unlineup",
 
 ### V Center Box
 
-**Syntax:** y = V Center Box( <childbox> )
+**Syntax:** y = V Center Box( &lt;childbox&gt; )
 
 **Description:** Returns a display box with the childbox display box argument centered in the vertical space defined by the maximum size of that child and all the other siblings of the center box.
 
@@ -2778,7 +2766,7 @@ New Window( "test",
 
 ### V List Box
 
-**Syntax:** y = V List Box( <Align( center|right )>, displayBox, ... )
+**Syntax:** y = V List Box( &lt;Align( center|right )&gt;, displayBox, ... )
 
 **Description:** Returns a display box that arranges the display boxes provided by the arguments in a vertical layout. The <<Hold message tells the sheet to own the report(s) that will be excerpted. The optional Align argument allows for right or center alignment of the contents inside the display box.
 
@@ -2793,7 +2781,7 @@ New Window( "Example",
 
 ### V Scroll Box
 
-**Syntax:** y = V Scroll Box( <Size( y )>, displayBox )
+**Syntax:** y = V Scroll Box( &lt;Size( y )&gt;, displayBox )
 
 **Description:** Returns a display box that positions a larger child box using a vertical scroll bar.
 
@@ -2822,7 +2810,7 @@ New Window( "Example",
 
 ### V Sheet Box
 
-**Syntax:** y = V Sheet Box( <<Hold( rpt ), displayBox, ... )
+**Syntax:** y = V Sheet Box( &lt;&lt;Hold( rpt ), displayBox, ... )
 
 **Description:** Returns a display box that arranges the display boxes provided by the arguments in a vertical layout. The <<Hold message tells the sheet to own the report(s) that will be excerpted. The optional Align argument allows for right or center alignment of the contents inside the display box.
 
@@ -2870,7 +2858,7 @@ New Window( "Example",
 
 ### V Splitter Box
 
-**Syntax:** y = V Splitter Box( <Size(x,y)>, displayBox, ... )
+**Syntax:** y = V Splitter Box( &lt;Size(x,y)&gt;, displayBox, ... )
 
 **Description:** Returns a display box that arranges other display boxes vertically, with interactive control of sizes. Child sizes are specified as a proportion of the width or height of the Splitter Box. The optional Size argument is only used for the top-most Splitter Box; lower level boxes are sized like any other child box.
 
@@ -2916,7 +2904,7 @@ wb << Set Max Size( 10000, 10000 );
 
 ### Window
 
-**Syntax:** y = Window( <string|int> )
+**Syntax:** y = Window( &lt;string|int&gt; )
 
 **Description:** This function is deprecated and retained only for backward compatibility with existing scripts. For new scripts, use Get Window() or Get Window List().
 

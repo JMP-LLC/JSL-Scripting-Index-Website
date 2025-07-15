@@ -6,9 +6,7 @@
 
 ### Associative Array
 
-**構文:** y = Associative Array( {{key1, value1}, ...} );
-
-y = Associative Array( keys, values )
+**構文:** y = Associative Array( {{key1, value1}, ...} );y = Associative Array( keys, values )
 
 **説明:** 連想配列(「辞書」または「ハッシュマップ」ともいう)を作成する。引数を2つ指定する場合、keyおよびvalueとしてリスト、行列、またはデータテーブル列が指定できる。
 
@@ -25,7 +23,7 @@ ex << get contents;
 
 ### Contains
 
-**構文:** bool = AAobj << Contains( key | AAobj )
+**構文:** bool = AAobj &lt;&lt; Contains( key | AAobj )
 
 **説明:** キー、または、キーの集合が連想配列内にあるかどうかを調べる。単純な例については「アイテムを含む(Contains Item)」も参照のこと。
 
@@ -44,7 +42,7 @@ Local(
 
 ### Contains Item
 
-**構文:** bool = AAobj << Contains Item( key )
+**構文:** bool = AAobj &lt;&lt; Contains Item( key )
 
 **説明:** キーが連想配列内にあるかどうかを調べる。より機能性の高い「次を含む(Contains)」も参照のこと。
 
@@ -59,7 +57,7 @@ Local( {rhymes = ["mouse" => "house", "car" => "star", "orange" => ""]},
 
 ### First
 
-**構文:** key = AAobj << first
+**構文:** key = AAobj &lt;&lt; first
 
 **説明:** 連想配列の反復子
 
@@ -79,7 +77,7 @@ Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"], x, words = ""}
 
 ### Get Contents
 
-**構文:** list = AAObj << Get Contents
+**構文:** list = AAObj &lt;&lt; Get Contents
 
 **説明:** 連想配列の内容をリストとして戻す。
 
@@ -92,7 +90,7 @@ Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"]}, aa << Get Con
 
 ### Get Default Value
 
-**構文:** value = AAobj << Get Default Value()
+**構文:** value = AAobj &lt;&lt; Get Default Value()
 
 **説明:** 存在しないキーに対して連想配列が戻す値を戻す。
 
@@ -111,7 +109,7 @@ Local( {aa = [=> 99], v1, v2}, /* initial value used for non-existing key is 99 
 
 ### Get Keys
 
-**構文:** list = AAObj << Get Keys
+**構文:** list = AAObj &lt;&lt; Get Keys
 
 **説明:** 連想配列のキーをリストで戻す。
 
@@ -124,7 +122,7 @@ Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"]}, aa << Get Key
 
 ### Get Value
 
-**構文:** value = AAobj << Get Value( key )
+**構文:** value = AAobj &lt;&lt; Get Value( key )
 
 **説明:** 連想配列において、キーの下に保存された値を戻す。
 
@@ -139,7 +137,7 @@ Local( {prices = Associative Array( {{"pineapple", 1.25}, {"grape", .50}, {"oran
 
 ### Get Values
 
-**構文:** list = AAObj << Get Values
+**構文:** list = AAObj &lt;&lt; Get Values
 
 **説明:** 連想配列の値をリストで戻す。
 
@@ -152,7 +150,7 @@ Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"]}, aa << Get Val
 
 ### Insert
 
-**構文:** AAobj1 << Insert( AAobj2 | key,  { value } )
+**構文:** AAobj1 &lt;&lt; Insert( AAobj2 | key, { value } )
 
 **説明:** 連想配列を別の連想配列に挿入するか、連想配列のキーの下に値を保存する。単純な例については「アイテムを挿入(Insert Item)」も参照のこと。
 
@@ -168,7 +166,7 @@ Local( {decode = [".-" => "a", "-..." => "b"], others = ["..." => "s", "-.-." =>
 
 ### Insert Item
 
-**構文:** AAobj << Insert Item( key, value )
+**構文:** AAobj &lt;&lt; Insert Item( key, value )
 
 **説明:** 値を連想配列内のキーの下に保存する。より機能性の高い「挿入(Insert)」も参照のこと。
 
@@ -184,7 +182,7 @@ Local( {decode = [".-" => "a", "-..." => "b"]},
 
 ### Intersect
 
-**構文:** AAobj1 << Intersect( AAobj2 )
+**構文:** AAobj1 &lt;&lt; Intersect( AAobj2 )
 
 **説明:** 連想配列を、要素の集合として扱う。集合内の要素は値を1としなければならない(連想配列のデフォルト値は0である)。現在の集合は、メッセージで指定された集合との積集合によって置き換えられる。
 
@@ -231,7 +229,7 @@ dt << selectrows( desiredSelection << getkeys ); // males <= 12
 
 ### Next
 
-**構文:** key = AAobj << next( previous key )
+**構文:** key = AAobj &lt;&lt; next( previous key )
 
 **説明:** 連想配列の反復子
 
@@ -251,7 +249,7 @@ Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"], x, words = ""}
 
 ### Remove
 
-**構文:** AAobj1 << Remove( AAobj2 | key )
+**構文:** AAobj1 &lt;&lt; Remove( AAobj2 | key )
 
 **説明:** 連想配列からキーの集合またはキーを削除する。単純な例については「アイテムを削除(Remove Item)」も参照のこと。
 
@@ -267,7 +265,7 @@ Local( {primes = [2 => 1, 3 => 1, 4 => 1, 5 => 1, 6 => 1, 7 => 1, 8 => 1, 9 => 1
 
 ### Remove Item
 
-**構文:** AAobj << Remove Item( key )
+**構文:** AAobj &lt;&lt; Remove Item( key )
 
 **説明:** 連想配列からキーを削除する。より機能性の高い「削除(Remove)」も参照のこと。
 
@@ -299,7 +297,7 @@ Local(
 
 ### Set Default Value
 
-**構文:** AAobj << Set Default Value( value )
+**構文:** AAobj &lt;&lt; Set Default Value( value )
 
 **説明:** 存在しないキーに対して連想配列が戻す値を変更する。
 

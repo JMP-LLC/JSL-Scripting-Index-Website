@@ -6,7 +6,7 @@
 
 ### Action
 
-**構文:** obj << Action
+**構文:** obj &lt;&lt; Action
 
 **説明:** 評価する式を挿入するための、プラットフォーム内の汎用トラップドア。プラットフォームに一時的にディスプレイボックスおよびデータテーブルのコンテキストを設定する。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**構文:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**構文:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **説明:** 作成されたプリセットをオブジェクトに適用する。保存された設定に合わせてオプションとカスタマイズが更新される。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Copy Script
 
-**構文:** obj << Copy Script
+**構文:** obj &lt;&lt; Copy Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -94,7 +94,7 @@ obj << Copy Script;
 
 ### Get By Levels
 
-**構文:** obj << Get By Levels
+**構文:** obj &lt;&lt; Get By Levels
 
 **説明:** By列が指定されている場合、列名をキー、データ値を値とした連想配列を戻す。
 
@@ -111,7 +111,7 @@ biv << Get By Levels;
 
 ### Get Container
 
-**構文:** obj << Get Container
+**構文:** obj &lt;&lt; Get Container
 
 **説明:** オブジェクトのコンテンツを含んだコンテナボックスの参照を戻す。
 
@@ -166,7 +166,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**構文:** obj << Get Data Table
+**構文:** obj &lt;&lt; Get Data Table
 
 **説明:** データテーブルへの参照を戻す。
 
@@ -190,7 +190,7 @@ Show( N Rows( t ) );
 
 ### Get Script
 
-**構文:** obj << Get Script
+**構文:** obj &lt;&lt; Get Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -214,7 +214,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**構文:** obj << Get Script With Data Table
+**構文:** obj &lt;&lt; Get Script With Data Table
 
 **説明:** この分析を再現するスクリプト(JSL)をデータテーブルへの参照も含めて生成し、それを式として戻す。
 
@@ -238,7 +238,7 @@ Show( t );
 
 ### Get Timing
 
-**構文:** obj << Get Timing
+**構文:** obj &lt;&lt; Get Timing
 
 **説明:** プラットフォームの起動にかかった時間を取得する。
 
@@ -262,7 +262,7 @@ Show( t );
 
 ### Get Web Support
 
-**構文:** obj << Get Web Support
+**構文:** obj &lt;&lt; Get Web Support
 
 **説明:** ディスプレイオブジェクトにおけるインタラクティブHTMLサポートのレベルを数値で戻す。1は、一部または全部の要素がサポートされていることを示し、0は、サポートされないことを示す。
 
@@ -278,7 +278,7 @@ Show( s );
 
 ### Get Where Expr
 
-**構文:** obj << Get Where Expr
+**構文:** obj &lt;&lt; Get Where Expr
 
 **説明:** プラットフォームがBy()またはWhere()を使って起動された場合に、データをサブセットするためのWhere式を戻す。By()やWhere()が使われていない場合はEmpty()を戻す。
 
@@ -368,9 +368,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**構文:** obj << Report;
-
-Report( obj )
+**構文:** obj &lt;&lt; Report;Report( obj )
 
 **説明:** レポートオブジェクトへの参照を戻す。
 
@@ -395,7 +393,7 @@ Show( t );
 
 ### Save Script for All Objects
 
-**構文:** obj << Save Script for All Objects
+**構文:** obj &lt;&lt; Save Script for All Objects
 
 **説明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -418,7 +416,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**構文:** obj << Save Script for All Objects To Data Table( <name> )
+**構文:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **説明:** すべてのレポートオブジェクトを再現するスクリプトを現在のデータテーブルに保存する。このオプションは、ウィンドウ内にレポートが複数ある場合に便利。作成されるスクリプトの名前は、引用符で囲んで指定しない限り、1つ目のプラットフォーム名となる。
 
@@ -470,7 +468,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**構文:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** この分析を再現するJSLスクリプトを生成し、データテーブルのテーブルプロパティとして保存する。
 
@@ -493,7 +491,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**構文:** obj << Save Script to Journal
+**構文:** obj &lt;&lt; Save Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -516,7 +514,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**構文:** obj << Save Script to Report
+**構文:** obj &lt;&lt; Save Script to Report
 
 **説明:** この分析を再現するJSLスクリプトを生成し、レポートウィンドウに表示する。分析手順の記録を結果と一緒に残せる。
 
@@ -539,7 +537,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**構文:** obj << Save Script to Script Window
+**構文:** obj &lt;&lt; Save Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -627,7 +625,7 @@ dt << Distribution(
 
 ### Title
 
-**構文:** obj << Title( "new title" )
+**構文:** obj &lt;&lt; Title( "new title" )
 
 **説明:** プラットフォームのタイトルを設定する。
 
@@ -650,7 +648,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**構文:** obj << Top Report
+**構文:** obj &lt;&lt; Top Report
 
 **説明:** レポート内のルートノードへの参照を戻す。
 
@@ -675,7 +673,7 @@ Show( t );
 
 ### View Web XML
 
-**構文:** obj << View Web XML
+**構文:** obj &lt;&lt; View Web XML
 
 **説明:** インタラクティブHTMLレポートの作成に使うXMLコードを戻す。
 
@@ -716,7 +714,7 @@ fd2 = Formula Depot[1];
 
 ### Add Formula from Column
 
-**構文:** 予測子 = obj << Add Formula from Column( Table(name|reference), Columns(name|index|reference, ...), <Expand Intermediate Formulas(number)> )
+**構文:** 予測子 = obj &lt;&lt; Add Formula from Column( Table(name|reference), Columns(name|index|reference, ...), &lt;Expand Intermediate Formulas(number)&gt; )
 
 **説明:** データテーブルに保存されている計算式の列から、計算式デポに予測式を追加する。
 
@@ -735,7 +733,7 @@ mp << Generate Python Code;
 
 ### Copy Formulas as Functions
 
-**構文:** obj << Copy Formulas as Functions( <Formulas(name|index|reference, ...)> )
+**構文:** obj &lt;&lt; Copy Formulas as Functions( &lt;Formulas(name|index|reference, ...)&gt; )
 
 **説明:** 計算式デポに保存されている計算式を、Function関数に変換し、そのコードをクリップボードにコピーする。
 
@@ -758,7 +756,7 @@ Show( text );
 
 ### Copy Formulas as Transforms
 
-**構文:** obj << Copy Formulas as Transforms( <Table(name|reference)>, <Formulas(name|index|reference, ...)> )
+**構文:** obj &lt;&lt; Copy Formulas as Transforms( &lt;Table(name|reference)&gt;, &lt;Formulas(name|index|reference, ...)&gt; )
 
 **説明:** 計算式デポに保存されている計算式をTransform Columnステートメントで囲んだものを、クリップボードにコピーする。
 
@@ -782,7 +780,7 @@ Show( text );
 
 ### Copy Scripts
 
-**構文:** obj << Copy Scripts( <Formulas(name|index|reference, ...)> )
+**構文:** obj &lt;&lt; Copy Scripts( &lt;Formulas(name|index|reference, ...)&gt; )
 
 **説明:** 計算式デポに保存されている計算式を、クリップボードにコピーする。
 
@@ -803,7 +801,7 @@ Show( text );
 
 ### Generate C Code
 
-**構文:** obj << Generate C Code( <Formulas(name|index|reference, ...)>, <No Editor> )
+**構文:** obj &lt;&lt; Generate C Code( &lt;Formulas(name|index|reference, ...)&gt;, &lt;No Editor&gt; )
 
 **説明:** 計算式デポに保存されている計算式から、C言語のコードを生成する。その結果は、エディターウィンドウに表示される。ただし、「No Editor」オプションが指定されている場合には文字型変数へ出力される。
 
@@ -827,7 +825,7 @@ fd << Generate C Code( Formulas( predictor ) );
 
 ### Generate JavaScript Code
 
-**構文:** obj << Generate JavaScript Code( <Formulas(name|index|reference, ...)>, <No Editor> )
+**構文:** obj &lt;&lt; Generate JavaScript Code( &lt;Formulas(name|index|reference, ...)&gt;, &lt;No Editor&gt; )
 
 **説明:** 計算式デポに保存されている計算式から、JavaScriptのコードを生成する。その結果は、エディターウィンドウに表示される。ただし、「No Editor」オプションが指定されている場合には文字型変数へ出力される。
 
@@ -851,7 +849,7 @@ fd << Generate JavaScript Code( Formulas( predictor ) );
 
 ### Generate Python Code
 
-**構文:** obj << Generate Python Code( <Formulas(name|index|reference, ...)>, <No Editor> )
+**構文:** obj &lt;&lt; Generate Python Code( &lt;Formulas(name|index|reference, ...)&gt;, &lt;No Editor&gt; )
 
 **説明:** 計算式デポに保存されている計算式から、Pythonのコードを生成する。その結果は、エディターウィンドウに表示される。ただし、「No Editor」オプションが指定されている場合には文字型変数へ出力される。
 
@@ -875,7 +873,7 @@ fd << Generate Python Code( Formulas( predictor ) );
 
 ### Generate SAS Code
 
-**構文:** obj << Generate SAS Code( <Formulas(name|index|reference, ...)>, <No Editor> )
+**構文:** obj &lt;&lt; Generate SAS Code( &lt;Formulas(name|index|reference, ...)&gt;, &lt;No Editor&gt; )
 
 **説明:** 現モデルのスクリプトを、クリップボードにコピーする。
 
@@ -899,7 +897,7 @@ fd << Generate SAS Code( Formulas( predictor ) );
 
 ### Generate SQL Code
 
-**構文:** obj << Generate SQL Code( <Formulas(name|index|reference, ...)>, <No Editor>, <QUOTE_STYLE> )
+**構文:** obj &lt;&lt; Generate SQL Code( &lt;Formulas(name|index|reference, ...)&gt;, &lt;No Editor&gt;, &lt;QUOTE_STYLE&gt; )
 
 **説明:** 計算式デポに保存されている計算式から、SQLのコード（SQLのSELECTステートメントで記述されたコード）を生成する。その結果は、エディタウィンドウに表示される。ただし、「No Editor」オプションが指定されている場合には、文字型変数へ出力される。QUOTE_STYLEには、サポートされているSQLデータベース(MySQL, Impala, Hiveなど)の名前を指定するか、もしくは、引用符の付け方（"Underline", "Backquote", "Braket", "Doublequote"のいずれか）を指定する。
 
@@ -926,7 +924,7 @@ fd << Generate SQL Code( Formulas( predictor ), "MySQL" );
 
 ### Model Comparison
 
-**構文:** obj << Model Comparison( <Table(name|reference)>, <Formulas(name|index|reference, ...)> )
+**構文:** obj &lt;&lt; Model Comparison( &lt;Table(name|reference)&gt;, &lt;Formulas(name|index|reference, ...)&gt; )
 
 **説明:** 既存のデータテーブルに基づき、計算式デポに保存されているモデルを比較する。
 
@@ -957,7 +955,7 @@ mc_plat = fd << ModelComparison( Formulas( 1, 2 ) );
 
 ### Profiler
 
-**構文:** obj << Profiler( <Table(name|reference)>, <Formulas(name|index|reference, ...)> )
+**構文:** obj &lt;&lt; Profiler( &lt;Table(name|reference)&gt;, &lt;Formulas(name|index|reference, ...)&gt; )
 
 **説明:** 計算式デポに保存されているモデルのプロファイルを描く。
 
@@ -983,7 +981,7 @@ fd << Profiler( Formulas( nl_mp, nn_mp ) );
 
 ### Remove Model Comparison
 
-**構文:** obj << Remove Model Comparison
+**構文:** obj &lt;&lt; Remove Model Comparison
 
 **説明:** 現在の計算式デポから「モデルの比較」レポートを削除する。
 
@@ -1002,7 +1000,7 @@ fd << Remove Model Comparison();
 
 ### Remove Profiler
 
-**構文:** obj << Remove Profiler
+**構文:** obj &lt;&lt; Remove Profiler
 
 **説明:** 現在の計算式デポから「プロファイル」レポートを削除する。
 
@@ -1021,7 +1019,7 @@ fd << Remove Profiler();
 
 ### Rename Formula Depot
 
-**構文:** obj << Rename Formula Depot( text )
+**構文:** obj &lt;&lt; Rename Formula Depot( text )
 
 ```jsl
 
@@ -1034,7 +1032,7 @@ fd << Rename Formula Depot( "New Name" );
 
 ### Run Scripts
 
-**構文:** obj << Run Scripts( <Table(name|reference)>, <Formulas(name|index|reference, ...)> )
+**構文:** obj &lt;&lt; Run Scripts( &lt;Table(name|reference)&gt;, &lt;Formulas(name|index|reference, ...)&gt; )
 
 **説明:** 計算式デポに保存されている計算式を、データテーブルの列に保存する。
 
@@ -1063,7 +1061,7 @@ fd2 << Run Scripts( Table( dt2 ), Formulas( 1 ) );
 
 ### Show Scripts
 
-**構文:** obj << Show Scripts( <Formulas(name|index|reference, ...)> )
+**構文:** obj &lt;&lt; Show Scripts( &lt;Formulas(name|index|reference, ...)&gt; )
 
 **説明:** 計算式デポに保存されている予測式のスクリプトを、計算式ウィンドウに新たに保存する(すでに計算式ウィンドウが開かれている場合は、予測式のスクリプトをそこに追加する）。
 

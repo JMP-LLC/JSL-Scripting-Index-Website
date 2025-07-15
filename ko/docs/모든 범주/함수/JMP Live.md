@@ -2,11 +2,9 @@
 
 
 
-## 함수
-
 ### New JMP Live
 
-**구문:** New JMP Live(Connection("Connection Name"), <Prompt("No" | "If Needed")>)
+**구문:** New JMP Live(Connection("Connection Name"), &lt;Prompt("No" | "If Needed")&gt;)
 
 **설명:** 저장된 연결 정보를 사용하여 JMP Live 연결을 시작합니다. Connection은 선택적 인수이며 기본값은 Connection Manager에 지정된 기본 연결입니다. 제공된 경우 이름으로 연결을 검색합니다. Prompt는 선택적 인수이며 기본값은 "No"입니다. 프롬프트의 유효한 값은 "Yes", "No", "If Needed"입니다. 값이 "Yes"이면 로그인 자격 증명을 묻는 메시지를 항상 표시합니다. 값이 "No"이면 로그인 자격 증명을 묻는 메시지를 표시하지 않지만 인증이 실패할 수 있습니다. 값이 "If Needed"이면 현재 저장된 자격 증명이 올바르지 않은 경우에만 자격 증명 메시지를 표시합니다. JMP Live 연결 개체를 반환합니다.
 
@@ -41,7 +39,7 @@ jmplive = New JMP Live( Connection( "MyJMPLive" ), Prompt( If Needed ) );
 
 ### New JMP Live Content
 
-**구문:** obj = New JMP Live Content(jmpreport|Image(path_to_image)|Data(jmpdatatable)|Map(jmpmap), <Title(...)>, <Description(...)>, <Publish Data(0|1)>, <Enable Warnings(0|1)>, <Optimization("Interactivity" | "Performance")>
+**구문:** obj = New JMP Live Content(jmpreport|Image(path_to_image)|Data(jmpdatatable)|Map(jmpmap), &lt;Title(...)&gt;, &lt;Description(...)&gt;, &lt;Publish Data(0|1)&gt;, &lt;Enable Warnings(0|1)&gt;, &lt;Optimization("Interactivity" | "Performance")&gt;
 
 **설명:** JMP Live에 게시할 대화식 콘텐츠를 생성합니다. 
 

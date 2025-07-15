@@ -1,58 +1,30 @@
 # Toutes les fonctions
 
+### \\[...]\\
 
+**Syntaxe :** y = \\[string]\\
 
-## Fonctions
-
-### ARIMA Forecast
-
-**Syntaxe :** x = ARIMA Forecast( dtcol, length, model, estimates, from, to )
-
-**Description :** Renvoie un vecteur de valeurs de prévision de la colonne dtcol dans l’intervalle déterminée par les arguments from et to. L’argument length spécifie une portion de colonne à utiliser pour la fonction. L’argument model correspond aux messages qui sont envoyés à la plate-forme Série chronologique pour l’ajustement du modèle. L’argument estimates correspond à l’enfant du résultat du message Obtenir les modèles d’un seul modèle. Typiquement, la valeur from est comprise entre 1 et to, bornes comprises. Cependant, si from<=0 et from<=to, une partie des résultats sont des prévisions filtrées.
+**Description :** Les passages requérant de nombreux caractères d&apos;échappement peuvent utiliser le séparateur \\[...]\\.
 
 **JMP Version ajoutée :** Avant la version 14
 
 ```jsl
 
 Names Default To Here( 1 );
-Open(
-	"$SAMPLE_DATA/Time Series/Steel Shipments.jmp"
-);
-ARIMA Forecast(
-	:Steel Shipments,
-	96,
-	ARIMA( 1, 0, 1 ),
-	{
-	AR Coefficients(
-		{0.900397691783565}
-	),
-	MA Coefficients(
-		{0.483316746530245}
-	), Intercept( 6466.03264802329 )},
-	1,
-	2
-);
 
-```
-
-### ATan
-
-**Syntaxe :** y = ArcTangent( x1, <x2=1> )
-
-**Description :** Renvoie la tangente trigonométrique inverse de x1/x2, où le résultat est dans l’intervalle[-Pi()/2, Pi()/2].
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-4 * ArcTangent( 1 );
+jslPhrase =
+"The JSL to do this is :\[
+a = "hello";
+b = a|| " world.";
+show(b);
+]\ and you use the Submit command to run it.";
+Show( jslPhrase );
 
 ```
 
 ### Abbrev Date
 
-**Syntaxe :** s = Abbrev Date( datetime, <format> )
+**Syntaxe :** s = Abbrev Date( datetime, &lt;format&gt; )
 
 **Description :** Renvoie une représentation locale abrégée d&apos;une valeur « date-heure » de JMP.
 
@@ -191,7 +163,7 @@ z = Add Vectors BLAS( x, y, alpha );
 
 ### Alignment Cell Box
 
-**Syntaxe :** y = Alignment Cell Box( row, col, nRow, nCol, <Sides(left+2*top+4*right+8*bottom=15)> <RowSpan(nRow matrix)> <ColSpan(nCol matrix)>, matrix or list of strings )
+**Syntaxe :** y = Alignment Cell Box( row, col, nRow, nCol, &lt;Sides(left+2*top+4*right+8*bottom=15)&gt; &lt;RowSpan(nRow matrix)&gt; &lt;ColSpan(nCol matrix)&gt;, matrix or list of strings )
 
 **Description :** Renvoie une référence à une boîte d&apos;affichage qui contient les contenus de la ligne (ou colonne) qui se trouvent à l&apos;intérieur de la zone de grille d&apos;alignement.
 
@@ -483,36 +455,6 @@ Any( [1 0 2] );
 
 ```
 
-### ArCos
-
-**Syntaxe :** y = ArcCosine( x )
-
-**Description :** Renvoie le cosinus trigonométrique inverse de x, où x est dans l’étendue [-1, 1] et le résultat est dans l’intervalle [0, Pi()].
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-ArcCosine( 0.5 );
-
-```
-
-### ArSin
-
-**Syntaxe :** y = ArcSine( x )
-
-**Description :** Renvoie le sinus trigonométrique inverse de x, où x est dans l’étendue [-1, 1] et le résultat est dans l’intervalle [-Pi()/2, Pi()/2].
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-ArcSine( 0.5 );
-
-```
-
 ### Arc
 
 **Syntaxe :** Arc( left, top, right, bottom, startAngle, endAngle )
@@ -535,7 +477,7 @@ New Window( "Example",
 
 ### Arc Finder
 
-**Syntaxe :** Arc Finder( Group( lot, wafer ), X( col ), Y( col ), <optional arguments> )
+**Syntaxe :** Arc Finder( Group( lot, wafer ), X( col ), Y( col ), &lt;optional arguments&gt; )
 
 **Description :** Trouve les arcs dans les données de points et crée une nouvelle colonne identifiant les arcs.
 
@@ -608,18 +550,18 @@ ArcCosine( 0.5 );
 
 ```
 
-### ArcSinH
+### ArCos
 
-**Syntaxe :** y = ArcSinH( x )
+**Syntaxe :** y = ArcCosine( x )
 
-**Description :** Renvoie le sinus hyperbolique inverse de x.
+**Description :** Renvoie le cosinus trigonométrique inverse de x, où x est dans l’étendue [-1, 1] et le résultat est dans l’intervalle [0, Pi()].
 
 **JMP Version ajoutée :** Avant la version 14
 
 ```jsl
 
 Names Default To Here( 1 );
-ArcSinH( 1 );
+ArcCosine( 0.5 );
 
 ```
 
@@ -638,9 +580,39 @@ ArcSine( 0.5 );
 
 ```
 
+### ArcSinH
+
+**Syntaxe :** y = ArcSinH( x )
+
+**Description :** Renvoie le sinus hyperbolique inverse de x.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+ArcSinH( 1 );
+
+```
+
 ### ArcTan
 
-**Syntaxe :** y = ArcTangent( x1, <x2=1> )
+**Syntaxe :** y = ArcTangent( x1, &lt;x2=1&gt; )
+
+**Description :** Renvoie la tangente trigonométrique inverse de x1/x2, où le résultat est dans l’intervalle[-Pi()/2, Pi()/2].
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+4 * ArcTangent( 1 );
+
+```
+
+### ArcTangent
+
+**Syntaxe :** y = ArcTangent( x1, &lt;x2=1&gt; )
 
 **Description :** Renvoie la tangente trigonométrique inverse de x1/x2, où le résultat est dans l’intervalle[-Pi()/2, Pi()/2].
 
@@ -665,21 +637,6 @@ Names Default To Here( 1 );
 
 Names Default To Here( 1 );
 ArcTanH( 0.5 );
-
-```
-
-### ArcTangent
-
-**Syntaxe :** y = ArcTangent( x1, <x2=1> )
-
-**Description :** Renvoie la tangente trigonométrique inverse de x1/x2, où le résultat est dans l’intervalle[-Pi()/2, Pi()/2].
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-4 * ArcTangent( 1 );
 
 ```
 
@@ -723,6 +680,37 @@ Arg( Expr( Sum( a, b, c ) ), 2 );
 Names Default To Here( 1 );
 // Deprecated
 Arg Expr( Sum( a, b, c ), 2 );
+
+```
+
+### ARIMA Forecast
+
+**Syntaxe :** x = ARIMA Forecast( dtcol, length, model, estimates, from, to )
+
+**Description :** Renvoie un vecteur de valeurs de prévision de la colonne dtcol dans l’intervalle déterminée par les arguments from et to. L’argument length spécifie une portion de colonne à utiliser pour la fonction. L’argument model correspond aux messages qui sont envoyés à la plate-forme Série chronologique pour l’ajustement du modèle. L’argument estimates correspond à l’enfant du résultat du message Obtenir les modèles d’un seul modèle. Typiquement, la valeur from est comprise entre 1 et to, bornes comprises. Cependant, si from<=0 et from<=to, une partie des résultats sont des prévisions filtrées.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+Open(
+	"$SAMPLE_DATA/Time Series/Steel Shipments.jmp"
+);
+ARIMA Forecast(
+	:Steel Shipments,
+	96,
+	ARIMA( 1, 0, 1 ),
+	{
+	AR Coefficients(
+		{0.900397691783565}
+	),
+	MA Coefficients(
+		{0.483316746530245}
+	), Intercept( 6466.03264802329 )},
+	1,
+	2
+);
 
 ```
 
@@ -776,6 +764,21 @@ New Window( "Example",
 
 ```
 
+### ArSin
+
+**Syntaxe :** y = ArcSine( x )
+
+**Description :** Renvoie le sinus trigonométrique inverse de x, où x est dans l’étendue [-1, 1] et le résultat est dans l’intervalle [-Pi()/2, Pi()/2].
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+ArcSine( 0.5 );
+
+```
+
 ### As Boolean
 
 **Syntaxe :** b = As Boolean( x )
@@ -818,13 +821,7 @@ As C Expr(
 
 ### As Column
 
-**Syntaxe :** y = :name;
-
-y = dataTable:name;
-
-y = As Column( name );
-
-y = As Column( dataTable, name )
+**Syntaxe :** y = :name;y = dataTable:name;y = As Column( name );y = As Column( dataTable, name )
 
 **Description :** Accède à la colonne spécifiée dans la table de données indiquée ou en cours. Une erreur est lancée si aucune colonne ou table de données de ce type n&apos;est trouvée.
 
@@ -948,29 +945,6 @@ Local( {ex = 12},
 
 ```
 
-### As JSON Expr
-
-**Syntaxe :** y = As JSON Expr( x )
-
-**Description :** Renvoie une représentation JSON (JavaScript Object Notation) de l&apos;expression.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-As JSON Expr(
-	Expr(
-		Match( sex,
-			1, "Male",
-			2, "Female",
-			"Other"
-		)
-	)
-);
-
-```
-
 ### As JavaScript Expr
 
 **Syntaxe :** y = As JavaScript Expr( x )
@@ -983,6 +957,29 @@ As JSON Expr(
 
 Names Default To Here( 1 );
 As JavaScript Expr(
+	Expr(
+		Match( sex,
+			1, "Male",
+			2, "Female",
+			"Other"
+		)
+	)
+);
+
+```
+
+### As JSON Expr
+
+**Syntaxe :** y = As JSON Expr( x )
+
+**Description :** Renvoie une représentation JSON (JavaScript Object Notation) de l&apos;expression.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+As JSON Expr(
 	Expr(
 		Match( sex,
 			1, "Male",
@@ -1136,9 +1133,25 @@ As SAS Expr(
 
 ```
 
+### As Scoped
+
+**Syntaxe :** y = namespace:variable; y = As Scoped( namespace, variable )
+
+**Description :** Accède à la variable d’étendue spécifiée ou lance une erreur si cette variable d’étendue n&apos;existe pas.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+Here:z = 23.5;
+As Scoped( Here, z );
+
+```
+
 ### As SQL Expr
 
-**Syntaxe :** y = As SQL Expr( x, <style> )
+**Syntaxe :** y = As SQL Expr( x, &lt;style&gt; )
 
 **Description :** Renvoie une chaîne qui contient l&apos;expression convertie en syntaxe SQL valide pouvant être utilisée dans une instruction SQL Select.
 
@@ -1160,25 +1173,9 @@ As SQL Expr(
 
 ```
 
-### As Scoped
-
-**Syntaxe :** y = namespace:variable; y = As Scoped( namespace, variable )
-
-**Description :** Accède à la variable d’étendue spécifiée ou lance une erreur si cette variable d’étendue n&apos;existe pas.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-Here:z = 23.5;
-As Scoped( Here, z );
-
-```
-
 ### As Table
 
-**Syntaxe :** dt = As Table( matrix, <matrix2,...> < <<invisible/private>, < <<Column Names(name list) > )
+**Syntaxe :** dt = As Table( matrix, &lt;matrix2,...&gt; &lt; &lt;&lt;invisible/private&gt;, &lt; &lt;&lt;Column Names(name list) &gt; )
 
 **Description :** Convertit une matrice en une table de données. L’argument facultatif invisible peut servir à éviter l&apos;affichage de la table.
 
@@ -1209,9 +1206,7 @@ ex1 + ex1;
 
 ### Associative Array
 
-**Syntaxe :** y = Associative Array( {{key1, value1}, ...} );
-
-y = Associative Array( keys, values )
+**Syntaxe :** y = Associative Array( {{key1, value1}, ...} );y = Associative Array( keys, values )
 
 **Description :** Crée un tableau associatif, également appelé dictionnaire ou table de hachage. Sous la forme à deux arguments, les codes et valeurs peuvent être une liste, une matrice ou une colonne de table de données.
 
@@ -1230,9 +1225,24 @@ ex << get contents;
 
 ```
 
+### ATan
+
+**Syntaxe :** y = ArcTangent( x1, &lt;x2=1&gt; )
+
+**Description :** Renvoie la tangente trigonométrique inverse de x1/x2, où le résultat est dans l’intervalle[-Pi()/2, Pi()/2].
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+4 * ArcTangent( 1 );
+
+```
+
 ### B Spline Coef
 
-**Syntaxe :** coef = B Spline Coef( x, Internal Knot Grid, <degree = 3>, <KnotEndPoints = min(x) || max(x)> )
+**Syntaxe :** coef = B Spline Coef( x, Internal Knot Grid, &lt;degree = 3&gt;, &lt;KnotEndPoints = min(x) || max(x)&gt; )
 
 **Description :** Renvoie la matrice des coefficients B-splines. Internal Knot Grid est soit le nombre de points souhaité pour le nœud, sur la base des percentiles de x, ou un vecteur spécifiant les points du nœud interne. Le paramètre facultatif degree spécifie le degré des B-splines, 3 étant la valeur par défaut. Le paramètre facultatif KnotEndPoints prend une matrice 2x1 contenant les positions [inférieure, supérieure] des nœuds sur la frontière. Les points finaux du nœud sont, par défaut, le min. et le max. de x. Le deuxième exemple montre comment les coefficients B-splines peuvent être utilisés comme matrice de plan dans un modèle linéaire.
 
@@ -1272,7 +1282,7 @@ Linear Regression(
 
 ### Back Color
 
-**Syntaxe :** Back Color( <name|index|rgbList> )
+**Syntaxe :** Back Color( &lt;name|index|rgbList&gt; )
 
 **Description :** Définit la couleur de fond pour le mode effacer dans la fonction Text().
 
@@ -1311,7 +1321,7 @@ Beep();
 
 ### Best Partition
 
-**Syntaxe :** {c1, c2, g2} = Best Partition( xIndices, yIndices, <<Ordered, <<ContinuousY, <<ContinuousX )
+**Syntaxe :** {c1, c2, g2} = Best Partition( xIndices, yIndices, &lt;&lt;Ordered, &lt;&lt;ContinuousY, &lt;&lt;ContinuousX )
 
 **Description :** Détermine le groupement optimal (fonction expérimentale).
 
@@ -1637,7 +1647,7 @@ New Window(
 
 ### Beta Density
 
-**Syntaxe :** y = Beta Density( q, alpha, beta, <theta=0>, <sigma=1> )
+**Syntaxe :** y = Beta Density( q, alpha, beta, &lt;theta=0&gt;, &lt;sigma=1&gt; )
 
 **Description :** Renvoie la densité pour la valeur q de la distribution bêta, où q est dans l’intervalle de theta à theta + sigma, alpha et beta sont les paramètres de forme, theta et sigma sont les paramètres de seuillage et d&apos;échelle, respectivement.
 
@@ -1695,7 +1705,7 @@ New Window( "Example: Beta Density",
 
 ### Beta Distribution
 
-**Syntaxe :** p = Beta Distribution( q, alpha, beta, <theta=0>, <sigma=1> )
+**Syntaxe :** p = Beta Distribution( q, alpha, beta, &lt;theta=0&gt;, &lt;sigma=1&gt; )
 
 **Description :** Renvoie la probabilité qu&apos;une variable aléatoire de loi bêta soit inférieure à q, où alpha et beta sont les paramètres de forme et theta et sigma sont les paramètres de seuillage et d’échelle, respectivement.
 
@@ -1753,7 +1763,7 @@ New Window( "Example: Beta Distribution",
 
 ### Beta Quantile
 
-**Syntaxe :** q = Beta Quantile( p, alpha, beta, <theta=0>, <sigma=1> )
+**Syntaxe :** q = Beta Quantile( p, alpha, beta, &lt;theta=0&gt;, &lt;sigma=1&gt; )
 
 **Description :** Renvoie le quantile d’une distribution bêta, correspondant à la probabilité p qu&apos;une valeur aléatoire ayant cette distribution prenne une valeur inférieure au quantile, où alpha et beta sont les paramètres de forme et theta et sigma sont les paramètres de seuillage et d’échelle, respectivement.
 
@@ -2014,7 +2024,7 @@ New Window( "Example: Binomial Quantile",
 
 ### Blend Colors
 
-**Syntaxe :** color = Blend Colors( color1, color2, <percent2>, <colorSpace>, <hueDirection> )
+**Syntaxe :** color = Blend Colors( color1, color2, &lt;percent2&gt;, &lt;colorSpace&gt;, &lt;hueDirection&gt; )
 
 **Description :** Mélange deux couleurs avec un pourcentage et un espace de couleur paramétrables.
 
@@ -2236,7 +2246,7 @@ Hex(/* make it printable */
 
 ### Blob Peek
 
-**Syntaxe :** blobResult = Blob Peek( blob, offset, <length> )
+**Syntaxe :** blobResult = Blob Peek( blob, offset, &lt;length&gt; )
 
 **Description :** Crée un nouveau blob à partir d&apos;une sous-étendue d’octets du blob donné. L’argument offset partant de zéro, le premier octet est à un offset de zéro.
 
@@ -2257,7 +2267,7 @@ Blob Peek(
 
 ### Blob To Char
 
-**Syntaxe :** s = Blob To Char( blob, <encoding="utf-8"> )
+**Syntaxe :** s = Blob To Char( blob, &lt;encoding="utf-8"&gt; )
 
 **Description :** Crée une chaîne de caractères à partir d&apos;un BLOB (grand objet binaire), en utilisant l&apos;encodage spécifié. Encodages pris en charge : utf-8, utf-16le, utf-16be, us-ascii, iso-8859-1, shift_jis, euc-jp, et ascii~hex.
 
@@ -2278,7 +2288,7 @@ Blob To Char(
 
 ### Blob To Matrix
 
-**Syntaxe :** m = Blob To Matrix( blob, type, bytesEach, endian, <nCols=1> )
+**Syntaxe :** m = Blob To Matrix( blob, type, bytesEach, endian, &lt;nCols=1&gt; )
 
 **Description :** Construit une matrice en convertissant les octets dans le blob en nombres : type peut être "int", "uint" ou "float" ; bytesEach peut être 1, 2, 4 ou 8 ; endian indique si le premier octet est le plus significatif ("big") ou le moins significatif ("little"); "native" indique le format natif du processeur.
 
@@ -2299,7 +2309,7 @@ Blob To Matrix(
 
 ### Border Box
 
-**Syntaxe :** y = Border Box( <Left( pix )>, <Right( pix )>, <Top( pix )>, <Bottom( pix )>, <Sides( 0 )>, displayBoxArg )
+**Syntaxe :** y = Border Box( &lt;Left( pix )&gt;, &lt;Right( pix )&gt;, &lt;Top( pix )&gt;, &lt;Bottom( pix )&gt;, &lt;Sides( 0 )&gt;, displayBoxArg )
 
 **Description :** Renvoie une boîte d&apos;affichage pour ajouter de l&apos;espace autour de la boîte d&apos;affichage de l&apos;argument.
 
@@ -2362,7 +2372,7 @@ Box Cox Transform( 3, 2 );
 
 ### Box Plot Seg
 
-**Syntaxe :** b = Box Plot Seg(<data>, <frequency>, <weight>, <vertical=0|1>)
+**Syntaxe :** b = Box Plot Seg(&lt;data&gt;, &lt;frequency&gt;, &lt;weight&gt;, &lt;vertical=0|1&gt;)
 
 **Description :** Renvoie un groupe d’affichage représentant une boîte à moustaches basée sur les valeurs x et y passées.
 
@@ -2420,7 +2430,7 @@ Build Information();
 
 ### Busy Light
 
-**Syntaxe :** y = Busy Light( < <<Automatic(0|1)>, <Size(x, y)>, < <<Disable> )
+**Syntaxe :** y = Busy Light( &lt; &lt;&lt;Automatic(0|1)&gt;, &lt;Size(x, y)&gt;, &lt; &lt;&lt;Disable&gt; )
 
 **Description :** Crée une image en rotation pour indiquer un processus occupé.
 
@@ -2454,9 +2464,62 @@ New Window( "Example",
 
 ```
 
+### Calendar Box
+
+**Syntaxe :** y = Calendar Box()
+
+**Description :** Renvoie une boîte d&apos;affichage contenant un contrôle calendaire. Le calendrier prend en charge la sélection unique d&apos;une date et d&apos;une heure facultative.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+New Window( "Calendar Box Example",
+	Calendar Box()
+);
+
+```
+
+### Caption
+
+**Syntaxe :** y = Caption( &lt;{h, v}&gt;, text | remove, &lt;Delayed( seconds )&gt;, &lt;Font(font)&gt;, &lt;Font Size(size)&gt;, &lt;Text Color(color)&gt;, &lt;Back Color(color)&gt;, &lt;Spoken(bool)&gt; )
+
+**Description :** Affiche une fenêtre de légende à la position spécifiée par {h, v} et qui contient le texte spécifié par l’argument text. L’argument Delayed( seconds ) définit le temps d’attente en secondes avant chaque légende.
+
+**JMP Version ajoutée :** Avant la version 14
+
+**Légende formatée**
+
+```jsl
+
+Names Default To Here( 1 );
+Caption(
+	{100, 200},
+	"explanation",
+	Font( "Arial Black" ),
+	Font Size( 16 ),
+	Text Color( "blue" ),
+	Back Color( "yellow" ),
+	Spoken( 1 )
+);
+
+```
+
+**Supprimer la légende**
+
+```jsl
+
+Names Default To Here( 1 );
+Caption( "explanation" );
+Wait( 2 );
+Caption( remove );
+
+```
+
 ### CAS Connect
 
-**Syntaxe :** CAS Connect(<URL(...)>, <Username(...)>, <Password(...)>, <Prompt(Never | Always | IfNeeded)>, <Session("session id")>, <Proxy Server("http://my_proxy:80")>, <Proxy User("proxy_username")>, <Bypass Proxy("http://localhost:80")>, <Certificates(...)>, <Verify Certificates(1 | 0)>, <No Verify Certificates(1 | 0)>, <Timeout(seconds)>, <Authorization Method("Basic" | "Bearer")>)
+**Syntaxe :** CAS Connect(&lt;URL(...)&gt;, &lt;Username(...)&gt;, &lt;Password(...)&gt;, &lt;Prompt(Never | Always | IfNeeded)&gt;, &lt;Session("session id")&gt;, &lt;Proxy Server("http://my_proxy:80")&gt;, &lt;Proxy User("proxy_username")&gt;, &lt;Bypass Proxy("http://localhost:80")&gt;, &lt;Certificates(...)&gt;, &lt;Verify Certificates(1 | 0)&gt;, &lt;No Verify Certificates(1 | 0)&gt;, &lt;Timeout(seconds)&gt;, &lt;Authorization Method("Basic" | "Bearer")&gt;)
 
 **Description :** Se connecte à un nouveau serveur CAS. CAS Connect utilise l&apos;URL, le nom d&apos;utilisateur, les arguments de mot de passe et, en option, l&apos;invite et la session. L&apos;invite peut être IfNeeded, Always ou Never. L&apos;URL, le nom d&apos;utilisateur et le mot de passe peuvent être omis si l&apos;argument d&apos;invite est IfNeeded ou Always. La valeur par défaut pour l&apos;invite est Never. La session peut servir à se reconnecter à une session CAS existante. La session doit être valide pour l&apos;URL, le nom d&apos;utilisateur et le mot de passe utilisés pour la connexion. L&apos;argument facultatif Certificates est utile pour fournir des certificats de confiance à CAS pour les connexions https. L&apos;argument facultatif Verify Certificates ou No Verify Certificates est utile pour accepter temporairement les certificats auto-signés. L&apos;argument facultatif Proxy Server est utile pour fournir un hôte proxy dans un environnement proxy. L&apos;argument facultatif Proxy User est utile pour fournir des informations sur l&apos;utilisateur et le mot de passe pour un environnement proxy. L&apos;argument facultatif Bypass Proxy permet d&apos;ignorer le proxy pour certains hôtes. L&apos;argument facultatif Timeout définit une valeur de dépassement de temps pour les opérations de connexion à CAS. L&apos;argument facultatif Authorization Method spécifie comment JMP se connecte à CAS. Cela est dépendant du déploiement de CAS.
 
@@ -2478,7 +2541,7 @@ cas = CAS Connect(
 
 ### CAS Delete Table
 
-**Syntaxe :** CAS Delete Table(tablename, <remove>)
+**Syntaxe :** CAS Delete Table(tablename, &lt;remove&gt;)
 
 **Description :** Cette action supprime la table de données filesystem. La table de données en mémoire n&apos;est pas affectée. Spécifier Quiet supprimera les erreurs en cas de table de données inexistante. Spécifier remACs supprimera les commandes d&apos;accès pour une table de données. Spécifier Remove supprimera également la table de données de la mémoire.
 
@@ -2522,7 +2585,7 @@ CAS Disconnect();
 
 ### CAS Export Data
 
-**Syntaxe :** y = CAS Export Data(jmp_data_table, cas_libref, cas_dataset, <named_arguments>)
+**Syntaxe :** y = CAS Export Data(jmp_data_table, cas_libref, cas_dataset, &lt;named_arguments&gt;)
 
 **Description :** Exporte une table de données dans un serveur CAS. La table jmp_data_table est la table de données JMP à exporter, tandis que cas_libref et cas_dataset sont les emplacements cibles sur le serveur CAS. L&apos;argument nommé facultatif est Save(1|0). Lorsqu&apos;une table de données est exportée dans CAS, elle n&apos;est pas conservée dans le système de fichiers CAS, à moins que l&apos;option Enregistrer soit utilisée. La plupart des actions CAS se trouvent en mémoire.
 
@@ -2543,7 +2606,7 @@ CAS Export Data(
 
 ### CAS Get Data Sets
 
-**Syntaxe :** y = CAS Get Data Sets(<"caslib">)
+**Syntaxe :** y = CAS Get Data Sets(&lt;"caslib"&gt;)
 
 **Description :** Obtient une liste des ensembles de données CAS disponibles. Ces ensembles de données se trouvent dans le système de fichiers CAS. L&apos;argument facultatif limite la liste des ensembles de données dans la bibliothèque CAS. Si aucun argument n&apos;est spécifié, la liste contiendra le nom complet de l&apos;ensemble de données (library.dataset). Si l&apos;argument est utilisé, la liste sera une liste de noms d&apos;ensembles de données.
 
@@ -2588,7 +2651,7 @@ Show( libraries );
 
 ### CAS Import Data
 
-**Syntaxe :** dt = CAS Import Data(libref, dataset, <named_arguments>)
+**Syntaxe :** dt = CAS Import Data(libref, dataset, &lt;named_arguments&gt;)
 
 **Description :** Importe une table depuis un serveur CAS. Les arguments nommés facultatifs sont Invisible(0|1), Private(0|1) et UseLabelsForVarNames(0|1).
 
@@ -2627,7 +2690,7 @@ Show( connected );
 
 ### CAS Remove Table
 
-**Syntaxe :** CAS Remove Table(tablename, <delete>)
+**Syntaxe :** CAS Remove Table(tablename, &lt;delete&gt;)
 
 **Description :** Cette action supprime la table en mémoire. Le fichier qui avait été créé lors de la sauvegarde n&apos;est pas affecté. Cette action  entraînera également la suppression de la table dans le système de fichiers.
 
@@ -2649,7 +2712,7 @@ CAS Remove Table( "Casuser", "Big Class" );
 
 ### CAS Table To Data Table
 
-**Syntaxe :** dt = CAS Table To Data Table(jsonstring, <Invisible(1|0) | Private(1|0) | Use Labels for Var Names(1|0)>)
+**Syntaxe :** dt = CAS Table To Data Table(jsonstring, &lt;Invisible(1|0) | Private(1|0) | Use Labels for Var Names(1|0)&gt;)
 
 **Description :** Convertit un texte JSON de table de données CAS SAS en une table de données JMP.
 
@@ -2895,6 +2958,75 @@ CAS Terminate Sessions();
 
 ```
 
+### Cauchy Density
+
+**Syntaxe :** y = Cauchy Density( q, &lt;center&gt;, &lt;scale&gt; )
+
+**Description :** Renvoie la densité à q d&apos;une distribution de Cauchy avec un centre mu et une échelle sigma.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+New Window( "Example: Cauchy Density",
+	y = Graph Box(
+		Y Scale( 0, .4 ),
+		X Scale( -6, 6 ),
+		XName( "q" ),
+		Pen Color( "red" );
+		Y Function( Cauchy Density( q ), q );
+	)
+);
+
+```
+
+### Cauchy Distribution
+
+**Syntaxe :** p = Cauchy Distribution( q, &lt;center&gt;, &lt;scale&gt; )
+
+**Description :** Renvoie la probabilité qu&apos;une variable aléatoire distribuée selon Cauchy soit inférieure à q.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+New Window( "Example: Cauchy Distribution",
+	y = Graph Box(
+		Y Scale( 0, 1 ),
+		X Scale( -6, 6 ),
+		XName( "q" ),
+		Pen Color( "red" );
+		Y Function( Cauchy Distribution( q ), q );
+	)
+);
+
+```
+
+### Cauchy Quantile
+
+**Syntaxe :** q = Cauchy Quantile( p, &lt;center&gt;, &lt;scale&gt; )
+
+**Description :** Renvoie le quantile d&apos;une distribution de Cauchy, correspondant à la probabilité p qu’une variable aléatoire ayant cette distribution prenne une valeur inférieure au quantile.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+New Window( "Example: Cauchy Quantile",
+	Graph Box(
+		Y Scale( -6, 6 ),
+		X Scale( 0, 1 ),
+		XName( "q" ),
+		Pen Color( "red" );
+		Y Function( Cauchy Quantile( p ), p );
+	)
+);
+
+```
+
 ### CDF
 
 **Syntaxe :** {QuantVec, CumProbVec} = CDF( Y )
@@ -2939,128 +3071,6 @@ New Window( "Empirical CDF",
 
 ```
 
-### Calendar Box
-
-**Syntaxe :** y = Calendar Box()
-
-**Description :** Renvoie une boîte d&apos;affichage contenant un contrôle calendaire. Le calendrier prend en charge la sélection unique d&apos;une date et d&apos;une heure facultative.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-New Window( "Calendar Box Example",
-	Calendar Box()
-);
-
-```
-
-### Caption
-
-**Syntaxe :** y = Caption( <{h, v}>, text | remove, <Delayed( seconds )>, <Font(font)>, <Font Size(size)>, <Text Color(color)>, <Back Color(color)>, <Spoken(bool)> )
-
-**Description :** Affiche une fenêtre de légende à la position spécifiée par {h, v} et qui contient le texte spécifié par l’argument text. L’argument Delayed( seconds ) définit le temps d’attente en secondes avant chaque légende.
-
-**JMP Version ajoutée :** Avant la version 14
-
-**Légende formatée**
-
-```jsl
-
-Names Default To Here( 1 );
-Caption(
-	{100, 200},
-	"explanation",
-	Font( "Arial Black" ),
-	Font Size( 16 ),
-	Text Color( "blue" ),
-	Back Color( "yellow" ),
-	Spoken( 1 )
-);
-
-```
-
-**Supprimer la légende**
-
-```jsl
-
-Names Default To Here( 1 );
-Caption( "explanation" );
-Wait( 2 );
-Caption( remove );
-
-```
-
-### Cauchy Density
-
-**Syntaxe :** y = Cauchy Density( q, <center>, <scale> )
-
-**Description :** Renvoie la densité à q d&apos;une distribution de Cauchy avec un centre mu et une échelle sigma.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-New Window( "Example: Cauchy Density",
-	y = Graph Box(
-		Y Scale( 0, .4 ),
-		X Scale( -6, 6 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function( Cauchy Density( q ), q );
-	)
-);
-
-```
-
-### Cauchy Distribution
-
-**Syntaxe :** p = Cauchy Distribution( q, <center>, <scale> )
-
-**Description :** Renvoie la probabilité qu&apos;une variable aléatoire distribuée selon Cauchy soit inférieure à q.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-New Window( "Example: Cauchy Distribution",
-	y = Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( -6, 6 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function( Cauchy Distribution( q ), q );
-	)
-);
-
-```
-
-### Cauchy Quantile
-
-**Syntaxe :** q = Cauchy Quantile( p, <center>, <scale> )
-
-**Description :** Renvoie le quantile d&apos;une distribution de Cauchy, correspondant à la probabilité p qu’une variable aléatoire ayant cette distribution prenne une valeur inférieure au quantile.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-New Window( "Example: Cauchy Quantile",
-	Graph Box(
-		Y Scale( -6, 6 ),
-		X Scale( 0, 1 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function( Cauchy Quantile( p ), p );
-	)
-);
-
-```
-
 ### Ceiling
 
 **Syntaxe :** y = Ceiling( x )
@@ -3078,7 +3088,7 @@ Ceiling( 1.2 );
 
 ### Char
 
-**Syntaxe :** s = Char( x, <w>, <d>, < <<Use Locale( Boolean ) >, < <<Full Precision( Boolean ) > )
+**Syntaxe :** s = Char( x, &lt;w&gt;, &lt;d&gt;, &lt; &lt;&lt;Use Locale( Boolean ) &gt;, &lt; &lt;&lt;Full Precision( Boolean ) &gt; )
 
 **Description :** Renvoie une représentation de x sous forme de chaîne de caractères, en utilisant la largeur maximale w et le nombre de décimales d si l&apos;argument x est numérique. <<FullPrecision écrit des valeurs numériques en utilisant toutes les précisions disponibles.
 
@@ -3116,7 +3126,7 @@ Char( 2.1, <<Use Locale( 1 ) );
 
 ### Char To Blob
 
-**Syntaxe :** blob = Char To Blob( string, <encoding="utf-8"> )
+**Syntaxe :** blob = Char To Blob( string, &lt;encoding="utf-8"&gt; )
 
 **Description :** Crée un BLOB (grand objet binaire) à partir d&apos;une chaîne de caractères, en utilisant l&apos;encodage spécifié. Encodages pris en charge : utf-8, utf-16le, utf-16be, us-ascii, iso-8859-1, shift_jis, euc-jp, et ascii~hex.
 
@@ -3131,7 +3141,7 @@ Char To Blob( "Café", "utf-16be" );
 
 ### Char To Hex
 
-**Syntaxe :** h = Char To Hex( value, <"integer">|<encoding="utf-8"> )
+**Syntaxe :** h = Char To Hex( value, &lt;"integer"&gt;|&lt;encoding="utf-8"&gt; )
 
 **Description :** Renvoie le texte hexadécimal correspondant à la valeur et au code donnés. Il peut s&apos;agir d&apos;un nombre, d&apos;une chaîne ou d&apos;un blob. Si la valeur est un nombre, le code 64 bits IEEE 754 est utilisé, sauf si l&apos;argument facultatif "integer" est fourni. Les codes pris en charge sont notamment : utf-8, utf-16le, utf-16be, us-ascii, iso-8859-1, ascii~hex, shift_jis, et euc-jp.
 
@@ -3166,7 +3176,7 @@ Show(
 
 ### Check Box
 
-**Syntaxe :** y = Check Box( {item, ...}, <script> )
+**Syntaxe :** y = Check Box( {item, ...}, &lt;script&gt; )
 
 **Description :** Renvoie une boîte d&apos;affichage pour afficher une ou plusieurs cases à cocher.
 
@@ -3186,7 +3196,7 @@ New Window( "Example",
 
 ### ChiSquare Density
 
-**Syntaxe :** p = ChiSquare Density( q, df, <nonCentrality=0> )
+**Syntaxe :** p = ChiSquare Density( q, df, &lt;nonCentrality=0&gt; )
 
 **Description :** Renvoie la densité au point q d’une Khi deux avec df degré(s) de liberté.
 
@@ -3228,7 +3238,7 @@ New Window( "Example: ChiSquare Density",
 
 ### ChiSquare Distribution
 
-**Syntaxe :** p = ChiSquare Distribution( q, df, <nonCentrality=0> )
+**Syntaxe :** p = ChiSquare Distribution( q, df, &lt;nonCentrality=0&gt; )
 
 **Description :** Renvoie la probabilité qu&apos;une variable aléatoire distribuée selon Khi deux est inférieure à q.
 
@@ -3270,7 +3280,7 @@ New Window( "Example: ChiSquare Distribution",
 
 ### ChiSquare Log CDistribution
 
-**Syntaxe :** y = ChiSquare Log CDistribution( x, df, <nonCentrality=0> )
+**Syntaxe :** y = ChiSquare Log CDistribution( x, df, &lt;nonCentrality=0&gt; )
 
 **Description :** Renvoie le logarithme de 1 - Distribution selon le Khi deux.
 
@@ -3316,7 +3326,7 @@ New Window(
 
 ### ChiSquare Log Density
 
-**Syntaxe :** y = ChiSquare Log Density( x, df, <nonCentrality=0> )
+**Syntaxe :** y = ChiSquare Log Density( x, df, &lt;nonCentrality=0&gt; )
 
 **Description :** Renvoie le logarithme de la densité de probabilité de Khi deux.
 
@@ -3361,7 +3371,7 @@ New Window( "Example: ChiSquare Log Density",
 
 ### ChiSquare Log Distribution
 
-**Syntaxe :** y = ChiSquare Log Distribution( x, df, <nonCentrality=0> )
+**Syntaxe :** y = ChiSquare Log Distribution( x, df, &lt;nonCentrality=0&gt; )
 
 **Description :** Renvoie le logarithme de la distribution selon le Khi deux.
 
@@ -3442,7 +3452,7 @@ ChiSquare Noncentrality(
 
 ### ChiSquare Quantile
 
-**Syntaxe :** q = ChiSquare Quantile( p, df, <nonCentrality=0> )
+**Syntaxe :** q = ChiSquare Quantile( p, df, &lt;nonCentrality=0&gt; )
 
 **Description :** Renvoie le quantile d’une distribution khi-deux, correspondant à la probabilité p qu’une variable aléatoire ayant cette distribution prenne une valeur inférieure au quantile.
 
@@ -3533,7 +3543,7 @@ Choose( Random Integer( 1, 5 ),
 
 ### Choose Closest
 
-**Syntaxe :** Choose Closest(source string, {canonical strings...}, <Ignore Case(ignore=1|0)>, <Ignore Nonprintable(ignore=1|0)>, <Ignore Whitespace(ignore=1|0)>, <Max Edit Count(count)>, <Max Edit Ratio([0..1])>, <Min String Length(<count=3>)>, <Replace Unmatched(replace=0|1)>, <Unmatched Value(<value="">)>)
+**Syntaxe :** Choose Closest(source string, {canonical strings...}, &lt;Ignore Case(ignore=1|0)&gt;, &lt;Ignore Nonprintable(ignore=1|0)&gt;, &lt;Ignore Whitespace(ignore=1|0)&gt;, &lt;Max Edit Count(count)&gt;, &lt;Max Edit Ratio([0..1])&gt;, &lt;Min String Length(&lt;count=3&gt;)&gt;, &lt;Replace Unmatched(replace=0|1)&gt;, &lt;Unmatched Value(&lt;value=""&gt;)&gt;)
 
 **Description :** Choisir la chaîne la plus proche dans les règles données, et la renvoyer. 
 
@@ -3606,7 +3616,7 @@ Choose Closest(
 
 ### Circle
 
-**Syntaxe :** Circle( {x, y}, radius|PixelRadius( px ), ..., <"FILL"> )
+**Syntaxe :** Circle( {x, y}, radius|PixelRadius( px ), ..., &lt;"FILL"&gt; )
 
 **Description :** Dessine un cercle centré sur {x, y}. Le rayon peut être spécifié en tant que nombre entier en fonction de l&apos;axe vertical ou comme un nombre de pixels. Un rayon exprimé en pixels donne un cercle dont la taille n&apos;est pas modifiée lorsque l&apos;axe vertical change. Les arguments peuvent être répétés dans n&apos;importe quel ordre pour dessiner de nombreux cercles. Le paramètre "FILL", s&apos;il est utilisé, doit être le dernier et colorie les cercles avec la couleur de remplissage au lieu de les dessiner avec la couleur du stylo.
 
@@ -3726,7 +3736,7 @@ Clear Global Window Handler();
 
 ### Clear Globals
 
-**Syntaxe :** Clear Globals( < varname, ... > )
+**Syntaxe :** Clear Globals( &lt; varname, ... &gt; )
 
 **Description :** Efface les valeurs de tous les symboles globaux actuellement définis.
 
@@ -3756,7 +3766,7 @@ Clear Log();
 
 ### Clear Symbols
 
-**Syntaxe :** Clear Symbols( < varname, ... > )
+**Syntaxe :** Clear Symbols( &lt; varname, ... &gt; )
 
 **Description :** Efface les valeurs de tous les symboles actuellement définis.
 
@@ -3771,7 +3781,7 @@ Clear Symbols();
 
 ### Clipboard Capture
 
-**Syntaxe :** clp = Clipboard Capture( box << Copy )
+**Syntaxe :** clp = Clipboard Capture( box &lt;&lt; Copy )
 
 **Description :** If the JSL within this function would have normally copied something to the OS Clipboard, it is instead copied to a Clipboard object and returned.
 
@@ -3793,7 +3803,7 @@ Show( clp << Get Flavor Data( "Text", <<Text ) );
 
 ### Close
 
-**Syntaxe :** Close( <dataTableRef|name>, <NoSave|Save( "path" )> )
+**Syntaxe :** Close( &lt;dataTableRef|name&gt;, &lt;NoSave|Save( "path" )&gt; )
 
 **Description :** Ferme la table de données référencée par le premier argument, qui est par défaut la table de données active du projet actif (sauf si le script n&apos;est pas exécuté dans un projet).
 
@@ -3818,7 +3828,7 @@ Close( exdt, NoSave );
 
 ### Close All
 
-**Syntaxe :** Close All( <Project(title|index|box|window)>, Data Tables | Reports | Journals, <invisible | private>, <NoSave|Save> )
+**Syntaxe :** Close All( &lt;Project(title|index|box|window)&gt;, Data Tables | Reports | Journals, &lt;invisible | private&gt;, &lt;NoSave|Save&gt; )
 
 **Description :** Ferme toutes les ressources d&apos;un type spécifique ouvertes : tables de données, journaux ou rapports.
 
@@ -3871,7 +3881,7 @@ Show( Is Log Open() );
 
 ### Col At
 
-**Syntaxe :** y = Col At( col, index, <byVar, ...>, < <<relative(bool)>, < <<skip missing(expr)> )
+**Syntaxe :** y = Col At( col, index, &lt;byVar, ...&gt;, &lt; &lt;&lt;relative(bool)&gt;, &lt; &lt;&lt;skip missing(expr)&gt; )
 
 **Description :** Renvoie la valeur de col à la position de ligne index dans son groupe byVar. Les lignes dont l&apos;expression skip missing est évaluée comme une valeur manquante ne sont pas incluses dans l&apos;index.
 
@@ -3923,7 +3933,7 @@ dt = New Window( "Example",
 
 ### Col Cumulative Sum
 
-**Syntaxe :** y = Col Cumulative Sum( xCol, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**Syntaxe :** y = Col Cumulative Sum( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **Description :** Renvoie la somme cumulée pour la ligne en cours. Il n&apos;est pas nécessaire d&apos;effectuer un tri préalable des variables Par.
 
@@ -3966,7 +3976,7 @@ dt << New Column(
 
 ### Col Interpolate
 
-**Syntaxe :** y = Col Interpolate( v, xCol, yCol, <byVar, ...>, < <<method(linear|nearest|previous|next)>, < <<extrapolate(bool)> )
+**Syntaxe :** y = Col Interpolate( v, xCol, yCol, &lt;byVar, ...&gt;, &lt; &lt;&lt;method(linear|nearest|previous|next)&gt;, &lt; &lt;&lt;extrapolate(bool)&gt; )
 
 **Description :** Renvoie une valeur interpolée dans yCol, correspondant à la position de v, où xCol]. Values outside the range of xCol seront manquantes, sauf si extrapolate est activé, et dans ce cas la valeur yCol la plus proche sera renvoyée.
 
@@ -3991,7 +4001,7 @@ dt << New Column( "gnp30",
 
 ### Col List Box
 
-**Syntaxe :** y = Col List Box( <Data Table( name )>, <all>|<character|numeric>, <width( pix )>, <grouped>, <maxSelected( n )>, <nlines( n )>, <MaxItems( n )>, <MinItems( n )>, <onChange( expr )>, < <<Modeling Type({"Any","Continuous","Nominal","Ordinal","Multiple Response","Unstructured Text","Vector","None","Row State"}) >, < << Set Data Type(Any|Numeric|Character)>, <script> )
+**Syntaxe :** y = Col List Box( &lt;Data Table( name )&gt;, &lt;all&gt;|&lt;character|numeric&gt;, &lt;width( pix )&gt;, &lt;grouped&gt;, &lt;maxSelected( n )&gt;, &lt;nlines( n )&gt;, &lt;MaxItems( n )&gt;, &lt;MinItems( n )&gt;, &lt;onChange( expr )&gt;, &lt; &lt;&lt;Modeling Type({"Any","Continuous","Nominal","Ordinal","Multiple Response","Unstructured Text","Vector","None","Row State"}) &gt;, &lt; &lt;&lt; Set Data Type(Any|Numeric|Character)&gt;, &lt;script&gt; )
 
 **Description :** Renvoie une boîte d&apos;affichage pour afficher la zone de liste permettant de sélectionner les colonnes de la table de données. Utiliser le message <<Modeling Type pour autoriser les types de modélisation spécialisée ou pour restreindre les types autorisés. La valeur par défaut "Any" autorisera toutes les colonnes avec un type de modélisation classique ("Continuous", "Nominal", "Ordinal").
 
@@ -4051,7 +4061,7 @@ New Window( "Col List Box Example 3",
 
 ### Col Max
 
-**Syntaxe :** y = Col Maximum( xCol, <byVar, <Excluded( Row State() )>, ...> )
+**Syntaxe :** y = Col Maximum( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt; )
 
 **Description :** Renvoie la valeur maximale entre les lignes d&apos;une colonne. Le résultat est mis en cache en interne afin que les évaluations multiples soient efficaces. Les arguments facultatifs byVar spécifient des groupes pour le calcul. Notez que les arguments byVar doivent être utilisés dans une formule de colonne ou dans une fonction For Each Row() .
 
@@ -4110,7 +4120,7 @@ dt << New Column( "Col Max for each Sex grouped by Excluded",
 
 ### Col Maximum
 
-**Syntaxe :** y = Col Maximum( xCol, <byVar, <Excluded( Row State() )>, ...> )
+**Syntaxe :** y = Col Maximum( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt; )
 
 **Description :** Renvoie la valeur maximale entre les lignes d&apos;une colonne. Le résultat est mis en cache en interne afin que les évaluations multiples soient efficaces. Les arguments facultatifs byVar spécifient des groupes pour le calcul. Notez que les arguments byVar doivent être utilisés dans une formule de colonne ou dans une fonction For Each Row() .
 
@@ -4169,7 +4179,7 @@ dt << New Column( "Col Max for each Sex grouped by Excluded",
 
 ### Col Mean
 
-**Syntaxe :** y = Col Mean( xCol, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**Syntaxe :** y = Col Mean( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **Description :** Renvoie la moyenne d&apos;un échantillon pour les lignes d&apos;une colonne. Le résultat est mis en cache en interne afin que les évaluations multiples soient efficaces. Les arguments facultatifs byVar spécifient des groupes pour le calcul. Notez que les arguments byVar doivent être utilisés dans une formule de colonne ou dans une fonction For Each Row() .
 
@@ -4238,7 +4248,7 @@ dt << New Column( "Col Mean for each Sex grouped by Excluded",
 
 ### Col Median
 
-**Syntaxe :** y = Col Median( xCol, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**Syntaxe :** y = Col Median( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **Description :** Renvoie la médiane spécifiée pour toutes les lignes d&apos;une colonne. L&apos;ordre est mis en cache de façon interne afin que les évaluations multiples soient efficaces.
 
@@ -4297,7 +4307,7 @@ dt << New Column( "Col Median for each Sex grouped by Excluded",
 
 ### Col Min
 
-**Syntaxe :** y = Col Minimum( xCol, <byVar, <Excluded( Row State() )>, ...> )
+**Syntaxe :** y = Col Minimum( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt; )
 
 **Description :** Renvoie la valeur minimale entre les lignes d&apos;une colonne. Le résultat est mis en cache en interne afin que les évaluations multiples soient efficaces. Les arguments facultatifs byVar spécifient des groupes pour le calcul. Notez que les arguments byVar doivent être utilisés dans une formule de colonne ou dans une fonction For Each Row() .
 
@@ -4356,7 +4366,7 @@ dt << New Column( "Col Min for each Sex grouped by Excluded",
 
 ### Col Minimum
 
-**Syntaxe :** y = Col Minimum( xCol, <byVar, <Excluded( Row State() )>, ...> )
+**Syntaxe :** y = Col Minimum( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt; )
 
 **Description :** Renvoie la valeur minimale entre les lignes d&apos;une colonne. Le résultat est mis en cache en interne afin que les évaluations multiples soient efficaces. Les arguments facultatifs byVar spécifient des groupes pour le calcul. Notez que les arguments byVar doivent être utilisés dans une formule de colonne ou dans une fonction For Each Row() .
 
@@ -4415,7 +4425,7 @@ dt << New Column( "Col Min for each Sex grouped by Excluded",
 
 ### Col Mode
 
-**Syntaxe :** y = Col Mode( xCol, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**Syntaxe :** y = Col Mode( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **Description :** Renvoie le mode d&apos;un échantillon pour les lignes d&apos;une colonne, en sélectionnant le plus petit dans le cas de plusieurs modes. Le résultat est mis en cache en interne afin que les évaluations multiples soient efficaces. Les arguments facultatifs byVar spécifient des groupes pour le calcul. Notez que les arguments byVar doivent être utilisés dans une formule de colonne ou dans une fonction For Each Row().
 
@@ -4474,7 +4484,7 @@ dt << New Column( "Col Mode for each Sex grouped by Excluded",
 
 ### Col Moving Average
 
-**Syntaxe :** y = Col Moving Average( xCol, <weighting=0.25>, <before=-1>, <after=0>, <partial window is missing=1>, <byVar, <Excluded( Row State() )>, ...> )
+**Syntaxe :** y = Col Moving Average( xCol, &lt;weighting=0.25&gt;, &lt;before=-1&gt;, &lt;after=0&gt;, &lt;partial window is missing=1&gt;, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt; )
 
 **Description :** Renvoie la moyenne mobile sur un intervalle donné basé sur la ligne en cours. Pour le multiplicateur de pondération, 1 correspond à une pondération égale, 0 à une pondération linéaire, et les autres valeurs agissent comme un multiplicateur de pondération exponentielle.  Il n&apos;est pas nécessaire d&apos;effectuer un tri préalable des variables Par.
 
@@ -4517,7 +4527,7 @@ dt << New Column(
 
 ### Col N Missing
 
-**Syntaxe :** y = Col N Missing( xCol, <byVar, <Excluded( Row State() )>, ...> )
+**Syntaxe :** y = Col N Missing( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt; )
 
 **Description :** Renvoie le nombre de valeurs manquantes parmi les lignes d&apos;une colonne. Le résultat est mis en cache en interne afin que les évaluations multiples soient efficaces. Les arguments facultatifs byVar spécifient des groupes pour le calcul. Notez que les arguments byVar doivent être utilisés dans une formule de colonne ou dans une fonction For Each Row() .
 
@@ -4579,7 +4589,7 @@ dt << New Column(
 
 ### Col N Unique
 
-**Syntaxe :** y = Col N Unique( xCol, <byVar, ...>, < <<score missing(bool)> )
+**Syntaxe :** y = Col N Unique( xCol, &lt;byVar, ...&gt;, &lt; &lt;&lt;score missing(bool)&gt; )
 
 **Description :** Renvoie le nombre de valeurs uniques dans une colonne. Si les valeurs manquantes sont demandées, tous les codes d&apos;une valeur manquante sont comptés comme une seule valeur.
 
@@ -4600,7 +4610,7 @@ New Column( "N unique height by age",
 
 ### Col Number
 
-**Syntaxe :** y = Col Number( xCol, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**Syntaxe :** y = Col Number( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **Description :** Renvoie le nombre de valeurs non manquantes parmi les lignes d&apos;une colonne. Le résultat est mis en cache en interne afin que les évaluations multiples soient efficaces. Les arguments facultatifs byVar spécifient des groupes pour le calcul. Notez que les arguments byVar doivent être utilisés dans une formule de colonne ou dans une fonction For Each Row() .
 
@@ -4661,7 +4671,7 @@ dt << New Column( "Col Number for each Sex grouped by Excluded",
 
 ### Col Quantile
 
-**Syntaxe :** y = Col Quantile( xCol, p, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**Syntaxe :** y = Col Quantile( xCol, p, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **Description :** Renvoie le quantile spécifié pour toutes les lignes d&apos;une colonne. L&apos;ordre est mis en cache de façon interne afin que les évaluations multiples soient efficaces.
 
@@ -4726,7 +4736,7 @@ dt << New Column(
 
 ### Col Rank
 
-**Syntaxe :** y = Col Rank( xCol, <byVar, <Excluded( Row State() )>, ...>, < <<tie("average"|"row"|"minimum"|"maximum"|"arbitrary")> )
+**Syntaxe :** y = Col Rank( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt;tie("average"|"row"|"minimum"|"maximum"|"arbitrary")&gt; )
 
 **Description :** Renvoie le rang, 1 étant le plus faible, avec un départage par ordre de ligne sauf si spécifié par l&apos;argument <<Tie. « Moyenne » renvoie la moyenne des rangs ex-æquo et « Minimum » renvoie le plus faible des rangs ex-æquo. Pour « Ligne » et « Arbitraire », chaque ligne a un rang unique.
 
@@ -4768,7 +4778,7 @@ dt << New Column( "Col Rank for each Sex grouped by Excluded",
 
 ### Col Score
 
-**Syntaxe :** y = Col Score( xCol, <byVar, ...>, < <<score missing(bool)> )
+**Syntaxe :** y = Col Score( xCol, &lt;byVar, ...&gt;, &lt; &lt;&lt;score missing(bool)&gt; )
 
 **Description :** Renvoie un score entier pour chaque valeur unique, en respectant l&apos;ordre des propriétés de colonne pertinentes éventuelles.
 
@@ -4787,7 +4797,7 @@ New Column( "Score Height by age",
 
 ### Col Sequence
 
-**Syntaxe :** y = Col Sequence( <byVar, ...>, < <<skip missing(expr)>, < <<sequence(start=1, end=unbounded, incr=1, repeat=1)>)
+**Syntaxe :** y = Col Sequence( &lt;byVar, ...&gt;, &lt; &lt;&lt;skip missing(expr)&gt;, &lt; &lt;&lt;sequence(start=1, end=unbounded, incr=1, repeat=1)&gt;)
 
 **Description :** Renvoie la position de cette ligne dans son groupe byVar, ajustée selon skip missing et les paramètres sequence éventuels.
 
@@ -4814,7 +4824,7 @@ New Column( "Row within sex, 60+",
 
 ### Col Shuffle
 
-**Syntaxe :** y = Col Shuffle(<byVar, <Excluded( Row State() )>, ...>)
+**Syntaxe :** y = Col Shuffle(&lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;)
 
 **Description :** Renvoie un nombre entier aléatoire entre 1 et le nombre de lignes de la table de données active. Lorsqu&apos;on l&apos;utilise dans une formule de colonne, Col Shuffle() crée un ordre aléatoire des numéros de lignes où chaque numéro de ligne apparaît une seule fois. L&apos;ordre est mis en cache en interne pour que des évaluations multiples soient efficaces.
 
@@ -4874,7 +4884,7 @@ dt << New Column( "Col Shuffle for each Sex grouped by Excluded",
 
 ### Col Simple Exponential Smoothing
 
-**Syntaxe :** y = Col Simple Exponential Smoothing( xCol, alpha, <byVar, ...> )
+**Syntaxe :** y = Col Simple Exponential Smoothing( xCol, alpha, &lt;byVar, ...&gt; )
 
 **Description :** Renvoie la prévision du lissage exponentiel simple pour la ligne active, en utilisant la pondération de lissage alpha. Les variables Par n&apos;ont pas besoin d&apos;être préalablement triées. La formule est : Valeur prévue[t]=alpha * Valeur observée[t-1] + (1-alpha) * Valeur prévue[t-1], avec Valeur prévue[1] = Valeur observée[1].
 
@@ -4914,7 +4924,7 @@ New Window( "test",
 
 ### Col Standardize
 
-**Syntaxe :** y = Col Standardize( xCol, <byVar, <Excluded( Row State() )>, ...> )
+**Syntaxe :** y = Col Standardize( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt; )
 
 **Description :** Renvoie la valeur moins la moyenne de la colonne, divisé par l&apos;écart-type de la colonne calculé sur l&apos;ensemble des lignes d&apos;une colonne. Si des colonnes groupées sont spécifiées, la valeur est standardisée par rapport à la moyenne et à l&apos;écart-type du groupe.
 
@@ -4967,7 +4977,7 @@ dt << New Column(
 
 ### Col Std Dev
 
-**Syntaxe :** y = Col Std Dev( xCol, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**Syntaxe :** y = Col Std Dev( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **Description :** Renvoie l&apos;écart-type d&apos;un échantillon pour les lignes d&apos;une colonne. Le résultat est mis en cache en interne afin que les évaluations multiples soient efficaces. Les arguments facultatifs byVar spécifient des groupes pour le calcul. Notez que les arguments byVar doivent être utilisés dans une formule de colonne ou dans une fonction For Each Row() .
 
@@ -5040,7 +5050,7 @@ dt << New Column(
 
 ### Col Stored Value
 
-**Syntaxe :** y = Col Stored Value( <dt>, xCol, <row=Row()> )
+**Syntaxe :** y = Col Stored Value( &lt;dt&gt;, xCol, &lt;row=Row()&gt; )
 
 **Description :** Renvoie la valeur d&apos;une colonne à laquelle aucune propriété de colonne n&apos;a été appliquée. Si l&apos;option de ligne n&apos;est pas spécifiée, la ligne actuelle est supposée.
 
@@ -5061,7 +5071,7 @@ Show( y1, y2, y3, y4 );
 
 ### Col Sum
 
-**Syntaxe :** y = Col Sum( xCol, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**Syntaxe :** y = Col Sum( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **Description :** Renvoie la somme de toutes les lignes d&apos;une colonne. Le résultat est mis en cache en interne afin que les évaluations multiples soient efficaces. Les arguments facultatifs byVar spécifient des groupes pour le calcul. Notez que les arguments byVar doivent être utilisés dans une formule de colonne ou dans une fonction For Each Row() .
 
@@ -5143,7 +5153,7 @@ Collapse Whitespace( "  The  dog    crossed    the  road  " );
 
 ### Color Difference
 
-**Syntaxe :** color = Color Difference( color1, color2, <difference metric>)
+**Syntaxe :** color = Color Difference( color1, color2, &lt;difference metric&gt;)
 
 **Description :** Renvoie la différence entre deux couleurs selon une métrique de différence de couleur spécifiée.
 
@@ -5214,7 +5224,7 @@ Color Difference( "red", "blue", "dEok" );
 
 ### Color Of
 
-**Syntaxe :** y = Color Of( <rs> ); Color Of( <Row State( <r> )> ) = y
+**Syntaxe :** y = Color Of( &lt;rs&gt; ); Color Of( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **Description :** Renvoie la composante de couleur de la valeur d&apos;état de ligne spécifiée, un index de palette de couleurs JMP positive ou une valeur encodée RVB négative. Si Color Of est utilisée comme une L-value, la couleur de la ligne active (ou r-ième) de la table de données active est changée.
 
@@ -5280,9 +5290,7 @@ Color To RGB( HLS Color( 30 / 360, 0.5, 1 ) );
 
 ### Column
 
-**Syntaxe :** y = Column( name|number );
-
-y = Column( dataTable, name|number, <"formatted"> )
+**Syntaxe :** y = Column( name|number );y = Column( dataTable, name|number, &lt;"formatted"&gt; )
 
 **Description :** Renvoie une référence à la colonne de la table de données spécifiée. Le mot clé "formatée" permet d&apos;accéder aux données formatées, comme l&apos;étiquette de valeur.
 
@@ -5317,7 +5325,7 @@ Write(
 
 ### Column Dialog
 
-**Syntaxe :** y = Column Dialog( <var = ColList("Label", <Min Col(min)>, <Max Col(max)>, <Width(w)>, <Data Type("Numeric"|"Character"|"Any")>, <Modeling Type({<"Continuous">, <"Nominal">, <"Ordinal">, <"None">, <"Multiple Response">, <"Unstructured Text">, <"Vector">})> )>, <var=EditText("string")>, <var=EditNumber(num)>, <var=Check Box( "Text", 0|1)>, <var=RadioButtons( "a", "b" )>, <var=Combo Box("choice1", ...)>, <HList(box, ...)>, <VList(box, ...)>, <LineUp(ncol, box, ...)>, <Text Box("string")>, <Window Title("title")>, <Window Icon("icon string")>, <Dialog Description("description")>, <Recall(script)>, <Help Script(script)>)
+**Syntaxe :** y = Column Dialog( &lt;var = ColList("Label", &lt;Min Col(min)&gt;, &lt;Max Col(max)&gt;, &lt;Width(w)&gt;, &lt;Data Type("Numeric"|"Character"|"Any")&gt;, &lt;Modeling Type({&lt;"Continuous"&gt;, &lt;"Nominal"&gt;, &lt;"Ordinal"&gt;, &lt;"None"&gt;, &lt;"Multiple Response"&gt;, &lt;"Unstructured Text"&gt;, &lt;"Vector"&gt;})&gt; )&gt;, &lt;var=EditText("string")&gt;, &lt;var=EditNumber(num)&gt;, &lt;var=Check Box( "Text", 0|1)&gt;, &lt;var=RadioButtons( "a", "b" )&gt;, &lt;var=Combo Box("choice1", ...)&gt;, &lt;HList(box, ...)&gt;, &lt;VList(box, ...)&gt;, &lt;LineUp(ncol, box, ...)&gt;, &lt;Text Box("string")&gt;, &lt;Window Title("title")&gt;, &lt;Window Icon("icon string")&gt;, &lt;Dialog Description("description")&gt;, &lt;Recall(script)&gt;, &lt;Help Script(script)&gt;)
 
 **Description :** Invite l&apos;utilisateur avec une fenêtre modale contenant des champs permettant de sélectionner les colonnes d&apos;une table de données. La spécification peut inclure plusieurs types de zones de saisie, ainsi que des zones de conteneur pour organiser la fenêtre.
 
@@ -5399,7 +5407,7 @@ Row State( 3 ) = Combine States(
 
 ### Combo Box
 
-**Syntaxe :** y = Combo Box( {item <( tipstr )>, ...}, <script> )
+**Syntaxe :** y = Combo Box( {item &lt;( tipstr )&gt;, ...}, &lt;script&gt; )
 
 **Description :** Renvoie une boîte d&apos;affichage pour afficher une zone combinée avec un menu contextuel. Chaque élément de la zone combinée peut avoir une info-bulle facultative qui est spécifiée comme une chaîne entre parenthèses à la suite de la chaîne de texte de l&apos;élément.
 
@@ -5434,7 +5442,7 @@ Names Default To Here( 1 );
 
 ### Concat Items
 
-**Syntaxe :** string = Concat Items( {list of strings}, <separatorString> )
+**Syntaxe :** string = Concat Items( {list of strings}, &lt;separatorString&gt; )
 
 **Description :** Joint une liste de chaînes en une chaîne longue, en séparant chacune de la suivante à l&apos;aide d&apos;un séparateur, ou d&apos;un espace si rien n&apos;est spécifié.
 
@@ -5465,7 +5473,7 @@ ex ||= "world";
 
 ### Constrained Maximize
 
-**Syntaxe :** Constrained Maximize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, <<LessThanEQ({mat_A, vec_b}), <<GreaterThanEQ({mat_A, vec_b}), <<EqualTo({mat_A, vec_b}), <<MaxIter( 250 ), <<tolerance( .00001 ), <<ShowDetails(True), <<StartingValues([x1, x2, ... ])), <<SetVariableLimit({lowerLimitVector,upperLimitVector})
+**Syntaxe :** Constrained Maximize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;LessThanEQ({mat_A, vec_b}), &lt;&lt;GreaterThanEQ({mat_A, vec_b}), &lt;&lt;EqualTo({mat_A, vec_b}), &lt;&lt;MaxIter( 250 ), &lt;&lt;tolerance( .00001 ), &lt;&lt;ShowDetails(True), &lt;&lt;StartingValues([x1, x2, ... ])), &lt;&lt;SetVariableLimit({lowerLimitVector,upperLimitVector})
 
 **Description :** Trouve les valeurs des arguments de la fonction, communiquées dans la liste {x1, x2, ...}, qui maximisent l&apos;expression expr avec des contraintes linéaires facultatives. Les variables, x1, x2, etc., peuvent être des scalaires ou des vecteurs. Les limites inférieures et supérieures doivent être spécifiées pour chaque variable, entre parenthèses, à la suite du nom de la variable ou avec le paramètre facultatif <<SetVariableLimits(). Les arguments facultatifs de la fonction Constrained Maximize vous permettent de spécifier ce qui suit : les contraintes linéaires, le nombre maximum d&apos;itérations, la tolérance souhaitée, les détails de la sortie, les valeurs de départ et les limites des variables d&apos;optimisation (voir exemple 2). Les contraintes linéaires sont spécifiées à l&apos;aide de la matrice des coefficients mat_A et du vecteur vec_b du côté droit.
 
@@ -5524,7 +5532,7 @@ Show( x, objVal, iters, gradient, hessian );
 
 ### Constrained Minimize
 
-**Syntaxe :** Constrained Minimize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, <<LessThanEQ({mat_A, vec_b}), <<GreaterThanEQ({mat_A, vec_b}), <<EqualTo({mat_A, vec_b}), <<MaxIter( 250 ), <<tolerance( .00001 ), <<ShowDetails(True), <<StartingValues([x1, x2, ... ])), <<SetVariableLimit({low,high})
+**Syntaxe :** Constrained Minimize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;LessThanEQ({mat_A, vec_b}), &lt;&lt;GreaterThanEQ({mat_A, vec_b}), &lt;&lt;EqualTo({mat_A, vec_b}), &lt;&lt;MaxIter( 250 ), &lt;&lt;tolerance( .00001 ), &lt;&lt;ShowDetails(True), &lt;&lt;StartingValues([x1, x2, ... ])), &lt;&lt;SetVariableLimit({low,high})
 
 **Description :** Trouve les valeurs des arguments de la fonction, communiquées dans la liste {x1, x2, ...}, qui minimisent l&apos;expression expr avec des contraintes linéaires facultatives. Les variables, x1, x2, etc., peuvent être des scalaires ou des vecteurs. Les limites inférieures et supérieures doivent être spécifiées pour chaque variable, entre parenthèses, à la suite du nom de la variable ou avec le paramètre facultatif <<SetVariableLimits(). Les arguments facultatifs de la fonction Constrained Minimize vous permettent de spécifier ce qui suit : les contraintes linéaires, le nombre maximum d&apos;itérations, la tolérance souhaitée, les détails de la sortie, les valeurs de départ et les limites des variables d&apos;optimisation (voir exemple 2). Les contraintes linéaires sont spécifiées à l&apos;aide de la matrice des coefficients mat_A et du vecteur vec_b du côté droit.
 
@@ -5583,7 +5591,7 @@ Show( x, objVal, iters, gradient, hessian );
 
 ### Contains
 
-**Syntaxe :** pos = Contains( x, item, <start=1> )
+**Syntaxe :** pos = Contains( x, item, &lt;start=1&gt; )
 
 **Description :** Renvoie la position de item dans x, en commençant par la position start, si celle-ci est donnée. Si start est négative, la recherche s&apos;effectue en arrière à partir de length( x ) - start. L’argument x peut être une chaîne ou une liste.
 
@@ -5599,7 +5607,7 @@ Show( Contains( {"A", 2, "C", [1 5], "C"}, "C", 4 ) );
 
 ### Contains Item
 
-**Syntaxe :** b = Contains Item( x, item | list | Pat Regex(), <delimiter> )
+**Syntaxe :** b = Contains Item( x, item | list | Pat Regex(), &lt;delimiter&gt; )
 
 **Description :** Renvoie un booléen indiquant si le mot [élément], un mot de la liste de mot [liste], ou le modèle [modèle] correspond ou non à l&apos;un des mots du texte représenté par [x]. Les mots sont séparés par les caractères de la chaîne de séparateurs [séparateur] facultative. Le séparateur par défaut est la virgule ",". Les vides sont tronqués par la fin de chaque mot extrait de la chaîne de texte d&apos;entrée [x].
 
@@ -5687,7 +5695,7 @@ For( i = 1, i <= 10, i++,
 
 ### Contour
 
-**Syntaxe :** Contour( xVector, yVector, zGridMatrix, zContours, < <<zColor( color, option )>, < <<Fill|Fill Between|Fill Below|Fill Above>, < <<Transparency(vector)> )
+**Syntaxe :** Contour( xVector, yVector, zGridMatrix, zContours, &lt; &lt;&lt;zColor( color, option )&gt;, &lt; &lt;&lt;Fill|Fill Between|Fill Below|Fill Above&gt;, &lt; &lt;&lt;Transparency(vector)&gt; )
 
 **Description :** Dessine des isoréponses en fonction d&apos;une grille de valeurs. Si le nombre de couleurs spécifié est inférieur au nombre d&apos;isoréponses, les options « Interpolate Colors » ou « Cycle Colors » déterminent comment appliquer les couleurs.
 
@@ -5760,7 +5768,7 @@ New Window( "Example",
 
 ### Contour Function
 
-**Syntaxe :** Contour Function( zExpr, xName, yName, z|zMatrix, < <<XGrid( min, max, incr )>, < <<YGrid( min, max, incr )>, < <<ZColor( color, option )>, < <<ZLabeled>, < <<Filled>, < <<FillBetween>, < <<Ternary>, < <<Transparency( t )> )
+**Syntaxe :** Contour Function( zExpr, xName, yName, z|zMatrix, &lt; &lt;&lt;XGrid( min, max, incr )&gt;, &lt; &lt;&lt;YGrid( min, max, incr )&gt;, &lt; &lt;&lt;ZColor( color, option )&gt;, &lt; &lt;&lt;ZLabeled&gt;, &lt; &lt;&lt;Filled&gt;, &lt; &lt;&lt;FillBetween&gt;, &lt; &lt;&lt;Ternary&gt;, &lt; &lt;&lt;Transparency( t )&gt; )
 
 **Description :** Évalue l&apos;expression sur une grille de valeurs xName et yName et dessine les lignes d&apos;isoréponses. La couleur color peut être spécifiée par un nombre, une matrice, une liste de valeurs RVB, une liste de noms de couleurs ou un thème de couleur.  La transparence t peut être spécifiée par un nombre ou par une matrice.  Si l’option Ternary est sélectionnée, les courbes d&apos;isoréponses sont coupées sur un système de coordonnées ternaire.
 
@@ -5811,7 +5819,7 @@ New Window( "Example",
 
 ### Contour Seg
 
-**Syntaxe :** me = Contour Seg( Triangulation, [ levels ], < zColor([colors], <Cycle Colors|Interpolate Colors>) >, < Transparency([] | t) >
+**Syntaxe :** me = Contour Seg( Triangulation, [ levels ], &lt; zColor([colors], &lt;Cycle Colors|Interpolate Colors&gt;) &gt;, &lt; Transparency([] | t) &gt;
 
 **Description :** Renvoie un seg d&apos;affichage représentant les courbes d&apos;isoréponses d&apos;une triangulation. Des couleurs facultatives peuvent être spécifiées pour chaque niveau comme une matrice ou une liste. La transparence peut être spécifiée comme un nombre ou une matrice.
 
@@ -5840,7 +5848,7 @@ New Window( "Contour Seg Example",
 
 ### Convert File Path
 
-**Syntaxe :** path = Convert File Path( path, <absolute|relative>, <posix|windows>, <base( path )>, <search> )
+**Syntaxe :** path = Convert File Path( path, &lt;absolute|relative&gt;, &lt;posix|windows&gt;, &lt;base( path )&gt;, &lt;search&gt; )
 
 **Description :** Renvoie le chemin d&apos;accès converti.
 
@@ -5863,7 +5871,7 @@ For Each( {pv},
 
 ### Copy Directory
 
-**Syntaxe :** rc = Copy Directory( from, to, <recursive(0|1)> )
+**Syntaxe :** rc = Copy Directory( from, to, &lt;recursive(0|1)&gt; )
 
 **Description :** Copie les fichiers d’un répertoire sur un autre, éventuellement avec les sous-répertoires. Le nom du répertoire sera créé sur le chemin to et ne fera pas partie du chemin to. Renvoie 1 si le répertoire a été copié ou 0 si le répertoire n&apos;a pas pu être copié. Génère une erreur si le chemin est incorrect ou n&apos;existe pas.
 
@@ -5912,7 +5920,7 @@ Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " "
 
 ### Correlation
 
-**Syntaxe :** y = Correlation( x , < <<"Pairwise" >, < <<"Shrink" >, < <<Freq(vector) >, < <<Weight(vector) > )
+**Syntaxe :** y = Correlation( x , &lt; &lt;&lt;"Pairwise" &gt;, &lt; &lt;&lt;"Shrink" &gt;, &lt; &lt;&lt;Freq(vector) &gt;, &lt; &lt;&lt;Weight(vector) &gt; )
 
 **Description :** Renvoie la matrice de corrélation de l&apos;argument x de la matrice. L&apos;argument "Pairwise" traite les valeurs manquantes par paire plutôt que par ligne. L&apos;argument "Shrink" réduit les éléments non diagonaux d&apos;un facteur déterminé à l&apos;aide de la méthode décrite dans Schafer and Strimmer, 2005. Les arguments Freq et Weight spécifient les vecteurs des valeurs de fréquence et de pondération, respectivement.
 
@@ -5972,7 +5980,7 @@ Cosine( Pi() / 2 );
 
 ### Count
 
-**Syntaxe :** y = Count( start, end, s, <n=1> )
+**Syntaxe :** y = Count( start, end, s, &lt;n=1&gt; )
 
 **Description :** Renvoie la valeur i-ième dans la séquence des nombres de start à end en incrémentant par s et en répétant chaque nombre n fois, où i est déterminé par la valeur de la fonction Row(). Puisqu&apos;elle dépend de la fonction Row(), la fonction Count() est principalement utile dans les formules de colonne.
 
@@ -5996,7 +6004,7 @@ For Each Row(
 
 ### Covariance
 
-**Syntaxe :** y = Covariance( x , < <<"Pairwise" >, < <<"Shrink" >, < <<Freq(vector) >, < <<Weight(vector) > )
+**Syntaxe :** y = Covariance( x , &lt; &lt;&lt;"Pairwise" &gt;, &lt; &lt;&lt;"Shrink" &gt;, &lt; &lt;&lt;Freq(vector) &gt;, &lt; &lt;&lt;Weight(vector) &gt; )
 
 **Description :** Renvoie la matrice de covariance de l&apos;argument x de la matrice. L&apos;argument "Pairwise" traite les valeurs manquantes par paire plutôt que par ligne. L&apos;argument "Shrink" réduit les éléments non diagonaux d&apos;un facteur déterminé à l&apos;aide de la méthode décrite dans Schafer and Strimmer, 2005. Les arguments Freq et Weight spécifient les vecteurs des valeurs de fréquence et de pondération, respectivement.
 
@@ -6011,7 +6019,7 @@ Covariance( [1 3 5, 3 2 6, 5 6 1] );
 
 ### Create Database Connection
 
-**Syntaxe :** dbc = Create Database Connection( dataSourceName|"Connect Dialog", <DriverPrompt(true|false)> )
+**Syntaxe :** dbc = Create Database Connection( dataSourceName|"Connect Dialog", &lt;DriverPrompt(true|false)&gt; )
 
 **Description :** Crée une connexion à la base de données et renvoie un handle à la connexion. Si DriverPrompt est Vrai, l&apos;utilisateur sera invité à utiliser l&apos;invite du pilote ODBC pour fournir les informations d&apos;identification, si nécessaire.
 
@@ -6053,7 +6061,7 @@ Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " "
 
 ### Create Excel Workbook
 
-**Syntaxe :** Create Excel Workbook(<Workbook Name>, <{List of open tables}>, <Optional list of worksheet names> )
+**Syntaxe :** Create Excel Workbook(&lt;Workbook Name&gt;, &lt;{List of open tables}&gt;, &lt;Optional list of worksheet names&gt; )
 
 **Description :** Générer un classeur Excel à partir des tables de données JMP ouvertes
 
@@ -6141,7 +6149,7 @@ Show( connection );
 
 ### Current Data Table
 
-**Syntaxe :** dt = Current Data Table( <Project(title|index|box|window)> ); Current Data Table( dt )
+**Syntaxe :** dt = Current Data Table( &lt;Project(title|index|box|window)&gt; ); Current Data Table( dt )
 
 **Description :** Renvoie la table de données active ou rend la table de données spécifiée active, si une table de données est spécifiée.
 
@@ -6161,7 +6169,7 @@ Current Data Table() << Get Column Names;
 
 ### Current Journal
 
-**Syntaxe :** y = Current Journal( <Project(title|index|box|window)> )
+**Syntaxe :** y = Current Journal( &lt;Project(title|index|box|window)&gt; )
 
 **Description :** Renvoie une référence au journal actif du projet actif (sauf lorsque le script n&apos;est pas exécuté dans un projet).
 
@@ -6184,7 +6192,7 @@ Current Journal();
 
 ### Current Report
 
-**Syntaxe :** y = Current Report( <Project(title|index|box|window)> )
+**Syntaxe :** y = Current Report( &lt;Project(title|index|box|window)&gt; )
 
 **Description :** Renvoie une référence de boîte d&apos;affichage au rapport actif du projet actif (sauf lorsque le script n&apos;est pas exécuté dans un projet).
 
@@ -6203,7 +6211,7 @@ Current Report();
 
 ### Current Window
 
-**Syntaxe :** y = Current Window( <Project(title|index|box|window)> )
+**Syntaxe :** y = Current Window( &lt;Project(title|index|box|window)&gt; )
 
 **Description :** Renvoie une référence à la fenêtre active du projet actif (sauf lorsque le script n&apos;est pas exécuté dans un projet).
 
@@ -6361,7 +6369,7 @@ New Window( "Selection Filter",
 
 ### Data Grid Box
 
-**Syntaxe :** y = Data Grid Box(  )
+**Syntaxe :** y = Data Grid Box( )
 
 **Description :** Renvoie une boîte d&apos;affichage qui peut contenir une table de données.
 
@@ -6475,24 +6483,9 @@ For( exi = 0, exi < 5, exi++, /* this is just a way to test a feed when the real
 
 ```
 
-### Date DMY
-
-**Syntaxe :** z = Date DMY( d, m, y )
-
-**Description :** Convertit au format « jour, mois et année » une valeur au format « date-heure » de JMP qui est le nombre de secondes depuis le 1er janvier 1904.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-As Date( Date DMY( 15, 7, 2000 ) );
-
-```
-
 ### Date Difference
 
-**Syntaxe :** delta = Date Difference( dt1, dt2, intervalName, <alignment="start"> )
+**Syntaxe :** delta = Date Difference( dt1, dt2, intervalName, &lt;alignment="start"&gt; )
 
 **Description :** Renvoie la différence en intervalles de deux valeurs date/heure. Les valeurs de intervalName prises en charge sont « Année », « Quartier », « Mois », « Semaine », « Jour », « Heure », « Minute », « Seconde » et « Numérique ». Un alignment de "Start" comprend des intervalles complets ou partiels, alors que "Actual" renvoie uniquement des intervalles complets. Un alignment de "Fractional" renvoie des différences fractionnelles, en utilisant les moyennes de durée des intervalles « Année », « Quartier » et « Mois ».
 
@@ -6540,9 +6533,24 @@ Date Difference(
 
 ```
 
+### Date DMY
+
+**Syntaxe :** z = Date DMY( d, m, y )
+
+**Description :** Convertit au format « jour, mois et année » une valeur au format « date-heure » de JMP qui est le nombre de secondes depuis le 1er janvier 1904.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+As Date( Date DMY( 15, 7, 2000 ) );
+
+```
+
 ### Date Increment
 
-**Syntaxe :** d = Date Increment( datetime, intervalName, <incr=1>, <alignment="start"> )
+**Syntaxe :** d = Date Increment( datetime, intervalName, &lt;incr=1&gt;, &lt;alignment="start"&gt; )
 
 **Description :** Renvoie une nouvelle valeur date-heure en ajoutant un nombre incr d&apos;intervalles. Les valeurs de intervalName prises en charge sont « Année », « Quartier », « Mois », « Semaine », « Jour », « Heure », « Minute », « Seconde » et « Numérique ». Un alignment de "Start" tronque à l&apos;intervalle le plus proche avant d&apos;ajouter l&apos;incrément, alors que "Actual" retient la date/heure d&apos;entrée complète. Un alignment de "Fractional" permet des valeurs incr fractionnelles, en utilisant les moyennes de durée des intervalles « Année », « Quartier » et « Mois ».
 
@@ -6719,7 +6727,7 @@ Decode64 Double( "P/lUWYIBG9Q=" );
 
 ### Define Class
 
-**Syntaxe :** Define Class("class name", <Base Class{ "base class name", ... }>, <Show( All( boolean ) | ( Members( boolean ) | Methods( boolean ) | Functions( boolean ) )+ )>, { method* | member* | function* } )
+**Syntaxe :** Define Class("class name", &lt;Base Class{ "base class name", ... }&gt;, &lt;Show( All( boolean ) | ( Members( boolean ) | Methods( boolean ) | Functions( boolean ) )+ )&gt;, { method* | member* | function* } )
 
 **Description :** Définir une nouvelle classe
 
@@ -6778,7 +6786,7 @@ Delete Classes( complex );
 
 ### Delete Classes
 
-**Syntaxe :** Delete Classes( <Force( boolean )>, <class reference, ...> )
+**Syntaxe :** Delete Classes( &lt;Force( boolean )&gt;, &lt;class reference, ...&gt; )
 
 **Description :** Supprime toutes les définitions de classe, ou une ou plusieurs définitions de classe spécifiques.
 
@@ -6810,7 +6818,7 @@ Show Classes();
 
 ### Delete Directory
 
-**Syntaxe :** rc = Delete Directory( path, <Allow Undo( boolean )> )
+**Syntaxe :** rc = Delete Directory( path, &lt;Allow Undo( boolean )&gt; )
 
 **Description :** Supprime un répertoire, ainsi que ses fichiers et sous-répertoires. Renvoie 1 si le répertoire a été supprimé. Renvoie 0 si le répertoire n&apos;a pas pu être supprimé ou si le chemin est incorrect.
 
@@ -6835,7 +6843,7 @@ Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " "
 
 ### Delete File
 
-**Syntaxe :** rc = Delete File( path, <Allow Undo( boolean )> )
+**Syntaxe :** rc = Delete File( path, &lt;Allow Undo( boolean )&gt; )
 
 **Description :** Supprime un fichier. Renvoie 1 si le fichier a été supprimé. Renvoie 0 si le fichier n&apos;a pas pu être supprimé. Génère une erreur si le chemin est incorrect ou n&apos;existe pas.
 
@@ -6858,7 +6866,7 @@ Char( rc0 ) || " " || Char( rc1 ) || " " || Char( rc2 ) || " "
 
 ### Delete Globals
 
-**Syntaxe :** Delete Globals( < varname, ... > )
+**Syntaxe :** Delete Globals( &lt; varname, ... &gt; )
 
 **Description :** Supprime tous les symboles globaux actuellement définis et leurs valeurs.
 
@@ -6873,7 +6881,7 @@ Delete Globals();
 
 ### Delete Namespaces
 
-**Syntaxe :** Delete Namespaces( <Force( boolean )>, <namespace reference, ...> )
+**Syntaxe :** Delete Namespaces( &lt;Force( boolean )&gt;, &lt;namespace reference, ...&gt; )
 
 **Description :** Supprime tous les espaces de noms, ou un ou plusieurs espaces de noms spécifiques.
 
@@ -6903,7 +6911,7 @@ Show Namespaces();
 
 ### Delete Symbols
 
-**Syntaxe :** Delete Symbols( < varname, ... > )
+**Syntaxe :** Delete Symbols( &lt; varname, ... &gt; )
 
 **Description :** Supprime tous les symboles actuellement définis et leurs valeurs.
 
@@ -6933,7 +6941,7 @@ Derivative( Sin( x ), x );
 
 ### Design
 
-**Syntaxe :** y = Design( v, < levelsList|<<Levels, <<ElseMissing > )
+**Syntaxe :** y = Design( v, &lt; levelsList|&lt;&lt;Levels, &lt;&lt;ElseMissing &gt; )
 
 **Description :** Crée une matrice de plan qui contient une colonne de 1 et de 0 pour chaque valeur unique de l&apos;argument. Utiliser l&apos;argument levelsList pour spécifier une liste des niveaux pour la matrice de plan. Si l&apos;argument <<Levels est spécifié, la valeur de renvoi est une liste contenant la matrice de plan et une liste des niveaux. Si l&apos;argument <<ElseMissing est spécifié, les valeurs manquantes sont placées dans la matrice de plan pour les valeurs de l&apos;argument v n&apos;apparaissant pas dans la levelsList. Sinon, des 0 sont placés dans la matrice de plan.
 
@@ -6962,7 +6970,7 @@ Show( Design( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ### Design Last
 
-**Syntaxe :** y = Design Last( v, < levelsList, <<ElseMissing > )
+**Syntaxe :** y = Design Last( v, &lt; levelsList, &lt;&lt;ElseMissing &gt; )
 
 **Description :** Crée une matrice de plan qui contient une colonne de 1 et de 0 pour toutes les valeurs uniques de l&apos;argument à l&apos;exception de la dernière. Le dernier niveau est codé en tant que ligne de 0. Si l&apos;argument levelsList est spécifié, le dernier niveau est également le dernier niveau dans levelsList. Sinon, le dernier niveau est défini comme la valeur la plus grande dans v. Si l&apos;argument <<Levels est spécifié, la valeur de renvoi est une liste contenant la matrice de plan et une liste des niveaux. Si l&apos;argument  <<ElseMissing est spécifié, les valeurs manquantes sont placées dans la matrice de plan pour les valeurs de l&apos;argument v n&apos;apparaissant pas dans la levelsList. Sinon, des 0 sont placés dans la matrice de plan.
 
@@ -7000,7 +7008,7 @@ Show( Design Last( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ### Design Nom
 
-**Syntaxe :** y = Design Nom( v, < levelsList|<<Levels, <<ElseMissing > )
+**Syntaxe :** y = Design Nom( v, &lt; levelsList|&lt;&lt;Levels, &lt;&lt;ElseMissing &gt; )
 
 **Description :** Crée une matrice de plan qui contient une colonne de 1 et de 0 pour toutes les valeurs uniques de l&apos;argument à l&apos;exception de la dernière. Le dernier niveau est codé en tant que ligne de -1. Si l&apos;argument levelsList est spécifié, le dernier niveau est également le dernier niveau dans levelsList. Sinon, le dernier niveau est défini comme la valeur la plus grande dans v. Si l&apos;argument <<Levels est spécifié, la valeur de renvoi est une liste contenant la matrice de plan et une liste des niveaux. Si l&apos;argument <<ElseMissing est spécifié, les valeurs manquantes sont placées dans la matrice de plan pour les valeurs de l&apos;argument v n&apos;apparaissant pas dans la levelsList. Sinon, des 0 sont placés dans la matrice de plan.
 
@@ -7038,7 +7046,7 @@ Show( Design Nom( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ### Design Ord
 
-**Syntaxe :** y = Design Ord( v, < levelsList|<<Levels, <<ElseMissing > )
+**Syntaxe :** y = Design Ord( v, &lt; levelsList|&lt;&lt;Levels, &lt;&lt;ElseMissing &gt; )
 
 **Description :** Crée une matrice de plan qui contient une colonne pour toutes les valeurs uniques de l&apos;argument à l&apos;exception de la dernière. Le premier niveau est codé en tant que ligne de 0. Chacun des (X) niveaux suivants de l&apos;argument levelsList est codé en tant que ligne de (n-1) 1 et le reste en tant que 0. Si l&apos;argument <<Levels est spécifié, la valeur de renvoi est une liste contenant la matrice de plan et une liste des niveaux. Si l&apos;argument <<ElseMissing est spécifié, les valeurs manquantes sont placées dans la matrice de plan pour les valeurs de l&apos;argument v n&apos;apparaissant pas dans la levelsList. Sinon, des 0 sont placés dans la matrice de plan.
 
@@ -7076,7 +7084,7 @@ Show( Design Ord( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ### DesignF
 
-**Syntaxe :** y = DesignF( v, < levelsList|<<Levels, <<ElseMissing > )
+**Syntaxe :** y = DesignF( v, &lt; levelsList|&lt;&lt;Levels, &lt;&lt;ElseMissing &gt; )
 
 **Description :** Crée une matrice de plan qui contient une colonne de 1 et de 0 pour toutes les valeurs uniques de l&apos;argument à l&apos;exception de la dernière. Le dernier niveau est codé en tant que ligne de -1. Si l&apos;argument levelsList est spécifié, le dernier niveau est également le dernier niveau dans levelsList. Sinon, le dernier niveau est défini comme la valeur la plus grande dans v. Si l&apos;argument <<Levels est spécifié, la valeur de renvoi est une liste contenant la matrice de plan et une liste des niveaux. Si l&apos;argument <<ElseMissing est spécifié, les valeurs manquantes sont placées dans la matrice de plan pour les valeurs de l&apos;argument v n&apos;apparaissant pas dans la levelsList. Sinon, des 0 sont placés dans la matrice de plan.
 
@@ -7228,7 +7236,7 @@ If(
 
 ### Dif
 
-**Syntaxe :** y = Dif( x, <n=1> )
+**Syntaxe :** y = Dif( x, &lt;n=1&gt; )
 
 **Description :** Renvoie x - Lag( x, n ), également connue sous le nom de "première différence". Puisqu&apos;elle dépend de Row(), la fonction Dif() est principalement utile dans les formules de colonne.
 
@@ -7351,7 +7359,7 @@ Disable Proxy Settings( 1 );
 
 ### Distance
 
-**Syntaxe :** y = Distance( x1, x2, <scales>, <powers> )
+**Syntaxe :** y = Distance( x1, x2, &lt;scales&gt;, &lt;powers&gt; )
 
 **Description :** Crée une matrice de distances entre les lignes de x1 et les lignes de x2. Pour personnaliser le codage et les puissances pour chaque colonne, spécifiez les arguments supplémentaires scale et powers. La fonction Exp(-distance(x1,x2)) est utilisée pour le krigeage.
 
@@ -7430,7 +7438,7 @@ Show( exDm == exD );
 
 ### Divide
 
-**Syntaxe :** y = x0 / x1; y = Divide( x0, <x1>, ... )
+**Syntaxe :** y = x0 / x1; y = Divide( x0, &lt;x1&gt;, ... )
 
 **Description :** Sépare tous les arguments consécutifs du premier argument. Les arguments peuvent être des nombres, des matrices ou des listes de nombres. Lorsque l&apos;appel est fait avec un seul argument, le résultat est la réciproque.
 
@@ -7475,7 +7483,7 @@ ex;
 
 ### Double Declining Balance
 
-**Syntaxe :** x = Double Declining Balance( cost, salvage, life, period, <factor=2> )
+**Syntaxe :** x = Double Declining Balance( cost, salvage, life, period, &lt;factor=2&gt; )
 
 **Description :** Renvoie l’amortissement d’un capital sur une période donnée à l’aide la méthode dégressive à taux double ou d’un autre facteur d’amortissement. Équivalent à la fonction DDB de Microsoft Excel.
 
@@ -7490,7 +7498,7 @@ Double Declining Balance( 10000, 100, 3, 2 );
 
 ### Drag Line
 
-**Syntaxe :** Drag Line( xMatrixName, yMatrixName, <dragScript>, <MouseUpScript> )
+**Syntaxe :** Drag Line( xMatrixName, yMatrixName, &lt;dragScript&gt;, &lt;MouseUpScript&gt; )
 
 **Description :** Dessine une polyligne sur les points indiqués. Toutefois, à la différence de la ligne, les points peuvent être glissés à l&apos;écran, ce qui met à jour les valeurs des arguments de la matrice (valeur L).
 
@@ -7512,7 +7520,7 @@ New Window( "Example",
 
 ### Drag Marker
 
-**Syntaxe :** Drag Marker( xMatrixName, yMatrixName, <dragScript>, <MouseUpScript> )
+**Syntaxe :** Drag Marker( xMatrixName, yMatrixName, &lt;dragScript&gt;, &lt;MouseUpScript&gt; )
 
 **Description :** Dessine des marqueurs déplaçables aux point indiqués. Les valeurs de la matrice sont mises à jour lorsque les marqueurs sont déplacés.
 
@@ -7534,7 +7542,7 @@ New Window( "Example",
 
 ### Drag Polygon
 
-**Syntaxe :** Drag Polygon( xMatrixName, yMatrixName, <dragScript>, <MouseUpScript> )
+**Syntaxe :** Drag Polygon( xMatrixName, yMatrixName, &lt;dragScript&gt;, &lt;MouseUpScript&gt; )
 
 **Description :** Dessine un polygone plein sur les points indiqués. Les points peuvent être glissés à l&apos;écran, ce qui met à jour les valeurs des arguments de matrice (l-value).
 
@@ -7556,7 +7564,7 @@ New Window( "Example",
 
 ### Drag Rect
 
-**Syntaxe :** Drag Rect( xMatrixName, yMatrixName, <dragScript>, <MouseUpScript> )
+**Syntaxe :** Drag Rect( xMatrixName, yMatrixName, &lt;dragScript&gt;, &lt;MouseUpScript&gt; )
 
 **Description :** Dessine un rectangle sur les points indiqués. Toutefois, à la différence de Rect, ces coins peuvent être glissés à l&apos;écran, ce qui met à jour les valeurs des arguments de la matrice (valeur L).
 
@@ -7578,7 +7586,7 @@ New Window( "Example",
 
 ### Drag Text
 
-**Syntaxe :** Drag Text( xMatrixName, yMatrixName, text, <dragScript>, <MouseUpScript> )
+**Syntaxe :** Drag Text( xMatrixName, yMatrixName, text, &lt;dragScript&gt;, &lt;MouseUpScript&gt; )
 
 **Description :** Dessine le texte aux points indiqués. Toutefois, à la différence de la fonction Text(), les points peuvent être glissés à l&apos;écran, ce qui met à jour les valeurs des arguments des matrices xMatrixName et yMatrixName. L’argument text peut être une chaîne ou une liste de chaînes.
 
@@ -7600,7 +7608,7 @@ New Window( "Example",
 
 ### Dunnett P value
 
-**Syntaxe :** p = Dunnett P value( q, nTrt, dfe, <lambdaVec = .> )
+**Syntaxe :** p = Dunnett P value( q, nTrt, dfe, &lt;lambdaVec = .&gt; )
 
 **Description :** Renvoie la p-value du test des comparaisons multiples de Dunnett, où q est la statistique de test, nTrt est le nombre de traitements à comparer avec le groupe de contrôle, dfe est le degré de liberté de l’erreur (compte tenu de l’échantillon total de l’étude) et le lambdaVec facultatif est un vecteur des paramètres, lesquels sont définis 1/sqrt(2) par défaut.
 
@@ -7615,7 +7623,7 @@ Dunnett P value( 1.67623, 3, 11 );
 
 ### Dunnett Quantile
 
-**Syntaxe :** q = Dunnett Quantile( 1-alpha, nTrt, dfe, <lambdaVec = .> )
+**Syntaxe :** q = Dunnett Quantile( 1-alpha, nTrt, dfe, &lt;lambdaVec = .&gt; )
 
 **Description :** Renvoie le quantile nécessaire pour le test des comparaisons multiples de Dunnett, où 1-alpha est le niveau de confiance, nTrt est le nombre de traitements à comparer avec le groupe de contrôle, dfe est le degré de liberté de l’erreur (compte tenu de l’échantillon total de l’étude) et le lambdaVec facultatif est un vecteur des paramètres, lesquels sont définis 1/sqrt(2) par défaut.
 
@@ -7625,6 +7633,21 @@ Dunnett P value( 1.67623, 3, 11 );
 
 Names Default To Here( 1 );
 Dunnett Quantile( 0.95, 3, 11 );
+
+```
+
+### e
+
+**Syntaxe :** y = e()
+
+**Description :** Renvoie la constante mathématique e, avec une précision d&apos;environ 15 chiffres après la virgule : 2.7182818....
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+Round( e(), 10 );
 
 ```
 
@@ -7707,7 +7730,7 @@ E * Diag( M ) * E`;
 
 ### Eigen BLAS
 
-**Syntaxe :** z = Eigen BLAS( X, <nvec = ncol> )
+**Syntaxe :** z = Eigen BLAS( X, &lt;nvec = ncol&gt; )
 
 **JMP Version ajoutée :** 17
 
@@ -7930,7 +7953,7 @@ Eval Expr( Length( Expr( "X" || Char( 12 ) ) ) );
 
 ### Eval Insert
 
-**Syntaxe :** y = Eval Insert( string, <startChar="^">, <endChar=startChar> )
+**Syntaxe :** y = Eval Insert( string, &lt;startChar="^"&gt;, &lt;endChar=startChar&gt; )
 
 **Description :** Recherche les sous-chaînes délimitées par la paire startChar/endChar et les remplace par l&apos;expression évaluée.
 
@@ -7945,7 +7968,7 @@ Eval Insert( "Today is ^As Date( Today())^" );
 
 ### Eval Insert Into
 
-**Syntaxe :** Eval Insert Into( l_string, <startChar="^">, <endChar=startChar> )
+**Syntaxe :** Eval Insert Into( l_string, &lt;startChar="^"&gt;, &lt;endChar=startChar&gt; )
 
 **Description :** Recherche les sous-chaînes délimitées par la paire startChar/endChar et les remplace par l&apos;expression évaluée, remplaçant l_string.
 
@@ -7985,6 +8008,151 @@ Names Default To Here( 1 );
 x = 5;
 y = 10;
 Eval List( {x, y} );
+
+```
+
+### Excerpt Box
+
+**Syntaxe :** y = Excerpt Box( rptnum, lstSubscripts )
+
+**Description :** Renvoie une boîte d&apos;affichage contenant l&apos;extrait indiqué par le rapport numéro rptnum et la liste des indices d&apos;affichage lstSubscripts. Les indices indiquent l&apos;état actuel du rapport, une fois que les extraits antérieurs ont été supprimés.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+New Window( "Example",
+	V Sheet Box(
+		<<Hold(
+			Bivariate( Y( :weight ), X( :height ), Fit Line() )
+		),
+		<<Hold(
+			Distribution(
+				Automatic Recalc( 1 ),
+				Continuous Distribution(
+					Column( :height ),
+					Horizontal Layout( 1 ),
+					Vertical( 0 ),
+					Outlier Box Plot( 0 )
+				)
+			)
+		),
+		<<Hold( Treemap( Categories( :age ) ) ),
+		<<Hold(
+			Bubble Plot(
+				X( :height ),
+				Y( :weight ),
+				Sizes( :age ),
+				Coloring( :sex ),
+				Circle Size( 6.226 ),
+				All Labels( 0 )
+			)
+		),
+		H Sheet Box(
+			Sheet Part(
+				"weight by height",
+				Excerpt Box( 1, {Picture Box( 1 )} )
+			),
+			Sheet Part(
+				"height",
+				Excerpt Box( 2, {Picture Box( 1 )} )
+			)
+		),
+		H Sheet Box(
+			Sheet Part(
+				"",
+				Excerpt Box( 3, {Picture Box( 1 )} )
+			),
+			Sheet Part(
+				"height by weight",
+				Excerpt Box( 4, {Picture Box( 1 )} )
+			)
+		)
+	)
+);
+
+```
+
+### Excluded
+
+**Syntaxe :** y = Excluded( &lt;rs&gt; ); Excluded( &lt;Row State( &lt;r&gt; )&gt; ) = y
+
+**Description :** Renvoie la composante exclue de la valeur d&apos;état de ligne spécifiée, 0 ou 1. Si la fonction Excluded() est utilisée comme L-value, l’état exclu de la ligne active (ou r-ième) de la table de données active est modifié.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+Row State( 3 ) = Excluded State( 1 );
+Excluded( Row State( 3 ) );
+Row() = 3;
+Excluded();
+
+```
+
+### Excluded State
+
+**Syntaxe :** rs = Excluded State( x )
+
+**Description :** Renvoie une valeur d&apos;état de ligne avec la composante exclue définie comme la valeur spécifiée.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+Row State( 3 ) = Excluded State( 1 );
+Excluded( Row State( 3 ) );
+
+```
+
+### Execute SQL
+
+**Syntaxe :** dt = Execute SQL(databaseConnectionHandle|dataConnector, "SELECT ..."|"SQLFILE=..."|tableName, &lt;invisible(0|1)&gt;, &lt;outputTableName&gt;, &lt;Batch Submit(0|1)&gt; )
+
+**Description :** Exécute SQL sur une connexion à la base de données renvoyée par la commande Créer une connexion à la base de données ou un connecteur de données. L&apos;activation de l&apos;envoi par lot permet de recevoir plusieurs instructions SQL et de renvoyer une liste des résultats (pilotes qui prennent en charge cette fonction uniquement).
+
+**JMP Version ajoutée :** Avant la version 14
+
+**Exemple 1**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Execute SQL(
+	databaseConnectionHandle,
+	"SELECT HEIGHT, WEIGHT FROM Bigclass",
+	"NewTable"
+);
+
+```
+
+**Exemple 2**
+
+```jsl
+
+Names Default To Here( 1 );
+dc = Data Connector Registry() << Get( "com.jmp.sql_server" );
+dt = Execute SQL( dc, "SELECT HEIGHT, WEIGHT FROM Bigclass" );
+
+```
+
+**Exemple 3**
+
+```jsl
+
+Names Default To Here( 1 );
+dc = Data Connector Registry() << Get( "com.jmp.sql_server" );
+resultList = Execute SQL(
+	dc,
+	"SELECT HEIGHT, WEIGHT FROM Bigclass; SELECT AGE, WEIGHT FROM BigClass;",
+	Batch Submit( 1 )
+);
 
 ```
 
@@ -8060,154 +8228,9 @@ New Window( "Example: ExGaussian Quantile",
 
 ```
 
-### Excerpt Box
-
-**Syntaxe :** y = Excerpt Box( rptnum, lstSubscripts )
-
-**Description :** Renvoie une boîte d&apos;affichage contenant l&apos;extrait indiqué par le rapport numéro rptnum et la liste des indices d&apos;affichage lstSubscripts. Les indices indiquent l&apos;état actuel du rapport, une fois que les extraits antérieurs ont été supprimés.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-New Window( "Example",
-	V Sheet Box(
-		<<Hold(
-			Bivariate( Y( :weight ), X( :height ), Fit Line() )
-		),
-		<<Hold(
-			Distribution(
-				Automatic Recalc( 1 ),
-				Continuous Distribution(
-					Column( :height ),
-					Horizontal Layout( 1 ),
-					Vertical( 0 ),
-					Outlier Box Plot( 0 )
-				)
-			)
-		),
-		<<Hold( Treemap( Categories( :age ) ) ),
-		<<Hold(
-			Bubble Plot(
-				X( :height ),
-				Y( :weight ),
-				Sizes( :age ),
-				Coloring( :sex ),
-				Circle Size( 6.226 ),
-				All Labels( 0 )
-			)
-		),
-		H Sheet Box(
-			Sheet Part(
-				"weight by height",
-				Excerpt Box( 1, {Picture Box( 1 )} )
-			),
-			Sheet Part(
-				"height",
-				Excerpt Box( 2, {Picture Box( 1 )} )
-			)
-		),
-		H Sheet Box(
-			Sheet Part(
-				"",
-				Excerpt Box( 3, {Picture Box( 1 )} )
-			),
-			Sheet Part(
-				"height by weight",
-				Excerpt Box( 4, {Picture Box( 1 )} )
-			)
-		)
-	)
-);
-
-```
-
-### Excluded
-
-**Syntaxe :** y = Excluded( <rs> ); Excluded( <Row State( <r> )> ) = y
-
-**Description :** Renvoie la composante exclue de la valeur d&apos;état de ligne spécifiée, 0 ou 1. Si la fonction Excluded() est utilisée comme L-value, l’état exclu de la ligne active (ou r-ième) de la table de données active est modifié.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Row State( 3 ) = Excluded State( 1 );
-Excluded( Row State( 3 ) );
-Row() = 3;
-Excluded();
-
-```
-
-### Excluded State
-
-**Syntaxe :** rs = Excluded State( x )
-
-**Description :** Renvoie une valeur d&apos;état de ligne avec la composante exclue définie comme la valeur spécifiée.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Row State( 3 ) = Excluded State( 1 );
-Excluded( Row State( 3 ) );
-
-```
-
-### Execute SQL
-
-**Syntaxe :** dt = Execute SQL(databaseConnectionHandle|dataConnector,  "SELECT ..."|"SQLFILE=..."|tableName, <invisible(0|1)>, <outputTableName>, <Batch Submit(0|1)> )
-
-**Description :** Exécute SQL sur une connexion à la base de données renvoyée par la commande Créer une connexion à la base de données ou un connecteur de données. L&apos;activation de l&apos;envoi par lot permet de recevoir plusieurs instructions SQL et de renvoyer une liste des résultats (pilotes qui prennent en charge cette fonction uniquement).
-
-**JMP Version ajoutée :** Avant la version 14
-
-**Exemple 1**
-
-```jsl
-
-Names Default To Here( 1 );
-dt = Execute SQL(
-	databaseConnectionHandle,
-	"SELECT HEIGHT, WEIGHT FROM Bigclass",
-	"NewTable"
-);
-
-```
-
-**Exemple 2**
-
-```jsl
-
-Names Default To Here( 1 );
-dc = Data Connector Registry() << Get( "com.jmp.sql_server" );
-dt = Execute SQL( dc, "SELECT HEIGHT, WEIGHT FROM Bigclass" );
-
-```
-
-**Exemple 3**
-
-```jsl
-
-Names Default To Here( 1 );
-dc = Data Connector Registry() << Get( "com.jmp.sql_server" );
-resultList = Execute SQL(
-	dc,
-	"SELECT HEIGHT, WEIGHT FROM Bigclass; SELECT AGE, WEIGHT FROM BigClass;",
-	Batch Submit( 1 )
-);
-
-```
-
 ### Exit
 
-**Syntaxe :** Quit(<"No Save">); Exit(<"No Save">)
+**Syntaxe :** Quit(&lt;"No Save"&gt;); Exit(&lt;"No Save"&gt;)
 
 **Description :** Quitte JMP.
 
@@ -8229,7 +8252,7 @@ If(
 
 ### Exp
 
-**Syntaxe :** y = Exp( <x=1> )
+**Syntaxe :** y = Exp( &lt;x=1&gt; )
 
 **Description :** Renvoie e élevé à la puissance x. L’argument peut être un nombre, une matrice ou une liste de nombres.
 
@@ -8244,7 +8267,7 @@ Round( Exp( 1 ), 5 );
 
 ### Exp Density
 
-**Syntaxe :** y = Exp Density( x, <theta=1> )
+**Syntaxe :** y = Exp Density( x, &lt;theta=1&gt; )
 
 **Description :** Renvoie la densité à x d&apos;une distribution exponentielle avec paramètre theta.
 
@@ -8267,7 +8290,7 @@ New Window( "Example: Exp Density",
 
 ### Exp Distribution
 
-**Syntaxe :** p = Exp Distribution( x, <theta=1> )
+**Syntaxe :** p = Exp Distribution( x, &lt;theta=1&gt; )
 
 **Description :** Renvoie la probabilité qu&apos;une variable aléatoire distribuée exponentiellement soit inférieure à x.
 
@@ -8290,7 +8313,7 @@ New Window( "Example: Exp Distribution",
 
 ### Exp Quantile
 
-**Syntaxe :** q = Exp Quantile( p, <theta=1> )
+**Syntaxe :** q = Exp Quantile( p, &lt;theta=1&gt; )
 
 **Description :** Renvoie le quantile d’une distribution exponentielle, correspondant à la probabilité p qu’une variable aléatoire ayant cette distribution prenne une valeur inférieure au quantile.
 
@@ -8327,7 +8350,7 @@ Show( ExpM1( 1.1e-18 ), Exp( 1.1e-18 ) - 1 );
 
 ### Exponential Density
 
-**Syntaxe :** y = Exponential Density( x, <theta=1> )
+**Syntaxe :** y = Exponential Density( x, &lt;theta=1&gt; )
 
 **Description :** Renvoie la densité à x d&apos;une distribution exponentielle avec paramètre theta.
 
@@ -8350,7 +8373,7 @@ New Window( "Example: Exponential Density",
 
 ### Exponential Distribution
 
-**Syntaxe :** p = Exponential Distribution( x, <theta=1> )
+**Syntaxe :** p = Exponential Distribution( x, &lt;theta=1&gt; )
 
 **Description :** Renvoie la probabilité qu&apos;une variable aléatoire distribuée exponentiellement soit inférieure à x.
 
@@ -8373,7 +8396,7 @@ New Window( "Example: Exponential Distribution",
 
 ### Exponential Quantile
 
-**Syntaxe :** q = Exponential Quantile( p, <theta=1> )
+**Syntaxe :** q = Exponential Quantile( p, &lt;theta=1&gt; )
 
 **Description :** Renvoie le quantile d’une distribution exponentielle, correspondant à la probabilité p qu’une variable aléatoire ayant cette distribution prenne une valeur inférieure au quantile.
 
@@ -8410,7 +8433,7 @@ Expr( x + y );
 
 ### Expr As Picture
 
-**Syntaxe :** y = Expr As Picture( expr( ... ), <width in pixels>, <Max Matrix Size( dim )> )
+**Syntaxe :** y = Expr As Picture( expr( ... ), &lt;width in pixels&gt;, &lt;Max Matrix Size( dim )&gt; )
 
 **Description :** Renvoie une image contenant l&apos;expression spécifiée comme image de formule. La largeur par défaut est 600 pixels et la taille de matrice max par défaut est 100.
 
@@ -8452,7 +8475,7 @@ Extract Expr( a + b * c, Wild() * Wild() );
 
 ### F Density
 
-**Syntaxe :** y = F Density( q, dfnum, dfden, <nonCentrality=0> )
+**Syntaxe :** y = F Density( q, dfnum, dfden, &lt;nonCentrality=0&gt; )
 
 **Description :** Renvoie la densité à q d’une distribution de Fisher avec dfn et dfd degré(s) de liberté.
 
@@ -8492,7 +8515,7 @@ New Window( "Example: F Density",
 
 ### F Distribution
 
-**Syntaxe :** y = F Distribution( q, dfnum, dfden, <nonCentrality=0> )
+**Syntaxe :** y = F Distribution( q, dfnum, dfden, &lt;nonCentrality=0&gt; )
 
 **Description :** Renvoie la probabilité qu&apos;une variable aléatoire distribuée selon F est inférieure à q.
 
@@ -8535,7 +8558,7 @@ New Window( "Example: F Distribution",
 
 ### F Log CDistribution
 
-**Syntaxe :** y = F Log CDistribution( x, dfnum, dfden, <nonCentrality=0> )
+**Syntaxe :** y = F Log CDistribution( x, dfnum, dfden, &lt;nonCentrality=0&gt; )
 
 **Description :** Renvoie le logarithme de 1 - Distribution F.
 
@@ -8578,7 +8601,7 @@ New Window( "Example: F Log CDistribution",
 
 ### F Log Density
 
-**Syntaxe :** y = F Log Density( x, dfnum, dfden, <nonCentrality=0> )
+**Syntaxe :** y = F Log Density( x, dfnum, dfden, &lt;nonCentrality=0&gt; )
 
 **Description :** Renvoie le logarithme de la densité de probabilité F.
 
@@ -8621,7 +8644,7 @@ New Window( "Example: F Log Density",
 
 ### F Log Distribution
 
-**Syntaxe :** y = F Log Distribution( x, dfnum, dfden, <nonCentrality=0> )
+**Syntaxe :** y = F Log Distribution( x, dfnum, dfden, &lt;nonCentrality=0&gt; )
 
 **Description :** Renvoie le logarithme de la distribution F.
 
@@ -8730,7 +8753,7 @@ New Window( "Example: F Power (alpha=.05,dfh=5,dfm=5)",
 
 ### F Quantile
 
-**Syntaxe :** q = F Quantile( p, dfnum, dfden, <nonCentrality=0> )
+**Syntaxe :** q = F Quantile( p, dfnum, dfden, &lt;nonCentrality=0&gt; )
 
 **Description :** Renvoie le quantile d’une distribution F, correspondant à la probabilité p qu’une variable aléatoire ayant cette distribution prenne une valeur inférieure au quantile.
 
@@ -8780,6 +8803,38 @@ New Window( "Example: F Sample Size (alpha=.05,dfh=5,dfm=5)",
 
 ```
 
+### Factorial
+
+**Syntaxe :** y = Factorial( x )
+
+**Description :** Renvoie le factoriel de x, qui est le même que gamma Gamma( x + 1 ). Si x est un entier, le résultat est le produit 1 * 2 * ... * x.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+Factorial( 5 );
+
+```
+
+### Faure Quasi Random Sequence
+
+**Syntaxe :** points = Faure Quasi Random Sequence(nDim, nRow)
+
+**Description :** Générez une séquence de remplissage des nombres quasi-aléatoires à l&apos;aide de la suite de Faure.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+A = Faure Quasi Random Sequence( 3, 100 );
+As Table( A );
+Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
+
+```
+
 ### FDR Adjust
 
 **Syntaxe :** y = FDR Adjust( matrix )
@@ -8797,7 +8852,7 @@ FDR Adjust( [0.5, 0.2, 0.05, 0.01] );
 
 ### FFT
 
-**Syntaxe :** ret = FFT( L, <<inverse( 0 ), <<multivariate( 0 ), <<scale( 1.0 ) )
+**Syntaxe :** ret = FFT( L, &lt;&lt;inverse( 0 ), &lt;&lt;multivariate( 0 ), &lt;&lt;scale( 1.0 ) )
 
 **Description :** Réalise la transformation de Fourier rapide (FFT) sur l&apos;argument L, une liste requise formée de parties réelles et imaginaires des données sous forme de matrices. Si L n&apos;est formé que d&apos;une seule matrice, la matrice est considérée comme la partie réelle. Si L est formé de deux matrices, la première est la partie réelle et la deuxième est la partie imaginaire. Les deux matrices doivent avoir les mêmes dimensions et doivent contenir plus d&apos;une ligne. Trois arguments facultatifs sont disponibles : l’argument inverse détermine si la FFT inverse doit être réalisée ; l’argument multivariate détermine si la FFT spatiale ou multivariée doit être réalisée ; l’argument scale détermine la constante par laquelle multiplier les valeurs calculées. La structure des valeurs retournées est identique à celle du premier argument d’entrée, une liste d’une ou de deux matrices.
 
@@ -8870,38 +8925,6 @@ Show( fin );
 
 ```
 
-### Factorial
-
-**Syntaxe :** y = Factorial( x )
-
-**Description :** Renvoie le factoriel de x, qui est le même que gamma Gamma( x + 1 ). Si x est un entier, le résultat est le produit 1 * 2 * ... * x.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-Factorial( 5 );
-
-```
-
-### Faure Quasi Random Sequence
-
-**Syntaxe :** points = Faure Quasi Random Sequence(nDim, nRow)
-
-**Description :** Générez une séquence de remplissage des nombres quasi-aléatoires à l&apos;aide de la suite de Faure.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-A = Faure Quasi Random Sequence( 3, 100 );
-As Table( A );
-Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
-
-```
-
 ### File Exists
 
 **Syntaxe :** rc = File Exists( path )
@@ -8937,7 +8960,7 @@ File Size( "$SAMPLE_DATA/Big Class.jmp" );
 
 ### Files In Directory
 
-**Syntaxe :** y = Files In Directory( "path", <recursive(0|1)>, <include hidden(0|1)> )
+**Syntaxe :** y = Files In Directory( "path", &lt;recursive(0|1)&gt;, &lt;include hidden(0|1)&gt; )
 
 **Description :** Renvoie la liste des noms de fichiers contenus dans un répertoire spécifié par path. Si l&apos;argument Recursive n&apos;est pas spécifié, les noms de répertoire sont inclus dans la liste.
 
@@ -8966,7 +8989,7 @@ Filter Each( {fn},
 
 ### Fill Color
 
-**Syntaxe :** Fill Color( <name|index|rgbList> )
+**Syntaxe :** Fill Color( &lt;name|index|rgbList&gt; )
 
 **Description :** Définit la couleur de dessin des zones de remplissage.
 
@@ -9026,7 +9049,7 @@ New Window( "Example",
 
 ### Filter Col Selector
 
-**Syntaxe :** y = Filter Col Selector(<Data Table(name)>, <width(pixels)>, <nlines(n)>, <script>, <onchange(expr)>)
+**Syntaxe :** y = Filter Col Selector(&lt;Data Table(name)&gt;, &lt;width(pixels)&gt;, &lt;nlines(n)&gt;, &lt;script&gt;, &lt;onchange(expr)&gt;)
 
 **Description :** Renvoie une boîte d’affichage contenant une liste d’éléments. Le contrôle permet le filtrage de colonne.
 
@@ -9044,7 +9067,7 @@ New Window( "Col List Box Example",
 
 ### Filter Each
 
-**Syntaxe :** list = Filter Each({<value>, <index>} | {<element>, <index | {row, col}>} | {<key | {key, value}>, <index>} | {<values | {value1, ..., valueN}>, <index>}, list | matrix | associative array | expression | Across( container1, ..., <containerN>, <Count( "Longest" | "Shortest" | "Enforce Equal" | n )> ), <locals list>, body)
+**Syntaxe :** list = Filter Each({&lt;value&gt;, &lt;index&gt;} | {&lt;element&gt;, &lt;index | {row, col}&gt;} | {&lt;key | {key, value}&gt;, &lt;index&gt;} | {&lt;values | {value1, ..., valueN}&gt;, &lt;index&gt;}, list | matrix | associative array | expression | Across( container1, ..., &lt;containerN&gt;, &lt;Count( "Longest" | "Shortest" | "Enforce Equal" | n )&gt; ), &lt;locals list&gt;, body)
 
 **Description :** Identique à la fonction For Each, mais renvoie également une liste de valeurs du conteneur original filtrées sur la base d&apos;un résultat à valeur booléenne. Le type de résultat correspond au type du conteneur d&apos;entrée. Pour l&apos;entrée de matrice, une matrice de vecteurs lignes sera renvoyée, car la taille de la matrice est inconnue.
 
@@ -9097,7 +9120,7 @@ Show( values );
 
 ### Find All
 
-**Syntaxe :** Find All( <Project(title|index|box|window)>, Data Tables | Reports | Journals, <invisible | private> )
+**Syntaxe :** Find All( &lt;Project(title|index|box|window)&gt;, Data Tables | Reports | Journals, &lt;invisible | private&gt; )
 
 **Description :** Trouve toutes les ressources d&apos;un type spécifique ouvertes : tables de données, journaux ou rapports.
 
@@ -9137,7 +9160,7 @@ First( 11, 22 );
 
 ### Fit Censored
 
-**Syntaxe :** result = FitCensored( Distribution(name), YLow(vector) | Y(vector), <YHigh(vector)>, <Weight(vector)>, <X(matrix)>, <Z(matrix)>, <HoldParm(vector)>, <Use random sample to compute initial values(percent)>, <Use first N observations to compute initial values(nobs)> )
+**Syntaxe :** result = FitCensored( Distribution(name), YLow(vector) | Y(vector), &lt;YHigh(vector)&gt;, &lt;Weight(vector)&gt;, &lt;X(matrix)&gt;, &lt;Z(matrix)&gt;, &lt;HoldParm(vector)&gt;, &lt;Use random sample to compute initial values(percent)&gt;, &lt;Use first N observations to compute initial values(nobs)&gt; )
 
 **Description :** Ajuste une distribution en utilisant des données censurées. Les arguments requis sont Distribution et soit YLow ou Y. La fonction renvoie une liste contenant l&apos;estimation des paramètres, la matrice de covariance, la log-vraisemblance, l&apos;AICc, le BIC et un message de convergence. Les arguments X et Z spécifient les matrices de plans de la régression, pour la position et l&apos;échelle, respectivement. Lorsque le vecteur de données est important, deux arguments facultatifs peuvent être utilisés afin de  spécifier un échantillon pour calculer les valeurs initiales. Vous pouvez spécifier un percent des observations ou les nobs premières observations, mais la taille totale de l&apos;échantillon doit être supérieure à 100.
 
@@ -9185,7 +9208,7 @@ New Window( "Fit Circle",
 
 ### Fit Transform To Normal
 
-**Syntaxe :** result = Fit Transform To Normal( Distribution(name), Y(vector), <Freq(vector)> )
+**Syntaxe :** result = Fit Transform To Normal( Distribution(name), Y(vector), &lt;Freq(vector)&gt; )
 
 **Description :** Ajuste une transformation pour la normalité pour un vecteur de données. Ceci inclut les distributions de Johnson Sl, Johnson Sb, Johnson Su et GLog. La fonction renvoie une liste contenant l’estimation des coefficients, la matrice de covariance, la log-vraisemblance, l’AICc, le BIC et un message de convergence.
 
@@ -9253,7 +9276,7 @@ Trim( s );
 
 ### For Each
 
-**Syntaxe :** For Each({<value>, <index>} | {<element>, <index | {row, col}>} | {<key | {key, value}>, <index>} | {<values | {value1, ..., valueN}>, <index>}, list | matrix | associative array | expression | Across( container1, ..., <containerN>, <Count( "Longest" | "Shortest" | "Enforce Equal" | n )> ), <locals list>, body)
+**Syntaxe :** For Each({&lt;value&gt;, &lt;index&gt;} | {&lt;element&gt;, &lt;index | {row, col}&gt;} | {&lt;key | {key, value}&gt;, &lt;index&gt;} | {&lt;values | {value1, ..., valueN}&gt;, &lt;index&gt;}, list | matrix | associative array | expression | Across( container1, ..., &lt;containerN&gt;, &lt;Count( "Longest" | "Shortest" | "Enforce Equal" | n )&gt; ), &lt;locals list&gt;, body)
 
 **Description :** Itère sur un conteneur, soit une liste, soit une matrice, soit un tableau associatif, soit une expression, en fournissant la valeur, l&apos;élément ou la clé à chaque itération. Le numéro d&apos;indice est également disponible à chaque itération. Pour les conteneurs de tableaux associatifs, la clé et la valeur sont accessibles via une liste à deux éléments. Pour les conteneurs de matrices, un indice linéaire est fourni par défaut, mais il est possible d&apos;utiliser une liste à deux éléments pour accéder aux indices de ligne et de colonne. Ces symboles sont fournis dans le corps de la boucle uniquement, avec un bloc local intégré. Une liste de valeurs locales peut également être fournie. Ces valeurs seront initialisées après avoir défini les premiers symboles d&apos;itération.
 
@@ -9365,7 +9388,7 @@ For Each( {element, {row, col}}, 10 :: 15,
 
 ### For Each Row
 
-**Syntaxe :** y = For Each Row( <dt>, body )
+**Syntaxe :** y = For Each Row( &lt;dt&gt;, body )
 
 **Description :** Évalue de manière itérative l&apos;expression pour chaque colonne dans la table de données en cours.
 
@@ -9385,9 +9408,7 @@ For Each Row( :height = -:height );
 
 ### Format
 
-**Syntaxe :** s = Format( x, formatString, <options> )
-
-s = Format( x, "Format Pattern", pattern, <options> )
+**Syntaxe :** s = Format( x, formatString, &lt;options&gt; )s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
 
 **Description :** Renvoie le nombre au format spécifié. Les formats incluent les éléments de la boîte de dialogue Informations sur la colonne, tels que "Best" et "h:m:s". Voir la rubrique Aide pour découvrir d&apos;autres options, notamment les formats de p-value, de devise, de date et d&apos;heure, et géographiques.
 
@@ -9445,9 +9466,7 @@ Show(
 
 ### Format Date
 
-**Syntaxe :** s = Format( x, formatString, <options> )
-
-s = Format( x, "Format Pattern", pattern, <options> )
+**Syntaxe :** s = Format( x, formatString, &lt;options&gt; )s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
 
 **Description :** Renvoie le nombre au format spécifié. Les formats incluent les éléments de la boîte de dialogue Informations sur la colonne, tels que "Best" et "h:m:s". Voir la rubrique Aide pour découvrir d&apos;autres options, notamment les formats de p-value, de devise, de date et d&apos;heure, et géographiques.
 
@@ -9493,11 +9512,7 @@ result = "Revenue increase: " || amt || " or " || pct || ".";
 
 ### Format Pattern
 
-**Syntaxe :** s = Format( x, "Format Pattern", pattern, <width>, <dec>)
-
-x = In Format( s, "Format Pattern", pattern, < <<Use Locale(b=1)> )
-
-obj = Format("Format Pattern", pattern, <width>, <dec>)
+**Syntaxe :** s = Format( x, "Format Pattern", pattern, &lt;width&gt;, &lt;dec&gt;)x = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )obj = Format("Format Pattern", pattern, &lt;width&gt;, &lt;dec&gt;)
 
 **Description :** Les configurations de format sont des chaînes qui définissent un format de date et heure, comme « <YYYY></><MM></><DD> <hh><:><mm><:><ss><ampm> ». Les parties de la configuration entre <> sont appelées des descripteurs de champ. Ils représentent une valeur (comme « <YYYY> » pour l&apos;année à quatre chiffres) ou un autre texte de date et heure (comme « </> » qui est le séparateur local de date). Une configuration de format vous permet de créer des formats non fournis dans JMP. Ces formats peuvent être utilisés pour le formatage et l&apos;entrée de données.
 
@@ -9611,7 +9626,7 @@ Autre
 
 ### Fourier Basis Coef
 
-**Syntaxe :** coef = Fourier Basis Coef( x, Number Pairs, <Period = max(x)-min(x)+1> )
+**Syntaxe :** coef = Fourier Basis Coef( x, Number Pairs, &lt;Period = max(x)-min(x)+1&gt; )
 
 **Description :** Renvoie la matrice des coefficients de la Base de Fourier. Number Pairs est le nombre de paires sin() et cos() de la base. Le paramètre facultatif Period spécifie la période pour les fonctions trigonométriques, max(x) - min(x) + 1 par défaut.
 
@@ -9748,7 +9763,7 @@ New Window( "Example: Frechet Quantile",
 
 ### Function
 
-**Syntaxe :** y = Function( {arg1=val1, ...}, <{local1=val1, ...}>, expr )
+**Syntaxe :** y = Function( {arg1=val1, ...}, &lt;{local1=val1, ...}&gt;, expr )
 
 **Description :** Définit une fonction avec les arguments spécifiés, les valeurs par défaut et les variables locales facultatives. Les arguments contenant des valeurs par défaut sont en option lors de l&apos;appel de la fonction. Si Return() est utilisé dans le script de la fonction, l&apos;expression qu&apos;il contient est renvoyée.
 
@@ -9796,7 +9811,7 @@ posorneg( -5.5 );
 
 ### Future Value
 
-**Syntaxe :** x = Future Value( rate, nper, pmt, <pv=0>, <type=0> )
+**Syntaxe :** x = Future Value( rate, nper, pmt, &lt;pv=0&gt;, &lt;type=0&gt; )
 
 **Description :** Renvoie la valeur future d’un investissement en se basant sur des paiements et un taux d’intérêt constants. L’argument type est 0 pour les paiements en fin de période et 1 pour les paiements en début de période. Équivalent à la fonction FV de Microsoft Excel.
 
@@ -9824,167 +9839,9 @@ Round( G Inverse( [11 22, 33 44] ), 2 );
 
 ```
 
-### GLog Density
-
-**Syntaxe :** y = GLog Density( q, mu, sigma, lambda )
-
-**Description :** Renvoie la densité à q d’une distribution logarithmique généralisée avec paramètre de position mu, paramètre d’échelle sigma et de forme lambda.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-mu = 0;
-sigma = 1;
-lambda = 1;
-New Window( "Example: GLog Density",
-	gdey = Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( -10, 10 ),
-		XName( "y" ),
-		Pen Color( "red" );
-		Y Function( GLog Density( y, mu, sigma, lambda ), y );
-		Text(
-			{-9, 0.9},
-			"\!U03BC=",
-			Round( mu, 4 ),
-			" \!U03C3=",
-			Round( sigma, 4 )
-		);
-		Text( {-9, 0.8}, "\!U03BB=", Round( lambda, 4 ) );
-	),
-	H List Box(
-		Slider Box( -5, 5, mu, gdey << reshow ),
-		Text Box( " \!U03BC" )
-	),
-	H List Box(
-		Slider Box( 0, 4, sigma, gdey << reshow ),
-		Text Box( " \!U03C3" )
-	),
-	H List Box(
-		Slider Box( 0, 10, lambda, gdey << reshow ),
-		Text Box( " \!U03BB" )
-	)
-);
-
-```
-
-### GLog Distribution
-
-**Syntaxe :** p = GLog Distribution( q, mu, sigma, lambda )
-
-**Description :** Renvoie la probabilité qu&apos;une variable aléatoire distribuée selon le logarithme généralisé est inférieure à q.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-mu = 0;
-sigma = 1;
-lambda = 1;
-New Window( "Example: Glog Distribution",
-	gdey = Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( -20, 20 ),
-		XName( "y" ),
-		Pen Color( "red" );
-		Y Function(
-			GLog Distribution( y, mu, sigma, lambda ),
-			y
-		);
-		Text(
-			{-9, 0.9},
-			"\!U03BC=",
-			Round( mu, 4 ),
-			" \!U03C3=",
-			Round( sigma, 4 )
-		);
-		Text( {-9, 0.8}, "\!U03BB=", Round( lambda, 4 ) );
-	),
-	H List Box(
-		Slider Box( -5, 5, mu, gdey << reshow ),
-		Text Box( " \!U03BC" )
-	),
-	H List Box(
-		Slider Box( 0, 4, sigma, gdey << reshow ),
-		Text Box( " \!U03C3" )
-	),
-	H List Box(
-		Slider Box( 0, 10, lambda, gdey << reshow ),
-		Text Box( " \!U03BB" )
-	)
-);
-
-```
-
-### GLog Quantile
-
-**Syntaxe :** q = GLog Quantile( p, mu, sigma, lambda )
-
-**Description :** Renvoie le quantile d’une distribution logarithmique généralisée, correspondant à la probabilité p qu’une variable aléatoire ayant cette distribution prenne une valeur inférieure au quantile.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-mu = 0;
-sigma = 1;
-lambda = 1;
-p = 0.4;
-New Window( "Example: GLog Quantile",
-	gdey = Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( -20, 20 ),
-		XName( "y" ),
-		Pen Color( "red" );
-		Y Function(
-			GLog Distribution( x, mu, sigma, lambda ),
-			x
-		);
-		Pen Color( "Blue" );
-		V Line( GLog Quantile( p, mu, sigma, lambda ), 0, 1 );
-		Text(
-			{-9, 0.9},
-			"\!U03BC=",
-			Round( mu, 4 ),
-			" \!U03C3=",
-			Round( sigma, 4 ),
-			" \!U03BB=",
-			Round( lambda, 4 )
-		);
-		Text( {-9, 0.8}, "p=", Round( p, 3 ) );
-		Text(
-			{-9, 0.7},
-			"quantile= ",
-			Round( GLog Quantile( p, mu, sigma, lambda ), 2 )
-		);
-	),
-	H List Box(
-		Slider Box( -2, 2, mu, gdey << reshow ),
-		Text Box( " \!U03BC" )
-	),
-	H List Box(
-		Slider Box( 0, 4, sigma, gdey << reshow ),
-		Text Box( " \!U03C3" )
-	),
-	H List Box(
-		Slider Box( 0, 10, lambda, gdey << reshow ),
-		Text Box( " \!U03BB" )
-	),
-	H List Box(
-		Slider Box( 0.01, 0.99, p, gdey << reshow ),
-		Text Box( " p" )
-	)
-);
-
-```
-
 ### Gamma
 
-**Syntaxe :** y = Gamma( x, <limit> )
+**Syntaxe :** y = Gamma( x, &lt;limit&gt; )
 
 **Description :** Renvoie la fonction gamma de x, définie comme l&apos;intégrale de z^(x-1)*exp(-z) dz de 0 à ∞. Si la limite limit est présente, un gamma incomplet sera calculé avec cette limite d&apos;intégration.
 
@@ -9999,7 +9856,7 @@ Gamma( 5 );
 
 ### Gamma Density
 
-**Syntaxe :** y = Gamma Density( q, <alpha=1>, <scale=1>, <threshold=0> )
+**Syntaxe :** y = Gamma Density( q, &lt;alpha=1&gt;, &lt;scale=1&gt;, &lt;threshold=0&gt; )
 
 **Description :** Renvoie la densité au point q de la distribution de probabilité Gamma, où l’argument paramètre de forme alpha doit être positif.
 
@@ -10040,7 +9897,7 @@ New Window( "Example: Gamma Density",
 
 ### Gamma Distribution
 
-**Syntaxe :** p = Gamma Distribution( q, <alpha=1>, <scale=1>, <threshold=0> )
+**Syntaxe :** p = Gamma Distribution( q, &lt;alpha=1&gt;, &lt;scale=1&gt;, &lt;threshold=0&gt; )
 
 **Description :** Renvoie la probabilité qu&apos;une variable aléatoire de loi gamma soit inférieure à q, où l’argument paramètre de forme alpha doit être positif. IGamma() est un alias de Gamma Distribution(). La fonction Gamma Distribution() est équivalente à Gamma(alpha,q)/Gamma(alpha).
 
@@ -10081,7 +9938,7 @@ New Window( "Example: Gamma Distribution",
 
 ### Gamma Log CDistribution
 
-**Syntaxe :** p = Gamma Log CDistribution( x, <alpha=1>, <scale=1>, <threshold=0> )
+**Syntaxe :** p = Gamma Log CDistribution( x, &lt;alpha=1&gt;, &lt;scale=1&gt;, &lt;threshold=0&gt; )
 
 **Description :** Renvoie le logarithme de la distribution 1 - Gamma.
 
@@ -10122,7 +9979,7 @@ New Window( "Example: Gamma Log CDistribution",
 
 ### Gamma Log Density
 
-**Syntaxe :** y = Gamma Log Density( x, <alpha=1>, <scale=1>, <threshold=0> )
+**Syntaxe :** y = Gamma Log Density( x, &lt;alpha=1&gt;, &lt;scale=1&gt;, &lt;threshold=0&gt; )
 
 **Description :** Renvoie le logarithme de la densité de probabilité Gamma.
 
@@ -10163,7 +10020,7 @@ New Window( "Example: Gamma Log Density",
 
 ### Gamma Log Distribution
 
-**Syntaxe :** p = Gamma Log Distribution( x, <alpha=1>, <scale=1>, <threshold=0> )
+**Syntaxe :** p = Gamma Log Distribution( x, &lt;alpha=1&gt;, &lt;scale=1&gt;, &lt;threshold=0&gt; )
 
 **Description :** Renvoie le logarithme de la distribution Gamma.
 
@@ -10388,7 +10245,7 @@ New Window( "Example: Gamma Poisson Quantile",
 
 ### Gamma Quantile
 
-**Syntaxe :** q = Gamma Quantile( p, <alpha=1>, <scale=1>, <threshold=0> )
+**Syntaxe :** q = Gamma Quantile( p, &lt;alpha=1&gt;, &lt;scale=1&gt;, &lt;threshold=0&gt; )
 
 **Description :** Renvoie le quantile d’une distribution gamma, correspondant à la probabilité p qu’une variable aléatoire ayant cette distribution prenne une valeur inférieure au quantile.
 
@@ -10618,7 +10475,7 @@ Get Addr Info( "www.jmp.com" )[3][4];
 
 ### Get Class Names
 
-**Syntaxe :** Get Class Names( < <class reference>, ... > )
+**Syntaxe :** Get Class Names( &lt; &lt;class reference&gt;, ... &gt; )
 
 **Description :** Renvoie une liste de noms pour toutes les classes actuellement définies.
 
@@ -10647,7 +10504,7 @@ Delete Classes( "aa", "bb" );
 
 ### Get Classes
 
-**Syntaxe :** Get Classes( < <class reference>, ... > )
+**Syntaxe :** Get Classes( &lt; &lt;class reference&gt;, ... &gt; )
 
 **Description :** Renvoie une liste de références à toutes les classes actuellement définies
 
@@ -10707,7 +10564,7 @@ Get Color Theme Detail( "JMP Default" );
 
 ### Get Color Theme Names
 
-**Syntaxe :** {list of names} = Get Color Theme Names(<kind>)
+**Syntaxe :** {list of names} = Get Color Theme Names(&lt;kind&gt;)
 
 **Description :** Renvoie une liste de chaînes de thèmes de couleur appariés au paramètre facultatif kind. kind prend l&apos;une des valeurs suivantes : « continu », « catégoriel », « séquentiel », « divergent », « qualitatif » ou « chromatique ».
 
@@ -10733,7 +10590,7 @@ Get Color Theme Names( "sequential" );
 
 ### Get Custom Functions
 
-**Syntaxe :** Get Custom Functions(<{function 1 full name, function 2 full name, ...} | function full name>)
+**Syntaxe :** Get Custom Functions(&lt;{function 1 full name, function 2 full name, ...} | function full name&gt;)
 
 **Description :** Obtenir une liste des fonctions personnalisées
 
@@ -10759,7 +10616,7 @@ Get Custom Functions( {"custom:Add", "custom:Sub"} );
 
 ### Get Data Table
 
-**Syntaxe :** dt = Get Data Table( <Project(title|index|box|window)>, name|index )
+**Syntaxe :** dt = Get Data Table( &lt;Project(title|index|box|window)&gt;, name|index )
 
 **Description :** Renvoie une référence à la table de données spécifiée.
 
@@ -10784,7 +10641,7 @@ Get Data Table( 1 );
 
 ### Get Data Table List
 
-**Syntaxe :** tableList = Get Data Table List( <Project(title|index|box|window)> )
+**Syntaxe :** tableList = Get Data Table List( &lt;Project(title|index|box|window)&gt; )
 
 **Description :** Renvoie une liste de toutes les tables de données ouvertes.
 
@@ -10875,7 +10732,7 @@ Show( sheetList );
 
 ### Get Expr Location
 
-**Syntaxe :** Get Expr Location(<expression>, [{"TokenStartLine"|"TokenStartCol"|"TokenStart"|"TokenLength"|"TreeStart"|"TreeEnd"|"TreeLength"}+]
+**Syntaxe :** Get Expr Location(&lt;expression&gt;, [{"TokenStartLine"|"TokenStartCol"|"TokenStart"|"TokenLength"|"TreeStart"|"TreeEnd"|"TreeLength"}+]
 
 **Description :** Récupère les emplacements du token supérieur dans une expression analysée. L&apos;appel par défaut renvoie {le fichier source, TokenStartLine, TokenStartCol, TokenLength}.
 
@@ -10951,7 +10808,7 @@ Get Locale Setting( "Decimal Separator" );
 
 ### Get Log
 
-**Syntaxe :** list = Get Log( <N> )
+**Syntaxe :** list = Get Log( &lt;N&gt; )
 
 **Description :** Renvoie une liste de lignes du log. Si aucun argument n’est spécifié, renvoie toutes les lignes du log. Si l’argument numérique N est positif, renvoie les N premières lignes du log. Si N est négatif, renvoie les N dernières lignes du log. Si N est égal à zéro, aucune ligne n’est renvoyée.
 
@@ -10983,7 +10840,7 @@ Get Name Info( "149.173.5.120" )[3][4];
 
 ### Get Namespace Names
 
-**Syntaxe :** Get Namespace Names( < <namespace reference>, ... > )
+**Syntaxe :** Get Namespace Names( &lt; &lt;namespace reference&gt;, ... &gt; )
 
 **Description :** Renvoie une liste de noms pour tous les espaces de noms actuellement définis.
 
@@ -11013,7 +10870,7 @@ nsbb << Delete;
 
 ### Get Namespaces
 
-**Syntaxe :** Get Namespaces( < <namespace reference>, ... > )
+**Syntaxe :** Get Namespaces( &lt; &lt;namespace reference&gt;, ... &gt; )
 
 **Description :** Renvoie une liste de références à tous les espaces de nommage actuellement définis
 
@@ -11170,7 +11027,7 @@ New Window( "Path Variables",
 
 ### Get Platform Preference
 
-**Syntaxe :** Get Platform Preferences( < platformName < ( optionName, ... ) > ... > )
+**Syntaxe :** Get Platform Preferences( &lt; platformName &lt; ( optionName, ... ) &gt; ... &gt; )
 
 **Description :** Obtient les préférences de la plate-forme telles que spécifiées.
 
@@ -11185,7 +11042,7 @@ Get Platform Preferences( Bivariate( Fit Line ), DOE );
 
 ### Get Platform Preferences
 
-**Syntaxe :** Get Platform Preferences( < platformName < ( optionName, ... ) > ... > )
+**Syntaxe :** Get Platform Preferences( &lt; platformName &lt; ( optionName, ... ) &gt; ... &gt; )
 
 **Description :** Obtient les préférences de la plate-forme telles que spécifiées.
 
@@ -11200,7 +11057,7 @@ Get Platform Preferences( Bivariate( Fit Line ), DOE );
 
 ### Get Policies
 
-**Syntaxe :** Get Policies( <Machine|User|Both> )
+**Syntaxe :** Get Policies( &lt;Machine|User|Both&gt; )
 
 **Description :** Renvoie un tableau associatif contenant les noms et les valeurs de la stratégie actuelle.
 
@@ -11301,7 +11158,7 @@ Print( Get Project List() << Get Window Title() );
 
 ### Get Punctuation Characters
 
-**Syntaxe :** Get Punctuation Characters(<Exclude Chars(chars) | Include Chars(chars)>)
+**Syntaxe :** Get Punctuation Characters(&lt;Exclude Chars(chars) | Include Chars(chars)&gt;)
 
 **Description :** Renvoie une chaîne contenant les caractères de ponctuation typiquement utilisés pour séparer les mots. Il s&apos;agit notamment des caractères ,:;.?!\/#@&~()[]<>"*`%$+=^|{} et de certains caractères de ponctuation Unicode courants.
 
@@ -11382,7 +11239,7 @@ Get Whitespace Characters();
 
 ### Get Window
 
-**Syntaxe :** window = Get Window( <Project(title|index|box|window)>, <Type(string)>, title|index|box )
+**Syntaxe :** window = Get Window( &lt;Project(title|index|box|window)&gt;, &lt;Type(string)&gt;, title|index|box )
 
 **Description :** Renvoie une référence à une fenêtre ouverte spécifique selon le titre, l&apos;index ou la boîte.
 
@@ -11424,7 +11281,7 @@ window = Get Window( Project( project ), "Big Class" );
 
 ### Get Window List
 
-**Syntaxe :** windowList = Get Window List( <Project(title|index|box|window)>, <Type(string)> )
+**Syntaxe :** windowList = Get Window List( &lt;Project(title|index|box|window)&gt;, &lt;Type(string)&gt; )
 
 **Description :** Renvoie une liste de toutes les fenêtres ouvertes.
 
@@ -11494,6 +11351,164 @@ New Window( "Example", Global Box( ex ) );
 
 ```
 
+### GLog Density
+
+**Syntaxe :** y = GLog Density( q, mu, sigma, lambda )
+
+**Description :** Renvoie la densité à q d’une distribution logarithmique généralisée avec paramètre de position mu, paramètre d’échelle sigma et de forme lambda.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+mu = 0;
+sigma = 1;
+lambda = 1;
+New Window( "Example: GLog Density",
+	gdey = Graph Box(
+		Y Scale( 0, 1 ),
+		X Scale( -10, 10 ),
+		XName( "y" ),
+		Pen Color( "red" );
+		Y Function( GLog Density( y, mu, sigma, lambda ), y );
+		Text(
+			{-9, 0.9},
+			"\!U03BC=",
+			Round( mu, 4 ),
+			" \!U03C3=",
+			Round( sigma, 4 )
+		);
+		Text( {-9, 0.8}, "\!U03BB=", Round( lambda, 4 ) );
+	),
+	H List Box(
+		Slider Box( -5, 5, mu, gdey << reshow ),
+		Text Box( " \!U03BC" )
+	),
+	H List Box(
+		Slider Box( 0, 4, sigma, gdey << reshow ),
+		Text Box( " \!U03C3" )
+	),
+	H List Box(
+		Slider Box( 0, 10, lambda, gdey << reshow ),
+		Text Box( " \!U03BB" )
+	)
+);
+
+```
+
+### GLog Distribution
+
+**Syntaxe :** p = GLog Distribution( q, mu, sigma, lambda )
+
+**Description :** Renvoie la probabilité qu&apos;une variable aléatoire distribuée selon le logarithme généralisé est inférieure à q.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+mu = 0;
+sigma = 1;
+lambda = 1;
+New Window( "Example: Glog Distribution",
+	gdey = Graph Box(
+		Y Scale( 0, 1 ),
+		X Scale( -20, 20 ),
+		XName( "y" ),
+		Pen Color( "red" );
+		Y Function(
+			GLog Distribution( y, mu, sigma, lambda ),
+			y
+		);
+		Text(
+			{-9, 0.9},
+			"\!U03BC=",
+			Round( mu, 4 ),
+			" \!U03C3=",
+			Round( sigma, 4 )
+		);
+		Text( {-9, 0.8}, "\!U03BB=", Round( lambda, 4 ) );
+	),
+	H List Box(
+		Slider Box( -5, 5, mu, gdey << reshow ),
+		Text Box( " \!U03BC" )
+	),
+	H List Box(
+		Slider Box( 0, 4, sigma, gdey << reshow ),
+		Text Box( " \!U03C3" )
+	),
+	H List Box(
+		Slider Box( 0, 10, lambda, gdey << reshow ),
+		Text Box( " \!U03BB" )
+	)
+);
+
+```
+
+### GLog Quantile
+
+**Syntaxe :** q = GLog Quantile( p, mu, sigma, lambda )
+
+**Description :** Renvoie le quantile d’une distribution logarithmique généralisée, correspondant à la probabilité p qu’une variable aléatoire ayant cette distribution prenne une valeur inférieure au quantile.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+mu = 0;
+sigma = 1;
+lambda = 1;
+p = 0.4;
+New Window( "Example: GLog Quantile",
+	gdey = Graph Box(
+		Y Scale( 0, 1 ),
+		X Scale( -20, 20 ),
+		XName( "y" ),
+		Pen Color( "red" );
+		Y Function(
+			GLog Distribution( x, mu, sigma, lambda ),
+			x
+		);
+		Pen Color( "Blue" );
+		V Line( GLog Quantile( p, mu, sigma, lambda ), 0, 1 );
+		Text(
+			{-9, 0.9},
+			"\!U03BC=",
+			Round( mu, 4 ),
+			" \!U03C3=",
+			Round( sigma, 4 ),
+			" \!U03BB=",
+			Round( lambda, 4 )
+		);
+		Text( {-9, 0.8}, "p=", Round( p, 3 ) );
+		Text(
+			{-9, 0.7},
+			"quantile= ",
+			Round( GLog Quantile( p, mu, sigma, lambda ), 2 )
+		);
+	),
+	H List Box(
+		Slider Box( -2, 2, mu, gdey << reshow ),
+		Text Box( " \!U03BC" )
+	),
+	H List Box(
+		Slider Box( 0, 4, sigma, gdey << reshow ),
+		Text Box( " \!U03C3" )
+	),
+	H List Box(
+		Slider Box( 0, 10, lambda, gdey << reshow ),
+		Text Box( " \!U03BB" )
+	),
+	H List Box(
+		Slider Box( 0.01, 0.99, p, gdey << reshow ),
+		Text Box( " p" )
+	)
+);
+
+```
+
 ### Glue
 
 **Syntaxe :** y = ( expr1; expr2; ... ); y = Glue( expr1, expr2, ... )
@@ -11534,7 +11549,7 @@ Google Sheet Export(
 
 ### Google Sheet Import
 
-**Syntaxe :** Google Sheet Import(Email(address), Spreadsheet(url|id), <Sheets("sheetName1", ... "sheetNameN")>, <Sheet Settings( Has Column Headers(Boolean), Data Starts on Row(n), Cell Range(range), Import Cell Colors(Boolean), Supress Empty Columns(Boolean))>)
+**Syntaxe :** Google Sheet Import(Email(address), Spreadsheet(url|id), &lt;Sheets("sheetName1", ... "sheetNameN")&gt;, &lt;Sheet Settings( Has Column Headers(Boolean), Data Starts on Row(n), Cell Range(range), Import Cell Colors(Boolean), Supress Empty Columns(Boolean))&gt;)
 
 **Description :** Ouvre un fichier Google Sheet.
 
@@ -11564,7 +11579,7 @@ Google Sheet Import(
 
 ### Gradient Function
 
-**Syntaxe :** Gradient Function( zExpr, xName, yName, zLimits, zColor( color list or matrix ), < <<XGrid( min, max, incr )>, < <<YGrid( min, max, incr )>, < <<Transparency( t )> )
+**Syntaxe :** Gradient Function( zExpr, xName, yName, zLimits, zColor( color list or matrix ), &lt; &lt;&lt;XGrid( min, max, incr )&gt;, &lt; &lt;&lt;YGrid( min, max, incr )&gt;, &lt; &lt;&lt;Transparency( t )&gt; )
 
 **Description :** Remplit le graphique avec des dégradés entre deux couleurs. L&apos;argument zExpr est une fonction des deux variables xName et yName. Le vecteur zLimits spécifie l’intervalle des valeurs de zExpr. L&apos;argument zColor est un vecteur ou une liste qui définit les deux couleurs qui sont mélangées pour créer le dégradé. Le Transparency est une valeur unique appliquée à l&apos;ensemble de la grille.
 
@@ -11670,7 +11685,7 @@ New Window( "Example",
 
 ### Greater
 
-**Syntaxe :** z = x > y > ... ; z = Greater( x, y, ... )
+**Syntaxe :** z = x &gt; y &gt; ... ; z = Greater( x, y, ... )
 
 **Description :** Renvoie 1 si chaque argument est supérieur à l&apos;argument suivant, et 0 dans le cas contraire.
 
@@ -11685,7 +11700,7 @@ Names Default To Here( 1 );
 
 ### Greater or Equal
 
-**Syntaxe :** z = x >= y >= ... ; z = Greater or Equal( x, y, ... )
+**Syntaxe :** z = x &gt;= y &gt;= ... ; z = Greater or Equal( x, y, ... )
 
 **Description :** Renvoie 1 si chaque argument est supérieur ou égal à l&apos;argument suivant, et 0 dans le cas contraire.
 
@@ -11739,7 +11754,7 @@ Gzip Uncompress(/*typically this data might come from GzipCompress() but might a
 
 ### H Center Box
 
-**Syntaxe :** y = H Center Box( <childbox> )
+**Syntaxe :** y = H Center Box( &lt;childbox&gt; )
 
 **Description :** Renvoie une boîte d&apos;affichage contenant l&apos;argument boîte d&apos;affichage childbox centré sur l&apos;espace horizontal défini par la taille maximale de cette boîte enfant et de toutes les boîtes sœurs de la boîte centrale.
 
@@ -11814,7 +11829,7 @@ New Window( "Example",
 
 ### H List Box
 
-**Syntaxe :** y = H List Box( <Align( center|bottom )>, displayBox, ... )
+**Syntaxe :** y = H List Box( &lt;Align( center|bottom )&gt;, displayBox, ... )
 
 **Description :** Renvoie une boîte d&apos;affichage qui réorganise les boîtes d&apos;affichage fournies par les arguments dans une mise en page horizontale. Le message <<Hold demande à la feuille de conserver le(s) rapport(s) qui seront extraits. L’argument facultatif Align permet d’aligner à bottom ou au center le contenu de la boîte d’affichage.
 
@@ -11836,7 +11851,7 @@ New Window( "Example",
 
 ### H Scroll Box
 
-**Syntaxe :** y = H Scroll Box( <Size( x )>, displayBox )
+**Syntaxe :** y = H Scroll Box( &lt;Size( x )&gt;, displayBox )
 
 **Description :** Renvoie une boîte d’affichage qui positionne une boîte enfant plus grande avec une barre de défilement horizontale.
 
@@ -11880,7 +11895,7 @@ New Window( "Example",
 
 ### H Sheet Box
 
-**Syntaxe :** y = H Sheet Box( <<Hold( rpt ), displayBox, ... )
+**Syntaxe :** y = H Sheet Box( &lt;&lt;Hold( rpt ), displayBox, ... )
 
 **Description :** Renvoie une boîte d&apos;affichage qui réorganise les boîtes d&apos;affichage fournies par les arguments dans une mise en page horizontale. Le message <<Hold demande à la feuille de conserver le(s) rapport(s) qui seront extraits. L’argument facultatif Align permet d’aligner à right ou au center le contenu de la boîte d’affichage.
 
@@ -11964,7 +11979,7 @@ New Window( "Example",
 
 ### H Splitter Box
 
-**Syntaxe :** y = H Splitter Box( <Size(x,y)>, displayBox, ... )
+**Syntaxe :** y = H Splitter Box( &lt;Size(x,y)&gt;, displayBox, ... )
 
 **Description :** Renvoie une boîte d&apos;affichage qui permet d&apos;organiser d&apos;autres boîtes d&apos;affichage horizontalement, avec un contrôle interactif des tailles. Les tailles enfant sont spécifiées sous la forme d&apos;une proportion de la largeur ou de la hauteur de la Splitter Box. L&apos;argument facultatif Size n&apos;est utilisé que pour la Splitter Box de premier niveau ; les boîtes de niveau inférieur sont dimensionnées comme toute autre boîte enfant.
 
@@ -12000,53 +12015,9 @@ spacer << Set Stretch( "Window", "Window" );
 
 ```
 
-### HLS Color
-
-**Syntaxe :** y = HLS Color( h, l, s ); y = HLS Color( {h, l, s} )
-
-**Description :** Renvoie un numéro de couleur à partir des composantes tonalité, luminosité et saturation, toutes comprises entre 0 et 1.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-New Window( "Color Wheel",
-	Graph(
-		frameSize( 200, 200 ),
-		For( hue = 0, hue < 360, hue += 30,
-			y = 50 - 40 * Cos( hue * 2 * Pi() / 360 );
-			x = 50 + 40 * Sin( hue * 2 * Pi() / 360 );
-			Fill Color( HLS Color( hue / 360, 0.5, 1 ) );
-			Oval( x - 10, y - 10, x + 10, y + 10, 1 );
-		)
-	)
-);
-
-```
-
-### HP Time
-
-**Syntaxe :** t = HP Time()
-
-**Description :** Renvoie une valeur de temps très précise, en micro secondes. Seulement utile en relation avec une autre valeur HP Time(). La valeur de temps représente le nombre de microsecondes depuis le démarrage de la session JMP.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-bt = HP Time();
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-et = HP Time();
-it = et - bt;
-Show( it );
-
-```
-
 ### Hadamard
 
-**Syntaxe :** y = Hadamard( n, <normalize = 0> )
+**Syntaxe :** y = Hadamard( n, &lt;normalize = 0&gt; )
 
 **Description :** Crée une matrice de Hadamard d&apos;ordre n.
 
@@ -12061,7 +12032,7 @@ Show( Hadamard( 12 ), Hadamard( 12, 1 ) );
 
 ### Handle
 
-**Syntaxe :** Handle( xPos, yPos, dragScript, <mouseUpScript> )
+**Syntaxe :** Handle( xPos, yPos, dragScript, &lt;mouseUpScript&gt; )
 
 **Description :** Dessine un marqueur carré aux coordonnées spécifiées par xPos et yPos, et évalue de façon répétée l’expression dragScript lorsque vous cliquez sur le marqueur. Avant l&apos;exécution du script, les valeurs globales x et y sont définies par le pointeur de la souris, elles sont rétablies par la suite à leurs valeurs d&apos;origine. L’expression mouseUpScript est exécutée une fois que le bouton de la souris est relâché.
 
@@ -12175,7 +12146,7 @@ Head Name Expr( Sum( a, b, c ) );
 
 ### Heat Color
 
-**Syntaxe :** y = Heat Color( x ); y = Heat Color( x, < <<theme> )
+**Syntaxe :** y = Heat Color( x ); y = Heat Color( x, &lt; &lt;&lt;theme&gt; )
 
 **Description :** Renvoie une couleur correspondant à une valeur comprise entre 0 et 1. La couleur par défaut va du bleu au rouge, en passant par le gris. Toute couleur prise en charge par le diagramme de cellules est prise en charge ici. Les arguments de matrice sont également pris en charge.
 
@@ -12200,7 +12171,7 @@ New Window( "Color Bar",
 
 ### Hex
 
-**Syntaxe :** h = Hex( value, <"integer">|<encoding="utf-8">|<Base(number)>,<Pad To(number)> )
+**Syntaxe :** h = Hex( value, &lt;"integer"&gt;|&lt;encoding="utf-8"&gt;|&lt;Base(number)&gt;,&lt;Pad To(number)&gt; )
 
 **Description :** Renvoie le texte hexadécimal (ou autre système de numération à base) correspondant à la valeur et au codage donnés, qui peut être un nombre, une chaîne ou un blob. Si la valeur est un nombre, le code 64 bits IEEE 754 sera utilisé à moins qu&apos;un des arguments facultatifs, integer ou Base, soit fourni. Si Base est spécifié, la fonction renvoie le texte correspondant au nombre spécifié dans ce système de numération à base au lieu du texte hexadécimal. La base doit être une valeur entière comprise entre 2 et 36 inclus. Les codes pris en charge sont notamment utf-8, utf-16le, utf-16be, us-ascii, iso-8859-1, ascii~hex, shift_jis et euc-jp.
 
@@ -12231,7 +12202,7 @@ Hex To Blob( "FF78CE" );
 
 ### Hex To Char
 
-**Syntaxe :** s = Hex To Char( hextext, <encoding="utf-8"> )
+**Syntaxe :** s = Hex To Char( hextext, &lt;encoding="utf-8"&gt; )
 
 **Description :** Renvoie le texte correspondant au texte hexadécimal, à l&apos;aide du code spécifié. Les codes pris en charge sont notamment : utf-8, utf-16le, utf-16be, us-ascii, iso-8859-1, ascii~hex, shift_jis, et euc-jp.
 
@@ -12247,7 +12218,7 @@ Hex To Char( "00430061006600E9", "utf-16be" );
 
 ### Hex To Number
 
-**Syntaxe :** x = Hex To Number( hextext, <Base(number)> )
+**Syntaxe :** x = Hex To Number( hextext, &lt;Base(number)&gt; )
 
 **Description :** Renvoie le nombre correspondant au texte hexadécimal (ou autre système de numération à base). Les 16 chiffres hexadécimaux sont convertis sous forme de nombres à virgules flottantes 64 bits IEEE 754 ; sinon l&apos;entrée est traitée comme un entier hexadécimal. Si Base est spécifié, le texte est traité comme une chaîne représentant le nombre dans cette base. La base doit être un entier compris entre 2 et 36 inclus.
 
@@ -12262,7 +12233,7 @@ Hex To Number( "11110000", Base( 2 ) );
 
 ### Hidden
 
-**Syntaxe :** y = Hidden( <rs> ); Hidden( <Row State( <r> )> ) = y
+**Syntaxe :** y = Hidden( &lt;rs&gt; ); Hidden( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **Description :** Renvoie la composante masquée de la valeur d&apos;état de ligne spécifiée, 0 ou 1. Si Hidden est utilisée comme L-value, l’état masqué de la ligne active (ou r-ième) de la table de données est modifié.
 
@@ -12351,7 +12322,7 @@ exhistory[3, 1];
 
 ### Hist Seg
 
-**Syntaxe :** b = Hist Seg([data], <[freq data]>,<[weight data]>, <vertical=0|1>, <Row States()>)
+**Syntaxe :** b = Hist Seg([data], &lt;[freq data]&gt;,&lt;[weight data]&gt;, &lt;vertical=0|1&gt;, &lt;Row States()&gt;)
 
 **Description :** Renvoie un seg hist
 
@@ -12375,6 +12346,31 @@ New Window( "Hist Seg Example",
 			J( rows, 1 ),
 			1,
 			Row States( dt )
+		)
+	)
+);
+
+```
+
+### HLS Color
+
+**Syntaxe :** y = HLS Color( h, l, s ); y = HLS Color( {h, l, s} )
+
+**Description :** Renvoie un numéro de couleur à partir des composantes tonalité, luminosité et saturation, toutes comprises entre 0 et 1.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+New Window( "Color Wheel",
+	Graph(
+		frameSize( 200, 200 ),
+		For( hue = 0, hue < 360, hue += 30,
+			y = 50 - 40 * Cos( hue * 2 * Pi() / 360 );
+			x = 50 + 40 * Sin( hue * 2 * Pi() / 360 );
+			Fill Color( HLS Color( hue / 360, 0.5, 1 ) );
+			Oval( x - 10, y - 10, x + 10, y + 10, 1 );
 		)
 	)
 );
@@ -12408,7 +12404,7 @@ If(
 
 ### Hough Line Transform
 
-**Syntaxe :** accum = Hough Line Transform( matrix, <NAngle(number)> <NRadius(number)> )
+**Syntaxe :** accum = Hough Line Transform( matrix, &lt;NAngle(number)&gt; &lt;NRadius(number)&gt; )
 
 **Description :** Renvoie la transformation de Hough pour détecter les lignes dans les données image
 
@@ -12596,7 +12592,7 @@ New Window( "Hough Transform Demo 2",
 
 ### Hour
 
-**Syntaxe :** hr = Hour( datetime, <12> )
+**Syntaxe :** hr = Hour( datetime, &lt;12&gt; )
 
 **Description :** Renvoie l&apos;heure d&apos;une valeur « date-heure » de JMP, dans le mode 12 heures (12, 1 - 11) ou dans le mode 24 heures (0 - 23).
 
@@ -12606,6 +12602,25 @@ New Window( "Hough Transform Demo 2",
 
 Names Default To Here( 1 );
 Hour( Today() );
+
+```
+
+### HP Time
+
+**Syntaxe :** t = HP Time()
+
+**Description :** Renvoie une valeur de temps très précise, en micro secondes. Seulement utile en relation avec une autre valeur HP Time(). La valeur de temps représente le nombre de microsecondes depuis le démarrage de la session JMP.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+bt = HP Time();
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+et = HP Time();
+it = et - bt;
+Show( it );
 
 ```
 
@@ -12630,7 +12645,7 @@ Row State( 3 ) = Combine States(
 
 ### Hypergeometric Distribution
 
-**Syntaxe :** cumprob = Hypergeometric Distribution( N, K, n, x, <r> )
+**Syntaxe :** cumprob = Hypergeometric Distribution( N, K, n, x, &lt;r&gt; )
 
 **Description :** Renvoie la probabilité qu&apos;une variable aléatoire distribuée de façon hypergéométrique soit inférieure ou égale à x, N étant la taille de la population, K le nombre d&apos;éléments dans la catégorie d&apos;intérêt, n la taille d&apos;échantillon, x le nombre d&apos;éléments dans la catégorie d&apos;intérêt et r un rapport de probabilités facultatif.
 
@@ -12698,7 +12713,7 @@ New Window( "Example: Hypergeometric Distribution",
 
 ### Hypergeometric Probability
 
-**Syntaxe :** prob = Hypergeometric Probability( N, K, n, x, <r> )
+**Syntaxe :** prob = Hypergeometric Probability( N, K, n, x, &lt;r&gt; )
 
 **Description :** Renvoie la probabilité qu&apos;une variable aléatoire distribuée de façon hypergéométrique soit égale à x, N étant la taille de la population, K le nombre d&apos;éléments dans la catégorie d&apos;intérêt, n la taille d&apos;échantillon, x le nombre d&apos;éléments dans la catégorie d&apos;intérêt et r un rapport de probabilités facultatif.
 
@@ -12746,108 +12761,6 @@ New Window( "Example: Hypergeometric Probability",
 		Text Box( " n" )
 	)
 );
-
-```
-
-### IGamma
-
-**Syntaxe :** p = Gamma Distribution( q, <alpha=1>, <scale=1>, <threshold=0> )
-
-**Description :** Renvoie la probabilité qu&apos;une variable aléatoire de loi gamma soit inférieure à q, où l’argument paramètre de forme alpha doit être positif. IGamma() est un alias de Gamma Distribution(). La fonction Gamma Distribution() est équivalente à Gamma(alpha,q)/Gamma(alpha).
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-gdialpha = Log( 1.5 );
-New Window( "Example: Gamma Distribution",
-	gdiy = Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( 0, 12 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function(
-			Gamma Distribution( gdiq, Exp( gdialpha ) ),
-			gdiq
-		);
-		Text(
-			{1, 0.9},
-			"\!U03B1=",
-			Round( Exp( gdialpha ), 2 )
-		);
-	),
-	H List Box(
-		Slider Box(
-			Log( 0.1 ),
-			Log( 12 ),
-			gdialpha,
-			gdiy << reshow
-		),
-		Text Box( " \!U03B1" )
-	)
-);
-
-```
-
-### IRT Ability
-
-**Syntaxe :** y = IRT Ability( Q1, ..., Qn, parmMatrix )
-
-**Description :** Produit des scores pour la variable latente d&apos;un modèle de théorie des réponses aux items avec n items binaires et une matrice des paramètres connus, spécifiés selon parmMatrix. La matrice des paramètres devrait contenir autant de lignes qu&apos;il y a de paramètres dans le modèle, et autant de colonnes qu&apos;il y a d&apos;items dans l&apos;analyse.
-
-**JMP Version ajoutée :** Avant la version 14
-
-**Exemple 1**
-
-```jsl
-
-Names Default To Here( 1 );
-dt = Open( "$SAMPLE_DATA/MathScienceTest.jmp" );
-obj = dt << Item Analysis(
-	Y( :Q1, :Q2, :Q3, :Q4, :Q5 ),
-	Model( "Logistic 2PL" )
-);
-obj << Save Ability Formula;
-Column( dt, N Cols( dt ) ) << Get Formula;
-
-```
-
-**Exemple 2**
-
-```jsl
-
-Names Default To Here( 1 );
-dt = Open( "$SAMPLE_DATA/MathScienceTest.jmp" );
-mth = (dt << get as matrix)[0, Index( 2, 6 )];
-mthlst = {};
-i = Floor( Random Uniform( 1, N Rows( mth ) ) );
-mthlst[1] = mth[i, 1] |/ mth[i, 2] |/ mth[i, 3] |/ mth[i, 4] |/
-mth[i, 5];
-mthlst[2] = IRT Ability(
-	mth[i, 1],
-	mth[i, 2],
-	mth[i, 3],
-	mth[i, 4],
-	mth[i, 5],
-	[0.28 1.93 1.9 1.67 1, -0.06 -0.55 0.5 -1.89 0.04]
-);
-mthlst;
-
-```
-
-### ISO Year
-
-**Syntaxe :** yr = ISO Year( datetime )
-
-**Description :** Renvoie l&apos;année ISO de la valeur date-time. Les années ISO correspondent aux semaines ISO ; elles commencent le lundi de la première semaine ayant au moins quatre jours.
-
-**JMP Version ajoutée :** 16
-
-```jsl
-
-Names Default To Here( 1 );
-ISO Year( Today() );
 
 ```
 
@@ -12906,7 +12819,7 @@ Identity( 2 );
 
 ### If
 
-**Syntaxe :** y = If( condition1, result1, <condition2, result2>, ..., <elseResult> )
+**Syntaxe :** y = If( condition1, result1, &lt;condition2, result2&gt;, ..., &lt;elseResult&gt; )
 
 **Description :** Évalue le premier argument de chaque paire et renvoie l&apos;évaluation de l&apos;expression result associée au premier argument condition qui donne un résultat différent de zéro. Les arguments condition sont évalués dans l&apos;ordre. Si tous les arguments condition donnent un résultat de zéro, le elseResult facultatif est évalué et le résultat renvoyé. Si aucun elseResult n&apos;est spécifié, et qu&apos;aucune des conditions n&apos;est vraie, une valeur manquante est renvoyée. Si tous les arguments condition sont évalués comme manquants, une valeur manquante est renvoyée.
 
@@ -12947,7 +12860,7 @@ frenchBox << Set( 1 );
 
 ### If Seg
 
-**Syntaxe :** seg = If Seg(<state=0|1>)
+**Syntaxe :** seg = If Seg(&lt;state=0|1&gt;)
 
 **Description :** Renvoie un groupe d’affichage qui affiche ou masque le groupe d’affichage enfant.
 
@@ -12965,29 +12878,9 @@ New Window( "Lines Seg Example",
 
 ```
 
-### IfMZ
-
-**Syntaxe :** y = IfMZ( condition1, result1, <condition2, result2>, ..., <elseResult> )
-
-**Description :** Évalue le premier argument de chaque paire et renvoie l&apos;évaluation de l&apos;expression result associée au premier argument condition qui donne un résultat différent de zéro. Les arguments condition sont évalués dans l&apos;ordre. Si tous les arguments condition donnent un résultat de zéro ou sont manquants, le elseResult facultatif est évalué et le résultat renvoyé. Si aucun elseResult n&apos;est spécifié, et qu&apos;aucune des conditions n&apos;est vraie, une valeur manquante est renvoyée. (IfMZ() est équivalent à If() où les valeurs manquantes correspondant aux arguments condition évalués sont traitées comme des zéros).
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-x = 1;
-Show( IfMZ( x == 1, 10, x == 2, 20, 30 ) );
-x = .;
-Show( IfMZ( x == 1, 10, x == 2, 20, 30 ) );
-x = .;
-Show( If( x == 1, 10, x == 2, 20, 30 ) );
-
-```
-
 ### IfMax
 
-**Syntaxe :** y = IfMax( expr1, result1, expr2, result2, ..., <allMissingResult> )
+**Syntaxe :** y = IfMax( expr1, result1, expr2, result2, ..., &lt;allMissingResult&gt; )
 
 **Description :** Évalue la première de chaque paire d’arguments et renvoie l’évaluation de l’expression résultat associée au maximum des expressions. En cas d’ex-aequo, il renvoie le premier maximum. Au cas où toutes les expressions seraient manquantes, il renvoie la valeur Vide si le nombre d’arguments est pair ou le dernier argument si le nombre d’arguments est impair. L’évaluation des expressions test doit donner un résultat numérique, alors que l’évaluation des expressions résultats peut être d’un type quelconque.
 
@@ -13013,7 +12906,7 @@ highestScorer = IfMax(
 
 ### IfMin
 
-**Syntaxe :** y = IfMin( expr1, result1, expr2, result2, ..., <allMissingResult> )
+**Syntaxe :** y = IfMin( expr1, result1, expr2, result2, ..., &lt;allMissingResult&gt; )
 
 **Description :** Évalue la première de chaque paire d’arguments et renvoie l’évaluation de l’expression résultat associée au minimum des expressions. En cas d’ex-aequo, il renvoie le premier minimum. Au cas où toutes les expressions seraient manquantes, il renvoie la valeur Vide si le nombre d’arguments est pair ou le dernier argument si le nombre d’arguments est impair. L’évaluation des expressions test doit donner un résultat numérique, alors que l’évaluation des expressions résultats peut être d’un type quelconque.
 
@@ -13037,9 +12930,70 @@ lowestScorer = IfMin(
 
 ```
 
+### IfMZ
+
+**Syntaxe :** y = IfMZ( condition1, result1, &lt;condition2, result2&gt;, ..., &lt;elseResult&gt; )
+
+**Description :** Évalue le premier argument de chaque paire et renvoie l&apos;évaluation de l&apos;expression result associée au premier argument condition qui donne un résultat différent de zéro. Les arguments condition sont évalués dans l&apos;ordre. Si tous les arguments condition donnent un résultat de zéro ou sont manquants, le elseResult facultatif est évalué et le résultat renvoyé. Si aucun elseResult n&apos;est spécifié, et qu&apos;aucune des conditions n&apos;est vraie, une valeur manquante est renvoyée. (IfMZ() est équivalent à If() où les valeurs manquantes correspondant aux arguments condition évalués sont traitées comme des zéros).
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+x = 1;
+Show( IfMZ( x == 1, 10, x == 2, 20, 30 ) );
+x = .;
+Show( IfMZ( x == 1, 10, x == 2, 20, 30 ) );
+x = .;
+Show( If( x == 1, 10, x == 2, 20, 30 ) );
+
+```
+
+### IGamma
+
+**Syntaxe :** p = Gamma Distribution( q, &lt;alpha=1&gt;, &lt;scale=1&gt;, &lt;threshold=0&gt; )
+
+**Description :** Renvoie la probabilité qu&apos;une variable aléatoire de loi gamma soit inférieure à q, où l’argument paramètre de forme alpha doit être positif. IGamma() est un alias de Gamma Distribution(). La fonction Gamma Distribution() est équivalente à Gamma(alpha,q)/Gamma(alpha).
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+gdialpha = Log( 1.5 );
+New Window( "Example: Gamma Distribution",
+	gdiy = Graph Box(
+		Y Scale( 0, 1 ),
+		X Scale( 0, 12 ),
+		XName( "q" ),
+		Pen Color( "red" );
+		Y Function(
+			Gamma Distribution( gdiq, Exp( gdialpha ) ),
+			gdiq
+		);
+		Text(
+			{1, 0.9},
+			"\!U03B1=",
+			Round( Exp( gdialpha ), 2 )
+		);
+	),
+	H List Box(
+		Slider Box(
+			Log( 0.1 ),
+			Log( 12 ),
+			gdialpha,
+			gdiy << reshow
+		),
+		Text Box( " \!U03B1" )
+	)
+);
+
+```
+
 ### In Days
 
-**Syntaxe :** y = In Days( <x=1> )
+**Syntaxe :** y = In Days( &lt;x=1&gt; )
 
 **Description :** Convertit en secondes une valeur en jours.
 
@@ -13054,7 +13008,7 @@ In Days( 1.5 );
 
 ### In Hours
 
-**Syntaxe :** y = In Hours( <x=1> )
+**Syntaxe :** y = In Hours( &lt;x=1&gt; )
 
 **Description :** Convertit en secondes une valeur en heures.
 
@@ -13069,7 +13023,7 @@ In Hours( 0.5 );
 
 ### In Minutes
 
-**Syntaxe :** y = In Minutes( <x=1> )
+**Syntaxe :** y = In Minutes( &lt;x=1&gt; )
 
 **Description :** Convertit en secondes une valeur en minutes.
 
@@ -13119,7 +13073,7 @@ New Window( "Example",
 
 ### In Polygon
 
-**Syntaxe :** b = In Polygon( x, y, xMatrix, <yMatrix> )
+**Syntaxe :** b = In Polygon( x, y, xMatrix, &lt;yMatrix&gt; )
 
 **Description :** Renvoie 1 si le point (x,y) est dans le polygone défini par les arguments du vecteur, et 0 dans le cas contraire.
 
@@ -13134,7 +13088,7 @@ In Polygon( 11, 22, [10 20 30], [10 30 20] );
 
 ### In Weeks
 
-**Syntaxe :** y = In Weeks( <x=1> )
+**Syntaxe :** y = In Weeks( &lt;x=1&gt; )
 
 **Description :** Convertit en secondes une valeur en semaines.
 
@@ -13149,7 +13103,7 @@ In Weeks( 1 );
 
 ### In Years
 
-**Syntaxe :** y = In Years( <x=1> )
+**Syntaxe :** y = In Years( &lt;x=1&gt; )
 
 **Description :** Convertit en secondes une valeur en années.
 
@@ -13164,7 +13118,7 @@ In Years( 1 );
 
 ### Include
 
-**Syntaxe :** y = Include( filepath, < <<Parse Only>, < <<New Context>, < <<Names Default to Here> )
+**Syntaxe :** y = Include( filepath, &lt; &lt;&lt;Parse Only&gt;, &lt; &lt;&lt;New Context&gt;, &lt; &lt;&lt;Names Default to Here&gt; )
 
 **Description :** Exécute le JSL dans le fichier spécifié. Si Parse Only est spécifié, le script est analysé plutôt qu&apos;exécuté. Si New Context est spécifié, le JSL inclus est exécuté dans son espace de noms propre et unique. Si le script parent et le script inclus utilisent l&apos;espace de noms global, spécifier New Context et Names Default to Here pour éviter un conflit de noms.
 
@@ -13194,7 +13148,7 @@ y = Include File List();
 
 ### Index
 
-**Syntaxe :** ii = n1::n2; ii = n1::n2::n3; ii = Index( n1, n2, <n3=1>)
+**Syntaxe :** ii = n1::n2; ii = n1::n2::n3; ii = Index( n1, n2, &lt;n3=1&gt;)
 
 **Description :** Renvoie une matrice de lignes qui contient la séquence des valeurs de n1 à n2 par incréments de n3.
 
@@ -13209,9 +13163,7 @@ Names Default To Here( 1 );
 
 ### Informat
 
-**Syntaxe :** dt = In Format( s, formatString, < <<Use Locale(b=1)>, < <<Restrict > )
-
-dt = In Format( s, "Format Pattern", pattern, < <<Use Locale(b=1)> )
+**Syntaxe :** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; )dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
 
 **Description :** Analyse une chaîne d&apos;un format donné. Si le format correspond à un format de date et heure, la valeur est exprimée comme si elle était entre As Date() et renvoie la date au format jjmoiaaaa. L&apos;argument facultatif <<Restrict utilisé avec le « Meilleur » formatString permet uniquement la conversion aux formats entier, décimal et scientifique.
 
@@ -13284,7 +13236,7 @@ y = Inner Product BLAS( a, b );
 
 ### Insert
 
-**Syntaxe :** z = Insert( x, y, <i> )
+**Syntaxe :** z = Insert( x, y, &lt;i&gt; )
 
 **Description :** Renvoie une copie de la liste x avec y inséré à la i-ième position ou ajouté à la fin si l’argument facultatif i n&apos;est pas spécifié.
 
@@ -13300,7 +13252,7 @@ z = Insert( z, 99, 2 );
 
 ### Insert Into
 
-**Syntaxe :** Insert Into( x, y, <i> )
+**Syntaxe :** Insert Into( x, y, &lt;i&gt; )
 
 **Description :** Modifie la liste, le tableau associatif ou la boîte d&apos;affichage x avec y inséré dans la série. Les listes et boîtes d&apos;affichage prennent en charge un i en option pour spécifier la position, ou les éléments seront ajoutés si la position n&apos;est pas spécifiée. Notez que l&apos;argument x doit être une variable.
 
@@ -13343,7 +13295,7 @@ Insert Into( hlist, Button Box( "c" ) );
 
 ### Integrate
 
-**Syntaxe :** y = Integrate( expr, varname, lowLimit, upLimit, <<Tolerance(1e-10), <<StoreInfo(list), <<StartingValue(val) )
+**Syntaxe :** y = Integrate( expr, varname, lowLimit, upLimit, &lt;&lt;Tolerance(1e-10), &lt;&lt;StoreInfo(list), &lt;&lt;StartingValue(val) )
 
 **Description :** Intègre une expression par rapport à une valeur scalaire en utilisant la méthode de quadrature adaptative de Gander et Gautschi (2000). Si la variable spécifiée avec varname a une valeur assignée, ou si l&apos;argument facultatif <<StartingValue() spécifie une valeur de départ, cette valeur sera utilisée en tant que valeur type pour améliorer la précision de l&apos;intégrale. Pour spécifier des étendues infinies d&apos;intégration, définir lowLimit, upLimit, ou les deux, comme manquantes. Si <<StoreInfo() est spécifié, l&apos;argument de <<StoreInfo() contiendra les diagnostics de la routine d&apos;intégration numérique. Si <<Tolerance() est spécifié, l&apos;argument <<Tolerance() sera utilisé comme niveau de tolérance dans la fonction d&apos;auto-intégration utilisée pour évaluer l&apos;intégrale. Des valeurs plus petites entraînent un temps d&apos;exécution plus long mais permettent d&apos;obtenir des résultats plus précis.
 
@@ -13370,7 +13322,7 @@ Integrate( Normal Density( x - 100 ), x, ., . );
 
 ### Interest Payment
 
-**Syntaxe :** x = Interest Payment( rate, per, nper, pv, <fv=0>, <type=0> )
+**Syntaxe :** x = Interest Payment( rate, per, nper, pv, &lt;fv=0&gt;, &lt;type=0&gt; )
 
 **Description :** Renvoie le paiement des intérêts d’un investissement sur une période donnée en se basant sur des paiements et un taux d’intérêt constants. L’argument type est 0 pour les paiements en fin de période et 1 pour les paiements en début de période. Équivalent à la fonction IPMT de Microsoft Excel.
 
@@ -13387,7 +13339,7 @@ Payment( .05 / 12, 30 * 12, 100000 )
 
 ### Interest Rate
 
-**Syntaxe :** x = Interest Rate( nper, pmt, pv, <fv=0>, <type=0>, <guess=0.1> )
+**Syntaxe :** x = Interest Rate( nper, pmt, pv, &lt;fv=0&gt;, &lt;type=0&gt;, &lt;guess=0.1&gt; )
 
 **Description :** Renvoie le taux d’intérêt d’une annuité par période. L’argument type est 0 pour les paiements en fin de période et 1 pour les paiements en début de période. Équivalent à la fonction RATE de Microsoft Excel.
 
@@ -13406,9 +13358,7 @@ Interest Rate(
 
 ### Internal Rate of Return
 
-**Syntaxe :** x = Internal Rate of Return( values, <guess=0.1> );
-
-x = Internal Rate of Return( guess, value1, value2, <value3, ...> )
+**Syntaxe :** x = Internal Rate of Return( values, &lt;guess=0.1&gt; );x = Internal Rate of Return( guess, value1, value2, &lt;value3, ...&gt; )
 
 **Description :** Renvoie le taux de rentabilité interne pour une série de flux de trésorerie représentée par les chiffres dans l’argument values. Équivalent à la fonction IRR de Microsoft Excel. Le deuxième prototype de la fonction n’accepte que des arguments scalaires.
 
@@ -13424,11 +13374,7 @@ Internal Rate of Return( .01, -10000, 1000, 900, 950 );
 
 ### Interpolate
 
-**Syntaxe :** y = Interpolate(x|xmatrix|xlist, x1, y1, x2, y2);
-
-y = Interpolate(x | xmatrix | xlist, xmatrix, ymatrix);
-
-z = Interpolate({ x, y }, xvector, yvector, zmatrix)
+**Syntaxe :** y = Interpolate(x|xmatrix|xlist, x1, y1, x2, y2);y = Interpolate(x | xmatrix | xlist, xmatrix, ymatrix);z = Interpolate({ x, y }, xvector, yvector, zmatrix)
 
 **Description :** Trouve les arguments xi qui comprennent x et interpole linéairement les arguments yi correspondants. Notez que les arguments xi doivent être indiqués dans l’ordre.
 
@@ -13515,7 +13461,7 @@ Round( Inverse( [11 22, 33 44] ), 2 );
 
 ### Inv Update
 
-**Syntaxe :** y = Inv Update( S, X, <w=1> )
+**Syntaxe :** y = Inv Update( S, X, &lt;w=1&gt; )
 
 **Description :** Renvoie une matrice inverse actualisée, où le premier argument S est une matrice définie positive symétrique avec le même nombre de colonnes que X, le deuxième argument X est une matrice qui contient les lignes à ajouter ou à supprimer et le troisième argument w détermine si ajouter ou supprimer des lignes (utiliser 1 pour ajouter des lignes et -1 pour en supprimer). Cette fonction évalue la quantité S-w*S*X`*Inv(I+w*X*S*X`)*X*S, où I est une matrice identité et Inv(A) désigne l’inverse de la matrice A.
 
@@ -13598,6 +13544,52 @@ Round( Inverse( [11 22, 33 44] ), 2 );
 
 Names Default To Here( 1 );
 Invert Expr( Sqrt( Log( x ) ), x, y );
+
+```
+
+### IRT Ability
+
+**Syntaxe :** y = IRT Ability( Q1, ..., Qn, parmMatrix )
+
+**Description :** Produit des scores pour la variable latente d&apos;un modèle de théorie des réponses aux items avec n items binaires et une matrice des paramètres connus, spécifiés selon parmMatrix. La matrice des paramètres devrait contenir autant de lignes qu&apos;il y a de paramètres dans le modèle, et autant de colonnes qu&apos;il y a d&apos;items dans l&apos;analyse.
+
+**JMP Version ajoutée :** Avant la version 14
+
+**Exemple 1**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/MathScienceTest.jmp" );
+obj = dt << Item Analysis(
+	Y( :Q1, :Q2, :Q3, :Q4, :Q5 ),
+	Model( "Logistic 2PL" )
+);
+obj << Save Ability Formula;
+Column( dt, N Cols( dt ) ) << Get Formula;
+
+```
+
+**Exemple 2**
+
+```jsl
+
+Names Default To Here( 1 );
+dt = Open( "$SAMPLE_DATA/MathScienceTest.jmp" );
+mth = (dt << get as matrix)[0, Index( 2, 6 )];
+mthlst = {};
+i = Floor( Random Uniform( 1, N Rows( mth ) ) );
+mthlst[1] = mth[i, 1] |/ mth[i, 2] |/ mth[i, 3] |/ mth[i, 4] |/
+mth[i, 5];
+mthlst[2] = IRT Ability(
+	mth[i, 1],
+	mth[i, 2],
+	mth[i, 3],
+	mth[i, 4],
+	mth[i, 5],
+	[0.28 1.93 1.9 1.67 1, -0.06 -0.55 0.5 -1.89 0.04]
+);
+mthlst;
 
 ```
 
@@ -14234,9 +14226,24 @@ Is String( "abc" );
 
 ```
 
+### ISO Year
+
+**Syntaxe :** yr = ISO Year( datetime )
+
+**Description :** Renvoie l&apos;année ISO de la valeur date-time. Les années ISO correspondent aux semaines ISO ; elles commencent le lundi de la première semaine ayant au moins quatre jours.
+
+**JMP Version ajoutée :** 16
+
+```jsl
+
+Names Default To Here( 1 );
+ISO Year( Today() );
+
+```
+
 ### Item
 
-**Syntaxe :** w = Item( n|[first last], s, <delim>, <Unmatched(result string)>, <Include Boundary Delimiters(0|1)>)
+**Syntaxe :** w = Item( n|[first last], s, &lt;delim&gt;, &lt;Unmatched(result string)&gt;, &lt;Include Boundary Delimiters(0|1)&gt;)
 
 **Description :** Renvoie le n-ième élément de l&apos;argument s, où les éléments sont des sous-chaînes (éventuellement vides) séparées par exactement un des caractères indiqués dans l&apos;argument delim. Si delim est absent, le caractère utilisé sera l&apos;espace. Si delim est la chaîne vide, tous les caractères sont traités comme un élément.
 
@@ -14302,7 +14309,7 @@ Item( 2, ",abcd", ",", Include Boundary Delimiters );
 
 ### Items
 
-**Syntaxe :** wl = Items(<[first last]>, s, <delim>, <Include Boundary Delimiters(0|1)>)
+**Syntaxe :** wl = Items(&lt;[first last]&gt;, s, &lt;delim&gt;, &lt;Include Boundary Delimiters(0|1)&gt;)
 
 **Description :** Renvoie une liste des sous-chaînes (éventuellement vides) séparées par exactement l&apos;un des caractères spécifiés dans l&apos;argument delim. Si delim est absent, le caractère utilisé sera l&apos;espace. Si delim est la chaîne vide, chaque caractère sera traité comme un élément distinct.
 
@@ -14359,7 +14366,7 @@ Items(
 
 ### J
 
-**Syntaxe :** y = J( nr, <nc>, <v> ); y = J( nr, nc ); y = J( n )
+**Syntaxe :** y = J( nr, &lt;nc&gt;, &lt;v&gt; ); y = J( nr, nc ); y = J( n )
 
 **Description :** Crée une matrice (nr par nc) des valeurs déterminées par le troisième argument. La valeur par défaut du deuxième argument est égale à celle du premier argument. La valeur par défaut du troisième argument est 1. Mais le troisième argument peut être un nombre, un nom de variable d&apos;un nombre ou un code JSL. Si le troisième argument est un code, le code est évalué et la valeur de renvoi est assignée à chaque élément de la matrice, élément par élément, ligne par ligne.
 
@@ -14423,138 +14430,6 @@ JMP Product Name();
 
 Names Default To Here( 1 );
 JMP Version();
-
-```
-
-### JSL Encrypted
-
-**Syntaxe :** y = JSL Encrypted(script)
-
-**Description :** Incorpore un script crypté dans un autre script. Créez un script crypté en sélectionnant Éditer > Crypter le script dans le menu principal de l&apos;éditeur de script. Saisissez vos mots de passe et le texte crypté s&apos;affiche dans une nouvelle fenêtre. Copiez ce texte dans une commande de JSL Encrypted("") pour incorporer le script crypté dans un autre script.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-JSL Encrypted(
-	"//-e6.0.2\!NWUSXEHSB?SRAMXPSY?;KDGMNGPQFZP;?><JLEXCQZYIGWSI@<FOPBLDKJ?HEUPTOGSZDYWFDMB;NEVB;HFP=VQ@N;LCVQPWRHIXEIPFKGO=H?DWS?KFQRIPBEPSAE<AM?YG=C@VFRENPEW>@;ND=JA<?=WOZZOG>FZBZKZLMFOX?YF@LWA=B=SJXDGVW>VYLBRJT<I<MFE<Q??QCUOZM?RY>RXLBJRH=BH<EGVSEMABSS<IE=CAPID;XM;;?XIU<FA=SCE<CB;AGOCZWHZXK;*"
-);
-
-```
-
-### JSL Quote
-
-**Syntaxe :** y = JSL Quote(script)
-
-**Description :** Enregistrer un script JSL dans une variable, en incluant tous les commentaires et le formatage.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-
-x = JSL Quote(/* Begin quote. */
-    For (i = 1, i <= 5, i++,
-        // Print the value of i.
-        Print(i);
-    );
-    // End expression.
-);
-New Window( "editor", Script Box( x ) );
-
-```
-
-### JSON Literal
-
-**Syntaxe :** l = JSON Literal( string )
-
-**Description :** Renvoie une valeur booléenne JSON valide ou une valeur constante nulle selon la spécification du paramètre.
-
-**JMP Version ajoutée :** 14
-
-```jsl
-
-Names Default To Here( 1 );
-
-myJSON =
-"{ \!"myChar\!": \!"Character Value\!", \!"myNum\!": 12345, \!"myBool\!": true, \!"myOtherChar\!": \!"Another char value\!", \!"myNull\!": null, \!"x\!": 54321, \!"myOtherBool\!": false, \!"y\!": \!"Hello\!" }";
-parsed = Parse JSON( myJSON );
-x = parsed["myBool"];
-Show( x );
-If( x == JSON Literal( true ),
-	Show( "Worked" ),
-	Show( "Didn't work" )
-);
-
-```
-
-### JSON To Data Table
-
-**Syntaxe :** dt = JSON To Data Table( jsonstring, <Invisible( boolean ) | Private( boolean )>, <Guess(Stack(Boolean)|"Tall"|"Wide")>, <JSON Settings(...)> )
-
-**Description :** Convertir le texte JSON en une table de données JMP
-
-**JMP Version ajoutée :** 14
-
-```jsl
-
-Names Default To Here( 1 );
-dt = JSON To Data Table(
-	"[ { \!"name\!": \!"KATIE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 59, \!"weight\!": 95 }, { \!"name\!": \!"LOUISE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 61, \!"weight\!": 123 }, { \!"name\!": \!"JANE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 55, \!"weight\!": 74 } ]"
-);
-
-```
-
-### JSON To List
-
-**Syntaxe :** l = JSON To List( jsonstring )
-
-**Description :** Convertir le texte JSON en une liste JSL représentant la structure spécifiée par les données JSON.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-l = JSON To List(
-	"[ { \!"name\!": \!"KATIE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 59, \!"weight\!": 95 }, { \!"name\!": \!"LOUISE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 61, \!"weight\!": 123 }, { \!"name\!": \!"JANE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 55, \!"weight\!": 74 } ]"
-);
-Show( l );
-
-```
-
-### JSS Context Box
-
-**Syntaxe :** y = JSS Context Box( displayBox )
-
-**JMP Version ajoutée :** 19
-
-```jsl
-
-Names Default To Here( 1 );
-New Window( "JSS Context",
-	JSS Context Box(
-		V List Box(
-			Panel Box( "Panel",
-				Text Box( "Hi" ),
-				Button Box( "Press Me" ),
-
-			),
-			Button Box( "Outside" ),
-
-		),
-		<<Set JSS(
-			Expr(
-				Type( TextBox ) << Background Color( "Red" );
-				Type( ButtonBox ) << Background Color( "Green" );
-				Descend( Type( PanelBox ), Type( ButtonBox ) )
-				 << Background Color( "Blue" );
-			)
-		)
-	)
-);
 
 ```
 
@@ -14695,7 +14570,7 @@ Johnson Sb Quantile( 0.5, 0.5, 1, 1, 1 );
 
 ### Johnson Sl Density
 
-**Syntaxe :** y = Johnson Sl Density( q, gamma, delta, theta, <sigma=1> )
+**Syntaxe :** y = Johnson Sl Density( q, gamma, delta, theta, &lt;sigma=1&gt; )
 
 **Description :** Renvoie la densité au point q d&apos;une distribution de Johnson Sl, où q compris dans l&apos;intervalle de theta à +∞, delta>0 et gamma entre -∞ et +∞ sont des paramètres de forme, sigma égal à +1 ou -1 est un paramètre d&apos;échelle, et theta compris entre -∞ et +∞ est un paramètre de seuillage. Remarque : quand sigma = 1, theta est la limite inférieure de la distribution, et quand sigma=-1, theta est la limite supérieure. Également, sigma positif implique que la distribution est asymétrique positive, sigma négatif implique que la distribution est asymétrique négative.
 
@@ -14752,7 +14627,7 @@ New Window( "Example: Johnson Sl Density",
 
 ### Johnson Sl Distribution
 
-**Syntaxe :** p = Johnson Sl Distribution( q, gamma, delta, theta, <sigma=1> )
+**Syntaxe :** p = Johnson Sl Distribution( q, gamma, delta, theta, &lt;sigma=1&gt; )
 
 **Description :** Renvoie la probabilité qu&apos;une variable aléatoire distribuée selon le S1 de Johnson est inférieure à q. (Remarque : voir la fonction Johnson Sl Density() pour obtenir la description des paramètres.)
 
@@ -14815,7 +14690,7 @@ New Window( "Example: Johnson Sl Distribution",
 
 ### Johnson Sl Quantile
 
-**Syntaxe :** q = Johnson Sl Quantile( p, gamma, delta, theta, <sigma=1> )
+**Syntaxe :** q = Johnson Sl Quantile( p, gamma, delta, theta, &lt;sigma=1&gt; )
 
 **Description :** Renvoie le quantile d’une distribution S1 de Johnson, correspondant à la probabilité p qu’une variable aléatoire ayant cette distribution prenne une valeur inférieure au quantile. (Remarque : p est le premier paramètre. Voir la fonction Johnson Sl Density() pour obtenir la description des paramètres.)
 
@@ -14986,9 +14861,141 @@ New Window( "Distribution of Height",
 
 ```
 
+### JSL Encrypted
+
+**Syntaxe :** y = JSL Encrypted(script)
+
+**Description :** Incorpore un script crypté dans un autre script. Créez un script crypté en sélectionnant Éditer > Crypter le script dans le menu principal de l&apos;éditeur de script. Saisissez vos mots de passe et le texte crypté s&apos;affiche dans une nouvelle fenêtre. Copiez ce texte dans une commande de JSL Encrypted("") pour incorporer le script crypté dans un autre script.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+JSL Encrypted(
+	"//-e6.0.2\!NWUSXEHSB?SRAMXPSY?;KDGMNGPQFZP;?><JLEXCQZYIGWSI@<FOPBLDKJ?HEUPTOGSZDYWFDMB;NEVB;HFP=VQ@N;LCVQPWRHIXEIPFKGO=H?DWS?KFQRIPBEPSAE<AM?YG=C@VFRENPEW>@;ND=JA<?=WOZZOG>FZBZKZLMFOX?YF@LWA=B=SJXDGVW>VYLBRJT<I<MFE<Q??QCUOZM?RY>RXLBJRH=BH<EGVSEMABSS<IE=CAPID;XM;;?XIU<FA=SCE<CB;AGOCZWHZXK;*"
+);
+
+```
+
+### JSL Quote
+
+**Syntaxe :** y = JSL Quote(script)
+
+**Description :** Enregistrer un script JSL dans une variable, en incluant tous les commentaires et le formatage.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+
+x = JSL Quote(/* Begin quote. */
+    For (i = 1, i <= 5, i++,
+        // Print the value of i.
+        Print(i);
+    );
+    // End expression.
+);
+New Window( "editor", Script Box( x ) );
+
+```
+
+### JSON Literal
+
+**Syntaxe :** l = JSON Literal( string )
+
+**Description :** Renvoie une valeur booléenne JSON valide ou une valeur constante nulle selon la spécification du paramètre.
+
+**JMP Version ajoutée :** 14
+
+```jsl
+
+Names Default To Here( 1 );
+
+myJSON =
+"{ \!"myChar\!": \!"Character Value\!", \!"myNum\!": 12345, \!"myBool\!": true, \!"myOtherChar\!": \!"Another char value\!", \!"myNull\!": null, \!"x\!": 54321, \!"myOtherBool\!": false, \!"y\!": \!"Hello\!" }";
+parsed = Parse JSON( myJSON );
+x = parsed["myBool"];
+Show( x );
+If( x == JSON Literal( true ),
+	Show( "Worked" ),
+	Show( "Didn't work" )
+);
+
+```
+
+### JSON To Data Table
+
+**Syntaxe :** dt = JSON To Data Table( jsonstring, &lt;Invisible( boolean ) | Private( boolean )&gt;, &lt;Guess(Stack(Boolean)|"Tall"|"Wide")&gt;, &lt;JSON Settings(...)&gt; )
+
+**Description :** Convertir le texte JSON en une table de données JMP
+
+**JMP Version ajoutée :** 14
+
+```jsl
+
+Names Default To Here( 1 );
+dt = JSON To Data Table(
+	"[ { \!"name\!": \!"KATIE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 59, \!"weight\!": 95 }, { \!"name\!": \!"LOUISE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 61, \!"weight\!": 123 }, { \!"name\!": \!"JANE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 55, \!"weight\!": 74 } ]"
+);
+
+```
+
+### JSON To List
+
+**Syntaxe :** l = JSON To List( jsonstring )
+
+**Description :** Convertir le texte JSON en une liste JSL représentant la structure spécifiée par les données JSON.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+l = JSON To List(
+	"[ { \!"name\!": \!"KATIE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 59, \!"weight\!": 95 }, { \!"name\!": \!"LOUISE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 61, \!"weight\!": 123 }, { \!"name\!": \!"JANE\!", \!"age\!": 12, \!"sex\!": \!"F\!", \!"height\!": 55, \!"weight\!": 74 } ]"
+);
+Show( l );
+
+```
+
+### JSS Context Box
+
+**Syntaxe :** y = JSS Context Box( displayBox )
+
+**JMP Version ajoutée :** 19
+
+```jsl
+
+Names Default To Here( 1 );
+New Window( "JSS Context",
+	JSS Context Box(
+		V List Box(
+			Panel Box( "Panel",
+				Text Box( "Hi" ),
+				Button Box( "Press Me" ),
+
+			),
+			Button Box( "Outside" ),
+
+		),
+		<<Set JSS(
+			Expr(
+				Type( TextBox ) << Background Color( "Red" );
+				Type( ButtonBox ) << Background Color( "Green" );
+				Descend( Type( PanelBox ), Type( ButtonBox ) )
+				 << Background Color( "Blue" );
+			)
+		)
+	)
+);
+
+```
+
 ### KDE
 
-**Syntaxe :** {Estimates, Bins, Counts, ActualBandwidth, Error} = KDE( Vector, <<weights, <<bandwidth( 0 ), <<bandwidth scale( 1 ), <<bandwidth selection( 0 ), <<kernel )
+**Syntaxe :** {Estimates, Bins, Counts, ActualBandwidth, Error} = KDE( Vector, &lt;&lt;weights, &lt;&lt;bandwidth( 0 ), &lt;&lt;bandwidth scale( 1 ), &lt;&lt;bandwidth selection( 0 ), &lt;&lt;kernel )
 
 **Description :** Renvoie un estimateur de densité à noyau avec sélection automatique de la largeur de bande. L’argument facultatif weights doit être un vecteur de la même longueur que Vector. L&apos;argument facultatif bandwidthdoit être un nombre réel positif ou nul, qui force l&apos;utilisation de la valeur de l’argument bandwidth selection. L&apos;argument facultatif bandwidth scale doit être un nombre réel positif. L&apos;argument facultatif bandwidth selection doit être 0, 1, 2 ou 3, correspondant à Sheather et Jones, Référence normale, méthode empirique de Silverman, ou surlissage, respectivement. L&apos;argument facultatif kernel accepte les valeurs 0, 1, 2, 3 ou 4, correspondant à Gaussien, Epanechnikov, Bipoids, Triangulaire, ou Rectangulaire, respectivement.
 
@@ -15077,6 +15084,232 @@ Names Default To Here( 1 );
 tab = KDTable( [1 1 1, 1 2 1, 1 2 2, 2 2 2, 3 3 3, 4 5 6] );
 {rows, dist} = tab << K nearest rows( 2, 1 );
 "2 nearest rows to row 1 are " || Char( rows );
+
+```
+
+### Labeled
+
+**Syntaxe :** y = Labeled( &lt;rs&gt; ); Labeled( &lt;Row State( &lt;r&gt; )&gt; ) = y
+
+**Description :** Renvoie la composante étiquetée de la valeur d&apos;état de ligne spécifiée, 0 ou 1. Si Labeled est utilisée comme L-value, l’état étiqueté de la ligne active (ou r-ième) de la table de données active est modifié.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+Row State( 3 ) = Labeled State( 1 );
+Labeled( Row State( 3 ) );
+Row() = 3;
+Labeled();
+
+```
+
+### Labeled State
+
+**Syntaxe :** rs = Labeled State( x )
+
+**Description :** Renvoie une valeur d&apos;état de ligne avec la composante étiquetée définie comme la valeur spécifiée.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+Row State( 3 ) = Labeled State( 1 );
+Labeled( Row State( 3 ) );
+
+```
+
+### Lag
+
+**Syntaxe :** y = Lag( &lt;x&gt;, &lt;n=1&gt; )
+
+**Description :** Renvoie la valeur de l’argument x avec la ligne en cours définie comme Row() - n. Puisqu&apos;elle dépend de Row(), la fonction Lag() est principalement utile dans les formules de colonne.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+Row() = 3;
+Lag( :height, 2 );
+
+```
+
+### Last Modification Date
+
+**Syntaxe :** date = Last Modification Date( path )
+
+**Description :** Renvoie la dernière date de modification d’un fichier ou d’un répertoire. Génère une erreur si le chemin d&apos;accès est incorrect ou n&apos;existe pas.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+Format(
+	Last Modification Date( "$SAMPLE_DATA/Big Class.jmp" ),
+	"ddmonyyyy:h:m:s"
+);
+
+```
+
+### Least Squares Solve
+
+**Syntaxe :** {Beta, VarBeta} = Least Squares Solve(y, X, &lt;&lt;noIntercept, &lt;&lt;weights(optionalWeightVector), &lt;&lt;method("Sweep"|"GInv"))
+
+**Description :** Renvoie une liste qui contient un vecteur des estimations, Beta = Inverse(X&apos;X)X&apos;y, et la matrice des variances estimées de Beta. L&apos;argument facultatif <<noIntercept spécifie un modèle sans constante. L&apos;argument facultatif <<weights spécifie un vecteur des pondérations pour le calcul les moindres carrés pondérés. L&apos;argument facultatif <<method vous permet de choisir entre la méthode Sweep par défaut et une méthode inverse généralisée ("GInv") pour résoudre les équations normales.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+/*Simple Linear Regression*/
+y = [3, 5, 7, 5];
+X = [1, 2, 3, 4];
+{Beta, VarBeta} = Least Squares Solve( y, X );
+
+```
+
+### Left
+
+**Syntaxe :** sub = Left( s, n, &lt;filler&gt; )
+
+**Description :** Renvoie une version tronquée ou complétée de la chaîne ou liste d&apos;origine s. Le résultat contient les n caractères de gauche ou éléments de liste, complétés par des filler à droite si la longueur de s est inférieure à n.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+exurl = "http://www.jmp.com";
+Left( exurl, Contains( exurl, ":" ) - 1 );
+
+```
+
+### Length
+
+**Syntaxe :** l = Length( x )
+
+**Description :** Renvoie la longueur de la chaîne donnée (en caractères), de la liste (en éléments), du tableau associatif (en nombre de codes), du blob (en octets), de la matrice (en éléments) ou de l&apos;espace de noms/classe (en nombre de fonctions et de variables).
+
+**JMP Version ajoutée :** Avant la version 14
+
+**Exemple 1**
+
+```jsl
+
+Names Default To Here( 1 );
+Length( "Café" );
+
+```
+
+**Exemple 2**
+
+```jsl
+
+Names Default To Here( 1 );
+Length( {1, 2 + 3, [11 22]} );
+
+```
+
+**Exemple 3**
+
+```jsl
+
+Names Default To Here( 1 );
+Length( ["a" => 10, "b" => 3, => 0] );
+
+```
+
+**Exemple 4**
+
+```jsl
+
+Names Default To Here( 1 );
+Length( Char To Blob( "Café" ) );
+
+```
+
+### LenthPSE
+
+**Syntaxe :** y = LenthPSE( x )
+
+**Description :** Renvoie l&apos;erreur pseudo-standard de Lenth des valeurs d’un vecteur x unique x.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+Eval List(
+	{LenthPSE( [1, 2, 3, 4, 5] ), Std Dev( [1, 2, 3, 4, 5] )}
+);
+
+```
+
+### Less
+
+**Syntaxe :** z = x &lt; y &lt; ... ; z = Less( x, y, ... )
+
+**Description :** Renvoie 1 si chaque argument est inférieur à l&apos;argument suivant, et 0 dans le cas contraire.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+[1 1 1] < [0 1 2];
+
+```
+
+### Less LessEqual
+
+**Syntaxe :** z = x &lt; y &lt;= ... ; z = Less LessEqual( x, y, ... )
+
+**Description :** Renvoie 1 si le premier argument est inférieur au second et que chaque argument, sauf le premier, est inférieur ou égal à l&apos;argument suivant ; retourne 0 dans le cas contraire.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+1 < 2 <= 2;
+
+```
+
+### Less or Equal
+
+**Syntaxe :** z = x &lt;= y &lt;= ... ; z = Less or Equal( x, y, ... )
+
+**Description :** Renvoie 1 si chaque argument est inférieur ou égal à l&apos;argument suivant, et 0 dans le cas contraire.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+1 <= 2 <= 2;
+
+```
+
+### LessEqual Less
+
+**Syntaxe :** z = x &lt;= y &lt; ... ; z = LessEqual Less( x, y, ... )
+
+**Description :** Renvoie 1 si le premier argument est inférieur ou égal au second et que chaque argument, sauf le premier, est inférieur à l&apos;argument suivant ; retourne 0 dans le cas contraire.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+2 <= 2 < 3;
 
 ```
 
@@ -15197,271 +15430,9 @@ New Window( "Example: LEV Quantile",
 
 ```
 
-### LGamma
-
-**Syntaxe :** y = LGamma( x )
-
-**Description :** Renvoie le logarithme naturel de la fonction gamma de x. Utile lorsque gamma(x) est trop grand pour être utilisé directement.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-LGamma( 5 );
-
-```
-
-### LPSolve
-
-**Syntaxe :** {x, z} = LPSolve( A, b, c, L, U, neq, nle, nge, <slackVars=0> )
-
-**Description :** Minimise la fonction objectif soumise aux contraintes données et renvoie une liste de deux éléments. Le premier élément de la liste, x, contient les variables de décision (et les variables d’écart si slackVars=1). Le deuxième élément de la liste, z, contient la valeur optimale de la fonction objectif (si elle existe). Les premiers cinq arguments sont des matrices. L’argument A est la matrice des coefficients de contrainte. L’argument b est la colonne des valeurs des contraintes de droite. L&apos;argument c est le vecteur des coefficients de coûts de la fonction objectif. Les arguments L et U sont respectivement les limites inférieure et supérieure des variables. Les arguments neq, nle et nge sont respectivement le nombre de contraintes d&apos;égalité, le nombre d&apos;inégalités inférieures ou égales et le nombre d&apos;inégalités supérieures ou égales. Notez que les contraintes doivent être répertoriées d&apos;abord comme égalités, puis comme inégalités inférieures ou égales, et enfin comme inégalités supérieures ou égales.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-A = [5 -2 6, 2 4 0, 3 8 -4];
-b = [17, 19, 14];
-c = [9 6 -4];
-L = [. 0 .];
-U = [0 . .];
-{x, z} = LPSolve( A, b, c, L, U, 1, 1, 1, 1 );
-Show( x, z );
-
-```
-
-### Labeled
-
-**Syntaxe :** y = Labeled( <rs> ); Labeled( <Row State( <r> )> ) = y
-
-**Description :** Renvoie la composante étiquetée de la valeur d&apos;état de ligne spécifiée, 0 ou 1. Si Labeled est utilisée comme L-value, l’état étiqueté de la ligne active (ou r-ième) de la table de données active est modifié.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Row State( 3 ) = Labeled State( 1 );
-Labeled( Row State( 3 ) );
-Row() = 3;
-Labeled();
-
-```
-
-### Labeled State
-
-**Syntaxe :** rs = Labeled State( x )
-
-**Description :** Renvoie une valeur d&apos;état de ligne avec la composante étiquetée définie comme la valeur spécifiée.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Row State( 3 ) = Labeled State( 1 );
-Labeled( Row State( 3 ) );
-
-```
-
-### Lag
-
-**Syntaxe :** y = Lag( <x>, <n=1> )
-
-**Description :** Renvoie la valeur de l’argument x avec la ligne en cours définie comme Row() - n. Puisqu&apos;elle dépend de Row(), la fonction Lag() est principalement utile dans les formules de colonne.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Row() = 3;
-Lag( :height, 2 );
-
-```
-
-### Last Modification Date
-
-**Syntaxe :** date = Last Modification Date( path )
-
-**Description :** Renvoie la dernière date de modification d’un fichier ou d’un répertoire. Génère une erreur si le chemin d&apos;accès est incorrect ou n&apos;existe pas.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-Format(
-	Last Modification Date( "$SAMPLE_DATA/Big Class.jmp" ),
-	"ddmonyyyy:h:m:s"
-);
-
-```
-
-### Least Squares Solve
-
-**Syntaxe :** {Beta, VarBeta} = Least Squares Solve(y, X, <<noIntercept, <<weights(optionalWeightVector), <<method("Sweep"|"GInv"))
-
-**Description :** Renvoie une liste qui contient un vecteur des estimations, Beta = Inverse(X&apos;X)X&apos;y, et la matrice des variances estimées de Beta. L&apos;argument facultatif <<noIntercept spécifie un modèle sans constante. L&apos;argument facultatif <<weights spécifie un vecteur des pondérations pour le calcul les moindres carrés pondérés. L&apos;argument facultatif <<method vous permet de choisir entre la méthode Sweep par défaut et une méthode inverse généralisée ("GInv") pour résoudre les équations normales.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-/*Simple Linear Regression*/
-y = [3, 5, 7, 5];
-X = [1, 2, 3, 4];
-{Beta, VarBeta} = Least Squares Solve( y, X );
-
-```
-
-### Left
-
-**Syntaxe :** sub = Left( s, n, <filler> )
-
-**Description :** Renvoie une version tronquée ou complétée de la chaîne ou liste d&apos;origine s. Le résultat contient les n caractères de gauche ou éléments de liste, complétés par des filler à droite si la longueur de s est inférieure à n.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-exurl = "http://www.jmp.com";
-Left( exurl, Contains( exurl, ":" ) - 1 );
-
-```
-
-### Length
-
-**Syntaxe :** l = Length( x )
-
-**Description :** Renvoie la longueur de la chaîne donnée (en caractères), de la liste (en éléments), du tableau associatif (en nombre de codes), du blob (en octets), de la matrice (en éléments) ou de l&apos;espace de noms/classe (en nombre de fonctions et de variables).
-
-**JMP Version ajoutée :** Avant la version 14
-
-**Exemple 1**
-
-```jsl
-
-Names Default To Here( 1 );
-Length( "Café" );
-
-```
-
-**Exemple 2**
-
-```jsl
-
-Names Default To Here( 1 );
-Length( {1, 2 + 3, [11 22]} );
-
-```
-
-**Exemple 3**
-
-```jsl
-
-Names Default To Here( 1 );
-Length( ["a" => 10, "b" => 3, => 0] );
-
-```
-
-**Exemple 4**
-
-```jsl
-
-Names Default To Here( 1 );
-Length( Char To Blob( "Café" ) );
-
-```
-
-### LenthPSE
-
-**Syntaxe :** y = LenthPSE( x )
-
-**Description :** Renvoie l&apos;erreur pseudo-standard de Lenth des valeurs d’un vecteur x unique x.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-Eval List(
-	{LenthPSE( [1, 2, 3, 4, 5] ), Std Dev( [1, 2, 3, 4, 5] )}
-);
-
-```
-
-### Less
-
-**Syntaxe :** z = x < y < ... ; z = Less( x, y, ... )
-
-**Description :** Renvoie 1 si chaque argument est inférieur à l&apos;argument suivant, et 0 dans le cas contraire.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-[1 1 1] < [0 1 2];
-
-```
-
-### Less LessEqual
-
-**Syntaxe :** z = x < y <= ... ; z = Less LessEqual( x, y, ... )
-
-**Description :** Renvoie 1 si le premier argument est inférieur au second et que chaque argument, sauf le premier, est inférieur ou égal à l&apos;argument suivant ; retourne 0 dans le cas contraire.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-1 < 2 <= 2;
-
-```
-
-### Less or Equal
-
-**Syntaxe :** z = x <= y <= ... ; z = Less or Equal( x, y, ... )
-
-**Description :** Renvoie 1 si chaque argument est inférieur ou égal à l&apos;argument suivant, et 0 dans le cas contraire.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-1 <= 2 <= 2;
-
-```
-
-### LessEqual Less
-
-**Syntaxe :** z = x <= y < ... ; z = LessEqual Less( x, y, ... )
-
-**Description :** Renvoie 1 si le premier argument est inférieur ou égal au second et que chaque argument, sauf le premier, est inférieur à l&apos;argument suivant ; retourne 0 dans le cas contraire.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-2 <= 2 < 3;
-
-```
-
 ### Level Color
 
-**Syntaxe :** y = Level Color( i ); y = Level Color( i, n ); y = Level Color( i, n, <theme> ); y = Level Color( i, <theme> )
+**Syntaxe :** y = Level Color( i ); y = Level Color( i, n ); y = Level Color( i, n, &lt;theme&gt; ); y = Level Color( i, &lt;theme&gt; )
 
 **Description :** Renvoie une couleur de catégorie, où i est le niveau de catégorie; n est le nombre de catégories (facultatif) et theme correspond aux thèmes de couleur répertoriés dans la zone de liste déroulante Couleur de la valeur de la boîte de dialogue Informations sur la colonne. ("JMP par défaut" indique le thème par défaut.) L&apos;index de catégorie doit être >= 1 et <= au nombre de catégories spécifié dans l&apos;appel ou défini par le thème. Si le deuxième argument est un caractère, il s’agit du thème de couleur et n n&apos;est pas spécifié.
 
@@ -15483,9 +15454,24 @@ New Window( "Color Bar",
 
 ```
 
+### LGamma
+
+**Syntaxe :** y = LGamma( x )
+
+**Description :** Renvoie le logarithme naturel de la fonction gamma de x. Utile lorsque gamma(x) est trop grand pour être utilisé directement.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+LGamma( 5 );
+
+```
+
 ### Line
 
-**Syntaxe :** Line( {x1, y1}, {x2, y2}, ..., < <<Value Space( 0|1 ) >, < <<Smooth( tension, domain, min response, max response ) > ); Line( xMatrix, yMatrix, < <<Value Space(0 | 1) >, < <<Smooth( tension, domain, min response, max response ) > )
+**Syntaxe :** Line( {x1, y1}, {x2, y2}, ..., &lt; &lt;&lt;Value Space( 0|1 ) &gt;, &lt; &lt;&lt;Smooth( tension, domain, min response, max response ) &gt; ); Line( xMatrix, yMatrix, &lt; &lt;&lt;Value Space(0 | 1) &gt;, &lt; &lt;&lt;Smooth( tension, domain, min response, max response ) &gt; )
 
 **Description :** Dessine une droite ou des droites connectées. Dans le cas par défaut, la droite est dessinée linéairement entre les points finaux. Si l&apos;option Value Space est définie , la droite suivra la projection spécifiée par l&apos;échelle des axes sous-jacents. Si l&apos;option Smooth est définie, les connexions sont lissées, restreintes par tension, domain dimension, min response et max response.
 
@@ -15571,7 +15557,7 @@ New Window( "Interpolate in value space",
 
 ### Line Seg
 
-**Syntaxe :** ls = Line Seg(x values, y values, <Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) >, < Sizes( s ) > )>)
+**Syntaxe :** ls = Line Seg(x values, y values, &lt;Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) &gt;, &lt; Sizes( s ) &gt; )&gt;)
 
 **Description :** Renvoie un groupe d’affichage avec des lignes reliant toutes les valeurs x et y.
 
@@ -15663,7 +15649,7 @@ New Window( "Line Style Example",
 
 ### Linear Regression
 
-**Syntaxe :** {Estimates, Std_Error, Diagnostics} = Linear Regression(y, X, <<noIntercept, <<printToLog, <<weight(WeightVector), <<freq(FrequencyVector)
+**Syntaxe :** {Estimates, Std_Error, Diagnostics} = Linear Regression(y, X, &lt;&lt;noIntercept, &lt;&lt;printToLog, &lt;&lt;weight(WeightVector), &lt;&lt;freq(FrequencyVector)
 
 **Description :** Ajuste une régression linéaire pour le modèle supposé y = X * beta + error. L&apos;argument facultatif <<noIntercept spécifie un modèle sans constante. L&apos;argument facultatif <<printToLog spécifie qu&apos;un résumé de l&apos;ajustement est imprimé dans la fenêtre log. L&apos;argument facultatif weight spécifie un vecteur des pondérations pour le calcul des moindres carrés pondérés, et l&apos;argument facultatif freq spécifie un vecteur des fréquences. Renvoie une liste contenant un vecteur des estimations, un vecteur des erreurs standard et une liste des diagnostics. La liste des diagnostics contient les vecteurs des statistiques t et les p-values pour les estimations, ainsi que les valeurs R carré et R carré ajustées pour l&apos;ajustement de la régression.
 
@@ -15739,7 +15725,7 @@ seg = (frame << Find Seg( "Lines Seg" ));
 
 ### Lineup Box
 
-**Syntaxe :** y = Lineup Box( <NCol( nc )>, <Spacing( pixels, <vspace> )>, displayBoxArgs, ... )
+**Syntaxe :** y = Lineup Box( &lt;NCol( nc )&gt;, &lt;Spacing( pixels, &lt;vspace&gt; )&gt;, displayBoxArgs, ... )
 
 **Description :** Renvoie une boîte d&apos;affichage pour afficher un alignement de boîtes en nc colonnes. L&apos;argument facultatif Spacing spécifie l&apos;espace horizontal et vertical autour des boîtes d&apos;affichage. Si vous utilisez l’argument vspace, vspace est l&apos;espace vertical et pixels est l&apos;espace horizontal.
 
@@ -15766,7 +15752,7 @@ New Window( "Example",
 
 ### Lineup Ruler Box
 
-**Syntaxe :** y = Lineup Box( <Widths( {width1, width2, ...} )>, displayBoxArgs, ... )
+**Syntaxe :** y = Lineup Box( &lt;Widths( {width1, width2, ...} )&gt;, displayBoxArgs, ... )
 
 **Description :** Renvoie une boîte d’affichage qui définit les largeurs de colonne des boîtes d&apos;alignement qu&apos;elle contient.
 
@@ -15819,7 +15805,7 @@ Names Default To Here( 1 );
 
 ### List Box
 
-**Syntaxe :** y = List Box( {item, ...}, <width( pixels )>, <maxSelected( 9999 )>, <nlines( 12 )>, <script> )
+**Syntaxe :** y = List Box( {item, ...}, &lt;width( pixels )&gt;, &lt;maxSelected( 9999 )&gt;, &lt;nlines( 12 )&gt;, &lt;script&gt; )
 
 **Description :** Renvoie une boîte d&apos;affichage pour afficher une zone de liste d&apos;éléments de sélection. Si item est en lui-même une liste à deux éléments contenant le nom de l’élément et une chaîne spécifiant le type de modélisation ou l’ordre de tri, "Ordinal" ou "Ascending" par exemple, l’icône appropriée s’affichera en regard de l’élément concerné dans la zone de liste.
 
@@ -15870,7 +15856,7 @@ Ln( Exp( 2 ) );
 
 ### Load DLL
 
-**Syntaxe :** dll = Load DLL( file path | Base Name( file path without extension ), < AutoDeclare( bool | Quiet | Verbose) | Quiet | Verbose )> )
+**Syntaxe :** dll = Load DLL( file path | Base Name( file path without extension ), &lt; AutoDeclare( bool | Quiet | Verbose) | Quiet | Verbose )&gt; )
 
 **Description :** Charge une DLL à laquelle conduit le chemin d&apos;accès spécifié.
 
@@ -15907,7 +15893,7 @@ If( Host is( "Windows" ),
 
 ### Load Text File
 
-**Syntaxe :** text = Load Text File( path, <Charset("best guess", <force("throw" | "alert" | "silent")>)>, <LineSeparator("\!N")>, <XMLParse>|<SASODSXML>|<JSON>|<BLOB( <readOffsetFromBegin(0)>|<readOffsetFromEnd(42)>, <readLength(2147483647)>, <base64Compressed( 1 /* 0: ascii~hex */)> )> )
+**Syntaxe :** text = Load Text File( path, &lt;Charset("best guess", &lt;force("throw" | "alert" | "silent")&gt;)&gt;, &lt;LineSeparator("\!N")&gt;, &lt;XMLParse&gt;|&lt;SASODSXML&gt;|&lt;JSON&gt;|&lt;BLOB( &lt;readOffsetFromBegin(0)&gt;|&lt;readOffsetFromEnd(42)&gt;, &lt;readLength(2147483647)&gt;, &lt;base64Compressed( 1 /* 0: ascii~hex */)&gt; )&gt; )
 
 **Description :** Lit un fichier texte entier dans une variable JSL. Load Text File() vous invite à saisir un nom de fichier. Load Text File( path ) renvoie une chaîne. L&apos;option XMLParse convertit du code XML en une arborescence d&apos;expression. La fonction SASODSXML effectue l&apos;analyse en tant que fichier XML par défaut d&apos;un fichier ODS de SAS. L&apos;option [{JSON}] convertit du code JSON en une arborescence d&apos;expression. L&apos;argument BLOB renvoie des données binaires dans une variable Blob JSL ; les paramètres facultatifs nommés du BLOB permettent de lire une sous-chaîne du fichier.
 
@@ -16140,7 +16126,7 @@ Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 ### Log
 
-**Syntaxe :** y = Log( x, <b> )
+**Syntaxe :** y = Log( x, &lt;b&gt; )
 
 **Description :** Renvoie le logarithme de base b de x ou le logarithme naturel de x sib n’est pas spécifié.
 
@@ -16175,7 +16161,7 @@ Names Default To Here( 1 );
 
 ### Log Table Messages
 
-**Syntaxe :** Log Table Messages( <On|Off>, <Enable(subject, ...)>, <Disable(subject, ...)>, <Include(msgname, ...)>, <Exclude(msgname, )>
+**Syntaxe :** Log Table Messages( &lt;On|Off&gt;, &lt;Enable(subject, ...)&gt;, &lt;Disable(subject, ...)&gt;, &lt;Include(msgname, ...)&gt;, &lt;Exclude(msgname, )&gt;
 
 **Description :** Control logging of data table messages (such as DtMsgClose). By default logging is off, but all subjects are enabled. (If you turn logging on, you do not need to enable the subjects you&apos;re interested in.) Only a subset of all messages are logged. Not available in retail builds.
 
@@ -16831,7 +16817,7 @@ New Window( "Example: Lognormal Quantile",
 
 ### Long Date
 
-**Syntaxe :** s = Long Date( datetime, <format> )
+**Syntaxe :** s = Long Date( datetime, &lt;format&gt; )
 
 **Description :** Renvoie une représentation locale longue d&apos;une valeur « date-heure » de JMP.
 
@@ -16875,24 +16861,30 @@ Lowercase( "CAFÉ #23" );
 
 ```
 
-### MDYHMS
+### LPSolve
 
-**Syntaxe :** s = MDYHMS( datetime, <format> )
+**Syntaxe :** {x, z} = LPSolve( A, b, c, L, U, neq, nle, nge, &lt;slackVars=0&gt; )
 
-**Description :** Renvoie une représentation d&apos;une valeur « date-heure » de JMP dans l&apos;ordre suivant : mois, jour, année, heure, minute, seconde.
+**Description :** Minimise la fonction objectif soumise aux contraintes données et renvoie une liste de deux éléments. Le premier élément de la liste, x, contient les variables de décision (et les variables d’écart si slackVars=1). Le deuxième élément de la liste, z, contient la valeur optimale de la fonction objectif (si elle existe). Les premiers cinq arguments sont des matrices. L’argument A est la matrice des coefficients de contrainte. L’argument b est la colonne des valeurs des contraintes de droite. L&apos;argument c est le vecteur des coefficients de coûts de la fonction objectif. Les arguments L et U sont respectivement les limites inférieure et supérieure des variables. Les arguments neq, nle et nge sont respectivement le nombre de contraintes d&apos;égalité, le nombre d&apos;inégalités inférieures ou égales et le nombre d&apos;inégalités supérieures ou égales. Notez que les contraintes doivent être répertoriées d&apos;abord comme égalités, puis comme inégalités inférieures ou égales, et enfin comme inégalités supérieures ou égales.
 
 **JMP Version ajoutée :** Avant la version 14
 
 ```jsl
 
 Names Default To Here( 1 );
-MDYHMS( Today() );
+A = [5 -2 6, 2 4 0, 3 8 -4];
+b = [17, 19, 14];
+c = [9 6 -4];
+L = [. 0 .];
+U = [0 . .];
+{x, z} = LPSolve( A, b, c, L, U, 1, 1, 1, 1 );
+Show( x, z );
 
 ```
 
 ### Mail
 
-**Syntaxe :** Mail( "address", "subject", "message", <"attachment filepath"> | { "attachment filepath", ...} )
+**Syntaxe :** Mail( "address", "subject", "message", &lt;"attachment filepath"&gt; | { "attachment filepath", ...} )
 
 **Description :** Crée un message électronique sortant comme spécifié si le système d&apos;exploitation le permet. Toutes les options ne fonctionneront pas sur toutes les versions de système d&apos;exploitation. Pour plus de détails, consultez l&apos;aide.
 
@@ -16912,7 +16904,7 @@ Mail(
 
 ### Main Menu
 
-**Syntaxe :** menu = Main Menu( command, <window name> )
+**Syntaxe :** menu = Main Menu( command, &lt;window name&gt; )
 
 **Description :** Exécute la commande du menu principal spécifiée.
 
@@ -16938,7 +16930,7 @@ Main Menu( "Help:Sample Index" );
 
 ### Make KFold Formula
 
-**Syntaxe :** y = Make KFold Formula( folds, Y Columns( cols ), <<Stratification Columns( cols ), <<Grouping Columns( cols ) )
+**Syntaxe :** y = Make KFold Formula( folds, Y Columns( cols ), &lt;&lt;Stratification Columns( cols ), &lt;&lt;Grouping Columns( cols ) )
 
 **Description :** Génère une colonne de validation à folds niveaux si utilisée dans une formule de colonne. Cette fonction JSL est principalement utilisée par la plate-forme Créer une colonne de validation pour générer des colonnes de formule.
 
@@ -16980,7 +16972,7 @@ dt << New Column( "Stratified KFold",
 
 ### Make Validation Formula
 
-**Syntaxe :** y = Make Validation Formula( rates, <<Stratification Columns( cols ), <<Grouping Columns( cols ), <<Cutpoint Column ( col ), <<Cutpoint Batch ID( col ), <<Determine cutpoints using( "Proportions"|"Numbers of Rows"|"Fixed Time or Date"|"Elapsed Time" ), <<Assign Extra Rows( "To Training"|"To Validation"|"To Test" ) )
+**Syntaxe :** y = Make Validation Formula( rates, &lt;&lt;Stratification Columns( cols ), &lt;&lt;Grouping Columns( cols ), &lt;&lt;Cutpoint Column ( col ), &lt;&lt;Cutpoint Batch ID( col ), &lt;&lt;Determine cutpoints using( "Proportions"|"Numbers of Rows"|"Fixed Time or Date"|"Elapsed Time" ), &lt;&lt;Assign Extra Rows( "To Training"|"To Validation"|"To Test" ) )
 
 **Description :** Génère une colonne de validation à deux ou trois niveaux lorsqu&apos;elle est utilisée dans une formule de colonne. L&apos;argument rates est une matrice 3 par 1 contenant les proportions d&apos;apprentissage, de validation et de tests, respectivement. Cette fonction JSL est principalement utilisée par la plate-forme Créer une colonne de validation pour générer des colonnes de formule.
 
@@ -17117,7 +17109,7 @@ g << Set Y Axis(
 
 ### Map Value
 
-**Syntaxe :** Map Value(string | number, {key1, value1...|{key1...},{value1...}}, <Unmatched(value)>)
+**Syntaxe :** Map Value(string | number, {key1, value1...|{key1...},{value1...}}, &lt;Unmatched(value)&gt;)
 
 **Description :** Évaluer la valeur initiale et renvoyer le résultat correspondant ou un résultat par défaut.
 
@@ -17161,7 +17153,7 @@ Map Value( 10, {{1, 2, 3}, {100, 200, 300}} );
 
 ### Marker
 
-**Syntaxe :** Marker( <rs>, {x1, y1}, {x2, y2}, ... ); Marker( <rs>, xMatrix, yMatrix )
+**Syntaxe :** Marker( &lt;rs&gt;, {x1, y1}, {x2, y2}, ... ); Marker( &lt;rs&gt;, xMatrix, yMatrix )
 
 **Description :** Dessine des marqueurs aux coordonnées indiquées.
 
@@ -17178,7 +17170,7 @@ New Window( "Example",
 
 ### Marker Of
 
-**Syntaxe :** y = Marker Of( <rs> ); Marker Of( <Row State( <r> )> ) = y
+**Syntaxe :** y = Marker Of( &lt;rs&gt; ); Marker Of( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **Description :** Renvoie la composante de marqueur de la valeur d&apos;état de ligne spécifiée. Si Marker Of est utilisé comme L-value, le marqueur de la ligne active (ou r-ième) de la table de données active est modifié.
 
@@ -17197,7 +17189,7 @@ Marker Of();
 
 ### Marker Seg
 
-**Syntaxe :** me = Marker Seg( x, y, < Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) >, < Sizes( s ) > )
+**Syntaxe :** me = Marker Seg( x, y, &lt; Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) &gt;, &lt; Sizes( s ) &gt; )
 
 **Description :** Renvoie un groupe d’affichage avec des marqueurs pour toutes les valeurs x et y.
 
@@ -17397,11 +17389,7 @@ MatchMZ( Year( Today() ),
 
 ### Matrix
 
-**Syntaxe :** y = Matrix( {{x11, ..., x1m}, {...}, {xn1, ..., xnm}} )
-
-y = Matrix( {x1, ..., xn} )
-
-y = Matrix( n, m )
+**Syntaxe :** y = Matrix( {{x11, ..., x1m}, {...}, {xn1, ..., xnm}} )y = Matrix( {x1, ..., xn} )y = Matrix( n, m )
 
 **Description :** Construit une matrice n en fonction de m. Si vous spécifiez une liste de n listes n contenant chacune m valeurs de ligne, la matrice est formée par concaténation verticale des listes évaluées. Si vous spécifiez une seule liste de n éléments, la valeur de renvoi est un vecteur colonne n en fonction de 1. Si vous spécifiez deux arguments entiers, la valeur de renvoi est une matrice de zéros contenant n lignes et m colonnes.
 
@@ -17445,7 +17433,7 @@ Matrix( 2, 3 );
 
 ### Matrix Box
 
-**Syntaxe :** y = Matrix Box( matrix, < <<Column Names( "c1", "c2", ... )>, < <<Row Names( "r1", "r2", ... )> )
+**Syntaxe :** y = Matrix Box( matrix, &lt; &lt;&lt;Column Names( "c1", "c2", ... )&gt;, &lt; &lt;&lt;Row Names( "r1", "r2", ... )&gt; )
 
 **Description :** Renvoie une boîte d&apos;affichage pour afficher une matrice de nombres.
 
@@ -17547,9 +17535,7 @@ Eval List( {Max( Pi(), e() ), Max( [33 44 22] )} );
 
 ### Maximize
 
-**Syntaxe :** Maximize( expr, {x1, x2, ...} );
-
-Maximize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, <<MaxIter( 250 ), <<Tolerance( .00000001 ), <<details(both | returnDetails | displaySteps), <<gradient(), <<hessian(), method(NR | SR1), <<useNumericDeriv(True))
+**Syntaxe :** Maximize( expr, {x1, x2, ...} );Maximize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;MaxIter( 250 ), &lt;&lt;Tolerance( .00000001 ), &lt;&lt;details(both | returnDetails | displaySteps), &lt;&lt;gradient(), &lt;&lt;hessian(), method(NR | SR1), &lt;&lt;useNumericDeriv(True))
 
 **Description :** Trouve les valeurs des arguments de la fonction, communiquées dans la liste {x1, x2, ...}, qui maximisent l&apos;expression expr. Vous pouvez spécifier des limites inférieures et supérieures pour chaque argument entre parenthèses à la suite du nom de l&apos;argument. Si expr n&apos;est pas une fonction concave, Maximize pourrait trouver un maximum local au lieu du maximum global. Si cela pose problème, essayez plusieurs valeurs de départ. Maximize fonctionne également mieux pour les fonctions avec une dérivée seconde continue. Les arguments supplémentaires de la fonction Maximize vous permettent de définir le nombre maximum d&apos;itérations, la tolérance pour la convergence, et d&apos;afficher davantage de détails sur l&apos;optimisation. Cliquez sur le bouton de la rubrique Aide pour davantage d&apos;informations sur les arguments facultatifs.
 
@@ -17618,6 +17604,21 @@ Maximize(
 
 Names Default To Here( 1 );
 Eval List( {Max( Pi(), e() ), Max( [33 44 22] )} );
+
+```
+
+### MDYHMS
+
+**Syntaxe :** s = MDYHMS( datetime, &lt;format&gt; )
+
+**Description :** Renvoie une représentation d&apos;une valeur « date-heure » de JMP dans l&apos;ordre suivant : mois, jour, année, heure, minute, seconde.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+MDYHMS( Today() );
 
 ```
 
@@ -17747,9 +17748,7 @@ Eval List( {Min( Pi(), e() ), Min( [33 44 22] )} );
 
 ### Minimize
 
-**Syntaxe :** Minimize( expr, {x1, x2, ...} );
-
-Minimize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, <<MaxIter( 250 ), <<Tolerance( .00000001 ), <<details(both | returnDetails | displaySteps), <<gradient(), <<Hessian(), <<method(NR | SR1), <<useNumericDeriv(True))
+**Syntaxe :** Minimize( expr, {x1, x2, ...} );Minimize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;MaxIter( 250 ), &lt;&lt;Tolerance( .00000001 ), &lt;&lt;details(both | returnDetails | displaySteps), &lt;&lt;gradient(), &lt;&lt;Hessian(), &lt;&lt;method(NR | SR1), &lt;&lt;useNumericDeriv(True))
 
 **Description :** Trouve les valeurs des arguments de la fonction, communiquées dans la liste {x1, x2, ...}, qui minimisent l&apos;expression expr. Vous pouvez spécifier des limites inférieures et supérieures pour chaque argument entre parenthèses à la suite du nom de l&apos;argument. Si expr n&apos;est pas une fonction convexe, Minimize pourrait trouver un minimum local au lieu du minimum global. Si cela pose problème, essayez plusieurs valeurs de départ. Minimize fonctionne également mieux pour les fonctions avec une dérivée seconde continue. Les arguments supplémentaires de la fonction Minimize vous permettent de définir le nombre maximum d&apos;itérations, la tolérance pour la convergence, et d&apos;afficher davantage de détails sur l&apos;optimisation. Cliquez sur le bouton de la rubrique Aide pour davantage d&apos;informations sur les arguments facultatifs.
 
@@ -17961,9 +17960,7 @@ Show( Mode( [1, 2, 3, 2, 1] ), Mode( {"a", "b", "c", "b", "a", "b"} ) );
 
 ### Modified Internal Rate of Return
 
-**Syntaxe :** x = Modified Internal Rate of Return( values, finance_rate, reinvest_rate );
-
-x = Modified Internal Rate of Return( finance_rate, reinvest_rate, value1, value2, <value3, ...> )
+**Syntaxe :** x = Modified Internal Rate of Return( values, finance_rate, reinvest_rate );x = Modified Internal Rate of Return( finance_rate, reinvest_rate, value1, value2, &lt;value3, ...&gt; )
 
 **Description :** Renvoie le taux de rentabilité interne pour une série de flux de trésorerie en fonction du coût de l&apos;investissement et de l&apos;intérêt sur le réinvestissement des liquidités. Équivalent à la fonction MIRR de Microsoft Excel. Le deuxième prototype de la fonction n’accepte que des arguments scalaires.
 
@@ -18065,7 +18062,7 @@ New Window( "Example",
 
 ### Mousetrap
 
-**Syntaxe :** Mousetrap( dragScript, <mouseUpScript> )
+**Syntaxe :** Mousetrap( dragScript, &lt;mouseUpScript&gt; )
 
 **Description :** Évalue de façon répétée l’expression dragScript lorsque vous cliquez avec la souris sur le graphique et que celle-ci n&apos;est pas gérée par un autre objet graphique. Avant l&apos;exécution du script, les valeurs globales x et y sont définies par le pointeur de la souris, elles sont rétablies par la suite à leurs valeurs d&apos;origine. L’expression mouseUpScript est exécutée une fois que le bouton de la souris est relâché.
 
@@ -18144,7 +18141,7 @@ Char( rc3 ) || " " || Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
 
 ### Move to Project
 
-**Syntaxe :** Move to Project(<Source(project)>, <Destination(project)>, <Windows({list of windows to move})>)
+**Syntaxe :** Move to Project(&lt;Source(project)&gt;, &lt;Destination(project)&gt;, &lt;Windows({list of windows to move})&gt;)
 
 **Description :** Déplace une ou plusieurs fenêtres dans un projet, à l&apos;extérieur d&apos;un projet ou entre plusieurs projets. Seule Source ou Destination doit être spécifiée ; l&apos;autre sera associée par défaut au projet en cours (Utilisez uniquement Source pour déplacer des fenêtres dans le projet en cours, et uniquement Destination pour déplacer des fenêtres à l&apos;extérieur du projet en cours). Une fenêtre de table de données sera déplacée avec les rapports auxquels elle est associée, bien qu&apos;il ne soit pas nécessaire d&apos;en spécifier plusieurs dans l&apos;argument Windows. En l&apos;absence de spécification, l&apos;argument Windows déplacera par défaut toutes les fenêtres ouvertes dans le projet source.
 
@@ -18177,7 +18174,7 @@ project << Close Window();
 
 ### Moving Average
 
-**Syntaxe :** y = Moving Average( x, weighting, <before=-1>, <after=0>, <partial window is missing=0> )
+**Syntaxe :** y = Moving Average( x, weighting, &lt;before=-1&gt;, &lt;after=0&gt;, &lt;partial window is missing=0&gt; )
 
 **Description :** Renvoie une matrice des moyennes mobiles pour la matrice des entrées. before et after déterminent l&apos;étendue (« fenêtre ») des éléments dont la moyenne est à calculer, où before peut être -1 pour indiquer tous les éléments a priori. Si weighting est égal à 1, tous les éléments ont une pondération égale. Si weighting est égal à 0, les éléments ont des pondérations linéairement incrémentielles. Sinon, weighting est le paramètre pour la pondération exponentielle (EWMA). partial window is missing indique si les moyennes sont rapportées lorsque certains voisins ne sont pas présents, ce qui peut se produire aux extrémités ou à proximité des valeurs manquantes. Si partial window is missing est non nul, les valeurs manquantes sont rapportées pour les fenêtres partielles.
 
@@ -18299,7 +18296,7 @@ Print( mat );
 
 ### Munger
 
-**Syntaxe :** r = Munger( s, startPos, findStringOrNChars, <replaceString> )
+**Syntaxe :** r = Munger( s, startPos, findStringOrNChars, &lt;replaceString&gt; )
 
 **Description :** Recherche dans l’argument s une sous-chaîne ou une position en fonction de la combinaison d’arguments.
 
@@ -18520,21 +18517,6 @@ d;
 
 ```
 
-### NChooseK Matrix
-
-**Syntaxe :** m = NChooseK Matrix( n, k )
-
-**Description :** Crée une matrice de nChooseK(n,k) lignes et k colonnes formant toutes les combinaisons de k entiers compris entre 1 et n.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-Print( NChooseK Matrix( 5, 3 ) );
-
-```
-
 ### Name
 
 **Syntaxe :** Name(string)
@@ -18667,6 +18649,21 @@ ns = New Namespace(
 nsexists = Namespace Exists( ns );
 Show( nsexists );
 ns << Delete;
+
+```
+
+### NChooseK Matrix
+
+**Syntaxe :** m = NChooseK Matrix( n, k )
+
+**Description :** Crée une matrice de nChooseK(n,k) lignes et k colonnes formant toutes les combinaisons de k entiers compris entre 1 et n.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+Print( NChooseK Matrix( 5, 3 ) );
 
 ```
 
@@ -18951,9 +18948,7 @@ New Window( "Example: Negative Binomial Quantile",
 
 ### Net Present Value
 
-**Syntaxe :** x = Net Present Value( rate, values );
-
-x = Net Present Value( rate, value1, value2, <value3, ...> )
+**Syntaxe :** x = Net Present Value( rate, values );x = Net Present Value( rate, value1, value2, &lt;value3, ...&gt; )
 
 **Description :** Renvoie la valeur actuelle nette d&apos;un investissement calculée en fonction d’un taux d’escompte et d’une série de débits (valeurs négatives) et de crédits (valeurs positives) futurs. L’argument values est une matrice unidimensionnelle. Équivalent à la fonction NPV de Microsoft Excel. Le deuxième prototype de la fonction n’accepte que des arguments scalaires.
 
@@ -19015,7 +19010,7 @@ cas << Submit( action );
 
 ### New CAS Server
 
-**Syntaxe :** cas = New CAS Server(<...>)
+**Syntaxe :** cas = New CAS Server(&lt;...&gt;)
 
 **Description :** Crée un nouveau serveur CAS.
 
@@ -19032,7 +19027,7 @@ cas = New CAS Server( Connect( URL( url ), Prompt( IfNeeded ) ) );
 
 ### New Clipboard
 
-**Syntaxe :** clp = New Clipboard( <<<Get From OS> )
+**Syntaxe :** clp = New Clipboard( &lt;&lt;&lt;Get From OS&gt; )
 
 **Description :** Creates a new Clipboard, either empty or with access to the OS clipboard.
 
@@ -19050,7 +19045,7 @@ New Window( "Img", clp << Get Flavor Data( "Graphic" ) )
 
 ### New Column
 
-**Syntaxe :** dc = New Column( name, <"Numeric"|"Character"|"RowState"|"Expression">, <"Continuous"|"Ordinal"|"Nominal"|"Multiple Response"|"Unstructured Text"|"Vector"|"None">, <Width( n )|Format(format name, width, precision)>, <Like(:other column)>, <actions> )
+**Syntaxe :** dc = New Column( name, &lt;"Numeric"|"Character"|"RowState"|"Expression"&gt;, &lt;"Continuous"|"Ordinal"|"Nominal"|"Multiple Response"|"Unstructured Text"|"Vector"|"None"&gt;, &lt;Width( n )|Format(format name, width, precision)&gt;, &lt;Like(:other column)&gt;, &lt;actions&gt; )
 
 **Description :** Crée une nouvelle colonne dans la table de données active. Les arguments facultatifs actions sont tous les messages que les colonnes de données prennent en charge.
 
@@ -19083,7 +19078,7 @@ New Column( "example",
 
 ### New Column by Text Matching
 
-**Syntaxe :** dc = New Column by Text Matching( Column(:name), Set Regex(), <Output Column Name("Name")>, <Use Result(0 | 1)> )
+**Syntaxe :** dc = New Column by Text Matching( Column(:name), Set Regex(), &lt;Output Column Name("Name")&gt;, &lt;Use Result(0 | 1)&gt; )
 
 **Description :** Crée une nouvelle colonne en effectuant une recherche de motif d&apos;expression régulière sur une colonne existante.
 
@@ -19171,7 +19166,7 @@ Add Custom Functions(
 
 ### New Data Connector
 
-**Syntaxe :** result = New Data Connector( Type( type ) | ID( id ) | File( path ) | Spec( string ) | Base( data connector ), < Option1( value1 ) >, ..., < OptionN( valueN ) > )
+**Syntaxe :** result = New Data Connector( Type( type ) | ID( id ) | File( path ) | Spec( string ) | Base( data connector ), &lt; Option1( value1 ) &gt;, ..., &lt; OptionN( valueN ) &gt; )
 
 **Description :** Créez un objet de configuration de connecteur de données.
 
@@ -19216,9 +19211,60 @@ New SQL Query( Connection( dc ) ) << Modify;
 
 ```
 
+### New Heat Image
+
+**Syntaxe :** New Heat Image( Matrix, &lt;Color Theme / gradient ( ... )&gt;
+
+**Description :** Crée une image de carte thermique basée sur une matrice et un thème de couleur ou un dégradé.
+
+**JMP Version ajoutée :** 16
+
+```jsl
+
+Names Default To Here( 1 );
+
+nx = 20; // data is this size
+ny = 15;
+data = J( ny, nx, Random Normal() ); // ny=rows, nx=cols
+// create a magnified matrix for seeing each value
+magnify = 10;
+big data = J( N Rows( data ) * magnify, N Cols( data ) * magnify );
+big data = Transform Each( {z, {row, col}}, big data, 
+	// and filling each value with one from the small matrix
+	data[Floor( (row - 1) / magnify ) + 1, Floor( (col - 1) / magnify )
+	 + 1]
+);
+New Window( "small and big",
+	Lineup Box( N Col( 3 ),
+		New Heat Image(
+			data,
+			gradient(
+				{Color Theme( "Blue To Gray To Orange" ),
+				Scale Type( "Standard Deviation" )}
+			)
+		),
+		New Heat Image(
+			big data,
+			gradient(
+				{Color Theme( "Blue To Gray To Orange" ),
+				Scale Type( "Standard Deviation" )}
+			)
+		),
+		New Heat Image(
+			Abs( big data ),
+			gradient(
+				{Color Theme( "White to Black" ), Scale Values( [0 2] ),
+				Reverse Gradient( 1 )}
+			)
+		)
+	)
+);
+
+```
+
 ### New HTTP Request
 
-**Syntaxe :** obj = New HTTP Request(URL(...), Method(...), <Form(<Fields(...)>, <Files(...)>)> | <File(...)> | <Blob(...)> | <JSON(...)>, <QueryString(...)>, <Headers(...)>, <Username(...)>, <Password(...)>)
+**Syntaxe :** obj = New HTTP Request(URL(...), Method(...), &lt;Form(&lt;Fields(...)&gt;, &lt;Files(...)&gt;)&gt; | &lt;File(...)&gt; | &lt;Blob(...)&gt; | &lt;JSON(...)&gt;, &lt;QueryString(...)&gt;, &lt;Headers(...)&gt;, &lt;Username(...)&gt;, &lt;Password(...)&gt;)
 
 **Description :** Crée une demande d&apos;envoi à un service Internet.
 
@@ -19280,80 +19326,9 @@ addSentimentColumns( dt2, "Name", 1, 1 );
 
 ```
 
-### New Heat Image
-
-**Syntaxe :** New Heat Image( Matrix, <Color Theme / gradient ( ... )>
-
-**Description :** Crée une image de carte thermique basée sur une matrice et un thème de couleur ou un dégradé.
-
-**JMP Version ajoutée :** 16
-
-```jsl
-
-Names Default To Here( 1 );
-
-nx = 20; // data is this size
-ny = 15;
-data = J( ny, nx, Random Normal() ); // ny=rows, nx=cols
-// create a magnified matrix for seeing each value
-magnify = 10;
-big data = J( N Rows( data ) * magnify, N Cols( data ) * magnify );
-big data = Transform Each( {z, {row, col}}, big data, 
-	// and filling each value with one from the small matrix
-	data[Floor( (row - 1) / magnify ) + 1, Floor( (col - 1) / magnify )
-	 + 1]
-);
-New Window( "small and big",
-	Lineup Box( N Col( 3 ),
-		New Heat Image(
-			data,
-			gradient(
-				{Color Theme( "Blue To Gray To Orange" ),
-				Scale Type( "Standard Deviation" )}
-			)
-		),
-		New Heat Image(
-			big data,
-			gradient(
-				{Color Theme( "Blue To Gray To Orange" ),
-				Scale Type( "Standard Deviation" )}
-			)
-		),
-		New Heat Image(
-			Abs( big data ),
-			gradient(
-				{Color Theme( "White to Black" ), Scale Values( [0 2] ),
-				Reverse Gradient( 1 )}
-			)
-		)
-	)
-);
-
-```
-
-### New IP21 Client
-
-**Syntaxe :** New IP21 Client(URL(base URL), <Authentication Method("None"|"Basic"|"NTLM"|"Kerberos")>,
-
-                   <Username(userid)>,<Password(password)>)
-
-**Description :** Crée une nouvelle instance de client IP21 qui peut être utilisée pour importer les données depuis un serveur AspenTech IP.21.
-
-**JMP Version ajoutée :** 19
-
 ### New Image
 
-**Syntaxe :** img = New Image()
-
-img = New Image( width, height )
-
-img = New Image( pathname )
-
-img = New Image( picture )
-
-img = New Image( matrix of JSL color pixels ) 
-
-img = New Image( rgb|r|g|rgba, {i, i, i} )
+**Syntaxe :** img = New Image()img = New Image( width, height )img = New Image( pathname )img = New Image( picture )img = New Image( matrix of JSL color pixels ) img = New Image( rgb|r|g|rgba, {i, i, i} )
 
 **Description :** Renvoie une nouvelle image éditable ultérieurement à l’aide des commandes JSL. Si le chemin spécifié pointe vers un fichier image existant, ce fichier doit être de type .JPG, .PNG, .GIF, .BMP ou .TIF.
 
@@ -19397,9 +19372,17 @@ New Window( "image", image3 );
 
 ```
 
+### New IP21 Client
+
+**Syntaxe :** New IP21 Client(URL(base URL), &lt;Authentication Method("None"|"Basic"|"NTLM"|"Kerberos")&gt;, &lt;Username(userid)&gt;,&lt;Password(password)&gt;)
+
+**Description :** Crée une nouvelle instance de client IP21 qui peut être utilisée pour importer les données depuis un serveur AspenTech IP.21.
+
+**JMP Version ajoutée :** 19
+
 ### New JMP Live
 
-**Syntaxe :** New JMP Live(Connection("Connection Name"), <Prompt("No" | "If Needed")>)
+**Syntaxe :** New JMP Live(Connection("Connection Name"), &lt;Prompt("No" | "If Needed")&gt;)
 
 **Description :** Démarre une connexion à JMP Live en utilisant les informations de connexion enregistrées. L&apos;argument Connexion est facultatif et prend par défaut la connexion spécifiée dans le gestionnaire de connexions. L&apos;argument Prompt est facultatif et « No » par défaut. Les valeurs valides de Prompt sont « Yes », « No » et « If Needed ». Une valeur de « Yes » demande toujours les identifiants de connexion. Une valeur de « No » ne demande jamais les identifiants de connexion, mais pourrait causer un échec d&apos;authentification. Une valeur de « If Needed » demande les identifiants uniquement si les identifiants actuellement enregistrés ne sont pas valides. Renvoie un objet Connexion JMP Live.
 
@@ -19437,7 +19420,7 @@ jmplive = New JMP Live(
 
 ### New JMP Live Content
 
-**Syntaxe :** obj = New JMP Live Content(jmpreport|Image(path_to_image)|Data(jmpdatatable)|Map(jmpmap), <Title(...)>, <Description(...)>, <Publish Data(0|1)>, <Enable Warnings(0|1)>, <Optimization("Interactivity" | "Performance")>
+**Syntaxe :** obj = New JMP Live Content(jmpreport|Image(path_to_image)|Data(jmpdatatable)|Map(jmpmap), &lt;Title(...)&gt;, &lt;Description(...)&gt;, &lt;Publish Data(0|1)&gt;, &lt;Enable Warnings(0|1)&gt;, &lt;Optimization("Interactivity" | "Performance")&gt;
 
 **Description :** Permet de créer du contenu interactif pour le publier sur JMP Live. 
 
@@ -19592,7 +19575,7 @@ For( i = 1, i <= N Items( http_requests ), i++,
 
 ### New Namespace
 
-**Syntaxe :** ns = New Namespace( <name>, <list of expressions> )
+**Syntaxe :** ns = New Namespace( &lt;name&gt;, &lt;list of expressions&gt; )
 
 **Description :** Crée un nouvel espace de noms avec un nom spécifié par l’argument name ou avec un nom anonyme si name n’est pas spécifié.
 
@@ -19767,9 +19750,7 @@ Delete Classes( "complex" );
 
 ### New PI Client
 
-**Syntaxe :** New Pi Client(URL(base URL), <Authentication Method("None"|"Basic"|"NTLM"|"Kerberos")>,
-
-                   <Username(userid)>,<Password(password)>)
+**Syntaxe :** New Pi Client(URL(base URL), &lt;Authentication Method("None"|"Basic"|"NTLM"|"Kerberos")&gt;, &lt;Username(userid)&gt;,&lt;Password(password)&gt;)
 
 **Description :** Crée une nouvelle instance de client PI qui peut être utilisée pour importer les données depuis un serveur PI.
 
@@ -19857,7 +19838,7 @@ importer << Run;
 
 ### New Project
 
-**Syntaxe :** project = new Project( <project messages> )
+**Syntaxe :** project = new Project( &lt;project messages&gt; )
 
 **Description :** Crée une nouvelle fenêtre de projet vide. Un ou plusieurs messages de projet peuvent être inclus en tant qu&apos;arguments de sorte à créer un projet en une seule étape.
 
@@ -19958,11 +19939,7 @@ project = New Project(
 
 ### New SQL Query
 
-**Syntaxe :** obj = New SQL Query( Connection( "ODBC:my_connection_string" ), Select( Column( "mycolumn", "t1" ) ), From( Table( "my_table", Schema( "my_schema" ), Alias( "t1" ) ) ) );
-
-
-
-		obj = New SQL Query( Connection( "ODBC:my_connection_string;" ), CustomSQL( "SELECT c1, c2, c3 FROM my_table;" ) )
+**Syntaxe :** obj = New SQL Query( Connection( "ODBC:my_connection_string" ), Select( Column( "mycolumn", "t1" ) ), From( Table( "my_table", Schema( "my_schema" ), Alias( "t1" ) ) ) ); obj = New SQL Query( Connection( "ODBC:my_connection_string;" ), CustomSQL( "SELECT c1, c2, c3 FROM my_table;" ) )
 
 **Description :** Crée un objet SQL Query pour la connexion, colonnes et table spécifiées, ou pour la requête SQL personnalisée spécifiée. Utilisez le générateur de requêtes pour générer des scripts qui créent de requêtes.
 
@@ -19982,7 +19959,7 @@ obj = New SQL Query(
 
 ### New Table
 
-**Syntaxe :** dt = New Table( name, <visibility("private"|"invisible"|"visible")>, <Enable Filter Views(bool)>, <actions> )
+**Syntaxe :** dt = New Table( name, &lt;visibility("private"|"invisible"|"visible")&gt;, &lt;Enable Filter Views(bool)&gt;, &lt;actions&gt; )
 
 **Description :** Crée une nouvelle table de données. "Invisible" masque la table de données mais la répertorie dans la fenêtre d&apos;accueil JMP. "Private" masque totalement la table de données. "Visible" est l&apos;option par défaut et crée une table de données normale qui est visible et répertoriée dans la fenêtre d&apos;accueil JMP. Les arguments facultatifs actions sont les messages, quels qu&apos;ils soient, pris en charge par les tables de données.
 
@@ -20048,7 +20025,7 @@ If( !Is Empty( file ),
 
 ### New Window
 
-**Syntaxe :** w = New Window( title, < <<Type("Report" | "Dialog" | "Modal Dialog" | "Journal" | "Launcher" | "Script")>, < << Return Result>, < << On Open(expr | function | method)>, < << On Close(expr | function | method)>, < <<On Validate(expr | function | method)>, < <<Show Menu(0 | 1)>, < <<Show Toolbars(0 | 1)>, < <<Suppress AutoHide(0 | 1)>, < <<Window View("Visible" | "Invisible")>, < <<Language("C" | "JavaScript" | "JSL" | "JSON" | "Python" | "R" | "SAS"  | "SQL" | "Text" | "XML")>, < <<Size(x, y)>, displayBox | script)
+**Syntaxe :** w = New Window( title, &lt; &lt;&lt;Type("Report" | "Dialog" | "Modal Dialog" | "Journal" | "Launcher" | "Script")&gt;, &lt; &lt;&lt; Return Result&gt;, &lt; &lt;&lt; On Open(expr | function | method)&gt;, &lt; &lt;&lt; On Close(expr | function | method)&gt;, &lt; &lt;&lt;On Validate(expr | function | method)&gt;, &lt; &lt;&lt;Show Menu(0 | 1)&gt;, &lt; &lt;&lt;Show Toolbars(0 | 1)&gt;, &lt; &lt;&lt;Suppress AutoHide(0 | 1)&gt;, &lt; &lt;&lt;Window View("Visible" | "Invisible")&gt;, &lt; &lt;&lt;Language("C" | "JavaScript" | "JSL" | "JSON" | "Python" | "R" | "SAS" | "SQL" | "Text" | "XML")&gt;, &lt; &lt;&lt;Size(x, y)&gt;, displayBox | script)
 
 **Description :** Crée une fenêtre contenant la boîte d&apos;affichage ou le script spécifié. Une fenêtre de rapport est créée par défaut, sauf si l&apos;option Type est spécifiée. Une fenêtre de Type("Modal Dialog") arrête l&apos;exécution jusqu&apos;à ce que la boîte de dialogue soit remplie. On Open, On Validate et Return Result sont disponibles uniquement pour les fenêtres modales. On Open() évalue son expression, sa fonction ou sa méthode de classe à la création de la fenêtre. Si On Close() renvoie la valeur faux, la fenêtre ne peut pas être fermée. On Validate() exécute son expression, sa fonction ou sa méthode de classe lorsque vous cliquez sur le bouton OK. Si l&apos;expression renvoie la valeur Vrai, la fenêtre est fermée. Sinon, la fenêtre reste ouverte. Return Result modifie la valeur de renvoi de la fenêtre lorsqu&apos;elle se ferme pour correspondre à la fonction obsolète Dialog(). Pour les types de fenêtre qui prennent en charge les barres d&apos;outils, utilisez Show Toolbars pour spécifier les changements par rapport au comportement par défaut. Les options Show Menu et Suppress AutoHide sont pour Windows uniquement. L&apos;option Window View("Invisible") peut servir pour n&apos;importe quelle fenêtre autre qu&apos;une Modal Dialog. Une fenêtre de Type("Script") crée un document JSL sauf si l&apos;option <<Language est spécifiée.
 
@@ -20208,7 +20185,7 @@ ex = New Window( "Script example",
 
 ### Normal Biv Distribution
 
-**Syntaxe :** y = Normal Biv Distribution( x, y, r, <mu1=0>, <s1=1>, <mu2=0>, <s2=1> )
+**Syntaxe :** y = Normal Biv Distribution( x, y, r, &lt;mu1=0&gt;, &lt;s1=1&gt;, &lt;mu2=0&gt;, &lt;s2=1&gt; )
 
 **Description :** Calcule la probabilité qu&apos;une observation (X, Y) est inférieure ou égale à (x, y) avec un coefficient de corrélation de r où X présente une distribution normale marginale avec une moyenne de mu1 et un écart-type de s1, et Y présente une distribution normale marginale avec une moyenne de mu2 et un écart-type de s2. Si mu1, s1, mu2 et s2 ne sont pas donnés, la fonction prend la forme d&apos;une distribution bivariée normale standard avec mu1=0, s1=1, mu2=0 et s2=1.
 
@@ -20223,7 +20200,7 @@ Normal Biv Distribution( -2, -2, .5, 1, 1.5, -1, 2 );
 
 ### Normal Contour
 
-**Syntaxe :** Normal Contour( prob, meanMatrix, stdMatrix, corrMatrix, <colorsMatrix>, <fill=0> )
+**Syntaxe :** Normal Contour( prob, meanMatrix, stdMatrix, corrMatrix, &lt;colorsMatrix&gt;, &lt;fill=0&gt; )
 
 **Description :** Dessine les courbes d&apos;iso-probabilité normales pour k populations et deux variables. L’argument prob peut être une probabilité scalaire ou une matrice de probabilités. Les arguments meanMatrix et stdsMatrix sont des matrices k par 2, et l&apos;argument corrMatrix est un vecteur k par 1. L&apos;argument colorsMatrix spécifie la ou les couleurs des k courbes d&apos;isoréponses k ; les couleurs doivent être spécifiées comme couleurs JSL (soit des valeurs entières de couleur JSL, soit des valeurs retournées par des fonctions de couleur JSL telles que RGB Color() ou HLS Color()). L&apos;argument fill spécifie la valeur de transparence de la couleur de remplissage de la courbe d&apos;isoréponses.
 
@@ -20251,7 +20228,7 @@ New Window( "Example",
 
 ### Normal Density
 
-**Syntaxe :** y = Normal Density( q, <mu=0>, <sigma=1> )
+**Syntaxe :** y = Normal Density( q, &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **Description :** Renvoie la densité à q d’une distribution normale avec moyenne mu et écart-type sigma.
 
@@ -20274,7 +20251,7 @@ New Window( "Example: Normal Density",
 
 ### Normal Distribution
 
-**Syntaxe :** p = Normal Distribution( q, <mu=0>, <sigma=1> )
+**Syntaxe :** p = Normal Distribution( q, &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **Description :** Renvoie la probabilité qu&apos;une variable aléatoire normale est inférieure à q.
 
@@ -20319,7 +20296,7 @@ Normal Integrate(
 
 ### Normal Log CDistribution
 
-**Syntaxe :** y = Normal Log CDistribution( x, <mean=0>, <std dev=1> )
+**Syntaxe :** y = Normal Log CDistribution( x, &lt;mean=0&gt;, &lt;std dev=1&gt; )
 
 **Description :** Renvoie le logarithme de 1 - Distribution normale à x avec moyenne mu et écart-type sigma.
 
@@ -20342,7 +20319,7 @@ New Window( "Example: Normal Log CDistribution",
 
 ### Normal Log Density
 
-**Syntaxe :** y = Normal Log Density( x, <mu=0>, <sigma=1>)
+**Syntaxe :** y = Normal Log Density( x, &lt;mu=0&gt;, &lt;sigma=1&gt;)
 
 **Description :** Renvoie le logarithme de la densité de probabilité normale à x avec moyenne mu et écart-type sigma.
 
@@ -20365,7 +20342,7 @@ New Window( "Example: Normal Log Density",
 
 ### Normal Log Distribution
 
-**Syntaxe :** y = Normal Log Distribution( x, <mean=0>, <std dev=1> )
+**Syntaxe :** y = Normal Log Distribution( x, &lt;mean=0&gt;, &lt;std dev=1&gt; )
 
 **Description :** Renvoie le logarithme de la distribution normale à x avec moyenne mu et écart-type sigma.
 
@@ -20596,7 +20573,7 @@ New Window( "Example: Normal Mixture Quantile",
 
 ### Normal Quantile
 
-**Syntaxe :** q = Normal Quantile( p, <mu=0>, <sigma=1> ); q = Probit( p )
+**Syntaxe :** q = Normal Quantile( p, &lt;mu=0&gt;, &lt;sigma=1&gt; ); q = Probit( p )
 
 **Description :** Renvoie le quantile d’une distribution normale, correspondant à la probabilité p qu’une valeur aléatoire ayant cette distribution prenne une valeur inférieure au quantile.
 
@@ -20611,7 +20588,7 @@ Normal Quantile( 0.9 );
 
 ### Normal Tolerance Factor
 
-**Syntaxe :** q = Normal Tolerance Factor( 1-alpha, p, n, <One Sided> )
+**Syntaxe :** q = Normal Tolerance Factor( 1-alpha, p, n, &lt;One Sided&gt; )
 
 **Description :** Calcule le facteur de tolérance pour construire un intervalle de confiance à 1-alpha qui contient la proportion p des moyennes avec une taille d&apos;échantillon de n de la distribution normale. Une option permet de demander le facteur pour un intervalle de tolérance unilatéral.
 
@@ -20694,7 +20671,7 @@ Nth Day Of Week in the Month( Date MDY( 11, 28, 2019 ) );
 
 ### Num
 
-**Syntaxe :** y = Num( s, < <<Use Locale( use=1 ) >, < <<Restrict > )
+**Syntaxe :** y = Num( s, &lt; &lt;&lt;Use Locale( use=1 ) &gt;, &lt; &lt;&lt;Restrict &gt; )
 
 **Description :** Convertit s en nombre en utilisant le format intégré, y compris les formats de devise et de date. Renvoie une valeur manquante si la conversion échoue. L&apos;argument facultatif <<Restrict permet uniquement la conversion aux formats entier, décimal et scientifique.
 
@@ -20725,7 +20702,7 @@ Show(
 
 ### Num Deriv
 
-**Syntaxe :** y = Num Deriv( f( x, ... ),  <parnum>)
+**Syntaxe :** y = Num Deriv( f( x, ... ), &lt;parnum&gt;)
 
 **Description :** Renvoie la dérivée numérique de la fonction f( x,... ) par rapport à l&apos;un de ses arguments. Vous pouvez spécifier cet argument comme le second argument de la fonction Num Deriv. S&apos;il n&apos;y a pas de second argument spécifié, la dérivée est prise par rapport au premier argument de la fonction. La dérivée est évaluée à l&apos;aide des valeurs numériques spécifiées dans l&apos;expression de la fonction f( x,... ).
 
@@ -20820,7 +20797,7 @@ New Window( "Example",
 
 ### Number Edit Box
 
-**Syntaxe :** y = Number Edit Box( initValue, <width> )
+**Syntaxe :** y = Number Edit Box( initValue, &lt;width&gt; )
 
 **Description :** Renvoie une zone d&apos;édition qui n&apos;accepte que les entrées numériques. Spécifier l&apos;argument facultatif  width pour définir la largeur de la zone en caractères.
 
@@ -20836,7 +20813,7 @@ x = neb << get;
 
 ### Number of Periods
 
-**Syntaxe :** x = Number of Periods( rate, pmt, pv, <fv=0>, <type=0> )
+**Syntaxe :** x = Number of Periods( rate, pmt, pv, &lt;fv=0&gt;, &lt;type=0&gt; )
 
 **Description :** Renvoie le nombre de périodes d’un investissement en se basant sur des paiements et un taux d’intérêt constants. L’argument type est 0 pour les paiements en fin de période et 1 pour les paiements en début de période. Équivalent à la fonction NPER de Microsoft Excel.
 
@@ -20851,7 +20828,7 @@ Number of Periods( .05 / 12, -2000, 100000 );
 
 ### Open
 
-**Syntaxe :** Open( filePath, <data table options | Excel import options | text import options | SAS import options | HTML import options | esriShapeFile import options | PDF import options | other file options > )
+**Syntaxe :** Open( filePath, &lt;data table options | Excel import options | text import options | SAS import options | HTML import options | esriShapeFile import options | PDF import options | other file options &gt; )
 
 **Description :** Renvoie une référence vers une table de données, ou vers un autre fichier JMP ou objet créé à partir d&apos;un fichier. Si aucun chemin n&apos;est spécifié, la boîte de dialogue Ouvrir s&apos;affiche. Si un chemin vers un répertoire est spécifié, l&apos;explorateur de fichiers du système est ouvert et aucun objet n&apos;est renvoyé. Consultez la syntaxe de référence pour obtenir une description complète des options disponibles.
 
@@ -21103,7 +21080,7 @@ dt = Open(
 
 ### Open Database
 
-**Syntaxe :** dt = Open Database( dataSourceName|"Connect Dialog", "SELECT ..."|"SQLFILE=..."|tableName, <invisible | private>, <outputTableName> )
+**Syntaxe :** dt = Open Database( dataSourceName|"Connect Dialog", "SELECT ..."|"SQLFILE=..."|tableName, &lt;invisible | private&gt;, &lt;outputTableName&gt; )
 
 **Description :** Ouvre une base de données en utilisant ODBC, exécute la SQL donnée, et met les données dans une table de données avec le nom du tableau de sortie donné.
 
@@ -21199,7 +21176,7 @@ Open Help(
 
 ### Open Log
 
-**Syntaxe :** Open Log( <bring window to top> )
+**Syntaxe :** Open Log( &lt;bring window to top&gt; )
 
 **Description :** Ouvrir la fenêtre log
 
@@ -21258,7 +21235,7 @@ OrMZ( 1 < 2, 3 < 2 );
 
 ### Ortho
 
-**Syntaxe :** L = Ortho( A, <Centered( 0 )>, <Scaled( 1 )> )
+**Syntaxe :** L = Ortho( A, &lt;Centered( 0 )&gt;, &lt;Scaled( 1 )&gt; )
 
 **Description :** Orthogonalise les colonnes d&apos;une matrice. L&apos;option « Centré » conduit à une somme nulle des éléments de la colonne. L&apos;option « Normalisation » conduit à une norme unité des vecteurs correspondant aux colonnes.
 
@@ -21288,7 +21265,7 @@ Ortho Poly( 1 :: 10, 2 );
 
 ### Outline Box
 
-**Syntaxe :** y = Outline Box( title, <command script pairs list>, displayBox, ... )
+**Syntaxe :** y = Outline Box( title, &lt;command script pairs list&gt;, displayBox, ... )
 
 **Description :** Crée un élément de contour dans le rapport en retournant la référence de boîte d&apos;affichage. Pour inclure un menu dans le nœud de contour, spécifie la liste command script pairs list, indiquant les commandes de menu et les scripts associés.
 
@@ -21311,7 +21288,7 @@ New Window( "Example",
 
 ### Oval
 
-**Syntaxe :** Oval( left, top, right, bottom, <fill=0> )
+**Syntaxe :** Oval( left, top, right, bottom, &lt;fill=0&gt; )
 
 **Description :** Dessine un ovale dans le rectangle spécifié, rempli si le remplissage est différent de zéro.
 
@@ -21334,7 +21311,7 @@ New Window( "Example",
 
 ### P Spline Coef
 
-**Syntaxe :** coef = P Spline Coef( x, Internal Knot Grid, <degree = 3>, <KnotEndPoints = min(x) || max(x)> )
+**Syntaxe :** coef = P Spline Coef( x, Internal Knot Grid, &lt;degree = 3&gt;, &lt;KnotEndPoints = min(x) || max(x)&gt; )
 
 **Description :** Renvoie la matrice des coefficients P-splines. Internal Knot Grid est soit le nombre de points souhaité pour le nœud, sur la base des percentiles de x, ou un vecteur spécifiant les points du nœud interne. Le paramètre facultatif degree spécifie le degré des P-splines, 3 étant la valeur par défaut.
 
@@ -21454,9 +21431,7 @@ Parse( "x+y" );
 
 ### Parse Date
 
-**Syntaxe :** dt = In Format( s, formatString, < <<Use Locale(b=1)>, < <<Restrict > )
-
-dt = In Format( s, "Format Pattern", pattern, < <<Use Locale(b=1)> )
+**Syntaxe :** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; )dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
 
 **Description :** Analyse une chaîne d&apos;un format donné. Si le format correspond à un format de date et heure, la valeur est exprimée comme si elle était entre As Date() et renvoie la date au format jjmoiaaaa. L&apos;argument facultatif <<Restrict utilisé avec le « Meilleur » formatString permet uniquement la conversion aux formats entier, décimal et scientifique.
 
@@ -21871,7 +21846,7 @@ result;
 
 ### Pat Look Ahead
 
-**Syntaxe :** Pat Look Ahead( pattern, <0|1> )
+**Syntaxe :** Pat Look Ahead( pattern, &lt;0|1&gt; )
 
 **Description :** Une correspondance de largeur zéro après la position actuelle. Le deuxième argument facultatif prend par défaut la valeur zéro. 1 désigne une correspondance négative, ou une absence de correspondance.
 
@@ -21926,7 +21901,7 @@ While( /* keep repeating the match until it won't match */
 
 ### Pat Look Behind
 
-**Syntaxe :** Pat Look Behind( pattern, <0|1> )
+**Syntaxe :** Pat Look Behind( pattern, &lt;0|1&gt; )
 
 **Description :** Une correspondance de largeur zéro avant la position actuelle. Le deuxième argument facultatif prend par défaut la valeur zéro. 1 désigne une correspondance négative, ou une absence de correspondance.
 
@@ -21981,7 +21956,7 @@ While( /* keep repeating the match until it won't match */
 
 ### Pat Match
 
-**Syntaxe :** Pat Match( source, pattern, <replacement> )
+**Syntaxe :** Pat Match( source, pattern, &lt;replacement&gt; )
 
 **Description :** Exécute la correspondance de configuration dans la variable pattern sur la chaîne dans la variable source ; le texte de remplacement replacement facultatif remplace le texte correspondant.
 
@@ -22110,7 +22085,7 @@ result;
 
 ### Pat Repeat
 
-**Syntaxe :** Pat Repeat( pattern, <min=1>, <max=infinity>, <GREEDY or RELUCTANT=GREEDY> )
+**Syntaxe :** Pat Repeat( pattern, &lt;min=1&gt;, &lt;max=infinity&gt;, &lt;GREEDY or RELUCTANT=GREEDY&gt; )
 
 **Description :** Génère une valeur de configuration qui correspond à la configuration donnée entre min et max fois.
 
@@ -22235,7 +22210,7 @@ string;
 
 ### Path
 
-**Syntaxe :** Path( pathMatrix|pathText, <fill=0> )
+**Syntaxe :** Path( pathMatrix|pathText, &lt;fill=0&gt; )
 
 **Description :** Dessine un trait le long du chemin donné si le remplissage est zéro, ou peint l’intérieur du chemin donné si le remplissage est différent de zéro. Le chemin peut être spécifié par une matrice N x 3 ou par une représentation textuelle. Une matrice de chemin a trois colonnes pour x, y et les drapeaux pour chaque point du chemin. Les valeurs de drapeau sont 0 pour le contrôle, 1 pour le déplacement, 2 pour le segment de ligne, 3 pour le segment cubique de Bézier et sont négatifs si le point ferme aussi le chemin. Le texte de chemin autorise la syntaxe SVG.
 
@@ -22271,7 +22246,7 @@ Path To Char( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] );
 
 ### Payment
 
-**Syntaxe :** x = Payment( rate, nper, pv, <fv=0>, <type=0> )
+**Syntaxe :** x = Payment( rate, nper, pv, &lt;fv=0&gt;, &lt;type=0&gt; )
 
 **Description :** Renvoie le remboursement d’un prêt en se basant sur des paiements et un taux d’intérêt constants. L’argument type est 0 pour les paiements en fin de période et 1 pour les paiements en début de période. Équivalent à la fonction PMT de Microsoft Excel.
 
@@ -22303,7 +22278,7 @@ pageCount = Pdf Page Count( "$documents\myfile.pdf" );
 
 ### Pen Color
 
-**Syntaxe :** Pen Color( <name|index|rgbList> )
+**Syntaxe :** Pen Color( &lt;name|index|rgbList&gt; )
 
 **Description :** Définit la couleur pour le dessin des lignes.
 
@@ -22323,7 +22298,7 @@ New Window( "Example",
 
 ### Pen Size
 
-**Syntaxe :** Pen Size( <x> )
+**Syntaxe :** Pen Size( &lt;x&gt; )
 
 **Description :** Définit la taille du stylo en pixels pour le dessin des lignes.
 
@@ -22358,7 +22333,7 @@ Char( Pi(), 5 );
 
 ### Pick Color
 
-**Syntaxe :** color = Pick Color( <window title>, <name|index|rgbList> )
+**Syntaxe :** color = Pick Color( &lt;window title&gt;, &lt;name|index|rgbList&gt; )
 
 **Description :** Renvoie une couleur qui a été sélectionnée avec l&apos;outil Pipette standard.
 
@@ -22381,7 +22356,7 @@ New Window( "Example",
 
 ### Pick Color Theme
 
-**Syntaxe :** theme = Pick Color Theme( <window title>, <Color Theme(name|specification)>, <Type("Continuous" | "Sequential" | "Bad to Good" | "Categorical")>)
+**Syntaxe :** theme = Pick Color Theme( &lt;window title&gt;, &lt;Color Theme(name|specification)&gt;, &lt;Type("Continuous" | "Sequential" | "Bad to Good" | "Categorical")&gt;)
 
 **Description :** Renvoie un thème de couleur qui a été sélectionné avec l&apos;outil Pipette standard. Le thème initial peut être spécifié explicitement ou en choisissant un Type pour utiliser les thèmes définis dans les préférences.
 
@@ -22424,7 +22399,7 @@ Row Legend( "age", Color Theme( pickedTheme ) );
 
 ### Pick Directory
 
-**Syntaxe :** path = Pick Directory( <prompt>, <path>, <Show Files( boolean )> )
+**Syntaxe :** path = Pick Directory( &lt;prompt&gt;, &lt;path&gt;, &lt;Show Files( boolean )&gt; )
 
 **Description :** Une fenêtre Ouvrir le répertoire s&apos;affiche, en renvoyant le nom de chemin d&apos;accès du répertoire choisi. La chaîne prompt facultative s’affiche en haut de la fenêtre. L’argument Show Files peut être l’un des trois arguments et est du type booléen. La valeur 1 affiche les fichiers dans la fenêtre Choisir un répertoire, la valeur 0 non. La valeur 0 est la valeur par défaut. La chaîne path indique le répertoire affiché initialement dans la fenêtre Choisir un répertoire. Si vous utilisez la chaîne path, elle doit suivre la chaîne prompt, mais l’argument Show Files peut se situer entre les deux.
 
@@ -22450,7 +22425,7 @@ Pick Directory( "Select a directory" );
 
 ### Pick File
 
-**Syntaxe :** path = Pick File( <prompt>, <initial directory>, <filterList>, <first filter>, <saveFlag=0|1>, <default file>, <multiple> )
+**Syntaxe :** path = Pick File( &lt;prompt&gt;, &lt;initial directory&gt;, &lt;filterList&gt;, &lt;first filter&gt;, &lt;saveFlag=0|1&gt;, &lt;default file&gt;, &lt;multiple&gt; )
 
 **Description :** Une fenêtre Ouvrir s&apos;affiche, en renvoyant le nom du chemin d&apos;accès du fichier choisi. L’argument filterList est une liste de chaînes de la forme : "Étiquette|suffixe1;suffixe2;...". L’argument first filter spécifie quel est le filtre affiché en premier. Le cinquième argument indique si la fenêtre doit fonctionner comme une fenêtre d’enregistrement (saveFlag = 1) ou d’ouverture (saveFlag = 0). L’argument de default file spécifie le fichier sélectionné initialement. L’argument multiple permet de sélectionner plusieurs fichiers si saveFlag est égal à 0.
 
@@ -22565,7 +22540,7 @@ New Window( "Example",
 
 ### Pie Seg
 
-**Syntaxe :** ps = Pie Seg(<{ xorigin, yorigin }>, <radius>, <style("pie", "ring", "coxcomb")>, values)
+**Syntaxe :** ps = Pie Seg(&lt;{ xorigin, yorigin }&gt;, &lt;radius&gt;, &lt;style("pie", "ring", "coxcomb")&gt;, values)
 
 **Description :** Crée un seg à secteurs à l&apos;origin spécifiée, avec le radius spécifié, basé sur les valeurs spécifiées au format de matrice.
 
@@ -22670,7 +22645,7 @@ New Window( "Example",
 
 ### Pixel Path
 
-**Syntaxe :** PixelPath( h, v, pathMatrix|pathText, <fill=0>, <scale=1.0>, <orient={0.0,1.0}> )
+**Syntaxe :** PixelPath( h, v, pathMatrix|pathText, &lt;fill=0&gt;, &lt;scale=1.0&gt;, &lt;orient={0.0,1.0}&gt; )
 
 **Description :** Trace un trait le long du chemin en question, basé sur le pixel, si le remplissage est égal à 0 ; ou peint l’intérieur du chemin en question si le remplissage n’est pas égal à 0. Le chemin peut être spécifié avec une matrice N x 3 ou avec une représentation texte. Une matrice de chemin possède trois colonnes pour x, y et les alertes pour chaque point sur le chemin. Les valeurs d’alerte sont 0 pour le contrôle, 1 pour le déplacement, 2 pour le segment de droite, 3 pour le segment de Bézier cubique, et sont négatives si le point ferme également le chemin.  Le texte du chemin supporte la syntaxe SVG. Le chemin sera mis à l’échelle et traduit à l’original en fonction des paramètres facultatifs, avec l’orientation spécifiée dans l’espace de l’axe.
 
@@ -22711,7 +22686,7 @@ New Window( "Example",
 
 ### Pixel Text
 
-**Syntaxe :** Pixel Text( <properties>, {h, v}, text, ... )
+**Syntaxe :** Pixel Text( &lt;properties&gt;, {h, v}, text, ... )
 
 **Description :** Avance jusqu’à la position du pixel {h, v} et dessine le texte spécifié par l’argument text. Les arguments de propriété nommés incluent Center Justified, Right Justified, Top Align, Bottom Align, Erased, Boxed, Counterclockwise, Clockwise. Les arguments de position, les arguments nommés et les chaînes peuvent être mélangés dans n’importe quel ordre.
 
@@ -22979,7 +22954,7 @@ seg = (frame << Find Seg( "Poly Seg" ));
 
 ### Polygon
 
-**Syntaxe :** Polygon( {x1, y1}, {x2, y2}, ..., <<fill(bool) ); Polygon( xMatrix, <yMatrix>, <<fill(bool) )
+**Syntaxe :** Polygon( {x1, y1}, {x2, y2}, ..., &lt;&lt;fill(bool) ); Polygon( xMatrix, &lt;yMatrix&gt;, &lt;&lt;fill(bool) )
 
 **Description :** Dessine le polygone spécifié par les points.
 
@@ -23000,9 +22975,7 @@ New Window( "Example",
 
 ### Polygon Area
 
-**Syntaxe :** area = Polygon Area( {x1, y1}, {x2, y2}, ... );
-
-area = Polygon Area( xMatrix, yMatrix )
+**Syntaxe :** area = Polygon Area( {x1, y1}, {x2, y2}, ... );area = Polygon Area( xMatrix, yMatrix )
 
 **Description :** Calcule la surface du polygone spécifié.
 
@@ -23028,9 +23001,7 @@ area = Polygon Area( [10 20 30], [10 30 20] );
 
 ### Polygon Centroid
 
-**Syntaxe :** {cx, cy} = Polygon Centroid( {x1, y1}, {x2, y2}, ... );
-
-centroid = Polygon Centroid( xMatrix, yMatrix )
+**Syntaxe :** {cx, cy} = Polygon Centroid( {x1, y1}, {x2, y2}, ... );centroid = Polygon Centroid( xMatrix, yMatrix )
 
 **Description :** Calcule le centroïde du polygone spécifié.
 
@@ -23056,7 +23027,7 @@ centroid = Polygon Centroid( [10 20 30], [10 30 20] );
 
 ### Polygon Simplify
 
-**Syntaxe :** rows = Polygon Simplify( xMatrix|xyMatrix, <yMatrix>, <<<detail factor(f=200)>, <<<multiple(ids)>, <<<geodesic(bool)> )
+**Syntaxe :** rows = Polygon Simplify( xMatrix|xyMatrix, &lt;yMatrix&gt;, &lt;&lt;&lt;detail factor(f=200)&gt;, &lt;&lt;&lt;multiple(ids)&gt;, &lt;&lt;&lt;geodesic(bool)&gt; )
 
 **Description :** Supprime les points d&apos;un polygone qui supportent une faible quantité de détails et renvoie les indices des points restants. detail factor est inversement proportionnel à la tolérance d&apos;erreur du détail. multiple(ids) indique que de nombreux polygones doivent être simplifiés de manière à traiter les arêtes communes de manière cohérente. ids est une matrice avec une ligne par point. geodesic(1) indique que les coordonnées sont exprimées en latitude et longitude pour la mesure de la distance.
 
@@ -23136,7 +23107,7 @@ New Window( "Parishes",
 
 ### Polytope Uniform Random
 
-**Syntaxe :** points = Polytope Uniform Random( numSamples, A, b, L, U, neq, nle, nge, <nwarm=200>, <nstride=25> )
+**Syntaxe :** points = Polytope Uniform Random( numSamples, A, b, L, U, neq, nle, nge, &lt;nwarm=200&gt;, &lt;nstride=25&gt; )
 
 **Description :** Génère aléatoirement des points répartis uniformément sur un polytope convexe. L’argument numSamples spécifie le nombre de points aléatoires à générer. L’argument A est la matrice des coefficients de contrainte. L’argument B représente les valeurs des contraintes de droite. Les arguments L et U sont respectivement les limites inférieure et supérieure des variables. Les arguments neq, mle et nge sont respectivement le nombre de contraintes d&apos;égalité, le nombre d&apos;inégalités inférieures ou égales et le nombre d&apos;inégalités supérieures ou égales. L’argument nwarm est le nombre de répétitions warm-up avant que les points ne soient écrits dans la matrice de sortie. L’argument nstride est le nombre de répétitions entre chaque point, qui est écrit dans la matrice de sortie. Notez que les contraintes doivent être répertoriées d&apos;abord comme égalités, puis comme inégalités inférieures ou égales, et enfin comme inégalités supérieures ou égales.
 
@@ -23228,7 +23199,7 @@ ex;
 
 ### Power
 
-**Syntaxe :** z = x ^ y; z = Power( x, <y=2> )
+**Syntaxe :** z = x ^ y; z = Power( x, &lt;y=2&gt; )
 
 **Description :** Renvoie x élevé à la puissance y. Si x est négatif, y doit être un entier.
 
@@ -23303,7 +23274,7 @@ Preferences( Graph marker size( "Large" ) );
 
 ### Present Value
 
-**Syntaxe :** x = Present Value( rate, nper, pmt, <fv=0>, <type=0> )
+**Syntaxe :** x = Present Value( rate, nper, pmt, &lt;fv=0&gt;, &lt;type=0&gt; )
 
 **Description :** Renvoie la valeur actuelle d’un investissement. L’argument type est 0 pour les paiements en fin de période et 1 pour les paiements en début de période. Équivalent à la fonction PV de Microsoft Excel.
 
@@ -23318,7 +23289,7 @@ Present Value( .05 / 12, 30 * 12, 1000 );
 
 ### Principal Payment
 
-**Syntaxe :** x = Principal Payment( rate, per, nper, pv, <fv=0>, <type=0> )
+**Syntaxe :** x = Principal Payment( rate, per, nper, pv, &lt;fv=0&gt;, &lt;type=0&gt; )
 
 **Description :** Renvoie la part de remboursement du capital total sur une période donnée en se basant sur des remboursements et un taux d’intérêt constants. L’argument type est 0 pour les paiements en fin de période et 1 pour les paiements en début de période. Équivalent à la fonction PPMT de Microsoft Excel.
 
@@ -23350,7 +23321,7 @@ Print( 355 / 113, Pi() );
 
 ### Print Matrix
 
-**Syntaxe :** s = Print Matrix( M, <<ignore locale( 0 ), <<style( "parseable" ), <<separate( ", " ), <<line begin( "[ " ), <<line end( " ]" ) )
+**Syntaxe :** s = Print Matrix( M, &lt;&lt;ignore locale( 0 ), &lt;&lt;style( "parseable" ), &lt;&lt;separate( ", " ), &lt;&lt;line begin( "[ " ), &lt;&lt;line end( " ]" ) )
 
 **Description :** Imprime la matrice M. L&apos;argument facultatif ignore locale détermine si l&apos;impression des séparateurs décimaux doit respecter les informations locales; zéro signifie qu&apos;elle les respecte. L&apos;argument facultatif style détermine si utiliser un style et lequel. Les styles disponibles sont : parseable, qui est une expression de matrice JSL reformatée, latex et other. Lorsque l&apos;argument style est other, les trois derniers arguments facultatifs définissent les caractères de début et de fin des lignes imprimées et les caractères de séparation des entrées concaténées.
 
@@ -23375,7 +23346,7 @@ Print Matrix(
 
 ### Probit
 
-**Syntaxe :** q = Normal Quantile( p, <mu=0>, <sigma=1> ); q = Probit( p )
+**Syntaxe :** q = Normal Quantile( p, &lt;mu=0&gt;, &lt;sigma=1&gt; ); q = Probit( p )
 
 **Description :** Renvoie le quantile d’une distribution normale, correspondant à la probabilité p qu’une valeur aléatoire ayant cette distribution prenne une valeur inférieure au quantile.
 
@@ -23450,7 +23421,7 @@ conn << Create JPIP CMD();
 
 ### Python Execute
 
-**Syntaxe :** Python Execute( { list of Inputs }, { list of Outputs }, statements < , echo( 1 | 0 ) > )
+**Syntaxe :** Python Execute( { list of Inputs }, { list of Outputs }, statements &lt; , echo( 1 | 0 ) &gt; )
 
 **Description :** Envoie une liste des entrées, exécute les instructions et renvoie une liste des sorties. Le paramètre facultatif echo() est défini par défaut sur Vrai. Le paramètre echo contrôle l&apos;affichage du code source Python dans le log. La valeur logique Vrai (1) active l&apos;affichage du code source, tandis que 0 supprime l&apos;affichage dans le log.
 
@@ -23725,7 +23696,7 @@ Python Submit( "print(pi)" );
 
 ### Python Send
 
-**Syntaxe :** Python Send( name, <Python Name( name ) | "as_name" > )
+**Syntaxe :** Python Send( name, &lt;Python Name( name ) | "as_name" &gt; )
 
 **Description :** Sends data to Python, where the name argument can represent any of the following JMP data types ( numeric | string | matrix | list | data table | data table column | date ).
 
@@ -23772,7 +23743,7 @@ Python Submit( "print(dt)" );
 
 ### Python Send File
 
-**Syntaxe :** Python Send File( filename, <Python Name( name )> )
+**Syntaxe :** Python Send File( filename, &lt;Python Name( name )&gt; )
 
 **Description :** Envoie un fichier de données à Python, où l’argument de filename est une chaîne qui indique un chemin d’accès vers le fichier à envoyer à Python.
 
@@ -23791,7 +23762,7 @@ Python Submit( "print(Baseball)" );
 
 ### Python Submit
 
-**Syntaxe :** Python Submit( statements < , echo( 1 | 0 ) > )
+**Syntaxe :** Python Submit( statements &lt; , echo( 1 | 0 ) &gt; )
 
 **Description :** Soumet des instructions à Python. Les instructions peuvent être sous forme de chaînes de caractères ou d&apos;une liste de chaînes de caractères. Le paramètre facultatif echo() est défini par défaut sur 1. Le paramètre echo contrôle l&apos;affichage du code source Python dans le log. La valeur logique Vrai (1) active l&apos;affichage du code source, tandis que 0 supprime l&apos;affichage dans le log.
 
@@ -23929,9 +23900,7 @@ Quarter( Today() );
 
 ### Query
 
-**Syntaxe :** result = Query( < < dt1 | Table( dt1, alias1 ) >, ..., < dtN | Table( dtN, aliasN ) > >,
-
-     <Private|Invisible>, <Scalar>, sqlStatement )
+**Syntaxe :** result = Query( &lt; &lt; dt1 | Table( dt1, alias1 ) &gt;, ..., &lt; dtN | Table( dtN, aliasN ) &gt; &gt;, &lt;Private|Invisible&gt;, &lt;Scalar&gt;, sqlStatement )
 
 **Description :** Exécute une requête SQL sur les tables de données JMP. sqlStatement (la requête SQL, plus probablement une instruction SELECT) est exigé et doit être le dernier argument. Les tables de données JMP référencées par l&apos;instruction SQL doivent être transmises à la requête() en tant qu&apos;arguments, à l&apos;aide de la table(dt, "alias"), pour créer un alias de la table que SQL peut utiliser si cela est souhaité. Invisible ou Private peuvent être transmis pour contrôler la visibilité de la table de données créée. Si l&apos;instruction SQL renvoie une valeur unique, transmettre Scalar pour renvoyer la valeur unique au lieu de la table de données.
 
@@ -23972,7 +23941,7 @@ retval = Query( Scalar, "SELECT SQRT(152399025);" );
 
 ### Quit
 
-**Syntaxe :** Quit(<"No Save">); Exit(<"No Save">)
+**Syntaxe :** Quit(&lt;"No Save"&gt;); Exit(&lt;"No Save"&gt;)
 
 **Description :** Quitte JMP.
 
@@ -24164,7 +24133,7 @@ R name = R JMP Name to R Name( a b c );
 
 ### R Send
 
-**Syntaxe :** R Send( name, <R Name( as_name ) | "as_name"> )
+**Syntaxe :** R Send( name, &lt;R Name( as_name ) | "as_name"&gt; )
 
 **Description :** Envoie des données à R, où l&apos;argument name peut représenter l&apos;un des types de données JMP suivants : numérique, chaîne, matrice, liste, table de données ou colonne de table de données.
 
@@ -24201,7 +24170,7 @@ R Submit( "dt" );
 
 ### R Send File
 
-**Syntaxe :** R Send File( filename, <R Name( name )> )
+**Syntaxe :** R Send File( filename, &lt;R Name( name )&gt; )
 
 **Description :** Envoie un fichier de données à R, où l&apos;argument de filename est une chaîne qui indique un chemin d&apos;accès vers le fichier à envoyer à R.
 
@@ -24286,49 +24255,9 @@ R Term();
 
 ```
 
-### RGB Color
-
-**Syntaxe :** y = RGB Color( r, g, b ); y = RGB Color( {r, g, b} )
-
-**Description :** Renvoie un numéro de couleur à partir des composantes rouge, vert et bleu, tous compris entre 0 et 1. RGB Color(1, 1, 1) est le blanc.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-New Window( "RGB Color Example", 
-    /* 1 through 16 are good */ 
-	division = 6;
-	blocks = division + 1;
-	ysize = 400 / Sqrt( division );
-	xsize = ysize * blocks;
-	fract = 1 / division;
-    /* 100 is default axis range */
-	yBlockSize = 100 / blocks;
-	xBlockSize = 100 / (blocks * blocks);
-	Graph(
-		frameSize( xsize, ysize ),
-		For( blue = 0, blue <= 1, blue += fract,
-			For( red = 0, red <= 1, red += fract,
-				For( green = 0, green <= 1, green += fract,
-					y = red / fract * yBlockSize;
-					x = green / fract * xBlockSize + blue / fract *
-					xBlockSize * blocks;
-                    /* here's the example */
-					Fill Color( RGB Color( red, green, blue ) );
-					Rect( x, y, x + xBlockSize, y + yBlockSize, 1 );
-				)
-			)
-		)
-	);
-);
-
-```
-
 ### Radio Box
 
-**Syntaxe :** y = Radio Box( {item, ...}, <script> )
+**Syntaxe :** y = Radio Box( {item, ...}, &lt;script&gt; )
 
 **Description :** Renvoie une boîte d&apos;affichage pour afficher un ensemble de cases d&apos;option.
 
@@ -24348,7 +24277,7 @@ New Window( "Example",
 
 ### Random Beta
 
-**Syntaxe :** y = Random Beta( alpha, beta, <theta=0>, <sigma=1> )
+**Syntaxe :** y = Random Beta( alpha, beta, &lt;theta=0&gt;, &lt;sigma=1&gt; )
 
 **Description :** Renvoie un pseudo nombre aléatoire extrait d&apos;une distribution bêta.
 
@@ -24369,7 +24298,7 @@ Show( x, v );
 
 ### Random Beta Binomial
 
-**Syntaxe :** y = Random Beta Binomial( n, p, <delta=0> )
+**Syntaxe :** y = Random Beta Binomial( n, p, &lt;delta=0&gt; )
 
 **Description :** Renvoie un nombre aléatoire d’une distribution binomiale bêta pour n épreuves avec probabilité p et corrélation delta.
 
@@ -24512,7 +24441,7 @@ Show( x, v );
 
 ### Random ChiSquare
 
-**Syntaxe :** y = Random ChiSquare( df, <nonCentrality=0> )
+**Syntaxe :** y = Random ChiSquare( df, &lt;nonCentrality=0&gt; )
 
 **Description :** Renvoie un nombre aléatoire extrait d’une distribution Khi-deux.
 
@@ -24575,7 +24504,7 @@ Show( x, v );
 
 ### Random F
 
-**Syntaxe :** y = Random F( dfnum, dfden, <nonCentrality=0> )
+**Syntaxe :** y = Random F( dfnum, dfden, &lt;nonCentrality=0&gt; )
 
 **Description :** Renvoie un nombre aléatoire extrait d&apos;une distribution F.
 
@@ -24596,7 +24525,7 @@ Show( x, v );
 
 ### Random Frechet
 
-**Syntaxe :** y = Random Frechet( <mu=0>, <sigma=1> )
+**Syntaxe :** y = Random Frechet( &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **Description :** Renvoie un nombre aléatoire extrait d’une distribution de Fréchet.
 
@@ -24615,30 +24544,9 @@ Show( x, v );
 
 ```
 
-### Random GLog
-
-**Syntaxe :** y = Random GLog( mu, sigma, lambda )
-
-**Description :** Renvoie un nombre aléatoire d&apos;une distribution selon le logarithme généralisé.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-
-//produce a single random number
-x = Random GLog( 4, 1, 0.1 );
-//produce a vector of random numbers
-v = J( 1, 10, Random GLog( 4, 1, 0.1 ) );
-//show results
-Show( x, v );
-
-```
-
 ### Random Gamma
 
-**Syntaxe :** y = Random Gamma( alpha, <scale=1> )
+**Syntaxe :** y = Random Gamma( alpha, &lt;scale=1&gt; )
 
 **Description :** Renvoie un pseudo nombre aléatoire extrait d&apos;une distribution gamma.
 
@@ -24659,7 +24567,7 @@ Show( x, v );
 
 ### Random Gamma Poisson
 
-**Syntaxe :** y = Random Gamma Poisson( lambda, <sigma=1> )
+**Syntaxe :** y = Random Gamma Poisson( lambda, &lt;sigma=1&gt; )
 
 **Description :** Renvoie un nombre aléatoire extrait d’une distribution Gamma/Poisson avec les paramètres lambda et sigma.
 
@@ -24680,7 +24588,7 @@ Show( x, v );
 
 ### Random GenGamma
 
-**Syntaxe :** y = Random GenGamma( <mu=0>, <sigma=1>, <lambda=0> )
+**Syntaxe :** y = Random GenGamma( &lt;mu=0&gt;, &lt;sigma=1&gt;, &lt;lambda=0&gt; )
 
 **Description :** Renvoie un nombre aléatoire extrait d’une distribution gamma généralisée étendue avec les paramètres mu, sigma, et lambda.
 
@@ -24766,6 +24674,27 @@ New Window( "Example: Random Geometric and Empirical Distribution",
 
 ```
 
+### Random GLog
+
+**Syntaxe :** y = Random GLog( mu, sigma, lambda )
+
+**Description :** Renvoie un nombre aléatoire d&apos;une distribution selon le logarithme généralisé.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+
+//produce a single random number
+x = Random GLog( 4, 1, 0.1 );
+//produce a vector of random numbers
+v = J( 1, 10, Random GLog( 4, 1, 0.1 ) );
+//show results
+Show( x, v );
+
+```
+
 ### Random Index
 
 **Syntaxe :** x = Random Index( n, k )
@@ -24825,7 +24754,7 @@ Show( x, v );
 
 ### Random Johnson Sl
 
-**Syntaxe :** y = Random Johnson Sl( gamma, delta, theta, <sigma=1> )
+**Syntaxe :** y = Random Johnson Sl( gamma, delta, theta, &lt;sigma=1&gt; )
 
 **Description :** Renvoie un nombre pseudo aléatoire extrait d&apos;une distribution du Sl de Johnson.
 
@@ -24867,7 +24796,7 @@ Show( x, v );
 
 ### Random LEV
 
-**Syntaxe :** y = Random LEV( <mu=0>, <sigma=1> )
+**Syntaxe :** y = Random LEV( &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **Description :** Renvoie un nombre aléatoire d’une distribution LEV.
 
@@ -24888,7 +24817,7 @@ Show( x, v );
 
 ### Random LogGenGamma
 
-**Syntaxe :** y = Random LogGenGamma( <mu=0>, <sigma=1>, <lambda=0> )
+**Syntaxe :** y = Random LogGenGamma( &lt;mu=0&gt;, &lt;sigma=1&gt;, &lt;lambda=0&gt; )
 
 **Description :** Renvoie un nombre aléatoire extrait d’une distribution log gamma généralisée avec les paramètres mu, sigma, et lambda.
 
@@ -24909,7 +24838,7 @@ Show( x, v );
 
 ### Random Logistic
 
-**Syntaxe :** y = Random Logistic( <mu=0>, <sigma=1> )
+**Syntaxe :** y = Random Logistic( &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **Description :** Renvoie un nombre aléatoire extrait d’une distribution logistique.
 
@@ -24930,7 +24859,7 @@ Show( x, v );
 
 ### Random Loglogistic
 
-**Syntaxe :** y = Random Loglogistic( <mu=0>, <sigma=1> )
+**Syntaxe :** y = Random Loglogistic( &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **Description :** Renvoie un nombre aléatoire extrait d’une distribution log-logistique.
 
@@ -24951,7 +24880,7 @@ Show( x, v );
 
 ### Random Lognormal
 
-**Syntaxe :** y = Random Lognormal( <mu=0>, <sigma=1> )
+**Syntaxe :** y = Random Lognormal( &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **Description :** Renvoie un nombre aléatoire extrait d’une distribution log-normale avec un paramètre de position mu et un paramètre d’échelle sigma.
 
@@ -25011,7 +24940,7 @@ New Window( "Example: Random Lognormal and Empirical Distribution",
 
 ### Random Multivariate Normal
 
-**Syntaxe :** y = Random Multivariate Normal( mean, covar, <nrows=1>)
+**Syntaxe :** y = Random Multivariate Normal( mean, covar, &lt;nrows=1&gt;)
 
 **Description :** Renvoie une matrice aléatoire nrows en fonction de p à partir d&apos;une distribution normale multivariée avec un vecteur de moyenne mean et une matrice de covariance covar (semi-définie positive), où p est défini comme le nombre de lignes de covar.
 
@@ -25091,7 +25020,7 @@ New Window( "Example: Neg Binomial Probability",
 
 ### Random Normal
 
-**Syntaxe :** y = Random Normal( <mu=0>, <sigma=1> )
+**Syntaxe :** y = Random Normal( &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **Description :** Renvoie un pseudo nombre aléatoire extrait d&apos;une distribution normale de moyenne mu et d&apos;écart-type sigma.
 
@@ -25267,9 +25196,25 @@ Random Normal();
 
 ```
 
+### Random Seed State
+
+**Syntaxe :** Random Seed State( &lt;seed state&gt; )
+
+**Description :** Récupère ou restaure l&apos;état de la graine aléatoire vers ou à partir d&apos;un objet blob.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+r = Random Seed State();
+Random Seed State( r );
+
+```
+
 ### Random SEV
 
-**Syntaxe :** y = Random SEV( <mu=0>, <sigma=1> )
+**Syntaxe :** y = Random SEV( &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **Description :** Renvoie un nombre aléatoire d’une distribution SEV.
 
@@ -25327,37 +25272,6 @@ Show( result1, result2 );
 
 ```
 
-### Random SVD
-
-**Syntaxe :** {U, M, V} = Random SVD( X , <nSingularValues=min(nRow,nCol)>, <nOver=10>, <nIter=2>)
-
-**Description :** Calcule la décomposition en valeurs singulières de la matrice X à l&apos;aide de la décomposition en valeurs singulières randomisée en retournant une liste {U, M, V} telle que U*diag(M)*V` est égal à X.
-
-**JMP Version ajoutée :** 17
-
-```jsl
-
-Names Default To Here( 1 );
-Random SVD( [11 22, 33 44], 1 );
-
-```
-
-### Random Seed State
-
-**Syntaxe :** Random Seed State( <seed state> )
-
-**Description :** Récupère ou restaure l&apos;état de la graine aléatoire vers ou à partir d&apos;un objet blob.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-r = Random Seed State();
-Random Seed State( r );
-
-```
-
 ### Random Shuffle
 
 **Syntaxe :** y = Random Shuffle( matrix )
@@ -25374,13 +25288,45 @@ Random Shuffle( exA );
 
 ```
 
+### Random SVD
+
+**Syntaxe :** {U, M, V} = Random SVD( X , &lt;nSingularValues=min(nRow,nCol)&gt;, &lt;nOver=10&gt;, &lt;nIter=2&gt;)
+
+**Description :** Calcule la décomposition en valeurs singulières de la matrice X à l&apos;aide de la décomposition en valeurs singulières randomisée en retournant une liste {U, M, V} telle que U*diag(M)*V` est égal à X.
+
+**JMP Version ajoutée :** 17
+
+```jsl
+
+Names Default To Here( 1 );
+Random SVD( [11 22, 33 44], 1 );
+
+```
+
+### Random t
+
+**Syntaxe :** y = Random t( df, &lt;nonCentrality=0&gt; )
+
+**Description :** Renvoie un nombre aléatoire extrait d&apos;une distribution t.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+
+//produce a single random number
+x = Random t( 2 );
+//produce a vector of random numbers
+v = J( 1, 10, Random t( 2 ) );
+//show results
+Show( x, v );
+
+```
+
 ### Random Triangular
 
-**Syntaxe :** y = Random Triangular( a, b, c );
-
-y = Random Triangular( b, c );
-
-y = Random Triangular( b )
+**Syntaxe :** y = Random Triangular( a, b, c );y = Random Triangular( b, c );y = Random Triangular( b )
 
 **Description :** Renvoie un nombre aléatoire extrait d’une distribution triangulaire avec une limite inférieure a, le mode b, et une limite supérieure c. Random Triangular(b,c) équivaut à Random Triangular(0,b,c). Random Triangular(b) équivaut à Random Triangular(0,b,1).
 
@@ -25399,7 +25345,7 @@ Show( x, y );
 
 ### Random Uniform
 
-**Syntaxe :** y = Random Uniform( <min>, <max> )
+**Syntaxe :** y = Random Uniform( &lt;min&gt;, &lt;max&gt; )
 
 **Description :** Renvoie un pseudo nombre aléatoire extrait d&apos;une distribution uniforme entre min. et max., non inclus.
 
@@ -25431,7 +25377,7 @@ Random Uniform( 1, 10 );
 
 ### Random Weibull
 
-**Syntaxe :** y = Random Weibull( beta, <alpha=1> )
+**Syntaxe :** y = Random Weibull( beta, &lt;alpha=1&gt; )
 
 **Description :** Renvoie un nombre pseudo aléatoire extrait d&apos;une distribution de Weibull.
 
@@ -25608,27 +25554,6 @@ dt << Distribution(
 
 ```
 
-### Random t
-
-**Syntaxe :** y = Random t( df, <nonCentrality=0> )
-
-**Description :** Renvoie un nombre aléatoire extrait d&apos;une distribution t.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-
-//produce a single random number
-x = Random t( 2 );
-//produce a vector of random numbers
-v = J( 1, 10, Random t( 2 ) );
-//show results
-Show( x, v );
-
-```
-
 ### Range
 
 **Syntaxe :** y = Range( x1, ... )
@@ -25710,7 +25635,7 @@ Rank Index( [33, 22, 44, 11, ., 33] );
 
 ### Ranking
 
-**Syntaxe :** y = Ranking( x, < <<tie("average"|"row"|"minimum"|"maximum"|"arbitrary")> )
+**Syntaxe :** y = Ranking( x, &lt; &lt;&lt;tie("average"|"row"|"minimum"|"maximum"|"arbitrary")&gt; )
 
 **Description :** Renvoie un vecteur de rangs des valeurs de x, de bas à haut comme de 1 à n, ex-aequos arbitrairement.
 
@@ -25726,7 +25651,7 @@ Ranking( [22, 11, 33, 11, 44, 55, 44, 44, 44], <<Tie( "minimum" ) );
 
 ### Ranking Tie
 
-**Syntaxe :** y = Ranking Tie( x, < <<tie("average"|"row"|"minimum"|"maximum"|"arbitrary")> )
+**Syntaxe :** y = Ranking Tie( x, &lt; &lt;&lt;tie("average"|"row"|"minimum"|"maximum"|"arbitrary")&gt; )
 
 **Description :** Renvoie un vecteur de rangs des valeurs de x, en prenant la moyenne des rangs des ex-aequos.
 
@@ -25741,7 +25666,7 @@ Ranking Tie( [33, 22, 44, 11, 33] );
 
 ### Recode
 
-**Syntaxe :** recode(string|number|list, {<transform>, ...}, <Multiple Response (Separator(sepChar))>, <By Word(Delimiters(<chars>)>)
+**Syntaxe :** recode(string|number|list, {&lt;transform&gt;, ...}, &lt;Multiple Response (Separator(sepChar))&gt;, &lt;By Word(Delimiters(&lt;chars&gt;)&gt;)
 
 **Description :** Appliquez les transformations listées aux valeurs d&apos;entrée et renvoyez les résultats. Les options Réponses multiples et Par mot divisent les données de caractères fournies en plus petites valeurs d&apos;entrée. Une fois que les valeurs d&apos;entrée sont déterminées, les transformations sont appliquées à ces valeurs séparément.
 
@@ -25785,7 +25710,7 @@ Recode(
 
 ### Rect
 
-**Syntaxe :** Rect( left, top, right, bottom, <fill=0> ); Rect( {left, top}, {right, bottom} )
+**Syntaxe :** Rect( left, top, right, bottom, &lt;fill=0&gt; ); Rect( {left, top}, {right, bottom} )
 
 **Description :** Dessine un rectangle rempli si le remplissage est différent de zéro.
 
@@ -25829,7 +25754,7 @@ ex rev( "abcd" );
 
 ### Regex
 
-**Syntaxe :** result = Regex( source, pattern, <format, <IGNORECASE>, <GLOBALREPLACE>> )
+**Syntaxe :** result = Regex( source, pattern, &lt;format, &lt;IGNORECASE&gt;, &lt;GLOBALREPLACE&gt;&gt; )
 
 **Description :** Recherche dans le texte source un appariement pour le pattern. Le format est défini par défaut à « \0 » (appariement complet), mais il peut être défini à « Fred » (pour un remplacement de la constante) ou à « \1 » (pour utiliser le texte apparié par la première parenthèse dans le pattern). Renvoie une valeur numérique manquante si aucun appariement n&apos;est trouvé. Par défaut, la casse doit être respectée.
 
@@ -25848,7 +25773,7 @@ Regex(
 
 ### Regex Match
 
-**Syntaxe :** Regex Match( source, pattern, <replacement | NULL>, <MATCHCASE> )
+**Syntaxe :** Regex Match( source, pattern, &lt;replacement | NULL&gt;, &lt;MATCHCASE&gt; )
 
 **Description :** Exécute un appariement d&apos;expression régulière et renvoie une liste de l&apos;ensemble du texte apparié ainsi que les appariements pour chaque référence inverse créée par une parenthèse ouverte. Le troisième argument peut éventuellement spécifier une chaîne de remplacement pour l&apos;ensemble de l&apos;appariement ; la chaîne de remplacement peut utiliser des références inverses.
 
@@ -25885,7 +25810,7 @@ Show( source, matches );
 
 ### Register Addin
 
-**Syntaxe :** Register Addin( uniqueId, homeFolder, <displayName(name)>, <MinJMPVersion(version)>, <MaxJMPVersion(version)>, <LoadsAtStartup(autoLoad)>, <LoadNow(load)> )
+**Syntaxe :** Register Addin( uniqueId, homeFolder, &lt;displayName(name)&gt;, &lt;MinJMPVersion(version)&gt;, &lt;MaxJMPVersion(version)&gt;, &lt;LoadsAtStartup(autoLoad)&gt;, &lt;LoadNow(load)&gt; )
 
 **Description :** Enregistre un complément
 
@@ -25910,7 +25835,7 @@ Register Addin(
 
 ### Remove
 
-**Syntaxe :** y = Remove( x, <i>, <n=1> ); y = Remove( x, {list} )
+**Syntaxe :** y = Remove( x, &lt;i&gt;, &lt;n=1&gt; ); y = Remove( x, {list} )
 
 **Description :** Renvoie une copie de la liste x en supprimant n éléments en commençant par le i-ième élément ou en supprimant une liste d’éléments spécifiée par l’argument list.
 
@@ -25925,7 +25850,7 @@ Remove( {11, 22, 33, 44, 55}, 3, 2 );
 
 ### Remove Color Theme
 
-**Syntaxe :** Remove Color Theme("Name"|{"Name", <flags>, {color, ...}, <{position, ...}>})
+**Syntaxe :** Remove Color Theme("Name"|{"Name", &lt;flags&gt;, {color, ...}, &lt;{position, ...}&gt;})
 
 **Description :** Supprime un thème de couleurs personnalisé de la liste globale, soit en fonction du nom ou de l&apos;objet complet du thème de couleurs.
 
@@ -25955,7 +25880,7 @@ Remove Custom Functions( {"custom:Add", "custom:Sub"} );
 
 ### Remove From
 
-**Syntaxe :** Remove From( x, <i>, <n=1> )
+**Syntaxe :** Remove From( x, &lt;i&gt;, &lt;n=1&gt; )
 
 **Description :** Modifie la liste, le tableau associatif ou la boîte d&apos;affichage x en supprimant des éléments. Les tableaux associatifs spécifient l&apos;élément à supprimer avec une valeur clé i. Les listes et les boîtes d&apos;affichage commencent par supprimer l&apos;élément en position i. Une liste supprimera plusieurs éléments à la fois si l&apos;option n est spécifiée. Notez que l&apos;argument x doit être une variable.
 
@@ -26054,7 +25979,7 @@ Char( rc3 ) || " " || Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
 
 ### Repeat
 
-**Syntaxe :** s = Repeat( x, n, <m=1> )
+**Syntaxe :** s = Repeat( x, n, &lt;m=1&gt; )
 
 **Description :** Renvoie le texte, la matrice ou la liste spécifié(e) par l&apos;argument x concaténé avec lui-même n fois. Si x est un nombre ou une matrice, alors n indique une répétition verticale et l&apos;argument facultatif m désigne une répétition horizontale.
 
@@ -26085,7 +26010,7 @@ Report( Bivariate( Y( :weight ), X( :height ), Fit Line ) );
 
 ### Resample Freq
 
-**Syntaxe :** Resample Freq( <rate=1>, <column> )
+**Syntaxe :** Resample Freq( &lt;rate=1&gt;, &lt;column&gt; )
 
 **Description :** Génère un décompte de fréquence pour l&apos;échantillonnage avec remplacement, ce qui est utile pour les échantillons de bootstrap. Sans aucun argument, la fonction génère un rééchantillonnage à 100%. L’argument rate spécifie le taux du rééchantillonnage. Si l’argument column est spécifié, la taille d&apos;échantillon choisie est rate multipliée par la somme de la colonne spécifiée. Un rate négatif signale que les fréquences fractionnelles sont admises.
 
@@ -26123,7 +26048,7 @@ theBox << CloseWindow;
 
 ### Return
 
-**Syntaxe :** Return(<Expr>, ..., <ExprN>)
+**Syntaxe :** Return(&lt;Expr&gt;, ..., &lt;ExprN&gt;)
 
 **Description :** Renvoie une valeur d&apos;expression issue d&apos;une fonction définie par l&apos;utilisateur.
 
@@ -26236,9 +26161,49 @@ Names Default To Here( 1 );
 
 ```
 
+### RGB Color
+
+**Syntaxe :** y = RGB Color( r, g, b ); y = RGB Color( {r, g, b} )
+
+**Description :** Renvoie un numéro de couleur à partir des composantes rouge, vert et bleu, tous compris entre 0 et 1. RGB Color(1, 1, 1) est le blanc.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+New Window( "RGB Color Example", 
+    /* 1 through 16 are good */ 
+	division = 6;
+	blocks = division + 1;
+	ysize = 400 / Sqrt( division );
+	xsize = ysize * blocks;
+	fract = 1 / division;
+    /* 100 is default axis range */
+	yBlockSize = 100 / blocks;
+	xBlockSize = 100 / (blocks * blocks);
+	Graph(
+		frameSize( xsize, ysize ),
+		For( blue = 0, blue <= 1, blue += fract,
+			For( red = 0, red <= 1, red += fract,
+				For( green = 0, green <= 1, green += fract,
+					y = red / fract * yBlockSize;
+					x = green / fract * xBlockSize + blue / fract *
+					xBlockSize * blocks;
+                    /* here's the example */
+					Fill Color( RGB Color( red, green, blue ) );
+					Rect( x, y, x + xBlockSize, y + yBlockSize, 1 );
+				)
+			)
+		)
+	);
+);
+
+```
+
 ### Right
 
-**Syntaxe :** sub = Right( s, n, <filler> )
+**Syntaxe :** sub = Right( s, n, &lt;filler&gt; )
 
 **Description :** Renvoie une version tronquée ou complétée de la chaîne ou liste d&apos;origine s. Le résultat contient les n caractères de droite ou éléments de liste, complétés par des filler à gauche si la longueur de s est inférieure à n.
 
@@ -26253,7 +26218,7 @@ Right( "http://www.jmp.com", 3 );
 
 ### Robust PCA
 
-**Syntaxe :** {A,E} = Robust PCA( X , <Lambda(2/sqrt(max(nrow,ncol)))>, <tolerance=1e-10>,<maxit(75)>,<Center(1)>,<Scale(1)>
+**Syntaxe :** {A,E} = Robust PCA( X , &lt;Lambda(2/sqrt(max(nrow,ncol)))&gt;, &lt;tolerance=1e-10&gt;,&lt;maxit(75)&gt;,&lt;Center(1)&gt;,&lt;Scale(1)&gt;
 
 **Description :** Décompose de manière robuste les données en une matrice de rang faible et une matrice de résidus clairsemée. Les valeurs aberrantes sont détectées dans les résidus. Les valeurs manquantes peuvent également être imputées.
 
@@ -26271,7 +26236,7 @@ Result = Robust PCA( X, Center( 0 ), Scale( 0 ), Lambda( .80 ) );
 
 ### Root
 
-**Syntaxe :** y = Root( x, <n=2> )
+**Syntaxe :** y = Root( x, &lt;n=2&gt; )
 
 **Description :** Renvoie la racine n-ième de x.
 
@@ -26286,7 +26251,7 @@ Round( Root( 2, 3 ), 4 ) /* cube root */;
 
 ### Round
 
-**Syntaxe :** y = Round( x, <n> )
+**Syntaxe :** y = Round( x, &lt;n&gt; )
 
 **Description :** Arrondit x à n chiffres après la virgule (ou 0 chiffre si n n&apos;est pas spécifié). Notez que l&apos;argument n peut être négatif.
 
@@ -26332,7 +26297,7 @@ Row() = 0;
 
 ### Row State
 
-**Syntaxe :** y = Row State( <dt>, <r> ); Row State( <dt>, <r> ) = y
+**Syntaxe :** y = Row State( &lt;dt&gt;, &lt;r&gt; ); Row State( &lt;dt&gt;, &lt;r&gt; ) = y
 
 **Description :** Renvoie l&apos;état de ligne de la ligne actuelle (ou r-ième) dans la table de données en cours. Si la fonction Row State() est utilisée comme L-value, l&apos;état de ligne de la ligne actuelle (ou r-ième) est modifié dans la table de données en cours.
 
@@ -26397,19 +26362,7 @@ Show(
 
 ### Run Program
 
-**Syntaxe :** obj = Run Program(
-
-    Executable( "path/etc.exe" ),
-
-  < Options( {"/a", "/b etc" } ) >,
-
-  < Parameter( optParm ) >,
-
-  < Read Function( Function( {this, optParm}, etc ) | "text" | "blob" ) >,
-
-  < Write Function( Function( {this, optParm}, etc ) ) >
-
-)
+**Syntaxe :** obj = Run Program( Executable( "path/etc.exe" ), &lt; Options( {"/a", "/b etc" } ) &gt;, &lt; Parameter( optParm ) &gt;, &lt; Read Function( Function( {this, optParm}, etc ) | "text" | "blob" ) &gt;, &lt; Write Function( Function( {this, optParm}, etc ) ) &gt;)
 
 **Description :** Contrôler un programme externe à l&apos;aide de stdin et stdout.
 
@@ -26500,6 +26453,607 @@ SAS Name( {"x 1", "x 2"} );
 
 Names Default To Here( 1 );
 SAS Open For Var Names( "C:\my data\somedata.sas7bdat" );
+
+```
+
+### Save Log
+
+**Syntaxe :** f = Save Log( &lt;path&gt; )
+
+**Description :** Écrit les contenus du registre dans l&apos;emplacement de fichier spécifié. Si l&apos;écriture est réalisée avec succès, cette fonction retourne le nom du fichier créé.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+Save Log( "$TEMP/log.txt" );
+exlogText = Load Text File( "$TEMP/log.txt" );
+Substr( exlogText, 1, 30 );
+
+```
+
+### Save Text File
+
+**Syntaxe :** f = Save Text File( path, text|blob, &lt;mode("replace"|"append")&gt; )
+
+**Description :** Crée un fichier texte portant le nom de fichier spécifié par le chemin d&apos;accès path et dont le contenu est spécifié par la chaîne text. Si l&apos;enregistrement réussit, la fonction Save Text File() renvoie le nom de chemin d&apos;accès du fichier créé.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+Save Text File( "$TEMP/DeleteMe.txt", "The quick brown fox" );
+Load Text File( "$TEMP/DeleteMe.txt" );
+
+```
+
+### SbInv
+
+**Syntaxe :** x = SbInv( z, gamma, delta, theta, sigma )
+
+**Description :** Transforme une variable normale standard en une variable de Johnson doublement bornée.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+SbInv( 1.96, 1.5, 2, 1, 2 );
+
+```
+
+### SbTrans
+
+**Syntaxe :** z = SbTrans( x, gamma, delta, theta, sigma )
+
+**Description :** Transforme une variable de Johnson doublement bornée en une variable normale standard.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+Round( SbTrans( 2.114, 1.5, 2, 1, 2 ), 2 );
+
+```
+
+### Scene Box
+
+**Syntaxe :** box = Scene Box( xsize, ysize )
+
+**Description :** Renvoie une boîte d&apos;affichage pour les graphiques 3D.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+Scene = Scene Box( 600, 600 );
+Scene << backgroundcolor( 0 );
+Scene << showarcball( always );
+New Window( "See HelloWorld.jsl in sample scripts", Scene );
+Scene << perspective( 45, .2, 20 );
+Scene << Translate( 0.0, 0.0, -4.5 );
+ex = Scene Display List();
+ex << color( .9, .9, .9 );
+ex << Text( center, middle, .3, "Hello World" );
+Scene << arcball( ex, 1.5 );
+Scene << update;
+
+```
+
+### Scene Display List
+
+**Syntaxe :** list = Scene Display List()
+
+**Description :** Renvoie une liste d&apos;affichage pour les graphiques en 3D.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+ex = Scene Display List();
+ex << color( .9, .9, .9 );
+ex << Text( center, middle, .3, "Hello World" );
+exScene = Scene Box( 600, 600 );
+exScene << backgroundcolor( 0 );
+exScene << showarcball( always );
+New Window( "See HelloWorld.jsl in sample scripts", exScene );
+exScene << perspective( 45, .2, 20 );
+exScene << Translate( 0.0, 0.0, -4.5 );
+exScene << arcball( ex, 1.5 );
+exScene << update;
+
+```
+
+### Schedule
+
+**Syntaxe :** Schedule( sec, scpt )
+
+**Description :** Planifie un événement qui exécutera le script scpt après un délai de sec secondes.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+Schedule(
+	10,
+	Beep();
+	Print( "Time's up!" );
+);
+
+```
+
+### Scheffe Cubic
+
+**Syntaxe :** y = Scheffe Cubic( x1, x2 )
+
+**Description :** Évalue comme x1*x2*(x1-x2) ; utilisé pour prendre en charge la notation de modélisation des modèles de mélange cubiques.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+Scheffe Cubic( [1, -1, 1, -1, 1], [-1, -1, 1, 1, -1] );
+
+```
+
+### Scoring Impute
+
+**Syntaxe :** {imputedRow} = Scoring Impute ( rowWithMissing , VMat, colMeanVec, colStdDevVec)
+
+**Description :** Fournit une fonctionnalité d&apos;imputation en continu à l&apos;algorithme d&apos;Imputation automatisée des données (ADI). Les arguments d&apos;entrée sont un vecteur ligne qui contient les valeurs manquantes, une matrice des loadings (aussi nommée matrice V) qui est produite par l&apos;algorithme ADI, un vecteur de la moyenne des colonnes ignorant les cellules manquantes et un vecteur de l&apos;écart-type des colonnes ignorant les cellules manquantes. Renvoie le vecteur ligne avec les valeurs manquantes imputées à l&apos;aide de l&apos;estimation des moindres carrés.
+
+**JMP Version ajoutée :** 14
+
+```jsl
+
+Names Default To Here( 1 );
+Scoring Impute(
+	[1 2 3 . 4 .],
+	[.5 .6, .3 .4, .1 .2, .6 .7, .3 .3, .5 .4],
+	[0, 0, 0, 0, 0, 0],
+	[1, 1, 1, 1, 1, 1]
+);
+
+```
+
+### Script Box
+
+**Syntaxe :** y = Script Box( &lt;s&gt;, &lt;"C" | "JavaScript" | "JSL" | "JSON" | "Python" | "R" | "SAS" | "SQL" | "Text" | "XML"&gt;, &lt;width&gt;, &lt;height&gt; )
+
+**Description :** Renvoie une boîte d&apos;affichage permettant de modifier un script. Par défaut, l&apos;éditeur a la mise en surbrillance de la syntaxe et le comportement de JSL.
+
+**JMP Version ajoutée :** Avant la version 14
+
+**JSL**
+
+```jsl
+
+Names Default To Here( 1 );
+Script = Script Box( "// This window is editable.", "JSL", 300, 100 );
+New Window( "This is a script box", Script );
+
+```
+
+**Script Python**
+
+```jsl
+
+Names Default To Here( 1 );
+pyscript = "\[import numpy as np
+a = np.arange(15).reshape(3, 5)]\";
+Script = Script Box( pyscript, "Python", 300, 100 );
+New Window( "This is a python script box", Script );
+
+```
+
+### Scroll Box
+
+**Syntaxe :** y = Scroll Box( &lt;Size( x, y )&gt;, displayBox )
+
+**Description :** Renvoie une boîte d’affichage qui positionne une boîte enfant plus grande avec des barres de défilement.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+New Window( "Example",
+	Outline Box( "Picker",
+		Scroll Box(
+			Size( 200, 100 ),
+			V List Box(
+				H List Box(
+					Text Box( "Label:" ),
+					Text Edit Box( Char( 213 ) )
+				),
+				H List Box(
+					Text Box( "Label:" ),
+					Text Edit Box( Char( 213 ) )
+				),
+				H List Box(
+					Text Box( "Label:" ),
+					Text Edit Box( Char( 213 ) )
+				),
+				H List Box(
+					Text Box( "Label:" ),
+					Text Edit Box( Char( 213 ) )
+				),
+				H List Box(
+					Text Box( "Label:" ),
+					Text Edit Box( Char( 213 ) )
+				)
+			),
+			<<Set Stretch( "Window", "Window" )
+		)
+	)
+);
+
+```
+
+### Second
+
+**Syntaxe :** sec = Second( datetime )
+
+**Description :** Renvoie les secondes d&apos;une valeur « date-heure » de JMP, y compris la partie fractionnelle, 0 - 60 non inclus.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+Second( Today() );
+
+```
+
+### Selected
+
+**Syntaxe :** y = Selected( &lt;rs&gt; );Selected( &lt;Row State( &lt;r&gt; )&gt; ) = y
+
+**Description :** Renvoie la composante sélectionnée de la valeur d&apos;état de ligne spécifiée, 0 ou 1. Si Selected est utilisé comme L-value, l’état sélectionné de la ligne active (ou r-ième) de la table de données active est modifié.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+Row State( 3 ) = Selected State( 1 );
+Selected( Row State( 3 ) );
+Row() = 3;
+Selected();
+
+```
+
+### Selected State
+
+**Syntaxe :** rs = Selected State( x )
+
+**Description :** Renvoie une valeur d&apos;état de ligne avec la composante sélectionnée définie comme la valeur spécifiée.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+Row State( 3 ) = Selected State( 1 );
+Selected( Row State( 3 ) );
+
+```
+
+### Send
+
+**Syntaxe :** r = obj &lt;&lt; msg( args ); r = obj &lt;&lt; msg; r = Send( obj, msg )
+
+**Description :** Envoie un message (sous la forme d&apos;une expression) à un objet.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+Bivariate( Y( :weight ), X( :height ) ) << Fit Line;
+
+```
+
+### Sequence
+
+**Syntaxe :** y = Sequence( start, end, &lt;incr=1&gt;, &lt;n=1&gt; )
+
+**Description :** Renvoie le Row()-ième élément de la séquence des nombres de start à end incrémentée par incr. Chaque nombre de la séquence est répété n fois. Puisqu&apos;elle dépend de Row(), la fonction Sequence() est principalement utile dans les formules de colonne. Pour créer des séquences sous forme de matrices JSL, veuillez consulter Index().
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+Row() = 3;
+Sequence( 1, 9, 2 );
+
+```
+
+### Set Clipboard
+
+**Syntaxe :** Set Clipboard( text )
+
+**Description :** Met le texte spécifié dans le presse-papiers du système utilisé par le menu Édition.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+Set Clipboard( "example" );
+
+```
+
+### Set Default Directory
+
+**Syntaxe :** Set Default Directory( path )
+
+**Description :** Définit le répertoire JMP par défaut, qui est utilisé comme base pour les chemins d&apos;accès relatifs consécutifs.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+Set Default Directory( "$SAMPLE_DATA" );
+Open( "Big Class.jmp" );
+
+```
+
+### Set Difference
+
+**Syntaxe :** list = Set Difference( list1, list2 )
+
+**Description :** Renvoie la liste d&apos;éléments qui apparaissent dans list1 et pas dans list2. Les éléments peuvent être répétés. Si un argument est une référence de colonne à réponses multiples, il est traité comme une liste de ses valeurs dans la ligne actuelle.
+
+**JMP Version ajoutée :** 19
+
+```jsl
+
+Names Default To Here( 1 );
+Show( Set Difference( {1, 3}, {3, 2} ) );
+Show( Set Difference( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
+
+```
+
+### Set Environment Variable
+
+**Syntaxe :** value = Set Environment Variable( string, &lt; string&gt; )
+
+**Description :** Définit la valeur de la variable d&apos;environnement spécifiée dans le système d&apos;exploitation. Si le deuxième argument est manquant ou est une chaîne vide, alors la variable d&apos;environnement est supprimée.
+
+
+
+REMARQUE : sous le système d&apos;exploitation Macintosh, le nom de variable est sensible à la casse.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+Set Environment Variable( "PATH", "some path to a directory" );
+
+```
+
+### Set File Search Path
+
+**Syntaxe :** Set File Search Path(path | {list of paths})
+
+**Description :** Définit la liste courante des répertoires à rechercher pour l&apos;ouverture des fichiers. "." représente le répertoire courant.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+Set File Search Path(
+	{Convert File Path( "$SAMPLE_DATA/" ),
+	Convert File Path( "$SAMPLE_DATA/Time Series/" )}
+);
+Show( Get File Search Path() );
+Show( Convert File Path( "Air.jmp", search ) );
+Show( Convert File Path( "Full of Air.jmp", search ) );
+Show( Convert File Path( "Iris.jmp", search ) );
+
+```
+
+### Set Global Window Handler
+
+**Syntaxe :** Set Global Window Handler( Handler Function )
+
+**Description :** Définit une fonction à appeler chaque fois qu&apos;une nouvelle fenêtre est créée.
+
+**JMP Version ajoutée :** 17
+
+```jsl
+
+Names Default To Here( 1 );
+Set Global Window Handler(
+	Function( {window},
+		Print( window << get window title() );
+		window << close window();
+	)
+);
+New Window( "My Window" );
+Clear Global Window Handler();
+
+```
+
+### Set Intersection
+
+**Syntaxe :** list = Set Intersect( list1, list2 )
+
+**Description :** Renvoie la liste d&apos;éléments qui apparaissent dans les deux listes. Les éléments peuvent être répétés. Si un argument est une référence de colonne à réponses multiples, il est traité comme une liste de ses valeurs dans la ligne actuelle.
+
+**JMP Version ajoutée :** 19
+
+```jsl
+
+Names Default To Here( 1 );
+Show( Set Intersection( {1, 3}, {3, 2} ) );
+Show( Set Intersection( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
+dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+dt << get rows where( Set Intersection( :sports, {"Soccer"} ) != {} );
+
+```
+
+### Set Path Variable
+
+**Syntaxe :** Set Path Variable( name, &lt;value&gt; )
+
+**Description :** Définit une variable de chemin d&apos;accès, qui est un nom tel que SAMPLE_DATA qui est remplacé lorsqu&apos;il se trouve dans les noms de chemin d&apos;accès.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+Set Path Variable( "SAMPLE_DATA", Get Path Variable( "SAMPLE_DATA" ) );
+
+```
+
+### Set Platform Preference
+
+**Syntaxe :** Platform Preferences( platformName( optionName( value ), ... ) ... )
+
+**Description :** Définit les préférences de plate-forme comme spécifié.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+Platform Preferences( Bivariate( Fit Line( 1 ) ) );
+
+```
+
+### Set Platform Preferences
+
+**Syntaxe :** Platform Preferences( platformName( optionName( value ), ... ) ... )
+
+**Description :** Définit les préférences de plate-forme comme spécifié.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+Platform Preferences( Bivariate( Fit Line( 1 ) ) );
+
+```
+
+### Set Policy
+
+**Syntaxe :** Set Policy("PolicyName", &lt;Empty()|#|"value"&gt; )
+
+**JMP Version ajoutée :** 18
+
+### Set Preference
+
+**Syntaxe :** Preferences( pref1( value1 ), ... )
+
+**Description :** Définit les préférences comme spécifié.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+Preferences( Graph marker size( "Large" ) );
+
+```
+
+### Set Preferences
+
+**Syntaxe :** Preferences( pref1( value1 ), ... )
+
+**Description :** Définit les préférences comme spécifié.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+Preferences( Graph marker size( "Large" ) );
+
+```
+
+### Set Toolbar Visibility
+
+**Syntaxe :** rc = Set Toolbar Visibility( "toolbar-name" | Default | All, &lt;window-class-name | All&gt;, &lt;True | False&gt; )
+
+**Description :** Définit la visibilité d&apos;une barre d&apos;outils donnée pour une classe de fenêtres donnée. Nom de barre d&apos;outils correspond au nom interne de la barre. Si le nom de barre d&apos;outils donné est Default, la classe de fenêtres spécifiée est remise à la valeur par défaut de la barre d&apos;outils, définie pour cette classe de fenêtres. Voici des exemples de nom de classe de fenêtre: Table de données, Script, Rapport et Journal. Si le nom de classe de fenêtres donné est Tout, la visibilité de la barre d&apos;outils spécifiée est définie pour toutes les classes de fenêtres.
+
+Renvoie 1 en cas de succès, 0 en cas d&apos;échec.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+
+// Make the Analyze toolbar visible in Script windows
+Set Toolbar Visibility( "Analyze", Script, true );
+
+// Make the Analyze toolbar visible in all classes of windows
+Set Toolbar Visibility( "Analyze", All, true );
+
+// Revert Script windows to the default toolbar set for Script windows
+Set Toolbar Visibility( Default, Script );
+
+// Revert all windows to their default toolbar set
+Set Toolbar Visibility( Default, All );
+
+```
+
+### Set Union
+
+**Syntaxe :** list = Set Union( list1, list2 )
+
+**Description :** Renvoie la liste d&apos;éléments qui apparaissent dans l&apos;une ou l&apos;autre des listes. Les éléments peuvent être répétés. Si un argument est une référence de colonne à réponses multiples, il est traité comme une liste de ses valeurs dans la ligne actuelle.
+
+**JMP Version ajoutée :** 19
+
+```jsl
+
+Names Default To Here( 1 );
+Show( Set Union( {1, 3}, {3, 2} ) );
+Show( Set Union( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
+all = {};
+Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+For Each Row( all = Set Union( all, :sports ) );
+all = Set Unique( all );
+Show( all );
+
+```
+
+### Set Unique
+
+**Syntaxe :** list = Set Unique( list )
+
+**Description :** Renvoie la liste d&apos;éléments uniques qui apparaissent dans la liste d&apos;entrée. Si un argument est une référence de colonne à réponses multiples, il est traité comme une liste de ses valeurs dans la ligne actuelle.
+
+**JMP Version ajoutée :** 19
+
+```jsl
+
+Names Default To Here( 1 );
+Show( Set Unique( {1, 3, 2} ) );
+Show( Set Unique( {1, 3, 4, 3, 3, 2, 3, 5, 3} ) );
+Open( "$SAMPLE_DATA/Big Class Families.jmp" );
+Row() = 1;
+Show( Set Unique( :sports ) );
 
 ```
 
@@ -26615,6 +27169,62 @@ New Window( "Example: SEV Quantile",
 	H List Box(
 		Slider Box( 0.01, 0.99, qq, y << reshow ),
 		Text Box( " quantile" )
+	)
+);
+
+```
+
+### Shade State
+
+**Syntaxe :** rs = Shade State( x )
+
+**Description :** Renvoie une valeur d&apos;état de ligne avec la composante de la nuance de la couleur définie comme la valeur spécifiée. Doit être combiné à une valeur de la fonction État de teinte() pour produire une couleur correcte.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+Open( "$SAMPLE_DATA/Big Class.jmp" );
+Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
+
+```
+
+### Shape
+
+**Syntaxe :** r = Shape( M, nr, &lt;nc&gt;, &lt;&lt;bycol)
+
+**Description :** Restructure la matrice M ou le scalaire dans les lignes de sorte qu&apos;il y ait nr lignes pour nc colonnes. Une valeur manquante est autorisée pour nr. Les données de M peuvent être répliquées de sorte à remplir la matrice avec nr pour nc. L&apos;argument facultatif <<bycol remplit les données par colonne. Par défaut, les données sont remplies par ligne. Cette option est généralement utilisée pour restructurer un vecteur dans une matrice ou pour vectoriser une matrice.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+Eval List(
+	{Shape( [11 22, 33 44], 1, 4 ), Shape( [11 22, 33 44], 1 ),
+	Shape( [11 22, 33 44], ., 4 )}
+);
+
+```
+
+### Shape Seg
+
+**Syntaxe :** me = Shape Seg( {Path(&lt;path&gt;), ...}, &lt; Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) &gt; )
+
+**Description :** Renvoie un seg d&apos;affichage avec une série de formes. Chaque forme dessine un trait le long du chemin spécifié si le remplissage est zéro, ou peint l’intérieur du chemin spécifié si le remplissage est différent de zéro. Le chemin peut être spécifié par une matrice N x 3 ou par une représentation textuelle. Une matrice de chemin à trois colonnes pour x, y et les drapeaux pour chaque point du chemin. Les valeurs de drapeau sont 0 pour le contrôle, 1 pour le déplacement, 2 pour le segment de ligne, 3 pour le segment cubique de Bézier et sont négatives si le point ferme aussi le chemin. Le texte de chemin autorise la syntaxe SVG.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+New Window( "Shape Seg Example",
+	Graph Box(
+		Shape Seg(
+			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
+			Path( "M20,20 C20,60 60,60 60,20 Z" )}
+		)
 	)
 );
 
@@ -26806,708 +27416,6 @@ Show( result1, result2 );
 
 ```
 
-### SSQ
-
-**Syntaxe :** y = SSQ( x1, ... )
-
-**Description :** Renvoie la somme des carrés de tous les éléments
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-Eval List( {SSQ( Pi(), e() ), SSQ( [33 44 22 20 30] )} );
-
-```
-
-### SVD
-
-**Syntaxe :** {U, M, V} = SVD( X )
-
-**Description :** Calcule la décomposition en valeurs singulières de la matrice X en retournant une liste {U, M, V} telle que U*diag(M)*V` est égal à X.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-SVD( [11 22, 33 44] );
-
-```
-
-### SVD LAPACK
-
-**Syntaxe :** {U, M, V} = SVD LAPACK( X )
-
-**Description :** Calcule la décomposition en valeurs singulières de la matrice X en retournant une liste {U, M, V} telle que U*diag(M)*V` est égal à X.
-
-**JMP Version ajoutée :** 17
-
-```jsl
-
-Names Default To Here( 1 );
-SVD LAPACK( [11 22, 33 44] );
-
-```
-
-### Save Log
-
-**Syntaxe :** f = Save Log( <path> )
-
-**Description :** Écrit les contenus du registre dans l&apos;emplacement de fichier spécifié. Si l&apos;écriture est réalisée avec succès, cette fonction retourne le nom du fichier créé.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-Save Log( "$TEMP/log.txt" );
-exlogText = Load Text File( "$TEMP/log.txt" );
-Substr( exlogText, 1, 30 );
-
-```
-
-### Save Text File
-
-**Syntaxe :** f = Save Text File( path, text|blob, <mode("replace"|"append")> )
-
-**Description :** Crée un fichier texte portant le nom de fichier spécifié par le chemin d&apos;accès path et dont le contenu est spécifié par la chaîne text. Si l&apos;enregistrement réussit, la fonction Save Text File() renvoie le nom de chemin d&apos;accès du fichier créé.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-Save Text File( "$TEMP/DeleteMe.txt", "The quick brown fox" );
-Load Text File( "$TEMP/DeleteMe.txt" );
-
-```
-
-### SbInv
-
-**Syntaxe :** x = SbInv( z, gamma, delta, theta, sigma )
-
-**Description :** Transforme une variable normale standard en une variable de Johnson doublement bornée.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-SbInv( 1.96, 1.5, 2, 1, 2 );
-
-```
-
-### SbTrans
-
-**Syntaxe :** z = SbTrans( x, gamma, delta, theta, sigma )
-
-**Description :** Transforme une variable de Johnson doublement bornée en une variable normale standard.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-Round( SbTrans( 2.114, 1.5, 2, 1, 2 ), 2 );
-
-```
-
-### Scene Box
-
-**Syntaxe :** box = Scene Box( xsize, ysize )
-
-**Description :** Renvoie une boîte d&apos;affichage pour les graphiques 3D.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-Scene = Scene Box( 600, 600 );
-Scene << backgroundcolor( 0 );
-Scene << showarcball( always );
-New Window( "See HelloWorld.jsl in sample scripts", Scene );
-Scene << perspective( 45, .2, 20 );
-Scene << Translate( 0.0, 0.0, -4.5 );
-ex = Scene Display List();
-ex << color( .9, .9, .9 );
-ex << Text( center, middle, .3, "Hello World" );
-Scene << arcball( ex, 1.5 );
-Scene << update;
-
-```
-
-### Scene Display List
-
-**Syntaxe :** list = Scene Display List()
-
-**Description :** Renvoie une liste d&apos;affichage pour les graphiques en 3D.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-ex = Scene Display List();
-ex << color( .9, .9, .9 );
-ex << Text( center, middle, .3, "Hello World" );
-exScene = Scene Box( 600, 600 );
-exScene << backgroundcolor( 0 );
-exScene << showarcball( always );
-New Window( "See HelloWorld.jsl in sample scripts", exScene );
-exScene << perspective( 45, .2, 20 );
-exScene << Translate( 0.0, 0.0, -4.5 );
-exScene << arcball( ex, 1.5 );
-exScene << update;
-
-```
-
-### Schedule
-
-**Syntaxe :** Schedule( sec, scpt )
-
-**Description :** Planifie un événement qui exécutera le script scpt après un délai de sec secondes.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-Schedule(
-	10,
-	Beep();
-	Print( "Time's up!" );
-);
-
-```
-
-### Scheffe Cubic
-
-**Syntaxe :** y = Scheffe Cubic( x1, x2 )
-
-**Description :** Évalue comme x1*x2*(x1-x2) ; utilisé pour prendre en charge la notation de modélisation des modèles de mélange cubiques.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-Scheffe Cubic( [1, -1, 1, -1, 1], [-1, -1, 1, 1, -1] );
-
-```
-
-### Scoring Impute
-
-**Syntaxe :** {imputedRow} = Scoring Impute ( rowWithMissing , VMat, colMeanVec, colStdDevVec)
-
-**Description :** Fournit une fonctionnalité d&apos;imputation en continu à l&apos;algorithme d&apos;Imputation automatisée des données (ADI). Les arguments d&apos;entrée sont un vecteur ligne qui contient les valeurs manquantes, une matrice des loadings (aussi nommée matrice V) qui est produite par l&apos;algorithme ADI, un vecteur de la moyenne des colonnes ignorant les cellules manquantes et un vecteur de l&apos;écart-type des colonnes ignorant les cellules manquantes. Renvoie le vecteur ligne avec les valeurs manquantes imputées à l&apos;aide de l&apos;estimation des moindres carrés.
-
-**JMP Version ajoutée :** 14
-
-```jsl
-
-Names Default To Here( 1 );
-Scoring Impute(
-	[1 2 3 . 4 .],
-	[.5 .6, .3 .4, .1 .2, .6 .7, .3 .3, .5 .4],
-	[0, 0, 0, 0, 0, 0],
-	[1, 1, 1, 1, 1, 1]
-);
-
-```
-
-### Script Box
-
-**Syntaxe :** y = Script Box( <s>, <"C" | "JavaScript" | "JSL" | "JSON" | "Python" | "R" | "SAS" | "SQL" | "Text" | "XML">, <width>, <height> )
-
-**Description :** Renvoie une boîte d&apos;affichage permettant de modifier un script. Par défaut, l&apos;éditeur a la mise en surbrillance de la syntaxe et le comportement de JSL.
-
-**JMP Version ajoutée :** Avant la version 14
-
-**JSL**
-
-```jsl
-
-Names Default To Here( 1 );
-Script = Script Box( "// This window is editable.", "JSL", 300, 100 );
-New Window( "This is a script box", Script );
-
-```
-
-**Script Python**
-
-```jsl
-
-Names Default To Here( 1 );
-pyscript = "\[import numpy as np
-a = np.arange(15).reshape(3, 5)]\";
-Script = Script Box( pyscript, "Python", 300, 100 );
-New Window( "This is a python script box", Script );
-
-```
-
-### Scroll Box
-
-**Syntaxe :** y = Scroll Box( <Size( x, y )>, displayBox )
-
-**Description :** Renvoie une boîte d’affichage qui positionne une boîte enfant plus grande avec des barres de défilement.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-New Window( "Example",
-	Outline Box( "Picker",
-		Scroll Box(
-			Size( 200, 100 ),
-			V List Box(
-				H List Box(
-					Text Box( "Label:" ),
-					Text Edit Box( Char( 213 ) )
-				),
-				H List Box(
-					Text Box( "Label:" ),
-					Text Edit Box( Char( 213 ) )
-				),
-				H List Box(
-					Text Box( "Label:" ),
-					Text Edit Box( Char( 213 ) )
-				),
-				H List Box(
-					Text Box( "Label:" ),
-					Text Edit Box( Char( 213 ) )
-				),
-				H List Box(
-					Text Box( "Label:" ),
-					Text Edit Box( Char( 213 ) )
-				)
-			),
-			<<Set Stretch( "Window", "Window" )
-		)
-	)
-);
-
-```
-
-### Second
-
-**Syntaxe :** sec = Second( datetime )
-
-**Description :** Renvoie les secondes d&apos;une valeur « date-heure » de JMP, y compris la partie fractionnelle, 0 - 60 non inclus.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-Second( Today() );
-
-```
-
-### Selected
-
-**Syntaxe :** y = Selected( <rs> );Selected( <Row State( <r> )> ) = y
-
-**Description :** Renvoie la composante sélectionnée de la valeur d&apos;état de ligne spécifiée, 0 ou 1. Si Selected est utilisé comme L-value, l’état sélectionné de la ligne active (ou r-ième) de la table de données active est modifié.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Row State( 3 ) = Selected State( 1 );
-Selected( Row State( 3 ) );
-Row() = 3;
-Selected();
-
-```
-
-### Selected State
-
-**Syntaxe :** rs = Selected State( x )
-
-**Description :** Renvoie une valeur d&apos;état de ligne avec la composante sélectionnée définie comme la valeur spécifiée.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Row State( 3 ) = Selected State( 1 );
-Selected( Row State( 3 ) );
-
-```
-
-### Send
-
-**Syntaxe :** r = obj << msg( args ); r = obj << msg; r = Send( obj, msg )
-
-**Description :** Envoie un message (sous la forme d&apos;une expression) à un objet.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Bivariate( Y( :weight ), X( :height ) ) << Fit Line;
-
-```
-
-### Sequence
-
-**Syntaxe :** y = Sequence( start, end, <incr=1>, <n=1> )
-
-**Description :** Renvoie le Row()-ième élément de la séquence des nombres de start à end incrémentée par incr. Chaque nombre de la séquence est répété n fois. Puisqu&apos;elle dépend de Row(), la fonction Sequence() est principalement utile dans les formules de colonne. Pour créer des séquences sous forme de matrices JSL, veuillez consulter Index().
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-Row() = 3;
-Sequence( 1, 9, 2 );
-
-```
-
-### Set Clipboard
-
-**Syntaxe :** Set Clipboard( text )
-
-**Description :** Met le texte spécifié dans le presse-papiers du système utilisé par le menu Édition.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-Set Clipboard( "example" );
-
-```
-
-### Set Default Directory
-
-**Syntaxe :** Set Default Directory( path )
-
-**Description :** Définit le répertoire JMP par défaut, qui est utilisé comme base pour les chemins d&apos;accès relatifs consécutifs.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-Set Default Directory( "$SAMPLE_DATA" );
-Open( "Big Class.jmp" );
-
-```
-
-### Set Difference
-
-**Syntaxe :** list = Set Difference( list1, list2 )
-
-**Description :** Renvoie la liste d&apos;éléments qui apparaissent dans list1 et pas dans list2. Les éléments peuvent être répétés. Si un argument est une référence de colonne à réponses multiples, il est traité comme une liste de ses valeurs dans la ligne actuelle.
-
-**JMP Version ajoutée :** 19
-
-```jsl
-
-Names Default To Here( 1 );
-Show( Set Difference( {1, 3}, {3, 2} ) );
-Show( Set Difference( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
-
-```
-
-### Set Environment Variable
-
-**Syntaxe :** value = Set Environment Variable( string, < string> )
-
-**Description :** Définit la valeur de la variable d&apos;environnement spécifiée dans le système d&apos;exploitation. Si le deuxième argument est manquant ou est une chaîne vide, alors la variable d&apos;environnement est supprimée.
-
-
-
-REMARQUE : sous le système d&apos;exploitation Macintosh, le nom de variable est sensible à la casse.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-Set Environment Variable( "PATH", "some path to a directory" );
-
-```
-
-### Set File Search Path
-
-**Syntaxe :** Set File Search Path(path | {list of paths})
-
-**Description :** Définit la liste courante des répertoires à rechercher pour l&apos;ouverture des fichiers. "." représente le répertoire courant.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-Set File Search Path(
-	{Convert File Path( "$SAMPLE_DATA/" ),
-	Convert File Path( "$SAMPLE_DATA/Time Series/" )}
-);
-Show( Get File Search Path() );
-Show( Convert File Path( "Air.jmp", search ) );
-Show( Convert File Path( "Full of Air.jmp", search ) );
-Show( Convert File Path( "Iris.jmp", search ) );
-
-```
-
-### Set Global Window Handler
-
-**Syntaxe :** Set Global Window Handler( Handler Function )
-
-**Description :** Définit une fonction à appeler chaque fois qu&apos;une nouvelle fenêtre est créée.
-
-**JMP Version ajoutée :** 17
-
-```jsl
-
-Names Default To Here( 1 );
-Set Global Window Handler(
-	Function( {window},
-		Print( window << get window title() );
-		window << close window();
-	)
-);
-New Window( "My Window" );
-Clear Global Window Handler();
-
-```
-
-### Set Intersection
-
-**Syntaxe :** list = Set Intersect( list1, list2 )
-
-**Description :** Renvoie la liste d&apos;éléments qui apparaissent dans les deux listes. Les éléments peuvent être répétés. Si un argument est une référence de colonne à réponses multiples, il est traité comme une liste de ses valeurs dans la ligne actuelle.
-
-**JMP Version ajoutée :** 19
-
-```jsl
-
-Names Default To Here( 1 );
-Show( Set Intersection( {1, 3}, {3, 2} ) );
-Show( Set Intersection( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
-dt = Open( "$SAMPLE_DATA/Big Class Families.jmp" );
-dt << get rows where( Set Intersection( :sports, {"Soccer"} ) != {} );
-
-```
-
-### Set Path Variable
-
-**Syntaxe :** Set Path Variable( name, <value> )
-
-**Description :** Définit une variable de chemin d&apos;accès, qui est un nom tel que SAMPLE_DATA qui est remplacé lorsqu&apos;il se trouve dans les noms de chemin d&apos;accès.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-Set Path Variable( "SAMPLE_DATA", Get Path Variable( "SAMPLE_DATA" ) );
-
-```
-
-### Set Platform Preference
-
-**Syntaxe :** Platform Preferences( platformName( optionName( value ), ... ) ... )
-
-**Description :** Définit les préférences de plate-forme comme spécifié.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-Platform Preferences( Bivariate( Fit Line( 1 ) ) );
-
-```
-
-### Set Platform Preferences
-
-**Syntaxe :** Platform Preferences( platformName( optionName( value ), ... ) ... )
-
-**Description :** Définit les préférences de plate-forme comme spécifié.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-Platform Preferences( Bivariate( Fit Line( 1 ) ) );
-
-```
-
-### Set Policy
-
-**Syntaxe :** Set Policy("PolicyName", <Empty()|#|"value"> )
-
-**JMP Version ajoutée :** 18
-
-### Set Preference
-
-**Syntaxe :** Preferences( pref1( value1 ), ... )
-
-**Description :** Définit les préférences comme spécifié.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-Preferences( Graph marker size( "Large" ) );
-
-```
-
-### Set Preferences
-
-**Syntaxe :** Preferences( pref1( value1 ), ... )
-
-**Description :** Définit les préférences comme spécifié.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-Preferences( Graph marker size( "Large" ) );
-
-```
-
-### Set Toolbar Visibility
-
-**Syntaxe :** rc = Set Toolbar Visibility( "toolbar-name" | Default | All, <window-class-name | All>, <True | False> )
-
-**Description :** Définit la visibilité d&apos;une barre d&apos;outils donnée pour une classe de fenêtres donnée. Nom de barre d&apos;outils correspond au nom interne de la barre. Si le nom de barre d&apos;outils donné est Default, la classe de fenêtres spécifiée est remise à la valeur par défaut de la barre d&apos;outils, définie pour cette classe de fenêtres. Voici des exemples de nom de classe de fenêtre: Table de données, Script, Rapport et Journal. Si le nom de classe de fenêtres donné est Tout, la visibilité de la barre d&apos;outils spécifiée est définie pour toutes les classes de fenêtres.
-
-Renvoie 1 en cas de succès, 0 en cas d&apos;échec.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-
-// Make the Analyze toolbar visible in Script windows
-Set Toolbar Visibility( "Analyze", Script, true );
-
-// Make the Analyze toolbar visible in all classes of windows
-Set Toolbar Visibility( "Analyze", All, true );
-
-// Revert Script windows to the default toolbar set for Script windows
-Set Toolbar Visibility( Default, Script );
-
-// Revert all windows to their default toolbar set
-Set Toolbar Visibility( Default, All );
-
-```
-
-### Set Union
-
-**Syntaxe :** list = Set Union( list1, list2 )
-
-**Description :** Renvoie la liste d&apos;éléments qui apparaissent dans l&apos;une ou l&apos;autre des listes. Les éléments peuvent être répétés. Si un argument est une référence de colonne à réponses multiples, il est traité comme une liste de ses valeurs dans la ligne actuelle.
-
-**JMP Version ajoutée :** 19
-
-```jsl
-
-Names Default To Here( 1 );
-Show( Set Union( {1, 3}, {3, 2} ) );
-Show( Set Union( {1, 3, 4, 3}, {3, 2, 3, 5, 3} ) );
-all = {};
-Open( "$SAMPLE_DATA/Big Class Families.jmp" );
-For Each Row( all = Set Union( all, :sports ) );
-all = Set Unique( all );
-Show( all );
-
-```
-
-### Set Unique
-
-**Syntaxe :** list = Set Unique( list )
-
-**Description :** Renvoie la liste d&apos;éléments uniques qui apparaissent dans la liste d&apos;entrée. Si un argument est une référence de colonne à réponses multiples, il est traité comme une liste de ses valeurs dans la ligne actuelle.
-
-**JMP Version ajoutée :** 19
-
-```jsl
-
-Names Default To Here( 1 );
-Show( Set Unique( {1, 3, 2} ) );
-Show( Set Unique( {1, 3, 4, 3, 3, 2, 3, 5, 3} ) );
-Open( "$SAMPLE_DATA/Big Class Families.jmp" );
-Row() = 1;
-Show( Set Unique( :sports ) );
-
-```
-
-### Shade State
-
-**Syntaxe :** rs = Shade State( x )
-
-**Description :** Renvoie une valeur d&apos;état de ligne avec la composante de la nuance de la couleur définie comme la valeur spécifiée. Doit être combiné à une valeur de la fonction État de teinte() pour produire une couleur correcte.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-Open( "$SAMPLE_DATA/Big Class.jmp" );
-Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
-
-```
-
-### Shape
-
-**Syntaxe :** r = Shape( M, nr, <nc>, <<bycol)
-
-**Description :** Restructure la matrice M ou le scalaire dans les lignes de sorte qu&apos;il y ait nr lignes pour nc colonnes. Une valeur manquante est autorisée pour nr. Les données de M peuvent être répliquées de sorte à remplir la matrice avec nr pour nc. L&apos;argument facultatif <<bycol remplit les données par colonne. Par défaut, les données sont remplies par ligne. Cette option est généralement utilisée pour restructurer un vecteur dans une matrice ou pour vectoriser une matrice.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-Eval List(
-	{Shape( [11 22, 33 44], 1, 4 ), Shape( [11 22, 33 44], 1 ),
-	Shape( [11 22, 33 44], ., 4 )}
-);
-
-```
-
-### Shape Seg
-
-**Syntaxe :** me = Shape Seg( {Path(<path>), ...}, < Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) > )
-
-**Description :** Renvoie un seg d&apos;affichage avec une série de formes. Chaque forme dessine un trait le long du chemin spécifié si le remplissage est zéro, ou peint l’intérieur du chemin spécifié si le remplissage est différent de zéro. Le chemin peut être spécifié par une matrice N x 3 ou par une représentation textuelle. Une matrice de chemin à trois colonnes pour x, y et les drapeaux pour chaque point du chemin. Les valeurs de drapeau sont 0 pour le contrôle, 1 pour le déplacement, 2 pour le segment de ligne, 3 pour le segment cubique de Bézier et sont négatives si le point ferme aussi le chemin. Le texte de chemin autorise la syntaxe SVG.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-New Window( "Shape Seg Example",
-	Graph Box(
-		Shape Seg(
-			{Path( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] ),
-			Path( "M20,20 C20,60 60,60 60,20 Z" )}
-		)
-	)
-);
-
-```
-
 ### Sheet Part
 
 **Syntaxe :** y = Sheet Part( title, childbox )
@@ -27569,7 +27477,7 @@ New Window( "Example",
 
 ### Shift
 
-**Syntaxe :** y = Shift( x, <n=1> )
+**Syntaxe :** y = Shift( x, &lt;n=1&gt; )
 
 **Description :** Renvoie une copie de la liste x avec les premiers n éléments déplacés à la fin de la liste, ou, si n est négatif, les derniers n éléments déplacés au début.
 
@@ -27584,7 +27492,7 @@ Shift( {11, 22, 33, 44, 55}, 2 );
 
 ### Shift Into
 
-**Syntaxe :** Shift Into( x, <n=1> )
+**Syntaxe :** Shift Into( x, &lt;n=1&gt; )
 
 **Description :** Modifie la liste ou la boîte d&apos;affichage x avec les premiers n éléments déplacés à la fin de la liste ou, si n est négatif, les derniers n éléments déplacés au début. Notez que l&apos;argument x doit être une variable.
 
@@ -27620,7 +27528,7 @@ Shift Into( hlist, -2 );
 
 ### Short Date
 
-**Syntaxe :** s = Short Date( datetime, <format> )
+**Syntaxe :** s = Short Date( datetime, &lt;format&gt; )
 
 **Description :** Renvoie une représentation locale (JJ/MM/AAAA) numérique d&apos;une valeur date-heure.
 
@@ -27705,7 +27613,7 @@ Show Addins Dialog();
 
 ### Show Classes
 
-**Syntaxe :** Show Classes( < <class name | class reference>, ... > )
+**Syntaxe :** Show Classes( &lt; &lt;class name | class reference&gt;, ... &gt; )
 
 **Description :** Afficher le contenu de toutes les classes définies par l&apos;utilisateur.
 
@@ -27762,7 +27670,7 @@ Show Classes();
 
 ### Show Commands
 
-**Syntaxe :** Show Commands( <keyword=Builtins> )
+**Syntaxe :** Show Commands( &lt;keyword=Builtins&gt; )
 
 **Description :** Crée une ou plusieurs tables de données contenant des informations sur plusieurs composantes JSL. L&apos;argument keyword détermine le contenu de la table de sortie. Spécifiez les éléments intégrés (par défaut) pour les opérateurs et fonctions intégrés. Spécifiez les objets scriptables pour toutes les commandes scriptables des objets. Spécifiez les traductions pour l&apos;Anglais et les versions traduites des commandes scriptables. Spécifiez les boîtes d&apos;affichage pour les commandes scriptables liées aux boîtes d&apos;affichage et aux segs d&apos;affichage. Spécifiez les noms scriptables pour les noms des objets scriptables. Spécifiez les noms de plate-forme pour les noms des plates-formes.
 
@@ -27792,7 +27700,7 @@ Show Globals();
 
 ### Show Namespaces
 
-**Syntaxe :** Show Namespaces( < <namespace reference>, ... > )
+**Syntaxe :** Show Namespaces( &lt; &lt;namespace reference&gt;, ... &gt; )
 
 **Description :** Affiche le contenu de tous les espaces de noms utilisateurs, nommés et anonymes.
 
@@ -27907,21 +27815,6 @@ Sine( Pi() / 6 );
 
 ```
 
-### SinH
-
-**Syntaxe :** y = SinH( x )
-
-**Description :** Renvoie le sinus hyperbolique de x.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-SinH( 1 );
-
-```
-
 ### Sine
 
 **Syntaxe :** y = Sine( x )
@@ -27937,39 +27830,24 @@ Sine( Pi() / 6 );
 
 ```
 
-### SlInv
+### SinH
 
-**Syntaxe :** x = SlInv( z, gamma, delta, theta, <sigma=1> )
+**Syntaxe :** y = SinH( x )
 
-**Description :** Transforme une variable normale standard en une variable SL de Johnson.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-SlInv( 1.96, 1.5, 2, 1 );
-
-```
-
-### SlTrans
-
-**Syntaxe :** z = SlTrans( x, gamma, delta, theta, <sigma=1> )
-
-**Description :** Transforme une variable SL de Johnson en une variable normale standard.
+**Description :** Renvoie le sinus hyperbolique de x.
 
 **JMP Version ajoutée :** Avant la version 14
 
 ```jsl
 
 Names Default To Here( 1 );
-Round( SlTrans( 2.259, 1.5, 2, 1 ), 2 );
+SinH( 1 );
 
 ```
 
 ### Slider Box
 
-**Syntaxe :** box = Slider Box(minValue, maxValue, variable, script, <set width(n)>, <rescale slider(minValue, maxValue)>)
+**Syntaxe :** box = Slider Box(minValue, maxValue, variable, script, &lt;set width(n)&gt;, &lt;rescale slider(minValue, maxValue)&gt;)
 
 **Description :** Renvoie une boîte d’affichage avec un curseur de contrôle allant de minValue à maxValue. Lorsque la position du curseur change, sa valeur est placée dans variable et le script est exécuté.
 
@@ -27993,6 +27871,36 @@ New Window( "Example",
 
 ```
 
+### SlInv
+
+**Syntaxe :** x = SlInv( z, gamma, delta, theta, &lt;sigma=1&gt; )
+
+**Description :** Transforme une variable normale standard en une variable SL de Johnson.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+SlInv( 1.96, 1.5, 2, 1 );
+
+```
+
+### SlTrans
+
+**Syntaxe :** z = SlTrans( x, gamma, delta, theta, &lt;sigma=1&gt; )
+
+**Description :** Transforme une variable SL de Johnson en une variable normale standard.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+Round( SlTrans( 2.259, 1.5, 2, 1 ), 2 );
+
+```
+
 ### Sobol Quasi Random Sequence
 
 **Syntaxe :** points = Sobol Quasi Random Sequence(nDim, nRow)
@@ -28012,7 +27920,7 @@ Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
 
 ### Socket
 
-**Syntaxe :** socketHandle = Socket( <STREAM | DGRAM> )
+**Syntaxe :** socketHandle = Socket( &lt;STREAM | DGRAM&gt; )
 
 **Description :** Crée une variable de socket qui peut communiquer avec les sockets de cet ordinateur ou d&apos;autres du réseau. L&apos;argument par défaut est STREAM. Essayez le site Internet de votre société.
 
@@ -28134,7 +28042,7 @@ ex;
 
 ### Spacer Box
 
-**Syntaxe :** y = Spacer Box( <Size( x, y )>, <Color( c )>)
+**Syntaxe :** y = Spacer Box( &lt;Size( x, y )&gt;, &lt;Color( c )&gt;)
 
 **Description :** Renvoie une boîte d’affichage utilisable pour maintenir un espace entre d’autres boîtes d’affichage ou pour remplir une cellule dans une Lineup Box. Les arguments Size sont exprimés en pixels et l’argument Color est une couleur quelconque admise par JSL.
 
@@ -28157,7 +28065,7 @@ New Window( "Example",
 
 ### Sparse SVD
 
-**Syntaxe :** {U, M, V} = Sparse SVD( X , <nSingularValues=min(nRow,nCol)>, <tolerance=1e-10>)
+**Syntaxe :** {U, M, V} = Sparse SVD( X , &lt;nSingularValues=min(nRow,nCol)&gt;, &lt;tolerance=1e-10&gt;)
 
 **Description :** Calcule la décomposition en valeurs singulières de la matrice X en utilisant la méthode de redémarrage implicite et de réorthogonalisation partielle de Lanczos, pour analyser les matrices en renvoyant une liste {U, M, V} de sorte que U*diag(M)*V` est égal à X.
 
@@ -28172,7 +28080,7 @@ Sparse SVD( [11 22, 33 44], 1, 1e-8 );
 
 ### Speak
 
-**Syntaxe :** Speak( text, <Wait( sync )> )
+**Syntaxe :** Speak( text, &lt;Wait( sync )&gt; )
 
 **Description :** Énonce le texte si le système d&apos;exploitation le permet. En spécifiant l’argument facultatif Wait(true), l&apos;exécution du script est retardée jusqu’à ce que le discours soit terminé.
 
@@ -28187,7 +28095,7 @@ Speak( "Hello" );
 
 ### Spin Box
 
-**Syntaxe :** y = Spin Box( <script> )
+**Syntaxe :** y = Spin Box( &lt;script&gt; )
 
 **Description :** Renvoie une boîte d&apos;affichage permettant d&apos;afficher un bouton avec les commandes monter/descendre. L&apos;argument script est invoqué avec un argument qui indique la direction de la flèche qui a été cliquée (moins correspond à descendre, plus correspond à monter). La valeur 1 indique un seul clic, alors que de plus grandes valeurs peuvent être utilisées pour indiquer une action répétitive.
 
@@ -28209,7 +28117,7 @@ nb << Set Increment( 1 );
 
 ### Spline Coef
 
-**Syntaxe :** coef = Spline Coef( x, y, lambda, <weights> )
+**Syntaxe :** coef = Spline Coef( x, y, lambda, &lt;weights&gt; )
 
 **Description :** Returns a five-column matrix of coefficients in the following order: knots||a||b||c||d for each of the unique values in x. The smoothing parameter lambda must be a positive value, where larger values of lambda result in greater stiffness of the spline. The optional weights vector specifies a weight for each value in x. A weight of zero removes the corresponding point from the spline fit.
 
@@ -28224,7 +28132,7 @@ Spline Eval( 0 :: 10, Spline Coef( 0 :: 10, Sqrt( 0 :: 10 ), 100 ) );
 
 ### Spline Eval
 
-**Syntaxe :** yhat = Spline Eval( x, coef, <extrapolation=-1> )
+**Syntaxe :** yhat = Spline Eval( x, coef, &lt;extrapolation=-1&gt; )
 
 **Description :** Évalue les prévisions des splines en utilisant la matrice coef sous la même forme que celle renvoyée par la fonction Spline Coef(). extrapolation indique le dépassement de l&apos;étendue de la spline, sous la forme d&apos;une fraction de l&apos;étendue, de sorte à pouvoir étendre l&apos;évaluation avant de renvoyer les valeurs manquantes.
 
@@ -28260,7 +28168,7 @@ New Window( "Spline Fit",
 
 ### Spline Smooth
 
-**Syntaxe :** yhat = Spline Smooth( x, y, lambda, <weights> )
+**Syntaxe :** yhat = Spline Smooth( x, y, lambda, &lt;weights&gt; )
 
 **Description :** Returns the smoothed predicted values from a spline fit. The smoothing parameter lambda must be a positive value, where larger values of lambda result in greater stiffness of the spline. The optional weights vector specifies a weight for each value in x. A weight of zero removes the corresponding point from the spline fit.
 
@@ -28318,6 +28226,21 @@ Logist( 2 );
 
 ```
 
+### SSQ
+
+**Syntaxe :** y = SSQ( x1, ... )
+
+**Description :** Renvoie la somme des carrés de tous les éléments
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+Eval List( {SSQ( Pi(), e() ), SSQ( [33 44 22 20 30] )} );
+
+```
+
 ### Starts With
 
 **Syntaxe :** b = Starts With( s, sub )
@@ -28365,9 +28288,7 @@ Eval List( {Std Dev( Pi(), e() ), Std Dev( [33 44 22 20 30] )} );
 
 ### Step
 
-**Syntaxe :** y = Step( x, x1, y1, x2, y2, ... )
-
-y = Step( x, [x1, x2, ...], [y1, y2, ...] )
+**Syntaxe :** y = Step( x, x1, y1, x2, y2, ... )y = Step( x, [x1, x2, ...], [y1, y2, ...] )
 
 **Description :** Renvoie l’argument yi correspondant à la valeur la plus grande de xi telle que xi est supérieur ou égal à l’argument x. Notez que les arguments xi doivent être indiqués dans l’ordre.
 
@@ -28460,7 +28381,7 @@ New Window( "Example",
 
 ### Students t Density
 
-**Syntaxe :** p = t Density( q, df, <nonCentrality=0> )
+**Syntaxe :** p = t Density( q, df, &lt;nonCentrality=0&gt; )
 
 **Description :** Renvoie la fonction de densité du t de Student.
 
@@ -28495,7 +28416,7 @@ New Window( "Example: Students t Density",
 
 ### Students t Distribution
 
-**Syntaxe :** p = t Distribution( q, df, <nonCentrality=0> )
+**Syntaxe :** p = t Distribution( q, df, &lt;nonCentrality=0&gt; )
 
 **Description :** Renvoie la probabilité qu&apos;une variable aléatoire distribuée selon Student est inférieure à q.
 
@@ -28524,7 +28445,7 @@ New Window( "Example: Students t Distribution",
 
 ### Students t Quantile
 
-**Syntaxe :** q = t Quantile( p, df, <nonCentrality=0> )
+**Syntaxe :** q = t Quantile( p, df, &lt;nonCentrality=0&gt; )
 
 **Description :** Renvoie le quantile d’une distribution t de Student, correspondant à la probabilité p qu’une variable aléatoire ayant cette distribution prenne une valeur inférieure au quantile.
 
@@ -28565,39 +28486,9 @@ New Window( "Example: Students t Quantile",
 
 ```
 
-### SuInv
-
-**Syntaxe :** x = SuInv( z, gamma, delta, theta, sigma )
-
-**Description :** Transforme une variable normale standard en une variable de Johnson non bornée.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-SuInv( 1.96, 1.5, 2, 1, 2 );
-
-```
-
-### SuTrans
-
-**Syntaxe :** z = SuTrans( x, gamma, delta, theta, sigma )
-
-**Description :** Transforme une variable de Johnson non bornée en une variable normale standard.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-Round( SuTrans( 1.46, 1.5, 2, 1, 2 ), 2 );
-
-```
-
 ### Subscribe to Data Table List
 
-**Syntaxe :** aSub = Subscribe to Data Table List( <subscriber name | "">, <OnOpen(fn) | OnClose(fn) | On Rename(fn)>)
+**Syntaxe :** aSub = Subscribe to Data Table List( &lt;subscriber name | ""&gt;, &lt;OnOpen(fn) | OnClose(fn) | On Rename(fn)&gt;)
 
 **Description :** S’inscrire à la liste des tables de données pour recevoir la notification lors de l’ajout ou de la suppression d’une table de données.
 
@@ -28665,9 +28556,7 @@ Names Default To Here( 1 );
 
 ### Substitute
 
-**Syntaxe :** y = Substitute( x, patternExpr1, replacementExpr1, ... )
-
-y = Substitute( x, patternString1, replacementString1, ..., < <<IGNORECASE > )
+**Syntaxe :** y = Substitute( x, patternExpr1, replacementExpr1, ... )y = Substitute( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
 
 **Description :** Renvoie une copie de la chaîne, de la liste ou de l&apos;expression x, en remplaçant les instances de chaque expression de configuration par l&apos;expression de remplacement correspondante. L&apos;argument facultatif <<IGNORECASE active la correspondance non sensible à la casse si x est une chaîne.
 
@@ -28734,9 +28623,7 @@ Substitute( "Apple,APPLE,apple", "apple", "orange", <<IGNORECASE );
 
 ### Substitute Into
 
-**Syntaxe :** Substitute Into( x, patternExpr1, replacementExpr1, ... )
-
-Substitute Into( x, patternString1, replacementString1, ..., < <<IGNORECASE > )
+**Syntaxe :** Substitute Into( x, patternExpr1, replacementExpr1, ... )Substitute Into( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
 
 **Description :** Modifie la chaîne, la liste ou l&apos;expression x, en remplaçant les instances de chaque expression de configuration par l&apos;expression de remplacement correspondante. Notez que l&apos;argument x doit être une variable. L&apos;argument facultatif <<IGNORECASE active la correspondance non sensible à la casse si x est une chaîne.
 
@@ -28788,7 +28675,7 @@ Show( s );
 
 ### Substr
 
-**Syntaxe :** sub = Substr( s, start, <count> )
+**Syntaxe :** sub = Substr( s, start, &lt;count&gt; )
 
 **Description :** Renvoie la partie de la chaîne s composée de count caractères en commençant par la position start. Un count négatif ou absent signifie le reste de la chaîne. Un start négatif signifie que les caractères de départ start sont considérés en partant de la fin. La fonction Substr() s’applique également aux listes.
 
@@ -28835,6 +28722,21 @@ ex;
 
 ```
 
+### SuInv
+
+**Syntaxe :** x = SuInv( z, gamma, delta, theta, sigma )
+
+**Description :** Transforme une variable normale standard en une variable de Johnson non bornée.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+SuInv( 1.96, 1.5, 2, 1, 2 );
+
+```
+
 ### Sum
 
 **Syntaxe :** y = Sum( x1, ... )
@@ -28867,7 +28769,7 @@ Sum Of Years Digits Depreciation( 1000, 100, 3, 2 );
 
 ### Summarize
 
-**Syntaxe :** Summarize( <dt>, nameBy=By( colBy ), name1=statName1( col1 ), ... )
+**Syntaxe :** Summarize( &lt;dt&gt;, nameBy=By( colBy ), name1=statName1( col1 ), ... )
 
 **Description :** Calcule différentes statistiques de résumé sur une colonne Par groupe. Les noms des statistiques sont Dénombrement, Somme, Moyenne, Max ou Maximum, Min ou Minimum, Écart-type, Corrélation, Quantile, Première. Les statistiques peuvent uniquement être calculées pour les colonnes numériques. Les résultats sont stockés sous forme de matrices dans des variables avec les noms spécifiés.
 
@@ -28915,7 +28817,7 @@ Summation( i = 0, 10, 1 / Factorial( i ) );
 
 ### Suppress Formula Eval
 
-**Syntaxe :** Suppress Formula Eval( <suppress=1> )
+**Syntaxe :** Suppress Formula Eval( &lt;suppress=1&gt; )
 
 **Description :** Supprime les évaluations de formules dans toutes les tables de données si l&apos;argument n&apos;est pas nul.
 
@@ -28928,9 +28830,54 @@ Suppress Formula Eval( 1 );
 
 ```
 
+### SuTrans
+
+**Syntaxe :** z = SuTrans( x, gamma, delta, theta, sigma )
+
+**Description :** Transforme une variable de Johnson non bornée en une variable normale standard.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+Round( SuTrans( 1.46, 1.5, 2, 1, 2 ), 2 );
+
+```
+
+### SVD
+
+**Syntaxe :** {U, M, V} = SVD( X )
+
+**Description :** Calcule la décomposition en valeurs singulières de la matrice X en retournant une liste {U, M, V} telle que U*diag(M)*V` est égal à X.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+SVD( [11 22, 33 44] );
+
+```
+
+### SVD LAPACK
+
+**Syntaxe :** {U, M, V} = SVD LAPACK( X )
+
+**Description :** Calcule la décomposition en valeurs singulières de la matrice X en retournant une liste {U, M, V} telle que U*diag(M)*V` est égal à X.
+
+**JMP Version ajoutée :** 17
+
+```jsl
+
+Names Default To Here( 1 );
+SVD LAPACK( [11 22, 33 44] );
+
+```
+
 ### Sweep
 
-**Syntaxe :** y = Sweep( A, <indices> )
+**Syntaxe :** y = Sweep( A, &lt;indices&gt; )
 
 **Description :** Renvoie le balayage de la matrice A sur les pivots de la diagonale indiqués par indices. Il s&apos;agit d&apos;une façon d&apos;inverser une matrice un pivot à la fois.
 
@@ -28965,6 +28912,227 @@ exMatM2 = Sym Matrix Mult BLAS( exMatA, exMatB );
 
 ```
 
+### t Density
+
+**Syntaxe :** p = t Density( q, df, &lt;nonCentrality=0&gt; )
+
+**Description :** Renvoie la fonction de densité du t de Student.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+tdedf = 1;
+New Window( "Example: Students t Density",
+	tdegr = Graph Box(
+		Y Scale( -.05, 0.45 ),
+		X Scale( -8, 8 ),
+		XName( "q" ),
+		Pen Color( "red" );
+		Y Function( t Density( tdeq, Exp( tdedf ) ), tdeq );
+		H Line( 2, 3, 0.3 );
+		Pen Color( "blue" );
+		Y Function( Normal Density( tdeq ), tdeq );
+		H Line( 2, 3, 0.25 );
+		Text( {2, 0.35}, "df=", Round( Exp( tdedf ), 2 ) );
+		Text( {3.5, 0.3}, "Student t" );
+		Text( {3.5, 0.25}, "Normal" );
+	),
+	H List Box(
+		Text Box( "df " ),
+		Slider Box( Log( 0.1 ), Log( 1000 ), tdedf, tdegr << reshow )
+	)
+);
+
+```
+
+### t Distribution
+
+**Syntaxe :** p = t Distribution( q, df, &lt;nonCentrality=0&gt; )
+
+**Description :** Renvoie la probabilité qu&apos;une variable aléatoire distribuée selon Student est inférieure à q.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+tdidf = 1;
+New Window( "Example: Students t Distribution",
+	tdigr = Graph Box(
+		Y Scale( 0, 1 ),
+		X Scale( -5, 5 ),
+		XName( "q" ),
+		Pen Color( "red" );
+		Y Function( t Distribution( tdiq, tdidf ), tdiq );
+		Text( {-4.5, 0.9}, "df=", Round( tdidf, 2 ) );
+	),
+	H List Box(
+		Text Box( "df " ),
+		Slider Box( 1, 10, tdidf, tdigr << reshow )
+	)
+);
+
+```
+
+### t Log CDistribution
+
+**Syntaxe :** y = t Log CDistribution( x, df, &lt;nc&gt; )
+
+**Description :** Renvoie le logarithme de la distribution 1-t.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+tlcdidf = 1;
+New Window( "Example: Students t Log CDistribution",
+	tlcdigr = Graph Box(
+		Y Scale( -4, 0.05 ),
+		X Scale( -5, 5 ),
+		XName( "q" ),
+		Pen Color( "red" );
+		Y Function( t Log CDistribution( tlcdiq, tlcdidf ), tlcdiq );
+		Text( {-4.5, -0.9}, "df=", Round( tlcdidf, 2 ) );
+	),
+	H List Box(
+		Text Box( "df " ),
+		Slider Box( 1, 10, tlcdidf, tlcdigr << reshow )
+	)
+);
+
+```
+
+### t Log Density
+
+**Syntaxe :** y = t Log Density( x, df, &lt;nc&gt; )
+
+**Description :** Renvoie le logarithme de la densité de probabilité t.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+tldedf = 1;
+New Window( "Example: Students t Log Density",
+	tldegr = Graph Box(
+		Y Scale( -4, 0.05 ),
+		X Scale( -5, 5 ),
+		XName( "q" ),
+		Pen Color( "red" );
+		Y Function( t Log Density( tldeq, tldedf ), tldeq );
+		Text( {2.5, -0.35}, "df=", Round( tldedf, 2 ) );
+	),
+	H List Box(
+		Text Box( "df " ),
+		Slider Box( 0.5, 10, tldedf, tldegr << reshow )
+	)
+);
+
+```
+
+### t Log Distribution
+
+**Syntaxe :** y = t Log Distribution( x, df, &lt;nc&gt; )
+
+**Description :** Renvoie le logarithme de la distribution t.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+tldidf = 1;
+New Window( "Example: Students t Log Distribution",
+	tldigr = Graph Box(
+		Y Scale( -4, 0.05 ),
+		X Scale( -5, 5 ),
+		XName( "q" ),
+		Pen Color( "red" );
+		Y Function( t Log Distribution( tldiq, tldidf ), tldiq );
+		Text( {-4.5, -0.9}, "df=", Round( tldidf, 2 ) );
+	),
+	H List Box(
+		Text Box( "df " ),
+		Slider Box( 1, 10, tldidf, tldigr << reshow )
+	)
+);
+
+```
+
+### t Noncentrality
+
+**Syntaxe :** nc = t Noncentrality( x, df, prob )
+
+**Description :** Résout le paramètre de non-centralité d’une distribution de Student, telle que prob = t Distribution( x, df, nc ).
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+New Window( "Example: t Noncentrality",
+	tncgr = Graph Box(
+		Y Scale( 0.01, 0.99 ),
+		X Scale( 0.01, 0.99 ),
+		XName( "q" ),
+		Pen Color( "red" );
+		Y Function(
+			t Distribution( 3, 2, t Noncentrality( 3, 2, q ) ),
+			q
+		);
+	)
+);
+t Distribution( 3, 2, t Noncentrality( 3, 2, 0.5 ) );
+
+```
+
+### t Quantile
+
+**Syntaxe :** q = t Quantile( p, df, &lt;nonCentrality=0&gt; )
+
+**Description :** Renvoie le quantile d’une distribution t de Student, correspondant à la probabilité p qu’une variable aléatoire ayant cette distribution prenne une valeur inférieure au quantile.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+extqdf = 1;
+extqqq = 0.5;
+New Window( "Example: Students t Quantile",
+	extqgr = Graph Box(
+		Y Scale( 0, 1.05 ),
+		X Scale( -5, 5 ),
+		XName( "q" ),
+		Pen Color( "red" );
+		Y Function( t Distribution( q, Round( extqdf ) ), q );
+		Pen Color( "blue" );
+		V Line( t Quantile( extqqq, Round( extqdf ) ), 0, 1 );
+		Text(
+			{-4.5, 0.9},
+			"df=",
+			Round( extqdf, 2 ),
+			" quantile=",
+			Round( extqqq, 2 )
+		);
+	),
+	H List Box(
+		Slider Box( 1, 30, extqdf, extqgr << reshow ),
+		Text Box( " df" )
+	),
+	H List Box(
+		Slider Box( 0.01, 0.99, extqqq, extqgr << reshow ),
+		Text Box( " quantile" )
+	), 
+
+);
+
+```
+
 ### Tab Box
 
 **Syntaxe :** y = Tab Box( Tab Page Box(...), TabPageBox(...), ... )
@@ -28989,7 +29157,7 @@ New Window( "Example",
 
 ### Tab Page Box
 
-**Syntaxe :** y = Tab Page Box( <Title("string")>, <Tip(0|1)>,  <Closeable(0|1)>, <Icon("string")>, <Moveable(0|1)>, contents)
+**Syntaxe :** y = Tab Page Box( &lt;Title("string")&gt;, &lt;Tip(0|1)&gt;, &lt;Closeable(0|1)&gt;, &lt;Icon("string")&gt;, &lt;Moveable(0|1)&gt;, contents)
 
 **Description :** Renvoie une boîte d&apos;affichage qui peut être utilisée dans une Tab Box ou comme conteneur autonome avec un titre. Les options reconnues incluent Title(chaîne) pour spécifier un titre, Tip(chaîne) pour spécifier une info-bulle, Closeable(0|1) pour spécifier si la page peut être fermée, Icon(chaîne) pour spécifier l&apos;icône, et Moveable(0|1) pour spécifier si la page peut être déplacée.
 
@@ -29051,21 +29219,6 @@ Tangent( Pi() / 4 );
 
 ```
 
-### TanH
-
-**Syntaxe :** y = TanH( x )
-
-**Description :** Renvoie la tangente hyperbolique de x.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-TanH( 1 );
-
-```
-
 ### Tangent
 
 **Syntaxe :** y = Tangent( x )
@@ -29081,6 +29234,21 @@ Tangent( Pi() / 4 );
 
 ```
 
+### TanH
+
+**Syntaxe :** y = TanH( x )
+
+**Description :** Renvoie la tangente hyperbolique de x.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+TanH( 1 );
+
+```
+
 ### Test Promise Error After
 
 **JMP Version ajoutée :** 17
@@ -29091,9 +29259,7 @@ Tangent( Pi() / 4 );
 
 ### Text
 
-**Syntaxe :** Text( <properties>, {x, y}, text, ... )
-
-Text( {left, top, right, bottom}, text )
+**Syntaxe :** Text( &lt;properties&gt;, {x, y}, text, ... )Text( {left, top, right, bottom}, text )
 
 **Description :** Se déplace vers la position {x, y} et écrit le texte spécifié par l&apos;argument text. Les arguments de propriété nommés sont : Center Justified, Right Justified, Erased, Boxed, Counterclockwise, Clockwise. Les arguments de position, les arguments nommés et les chaînes peuvent être mélangés dans un ordre quelconque. Vous pouvez aussi utiliser quatre coordonnées x, y pour décrire un boîte dans laquelle écrire le texte. Dans ce cas, les propriétés ne sont pas utilisées.
 
@@ -29129,7 +29295,7 @@ New Window( "Example",
 
 ### Text Box
 
-**Syntaxe :** y = Text Box( text, <<Justify Text( strPos ), <<Set Wrap( width ) )
+**Syntaxe :** y = Text Box( text, &lt;&lt;Justify Text( strPos ), &lt;&lt;Set Wrap( width ) )
 
 **Description :** Construit une boîte d&apos;affichage contenant le texte de la chaîne text. Les arguments facultatifs permettent de gérer la justification du texte ou de définir la largeur du retour chariot du texte. L’argument Justify Text doit être une chaîne contenant left, right ou center.
 
@@ -29171,7 +29337,7 @@ New Window( "Justification Example",
 
 ### Text Color
 
-**Syntaxe :** Text Color( <name|index|rgbList> )
+**Syntaxe :** Text Color( &lt;name|index|rgbList&gt; )
 
 **Description :** Définit la couleur pour le dessin du texte.
 
@@ -29191,7 +29357,7 @@ New Window( "Example",
 
 ### Text Edit Box
 
-**Syntaxe :** y = Text Edit Box( text, <<Password Style( bool ), <<Set Script( script ), <<Set Width( value ) )
+**Syntaxe :** y = Text Edit Box( text, &lt;&lt;Password Style( bool ), &lt;&lt;Set Script( script ), &lt;&lt;Set Width( value ) )
 
 **Description :** Construit une boîte éditable qui contient le texte de la chaîne entre guillemets text, en retournant la référence de boîte d&apos;affichage. Les arguments facultatifs sont disponibles pour contrôler l&apos;affichage du texte, joindre un script à la boîte de texte et définir la largeur en pixels de la boîte de texte. En spécifiant Set Width(-1), vous forcez un redimensionnement du contenu. Notez qu’un script peut être joint à la boîte de texte en l’ajoutant en tant qu’argument facultatif ou en envoyant le message Set Script.
 
@@ -29231,7 +29397,7 @@ New Window( "Example: Text Edit Box",
 
 ### Text Font
 
-**Syntaxe :** {nm, sz, st, an} = Text Font(fontName, <size>, <"bold italic underline strikeout">, <angle>
+**Syntaxe :** {nm, sz, st, an} = Text Font(fontName, &lt;size&gt;, &lt;"bold italic underline strikeout"&gt;, &lt;angle&gt;
 
 **Description :** Définit la police pour le dessin Text() consécutif. N&apos;utiliser aucun argument pour obtenir les paramètres de police actuels. L&apos;angle est défini en degrés, dans le sens des aiguilles d&apos;une montre.
 
@@ -29277,7 +29443,7 @@ New Window( "Degrees",
 
 ### Text Score
 
-**Syntaxe :** score vector = Text Score( text column, text-to-number, <weighting>, <{<center>, <scale>, scoring matrix}>);
+**Syntaxe :** score vector = Text Score( text column, text-to-number, &lt;weighting&gt;, &lt;{&lt;center&gt;, &lt;scale&gt;, scoring matrix}&gt;);
 
 **Description :** Utilisé pour créer des formules de calcul du score dans l&apos;explorateur de texte. L&apos;argument text-to-number est un tableau associatif représentant les mots en minuscules par rapport aux nombres. L&apos;argument de pondération est "Binary", "Ternary", "Count", "LogCount", "LCA" ou un tableau des pondérations de la fréquence inverse de document pour TFLogIDF. La matrice de scores doit avoir le même nombre de colonnes que les mots du tableau associatif, ou une de plus si LCA. La sortie est un vecteur de scores. Si aucune matrice de scores n&apos;est spécifiée, un vecteur de scores de dénombrement est renvoyé. Si aucune pondération n&apos;est spécifiée, le dénombrement est utilisé. Cette fonction ne prend pas en charge l&apos;option Indexer par radicaux pour combiner.
 
@@ -29352,7 +29518,7 @@ If(
 
 ### Throw
 
-**Syntaxe :** Throw(<message>, <Boolean>)
+**Syntaxe :** Throw(&lt;message&gt;, &lt;Boolean&gt;)
 
 **Description :** Dévie l&apos;exécution vers le Try() englobant. Sinon, l&apos;exécution du script est arrêtée. Si message commence par un point d&apos;exclamation, l&apos;erreur est fatale et ne peut pas être interceptée par Try(). Le deuxième argument est un booléen facultatif pour inclure un retraçage.
 
@@ -29508,7 +29674,7 @@ Trace( [11 22, 33 44] );
 
 ### Transform Each
 
-**Syntaxe :** list = Transform Each({<value>, <index>} | {<element>, <index | {row, col}>} | {<key | {key, value}>, <index>} | {<values | {value1, ..., valueN}>, <index>}, list | matrix | associative array | expression | Across( container1, ..., <containerN>, <Count( "Longest" | "Shortest" | "Enforce Equal" | n )> ), <Output( "List" | "Matrix" | "Associative Array" | "Expression", <expr head name> )>, <locals list>, body)
+**Syntaxe :** list = Transform Each({&lt;value&gt;, &lt;index&gt;} | {&lt;element&gt;, &lt;index | {row, col}&gt;} | {&lt;key | {key, value}&gt;, &lt;index&gt;} | {&lt;values | {value1, ..., valueN}&gt;, &lt;index&gt;}, list | matrix | associative array | expression | Across( container1, ..., &lt;containerN&gt;, &lt;Count( "Longest" | "Shortest" | "Enforce Equal" | n )&gt; ), &lt;Output( "List" | "Matrix" | "Associative Array" | "Expression", &lt;expr head name&gt; )&gt;, &lt;locals list&gt;, body)
 
 **Description :** Identique à la fonction For Each, mais renvoie également un conteneur du résultat à chaque itération. Par défaut, renvoie un conteneur correspondant au type du conteneur d&apos;entrée, ce qui peut être changé avec l&apos;argument Output. Pour la sortie de liste ou d&apos;expression, Empty() sera utilisé lorsqu&apos;aucun résultat n&apos;est renvoyé. Pour la sortie de matrice, une valeur numérique manquante est utilisée lorsqu&apos;aucun résultat n&apos;est renvoyé, ou si le résultat n&apos;est pas numérique. Pour la sortie de tableau associatif, il n&apos;y aura pas de clé lorsqu&apos;aucun résultat n&apos;est renvoyé. Si Continue() est utilisé, cela revient à ne renvoyer aucune valeur pour cette itération.
 
@@ -29620,7 +29786,7 @@ Show( ex );
 
 ### Transparency
 
-**Syntaxe :** Transparency( <alpha> )
+**Syntaxe :** Transparency( &lt;alpha&gt; )
 
 **Description :** Définit la transparence utilisée dans les commandes de dessin. Alpha s&apos;étend de 0 (transparent) à 1 (opaque, valeur par défaut). Certains systèmes d&apos;exploitation ne le prennent pas en charge.
 
@@ -29661,7 +29827,7 @@ Show( Transpose( [11 22, 33 44] ), [11 22, 33 44]` );
 
 ### Tree Box
 
-**Syntaxe :** tree = Tree Box( <{rootnodes}>, <Size( x, y )>, <Multiselect( 0|1 )> )
+**Syntaxe :** tree = Tree Box( &lt;{rootnodes}&gt;, &lt;Size( x, y )&gt;, &lt;Multiselect( 0|1 )&gt; )
 
 **Description :** Construit une boîte d’affichage pour afficher les informations hiérarchiques.
 
@@ -29691,7 +29857,7 @@ New Window( "TreeBox",
 
 ### Tree Node
 
-**Syntaxe :** node = Tree Node( <label> )
+**Syntaxe :** node = Tree Node( &lt;label&gt; )
 
 **Description :** Construit un nœud d’arborescence destiné à l’affichage dans une boîte d’arborescence.
 
@@ -29721,7 +29887,7 @@ New Window( "TreeBox Nodes",
 
 ### Triangulation
 
-**Syntaxe :** triangulation = Triangulation( X(Column1, Column2), < Y(Column) > )
+**Syntaxe :** triangulation = Triangulation( X(Column1, Column2), &lt; Y(Column) &gt; )
 
 **Description :** Renvoie un objet contenant la triangulation de Delaunay de l&apos;ensemble de points donné. La moyenne de la valeur de Y (en option) est calculée pour les points dupliqués, et tous les points de la sortie sont uniques.
 
@@ -29763,7 +29929,7 @@ Trigamma( 5 );
 
 ### Trim
 
-**Syntaxe :** sub = Trim( s, <left|right|both> )
+**Syntaxe :** sub = Trim( s, &lt;left|right|both&gt; )
 
 **Description :** Renvoie une copie de la chaîne s en supprimant les espaces au début et à la fin. Le deuxième argument indique si la suppression concerne les espaces au début ou à la fin de la chaîne. Si vous ne spécifiez pas le deuxième argument, les espaces sont éliminés au début et à la fin.
 
@@ -29778,7 +29944,7 @@ Trim( " title   ", both );
 
 ### Trim Whitespace
 
-**Syntaxe :** sub = Trim Whitespace( s, <left|right|both> )
+**Syntaxe :** sub = Trim Whitespace( s, &lt;left|right|both&gt; )
 
 **Description :** Renvoie une copie de la chaîne s en supprimant les espaces au début et à la fin. Le deuxième argument indique si la suppression concerne les espaces au début ou à la fin de la chaîne. Si vous ne spécifiez pas le deuxième argument, les espaces sont éliminés au début et à la fin.
 
@@ -29793,7 +29959,7 @@ Trim Whitespace( "  The  dog    crossed    the  road  " );
 
 ### TripleS Import
 
-**Syntaxe :** TripleSImport( <path to xml file> )
+**Syntaxe :** TripleSImport( &lt;path to xml file&gt; )
 
 **Description :** Ouvre les fichiers Triple-S. Le format Triple-S contient un fichier xml ou sss et un fichier csv ou un fichier dat/asc. Les deux fichiers doivent porter le même nom, l&apos;extension appropriée, et doivent se trouver dans le même répertoire. Spécifier le chemin d&apos;accès xml ou sss pour importer les données.
 
@@ -29809,7 +29975,7 @@ TripleS Import( "c:/MyFile.xml" ); //To open the Triple-S MyFile
 
 ### Try
 
-**Syntaxe :** y = Try( expr, <catchExpr> )
+**Syntaxe :** y = Try( expr, &lt;catchExpr&gt; )
 
 **Description :** Évalue et renvoie l&apos;argument expr, à moins que l&apos;évaluation ne provoque un Throw() ou une exception interne. Dans ce cas l&apos;évaluation de catchExpr est renvoyée. Si vous utilisez exception_msg en tant que catchExpr, une liste est renvoyée indiquant des informations supplémentaires sur l&apos;erreur.
 
@@ -30006,7 +30172,7 @@ Unregister Addin( "com.mycompany.myaddin" );
 
 ### Unsubscribe to Data Table List
 
-**Syntaxe :** aSub = Unsubscribe to Data Table List(<subscriber name>, <"OnOpen" | "OnClose" | "OnRename" | "ALL">)
+**Syntaxe :** aSub = Unsubscribe to Data Table List(&lt;subscriber name&gt;, &lt;"OnOpen" | "OnClose" | "OnRename" | "ALL"&gt;)
 
 **Description :** Supprimer une inscription à la liste des tables de données si ajoutée à l’aide de la commande "s’inscrire à la liste des tables de données".
 
@@ -30081,7 +30247,7 @@ Uppercase( "Café #23" );
 
 ### V Center Box
 
-**Syntaxe :** y = V Center Box( <childbox> )
+**Syntaxe :** y = V Center Box( &lt;childbox&gt; )
 
 **Description :** Renvoie une boîte d&apos;affichage contenant l&apos;argument boîte d&apos;affichage childbox centré sur l&apos;espace vertical défini par la taille maximale de cette boîte enfant et de toutes les boîtes sœurs de la boîte centrale.
 
@@ -30165,7 +30331,7 @@ New Window( "Example",
 
 ### V List Box
 
-**Syntaxe :** y = V List Box( <Align( center|right )>, displayBox, ... )
+**Syntaxe :** y = V List Box( &lt;Align( center|right )&gt;, displayBox, ... )
 
 **Description :** Renvoie une boîte d&apos;affichage qui réorganise les boîtes d&apos;affichage fournies par les arguments dans une mise en page verticale. Le message <<Hold demande à la feuille de conserver le(s) rapport(s) qui seront extraits. L’argument optionnel Align permet d’aligner à right ou au center le contenu de la boîte d’affichage.
 
@@ -30262,7 +30428,7 @@ V Quantile( [11 22, 33 44, 35 46, 55 66], .25 );
 
 ### V Robust Standardize
 
-**Syntaxe :** b = V Robust Standardize( X, <center=1>, <scale=1> )
+**Syntaxe :** b = V Robust Standardize( X, &lt;center=1&gt;, &lt;scale=1&gt; )
 
 **Description :** Renvoie une matrice centrée par la médiane et réduite par une estimation robuste de l&apos;écart-type de la matrice X. Les arguments booléens facultatifs spécifient si le centrage et la réduction sont effectués.
 
@@ -30277,7 +30443,7 @@ V Robust Standardize( J( 150, 4, Random Normal() ), 1, 1 );
 
 ### V Scroll Box
 
-**Syntaxe :** y = V Scroll Box( <Size( y )>, displayBox )
+**Syntaxe :** y = V Scroll Box( &lt;Size( y )&gt;, displayBox )
 
 **Description :** Renvoie une boîte d’affichage qui positionne une boîte enfant plus grande avec une barre de défilement verticale.
 
@@ -30329,7 +30495,7 @@ New Window( "Example",
 
 ### V Sheet Box
 
-**Syntaxe :** y = V Sheet Box( <<Hold( rpt ), displayBox, ... )
+**Syntaxe :** y = V Sheet Box( &lt;&lt;Hold( rpt ), displayBox, ... )
 
 **Description :** Renvoie une boîte d&apos;affichage qui réorganise les boîtes d&apos;affichage fournies par les arguments dans une mise en page verticale. Le message <<Hold demande à la feuille de conserver le(s) rapport(s) qui seront extraits. L’argument optionnel Align permet d’aligner à right ou au center le contenu de la boîte d’affichage.
 
@@ -30408,7 +30574,7 @@ New Window( "Example",
 
 ### V Splitter Box
 
-**Syntaxe :** y = V Splitter Box( <Size(x,y)>, displayBox, ... )
+**Syntaxe :** y = V Splitter Box( &lt;Size(x,y)&gt;, displayBox, ... )
 
 **Description :** Renvoie une boîte d&apos;affichage qui permet d&apos;organiser d&apos;autres boîtes d&apos;affichage verticalement, avec un contrôle interactif des tailles. Les tailles enfant sont spécifiées sous la forme d&apos;une proportion de la largeur ou de la hauteur de la Splitter Box. L&apos;argument facultatif Size n&apos;est utilisé que pour la Splitter Box de premier niveau ; les boîtes de niveau inférieur sont dimensionnées comme toute autre boîte enfant.
 
@@ -30489,26 +30655,9 @@ V Sum( [11 22, 33 44, 55 66] );
 
 ```
 
-### VPTree
-
-**Syntaxe :** tab = VPTree( [ matrix ] )
-
-**Description :** Renvoie une table de données permettant de chercher efficacement les proches voisins. Les arguments de la matrice sont des points d’un espace k-dimensionnel. Il n&apos;existe aucune limite au nombre de dimensions ou de points.
-
-**JMP Version ajoutée :** 16
-
-```jsl
-
-Names Default To Here( 1 );
-tab = VPTree( [1 1 1, 1 2 1, 1 2 2, 2 2 2, 3 3 3, 4 5 6] );
-{rows, dist} = tab << K nearest rows( 2, [1.1 .9 1] );
-"2 nearest rows to [1.1 .9 1] are " || Char( rows );
-
-```
-
 ### Varimax
 
-**Syntaxe :** {R,T} = Varimax( F, <norm=1> )
+**Syntaxe :** {R,T} = Varimax( F, &lt;norm=1&gt; )
 
 **Description :** Effectue une rotation Varimax de la matrice F spécifiée. Renvoie une liste qui contient la matrice pivotée et la matrice de rotation orthogonale. Par défaut, une rotation Varimax normalisée est effectuée. Spécifier norm = 0 pour effectuer une rotation Varimax non normalisée.
 
@@ -30553,9 +30702,26 @@ Vec Quadratic( exS, exX );
 
 ```
 
+### VPTree
+
+**Syntaxe :** tab = VPTree( [ matrix ] )
+
+**Description :** Renvoie une table de données permettant de chercher efficacement les proches voisins. Les arguments de la matrice sont des points d’un espace k-dimensionnel. Il n&apos;existe aucune limite au nombre de dimensions ou de points.
+
+**JMP Version ajoutée :** 16
+
+```jsl
+
+Names Default To Here( 1 );
+tab = VPTree( [1 1 1, 1 2 1, 1 2 2, 2 2 2, 3 3 3, 4 5 6] );
+{rows, dist} = tab << K nearest rows( 2, [1.1 .9 1] );
+"2 nearest rows to [1.1 .9 1] are " || Char( rows );
+
+```
+
 ### Wait
 
-**Syntaxe :** Wait( <x> )
+**Syntaxe :** Wait( &lt;x&gt; )
 
 **Description :** Attend x secondes avant de continuer l&apos;exécution. La valeur par défaut de x est 3 secondes. Si x est supérieur ou égal à 0, JMP terminera les événements du système d&apos;exploitation (par ex. dessiner à l&apos;écran) ainsi que les rappels en attente éventuels (par ex. l&apos;évaluation d&apos;une formule) en plus de l&apos;attente. Si x est inférieur à 0, seul le dessin à l&apos;écran et les événements en attente de l’OS sont confirmés comme terminés avant de continuer.
 
@@ -30614,7 +30780,7 @@ w << close Window();
 
 ### Wavelet Basis Coef
 
-**Syntaxe :** y = Wavelet Basis Coef( x, grid, coef, <wavelet = "Haar" or "Biorthogonal" or "Coiflet" or "Daubechies" or "Symlet">, <param = 0> )
+**Syntaxe :** y = Wavelet Basis Coef( x, grid, coef, &lt;wavelet = "Haar" or "Biorthogonal" or "Coiflet" or "Daubechies" or "Symlet"&gt;, &lt;param = 0&gt; )
 
 **Description :** Renvoie la prévision aux points x pour le modèle Ondelettes spécifié. Le paramètre grid est un vecteur qui spécifie la grille de données pour le modèle Ondelettes. Le paramètre coef est un vecteur des coefficients d&apos;ondelette. Le paramètre wavelet est le nom du modèle Ondelettes. Le paramètre param facultatif est le paramètre du modèle Ondelettes (si nécessaire, 0 par défaut).
 
@@ -30629,7 +30795,7 @@ Wavelet Basis Coef( 2.5, [1, 2, 3, 4], [0, 1, 2, 3], "Haar" );
 
 ### Web
 
-**Syntaxe :** Web( string, <JMP Window> )
+**Syntaxe :** Web( string, &lt;JMP Window&gt; )
 
 **Description :** Ouvre l&apos;URL ou un fichier stocké dans string dans le navigateur web par défaut. Le deuxième argument facultatif permet de spécifier qu’un fichier HTML s’ouvre dans une fenêtre du navigateur JMP.
 
@@ -30695,7 +30861,7 @@ wb << Set Max Size( 10000, 10000 );
 
 ### Week Of Year
 
-**Syntaxe :** d = Week Of Year( datetime, <rule=1> )
+**Syntaxe :** d = Week Of Year( datetime, &lt;rule=1&gt; )
 
 **Description :** Renvoie la semaine de l&apos;année d&apos;une valeur de la date-heure en utilisant l&apos;une des trois règles. Par défaut (règle 1), les semaines commencent le dimanche et le premier dimanche de l&apos;année se trouve dans la semaine no. 2. La semaine 1 est une semaine partielle ou vide (comme en 2006). La règle 2 établit que le premier dimanche se trouve dans la semaine 1, les jours précédents se trouvant dans la semaine 0. La règle 3 renvoie le numéro ISO de la semaine, selon lequel les semaines commencent le lundi et la semaine 1 est la première semaine de l&apos;année avec quatre jours dans cette année là. Avec les semaines ISO, il est possible que les premiers ou les derniers jours de l&apos;année appartiennent à une semaine de deux années voisines.
 
@@ -30725,7 +30891,7 @@ Show(
 
 ### Weibull Density
 
-**Syntaxe :** y = Weibull Density( x, shape, <scale=1>, <threshold=0> )
+**Syntaxe :** y = Weibull Density( x, shape, &lt;scale=1&gt;, &lt;threshold=0&gt; )
 
 **Description :** Renvoie la densité à x d’une distribution de probabilité de Weibull avec un paramètre shape et un paramètre scale facultatif.
 
@@ -30754,7 +30920,7 @@ New Window( "Example: Weibull Density",
 
 ### Weibull Distribution
 
-**Syntaxe :** p = Weibull Distribution( x, shape, <scale=1>, <threshold=0> )
+**Syntaxe :** p = Weibull Distribution( x, shape, &lt;scale=1&gt;, &lt;threshold=0&gt; )
 
 **Description :** Renvoie la probabilité qu&apos;une variable aléatoire distribuée selon Weibull (avec un paramètre shape et le paramètre facultatif scale) soit inférieure à x.
 
@@ -30783,7 +30949,7 @@ New Window( "Example: Weibull Distribution",
 
 ### Weibull Quantile
 
-**Syntaxe :** q = Weibull Quantile( p, beta, <alpha=1>, <threshold=0> )
+**Syntaxe :** q = Weibull Quantile( p, beta, &lt;alpha=1&gt;, &lt;threshold=0&gt; )
 
 **Description :** Renvoie le quantile d’une distribution de Weibull, correspondant à la probabilité p qu’une variable aléatoire ayant cette distribution prenne une valeur inférieure au quantile, où beta et alpha sont les paramètres de forme et d’échelle, respectivement.
 
@@ -30825,7 +30991,7 @@ New Window( "Example: Weibull Quantile",
 
 ### Where
 
-**Syntaxe :** Where( <dt>, clause )
+**Syntaxe :** Where( &lt;dt&gt;, clause )
 
 **Description :** Renvoie les indices (généralement des numéros de ligne) correspondant à la clause Where donnée. Le dt facultatif modifie le Current Data Table lors de l&apos;évaluation. Ces clauses sont souvent écrites par JMP avec le filtre de données. Ce sera souvent plus rapide que d&apos;utiliser Loc, <<Get Rows Where ou <<Select Where. Le comportement est indéfini si la clause modifie les séquences ou des symboles lors de l&apos;évaluation.
 
@@ -30964,7 +31130,7 @@ Extract Expr(
 
 ### Window
 
-**Syntaxe :** y = Window( <string|int> )
+**Syntaxe :** y = Window( &lt;string|int&gt; )
 
 **Description :** Cette fonction est obsolète et conservée uniquement pour la rétrocompatibilité avec les scripts existants. Pour les nouveaux scripts, utilisez Get Window() ou Get Window List().
 
@@ -30979,7 +31145,7 @@ Window( "Big Class" );
 
 ### With Clipboard
 
-**Syntaxe :** two = With Clipboard( clp, box << Paste; 1 + 1 )
+**Syntaxe :** two = With Clipboard( clp, box &lt;&lt; Paste; 1 + 1 )
 
 **Description :** If the JSL within this function would have normally pasted something from the OS Clipboard, it is instead pasted from the provided Clipboard object.
 
@@ -31024,7 +31190,7 @@ With Window Handler(
 
 ### Word
 
-**Syntaxe :** w = Word( n|[first last], s, <delim>, <Unmatched(result string)>
+**Syntaxe :** w = Word( n|[first last], s, &lt;delim&gt;, &lt;Unmatched(result string)&gt;
 
 **Description :** Renvoie le n-ième mot de la chaîne s, où les mots sont des sous-chaînes séparées par un ou plusieurs des caractères indiqués dans l&apos;argument delim. Si delim est absent, le caractère utilisé sera l&apos;espace. Si delim est la chaîne vide, tous les caractères sont traités comme un mot.
 
@@ -31081,7 +31247,7 @@ Word( 2, "abcd", "" );
 
 ### Words
 
-**Syntaxe :** wl = Words( <[first last]>, s, <delim>)
+**Syntaxe :** wl = Words( &lt;[first last]&gt;, s, &lt;delim&gt;)
 
 **Description :** Renvoie une liste des sous-chaînes séparées par un quelconque des caractères spécifiés dans l&apos;argument delim. Si delim est absent, le caractère utilisé sera l&apos;espace. Si delim est la chaîne vide, tous les caractères sont traités comme un mot.
 
@@ -31155,7 +31321,7 @@ Write( "fraction = ", 355 / 113, "\!N", "pi       = ", Pi() );
 
 ### X Function
 
-**Syntaxe :** X Function( xExpr, yName, <properties> )
+**Syntaxe :** X Function( xExpr, yName, &lt;properties&gt; )
 
 **Description :** Dessine la fonction xExpr dans la dimension X alors que yName varie sur l&apos;étendue de l&apos;axe Y du graphique. Arguments de propriété nommés supplémentaires : Min(X inférieur), Max(X supérieur), Fill(configuration, valeur à remplir), Inc(limite supérieure de l’incrément).
 
@@ -31227,7 +31393,7 @@ New Window( "Example",
 
 ### X Scale
 
-**Syntaxe :** X Scale( <xMin>, <xMax> )
+**Syntaxe :** X Scale( &lt;xMin&gt;, &lt;xMax&gt; )
 
 **Description :** Définit une nouvelle échelle pour le cadre des graphiques.
 
@@ -31393,7 +31559,7 @@ New Window( "Spiral",
 
 ### Y Function
 
-**Syntaxe :** Y Function( yExpr, xName, <properties> )
+**Syntaxe :** Y Function( yExpr, xName, &lt;properties&gt; )
 
 **Description :** Dessine la fonction yExpr dans la dimension Y alors que xName varie sur l&apos;étendue de l&apos;axe X du graphique. Arguments de propriété nommés supplémentaires : Min(X inférieur), Max(X supérieur), Fill(configuration, valeur à remplir), Inc(limite supérieure de l’incrément).
 
@@ -31465,7 +31631,7 @@ New Window( "Example",
 
 ### Y Scale
 
-**Syntaxe :** Y Scale( <yMin>, <yMax> )
+**Syntaxe :** Y Scale( &lt;yMin&gt;, &lt;yMax&gt; )
 
 **Description :** Définit une nouvelle échelle pour le cadre des graphiques.
 
@@ -31503,6 +31669,21 @@ New Window( "Example",
 
 Names Default To Here( 1 );
 Year( Today() );
+
+```
+
+### Zero Or Missing
+
+**Syntaxe :** y = Zero Or Missing( x )
+
+**Description :** Renvoie le NOT logique de x en considérant les valeurs manquantes comme des zéro : 1 x est manquant ou nul et 0 dans le cas contraire.
+
+**JMP Version ajoutée :** Avant la version 14
+
+```jsl
+
+Names Default To Here( 1 );
+Zero Or Missing( 1 < 2 );
 
 ```
 
@@ -31876,279 +32057,6 @@ New Window( "Example: ZI Poisson Quantile",
 		Slider Box( 0, 1, qexpq, qexpy << reshow ),
 		Text Box( " q" )
 	)
-);
-
-```
-
-### Zero Or Missing
-
-**Syntaxe :** y = Zero Or Missing( x )
-
-**Description :** Renvoie le NOT logique de x en considérant les valeurs manquantes comme des zéro : 1 x est manquant ou nul et 0 dans le cas contraire.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-Zero Or Missing( 1 < 2 );
-
-```
-
-### \[...]\
-
-**Syntaxe :** y = \[string]\
-
-**Description :** Les passages requérant de nombreux caractères d&apos;échappement peuvent utiliser le séparateur \[...]\.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-
-jslPhrase =
-"The JSL to do this is :\[
-a = "hello";
-b = a|| " world.";
-show(b);
-]\ and you use the Submit command to run it.";
-Show( jslPhrase );
-
-```
-
-### e
-
-**Syntaxe :** y = e()
-
-**Description :** Renvoie la constante mathématique e, avec une précision d&apos;environ 15 chiffres après la virgule : 2.7182818....
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-Round( e(), 10 );
-
-```
-
-### t Density
-
-**Syntaxe :** p = t Density( q, df, <nonCentrality=0> )
-
-**Description :** Renvoie la fonction de densité du t de Student.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-tdedf = 1;
-New Window( "Example: Students t Density",
-	tdegr = Graph Box(
-		Y Scale( -.05, 0.45 ),
-		X Scale( -8, 8 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function( t Density( tdeq, Exp( tdedf ) ), tdeq );
-		H Line( 2, 3, 0.3 );
-		Pen Color( "blue" );
-		Y Function( Normal Density( tdeq ), tdeq );
-		H Line( 2, 3, 0.25 );
-		Text( {2, 0.35}, "df=", Round( Exp( tdedf ), 2 ) );
-		Text( {3.5, 0.3}, "Student t" );
-		Text( {3.5, 0.25}, "Normal" );
-	),
-	H List Box(
-		Text Box( "df " ),
-		Slider Box( Log( 0.1 ), Log( 1000 ), tdedf, tdegr << reshow )
-	)
-);
-
-```
-
-### t Distribution
-
-**Syntaxe :** p = t Distribution( q, df, <nonCentrality=0> )
-
-**Description :** Renvoie la probabilité qu&apos;une variable aléatoire distribuée selon Student est inférieure à q.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-tdidf = 1;
-New Window( "Example: Students t Distribution",
-	tdigr = Graph Box(
-		Y Scale( 0, 1 ),
-		X Scale( -5, 5 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function( t Distribution( tdiq, tdidf ), tdiq );
-		Text( {-4.5, 0.9}, "df=", Round( tdidf, 2 ) );
-	),
-	H List Box(
-		Text Box( "df " ),
-		Slider Box( 1, 10, tdidf, tdigr << reshow )
-	)
-);
-
-```
-
-### t Log CDistribution
-
-**Syntaxe :** y = t Log CDistribution( x, df, <nc> )
-
-**Description :** Renvoie le logarithme de la distribution 1-t.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-tlcdidf = 1;
-New Window( "Example: Students t Log CDistribution",
-	tlcdigr = Graph Box(
-		Y Scale( -4, 0.05 ),
-		X Scale( -5, 5 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function( t Log CDistribution( tlcdiq, tlcdidf ), tlcdiq );
-		Text( {-4.5, -0.9}, "df=", Round( tlcdidf, 2 ) );
-	),
-	H List Box(
-		Text Box( "df " ),
-		Slider Box( 1, 10, tlcdidf, tlcdigr << reshow )
-	)
-);
-
-```
-
-### t Log Density
-
-**Syntaxe :** y = t Log Density( x, df, <nc> )
-
-**Description :** Renvoie le logarithme de la densité de probabilité t.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-tldedf = 1;
-New Window( "Example: Students t Log Density",
-	tldegr = Graph Box(
-		Y Scale( -4, 0.05 ),
-		X Scale( -5, 5 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function( t Log Density( tldeq, tldedf ), tldeq );
-		Text( {2.5, -0.35}, "df=", Round( tldedf, 2 ) );
-	),
-	H List Box(
-		Text Box( "df " ),
-		Slider Box( 0.5, 10, tldedf, tldegr << reshow )
-	)
-);
-
-```
-
-### t Log Distribution
-
-**Syntaxe :** y = t Log Distribution( x, df, <nc> )
-
-**Description :** Renvoie le logarithme de la distribution t.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-tldidf = 1;
-New Window( "Example: Students t Log Distribution",
-	tldigr = Graph Box(
-		Y Scale( -4, 0.05 ),
-		X Scale( -5, 5 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function( t Log Distribution( tldiq, tldidf ), tldiq );
-		Text( {-4.5, -0.9}, "df=", Round( tldidf, 2 ) );
-	),
-	H List Box(
-		Text Box( "df " ),
-		Slider Box( 1, 10, tldidf, tldigr << reshow )
-	)
-);
-
-```
-
-### t Noncentrality
-
-**Syntaxe :** nc = t Noncentrality( x, df, prob )
-
-**Description :** Résout le paramètre de non-centralité d’une distribution de Student, telle que prob = t Distribution( x, df, nc ).
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-New Window( "Example: t Noncentrality",
-	tncgr = Graph Box(
-		Y Scale( 0.01, 0.99 ),
-		X Scale( 0.01, 0.99 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function(
-			t Distribution( 3, 2, t Noncentrality( 3, 2, q ) ),
-			q
-		);
-	)
-);
-t Distribution( 3, 2, t Noncentrality( 3, 2, 0.5 ) );
-
-```
-
-### t Quantile
-
-**Syntaxe :** q = t Quantile( p, df, <nonCentrality=0> )
-
-**Description :** Renvoie le quantile d’une distribution t de Student, correspondant à la probabilité p qu’une variable aléatoire ayant cette distribution prenne une valeur inférieure au quantile.
-
-**JMP Version ajoutée :** Avant la version 14
-
-```jsl
-
-Names Default To Here( 1 );
-extqdf = 1;
-extqqq = 0.5;
-New Window( "Example: Students t Quantile",
-	extqgr = Graph Box(
-		Y Scale( 0, 1.05 ),
-		X Scale( -5, 5 ),
-		XName( "q" ),
-		Pen Color( "red" );
-		Y Function( t Distribution( q, Round( extqdf ) ), q );
-		Pen Color( "blue" );
-		V Line( t Quantile( extqqq, Round( extqdf ) ), 0, 1 );
-		Text(
-			{-4.5, 0.9},
-			"df=",
-			Round( extqdf, 2 ),
-			" quantile=",
-			Round( extqqq, 2 )
-		);
-	),
-	H List Box(
-		Slider Box( 1, 30, extqdf, extqgr << reshow ),
-		Text Box( " df" )
-	),
-	H List Box(
-		Slider Box( 0.01, 0.99, extqqq, extqgr << reshow ),
-		Text Box( " quantile" )
-	), 
-
 );
 
 ```

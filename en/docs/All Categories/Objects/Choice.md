@@ -6,7 +6,7 @@
 
 ### Choice
 
-**Syntax:** Choice( Profile DataTable( data table ), Profile ID( column ), Profile Effects( column(s) ), <Response Data Table( data table )>, <Subject Data Table( data table )>, <Response Profile ID Chosen( column )>, <Response Subject ID( column)>, <Response Grouping( column(s) )>, <Response Profile ID Choices( column(s) )>, <Profile Grouping( column(s) )>, <Subject Subject ID( column )>, <Subject Effects( column(s) )> )
+**Syntax:** Choice( Profile DataTable( data table ), Profile ID( column ), Profile Effects( column(s) ), &lt;Response Data Table( data table )&gt;, &lt;Subject Data Table( data table )&gt;, &lt;Response Profile ID Chosen( column )&gt;, &lt;Response Subject ID( column)&gt;, &lt;Response Grouping( column(s) )&gt;, &lt;Response Profile ID Choices( column(s) )&gt;, &lt;Profile Grouping( column(s) )&gt;, &lt;Subject Subject ID( column )&gt;, &lt;Subject Effects( column(s) )&gt; )
 
 **Description:** Models data from a choice experiment that studies customer preferences. Estimates the probability that a specific configuration is preferred using a form of conditional logistic regression.
 
@@ -73,7 +73,7 @@ obj = Choice(
 
 ### Profile Effects
 
-**Syntax:** obj = Choice(...<Profile Effects( column )>...)
+**Syntax:** obj = Choice(...&lt;Profile Effects( column )&gt;...)
 
 **Description:** One or more columns that contain the effect or factor values in the profile data table.
 
@@ -358,7 +358,7 @@ obj = dt << Choice(
 
 ### Subject Effects
 
-**Syntax:** obj = Choice(...<Subject Effects( column )>...)
+**Syntax:** obj = Choice(...&lt;Subject Effects( column )&gt;...)
 
 **Description:** One or more columns that contain the effect or factor values in the subject data table.
 
@@ -490,7 +490,7 @@ obj = MaxDiff(
 
 ### Comparisons
 
-**Syntax:** obj << Comparisons( {term1(value1a),term2(value2a),...},{term1(value1b),term2(value2b),...} )
+**Syntax:** obj &lt;&lt; Comparisons( {term1(value1a),term2(value2a),...},{term1(value1b),term2(value2b),...} )
 
 **Description:** Performs comparisons between specific alternative choice profiles. Enables you to specify the factors and the values that you want to compare.
 
@@ -517,7 +517,7 @@ obj << Comparisons(
 
 ### Confidence Intervals
 
-**Syntax:** obj << Confidence Intervals( state=0|1, <alpha> )
+**Syntax:** obj &lt;&lt; Confidence Intervals( state=0|1, &lt;alpha&gt; )
 
 **Description:** Shows or hides (1-alpha)% confidence intervals for each parameter in the Parameter Estimates report.
 
@@ -542,7 +542,7 @@ obj << Confidence Intervals( 1, 0.01 );
 
 ### Confidence Limits
 
-**Syntax:** obj << Confidence Limits( state=0|1, <alpha> )
+**Syntax:** obj &lt;&lt; Confidence Limits( state=0|1, &lt;alpha&gt; )
 
 **Description:** Shows or hides confidence limits for each parameter in the Bayesian Parameter Estimates report. The limits are constructed based on the 2.5 and 97.5 quantiles of the posterior distribution.
 
@@ -554,7 +554,7 @@ obj << Confidence Intervals( 1, 0.01 );
 
 ### Correlation of Estimates
 
-**Syntax:** obj << Correlation of Estimates( state=0|1 )
+**Syntax:** obj &lt;&lt; Correlation of Estimates( state=0|1 )
 
 **Description:** Shows or hides the correlation matrix for the parameter estimates.
 
@@ -579,7 +579,7 @@ obj << Correlation of Estimates( 1 );
 
 ### Effect Marginals
 
-**Syntax:** obj << Effect Marginals( state=0|1 )
+**Syntax:** obj &lt;&lt; Effect Marginals( state=0|1 )
 
 **Description:** Shows or hides marginal probabilities and marginal utilities for each main effect in the model. The marginal probability is the probability that an individual selects attribute A over B with all other attributes set to their mean or default levels.
 
@@ -658,7 +658,7 @@ Report( obj )["Parameter Estimates"] << Close( 0 );
 
 ### Joint Factor Tests
 
-**Syntax:** obj << Joint Factor Tests( state=0|1 )
+**Syntax:** obj &lt;&lt; Joint Factor Tests( state=0|1 )
 
 **Description:** Tests each factor in the model by constructing a likelihood ratio test for all the effects involving that factor. Subject Data Table is required for this option when an interaction is not present in the model.
 
@@ -687,7 +687,7 @@ obj << Joint Factor Tests( 1 );
 
 ### Likelihood Ratio Tests
 
-**Syntax:** obj << Likelihood Ratio Tests( state=0|1 )
+**Syntax:** obj &lt;&lt; Likelihood Ratio Tests( state=0|1 )
 
 **Description:** Performs likelihood ratio tests for each effect in the model. On by default for models that converge in less than five seconds.
 
@@ -712,7 +712,7 @@ obj << Likelihood Ratio Tests( 1 );
 
 ### Model Dialog
 
-**Syntax:** obj << Model Dialog
+**Syntax:** obj &lt;&lt; Model Dialog
 
 **Description:** Opens the Model Dialog window.
 
@@ -736,7 +736,7 @@ obj << Model Dialog;
 
 ### Multiple Choice Profiler
 
-**Syntax:** obj << Multiple Choice Profiler( state=0|1, N Choices( number ) )
+**Syntax:** obj &lt;&lt; Multiple Choice Profiler( state=0|1, N Choices( number ) )
 
 **Description:** Shows or hides a specified number of prediction profilers. This enables you to compare the prediction probabilities across alternative sets of choices.
 
@@ -765,7 +765,7 @@ obj << Multiple Choice Profiler( 1, N Choices( 3 ) );
 
 ### Number of Burn In Iterations
 
-**Syntax:** obj << Number of Burn In Iterations( number )
+**Syntax:** obj &lt;&lt; Number of Burn In Iterations( number )
 
 ### One Table
 
@@ -792,7 +792,7 @@ obj = dt << Choice(
 
 ### Probability Profiler
 
-**Syntax:** obj << Probability Profiler( state=0|1 )
+**Syntax:** obj &lt;&lt; Probability Profiler( state=0|1 )
 
 **Description:** Shows or hides a prediction profiler of the probability of the current choice compared to a reference set.
 
@@ -938,11 +938,11 @@ obj = MaxDiff(
 
 ### Save Bayes Chain
 
-**Syntax:** obj << Save Bayes Chain
+**Syntax:** obj &lt;&lt; Save Bayes Chain
 
 ### Save Gradients by Subject
 
-**Syntax:** obj << Save Gradients by Subject
+**Syntax:** obj &lt;&lt; Save Gradients by Subject
 
 **Description:** Creates a new table with a row for each subject containing the average steps on each parameter.
 
@@ -966,11 +966,11 @@ obj << Save Gradients by Subject;
 
 ### Save Subject Estimates
 
-**Syntax:** obj << Save Subject Estimates
+**Syntax:** obj &lt;&lt; Save Subject Estimates
 
 ### Save Utility Formula
 
-**Syntax:** obj << Save Utility Formula
+**Syntax:** obj &lt;&lt; Save Utility Formula
 
 **Description:** Creates a new column in the profile data table with a formula for the linear model that is estimated.
 
@@ -995,7 +995,7 @@ obj << Save Utility Formula;
 
 ### Show MLE Parameter Estimates
 
-**Syntax:** obj << Show MLE Parameter Estimates( state=0|1 )
+**Syntax:** obj &lt;&lt; Show MLE Parameter Estimates( state=0|1 )
 
 **Description:** Shows maximum likelihood estimates with Bayes parameter estimates.
 
@@ -1075,11 +1075,11 @@ obj = MaxDiff(
 
 ### Use Adaptive Bayes
 
-**Syntax:** obj << Use Adaptive Bayes( state=0|1 )
+**Syntax:** obj &lt;&lt; Use Adaptive Bayes( state=0|1 )
 
 ### Utility Profiler
 
-**Syntax:** obj << Utility Profiler( state=0|1 )
+**Syntax:** obj &lt;&lt; Utility Profiler( state=0|1 )
 
 **Description:** Shows or hides the predicted utility for different factor settings. The utility is the value predicted by the linear model.
 
@@ -1104,7 +1104,7 @@ obj << Utility Profiler( 1 );
 
 ### Willingness to Pay
 
-**Syntax:** obj << Willingness to Pay
+**Syntax:** obj &lt;&lt; Willingness to Pay
 
 **Description:** Requires that your model includes a continuous price column. Calculates the maximum price increase (decrease) that a customer is willing to pay for a new feature over the baseline feature cost. The result is calculated using the Baseline settings for each background setting.
 
@@ -1138,7 +1138,7 @@ Choice(
 
 ### Action
 
-**Syntax:** obj << Action
+**Syntax:** obj &lt;&lt; Action
 
 **Description:** All-purpose trapdoor within a platform to insert expressions to evaluate. Temporarily sets the DisplayBox and DataTable contexts to the Platform.
 
@@ -1156,7 +1156,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Syntax:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntax:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Description:** Apply a previously created preset to the object, updating the options and customizations to match the saved settings.
 
@@ -1201,7 +1201,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Broadcast
 
-**Syntax:** obj << Broadcast(message)
+**Syntax:** obj &lt;&lt; Broadcast(message)
 
 **Description:** Broadcasts a message to a platform. If return results from individual objects are tables, they are concatenated if possible, and the final format is identical to either the result from the Save Combined Table option in a Table Box or the result from the Concatenate option using a Source column. Other than those, results are stored in a list and returned.
 
@@ -1219,7 +1219,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**Syntax:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Syntax:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Description:** Adds a control panel for changing the platform&apos;s variables
 
@@ -1237,7 +1237,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**Syntax:** obj << Copy ByGroup Script
+**Syntax:** obj &lt;&lt; Copy ByGroup Script
 
 **Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
 
@@ -1272,7 +1272,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Syntax:** obj << Copy Script
+**Syntax:** obj &lt;&lt; Copy Script
 
 **Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
 
@@ -1296,7 +1296,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Syntax:** obj << Data Table Window
+**Syntax:** obj &lt;&lt; Data Table Window
 
 **Description:** Move the data table window for this analysis to the front.
 
@@ -1320,7 +1320,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Syntax:** obj << Get By Levels
+**Syntax:** obj &lt;&lt; Get By Levels
 
 **Description:** Returns an associative array mapping the by group columns to their values.
 
@@ -1335,7 +1335,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Syntax:** obj << Get ByGroup Script
+**Syntax:** obj &lt;&lt; Get ByGroup Script
 
 **Description:** Creates a script (JSL) to produce this analysis and returns it as an expression.
 
@@ -1371,7 +1371,7 @@ Show( t );
 
 ### Get Container
 
-**Syntax:** obj << Get Container
+**Syntax:** obj &lt;&lt; Get Container
 
 **Description:** Returns a reference to the container box that holds the content for the object.
 
@@ -1427,7 +1427,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Syntax:** obj << Get Data Table
+**Syntax:** obj &lt;&lt; Get Data Table
 
 **Description:** Returns a reference to the data table.
 
@@ -1452,7 +1452,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**Syntax:** obj << Get Group Platform
+**Syntax:** obj &lt;&lt; Get Group Platform
 
 **Description:** Return the Group Platform object if this platform is part of a Group. Otherwise, returns Empty().
 
@@ -1469,7 +1469,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**Syntax:** obj << Get Script
+**Syntax:** obj &lt;&lt; Get Script
 
 **Description:** Creates a script (JSL) to produce this analysis and returns it as an expression.
 
@@ -1494,7 +1494,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Syntax:** obj << Get Script With Data Table
+**Syntax:** obj &lt;&lt; Get Script With Data Table
 
 **Description:** Creates a script(JSL) to produce this analysis specifically referencing this data table and returns it as an expression.
 
@@ -1519,7 +1519,7 @@ Show( t );
 
 ### Get Timing
 
-**Syntax:** obj << Get Timing
+**Syntax:** obj &lt;&lt; Get Timing
 
 **Description:** Times the platform launch.
 
@@ -1544,7 +1544,7 @@ Show( t );
 
 ### Get Web Support
 
-**Syntax:** obj << Get Web Support
+**Syntax:** obj &lt;&lt; Get Web Support
 
 **Description:** Return a number indicating the level of Interactive HTML support for the display object. 1 means some or all elements are supported. 0 means no support.
 
@@ -1560,7 +1560,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Syntax:** obj << Get Where Expr
+**Syntax:** obj &lt;&lt; Get Where Expr
 
 **Description:** Returns the Where expression for the data subset, if the platform was launched with By() or Where(). Otherwise, returns Empty()
 
@@ -1595,7 +1595,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Syntax:** obj << Local Data Filter
+**Syntax:** obj &lt;&lt; Local Data Filter
 
 **Description:** To filter data to specific groups or ranges, but local to this platform
 
@@ -1647,7 +1647,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Syntax:** obj << Paste Local Data Filter
+**Syntax:** obj &lt;&lt; Paste Local Data Filter
 
 **Description:** Apply the local data filter from the clipboard to the current report.
 
@@ -1668,7 +1668,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**Syntax:** obj << Redo Analysis
+**Syntax:** obj &lt;&lt; Redo Analysis
 
 **Description:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
 
@@ -1692,7 +1692,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**Syntax:** obj << Redo ByGroup Analysis
+**Syntax:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Description:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
 
@@ -1727,7 +1727,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**Syntax:** obj << Relaunch Analysis
+**Syntax:** obj &lt;&lt; Relaunch Analysis
 
 **Description:** Opens the platform launch window and recalls the settings that were used to create the report.
 
@@ -1751,7 +1751,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**Syntax:** obj << Relaunch ByGroup
+**Syntax:** obj &lt;&lt; Relaunch ByGroup
 
 **Description:** Opens the platform launch window and recalls the settings that were used to create the report.
 
@@ -1786,7 +1786,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**Syntax:** obj << Remove Column Switcher
+**Syntax:** obj &lt;&lt; Remove Column Switcher
 
 **Description:** Removes the most recent Column Switcher that has been added to the platform.
 
@@ -1806,7 +1806,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Syntax:** obj << Remove Local Data Filter
+**Syntax:** obj &lt;&lt; Remove Local Data Filter
 
 **Description:** If a local data filter has been created, this removes it and restores the platform to use all the data in the data table directly
 
@@ -1843,9 +1843,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Syntax:** obj << Report;
-
-Report( obj )
+**Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Description:** Returns a reference to the report object.
 
@@ -1871,7 +1869,7 @@ Show( t );
 
 ### Report View
 
-**Syntax:** obj << Report View( "Full"|"Summary" )
+**Syntax:** obj &lt;&lt; Report View( "Full"|"Summary" )
 
 **Description:** The report view determines the level of detail visible in a platform report. Full shows all of the detail, while Summary shows only select content, dependent on the platform. For customized behavior, display boxes support a <<Set Summary Behavior message.
 
@@ -1895,7 +1893,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**Syntax:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description:** Creates a JSL script to produce this analysis, and save it as a table property in the data table. You can specify a name for the script. The Append Suffix option appends a numeric suffix to the script name, which differentiates the script from an existing script with the same name. The Prompt option prompts the user to specify a script name. The Replace option replaces an existing script with the same name.
 
@@ -1930,7 +1928,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Syntax:** obj << Save ByGroup Script to Journal
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
 
@@ -1965,7 +1963,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Syntax:** obj << Save ByGroup Script to Script Window
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
 
@@ -2000,7 +1998,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**Syntax:** obj << Save Script for All Objects
+**Syntax:** obj &lt;&lt; Save Script for All Objects
 
 **Description:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -2024,7 +2022,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Syntax:** obj << Save Script for All Objects To Data Table( <name> )
+**Syntax:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Description:** Saves a script for all report objects to the current data table. This option is useful when you have multiple reports in the window. The script is named after the first platform unless you specify the script name in quotes.
 
@@ -2092,7 +2090,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Syntax:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description:** Create a JSL script to produce this analysis, and save it as a table property in the data table.
 
@@ -2116,7 +2114,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Syntax:** obj << Save Script to Journal
+**Syntax:** obj &lt;&lt; Save Script to Journal
 
 **Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
 
@@ -2140,7 +2138,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Syntax:** obj << Save Script to Report
+**Syntax:** obj &lt;&lt; Save Script to Report
 
 **Description:** Create a JSL script to produce this analysis, and show it in the report itself. Useful to preserve a printed record of what was done.
 
@@ -2164,7 +2162,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Syntax:** obj << Save Script to Script Window
+**Syntax:** obj &lt;&lt; Save Script to Script Window
 
 **Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
 
@@ -2253,7 +2251,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Syntax:** obj << Sync to Data Table Changes
+**Syntax:** obj &lt;&lt; Sync to Data Table Changes
 
 **Description:** Sync with the exclude and data changes that have been made.
 
@@ -2270,7 +2268,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Syntax:** obj << Title( "new title" )
+**Syntax:** obj &lt;&lt; Title( "new title" )
 
 **Description:** Sets the title of the platform.
 
@@ -2294,7 +2292,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Syntax:** obj << Top Report
+**Syntax:** obj &lt;&lt; Top Report
 
 **Description:** Returns a reference to the root node in the report.
 
@@ -2320,7 +2318,7 @@ Show( t );
 
 ### Transform Column
 
-**Syntax:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Syntax:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Description:** Create a transform column in the local context of an object, usually a platform. The transform column is active only for the lifetime of the platform.
 
@@ -2337,7 +2335,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**Syntax:** obj << View Web XML
+**Syntax:** obj &lt;&lt; View Web XML
 
 **Description:** Returns the XML code that is used to create the interactive HTML report.
 

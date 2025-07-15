@@ -6,9 +6,7 @@
 
 ### Noise Factors
 
-**Sintassi:** obj = Profiler(...<Noise Factors( column(s) )>...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Profiler(...&lt;Noise Factors( column(s) )&gt;...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica i fattori di disturbo, che devono essere colonne che costituiscono ingredienti delle colonne della formula. I fattori di disturbo sono usati per studiare la robustezza (o linearità) rispetto alla variazione trasmessa da questi fattori. Il profiler risultante include le derivate delle formule rispetto ai fattori di disturbo.
 
@@ -72,9 +70,7 @@ obj = dt << Custom Profiler(
 
 ### Prediction Formula
 
-**Sintassi:** obj = Profiler(...Prediction Formula( column(s) )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Profiler(...Prediction Formula( column(s) )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica le colonne di risposta che contengono formule.
 
@@ -94,9 +90,7 @@ obj = dt << Profiler(
 
 ### Y
 
-**Sintassi:** obj = Profiler(...Y( column(s) )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Profiler(...Y( column(s) )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica le colonne di risposta che contengono formule.
 
@@ -118,7 +112,7 @@ obj = dt << Profiler(
 
 ### Profiler
 
-**Sintassi:** Profiler( Y( column1, <column2>, ..., <PredSE column1, PredSE column2>, ... ), <Expand> )
+**Sintassi:** Profiler( Y( column1, &lt;column2&gt;, ..., &lt;PredSE column1, PredSE column2&gt;, ... ), &lt;Expand&gt; )
 
 **Descrizione:** Produce un grafico interattivo che consente di esplorare come cambia una risposta prevista al variare delle impostazioni dei fattori. Per ogni fattore, il profiler mostra tracce di previsione che si basano su formule di previsione salvate e vincoli lineari e illustra come la risposta cambia rispetto a quel fattore. L&apos;argomento Espandi corrisponde all&apos;opzione Espandi formule intermedie nella finestra di avvio.
 
@@ -179,7 +173,7 @@ dt << Profiler( Y( :Yield ), Profiler( 1, Desirability Functions( 1 ), ), Expand
 
 ### Action
 
-**Sintassi:** obj << Action
+**Sintassi:** obj &lt;&lt; Action
 
 **Descrizione:** Trapdoor generica all&apos;interno di una piattaforma per inserire espressioni da valutare. Imposta temporaneamente i contesti del riquadro di visualizzazione e della tabella di dati per la piattaforma.
 
@@ -197,7 +191,7 @@ dt << Bivariate(
 
 ### Adapt Y Axis
 
-**Sintassi:** obj << Adapt Y Axis( state=0|1 )
+**Sintassi:** obj &lt;&lt; Adapt Y Axis( state=0|1 )
 
 **Descrizione:** Ridimensiona l&apos;asse verticale se la risposta è fuori dal range dell&apos;asse, in modo da includere il range della risposta.
 
@@ -220,7 +214,7 @@ obj << Adapt Y Axis;
 
 ### Add Shapley graph scripts to data table
 
-**Sintassi:** obj << Add Shapley graph scripts to data table( state=0|1 )
+**Sintassi:** obj &lt;&lt; Add Shapley graph scripts to data table( state=0|1 )
 
 **Descrizione:** Aggiunge gli script del grafico a barre JSL Graph Builder dei valori di Shapley per righe per ogni risposta nel modello.
 
@@ -253,7 +247,7 @@ obj << (Fit[1] << Profiler(
 
 ### Animation
 
-**Sintassi:** obj << Animation( <Tour Type( "Sequential"|("Single Factor",factorname)|"Random"|"Data Sequential"|"Data Random" )>, <Speed(ticks)>, <Go>, <Stop> )
+**Sintassi:** obj &lt;&lt; Animation( &lt;Tour Type( "Sequential"|("Single Factor",factorname)|"Random"|"Data Sequential"|"Data Random" )&gt;, &lt;Speed(ticks)&gt;, &lt;Go&gt;, &lt;Stop&gt; )
 
 **Descrizione:** Avvia o arresta l&apos;animazione del profiler. Si può anche specificare il modo in cui l&apos;animazione scorre tra le combinazioni di fattori.
 
@@ -278,7 +272,7 @@ obj << Animation( "Stop" );
 
 ### Append Settings to Table
 
-**Sintassi:** obj << Append Settings to Table
+**Sintassi:** obj &lt;&lt; Append Settings to Table
 
 **Descrizione:** Salva le impostazioni del profiler corrente come una nuova riga alla fine della tabella di dati.
 
@@ -299,7 +293,7 @@ obj << Append Settings to Table;
 
 ### Apply Preset
 
-**Sintassi:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintassi:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descrizione:** Applica all’oggetto una preimpostazione precedentemente creata, aggiornando le opzioni e le personalizzazioni in base alle impostazioni salvate.
 
@@ -346,7 +340,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Arrange in Rows
 
-**Sintassi:** obj << Arrange in Rows( number )
+**Sintassi:** obj &lt;&lt; Arrange in Rows( number )
 
 **Descrizione:** Specifica il numero di diagrammi che compaiono in una riga.
 
@@ -368,7 +362,7 @@ obj << Arrange in Rows( 2 );
 
 ### Broadcast Factor Settings
 
-**Sintassi:** obj << Broadcast Factor Settings
+**Sintassi:** obj &lt;&lt; Broadcast Factor Settings
 
 **Descrizione:** Invia le impostazioni del fattore per il profiler corrente a tutti gli altri profiler. Questa opzione non collega i profiler.
 
@@ -398,7 +392,7 @@ obj << Broadcast Factor Settings;
 
 ### Colorize
 
-**Sintassi:** obj << Colorize( matrix )
+**Sintassi:** obj &lt;&lt; Colorize( matrix )
 
 **Descrizione:** Specifica una matrice di proporzioni tra 0 per senza colore e 1 per il rosso scuro. le righe e le colonne della matrice corrispondono alle variabili Y e X nel profiler.
 
@@ -418,7 +412,7 @@ obj << Colorize( [.0 .4 .5, .1 .2 .3, .4 .5 .3, .5 .1 .1] );
 
 ### Colorize Profiler
 
-**Sintassi:** subobj << Colorize Profiler
+**Sintassi:** subobj &lt;&lt; Colorize Profiler
 
 **Descrizione:** Colora le celle nel profiler in base agli indici di importanza totale dell&apos;effetto usando una scala di intensità dal rosso al bianco.
 
@@ -443,7 +437,7 @@ subobj << Colorize Profiler;
 
 ### Column Switcher
 
-**Sintassi:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Sintassi:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Descrizione:** Aggiunge un pannello di controllo per modificare le variabili della piattaforma
 
@@ -461,7 +455,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Combinations
 
-**Sintassi:** obj << Combinations( "Misto"|"A due vie"|"A più vie" )
+**Sintassi:** obj &lt;&lt; Combinations( "Misto"|"A due vie"|"A più vie" )
 
 **Descrizione:** Specifica i tipi di interazioni che vengono mostrati come curve di interazione sovrapposte nel profiler.
 
@@ -485,7 +479,7 @@ obj << Combinations( "Many-Way" );
 
 ### Compute Shapley values for all rows
 
-**Sintassi:** obj << Compute Shapley values for all rows( state=0|1 )
+**Sintassi:** obj &lt;&lt; Compute Shapley values for all rows( state=0|1 )
 
 **Descrizione:** Calcola i valori di Shapley per tutte le righe della tabella di dati, escluse e non escluse.
 
@@ -520,7 +514,7 @@ obj << (Fit[1] << Profiler(
 
 ### Conditional Predictions
 
-**Sintassi:** obj << Conditional Predictions( state=0|1 )
+**Sintassi:** obj &lt;&lt; Conditional Predictions( state=0|1 )
 
 **Descrizione:** Include gli effetti casuali nella formulazione del valore previsto e dei profili. Questa opzione è disponibile solo nella personalità Stima misti della piattaforma Stima modello quando effetti casuali sono inclusi nel modello.
 
@@ -535,7 +529,7 @@ obj1 << Profiler( Conditional Predictions( 1 ) );
 
 ### Confidence Intervals
 
-**Sintassi:** obj << Confidence Intervals( state=0|1 )
+**Sintassi:** obj &lt;&lt; Confidence Intervals( state=0|1 )
 
 **Descrizione:** Mostra o nasconde gli intervalli di confidenza al 95% per le medie simulate sulle curve del grafico del profiler. Disponibile solo se nella finestra di avvio è specificata una formula Errore std.
 
@@ -559,7 +553,7 @@ obj << Confidence Intervals( 0 );
 
 ### Contour Profiler
 
-**Sintassi:** obj << Contour Profiler( state=0|1 )
+**Sintassi:** obj &lt;&lt; Contour Profiler( state=0|1 )
 
 **Descrizione:** Mostra o nasconde il profiler isometrico.
 
@@ -580,7 +574,7 @@ obj << Contour Profiler( 1 );
 
 ### Converge Limit
 
-**Sintassi:** obj << Converge Limit( number )
+**Sintassi:** obj &lt;&lt; Converge Limit( number )
 
 **Descrizione:** Specifica il criterio di convergenza per l&apos;algoritmo di ottimizzazione. Se il criterio di convergenza è inferiore a questo valore per due iterazioni consecutive, l&apos;algoritmo si interrompe.
 
@@ -602,7 +596,7 @@ obj << Optimize;
 
 ### Copy Script
 
-**Sintassi:** obj << Copy Script
+**Sintassi:** obj &lt;&lt; Copy Script
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo inserisce negli Appunti.
 
@@ -623,7 +617,7 @@ obj << Copy Script;
 
 ### Copy Settings Script
 
-**Sintassi:** obj << Copy Settings Script
+**Sintassi:** obj &lt;&lt; Copy Settings Script
 
 **Descrizione:** Copia le impostazioni del fattore corrente negli Appunti. Le impostazioni possono poi essere incollate in un altro profiler.
 
@@ -652,7 +646,7 @@ obj2 << Paste Settings Script;
 
 ### Custom Profiler
 
-**Sintassi:** obj << Custom Profiler( state=0|1 )
+**Sintassi:** obj &lt;&lt; Custom Profiler( state=0|1 )
 
 **Descrizione:** Mostra o nasconde il profiler personalizzato.
 
@@ -673,7 +667,7 @@ obj << Custom Profiler( 1 );
 
 ### Data Points
 
-**Sintassi:** obj << Data Points( state=0|1 )
+**Sintassi:** obj &lt;&lt; Data Points( state=0|1 )
 
 **Descrizione:** Mostra o nasconde i singoli punti di dati nel grafico Profiler di previsione. I punti di dati si attenuano in base alla distanza dal piano di ciascun profiler.
 
@@ -693,7 +687,7 @@ obj << Data Points( 1 );
 
 ### Data Table Window
 
-**Sintassi:** obj << Data Table Window
+**Sintassi:** obj &lt;&lt; Data Table Window
 
 **Descrizione:** Sposta in primo piano la finestra della tabella di dati per questa analisi.
 
@@ -714,7 +708,7 @@ obj << Data Table Window;
 
 ### Default N Grid Points
 
-**Sintassi:** obj << Default N Grid Points( number )
+**Sintassi:** obj &lt;&lt; Default N Grid Points( number )
 
 **Descrizione:** Imposta il numero di livelli per ciascun fattore continuo.
 
@@ -734,11 +728,11 @@ obj << Default N Grid Points( 5 );
 
 ### Default N Levels
 
-**Sintassi:** obj << Default N Levels( number )
+**Sintassi:** obj &lt;&lt; Default N Levels( number )
 
 ### Dependent Resampled Inputs
 
-**Sintassi:** obj << Dependent Resampled Inputs( state=0|1 )
+**Sintassi:** obj &lt;&lt; Dependent Resampled Inputs( state=0|1 )
 
 **Descrizione:** Calcola gli indici utilizzati nell&apos;opzione Valuta importanza della variabile ricampionando la tabella di dati assumendo che gli input siano dipendenti.
 
@@ -759,11 +753,11 @@ obj << Dependent Resampled Inputs( 1 );
 
 ### Design Space
 
-**Sintassi:** obj << Design Space( state=0|1 )
+**Sintassi:** obj &lt;&lt; Design Space( state=0|1 )
 
 ### Design Space Profiler
 
-**Sintassi:** obj << Design Space Profiler( state=0|1 )
+**Sintassi:** obj &lt;&lt; Design Space Profiler( state=0|1 )
 
 **Descrizione:** Avvia il Profiler dello spazio del piano che aiuta a mappare i limiti di specifica delle variabili Y rispetto ai limiti di specifica delle variabili X.
 
@@ -810,7 +804,7 @@ Profiler(
 
 ### Desirability Functions
 
-**Sintassi:** obj << Desirability Functions( state=0|1 )
+**Sintassi:** obj &lt;&lt; Desirability Functions( state=0|1 )
 
 **Descrizione:** Mostra o nasconde le funzioni di desiderabilità che sono utili quando si ottimizza su molte risposte.
 
@@ -830,7 +824,7 @@ obj << Desirability Functions( 1 );
 
 ### Edit Constraints
 
-**Sintassi:** obj << Edit Constraints
+**Sintassi:** obj &lt;&lt; Edit Constraints
 
 **Descrizione:** Aggiunge, modifica o elimina vincoli lineari.
 
@@ -850,7 +844,7 @@ obj << Edit Constraints;
 
 ### Extrapolation Control Option
 
-**Sintassi:** obj << Extrapolation Control Option( "Disattivato"|"Attivo"|"Avvertimento attivato" )
+**Sintassi:** obj &lt;&lt; Extrapolation Control Option( "Disattivato"|"Attivo"|"Avvertimento attivato" )
 
 **Descrizione:** Specifica se il controllo dell&apos;estrapolazione è attivato o disattivato, o se sono attivati solo gli avvertimenti di controllo dell&apos;estrapolazione.
 
@@ -873,7 +867,7 @@ obj << Profiler( Extrapolation Control Option( "On" ) );
 
 ### Extrapolation Details
 
-**Sintassi:** obj << Extrapolation Details( state=0|1 )
+**Sintassi:** obj &lt;&lt; Extrapolation Details( state=0|1 )
 
 **Descrizione:** Mostra o nasconde i dettagli del controllo dell&apos;estrapolazione che danno la metrica di estrapolazione del punto corrente e la soglia di estrapolazione.
 
@@ -896,13 +890,13 @@ obj << Profiler( Extrapolation Control Option( "On" ), Extrapolation Details( 1 
 
 ### Extrapolation Type Option
 
-**Sintassi:** obj << Extrapolation Type Option( "T2 regolarizzato"|"K vicini più prossimi" )
+**Sintassi:** obj &lt;&lt; Extrapolation Type Option( "T2 regolarizzato"|"K vicini più prossimi" )
 
 **JMP Versione aggiunta:** 18
 
 ### Formulas for OPTMODEL
 
-**Sintassi:** obj << Formulas for OPTMODEL
+**Sintassi:** obj &lt;&lt; Formulas for OPTMODEL
 
 **Descrizione:** Salva le formule di previsione dal modello in un nuovo file come istruzioni SAS per PROC OPTMODEL.
 
@@ -923,7 +917,7 @@ obj << Formulas for OPTMODEL;
 
 ### Get By Levels
 
-**Sintassi:** obj << Get By Levels
+**Sintassi:** obj &lt;&lt; Get By Levels
 
 **Descrizione:** Restituisce un array associativo che mappa le colonne del gruppo di By ai rispettivi valori.
 
@@ -940,7 +934,7 @@ biv << Get By Levels;
 
 ### Get Constraints
 
-**Sintassi:** obj << Get Constraints
+**Sintassi:** obj &lt;&lt; Get Constraints
 
 **Descrizione:** Restituisce un elenco di vincoli di fattori.
 
@@ -958,7 +952,7 @@ obj << Get Constraints;
 
 ### Get Container
 
-**Sintassi:** obj << Get Container
+**Sintassi:** obj &lt;&lt; Get Container
 
 **Descrizione:** Restituisce un riferimento al riquadro contenitore che racchiude il contenuto dell&apos;oggetto.
 
@@ -1011,7 +1005,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Sintassi:** obj << Get Data Table
+**Sintassi:** obj &lt;&lt; Get Data Table
 
 **Descrizione:** Restituisce un riferimento alla tabella di dati.
 
@@ -1033,7 +1027,7 @@ Show( N Rows( t ) );
 
 ### Get Desirability
 
-**Sintassi:** obj << Get Desirability
+**Sintassi:** obj &lt;&lt; Get Desirability
 
 **Descrizione:** Restituisce le impostazioni di desiderabilità correnti.
 
@@ -1055,7 +1049,7 @@ Show( d );
 
 ### Get Factor Settings
 
-**Sintassi:** obj << Get Factor Settings
+**Sintassi:** obj &lt;&lt; Get Factor Settings
 
 **Descrizione:** Restituisce le impostazioni correnti dei fattori come elenco.
 
@@ -1076,7 +1070,7 @@ obj << Get Factor Settings;
 
 ### Get Factor Settings Script
 
-**Sintassi:** obj << Get Factor Settings Script
+**Sintassi:** obj &lt;&lt; Get Factor Settings Script
 
 **Descrizione:** Restituisce le impostazioni correnti del fattore come espressione che può essere usata in uno script.
 
@@ -1097,7 +1091,7 @@ obj << Get Factor Settings Script;
 
 ### Get Main Indices
 
-**Sintassi:** obj << Get Main Indices
+**Sintassi:** obj &lt;&lt; Get Main Indices
 
 **Descrizione:** Salva gli indici principali dell&apos;analisi Valuta importanza della variabile in un nuovo file come istruzioni SAS per la PROC OPTMODEL.
 
@@ -1119,7 +1113,7 @@ obj << Get Main Indices;
 
 ### Get Script
 
-**Sintassi:** obj << Get Script
+**Sintassi:** obj &lt;&lt; Get Script
 
 **Descrizione:** Crea uno script (JSL) per generare questa analisi e la restituisce come espressione.
 
@@ -1141,7 +1135,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Sintassi:** obj << Get Script With Data Table
+**Sintassi:** obj &lt;&lt; Get Script With Data Table
 
 **Descrizione:** Crea uno script (JSL) per generare questa analisi facendo specifico riferimento a questa tabella di dati e la restituisce come espressione.
 
@@ -1163,7 +1157,7 @@ Show( t );
 
 ### Get Simulator
 
-**Sintassi:** obj << Get Simulator
+**Sintassi:** obj &lt;&lt; Get Simulator
 
 **Descrizione:** Restituisce un riferimento al simulatore.
 
@@ -1197,7 +1191,7 @@ obj2 << Simulation Experiment;
 
 ### Get Timing
 
-**Sintassi:** obj << Get Timing
+**Sintassi:** obj &lt;&lt; Get Timing
 
 **Descrizione:** Determina il tempo di avvio della piattaforma.
 
@@ -1219,7 +1213,7 @@ Show( t );
 
 ### Get Total Indices
 
-**Sintassi:** obj << Get Total Indices
+**Sintassi:** obj &lt;&lt; Get Total Indices
 
 **Descrizione:** Salva gli indici totali dall&apos;analisi Valuta importanza della variabile in un nuovo file come istruzioni SAS per la PROC OPTMODEL.
 
@@ -1241,7 +1235,7 @@ obj << Get Total Indices;
 
 ### Get Web Support
 
-**Sintassi:** obj << Get Web Support
+**Sintassi:** obj &lt;&lt; Get Web Support
 
 **Descrizione:** Restituisce un numero indicante il livello di supporto HTML interattivo per l&apos;oggetto visualizzato. 1 significa che alcuni o tutti gli elementi sono supportati. 0 significa nessun supporto.
 
@@ -1257,7 +1251,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Sintassi:** obj << Get Where Expr
+**Sintassi:** obj &lt;&lt; Get Where Expr
 
 **Descrizione:** Restituisce l&apos;espressione Where per il sottoinsieme di dati, se la piattaforma è stata avviata con By() o Where(). Altrimenti, restituisce Vuoto()
 
@@ -1275,7 +1269,7 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ### Graph Spacing
 
-**Sintassi:** obj << Graph Spacing( number )
+**Sintassi:** obj &lt;&lt; Graph Spacing( number )
 
 **Descrizione:** Imposta la quantità di spazio orizzontale tra i riquadri del grafico.
 
@@ -1299,7 +1293,7 @@ obj << Graph Spacing( 20 );
 
 ### Hide Desirability Row
 
-**Sintassi:** obj << Hide Desirability Row( state=0|1 )
+**Sintassi:** obj &lt;&lt; Hide Desirability Row( state=0|1 )
 
 **Descrizione:** Hides or unhides the row of desirability profiles.
 
@@ -1322,7 +1316,7 @@ obj << Hide Desirability Row( 1 );
 
 ### Hide Y Variables
 
-**Sintassi:** obj << Hide Y Variables( Y columns )
+**Sintassi:** obj &lt;&lt; Hide Y Variables( Y columns )
 
 **Descrizione:** Specifica le variabili di risposta che si desidera mostrare o nascondere nel profiler.
 
@@ -1364,7 +1358,7 @@ dt << Bivariate(
 
 ### Independent Resampled Inputs
 
-**Sintassi:** obj << Independent Resampled Inputs( state=0|1 )
+**Sintassi:** obj &lt;&lt; Independent Resampled Inputs( state=0|1 )
 
 **Descrizione:** Calcola gli indici utilizzati nell&apos;opzione Valuta importanza della variabile ricampionando la tabella di dati assumendo che gli input siano indipendenti.
 
@@ -1385,7 +1379,7 @@ obj << Independent Resampled Inputs( 1 );
 
 ### Independent Uniform Inputs
 
-**Sintassi:** obj << Independent Uniform Inputs( state=0|1 )
+**Sintassi:** obj &lt;&lt; Independent Uniform Inputs( state=0|1 )
 
 **Descrizione:** Calcola gli indici utilizzati nell&apos;opzione Valuta importanza della variabile ricampionando la tabella di dati assumendo che gli input abbiano distribuzioni uniformi indipendenti.
 
@@ -1406,7 +1400,7 @@ obj << Independent Uniform Inputs( 1 );
 
 ### Interaction Profiler
 
-**Sintassi:** obj << Interaction Profiler( state=0|1 )
+**Sintassi:** obj &lt;&lt; Interaction Profiler( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un profiler delle interazioni per ciascuna risposta.
 
@@ -1426,7 +1420,7 @@ obj << Interaction Profiler( 1 );
 
 ### Linearly Constrained Inputs
 
-**Sintassi:** obj << Linearly Constrained Inputs( state=0|1 )
+**Sintassi:** obj &lt;&lt; Linearly Constrained Inputs( state=0|1 )
 
 **Descrizione:** Calcola gli indici utilizzati nell&apos;opzione Valuta importanza della variabile ricampionando la tabella di dati su una distribuzione uniforme definita dai vincoli lineari.
 
@@ -1448,7 +1442,7 @@ obj << Linearly Constrained Inputs( 1 );
 
 ### Link Profilers
 
-**Sintassi:** obj << Link Profilers( state=0|1 )
+**Sintassi:** obj &lt;&lt; Link Profilers( state=0|1 )
 
 **Descrizione:** Collega insieme tutti i profiler in un unico report: se si modifica un fattore in un profiler, la stessa modifica sarà applicata a quel fattore in tutti gli altri profiler.
 
@@ -1473,7 +1467,7 @@ obj << Term Value( :Silica( 1.78 ), :Sulfur( 2.34 ) );
 
 ### Load Constraints from Table
 
-**Sintassi:** obj << Load Constraints from Table
+**Sintassi:** obj &lt;&lt; Load Constraints from Table
 
 **Descrizione:** Loads linear constraints from a data table.
 
@@ -1503,7 +1497,7 @@ obj << Profile at Boundary( "Stop at Boundaries" );
 
 ### Local Data Filter
 
-**Sintassi:** obj << Local Data Filter
+**Sintassi:** obj &lt;&lt; Local Data Filter
 
 **Descrizione:** Filtra dati in specifici gruppi o range, ma localmente in questa piattaforma
 
@@ -1523,7 +1517,7 @@ dt << Distribution(
 
 ### Log Iterations
 
-**Sintassi:** obj << Log Iterations( state=0|1 )
+**Sintassi:** obj &lt;&lt; Log Iterations( state=0|1 )
 
 **Descrizione:** Crea una nuova tabella di dati che contiene le iterazioni dell&apos;algoritmo di ottimizzazione.
 
@@ -1545,7 +1539,7 @@ obj << Optimize;
 
 ### Max Cycles
 
-**Sintassi:** obj << Max Cycles( number )
+**Sintassi:** obj &lt;&lt; Max Cycles( number )
 
 **Descrizione:** Specifica il numero massimo di cicli all&apos;interno di ciascuna esecuzione nell&apos;algoritmo di ottimizzazione.
 
@@ -1567,7 +1561,7 @@ obj << Optimize;
 
 ### MaxIter
 
-**Sintassi:** obj << MaxIter( number )
+**Sintassi:** obj &lt;&lt; MaxIter( number )
 
 **Descrizione:** Specifica il numero massimo di iterazioni all&apos;interno di ciascuna esecuzione nell&apos;algoritmo di ottimizzazione.
 
@@ -1589,7 +1583,7 @@ obj << Optimize;
 
 ### Maximize Desirability
 
-**Sintassi:** obj << Maximize Desirability
+**Sintassi:** obj &lt;&lt; Maximize Desirability
 
 **Descrizione:** Imposta i valori correnti dei fattori per massimizzare le funzioni di desiderabilità.
 
@@ -1611,7 +1605,7 @@ obj << Maximize Desirability;
 
 ### Maximize and Remember
 
-**Sintassi:** obj << Maximize and Remember
+**Sintassi:** obj &lt;&lt; Maximize and Remember
 
 **Descrizione:** Massimizza le funzioni di desiderabilità e ricorda le impostazioni associate.
 
@@ -1632,7 +1626,7 @@ obj << Maximize and Remember;
 
 ### Maximize for Each Grid Point
 
-**Sintassi:** obj << Maximize for Each Grid Point
+**Sintassi:** obj &lt;&lt; Maximize for Each Grid Point
 
 **Descrizione:** Massimizza le funzioni di desiderabilità per ciascun punto della griglia che contenga uno o più fattori costanti. Questa opzione richiede il blocco di almeno un fattore.
 
@@ -1654,7 +1648,7 @@ obj << Maximize For Each Grid Point;
 
 ### Maximum Number of Curves
 
-**Sintassi:** obj << Maximum Number of Curves( number=500 )
+**Sintassi:** obj &lt;&lt; Maximum Number of Curves( number=500 )
 
 **Descrizione:** Specifica il numero massimo di curve da mostrare quando si seleziona l&apos;opzione Interazioni sovrapposte. Se il numero totale possibile di curve è superiore al numero massimo di curve specificato, viene tracciato un campione arbitrario. "500", per impostazione predefinita.
 
@@ -1716,11 +1710,11 @@ preset = obj << New Preset();
 
 ### Optimization Control Panel
 
-**Sintassi:** obj << Optimization Control Panel( state=0|1 )
+**Sintassi:** obj &lt;&lt; Optimization Control Panel( state=0|1 )
 
 ### Output Grid Table
 
-**Sintassi:** obj << Output Grid Table
+**Sintassi:** obj &lt;&lt; Output Grid Table
 
 **Descrizione:** Crea una nuova tabella di dati che contiene colonne per i fattori contenenti valori di griglia, colonne per ciascuna delle risposte con valori calcolati per ciascun punto della griglia e il calcolo della desiderabilità per ciascun punto della griglia.
 
@@ -1740,7 +1734,7 @@ obj << Output Grid Table;
 
 ### Output Random Table
 
-**Sintassi:** obj << Output Random Table( number of runs,<Add Random Noise> )
+**Sintassi:** obj &lt;&lt; Output Random Table( number of runs,&lt;Add Random Noise&gt; )
 
 **Descrizione:** Crea una nuova tabella di dati con impostazioni di fattori casuali e valori previsti su tali impostazioni dei fattori per il numero di esecuzioni specificato. È disponibile anche un&apos;opzione per aggiungere un disturbo casuale alle risposte.
 
@@ -1760,7 +1754,7 @@ obj << Output Random Table( 1000 );
 
 ### Overlaid Interactions
 
-**Sintassi:** obj << Overlaid Interactions( state=0|1 )
+**Sintassi:** obj &lt;&lt; Overlaid Interactions( state=0|1 )
 
 **Descrizione:** Mostra o nasconde le curve ombreggiate nei diagrammi del Profiler di previsione. Le curve ombreggiate rappresentano i profiler per i diversi tipi di interazioni tra i range dei fattori.
 
@@ -1780,7 +1774,7 @@ obj << Overlaid Interactions( 1 );
 
 ### Paste Local Data Filter
 
-**Sintassi:** obj << Paste Local Data Filter
+**Sintassi:** obj &lt;&lt; Paste Local Data Filter
 
 **Descrizione:** Applicare il filtro sui dati locali dagli Appunti al report corrente.
 
@@ -1801,7 +1795,7 @@ dist2 << Paste Local Data Filter;
 
 ### Paste Settings Script
 
-**Sintassi:** obj << Paste Settings Script
+**Sintassi:** obj &lt;&lt; Paste Settings Script
 
 **Descrizione:** Incolla le impostazioni del profiler dagli Appunti a un profiler in un altro report.
 
@@ -1830,7 +1824,7 @@ obj2 << Paste Settings Script;
 
 ### Predict for Another Table
 
-**Sintassi:** obj << Predict for Another Table( <data table> )
+**Sintassi:** obj &lt;&lt; Predict for Another Table( &lt;data table&gt; )
 
 **Descrizione:** Aggiunge colonne di previsione a una tabella di dati specificata, utilizzando i fattori presenti in tale tabella. Questa opzione è disponibile solo per le risposte continue.
 
@@ -1856,7 +1850,7 @@ obj << Predict For Another Table( dt2 );
 
 ### Prediction Intervals
 
-**Sintassi:** obj << Prediction Intervals( state=0|1 )
+**Sintassi:** obj &lt;&lt; Prediction Intervals( state=0|1 )
 
 **Descrizione:** Mostra o nasconde gli intervalli di previsione al 95% che includono sia la variazione nella stima del modello sia la variazione nell&apos;errore residuo.
 
@@ -1887,7 +1881,7 @@ dt << Fit Model(
 
 ### Prediction Profiler
 
-**Sintassi:** obj << Prediction Profiler( state=0|1 )
+**Sintassi:** obj &lt;&lt; Prediction Profiler( state=0|1 )
 
 **Descrizione:** Mostra o nasconde il profiler di previsione.
 
@@ -1908,7 +1902,7 @@ obj << Prediction Profiler( 1 );
 
 ### Profile at Boundary
 
-**Sintassi:** obj << Profile at Boundary( "Ruota ai limiti"|"Interrompi ai limiti" )
+**Sintassi:** obj &lt;&lt; Profile at Boundary( "Ruota ai limiti"|"Interrompi ai limiti" )
 
 **Descrizione:** Identifica il metodo di gestione dei limiti per i fattori che hanno vincoli. Questa opzione è disponibile solo per i modelli di previsione che contengono variabili miscela, quando c&apos;è un vincolo lineare o quando è specificata l&apos;opzione Cambia vincoli lineari.
 
@@ -1931,7 +1925,7 @@ obj2 << Profile at Boundary( "Stop at Boundaries" );
 
 ### Prop of Error Bars
 
-**Sintassi:** obj << Prop of Error Bars( state=0|1 )
+**Sintassi:** obj &lt;&lt; Prop of Error Bars( state=0|1 )
 
 **Descrizione:** Mostra o nasconde le barre di errore sul grafico del profiler. Questa opzione è disponibile solo quando la colonna contiene una proprietà della colonna Sigma.
 
@@ -1948,7 +1942,7 @@ obj << Prop of Error Bars( 1 );
 
 ### Redo Analysis
 
-**Sintassi:** obj << Redo Analysis
+**Sintassi:** obj &lt;&lt; Redo Analysis
 
 **Descrizione:** Ripete questa stessa analisi in una nuova finestra. L&apos;analisi sarà differente se i dati sono stati modificati.
 
@@ -1969,7 +1963,7 @@ obj << Redo Analysis;
 
 ### Relaunch Analysis
 
-**Sintassi:** obj << Relaunch Analysis
+**Sintassi:** obj &lt;&lt; Relaunch Analysis
 
 **Descrizione:** Apre la finestra di avvio della piattaforma e richiama le impostazioni utilizzate per creare il report.
 
@@ -1990,7 +1984,7 @@ obj << Relaunch Analysis;
 
 ### Remember Settings
 
-**Sintassi:** obj << Remember Settings
+**Sintassi:** obj &lt;&lt; Remember Settings
 
 **Descrizione:** Aggiunge un riquadro al report con i valori delle impostazioni dei fattori.
 
@@ -2011,7 +2005,7 @@ obj << Remember Settings;
 
 ### Remove Column Switcher
 
-**Sintassi:** obj << Remove Column Switcher
+**Sintassi:** obj &lt;&lt; Remove Column Switcher
 
 **Descrizione:** Rimuove l&apos;ultimo Scambia colonne che è stato aggiunto alla piattaforma.
 
@@ -2031,7 +2025,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Sintassi:** obj << Remove Local Data Filter
+**Sintassi:** obj &lt;&lt; Remove Local Data Filter
 
 **Descrizione:** Se è stato creato un filtro di dati locali viene rimosso per ripristinare la piattaforma e utilizzare direttamente tutti i dati nella tabella di dati
 
@@ -2053,7 +2047,7 @@ dist << remove local data filter;
 
 ### Remove Profiler
 
-**Sintassi:** scobj << Remove Profiler
+**Sintassi:** scobj &lt;&lt; Remove Profiler
 
 **Descrizione:** Rimuove il profiler dal report della piattaforma. Questa opzione è disponibile solo in un numero limitato di piattaforme.
 
@@ -2096,7 +2090,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Reorder X Variables
 
-**Sintassi:** obj << Reorder X Variables( columns )
+**Sintassi:** obj &lt;&lt; Reorder X Variables( columns )
 
 **Descrizione:** Riordina gli effetti principali del modello nel profiler.
 
@@ -2117,7 +2111,7 @@ obj << Reorder X Variables( :SULFUR, :SILANE, :SILICA );
 
 ### Reorder Y Variables
 
-**Sintassi:** obj << Reorder Y Variables( columns )
+**Sintassi:** obj &lt;&lt; Reorder Y Variables( columns )
 
 **Descrizione:** Riordina le variabili di risposta.
 
@@ -2140,7 +2134,7 @@ obj << Reorder Y Variables(
 
 ### Reorder factors by main effect importance
 
-**Sintassi:** subobj << Reorder factors by main effect importance
+**Sintassi:** subobj &lt;&lt; Reorder factors by main effect importance
 
 **Descrizione:** Riordina le celle nel Profiler di previsione secondo gli indici di importanza degli effetti principali.
 
@@ -2165,7 +2159,7 @@ subobj << Reorder factors by main effect importance;
 
 ### Reorder factors by total importance
 
-**Sintassi:** subobj << Reorder factors by total importance
+**Sintassi:** subobj &lt;&lt; Reorder factors by total importance
 
 **Descrizione:** Riordina le celle nel Profiler di previsione secondo gli indici di importanza totale per i fattori.
 
@@ -2191,9 +2185,7 @@ subobj << Reorder factors by total importance;
 
 ### Report
 
-**Sintassi:** obj << Report;
-
-Report( obj )
+**Sintassi:** obj &lt;&lt; Report;Report( obj )
 
 **Descrizione:** Restituisce un riferimento all&apos;oggetto del report.
 
@@ -2216,7 +2208,7 @@ Show( t );
 
 ### Report View
 
-**Sintassi:** obj << Report View( "Completo"|"Riepilogo" )
+**Sintassi:** obj &lt;&lt; Report View( "Completo"|"Riepilogo" )
 
 **Descrizione:** La visualizzazione Report determina il livello di dettaglio visibile in un report della piattaforma. Full mostra tutti i dettagli mentre Summary mostra solo contenuti selezionati, in base alla piattaforma. Per un comportamento personalizzato, i riquadri di visualizzazione supportano un messaggio <<Set Summary Behavior.
 
@@ -2237,17 +2229,17 @@ obj << Report View( "Summary" );
 
 ### Reset
 
-**Sintassi:** obj << Reset
+**Sintassi:** obj &lt;&lt; Reset
 
 **Descrizione:** Reimposta le funzioni di desiderabilità.
 
 ### Reset Factor Grid
 
-**Sintassi:** obj << Reset Factor Grid
+**Sintassi:** obj &lt;&lt; Reset Factor Grid
 
 ### Reset Factors
 
-**Sintassi:** obj << Reset Factors
+**Sintassi:** obj &lt;&lt; Reset Factors
 
 **Descrizione:** Apre una finestra per cambiare la griglia dei fattori.
 
@@ -2267,7 +2259,7 @@ obj << Reset Factor Grid;
 
 ### Response Limits
 
-**Sintassi:** Pred Y << Response Limits( {Lower( value, fraction ), Middle( value, fraction ), Upper( value, fraction ), Goal( Minimize|Maximize|Target ), Importance( number )} )
+**Sintassi:** Pred Y &lt;&lt; Response Limits( {Lower( value, fraction ), Middle( value, fraction ), Upper( value, fraction ), Goal( Minimize|Maximize|Target ), Importance( number )} )
 
 **Descrizione:** Definisce le impostazioni delle funzioni di desiderabilità per una singola risposta, così come i valori di desiderabilità associati.
 
@@ -2291,7 +2283,7 @@ obj << Desirability Functions( 1 );
 
 ### Samples per Factor
 
-**Sintassi:** obj << Samples per Factor( number=6 )
+**Sintassi:** obj &lt;&lt; Samples per Factor( number=6 )
 
 **Descrizione:** Specifica il numero di valori campione presi per ogni fattore continuo per le interazioni a due vie. Questo valore si riduce per le interazioni a più vie ed è condizionato dal numero massimo di curve. "6", per impostazione predefinita.
 
@@ -2315,7 +2307,7 @@ obj << Samples per Factor( 10 );
 
 ### Save Bagged Predictions
 
-**Sintassi:** obj << Save Bagged Predictions( nsample, Random Seed(number), Fractional Weights(0|1), Save Prediction Formulas(0|1) )
+**Sintassi:** obj &lt;&lt; Save Bagged Predictions( nsample, Random Seed(number), Fractional Weights(0|1), Save Prediction Formulas(0|1) )
 
 **Descrizione:** Usa l&apos;aggregazione di bootstrap (bagging) per effettuare previsioni e salva le medie e gli errori standard delle previsioni degli aggregati di bootstrap nella tabella di dati.
 
@@ -2335,7 +2327,7 @@ obj << Profiler( Save Bagged Predictions( 10 ) );
 
 ### Save Constraints to Script
 
-**Sintassi:** obj << Save Constraints to Script
+**Sintassi:** obj &lt;&lt; Save Constraints to Script
 
 **Descrizione:** Salva i vincoli lineari esistenti in uno script della tabella denominato Vincolo.
 
@@ -2364,7 +2356,7 @@ obj << Save Constraints to Script;
 
 ### Save Constraints to Table
 
-**Sintassi:** obj << Save Constraints to Table
+**Sintassi:** obj &lt;&lt; Save Constraints to Table
 
 **Descrizione:** Saves existing linear constraints to a new data table.
 
@@ -2388,7 +2380,7 @@ obj << Save Constraints to Table;
 
 ### Save Desirabilities
 
-**Sintassi:** obj << Save Desirabilities
+**Sintassi:** obj &lt;&lt; Save Desirabilities
 
 **Descrizione:** Salva le impostazioni delle tre funzioni di desiderabilità per ciascuna risposta, così come i valori di desiderabilità associati, come una proprietà della colonna Limiti di risposta nella tabella di dati.
 
@@ -2409,7 +2401,7 @@ obj << Save Desirabilities;
 
 ### Save Desirability Formula
 
-**Sintassi:** obj << Save Desirability Formula
+**Sintassi:** obj &lt;&lt; Save Desirability Formula
 
 **Descrizione:** Salva una nuova colonna della formula nella tabella di dati. La nuova colonna contiene una formula per la desiderabilità combinata tra le risposte.
 
@@ -2430,7 +2422,7 @@ obj << Save Desirability Formula;
 
 ### Save Expanded Formulas
 
-**Sintassi:** obj << Save Expanded Formulas
+**Sintassi:** obj &lt;&lt; Save Expanded Formulas
 
 **Descrizione:** Salva una nuova colonna della formula nella tabella di dati. La nuova colonna contiene riferimenti di formule risolte all&apos;interno delle formule usate come variabili Y per vedere le variabili sottostanti. È disponibile solo dopo che l&apos;opzione Espandi formule intermedie è stata selezionata nella finestra di avvio o dopo che è stato specificato il messaggio Espandi nello script del profiler.
 
@@ -2445,7 +2437,7 @@ obj << Save Expanded Formulas;
 
 ### Save Script for All Objects
 
-**Sintassi:** obj << Save Script for All Objects
+**Sintassi:** obj &lt;&lt; Save Script for All Objects
 
 **Descrizione:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -2466,7 +2458,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Sintassi:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintassi:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descrizione:** Salva uno script per tutti gli oggetti del report nella tabella di dati corrente. Questa opzione è utile quando sono presenti più report nella finestra. Lo script prende il nome dalla prima piattaforma, a meno che non si specifichi il nome dello script tra apici.
 
@@ -2518,7 +2510,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Sintassi:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintassi:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo salva come una proprietà di tabella nella tabella di dati.
 
@@ -2539,7 +2531,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Sintassi:** obj << Save Script to Journal
+**Sintassi:** obj &lt;&lt; Save Script to Journal
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e aggiunge un pulsante con lo script al journal.
 
@@ -2560,7 +2552,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Sintassi:** obj << Save Script to Report
+**Sintassi:** obj &lt;&lt; Save Script to Report
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo mostra nel report. Utile per avere una copia stampata di quanto è stato fatto.
 
@@ -2581,7 +2573,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Sintassi:** obj << Save Script to Script Window
+**Sintassi:** obj &lt;&lt; Save Script to Script Window
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo aggiunge alla finestra di testo dello script corrente.
 
@@ -2602,7 +2594,7 @@ obj << Save Script to Script Window;
 
 ### Save Shapley Values
 
-**Sintassi:** obj << Save Shapley Values
+**Sintassi:** obj &lt;&lt; Save Shapley Values
 
 **Descrizione:** Calcola i valori di Shapley per ogni riga della tabella di dati non esclusa.
 
@@ -2696,7 +2688,7 @@ dt << Distribution(
 
 ### Sensitivity Indicator
 
-**Sintassi:** obj << Sensitivity Indicator( state=0|1 )
+**Sintassi:** obj &lt;&lt; Sensitivity Indicator( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un triangolo viola che può aiutare a individuare rapidamente le celle sensibili nei profili di grandi dimensioni. L&apos;altezza e la direzione del triangolo corrispondono al valore della derivata parziale della funzione di profilo al suo valore corrente.
 
@@ -2716,7 +2708,7 @@ obj << Sensitivity Indicator( 1 );
 
 ### Set Desirabilities
 
-**Sintassi:** obj << Set Desirabilities
+**Sintassi:** obj &lt;&lt; Set Desirabilities
 
 **Descrizione:** Apre la finestra Obiettivo della risposta dove si possono impostare specifici valori di desiderabilità.
 
@@ -2737,7 +2729,7 @@ obj << Set Desirabilities;
 
 ### Set Script
 
-**Sintassi:** obj << Set Script( Function( {arguments}, <{locals}>, expr ) )
+**Sintassi:** obj &lt;&lt; Set Script( Function( {arguments}, &lt;{locals}&gt;, expr ) )
 
 **Descrizione:** Imposta uno script che sarà eseguito ogni volta che si modifica un fattore.
 
@@ -2760,7 +2752,7 @@ obj << Term Value( :Silica( 1 ) );
 
 ### Set Threshold Criterion
 
-**Sintassi:** obj << Set Threshold Criterion( Extrapolation Control Criterion( "Num Model Terms / Num Observations " | "Maximum Leverage" ), <multiplier> )
+**Sintassi:** obj &lt;&lt; Set Threshold Criterion( Extrapolation Control Criterion( "Num Model Terms / Num Observations " | "Maximum Leverage" ), &lt;multiplier&gt; )
 
 **Descrizione:** Può essere utilizzato per specificare il moltiplicatore della soglia di estrapolazione generale. In alternativa, è possibile utilizzare questa funzione per aprire una finestra che consente di correggere il moltiplicatore della soglia di estrapolazione.
 
@@ -2790,7 +2782,7 @@ obj << (Fit[1] << Profiler(
 
 ### Set to Data in Row
 
-**Sintassi:** obj << Set to Data in Row( row number )
+**Sintassi:** obj &lt;&lt; Set to Data in Row( row number )
 
 **Descrizione:** Assegna alle variabili X del profiler i valori di una riga in una tabella di dati.
 
@@ -2812,7 +2804,7 @@ obj << Set to Data in Row( 4 );
 
 ### Shapley Background Data Choice
 
-**Sintassi:** obj << Shapley Background Data Choice( "Percentuale data set di training"|"Numero di righe del data set di training" )
+**Sintassi:** obj &lt;&lt; Shapley Background Data Choice( "Percentuale data set di training"|"Numero di righe del data set di training" )
 
 **Descrizione:** Specifica i dati in background nei calcoli di Shapley come percentuale dei dati di training o come numero di righe dei dati di training.
 
@@ -2846,7 +2838,7 @@ obj << (Fit[1] << Profiler(
 
 ### Shapley Number of Permutations
 
-**Sintassi:** obj << Shapley Number of Permutations( number=10 )
+**Sintassi:** obj &lt;&lt; Shapley Number of Permutations( number=10 )
 
 **Descrizione:** Imposta il numero di permutazioni da utilizzare per il calcolo dei valori di Shapley. "10", per impostazione predefinita.
 
@@ -2875,7 +2867,7 @@ obj << (Fit[1] << Profiler( 1, Shapley Number of Permutations( 15 ), Save Shaple
 
 ### Shapley Number of Rows of Training Data
 
-**Sintassi:** obj << Shapley Number of Rows of Training Data( number=100 )
+**Sintassi:** obj &lt;&lt; Shapley Number of Rows of Training Data( number=100 )
 
 **Descrizione:** Imposta il numero di righe dei dati di training utilizzati per stimare il modello da utilizzare come dati in background nei calcoli di Shapley. "100", per impostazione predefinita.
 
@@ -2909,7 +2901,7 @@ obj << (Fit[1] << Profiler(
 
 ### Shapley Percent Training Data
 
-**Sintassi:** obj << Shapley Percent Training Data( number=100 )
+**Sintassi:** obj &lt;&lt; Shapley Percent Training Data( number=100 )
 
 **Descrizione:** Imposta la percentuale dei dati di training utilizzati per stimare il modello da utilizzare come dati in background nei calcoli di Shapley. "100", per impostazione predefinita.
 
@@ -2943,7 +2935,7 @@ obj << (Fit[1] << Profiler(
 
 ### Shapley Set Random Seed
 
-**Sintassi:** obj << Shapley Set Random Seed( number )
+**Sintassi:** obj &lt;&lt; Shapley Set Random Seed( number )
 
 **Descrizione:** Imposta un seme casuale per il calcolo dei valori di Shapley.
 
@@ -2972,7 +2964,7 @@ obj << (Fit[1] << Profiler( 1, Shapley Set Random Seed( 12345 ), Save Shapley Va
 
 ### Show Creator
 
-**Sintassi:** obj << Show Creator( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Creator( state=0|1 )
 
 **Descrizione:** Mostra o nasconde il nome della piattaforma che ha creato la formula nella colonna di risposta. Il nome della piattaforma compare sull&apos;asse verticale. Disponibile solo se la colonna di risposta contiene un argomento nominato dal Creatore nella proprietà della colonna Previsione di.
 
@@ -3005,7 +2997,7 @@ Profiler( Y( predForm ), Show Creator( 1 ) );
 
 ### Show Formulas
 
-**Sintassi:** obj << Show Formulas
+**Sintassi:** obj &lt;&lt; Show Formulas
 
 **Descrizione:** Apre una finestra di script che contiene JSL per tutte le formule da profilare.
 
@@ -3026,7 +3018,7 @@ obj << Show Formulas;
 
 ### Simulator
 
-**Sintassi:** obj << Simulator( state=0|1 )
+**Sintassi:** obj &lt;&lt; Simulator( state=0|1 )
 
 **Descrizione:** Mostra o nasconde Simulatore.
 
@@ -3047,7 +3039,7 @@ obj << Simulator( 1 );
 
 ### Spanning Range
 
-**Sintassi:** obj << Spanning Range( "Range dell&apos;asse interno"|"Range completo dell&apos;asse"|"Una deviazione standard"|"Due deviazioni standard"|"Range di dati" )
+**Sintassi:** obj &lt;&lt; Spanning Range( "Range dell&apos;asse interno"|"Range completo dell&apos;asse"|"Una deviazione standard"|"Due deviazioni standard"|"Range di dati" )
 
 **Descrizione:** Specifica come viene determinato il range di campionamento di ciascun fattore continuo. Il range di campionamento di ciascun fattore definisce i valori minimi e massimi per i quali vengono create le curve di interazione.
 
@@ -3071,7 +3063,7 @@ obj << Spanning Range( "Two Standard Deviations" );
 
 ### Surface Profiler
 
-**Sintassi:** obj << Surface Profiler( state=0|1 )
+**Sintassi:** obj &lt;&lt; Surface Profiler( state=0|1 )
 
 **Descrizione:** Mostra o nasconde il profiler di superficie.
 
@@ -3092,7 +3084,7 @@ obj << Surface Profiler( 1 );
 
 ### Sync to Data Table Changes
 
-**Sintassi:** obj << Sync to Data Table Changes
+**Sintassi:** obj &lt;&lt; Sync to Data Table Changes
 
 **Descrizione:** Sincronizza con l&apos;esclusione e le modifiche ai dati effettuate.
 
@@ -3109,7 +3101,7 @@ dist << Sync To Data Table Changes;
 
 ### Term Value
 
-**Sintassi:** obj << Term Value( factor( current value, <Lock( 0|1 )>, <Min( number )>, <Max( number)> ) )
+**Sintassi:** obj &lt;&lt; Term Value( factor( current value, &lt;Lock( 0|1 )&gt;, &lt;Min( number )&gt;, &lt;Max( number)&gt; ) )
 
 **Descrizione:** Specifica le impostazioni per i singoli fattori, incluso il valore corrente, lo stato di blocco e il range.
 
@@ -3131,7 +3123,7 @@ obj << Term Value( SILANE( 60, Lock( 1 ) ) );
 
 ### Title
 
-**Sintassi:** obj << Title( "new title" )
+**Sintassi:** obj &lt;&lt; Title( "new title" )
 
 **Descrizione:** Imposta il titolo della piattaforma.
 
@@ -3152,7 +3144,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Sintassi:** obj << Top Report
+**Sintassi:** obj &lt;&lt; Top Report
 
 **Descrizione:** Restituisce un riferimento al nodo principale nel report.
 
@@ -3175,7 +3167,7 @@ Show( t );
 
 ### Trips
 
-**Sintassi:** obj << Trips( number )
+**Sintassi:** obj &lt;&lt; Trips( number )
 
 **Descrizione:** Specifica il numero di partenze casuali nell&apos;algoritmo di ottimizzazione. Ogni esecuzione riavvia l&apos;algoritmo da un punto di partenza diverso.
 
@@ -3197,7 +3189,7 @@ obj << Optimize;
 
 ### Unthreaded
 
-**Sintassi:** obj << Unthreaded( state=0|1 )
+**Sintassi:** obj &lt;&lt; Unthreaded( state=0|1 )
 
 **Descrizione:** To suppress any multithreading in evaluating the profile traces, the contour grid, and the optimizer trips.
 
@@ -3219,7 +3211,7 @@ obj << Maximize Desirability;
 
 ### View Web XML
 
-**Sintassi:** obj << View Web XML
+**Sintassi:** obj &lt;&lt; View Web XML
 
 **Descrizione:** Restituisce il codice XML utilizzato per creare il report HTML interattivo.
 
@@ -3267,7 +3259,7 @@ obj2 = obj << Design Space Profiler( 1 );
 
 #### Connect Hide Mode
 
-**Sintassi:** obj << Connect Hide Mode( state=0|1 )
+**Sintassi:** obj &lt;&lt; Connect Hide Mode( state=0|1 )
 
 **Descrizione:** Per la tabella connessa, invece di selezionare i punti che rientrano nei limiti, questa opzione nasconde i punti che non rientrano nei limiti.
 
@@ -3298,7 +3290,7 @@ obj2 << Set Limits( Ethanol( 1.9, 10 ), Methanol( 4.5, 10 ), Time( 1.2, 2 ) );
 
 #### Connect to Table
 
-**Sintassi:** obj << Connect to Table( data table )
+**Sintassi:** obj &lt;&lt; Connect to Table( data table )
 
 **Descrizione:** Collega il report Profiler dello spazio del piano alla tabella di dati specificata. Le righe che contengono fattori entro i limiti inferiore e superiore correnti sono selezionate nella tabella collegata.
 
@@ -3329,7 +3321,7 @@ obj2 << Set Limits( Ethanol( 1.9, 10 ), Methanol( 4.5, 10 ), Time( 1.2, 2 ) );
 
 #### Get Midpoints from Profiler
 
-**Sintassi:** obj << Get Midpoints from Profiler( fraction )
+**Sintassi:** obj &lt;&lt; Get Midpoints from Profiler( fraction )
 
 **Descrizione:** Ottiene le impostazioni correnti dei fattori dal Profiler di previsione e imposta i punti medi per ciascun fattore nel Profiler dello spazio del piano a tali valori. I limiti sono costruiti intorno a ciascun valore del punto medio utilizzando una frazione specificata del range dei fattori.
 
@@ -3357,7 +3349,7 @@ obj2 << Get Midpoints from Profiler( 0.5 );
 
 #### Lock
 
-**Sintassi:** obj << Lock( Lock(colume name(lock_value),...) )
+**Sintassi:** obj &lt;&lt; Lock( Lock(colume name(lock_value),...) )
 
 **Descrizione:** Locks the continuous factor at the specified value. This lock is temporary.
 
@@ -3385,7 +3377,7 @@ obj2 << Lock( Ethanol( 5 ) );
 
 #### Make and Connect Random Table
 
-**Sintassi:** obj << Make and Connect Random Table( number, <Add Random Noise( state=0|1 )>, <Embed Factor Space Scatterplots>, <Embed Response Space Scatterplots> )
+**Sintassi:** obj &lt;&lt; Make and Connect Random Table( number, &lt;Add Random Noise( state=0|1 )&gt;, &lt;Embed Factor Space Scatterplots&gt;, &lt;Embed Response Space Scatterplots&gt; )
 
 **Descrizione:** Crea una nuova tabella di dati che contiene impostazioni dei fattori distribuite uniformemente e le corrispondenti risposte simulate. Sono disponibili opzioni per specificare come vengono simulate le risposte e se incorporare grafici a dispersione di risposte e fattori nel report. La selezione di righe nella tabella di dati è collegata ai profiler nel report.
 
@@ -3419,15 +3411,15 @@ obj2 << Set Limits( Ethanol( 1.9, 10 ), Methanol( 4.5, 10 ), Time( 1.2, 2 ) );
 
 #### Move Corner Inward
 
-**Sintassi:** obj << Move Corner Inward
+**Sintassi:** obj &lt;&lt; Move Corner Inward
 
 #### Move Corner Outward
 
-**Sintassi:** obj << Move Corner Outward
+**Sintassi:** obj &lt;&lt; Move Corner Outward
 
 #### Move Inward
 
-**Sintassi:** obj << Move Inward( <number=1> )
+**Sintassi:** obj &lt;&lt; Move Inward( &lt;number=1&gt; )
 
 **Descrizione:** Trova il limite di specifica con il percorso più ripido verso l&apos;alto e sposta quel limite di specifica verso l&apos;interno. Usare l&apos;argomento facoltativo number per specificare quante volte viene eseguito questo processo.
 
@@ -3457,7 +3449,7 @@ obj2 << Move Outward;
 
 #### Move Outward
 
-**Sintassi:** obj << Move Outward( <number=1> )
+**Sintassi:** obj &lt;&lt; Move Outward( &lt;number=1&gt; )
 
 **Descrizione:** Trova il limite di specifica con il percorso meno ripido verso il basso e sposta tale limite di specifica verso l&apos;esterno. Usare l&apos;argomento facoltativo number per specificare quante volte viene eseguito questo processo.
 
@@ -3488,7 +3480,7 @@ obj2 << Move Outward;
 
 #### Reset Factor Space
 
-**Sintassi:** obj << Reset Factor Space( factor1( lower, upper ), factor2( lower, upper ), ... )
+**Sintassi:** obj &lt;&lt; Reset Factor Space( factor1( lower, upper ), factor2( lower, upper ), ... )
 
 **Descrizione:** Modifica lo spazio dei fattori per restringere, ampliare o spostare il range di uno o più fattori. Se gli intervalli dei limiti sono troppo ristretti, ciò può causare un volume dei limiti ridotto e creare stime imprecise basate sulla simulazione.
 
@@ -3523,11 +3515,11 @@ obj2 << Reset Factor Space(
 
 #### Save Simulation Table
 
-**Sintassi:** obj << Save Simulation Table( state=0|1 )
+**Sintassi:** obj &lt;&lt; Save Simulation Table( state=0|1 )
 
 #### Save X Spec Limits
 
-**Sintassi:** obj << Save X Spec Limits
+**Sintassi:** obj &lt;&lt; Save X Spec Limits
 
 **Descrizione:** Salva i limiti delle specifiche X correnti come proprietà della colonna.
 
@@ -3556,7 +3548,7 @@ obj2 << Save X Spec Limits;
 
 #### Send Limits to Profiler as Constraints
 
-**Sintassi:** obj << Send Limits to Profiler as Constraints
+**Sintassi:** obj &lt;&lt; Send Limits to Profiler as Constraints
 
 **Descrizione:** Invia i limiti X correnti al profiler come vincoli di limite.
 
@@ -3585,7 +3577,7 @@ obj2 << Send Limits to Profiler as Constraints;
 
 #### Send Limits to Simulator
 
-**Sintassi:** obj << Send Limits to Simulator( "Uniform" | "Normal with limits at 2 sigma" | "Normal with limits at 3 sigma" | "Normal weighted with limits at 2 sigma" | "Normal weighted with limits at 3 sigma" )
+**Sintassi:** obj &lt;&lt; Send Limits to Simulator( "Uniform" | "Normal with limits at 2 sigma" | "Normal with limits at 3 sigma" | "Normal weighted with limits at 2 sigma" | "Normal weighted with limits at 3 sigma" )
 
 **Descrizione:** Invia i limiti X correnti al simulatore come parametri di una distribuzione specificata. Invia anche i valori della deviazione standard dell’errore per ogni risposta come deviazione standard per il disturbo casuale aggiunto.
 
@@ -3614,7 +3606,7 @@ obj2 << Send Limits to Simulator( "Normal with Limits at 3 Sigma" );
 
 #### Send Midpoints to Profiler
 
-**Sintassi:** obj << Send Midpoints to Profiler
+**Sintassi:** obj &lt;&lt; Send Midpoints to Profiler
 
 **Descrizione:** Invia al profiler i punti medi per i limiti X correnti.
 
@@ -3643,7 +3635,7 @@ obj2 << Send Midpoints to Profiler;
 
 #### Set Limits
 
-**Sintassi:** obj << Set Limits( Set Limits(colume name(lower limit,upper limit),...) )
+**Sintassi:** obj &lt;&lt; Set Limits( Set Limits(colume name(lower limit,upper limit),...) )
 
 **Descrizione:** Imposta i limiti del fattore utilizzando uno script.
 
@@ -3671,7 +3663,7 @@ obj2 << Set Limits( Ethanol( 1.9, 10 ), Methanol( 4.5, 10 ), Time( 1.2, 2 ) );
 
 #### Show Corners
 
-**Sintassi:** obj << Show Corners( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Corners( state=0|1 )
 
 **Descrizione:** Mostra o nasconde il report Angoli. Questo report contiene una tabella delle probabilità entro specifica calcolate agli estremi dello spazio dei fattori. Le probabilità sono calcolate utilizzando una distribuzione normale centrata sui valori previsti e tagliata ai limiti di specifica.
 
@@ -3699,7 +3691,7 @@ obj2 << Show Corners;
 
 #### Show Current Profiler Values
 
-**Sintassi:** obj << Show Current Profiler Values( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Current Profiler Values( state=0|1 )
 
 **Descrizione:** Mostra il valore corrente del profiler come linea verticale grigia con punti distanziati.
 
@@ -3727,7 +3719,7 @@ obj2 << Show Current Profiler Values( 1 );
 
 #### Show Impact Ratios
 
-**Sintassi:** obj << Show Impact Ratios( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Impact Ratios( state=0|1 )
 
 **Descrizione:** Shows or hides the impact ratios. These ratios show how sensitive changes in each factor, from midpoint to each limit, affect how far the predictions are from their specification limits.
 
@@ -3755,7 +3747,7 @@ obj2 << Show Impact Ratios;
 
 #### Show Portion for Each Response
 
-**Sintassi:** obj << Show Portion for Each Response( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Portion for Each Response( state=0|1 )
 
 **Descrizione:** Aggiunge una colonna che contiene la porzione in specifica per ciascuna risposta ai limiti X correnti.
 
@@ -3798,7 +3790,7 @@ obj2 << Set Limits( Methanol( 5, 10 ), Propanol( 0, 5 ) );
 
 #### Simulator
 
-**Sintassi:** obj << Simulator( state=0|1, <Factors( column << Random( )|Fixed( constant )| Expression( )| Multivariate( ) )>, <Responses( column << No Noise| Add Random Noise| Add Random Weighted Noise| Add Multivariate Noise ) )>
+**Sintassi:** obj &lt;&lt; Simulator( state=0|1, &lt;Factors( column &lt;&lt; Random( )|Fixed( constant )| Expression( )| Multivariate( ) )&gt;, &lt;Responses( column &lt;&lt; No Noise| Add Random Noise| Add Random Weighted Noise| Add Multivariate Noise ) )&gt;
 
 **Descrizione:** Avvia il simulatore.
 
@@ -3830,7 +3822,7 @@ obj << Simulator(
 
 #### Automatic Histogram Update
 
-**Sintassi:** simuobj << Automatic Historgram Update( state=0|1 )
+**Sintassi:** simuobj &lt;&lt; Automatic Historgram Update( state=0|1 )
 
 **Descrizione:** Aggiorna l&apos;istogramma con nuovi valori simulati quando le distribuzioni dei fattori vengono modificate.
 
@@ -3897,7 +3889,7 @@ obj << Term Value( SILANE( 60, Lock( 1 ) ) );
 
 #### Defect Parametric Profile
 
-**Sintassi:** simobj << Defect Parametric Profile( state=0|1 )
+**Sintassi:** simobj &lt;&lt; Defect Parametric Profile( state=0|1 )
 
 **Descrizione:** Rappresenta il tasso medio di difetti in base ai parametri di distribuzione. Questa opzione è disponibile solo dopo avere selezionato il Profiler dei difetti.
 
@@ -3967,7 +3959,7 @@ obj = Profiler(
 
 #### Defect Profiler
 
-**Sintassi:** simobj << Defect Profiler( state=0|1 )
+**Sintassi:** simobj &lt;&lt; Defect Profiler( state=0|1 )
 
 **Descrizione:** Mostra il tasso di difetti come funzione isolata di ogni fattore. Questa opzione è disponibile solo se sono stati definiti dei limiti di specifica.
 
@@ -4034,7 +4026,7 @@ obj = Profiler(
 
 #### N Runs
 
-**Sintassi:** obj << Simulator( N Runs(number=1000) )
+**Sintassi:** obj &lt;&lt; Simulator( N Runs(number=1000) )
 
 **Descrizione:** Imposta il numero di esecuzioni per la simulazione. "10000", per impostazione predefinita.
 
@@ -4066,7 +4058,7 @@ obj << Simulator( N Runs( 2500 ), Simulate );
 
 #### Resimulate
 
-**Sintassi:** simobj << Resimulate
+**Sintassi:** simobj &lt;&lt; Resimulate
 
 **Descrizione:** Riavvia la simulazione. Questa opzione è utile dopo che sono state apportate delle modifiche alle distribuzioni dei fattori.
 
@@ -4097,7 +4089,7 @@ simobj << Resimulate;
 
 #### Set Random Seed
 
-**Sintassi:** obj << Simulator( Set Random Seed( number ) )
+**Sintassi:** obj &lt;&lt; Simulator( Set Random Seed( number ) )
 
 **Descrizione:** Imposta il seme casuale su un valore specifico; in questo modo tutte le esecuzioni successive che utilizzano lo stesso seme saranno riproducibili.
 
@@ -4129,7 +4121,7 @@ obj << Simulator( Set Random Seed( 1234 ), Simulate );
 
 #### Simulate to table
 
-**Sintassi:** simobj << Simulate To Table(N Runs(n),factorName<<Sequence Location(low,high,nSteps),factorName2<<Sequence Spread(low,high,nSteps),factorName3<<Not Sequenced)
+**Sintassi:** simobj &lt;&lt; Simulate To Table(N Runs(n),factorName&lt;&lt;Sequence Location(low,high,nSteps),factorName2&lt;&lt;Sequence Spread(low,high,nSteps),factorName3&lt;&lt;Not Sequenced)
 
 **Descrizione:** Crea una tabella di risultati della simulazione, in sequenza su medie o distribuzioni diverse
 
@@ -4194,7 +4186,7 @@ obj << Simulator(
 
 #### Simulation Experiment
 
-**Sintassi:** simobj << Simulation Experiment( NRun(number of experimental runs=128), Portion(factor space portion=1),NSim(number of simulations per experimental run=10000),<Run>,<Selected Factors(factor1,..)> )
+**Sintassi:** simobj &lt;&lt; Simulation Experiment( NRun(number of experimental runs=128), Portion(factor space portion=1),NSim(number of simulations per experimental run=10000),&lt;Run&gt;,&lt;Selected Factors(factor1,..)&gt; )
 
 **Descrizione:** Esegue un esperimento di simulazione pianificato basato sulle posizioni delle distribuzioni di fattori entro il modello.
 
@@ -4255,7 +4247,7 @@ obj << Simulator( Simulation Experiment( NRun( 128 ), NSim( 20000 ), Portion( 1.
 
 #### X Correlations
 
-**Sintassi:** obj << Simulator( X Correlations( state=0|1, {factor1, factor2, ..., factorN}, [NxN correlations] ) )
+**Sintassi:** obj &lt;&lt; Simulator( X Correlations( state=0|1, {factor1, factor2, ..., factorN}, [NxN correlations] ) )
 
 **Descrizione:** Imposta le correlazioni sui fattori X quando l&apos;impostazione di simulazione per i fattori è impostata a Multivariata.
 
@@ -4288,7 +4280,7 @@ obj << Simulator(
 
 #### Y Correlations
 
-**Sintassi:** obj << Simulator( Y Correlations( state=0|1, {response1, response2, ..., responseN}, [NxN correlations] ) )
+**Sintassi:** obj &lt;&lt; Simulator( Y Correlations( state=0|1, {response1, response2, ..., responseN}, [NxN correlations] ) )
 
 **Descrizione:** Imposta le correlazioni sulle risposte Y quando il disturbo multivariato viene aggiunto alle risposte.
 

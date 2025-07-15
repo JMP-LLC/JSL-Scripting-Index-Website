@@ -2,8 +2,6 @@
 
 
 
-## 関数
-
 ### As Row State
 
 **構文:** rs = As Row State( x )
@@ -27,7 +25,7 @@ For Each Row(
 
 ### Color Of
 
-**構文:** y = Color Of( <rs> ); Color Of( <Row State( <r> )> ) = y
+**構文:** y = Color Of( &lt;rs&gt; ); Color Of( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **説明:** 指定の行の属性における色の情報を、正のJMPカラーパレットインデックスまたは負のRGBエンコード値で戻す。Color Ofを左辺値として使用した場合、それにより現在のデータテーブルの現在の(またはr番目の)行の色が変更される。
 
@@ -78,7 +76,7 @@ Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 
 ### Excluded
 
-**構文:** y = Excluded( <rs> ); Excluded( <Row State( <r> )> ) = y
+**構文:** y = Excluded( &lt;rs&gt; ); Excluded( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **説明:** 指定された行属性における除外のステータスを0または1で戻す。Excluded()関数を左辺値に指定した場合、現在のデータテーブルにおける現在の行(またはr番目の行)の除外のステータスが変更される。
 
@@ -114,7 +112,7 @@ Excluded( Row State( 3 ) );
 
 ### Hidden
 
-**構文:** y = Hidden( <rs> ); Hidden( <Row State( <r> )> ) = y
+**構文:** y = Hidden( &lt;rs&gt; ); Hidden( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **説明:** 指定の行の属性における表示/非表示のステータスを0または1で戻す。Hiddenを左辺値として使用した場合、それにより現在のデータテーブルの現在の(またはr番目の)行の表示/非表示のステータスが変更される。
 
@@ -166,7 +164,7 @@ Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 
 ### Labeled
 
-**構文:** y = Labeled( <rs> ); Labeled( <Row State( <r> )> ) = y
+**構文:** y = Labeled( &lt;rs&gt; ); Labeled( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **説明:** 指定の行の属性におけるラベルのステータスを0または1で戻す。Labeledを左辺値として使用した場合、それにより現在のデータテーブルの現在の(またはr番目の)行のラベルのステータスが変更される。
 
@@ -202,7 +200,7 @@ Labeled( Row State( 3 ) );
 
 ### Marker Of
 
-**構文:** y = Marker Of( <rs> ); Marker Of( <Row State( <r> )> ) = y
+**構文:** y = Marker Of( &lt;rs&gt; ); Marker Of( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **説明:** 指定の行の属性におけるマーカーの情報を戻す。Marker Ofを左辺値として使用した場合、それにより現在のデータテーブルの現在の(またはr番目の)行のマーカーが変更される。
 
@@ -238,7 +236,7 @@ Marker Of( Row State( 3 ) );
 
 ### Row State
 
-**構文:** y = Row State( <dt>, <r> ); Row State( <dt>, <r> ) = y
+**構文:** y = Row State( &lt;dt&gt;, &lt;r&gt; ); Row State( &lt;dt&gt;, &lt;r&gt; ) = y
 
 **説明:** 現在のデータテーブルにおける現在(またはr番目)の行の属性を戻す。Row State()関数が左辺値として使用されている場合は、現在のデータテーブルにおける現在(またはr番目)の行の属性を変更する。
 
@@ -255,7 +253,7 @@ Color To RGB( Color Of( Row State( 3 ) ) );
 
 ### Selected
 
-**構文:** y = Selected( <rs> );Selected( <Row State( <r> )> ) = y
+**構文:** y = Selected( &lt;rs&gt; );Selected( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **説明:** 指定の行の属性における選択のステータスを0または1で戻す。Selectedを左辺値として使用した場合、それにより現在のデータテーブルの現在の(またはr番目の)行の選択のステータスが変更される。
 

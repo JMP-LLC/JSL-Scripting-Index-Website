@@ -2,8 +2,6 @@
 
 
 
-## 함수
-
 ### ARIMA Forecast
 
 **구문:** x = ARIMA Forecast( dtcol, length, model, estimates, from, to )
@@ -30,7 +28,7 @@ ARIMA Forecast(
 
 ### Arc Finder
 
-**구문:** Arc Finder( Group( lot, wafer ), X( col ), Y( col ), <optional arguments> )
+**구문:** Arc Finder( Group( lot, wafer ), X( col ), Y( col ), &lt;optional arguments&gt; )
 
 **설명:** 점 데이터에서 호를 찾고, 호를 나타내는 새 열을 생성합니다.
 
@@ -64,7 +62,7 @@ dt << Graph Builder(
 
 ### Best Partition
 
-**구문:** {c1, c2, g2} = Best Partition( xIndices, yIndices, <<Ordered, <<ContinuousY, <<ContinuousX )
+**구문:** {c1, c2, g2} = Best Partition( xIndices, yIndices, &lt;&lt;Ordered, &lt;&lt;ContinuousY, &lt;&lt;ContinuousX )
 
 **설명:** 최적 그룹화를 결정합니다. 아직 실험적인 함수입니다.
 
@@ -84,7 +82,7 @@ Names Default To Here( 1 );
 
 ### Col At
 
-**구문:** y = Col At( col, index, <byVar, ...>, < <<relative(bool)>, < <<skip missing(expr)> )
+**구문:** y = Col At( col, index, &lt;byVar, ...&gt;, &lt; &lt;&lt;relative(bool)&gt;, &lt; &lt;&lt;skip missing(expr)&gt; )
 
 **설명:** byVar 그룹 내의 행 위치 index에서 col 값을 반환합니다. skip missing 표현식 결과가 결측값인 행은 인덱싱에 포함되지 않습니다.
 
@@ -102,7 +100,7 @@ New Column( "Relative to Last Height", Formula( :height / Col At( :height, -1, :
 
 ### Col Cumulative Sum
 
-**구문:** y = Col Cumulative Sum( xCol, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**구문:** y = Col Cumulative Sum( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **설명:** 현재 행에 대한 누적 합을 반환합니다. 기준 변수를 사전 정렬할 필요가 없습니다.
 
@@ -135,7 +133,7 @@ dt << New Column( "Col Cumulative Sum for each Sex grouped by Excluded",
 
 ### Col Interpolate
 
-**구문:** y = Col Interpolate( v, xCol, yCol, <byVar, ...>, < <<method(linear|nearest|previous|next)>, < <<extrapolate(bool)> )
+**구문:** y = Col Interpolate( v, xCol, yCol, &lt;byVar, ...&gt;, &lt; &lt;&lt;method(linear|nearest|previous|next)&gt;, &lt; &lt;&lt;extrapolate(bool)&gt; )
 
 **설명:** xCol]. Values outside the range of xCol에서 v 위치에 대응하는 yCol 내의 보간된 값을 반환합니다. xCol 범위를 벗어나는 값은 extrapolate 옵션이 설정되지 않은 경우 결측이고, 설정된 경우 가장 가까운 yCol 값이 반환됩니다.
 
@@ -154,7 +152,7 @@ dt << New Column( "gnp30",
 
 ### Col Max
 
-**구문:** y = Col Maximum( xCol, <byVar, <Excluded( Row State() )>, ...> )
+**구문:** y = Col Maximum( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt; )
 
 **설명:** 열의 행 전체에 대한 최대값을 반환합니다. 반복 실행의 효율을 높이기 위해 결과가 내부적으로 캐시됩니다. 선택적 byVar 인수는 그룹별 계산을 위해 지정됩니다. byVar 인수는 열 계산식 또는 For Each Row() 함수에서 사용되어야 합니다.
 
@@ -206,7 +204,7 @@ dt << New Column( "Col Max for each Sex grouped by Excluded",
 
 ### Col Maximum
 
-**구문:** y = Col Maximum( xCol, <byVar, <Excluded( Row State() )>, ...> )
+**구문:** y = Col Maximum( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt; )
 
 **설명:** 열의 행 전체에 대한 최대값을 반환합니다. 반복 실행의 효율을 높이기 위해 결과가 내부적으로 캐시됩니다. 선택적 byVar 인수는 그룹별 계산을 위해 지정됩니다. byVar 인수는 열 계산식 또는 For Each Row() 함수에서 사용되어야 합니다.
 
@@ -258,7 +256,7 @@ dt << New Column( "Col Max for each Sex grouped by Excluded",
 
 ### Col Mean
 
-**구문:** y = Col Mean( xCol, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**구문:** y = Col Mean( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **설명:** 열의 행 전체에 대한 표본 평균을 반환합니다. 반복 실행의 효율을 높이기 위해 결과가 내부적으로 캐시됩니다. 선택적 byVar 인수는 그룹별 계산을 위해 지정됩니다. byVar 인수는 열 계산식 또는 For Each Row() 함수에서 사용되어야 합니다.
 
@@ -320,7 +318,7 @@ dt << New Column( "Col Mean for each Sex grouped by Excluded",
 
 ### Col Median
 
-**구문:** y = Col Median( xCol, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**구문:** y = Col Median( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **설명:** 열의 행 전체에 대해 지정된 중앙값을 반환합니다. 여러 번 진행되는 실행의 효율을 높이기 위해 정렬 상태가 내부적으로 캐시됩니다.
 
@@ -366,7 +364,7 @@ dt << New Column( "Col Median for each Sex grouped by Excluded",
 
 ### Col Min
 
-**구문:** y = Col Minimum( xCol, <byVar, <Excluded( Row State() )>, ...> )
+**구문:** y = Col Minimum( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt; )
 
 **설명:** 열의 행 전체에 대한 최소값을 반환합니다. 반복 실행의 효율을 높이기 위해 결과가 내부적으로 캐시됩니다. 선택적 byVar 인수는 그룹별 계산을 위해 지정됩니다. byVar 인수는 열 계산식 또는 For Each Row() 함수에서 사용되어야 합니다.
 
@@ -418,7 +416,7 @@ dt << New Column( "Col Min for each Sex grouped by Excluded",
 
 ### Col Minimum
 
-**구문:** y = Col Minimum( xCol, <byVar, <Excluded( Row State() )>, ...> )
+**구문:** y = Col Minimum( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt; )
 
 **설명:** 열의 행 전체에 대한 최소값을 반환합니다. 반복 실행의 효율을 높이기 위해 결과가 내부적으로 캐시됩니다. 선택적 byVar 인수는 그룹별 계산을 위해 지정됩니다. byVar 인수는 열 계산식 또는 For Each Row() 함수에서 사용되어야 합니다.
 
@@ -470,7 +468,7 @@ dt << New Column( "Col Min for each Sex grouped by Excluded",
 
 ### Col Mode
 
-**구문:** y = Col Mode( xCol, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**구문:** y = Col Mode( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **설명:** 여러 최빈값의 경우 최소값을 선택하여 열의 행 전체에 대한 표본 최빈값을 반환합니다. 반복 실행의 효율을 높이기 위해 결과가 내부적으로 캐시됩니다. 선택적 byVar 인수는 그룹별 계산을 위해 지정됩니다. byVar 인수는 열 계산식 또는 For Each Row() 함수에서 사용되어야 합니다.
 
@@ -522,7 +520,7 @@ dt << New Column( "Col Mode for each Sex grouped by Excluded",
 
 ### Col Moving Average
 
-**구문:** y = Col Moving Average( xCol, <weighting=0.25>, <before=-1>, <after=0>, <partial window is missing=1>, <byVar, <Excluded( Row State() )>, ...> )
+**구문:** y = Col Moving Average( xCol, &lt;weighting=0.25&gt;, &lt;before=-1&gt;, &lt;after=0&gt;, &lt;partial window is missing=1&gt;, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt; )
 
 **설명:** 현재 행을 기반으로 제공된 간격에 대한 이동 평균을 반환합니다. 가중치 승수의 경우 1은 동일한 가중치를 의미하고 0은 선형 가중치를 의미하며 기타 값은 지수 가중치 승수로 작동합니다. 기준 변수를 사전 정렬할 필요가 없습니다.
 
@@ -555,7 +553,7 @@ dt << New Column( "Col Moving Average for each Sex grouped by Excluded",
 
 ### Col N Missing
 
-**구문:** y = Col N Missing( xCol, <byVar, <Excluded( Row State() )>, ...> )
+**구문:** y = Col N Missing( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt; )
 
 **설명:** 열의 행 전체에 대한 결측값 수를 반환합니다. 반복 실행의 효율을 높이기 위해 결과가 내부적으로 캐시됩니다. 선택적 byVar 인수는 그룹별 계산을 위해 지정됩니다. byVar 인수는 열 계산식 또는 For Each Row() 함수에서 사용되어야 합니다.
 
@@ -610,7 +608,7 @@ dt << New Column( "Col N Missing for each Sex grouped by Excluded",
 
 ### Col N Unique
 
-**구문:** y = Col N Unique( xCol, <byVar, ...>, < <<score missing(bool)> )
+**구문:** y = Col N Unique( xCol, &lt;byVar, ...&gt;, &lt; &lt;&lt;score missing(bool)&gt; )
 
 **설명:** 열의 고유 값 수를 반환합니다. 결측값이 요청될 경우 모든 결측값 코드는 단일 값으로 간주되어 계산됩니다.
 
@@ -627,7 +625,7 @@ New Column( "N unique height by age", Formula( Col N Unique( :height, :age ) ) )
 
 ### Col Number
 
-**구문:** y = Col Number( xCol, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**구문:** y = Col Number( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **설명:** 열의 행 전체에 대한 비결측값의 수를 반환합니다. 반복 실행의 효율을 높이기 위해 결과가 내부적으로 캐시됩니다. 선택적 byVar 인수는 그룹별 계산을 위해 지정됩니다. byVar 인수는 열 계산식 또는 For Each Row() 함수에서 사용되어야 합니다.
 
@@ -682,7 +680,7 @@ dt << New Column( "Col Number for each Sex grouped by Excluded",
 
 ### Col Quantile
 
-**구문:** y = Col Quantile( xCol, p, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**구문:** y = Col Quantile( xCol, p, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **설명:** 열의 행 전체에 대해 지정된 분위수를 반환합니다. 여러 번 진행되는 실행의 효율을 높이기 위해 정렬 상태가 내부적으로 캐시됩니다.
 
@@ -732,7 +730,7 @@ dt << New Column( "Col Quantile for each Sex grouped by Excluded",
 
 ### Col Rank
 
-**구문:** y = Col Rank( xCol, <byVar, <Excluded( Row State() )>, ...>, < <<tie("average"|"row"|"minimum"|"maximum"|"arbitrary")> )
+**구문:** y = Col Rank( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt;tie("average"|"row"|"minimum"|"maximum"|"arbitrary")&gt; )
 
 **설명:** <<Tie 인수로 지정한 경우를 제외하고 행 순서 동점 우선 순위 결정을 사용하여 1(가장 낮음)부터 시작하는 범위의 순위를 반환합니다. "average"는 동점 순위의 평균을 산출하고 "minimum"은 동점 순위의 가장 낮은 값을 산출합니다. "row" 및 "arbitrary"의 경우 각 행은 고유한 순위를 가집니다.
 
@@ -765,7 +763,7 @@ dt << New Column( "Col Rank for each Sex grouped by Excluded",
 
 ### Col Score
 
-**구문:** y = Col Score( xCol, <byVar, ...>, < <<score missing(bool)> )
+**구문:** y = Col Score( xCol, &lt;byVar, ...&gt;, &lt; &lt;&lt;score missing(bool)&gt; )
 
 **설명:** 각 고유 값의 정수 스코어를 관련된 열 특성에 따라 정렬하여 반환합니다.
 
@@ -782,7 +780,7 @@ New Column( "Score Height by age", Formula( Col Score( :height, :age ) ) );
 
 ### Col Sequence
 
-**구문:** y = Col Sequence( <byVar, ...>, < <<skip missing(expr)>, < <<sequence(start=1, end=unbounded, incr=1, repeat=1)>)
+**구문:** y = Col Sequence( &lt;byVar, ...&gt;, &lt; &lt;&lt;skip missing(expr)&gt;, &lt; &lt;&lt;sequence(start=1, end=unbounded, incr=1, repeat=1)&gt;)
 
 **설명:** 이 행의 byVar 그룹 내 위치를 skip missing 및 sequence 파라미터에 따라 조정하여 반환합니다.
 
@@ -800,7 +798,7 @@ New Column( "Row within sex, 60+", Formula( Col Sequence( :sex, <<skip missing( 
 
 ### Col Simple Exponential Smoothing
 
-**구문:** y = Col Simple Exponential Smoothing( xCol, alpha, <byVar, ...> )
+**구문:** y = Col Simple Exponential Smoothing( xCol, alpha, &lt;byVar, ...&gt; )
 
 **설명:** 현재 행에 대해 평활 가중 알파를 사용한 단순 지수 평활 예측 결과를 반환합니다. 기준 변수를 사전 정렬할 필요가 없습니다. 계산식은 예측값[t] = 알파 * 관측값[t-1] + (1-α) * 예측값[t-1]입니다(예측값[1] = 관측값[1]).
 
@@ -817,7 +815,7 @@ Col Simple Exponential Smoothing( :Column1, .7 );
 
 ### Col Standardize
 
-**구문:** y = Col Standardize( xCol, <byVar, <Excluded( Row State() )>, ...> )
+**구문:** y = Col Standardize( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt; )
 
 **설명:** 열의 행 전체에 대해 열 표준편차로 나눈 열 평균을 뺀 값을 반환합니다. 그룹별 열이 지정되면 값이 그룹별 평균 및 표준편차에 대해 표준화됩니다.
 
@@ -860,7 +858,7 @@ dt << New Column( "Col Standardize for each Sex grouped by Excluded",
 
 ### Col Std Dev
 
-**구문:** y = Col Std Dev( xCol, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**구문:** y = Col Std Dev( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **설명:** 열의 행 전체에 대한 표본 표준편차를 반환합니다. 반복 실행의 효율을 높이기 위해 결과가 내부적으로 캐시됩니다. 선택적 byVar 인수는 그룹별 계산을 위해 지정됩니다. byVar 인수는 열 계산식 또는 For Each Row() 함수에서 사용되어야 합니다.
 
@@ -924,7 +922,7 @@ dt << New Column( "Col Standard Deviation for each Sex grouped by Excluded",
 
 ### Col Sum
 
-**구문:** y = Col Sum( xCol, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**구문:** y = Col Sum( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **설명:** 열의 행 전체에 대한 합을 반환합니다. 반복 실행의 효율을 높이기 위해 결과가 내부적으로 캐시됩니다. 선택적 byVar 인수는 그룹별 계산을 위해 지정됩니다. byVar 인수는 열 계산식 또는 For Each Row() 함수에서 사용되어야 합니다.
 
@@ -1001,7 +999,7 @@ Cumulative Sum( [1 1 1 1 . 10 20] );
 
 ### Fit Censored
 
-**구문:** result = FitCensored( Distribution(name), YLow(vector) | Y(vector), <YHigh(vector)>, <Weight(vector)>, <X(matrix)>, <Z(matrix)>, <HoldParm(vector)>, <Use random sample to compute initial values(percent)>, <Use first N observations to compute initial values(nobs)> )
+**구문:** result = FitCensored( Distribution(name), YLow(vector) | Y(vector), &lt;YHigh(vector)&gt;, &lt;Weight(vector)&gt;, &lt;X(matrix)&gt;, &lt;Z(matrix)&gt;, &lt;HoldParm(vector)&gt;, &lt;Use random sample to compute initial values(percent)&gt;, &lt;Use first N observations to compute initial values(nobs)&gt; )
 
 **설명:** 중도절단된 데이터를 사용하여 분포를 적합시킵니다. 필수 인수는 Distribution과 YLow 또는 Y입니다. 이 함수는 모수 추정값, 공분산 행렬, 로그 가능도, AICc, BIC 및 수렴 메시지가 포함된 목록을 반환합니다. X 및 Z 인수는 각각 위치 및 척도에 대한 회귀 설계 행렬을 지정합니다. 데이터 벡터의 크기가 큰 경우에는 두 개의 선택적 인수를 사용하여 초기값을 계산할 표본을 지정할 수 있습니다. 관측값의 percent 또는 처음 nobs개의 관측값을 지정할 수 있지만 총 표본 크기는 100보다 커야 합니다.
 
@@ -1115,7 +1113,7 @@ mthlst;
 
 ### KDE
 
-**구문:** {Estimates, Bins, Counts, ActualBandwidth, Error} = KDE( Vector, <<weights, <<bandwidth( 0 ), <<bandwidth scale( 1 ), <<bandwidth selection( 0 ), <<kernel )
+**구문:** {Estimates, Bins, Counts, ActualBandwidth, Error} = KDE( Vector, &lt;&lt;weights, &lt;&lt;bandwidth( 0 ), &lt;&lt;bandwidth scale( 1 ), &lt;&lt;bandwidth selection( 0 ), &lt;&lt;kernel )
 
 **설명:** 자동 대역폭이 선택된 상태의 커널 밀도 추정량을 반환합니다. 선택적 weights 인수는 Vector 인수와 동일한 길이의 벡터여야 합니다. 선택적 bandwidth 인수는 음수가 아닌 실수 또는 0이어야 합니다(이 경우 bandwidth selection 인수의 값이 강제로 사용됨). 선택적 bandwidth scale 인수는 양의 실수여야 합니다. 선택적 bandwidth selection 인수는 0, 1, 2 또는 3이어야 하며 이는 각각 Sheather and Jones, 정규 참조, Silverman 경험 법칙 또는 Oversmoother에 해당합니다. 선택적 kernel 인수는 값 0, 1, 2, 3 또는 4를 허용하며 이는 각각 가우시안, Epanechnikov, Biweight, 삼각형 또는 직사각형에 해당합니다.
 
@@ -1290,7 +1288,7 @@ Eval List( {Min( Pi(), e() ), Min( [33 44 22] )} );
 
 ### Moving Average
 
-**구문:** y = Moving Average( x, weighting, <before=-1>, <after=0>, <partial window is missing=0> )
+**구문:** y = Moving Average( x, weighting, &lt;before=-1&gt;, &lt;after=0&gt;, &lt;partial window is missing=0&gt; )
 
 **설명:** 입력 행렬에 대한 이동 평균 행렬을 반환합니다. before와 after는 평균화할 항목의 범위("창")를 결정하며, before를 -1로 설정하여 모든 이전 항목을 포함할 수 있습니다. weighting이 1이면 모든 항목의 가중치가 동일하고 weighting이 0이면 항목이 선형 증분 가중치를 갖습니다. 그렇지 않은 경우 weighting은 EWMA(지수 가중)의 모수입니다. partial window is missing은 일부 이웃이 존재하지 않을 때(끝 또는 결측값 근처에서 발생할 수 있음) 평균이 보고되는지 여부를 나타냅니다. partial window is missing이 0이 아니면 이러한 부분 창에 대해 결측값이 대신 보고됩니다.
 
@@ -1323,7 +1321,7 @@ N Missing( 1, 2, ., 3, [11 22 . .], 4 );
 
 ### Normal Tolerance Factor
 
-**구문:** q = Normal Tolerance Factor( 1-alpha, p, n, <One Sided> )
+**구문:** q = Normal Tolerance Factor( 1-alpha, p, n, &lt;One Sided&gt; )
 
 **설명:** 정규 분포를 따르고 표본 크기가 n일 때 평균의 일정 비율(p)을 포함하도록 &apos;1-alpha&apos; 신뢰 구간을 구성하기 위한 공차 계수를 계산합니다. 단측 공차 구간에 대한 계수를 요청하는 옵션이 있습니다.
 
@@ -1458,7 +1456,7 @@ Eval List( {Sum( Pi(), e() ), Sum( [33 44 22 20 30] )} );
 
 ### Summarize
 
-**구문:** Summarize( <dt>, nameBy=By( colBy ), name1=statName1( col1 ), ... )
+**구문:** Summarize( &lt;dt&gt;, nameBy=By( colBy ), name1=statName1( col1 ), ... )
 
 **설명:** 기준 열에 따라 다양한 요약 통계량을 계산합니다. 통계량 이름은 Count, Sum, Mean, Max 또는 Maximum, Min 또는 Minimum, StdDev, Corr, Quantile, First입니다. 숫자 열에 대해서만 이러한 통계량을 계산할 수 있습니다. 결과는 지정된 이름의 변수에 행렬로 저장됩니다.
 

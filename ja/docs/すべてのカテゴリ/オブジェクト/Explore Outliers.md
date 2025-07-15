@@ -6,7 +6,7 @@
 
 ### Action
 
-**構文:** obj << Action
+**構文:** obj &lt;&lt; Action
 
 **説明:** 評価する式を挿入するための、プラットフォーム内の汎用トラップドア。プラットフォームに一時的にディスプレイボックスおよびデータテーブルのコンテキストを設定する。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**構文:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**構文:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **説明:** 作成されたプリセットをオブジェクトに適用する。保存された設定に合わせてオプションとカスタマイズが更新される。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**構文:** obj << Automatic Recalc( state=0|1 )
+**構文:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **説明:** データの除外や変更があった場合に分析を自動的にやり直す。Automatic Recalcオプションがオンになっている場合で、データの除外や変更が再計算の前に確実に適用されるようにするには、Wait(0)コマンドを使用すること。
 
@@ -87,7 +87,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**構文:** obj << Broadcast(message)
+**構文:** obj &lt;&lt; Broadcast(message)
 
 **説明:** メッセージをプラットフォームに一括適用する。個々のオブジェクトから戻される結果がデータテーブルである場合は、可能な限り連結する。その最終的な形式は、Table BoxのSave Combined Tableオプションの結果と同じになるか、またはソース列を使用したConcanateオプションの結果と同じになる。それ以外の場合、結果はリストの形で戻される。
 
@@ -107,7 +107,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**構文:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**構文:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **説明:** プラットフォームの変数を変更するための設定パネルを追加する。
 
@@ -125,7 +125,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**構文:** obj << Copy ByGroup Script
+**構文:** obj &lt;&lt; Copy ByGroup Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -145,7 +145,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**構文:** obj << Copy Script
+**構文:** obj &lt;&lt; Copy Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -160,7 +160,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**構文:** obj << Data Table Window
+**構文:** obj &lt;&lt; Data Table Window
 
 **説明:** この分析に使用したデータテーブルのウィンドウを手前に表示する。
 
@@ -175,7 +175,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**構文:** obj << Get By Levels
+**構文:** obj &lt;&lt; Get By Levels
 
 **説明:** By列が指定されている場合、列名をキー、データ値を値とした連想配列を戻す。
 
@@ -192,7 +192,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**構文:** obj << Get ByGroup Script
+**構文:** obj &lt;&lt; Get ByGroup Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -213,7 +213,7 @@ Show( t );
 
 ### Get Container
 
-**構文:** obj << Get Container
+**構文:** obj &lt;&lt; Get Container
 
 **説明:** オブジェクトのコンテンツを含んだコンテナボックスの参照を戻す。
 
@@ -260,7 +260,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**構文:** obj << Get Data Table
+**構文:** obj &lt;&lt; Get Data Table
 
 **説明:** データテーブルへの参照を戻す。
 
@@ -276,7 +276,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**構文:** obj << Get Group Platform
+**構文:** obj &lt;&lt; Get Group Platform
 
 **説明:** 該当のプラットフォームがグループに属している場合に、Group Platformオブジェクトを戻す。それ以外の場合はEmpty()を戻す。
 
@@ -293,7 +293,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**構文:** obj << Get Script
+**構文:** obj &lt;&lt; Get Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -309,7 +309,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**構文:** obj << Get Script With Data Table
+**構文:** obj &lt;&lt; Get Script With Data Table
 
 **説明:** この分析を再現するスクリプト(JSL)をデータテーブルへの参照も含めて生成し、それを式として戻す。
 
@@ -325,7 +325,7 @@ Show( t );
 
 ### Get Timing
 
-**構文:** obj << Get Timing
+**構文:** obj &lt;&lt; Get Timing
 
 **説明:** プラットフォームの起動にかかった時間を取得する。
 
@@ -341,7 +341,7 @@ Show( t );
 
 ### Get Web Support
 
-**構文:** obj << Get Web Support
+**構文:** obj &lt;&lt; Get Web Support
 
 **説明:** ディスプレイオブジェクトにおけるインタラクティブHTMLサポートのレベルを数値で戻す。1は、一部または全部の要素がサポートされていることを示し、0は、サポートされないことを示す。
 
@@ -357,7 +357,7 @@ Show( s );
 
 ### Get Where Expr
 
-**構文:** obj << Get Where Expr
+**構文:** obj &lt;&lt; Get Where Expr
 
 **説明:** プラットフォームがBy()またはWhere()を使って起動された場合に、データをサブセットするためのWhere式を戻す。By()やWhere()が使われていない場合はEmpty()を戻す。
 
@@ -394,7 +394,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**構文:** obj << Local Data Filter
+**構文:** obj &lt;&lt; Local Data Filter
 
 **説明:** このプラットフォームに対してのみ有効なフィルタで、データを特定のグループまたは範囲にフィルタリングする。
 
@@ -450,7 +450,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**構文:** obj << Paste Local Data Filter
+**構文:** obj &lt;&lt; Paste Local Data Filter
 
 **説明:** クリップボードにあるローカルデータフィルタを現在のレポートに適用する。
 
@@ -471,7 +471,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**構文:** obj << Redo Analysis
+**構文:** obj &lt;&lt; Redo Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -486,7 +486,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**構文:** obj << Redo ByGroup Analysis
+**構文:** obj &lt;&lt; Redo ByGroup Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -506,7 +506,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**構文:** obj << Relaunch Analysis
+**構文:** obj &lt;&lt; Relaunch Analysis
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -521,7 +521,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**構文:** obj << Relaunch ByGroup
+**構文:** obj &lt;&lt; Relaunch ByGroup
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -541,7 +541,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**構文:** obj << Remove Column Switcher
+**構文:** obj &lt;&lt; Remove Column Switcher
 
 **説明:** プラットフォームに最後に追加された列スイッチャーを削除する。
 
@@ -561,7 +561,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**構文:** obj << Remove Local Data Filter
+**構文:** obj &lt;&lt; Remove Local Data Filter
 
 **説明:** すでに作成されているローカルデータフィルタを削除し、プラットフォームはデータテーブル内のすべてのデータを使用した状態に戻る。
 
@@ -600,9 +600,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**構文:** obj << Report;
-
-Report( obj )
+**構文:** obj &lt;&lt; Report;Report( obj )
 
 **説明:** レポートオブジェクトへの参照を戻す。
 
@@ -619,7 +617,7 @@ Show( t );
 
 ### Report View
 
-**構文:** obj << Report View( "完全"|"要約" )
+**構文:** obj &lt;&lt; Report View( "完全"|"要約" )
 
 **説明:** レポートビューは、プラットフォームレポートの詳細を表示するかどうかを決定する。Fullはすべての詳細を表示し、Summaryはプラットフォームにより限定されたものだけを表示する。 動作をカスタマイズするため、各ディスプレイボックスは<<Set Summary Behaviorメッセージをサポートする。
 
@@ -634,7 +632,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**構文:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** 分析を再現するためのJSLスクリプトを作成し、データテーブルにテーブルプロパティとして保存する。スクリプトの名前を指定できる。Append Suffixオプションは、スクリプト名に数字の接尾辞を追加する。これにより、同名のスクリプトが存在していても区別できる。Promptオプションは、ユーザにスクリプト名の指定を促す。Replaceオプションは、同名の既存のスクリプトを置き換える。
 
@@ -654,7 +652,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**構文:** obj << Save ByGroup Script to Journal
+**構文:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -674,7 +672,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**構文:** obj << Save ByGroup Script to Script Window
+**構文:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -694,7 +692,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**構文:** obj << Save Script for All Objects
+**構文:** obj &lt;&lt; Save Script for All Objects
 
 **説明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -709,7 +707,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**構文:** obj << Save Script for All Objects To Data Table( <name> )
+**構文:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **説明:** すべてのレポートオブジェクトを再現するスクリプトを現在のデータテーブルに保存する。このオプションは、ウィンドウ内にレポートが複数ある場合に便利。作成されるスクリプトの名前は、引用符で囲んで指定しない限り、1つ目のプラットフォーム名となる。
 
@@ -747,7 +745,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**構文:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** この分析を再現するJSLスクリプトを生成し、データテーブルのテーブルプロパティとして保存する。
 
@@ -762,7 +760,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**構文:** obj << Save Script to Journal
+**構文:** obj &lt;&lt; Save Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -777,7 +775,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**構文:** obj << Save Script to Report
+**構文:** obj &lt;&lt; Save Script to Report
 
 **説明:** この分析を再現するJSLスクリプトを生成し、レポートウィンドウに表示する。分析手順の記録を結果と一緒に残せる。
 
@@ -792,7 +790,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**構文:** obj << Save Script to Script Window
+**構文:** obj &lt;&lt; Save Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -872,7 +870,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**構文:** obj << Sync to Data Table Changes
+**構文:** obj &lt;&lt; Sync to Data Table Changes
 
 **説明:** 除外やデータの変更が行われた場合に同期する。
 
@@ -889,7 +887,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**構文:** obj << Title( "new title" )
+**構文:** obj &lt;&lt; Title( "new title" )
 
 **説明:** プラットフォームのタイトルを設定する。
 
@@ -904,7 +902,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**構文:** obj << Top Report
+**構文:** obj &lt;&lt; Top Report
 
 **説明:** レポート内のルートノードへの参照を戻す。
 
@@ -921,7 +919,7 @@ Show( t );
 
 ### Transform Column
 
-**構文:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**構文:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **説明:** オブジェクトのローカルコンテキスト(通常はプラットフォーム)内に変換列を作成する。この変換列は、それを作成したプラットフォームの中のみで使用可能。
 
@@ -940,7 +938,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**構文:** obj << View Web XML
+**構文:** obj &lt;&lt; View Web XML
 
 **説明:** インタラクティブHTMLレポートの作成に使うXMLコードを戻す。
 
@@ -976,7 +974,7 @@ New Window( "Bivariate Equation",
 
 ### By
 
-**構文:** obj << By( column(s) )
+**構文:** obj &lt;&lt; By( column(s) )
 
 ```jsl
 
@@ -993,7 +991,7 @@ obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ), By( _b
 
 ### Columns
 
-**構文:** obj << Columns( column(s) )
+**構文:** obj &lt;&lt; Columns( column(s) )
 
 ```jsl
 
@@ -1005,7 +1003,7 @@ obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 
 ### Label
 
-**構文:** obj << Label( column )
+**構文:** obj &lt;&lt; Label( column )
 
 **JMP追加されたバージョン:** 16
 
@@ -1019,7 +1017,7 @@ obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 
 ### Validation
 
-**構文:** obj << Validation( column )
+**構文:** obj &lt;&lt; Validation( column )
 
 **JMP追加されたバージョン:** 16
 
@@ -1033,7 +1031,7 @@ obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 
 ### Y
 
-**構文:** obj << Y( column(s) )
+**構文:** obj &lt;&lt; Y( column(s) )
 
 ```jsl
 
@@ -1063,7 +1061,7 @@ obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 
 ### K Nearest Neighbor Outliers
 
-**構文:** obj << K Nearest Neighbor Outliers
+**構文:** obj &lt;&lt; K Nearest Neighbor Outliers
 
 **説明:** 各点から、k番目の近傍点までの距離を求める。
 
@@ -1080,13 +1078,13 @@ obj << k Nearest Neighbor Outliers( K( 5 ) );
 
 ### Multivariate k Nearest Neighbor Outliers
 
-**構文:** obj << Multivariate k Nearest Neighbor Outliers
+**構文:** obj &lt;&lt; Multivariate k Nearest Neighbor Outliers
 
 **JMP追加されたバージョン:** 14
 
 ### Quantile Range Outliers
 
-**構文:** obj << Quantile Range Outliers
+**構文:** obj &lt;&lt; Quantile Range Outliers
 
 **説明:** 分位点から分位点範囲の数倍以上離れている値を求める。
 
@@ -1101,7 +1099,7 @@ obj << Quantile Range Outliers;
 
 ### Robust Fit Outliers
 
-**構文:** obj << Robust Fit Outliers
+**構文:** obj &lt;&lt; Robust Fit Outliers
 
 **説明:** 中心と尺度に関するロバストな推定値を使い、中心から尺度の数倍以上離れている値を求める。
 
@@ -1116,7 +1114,7 @@ obj << Robust Fit Outliers;
 
 ### Robust PCA Outliers
 
-**構文:** obj << Robust PCA Outliers
+**構文:** obj &lt;&lt; Robust PCA Outliers
 
 **説明:** データの行列を、低ランク近似行列と残差行列に分解する。残差が大きくなっている外れ値が検出される。同時に、欠測値の補完もできる。
 
@@ -1137,19 +1135,19 @@ obj << Robust PCA Outliers;
 
 #### Close
 
-**構文:** obj << Close
+**構文:** obj &lt;&lt; Close
 
 **JMP追加されたバージョン:** 16
 
 #### Exclude Selected Rows
 
-**構文:** obj << Exclude Selected Rows
+**構文:** obj &lt;&lt; Exclude Selected Rows
 
 **JMP追加されたバージョン:** 16
 
 #### Impute Missing
 
-**構文:** obj << Impute Missing( state=0 )
+**構文:** obj &lt;&lt; Impute Missing( state=0 )
 
 **説明:** 欠測値がある場合、K近傍法分析を行う前に、ロバスト主成分分析によって欠測値を補完する。 デフォルトではオン。
 
@@ -1157,7 +1155,7 @@ obj << Robust PCA Outliers;
 
 #### K
 
-**構文:** obj << K( number=8 )
+**構文:** obj &lt;&lt; K( number=8 )
 
 **説明:** データの各行に対して、何番目の近傍点を求めるかを指定する自然数。 デフォルトの値は"8"。
 
@@ -1165,7 +1163,7 @@ obj << Robust PCA Outliers;
 
 #### Save NN Distances
 
-**構文:** obj << Save NN Distances
+**構文:** obj &lt;&lt; Save NN Distances
 
 **説明:** データテーブルに、k番目の近接点までの距離を含む新しい列を保存する。
 
@@ -1183,7 +1181,7 @@ obj << Save NN Distances;
 
 #### Scatterplot Matrix
 
-**構文:** obj << Scatterplot Matrix
+**構文:** obj &lt;&lt; Scatterplot Matrix
 
 **説明:** すべての列の散布図行列を含むウィンドウを開く。
 
@@ -1203,13 +1201,13 @@ obj << Scatterplot Matrix;
 
 #### Close
 
-**構文:** obj << Close
+**構文:** obj &lt;&lt; Close
 
 **JMP追加されたバージョン:** 16
 
 #### Exclude Selected Rows
 
-**構文:** obj << Exclude Selected Rows
+**構文:** obj &lt;&lt; Exclude Selected Rows
 
 **JMP追加されたバージョン:** 16
 
@@ -1219,7 +1217,7 @@ obj << Scatterplot Matrix;
 
 #### Add Highest Nines to Missing Value Codes
 
-**構文:** obj << Add Highest Nines to Missing Value Codes( ALL or column1, column2, ... )
+**構文:** obj &lt;&lt; Add Highest Nines to Missing Value Codes( ALL or column1, column2, ... )
 
 **説明:** 引数としてリストで指定された列を選択し、それらの列で「9」を含む最大値を見つける。そして、それらの値に対して、「欠測値のコード」列プロパティを各列に付与する。
 
@@ -1239,7 +1237,7 @@ dt:PS_RPNBR << Get Column Properties;
 
 #### Add to Missing Value Codes
 
-**構文:** obj << Add to Missing Value Codes( ALL or column1, column2, ... )
+**構文:** obj &lt;&lt; Add to Missing Value Codes( ALL or column1, column2, ... )
 
 **説明:** 引数としてリストで指定された列を選択し、それらの列の外れ値に「欠測値のコード」プロパティを追加する。
 
@@ -1257,7 +1255,7 @@ obj << Add to Missing Value Codes( :"Q-E"n, :"ZN-E"n );
 
 #### Change Highest Nines to Missing
 
-**構文:** obj << Change Highest Nines to Missing( ALL or column1, column2, ... )
+**構文:** obj &lt;&lt; Change Highest Nines to Missing( ALL or column1, column2, ... )
 
 **説明:** 引数としてリストで指定された列を選択し、それらの列で「9」の最大値を見つける。そして、その「9」の最大値を欠測値に変更する。この操作により、データテーブルが変更されることに注意。
 
@@ -1275,7 +1273,7 @@ obj << Change Highest Nines to Missing( :PS_RPNBR );
 
 #### Change to Missing
 
-**構文:** obj << Change to Missing( ALL or column1, column2, ... )
+**構文:** obj &lt;&lt; Change to Missing( ALL or column1, column2, ... )
 
 **説明:** 引数としてリストで指定された列を選択する。そして、それらの指定された列で、外れ値を欠測値に変更する。
 
@@ -1294,7 +1292,7 @@ obj << Change to Missing( :"Q-E"n, :"ZN-E"n );
 
 #### Close
 
-**構文:** obj << Close
+**構文:** obj &lt;&lt; Close
 
 **説明:** 分析結果を削除し、コマンドのアウトラインを再度開く。
 
@@ -1314,7 +1312,7 @@ obj << Close;
 
 #### Color Cells
 
-**構文:** obj << Color Cells( ALL or column1, column2, ... )
+**構文:** obj &lt;&lt; Color Cells( ALL or column1, column2, ... )
 
 **説明:** 引数としてリストで指定された列を選択する。そして、それらの列で外れ値を含むセルに色を付ける。
 
@@ -1332,7 +1330,7 @@ obj << Color Cells( :"Q-E"n, :"ZN-E"n );
 
 #### Color Rows
 
-**構文:** obj << Color Rows( ALL or column1, column2, ... )
+**構文:** obj &lt;&lt; Color Rows( ALL or column1, column2, ... )
 
 **説明:** 引数としてリストで指定された列を選択する。そして、それらの指定された列の外れ値に対応する行に、「色」の行属性を割り当てる。
 
@@ -1340,7 +1338,7 @@ obj << Color Cells( :"Q-E"n, :"ZN-E"n );
 
 #### Exclude Rows
 
-**構文:** obj << Exclude Rows( ALL or column1, column2, ... )
+**構文:** obj &lt;&lt; Exclude Rows( ALL or column1, column2, ... )
 
 **説明:** 引数にリストで指定された列を選択する。そして、それらの指定された列で外れ値を含む行を除外する。
 
@@ -1358,7 +1356,7 @@ obj << Exclude Rows( :"Q-E"n, :"ZN-E"n );
 
 #### Formula Columns
 
-**構文:** obj << Formula Columns( ALL or column1, column2, ... )
+**構文:** obj &lt;&lt; Formula Columns( ALL or column1, column2, ... )
 
 **説明:** 選択されている列に関して、外れ値を欠測値に変える新しい計算式の列を作成する。
 
@@ -1377,7 +1375,7 @@ obj << Formula Columns( Suffix( "Culled" ) );
 
 #### Formula Script
 
-**構文:** obj << Formula Script( ALL or column1, column2, ... )
+**構文:** obj &lt;&lt; Formula Script( ALL or column1, column2, ... )
 
 **説明:** 選択されている列に関して、外れ値を欠測値に変える新しい計算式の列を作成するスクリプトを生成する。
 
@@ -1396,7 +1394,7 @@ obj << Formula Script( Suffix( "Culled" ) );
 
 #### Get Quantile Outliers
 
-**構文:** obj << Get Quantile Outliers
+**構文:** obj &lt;&lt; Get Quantile Outliers
 
 **説明:** 外れ値を含む列のリストと、それらの列の外れ値を含むベクトルのリストを戻す。
 
@@ -1412,7 +1410,7 @@ obj << Get Quantile Outliers;
 
 #### Q
 
-**構文:** obj << Q( number=3 )
+**構文:** obj &lt;&lt; Q( number=3 )
 
 **説明:** 分位点間距離に対するQを設定する。裾の分位点から分位点間距離のQ倍以上離れているものが外れ値と見なされる。設定を適用するには[再スキャン]を使用する。 デフォルトの値は"3"。
 
@@ -1429,7 +1427,7 @@ obj << Quantile Range Outliers( Q( 4 ) );
 
 #### Rescan
 
-**構文:** obj << Rescan
+**構文:** obj &lt;&lt; Rescan
 
 **説明:** 設定を変更した後に、変更後の設定で再スキャン・再計算して外れ値を求める。
 
@@ -1448,7 +1446,7 @@ obj << Rescan;
 
 #### Restrict search to integers
 
-**構文:** obj << Restrict search to integers( state=0|1 )
+**構文:** obj &lt;&lt; Restrict search to integers( state=0|1 )
 
 **説明:** 外れ値とみなすデータ値を整数のみに制限する。この設定により、「99」などの欠測値コードやエラーコードを見つけられるように検索を制限できる。[分位点範囲の外れ値]と[ロバスト推定法による外れ値]の手法に使用できる。デフォルトではオフ。
 
@@ -1465,7 +1463,7 @@ obj = dt << Explore Outliers(
 
 #### Save Quantile Outlier Limits
 
-**構文:** obj << Save Quantile Outlier Limits
+**構文:** obj &lt;&lt; Save Quantile Outlier Limits
 
 **説明:** 「分位点範囲の外れ値」レポートの情報と外れ値の列を含む新しいデータテーブルを開く。
 
@@ -1481,7 +1479,7 @@ obj << Save Quantile Outlier Limits;
 
 #### Select Rows
 
-**構文:** obj << Select Rows( ALL or column1, column2, ... )
+**構文:** obj &lt;&lt; Select Rows( ALL or column1, column2, ... )
 
 **説明:** 引数としてリストで指定された列を選択し、それらの列で外れ値を持つ行を選択する。
 
@@ -1499,7 +1497,7 @@ obj << Select Rows( :"Q-E"n, :"ZN-E"n );
 
 #### Show only columns with outliers
 
-**構文:** obj << Show only columns with outliers( state=0|1 )
+**構文:** obj &lt;&lt; Show only columns with outliers( state=0|1 )
 
 **説明:** 結果のレポートに表示される列を、外れ値を含んだものだけに限る。[分位点範囲の外れ値]と[ロバスト推定による外れ値]で使用できる。デフォルトではオフ。
 
@@ -1516,7 +1514,7 @@ obj = dt << Explore Outliers(
 
 #### Tail Quantile
 
-**構文:** obj << Tail Quantile( number=.10 )
+**構文:** obj &lt;&lt; Tail Quantile( number=.10 )
 
 **説明:** 各裾の分位点を設定する。これは分位点間距離を計算するのに使用される。設定を適用するには[再スキャン]を使用する。 デフォルトの値は".10"。
 
@@ -1537,7 +1535,7 @@ obj << Quantile Range Outliers( Tail Quantile( 0.2 ) );
 
 #### Add to Missing Value Codes
 
-**構文:** obj << Add to Missing Value Codes( ALL or column1, column2, ... )
+**構文:** obj &lt;&lt; Add to Missing Value Codes( ALL or column1, column2, ... )
 
 **説明:** 引数としてリストで指定された列を選択し、それらの列の外れ値に「欠測値のコード」プロパティを追加する。
 
@@ -1555,7 +1553,7 @@ obj << Add to Missing Value Codes( :"Q-E"n, :"ZN-E"n );
 
 #### Cauchy
 
-**構文:** obj << Cauchy( state=0|1 )
+**構文:** obj &lt;&lt; Cauchy( state=0|1 )
 
 **説明:** Cauchy分布をあてはめて、中心と尺度のロバストな推定値を求める。推定された中心と尺度は外れ値を特定するために使用される。
 
@@ -1572,7 +1570,7 @@ obj << Rescan;
 
 #### Change to Missing
 
-**構文:** obj << Change to Missing( ALL or column1, column2, ... )
+**構文:** obj &lt;&lt; Change to Missing( ALL or column1, column2, ... )
 
 **説明:** 引数としてリストで指定された列を選択する。そして、それらの指定された列で、外れ値を欠測値に変更する。
 
@@ -1591,7 +1589,7 @@ obj << Change to Missing( :"Q-E"n, :"ZN-E"n );
 
 #### Close
 
-**構文:** obj << Close
+**構文:** obj &lt;&lt; Close
 
 **説明:** 分析結果を削除し、コマンドのアウトラインを再度開く。
 
@@ -1610,7 +1608,7 @@ obj << Close;
 
 #### Color Cells
 
-**構文:** obj << Color Cells( ALL or column1, column2, ... )
+**構文:** obj &lt;&lt; Color Cells( ALL or column1, column2, ... )
 
 **説明:** 引数としてリストで指定された列を選択する。そして、それらの列で外れ値を含むセルに色を付ける。
 
@@ -1628,7 +1626,7 @@ obj << Color Cells( :"Q-E"n, :"ZN-E"n );
 
 #### Color Rows
 
-**構文:** obj << Color Rows( ALL or column1, column2, ... )
+**構文:** obj &lt;&lt; Color Rows( ALL or column1, column2, ... )
 
 **説明:** 引数としてリストで指定された列を選択する。そして、それらの指定された列の外れ値に対応する行に、「色」の行属性を割り当てる。
 
@@ -1647,7 +1645,7 @@ obj << Color Rows( :"Q-E"n, :"ZN-E"n );
 
 #### Exclude Rows
 
-**構文:** obj << Exclude Rows( ALL or column1, column2, ... )
+**構文:** obj &lt;&lt; Exclude Rows( ALL or column1, column2, ... )
 
 **説明:** 引数にリストで指定された列を選択する。そして、それらの指定された列で外れ値を含む行を除外する。
 
@@ -1665,7 +1663,7 @@ obj << Exclude Rows( :"Q-E"n, :"ZN-E"n );
 
 #### Formula Columns
 
-**構文:** obj << Formula Columns( ALL or column1, column2, ... )
+**構文:** obj &lt;&lt; Formula Columns( ALL or column1, column2, ... )
 
 **説明:** 選択されている列に関して、外れ値を欠測値に変える新しい計算式の列を作成する。
 
@@ -1684,7 +1682,7 @@ obj << Formula Columns( Suffix( "Culled" ) );
 
 #### Formula Script
 
-**構文:** obj << Formula Script( ALL or column1, column2, ... )
+**構文:** obj &lt;&lt; Formula Script( ALL or column1, column2, ... )
 
 **説明:** 選択されている列に関して、外れ値を欠測値に変える新しい計算式の列を作成するスクリプトを生成する。
 
@@ -1703,7 +1701,7 @@ obj << Formula Script( Suffix( "Culled" ) );
 
 #### Huber
 
-**構文:** obj << Huber( state=0|1 )
+**構文:** obj &lt;&lt; Huber( state=0|1 )
 
 **説明:** Huber法によって、中心と尺度のロバストな推定値を求める。推定された中心と尺度は外れ値を特定するために使用される。
 
@@ -1720,7 +1718,7 @@ obj << Rescan;
 
 #### K Sigma
 
-**構文:** obj << K Sigma( number=4 )
+**構文:** obj &lt;&lt; K Sigma( number=4 )
 
 **説明:** シグマに対するKを設定する。中心から尺度のK倍離れているものが外れ値と定義される。 デフォルトの値は"4"。
 
@@ -1739,7 +1737,7 @@ obj << Rescan;
 
 #### Quartile
 
-**構文:** obj << Quartile( state=0|1 )
+**構文:** obj &lt;&lt; Quartile( state=0|1 )
 
 **説明:** ロバストな推定値として、中央値(メディアン)を中心とし、1.349で割った分位点範囲を尺度とする。これらの中心と尺度が外れ値を特定するために使用される。
 
@@ -1756,7 +1754,7 @@ obj << Rescan;
 
 #### Rescan
 
-**構文:** obj << Rescan
+**構文:** obj &lt;&lt; Rescan
 
 **説明:** 設定を変更した後に、変更後の設定で再スキャン・再計算して外れ値を求める。
 
@@ -1775,7 +1773,7 @@ obj << Rescan;
 
 #### Save Robust Outlier Limits
 
-**構文:** obj << Save Robust Outlier Limits
+**構文:** obj &lt;&lt; Save Robust Outlier Limits
 
 **説明:** 「ロバスト推定による外れ値」レポートの要約統計量を、新しいデータテーブルに保存します。
 
@@ -1791,7 +1789,7 @@ obj << Save Robust Outlier Limits;
 
 #### Select Rows
 
-**構文:** obj << Select Rows( ALL or column1, column2, ... )
+**構文:** obj &lt;&lt; Select Rows( ALL or column1, column2, ... )
 
 **説明:** 引数としてリストで指定された列を選択し、それらの列で外れ値を持つ行を選択する。
 
@@ -1813,7 +1811,7 @@ obj << Select Rows( :"Q-E"n, :"ZN-E"n );
 
 #### Center
 
-**構文:** obj << Center( state=1 )
+**構文:** obj &lt;&lt; Center( state=1 )
 
 **説明:** 処理を行う前に、中央値によってデータを中心化するかどうかを指定する。 デフォルトではオン。
 
@@ -1821,7 +1819,7 @@ obj << Select Rows( :"Q-E"n, :"ZN-E"n );
 
 #### Close
 
-**構文:** obj << Close
+**構文:** obj &lt;&lt; Close
 
 **説明:** プラットフォームのレポートから、ロバスト主成分分析の結果を削除する。
 
@@ -1829,7 +1827,7 @@ obj << Select Rows( :"Q-E"n, :"ZN-E"n );
 
 #### Lambda
 
-**構文:** obj << Lambda( number )
+**構文:** obj &lt;&lt; Lambda( number )
 
 **説明:** この値を小さくすると、ロバスト主成分分析において外れ値を検出する感度が高くなる。デフォルトのラムダは2/sqrt(max(nRow,nCol))。
 
@@ -1837,7 +1835,7 @@ obj << Select Rows( :"Q-E"n, :"ZN-E"n );
 
 #### MaxIt
 
-**構文:** obj << MaxIt( number )
+**構文:** obj &lt;&lt; MaxIt( number )
 
 **説明:** 特異値分解の最大反復回数。この回数に達しても収束しない場合、収束に失敗したことになる。
 
@@ -1845,7 +1843,7 @@ obj << Select Rows( :"Q-E"n, :"ZN-E"n );
 
 #### Outlier Threshold
 
-**構文:** obj << Outlier Threshold( number=2 )
+**構文:** obj &lt;&lt; Outlier Threshold( number=2 )
 
 **説明:** 絶対値がこの閾値より大きい標準化残差は、外れ値のレポートに表示される。 デフォルトの値は"2"。
 
@@ -1853,7 +1851,7 @@ obj << Select Rows( :"Q-E"n, :"ZN-E"n );
 
 #### Randomized SVD Dim
 
-**構文:** obj << Randomized SVD Dim( state=0|1 )
+**構文:** obj &lt;&lt; Randomized SVD Dim( state=0|1 )
 
 **説明:** 乱択特異値分解の次元数を指定する。乱択特異値分解は、横長のデータ(ワイドデータ)に対して計算時間を短縮することができる。
 
@@ -1861,7 +1859,7 @@ obj << Select Rows( :"Q-E"n, :"ZN-E"n );
 
 #### Save Cleaned
 
-**構文:** obj << Save Cleaned( Trim(<threshold>),Impute(<threshold>),Make Missing(<threshold>),Color Impute(0|1)--if none specified it will prompt with dialog )
+**構文:** obj &lt;&lt; Save Cleaned( Trim(&lt;threshold&gt;),Impute(&lt;threshold&gt;),Make Missing(&lt;threshold&gt;),Color Impute(0|1)--if none specified it will prompt with dialog )
 
 **説明:** 外れ値を補完や削除した新しい列を作成する。Trim(引数)は、標準化残差が引数よりも大きい場合には、その値を「＋引数」もしくは「－引数」に置換する。Impute(引数)は、標準化残差が引数より大きい場合には、その値を低ランク近似による予測値に変える。Make Missing(引数)は、標準化残差が引数より大きな場合には、その値を欠測値に変える。
 
@@ -1881,7 +1879,7 @@ obj << Save Cleaned( Trim( 25 ), Impute( 50 ), Make Missing( 100 ) );
 
 #### Save Large Outliers
 
-**構文:** obj << Save Large Outliers
+**構文:** obj &lt;&lt; Save Large Outliers
 
 **説明:** レポートにおける外れ値を含んだ新しいデータテーブルを作成する。
 
@@ -1901,7 +1899,7 @@ obj << Save Large Outliers;
 
 #### Save Low Rank Approx
 
-**構文:** obj << Save Low Rank Approx
+**構文:** obj &lt;&lt; Save Low Rank Approx
 
 **説明:** 低ランク近似による予測値を含んだ新しい列を作成する。低ランク近似による予測値は、特異値分解によって求められる。
 
@@ -1921,7 +1919,7 @@ obj << Save Low Rank Approx;
 
 #### Save Residuals
 
-**構文:** obj << Save Residuals
+**構文:** obj &lt;&lt; Save Residuals
 
 **説明:** 残差を含んだ新しい列を作成する。残差とは、実測値から低ランク近似による予測値を引いたもの。
 
@@ -1941,7 +1939,7 @@ obj << Save Residuals;
 
 #### Save Scaled Residuals
 
-**構文:** obj << Save Scaled Residuals
+**構文:** obj &lt;&lt; Save Scaled Residuals
 
 **説明:** 標準化残差を含んだ新しい列を作成する。標準化残差とは、標準化したデータから、その低ランク近似による予測値を引いたもの。
 
@@ -1961,7 +1959,7 @@ obj << Save Scaled Residuals;
 
 #### Scale
 
-**構文:** obj << Scale( state=1 )
+**構文:** obj &lt;&lt; Scale( state=1 )
 
 **説明:** 処理を行う前に、分位点範囲によってデータを標準化するかどうかを指定する。分位点範囲によって標準化するのは、標準偏差による標準化よりも、ロバストにするためである。 デフォルトではオン。
 
@@ -1969,7 +1967,7 @@ obj << Save Scaled Residuals;
 
 #### Tolerance
 
-**構文:** obj << Tolerance( number )
+**構文:** obj &lt;&lt; Tolerance( number )
 
 **説明:** アルゴリズムを停止する時の収束基準を指定する。デフォルトの収束基準値は、起動時に指定された列の数に基づいて設定される。
 
@@ -1977,7 +1975,7 @@ obj << Save Scaled Residuals;
 
 #### Use Randomized SVD
 
-**構文:** obj << Use Randomized SVD( state=0|1 )
+**構文:** obj &lt;&lt; Use Randomized SVD( state=0|1 )
 
 **説明:** 乱択特異値分解によって次元を削減する。乱択特異値分解は、横長のデータ(ワイドデータ)に対して計算時間を短縮することができる。
 

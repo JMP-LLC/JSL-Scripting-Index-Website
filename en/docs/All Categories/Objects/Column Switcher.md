@@ -6,7 +6,7 @@
 
 ### Close Outline
 
-**Syntax:** obj << Close Outline( state=0|1 )
+**Syntax:** obj &lt;&lt; Close Outline( state=0|1 )
 
 **Description:** Opens or closes the Column Switcher outline box
 
@@ -25,7 +25,7 @@ ColumnSwitcherObject << Close Outline( 1 );
 
 ### Get Current
 
-**Syntax:** obj << Get Current
+**Syntax:** obj &lt;&lt; Get Current
 
 **Description:** get the name of the current variable
 
@@ -45,7 +45,7 @@ ColumnSwitcherObject << Get Current/*country*/ ;
 
 ### Get Layout
 
-**Syntax:** obj << Get Layout
+**Syntax:** obj &lt;&lt; Get Layout
 
 **Description:** Gets the layout for multiple Column Switchers. Vertical(0) or horizontal(1).
 
@@ -71,7 +71,7 @@ If( cs2 << Get Layout() == 1,
 
 ### Get List
 
-**Syntax:** obj << Get List
+**Syntax:** obj &lt;&lt; Get List
 
 **Description:** get the list of available variables
 
@@ -90,7 +90,7 @@ ColumnSwitcherObject << Get List/*{"sex","country","marital status"}*/ ;
 
 ### Get Original
 
-**Syntax:** obj << Get Original
+**Syntax:** obj &lt;&lt; Get Original
 
 **Description:** get the name of the original variable
 
@@ -110,7 +110,7 @@ ColumnSwitcherObject << Get Original/*marital status*/ ;
 
 ### Get Speed
 
-**Syntax:** obj << Get Speed
+**Syntax:** obj &lt;&lt; Get Speed
 
 **Description:** fpm = obj<<getSpeed /* in Frames Per Minute */;
 
@@ -129,7 +129,7 @@ FPM = ColumnSwitcherObject << Get Speed;
 
 ### Link Platform
 
-**Syntax:** obj << Link Platform( platform )
+**Syntax:** obj &lt;&lt; Link Platform( platform )
 
 **Description:** Links a platform to this column switcher.
 
@@ -148,7 +148,7 @@ columnSwitcher << Link Platform( gb );
 
 ### Make Column Switch Handler
 
-**Syntax:** handler = cs << Make Column Switch Handler( function(pre), function(post) )
+**Syntax:** handler = cs &lt;&lt; Make Column Switch Handler( function(pre), function(post) )
 
 **Description:** Creates a handler for column switches with callback functions which are called before and after the column is switched. The callback functions receive the previous column, the next column and the ColumnSwitcher. The function specified for before the switch should return a non-zero value to allow the switch. Returning 0 will prevent the switch. The function called after the switch shouldn&apos;t return a value.
 
@@ -184,7 +184,7 @@ columnSwitcher << Run;
 
 ### Next
 
-**Syntax:** obj << Next
+**Syntax:** obj &lt;&lt; Next
 
 **Description:** Change the column switcher&apos;s selection to the next available choice
 
@@ -203,7 +203,7 @@ ColumnSwitcherObject << Next;
 
 ### Pause
 
-**Syntax:** obj << Pause
+**Syntax:** obj &lt;&lt; Pause
 
 **Description:** pause the animation
 
@@ -224,7 +224,7 @@ ColumnSwitcherObject << Pause;
 
 ### Previous
 
-**Syntax:** obj << Previous
+**Syntax:** obj &lt;&lt; Previous
 
 **Description:** Change the column switcher&apos;s selection to the previous available choice
 
@@ -243,7 +243,7 @@ ColumnSwitcherObject << Previous;
 
 ### Remove Column Switcher
 
-**Syntax:** obj << Remove Column Switcher
+**Syntax:** obj &lt;&lt; Remove Column Switcher
 
 **Description:** Remove this Column Switcher
 
@@ -264,7 +264,7 @@ ColumnSwitcherObject << Remove Column Switcher;
 
 ### Retain Axis Settings
 
-**Syntax:** obj << Retain Axis Settings( state=0|1 )
+**Syntax:** obj &lt;&lt; Retain Axis Settings( state=0|1 )
 
 **Description:** Some graphs store axis customizations based on the name of the column. By default, these customizations are removed when switching columns. If this option is enabled, the column is updated when switching so that the customizations are applied to the new graph.
 
@@ -292,7 +292,7 @@ Graph Builder(
 
 ### Run
 
-**Syntax:** obj << Run
+**Syntax:** obj &lt;&lt; Run
 
 **Description:** start the animation
 
@@ -311,7 +311,7 @@ ColumnSwitcherObject << Run;
 
 ### Script
 
-**Syntax:** obj << Script( script )
+**Syntax:** obj &lt;&lt; Script( script )
 
 **Description:** Set a script that is run when the column switches
 
@@ -334,7 +334,7 @@ Wait( 5/*seconds, while it animates*/ );
 
 ### Set Current
 
-**Syntax:** obj << Set Current( string )
+**Syntax:** obj &lt;&lt; Set Current( string )
 
 **Description:** set the current variable
 
@@ -353,7 +353,7 @@ ColumnSwitcherObject << Set Current( "country" );
 
 ### Set Layout
 
-**Syntax:** obj << Set Layout( 0 = Vertical | 1 = Horizontal )
+**Syntax:** obj &lt;&lt; Set Layout( 0 = Vertical | 1 = Horizontal )
 
 **Description:** Sets the layout for multiple Column Switchers to vertical(0) or horizontal(1).
 
@@ -376,7 +376,7 @@ cs1 << Set Layout( 1 );
 
 ### Set N Lines
 
-**Syntax:** obj << Set N Lines( number )
+**Syntax:** obj &lt;&lt; Set N Lines( number )
 
 **Description:** Set the number of lines in the List Box of column names
 
@@ -395,7 +395,7 @@ ColumnSwitcherObject << Set N Lines( 20 );
 
 ### Set Script
 
-**Syntax:** obj << Set Script( script )
+**Syntax:** obj &lt;&lt; Set Script( script )
 
 **Description:** Set a script that is run when the column switches
 
@@ -418,7 +418,7 @@ Wait( 5/*seconds, while it animates*/ );
 
 ### Set Size
 
-**Syntax:** obj << Set Size( number )
+**Syntax:** obj &lt;&lt; Set Size( number )
 
 **Description:** Set the pixel width of the List Box of column names
 
@@ -437,7 +437,7 @@ ColumnSwitcherObject << Set Size( 300 );
 
 ### Set Speed
 
-**Syntax:** obj << Set Speed( number )
+**Syntax:** obj &lt;&lt; Set Speed( number )
 
 **Description:** obj<<setSpeed(60) /* in Frames Per Minute */;
 
@@ -456,7 +456,7 @@ ColumnSwitcherObject << Set Speed( 60 );/*FPM*/ColumnSwitcherObject << Run;
 
 ### Title
 
-**Syntax:** obj << Title( string )
+**Syntax:** obj &lt;&lt; Title( string )
 
 **Description:** Sets the title for the ColumnSwitcher outline box
 

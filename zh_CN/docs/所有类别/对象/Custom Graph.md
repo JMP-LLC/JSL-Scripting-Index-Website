@@ -6,7 +6,7 @@
 
 ### Custom Graph
 
-**语法:** New Window(Window title, <Editable|Dialog>, Graph Box( named arguments, ..., script segment
+**语法:** New Window(Window title, &lt;Editable|Dialog&gt;, Graph Box( named arguments, ..., script segment
 
 **说明:** 使用定制脚本创建图形。
 
@@ -34,7 +34,7 @@ obj = New Window( "Example",
 
 ### Append Seg
 
-**语法:** obj << Append Seg( display seg )
+**语法:** obj &lt;&lt; Append Seg( display seg )
 
 **说明:** 将显示段添加到 FrameBox
 
@@ -50,11 +50,11 @@ New Window( "Example",
 
 ### Background Map
 
-**语法:** obj << Background Map
+**语法:** obj &lt;&lt; Background Map
 
 ### Bottom
 
-**语法:** obj << Bottom( number )
+**语法:** obj &lt;&lt; Bottom( number )
 
 ### FrameSize
 
@@ -134,111 +134,111 @@ New Window( "Example",
 
 ### Get Background Color
 
-**语法:** obj << Get Background Color( color )
+**语法:** obj &lt;&lt; Get Background Color( color )
 
 ### Get Background Fill
 
-**语法:** obj << Get Background Fill( state=0|1 )
+**语法:** obj &lt;&lt; Get Background Fill( state=0|1 )
 
 ### Get Bottom
 
-**语法:** obj << Get Bottom
+**语法:** obj &lt;&lt; Get Bottom
 
 ### Get Graphics Script
 
-**语法:** obj << Get Graphics Script
+**语法:** obj &lt;&lt; Get Graphics Script
 
 ### Get Height
 
-**语法:** obj << Get Height
+**语法:** obj &lt;&lt; Get Height
 
 ### Get Left
 
-**语法:** obj << Get Left
+**语法:** obj &lt;&lt; Get Left
 
 ### Get Right
 
-**语法:** obj << Get Right
+**语法:** obj &lt;&lt; Get Right
 
 ### Get Sides
 
-**语法:** obj << Get Sides
+**语法:** obj &lt;&lt; Get Sides
 
 ### Get Top
 
-**语法:** obj << Get Top
+**语法:** obj &lt;&lt; Get Top
 
 ### Get Width
 
-**语法:** obj << Get Width
+**语法:** obj &lt;&lt; Get Width
 
 ### Get X Axis
 
-**语法:** obj << Get X Axis
+**语法:** obj &lt;&lt; Get X Axis
 
 ### Get X Name
 
-**语法:** obj << Get X Name
+**语法:** obj &lt;&lt; Get X Name
 
 ### Get Y Axis
 
-**语法:** obj << Get Y Axis
+**语法:** obj &lt;&lt; Get Y Axis
 
 ### Get Y Name
 
-**语法:** obj << Get Y Name
+**语法:** obj &lt;&lt; Get Y Name
 
 ### Left
 
-**语法:** obj << Left( number )
+**语法:** obj &lt;&lt; Left( number )
 
 ### Right
 
-**语法:** obj << Right( number )
+**语法:** obj &lt;&lt; Right( number )
 
 ### Set Background Color
 
-**语法:** obj << Set Background Color( color )
+**语法:** obj &lt;&lt; Set Background Color( color )
 
 ### Set Background Fill
 
-**语法:** obj << Set Background Fill( state=0|1 )
+**语法:** obj &lt;&lt; Set Background Fill( state=0|1 )
 
 ### Set Graphics Script
 
-**语法:** obj << Set Graphics Script
+**语法:** obj &lt;&lt; Set Graphics Script
 
 ### Set Height
 
-**语法:** obj << Set Height
+**语法:** obj &lt;&lt; Set Height
 
 ### Set Width
 
-**语法:** obj << Set Width
+**语法:** obj &lt;&lt; Set Width
 
 ### Set X Axis
 
-**语法:** obj << Set X Axis
+**语法:** obj &lt;&lt; Set X Axis
 
 ### Set X Name
 
-**语法:** obj << Set X Name
+**语法:** obj &lt;&lt; Set X Name
 
 ### Set Y Axis
 
-**语法:** obj << Set Y Axis
+**语法:** obj &lt;&lt; Set Y Axis
 
 ### Set Y Name
 
-**语法:** obj << Set Y Name
+**语法:** obj &lt;&lt; Set Y Name
 
 ### Sides
 
-**语法:** obj << Sides( number )
+**语法:** obj &lt;&lt; Sides( number )
 
 ### Suppress Axes
 
-**语法:** obj << Suppress Axes
+**语法:** obj &lt;&lt; Suppress Axes
 
 **说明:** 隐藏图形框的轴。
 
@@ -280,7 +280,7 @@ obj = New Window( "Example",
 
 ### Top
 
-**语法:** obj << Top( number )
+**语法:** obj &lt;&lt; Top( number )
 
 ### X Scale
 

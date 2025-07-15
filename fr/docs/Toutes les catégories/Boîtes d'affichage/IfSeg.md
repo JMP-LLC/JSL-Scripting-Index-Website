@@ -6,7 +6,7 @@
 
 ### If Seg
 
-**Syntaxe :** seg = If Seg(<state=0|1>)
+**Syntaxe :** seg = If Seg(&lt;state=0|1&gt;)
 
 **Description :** Crée un seg qui affiche ou masque les segs enfants affichés.
 
@@ -26,7 +26,7 @@ seg = (frame << Find Seg( If Seg( 1 ) ));
 
 ### Append
 
-**Syntaxe :** obj << Append( seg2 )
+**Syntaxe :** obj &lt;&lt; Append( seg2 )
 
 **Description :** Ajoute le segment comme dernier enfant du seg actif.
 
@@ -45,7 +45,7 @@ seg << Append( Lines Seg( [5 50 95 50] ) );
 
 ### Child
 
-**Syntaxe :** seg2 = obj << Child
+**Syntaxe :** seg2 = obj &lt;&lt; Child
 
 **Description :** Renvoie le premier enfant du seg affiché.
 
@@ -64,7 +64,7 @@ seg << Child; // not many segs support children
 
 ### Class Name
 
-**Syntaxe :** classname = obj << Class Name
+**Syntaxe :** classname = obj &lt;&lt; Class Name
 
 **Description :** Renvoie le nom de la classe d’affichage associée au seg d’affichage.
 
@@ -83,7 +83,7 @@ seg << Class Name;
 
 ### Clip Shape
 
-**Syntaxe :** seg << Clip Shape(Boundaries(Shape File, [ID(string)]) | Path([string] | [matrix]) | Empty())
+**Syntaxe :** seg &lt;&lt; Clip Shape(Boundaries(Shape File, [ID(string)]) | Path([string] | [matrix]) | Empty())
 
 **Description :** Coupe la géométrie selon la forme donnée. La forme peut être spécifiée à l&apos;aide d&apos;un fichier de forme ou d&apos;un chemin. Afin de sélectionner une seule forme, un ID facultatif peut être spécifié au moyen d&apos;un fichier de forme, sinon l&apos;union de toutes les formes sera utilisée pour définir la région de détourage. Un chemin de détourage peut être spécifié par une matrice N x 3 ou par une représentation textuelle. Une matrice de chemin a trois colonnes pour x, y et les indicateurs pour chaque point du chemin. Les valeurs des indicateurs sont 0 pour le contrôle, 1 pour le déplacement, 2 pour le segment de ligne, 3 pour le segment cubique de Bézier et sont négatives si le point ferme aussi le chemin. Le texte de chemin autorise la syntaxe SVG.
 
@@ -113,7 +113,7 @@ cs << Clip Shape( Boundaries( "US States" ) );
 
 ### Delete
 
-**Syntaxe :** obj << Delete
+**Syntaxe :** obj &lt;&lt; Delete
 
 **Description :** Supprimer le seg d’affichage.
 
@@ -132,7 +132,7 @@ seg << Delete;
 
 ### Frame
 
-**Syntaxe :** FrameBox = obj << Frame
+**Syntaxe :** FrameBox = obj &lt;&lt; Frame
 
 **Description :** Renvoie le cadre qui contient le seg affiché.
 
@@ -151,7 +151,7 @@ seg << Frame;
 
 ### Get
 
-**Syntaxe :** 0|1 = obj << Get
+**Syntaxe :** 0|1 = obj &lt;&lt; Get
 
 **Description :** Renvoie l’état de l’IfSeg.
 
@@ -172,7 +172,7 @@ seg << get;
 
 ### Get Clip Shape
 
-**Syntaxe :** obj << Get Clip Shape
+**Syntaxe :** obj &lt;&lt; Get Clip Shape
 
 **Description :** Renvoie la forme de détourage actuelle
 
@@ -203,7 +203,7 @@ cs << Get Clip Shape();
 
 ### Get Description
 
-**Syntaxe :** description = obj << Get Description
+**Syntaxe :** description = obj &lt;&lt; Get Description
 
 **Description :** Obtient la description du seg d&apos;affichage.
 
@@ -222,7 +222,7 @@ seg << get description();
 
 ### Parent
 
-**Syntaxe :** seg2 = obj << Parent
+**Syntaxe :** seg2 = obj &lt;&lt; Parent
 
 **Description :** Renvoie le parent du seg affiché.
 
@@ -241,7 +241,7 @@ seg << Parent;
 
 ### Set
 
-**Syntaxe :** obj << Set( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Set( state=0|1 )
 
 **Description :** Affiche ou masque les segs de l’IfSeg affichés.
 
@@ -265,7 +265,7 @@ seg << set( 1 );
 
 ### Set Description
 
-**Syntaxe :** obj << Set Description( description )
+**Syntaxe :** obj &lt;&lt; Set Description( description )
 
 **Description :** Définit la description du seg d&apos;affichage.
 
@@ -284,7 +284,7 @@ seg << set description( "my seg" );
 
 ### Sib
 
-**Syntaxe :** seg2 = obj << Sib
+**Syntaxe :** seg2 = obj &lt;&lt; Sib
 
 **Description :** Renvoie le frère du seg affiché.
 
@@ -303,7 +303,7 @@ seg << Sib;
 
 ### Sib Append
 
-**Syntaxe :** obj << Sib Append( seg2 )
+**Syntaxe :** obj &lt;&lt; Sib Append( seg2 )
 
 **Description :** Ajoute un seg d&apos;affichage immédiatement après le seg affiché.
 
@@ -343,7 +343,7 @@ mapSeg << Sib Append(
 
 ### Sib Prepend
 
-**Syntaxe :** obj << Sib Prepend( seg2 )
+**Syntaxe :** obj &lt;&lt; Sib Prepend( seg2 )
 
 **Description :** Ajoute un seg d&apos;affichage immédiatement avant le seg affiché.
 
@@ -379,9 +379,7 @@ seg << Sib Prepend(
 
 ### Enabled
 
-**Syntaxe :** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**Syntaxe :** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Description :** Un objet qui n&apos;est pas activé ne répondra pas aux commandes du clavier ou de la souris. Cette propriété est héritée par les objets enfants, donc le fait de désactiver un objet de type conteneur entraînera la désactivation de tous les objets descendants.
 
@@ -413,9 +411,7 @@ New Window( "enabled",
 
 ### Get Enabled
 
-**Syntaxe :** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**Syntaxe :** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Description :** Un objet qui n&apos;est pas activé ne répondra pas aux commandes du clavier ou de la souris. Cette propriété est héritée par les objets enfants, donc le fait de désactiver un objet de type conteneur entraînera la désactivation de tous les objets descendants.
 
@@ -447,7 +443,7 @@ New Window( "enabled",
 
 ### Get Namespace
 
-**Syntaxe :** obj << Get Namespace
+**Syntaxe :** obj &lt;&lt; Get Namespace
 
 **Description :** Renvoie l&apos;espace de noms associé à cet objet d&apos;affichage.
 
@@ -465,7 +461,7 @@ Show( ns:x, x );
 
 ### Get Properties
 
-**Syntaxe :** obj << Get Properties
+**Syntaxe :** obj &lt;&lt; Get Properties
 
 **Description :** Renvoie un tableau associatif qui contient les propriétés de la boîte d&apos;affichage et leurs valeurs.
 
@@ -479,7 +475,7 @@ bb << Get Properties;
 
 ### Get Property
 
-**Syntaxe :** obj << Get Property( "property" )
+**Syntaxe :** obj &lt;&lt; Get Property( "property" )
 
 **Description :** Renvoie le paramètre actuel pour la property nommée.
 
@@ -493,7 +489,7 @@ bb << Get Property( "Enabled" );
 
 ### Get Property List
 
-**Syntaxe :** obj << Get Property List
+**Syntaxe :** obj &lt;&lt; Get Property List
 
 **Description :** Renvoie la liste des propriétés de la boîte d&apos;affichage.
 
@@ -507,7 +503,7 @@ bb << Get Property List;
 
 ### Set Property
 
-**Syntaxe :** obj << Set Property( "property", value )
+**Syntaxe :** obj &lt;&lt; Set Property( "property", value )
 
 **Description :** Définit la valeur pour la property nommée pour la boîte d&apos;affichage.
 

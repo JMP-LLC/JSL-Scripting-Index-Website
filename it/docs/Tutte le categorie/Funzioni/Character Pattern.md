@@ -2,8 +2,6 @@
 
 
 
-## Funzioni
-
 ### Pat Abort
 
 **Sintassi:** Pat Abort()
@@ -250,7 +248,7 @@ result;
 
 ### Pat Look Ahead
 
-**Sintassi:** Pat Look Ahead( pattern, <0|1> )
+**Sintassi:** Pat Look Ahead( pattern, &lt;0|1&gt; )
 
 **Descrizione:**  Una corrispondenza pattern larghezza zero dopo la posizione corrente. Il secondo argomento opzionale predefinito pari a 0. 1 indica una corrispondenza negativa o una mancata corrispondenza.
 
@@ -309,7 +307,7 @@ While( /* keep repeating the match until it won't match */
 
 ### Pat Look Behind
 
-**Sintassi:** Pat Look Behind( pattern, <0|1> )
+**Sintassi:** Pat Look Behind( pattern, &lt;0|1&gt; )
 
 **Descrizione:** Una corrispondenza pattern larghezza zero prima della posizione corrente. Il secondo argomento facoltativo predefinito pari a 0. 1 indica una corrispondenza negativa o una mancata corrispondenza.
 
@@ -367,7 +365,7 @@ While( /* keep repeating the match until it won't match */
 
 ### Pat Match
 
-**Sintassi:** Pat Match( source, pattern, <replacement> )
+**Sintassi:** Pat Match( source, pattern, &lt;replacement&gt; )
 
 **Descrizione:** Esegue la corrispondenza pattern nella variabile pattern rispetto alla stringa nella variabile source; il testo opzionale replacement sostituisce il testo corrispondente.
 
@@ -491,7 +489,7 @@ result;
 
 ### Pat Repeat
 
-**Sintassi:** Pat Repeat( pattern, <min=1>, <max=infinity>, <GREEDY or RELUCTANT=GREEDY> )
+**Sintassi:** Pat Repeat( pattern, &lt;min=1&gt;, &lt;max=infinity&gt;, &lt;GREEDY or RELUCTANT=GREEDY&gt; )
 
 **Descrizione:** Genera un valore pattern che corrisponde al pattern fornito tra tempi min e max.
 
@@ -614,7 +612,7 @@ string;
 
 ### Regex Match
 
-**Sintassi:** Regex Match( source, pattern, <replacement | NULL>, <MATCHCASE> )
+**Sintassi:** Regex Match( source, pattern, &lt;replacement | NULL&gt;, &lt;MATCHCASE&gt; )
 
 **Descrizione:** Esegue una corrispondenza dell&apos;espressione regolare e restituisce un elenco dell&apos;intero testo corrispondente e le corrispondenze per ogni riferimento all&apos;indietro creato da una parentesi aperta. Facoltativamente, il terzo argomento specifica una stringa di sostituzione per l&apos;intera corrispondenza; la stringa di sostituzione può utilizzare riferimenti all&apos;indietro.
 

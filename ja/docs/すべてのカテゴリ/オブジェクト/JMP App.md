@@ -6,7 +6,7 @@
 
 ### Combine Windows
 
-**構文:** obj << Combine Windows( {list of reports or data tables}, {...} )
+**構文:** obj &lt;&lt; Combine Windows( {list of reports or data tables}, {...} )
 
 **説明:** 複数のレポートおよびデータテーブルをまとめて、1つのウィンドウに表示する。1つにまとめたいレポートやデータテーブルは、引数にリストの形式で指定する。このメッセージを実行するとき、アプリケーションが実行中や編集中であってはいけない。
 
@@ -29,7 +29,7 @@ app << Run;
 
 ### Debug
 
-**構文:** obj << Debug
+**構文:** obj &lt;&lt; Debug
 
 **説明:** アプリケーションをデバッガで実行する。
 
@@ -44,7 +44,7 @@ app << Debug;
 
 ### Edit
 
-**構文:** obj << Edit
+**構文:** obj &lt;&lt; Edit
 
 **説明:** アプリケーションまたはダッシュボードをアプリケーションビルダーまたはダッシュボードビルダーで編集する。
 
@@ -59,7 +59,7 @@ app << Edit;
 
 ### Get Modules
 
-**構文:** list = obj << Get Modules
+**構文:** list = obj &lt;&lt; Get Modules
 
 **説明:** アプリケーション内で定義されているモジュールのリストを取得する。
 
@@ -75,7 +75,7 @@ app << Get Modules();
 
 ### Get Namespace
 
-**構文:** obj << Get Namespace
+**構文:** obj &lt;&lt; Get Namespace
 
 **説明:** モジュールインスタンスの名前空間を取得する。
 
@@ -89,7 +89,7 @@ app = JMP App();
 
 ### Get Windows
 
-**構文:** obj << Get Windows
+**構文:** obj &lt;&lt; Get Windows
 
 **説明:** アプリケーションモジュールのインスタンスとして作成された、開いているウィンドウのリストを戻します。アプリケーションのスクリプトで作成された他のウィンドウのうち、New Window()または他の関数を使用して作成されたものはこのリストに含まれません。
 
@@ -125,7 +125,7 @@ app << Get Windows();
 
 ### Open File
 
-**構文:** obj << Open File( <path> )
+**構文:** obj &lt;&lt; Open File( &lt;path&gt; )
 
 **説明:** 指定のファイルからアプリケーションをロードする。
 
@@ -140,7 +140,7 @@ box = app << Edit Application;
 
 ### Relaunch Analysis
 
-**構文:** obj << Relaunch Analysis
+**構文:** obj &lt;&lt; Relaunch Analysis
 
 **説明:** ダッシュボードまたはアプリケーションを再起動し、新たに実行したアプリケーションのコピーを作成する。
 
@@ -156,7 +156,7 @@ app << Relaunch Analysis;
 
 ### Run
 
-**構文:** obj << Run
+**構文:** obj &lt;&lt; Run
 
 **説明:** アプリケーションまたはダッシュボードを実行する。
 
@@ -171,7 +171,7 @@ app << Run;
 
 ### Save Script for All Objects
 
-**構文:** obj << Save Script for All Objects
+**構文:** obj &lt;&lt; Save Script for All Objects
 
 **説明:** Save a New Window() script
 
@@ -186,7 +186,7 @@ app << Save Script for All Objects;
 
 ### Save Script to Add-In
 
-**構文:** obj << Save Script to Add-In
+**構文:** obj &lt;&lt; Save Script to Add-In
 
 **説明:** この分析を行うためのスクリプト(JSL)を生成し、アドインビルダーにロードする。
 
@@ -202,7 +202,7 @@ app << "Save Script to Add-In";
 
 ### Save Script to Data Table
 
-**構文:** app << Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** app &lt;&lt; Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** この分析を再現するJSLスクリプトを生成し、データテーブルのテーブルプロパティとして保存する。
 
@@ -218,7 +218,7 @@ app << Save Script to Data Table;
 
 ### Save Script to Journal
 
-**構文:** obj << Save Script to Journal
+**構文:** obj &lt;&lt; Save Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -234,7 +234,7 @@ app << Save Script to Journal;
 
 ### Save Script to Script Window
 
-**構文:** obj << Save Script to Script Window
+**構文:** obj &lt;&lt; Save Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 

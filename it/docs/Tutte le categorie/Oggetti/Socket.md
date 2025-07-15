@@ -6,7 +6,7 @@
 
 ### Socket
 
-**Sintassi:** socketHandle = Socket( <STREAM | DGRAM> )
+**Sintassi:** socketHandle = Socket( &lt;STREAM | DGRAM&gt; )
 
 **Descrizione:** Crea una variabile di socket che può comunicare con i socket su questo o un altro computer connesso in rete. L&apos;argomento predefinito è STREAM. Provare con il sito Web della società/organizzazione dell&apos;utente.
 
@@ -51,7 +51,7 @@ If( rc[2] == "ok",
 
 ### Accept
 
-**Sintassi:** obj << Accept
+**Sintassi:** obj &lt;&lt; Accept
 
 **Descrizione:** Accetta una connessione da un computer remoto in un socket in ascolto
 
@@ -69,7 +69,7 @@ rc = skt << accept();
 
 ### Accept Fast
 
-**Sintassi:** obj << Accept Fast
+**Sintassi:** obj &lt;&lt; Accept Fast
 
 **Descrizione:** Accetta una connessione da un computer remoto in un socket in ascolto
 
@@ -92,7 +92,7 @@ rc = skt << AcceptFast();
 
 ### Bind
 
-**Sintassi:** obj << Bind
+**Sintassi:** obj &lt;&lt; Bind
 
 **Descrizione:** Collega un socket a una porta del computer in preparazione per connessioni in ascolto.
 
@@ -108,7 +108,7 @@ rc = skt << bind( "localhost", "80" );
 
 ### Close
 
-**Sintassi:** obj << Close
+**Sintassi:** obj &lt;&lt; Close
 
 **Descrizione:** Chiude un socket. Il socket deve essere ricreato prima di utilizzarlo di nuovo. I socket connessi possono essere chiusi localmente o da remoto. I socket di ascolto possono essere chiusi localmente.
 
@@ -121,7 +121,7 @@ x = Socket();/* use the socket...*/ x << Close();
 
 ### Connect
 
-**Sintassi:** obj << Connect
+**Sintassi:** obj &lt;&lt; Connect
 
 **Descrizione:** Connette a un computer remoto.
 
@@ -181,7 +181,7 @@ Show( Length( blob ) );
 
 ### GetPeerName
 
-**Sintassi:** obj << GetPeerName
+**Sintassi:** obj &lt;&lt; GetPeerName
 
 **Descrizione:** Ottiene il nome del computer remoto.
 
@@ -197,7 +197,7 @@ Show( rc, tCall << getPeerName );
 
 ### GetSockName
 
-**Sintassi:** obj << GetSockName
+**Sintassi:** obj &lt;&lt; GetSockName
 
 **Descrizione:** Ottiene il nome del computer locale.
 
@@ -213,7 +213,7 @@ Show( rc, tCall << getSockName );
 
 ### Ioctl
 
-**Sintassi:** obj << Ioctl
+**Sintassi:** obj &lt;&lt; Ioctl
 
 **Descrizione:** Passa un socket in modalità non bloccante o determina quanti dati sono in attesa di essere letti.
 
@@ -231,7 +231,7 @@ len = skt << Ioctl( FIONREAD ); // how much data available
 
 ### Listen
 
-**Sintassi:** obj << Listen
+**Sintassi:** obj &lt;&lt; Listen
 
 **Descrizione:** Mette il socket in modalità di ascolto. Usare Accetta per accettare una connessione da un computer remoto.
 
@@ -338,7 +338,7 @@ conskt << close; // nothing else to send to the browser
 
 ### Recv
 
-**Sintassi:** obj << Recv
+**Sintassi:** obj &lt;&lt; Recv
 
 **Descrizione:** Riceve dati da un computer remoto. Specificare il numero massimo di byte che si desidera ricevere. Se il socket è in modalità bloccante, la ricezione non sarà ripristinata fino a quando non sono presenti alcuni dati o la connessione viene chiusa da remoto. In modalità non bloccante possono verificarsi zero byte e un codice di ritorno bloccante.
 
@@ -360,7 +360,7 @@ rc = skt << recv( 1000 ); // specifie the UPPER limit on the amount of data retu
 
 ### RecvFrom
 
-**Sintassi:** obj << RecvFrom
+**Sintassi:** obj &lt;&lt; RecvFrom
 
 **Descrizione:** (Supporto DGram, evitare questo messaggio se non si conosce perché se ne ha la necessità.) Riceve un DGram da un computer remoto.
 
@@ -426,7 +426,7 @@ Show( result );
 
 ### Send
 
-**Sintassi:** obj << Send
+**Sintassi:** obj &lt;&lt; Send
 
 **Descrizione:** Invia dati a un computer remoto.
 
@@ -443,7 +443,7 @@ rc = skt << Send( Char To Blob( "Hello World" ) );
 
 ### SendTo
 
-**Sintassi:** obj << SendTo
+**Sintassi:** obj &lt;&lt; SendTo
 
 **Descrizione:** (Supporto DGram, evitare questo messaggio se non si conosce perché se ne ha la necessità.) Invia un DGram a un computer remoto.
 

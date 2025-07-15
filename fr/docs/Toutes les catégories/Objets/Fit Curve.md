@@ -8,9 +8,7 @@
 
 #### Point Options
 
-**Syntaxe :** obj << ANOM( 1, Point Options( "Show Needles"|"Show Connected Points"|"Show Only Points" ) );
-
-scrobj << Point Options( "Show Needles"|"Show Connected Points"|"Show Only Points" )
+**Syntaxe :** obj &lt;&lt; ANOM( 1, Point Options( "Show Needles"|"Show Connected Points"|"Show Only Points" ) );scrobj &lt;&lt; Point Options( "Show Needles"|"Show Connected Points"|"Show Only Points" )
 
 **Description :** Permet de spécifier le style de dessin des points dans le graphique. Vous pouvez choisir bâtons verticaux, points connectés ou points seuls. Par défaut, le graphique est dessiné avec des bâtons qui connectent les points à la ligne horizontale dessinée à la moyenne.
 
@@ -28,9 +26,7 @@ scrobj << Point Options( "Show Connected Points" );
 
 #### Set Alpha Level
 
-**Syntaxe :** obj << ANOM( 1, Set Alpha Level( alpha ) );
-
-scrobj << Set Alpha Level( alpha )
+**Syntaxe :** obj &lt;&lt; ANOM( 1, Set Alpha Level( alpha ) );scrobj &lt;&lt; Set Alpha Level( alpha )
 
 **Description :** Change le niveau alpha utilisé pour calculer les limites de décision.
 
@@ -48,9 +44,7 @@ scrobj << Set Alpha Level( 0.05 );
 
 #### Show Center Line
 
-**Syntaxe :** obj << ANOM( 1, Show Center Line( state=0|1 ) );
-
-scrobj << Show Center Line( state=0|1 )
+**Syntaxe :** obj &lt;&lt; ANOM( 1, Show Center Line( state=0|1 ) );scrobj &lt;&lt; Show Center Line( state=0|1 )
 
 **Description :** Affiche ou masque la ligne centrale (moyenne générale) sur le graphique de l&apos;analyse des moyennes (ANOM). Actif par défaut.
 
@@ -68,9 +62,7 @@ scrobj << Show Center Line( 1 );
 
 #### Show Decision Limit Shading
 
-**Syntaxe :** obj << ANOM( 1, Show Decision Limit Shading( state=0|1 ) );
-
-scrobj << Show Decision Limit Shading( state=0|1 )
+**Syntaxe :** obj &lt;&lt; ANOM( 1, Show Decision Limit Shading( state=0|1 ) );scrobj &lt;&lt; Show Decision Limit Shading( state=0|1 )
 
 **Description :** Affiche ou masque l&apos;ombrage des limites de décision sur le graphique de l&apos;analyse des moyennes (ANOM). Actif par défaut.
 
@@ -88,9 +80,7 @@ scrobj << Show Decision Limit Shading( 1 );
 
 #### Show Decision Limits
 
-**Syntaxe :** obj << ANOM( 1, Show Decision Limits( state=0|1 ) );
-
-scrobj << Show Decision Limits( state=0|1 )
+**Syntaxe :** obj &lt;&lt; ANOM( 1, Show Decision Limits( state=0|1 ) );scrobj &lt;&lt; Show Decision Limits( state=0|1 )
 
 **Description :** Affiche ou masque les lignes représentant les limites de décision sur le graphique de l&apos;analyse des moyennes (ANOM). Actif par défaut.
 
@@ -108,9 +98,7 @@ scrobj << Show Decision Limits( 1 );
 
 #### Show Summary Report
 
-**Syntaxe :** obj << ANOM( 1, Show Summary Report( state=0|1 ) );
-
-scrobj << Show Summary Report( state=0|1 )
+**Syntaxe :** obj &lt;&lt; ANOM( 1, Show Summary Report( state=0|1 ) );scrobj &lt;&lt; Show Summary Report( state=0|1 )
 
 **Description :** Affiche ou masque un rapport qui contient les moyennes du groupe et les limites de décision.
 
@@ -130,9 +118,7 @@ scrobj << Show Summary Report( 0 );
 
 ### By
 
-**Syntaxe :** obj = Fit Curve(...<By( column(s) )>...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Fit Curve(...&lt;By( column(s) )&gt;...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Lance une analyse distincte pour chaque niveau de la colonne spécifiée.
 
@@ -157,9 +143,7 @@ obj << Fit Logistic 4P;
 
 ### Freq
 
-**Syntaxe :** obj = Fit Curve(...<Freq( column )>...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Fit Curve(...&lt;Freq( column )&gt;...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Spécifie une colonne dont les valeurs assignent une fréquence à chaque ligne pour l&apos;analyse.
 
@@ -184,9 +168,7 @@ obj << Fit Logistic 4P;
 
 ### Group
 
-**Syntaxe :** obj = Fit Curve(...<Group( column )>...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Fit Curve(...&lt;Group( column )&gt;...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Spécifie une variable de groupement. Le modèle ajusté a des paramètres distincts pour chaque niveau de la variable de groupement.
 
@@ -201,9 +183,7 @@ obj << Fit Logistic 4P;
 
 ### Regressor
 
-**Syntaxe :** obj = Fit Curve(...<Regressor( column )>...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Fit Curve(...&lt;Regressor( column )&gt;...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Spécifie les régresseurs.
 
@@ -218,9 +198,7 @@ obj << Fit Logistic 4P;
 
 ### Response
 
-**Syntaxe :** obj = Fit Curve(...Response( column(s) )...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Fit Curve(...Response( column(s) )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Spécifie les réponses.
 
@@ -235,7 +213,7 @@ obj << Fit Logistic 4P;
 
 ### Supplementary
 
-**Syntaxe :** obj = Fit Curve(...<Supplementary( column(s) )>...)
+**Syntaxe :** obj = Fit Curve(...&lt;Supplementary( column(s) )&gt;...)
 
 **Description :** Spécifie une ou plusieurs variables supplémentaires. Les variables supplémentaires ne sont utilisées dans aucun calcul sur la plate-forme. Leur inclusion n&apos;affecte pas les résultats. Elles peuvent améliorer l&apos;interprétation des données ou servir à des analyses futures.
 
@@ -254,9 +232,7 @@ obj << Fit Cubic;
 
 ### Weight
 
-**Syntaxe :** obj = Fit Curve(...<Weight( column )>...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Fit Curve(...&lt;Weight( column )&gt;...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Spécifie une colonne dont les valeurs attribuent une pondération à chaque ligne pour l&apos;analyse.
 
@@ -277,9 +253,7 @@ obj << Fit Logistic 4P;
 
 ### X
 
-**Syntaxe :** obj = Fit Curve(...<X( column )>...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Fit Curve(...&lt;X( column )&gt;...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Spécifie les régresseurs.
 
@@ -294,9 +268,7 @@ obj << Fit Logistic 4P;
 
 ### Y
 
-**Syntaxe :** obj = Fit Curve(...Y( column(s) )...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Fit Curve(...Y( column(s) )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Spécifie les réponses.
 
@@ -311,7 +283,7 @@ obj << Fit Logistic 4P;
 
 ### Z
 
-**Syntaxe :** obj = Fit Curve(...<Z( column(s) )>...)
+**Syntaxe :** obj = Fit Curve(...&lt;Z( column(s) )&gt;...)
 
 **Description :** Spécifie une ou plusieurs variables supplémentaires. Les variables supplémentaires ne sont utilisées dans aucun calcul sur la plate-forme. Leur inclusion n&apos;affecte pas les résultats. Elles peuvent améliorer l&apos;interprétation des données ou servir à des analyses futures.
 
@@ -349,7 +321,7 @@ obj << Fit Logistic 4P;
 
 ### F1 Analysis
 
-**Syntaxe :** obj << F1 Analysis( Alpha( number ), Reference Level( level ), Bootstrap Samples( number ), Random Seed( number ))
+**Syntaxe :** obj &lt;&lt; F1 Analysis( Alpha( number ), Reference Level( level ), Bootstrap Samples( number ), Random Seed( number ))
 
 **Description :** Effectue une analyse de la courbe de dissolution en utilisant le facteur de différence F1, qui mesure la différence en pourcentage entre les courbes du comprimé de référence et les courbes du comprimé de test à chaque point temporel.
 
@@ -374,7 +346,7 @@ obj << F1 Analysis(
 
 ### F2 Analysis
 
-**Syntaxe :** obj << F2 Analysis( Alpha( number ), Reference Level( level ), Bootstrap Samples( number ), Random Seed( number ))
+**Syntaxe :** obj &lt;&lt; F2 Analysis( Alpha( number ), Reference Level( level ), Bootstrap Samples( number ), Random Seed( number ))
 
 **Description :** Effectue une analyse de la courbe de dissolution à l&apos;aide du facteur de similarité F2, qui mesure la similarité du pourcentage de dissolution entre les courbes du comprimé de référence et les courbes du comprimé de test.
 
@@ -399,7 +371,7 @@ obj << F2 Analysis(
 
 ### Fit Antoine Equation
 
-**Syntaxe :** obj << Fit Antoine Equation
+**Syntaxe :** obj &lt;&lt; Fit Antoine Equation
 
 **Description :** Ajuste le modèle d&apos;Antoine aux données. Ce modèle est souvent utilisé pour modéliser la pression de la vapeur comme une fonction de la température.
 
@@ -414,11 +386,11 @@ obj << Fit Antoine Equation;
 
 ### Fit Asymmetric Gaussian Peak
 
-**Syntaxe :** obj << Fit Asymmetric Gaussian Peak
+**Syntaxe :** obj &lt;&lt; Fit Asymmetric Gaussian Peak
 
 ### Fit Biexponential 4P
 
-**Syntaxe :** obj << Fit Biexponential 4P
+**Syntaxe :** obj &lt;&lt; Fit Biexponential 4P
 
 **Description :** Ajuste un modèle biexponentiel à quatre paramètres aux données.
 
@@ -442,7 +414,7 @@ obj << Fit Biexponential 4P;
 
 ### Fit Biexponential 5P
 
-**Syntaxe :** obj << Fit Biexponential 5P
+**Syntaxe :** obj &lt;&lt; Fit Biexponential 5P
 
 **Description :** Ajuste un modèle biexponentiel à cinq paramètres aux données.
 
@@ -466,7 +438,7 @@ obj << Fit Biexponential 5P;
 
 ### Fit Cell Growth 4P
 
-**Syntaxe :** obj << Fit Cell Growth 4P
+**Syntaxe :** obj &lt;&lt; Fit Cell Growth 4P
 
 **Description :** Ajuste un modèle de croissance et décroissance à quatre paramètres en fonction des données.
 
@@ -489,7 +461,7 @@ obj << Fit Cell Growth 4P;
 
 ### Fit Cubic
 
-**Syntaxe :** obj << Fit Cubic
+**Syntaxe :** obj &lt;&lt; Fit Cubic
 
 **Description :** Ajuste un modèle cubique aux données.
 
@@ -504,7 +476,7 @@ obj << Fit Cubic;
 
 ### Fit ExGaussian Peak
 
-**Syntaxe :** obj << Fit ExGaussian Peak
+**Syntaxe :** obj &lt;&lt; Fit ExGaussian Peak
 
 **Description :** Ajuste un modèle de pic gaussien modifié exponentiellement aux données.
 
@@ -527,7 +499,7 @@ obj << Fit ExGaussian Peak;
 
 ### Fit Exponential 2P
 
-**Syntaxe :** obj << Fit Exponential 2P
+**Syntaxe :** obj &lt;&lt; Fit Exponential 2P
 
 **Description :** Ajuste un modèle exponentiel à deux paramètres aux données. La réponse de l’ajustement présente une asymptote à zéro.
 
@@ -542,7 +514,7 @@ obj << Fit Exponential 2P;
 
 ### Fit Exponential 3P
 
-**Syntaxe :** obj << Fit Exponential 3P
+**Syntaxe :** obj &lt;&lt; Fit Exponential 3P
 
 **Description :** Ajuste un modèle exponentiel à trois paramètres aux données. La réponse de l’ajustement est limitée par une asymptote estimée.
 
@@ -557,7 +529,7 @@ obj << Fit Exponential 3P;
 
 ### Fit First Order Rate
 
-**Syntaxe :** obj << Fit First Order Rate
+**Syntaxe :** obj &lt;&lt; Fit First Order Rate
 
 **Description :** Ajuste un modèle de taux de premier ordre aux données. Cette option, utile dans la modélisation des réponses chimiques, n&apos;est disponible que lorsque les valeurs X sont non-négatives.
 
@@ -572,7 +544,7 @@ obj << Fit First Order Rate;
 
 ### Fit First Order with Equilibrium
 
-**Syntaxe :** obj << Fit First Order with Equilibrium
+**Syntaxe :** obj &lt;&lt; Fit First Order with Equilibrium
 
 **Description :** Ajuste un modèle de taux du premier ordre avec équilibre aux données. Cette option, utile dans la modélisation des réponses chimiques, n&apos;est disponible que lorsque les valeurs X sont non-négatives.
 
@@ -587,7 +559,7 @@ obj << Fit First Order with Equilibrium;
 
 ### Fit First Order with Limits
 
-**Syntaxe :** obj << Fit First Order with Limits
+**Syntaxe :** obj &lt;&lt; Fit First Order with Limits
 
 **Description :** Ajuste un modèle de taux du premier ordre avec des limites aux données. Cette option, utile dans la modélisation des réponses chimiques, n&apos;est disponible que lorsque les valeurs X sont non-négatives.
 
@@ -602,7 +574,7 @@ obj << Fit First Order with Limits;
 
 ### Fit Gaussian Peak
 
-**Syntaxe :** obj << Fit Gaussian Peak
+**Syntaxe :** obj &lt;&lt; Fit Gaussian Peak
 
 **Description :** Ajuste un modèle de pic gaussien aux données.
 
@@ -625,7 +597,7 @@ obj << Fit Gaussian Peak;
 
 ### Fit Gompertz 3P
 
-**Syntaxe :** obj << Fit Gompertz 3P
+**Syntaxe :** obj &lt;&lt; Fit Gompertz 3P
 
 **Description :** Ajuste une courbe Gompertz à trois paramètres aux données. La réponse de l’ajustement est limitée entre zéro et une asymptote estimée.
 
@@ -650,7 +622,7 @@ obj << Fit Gompertz 3P;
 
 ### Fit Gompertz 4P
 
-**Syntaxe :** obj << Fit Gompertz 4P
+**Syntaxe :** obj &lt;&lt; Fit Gompertz 4P
 
 **Description :** Ajuste une courbe Gompertz à quatre paramètres aux données. La réponse de l’ajustement est limitée par deux asymptotes estimées.
 
@@ -665,7 +637,7 @@ obj << Fit Gompertz 4P;
 
 ### Fit Higuchi
 
-**Syntaxe :** obj << Fit Higuchi
+**Syntaxe :** obj &lt;&lt; Fit Higuchi
 
 **Description :** Ajuste un modèle Higuchi aux données. Il s&apos;agit d&apos;une technique paramétrique permettant de comparer les courbes de dissolution.
 
@@ -684,7 +656,7 @@ obj << Fit Higuchi;
 
 ### Fit Higuchi with Burst
 
-**Syntaxe :** obj << Fit Higuchi with Burst
+**Syntaxe :** obj &lt;&lt; Fit Higuchi with Burst
 
 **Description :** Ajuste un modèle Higuchi avec une composante d&apos;éclatement aux données. Il s&apos;agit d&apos;une technique paramétrique permettant de comparer les courbes de dissolution.
 
@@ -703,7 +675,7 @@ obj << Fit Higuchi with Burst;
 
 ### Fit Higuchi with Lag
 
-**Syntaxe :** obj << Fit Higuchi with Lag
+**Syntaxe :** obj &lt;&lt; Fit Higuchi with Lag
 
 **Description :** Ajuste un modèle Higuchi avec un composant de décalage aux données. Il s&apos;agit d&apos;une technique paramétrique permettant de comparer les courbes de dissolution.
 
@@ -722,7 +694,7 @@ obj << Fit Higuchi with Lag;
 
 ### Fit Hixson-Crowell
 
-**Syntaxe :** obj << "Fit Hixson-Crowell"n
+**Syntaxe :** obj &lt;&lt; "Fit Hixson-Crowell"n
 
 **Description :** Ajuste un modèle Hixson-Crowell aux données. Il s&apos;agit d&apos;une technique paramétrique permettant de comparer les courbes de dissolution.
 
@@ -741,7 +713,7 @@ obj << "Fit Hixson-Crowell"n;
 
 ### Fit Hixson-Crowell with Lag
 
-**Syntaxe :** obj << "Fit Hixson-Crowell with Lag"n
+**Syntaxe :** obj &lt;&lt; "Fit Hixson-Crowell with Lag"n
 
 **Description :** Ajuste un modèle Hixson-Crowell avec un composant de décalage aux données. Il s&apos;agit d&apos;une technique paramétrique permettant de comparer les courbes de dissolution.
 
@@ -760,7 +732,7 @@ obj << "Fit Hixson-Crowell with Lag"n;
 
 ### Fit Hybrid Exponential
 
-**Syntaxe :** obj << Fit Hybrid Exponential
+**Syntaxe :** obj &lt;&lt; Fit Hybrid Exponential
 
 **Description :** Ajuste un modèle exponentiel hybride aux données.
 
@@ -775,9 +747,7 @@ obj << Fit Hybrid Exponential;
 
 ### Fit Inverse Michaelis-Menten
 
-**Syntaxe :** obj << Fit Inverse Michaelis Menten; 
-
-obj << "Fit Inverse Michaelis-Menten"n
+**Syntaxe :** obj &lt;&lt; Fit Inverse Michaelis Menten; obj &lt;&lt; "Fit Inverse Michaelis-Menten"n
 
 **Description :** Ajuste le modèle cinétique d&apos;enzyme de Michaelis-Menten inverse aux données.
 
@@ -792,7 +762,7 @@ obj << Fit Inverse Michaelis Menten;
 
 ### Fit Korsmeyer-Peppas
 
-**Syntaxe :** obj << "Fit Korsmeyer-Peppas"n
+**Syntaxe :** obj &lt;&lt; "Fit Korsmeyer-Peppas"n
 
 **Description :** Ajuste un modèle Korsmeyer-Peppas aux données. Il s&apos;agit d&apos;une technique paramétrique permettant de comparer les courbes de dissolution.
 
@@ -811,7 +781,7 @@ obj << "Fit Korsmeyer-Peppas"n;
 
 ### Fit Korsmeyer-Peppas with Burst
 
-**Syntaxe :** obj << "Fit Korsmeyer-Peppas with Burst"n
+**Syntaxe :** obj &lt;&lt; "Fit Korsmeyer-Peppas with Burst"n
 
 **Description :** Ajuste un modèle Korsmeyer-Peppas avec une composante d&apos;éclatement aux données. Il s&apos;agit d&apos;une technique paramétrique permettant de comparer les courbes de dissolution.
 
@@ -830,7 +800,7 @@ obj << "Fit Korsmeyer-Peppas with Burst"n;
 
 ### Fit Korsmeyer-Peppas with Lag
 
-**Syntaxe :** obj << "Fit Korsmeyer-Peppas with Lag"n
+**Syntaxe :** obj &lt;&lt; "Fit Korsmeyer-Peppas with Lag"n
 
 **Description :** Ajuste un modèle Korsmeyer-Peppas avec une composante de décalage aux données. Il s&apos;agit d&apos;une technique paramétrique permettant de comparer les courbes de dissolution.
 
@@ -849,7 +819,7 @@ obj << "Fit Korsmeyer-Peppas with Lag"n;
 
 ### Fit Linear
 
-**Syntaxe :** obj << Fit Linear
+**Syntaxe :** obj &lt;&lt; Fit Linear
 
 **Description :** Ajuste un modèle de régression des moindres carrés en fonction des données. La ligne de l&apos;ajustement est affichée sur le graphique et un rapport d&apos;ajustement est fourni.
 
@@ -864,7 +834,7 @@ obj << Fit Linear;
 
 ### Fit Logistic 2P
 
-**Syntaxe :** obj << Fit Logistic 2P
+**Syntaxe :** obj &lt;&lt; Fit Logistic 2P
 
 **Description :** Ajuste une courbe logistique à deux paramètres aux données. La réponse de l’ajustement est limitée entre deux asymptotes, à zéro et à 1.
 
@@ -890,7 +860,7 @@ obj << Fit Logistic 2P;
 
 ### Fit Logistic 3P
 
-**Syntaxe :** obj << Fit Logistic 3P
+**Syntaxe :** obj &lt;&lt; Fit Logistic 3P
 
 **Description :** Ajuste une courbe logistique à trois paramètres aux données. La réponse de l’ajustement est limitée entre zéro et une asymptote estimée.
 
@@ -915,7 +885,7 @@ obj << Fit Logistic 3P;
 
 ### Fit Logistic 4P
 
-**Syntaxe :** obj << Fit Logistic 4P
+**Syntaxe :** obj &lt;&lt; Fit Logistic 4P
 
 **Description :** Ajuste un modèle logistique à quatre paramètres aux données. La réponse de l’ajustement est limitée par deux asymptotes estimées.
 
@@ -930,7 +900,7 @@ obj << Fit Logistic 4P;
 
 ### Fit Logistic 4P Hill
 
-**Syntaxe :** obj << Fit Logistic 4P Hill
+**Syntaxe :** obj &lt;&lt; Fit Logistic 4P Hill
 
 **Description :** Ajuste un modèle logistique à quatre paramètres aux données. La réponse de l’ajustement est limitée par deux asymptotes estimées.
 
@@ -945,7 +915,7 @@ obj << Fit Logistic 4P Hill;
 
 ### Fit Logistic 4P Rodbard
 
-**Syntaxe :** obj << Fit Logistic 4P Rodbard
+**Syntaxe :** obj &lt;&lt; Fit Logistic 4P Rodbard
 
 **Description :** Ajuste un modèle logistique à quatre paramètres aux données. La réponse de l’ajustement est limitée par deux asymptotes estimées.
 
@@ -960,7 +930,7 @@ obj << Fit Logistic 4P Rodbard;
 
 ### Fit Logistic 5P
 
-**Syntaxe :** obj << Fit Logistic 5P
+**Syntaxe :** obj &lt;&lt; Fit Logistic 5P
 
 **Description :** Ajuste un modèle logistique à cinq paramètres aux données. La réponse de l’ajustement est limitée par deux asymptotes estimées. Contrairement aux autres courbes logistiques, la courbe logistique à cinq paramètres n’est pas symétrique.
 
@@ -975,7 +945,7 @@ obj << Fit Logistic 5P;
 
 ### Fit Lorentzian Peak
 
-**Syntaxe :** obj << Fit Lorentzian Peak
+**Syntaxe :** obj &lt;&lt; Fit Lorentzian Peak
 
 **Description :** Ajuste un modèle Pic de Lorentz aux données.
 
@@ -998,7 +968,7 @@ obj << Fit Lorentzian Peak;
 
 ### Fit Mechanistic Growth
 
-**Syntaxe :** obj << Fit Mechanistic Growth
+**Syntaxe :** obj &lt;&lt; Fit Mechanistic Growth
 
 **Description :** Ajuste un modèle de croissance mécanistique aux données. Il s’agit d’une reparamétrisation du modèle exponentiel 3P.
 
@@ -1013,9 +983,7 @@ obj << Fit Mechanistic Growth;
 
 ### Fit Michaelis-Menten
 
-**Syntaxe :** obj << Fit Michaelis Menten; 
-
-obj << "Fit Michaelis-Menten"n
+**Syntaxe :** obj &lt;&lt; Fit Michaelis Menten; obj &lt;&lt; "Fit Michaelis-Menten"n
 
 **Description :** Ajuste le modèle cinétique d&apos;enzyme de Michaelis-Menten aux données.
 
@@ -1030,7 +998,7 @@ obj << Fit Michaelis Menten;
 
 ### Fit One Compartment Oral Dose
 
-**Syntaxe :** obj << Fit One Compartment Oral Dose
+**Syntaxe :** obj &lt;&lt; Fit One Compartment Oral Dose
 
 **Description :** Ajuste un modèle Un Compartiment - Dose orale aux données. Ce modèle est adapté à la modélisation de la concentration d’un médicament dans le corps après l’administration d’une dose par voie orale.
 
@@ -1049,11 +1017,11 @@ obj << Fit One Compartment Oral Dose;
 
 ### Fit Pearson VII Peak
 
-**Syntaxe :** obj << Fit Pearson VII Peak
+**Syntaxe :** obj &lt;&lt; Fit Pearson VII Peak
 
 ### Fit Power Model
 
-**Syntaxe :** obj << Fit Power Model
+**Syntaxe :** obj &lt;&lt; Fit Power Model
 
 **Description :** Ajuste un modèle puissance aux données.
 
@@ -1068,7 +1036,7 @@ obj << Fit Power Model;
 
 ### Fit Probit 2P
 
-**Syntaxe :** obj << Fit Probit 2P
+**Syntaxe :** obj &lt;&lt; Fit Probit 2P
 
 **Description :** Ajuste une courbe Probit à deux paramètres aux données. La réponse de l’ajustement est limitée entre deux asymptotes, à zéro et à un.
 
@@ -1094,7 +1062,7 @@ obj << Fit Probit 2P;
 
 ### Fit Probit 3P
 
-**Syntaxe :** obj << Fit Probit 3P
+**Syntaxe :** obj &lt;&lt; Fit Probit 3P
 
 **Description :** Ajuste une courbe Probit à trois paramètres en fonction des données. La réponse de l’ajustement est limitée entre zéro et une asymptote estimée.
 
@@ -1119,7 +1087,7 @@ obj << Fit Probit 3P;
 
 ### Fit Probit 4P
 
-**Syntaxe :** obj << Fit Probit 4P
+**Syntaxe :** obj &lt;&lt; Fit Probit 4P
 
 **Description :** Ajuste un modèle Probit à quatre paramètres aux données. La réponse de l’ajustement est limitée par deux asymptotes estimées.
 
@@ -1134,11 +1102,11 @@ obj << Fit Probit 4P;
 
 ### Fit Pseudo-Voigt
 
-**Syntaxe :** obj << Fit Pseudo-Voigt
+**Syntaxe :** obj &lt;&lt; Fit Pseudo-Voigt
 
 ### Fit Quadratic
 
-**Syntaxe :** obj << Fit Quadratic
+**Syntaxe :** obj &lt;&lt; Fit Quadratic
 
 **Description :** Ajuste un modèle quadratique aux données.
 
@@ -1153,7 +1121,7 @@ obj << Fit Quadratic;
 
 ### Fit Quartic
 
-**Syntaxe :** obj << Fit Quartic
+**Syntaxe :** obj &lt;&lt; Fit Quartic
 
 **Description :** Ajuste un polynôme d’ordre quatre aux données.
 
@@ -1168,7 +1136,7 @@ obj << Fit Quartic;
 
 ### Fit Quintic
 
-**Syntaxe :** obj << Fit Quintic
+**Syntaxe :** obj &lt;&lt; Fit Quintic
 
 **Description :** Ajuste un polynôme d’ordre cinq aux données.
 
@@ -1183,7 +1151,7 @@ obj << Fit Quintic;
 
 ### Fit Second Order
 
-**Syntaxe :** obj << Fit Second Order
+**Syntaxe :** obj &lt;&lt; Fit Second Order
 
 **Description :** Ajuste un modèle de taux de second ordre aux données. Cette option, utile dans la modélisation des réponses chimiques, n&apos;est disponible que lorsque les valeurs X sont non-négatives.
 
@@ -1198,7 +1166,7 @@ obj << Fit Second Order;
 
 ### Fit Second Order with Two Components
 
-**Syntaxe :** obj << Fit Second Order with Two Components
+**Syntaxe :** obj &lt;&lt; Fit Second Order with Two Components
 
 **Description :** Ajuste un modèle de taux de second ordre avec deux composantes aux données. Cette option, utile dans la modélisation des réponses chimiques, n&apos;est disponible que lorsque les valeurs X sont non-négatives.
 
@@ -1213,11 +1181,11 @@ obj << Fit Second Order with Two Components;
 
 ### Fit Skew Normal Peak
 
-**Syntaxe :** obj << Fit Skew Normal Peak
+**Syntaxe :** obj &lt;&lt; Fit Skew Normal Peak
 
 ### Fit Two Compartment IV Bolus Dose
 
-**Syntaxe :** obj << Fit Two Compartment IV Bolus Dose
+**Syntaxe :** obj &lt;&lt; Fit Two Compartment IV Bolus Dose
 
 **Description :** Ajuste un modèle Deux compartiments IV - Dose intraveineuse aux données. Ce modèle est adapté à la modélisation de la concentration d’un médicament dans le corps après l’administration d’une dose intraveineuse.
 
@@ -1241,7 +1209,7 @@ obj << Fit Two Compartment IV Bolus Dose;
 
 ### Fit Weibull Growth
 
-**Syntaxe :** obj << Fit Weibull Growth
+**Syntaxe :** obj &lt;&lt; Fit Weibull Growth
 
 **Description :** Ajuste un modèle de croissance de Weibull à trois paramètres en fonction des données.
 
@@ -1258,7 +1226,7 @@ obj << Fit Weibull Growth;
 
 ### Multivariate Distance
 
-**Syntaxe :** obj << Multivariate Distance( Alpha( number ), Reference Level( level ))
+**Syntaxe :** obj &lt;&lt; Multivariate Distance( Alpha( number ), Reference Level( level ))
 
 **Description :** Effectue une analyse de la courbe de dissolution en utilisant la distance M de Mahalanobis, qui mesure la distance multivariée entre les courbes du comprimé de référence et les courbes du comprimé de test.
 
@@ -1278,7 +1246,7 @@ obj << Multivariate Distance( Alpha( 0.1 ), Reference Level( "R01" ) );
 
 ### T2EQ
 
-**Syntaxe :** obj << T2EQ( Alpha( number ), Reference Level( level ))
+**Syntaxe :** obj &lt;&lt; T2EQ( Alpha( number ), Reference Level( level ))
 
 **Description :** Effectue une analyse de la courbe de dissolution à l&apos;aide du test d&apos;équivalence T2EQ, qui mesure la distance multivariée entre les courbes du comprimé de référence et les courbes du comprimé de test.
 
@@ -1300,7 +1268,7 @@ obj << T2EQ( Alpha( 0.05 ), Reference Level( "R01" ) );
 
 ### Action
 
-**Syntaxe :** obj << Action
+**Syntaxe :** obj &lt;&lt; Action
 
 **Description :** Trappe tout usage dans une plate-forme pour y insérer les expressions à calculer. Définit provisoirement les contextes des boîtes d’affichage et des tables de données dans la plate-forme.
 
@@ -1318,7 +1286,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Syntaxe :** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntaxe :** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Description :** Appliquez une préconfiguration créée précédemment à l&apos;objet, ce qui met à jour les options et les personnalisations pour correspondre aux paramètres enregistrés.
 
@@ -1365,7 +1333,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Broadcast
 
-**Syntaxe :** obj << Broadcast(message)
+**Syntaxe :** obj &lt;&lt; Broadcast(message)
 
 **Description :** Diffuse un message sur une plate-forme. Si les résultats de renvoi des objets individuels sont des tables, elles sont concaténées si possible, et le format final est identique au résultat de l&apos;option Enregistrer la table de données combinée dans une boîte de tableau ou au résultat de l&apos;option Concaténer avec une colonne Source. Sinon, les résultats sont stockés dans une liste et renvoyés.
 
@@ -1385,7 +1353,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**Syntaxe :** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Syntaxe :** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Description :** Ajoute un panneau de contrôle pour changer les variables de la plate-forme.
 
@@ -1403,7 +1371,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**Syntaxe :** obj << Copy ByGroup Script
+**Syntaxe :** obj &lt;&lt; Copy ByGroup Script
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis le place dans le presse-papiers.
 
@@ -1429,7 +1397,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Syntaxe :** obj << Copy Script
+**Syntaxe :** obj &lt;&lt; Copy Script
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis le place dans le presse-papiers.
 
@@ -1445,7 +1413,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Syntaxe :** obj << Data Table Window
+**Syntaxe :** obj &lt;&lt; Data Table Window
 
 **Description :** Déplace en premier plan la fenêtre de la table de données utilisée dans cette analyse.
 
@@ -1461,7 +1429,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Syntaxe :** obj << Get By Levels
+**Syntaxe :** obj &lt;&lt; Get By Levels
 
 **Description :** Renvoie un tableau associatif de mappage des colonnes par groupe à leurs valeurs.
 
@@ -1478,7 +1446,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Syntaxe :** obj << Get ByGroup Script
+**Syntaxe :** obj &lt;&lt; Get ByGroup Script
 
 **Description :** Crée un script (JSL) pour produire cette analyse et la renvoyer sous forme d’une expression.
 
@@ -1505,7 +1473,7 @@ Show( t );
 
 ### Get Container
 
-**Syntaxe :** obj << Get Container
+**Syntaxe :** obj &lt;&lt; Get Container
 
 **Description :** Renvoie une référence à la zone conteneur où se trouve le contenu de l&apos;objet.
 
@@ -1555,7 +1523,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Syntaxe :** obj << Get Data Table
+**Syntaxe :** obj &lt;&lt; Get Data Table
 
 **Description :** Renvoie une référence à la table de données.
 
@@ -1572,7 +1540,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**Syntaxe :** obj << Get Group Platform
+**Syntaxe :** obj &lt;&lt; Get Group Platform
 
 **Description :** Renvoie l&apos;objet de Plate-forme de groupe si cette plate-forme fait partie d&apos;un groupe. Sinon, renvoie Empty().
 
@@ -1589,7 +1557,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**Syntaxe :** obj << Get Script
+**Syntaxe :** obj &lt;&lt; Get Script
 
 **Description :** Crée un script (JSL) pour produire cette analyse et la renvoyer sous forme d’une expression.
 
@@ -1606,7 +1574,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Syntaxe :** obj << Get Script With Data Table
+**Syntaxe :** obj &lt;&lt; Get Script With Data Table
 
 **Description :** Crée un script (JSL) pour produire cette analyse faisant spécifiquement référence à cette table de données et la renvoyer sous forme d’une expression.
 
@@ -1623,7 +1591,7 @@ Show( t );
 
 ### Get Timing
 
-**Syntaxe :** obj << Get Timing
+**Syntaxe :** obj &lt;&lt; Get Timing
 
 **Description :** Détermine une heure de lancement de la plate-forme.
 
@@ -1640,7 +1608,7 @@ Show( t );
 
 ### Get Web Support
 
-**Syntaxe :** obj << Get Web Support
+**Syntaxe :** obj &lt;&lt; Get Web Support
 
 **Description :** Renvoyer un nombre indiquant le niveau de support HTML interactif pour l&apos;objet d&apos;affichage. 1 signifie que tout ou partie des éléments sont pris en charge. 0 signifie qu&apos;il n&apos;y a aucun support.
 
@@ -1656,7 +1624,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Syntaxe :** obj << Get Where Expr
+**Syntaxe :** obj &lt;&lt; Get Where Expr
 
 **Description :** Renvoie l&apos;expression Where pour le sous-ensemble de données, si la plate-forme a été lancée avec By() ou Where(). Sinon, renvoie la Empty()
 
@@ -1697,7 +1665,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Syntaxe :** obj << Local Data Filter
+**Syntaxe :** obj &lt;&lt; Local Data Filter
 
 **Description :** Permet de filtrer les données locales, dans la plate-forme concernée, par groupes ou étendues spécifiques
 
@@ -1753,7 +1721,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Syntaxe :** obj << Paste Local Data Filter
+**Syntaxe :** obj &lt;&lt; Paste Local Data Filter
 
 **Description :** Appliquer le filtre des données locales du presse-papiers au rapport actif.
 
@@ -1774,7 +1742,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**Syntaxe :** obj << Redo Analysis
+**Syntaxe :** obj &lt;&lt; Redo Analysis
 
 **Description :** Exécute à nouveau cette même analyse dans une nouvelle fenêtre. L&apos;analyse sera différente si les données ont été modifiées.
 
@@ -1790,7 +1758,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**Syntaxe :** obj << Redo ByGroup Analysis
+**Syntaxe :** obj &lt;&lt; Redo ByGroup Analysis
 
 **Description :** Exécute à nouveau cette même analyse dans une nouvelle fenêtre. L&apos;analyse sera différente si les données ont été modifiées.
 
@@ -1816,7 +1784,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**Syntaxe :** obj << Relaunch Analysis
+**Syntaxe :** obj &lt;&lt; Relaunch Analysis
 
 **Description :** Ouvre la fenêtre de lancement de la plate-forme et rappelle les paramètres utilisés pour créer le rapport.
 
@@ -1832,7 +1800,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**Syntaxe :** obj << Relaunch ByGroup
+**Syntaxe :** obj &lt;&lt; Relaunch ByGroup
 
 **Description :** Ouvre la fenêtre de lancement de la plate-forme et rappelle les paramètres utilisés pour créer le rapport.
 
@@ -1858,7 +1826,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**Syntaxe :** obj << Remove Column Switcher
+**Syntaxe :** obj &lt;&lt; Remove Column Switcher
 
 **Description :** Supprime le sélecteur de colonne le plus récent ajouté à la plate-forme.
 
@@ -1878,7 +1846,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Syntaxe :** obj << Remove Local Data Filter
+**Syntaxe :** obj &lt;&lt; Remove Local Data Filter
 
 **Description :** Permet de supprimer un filtre de données locales créé précédemment et rétablit toutes les valeurs des données directement dans la table de données utilisée dans la plate-forme.
 
@@ -1917,9 +1885,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Syntaxe :** obj << Report;
-
-Report( obj )
+**Syntaxe :** obj &lt;&lt; Report;Report( obj )
 
 **Description :** Renvoie une référence à l’objet rapport.
 
@@ -1937,7 +1903,7 @@ Show( t );
 
 ### Report View
 
-**Syntaxe :** obj << Report View( "Complet"|"Résumé" )
+**Syntaxe :** obj &lt;&lt; Report View( "Complet"|"Résumé" )
 
 **Description :** L&apos;affichage du rapport détermine le niveau de détail visible dans un rapport de plate-forme. Full affiche tous les détails, alors que Summary affiche uniquement le contenu sélectionné, selon la plate-forme. Pour un comportement personnalisé, les boîtes d&apos;affichage prennent en charge un message <<Set Summary Behavior.
 
@@ -1953,7 +1919,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**Syntaxe :** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntaxe :** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;enregistre sous forme de propriété de table dans la table de données. Vous pouvez spécifier un nom pour le script. L&apos;option Append Suffix ajoute un suffixe numérique au nom du script, ce qui différentie le script d&apos;un script existant portant le même nom. L&apos;option Prompt invite l&apos;utilisateur à spécifier un nom de script. L&apos;option Replace remplace un script existant avec le même nom.
 
@@ -1979,7 +1945,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Syntaxe :** obj << Save ByGroup Script to Journal
+**Syntaxe :** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis ajoute un bouton dans le journal qui contient ce script.
 
@@ -2005,7 +1971,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Syntaxe :** obj << Save ByGroup Script to Script Window
+**Syntaxe :** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;ajoute à la fenêtre de script active.
 
@@ -2031,7 +1997,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**Syntaxe :** obj << Save Script for All Objects
+**Syntaxe :** obj &lt;&lt; Save Script for All Objects
 
 **Description :** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -2047,7 +2013,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Syntaxe :** obj << Save Script for All Objects To Data Table( <name> )
+**Syntaxe :** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Description :** Enregistre un script pour tous les objets de rapport dans la table de données active. Cette option est utile lorsque vous avez plusieurs rapports dans la fenêtre. Le script est nommé d&apos;après la première plate-forme, sauf si vous spécifiez le nom du script entre guillemets.
 
@@ -2097,7 +2063,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Syntaxe :** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntaxe :** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;enregistre sous forme de propriété de tableau dans la table de données.
 
@@ -2113,7 +2079,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Syntaxe :** obj << Save Script to Journal
+**Syntaxe :** obj &lt;&lt; Save Script to Journal
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis ajoute un bouton dans le journal qui contient ce script.
 
@@ -2129,7 +2095,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Syntaxe :** obj << Save Script to Report
+**Syntaxe :** obj &lt;&lt; Save Script to Report
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;affiche dans le rapport lui-même. Utile pour conserver une trace écrite de ce qui a été effectué.
 
@@ -2145,7 +2111,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Syntaxe :** obj << Save Script to Script Window
+**Syntaxe :** obj &lt;&lt; Save Script to Script Window
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;ajoute à la fenêtre de script active.
 
@@ -2231,7 +2197,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Syntaxe :** obj << Sync to Data Table Changes
+**Syntaxe :** obj &lt;&lt; Sync to Data Table Changes
 
 **Description :** Sync avec l&apos;exclusion et les modifications apportées aux données.
 
@@ -2248,7 +2214,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Syntaxe :** obj << Title( "new title" )
+**Syntaxe :** obj &lt;&lt; Title( "new title" )
 
 **Description :** Définit le titre de la plate-forme.
 
@@ -2264,7 +2230,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Syntaxe :** obj << Top Report
+**Syntaxe :** obj &lt;&lt; Top Report
 
 **Description :** Renvoie une référence au nœud racine dans le rapport.
 
@@ -2282,7 +2248,7 @@ Show( t );
 
 ### Transform Column
 
-**Syntaxe :** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Syntaxe :** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Description :** Créez une colonne de transformation dans le contexte local d&apos;un objet, généralement une plate-forme. La colonne de transformation est active uniquement pendant la durée de vie de la plateforme.
 
@@ -2303,7 +2269,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**Syntaxe :** obj << View Web XML
+**Syntaxe :** obj &lt;&lt; View Web XML
 
 **Description :** Renvoie le code XML utilisé pour créer le rapport au format HTML interactif.
 
@@ -2318,9 +2284,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**Syntaxe :** obj = Fit Curve(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Fit Curve(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Définir le type de fenêtre à créer pour le rapport. Par défaut, une fenêtre de rapport Visible sera créée. Une fenêtre Invisible ne s&apos;affichera pas à l&apos;écran, mais sera visible par les fonctions comme Window(). Une fenêtre Private répond à la plupart des messages de fenêtre mais n&apos;est pas visible et doit être adressée au moyen de l&apos;objet rapport
 
@@ -2350,9 +2314,7 @@ New Window( "Bivariate Equation",
 
 #### Set Alpha Level
 
-**Syntaxe :** obj << Fit Command( Equivalence Test(..., Equivalence with Ratios( 1, Set Alpha Level( number )))); 
-
-obj << (Fit[name|number] << Equivalence Test(..., Equivalence with Ratios( 1, Set Alpha Level( number ))))
+**Syntaxe :** obj &lt;&lt; Fit Command( Equivalence Test(..., Equivalence with Ratios( 1, Set Alpha Level( number )))); obj &lt;&lt; (Fit[name|number] &lt;&lt; Equivalence Test(..., Equivalence with Ratios( 1, Set Alpha Level( number ))))
 
 **Description :** Définit le niveau alpha utilisé pour calculer les intervalles de confiance sur le graphique d&apos;équivalence.
 
@@ -2376,9 +2338,7 @@ obj << Fit Logistic 4P(
 
 #### Set Decision Lines
 
-**Syntaxe :** obj << Fit Command( Equivalence Test(..., Equivalence with Ratios( 1, Set Decision Lines( lower, upper )))); 
-
-obj << (Fit[name|number] << Equivalence Test(..., Equivalence with Ratios( 1, Set Decision Lines( lower, upper ))))
+**Syntaxe :** obj &lt;&lt; Fit Command( Equivalence Test(..., Equivalence with Ratios( 1, Set Decision Lines( lower, upper )))); obj &lt;&lt; (Fit[name|number] &lt;&lt; Equivalence Test(..., Equivalence with Ratios( 1, Set Decision Lines( lower, upper ))))
 
 **Description :** Définit les lignes de décision inférieure et supérieure sur le graphique d&apos;équivalence.
 
@@ -2402,9 +2362,7 @@ obj << Fit Logistic 4P(
 
 #### Show Center Line
 
-**Syntaxe :** obj << Fit Command( Equivalence Test(..., Equivalence with Ratios( 1, Show Center Line( state=0|1 )))); 
-
-obj << (Fit[name|number] << Equivalence Test(..., Equivalence with Ratios( 1, Show Center Line( state=0|1 ))))
+**Syntaxe :** obj &lt;&lt; Fit Command( Equivalence Test(..., Equivalence with Ratios( 1, Show Center Line( state=0|1 )))); obj &lt;&lt; (Fit[name|number] &lt;&lt; Equivalence Test(..., Equivalence with Ratios( 1, Show Center Line( state=0|1 ))))
 
 **Description :** Affiche ou masque la ligne centrale sur le graphique d&apos;équivalence. Actif par défaut.
 
@@ -2428,9 +2386,7 @@ obj << Fit Logistic 4P(
 
 #### Show Decision Limit Shading
 
-**Syntaxe :** obj << Fit Command( Equivalence Test(..., Equivalence with Ratios( 1, Show Decision Limit Shading( state=0|1 )))); 
-
-obj << (Fit[name|number] << Equivalence Test(..., Equivalence with Ratios( 1, Show Decision Limit Shading( state=0|1 ))))
+**Syntaxe :** obj &lt;&lt; Fit Command( Equivalence Test(..., Equivalence with Ratios( 1, Show Decision Limit Shading( state=0|1 )))); obj &lt;&lt; (Fit[name|number] &lt;&lt; Equivalence Test(..., Equivalence with Ratios( 1, Show Decision Limit Shading( state=0|1 ))))
 
 **Description :** Affiche ou masque l&apos;ombrage des limites de décision sur le graphique d&apos;équivalence. Actif par défaut.
 
@@ -2454,9 +2410,7 @@ obj << Fit Logistic 4P(
 
 #### Show Decision Limits
 
-**Syntaxe :** obj << Fit Command( Equivalence Test(..., Equivalence with Ratios( 1, Show Decision Limits( state=0|1 )))); 
-
-obj << (Fit[name|number] << Equivalence Test(..., Equivalence with Ratios(1, Show Decision Limits( state=0|1 ))))
+**Syntaxe :** obj &lt;&lt; Fit Command( Equivalence Test(..., Equivalence with Ratios( 1, Show Decision Limits( state=0|1 )))); obj &lt;&lt; (Fit[name|number] &lt;&lt; Equivalence Test(..., Equivalence with Ratios(1, Show Decision Limits( state=0|1 ))))
 
 **Description :** Affiche ou masque les lignes représentant les limites de décision sur le graphique d&apos;équivalence. Actif par défaut.
 
@@ -2480,9 +2434,7 @@ obj << Fit Logistic 4P(
 
 #### Show Summary Report
 
-**Syntaxe :** obj << Fit Command( Equivalence Test(..., Equivalence with Ratios( 1, Show Summary Report( state=0|1 )))); 
-
-obj << (Fit[name|number] << Equivalence Test(..., Equivalence with Ratios( 1, Show Summary Report( state=0|1 ))))
+**Syntaxe :** obj &lt;&lt; Fit Command( Equivalence Test(..., Equivalence with Ratios( 1, Show Summary Report( state=0|1 )))); obj &lt;&lt; (Fit[name|number] &lt;&lt; Equivalence Test(..., Equivalence with Ratios( 1, Show Summary Report( state=0|1 ))))
 
 **Description :** Affiche ou masque le rapport Résumé du test d&apos;équivalence qui contient l&apos;estimation des paramètres, les limites de décision et qui indique si le paramètre dépasse les limites.
 
@@ -2510,7 +2462,7 @@ obj << Fit Logistic 4P(
 
 #### CDOE Fit Plot
 
-**Syntaxe :** scrobj << CDOE Fit Plot( state=0|1 )
+**Syntaxe :** scrobj &lt;&lt; CDOE Fit Plot( state=0|1 )
 
 **Description :** Affiche ou masque un graphique des valeurs ajustées. Si une variable de groupe est spécifiée, il y a également une grille de graphiques des valeurs ajustées pour chaque niveau de la variable de groupe. Actif par défaut.
 
@@ -2547,7 +2499,7 @@ scrobj << CDOE Fit Plot( 0 );
 
 #### CDOE Profiler
 
-**Syntaxe :** scrobj << CDOE Profiler( state=0|1 )
+**Syntaxe :** scrobj &lt;&lt; CDOE Profiler( state=0|1 )
 
 **Description :** Affiche ou masque le profileur CDOE, qui vous permet d&apos;explorer comment la réponse change en fonction des variables supplémentaires. Actif par défaut.
 
@@ -2581,7 +2533,7 @@ scrobj << CDOE Profiler( 0 );
 
 #### Diagnostic Plots
 
-**Syntaxe :** scrobj << Diagnostic Plots( state=0|1 )
+**Syntaxe :** scrobj &lt;&lt; Diagnostic Plots( state=0|1 )
 
 **Description :** Affiche ou masque les graphiques des valeurs réelles par rapport aux valeurs prévues et aux résidus pour la variable de réponse. Actif par défaut.
 
@@ -2618,7 +2570,7 @@ scrobj << Diagnostic Plots( 0 );
 
 #### Generalized Regression for Model Parameters
 
-**Syntaxe :** scrobj << Generalized Regression for Model Parameters( state=0|1 )
+**Syntaxe :** scrobj &lt;&lt; Generalized Regression for Model Parameters( state=0|1 )
 
 **Description :** Affiche ou masque les rapports Régression généralisée pour chaque paramètre du modèle. Actif par défaut.
 
@@ -2655,7 +2607,7 @@ scrobj << Generalized Regression for Model Parameters( 0 );
 
 #### Save Prediction Formula
 
-**Syntaxe :** scrobj << Save Prediction Formula
+**Syntaxe :** scrobj &lt;&lt; Save Prediction Formula
 
 **Description :** Enregistre une nouvelle colonne de formule dans la table de données d&apos;origine. La nouvelle colonne contient la formule de prévision de la réponse.
 
@@ -2694,9 +2646,7 @@ scrobj << Save Prediction Formula;
 
 #### Area Under Curve
 
-**Syntaxe :** obj << Fit Command( Area Under Curve( state=0|1 )); 
-
-obj << (Fit[number|name] << Area Under Curve( state=0|1 ))
+**Syntaxe :** obj &lt;&lt; Fit Command( Area Under Curve( state=0|1 )); obj &lt;&lt; (Fit[number|name] &lt;&lt; Area Under Curve( state=0|1 ))
 
 **Description :** Calcule la zone en-dessous de la fonction de prévision ajustée.
 
@@ -2719,9 +2669,7 @@ obj << Fit Gaussian Peak( Area Under Curve( 1 ) );
 
 #### Compare Parameter Estimates
 
-**Syntaxe :** obj << Fit Command( Compare Parameter Estimates( state=0|1 )); 
-
-obj << (Fit[number|name] << Compare Parameter Estimates( state=0|1 ))
+**Syntaxe :** obj &lt;&lt; Fit Command( Compare Parameter Estimates( state=0|1 )); obj &lt;&lt; (Fit[number|name] &lt;&lt; Compare Parameter Estimates( state=0|1 ))
 
 **Description :** Compare l&apos;estimation des paramètres de chaque groupe à la moyenne globale. Cette comparaison est effectuée pour chaque paramètre.
 
@@ -2736,7 +2684,7 @@ obj << Fit Logistic 4P( Compare Parameter Estimates( 1 ) );
 
 #### Curve DOE Analysis
 
-**Syntaxe :** obj << (Fit[number|name] << Curve DOE Analysis( state=0|1 ))
+**Syntaxe :** obj &lt;&lt; (Fit[number|name] &lt;&lt; Curve DOE Analysis( state=0|1 ))
 
 **Description :** Lance un rapport Régression généralisée dans la plate-forme Courbe d&apos;ajustement. Un modèle de régression généralisée est ajusté à chaque paramètre du modèle en utilisant les variables supplémentaires en tant qu&apos;effets du modèle.
 
@@ -2794,9 +2742,7 @@ obj << (Fit["Biexponential 5P"] << Curve DOE Analysis( 1 ));
 
 #### Custom Inverse Prediction
 
-**Syntaxe :** obj << Fit Command( Custom Inverse Prediction( Response( value ))); 
-
-obj << (Fit[number|name] << Custom Inverse Prediction( Response( value )))
+**Syntaxe :** obj &lt;&lt; Fit Command( Custom Inverse Prediction( Response( value ))); obj &lt;&lt; (Fit[number|name] &lt;&lt; Custom Inverse Prediction( Response( value )))
 
 **Description :** Prévoit une valeur X pour la valeur de réponse spécifiée.
 
@@ -2811,9 +2757,7 @@ obj << Fit Logistic 4P( Custom Inverse Prediction( Response( 0.9 ) ) );
 
 #### Equivalence Test
 
-**Syntaxe :** obj << Fit Command( Equivalence Test( Reference Group( column ))); 
-
-obj << (Fit[number|name] << Equivalence Test( Reference Group( column )))
+**Syntaxe :** obj &lt;&lt; Fit Command( Equivalence Test( Reference Group( column ))); obj &lt;&lt; (Fit[number|name] &lt;&lt; Equivalence Test( Reference Group( column )))
 
 **Description :** Vérifie si la courbe d&apos;ajustement de chaque groupe est pratiquement équivalente à la courbe d&apos;ajustement d&apos;un groupe de référence.
 
@@ -2828,9 +2772,7 @@ obj << Fit Logistic 4P( Equivalence Test( Reference Group( "Standard" ) ) );
 
 #### Inflection Point
 
-**Syntaxe :** obj << Fit Command( Inflection Point( state=0|1 )); 
-
-obj << (Fit[number|name] << Inflection Point( state=0|1 ))
+**Syntaxe :** obj &lt;&lt; Fit Command( Inflection Point( state=0|1 )); obj &lt;&lt; (Fit[number|name] &lt;&lt; Inflection Point( state=0|1 ))
 
 **Description :** Affiche ou masque un rapport des estimations du point d&apos;inflexion du modèle. Cette option est uniquement disponible pour les modèles Croissance de Weibull, Logistique à 4 paramètres de Rodbard et Logistique à 5 paramètres.
 
@@ -2845,9 +2787,7 @@ obj << Fit Logistic 5P( Inflection Point( 1 ) );
 
 #### Make Parameter Table
 
-**Syntaxe :** obj << Fit Command( Make Parameter Table ); 
-
-obj << (Fit[number|name] << Make Parameter Table)
+**Syntaxe :** obj &lt;&lt; Fit Command( Make Parameter Table ); obj &lt;&lt; (Fit[number|name] &lt;&lt; Make Parameter Table)
 
 **Description :** Crée un tableau récapitulatif de l’estimation des paramètres.
 
@@ -2862,9 +2802,7 @@ obj << Fit Logistic 4P( Make Parameter Table );
 
 #### Peak Response
 
-**Syntaxe :** obj << Fit Command( Peak Response( state=0|1 ); 
-
-obj << (Fit[number|name] << Peak Response( state=0|1 ))
+**Syntaxe :** obj &lt;&lt; Fit Command( Peak Response( state=0|1 ); obj &lt;&lt; (Fit[number|name] &lt;&lt; Peak Response( state=0|1 ))
 
 **Description :** Calcule l&apos;estimation de la variable Y au sommet de la courbe ajustée. Cette option est disponible pour les modèles Croissance cellulaire à 4 paramètres et Un compartiment.
 
@@ -2885,9 +2823,7 @@ obj << Fit One Compartment Oral Dose( Peak Response( 1 ) );
 
 #### Plot Actual by Predicted
 
-**Syntaxe :** obj << Fit Command( Plot Actual by Predicted( state=0|1 ); 
-
-obj << (Fit[number|name] << Plot Actual by Predicted( state=0|1 ))
+**Syntaxe :** obj &lt;&lt; Fit Command( Plot Actual by Predicted( state=0|1 ); obj &lt;&lt; (Fit[number|name] &lt;&lt; Plot Actual by Predicted( state=0|1 ))
 
 **Description :** Affiche ou masque un graphique avec les valeurs de réponse réelles sur l&apos;axe vertical et les valeurs prévues sur l&apos;axe horizontal. Dans les bons ajustements, les points sont proches de la diagonale. Vous pouvez identifier les points éloignés de la diagonale, rechercher des configurations et visualiser le test.
 
@@ -2902,9 +2838,7 @@ fc << (fit[1] << Plot Actual by Predicted( 1 ));
 
 #### Plot Residual by Predicted
 
-**Syntaxe :** obj << Fit Command( Plot Residual by Predicted( state=0|1 ); 
-
-obj << (Fit[number|name] << Plot Residual by Predicted( state=0|1 ))
+**Syntaxe :** obj &lt;&lt; Fit Command( Plot Residual by Predicted( state=0|1 ); obj &lt;&lt; (Fit[number|name] &lt;&lt; Plot Residual by Predicted( state=0|1 ))
 
 **Description :** Affiche ou masque un graphique avec les résidus sur l&apos;axe vertical et le numéro de ligne sur l&apos;axe horizontal.
 
@@ -2919,9 +2853,7 @@ fc << (fit[1] << Plot Residual by Predicted( 1 ));
 
 #### Profiler
 
-**Syntaxe :** obj << Fit Command( Profiler( state=0|1 )); 
-
-obj << (Fit[number|name] << Profiler( state=0|1 ))
+**Syntaxe :** obj &lt;&lt; Fit Command( Profiler( state=0|1 )); obj &lt;&lt; (Fit[number|name] &lt;&lt; Profiler( state=0|1 ))
 
 **Description :** Affiche ou masque un profileur de la fonction de prévision ajustée et ses dérivées premières et secondes.
 
@@ -2941,7 +2873,7 @@ obj << (Fit["Logistic 4P"] << Profiler( 1 ));
 
 #### Remove Fit
 
-**Syntaxe :** obj << (Fit[number|name]<<Remove Fit)
+**Syntaxe :** obj &lt;&lt; (Fit[number|name]&lt;&lt;Remove Fit)
 
 **Description :** Supprime l&apos;ajustement spécifié du rapport.
 
@@ -2958,9 +2890,7 @@ obj << (Fit[1] << Remove Fit);
 
 #### Save Bootstrap Results
 
-**Syntaxe :** obj << Fit Command( Save Bootstrap Results ); 
-
-obj << (Fit[number] << Save Bootstrap Results)
+**Syntaxe :** obj &lt;&lt; Fit Command( Save Bootstrap Results ); obj &lt;&lt; (Fit[number] &lt;&lt; Save Bootstrap Results)
 
 **Description :** Enregistre des colonnes dans une nouvelle table de données. La table de données contient les résultats du bootstrap provenant d&apos;une analyse F1 ou d&apos;une analyse F2.
 
@@ -2992,9 +2922,7 @@ obj << (fit[1] << Save Bootstrap Results);
 
 #### Save First Derivative
 
-**Syntaxe :** obj << Fit Command( Save First Derivative ); 
-
-obj << (Fit[number|name] << Save First Derivative)
+**Syntaxe :** obj &lt;&lt; Fit Command( Save First Derivative ); obj &lt;&lt; (Fit[number|name] &lt;&lt; Save First Derivative)
 
 **Description :** Enregistre une nouvelle colonne de formule dans la table de données d&apos;origine. La nouvelle colonne contient la formule pour la dérivée première de la prévision.
 
@@ -3009,9 +2937,7 @@ obj << Fit Logistic 4P( Save First Derivative );
 
 #### Save Inverse Prediction Formula
 
-**Syntaxe :** obj << Fit Command( Save Inverse Prediction Formula ); 
-
-obj << (Fit[number|name] << Save Inverse Prediction Formula)
+**Syntaxe :** obj &lt;&lt; Fit Command( Save Inverse Prediction Formula ); obj &lt;&lt; (Fit[number|name] &lt;&lt; Save Inverse Prediction Formula)
 
 **Description :** Enregistre une nouvelle colonne de formule dans la table de données d&apos;origine. La nouvelle colonne contient la formule pour la fonction inverse du modèle ajusté.
 
@@ -3026,9 +2952,7 @@ obj << Fit Logistic 4P( Save Inverse Prediction Formula );
 
 #### Save Parametric Prediction Formula
 
-**Syntaxe :** obj << Fit Command( Save Parametric Prediction Formula ); 
-
-obj << (Fit[number|name] << Save Parametric Prediction Formula)
+**Syntaxe :** obj &lt;&lt; Fit Command( Save Parametric Prediction Formula ); obj &lt;&lt; (Fit[number|name] &lt;&lt; Save Parametric Prediction Formula)
 
 **Description :** Enregistre une nouvelle colonne de formule dans la table de données d&apos;origine. La nouvelle colonne contient la formule de prévision exprimée de manière à ce que la plate-forme Non linéaire puisse l&apos;utiliser.
 
@@ -3048,9 +2972,7 @@ obj << (Fit["Logistic 4P"] << Save Parametric Prediction Formula);
 
 #### Save Prediction Formula
 
-**Syntaxe :** obj << Fit Command( Save Prediction Formula ); 
-
-obj << (Fit[number|name] << Save Prediction Formula)
+**Syntaxe :** obj &lt;&lt; Fit Command( Save Prediction Formula ); obj &lt;&lt; (Fit[number|name] &lt;&lt; Save Prediction Formula)
 
 **Description :** Enregistre une nouvelle colonne de formule dans la table de données d&apos;origine. La nouvelle colonne contient la formule de prévision pour l&apos;estimation des paramètres actuelle.
 
@@ -3070,9 +2992,7 @@ obj << (Fit[1] << Save Prediction Formula);
 
 #### Save Residual Formula
 
-**Syntaxe :** obj << Fit Command( Save Residual Formula ); 
-
-obj << (Fit[number|name] << Save Residual Formula)
+**Syntaxe :** obj &lt;&lt; Fit Command( Save Residual Formula ); obj &lt;&lt; (Fit[number|name] &lt;&lt; Save Residual Formula)
 
 **Description :** Enregistre une nouvelle colonne de formule dans la table de données d&apos;origine. La nouvelle colonne contient une formule pour les résidus.
 
@@ -3087,9 +3007,7 @@ obj << Fit Logistic 4P( Save Residual Formula );
 
 #### Save Stacked Data
 
-**Syntaxe :** obj << Fit Command( Save Stacked Data ); 
-
-obj << (Fit[number|name] << Save Stacked Data)
+**Syntaxe :** obj &lt;&lt; Fit Command( Save Stacked Data ); obj &lt;&lt; (Fit[number|name] &lt;&lt; Save Stacked Data)
 
 **Description :** Enregistre des colonnes dans une nouvelle table de données. La table de données contient les données d&apos;origine sous le format empilé, ainsi qu&apos;une colonne pour les valeurs prévues de la réponse et une colonne pour les résidus.
 
@@ -3108,9 +3026,7 @@ obj << Fit Higuchi( Save Stacked Data );
 
 #### Save Std Error of First Derivative
 
-**Syntaxe :** obj << Fit Command( Save Std Error of First Derivative ); 
-
-obj << (Fit[number|name] << Save Std Error of First Derivative)
+**Syntaxe :** obj &lt;&lt; Fit Command( Save Std Error of First Derivative ); obj &lt;&lt; (Fit[number|name] &lt;&lt; Save Std Error of First Derivative)
 
 **Description :** Enregistre une nouvelle colonne dans la table de données d&apos;origine. La nouvelle colonne contient la formule pour l&apos;erreur standard de la dérivée première de la prévision.
 
@@ -3125,9 +3041,7 @@ obj << Fit Logistic 4P( Save First Derivative, Save Std Error of First Derivativ
 
 #### Save Std Error of Predicted
 
-**Syntaxe :** obj << Fit Command( Save Std Error of Predicted ); 
-
-obj << (Fit[number|name] << Save Std Error of Predicted)
+**Syntaxe :** obj &lt;&lt; Fit Command( Save Std Error of Predicted ); obj &lt;&lt; (Fit[number|name] &lt;&lt; Save Std Error of Predicted)
 
 **Description :** Enregistre une nouvelle colonne de formule dans la table de données d&apos;origine. La nouvelle colonne contient la formule pour calculer les erreurs standard des prévisions.
 
@@ -3142,9 +3056,7 @@ obj << Fit Logistic 4P( Save Prediction Formula, Save Std Error of Predicted );
 
 #### Save Studentized Residual Formula
 
-**Syntaxe :** obj << Fit Command( Save Studentized Residual Formula ); 
-
-obj << (Fit[number|name] << Save Studentized Residual Formula)
+**Syntaxe :** obj &lt;&lt; Fit Command( Save Studentized Residual Formula ); obj &lt;&lt; (Fit[number|name] &lt;&lt; Save Studentized Residual Formula)
 
 **Description :** Enregistre une nouvelle colonne de formule dans la table de données d&apos;origine. La nouvelle colonne contient la formule pour les résidus studentisés, qui sont des résidus standards divisés par leurs écarts-types estimés.
 
@@ -3159,9 +3071,7 @@ obj << Fit Logistic 4P( Save Studentized Residual Formula );
 
 #### Test Parallelism
 
-**Syntaxe :** obj << Fit Command( Test Parallelism( state=0|1 )); 
-
-obj << (Fit[number|name] << Test Parallelism( state=0|1 ))
+**Syntaxe :** obj &lt;&lt; Fit Command( Test Parallelism( state=0|1 )); obj &lt;&lt; (Fit[number|name] &lt;&lt; Test Parallelism( state=0|1 ))
 
 **Description :** Vérifie si les courbes d&apos;ajustement intergroupes présentent une forme similaire.
 
@@ -3176,9 +3086,7 @@ obj << Fit Logistic 4P( Test Parallelism( 1 ) );
 
 #### Time to Peak Response
 
-**Syntaxe :** obj << Fit Command( Time to Peak Response( state=0|1 )); 
-
-obj << (Fit[number|name] << Time to Peak Response( state=0|1 ))
+**Syntaxe :** obj &lt;&lt; Fit Command( Time to Peak Response( state=0|1 )); obj &lt;&lt; (Fit[number|name] &lt;&lt; Time to Peak Response( state=0|1 ))
 
 **Description :** Calcule l&apos;estimation de la variable X au sommet de la courbe ajustée. Cette option est uniquement disponible pour les modèles Croissance cellulaire à 4 paramètres et Un compartiment.
 

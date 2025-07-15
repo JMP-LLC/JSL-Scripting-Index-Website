@@ -2,8 +2,6 @@
 
 
 
-## 関数
-
 ### Pat Abort
 
 **構文:** Pat Abort()
@@ -250,7 +248,7 @@ result;
 
 ### Pat Look Ahead
 
-**構文:** Pat Look Ahead( pattern, <0|1> )
+**構文:** Pat Look Ahead( pattern, &lt;0|1&gt; )
 
 **説明:** 現在の位置以後で行うゼロ幅のパターンマッチ。第2オプション引数のデフォルトは0。1は負のマッチ、または非マッチを示す。
 
@@ -309,7 +307,7 @@ While( /* keep repeating the match until it won't match */
 
 ### Pat Look Behind
 
-**構文:** Pat Look Behind( pattern, <0|1> )
+**構文:** Pat Look Behind( pattern, &lt;0|1&gt; )
 
 **説明:** 現在の位置より前で行うゼロ幅のパターンマッチ。第2オプション引数のデフォルトは0。1は負のマッチ、または非マッチを示す。
 
@@ -367,7 +365,7 @@ While( /* keep repeating the match until it won't match */
 
 ### Pat Match
 
-**構文:** Pat Match( source, pattern, <replacement> )
+**構文:** Pat Match( source, pattern, &lt;replacement&gt; )
 
 **説明:** sourceの文字列に対して、patternのパターンを用いてマッチングを行う。オプションの文字列replacementを指定した場合、文字列が置換される。
 
@@ -491,7 +489,7 @@ result;
 
 ### Pat Repeat
 
-**構文:** Pat Repeat( pattern, <min=1>, <max=infinity>, <GREEDY or RELUCTANT=GREEDY> )
+**構文:** Pat Repeat( pattern, &lt;min=1&gt;, &lt;max=infinity&gt;, &lt;GREEDY or RELUCTANT=GREEDY&gt; )
 
 **説明:** 指定されたパターンとmin～max回マッチするパターン値を生成する。
 
@@ -614,7 +612,7 @@ string;
 
 ### Regex Match
 
-**構文:** Regex Match( source, pattern, <replacement | NULL>, <MATCHCASE> )
+**構文:** Regex Match( source, pattern, &lt;replacement | NULL&gt;, &lt;MATCHCASE&gt; )
 
 **説明:** 正規表現によるマッチを実行し、完全に一致したテキストと、括弧によって作成された後方参照の一致のリストを戻す。オプションで、第3引数を使い、完全一致を置換するための文字列を指定できる。置換文字列では後方参照の使用が可能。
 

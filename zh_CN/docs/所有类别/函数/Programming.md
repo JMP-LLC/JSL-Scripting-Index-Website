@@ -2,8 +2,6 @@
 
 
 
-## 函数
-
 ### Add Custom Functions
 
 **语法:** Add Custom Functions({f1, f2, ...} | f)
@@ -40,13 +38,7 @@ Show( b );
 
 ### As Column
 
-**语法:** y = :name;
-
-y = dataTable:name;
-
-y = As Column( name );
-
-y = As Column( dataTable, name )
+**语法:** y = :name;y = dataTable:name;y = As Column( name );y = As Column( dataTable, name )
 
 **说明:** 访问指定数据表或当前数据表中的指定列。若未找到这样的列或数据表，则抛出错误。
 
@@ -218,9 +210,7 @@ As Scoped( Here, z );
 
 ### Associative Array
 
-**语法:** y = Associative Array( {{key1, value1}, ...} );
-
-y = Associative Array( keys, values )
+**语法:** y = Associative Array( {{key1, value1}, ...} );y = Associative Array( keys, values )
 
 **说明:** 创建关联数组，也称为词典或哈希映射。在双参数形式下，键与值可以是列表、矩阵或数据表列。
 
@@ -237,7 +227,7 @@ ex << get contents;
 
 ### Choose Closest
 
-**语法:** Choose Closest(source string, {canonical strings...}, <Ignore Case(ignore=1|0)>, <Ignore Nonprintable(ignore=1|0)>, <Ignore Whitespace(ignore=1|0)>, <Max Edit Count(count)>, <Max Edit Ratio([0..1])>, <Min String Length(<count=3>)>, <Replace Unmatched(replace=0|1)>, <Unmatched Value(<value="">)>)
+**语法:** Choose Closest(source string, {canonical strings...}, &lt;Ignore Case(ignore=1|0)&gt;, &lt;Ignore Nonprintable(ignore=1|0)&gt;, &lt;Ignore Whitespace(ignore=1|0)&gt;, &lt;Max Edit Count(count)&gt;, &lt;Max Edit Ratio([0..1])&gt;, &lt;Min String Length(&lt;count=3&gt;)&gt;, &lt;Replace Unmatched(replace=0|1)&gt;, &lt;Unmatched Value(&lt;value=""&gt;)&gt;)
 
 **说明:** 挑选指定规则中的最近字符串并将其返回。
 
@@ -361,7 +351,7 @@ Delete Classes( "complex" );
 
 ### Clear Globals
 
-**语法:** Clear Globals( < varname, ... > )
+**语法:** Clear Globals( &lt; varname, ... &gt; )
 
 **说明:** 清除当前定义的所有全局符号的值。
 
@@ -391,7 +381,7 @@ Clear Log();
 
 ### Clear Symbols
 
-**语法:** Clear Symbols( < varname, ... > )
+**语法:** Clear Symbols( &lt; varname, ... &gt; )
 
 **说明:** 清除当前定义的所有符号的值。
 
@@ -422,7 +412,7 @@ Show( Is Log Open() );
 
 ### Define Class
 
-**语法:** Define Class("class name", <Base Class{ "base class name", ... }>, <Show( All( boolean ) | ( Members( boolean ) | Methods( boolean ) | Functions( boolean ) )+ )>, { method* | member* | function* } )
+**语法:** Define Class("class name", &lt;Base Class{ "base class name", ... }&gt;, &lt;Show( All( boolean ) | ( Members( boolean ) | Methods( boolean ) | Functions( boolean ) )+ )&gt;, { method* | member* | function* } )
 
 **说明:** 定义新分类
 
@@ -476,7 +466,7 @@ Delete Classes( complex );
 
 ### Delete Classes
 
-**语法:** Delete Classes( <Force( boolean )>, <class reference, ...> )
+**语法:** Delete Classes( &lt;Force( boolean )&gt;, &lt;class reference, ...&gt; )
 
 **说明:** 删除所有分类定义或者一个或多个特定分类定义。
 
@@ -508,7 +498,7 @@ Show Classes();
 
 ### Delete Globals
 
-**语法:** Delete Globals( < varname, ... > )
+**语法:** Delete Globals( &lt; varname, ... &gt; )
 
 **说明:** 删除当前定义的所有全局符号及其值。
 
@@ -523,7 +513,7 @@ Delete Globals();
 
 ### Delete Namespaces
 
-**语法:** Delete Namespaces( <Force( boolean )>, <namespace reference, ...> )
+**语法:** Delete Namespaces( &lt;Force( boolean )&gt;, &lt;namespace reference, ...&gt; )
 
 **说明:** 删除所有命名空间或者一个或多个特定命名空间。
 
@@ -553,7 +543,7 @@ Show Namespaces();
 
 ### Delete Symbols
 
-**语法:** Delete Symbols( < varname, ... > )
+**语法:** Delete Symbols( &lt; varname, ... &gt; )
 
 **说明:** 删除当前定义的所有符号及其值。
 
@@ -583,7 +573,7 @@ Eval( Expr( 1 + 2 ) );
 
 ### Eval Insert
 
-**语法:** y = Eval Insert( string, <startChar="^">, <endChar=startChar> )
+**语法:** y = Eval Insert( string, &lt;startChar="^"&gt;, &lt;endChar=startChar&gt; )
 
 **说明:** 查找 startChar/endChar 对括住的子字符串，并使用内部计算的表达式替换。
 
@@ -598,7 +588,7 @@ Eval Insert( "Today is ^As Date( Today())^" );
 
 ### Eval Insert Into
 
-**语法:** Eval Insert Into( l_string, <startChar="^">, <endChar=startChar> )
+**语法:** Eval Insert Into( l_string, &lt;startChar="^"&gt;, &lt;endChar=startChar&gt; )
 
 **说明:** 查找 startChar/endChar 对括住的子字符串，并使用内部计算的表达式替换，被替换字符串为 l_string。
 
@@ -643,7 +633,7 @@ Eval List( {x, y} );
 
 ### Exit
 
-**语法:** Quit(<"No Save">); Exit(<"No Save">)
+**语法:** Quit(&lt;"No Save"&gt;); Exit(&lt;"No Save"&gt;)
 
 **说明:** 退出 JMP。
 
@@ -679,7 +669,7 @@ First( 11, 22 );
 
 ### Function
 
-**语法:** y = Function( {arg1=val1, ...}, <{local1=val1, ...}>, expr )
+**语法:** y = Function( {arg1=val1, ...}, &lt;{local1=val1, ...}&gt;, expr )
 
 **说明:** 用指定的参数、默认值以及可选局部变量定义一个函数。具有默认值的参数为调用函数时的可选项。若函数脚本中使用了 Return()，则返回内部表达式。
 
@@ -727,7 +717,7 @@ posorneg( -5.5 );
 
 ### Get Class Names
 
-**语法:** Get Class Names( < <class reference>, ... > )
+**语法:** Get Class Names( &lt; &lt;class reference&gt;, ... &gt; )
 
 **说明:** 返回所有当前定义的分类的名称列表。
 
@@ -756,7 +746,7 @@ Delete Classes( "aa", "bb" );
 
 ### Get Classes
 
-**语法:** Get Classes( < <class reference>, ... > )
+**语法:** Get Classes( &lt; &lt;class reference&gt;, ... &gt; )
 
 **说明:** 返回当前定义的所有类的引用列表
 
@@ -786,7 +776,7 @@ Delete Classes( "aa", "bb" );
 
 ### Get Custom Functions
 
-**语法:** Get Custom Functions(<{function 1 full name, function 2 full name, ...} | function full name>)
+**语法:** Get Custom Functions(&lt;{function 1 full name, function 2 full name, ...} | function full name&gt;)
 
 **说明:** 获取定制函数的列表
 
@@ -846,7 +836,7 @@ Get Locale Setting( "Decimal Separator" );
 
 ### Get Log
 
-**语法:** list = Get Log( <N> )
+**语法:** list = Get Log( &lt;N&gt; )
 
 **说明:** 返回日志中的行列表。若未指定参数，则返回日志中的所有行。若数值型参数 N 为正，则返回日志中的前 N 行。若 N 为负，则返回日志中的后 N 行。若 N 为零，则不返回任何行。
 
@@ -863,7 +853,7 @@ tailcontents = Get Log( -5 );
 
 ### Get Namespace Names
 
-**语法:** Get Namespace Names( < <namespace reference>, ... > )
+**语法:** Get Namespace Names( &lt; &lt;namespace reference&gt;, ... &gt; )
 
 **说明:** 返回所有当前定义的命名空间的名称列表。
 
@@ -893,7 +883,7 @@ nsbb << Delete;
 
 ### Get Namespaces
 
-**语法:** Get Namespaces( < <namespace reference>, ... > )
+**语法:** Get Namespaces( &lt; &lt;namespace reference&gt;, ... &gt; )
 
 **说明:** 返回当前定义的所有命名空间的引用列表
 
@@ -924,7 +914,7 @@ nsbb << Delete;
 
 ### Get Punctuation Characters
 
-**语法:** Get Punctuation Characters(<Exclude Chars(chars) | Include Chars(chars)>)
+**语法:** Get Punctuation Characters(&lt;Exclude Chars(chars) | Include Chars(chars)&gt;)
 
 **说明:** 返回包含通常用于分隔单词的标点符号字符的字符串。包括 ,:;.?!\/#@&~()[]<>"*`%$+=^|{} 和一些常见 Unicode 标点符号。
 
@@ -1003,7 +993,7 @@ Get Whitespace Characters();
 
 ### Include
 
-**语法:** y = Include( filepath, < <<Parse Only>, < <<New Context>, < <<Names Default to Here> )
+**语法:** y = Include( filepath, &lt; &lt;&lt;Parse Only&gt;, &lt; &lt;&lt;New Context&gt;, &lt; &lt;&lt;Names Default to Here&gt; )
 
 **说明:** 执行指定文件中的 JSL。若指定了“Parse Only”，则会解析脚本而不执行。若指定了“New Context”，则所包含的 JSL 会在其唯一的命名空间中执行。若父脚本和包含的脚本都使用全局命名空间，则同时指定“New Context”和“Names Default to Here”以避免冲突。
 
@@ -1232,7 +1222,7 @@ Names Default To Here( 1 );
 
 ### Map Value
 
-**语法:** Map Value(string | number, {key1, value1...|{key1...},{value1...}}, <Unmatched(value)>)
+**语法:** Map Value(string | number, {key1, value1...|{key1...},{value1...}}, &lt;Unmatched(value)&gt;)
 
 **说明:** 计算初始值并返回映射的结果或默认值。
 
@@ -1545,7 +1535,7 @@ Add Custom Functions(
 
 ### New Namespace
 
-**语法:** ns = New Namespace( <name>, <list of expressions> )
+**语法:** ns = New Namespace( &lt;name&gt;, &lt;list of expressions&gt; )
 
 **说明:** 创建新的命名空间，其名称由 name 参数指定。若未指定 name，则使用匿名名称。
 
@@ -1641,7 +1631,7 @@ Delete Classes( "complex" );
 
 ### Open Log
 
-**语法:** Open Log( <bring window to top> )
+**语法:** Open Log( &lt;bring window to top&gt; )
 
 **说明:** 打开日志窗口
 
@@ -1715,7 +1705,7 @@ Print( 355 / 113, Pi() );
 
 ### Quit
 
-**语法:** Quit(<"No Save">); Exit(<"No Save">)
+**语法:** Quit(&lt;"No Save"&gt;); Exit(&lt;"No Save"&gt;)
 
 **说明:** 退出 JMP。
 
@@ -1736,7 +1726,7 @@ If(
 
 ### Recode
 
-**语法:** recode(string|number|list, {<transform>, ...}, <Multiple Response (Separator(sepChar))>, <By Word(Delimiters(<chars>)>)
+**语法:** recode(string|number|list, {&lt;transform&gt;, ...}, &lt;Multiple Response (Separator(sepChar))&gt;, &lt;By Word(Delimiters(&lt;chars&gt;)&gt;)
 
 **说明:** 将列出的变换应用于输入值并返回结果。“多重响应”和“按单词”选项将提供的字符数据拆分为更小的输入值。一旦确定输入值，变换会分别应用于这些值。
 
@@ -1811,7 +1801,7 @@ Remove Custom Functions( {"custom:Add", "custom:Sub"} );
 
 ### Save Log
 
-**语法:** f = Save Log( <path> )
+**语法:** f = Save Log( &lt;path&gt; )
 
 **说明:** 将日志内容写到指定文件位置。若成功写入，该函数将返回所创建文件的名称。
 
@@ -1828,7 +1818,7 @@ Substr( exlogText, 1, 30 );
 
 ### Send
 
-**语法:** r = obj << msg( args ); r = obj << msg; r = Send( obj, msg )
+**语法:** r = obj &lt;&lt; msg( args ); r = obj &lt;&lt; msg; r = Send( obj, msg )
 
 **说明:** 将消息（以表达式形式）发送给对象。
 
@@ -1844,7 +1834,7 @@ Bivariate( Y( :weight ), X( :height ) ) << Fit Line;
 
 ### Set Environment Variable
 
-**语法:** value = Set Environment Variable( string, < string> )
+**语法:** value = Set Environment Variable( string, &lt; string&gt; )
 
 **说明:** 设置操作系统中指定环境变量的值。若第二个参数缺失或是空字符串，则环境变量会删除。
 
@@ -1878,7 +1868,7 @@ Show( 355 / 113, Pi() );
 
 ### Show Classes
 
-**语法:** Show Classes( < <class name | class reference>, ... > )
+**语法:** Show Classes( &lt; &lt;class name | class reference&gt;, ... &gt; )
 
 **说明:** 显示所有用户定义的类的内容。
 
@@ -1945,7 +1935,7 @@ Show Globals();
 
 ### Show Namespaces
 
-**语法:** Show Namespaces( < <namespace reference>, ... > )
+**语法:** Show Namespaces( &lt; &lt;namespace reference&gt;, ... &gt; )
 
 **说明:** 显示所有用户定义的命名空间的内容，包括已命名的和匿名的命名空间。
 
@@ -2034,7 +2024,7 @@ ex;
 
 ### Throw
 
-**语法:** Throw(<message>, <Boolean>)
+**语法:** Throw(&lt;message&gt;, &lt;Boolean&gt;)
 
 **说明:** 将执行转移到封闭 Try() 函数。否则，终止脚本的运行。若 message 以感叹号开头，将是致命错误，Try() 无法捕获。第二个参数是可选布尔值，用于包括回溯。
 
@@ -2071,7 +2061,7 @@ Throw( "A line number is included in this error", 1 );
 
 ### Try
 
-**语法:** y = Try( expr, <catchExpr> )
+**语法:** y = Try( expr, &lt;catchExpr&gt; )
 
 **说明:** 计算并返回 expr 参数，除非求值导致 Throw() 或内部异常。若出现这种情况，返回 catchExpr 的求值结果。若您使用 exception_msg 作为 catchExpr，则返回有关错误的详细信息列表。
 
@@ -2164,7 +2154,7 @@ Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 ### Wait
 
-**语法:** Wait( <x> )
+**语法:** Wait( &lt;x&gt; )
 
 **说明:** 继续执行之前等待 x 秒。x 的默认值是 3 秒。若 x 大于等于 0，JMP 等待期间还将完成任何操作系统事件（例如，屏幕绘图）以及任何待执行的回调（例如，公式计算）。若 x 小于 0，继续之前只会确认完成屏幕绘图和待执行的 OS 事件。
 
@@ -2223,7 +2213,7 @@ w << close Window();
 
 ### Where
 
-**语法:** Where( <dt>, clause )
+**语法:** Where( &lt;dt&gt;, clause )
 
 **说明:** 返回匹配给定 where 子句的索引（通常为行号）。可选的 dt 可在计算期间更改 Current Data Table。这些子句通常由 JMP 使用“数据过滤器”编写。这通常比使用 Loc、<<Get Rows Where 或 <<Select Where 更快。若子句在计算期间修改了序列或任何符号，则未定义该行为。
 

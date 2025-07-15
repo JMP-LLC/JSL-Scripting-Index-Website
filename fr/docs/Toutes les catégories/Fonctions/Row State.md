@@ -2,8 +2,6 @@
 
 
 
-## Fonctions
-
 ### As Row State
 
 **Syntaxe :** rs = As Row State( x )
@@ -27,7 +25,7 @@ For Each Row(
 
 ### Color Of
 
-**Syntaxe :** y = Color Of( <rs> ); Color Of( <Row State( <r> )> ) = y
+**Syntaxe :** y = Color Of( &lt;rs&gt; ); Color Of( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **Description :** Renvoie la composante de couleur de la valeur d&apos;état de ligne spécifiée, un index de palette de couleurs JMP positive ou une valeur encodée RVB négative. Si Color Of est utilisée comme une L-value, la couleur de la ligne active (ou r-ième) de la table de données active est changée.
 
@@ -78,7 +76,7 @@ Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 
 ### Excluded
 
-**Syntaxe :** y = Excluded( <rs> ); Excluded( <Row State( <r> )> ) = y
+**Syntaxe :** y = Excluded( &lt;rs&gt; ); Excluded( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **Description :** Renvoie la composante exclue de la valeur d&apos;état de ligne spécifiée, 0 ou 1. Si la fonction Excluded() est utilisée comme L-value, l’état exclu de la ligne active (ou r-ième) de la table de données active est modifié.
 
@@ -114,7 +112,7 @@ Excluded( Row State( 3 ) );
 
 ### Hidden
 
-**Syntaxe :** y = Hidden( <rs> ); Hidden( <Row State( <r> )> ) = y
+**Syntaxe :** y = Hidden( &lt;rs&gt; ); Hidden( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **Description :** Renvoie la composante masquée de la valeur d&apos;état de ligne spécifiée, 0 ou 1. Si Hidden est utilisée comme L-value, l’état masqué de la ligne active (ou r-ième) de la table de données est modifié.
 
@@ -166,7 +164,7 @@ Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 
 ### Labeled
 
-**Syntaxe :** y = Labeled( <rs> ); Labeled( <Row State( <r> )> ) = y
+**Syntaxe :** y = Labeled( &lt;rs&gt; ); Labeled( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **Description :** Renvoie la composante étiquetée de la valeur d&apos;état de ligne spécifiée, 0 ou 1. Si Labeled est utilisée comme L-value, l’état étiqueté de la ligne active (ou r-ième) de la table de données active est modifié.
 
@@ -202,7 +200,7 @@ Labeled( Row State( 3 ) );
 
 ### Marker Of
 
-**Syntaxe :** y = Marker Of( <rs> ); Marker Of( <Row State( <r> )> ) = y
+**Syntaxe :** y = Marker Of( &lt;rs&gt; ); Marker Of( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **Description :** Renvoie la composante de marqueur de la valeur d&apos;état de ligne spécifiée. Si Marker Of est utilisé comme L-value, le marqueur de la ligne active (ou r-ième) de la table de données active est modifié.
 
@@ -238,7 +236,7 @@ Marker Of( Row State( 3 ) );
 
 ### Row State
 
-**Syntaxe :** y = Row State( <dt>, <r> ); Row State( <dt>, <r> ) = y
+**Syntaxe :** y = Row State( &lt;dt&gt;, &lt;r&gt; ); Row State( &lt;dt&gt;, &lt;r&gt; ) = y
 
 **Description :** Renvoie l&apos;état de ligne de la ligne actuelle (ou r-ième) dans la table de données en cours. Si la fonction Row State() est utilisée comme L-value, l&apos;état de ligne de la ligne actuelle (ou r-ième) est modifié dans la table de données en cours.
 
@@ -255,7 +253,7 @@ Color To RGB( Color Of( Row State( 3 ) ) );
 
 ### Selected
 
-**Syntaxe :** y = Selected( <rs> );Selected( <Row State( <r> )> ) = y
+**Syntaxe :** y = Selected( &lt;rs&gt; );Selected( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **Description :** Renvoie la composante sélectionnée de la valeur d&apos;état de ligne spécifiée, 0 ou 1. Si Selected est utilisé comme L-value, l’état sélectionné de la ligne active (ou r-ième) de la table de données active est modifié.
 

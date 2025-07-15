@@ -6,7 +6,7 @@
 
 ### Custom Graph
 
-**Syntaxe :** New Window(Window title, <Editable|Dialog>, Graph Box( named arguments, ..., script segment
+**Syntaxe :** New Window(Window title, &lt;Editable|Dialog&gt;, Graph Box( named arguments, ..., script segment
 
 **Description :** Crée un graphique à l’aide d’un script personnalisé.
 
@@ -34,7 +34,7 @@ obj = New Window( "Example",
 
 ### Append Seg
 
-**Syntaxe :** obj << Append Seg( display seg )
+**Syntaxe :** obj &lt;&lt; Append Seg( display seg )
 
 **Description :** Ajoute un seg affiché au cadre
 
@@ -53,11 +53,11 @@ New Window( "Example",
 
 ### Background Map
 
-**Syntaxe :** obj << Background Map
+**Syntaxe :** obj &lt;&lt; Background Map
 
 ### Bottom
 
-**Syntaxe :** obj << Bottom( number )
+**Syntaxe :** obj &lt;&lt; Bottom( number )
 
 ### FrameSize
 
@@ -137,111 +137,111 @@ New Window( "Example",
 
 ### Get Background Color
 
-**Syntaxe :** obj << Get Background Color( color )
+**Syntaxe :** obj &lt;&lt; Get Background Color( color )
 
 ### Get Background Fill
 
-**Syntaxe :** obj << Get Background Fill( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Get Background Fill( state=0|1 )
 
 ### Get Bottom
 
-**Syntaxe :** obj << Get Bottom
+**Syntaxe :** obj &lt;&lt; Get Bottom
 
 ### Get Graphics Script
 
-**Syntaxe :** obj << Get Graphics Script
+**Syntaxe :** obj &lt;&lt; Get Graphics Script
 
 ### Get Height
 
-**Syntaxe :** obj << Get Height
+**Syntaxe :** obj &lt;&lt; Get Height
 
 ### Get Left
 
-**Syntaxe :** obj << Get Left
+**Syntaxe :** obj &lt;&lt; Get Left
 
 ### Get Right
 
-**Syntaxe :** obj << Get Right
+**Syntaxe :** obj &lt;&lt; Get Right
 
 ### Get Sides
 
-**Syntaxe :** obj << Get Sides
+**Syntaxe :** obj &lt;&lt; Get Sides
 
 ### Get Top
 
-**Syntaxe :** obj << Get Top
+**Syntaxe :** obj &lt;&lt; Get Top
 
 ### Get Width
 
-**Syntaxe :** obj << Get Width
+**Syntaxe :** obj &lt;&lt; Get Width
 
 ### Get X Axis
 
-**Syntaxe :** obj << Get X Axis
+**Syntaxe :** obj &lt;&lt; Get X Axis
 
 ### Get X Name
 
-**Syntaxe :** obj << Get X Name
+**Syntaxe :** obj &lt;&lt; Get X Name
 
 ### Get Y Axis
 
-**Syntaxe :** obj << Get Y Axis
+**Syntaxe :** obj &lt;&lt; Get Y Axis
 
 ### Get Y Name
 
-**Syntaxe :** obj << Get Y Name
+**Syntaxe :** obj &lt;&lt; Get Y Name
 
 ### Left
 
-**Syntaxe :** obj << Left( number )
+**Syntaxe :** obj &lt;&lt; Left( number )
 
 ### Right
 
-**Syntaxe :** obj << Right( number )
+**Syntaxe :** obj &lt;&lt; Right( number )
 
 ### Set Background Color
 
-**Syntaxe :** obj << Set Background Color( color )
+**Syntaxe :** obj &lt;&lt; Set Background Color( color )
 
 ### Set Background Fill
 
-**Syntaxe :** obj << Set Background Fill( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Set Background Fill( state=0|1 )
 
 ### Set Graphics Script
 
-**Syntaxe :** obj << Set Graphics Script
+**Syntaxe :** obj &lt;&lt; Set Graphics Script
 
 ### Set Height
 
-**Syntaxe :** obj << Set Height
+**Syntaxe :** obj &lt;&lt; Set Height
 
 ### Set Width
 
-**Syntaxe :** obj << Set Width
+**Syntaxe :** obj &lt;&lt; Set Width
 
 ### Set X Axis
 
-**Syntaxe :** obj << Set X Axis
+**Syntaxe :** obj &lt;&lt; Set X Axis
 
 ### Set X Name
 
-**Syntaxe :** obj << Set X Name
+**Syntaxe :** obj &lt;&lt; Set X Name
 
 ### Set Y Axis
 
-**Syntaxe :** obj << Set Y Axis
+**Syntaxe :** obj &lt;&lt; Set Y Axis
 
 ### Set Y Name
 
-**Syntaxe :** obj << Set Y Name
+**Syntaxe :** obj &lt;&lt; Set Y Name
 
 ### Sides
 
-**Syntaxe :** obj << Sides( number )
+**Syntaxe :** obj &lt;&lt; Sides( number )
 
 ### Suppress Axes
 
-**Syntaxe :** obj << Suppress Axes
+**Syntaxe :** obj &lt;&lt; Suppress Axes
 
 **Description :** Masque les axes de la zone du graphique.
 
@@ -283,7 +283,7 @@ obj = New Window( "Example",
 
 ### Top
 
-**Syntaxe :** obj << Top( number )
+**Syntaxe :** obj &lt;&lt; Top( number )
 
 ### X Scale
 

@@ -6,7 +6,7 @@
 
 ### Tree Node
 
-**Sintaxis:** node = Tree Node( <label> )
+**Sintaxis:** node = Tree Node( &lt;label&gt; )
 
 **Descripción:** Crea un nodo para su visualización en la visualización del cuadro del árbol.
 
@@ -43,7 +43,7 @@ tree << Expand( root3 );
 
 ### Append
 
-**Sintaxis:** obj << Append
+**Sintaxis:** obj &lt;&lt; Append
 
 **Descripción:** Añade un nodo de árbol a los hijos de este nodo.
 
@@ -81,7 +81,7 @@ root1 << Append( c7 );
 
 ### First Child
 
-**Sintaxis:** node = obj << First Child
+**Sintaxis:** node = obj &lt;&lt; First Child
 
 **Descripción:** Devuelve el primer nodo hijo o Vacío si el nodo no tiene hijos.
 
@@ -118,7 +118,7 @@ Print( (root1 << Firs tChild) << GetLabel );
 
 ### Get Child
 
-**Sintaxis:** obj << Get Child( index )
+**Sintaxis:** obj &lt;&lt; Get Child( index )
 
 **Descripción:** Obtiene el nodo hijo en el índice especificado.
 
@@ -155,7 +155,7 @@ Print( (root2 << Get Child( 2 )) << Get Label );
 
 ### Get Child Count
 
-**Sintaxis:** obj << Get Child Count
+**Sintaxis:** obj &lt;&lt; Get Child Count
 
 **Descripción:** Obtiene el número de nodos hijo.
 
@@ -192,7 +192,7 @@ root2 << Get Child Count;
 
 ### Get Data
 
-**Sintaxis:** data = obj << Get Data
+**Sintaxis:** data = obj &lt;&lt; Get Data
 
 **Descripción:** Obtiene los datos del usuario asociados con este nodo. Recupera el valor o el objeto establecido con Set Data. Consulte Set Data para más información.
 
@@ -240,7 +240,7 @@ tree << SetNodeSelectScript(
 
 ### Get Dimmed
 
-**Sintaxis:** dimmed = obj << Get Dimmed
+**Sintaxis:** dimmed = obj &lt;&lt; Get Dimmed
 
 **Descripción:** Obtener la opción para atenuar el texto de este nodo.
 
@@ -279,7 +279,7 @@ root3 << Get Dimmed;
 
 ### Get Expanded Icon
 
-**Sintaxis:** obj << Get Expanded Icon
+**Sintaxis:** obj &lt;&lt; Get Expanded Icon
 
 **Descripción:** Obtiene el icono del nodo de árbol en estado expandido. Si no hay ningún icono especificado, se devuelve un valor vacío.
 
@@ -318,7 +318,7 @@ root1 << Get Expanded Icon;
 
 ### Get Font Style
 
-**Sintaxis:** style = obj << Get Font Style
+**Sintaxis:** style = obj &lt;&lt; Get Font Style
 
 **Descripción:** Obtener el estilo de fuente de este nodo.
 
@@ -357,7 +357,7 @@ root3 << Get Font Style;
 
 ### Get Icon
 
-**Sintaxis:** obj << Get Icon
+**Sintaxis:** obj &lt;&lt; Get Icon
 
 **Descripción:** Obtiene el icono del nodo de árbol. Si no hay ningún icono especificado, se devuelve un valor vacío.
 
@@ -395,7 +395,7 @@ root1 << Get Icon;
 
 ### Get Label
 
-**Sintaxis:** label = obj << Get Label
+**Sintaxis:** label = obj &lt;&lt; Get Label
 
 **Descripción:** Obtiene el texto de etiqueta que se muestra para este nodo
 
@@ -432,7 +432,7 @@ root3 << Get Label;
 
 ### Get Tip
 
-**Sintaxis:** tip = obj << Get Tip
+**Sintaxis:** tip = obj &lt;&lt; Get Tip
 
 **Descripción:** Obtiene el texto de información sobre herramienta para este nodo.
 
@@ -471,7 +471,7 @@ c6 << Get Tip;
 
 ### Index Of
 
-**Sintaxis:** index = obj << Index Of( node )
+**Sintaxis:** index = obj &lt;&lt; Index Of( node )
 
 **Descripción:** Obtiene el índice del nodo hijo especificado. Devuelve 0 si no se encuentra.
 
@@ -508,7 +508,7 @@ root2 << Index Of( root3 );
 
 ### Insert
 
-**Sintaxis:** obj << Insert( node, index )
+**Sintaxis:** obj &lt;&lt; Insert( node, index )
 
 **Descripción:** Inserta el nodo en el índice especificado.
 
@@ -546,7 +546,7 @@ root3 << Insert( c7, 2 );
 
 ### Is Leaf
 
-**Sintaxis:** isLeaf = obj << Is Leaf
+**Sintaxis:** isLeaf = obj &lt;&lt; Is Leaf
 
 **Descripción:** ¿Es el nodo especificado un nodo hoja del árbol?
 
@@ -583,7 +583,7 @@ root3 << Is Leaf;
 
 ### Last Child
 
-**Sintaxis:** node = obj << Last Child
+**Sintaxis:** node = obj &lt;&lt; Last Child
 
 **Descripción:** Devuelve el último nodo hijo o Vacío si el nodo no tiene hijos.
 
@@ -620,7 +620,7 @@ Print( (root1 << Last Child) << GetLabel );
 
 ### Parent
 
-**Sintaxis:** node = obj << Parent
+**Sintaxis:** node = obj &lt;&lt; Parent
 
 **Descripción:** Devuelve el último nodo progenitor o Vacío si el nodo no tiene progenitor.
 
@@ -657,7 +657,7 @@ Print( (c4 << Parent) << GetLabel );
 
 ### Prepend
 
-**Sintaxis:** obj << Prepend( node )
+**Sintaxis:** obj &lt;&lt; Prepend( node )
 
 **Descripción:** Antepone un nodo de árbol a los hijos de este nodo.
 
@@ -695,7 +695,7 @@ root1 << Prepend( c7 );
 
 ### Prev Sib
 
-**Sintaxis:** node = obj << Prev Sib
+**Sintaxis:** node = obj &lt;&lt; Prev Sib
 
 **Descripción:** Devuelve el hermano previo de este nodo en los hijos del progenitor o Vacío si se trata del primer hijo.
 
@@ -732,7 +732,7 @@ Print( (c4 << Prev Sib) << Get Label );
 
 ### Remove
 
-**Sintaxis:** obj << Remove
+**Sintaxis:** obj &lt;&lt; Remove
 
 **Descripción:** Elimina este nodo y todos los hijos del árbol.
 
@@ -770,7 +770,7 @@ root3 << Remove;
 
 ### Remove All Children
 
-**Sintaxis:** obj << Remove All Children
+**Sintaxis:** obj &lt;&lt; Remove All Children
 
 **Descripción:** Elimina todos los nodos hijos.
 
@@ -808,7 +808,7 @@ root2 << Remove All Children;
 
 ### Remove Child
 
-**Sintaxis:** obj << Remove Child( node )
+**Sintaxis:** obj &lt;&lt; Remove Child( node )
 
 **Descripción:** Elimina el nodo hijo especificado.
 
@@ -846,7 +846,7 @@ root3 << Remove Child( c6 );
 
 ### Set Data
 
-**Sintaxis:** obj << Set Data( data )
+**Sintaxis:** obj &lt;&lt; Set Data( data )
 
 **Descripción:** Establece los datos de usuario para este nodo.
 
@@ -894,7 +894,7 @@ tree << SetNodeSelectScript(
 
 ### Set Dimmed
 
-**Sintaxis:** obj << Set Dimmed( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Set Dimmed( state=0|1 )
 
 **Descripción:** Establecer la opción para atenuar el texto de este nodo.
 
@@ -934,7 +934,7 @@ c6 << Set Dimmed( 1 );
 
 ### Set Expanded Icon
 
-**Sintaxis:** obj << Set Expanded Icon( icon | path, <boolean> )
+**Sintaxis:** obj &lt;&lt; Set Expanded Icon( icon | path, &lt;boolean&gt; )
 
 **Descripción:** Establece el nombre del icono que se utilizará si se amplía este nodo. El parámetro opcional determina si cargar el icono asociado a la ruta (solo en Windows).
 
@@ -974,7 +974,7 @@ root2 << Set Expanded Icon( "$SAMPLE_IMAGES/pi.gif", true );
 
 ### Set Font Style
 
-**Sintaxis:** obj << Set Font Style( "Plain" | "Bold" )
+**Sintaxis:** obj &lt;&lt; Set Font Style( "Plain" | "Bold" )
 
 **Descripción:** Establece el estilo de fuente de este nodo.
 
@@ -1014,7 +1014,7 @@ c6 << Set Font Style( "Bold" );
 
 ### Set Icon
 
-**Sintaxis:** obj << Set Icon( icon | path, <boolean> )
+**Sintaxis:** obj &lt;&lt; Set Icon( icon | path, &lt;boolean&gt; )
 
 **Descripción:** Establece el icono de los nodos. El parámetro opcional determina si cargar el icono asociado a la ruta (solo en Windows).
 
@@ -1053,7 +1053,7 @@ root3 << Set Icon( "$SAMPLE_IMAGES/pi.gif", true );
 
 ### Set Label
 
-**Sintaxis:** obj << Set Label( label )
+**Sintaxis:** obj &lt;&lt; Set Label( label )
 
 **Descripción:** Establece el texto de etiqueta que se muestra para este nodo
 
@@ -1091,7 +1091,7 @@ c6 << Set Label( "Last Child" );
 
 ### Set Tip
 
-**Sintaxis:** obj << Set Tip( tip )
+**Sintaxis:** obj &lt;&lt; Set Tip( tip )
 
 **Descripción:** Establece el texto de información sobre herramienta para este nodo.
 
@@ -1129,7 +1129,7 @@ c6 << Set Tip( "This is the tool tip for the last child" );
 
 ### Sib
 
-**Sintaxis:** node = obj << Sib
+**Sintaxis:** node = obj &lt;&lt; Sib
 
 **Descripción:** Devuelve el siguiente hermano de este nodo en los hijos del progenitor o Vacío si se trata del último hijo.
 
@@ -1166,7 +1166,7 @@ Print( (c4 << Sib) << Get Label );
 
 ### Top Parent
 
-**Sintaxis:** node = obj << Top Parent
+**Sintaxis:** node = obj &lt;&lt; Top Parent
 
 **Descripción:** Devuelve la raíz del árbol que contiene este nodo o Vacío si el nodo no tiene progenitor.
 

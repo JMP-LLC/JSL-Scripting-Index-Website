@@ -2,8 +2,6 @@
 
 
 
-## Funciones
-
 ### As C Expr
 
 **Sintaxis:** y = As C Expr( x )

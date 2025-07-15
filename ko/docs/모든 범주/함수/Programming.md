@@ -2,8 +2,6 @@
 
 
 
-## 함수
-
 ### Add Custom Functions
 
 **구문:** Add Custom Functions({f1, f2, ...} | f)
@@ -40,13 +38,7 @@ Show( b );
 
 ### As Column
 
-**구문:** y = :name;
-
-y = dataTable:name;
-
-y = As Column( name );
-
-y = As Column( dataTable, name )
+**구문:** y = :name;y = dataTable:name;y = As Column( name );y = As Column( dataTable, name )
 
 **설명:** 지정한 테이블 또는 현재 데이터 테이블의 지정한 열에 액세스합니다. 해당 열이 없거나 데이터 테이블을 찾을 수 없으면 오류가 발생합니다.
 
@@ -218,9 +210,7 @@ As Scoped( Here, z );
 
 ### Associative Array
 
-**구문:** y = Associative Array( {{key1, value1}, ...} );
-
-y = Associative Array( keys, values )
+**구문:** y = Associative Array( {{key1, value1}, ...} );y = Associative Array( keys, values )
 
 **설명:** 사전 또는 해시 맵이라고도 하는 연관 배열을 생성합니다. 인수가 두 개인 형식에서 &apos;keys&apos;와 &apos;values&apos;는 목록, 행렬 또는 데이터 테이블 열이 될 수 있습니다.
 
@@ -237,7 +227,7 @@ ex << get contents;
 
 ### Choose Closest
 
-**구문:** Choose Closest(source string, {canonical strings...}, <Ignore Case(ignore=1|0)>, <Ignore Nonprintable(ignore=1|0)>, <Ignore Whitespace(ignore=1|0)>, <Max Edit Count(count)>, <Max Edit Ratio([0..1])>, <Min String Length(<count=3>)>, <Replace Unmatched(replace=0|1)>, <Unmatched Value(<value="">)>)
+**구문:** Choose Closest(source string, {canonical strings...}, &lt;Ignore Case(ignore=1|0)&gt;, &lt;Ignore Nonprintable(ignore=1|0)&gt;, &lt;Ignore Whitespace(ignore=1|0)&gt;, &lt;Max Edit Count(count)&gt;, &lt;Max Edit Ratio([0..1])&gt;, &lt;Min String Length(&lt;count=3&gt;)&gt;, &lt;Replace Unmatched(replace=0|1)&gt;, &lt;Unmatched Value(&lt;value=""&gt;)&gt;)
 
 **설명:** 지정된 규칙 내에서 가장 근접한 문자열을 선택하여 반환합니다. 
 
@@ -361,7 +351,7 @@ Delete Classes( "complex" );
 
 ### Clear Globals
 
-**구문:** Clear Globals( < varname, ... > )
+**구문:** Clear Globals( &lt; varname, ... &gt; )
 
 **설명:** 현재 정의된 모든 전역 기호의 값을 지웁니다. 정의된 기호는 남아 있습니다.
 
@@ -391,7 +381,7 @@ Clear Log();
 
 ### Clear Symbols
 
-**구문:** Clear Symbols( < varname, ... > )
+**구문:** Clear Symbols( &lt; varname, ... &gt; )
 
 **설명:** 현재 정의된 모든 기호의 값을 지웁니다.
 
@@ -422,7 +412,7 @@ Show( Is Log Open() );
 
 ### Define Class
 
-**구문:** Define Class("class name", <Base Class{ "base class name", ... }>, <Show( All( boolean ) | ( Members( boolean ) | Methods( boolean ) | Functions( boolean ) )+ )>, { method* | member* | function* } )
+**구문:** Define Class("class name", &lt;Base Class{ "base class name", ... }&gt;, &lt;Show( All( boolean ) | ( Members( boolean ) | Methods( boolean ) | Functions( boolean ) )+ )&gt;, { method* | member* | function* } )
 
 **설명:** 새 클래스 정의
 
@@ -476,7 +466,7 @@ Delete Classes( complex );
 
 ### Delete Classes
 
-**구문:** Delete Classes( <Force( boolean )>, <class reference, ...> )
+**구문:** Delete Classes( &lt;Force( boolean )&gt;, &lt;class reference, ...&gt; )
 
 **설명:** 모든 클래스 정의 또는 하나 이상의 특정 클래스 정의를 삭제합니다.
 
@@ -508,7 +498,7 @@ Show Classes();
 
 ### Delete Globals
 
-**구문:** Delete Globals( < varname, ... > )
+**구문:** Delete Globals( &lt; varname, ... &gt; )
 
 **설명:** 현재 정의된 모든 기호의 값을 지웁니다. 정의된 기호는 남아 있습니다.
 
@@ -523,7 +513,7 @@ Delete Globals();
 
 ### Delete Namespaces
 
-**구문:** Delete Namespaces( <Force( boolean )>, <namespace reference, ...> )
+**구문:** Delete Namespaces( &lt;Force( boolean )&gt;, &lt;namespace reference, ...&gt; )
 
 **설명:** 모든 네임스페이스 또는 하나 이상의 특정 네임스페이스를 삭제합니다.
 
@@ -553,7 +543,7 @@ Show Namespaces();
 
 ### Delete Symbols
 
-**구문:** Delete Symbols( < varname, ... > )
+**구문:** Delete Symbols( &lt; varname, ... &gt; )
 
 **설명:** 현재 정의된 모든 기호 및 해당 값을 삭제합니다.
 
@@ -583,7 +573,7 @@ Eval( Expr( 1 + 2 ) );
 
 ### Eval Insert
 
-**구문:** y = Eval Insert( string, <startChar="^">, <endChar=startChar> )
+**구문:** y = Eval Insert( string, &lt;startChar="^"&gt;, &lt;endChar=startChar&gt; )
 
 **설명:** startChar/endChar 쌍으로 묶인 하위 문자열을 찾아 내부의 실행된 표현식으로 바꿉니다.
 
@@ -598,7 +588,7 @@ Eval Insert( "Today is ^As Date( Today())^" );
 
 ### Eval Insert Into
 
-**구문:** Eval Insert Into( l_string, <startChar="^">, <endChar=startChar> )
+**구문:** Eval Insert Into( l_string, &lt;startChar="^"&gt;, &lt;endChar=startChar&gt; )
 
 **설명:** startChar/endChar 쌍으로 묶인 하위 문자열을 찾고 l_string을 바꿔 내부의 실행된 표현식으로 바꿉니다.
 
@@ -643,7 +633,7 @@ Eval List( {x, y} );
 
 ### Exit
 
-**구문:** Quit(<"No Save">); Exit(<"No Save">)
+**구문:** Quit(&lt;"No Save"&gt;); Exit(&lt;"No Save"&gt;)
 
 **설명:** JMP를 종료합니다.
 
@@ -679,7 +669,7 @@ First( 11, 22 );
 
 ### Function
 
-**구문:** y = Function( {arg1=val1, ...}, <{local1=val1, ...}>, expr )
+**구문:** y = Function( {arg1=val1, ...}, &lt;{local1=val1, ...}&gt;, expr )
 
 **설명:** 지정된 인수, 기본값 및 선택적 지역 변수를 사용하여 함수를 정의합니다. 기본값이 포함된 인수는 함수 호출 시 선택 사항입니다. Return()이 함수의 스크립트 내에서 사용될 경우 Return() 명령어 내부의 표현식이 반환됩니다.
 
@@ -727,7 +717,7 @@ posorneg( -5.5 );
 
 ### Get Class Names
 
-**구문:** Get Class Names( < <class reference>, ... > )
+**구문:** Get Class Names( &lt; &lt;class reference&gt;, ... &gt; )
 
 **설명:** 현재 정의된 모든 클래스의 이름 목록을 반환합니다.
 
@@ -756,7 +746,7 @@ Delete Classes( "aa", "bb" );
 
 ### Get Classes
 
-**구문:** Get Classes( < <class reference>, ... > )
+**구문:** Get Classes( &lt; &lt;class reference&gt;, ... &gt; )
 
 **설명:** 모든 현재 정의된 클래스에 대한 참조 목록을 반환합니다.
 
@@ -786,7 +776,7 @@ Delete Classes( "aa", "bb" );
 
 ### Get Custom Functions
 
-**구문:** Get Custom Functions(<{function 1 full name, function 2 full name, ...} | function full name>)
+**구문:** Get Custom Functions(&lt;{function 1 full name, function 2 full name, ...} | function full name&gt;)
 
 **설명:** 사용자 함수 목록을 가져옵니다.
 
@@ -846,7 +836,7 @@ Get Locale Setting( "Decimal Separator" );
 
 ### Get Log
 
-**구문:** list = Get Log( <N> )
+**구문:** list = Get Log( &lt;N&gt; )
 
 **설명:** 로그 창에서 행 목록을 반환합니다. 인수를 지정하지 않으면 로그의 모든 행이 반환됩니다. 숫자 인수 N이 양수이면 로그의 처음 N개 행이 반환됩니다. N이 음수이면 로그의 마지막 N개 행이 반환됩니다. N이 0이면 행이 반환되지 않습니다.
 
@@ -863,7 +853,7 @@ tailcontents = Get Log( -5 );
 
 ### Get Namespace Names
 
-**구문:** Get Namespace Names( < <namespace reference>, ... > )
+**구문:** Get Namespace Names( &lt; &lt;namespace reference&gt;, ... &gt; )
 
 **설명:** 현재 정의된 모든 네임스페이스의 이름 목록을 반환합니다.
 
@@ -893,7 +883,7 @@ nsbb << Delete;
 
 ### Get Namespaces
 
-**구문:** Get Namespaces( < <namespace reference>, ... > )
+**구문:** Get Namespaces( &lt; &lt;namespace reference&gt;, ... &gt; )
 
 **설명:** 현재 정의된 모든 네임스페이스에 대한 참조 목록을 반환합니다.
 
@@ -924,7 +914,7 @@ nsbb << Delete;
 
 ### Get Punctuation Characters
 
-**구문:** Get Punctuation Characters(<Exclude Chars(chars) | Include Chars(chars)>)
+**구문:** Get Punctuation Characters(&lt;Exclude Chars(chars) | Include Chars(chars)&gt;)
 
 **설명:** 단어를 구분하는 데 일반적으로 사용되는 구두점 문자가 포함된 문자열을 반환합니다. 여기에는 ,:;.?!\/#@&~()[]<>"*`%$+=^|{} 및 일반적인 일부 유니코드 구두점이 포함됩니다.
 
@@ -1003,7 +993,7 @@ Get Whitespace Characters();
 
 ### Include
 
-**구문:** y = Include( filepath, < <<Parse Only>, < <<New Context>, < <<Names Default to Here> )
+**구문:** y = Include( filepath, &lt; &lt;&lt;Parse Only&gt;, &lt; &lt;&lt;New Context&gt;, &lt; &lt;&lt;Names Default to Here&gt; )
 
 **설명:** 지정된 파일의 JSL을 실행합니다. Parse Only가 지정된 경우 스크립트가 실행되는 대신 파싱됩니다. New Context가 지정된 경우 포함된 JSL이 고유한 네임스페이스에서 실행됩니다. 상위 스크립트와 포함된 스크립트 모두 전역 네임스페이스를 사용할 경우에는 New Context와 Names Default to Here를 모두 지정하여 이름 충돌을 방지하십시오.
 
@@ -1232,7 +1222,7 @@ Names Default To Here( 1 );
 
 ### Map Value
 
-**구문:** Map Value(string | number, {key1, value1...|{key1...},{value1...}}, <Unmatched(value)>)
+**구문:** Map Value(string | number, {key1, value1...|{key1...},{value1...}}, &lt;Unmatched(value)&gt;)
 
 **설명:** 초기값을 평가하고 매핑된 결과 또는 기본값을 반환합니다.
 
@@ -1545,7 +1535,7 @@ Add Custom Functions(
 
 ### New Namespace
 
-**구문:** ns = New Namespace( <name>, <list of expressions> )
+**구문:** ns = New Namespace( &lt;name&gt;, &lt;list of expressions&gt; )
 
 **설명:** name 인수에 지정된 이름으로, 또는 name이 지정되지 않은 경우에는 익명 이름으로 새 네임스페이스를 생성합니다.
 
@@ -1641,7 +1631,7 @@ Delete Classes( "complex" );
 
 ### Open Log
 
-**구문:** Open Log( <bring window to top> )
+**구문:** Open Log( &lt;bring window to top&gt; )
 
 **설명:** 로그 창을 엽니다.
 
@@ -1715,7 +1705,7 @@ Print( 355 / 113, Pi() );
 
 ### Quit
 
-**구문:** Quit(<"No Save">); Exit(<"No Save">)
+**구문:** Quit(&lt;"No Save"&gt;); Exit(&lt;"No Save"&gt;)
 
 **설명:** JMP를 종료합니다.
 
@@ -1736,7 +1726,7 @@ If(
 
 ### Recode
 
-**구문:** recode(string|number|list, {<transform>, ...}, <Multiple Response (Separator(sepChar))>, <By Word(Delimiters(<chars>)>)
+**구문:** recode(string|number|list, {&lt;transform&gt;, ...}, &lt;Multiple Response (Separator(sepChar))&gt;, &lt;By Word(Delimiters(&lt;chars&gt;)&gt;)
 
 **설명:** 나열된 변환을 입력 값에 적용하고 결과를 반환합니다. &apos;다중 반응&apos; 및 &apos;단어별&apos; 옵션은 제공된 문자 데이터를 더 작은 입력 값으로 분할합니다. 입력 값이 결정되면 해당 값에 개별적으로 변환이 적용됩니다.
 
@@ -1808,7 +1798,7 @@ Remove Custom Functions( {"custom:Add", "custom:Sub"} );
 
 ### Save Log
 
-**구문:** f = Save Log( <path> )
+**구문:** f = Save Log( &lt;path&gt; )
 
 **설명:** 로그의 내용을 지정한 파일 위치에 씁니다. 쓰기에 성공하면 생성된 파일의 이름을 반환합니다.
 
@@ -1825,7 +1815,7 @@ Substr( exlogText, 1, 30 );
 
 ### Send
 
-**구문:** r = obj << msg( args ); r = obj << msg; r = Send( obj, msg )
+**구문:** r = obj &lt;&lt; msg( args ); r = obj &lt;&lt; msg; r = Send( obj, msg )
 
 **설명:** 개체에 메시지(표현식 형식)를 보냅니다.
 
@@ -1841,7 +1831,7 @@ Bivariate( Y( :weight ), X( :height ) ) << Fit Line;
 
 ### Set Environment Variable
 
-**구문:** value = Set Environment Variable( string, < string> )
+**구문:** value = Set Environment Variable( string, &lt; string&gt; )
 
 **설명:** 운영 체제에서 지정된 환경 변수의 값을 설정합니다. 두 번째 인수가 없거나 빈 문자열일 경우 환경 변수가 삭제됩니다.
 
@@ -1875,7 +1865,7 @@ Show( 355 / 113, Pi() );
 
 ### Show Classes
 
-**구문:** Show Classes( < <class name | class reference>, ... > )
+**구문:** Show Classes( &lt; &lt;class name | class reference&gt;, ... &gt; )
 
 **설명:** 모든 사용자 정의 클래스의 내용을 표시합니다.
 
@@ -1942,7 +1932,7 @@ Show Globals();
 
 ### Show Namespaces
 
-**구문:** Show Namespaces( < <namespace reference>, ... > )
+**구문:** Show Namespaces( &lt; &lt;namespace reference&gt;, ... &gt; )
 
 **설명:** 모든 사용자 정의 네임스페이스(명명된 네임스페이스 및 익명 네임스페이스 모두)의 내용을 표시합니다.
 
@@ -2031,7 +2021,7 @@ ex;
 
 ### Throw
 
-**구문:** Throw(<message>, <Boolean>)
+**구문:** Throw(&lt;message&gt;, &lt;Boolean&gt;)
 
 **설명:** 실행을 Try()로 둘러싼 형태로 전환합니다. 그렇지 않으면 스크립트 실행이 중지됩니다. message이(가) 감탄 부호로 시작하면 치명적 오류이므로 Try()로 catch할 수 없습니다. 두 번째 인수는 역추적을 포함하기 위한 선택적 부울입니다.
 
@@ -2068,7 +2058,7 @@ Print( "AFTER TRY message not reached" );
 
 ### Try
 
-**구문:** y = Try( expr, <catchExpr> )
+**구문:** y = Try( expr, &lt;catchExpr&gt; )
 
 **설명:** 실행함으로써 Throw() 또는 내부 예외가 발생하지 않으면 실행하고 expr 인수를 반환합니다. 이 경우 catchExpr에 대한 실행이 반환됩니다. catchExpr으로 exception_msg를 사용하면 오류에 대한 자세한 정보가 포함된 목록이 반환됩니다.
 
@@ -2161,7 +2151,7 @@ Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 ### Wait
 
-**구문:** Wait( <x> )
+**구문:** Wait( &lt;x&gt; )
 
 **설명:** 실행을 계속하기 전에 x초 동안 대기합니다. x의 기본값은 3초입니다. x가 0 이상이면 JMP에서 대기 외에 운영 체제 이벤트(예: 화면 그리기) 및 보류 중인 콜백(예: 계산식 실행)을 완료합니다. x가 0 미만이면 계속하기 전에 화면 그리기 및 보류 중인 OS 이벤트만 완료되는 것으로 확인됩니다.
 
@@ -2220,7 +2210,7 @@ w << close Window();
 
 ### Where
 
-**구문:** Where( <dt>, clause )
+**구문:** Where( &lt;dt&gt;, clause )
 
 **설명:** 지정된 where 절과 매칭되는 인덱스(대개 행 번호)를 반환합니다. 선택적 dt 인수는 실행 중에 Current Data Table을 변경합니다. 이 절은 JMP에서 데이터 필터를 사용하여 작성하는 경우가 많습니다. 보통 이 방법은 Loc, <<Get Rows Where 또는 <<Select Where를 사용하는 것보다 빠릅니다. 실행 중에 절이 시퀀스나 기호를 수정하는 경우 동작이 정의되지 않습니다.
 

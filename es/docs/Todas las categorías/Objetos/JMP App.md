@@ -6,7 +6,7 @@
 
 ### Combine Windows
 
-**Sintaxis:** obj << Combine Windows( {list of reports or data tables}, {...} )
+**Sintaxis:** obj &lt;&lt; Combine Windows( {list of reports or data tables}, {...} )
 
 **Descripción:** Combina la lista indicada de informes de plataforma o de tablas de datos en un módulo nuevo. La aplicación no debe estar ejecutándose ni en estado de edición simultáneamente.
 
@@ -29,7 +29,7 @@ app << Run;
 
 ### Debug
 
-**Sintaxis:** obj << Debug
+**Sintaxis:** obj &lt;&lt; Debug
 
 **Descripción:** Ejecuta la aplicación en el depurador.
 
@@ -44,7 +44,7 @@ app << Debug;
 
 ### Edit
 
-**Sintaxis:** obj << Edit
+**Sintaxis:** obj &lt;&lt; Edit
 
 **Descripción:** Edita la aplicación o el panel de información en el constructor.
 
@@ -59,7 +59,7 @@ app << Edit;
 
 ### Get Modules
 
-**Sintaxis:** list = obj << Get Modules
+**Sintaxis:** list = obj &lt;&lt; Get Modules
 
 **Descripción:** Obtiene una lista de los módulos definidos en la aplicación.
 
@@ -75,7 +75,7 @@ app << Get Modules();
 
 ### Get Namespace
 
-**Sintaxis:** obj << Get Namespace
+**Sintaxis:** obj &lt;&lt; Get Namespace
 
 **Descripción:** Obtiene el espacio de nombres para la instancia del módulo.
 
@@ -89,7 +89,7 @@ app = JMP App();
 
 ### Get Windows
 
-**Sintaxis:** obj << Get Windows
+**Sintaxis:** obj &lt;&lt; Get Windows
 
 **Descripción:** Devuelve una lista de ventanas abiertas creada como instancias de módulos de aplicación. Tenga en cuenta que no se incluirán otras ventanas creadas por scripts de aplicación, mediante New Window() u otras funciones.
 
@@ -125,7 +125,7 @@ app << Get Windows();
 
 ### Open File
 
-**Sintaxis:** obj << Open File( <path> )
+**Sintaxis:** obj &lt;&lt; Open File( &lt;path&gt; )
 
 **Descripción:** Carga la aplicación desde el archivo indicado.
 
@@ -140,7 +140,7 @@ box = app << Edit Application;
 
 ### Relaunch Analysis
 
-**Sintaxis:** obj << Relaunch Analysis
+**Sintaxis:** obj &lt;&lt; Relaunch Analysis
 
 **Descripción:** Reinicia el Panel de información o la aplicación, creando una nueva copia en ejecución de la aplicación.
 
@@ -156,7 +156,7 @@ app << Relaunch Analysis;
 
 ### Run
 
-**Sintaxis:** obj << Run
+**Sintaxis:** obj &lt;&lt; Run
 
 **Descripción:** Ejecuta la aplicación o el panel de información.
 
@@ -171,7 +171,7 @@ app << Run;
 
 ### Save Script for All Objects
 
-**Sintaxis:** obj << Save Script for All Objects
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects
 
 **Descripción:** Save a New Window() script
 
@@ -186,7 +186,7 @@ app << Save Script for All Objects;
 
 ### Save Script to Add-In
 
-**Sintaxis:** obj << Save Script to Add-In
+**Sintaxis:** obj &lt;&lt; Save Script to Add-In
 
 **Descripción:** Crea un script (JSL) para producir este análisis y lo carga en el Constructor de complementos
 
@@ -202,7 +202,7 @@ app << "Save Script to Add-In";
 
 ### Save Script to Data Table
 
-**Sintaxis:** app << Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** app &lt;&lt; Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis y lo guarda en forma de propiedad de tabla en la tabla de datos.
 
@@ -218,7 +218,7 @@ app << Save Script to Data Table;
 
 ### Save Script to Journal
 
-**Sintaxis:** obj << Save Script to Journal
+**Sintaxis:** obj &lt;&lt; Save Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -234,7 +234,7 @@ app << Save Script to Journal;
 
 ### Save Script to Script Window
 
-**Sintaxis:** obj << Save Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 

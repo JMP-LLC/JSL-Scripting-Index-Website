@@ -14,25 +14,25 @@
 
 ### Arguments
 
-**Syntax:** obj << Arguments
+**Syntax:** obj &lt;&lt; Arguments
 
 **Description:** Enables specification of options to run the platform from the scripting window.
 
 ### Run Cmd
 
-**Syntax:** obj << Run Cmd
+**Syntax:** obj &lt;&lt; Run Cmd
 
 **Description:** Determines the sequencing variants toolset task to be run from the scripting window.
 
 ### Run Spec
 
-**Syntax:** obj << Run Spec
+**Syntax:** obj &lt;&lt; Run Spec
 
 **Description:** Determines the sequencing variants toolset task to be run from the interface window.
 
 ### Specification
 
-**Syntax:** obj << Specification
+**Syntax:** obj &lt;&lt; Specification
 
 **Description:** Enables specification of a task.
 
@@ -40,7 +40,7 @@
 
 ### Action
 
-**Syntax:** obj << Action
+**Syntax:** obj &lt;&lt; Action
 
 **Description:** All-purpose trapdoor within a platform to insert expressions to evaluate. Temporarily sets the DisplayBox and DataTable contexts to the Platform.
 
@@ -58,7 +58,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Syntax:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntax:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Description:** Apply a previously created preset to the object, updating the options and customizations to match the saved settings.
 
@@ -103,7 +103,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Copy Script
 
-**Syntax:** obj << Copy Script
+**Syntax:** obj &lt;&lt; Copy Script
 
 **Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
 
@@ -116,7 +116,7 @@ obj << Copy Script;
 
 ### Get By Levels
 
-**Syntax:** obj << Get By Levels
+**Syntax:** obj &lt;&lt; Get By Levels
 
 **Description:** Returns an associative array mapping the by group columns to their values.
 
@@ -131,7 +131,7 @@ biv << Get By Levels;
 
 ### Get Container
 
-**Syntax:** obj << Get Container
+**Syntax:** obj &lt;&lt; Get Container
 
 **Description:** Returns a reference to the container box that holds the content for the object.
 
@@ -176,7 +176,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Syntax:** obj << Get Data Table
+**Syntax:** obj &lt;&lt; Get Data Table
 
 **Description:** Returns a reference to the data table.
 
@@ -190,7 +190,7 @@ Show( N Rows( t ) );
 
 ### Get Script
 
-**Syntax:** obj << Get Script
+**Syntax:** obj &lt;&lt; Get Script
 
 **Description:** Creates a script (JSL) to produce this analysis and returns it as an expression.
 
@@ -204,7 +204,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Syntax:** obj << Get Script With Data Table
+**Syntax:** obj &lt;&lt; Get Script With Data Table
 
 **Description:** Creates a script(JSL) to produce this analysis specifically referencing this data table and returns it as an expression.
 
@@ -218,7 +218,7 @@ Show( t );
 
 ### Get Timing
 
-**Syntax:** obj << Get Timing
+**Syntax:** obj &lt;&lt; Get Timing
 
 **Description:** Times the platform launch.
 
@@ -232,7 +232,7 @@ Show( t );
 
 ### Get Web Support
 
-**Syntax:** obj << Get Web Support
+**Syntax:** obj &lt;&lt; Get Web Support
 
 **Description:** Return a number indicating the level of Interactive HTML support for the display object. 1 means some or all elements are supported. 0 means no support.
 
@@ -248,7 +248,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Syntax:** obj << Get Where Expr
+**Syntax:** obj &lt;&lt; Get Where Expr
 
 **Description:** Returns the Where expression for the data subset, if the platform was launched with By() or Where(). Otherwise, returns Empty()
 
@@ -330,9 +330,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Syntax:** obj << Report;
-
-Report( obj )
+**Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Description:** Returns a reference to the report object.
 
@@ -347,7 +345,7 @@ Show( t );
 
 ### Save Script for All Objects
 
-**Syntax:** obj << Save Script for All Objects
+**Syntax:** obj &lt;&lt; Save Script for All Objects
 
 **Description:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -360,7 +358,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Syntax:** obj << Save Script for All Objects To Data Table( <name> )
+**Syntax:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Description:** Saves a script for all report objects to the current data table. This option is useful when you have multiple reports in the window. The script is named after the first platform unless you specify the script name in quotes.
 
@@ -384,7 +382,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Syntax:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description:** Create a JSL script to produce this analysis, and save it as a table property in the data table.
 
@@ -397,7 +395,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Syntax:** obj << Save Script to Journal
+**Syntax:** obj &lt;&lt; Save Script to Journal
 
 **Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
 
@@ -410,7 +408,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Syntax:** obj << Save Script to Report
+**Syntax:** obj &lt;&lt; Save Script to Report
 
 **Description:** Create a JSL script to produce this analysis, and show it in the report itself. Useful to preserve a printed record of what was done.
 
@@ -423,7 +421,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Syntax:** obj << Save Script to Script Window
+**Syntax:** obj &lt;&lt; Save Script to Script Window
 
 **Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
 
@@ -501,7 +499,7 @@ dt << Distribution(
 
 ### Title
 
-**Syntax:** obj << Title( "new title" )
+**Syntax:** obj &lt;&lt; Title( "new title" )
 
 **Description:** Sets the title of the platform.
 
@@ -514,7 +512,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Syntax:** obj << Top Report
+**Syntax:** obj &lt;&lt; Top Report
 
 **Description:** Returns a reference to the root node in the report.
 
@@ -529,7 +527,7 @@ Show( t );
 
 ### View Web XML
 
-**Syntax:** obj << View Web XML
+**Syntax:** obj &lt;&lt; View Web XML
 
 **Description:** Returns the XML code that is used to create the interactive HTML report.
 
@@ -548,121 +546,121 @@ xml = obj << View Web XML;
 
 #### Auto Send Output to Files List
 
-**Syntax:** obj << Auto Send Output to Files List( state=0|1 )
+**Syntax:** obj &lt;&lt; Auto Send Output to Files List( state=0|1 )
 
 **Description:** Sends output files to the files list panel.
 
 #### Bam Files
 
-**Syntax:** obj << Bam Files
+**Syntax:** obj &lt;&lt; Bam Files
 
 **Description:** Specifies BAM files.
 
 #### Bcf Files
 
-**Syntax:** obj << Bcf Files
+**Syntax:** obj &lt;&lt; Bcf Files
 
 **Description:** Specifies BCF files.
 
 #### Caller
 
-**Syntax:** obj << Caller( "Multiallelic"|"Consensus"="Multiallelic" )
+**Syntax:** obj &lt;&lt; Caller( "Multiallelic"|"Consensus"="Multiallelic" )
 
 **Description:** "Multiallelic" by default.
 
 #### Copy Task Specification
 
-**Syntax:** obj << Copy Task Specification
+**Syntax:** obj &lt;&lt; Copy Task Specification
 
 **Description:** Copies the current sequencing variants toolset specifications to the clipboard.
 
 #### Files
 
-**Syntax:** obj << Files
+**Syntax:** obj &lt;&lt; Files
 
 **Description:** Load input files to be run in samtools.
 
 #### Ploidy
 
-**Syntax:** obj << Ploidy( number=2 )
+**Syntax:** obj &lt;&lt; Ploidy( number=2 )
 
 **Description:** "2" by default.
 
 #### Recall in Task Specification
 
-**Syntax:** obj << Recall in Task Specification
+**Syntax:** obj &lt;&lt; Recall in Task Specification
 
 **Description:** Sets the task specification in the Task Specification report to the specified model.
 
 #### Ref Files
 
-**Syntax:** obj << Ref Files
+**Syntax:** obj &lt;&lt; Ref Files
 
 **Description:** Specifies Reference Genome files.
 
 #### Remove Run
 
-**Syntax:** obj << ( Run[number] << Remove Run( state=0|1 ) )
+**Syntax:** obj &lt;&lt; ( Run[number] &lt;&lt; Remove Run( state=0|1 ) )
 
 **Description:** Removes the specified run report from the report window.
 
 #### Results Folder
 
-**Syntax:** obj << Results Folder
+**Syntax:** obj &lt;&lt; Results Folder
 
 **Description:** Specifies the result folder.
 
 #### Sam Files
 
-**Syntax:** obj << Sam Files
+**Syntax:** obj &lt;&lt; Sam Files
 
 **Description:** Specifies SAM files.
 
 #### Send Output to Files List
 
-**Syntax:** obj << Send Output to Files List( state=0|1 )
+**Syntax:** obj &lt;&lt; Send Output to Files List( state=0|1 )
 
 **Description:** Sends output files to the file list panel.
 
 #### Sort Reads By
 
-**Syntax:** obj << Sort Reads By( "Coordinates"|"Alpha-numeric"|"Lexicographical"="Coordinates" )
+**Syntax:** obj &lt;&lt; Sort Reads By( "Coordinates"|"Alpha-numeric"|"Lexicographical"="Coordinates" )
 
 **Description:** "Coordinates" by default.
 
 #### Summary
 
-**Syntax:** obj << Summary( state=0|1 )
+**Syntax:** obj &lt;&lt; Summary( state=0|1 )
 
 **Description:** Shows or hides a report that contains details of the run. On by default.
 
 #### Target Regions
 
-**Syntax:** obj << Target Regions
+**Syntax:** obj &lt;&lt; Target Regions
 
 **Description:** Sets target regions. The specification of regions requires that the BAM file be coordinate-sorted and indexed.
 
 #### Task
 
-**Syntax:** obj << Task( "Index Fasta"|"Convert SAM to BAM"|"Sort Reads"|"Add Mate Coordinates"|"Remove Duplicates"|"Merge Files"|"Index BAM"|"Convert BAM To SAM"|"Extract Mapped Reads"|"Extract Unmapped Reads"|"Extract Target Regions"|"Extract Properly Aligned"|"Extract First Read"|"Tag Mismatches and Insertions"|"Count Alignment"|"Count Alignment By Flag"|"Count Alignment By Reference"|"Generate Statistics"|"Generate Base Alignment Quality"|"Generate Read Depth"|"Bgzip Compress"|"Bgzip Decompress"|"Generate Genotype Likelihoods"|"Generate Genotype Calls"|"Convert Bcf to Vcf"|"Convert Vcf to Bcf" )
+**Syntax:** obj &lt;&lt; Task( "Index Fasta"|"Convert SAM to BAM"|"Sort Reads"|"Add Mate Coordinates"|"Remove Duplicates"|"Merge Files"|"Index BAM"|"Convert BAM To SAM"|"Extract Mapped Reads"|"Extract Unmapped Reads"|"Extract Target Regions"|"Extract Properly Aligned"|"Extract First Read"|"Tag Mismatches and Insertions"|"Count Alignment"|"Count Alignment By Flag"|"Count Alignment By Reference"|"Generate Statistics"|"Generate Base Alignment Quality"|"Generate Read Depth"|"Bgzip Compress"|"Bgzip Decompress"|"Generate Genotype Likelihoods"|"Generate Genotype Calls"|"Convert Bcf to Vcf"|"Convert Vcf to Bcf" )
 
 **Description:** Determines the task to run.
 
 #### Title
 
-**Syntax:** obj << Title
+**Syntax:** obj &lt;&lt; Title
 
 **Description:** Sets a title.
 
 #### Unthreaded
 
-**Syntax:** obj << Unthreaded( state=0|1 )
+**Syntax:** obj &lt;&lt; Unthreaded( state=0|1 )
 
 **Description:** Use only the main thread for calculations
 
 #### Vcf Files
 
-**Syntax:** obj << Vcf Files
+**Syntax:** obj &lt;&lt; Vcf Files
 
 **Description:** Specifies VCF files.
 
@@ -672,91 +670,91 @@ xml = obj << View Web XML;
 
 #### Auto Send Output to Files List
 
-**Syntax:** obj << Auto Send Output to Files List( state=0|1 )
+**Syntax:** obj &lt;&lt; Auto Send Output to Files List( state=0|1 )
 
 **Description:** Sends output files to the files list panel.
 
 #### Bam Files
 
-**Syntax:** obj << Bam Files
+**Syntax:** obj &lt;&lt; Bam Files
 
 **Description:** Specifies BAM files.
 
 #### Bcf Files
 
-**Syntax:** obj << Bcf Files
+**Syntax:** obj &lt;&lt; Bcf Files
 
 **Description:** Specifies BCF files.
 
 #### Caller
 
-**Syntax:** obj << Caller( "Multiallelic"|"Consensus"="Multiallelic" )
+**Syntax:** obj &lt;&lt; Caller( "Multiallelic"|"Consensus"="Multiallelic" )
 
 **Description:** "Multiallelic" by default.
 
 #### Files
 
-**Syntax:** obj << Files
+**Syntax:** obj &lt;&lt; Files
 
 **Description:** Load input files to be run in samtools.
 
 #### Ploidy
 
-**Syntax:** obj << Ploidy( number=2 )
+**Syntax:** obj &lt;&lt; Ploidy( number=2 )
 
 **Description:** Specifies a positive number that indicates the ploidy level. "2" by default.
 
 #### Ref Files
 
-**Syntax:** obj << Ref Files
+**Syntax:** obj &lt;&lt; Ref Files
 
 **Description:** Specifies Reference Genome files.
 
 #### Results Folder
 
-**Syntax:** obj << Results Folder
+**Syntax:** obj &lt;&lt; Results Folder
 
 **Description:** Specifies the result folder.
 
 #### Sam Files
 
-**Syntax:** obj << Sam Files
+**Syntax:** obj &lt;&lt; Sam Files
 
 **Description:** Specifies SAM files.
 
 #### Sort Reads By
 
-**Syntax:** obj << Sort Reads By( "Coordinates"|"Alpha-numeric"|"Lexicographical"="Coordinates" )
+**Syntax:** obj &lt;&lt; Sort Reads By( "Coordinates"|"Alpha-numeric"|"Lexicographical"="Coordinates" )
 
 **Description:** "Coordinates" by default.
 
 #### Target Regions
 
-**Syntax:** obj << Target Regions
+**Syntax:** obj &lt;&lt; Target Regions
 
 **Description:** Sets target regions. The specification of regions requires that the BAM file be coordinate-sorted and indexed.
 
 #### Task
 
-**Syntax:** obj << Task( "Index Fasta"|"Convert SAM to BAM"|"Sort Reads"|"Add Mate Coordinates"|"Remove Duplicates"|"Merge Files"|"Index BAM"|"Convert BAM To SAM"|"Extract Mapped Reads"|"Extract Unmapped Reads"|"Extract Target Regions"|"Extract Properly Aligned"|"Extract First Read"|"Tag Mismatches and Insertions"|"Count Alignment"|"Count Alignment By Flag"|"Count Alignment By Reference"|"Generate Statistics"|"Generate Base Alignment Quality"|"Generate Read Depth"|"Bgzip Compress"|"Bgzip Decompress"|"Generate Genotype Likelihoods"|"Generate Genotype Calls"|"Convert Bcf to Vcf"|"Convert Vcf to Bcf"="Index Fasta" )
+**Syntax:** obj &lt;&lt; Task( "Index Fasta"|"Convert SAM to BAM"|"Sort Reads"|"Add Mate Coordinates"|"Remove Duplicates"|"Merge Files"|"Index BAM"|"Convert BAM To SAM"|"Extract Mapped Reads"|"Extract Unmapped Reads"|"Extract Target Regions"|"Extract Properly Aligned"|"Extract First Read"|"Tag Mismatches and Insertions"|"Count Alignment"|"Count Alignment By Flag"|"Count Alignment By Reference"|"Generate Statistics"|"Generate Base Alignment Quality"|"Generate Read Depth"|"Bgzip Compress"|"Bgzip Decompress"|"Generate Genotype Likelihoods"|"Generate Genotype Calls"|"Convert Bcf to Vcf"|"Convert Vcf to Bcf"="Index Fasta" )
 
 **Description:** Determines the task to run. "Index Fasta" by default.
 
 #### Title
 
-**Syntax:** obj << Title
+**Syntax:** obj &lt;&lt; Title
 
 **Description:** Sets a title.
 
 #### Unthreaded
 
-**Syntax:** obj << Unthreaded( state=0|1 )
+**Syntax:** obj &lt;&lt; Unthreaded( state=0|1 )
 
 **Description:** Use only the main thread for calculations
 
 #### Vcf Files
 
-**Syntax:** obj << Vcf Files
+**Syntax:** obj &lt;&lt; Vcf Files
 
 **Description:** Specifies VCF files.
 

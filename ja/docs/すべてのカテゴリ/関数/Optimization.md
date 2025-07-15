@@ -2,11 +2,9 @@
 
 
 
-## 関数
-
 ### Constrained Maximize
 
-**構文:** Constrained Maximize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, <<LessThanEQ({mat_A, vec_b}), <<GreaterThanEQ({mat_A, vec_b}), <<EqualTo({mat_A, vec_b}), <<MaxIter( 250 ), <<tolerance( .00001 ), <<ShowDetails(True), <<StartingValues([x1, x2, ... ])), <<SetVariableLimit({lowerLimitVector,upperLimitVector})
+**構文:** Constrained Maximize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;LessThanEQ({mat_A, vec_b}), &lt;&lt;GreaterThanEQ({mat_A, vec_b}), &lt;&lt;EqualTo({mat_A, vec_b}), &lt;&lt;MaxIter( 250 ), &lt;&lt;tolerance( .00001 ), &lt;&lt;ShowDetails(True), &lt;&lt;StartingValues([x1, x2, ... ])), &lt;&lt;SetVariableLimit({lowerLimitVector,upperLimitVector})
 
 **説明:** 線形制約のもとで式exprを最大にする、リスト{x1, x2, ...}で指定された引数の値を求める。変数x1、x2などは、1変数でも多変数でも構わない。変数名またはオプションのパラメータ<<SetVariableLimits()の後に括弧で囲んだ数値を指定することにより、各変数の下限と上限を指定できる。Constrained Maximizeオプションには、線形制約、最大反復回数、収束基準、出力の詳細、開始値、最適化する変数の範囲を設定できる(例2を参照のこと)。線形制約は、係数行列mat_Aと、右辺値ベクトルvec_bによって指定する。
 
@@ -61,7 +59,7 @@ Show( x, objVal, iters, gradient, hessian );
 
 ### Constrained Minimize
 
-**構文:** Constrained Minimize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, <<LessThanEQ({mat_A, vec_b}), <<GreaterThanEQ({mat_A, vec_b}), <<EqualTo({mat_A, vec_b}), <<MaxIter( 250 ), <<tolerance( .00001 ), <<ShowDetails(True), <<StartingValues([x1, x2, ... ])), <<SetVariableLimit({low,high})
+**構文:** Constrained Minimize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;LessThanEQ({mat_A, vec_b}), &lt;&lt;GreaterThanEQ({mat_A, vec_b}), &lt;&lt;EqualTo({mat_A, vec_b}), &lt;&lt;MaxIter( 250 ), &lt;&lt;tolerance( .00001 ), &lt;&lt;ShowDetails(True), &lt;&lt;StartingValues([x1, x2, ... ])), &lt;&lt;SetVariableLimit({low,high})
 
 **説明:** 線形制約のもとで式exprを最小にする、リスト{x1, x2, ...}で指定された引数の値を求める。変数x1、x2などは、1変数でも多変数でも構わない。変数名またはオプションのパラメータ<<SetVariableLimits()の後に括弧で囲んだ数値を指定することにより、各変数の下限と上限を指定できる。Constrained Minimizeオプションには、線形制約、最大反復回数、収束基準、出力の詳細、開始値、最適化する変数の範囲を設定できる(例2を参照のこと)。線形制約は、係数行列mat_Aと、右辺値ベクトルvec_bによって指定する。
 
@@ -141,7 +139,7 @@ New Window( "Desirability",
 
 ### LPSolve
 
-**構文:** {x, z} = LPSolve( A, b, c, L, U, neq, nle, nge, <slackVars=0> )
+**構文:** {x, z} = LPSolve( A, b, c, L, U, neq, nle, nge, &lt;slackVars=0&gt; )
 
 **説明:** 線形計画を解く。戻り値のリストの第1要素xは、決定変数の値(slackVars=1の場合にはスラック変数の値も含む)。第2要素zは、目的変数の最適値(存在する場合のみ)。引数の最初の5つは、すべて行列で指定すること。引数Aは制約式の係数を表す行列。引数bは制約式の右辺値。引数cは目的関数のコスト係数。引数LとUは、それぞれ下限値と上限値を表すベクトル。引数neqは等号制約式の数、引数nleは「以下」を示す不等号制約式の数、引数ngeは「以上」を示す不等号制約式の数である。制約は、等号制約、「以下」を示す不等号制約、「以上」を示す不等号制約の順に指定すること。
 
@@ -162,9 +160,7 @@ Show( x, z );
 
 ### Maximize
 
-**構文:** Maximize( expr, {x1, x2, ...} );
-
-Maximize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, <<MaxIter( 250 ), <<Tolerance( .00000001 ), <<details(both | returnDetails | displaySteps), <<gradient(), <<hessian(), method(NR | SR1), <<useNumericDeriv(True))
+**構文:** Maximize( expr, {x1, x2, ...} );Maximize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;MaxIter( 250 ), &lt;&lt;Tolerance( .00000001 ), &lt;&lt;details(both | returnDetails | displaySteps), &lt;&lt;gradient(), &lt;&lt;hessian(), method(NR | SR1), &lt;&lt;useNumericDeriv(True))
 
 **説明:** 式exprを最大化する引数の値を求める。引数はリスト{x1, x2, ...}で指定すること。引数名の後に括弧で囲んだ数値を指定することにより、各引数の下限と上限を指定できる。exprが凹関数でなければMaximize関数で求められた解は、局所的な最大値である可能性がある。それを防ぐには複数の開始値を試すのがよい。なお、Maximize関数は、2次微分したものが連続である場合に適している。Maximize関数のほかの引数では、最大反復回数、収束基準、履歴表示を設定する。オプションの引数についての詳細は、[トピックのヘルプ]ボタンをクリックすると表示される情報を参照のこと。
 
@@ -225,9 +221,7 @@ y = 0;
 
 ### Minimize
 
-**構文:** Minimize( expr, {x1, x2, ...} );
-
-Minimize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, <<MaxIter( 250 ), <<Tolerance( .00000001 ), <<details(both | returnDetails | displaySteps), <<gradient(), <<Hessian(), <<method(NR | SR1), <<useNumericDeriv(True))
+**構文:** Minimize( expr, {x1, x2, ...} );Minimize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;MaxIter( 250 ), &lt;&lt;Tolerance( .00000001 ), &lt;&lt;details(both | returnDetails | displaySteps), &lt;&lt;gradient(), &lt;&lt;Hessian(), &lt;&lt;method(NR | SR1), &lt;&lt;useNumericDeriv(True))
 
 **説明:** 式exprを最小化する引数の値を求める。引数はリスト{x1, x2, ...}で指定すること。引数名の後に括弧で囲んだ数値を指定することにより、各引数の下限と上限を指定できる。exprが凸関数でなければMinimize関数で求められた解は、局所的な最小値である可能性がある。それを防ぐには複数の開始値を試すのがよい。なお、Minimize関数は、2次微分したものが連続である場合に適している。Minimize関数のほかの引数では、最大反復回数、収束基準、履歴表示を設定する。オプションの引数についての詳細は、[トピックのヘルプ]ボタンをクリックすると表示される情報を参照のこと。
 

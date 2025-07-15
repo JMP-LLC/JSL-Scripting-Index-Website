@@ -8,7 +8,7 @@
 
 #### Authentication Method
 
-**구문:** obj << Authentication Method(method)
+**구문:** obj &lt;&lt; Authentication Method(method)
 
 **설명:** 인증 방법을 적용합니다. 유효한 값은 다음과 같습니다.
 
@@ -61,7 +61,7 @@ request << Authentication Method( "KERBEROS" );
 
 #### Blob
 
-**구문:** obj << Blob( binary data, <content-type> )
+**구문:** obj &lt;&lt; Blob( binary data, &lt;content-type&gt; )
 
 **설명:** 요청에 Blob 값을 설정합니다. Blob 값은 문서의 본문으로 사용됩니다. 요청의 콘텐츠 유형 머리글은 자동으로 "Content-Type: application/octet-stream"으로 설정됩니다.
 
@@ -84,7 +84,7 @@ data = request << Send;
 
 #### Bypass Proxy
 
-**구문:** obj << Bypass Proxy(localhost)
+**구문:** obj &lt;&lt; Bypass Proxy(localhost)
 
 **설명:** 프록시가 지정된 경우 프록시를 사용하지 않을 호스트의 쉼표 구분 목록입니다. 와일드카드로는 * 문자 하나만 허용됩니다. 이 와일드카드는 모든 호스트를 나타내며 실질적으로 프록시를 비활성화합니다. 이 목록의 각 이름은 호스트 이름이 포함된 도메인 또는 호스트 이름 자체와 매칭됩니다. 예를 들어 local.com은 local.com, local.com:80 및 www.local.com과 매칭되지만 www.notlocal.com과는 매칭되지 않습니다.
 
@@ -103,7 +103,7 @@ request << Bypass Proxy( "localhost" );
 
 #### Certificates
 
-**구문:** obj << Certificates(certificate file)
+**구문:** obj &lt;&lt; Certificates(certificate file)
 
 **설명:** 확인을 위해 지정된 인증서 파일을 사용하십시오. 파일에 CA 인증서가 여러 개 있을 수 있습니다. 인증서는 PEM 형식이어야 합니다.
 
@@ -120,7 +120,7 @@ request << Certificates( "c:\certs\my_certificate.crt" );
 
 #### Cookie
 
-**구문:** obj << Cookie([[ key=> value ]]
+**구문:** obj &lt;&lt; Cookie([[ key=&gt; value ]]
 
 **설명:** 요청에 쿠키를 설정합니다.
 
@@ -141,7 +141,7 @@ data = request << Send;
 
 #### Cookie File
 
-**구문:** obj << Cookie File(<path>, <"replace" | "rename" | "append">)
+**구문:** obj &lt;&lt; Cookie File(&lt;path&gt;, &lt;"replace" | "rename" | "append"&gt;)
 
 **설명:** 대체 쿠키 파일을 지정하십시오.
 
@@ -158,7 +158,7 @@ data = request << Cookie File( "$DESKTOP\..\cookie.txt" );
 
 #### Curlrc
 
-**구문:** obj << Curlrc(<true | false>)
+**구문:** obj &lt;&lt; Curlrc(&lt;true | false&gt;)
 
 **설명:** 표준 .curl 파일을 사용하도록 요청을 구성합니다.
 
@@ -177,7 +177,7 @@ request << Curlrc( "true" );
 
 #### Curlrc File
 
-**구문:** obj << Curlrc File(<path>)
+**구문:** obj &lt;&lt; Curlrc File(&lt;path&gt;)
 
 **설명:** 대체 .curlrc 파일을 사용하도록 요청을 구성합니다.
 
@@ -197,7 +197,7 @@ request << Curlrc( "true" );
 
 #### DNS Timeout
 
-**구문:** obj << DNS Timeout(seconds)
+**구문:** obj &lt;&lt; DNS Timeout(seconds)
 
 **설명:** 연결을 위한 기본 DNS 캐시 타임아웃은 60초입니다. 이 값을 조정하여 DNS 캐시를 적용할 수 있습니다. 캐시를 사용하지 않으려면 0으로 설정하고, 캐시된 항목을 메모리에 유지하려면 -1로 설정하십시오.
 
@@ -220,7 +220,7 @@ obj = New Window( "Mastering JMP", img );
 
 #### Decode64 Char
 
-**구문:** obj << Decode64 Char( value )
+**구문:** obj &lt;&lt; Decode64 Char( value )
 
 **설명:** Base 64 인코딩을 사용하여 문자열을 디코딩합니다.
 
@@ -237,7 +237,7 @@ data = request << Decode64 Char( "TWFuIGlzIGRpc3Rpbmd1aXNoZWQsIG5vdCBvbmx5IGJ5IG
 
 #### Download
 
-**구문:** obj << Download( path, <"replace" | "rename" | "append"> )
+**구문:** obj &lt;&lt; Download( path, &lt;"replace" | "rename" | "append"&gt; )
 
 **설명:** HTTP 응답을 파일에 다운로드합니다. 웹 서비스에서 파일을 다운로드할 때 유용합니다. replace 옵션은 기존 파일을 덮어씁니다. 중복 이름이 있는 경우 rename 옵션은 순차적 파일 이름(file, file(1), file(2)...)을 사용하고 append 옵션은 기존 파일에 추가합니다. show progress를 사용하면 다운로드된 파일의 백분율을 보여 주는 취소 가능한 진행률 표시줄이 나타납니다.
 
@@ -260,7 +260,7 @@ If( !Is Empty( file ),
 
 #### Encode64 Char
 
-**구문:** obj << Encode64 Char( value )
+**구문:** obj &lt;&lt; Encode64 Char( value )
 
 **설명:** Base 64 인코딩을 사용하여 문자열을 인코딩합니다.
 
@@ -277,7 +277,7 @@ data = request << Encode64 Char( "Man is distinguished, not only by his reason, 
 
 #### File
 
-**구문:** obj << File ( path, <content-type> )
+**구문:** obj &lt;&lt; File ( path, &lt;content-type&gt; )
 
 **설명:** 요청에 파일 값을 설정합니다. 파일 내용은 문서의 본문으로 사용됩니다. 요청의 콘텐츠 유형 머리글은 파일 확장자 또는 application/octet-stream(파일 확장자를 찾을 수 없는 경우)을 기반으로 적절한 콘텐츠로 자동 설정됩니다.
 
@@ -295,7 +295,7 @@ data = request << Send;
 
 #### Form
 
-**구문:** obj << Form(Fields([[ key=> value ]], <URI Encode(1 | 0 | Safe(...))>), Files({ key1, {path1, path2, ..}, key2, {path3, path4} }))
+**구문:** obj &lt;&lt; Form(Fields([[ key=&gt; value ]], &lt;URI Encode(1 | 0 | Safe(...))&gt;), Files({ key1, {path1, path2, ..}, key2, {path3, path4} }))
 
 **설명:** 요청에 양식 데이터 값을 설정합니다. 양식은 문서의 본문으로 사용됩니다. 양식 데이터는 필드 및 파일 요소를 포함할 수 있습니다.
 
@@ -323,7 +323,7 @@ data = request << Send;
 
 #### Get Certificate Info
 
-**구문:** obj << Get Certificate Info
+**구문:** obj &lt;&lt; Get Certificate Info
 
 **설명:** 인증서 발급자, 인증서 만료일 등 인증서 상세 정보와 인증서의 신뢰성을 보장하는 기타 정보를 표시합니다.
 
@@ -340,7 +340,7 @@ request << Get Certificate Info;
 
 #### Get Last URL
 
-**구문:** obj << Get Last URL
+**구문:** obj &lt;&lt; Get Last URL
 
 **설명:** 요청에 사용된 마지막 URL을 가져옵니다. 리디렉션된 URL을 찾을 때 유용합니다.
 
@@ -359,7 +359,7 @@ Write( Char( request << Get Last URL ) );
 
 #### Get MIME Type
 
-**구문:** mimetype = obj << Get MIME Type
+**구문:** mimetype = obj &lt;&lt; Get MIME Type
 
 **설명:** 요청과 함께 보내기(또는 다운로드)가 사용된 후 반환된 데이터의 MIME 유형을 검색하는 데 사용될 수 있습니다.
 
@@ -378,7 +378,7 @@ Write( request << Get Mime Type() || "\!n" );
 
 #### Get Method
 
-**구문:** obj << Get Last Method
+**구문:** obj &lt;&lt; Get Last Method
 
 **설명:** 요청에 사용된 마지막 HTTP 메서드를 가져옵니다.
 
@@ -402,7 +402,7 @@ Write( Char( request << Get Method ) || "\!n" );
 
 #### Get Response Headers
 
-**구문:** obj << Get Response Headers
+**구문:** obj &lt;&lt; Get Response Headers
 
 **설명:** 응답 머리글이 요청이 전송된 후 반환된 키/값 쌍의 연관 배열입니다. 다음 위치에서 머리글 정의를 찾을 수 있습니다. https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html. Date, Expires 및 Last-Modified 키는 JMP 날짜로 변환됩니다. Age 및 Content-Length 키는 숫자로 변환됩니다. 다른 모든 값은 문자입니다.
 
@@ -428,7 +428,7 @@ For( i = 1, i <= N Items( keys ), i++,
 
 #### Get Status
 
-**구문:** obj << Get Status
+**구문:** obj &lt;&lt; Get Status
 
 **설명:** Send 뒤에 요청의 상태를 반환합니다. 연결 오류가 없는 경우에는 상태가 HTTP 상태이고 그렇지 않은 경우에는 연결 상태입니다. 200 ~ 299는 성공을 나타냅니다.
 
@@ -449,7 +449,7 @@ If( request << Get Status == 200,
 
 #### Get Status Message
 
-**구문:** obj << Get Status Message
+**구문:** obj &lt;&lt; Get Status Message
 
 **설명:** Send 메시지 뒤에 요청의 상태 메시지를 반환합니다. 연결 오류가 없는 경우에는 상태 메시지가 HTTP 상태 메시지이고 그렇지 않은 경우에는 연결 상태 메시지입니다. 상태 200 ~ 299는 성공을 나타냅니다.
 
@@ -468,7 +468,7 @@ Write( "\!n" || Char( request << Get Status Message ) || "\!n" );
 
 #### Get Status Msg
 
-**구문:** obj << Get Status Msg
+**구문:** obj &lt;&lt; Get Status Msg
 
 **설명:** Send 뒤에 요청의 상태 메시지를 반환합니다. GetStatusMessage의 별칭입니다. 연결 오류가 없는 경우에는 상태 메시지가 HTTP 상태 메시지이고 그렇지 않은 경우에는 연결 상태 메시지입니다. 상태 200 ~ 299는 성공을 나타냅니다.
 
@@ -487,7 +487,7 @@ Write( "\!n" || Char( request << Get Status Msg ) || "\!n" );
 
 #### Get Warning Headers
 
-**구문:** obj << Get Warning Headers
+**구문:** obj &lt;&lt; Get Warning Headers
 
 **설명:** 요청에서 경고 머리글 값(있는 경우)을 가져옵니다.
 
@@ -515,7 +515,7 @@ If( !Is Empty( warning_headers ),
 
 #### GetVersion
 
-**구문:** request << GetVersion
+**구문:** request &lt;&lt; GetVersion
 
 **설명:** JMP에서 사용 중인 cURL의 현재 버전을 반환합니다.
 
@@ -530,7 +530,7 @@ Write( New HTTP Request() << GetVersion );
 
 #### Has Client Error
 
-**구문:** obj << Has Client Error
+**구문:** obj &lt;&lt; Has Client Error
 
 **설명:** HTTP 상태가 400 ~ 499이면 True입니다.
 
@@ -552,7 +552,7 @@ Write( msg );
 
 #### Has Error
 
-**구문:** obj << Has Error
+**구문:** obj &lt;&lt; Has Error
 
 **설명:** HTTP 상태가 400 ~ 599이면 True입니다.
 
@@ -574,7 +574,7 @@ Write( msg );
 
 #### Has Information
 
-**구문:** obj << Has Information
+**구문:** obj &lt;&lt; Has Information
 
 **설명:** HTTP 상태가 100 ~ 199이면 True입니다.
 
@@ -597,7 +597,7 @@ Write( msg );
 
 #### Has Redirection
 
-**구문:** obj << Has Redirection
+**구문:** obj &lt;&lt; Has Redirection
 
 **설명:** HTTP 상태가 300 ~ 399이면 True입니다.
 
@@ -620,7 +620,7 @@ Write( msg );
 
 #### Has Server Error
 
-**구문:** obj << Has Server Error
+**구문:** obj &lt;&lt; Has Server Error
 
 **설명:** HTTP 상태가 500 ~ 599이면 True입니다.
 
@@ -642,7 +642,7 @@ Write( msg );
 
 #### Has Warning
 
-**구문:** obj << Has Warning
+**구문:** obj &lt;&lt; Has Warning
 
 **설명:** HTTP 상태에 경고 머리글이 포함된 경우 True입니다.
 
@@ -670,7 +670,7 @@ If( !request << Has Warning,
 
 #### Headers
 
-**구문:** obj << Headers({header 1}, {header 2} | [[ key=> value, key2=>value2 ]])
+**구문:** obj &lt;&lt; Headers({header 1}, {header 2} | [[ key=&gt; value, key2=&gt;value2 ]])
 
 **설명:** 다음 위치에서 HTTP 머리글 정의를 찾을 수 있습니다.
 
@@ -699,7 +699,7 @@ Write( json || "\!n" );
 
 #### Insecure
 
-**구문:** obj << Insecure(<"true"> | <"false">) | <"prompt">
+**구문:** obj &lt;&lt; Insecure(&lt;"true"&gt; | &lt;"false"&gt;) | &lt;"prompt"&gt;
 
 **설명:** 인증서 검증은 기본적으로 수행됩니다. true로 설정하면 인증서 검증 없이 요청을 완료할 수 있습니다. prompt로 설정하면 사용자가 인증서를 수락하고 필요에 따라 요청을 완료할 수 있습니다.
 
@@ -722,7 +722,7 @@ obj = New Window( "Mastering JMP", img );
 
 #### Is Success
 
-**구문:** obj << Is Success
+**구문:** obj &lt;&lt; Is Success
 
 **설명:** HTTP 상태가 200 ~ 299이면 True입니다.
 
@@ -746,7 +746,7 @@ If( request << Is Success,
 
 #### Is Successful
 
-**구문:** obj << Is Successful
+**구문:** obj &lt;&lt; Is Successful
 
 **설명:** HTTP 상태가 200 ~ 299이면 True입니다.
 
@@ -776,7 +776,7 @@ If( request << Is Successful,
 
 #### Is Valid
 
-**구문:** obj << Is Valid
+**구문:** obj &lt;&lt; Is Valid
 
 **설명:** 요청이 올바름
 
@@ -793,7 +793,7 @@ data = request << Is Valid();
 
 #### Is Verbose
 
-**구문:** obj << Is Verbose
+**구문:** obj &lt;&lt; Is Verbose
 
 **설명:** 요청이 상태 메시지를 자동으로 로깅 중
 
@@ -810,7 +810,7 @@ data = request << Is Verbose();
 
 #### JSON
 
-**구문:** obj << JSON( json data )
+**구문:** obj &lt;&lt; JSON( json data )
 
 **설명:** 요청에 JSON 문자열 값을 설정합니다. JSON 문자열은 문서의 본문으로 사용됩니다. 요청의 콘텐츠 유형 머리글은 자동으로 "Content-Type: application/json"으로 설정됩니다. As JSON Expr 메서드를 사용하여 연관 배열을 JSON 문자열로 변환할 수 있습니다.
 
@@ -831,7 +831,7 @@ data = request << Send;
 
 #### Max Redirect
 
-**구문:** obj << Max Redirect(...)
+**구문:** obj &lt;&lt; Max Redirect(...)
 
 **설명:** 요청이 따라갈 리디렉션 수를 지정하십시오.
 
@@ -853,7 +853,7 @@ data = request << Send;
 
 #### Method
 
-**구문:** obj << Method("Post" | "Get" | "Put" | "Patch"| "Delete")
+**구문:** obj &lt;&lt; Method("Post" | "Get" | "Put" | "Patch"| "Delete")
 
 **설명:** 요청에 대한 메서드를 설정합니다. 현재는 Get, Post, Put, Patch, Delete 및 Head가 지원됩니다.
 
@@ -876,7 +876,7 @@ dt << Delete Rows();
 
 #### Netrc
 
-**구문:** obj << Netrc(<true | false>)
+**구문:** obj &lt;&lt; Netrc(&lt;true | false&gt;)
 
 **설명:** 표준 .netrc 파일을 사용하도록 요청을 구성합니다.
 
@@ -927,7 +927,7 @@ request << Netrc( "true" );
 
 #### Netrc File
 
-**구문:** obj << Netrc File(<path>)
+**구문:** obj &lt;&lt; Netrc File(&lt;path&gt;)
 
 **설명:** 대체 .netrc 파일을 사용하도록 요청을 구성합니다.
 
@@ -977,7 +977,7 @@ request << Netrc( "true" );
 
 #### Password
 
-**구문:** obj << Password(passwd)
+**구문:** obj &lt;&lt; Password(passwd)
 
 **설명:** 요청에 기본 인증에 사용되는 암호를 설정합니다. 이 값은 요청 사용자 이름과 함께 사용됩니다. 이때 사용자 이름과 암호는 &apos;:&apos;를 사용하여 연결되고(이름:암호) 웹 서비스에 전달됩니다. 여기에 인코딩된(예: Kerberos V5로 인코딩됨) 사용자 이름/암호 값을 사용할 수도 있습니다.
 
@@ -1000,7 +1000,7 @@ data = request << Send;
 
 #### Proxy Server
 
-**구문:** obj << Proxy Server(proxy_url)
+**구문:** obj &lt;&lt; Proxy Server(proxy_url)
 
 **설명:** 프록시 URL은 프로토콜 접두사(http://)와 포함된 사용자 + 암호를 포함하여 프록시 환경 변수와 동일한 방식으로 지정할 수 있습니다.
 
@@ -1018,7 +1018,7 @@ request << Proxy Server( url );
 
 #### Proxy User
 
-**구문:** obj << Proxy User(username:password)
+**구문:** obj &lt;&lt; Proxy User(username:password)
 
 **설명:** 프록시 설정에서 제공될 수 있는 사용자 및 암호가 URL로 디코딩됩니다. 이렇게 하면 @(%40 사용) 또는 콜론(%3a 사용) 같은 특수 문자를 전달할 수 있습니다.
 
@@ -1037,7 +1037,7 @@ request << Proxy User( "clark%20kent:superman" );
 
 #### Query String
 
-**구문:** obj << Query String([[ key=> value ]], <URI Encode(1|0|Safe(...))>)
+**구문:** obj &lt;&lt; Query String([[ key=&gt; value ]], &lt;URI Encode(1|0|Safe(...))&gt;)
 
 **설명:** 요청에 쿼리 문자열 값을 설정합니다. 이 값은 문자 데이터의 연관 배열 키/값 컬렉션입니다. 키/값 쌍은 웹 서비스로 전송될 때 URL로 인코딩됩니다(이스케이프됨).
 
@@ -1058,7 +1058,7 @@ data = request << Send;
 
 #### Reset
 
-**구문:** obj << Reset(URL(...), Method(...), <Form(<Fields(...)>, <Files(...)>)> | <File(...)> | <Blob(...)> | <JSON(...)>, <QueryString(...)>, <Headers(...)>, <Username(...)>, <Password(...)>)
+**구문:** obj &lt;&lt; Reset(URL(...), Method(...), &lt;Form(&lt;Fields(...)&gt;, &lt;Files(...)&gt;)&gt; | &lt;File(...)&gt; | &lt;Blob(...)&gt; | &lt;JSON(...)&gt;, &lt;QueryString(...)&gt;, &lt;Headers(...)&gt;, &lt;Username(...)&gt;, &lt;Password(...)&gt;)
 
 **설명:** 요청을 새 값으로 재설정합니다.
 
@@ -1077,7 +1077,7 @@ json2 = request << Send;
 
 #### Run
 
-**구문:** obj << Run
+**구문:** obj &lt;&lt; Run
 
 **설명:** 요청을 실행합니다. Send의 별칭입니다. Run will be either character data or binary BLOB. You can check the return with the Is String JSL 함수의 반환 값입니다.
 
@@ -1096,7 +1096,7 @@ Write( json || "\!n" );
 
 #### SSL Version
 
-**구문:** obj << SSL Version (version)
+**구문:** obj &lt;&lt; SSL Version (version)
 
 **설명:** "DEFAULT"  Use the default negotiated version (recommended).
 
@@ -1145,7 +1145,7 @@ request << SSL Version( "1+" );
 
 #### Secure
 
-**구문:** obj << Secure(<"true"> | <"false">) | <"prompt">
+**구문:** obj &lt;&lt; Secure(&lt;"true"&gt; | &lt;"false"&gt;) | &lt;"prompt"&gt;
 
 **설명:** 인증서 검증은 기본적으로 수행됩니다. false로 설정하면 인증서 검증 없이 요청을 완료할 수 있습니다. prompt로 설정하면 사용자가 인증서를 수락하고 필요에 따라 요청을 완료할 수 있습니다.
 
@@ -1168,7 +1168,7 @@ obj = New Window( "Mastering JMP", img );
 
 #### Send
 
-**구문:** obj << Send(<"text" | "blob">, <"show progress download" | "show progress upload" | "show progress both" | "show progress">)
+**구문:** obj &lt;&lt; Send(&lt;"text" | "blob"&gt;, &lt;"show progress download" | "show progress upload" | "show progress both" | "show progress"&gt;)
 
 **설명:** 요청을 보냅니다. Send의 반환 값은 문자 데이터 또는 이진 BLOB입니다. Is String JSL 함수를 사용하여 반환 값을 확인할 수 있습니다. show progress download를 사용하면 다운로드된 데이터의 진행률을 보여 주는 취소 가능한 진행률 표시줄이 나타납니다. show progress upload를 사용하면 업로드된 데이터의 진행률을 보여 주는 취소 가능한 진행률 표시줄이 나타납니다. show progress both를 사용하면 업로드된 데이터와 다운로드된 데이터의 진행률을 보여 주는 취소 가능한 진행률 표시줄이 나타납니다. show progress를 사용하면 업로드된 데이터나 다운로드된 데이터 또는 둘 다에 대한 진행률을 보여 주는 취소 가능한 진행률 표시줄이 나타납니다. 양식을 게시하는 경우 show progress는 업로드 및 다운로드 진행률을 표시하고, 파일을 게시하는 경우 show progress는 업로드 진행률을 표시합니다. 데이터를 검색하는 경우 show progress는 다운로드 진행률을 표시합니다.
 
@@ -1187,7 +1187,7 @@ Write( json || "\!n" );
 
 #### Text
 
-**구문:** obj << Text( text data, <content-type>)
+**구문:** obj &lt;&lt; Text( text data, &lt;content-type&gt;)
 
 **설명:** 요청에 텍스트 문자열 값을 설정합니다. 텍스트 문자열은 문서의 본문으로 사용됩니다. 요청의 콘텐츠 유형 머리글은 자동으로 "Content-Type: application/text/plain"으로 설정됩니다.
 
@@ -1204,7 +1204,7 @@ data = request << Send;
 
 #### Timeout
 
-**구문:** obj << Timeout(seconds)
+**구문:** obj &lt;&lt; Timeout(seconds)
 
 **설명:** 요청 작업이 완료될 때까지의 기본 타임아웃 값은 60초입니다. 이 값을 조정하여 시간이 오래 걸리는 웹 서비스 작업을 허용할 수 있습니다.
 
@@ -1227,7 +1227,7 @@ obj = New Window( "Mastering JMP", img );
 
 #### URL
 
-**구문:** obj << URL(path)
+**구문:** obj &lt;&lt; URL(path)
 
 **설명:** 요청이 생성될 때(또는 Reset과 함께 사용될 때) 파라미터로 사용될 수 있습니다. obj = HTTP Request(URL("http://google.com"));
 
@@ -1249,7 +1249,7 @@ s = New HTTP Request(
 
 #### Use Cookies
 
-**구문:** obj << Use Cookies(<true | false>))
+**구문:** obj &lt;&lt; Use Cookies(&lt;true | false&gt;))
 
 **설명:** 세션에 쿠키를 사용하도록 요청을 구성합니다. 기본값은 true입니다.
 
@@ -1266,7 +1266,7 @@ data = request << Use Cookies( "false" );
 
 #### UserPwd
 
-**구문:** obj << UserPwd(clark kent:superman)
+**구문:** obj &lt;&lt; UserPwd(clark kent:superman)
 
 **설명:** 인증에 사용되는 요청의 사용자 및 암호 필드를 설정합니다. 형식은 [사용자 이름]:[암호]입니다. 사용자 및 암호 문자열은 URL로 디코딩되지 않으므로 이 옵션을 사용하면 콜론이 포함된 사용자 이름을 전송할 방법이 없습니다.
 
@@ -1289,7 +1289,7 @@ data = request << Send;
 
 #### Username
 
-**구문:** obj << Username(name)
+**구문:** obj &lt;&lt; Username(name)
 
 **설명:** 요청에 기본 인증에 사용되는 사용자 이름을 설정합니다. 이 값은 요청 사용자 암호와 함께 사용됩니다. 이때 사용자 이름과 암호는 &apos;:&apos;를 사용하여 연결되고(이름:암호) 웹 서비스에 전달됩니다.
 
@@ -1313,7 +1313,7 @@ data = request << Send;
 
 #### Verbose
 
-**구문:** obj << Verbose(<"true"> | <"false">)
+**구문:** obj &lt;&lt; Verbose(&lt;"true"&gt; | &lt;"false"&gt;)
 
 **설명:** 로그에 자세한 오류 메시지를 기록합니다. 기본값은 true입니다.
 
@@ -1341,7 +1341,7 @@ Write( "\!n" || Char( request << Get Status Message ) || "\!n" );
 
 #### Verify SSL
 
-**구문:** obj << Verify SSL(<"true"> | <"false">)
+**구문:** obj &lt;&lt; Verify SSL(&lt;"true"&gt; | &lt;"false"&gt;)
 
 **설명:** 인증서 확인이 설정되어 있습니다. false로 설정하면 인증서 확인 없이 요청을 완료할 수 있습니다.
 
@@ -1364,7 +1364,7 @@ obj = New Window( "Mastering JMP", img );
 
 #### XML
 
-**구문:** obj << XML( xml data )
+**구문:** obj &lt;&lt; XML( xml data )
 
 **설명:** 요청에 xml 문자열 값을 설정합니다. xml 문자열은 문서의 본문으로 사용됩니다. 요청의 콘텐츠 유형 머리글은 자동으로 "Content-Type: application/xml"로 설정됩니다.
 
@@ -1399,7 +1399,7 @@ data = request << Send;
 
 #### Add
 
-**구문:** obj << Add(request, <label>)
+**구문:** obj &lt;&lt; Add(request, &lt;label&gt;)
 
 **설명:** HTTP 요청을 MultiHTTPRequest에 추가합니다. 선택적 라벨을 사용할 수 있습니다. 라벨을 사용하면 병렬 다운로드를 수행할 때 유용합니다. 모든 HTTP 요청은 사용 전에 먼저 유효성이 검사됩니다.
 
@@ -1435,7 +1435,7 @@ For( i = 1, i <= N Items( http_requests ), i++,
 
 #### Download
 
-**구문:** obj << Download(<"show progress">, <"detailed">)
+**구문:** obj &lt;&lt; Download(&lt;"show progress"&gt;, &lt;"detailed"&gt;)
 
 **설명:** HTTP 응답을 파일에 병렬로 다운로드합니다. 하나 이상의 웹 서비스에서 여러 파일을 한 번에 다운로드할 때 유용합니다. show progress를 사용하면 파일 다운로드 진행률을 보여 주는 취소 가능한 진행률 표시줄이 나타납니다. details를 사용하면 개별 다운로드 진행률이 표시됩니다.
 
@@ -1502,7 +1502,7 @@ promise << On Error( process_error );
 
 #### Get Requests
 
-**구문:** obj << Get Requests()
+**구문:** obj &lt;&lt; Get Requests()
 
 **JMP추가된 버전:** 17
 
@@ -1531,7 +1531,7 @@ http_requests = requests << Get Requests();
 
 #### Has Error
 
-**구문:** obj << Has Error
+**구문:** obj &lt;&lt; Has Error
 
 **설명:** 다중 요청에 오류가 있으면 true를 반환합니다. 임의의 HTTP 요청에 오류가 있는 경우 다중 요청에 오류가 있습니다.
 
@@ -1561,7 +1561,7 @@ Show( requests << Has Error );
 
 #### Is Success
 
-**구문:** obj << Is Success
+**구문:** obj &lt;&lt; Is Success
 
 **설명:** 다중 요청이 성공하면 true를 반환합니다. 모든 HTTP 요청이 성공한 경우 다중 요청이 성공한 것입니다.
 
@@ -1585,7 +1585,7 @@ Show( requests << Is Successful );
 
 #### Is Successful
 
-**구문:** obj << Is Successful
+**구문:** obj &lt;&lt; Is Successful
 
 **설명:** 다중 요청이 성공하면 true를 반환합니다. 모든 HTTP 요청이 성공한 경우 다중 요청이 성공한 것입니다.
 
@@ -1609,7 +1609,7 @@ Show( requests << Is Successful );
 
 #### Is Valid
 
-**구문:** obj << Is Valid
+**구문:** obj &lt;&lt; Is Valid
 
 **설명:** 다중 요청이 유효한지 여부를 나타냅니다. 모든 HTTP 요청이 유효한 경우 다중 요청이 유효합니다.
 
@@ -1638,7 +1638,7 @@ Show( requests << Is Valid() );
 
 #### Reset
 
-**구문:** obj << Reset()
+**구문:** obj &lt;&lt; Reset()
 
 **설명:** 다중 요청을 재설정합니다. 이렇게 하면 이미 추가된 HTTP 요청이 재설정됩니다.
 
@@ -1669,7 +1669,7 @@ requests << Reset();
 
 #### Send
 
-**구문:** obj << Send(<"text" | "blob">, <"show progress download" | "show progress upload" | "show progress both" | "show progress">)
+**구문:** obj &lt;&lt; Send(&lt;"text" | "blob"&gt;, &lt;"show progress download" | "show progress upload" | "show progress both" | "show progress"&gt;)
 
 **설명:** Send의 반환 값은 문자 데이터 또는 이진 BLOB입니다. Is String JSL 함수를 사용하여 반환 값을 확인할 수 있습니다. show progress download를 사용하면 다운로드된 데이터의 진행률을 보여 주는 취소 가능한 진행률 표시줄이 나타납니다. show progress upload를 사용하면 업로드된 데이터의 진행률을 보여 주는 취소 가능한 진행률 표시줄이 나타납니다. show progress both를 사용하면 업로드된 데이터와 다운로드된 데이터의 진행률을 보여 주는 취소 가능한 진행률 표시줄이 나타납니다. show progress를 사용하면 업로드된 데이터나 다운로드된 데이터 또는 둘 다에 대한 진행률을 보여 주는 취소 가능한 진행률 표시줄이 나타납니다. 양식을 게시하는 경우 show progress는 업로드 및 다운로드 진행률을 표시하고, 파일을 게시하는 경우 show progress는 업로드 진행률을 표시합니다. 데이터를 검색하는 경우 show progress는 다운로드 진행률을 표시합니다.
 
@@ -1840,7 +1840,7 @@ addSentimentColumns( dt2, "Name", 1, 1 );
 
 #### Authorization Fields
 
-**구문:** oauth2 << Authorization Fields(...)
+**구문:** oauth2 &lt;&lt; Authorization Fields(...)
 
 **설명:** "Authorization fields"는 OAuth2 권한 부여 URL의 쿼리 문자열에 사용되는 키/값 쌍의 연관 배열입니다.
 
@@ -1867,7 +1867,7 @@ oauth2 << Authorization Fields( auth_fields );
 
 #### Authorization URL
 
-**구문:** oauth2 << Authorization URL(...)
+**구문:** oauth2 &lt;&lt; Authorization URL(...)
 
 **설명:** OAuth2 권한 부여 URL을 설정합니다.
 
@@ -1885,7 +1885,7 @@ oauth2 << Authorization URL( auth_url );
 
 #### Browser Type
 
-**구문:** oauth2 << Browser Type("Default" | "Embedded" | "External")
+**구문:** oauth2 &lt;&lt; Browser Type("Default" | "Embedded" | "External")
 
 **설명:** "기본값" 옵션은 Google로 인증하는 경우 외에는 포함된 브라우저를 사용하여 OAuth2 인증을 수행합니다. "포함" 옵션은 Google로 인증하는 경우 외에는 포함된 브라우저를 사용하여 OAuth2 인증을 수행합니다(현재 "기본값"과 동일). "외부" 옵션은 외부 브라우저를 사용하여 OAuth2 인증을 수행하고 결과 코드/URL을 텍스트 영역에 복사하여 인증을 완료합니다.
 
@@ -1936,7 +1936,7 @@ data = request << Send;
 
 #### Client Id
 
-**구문:** oauth2 << Client Id(...)
+**구문:** oauth2 &lt;&lt; Client Id(...)
 
 **설명:** 웹 서비스 생성 시 사용된 공개 식별자인 OAuth2 클라이언트 ID를 설정합니다.
 
@@ -1957,7 +1957,7 @@ oauth2 << Client Id( client_id );
 
 #### Client Secret
 
-**구문:** oauth2 << Client Secret(...)
+**구문:** oauth2 &lt;&lt; Client Secret(...)
 
 **설명:** 웹 서비스 생성 시 생성된 OAuth2 클라이언트 비밀번호를 설정합니다.
 
@@ -1978,7 +1978,7 @@ oauth2 << Client Secret( client_secret );
 
 #### Code Verifier
 
-**구문:** oauth2 << Code Verifier(<"cdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._~">
+**구문:** oauth2 &lt;&lt; Code Verifier(&lt;"cdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._~"&gt;
 
 **설명:** 코드 확인자는 액세스 토큰에 대한 권한 부여 코드를 교환할 때 클라이언트가 자신을 식별하는 데 사용하는 암호화된 무작위 문자열입니다. 문자열 길이는 최소 43자, 최대 128자입니다.
 
@@ -1995,7 +1995,7 @@ oauth2 << Code Verifier( "cdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123
 
 #### Get Access Token
 
-**구문:** oauth2 << Get Access Token()
+**구문:** oauth2 &lt;&lt; Get Access Token()
 
 **설명:** 현재 OAuth2 액세스 토큰을 가져옵니다. 필요한 경우 권한 부여 서버와의 통신이 시작됩니다.
 
@@ -2041,7 +2041,7 @@ access_token = oauth2 << Get Access Token();
 
 #### Get Auth Response Error
 
-**구문:** oauth2 << Get Authentication Response Error()
+**구문:** oauth2 &lt;&lt; Get Authentication Response Error()
 
 **설명:** OAuth2 응답 오류를 가져옵니다.
 
@@ -2058,19 +2058,19 @@ error = oauth2 << Get Authentication Response Error();
 
 #### Get Auth Response Fields
 
-**구문:** obj << Get Auth Response Fields
+**구문:** obj &lt;&lt; Get Auth Response Fields
 
 **JMP추가된 버전:** 15
 
 #### Get Authentication Response Error
 
-**구문:** obj << Get Authentication Response Error
+**구문:** obj &lt;&lt; Get Authentication Response Error
 
 **JMP추가된 버전:** 18
 
 #### Get Authorization Header
 
-**구문:** oauth2 << Get Authorization Header
+**구문:** oauth2 &lt;&lt; Get Authorization Header
 
 **설명:** 다음 형식의 헤더를 가져옵니다.
 
@@ -2181,7 +2181,7 @@ If( !Is Empty( data ),
 
 #### Get Authorization Response Fields
 
-**구문:** oauth2 << Get Authorization Response Fields()
+**구문:** oauth2 &lt;&lt; Get Authorization Response Fields()
 
 **설명:** 권한 부여 서버에서 받은 현재 OAuth2 응답 값을 가져옵니다.
 
@@ -2227,7 +2227,7 @@ auth_response = oauth2 << Get Authorization Response Fields();
 
 #### Get Code
 
-**구문:** oauth2 << Get Code()
+**구문:** oauth2 &lt;&lt; Get Code()
 
 **설명:** 현재 OAuth2 코드를 가져옵니다. 필요한 경우 권한 부여 서버와의 통신이 시작됩니다.
 
@@ -2273,7 +2273,7 @@ code = oauth2 << Get Code();
 
 #### Get Grant Type
 
-**구문:** oauth2 << Get Grant Type()
+**구문:** oauth2 &lt;&lt; Get Grant Type()
 
 **설명:** 현재 OAuth2 승인 유형을 가져옵니다.
 
@@ -2293,7 +2293,7 @@ Show( grant );
 
 #### Get Grant Types
 
-**구문:** oauth2 << Get Grant Types
+**구문:** oauth2 &lt;&lt; Get Grant Types
 
 **설명:** 지원되는 JMP OAuth2 승인 유형을 가져옵니다.
 
@@ -2314,7 +2314,7 @@ Show( grant_types );
 
 #### Get ID Token
 
-**구문:** oauth2 << Get ID Token()
+**구문:** oauth2 &lt;&lt; Get ID Token()
 
 **설명:** 현재 OAuth2 ID 토큰을 가져옵니다. 필요한 경우 권한 부여 서버와의 통신이 시작됩니다.
 
@@ -2360,7 +2360,7 @@ id_token = oauth2 << Get ID Token();
 
 #### Get Refresh Token
 
-**구문:** oauth2 << Get Refresh Token()
+**구문:** oauth2 &lt;&lt; Get Refresh Token()
 
 **설명:** 현재 OAuth2 갱신 토큰을 가져옵니다. 필요한 경우 권한 부여 서버와의 통신이 시작됩니다.
 
@@ -2406,7 +2406,7 @@ refresh_token = oauth2 << Get Refresh Token();
 
 #### Get Scope
 
-**구문:** oauth2 << Get Scope()
+**구문:** oauth2 &lt;&lt; Get Scope()
 
 **설명:** 현재 OAuth2 범위를 가져옵니다.
 
@@ -2452,7 +2452,7 @@ code = oauth2 << Get Scope();
 
 #### Get Window Title
 
-**구문:** oauth2 << Get Window Title
+**구문:** oauth2 &lt;&lt; Get Window Title
 
 **설명:** OAuth2 창 제목을 가져옵니다.
 
@@ -2470,7 +2470,7 @@ title = oauth2 << Get Window Title;
 
 #### Grant Type
 
-**구문:** oauth2 << Grant Type("Authorization Code" | "Client Credentials" | "Refresh Token")
+**구문:** oauth2 &lt;&lt; Grant Type("Authorization Code" | "Client Credentials" | "Refresh Token")
 
 **설명:** 요청된 승인 유형은 JMP와 OAuth2 권한 부여 공급자가 지원하는 승인 유형 중 하나여야 합니다.
 
@@ -2489,13 +2489,13 @@ Show( grant );
 
 #### Has Auth Response  Error
 
-**구문:** obj << Has Auth Response  Error
+**구문:** obj &lt;&lt; Has Auth Response Error
 
 **JMP추가된 버전:** 18
 
 #### Has Authentication Response  Error
 
-**구문:** oauth2 << Has Authentication Response Error()
+**구문:** oauth2 &lt;&lt; Has Authentication Response Error()
 
 **설명:** OAuth2 인증 응답 오류가 있는지 확인합니다.
 
@@ -2514,7 +2514,7 @@ If( oauth2 << Has Authentication Response Error(),
 
 #### Is Expired
 
-**구문:** oauth2 << Is Expired()
+**구문:** oauth2 &lt;&lt; Is Expired()
 
 **설명:** 현재 OAuth2 액세스 토큰이 만료되었는지 여부를 반환합니다.
 
@@ -2560,7 +2560,7 @@ expired = oauth2 << Is Expired();
 
 #### Login Hint
 
-**구문:** oauth2 << Login Hint(hint)
+**구문:** oauth2 &lt;&lt; Login Hint(hint)
 
 **설명:** login_hint 값을 설정합니다. login_hint는 최종 사용자가 로그인하는 데 사용할 수 있는 로그인 식별자와 관련된 "힌트"로, 권한 부여 서버에 대한 인증 요청의 선택적 파라미터입니다(필요한 경우).
 
@@ -2577,7 +2577,7 @@ oauth2 << Login Hint( "jmp_user@jmp.com" );
 
 #### Password
 
-**구문:** oauth2 << Password(...)
+**구문:** oauth2 &lt;&lt; Password(...)
 
 **설명:** 암호 승인 유형의 OAuth2 암호를 설정합니다.
 
@@ -2591,7 +2591,7 @@ Names Default To Here( 1 );
 
 #### Redirect URL
 
-**구문:** oauth2 << Redirect URL(...)
+**구문:** oauth2 &lt;&lt; Redirect URL(...)
 
 **설명:** 웹 서비스 생성 시 사용된 OAuth2 리디렉션 URL을 설정합니다.
 
@@ -2609,7 +2609,7 @@ oauth2 << Redirect URL( redirect_url );
 
 #### Scope
 
-**구문:** oauth2 << Scope(...)
+**구문:** oauth2 &lt;&lt; Scope(...)
 
 **설명:** 계정에 대한 응용 프로그램의 액세스를 제한하는 수단인 OAuth2 범위를 설정합니다.
 
@@ -2634,7 +2634,7 @@ oauth2 << Authorization Fields( auth_fields );
 
 #### Set Window Title
 
-**구문:** oauth2 << Set Window Title(title)
+**구문:** oauth2 &lt;&lt; Set Window Title(title)
 
 **설명:** OAuth2 창 제목을 설정합니다.
 
@@ -2651,7 +2651,7 @@ oauth2 << Set Window Title( "Authorization Window" );
 
 #### Token Fields
 
-**구문:** obj << Token Fields
+**구문:** obj &lt;&lt; Token Fields
 
 **설명:** OAuth2 토큰 URL의 쿼리 문자열에 사용되는 키/값 쌍의 연관 배열입니다.
 
@@ -2676,7 +2676,7 @@ oauth2 << Token Fields( token_fields );
 
 #### Token URL
 
-**구문:** oauth2 << Token URL(...)
+**구문:** oauth2 &lt;&lt; Token URL(...)
 
 **설명:** OAuth2 토큰 URL을 설정합니다.
 
@@ -2694,7 +2694,7 @@ oauth2 << Token URL( token_url );
 
 #### Use Default Window Title
 
-**구문:** oauth2 << Use Default Window Title(1 | 0)
+**구문:** oauth2 &lt;&lt; Use Default Window Title(1 | 0)
 
 **설명:** OAuth2 창 제목을 가져옵니다.
 
@@ -2712,7 +2712,7 @@ title = oauth2 << Get Window Title;
 
 #### Username
 
-**구문:** oauth2 << Username(...)
+**구문:** oauth2 &lt;&lt; Username(...)
 
 **설명:** 암호 승인 유형의 OAuth2 사용자 이름을 설정합니다.
 

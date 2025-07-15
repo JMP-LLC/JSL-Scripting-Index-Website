@@ -6,7 +6,7 @@
 
 ### Add Reports To Folder
 
-**構文:** jmpliveresultlist = folder << Add Reports To Folder(JMPLiveContent, <Use Existing Data({{dt_or_name, id | relative_path | JMP Live Data}})>)
+**構文:** jmpliveresultlist = folder &lt;&lt; Add Reports To Folder(JMPLiveContent, &lt;Use Existing Data({{dt_or_name, id | relative_path | JMP Live Data}})&gt;)
 
 **説明:** Add Reports To Folderメッセージは廃止されました。代わりにPublishを使用してください。
 
@@ -14,7 +14,7 @@
 
 ### Create Folder
 
-**構文:** liveresult = folder << Create Folder(Title("Title"), <Description("Description")>, <If Exists("use" | "fail" | "default")>)
+**構文:** liveresult = folder &lt;&lt; Create Folder(Title("Title"), &lt;Description("Description")&gt;, &lt;If Exists("use" | "fail" | "default")&gt;)
 
 **説明:** JMP Live上にこのフォルダのサブフォルダを作成する。戻されるJMP Live結果を使って、JMP Liveフォルダオブジェクトを取得することができる。Titleは、必須のパラメータ。Descriptionはオプション。If Existsは、指定したフォルダがすでに存在する場合にどうするかをJMP Liveに指示する。"use"なら、ただ既存のフォルダを戻し、"fail"ならエラーをスローし、"default"なら、新しいフォルダを作成して"(2)"や"(3)"などを追加した一意の名前をつける。
 
@@ -38,7 +38,7 @@ Write( "New folder path: ", newFolder << Get Path );
 
 ### Get Children
 
-**構文:** jmpliveresultlist = folder << Get Children(<PAGESIZE(10)>)
+**構文:** jmpliveresultlist = folder &lt;&lt; Get Children(&lt;PAGESIZE(10)&gt;)
 
 **説明:** フォルダに含まれている子投稿をJMP Live結果リストとして取得する。オプションのpagesize引数を使うと、戻される投稿の数を制御できる。
 
@@ -94,7 +94,7 @@ For( i = 1, i <= children << Get Number Of Items, i += 1,
 
 ### Get Data
 
-**構文:** result = jmplivefolder << Get Data(id | relative_path)
+**構文:** result = jmplivefolder &lt;&lt; Get Data(id | relative_path)
 
 **説明:** フォルダからデータ投稿をJMP Live結果オブジェクトとして取得する。これを使ってその投稿のJMP Liveデータオブジェクトを取得することができる。
 
@@ -130,7 +130,7 @@ Write( "\!n\!nTitle: ", post << Get Title );
 
 ### Get Description
 
-**構文:** string = jmplivepost << Get Description()
+**構文:** string = jmplivepost &lt;&lt; Get Description()
 
 **説明:** JMP Liveレポート、JMP Liveフォルダ、またはJMP Live投稿の説明を文字列として取得する。
 
@@ -172,7 +172,7 @@ Write( "\!nDescription: ", report << Get Description );
 
 ### Get Folder
 
-**構文:** result = jmplivefolder << Get Folder(id | relative_path)
+**構文:** result = jmplivefolder &lt;&lt; Get Folder(id | relative_path)
 
 **説明:** フォルダの子フォルダをJMP Live結果オブジェクトとして取得する。これを使ってその子フォルダのJMP Liveフォルダオブジェクトを取得することができる。
 
@@ -209,7 +209,7 @@ Write( "\!n\!nTitle: ", folder << Get Title );
 
 ### Get ID
 
-**構文:** string = jmplivepost << Get ID()
+**構文:** string = jmplivepost &lt;&lt; Get ID()
 
 **説明:** JMP Liveレポート、JMP Liveフォルダ、またはJMP Live投稿のIDを文字列として取得する。
 
@@ -252,7 +252,7 @@ Write( "\!n\!nID: ", report << Get ID );
 
 ### Get Number Of Items
 
-**構文:** value = jmplivefolder << Get Number Of Items()
+**構文:** value = jmplivefolder &lt;&lt; Get Number Of Items()
 
 **説明:** フォルダ内のアイテムの数を取得する。
 
@@ -304,7 +304,7 @@ Write( "\!n\!nChild Count: ", count );
 
 ### Get Path
 
-**構文:** string = jmplivepost << Get Path()
+**構文:** string = jmplivepost &lt;&lt; Get Path()
 
 **説明:** このJMP Liveレポート、フォルダ、または投稿のパスを文字列として取得する。
 
@@ -347,7 +347,7 @@ Write( "\!n\!nPath: ", report << Get Path );
 
 ### Get Post
 
-**構文:** result = jmplivefolder << Get Post(id | relative_path)
+**構文:** result = jmplivefolder &lt;&lt; Get Post(id | relative_path)
 
 **説明:** フォルダから投稿をJMP Live結果オブジェクトとして取得する。これを使ってその投稿のJMP Live投稿オブジェクトを取得することができる。
 
@@ -382,7 +382,7 @@ Write( "\!n\!nTitle: ", post << Get Title );
 
 ### Get Report
 
-**構文:** result = jmplivepost << Get Report(id | relative_path)
+**構文:** result = jmplivepost &lt;&lt; Get Report(id | relative_path)
 
 **説明:** フォルダからレポート投稿をJMP Live結果オブジェクトとして取得する。これを使ってそのレポートのJMP Liveレポートオブジェクトを取得することができる。
 
@@ -418,7 +418,7 @@ Write( "\!n\!nTitle: ", post << Get Title );
 
 ### Get Title
 
-**構文:** string = jmplivepost << Get Title()
+**構文:** string = jmplivepost &lt;&lt; Get Title()
 
 **説明:** JMP Liveレポート、JMP Liveフォルダ、またはJMP Live投稿のタイトルを文字列として取得する。
 
@@ -461,7 +461,7 @@ Write( "\!nTitle: ", report << Get Title );
 
 ### Get Type
 
-**構文:** string = jmplivepost << Get Type()
+**構文:** string = jmplivepost &lt;&lt; Get Type()
 
 **説明:** 特定の種類の投稿（フォルダ、データ、レポート）を取得する。
 
@@ -505,7 +505,7 @@ Write( "\!nType: ", report << Get Type );
 
 ### Get URL
 
-**構文:** string = jmplivepost << Get URL()
+**構文:** string = jmplivepost &lt;&lt; Get URL()
 
 **説明:** JMP Liveレポート、JMP Liveフォルダ、またはJMP Live投稿のURLを文字列として取得する。
 
@@ -548,7 +548,7 @@ Write( "\!nURL: ", report << Get URL );
 
 ### Publish
 
-**構文:** jmpliveresultlist = folder << Publish(JMPLiveContent, <Use Existing Data({{dt_or_name, id | relative_path | JMP Live Data}})>)
+**構文:** jmpliveresultlist = folder &lt;&lt; Publish(JMPLiveContent, &lt;Use Existing Data({{dt_or_name, id | relative_path | JMP Live Data}})&gt;)
 
 **説明:** JMP Liveフォルダにレポートまたは単独のデータを発行する。JMP Live結果リスト（JMP Live Result List）オブジェクトを戻す。Add Reports To Folderメッセージに代わるもの。1つのPublishコマンドにレポートと単独のデータを混在させることはできない。レポートがすでにJMP Liveにあるデータを使用する場合は、オプションのUse Existing Dataパラメータを使用してそのデータを指定する。単独のデータを発行する場合、Use Existing Dataパラメータは無効。
 
@@ -604,7 +604,7 @@ For( i = 1, i <= postlist << Get Number Of Items, i += 1,
 
 ### Replace
 
-**構文:** liveresult = jmplivefolder << Replace(Report(id | relative_path | JMP Live Report), JMPLiveContent, <Use Existing Data({{dt_or_name, data_id | data_path | JMP Live Data}})>, <Update Existing Data({{dt_or_name, data_id | data_path | JMP Live Data}})>, <Publish New Data({dt_or_name})> )
+**構文:** liveresult = jmplivefolder &lt;&lt; Replace(Report(id | relative_path | JMP Live Report), JMPLiveContent, &lt;Use Existing Data({{dt_or_name, data_id | data_path | JMP Live Data}})&gt;, &lt;Update Existing Data({{dt_or_name, data_id | data_path | JMP Live Data}})&gt;, &lt;Publish New Data({dt_or_name})&gt; )
 
 **説明:** フォルダ内にある既存のJMP Liveレポートを別のレポートで置き換える。レポートと共に提供されるデータを管理する方法を指定するためには、データオプションが必要。"Use Existing Data"は、指定されたデータに対してJMP Liveの既存のデータを使用するようサーバーに指示する。"Update Existing Data"は、サーバー上のデータをコマンドで指定されたデータに置き換えるようサーバーに指示する。"Publish New Data"は、新しいデータテーブルをサーバーに発行し、置き換えられるレポートでそのデータを使用するように指示する。"Publish New Data"はすべてのデータテーブルに対するデフォルトのデータオプションとなる。データオプションは任意の組み合わせを指定することが可能。JMP Live結果リストオブジェクトが戻される。
 
@@ -638,7 +638,7 @@ Write( "\!n\!nUpdated report and data: ", resultList );
 
 ### Set Description
 
-**構文:** success = jmplivepost << Set Description("string value")
+**構文:** success = jmplivepost &lt;&lt; Set Description("string value")
 
 **説明:** JMP Liveレポート、JMP Liveフォルダ、またはJMP Live投稿の説明の文字列を設定する。成功か失敗かを示す真(true）または偽(false)を戻す。
 
@@ -688,7 +688,7 @@ Write( "\!nDecription: ", report << Get Description );
 
 ### Set Title
 
-**構文:** success = jmplivepost << Set Title("New Title")
+**構文:** success = jmplivepost &lt;&lt; Set Title("New Title")
 
 **説明:** JMP Liveレポート、JMP Liveフォルダ、またはJMP Live投稿のタイトルを設定する。成功か失敗かを示す真(true）または偽(false)を戻す。
 
@@ -740,7 +740,7 @@ Write( "\!nTitle: ", report << Get Title );
 
 ### Update Data
 
-**構文:** result = jmplivefolder << Update Data(Data(id | relative_path | JMP Live Data), dataTable | path | JMPLiveContent)
+**構文:** result = jmplivefolder &lt;&lt; Update Data(Data(id | relative_path | JMP Live Data), dataTable | path | JMPLiveContent)
 
 **説明:** フォルダ内のデータ投稿に使うデータテーブルまたは地図を更新する。Dataパラメータは、更新するJMP Live上のデータ。2番目のパラメータは更新に使用するコンテンツで、データテーブルオブジェクト、データテーブルへのパス、データテーブルまたは地図から作成したJMP Liveコンテンツオブジェクトを指定できる。
 

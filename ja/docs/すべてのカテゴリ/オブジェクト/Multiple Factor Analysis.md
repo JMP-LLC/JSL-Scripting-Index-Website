@@ -6,7 +6,7 @@
 
 ### Action
 
-**構文:** obj << Action
+**構文:** obj &lt;&lt; Action
 
 **説明:** 評価する式を挿入するための、プラットフォーム内の汎用トラップドア。プラットフォームに一時的にディスプレイボックスおよびデータテーブルのコンテキストを設定する。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**構文:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**構文:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **説明:** 作成されたプリセットをオブジェクトに適用する。保存された設定に合わせてオプションとカスタマイズが更新される。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**構文:** obj << Automatic Recalc( state=0|1 )
+**構文:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **説明:** データの除外や変更があった場合に分析を自動的にやり直す。Automatic Recalcオプションがオンになっている場合で、データの除外や変更が再計算の前に確実に適用されるようにするには、Wait(0)コマンドを使用すること。
 
@@ -106,7 +106,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**構文:** obj << Broadcast(message)
+**構文:** obj &lt;&lt; Broadcast(message)
 
 **説明:** メッセージをプラットフォームに一括適用する。個々のオブジェクトから戻される結果がデータテーブルである場合は、可能な限り連結する。その最終的な形式は、Table BoxのSave Combined Tableオプションの結果と同じになるか、またはソース列を使用したConcanateオプションの結果と同じになる。それ以外の場合、結果はリストの形で戻される。
 
@@ -126,7 +126,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**構文:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**構文:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **説明:** プラットフォームの変数を変更するための設定パネルを追加する。
 
@@ -144,7 +144,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**構文:** obj << Copy ByGroup Script
+**構文:** obj &lt;&lt; Copy ByGroup Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -184,7 +184,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**構文:** obj << Copy Script
+**構文:** obj &lt;&lt; Copy Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -218,7 +218,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**構文:** obj << Data Table Window
+**構文:** obj &lt;&lt; Data Table Window
 
 **説明:** この分析に使用したデータテーブルのウィンドウを手前に表示する。
 
@@ -252,7 +252,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**構文:** obj << Get By Levels
+**構文:** obj &lt;&lt; Get By Levels
 
 **説明:** By列が指定されている場合、列名をキー、データ値を値とした連想配列を戻す。
 
@@ -269,7 +269,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**構文:** obj << Get ByGroup Script
+**構文:** obj &lt;&lt; Get ByGroup Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -310,7 +310,7 @@ Show( t );
 
 ### Get Container
 
-**構文:** obj << Get Container
+**構文:** obj &lt;&lt; Get Container
 
 **説明:** オブジェクトのコンテンツを含んだコンテナボックスの参照を戻す。
 
@@ -376,7 +376,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**構文:** obj << Get Data Table
+**構文:** obj &lt;&lt; Get Data Table
 
 **説明:** データテーブルへの参照を戻す。
 
@@ -411,7 +411,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**構文:** obj << Get Group Platform
+**構文:** obj &lt;&lt; Get Group Platform
 
 **説明:** 該当のプラットフォームがグループに属している場合に、Group Platformオブジェクトを戻す。それ以外の場合はEmpty()を戻す。
 
@@ -428,7 +428,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**構文:** obj << Get Script
+**構文:** obj &lt;&lt; Get Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -463,7 +463,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**構文:** obj << Get Script With Data Table
+**構文:** obj &lt;&lt; Get Script With Data Table
 
 **説明:** この分析を再現するスクリプト(JSL)をデータテーブルへの参照も含めて生成し、それを式として戻す。
 
@@ -498,7 +498,7 @@ Show( t );
 
 ### Get Timing
 
-**構文:** obj << Get Timing
+**構文:** obj &lt;&lt; Get Timing
 
 **説明:** プラットフォームの起動にかかった時間を取得する。
 
@@ -533,7 +533,7 @@ Show( t );
 
 ### Get Web Support
 
-**構文:** obj << Get Web Support
+**構文:** obj &lt;&lt; Get Web Support
 
 **説明:** ディスプレイオブジェクトにおけるインタラクティブHTMLサポートのレベルを数値で戻す。1は、一部または全部の要素がサポートされていることを示し、0は、サポートされないことを示す。
 
@@ -549,7 +549,7 @@ Show( s );
 
 ### Get Where Expr
 
-**構文:** obj << Get Where Expr
+**構文:** obj &lt;&lt; Get Where Expr
 
 **説明:** プラットフォームがBy()またはWhere()を使って起動された場合に、データをサブセットするためのWhere式を戻す。By()やWhere()が使われていない場合はEmpty()を戻す。
 
@@ -586,7 +586,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**構文:** obj << Local Data Filter
+**構文:** obj &lt;&lt; Local Data Filter
 
 **説明:** このプラットフォームに対してのみ有効なフィルタで、データを特定のグループまたは範囲にフィルタリングする。
 
@@ -642,7 +642,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**構文:** obj << Paste Local Data Filter
+**構文:** obj &lt;&lt; Paste Local Data Filter
 
 **説明:** クリップボードにあるローカルデータフィルタを現在のレポートに適用する。
 
@@ -663,7 +663,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**構文:** obj << Redo Analysis
+**構文:** obj &lt;&lt; Redo Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -697,7 +697,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**構文:** obj << Redo ByGroup Analysis
+**構文:** obj &lt;&lt; Redo ByGroup Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -737,7 +737,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**構文:** obj << Relaunch Analysis
+**構文:** obj &lt;&lt; Relaunch Analysis
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -771,7 +771,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**構文:** obj << Relaunch ByGroup
+**構文:** obj &lt;&lt; Relaunch ByGroup
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -811,7 +811,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**構文:** obj << Remove Column Switcher
+**構文:** obj &lt;&lt; Remove Column Switcher
 
 **説明:** プラットフォームに最後に追加された列スイッチャーを削除する。
 
@@ -831,7 +831,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**構文:** obj << Remove Local Data Filter
+**構文:** obj &lt;&lt; Remove Local Data Filter
 
 **説明:** すでに作成されているローカルデータフィルタを削除し、プラットフォームはデータテーブル内のすべてのデータを使用した状態に戻る。
 
@@ -870,9 +870,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**構文:** obj << Report;
-
-Report( obj )
+**構文:** obj &lt;&lt; Report;Report( obj )
 
 **説明:** レポートオブジェクトへの参照を戻す。
 
@@ -908,7 +906,7 @@ Show( t );
 
 ### Report View
 
-**構文:** obj << Report View( "完全"|"要約" )
+**構文:** obj &lt;&lt; Report View( "完全"|"要約" )
 
 **説明:** レポートビューは、プラットフォームレポートの詳細を表示するかどうかを決定する。Fullはすべての詳細を表示し、Summaryはプラットフォームにより限定されたものだけを表示する。 動作をカスタマイズするため、各ディスプレイボックスは<<Set Summary Behaviorメッセージをサポートする。
 
@@ -942,7 +940,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**構文:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** 分析を再現するためのJSLスクリプトを作成し、データテーブルにテーブルプロパティとして保存する。スクリプトの名前を指定できる。Append Suffixオプションは、スクリプト名に数字の接尾辞を追加する。これにより、同名のスクリプトが存在していても区別できる。Promptオプションは、ユーザにスクリプト名の指定を促す。Replaceオプションは、同名の既存のスクリプトを置き換える。
 
@@ -982,7 +980,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**構文:** obj << Save ByGroup Script to Journal
+**構文:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -1022,7 +1020,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**構文:** obj << Save ByGroup Script to Script Window
+**構文:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -1062,7 +1060,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**構文:** obj << Save Script for All Objects
+**構文:** obj &lt;&lt; Save Script for All Objects
 
 **説明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -1096,7 +1094,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**構文:** obj << Save Script for All Objects To Data Table( <name> )
+**構文:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **説明:** すべてのレポートオブジェクトを再現するスクリプトを現在のデータテーブルに保存する。このオプションは、ウィンドウ内にレポートが複数ある場合に便利。作成されるスクリプトの名前は、引用符で囲んで指定しない限り、1つ目のプラットフォーム名となる。
 
@@ -1174,7 +1172,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**構文:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** この分析を再現するJSLスクリプトを生成し、データテーブルのテーブルプロパティとして保存する。
 
@@ -1208,7 +1206,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**構文:** obj << Save Script to Journal
+**構文:** obj &lt;&lt; Save Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -1242,7 +1240,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**構文:** obj << Save Script to Report
+**構文:** obj &lt;&lt; Save Script to Report
 
 **説明:** この分析を再現するJSLスクリプトを生成し、レポートウィンドウに表示する。分析手順の記録を結果と一緒に残せる。
 
@@ -1276,7 +1274,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**構文:** obj << Save Script to Script Window
+**構文:** obj &lt;&lt; Save Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -1375,7 +1373,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**構文:** obj << Sync to Data Table Changes
+**構文:** obj &lt;&lt; Sync to Data Table Changes
 
 **説明:** 除外やデータの変更が行われた場合に同期する。
 
@@ -1392,7 +1390,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**構文:** obj << Title( "new title" )
+**構文:** obj &lt;&lt; Title( "new title" )
 
 **説明:** プラットフォームのタイトルを設定する。
 
@@ -1426,7 +1424,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**構文:** obj << Top Report
+**構文:** obj &lt;&lt; Top Report
 
 **説明:** レポート内のルートノードへの参照を戻す。
 
@@ -1462,7 +1460,7 @@ Show( t );
 
 ### Transform Column
 
-**構文:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**構文:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **説明:** オブジェクトのローカルコンテキスト(通常はプラットフォーム)内に変換列を作成する。この変換列は、それを作成したプラットフォームの中のみで使用可能。
 
@@ -1481,7 +1479,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**構文:** obj << View Web XML
+**構文:** obj &lt;&lt; View Web XML
 
 **説明:** インタラクティブHTMLレポートの作成に使うXMLコードを戻す。
 
@@ -1517,7 +1515,7 @@ New Window( "Bivariate Equation",
 
 ### By
 
-**構文:** obj = Multiple Factor Analysis(...<By( column(s) )>...)
+**構文:** obj = Multiple Factor Analysis(...&lt;By( column(s) )&gt;...)
 
 **説明:** 指定された列の各水準に対して、個別に分析を実行する。
 
@@ -1558,7 +1556,7 @@ dt << Multiple Factor Analysis(
 
 ### Freq
 
-**構文:** obj = Multiple Factor Analysis(...<Freq( column )>...)
+**構文:** obj = Multiple Factor Analysis(...&lt;Freq( column )&gt;...)
 
 **説明:** 分析の際に各行の度数として用いる値の列を指定する。
 
@@ -1595,7 +1593,7 @@ dt << Multiple Factor Analysis(
 
 ### MFA Blocks
 
-**構文:** obj = Multiple Factor Analysis(...<MFA Blocks( column )>...)
+**構文:** obj = Multiple Factor Analysis(...&lt;MFA Blocks( column )&gt;...)
 
 **説明:** 多重因子分析において、1つのグループとして扱う変数群を指定する。
 
@@ -1618,7 +1616,7 @@ dt << Multiple Factor Analysis(
 
 ### Product ID
 
-**構文:** obj = Multiple Factor Analysis(...<Product ID( column )>...)
+**構文:** obj = Multiple Factor Analysis(...&lt;Product ID( column )&gt;...)
 
 **説明:** 分析対象とするアイテムまたは商品の列を指定する。
 
@@ -1641,7 +1639,7 @@ dt << Multiple Factor Analysis(
 
 ### Supplementary
 
-**構文:** obj = Multiple Factor Analysis(...<Supplementary( column )>...)
+**構文:** obj = Multiple Factor Analysis(...&lt;Supplementary( column )&gt;...)
 
 **説明:** 追加変数を指定する。追加変数は、モデルの推定には使用されないため、追加変数を含めても推定結果には影響しない。追加変数は、データの解釈やその後の分析に役立つ。
 
@@ -1665,7 +1663,7 @@ dt << Multiple Factor Analysis(
 
 ### Weight
 
-**構文:** obj = Multiple Factor Analysis(...<Weight( column )>...)
+**構文:** obj = Multiple Factor Analysis(...&lt;Weight( column )&gt;...)
 
 **説明:** 分析の際に各行の重みとして用いる値の列を指定する。
 
@@ -1702,7 +1700,7 @@ dt << Multiple Factor Analysis(
 
 ### Z
 
-**構文:** obj = Multiple Factor Analysis(...<Z( column )>...)
+**構文:** obj = Multiple Factor Analysis(...&lt;Z( column )&gt;...)
 
 **説明:** 追加変数を指定する。追加変数は、モデルの推定には使用されないため、追加変数を含めても推定結果には影響しない。追加変数は、データの解釈やその後の分析に役立つ。
 
@@ -1765,7 +1763,7 @@ dt << Multiple Factor Analysis(
 
 ### Arrow Lines
 
-**構文:** obj << Arrow Lines( state=0|1 )
+**構文:** obj &lt;&lt; Arrow Lines( state=0|1 )
 
 **説明:** グラフ上における矢印線の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1788,7 +1786,7 @@ obj << Arrow Lines( 0 );
 
 ### Biplot
 
-**構文:** obj << Biplot( state=0|1 )
+**構文:** obj &lt;&lt; Biplot( state=0|1 )
 
 **説明:** 指定された個数の成分に関して、スコアプロットと負荷量プロットを重ね合わせたプロットを表示する。
 
@@ -1811,7 +1809,7 @@ obj << Biplot( 1 );
 
 ### Biplot Select Component
 
-**構文:** obj<<Biplot Select Component( 1, 3 )
+**構文:** obj&lt;&lt;Biplot Select Component( 1, 3 )
 
 **説明:** バイプロットの軸に用いる成分を指定する。
 
@@ -1834,7 +1832,7 @@ obj << Biplot Select Component( 1, 3 );
 
 ### Block Partial Contributions
 
-**構文:** obj << Block Partial Contributions( state=0|1 )
+**構文:** obj &lt;&lt; Block Partial Contributions( state=0|1 )
 
 **説明:** ブロックの偏寄与率の表示/非表示を切り替える。これは、ブロックに含まれている変数が該当の次元にどれぐらい寄与しているか、ブロック内で合計した寄与率である。
 
@@ -1857,7 +1855,7 @@ obj << Block Partial Contributions( 1 );
 
 ### Block Partial Inertias
 
-**構文:** obj << Block Partial Inertias( state=0|1 )
+**構文:** obj &lt;&lt; Block Partial Inertias( state=0|1 )
 
 **説明:** 尺度を変更したブロックの偏寄与率の表示/非表示を切り替える。「ブロックの偏寄与率」を合計が固有値になるように変更したものである。
 
@@ -1880,7 +1878,7 @@ obj << Block Partial Inertias( 1 );
 
 ### Block Partial and Consensus Correlations
 
-**構文:** obj << Block Partial and Consensus Correlations( state=0|1 )
+**構文:** obj &lt;&lt; Block Partial and Consensus Correlations( state=0|1 )
 
 **説明:** ブロック偏スコアと全体スコアとの相関係数を要素とする行列の表示/非表示を切り替える。
 
@@ -1903,7 +1901,7 @@ obj << Block Partial and Consensus Correlations( 1 );
 
 ### Block Squared Cosines
 
-**構文:** obj << Block Squared Cosines( state=0|1 )
+**構文:** obj &lt;&lt; Block Squared Cosines( state=0|1 )
 
 **説明:** 該当のブロックが、各次元でどれぐらい表現されるかを示す指標の表示/非表示を切り替える。
 
@@ -1926,7 +1924,7 @@ obj << Block Squared Cosines( 1 );
 
 ### Block Weights
 
-**構文:** obj << Block Weights( state=0|1 )
+**構文:** obj &lt;&lt; Block Weights( state=0|1 )
 
 **説明:** ブロックに対する重みの表示/非表示を切り替える。この重みは、該当ブロックの第1特異値の逆数である。
 
@@ -1949,7 +1947,7 @@ obj << Block Weights( 1 );
 
 ### Consensus Map
 
-**構文:** obj << Consensus Map( state=0|1 )
+**構文:** obj &lt;&lt; Consensus Map( state=0|1 )
 
 **説明:** コンセンサスマップの表示/非表示を切り替える。コンセンサスマップには、各ブロックのスコアが、重心とともにプロットされる。 デフォルトではオン。
 
@@ -1972,7 +1970,7 @@ obj << Consensus Map( 0 );
 
 ### Consensus Map Select Component
 
-**構文:** obj<<Consensus Map Select Component( 1, 3 )
+**構文:** obj&lt;&lt;Consensus Map Select Component( 1, 3 )
 
 **説明:** コンセンサスマップの軸に用いる成分を選択する。
 
@@ -1995,7 +1993,7 @@ obj << Consensus Map Select Component( 1, 3 );
 
 ### Eigenvalues
 
-**構文:** obj << Eigenvalues( state=0|1 )
+**構文:** obj &lt;&lt; Eigenvalues( state=0|1 )
 
 **説明:** 固有値、寄与率、累積寄与率の表示/非表示を切り替える。なお、これらは、固有値が大きい順に表示される。
 
@@ -2018,7 +2016,7 @@ obj << Eigenvalues( 1 );
 
 ### Eigenvectors
 
-**構文:** obj << Eigenvectors( state=0|1 )
+**構文:** obj &lt;&lt; Eigenvectors( state=0|1 )
 
 **説明:** 固有ベクトルに関するレポートの表示/非表示を切り替える。
 
@@ -2041,7 +2039,7 @@ obj << Eigenvectors( 1 );
 
 ### Highlight Product
 
-**構文:** obj<<Partial Axes Plot Select Component( 1, 3 )
+**構文:** obj&lt;&lt;Partial Axes Plot Select Component( 1, 3 )
 
 **説明:** 指定された慣性の値に基づき、データ点の一部分だけを表示する。
 
@@ -2065,7 +2063,7 @@ obj << Highlight Product( "Small Inertia", 4 );
 
 ### Lg Coefficients
 
-**構文:** obj << Lg Coefficients( state=0|1 )
+**構文:** obj &lt;&lt; Lg Coefficients( state=0|1 )
 
 **説明:** ブロック間の類似性を示す係数を要素とする行列の表示/非表示を切り替える。Lg係数を標準化したものが、RV相関になる。
 
@@ -2088,7 +2086,7 @@ obj << Lg Coefficients( 1 );
 
 ### Partial Axes Plot
 
-**構文:** obj << Partial Axes Plot( state=0|1 )
+**構文:** obj &lt;&lt; Partial Axes Plot( state=0|1 )
 
 **説明:** 部分主成分軸プロットの表示/非表示を切り替える。部分主成分軸プロットは、各ブロックでの主成分と、全体での主成分との関係を図示する。
 
@@ -2111,7 +2109,7 @@ obj << Partial Axes Plot( 1 );
 
 ### Partial Axes Plot Select Component
 
-**構文:** obj<<Partial Axes Plot Select Component( 1, 3 )
+**構文:** obj&lt;&lt;Partial Axes Plot Select Component( 1, 3 )
 
 **説明:** 部分主成分軸プロットの軸に用いる成分を指定する。
 
@@ -2135,7 +2133,7 @@ obj << Partial Axes Plot Select component( 1, 3 );
 
 ### RV Correlations
 
-**構文:** obj << RV Correlations( state=0|1 )
+**構文:** obj &lt;&lt; RV Correlations( state=0|1 )
 
 **説明:** ブロック間における相関係数の2乗を要素とする行列の表示/非表示を切り替える。RV係数は、0～1の値をとる。
 
@@ -2158,7 +2156,7 @@ obj << RV Correlations( 1 );
 
 ### Save Block Partial Scores
 
-**構文:** obj << Save Block Partial Scores
+**構文:** obj &lt;&lt; Save Block Partial Scores
 
 **説明:** データテーブルの新しい列に、ブロック偏スコアを保存する。
 
@@ -2181,7 +2179,7 @@ obj << Save Block Partial Scores();
 
 ### Save Individual Partial Contributions
 
-**構文:** obj << Save Individual Partial Contributions
+**構文:** obj &lt;&lt; Save Individual Partial Contributions
 
 **説明:** データ行の偏寄与率を、データテーブルの新しい列に保存する。
 
@@ -2204,7 +2202,7 @@ obj << Save Individual Partial Contributions();
 
 ### Save Individual Scores
 
-**構文:** obj << Save Individual Scores
+**構文:** obj &lt;&lt; Save Individual Scores
 
 **説明:** 指定の数の主成分を、データテーブルの新しい列に保存する。
 
@@ -2227,7 +2225,7 @@ obj << Save Individual Scores();
 
 ### Save Individual Squared Cosines
 
-**構文:** obj << Save Individual Squared Cosines
+**構文:** obj &lt;&lt; Save Individual Squared Cosines
 
 **説明:** データ行の余弦2乗を、データテーブルの新しい列に保存する。
 
@@ -2250,7 +2248,7 @@ obj << Save Individual Squared Cosines();
 
 ### Save Partial Axes Coordinates
 
-**構文:** obj << Save Partial Axes Coordinates
+**構文:** obj &lt;&lt; Save Partial Axes Coordinates
 
 **説明:** データテーブルの新しい列に、部分主成分軸の座標を保存する。
 
@@ -2273,7 +2271,7 @@ obj << Save Partial Axes Coordinates();
 
 ### Show Labels
 
-**構文:** obj << Show Labels( state=0|1 )
+**構文:** obj &lt;&lt; Show Labels( state=0|1 )
 
 **説明:** グラフにおける点に対するラベルの表示/非表示を切り替える。
 
@@ -2296,7 +2294,7 @@ obj << Show Labels( 1 );
 
 ### Summary Plot Select Component
 
-**構文:** obj<<Summary Plot Select Component( 1, 3 )
+**構文:** obj&lt;&lt;Summary Plot Select Component( 1, 3 )
 
 **説明:** 要約プロットの軸に用いる成分を選択する。
 
@@ -2319,7 +2317,7 @@ obj << Summary Plot Select Component( 1, 3 );
 
 ### Summary Plots
 
-**構文:** obj << Summary Plots( state=0|1 )
+**構文:** obj &lt;&lt; Summary Plots( state=0|1 )
 
 **説明:** 固有値のプロット、スコアプロット、負荷量プロットを含んだアウトラインの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2342,7 +2340,7 @@ obj << Summary Plots( 0 );
 
 ### Variable Loadings
 
-**構文:** obj << Variable Loadings( state=0|1 )
+**構文:** obj &lt;&lt; Variable Loadings( state=0|1 )
 
 **説明:** 変数の負荷量を各次元ごとに表示した表の表示/非表示を切り替える。
 
@@ -2365,7 +2363,7 @@ obj << Variable Loadings( 1 );
 
 ### Variable Partial Contributions
 
-**構文:** obj << Variable Partial Contributions( state=0|1 )
+**構文:** obj &lt;&lt; Variable Partial Contributions( state=0|1 )
 
 **説明:** 「変数の偏寄与率」に関する表と、最初の3主成分の偏寄与率を示すプロットの表示/非表示を切り替える。
 
@@ -2388,7 +2386,7 @@ obj << Variable Partial Contributions( 1 );
 
 ### Variable Squared Cosines
 
-**構文:** obj << Variable Squared Cosines( state=0|1 )
+**構文:** obj &lt;&lt; Variable Squared Cosines( state=0|1 )
 
 **説明:** 「変数の余弦2乗」に関する表の表示/非表示を切り替える。
 

@@ -6,7 +6,7 @@
 
 ### Close
 
-**Syntax:** workflow << Close()
+**Syntax:** workflow &lt;&lt; Close()
 
 **Beschreibung:** Workflow schließen.
 
@@ -22,7 +22,7 @@ wf << Close();
 
 ### Execute Next
 
-**Syntax:** workflow << Execute Next()
+**Syntax:** workflow &lt;&lt; Execute Next()
 
 **Beschreibung:** Den aktuellen Schritt im Workflow ausführen und den Ausführungszeiger zum nächsten Schritt bewegen.
 
@@ -38,7 +38,7 @@ wf << Execute Next();
 
 ### Get Execution Info
 
-**Syntax:** workflow << Get Execution Info(<index>)
+**Syntax:** workflow &lt;&lt; Get Execution Info(&lt;index&gt;)
 
 **Beschreibung:** Struktur mit Informationen über die ausgeführten Schritte des Workflow zurückgeben.
 
@@ -55,7 +55,7 @@ wf << Get Execution Info( 1 );
 
 ### Get Step Count
 
-**Syntax:** workflow << Get Step Count
+**Syntax:** workflow &lt;&lt; Get Step Count
 
 **Beschreibung:** Anzahl der Schritte im Workflow zurückgeben.
 
@@ -71,7 +71,7 @@ wf << Get Step Count;
 
 ### Get Step JSL
 
-**Syntax:** workflow << Get Step JSL(<index>)
+**Syntax:** workflow &lt;&lt; Get Step JSL(&lt;index&gt;)
 
 **Beschreibung:** JSL-Code des vorgegebenen Schritts im Workflow zurückgeben.
 
@@ -87,7 +87,7 @@ wf << Get Step JSL( 1 );
 
 ### Get Step Name
 
-**Syntax:** workflow << Get Step Name(<index>)
+**Syntax:** workflow &lt;&lt; Get Step Name(&lt;index&gt;)
 
 **Beschreibung:** Name des vorgegebenen Schritts im Workflow zurückgeben.
 
@@ -103,7 +103,7 @@ wf << Get Step Name( 1 );
 
 ### Log Executed Steps
 
-**Syntax:** obj << Log Executed Steps( state=0|1 )
+**Syntax:** obj &lt;&lt; Log Executed Steps( state=0|1 )
 
 **Beschreibung:** Das JSL-Skript für jeden ausgeführten Schritt ins Log schreiben.
 
@@ -120,7 +120,7 @@ wf << Resume();
 
 ### Presentation Mode
 
-**Syntax:** obj << Presentation Mode( state=0|1 )
+**Syntax:** obj &lt;&lt; Presentation Mode( state=0|1 )
 
 **Beschreibung:** Im Präsentationsmodus werden Bearbeitungsoptionen und unnötige Supportschnittstellen entfernt.
 
@@ -136,7 +136,7 @@ wf << Presentation Mode( 1 );
 
 ### Resume
 
-**Syntax:** workflow << Resume()
+**Syntax:** workflow &lt;&lt; Resume()
 
 **Beschreibung:** Ausführung des Workflow ausführen oder fortsetzen.
 
@@ -152,7 +152,7 @@ wf << Resume();
 
 ### Set Execution Callback
 
-**Syntax:** workflow << Set Execution Callback(<callback>)
+**Syntax:** workflow &lt;&lt; Set Execution Callback(&lt;callback&gt;)
 
 **Beschreibung:** Einen Rückruf für den Workflow festlegen, der bei jeder abgeschlossenen Ausführung eines Schritts eine Benachrichtigung mit den zugehörigen Informationen erhält.
 
@@ -170,7 +170,7 @@ wf << Resume;
 
 ### Set Next Step To Execute
 
-**Syntax:** workflow << Set Next Step To Execute(<index>)
+**Syntax:** workflow &lt;&lt; Set Next Step To Execute(&lt;index&gt;)
 
 **Beschreibung:** Ausführungscursor zu einem Schritt im Workflow bewegen.
 
@@ -186,7 +186,7 @@ wf << Set Next Step To Execute( 2 );
 
 ### Start Over
 
-**Syntax:** workflow << Start Over()
+**Syntax:** workflow &lt;&lt; Start Over()
 
 **Beschreibung:** Workflow auf den Anfang zurücksetzen, alle Tabellen und andere vom Workflow geöffnete Fenster schließen.
 

@@ -6,7 +6,7 @@
 
 ### Action
 
-**構文:** obj << Action
+**構文:** obj &lt;&lt; Action
 
 **説明:** 評価する式を挿入するための、プラットフォーム内の汎用トラップドア。プラットフォームに一時的にディスプレイボックスおよびデータテーブルのコンテキストを設定する。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**構文:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**構文:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **説明:** 作成されたプリセットをオブジェクトに適用する。保存された設定に合わせてオプションとカスタマイズが更新される。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Column Switcher
 
-**構文:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**構文:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **説明:** プラットフォームの変数を変更するための設定パネルを追加する。
 
@@ -89,7 +89,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy Script
 
-**構文:** obj << Copy Script
+**構文:** obj &lt;&lt; Copy Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -104,7 +104,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**構文:** obj << Data Table Window
+**構文:** obj &lt;&lt; Data Table Window
 
 **説明:** この分析に使用したデータテーブルのウィンドウを手前に表示する。
 
@@ -119,7 +119,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**構文:** obj << Get By Levels
+**構文:** obj &lt;&lt; Get By Levels
 
 **説明:** By列が指定されている場合、列名をキー、データ値を値とした連想配列を戻す。
 
@@ -136,7 +136,7 @@ biv << Get By Levels;
 
 ### Get Container
 
-**構文:** obj << Get Container
+**構文:** obj &lt;&lt; Get Container
 
 **説明:** オブジェクトのコンテンツを含んだコンテナボックスの参照を戻す。
 
@@ -183,7 +183,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**構文:** obj << Get Data Table
+**構文:** obj &lt;&lt; Get Data Table
 
 **説明:** データテーブルへの参照を戻す。
 
@@ -199,7 +199,7 @@ Show( N Rows( t ) );
 
 ### Get Script
 
-**構文:** obj << Get Script
+**構文:** obj &lt;&lt; Get Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -215,7 +215,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**構文:** obj << Get Script With Data Table
+**構文:** obj &lt;&lt; Get Script With Data Table
 
 **説明:** この分析を再現するスクリプト(JSL)をデータテーブルへの参照も含めて生成し、それを式として戻す。
 
@@ -231,7 +231,7 @@ Show( t );
 
 ### Get Timing
 
-**構文:** obj << Get Timing
+**構文:** obj &lt;&lt; Get Timing
 
 **説明:** プラットフォームの起動にかかった時間を取得する。
 
@@ -247,7 +247,7 @@ Show( t );
 
 ### Get Web Support
 
-**構文:** obj << Get Web Support
+**構文:** obj &lt;&lt; Get Web Support
 
 **説明:** ディスプレイオブジェクトにおけるインタラクティブHTMLサポートのレベルを数値で戻す。1は、一部または全部の要素がサポートされていることを示し、0は、サポートされないことを示す。
 
@@ -263,7 +263,7 @@ Show( s );
 
 ### Get Where Expr
 
-**構文:** obj << Get Where Expr
+**構文:** obj &lt;&lt; Get Where Expr
 
 **説明:** プラットフォームがBy()またはWhere()を使って起動された場合に、データをサブセットするためのWhere式を戻す。By()やWhere()が使われていない場合はEmpty()を戻す。
 
@@ -300,7 +300,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**構文:** obj << Local Data Filter
+**構文:** obj &lt;&lt; Local Data Filter
 
 **説明:** このプラットフォームに対してのみ有効なフィルタで、データを特定のグループまたは範囲にフィルタリングする。
 
@@ -356,7 +356,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**構文:** obj << Paste Local Data Filter
+**構文:** obj &lt;&lt; Paste Local Data Filter
 
 **説明:** クリップボードにあるローカルデータフィルタを現在のレポートに適用する。
 
@@ -377,7 +377,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**構文:** obj << Redo Analysis
+**構文:** obj &lt;&lt; Redo Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -392,7 +392,7 @@ obj << Redo Analysis;
 
 ### Relaunch Analysis
 
-**構文:** obj << Relaunch Analysis
+**構文:** obj &lt;&lt; Relaunch Analysis
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -407,7 +407,7 @@ obj << Relaunch Analysis;
 
 ### Remove Column Switcher
 
-**構文:** obj << Remove Column Switcher
+**構文:** obj &lt;&lt; Remove Column Switcher
 
 **説明:** プラットフォームに最後に追加された列スイッチャーを削除する。
 
@@ -427,7 +427,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**構文:** obj << Remove Local Data Filter
+**構文:** obj &lt;&lt; Remove Local Data Filter
 
 **説明:** すでに作成されているローカルデータフィルタを削除し、プラットフォームはデータテーブル内のすべてのデータを使用した状態に戻る。
 
@@ -466,9 +466,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**構文:** obj << Report;
-
-Report( obj )
+**構文:** obj &lt;&lt; Report;Report( obj )
 
 **説明:** レポートオブジェクトへの参照を戻す。
 
@@ -485,7 +483,7 @@ Show( t );
 
 ### Report View
 
-**構文:** obj << Report View( "完全"|"要約" )
+**構文:** obj &lt;&lt; Report View( "完全"|"要約" )
 
 **説明:** レポートビューは、プラットフォームレポートの詳細を表示するかどうかを決定する。Fullはすべての詳細を表示し、Summaryはプラットフォームにより限定されたものだけを表示する。 動作をカスタマイズするため、各ディスプレイボックスは<<Set Summary Behaviorメッセージをサポートする。
 
@@ -500,7 +498,7 @@ obj << Report View( "Summary" );
 
 ### Save Script for All Objects
 
-**構文:** obj << Save Script for All Objects
+**構文:** obj &lt;&lt; Save Script for All Objects
 
 **説明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -515,7 +513,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**構文:** obj << Save Script for All Objects To Data Table( <name> )
+**構文:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **説明:** すべてのレポートオブジェクトを再現するスクリプトを現在のデータテーブルに保存する。このオプションは、ウィンドウ内にレポートが複数ある場合に便利。作成されるスクリプトの名前は、引用符で囲んで指定しない限り、1つ目のプラットフォーム名となる。
 
@@ -553,7 +551,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**構文:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** この分析を再現するJSLスクリプトを生成し、データテーブルのテーブルプロパティとして保存する。
 
@@ -568,7 +566,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**構文:** obj << Save Script to Journal
+**構文:** obj &lt;&lt; Save Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -583,7 +581,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**構文:** obj << Save Script to Report
+**構文:** obj &lt;&lt; Save Script to Report
 
 **説明:** この分析を再現するJSLスクリプトを生成し、レポートウィンドウに表示する。分析手順の記録を結果と一緒に残せる。
 
@@ -598,7 +596,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**構文:** obj << Save Script to Script Window
+**構文:** obj &lt;&lt; Save Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -678,7 +676,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**構文:** obj << Sync to Data Table Changes
+**構文:** obj &lt;&lt; Sync to Data Table Changes
 
 **説明:** 除外やデータの変更が行われた場合に同期する。
 
@@ -695,7 +693,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**構文:** obj << Title( "new title" )
+**構文:** obj &lt;&lt; Title( "new title" )
 
 **説明:** プラットフォームのタイトルを設定する。
 
@@ -710,7 +708,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**構文:** obj << Top Report
+**構文:** obj &lt;&lt; Top Report
 
 **説明:** レポート内のルートノードへの参照を戻す。
 
@@ -727,7 +725,7 @@ Show( t );
 
 ### View Web XML
 
-**構文:** obj << View Web XML
+**構文:** obj &lt;&lt; View Web XML
 
 **説明:** インタラクティブHTMLレポートの作成に使うXMLコードを戻す。
 
@@ -744,7 +742,7 @@ xml = obj << View Web XML;
 
 ### Noise Factors
 
-**構文:** obj = Mixture Profiler(...<Noise Factors( column(s) )>...)
+**構文:** obj = Mixture Profiler(...&lt;Noise Factors( column(s) )&gt;...)
 
 **説明:** 応答の計算式に含まれている入力変数のうち、誤差因子である列を指定する。誤差因子は、誤差因子のばらつきに対するするロバスト性(平坦性)を調べるために使用される。作成されるプロファイルには、誤差因子で応答の計算式を微分したものも描かれる。
 
@@ -828,7 +826,7 @@ obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
 
 ### Mixture Profiler
 
-**構文:** Mixture Profiler( Y( column1, column2, ...  ) )
+**構文:** Mixture Profiler( Y( column1, column2, ... ) )
 
 **説明:** 3つ以上の因子を持つ配合モデルに対し、保存された予測式の等高線を調べられる対話的な三角図。
 
@@ -844,7 +842,7 @@ obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
 
 ### Animation
 
-**構文:** obj << Animation( <Tour Type( "Sequential"|("Single Factor",factorname)|"Random"|"Data Sequential"|"Data Random" )>, <Speed(ticks)>, <Go>, <Stop> )
+**構文:** obj &lt;&lt; Animation( &lt;Tour Type( "Sequential"|("Single Factor",factorname)|"Random"|"Data Sequential"|"Data Random" )&gt;, &lt;Speed(ticks)&gt;, &lt;Go&gt;, &lt;Stop&gt; )
 
 **説明:** プロファイルのアニメーションを開始または停止する。因子の組み合わせをどのような順で描くかを指定することもできる。
 
@@ -863,7 +861,7 @@ obj << Animation( "Stop" );
 
 ### Append Settings to Table
 
-**構文:** obj << Append Settings to Table
+**構文:** obj &lt;&lt; Append Settings to Table
 
 **説明:** 現在のプロファイルの因子設定を、データテーブルの最後に新しい行として追加する。
 
@@ -878,7 +876,7 @@ obj << Append Settings to Table;
 
 ### Broadcast Factor Settings
 
-**構文:** obj << Broadcast Factor Settings
+**構文:** obj &lt;&lt; Broadcast Factor Settings
 
 **説明:** 現在のプロファイルの因子設定を、他のすべてのプロファイルに送信する。このオプションはプロファイルをリンクしない。
 
@@ -908,7 +906,7 @@ obj << Broadcast Factor Settings;
 
 ### Contour Grid
 
-**構文:** obj << Contour Grid( minimum, maximum, increment, y column )
+**構文:** obj &lt;&lt; Contour Grid( minimum, maximum, increment, y column )
 
 **説明:** 配合プロファイルの三角図において、指定された間隔で等高線グリッドを描画する。
 
@@ -924,7 +922,7 @@ obj << Contour Grid( 5, 20, 3, :PredFormula Y );
 
 ### Contour Profiler
 
-**構文:** obj << Contour Profiler( state=0|1 )
+**構文:** obj &lt;&lt; Contour Profiler( state=0|1 )
 
 **説明:** 等高線プロファイルの表示/非表示を切り替える。
 
@@ -939,7 +937,7 @@ obj << Contour Profiler( 1 );
 
 ### Contour Value
 
-**構文:** obj << Contour Value( y1( number, <Min( number )>, <Max( number )>), y2(...) )
+**構文:** obj &lt;&lt; Contour Value( y1( number, &lt;Min( number )&gt;, &lt;Max( number )&gt;), y2(...) )
 
 **説明:** 配合プロファイルにおいて、応答変数に対する等高線の値を設定する。
 
@@ -954,7 +952,7 @@ obj << Contour Value( Pred Formula Y( 18.167, Min( 5 ), Max( 20 ) ) );
 
 ### Copy Settings Script
 
-**構文:** obj << Copy Settings Script
+**構文:** obj &lt;&lt; Copy Settings Script
 
 **説明:** 現在の因子設定をクリップボードにコピーする。設定内容は、別のプロファイルに貼り付けることができる。
 
@@ -983,7 +981,7 @@ obj2 << Paste Settings Script;
 
 ### Custom Profiler
 
-**構文:** obj << Custom Profiler( state=0|1 )
+**構文:** obj &lt;&lt; Custom Profiler( state=0|1 )
 
 **説明:** カスタムプロファイルの表示／非表示を切り替える。
 
@@ -998,7 +996,7 @@ obj << Custom Profiler( 1 );
 
 ### Formulas for OPTMODEL
 
-**構文:** obj << Formulas for OPTMODEL
+**構文:** obj &lt;&lt; Formulas for OPTMODEL
 
 **説明:** モデルの予測式をPROC OPTMODELのSASステートメントとして新しいファイルに保存する。
 
@@ -1013,7 +1011,7 @@ obj << Formulas for OPTMODEL;
 
 ### Get Constraints
 
-**構文:** obj << Get Constraints
+**構文:** obj &lt;&lt; Get Constraints
 
 **説明:** 因子制約のリストを戻す。
 
@@ -1031,7 +1029,7 @@ obj << Get Constraints;
 
 ### Get Factor Settings
 
-**構文:** obj << Get Factor Settings
+**構文:** obj &lt;&lt; Get Factor Settings
 
 **説明:** 現在の因子設定をリストとして戻す。
 
@@ -1046,7 +1044,7 @@ obj << Get Factor Settings;
 
 ### Get Factor Settings Script
 
-**構文:** obj << Get Factor Settings Script
+**構文:** obj &lt;&lt; Get Factor Settings Script
 
 **説明:** 現在の因子設定をスクリプトで使用可能な式で返す。
 
@@ -1061,7 +1059,7 @@ obj << Get Factor Settings Script;
 
 ### Get Simulator
 
-**構文:** obj << Get Simulator
+**構文:** obj &lt;&lt; Get Simulator
 
 **説明:** シミュレータへの参照を戻す。
 
@@ -1089,7 +1087,7 @@ obj2 << Simulation Experiment;
 
 ### Left Factor
 
-**構文:** obj << Left Factor( column )
+**構文:** obj &lt;&lt; Left Factor( column )
 
 **説明:** 配合プロファイルにおいて、三角図の左側に表示する因子を指定する。
 
@@ -1105,7 +1103,7 @@ obj << Left Factor( :p1 );
 
 ### Link Profilers
 
-**構文:** obj << Link Profilers( state=0|1 )
+**構文:** obj &lt;&lt; Link Profilers( state=0|1 )
 
 **説明:** 同じレポート内にあるすべてのプロファイルをリンクして、1つのプロファイルにおける因子設定の変更がその他すべてのプロファイルの因子設定に反映されるようにする。
 
@@ -1140,7 +1138,7 @@ obj << Number of Grid Points( 140 );
 
 ### Paste Settings Script
 
-**構文:** obj << Paste Settings Script
+**構文:** obj &lt;&lt; Paste Settings Script
 
 **説明:** プロファイルの設定をクリップボードから別のレポートのプロファイルに貼り付ける。
 
@@ -1169,7 +1167,7 @@ obj2 << Paste Settings Script;
 
 ### Predict for Another Table
 
-**構文:** obj << Predict for Another Table( <data table> )
+**構文:** obj &lt;&lt; Predict for Another Table( &lt;data table&gt; )
 
 **説明:** 予測式の列を指定のデータテーブルに追加する。、その際、そのデータテーブルにある因子を予測式で用いる。このオプションは、連続変数の応答にのみ使用可能。
 
@@ -1189,7 +1187,7 @@ obj << Predict For Another Table( dt2 );
 
 ### Prediction Profiler
 
-**構文:** obj << Prediction Profiler( state=0|1 )
+**構文:** obj &lt;&lt; Prediction Profiler( state=0|1 )
 
 **説明:** 予測プロファイルの表示/非表示を切り替える。
 
@@ -1204,7 +1202,7 @@ obj << Prediction Profiler( 1 );
 
 ### Remember Settings
 
-**構文:** obj << Remember Settings
+**構文:** obj &lt;&lt; Remember Settings
 
 **説明:** レポートに因子の設定値を含むアウトラインノードを追加する。
 
@@ -1219,7 +1217,7 @@ obj << Remember Settings;
 
 ### Remove Contour Grid
 
-**構文:** obj << Remove Contour Grid
+**構文:** obj &lt;&lt; Remove Contour Grid
 
 **説明:** 配合プロファイルの三角図において、追加で描画された等高線グリッドを削除する。
 
@@ -1236,7 +1234,7 @@ obj << Remove Contour Grid;
 
 ### Reset
 
-**構文:** obj << Reset
+**構文:** obj &lt;&lt; Reset
 
 **説明:** 現在の値における予測値を更新する。
 
@@ -1252,7 +1250,7 @@ obj << Reset;
 
 ### Right Factor
 
-**構文:** obj << Right Factor( column )
+**構文:** obj &lt;&lt; Right Factor( column )
 
 **説明:** 配合プロファイルにおいて、三角図の右側に表示する因子を指定する。
 
@@ -1268,7 +1266,7 @@ obj << Right Factor( :p2 );
 
 ### Save Expanded Formulas
 
-**構文:** obj << Save Expanded Formulas
+**構文:** obj &lt;&lt; Save Expanded Formulas
 
 **説明:** 新しい計算式列をデータテーブルに保存する。新しい列の計算式では、Y変数の計算式が大元のX変数まで展開される。このコマンドは、起動ウィンドウで［中間計算式の展開］オプションを選択したか、プロファイルスクリプトでExpandメッセージを指定した後でのみ利用できる。
 
@@ -1283,7 +1281,7 @@ obj << Save Expanded Formulas;
 
 ### Set Script
 
-**構文:** obj << Set Script( Function( {arguments}, <{locals}>, expr ) )
+**構文:** obj &lt;&lt; Set Script( Function( {arguments}, &lt;{locals}&gt;, expr ) )
 
 **説明:** 因子設定が変化するたびに実行されるスクリプトを設定する。
 
@@ -1300,7 +1298,7 @@ obj << Term Value( :Silica( 1 ) );
 
 ### Set to Data in Row
 
-**構文:** obj << Set to Data in Row( row number )
+**構文:** obj &lt;&lt; Set to Data in Row( row number )
 
 **説明:** データテーブルにおける特定の行の値を、プロファイルのX変数に割り当てる。
 
@@ -1316,7 +1314,7 @@ obj << Set to Data in Row( 4 );
 
 ### Show Constraints
 
-**構文:** obj << Show Constraints( state=0|1 )
+**構文:** obj &lt;&lt; Show Constraints( state=0|1 )
 
 **説明:** 配合プロファイルの三角図において、因子の制約から生じる陰影の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1333,7 +1331,7 @@ obj << Show Constraints( 0 );
 
 ### Show Current Value
 
-**構文:** obj << Show Current Value( state=0|1 )
+**構文:** obj &lt;&lt; Show Current Value( state=0|1 )
 
 **説明:** 配合プロファイルの三角図において、現在の因子値を表す3本線の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1349,7 +1347,7 @@ obj << Show Current Value( 1 );
 
 ### Show Formulas
 
-**構文:** obj << Show Formulas
+**構文:** obj &lt;&lt; Show Formulas
 
 **説明:** スクリプトウィンドウを開いて、そこにプロファイルで用いている計算式を表示する。この計算式はJSLで記述されているものである。
 
@@ -1364,7 +1362,7 @@ obj << Show Formulas;
 
 ### Show Points
 
-**構文:** obj << Show Points( state=0|1 )
+**構文:** obj &lt;&lt; Show Points( state=0|1 )
 
 **説明:** 配合プロファイルの三角図において、個々の点の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1380,7 +1378,7 @@ obj << Show Points( 1 );
 
 ### Specify Factor Values
 
-**構文:** obj << Specify Factor Values
+**構文:** obj &lt;&lt; Specify Factor Values
 
 **説明:** 因子の値を指定するためのウィンドウを開く。
 
@@ -1395,7 +1393,7 @@ obj << Specify Factor Values;
 
 ### Surface Profiler
 
-**構文:** obj << Surface Profiler( state=0|1 )
+**構文:** obj &lt;&lt; Surface Profiler( state=0|1 )
 
 **説明:** 曲面プロファイルの表示/非表示を切り替える。
 
@@ -1410,7 +1408,7 @@ obj << Surface Profiler( 1 );
 
 ### Term Value
 
-**構文:** obj << Term Value( x1( number, <Min( number )>, <Max( number )> ),x2( number  <Min( number )>, <Max( number )> ), ... )
+**構文:** obj &lt;&lt; Term Value( x1( number, &lt;Min( number )&gt;, &lt;Max( number )&gt; ),x2( number &lt;Min( number )&gt;, &lt;Max( number )&gt; ), ... )
 
 **説明:** 配合プロファイルにおいて、因子に特定の値を設定する。
 
@@ -1426,7 +1424,7 @@ obj << Term Value( :p1( 0.804905315083495 ), :p2( 0.0386246849165042 ), :p3( 0.1
 
 ### Top Factor
 
-**構文:** obj << Top Factor( column )
+**構文:** obj &lt;&lt; Top Factor( column )
 
 **説明:** 配合プロファイルにおいて、三角図の上側に表示する因子を指定する。
 
@@ -1442,7 +1440,7 @@ obj << Top Factor( :p3 );
 
 ### Unthreaded
 
-**構文:** obj << Unthreaded( state=0|1 )
+**構文:** obj &lt;&lt; Unthreaded( state=0|1 )
 
 **説明:** To suppress any multithreading in evaluating the profile traces, the contour grid, and the optimizer trips.
 
@@ -1464,7 +1462,7 @@ obj << Maximize Desirability;
 
 ### Up Dots
 
-**構文:** obj << Up Dots( state=0|1 )
+**構文:** obj &lt;&lt; Up Dots( state=0|1 )
 
 **説明:** 等高線に沿って表示される点の表示/非表示を切り替える。これらの点は、線のどちら側で応答の値が大きいかを示す。 デフォルトではオン。
 

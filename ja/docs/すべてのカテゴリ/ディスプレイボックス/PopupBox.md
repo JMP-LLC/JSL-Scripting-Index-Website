@@ -6,7 +6,7 @@
 
 ### Add Line Annotation
 
-**構文:** obj << Add Line Annotation
+**構文:** obj &lt;&lt; Add Line Annotation
 
 **説明:** ディスプレイボックスに線を追加する。
 
@@ -23,7 +23,7 @@ rbiv << Add Line Annotation( Line( 160, 235, 240, 235 ) );
 
 ### Add Pin Annotation
 
-**構文:** obj << Add Pin Annotation
+**構文:** obj &lt;&lt; Add Pin Annotation
 
 **説明:** ディスプレイボックスに、ピン留めされたツールヒントを追加する。ほとんどの属性(Index Row、UniqueID、FoundPtなど)は、内部使用のために実装されている。
 
@@ -56,7 +56,7 @@ dt << Bivariate(
 
 ### Add Polygon Annotation
 
-**構文:** obj << Add Polygon Annotation
+**構文:** obj &lt;&lt; Add Polygon Annotation
 
 **説明:** ディスプレイボックスに多角形を追加する。
 
@@ -77,7 +77,7 @@ rbiv << Add Polygon Annotation(
 
 ### Add Simple Shape Annotation
 
-**構文:** obj << Add Simple Shape Annotation
+**構文:** obj &lt;&lt; Add Simple Shape Annotation
 
 **説明:** ディスプレイボックスに基本図形を追加する。
 
@@ -95,7 +95,7 @@ rbiv << Add Simple Shape Annotation( Rectangle( 70, 180, 95, 215 ) );
 
 ### Add Text Annotation
 
-**構文:** obj << Add Text Annotation
+**構文:** obj &lt;&lt; Add Text Annotation
 
 **説明:** ディスプレイボックスにテキストを追加する。
 
@@ -115,7 +115,7 @@ rbiv << Add Text Annotation(
 
 ### Append
 
-**構文:** obj << Append( db2 )
+**構文:** obj &lt;&lt; Append( db2 )
 
 **説明:** dbの後の表示ツリーにdb2を追加する。
 
@@ -132,9 +132,7 @@ rbiv << append( Text Box( "=== below ===" ) );
 
 ### Background Color
 
-**構文:** obj << Background Color( color );
-
-color = obj << Get Background Color
+**構文:** obj &lt;&lt; Background Color( color );color = obj &lt;&lt; Get Background Color
 
 **説明:** 背景色が指定されている場合、ボックスは中身が描画される前に背景色で塗りつぶされる。背景色が指定されていない場合、中に含まれているボックスの背景と中身が透けて表示される。
 
@@ -156,9 +154,7 @@ tb << Background Color( "Yellow" );
 
 ### Border
 
-**構文:** obj << Border( sides );
-
-sides = obj << Get Border
+**構文:** obj &lt;&lt; Border( sides );sides = obj &lt;&lt; Get Border
 
 **説明:** 境界線はディスプレイボックスの外側を囲む実線。値を1つだけ指定した場合は、それがすべての辺に適用される。値を2つ指定した場合、それぞれ横と縦の境界線に適用される。
 
@@ -178,9 +174,7 @@ tb << Border( 1 );
 
 ### Border Color
 
-**構文:** obj << Border Color( color );
-
-color = obj << Get Border Color
+**構文:** obj &lt;&lt; Border Color( color );color = obj &lt;&lt; Get Border Color
 
 **説明:** ボックスの境界線の色をデフォルトのものから変更する。
 
@@ -202,7 +196,7 @@ tb << Border Color( "Light Red" );
 
 ### Bring Window To Front
 
-**構文:** obj << Bring Window To Front
+**構文:** obj &lt;&lt; Bring Window To Front
 
 **説明:** ウィンドウを最前面に移動する。
 
@@ -218,7 +212,7 @@ w << Bring Window To Front;
 
 ### Child
 
-**構文:** obj << Child
+**構文:** obj &lt;&lt; Child
 
 **説明:** ディスプレイボックスの子を戻す。
 
@@ -238,7 +232,7 @@ Print( axisChild << Class Name() );
 
 ### Class Name
 
-**構文:** obj << Class Name
+**構文:** obj &lt;&lt; Class Name
 
 **説明:** ディスプレイボックスのクラス名を戻す。
 
@@ -256,7 +250,7 @@ axisbox << Class Name();
 
 ### Clone Box
 
-**構文:** obj << Clone Box
+**構文:** obj &lt;&lt; Clone Box
 
 **説明:** ディスプレイボックスのコピーを作成する。
 
@@ -275,7 +269,7 @@ rbiv << append( clonedBox );
 
 ### Close Window
 
-**構文:** obj << Close Window( <"NoSave"> )
+**構文:** obj &lt;&lt; Close Window( &lt;"NoSave"&gt; )
 
 **説明:** ウィンドウを閉じる。
 
@@ -291,7 +285,7 @@ w << Close Window;
 
 ### Copy Data
 
-**構文:** obj << Copy Data
+**構文:** obj &lt;&lt; Copy Data
 
 **説明:** 行列またはテーブルから、タブ区切りのデータをクリップボードにコピーする。
 
@@ -305,7 +299,7 @@ mat << CopyData;
 
 ### Copy Graph
 
-**構文:** obj << Copy Graph
+**構文:** obj &lt;&lt; Copy Graph
 
 **説明:** クリップボードにグラフと軸のイメージをコピーする。
 
@@ -323,7 +317,7 @@ rbiv = biv << report;
 
 ### Copy Picture
 
-**構文:** obj << Copy Picture
+**構文:** obj &lt;&lt; Copy Picture
 
 **説明:** クリップボードにディスプレイボックスのイメージをコピーする。
 
@@ -340,7 +334,7 @@ rbiv << Copy Picture();
 
 ### Delete Box
 
-**構文:** obj << Delete Box
+**構文:** obj &lt;&lt; Delete Box
 
 **説明:** ディスプレイボックスを削除する。
 
@@ -358,7 +352,7 @@ axisbox << Delete Box();
 
 ### Deselect
 
-**構文:** obj << Deselect
+**構文:** obj &lt;&lt; Deselect
 
 **説明:** オブジェクトの選択を取り消し、[編集]メニューのコマンドの適用対象から外す。
 
@@ -384,7 +378,7 @@ refresh = Function( {},
 
 ### Dispatch
 
-**構文:** obj << Dispatch( {outline node, ...}, display element, display element type, command )
+**構文:** obj &lt;&lt; Dispatch( {outline node, ...}, display element, display element type, command )
 
 **説明:** ディスプレイツリーの特定の部分にcommandを送る。
 
@@ -401,9 +395,7 @@ rbiv << Dispatch( {}, "Bivar Plot", FrameBox, {Marker Size( 3 )} );
 
 ### Enabled
 
-**構文:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**構文:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **説明:** 有効にされていないオブジェクトはキーボードまたはマウスによる入力に反応しない。このプロパティは子オブジェクトにも継承されるため、コンテナオブジェクトが無効になっていると、その下位のオブジェクトがすべて無効になる。
 
@@ -435,7 +427,7 @@ New Window( "enabled",
 
 ### Find
 
-**構文:** obj << Find
+**構文:** obj &lt;&lt; Find
 
 **説明:** argumentで指定されたディスプレイボックスを戻す。
 
@@ -453,7 +445,7 @@ axisbox << Delete();
 
 ### Get Annotation
 
-**構文:** obj << Get Annotation
+**構文:** obj &lt;&lt; Get Annotation
 
 **説明:** このディスプレイボックスにアンカーを付けられた最初の注釈を戻す。その結果にSib()を使うと、その他の注釈にもアクセスできる。
 
@@ -475,9 +467,7 @@ annotation << delete;
 
 ### Get Background Color
 
-**構文:** obj << Background Color( color );
-
-color = obj << Get Background Color
+**構文:** obj &lt;&lt; Background Color( color );color = obj &lt;&lt; Get Background Color
 
 **説明:** 背景色が指定されている場合、ボックスは中身が描画される前に背景色で塗りつぶされる。背景色が指定されていない場合、中に含まれているボックスの背景と中身が透けて表示される。
 
@@ -499,9 +489,7 @@ tb << Background Color( "Yellow" );
 
 ### Get Border
 
-**構文:** obj << Border( sides );
-
-sides = obj << Get Border
+**構文:** obj &lt;&lt; Border( sides );sides = obj &lt;&lt; Get Border
 
 **説明:** 境界線はディスプレイボックスの外側を囲む実線。値を1つだけ指定した場合は、それがすべての辺に適用される。値を2つ指定した場合、それぞれ横と縦の境界線に適用される。
 
@@ -521,9 +509,7 @@ tb << Border( 1 );
 
 ### Get Border Color
 
-**構文:** obj << Border Color( color );
-
-color = obj << Get Border Color
+**構文:** obj &lt;&lt; Border Color( color );color = obj &lt;&lt; Get Border Color
 
 **説明:** ボックスの境界線の色をデフォルトのものから変更する。
 
@@ -545,7 +531,7 @@ tb << Border Color( "Light Red" );
 
 ### Get Content Size
 
-**構文:** obj << Get Content Size
+**構文:** obj &lt;&lt; Get Content Size
 
 **説明:** ウィンドウ内のコンテンツのサイズを戻す。
 
@@ -561,7 +547,7 @@ Show( c );
 
 ### Get Display Path
 
-**構文:** obj << Get Display Path( parent box, <receiver expr>, <Mode("XPath"|"Subscript")> )
+**構文:** obj &lt;&lt; Get Display Path( parent box, &lt;receiver expr&gt;, &lt;Mode("XPath"|"Subscript")&gt; )
 
 **説明:** parent boxとobjの間をナビゲートするための比較的ロバストな式を取得する。このパスは、JMPのどのリリースでも同様であることが保証されているものではない。receiver exprが与えられている場合、その式は出力の式に組み込まれる。そうでない場合は、parent boxに与えられた式が代わりに使用される。このメッセージは、すでに利用可能なパスのロバスト性を高めるために主に利用される(例を参照)。デフォルトはXPathモード。
 
@@ -597,9 +583,7 @@ xpath expr << Select;
 
 ### Get Enabled
 
-**構文:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**構文:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **説明:** 有効にされていないオブジェクトはキーボードまたはマウスによる入力に反応しない。このプロパティは子オブジェクトにも継承されるため、コンテナオブジェクトが無効になっていると、その下位のオブジェクトがすべて無効になる。
 
@@ -631,7 +615,7 @@ New Window( "enabled",
 
 ### Get HTML
 
-**構文:** obj << Get HTML( <format> )
+**構文:** obj &lt;&lt; Get HTML( &lt;format&gt; )
 
 **説明:** ディスプレイボックスに含まれている文字列をHTMLソースとして戻す。
 
@@ -661,7 +645,7 @@ Web( "$TEMP/Oneway.html", JMPWindow );
 
 ### Get Height
 
-**構文:** width = obj << Get Height
+**構文:** width = obj &lt;&lt; Get Height
 
 **説明:** ディスプレイボックスの高さを戻す。
 
@@ -679,9 +663,7 @@ fb << Get Height;
 
 ### Get Horizontal Alignment
 
-**構文:** obj << Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );
-
-"Default"|"Left"|"Center"|"Right" = obj << Get Horizontal Alignment
+**構文:** obj &lt;&lt; Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );"Default"|"Left"|"Center"|"Right" = obj &lt;&lt; Get Horizontal Alignment
 
 **説明:** ボックスがコンテナ全体を埋めていない場合、ボックスの横方向の配置を指定する。
 
@@ -701,7 +683,7 @@ lb << Horizontal Alignment( "Right" );
 
 ### Get Journal
 
-**構文:** obj << Get Journal
+**構文:** obj &lt;&lt; Get Journal
 
 **説明:** ディスプレイボックスに含まれている文字列をジャーナルソースとして戻す。
 
@@ -718,9 +700,7 @@ Print( rbiv << Get Journal );
 
 ### Get Margin
 
-**構文:** obj << Margin( sides );
-
-sides = obj << Get Margin
+**構文:** obj &lt;&lt; Margin( sides );sides = obj &lt;&lt; Get Margin
 
 **説明:** ボックスとそれに隣接するボックスとの境界にスペースを追加する。名前付きの引数を使うか、値のリストを指定すること。値を1つだけ指定した場合は、それがすべての辺に適用される。値を2つ指定した場合、それぞれ横と縦の余白に適用される。
 
@@ -741,7 +721,7 @@ tb << Margin( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ### Get Max Size
 
-**構文:** width,height = obj << Get Max Size
+**構文:** width,height = obj &lt;&lt; Get Max Size
 
 **説明:** このディスプレイボックスの自動伸縮の最大サイズを戻す。
 
@@ -759,7 +739,7 @@ fb << Get Max Size;
 
 ### Get Min Size
 
-**構文:** width,height = obj << Get Min Size
+**構文:** width,height = obj &lt;&lt; Get Min Size
 
 **説明:** このディスプレイボックスの自動伸縮の最小サイズを戻す。
 
@@ -777,7 +757,7 @@ fb << Get Min Size;
 
 ### Get Namespace
 
-**構文:** obj << Get Namespace
+**構文:** obj &lt;&lt; Get Namespace
 
 **説明:** この表示オブジェクトの名前空間を戻す。
 
@@ -795,7 +775,7 @@ Show( ns:x, x );
 
 ### Get On Close
 
-**構文:** obj << Get On Close
+**構文:** obj &lt;&lt; Get On Close
 
 **説明:** ウィンドウを閉じるときに実行されるスクリプトまたは関数を戻す。
 
@@ -820,9 +800,7 @@ Show( w << Get On Close );
 
 ### Get Padding
 
-**構文:** obj << Padding( sides );
-
-sides = obj << Get Padding
+**構文:** obj &lt;&lt; Padding( sides );sides = obj &lt;&lt; Get Padding
 
 **説明:** ボックスの中身と境界線の間に空白を追加する。名前付きの引数を使うか、値のリストを指定すること。値を1つだけ指定した場合は、それがすべての辺に適用される。値を2つ指定した場合、それぞれ横と縦のパディングに適用される。
 
@@ -843,7 +821,7 @@ tb << Padding( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ### Get Page Setup
 
-**構文:** obj << Get Page Setup
+**構文:** obj &lt;&lt; Get Page Setup
 
 **説明:** PDFファイルのページ設定情報を取得する。
 
@@ -858,7 +836,7 @@ w << get page setup();
 
 ### Get Picture
 
-**構文:** obj << Get Picture( <Scale(factor)>, <Type("Bitmap" | "Scalable")>, <View("Picture" | "Screen" | "Print"), <Appearance("Default" | "Current")>, <SubRect(Left(number), Top(number), Right(number), Bottom(number))> )
+**構文:** obj &lt;&lt; Get Picture( &lt;Scale(factor)&gt;, &lt;Type("Bitmap" | "Scalable")&gt;, &lt;View("Picture" | "Screen" | "Print"), &lt;Appearance("Default" | "Current")&gt;, &lt;SubRect(Left(number), Top(number), Right(number), Bottom(number))&gt; )
 
 **説明:** dbをイメージオブジェクトとしてキャプチャする。オプションのScale引数は、スケーリングされた解像度でイメージをレンダリングする。スケーリングするには、ディスプレイボックスが伸縮可能でなければならない。Type引数は、結果をスケーラブルなベクターイメージにするか、ビットマップにするかを指定する。デフォルトでは、PDFのようなベクター形式での保存に適したスケーラブルなイメージが戻される。Viewオプションでは、いくつかのボックスの動作が変更される。デフォルトのオプションである"Picture"は、イメージ形式に書き出すときと同様にレポートを描画し、スクロールしないと見えない領域もすべて含まれる。 "Screen"は、スクリーン上で表示されるときと同様にレポートを描画し、"Print"は、ページ設定機能を使わずに、印刷するときと同じようにレポートを描画する。SubRectオプションは、生成された画像全体ではなく、一部をキャプチャする。Appearanceオプションでは、"Default"の出力の色を、画面上に表示される"Current"の色に変更することができる。View、SubRect、およびAppearanceオプションは、Typeの"Bitmap"でのみサポートされている。
 
@@ -916,7 +894,7 @@ New Window( "Example", rbiv << Get Picture );
 
 ### Get Project
 
-**構文:** project = obj << Get Project()
+**構文:** project = obj &lt;&lt; Get Project()
 
 **説明:** ウィンドウの親プロジェクトを戻す。プロジェクトの中にない場合は、Empty()を戻す。
 
@@ -934,7 +912,7 @@ Show( c );
 
 ### Get Properties
 
-**構文:** obj << Get Properties
+**構文:** obj &lt;&lt; Get Properties
 
 **説明:** ディスプレイボックスのプロパティとその値を含む連想配列を戻す。
 
@@ -948,7 +926,7 @@ bb << Get Properties;
 
 ### Get Property
 
-**構文:** obj << Get Property( "property" )
+**構文:** obj &lt;&lt; Get Property( "property" )
 
 **説明:** propertyで指定したプロパティの現在の設定を戻す。
 
@@ -962,7 +940,7 @@ bb << Get Property( "Enabled" );
 
 ### Get Property List
 
-**構文:** obj << Get Property List
+**構文:** obj &lt;&lt; Get Property List
 
 **説明:** ディスプレイボックスの持つプロパティのリストを戻す。
 
@@ -976,7 +954,7 @@ bb << Get Property List;
 
 ### Get RTF
 
-**構文:** obj << Get RTF( <format> )
+**構文:** obj &lt;&lt; Get RTF( &lt;format&gt; )
 
 **説明:** ディスプレイボックスに含まれている文字列をRTFソースとして戻す。
 
@@ -1006,7 +984,7 @@ Open( "$TEMP/Oneway.rtf" );
 
 ### Get Row States
 
-**構文:** rs = obj << Get Row States( <dt> )
+**構文:** rs = obj &lt;&lt; Get Row States( &lt;dt&gt; )
 
 **説明:** 指定したデータテーブルまたは現在のデータテーブルの各行の行属性を含むベクトルを戻す。行の属性は、テーブルから取得することも、ボックスのフィルタコンテキストから取得することもできる。
 
@@ -1095,7 +1073,7 @@ updatetext();
 
 ### Get Show Window
 
-**構文:** obj << Get Show Window
+**構文:** obj &lt;&lt; Get Show Window
 
 **説明:** ウィンドウの表示/非表示を戻す。
 
@@ -1113,7 +1091,7 @@ Print( w << Get Show Window() );
 
 ### Get Size
 
-**構文:** width,height = obj << Get Size
+**構文:** width,height = obj &lt;&lt; Get Size
 
 **説明:** ディスプレイボックスのサイズを戻す。
 
@@ -1131,7 +1109,7 @@ Print( fb << Get Size );
 
 ### Get Stretch
 
-**構文:** x,y = obj << Get Stretch
+**構文:** x,y = obj &lt;&lt; Get Stretch
 
 **説明:** このディスプレイボックスの横方向と縦方向の伸縮フラグを戻す。
 
@@ -1157,7 +1135,7 @@ spacer << Get Stretch();
 
 ### Get Text
 
-**構文:** obj << Get Text
+**構文:** obj &lt;&lt; Get Text
 
 **説明:** ディスプレイボックスに含まれている文字列をテキストとして戻す。
 
@@ -1172,9 +1150,7 @@ a << Set Text( win << Get Text );
 
 ### Get Text Color
 
-**構文:** obj << Text Color( color );
-
-color = obj << Get Text Color
+**構文:** obj &lt;&lt; Text Color( color );color = obj &lt;&lt; Get Text Color
 
 **説明:** テキストの色が指定された場合、テキストはその色で描画される。指定されていない場合、ボックスは内包しているボックスのテキストの色を継承する。
 
@@ -1196,15 +1172,11 @@ tb << Text Color( "Red" );
 
 ### Get UI Only
 
-**構文:** obj << UI Only( state=0|1 );
-
-state = obj << Get UI Only
+**構文:** obj &lt;&lt; UI Only( state=0|1 );state = obj &lt;&lt; Get UI Only
 
 ### Get Vertical Alignment
 
-**構文:** obj << Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );
-
-"Default"|"Top"|"Center"|"Bottom" = obj << Get Vertical Alignment
+**構文:** obj &lt;&lt; Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );"Default"|"Top"|"Center"|"Bottom" = obj &lt;&lt; Get Vertical Alignment
 
 **説明:** ボックスがコンテナ全体を埋めていない場合、ボックスの縦方向の配置を指定する。
 
@@ -1226,9 +1198,7 @@ lb << Vertical Alignment( "Bottom" );
 
 ### Get Visibility
 
-**構文:** obj << Visibility( "Visible"|"Hidden"|"Collapse" );
-
-"Visible"|"Hidden"|"Collapse" = obj << Get Visibility
+**構文:** obj &lt;&lt; Visibility( "Visible"|"Hidden"|"Collapse" );"Visible"|"Hidden"|"Collapse" = obj &lt;&lt; Get Visibility
 
 **説明:** ボックスを表示するかどうか、ボックスのスペースを表示するかどうかを指定する。デフォルト値の"Visible"では、オブジェクトが表示される。"Hidden"のボックスは表示されないが、空白のスペースは表示される。一方、"Collapsed"のボックスはレイアウト内のスペースも表示されない。
 
@@ -1249,7 +1219,7 @@ Show( tb << Get Visibility );
 
 ### Get Web Support
 
-**構文:** obj << Get Web Support
+**構文:** obj &lt;&lt; Get Web Support
 
 **説明:** ディスプレイオブジェクトにおけるインタラクティブHTMLサポートのレベルを数値で戻す。1は、一部または全部の要素がサポートされていることを示し、0は、サポートされないことを示す。
 
@@ -1265,7 +1235,7 @@ Show( s );
 
 ### Get Width
 
-**構文:** width = obj << Get Width
+**構文:** width = obj &lt;&lt; Get Width
 
 **説明:** ディスプレイボックスの幅を戻す。
 
@@ -1283,7 +1253,7 @@ fb << Get Width;
 
 ### Get Window Icon
 
-**構文:** obj << Get Window Icon
+**構文:** obj &lt;&lt; Get Window Icon
 
 **説明:** ウィンドウのアイコンを戻す。
 
@@ -1299,7 +1269,7 @@ Show( t );
 
 ### Get Window Position
 
-**構文:** obj << Get Window Position
+**構文:** obj &lt;&lt; Get Window Position
 
 **説明:** ウィンドウの位置を戻す。
 
@@ -1315,7 +1285,7 @@ Show( p );
 
 ### Get Window Size
 
-**構文:** obj << Get Window Size
+**構文:** obj &lt;&lt; Get Window Size
 
 **説明:** ウィンドウのサイズを戻す。
 
@@ -1331,7 +1301,7 @@ Show( s );
 
 ### Get Window Title
 
-**構文:** obj << Get Window Title
+**構文:** obj &lt;&lt; Get Window Title
 
 **説明:** ウィンドウのタイトルを戻す。
 
@@ -1347,7 +1317,7 @@ Show( t );
 
 ### Get Window View
 
-**構文:** obj << Get Window View
+**構文:** obj &lt;&lt; Get Window View
 
 **説明:** 現在のウィンドウ表示を戻す。戻り値は"Visible"、"Invisible"、"Private"のいずれかになる。
 
@@ -1362,7 +1332,7 @@ Print( w << Get Window View() );
 
 ### Get XML
 
-**構文:** obj << Get XML( <English(0|1)>, <NoData(0|1)> )
+**構文:** obj &lt;&lt; Get XML( &lt;English(0|1)&gt;, &lt;NoData(0|1)&gt; )
 
 **説明:** 表示ツリーの内容をXML形式で取得する。デフォルトでは、文字列はローカル言語で戻され、XMLには一部のボックスのデータ値が含まれる。Englishオプションを使うと、英語の文字列が戻される。表示ツリーでボックス内のデータ値が大量になる場合があるため、NoDataオプションを使ってそれらを省略できる。
 
@@ -1377,7 +1347,7 @@ a << set text( win << get xml );
 
 ### GetOffset
 
-**構文:** x,y = obj << GetOffset
+**構文:** x,y = obj &lt;&lt; GetOffset
 
 **説明:** このディスプレイボックスの親ボックスに対するオフセットを戻す。いくつか上の親ボックスまでのオフセットを求めるには、ループの中で<<parentメッセージを使用する必要がある。
 
@@ -1422,9 +1392,7 @@ New Window( "example",
 
 ### Horizontal Alignment
 
-**構文:** obj << Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );
-
-"Default"|"Left"|"Center"|"Right" = obj << Get Horizontal Alignment
+**構文:** obj &lt;&lt; Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );"Default"|"Left"|"Center"|"Right" = obj &lt;&lt; Get Horizontal Alignment
 
 **説明:** ボックスがコンテナ全体を埋めていない場合、ボックスの横方向の配置を指定する。
 
@@ -1444,7 +1412,7 @@ lb << Horizontal Alignment( "Right" );
 
 ### Inval
 
-**構文:** obj << Inval
+**構文:** obj &lt;&lt; Inval
 
 **説明:** ディスプレイボックスを無効にする。ウィンドウの更新は、<<UpdateWindowメッセージが送られるか、または、オペレーティングシステムが更新するタイミングに行われる。
 
@@ -1486,7 +1454,7 @@ New Window( "Inval example",
 
 ### Is Dirty
 
-**構文:** obj << Is Dirty
+**構文:** obj &lt;&lt; Is Dirty
 
 **説明:** ドキュメントの変更ステータスを取得する。1は、ドキュメントが変更されたことを意味し、保存するかどうか確認するメッセージを表示する。0は、ドキュメントが変更されていないことを意味する。
 
@@ -1505,7 +1473,7 @@ Show( ww << Is Dirty );
 
 ### Is Modal Dialog
 
-**構文:** obj << Is Modal Dialog
+**構文:** obj &lt;&lt; Is Modal Dialog
 
 **説明:** ウィンドウがモーダルダイアログの場合、Trueを戻す。ウィンドウハンドラコールバックから呼び出される場合のみ有用。
 
@@ -1524,7 +1492,7 @@ With Window Handler(
 
 ### Journal
 
-**構文:** obj << Journal
+**構文:** obj &lt;&lt; Journal
 
 **説明:** ディスプレイボックスからジャーナルを作成する。
 
@@ -1541,7 +1509,7 @@ rbiv << journal;
 
 ### Journal Window
 
-**構文:** obj << Journal Window
+**構文:** obj &lt;&lt; Journal Window
 
 **説明:** そのウィンドウのジャーナルウィンドウを開く。
 
@@ -1556,7 +1524,7 @@ w << Journal Window;
 
 ### Launch
 
-**構文:** obj << Launch
+**構文:** obj &lt;&lt; Launch
 
 **説明:** ディスプレイボックスのコンテキスト内でargumentを評価する。
 
@@ -1578,7 +1546,7 @@ ob3 << launch( Bivariate( Y( :height ), X( :weight ) ) );
 
 ### Make RowState Handler
 
-**構文:** rs = obj << Make RowState Handler( <dt>, function(a) )
+**構文:** rs = obj &lt;&lt; Make RowState Handler( &lt;dt&gt;, function(a) )
 
 **説明:** 指定したデータテーブルまたは現在のデータテーブルに対して、行属性ハンドラを作成する。この関数は、ボックスのフィルタコンテキスト内で行の属性が変わると呼び出される。関数の引数に、変更された行の番号が格納されるが、行属性のフィルタが変更された場合は、-1が格納される。
 
@@ -1667,9 +1635,7 @@ updatetext();
 
 ### Margin
 
-**構文:** obj << Margin( sides );
-
-sides = obj << Get Margin
+**構文:** obj &lt;&lt; Margin( sides );sides = obj &lt;&lt; Get Margin
 
 **説明:** ボックスとそれに隣接するボックスとの境界にスペースを追加する。名前付きの引数を使うか、値のリストを指定すること。値を1つだけ指定した場合は、それがすべての辺に適用される。値を2つ指定した場合、それぞれ横と縦の余白に適用される。
 
@@ -1690,7 +1656,7 @@ tb << Margin( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ### Maximize Window
 
-**構文:** obj << Maximize Window( <state=0|1> )
+**構文:** obj &lt;&lt; Maximize Window( &lt;state=0|1&gt; )
 
 **説明:** ウィンドウを最大化する。デフォルトの引数は1。
 
@@ -1708,7 +1674,7 @@ w << Maximize Window( 0 );
 
 ### Minimize Window
 
-**構文:** obj << Minimize Window( <state=0|1> )
+**構文:** obj &lt;&lt; Minimize Window( &lt;state=0|1&gt; )
 
 **説明:** ウィンドウを最小化する。デフォルトの引数は1。
 
@@ -1726,7 +1692,7 @@ w << Minimize Window( 0 );
 
 ### Move Window
 
-**構文:** obj << Move Window( x,y )
+**構文:** obj &lt;&lt; Move Window( x,y )
 
 **説明:** ウィンドウを指定した位置に移動させる。
 
@@ -1742,7 +1708,7 @@ w << Move Window( 500, 500 );
 
 ### Next
 
-**構文:** obj << Next
+**構文:** obj &lt;&lt; Next
 
 **説明:** ディスプレイボックスの後のディスプレイボックスを戻す。
 
@@ -1760,7 +1726,7 @@ Print( next << Class Name() );
 
 ### On Close
 
-**構文:** obj << On Close( script )
+**構文:** obj &lt;&lt; On Close( script )
 
 **説明:** ウィンドウを閉じる際に実行するスクリプトまたは関数を設定する。このスクリプトが1を戻すとウィンドウが閉じ、0を戻すとウィンドウは閉じない。
 
@@ -1808,7 +1774,7 @@ w << On Close(
 
 ### Optimize Display
 
-**構文:** obj << Optimize Display
+**構文:** obj &lt;&lt; Optimize Display
 
 **説明:** データテーブルの列の幅とウィンドウを最適なサイズに設定する。
 
@@ -1825,7 +1791,7 @@ dt << Optimize Display;
 
 ### Pad Window
 
-**構文:** obj << Pad Window( bool )
+**構文:** obj &lt;&lt; Pad Window( bool )
 
 **説明:** ウィンドウパディングのオン／オフを切り替える。
 
@@ -1842,9 +1808,7 @@ r << Pad Window( 0 );
 
 ### Padding
 
-**構文:** obj << Padding( sides );
-
-sides = obj << Get Padding
+**構文:** obj &lt;&lt; Padding( sides );sides = obj &lt;&lt; Get Padding
 
 **説明:** ボックスの中身と境界線の間に空白を追加する。名前付きの引数を使うか、値のリストを指定すること。値を1つだけ指定した場合は、それがすべての辺に適用される。値を2つ指定した場合、それぞれ横と縦のパディングに適用される。
 
@@ -1865,7 +1829,7 @@ tb << Padding( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ### Page Break
 
-**構文:** obj << Page Break
+**構文:** obj &lt;&lt; Page Break
 
 **説明:** ディスプレイボックスの前にページ区切りを挿入する。
 
@@ -1891,7 +1855,7 @@ ob3 << Page Break;
 
 ### Parent
 
-**構文:** obj << Parent
+**構文:** obj &lt;&lt; Parent
 
 **説明:** ディスプレイボックスの親を戻す。
 
@@ -1910,7 +1874,7 @@ Print( axisParent << Class Name() );
 
 ### Prepend
 
-**構文:** obj << Prepend( db2 )
+**構文:** obj &lt;&lt; Prepend( db2 )
 
 **説明:** dbの前の表示ツリーにdb2を追加する。
 
@@ -1927,7 +1891,7 @@ rbiv << prepend( Text Box( "=== above ===" ) );
 
 ### Prev Sib
 
-**構文:** obj << Prev Sib
+**構文:** obj &lt;&lt; Prev Sib
 
 **説明:** ディスプレイボックスの前の兄弟(同レベルのもの)を戻す。
 
@@ -1948,7 +1912,7 @@ Print( axisSibling << Class Name() );
 
 ### Print Window
 
-**構文:** obj << Print Window
+**構文:** obj &lt;&lt; Print Window
 
 **説明:** ウィンドウを印刷する。
 
@@ -1963,7 +1927,7 @@ w << Print Window;
 
 ### Reshow
 
-**構文:** obj << Reshow
+**構文:** obj &lt;&lt; Reshow
 
 **説明:** ディスプレイボックスをいったん無効にし、ウィンドウの内容を更新する。更新のタイミングを調整したい場合は、<<Invalおよび<<UpdateWindowメッセージを参照。
 
@@ -1992,7 +1956,7 @@ New Window( "Reshow example",
 
 ### Save Capture
 
-**構文:** obj << Save Capture( <"path">, <format>, <Add Sibling(n)> )
+**構文:** obj &lt;&lt; Save Capture( &lt;"path"&gt;, &lt;format&gt;, &lt;Add Sibling(n)&gt; )
 
 **説明:** ディスプレイボックスのスクリーンキャプチャーを指定のpathに保存する。pathが指定されていない場合は、[名前を付けて保存]ウィンドウが表示される。
 
@@ -2009,7 +1973,7 @@ rbiv << Save Capture( "$TEMP/jmp_example.png", "png" );
 
 ### Save HTML
 
-**構文:** obj << Save HTML( <pathname>, <format> )
+**構文:** obj &lt;&lt; Save HTML( &lt;pathname&gt;, &lt;format&gt; )
 
 **説明:** HTMLソースおよびformatで指定された形式のグラフィックファイルのフォルダを保存する。
 
@@ -2026,7 +1990,7 @@ rbiv << Save HTML( "$TEMP/jmp_example.html" );
 
 ### Save Interactive HTML
 
-**構文:** obj << Save Interactive HTML( <pathname>, <Boolean> )
+**構文:** obj &lt;&lt; Save Interactive HTML( &lt;pathname&gt;, &lt;Boolean&gt; )
 
 **説明:** データを含むインタラクティブHTMLをファイルに保存する。Boolean引数は、レポートを静的なものにするという指定。
 
@@ -2043,7 +2007,7 @@ rbiv << Save Interactive HTML( "$TEMP/jmp_example.html" );
 
 ### Save Journal
 
-**構文:** obj << Save Journal( <pathname> )
+**構文:** obj &lt;&lt; Save Journal( &lt;pathname&gt; )
 
 **説明:** ディスプレイボックスをジャーナルファイルとして保存する。
 
@@ -2060,7 +2024,7 @@ rbiv << Save Journal( "$TEMP/jmp_example.jrn" );
 
 ### Save MSWord
 
-**構文:** obj << Save MSWord( <pathname>, <format> )
+**構文:** obj &lt;&lt; Save MSWord( &lt;pathname&gt;, &lt;format&gt; )
 
 **説明:** ディスプレイボックスをMicrosoft Wordドキュメントとして保存する。(Windowsのみ)
 
@@ -2077,7 +2041,7 @@ rbiv << Save MSWord( "$TEMP/jmp_example.doc" );
 
 ### Save PDF
 
-**構文:** obj << Save PDF( <pathname>, <Show Page Setup(0|1)>, <Portrait(0|1)> )
+**構文:** obj &lt;&lt; Save PDF( &lt;pathname&gt;, &lt;Show Page Setup(0|1)&gt;, &lt;Portrait(0|1)&gt; )
 
 **説明:** ディスプレイボックスをPDFファイルとして保存する。
 
@@ -2094,7 +2058,7 @@ rbiv << Save PDF( "$TEMP/jmp_example.pdf" );
 
 ### Save Picture
 
-**構文:** obj << Save Picture( <pathname>, <format>, <Scale(factor)>, <Type("Bitmap" | "Scalable")>, <View("Picture" | "Screen" | "Print"), <Appearance("Default" | "Current")>, <SubRect(Left(number), Top(number), Right(number), Bottom(number))> )
+**構文:** obj &lt;&lt; Save Picture( &lt;pathname&gt;, &lt;format&gt;, &lt;Scale(factor)&gt;, &lt;Type("Bitmap" | "Scalable")&gt;, &lt;View("Picture" | "Screen" | "Print"), &lt;Appearance("Default" | "Current")&gt;, &lt;SubRect(Left(number), Top(number), Right(number), Bottom(number))&gt; )
 
 **説明:** ディスプレイボックスのイメージを保存する。サポートされている形式は、EMF(Windows)、PICT(Macintosh)、JPEG、JPG、GIF、PNG。オプションのScale引数は、スケーリングされた解像度でイメージをレンダリングする。スケーリングするには、ディスプレイボックスが伸縮可能でなければならない。Type引数は、結果をスケーラブルなベクターイメージにするか、ビットマップにするかを指定する。デフォルトでは、PDFのようなベクター形式での保存に適したスケーラブルなイメージが戻される。Viewオプションでは、いくつかのボックスの動作が変更される。デフォルトのオプションである"Picture"は、イメージ形式に書き出すときと同様にレポートを描画し、スクロールしないと見えない領域もすべて含まれる。 "Screen"は、スクリーン上で表示されるときと同様にレポートを描画し、"Print"は、ページ設定機能を使わずに、印刷するときと同じようにレポートを描画する。SubRectオプションは、生成された画像全体ではなく、一部をキャプチャする。Appearanceオプションでは、"Default"の出力の色を、画面上に表示される"Current"の色に変更することができる。View、SubRect、およびAppearanceオプションは、Typeが"Bitmap"の場合のみサポートされている。
 
@@ -2164,7 +2128,7 @@ rbiv << Save Picture( "$TEMP/jmp_example.png", "png" );
 
 ### Save Presentation
 
-**構文:** obj << Save Presentation( "filename.pptx", <Template("path\to\my_template.pptx")>, <Insert(Begin|End|#) | Replace(Begin|End|#) | Append>, <Outline Titles(None|Hide|TopLeft|TopRight|BottomLeft|BottomRight)>, <"EMF"|"PNG"|"JPG"|"Native"> )
+**構文:** obj &lt;&lt; Save Presentation( "filename.pptx", &lt;Template("path\to\my_template.pptx")&gt;, &lt;Insert(Begin|End|#) | Replace(Begin|End|#) | Append&gt;, &lt;Outline Titles(None|Hide|TopLeft|TopRight|BottomLeft|BottomRight)&gt;, &lt;"EMF"|"PNG"|"JPG"|"Native"&gt; )
 
 **説明:** プレゼンテーションにディスプレイボックスのテーブルとグラフを含むスライドを保存する。プレゼンテーションはMicrosoft PowerPointまたはその他のプレゼンテーションソフトウェアで開くことができる。
 
@@ -2181,7 +2145,7 @@ Open( "$TEMP/jmp_example.pptx" );
 
 ### Save RTF
 
-**構文:** obj << Save RTF( <pathname>, <format> )
+**構文:** obj &lt;&lt; Save RTF( &lt;pathname&gt;, &lt;format&gt; )
 
 **説明:** RTFソースとformatで指定された形式のグラフィックを保存する。
 
@@ -2198,7 +2162,7 @@ rbiv << Save RTF( "$TEMP/jmp_example.rtf", "png" );
 
 ### Save Text
 
-**構文:** obj << Save Text( <pathname>, <format> )
+**構文:** obj &lt;&lt; Save Text( &lt;pathname&gt;, &lt;format&gt; )
 
 **説明:** ディスプレイボックスのテキストを含むファイルを保存する。
 
@@ -2213,7 +2177,7 @@ a << save text( "$TEMP/jmp_example.txt" );
 
 ### Save Window Report
 
-**構文:** obj << Save Window Report( pathname, <embed data(0|1)> )
+**構文:** obj &lt;&lt; Save Window Report( pathname, &lt;embed data(0|1)&gt; )
 
 **説明:** 現在のレポートウィンドウをJMPレポートファイル(.jrp)に保存する。
 
@@ -2231,7 +2195,7 @@ d << Save Window Report( "$DOCUMENTS/test.jrp", embed data( 1 ) );
 
 ### Scroll Window
 
-**構文:** obj << Scroll Window( DisplayBox | <Relative(<v> | <h>,<v>)> | <Absolute(<v> | <h>,<v>) )
+**構文:** obj &lt;&lt; Scroll Window( DisplayBox | &lt;Relative(&lt;v&gt; | &lt;h&gt;,&lt;v&gt;)&gt; | &lt;Absolute(&lt;v&gt; | &lt;h&gt;,&lt;v&gt;) )
 
 **説明:** DisplayBoxが表示されるようにウィンドウのスクロールバーを調整するか、相対的なまたは絶対ピクセル数だけスクロールする。ピクセル数の代わりに、キーワード"Start"または"End"を使用できる。
 
@@ -2306,7 +2270,7 @@ Wait( 1 );
 
 ### Select
 
-**構文:** obj << Select
+**構文:** obj &lt;&lt; Select
 
 **説明:** このオブジェクトを選択する。選択されたオブジェクトには、[編集]メニューのコマンドが適用できる。
 
@@ -2321,7 +2285,7 @@ ex << Select;
 
 ### Set Content Size
 
-**構文:** obj << Set Content Size( x,y )
+**構文:** obj &lt;&lt; Set Content Size( x,y )
 
 **説明:** ウィンドウ内のコンテンツのサイズを設定する。
 
@@ -2347,7 +2311,7 @@ w << Set Content Size( 400, 300 );
 
 ### Set Dirty
 
-**構文:** obj << Set Dirty
+**構文:** obj &lt;&lt; Set Dirty
 
 **説明:** ドキュメントの変更ステータスを設定する。0を設定すると保存するかどうか確認するメッセージを表示しないようになり、1を設定すると表示するようになる。
 
@@ -2366,7 +2330,7 @@ Show( ww << Is Dirty );
 
 ### Set Height
 
-**構文:** obj << Set Height( width )
+**構文:** obj &lt;&lt; Set Height( width )
 
 **説明:** ディスプレイボックスの高さを設定する。
 
@@ -2384,7 +2348,7 @@ fb << Set Height( 150 );
 
 ### Set Main Window
 
-**構文:** obj << Set Main Window
+**構文:** obj &lt;&lt; Set Main Window
 
 **説明:** このウィンドウをJMPの主ウィンドウに設定し、以前の主ウィンドウを通常のウィンドウに設定する。
 
@@ -2399,7 +2363,7 @@ w << Set Main Window;
 
 ### Set Max Size
 
-**構文:** obj << Set Max Size( width,height )
+**構文:** obj &lt;&lt; Set Max Size( width,height )
 
 **説明:** このディスプレイボックスの自動伸縮の最大サイズを設定する。
 
@@ -2418,7 +2382,7 @@ fb << Get Max Size;
 
 ### Set Min Size
 
-**構文:** obj << Set Min Size( width,height )
+**構文:** obj &lt;&lt; Set Min Size( width,height )
 
 **説明:** このディスプレイボックスの自動伸縮の最小サイズを設定する。
 
@@ -2437,7 +2401,7 @@ fb << Get Min Size;
 
 ### Set Page Setup
 
-**構文:** obj << Set Page Setup( <margins(left, top, right, bottom)>, <scale(s)>, <portrait(0|1)>, <paper size(p)>, <Table of Contents(always, never, default)>  )
+**構文:** obj &lt;&lt; Set Page Setup( &lt;margins(left, top, right, bottom)&gt;, &lt;scale(s)&gt;, &lt;portrait(0|1)&gt;, &lt;paper size(p)&gt;, &lt;Table of Contents(always, never, default)&gt; )
 
 **説明:** 印刷する際、またはPDFとして保存する際に必要なページ設定情報を指定する。アウトラインボックスから生成される目次はオプション。
 
@@ -2459,7 +2423,7 @@ w << Save pdf( "$DOCUMENTS\test.pdf" );
 
 ### Set Print Footers
 
-**構文:** obj << Set Print Footers( left footer, center footer, right header )
+**構文:** obj &lt;&lt; Set Print Footers( left footer, center footer, right header )
 
 **説明:** 印刷時の左、中央、右のフッタを設定する。
 
@@ -2478,7 +2442,7 @@ w << Print Window;
 
 ### Set Print Headers
 
-**構文:** obj << Set Print Headers( left header, center header, right header )
+**構文:** obj &lt;&lt; Set Print Headers( left header, center header, right header )
 
 **説明:** 印刷時の左、中央、右のヘッダを設定する。
 
@@ -2497,7 +2461,7 @@ w << Print Window;
 
 ### Set Property
 
-**構文:** obj << Set Property( "property", value )
+**構文:** obj &lt;&lt; Set Property( "property", value )
 
 **説明:** ディスプレイボックスの、propertyで指定した名前のプロパティに値を設定する。
 
@@ -2511,7 +2475,7 @@ bb << Set Property( "Enabled", 0 );
 
 ### Set Report Title
 
-**構文:** obj << Set Report Title( "string" )
+**構文:** obj &lt;&lt; Set Report Title( "string" )
 
 **説明:** レポートのタイトルを変更する。
 
@@ -2528,7 +2492,7 @@ rbiv << Set Report Title( "New Title" );
 
 ### Set Stretch
 
-**構文:** obj << Set Stretch( x,y )
+**構文:** obj &lt;&lt; Set Stretch( x,y )
 
 **説明:** ボックスの横方向と縦方向の伸縮動作を設定する。Windowを指定すると、ボックスのサイズはウィンドウまたはSplitterのサイズに応じて変わる。Fillを指定すると、コンテナいっぱいのサイズになる。Offを指定すると、ボックスは伸縮しない。ほとんどのボックスはデフォルトでNeutralに設定され、子ボックスに応じて動作が決まる。
 
@@ -2576,7 +2540,7 @@ New Window( "Stretch",
 
 ### Set Summary Behavior
 
-**構文:** obj << Set Summary Behavior( "Default"|"Visible"|"Collapse" )
+**構文:** obj &lt;&lt; Set Summary Behavior( "Default"|"Visible"|"Collapse" )
 
 **説明:** Sets the behavior of the box when a report is viewed in Summary mode.
 
@@ -2595,7 +2559,7 @@ tb << Set Summary Behavior( "Visible" );
 
 ### Set Width
 
-**構文:** obj << Set Width( width )
+**構文:** obj &lt;&lt; Set Width( width )
 
 **説明:** ディスプレイボックスの幅を設定する。
 
@@ -2613,7 +2577,7 @@ fb << Set Width( 400 );
 
 ### Set Window Icon
 
-**構文:** obj << Set Window Icon( icon name )
+**構文:** obj &lt;&lt; Set Window Icon( icon name )
 
 **説明:** ウィンドウのアイコンを設定する。
 
@@ -2628,7 +2592,7 @@ w << Set Window Icon( "Scatter3D" );
 
 ### Set Window Size
 
-**構文:** obj << Set Window Size( x,y )
+**構文:** obj &lt;&lt; Set Window Size( x,y )
 
 **説明:** ウィンドウのサイズを設定する。
 
@@ -2643,7 +2607,7 @@ w << Set Window Size( 800, 1200 );
 
 ### Set Window Title
 
-**構文:** obj << Set Window Title( "string" )
+**構文:** obj &lt;&lt; Set Window Title( "string" )
 
 **説明:** ウィンドウのタイトルを変更する。
 
@@ -2660,7 +2624,7 @@ rbiv << Set Window Title( "New Title" );
 
 ### Show Properties
 
-**構文:** obj << Show Properties
+**構文:** obj &lt;&lt; Show Properties
 
 **説明:** ディスプレイボックスのプロパティエディタを表示する。
 
@@ -2677,7 +2641,7 @@ rbiv << Show Properties();
 
 ### Show Tree Structure
 
-**構文:** obj << Show Tree Structure
+**構文:** obj &lt;&lt; Show Tree Structure
 
 **説明:** ディスプレイボックスの階層型のツリー構造とその関連ノードを表示する。
 
@@ -2694,7 +2658,7 @@ rbiv << Show Tree Structure();
 
 ### Show Window
 
-**構文:** obj << Show Window( state=0|1 )
+**構文:** obj &lt;&lt; Show Window( state=0|1 )
 
 **説明:** ウィンドウの表示/非表示を切り替える。これはウィンドウを一時的に隠すのに便利。 デフォルトではオン。
 
@@ -2712,7 +2676,7 @@ w << Show Window( 1 );
 
 ### Sib
 
-**構文:** obj << Sib
+**構文:** obj &lt;&lt; Sib
 
 **説明:** ディスプレイボックスの兄弟(同レベルのもの)を戻す。
 
@@ -2731,7 +2695,7 @@ Print( axisSibling << Class Name() );
 
 ### Sib Append
 
-**構文:** obj << Sib Append( Display box, Horizontal|Vertical )
+**構文:** obj &lt;&lt; Sib Append( Display box, Horizontal|Vertical )
 
 **説明:** このディスプレイボックスのすぐ後にディスプレイボックスを1つ追加する。
 
@@ -2753,7 +2717,7 @@ fb << sib append( Text Box( "=== below ===" ), "Vertical" );
 
 ### Sib Prepend
 
-**構文:** obj << Sib Prepend( Display box, Horizontal|Vertical )
+**構文:** obj &lt;&lt; Sib Prepend( Display box, Horizontal|Vertical )
 
 **説明:** このディスプレイボックスのすぐ前にディスプレイボックスを1つ追加する。
 
@@ -2775,7 +2739,7 @@ fb << sib prepend( Text Box( "=== above ===" ), "Vertical" );
 
 ### Size Window
 
-**構文:** obj << Size Window( x,y )
+**構文:** obj &lt;&lt; Size Window( x,y )
 
 **説明:** ウィンドウのサイズを設定する。
 
@@ -2790,9 +2754,7 @@ w << Size Window( 500, 500 );
 
 ### Text Color
 
-**構文:** obj << Text Color( color );
-
-color = obj << Get Text Color
+**構文:** obj &lt;&lt; Text Color( color );color = obj &lt;&lt; Get Text Color
 
 **説明:** テキストの色が指定された場合、テキストはその色で描画される。指定されていない場合、ボックスは内包しているボックスのテキストの色を継承する。
 
@@ -2814,7 +2776,7 @@ tb << Text Color( "Red" );
 
 ### Top Parent
 
-**構文:** obj << Top Parent
+**構文:** obj &lt;&lt; Top Parent
 
 **説明:** ディスプレイボックスの最上層の親を戻す。
 
@@ -2832,13 +2794,11 @@ Print( rootParent << Class Name() );
 
 ### UI Only
 
-**構文:** obj << UI Only( state=0|1 );
-
-state = obj << Get UI Only
+**構文:** obj &lt;&lt; UI Only( state=0|1 );state = obj &lt;&lt; Get UI Only
 
 ### Update Window
 
-**構文:** obj << Update Window
+**構文:** obj &lt;&lt; Update Window
 
 **説明:** 無効になった領域がある場合に、ディスプレイボックスを含むウィンドウを更新する。<<Invalメッセージが無効の領域を作成する。
 
@@ -2890,9 +2850,7 @@ New Window( "rect",
 
 ### Vertical Alignment
 
-**構文:** obj << Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );
-
-"Default"|"Top"|"Center"|"Bottom" = obj << Get Vertical Alignment
+**構文:** obj &lt;&lt; Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );"Default"|"Top"|"Center"|"Bottom" = obj &lt;&lt; Get Vertical Alignment
 
 **説明:** ボックスがコンテナ全体を埋めていない場合、ボックスの縦方向の配置を指定する。
 
@@ -2914,9 +2872,7 @@ lb << Vertical Alignment( "Bottom" );
 
 ### Visibility
 
-**構文:** obj << Visibility( "Visible"|"Hidden"|"Collapse" );
-
-"Visible"|"Hidden"|"Collapse" = obj << Get Visibility
+**構文:** obj &lt;&lt; Visibility( "Visible"|"Hidden"|"Collapse" );"Visible"|"Hidden"|"Collapse" = obj &lt;&lt; Get Visibility
 
 **説明:** ボックスを表示するかどうか、ボックスのスペースを表示するかどうかを指定する。デフォルト値の"Visible"では、オブジェクトが表示される。"Hidden"のボックスは表示されないが、空白のスペースは表示される。一方、"Collapsed"のボックスはレイアウト内のスペースも表示されない。
 
@@ -2937,7 +2893,7 @@ Show( tb << Get Visibility );
 
 ### Window Class Name
 
-**構文:** obj << Window Class Name
+**構文:** obj &lt;&lt; Window Class Name
 
 **説明:** ディスプレイボックスのウィンドウクラス名を戻す。
 
@@ -2955,7 +2911,7 @@ Show( rbiv << Window Class Name() );
 
 ### XPath
 
-**構文:** obj << XPath( XPath expression, <English(0|1)>, <NoData(0|1)> )
+**構文:** obj &lt;&lt; XPath( XPath expression, &lt;English(0|1)&gt;, &lt;NoData(0|1)&gt; )
 
 **説明:** 表示ツリーのXML表現にXpath式を適用し、その結果を戻す。デフォルトでは、文字列はローカル言語で戻され、XMLには一部のボックスのデータ値が含まれる。Englishオプションを使うと、英語の文字列が戻される。NoDataオプションを使うと、ボックス内のデータ値を省略できるため、ボックスの属性を取得することが目的の場合にパフォーマンスを向上できる。
 
@@ -3035,7 +2991,7 @@ biv = dt << Run Script( "Bivariate" );
 
 ### Zoom Window
 
-**構文:** obj << Zoom Window
+**構文:** obj &lt;&lt; Zoom Window
 
 **説明:** 内容がすべて表示されるようにウィンドウのサイズを変更する。
 
@@ -3076,7 +3032,7 @@ New Window( "Example",
 
 ### Enable
 
-**構文:** obj << Enable( 0|1 )
+**構文:** obj &lt;&lt; Enable( 0|1 )
 
 **説明:** このコントロールを有効(1)または無効(0)に設定する。
 
@@ -3093,7 +3049,7 @@ New Window( "Example",
 
 ### Get Function
 
-**構文:** obj << Get Function
+**構文:** obj &lt;&lt; Get Function
 
 **説明:** コントロールに対して設定されている関数またはスクリプトがある場合は、それを戻す。
 
@@ -3116,7 +3072,7 @@ bb << Get Function;
 
 ### Is Enabled
 
-**構文:** 0|1 = obj << Is Enabled
+**構文:** 0|1 = obj &lt;&lt; Is Enabled
 
 **説明:** コントロールが現在有効であるか否かのステータスを戻す。
 
@@ -3134,7 +3090,7 @@ cb2 << Is Enabled();
 
 ### Set Function
 
-**構文:** obj << Set Function( Function( {thisBox, index}, <script> ) )
+**構文:** obj &lt;&lt; Set Function( Function( {thisBox, index}, &lt;script&gt; ) )
 
 **説明:** コントロールに関数を設定する。関数のスクリプトは、Popup Boxで新しい項目が選択されたときに実行される。
 
@@ -3159,7 +3115,7 @@ New Window( "Example",
 
 ### Set Script
 
-**構文:** obj << Set Script( script )
+**構文:** obj &lt;&lt; Set Script( script )
 
 **説明:** コントロールがクリックされたら指定のスクリプトを実行するように設定する。
 
@@ -3176,7 +3132,7 @@ ex << Set Script( Print( "Pressed." ) );
 
 ### Set Tip
 
-**構文:** obj << Set Tip( tip )
+**構文:** obj &lt;&lt; Set Tip( tip )
 
 **説明:** コントロール上にマウスが置かれたときにテキストをツールヒントとして表示するように設定する。
 

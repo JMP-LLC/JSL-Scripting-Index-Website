@@ -6,7 +6,7 @@
 
 ### Action
 
-**语法:** obj << Action
+**语法:** obj &lt;&lt; Action
 
 **说明:** 平台内用于插入表达式以求值的所有用途的陷门。暂时将 DisplayBox 和 DataTable 上下文设置为平台。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**语法:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**语法:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **说明:** 将以前创建的预设应用到对象，从而更新选项和定制以匹配保存的设置。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**语法:** obj << Automatic Recalc( state=0|1 )
+**语法:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **说明:** 对排除和数据更改自动重新执行分析。若启用了“自动重新计算”选项，则应考虑使用 Wait(0) 命令来确保排除和数据更改在重新计算前生效。
 
@@ -92,7 +92,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**语法:** obj << Broadcast(message)
+**语法:** obj &lt;&lt; Broadcast(message)
 
 **说明:** 将消息广播到平台。若各个对象的返回结果是表，则它们会尽可能拼接，并且最终格式与表框中“保存合并表”选项的结果或使用“源”列的“拼接”选项的结果相同。除此之外，结果存储在列表中并返回。
 
@@ -112,7 +112,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Copy ByGroup Script
 
-**语法:** obj << Copy ByGroup Script
+**语法:** obj &lt;&lt; Copy ByGroup Script
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其置于剪贴板上。
 
@@ -138,7 +138,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**语法:** obj << Copy Script
+**语法:** obj &lt;&lt; Copy Script
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其置于剪贴板上。
 
@@ -158,7 +158,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**语法:** obj << Data Table Window
+**语法:** obj &lt;&lt; Data Table Window
 
 **说明:** 将该分析的数据表窗口移动到前面。
 
@@ -178,7 +178,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**语法:** obj << Get By Levels
+**语法:** obj &lt;&lt; Get By Levels
 
 **说明:** 返回将“依据”组列映射到其值的关联数组。
 
@@ -195,7 +195,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**语法:** obj << Get ByGroup Script
+**语法:** obj &lt;&lt; Get ByGroup Script
 
 **说明:** 创建生成该分析的脚本 (JSL)，并将其作为表达式返回。
 
@@ -222,7 +222,7 @@ Show( t );
 
 ### Get Container
 
-**语法:** obj << Get Container
+**语法:** obj &lt;&lt; Get Container
 
 **说明:** 返回对保留对象内容的容器框的引用。
 
@@ -274,7 +274,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**语法:** obj << Get Data Table
+**语法:** obj &lt;&lt; Get Data Table
 
 **说明:** 返回对该数据表的引用。
 
@@ -295,7 +295,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**语法:** obj << Get Group Platform
+**语法:** obj &lt;&lt; Get Group Platform
 
 **说明:** 若该平台是组的一部分，则返回组平台对象。否则返回 Empty()。
 
@@ -312,7 +312,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**语法:** obj << Get Script
+**语法:** obj &lt;&lt; Get Script
 
 **说明:** 创建生成该分析的脚本 (JSL)，并将其作为表达式返回。
 
@@ -333,7 +333,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**语法:** obj << Get Script With Data Table
+**语法:** obj &lt;&lt; Get Script With Data Table
 
 **说明:** 创建生成该分析的脚本 (JSL) 以专门引用该数据表，并将其作为表达式返回。
 
@@ -354,7 +354,7 @@ Show( t );
 
 ### Get Timing
 
-**语法:** obj << Get Timing
+**语法:** obj &lt;&lt; Get Timing
 
 **说明:** 平台启动过程计时。
 
@@ -375,7 +375,7 @@ Show( t );
 
 ### Get Web Support
 
-**语法:** obj << Get Web Support
+**语法:** obj &lt;&lt; Get Web Support
 
 **说明:** 返回一个数字，指示显示对象的交互式 HTML 支持的水平。1 表示支持部分或全部元素。0 表示不支持。
 
@@ -391,7 +391,7 @@ Show( s );
 
 ### Get Where Expr
 
-**语法:** obj << Get Where Expr
+**语法:** obj &lt;&lt; Get Where Expr
 
 **说明:** 若平台是使用 By() 或 Where() 启动的，则返回数据子集的 Where 表达式。否则返回 Empty()
 
@@ -428,7 +428,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**语法:** obj << Local Data Filter
+**语法:** obj &lt;&lt; Local Data Filter
 
 **说明:** 将数据过滤到特定的组或范围，但在该平台中是本地的
 
@@ -484,7 +484,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**语法:** obj << Paste Local Data Filter
+**语法:** obj &lt;&lt; Paste Local Data Filter
 
 **说明:** 将剪贴板中的本地数据过滤器应用于当前报表。
 
@@ -505,7 +505,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**语法:** obj << Redo Analysis
+**语法:** obj &lt;&lt; Redo Analysis
 
 **说明:** 在新窗口中重新运行相同的分析。若数据发生更改，分析也将不同。
 
@@ -525,7 +525,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**语法:** obj << Redo ByGroup Analysis
+**语法:** obj &lt;&lt; Redo ByGroup Analysis
 
 **说明:** 在新窗口中重新运行相同的分析。若数据发生更改，分析也将不同。
 
@@ -551,7 +551,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**语法:** obj << Relaunch Analysis
+**语法:** obj &lt;&lt; Relaunch Analysis
 
 **说明:** 打开平台启动窗口并重新调用曾用于创建报表的设置。
 
@@ -571,7 +571,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**语法:** obj << Relaunch ByGroup
+**语法:** obj &lt;&lt; Relaunch ByGroup
 
 **说明:** 打开平台启动窗口并重新调用曾用于创建报表的设置。
 
@@ -597,7 +597,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Local Data Filter
 
-**语法:** obj << Remove Local Data Filter
+**语法:** obj &lt;&lt; Remove Local Data Filter
 
 **说明:** 若已创建本地数据过滤器，这会将它删除并将平台恢复为直接使用数据表中的所有数据
 
@@ -636,9 +636,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**语法:** obj << Report;
-
-Report( obj )
+**语法:** obj &lt;&lt; Report;Report( obj )
 
 **说明:** 返回对该报表对象的引用。
 
@@ -660,7 +658,7 @@ Show( t );
 
 ### Report View
 
-**语法:** obj << Report View( "完全"|"汇总" )
+**语法:** obj &lt;&lt; Report View( "完全"|"汇总" )
 
 **说明:** 报表视图确定平台报表中可见的详细程度。Full 显示所有详细信息，而 Summary 仅显示根据平台确定的选定内容。对于定制行为，显示框支持 <<Set Summary Behavior 消息。
 
@@ -680,7 +678,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**语法:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**语法:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **说明:** 创建生成该分析的 JSL 脚本并将其保存为数据表中的表属性。您可以为脚本指定一个名称。Append Suffix 选项在脚本名称后追加一个数字后缀，用于将该脚本与现有的同名脚本区别出来。Prompt 选项提示用户指定脚本名称。Replace 选项会替换同名的现有脚本。
 
@@ -706,7 +704,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**语法:** obj << Save ByGroup Script to Journal
+**语法:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **说明:** 创建生成该分析的 JSL 脚本，并将一个按钮添加至包含该脚本的记录中。
 
@@ -732,7 +730,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**语法:** obj << Save ByGroup Script to Script Window
+**语法:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其追加至当前的脚本文本窗口中。
 
@@ -758,7 +756,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**语法:** obj << Save Script for All Objects
+**语法:** obj &lt;&lt; Save Script for All Objects
 
 **说明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -778,7 +776,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**语法:** obj << Save Script for All Objects To Data Table( <name> )
+**语法:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **说明:** 将所有报表对象的脚本保存至当前数据表。当您在该窗口中具有多个报表时，该选项很有用。除非您在引号中指定脚本名称，否则脚本将以第一个平台命名。
 
@@ -828,7 +826,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**语法:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**语法:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其作为表属性保存至数据表中。
 
@@ -848,7 +846,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**语法:** obj << Save Script to Journal
+**语法:** obj &lt;&lt; Save Script to Journal
 
 **说明:** 创建生成该分析的 JSL 脚本，并将一个按钮添加至包含该脚本的记录中。
 
@@ -868,7 +866,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**语法:** obj << Save Script to Report
+**语法:** obj &lt;&lt; Save Script to Report
 
 **说明:** 创建生成该分析的 JSL 脚本，并在报表中显示。有助于保留打印的已完成操作记录。
 
@@ -888,7 +886,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**语法:** obj << Save Script to Script Window
+**语法:** obj &lt;&lt; Save Script to Script Window
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其追加至当前的脚本文本窗口中。
 
@@ -973,7 +971,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**语法:** obj << Sync to Data Table Changes
+**语法:** obj &lt;&lt; Sync to Data Table Changes
 
 **说明:** 与已进行的排除和数据的更改同步。
 
@@ -990,7 +988,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**语法:** obj << Title( "new title" )
+**语法:** obj &lt;&lt; Title( "new title" )
 
 **说明:** 设置平台的标题。
 
@@ -1010,7 +1008,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**语法:** obj << Top Report
+**语法:** obj &lt;&lt; Top Report
 
 **说明:** 返回对报表中根节点的引用。
 
@@ -1032,7 +1030,7 @@ Show( t );
 
 ### Transform Column
 
-**语法:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**语法:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **说明:** 在对象（通常是平台）的本地上下文中创建变换列。变换列仅在平台的生命周期内是活动的。
 
@@ -1053,7 +1051,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**语法:** obj << View Web XML
+**语法:** obj &lt;&lt; View Web XML
 
 **说明:** 返回用于创建交互式 HTML 报表的 XML 代码。
 
@@ -1068,9 +1066,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**语法:** obj = Process Capability(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Process Capability(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 设置要为报表创建的窗口类型。默认情况下将创建 Visible 报表窗口。Invisible 窗口将不显示在屏幕上，但可被函数（例如 Window()）发现。Private 窗口会响应大多数窗口消息，但不可发现并且必须通过报表对象处理
 
@@ -1091,7 +1087,7 @@ New Window( "Bivariate Equation",
 
 ### Process Capability
 
-**语法:** Process Capability( Process Variables (columns), < Spec Limits() > )
+**语法:** Process Capability( Process Variables (columns), &lt; Spec Limits() &gt; )
 
 **说明:** 为每个过程计算过程能力分析，并创建有助于同时分析多个过程能力的图形。也可以定义规格限。
 
@@ -1112,9 +1108,7 @@ obj = dt << Process Capability(
 
 ### By
 
-**语法:** obj = Process Capability(...<By( column(s) )>...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Process Capability(...&lt;By( column(s) )&gt;...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 为指定列的每个水平执行单独的分析。
 
@@ -1178,9 +1172,7 @@ obj = dt << Process Capability(
 
 ### Process Variables
 
-**语法:** obj = Process Capability(...Process Variables( column(s) )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Process Capability(...Process Variables( column(s) )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定包含要分析的测量值的过程数据的列。
 
@@ -1201,7 +1193,7 @@ obj = dt << Process Capability(
 
 ### AIAG (Ppk) Labeling
 
-**语法:** obj << "AIAG (Ppk) Labeling"n( state=0|1 )
+**语法:** obj &lt;&lt; "AIAG (Ppk) Labeling"n( state=0|1 )
 
 **说明:** 将“Cp”标签改为“Pp”标签，开启或关闭能力指标的 AIAG 标签。 默认开启。
 
@@ -1220,7 +1212,7 @@ obj << "AIAG (Ppk) Labeling"n( 0 );
 
 ### Capability Box Plots
 
-**语法:** obj << Capability Box Plots( state=0|1 )
+**语法:** obj &lt;&lt; Capability Box Plots( state=0|1 )
 
 **说明:** 为每个过程显示或隐藏箱线图。要创建箱线图，每个过程的值以其目标为中心，并以其规格限统一尺度。 默认开启。
 
@@ -1242,7 +1234,7 @@ obj << Capability Box Plots( 1 );
 
 ### Capability Index Plot
 
-**语法:** obj << Capability Index Plot( state=0|1, <plot options> )
+**语法:** obj &lt;&lt; Capability Index Plot( state=0|1, &lt;plot options&gt; )
 
 **说明:** 显示或隐藏一个图形，它绘制每个过程的总 Ppk。 默认开启。
 
@@ -1266,7 +1258,7 @@ obj << Capability Index Plot( 1 );
 
 ### Color Out of Spec Values
 
-**语法:** obj << Color Out of Spec Values( state=0|1 )
+**语法:** obj &lt;&lt; Color Out of Spec Values( state=0|1 )
 
 **说明:** 为数据表中值超出规格限的单元格着色。为值低于下规格限 (LSL) 的单元格着红色，值高于上规格限 (USL) 的单元格着蓝色。
 
@@ -1302,7 +1294,7 @@ obj = dt << Process Capability(
 
 ### Goal Plot
 
-**语法:** obj << Goal Plot( state=0|1, <plot options> )
+**语法:** obj &lt;&lt; Goal Plot( state=0|1, &lt;plot options&gt; )
 
 **说明:** 显示或隐藏每个过程对应一个点的图形。规格标准化均值在水平轴上，规格标准化的标准差在垂直轴上。显示在目标弧上方的点表示低于指定的 Ppk (Cpk) 阈值的过程。 默认开启。
 
@@ -1324,7 +1316,7 @@ obj << Goal Plot( 1 );
 
 ### Individual Detail Reports
 
-**语法:** obj << Individual Detail Reports( state=0|1 )
+**语法:** obj &lt;&lt; Individual Detail Reports( state=0|1 )
 
 **说明:** 为每个过程显示或隐藏单独的单项详细能力报表。
 
@@ -1344,7 +1336,7 @@ obj << Individual Detail Reports( 1 );
 
 ### Individual Detail Reports Cutoff
 
-**语法:** obj << Individual Detail Reports Cutoff( number=1 )
+**语法:** obj &lt;&lt; Individual Detail Reports Cutoff( number=1 )
 
 **说明:** 若过程变量数小于等于截止值，则显示单项详细报表并隐藏目标图和能力箱线图。 默认为“1”。
 
@@ -1364,7 +1356,7 @@ obj << Individual Detail Reports Cutoff( 7 );
 
 ### Make Goal Plot Summary Table
 
-**语法:** obj << Make Goal Plot Summary Table
+**语法:** obj &lt;&lt; Make Goal Plot Summary Table
 
 **说明:** 创建一个新数据表，它包含目标图中绘制的组内点和总体点的坐标。
 
@@ -1384,7 +1376,7 @@ obj << Make Goal Plot Summary Table;
 
 ### Order By
 
-**语法:** obj << Order By( "初始顺序"|"反转初始顺序"|"组内 Sigma Cpk 升序"|"组内 Sigma Cpk 降序"|"总 Sigma Ppk 升序"|"总 Sigma Ppk 降序" )
+**语法:** obj &lt;&lt; Order By( "初始顺序"|"反转初始顺序"|"组内 Sigma Cpk 升序"|"组内 Sigma Cpk 降序"|"总 Sigma Ppk 升序"|"总 Sigma Ppk 降序" )
 
 **说明:** 以指定的顺序重新排序所有箱线图、汇总报表和单项详细信息报表。
 
@@ -1406,7 +1398,7 @@ obj << Order By( "Within Sigma Cpk Ascending" );
 
 ### Overall Sigma Normalized Box Plots
 
-**语法:** obj << Overall Sigma Normalized Box Plots( state=0|1 )
+**语法:** obj &lt;&lt; Overall Sigma Normalized Box Plots( state=0|1 )
 
 **说明:** 显示或隐藏每个过程的箱线图。箱线图的值以总均值为中心，以标准差的总估计值统一尺度。
 
@@ -1427,7 +1419,7 @@ obj << Overall Sigma Normalized Box Plots( 1 );
 
 ### Overall Sigma Summary Report
 
-**语法:** obj << Overall Sigma Summary Report( state=0|1 )
+**语法:** obj &lt;&lt; Overall Sigma Summary Report( state=0|1 )
 
 **说明:** 显示或隐藏能力指标的汇总报表。能力指标使用标准差的总估计值计算得到。
 
@@ -1448,7 +1440,7 @@ obj << Overall Sigma Summary Report( 1 );
 
 ### Process Performance Plot
 
-**语法:** obj << Process Performance Plot( state=0|1, <plot options> )
+**语法:** obj &lt;&lt; Process Performance Plot( state=0|1, &lt;plot options&gt; )
 
 **说明:** 显示或隐藏“稳定性-总能力 Ppk”的四象限图。
 
@@ -1474,7 +1466,7 @@ obj << Process Performance Plot( 1 );
 
 ### Save Distributions as Column Properties
 
-**语法:** obj << Save Distributions as Column Properties
+**语法:** obj &lt;&lt; Save Distributions as Column Properties
 
 **说明:** 将用于计算能力的分布保存为“过程能力分布”列属性。将为分析中的每个过程变量保存列属性。
 
@@ -1492,7 +1484,7 @@ obj << Save Distributions as Column Properties;
 
 ### Save In Spec Indicator Formulas
 
-**语法:** obj << Save In Spec Indicator Formulas
+**语法:** obj &lt;&lt; Save In Spec Indicator Formulas
 
 **说明:** 在数据表中创建新的公式列。新列包含一个值，该值指示某行是否在规格限内。
 
@@ -1512,7 +1504,7 @@ obj << Save In Spec Indicator Formulas;
 
 ### Save Spec Limits as Column Properties
 
-**语法:** obj << Save Spec Limits as Column Properties
+**语法:** obj &lt;&lt; Save Spec Limits as Column Properties
 
 **说明:** 将规格限保存至分析中每个过程变量的列属性。
 
@@ -1530,7 +1522,7 @@ obj << Save Spec Limits as Column Properties;
 
 ### Save Spec Limits to New Table
 
-**语法:** obj << Save Spec Limits to New Table
+**语法:** obj &lt;&lt; Save Spec Limits to New Table
 
 **说明:** 创建一个新数据表，它包含代表每个过程变量的每一列的规格限、过程重要性和分布。该表为高格式，为每个过程变量包含一行。过程重要性和分布类型仅在适用时保存。
 
@@ -1550,7 +1542,7 @@ obj << Save Spec Limits to New Table;
 
 ### Select Out of Spec Values
 
-**语法:** obj << Select Out of Spec Values( state=0|1 )
+**语法:** obj &lt;&lt; Select Out of Spec Values( state=0|1 )
 
 **说明:** 选择数据表中包含至少一个未落在规格限内的值的所有行和列。
 
@@ -1586,7 +1578,7 @@ obj = dt << Process Capability(
 
 ### Within Sigma Normalized Box Plots
 
-**语法:** obj << Within Sigma Normalized Box Plots( state=0|1 )
+**语法:** obj &lt;&lt; Within Sigma Normalized Box Plots( state=0|1 )
 
 **说明:** 显示或隐藏一个图形，它包含每个过程的箱线图。箱线图的值以均值为中心，并除以标准差的子组内估计值。
 
@@ -1607,7 +1599,7 @@ obj << Within Sigma Normalized Box Plots( 1 );
 
 ### Within Sigma Summary Report
 
-**语法:** obj << Within Sigma Summary Report( state=0|1 )
+**语法:** obj &lt;&lt; Within Sigma Summary Report( state=0|1 )
 
 **说明:** 显示或隐藏能力指标的汇总报表。能力指标使用标准差的子组内估计值计算得到。仅对具有指定正态分布的变量显示结果。
 
@@ -1628,7 +1620,7 @@ obj << Within Sigma Summary Report( 1 );
 
 ### Within or Between-and-Within Sigma Normalized Box Plots
 
-**语法:** obj << "Within or Between-and-Within Sigma Normalized Box Plots"n( state=0|1 )
+**语法:** obj &lt;&lt; "Within or Between-and-Within Sigma Normalized Box Plots"n( state=0|1 )
 
 **说明:** 显示或隐藏一个图形，它包含每个过程的箱线图。箱线图的值以均值为中心，并除以标准差的组内估计值或组间组内估计值（若指定）。
 
@@ -1651,7 +1643,7 @@ obj << "Within or Between-and-Within Sigma Normalized Box Plots"n( 1 );
 
 ### Within or Between-and-Within Sigma Summary Report
 
-**语法:** obj << "Within or Between-and-Within Sigma Summary Report"n( state=0|1 )
+**语法:** obj &lt;&lt; "Within or Between-and-Within Sigma Summary Report"n( state=0|1 )
 
 **说明:** 显示或隐藏能力指标的汇总报表。能力指标使用标准差的组内估计值或组间组内估计值（若指定）计算得到。只有在启动窗口中为至少一个过程选择了“计算组间组内能力”选项时，该选项才可用。
 
@@ -1678,7 +1670,7 @@ obj << "Within or Between-and-Within Sigma Summary Report"n( 1 );
 
 #### Parametric Fit Confidence Limits Shading
 
-**语法:** scrobj << Parametric Fit Confidence Limits Shading( state=0|1 )
+**语法:** scrobj &lt;&lt; Parametric Fit Confidence Limits Shading( state=0|1 )
 
 **说明:** 显示或隐藏参数拟合的置信限着色。
 
@@ -1712,7 +1704,7 @@ scrobj << Parametric Fit Confidence Limits Shading( 0 );
 
 #### Parametric Fit Line
 
-**语法:** scrobj << Parametric Fit Line( state=0|1 )
+**语法:** scrobj &lt;&lt; Parametric Fit Line( state=0|1 )
 
 **说明:** 显示或隐藏参数拟合线。 默认开启。
 
@@ -1743,7 +1735,7 @@ scrobj << Parametric Fit Line( 1 );
 
 #### Simultaneous Empirical Confidence Limits
 
-**语法:** scrobj << Simultaneous Empirical Confidence Limits( state=0|1 )
+**语法:** scrobj &lt;&lt; Simultaneous Empirical Confidence Limits( state=0|1 )
 
 **说明:** 显示或隐藏联合经验置信限。 默认开启。
 
@@ -1777,7 +1769,7 @@ scrobj << Simultaneous Empirical Confidence Limits( 1 );
 
 #### Simultaneous Empirical Confidence Limits Shading
 
-**语法:** scrobj << Simultaneous Empirical Confidence Limits Shading( state=0|1 )
+**语法:** scrobj &lt;&lt; Simultaneous Empirical Confidence Limits Shading( state=0|1 )
 
 **说明:** 显示或隐藏联合经验置信限的着色。 默认开启。
 
@@ -1817,7 +1809,7 @@ scrobj << Simultaneous Empirical Confidence Limits Shading( 1 );
 
 #### Comparison Details
 
-**语法:** scrobj << Comparison Details( state=0|1 )
+**语法:** scrobj &lt;&lt; Comparison Details( state=0|1 )
 
 **说明:** 显示或隐藏包含每个分布的 AICc、BIC 和 -2对数似然值的报表。 默认开启。
 
@@ -1852,7 +1844,7 @@ scrobj << Comparison Details( 1 );
 
 #### Comparison Histogram
 
-**语法:** scrobj << Comparison Histogram( state=0|1 )
+**语法:** scrobj &lt;&lt; Comparison Histogram( state=0|1 )
 
 **说明:** 显示或隐藏分布比较直方图。 默认开启。
 
@@ -1887,7 +1879,7 @@ scrobj << Comparison Histogram( 1 );
 
 #### Fit Beta
 
-**语法:** scrobj << Compare Distributions( 1, <<Fit Beta )
+**语法:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit Beta )
 
 **说明:** 在“比较详细信息”报表中显示 beta 分布拟合统计量并在直方图中显示密度曲线。
 
@@ -1911,7 +1903,7 @@ scrobj << Compare Distributions( 1, <<Fit Beta );
 
 #### Fit Exponential
 
-**语法:** scrobj << Compare Distributions( 1, <<Fit Exponential )
+**语法:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit Exponential )
 
 **说明:** 在“比较详细信息”报表中显示指数分布拟合统计量并在直方图中显示密度曲线。
 
@@ -1935,7 +1927,7 @@ scrobj << Compare Distributions( 1, <<Fit Exponential );
 
 #### Fit Gamma
 
-**语法:** scrobj << Compare Distributions( 1, <<Fit Gamma )
+**语法:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit Gamma )
 
 **说明:** 在“比较详细信息”报表中显示 gamma 分布拟合统计量并在直方图中显示密度曲线。
 
@@ -1957,7 +1949,7 @@ scrobj << Compare Distributions( 1, <<Fit Gamma );
 
 #### Fit Johnson
 
-**语法:** scrobj << Compare Distributions( 1, <<Fit Johnson )
+**语法:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit Johnson )
 
 **说明:** 在“比较详细信息”报表中显示 Johnson 分布拟合统计量并在直方图中显示密度曲线。
 
@@ -1979,7 +1971,7 @@ scrobj << Compare Distributions( 1, <<Fit Johnson );
 
 #### Fit Largest Extreme Value
 
-**语法:** scrobj << Compare Distributions( 1, <<Fit Largest Extreme Value )
+**语法:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit Largest Extreme Value )
 
 **说明:** 在“比较详细信息”报表中显示最大极值分布拟合统计量并在直方图中显示密度曲线。
 
@@ -2001,7 +1993,7 @@ scrobj << Compare Distributions( 1, <<Fit Largest Extreme Value );
 
 #### Fit Lognormal
 
-**语法:** scrobj << Compare Distributions( 1, <<Fit Lognormal )
+**语法:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit Lognormal )
 
 **说明:** 在“比较详细信息”报表中显示对数正态分布拟合统计量并在直方图中显示密度曲线。
 
@@ -2023,7 +2015,7 @@ scrobj << Compare Distributions( 1, <<Fit Lognormal );
 
 #### Fit Nonparametric
 
-**语法:** scrobj << Compare Distributions( 1, <<Fit Nonparametric )
+**语法:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit Nonparametric )
 
 **说明:** 显示非参数分布核带宽滑块并在直方图中显示密度曲线。
 
@@ -2045,7 +2037,7 @@ scrobj << Compare Distributions( 1, <<Fit Nonparametric );
 
 #### Fit Normal
 
-**语法:** scrobj << Compare Distributions( 1, <<Fit Normal )
+**语法:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit Normal )
 
 **说明:** 在“比较详细信息”报表中显示正态分布拟合统计量并在直方图中显示密度曲线。
 
@@ -2064,7 +2056,7 @@ obj = dt << Process Capability(
 
 #### Fit SHASH
 
-**语法:** scrobj << Compare Distributions( 1, <<Fit SHASH )
+**语法:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit SHASH )
 
 **说明:** 在“比较详细信息”报表中显示 SHASH 分布拟合统计量并在直方图中显示密度曲线。
 
@@ -2088,7 +2080,7 @@ scrobj << Compare Distributions( 1, <<Fit SHASH );
 
 #### Fit Smallest Extreme Value
 
-**语法:** scrobj << Compare Distributions( 1, <<Fit Smallest Extreme Value )
+**语法:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit Smallest Extreme Value )
 
 **说明:** 在“比较详细信息”报表中显示最小极值分布拟合统计量并在直方图中显示密度曲线。
 
@@ -2110,7 +2102,7 @@ scrobj << Compare Distributions( 1, <<Fit Smallest Extreme Value );
 
 #### Fit Weibull
 
-**语法:** scrobj << Compare Distributions( 1, <<Fit Weibull )
+**语法:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit Weibull )
 
 **说明:** 在“比较详细信息”报表中显示 Weibull 分布拟合统计量并在直方图中显示密度曲线。
 
@@ -2132,7 +2124,7 @@ scrobj << Compare Distributions( 1, <<Fit Weibull );
 
 #### Mixture of 2 Normals
 
-**语法:** scrobj << Compare Distributions( 1, <<Mixture of 2 Normals )
+**语法:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Mixture of 2 Normals )
 
 **说明:** 在“比较详细信息”报表中显示 2 个正态混合分布拟合统计量并在直方图中显示密度曲线。
 
@@ -2156,7 +2148,7 @@ scrobj << Compare Distributions( 1, <<Mixture of 2 Normals );
 
 #### Mixture of 3 Normals
 
-**语法:** scrobj << Compare Distributions( 1, <<Mixture of 3 Normals )
+**语法:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Mixture of 3 Normals )
 
 **说明:** 在“比较详细信息”报表中显示 3 个正态混合分布拟合统计量并在直方图中显示密度曲线。
 
@@ -2180,7 +2172,7 @@ scrobj << Compare Distributions( 1, <<Mixture of 3 Normals );
 
 #### Order by Comparison Criterion
 
-**语法:** scrobj << Order by Comparison Criterion( "AICc"|"BIC"|"-2Loglikelihood" )
+**语法:** scrobj &lt;&lt; Order by Comparison Criterion( "AICc"|"BIC"|"-2Loglikelihood" )
 
 **说明:** 重新排序“比较详细信息”报表。它可以按 AICc、BIC 或 -2对数似然重新排序。
 
@@ -2206,7 +2198,7 @@ scrobj << Order by Comparison Criterion( "-2Loglikelihood" );
 
 #### Probability Plots
 
-**语法:** scrobj << Probability Plots( state=0|1 )
+**语法:** scrobj &lt;&lt; Probability Plots( state=0|1 )
 
 **说明:** 显示或隐藏分布比较概率图。
 
@@ -2232,7 +2224,7 @@ scrobj << Probability Plots( 1 );
 
 #### Show Between-and-Within Sigma Density
 
-**语法:** scrobj << "Show Between-and-Within Sigma Density"n( state=0|1 )
+**语法:** scrobj &lt;&lt; "Show Between-and-Within Sigma Density"n( state=0|1 )
 
 **说明:** 在直方图中显示或隐藏使用组间组内 Sigma 的密度曲线。 默认开启。
 
@@ -2258,7 +2250,7 @@ scrobj << "Show Between-and-Within Sigma Density"n( 1 );
 
 #### Show Count Axis
 
-**语法:** scrobj << Show Count Axis( state=0|1 )
+**语法:** scrobj &lt;&lt; Show Count Axis( state=0|1 )
 
 **说明:** 在直方图框架右侧显示或隐藏计数轴。
 
@@ -2279,7 +2271,7 @@ scrobj << Show Count Axis( 1 );
 
 #### Show Density Axis
 
-**语法:** scrobj << Show Density Axis( state=0|1 )
+**语法:** scrobj &lt;&lt; Show Density Axis( state=0|1 )
 
 **说明:** 在直方图框架右侧显示或隐藏密度轴。
 
@@ -2300,7 +2292,7 @@ scrobj << Show Density Axis( 1 );
 
 #### Show Overall Sigma Density
 
-**语法:** scrobj << Show Overall Sigma Density( state=0|1 )
+**语法:** scrobj &lt;&lt; Show Overall Sigma Density( state=0|1 )
 
 **说明:** 在直方图中显示或隐藏使用总 sigma 的密度曲线。 默认开启。
 
@@ -2323,7 +2315,7 @@ scrobj << Show Overall Sigma Density( 1 );
 
 #### Show Spec Limits
 
-**语法:** scrobj << Show Spec Limits( state=0|1 )
+**语法:** scrobj &lt;&lt; Show Spec Limits( state=0|1 )
 
 **说明:** 在直方图中显示或隐藏上下规格限。 默认开启。
 
@@ -2344,7 +2336,7 @@ scrobj << Show Spec Limits( 1 );
 
 #### Show Target
 
-**语法:** scrobj << Show Target( state=0|1 )
+**语法:** scrobj &lt;&lt; Show Target( state=0|1 )
 
 **说明:** 在直方图中显示或隐藏目标线。 默认开启。
 
@@ -2365,7 +2357,7 @@ scrobj << Show Target( 1 );
 
 #### Show Within Sigma Density
 
-**语法:** scrobj << Show Within Sigma Density( state=0|1 )
+**语法:** scrobj &lt;&lt; Show Within Sigma Density( state=0|1 )
 
 **说明:** 在直方图中显示或隐藏使用组内 sigma 的密度曲线。 默认开启。
 
@@ -2392,7 +2384,7 @@ scrobj << Show Within Sigma Density( 1 );
 
 #### Capability
 
-**语法:** scrobj << Capability( state=0|1 )
+**语法:** scrobj &lt;&lt; Capability( state=0|1 )
 
 **说明:** 显示或隐藏能力指标。原始能力指标基于总 sigma。 默认开启。
 
@@ -2423,7 +2415,7 @@ scrobj << Capability( 1 );
 
 #### Nonconformance
 
-**语法:** scrobj << Nonconformance( state=0|1 )
+**语法:** scrobj &lt;&lt; Nonconformance( state=0|1 )
 
 **说明:** 显示或隐藏不合格。原始不合格值基于总 Sigma。 默认开启。
 
@@ -2454,7 +2446,7 @@ scrobj << Nonconformance( 1 );
 
 #### Revert to Original Values
 
-**语法:** scrobj << Revert to Original Values
+**语法:** scrobj &lt;&lt; Revert to Original Values
 
 **说明:** 将交互式能力图恢复为其原始值。
 
@@ -2485,7 +2477,7 @@ scrobj << Revert to Original Values;
 
 #### Save New Spec Limits as a Column Property
 
-**语法:** scrobj << Save New Spec Limits as a Column Property
+**语法:** scrobj &lt;&lt; Save New Spec Limits as a Column Property
 
 **说明:** 将新的规格限保存为原始数据表中的列属性。
 
@@ -2520,7 +2512,7 @@ scrobj << Save New Spec Limits as a Column Property;
 
 #### Normal Fit Confidence Limits Shading
 
-**语法:** scrobj << Normal Fit Confidence Limits Shading( state=0|1 )
+**语法:** scrobj &lt;&lt; Normal Fit Confidence Limits Shading( state=0|1 )
 
 **说明:** 显示或隐藏正态概率图中的正态拟合置信限着色。 默认开启。
 
@@ -2543,7 +2535,7 @@ scrobj << Normal Fit Confidence Limits Shading( 1 );
 
 #### Normal Fit Line
 
-**语法:** scrobj << Normal Fit Line( state=0|1 )
+**语法:** scrobj &lt;&lt; Normal Fit Line( state=0|1 )
 
 **说明:** 显示或隐藏正态概率图中的正态拟合线。 默认开启。
 
@@ -2566,7 +2558,7 @@ scrobj << Normal Fit Line( 1 );
 
 #### Simultaneous Empirical Confidence Limits
 
-**语法:** scrobj << Simultaneous Empirical Confidence Limits( state=0|1 )
+**语法:** scrobj &lt;&lt; Simultaneous Empirical Confidence Limits( state=0|1 )
 
 **说明:** 在“过程能力”报表的正态概率图中显示或隐藏联合经验置信限。 默认开启。
 
@@ -2589,7 +2581,7 @@ scrobj << Simultaneous Empirical Confidence Limits( 1 );
 
 #### Simultaneous Empirical Confidence Limits Shading
 
-**语法:** scrobj << Simultaneous Empirical Confidence Limits Shading( state=0|1 )
+**语法:** scrobj &lt;&lt; Simultaneous Empirical Confidence Limits Shading( state=0|1 )
 
 **说明:** 在“过程能力”报表的正态概率图中显示或隐藏联合经验置信限着色。 默认开启。
 
@@ -2616,7 +2608,7 @@ scrobj << Simultaneous Empirical Confidence Limits Shading( 1 );
 
 #### Between-and-Within Sigma Capability
 
-**语法:** scrobj << "Between-and-Within Sigma Capability"n( state=0|1 )
+**语法:** scrobj &lt;&lt; "Between-and-Within Sigma Capability"n( state=0|1 )
 
 **说明:** 显示或隐藏使用组间组内 Sigma 的能力指标。 默认开启。
 
@@ -2641,7 +2633,7 @@ scrobj << "Between-and-Within Sigma Capability"n( 1 );
 
 #### Between-and-Within Sigma Target Index
 
-**语法:** scrobj << "Between-and-Within Sigma Target Index"n( state=0|1 )
+**语法:** scrobj &lt;&lt; "Between-and-Within Sigma Target Index"n( state=0|1 )
 
 **说明:** 显示或隐藏基于组间组内 sigma 的目标指标的估计值。
 
@@ -2666,7 +2658,7 @@ scrobj << "Between-and-Within Sigma Target Index"n( 0 );
 
 #### Between-and-Within Sigma Z Benchmark
 
-**语法:** scrobj << "Between-and-Within Sigma Z Benchmark"n( state=0|1 )
+**语法:** scrobj &lt;&lt; "Between-and-Within Sigma Z Benchmark"n( state=0|1 )
 
 **说明:** 显示或隐藏使用组间组内 Sigma 的 Z 基准指标。
 
@@ -2691,7 +2683,7 @@ scrobj << "Between-and-Within Sigma Z Benchmark"n( 1 );
 
 #### Compare Distributions
 
-**语法:** scrobj << Compare Distributions( state=0|1, < <<distribution options > )
+**语法:** scrobj &lt;&lt; Compare Distributions( state=0|1, &lt; &lt;&lt;distribution options &gt; )
 
 **说明:** 显示或隐藏用于比较过程分布的控制面板。
 
@@ -2776,7 +2768,7 @@ scrobj << Compare Distributions( 0 );
 
 #### Fix Parameters
 
-**语法:** scrobj << Fix Parameters( vector )
+**语法:** scrobj &lt;&lt; Fix Parameters( vector )
 
 **说明:** 将某些参数固定为指定值并重新估计其余参数。
 
@@ -2800,7 +2792,7 @@ scrobj << Fix Parameters( [., .] );
 
 #### Histogram
 
-**语法:** scrobj << Histogram( state=0|1 )
+**语法:** scrobj &lt;&lt; Histogram( state=0|1 )
 
 **说明:** 在“单项详细报表”中显示或隐藏过程数据的直方图。 默认开启。
 
@@ -2821,7 +2813,7 @@ scrobj << Histogram( 1 );
 
 #### Interactive Capability Plot
 
-**语法:** scrobj << Interactive Capability Plot( state=0|1 )
+**语法:** scrobj &lt;&lt; Interactive Capability Plot( state=0|1 )
 
 **说明:** 显示或隐藏交互式能力报表，它允许您探索对过程或规格限的更改如何影响能力。
 
@@ -2844,7 +2836,7 @@ scrobj << Interactive Capability Plot( 1 );
 
 #### Nonconformance
 
-**语法:** scrobj << Nonconformance( state=0|1 )
+**语法:** scrobj &lt;&lt; Nonconformance( state=0|1 )
 
 **说明:** 显示或隐藏落在规格限之外的观测的观测百分比和期望百分比的报表。 默认开启。
 
@@ -2865,7 +2857,7 @@ scrobj << Nonconformance( 1 );
 
 #### Nonparametric Density
 
-**语法:** scrobj << Nonparametric Density( state=0|1 )
+**语法:** scrobj &lt;&lt; Nonparametric Density( state=0|1 )
 
 **说明:** 显示或隐藏“非参数密度”报表，它提供用于拟合非参数分布的核带宽。 默认开启。
 
@@ -2887,7 +2879,7 @@ scrobj << Nonparametric Density( 1 );
 
 #### Normal Probability Plot
 
-**语法:** scrobj << Normal Probability Plot( state=0|1 )
+**语法:** scrobj &lt;&lt; Normal Probability Plot( state=0|1 )
 
 **说明:** 显示或隐藏正态概率图。
 
@@ -2910,7 +2902,7 @@ scrobj << Normal Probability Plot( 1 );
 
 #### Overall Sigma Capability
 
-**语法:** scrobj << Overall Sigma Capability( state=0|1 )
+**语法:** scrobj &lt;&lt; Overall Sigma Capability( state=0|1 )
 
 **说明:** 显示或隐藏基于总 sigma 的能力指标。 默认开启。
 
@@ -2931,7 +2923,7 @@ scrobj << Overall Sigma Capability( 1 );
 
 #### Overall Sigma Z Benchmark
 
-**语法:** scrobj << Overall Sigma Z Benchmark( state=0|1 )
+**语法:** scrobj &lt;&lt; Overall Sigma Z Benchmark( state=0|1 )
 
 **说明:** 显示或隐藏基于总 sigma 的 Z 基准指标。
 
@@ -2952,7 +2944,7 @@ scrobj << Overall Sigma Z Benchmark( 1 );
 
 #### Parameter Estimates
 
-**语法:** scrobj << Parameter Estimates( state=0|1 )
+**语法:** scrobj &lt;&lt; Parameter Estimates( state=0|1 )
 
 **说明:** 显示或隐藏非正态参数分布的参数估计值报表。 默认开启。
 
@@ -2974,7 +2966,7 @@ scrobj << Parameter Estimates( 1 );
 
 #### Process Summary
 
-**语法:** scrobj << Process Summary( state=0|1 )
+**语法:** scrobj &lt;&lt; Process Summary( state=0|1 )
 
 **说明:** 显示或隐藏过程汇总统计量。 默认开启。
 
@@ -2995,7 +2987,7 @@ scrobj << Process Summary( 1 );
 
 #### Within Sigma Capability
 
-**语法:** scrobj << Within Sigma Capability( state=0|1 )
+**语法:** scrobj &lt;&lt; Within Sigma Capability( state=0|1 )
 
 **说明:** 显示或隐藏基于组内 sigma 的能力指标及其置信区间。 默认开启。
 
@@ -3016,7 +3008,7 @@ scrobj << Within Sigma Capability( 1 );
 
 #### Within Sigma Target Index
 
-**语法:** scrobj << Within Sigma Target Index( state=0|1 )
+**语法:** scrobj &lt;&lt; Within Sigma Target Index( state=0|1 )
 
 **说明:** 显示或隐藏基于组内 sigma 的目标指标的估计值。
 
@@ -3039,7 +3031,7 @@ scrobj << Within Sigma Target Index( 1 );
 
 #### Within Sigma Z Benchmark
 
-**语法:** scrobj << Within Sigma Z Benchmark( state=0|1 )
+**语法:** scrobj &lt;&lt; Within Sigma Z Benchmark( state=0|1 )
 
 **说明:** 显示或隐藏基于组内 sigma 的 Z 基准指标。
 
@@ -3064,9 +3056,7 @@ scrobj << Within Sigma Z Benchmark( 1 );
 
 #### Capability Lines
 
-**语法:** obj << Goal Plot( 1, Capability Lines( number=1.0 ) ); 
-
-scrobj << Capability Lines( number=1.0 )
+**语法:** obj &lt;&lt; Goal Plot( 1, Capability Lines( number=1.0 ) ); scrobj &lt;&lt; Capability Lines( number=1.0 )
 
 **说明:** 设置控制目标图中目标三角线的 Ppk (Cpk) 值。该值还出现在 Ppk (Cpk) 编辑框中。 默认为“1.0”。
 
@@ -3089,9 +3079,7 @@ scrobj << Capability Lines( 1 );
 
 #### Defect Rate Contour
 
-**语法:** obj << Goal Plot( 1, Defect Rate Contour( number=0.0001 ) ); 
-
-scrobj << Defect Rate Contour( number=0.0001 )
+**语法:** obj &lt;&lt; Goal Plot( 1, Defect Rate Contour( number=0.0001 ) ); scrobj &lt;&lt; Defect Rate Contour( number=0.0001 )
 
 **说明:** 显示或隐藏指定的缺陷率等高线。 默认为“0.0001”。
 
@@ -3131,9 +3119,7 @@ scrobj << Defect Rate Contour( 0.01 );
 
 #### Label Overall Sigma Points
 
-**语法:** obj << Goal Plot( 1, Label Overall Sigma Points( state=0|1 ) ); 
-
-scrobj << Label Overall Sigma Points( state=0|1 )
+**语法:** obj &lt;&lt; Goal Plot( 1, Label Overall Sigma Points( state=0|1 ) ); scrobj &lt;&lt; Label Overall Sigma Points( state=0|1 )
 
 **说明:** 显示或隐藏目标图上点的标签。这些点使用总 sigma 估计值计算得到。
 
@@ -3156,9 +3142,7 @@ scrobj << Label Overall Sigma Points( 1 );
 
 #### Label Within Sigma Points
 
-**语法:** obj << Goal Plot( 1, Label Within Sigma Points( state=0|1 ) ); 
-
-scrobj << Label Within Sigma Points( state=0|1 )
+**语法:** obj &lt;&lt; Goal Plot( 1, Label Within Sigma Points( state=0|1 ) ); scrobj &lt;&lt; Label Within Sigma Points( state=0|1 )
 
 **说明:** 显示或隐藏目标图上点的标签。这些点使用组内 sigma 估计值计算得到。
 
@@ -3187,9 +3171,7 @@ scrobj << Label Within Sigma Points( 0 );
 
 #### Label Within or Between-and-Within Sigma Points
 
-**语法:** obj << Goal Plot( 1, "Label Within or Between-and-Within Sigma Points"n( state=0|1 ) ); 
-
-scrobj << "Label Within or Between-and-Within Sigma Points"n( state=0|1 )
+**语法:** obj &lt;&lt; Goal Plot( 1, "Label Within or Between-and-Within Sigma Points"n( state=0|1 ) ); scrobj &lt;&lt; "Label Within or Between-and-Within Sigma Points"n( state=0|1 )
 
 **说明:** 显示或隐藏目标图上点的标签。这些点使用组内 sigma 估计值或组间组内 sigma 估计值（若指定）计算得到。
 
@@ -3220,9 +3202,7 @@ scrobj << "Label Within or Between-and-Within Sigma Points"n( 0 );
 
 #### Shade Levels
 
-**语法:** obj << Goal Plot( 1, Shade Levels( state=0|1 ) ); 
-
-scrobj << Shade Levels( state=0|1 )
+**语法:** obj &lt;&lt; Goal Plot( 1, Shade Levels( state=0|1 ) ); scrobj &lt;&lt; Shade Levels( state=0|1 )
 
 **说明:** 在目标图中显示或隐藏 Ppk (Cpk) 水平着色。若 p 代表在编辑框中输入的 Ppk (Cpk) 目标，则 Ppk (Cpk) 大于 2*p 的过程着绿色；Ppk (Cpk) 小于 p 的过程着红色；Ppk (Cpk) 大于 p 且小于 2*p 的过程着黄色。
 
@@ -3245,9 +3225,7 @@ scrobj << Shade Levels( 0 );
 
 #### Show Overall Sigma Points
 
-**语法:** obj << Goal Plot( 1, Show Overall Sigma Points( state=0|1 ) ); 
-
-scrobj << Show Overall Sigma Points( state=0|1 )
+**语法:** obj &lt;&lt; Goal Plot( 1, Show Overall Sigma Points( state=0|1 ) ); scrobj &lt;&lt; Show Overall Sigma Points( state=0|1 )
 
 **说明:** 显示或隐藏目标图上的点。这些点使用总 sigma 估计值计算得到。 默认开启。
 
@@ -3272,9 +3250,7 @@ scrobj << Show Overall Sigma Points( 1 );
 
 #### Show Within Sigma Points
 
-**语法:** obj << Goal Plot( 1, Show Within Sigma Points( state=0|1 ) ); 
-
-scrobj << Show Within Sigma Points( state=0|1 )
+**语法:** obj &lt;&lt; Goal Plot( 1, Show Within Sigma Points( state=0|1 ) ); scrobj &lt;&lt; Show Within Sigma Points( state=0|1 )
 
 **说明:** 显示或隐藏目标图上的点。这些点使用组内 sigma 估计值计算得到。
 
@@ -3298,9 +3274,7 @@ scrobj << Show Within Sigma Points( 0 );
 
 #### Show Within or Between-and-Within Sigma Points
 
-**语法:** obj << Goal Plot( 1, "Show Within or Between-and-Within Sigma Points"n( state=0|1 ) ); 
-
-scrobj << "Show Within or Between-and-Within Sigma Points"n( state=0|1 )
+**语法:** obj &lt;&lt; Goal Plot( 1, "Show Within or Between-and-Within Sigma Points"n( state=0|1 ) ); scrobj &lt;&lt; "Show Within or Between-and-Within Sigma Points"n( state=0|1 )
 
 **说明:** 显示或隐藏目标图上的点。这些点使用组内 sigma 估计值或组间组内 sigma 估计值（若指定）计算得到。
 
@@ -3330,9 +3304,7 @@ scrobj << "Show Within or Between-and-Within Sigma Points"n( 0 );
 
 #### Capability Lines
 
-**语法:** obj << Capability Index Plot( 1, Capability Lines( number=1.0 ) ); 
-
-scrobj << Capability Lines( number=1.0 )
+**语法:** obj &lt;&lt; Capability Index Plot( 1, Capability Lines( number=1.0 ) ); scrobj &lt;&lt; Capability Lines( number=1.0 )
 
 **说明:** 设置控制能力指标图中 Ppk (Cpk) 参考线的 Ppk (Cpk) 值。该值还出现在 Ppk (Cpk) 编辑框中。 默认为“1.0”。
 
@@ -3358,9 +3330,7 @@ scrobj << Capability Lines( 1.0 );
 
 #### Label Overall Sigma Points
 
-**语法:** obj << Capability Index Plot( 1, Label Overall Sigma Points( state=0|1 ) ); 
-
-scrobj << Label Overall Sigma Points( state=0|1 )
+**语法:** obj &lt;&lt; Capability Index Plot( 1, Label Overall Sigma Points( state=0|1 ) ); scrobj &lt;&lt; Label Overall Sigma Points( state=0|1 )
 
 **说明:** 显示或隐藏能力指标图上点的标签。这些点使用总 sigma 估计值计算得到。
 
@@ -3386,9 +3356,7 @@ scrobj << Label Overall Sigma Points( 0 );
 
 #### Label Within Sigma Points
 
-**语法:** obj << Capability Index Plot( 1, Label Within Sigma Points( state=0|1 ) ); 
-
-scrobj << Label Within Sigma Points( state=0|1 )
+**语法:** obj &lt;&lt; Capability Index Plot( 1, Label Within Sigma Points( state=0|1 ) ); scrobj &lt;&lt; Label Within Sigma Points( state=0|1 )
 
 **说明:** 显示或隐藏能力指标图上点的标签。这些点使用组内 sigma 估计值计算得到。
 
@@ -3419,9 +3387,7 @@ scrobj << Label Within Sigma Points( 0 );
 
 #### Label Within or Between-and-Within Sigma Points
 
-**语法:** obj << Capability Index Plot( 1, "Label Within or Between-and-Within Sigma Points"n( state=0|1 ) ); 
-
-scrobj << "Label Within or Between-and-Within Sigma Points"n( state=0|1 )
+**语法:** obj &lt;&lt; Capability Index Plot( 1, "Label Within or Between-and-Within Sigma Points"n( state=0|1 ) ); scrobj &lt;&lt; "Label Within or Between-and-Within Sigma Points"n( state=0|1 )
 
 **说明:** 显示或隐藏能力指标图上点的标签。这些点使用组内 sigma 估计值或组间组内 sigma 估计值（若指定）计算得到。
 
@@ -3453,9 +3419,7 @@ scrobj << "Label Within or Between-and-Within Sigma Points"n( 0 );
 
 #### Shade Levels
 
-**语法:** obj << Capability Index Plot( 1, Shade Levels( state=0|1 ) ); 
-
-scrobj << Shade Levels( state=0|1 )
+**语法:** obj &lt;&lt; Capability Index Plot( 1, Shade Levels( state=0|1 ) ); scrobj &lt;&lt; Shade Levels( state=0|1 )
 
 **说明:** 在能力指标图中显示或隐藏 Ppk (Cpk) 水平着色。若 p 代表在编辑框中输入的 Ppk (Cpk) 值，则 Ppk (Cpk) 大于 2*p 的过程着绿色；Ppk (Cpk) 小于 p 的过程着红色；Ppk (Cpk) 大于 p 且小于 2*p 的过程着黄色。
 
@@ -3481,9 +3445,7 @@ scrobj << Shade Levels( 0 );
 
 #### Show Overall Sigma Points
 
-**语法:** obj << Capability Index Plot( 1, Show Overall Sigma Points( state=0|1 ) ); 
-
-scrobj << Show Overall Sigma Points( state=0|1 )
+**语法:** obj &lt;&lt; Capability Index Plot( 1, Show Overall Sigma Points( state=0|1 ) ); scrobj &lt;&lt; Show Overall Sigma Points( state=0|1 )
 
 **说明:** 显示或隐藏能力指标图上的点。这些点使用总 sigma 估计值计算得到。 默认开启。
 
@@ -3513,9 +3475,7 @@ scrobj << Show Overall Sigma Points( 1 );
 
 #### Show Within Sigma Points
 
-**语法:** obj << Capability Index Plot( 1, Show Within Sigma Points( state=0|1 ) ); 
-
-scrobj << Show Within Sigma Points( state=0|1 )
+**语法:** obj &lt;&lt; Capability Index Plot( 1, Show Within Sigma Points( state=0|1 ) ); scrobj &lt;&lt; Show Within Sigma Points( state=0|1 )
 
 **说明:** 显示或隐藏能力指标图上的点。这些点使用组内 sigma 估计值计算得到。
 
@@ -3542,9 +3502,7 @@ scrobj << Show Within Sigma Points( 0 );
 
 #### Show Within or Between-and-Within Sigma Points
 
-**语法:** obj << Capability Index Plot( 1, "Show Within or Between-and-Within Sigma Points"n( state=0|1 ) ); 
-
-scrobj << "Show Within or Between-and-Within Sigma Points"n( state=0|1 )
+**语法:** obj &lt;&lt; Capability Index Plot( 1, "Show Within or Between-and-Within Sigma Points"n( state=0|1 ) ); scrobj &lt;&lt; "Show Within or Between-and-Within Sigma Points"n( state=0|1 )
 
 **说明:** 显示或隐藏能力指标图上的点。这些点使用组内 sigma 估计值或组间组内 sigma 估计值（若指定）计算得到。
 
@@ -3576,9 +3534,7 @@ scrobj << "Show Within or Between-and-Within Sigma Points"n( 0 );
 
 #### Capability Boundary
 
-**语法:** obj << Process Performance Plot( 1, Capability Boundary( number=1.0 ) ); 
-
-scrobj << Capability Boundary( number=1.0 )
+**语法:** obj &lt;&lt; Process Performance Plot( 1, Capability Boundary( number=1.0 ) ); scrobj &lt;&lt; Capability Boundary( number=1.0 )
 
 **说明:** 设置总能力 Ppk 值，该值用于控制有能力对比没有能力的过程性能图边界。该值还显示在“总 Ppk”编辑框中。 默认为“1.0”。
 
@@ -3608,9 +3564,7 @@ scrobj << Capability Boundary( 1 );
 
 #### Label Points
 
-**语法:** obj << Process Performance Plot( 1, Label Points( state=0|1 ) ); 
-
-scrobj << Label Points( state=0|1 )
+**语法:** obj &lt;&lt; Process Performance Plot( 1, Label Points( state=0|1 ) ); scrobj &lt;&lt; Label Points( state=0|1 )
 
 **说明:** 显示或隐藏过程名称，它作为过程性能图中点的标签。
 
@@ -3639,9 +3593,7 @@ scrobj << Label Points( 0 );
 
 #### Show Within Cpk Curve
 
-**语法:** obj << Process Performance Plot( 1, Show Within Cpk Curve( state=0|1 ) ); 
-
-scrobj << Show Within Cpk Curve( state=0|1 )
+**语法:** obj &lt;&lt; Process Performance Plot( 1, Show Within Cpk Curve( state=0|1 ) ); scrobj &lt;&lt; Show Within Cpk Curve( state=0|1 )
 
 **说明:** 在过程性能图中显示或隐藏“组内 Cpk”曲线。 默认开启。
 
@@ -3670,9 +3622,7 @@ scrobj << Show Within Cpk Curve( 1 );
 
 #### Stability Boundary
 
-**语法:** obj << Process Performance Plot( 1, Stability Boundary( number=1.25 ) ); 
-
-scrobj << Stability Boundary( number=1.25 )
+**语法:** obj &lt;&lt; Process Performance Plot( 1, Stability Boundary( number=1.25 ) ); scrobj &lt;&lt; Stability Boundary( number=1.25 )
 
 **说明:** 设置稳定性比值，该值用于控制稳定对比不稳定的过程性能图边界。 默认为“1.25”。
 

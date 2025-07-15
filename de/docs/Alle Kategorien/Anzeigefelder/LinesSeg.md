@@ -6,7 +6,7 @@
 
 ### Child
 
-**Syntax:** seg2 = obj << Child
+**Syntax:** seg2 = obj &lt;&lt; Child
 
 **Beschreibung:** Gibt das erste untergeordnete Element des Anzeigesegments zurück.
 
@@ -23,7 +23,7 @@ seg << Child; // not many segs support children
 
 ### Class Name
 
-**Syntax:** classname = obj << Class Name
+**Syntax:** classname = obj &lt;&lt; Class Name
 
 **Beschreibung:** Gibt den Namen der Anzeigeklasse für das Anzeigefeld zurück.
 
@@ -40,7 +40,7 @@ seg << Class Name;
 
 ### Clip Shape
 
-**Syntax:** seg << Clip Shape(Boundaries(Shape File, [ID(string)]) | Path([string] | [matrix]) | Empty())
+**Syntax:** seg &lt;&lt; Clip Shape(Boundaries(Shape File, [ID(string)]) | Path([string] | [matrix]) | Empty())
 
 **Beschreibung:** Stellt die Geometrie in der gewünschten Form dar. Die Form kann mittels einer Formendatei oder einem Pfad angegeben werden. Optional kann mit einer Formendatei eine ID angegeben werden, um eine einzelne Form aus der Datei auszuwählen, ansonsten wird die Verbindung sämtlicher Formen als Beschneidungsbereich verwendet. Ein Beschneidungspfad kann mit einer Nx3-Matrix oder mit einer Textdarstellung angegeben werden. Eine Pfadmatrix hat drei Spalten für x, y und Flags für jeden Punkt im Pfad. Die Flag-Werte sind 0 für Steuern, 1 für Verschieben, 2 für Liniensegment, 3 für kubisches Bézier-Segment und sie sind negativ, wenn der Punkt den Pfad auch schließt. Der Pfadtext unterstützt die SVG-Syntax.
 
@@ -70,7 +70,7 @@ cs << Clip Shape( Boundaries( "US States" ) );
 
 ### Delete
 
-**Syntax:** obj << Delete
+**Syntax:** obj &lt;&lt; Delete
 
 **Beschreibung:** Löscht das Anzeigesegment.
 
@@ -87,13 +87,13 @@ seg << Delete;
 
 ### First Value
 
-**Syntax:** obj << First Value( state=0|1 )
+**Syntax:** obj &lt;&lt; First Value( state=0|1 )
 
 **JMP Version hinzugefügt:** 16
 
 ### Frame
 
-**Syntax:** FrameBox = obj << Frame
+**Syntax:** FrameBox = obj &lt;&lt; Frame
 
 **Beschreibung:** Gibt das Rahmenfeld zurück, in dem sich das Anzeigesegment befindet.
 
@@ -110,7 +110,7 @@ seg << Frame;
 
 ### Get Clip Shape
 
-**Syntax:** obj << Get Clip Shape
+**Syntax:** obj &lt;&lt; Get Clip Shape
 
 **Beschreibung:** Gibt die aktuelle Beschneidungsform aus
 
@@ -141,7 +141,7 @@ cs << Get Clip Shape();
 
 ### Get Connected
 
-**Syntax:** 0|1 = obj << Get Connected
+**Syntax:** 0|1 = obj &lt;&lt; Get Connected
 
 **Beschreibung:** Gibt den Verbindungszustand aller Liniensegmente im Anzeigesegment zurück.
 
@@ -158,7 +158,7 @@ seg << Get Connected;
 
 ### Get Description
 
-**Syntax:** description = obj << Get Description
+**Syntax:** description = obj &lt;&lt; Get Description
 
 **Beschreibung:** Ruft die Beschreibung des Anzeigesegments ab.
 
@@ -175,7 +175,7 @@ seg << get description();
 
 ### Get Line
 
-**Syntax:** [x1 y1 x2 y2] = obj << Get Line( index )
+**Syntax:** [x1 y1 x2 y2] = obj &lt;&lt; Get Line( index )
 
 **Beschreibung:** Gibt die X- und Y-Koordinaten der angegebenen Linie zurück.
 
@@ -192,7 +192,7 @@ seg << Get Line( 2 );
 
 ### Get Line Color
 
-**Syntax:** color = obj << Get Line Color
+**Syntax:** color = obj &lt;&lt; Get Line Color
 
 **Beschreibung:** Gibt die Farbe der Linien zurück.
 
@@ -209,7 +209,7 @@ seg << Get Line Color;
 
 ### Get Line Count
 
-**Syntax:** Number = obj << Get Line Count
+**Syntax:** Number = obj &lt;&lt; Get Line Count
 
 **Beschreibung:** Gibt die Anzahl der Linien im Anzeigesegment zurück.
 
@@ -226,7 +226,7 @@ seg << Get Line Count;
 
 ### Get Line Style
 
-**Syntax:** pen style = obj << Get Line Style
+**Syntax:** pen style = obj &lt;&lt; Get Line Style
 
 **Beschreibung:** Gibt den Stil der Linien zurück.
 
@@ -245,7 +245,7 @@ seg << Get Line Style;
 
 ### Get Line Width
 
-**Syntax:** number = obj << Get Line Width
+**Syntax:** number = obj &lt;&lt; Get Line Width
 
 **Beschreibung:** Gibt die Breite der Linien zurück.
 
@@ -264,7 +264,7 @@ seg << Get Line Width;
 
 ### Get Lines
 
-**Syntax:** [x1 y1 x2 y2, ...] = obj << Get Lines
+**Syntax:** [x1 y1 x2 y2, ...] = obj &lt;&lt; Get Lines
 
 **Beschreibung:** Gibt die X- und Y-Koordinatenwerte aller Linien zurück.
 
@@ -281,13 +281,13 @@ seg << Get Lines;
 
 ### Last Value
 
-**Syntax:** obj << Last Value( state=0|1 )
+**Syntax:** obj &lt;&lt; Last Value( state=0|1 )
 
 **JMP Version hinzugefügt:** 16
 
 ### Line Color
 
-**Syntax:** obj << Line Color( color )
+**Syntax:** obj &lt;&lt; Line Color( color )
 
 **Beschreibung:** Legt die Farbe für alle Linien im Anzeigesegment fest.
 
@@ -304,7 +304,7 @@ seg << Set Line Color( "Green" );
 
 ### Line Style
 
-**Syntax:** obj << Line Style( pen style )
+**Syntax:** obj &lt;&lt; Line Style( pen style )
 
 **Beschreibung:** Legt den Stil der Linien fest. Mögliche Optionen sind Durchgezogen, Gepunktet, Gestrichelt, Strich-Punkt oder Strich-Punkt-Punkt.
 
@@ -323,7 +323,7 @@ seg << Set Line Style( "Dotted" );
 
 ### Line Width
 
-**Syntax:** obj << Line Width( "1"|"2"|"3"|"4"|"5"|"6"|"Sonstige…" )
+**Syntax:** obj &lt;&lt; Line Width( "1"|"2"|"3"|"4"|"5"|"6"|"Sonstige…" )
 
 **Beschreibung:** Legt die Breite der Linien fest.
 
@@ -342,25 +342,25 @@ seg << Set Line Width( 3 );
 
 ### Max Value
 
-**Syntax:** obj << Max Value( state=0|1 )
+**Syntax:** obj &lt;&lt; Max Value( state=0|1 )
 
 **JMP Version hinzugefügt:** 16
 
 ### Min Value
 
-**Syntax:** obj << Min Value( state=0|1 )
+**Syntax:** obj &lt;&lt; Min Value( state=0|1 )
 
 **JMP Version hinzugefügt:** 16
 
 ### Name
 
-**Syntax:** obj << Name( state=0|1 )
+**Syntax:** obj &lt;&lt; Name( state=0|1 )
 
 **JMP Version hinzugefügt:** 16
 
 ### Parent
 
-**Syntax:** seg2 = obj << Parent
+**Syntax:** seg2 = obj &lt;&lt; Parent
 
 **Beschreibung:** Gibt das übergeordnete Element des Anzeigesegments zurück.
 
@@ -377,7 +377,7 @@ seg << Parent;
 
 ### Set Connected
 
-**Syntax:** obj << Set Connected( state=0|1 )
+**Syntax:** obj &lt;&lt; Set Connected( state=0|1 )
 
 **Beschreibung:** Legt den Verbindungszustand aller Liniensegmente im Anzeigesegment fest.
 
@@ -394,7 +394,7 @@ seg << Set Connected( 1 );
 
 ### Set Description
 
-**Syntax:** obj << Set Description( description )
+**Syntax:** obj &lt;&lt; Set Description( description )
 
 **Beschreibung:** Legt die Beschreibung des Anzeigesegments fest.
 
@@ -411,7 +411,7 @@ seg << set description( "my seg" );
 
 ### Set Line Color
 
-**Syntax:** obj << Set Line Color( color )
+**Syntax:** obj &lt;&lt; Set Line Color( color )
 
 **Beschreibung:** Legt die Farbe für alle Linien im Anzeigesegment fest.
 
@@ -428,7 +428,7 @@ seg << Set Line Color( "Green" );
 
 ### Set Line Style
 
-**Syntax:** obj << Set Line Style( pen style )
+**Syntax:** obj &lt;&lt; Set Line Style( pen style )
 
 **Beschreibung:** Legt den Stil der Linien fest. Mögliche Optionen sind Durchgezogen, Gepunktet, Gestrichelt, Strich-Punkt oder Strich-Punkt-Punkt.
 
@@ -447,7 +447,7 @@ seg << Set Line Style( "Dotted" );
 
 ### Set Line Width
 
-**Syntax:** obj << Set Line Width( "1"|"2"|"3"|"4"|"5"|"6"|"Sonstige…" )
+**Syntax:** obj &lt;&lt; Set Line Width( "1"|"2"|"3"|"4"|"5"|"6"|"Sonstige…" )
 
 **Beschreibung:** Legt die Breite der Linien fest.
 
@@ -466,7 +466,7 @@ seg << Set Line Width( 3 );
 
 ### Sib
 
-**Syntax:** seg2 = obj << Sib
+**Syntax:** seg2 = obj &lt;&lt; Sib
 
 **Beschreibung:** Gibt das Geschwisterelement des Anzeigesegments zurück.
 
@@ -483,7 +483,7 @@ seg << Sib;
 
 ### Sib Append
 
-**Syntax:** obj << Sib Append( seg2 )
+**Syntax:** obj &lt;&lt; Sib Append( seg2 )
 
 **Beschreibung:** Fügt ein Anzeigesegment direkt nach dem Anzeigesegment ein.
 
@@ -521,7 +521,7 @@ mapSeg << Sib Append( Line Seg( xval, yval, <<line color( "Green" ), <<line widt
 
 ### Sib Prepend
 
-**Syntax:** obj << Sib Prepend( seg2 )
+**Syntax:** obj &lt;&lt; Sib Prepend( seg2 )
 
 **Beschreibung:** Fügt ein Anzeigesegment direkt vor dem Anzeigesegment ein.
 
@@ -553,9 +553,7 @@ seg << Sib Prepend( Line Seg( xval, yval, <<line color( "Green" ), <<line width(
 
 ### Enabled
 
-**Syntax:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**Syntax:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Beschreibung:** Ein Objekt, das nicht aktiviert ist, reagiert nicht auf Tastatur- oder Mauseingabe. Diese Eigenschaft wird von untergeordneten Objekten geerbt, deshalb verursacht ein Containerobjekt, das deaktiviert ist, die Deaktivierung aller untergeordneten Objekte.
 
@@ -587,9 +585,7 @@ New Window( "enabled",
 
 ### Get Enabled
 
-**Syntax:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**Syntax:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Beschreibung:** Ein Objekt, das nicht aktiviert ist, reagiert nicht auf Tastatur- oder Mauseingabe. Diese Eigenschaft wird von untergeordneten Objekten geerbt, deshalb verursacht ein Containerobjekt, das deaktiviert ist, die Deaktivierung aller untergeordneten Objekte.
 
@@ -621,7 +617,7 @@ New Window( "enabled",
 
 ### Get Namespace
 
-**Syntax:** obj << Get Namespace
+**Syntax:** obj &lt;&lt; Get Namespace
 
 **Beschreibung:** Gibt den zu diesem Anzeigeobjekt zugehörigen Namensraum zurück.
 
@@ -639,7 +635,7 @@ Show( ns:x, x );
 
 ### Get Properties
 
-**Syntax:** obj << Get Properties
+**Syntax:** obj &lt;&lt; Get Properties
 
 **Beschreibung:** Gibt ein assoziatives Array zurück, das die Eigenschaften und deren Werte des Anzeigefelds enthält.
 
@@ -653,7 +649,7 @@ bb << Get Properties;
 
 ### Get Property
 
-**Syntax:** obj << Get Property( "property" )
+**Syntax:** obj &lt;&lt; Get Property( "property" )
 
 **Beschreibung:** Gibt die aktuelle Einstellung für die benannte property zurück.
 
@@ -667,7 +663,7 @@ bb << Get Property( "Enabled" );
 
 ### Get Property List
 
-**Syntax:** obj << Get Property List
+**Syntax:** obj &lt;&lt; Get Property List
 
 **Beschreibung:** Gibt eine Liste von Eigenschaften des Anzeigefelds zurück.
 
@@ -681,7 +677,7 @@ bb << Get Property List;
 
 ### Set Property
 
-**Syntax:** obj << Set Property( "property", value )
+**Syntax:** obj &lt;&lt; Set Property( "property", value )
 
 **Beschreibung:** Legt den Wert für die benannte property für das Anzeigefeld fest.
 

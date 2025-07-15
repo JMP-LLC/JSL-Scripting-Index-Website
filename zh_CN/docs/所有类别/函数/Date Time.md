@@ -2,11 +2,9 @@
 
 
 
-## 函数
-
 ### Abbrev Date
 
-**语法:** s = Abbrev Date( datetime, <format> )
+**语法:** s = Abbrev Date( datetime, &lt;format&gt; )
 
 **说明:** 以特定于语言/区域的简短格式返回日期时间值。
 
@@ -51,7 +49,7 @@ As Date( Date DMY( 15, 7, 2000 ) );
 
 ### Date Difference
 
-**语法:** delta = Date Difference( dt1, dt2, intervalName, <alignment="start"> )
+**语法:** delta = Date Difference( dt1, dt2, intervalName, &lt;alignment="start"&gt; )
 
 **说明:** 返回两个日期/时间值的区间差异。支持的“intervalName”值包括“年”、“季度”、“月”、“周”、“日”、“时”、“分”、“秒”和“数值”。“"Start"”的“alignment”包括完整或不完整区间，而“"Actual"”仅包括完整区间。“"Fractional"”的“alignment”返回小数差异，取“年”、“季度”和“月”区间持续时间的平均值。
 
@@ -86,7 +84,7 @@ Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "frac
 
 ### Date Increment
 
-**语法:** d = Date Increment( datetime, intervalName, <incr=1>, <alignment="start"> )
+**语法:** d = Date Increment( datetime, intervalName, &lt;incr=1&gt;, &lt;alignment="start"&gt; )
 
 **说明:** 通过添加“incr”区间数返回新的日期时间值。支持的“intervalName”值包括“年”、“季度”、“月”、“周”、“日”、“时”、“分”、“秒”和“数值”。使用“alignment”的“"Start"”将在添加增量前截断为最近的区间，而“"Actual"”仍为完整的输入日期/时间。“alignment”的“"Fractional"”允许使用小数“incr”值，取“年”、“季度”和“月”区间持续时间的平均值。
 
@@ -196,9 +194,7 @@ v = Days In Month( 2016, 2 );
 
 ### Format
 
-**语法:** s = Format( x, formatString, <options> )
-
-s = Format( x, "Format Pattern", pattern, <options> )
+**语法:** s = Format( x, formatString, &lt;options&gt; )s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
 
 **说明:** 以指定的格式返回数字。格式包括“列信息”对话框中的项，例如“最佳”和“h:m:s”。请参见“主题帮助”获取其他选项的信息，包括 p 值、货币、日期和时间以及地理格式。
 
@@ -244,9 +240,7 @@ result = "Revenue increase: " || amt || " or " || pct || ".";
 
 ### Format Date
 
-**语法:** s = Format( x, formatString, <options> )
-
-s = Format( x, "Format Pattern", pattern, <options> )
+**语法:** s = Format( x, formatString, &lt;options&gt; )s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
 
 **说明:** 以指定的格式返回数字。格式包括“列信息”对话框中的项，例如“最佳”和“h:m:s”。请参见“主题帮助”获取其他选项的信息，包括 p 值、货币、日期和时间以及地理格式。
 
@@ -302,7 +296,7 @@ Show( it );
 
 ### Hour
 
-**语法:** hr = Hour( datetime, <12> )
+**语法:** hr = Hour( datetime, &lt;12&gt; )
 
 **说明:** 返回日期时间值所对应的小时，12 小时制（12，1 - 11）或 24 小时制（0 - 23）。
 
@@ -332,7 +326,7 @@ ISO Year( Today() );
 
 ### In Days
 
-**语法:** y = In Days( <x=1> )
+**语法:** y = In Days( &lt;x=1&gt; )
 
 **说明:** 将 x 从天数转换为同等的秒数。
 
@@ -347,7 +341,7 @@ In Days( 1.5 );
 
 ### In Hours
 
-**语法:** y = In Hours( <x=1> )
+**语法:** y = In Hours( &lt;x=1&gt; )
 
 **说明:** 将 x 从小时数转换为同等的秒数。
 
@@ -362,7 +356,7 @@ In Hours( 0.5 );
 
 ### In Minutes
 
-**语法:** y = In Minutes( <x=1> )
+**语法:** y = In Minutes( &lt;x=1&gt; )
 
 **说明:** 将 x 从分钟数转换为同等的秒数。
 
@@ -377,7 +371,7 @@ In Minutes( 1 );
 
 ### In Weeks
 
-**语法:** y = In Weeks( <x=1> )
+**语法:** y = In Weeks( &lt;x=1&gt; )
 
 **说明:** 将 x 从周数转换为同等的秒数。
 
@@ -392,7 +386,7 @@ In Weeks( 1 );
 
 ### In Years
 
-**语法:** y = In Years( <x=1> )
+**语法:** y = In Years( &lt;x=1&gt; )
 
 **说明:** 将 x 从年数转换为同等的秒数。
 
@@ -407,9 +401,7 @@ In Years( 1 );
 
 ### Informat
 
-**语法:** dt = In Format( s, formatString, < <<Use Locale(b=1)>, < <<Restrict > )
-
-dt = In Format( s, "Format Pattern", pattern, < <<Use Locale(b=1)> )
+**语法:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; )dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
 
 **说明:** 解析给定格式的字符串。若格式是日期时间格式，则该值表示为如同使用 As Date() 括起来，采用 ddMonyyyy 格式返回日期。与“最佳”formatString 一起使用的可选 <<Restrict 仅允许使用整数、小数和科学记数法格式进行转换。
 
@@ -482,7 +474,7 @@ v = Is Leap Year( 2016 );
 
 ### Long Date
 
-**语法:** s = Long Date( datetime, <format> )
+**语法:** s = Long Date( datetime, &lt;format&gt; )
 
 **说明:** 以特定于语言/区域的长格式返回日期时间值。
 
@@ -497,7 +489,7 @@ Long Date( Today() );
 
 ### MDYHMS
 
-**语法:** s = MDYHMS( datetime, <format> )
+**语法:** s = MDYHMS( datetime, &lt;format&gt; )
 
 **说明:** 以如下顺序返回日期时间值: 月、日、年、时、分、秒。
 
@@ -557,9 +549,7 @@ Nth Day Of Week in the Month( Date MDY( 11, 28, 2019 ) );
 
 ### Parse Date
 
-**语法:** dt = In Format( s, formatString, < <<Use Locale(b=1)>, < <<Restrict > )
-
-dt = In Format( s, "Format Pattern", pattern, < <<Use Locale(b=1)> )
+**语法:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; )dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
 
 **说明:** 解析给定格式的字符串。若格式是日期时间格式，则该值表示为如同使用 As Date() 括起来，采用 ddMonyyyy 格式返回日期。与“最佳”formatString 一起使用的可选 <<Restrict 仅允许使用整数、小数和科学记数法格式进行转换。
 
@@ -647,7 +637,7 @@ Second( Today() );
 
 ### Short Date
 
-**语法:** s = Short Date( datetime, <format> )
+**语法:** s = Short Date( datetime, &lt;format&gt; )
 
 **说明:** 返回日期时间值的特定于语言/区域的数字 (MM/DD/YYYY) 表示。
 
@@ -710,7 +700,7 @@ As Date( Today() );
 
 ### Week Of Year
 
-**语法:** d = Week Of Year( datetime, <rule=1> )
+**语法:** d = Week Of Year( datetime, &lt;rule=1&gt; )
 
 **说明:** 使用三个规则之一返回日期时间值所对应的年中第几周。默认情况下（规则 1），周从周日开始计算，每年的第一个周日为第 2 周的开始。第 1 周可能不完整或者为空（如 2006 年）。对于规则 2，第一个周日为第 1 周的开始，前面几天为第 0 周。对于规则 3，返回 ISO 周数，其中周从周一开始计算，第 1 周为包含该年四天的第一周。使用 ISO 周数，一年的前三天或后四天有可能属于前一年或后一年的周数。
 

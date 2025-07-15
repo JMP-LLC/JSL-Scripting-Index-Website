@@ -45,7 +45,7 @@ obj = dt << Partial Least Squares(
 
 ### By
 
-**Syntax:** obj << By( column(s) )
+**Syntax:** obj &lt;&lt; By( column(s) )
 
 ```jsl
 
@@ -67,7 +67,7 @@ obj = dt << Partial Least Squares(
 
 ### Factor
 
-**Syntax:** obj << Factor( column(s) )
+**Syntax:** obj &lt;&lt; Factor( column(s) )
 
 ```jsl
 
@@ -83,7 +83,7 @@ obj = dt << Partial Least Squares(
 
 ### Freq
 
-**Syntax:** obj << Freq( column )
+**Syntax:** obj &lt;&lt; Freq( column )
 
 ```jsl
 
@@ -101,7 +101,7 @@ obj = dt << Partial Least Squares(
 
 ### Response
 
-**Syntax:** obj << Response( column(s) )
+**Syntax:** obj &lt;&lt; Response( column(s) )
 
 ```jsl
 
@@ -117,7 +117,7 @@ obj = dt << Partial Least Squares(
 
 ### Validation
 
-**Syntax:** obj << Validation( column )
+**Syntax:** obj &lt;&lt; Validation( column )
 
 ```jsl
 
@@ -133,7 +133,7 @@ obj = dt << Partial Least Squares(
 
 ### X
 
-**Syntax:** obj << X( column(s) )
+**Syntax:** obj &lt;&lt; X( column(s) )
 
 ```jsl
 
@@ -149,7 +149,7 @@ obj = dt << Partial Least Squares(
 
 ### Y
 
-**Syntax:** obj << Y( column(s) )
+**Syntax:** obj &lt;&lt; Y( column(s) )
 
 ```jsl
 
@@ -190,7 +190,7 @@ obj = dt << Partial Least Squares(
 
 ### Fit
 
-**Syntax:** obj << Fit( SVD( Fast|Classical ), Method( NIPALS|SIMPLS ), Number of Factors( number ) )
+**Syntax:** obj &lt;&lt; Fit( SVD( Fast|Classical ), Method( NIPALS|SIMPLS ), Number of Factors( number ) )
 
 **Description:** Fits a partial least squares model with a specified method and number of factors.
 
@@ -212,7 +212,7 @@ obj = dt << Partial Least Squares(
 
 ### Go
 
-**Syntax:** obj << Go
+**Syntax:** obj &lt;&lt; Go
 
 **Description:** Launches the partial least squares model fit.
 
@@ -275,7 +275,7 @@ obj = Partial Least Squares(
 
 ### Initial Number of Factors
 
-**Syntax:** obj << Partial Least Squares( Validation Method(...Initial Number of Factors( number )...) )
+**Syntax:** obj &lt;&lt; Partial Least Squares( Validation Method(...Initial Number of Factors( number )...) )
 
 **Description:** Specifies the initial number of factors for cross validation.
 
@@ -342,7 +342,7 @@ obj = dt << Partial Least Squares(
 
 ### Model Dialog
 
-**Syntax:** obj << Model Dialog
+**Syntax:** obj &lt;&lt; Model Dialog
 
 **Description:** Opens the Fit Model launch window. You can fit a Partial Least Squares model from this launch window by selecting the Partial Least Squares personality.
 
@@ -361,7 +361,7 @@ obj << Model Dialog;
 
 ### SVD
 
-**Syntax:** obj << SVD( Fast|Classical )
+**Syntax:** obj &lt;&lt; SVD( Fast|Classical )
 
 **Description:** Sets the implementation of the SVD algorithm for computing the partial least squares model to Fast or Classical. The Fast option implements the Lanczos SVD routine and the Classical option implements the Golub-Kahan routine.
 
@@ -407,7 +407,7 @@ obj = dt << Partial Least Squares(
 
 ### Set Random Seed
 
-**Syntax:** obj << Set Random Seed( number )
+**Syntax:** obj &lt;&lt; Set Random Seed( number )
 
 **Description:** Specifies the random seed for running a partial least squares model with cross validation.
 
@@ -430,7 +430,7 @@ obj = dt << Partial Least Squares(
 
 ### Validation Method
 
-**Syntax:** obj << Validation Method( KFold( number )|Holdback( fraction )|"Leave-One-Out"|None, Initial Number of Factors( number )  )
+**Syntax:** obj &lt;&lt; Validation Method( KFold( number )|Holdback( fraction )|"Leave-One-Out"|None, Initial Number of Factors( number ) )
 
 **Description:** Sets the method used for model validation.
 
@@ -454,7 +454,7 @@ obj = dt << Partial Least Squares(
 
 ### Action
 
-**Syntax:** obj << Action
+**Syntax:** obj &lt;&lt; Action
 
 **Description:** All-purpose trapdoor within a platform to insert expressions to evaluate. Temporarily sets the DisplayBox and DataTable contexts to the Platform.
 
@@ -472,7 +472,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Syntax:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntax:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Description:** Apply a previously created preset to the object, updating the options and customizations to match the saved settings.
 
@@ -517,7 +517,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Broadcast
 
-**Syntax:** obj << Broadcast(message)
+**Syntax:** obj &lt;&lt; Broadcast(message)
 
 **Description:** Broadcasts a message to a platform. If return results from individual objects are tables, they are concatenated if possible, and the final format is identical to either the result from the Save Combined Table option in a Table Box or the result from the Concatenate option using a Source column. Other than those, results are stored in a list and returned.
 
@@ -535,7 +535,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**Syntax:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Syntax:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Description:** Adds a control panel for changing the platform&apos;s variables
 
@@ -553,7 +553,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**Syntax:** obj << Copy ByGroup Script
+**Syntax:** obj &lt;&lt; Copy ByGroup Script
 
 **Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
 
@@ -578,7 +578,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Syntax:** obj << Copy Script
+**Syntax:** obj &lt;&lt; Copy Script
 
 **Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
 
@@ -597,7 +597,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Syntax:** obj << Data Table Window
+**Syntax:** obj &lt;&lt; Data Table Window
 
 **Description:** Move the data table window for this analysis to the front.
 
@@ -616,7 +616,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Syntax:** obj << Get By Levels
+**Syntax:** obj &lt;&lt; Get By Levels
 
 **Description:** Returns an associative array mapping the by group columns to their values.
 
@@ -631,7 +631,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Syntax:** obj << Get ByGroup Script
+**Syntax:** obj &lt;&lt; Get ByGroup Script
 
 **Description:** Creates a script (JSL) to produce this analysis and returns it as an expression.
 
@@ -657,7 +657,7 @@ Show( t );
 
 ### Get Container
 
-**Syntax:** obj << Get Container
+**Syntax:** obj &lt;&lt; Get Container
 
 **Description:** Returns a reference to the container box that holds the content for the object.
 
@@ -708,7 +708,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Syntax:** obj << Get Data Table
+**Syntax:** obj &lt;&lt; Get Data Table
 
 **Description:** Returns a reference to the data table.
 
@@ -728,7 +728,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**Syntax:** obj << Get Group Platform
+**Syntax:** obj &lt;&lt; Get Group Platform
 
 **Description:** Return the Group Platform object if this platform is part of a Group. Otherwise, returns Empty().
 
@@ -745,7 +745,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**Syntax:** obj << Get Script
+**Syntax:** obj &lt;&lt; Get Script
 
 **Description:** Creates a script (JSL) to produce this analysis and returns it as an expression.
 
@@ -765,7 +765,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Syntax:** obj << Get Script With Data Table
+**Syntax:** obj &lt;&lt; Get Script With Data Table
 
 **Description:** Creates a script(JSL) to produce this analysis specifically referencing this data table and returns it as an expression.
 
@@ -785,7 +785,7 @@ Show( t );
 
 ### Get Timing
 
-**Syntax:** obj << Get Timing
+**Syntax:** obj &lt;&lt; Get Timing
 
 **Description:** Times the platform launch.
 
@@ -805,7 +805,7 @@ Show( t );
 
 ### Get Web Support
 
-**Syntax:** obj << Get Web Support
+**Syntax:** obj &lt;&lt; Get Web Support
 
 **Description:** Return a number indicating the level of Interactive HTML support for the display object. 1 means some or all elements are supported. 0 means no support.
 
@@ -821,7 +821,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Syntax:** obj << Get Where Expr
+**Syntax:** obj &lt;&lt; Get Where Expr
 
 **Description:** Returns the Where expression for the data subset, if the platform was launched with By() or Where(). Otherwise, returns Empty()
 
@@ -856,7 +856,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Syntax:** obj << Local Data Filter
+**Syntax:** obj &lt;&lt; Local Data Filter
 
 **Description:** To filter data to specific groups or ranges, but local to this platform
 
@@ -908,7 +908,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Syntax:** obj << Paste Local Data Filter
+**Syntax:** obj &lt;&lt; Paste Local Data Filter
 
 **Description:** Apply the local data filter from the clipboard to the current report.
 
@@ -929,7 +929,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**Syntax:** obj << Redo Analysis
+**Syntax:** obj &lt;&lt; Redo Analysis
 
 **Description:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
 
@@ -948,7 +948,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**Syntax:** obj << Redo ByGroup Analysis
+**Syntax:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Description:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
 
@@ -973,7 +973,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**Syntax:** obj << Relaunch Analysis
+**Syntax:** obj &lt;&lt; Relaunch Analysis
 
 **Description:** Opens the platform launch window and recalls the settings that were used to create the report.
 
@@ -992,7 +992,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**Syntax:** obj << Relaunch ByGroup
+**Syntax:** obj &lt;&lt; Relaunch ByGroup
 
 **Description:** Opens the platform launch window and recalls the settings that were used to create the report.
 
@@ -1017,7 +1017,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**Syntax:** obj << Remove Column Switcher
+**Syntax:** obj &lt;&lt; Remove Column Switcher
 
 **Description:** Removes the most recent Column Switcher that has been added to the platform.
 
@@ -1037,7 +1037,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Syntax:** obj << Remove Local Data Filter
+**Syntax:** obj &lt;&lt; Remove Local Data Filter
 
 **Description:** If a local data filter has been created, this removes it and restores the platform to use all the data in the data table directly
 
@@ -1074,9 +1074,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Syntax:** obj << Report;
-
-Report( obj )
+**Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Description:** Returns a reference to the report object.
 
@@ -1097,7 +1095,7 @@ Show( t );
 
 ### Report View
 
-**Syntax:** obj << Report View( "Full"|"Summary" )
+**Syntax:** obj &lt;&lt; Report View( "Full"|"Summary" )
 
 **Description:** The report view determines the level of detail visible in a platform report. Full shows all of the detail, while Summary shows only select content, dependent on the platform. For customized behavior, display boxes support a <<Set Summary Behavior message.
 
@@ -1116,7 +1114,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**Syntax:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description:** Creates a JSL script to produce this analysis, and save it as a table property in the data table. You can specify a name for the script. The Append Suffix option appends a numeric suffix to the script name, which differentiates the script from an existing script with the same name. The Prompt option prompts the user to specify a script name. The Replace option replaces an existing script with the same name.
 
@@ -1141,7 +1139,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Syntax:** obj << Save ByGroup Script to Journal
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
 
@@ -1166,7 +1164,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Syntax:** obj << Save ByGroup Script to Script Window
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
 
@@ -1191,7 +1189,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**Syntax:** obj << Save Script for All Objects
+**Syntax:** obj &lt;&lt; Save Script for All Objects
 
 **Description:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -1210,7 +1208,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Syntax:** obj << Save Script for All Objects To Data Table( <name> )
+**Syntax:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Description:** Saves a script for all report objects to the current data table. This option is useful when you have multiple reports in the window. The script is named after the first platform unless you specify the script name in quotes.
 
@@ -1258,7 +1256,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Syntax:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description:** Create a JSL script to produce this analysis, and save it as a table property in the data table.
 
@@ -1277,7 +1275,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Syntax:** obj << Save Script to Journal
+**Syntax:** obj &lt;&lt; Save Script to Journal
 
 **Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
 
@@ -1296,7 +1294,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Syntax:** obj << Save Script to Report
+**Syntax:** obj &lt;&lt; Save Script to Report
 
 **Description:** Create a JSL script to produce this analysis, and show it in the report itself. Useful to preserve a printed record of what was done.
 
@@ -1315,7 +1313,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Syntax:** obj << Save Script to Script Window
+**Syntax:** obj &lt;&lt; Save Script to Script Window
 
 **Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
 
@@ -1399,7 +1397,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Syntax:** obj << Sync to Data Table Changes
+**Syntax:** obj &lt;&lt; Sync to Data Table Changes
 
 **Description:** Sync with the exclude and data changes that have been made.
 
@@ -1416,7 +1414,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Syntax:** obj << Title( "new title" )
+**Syntax:** obj &lt;&lt; Title( "new title" )
 
 **Description:** Sets the title of the platform.
 
@@ -1435,7 +1433,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Syntax:** obj << Top Report
+**Syntax:** obj &lt;&lt; Top Report
 
 **Description:** Returns a reference to the root node in the report.
 
@@ -1456,7 +1454,7 @@ Show( t );
 
 ### Transform Column
 
-**Syntax:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Syntax:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Description:** Create a transform column in the local context of an object, usually a platform. The transform column is active only for the lifetime of the platform.
 
@@ -1473,7 +1471,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**Syntax:** obj << View Web XML
+**Syntax:** obj &lt;&lt; View Web XML
 
 **Description:** Returns the XML code that is used to create the interactive HTML report.
 
@@ -1511,7 +1509,7 @@ New Window( "Bivariate Equation",
 
 #### Coefficient Plots
 
-**Syntax:** obj << (Fit[number] << Coefficient Plots( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Coefficient Plots( state=0|1 ))
 
 **Description:** Shows or hides plots of the model coefficients for each response across the X variables. There is a plot for the centered and scaled data and a plot for the original data.
 
@@ -1533,7 +1531,7 @@ obj << (Fit[1] << Coefficient Plots( 1 ));
 
 #### Correlation Loading Plot
 
-**Syntax:** obj << (Fit[number] << Correlation Loading Plot( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Correlation Loading Plot( state=0|1 ))
 
 **Description:** Shows or hides either a single scatterplot or a scatterplot matrix of the X and Y loadings overlaid on the same plot. The scatterplot matrix is shown if the specified number of factors is greater than 2.
 
@@ -1575,7 +1573,7 @@ obj << (Fit[1] << Correlation Loading Plot( 4 ));
 
 #### Diagnostics Plots
 
-**Syntax:** obj << (Fit[number] << Diagnostics Plots( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Diagnostics Plots( state=0|1 ))
 
 **Description:** Shows or hides diagnostic plots.
 
@@ -1597,7 +1595,7 @@ obj << (Fit[1] << Diagnostics Plots( 1 ));
 
 #### Distance Plots
 
-**Syntax:** obj << (Fit[number] << Distance Plots( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Distance Plots( state=0|1 ))
 
 **Description:** Shows or hides the distance plots. There is a plot of the distance from each observation to the X model, a plot of the distance from each observation to the Y model, and a scatterplot of distances to both the X and Y models.
 
@@ -1619,7 +1617,7 @@ obj << (Fit[1] << Distance Plots( 1 ));
 
 #### Fit Line
 
-**Syntax:** obj << (Fit[number] << Fit Line( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Fit Line( state=0|1 ))
 
 **Description:** Shows or hides a fitted line through the points on the X-Y Scores Plots. On by default.
 
@@ -1642,7 +1640,7 @@ obj << (Fit[1] << Fit Line( 0 ));
 
 #### Get Measures
 
-**Syntax:** obj << (Fit[number] << Get Measures)
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Get Measures)
 
 **Description:** Returns summary measures of fit from the model.
 
@@ -1664,7 +1662,7 @@ obj << (Fit[1] << Get Measures);
 
 #### Loading Plots
 
-**Syntax:** obj << (Fit[number] << Loading Plots( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Loading Plots( state=0|1 ))
 
 **Description:** Shows or hides plots of the X and Y loadings for each extracted factor. There are separate plots for the X and Y variables.
 
@@ -1686,7 +1684,7 @@ obj << (Fit[1] << Loading Plots( 1 ));
 
 #### Loading Scatterplot Matrices
 
-**Syntax:** obj << (Fit[number] << Loading Scatterplot Matrices( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Loading Scatterplot Matrices( state=0|1 ))
 
 **Description:** Shows or hides scatterplot matrices of the X and Y loadings. There are separate scatterplot matrices for the X and Y variables.
 
@@ -1708,7 +1706,7 @@ obj << (Fit[1] << Loading Scatterplot Matrices( 1 ));
 
 #### Make Model Using VIP
 
-**Syntax:** obj << (Fit[number] << Make Model Using VIP)
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Make Model Using VIP)
 
 **Description:** Opens and populates a launch window with the appropriate responses entered as Ys and the variables whose VIPs exceed the specified threshold entered as Xs.
 
@@ -1730,7 +1728,7 @@ obj << (Fit[1] << Make Model Using VIP);
 
 #### Model Driven Multivariate Control Chart for Saved X Scores
 
-**Syntax:** obj << (Fit[number] << Model Driven Multivariate Control Chart for Saved X Scores)
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Model Driven Multivariate Control Chart for Saved X Scores)
 
 **Description:** Saves the formulas for each X Score and launches the Model Driven Multivariate Control Chart (MDMCC) launch window.
 
@@ -1752,7 +1750,7 @@ obj << (Fit[1] << Model Driven Multivariate Control Chart for Saved X Scores);
 
 #### Percent Variation Plots
 
-**Syntax:** obj << (Fit[number] << Percent Variation Plots( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Percent Variation Plots( state=0|1 ))
 
 **Description:** Shows or hides plots of the percent of variation explained for X Effects and for Y Responses.
 
@@ -1774,7 +1772,7 @@ obj << (Fit[1] << Percent variation plots( 1 ));
 
 #### Profiler
 
-**Syntax:** obj << (Fit[number] << Profiler( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Profiler( state=0|1 ))
 
 **Description:** Shows or hides a profiler for each response.
 
@@ -1796,7 +1794,7 @@ obj << (Fit[1] << Profiler( 1 ));
 
 #### Profiler for Predicteds
 
-**Syntax:** obj << (Fit[number] << Model Driven Multivariate Control Chart for Saved X Scores)
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Model Driven Multivariate Control Chart for Saved X Scores)
 
 **Description:** Saves the formulas for each Y as a function of the X Score and launches the Profiler launch window.
 
@@ -1818,7 +1816,7 @@ obj << (Fit[1] << Profiler for Predicteds);
 
 #### Publish Prediction Formula
 
-**Syntax:** obj << (Fit[number] << Publish Prediction Formula)
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Publish Prediction Formula)
 
 **Description:** Creates a prediction formula and publishes it as a formula column script in the Formula Depot platform.
 
@@ -1840,7 +1838,7 @@ obj << (Fit[1] << Publish Prediction Formula);
 
 #### Publish Score Formula
 
-**Syntax:** obj << (Fit[number] << Publish Score Formula)
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Publish Score Formula)
 
 **Description:** Creates X and Y score formulas and saves them as formula column scripts in the Formula Depot platform.
 
@@ -1862,7 +1860,7 @@ obj << (Fit[1] << Publish Score Formula);
 
 #### Remove Fit
 
-**Syntax:** obj << (Fit[number] << Remove Fit)
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Remove Fit)
 
 **Description:** Removes the model report from the main platform report.
 
@@ -1885,7 +1883,7 @@ obj << (Fit[1] << Remove Fit);
 
 #### Save Distance
 
-**Syntax:** obj << (Fit[number] << Save Distance)
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Save Distance)
 
 **Description:** Saves new columns to the original data table. The new columns contain the Distance to X Model (DModX) and Distance to Y Model (DModY) values.
 
@@ -1907,7 +1905,7 @@ obj << (Fit[1] << Save Distance);
 
 #### Save Distance as X Score Formula
 
-**Syntax:** obj << (Fit[number] << Save Distance as X Score Formula)
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Save Distance as X Score Formula)
 
 **Description:** Saves new formula columns to the original data table. The new columns contain the Distance to X Model (DModX) and Distance to Y Model (DModY) formulas that are functions of the X Score formulas.
 
@@ -1929,7 +1927,7 @@ obj << (Fit[1] << Save Distance as X Score Formula);
 
 #### Save Imputation
 
-**Syntax:** obj << (Fit[number] << Save Imputation)
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Save Imputation)
 
 **Description:** Saves columns to a new data table. For each X and Y variable, there is a column that contains the original data column with missing values replaced by their imputed values.
 
@@ -1952,7 +1950,7 @@ obj << (Fit[1] << Save Imputation);
 
 #### Save Indiv Confidence Limit Formula
 
-**Syntax:** obj << (Fit[number] << Save Indiv Confidence Limit Formula)
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Save Indiv Confidence Limit Formula)
 
 **Description:** Saves new formula columns to the original data table. For each Y variable, there are columns for the lower and upper confidence limits for an individual prediction that are functions of the X Score formulas. The default level for alpha is 0.05, which creates 95% confidence limits.
 
@@ -1974,7 +1972,7 @@ obj << (Fit[1] << Save Indiv Confidence Limit Formula);
 
 #### Save Loadings
 
-**Syntax:** obj << (Fit[number] << Save Loadings)
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Save Loadings)
 
 **Description:** Saves columns to two new data tables. There is a data table that contains the loadings for the X variables and a data table that contains the loadings for the Y variables.
 
@@ -1996,7 +1994,7 @@ obj << (Fit[1] << Save Loadings);
 
 #### Save Mean Confidence Limit Formula
 
-**Syntax:** obj << (Fit[number] << Save Mean Confidence Limit Formula( <alpha=0.05> ))
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Save Mean Confidence Limit Formula( &lt;alpha=0.05&gt; ))
 
 **Description:** Saves new formula columns to the original data table. For each Y variable, there are columns for the lower and upper confidence limits for the mean response that are functions of the X Score formulas. The default level for alpha is 0.05, which creates 95% confidence limits.
 
@@ -2018,7 +2016,7 @@ obj << (Fit[1] << Save Mean Confidence Limit Formula);
 
 #### Save Percent Variation Explained For X Effects
 
-**Syntax:** obj << (Fit[number] << Save Percent Variation Explained For X Effects)
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Save Percent Variation Explained For X Effects)
 
 **Description:** Saves columns to a new data table. For each X variable, there is a column that contains the percent of variation explained across all extracted factors.
 
@@ -2040,7 +2038,7 @@ obj << (Fit[1] << Save Percent Variation Explained For X Effects);
 
 #### Save Percent Variation Explained For Y Responses
 
-**Syntax:** obj << (Fit[number] << Save Percent Variation Explained For Y Responses)
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Save Percent Variation Explained For Y Responses)
 
 **Description:** Saves columns to a new data table. For each Y variable, there is a column that contains the percent of variation explained across all extracted factors.
 
@@ -2062,7 +2060,7 @@ obj << (Fit[1] << Save Percent Variation Explained For Y Responses);
 
 #### Save Prediction As X Score Formula
 
-**Syntax:** obj << (Fit[number] << Save Prediction as X Score Formula)
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Save Prediction as X Score Formula)
 
 **Description:** Saves new formula columns to the original data table. For each Y variable, there is a column that contains a prediction formula that is a function of the X Score formulas.
 
@@ -2084,7 +2082,7 @@ obj << (Fit[1] << Save Prediction as X Score Formula);
 
 #### Save Prediction Formula
 
-**Syntax:** obj << (Fit[number] << Save Prediction Formula)
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Save Prediction Formula)
 
 **Description:** Saves new formula columns to the original data table. For each Y variable, there is a column that contains a prediction formula that is a function of the X variables.
 
@@ -2106,7 +2104,7 @@ obj << (Fit[1] << Save Prediction Formula);
 
 #### Save Score Formula
 
-**Syntax:** obj << (Fit[number] << Save Score Formula)
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Save Score Formula)
 
 **Description:** Saves new formula columns to the original data table. For each extracted factor, there is a column that contains an X Score formula and a column that contains a Y Score formula. The X Score formulas are functions of the X variables and the Y Score formulas are functions of the X Score formulas.
 
@@ -2128,7 +2126,7 @@ obj << (Fit[1] << Save Score Formula);
 
 #### Save Scores
 
-**Syntax:** obj << (Fit[number] << Save Scores)
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Save Scores)
 
 **Description:** Saves new columns to the original data table. For each extracted factor, there is a column that contains the X scores and a column that contains the Y scores.
 
@@ -2150,7 +2148,7 @@ obj << (Fit[1] << Save Scores);
 
 #### Save Standard Errors of Prediction Formula
 
-**Syntax:** obj << (Fit[number] << Save Standard Errors of Prediction Formula)
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Save Standard Errors of Prediction Formula)
 
 **Description:** Saves new formula columns to the original data table. For each Y variable, there is a column that contains the formula for the standard error of the predicted mean that is a function of the X variables.
 
@@ -2172,7 +2170,7 @@ obj << (Fit[1] << Save Standard Errors of Prediction Formula);
 
 #### Save Standardized Loadings
 
-**Syntax:** obj << (Fit[number] << Save Standardized Loadings)
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Save Standardized Loadings)
 
 **Description:** Saves columns to two new data tables. There is a data table that contains the standardized loadings for the X variables and a data table that contains the standardized loadings for the Y variables.
 
@@ -2194,7 +2192,7 @@ obj << (Fit[1] << Save Standardized Loadings);
 
 #### Save Standardized Scores
 
-**Syntax:** obj << (Fit[number] << Save Standardized Scores)
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Save Standardized Scores)
 
 **Description:** Saves new columns to the original data table. The new columns contain the X and Y standardized scores for each extracted factor.
 
@@ -2216,7 +2214,7 @@ obj << (Fit[1] << Save Standardized Scores);
 
 #### Save T Square
 
-**Syntax:** obj << (Fit[number] << Save T Square)
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Save T Square)
 
 **Description:** Saves a new formula column to the original data table. The new column contains the T squared formula as a function of the X variables.
 
@@ -2238,7 +2236,7 @@ obj << (Fit[1] << Save T Square);
 
 #### Save T Square as X Score Formula
 
-**Syntax:** obj << (Fit[number] << Save T Square as X Score Formula)
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Save T Square as X Score Formula)
 
 **Description:** Saves a new formula column to the original data table. The new column contains the T squared formula as a function of the X Score formulas.
 
@@ -2260,7 +2258,7 @@ obj << (Fit[1] << Save T Square as X Score Formula);
 
 #### Save Validation
 
-**Syntax:** obj << (Fit[number] << Save Validation)
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Save Validation)
 
 **Description:** Saves a new column to the original data table. The new column contains numbers that indicate how each observation was used in validation.
 
@@ -2282,7 +2280,7 @@ obj << (Fit[1] << Save Validation);
 
 #### Save X Predicted Values
 
-**Syntax:** obj << (Fit[number] << Save X Predicted Values)
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Save X Predicted Values)
 
 **Description:** Saves new columns to the original data table. For each X variable, there is a column that contains the predicted X values.
 
@@ -2304,7 +2302,7 @@ obj << (Fit[1] << Save X Predicted Values);
 
 #### Save X Prediction as X Score Formula
 
-**Syntax:** obj << (Fit[number] << Save X Prediction as X Score Formula)
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Save X Prediction as X Score Formula)
 
 **Description:** Saves new formula columns to the original data table. For each X variable, there is a column that contains a prediction formula that is a function of the X Score formulas.
 
@@ -2326,7 +2324,7 @@ obj << (Fit[1] << Save X Prediction as X Score Formula);
 
 #### Save X Residuals
 
-**Syntax:** obj << (Fit[number] << Save X Residuals)
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Save X Residuals)
 
 **Description:** Saves new columns to the original data table. For each X variable, there is a column that contains the X residual values.
 
@@ -2348,11 +2346,11 @@ obj << (Fit[1] << Save X Residuals);
 
 #### Save X Score Formula
 
-**Syntax:** obj << Save X Score Formula
+**Syntax:** obj &lt;&lt; Save X Score Formula
 
 #### Save X Weights
 
-**Syntax:** obj << (Fit[number] << Save X Weights)
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Save X Weights)
 
 **Description:** Saves columns to a new data table. For each extracted factor, there is a column that contains the weights for the X variables.
 
@@ -2374,7 +2372,7 @@ obj << (Fit[1] << Save X Weights);
 
 #### Save Y Predicted Values
 
-**Syntax:** obj << (Fit[number] << Save Y Predicted Values)
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Save Y Predicted Values)
 
 **Description:** Saves new columns to the original data table. For each Y variable, there is a column that contains the predicted Y values.
 
@@ -2396,7 +2394,7 @@ obj << (Fit[1] << Save Y Predicted Values);
 
 #### Save Y Residuals
 
-**Syntax:** obj << (Fit[number] << Save Y Residuals)
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Save Y Residuals)
 
 **Description:** Saves new columns to the original data table. For each Y variable, there is a column that contains the Y residual values.
 
@@ -2418,7 +2416,7 @@ obj << (Fit[1] << Save Y Residuals);
 
 #### Score Scatterplot Matrices
 
-**Syntax:** obj << (Fit[number] << Score Scatterplot Matrices( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Score Scatterplot Matrices( state=0|1 ))
 
 **Description:** Shows or hides a scatterplot matrix of the X scores and a scatterplot matrix of the Y scores.
 
@@ -2440,7 +2438,7 @@ obj << (Fit[1] << Score Scatterplot Matrices( 1 ));
 
 #### Set VIP Threshold
 
-**Syntax:** obj << (Fit[number] << Set VIP Threshold( number=0.8 ))
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Set VIP Threshold( number=0.8 ))
 
 **Description:** Sets the threshold level for the Variable Importance Plot, Variance Importance Table, and the VIP vs Coefficients Plots. "0.8" by default.
 
@@ -2464,7 +2462,7 @@ obj << (Fit[1] << Set VIP Threshold( 0.5 ));
 
 #### Show Confidence Band
 
-**Syntax:** obj << (Fit[number] << Show Confidence Band( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Show Confidence Band( state=0|1 ))
 
 **Description:** Shows or hides 95% confidence bands for the fitted lines on the X-Y Scores Plots.
 
@@ -2486,7 +2484,7 @@ obj << (Fit[1] << Show Confidence Band( 1 ));
 
 #### Spectral Profiler
 
-**Syntax:** obj << (Fit[number] << Spectral Profiler( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Spectral Profiler( state=0|1 ))
 
 **Description:** Shows or hides a single profiler where all of the response variables appear in the first cell of the plot.
 
@@ -2508,7 +2506,7 @@ obj << (Fit[1] << Spectral Profiler( 1 ));
 
 #### T Square Plot
 
-**Syntax:** obj << (Fit[number] << T Square Plot( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; T Square Plot( state=0|1 ))
 
 **Description:** Shows or hides a plot of T square statistics for each observation, along with a control limit.
 
@@ -2530,7 +2528,7 @@ obj << (Fit[1] << T Square Plot( 1 ));
 
 #### VIP vs Coefficients Plots
 
-**Syntax:** obj << (Fit[number] << VIP vs Coefficients Plots( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; VIP vs Coefficients Plots( state=0|1 ))
 
 **Description:** Shows or hides a plot of the VIP statistics against the model coefficients.
 
@@ -2552,7 +2550,7 @@ obj << (Fit[1] << VIP vs Coefficients Plots( 1 ));
 
 #### Variable Importance Plot
 
-**Syntax:** obj << (Fit[number] << Variable Importance Plot( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Fit[number] &lt;&lt; Variable Importance Plot( state=0|1 ))
 
 **Description:** Shows or hides a plot that summarizes the contribution each variable makes to the model.
 

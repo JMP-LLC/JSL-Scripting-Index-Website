@@ -6,7 +6,7 @@
 
 ### Blink
 
-**Sintassi:** obj << Blink
+**Sintassi:** obj &lt;&lt; Blink
 
 **Descrizione:** Fa lampeggiare la riga visualizzata nella finestra di modifica dati.
 
@@ -32,7 +32,7 @@ dataedit << Blink;
 
 ### Find
 
-**Sintassi:** obj << Find( search term )
+**Sintassi:** obj &lt;&lt; Find( search term )
 
 **Descrizione:** Mostra la riga trovata dal termine di ricerca inserito.
 
@@ -58,7 +58,7 @@ dataedit << Find( Contains( :State, "North Carolina" ) );
 
 ### Go to row
 
-**Sintassi:** obj << Go to row( row )
+**Sintassi:** obj &lt;&lt; Go to row( row )
 
 **Descrizione:** Mostra la riga inserita nella finestra di modifica dati.
 
@@ -84,7 +84,7 @@ dataedit << Go To Row( 23 );
 
 ### New Row
 
-**Sintassi:** obj << New Row
+**Sintassi:** obj &lt;&lt; New Row
 
 **Descrizione:** Crea una nuova riga nella tabella di dati e la visualizza nella finestra di modifica dati.
 
@@ -110,7 +110,7 @@ dataedit << New Row;
 
 ### Next
 
-**Sintassi:** obj << Next
+**Sintassi:** obj &lt;&lt; Next
 
 **Descrizione:** Mostra la riga selezionata successiva nella finestra di modifica dati.
 
@@ -136,7 +136,7 @@ dataedit << Next;
 
 ### Next Selected
 
-**Sintassi:** obj << Next Selected
+**Sintassi:** obj &lt;&lt; Next Selected
 
 **Descrizione:** A partire dalle righe selezionate, mostra la riga selezionata successiva nella finestra di modifica dati.
 
@@ -163,7 +163,7 @@ dataedit << Next Selected;
 
 ### Prev
 
-**Sintassi:** obj << Prev
+**Sintassi:** obj &lt;&lt; Prev
 
 **Descrizione:** Mostra la riga selezionata precedente nella finestra di modifica dati.
 
@@ -190,7 +190,7 @@ dataedit << Prev;
 
 ### Prev Selected
 
-**Sintassi:** obj << Prev Selected
+**Sintassi:** obj &lt;&lt; Prev Selected
 
 **Descrizione:** A partire dalle righe selezionate, mostra la riga selezionata precedente nella finestra di modifica dati.
 
@@ -217,7 +217,7 @@ dataedit << Prev Selected;
 
 ### Save
 
-**Sintassi:** obj << Save
+**Sintassi:** obj &lt;&lt; Save
 
 **Descrizione:** Salva nella tabella di dati i valori della riga visualizzata nella finestra di modifica dati.
 

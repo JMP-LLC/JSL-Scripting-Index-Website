@@ -6,7 +6,7 @@
 
 ### Create Instance
 
-**Syntax:** instance = obj << Create Instance( <parameters> )
+**Syntax:** instance = obj &lt;&lt; Create Instance( &lt;parameters&gt; )
 
 **Beschreibung:** Eine Instanz des Moduls erstellen.  Die Parameter werden der Funktion OnModuleLoad() übergeben, die im Modulskript definiert ist.
 
@@ -23,7 +23,7 @@ modules[1] << Create Instance;
 
 ### Get Application
 
-**Syntax:** app = obj << Get Application
+**Syntax:** app = obj &lt;&lt; Get Application
 
 **Beschreibung:** Anwendung, der das Modul gehört, abrufen.
 

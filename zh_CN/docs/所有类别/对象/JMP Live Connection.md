@@ -6,7 +6,7 @@
 
 ### Create Folder
 
-**语法:** liveresult = liveconnection << Create Folder(Title(folder_title), Parent Folder(id | path | JMP Live Folder), <Description(folder_description)>, <If Exists("use" | "fail" | "default")>)
+**语法:** liveresult = liveconnection &lt;&lt; Create Folder(Title(folder_title), Parent Folder(id | path | JMP Live Folder), &lt;Description(folder_description)&gt;, &lt;If Exists("use" | "fail" | "default")&gt;)
 
 **说明:** 在 JMP Live 上创建新文件夹。返回一个 JMP Live 结果，该结果可用于为新文件夹获取 JMP Live 文件夹对象。Title 和 Parent Folder 是必需的参数。Parent Folder 可简写为 Parent 或 Folder。Description 是可选的。If Exists 告知 JMP Live 若指定的文件夹已存在则如何操作:“use”表示只返回现有文件夹，“fail”表示抛出错误，“default”表示创建新文件夹并通过添加“(2)”、“(3)”等使其名称唯一。
 
@@ -86,7 +86,7 @@ Show( subFolder2 );
 
 ### Delete Data
 
-**语法:** jmpliveresult = liveconnection << Delete Data(id | path | JMP Live Data)
+**语法:** jmpliveresult = liveconnection &lt;&lt; Delete Data(id | path | JMP Live Data)
 
 **说明:** 删除指定数据帖子。返回操作成功 (1) 或失败 (0)。
 
@@ -136,7 +136,7 @@ If( result == 1,
 
 ### Delete Folder
 
-**语法:** jmpliveresult = liveconnection << Delete Folder(id | path | JMP Live Folder)
+**语法:** jmpliveresult = liveconnection &lt;&lt; Delete Folder(id | path | JMP Live Folder)
 
 **说明:** 删除指定文件夹。返回操作成功 (1) 或失败 (0)。
 
@@ -186,7 +186,7 @@ If( result == 1,
 
 ### Delete Report
 
-**语法:** jmpliveresult = liveconnection << Delete Report(id | path | JMP Live Report)
+**语法:** jmpliveresult = liveconnection &lt;&lt; Delete Report(id | path | JMP Live Report)
 
 **说明:** 删除指定报表。返回操作成功 (1) 或失败 (0)。
 
@@ -236,7 +236,7 @@ If( result == 1,
 
 ### Find Folders
 
-**语法:** jmpliveresult = liveconnection << Find Folders(<Search(search_string)>, <Publisher(user_name)>, <PageSize(val)>)
+**语法:** jmpliveresult = liveconnection &lt;&lt; Find Folders(&lt;Search(search_string)&gt;, &lt;Publisher(user_name)&gt;, &lt;PageSize(val)&gt;)
 
 **说明:** 按搜索字符串、发布者或同时按两者查找文件夹。返回一个可用于引用各个文件夹的 JMP Live 结果列表。对该列表的后续 Next() 调用将返回更多文件夹。PageSize 指定要返回多少个文件夹，默认值为 10。所有搜索参数都是可选的，若未提供参数，则返回所有文件夹。
 
@@ -305,7 +305,7 @@ For( i = 1, i <= folderlist << Get Number Of Items, i += 1,
 
 ### Find Posts
 
-**语法:** jmpliveresult = liveconnection << Find Posts(<Search(search_string)>, <Publisher(user_name)>, <PageSize(val)>)
+**语法:** jmpliveresult = liveconnection &lt;&lt; Find Posts(&lt;Search(search_string)&gt;, &lt;Publisher(user_name)&gt;, &lt;PageSize(val)&gt;)
 
 **说明:** 按搜索字符串、发布者或同时按两者查找帖子（包括文件夹、报表和数据的所有项）。返回一个可用于引用各个帖子的 JMP Live 结果列表。对该列表的后续 Next() 调用将返回更多帖子。PageSize 指定要返回多少个帖子，默认值为 10。所有搜索参数都是可选的，若未提供参数，则返回所有帖子。
 
@@ -387,7 +387,7 @@ For( i = 1, i <= postlist << Get Number Of Items, i += 1,
 
 ### Find Reports
 
-**语法:** jmpliveresult = liveconnection << Find Reports(<Search(search_string)>, <Publisher(user_name)>, <PageSize(val)>)
+**语法:** jmpliveresult = liveconnection &lt;&lt; Find Reports(&lt;Search(search_string)&gt;, &lt;Publisher(user_name)&gt;, &lt;PageSize(val)&gt;)
 
 **说明:** 按搜索字符串、发布者或同时按两者查找报表。返回一个可用于引用各个报表的 JMP Live 结果列表。对该列表的后续 Next() 调用将返回更多报表。PageSize 指定要返回多少个报表，默认值为 10。所有搜索参数都是可选的，若未提供参数，则返回所有报表。
 
@@ -469,7 +469,7 @@ For( i = 1, i <= reportlist << Get Number Of Items, i += 1,
 
 ### Find Spaces
 
-**语法:** jmpliveresult = liveconnection << Find Spaces(<Permissions( "Contribute" )>, <Search(search_string)>, <PageSize(val)>)
+**语法:** jmpliveresult = liveconnection &lt;&lt; Find Spaces(&lt;Permissions( "Contribute" )&gt;, &lt;Search(search_string)&gt;, &lt;PageSize(val)&gt;)
 
 **说明:** 按可选的搜索字符串和可选的权限参数查找空间，以进一步将空间过滤为仅允许贡献的那些。当前贡献权限是唯一支持的权限值。返回一个 JMP Live 结果列表，该列表可用于引用列表中的各个空间。可以指定分页值，以指明要在结果列表中返回多少个空间项。可以在此结果列表上进行其他 Next() 调用，以取回更多空间。
 
@@ -517,7 +517,7 @@ For( i = 1, i <= spaceList << Get Number Of Items, i += 1,
 
 ### Get Connection Name
 
-**语法:** string = liveconnection << Get Connection Name()
+**语法:** string = liveconnection &lt;&lt; Get Connection Name()
 
 **说明:** 以字符串形式检索 JMP Live 连接的名称。
 
@@ -534,7 +534,7 @@ Write( "Connection Name: ", connectionname );
 
 ### Get Data
 
-**语法:** liveresult = liveconnection << Get Data(id | path)
+**语法:** liveresult = liveconnection &lt;&lt; Get Data(id | path)
 
 **说明:** 检索作为 JMP Live 结果对象的数据帖子，该帖子可用于为该帖子获取 JMP Live 数据对象。
 
@@ -579,7 +579,7 @@ Write( "\!n\!nData post retrieved by path: ", dataPost );
 
 ### Get Folder
 
-**语法:** liveresult = liveconnection << Get Folder(id | path)
+**语法:** liveresult = liveconnection &lt;&lt; Get Folder(id | path)
 
 **说明:** 检索作为 JMP Live 结果对象的文件夹对象，该对象可用于获得对应文件夹的 JMP Live 文件夹对象。
 
@@ -612,7 +612,7 @@ Write( "\!n\!nPath of retrieved folder: ", retrieved << Get Path );
 
 ### Get HTTP Request
 
-**语法:** httprequest = liveconnection << Get HTTP Request()
+**语法:** httprequest = liveconnection &lt;&lt; Get HTTP Request()
 
 **说明:** 返回可用于调用 JMP Live REST 函数的 HTTP 请求实例。
 
@@ -631,7 +631,7 @@ httprequest << Get Status Message();
 
 ### Get Post
 
-**语法:** liveresult = liveconnection << Get Post(id | path)
+**语法:** liveresult = liveconnection &lt;&lt; Get Post(id | path)
 
 **说明:** 检索作为 JMP Live 结果对象的帖子，该帖子可用于为该帖子获取 JMP Live 帖子对象。
 
@@ -671,7 +671,7 @@ Write( "\!n\!nPost retrieved by path: ", postByPath );
 
 ### Get Report
 
-**语法:** liveresult = liveconnection << Get Report(id | path)
+**语法:** liveresult = liveconnection &lt;&lt; Get Report(id | path)
 
 **说明:** 检索作为 JMP Live 结果对象的报表，该报表可用于为该帖子获取 JMP Live 报表对象。
 
@@ -717,7 +717,7 @@ Write( "\!n\!nReport post retrieved by path: ", reportPost );
 
 ### Get URL
 
-**语法:** string = liveconnection << Get URL()
+**语法:** string = liveconnection &lt;&lt; Get URL()
 
 **说明:** 检索指向 JMP Live 站点的 URL（若有）。
 
@@ -734,7 +734,7 @@ Write( "URL: ", url );
 
 ### Get Username
 
-**语法:** string = liveconnection << Get Username()
+**语法:** string = liveconnection &lt;&lt; Get Username()
 
 **说明:** 从 JMP Live 对象中检索用户名（若有）。
 
@@ -751,7 +751,7 @@ Write( "Username: ", username );
 
 ### Is Logged In
 
-**语法:** value = liveconnection << Is Logged In()
+**语法:** value = liveconnection &lt;&lt; Is Logged In()
 
 **说明:** 指出是否与服务器建立了经过身份验证的会话。返回操作成功 (1) 或失败 (0)。
 
@@ -768,7 +768,7 @@ Write( "Logged In: ", isloggedin );
 
 ### Publish
 
-**语法:** liveresult = liveconnection << Publish(JMPLiveContent, Folder(id | path | JMP Live Folder), <Use Existing Data({{dt_or_name, data_id | data_path | JMP Live Data}})>)
+**语法:** liveresult = liveconnection &lt;&lt; Publish(JMPLiveContent, Folder(id | path | JMP Live Folder), &lt;Use Existing Data({{dt_or_name, data_id | data_path | JMP Live Data}})&gt;)
 
 **说明:** 将报表或独立数据发布到 JMP Live。返回一个 JMP Live 结果列表对象。您必须在 JMP Live 上指定内容应发布到的文件夹。不允许在同一“发布”命令中混合报表和独立数据。发布报表时，若报表应使用 JMP Live 中已存在的数据，则可以使用可选的“Use Existing Data”参数来指定该数据。发布独立数据时“Use Existing Data”参数无效。
 
@@ -955,7 +955,7 @@ For( i = 1, i <= postlist << Get Number Of Items, i += 1,
 
 ### Replace
 
-**语法:** liveresult = liveconnection << Replace(JMPLiveContent, Report(id | path | JMP Live Report), <Use Existing Data({{dt_or_name, data_id | data_path | JMP Live Data}})>, <Update Existing Data({{dt_or_name, data_id | data_path | JMP Live Data}})>, <Publish New Data({dt_or_name})> )
+**语法:** liveresult = liveconnection &lt;&lt; Replace(JMPLiveContent, Report(id | path | JMP Live Report), &lt;Use Existing Data({{dt_or_name, data_id | data_path | JMP Live Data}})&gt;, &lt;Update Existing Data({{dt_or_name, data_id | data_path | JMP Live Data}})&gt;, &lt;Publish New Data({dt_or_name})&gt; )
 
 **说明:** 用另一个报表替换现有 JMP Live 报表。需要数据选项来指定如何管理报表中提供的数据。“Use Existing Data”指示服务器为指定的数据使用 JMP Live 中的现有数据。“Update Existing Data”指示服务器使用命令中提供的数据替换服务器上的数据。“Publish New Data”指示服务器发布新数据表并将它用于要替换的报表。“Publish New Data”是用于所有数据表的默认数据选项。可以指定数据选项的任意组合。返回一个 JMP Live 结果列表对象。
 
@@ -1069,7 +1069,7 @@ Write( "\!n\!nOpen this URL to see results: ", folderURL );
 
 ### Update Data
 
-**语法:** jmpliveresult = liveconnection << Update Data( Data(id | path | JMP Live Data), dataTable | path | JMPLiveContent )
+**语法:** jmpliveresult = liveconnection &lt;&lt; Update Data( Data(id | path | JMP Live Data), dataTable | path | JMPLiveContent )
 
 **说明:** 使用提供的内容更新数据帖子的数据表或地图。Data 参数标识要更新的 JMP Live 上的数据。第二个参数是要用于更新的内容。它可以是数据表对象、数据表的路径或是从数据表或地图创建的 JMP Live 内容对象。
 

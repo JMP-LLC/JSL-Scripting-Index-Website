@@ -2,8 +2,6 @@
 
 
 
-## 函数
-
 ### Arrhenius
 
 **语法:** y = Arrhenius( tempC )
@@ -126,7 +124,7 @@ Digamma( 5 );
 
 ### Exp
 
-**语法:** y = Exp( <x=1> )
+**语法:** y = Exp( &lt;x=1&gt; )
 
 **说明:** 返回 e 的 x 次幂。参数可以是数值、矩阵或数值列表。
 
@@ -156,7 +154,7 @@ Show( ExpM1( 1.1e-18 ), Exp( 1.1e-18 ) - 1 );
 
 ### FFT
 
-**语法:** ret = FFT( L, <<inverse( 0 ), <<multivariate( 0 ), <<scale( 1.0 ) )
+**语法:** ret = FFT( L, &lt;&lt;inverse( 0 ), &lt;&lt;multivariate( 0 ), &lt;&lt;scale( 1.0 ) )
 
 **说明:** 对参数 L（由矩阵形式的数据实部和虚部组成的必需列表）执行快速傅里叶变换 (FFT)。若 L 仅由一个矩阵构成，则将该矩阵视为实部。若 L 由两个矩阵构成，则第一个矩阵为实部，第二个矩阵为虚部。两个矩阵必须具有相同的维数，且行数必须大于 1。有三个可选参数。inverse 参数确实是否执行 FFT 逆变换。multivariate 参数确定执行空间还是多元 FFT。scale 参数确定和返回值相乘的常数。返回值为两个矩阵的列表，矩阵的维数与第一个输入参数相同。
 
@@ -242,7 +240,7 @@ Factorial( 5 );
 
 ### Fit Transform To Normal
 
-**语法:** result = Fit Transform To Normal( Distribution(name), Y(vector), <Freq(vector)> )
+**语法:** result = Fit Transform To Normal( Distribution(name), Y(vector), &lt;Freq(vector)&gt; )
 
 **说明:** 拟合数据向量的正态变换。这包括 Johnson Sl、Johnson Sb、Johnson Su 和广义对数分布。该函数返回包含参数估计值、协方差矩阵、对数似然、AICc、收敛消息和变换值的列表。
 
@@ -268,7 +266,7 @@ Show( results );
 
 ### Gamma
 
-**语法:** y = Gamma( x, <limit> )
+**语法:** y = Gamma( x, &lt;limit&gt; )
 
 **说明:** 返回 x 的 Gamma 函数，定义为 z^(x-1)*exp(-z) dz 从 0 到 ∞ 的积分。若存在 limit，则使用该积分限制来计算不完整的 Gamma。
 
@@ -313,7 +311,7 @@ Ln( Exp( 2 ) );
 
 ### Log
 
-**语法:** y = Log( x, <b> )
+**语法:** y = Log( x, &lt;b&gt; )
 
 **说明:** 返回 x 以 b 为底的对数。若没有指定 b，则返回 x 的自然对数。
 
@@ -433,7 +431,7 @@ N Choose K( 5, 3 );
 
 ### Power
 
-**语法:** z = x ^ y; z = Power( x, <y=2> )
+**语法:** z = x ^ y; z = Power( x, &lt;y=2&gt; )
 
 **说明:** 返回 x 的 y 次幂。若 x 为负，y 必须是整数。
 
@@ -448,7 +446,7 @@ Power( 2, 5 );
 
 ### Root
 
-**语法:** y = Root( x, <n=2> )
+**语法:** y = Root( x, &lt;n=2&gt; )
 
 **说明:** 返回 x 的 n 次方根。
 
@@ -553,7 +551,7 @@ Scheffe Cubic( [1, -1, 1, -1, 1], [-1, -1, 1, 1, -1] );
 
 ### SlInv
 
-**语法:** x = SlInv( z, gamma, delta, theta, <sigma=1> )
+**语法:** x = SlInv( z, gamma, delta, theta, &lt;sigma=1&gt; )
 
 **说明:** 将标准正态变量变换为 Johnson SL 变量。
 
@@ -568,7 +566,7 @@ SlInv( 1.96, 1.5, 2, 1 );
 
 ### SlTrans
 
-**语法:** z = SlTrans( x, gamma, delta, theta, <sigma=1> )
+**语法:** z = SlTrans( x, gamma, delta, theta, &lt;sigma=1&gt; )
 
 **说明:** 将 Johnson SL 变量变换为标准正态变量。
 

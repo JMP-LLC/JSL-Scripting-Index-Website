@@ -6,7 +6,7 @@
 
 ### Action
 
-**구문:** obj << Action
+**구문:** obj &lt;&lt; Action
 
 **설명:** 실행할 표현식을 삽입하기 위한 플랫폼 내의 다목적 트랩도어. 임시로 표시 상자 및 데이터 테이블 유형을 플랫폼에 설정합니다.
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**구문:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**구문:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **설명:** 이전에 생성된 사전 설정을 개체에 적용하여 옵션과 사용자 정의를 저장된 설정과 일치하도록 업데이트합니다.
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Automatic Recalc
 
-**구문:** obj << Automatic Recalc( state=0|1 )
+**구문:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **설명:** 제외 항목 및 데이터 변경이 있을 때 분석을 자동으로 다시 실행합니다. 자동 재계산 옵션이 설정된 경우 재계산하기 전에 제외 항목 및 데이터 변경이 적용되게 하려면 Wait(0) 명령을 사용하는 것이 좋습니다.
 
@@ -92,7 +92,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Column Switcher
 
-**구문:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**구문:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **설명:** 플랫폼 변수를 변경하기 위한 제어판을 추가합니다.
 
@@ -107,7 +107,7 @@ ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country,
 
 ### Copy Script
 
-**구문:** obj << Copy Script
+**구문:** obj &lt;&lt; Copy Script
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 클립보드에 넣습니다.
 
@@ -127,7 +127,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**구문:** obj << Data Table Window
+**구문:** obj &lt;&lt; Data Table Window
 
 **설명:** 이 분석에 대한 데이터 테이블 창을 앞으로 가져옵니다.
 
@@ -147,7 +147,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**구문:** obj << Get By Levels
+**구문:** obj &lt;&lt; Get By Levels
 
 **설명:** 기준 그룹 열을 값에 매핑하는 연관 배열을 반환합니다.
 
@@ -164,7 +164,7 @@ biv << Get By Levels;
 
 ### Get Container
 
-**구문:** obj << Get Container
+**구문:** obj &lt;&lt; Get Container
 
 **설명:** 개체의 콘텐츠를 담고 있는 컨테이너 상자에 대한 참조를 반환합니다.
 
@@ -216,7 +216,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**구문:** obj << Get Data Table
+**구문:** obj &lt;&lt; Get Data Table
 
 **설명:** 데이터 테이블에 대한 참조를 반환합니다.
 
@@ -237,7 +237,7 @@ Show( N Rows( t ) );
 
 ### Get Script
 
-**구문:** obj << Get Script
+**구문:** obj &lt;&lt; Get Script
 
 **설명:** 이 분석을 수행하기 위한 스크립트(JSL)를 생성하고 표현식으로 반환합니다.
 
@@ -258,7 +258,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**구문:** obj << Get Script With Data Table
+**구문:** obj &lt;&lt; Get Script With Data Table
 
 **설명:** 이 데이터 테이블을 참조하는 분석을 수행하기 위한 스크립트(JSL)를 생성하고 표현식으로 반환합니다.
 
@@ -279,7 +279,7 @@ Show( t );
 
 ### Get Timing
 
-**구문:** obj << Get Timing
+**구문:** obj &lt;&lt; Get Timing
 
 **설명:** 플랫폼 시작 시간을 설정합니다.
 
@@ -300,7 +300,7 @@ Show( t );
 
 ### Get Web Support
 
-**구문:** obj << Get Web Support
+**구문:** obj &lt;&lt; Get Web Support
 
 **설명:** 표시 개체에 대한 대화식 HTML 지원 수준을 나타내는 숫자를 반환합니다. 1은 일부 또는 모든 요소가 지원됨을 의미하고 0은 지원되지 않음을 의미합니다.
 
@@ -316,7 +316,7 @@ Show( s );
 
 ### Get Where Expr
 
-**구문:** obj << Get Where Expr
+**구문:** obj &lt;&lt; Get Where Expr
 
 **설명:** By() 또는 Where()를 사용하여 플랫폼이 시작된 경우 데이터 부분집합에 대한 Where 표현식을 반환하고, 그렇지 않은 경우 Empty()를 반환합니다.
 
@@ -353,7 +353,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**구문:** obj << Local Data Filter
+**구문:** obj &lt;&lt; Local Data Filter
 
 **설명:** 데이터를 특정 그룹 또는 범위로 필터링합니다. 이 플랫폼에서만 사용 가능합니다.
 
@@ -409,7 +409,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**구문:** obj << Paste Local Data Filter
+**구문:** obj &lt;&lt; Paste Local Data Filter
 
 **설명:** 클립보드의 로컬 데이터 필터를 현재 보고서에 적용합니다.
 
@@ -428,7 +428,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**구문:** obj << Redo Analysis
+**구문:** obj &lt;&lt; Redo Analysis
 
 **설명:** 동일한 분석을 새 창에서 다시 실행합니다. 데이터가 변경된 경우에는 분석결과가 달라집니다.
 
@@ -448,7 +448,7 @@ obj << Redo Analysis;
 
 ### Relaunch Analysis
 
-**구문:** obj << Relaunch Analysis
+**구문:** obj &lt;&lt; Relaunch Analysis
 
 **설명:** 플랫폼 시작 창을 열고 보고서를 생성하는 데 사용된 설정을 불러옵니다.
 
@@ -468,7 +468,7 @@ obj << Relaunch Analysis;
 
 ### Remove Column Switcher
 
-**구문:** obj << Remove Column Switcher
+**구문:** obj &lt;&lt; Remove Column Switcher
 
 **설명:** 플랫폼에 추가된 가장 최근 열 전환기를 제거합니다.
 
@@ -485,7 +485,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**구문:** obj << Remove Local Data Filter
+**구문:** obj &lt;&lt; Remove Local Data Filter
 
 **설명:** 로컬 데이터 필터가 생성된 경우 로컬 데이터 필터를 제거하고 데이터 테이블의 모든 데이터를 직접 사용하도록 플랫폼을 복원합니다.
 
@@ -524,9 +524,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**구문:** obj << Report;
-
-Report( obj )
+**구문:** obj &lt;&lt; Report;Report( obj )
 
 **설명:** 보고서 개체에 대한 참조를 반환합니다.
 
@@ -548,7 +546,7 @@ Show( t );
 
 ### Report View
 
-**구문:** obj << Report View( "전체"|"요약" )
+**구문:** obj &lt;&lt; Report View( "전체"|"요약" )
 
 **설명:** 보고서 보기는 플랫폼 보고서에 표시되는 상세 수준을 결정합니다. Full은 모든 상세 정보를 표시하고 Summary는 플랫폼에 따라 선택된 콘텐츠만 표시합니다. 사용자 정의된 동작의 경우 표시 상자는 <<Set Summary Behavior 메시지를 지원합니다.
 
@@ -568,7 +566,7 @@ obj << Report View( "Summary" );
 
 ### Save Script for All Objects
 
-**구문:** obj << Save Script for All Objects
+**구문:** obj &lt;&lt; Save Script for All Objects
 
 **설명:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -588,7 +586,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**구문:** obj << Save Script for All Objects To Data Table( <name> )
+**구문:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **설명:** 모든 보고서 개체에 대한 스크립트를 현재 데이터 테이블에 저장합니다. 이 옵션은 창에 여러 보고서가 있을 때 유용합니다. 스크립트 이름을 따옴표로 묶어 지정하는 경우 외에는 첫 번째 플랫폼 이름을 따라 스크립트 이름이 지정됩니다.
 
@@ -638,7 +636,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**구문:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**구문:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 데이터 테이블에 테이블 특성으로 저장합니다.
 
@@ -658,7 +656,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**구문:** obj << Save Script to Journal
+**구문:** obj &lt;&lt; Save Script to Journal
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 이 스크립트가 포함된 저널에 버튼을 추가합니다.
 
@@ -678,7 +676,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**구문:** obj << Save Script to Report
+**구문:** obj &lt;&lt; Save Script to Report
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 보고서 자체에 표시합니다. 수행된 작업에 대한 인쇄된 기록을 유지하려는 경우에 유용합니다.
 
@@ -698,7 +696,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**구문:** obj << Save Script to Script Window
+**구문:** obj &lt;&lt; Save Script to Script Window
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 현재 스크립트 텍스트 창에 추가합니다.
 
@@ -779,7 +777,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**구문:** obj << Sync to Data Table Changes
+**구문:** obj &lt;&lt; Sync to Data Table Changes
 
 **설명:** 제외 항목 및 데이터 변경 사항과 동기화합니다.
 
@@ -796,7 +794,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**구문:** obj << Title( "new title" )
+**구문:** obj &lt;&lt; Title( "new title" )
 
 **설명:** 플랫폼의 제목을 설정합니다.
 
@@ -816,7 +814,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**구문:** obj << Top Report
+**구문:** obj &lt;&lt; Top Report
 
 **설명:** 보고서의 루트 노드에 대한 참조를 반환합니다.
 
@@ -838,7 +836,7 @@ Show( t );
 
 ### View Web XML
 
-**구문:** obj << View Web XML
+**구문:** obj &lt;&lt; View Web XML
 
 **설명:** 대화식 HTML 보고서를 생성하는 데 사용된 XML 코드를 반환합니다.
 
@@ -876,7 +874,7 @@ obj = dt << Boosted Tree(
 
 ### By
 
-**구문:** obj << By( column(s) )
+**구문:** obj &lt;&lt; By( column(s) )
 
 ```jsl
 
@@ -899,7 +897,7 @@ obj = dt << Boosted Tree(
 
 ### Factor
 
-**구문:** obj << Factor( column(s) )
+**구문:** obj &lt;&lt; Factor( column(s) )
 
 ```jsl
 
@@ -916,7 +914,7 @@ obj = dt << Boosted Tree(
 
 ### Freq
 
-**구문:** obj << Freq( column )
+**구문:** obj &lt;&lt; Freq( column )
 
 ```jsl
 
@@ -935,7 +933,7 @@ obj = dt << Boosted Tree(
 
 ### Response
 
-**구문:** obj << Response( column(s) )
+**구문:** obj &lt;&lt; Response( column(s) )
 
 ```jsl
 
@@ -952,7 +950,7 @@ obj = dt << Boosted Tree(
 
 ### Validation
 
-**구문:** obj << Validation( column )
+**구문:** obj &lt;&lt; Validation( column )
 
 ```jsl
 
@@ -969,7 +967,7 @@ obj = dt << Boosted Tree(
 
 ### Weight
 
-**구문:** obj << Weight( column )
+**구문:** obj &lt;&lt; Weight( column )
 
 ```jsl
 
@@ -988,7 +986,7 @@ obj = dt << Boosted Tree(
 
 ### X
 
-**구문:** obj << X( column(s) )
+**구문:** obj &lt;&lt; X( column(s) )
 
 ```jsl
 
@@ -1005,7 +1003,7 @@ obj = dt << Boosted Tree(
 
 ### Y
 
-**구문:** obj << Y( column(s) )
+**구문:** obj &lt;&lt; Y( column(s) )
 
 ```jsl
 
@@ -1024,7 +1022,7 @@ obj = dt << Boosted Tree(
 
 ### Column Contributions
 
-**구문:** obj << Column Contributions( state=0|1 )
+**구문:** obj &lt;&lt; Column Contributions( state=0|1 )
 
 **설명:** 각 입력 열 및 적합에 대한 해당 열의 기여도가 포함된 보고서를 표시하거나 숨깁니다.
 
@@ -1044,7 +1042,7 @@ obj << Column Contributions( 1 );
 
 ### Column Sampling Rate
 
-**구문:** obj << Column Sampling Rate( number )
+**구문:** obj &lt;&lt; Column Sampling Rate( number )
 
 **설명:** 각 트리 계층에 대해 표집할 예측 변수 열의 비율을 지정합니다.
 
@@ -1064,7 +1062,7 @@ obj = dt << Boosted Tree(
 
 ### Decision Threshold
 
-**구문:** obj << Decision Threshold( state = 0|1, Set Probability Threshold( number ) )
+**구문:** obj &lt;&lt; Decision Threshold( state = 0|1, Set Probability Threshold( number ) )
 
 **설명:** 각 모형에 대한 적합 확률 분포와 실제값 대 예측값 테이블을 표시하거나 숨깁니다. 확률 임계를 변경하여 임계값에 따라 분류 결과에 어떤 영향이 있는지 탐색할 수 있습니다.
 
@@ -1107,7 +1105,7 @@ obj = dt << Boosted Tree(
 
 ### Get Average Absolute Error Test
 
-**구문:** obj << Get Average Absolute Error Test
+**구문:** obj &lt;&lt; Get Average Absolute Error Test
 
 **설명:** 테스트 데이터 집합의 평균 절대 편차 통계량을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
@@ -1192,7 +1190,7 @@ Show( aabs );
 
 ### Get Average Absolute Error Training
 
-**구문:** obj << Get Average Absolute Error Training
+**구문:** obj &lt;&lt; Get Average Absolute Error Training
 
 **설명:** 훈련 데이터 집합의 평균 절대 편차 통계량을 반환합니다.
 
@@ -1263,7 +1261,7 @@ Show( aabs );
 
 ### Get Average Absolute Error Validation
 
-**구문:** obj << Get Average Absolute Error Validation
+**구문:** obj &lt;&lt; Get Average Absolute Error Validation
 
 **설명:** 검증 데이터 집합의 평균 절대 편차 통계량을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
@@ -1338,7 +1336,7 @@ Show( aabs );
 
 ### Get Average Log Error Test
 
-**구문:** obj << Get Average Log Error Test
+**구문:** obj &lt;&lt; Get Average Log Error Test
 
 **설명:** -log(p)의 평균을 반환합니다. 여기서 p는 테스트 데이터 집합에 대해 반응이 실제로 발생한 모형에 기인하는 반응의 확률과 동일합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
@@ -1424,7 +1422,7 @@ Show( avg );
 
 ### Get Average Log Error Training
 
-**구문:** obj << Get Average Log Error Training
+**구문:** obj &lt;&lt; Get Average Log Error Training
 
 **설명:** -log(p)의 평균을 반환합니다. 여기서 p는 훈련 데이터 집합에 대해 반응이 실제로 발생한 모형에 기인하는 반응의 확률과 동일합니다.
 
@@ -1495,7 +1493,7 @@ Show( avg );
 
 ### Get Average Log Error Validation
 
-**구문:** obj << Get Average Log Error Validation
+**구문:** obj &lt;&lt; Get Average Log Error Validation
 
 **설명:** -log(p)의 평균을 반환합니다. 여기서 p는 검증 데이터 집합에 대해 반응이 실제로 발생한 모형에 기인하는 반응의 확률과 동일합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
@@ -1571,7 +1569,7 @@ Show( avg );
 
 ### Get Confusion Matrix Test
 
-**구문:** obj << Get Confusion Matrix Test
+**구문:** obj &lt;&lt; Get Confusion Matrix Test
 
 **설명:** 테스트 데이터 집합에 대한 혼동 행렬을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
@@ -1656,7 +1654,7 @@ Show( cm );
 
 ### Get Confusion Matrix Training
 
-**구문:** obj << Get Confusion Matrix Training
+**구문:** obj &lt;&lt; Get Confusion Matrix Training
 
 **설명:** 훈련 데이터 집합에 대한 혼동 행렬을 반환합니다.
 
@@ -1733,7 +1731,7 @@ Show( cm );
 
 ### Get Confusion Matrix Validation
 
-**구문:** obj << Get Confusion Matrix Validation
+**구문:** obj &lt;&lt; Get Confusion Matrix Validation
 
 **설명:** 검증 데이터 집합에 대한 혼동 행렬을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
@@ -1811,7 +1809,7 @@ Show( cm );
 
 ### Get Confusion Rates Test
 
-**구문:** obj << Get Confusion Rates Test
+**구문:** obj &lt;&lt; Get Confusion Rates Test
 
 **설명:** 테스트 데이터 집합에 대한 혼동 비율을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
@@ -1896,7 +1894,7 @@ Show( cr );
 
 ### Get Confusion Rates Training
 
-**구문:** obj << Get Confusion Rates Training
+**구문:** obj &lt;&lt; Get Confusion Rates Training
 
 **설명:** 훈련 데이터 집합에 대한 혼동 비율을 반환합니다.
 
@@ -1973,7 +1971,7 @@ Show( cr );
 
 ### Get Confusion Rates Validation
 
-**구문:** obj << Get Confusion Rates Validation
+**구문:** obj &lt;&lt; Get Confusion Rates Validation
 
 **설명:** 검증 데이터 집합에 대한 혼동 비율을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
@@ -2051,7 +2049,7 @@ Show( cr );
 
 ### Get Gen RSquare Test
 
-**구문:** obj << Get Gen RSquare Test
+**구문:** obj &lt;&lt; Get Gen RSquare Test
 
 **설명:** 테스트 데이터 집합에 대한 일반화 R²을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
@@ -2136,7 +2134,7 @@ Show( r );
 
 ### Get Gen RSquare Training
 
-**구문:** obj << Get Gen RSquare Training
+**구문:** obj &lt;&lt; Get Gen RSquare Training
 
 **설명:** 훈련 데이터 집합에 대한 일반화 R²을 반환합니다.
 
@@ -2213,7 +2211,7 @@ Show( r );
 
 ### Get Gen RSquare Validation
 
-**구문:** obj << Get Gen RSquare Validation
+**구문:** obj &lt;&lt; Get Gen RSquare Validation
 
 **설명:** 검증 데이터 집합에 대한 일반화 R²을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
@@ -2291,7 +2289,7 @@ Show( r );
 
 ### Get MM SAS DATA Step
 
-**구문:** obj << Get MM SAS DATA Step
+**구문:** obj &lt;&lt; Get MM SAS DATA Step
 
 **설명:** SAS 모형 관리자에 등록할 수 있는 SAS 코드를 생성한 후 로그 창에 반환합니다.
 
@@ -2311,7 +2309,7 @@ code = obj << Get MM SAS Data Step;
 
 ### Get MM Tolerant SAS DATA Step
 
-**구문:** obj << Get MM Tolerant SAS DATA Step
+**구문:** obj &lt;&lt; Get MM Tolerant SAS DATA Step
 
 **설명:** 결측값을 포함하는 데이터에 대해 SAS 모형 관리자에 등록할 수 있는 SAS 코드를 생성한 후 로그 창에 반환합니다.
 
@@ -2331,7 +2329,7 @@ code = obj << Get MM Tolerant SAS Data Step;
 
 ### Get Measures
 
-**구문:** obj << Get Measures
+**구문:** obj &lt;&lt; Get Measures
 
 **설명:** 모형에서 적합 측도 요약을 반환합니다.
 
@@ -2353,7 +2351,7 @@ obj << Get Measures;
 
 ### Get Microseconds
 
-**구문:** obj << Get Microseconds
+**구문:** obj &lt;&lt; Get Microseconds
 
 **설명:** 분석을 완료하는 데 사용된 시간(마이크로초)을 반환합니다.
 
@@ -2374,7 +2372,7 @@ Show( time );
 
 ### Get Misclassification Rate Test
 
-**구문:** obj << Get Misclassification Rate Test
+**구문:** obj &lt;&lt; Get Misclassification Rate Test
 
 **설명:** 테스트 데이터 집합에 대한 오분류 비율을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
@@ -2459,7 +2457,7 @@ Show( rate );
 
 ### Get Misclassification Rate Training
 
-**구문:** obj << Get Misclassification Rate Training
+**구문:** obj &lt;&lt; Get Misclassification Rate Training
 
 **설명:** 훈련 데이터 집합에 대한 오분류 비율을 반환합니다.
 
@@ -2531,7 +2529,7 @@ Show( rate );
 
 ### Get Misclassification Rate Validation
 
-**구문:** obj << Get Misclassification Rate Validation
+**구문:** obj &lt;&lt; Get Misclassification Rate Validation
 
 **설명:** 검증 데이터 집합에 대한 오분류 비율을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
@@ -2610,7 +2608,7 @@ Show( rate );
 
 ### Get Precision Recall Area Test
 
-**구문:** obj << Get Precision Recall Area Test
+**구문:** obj &lt;&lt; Get Precision Recall Area Test
 
 **설명:** 테스트 데이터 집합에 대한 정밀도-재현율 곡선 아래 면적을 반환합니다. 면적을 계산하려면 정밀도-재현율 곡선이 표시되어 있어야 합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
@@ -2674,7 +2672,7 @@ Show( area );
 
 ### Get Precision Recall Area Training
 
-**구문:** obj << Get Precision Recall Area Training
+**구문:** obj &lt;&lt; Get Precision Recall Area Training
 
 **설명:** 훈련 데이터 집합에 대한 정밀도-재현율 곡선 아래 면적을 반환합니다. 면적을 계산하려면 정밀도-재현율 곡선이 표시되어 있어야 합니다.
 
@@ -2734,7 +2732,7 @@ Show( area );
 
 ### Get Precision Recall Area Validation
 
-**구문:** obj << Get Precision Recall Area Validation
+**구문:** obj &lt;&lt; Get Precision Recall Area Validation
 
 **설명:** 검증 데이터 집합에 대한 정밀도-재현율 곡선 아래 면적을 반환합니다. 면적을 계산하려면 정밀도-재현율 곡선이 표시되어 있어야 합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
@@ -2795,7 +2793,7 @@ Show( area );
 
 ### Get Prediction Formula
 
-**구문:** obj << Get Prediction Formula
+**구문:** obj &lt;&lt; Get Prediction Formula
 
 **설명:** 예측 계산식 열을 생성하는 스크립트를 생성하여 반환합니다.
 
@@ -2815,7 +2813,7 @@ obj << Get Prediction Formula;
 
 ### Get RMS Error Test
 
-**구문:** obj << Get RMS Error Test
+**구문:** obj &lt;&lt; Get RMS Error Test
 
 **설명:** 테스트 오차에 대한 평균 제곱의 제곱근을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
@@ -2836,7 +2834,7 @@ Show( rms );
 
 ### Get RMS Error Training
 
-**구문:** obj << Get RMS Error Training
+**구문:** obj &lt;&lt; Get RMS Error Training
 
 **설명:** 훈련 오차에 대한 평균 제곱의 제곱근을 반환합니다.
 
@@ -2857,7 +2855,7 @@ Show( rms );
 
 ### Get RMS Error Validation
 
-**구문:** obj << Get RMS Error Validation
+**구문:** obj &lt;&lt; Get RMS Error Validation
 
 **설명:** 검증 오차에 대한 평균 제곱의 제곱근을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
@@ -2878,7 +2876,7 @@ Show( rms );
 
 ### Get ROC Area Test
 
-**구문:** obj << Get ROC Area Test
+**구문:** obj &lt;&lt; Get ROC Area Test
 
 **설명:** 테스트 데이터의 ROC(Receiver Operator Characteristic) 곡선 아래 면적을 반환합니다. 면적을 계산하기 전에 ROC 곡선을 표시해야 합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
@@ -2942,7 +2940,7 @@ Show( area );
 
 ### Get ROC Area Training
 
-**구문:** obj << Get ROC Area Training
+**구문:** obj &lt;&lt; Get ROC Area Training
 
 **설명:** 훈련 데이터 집합의 ROC(Receiver Operator Characteristic) 곡선 아래 면적을 반환합니다. 면적을 계산하기 전에 ROC 곡선을 표시해야 합니다.
 
@@ -3002,7 +3000,7 @@ Show( area );
 
 ### Get ROC Area Validation
 
-**구문:** obj << Get ROC Area Validation
+**구문:** obj &lt;&lt; Get ROC Area Validation
 
 **설명:** 검증 데이터 집합의 ROC(Receiver Operator Characteristic) 곡선 아래 면적을 반환합니다. 면적을 계산하기 전에 ROC 곡선을 표시해야 합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
@@ -3063,7 +3061,7 @@ Show( area );
 
 ### Get RSquare Test
 
-**구문:** obj << Get RSquare Test
+**구문:** obj &lt;&lt; Get RSquare Test
 
 **설명:** 테스트 데이터 집합에 대한 R²을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
@@ -3084,7 +3082,7 @@ Show( r );
 
 ### Get RSquare Training
 
-**구문:** obj << Get RSquare Training
+**구문:** obj &lt;&lt; Get RSquare Training
 
 **설명:** 훈련 데이터 집합에 대한 R²을 반환합니다.
 
@@ -3105,7 +3103,7 @@ Show( r );
 
 ### Get RSquare Validation
 
-**구문:** obj << Get RSquare Validation
+**구문:** obj &lt;&lt; Get RSquare Validation
 
 **설명:** 검증 데이터 집합에 대한 R²을 반환합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
@@ -3126,7 +3124,7 @@ Show( r );
 
 ### Get SAS DATA Step
 
-**구문:** obj << Get SAS DATA Step
+**구문:** obj &lt;&lt; Get SAS DATA Step
 
 **설명:** 데이터를 스코어링하기 위한 SAS DATA 스텝을 생성한 후 로그 창에 반환합니다.
 
@@ -3146,7 +3144,7 @@ code = obj << Get SAS Data Step;
 
 ### Get Seconds
 
-**구문:** obj << Get Seconds
+**구문:** obj &lt;&lt; Get Seconds
 
 **설명:** 분석을 완료하는 데 사용된 시간(초)을 반환합니다.
 
@@ -3167,7 +3165,7 @@ Show( time );
 
 ### Get Tolerant Prediction Formula
 
-**구문:** obj << Get Tolerant Prediction Formula
+**구문:** obj &lt;&lt; Get Tolerant Prediction Formula
 
 **설명:** 허용 예측 계산식 열을 생성하기 위한 스크립트를 생성한 후 반환합니다.
 
@@ -3187,7 +3185,7 @@ obj << Get Tolerant Prediction Formula;
 
 ### Get Tolerant SAS DATA Step
 
-**구문:** obj << Get Tolerant SAS DATA Step
+**구문:** obj &lt;&lt; Get Tolerant SAS DATA Step
 
 **설명:** 결측값을 포함하는 데이터를 스코어링하기 위한 SAS DATA 스텝을 생성한 후 로그 창에 반환합니다. 결측값은 트리 분지에 무작위로 할당됩니다.
 
@@ -3207,7 +3205,7 @@ code = obj << Get Tolerant SAS Data Step;
 
 ### Go
 
-**구문:** obj << Go
+**구문:** obj &lt;&lt; Go
 
 **설명:** 모든 모수가 설정된 후 반복을 시작합니다.
 
@@ -3226,9 +3224,7 @@ obj = dt << Boosted Tree(
 
 ### Informative Missing
 
-**구문:** obj = Boosted Tree(...Informative Missing( state=0|1 )...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Boosted Tree(...Informative Missing( state=0|1 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 범주형 변수의 경우 결측값을 범주로 처리합니다. 연속형 변수의 경우 결측값을 낮음 또는 높음으로 처리합니다(둘 중 더 적합한 것으로). 기본적으로 설정되어 있습니다.
 
@@ -3304,7 +3300,7 @@ obj = dt << Boosted Tree(
 
 ### Lift Curve
 
-**구문:** obj << Lift Curve( state=0|1 )
+**구문:** obj &lt;&lt; Lift Curve( state=0|1 )
 
 **설명:** 향상도 곡선 그림을 표시하거나 숨깁니다. 향상도 곡선은 향상도 대 관측값 비율을 표시하고 모형의 예측 능력에 대한 또 다른 보기를 제공합니다. 검증을 사용한 경우 훈련 데이터 집합, 검증 데이터 집합 및 테스트 데이터 집합에 대해 각각 그림이 표시됩니다.
 
@@ -3324,7 +3320,7 @@ obj << Lift Curve( 1 );
 
 ### Make SAS DATA Step
 
-**구문:** obj << Make SAS DATA Step
+**구문:** obj &lt;&lt; Make SAS DATA Step
 
 **설명:** 데이터를 스코어링하기 위한 SAS DATA 스텝을 생성한 후 스크립트 창에 반환합니다.
 
@@ -3344,7 +3340,7 @@ obj << Make SAS Data Step;
 
 ### Make Tolerant SAS DATA Step
 
-**구문:** obj << Make Tolerant SAS DATA Step
+**구문:** obj &lt;&lt; Make Tolerant SAS DATA Step
 
 **설명:** 결측값을 포함하는 데이터를 스코어링하기 위한 SAS DATA 스텝을 생성한 후 스크립트 창에 반환합니다. 결측값은 트리 분지에 무작위로 할당됩니다.
 
@@ -3364,15 +3360,13 @@ obj << Make Tolerant SAS Data Step;
 
 ### Maximum Depth
 
-**구문:** obj << Maximum Depth( number )
+**구문:** obj &lt;&lt; Maximum Depth( number )
 
 **설명:** 노드 수 대신 깊이로 트리 크기를 제한합니다.
 
 ### Method
 
-**구문:** Method( "Boosted Tree" )
-
-<b>실행기 항목: 예</b>
+**구문:** Method( "Boosted Tree" )&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 데이터 분할에 사용되는 방법을 결정합니다. 의사 결정 나무가 기본값입니다.
 
@@ -3480,9 +3474,7 @@ obj = dt << Boosted Tree(
 
 ### Ordinal Restricts Order
 
-**구문:** obj = Boosted Tree(...Ordinal Restricts Order( state=0|1 )...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Boosted Tree(...Ordinal Restricts Order( state=0|1 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 순서형 열의 경우 순서를 유지하는 분할만 고려합니다. 기본적으로 설정되어 있습니다.
 
@@ -3554,7 +3546,7 @@ obj = dt << Boosted Tree(
 
 ### Plot Actual by Predicted
 
-**구문:** obj << Plot Actual by Predicted( state=0|1 )
+**구문:** obj &lt;&lt; Plot Actual by Predicted( state=0|1 )
 
 **설명:** X 축에 예측값이 있고 Y 축에 실제값이 있는 훈련 데이터를 사용하여 그림을 표시하거나 숨깁니다.
 
@@ -3574,7 +3566,7 @@ obj << Plot Actual by Predicted( 1 );
 
 ### Precision Recall Curve
 
-**구문:** obj << Precision Recall Curve( state=0|1 )
+**구문:** obj &lt;&lt; Precision Recall Curve( state=0|1 )
 
 **설명:** 반응 변수의 각 수준에 대한 곡선을 포함하는 정밀도-재현율 곡선 그림을 표시하거나 숨깁니다. 정밀도-재현율 곡선은 다양한 임계값에서 정밀도 값 대 재현율 값을 표시합니다. 검증을 사용한 경우 훈련 데이터 집합, 검증 데이터 집합 및 테스트 데이터 집합에 대해 각각 그림이 표시됩니다.
 
@@ -3593,7 +3585,7 @@ obj << Precision Recall Curve( 1 );
 
 ### Profiler
 
-**구문:** obj << Profiler( state=0|1 )
+**구문:** obj &lt;&lt; Profiler( state=0|1 )
 
 **설명:** 예측 방정식을 한 번에 한 요인씩 분할하여 시각적으로 탐색하는 데 사용되는 예측 프로파일러를 표시하거나 숨깁니다. 예측 프로파일러에는 최적화를 위한 기능이 포함되어 있습니다.
 
@@ -3612,7 +3604,7 @@ obj << Profiler( 1 );
 
 ### Publish Prediction Formula
 
-**구문:** obj << Publish Prediction Formula
+**구문:** obj &lt;&lt; Publish Prediction Formula
 
 **설명:** 예측 계산식을 생성하여 계산식 저장소 플랫폼에 계산식 열 스크립트로 저장합니다.
 
@@ -3632,7 +3624,7 @@ obj << Publish Prediction Formula;
 
 ### Publish Tolerant Prediction Formula
 
-**구문:** obj << Publish Tolerant Prediction Formula
+**구문:** obj &lt;&lt; Publish Tolerant Prediction Formula
 
 **설명:** 결측값이 있는 경우에도 예측하는 예측 계산식을 생성하여 계산식 저장소에 계산식 열 스크립트로 게시합니다.
 
@@ -3652,7 +3644,7 @@ obj << Publish Tolerant Prediction Formula;
 
 ### ROC Curve
 
-**구문:** obj << ROC Curve( state=0|1 )
+**구문:** obj &lt;&lt; ROC Curve( state=0|1 )
 
 **설명:** 반응 변수의 각 수준에 대한 ROC(Receiver Operating Characteristic) 곡선을 표시하거나 숨깁니다. ROC 곡선은 민감도 대 (1 - 특이도)를 보여 주는 그림입니다. 검증을 사용한 경우 훈련 데이터 집합, 검증 데이터 집합 및 테스트 데이터 집합에 대해 각각 그림이 표시됩니다.
 
@@ -3672,7 +3664,7 @@ obj << ROC Curve( 1 );
 
 ### Row Sampling Rate
 
-**구문:** obj << Row Sampling Rate( number )
+**구문:** obj &lt;&lt; Row Sampling Rate( number )
 
 **설명:** 각 트리 계층에 대해 표집할 훈련 행의 비율을 지정합니다.
 
@@ -3692,7 +3684,7 @@ obj = dt << Boosted Tree(
 
 ### Save Cumulative Details
 
-**구문:** obj << Save Cumulative Details
+**구문:** obj &lt;&lt; Save Cumulative Details
 
 **설명:** 검증 R²을 트리 번호와 함께 새 데이터 테이블에 저장합니다. 검증 데이터 집합을 사용하는 경우에만 가능합니다.
 
@@ -3712,7 +3704,7 @@ obj << Save Cumulative Details;
 
 ### Save Offset Estimates
 
-**구문:** obj << Save Offset Estimates
+**구문:** obj &lt;&lt; Save Offset Estimates
 
 **설명:** 오프셋 추정값을 데이터 테이블의 새 열에 저장합니다. 범주형 반응에만 사용할 수 있습니다.
 
@@ -3731,7 +3723,7 @@ obj << Save Offset Estimates;
 
 ### Save Predicteds
 
-**구문:** obj << Save Predicteds
+**구문:** obj &lt;&lt; Save Predicteds
 
 **설명:** 예측값을 데이터 테이블의 새 열에 저장합니다.
 
@@ -3751,7 +3743,7 @@ obj << Save Predicteds;
 
 ### Save Prediction Formula
 
-**구문:** obj << Save Prediction Formula
+**구문:** obj &lt;&lt; Save Prediction Formula
 
 **설명:** 예측 계산식을 데이터 테이블의 새 열에 저장합니다.
 
@@ -3771,7 +3763,7 @@ obj << Save Prediction Formula;
 
 ### Save Residuals
 
-**구문:** obj << Save Residuals
+**구문:** obj &lt;&lt; Save Residuals
 
 **설명:** 잔차를 데이터 테이블의 새 열에 저장합니다.
 
@@ -3791,7 +3783,7 @@ obj << Save Residuals;
 
 ### Save Tolerant Prediction Formula
 
-**구문:** obj << Save Tolerant Prediction Formula
+**구문:** obj &lt;&lt; Save Tolerant Prediction Formula
 
 **설명:** 데이터 테이블의 새 열에 결측값이 있는 경우에도 예측하는 계산식을 저장합니다.
 
@@ -3811,7 +3803,7 @@ obj << Save Tolerant Prediction Formula;
 
 ### Save Tree Details
 
-**구문:** obj << Save Tree Details
+**구문:** obj &lt;&lt; Save Tree Details
 
 **설명:** 각 계층 분할 조합에 대한 계층, 분할, 라벨 및 추정값을 새 데이터 테이블에 저장합니다.
 
@@ -3831,7 +3823,7 @@ obj << Save Tree Details;
 
 ### Set Random Seed
 
-**구문:** obj << Set Random Seed( number )
+**구문:** obj &lt;&lt; Set Random Seed( number )
 
 **설명:** 이후 플랫폼 실행에 대한 결과를 재현하는 데 사용할 난수 시드값을 지정합니다.
 
@@ -3898,7 +3890,7 @@ obj = dt << Uplift(
 
 ### Show Trees
 
-**구문:** obj << Show Trees( "없음"|"이름 표시"|"이름 범주 표시"|"이름 범주 추정값 표시" )
+**구문:** obj &lt;&lt; Show Trees( "없음"|"이름 표시"|"이름 범주 표시"|"이름 범주 추정값 표시" )
 
 **설명:** 각 노드에 이름만 포함되거나 이름과 범주가 포함되거나 이름, 범주 및 추정값이 포함된 트리 목록을 각 계층에 표시합니다.
 
@@ -3920,7 +3912,7 @@ obj << Show Trees( Show names categories );
 
 ### Specify Profit Matrix
 
-**구문:** obj << Specify Profit Matrix
+**구문:** obj &lt;&lt; Specify Profit Matrix
 
 **설명:** 올바르거나 올바르지 않은 분류 결정과 관련된 수익 또는 비용을 지정할 수 있습니다.
 
@@ -4039,9 +4031,7 @@ obj = dt << Uplift(
 
 ### Validation Portion
 
-**구문:** obj = Boosted Tree(...Validation Portion( fraction=0 )...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Boosted Tree(...Validation Portion( fraction=0 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 무작위로 행을 선택하여 검증 데이터 집합을 구성합니다. 각 행이 선택될 확률은 p(분수)입니다. 기본값은 "0"입니다.
 

@@ -2,8 +2,6 @@
 
 
 
-## 関数
-
 ### And
 
 **構文:** y = x1 & x2; y = And( x1, x2, ... )
@@ -87,7 +85,7 @@ For( i = 1, i <= 10, i++,
 
 ### Filter Each
 
-**構文:** list = Filter Each({<value>, <index>} | {<element>, <index | {row, col}>} | {<key | {key, value}>, <index>} | {<values | {value1, ..., valueN}>, <index>}, list | matrix | associative array | expression | Across( container1, ..., <containerN>, <Count( "Longest" | "Shortest" | "Enforce Equal" | n )> ), <locals list>, body)
+**構文:** list = Filter Each({&lt;value&gt;, &lt;index&gt;} | {&lt;element&gt;, &lt;index | {row, col}&gt;} | {&lt;key | {key, value}&gt;, &lt;index&gt;} | {&lt;values | {value1, ..., valueN}&gt;, &lt;index&gt;}, list | matrix | associative array | expression | Across( container1, ..., &lt;containerN&gt;, &lt;Count( "Longest" | "Shortest" | "Enforce Equal" | n )&gt; ), &lt;locals list&gt;, body)
 
 **説明:** For Each関数と同じ処理を行うが、それに加えて、ブール値の結果に基づいて元のコンテナからフィルタリングした値のリストを戻す。結果の種類は、入力コンテナの種類と一致する。入力がMatrixの場合は、行列のサイズが不明であるため、行ベクトル行列が戻される。
 
@@ -154,7 +152,7 @@ Trim( s );
 
 ### For Each
 
-**構文:** For Each({<value>, <index>} | {<element>, <index | {row, col}>} | {<key | {key, value}>, <index>} | {<values | {value1, ..., valueN}>, <index>}, list | matrix | associative array | expression | Across( container1, ..., <containerN>, <Count( "Longest" | "Shortest" | "Enforce Equal" | n )> ), <locals list>, body)
+**構文:** For Each({&lt;value&gt;, &lt;index&gt;} | {&lt;element&gt;, &lt;index | {row, col}&gt;} | {&lt;key | {key, value}&gt;, &lt;index&gt;} | {&lt;values | {value1, ..., valueN}&gt;, &lt;index&gt;}, list | matrix | associative array | expression | Across( container1, ..., &lt;containerN&gt;, &lt;Count( "Longest" | "Shortest" | "Enforce Equal" | n )&gt; ), &lt;locals list&gt;, body)
 
 **説明:** リスト、行列、連想配列、式のいずれかであるコンテナで反復する。コンテナには、値、要素、またはキーが含まれる。各反復でインデックス番号を使うこともできる。連想配列のコンテナの場合は、2項目のリストを使ってキーと値を評価することができる。行列のコンテナの場合は、デフォルトで線形インデックスが与えられるが、2項目のリストを使って行インデックスと列インデックスを評価できる。これらのシンボルは、ビルトインのLocalブロックを使い、ループの本体のみに含まれる。ローカルのリストを指定することもでき、これは最初の反復シンボルが設定された後に初期化される。
 
@@ -250,7 +248,7 @@ For Each( {element, index}, 10 :: 15, Show( element, index ) );
 
 ### For Each Row
 
-**構文:** y = For Each Row( <dt>, body )
+**構文:** y = For Each Row( &lt;dt&gt;, body )
 
 **説明:** 現在のデータテーブル内の各行に対して、bodyに指定された式を反復して評価する。
 
@@ -266,7 +264,7 @@ For Each Row( :height = -:height );
 
 ### If
 
-**構文:** y = If( condition1, result1, <condition2, result2>, ..., <elseResult> )
+**構文:** y = If( condition1, result1, &lt;condition2, result2&gt;, ..., &lt;elseResult&gt; )
 
 **説明:** 引数の各ペアの1つ目の引数を評価し、 conditionのうち最初に非ゼロとなった条件に関連付けられたresult式の評価を戻す。condition引数は、順に評価される。すべてのcondition引数がゼロになった場合、オプションのelseResultを評価して結果を戻す。elseResultが指定されず、いずれの条件も真でない場合は、欠測値を戻す。すべてのcondition引数が欠測値になった場合は、欠測値を戻す。
 
@@ -284,7 +282,7 @@ If( Random Uniform() < 0.5,
 
 ### IfMZ
 
-**構文:** y = IfMZ( condition1, result1, <condition2, result2>, ..., <elseResult> )
+**構文:** y = IfMZ( condition1, result1, &lt;condition2, result2&gt;, ..., &lt;elseResult&gt; )
 
 **説明:** 引数の各ペアの1つ目の引数を評価し、conditionのうち最初に非ゼロとなった条件に関連付けられたresult式の評価を戻す。condition引数は、順に評価される。すべてのcondition引数がゼロまたは欠測値になった場合、オプションのelseResultを評価して結果を戻す。elseResultが指定されず、いずれの条件も真でない場合は、欠測値を戻す。(IfMZ()は、評価したcondition引数の欠測値をゼロとして扱った場合のIf()に相当する。)
 
@@ -304,7 +302,7 @@ Show( If( x == 1, 10, x == 2, 20, 30 ) );
 
 ### IfMax
 
-**構文:** y = IfMax( expr1, result1, expr2, result2, ..., <allMissingResult> )
+**構文:** y = IfMax( expr1, result1, expr2, result2, ..., &lt;allMissingResult&gt; )
 
 **説明:** 引数の各ペアの1つ目を評価し、最大値に対する結果式の評価を戻す。最大値が複数ある場合には、最初の最大値を戻す。すべての式が欠測値である場合、引数の数が偶数であれば空(Empty)、奇数であれば最後の引数を戻す。条件式は数値になる必要があるが、結果式はどのような値でもよい。
 
@@ -322,7 +320,7 @@ highestScorer = IfMax( TomScore, "Tom", JonScore, "Jon", TimScore, "Tim", "Noone
 
 ### IfMin
 
-**構文:** y = IfMin( expr1, result1, expr2, result2, ..., <allMissingResult> )
+**構文:** y = IfMin( expr1, result1, expr2, result2, ..., &lt;allMissingResult&gt; )
 
 **説明:** 引数の各ペアの1つ目を評価し、最小値に対する結果式の評価を戻す。最小値が複数ある場合には、最初の最小値を戻す。すべての式が欠測値である場合、引数の数が偶数であれば空(Empty)、奇数であれば最後の引数を戻す。条件式は数値になる必要があるが、結果式はどのような値でもよい。
 
@@ -340,11 +338,7 @@ lowestScorer = IfMin( TomScore, "Tom", JonScore, "Jon", TimScore, "Tim", "Noone"
 
 ### Interpolate
 
-**構文:** y = Interpolate(x|xmatrix|xlist, x1, y1, x2, y2);
-
-y = Interpolate(x | xmatrix | xlist, xmatrix, ymatrix);
-
-z = Interpolate({ x, y }, xvector, yvector, zmatrix)
+**構文:** y = Interpolate(x|xmatrix|xlist, x1, y1, x2, y2);y = Interpolate(x | xmatrix | xlist, xmatrix, ymatrix);z = Interpolate({ x, y }, xvector, yvector, zmatrix)
 
 **説明:** 線形補間を行う。引数xが、引数xiのどの位置にあるかを調べ、それに対応した引数yiから線形補間値を求める。引数xiは小さい順に並んでいる必要がある。
 
@@ -745,7 +739,7 @@ OrMZ( 1 < 2, 3 < 2 );
 
 ### Return
 
-**構文:** Return(<Expr>, ..., <ExprN>)
+**構文:** Return(&lt;Expr&gt;, ..., &lt;ExprN&gt;)
 
 **説明:** ユーザ定義の関数から式の値を戻す。
 
@@ -794,9 +788,7 @@ Show( f( 7, 15 ) );
 
 ### Step
 
-**構文:** y = Step( x, x1, y1, x2, y2, ... )
-
-y = Step( x, [x1, x2, ...], [y1, y2, ...] )
+**構文:** y = Step( x, x1, y1, x2, y2, ... )y = Step( x, [x1, x2, ...], [y1, y2, ...] )
 
 **説明:** 引数x以下となっている引数xiのうち、最大のxi値に対応する引数yiを戻す。引数xiは小さい順に指定されていなければならない。
 
@@ -829,7 +821,7 @@ For( i = 1, i <= 10, i++,
 
 ### Transform Each
 
-**構文:** list = Transform Each({<value>, <index>} | {<element>, <index | {row, col}>} | {<key | {key, value}>, <index>} | {<values | {value1, ..., valueN}>, <index>}, list | matrix | associative array | expression | Across( container1, ..., <containerN>, <Count( "Longest" | "Shortest" | "Enforce Equal" | n )> ), <Output( "List" | "Matrix" | "Associative Array" | "Expression", <expr head name> )>, <locals list>, body)
+**構文:** list = Transform Each({&lt;value&gt;, &lt;index&gt;} | {&lt;element&gt;, &lt;index | {row, col}&gt;} | {&lt;key | {key, value}&gt;, &lt;index&gt;} | {&lt;values | {value1, ..., valueN}&gt;, &lt;index&gt;}, list | matrix | associative array | expression | Across( container1, ..., &lt;containerN&gt;, &lt;Count( "Longest" | "Shortest" | "Enforce Equal" | n )&gt; ), &lt;Output( "List" | "Matrix" | "Associative Array" | "Expression", &lt;expr head name&gt; )&gt;, &lt;locals list&gt;, body)
 
 **説明:** For Each関数と同じ処理を行うが、それに加えて各反復での結果を含めたコンテナも戻す。デフォルトでは、入力コンテナと同じ種類のコンテナを戻すが、Output引数を使って種類を変更することも可能。出力がListまたはExpressionで、結果がないときはEmpty()が使用される。出力がMatrixで結果がないとき、または結果が数値以外のときは、数値の欠測値が使用される。出力がAssociative Arrayで結果がないときはキーが存在しないものとなる。Continue()を使用した場合、反復においては値が戻されず、次の反復に進む。
 

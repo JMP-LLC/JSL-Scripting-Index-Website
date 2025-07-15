@@ -6,7 +6,7 @@
 
 ### As Scriptable
 
-**구문:** jmplivereportlist = jmplivelist << As Scriptable()
+**구문:** jmplivereportlist = jmplivelist &lt;&lt; As Scriptable()
 
 **설명:** JMP Live 결과 목록을 생성하기 위해 수행한 찾기 작업에 따라 JMP Live 폴더, JMP Live 보고서 또는 JMP Live 게시물 개체의 스크립트 가능 목록을 반환합니다.
 
@@ -46,7 +46,7 @@ If( jmpliveresult << Succeeded,
 
 ### Get Current Page Number
 
-**구문:** value = jmplivelist << Get Current Page Number()
+**구문:** value = jmplivelist &lt;&lt; Get Current Page Number()
 
 **설명:** 목록에 있는 항목의 현재 페이지 번호를 가져옵니다.
 
@@ -141,7 +141,7 @@ While( count > 0,
 
 ### Get Number Of Items
 
-**구문:** value = jmplivelist << Get Number Of Items()
+**구문:** value = jmplivelist &lt;&lt; Get Number Of Items()
 
 **설명:** 이 결과 집합의 항목 수를 가져옵니다.
 
@@ -211,7 +211,7 @@ If( jmpliveresult << Succeeded,
 
 ### Get Page
 
-**구문:** reportlist = jmplivelist << Get Page(value)
+**구문:** reportlist = jmplivelist &lt;&lt; Get Page(value)
 
 **설명:** 찾기 작업의 전체 결과 목록에서 JMP Live 폴더, JMP Live 보고서 또는 JMP Live 게시물 개체의 특정 페이지를 가져옵니다.
 
@@ -306,7 +306,7 @@ While( count > 0,
 
 ### Next
 
-**구문:** reportlist = jmplivelist << Next()
+**구문:** reportlist = jmplivelist &lt;&lt; Next()
 
 **설명:** 찾기 작업 결과의 다음 페이지를 반환합니다. 이 목록에는 찾기 작업에 따라 JMP Live 폴더, JMP Live 보고서 또는 JMP Live 게시물이 포함될 수 있습니다.
 
@@ -401,7 +401,7 @@ While( count > 0,
 
 ### Previous
 
-**구문:** reportlist = jmplivelist << Previous()
+**구문:** reportlist = jmplivelist &lt;&lt; Previous()
 
 **설명:** 찾기 작업 결과의 이전 페이지를 반환합니다. 이 목록에는 찾기 작업에 따라 JMP Live 폴더, JMP Live 보고서 또는 JMP Live 게시물이 포함될 수 있습니다.
 

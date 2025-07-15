@@ -2,11 +2,9 @@
 
 
 
-## 関数
-
 ### ATan
 
-**構文:** y = ArcTangent( x1, <x2=1> )
+**構文:** y = ArcTangent( x1, &lt;x2=1&gt; )
 
 **説明:** x1/x2に対する逆正接関数の値を戻す。戻り値は[-Pi()/2, Pi()/2]の範囲内。
 
@@ -111,7 +109,7 @@ ArcSine( 0.5 );
 
 ### ArcTan
 
-**構文:** y = ArcTangent( x1, <x2=1> )
+**構文:** y = ArcTangent( x1, &lt;x2=1&gt; )
 
 **説明:** x1/x2に対する逆正接関数の値を戻す。戻り値は[-Pi()/2, Pi()/2]の範囲内。
 
@@ -141,7 +139,7 @@ ArcTanH( 0.5 );
 
 ### ArcTangent
 
-**構文:** y = ArcTangent( x1, <x2=1> )
+**構文:** y = ArcTangent( x1, &lt;x2=1&gt; )
 
 **説明:** x1/x2に対する逆正接関数の値を戻す。戻り値は[-Pi()/2, Pi()/2]の範囲内。
 

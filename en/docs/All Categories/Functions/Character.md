@@ -2,11 +2,9 @@
 
 
 
-## Functions
-
 ### Blob To Char
 
-**Syntax:** s = Blob To Char( blob, <encoding="utf-8"> )
+**Syntax:** s = Blob To Char( blob, &lt;encoding="utf-8"&gt; )
 
 **Description:** Makes a character string from a BLOB (Binary Large Object), using the specified encoding. Supported encodings include utf-8, utf-16le, utf-16be, us-ascii, iso-8859-1, shift_jis, euc-jp, and ascii~hex.
 
@@ -22,7 +20,7 @@ Blob To Char( Hex To Blob( "436166C3A9" ) ) || Blob To Char(
 
 ### Blob To Matrix
 
-**Syntax:** m = Blob To Matrix( blob, type, bytesEach, endian, <nCols=1> )
+**Syntax:** m = Blob To Matrix( blob, type, bytesEach, endian, &lt;nCols=1&gt; )
 
 **Description:** Makes a matrix by converting bytes in the blob to numbers. type is either "int", "uint" or "float". bytesEach is either 1, 2, 4, or 8. endian indicates whether the first byte is the most significant ("big") or the least significant ("little"); "native" indicates the machine&apos;s native format.
 
@@ -35,7 +33,7 @@ Blob To Matrix( Hex To Blob( "00010002FFFFFFFE" ), "int", 2, "big", 2 );
 
 ### Char
 
-**Syntax:** s = Char( x, <w>, <d>, < <<Use Locale( Boolean ) >, < <<Full Precision( Boolean ) > )
+**Syntax:** s = Char( x, &lt;w&gt;, &lt;d&gt;, &lt; &lt;&lt;Use Locale( Boolean ) &gt;, &lt; &lt;&lt;Full Precision( Boolean ) &gt; )
 
 **Description:** Returns a representation of x as a character string, using the maximum width w and decimal places d if the x argument is numeric. <<FullPrecision writes numeric values using all available precision.
 
@@ -68,7 +66,7 @@ Char( 2.1, <<Use Locale( 1 ) );
 
 ### Char To Blob
 
-**Syntax:** blob = Char To Blob( string, <encoding="utf-8"> )
+**Syntax:** blob = Char To Blob( string, &lt;encoding="utf-8"&gt; )
 
 **Description:** Makes a BLOB (Binary Large Object) from a string of characters, using the specified encoding. Supported encodings include utf-8, utf-16le, utf-16be, us-ascii, iso-8859-1, shift_jis, euc-jp, and ascii~hex.
 
@@ -81,7 +79,7 @@ Char To Blob( "Café", "utf-16be" );
 
 ### Char To Hex
 
-**Syntax:** h = Char To Hex( value, <"integer">|<encoding="utf-8"> )
+**Syntax:** h = Char To Hex( value, &lt;"integer"&gt;|&lt;encoding="utf-8"&gt; )
 
 **Description:** Returns the hexadecimal text corresponding to the given value and encoding, which can be a number, a string, or a blob. If the value is a number, IEEE 754 64-bit encoding is used unless the optional argument, "integer", is provided. Supported encodings include utf-8, utf-16le, utf-16be, us-ascii, iso-8859-1, ascii~hex, shift_jis, and euc-jp.
 
@@ -120,7 +118,7 @@ Names Default To Here( 1 );
 
 ### Concat Items
 
-**Syntax:** string = Concat Items( {list of strings}, <separatorString> )
+**Syntax:** string = Concat Items( {list of strings}, &lt;separatorString&gt; )
 
 **Description:** Joins a list of strings into one long string, separating each from next with the separator, a blank if unspecified.
 
@@ -147,7 +145,7 @@ ex ||= "world";
 
 ### Contains
 
-**Syntax:** pos = Contains( x, item, <start=1> )
+**Syntax:** pos = Contains( x, item, &lt;start=1&gt; )
 
 **Description:** Returns the position of item within x, starting at position start if provided. If start is negative, the search starts backward from length( x ) - start. The argument x can be a string or a list.
 
@@ -161,7 +159,7 @@ Show( Contains( {"A", 2, "C", [1 5], "C"}, "C", 4 ) );
 
 ### Contains Item
 
-**Syntax:** b = Contains Item( x, item | list | Pat Regex(), <delimiter> )
+**Syntax:** b = Contains Item( x, item | list | Pat Regex(), &lt;delimiter&gt; )
 
 **Description:** Returns a Boolean indicating whether the word [item], one of a list of words [list], or pattern [pattern] matches one of the words in the text represented by [x]. Words are delimited by the characters in the optional delimiter [delimiter] string. A comma, ",", character is the default delimiter. Blanks are trimmed from the ends of each extracted word from the input text string [x].
 
@@ -214,7 +212,7 @@ Ends With( "http://www.jmp.com", ".com" );
 
 ### Hex
 
-**Syntax:** h = Hex( value, <"integer">|<encoding="utf-8">|<Base(number)>,<Pad To(number)> )
+**Syntax:** h = Hex( value, &lt;"integer"&gt;|&lt;encoding="utf-8"&gt;|&lt;Base(number)&gt;,&lt;Pad To(number)&gt; )
 
 **Description:** Returns the hexadecimal (or other base number system) text corresponding to the given value and encoding, which can be a number a string or a blob. If the value is a number, IEEE 754 64-bit encoding is used unless one of the optional arguments, integer or Base, is provided. If Base is specified, the function returns the text corresponding to the specified number in that base number system instead of hexadecimal. The base must be an integer value between 2 and 36 inclusive. Supported encodings include utf-8, utf-16le, utf-16be, us-ascii, iso-8859-1, ascii~hex, shift_jis and euc-jp.
 
@@ -241,7 +239,7 @@ Hex To Blob( "FF78CE" );
 
 ### Hex To Char
 
-**Syntax:** s = Hex To Char( hextext, <encoding="utf-8"> )
+**Syntax:** s = Hex To Char( hextext, &lt;encoding="utf-8"&gt; )
 
 **Description:** Returns the text corresponding to the hexadecimal text, using the specified encoding. Supported encodings include utf-8, utf-16le, utf-16be, us-ascii, iso-8859-1, ascii~hex, shift_jis, and euc-jp.
 
@@ -254,7 +252,7 @@ Hex To Char( "436166C3A9" ) || Hex To Char( "00430061006600E9", "utf-16be" );
 
 ### Hex To Number
 
-**Syntax:** x = Hex To Number( hextext, <Base(number)> )
+**Syntax:** x = Hex To Number( hextext, &lt;Base(number)&gt; )
 
 **Description:** Returns the number corresponding to the hexadecimal (or other base number system) text. 16 hex digits are converted as IEEE 754 64-bit floating point numbers; otherwise the input is treated as a hex integer. If Base is specified, the text is treated as a string representing the number in that base. Base must be an integer between 2 and 36 inclusive.
 
@@ -267,7 +265,7 @@ Hex To Number( "11110000", Base( 2 ) );
 
 ### Insert
 
-**Syntax:** z = Insert( x, y, <i> )
+**Syntax:** z = Insert( x, y, &lt;i&gt; )
 
 **Description:** Returns a copy of list x with y inserted at the ith position or appended to the end if the optional i argument is not specified.
 
@@ -281,7 +279,7 @@ z = Insert( z, 99, 2 );
 
 ### Insert Into
 
-**Syntax:** Insert Into( x, y, <i> )
+**Syntax:** Insert Into( x, y, &lt;i&gt; )
 
 **Description:** Modifies list, associative array, or display box x with y inserted into the collection. Lists and display boxes support an optional i to specify the position, or the items will be appended if the position is not specified. Note that the x argument must be a variable.
 
@@ -320,7 +318,7 @@ Insert Into( hlist, Button Box( "c" ) );
 
 ### Item
 
-**Syntax:** w = Item( n|[first last], s, <delim>, <Unmatched(result string)>, <Include Boundary Delimiters(0|1)>)
+**Syntax:** w = Item( n|[first last], s, &lt;delim&gt;, &lt;Unmatched(result string)&gt;, &lt;Include Boundary Delimiters(0|1)&gt;)
 
 **Description:** Returns the nth item of the s argument, where items are the (possibly empty) sub-strings separated by exactly one of any of the characters specified in the delim argument. If delim is absent, the space character is used. If delim is the empty string, each character is treated as a separate item.
 
@@ -380,7 +378,7 @@ Item( 2, ",abcd", ",", Include Boundary Delimiters );
 
 ### Items
 
-**Syntax:** wl = Items(<[first last]>, s, <delim>, <Include Boundary Delimiters(0|1)>)
+**Syntax:** wl = Items(&lt;[first last]&gt;, s, &lt;delim&gt;, &lt;Include Boundary Delimiters(0|1)&gt;)
 
 **Description:** Returns a list of (possibly empty) sub-strings separated by exactly one of any of the characters specified in the delim argument. If delim is absent, the space character is used. If delim is the empty string, each character is treated as a separate item.
 
@@ -426,7 +424,7 @@ Items( [1 2], ",Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ### Left
 
-**Syntax:** sub = Left( s, n, <filler> )
+**Syntax:** sub = Left( s, n, &lt;filler&gt; )
 
 **Description:** Returns a truncated or padded version of the original string or list s. The result contains the left n characters or list items, padded with any filler on the right if the length of s is less than n.
 
@@ -508,7 +506,7 @@ Matrix To Blob( [3.14, 1.414], "float", 4, "big" );
 
 ### Munger
 
-**Syntax:** r = Munger( s, startPos, findStringOrNChars, <replaceString> )
+**Syntax:** r = Munger( s, startPos, findStringOrNChars, &lt;replaceString&gt; )
 
 **Description:** Searches the s argument for a substring or position depending on combination of arguments.
 
@@ -521,7 +519,7 @@ Eval List( {Munger( "over there", 1, "t", "" ), Munger( "17 June 2000", 4, 4, "M
 
 ### Num
 
-**Syntax:** y = Num( s, < <<Use Locale( use=1 ) >, < <<Restrict > )
+**Syntax:** y = Num( s, &lt; &lt;&lt;Use Locale( use=1 ) &gt;, &lt; &lt;&lt;Restrict &gt; )
 
 **Description:** Converts s to a number using any built-in format, including date and currency formats. Returns missing if the conversion fails. The optional <<Restrict only allows conversion using integer, decimal, and scientific formats.
 
@@ -550,7 +548,7 @@ Show(
 
 ### Regex
 
-**Syntax:** result = Regex( source, pattern, <format, <IGNORECASE>, <GLOBALREPLACE>> )
+**Syntax:** result = Regex( source, pattern, &lt;format, &lt;IGNORECASE&gt;, &lt;GLOBALREPLACE&gt;&gt; )
 
 **Description:** Searches in the source text for a match to the pattern. The format defaults to "\0" (the entire match) but could be "Fred" (for a constant replacement) or "\1" (to use the text matched by the first parenthesis in the pattern). Returns numeric missing for no match. Case must match by default.
 
@@ -567,7 +565,7 @@ Regex(
 
 ### Remove
 
-**Syntax:** y = Remove( x, <i>, <n=1> ); y = Remove( x, {list} )
+**Syntax:** y = Remove( x, &lt;i&gt;, &lt;n=1&gt; ); y = Remove( x, {list} )
 
 **Description:** Returns a copy of list x, deleting n items starting with the ith item or deleting a list of items specified by the list argument.
 
@@ -580,7 +578,7 @@ Remove( {11, 22, 33, 44, 55}, 3, 2 );
 
 ### Remove From
 
-**Syntax:** Remove From( x, <i>, <n=1> )
+**Syntax:** Remove From( x, &lt;i&gt;, &lt;n=1&gt; )
 
 **Description:** Modifies list, associative array, or display box x by removing items. Associative arrays specify the item to be removed with a key value i. Lists and display boxes remove starting with the item in position i. A list will remove multiple items at once if the n option is specified. Note that the x argument must be a variable.
 
@@ -621,7 +619,7 @@ Remove From( hlist, 1 );
 
 ### Repeat
 
-**Syntax:** s = Repeat( x, n, <m=1> )
+**Syntax:** s = Repeat( x, n, &lt;m=1&gt; )
 
 **Description:** Returns the text, matrix, or list specified by the x argument concatenated with itself n times. If x is a number or a matrix, then n indicates vertical repetition and the optional argument m designates horizontal repetition.
 
@@ -677,7 +675,7 @@ Reverse Into( hlist );
 
 ### Right
 
-**Syntax:** sub = Right( s, n, <filler> )
+**Syntax:** sub = Right( s, n, &lt;filler&gt; )
 
 **Description:** Returns a truncated or padded version of the original string or list s. The result contains the right n characters or list items, padded with any filler on the left if the length of s is less than n.
 
@@ -756,7 +754,7 @@ Show( Set Unique( :sports ) );
 
 ### Shift
 
-**Syntax:** y = Shift( x, <n=1> )
+**Syntax:** y = Shift( x, &lt;n=1&gt; )
 
 **Description:** Returns a copy of list x with the first n items moved to the end of the list, or, if n is negative, the last n items moved to the start.
 
@@ -769,7 +767,7 @@ Shift( {11, 22, 33, 44, 55}, 2 );
 
 ### Shift Into
 
-**Syntax:** Shift Into( x, <n=1> )
+**Syntax:** Shift Into( x, &lt;n=1&gt; )
 
 **Description:** Modifies list or display box x with the first n items moved to the end of the list, or, if n is negative, the last n items moved to the start. Note that the x argument must be a variable.
 
@@ -812,9 +810,7 @@ Starts With( "http://www.jmp.com", "http:" );
 
 ### Substitute
 
-**Syntax:** y = Substitute( x, patternExpr1, replacementExpr1, ... )
-
-y = Substitute( x, patternString1, replacementString1, ..., < <<IGNORECASE > )
+**Syntax:** y = Substitute( x, patternExpr1, replacementExpr1, ... )y = Substitute( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
 
 **Description:** Returns a copy of string, list or expression x, replacing instances of each pattern expression with the corresponding replacement expression. The optional <<IGNORECASE argument enables case-insensitive matching if x is a string.
 
@@ -877,9 +873,7 @@ Substitute( "Apple,APPLE,apple", "apple", "orange", <<IGNORECASE );
 
 ### Substitute Into
 
-**Syntax:** Substitute Into( x, patternExpr1, replacementExpr1, ... )
-
-Substitute Into( x, patternString1, replacementString1, ..., < <<IGNORECASE > )
+**Syntax:** Substitute Into( x, patternExpr1, replacementExpr1, ... )Substitute Into( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
 
 **Description:** Modifies string, list or expression x, replacing instances of each pattern expression with the corresponding replacement expression. Note that the x argument must be a variable. The optional <<IGNORECASE argument enables case-insensitive matching if x is a string.
 
@@ -929,7 +923,7 @@ Show( s );
 
 ### Substr
 
-**Syntax:** sub = Substr( s, start, <count> )
+**Syntax:** sub = Substr( s, start, &lt;count&gt; )
 
 **Description:** Returns the part of string s composed of count characters starting at position start. A negative or absent count means the rest of the string. A negative start means starting start characters from the end. The Substr() function can also be applied to lists.
 
@@ -942,7 +936,7 @@ Eval List( {Substr( "undergo", 4 ), Substr( {10, 11, 12, 13, 14}, 2, 3 )} );
 
 ### Text Score
 
-**Syntax:** score vector = Text Score( text column, text-to-number, <weighting>, <{<center>, <scale>, scoring matrix}>);
+**Syntax:** score vector = Text Score( text column, text-to-number, &lt;weighting&gt;, &lt;{&lt;center&gt;, &lt;scale&gt;, scoring matrix}&gt;);
 
 **Description:** Used to create scoring formulas in Text Explorer. The text-to-number argument is an associative array mapping lowercase words to numbers. The weighting argument is either "Binary", "Ternary", "Count", "LogCount", "LCA" or an array of inverse document frequency weights for TFLogIDF. The scoring matrix must have the same number of columns as words in the associative array, or one more if LCA. The output is a vector of scores. If no scoring matrix is specified, it returns a vector of count scores. If no weighting is specified, it uses Count. This function does not support the Stem for Combining option.
 
@@ -974,7 +968,7 @@ Titlecase( "The dog crossed the road" );
 
 ### Trim
 
-**Syntax:** sub = Trim( s, <left|right|both> )
+**Syntax:** sub = Trim( s, &lt;left|right|both&gt; )
 
 **Description:** Returns a copy of string s with any leading or trailing whitespace characters removed. The second argument specifies either the leading or trailing whitespace characters. If you do not specify the second argument, whitespace characters are removed from both ends.
 
@@ -987,7 +981,7 @@ Trim( " title   ", both );
 
 ### Trim Whitespace
 
-**Syntax:** sub = Trim Whitespace( s, <left|right|both> )
+**Syntax:** sub = Trim Whitespace( s, &lt;left|right|both&gt; )
 
 **Description:** Returns a copy of string s with any leading or trailing whitespace characters removed. The second argument specifies either the leading or trailing whitespace characters. If you do not specify the second argument, whitespace characters are removed from both ends.
 
@@ -1013,7 +1007,7 @@ Uppercase( "Café #23" );
 
 ### Word
 
-**Syntax:** w = Word( n|[first last], s, <delim>, <Unmatched(result string)>
+**Syntax:** w = Word( n|[first last], s, &lt;delim&gt;, &lt;Unmatched(result string)&gt;
 
 **Description:** Returns the nth word of string s, where words are sub-strings separated by any number of any of the characters in the delim argument. If delim is absent, the space character is used. If delim is the empty string, each character is treated as a separate word.
 
@@ -1064,7 +1058,7 @@ Word( 2, "abcd", "" );
 
 ### Words
 
-**Syntax:** wl = Words( <[first last]>, s, <delim>)
+**Syntax:** wl = Words( &lt;[first last]&gt;, s, &lt;delim&gt;)
 
 **Description:** Returns a list of sub-strings separated by any of the characters specified in the delim argument. If delim is absent, the space character is used. If delim is the empty string, each character is treated as a separate word.
 

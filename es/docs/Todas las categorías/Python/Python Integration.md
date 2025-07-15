@@ -385,7 +385,7 @@ print(jmp.current())
 
 ### eval
 
-**Sintaxis:** result = eval(<string>|<Expression>)
+**Sintaxis:** result = eval(&lt;string&gt;|&lt;Expression&gt;)
 
 **Descripción:** Evalúa el argumento y devuelve el resultado.
 
@@ -404,7 +404,7 @@ print(result)
 
 ### from_dataframe
 
-**Sintaxis:** result = jmp.from_dataframe(<library.Dataframe>, allow_copy=<boolean>, allow_csv_fallback=<boolean>)
+**Sintaxis:** result = jmp.from_dataframe(&lt;library.Dataframe&gt;, allow_copy=&lt;boolean&gt;, allow_csv_fallback=&lt;boolean&gt;)
 
 **Descripción:** Devuelve un objeto jmp.DataTable desde el marco de datos de una biblioteca compatible con el protocolo.
 
@@ -550,7 +550,7 @@ print(dt)
 
 ### from_dataframe_using_csv
 
-**Sintaxis:** result = jmp.from_dataframe_using_csv(<library.Dataframe>)
+**Sintaxis:** result = jmp.from_dataframe_using_csv(&lt;library.Dataframe&gt;)
 
 **Descripción:** Devuelve un objeto jmp.DataTable desde el marco de datos de una biblioteca utilizando el método de conversión de CSV proporcionado.
 
@@ -585,7 +585,7 @@ print(dt)
 
 ### open
 
-**Sintaxis:** obj = jmp.open(&apos;file_path&apos; < , visibility=&apos;Invisible | Private&apos; )
+**Sintaxis:** obj = jmp.open(&apos;file_path&apos; &lt; , visibility=&apos;Invisible | Private&apos; )
 
 **Descripción:** Abre un archivo ubicado en file_path. Si el archivo es un archivo .jmp o un archivo que se importa en una tabla de datos de JMP, el objeto devuelto será un objeto DataTable. De lo contrario, devolverá True o False según si la acción es correcta o falla. El parámetro opcional de visibilidad controla si el archivo abierto está oculto y no se puede ver. Invisible es simplemente que está oculto y no se puede ver, aunque sigue apareciendo en el menú de archivos recientes y en la ventana de inicio. Si la tabla es Privada, la referencia devuelta es la única referencia a la tabla, y no aparece en ninguna de las listas de archivos.
 
@@ -721,7 +721,7 @@ print(pi)
 
 ### run_jsl
 
-**Sintaxis:** result = jmp.run_jsl(&apos;JSL script contents&apos; <, echo = True | False | None > )
+**Sintaxis:** result = jmp.run_jsl(&apos;JSL script contents&apos; &lt;, echo = True | False | None &gt; )
 
 **Descripción:** Ejecute secuencias de comandos JSL desde el entorno de Python, incluidas las funciones de interfaz JSL de Python. Cuando el parámetro opcional echo= es False o None impide que el código fuente JSL presentado envíe un eco al registro. Se devuelve un resultado para los mismos tipos de objetos de JSL soportados por Python Send() / Get(). Los fallos de script o los tipos de objeto de JSL no admitidos devuelven None.
 
@@ -902,7 +902,7 @@ jmp.run_jsl("""
 
 #### _do_as_data_source
 
-**Sintaxis:** def _do_as_data_source(self) -> jmp.DataSource:
+**Sintaxis:** def _do_as_data_source(self) -&gt; jmp.DataSource:
 
 **Descripción:** Subclasses should override this function to create a connection. The returned connection, in the form of a subclass of jmp.DataSource, enables integration with Query Builder.
 
@@ -958,7 +958,7 @@ New SQL Query(
 
 #### _do_open
 
-**Sintaxis:** def _do_open(self) -> jmp.DataTable:
+**Sintaxis:** def _do_open(self) -&gt; jmp.DataTable:
 
 **Descripción:** Subclasses can override this function to open a table directly. This function implements the Open message in JSL (New Data Connector(...) << Open()).
 
@@ -1040,7 +1040,7 @@ New Data Connector(
 
 #### __init__
 
-**Sintaxis:** field = jmp.DataConnectorField(type, <default=DEFAULT_VALUE,> <tooltip="TOOLTIP" | None,> <ui_name="UI NAME" | None,> <credential="CREDENTIAL TYPE" | None,> <sensitive=True | False,> <mask_input=True | False>)
+**Sintaxis:** field = jmp.DataConnectorField(type, &lt;default=DEFAULT_VALUE,&gt; &lt;tooltip="TOOLTIP" | None,&gt; &lt;ui_name="UI NAME" | None,&gt; &lt;credential="CREDENTIAL TYPE" | None,&gt; &lt;sensitive=True | False,&gt; &lt;mask_input=True | False&gt;)
 
 **Descripción:** DataConnectorField defines a field.
 
@@ -1269,7 +1269,7 @@ New Data Connector( Type( "Python:__main__:ExampleConnectorType" ) ) << Open();
 
 #### get_schemas
 
-**Sintaxis:** def get_schemas(self) -> Sequence[str] | None:
+**Sintaxis:** def get_schemas(self) -&gt; Sequence[str] | None:
 
 **Descripción:** Subclasses can override this function to provide a list of the schemas in the data source. If this function is not overridden or it returns None, the data source is assumed to not support schemas.
 
@@ -1321,7 +1321,7 @@ New SQL Query(
 
 #### get_tables
 
-**Sintaxis:** def get_tables(self, schema: str) -> Sequence[str]:
+**Sintaxis:** def get_tables(self, schema: str) -&gt; Sequence[str]:
 
 **Descripción:** Subclasses should override this function to provide a list of the tables in the data source. If schemas are supported, this list should include only the tables under the schema that is passed. If schemas are not supported, the schema parameter should be ignored.
 
@@ -1369,7 +1369,7 @@ New SQL Query(
 
 #### open_table
 
-**Sintaxis:** def open_table(self, schema: str, table: str) -> jmp.DataTable | str:
+**Sintaxis:** def open_table(self, schema: str, table: str) -&gt; jmp.DataTable | str:
 
 **Descripción:** Subclasses should override this function to get the table data for the named table. If schemas are not supported, the value of the schema argument can be ignored. The function should return a jmp.DataTable or a string containing a path to a file in a data format supported by JMP.
 
@@ -1462,7 +1462,7 @@ New SQL Query(
 
 #### open_table_with_settings
 
-**Sintaxis:** def open_table_with_settings(self, schema: str, table: str, settings: str | None) -> (jmp.DataTable, str | None):
+**Sintaxis:** def open_table_with_settings(self, schema: str, table: str, settings: str | None) -&gt; (jmp.DataTable, str | None):
 
 **Descripción:** Las subclases pueden sobrescribir esta función en lugar de open_table para gestionar la configuración de apertura de la tabla de forma personalizada. Esta función es similar a open_table, pero también se invoca con la configuración existente, si la hay. Debe devolver una tabla de datos, y también debe devolver la nueva configuración, si la hay. La configuración faltante se indica mediante None.
 
@@ -1839,9 +1839,7 @@ print(f'Data length of dt[-1] (weight column): {dt[-1].data_length}')
 
 #### display_width
 
-**Sintaxis:** col_obj.display_width
-
-col_obj.display_width = <int>
+**Sintaxis:** col_obj.display_widthcol_obj.display_width = &lt;int&gt;
 
 **Descripción:** Cambia el ancho de visualización de la columna.
 
@@ -1878,9 +1876,7 @@ print(f"Updated Data Type of dt['age']: {dt['age'].dtype}")
 
 #### format
 
-**Sintaxis:** col_obj.format
-
-col_obj.format = tuple< <string>|<int>, ... >
+**Sintaxis:** col_obj.formatcol_obj.format = tuple&lt; &lt;string&gt;|&lt;int&gt;, ... &gt;
 
 **Descripción:** Obtener formato
 
@@ -1922,9 +1918,7 @@ print(dt[3].format)
 
 #### formula
 
-**Sintaxis:** col_obj.formula
-
-col_obj.formula = <Expression | string>
+**Sintaxis:** col_obj.formulacol_obj.formula = &lt;Expression | string&gt;
 
 **Descripción:** Establece una fórmula de columnas dado un objeto Expression o una cadena de caracteres que representa un JSL válido.
 
@@ -1977,9 +1971,7 @@ print(f"Updated Modeling Type of dt['age']: {dt['age'].mtype}")
 
 #### name
 
-**Sintaxis:** col_obj.name
-
-col_obj.name = <string>
+**Sintaxis:** col_obj.namecol_obj.name = &lt;string&gt;
 
 **Descripción:** Propiedad del nombre de columna, que se puede leer y establecer.
 
@@ -2120,7 +2112,7 @@ print(column2)
 
 #### __init__
 
-**Sintaxis:** dt = jmp.DataTable(<name=&apos;table_name&apos;>, <rows=n>, <visibility=&apos;Invisible&apos; | &apos;Private&apos; )
+**Sintaxis:** dt = jmp.DataTable(&lt;name=&apos;table_name&apos;&gt;, &lt;rows=n&gt;, &lt;visibility=&apos;Invisible&apos; | &apos;Private&apos; )
 
 **Descripción:** Crea una tabla de datos nueva con el nombre "table_name" y n filas. Los parámetros y las palabras clave son opcionales, a menos que solo se especifiquen filas o se invierta el orden de los parámetros.
 
@@ -2254,7 +2246,7 @@ print(dt)
 
 #### add_rows
 
-**Sintaxis:** add_rows(rows, <at=-1>)
+**Sintaxis:** add_rows(rows, &lt;at=-1&gt;)
 
 **Descripción:** Añade filas al objeto DataTable. rows es obligatorio. at es opcional. Si at es 0, insértelo al principio de la tabla. Si es <0, insértelo al final de la tabla. De lo contrario, si at es m, insértelo en la fila m (indexación basada en 0).
 
@@ -2272,9 +2264,7 @@ dt.add_rows(2, at=12) # 0-based indexing
 
 #### cell_height
 
-**Sintaxis:** dt.cell_height
-
-dt.cell_height = <int>
+**Sintaxis:** dt.cell_heightdt.cell_height = &lt;int&gt;
 
 **Descripción:** Establece la altura de visualización de cada celda de la tabla de datos.
 
@@ -2293,7 +2283,7 @@ print(dt.cell_height)
 
 #### close
 
-**Sintaxis:** dt.close( <save= True | False>)
+**Sintaxis:** dt.close( &lt;save= True | False&gt;)
 
 **Descripción:** Cierra el método en el objeto DataTable. Al igual que JSL, guarda el archivo de forma predeterminada si la llamada no contiene parámetros. Para abandonar un archivo como el creado a modo de tabla temporal, utilice dt.close(False) o dt.close(save=False) para mayor claridad.
 
@@ -2348,9 +2338,7 @@ print(r)
 
 #### name
 
-**Sintaxis:** dt.name
-
-dt.name = &apos;string&apos;
+**Sintaxis:** dt.namedt.name = &apos;string&apos;
 
 **Descripción:** La propiedad name sirve tanto para establecer como para obtener el nombre de la tabla de datos.
 
@@ -2383,17 +2371,7 @@ print(f'Number of columns: {dt.ncols}')
 
 #### new_column
 
-**Sintaxis:** dt.new_column(  name=&apos;column_name&apos;,
-
-                            dtype=jmp.Numeric | .Character | .RowState | .Expression,
-
-                            mtype=jmp.ModelingType.Continuous | ... | TypeNone
-
-                            dlen=len   cell type&apos;s data length especially for numeric
-
-                                    8(double),4(int32),2(int16),1(int8)
-
-                            where=n insert column after column n
+**Sintaxis:** dt.new_column( name=&apos;column_name&apos;, dtype=jmp.Numeric | .Character | .RowState | .Expression, mtype=jmp.ModelingType.Continuous | ... | TypeNone dlen=len cell type&apos;s data length especially for numeric 8(double),4(int32),2(int16),1(int8) where=n insert column after column n
 
 **Descripción:** Cree una nueva columna de tabla de datos, especificando opcionalmente el nombre, el tipo de columna, la longitud de los datos y el tipo de modelización.
 
@@ -2457,9 +2435,7 @@ print(f'Number of rows: {dt.nrows}')
 
 #### row_states
 
-**Sintaxis:** dt.row_states
-
-dt.row_states = [state1, state2, ..., stateN]
+**Sintaxis:** dt.row_statesdt.row_states = [state1, state2, ..., stateN]
 
 **Descripción:** Establece los estados de fila de todas las filas de la tabla de datos.
 
@@ -2514,7 +2490,7 @@ print(dt.row_states)
 
 #### save
 
-**Sintaxis:** dt.save( < path=&apos;file_path&apos; > )
+**Sintaxis:** dt.save( &lt; path=&apos;file_path&apos; &gt; )
 
 **Descripción:** Guarde la tabla de datos con el nombre de la tabla en el directorio actual. El argumento de ruta opcional permite guardarla en una ubicación distinta o con un nombre diferente.
 
@@ -2532,9 +2508,7 @@ dt.save('BC_lowercase.jmp')
 
 #### scripts
 
-**Sintaxis:** dt.scripts
-
-dt.scripts = <dict<str : <str | Expression>>>
+**Sintaxis:** dt.scriptsdt.scripts = &lt;dict&lt;str : &lt;str | Expression&gt;&gt;&gt;
 
 **Descripción:** La propiedad de scripts permite leer y escribir scripts de tablas de datos.
 
@@ -2715,7 +2689,7 @@ print(expr1 == expr3)
 
 #### __init__
 
-**Sintaxis:** Expression(jsl=<string>)
+**Sintaxis:** Expression(jsl=&lt;string&gt;)
 
 **Descripción:** Crea un nuevo objeto Expression.
 
@@ -2772,9 +2746,7 @@ print(expr)
 
 #### jsl
 
-**Sintaxis:** expr_obj.jsl
-
-expr_obj.jsl = <string>
+**Sintaxis:** expr_obj.jslexpr_obj.jsl = &lt;string&gt;
 
 **Descripción:** La propiedad Expression de JSL, es legible y configurable.
 
@@ -2843,7 +2815,7 @@ print(image1 == image3)
 
 #### __init__
 
-**Sintaxis:** jmp.Image(path=<string>)
+**Sintaxis:** jmp.Image(path=&lt;string&gt;)
 
 **Descripción:** Crea un nuevo objeto Image.
 
@@ -2909,7 +2881,7 @@ print(image)
 
 #### __init__
 
-**Sintaxis:** prj = jmp.Project(<name=&apos;Project name&apos;>)
+**Sintaxis:** prj = jmp.Project(&lt;name=&apos;Project name&apos;&gt;)
 
 **Descripción:** Crear un nuevo objeto Project para acceder a los proyectos y archivos de JMP.
 
@@ -3117,9 +3089,7 @@ print(rs1 == rs3)
 
 #### __init__
 
-**Sintaxis:** jmp.RowState(selected?=<boolean>, hidden?=<booleane>, labeled?=<boolean>, excluded?=<boolean>, color?=<int>, marker?=<int>)
-
-jmp.RowState(value=<int>)
+**Sintaxis:** jmp.RowState(selected?=&lt;boolean&gt;, hidden?=&lt;booleane&gt;, labeled?=&lt;boolean&gt;, excluded?=&lt;boolean&gt;, color?=&lt;int&gt;, marker?=&lt;int&gt;)jmp.RowState(value=&lt;int&gt;)
 
 **Descripción:** Crea un nuevo objeto RowState. RowState es un objeto que contiene cualquiera de las seis características que pueden tener las filas de una tabla de datos de JMP: seleccionadas, ocultas, excluidas, etiquetadas, coloreadas y marcadas.
 
@@ -3176,9 +3146,7 @@ print(rs)
 
 #### color
 
-**Sintaxis:** rs_obj.color
-
-rs_obj.color = <int>
+**Sintaxis:** rs_obj.colorrs_obj.color = &lt;int&gt;
 
 **Descripción:** La propiedad RowState de color; se puede leer y configurar. Los colores se eligen de 0 a 84. (0-15 básicos, 16-31 oscuros, 32-47 claros, 48-63 muy oscuros, 64-79 muy claros y 80-84 grises).
 
@@ -3197,9 +3165,7 @@ print(rs)
 
 #### excluded
 
-**Sintaxis:** rs_obj.excluded
-
-rs_obj.excluded = <boolean>
+**Sintaxis:** rs_obj.excludedrs_obj.excluded = &lt;boolean&gt;
 
 **Descripción:** La propiedad RowState excluida; se puede leer y configurar.
 
@@ -3218,9 +3184,7 @@ print(rs)
 
 #### hidden
 
-**Sintaxis:** rs_obj.hidden
-
-rs_obj.hidden = <boolean>
+**Sintaxis:** rs_obj.hiddenrs_obj.hidden = &lt;boolean&gt;
 
 **Descripción:** La propiedad RowState oculta; se puede leer y configurar.
 
@@ -3239,9 +3203,7 @@ print(rs)
 
 #### labeled
 
-**Sintaxis:** rs_obj.labeled
-
-rs_obj.labeled = <boolean>
+**Sintaxis:** rs_obj.labeledrs_obj.labeled = &lt;boolean&gt;
 
 **Descripción:** La propiedad RowState etiquetada; se puede leer y configurar.
 
@@ -3260,9 +3222,7 @@ print(rs)
 
 #### marker
 
-**Sintaxis:** rs_obj.marker
-
-rs_obj.marker = <int>
+**Sintaxis:** rs_obj.markerrs_obj.marker = &lt;int&gt;
 
 **Descripción:** La propiedad RowState de marcador; se puede leer y configurar. Los marcadores se eligen de 0 a 31.
 
@@ -3281,9 +3241,7 @@ print(rs)
 
 #### selected
 
-**Sintaxis:** rs_obj.selected
-
-rs_obj.selected = <boolean>
+**Sintaxis:** rs_obj.selectedrs_obj.selected = &lt;boolean&gt;
 
 **Descripción:** La propiedad RowState seleccionada; se puede leer y configurar.
 
@@ -3710,7 +3668,7 @@ print( jmp.here.values() )
 
 #### get_credentials()
 
-**Sintaxis:** jmp.live.get_credentials(<credential_name>)
+**Sintaxis:** jmp.live.get_credentials(&lt;credential_name&gt;)
 
 **Descripción:** En los scripts de actualización de datos de JMP Live, devuelve las credenciales con el nombre dado (o, si no se proporciona ningún nombre, las credenciales predeterminadas) asignadas al script. El valor devuelto es un diccionario con las claves "username", "password" y "key_file_path".
 
@@ -4202,7 +4160,7 @@ print(jmp.current())
 
 #### eval
 
-**Sintaxis:** result = eval(<string>|<Expression>)
+**Sintaxis:** result = eval(&lt;string&gt;|&lt;Expression&gt;)
 
 **Descripción:** Evalúa el argumento y devuelve el resultado.
 
@@ -4221,7 +4179,7 @@ print(result)
 
 #### from_dataframe
 
-**Sintaxis:** result = jmp.from_dataframe(<library.Dataframe>, allow_copy=<boolean>, allow_csv_fallback=<boolean>)
+**Sintaxis:** result = jmp.from_dataframe(&lt;library.Dataframe&gt;, allow_copy=&lt;boolean&gt;, allow_csv_fallback=&lt;boolean&gt;)
 
 **Descripción:** Devuelve un objeto jmp.DataTable desde el marco de datos de una biblioteca compatible con el protocolo.
 
@@ -4367,7 +4325,7 @@ print(dt)
 
 #### from_dataframe_using_csv
 
-**Sintaxis:** result = jmp.from_dataframe_using_csv(<library.Dataframe>)
+**Sintaxis:** result = jmp.from_dataframe_using_csv(&lt;library.Dataframe&gt;)
 
 **Descripción:** Devuelve un objeto jmp.DataTable desde el marco de datos de una biblioteca utilizando el método de conversión de CSV proporcionado.
 
@@ -4402,7 +4360,7 @@ print(dt)
 
 #### open
 
-**Sintaxis:** obj = jmp.open(&apos;file_path&apos; < , visibility=&apos;Invisible | Private&apos; )
+**Sintaxis:** obj = jmp.open(&apos;file_path&apos; &lt; , visibility=&apos;Invisible | Private&apos; )
 
 **Descripción:** Abre un archivo ubicado en file_path. Si el archivo es un archivo .jmp o un archivo que se importa en una tabla de datos de JMP, el objeto devuelto será un objeto DataTable. De lo contrario, devolverá True o False según si la acción es correcta o falla. El parámetro opcional de visibilidad controla si el archivo abierto está oculto y no se puede ver. Invisible es simplemente que está oculto y no se puede ver, aunque sigue apareciendo en el menú de archivos recientes y en la ventana de inicio. Si la tabla es Privada, la referencia devuelta es la única referencia a la tabla, y no aparece en ninguna de las listas de archivos.
 
@@ -4538,7 +4496,7 @@ print(pi)
 
 #### run_jsl
 
-**Sintaxis:** result = jmp.run_jsl(&apos;JSL script contents&apos; <, echo = True | False | None > )
+**Sintaxis:** result = jmp.run_jsl(&apos;JSL script contents&apos; &lt;, echo = True | False | None &gt; )
 
 **Descripción:** Ejecute secuencias de comandos JSL desde el entorno de Python, incluidas las funciones de interfaz JSL de Python. Cuando el parámetro opcional echo= es False o None impide que el código fuente JSL presentado envíe un eco al registro. Se devuelve un resultado para los mismos tipos de objetos de JSL soportados por Python Send() / Get(). Los fallos de script o los tipos de objeto de JSL no admitidos devuelven None.
 
@@ -4623,7 +4581,7 @@ print( jmp.table('Big Class') )
 
 #### __init__
 
-**Sintaxis:** jmpex.R.R( <&apos;rpy2&apos;> )
+**Sintaxis:** jmpex.R.R( &lt;&apos;rpy2&apos;&gt; )
 
 **Descripción:** Función para crear un objeto de clase de extensión de R. Parámetro opcional para especificar el backend para la compatibilidad con R. Actualmente solo se admite &apos;rpy2&apos;. Este es el valor predeterminado si no se especifica ningún argumento.
 

@@ -2,11 +2,9 @@
 
 
 
-## Funktionen
-
 ### Double Declining Balance
 
-**Syntax:** x = Double Declining Balance( cost, salvage, life, period, <factor=2> )
+**Syntax:** x = Double Declining Balance( cost, salvage, life, period, &lt;factor=2&gt; )
 
 **Beschreibung:** Gibt die Abschreibung eines Vermögenswerts für einen bestimmten Zeitraum zurück, wobei die geometrisch degressive Abschreibungsmethode oder ein anderer Abschreibungsfaktor verwendet wird. Entspricht der DDB-Funktion in Microsoft Excel.
 
@@ -21,7 +19,7 @@ Double Declining Balance( 10000, 100, 3, 2 );
 
 ### Future Value
 
-**Syntax:** x = Future Value( rate, nper, pmt, <pv=0>, <type=0> )
+**Syntax:** x = Future Value( rate, nper, pmt, &lt;pv=0&gt;, &lt;type=0&gt; )
 
 **Beschreibung:** Gibt den zukünftigen Wert einer Annuität zurück, die auf regelmäßigen, konstanten Zahlungen und einem konstanten Zinssatz basiert. Das Argument type ist 0, wenn Zahlungen am Ende des Zahlungszeitraums fällig sind, bzw. 1, wenn Zahlungen zu Beginn des Zeitraums fällig sind. Entspricht der FV-Funktion in Microsoft Excel.
 
@@ -36,7 +34,7 @@ Future Value( .03, 12, 100, 0, 1 );
 
 ### Interest Payment
 
-**Syntax:** x = Interest Payment( rate, per, nper, pv, <fv=0>, <type=0> )
+**Syntax:** x = Interest Payment( rate, per, nper, pv, &lt;fv=0&gt;, &lt;type=0&gt; )
 
 **Beschreibung:** Gibt die Zinszahlung für einen bestimmten Zeitraum einer Annuität basierend auf regelmäßigen, konstanten Zahlungen und einem konstanten Zinssatz zurück. Das Argument type ist 0, wenn Zahlungen am Ende des Zahlungszeitraums fällig sind, bzw. 1, wenn Zahlungen zu Beginn des Zeitraums fällig sind. Entspricht der IPMT-Funktion in Microsoft Excel.
 
@@ -52,7 +50,7 @@ Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 
 
 ### Interest Rate
 
-**Syntax:** x = Interest Rate( nper, pmt, pv, <fv=0>, <type=0>, <guess=0.1> )
+**Syntax:** x = Interest Rate( nper, pmt, pv, &lt;fv=0&gt;, &lt;type=0&gt;, &lt;guess=0.1&gt; )
 
 **Beschreibung:** Gibt den Zinssatz pro Zeitraum für eine Annuität zurück. Das Argument type ist 0, wenn Zahlungen am Ende des Zahlungszeitraums fällig sind, bzw. 1, wenn Zahlungen zu Beginn des Zeitraums fällig sind. Entspricht der RATE-Funktion in Microsoft Excel.
 
@@ -67,9 +65,7 @@ Interest Rate( 30 * 12, Payment( .05 / 12, 30 * 12, 100000 ), 100000 );
 
 ### Internal Rate of Return
 
-**Syntax:** x = Internal Rate of Return( values, <guess=0.1> );
-
-x = Internal Rate of Return( guess, value1, value2, <value3, ...> )
+**Syntax:** x = Internal Rate of Return( values, &lt;guess=0.1&gt; );x = Internal Rate of Return( guess, value1, value2, &lt;value3, ...&gt; )
 
 **Beschreibung:** Gibt den internen Ertragssatz für eine Folge von Zahlungsflüssen zurück, die von den Zahlen im Argument values dargestellt werden. Entspricht der IRR-Funktion in Microsoft Excel. Der zweite Prototyp der Funktion akzeptiert alle skalaren Argumente.
 
@@ -85,9 +81,7 @@ Internal Rate of Return( .01, -10000, 1000, 900, 950 );
 
 ### Modified Internal Rate of Return
 
-**Syntax:** x = Modified Internal Rate of Return( values, finance_rate, reinvest_rate );
-
-x = Modified Internal Rate of Return( finance_rate, reinvest_rate, value1, value2, <value3, ...> )
+**Syntax:** x = Modified Internal Rate of Return( values, finance_rate, reinvest_rate );x = Modified Internal Rate of Return( finance_rate, reinvest_rate, value1, value2, &lt;value3, ...&gt; )
 
 **Beschreibung:** Gibt den geänderten internen Ertragssatz für eine Folge regelmäßiger Zahlungsflüsse zurück, wobei die Investitionskosten sowie die bei der Wiederanlage von Kapital erhaltenen Zinsen berücksichtigt werden. Entspricht der MIRR-Funktion in Microsoft Excel. Der zweite Prototyp der Funktion akzeptiert alle skalaren Argumente.
 
@@ -103,9 +97,7 @@ Modified Internal Rate of Return( .1, -.12, -10000, 1000, 900, 950 );
 
 ### Net Present Value
 
-**Syntax:** x = Net Present Value( rate, values );
-
-x = Net Present Value( rate, value1, value2, <value3, ...> )
+**Syntax:** x = Net Present Value( rate, values );x = Net Present Value( rate, value1, value2, &lt;value3, ...&gt; )
 
 **Beschreibung:** Gibt den aktuellen Nettowert einer Annuität zurück, wobei ein Diskontsatz und eine Reihe künftiger Auszahlungen (negative Werte) und Einzahlungen (positive Werte) berücksichtigt werden. Das Argument values ist eine eindimensionale Matrix. Entspricht der NPV-Funktion in Microsoft Excel. Der zweite Prototyp der Funktion akzeptiert alle skalaren Argumente.
 
@@ -121,7 +113,7 @@ Net Present Value( .05, -10000, 1000, 900, 9500 );
 
 ### Number of Periods
 
-**Syntax:** x = Number of Periods( rate, pmt, pv, <fv=0>, <type=0> )
+**Syntax:** x = Number of Periods( rate, pmt, pv, &lt;fv=0&gt;, &lt;type=0&gt; )
 
 **Beschreibung:** Gibt die Anzahl von Zeiträumen für eine Annuität bei regelmäßigen, konstanten Zahlungen und einem konstanten Zinssatz zurück. Das Argument type ist 0, wenn Zahlungen am Ende des Zahlungszeitraums fällig sind, bzw. 1, wenn Zahlungen zu Beginn des Zeitraums fällig sind. Entspricht der NPER-Funktion in Microsoft Excel.
 
@@ -136,7 +128,7 @@ Number of Periods( .05 / 12, -2000, 100000 );
 
 ### Payment
 
-**Syntax:** x = Payment( rate, nper, pv, <fv=0>, <type=0> )
+**Syntax:** x = Payment( rate, nper, pv, &lt;fv=0&gt;, &lt;type=0&gt; )
 
 **Beschreibung:** Gibt die Zahlung für ein Darlehen bei konstanten Zahlungen und einem konstanten Zinssatz zurück. Das Argument type ist 0, wenn Zahlungen am Ende des Zahlungszeitraums fällig sind, bzw. 1, wenn Zahlungen zu Beginn des Zeitraums fällig sind. Entspricht der PMT-Funktion in Microsoft Excel.
 
@@ -152,7 +144,7 @@ Payment( .05 / 12, 30 * 12, 100000 ) - Interest Payment( .05 / 12, 13, 30 * 12, 
 
 ### Present Value
 
-**Syntax:** x = Present Value( rate, nper, pmt, <fv=0>, <type=0> )
+**Syntax:** x = Present Value( rate, nper, pmt, &lt;fv=0&gt;, &lt;type=0&gt; )
 
 **Beschreibung:** Gibt den aktuellen Wert einer Annuität zurück. Das Argument type ist 0, wenn Zahlungen am Ende des Zahlungszeitraums fällig sind, bzw. 1, wenn Zahlungen zu Beginn des Zeitraums fällig sind. Entspricht der PV-Funktion in Microsoft Excel.
 
@@ -167,7 +159,7 @@ Present Value( .05 / 12, 30 * 12, 1000 );
 
 ### Principal Payment
 
-**Syntax:** x = Principal Payment( rate, per, nper, pv, <fv=0>, <type=0> )
+**Syntax:** x = Principal Payment( rate, per, nper, pv, &lt;fv=0&gt;, &lt;type=0&gt; )
 
 **Beschreibung:** Gibt die Kapitalzahlung für einen bestimmten Zeitraum einer Annuität bei regelmäßigen, konstanten Zahlungen und einem konstanten Zinssatz zurück. Das Argument type ist 0, wenn Zahlungen am Ende des Zahlungszeitraums fällig sind, bzw. 1, wenn Zahlungen zu Beginn des Zeitraums fällig sind. Entspricht der PPMT-Funktion in Microsoft Excel.
 

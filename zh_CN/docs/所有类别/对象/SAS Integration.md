@@ -75,7 +75,7 @@ If( !Check SAS Dependencies(),
 
 ### SAS Connect
 
-**语法:** SAS Connect(<( data_connector_or_id )>, <Prompt( Always|Never|IfNeeded )>)
+**语法:** SAS Connect(&lt;( data_connector_or_id )&gt;, &lt;Prompt( Always|Never|IfNeeded )&gt;)
 
 **说明:** 打开 SAS 连接。
 
@@ -160,7 +160,7 @@ If( Check SAS Dependencies(),
 
 #### Get Log
 
-**语法:** obj << Get Log
+**语法:** obj &lt;&lt; Get Log
 
 **说明:** 返回一个字符串，其中包含活动 SAS 服务器连接的日志窗口内容。
 
@@ -183,7 +183,7 @@ Show( log );
 
 #### Get Output
 
-**语法:** obj << Get Output
+**语法:** obj &lt;&lt; Get Output
 
 **说明:** 返回一个字符串，其中包含活动 SAS 服务器连接的日志窗口内容。
 
@@ -202,7 +202,7 @@ Show( out );
 
 #### Get Output Datasets
 
-**语法:** obj << Get Output Datasets
+**语法:** obj &lt;&lt; Get Output Datasets
 
 **说明:** 返回一个字符串，其中包含活动 SAS 服务器连接的日志窗口内容。
 
@@ -231,7 +231,7 @@ Show( data );
 
 #### Connect
 
-**语法:** sas << Connect( <( data_connector_or_id )>, <Prompt( Always|Never|IfNeeded )>)
+**语法:** sas &lt;&lt; Connect( &lt;( data_connector_or_id )&gt;, &lt;Prompt( Always|Never|IfNeeded )&gt;)
 
 **说明:** 尝试重新连接至已断开连接的 SAS 服务器连接对象。
 
@@ -249,7 +249,7 @@ sas << Connect();
 
 #### Current CAS Connection
 
-**语法:** result = sas << Current CAS Connection()
+**语法:** result = sas &lt;&lt; Current CAS Connection()
 
 **说明:** 获取与当前 CAS 服务器的连接。
 
@@ -280,7 +280,7 @@ Show( connected );
 
 #### Data Set Exists
 
-**语法:** result = sas << Data Set Exists( libref, dsname )
+**语法:** result = sas &lt;&lt; Data Set Exists( libref, dsname )
 
 **说明:** 若 SAS 数据集存在，则返回 1。
 
@@ -310,7 +310,7 @@ Show( result );
 
 #### Disconnect
 
-**语法:** obj << Disconnect
+**语法:** obj &lt;&lt; Disconnect
 
 **说明:** 断开该 SAS 服务器连接。
 
@@ -327,9 +327,7 @@ sas << Disconnect();
 
 #### Export Data
 
-**语法:** y = sas << Export Data( dt, libref, dataset, <named_arguments> );
-
-y = sas << SAS Export Data( dt, libref.dataset, <named_arguments> )
+**语法:** y = sas &lt;&lt; Export Data( dt, libref, dataset, &lt;named_arguments&gt; );y = sas &lt;&lt; SAS Export Data( dt, libref.dataset, &lt;named_arguments&gt; )
 
 **说明:** 将 JMP 数据表作为 SAS 数据集导出到活动 SAS 服务器连接。命名的可选参数包括 Columns(list|col1,col2,...,coln)、字符串值参数 Password、AlterPassword、ReadPassword 和 WritePassword，以及布尔值参数 HonorExcludedRows、PreserveSASColumnNames、PreserveSASFormats、ReplaceExisting、ExistingAlterPassword 和 SaveJMPMetadata。若导出成功，则返回 1，否则返回 0。
 
@@ -345,7 +343,7 @@ sas << Export Data( Open( "$SAMPLE_DATA/Big Class.jmp" ), "WORK", "BIGCLASS" );
 
 #### Get Data Sets
 
-**语法:** result = sas << Get Data Sets( libref )
+**语法:** result = sas &lt;&lt; Get Data Sets( libref )
 
 **说明:** 返回 SAS 逻辑库中定义的数据集列表。
 
@@ -362,7 +360,7 @@ Show( result );
 
 #### Get Host Name
 
-**语法:** var = sas << Get Host Name( )
+**语法:** var = sas &lt;&lt; Get Host Name( )
 
 **说明:** 获取 SAS 服务器的主机名称
 
@@ -379,7 +377,7 @@ Show( result );
 
 #### Get Lib Refs
 
-**语法:** result = sas << Get Lib Refs()
+**语法:** result = sas &lt;&lt; Get Lib Refs()
 
 **说明:** 从活动的 SAS 服务器连接返回当前定义的 SAS 逻辑库引用名列表。
 
@@ -396,7 +394,7 @@ Show( result );
 
 #### Get Log
 
-**语法:** result = sas << Get Log()
+**语法:** result = sas &lt;&lt; Get Log()
 
 **说明:** 返回一个字符串，其中包含活动 SAS 服务器连接的日志窗口内容。
 
@@ -418,7 +416,7 @@ Show( result );
 
 #### Get Macro Var
 
-**语法:** var = sas << GetMacroVar( "name" )
+**语法:** var = sas &lt;&lt; GetMacroVar( "name" )
 
 **说明:** 获取 SAS 宏变量的值
 
@@ -435,7 +433,7 @@ Show( result );
 
 #### Get Macro Var Names
 
-**语法:** var = sas << GetMacroVarNames( )
+**语法:** var = sas &lt;&lt; GetMacroVarNames( )
 
 **说明:** 获取 SAS 宏变量列表
 
@@ -452,7 +450,7 @@ Show( result );
 
 #### Get Option Names
 
-**语法:** var = sas << GetOptionNames( )
+**语法:** var = sas &lt;&lt; GetOptionNames( )
 
 **说明:** 获取 SAS 选项列表
 
@@ -469,7 +467,7 @@ Show( result );
 
 #### Get Option Value
 
-**语法:** var = sas << Get Option Value( "name" )
+**语法:** var = sas &lt;&lt; Get Option Value( "name" )
 
 **说明:** 获取 SAS 选项的值
 
@@ -486,7 +484,7 @@ Show( result );
 
 #### Get Output
 
-**语法:** result = sas << Get Output()
+**语法:** result = sas &lt;&lt; Get Output()
 
 **说明:** 返回一个字符串，其中包含上次向活动 SAS 服务器连接提交 SAS 代码时的列表输出。
 
@@ -504,7 +502,7 @@ Show( result );
 
 #### Get Results
 
-**语法:** result = sas << Get Results()
+**语法:** result = sas &lt;&lt; Get Results()
 
 **说明:** 获取该服务器的上次提交结果
 
@@ -522,7 +520,7 @@ Show( result );
 
 #### Get Submit Status
 
-**语法:** result = sas << Get Submit Status()
+**语法:** result = sas &lt;&lt; Get Submit Status()
 
 **说明:** 获取该服务器的上次提交状态
 
@@ -540,9 +538,7 @@ Show( result );
 
 #### Get Var Info
 
-**语法:** result = sas << Get Var Info( libref, dataset );
-
-result = sas << Get Var Info( libref.dataset )
+**语法:** result = sas &lt;&lt; Get Var Info( libref, dataset );result = sas &lt;&lt; Get Var Info( libref.dataset )
 
 **说明:** 获取有关 SAS 数据集中变量的信息
 
@@ -559,9 +555,7 @@ Show( result );
 
 #### Get Var Names
 
-**语法:** result = sas << Get Var Names( libref, dataset );
-
-result = sas << SAS Get Var Names( libref.dataset )
+**语法:** result = sas &lt;&lt; Get Var Names( libref, dataset );result = sas &lt;&lt; SAS Get Var Names( libref.dataset )
 
 **说明:** 从活动 SAS 服务器连接来检索指定的数据集中包含的变量名。
 
@@ -578,7 +572,7 @@ Show( result );
 
 #### Get Version
 
-**语法:** ver = sas << GetVersion( < Long > )
+**语法:** ver = sas &lt;&lt; GetVersion( &lt; Long &gt; )
 
 **说明:** 获取 SAS 的版本
 
@@ -595,7 +589,7 @@ Show( result );
 
 #### Get Work Folder
 
-**语法:** obj << Get Work Folder
+**语法:** obj &lt;&lt; Get Work Folder
 
 **说明:** 获取服务器的 WORK 逻辑库文件夹
 
@@ -612,9 +606,7 @@ Show( result );
 
 #### Import Data
 
-**语法:** dt = sas << Import Data( libref, dataset, <named_arguments> );
-
-dt = sas << Import Data( libref.dataset|path, <named_arguments> )
+**语法:** dt = sas &lt;&lt; Import Data( libref, dataset, &lt;named_arguments&gt; );dt = sas &lt;&lt; Import Data( libref.dataset|path, &lt;named_arguments&gt; )
 
 **说明:** 将 SAS 数据集从活动 SAS 服务器连接导入到 JMP 数据表中。命名的可选参数包括 Sample(<named_arguments>)、Columns(list|col1,col2,...,coln)、字符串值参数 Where，以及布尔值参数 ConvertCustomFormats、Invisible, UseLabelsForVarNames、SQLTableVariable。返回 JMP 数据表对象。
 
@@ -630,7 +622,7 @@ dt = sas << Import Data( "SASHELP.CLASS" );
 
 #### List Output Data Sets
 
-**语法:** sas << List Output Data Sets(sas code)
+**语法:** sas &lt;&lt; List Output Data Sets(sas code)
 
 **说明:** 为指定的 SAS 代码列出输出数据集
 
@@ -653,7 +645,7 @@ Show( datasets );
 
 #### Name
 
-**语法:** serverName = sas << Name
+**语法:** serverName = sas &lt;&lt; Name
 
 **说明:** 返回服务器的名称。
 
@@ -670,7 +662,7 @@ Show( serverName );
 
 #### Submit
 
-**语法:** result = sas << Submit( <GetSASLog(<True|False|OnError>, <OnSubmitComplete(script)>, <OpenOutputDatasets(<All|None, UseLabelsForVarNames(1|0),dataset1,dataset2,...,datasetN>)>, <ODSFormat>, <ODS Style>, <Title>, <OpenODSResults>, <NoOutputWindow>
+**语法:** result = sas &lt;&lt; Submit( &lt;GetSASLog(&lt;True|False|OnError&gt;, &lt;OnSubmitComplete(script)&gt;, &lt;OpenOutputDatasets(&lt;All|None, UseLabelsForVarNames(1|0),dataset1,dataset2,...,datasetN&gt;)&gt;, &lt;ODSFormat&gt;, &lt;ODS Style&gt;, &lt;Title&gt;, &lt;OpenODSResults&gt;, &lt;NoOutputWindow&gt;
 
 **说明:** 提交 SAS 代码至活跃的 SAS 服务器连接。若成功，则返回 1，否则返回 0。
 
@@ -691,7 +683,7 @@ sas << Submit(
 
 #### Submit File
 
-**语法:** result = sas << Submit File( "filename.sas" )
+**语法:** result = sas &lt;&lt; Submit File( "filename.sas" )
 
 **说明:** 将包含 SAS 代码的文件提交至活动的 SAS 服务器连接。命名的可选参数与 SAS Submit 的参数相同。若成功，则返回 1，否则返回 0。
 

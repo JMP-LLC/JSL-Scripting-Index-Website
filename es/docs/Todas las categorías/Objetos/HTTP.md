@@ -8,7 +8,7 @@
 
 #### Authentication Method
 
-**Sintaxis:** obj << Authentication Method(method)
+**Sintaxis:** obj &lt;&lt; Authentication Method(method)
 
 **Descripción:** Aplica un método de autenticación. Los valores válidos son:
 
@@ -61,7 +61,7 @@ request << Authentication Method( "KERBEROS" );
 
 #### Blob
 
-**Sintaxis:** obj << Blob( binary data, <content-type> )
+**Sintaxis:** obj &lt;&lt; Blob( binary data, &lt;content-type&gt; )
 
 **Descripción:** Esto establecerá un valor Blob en la solicitud. El valor Blob se utilizará como cuerpo del documento. El encabezado de tipo de contenido de la solicitud se establecerá automáticamente en "Content-Type: application/octet-stream".
 
@@ -84,7 +84,7 @@ data = request << Send;
 
 #### Bypass Proxy
 
-**Sintaxis:** obj << Bypass Proxy(localhost)
+**Sintaxis:** obj &lt;&lt; Bypass Proxy(localhost)
 
 **Descripción:** La lista de hosts separados por comas que no utilizan un proxy, si se especifica uno. El único comodín es un carácter * sencillo, que coincide con todos los hosts, y deshabilita el proxy eficazmente. Cada nombre de la lista coincide bien como dominio que contiene el nombre de host, o bien como el propio nombre de host. Por ejemplo, local.com podría coincidir con local.com, local.com:80 y www.local.com, pero no con www.notlocal.com.
 
@@ -103,7 +103,7 @@ request << Bypass Proxy( "localhost" );
 
 #### Certificates
 
-**Sintaxis:** obj << Certificates(certificate file)
+**Sintaxis:** obj &lt;&lt; Certificates(certificate file)
 
 **Descripción:** Utilice el archivo de certificado especificado para la verificación. El archivo puede contener varios certificados CA. Los certificados deben estar en formato PEM.
 
@@ -120,7 +120,7 @@ request << Certificates( "c:\certs\my_certificate.crt" );
 
 #### Cookie
 
-**Sintaxis:** obj << Cookie([[ key=> value ]]
+**Sintaxis:** obj &lt;&lt; Cookie([[ key=&gt; value ]]
 
 **Descripción:** Establecer una cookie en la solicitud.
 
@@ -141,7 +141,7 @@ data = request << Send;
 
 #### Cookie File
 
-**Sintaxis:** obj << Cookie File(<path>, <"replace" | "rename" | "append">)
+**Sintaxis:** obj &lt;&lt; Cookie File(&lt;path&gt;, &lt;"replace" | "rename" | "append"&gt;)
 
 **Descripción:** Especifique un archivo de cookies alternativo.
 
@@ -158,7 +158,7 @@ data = request << Cookie File( "$DESKTOP\..\cookie.txt" );
 
 #### Curlrc
 
-**Sintaxis:** obj << Curlrc(<true | false>)
+**Sintaxis:** obj &lt;&lt; Curlrc(&lt;true | false&gt;)
 
 **Descripción:** Configura la solicitud para utilizar un archivo .curl estándar.
 
@@ -177,7 +177,7 @@ request << Curlrc( "true" );
 
 #### Curlrc File
 
-**Sintaxis:** obj << Curlrc File(<path>)
+**Sintaxis:** obj &lt;&lt; Curlrc File(&lt;path&gt;)
 
 **Descripción:** Configura la solicitud para utilizar un archivo .curl alternativo.
 
@@ -197,7 +197,7 @@ request << Curlrc( "true" );
 
 #### DNS Timeout
 
-**Sintaxis:** obj << DNS Timeout(seconds)
+**Sintaxis:** obj &lt;&lt; DNS Timeout(seconds)
 
 **Descripción:** El tiempo de espera predeterminado de la caché del DNS para la conexión es de 60 segundos. Este valor se puede ajustar para adaptarse al almacenamiento en caché del DNS. Establézcalo en 0 para deshabilitar el almacenamiento en caché por completo o en -1 para que las entradas ya almacenadas en caché permanezcan en la memoria.
 
@@ -222,7 +222,7 @@ obj = New Window( "Mastering JMP", img );
 
 #### Decode64 Char
 
-**Sintaxis:** obj << Decode64 Char( value )
+**Sintaxis:** obj &lt;&lt; Decode64 Char( value )
 
 **Descripción:** Descodificar la cadena usando la codificación Base 64
 
@@ -241,7 +241,7 @@ data = request << Decode64 Char(
 
 #### Download
 
-**Sintaxis:** obj << Download( path, <"replace" | "rename" | "append"> )
+**Sintaxis:** obj &lt;&lt; Download( path, &lt;"replace" | "rename" | "append"&gt; )
 
 **Descripción:** Descarga la respuesta HTTP en un archivo. Resulta útil para descargar archivos de un servicio web. La opciónreplace sobrescribe cualquier archivo existente. La opción rename utiliza nombres de archivos secuenciales cuando se encuentra un nombre duplicado (archivo, archivo(1), archivo(2)...). La opciónappend añade al archivo existente. Al utilizar show progress, se muestra un barra de progreso cancelable con el porcentaje del archivo descargado.
 
@@ -266,7 +266,7 @@ If( !Is Empty( file ),
 
 #### Encode64 Char
 
-**Sintaxis:** obj << Encode64 Char( value )
+**Sintaxis:** obj &lt;&lt; Encode64 Char( value )
 
 **Descripción:** Codificar la cadena usando la codificación Base 64
 
@@ -283,7 +283,7 @@ data = request << Encode64 Char( "Man is distinguished, not only by his reason, 
 
 #### File
 
-**Sintaxis:** obj << File ( path, <content-type> )
+**Sintaxis:** obj &lt;&lt; File ( path, &lt;content-type&gt; )
 
 **Descripción:** De este modo se establecerá un valor Archivo en la solicitud. El contenido del archivo se utilizará como cuerpo del documento. El encabezado de tipo de contenido de la solicitud se establecerá automáticamente en el contenido correspondiente en función de la extensión del archivo o application/octet-stream si no se encuentra.
 
@@ -305,7 +305,7 @@ data = request << Send;
 
 #### Form
 
-**Sintaxis:** obj << Form(Fields([[ key=> value ]], <URI Encode(1 | 0 | Safe(...))>), Files({ key1, {path1, path2, ..}, key2, {path3, path4} }))
+**Sintaxis:** obj &lt;&lt; Form(Fields([[ key=&gt; value ]], &lt;URI Encode(1 | 0 | Safe(...))&gt;), Files({ key1, {path1, path2, ..}, key2, {path3, path4} }))
 
 **Descripción:** Establece el valor de los datos del formulario en la solicitud. El formulario se utilizará como cuerpo del documento. Los datos del formulario pueden tener elementos de campos y archivos.
 
@@ -336,7 +336,7 @@ data = request << Send;
 
 #### Get Certificate Info
 
-**Sintaxis:** obj << Get Certificate Info
+**Sintaxis:** obj &lt;&lt; Get Certificate Info
 
 **Descripción:** Muestra detalles del certificado, como quién lo emitió, cuándo caduca y otra información para garantizar que el certificado es de confianza.
 
@@ -353,7 +353,7 @@ request << Get Certificate Info;
 
 #### Get Last URL
 
-**Sintaxis:** obj << Get Last URL
+**Sintaxis:** obj &lt;&lt; Get Last URL
 
 **Descripción:** Obtiene la última URL utilizada en la solicitud. Es útil para buscar la URL redirigida.
 
@@ -372,7 +372,7 @@ Write( Char( request << Get Last URL ) );
 
 #### Get MIME Type
 
-**Sintaxis:** mimetype = obj << Get MIME Type
+**Sintaxis:** mimetype = obj &lt;&lt; Get MIME Type
 
 **Descripción:** Después de utilizar Enviar (o Descargar) con una solicitud, esto puede utilizarse para recuperar el tipo MIME de los datos devueltos.
 
@@ -391,7 +391,7 @@ Write( request << Get Mime Type() || "\!n" );
 
 #### Get Method
 
-**Sintaxis:** obj << Get Last Method
+**Sintaxis:** obj &lt;&lt; Get Last Method
 
 **Descripción:** Obtiene el último método HTTP utilizado en la solicitud.
 
@@ -415,7 +415,7 @@ Write( Char( request << Get Method ) || "\!n" );
 
 #### Get Response Headers
 
-**Sintaxis:** obj << Get Response Headers
+**Sintaxis:** obj &lt;&lt; Get Response Headers
 
 **Descripción:** Los encabezados de respuesta son un arreglo asociativo de pares clave/valor devueltos después de que se haya enviado una solicitud. Aquí puede encontrar las definiciones de encabezados HTTP: https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html. Las claves Date, Expires y Last-Modified se convertirán en fechas JMP. Las claves Age y Content-Length se convertirán en números. Todos los demás valores serán un carácter.
 
@@ -441,7 +441,7 @@ For( i = 1, i <= N Items( keys ), i++,
 
 #### Get Status
 
-**Sintaxis:** obj << Get Status
+**Sintaxis:** obj &lt;&lt; Get Status
 
 **Descripción:** Devuelve el estado de la solicitud después de Send. El estado es el estado HTTP si no hay errores de conexión. De lo contrario, devuelve el estado de conexión. 200-299 es correcto.
 
@@ -462,7 +462,7 @@ If( request << Get Status == 200,
 
 #### Get Status Message
 
-**Sintaxis:** obj << Get Status Message
+**Sintaxis:** obj &lt;&lt; Get Status Message
 
 **Descripción:** Devuelve el mensaje de estado de la solicitud después de un mensaje de Send. El mensaje de estado es el mensaje de estado HTTP si no hay errores de conexión. De lo contrario, se devuelve un mensaje de estado de conexión. Un estado de 200-299 es correcto.
 
@@ -481,7 +481,7 @@ Write( "\!n" || Char( request << Get Status Message ) || "\!n" );
 
 #### Get Status Msg
 
-**Sintaxis:** obj << Get Status Msg
+**Sintaxis:** obj &lt;&lt; Get Status Msg
 
 **Descripción:** Devuelve el mensaje de estado de la solicitud después de Send. Se trata de un alias de GetStatusMessage. El mensaje de estado es el mensaje de estado HTTP si no hay errores de conexión. De lo contrario, devuelve el mensaje de estado de conexión. Un estado de 200-299 es correcto.
 
@@ -500,7 +500,7 @@ Write( "\!n" || Char( request << Get Status Msg ) || "\!n" );
 
 #### Get Warning Headers
 
-**Sintaxis:** obj << Get Warning Headers
+**Sintaxis:** obj &lt;&lt; Get Warning Headers
 
 **Descripción:** Obtiene los valores de encabezados de advertencia (si hubiera) de la solicitud.
 
@@ -528,7 +528,7 @@ If( !Is Empty( warning_headers ),
 
 #### GetVersion
 
-**Sintaxis:** request << GetVersion
+**Sintaxis:** request &lt;&lt; GetVersion
 
 **Descripción:** Devuelve la versión actual de cURL que se utiliza en JMP
 
@@ -543,7 +543,7 @@ Write( New HTTP Request() << GetVersion );
 
 #### Has Client Error
 
-**Sintaxis:** obj << Has Client Error
+**Sintaxis:** obj &lt;&lt; Has Client Error
 
 **Descripción:** Verdadero si el estado HTTP es 400-499.
 
@@ -565,7 +565,7 @@ Write( msg );
 
 #### Has Error
 
-**Sintaxis:** obj << Has Error
+**Sintaxis:** obj &lt;&lt; Has Error
 
 **Descripción:** Verdadero si el estado HTTP es 400-599.
 
@@ -587,7 +587,7 @@ Write( msg );
 
 #### Has Information
 
-**Sintaxis:** obj << Has Information
+**Sintaxis:** obj &lt;&lt; Has Information
 
 **Descripción:** Verdadero si el estado HTTP es 100-199.
 
@@ -610,7 +610,7 @@ Write( msg );
 
 #### Has Redirection
 
-**Sintaxis:** obj << Has Redirection
+**Sintaxis:** obj &lt;&lt; Has Redirection
 
 **Descripción:** Verdadero si el estado HTTP es 300-399.
 
@@ -633,7 +633,7 @@ Write( msg );
 
 #### Has Server Error
 
-**Sintaxis:** obj << Has Server Error
+**Sintaxis:** obj &lt;&lt; Has Server Error
 
 **Descripción:** Verdadero si el estado HTTP es 500-599.
 
@@ -655,7 +655,7 @@ Write( msg );
 
 #### Has Warning
 
-**Sintaxis:** obj << Has Warning
+**Sintaxis:** obj &lt;&lt; Has Warning
 
 **Descripción:** Verdadero si el estado HTTP tiene encabezados de advertencia
 
@@ -683,7 +683,7 @@ If( !request << Has Warning,
 
 #### Headers
 
-**Sintaxis:** obj << Headers({header 1}, {header 2} | [[ key=> value, key2=>value2 ]])
+**Sintaxis:** obj &lt;&lt; Headers({header 1}, {header 2} | [[ key=&gt; value, key2=&gt;value2 ]])
 
 **Descripción:** Aquí puede encontrar las definiciones de encabezado HTTP:
 
@@ -712,7 +712,7 @@ Write( json || "\!n" );
 
 #### Insecure
 
-**Sintaxis:** obj << Insecure(<"true"> | <"false">) | <"prompt">
+**Sintaxis:** obj &lt;&lt; Insecure(&lt;"true"&gt; | &lt;"false"&gt;) | &lt;"prompt"&gt;
 
 **Descripción:** De forma predeterminada, la validación del certificado está activada. Si se establece en true, se permitirá completar solicitudes sin validar el certificado. Si se establece en prompt, se permitirá que un usuario acepte el certificado y complete la solicitud según sea necesario.
 
@@ -737,7 +737,7 @@ obj = New Window( "Mastering JMP", img );
 
 #### Is Success
 
-**Sintaxis:** obj << Is Success
+**Sintaxis:** obj &lt;&lt; Is Success
 
 **Descripción:** Verdadero si el estado HTTP es 200-299.
 
@@ -761,7 +761,7 @@ If( request << Is Success,
 
 #### Is Successful
 
-**Sintaxis:** obj << Is Successful
+**Sintaxis:** obj &lt;&lt; Is Successful
 
 **Descripción:** Verdadero si el estado HTTP es 200-299.
 
@@ -791,7 +791,7 @@ If( request << Is Successful,
 
 #### Is Valid
 
-**Sintaxis:** obj << Is Valid
+**Sintaxis:** obj &lt;&lt; Is Valid
 
 **Descripción:** Es la solicitud válida
 
@@ -808,7 +808,7 @@ data = request << Is Valid();
 
 #### Is Verbose
 
-**Sintaxis:** obj << Is Verbose
+**Sintaxis:** obj &lt;&lt; Is Verbose
 
 **Descripción:** ¿Está la solicitud registrando mensajes de estado automáticamente?
 
@@ -825,7 +825,7 @@ data = request << Is Verbose();
 
 #### JSON
 
-**Sintaxis:** obj << JSON( json data )
+**Sintaxis:** obj &lt;&lt; JSON( json data )
 
 **Descripción:** De este modo se establecerá un valor de cadena JSON en la solicitud. La cadena JSON se utilizará como cuerpo del documento. El encabezado de tipo de contenido de la solicitud se establecerá automáticamente en "Content-Type: application/json". Puede utilizar el método As JSON Expr para convertir un arreglo asociativo en una cadena JSON.
 
@@ -846,7 +846,7 @@ data = request << Send;
 
 #### Max Redirect
 
-**Sintaxis:** obj << Max Redirect(...)
+**Sintaxis:** obj &lt;&lt; Max Redirect(...)
 
 **Descripción:** Especificar el número de redirecciones que seguirá la solicitud.
 
@@ -868,7 +868,7 @@ data = request << Send;
 
 #### Method
 
-**Sintaxis:** obj << Method("Post" | "Get" | "Put" | "Patch"| "Delete")
+**Sintaxis:** obj &lt;&lt; Method("Post" | "Get" | "Put" | "Patch"| "Delete")
 
 **Descripción:** Establece el método de la solicitud. Actualmente, se admiten Get, Post, Put, Patch, Delete y Head.
 
@@ -891,7 +891,7 @@ dt << Delete Rows();
 
 #### Netrc
 
-**Sintaxis:** obj << Netrc(<true | false>)
+**Sintaxis:** obj &lt;&lt; Netrc(&lt;true | false&gt;)
 
 **Descripción:** Configura la solicitud para utilizar un archivo .netrc estándar.
 
@@ -942,7 +942,7 @@ request << Netrc( "true" );
 
 #### Netrc File
 
-**Sintaxis:** obj << Netrc File(<path>)
+**Sintaxis:** obj &lt;&lt; Netrc File(&lt;path&gt;)
 
 **Descripción:** Configura la solicitud para utilizar un archivo .netrc alternativo.
 
@@ -992,7 +992,7 @@ request << Netrc( "true" );
 
 #### Password
 
-**Sintaxis:** obj << Password(passwd)
+**Sintaxis:** obj &lt;&lt; Password(passwd)
 
 **Descripción:** Establece la contraseña en la solicitud utilizada para la autenticación básica. Este valor se utiliza con el nombre de usuario de la solicitud, donde tanto el nombre de usuario como la contraseña se concatenan con ":" (nombre:contraseña) y se trasladan al servicio web. Además, aquí se puede utilizar un valor de nombre de usuario/contraseña codificado (por ejemplo, mediante codificación Kerberos V5).
 
@@ -1015,7 +1015,7 @@ data = request << Send;
 
 #### Proxy Server
 
-**Sintaxis:** obj << Proxy Server(proxy_url)
+**Sintaxis:** obj &lt;&lt; Proxy Server(proxy_url)
 
 **Descripción:** La URL proxy se puede especificar de la misma forma que las variables del entorno proxy, incluido el prefijo del protocolo (http://) y el usuario incrustado + contraseña.
 
@@ -1033,7 +1033,7 @@ request << Proxy Server( url );
 
 #### Proxy User
 
-**Sintaxis:** obj << Proxy User(username:password)
+**Sintaxis:** obj &lt;&lt; Proxy User(username:password)
 
 **Descripción:** El usuario y la contraseña que posiblemente se proporcionen en la cadena proxy son una URL descodificada. Esto le permite introducir caracteres especiales como @ utilizando %40 o un punto y coma con %3a.
 
@@ -1052,7 +1052,7 @@ request << Proxy User( "clark%20kent:superman" );
 
 #### Query String
 
-**Sintaxis:** obj << Query String([[ key=> value ]], <URI Encode(1|0|Safe(...))>)
+**Sintaxis:** obj &lt;&lt; Query String([[ key=&gt; value ]], &lt;URI Encode(1|0|Safe(...))&gt;)
 
 **Descripción:** Establece el valor Cadena de consulta en la solicitud. Se trata de una recopilación de clave/valor del Arreglo asociativo de los datos de caracteres. Los pares clave/valor tienen codificación URL (con escape) cuando se envían al servicio web.
 
@@ -1073,7 +1073,7 @@ data = request << Send;
 
 #### Reset
 
-**Sintaxis:** obj << Reset(URL(...), Method(...), <Form(<Fields(...)>, <Files(...)>)> | <File(...)> | <Blob(...)> | <JSON(...)>, <QueryString(...)>, <Headers(...)>, <Username(...)>, <Password(...)>)
+**Sintaxis:** obj &lt;&lt; Reset(URL(...), Method(...), &lt;Form(&lt;Fields(...)&gt;, &lt;Files(...)&gt;)&gt; | &lt;File(...)&gt; | &lt;Blob(...)&gt; | &lt;JSON(...)&gt;, &lt;QueryString(...)&gt;, &lt;Headers(...)&gt;, &lt;Username(...)&gt;, &lt;Password(...)&gt;)
 
 **Descripción:** Restablece la solicitud a nuevos valores.
 
@@ -1092,7 +1092,7 @@ json2 = request << Send;
 
 #### Run
 
-**Sintaxis:** obj << Run
+**Sintaxis:** obj &lt;&lt; Run
 
 **Descripción:** Ejecuta la solicitud. Es un alias de Send. El valor devuelto de la función JSL Run will be either character data or binary BLOB. You can check the return with the Is String.
 
@@ -1111,7 +1111,7 @@ Write( json || "\!n" );
 
 #### SSL Version
 
-**Sintaxis:** obj << SSL Version (version)
+**Sintaxis:** obj &lt;&lt; SSL Version (version)
 
 **Descripción:** "DEFAULT"  Use the default negotiated version (recommended).
 
@@ -1160,7 +1160,7 @@ request << SSL Version( "1+" );
 
 #### Secure
 
-**Sintaxis:** obj << Secure(<"true"> | <"false">) | <"prompt">
+**Sintaxis:** obj &lt;&lt; Secure(&lt;"true"&gt; | &lt;"false"&gt;) | &lt;"prompt"&gt;
 
 **Descripción:** De forma predeterminada, la validación del certificado está activada. Si se establece en false, se permitirá completar solicitudes sin validar el certificado. Si se establece en prompt, se permitirá que un usuario acepte el certificado y complete la solicitud según sea necesario.
 
@@ -1185,7 +1185,7 @@ obj = New Window( "Mastering JMP", img );
 
 #### Send
 
-**Sintaxis:** obj << Send(<"text" | "blob">, <"show progress download" | "show progress upload" | "show progress both" | "show progress">)
+**Sintaxis:** obj &lt;&lt; Send(&lt;"text" | "blob"&gt;, &lt;"show progress download" | "show progress upload" | "show progress both" | "show progress"&gt;)
 
 **Descripción:** Envía la solicitud. El valor devuelto de Send serán datos de caracteres o BLOB binario. Puede comprobar la devolución con la función JSL Is String. Al utilizar show progress download, se mostrará una barra cancelable con el progreso de los datos descargados. Al utilizar show progress upload, se mostrará una barra cancelable con el progreso de los datos cargados. Al utilizar show progress both, se mostrará una barra cancelable con el progreso de los datos cargados y descargados. Al utilizar show progress, se mostrará una barra cancelable con el progreso de los datos cargados o descargados (o ambos). Al publicar formularios, show progress mostrará el progreso de carga y descarga. Al publicar archivos, show progress mostrará el progreso de carga. Al recuperar datos, show progress mostrará el progreso de descarga.
 
@@ -1204,7 +1204,7 @@ Write( json || "\!n" );
 
 #### Text
 
-**Sintaxis:** obj << Text( text data, <content-type>)
+**Sintaxis:** obj &lt;&lt; Text( text data, &lt;content-type&gt;)
 
 **Descripción:** Esto establecerá un valor de cadena de texto en la solicitud. La cadena de texto se utilizará como cuerpo del documento. El encabezado de tipo de contenido de la solicitud se establecerá automáticamente en "Content-Type: text/plain"
 
@@ -1225,7 +1225,7 @@ data = request << Send;
 
 #### Timeout
 
-**Sintaxis:** obj << Timeout(seconds)
+**Sintaxis:** obj &lt;&lt; Timeout(seconds)
 
 **Descripción:** El tiempo de espera predeterminado para que la acción de la solicitud se complete es de 60 segundos. Este valor puede ajustarse para permitir acciones de servicio web que requieran más tiempo.
 
@@ -1250,7 +1250,7 @@ obj = New Window( "Mastering JMP", img );
 
 #### URL
 
-**Sintaxis:** obj << URL(path)
+**Sintaxis:** obj &lt;&lt; URL(path)
 
 **Descripción:** Cuando se crea una solicitud (o se utiliza con Restablecer), se puede utilizar como parámetro. obj = HTTP Request(URL("http://google.com"));
 
@@ -1272,7 +1272,7 @@ s = New HTTP Request(
 
 #### Use Cookies
 
-**Sintaxis:** obj << Use Cookies(<true | false>))
+**Sintaxis:** obj &lt;&lt; Use Cookies(&lt;true | false&gt;))
 
 **Descripción:** Configura la solicitud para usar cookies para la sesión. El valor predeterminado es verdadero.
 
@@ -1289,7 +1289,7 @@ data = request << Use Cookies( "false" );
 
 #### UserPwd
 
-**Sintaxis:** obj << UserPwd(clark kent:superman)
+**Sintaxis:** obj &lt;&lt; UserPwd(clark kent:superman)
 
 **Descripción:** Establece el campo de usuario y contraseña en la solicitud utilizada para la autenticación. El formato es: [nombre de usuario]:[contraseña]. Las cadenas de usuario y contraseña no están descodificadas como URL, por lo que no hay forma de enviar un nombre de usuario que contenga el signo de dos puntos mediante esta opción.
 
@@ -1312,7 +1312,7 @@ data = request << Send;
 
 #### Username
 
-**Sintaxis:** obj << Username(name)
+**Sintaxis:** obj &lt;&lt; Username(name)
 
 **Descripción:** Establece el nombre de usuario en la solicitud utilizada para la autenticación básica. Este valor se utiliza junto con la contraseña de la solicitud, donde tanto el nombre de usuario como la contraseña se concatenan con ":" (nombre:contraseña) y se trasladan al servicio web.
 
@@ -1336,7 +1336,7 @@ data = request << Send;
 
 #### Verbose
 
-**Sintaxis:** obj << Verbose(<"true"> | <"false">)
+**Sintaxis:** obj &lt;&lt; Verbose(&lt;"true"&gt; | &lt;"false"&gt;)
 
 **Descripción:** Redacta mensajes de error detallados en el registro. El valor predeterminado es true.
 
@@ -1364,7 +1364,7 @@ Write( "\!n" || Char( request << Get Status Message ) || "\!n" );
 
 #### Verify SSL
 
-**Sintaxis:** obj << Verify SSL(<"true"> | <"false">)
+**Sintaxis:** obj &lt;&lt; Verify SSL(&lt;"true"&gt; | &lt;"false"&gt;)
 
 **Descripción:** La verificación del certificado está activada. Si se establece en false, se permitirán las solicitudes de completar sin verificacíón del certificado.
 
@@ -1389,7 +1389,7 @@ obj = New Window( "Mastering JMP", img );
 
 #### XML
 
-**Sintaxis:** obj << XML( xml data )
+**Sintaxis:** obj &lt;&lt; XML( xml data )
 
 **Descripción:** Esto establecerá un valor de cadena XML en la solicitud. La cadena XML se utilizará como cuerpo del documento. El encabezado de tipo de contenido de la solicitud se establecerá automáticamente en "Content-Type: application/xml"
 
@@ -1424,7 +1424,7 @@ data = request << Send;
 
 #### Add
 
-**Sintaxis:** obj << Add(request, <label>)
+**Sintaxis:** obj &lt;&lt; Add(request, &lt;label&gt;)
 
 **Descripción:** Agrega una solicitud HTTP a MultiHTTPRequest. Se puede utilizar una etiqueta opcional. Resulta útil al realizar descargas en paralelo. Todas las solicitudes HTTP se validan antes de su uso.
 
@@ -1464,7 +1464,7 @@ For( i = 1, i <= N Items( http_requests ), i++,
 
 #### Download
 
-**Sintaxis:** obj << Download(<"show progress">, <"detailed">)
+**Sintaxis:** obj &lt;&lt; Download(&lt;"show progress"&gt;, &lt;"detailed"&gt;)
 
 **Descripción:** Descarga las respuestas HTTP en archivos en paralelo. Resulta útil para descargar varios archivos de una vez desde uno o más servicios web. Si utiliza show progress, se mostrará una barra cancelable con el progreso de los archivos descargados. Si utiliza details, se mostrará el progreso de descarga individual.
 
@@ -1533,7 +1533,7 @@ promise << On Error( process_error );
 
 #### Get Requests
 
-**Sintaxis:** obj << Get Requests()
+**Sintaxis:** obj &lt;&lt; Get Requests()
 
 **JMP Versión agregada:** 17
 
@@ -1564,7 +1564,7 @@ http_requests = requests << Get Requests();
 
 #### Has Error
 
-**Sintaxis:** obj << Has Error
+**Sintaxis:** obj &lt;&lt; Has Error
 
 **Descripción:** Devuelve verdadero si la solicitud múltiple tiene un error. La solicitud múltiple tiene un error si cualquiera de sus solicitudes HTTP tiene un error.
 
@@ -1596,7 +1596,7 @@ Show( requests << Has Error );
 
 #### Is Success
 
-**Sintaxis:** obj << Is Success
+**Sintaxis:** obj &lt;&lt; Is Success
 
 **Descripción:** Devuelve verdadero si la solicitud múltiple es correcta. La solicitud múltiple es correcta si todas sus solicitudes HTTP son correctas.
 
@@ -1620,7 +1620,7 @@ Show( requests << Is Successful );
 
 #### Is Successful
 
-**Sintaxis:** obj << Is Successful
+**Sintaxis:** obj &lt;&lt; Is Successful
 
 **Descripción:** Devuelve verdadero si la solicitud múltiple es correcta. La solicitud múltiple es correcta si todas sus solicitudes HTTP son correctas.
 
@@ -1644,7 +1644,7 @@ Show( requests << Is Successful );
 
 #### Is Valid
 
-**Sintaxis:** obj << Is Valid
+**Sintaxis:** obj &lt;&lt; Is Valid
 
 **Descripción:** Es válida la solicitud múltiple. La solicitud múltiple es válida si todas las solicitudes HTTP son válidas.
 
@@ -1675,7 +1675,7 @@ Show( requests << Is Valid() );
 
 #### Reset
 
-**Sintaxis:** obj << Reset()
+**Sintaxis:** obj &lt;&lt; Reset()
 
 **Descripción:** Envía varias solicitudes. Esta acción restablece cualquier solicitud HTTP que ya se haya agregado.
 
@@ -1710,7 +1710,7 @@ requests << Reset();
 
 #### Send
 
-**Sintaxis:** obj << Send(<"text" | "blob">, <"show progress download" | "show progress upload" | "show progress both" | "show progress">)
+**Sintaxis:** obj &lt;&lt; Send(&lt;"text" | "blob"&gt;, &lt;"show progress download" | "show progress upload" | "show progress both" | "show progress"&gt;)
 
 **Descripción:** El valor devuelto de Send serán datos de caracteres o BLOB binario. Puede comprobar la devolución con la función JSL Is String. Al utilizar show progress download, se mostrará una barra cancelable con el progreso de los datos descargados. Al utilizar show progress upload, se mostrará una barra cancelable con el progreso de los datos cargados. Al utilizar show progress both, se mostrará una barra cancelable con el progreso de los datos cargados y descargados. Al utilizar show progress, se mostrará una barra cancelable con el progreso de los datos cargados o descargados (o ambos). Al publicar formularios, show progress mostrará el progreso de carga y descarga. Al publicar archivos, show progress mostrará el progreso de carga. Al recuperar datos, show progress mostrará el progreso de descarga.
 
@@ -1881,7 +1881,7 @@ addSentimentColumns( dt2, "Name", 1, 1 );
 
 #### Authorization Fields
 
-**Sintaxis:** oauth2 << Authorization Fields(...)
+**Sintaxis:** oauth2 &lt;&lt; Authorization Fields(...)
 
 **Descripción:** Campos de autorización es un arreglo asociativo de pares de clave y valor que se utilizarán en la cadena de consulta para la URL de autorización de OAuth2.
 
@@ -1908,7 +1908,7 @@ oauth2 << Authorization Fields( auth_fields );
 
 #### Authorization URL
 
-**Sintaxis:** oauth2 << Authorization URL(...)
+**Sintaxis:** oauth2 &lt;&lt; Authorization URL(...)
 
 **Descripción:** Establece la URL de la autorización OAuth2.
 
@@ -1926,7 +1926,7 @@ oauth2 << Authorization URL( auth_url );
 
 #### Browser Type
 
-**Sintaxis:** oauth2 << Browser Type("Default" | "Embedded" | "External")
+**Sintaxis:** oauth2 &lt;&lt; Browser Type("Default" | "Embedded" | "External")
 
 **Descripción:** La opción Predeterminado utiliza el navegador incrustado para la autenticación OAuth2, a menos que la autenticación se lleve a cabo con Google. La opción Incrustado utiliza el navegador incrustado para la autenticación OAuth2, a menos que la autenticación se lleve a cabo con Google (actualmente igual que con la opción Predeterminado). La opción Externo utiliza el navegador externo para la autenticación OAuth2 y copia el código o URL resultantes en el área de texto para completar la autenticación.
 
@@ -1977,7 +1977,7 @@ data = request << Send;
 
 #### Client Id
 
-**Sintaxis:** oauth2 << Client Id(...)
+**Sintaxis:** oauth2 &lt;&lt; Client Id(...)
 
 **Descripción:** Establece la Id. de cliente de OAuth2, un identificador público que se utilizó durante la creación del servicio web.
 
@@ -1998,7 +1998,7 @@ oauth2 << Client Id( client_id );
 
 #### Client Secret
 
-**Sintaxis:** oauth2 << Client Secret(...)
+**Sintaxis:** oauth2 &lt;&lt; Client Secret(...)
 
 **Descripción:** Establece el secreto de cliente de OAuth2 que se creó durante la creación del servicio web.
 
@@ -2019,7 +2019,7 @@ oauth2 << Client Secret( client_secret );
 
 #### Code Verifier
 
-**Sintaxis:** oauth2 << Code Verifier(<"cdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._~">
+**Sintaxis:** oauth2 &lt;&lt; Code Verifier(&lt;"cdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._~"&gt;
 
 **Descripción:** El código verificador es una cadena criptográficamente aleatoria que el cliente utiliza para identificarse cuando intercambia un código de autorización por un token de acceso. Tiene una longitud mínima de 43 caracteres y máxima de 128.
 
@@ -2036,7 +2036,7 @@ oauth2 << Code Verifier( "cdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123
 
 #### Get Access Token
 
-**Sintaxis:** oauth2 << Get Access Token()
+**Sintaxis:** oauth2 &lt;&lt; Get Access Token()
 
 **Descripción:** Obtiene el token de acceso actual de OAuth2. De este modo se inicia la comunicación con el servidor de autorización si es necesario.
 
@@ -2082,7 +2082,7 @@ access_token = oauth2 << Get Access Token();
 
 #### Get Auth Response Error
 
-**Sintaxis:** oauth2 << Get Authentication Response Error()
+**Sintaxis:** oauth2 &lt;&lt; Get Authentication Response Error()
 
 **Descripción:** Obtiene el error de respuesta de OAuth2.
 
@@ -2099,19 +2099,19 @@ error = oauth2 << Get Authentication Response Error();
 
 #### Get Auth Response Fields
 
-**Sintaxis:** obj << Get Auth Response Fields
+**Sintaxis:** obj &lt;&lt; Get Auth Response Fields
 
 **JMP Versión agregada:** 15
 
 #### Get Authentication Response Error
 
-**Sintaxis:** obj << Get Authentication Response Error
+**Sintaxis:** obj &lt;&lt; Get Authentication Response Error
 
 **JMP Versión agregada:** 18
 
 #### Get Authorization Header
 
-**Sintaxis:** oauth2 << Get Authorization Header
+**Sintaxis:** oauth2 &lt;&lt; Get Authorization Header
 
 **Descripción:** Obtiene el encabezado con el formato:
 
@@ -2222,7 +2222,7 @@ If( !Is Empty( data ),
 
 #### Get Authorization Response Fields
 
-**Sintaxis:** oauth2 << Get Authorization Response Fields()
+**Sintaxis:** oauth2 &lt;&lt; Get Authorization Response Fields()
 
 **Descripción:** Obtiene los valores de respuesta actuales de OAuth2 del servidor de autorización.
 
@@ -2268,7 +2268,7 @@ auth_response = oauth2 << Get Authorization Response Fields();
 
 #### Get Code
 
-**Sintaxis:** oauth2 << Get Code()
+**Sintaxis:** oauth2 &lt;&lt; Get Code()
 
 **Descripción:** Obtiene el código actual de OAuth2. De este modo se inicia la comunicación con el servidor de autorización si es necesario.
 
@@ -2314,7 +2314,7 @@ code = oauth2 << Get Code();
 
 #### Get Grant Type
 
-**Sintaxis:** oauth2 << Get Grant Type()
+**Sintaxis:** oauth2 &lt;&lt; Get Grant Type()
 
 **Descripción:** Obtiene el tipo de concesión actual de OAuth2.
 
@@ -2334,7 +2334,7 @@ Show( grant );
 
 #### Get Grant Types
 
-**Sintaxis:** oauth2 << Get Grant Types
+**Sintaxis:** oauth2 &lt;&lt; Get Grant Types
 
 **Descripción:** Obtiene los tipos de concesiones OAuth2 de JMP compatibles.
 
@@ -2355,7 +2355,7 @@ Show( grant_types );
 
 #### Get ID Token
 
-**Sintaxis:** oauth2 << Get ID Token()
+**Sintaxis:** oauth2 &lt;&lt; Get ID Token()
 
 **Descripción:** Obtiene el token de Id. actual de OAuth2. De este modo se inicia la comunicación con el servidor de autorización si es necesario.
 
@@ -2401,7 +2401,7 @@ id_token = oauth2 << Get ID Token();
 
 #### Get Refresh Token
 
-**Sintaxis:** oauth2 << Get Refresh Token()
+**Sintaxis:** oauth2 &lt;&lt; Get Refresh Token()
 
 **Descripción:** Obtiene el token de actualización actual de OAuth2. De este modo se inicia la comunicación con el servidor de autorización si es necesario.
 
@@ -2447,7 +2447,7 @@ refresh_token = oauth2 << Get Refresh Token();
 
 #### Get Scope
 
-**Sintaxis:** oauth2 << Get Scope()
+**Sintaxis:** oauth2 &lt;&lt; Get Scope()
 
 **Descripción:** Obtiene el alcance actual de OAuth2.
 
@@ -2493,7 +2493,7 @@ code = oauth2 << Get Scope();
 
 #### Get Window Title
 
-**Sintaxis:** oauth2 << Get Window Title
+**Sintaxis:** oauth2 &lt;&lt; Get Window Title
 
 **Descripción:** Obtiene el título de la ventana OAuth2.
 
@@ -2511,7 +2511,7 @@ title = oauth2 << Get Window Title;
 
 #### Grant Type
 
-**Sintaxis:** oauth2 << Grant Type("Authorization Code" | "Client Credentials" | "Refresh Token")
+**Sintaxis:** oauth2 &lt;&lt; Grant Type("Authorization Code" | "Client Credentials" | "Refresh Token")
 
 **Descripción:** El tipo de concesión solicitada tiene que ser uno de los tipos de concesión compatibles con JMP y el proveedor de la autorización OAuth2.
 
@@ -2530,13 +2530,13 @@ Show( grant );
 
 #### Has Auth Response  Error
 
-**Sintaxis:** obj << Has Auth Response  Error
+**Sintaxis:** obj &lt;&lt; Has Auth Response Error
 
 **JMP Versión agregada:** 18
 
 #### Has Authentication Response  Error
 
-**Sintaxis:** oauth2 << Has Authentication Response Error()
+**Sintaxis:** oauth2 &lt;&lt; Has Authentication Response Error()
 
 **Descripción:** Busca un error de respuesta de autenticación OAuth2.
 
@@ -2555,7 +2555,7 @@ If( oauth2 << Has Authentication Response Error(),
 
 #### Is Expired
 
-**Sintaxis:** oauth2 << Is Expired()
+**Sintaxis:** oauth2 &lt;&lt; Is Expired()
 
 **Descripción:** Devuelve si el token de acceso actual de OAuth2 ha caducado.
 
@@ -2601,7 +2601,7 @@ expired = oauth2 << Is Expired();
 
 #### Login Hint
 
-**Sintaxis:** oauth2 << Login Hint(hint)
+**Sintaxis:** oauth2 &lt;&lt; Login Hint(hint)
 
 **Descripción:** Establece el valor login_hint. login_hint es un parámetro OPCIONAL de la Solicitud de autenticación como "sugerencia" para el Servidor de autorización acerca del identificador de inicio de sesión que debe utilizar el usuario final para iniciar sesión (si es necesario).
 
@@ -2618,7 +2618,7 @@ oauth2 << Login Hint( "jmp_user@jmp.com" );
 
 #### Password
 
-**Sintaxis:** oauth2 << Password(...)
+**Sintaxis:** oauth2 &lt;&lt; Password(...)
 
 **Descripción:** Establece la contraseña de OAuth2 para el tipo de concesión contraseña.
 
@@ -2632,7 +2632,7 @@ Names Default To Here( 1 );
 
 #### Redirect URL
 
-**Sintaxis:** oauth2 << Redirect URL(...)
+**Sintaxis:** oauth2 &lt;&lt; Redirect URL(...)
 
 **Descripción:** Establece la URL de redirección de OAuth2 que se utilizó durante la creación del servicio web.
 
@@ -2650,7 +2650,7 @@ oauth2 << Redirect URL( redirect_url );
 
 #### Scope
 
-**Sintaxis:** oauth2 << Scope(...)
+**Sintaxis:** oauth2 &lt;&lt; Scope(...)
 
 **Descripción:** Establece el alcance de OAuth2, una forma de limitar el acceso de una aplicación a una cuenta.
 
@@ -2675,7 +2675,7 @@ oauth2 << Authorization Fields( auth_fields );
 
 #### Set Window Title
 
-**Sintaxis:** oauth2 << Set Window Title(title)
+**Sintaxis:** oauth2 &lt;&lt; Set Window Title(title)
 
 **Descripción:** Establece el título de la ventana OAuth2.
 
@@ -2692,7 +2692,7 @@ oauth2 << Set Window Title( "Authorization Window" );
 
 #### Token Fields
 
-**Sintaxis:** obj << Token Fields
+**Sintaxis:** obj &lt;&lt; Token Fields
 
 **Descripción:** Un arreglo asociativo de pares de clave y valor que se utilizarán en la cadena de consulta para la URL del token de OAuth2.
 
@@ -2717,7 +2717,7 @@ oauth2 << Token Fields( token_fields );
 
 #### Token URL
 
-**Sintaxis:** oauth2 << Token URL(...)
+**Sintaxis:** oauth2 &lt;&lt; Token URL(...)
 
 **Descripción:** Establece la URL del token OAuth2.
 
@@ -2735,7 +2735,7 @@ oauth2 << Token URL( token_url );
 
 #### Use Default Window Title
 
-**Sintaxis:** oauth2 << Use Default Window Title(1 | 0)
+**Sintaxis:** oauth2 &lt;&lt; Use Default Window Title(1 | 0)
 
 **Descripción:** Obtiene el título de la ventana OAuth2.
 
@@ -2753,7 +2753,7 @@ title = oauth2 << Get Window Title;
 
 #### Username
 
-**Sintaxis:** oauth2 << Username(...)
+**Sintaxis:** oauth2 &lt;&lt; Username(...)
 
 **Descripción:** Establece el nombre de usuario de OAuth2 para el tipo de concesión contraseña.
 

@@ -6,7 +6,7 @@
 
 ### Set Window Title
 
-**Syntax:** obj << Set Window Title
+**Syntax:** obj &lt;&lt; Set Window Title
 
 **Description:** Sets the window title.
 
@@ -23,7 +23,7 @@ w << Set Window Title( "New Title" );
 
 ### Bring Window To Front
 
-**Syntax:** obj << Bring Window To Front
+**Syntax:** obj &lt;&lt; Bring Window To Front
 
 **Description:** Brings the window to the front.
 
@@ -39,7 +39,7 @@ w << Bring Window To Front;
 
 ### Close Window
 
-**Syntax:** obj << Close Window( <"NoSave"> )
+**Syntax:** obj &lt;&lt; Close Window( &lt;"NoSave"&gt; )
 
 **Description:** Closes the window.
 
@@ -55,7 +55,7 @@ w << Close Window;
 
 ### Get Content Size
 
-**Syntax:** obj << Get Content Size
+**Syntax:** obj &lt;&lt; Get Content Size
 
 **Description:** Returns the content size within the window.
 
@@ -71,7 +71,7 @@ Show( c );
 
 ### Get On Close
 
-**Syntax:** obj << Get On Close
+**Syntax:** obj &lt;&lt; Get On Close
 
 **Description:** Returns the script or function that will run when the window closes.
 
@@ -96,7 +96,7 @@ Show( w << Get On Close );
 
 ### Get Page Setup
 
-**Syntax:** obj << Get Page Setup
+**Syntax:** obj &lt;&lt; Get Page Setup
 
 **Description:** Get page setup information for PDF
 
@@ -111,7 +111,7 @@ w << get page setup();
 
 ### Get Project
 
-**Syntax:** project = obj << Get Project()
+**Syntax:** project = obj &lt;&lt; Get Project()
 
 **Description:** Returns the parent project of the window, or Empty() if it is not in a project.
 
@@ -127,7 +127,7 @@ Show( c );
 
 ### Get Show Window
 
-**Syntax:** obj << Get Show Window
+**Syntax:** obj &lt;&lt; Get Show Window
 
 **Description:** Returns the visibility of the window.
 
@@ -145,7 +145,7 @@ Print( w << Get Show Window() );
 
 ### Get Web Support
 
-**Syntax:** obj << Get Web Support
+**Syntax:** obj &lt;&lt; Get Web Support
 
 **Description:** Return a number indicating the level of Interactive HTML support for the display object. 1 means some or all elements are supported. 0 means no support.
 
@@ -161,7 +161,7 @@ Show( s );
 
 ### Get Window Icon
 
-**Syntax:** obj << Get Window Icon
+**Syntax:** obj &lt;&lt; Get Window Icon
 
 **Description:** Returns the window icon.
 
@@ -177,7 +177,7 @@ Show( t );
 
 ### Get Window Position
 
-**Syntax:** obj << Get Window Position
+**Syntax:** obj &lt;&lt; Get Window Position
 
 **Description:** Returns the position of the window.
 
@@ -193,7 +193,7 @@ Show( p );
 
 ### Get Window Size
 
-**Syntax:** obj << Get Window Size
+**Syntax:** obj &lt;&lt; Get Window Size
 
 **Description:** Returns the size of the window.
 
@@ -209,7 +209,7 @@ Show( s );
 
 ### Get Window Title
 
-**Syntax:** obj << Get Window Title
+**Syntax:** obj &lt;&lt; Get Window Title
 
 **Description:** Returns the window title.
 
@@ -225,7 +225,7 @@ Show( t );
 
 ### Get Window View
 
-**Syntax:** obj << Get Window View
+**Syntax:** obj &lt;&lt; Get Window View
 
 **Description:** Returns the current window view. Windows can be "Visible", "Invisible", or "Private".
 
@@ -240,7 +240,7 @@ Print( w << Get Window View() );
 
 ### Is Modal Dialog
 
-**Syntax:** obj << Is Modal Dialog
+**Syntax:** obj &lt;&lt; Is Modal Dialog
 
 **Description:** Returns true if the window is a modal dialog. Only useful when called from a window handler callback.
 
@@ -259,7 +259,7 @@ With Window Handler(
 
 ### Maximize Window
 
-**Syntax:** obj << Maximize Window( <state=0|1> )
+**Syntax:** obj &lt;&lt; Maximize Window( &lt;state=0|1&gt; )
 
 **Description:** Maximizes the window. Default argument is 1.
 
@@ -277,7 +277,7 @@ w << Maximize Window( 0 );
 
 ### Minimize Window
 
-**Syntax:** obj << Minimize Window( <state=0|1> )
+**Syntax:** obj &lt;&lt; Minimize Window( &lt;state=0|1&gt; )
 
 **Description:** Minimizes the window. Default argument is 1.
 
@@ -295,7 +295,7 @@ w << Minimize Window( 0 );
 
 ### Move Window
 
-**Syntax:** obj << Move Window( x,y )
+**Syntax:** obj &lt;&lt; Move Window( x,y )
 
 **Description:** Moves the window to the specified position.
 
@@ -311,7 +311,7 @@ w << Move Window( 500, 500 );
 
 ### On Close
 
-**Syntax:** obj << On Close( script )
+**Syntax:** obj &lt;&lt; On Close( script )
 
 **Description:** Sets a script or function to run upon closing the window. This script should return 1 to allow the close, or 0 to prevent the window from closing.
 
@@ -359,7 +359,7 @@ w << On Close(
 
 ### Optimize Display
 
-**Syntax:** obj << Optimize Display
+**Syntax:** obj &lt;&lt; Optimize Display
 
 **Description:** Sets a data table&apos;s column widths and window to an optimum size.
 
@@ -374,7 +374,7 @@ dt << Optimize Display;
 
 ### Pad Window
 
-**Syntax:** obj << Pad Window( bool )
+**Syntax:** obj &lt;&lt; Pad Window( bool )
 
 **Description:** Turns window padding on or off.
 
@@ -391,7 +391,7 @@ r << Pad Window( 0 );
 
 ### Print Window
 
-**Syntax:** obj << Print Window
+**Syntax:** obj &lt;&lt; Print Window
 
 **Description:** Prints the window.
 
@@ -406,7 +406,7 @@ w << Print Window;
 
 ### Save Window Report
 
-**Syntax:** obj << Save Window Report( pathname, <embed data(0|1)> )
+**Syntax:** obj &lt;&lt; Save Window Report( pathname, &lt;embed data(0|1)&gt; )
 
 **Description:** Saves the current report window to a JMP report file (.jrp).
 
@@ -422,7 +422,7 @@ d << Save Window Report( "$DOCUMENTS/test.jrp", embed data( 1 ) );
 
 ### Set Content Size
 
-**Syntax:** obj << Set Content Size( x,y )
+**Syntax:** obj &lt;&lt; Set Content Size( x,y )
 
 **Description:** Sets the content size within the window.
 
@@ -448,7 +448,7 @@ w << Set Content Size( 400, 300 );
 
 ### Set Main Window
 
-**Syntax:** obj << Set Main Window
+**Syntax:** obj &lt;&lt; Set Main Window
 
 **Description:** Set the window to be the main window in JMP and sets the prior main window to be a normal window
 
@@ -463,7 +463,7 @@ w << Set Main Window;
 
 ### Set Page Setup
 
-**Syntax:** obj << Set Page Setup( <margins(left, top, right, bottom)>, <scale(s)>, <portrait(0|1)>, <paper size(p)>, <Table of Contents(always, never, default)>  )
+**Syntax:** obj &lt;&lt; Set Page Setup( &lt;margins(left, top, right, bottom)&gt;, &lt;scale(s)&gt;, &lt;portrait(0|1)&gt;, &lt;paper size(p)&gt;, &lt;Table of Contents(always, never, default)&gt; )
 
 **Description:** Sets the page setup information that is used during printing or saving as pdf. A Table of Contents can optionally be generated from Outline Boxes.
 
@@ -485,7 +485,7 @@ w << Save pdf( "$DOCUMENTS\test.pdf" );
 
 ### Set Print Footers
 
-**Syntax:** obj << Set Print Footers( left footer, center footer, right header )
+**Syntax:** obj &lt;&lt; Set Print Footers( left footer, center footer, right header )
 
 **Description:** Sets the left, center, and right footers for printed output
 
@@ -504,7 +504,7 @@ w << Print Window;
 
 ### Set Print Headers
 
-**Syntax:** obj << Set Print Headers( left header, center header, right header )
+**Syntax:** obj &lt;&lt; Set Print Headers( left header, center header, right header )
 
 **Description:** Sets the left, center, and right headers for printed output
 
@@ -523,7 +523,7 @@ w << Print Window;
 
 ### Set Window Icon
 
-**Syntax:** obj << Set Window Icon( icon name )
+**Syntax:** obj &lt;&lt; Set Window Icon( icon name )
 
 **Description:** Sets the window icon.
 
@@ -538,7 +538,7 @@ w << Set Window Icon( "Scatter3D" );
 
 ### Set Window Size
 
-**Syntax:** obj << Set Window Size( x,y )
+**Syntax:** obj &lt;&lt; Set Window Size( x,y )
 
 **Description:** Sets the size of the window.
 
@@ -553,7 +553,7 @@ w << Set Window Size( 800, 1200 );
 
 ### Show Window
 
-**Syntax:** obj << Show Window( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Window( state=0|1 )
 
 **Description:** Shows or hides the window. This is useful for hiding windows temporarily. On by default.
 
@@ -571,7 +571,7 @@ w << Show Window( 1 );
 
 ### Size Window
 
-**Syntax:** obj << Size Window( x,y )
+**Syntax:** obj &lt;&lt; Size Window( x,y )
 
 **Description:** Sets the size of the window.
 
@@ -586,7 +586,7 @@ w << Size Window( 500, 500 );
 
 ### Zoom Window
 
-**Syntax:** obj << Zoom Window
+**Syntax:** obj &lt;&lt; Zoom Window
 
 **Description:** Resizes the window to be large enough to show all of its contents.
 

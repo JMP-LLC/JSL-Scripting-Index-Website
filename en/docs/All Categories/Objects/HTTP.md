@@ -8,7 +8,7 @@
 
 #### Authentication Method
 
-**Syntax:** obj << Authentication Method(method)
+**Syntax:** obj &lt;&lt; Authentication Method(method)
 
 **Description:** Enforces an authentication method. Valid values are:
 
@@ -59,7 +59,7 @@ request << Authentication Method( "KERBEROS" );
 
 #### Blob
 
-**Syntax:** obj << Blob( binary data, <content-type> )
+**Syntax:** obj &lt;&lt; Blob( binary data, &lt;content-type&gt; )
 
 **Description:** This will set a Blob value in the request. The Blob value will be used as the body of the document. The request content type header will automatically be set to "Content-Type: application/octet-stream".
 
@@ -80,7 +80,7 @@ data = request << Send;
 
 #### Bypass Proxy
 
-**Syntax:** obj << Bypass Proxy(localhost)
+**Syntax:** obj &lt;&lt; Bypass Proxy(localhost)
 
 **Description:** Comma-separated list of hosts which do not use a proxy, if one is specified. The only wildcard is a single * character, which matches all hosts, and effectively disables the proxy. Each name in this list is matched as either a domain which contains the hostname, or the hostname itself. For example, local.com would match local.com, local.com:80, and www.local.com, but not www.notlocal.com.
 
@@ -97,7 +97,7 @@ request << Bypass Proxy( "localhost" );
 
 #### Certificates
 
-**Syntax:** obj << Certificates(certificate file)
+**Syntax:** obj &lt;&lt; Certificates(certificate file)
 
 **Description:** Use the specified certificate file for verification. The file might contain multiple CA certificates. The certificate(s) must be in PEM format.
 
@@ -112,7 +112,7 @@ request << Certificates( "c:\certs\my_certificate.crt" );
 
 #### Cookie
 
-**Syntax:** obj << Cookie([[ key=> value ]]
+**Syntax:** obj &lt;&lt; Cookie([[ key=&gt; value ]]
 
 **Description:** Set a cookie in the request.
 
@@ -131,7 +131,7 @@ data = request << Send;
 
 #### Cookie File
 
-**Syntax:** obj << Cookie File(<path>, <"replace" | "rename" | "append">)
+**Syntax:** obj &lt;&lt; Cookie File(&lt;path&gt;, &lt;"replace" | "rename" | "append"&gt;)
 
 **Description:** Specify an alternate cookie file.
 
@@ -146,7 +146,7 @@ data = request << Cookie File( "$DESKTOP\..\cookie.txt" );
 
 #### Curlrc
 
-**Syntax:** obj << Curlrc(<true | false>)
+**Syntax:** obj &lt;&lt; Curlrc(&lt;true | false&gt;)
 
 **Description:** Configures the request to use a standard .curl file.
 
@@ -163,7 +163,7 @@ request << Curlrc( "true" );
 
 #### Curlrc File
 
-**Syntax:** obj << Curlrc File(<path>)
+**Syntax:** obj &lt;&lt; Curlrc File(&lt;path&gt;)
 
 **Description:** Configures the request to use an alternate .curlrc file.
 
@@ -181,7 +181,7 @@ request << Curlrc( "true" );
 
 #### DNS Timeout
 
-**Syntax:** obj << DNS Timeout(seconds)
+**Syntax:** obj &lt;&lt; DNS Timeout(seconds)
 
 **Description:** The default DNS cache timeout for the connection is 60 seconds. This value can be adjusted to accommodate DNS caching. Set to 0 to completely disable caching, or set to -1 to make the cached entries remain in memory.
 
@@ -204,7 +204,7 @@ obj = New Window( "Mastering JMP", img );
 
 #### Decode64 Char
 
-**Syntax:** obj << Decode64 Char( value )
+**Syntax:** obj &lt;&lt; Decode64 Char( value )
 
 **Description:** Decode the string using Base 64 encoding
 
@@ -221,7 +221,7 @@ data = request << Decode64 Char(
 
 #### Download
 
-**Syntax:** obj << Download( path, <"replace" | "rename" | "append"> )
+**Syntax:** obj &lt;&lt; Download( path, &lt;"replace" | "rename" | "append"&gt; )
 
 **Description:** Downloads the HTTP Response to a file. Useful for downloading files from a web service.The replace option overwrites any existing file.The rename option uses sequential file names when a duplicate name is found(file, file(1), file(2)...).The append option appends to the existing file. Using show progress shows a cancelable progress bar with the percentage of the file downloaded.
 
@@ -244,7 +244,7 @@ If( !Is Empty( file ),
 
 #### Encode64 Char
 
-**Syntax:** obj << Encode64 Char( value )
+**Syntax:** obj &lt;&lt; Encode64 Char( value )
 
 **Description:** Encode the string using Base 64 encoding
 
@@ -259,7 +259,7 @@ data = request << Encode64 Char( "Man is distinguished, not only by his reason, 
 
 #### File
 
-**Syntax:** obj << File ( path, <content-type> )
+**Syntax:** obj &lt;&lt; File ( path, &lt;content-type&gt; )
 
 **Description:** This will set a File value in the request. The File contents will be used as the body of the document. The request content-type header will automatically be set to the appropriate content based on the file extension or application/octet-stream if not found.
 
@@ -279,7 +279,7 @@ data = request << Send;
 
 #### Form
 
-**Syntax:** obj << Form(Fields([[ key=> value ]], <URI Encode(1 | 0 | Safe(...))>), Files({ key1, {path1, path2, ..}, key2, {path3, path4} }))
+**Syntax:** obj &lt;&lt; Form(Fields([[ key=&gt; value ]], &lt;URI Encode(1 | 0 | Safe(...))&gt;), Files({ key1, {path1, path2, ..}, key2, {path3, path4} }))
 
 **Description:** Sets the form data value in the request. The form will be used as the body of the document. Form data can have fields and files elements.
 
@@ -308,7 +308,7 @@ data = request << Send;
 
 #### Get Certificate Info
 
-**Syntax:** obj << Get Certificate Info
+**Syntax:** obj &lt;&lt; Get Certificate Info
 
 **Description:** Shows details about the certificate, such as who issued it, when it expires, and other information to ensure the certificate is trustworthy.
 
@@ -323,7 +323,7 @@ request << Get Certificate Info;
 
 #### Get Last URL
 
-**Syntax:** obj << Get Last URL
+**Syntax:** obj &lt;&lt; Get Last URL
 
 **Description:** Gets the last URL used in the request. Useful to find the redirected URL.
 
@@ -340,7 +340,7 @@ Write( Char( request << Get Last URL ) );
 
 #### Get MIME Type
 
-**Syntax:** mimetype = obj << Get MIME Type
+**Syntax:** mimetype = obj &lt;&lt; Get MIME Type
 
 **Description:** After Send (or Download) is used with a request, this can be used to retrieve the MIME type of the returned data.
 
@@ -357,7 +357,7 @@ Write( request << Get Mime Type() || "\!n" );
 
 #### Get Method
 
-**Syntax:** obj << Get Last Method
+**Syntax:** obj &lt;&lt; Get Last Method
 
 **Description:** Gets the last HTTP method used in the request.
 
@@ -379,7 +379,7 @@ Write( Char( request << Get Method ) || "\!n" );
 
 #### Get Response Headers
 
-**Syntax:** obj << Get Response Headers
+**Syntax:** obj &lt;&lt; Get Response Headers
 
 **Description:** The response headers are an associative array of key/value pairs returned after a request has been sent. HTTP header definitions can be found here: https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html. Date, Expires and Last-Modified keys will be converted to JMP dates. Age and Content-Length keys will be converted to numbers. All other values will be character.
 
@@ -403,7 +403,7 @@ For( i = 1, i <= N Items( keys ), i++,
 
 #### Get Status
 
-**Syntax:** obj << Get Status
+**Syntax:** obj &lt;&lt; Get Status
 
 **Description:** Returns the status of the request after a Send. The status is the HTTP status if there are no connection errors. Otherwise, the connection status. 200-299 is successful.
 
@@ -422,7 +422,7 @@ If( request << Get Status == 200,
 
 #### Get Status Message
 
-**Syntax:** obj << Get Status Message
+**Syntax:** obj &lt;&lt; Get Status Message
 
 **Description:** Returns the status message of the request after a Send message. The status message is the HTTP status message if there are no connection errors. Otherwise, the connection status message. A status of 200-299 is successful.
 
@@ -439,7 +439,7 @@ Write( "\!n" || Char( request << Get Status Message ) || "\!n" );
 
 #### Get Status Msg
 
-**Syntax:** obj << Get Status Msg
+**Syntax:** obj &lt;&lt; Get Status Msg
 
 **Description:** Returns the status message of the request after a Send. This is an alias of GetStatusMessage. The status message is the HTTP status message if there are no connection errors. Otherwise, the connection status message. A status of 200-299 is successful.
 
@@ -456,7 +456,7 @@ Write( "\!n" || Char( request << Get Status Msg ) || "\!n" );
 
 #### Get Warning Headers
 
-**Syntax:** obj << Get Warning Headers
+**Syntax:** obj &lt;&lt; Get Warning Headers
 
 **Description:** Gets the warning header values (if any) from the request.
 
@@ -482,7 +482,7 @@ If( !Is Empty( warning_headers ),
 
 #### GetVersion
 
-**Syntax:** request << GetVersion
+**Syntax:** request &lt;&lt; GetVersion
 
 **Description:** Returns the Current version of cURL being used in JMP
 
@@ -495,7 +495,7 @@ Write( New HTTP Request() << GetVersion );
 
 #### Has Client Error
 
-**Syntax:** obj << Has Client Error
+**Syntax:** obj &lt;&lt; Has Client Error
 
 **Description:** True if the HTTP status is 400-499.
 
@@ -515,7 +515,7 @@ Write( msg );
 
 #### Has Error
 
-**Syntax:** obj << Has Error
+**Syntax:** obj &lt;&lt; Has Error
 
 **Description:** True if the HTTP status is 400-599.
 
@@ -535,7 +535,7 @@ Write( msg );
 
 #### Has Information
 
-**Syntax:** obj << Has Information
+**Syntax:** obj &lt;&lt; Has Information
 
 **Description:** True if the HTTP status is 100-199.
 
@@ -556,7 +556,7 @@ Write( msg );
 
 #### Has Redirection
 
-**Syntax:** obj << Has Redirection
+**Syntax:** obj &lt;&lt; Has Redirection
 
 **Description:** True if the HTTP status is 300-399.
 
@@ -577,7 +577,7 @@ Write( msg );
 
 #### Has Server Error
 
-**Syntax:** obj << Has Server Error
+**Syntax:** obj &lt;&lt; Has Server Error
 
 **Description:** True if the HTTP status is 500-599.
 
@@ -597,7 +597,7 @@ Write( msg );
 
 #### Has Warning
 
-**Syntax:** obj << Has Warning
+**Syntax:** obj &lt;&lt; Has Warning
 
 **Description:** True if the HTTP status has warning headers
 
@@ -623,7 +623,7 @@ If( !request << Has Warning,
 
 #### Headers
 
-**Syntax:** obj << Headers({header 1}, {header 2} | [[ key=> value, key2=>value2 ]])
+**Syntax:** obj &lt;&lt; Headers({header 1}, {header 2} | [[ key=&gt; value, key2=&gt;value2 ]])
 
 **Description:** HTTP header definitions can be found here:
 
@@ -650,7 +650,7 @@ Write( json || "\!n" );
 
 #### Insecure
 
-**Syntax:** obj << Insecure(<"true"> | <"false">) | <"prompt">
+**Syntax:** obj &lt;&lt; Insecure(&lt;"true"&gt; | &lt;"false"&gt;) | &lt;"prompt"&gt;
 
 **Description:** By default, certificate validation is on. If set to true, this will allow requests to complete without certificate validation. If set to prompt, this will allow a user to accept the certificate and complete the request as needed.
 
@@ -673,7 +673,7 @@ obj = New Window( "Mastering JMP", img );
 
 #### Is Success
 
-**Syntax:** obj << Is Success
+**Syntax:** obj &lt;&lt; Is Success
 
 **Description:** True if the HTTP status is 200-299.
 
@@ -695,7 +695,7 @@ If( request << Is Success,
 
 #### Is Successful
 
-**Syntax:** obj << Is Successful
+**Syntax:** obj &lt;&lt; Is Successful
 
 **Description:** True if the HTTP status is 200-299.
 
@@ -723,7 +723,7 @@ If( request << Is Successful,
 
 #### Is Valid
 
-**Syntax:** obj << Is Valid
+**Syntax:** obj &lt;&lt; Is Valid
 
 **Description:** Is the request valid
 
@@ -738,7 +738,7 @@ data = request << Is Valid();
 
 #### Is Verbose
 
-**Syntax:** obj << Is Verbose
+**Syntax:** obj &lt;&lt; Is Verbose
 
 **Description:** Is the request automatically logging status messages
 
@@ -753,7 +753,7 @@ data = request << Is Verbose();
 
 #### JSON
 
-**Syntax:** obj << JSON( json data )
+**Syntax:** obj &lt;&lt; JSON( json data )
 
 **Description:** This will set a JSON string value in the request. The JSON string will be used as the body of the document. The request content type header will automatically be set to "Content-Type: application/json". You can use the As JSON Expr method to convert an Associative Array to a JSON string.
 
@@ -772,7 +772,7 @@ data = request << Send;
 
 #### Max Redirect
 
-**Syntax:** obj << Max Redirect(...)
+**Syntax:** obj &lt;&lt; Max Redirect(...)
 
 **Description:** Specify number of redirects the request will follow.
 
@@ -792,7 +792,7 @@ data = request << Send;
 
 #### Method
 
-**Syntax:** obj << Method("Post" | "Get" | "Put" | "Patch"| "Delete")
+**Syntax:** obj &lt;&lt; Method("Post" | "Get" | "Put" | "Patch"| "Delete")
 
 **Description:** Sets the method for the request. Currently, Get, Post, Put, Patch, Delete, and Head are supported.
 
@@ -813,7 +813,7 @@ dt << Delete Rows();
 
 #### Netrc
 
-**Syntax:** obj << Netrc(<true | false>)
+**Syntax:** obj &lt;&lt; Netrc(&lt;true | false&gt;)
 
 **Description:** Configures the request to use a standard .netrc file.
 
@@ -862,7 +862,7 @@ request << Netrc( "true" );
 
 #### Netrc File
 
-**Syntax:** obj << Netrc File(<path>)
+**Syntax:** obj &lt;&lt; Netrc File(&lt;path&gt;)
 
 **Description:** Configures the request to use an alternate .netrc file.
 
@@ -910,7 +910,7 @@ request << Netrc( "true" );
 
 #### Password
 
-**Syntax:** obj << Password(passwd)
+**Syntax:** obj &lt;&lt; Password(passwd)
 
 **Description:** Sets the password on the request used for basic authentication. This value is used with the request user name, where both user name and password are concatenated with a &apos;:&apos; (name:password) and passed to the web service. In addition, an encoded (such as a Kerberos V5 encoded) username/password value can be used here.
 
@@ -931,7 +931,7 @@ data = request << Send;
 
 #### Proxy Server
 
-**Syntax:** obj << Proxy Server(proxy_url)
+**Syntax:** obj &lt;&lt; Proxy Server(proxy_url)
 
 **Description:** The proxy URL can be specified the same way as the proxy environment variables, including the protocol prefix (http://) and the embedded user + password.
 
@@ -947,7 +947,7 @@ request << Proxy Server( url );
 
 #### Proxy User
 
-**Syntax:** obj << Proxy User(username:password)
+**Syntax:** obj &lt;&lt; Proxy User(username:password)
 
 **Description:** User and password that might be provided in the proxy string are URL decoded. This allows you to pass in special characters such as @ by using %40 or pass in a colon with %3a.
 
@@ -964,7 +964,7 @@ request << Proxy User( "clark%20kent:superman" );
 
 #### Query String
 
-**Syntax:** obj << Query String([[ key=> value ]], <URI Encode(1|0|Safe(...))>)
+**Syntax:** obj &lt;&lt; Query String([[ key=&gt; value ]], &lt;URI Encode(1|0|Safe(...))&gt;)
 
 **Description:** Sets the Query String value in the request. This is an Associative Array key/value collection of character data. The key/value pairs are URL encoded (escaped) when they are sent to the web service.
 
@@ -983,7 +983,7 @@ data = request << Send;
 
 #### Reset
 
-**Syntax:** obj << Reset(URL(...), Method(...), <Form(<Fields(...)>, <Files(...)>)> | <File(...)> | <Blob(...)> | <JSON(...)>, <QueryString(...)>, <Headers(...)>, <Username(...)>, <Password(...)>)
+**Syntax:** obj &lt;&lt; Reset(URL(...), Method(...), &lt;Form(&lt;Fields(...)&gt;, &lt;Files(...)&gt;)&gt; | &lt;File(...)&gt; | &lt;Blob(...)&gt; | &lt;JSON(...)&gt;, &lt;QueryString(...)&gt;, &lt;Headers(...)&gt;, &lt;Username(...)&gt;, &lt;Password(...)&gt;)
 
 **Description:** Resets request to new values.
 
@@ -1000,7 +1000,7 @@ json2 = request << Send;
 
 #### Run
 
-**Syntax:** obj << Run
+**Syntax:** obj &lt;&lt; Run
 
 **Description:** Runs the request. This is an alias of Send. The return value from Run will be either character data or binary BLOB. You can check the return with the Is String JSL function.
 
@@ -1017,7 +1017,7 @@ Write( json || "\!n" );
 
 #### SSL Version
 
-**Syntax:** obj << SSL Version (version)
+**Syntax:** obj &lt;&lt; SSL Version (version)
 
 **Description:** "DEFAULT"  Use the default negotiated version (recommended).
 
@@ -1064,7 +1064,7 @@ request << SSL Version( "1+" );
 
 #### Secure
 
-**Syntax:** obj << Secure(<"true"> | <"false">) | <"prompt">
+**Syntax:** obj &lt;&lt; Secure(&lt;"true"&gt; | &lt;"false"&gt;) | &lt;"prompt"&gt;
 
 **Description:** By default, certificate validation is on. If set to false, this will allow requests to complete without certificate validation. If set to prompt, this will allow a user to accept the certificate and complete the request as needed.
 
@@ -1087,7 +1087,7 @@ obj = New Window( "Mastering JMP", img );
 
 #### Send
 
-**Syntax:** obj << Send(<"text" | "blob">, <"show progress download" | "show progress upload" | "show progress both" | "show progress">)
+**Syntax:** obj &lt;&lt; Send(&lt;"text" | "blob"&gt;, &lt;"show progress download" | "show progress upload" | "show progress both" | "show progress"&gt;)
 
 **Description:** Sends the request. The return value from Send will be either character data or binary BLOB. You can check the return with the Is String JSL function. Using show progress download will show a cancelable progress bar with the progress of data downloaded. Using show progress upload will show a cancelable progress bar with the progress of data uploaded. Using show progress both will show a cancelable progress bar with the progress of data uploaded and downloaded. Using show progress will show a cancelable progress bar with the progress of data uploaded or downloaded (or both). For posting forms, show progress will show upload and download progress. For posting files, show progress will show upload progress. For retrieving data, show progress will show download progress.
 
@@ -1104,7 +1104,7 @@ Write( json || "\!n" );
 
 #### Text
 
-**Syntax:** obj << Text( text data, <content-type>)
+**Syntax:** obj &lt;&lt; Text( text data, &lt;content-type&gt;)
 
 **Description:** This will set text string value in the request. The text string will be used as the body of the document. The request content type header will automatically be set to "Content-Type: text/plain"
 
@@ -1123,7 +1123,7 @@ data = request << Send;
 
 #### Timeout
 
-**Syntax:** obj << Timeout(seconds)
+**Syntax:** obj &lt;&lt; Timeout(seconds)
 
 **Description:** The default timeout for the request action to complete is 60 seconds. This value can be adjusted to accommodate more time consuming web service actions.
 
@@ -1146,7 +1146,7 @@ obj = New Window( "Mastering JMP", img );
 
 #### URL
 
-**Syntax:** obj << URL(path)
+**Syntax:** obj &lt;&lt; URL(path)
 
 **Description:** When the request is created (or used with Reset), this can be used as a parameter. obj = HTTP Request(URL("http://google.com"));
 
@@ -1166,7 +1166,7 @@ s = New HTTP Request(
 
 #### Use Cookies
 
-**Syntax:** obj << Use Cookies(<true | false>))
+**Syntax:** obj &lt;&lt; Use Cookies(&lt;true | false&gt;))
 
 **Description:** Configures the request to use cookies for the session. The default is true.
 
@@ -1181,7 +1181,7 @@ data = request << Use Cookies( "false" );
 
 #### UserPwd
 
-**Syntax:** obj << UserPwd(clark kent:superman)
+**Syntax:** obj &lt;&lt; UserPwd(clark kent:superman)
 
 **Description:** Sets the user and password field on the request used for authentication. The format of which is: [user name]:[password]. The user and password strings are not URL decoded, so there is no way to send in a user name containing a colon using this option.
 
@@ -1202,7 +1202,7 @@ data = request << Send;
 
 #### Username
 
-**Syntax:** obj << Username(name)
+**Syntax:** obj &lt;&lt; Username(name)
 
 **Description:** Sets the user name on the request used for basic authentication. This value is used in conjunction with request password, where both user name and password are concatenated with a &apos;:&apos; (name:password) and passed to the web service.
 
@@ -1224,7 +1224,7 @@ data = request << Send;
 
 #### Verbose
 
-**Syntax:** obj << Verbose(<"true"> | <"false">)
+**Syntax:** obj &lt;&lt; Verbose(&lt;"true"&gt; | &lt;"false"&gt;)
 
 **Description:** Writes extensive error messages to the log. The default is true.
 
@@ -1250,7 +1250,7 @@ Write( "\!n" || Char( request << Get Status Message ) || "\!n" );
 
 #### Verify SSL
 
-**Syntax:** obj << Verify SSL(<"true"> | <"false">)
+**Syntax:** obj &lt;&lt; Verify SSL(&lt;"true"&gt; | &lt;"false"&gt;)
 
 **Description:** Certificate verification is on. If set to false, requests to complete without certificate verification will be allowed.
 
@@ -1273,7 +1273,7 @@ obj = New Window( "Mastering JMP", img );
 
 #### XML
 
-**Syntax:** obj << XML( xml data )
+**Syntax:** obj &lt;&lt; XML( xml data )
 
 **Description:** This will set an xml string value in the request. The xml string will be used as the body of the document. The request content type header will automatically be set to "Content-Type: application/xml"
 
@@ -1306,7 +1306,7 @@ data = request << Send;
 
 #### Add
 
-**Syntax:** obj << Add(request, <label>)
+**Syntax:** obj &lt;&lt; Add(request, &lt;label&gt;)
 
 **Description:** Add an HTTP Request to MultiHTTPRequest. An optional label can be used. This is useful when performing parallel downloads. All HTTP Requests are validated before they are used.
 
@@ -1344,7 +1344,7 @@ For( i = 1, i <= N Items( http_requests ), i++,
 
 #### Download
 
-**Syntax:** obj << Download(<"show progress">, <"detailed">)
+**Syntax:** obj &lt;&lt; Download(&lt;"show progress"&gt;, &lt;"detailed"&gt;)
 
 **Description:** Downloads the HTTP Responses to files in parallel. Useful for downloading multiple files at once from one or more web services. Using show progress will show a cancelable progress bar with the progress of the files downloaded. Using details will show the individual download progress.
 
@@ -1411,7 +1411,7 @@ promise << On Error( process_error );
 
 #### Get Requests
 
-**Syntax:** obj << Get Requests()
+**Syntax:** obj &lt;&lt; Get Requests()
 
 ```jsl
 
@@ -1440,7 +1440,7 @@ http_requests = requests << Get Requests();
 
 #### Has Error
 
-**Syntax:** obj << Has Error
+**Syntax:** obj &lt;&lt; Has Error
 
 **Description:** Returns true if the multi request has an error. The multi request has an error if any its HTTP requests have an error.
 
@@ -1470,7 +1470,7 @@ Show( requests << Has Error );
 
 #### Is Success
 
-**Syntax:** obj << Is Success
+**Syntax:** obj &lt;&lt; Is Success
 
 **Description:** Returns true if the multi request is successful. The multi request is successful if all of its HTTP requests are successful.
 
@@ -1492,7 +1492,7 @@ Show( requests << Is Successful );
 
 #### Is Successful
 
-**Syntax:** obj << Is Successful
+**Syntax:** obj &lt;&lt; Is Successful
 
 **Description:** Returns true if the multi request is successful. The multi request is successful if all of its HTTP requests are successful.
 
@@ -1514,7 +1514,7 @@ Show( requests << Is Successful );
 
 #### Is Valid
 
-**Syntax:** obj << Is Valid
+**Syntax:** obj &lt;&lt; Is Valid
 
 **Description:** Is the multi request valid. The multi request is valid if all its HTTP requests are valid.
 
@@ -1543,7 +1543,7 @@ Show( requests << Is Valid() );
 
 #### Reset
 
-**Syntax:** obj << Reset()
+**Syntax:** obj &lt;&lt; Reset()
 
 **Description:** Resets multi requests. This resets any HTTP request that has already been added.
 
@@ -1576,7 +1576,7 @@ requests << Reset();
 
 #### Send
 
-**Syntax:** obj << Send(<"text" | "blob">, <"show progress download" | "show progress upload" | "show progress both" | "show progress">)
+**Syntax:** obj &lt;&lt; Send(&lt;"text" | "blob"&gt;, &lt;"show progress download" | "show progress upload" | "show progress both" | "show progress"&gt;)
 
 **Description:** The return value from Send will be either character data or binary BLOB. You can check the return with the Is String JSL function. Using show progress download will show a cancelable progress bar with the progress of data downloaded. Using show progress upload will show a cancelable progress bar with the progress of data uploaded. Using show progress both will show a cancelable progress bar with the progress of data uploaded and downloaded. Using show progress will show a cancelable progress bar with the progress of data uploaded or downloaded (or both). For posting forms, show progress will show upload and download progress. For posting files, show progress will show upload progress. For retrieving data, show progress will show download progress.
 
@@ -1745,7 +1745,7 @@ addSentimentColumns( dt2, "Name", 1, 1 );
 
 #### Authorization Fields
 
-**Syntax:** oauth2 << Authorization Fields(...)
+**Syntax:** oauth2 &lt;&lt; Authorization Fields(...)
 
 **Description:** Authorization fields is an associative array of key and value pairs to be used in the query string for the OAuth2 authorization URL.
 
@@ -1770,7 +1770,7 @@ oauth2 << Authorization Fields( auth_fields );
 
 #### Authorization URL
 
-**Syntax:** oauth2 << Authorization URL(...)
+**Syntax:** oauth2 &lt;&lt; Authorization URL(...)
 
 **Description:** Sets the OAuth2 authorization URL.
 
@@ -1786,7 +1786,7 @@ oauth2 << Authorization URL( auth_url );
 
 #### Browser Type
 
-**Syntax:** oauth2 << Browser Type("Default" | "Embedded" | "External")
+**Syntax:** oauth2 &lt;&lt; Browser Type("Default" | "Embedded" | "External")
 
 **Description:** The Default option is to use the embedded browser for OAuth2 authentication unless authenticating with Google. The Embedded option is to use the embedded browser for OAuth2 authentication unless authenticating with Google (currently the same as Default). The External option is to use the external browser for OAuth2 authentication and copy the resulting code/URL into the text area in order to complete authentication.
 
@@ -1835,7 +1835,7 @@ data = request << Send;
 
 #### Client Id
 
-**Syntax:** oauth2 << Client Id(...)
+**Syntax:** oauth2 &lt;&lt; Client Id(...)
 
 **Description:** Sets the OAuth2 client ID is a public identifier that was used during web service creation.
 
@@ -1854,7 +1854,7 @@ oauth2 << Client Id( client_id );
 
 #### Client Secret
 
-**Syntax:** oauth2 << Client Secret(...)
+**Syntax:** oauth2 &lt;&lt; Client Secret(...)
 
 **Description:** Sets the OAuth2 client secret that was created during web service creation.
 
@@ -1873,7 +1873,7 @@ oauth2 << Client Secret( client_secret );
 
 #### Code Verifier
 
-**Syntax:** oauth2 << Code Verifier(<"cdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._~">
+**Syntax:** oauth2 &lt;&lt; Code Verifier(&lt;"cdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._~"&gt;
 
 **Description:** The code verifier is a cryptographically random string that the client uses to identify itself when exchanging an authorization code for an access token. It has a minimum length of 43 characters and a maximum length of 128 characters.
 
@@ -1888,7 +1888,7 @@ oauth2 << Code Verifier( "cdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123
 
 #### Get Access Token
 
-**Syntax:** oauth2 << Get Access Token()
+**Syntax:** oauth2 &lt;&lt; Get Access Token()
 
 **Description:** Gets the current OAuth2 access token. This initiates communication to the authorization server if needed.
 
@@ -1932,7 +1932,7 @@ access_token = oauth2 << Get Access Token();
 
 #### Get Auth Response Error
 
-**Syntax:** oauth2 << Get Authentication Response Error()
+**Syntax:** oauth2 &lt;&lt; Get Authentication Response Error()
 
 **Description:** Gets the OAuth2 response error.
 
@@ -1947,15 +1947,15 @@ error = oauth2 << Get Authentication Response Error();
 
 #### Get Auth Response Fields
 
-**Syntax:** obj << Get Auth Response Fields
+**Syntax:** obj &lt;&lt; Get Auth Response Fields
 
 #### Get Authentication Response Error
 
-**Syntax:** obj << Get Authentication Response Error
+**Syntax:** obj &lt;&lt; Get Authentication Response Error
 
 #### Get Authorization Header
 
-**Syntax:** oauth2 << Get Authorization Header
+**Syntax:** oauth2 &lt;&lt; Get Authorization Header
 
 **Description:** Gets the header in the form:
 
@@ -2064,7 +2064,7 @@ If( !Is Empty( data ),
 
 #### Get Authorization Response Fields
 
-**Syntax:** oauth2 << Get Authorization Response Fields()
+**Syntax:** oauth2 &lt;&lt; Get Authorization Response Fields()
 
 **Description:** Gets the current OAuth2 response values from the authorization server.
 
@@ -2108,7 +2108,7 @@ auth_response = oauth2 << Get Authorization Response Fields();
 
 #### Get Code
 
-**Syntax:** oauth2 << Get Code()
+**Syntax:** oauth2 &lt;&lt; Get Code()
 
 **Description:** Gets the current OAuth2 code. This initiates communication to the authorization server if needed.
 
@@ -2152,7 +2152,7 @@ code = oauth2 << Get Code();
 
 #### Get Grant Type
 
-**Syntax:** oauth2 << Get Grant Type()
+**Syntax:** oauth2 &lt;&lt; Get Grant Type()
 
 **Description:** Gets the current OAuth2 grant type.
 
@@ -2170,7 +2170,7 @@ Show( grant );
 
 #### Get Grant Types
 
-**Syntax:** oauth2 << Get Grant Types
+**Syntax:** oauth2 &lt;&lt; Get Grant Types
 
 **Description:** Gets the supported JMP OAuth2 grant types.
 
@@ -2189,7 +2189,7 @@ Show( grant_types );
 
 #### Get ID Token
 
-**Syntax:** oauth2 << Get ID Token()
+**Syntax:** oauth2 &lt;&lt; Get ID Token()
 
 **Description:** Gets the current OAuth2 ID token. This initiates communication to the authorization server if needed.
 
@@ -2233,7 +2233,7 @@ id_token = oauth2 << Get ID Token();
 
 #### Get Refresh Token
 
-**Syntax:** oauth2 << Get Refresh Token()
+**Syntax:** oauth2 &lt;&lt; Get Refresh Token()
 
 **Description:** Gets the current OAuth2 refresh token. This initiates communication to the authorization server if needed.
 
@@ -2277,7 +2277,7 @@ refresh_token = oauth2 << Get Refresh Token();
 
 #### Get Scope
 
-**Syntax:** oauth2 << Get Scope()
+**Syntax:** oauth2 &lt;&lt; Get Scope()
 
 **Description:** Gets the current OAuth2 scope.
 
@@ -2321,7 +2321,7 @@ code = oauth2 << Get Scope();
 
 #### Get Window Title
 
-**Syntax:** oauth2 << Get Window Title
+**Syntax:** oauth2 &lt;&lt; Get Window Title
 
 **Description:** Gets the OAuth2 window title.
 
@@ -2337,7 +2337,7 @@ title = oauth2 << Get Window Title;
 
 #### Grant Type
 
-**Syntax:** oauth2 << Grant Type("Authorization Code" | "Client Credentials" | "Refresh Token")
+**Syntax:** oauth2 &lt;&lt; Grant Type("Authorization Code" | "Client Credentials" | "Refresh Token")
 
 **Description:** The requested grant type has to be one of the grant types supported by JMP and the OAuth2 authorization provider.
 
@@ -2354,11 +2354,11 @@ Show( grant );
 
 #### Has Auth Response  Error
 
-**Syntax:** obj << Has Auth Response  Error
+**Syntax:** obj &lt;&lt; Has Auth Response Error
 
 #### Has Authentication Response  Error
 
-**Syntax:** oauth2 << Has Authentication Response Error()
+**Syntax:** oauth2 &lt;&lt; Has Authentication Response Error()
 
 **Description:** Checks for an OAuth2 authentication response error.
 
@@ -2375,7 +2375,7 @@ If( oauth2 << Has Authentication Response Error(),
 
 #### Is Expired
 
-**Syntax:** oauth2 << Is Expired()
+**Syntax:** oauth2 &lt;&lt; Is Expired()
 
 **Description:** Returns whether the current OAuth2 access token has expired.
 
@@ -2419,7 +2419,7 @@ expired = oauth2 << Is Expired();
 
 #### Login Hint
 
-**Syntax:** oauth2 << Login Hint(hint)
+**Syntax:** oauth2 &lt;&lt; Login Hint(hint)
 
 **Description:** Sets the login_hint value. login_hint is an OPTIONAL parameter in the Authentication Request as a "Hint" to the Authorization Server about the login identifier the End-User might use to log in (if necessary).
 
@@ -2434,7 +2434,7 @@ oauth2 << Login Hint( "jmp_user@jmp.com" );
 
 #### Password
 
-**Syntax:** oauth2 << Password(...)
+**Syntax:** oauth2 &lt;&lt; Password(...)
 
 **Description:** Sets the OAuth2 password for the password grant type.
 
@@ -2446,7 +2446,7 @@ Names Default To Here( 1 );
 
 #### Redirect URL
 
-**Syntax:** oauth2 << Redirect URL(...)
+**Syntax:** oauth2 &lt;&lt; Redirect URL(...)
 
 **Description:** Sets the OAuth2 redirect URL that was used during web service creation.
 
@@ -2462,7 +2462,7 @@ oauth2 << Redirect URL( redirect_url );
 
 #### Scope
 
-**Syntax:** oauth2 << Scope(...)
+**Syntax:** oauth2 &lt;&lt; Scope(...)
 
 **Description:** Sets the OAuth2 scope, a way to limit an application&apos;s access to an account.
 
@@ -2485,7 +2485,7 @@ oauth2 << Authorization Fields( auth_fields );
 
 #### Set Window Title
 
-**Syntax:** oauth2 << Set Window Title(title)
+**Syntax:** oauth2 &lt;&lt; Set Window Title(title)
 
 **Description:** Sets the OAuth2 window title.
 
@@ -2500,7 +2500,7 @@ oauth2 << Set Window Title( "Authorization Window" );
 
 #### Token Fields
 
-**Syntax:** obj << Token Fields
+**Syntax:** obj &lt;&lt; Token Fields
 
 **Description:** An associative array of key and value pairs to be used in the query string for the OAuth2 token URL.
 
@@ -2523,7 +2523,7 @@ oauth2 << Token Fields( token_fields );
 
 #### Token URL
 
-**Syntax:** oauth2 << Token URL(...)
+**Syntax:** oauth2 &lt;&lt; Token URL(...)
 
 **Description:** Sets the OAuth2 token URL.
 
@@ -2539,7 +2539,7 @@ oauth2 << Token URL( token_url );
 
 #### Use Default Window Title
 
-**Syntax:** oauth2 << Use Default Window Title(1 | 0)
+**Syntax:** oauth2 &lt;&lt; Use Default Window Title(1 | 0)
 
 **Description:** Gets the OAuth2 window title.
 
@@ -2555,7 +2555,7 @@ title = oauth2 << Get Window Title;
 
 #### Username
 
-**Syntax:** oauth2 << Username(...)
+**Syntax:** oauth2 &lt;&lt; Username(...)
 
 **Description:** Sets the OAuth2 user name for the password grant type.
 

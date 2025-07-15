@@ -6,7 +6,7 @@
 
 ### Open
 
-**構文:** Open( filePath, <data table options | Excel import options | text import options | SAS import options | HTML import options | esriShapeFile import options | PDF import options | other file options > )
+**構文:** Open( filePath, &lt;data table options | Excel import options | text import options | SAS import options | HTML import options | esriShapeFile import options | PDF import options | other file options &gt; )
 
 **説明:** ファイルから作成されたデータテーブルやその他のJMPファイル、またはオブジェクトへの参照を戻す。パスが指定されていない場合、「データファイルを開く」ダイアログが表示される。フォルダのパスが指定されている場合、システムのファイルブラウザが開かれ、オブジェクトは戻されない。使用できるオプションについては、構文リファレンスを参照。
 
@@ -36,7 +36,7 @@ dt2 = Open( "$SAMPLE_DATA/Fitness.jmp", Select Columns( "Name", "Sex", "Age", "W
 
 ### Dir
 
-**構文:** memlist = obj << Dir
+**構文:** memlist = obj &lt;&lt; Dir
 
 **説明:** ZIPアーカイブ内にあるメンバファイルのリストを戻す。
 
@@ -54,7 +54,7 @@ dirlist[1] || ": " || text;
 
 ### Read
 
-**構文:** memdata = obj << Read( memname, <Format(blob|string)>, <Encoding(charset)> )
+**構文:** memdata = obj &lt;&lt; Read( memname, &lt;Format(blob|string)&gt;, &lt;Encoding(charset)&gt; )
 
 **説明:** ZIPアーカイブメンバファイルを読み込み文字列またはBLOBにする。
 
@@ -72,7 +72,7 @@ dirlist[1] || ": " || text;
 
 ### Write
 
-**構文:** actual name = obj << Write( memname, memdata, < "replace" > )
+**構文:** actual name = obj &lt;&lt; Write( memname, memdata, &lt; "replace" &gt; )
 
 **説明:** テキストまたはBLOBをZIPアーカイブメンバファイルに書き込む。オプションの"replace"パラメータが指定されていて、その名前を持つファイルが存在している場合は、メンバファイルが置き換えられる。それ以外の場合は、既存のメンバが上書きされないようにメンバ名を変更する。実際に使用される名前を戻す。
 

@@ -6,7 +6,7 @@
 
 ### Auto Load
 
-**Sintassi:** addin << Auto Load( boolean )
+**Sintassi:** addin &lt;&lt; Auto Load( boolean )
 
 **Descrizione:** Imposta il caricamento automatico o meno di un add-in durante il processo di avvio di JMP.
 
@@ -23,7 +23,7 @@ If( !Is Missing( addin ),
 
 ### Display Name
 
-**Sintassi:** name = addin << Display Name
+**Sintassi:** name = addin &lt;&lt; Display Name
 
 **Descrizione:** Restituisce il nome visualizzato di un add-in.
 
@@ -52,7 +52,7 @@ If( !Is Missing( addin ),
 
 ### Home Folder
 
-**Sintassi:** folder = addin << Home Folder
+**Sintassi:** folder = addin &lt;&lt; Home Folder
 
 **Descrizione:** Restituisce la cartella principale di un add-in.
 
@@ -81,7 +81,7 @@ If( !Is Missing( addin ),
 
 ### ID
 
-**Sintassi:** id = addin << ID
+**Sintassi:** id = addin &lt;&lt; ID
 
 **Descrizione:** Restituisce l’ID univoco di un add-in.
 
@@ -110,7 +110,7 @@ If( !Is Missing( addin ),
 
 ### Is Loaded
 
-**Sintassi:** x = addin << Is Loaded
+**Sintassi:** x = addin &lt;&lt; Is Loaded
 
 **Descrizione:** Restituisce il caricamento in corso o meno di un add-in.
 
@@ -139,7 +139,7 @@ If( !Is Missing( addin ),
 
 ### Load
 
-**Sintassi:** addin << Load
+**Sintassi:** addin &lt;&lt; Load
 
 **Descrizione:** Carica un add-in.
 
@@ -156,7 +156,7 @@ If( !Is Missing( addin ),
 
 ### Unload
 
-**Sintassi:** addin << Unload
+**Sintassi:** addin &lt;&lt; Unload
 
 **Descrizione:** Scarica un add-in.
 
@@ -173,7 +173,7 @@ If( !Is Missing( addin ),
 
 ### Version
 
-**Sintassi:** ver = addin << Version
+**Sintassi:** ver = addin &lt;&lt; Version
 
 **Descrizione:** Restituisce il numero di versione di un add-in.
 

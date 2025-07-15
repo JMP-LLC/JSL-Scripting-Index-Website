@@ -6,7 +6,7 @@
 
 ### Blink
 
-**语法:** obj << Blink
+**语法:** obj &lt;&lt; Blink
 
 **说明:** 在数据编辑框中闪烁显示的行。
 
@@ -32,7 +32,7 @@ dataedit << Blink;
 
 ### Find
 
-**语法:** obj << Find( search term )
+**语法:** obj &lt;&lt; Find( search term )
 
 **说明:** 显示按照输入的搜索项找到的行。
 
@@ -58,7 +58,7 @@ dataedit << Find( Contains( :State, "North Carolina" ) );
 
 ### Go to row
 
-**语法:** obj << Go to row( row )
+**语法:** obj &lt;&lt; Go to row( row )
 
 **说明:** 在数据编辑框中显示输入的行。
 
@@ -84,7 +84,7 @@ dataedit << Go To Row( 23 );
 
 ### New Row
 
-**语法:** obj << New Row
+**语法:** obj &lt;&lt; New Row
 
 **说明:** 在数据表中创建新行并在数据编辑框中显示该行。
 
@@ -110,7 +110,7 @@ dataedit << New Row;
 
 ### Next
 
-**语法:** obj << Next
+**语法:** obj &lt;&lt; Next
 
 **说明:** 在数据编辑框中显示下一选定行。
 
@@ -136,7 +136,7 @@ dataedit << Next;
 
 ### Next Selected
 
-**语法:** obj << Next Selected
+**语法:** obj &lt;&lt; Next Selected
 
 **说明:** 从选定行中，在数据编辑框中显示下一选定行。
 
@@ -163,7 +163,7 @@ dataedit << Next Selected;
 
 ### Prev
 
-**语法:** obj << Prev
+**语法:** obj &lt;&lt; Prev
 
 **说明:** 在数据编辑框中显示上一选定行。
 
@@ -190,7 +190,7 @@ dataedit << Prev;
 
 ### Prev Selected
 
-**语法:** obj << Prev Selected
+**语法:** obj &lt;&lt; Prev Selected
 
 **说明:** 从选定行中，在数据编辑框中显示上一选定行。
 
@@ -217,7 +217,7 @@ dataedit << Prev Selected;
 
 ### Save
 
-**语法:** obj << Save
+**语法:** obj &lt;&lt; Save
 
 **说明:** 将数据编辑框中的行值保存到数据表。
 

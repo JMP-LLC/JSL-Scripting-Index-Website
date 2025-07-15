@@ -6,7 +6,7 @@
 
 ### Action
 
-**構文:** obj << Action
+**構文:** obj &lt;&lt; Action
 
 **説明:** 評価する式を挿入するための、プラットフォーム内の汎用トラップドア。プラットフォームに一時的にディスプレイボックスおよびデータテーブルのコンテキストを設定する。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**構文:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**構文:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **説明:** 作成されたプリセットをオブジェクトに適用する。保存された設定に合わせてオプションとカスタマイズが更新される。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**構文:** obj << Automatic Recalc( state=0|1 )
+**構文:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **説明:** データの除外や変更があった場合に分析を自動的にやり直す。Automatic Recalcオプションがオンになっている場合で、データの除外や変更が再計算の前に確実に適用されるようにするには、Wait(0)コマンドを使用すること。
 
@@ -92,7 +92,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**構文:** obj << Broadcast(message)
+**構文:** obj &lt;&lt; Broadcast(message)
 
 **説明:** メッセージをプラットフォームに一括適用する。個々のオブジェクトから戻される結果がデータテーブルである場合は、可能な限り連結する。その最終的な形式は、Table BoxのSave Combined Tableオプションの結果と同じになるか、またはソース列を使用したConcanateオプションの結果と同じになる。それ以外の場合、結果はリストの形で戻される。
 
@@ -112,7 +112,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**構文:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**構文:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **説明:** プラットフォームの変数を変更するための設定パネルを追加する。
 
@@ -130,7 +130,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**構文:** obj << Copy ByGroup Script
+**構文:** obj &lt;&lt; Copy ByGroup Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -156,7 +156,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**構文:** obj << Copy Script
+**構文:** obj &lt;&lt; Copy Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -176,7 +176,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**構文:** obj << Data Table Window
+**構文:** obj &lt;&lt; Data Table Window
 
 **説明:** この分析に使用したデータテーブルのウィンドウを手前に表示する。
 
@@ -196,7 +196,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**構文:** obj << Get By Levels
+**構文:** obj &lt;&lt; Get By Levels
 
 **説明:** By列が指定されている場合、列名をキー、データ値を値とした連想配列を戻す。
 
@@ -213,7 +213,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**構文:** obj << Get ByGroup Script
+**構文:** obj &lt;&lt; Get ByGroup Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -240,7 +240,7 @@ Show( t );
 
 ### Get Container
 
-**構文:** obj << Get Container
+**構文:** obj &lt;&lt; Get Container
 
 **説明:** オブジェクトのコンテンツを含んだコンテナボックスの参照を戻す。
 
@@ -292,7 +292,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**構文:** obj << Get Data Table
+**構文:** obj &lt;&lt; Get Data Table
 
 **説明:** データテーブルへの参照を戻す。
 
@@ -313,7 +313,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**構文:** obj << Get Group Platform
+**構文:** obj &lt;&lt; Get Group Platform
 
 **説明:** 該当のプラットフォームがグループに属している場合に、Group Platformオブジェクトを戻す。それ以外の場合はEmpty()を戻す。
 
@@ -330,7 +330,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**構文:** obj << Get Script
+**構文:** obj &lt;&lt; Get Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -351,7 +351,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**構文:** obj << Get Script With Data Table
+**構文:** obj &lt;&lt; Get Script With Data Table
 
 **説明:** この分析を再現するスクリプト(JSL)をデータテーブルへの参照も含めて生成し、それを式として戻す。
 
@@ -372,7 +372,7 @@ Show( t );
 
 ### Get Timing
 
-**構文:** obj << Get Timing
+**構文:** obj &lt;&lt; Get Timing
 
 **説明:** プラットフォームの起動にかかった時間を取得する。
 
@@ -393,7 +393,7 @@ Show( t );
 
 ### Get Web Support
 
-**構文:** obj << Get Web Support
+**構文:** obj &lt;&lt; Get Web Support
 
 **説明:** ディスプレイオブジェクトにおけるインタラクティブHTMLサポートのレベルを数値で戻す。1は、一部または全部の要素がサポートされていることを示し、0は、サポートされないことを示す。
 
@@ -409,7 +409,7 @@ Show( s );
 
 ### Get Where Expr
 
-**構文:** obj << Get Where Expr
+**構文:** obj &lt;&lt; Get Where Expr
 
 **説明:** プラットフォームがBy()またはWhere()を使って起動された場合に、データをサブセットするためのWhere式を戻す。By()やWhere()が使われていない場合はEmpty()を戻す。
 
@@ -446,7 +446,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**構文:** obj << Local Data Filter
+**構文:** obj &lt;&lt; Local Data Filter
 
 **説明:** このプラットフォームに対してのみ有効なフィルタで、データを特定のグループまたは範囲にフィルタリングする。
 
@@ -502,7 +502,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**構文:** obj << Paste Local Data Filter
+**構文:** obj &lt;&lt; Paste Local Data Filter
 
 **説明:** クリップボードにあるローカルデータフィルタを現在のレポートに適用する。
 
@@ -523,7 +523,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**構文:** obj << Redo Analysis
+**構文:** obj &lt;&lt; Redo Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -543,7 +543,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**構文:** obj << Redo ByGroup Analysis
+**構文:** obj &lt;&lt; Redo ByGroup Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -569,7 +569,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**構文:** obj << Relaunch Analysis
+**構文:** obj &lt;&lt; Relaunch Analysis
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -589,7 +589,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**構文:** obj << Relaunch ByGroup
+**構文:** obj &lt;&lt; Relaunch ByGroup
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -615,7 +615,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**構文:** obj << Remove Column Switcher
+**構文:** obj &lt;&lt; Remove Column Switcher
 
 **説明:** プラットフォームに最後に追加された列スイッチャーを削除する。
 
@@ -635,7 +635,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**構文:** obj << Remove Local Data Filter
+**構文:** obj &lt;&lt; Remove Local Data Filter
 
 **説明:** すでに作成されているローカルデータフィルタを削除し、プラットフォームはデータテーブル内のすべてのデータを使用した状態に戻る。
 
@@ -674,9 +674,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**構文:** obj << Report;
-
-Report( obj )
+**構文:** obj &lt;&lt; Report;Report( obj )
 
 **説明:** レポートオブジェクトへの参照を戻す。
 
@@ -698,7 +696,7 @@ Show( t );
 
 ### Report View
 
-**構文:** obj << Report View( "完全"|"要約" )
+**構文:** obj &lt;&lt; Report View( "完全"|"要約" )
 
 **説明:** レポートビューは、プラットフォームレポートの詳細を表示するかどうかを決定する。Fullはすべての詳細を表示し、Summaryはプラットフォームにより限定されたものだけを表示する。 動作をカスタマイズするため、各ディスプレイボックスは<<Set Summary Behaviorメッセージをサポートする。
 
@@ -718,7 +716,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**構文:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** 分析を再現するためのJSLスクリプトを作成し、データテーブルにテーブルプロパティとして保存する。スクリプトの名前を指定できる。Append Suffixオプションは、スクリプト名に数字の接尾辞を追加する。これにより、同名のスクリプトが存在していても区別できる。Promptオプションは、ユーザにスクリプト名の指定を促す。Replaceオプションは、同名の既存のスクリプトを置き換える。
 
@@ -744,7 +742,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**構文:** obj << Save ByGroup Script to Journal
+**構文:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -770,7 +768,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**構文:** obj << Save ByGroup Script to Script Window
+**構文:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -796,7 +794,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**構文:** obj << Save Script for All Objects
+**構文:** obj &lt;&lt; Save Script for All Objects
 
 **説明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -816,7 +814,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**構文:** obj << Save Script for All Objects To Data Table( <name> )
+**構文:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **説明:** すべてのレポートオブジェクトを再現するスクリプトを現在のデータテーブルに保存する。このオプションは、ウィンドウ内にレポートが複数ある場合に便利。作成されるスクリプトの名前は、引用符で囲んで指定しない限り、1つ目のプラットフォーム名となる。
 
@@ -866,7 +864,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**構文:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** この分析を再現するJSLスクリプトを生成し、データテーブルのテーブルプロパティとして保存する。
 
@@ -886,7 +884,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**構文:** obj << Save Script to Journal
+**構文:** obj &lt;&lt; Save Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -906,7 +904,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**構文:** obj << Save Script to Report
+**構文:** obj &lt;&lt; Save Script to Report
 
 **説明:** この分析を再現するJSLスクリプトを生成し、レポートウィンドウに表示する。分析手順の記録を結果と一緒に残せる。
 
@@ -926,7 +924,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**構文:** obj << Save Script to Script Window
+**構文:** obj &lt;&lt; Save Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -1011,7 +1009,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**構文:** obj << Sync to Data Table Changes
+**構文:** obj &lt;&lt; Sync to Data Table Changes
 
 **説明:** 除外やデータの変更が行われた場合に同期する。
 
@@ -1028,7 +1026,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**構文:** obj << Title( "new title" )
+**構文:** obj &lt;&lt; Title( "new title" )
 
 **説明:** プラットフォームのタイトルを設定する。
 
@@ -1048,7 +1046,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**構文:** obj << Top Report
+**構文:** obj &lt;&lt; Top Report
 
 **説明:** レポート内のルートノードへの参照を戻す。
 
@@ -1070,7 +1068,7 @@ Show( t );
 
 ### Transform Column
 
-**構文:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**構文:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **説明:** オブジェクトのローカルコンテキスト(通常はプラットフォーム)内に変換列を作成する。この変換列は、それを作成したプラットフォームの中のみで使用可能。
 
@@ -1089,7 +1087,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**構文:** obj << View Web XML
+**構文:** obj &lt;&lt; View Web XML
 
 **説明:** インタラクティブHTMLレポートの作成に使うXMLコードを戻す。
 
@@ -1125,7 +1123,7 @@ New Window( "Bivariate Equation",
 
 ### By
 
-**構文:** obj = Bubble Plot(...<By( column(s) )>...)
+**構文:** obj = Bubble Plot(...&lt;By( column(s) )&gt;...)
 
 **説明:** 変数の水準ごとに1つずつ、複数のレポートを作成する。
 
@@ -1150,7 +1148,7 @@ obj = dt << Bubble Plot(
 
 ### Coloring
 
-**構文:** obj = Bubble Plot(...<Coloring( column )>...)
+**構文:** obj = Bubble Plot(...&lt;Coloring( column )&gt;...)
 
 **説明:** 指定した変数に応じて、バブルを色分けする。
 
@@ -1170,7 +1168,7 @@ obj = dt << Bubble Plot(
 
 ### Freq
 
-**構文:** obj = Bubble Plot(...<Freq( column )>...)
+**構文:** obj = Bubble Plot(...&lt;Freq( column )&gt;...)
 
 **説明:** バブルの位置、サイズ、色の計算の重みに使用する。
 
@@ -1203,7 +1201,7 @@ dtSummary << Bubble Plot(
 
 ### ID
 
-**構文:** obj = Bubble Plot(...<ID( column(s) )>...)
+**構文:** obj = Bubble Plot(...&lt;ID( column(s) )&gt;...)
 
 **説明:** 1つのバブルとして集計、表示する行を識別する。
 
@@ -1222,7 +1220,7 @@ obj = dt << Bubble Plot(
 
 ### Sizes
 
-**構文:** obj = Bubble Plot(...<Sizes( column )>...)
+**構文:** obj = Bubble Plot(...&lt;Sizes( column )&gt;...)
 
 **説明:** バブルのサイズとして使用する列。指定しない場合、バブルのサイズはオブザベーション数に比例する。
 
@@ -1241,7 +1239,7 @@ obj = dt << Bubble Plot(
 
 ### Time
 
-**構文:** obj = Bubble Plot(...<Time( column )>...)
+**構文:** obj = Bubble Plot(...&lt;Time( column )&gt;...)
 
 **説明:** 時点ごとに座標、サイズ、色を別々に保持し、表示する。
 
@@ -1301,7 +1299,7 @@ obj = dt << Bubble Plot(
 
 ### Bubble Plot
 
-**構文:** Bubble Plot( X( column ), Y( column ), <Sizes( column )>, <Time( column )>, <ID( column )>, <Coloring( column ) )
+**構文:** Bubble Plot( X( column ), Y( column ), &lt;Sizes( column )&gt;, &lt;Time( column )&gt;, &lt;ID( column )&gt;, &lt;Coloring( column ) )
 
 **説明:** 2次元のバブルの散布図を作成する。このグラフは、時間の変数を使ってアニメーションとして表示できる。追加の変数でバブルのサイズや色を表現することもできる。
 
@@ -1322,7 +1320,7 @@ obj = dt << Bubble Plot(
 
 ### Auto Stretching
 
-**構文:** obj << Auto Stretching( "自動"|"オン"|"オフ" )
+**構文:** obj &lt;&lt; Auto Stretching( "自動"|"オン"|"オフ" )
 
 **説明:** レポートの自動伸縮の動作を設定する。
 
@@ -1342,7 +1340,7 @@ obj << Auto Stretching( "Off" );
 
 ### Bubble Size
 
-**構文:** obj << Bubble Size( number )
+**構文:** obj &lt;&lt; Bubble Size( number )
 
 **説明:** 円の大きさを変更する。
 
@@ -1362,7 +1360,7 @@ obj << Bubble Size( 50 );
 
 ### Color Levels
 
-**構文:** obj << Color Levels
+**構文:** obj &lt;&lt; Color Levels
 
 **説明:** 連続変数の凡例の水準を設定する。
 
@@ -1383,7 +1381,7 @@ obj << Color Levels( [100000 1000000 10000000] );
 
 ### Color Theme
 
-**構文:** obj << Color Theme
+**構文:** obj &lt;&lt; Color Theme
 
 **説明:** バブルのカラーテーマを設定する。
 
@@ -1405,7 +1403,7 @@ obj << Color Theme( "White to Red" );
 
 ### Color as Sum
 
-**構文:** obj << Color as Sum( state=0|1 )
+**構文:** obj &lt;&lt; Color as Sum( state=0|1 )
 
 **説明:** 色分けに、平均ではなく、合計を使用する。
 
@@ -1426,7 +1424,7 @@ obj << Color as Sum( 1 );
 
 ### Combine
 
-**構文:** obj << Combine( <id> )
+**構文:** obj &lt;&lt; Combine( &lt;id&gt; )
 
 **説明:** 選択されたバブル(または指定されたID)を結合する。このオプションは、ID変数が2つ指定された場合にのみ使用可能。
 
@@ -1450,7 +1448,7 @@ obj << Combine( "Europe" );
 
 ### Combine All
 
-**構文:** obj << Combine All
+**構文:** obj &lt;&lt; Combine All
 
 **説明:** 分割されたバブルを、すべて結合する。このオプションは、ID変数が2つ指定された場合にのみ使用可能。
 
@@ -1473,7 +1471,7 @@ obj << Combine All;
 
 ### Draw
 
-**構文:** obj << Draw( "塗りつぶし"|"アウトライン"|"塗りつぶしとアウトライン" )
+**構文:** obj &lt;&lt; Draw( "塗りつぶし"|"アウトライン"|"塗りつぶしとアウトライン" )
 
 **説明:** バブルの表示モードを設定する。
 
@@ -1493,7 +1491,7 @@ obj << Draw( "Outlined" );
 
 ### Fit to Window
 
-**構文:** obj << Fit to Window( "自動"|"オン"|"オフ" )
+**構文:** obj &lt;&lt; Fit to Window( "自動"|"オン"|"オフ" )
 
 **説明:** レポートの自動伸縮の動作を設定する。
 
@@ -1513,7 +1511,7 @@ obj << Fit to Window( "Off" );
 
 ### Get Custom Path
 
-**構文:** obj << Get Custom Path
+**構文:** obj &lt;&lt; Get Custom Path
 
 **説明:** バブルの図形(カスタムパス)を行列の形で戻す。パスの行列は、x、y、およびパスに含まれる各点のフラグで構成される。フラグの値は、0(コントロール点)、1(移動)、2(線分)、3(3次ベジエ曲線)または負の値(点がパスの終点でもある場合)。
 
@@ -1535,7 +1533,7 @@ obj << Get Custom Path();
 
 ### Get Draw
 
-**構文:** obj << Get Draw
+**構文:** obj &lt;&lt; Get Draw
 
 **説明:** バブルの表示モードを戻す。
 
@@ -1555,7 +1553,7 @@ obj << Get Draw();
 
 ### Get Label
 
-**構文:** obj << Get Label
+**構文:** obj &lt;&lt; Get Label
 
 **説明:** バブルのラベルの描画モードを戻す。
 
@@ -1575,7 +1573,7 @@ obj << Get Label();
 
 ### Get Shape
 
-**構文:** obj << Get Shape
+**構文:** obj &lt;&lt; Get Shape
 
 **説明:** バブルの図形を戻す。
 
@@ -1596,7 +1594,7 @@ obj << Get Shape();
 
 ### Go
 
-**構文:** obj << Go
+**構文:** obj &lt;&lt; Go
 
 **説明:** 時間変数が使用されている場合に、アニメーションを開始する。
 
@@ -1618,7 +1616,7 @@ obj << Go;
 
 ### Label
 
-**構文:** obj << Label( "なし"|"選択されたもの"|"すべて" )
+**構文:** obj &lt;&lt; Label( "なし"|"選択されたもの"|"すべて" )
 
 **説明:** バブルのラベルの描画モードを設定する。
 
@@ -1638,7 +1636,7 @@ obj << Label( "All" );
 
 ### Label Offset
 
-**構文:** obj << Label Offset( {pt, x offset, y offset}, ... )
+**構文:** obj &lt;&lt; Label Offset( {pt, x offset, y offset}, ... )
 
 ```jsl
 
@@ -1658,7 +1656,7 @@ obj << Label Offset( {4, -75, -43}, {7, 80, -34} );
 
 ### Legend
 
-**構文:** obj << Legend( state=0|1 )
+**構文:** obj &lt;&lt; Legend( state=0|1 )
 
 **説明:** 色分けの列が使用された場合に、色の凡例を表示する。 デフォルトではオン。
 
@@ -1680,7 +1678,7 @@ obj << Legend( 1 );
 
 ### Lock Scales
 
-**構文:** obj << Lock Scales( state=0|1 )
+**構文:** obj &lt;&lt; Lock Scales( state=0|1 )
 
 **説明:** 軸、グラデーションおよびサイズの範囲を固定し、データやフィルタリングの変更に対応して変化してしまわないようにする。 デフォルトではオン。
 
@@ -1704,7 +1702,7 @@ dt << Data Filter(
 
 ### Orient Shapes
 
-**構文:** obj << Orient Shapes( state=0|1 )
+**構文:** obj &lt;&lt; Orient Shapes( state=0|1 )
 
 **説明:** 最上部が移動先を向くように図形を配置する。
 
@@ -1726,7 +1724,7 @@ obj << Orient Shapes( 1 );
 
 ### Prev
 
-**構文:** obj << Prev
+**構文:** obj &lt;&lt; Prev
 
 **説明:** アニメーションにおいて、時間変数を1ステップ前に戻す。
 
@@ -1749,7 +1747,7 @@ obj << Prev;
 
 ### Revert Color Theme
 
-**構文:** obj << Revert Color Theme
+**構文:** obj &lt;&lt; Revert Color Theme
 
 **説明:** カスタムカラーテーマを取り消して、列プロパティや環境設定のデフォルトテーマに戻す。
 
@@ -1773,7 +1771,7 @@ obj << Revert Color Theme();
 
 ### Selectable Across Gaps
 
-**構文:** obj << Selectable Across Gaps( state=0|1 )
+**構文:** obj &lt;&lt; Selectable Across Gaps( state=0|1 )
 
 **説明:** 円を選択可能にし、データがない時間帯でも円が選択されたままになるようにする。このオプションがオフの場合、データがない時間帯は円を選択できない。
 
@@ -1797,7 +1795,7 @@ obj << Go;
 
 ### Set Custom Path
 
-**構文:** obj << Set Custom Path
+**構文:** obj &lt;&lt; Set Custom Path
 
 **説明:** バブルの図形(カスタムパス)を設定する。パスは、N x 3の行列として、または、テキストで指定する。パスを行列で指定する場合は、x、y、およびパスに含まれる各点のフラグで構成する。フラグの値は、0(コントロール点)、1(移動)、2(線分)、3(3次ベジエ曲線)または負の値(点がパスの終点でもある場合)。パスをテキストで指定する場合には、SVG構文を用いる。
 
@@ -1818,7 +1816,7 @@ obj << Set Shape( "Custom" );
 
 ### Set Shape
 
-**構文:** obj << Set Shape( "円"|"三角形"|"正方形"|"ひし形"|"矢じり"|"カスタム" )
+**構文:** obj &lt;&lt; Set Shape( "円"|"三角形"|"正方形"|"ひし形"|"矢じり"|"カスタム" )
 
 **説明:** バブルの図形を設定する。
 
@@ -1838,7 +1836,7 @@ obj << Set Shape( "Triangle" );
 
 ### Show Roles
 
-**構文:** obj << Show Roles( state=0|1 )
+**構文:** obj &lt;&lt; Show Roles( state=0|1 )
 
 **説明:** レポートの上部に、各役割に使われている列を表示する。
 
@@ -1860,7 +1858,7 @@ obj << Show Roles( 1 );
 
 ### Show Time Annotation
 
-**構文:** obj << Show Time Annotation( state=0|1 )
+**構文:** obj &lt;&lt; Show Time Annotation( state=0|1 )
 
 **説明:** バブルプロットのアニメーションに現在の時刻を注釈として表示する。 デフォルトではオン。
 
@@ -1885,7 +1883,7 @@ obj << Show Time Annotation( 0 );
 
 ### Size as Sum
 
-**構文:** obj << Size as Sum( state=0|1 )
+**構文:** obj &lt;&lt; Size as Sum( state=0|1 )
 
 **説明:** 円の大きさに、平均ではなく、合計を使用する。 デフォルトではオン。
 
@@ -1905,7 +1903,7 @@ obj << Size as Sum( 1 );
 
 ### Speed
 
-**構文:** obj << Speed( number )
+**構文:** obj &lt;&lt; Speed( number )
 
 **説明:** 時間経過を表すアニメーションにおける円の移動速度を変更する。
 
@@ -1928,7 +1926,7 @@ obj << Go;
 
 ### Split
 
-**構文:** obj << Split( <id> )
+**構文:** obj &lt;&lt; Split( &lt;id&gt; )
 
 **説明:** 選択されたバブル(または指定されたID)をより細かい構成要素へと分割する。このオプションは、ID変数が2つ指定された場合にのみ使用可能。
 
@@ -1953,7 +1951,7 @@ obj << Split( "Asia" );
 
 ### Split All
 
-**構文:** obj << Split All
+**構文:** obj &lt;&lt; Split All
 
 **説明:** すべての円を、より細かい単位に分割する。このオプションは、ID変数が2つ指定された場合にのみ使用可能。
 
@@ -1975,7 +1973,7 @@ obj << Split All;
 
 ### Step
 
-**構文:** obj << Step
+**構文:** obj &lt;&lt; Step
 
 **説明:** アニメーションにおいて、時間変数を1ステップ先に進める。
 
@@ -1997,7 +1995,7 @@ obj << Step;
 
 ### Stop
 
-**構文:** obj << Stop
+**構文:** obj &lt;&lt; Stop
 
 **説明:** 時間変数が使用されている場合に、アニメーションを停止する。
 
@@ -2021,7 +2019,7 @@ obj << Stop;
 
 ### Time Index
 
-**構文:** obj << Time Index( number )
+**構文:** obj &lt;&lt; Time Index( number )
 
 **説明:** 時間変数の値を設定する。
 
@@ -2042,7 +2040,7 @@ obj << Time Index( 19 );
 
 ### Title Position
 
-**構文:** obj << Title Position( X,Y )
+**構文:** obj &lt;&lt; Title Position( X,Y )
 
 **説明:** タイトルの位置を設定する。このオプションは、時間変数が指定されている場合のみ有効。
 
@@ -2063,7 +2061,7 @@ obj << Title Position( 0.8, 0.06 );
 
 ### Toggle Animation
 
-**構文:** obj << Toggle Animation
+**構文:** obj &lt;&lt; Toggle Animation
 
 **説明:** 現在のアニメーション設定を切り替える。
 
@@ -2087,7 +2085,7 @@ obj << Toggle Animation;
 
 ### Trail Bubbles
 
-**構文:** obj << Trail Bubbles( "なし"|"選択されたもの"|"すべて" )
+**構文:** obj &lt;&lt; Trail Bubbles( "なし"|"選択されたもの"|"すべて" )
 
 **説明:** 円の履歴を軌跡で表示する。軌跡を表示するには、「時間」列が指定されており、かつ、円が選択されていないければいけない。
 
@@ -2110,7 +2108,7 @@ obj << Go;
 
 ### Trail Lines
 
-**構文:** obj << Trail Lines( "なし"|"選択されたもの"|"すべて" )
+**構文:** obj &lt;&lt; Trail Lines( "なし"|"選択されたもの"|"すべて" )
 
 **説明:** 時間に沿ったバブルの軌跡を折れ線で表示する。軌跡を表示するには、「時間」列が指定されていなければならない。
 
@@ -2133,7 +2131,7 @@ obj << Go;
 
 ### X as Sum
 
-**構文:** obj << X as Sum( state=0|1 )
+**構文:** obj &lt;&lt; X as Sum( state=0|1 )
 
 **説明:** X座標に、平均ではなく、合計を使用する。
 
@@ -2153,7 +2151,7 @@ obj << X as Sum( 1 );
 
 ### Y as Sum
 
-**構文:** obj << Y as Sum( state=0|1 )
+**構文:** obj &lt;&lt; Y as Sum( state=0|1 )
 
 **説明:** Y座標に、平均ではなく、合計を使用する。
 

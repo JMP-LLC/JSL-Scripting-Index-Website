@@ -24,7 +24,7 @@ seg = (frame << Find Seg( Lines Seg( 1 ) ));
 
 ### Child
 
-**Sintassi:** seg2 = obj << Child
+**Sintassi:** seg2 = obj &lt;&lt; Child
 
 **Descrizione:** Restituisce il primo elemento figlio del segmento di visualizzazione.
 
@@ -41,7 +41,7 @@ seg << Child; // not many segs support children
 
 ### Class Name
 
-**Sintassi:** classname = obj << Class Name
+**Sintassi:** classname = obj &lt;&lt; Class Name
 
 **Descrizione:** Restituisce il nome della classe di visualizzazione per il segmento di visualizzazione.
 
@@ -58,7 +58,7 @@ seg << Class Name;
 
 ### Clip Shape
 
-**Sintassi:** seg << Clip Shape(Boundaries(Shape File, [ID(string)]) | Path([string] | [matrix]) | Empty())
+**Sintassi:** seg &lt;&lt; Clip Shape(Boundaries(Shape File, [ID(string)]) | Path([string] | [matrix]) | Empty())
 
 **Descrizione:** Restringe la geometria della forma specificata. La forma può essere specificata utilizzando un file di forma o un percorso. È possibile specificare un ID facoltativo con un file di forma per selezionare una singola forma dal file, altrimenti come zona di ritaglio si utilizza l&apos;unione di tutte le forme. È possibile specificare un percorso di ritaglio con una matrice N x 3 o con una rappresentazione testuale. Una matrice del percorso ha tre colonne per x, y e flag per ciascun punto del percorso. I valori dei flag sono 0 per controllo, 1 per spostamento, 2 per segmento di linea, 3 per segmento cubico di Bézier e sono negativi se il punto chiude il percorso. Il testo del percorso supporta la sintassi SVG.
 
@@ -88,7 +88,7 @@ cs << Clip Shape( Boundaries( "US States" ) );
 
 ### Delete
 
-**Sintassi:** obj << Delete
+**Sintassi:** obj &lt;&lt; Delete
 
 **Descrizione:** Elimina il segmento di visualizzazione.
 
@@ -105,9 +105,7 @@ seg << Delete;
 
 ### Enabled
 
-**Sintassi:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**Sintassi:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Descrizione:** Un oggetto non abilitato non risponderà agli input della tastiera o del mouse. Questa proprietà è ereditata da oggetti secondari, pertanto un oggetto contenitore non abilitato causerà la disabilitazione di tutti gli oggetti dipendenti.
 
@@ -139,13 +137,13 @@ New Window( "enabled",
 
 ### First Value
 
-**Sintassi:** obj << First Value( state=0|1 )
+**Sintassi:** obj &lt;&lt; First Value( state=0|1 )
 
 **JMP Versione aggiunta:** 16
 
 ### Frame
 
-**Sintassi:** FrameBox = obj << Frame
+**Sintassi:** FrameBox = obj &lt;&lt; Frame
 
 **Descrizione:** Restituisce il riquadro del frame in cui si trova il segmento di visualizzazione.
 
@@ -162,7 +160,7 @@ seg << Frame;
 
 ### Get Clip Shape
 
-**Sintassi:** obj << Get Clip Shape
+**Sintassi:** obj &lt;&lt; Get Clip Shape
 
 **Descrizione:** Restituisce la forma di ritaglio corrente
 
@@ -193,7 +191,7 @@ cs << Get Clip Shape();
 
 ### Get Connected
 
-**Sintassi:** 0|1 = obj << Get Connected
+**Sintassi:** 0|1 = obj &lt;&lt; Get Connected
 
 **Descrizione:** Restituisce lo stato di connessione di tutti i segmenti di linea nel segmento di visualizzazione.
 
@@ -210,7 +208,7 @@ seg << Get Connected;
 
 ### Get Description
 
-**Sintassi:** description = obj << Get Description
+**Sintassi:** description = obj &lt;&lt; Get Description
 
 **Descrizione:** Ottiene la descrizione del segmento di visualizzazione.
 
@@ -227,9 +225,7 @@ seg << get description();
 
 ### Get Enabled
 
-**Sintassi:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**Sintassi:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Descrizione:** Un oggetto non abilitato non risponderà agli input della tastiera o del mouse. Questa proprietà è ereditata da oggetti secondari, pertanto un oggetto contenitore non abilitato causerà la disabilitazione di tutti gli oggetti dipendenti.
 
@@ -261,7 +257,7 @@ New Window( "enabled",
 
 ### Get Line
 
-**Sintassi:** [x1 y1 x2 y2] = obj << Get Line( index )
+**Sintassi:** [x1 y1 x2 y2] = obj &lt;&lt; Get Line( index )
 
 **Descrizione:** Restituisce le coordinate X e Y della linea specificata.
 
@@ -278,7 +274,7 @@ seg << Get Line( 2 );
 
 ### Get Line Color
 
-**Sintassi:** color = obj << Get Line Color
+**Sintassi:** color = obj &lt;&lt; Get Line Color
 
 **Descrizione:** Restituisce il colore delle linee.
 
@@ -295,7 +291,7 @@ seg << Get Line Color;
 
 ### Get Line Count
 
-**Sintassi:** Number = obj << Get Line Count
+**Sintassi:** Number = obj &lt;&lt; Get Line Count
 
 **Descrizione:** Restituisce il numero di linee nel segmento di visualizzazione.
 
@@ -312,7 +308,7 @@ seg << Get Line Count;
 
 ### Get Line Style
 
-**Sintassi:** pen style = obj << Get Line Style
+**Sintassi:** pen style = obj &lt;&lt; Get Line Style
 
 **Descrizione:** Restituisce lo stile delle linee.
 
@@ -331,7 +327,7 @@ seg << Get Line Style;
 
 ### Get Line Width
 
-**Sintassi:** number = obj << Get Line Width
+**Sintassi:** number = obj &lt;&lt; Get Line Width
 
 **Descrizione:** Restituisce la larghezza delle linee.
 
@@ -350,7 +346,7 @@ seg << Get Line Width;
 
 ### Get Lines
 
-**Sintassi:** [x1 y1 x2 y2, ...] = obj << Get Lines
+**Sintassi:** [x1 y1 x2 y2, ...] = obj &lt;&lt; Get Lines
 
 **Descrizione:** Restituisce i valori delle coordinate X e Y per tutte le linee.
 
@@ -367,7 +363,7 @@ seg << Get Lines;
 
 ### Get Namespace
 
-**Sintassi:** obj << Get Namespace
+**Sintassi:** obj &lt;&lt; Get Namespace
 
 **Descrizione:** Restituisce lo spazio dei nomi associato a questo oggetto di visualizzazione.
 
@@ -385,7 +381,7 @@ Show( ns:x, x );
 
 ### Get Properties
 
-**Sintassi:** obj << Get Properties
+**Sintassi:** obj &lt;&lt; Get Properties
 
 **Descrizione:** Restituisce un array associativo che contiene le proprietà del riquadro di visualizzazione e i rispettivi valori.
 
@@ -399,7 +395,7 @@ bb << Get Properties;
 
 ### Get Property
 
-**Sintassi:** obj << Get Property( "property" )
+**Sintassi:** obj &lt;&lt; Get Property( "property" )
 
 **Descrizione:** Restituisce l&apos;impostazione corrente per la property nominata.
 
@@ -413,7 +409,7 @@ bb << Get Property( "Enabled" );
 
 ### Get Property List
 
-**Sintassi:** obj << Get Property List
+**Sintassi:** obj &lt;&lt; Get Property List
 
 **Descrizione:** Restituisce un elenco di proprietà del riquadro di visualizzazione.
 
@@ -427,13 +423,13 @@ bb << Get Property List;
 
 ### Last Value
 
-**Sintassi:** obj << Last Value( state=0|1 )
+**Sintassi:** obj &lt;&lt; Last Value( state=0|1 )
 
 **JMP Versione aggiunta:** 16
 
 ### Line Color
 
-**Sintassi:** obj << Line Color( color )
+**Sintassi:** obj &lt;&lt; Line Color( color )
 
 **Descrizione:** Imposta il colore per tutte le linee nel segmento di visualizzazione.
 
@@ -450,7 +446,7 @@ seg << Set Line Color( "Green" );
 
 ### Line Style
 
-**Sintassi:** obj << Line Style( pen style )
+**Sintassi:** obj &lt;&lt; Line Style( pen style )
 
 **Descrizione:** Imposta lo stile delle linee. Le opzioni sono Continua, Punteggiata, Tratteggiata, Trattino-punto e Trattino-punto-punto.
 
@@ -469,7 +465,7 @@ seg << Set Line Style( "Dotted" );
 
 ### Line Width
 
-**Sintassi:** obj << Line Width( "1"|"2"|"3"|"4"|"5"|"6"|"Altro..." )
+**Sintassi:** obj &lt;&lt; Line Width( "1"|"2"|"3"|"4"|"5"|"6"|"Altro..." )
 
 **Descrizione:** Imposta la larghezza delle linee.
 
@@ -488,7 +484,7 @@ seg << Set Line Width( 3 );
 
 ### Max Value
 
-**Sintassi:** obj << Max Value( state=0|1 )
+**Sintassi:** obj &lt;&lt; Max Value( state=0|1 )
 
 **JMP Versione aggiunta:** 16
 
@@ -496,19 +492,19 @@ seg << Set Line Width( 3 );
 
 ### Min Value
 
-**Sintassi:** obj << Min Value( state=0|1 )
+**Sintassi:** obj &lt;&lt; Min Value( state=0|1 )
 
 **JMP Versione aggiunta:** 16
 
 ### Name
 
-**Sintassi:** obj << Name( state=0|1 )
+**Sintassi:** obj &lt;&lt; Name( state=0|1 )
 
 **JMP Versione aggiunta:** 16
 
 ### Parent
 
-**Sintassi:** seg2 = obj << Parent
+**Sintassi:** seg2 = obj &lt;&lt; Parent
 
 **Descrizione:** Restituisce l&apos;elemento principale del segmento di visualizzazione.
 
@@ -525,7 +521,7 @@ seg << Parent;
 
 ### Set Connected
 
-**Sintassi:** obj << Set Connected( state=0|1 )
+**Sintassi:** obj &lt;&lt; Set Connected( state=0|1 )
 
 **Descrizione:** Imposta lo stato di connessione per tutti i segmenti di linea nel segmento di visualizzazione.
 
@@ -542,7 +538,7 @@ seg << Set Connected( 1 );
 
 ### Set Description
 
-**Sintassi:** obj << Set Description( description )
+**Sintassi:** obj &lt;&lt; Set Description( description )
 
 **Descrizione:** Imposta la descrizione del segmento di visualizzazione.
 
@@ -559,7 +555,7 @@ seg << set description( "my seg" );
 
 ### Set Line Color
 
-**Sintassi:** obj << Set Line Color( color )
+**Sintassi:** obj &lt;&lt; Set Line Color( color )
 
 **Descrizione:** Imposta il colore per tutte le linee nel segmento di visualizzazione.
 
@@ -576,7 +572,7 @@ seg << Set Line Color( "Green" );
 
 ### Set Line Style
 
-**Sintassi:** obj << Set Line Style( pen style )
+**Sintassi:** obj &lt;&lt; Set Line Style( pen style )
 
 **Descrizione:** Imposta lo stile delle linee. Le opzioni sono Continua, Punteggiata, Tratteggiata, Trattino-punto e Trattino-punto-punto.
 
@@ -595,7 +591,7 @@ seg << Set Line Style( "Dotted" );
 
 ### Set Line Width
 
-**Sintassi:** obj << Set Line Width( "1"|"2"|"3"|"4"|"5"|"6"|"Altro..." )
+**Sintassi:** obj &lt;&lt; Set Line Width( "1"|"2"|"3"|"4"|"5"|"6"|"Altro..." )
 
 **Descrizione:** Imposta la larghezza delle linee.
 
@@ -614,7 +610,7 @@ seg << Set Line Width( 3 );
 
 ### Set Property
 
-**Sintassi:** obj << Set Property( "property", value )
+**Sintassi:** obj &lt;&lt; Set Property( "property", value )
 
 **Descrizione:** Imposta il valore per la property nominata per il riquadro di visualizzazione.
 
@@ -628,7 +624,7 @@ bb << Set Property( "Enabled", 0 );
 
 ### Sib
 
-**Sintassi:** seg2 = obj << Sib
+**Sintassi:** seg2 = obj &lt;&lt; Sib
 
 **Descrizione:** Restituisce l&apos;elemento di pari livello del segmento di visualizzazione.
 
@@ -645,7 +641,7 @@ seg << Sib;
 
 ### Sib Append
 
-**Sintassi:** obj << Sib Append( seg2 )
+**Sintassi:** obj &lt;&lt; Sib Append( seg2 )
 
 **Descrizione:** Aggiunge un segmento di visualizzazione immediatamente dopo questo.
 
@@ -683,7 +679,7 @@ mapSeg << Sib Append( Line Seg( xval, yval, <<line color( "Green" ), <<line widt
 
 ### Sib Prepend
 
-**Sintassi:** obj << Sib Prepend( seg2 )
+**Sintassi:** obj &lt;&lt; Sib Prepend( seg2 )
 
 **Descrizione:** Aggiunge un segmento di visualizzazione immediatamente prima di questo.
 

@@ -6,7 +6,7 @@
 
 ### Add Graphics Script
 
-**Sintassi:** obj << Add Graphics Script( <"Back" | "Front" | position>, <Description("name")>, <"Selected Layer">, <Scale IDs(XID, YID)>, script )
+**Sintassi:** obj &lt;&lt; Add Graphics Script( &lt;"Back" | "Front" | position&gt;, &lt;Description("name")&gt;, &lt;"Selected Layer"&gt;, &lt;Scale IDs(XID, YID)&gt;, script )
 
 **Descrizione:** Inserisce uno script da disegnare entro questo frame. Gli elementi selezionati sono sempre sopra quelli non selezionati. Se si specifica un livello selezionato, questo script verrà richiamato durante il secondo passaggio di disegno, quando vengono disegnati gli elementi selezionati.
 
@@ -84,7 +84,7 @@ Report( b )[Frame Box( 1 )] << Add Graphics Script(
 
 ### Add Image
 
-**Sintassi:** obj << Add Image( image | open("image filename"), <bounds( left(value), top(value), bottom(value), right(value) ) | move(centerX, centerY)> )
+**Sintassi:** obj &lt;&lt; Add Image( image | open("image filename"), &lt;bounds( left(value), top(value), bottom(value), right(value) ) | move(centerX, centerY)&gt; )
 
 **Descrizione:** 
 
@@ -114,7 +114,7 @@ w = New Window( "View Image",
 
 ### Add Line Annotation
 
-**Sintassi:** obj << Add Line Annotation
+**Sintassi:** obj &lt;&lt; Add Line Annotation
 
 **Descrizione:** Aggiunge una linea sopra il riquadro di visualizzazione.
 
@@ -131,7 +131,7 @@ rbiv << Add Line Annotation( Line( 160, 235, 240, 235 ) );
 
 ### Add Pin Annotation
 
-**Sintassi:** obj << Add Pin Annotation
+**Sintassi:** obj &lt;&lt; Add Pin Annotation
 
 **Descrizione:** Aggiunge un&apos;annotazione sopra il riquadro di visualizzazione. La maggior parte degli attributi (come Riga indice, IDUnico e PtTrovato) è progettata solo per uso interno.
 
@@ -164,7 +164,7 @@ dt << Bivariate(
 
 ### Add Polygon Annotation
 
-**Sintassi:** obj << Add Polygon Annotation
+**Sintassi:** obj &lt;&lt; Add Polygon Annotation
 
 **Descrizione:** Aggiunge un poligono sopra il riquadro di visualizzazione.
 
@@ -185,7 +185,7 @@ rbiv << Add Polygon Annotation(
 
 ### Add Simple Shape Annotation
 
-**Sintassi:** obj << Add Simple Shape Annotation
+**Sintassi:** obj &lt;&lt; Add Simple Shape Annotation
 
 **Descrizione:** Aggiunge una forma semplice sopra il riquadro di visualizzazione.
 
@@ -203,7 +203,7 @@ rbiv << Add Simple Shape Annotation( Rectangle( 70, 180, 95, 215 ) );
 
 ### Add Text Annotation
 
-**Sintassi:** obj << Add Text Annotation
+**Sintassi:** obj &lt;&lt; Add Text Annotation
 
 **Descrizione:** Aggiunge testo sopra il riquadro di visualizzazione.
 
@@ -223,7 +223,7 @@ rbiv << Add Text Annotation(
 
 ### Append
 
-**Sintassi:** obj << Append( db2 )
+**Sintassi:** obj &lt;&lt; Append( db2 )
 
 **Descrizione:** Aggiunge db2 alla struttura di visualizzazione dopo db.
 
@@ -240,7 +240,7 @@ rbiv << append( Text Box( "=== below ===" ) );
 
 ### Append Seg
 
-**Sintassi:** obj << Append Seg( display seg )
+**Sintassi:** obj &lt;&lt; Append Seg( display seg )
 
 **Descrizione:** Aggiunge un segmento di visualizzazione alla casella del frame.
 
@@ -259,9 +259,7 @@ gb2 << append seg( Current Report()[FrameBox( 1 )] << find seg( Marker Seg( 1 ) 
 
 ### Background Color
 
-**Sintassi:** obj << Background Color( color );
-
-color = obj << Get Background Color
+**Sintassi:** obj &lt;&lt; Background Color( color );color = obj &lt;&lt; Get Background Color
 
 **Descrizione:** Se è impostato un colore di sfondo, il riquadro è riempito con il colore di sfondo prima di visualizzarne il contenuto. Se non è impostato alcun colore di sfondo, traspare lo sfondo e il contenuto dei riquadri.
 
@@ -283,7 +281,7 @@ tb << Background Color( "Yellow" );
 
 ### Background Map
 
-**Sintassi:** obj << Background Map( <Images("None" | "Simple Earth" | "Detailed Earth" | "Nasa Server" | ("Web Map Service", url, layer) , <Transparency(0-1)> )> | <Boundaries("None" | Shape File)> )
+**Sintassi:** obj &lt;&lt; Background Map( &lt;Images("None" | "Simple Earth" | "Detailed Earth" | "Nasa Server" | ("Web Map Service", url, layer) , &lt;Transparency(0-1)&gt; )&gt; | &lt;Boundaries("None" | Shape File)&gt; )
 
 **Descrizione:** 
 
@@ -322,9 +320,7 @@ framebox << Background Map(
 
 ### Border
 
-**Sintassi:** obj << Border( sides );
-
-sides = obj << Get Border
+**Sintassi:** obj &lt;&lt; Border( sides );sides = obj &lt;&lt; Get Border
 
 **Descrizione:** I bordi sono linee continue tracciate attorno alla parte esterna di un riquadro di visualizzazione. Se viene indicato un solo valore sarà applicato a tutti i lati. Se vengono specificati due valori essi saranno applicati ai bordi orizzontali e verticali.
 
@@ -344,9 +340,7 @@ tb << Border( 1 );
 
 ### Border Color
 
-**Sintassi:** obj << Border Color( color );
-
-color = obj << Get Border Color
+**Sintassi:** obj &lt;&lt; Border Color( color );color = obj &lt;&lt; Get Border Color
 
 **Descrizione:** Colore facoltativo che sostituisce il colore di default per i bordi dei riquadri.
 
@@ -368,7 +362,7 @@ tb << Border Color( "Light Red" );
 
 ### Bottom
 
-**Sintassi:** obj << Bottom( state=0|1 )
+**Sintassi:** obj &lt;&lt; Bottom( state=0|1 )
 
 **Descrizione:** Mostra/Nasconde un bordo sul lato inferiore del frame.
 
@@ -385,7 +379,7 @@ framebox << Bottom( 0 );
 
 ### Bring Window To Front
 
-**Sintassi:** obj << Bring Window To Front
+**Sintassi:** obj &lt;&lt; Bring Window To Front
 
 **Descrizione:** Porta la finestra in primo piano.
 
@@ -401,13 +395,13 @@ w << Bring Window To Front;
 
 ### Cell Labeling
 
-**Sintassi:** obj << Cell Labeling( "Nessuna etichetta"|"Etichetta per conteggio"|"Etichetta per percentuale"|"Etichetta per valore"|"Etichetta per riga" )
+**Sintassi:** obj &lt;&lt; Cell Labeling( "Nessuna etichetta"|"Etichetta per conteggio"|"Etichetta per percentuale"|"Etichetta per valore"|"Etichetta per riga" )
 
 **JMP Versione aggiunta:** 15
 
 ### Child
 
-**Sintassi:** obj << Child
+**Sintassi:** obj &lt;&lt; Child
 
 **Descrizione:** Restituisce il nodo di livello inferiore a questo riquadro di visualizzazione.
 
@@ -427,7 +421,7 @@ Print( axisChild << Class Name() );
 
 ### Child Seg
 
-**Sintassi:** obj << Child Seg
+**Sintassi:** obj &lt;&lt; Child Seg
 
 **Descrizione:** Restituisce l&apos;elemento figlio del segmento di visualizzazione della casella del frame.
 
@@ -443,7 +437,7 @@ rbiv[Frame Box( 1 )] << Child Seg();
 
 ### Class Name
 
-**Sintassi:** obj << Class Name
+**Sintassi:** obj &lt;&lt; Class Name
 
 **Descrizione:** Restituisce il nome della classe di visualizzazione per questo riquadro.
 
@@ -461,7 +455,7 @@ axisbox << Class Name();
 
 ### Clip Shape
 
-**Sintassi:** seg << Clip Shape(Boundaries(Shape File, [ID(string)]) | Path([string] | [matrix]) | Empty())
+**Sintassi:** seg &lt;&lt; Clip Shape(Boundaries(Shape File, [ID(string)]) | Path([string] | [matrix]) | Empty())
 
 **Descrizione:** Restringe la geometria della forma specificata. La forma può essere specificata utilizzando un file di forma o un percorso. È possibile specificare un ID facoltativo con un file di forma per selezionare una singola forma dal file, altrimenti come zona di ritaglio si utilizza l&apos;unione di tutte le forme. È possibile specificare un percorso di ritaglio con una matrice N x 3 o con una rappresentazione testuale. Una matrice del percorso ha tre colonne per x, y e flag per ciascun punto del percorso. I valori dei flag sono 0 per controllo, 1 per spostamento, 2 per segmento di linea, 3 per segmento cubico di Bézier e sono negativi se il punto chiude il percorso. Il testo del percorso supporta la sintassi SVG.
 
@@ -491,7 +485,7 @@ cs << Clip Shape( Boundaries( "US States" ) );
 
 ### Clone Box
 
-**Sintassi:** obj << Clone Box
+**Sintassi:** obj &lt;&lt; Clone Box
 
 **Descrizione:** Crea una nuova copia del riquadro di visualizzazione.
 
@@ -510,7 +504,7 @@ rbiv << append( clonedBox );
 
 ### Close Window
 
-**Sintassi:** obj << Close Window( <"NoSave"> )
+**Sintassi:** obj &lt;&lt; Close Window( &lt;"NoSave"&gt; )
 
 **Descrizione:** Chiude la finestra.
 
@@ -526,11 +520,11 @@ w << Close Window;
 
 ### Color Theme
 
-**Sintassi:** obj << Color Theme
+**Sintassi:** obj &lt;&lt; Color Theme
 
 ### Copy Customizations
 
-**Sintassi:** obj << Copy Customizations
+**Sintassi:** obj &lt;&lt; Copy Customizations
 
 **Descrizione:** Copia uno script che contiene impostazioni personalizzate per il grafico.
 
@@ -552,7 +546,7 @@ framebox2 << Paste Customizations;
 
 ### Copy Data
 
-**Sintassi:** obj << Copy Data
+**Sintassi:** obj &lt;&lt; Copy Data
 
 **Descrizione:** copia i dati delimitati da tabulazioni da una matrice o tabella negli Appunti.
 
@@ -566,7 +560,7 @@ mat << CopyData;
 
 ### Copy Frame Contents
 
-**Sintassi:** obj << Copy Frame Contents
+**Sintassi:** obj &lt;&lt; Copy Frame Contents
 
 **Descrizione:** Crea un testo di journal contenente le impostazioni per questo frame e lo copia negli Appunti.
 
@@ -588,7 +582,7 @@ framebox2 << Paste Frame Contents;
 
 ### Copy Frame Settings
 
-**Sintassi:** obj << Copy Frame Settings
+**Sintassi:** obj &lt;&lt; Copy Frame Settings
 
 **Descrizione:** Crea uno script contenente le impostazioni per questo frame e lo copia negli Appunti.
 
@@ -610,7 +604,7 @@ framebox2 << Paste Frame Settings;
 
 ### Copy Graph
 
-**Sintassi:** obj << Copy Graph
+**Sintassi:** obj &lt;&lt; Copy Graph
 
 **Descrizione:** Trasferisce negli Appunti un&apos;immagine del grafico con gli assi.
 
@@ -628,7 +622,7 @@ rbiv = biv << report;
 
 ### Copy Picture
 
-**Sintassi:** obj << Copy Picture
+**Sintassi:** obj &lt;&lt; Copy Picture
 
 **Descrizione:** Trasferisce negli Appunti un&apos;immagine del riquadro di visualizzazione.
 
@@ -645,7 +639,7 @@ rbiv << Copy Picture();
 
 ### Copy Polygons
 
-**Sintassi:** obj << Copy Polygons
+**Sintassi:** obj &lt;&lt; Copy Polygons
 
 **Descrizione:** Salva negli Appunti una copia dei poligoni che si trovano nel frame.
 
@@ -666,7 +660,7 @@ framebox << Copy Polygons;
 
 ### Customize
 
-**Sintassi:** obj << Customize
+**Sintassi:** obj &lt;&lt; Customize
 
 **Descrizione:** Cambia le proprietà del contenuto del grafico.
 
@@ -683,7 +677,7 @@ framebox << Customize;
 
 ### Delete Box
 
-**Sintassi:** obj << Delete Box
+**Sintassi:** obj &lt;&lt; Delete Box
 
 **Descrizione:** Elimina il riquadro di visualizzazione.
 
@@ -701,7 +695,7 @@ axisbox << Delete Box();
 
 ### Density Gradient
 
-**Sintassi:** obj << Density Gradient( "Ombreggia in bianco"|"Ombreggia in grigio"|"Colore pieno"="Ombreggia in bianco" )
+**Sintassi:** obj &lt;&lt; Density Gradient( "Ombreggia in bianco"|"Ombreggia in grigio"|"Colore pieno"="Ombreggia in bianco" )
 
 **Descrizione:** Imposta il comportamento di colorazione dei gradienti di densità. "Ombreggia in bianco", per impostazione predefinita.
 
@@ -716,7 +710,7 @@ seg << Density Gradient( "Fade to Gray" );
 
 ### Deselect
 
-**Sintassi:** obj << Deselect
+**Sintassi:** obj &lt;&lt; Deselect
 
 **Descrizione:** Deseleziona questo oggetto per essere utilizzato dai comandi del menu Modifica.
 
@@ -742,7 +736,7 @@ refresh = Function( {},
 
 ### Dispatch
 
-**Sintassi:** obj << Dispatch( {outline node, ...}, display element, display element type, command )
+**Sintassi:** obj &lt;&lt; Dispatch( {outline node, ...}, display element, display element type, command )
 
 **Descrizione:** Invia command a una sezione specificata della struttura di visualizzazione.
 
@@ -759,7 +753,7 @@ rbiv << Dispatch( {}, "Bivar Plot", FrameBox, {Marker Size( 3 )} );
 
 ### Dispatch Segs
 
-**Sintassi:** obj << Dispatch Segs( command )
+**Sintassi:** obj &lt;&lt; Dispatch Segs( command )
 
 **Descrizione:** Invia il comando a tutti gli elementi visivi (&apos;seg&apos;) del riquadro di visualizzazione.
 
@@ -767,7 +761,7 @@ rbiv << Dispatch( {}, "Bivar Plot", FrameBox, {Marker Size( 3 )} );
 
 ### DispatchSeg
 
-**Sintassi:** obj << DispatchSeg( command )
+**Sintassi:** obj &lt;&lt; DispatchSeg( command )
 
 **Descrizione:** Invia il comando al riquadro di visualizzazione.
 
@@ -793,7 +787,7 @@ Distribution(
 
 ### Edit Graphics Script
 
-**Sintassi:** obj << Edit Graphics Script
+**Sintassi:** obj &lt;&lt; Edit Graphics Script
 
 **Descrizione:** Modifica gli script già installati in questo frame.
 
@@ -815,9 +809,7 @@ framebox << Edit Graphics Script;
 
 ### Enabled
 
-**Sintassi:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**Sintassi:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Descrizione:** Un oggetto non abilitato non risponderà agli input della tastiera o del mouse. Questa proprietà è ereditata da oggetti secondari, pertanto un oggetto contenitore non abilitato causerà la disabilitazione di tutti gli oggetti dipendenti.
 
@@ -849,7 +841,7 @@ New Window( "enabled",
 
 ### Error Bar Cap
 
-**Sintassi:** obj << Error Bar Cap( "Nessuno"|"Minuscolo"|"Piccolo"|"Medio"|"Grande" )
+**Sintassi:** obj &lt;&lt; Error Bar Cap( "Nessuno"|"Minuscolo"|"Piccolo"|"Medio"|"Grande" )
 
 **Descrizione:** Specifica quale tipo di estremità di chiusura inserire nelle barre di errore.
 
@@ -872,7 +864,7 @@ seg << Set Error Bar Cap( "Large" );
 
 ### Error Bar Cap Shape
 
-**Sintassi:** obj << Error Bar Cap Shape( begin, end )
+**Sintassi:** obj &lt;&lt; Error Bar Cap Shape( begin, end )
 
 **Descrizione:** Specifica la forma dell&apos;estremità di chiusura da visualizzare sulle barre di errore. Un singolo argomento imposta la forma per entrambe le estremità della barra oppure è possibile fornire argomenti separati per l&apos;inizio e la fine. La forma di default è "Line". Una forma a "Arrow" disegna una freccia rivolta verso l&apos;esterno e "None" omette la chiusura.
 
@@ -895,7 +887,7 @@ seg << Set Error Bar Cap Shape( "Line", "Arrow" );
 
 ### Fill Selection Mode
 
-**Sintassi:** obj << Fill Selection Mode( "Modalità preferita"|"Selezionati con pattern"|"Selezionati più scuri"|"Selezionato riquadrato"|"Selezionato lo stesso colore"|"Non selezionato ombreggiato" )
+**Sintassi:** obj &lt;&lt; Fill Selection Mode( "Modalità preferita"|"Selezionati con pattern"|"Selezionati più scuri"|"Selezionato riquadrato"|"Selezionato lo stesso colore"|"Non selezionato ombreggiato" )
 
 **Descrizione:** Imposta lo stile di selezione per i riempimenti.
 
@@ -915,7 +907,7 @@ framebox << Fill Selection Mode( "Selected Darker" );
 
 ### Find
 
-**Sintassi:** obj << Find
+**Sintassi:** obj &lt;&lt; Find
 
 **Descrizione:** Restituisce un riquadro di visualizzazione con argument indicato.
 
@@ -933,7 +925,7 @@ axisbox << Delete();
 
 ### Find Seg
 
-**Sintassi:** obj << Find Seg( display seg )
+**Sintassi:** obj &lt;&lt; Find Seg( display seg )
 
 ```jsl
 
@@ -948,19 +940,19 @@ ms << delete;
 
 ### Find Segs
 
-**Sintassi:** obj << Find Segs
+**Sintassi:** obj &lt;&lt; Find Segs
 
 **JMP Versione aggiunta:** 15
 
 ### First Value
 
-**Sintassi:** obj << First Value( state=0|1 )
+**Sintassi:** obj &lt;&lt; First Value( state=0|1 )
 
 **JMP Versione aggiunta:** 16
 
 ### Frame Size
 
-**Sintassi:** obj << Frame Size
+**Sintassi:** obj &lt;&lt; Frame Size
 
 **Descrizione:** Cambia la dimensione del frame.
 
@@ -977,7 +969,7 @@ framebox << Frame Size( 300, 300 );
 
 ### Get Annotation
 
-**Sintassi:** obj << Get Annotation
+**Sintassi:** obj &lt;&lt; Get Annotation
 
 **Descrizione:** Restituisce la prima annotazione ancorata a questo riquadro di visualizzazione. È possibile accedere ad altre annotazioni utilizzando Sib() sul risultato.
 
@@ -999,9 +991,7 @@ annotation << delete;
 
 ### Get Background Color
 
-**Sintassi:** obj << Background Color( color );
-
-color = obj << Get Background Color
+**Sintassi:** obj &lt;&lt; Background Color( color );color = obj &lt;&lt; Get Background Color
 
 **Descrizione:** Se è impostato un colore di sfondo, il riquadro è riempito con il colore di sfondo prima di visualizzarne il contenuto. Se non è impostato alcun colore di sfondo, traspare lo sfondo e il contenuto dei riquadri.
 
@@ -1023,7 +1013,7 @@ tb << Background Color( "Yellow" );
 
 ### Get Background Fill
 
-**Sintassi:** obj << Get Background Fill
+**Sintassi:** obj &lt;&lt; Get Background Fill
 
 **Descrizione:** Restituisce lo stato (0|1) del colore di riempimento dello sfondo del grafico.
 
@@ -1046,9 +1036,7 @@ val1 = framebox << Get Background Fill;
 
 ### Get Border
 
-**Sintassi:** obj << Border( sides );
-
-sides = obj << Get Border
+**Sintassi:** obj &lt;&lt; Border( sides );sides = obj &lt;&lt; Get Border
 
 **Descrizione:** I bordi sono linee continue tracciate attorno alla parte esterna di un riquadro di visualizzazione. Se viene indicato un solo valore sarà applicato a tutti i lati. Se vengono specificati due valori essi saranno applicati ai bordi orizzontali e verticali.
 
@@ -1068,9 +1056,7 @@ tb << Border( 1 );
 
 ### Get Border Color
 
-**Sintassi:** obj << Border Color( color );
-
-color = obj << Get Border Color
+**Sintassi:** obj &lt;&lt; Border Color( color );color = obj &lt;&lt; Get Border Color
 
 **Descrizione:** Colore facoltativo che sostituisce il colore di default per i bordi dei riquadri.
 
@@ -1092,7 +1078,7 @@ tb << Border Color( "Light Red" );
 
 ### Get Clip Shape
 
-**Sintassi:** obj << Get Clip Shape
+**Sintassi:** obj &lt;&lt; Get Clip Shape
 
 **Descrizione:** Restituisce la forma di ritaglio corrente
 
@@ -1123,7 +1109,7 @@ cs << Get Clip Shape();
 
 ### Get Content Size
 
-**Sintassi:** obj << Get Content Size
+**Sintassi:** obj &lt;&lt; Get Content Size
 
 **Descrizione:** Restituisce le dimensioni del contenuto nella finestra.
 
@@ -1139,7 +1125,7 @@ Show( c );
 
 ### Get Density Gradient
 
-**Sintassi:** obj << Get Density Gradient
+**Sintassi:** obj &lt;&lt; Get Density Gradient
 
 **Descrizione:** Ottiene il comportamento di colorazione dei gradienti di densità.
 
@@ -1154,7 +1140,7 @@ seg << Get Density Gradient;
 
 ### Get Display Path
 
-**Sintassi:** obj << Get Display Path( parent box, <receiver expr>, <Mode("XPath"|"Subscript")> )
+**Sintassi:** obj &lt;&lt; Get Display Path( parent box, &lt;receiver expr&gt;, &lt;Mode("XPath"|"Subscript")&gt; )
 
 **Descrizione:** Ottiene un&apos;espressione relativamente robusta per navigare tra parent box e obj. Non si garantisce la stabilità di questo percorso in tutte le versioni di JMP. receiver expr è incorporato nell&apos;espressione di output se fornita. In caso contrario viene utilizzata in sostituzione l&apos;espressione fornita per parent box. Come mostrato nell&apos;esempio, questo messaggio è utile principalmente per aumentare la robustezza di un percorso già disponibile. La modalità XPath è predefinita.
 
@@ -1190,9 +1176,7 @@ subscript expr << Select;
 
 ### Get Enabled
 
-**Sintassi:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**Sintassi:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Descrizione:** Un oggetto non abilitato non risponderà agli input della tastiera o del mouse. Questa proprietà è ereditata da oggetti secondari, pertanto un oggetto contenitore non abilitato causerà la disabilitazione di tutti gli oggetti dipendenti.
 
@@ -1224,7 +1208,7 @@ New Window( "enabled",
 
 ### Get Error Bar Cap
 
-**Sintassi:** obj << Get Error Bar Cap
+**Sintassi:** obj &lt;&lt; Get Error Bar Cap
 
 **Descrizione:** Restituisce il tipo corrente di estremità di chiusura della barra di errore
 
@@ -1247,7 +1231,7 @@ seg << Get Error Bar Cap();
 
 ### Get Error Bar Cap Shape
 
-**Sintassi:** { begin, end } = obj << Get Error Bar Cap Shape
+**Sintassi:** { begin, end } = obj &lt;&lt; Get Error Bar Cap Shape
 
 **Descrizione:** Restituisce la forma dell’estremità di chiusura sulle barre di errore.
 
@@ -1270,7 +1254,7 @@ seg << Get Error Bar Cap Shape();
 
 ### Get Fill Selection Mode
 
-**Sintassi:** obj << Get Fill Selection Mode
+**Sintassi:** obj &lt;&lt; Get Fill Selection Mode
 
 **Descrizione:** Restituisce lo stile di selezione per i riempimenti.
 
@@ -1291,7 +1275,7 @@ framebox << Get Fill Selection Mode;
 
 ### Get Gradient
 
-**Sintassi:** obj << Get Gradient
+**Sintassi:** obj &lt;&lt; Get Gradient
 
 **Descrizione:** Ottiene il gradiente di colorazione.
 
@@ -1304,7 +1288,7 @@ seg << Get Gradient;
 
 ### Get Gradient Color Theme
 
-**Sintassi:** obj << Get Gradient Color Theme
+**Sintassi:** obj &lt;&lt; Get Gradient Color Theme
 
 **Descrizione:** Ottiene il tema colori del gradiente.
 
@@ -1319,7 +1303,7 @@ seg << Get Gradient Color Theme;
 
 ### Get Gradient Discrete Colors
 
-**Sintassi:** obj << Get Gradient Discrete Colors
+**Sintassi:** obj &lt;&lt; Get Gradient Discrete Colors
 
 **Descrizione:** Indica se ogni livello in un gradiente deve essere di un colore singolo o se i colori devono avere una transizione graduale.
 
@@ -1334,7 +1318,7 @@ seg << Get Gradient Discrete Colors;
 
 ### Get Gradient Fill
 
-**Sintassi:** obj << Get Gradient Fill
+**Sintassi:** obj &lt;&lt; Get Gradient Fill
 
 **Descrizione:** Ottiene il comportamento di colorazione per valori al di fuori del range della scala del gradiente.
 
@@ -1353,7 +1337,7 @@ seg << Get Gradient Fill;
 
 ### Get Gradient Label Count
 
-**Sintassi:** obj << Get Gradient Label Count
+**Sintassi:** obj &lt;&lt; Get Gradient Label Count
 
 **Descrizione:** Ottiene il numero di etichette nella legenda di un gradiente.
 
@@ -1368,7 +1352,7 @@ seg << Get Gradient Label Count;
 
 ### Get Gradient Label Levels
 
-**Sintassi:** [value1,value1, ... value N] = obj << Get Gradient Label Levels
+**Sintassi:** [value1,value1, ... value N] = obj &lt;&lt; Get Gradient Label Levels
 
 **Descrizione:** Ottiene l’insieme di valori usati per le etichette nella scala del gradiente.
 
@@ -1403,7 +1387,7 @@ seg << Get Gradient Scale Values;
 
 ### Get Gradient Legend Horizontal
 
-**Sintassi:** obj << Get Gradient Legend Horizontal
+**Sintassi:** obj &lt;&lt; Get Gradient Legend Horizontal
 
 **Descrizione:** Indica se la legenda del gradiente deve essere disegnata orizzontalmente.
 
@@ -1418,7 +1402,7 @@ seg << Get Gradient Legend Horizontal;
 
 ### Get Gradient Legend Label Format
 
-**Sintassi:** obj << Get Gradient Legend Label Format
+**Sintassi:** obj &lt;&lt; Get Gradient Legend Label Format
 
 **Descrizione:** Ottiene il formato delle etichette della legenda del gradiente
 
@@ -1433,7 +1417,7 @@ seg << Get Gradient Legend Label Format;
 
 ### Get Gradient Legend Label Width
 
-**Sintassi:** obj << Get Gradient Legend Label Width
+**Sintassi:** obj &lt;&lt; Get Gradient Legend Label Width
 
 **Descrizione:** Ottiene la lunghezza massima in caratteri delle etichette della legenda del gradiente.
 
@@ -1448,7 +1432,7 @@ seg << Get Gradient Legend Label Width;
 
 ### Get Gradient Legend Show Labels
 
-**Sintassi:** obj << Get Gradient Legend Show Labels
+**Sintassi:** obj &lt;&lt; Get Gradient Legend Show Labels
 
 **Descrizione:** Indica se le etichette del livello devono essere mostrate nella legenda del gradiente.
 
@@ -1463,7 +1447,7 @@ seg << Get Gradient Legend Show Labels;
 
 ### Get Gradient Level Count
 
-**Sintassi:** obj << Get Gradient Level Count
+**Sintassi:** obj &lt;&lt; Get Gradient Level Count
 
 **Descrizione:** Ottiene il numero di livelli in un gradiente.
 
@@ -1478,7 +1462,7 @@ seg << Get Gradient Levels;
 
 ### Get Gradient Lightness Range
 
-**Sintassi:** obj << Get Gradient Lightness Range
+**Sintassi:** obj &lt;&lt; Get Gradient Lightness Range
 
 **Descrizione:** Ottiene la luminosità minima e massima per i colori dei livelli in un gradiente. I valori mancanti indicano che è stato utilizzato il valore originale del tema colori.
 
@@ -1493,7 +1477,7 @@ seg << Get Gradient Lightness Range;
 
 ### Get Gradient Range
 
-**Sintassi:** obj << Get Gradient Range
+**Sintassi:** obj &lt;&lt; Get Gradient Range
 
 **Descrizione:** Ottiene il range entro il quale vengono generate scale di gradiente non personalizzate.
 
@@ -1512,7 +1496,7 @@ seg << Get Gradient Range;
 
 ### Get Gradient Reverse Color Order
 
-**Sintassi:** obj << Get Gradient Reverse Color Order
+**Sintassi:** obj &lt;&lt; Get Gradient Reverse Color Order
 
 **Descrizione:** Indica se l&apos;ordine dei colori in un gradiente è invertito.
 
@@ -1527,7 +1511,7 @@ seg << Get Gradient Reverse Color Order;
 
 ### Get Gradient Reverse Label Order
 
-**Sintassi:** obj << Get Gradient Reverse Label Order
+**Sintassi:** obj &lt;&lt; Get Gradient Reverse Label Order
 
 **Descrizione:** Indica se l&apos;ordine delle etichette in un gradiente è invertito.
 
@@ -1542,7 +1526,7 @@ seg << Get Gradient Reverse Label Order;
 
 ### Get Gradient Scale
 
-**Sintassi:** obj << Get Gradient Scale
+**Sintassi:** obj &lt;&lt; Get Gradient Scale
 
 **Descrizione:** Ottiene il tipo di scala del gradiente.
 
@@ -1561,7 +1545,7 @@ seg << Get Gradient Scale;
 
 ### Get Gradient Scale Values
 
-**Sintassi:** [value1,value1, ... value N] = obj << Get Gradient Scale Values
+**Sintassi:** [value1,value1, ... value N] = obj &lt;&lt; Get Gradient Scale Values
 
 **Descrizione:** Ottiene l’insieme di valori usati per le etichette nella scala del gradiente.
 
@@ -1596,7 +1580,7 @@ seg << Get Gradient Scale Values;
 
 ### Get Gradient Show Missing
 
-**Sintassi:** obj << Get Gradient Show Missing
+**Sintassi:** obj &lt;&lt; Get Gradient Show Missing
 
 **Descrizione:** Indica quando mostrare la voce della legenda per i valori mancanti.
 
@@ -1611,7 +1595,7 @@ seg << Get Gradient Show Missing;
 
 ### Get Gradient Transparency
 
-**Sintassi:** obj << Get Gradient Transparency
+**Sintassi:** obj &lt;&lt; Get Gradient Transparency
 
 **Descrizione:** Ottiene il comportamento di trasparenza dei gradienti.
 
@@ -1626,7 +1610,7 @@ seg << Get Gradient Transparency;
 
 ### Get HTML
 
-**Sintassi:** obj << Get HTML( <format> )
+**Sintassi:** obj &lt;&lt; Get HTML( &lt;format&gt; )
 
 **Descrizione:** Restituisce una stringa che contiene l&apos;origine HTML del riquadro di visualizzazione.
 
@@ -1656,7 +1640,7 @@ Web( "$TEMP/Oneway.html", JMPWindow );
 
 ### Get Height
 
-**Sintassi:** width = obj << Get Height
+**Sintassi:** width = obj &lt;&lt; Get Height
 
 **Descrizione:** Restituisce l&apos;altezza del riquadro di visualizzazione.
 
@@ -1674,9 +1658,7 @@ fb << Get Height;
 
 ### Get Horizontal Alignment
 
-**Sintassi:** obj << Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );
-
-"Default"|"Left"|"Center"|"Right" = obj << Get Horizontal Alignment
+**Sintassi:** obj &lt;&lt; Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );"Default"|"Left"|"Center"|"Right" = obj &lt;&lt; Get Horizontal Alignment
 
 **Descrizione:** L&apos;allineamento orizzontale controlla il posizionamento del riquadro all&apos;interno di un contenitore se il riquadro non riempie l&apos;intero spazio.
 
@@ -1696,7 +1678,7 @@ lb << Horizontal Alignment( "Right" );
 
 ### Get Image
 
-**Sintassi:** image = obj << Get Image
+**Sintassi:** image = obj &lt;&lt; Get Image
 
 **Descrizione:** Restituisce un riferimento all&apos;immagine di sfondo.
 
@@ -1726,7 +1708,7 @@ Print( fb << Get Image );
 
 ### Get Interval Draw Directions
 
-**Sintassi:** obj << Get Interval Draw Directions
+**Sintassi:** obj &lt;&lt; Get Interval Draw Directions
 
 **Descrizione:** Ottiene le direzioni in cui devono essere tracciati gli intervalli.
 
@@ -1765,7 +1747,7 @@ seg << Get Interval Draw Directions;
 
 ### Get Journal
 
-**Sintassi:** obj << Get Journal
+**Sintassi:** obj &lt;&lt; Get Journal
 
 **Descrizione:** Restituisce una stringa che contiene l&apos;origine journal del riquadro di visualizzazione.
 
@@ -1782,7 +1764,7 @@ Print( rbiv << Get Journal );
 
 ### Get Line Color
 
-**Sintassi:** color = obj << Get Line Color
+**Sintassi:** color = obj &lt;&lt; Get Line Color
 
 **Descrizione:** Restituisce il colore delle linee.
 
@@ -1795,7 +1777,7 @@ seg << Get Line Color;
 
 ### Get Line Style
 
-**Sintassi:** pen style = obj << Get Line Style
+**Sintassi:** pen style = obj &lt;&lt; Get Line Style
 
 **Descrizione:** Restituisce lo stile delle linee.
 
@@ -1810,7 +1792,7 @@ seg << Get Line Style;
 
 ### Get Line Width
 
-**Sintassi:** number = obj << Get Line Width
+**Sintassi:** number = obj &lt;&lt; Get Line Width
 
 **Descrizione:** Restituisce la larghezza delle linee.
 
@@ -1825,9 +1807,7 @@ seg << Get Line Width;
 
 ### Get Margin
 
-**Sintassi:** obj << Margin( sides );
-
-sides = obj << Get Margin
+**Sintassi:** obj &lt;&lt; Margin( sides );sides = obj &lt;&lt; Get Margin
 
 **Descrizione:** Il margine aggiunge spazio tra il bordo del riquadro e i riquadri adiacenti. Usare argomenti con nome, oppure fornire un elenco di valori. Se viene indicato un solo valore sarà applicato a tutti i lati. Se vengono specificati due valori essi saranno applicati ai margini orizzontali e verticali.
 
@@ -1848,7 +1828,7 @@ tb << Margin( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ### Get Marker
 
-**Sintassi:** marker = obj << Get Marker
+**Sintassi:** marker = obj &lt;&lt; Get Marker
 
 **Descrizione:** Restituisce lo stile dell&apos;indicatore.
 
@@ -1863,7 +1843,7 @@ seg << Get Marker;
 
 ### Get Marker Selection Mode
 
-**Sintassi:** obj << Get Marker Selection Mode
+**Sintassi:** obj &lt;&lt; Get Marker Selection Mode
 
 **Descrizione:** Restituisce lo stile di selezione dell&apos;indicatore
 
@@ -1882,7 +1862,7 @@ framebox << Get Marker Selection Mode;
 
 ### Get Marker Size
 
-**Sintassi:** size = obj << Get Marker Size
+**Sintassi:** size = obj &lt;&lt; Get Marker Size
 
 **Descrizione:** Restituisce la dimensione degli indicatori.
 
@@ -1897,7 +1877,7 @@ seg << Get Marker Size;
 
 ### Get Max Size
 
-**Sintassi:** width,height = obj << Get Max Size
+**Sintassi:** width,height = obj &lt;&lt; Get Max Size
 
 **Descrizione:** Restituisce la dimensione massima di questo riquadro di visualizzazione per l&apos;estensione automatica.
 
@@ -1915,7 +1895,7 @@ fb << Get Max Size;
 
 ### Get Min Size
 
-**Sintassi:** width,height = obj << Get Min Size
+**Sintassi:** width,height = obj &lt;&lt; Get Min Size
 
 **Descrizione:** Restituisce la dimensione minima di questo riquadro di visualizzazione per l&apos;estensione automatica.
 
@@ -1933,7 +1913,7 @@ fb << Get Min Size;
 
 ### Get Namespace
 
-**Sintassi:** obj << Get Namespace
+**Sintassi:** obj &lt;&lt; Get Namespace
 
 **Descrizione:** Restituisce lo spazio dei nomi associato a questo oggetto di visualizzazione.
 
@@ -1951,7 +1931,7 @@ Show( ns:x, x );
 
 ### Get On Close
 
-**Sintassi:** obj << Get On Close
+**Sintassi:** obj &lt;&lt; Get On Close
 
 **Descrizione:** Restituisce lo script o la funzione che verrà eseguita alla chiusura della finestra.
 
@@ -1976,9 +1956,7 @@ Show( w << Get On Close );
 
 ### Get Padding
 
-**Sintassi:** obj << Padding( sides );
-
-sides = obj << Get Padding
+**Sintassi:** obj &lt;&lt; Padding( sides );sides = obj &lt;&lt; Get Padding
 
 **Descrizione:** La spaziatura interna aggiunge spazio tra il contenuto e il bordo del riquadro. Usare argomenti con nome, oppure fornire un elenco di valori. Se viene indicato un solo valore sarà applicato a tutti i lati. Se vengono specificati due valori essi saranno applicati alle spaziature interne orizzontali e verticali.
 
@@ -1999,7 +1977,7 @@ tb << Padding( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ### Get Page Setup
 
-**Sintassi:** obj << Get Page Setup
+**Sintassi:** obj &lt;&lt; Get Page Setup
 
 **Descrizione:** Ottieni le informazioni di impostazione della pagina per il pdf
 
@@ -2014,7 +1992,7 @@ w << get page setup();
 
 ### Get Picture
 
-**Sintassi:** obj << Get Picture( <Scale(factor)>, <Type("Bitmap" | "Scalable")>, <View("Picture" | "Screen" | "Print"), <Appearance("Default" | "Current")>, <SubRect(Left(number), Top(number), Right(number), Bottom(number))> )
+**Sintassi:** obj &lt;&lt; Get Picture( &lt;Scale(factor)&gt;, &lt;Type("Bitmap" | "Scalable")&gt;, &lt;View("Picture" | "Screen" | "Print"), &lt;Appearance("Default" | "Current")&gt;, &lt;SubRect(Left(number), Top(number), Right(number), Bottom(number))&gt; )
 
 **Descrizione:** Cattura db come un oggetto immagine. L&apos;argomento facoltativo Scale effettuerà il rendering dell&apos;immagine a una risoluzione ridimensionata. Il ridimensionamento richiede che il riquadro di visualizzazione sia estensibile. L&apos;argomento Type determina se il risultato sarà un&apos;immagine vettoriale scalabile o una bitmap. Per impostazione predefinita viene restituita un&apos;immagine scalabile, adatta al salvataggio in formati vettoriali come PDF. L&apos;opzione View cambia il comportamento di alcuni riquadri. L&apos;opzione predefinita di "Picture" rappresenta il report come sarebbe se fosse esportato in un formato immagine, con aree fatte scorrere completamente visibili. La modalità di visualizzazione di "Screen" rappresenta il report come visibile sullo schermo e "Print" rappresenta il report come se fosse stampato, senza funzioni di impostazione della pagina. L&apos;opzione SubRect acquisisce una parte dell&apos;immagine risultante piuttosto che un&apos;immagine completa. L&apos;opzione Appearance può cambiare dai colori di output "Default" ai colori "Current" come visibili sullo schermo. Le opzioni View, SubRect e Appearance sono supportate solo per Type "Bitmap".
 
@@ -2072,7 +2050,7 @@ New Window( "Example",
 
 ### Get Polygons
 
-**Sintassi:** obj << Get Polygons
+**Sintassi:** obj &lt;&lt; Get Polygons
 
 **Descrizione:** Restituisce un elenco dei poligoni che si trovano nel frame.
 
@@ -2093,7 +2071,7 @@ Print( framebox << Get Polygons );
 
 ### Get Project
 
-**Sintassi:** project = obj << Get Project()
+**Sintassi:** project = obj &lt;&lt; Get Project()
 
 **Descrizione:** Restituisce il progetto padre della finestra, o Vuoto() se non è in un progetto.
 
@@ -2111,7 +2089,7 @@ Show( c );
 
 ### Get Properties
 
-**Sintassi:** obj << Get Properties
+**Sintassi:** obj &lt;&lt; Get Properties
 
 **Descrizione:** Restituisce un array associativo che contiene le proprietà del riquadro di visualizzazione e i rispettivi valori.
 
@@ -2125,7 +2103,7 @@ bb << Get Properties;
 
 ### Get Property
 
-**Sintassi:** obj << Get Property( "property" )
+**Sintassi:** obj &lt;&lt; Get Property( "property" )
 
 **Descrizione:** Restituisce l&apos;impostazione corrente per la property nominata.
 
@@ -2139,7 +2117,7 @@ bb << Get Property( "Enabled" );
 
 ### Get Property List
 
-**Sintassi:** obj << Get Property List
+**Sintassi:** obj &lt;&lt; Get Property List
 
 **Descrizione:** Restituisce un elenco di proprietà del riquadro di visualizzazione.
 
@@ -2153,7 +2131,7 @@ bb << Get Property List;
 
 ### Get RTF
 
-**Sintassi:** obj << Get RTF( <format> )
+**Sintassi:** obj &lt;&lt; Get RTF( &lt;format&gt; )
 
 **Descrizione:** Restituisce una stringa che contiene l&apos;origine RTF del riquadro di visualizzazione.
 
@@ -2183,7 +2161,7 @@ Open( "$TEMP/Oneway.rtf" );
 
 ### Get Row States
 
-**Sintassi:** rs = obj << Get Row States( <dt> )
+**Sintassi:** rs = obj &lt;&lt; Get Row States( &lt;dt&gt; )
 
 **Descrizione:** Restituisce un vettore contenente lo stato della riga per ogni riga nella tabella di dati specificata o nella tabella di dati corrente. Gli stati delle righe possono provenire dalla tabella o dal contesto del filtro del riquadro.
 
@@ -2272,7 +2250,7 @@ updatetext();
 
 ### Get Show Window
 
-**Sintassi:** obj << Get Show Window
+**Sintassi:** obj &lt;&lt; Get Show Window
 
 **Descrizione:** Restituisce la visibilità della finestra.
 
@@ -2290,7 +2268,7 @@ Print( w << Get Show Window() );
 
 ### Get Size
 
-**Sintassi:** width,height = obj << Get Size
+**Sintassi:** width,height = obj &lt;&lt; Get Size
 
 **Descrizione:** Restituisce la dimensione del riquadro di visualizzazione.
 
@@ -2308,7 +2286,7 @@ Print( fb << Get Size );
 
 ### Get Stretch
 
-**Sintassi:** x,y = obj << Get Stretch
+**Sintassi:** x,y = obj &lt;&lt; Get Stretch
 
 **Descrizione:** Restituisce i flag di estensione per questo riquadro di visualizzazione in direzione orizzontale e verticale.
 
@@ -2334,7 +2312,7 @@ spacer << Get Stretch();
 
 ### Get Text
 
-**Sintassi:** obj << Get Text
+**Sintassi:** obj &lt;&lt; Get Text
 
 **Descrizione:** Restituisce una stringa che contiene il testo del riquadro di visualizzazione.
 
@@ -2349,9 +2327,7 @@ a << Set Text( win << Get Text );
 
 ### Get Text Color
 
-**Sintassi:** obj << Text Color( color );
-
-color = obj << Get Text Color
+**Sintassi:** obj &lt;&lt; Text Color( color );color = obj &lt;&lt; Get Text Color
 
 **Descrizione:** Il testo sarà visualizzato nel colore del testo, se impostato. Se questa proprietà non è stata impostata, il riquadro assumerà il colore del testo del riquadro che lo contiene.
 
@@ -2373,15 +2349,11 @@ tb << Text Color( "Red" );
 
 ### Get UI Only
 
-**Sintassi:** obj << UI Only( state=0|1 );
-
-state = obj << Get UI Only
+**Sintassi:** obj &lt;&lt; UI Only( state=0|1 );state = obj &lt;&lt; Get UI Only
 
 ### Get User Resizable
 
-**Sintassi:** obj << User Resizable;
-
-obj << Get User Resizable
+**Sintassi:** obj &lt;&lt; User Resizable;obj &lt;&lt; Get User Resizable
 
 **Descrizione:** Se il riquadro è ridimensionabile dall&apos;utente, il cursore cambierà in prossimità dei bordi inferiore e destro per consentire di ridimensionare il riquadro in modalità drag-and-drop.
 
@@ -2418,9 +2390,7 @@ scroll << User Resizable( {0, 0} );
 
 ### Get Vertical Alignment
 
-**Sintassi:** obj << Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );
-
-"Default"|"Top"|"Center"|"Bottom" = obj << Get Vertical Alignment
+**Sintassi:** obj &lt;&lt; Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );"Default"|"Top"|"Center"|"Bottom" = obj &lt;&lt; Get Vertical Alignment
 
 **Descrizione:** L&apos;allineamento verticale controlla il posizionamento del riquadro all&apos;interno di un contenitore se il riquadro non riempie l&apos;intero spazio.
 
@@ -2442,9 +2412,7 @@ lb << Vertical Alignment( "Bottom" );
 
 ### Get Visibility
 
-**Sintassi:** obj << Visibility( "Visible"|"Hidden"|"Collapse" );
-
-"Visible"|"Hidden"|"Collapse" = obj << Get Visibility
+**Sintassi:** obj &lt;&lt; Visibility( "Visible"|"Hidden"|"Collapse" );"Visible"|"Hidden"|"Collapse" = obj &lt;&lt; Get Visibility
 
 **Descrizione:** La visibilità determina se mostrare un riquadro e se richiede spazio. Il valore predefinito di "Visible" significa che l&apos;oggetto verrà mostrato. Un riquadro "Hidden" non viene mostrato ma richiede spazio, mentre un riquadro "Collapsed" non richiede spazio nel layout.
 
@@ -2465,7 +2433,7 @@ Show( tb << Get Visibility );
 
 ### Get Web Support
 
-**Sintassi:** obj << Get Web Support
+**Sintassi:** obj &lt;&lt; Get Web Support
 
 **Descrizione:** Restituisce un numero indicante il livello di supporto HTML interattivo per l&apos;oggetto visualizzato. 1 significa che alcuni o tutti gli elementi sono supportati. 0 significa nessun supporto.
 
@@ -2481,7 +2449,7 @@ Show( s );
 
 ### Get Width
 
-**Sintassi:** width = obj << Get Width
+**Sintassi:** width = obj &lt;&lt; Get Width
 
 **Descrizione:** Restituisce la larghezza del riquadro di visualizzazione.
 
@@ -2499,7 +2467,7 @@ fb << Get Width;
 
 ### Get Window Icon
 
-**Sintassi:** obj << Get Window Icon
+**Sintassi:** obj &lt;&lt; Get Window Icon
 
 **Descrizione:** Restituisce l&apos;icona della finestra.
 
@@ -2515,7 +2483,7 @@ Show( t );
 
 ### Get Window Position
 
-**Sintassi:** obj << Get Window Position
+**Sintassi:** obj &lt;&lt; Get Window Position
 
 **Descrizione:** Restituisce la posizione della finestra.
 
@@ -2531,7 +2499,7 @@ Show( p );
 
 ### Get Window Size
 
-**Sintassi:** obj << Get Window Size
+**Sintassi:** obj &lt;&lt; Get Window Size
 
 **Descrizione:** Restituisce le dimensioni della finestra.
 
@@ -2547,7 +2515,7 @@ Show( s );
 
 ### Get Window Title
 
-**Sintassi:** obj << Get Window Title
+**Sintassi:** obj &lt;&lt; Get Window Title
 
 **Descrizione:** Restituisce il titolo della finestra.
 
@@ -2563,7 +2531,7 @@ Show( t );
 
 ### Get Window View
 
-**Sintassi:** obj << Get Window View
+**Sintassi:** obj &lt;&lt; Get Window View
 
 **Descrizione:** Restituisce la visualizzazione della finestra corrente. Le finestre possono essere "Visibile", "Invisibile" o "Privata".
 
@@ -2578,7 +2546,7 @@ Print( w << Get Window View() );
 
 ### Get XML
 
-**Sintassi:** obj << Get XML( <English(0|1)>, <NoData(0|1)> )
+**Sintassi:** obj &lt;&lt; Get XML( &lt;English(0|1)&gt;, &lt;NoData(0|1)&gt; )
 
 **Descrizione:** Recupera la struttura di visualizzazione formattata come XML. Di default, le stringhe vengono restituite nella lingua locale e l&apos;XML include i valori dei dati in alcuni riquadri. Usare l&apos;opzione English per restituire le stringhe in inglese, se disponibili. Usare l&apos;opzione NoData per omettere i valori dei dati all&apos;interno dei riquadri, che possono essere molto grandi per alcune strutture di visualizzazione.
 
@@ -2593,7 +2561,7 @@ a << set text( win << get xml );
 
 ### GetOffset
 
-**Sintassi:** x,y = obj << GetOffset
+**Sintassi:** x,y = obj &lt;&lt; GetOffset
 
 **Descrizione:** Restituisce l&apos;offset del riquadro di visualizzazione rispetto al riquadro principale. Potrebbe essere necessario usare il messaggio <<principale in un ciclo per accumulare diversi offset.
 
@@ -2638,9 +2606,7 @@ New Window( "example",
 
 ### Gradient
 
-**Sintassi:** obj << { <Color Theme(theme)>, <Min Lightness(0-1)>, <Max Lightness(0-1)>, <Contour Levels(num)>, <Reverse Gradient(0|1)>, <Density Gradient("Fade To White"|"Fade To Gray"|"Full Color")>, <Gradient Transparency("None"|"Linear")> }
-
-obj << { <Color Theme(theme)>, <Min Lightness(0-1)>, <Max Lightness(0-1)>, <N Labels(num)>, <Show Missing Color("On"|"Off"|"Auto")>, <Scale Type("Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom")>, <Scale Values([v1, v2, …])>, <Range Type("Default"|"Exact Data Range"|"Middle 90%")>, <Fill("Between"|"Above"|"Below"|"Above Below")>, <Reverse Gradient(0|1)>, <Reverse Labels(0|1)>, <Discrete Color(0|1)> }, <Label Format(labelFormat)>, <Width(num)>, <Horizontal(0|1)>, <Show Labels(0|1)>
+**Sintassi:** obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;Contour Levels(num)&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Density Gradient("Fade To White"|"Fade To Gray"|"Full Color")&gt;, &lt;Gradient Transparency("None"|"Linear")&gt; }obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;N Labels(num)&gt;, &lt;Show Missing Color("On"|"Off"|"Auto")&gt;, &lt;Scale Type("Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom")&gt;, &lt;Scale Values([v1, v2, …])&gt;, &lt;Range Type("Default"|"Exact Data Range"|"Middle 90%")&gt;, &lt;Fill("Between"|"Above"|"Below"|"Above Below")&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Reverse Labels(0|1)&gt;, &lt;Discrete Color(0|1)&gt; }, &lt;Label Format(labelFormat)&gt;, &lt;Width(num)&gt;, &lt;Horizontal(0|1)&gt;, &lt;Show Labels(0|1)&gt;
 
 **Descrizione:** Imposta il gradiente di colorazione.
 
@@ -2653,7 +2619,7 @@ seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
 
 ### Gradient Color Theme
 
-**Sintassi:** obj << Gradient Color Theme
+**Sintassi:** obj &lt;&lt; Gradient Color Theme
 
 **Descrizione:** Imposta il tema colori del gradiente.
 
@@ -2668,7 +2634,7 @@ seg << Set Gradient Color Theme( "Viridis" );
 
 ### Gradient Discrete Colors
 
-**Sintassi:** obj << Gradient Discrete Colors
+**Sintassi:** obj &lt;&lt; Gradient Discrete Colors
 
 **Descrizione:** Indica se ogni livello in un gradiente deve essere di un colore singolo o se i colori devono avere una transizione graduale.
 
@@ -2687,7 +2653,7 @@ seg << Set Gradient Discrete Colors( 1 );
 
 ### Gradient Fill
 
-**Sintassi:** obj << Gradient Fill( "Tra"|"Sopra"|"Sotto"|"Sopra Sotto"="Sopra Sotto" )
+**Sintassi:** obj &lt;&lt; Gradient Fill( "Tra"|"Sopra"|"Sotto"|"Sopra Sotto"="Sopra Sotto" )
 
 **Descrizione:** Imposta il comportamento di colorazione per valori al di fuori del range della scala del gradiente. "Sopra Sotto", per impostazione predefinita.
 
@@ -2707,7 +2673,7 @@ seg << Set Gradient Fill( "Between" );
 
 ### Gradient Label Count
 
-**Sintassi:** obj << Gradient Label Count
+**Sintassi:** obj &lt;&lt; Gradient Label Count
 
 **Descrizione:** Imposta il numero di etichette nella legenda di un gradiente. È uno in più rispetto al numero di curve di livello.
 
@@ -2722,7 +2688,7 @@ seg << Set Gradient Label Count( 8 );
 
 ### Gradient Label Levels
 
-**Sintassi:** obj << Gradient Label Levels( [value1,value1, ... value N] )
+**Sintassi:** obj &lt;&lt; Gradient Label Levels( [value1,value1, ... value N] )
 
 **Descrizione:** Imposta una serie personalizzata di valori da utilizzare nella scala del gradiente.
 
@@ -2741,7 +2707,7 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ### Gradient Legend Horizontal
 
-**Sintassi:** obj << Gradient Legend Horizontal
+**Sintassi:** obj &lt;&lt; Gradient Legend Horizontal
 
 **Descrizione:** Indica se la legenda del gradiente deve essere disegnata orizzontalmente.
 
@@ -2756,7 +2722,7 @@ seg << Set Gradient Legend Horizontal( 1 );
 
 ### Gradient Legend Label Format
 
-**Sintassi:** obj << Gradient Legend Label Format
+**Sintassi:** obj &lt;&lt; Gradient Legend Label Format
 
 **Descrizione:** Imposta il formato per le etichette della legenda del gradiente
 
@@ -2771,7 +2737,7 @@ seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
 
 ### Gradient Legend Label Width
 
-**Sintassi:** obj << Gradient Legend Label Width
+**Sintassi:** obj &lt;&lt; Gradient Legend Label Width
 
 **Descrizione:** Imposta la lunghezza massima in caratteri delle etichette della legenda del gradiente.
 
@@ -2786,7 +2752,7 @@ seg << Set Gradient Legend Label Width( 4 );
 
 ### Gradient Legend Show Labels
 
-**Sintassi:** obj << Gradient Legend Show Labels
+**Sintassi:** obj &lt;&lt; Gradient Legend Show Labels
 
 **Descrizione:** Indica se le etichette di livello devono essere mostrate nella legenda del gradiente.
 
@@ -2801,7 +2767,7 @@ seg << Set Gradient Legend Show Labels( 0 );
 
 ### Gradient Level Count
 
-**Sintassi:** obj << Gradient Level Count
+**Sintassi:** obj &lt;&lt; Gradient Level Count
 
 **Descrizione:** Imposta il numero di livelli in un gradiente. È uno in meno rispetto al numero di etichette.
 
@@ -2816,7 +2782,7 @@ seg << Set Gradient Levels( 7 );
 
 ### Gradient Lightness Range
 
-**Sintassi:** obj << Gradient Lightness Range
+**Sintassi:** obj &lt;&lt; Gradient Lightness Range
 
 **Descrizione:** Imposta la luminosità minima e massima per i colori dei livelli in un gradiente. I colori saranno scalati per coprire questo range. Un valore mancante viene trattato come nessuna modifica.
 
@@ -2851,7 +2817,7 @@ seg << Set Gradient Lightness Range( ., 0.75 );
 
 ### Gradient Range
 
-**Sintassi:** obj << Gradient Range( "Impostazione predefinita"|"Range di dati esatto"|"Intermedio 90%"="Impostazione predefinita" )
+**Sintassi:** obj &lt;&lt; Gradient Range( "Impostazione predefinita"|"Range di dati esatto"|"Intermedio 90%"="Impostazione predefinita" )
 
 **Descrizione:** Imposta il range entro il quale vengono generate scale di gradiente non personalizzate. "Impostazione predefinita", per impostazione predefinita.
 
@@ -2870,7 +2836,7 @@ seg << Set Gradient Range( "Exact Data Range" );
 
 ### Gradient Reverse Color Order
 
-**Sintassi:** obj << Gradient Reverse Color Order
+**Sintassi:** obj &lt;&lt; Gradient Reverse Color Order
 
 **Descrizione:** Inverte l&apos;ordine dei colori in un gradiente.
 
@@ -2885,7 +2851,7 @@ seg << Set Gradient Reverse Color Order( 1 );
 
 ### Gradient Reverse Label Order
 
-**Sintassi:** obj << Gradient Reverse Label Order
+**Sintassi:** obj &lt;&lt; Gradient Reverse Label Order
 
 **Descrizione:** Inverte l&apos;ordine delle etichette in un gradiente.
 
@@ -2900,7 +2866,7 @@ seg << Set Gradient Reverse Label Order( 1 );
 
 ### Gradient Scale
 
-**Sintassi:** obj << Gradient Scale( "Lineare"|"Quantile"|"Deviazione standard"|"Log"|"Offset logaritmi"|"Personalizzata"="Lineare" )
+**Sintassi:** obj &lt;&lt; Gradient Scale( "Lineare"|"Quantile"|"Deviazione standard"|"Log"|"Offset logaritmi"|"Personalizzata"="Lineare" )
 
 **Descrizione:** Imposta il tipo di scala del gradiente. "Lineare", per impostazione predefinita.
 
@@ -2919,7 +2885,7 @@ seg << Set Gradient Scale( "Quantile" );
 
 ### Gradient Scale Values
 
-**Sintassi:** obj << Gradient Scale Values( [value1,value1, ... value N] )
+**Sintassi:** obj &lt;&lt; Gradient Scale Values( [value1,value1, ... value N] )
 
 **Descrizione:** Imposta una serie personalizzata di valori da utilizzare nella scala del gradiente.
 
@@ -2938,7 +2904,7 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ### Gradient Show Missing
 
-**Sintassi:** obj << Gradient Show Missing( "Automatica"|"Attivato"|"Disattivato"="Automatica" )
+**Sintassi:** obj &lt;&lt; Gradient Show Missing( "Automatica"|"Attivato"|"Disattivato"="Automatica" )
 
 **Descrizione:** Indica quando mostrare la voce della legenda per i valori mancanti. "Automatica", per impostazione predefinita.
 
@@ -2960,7 +2926,7 @@ seg << Set Gradient Show Missing( "Off" );
 
 ### Gradient Transparency
 
-**Sintassi:** obj << Gradient Transparency( "Nessuno"|"Lineare"="Lineare" )
+**Sintassi:** obj &lt;&lt; Gradient Transparency( "Nessuno"|"Lineare"="Lineare" )
 
 **Descrizione:** Imposta il comportamento di trasparenza dei gradienti. "Lineare", per impostazione predefinita.
 
@@ -2975,7 +2941,7 @@ seg << Gradient Transparency( "None" );
 
 ### Grid Line Order
 
-**Sintassi:** obj << Grid Line Order( position )
+**Sintassi:** obj &lt;&lt; Grid Line Order( position )
 
 **Descrizione:** Traccia le linee della griglia davanti o dietro altri oggetti nel grafico
 
@@ -2994,9 +2960,7 @@ framebox << Grid Line Order( 1 );
 
 ### Horizontal Alignment
 
-**Sintassi:** obj << Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );
-
-"Default"|"Left"|"Center"|"Right" = obj << Get Horizontal Alignment
+**Sintassi:** obj &lt;&lt; Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );"Default"|"Left"|"Center"|"Right" = obj &lt;&lt; Get Horizontal Alignment
 
 **Descrizione:** L&apos;allineamento orizzontale controlla il posizionamento del riquadro all&apos;interno di un contenitore se il riquadro non riempie l&apos;intero spazio.
 
@@ -3016,13 +2980,13 @@ lb << Horizontal Alignment( "Right" );
 
 ### Horizontal Gap
 
-**Sintassi:** obj << Horizontal Gap( number )
+**Sintassi:** obj &lt;&lt; Horizontal Gap( number )
 
 **JMP Versione aggiunta:** 15
 
 ### Hover Label Editor
 
-**Sintassi:** obj << Hover Label Editor
+**Sintassi:** obj &lt;&lt; Hover Label Editor
 
 **Descrizione:** Visualizza la finestra dell&apos;Editor etichette al passaggio del mouse.
 
@@ -3030,7 +2994,7 @@ lb << Horizontal Alignment( "Right" );
 
 ### Inval
 
-**Sintassi:** obj << Inval
+**Sintassi:** obj &lt;&lt; Inval
 
 **Descrizione:** Invalida il riquadro di visualizzazione.  La finestra verrà aggiornata quando viene inviato il messaggio <<Aggiorna finestra o il sistema operativo avrà tempo per l&apos;aggiornamento.
 
@@ -3072,7 +3036,7 @@ New Window( "Inval example",
 
 ### Is Dirty
 
-**Sintassi:** obj << Is Dirty
+**Sintassi:** obj &lt;&lt; Is Dirty
 
 **Descrizione:** Ottiene lo stato modificato del documento. 1 significa che il documento è stato modificato e richiederà il salvataggio; 0 significa che il documento non è stato modificato.
 
@@ -3091,7 +3055,7 @@ Show( ww << Is Dirty );
 
 ### Is Modal Dialog
 
-**Sintassi:** obj << Is Modal Dialog
+**Sintassi:** obj &lt;&lt; Is Modal Dialog
 
 **Descrizione:** Restituisce vero se la finestra è una finestra di dialogo modale. Utile solo se chiamato da un callback del gestore della finestra.
 
@@ -3110,7 +3074,7 @@ With Window Handler(
 
 ### Journal
 
-**Sintassi:** obj << Journal
+**Sintassi:** obj &lt;&lt; Journal
 
 **Descrizione:** Crea un journal dal riquadro di visualizzazione.
 
@@ -3127,7 +3091,7 @@ rbiv << journal;
 
 ### Journal Window
 
-**Sintassi:** obj << Journal Window
+**Sintassi:** obj &lt;&lt; Journal Window
 
 **Descrizione:** Apre una finestra journal della finestra.
 
@@ -3142,13 +3106,13 @@ w << Journal Window;
 
 ### Last Value
 
-**Sintassi:** obj << Last Value( state=0|1 )
+**Sintassi:** obj &lt;&lt; Last Value( state=0|1 )
 
 **JMP Versione aggiunta:** 16
 
 ### Launch
 
-**Sintassi:** obj << Launch
+**Sintassi:** obj &lt;&lt; Launch
 
 **Descrizione:** Valuta argument indicato nel contesto del riquadro di visualizzazione.
 
@@ -3170,7 +3134,7 @@ ob3 << launch( Bivariate( Y( :height ), X( :weight ) ) );
 
 ### Left
 
-**Sintassi:** obj << Left( state=0|1 )
+**Sintassi:** obj &lt;&lt; Left( state=0|1 )
 
 **Descrizione:** Mostra/Nasconde un bordo a sinistra del frame.
 
@@ -3187,7 +3151,7 @@ framebox << Left( 0 );
 
 ### Line Color
 
-**Sintassi:** obj << Line Color( color )
+**Sintassi:** obj &lt;&lt; Line Color( color )
 
 **Descrizione:** Imposta il colore per tutte le linee nel segmento di visualizzazione.
 
@@ -3200,7 +3164,7 @@ seg << Set Line Color( "Green" );
 
 ### Line Style
 
-**Sintassi:** obj << Line Style( pen style )
+**Sintassi:** obj &lt;&lt; Line Style( pen style )
 
 **Descrizione:** Imposta lo stile delle linee. Le opzioni sono Continua, Punteggiata, Tratteggiata, Trattino-punto e Trattino-punto-punto.
 
@@ -3215,7 +3179,7 @@ seg << Set Line Style( "Dotted" );
 
 ### Line Width
 
-**Sintassi:** obj << Line Width( "1"|"2"|"3"|"4"|"5"|"6"|"Altro..." )
+**Sintassi:** obj &lt;&lt; Line Width( "1"|"2"|"3"|"4"|"5"|"6"|"Altro..." )
 
 **Descrizione:** Imposta la larghezza delle linee.
 
@@ -3230,7 +3194,7 @@ seg << Set Line Width( 3 );
 
 ### Line Width Scale
 
-**Sintassi:** obj << Line Width Scale( 0|scale )
+**Sintassi:** obj &lt;&lt; Line Width Scale( 0|scale )
 
 **Descrizione:** Imposta la larghezza della linea al valore inserito. Un valore pari a 0 significa che la scala di larghezza della linea è determinata dalla scala del carattere.
 
@@ -3247,7 +3211,7 @@ framebox << Line Width Scale( 2.0 );
 
 ### Make RowState Handler
 
-**Sintassi:** rs = obj << Make RowState Handler( <dt>, function(a) )
+**Sintassi:** rs = obj &lt;&lt; Make RowState Handler( &lt;dt&gt;, function(a) )
 
 **Descrizione:** Crea un gestore dello stato delle righe per la tabella di dati specificata o per la tabella di dati corrente. La funzione viene chiamata quando gli stati delle righe cambiano nel contesto del filtro del riquadro. L&apos;argomento della funzione contiene i numeri di riga che sono cambiati o -1 se il filtro di stato della riga è cambiato.
 
@@ -3336,15 +3300,13 @@ updatetext();
 
 ### Make table of graphs like this
 
-**Sintassi:** obj << Make table of graphs like this
+**Sintassi:** obj &lt;&lt; Make table of graphs like this
 
 **Descrizione:** crea una tabella di dati di grafici
 
 ### Margin
 
-**Sintassi:** obj << Margin( sides );
-
-sides = obj << Get Margin
+**Sintassi:** obj &lt;&lt; Margin( sides );sides = obj &lt;&lt; Get Margin
 
 **Descrizione:** Il margine aggiunge spazio tra il bordo del riquadro e i riquadri adiacenti. Usare argomenti con nome, oppure fornire un elenco di valori. Se viene indicato un solo valore sarà applicato a tutti i lati. Se vengono specificati due valori essi saranno applicati ai margini orizzontali e verticali.
 
@@ -3365,7 +3327,7 @@ tb << Margin( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ### Marker
 
-**Sintassi:** obj << Marker( marker )
+**Sintassi:** obj &lt;&lt; Marker( marker )
 
 **Descrizione:** Imposta lo stile per tutti gli indicatori.
 
@@ -3380,7 +3342,7 @@ seg << Set Marker( "Square" );
 
 ### Marker Drawing Mode
 
-**Sintassi:** obj << Marker Drawing Mode( "Normale"|"Veloce"|"Riquadrato" )
+**Sintassi:** obj &lt;&lt; Marker Drawing Mode( "Normale"|"Veloce"|"Riquadrato" )
 
 **Descrizione:** Imposta lo stile dell&apos;indicatore.
 
@@ -3397,13 +3359,13 @@ framebox << Marker Drawing Mode( "outlined" );
 
 ### Marker Label Color Style
 
-**Sintassi:** obj << Marker Label Color Style( "Modalità preferita"|"Colore dell&apos;indicatore"|"Colore dell&apos;indicatore ombreggiato"|"Colore fisso" )
+**Sintassi:** obj &lt;&lt; Marker Label Color Style( "Modalità preferita"|"Colore dell&apos;indicatore"|"Colore dell&apos;indicatore ombreggiato"|"Colore fisso" )
 
 **Descrizione:** Modifica il colore delle etichette degli indicatori
 
 ### Marker Selection Mode
 
-**Sintassi:** obj << Marker Selection Mode( "Modalità preferita"|"Non selezionato ombreggiato"|"Selezionato più grande"|"Selezionato con alone"|"Selezionato riquadrato"|"Selezionato lo stesso colore" )
+**Sintassi:** obj &lt;&lt; Marker Selection Mode( "Modalità preferita"|"Non selezionato ombreggiato"|"Selezionato più grande"|"Selezionato con alone"|"Selezionato riquadrato"|"Selezionato lo stesso colore" )
 
 **Descrizione:** Imposta lo stile di selezione dell&apos;indicatore.
 
@@ -3421,7 +3383,7 @@ framebox << Marker Selection Mode( "Selected Haloed" );
 
 ### Marker Size
 
-**Sintassi:** obj << Marker Size( size )
+**Sintassi:** obj &lt;&lt; Marker Size( size )
 
 **Descrizione:** Imposta la dimensione degli indicatori. Le opzioni per la dimensione sono Punto, Piccolo, Medio, Grande, XL, XXL e XXXL.
 
@@ -3437,13 +3399,13 @@ seg << Set Marker Size( "XL" );
 
 ### Max Value
 
-**Sintassi:** obj << Max Value( state=0|1 )
+**Sintassi:** obj &lt;&lt; Max Value( state=0|1 )
 
 **JMP Versione aggiunta:** 16
 
 ### Maximize Window
 
-**Sintassi:** obj << Maximize Window( <state=0|1> )
+**Sintassi:** obj &lt;&lt; Maximize Window( &lt;state=0|1&gt; )
 
 **Descrizione:** Ingrandisce la finestra. L&apos;argomento predefinito è 1.
 
@@ -3463,13 +3425,13 @@ w << Maximize Window( 0 );
 
 ### Min Value
 
-**Sintassi:** obj << Min Value( state=0|1 )
+**Sintassi:** obj &lt;&lt; Min Value( state=0|1 )
 
 **JMP Versione aggiunta:** 16
 
 ### Minimize Window
 
-**Sintassi:** obj << Minimize Window( <state=0|1> )
+**Sintassi:** obj &lt;&lt; Minimize Window( &lt;state=0|1&gt; )
 
 **Descrizione:** Riduce a icona la finestra. L&apos;argomento predefinito è 1.
 
@@ -3487,7 +3449,7 @@ w << Minimize Window( 0 );
 
 ### Move Window
 
-**Sintassi:** obj << Move Window( x,y )
+**Sintassi:** obj &lt;&lt; Move Window( x,y )
 
 **Descrizione:** Sposta la finestra nella posizione specificata.
 
@@ -3503,13 +3465,13 @@ w << Move Window( 500, 500 );
 
 ### Name
 
-**Sintassi:** obj << Name( state=0|1 )
+**Sintassi:** obj &lt;&lt; Name( state=0|1 )
 
 **JMP Versione aggiunta:** 16
 
 ### Name Selection in Column
 
-**Sintassi:** obj << Name Selection in Column
+**Sintassi:** obj &lt;&lt; Name Selection in Column
 
 **Descrizione:** Etichetta le righe al momento selezionate e salva il valore (etichetta) in una colonna.
 
@@ -3529,7 +3491,7 @@ framebox << Name Selection in Column;
 
 ### Next
 
-**Sintassi:** obj << Next
+**Sintassi:** obj &lt;&lt; Next
 
 **Descrizione:** Restituisce il riquadro di visualizzazione successivo a questo.
 
@@ -3547,7 +3509,7 @@ Print( next << Class Name() );
 
 ### On Close
 
-**Sintassi:** obj << On Close( script )
+**Sintassi:** obj &lt;&lt; On Close( script )
 
 **Descrizione:** Imposta l&apos;esecuzione di uno script o di una funzione alla chiusura della finestra. Questo script dovrebbe restituire 1 per consentire la chiusura o 0 per impedire la chiusura della finestra.
 
@@ -3595,7 +3557,7 @@ w << On Close(
 
 ### Optimize Display
 
-**Sintassi:** obj << Optimize Display
+**Sintassi:** obj &lt;&lt; Optimize Display
 
 **Descrizione:** Imposta la larghezza delle colonne della tabella di dati e la finestra a una dimensione ottimale.
 
@@ -3612,7 +3574,7 @@ dt << Optimize Display;
 
 ### Pad Window
 
-**Sintassi:** obj << Pad Window( bool )
+**Sintassi:** obj &lt;&lt; Pad Window( bool )
 
 **Descrizione:** Attiva o disattiva la spaziatura interna della finestra.
 
@@ -3629,9 +3591,7 @@ r << Pad Window( 0 );
 
 ### Padding
 
-**Sintassi:** obj << Padding( sides );
-
-sides = obj << Get Padding
+**Sintassi:** obj &lt;&lt; Padding( sides );sides = obj &lt;&lt; Get Padding
 
 **Descrizione:** La spaziatura interna aggiunge spazio tra il contenuto e il bordo del riquadro. Usare argomenti con nome, oppure fornire un elenco di valori. Se viene indicato un solo valore sarà applicato a tutti i lati. Se vengono specificati due valori essi saranno applicati alle spaziature interne orizzontali e verticali.
 
@@ -3652,7 +3612,7 @@ tb << Padding( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ### Page Break
 
-**Sintassi:** obj << Page Break
+**Sintassi:** obj &lt;&lt; Page Break
 
 **Descrizione:** Inserisce un&apos;interruzione di pagina prima del riquadro di visualizzazione.
 
@@ -3678,7 +3638,7 @@ ob3 << Page Break;
 
 ### Parent
 
-**Sintassi:** obj << Parent
+**Sintassi:** obj &lt;&lt; Parent
 
 **Descrizione:** Restituisce il nodo di livello superiore a questo riquadro di visualizzazione.
 
@@ -3697,7 +3657,7 @@ Print( axisParent << Class Name() );
 
 ### Paste Background Image
 
-**Sintassi:** obj << Paste Background Image
+**Sintassi:** obj &lt;&lt; Paste Background Image
 
 **Descrizione:** Incolla negli Appunti un&apos;immagine di sfondo salvata in memoria.
 
@@ -3730,7 +3690,7 @@ fb2 << Paste Background Image;
 
 ### Paste Customizations
 
-**Sintassi:** obj << Paste Customizations
+**Sintassi:** obj &lt;&lt; Paste Customizations
 
 **Descrizione:** Incolla uno script che contiene impostazioni personalizzate per il grafico.
 
@@ -3752,7 +3712,7 @@ framebox2 << Paste Customizations;
 
 ### Paste Frame Contents
 
-**Sintassi:** obj << Paste Frame Contents
+**Sintassi:** obj &lt;&lt; Paste Frame Contents
 
 **Descrizione:** Analizza e incolla in questo frame il testo di journal contenuto negli Appunti.
 
@@ -3774,7 +3734,7 @@ framebox2 << Paste Frame Contents;
 
 ### Paste Frame Settings
 
-**Sintassi:** obj << Paste Frame Settings
+**Sintassi:** obj &lt;&lt; Paste Frame Settings
 
 **Descrizione:** Incolla il contenuto degli Appunti in questo frame.
 
@@ -3796,7 +3756,7 @@ framebox2 << Paste Frame Settings;
 
 ### Paste Graphlet
 
-**Sintassi:** obj << Paste Graphlet
+**Sintassi:** obj &lt;&lt; Paste Graphlet
 
 **Descrizione:** Aggiunge una personalizzazione del graphlet in base al contenuto degli Appunti.
 
@@ -3843,7 +3803,7 @@ gpin << Launch Graphlet;
 
 ### Prepend
 
-**Sintassi:** obj << Prepend( db2 )
+**Sintassi:** obj &lt;&lt; Prepend( db2 )
 
 **Descrizione:** Aggiunge db2 alla struttura di visualizzazione prima di db.
 
@@ -3860,7 +3820,7 @@ rbiv << prepend( Text Box( "=== above ===" ) );
 
 ### Prev Sib
 
-**Sintassi:** obj << Prev Sib
+**Sintassi:** obj &lt;&lt; Prev Sib
 
 **Descrizione:** Restituisce l&apos;elemento di pari livello precedente del riquadro di visualizzazione.
 
@@ -3881,7 +3841,7 @@ Print( axisSibling << Class Name() );
 
 ### Print Window
 
-**Sintassi:** obj << Print Window
+**Sintassi:** obj &lt;&lt; Print Window
 
 **Descrizione:** Stampa la finestra.
 
@@ -3896,7 +3856,7 @@ w << Print Window;
 
 ### Reference Line Order
 
-**Sintassi:** obj << Reference Line Order( position )
+**Sintassi:** obj &lt;&lt; Reference Line Order( position )
 
 **Descrizione:** Traccia le linee di riferimento davanti o dietro altri oggetti nel grafico
 
@@ -3915,7 +3875,7 @@ framebox << Reference Line Order( 1 );
 
 ### Remove Graphics Script
 
-**Sintassi:** obj << Remove Graphics Script( position )
+**Sintassi:** obj &lt;&lt; Remove Graphics Script( position )
 
 **Descrizione:** Rimuove gli script grafici aggiunti al frame nella position specificata.
 
@@ -3943,7 +3903,7 @@ framebox << Remove Graphics Script( 2 );
 
 ### Reorder Segs
 
-**Sintassi:** obj << Reorder Segs( List of integers representing the current segs in the new order. )
+**Sintassi:** obj &lt;&lt; Reorder Segs( List of integers representing the current segs in the new order. )
 
 **Descrizione:** Riordina i segmenti presenti in un grafico.
 
@@ -3973,7 +3933,7 @@ For( blink = 1, blink < 4, blink++,
 
 ### Reshow
 
-**Sintassi:** obj << Reshow
+**Sintassi:** obj &lt;&lt; Reshow
 
 **Descrizione:** Invalida riquadro di visualizzazione e aggiorna la finestra con il nuovo contenuto.  Vedere i messaggi <<Inval e <<Aggiorna finestra se è necessario un maggiore controllo sui tempi di aggiornamento.
 
@@ -4002,7 +3962,7 @@ New Window( "Reshow example",
 
 ### Right
 
-**Sintassi:** obj << Right( state=0|1 )
+**Sintassi:** obj &lt;&lt; Right( state=0|1 )
 
 **Descrizione:** Mostra/Nasconde un bordo a destra del frame.
 
@@ -4019,7 +3979,7 @@ framebox << Right( 0 );
 
 ### Right Y Axis
 
-**Sintassi:** obj << Right Y Axis( < Min( min ) >, < Max( max ) >, < Inc( n ) >, ... )
+**Sintassi:** obj &lt;&lt; Right Y Axis( &lt; Min( min ) &gt;, &lt; Max( max ) &gt;, &lt; Inc( n ) &gt;, ... )
 
 **Descrizione:** Applica una o più modifiche all&apos;asse Y destro in un unico messaggio. Se non è specificato alcun argomento, apre la finestra Impostazioni dell&apos;asse Y destro.
 
@@ -4072,7 +4032,7 @@ framebox << Right Y Axis(
 
 ### Row Colors
 
-**Sintassi:** obj << Row Colors( colore )
+**Sintassi:** obj &lt;&lt; Row Colors( colore )
 
 **Descrizione:** Imposta il colore delle righe selezionate.
 
@@ -4090,7 +4050,7 @@ framebox << Row Colors( "Red" );
 
 ### Row Editor
 
-**Sintassi:** obj << Row Editor
+**Sintassi:** obj &lt;&lt; Row Editor
 
 **Descrizione:** Visualizza la finestra dell&apos;editor delle righe, a partire dal primo punto selezionato.
 
@@ -4107,7 +4067,7 @@ framebox << Row Editor;
 
 ### Row Exclude
 
-**Sintassi:** obj << Row Exclude
+**Sintassi:** obj &lt;&lt; Row Exclude
 
 **Descrizione:** Esclude le righe corrispondenti nella tabella di dati o ne annulla l&apos;esclusione.
 
@@ -4125,7 +4085,7 @@ framebox << Row Exclude( 1 );
 
 ### Row Hide
 
-**Sintassi:** obj << Row Hide
+**Sintassi:** obj &lt;&lt; Row Hide
 
 **Descrizione:** Nasconde/Mostra le righe corrispondenti nella tabella di dati.
 
@@ -4143,7 +4103,7 @@ framebox << Row Hide( 1 );
 
 ### Row Hide and Exclude
 
-**Sintassi:** obj << Row Hide and Exclude
+**Sintassi:** obj &lt;&lt; Row Hide and Exclude
 
 **Descrizione:** Nasconde ed esclude le righe corrispondenti nella tabella di dati o le mostra e ne annulla l&apos;esclusione.
 
@@ -4161,7 +4121,7 @@ framebox << Row Hide and Exclude( 1 );
 
 ### Row Label
 
-**Sintassi:** obj << Row Label
+**Sintassi:** obj &lt;&lt; Row Label
 
 **Descrizione:** Applica o toglie le etichette alle righe corrispondenti nella tabella di dati.
 
@@ -4179,7 +4139,7 @@ framebox << Row Label( 1 );
 
 ### Row Legend
 
-**Sintassi:** obj << Row Legend( Color( 0|1), Marker( 0|1 ), <Color theme( string )>, <Marker theme( string )>, < Continuous scale(0|1)>, <Reverse scale(0|1)>, <Excluded Row( 0|1 ), <Make window with legend> )
+**Sintassi:** obj &lt;&lt; Row Legend( Color( 0|1), Marker( 0|1 ), &lt;Color theme( string )&gt;, &lt;Marker theme( string )&gt;, &lt; Continuous scale(0|1)&gt;, &lt;Reverse scale(0|1)&gt;, &lt;Excluded Row( 0|1 ), &lt;Make window with legend&gt; )
 
 **Descrizione:** Colora le righe in base a una colonna di dati e inserisci una legenda a destra di questo frame.
 
@@ -4196,7 +4156,7 @@ framebox << Row Legend( "age", color( 1 ), Marker( 1 ) );
 
 ### Row Markers
 
-**Sintassi:** obj << Row Markers( marker )
+**Sintassi:** obj &lt;&lt; Row Markers( marker )
 
 **Descrizione:** Imposta l&apos;indicatore delle righe selezionate.
 
@@ -4214,7 +4174,7 @@ framebox << Row Markers( 3 );
 
 ### Save Capture
 
-**Sintassi:** obj << Save Capture( <"path">, <format>, <Add Sibling(n)> )
+**Sintassi:** obj &lt;&lt; Save Capture( &lt;"path"&gt;, &lt;format&gt;, &lt;Add Sibling(n)&gt; )
 
 **Descrizione:** Salva una schermata del riquadro di visualizzazione nel percorso path specificato. Se non viene specificato un path, compare la finestra Salva con nome.
 
@@ -4231,7 +4191,7 @@ rbiv << Save Capture( "$TEMP/jmp_example.png", "png" );
 
 ### Save HTML
 
-**Sintassi:** obj << Save HTML( <pathname>, <format> )
+**Sintassi:** obj &lt;&lt; Save HTML( &lt;pathname&gt;, &lt;format&gt; )
 
 **Descrizione:** Salva l&apos;origine HTML e la cartella di file grafici nel format specificato.
 
@@ -4248,7 +4208,7 @@ rbiv << Save HTML( "$TEMP/jmp_example.html" );
 
 ### Save Interactive HTML
 
-**Sintassi:** obj << Save Interactive HTML( <pathname>, <Boolean> )
+**Sintassi:** obj &lt;&lt; Save Interactive HTML( &lt;pathname&gt;, &lt;Boolean&gt; )
 
 **Descrizione:** Salva il formato HTML interattivo con dati in un file. L&apos;argomento Boolean rappresenta la staticità del report.
 
@@ -4265,7 +4225,7 @@ rbiv << Save Interactive HTML( "$TEMP/jmp_example.html" );
 
 ### Save Journal
 
-**Sintassi:** obj << Save Journal( <pathname> )
+**Sintassi:** obj &lt;&lt; Save Journal( &lt;pathname&gt; )
 
 **Descrizione:** Salva l&apos;origine journal del riquadro di visualizzazione.
 
@@ -4282,7 +4242,7 @@ rbiv << Save Journal( "$TEMP/jmp_example.jrn" );
 
 ### Save MSWord
 
-**Sintassi:** obj << Save MSWord( <pathname>, <format> )
+**Sintassi:** obj &lt;&lt; Save MSWord( &lt;pathname&gt;, &lt;format&gt; )
 
 **Descrizione:** Salva il riquadro di visualizzazione come documento Microsoft Word (disponibile solo per Windows).
 
@@ -4299,7 +4259,7 @@ rbiv << Save MSWord( "$TEMP/jmp_example.doc" );
 
 ### Save PDF
 
-**Sintassi:** obj << Save PDF( <pathname>, <Show Page Setup(0|1)>, <Portrait(0|1)> )
+**Sintassi:** obj &lt;&lt; Save PDF( &lt;pathname&gt;, &lt;Show Page Setup(0|1)&gt;, &lt;Portrait(0|1)&gt; )
 
 **Descrizione:** Salva il riquadro di visualizzazione in formato PDF.
 
@@ -4316,7 +4276,7 @@ rbiv << Save PDF( "$TEMP/jmp_example.pdf" );
 
 ### Save Picture
 
-**Sintassi:** obj << Save Picture( <pathname>, <format>, <Scale(factor)>, <Type("Bitmap" | "Scalable")>, <View("Picture" | "Screen" | "Print"), <Appearance("Default" | "Current")>, <SubRect(Left(number), Top(number), Right(number), Bottom(number))> )
+**Sintassi:** obj &lt;&lt; Save Picture( &lt;pathname&gt;, &lt;format&gt;, &lt;Scale(factor)&gt;, &lt;Type("Bitmap" | "Scalable")&gt;, &lt;View("Picture" | "Screen" | "Print"), &lt;Appearance("Default" | "Current")&gt;, &lt;SubRect(Left(number), Top(number), Right(number), Bottom(number))&gt; )
 
 **Descrizione:** Salva un&apos;immagine del riquadro di visualizzazione. I formati supportati sono EMF (Windows), PICT (Macintosh), JPEG o JPG, GIF o PNG. L&apos;argomento facoltativo Scale effettuerà il rendering dell&apos;immagine a una risoluzione ridimensionata. Il ridimensionamento richiede che il riquadro di visualizzazione sia estensibile. L&apos;argomento Type determina se il risultato sarà un&apos;immagine vettoriale scalabile o una bitmap. Per impostazione predefinita viene restituita un&apos;immagine scalabile, adatta al salvataggio in formati vettoriali come PDF. L&apos;opzione View cambia il comportamento di alcuni riquadri. L&apos;opzione predefinita di "Picture" rappresenta il report come sarebbe se fosse esportato in un formato immagine, con aree fatte scorrere completamente visibili. La modalità di visualizzazione di "Screen" rappresenta il report come visibile sullo schermo e "Print" rappresenta il report come se fosse stampato, senza funzioni di impostazione della pagina. L&apos;opzione SubRect acquisisce una parte dell&apos;immagine risultante piuttosto che un&apos;immagine completa. L&apos;opzione Appearance può cambiare dai colori di output "Default" ai colori "Current" come visibili sullo schermo. Le opzioni View, SubRect e Appearance sono supportate solo per Type "Bitmap".
 
@@ -4386,7 +4346,7 @@ New Window( "Example",
 
 ### Save Presentation
 
-**Sintassi:** obj << Save Presentation( "filename.pptx", <Template("path\to\my_template.pptx")>, <Insert(Begin|End|#) | Replace(Begin|End|#) | Append>, <Outline Titles(None|Hide|TopLeft|TopRight|BottomLeft|BottomRight)>, <"EMF"|"PNG"|"JPG"|"Native"> )
+**Sintassi:** obj &lt;&lt; Save Presentation( "filename.pptx", &lt;Template("path\to\my_template.pptx")&gt;, &lt;Insert(Begin|End|#) | Replace(Begin|End|#) | Append&gt;, &lt;Outline Titles(None|Hide|TopLeft|TopRight|BottomLeft|BottomRight)&gt;, &lt;"EMF"|"PNG"|"JPG"|"Native"&gt; )
 
 **Descrizione:** Salva le tabelle dei riquadri di visualizzazione e le diapositive di grafici in una presentazione. La presentazione può essere aperta con Microsoft PowerPoint o altri software di presentazione.
 
@@ -4403,7 +4363,7 @@ Open( "$TEMP/jmp_example.pptx" );
 
 ### Save RTF
 
-**Sintassi:** obj << Save RTF( <pathname>, <format> )
+**Sintassi:** obj &lt;&lt; Save RTF( &lt;pathname&gt;, &lt;format&gt; )
 
 **Descrizione:** Salva l&apos;origine RTF e la cartella di file grafici nel format specificato.
 
@@ -4420,7 +4380,7 @@ rbiv << Save RTF( "$TEMP/jmp_example.rtf", "png" );
 
 ### Save Text
 
-**Sintassi:** obj << Save Text( <pathname>, <format> )
+**Sintassi:** obj &lt;&lt; Save Text( &lt;pathname&gt;, &lt;format&gt; )
 
 **Descrizione:** Salva un file che contiene il testo del riquadro di visualizzazione.
 
@@ -4435,7 +4395,7 @@ a << save text( "$TEMP/jmp_example.txt" );
 
 ### Save Window Report
 
-**Sintassi:** obj << Save Window Report( pathname, <embed data(0|1)> )
+**Sintassi:** obj &lt;&lt; Save Window Report( pathname, &lt;embed data(0|1)&gt; )
 
 **Descrizione:** Salva la finestra del report corrente in un file di report JMP (.jrp).
 
@@ -4453,7 +4413,7 @@ d << Save Window Report( "$DOCUMENTS/test.jrp", embed data( 1 ) );
 
 ### Scale with Font
 
-**Sintassi:** obj << Scale with Font
+**Sintassi:** obj &lt;&lt; Scale with Font
 
 **Descrizione:** Imposta la scala di larghezza della linea con la scala del carattere. Equivalente a <<Scala di larghezza linea(0).
 
@@ -4470,7 +4430,7 @@ framebox << Scale with Font;
 
 ### Scroll Window
 
-**Sintassi:** obj << Scroll Window( DisplayBox | <Relative(<v> | <h>,<v>)> | <Absolute(<v> | <h>,<v>) )
+**Sintassi:** obj &lt;&lt; Scroll Window( DisplayBox | &lt;Relative(&lt;v&gt; | &lt;h&gt;,&lt;v&gt;)&gt; | &lt;Absolute(&lt;v&gt; | &lt;h&gt;,&lt;v&gt;) )
 
 **Descrizione:** Regola la barra di scorrimento della finestra per visualizzare il riquadro di visualizzazione specificato, oppure scorre un numero relativo di pixel o scorre fino a una posizione assoluta dei pixel. Al posto di un numero di pixel si possono usare le parole chiave "Start" o "End".
 
@@ -4545,7 +4505,7 @@ Wait( 1 );
 
 ### Seg Count
 
-**Sintassi:** obj << Seg Count( <seg type> )
+**Sintassi:** obj &lt;&lt; Seg Count( &lt;seg type&gt; )
 
 ```jsl
 
@@ -4559,7 +4519,7 @@ rbiv[Frame Box( 1 )] << Seg Count( MarkerSeg );
 
 ### Select
 
-**Sintassi:** obj << Select
+**Sintassi:** obj &lt;&lt; Select
 
 **Descrizione:** Seleziona questo oggetto per essere utilizzato dai comandi del menu Modifica.
 
@@ -4574,7 +4534,7 @@ ex << Select;
 
 ### Select Matching Cells
 
-**Sintassi:** obj << Select Matching Cells
+**Sintassi:** obj &lt;&lt; Select Matching Cells
 
 **Descrizione:** Seleziona punti che hanno etichette simili alle righe selezionate
 
@@ -4593,7 +4553,7 @@ framebox << Select Matching Cells;
 
 ### Select Similar
 
-**Sintassi:** obj << Select Similar
+**Sintassi:** obj &lt;&lt; Select Similar
 
 **Descrizione:** Seleziona le righe che hanno valori dei dati simili a quelli delle colonne selezionate.
 
@@ -4612,7 +4572,7 @@ framebox << Select Similar;
 
 ### Set Background Fill
 
-**Sintassi:** obj << Set Background Fill( state=0|1 )
+**Sintassi:** obj &lt;&lt; Set Background Fill( state=0|1 )
 
 **Descrizione:** Attiva o disattiva il riempimento dello sfondo del grafico con il colore di sfondo.
 
@@ -4634,13 +4594,13 @@ framebox << Set Background Fill( 0 );
 
 ### Set Colors
 
-**Sintassi:** obj << Set Colors
+**Sintassi:** obj &lt;&lt; Set Colors
 
 **JMP Versione aggiunta:** 15
 
 ### Set Content Size
 
-**Sintassi:** obj << Set Content Size( x,y )
+**Sintassi:** obj &lt;&lt; Set Content Size( x,y )
 
 **Descrizione:** Imposta le dimensioni del contenuto nella finestra.
 
@@ -4666,7 +4626,7 @@ w << Set Content Size( 400, 300 );
 
 ### Set Dirty
 
-**Sintassi:** obj << Set Dirty
+**Sintassi:** obj &lt;&lt; Set Dirty
 
 **Descrizione:** Imposta lo stato modificato del documento. 0 non richiederà il salvataggio; 1 lo richiederà.
 
@@ -4685,7 +4645,7 @@ Show( ww << Is Dirty );
 
 ### Set Error Bar Cap
 
-**Sintassi:** obj << Set Error Bar Cap( "Nessuno"|"Minuscolo"|"Piccolo"|"Medio"|"Grande" )
+**Sintassi:** obj &lt;&lt; Set Error Bar Cap( "Nessuno"|"Minuscolo"|"Piccolo"|"Medio"|"Grande" )
 
 **Descrizione:** Specifica quale tipo di estremità di chiusura inserire nelle barre di errore.
 
@@ -4708,7 +4668,7 @@ seg << Set Error Bar Cap( "Large" );
 
 ### Set Error Bar Cap Shape
 
-**Sintassi:** obj << Set Error Bar Cap Shape( begin, end )
+**Sintassi:** obj &lt;&lt; Set Error Bar Cap Shape( begin, end )
 
 **Descrizione:** Specifica la forma dell&apos;estremità di chiusura da visualizzare sulle barre di errore. Un singolo argomento imposta la forma per entrambe le estremità della barra oppure è possibile fornire argomenti separati per l&apos;inizio e la fine. La forma di default è "Line". Una forma a "Arrow" disegna una freccia rivolta verso l&apos;esterno e "None" omette la chiusura.
 
@@ -4731,9 +4691,7 @@ seg << Set Error Bar Cap Shape( "Line", "Arrow" );
 
 ### Set Gradient
 
-**Sintassi:** obj << { <Color Theme(theme)>, <Min Lightness(0-1)>, <Max Lightness(0-1)>, <Contour Levels(num)>, <Reverse Gradient(0|1)>, <Density Gradient("Fade To White"|"Fade To Gray"|"Full Color")>, <Gradient Transparency("None"|"Linear")> }
-
-obj << { <Color Theme(theme)>, <Min Lightness(0-1)>, <Max Lightness(0-1)>, <N Labels(num)>, <Show Missing Color("On"|"Off"|"Auto")>, <Scale Type("Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom")>, <Scale Values([v1, v2, …])>, <Range Type("Default"|"Exact Data Range"|"Middle 90%")>, <Fill("Between"|"Above"|"Below"|"Above Below")>, <Reverse Gradient(0|1)>, <Reverse Labels(0|1)>, <Discrete Color(0|1)> }, <Label Format(labelFormat)>, <Width(num)>, <Horizontal(0|1)>, <Show Labels(0|1)>
+**Sintassi:** obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;Contour Levels(num)&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Density Gradient("Fade To White"|"Fade To Gray"|"Full Color")&gt;, &lt;Gradient Transparency("None"|"Linear")&gt; }obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;N Labels(num)&gt;, &lt;Show Missing Color("On"|"Off"|"Auto")&gt;, &lt;Scale Type("Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom")&gt;, &lt;Scale Values([v1, v2, …])&gt;, &lt;Range Type("Default"|"Exact Data Range"|"Middle 90%")&gt;, &lt;Fill("Between"|"Above"|"Below"|"Above Below")&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Reverse Labels(0|1)&gt;, &lt;Discrete Color(0|1)&gt; }, &lt;Label Format(labelFormat)&gt;, &lt;Width(num)&gt;, &lt;Horizontal(0|1)&gt;, &lt;Show Labels(0|1)&gt;
 
 **Descrizione:** Imposta il gradiente di colorazione.
 
@@ -4746,7 +4704,7 @@ seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
 
 ### Set Gradient Color Theme
 
-**Sintassi:** obj << Set Gradient Color Theme
+**Sintassi:** obj &lt;&lt; Set Gradient Color Theme
 
 **Descrizione:** Imposta il tema colori del gradiente.
 
@@ -4761,7 +4719,7 @@ seg << Set Gradient Color Theme( "Viridis" );
 
 ### Set Gradient Custom Scale
 
-**Sintassi:** obj << Set Gradient Custom Scale
+**Sintassi:** obj &lt;&lt; Set Gradient Custom Scale
 
 **Descrizione:** Imposta il gradiente per l’utilizzo di un elenco di valori per una scala personalizzata.
 
@@ -4776,7 +4734,7 @@ seg << Set Gradient Custom Scale( {0.0, 5.0, 10.0, 20.0} );
 
 ### Set Gradient Discrete Colors
 
-**Sintassi:** obj << Set Gradient Discrete Colors
+**Sintassi:** obj &lt;&lt; Set Gradient Discrete Colors
 
 **Descrizione:** Indica se ogni livello in un gradiente deve essere di un colore singolo o se i colori devono avere una transizione graduale.
 
@@ -4795,7 +4753,7 @@ seg << Set Gradient Discrete Colors( 1 );
 
 ### Set Gradient Fill
 
-**Sintassi:** obj << Set Gradient Fill( "Tra"|"Sopra"|"Sotto"|"Sopra Sotto"="Sopra Sotto" )
+**Sintassi:** obj &lt;&lt; Set Gradient Fill( "Tra"|"Sopra"|"Sotto"|"Sopra Sotto"="Sopra Sotto" )
 
 **Descrizione:** Imposta il comportamento di colorazione per valori al di fuori del range della scala del gradiente. "Sopra Sotto", per impostazione predefinita.
 
@@ -4815,7 +4773,7 @@ seg << Set Gradient Fill( "Between" );
 
 ### Set Gradient Label Count
 
-**Sintassi:** obj << Set Gradient Label Count
+**Sintassi:** obj &lt;&lt; Set Gradient Label Count
 
 **Descrizione:** Imposta il numero di etichette nella legenda di un gradiente. È uno in più rispetto al numero di curve di livello.
 
@@ -4830,7 +4788,7 @@ seg << Set Gradient Label Count( 8 );
 
 ### Set Gradient Label Levels
 
-**Sintassi:** obj << Set Gradient Label Levels( [value1,value1, ... value N] )
+**Sintassi:** obj &lt;&lt; Set Gradient Label Levels( [value1,value1, ... value N] )
 
 **Descrizione:** Imposta una serie personalizzata di valori da utilizzare nella scala del gradiente.
 
@@ -4849,7 +4807,7 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ### Set Gradient Legend Horizontal
 
-**Sintassi:** obj << Set Gradient Legend Horizontal
+**Sintassi:** obj &lt;&lt; Set Gradient Legend Horizontal
 
 **Descrizione:** Indica se la legenda del gradiente deve essere disegnata orizzontalmente.
 
@@ -4864,7 +4822,7 @@ seg << Set Gradient Legend Horizontal( 1 );
 
 ### Set Gradient Legend Label Format
 
-**Sintassi:** obj << Set Gradient Legend Label Format
+**Sintassi:** obj &lt;&lt; Set Gradient Legend Label Format
 
 **Descrizione:** Imposta il formato per le etichette della legenda del gradiente
 
@@ -4879,7 +4837,7 @@ seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
 
 ### Set Gradient Legend Label Width
 
-**Sintassi:** obj << Set Gradient Legend Label Width
+**Sintassi:** obj &lt;&lt; Set Gradient Legend Label Width
 
 **Descrizione:** Imposta la lunghezza massima in caratteri delle etichette della legenda del gradiente.
 
@@ -4894,7 +4852,7 @@ seg << Set Gradient Legend Label Width( 4 );
 
 ### Set Gradient Legend Show Labels
 
-**Sintassi:** obj << Set Gradient Legend Show Labels
+**Sintassi:** obj &lt;&lt; Set Gradient Legend Show Labels
 
 **Descrizione:** Indica se le etichette di livello devono essere mostrate nella legenda del gradiente.
 
@@ -4909,7 +4867,7 @@ seg << Set Gradient Legend Show Labels( 0 );
 
 ### Set Gradient Level Count
 
-**Sintassi:** obj << Set Gradient Level Count
+**Sintassi:** obj &lt;&lt; Set Gradient Level Count
 
 **Descrizione:** Imposta il numero di livelli in un gradiente. È uno in meno rispetto al numero di etichette.
 
@@ -4924,7 +4882,7 @@ seg << Set Gradient Levels( 7 );
 
 ### Set Gradient Lightness Range
 
-**Sintassi:** obj << Set Gradient Lightness Range
+**Sintassi:** obj &lt;&lt; Set Gradient Lightness Range
 
 **Descrizione:** Imposta la luminosità minima e massima per i colori dei livelli in un gradiente. I colori saranno scalati per coprire questo range. Un valore mancante viene trattato come nessuna modifica.
 
@@ -4959,7 +4917,7 @@ seg << Set Gradient Lightness Range( ., 0.75 );
 
 ### Set Gradient Range
 
-**Sintassi:** obj << Set Gradient Range( "Impostazione predefinita"|"Range di dati esatto"|"Intermedio 90%"="Impostazione predefinita" )
+**Sintassi:** obj &lt;&lt; Set Gradient Range( "Impostazione predefinita"|"Range di dati esatto"|"Intermedio 90%"="Impostazione predefinita" )
 
 **Descrizione:** Imposta il range entro il quale vengono generate scale di gradiente non personalizzate. "Impostazione predefinita", per impostazione predefinita.
 
@@ -4978,7 +4936,7 @@ seg << Set Gradient Range( "Exact Data Range" );
 
 ### Set Gradient Reverse Color Order
 
-**Sintassi:** obj << Set Gradient Reverse Color Order
+**Sintassi:** obj &lt;&lt; Set Gradient Reverse Color Order
 
 **Descrizione:** Inverte l&apos;ordine dei colori in un gradiente.
 
@@ -4993,7 +4951,7 @@ seg << Set Gradient Reverse Color Order( 1 );
 
 ### Set Gradient Reverse Label Order
 
-**Sintassi:** obj << Set Gradient Reverse Label Order
+**Sintassi:** obj &lt;&lt; Set Gradient Reverse Label Order
 
 **Descrizione:** Inverte l&apos;ordine delle etichette in un gradiente.
 
@@ -5008,7 +4966,7 @@ seg << Set Gradient Reverse Label Order( 1 );
 
 ### Set Gradient Scale
 
-**Sintassi:** obj << Set Gradient Scale( "Lineare"|"Quantile"|"Deviazione standard"|"Log"|"Offset logaritmi"|"Personalizzata"="Lineare" )
+**Sintassi:** obj &lt;&lt; Set Gradient Scale( "Lineare"|"Quantile"|"Deviazione standard"|"Log"|"Offset logaritmi"|"Personalizzata"="Lineare" )
 
 **Descrizione:** Imposta il tipo di scala del gradiente. "Lineare", per impostazione predefinita.
 
@@ -5027,7 +4985,7 @@ seg << Set Gradient Scale( "Quantile" );
 
 ### Set Gradient Scale Values
 
-**Sintassi:** obj << Set Gradient Scale Values( [value1,value1, ... value N] )
+**Sintassi:** obj &lt;&lt; Set Gradient Scale Values( [value1,value1, ... value N] )
 
 **Descrizione:** Imposta una serie personalizzata di valori da utilizzare nella scala del gradiente.
 
@@ -5046,7 +5004,7 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ### Set Gradient Show Missing
 
-**Sintassi:** obj << Set Gradient Show Missing( "Automatica"|"Attivato"|"Disattivato"="Automatica" )
+**Sintassi:** obj &lt;&lt; Set Gradient Show Missing( "Automatica"|"Attivato"|"Disattivato"="Automatica" )
 
 **Descrizione:** Indica quando mostrare la voce della legenda per i valori mancanti. "Automatica", per impostazione predefinita.
 
@@ -5068,7 +5026,7 @@ seg << Set Gradient Show Missing( "Off" );
 
 ### Set Graphlet
 
-**Sintassi:** obj << Set Graphlet
+**Sintassi:** obj &lt;&lt; Set Graphlet
 
 **Descrizione:** Definisce la visualizzazione integrata dell&apos;etichetta al passaggio del mouse (graphlet) per questo grafico.
 
@@ -5151,7 +5109,7 @@ gpin << Launch Graphlet;
 
 ### Set Gridlet
 
-**Sintassi:** obj << Set Gridlet
+**Sintassi:** obj &lt;&lt; Set Gridlet
 
 **Descrizione:** Definisce la griglia di contenuto dell&apos;etichetta al passaggio del mouse (gridlet) per questo grafico.
 
@@ -5305,7 +5263,7 @@ frame << Add Pin Annotation(
 
 ### Set Height
 
-**Sintassi:** obj << Set Height( width )
+**Sintassi:** obj &lt;&lt; Set Height( width )
 
 **Descrizione:** Imposta l&apos;altezza del riquadro di visualizzazione.
 
@@ -5323,7 +5281,7 @@ fb << Set Height( 150 );
 
 ### Set Interval Draw Directions
 
-**Sintassi:** obj << Set Interval Draw Directions( Both|Upper|Lower|None )
+**Sintassi:** obj &lt;&lt; Set Interval Draw Directions( Both|Upper|Lower|None )
 
 **Descrizione:** Imposta le direzioni in cui devono essere tracciati gli intervalli.
 
@@ -5362,7 +5320,7 @@ seg << Set Interval Draw Directions( "Lower" );
 
 ### Set Line Color
 
-**Sintassi:** obj << Set Line Color( color )
+**Sintassi:** obj &lt;&lt; Set Line Color( color )
 
 **Descrizione:** Imposta il colore per tutte le linee nel segmento di visualizzazione.
 
@@ -5375,7 +5333,7 @@ seg << Set Line Color( "Green" );
 
 ### Set Line Style
 
-**Sintassi:** obj << Set Line Style( pen style )
+**Sintassi:** obj &lt;&lt; Set Line Style( pen style )
 
 **Descrizione:** Imposta lo stile delle linee. Le opzioni sono Continua, Punteggiata, Tratteggiata, Trattino-punto e Trattino-punto-punto.
 
@@ -5390,7 +5348,7 @@ seg << Set Line Style( "Dotted" );
 
 ### Set Line Width
 
-**Sintassi:** obj << Set Line Width( "1"|"2"|"3"|"4"|"5"|"6"|"Altro..." )
+**Sintassi:** obj &lt;&lt; Set Line Width( "1"|"2"|"3"|"4"|"5"|"6"|"Altro..." )
 
 **Descrizione:** Imposta la larghezza delle linee.
 
@@ -5405,7 +5363,7 @@ seg << Set Line Width( 3 );
 
 ### Set Main Window
 
-**Sintassi:** obj << Set Main Window
+**Sintassi:** obj &lt;&lt; Set Main Window
 
 **Descrizione:** Imposta questa finestra come finestra principale di JMP e imposta come normale la precedente finestra principale
 
@@ -5420,7 +5378,7 @@ w << Set Main Window;
 
 ### Set Marker
 
-**Sintassi:** obj << Set Marker( marker )
+**Sintassi:** obj &lt;&lt; Set Marker( marker )
 
 **Descrizione:** Imposta lo stile per tutti gli indicatori.
 
@@ -5435,7 +5393,7 @@ seg << Set Marker( "Square" );
 
 ### Set Marker Size
 
-**Sintassi:** obj << Set Marker Size( size )
+**Sintassi:** obj &lt;&lt; Set Marker Size( size )
 
 **Descrizione:** Imposta la dimensione degli indicatori. Le opzioni per la dimensione sono Punto, Piccolo, Medio, Grande, XL, XXL e XXXL.
 
@@ -5451,7 +5409,7 @@ seg << Set Marker Size( "XL" );
 
 ### Set Max Size
 
-**Sintassi:** obj << Set Max Size( width,height )
+**Sintassi:** obj &lt;&lt; Set Max Size( width,height )
 
 **Descrizione:** Imposta la dimensione massima di questo riquadro di visualizzazione per l&apos;estensione automatica.
 
@@ -5470,7 +5428,7 @@ fb << Get Max Size;
 
 ### Set Min Size
 
-**Sintassi:** obj << Set Min Size( width,height )
+**Sintassi:** obj &lt;&lt; Set Min Size( width,height )
 
 **Descrizione:** Imposta la dimensione minima di questo riquadro di visualizzazione per l&apos;estensione automatica.
 
@@ -5489,7 +5447,7 @@ fb << Get Min Size;
 
 ### Set Page Setup
 
-**Sintassi:** obj << Set Page Setup( <margins(left, top, right, bottom)>, <scale(s)>, <portrait(0|1)>, <paper size(p)>, <Table of Contents(always, never, default)>  )
+**Sintassi:** obj &lt;&lt; Set Page Setup( &lt;margins(left, top, right, bottom)&gt;, &lt;scale(s)&gt;, &lt;portrait(0|1)&gt;, &lt;paper size(p)&gt;, &lt;Table of Contents(always, never, default)&gt; )
 
 **Descrizione:** Imposta le informazioni di impostazione della pagina che vengono utilizzate durante la stampa o il salvataggio in formato pdf. È possibile generare facoltativamente un sommario dai riquadri.
 
@@ -5511,7 +5469,7 @@ w << Save pdf( "$DOCUMENTS\test.pdf" );
 
 ### Set Print Footers
 
-**Sintassi:** obj << Set Print Footers( left footer, center footer, right header )
+**Sintassi:** obj &lt;&lt; Set Print Footers( left footer, center footer, right header )
 
 **Descrizione:** Imposta i piè di pagina a sinistra, al centro e a destra per l&apos;output stampato.
 
@@ -5530,7 +5488,7 @@ w << Print Window;
 
 ### Set Print Headers
 
-**Sintassi:** obj << Set Print Headers( left header, center header, right header )
+**Sintassi:** obj &lt;&lt; Set Print Headers( left header, center header, right header )
 
 **Descrizione:** Imposta le intestazioni a sinistra, al centro e a destra per l&apos;output stampato.
 
@@ -5549,7 +5507,7 @@ w << Print Window;
 
 ### Set Property
 
-**Sintassi:** obj << Set Property( "property", value )
+**Sintassi:** obj &lt;&lt; Set Property( "property", value )
 
 **Descrizione:** Imposta il valore per la property nominata per il riquadro di visualizzazione.
 
@@ -5563,7 +5521,7 @@ bb << Set Property( "Enabled", 0 );
 
 ### Set Report Title
 
-**Sintassi:** obj << Set Report Title( "string" )
+**Sintassi:** obj &lt;&lt; Set Report Title( "string" )
 
 **Descrizione:** Cambia il titolo del report.
 
@@ -5580,7 +5538,7 @@ rbiv << Set Report Title( "New Title" );
 
 ### Set Stretch
 
-**Sintassi:** obj << Set Stretch( x,y )
+**Sintassi:** obj &lt;&lt; Set Stretch( x,y )
 
 **Descrizione:** Imposta il comportamento per l&apos;estensione orizzontale e verticale del riquadro. I riquadri che si estendono con Window si ridimensioneranno al variare delle dimensioni della finestra o della barra di divisione. I riquadri che si estendono fino a Fill si estenderanno per riempire lo spazio disponibile nel loro contenitore. I riquadri con estensione impostata a Off in genere non si estendono. La maggior parte dei riquadri è impostata per impostazione predefinita a Neutral, il che significa che determineranno il loro comportamento in base ai loro riquadri figli.
 
@@ -5628,7 +5586,7 @@ New Window( "Stretch",
 
 ### Set Summary Behavior
 
-**Sintassi:** obj << Set Summary Behavior( "Default"|"Visible"|"Collapse" )
+**Sintassi:** obj &lt;&lt; Set Summary Behavior( "Default"|"Visible"|"Collapse" )
 
 **Descrizione:** Sets the behavior of the box when a report is viewed in Summary mode.
 
@@ -5647,7 +5605,7 @@ tb << Set Summary Behavior( "Visible" );
 
 ### Set Textlet
 
-**Sintassi:** obj << Set Textlet
+**Sintassi:** obj &lt;&lt; Set Textlet
 
 **Descrizione:** Definisce il contenuto rich text dell&apos;etichetta al passaggio del mouse (textlet) per questo grafico.
 
@@ -5692,7 +5650,7 @@ gpin = frame << Add Pin Annotation(
 
 ### Set Transparency
 
-**Sintassi:** obj << Set Transparency( number )
+**Sintassi:** obj &lt;&lt; Set Transparency( number )
 
 **Descrizione:** Imposta la trasparenza della forma. L&apos;argomento deve essere un valore numerico tra 0 e 1.
 
@@ -5707,7 +5665,7 @@ seg << Set Transparency( .3 );
 
 ### Set Width
 
-**Sintassi:** obj << Set Width( width )
+**Sintassi:** obj &lt;&lt; Set Width( width )
 
 **Descrizione:** Imposta la larghezza del riquadro di visualizzazione.
 
@@ -5725,7 +5683,7 @@ fb << Set Width( 400 );
 
 ### Set Window Icon
 
-**Sintassi:** obj << Set Window Icon( icon name )
+**Sintassi:** obj &lt;&lt; Set Window Icon( icon name )
 
 **Descrizione:** Imposta l&apos;icona della finestra.
 
@@ -5740,7 +5698,7 @@ w << Set Window Icon( "Scatter3D" );
 
 ### Set Window Size
 
-**Sintassi:** obj << Set Window Size( x,y )
+**Sintassi:** obj &lt;&lt; Set Window Size( x,y )
 
 **Descrizione:** Imposta le dimensioni della finestra.
 
@@ -5755,7 +5713,7 @@ w << Set Window Size( 800, 1200 );
 
 ### Set Window Title
 
-**Sintassi:** obj << Set Window Title( "string" )
+**Sintassi:** obj &lt;&lt; Set Window Title( "string" )
 
 **Descrizione:** Cambia il titolo della finestra.
 
@@ -5772,7 +5730,7 @@ rbiv << Set Window Title( "New Title" );
 
 ### Show Properties
 
-**Sintassi:** obj << Show Properties
+**Sintassi:** obj &lt;&lt; Show Properties
 
 **Descrizione:** Visualizza un editor delle proprietà per i riquadri di visualizzazione
 
@@ -5789,7 +5747,7 @@ rbiv << Show Properties();
 
 ### Show Tree Structure
 
-**Sintassi:** obj << Show Tree Structure
+**Sintassi:** obj &lt;&lt; Show Tree Structure
 
 **Descrizione:** Visualizza la struttura gerarchica del riquadro di visualizzazione e dei nodi correlati.
 
@@ -5806,7 +5764,7 @@ rbiv << Show Tree Structure();
 
 ### Show Window
 
-**Sintassi:** obj << Show Window( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Window( state=0|1 )
 
 **Descrizione:** Mostra/Nasconde la finestra. Questa opzione è utile per nascondere temporaneamente le finestre. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -5824,7 +5782,7 @@ w << Show Window( 1 );
 
 ### Sib
 
-**Sintassi:** obj << Sib
+**Sintassi:** obj &lt;&lt; Sib
 
 **Descrizione:** Restituisce l&apos;elemento di pari livello del riquadro di visualizzazione.
 
@@ -5843,7 +5801,7 @@ Print( axisSibling << Class Name() );
 
 ### Sib Append
 
-**Sintassi:** obj << Sib Append( Display box, Horizontal|Vertical )
+**Sintassi:** obj &lt;&lt; Sib Append( Display box, Horizontal|Vertical )
 
 **Descrizione:** Aggiunge un riquadro di visualizzazione immediatamente dopo questo.
 
@@ -5865,7 +5823,7 @@ fb << sib append( Text Box( "=== below ===" ), "Vertical" );
 
 ### Sib Prepend
 
-**Sintassi:** obj << Sib Prepend( Display box, Horizontal|Vertical )
+**Sintassi:** obj &lt;&lt; Sib Prepend( Display box, Horizontal|Vertical )
 
 **Descrizione:** Aggiunge un riquadro di visualizzazione immediatamente prima di questo.
 
@@ -5887,7 +5845,7 @@ fb << sib prepend( Text Box( "=== above ===" ), "Vertical" );
 
 ### Size Window
 
-**Sintassi:** obj << Size Window( x,y )
+**Sintassi:** obj &lt;&lt; Size Window( x,y )
 
 **Descrizione:** Imposta le dimensioni della finestra.
 
@@ -5902,7 +5860,7 @@ w << Size Window( 500, 500 );
 
 ### Size to Isometric
 
-**Sintassi:** obj << Size to Isometric
+**Sintassi:** obj &lt;&lt; Size to Isometric
 
 **Descrizione:** Ridimensiona il frame in modo che il numero di unità reali per pixel sia uguale nelle direzioni X e Y.
 
@@ -5919,7 +5877,7 @@ framebox << Size To Isometric;
 
 ### Ternary X Title
 
-**Sintassi:** obj << Ternary X Title( text )
+**Sintassi:** obj &lt;&lt; Ternary X Title( text )
 
 **Descrizione:** Imposta il titolo dell&apos;asse X per un frame ternario.
 
@@ -5927,7 +5885,7 @@ framebox << Size To Isometric;
 
 ### Ternary Y Title
 
-**Sintassi:** obj << Ternary Y Title( text )
+**Sintassi:** obj &lt;&lt; Ternary Y Title( text )
 
 **Descrizione:** Imposta il titolo dell&apos;asse Y per un frame ternario.
 
@@ -5935,7 +5893,7 @@ framebox << Size To Isometric;
 
 ### Ternary Y1 Title
 
-**Sintassi:** obj << Ternary Y1 Title( text )
+**Sintassi:** obj &lt;&lt; Ternary Y1 Title( text )
 
 **Descrizione:** Imposta il titolo dell&apos;asse Y1 per un frame ternario.
 
@@ -5943,9 +5901,7 @@ framebox << Size To Isometric;
 
 ### Text Color
 
-**Sintassi:** obj << Text Color( color );
-
-color = obj << Get Text Color
+**Sintassi:** obj &lt;&lt; Text Color( color );color = obj &lt;&lt; Get Text Color
 
 **Descrizione:** Il testo sarà visualizzato nel colore del testo, se impostato. Se questa proprietà non è stata impostata, il riquadro assumerà il colore del testo del riquadro che lo contiene.
 
@@ -5967,7 +5923,7 @@ tb << Text Color( "Red" );
 
 ### Top
 
-**Sintassi:** obj << Top( state=0|1 )
+**Sintassi:** obj &lt;&lt; Top( state=0|1 )
 
 **Descrizione:** Mostra/Nasconde un bordo sul lato alto del frame.
 
@@ -5984,7 +5940,7 @@ framebox << Top( 0 );
 
 ### Top Parent
 
-**Sintassi:** obj << Top Parent
+**Sintassi:** obj &lt;&lt; Top Parent
 
 **Descrizione:** Restituisce il riquadro di visualizzazione principale di livello superiore a questo.
 
@@ -6002,7 +5958,7 @@ Print( rootParent << Class Name() );
 
 ### Transparency
 
-**Sintassi:** obj << Transparency( number )
+**Sintassi:** obj &lt;&lt; Transparency( number )
 
 **Descrizione:** Imposta la trasparenza della forma. L&apos;argomento deve essere un valore numerico tra 0 e 1.
 
@@ -6017,13 +5973,11 @@ seg << Set Transparency( .3 );
 
 ### UI Only
 
-**Sintassi:** obj << UI Only( state=0|1 );
-
-state = obj << Get UI Only
+**Sintassi:** obj &lt;&lt; UI Only( state=0|1 );state = obj &lt;&lt; Get UI Only
 
 ### Update Window
 
-**Sintassi:** obj << Update Window
+**Sintassi:** obj &lt;&lt; Update Window
 
 **Descrizione:** Aggiorna la finestra mantenendo il riquadro di visualizzazione se sono presenti regioni invalidate.  Il messaggio <<Inval crea regioni invalidate.
 
@@ -6075,9 +6029,7 @@ New Window( "rect",
 
 ### User Resizable
 
-**Sintassi:** obj << User Resizable;
-
-obj << Get User Resizable
+**Sintassi:** obj &lt;&lt; User Resizable;obj &lt;&lt; Get User Resizable
 
 **Descrizione:** Se il riquadro è ridimensionabile dall&apos;utente, il cursore cambierà in prossimità dei bordi inferiore e destro per consentire di ridimensionare il riquadro in modalità drag-and-drop.
 
@@ -6114,9 +6066,7 @@ scroll << User Resizable( {0, 0} );
 
 ### Vertical Alignment
 
-**Sintassi:** obj << Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );
-
-"Default"|"Top"|"Center"|"Bottom" = obj << Get Vertical Alignment
+**Sintassi:** obj &lt;&lt; Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );"Default"|"Top"|"Center"|"Bottom" = obj &lt;&lt; Get Vertical Alignment
 
 **Descrizione:** L&apos;allineamento verticale controlla il posizionamento del riquadro all&apos;interno di un contenitore se il riquadro non riempie l&apos;intero spazio.
 
@@ -6138,15 +6088,13 @@ lb << Vertical Alignment( "Bottom" );
 
 ### Vertical Gap
 
-**Sintassi:** obj << Vertical Gap( number )
+**Sintassi:** obj &lt;&lt; Vertical Gap( number )
 
 **JMP Versione aggiunta:** 15
 
 ### Visibility
 
-**Sintassi:** obj << Visibility( "Visible"|"Hidden"|"Collapse" );
-
-"Visible"|"Hidden"|"Collapse" = obj << Get Visibility
+**Sintassi:** obj &lt;&lt; Visibility( "Visible"|"Hidden"|"Collapse" );"Visible"|"Hidden"|"Collapse" = obj &lt;&lt; Get Visibility
 
 **Descrizione:** La visibilità determina se mostrare un riquadro e se richiede spazio. Il valore predefinito di "Visible" significa che l&apos;oggetto verrà mostrato. Un riquadro "Hidden" non viene mostrato ma richiede spazio, mentre un riquadro "Collapsed" non richiede spazio nel layout.
 
@@ -6167,7 +6115,7 @@ Show( tb << Get Visibility );
 
 ### Window Class Name
 
-**Sintassi:** obj << Window Class Name
+**Sintassi:** obj &lt;&lt; Window Class Name
 
 **Descrizione:** Restituisce il nome della classe della finestra per il riquadro di visualizzazione.
 
@@ -6185,7 +6133,7 @@ Show( rbiv << Window Class Name() );
 
 ### X Axis
 
-**Sintassi:** obj << X Axis( < Min( min ) >, < Max( max ) >, < Inc( n ) >, ... )
+**Sintassi:** obj &lt;&lt; X Axis( &lt; Min( min ) &gt;, &lt; Max( max ) &gt;, &lt; Inc( n ) &gt;, ... )
 
 **Descrizione:** Applica una o più modifiche all&apos;asse X in un unico messaggio. Se non è specificato alcun argomento, apre la finestra Impostazioni dell&apos;asse X.
 
@@ -6240,7 +6188,7 @@ framebox << X Axis(
 
 ### XPath
 
-**Sintassi:** obj << XPath( XPath expression, <English(0|1)>, <NoData(0|1)> )
+**Sintassi:** obj &lt;&lt; XPath( XPath expression, &lt;English(0|1)&gt;, &lt;NoData(0|1)&gt; )
 
 **Descrizione:** Applica un&apos;espressione XPath alla rappresentazione XML della struttura di visualizzazione e restituisce i risultati. Di default, le stringhe vengono restituite nella lingua locale e l&apos;XML include i valori dei dati all&apos;interno di alcuni riquadri. Usare l&apos;opzione English per restituire le stringhe in inglese, se disponibili. Usare l&apos;opzione NoData per omettere i valori dei dati all&apos;interno dei riquadri, utile per le prestazioni quando la query si basa solo sugli attributi dei riquadri.
 
@@ -6320,7 +6268,7 @@ biv = dt << Run Script( "Bivariate" );
 
 ### Y Axis
 
-**Sintassi:** obj << Y Axis( < Min( min ) >, < Max( max ) >, < Inc( n ) >, ... )
+**Sintassi:** obj &lt;&lt; Y Axis( &lt; Min( min ) &gt;, &lt; Max( max ) &gt;, &lt; Inc( n ) &gt;, ... )
 
 **Descrizione:** Applica una o più modifiche all&apos;asse Y in un unico messaggio. Se non è specificato alcun argomento, apre la finestra Impostazioni dell&apos;asse Y.
 
@@ -6375,7 +6323,7 @@ framebox << Y Axis(
 
 ### Zoom Window
 
-**Sintassi:** obj << Zoom Window
+**Sintassi:** obj &lt;&lt; Zoom Window
 
 **Descrizione:** Ridimensiona la finestra in modo che sia sufficientemente grande da mostrarne tutto il contenuto.
 

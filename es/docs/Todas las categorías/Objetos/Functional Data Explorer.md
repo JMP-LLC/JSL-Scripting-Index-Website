@@ -6,7 +6,7 @@
 
 ### By
 
-**Sintaxis:** obj = Functional Data Explorer(...<By( column(s) )>...)
+**Sintaxis:** obj = Functional Data Explorer(...&lt;By( column(s) )&gt;...)
 
 **Descripción:** Realiza un análisis independiente para cada nivel de la columna especificada.
 
@@ -34,7 +34,7 @@ obj = dt << Functional Data Explorer(
 
 ### Freq
 
-**Sintaxis:** obj = Functional Data Explorer(...<Freq( column )>...)
+**Sintaxis:** obj = Functional Data Explorer(...&lt;Freq( column )&gt;...)
 
 **Descripción:** Especifica una columna cuyos valores asignan una frecuencia a cada fila del análisis.
 
@@ -58,7 +58,7 @@ obj = dt << Functional Data Explorer(
 
 ### Function
 
-**Sintaxis:** obj = Functional Data Explorer(...<Function( column )>...)
+**Sintaxis:** obj = Functional Data Explorer(...&lt;Function( column )&gt;...)
 
 **Descripción:** Especifica la variable ID, que identifica cada función individual.
 
@@ -76,7 +76,7 @@ obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME 
 
 ### ID
 
-**Sintaxis:** obj = Functional Data Explorer(...<ID( column )>...)
+**Sintaxis:** obj = Functional Data Explorer(...&lt;ID( column )&gt;...)
 
 **Descripción:** Especifica la variable ID, que identifica cada función individual.
 
@@ -94,7 +94,7 @@ obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME 
 
 ### Input
 
-**Sintaxis:** obj = Functional Data Explorer(...<Input( column )>...)
+**Sintaxis:** obj = Functional Data Explorer(...&lt;Input( column )&gt;...)
 
 **Descripción:** Especifica la variable de entrada.
 
@@ -130,7 +130,7 @@ obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME 
 
 ### Supplementary
 
-**Sintaxis:** obj = Functional Data Explorer(...<Supplementary( column(s) )>...)
+**Sintaxis:** obj = Functional Data Explorer(...&lt;Supplementary( column(s) )&gt;...)
 
 **Descripción:** Especifica una o más variables suplementarias. Las variables suplementarias no se utilizan en ninguno de los cálculos de la plataforma e incluirlas no afecta a los resultados. Estas variables pueden mejorar la interpretación de los datos o pueden servir para análisis futuros.
 
@@ -154,7 +154,7 @@ obj = dt << Functional Data Explorer(
 
 ### Validation
 
-**Sintaxis:** obj = Functional Data Explorer(...<Validation( column )>...)
+**Sintaxis:** obj = Functional Data Explorer(...&lt;Validation( column )&gt;...)
 
 **Descripción:** Especifica una columna numérica que define los conjuntos de validación. Esta columna debe contener tres valores distintos como máximo.
 
@@ -178,7 +178,7 @@ obj = dt << Functional Data Explorer(
 
 ### X
 
-**Sintaxis:** obj = Functional Data Explorer(...<X( column )>...)
+**Sintaxis:** obj = Functional Data Explorer(...&lt;X( column )&gt;...)
 
 **Descripción:** Especifica la variable de entrada.
 
@@ -214,7 +214,7 @@ obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME 
 
 ### Z
 
-**Sintaxis:** obj = Functional Data Explorer(...<Z( column(s) )>...)
+**Sintaxis:** obj = Functional Data Explorer(...&lt;Z( column(s) )&gt;...)
 
 **Descripción:** Especifica una o más variables suplementarias. Las variables suplementarias no se utilizan en ninguno de los cálculos de la plataforma e incluirlas no afecta a los resultados. Estas variables pueden mejorar la interpretación de los datos o pueden servir para análisis futuros.
 
@@ -256,7 +256,7 @@ obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME 
 
 ### B Splines
 
-**Sintaxis:** obj << B Splines
+**Sintaxis:** obj &lt;&lt; B Splines
 
 **Descripción:** Ajusta un modelo B-Spline a los datos.
 
@@ -277,7 +277,7 @@ obj = dt << Functional Data Explorer(
 
 ### B Splines Model Controls
 
-**Sintaxis:** obj << B Splines Model Controls
+**Sintaxis:** obj &lt;&lt; B Splines Model Controls
 
 **Descripción:** Abre el panel Controles del modelo antes de ajustar un modelo B-Spline. Puede especificar el número de nodos y el grado de Spline.
 
@@ -298,7 +298,7 @@ obj = dt << Functional Data Explorer(
 
 ### Baseline Correction
 
-**Sintaxis:** obj << Baseline Correction
+**Sintaxis:** obj &lt;&lt; Baseline Correction
 
 **Descripción:** Subtracts a baseline function from each individual function. You can perform automated baseline correction using either the statistics-sensitive nonlinear iterative peak-clipping (SNIP) or the alternating reweighted least squares solution technique. There is also an option to load a known baseline function from a data table.
 
@@ -306,7 +306,7 @@ obj = dt << Functional Data Explorer(
 
 ### Data Processing
 
-**Sintaxis:** obj << Data Processing( <options> )
+**Sintaxis:** obj &lt;&lt; Data Processing( &lt;options&gt; )
 
 **Descripción:** Especifica las opciones de Procesamiento de datos que le permiten realizar pasos previos al procesamiento en los datos. Entre las opciones se incluyen las operaciones de limpieza, transformación, alineación, espectral y función objetivo.
 
@@ -327,7 +327,7 @@ obj = dt << Functional Data Explorer(
 
 ### Direct Functional PCA
 
-**Sintaxis:** obj << Direct Functional PCA
+**Sintaxis:** obj &lt;&lt; Direct Functional PCA
 
 **Descripción:** Realiza el PCA funcional directamente sin ajustar un modelo de función base. Esta opción requiere que los datos de entrada estén en una cuadrícula con un espaciado uniforme.
 
@@ -349,7 +349,7 @@ obj = dt << Functional Data Explorer(
 
 ### Fourier Basis
 
-**Sintaxis:** obj << Fourier Basis
+**Sintaxis:** obj &lt;&lt; Fourier Basis
 
 **Descripción:** Ajusta un modelo B-Spline penalizado con respecto a los datos.
 
@@ -370,7 +370,7 @@ obj = dt << Functional Data Explorer(
 
 ### Fourier Basis Model Controls
 
-**Sintaxis:** obj << Fourier Basis Model Controls
+**Sintaxis:** obj &lt;&lt; Fourier Basis Model Controls
 
 **Descripción:** Abre el panel Controles del modelo antes de ajustar un modelo de base de Fourier. Puede especificar el número de pares de Fourier y el periodo.
 
@@ -391,7 +391,7 @@ obj = dt << Functional Data Explorer(
 
 ### Multivariate Curve Resolution
 
-**Sintaxis:** obj << Multivariate Curve Resolution
+**Sintaxis:** obj &lt;&lt; Multivariate Curve Resolution
 
 **Descripción:** Realiza la resolución de curva multivariante (MCR). Esta opción requiere que los datos de entrada estén en una cuadrícula con un espaciado uniforme.
 
@@ -399,7 +399,7 @@ obj = dt << Functional Data Explorer(
 
 ### Nonnegative SVD
 
-**Sintaxis:** obj << Nonnegative SVD
+**Sintaxis:** obj &lt;&lt; Nonnegative SVD
 
 **Descripción:** Performs a nonnegative singular value decomposition (SVD) on the stacked matrix of functions. A nonnegative SVD constrains the matrix decomposition so that the scores and loadings are greater than or equal to zero.
 
@@ -407,7 +407,7 @@ obj = dt << Functional Data Explorer(
 
 ### P Splines
 
-**Sintaxis:** obj << P Splines
+**Sintaxis:** obj &lt;&lt; P Splines
 
 **Descripción:** Ajusta un modelo B-Spline penalizado con respecto a los datos.
 
@@ -428,7 +428,7 @@ obj = dt << Functional Data Explorer(
 
 ### P Splines Model Controls
 
-**Sintaxis:** obj << P Splines Model Controls
+**Sintaxis:** obj &lt;&lt; P Splines Model Controls
 
 **Descripción:** Abre el panel Controles del modelo antes de ajustar un modelo de P-Spline. Puede especificar el número de nodos y el grado de Spline.
 
@@ -449,7 +449,7 @@ obj = dt << Functional Data Explorer(
 
 ### Peak Finding
 
-**Sintaxis:** obj << Peak Finding
+**Sintaxis:** obj &lt;&lt; Peak Finding
 
 **Descripción:** Busca y resume los picos directamente o mediante un modelo paramétrico especificado.
 
@@ -457,7 +457,7 @@ obj = dt << Functional Data Explorer(
 
 ### Penalized Nonnegative SVD
 
-**Sintaxis:** obj << Penalized Nonnegative SVD
+**Sintaxis:** obj &lt;&lt; Penalized Nonnegative SVD
 
 **Descripción:** Realiza la SVD no negativa penalizada para construir un PCA funcional. Esta opción requiere que los datos de entrada estén en una cuadrícula con un espaciado uniforme.
 
@@ -465,7 +465,7 @@ obj = dt << Functional Data Explorer(
 
 ### Penalized SVD
 
-**Sintaxis:** obj << Penalized SVD
+**Sintaxis:** obj &lt;&lt; Penalized SVD
 
 **Descripción:** Realiza la SVD penalizada para construir un PCA funcional. Esta opción requiere que los datos de entrada estén en una cuadrícula con un espaciado uniforme.
 
@@ -473,7 +473,7 @@ obj = dt << Functional Data Explorer(
 
 ### Plot Mean Function
 
-**Sintaxis:** obj << Plot Mean Function( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Plot Mean Function( state=0|1 )
 
 **Descripción:** Muestra u oculta el gráfico de la función de la media en el informe Resúmenes. Opción activada de forma predeterminada.
 
@@ -491,7 +491,7 @@ obj << Plot Mean Function( 0 );
 
 ### Plot Median Function
 
-**Sintaxis:** obj << Plot Median Function( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Plot Median Function( state=0|1 )
 
 **Descripción:** Muestra u oculta el gráfico de la función de la mediana en el informe Resúmenes.
 
@@ -512,7 +512,7 @@ obj = dt << Functional Data Explorer(
 
 ### Plot Standard Deviation Function
 
-**Sintaxis:** obj << Plot Standard Deviation Function( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Plot Standard Deviation Function( state=0|1 )
 
 **Descripción:** Muestra u oculta el gráfico de la función de la desviación estándar en el informe Resúmenes. Opción activada de forma predeterminada.
 
@@ -530,7 +530,7 @@ obj << Plot Standard Deviation Function( 0 );
 
 ### Save Data
 
-**Sintaxis:** obj << Save Data
+**Sintaxis:** obj &lt;&lt; Save Data
 
 **Descripción:** Guarda los datos procesados en una tabla de datos independiente, en formato Apilado.
 
@@ -550,7 +550,7 @@ obj << Save Data;
 
 ### Unconstrained MCR
 
-**Sintaxis:** obj << Unconstrained MCR
+**Sintaxis:** obj &lt;&lt; Unconstrained MCR
 
 **Descripción:** Realiza la resolución de la curva multivariante (MCR) sin restricciones. Esta opción requiere que los datos de entrada estén en una cuadrícula con un espaciado uniforme.
 
@@ -558,7 +558,7 @@ obj << Save Data;
 
 ### Wavelets
 
-**Sintaxis:** obj << Wavelets
+**Sintaxis:** obj &lt;&lt; Wavelets
 
 **Descripción:** Ajusta varios modelos de ondículas a los datos. Esta opción requiere que los datos de entrada estén en una cuadrícula con un espaciado uniforme. Si los datos no están espaciados de forma uniforme, se crea automáticamente una cuadrícula antes de que comience la rutina de ondículas.
 
@@ -576,7 +576,7 @@ obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME 
 
 ### Action
 
-**Sintaxis:** obj << Action
+**Sintaxis:** obj &lt;&lt; Action
 
 **Descripción:** Trampa multiuso dentro de una plataforma para insertar expresiones que se desean evaluar. Temporalmente establece los contextos de cuadros de visualización y tablas de datos en la plataforma.
 
@@ -594,7 +594,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descripción:** Aplica al objeto un preajuste creado previamente, actualizando las opciones y personalizaciones para que coincidan con la configuración guardada.
 
@@ -641,7 +641,7 @@ obj2 << Apply Preset( preset );
 
 ### Automatic Recalc
 
-**Sintaxis:** obj << Automatic Recalc( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Descripción:** Rehace automáticamente el análisis para modificaciones de datos y de exclusión. Si está activada la opción Recálculo automático, le recomendamos que utilice los comandos Wait(0) para asegurarse de que las modificaciones de datos y de exclusión surtan efecto antes del recálculo.
 
@@ -657,7 +657,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**Sintaxis:** obj << Broadcast(message)
+**Sintaxis:** obj &lt;&lt; Broadcast(message)
 
 **Descripción:** Difunde un mensaje a una plataforma. Si los resultados devueltos de objetos individuales son tablas, se concatenan si es posible y el formato final es idéntico al resultado de la opción Guardar tabla combinada en un cuadro de tabla o al resultado de la opción Concatenar mediante una columna de origen. Los demás resultados se almacenan en una lista y se devuelven.
 
@@ -677,7 +677,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**Sintaxis:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Sintaxis:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Descripción:** Añade un panel de control para cambiar las variables de la plataforma
 
@@ -695,7 +695,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**Sintaxis:** obj << Copy ByGroup Script
+**Sintaxis:** obj &lt;&lt; Copy ByGroup Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -720,7 +720,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Sintaxis:** obj << Copy Script
+**Sintaxis:** obj &lt;&lt; Copy Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -735,7 +735,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Sintaxis:** obj << Data Table Window
+**Sintaxis:** obj &lt;&lt; Data Table Window
 
 **Descripción:** Mueve al frente la ventana de la tabla de datos que se utiliza en este análisis.
 
@@ -750,7 +750,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Sintaxis:** obj << Get By Levels
+**Sintaxis:** obj &lt;&lt; Get By Levels
 
 **Descripción:** Devuelve un arreglo asociativo que asigna las columnas Por grupo a sus valores.
 
@@ -767,7 +767,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Sintaxis:** obj << Get ByGroup Script
+**Sintaxis:** obj &lt;&lt; Get ByGroup Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -793,7 +793,7 @@ Show( t );
 
 ### Get Container
 
-**Sintaxis:** obj << Get Container
+**Sintaxis:** obj &lt;&lt; Get Container
 
 **Descripción:** Devuelve una referencia al cuadro contenedor que incluye el contenido del objeto.
 
@@ -840,7 +840,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Sintaxis:** obj << Get Data Table
+**Sintaxis:** obj &lt;&lt; Get Data Table
 
 **Descripción:** Devuelve una referencia a la tabla de datos.
 
@@ -856,7 +856,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**Sintaxis:** obj << Get Group Platform
+**Sintaxis:** obj &lt;&lt; Get Group Platform
 
 **Descripción:** Devuelve el objeto Plataforma grupal si esta plataforma forma parte de un grupo. De lo contrario, devuelve Empty().
 
@@ -873,7 +873,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**Sintaxis:** obj << Get Script
+**Sintaxis:** obj &lt;&lt; Get Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -889,7 +889,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Sintaxis:** obj << Get Script With Data Table
+**Sintaxis:** obj &lt;&lt; Get Script With Data Table
 
 **Descripción:** Crea un script (JSL) para generar este análisis haciendo referencia específica a esta tabla de datos y lo devuelve en forma de expresión.
 
@@ -905,7 +905,7 @@ Show( t );
 
 ### Get Timing
 
-**Sintaxis:** obj << Get Timing
+**Sintaxis:** obj &lt;&lt; Get Timing
 
 **Descripción:** Determina el tiempo de inicio de una plataforma.
 
@@ -921,7 +921,7 @@ Show( t );
 
 ### Get Web Support
 
-**Sintaxis:** obj << Get Web Support
+**Sintaxis:** obj &lt;&lt; Get Web Support
 
 **Descripción:** Devuelve un número que indica el nivel de compatibilidad del HTML interactivo para el objeto de visualización. 1 significa que algunos o todos los elementos son compatibles. 0 significa que no existe compatibilidad.
 
@@ -937,7 +937,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Sintaxis:** obj << Get Where Expr
+**Sintaxis:** obj &lt;&lt; Get Where Expr
 
 **Descripción:** Devuelve la expresión Where para el subconjunto de datos, si la plataforma se inició con By() o Where(). De lo contrario, devuelve Empty().
 
@@ -974,7 +974,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Sintaxis:** obj << Local Data Filter
+**Sintaxis:** obj &lt;&lt; Local Data Filter
 
 **Descripción:** Para filtrar los datos según grupos o rangos determinados, pero locales para esta plataforma.
 
@@ -1030,7 +1030,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Sintaxis:** obj << Paste Local Data Filter
+**Sintaxis:** obj &lt;&lt; Paste Local Data Filter
 
 **Descripción:** Se aplica el filtro de datos locales del portapapeles al informe actual.
 
@@ -1051,7 +1051,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**Sintaxis:** obj << Redo Analysis
+**Sintaxis:** obj &lt;&lt; Redo Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -1066,7 +1066,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**Sintaxis:** obj << Redo ByGroup Analysis
+**Sintaxis:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -1091,7 +1091,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**Sintaxis:** obj << Relaunch Analysis
+**Sintaxis:** obj &lt;&lt; Relaunch Analysis
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -1106,7 +1106,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**Sintaxis:** obj << Relaunch ByGroup
+**Sintaxis:** obj &lt;&lt; Relaunch ByGroup
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -1131,7 +1131,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**Sintaxis:** obj << Remove Column Switcher
+**Sintaxis:** obj &lt;&lt; Remove Column Switcher
 
 **Descripción:** Quita el Cambiador de columnas más reciente que se haya agregado a la plataforma.
 
@@ -1151,7 +1151,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Sintaxis:** obj << Remove Local Data Filter
+**Sintaxis:** obj &lt;&lt; Remove Local Data Filter
 
 **Descripción:** Si se ha creado un filtro de datos local, esto lo eliminará y restaurará la plataforma para usar todos los datos de la tabla de datos directamente.
 
@@ -1190,9 +1190,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Sintaxis:** obj << Report;
-
-Report( obj )
+**Sintaxis:** obj &lt;&lt; Report;Report( obj )
 
 **Descripción:** Devuelve una referencia al objeto informe.
 
@@ -1209,7 +1207,7 @@ Show( t );
 
 ### Report View
 
-**Sintaxis:** obj << Report View( "Completa"|"Resumen" )
+**Sintaxis:** obj &lt;&lt; Report View( "Completa"|"Resumen" )
 
 **Descripción:** La vista del informe determina el nivel de detalle visible en el informe de una plataforma. Full muestra todos los detalles, mientras que Summary solo muestra el contenido seleccionado, con independencia de la plataforma. Para el comportamiento personalizado, los cuadros de visualización admiten un mensaje <<Set Summary Behavior.
 
@@ -1224,7 +1222,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**Sintaxis:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis, y lo guarda como propiedad de tabla en la tabla de datos. Puede especificar un nombre para el script. La opción Append Suffix añade un sufijo numérico al nombre del script, que diferencia el script de un script existente que tenga el mismo nombre. La opción Prompt solicita al usuario que especifique un nombre de script. La opción Replace reemplaza un script existente que tenga el mismo nombre.
 
@@ -1249,7 +1247,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Sintaxis:** obj << Save ByGroup Script to Journal
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -1274,7 +1272,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Sintaxis:** obj << Save ByGroup Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -1299,7 +1297,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**Sintaxis:** obj << Save Script for All Objects
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects
 
 **Descripción:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -1314,7 +1312,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Sintaxis:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descripción:** Guarda un script para todos los objetos de informe en la tabla de datos actual. Esta opción es útil cuando tiene varios informes en la ventana. El script recibe el nombre de la primera plataforma a menos que especifique el nombre del script entre comillas.
 
@@ -1362,7 +1360,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Sintaxis:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis y lo guarda en forma de propiedad de tabla en la tabla de datos.
 
@@ -1377,7 +1375,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Sintaxis:** obj << Save Script to Journal
+**Sintaxis:** obj &lt;&lt; Save Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -1392,7 +1390,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Sintaxis:** obj << Save Script to Report
+**Sintaxis:** obj &lt;&lt; Save Script to Report
 
 **Descripción:** Crea un script JSL para generar este análisis y lo muestra en el propio informe. Resulta útil para conservar un registro impreso de lo que se ha hecho.
 
@@ -1407,7 +1405,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Sintaxis:** obj << Save Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -1487,7 +1485,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Sintaxis:** obj << Sync to Data Table Changes
+**Sintaxis:** obj &lt;&lt; Sync to Data Table Changes
 
 **Descripción:** Realiza una sincronización con las modificaciones de datos y de exclusión que se hayan realizado.
 
@@ -1504,7 +1502,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Sintaxis:** obj << Title( "new title" )
+**Sintaxis:** obj &lt;&lt; Title( "new title" )
 
 **Descripción:** Establece el título de la plataforma.
 
@@ -1519,7 +1517,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Sintaxis:** obj << Top Report
+**Sintaxis:** obj &lt;&lt; Top Report
 
 **Descripción:** Devuelve una referencia al nodo raíz del informe.
 
@@ -1536,7 +1534,7 @@ Show( t );
 
 ### Transform Column
 
-**Sintaxis:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Sintaxis:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Descripción:** Crea una columna de transformación en el contexto local de un objeto (una plataforma por lo general). La columna de transformación solo está activa mientras esté en uso la plataforma.
 
@@ -1557,7 +1555,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**Sintaxis:** obj << View Web XML
+**Sintaxis:** obj &lt;&lt; View Web XML
 
 **Descripción:** Devuelve el código XML que se utiliza para crear el informe HTML interactivo.
 
@@ -1572,9 +1570,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**Sintaxis:** obj = Functional Data Explorer(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Functional Data Explorer(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Establece el tipo de ventana que se creará para el informe. De forma predeterminada, se creará una ventana de informe Visible. Una ventana Invisible no aparecerá en pantalla, pero se puede detectar mediante funciones como Window(). Una ventana Private responde a la mayoría de los mensajes de ventana pero no es detectable y se debe abordar a través del objeto de informe.
 
@@ -1597,7 +1593,7 @@ New Window( "Bivariate Equation",
 
 #### Align 0 to 1
 
-**Sintaxis:** obj << Data Processing( Align 0 to 1 )
+**Sintaxis:** obj &lt;&lt; Data Processing( Align 0 to 1 )
 
 **Descripción:** Alinea las funciones de salida (Y) en el rango de la entrada (X) para que esté entre 0 y 1.
 
@@ -1618,7 +1614,7 @@ obj = dt << Functional Data Explorer(
 
 #### Align Maximum
 
-**Sintaxis:** obj << Data Processing( Align Maximum )
+**Sintaxis:** obj &lt;&lt; Data Processing( Align Maximum )
 
 **Descripción:** Alinea las funciones de salida (Y) mediante el valor de entrada máximo observado (X).
 
@@ -1639,7 +1635,7 @@ obj = dt << Functional Data Explorer(
 
 #### Align Minimum
 
-**Sintaxis:** obj << Data Processing( Align Minimum )
+**Sintaxis:** obj &lt;&lt; Data Processing( Align Minimum )
 
 **Descripción:** Alinea las funciones de salida (Y) mediante el valor de entrada mínimo observado (X).
 
@@ -1660,7 +1656,7 @@ obj = dt << Functional Data Explorer(
 
 #### Align by Function
 
-**Sintaxis:** obj << Data Processing( Align by Function )
+**Sintaxis:** obj &lt;&lt; Data Processing( Align by Function )
 
 **Descripción:** Alinea las funciones de salida (Y) de modo que el rango de cada función esté por encima del rango de la entrada (X).
 
@@ -1681,7 +1677,7 @@ obj = dt << Functional Data Explorer(
 
 #### Baseline Correction
 
-**Sintaxis:** obj << Data Processing( Baseline Correction( Model( Linear|Quadratic|Cubic|Fit Exponential 2P|Fit Exponential 3P ), Correction Region( ), Baseline Regions( vector ), Anchor Points( vector ) ) )
+**Sintaxis:** obj &lt;&lt; Data Processing( Baseline Correction( Model( Linear|Quadratic|Cubic|Fit Exponential 2P|Fit Exponential 3P ), Correction Region( ), Baseline Regions( vector ), Anchor Points( vector ) ) )
 
 **Descripción:** Ajusta y quita un modelo de referencia de cada función. Puede especificar el modelo de referencia, la región de corrección, las regiones de referencia y los puntos de anclaje.
 
@@ -1719,7 +1715,7 @@ obj = dt << Functional Data Explorer(
 
 #### Center
 
-**Sintaxis:** obj << Data Processing( Center )
+**Sintaxis:** obj &lt;&lt; Data Processing( Center )
 
 **Descripción:** Centra la salida.
 
@@ -1740,7 +1736,7 @@ obj = dt << Functional Data Explorer(
 
 #### Dynamic Time Warping
 
-**Sintaxis:** obj << Data Processing( Dynamic Time Warping( Reference( number ) ) )
+**Sintaxis:** obj &lt;&lt; Data Processing( Dynamic Time Warping( Reference( number ) ) )
 
 **Descripción:** Alinea las funciones de salida mediante la deformación temporal dinámica (DTW). La DTW es una técnica de alineación de funciones que encuentra una deformación óptima para alinear dos o más funciones de forma conjunta.
 
@@ -1761,7 +1757,7 @@ obj = dt << Functional Data Explorer(
 
 #### Exp
 
-**Sintaxis:** obj << Data Processing( Exp )
+**Sintaxis:** obj &lt;&lt; Data Processing( Exp )
 
 **Descripción:** Transforma los datos calculando la función exponencial de la salida.
 
@@ -1782,7 +1778,7 @@ obj = dt << Functional Data Explorer(
 
 #### Filter X
 
-**Sintaxis:** obj << Data Processing( Filter X( [lower, upper] ) )
+**Sintaxis:** obj &lt;&lt; Data Processing( Filter X( [lower, upper] ) )
 
 **Descripción:** Quita los valores de entrada (X) que estén fuera del intervalo especificado.
 
@@ -1799,7 +1795,7 @@ obj << Data Processing( Filter X( [5, 50] ) );
 
 #### Filter Y
 
-**Sintaxis:** obj << Data Processing( Filter Y( [lower, upper] ) )
+**Sintaxis:** obj &lt;&lt; Data Processing( Filter Y( [lower, upper] ) )
 
 **Descripción:** Quita los valores de salida (Y) fuera del intervalo especificado.
 
@@ -1816,7 +1812,7 @@ obj << Data Processing( Filter Y( [., 100] ) );
 
 #### Load Targets
 
-**Sintaxis:** obj << Data Processing( Load Targets( "level" ) )
+**Sintaxis:** obj &lt;&lt; Data Processing( Load Targets( "level" ) )
 
 **Descripción:** Especifica una función objetivo.
 
@@ -1837,7 +1833,7 @@ obj = dt << Functional Data Explorer(
 
 #### Log
 
-**Sintaxis:** obj << Data Processing( Log )
+**Sintaxis:** obj &lt;&lt; Data Processing( Log )
 
 **Descripción:** Transforma los datos calculando el logaritmo natural de la salida.
 
@@ -1858,7 +1854,7 @@ obj = dt << Functional Data Explorer(
 
 #### Log X
 
-**Sintaxis:** obj << Data Processing( Log X )
+**Sintaxis:** obj &lt;&lt; Data Processing( Log X )
 
 **Descripción:** Transforma los datos calculando el logaritmo natural de la entrada.
 
@@ -1879,7 +1875,7 @@ obj = dt << Functional Data Explorer(
 
 #### Logit
 
-**Sintaxis:** obj << Data Processing( Logit )
+**Sintaxis:** obj &lt;&lt; Data Processing( Logit )
 
 **Descripción:** Transforma los datos calculando la función logit de la salida. Los valores de salida deben estar comprendidos entre 0 y 1.
 
@@ -1901,7 +1897,7 @@ obj = dt << Functional Data Explorer(
 
 #### MSC
 
-**Sintaxis:** obj << Data Processing( MSC )
+**Sintaxis:** obj &lt;&lt; Data Processing( MSC )
 
 **Descripción:** Aplica el método Corrección del efecto multiplicativo de la dispersión a los datos. Este método ajusta una regresión lineal simple para cada función individual (nivel de la variable ID) donde la respuesta son los valores de salida de la función y el regresor son los valores de salida de la función de la media.
 
@@ -1922,7 +1918,7 @@ obj = dt << Functional Data Explorer(
 
 #### Negation
 
-**Sintaxis:** obj << Data Processing( Negation )
+**Sintaxis:** obj &lt;&lt; Data Processing( Negation )
 
 **Descripción:** Transforma los datos negando la salida.
 
@@ -1943,7 +1939,7 @@ obj = dt << Functional Data Explorer(
 
 #### Range 0 to 1
 
-**Sintaxis:** obj << Data Processing( Range 0 to 1 )
+**Sintaxis:** obj &lt;&lt; Data Processing( Range 0 to 1 )
 
 **Descripción:** Escala la salida para que esté dentro del rango de 0 a 1.
 
@@ -1964,11 +1960,7 @@ obj = dt << Functional Data Explorer(
 
 #### Reduce
 
-**Sintaxis:** obj << Data Processing( Reduce( Grid( number ) ) ); 
-
-obj << Data Processing( Reduce( Bin( number ) ) ); 
-
-obj << Data Processing( Reduce( Thin( number ) ) )
+**Sintaxis:** obj &lt;&lt; Data Processing( Reduce( Grid( number ) ) ); obj &lt;&lt; Data Processing( Reduce( Bin( number ) ) ); obj &lt;&lt; Data Processing( Reduce( Thin( number ) ) )
 
 **Descripción:** Reduce los datos sobre la entrada (X) con una de varias técnicas.
 
@@ -1985,7 +1977,7 @@ obj << Data Processing( Reduce( Thin( 2 ) ) );
 
 #### Remove Selected
 
-**Sintaxis:** obj << Data Processing( Remove Selected )
+**Sintaxis:** obj &lt;&lt; Data Processing( Remove Selected )
 
 **Descripción:** Quita los valores seleccionados.
 
@@ -2004,7 +1996,7 @@ obj << Data Processing( Remove Selected );
 
 #### Remove Unselected
 
-**Sintaxis:** obj << Data Processing( Remove Unselected )
+**Sintaxis:** obj &lt;&lt; Data Processing( Remove Unselected )
 
 **Descripción:** Quita los valores no seleccionados.
 
@@ -2023,7 +2015,7 @@ obj << Data Processing( Remove Unselected );
 
 #### Remove Value
 
-**Sintaxis:** obj << Data Processing( Remove Value( number ) )
+**Sintaxis:** obj &lt;&lt; Data Processing( Remove Value( number ) )
 
 **Descripción:** Quita las observaciones que tengan el valor de respuesta especificado.
 
@@ -2041,7 +2033,7 @@ obj << Data Processing( Remove Value( 30 ) );
 
 #### Remove Zeros
 
-**Sintaxis:** obj << Data Processing( Remove Zeros )
+**Sintaxis:** obj &lt;&lt; Data Processing( Remove Zeros )
 
 **Descripción:** Quita las observaciones que tengan un valor de respuesta igual a cero.
 
@@ -2062,7 +2054,7 @@ obj = dt << Functional Data Explorer(
 
 #### Row Alignment
 
-**Sintaxis:** obj << Data Processing( Row Alignment )
+**Sintaxis:** obj &lt;&lt; Data Processing( Row Alignment )
 
 **Descripción:** Reemplaza los valores introducidos por el número de fila.
 
@@ -2083,7 +2075,7 @@ obj = dt << Functional Data Explorer(
 
 #### SNV
 
-**Sintaxis:** obj << Data Processing( SNV )
+**Sintaxis:** obj &lt;&lt; Data Processing( SNV )
 
 **Descripción:** Aplica el método de variables estándar normales a los datos. Este método estandariza la salida centrando y escalando cada función individual (nivel de la variable ID) para que tenga una media de 0 y una desviación estándar de 1.
 
@@ -2104,7 +2096,7 @@ obj = dt << Functional Data Explorer(
 
 #### Savitzky-Golay Filter
 
-**Sintaxis:** obj << Data Processing( "Savitzky-Golay Filter"n )
+**Sintaxis:** obj &lt;&lt; Data Processing( "Savitzky-Golay Filter"n )
 
 **Descripción:** Aplica el filtro Savitzky-Golay a cada función. Esta opción requiere que los datos de entrada estén en una cuadrícula con un espaciado uniforme.
 
@@ -2125,7 +2117,7 @@ obj = dt << Functional Data Explorer(
 
 #### Savitzky-Golay First Derivative
 
-**Sintaxis:** obj << Data Processing( "Savitzky-Golay First Derivative"n )
+**Sintaxis:** obj &lt;&lt; Data Processing( "Savitzky-Golay First Derivative"n )
 
 **Descripción:** Devuelve la primera derivada del filtro Savitzky-Golay. Esta opción requiere que los datos de entrada estén en una cuadrícula con un espaciado uniforme.
 
@@ -2146,7 +2138,7 @@ obj = dt << Functional Data Explorer(
 
 #### Savitzky-Golay Second Derivative
 
-**Sintaxis:** obj << Data Processing( "Savitzky-Golay Second Derivative"n )
+**Sintaxis:** obj &lt;&lt; Data Processing( "Savitzky-Golay Second Derivative"n )
 
 **Descripción:** Devuelve la segunda derivada del filtro Savitzky-Golay. Esta opción requiere que los datos de entrada estén en una cuadrícula con un espaciado uniforme.
 
@@ -2167,7 +2159,7 @@ obj = dt << Functional Data Explorer(
 
 #### Square
 
-**Sintaxis:** obj << Data Processing( Square )
+**Sintaxis:** obj &lt;&lt; Data Processing( Square )
 
 **Descripción:** Transforma los datos calculando el valor cuadrático de la salida.
 
@@ -2188,7 +2180,7 @@ obj = dt << Functional Data Explorer(
 
 #### Square Root
 
-**Sintaxis:** obj << Data Processing( Square Root )
+**Sintaxis:** obj &lt;&lt; Data Processing( Square Root )
 
 **Descripción:** Transforma los datos calculando la raíz cuadrada de la salida. Los valores de salida deben ser no negativos.
 
@@ -2209,7 +2201,7 @@ obj = dt << Functional Data Explorer(
 
 #### Standardize
 
-**Sintaxis:** obj << Data Processing( Standardize )
+**Sintaxis:** obj &lt;&lt; Data Processing( Standardize )
 
 **Descripción:** Estandariza la salida mediante centrado y escalado.
 
@@ -2234,9 +2226,7 @@ obj = dt << Functional Data Explorer(
 
 #### Diagnostic Plots
 
-**Sintaxis:** obj<< Model Name( Functional DOE Analysis( Diagnostic Plots( state=0|1 ) ) ); 
-
-scrobj << Diagnostic Plots( state=0|1 )
+**Sintaxis:** obj&lt;&lt; Model Name( Functional DOE Analysis( Diagnostic Plots( state=0|1 ) ) ); scrobj &lt;&lt; Diagnostic Plots( state=0|1 )
 
 **Descripción:** Muestra u oculta los gráficos observados frente a predichos y residuales en el informe Análisis DOE funcional. Opción activada de forma predeterminada.
 
@@ -2262,9 +2252,7 @@ Report( obj )["FDOE Diagnostic Plots"] << Close( 0 );
 
 #### FDOE Profiler
 
-**Sintaxis:** obj << Model Name( Functional DOE Analysis( FDOE Profiler( state=0|1 ) ) ); 
-
-scrobj << FDOE Profiler( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Model Name( Functional DOE Analysis( FDOE Profiler( state=0|1 ) ) ); scrobj &lt;&lt; FDOE Profiler( state=0|1 )
 
 **Descripción:** Muestra u oculta el perfilador FDOE, que le permite explorar cómo cambia la respuesta en función de los valores de las variables suplementarias. Opción activada de forma predeterminada.
 
@@ -2291,7 +2279,7 @@ scrobj << FDOE Profiler( 1 );
 
 #### Generalized Regression FPC Model
 
-**Sintaxis:** obj << Model Name( Functional DOE Analysis( Generalized Regression FPC Model( FPC Number( number ), commands )))
+**Sintaxis:** obj &lt;&lt; Model Name( Functional DOE Analysis( Generalized Regression FPC Model( FPC Number( number ), commands )))
 
 **Descripción:** Especifica la configuración del modelo de regresión generalizada que se crea con la opción Análisis DOE funcional. Utilice este comando para especificar una configuración distinta de la predeterminada.
 
@@ -2328,9 +2316,7 @@ Report( obj )["Generalized Regression for FPC Scores"] << Close( 0 );
 
 #### Generalized Regression for FPC Scores
 
-**Sintaxis:** obj << Model Name( Functional DOE Analysis( Generalized Regression for FPC Scores( state=0|1 ) ) ); 
-
-scrobj << Generalized Regression for FPC Scores( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Model Name( Functional DOE Analysis( Generalized Regression for FPC Scores( state=0|1 ) ) ); scrobj &lt;&lt; Generalized Regression for FPC Scores( state=0|1 )
 
 **Descripción:** Muestra u oculta los informes de regresión generalizada para cada puntuación FPC. Opción activada de forma predeterminada.
 
@@ -2356,11 +2342,7 @@ scrobj << Generalized Regression for FPC Scores( 0 );
 
 #### Save Prediction Formula
 
-**Sintaxis:** obj << Model Name( Functional DOE Analysis( Save Prediction Formula ) ); 
-
-obj << Wavelets( Wavelets DOE Analysis( 1, Save Prediction Formula ) ); 
-
-scrobj << Save Prediction Formula
+**Sintaxis:** obj &lt;&lt; Model Name( Functional DOE Analysis( Save Prediction Formula ) ); obj &lt;&lt; Wavelets( Wavelets DOE Analysis( 1, Save Prediction Formula ) ); scrobj &lt;&lt; Save Prediction Formula
 
 **Descripción:** Guarda la fórmula de predicción en una columna nueva de la tabla de datos actual. Si el formato de los datos originales es Filas como funciones o Columnas como funciones, esta opción crea una tabla de datos nueva que contiene los datos originales en formato apilado y una columna para la fórmula de predicción.
 
@@ -2418,11 +2400,7 @@ scrobj << Save Prediction Formula;
 
 #### Save Residual Formula
 
-**Sintaxis:** obj << Model Name( Functional DOE Analysis( Save Residual Formula ) ); 
-
-obj << Wavelets( Wavelets DOE Analysis( 1, Save Residual Formula ) ); 
-
-scrobj << Save Residual Formula
+**Sintaxis:** obj &lt;&lt; Model Name( Functional DOE Analysis( Save Residual Formula ) ); obj &lt;&lt; Wavelets( Wavelets DOE Analysis( 1, Save Residual Formula ) ); scrobj &lt;&lt; Save Residual Formula
 
 **Descripción:** Guarda la fórmula del residuo en una columna nueva de la tabla de datos actual. Si el formato de los datos originales es Filas como funciones o Columnas como funciones, esta opción crea una tabla de datos nueva que contiene los datos originales en formato apilado y una columna para la fórmula residual.
 
@@ -2484,9 +2462,7 @@ scrobj << Save Residual Formula;
 
 #### Customize Number of FPCs
 
-**Sintaxis:** obj << Model Name( Functional PCA( 1, Customize Number of FPCs( number ) ) ); 
-
-scrobj << Customize Number of FPCs( number )
+**Sintaxis:** obj &lt;&lt; Model Name( Functional PCA( 1, Customize Number of FPCs( number ) ) ); scrobj &lt;&lt; Customize Number of FPCs( number )
 
 **Descripción:** Especifica el número de puntuaciones FPC que mostrar en el PCA funcional. Al especificar el número de puntuaciones FPC, también se actualiza el informe Resúmenes de la función.
 
@@ -2515,9 +2491,7 @@ scrobj << Customize Number of FPCs( 2 );
 
 #### Diagnostic Plots
 
-**Sintaxis:** obj << Model Name( Functional PCA( 1, Diagnostic Plots( state=0|1 ) ); 
-
-scrobj << Diagnostic Plots( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Model Name( Functional PCA( 1, Diagnostic Plots( state=0|1 ) ); scrobj &lt;&lt; Diagnostic Plots( state=0|1 )
 
 **Descripción:** Muestra u oculta los gráficos de diagnóstico FPCA en el informe PCA funcional. Opción activada de forma predeterminada.
 
@@ -2547,9 +2521,7 @@ Report( obj )["FPCA Diagnostic Plots"] << Close( 0 );
 
 #### FPC Profiler
 
-**Sintaxis:** obj << Model Name( Functional PCA( 1, FPC Profiler( state=0|1 ) ) ); 
-
-scrobj << FPC Profiler( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Model Name( Functional PCA( 1, FPC Profiler( state=0|1 ) ) ); scrobj &lt;&lt; FPC Profiler( state=0|1 )
 
 **Descripción:** Muestra u oculta un perfilador de las puntuaciones FPC. Opción activada de forma predeterminada.
 
@@ -2578,9 +2550,7 @@ scrobj << FPC Profiler( 1 );
 
 #### Score Plot
 
-**Sintaxis:** obj << Model Name( Functional PCA( 1, Score Plot( state=0|1 ) ) ); 
-
-scrobj << Score Plot( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Model Name( Functional PCA( 1, Score Plot( state=0|1 ) ) ); scrobj &lt;&lt; Score Plot( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico de las puntuaciones FPC. Opción activada de forma predeterminada.
 
@@ -2613,9 +2583,7 @@ scrobj << Score Plot( 1 );
 
 #### AICc
 
-**Sintaxis:** obj << Model Name( AICc ); 
-
-scrobj << AICc
+**Sintaxis:** obj &lt;&lt; Model Name( AICc ); scrobj &lt;&lt; AICc
 
 **Descripción:** Especifica el AICc como criterio de selección del modelo para los modelos B-Spline, P-Spline y Base de Fourier.
 
@@ -2636,9 +2604,7 @@ obj = dt << Functional Data Explorer(
 
 #### BIC
 
-**Sintaxis:** obj << Model Name( BIC ); 
-
-scrobj << BIC
+**Sintaxis:** obj &lt;&lt; Model Name( BIC ); scrobj &lt;&lt; BIC
 
 **Descripción:** Especifica el BIC como criterio de selección del modelo para los modelos B-Spline, P-Spline y Base de Fourier.
 
@@ -2659,9 +2625,7 @@ obj = dt << Functional Data Explorer(
 
 #### Basis Function Coefficients
 
-**Sintaxis:** obj << Model Name( Basis Function Coefficients( state=0|1 ) ); 
-
-scrobj << Basis Function Coefficients( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Model Name( Basis Function Coefficients( state=0|1 ) ); scrobj &lt;&lt; Basis Function Coefficients( state=0|1 )
 
 **Descripción:** Muestra u oculta el informe Coeficientes de la función base para el ajuste del modelo correspondiente. Opción activada de forma predeterminada.
 
@@ -2686,9 +2650,7 @@ Report( obj )["Basis Function Coefficients"] << Close( 0 );
 
 #### Diagnostic Plots
 
-**Sintaxis:** obj << Model Name( Diagnostic Plots( state=0|1 ) ); 
-
-scrobj << Diagnostic Plots( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Model Name( Diagnostic Plots( state=0|1 ) ); scrobj &lt;&lt; Diagnostic Plots( state=0|1 )
 
 **Descripción:** Muestra u oculta el informe Gráficos de diagnóstico. Esta opción no está disponible para los modelos PCA de ondículas o funcional de la dirección. Opción activada de forma predeterminada.
 
@@ -2713,9 +2675,7 @@ Report( obj )["B-Spline Diagnostic Plots"] << Close( 0 );
 
 #### Function Summaries
 
-**Sintaxis:** obj << Model Name( Function Summaries( state=0|1 ) ); 
-
-scrobj << Function Summaries( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Model Name( Function Summaries( state=0|1 ) ); scrobj &lt;&lt; Function Summaries( state=0|1 )
 
 **Descripción:** Muestra u oculta el informe Resúmenes de funciones. Opción activada de forma predeterminada.
 
@@ -2740,9 +2700,7 @@ Report( obj )["Function Summaries"] << Close( 0 );
 
 #### Functional DOE Analysis
 
-**Sintaxis:** obj << Model Name( Functional DOE Analysis( ... ) ); 
-
-scrobj << Functional DOE Analysis( ... )
+**Sintaxis:** obj &lt;&lt; Model Name( Functional DOE Analysis( ... ) ); scrobj &lt;&lt; Functional DOE Analysis( ... )
 
 **Descripción:** Inicia un informe de regresión generalizada dentro de la plataforma FDE. Se ajusta un modelo de regresión generalizada a cada una de las funciones de puntuación FPC utilizando las variables suplementarias como efectos del modelo.
 
@@ -2764,9 +2722,7 @@ obj = dt << Functional Data Explorer(
 
 #### Functional PCA
 
-**Sintaxis:** obj << Model Name( Functional PCA( state= 0|1 ) ); 
-
-scrobj << Functional PCA( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Model Name( Functional PCA( state= 0|1 ) ); scrobj &lt;&lt; Functional PCA( state=0|1 )
 
 **Descripción:** Muestra u oculta el informe PCA funcional. Opción activada de forma predeterminada.
 
@@ -2791,9 +2747,7 @@ scrobj << Functional PCA( 1 );
 
 #### GCV
 
-**Sintaxis:** obj << Model Name( GCV ); 
-
-scrobj << GCV
+**Sintaxis:** obj &lt;&lt; Model Name( GCV ); scrobj &lt;&lt; GCV
 
 **Descripción:** Especifica la validación cruzada generalizada (GCV) como criterio de selección del modelo para los modelos B-Spline, P-Spline y Base de Fourier.
 
@@ -2814,9 +2768,7 @@ obj = dt << Functional Data Explorer(
 
 #### Plot Basis
 
-**Sintaxis:** obj << Model Name( Plot Basis( state=0|1 ) ); 
-
-scrobj << Plot Basis( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Model Name( Plot Basis( state=0|1 ) ); scrobj &lt;&lt; Plot Basis( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico de todas las funciones base en un gráfico. Esta opción no está disponible para los modelos PCA funcional directo o de ondículas.
 
@@ -2837,9 +2789,7 @@ obj = dt << Functional Data Explorer(
 
 #### Random Coefficients
 
-**Sintaxis:** obj << Model Name( Random Coefficients( state=0|1 ) ); 
-
-scrobj << Random Coefficients( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Model Name( Random Coefficients( state=0|1 ) ); scrobj &lt;&lt; Random Coefficients( state=0|1 )
 
 **Descripción:** Muestra u oculta el informe Coeficientes aleatorios por función. El informe contiene una tabla de los coeficientes aleatorios estimados para cada combinación de función base y proceso funcional. Esta opción no está disponible para los modelos PCA de ondículas o funcional de la dirección. Opción activada de forma predeterminada.
 
@@ -2861,7 +2811,7 @@ Report( obj )["Random Coefficients by Function"] << Close( 0 );
 
 #### Remove Fit
 
-**Sintaxis:** obj << (Model["B Splines" | "P Splines" | "Fourier Basis" | "Wavelets" | "Direct Functional PCA"] << Remove Fit)
+**Sintaxis:** obj &lt;&lt; (Model["B Splines" | "P Splines" | "Fourier Basis" | "Wavelets" | "Direct Functional PCA"] &lt;&lt; Remove Fit)
 
 **Descripción:** Quita el ajuste especificado del informe.
 
@@ -2885,9 +2835,7 @@ obj << (Model["Fourier Basis"] << Remove Fit);
 
 #### Save Data
 
-**Sintaxis:** obj << Model Name( Save Data ); 
-
-scrobj << Save Data
+**Sintaxis:** obj &lt;&lt; Model Name( Save Data ); scrobj &lt;&lt; Save Data
 
 **Descripción:** Guarda los datos procesados en una tabla de datos nueva. Los datos procesados se guardan en el formato de datos apilados.
 
@@ -2927,15 +2875,13 @@ scrobj << Save Data;
 
 #### Save Script Options
 
-**Sintaxis:** obj << Save Script Options( "Save Script Saves Steps"|"Save Script Saves State"="Save Script Saves Steps" )
+**Sintaxis:** obj &lt;&lt; Save Script Options( "Save Script Saves Steps"|"Save Script Saves State"="Save Script Saves Steps" )
 
 **Descripción:** Specifies the type of script that is saved for reproducing the peak finding results. "Save Script Saves Steps" de forma predeterminada.
 
 #### Wavelets DOE Analysis
 
-**Sintaxis:** obj << Wavelets( Wavelets DOE Analysis( state=0|1 ) ); 
-
-scrobj << Wavelets DOE Analysis( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Wavelets( Wavelets DOE Analysis( state=0|1 ) ); scrobj &lt;&lt; Wavelets DOE Analysis( state=0|1 )
 
 **Descripción:** Inicia un informe de regresión generalizada dentro de la plataforma FDE. Los modelos de regresión generalizada se ajustan a los coeficientes de ondículas utilizando las variables suplementarias como efectos del modelo.
 
@@ -2961,7 +2907,7 @@ obj = dt << Functional Data Explorer(
 
 #### Customize Peak Summaries
 
-**Sintaxis:** obj << Peak Finding( Customize Peak Summaries(stat1(0|1), ..., statN(0|1)) )
+**Sintaxis:** obj &lt;&lt; Peak Finding( Customize Peak Summaries(stat1(0|1), ..., statN(0|1)) )
 
 **Descripción:** Personaliza los estadísticos de resumen mostrados en el informe Resúmenes de la función.
 
@@ -2982,7 +2928,7 @@ obj = dt << Functional Data Explorer(
 
 #### Save Summaries
 
-**Sintaxis:** obj << Peak Finding( Save Summaries )
+**Sintaxis:** obj &lt;&lt; Peak Finding( Save Summaries )
 
 **Descripción:** Guarda los estadísticos de resumen del modelo para cada función, incluidas las puntuaciones de los componentes principales funcionales.
 
@@ -3007,11 +2953,7 @@ obj = dt << Functional Data Explorer(
 
 #### Control Chart Builder
 
-**Sintaxis:** obj << B Splines( Control Chart Builder )
-
-obj << P Splines( Control Chart Builder )
-
-obj << Fourier Basis( Control Chart Builder )
+**Sintaxis:** obj &lt;&lt; B Splines( Control Chart Builder )obj &lt;&lt; P Splines( Control Chart Builder )obj &lt;&lt; Fourier Basis( Control Chart Builder )
 
 **Descripción:** Analiza los componentes principales funcionales mediante el Constructor de gráficos de control.
 
@@ -3032,11 +2974,7 @@ obj = dt << Functional Data Explorer(
 
 #### Customize Function Summaries
 
-**Sintaxis:** obj << B Splines( Customize Function Summaries(stat1(0|1), ..., statN(0|1)) )
-
-obj << P Splines( Customize Function Summaries(stat1(0|1), ..., statN(0|1)) )
-
-obj << Fourier Basis( Customize Function Summaries(stat1(0|1), ..., statN(0|1)) )
+**Sintaxis:** obj &lt;&lt; B Splines( Customize Function Summaries(stat1(0|1), ..., statN(0|1)) )obj &lt;&lt; P Splines( Customize Function Summaries(stat1(0|1), ..., statN(0|1)) )obj &lt;&lt; Fourier Basis( Customize Function Summaries(stat1(0|1), ..., statN(0|1)) )
 
 **Descripción:** Personaliza los estadísticos de resumen mostrados en el informe Resúmenes de la función.
 
@@ -3067,11 +3005,7 @@ obj = dt << Functional Data Explorer(
 
 #### Save Summaries
 
-**Sintaxis:** obj << B Splines( Save Summaries )
-
-obj << P Splines( Save Summaries )
-
-obj << Fourier Basis( Save Summaries )
+**Sintaxis:** obj &lt;&lt; B Splines( Save Summaries )obj &lt;&lt; P Splines( Save Summaries )obj &lt;&lt; Fourier Basis( Save Summaries )
 
 **Descripción:** Guarda los estadísticos de resumen del modelo para cada función, incluidas las puntuaciones de los componentes principales funcionales.
 
@@ -3096,9 +3030,7 @@ obj = dt << Functional Data Explorer(
 
 #### Diagnostic Plots
 
-**Sintaxis:** obj << Wavelets( Wavelets DOE Analysis( 1, Diagnostic Plots( state=0|1 ) ) ); 
-
-scrobj << Diagnostic Plots( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Wavelets( Wavelets DOE Analysis( 1, Diagnostic Plots( state=0|1 ) ) ); scrobj &lt;&lt; Diagnostic Plots( state=0|1 )
 
 **Descripción:** Muestra u oculta los gráficos observados frente a predichos y residuales en el informe Análisis DOE de ondículas. Opción activada de forma predeterminada.
 
@@ -3124,9 +3056,7 @@ Report( obj )["FDOE Diagnostic Plots"] << Close( 0 );
 
 #### FDOE Profiler
 
-**Sintaxis:** obj << Wavelets( Wavelets DOE Analysis( 1, FDOE Profiler( state=0|1 ) ) ); 
-
-scrobj << FDOE Profiler( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Wavelets( Wavelets DOE Analysis( 1, FDOE Profiler( state=0|1 ) ) ); scrobj &lt;&lt; FDOE Profiler( state=0|1 )
 
 **Descripción:** Muestra u oculta el perfilador FDOE, que le permite explorar cómo cambia la respuesta en función de los valores de las variables suplementarias. Opción activada de forma predeterminada.
 
@@ -3151,9 +3081,7 @@ scrobj << FDOE Profiler( 1 );
 
 #### Generalized Regression for Wavelets Coefficients
 
-**Sintaxis:** obj << Wavelets( Wavelets DOE Analysis( 1, Generalized Regression for Wavelets Coefficients( state=0|1 ) ) ); 
-
-scrobj << Generalized Regression for Wavelets Coefficients( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Wavelets( Wavelets DOE Analysis( 1, Generalized Regression for Wavelets Coefficients( state=0|1 ) ) ); scrobj &lt;&lt; Generalized Regression for Wavelets Coefficients( state=0|1 )
 
 **Descripción:** Muestra u oculta los informes de regresión generalizada para cada coeficiente de ondícula. Opción activada de forma predeterminada.
 
@@ -3182,11 +3110,7 @@ Report( obj )["Generalized Regression for Wavelets Coefficients"] << Close( 0 );
 
 #### Save Prediction Formula
 
-**Sintaxis:** obj << Model Name( Functional DOE Analysis( Save Prediction Formula ) ); 
-
-obj << Wavelets( Wavelets DOE Analysis( 1, Save Prediction Formula ) ); 
-
-scrobj << Save Prediction Formula
+**Sintaxis:** obj &lt;&lt; Model Name( Functional DOE Analysis( Save Prediction Formula ) ); obj &lt;&lt; Wavelets( Wavelets DOE Analysis( 1, Save Prediction Formula ) ); scrobj &lt;&lt; Save Prediction Formula
 
 **Descripción:** Guarda la fórmula de predicción en una columna nueva de la tabla de datos actual. Si el formato de los datos originales es Filas como funciones o Columnas como funciones, esta opción crea una tabla de datos nueva que contiene los datos originales en formato apilado y una columna para la fórmula de predicción.
 
@@ -3244,11 +3168,7 @@ scrobj << Save Prediction Formula;
 
 #### Save Residual Formula
 
-**Sintaxis:** obj << Model Name( Functional DOE Analysis( Save Residual Formula ) ); 
-
-obj << Wavelets( Wavelets DOE Analysis( 1, Save Residual Formula ) ); 
-
-scrobj << Save Residual Formula
+**Sintaxis:** obj &lt;&lt; Model Name( Functional DOE Analysis( Save Residual Formula ) ); obj &lt;&lt; Wavelets( Wavelets DOE Analysis( 1, Save Residual Formula ) ); scrobj &lt;&lt; Save Residual Formula
 
 **Descripción:** Guarda la fórmula del residuo en una columna nueva de la tabla de datos actual. Si el formato de los datos originales es Filas como funciones o Columnas como funciones, esta opción crea una tabla de datos nueva que contiene los datos originales en formato apilado y una columna para la fórmula residual.
 

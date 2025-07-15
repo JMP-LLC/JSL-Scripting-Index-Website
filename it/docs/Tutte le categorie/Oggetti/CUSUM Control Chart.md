@@ -73,7 +73,7 @@ obj = dt << CUSUM Control Chart(
 
 ### CUSUM Control Chart
 
-**Sintassi:** CUSUM Control Chart( Y( column ), <X( column )>, <By( column )>, <Data Units( 0|1 )>, <Show Excluded Region( 0|1 )>  )
+**Sintassi:** CUSUM Control Chart( Y( column ), &lt;X( column )&gt;, &lt;By( column )&gt;, &lt;Data Units( 0|1 )&gt;, &lt;Show Excluded Region( 0|1 )&gt; )
 
 **Descrizione:** Crea un grafico che traccia le somme cumulative delle deviazioni delle medie dei sottogruppi da un target. Questo grafico è anche chiamato grafico CUSUM tabulare.
 
@@ -99,7 +99,7 @@ obj = dt << CUSUM Control Chart(
 
 ### ARL Profiler
 
-**Sintassi:** obj << ARL Profiler( state=0|1 )
+**Sintassi:** obj &lt;&lt; ARL Profiler( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un profiler interattivo per la lunghezza media delle serie alla variazione dei parametri.
 
@@ -124,7 +124,7 @@ obj << ARL Profiler( 1 );
 
 ### Action
 
-**Sintassi:** obj << Action
+**Sintassi:** obj &lt;&lt; Action
 
 **Descrizione:** Trapdoor generica all&apos;interno di una piattaforma per inserire espressioni da valutare. Imposta temporaneamente i contesti del riquadro di visualizzazione e della tabella di dati per la piattaforma.
 
@@ -178,7 +178,7 @@ obj << Test Beyond Limits( 1 );
 
 ### Apply Preset
 
-**Sintassi:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintassi:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descrizione:** Applica all’oggetto una preimpostazione precedentemente creata, aggiornando le opzioni e le personalizzazioni in base alle impostazioni salvate.
 
@@ -225,7 +225,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Automatic Recalc
 
-**Sintassi:** obj << Automatic Recalc( state=0|1 )
+**Sintassi:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Descrizione:** Ripete l&apos;analisi automaticamente per l&apos;esclusione e le modifiche ai dati. Se l&apos;opzione Ricalcolo automatico è attivata, si consiglia di usare i comandi Attendi(0) per garantire che le modifiche di esclusione e di dati abbiano effetto prima del ricalcolo.
 
@@ -249,7 +249,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**Sintassi:** obj << Broadcast(message)
+**Sintassi:** obj &lt;&lt; Broadcast(message)
 
 **Descrizione:** Diffonde un messaggio a una piattaforma. Se i risultati di restituzione dei singoli oggetti sono tabelle, esse sono concatenate se possibile e il formato finale è identico al risultato dell&apos;opzione Salva tabella combinata in un riquadro della tabella o il risultato dell&apos;opzione Concatena utilizzando una colonna di origine. Oltre a quelli, i risultati sono memorizzati in un elenco e restituiti.
 
@@ -269,7 +269,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Control Panel
 
-**Sintassi:** obj << Control Panel( state=0|1 )
+**Sintassi:** obj &lt;&lt; Control Panel( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un report che contiene i valori correnti dei parametri e consente di modificarli. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -295,7 +295,7 @@ obj << Control Panel( 0 );
 
 ### Copy ByGroup Script
 
-**Sintassi:** obj << Copy ByGroup Script
+**Sintassi:** obj &lt;&lt; Copy ByGroup Script
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo inserisce negli Appunti.
 
@@ -324,7 +324,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Sintassi:** obj << Copy Script
+**Sintassi:** obj &lt;&lt; Copy Script
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo inserisce negli Appunti.
 
@@ -347,7 +347,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Sintassi:** obj << Data Table Window
+**Sintassi:** obj &lt;&lt; Data Table Window
 
 **Descrizione:** Sposta in primo piano la finestra della tabella di dati per questa analisi.
 
@@ -397,7 +397,7 @@ obj = dt << CUSUM Control Chart(
 
 ### Get By Levels
 
-**Sintassi:** obj << Get By Levels
+**Sintassi:** obj &lt;&lt; Get By Levels
 
 **Descrizione:** Restituisce un array associativo che mappa le colonne del gruppo di By ai rispettivi valori.
 
@@ -414,7 +414,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Sintassi:** obj << Get ByGroup Script
+**Sintassi:** obj &lt;&lt; Get ByGroup Script
 
 **Descrizione:** Crea uno script (JSL) per generare questa analisi e la restituisce come espressione.
 
@@ -444,7 +444,7 @@ Show( t );
 
 ### Get Container
 
-**Sintassi:** obj << Get Container
+**Sintassi:** obj &lt;&lt; Get Container
 
 **Descrizione:** Restituisce un riferimento al riquadro contenitore che racchiude il contenuto dell&apos;oggetto.
 
@@ -499,7 +499,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Sintassi:** obj << Get Data Table
+**Sintassi:** obj &lt;&lt; Get Data Table
 
 **Descrizione:** Restituisce un riferimento alla tabella di dati.
 
@@ -523,7 +523,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**Sintassi:** obj << Get Group Platform
+**Sintassi:** obj &lt;&lt; Get Group Platform
 
 **Descrizione:** Restituisce l&apos;oggetto Raggruppa piattaforma se la piattaforma fa parte di un gruppo. In caso contrario, restituisce Vuoto().
 
@@ -540,7 +540,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Limits
 
-**Sintassi:** obj << Get Limits
+**Sintassi:** obj &lt;&lt; Get Limits
 
 **Descrizione:** Importa i limiti di controllo da una tabella di dati selezionata e sostituisce i limiti calcolati sul grafico.
 
@@ -571,7 +571,7 @@ obj << Get Limits( limitsTable );
 
 ### Get Script
 
-**Sintassi:** obj << Get Script
+**Sintassi:** obj &lt;&lt; Get Script
 
 **Descrizione:** Crea uno script (JSL) per generare questa analisi e la restituisce come espressione.
 
@@ -595,7 +595,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Sintassi:** obj << Get Script With Data Table
+**Sintassi:** obj &lt;&lt; Get Script With Data Table
 
 **Descrizione:** Crea uno script (JSL) per generare questa analisi facendo specifico riferimento a questa tabella di dati e la restituisce come espressione.
 
@@ -619,7 +619,7 @@ Show( t );
 
 ### Get Timing
 
-**Sintassi:** obj << Get Timing
+**Sintassi:** obj &lt;&lt; Get Timing
 
 **Descrizione:** Determina il tempo di avvio della piattaforma.
 
@@ -643,7 +643,7 @@ Show( t );
 
 ### Get Web Support
 
-**Sintassi:** obj << Get Web Support
+**Sintassi:** obj &lt;&lt; Get Web Support
 
 **Descrizione:** Restituisce un numero indicante il livello di supporto HTML interattivo per l&apos;oggetto visualizzato. 1 significa che alcuni o tutti gli elementi sono supportati. 0 significa nessun supporto.
 
@@ -659,7 +659,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Sintassi:** obj << Get Where Expr
+**Sintassi:** obj &lt;&lt; Get Where Expr
 
 **Descrizione:** Restituisce l&apos;espressione Where per il sottoinsieme di dati, se la piattaforma è stata avviata con By() o Where(). Altrimenti, restituisce Vuoto()
 
@@ -677,7 +677,7 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ### H
 
-**Sintassi:** obj << H( number=5 )
+**Sintassi:** obj &lt;&lt; H( number=5 )
 
 **Descrizione:** Specifica il valore del parametro che definisce i limiti. Se non è stata specificata l&apos;opzione Unità di dati, questo è il parametro h. Se è stata specificata l&apos;opzione Unità di dati, questo è il parametro H. Si noti che H è uguale a h volte Sigma. "5", per impostazione predefinita.
 
@@ -702,7 +702,7 @@ obj << H( 4.5 );
 
 ### Head Start
 
-**Sintassi:** obj << Head Start( number )
+**Sintassi:** obj &lt;&lt; Head Start( number )
 
 **Descrizione:** Specifica il valore delle somme cumulative prima del primo campione. L&apos;avvio delle somme cumulative da un valore diverso da zero aumenta la sensibilità del grafico CUSUM vicino all&apos;inizio dei campioni. Questo parametro è noto anche come valore di risposta iniziale veloce (FIR). Di default, questo parametro è impostato a 0.
 
@@ -746,7 +746,7 @@ dt << Bivariate(
 
 ### K
 
-**Sintassi:** obj << K( number=0.5 )
+**Sintassi:** obj &lt;&lt; K( number=0.5 )
 
 **Descrizione:** Specifica il valore del parametro che definisce la variazione minima della media che è importante rilevare. Se non è stata specificata l&apos;opzione Unità di dati, questo è il parametro k. Se è stata specificata l&apos;opzione Unità di dati, questo è il parametro K. Si noti che K è uguale a k volte Sigma. "0.5", per impostazione predefinita.
 
@@ -771,7 +771,7 @@ obj << K( 0.1 );
 
 ### Lower Side
 
-**Sintassi:** obj << Lower Side( state=0|1 )
+**Sintassi:** obj &lt;&lt; Lower Side( state=0|1 )
 
 **Descrizione:** Mostra o nasconde i valori negativi per la somma cumulativa sul grafico. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -834,7 +834,7 @@ preset = obj << New Preset();
 
 ### Parameters Report
 
-**Sintassi:** obj << Parameters Report( state=0|1 )
+**Sintassi:** obj &lt;&lt; Parameters Report( state=0|1 )
 
 **Descrizione:** Mostra o nasconde il report dei parametri.
 
@@ -859,7 +859,7 @@ obj << Parameters Report( 1 );
 
 ### Redo Analysis
 
-**Sintassi:** obj << Redo Analysis
+**Sintassi:** obj &lt;&lt; Redo Analysis
 
 **Descrizione:** Ripete questa stessa analisi in una nuova finestra. L&apos;analisi sarà differente se i dati sono stati modificati.
 
@@ -882,7 +882,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**Sintassi:** obj << Redo ByGroup Analysis
+**Sintassi:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Descrizione:** Ripete questa stessa analisi in una nuova finestra. L&apos;analisi sarà differente se i dati sono stati modificati.
 
@@ -911,7 +911,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**Sintassi:** obj << Relaunch Analysis
+**Sintassi:** obj &lt;&lt; Relaunch Analysis
 
 **Descrizione:** Apre la finestra di avvio della piattaforma e richiama le impostazioni utilizzate per creare il report.
 
@@ -934,7 +934,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**Sintassi:** obj << Relaunch ByGroup
+**Sintassi:** obj &lt;&lt; Relaunch ByGroup
 
 **Descrizione:** Apre la finestra di avvio della piattaforma e richiama le impostazioni utilizzate per creare il report.
 
@@ -980,9 +980,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Sintassi:** obj << Report;
-
-Report( obj )
+**Sintassi:** obj &lt;&lt; Report;Report( obj )
 
 **Descrizione:** Restituisce un riferimento all&apos;oggetto del report.
 
@@ -1007,7 +1005,7 @@ Show( t );
 
 ### Report View
 
-**Sintassi:** obj << Report View( "Completo"|"Riepilogo" )
+**Sintassi:** obj &lt;&lt; Report View( "Completo"|"Riepilogo" )
 
 **Descrizione:** La visualizzazione Report determina il livello di dettaglio visibile in un report della piattaforma. Full mostra tutti i dettagli mentre Summary mostra solo contenuti selezionati, in base alla piattaforma. Per un comportamento personalizzato, i riquadri di visualizzazione supportano un messaggio <<Set Summary Behavior.
 
@@ -1030,7 +1028,7 @@ obj << Report View( "Summary" );
 
 ### Reset to Defaults
 
-**Sintassi:** obj << Reset to Defaults
+**Sintassi:** obj &lt;&lt; Reset to Defaults
 
 **Descrizione:** Ripristina tutti i parametri ai valori predefiniti.
 
@@ -1057,7 +1055,7 @@ obj << Reset to Defaults();
 
 ### Save ByGroup Script to Data Table
 
-**Sintassi:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintassi:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e salvarla come proprietà della tabella nella tabella di dati. È possibile specificare un nome per lo script. L&apos;opzione Append Suffix aggiunge un suffisso numerico al nome dello script, che differenzia lo script da uno script esistente con lo stesso nome. L&apos;opzione Prompt richiede all&apos;utente di specificare un nome di script. L&apos;opzione Replace sostituisce uno script esistente con lo stesso nome.
 
@@ -1086,7 +1084,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Sintassi:** obj << Save ByGroup Script to Journal
+**Sintassi:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e aggiunge un pulsante con lo script al journal.
 
@@ -1115,7 +1113,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Sintassi:** obj << Save ByGroup Script to Script Window
+**Sintassi:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo aggiunge alla finestra di testo dello script corrente.
 
@@ -1144,7 +1142,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Limits
 
-**Sintassi:** obj << Save Limits( "nella colonna "|"nella nuova tabella" )
+**Sintassi:** obj &lt;&lt; Save Limits( "nella colonna "|"nella nuova tabella" )
 
 **Descrizione:** Salva i parametri della carta in una proprietà della colonna o in una nuova tabella di dati.
 
@@ -1180,7 +1178,7 @@ obj << Save Limits( "in New Table" );
 
 ### Save Script for All Objects
 
-**Sintassi:** obj << Save Script for All Objects
+**Sintassi:** obj &lt;&lt; Save Script for All Objects
 
 **Descrizione:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -1203,7 +1201,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Sintassi:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintassi:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descrizione:** Salva uno script per tutti gli oggetti del report nella tabella di dati corrente. Questa opzione è utile quando sono presenti più report nella finestra. Lo script prende il nome dalla prima piattaforma, a meno che non si specifichi il nome dello script tra apici.
 
@@ -1259,7 +1257,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Sintassi:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintassi:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo salva come una proprietà di tabella nella tabella di dati.
 
@@ -1282,7 +1280,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Sintassi:** obj << Save Script to Journal
+**Sintassi:** obj &lt;&lt; Save Script to Journal
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e aggiunge un pulsante con lo script al journal.
 
@@ -1305,7 +1303,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Sintassi:** obj << Save Script to Report
+**Sintassi:** obj &lt;&lt; Save Script to Report
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo mostra nel report. Utile per avere una copia stampata di quanto è stato fatto.
 
@@ -1328,7 +1326,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Sintassi:** obj << Save Script to Script Window
+**Sintassi:** obj &lt;&lt; Save Script to Script Window
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo aggiunge alla finestra di testo dello script corrente.
 
@@ -1351,7 +1349,7 @@ obj << Save Script to Script Window;
 
 ### Save Sigma
 
-**Sintassi:** obj << Save Sigma
+**Sintassi:** obj &lt;&lt; Save Sigma
 
 **Descrizione:** Salva sigma utilizzato nella carta di controllo come proprietà della colonna nella tabella di dati.
 
@@ -1376,7 +1374,7 @@ obj << Save Sigma;
 
 ### Save Summaries
 
-**Sintassi:** obj << Save Summaries
+**Sintassi:** obj &lt;&lt; Save Summaries
 
 **Descrizione:** Crea una nuova tabella di dati che contiene le statistiche per ogni sottogruppo nel grafico CUSUM.
 
@@ -1466,7 +1464,7 @@ dt << Distribution(
 
 ### Show ARL
 
-**Sintassi:** obj << Show ARL( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show ARL( state=0|1 )
 
 **Descrizione:** Mostra/Nasconde un report con la lunghezza media delle serie calcolata dal grafico CUSUM associato.
 
@@ -1491,7 +1489,7 @@ obj << Show ARL( 1 );
 
 ### Show Center Line
 
-**Sintassi:** obj << Show Center Line( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Center Line( state=0|1 )
 
 **Descrizione:** Mostra o nasconde la linea centrale sul grafico. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1535,7 +1533,7 @@ obj = dt << CUSUM Control Chart( Y( :Gap ), Subgroup( :Sample ), Show Excluded R
 
 ### Show Limits
 
-**Sintassi:** obj << Show Limits( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Limits( state=0|1 )
 
 **Descrizione:** Mostra o nasconde i limiti. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1560,7 +1558,7 @@ obj << Show Limits( 0 );
 
 ### Show Shift Lines
 
-**Sintassi:** obj << Show Shift Lines( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Shift Lines( state=0|1 )
 
 **Descrizione:** Mostra o nasconde linee verticali che indicano shift nel grafico. Le linee di shift sono tracciate all&apos;inizio di uno shift. Disponibile solo quando è rilevato uno shift nei dati. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1586,7 +1584,7 @@ obj << Show Shift Lines( 0 );
 
 ### Sigma
 
-**Sintassi:** obj << Sigma( number )
+**Sintassi:** obj &lt;&lt; Sigma( number )
 
 **Descrizione:** Specifica il valore noto della deviazione standard. Di default, questo parametro è impostato al range mobile medio della colonna Y. Se è presente una variabile X, il parametro Sigma è impostato al range mobile medio dei dati di riepilogo.
 
@@ -1611,7 +1609,7 @@ obj << Sigma( 2 );
 
 ### Sync to Data Table Changes
 
-**Sintassi:** obj << Sync to Data Table Changes
+**Sintassi:** obj &lt;&lt; Sync to Data Table Changes
 
 **Descrizione:** Sincronizza con l&apos;esclusione e le modifiche ai dati effettuate.
 
@@ -1628,7 +1626,7 @@ dist << Sync To Data Table Changes;
 
 ### Target
 
-**Sintassi:** obj << Target( number )
+**Sintassi:** obj &lt;&lt; Target( number )
 
 **Descrizione:** Specifica il valore noto della media. Questo è il valore della linea centrale nel grafico. Di default, questo parametro è impostato al valore target nella proprietà della colonna Limiti di specifica per la colonna Y. Se la colonna Y non ha un valore target nella proprietà della colonna Limiti di specifica, questo parametro è impostato alla media generale della colonna Y.
 
@@ -1653,7 +1651,7 @@ obj << Target( 9.5 );
 
 ### Test Beyond Limits
 
-**Sintassi:** obj << Test Beyond Limits( state=0|1 )
+**Sintassi:** obj &lt;&lt; Test Beyond Limits( state=0|1 )
 
 **Descrizione:** Mostra/Nasconde un cerchio rosso attorno a qualsiasi punto che si trova sopra il limite superiore o sotto il limite inferiore nel grafico CUSUM.
 
@@ -1678,7 +1676,7 @@ obj << Test Beyond Limits( 1 );
 
 ### Title
 
-**Sintassi:** obj << Title( "new title" )
+**Sintassi:** obj &lt;&lt; Title( "new title" )
 
 **Descrizione:** Imposta il titolo della piattaforma.
 
@@ -1701,7 +1699,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Sintassi:** obj << Top Report
+**Sintassi:** obj &lt;&lt; Top Report
 
 **Descrizione:** Restituisce un riferimento al nodo principale nel report.
 
@@ -1726,7 +1724,7 @@ Show( t );
 
 ### Transform Column
 
-**Sintassi:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Sintassi:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Descrizione:** Crea una colonna di trasformazione nel contesto locale di un oggetto, di solito una piattaforma. La colonna di trasformazione è attiva solo per la durata della piattaforma.
 
@@ -1747,7 +1745,7 @@ dt << Distribution(
 
 ### Tune Chart
 
-**Sintassi:** obj << Tune Chart( <0|1> | Min( value, Max( value ) ) )
+**Sintassi:** obj &lt;&lt; Tune Chart( &lt;0|1&gt; | Min( value, Max( value ) ) )
 
 **Descrizione:** Mostra o nasconde un controllo che consente di impostare il valore del parametro k che specifica un range accettabile per la variabile Y. In uno script è anche possibile specificare direttamente il range accettabile.
 
@@ -1772,7 +1770,7 @@ obj << Tune Chart( Min( 8.08, Max( 8.12 ) ) );
 
 ### Upper Side
 
-**Sintassi:** obj << Upper Side( state=0|1 )
+**Sintassi:** obj &lt;&lt; Upper Side( state=0|1 )
 
 **Descrizione:** Mostra o nasconde i valori positivi per la somma cumulativa sul grafico. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1797,7 +1795,7 @@ obj << Upper Side( 0 );
 
 ### View Web XML
 
-**Sintassi:** obj << View Web XML
+**Sintassi:** obj &lt;&lt; View Web XML
 
 **Descrizione:** Restituisce il codice XML utilizzato per creare il report HTML interattivo.
 
@@ -1812,9 +1810,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**Sintassi:** obj = CUSUM Control Chart(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = CUSUM Control Chart(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Impostare il tipo di finestra da creare per il report. Per impostazione predefinita verrà creata una finestra di report Visible. Una finestra Invisible non comparirà sullo schermo, ma è individuabile da funzioni come Window(). Una finestra Private risponde alla maggior parte dei messaggi della finestra, ma non è individuabile e deve essere indirizzata attraverso l&apos;oggetto report
 

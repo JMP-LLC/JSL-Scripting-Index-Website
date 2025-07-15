@@ -6,7 +6,7 @@
 
 ### Action
 
-**구문:** obj << Action
+**구문:** obj &lt;&lt; Action
 
 **설명:** 실행할 표현식을 삽입하기 위한 플랫폼 내의 다목적 트랩도어. 임시로 표시 상자 및 데이터 테이블 유형을 플랫폼에 설정합니다.
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**구문:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**구문:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **설명:** 이전에 생성된 사전 설정을 개체에 적용하여 옵션과 사용자 정의를 저장된 설정과 일치하도록 업데이트합니다.
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Automatic Recalc
 
-**구문:** obj << Automatic Recalc( state=0|1 )
+**구문:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **설명:** 제외 항목 및 데이터 변경이 있을 때 분석을 자동으로 다시 실행합니다. 자동 재계산 옵션이 설정된 경우 재계산하기 전에 제외 항목 및 데이터 변경이 적용되게 하려면 Wait(0) 명령을 사용하는 것이 좋습니다.
 
@@ -92,7 +92,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**구문:** obj << Broadcast(message)
+**구문:** obj &lt;&lt; Broadcast(message)
 
 **설명:** 플랫폼에 메시지를 브로드캐스트합니다. 개별 개체의 반환 결과가 테이블인 경우 가능하면 테이블이 연결되고 최종 형식은 테이블 상자의 &apos;결합 테이블 저장&apos; 옵션 결과 또는 소스 열을 사용한 &apos;연결&apos; 옵션 결과와 동일합니다. 그 외의 경우에는 결과가 목록에 저장되어 반환됩니다.
 
@@ -109,7 +109,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Copy ByGroup Script
 
-**구문:** obj << Copy ByGroup Script
+**구문:** obj &lt;&lt; Copy ByGroup Script
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 클립보드에 넣습니다.
 
@@ -135,7 +135,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**구문:** obj << Copy Script
+**구문:** obj &lt;&lt; Copy Script
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 클립보드에 넣습니다.
 
@@ -155,7 +155,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**구문:** obj << Data Table Window
+**구문:** obj &lt;&lt; Data Table Window
 
 **설명:** 이 분석에 대한 데이터 테이블 창을 앞으로 가져옵니다.
 
@@ -175,7 +175,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**구문:** obj << Get By Levels
+**구문:** obj &lt;&lt; Get By Levels
 
 **설명:** 기준 그룹 열을 값에 매핑하는 연관 배열을 반환합니다.
 
@@ -192,7 +192,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**구문:** obj << Get ByGroup Script
+**구문:** obj &lt;&lt; Get ByGroup Script
 
 **설명:** 이 분석을 수행하기 위한 스크립트(JSL)를 생성하고 표현식으로 반환합니다.
 
@@ -219,7 +219,7 @@ Show( t );
 
 ### Get Container
 
-**구문:** obj << Get Container
+**구문:** obj &lt;&lt; Get Container
 
 **설명:** 개체의 콘텐츠를 담고 있는 컨테이너 상자에 대한 참조를 반환합니다.
 
@@ -271,7 +271,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**구문:** obj << Get Data Table
+**구문:** obj &lt;&lt; Get Data Table
 
 **설명:** 데이터 테이블에 대한 참조를 반환합니다.
 
@@ -292,7 +292,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**구문:** obj << Get Group Platform
+**구문:** obj &lt;&lt; Get Group Platform
 
 **설명:** 이 플랫폼이 그룹의 일부인 경우 그룹 플랫폼 개체를 반환하고, 그렇지 않은 경우 Empty()를 반환합니다.
 
@@ -309,7 +309,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**구문:** obj << Get Script
+**구문:** obj &lt;&lt; Get Script
 
 **설명:** 이 분석을 수행하기 위한 스크립트(JSL)를 생성하고 표현식으로 반환합니다.
 
@@ -330,7 +330,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**구문:** obj << Get Script With Data Table
+**구문:** obj &lt;&lt; Get Script With Data Table
 
 **설명:** 이 데이터 테이블을 참조하는 분석을 수행하기 위한 스크립트(JSL)를 생성하고 표현식으로 반환합니다.
 
@@ -351,7 +351,7 @@ Show( t );
 
 ### Get Timing
 
-**구문:** obj << Get Timing
+**구문:** obj &lt;&lt; Get Timing
 
 **설명:** 플랫폼 시작 시간을 설정합니다.
 
@@ -372,7 +372,7 @@ Show( t );
 
 ### Get Web Support
 
-**구문:** obj << Get Web Support
+**구문:** obj &lt;&lt; Get Web Support
 
 **설명:** 표시 개체에 대한 대화식 HTML 지원 수준을 나타내는 숫자를 반환합니다. 1은 일부 또는 모든 요소가 지원됨을 의미하고 0은 지원되지 않음을 의미합니다.
 
@@ -388,7 +388,7 @@ Show( s );
 
 ### Get Where Expr
 
-**구문:** obj << Get Where Expr
+**구문:** obj &lt;&lt; Get Where Expr
 
 **설명:** By() 또는 Where()를 사용하여 플랫폼이 시작된 경우 데이터 부분집합에 대한 Where 표현식을 반환하고, 그렇지 않은 경우 Empty()를 반환합니다.
 
@@ -425,7 +425,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**구문:** obj << Local Data Filter
+**구문:** obj &lt;&lt; Local Data Filter
 
 **설명:** 데이터를 특정 그룹 또는 범위로 필터링합니다. 이 플랫폼에서만 사용 가능합니다.
 
@@ -481,7 +481,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**구문:** obj << Paste Local Data Filter
+**구문:** obj &lt;&lt; Paste Local Data Filter
 
 **설명:** 클립보드의 로컬 데이터 필터를 현재 보고서에 적용합니다.
 
@@ -500,7 +500,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**구문:** obj << Redo Analysis
+**구문:** obj &lt;&lt; Redo Analysis
 
 **설명:** 동일한 분석을 새 창에서 다시 실행합니다. 데이터가 변경된 경우에는 분석결과가 달라집니다.
 
@@ -520,7 +520,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**구문:** obj << Redo ByGroup Analysis
+**구문:** obj &lt;&lt; Redo ByGroup Analysis
 
 **설명:** 동일한 분석을 새 창에서 다시 실행합니다. 데이터가 변경된 경우에는 분석결과가 달라집니다.
 
@@ -546,7 +546,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**구문:** obj << Relaunch Analysis
+**구문:** obj &lt;&lt; Relaunch Analysis
 
 **설명:** 플랫폼 시작 창을 열고 보고서를 생성하는 데 사용된 설정을 불러옵니다.
 
@@ -566,7 +566,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**구문:** obj << Relaunch ByGroup
+**구문:** obj &lt;&lt; Relaunch ByGroup
 
 **설명:** 플랫폼 시작 창을 열고 보고서를 생성하는 데 사용된 설정을 불러옵니다.
 
@@ -592,7 +592,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Local Data Filter
 
-**구문:** obj << Remove Local Data Filter
+**구문:** obj &lt;&lt; Remove Local Data Filter
 
 **설명:** 로컬 데이터 필터가 생성된 경우 로컬 데이터 필터를 제거하고 데이터 테이블의 모든 데이터를 직접 사용하도록 플랫폼을 복원합니다.
 
@@ -631,9 +631,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**구문:** obj << Report;
-
-Report( obj )
+**구문:** obj &lt;&lt; Report;Report( obj )
 
 **설명:** 보고서 개체에 대한 참조를 반환합니다.
 
@@ -655,7 +653,7 @@ Show( t );
 
 ### Report View
 
-**구문:** obj << Report View( "전체"|"요약" )
+**구문:** obj &lt;&lt; Report View( "전체"|"요약" )
 
 **설명:** 보고서 보기는 플랫폼 보고서에 표시되는 상세 수준을 결정합니다. Full은 모든 상세 정보를 표시하고 Summary는 플랫폼에 따라 선택된 콘텐츠만 표시합니다. 사용자 정의된 동작의 경우 표시 상자는 <<Set Summary Behavior 메시지를 지원합니다.
 
@@ -675,7 +673,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**구문:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**구문:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 데이터 테이블에 테이블 특성으로 저장합니다. 스크립트 이름을 지정할 수 있습니다. Append Suffix 옵션은 스크립트 이름에 숫자 접미사를 추가하여 이름이 같은 기존 스크립트와 구분합니다. Prompt 옵션은 사용자에게 스크립트 이름을 지정하라는 메시지를 표시합니다. Replace 옵션은 이름이 같은 기존 스크립트를 바꿉니다.
 
@@ -701,7 +699,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**구문:** obj << Save ByGroup Script to Journal
+**구문:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 이 스크립트가 포함된 저널에 버튼을 추가합니다.
 
@@ -727,7 +725,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**구문:** obj << Save ByGroup Script to Script Window
+**구문:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 현재 스크립트 텍스트 창에 추가합니다.
 
@@ -753,7 +751,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**구문:** obj << Save Script for All Objects
+**구문:** obj &lt;&lt; Save Script for All Objects
 
 **설명:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -773,7 +771,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**구문:** obj << Save Script for All Objects To Data Table( <name> )
+**구문:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **설명:** 모든 보고서 개체에 대한 스크립트를 현재 데이터 테이블에 저장합니다. 이 옵션은 창에 여러 보고서가 있을 때 유용합니다. 스크립트 이름을 따옴표로 묶어 지정하는 경우 외에는 첫 번째 플랫폼 이름을 따라 스크립트 이름이 지정됩니다.
 
@@ -823,7 +821,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**구문:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**구문:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 데이터 테이블에 테이블 특성으로 저장합니다.
 
@@ -843,7 +841,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**구문:** obj << Save Script to Journal
+**구문:** obj &lt;&lt; Save Script to Journal
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 이 스크립트가 포함된 저널에 버튼을 추가합니다.
 
@@ -863,7 +861,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**구문:** obj << Save Script to Report
+**구문:** obj &lt;&lt; Save Script to Report
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 보고서 자체에 표시합니다. 수행된 작업에 대한 인쇄된 기록을 유지하려는 경우에 유용합니다.
 
@@ -883,7 +881,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**구문:** obj << Save Script to Script Window
+**구문:** obj &lt;&lt; Save Script to Script Window
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 현재 스크립트 텍스트 창에 추가합니다.
 
@@ -964,7 +962,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**구문:** obj << Sync to Data Table Changes
+**구문:** obj &lt;&lt; Sync to Data Table Changes
 
 **설명:** 제외 항목 및 데이터 변경 사항과 동기화합니다.
 
@@ -981,7 +979,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**구문:** obj << Title( "new title" )
+**구문:** obj &lt;&lt; Title( "new title" )
 
 **설명:** 플랫폼의 제목을 설정합니다.
 
@@ -1001,7 +999,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**구문:** obj << Top Report
+**구문:** obj &lt;&lt; Top Report
 
 **설명:** 보고서의 루트 노드에 대한 참조를 반환합니다.
 
@@ -1023,7 +1021,7 @@ Show( t );
 
 ### Transform Column
 
-**구문:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**구문:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **설명:** 개체의 로컬 컨텍스트(대개 플랫폼)에서 변환 열을 생성합니다. 변환 열은 플랫폼의 수명 동안에만 활성화됩니다.
 
@@ -1044,7 +1042,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**구문:** obj << View Web XML
+**구문:** obj &lt;&lt; View Web XML
 
 **설명:** 대화식 HTML 보고서를 생성하는 데 사용된 XML 코드를 반환합니다.
 
@@ -1059,9 +1057,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**구문:** obj = Process Capability(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Process Capability(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 보고서에 대해 생성할 창 유형을 설정합니다. 기본적으로 Visible 보고서 창이 생성됩니다. Invisible 창은 화면에 나타나지 않지만 Window()와 같은 함수로 검색할 수 있습니다. Private 창은 대부분의 창 메시지에 응답하지만 검색할 수 없으며 보고서 개체를 통해 처리해야 합니다.
 
@@ -1082,7 +1078,7 @@ New Window( "Bivariate Equation",
 
 ### Process Capability
 
-**구문:** Process Capability( Process Variables (columns), < Spec Limits() > )
+**구문:** Process Capability( Process Variables (columns), &lt; Spec Limits() &gt; )
 
 **설명:** 각 공정에 대한 공정 능력 분석을 계산하고 여러 공정의 공정 능력을 한 번에 분석하는 데 유용한 그래프를 생성합니다. 규격 한계도 정의할 수 있습니다.
 
@@ -1103,9 +1099,7 @@ obj = dt << Process Capability(
 
 ### By
 
-**구문:** obj = Process Capability(...<By( column(s) )>...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Process Capability(...&lt;By( column(s) )&gt;...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 지정된 열의 각 수준에 대해 별도의 분석을 수행합니다.
 
@@ -1169,9 +1163,7 @@ obj = dt << Process Capability(
 
 ### Process Variables
 
-**구문:** obj = Process Capability(...Process Variables( column(s) )...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Process Capability(...Process Variables( column(s) )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 분석할 측정값이 포함된 공정 데이터 열을 지정합니다.
 
@@ -1192,7 +1184,7 @@ obj = dt << Process Capability(
 
 ### AIAG (Ppk) Labeling
 
-**구문:** obj << "AIAG (Ppk) Labeling"n( state=0|1 )
+**구문:** obj &lt;&lt; "AIAG (Ppk) Labeling"n( state=0|1 )
 
 **설명:** "Cp" 라벨을 "Pp" 라벨로 변경하여 공정 능력 지수의 AIAG 라벨을 설정하거나 해제합니다. 기본적으로 설정되어 있습니다.
 
@@ -1209,7 +1201,7 @@ obj << "AIAG (Ppk) Labeling"n( 0 );
 
 ### Capability Box Plots
 
-**구문:** obj << Capability Box Plots( state=0|1 )
+**구문:** obj &lt;&lt; Capability Box Plots( state=0|1 )
 
 **설명:** 각 공정에 대한 상자 그림을 표시하거나 숨깁니다. 상자 그림을 생성하기 위해 각 공정의 값이 목표값으로 중심화되고 규격 한계로 척도화됩니다. 기본적으로 설정되어 있습니다.
 
@@ -1231,7 +1223,7 @@ obj << Capability Box Plots( 1 );
 
 ### Capability Index Plot
 
-**구문:** obj << Capability Index Plot( state=0|1, <plot options> )
+**구문:** obj &lt;&lt; Capability Index Plot( state=0|1, &lt;plot options&gt; )
 
 **설명:** 각 공정의 전체 Ppk를 나타내는 그래프를 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -1255,7 +1247,7 @@ obj << Capability Index Plot( 1 );
 
 ### Color Out of Spec Values
 
-**구문:** obj << Color Out of Spec Values( state=0|1 )
+**구문:** obj &lt;&lt; Color Out of Spec Values( state=0|1 )
 
 **설명:** 데이터 테이블에서 규격 이탈 값의 셀에 색상을 적용합니다. 값이 LSL(규격 하한) 미만인 셀은 빨간색으로 표시되고 USL(규격 상한)을 초과하는 셀은 파란색으로 표시됩니다.
 
@@ -1291,7 +1283,7 @@ obj = dt << Process Capability(
 
 ### Goal Plot
 
-**구문:** obj << Goal Plot( state=0|1, <plot options> )
+**구문:** obj &lt;&lt; Goal Plot( state=0|1, &lt;plot options&gt; )
 
 **설명:** 각 공정에 대한 점이 있는 그래프를 표시하거나 숨깁니다. 규격으로 표준화된 평균이 가로 축에 표시되고 규격으로 표준화된 표준편차가 세로 축에 표시됩니다. 목표 호 위의 점은 지정된 Ppk(Cpk) 임계보다 낮은 공정을 나타냅니다. 기본적으로 설정되어 있습니다.
 
@@ -1313,7 +1305,7 @@ obj << Goal Plot( 1 );
 
 ### Individual Detail Reports
 
-**구문:** obj << Individual Detail Reports( state=0|1 )
+**구문:** obj &lt;&lt; Individual Detail Reports( state=0|1 )
 
 **설명:** 각 공정에 대해 별도의 개별 상세 정보 공정 능력 보고서를 표시하거나 숨깁니다.
 
@@ -1333,7 +1325,7 @@ obj << Individual Detail Reports( 1 );
 
 ### Individual Detail Reports Cutoff
 
-**구문:** obj << Individual Detail Reports Cutoff( number=1 )
+**구문:** obj &lt;&lt; Individual Detail Reports Cutoff( number=1 )
 
 **설명:** 공정 변수 개수가 경계 값보다 작거나 같은 경우 개별 상세 정보 보고서를 표시하고 목표 그림 및 공정 능력 상자 그림을 숨깁니다. 기본값은 "1"입니다.
 
@@ -1353,7 +1345,7 @@ obj << Individual Detail Reports Cutoff( 7 );
 
 ### Make Goal Plot Summary Table
 
-**구문:** obj << Make Goal Plot Summary Table
+**구문:** obj &lt;&lt; Make Goal Plot Summary Table
 
 **설명:** 목표 그림에 표시되는 군내 점과 전체 점의 좌표가 모두 포함된 새 데이터 테이블을 생성합니다.
 
@@ -1373,7 +1365,7 @@ obj << Make Goal Plot Summary Table;
 
 ### Order By
 
-**구문:** obj << Order By( "초기 순서"|"초기 순서 역순"|"군내 표준편차 Cpk 오름차순"|"군내 표준편차 Cpk 내림차순"|"전체 표준편차 Ppk 오름차순"|"전체 표준편차 Ppk 내림차순" )
+**구문:** obj &lt;&lt; Order By( "초기 순서"|"초기 순서 역순"|"군내 표준편차 Cpk 오름차순"|"군내 표준편차 Cpk 내림차순"|"전체 표준편차 Ppk 오름차순"|"전체 표준편차 Ppk 내림차순" )
 
 **설명:** 모든 상자 그림, 요약 보고서 및 개별 상세 정보 보고서를 지정된 순서로 재정렬합니다.
 
@@ -1395,7 +1387,7 @@ obj << Order By( "Within Sigma Cpk Ascending" );
 
 ### Overall Sigma Normalized Box Plots
 
-**구문:** obj << Overall Sigma Normalized Box Plots( state=0|1 )
+**구문:** obj &lt;&lt; Overall Sigma Normalized Box Plots( state=0|1 )
 
 **설명:** 각 공정에 대한 상자 그림을 표시하거나 숨깁니다. 상자 그림의 값은 전체 평균으로 중심화되고 표준편차의 전체 추정값으로 척도화됩니다.
 
@@ -1416,7 +1408,7 @@ obj << Overall Sigma Normalized Box Plots( 1 );
 
 ### Overall Sigma Summary Report
 
-**구문:** obj << Overall Sigma Summary Report( state=0|1 )
+**구문:** obj &lt;&lt; Overall Sigma Summary Report( state=0|1 )
 
 **설명:** 공정 능력 지수 요약 보고서를 표시하거나 숨깁니다. 공정 능력 지수는 표준편차의 전체 추정값을 사용하여 계산됩니다.
 
@@ -1437,7 +1429,7 @@ obj << Overall Sigma Summary Report( 1 );
 
 ### Process Performance Plot
 
-**구문:** obj << Process Performance Plot( state=0|1, <plot options> )
+**구문:** obj &lt;&lt; Process Performance Plot( state=0|1, &lt;plot options&gt; )
 
 **설명:** 전체 공정 능력 Ppk 대 안정성을 보여 주는 4개의 사분면 그림을 표시하거나 숨깁니다.
 
@@ -1463,7 +1455,7 @@ obj << Process Performance Plot( 1 );
 
 ### Save Distributions as Column Properties
 
-**구문:** obj << Save Distributions as Column Properties
+**구문:** obj &lt;&lt; Save Distributions as Column Properties
 
 **설명:** 공정 능력을 계산하는 데 사용되는 분포를 &apos;공정 능력 분포&apos; 열 특성으로 저장합니다. 열 특성은 분석의 각 공정 변수에 대해 저장됩니다.
 
@@ -1481,7 +1473,7 @@ obj << Save Distributions as Column Properties;
 
 ### Save In Spec Indicator Formulas
 
-**구문:** obj << Save In Spec Indicator Formulas
+**구문:** obj &lt;&lt; Save In Spec Indicator Formulas
 
 **설명:** 데이터 테이블에 새 계산식 열을 생성합니다. 새 열에는 행이 규격 한계 내에 있는지 여부를 나타내는 값이 포함됩니다.
 
@@ -1501,7 +1493,7 @@ obj << Save In Spec Indicator Formulas;
 
 ### Save Spec Limits as Column Properties
 
-**구문:** obj << Save Spec Limits as Column Properties
+**구문:** obj &lt;&lt; Save Spec Limits as Column Properties
 
 **설명:** 규격 한계를 분석의 각 공정 변수에 대한 열 특성에 저장합니다.
 
@@ -1519,7 +1511,7 @@ obj << Save Spec Limits as Column Properties;
 
 ### Save Spec Limits to New Table
 
-**구문:** obj << Save Spec Limits to New Table
+**구문:** obj &lt;&lt; Save Spec Limits to New Table
 
 **설명:** 각 공정 변수에 대한 규격 한계, 공정 중요도 및 분포가 포함된 새 데이터 테이블을 생성합니다. 이 테이블은 세로형이고 각 공정 변수에 대한 행을 포함합니다. 공정 중요도 및 분포 유형은 해당되는 경우에만 저장됩니다.
 
@@ -1539,7 +1531,7 @@ obj << Save Spec Limits to New Table;
 
 ### Select Out of Spec Values
 
-**구문:** obj << Select Out of Spec Values( state=0|1 )
+**구문:** obj &lt;&lt; Select Out of Spec Values( state=0|1 )
 
 **설명:** 데이터 테이블에서 규격 한계를 벗어나는 값이 하나 이상 포함된 모든 행과 열을 선택합니다.
 
@@ -1575,7 +1567,7 @@ obj = dt << Process Capability(
 
 ### Within Sigma Normalized Box Plots
 
-**구문:** obj << Within Sigma Normalized Box Plots( state=0|1 )
+**구문:** obj &lt;&lt; Within Sigma Normalized Box Plots( state=0|1 )
 
 **설명:** 각 공정에 대한 상자 그림이 포함된 그래프를 표시하거나 숨깁니다. 상자 그림의 값은 평균으로 중심화되고 표준편차의 부분군 내 추정값으로 나눕니다.
 
@@ -1596,7 +1588,7 @@ obj << Within Sigma Normalized Box Plots( 1 );
 
 ### Within Sigma Summary Report
 
-**구문:** obj << Within Sigma Summary Report( state=0|1 )
+**구문:** obj &lt;&lt; Within Sigma Summary Report( state=0|1 )
 
 **설명:** 공정 능력 지수 요약 보고서를 표시하거나 숨깁니다. 공정 능력 지수는 표준편차의 부분군 내 추정값을 사용하여 계산됩니다. 정규 분포가 지정된 변수에 대해서만 결과가 표시됩니다.
 
@@ -1617,7 +1609,7 @@ obj << Within Sigma Summary Report( 1 );
 
 ### Within or Between-and-Within Sigma Normalized Box Plots
 
-**구문:** obj << "Within or Between-and-Within Sigma Normalized Box Plots"n( state=0|1 )
+**구문:** obj &lt;&lt; "Within or Between-and-Within Sigma Normalized Box Plots"n( state=0|1 )
 
 **설명:** 각 공정에 대한 상자 그림이 포함된 그래프를 표시하거나 숨깁니다. 상자 그림의 값은 평균으로 중심화되고 표준편차의 그룹 내 추정값 또는 군간-군내 추정값(지정된 경우)으로 나눕니다.
 
@@ -1640,7 +1632,7 @@ obj << "Within or Between-and-Within Sigma Normalized Box Plots"n( 1 );
 
 ### Within or Between-and-Within Sigma Summary Report
 
-**구문:** obj << "Within or Between-and-Within Sigma Summary Report"n( state=0|1 )
+**구문:** obj &lt;&lt; "Within or Between-and-Within Sigma Summary Report"n( state=0|1 )
 
 **설명:** 공정 능력 지수 요약 보고서를 표시하거나 숨깁니다. 공정 능력 지수는 표준편차의 부분군 내 추정값 또는 그룹 간-그룹 내 추정값(지정된 경우)을 사용하여 계산됩니다. 이 옵션은 시작 창에서 하나 이상의 공정에 대해 &apos;군간-군내 공정 능력 계산&apos; 옵션을 선택한 경우에만 사용할 수 있습니다.
 
@@ -1667,7 +1659,7 @@ obj << "Within or Between-and-Within Sigma Summary Report"n( 1 );
 
 #### Parametric Fit Confidence Limits Shading
 
-**구문:** scrobj << Parametric Fit Confidence Limits Shading( state=0|1 )
+**구문:** scrobj &lt;&lt; Parametric Fit Confidence Limits Shading( state=0|1 )
 
 **설명:** 모수 적합 신뢰 한계 음영을 표시하거나 숨깁니다.
 
@@ -1700,7 +1692,7 @@ scrobj << Parametric Fit Confidence Limits Shading( 0 );
 
 #### Parametric Fit Line
 
-**구문:** scrobj << Parametric Fit Line( state=0|1 )
+**구문:** scrobj &lt;&lt; Parametric Fit Line( state=0|1 )
 
 **설명:** 모수 적합선을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -1730,7 +1722,7 @@ scrobj << Parametric Fit Line( 1 );
 
 #### Simultaneous Empirical Confidence Limits
 
-**구문:** scrobj << Simultaneous Empirical Confidence Limits( state=0|1 )
+**구문:** scrobj &lt;&lt; Simultaneous Empirical Confidence Limits( state=0|1 )
 
 **설명:** 동시 경험적 신뢰 한계를 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -1763,7 +1755,7 @@ scrobj << Simultaneous Empirical Confidence Limits( 1 );
 
 #### Simultaneous Empirical Confidence Limits Shading
 
-**구문:** scrobj << Simultaneous Empirical Confidence Limits Shading( state=0|1 )
+**구문:** scrobj &lt;&lt; Simultaneous Empirical Confidence Limits Shading( state=0|1 )
 
 **설명:** 동시 경험적 신뢰 한계 음영을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -1800,7 +1792,7 @@ scrobj << Simultaneous Empirical Confidence Limits Shading( 1 );
 
 #### Comparison Details
 
-**구문:** scrobj << Comparison Details( state=0|1 )
+**구문:** scrobj &lt;&lt; Comparison Details( state=0|1 )
 
 **설명:** 각 분포의 AICc, BIC 및 -2*로그 가능도 값이 포함된 보고서를 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -1834,7 +1826,7 @@ scrobj << Comparison Details( 1 );
 
 #### Comparison Histogram
 
-**구문:** scrobj << Comparison Histogram( state=0|1 )
+**구문:** scrobj &lt;&lt; Comparison Histogram( state=0|1 )
 
 **설명:** 분포 비교 히스토그램을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -1868,7 +1860,7 @@ scrobj << Comparison Histogram( 1 );
 
 #### Fit Beta
 
-**구문:** scrobj << Compare Distributions( 1, <<Fit Beta )
+**구문:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit Beta )
 
 **설명:** 비교 상세 정보 보고서에 베타 분포 적합 통계량을 표시하고 히스토그램에 밀도 곡선을 표시합니다.
 
@@ -1892,7 +1884,7 @@ scrobj << Compare Distributions( 1, <<Fit Beta );
 
 #### Fit Exponential
 
-**구문:** scrobj << Compare Distributions( 1, <<Fit Exponential )
+**구문:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit Exponential )
 
 **설명:** 비교 상세 정보 보고서에 지수 분포 적합 통계량을 표시하고 히스토그램에 밀도 곡선을 표시합니다.
 
@@ -1916,7 +1908,7 @@ scrobj << Compare Distributions( 1, <<Fit Exponential );
 
 #### Fit Gamma
 
-**구문:** scrobj << Compare Distributions( 1, <<Fit Gamma )
+**구문:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit Gamma )
 
 **설명:** 비교 상세 정보 보고서에 감마 분포 적합 통계량을 표시하고 히스토그램에 밀도 곡선을 표시합니다.
 
@@ -1938,7 +1930,7 @@ scrobj << Compare Distributions( 1, <<Fit Gamma );
 
 #### Fit Johnson
 
-**구문:** scrobj << Compare Distributions( 1, <<Fit Johnson )
+**구문:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit Johnson )
 
 **설명:** 비교 상세 정보 보고서에 Johnson 분포 적합 통계량을 표시하고 히스토그램에 밀도 곡선을 표시합니다.
 
@@ -1960,7 +1952,7 @@ scrobj << Compare Distributions( 1, <<Fit Johnson );
 
 #### Fit Largest Extreme Value
 
-**구문:** scrobj << Compare Distributions( 1, <<Fit Largest Extreme Value )
+**구문:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit Largest Extreme Value )
 
 **설명:** 비교 상세 정보 보고서에 최대 극단값 분포 적합 통계량을 표시하고 히스토그램에 밀도 곡선을 표시합니다.
 
@@ -1982,7 +1974,7 @@ scrobj << Compare Distributions( 1, <<Fit Largest Extreme Value );
 
 #### Fit Lognormal
 
-**구문:** scrobj << Compare Distributions( 1, <<Fit Lognormal )
+**구문:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit Lognormal )
 
 **설명:** 비교 상세 정보 보고서에 로그 정규 분포 적합 통계량을 표시하고 히스토그램에 밀도 곡선을 표시합니다.
 
@@ -2004,7 +1996,7 @@ scrobj << Compare Distributions( 1, <<Fit Lognormal );
 
 #### Fit Nonparametric
 
-**구문:** scrobj << Compare Distributions( 1, <<Fit Nonparametric )
+**구문:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit Nonparametric )
 
 **설명:** 히스토그램에 비모수 분포 커널 대역폭 슬라이더와 밀도 곡선을 표시합니다.
 
@@ -2026,7 +2018,7 @@ scrobj << Compare Distributions( 1, <<Fit Nonparametric );
 
 #### Fit Normal
 
-**구문:** scrobj << Compare Distributions( 1, <<Fit Normal )
+**구문:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit Normal )
 
 **설명:** 비교 상세 정보 보고서에 정규 분포 적합 통계량을 표시하고 히스토그램에 밀도 곡선을 표시합니다.
 
@@ -2045,7 +2037,7 @@ obj = dt << Process Capability(
 
 #### Fit SHASH
 
-**구문:** scrobj << Compare Distributions( 1, <<Fit SHASH )
+**구문:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit SHASH )
 
 **설명:** 비교 상세 정보 보고서에 SHASH 분포 적합 통계량을 표시하고 히스토그램에 밀도 곡선을 표시합니다.
 
@@ -2069,7 +2061,7 @@ scrobj << Compare Distributions( 1, <<Fit SHASH );
 
 #### Fit Smallest Extreme Value
 
-**구문:** scrobj << Compare Distributions( 1, <<Fit Smallest Extreme Value )
+**구문:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit Smallest Extreme Value )
 
 **설명:** 비교 상세 정보 보고서에 최소 극단값 분포 적합 통계량을 표시하고 히스토그램에 밀도 곡선을 표시합니다.
 
@@ -2091,7 +2083,7 @@ scrobj << Compare Distributions( 1, <<Fit Smallest Extreme Value );
 
 #### Fit Weibull
 
-**구문:** scrobj << Compare Distributions( 1, <<Fit Weibull )
+**구문:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit Weibull )
 
 **설명:** 비교 상세 정보 보고서에 Weibull 분포 적합 통계량을 표시하고 히스토그램에 밀도 곡선을 표시합니다.
 
@@ -2113,7 +2105,7 @@ scrobj << Compare Distributions( 1, <<Fit Weibull );
 
 #### Mixture of 2 Normals
 
-**구문:** scrobj << Compare Distributions( 1, <<Mixture of 2 Normals )
+**구문:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Mixture of 2 Normals )
 
 **설명:** 비교 상세 정보 보고서에 2 정규 혼합 분포 적합 통계량을 표시하고 히스토그램에 밀도 곡선을 표시합니다.
 
@@ -2137,7 +2129,7 @@ scrobj << Compare Distributions( 1, <<Mixture of 2 Normals );
 
 #### Mixture of 3 Normals
 
-**구문:** scrobj << Compare Distributions( 1, <<Mixture of 3 Normals )
+**구문:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Mixture of 3 Normals )
 
 **설명:** 비교 상세 정보 보고서에 3 정규 혼합 분포 적합 통계량을 표시하고 히스토그램에 밀도 곡선을 표시합니다.
 
@@ -2161,7 +2153,7 @@ scrobj << Compare Distributions( 1, <<Mixture of 3 Normals );
 
 #### Order by Comparison Criterion
 
-**구문:** scrobj << Order by Comparison Criterion( "AICc"|"BIC"|"-2Loglikelihood" )
+**구문:** scrobj &lt;&lt; Order by Comparison Criterion( "AICc"|"BIC"|"-2Loglikelihood" )
 
 **설명:** 비교 상세 정보 보고서를 재정렬합니다. AICc, BIC 또는 -2*로그 가능도에 따라 재정렬할 수 있습니다.
 
@@ -2184,7 +2176,7 @@ scrobj << Order by Comparison Criterion( "-2Loglikelihood" );
 
 #### Probability Plots
 
-**구문:** scrobj << Probability Plots( state=0|1 )
+**구문:** scrobj &lt;&lt; Probability Plots( state=0|1 )
 
 **설명:** 분포 비교 확률도를 표시하거나 숨깁니다.
 
@@ -2211,7 +2203,7 @@ scrobj << Probability Plots( 1 );
 
 #### Show Between-and-Within Sigma Density
 
-**구문:** scrobj << "Show Between-and-Within Sigma Density"n( state=0|1 )
+**구문:** scrobj &lt;&lt; "Show Between-and-Within Sigma Density"n( state=0|1 )
 
 **설명:** 히스토그램에 군간-군내 표준편차를 사용하는 밀도 곡선을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2237,7 +2229,7 @@ scrobj << "Show Between-and-Within Sigma Density"n( 1 );
 
 #### Show Count Axis
 
-**구문:** scrobj << Show Count Axis( state=0|1 )
+**구문:** scrobj &lt;&lt; Show Count Axis( state=0|1 )
 
 **설명:** 히스토그램 프레임 오른쪽에 개수 축을 표시하거나 숨깁니다.
 
@@ -2258,7 +2250,7 @@ scrobj << Show Count Axis( 1 );
 
 #### Show Density Axis
 
-**구문:** scrobj << Show Density Axis( state=0|1 )
+**구문:** scrobj &lt;&lt; Show Density Axis( state=0|1 )
 
 **설명:** 히스토그램 프레임 오른쪽에 밀도 축을 표시하거나 숨깁니다.
 
@@ -2279,7 +2271,7 @@ scrobj << Show Density Axis( 1 );
 
 #### Show Overall Sigma Density
 
-**구문:** scrobj << Show Overall Sigma Density( state=0|1 )
+**구문:** scrobj &lt;&lt; Show Overall Sigma Density( state=0|1 )
 
 **설명:** 히스토그램에 전체 표준편차를 사용하는 밀도 곡선을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2300,7 +2292,7 @@ scrobj << Show Overall Sigma Density( 1 );
 
 #### Show Spec Limits
 
-**구문:** scrobj << Show Spec Limits( state=0|1 )
+**구문:** scrobj &lt;&lt; Show Spec Limits( state=0|1 )
 
 **설명:** 히스토그램에 규격 하한 및 규격 상한을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2321,7 +2313,7 @@ scrobj << Show Spec Limits( 1 );
 
 #### Show Target
 
-**구문:** scrobj << Show Target( state=0|1 )
+**구문:** scrobj &lt;&lt; Show Target( state=0|1 )
 
 **설명:** 히스토그램에 목표값 선을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2342,7 +2334,7 @@ scrobj << Show Target( 1 );
 
 #### Show Within Sigma Density
 
-**구문:** scrobj << Show Within Sigma Density( state=0|1 )
+**구문:** scrobj &lt;&lt; Show Within Sigma Density( state=0|1 )
 
 **설명:** 히스토그램에 군내 표준편차를 사용하는 밀도 곡선을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2367,7 +2359,7 @@ scrobj << Show Within Sigma Density( 1 );
 
 #### Capability
 
-**구문:** scrobj << Capability( state=0|1 )
+**구문:** scrobj &lt;&lt; Capability( state=0|1 )
 
 **설명:** 공정 능력 지수를 표시하거나 숨깁니다. 원래 공정 능력 지수는 전체 표준편차를 기반으로 합니다. 기본적으로 설정되어 있습니다.
 
@@ -2398,7 +2390,7 @@ scrobj << Capability( 1 );
 
 #### Nonconformance
 
-**구문:** scrobj << Nonconformance( state=0|1 )
+**구문:** scrobj &lt;&lt; Nonconformance( state=0|1 )
 
 **설명:** 부적합을 표시하거나 숨깁니다. 원래 부적합 값은 전체 표준편차를 기반으로 합니다. 기본적으로 설정되어 있습니다.
 
@@ -2429,7 +2421,7 @@ scrobj << Nonconformance( 1 );
 
 #### Revert to Original Values
 
-**구문:** scrobj << Revert to Original Values
+**구문:** scrobj &lt;&lt; Revert to Original Values
 
 **설명:** 대화식 공정 능력 그림을 원래 값으로 되돌립니다.
 
@@ -2460,7 +2452,7 @@ scrobj << Revert to Original Values;
 
 #### Save New Spec Limits as a Column Property
 
-**구문:** scrobj << Save New Spec Limits as a Column Property
+**구문:** scrobj &lt;&lt; Save New Spec Limits as a Column Property
 
 **설명:** 새 규격 한계를 원래 데이터 테이블에 열 특성으로 저장합니다.
 
@@ -2495,7 +2487,7 @@ scrobj << Save New Spec Limits as a Column Property;
 
 #### Normal Fit Confidence Limits Shading
 
-**구문:** scrobj << Normal Fit Confidence Limits Shading( state=0|1 )
+**구문:** scrobj &lt;&lt; Normal Fit Confidence Limits Shading( state=0|1 )
 
 **설명:** 정규 확률도에서 정규 적합 신뢰 한계 음영을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2518,7 +2510,7 @@ scrobj << Normal Fit Confidence Limits Shading( 1 );
 
 #### Normal Fit Line
 
-**구문:** scrobj << Normal Fit Line( state=0|1 )
+**구문:** scrobj &lt;&lt; Normal Fit Line( state=0|1 )
 
 **설명:** 정규 확률도에서 정규 적합선을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2539,7 +2531,7 @@ scrobj << Normal Fit Line( 1 );
 
 #### Simultaneous Empirical Confidence Limits
 
-**구문:** scrobj << Simultaneous Empirical Confidence Limits( state=0|1 )
+**구문:** scrobj &lt;&lt; Simultaneous Empirical Confidence Limits( state=0|1 )
 
 **설명:** 공정 능력 보고서의 정규 확률도에 동시 경험적 신뢰 한계를 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2562,7 +2554,7 @@ scrobj << Simultaneous Empirical Confidence Limits( 1 );
 
 #### Simultaneous Empirical Confidence Limits Shading
 
-**구문:** scrobj << Simultaneous Empirical Confidence Limits Shading( state=0|1 )
+**구문:** scrobj &lt;&lt; Simultaneous Empirical Confidence Limits Shading( state=0|1 )
 
 **설명:** 공정 능력 보고서의 정규 확률도에 동시 경험적 신뢰 한계 음영을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2589,7 +2581,7 @@ scrobj << Simultaneous Empirical Confidence Limits Shading( 1 );
 
 #### Between-and-Within Sigma Capability
 
-**구문:** scrobj << "Between-and-Within Sigma Capability"n( state=0|1 )
+**구문:** scrobj &lt;&lt; "Between-and-Within Sigma Capability"n( state=0|1 )
 
 **설명:** 군간-군내 표준편차를 사용하는 공정 능력 지수를 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2612,7 +2604,7 @@ scrobj << "Between-and-Within Sigma Capability"n( 1 );
 
 #### Between-and-Within Sigma Target Index
 
-**구문:** scrobj << "Between-and-Within Sigma Target Index"n( state=0|1 )
+**구문:** scrobj &lt;&lt; "Between-and-Within Sigma Target Index"n( state=0|1 )
 
 **설명:** 군간-군내 표준편차를 기반으로 하는 목표 지수 추정값을 표시하거나 숨깁니다.
 
@@ -2635,7 +2627,7 @@ scrobj << "Between-and-Within Sigma Target Index"n( 0 );
 
 #### Between-and-Within Sigma Z Benchmark
 
-**구문:** scrobj << "Between-and-Within Sigma Z Benchmark"n( state=0|1 )
+**구문:** scrobj &lt;&lt; "Between-and-Within Sigma Z Benchmark"n( state=0|1 )
 
 **설명:** 군간-군내 표준편차를 사용하는 벤치마크 Z 지수를 표시하거나 숨깁니다.
 
@@ -2658,7 +2650,7 @@ scrobj << "Between-and-Within Sigma Z Benchmark"n( 1 );
 
 #### Compare Distributions
 
-**구문:** scrobj << Compare Distributions( state=0|1, < <<distribution options > )
+**구문:** scrobj &lt;&lt; Compare Distributions( state=0|1, &lt; &lt;&lt;distribution options &gt; )
 
 **설명:** 공정의 분포를 비교하는 제어판을 표시하거나 숨깁니다.
 
@@ -2739,7 +2731,7 @@ scrobj << Compare Distributions( 0 );
 
 #### Fix Parameters
 
-**구문:** scrobj << Fix Parameters( vector )
+**구문:** scrobj &lt;&lt; Fix Parameters( vector )
 
 **설명:** 특정 모수를 지정된 값으로 고정하고 나머지 모수를 다시 추정합니다.
 
@@ -2762,7 +2754,7 @@ scrobj << Fix Parameters( [., .] );
 
 #### Histogram
 
-**구문:** scrobj << Histogram( state=0|1 )
+**구문:** scrobj &lt;&lt; Histogram( state=0|1 )
 
 **설명:** 개별 상세 정보 보고서에 공정 데이터 히스토그램을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2783,7 +2775,7 @@ scrobj << Histogram( 1 );
 
 #### Interactive Capability Plot
 
-**구문:** scrobj << Interactive Capability Plot( state=0|1 )
+**구문:** scrobj &lt;&lt; Interactive Capability Plot( state=0|1 )
 
 **설명:** 공정 또는 규격 한계의 변경이 공정 능력에 어떤 영향을 주는지 탐색할 수 있는 대화식 공정 능력 보고서를 표시하거나 숨깁니다.
 
@@ -2806,7 +2798,7 @@ scrobj << Interactive Capability Plot( 1 );
 
 #### Nonconformance
 
-**구문:** scrobj << Nonconformance( state=0|1 )
+**구문:** scrobj &lt;&lt; Nonconformance( state=0|1 )
 
 **설명:** 규격 한계를 벗어나는 관측값의 관측 백분율 및 기대 백분율 보고서를 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2827,7 +2819,7 @@ scrobj << Nonconformance( 1 );
 
 #### Nonparametric Density
 
-**구문:** scrobj << Nonparametric Density( state=0|1 )
+**구문:** scrobj &lt;&lt; Nonparametric Density( state=0|1 )
 
 **설명:** 비모수 분포를 적합시키는 데 사용된 커널 대역폭을 제공하는 비모수 밀도 보고서를 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2848,7 +2840,7 @@ scrobj << Nonparametric Density( 1 );
 
 #### Normal Probability Plot
 
-**구문:** scrobj << Normal Probability Plot( state=0|1 )
+**구문:** scrobj &lt;&lt; Normal Probability Plot( state=0|1 )
 
 **설명:** 정규 확률도를 표시하거나 숨깁니다.
 
@@ -2867,7 +2859,7 @@ scrobj << Normal Probability Plot( 1 );
 
 #### Overall Sigma Capability
 
-**구문:** scrobj << Overall Sigma Capability( state=0|1 )
+**구문:** scrobj &lt;&lt; Overall Sigma Capability( state=0|1 )
 
 **설명:** 전체 표준편차를 기반으로 한 공정 능력 지수를 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2888,7 +2880,7 @@ scrobj << Overall Sigma Capability( 1 );
 
 #### Overall Sigma Z Benchmark
 
-**구문:** scrobj << Overall Sigma Z Benchmark( state=0|1 )
+**구문:** scrobj &lt;&lt; Overall Sigma Z Benchmark( state=0|1 )
 
 **설명:** 전체 표준편차를 기반으로 한 벤치마크 Z 지수를 표시하거나 숨깁니다.
 
@@ -2909,7 +2901,7 @@ scrobj << Overall Sigma Z Benchmark( 1 );
 
 #### Parameter Estimates
 
-**구문:** scrobj << Parameter Estimates( state=0|1 )
+**구문:** scrobj &lt;&lt; Parameter Estimates( state=0|1 )
 
 **설명:** 비정규 모수 분포에 대한 모수 추정값 보고서를 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2930,7 +2922,7 @@ scrobj << Parameter Estimates( 1 );
 
 #### Process Summary
 
-**구문:** scrobj << Process Summary( state=0|1 )
+**구문:** scrobj &lt;&lt; Process Summary( state=0|1 )
 
 **설명:** 공정 요약 통계량을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2951,7 +2943,7 @@ scrobj << Process Summary( 1 );
 
 #### Within Sigma Capability
 
-**구문:** scrobj << Within Sigma Capability( state=0|1 )
+**구문:** scrobj &lt;&lt; Within Sigma Capability( state=0|1 )
 
 **설명:** 군내 표준편차를 기반으로 하는 공정 능력 지수 및 신뢰 구간을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2972,7 +2964,7 @@ scrobj << Within Sigma Capability( 1 );
 
 #### Within Sigma Target Index
 
-**구문:** scrobj << Within Sigma Target Index( state=0|1 )
+**구문:** scrobj &lt;&lt; Within Sigma Target Index( state=0|1 )
 
 **설명:** 군내 표준편차를 기반으로 하는 목표 지수 추정값을 표시하거나 숨깁니다.
 
@@ -2995,7 +2987,7 @@ scrobj << Within Sigma Target Index( 1 );
 
 #### Within Sigma Z Benchmark
 
-**구문:** scrobj << Within Sigma Z Benchmark( state=0|1 )
+**구문:** scrobj &lt;&lt; Within Sigma Z Benchmark( state=0|1 )
 
 **설명:** 군내 표준편차를 기반으로 한 벤치마크 Z 지수를 표시하거나 숨깁니다.
 
@@ -3020,9 +3012,7 @@ scrobj << Within Sigma Z Benchmark( 1 );
 
 #### Capability Lines
 
-**구문:** obj << Goal Plot( 1, Capability Lines( number=1.0 ) ); 
-
-scrobj << Capability Lines( number=1.0 )
+**구문:** obj &lt;&lt; Goal Plot( 1, Capability Lines( number=1.0 ) ); scrobj &lt;&lt; Capability Lines( number=1.0 )
 
 **설명:** 목표 그림의 목표 삼각형 선을 제어하는 Ppk(Cpk) 값을 설정합니다. 이 값은 Ppk(Cpk) 편집 상자에도 나타납니다. 기본값은 "1.0"입니다.
 
@@ -3045,9 +3035,7 @@ scrobj << Capability Lines( 1 );
 
 #### Defect Rate Contour
 
-**구문:** obj << Goal Plot( 1, Defect Rate Contour( number=0.0001 ) ); 
-
-scrobj << Defect Rate Contour( number=0.0001 )
+**구문:** obj &lt;&lt; Goal Plot( 1, Defect Rate Contour( number=0.0001 ) ); scrobj &lt;&lt; Defect Rate Contour( number=0.0001 )
 
 **설명:** 지정된 결함 비율 등고선을 표시하거나 숨깁니다. 기본값은 "0.0001"입니다.
 
@@ -3087,9 +3075,7 @@ scrobj << Defect Rate Contour( 0.01 );
 
 #### Label Overall Sigma Points
 
-**구문:** obj << Goal Plot( 1, Label Overall Sigma Points( state=0|1 ) ); 
-
-scrobj << Label Overall Sigma Points( state=0|1 )
+**구문:** obj &lt;&lt; Goal Plot( 1, Label Overall Sigma Points( state=0|1 ) ); scrobj &lt;&lt; Label Overall Sigma Points( state=0|1 )
 
 **설명:** 목표 그림의 점에 라벨을 표시하거나 숨깁니다. 점은 전체 표준편차 추정값을 사용하여 계산됩니다.
 
@@ -3112,9 +3098,7 @@ scrobj << Label Overall Sigma Points( 1 );
 
 #### Label Within Sigma Points
 
-**구문:** obj << Goal Plot( 1, Label Within Sigma Points( state=0|1 ) ); 
-
-scrobj << Label Within Sigma Points( state=0|1 )
+**구문:** obj &lt;&lt; Goal Plot( 1, Label Within Sigma Points( state=0|1 ) ); scrobj &lt;&lt; Label Within Sigma Points( state=0|1 )
 
 **설명:** 목표 그림의 점에 라벨을 표시하거나 숨깁니다. 점은 군내 표준편차 추정값을 사용하여 계산됩니다.
 
@@ -3143,9 +3127,7 @@ scrobj << Label Within Sigma Points( 0 );
 
 #### Label Within or Between-and-Within Sigma Points
 
-**구문:** obj << Goal Plot( 1, "Label Within or Between-and-Within Sigma Points"n( state=0|1 ) ); 
-
-scrobj << "Label Within or Between-and-Within Sigma Points"n( state=0|1 )
+**구문:** obj &lt;&lt; Goal Plot( 1, "Label Within or Between-and-Within Sigma Points"n( state=0|1 ) ); scrobj &lt;&lt; "Label Within or Between-and-Within Sigma Points"n( state=0|1 )
 
 **설명:** 목표 그림의 점에 라벨을 표시하거나 숨깁니다. 점은 군내 표준편차 추정값 또는 군간-군내 표준편차 추정값(지정된 경우)을 사용하여 계산됩니다.
 
@@ -3176,9 +3158,7 @@ scrobj << "Label Within or Between-and-Within Sigma Points"n( 0 );
 
 #### Shade Levels
 
-**구문:** obj << Goal Plot( 1, Shade Levels( state=0|1 ) ); 
-
-scrobj << Shade Levels( state=0|1 )
+**구문:** obj &lt;&lt; Goal Plot( 1, Shade Levels( state=0|1 ) ); scrobj &lt;&lt; Shade Levels( state=0|1 )
 
 **설명:** 목표 그림에 Ppk(Cpk) 수준 음영을 표시하거나 숨깁니다. p가 편집 상자에 입력된 Ppk(Cpk) 목표를 나타낼 경우 Ppk(Cpk)가 2*p보다 큰 공정은 녹색으로, Ppk(Cpk)가 p보다 작은 공정은 빨간색으로, Ppk(Cpk)가 p보다 크고 2*p보다 작은 공정은 노란색으로 음영 처리됩니다.
 
@@ -3201,9 +3181,7 @@ scrobj << Shade Levels( 0 );
 
 #### Show Overall Sigma Points
 
-**구문:** obj << Goal Plot( 1, Show Overall Sigma Points( state=0|1 ) ); 
-
-scrobj << Show Overall Sigma Points( state=0|1 )
+**구문:** obj &lt;&lt; Goal Plot( 1, Show Overall Sigma Points( state=0|1 ) ); scrobj &lt;&lt; Show Overall Sigma Points( state=0|1 )
 
 **설명:** 목표 그림에 점을 표시하거나 숨깁니다. 점은 전체 표준편차 추정값을 사용하여 계산됩니다. 기본적으로 설정되어 있습니다.
 
@@ -3228,9 +3206,7 @@ scrobj << Show Overall Sigma Points( 1 );
 
 #### Show Within Sigma Points
 
-**구문:** obj << Goal Plot( 1, Show Within Sigma Points( state=0|1 ) ); 
-
-scrobj << Show Within Sigma Points( state=0|1 )
+**구문:** obj &lt;&lt; Goal Plot( 1, Show Within Sigma Points( state=0|1 ) ); scrobj &lt;&lt; Show Within Sigma Points( state=0|1 )
 
 **설명:** 목표 그림에 점을 표시하거나 숨깁니다. 점은 군내 표준편차 추정값을 사용하여 계산됩니다.
 
@@ -3254,9 +3230,7 @@ scrobj << Show Within Sigma Points( 0 );
 
 #### Show Within or Between-and-Within Sigma Points
 
-**구문:** obj << Goal Plot( 1, "Show Within or Between-and-Within Sigma Points"n( state=0|1 ) ); 
-
-scrobj << "Show Within or Between-and-Within Sigma Points"n( state=0|1 )
+**구문:** obj &lt;&lt; Goal Plot( 1, "Show Within or Between-and-Within Sigma Points"n( state=0|1 ) ); scrobj &lt;&lt; "Show Within or Between-and-Within Sigma Points"n( state=0|1 )
 
 **설명:** 목표 그림에 점을 표시하거나 숨깁니다. 점은 군내 표준편차 추정값 또는 군간-군내 표준편차 추정값(지정된 경우)을 사용하여 계산됩니다.
 
@@ -3286,9 +3260,7 @@ scrobj << "Show Within or Between-and-Within Sigma Points"n( 0 );
 
 #### Capability Lines
 
-**구문:** obj << Capability Index Plot( 1, Capability Lines( number=1.0 ) ); 
-
-scrobj << Capability Lines( number=1.0 )
+**구문:** obj &lt;&lt; Capability Index Plot( 1, Capability Lines( number=1.0 ) ); scrobj &lt;&lt; Capability Lines( number=1.0 )
 
 **설명:** 공정 능력 지수 그림에서 Ppk(Cpk) 참조선을 제어하는 Ppk(Cpk) 값을 설정합니다. 이 값은 Ppk(Cpk) 편집 상자에도 나타납니다. 기본값은 "1.0"입니다.
 
@@ -3314,9 +3286,7 @@ scrobj << Capability Lines( 1.0 );
 
 #### Label Overall Sigma Points
 
-**구문:** obj << Capability Index Plot( 1, Label Overall Sigma Points( state=0|1 ) ); 
-
-scrobj << Label Overall Sigma Points( state=0|1 )
+**구문:** obj &lt;&lt; Capability Index Plot( 1, Label Overall Sigma Points( state=0|1 ) ); scrobj &lt;&lt; Label Overall Sigma Points( state=0|1 )
 
 **설명:** 공정 능력 지수 그림의 점에 라벨을 표시하거나 숨깁니다. 점은 전체 표준편차 추정값을 사용하여 계산됩니다.
 
@@ -3342,9 +3312,7 @@ scrobj << Label Overall Sigma Points( 0 );
 
 #### Label Within Sigma Points
 
-**구문:** obj << Capability Index Plot( 1, Label Within Sigma Points( state=0|1 ) ); 
-
-scrobj << Label Within Sigma Points( state=0|1 )
+**구문:** obj &lt;&lt; Capability Index Plot( 1, Label Within Sigma Points( state=0|1 ) ); scrobj &lt;&lt; Label Within Sigma Points( state=0|1 )
 
 **설명:** 공정 능력 지수 그림의 점에 라벨을 표시하거나 숨깁니다. 점은 군내 표준편차 추정값을 사용하여 계산됩니다.
 
@@ -3371,9 +3339,7 @@ scrobj << Label Within Sigma Points( 0 );
 
 #### Label Within or Between-and-Within Sigma Points
 
-**구문:** obj << Capability Index Plot( 1, "Label Within or Between-and-Within Sigma Points"n( state=0|1 ) ); 
-
-scrobj << "Label Within or Between-and-Within Sigma Points"n( state=0|1 )
+**구문:** obj &lt;&lt; Capability Index Plot( 1, "Label Within or Between-and-Within Sigma Points"n( state=0|1 ) ); scrobj &lt;&lt; "Label Within or Between-and-Within Sigma Points"n( state=0|1 )
 
 **설명:** 공정 능력 지수 그림의 점에 라벨을 표시하거나 숨깁니다. 점은 군내 표준편차 추정값 또는 군간-군내 표준편차 추정값(지정된 경우)을 사용하여 계산됩니다.
 
@@ -3405,9 +3371,7 @@ scrobj << "Label Within or Between-and-Within Sigma Points"n( 0 );
 
 #### Shade Levels
 
-**구문:** obj << Capability Index Plot( 1, Shade Levels( state=0|1 ) ); 
-
-scrobj << Shade Levels( state=0|1 )
+**구문:** obj &lt;&lt; Capability Index Plot( 1, Shade Levels( state=0|1 ) ); scrobj &lt;&lt; Shade Levels( state=0|1 )
 
 **설명:** 공정 능력 지수 그림에서 Ppk(Cpk) 수준 음영을 표시하거나 숨깁니다. p가 편집 상자에 입력된 Ppk(Cpk) 값을 나타내는 경우 2*p보다 큰 Ppk(Cpk)를 가진 공정은 녹색으로, P보다 작은 Ppk(Cpk)를 가진 공정은 빨간색으로, p보다 크고 2*p보다 작은 Ppk(Cpk)를 가진 공정은 노란색으로 각각 음영이 표시됩니다.
 
@@ -3433,9 +3397,7 @@ scrobj << Shade Levels( 0 );
 
 #### Show Overall Sigma Points
 
-**구문:** obj << Capability Index Plot( 1, Show Overall Sigma Points( state=0|1 ) ); 
-
-scrobj << Show Overall Sigma Points( state=0|1 )
+**구문:** obj &lt;&lt; Capability Index Plot( 1, Show Overall Sigma Points( state=0|1 ) ); scrobj &lt;&lt; Show Overall Sigma Points( state=0|1 )
 
 **설명:** 공정 능력 지수 그림에 점을 표시하거나 숨깁니다. 점은 전체 표준편차 추정값을 사용하여 계산됩니다. 기본적으로 설정되어 있습니다.
 
@@ -3461,9 +3423,7 @@ scrobj << Show Overall Sigma Points( 1 );
 
 #### Show Within Sigma Points
 
-**구문:** obj << Capability Index Plot( 1, Show Within Sigma Points( state=0|1 ) ); 
-
-scrobj << Show Within Sigma Points( state=0|1 )
+**구문:** obj &lt;&lt; Capability Index Plot( 1, Show Within Sigma Points( state=0|1 ) ); scrobj &lt;&lt; Show Within Sigma Points( state=0|1 )
 
 **설명:** 공정 능력 지수 그림에 점을 표시하거나 숨깁니다. 점은 군내 표준편차 추정값을 사용하여 계산됩니다.
 
@@ -3490,9 +3450,7 @@ scrobj << Show Within Sigma Points( 0 );
 
 #### Show Within or Between-and-Within Sigma Points
 
-**구문:** obj << Capability Index Plot( 1, "Show Within or Between-and-Within Sigma Points"n( state=0|1 ) ); 
-
-scrobj << "Show Within or Between-and-Within Sigma Points"n( state=0|1 )
+**구문:** obj &lt;&lt; Capability Index Plot( 1, "Show Within or Between-and-Within Sigma Points"n( state=0|1 ) ); scrobj &lt;&lt; "Show Within or Between-and-Within Sigma Points"n( state=0|1 )
 
 **설명:** 공정 능력 지수 그림에 점을 표시하거나 숨깁니다. 점은 군내 표준편차 추정값 또는 군간-군내 표준편차 추정값(지정된 경우)을 사용하여 계산됩니다.
 
@@ -3524,9 +3482,7 @@ scrobj << "Show Within or Between-and-Within Sigma Points"n( 0 );
 
 #### Capability Boundary
 
-**구문:** obj << Process Performance Plot( 1, Capability Boundary( number=1.0 ) ); 
-
-scrobj << Capability Boundary( number=1.0 )
+**구문:** obj &lt;&lt; Process Performance Plot( 1, Capability Boundary( number=1.0 ) ); scrobj &lt;&lt; Capability Boundary( number=1.0 )
 
 **설명:** 공정 성능 그림에서 공정의 능력이 충분한지, 충분하지 않은지에 대한 경계를 제어하는 전체 공정 능력 Ppk 값을 설정합니다. 이 값은 전체 Ppk 편집 상자에도 나타납니다. 기본값은 "1.0"입니다.
 
@@ -3556,9 +3512,7 @@ scrobj << Capability Boundary( 1 );
 
 #### Label Points
 
-**구문:** obj << Process Performance Plot( 1, Label Points( state=0|1 ) ); 
-
-scrobj << Label Points( state=0|1 )
+**구문:** obj &lt;&lt; Process Performance Plot( 1, Label Points( state=0|1 ) ); scrobj &lt;&lt; Label Points( state=0|1 )
 
 **설명:** 공정 성능 그림의 점에 공정 이름 라벨을 표시하거나 숨깁니다.
 
@@ -3587,9 +3541,7 @@ scrobj << Label Points( 0 );
 
 #### Show Within Cpk Curve
 
-**구문:** obj << Process Performance Plot( 1, Show Within Cpk Curve( state=0|1 ) ); 
-
-scrobj << Show Within Cpk Curve( state=0|1 )
+**구문:** obj &lt;&lt; Process Performance Plot( 1, Show Within Cpk Curve( state=0|1 ) ); scrobj &lt;&lt; Show Within Cpk Curve( state=0|1 )
 
 **설명:** 공정 성능 그림에서 군내 Cpk 곡선을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -3618,9 +3570,7 @@ scrobj << Show Within Cpk Curve( 1 );
 
 #### Stability Boundary
 
-**구문:** obj << Process Performance Plot( 1, Stability Boundary( number=1.25 ) ); 
-
-scrobj << Stability Boundary( number=1.25 )
+**구문:** obj &lt;&lt; Process Performance Plot( 1, Stability Boundary( number=1.25 ) ); scrobj &lt;&lt; Stability Boundary( number=1.25 )
 
 **설명:** 공정 성능 그림에서 공정이 안정적인지, 안정적이지 않은지에 대한 경계를 제어하는 전체 공정 능력 Ppk 값을 설정합니다. 기본값은 "1.25"입니다.
 

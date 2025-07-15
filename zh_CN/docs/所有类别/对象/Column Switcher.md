@@ -6,7 +6,7 @@
 
 ### Close Outline
 
-**语法:** obj << Close Outline( state=0|1 )
+**语法:** obj &lt;&lt; Close Outline( state=0|1 )
 
 **说明:** 打开或关闭“列切换器”分级显示框
 
@@ -25,7 +25,7 @@ ColumnSwitcherObject << Close Outline( 1 );
 
 ### Get Current
 
-**语法:** obj << Get Current
+**语法:** obj &lt;&lt; Get Current
 
 **说明:** 获取当前变量的名称
 
@@ -45,7 +45,7 @@ ColumnSwitcherObject << Get Current/*country*/ ;
 
 ### Get Layout
 
-**语法:** obj << Get Layout
+**语法:** obj &lt;&lt; Get Layout
 
 **说明:** 获取多个列切换器的布局。Vertical(0) 或 horizontal(1)。
 
@@ -71,7 +71,7 @@ If( cs2 << Get Layout() == 1,
 
 ### Get List
 
-**语法:** obj << Get List
+**语法:** obj &lt;&lt; Get List
 
 **说明:** 获取可用变量列表
 
@@ -90,7 +90,7 @@ ColumnSwitcherObject << Get List/*{"sex","country","marital status"}*/ ;
 
 ### Get Original
 
-**语法:** obj << Get Original
+**语法:** obj &lt;&lt; Get Original
 
 **说明:** 获取原始变量的名称
 
@@ -110,7 +110,7 @@ ColumnSwitcherObject << Get Original/*marital status*/ ;
 
 ### Get Speed
 
-**语法:** obj << Get Speed
+**语法:** obj &lt;&lt; Get Speed
 
 **说明:** fpm = obj<<getSpeed /* in Frames Per Minute */;
 
@@ -129,7 +129,7 @@ FPM = ColumnSwitcherObject << Get Speed;
 
 ### Link Platform
 
-**语法:** obj << Link Platform( platform )
+**语法:** obj &lt;&lt; Link Platform( platform )
 
 **说明:** 将平台链接至该列切换器。
 
@@ -150,7 +150,7 @@ columnSwitcher << Link Platform( gb );
 
 ### Make Column Switch Handler
 
-**语法:** handler = cs << Make Column Switch Handler( function(pre), function(post) )
+**语法:** handler = cs &lt;&lt; Make Column Switch Handler( function(pre), function(post) )
 
 **说明:** 使用回调函数为列切换创建处理程序，该回调函数在切换列之前和之后调用。回调函数接收上一列、下一列和 ColumnSwitcher。切换之前指定的函数应返回非零值以允许切换。返回 0 将阻止切换。切换之后调用的函数不应返回值。
 
@@ -188,7 +188,7 @@ columnSwitcher << Run;
 
 ### Next
 
-**语法:** obj << Next
+**语法:** obj &lt;&lt; Next
 
 **说明:** 将列切换器的选择更改为下一个可用的选择
 
@@ -207,7 +207,7 @@ ColumnSwitcherObject << Next;
 
 ### Pause
 
-**语法:** obj << Pause
+**语法:** obj &lt;&lt; Pause
 
 **说明:** 暂停动画
 
@@ -228,7 +228,7 @@ ColumnSwitcherObject << Pause;
 
 ### Previous
 
-**语法:** obj << Previous
+**语法:** obj &lt;&lt; Previous
 
 **说明:** 将列切换器的选择更改为前一个可用的选择
 
@@ -247,7 +247,7 @@ ColumnSwitcherObject << Previous;
 
 ### Remove Column Switcher
 
-**语法:** obj << Remove Column Switcher
+**语法:** obj &lt;&lt; Remove Column Switcher
 
 **说明:** 删除该列切换器
 
@@ -268,7 +268,7 @@ ColumnSwitcherObject << Remove Column Switcher;
 
 ### Retain Axis Settings
 
-**语法:** obj << Retain Axis Settings( state=0|1 )
+**语法:** obj &lt;&lt; Retain Axis Settings( state=0|1 )
 
 **说明:** 某些图形根据列的名称存储轴定制。默认情况下，切换列时会删除这些定制。若启用该选项，则切换时列会更新以便定制应用于新图形。
 
@@ -296,7 +296,7 @@ Graph Builder(
 
 ### Run
 
-**语法:** obj << Run
+**语法:** obj &lt;&lt; Run
 
 **说明:** 开始动画
 
@@ -315,7 +315,7 @@ ColumnSwitcherObject << Run;
 
 ### Script
 
-**语法:** obj << Script( script )
+**语法:** obj &lt;&lt; Script( script )
 
 **说明:** 设置在列切换时运行的脚本
 
@@ -340,7 +340,7 @@ Wait( 5/*seconds, while it animates*/ );
 
 ### Set Current
 
-**语法:** obj << Set Current( string )
+**语法:** obj &lt;&lt; Set Current( string )
 
 **说明:** 设置当前变量
 
@@ -359,7 +359,7 @@ ColumnSwitcherObject << Set Current( "country" );
 
 ### Set Layout
 
-**语法:** obj << Set Layout( 0 = Vertical | 1 = Horizontal )
+**语法:** obj &lt;&lt; Set Layout( 0 = Vertical | 1 = Horizontal )
 
 **说明:** 将多个列切换器的布局设置为垂直 (0) 或水平 (1)。
 
@@ -382,7 +382,7 @@ cs1 << Set Layout( 1 );
 
 ### Set N Lines
 
-**语法:** obj << Set N Lines( number )
+**语法:** obj &lt;&lt; Set N Lines( number )
 
 **说明:** 设置列名列表框中的行数
 
@@ -401,7 +401,7 @@ ColumnSwitcherObject << Set N Lines( 20 );
 
 ### Set Script
 
-**语法:** obj << Set Script( script )
+**语法:** obj &lt;&lt; Set Script( script )
 
 **说明:** 设置在列切换时运行的脚本
 
@@ -426,7 +426,7 @@ Wait( 5/*seconds, while it animates*/ );
 
 ### Set Size
 
-**语法:** obj << Set Size( number )
+**语法:** obj &lt;&lt; Set Size( number )
 
 **说明:** 设置列名列表框的像素宽度
 
@@ -445,7 +445,7 @@ ColumnSwitcherObject << Set Size( 300 );
 
 ### Set Speed
 
-**语法:** obj << Set Speed( number )
+**语法:** obj &lt;&lt; Set Speed( number )
 
 **说明:** obj<<setSpeed(60) /* in Frames Per Minute */;
 
@@ -464,7 +464,7 @@ ColumnSwitcherObject << Set Speed( 60 );/*FPM*/ColumnSwitcherObject << Run;
 
 ### Title
 
-**语法:** obj << Title( string )
+**语法:** obj &lt;&lt; Title( string )
 
 **说明:** 设置 ColumnSwitcher 分级显示框的标题
 

@@ -2,11 +2,9 @@
 
 
 
-## 関数
-
 ### CAS Connect
 
-**構文:** CAS Connect(<URL(...)>, <Username(...)>, <Password(...)>, <Prompt(Never | Always | IfNeeded)>, <Session("session id")>, <Proxy Server("http://my_proxy:80")>, <Proxy User("proxy_username")>, <Bypass Proxy("http://localhost:80")>, <Certificates(...)>, <Verify Certificates(1 | 0)>, <No Verify Certificates(1 | 0)>, <Timeout(seconds)>, <Authorization Method("Basic" | "Bearer")>)
+**構文:** CAS Connect(&lt;URL(...)&gt;, &lt;Username(...)&gt;, &lt;Password(...)&gt;, &lt;Prompt(Never | Always | IfNeeded)&gt;, &lt;Session("session id")&gt;, &lt;Proxy Server("http://my_proxy:80")&gt;, &lt;Proxy User("proxy_username")&gt;, &lt;Bypass Proxy("http://localhost:80")&gt;, &lt;Certificates(...)&gt;, &lt;Verify Certificates(1 | 0)&gt;, &lt;No Verify Certificates(1 | 0)&gt;, &lt;Timeout(seconds)&gt;, &lt;Authorization Method("Basic" | "Bearer")&gt;)
 
 **説明:** 新しいCASサーバーに接続する。CAS Connectには、URL、User name、Passwordの引数、およびオプションで PromptとSessionの引数を指定できる。Prompt引数には、IfNeeded、Always、Neverのいずれかを指定する。Prompt引数がIfNeededまたはAlwaysの場合、URL、User name、Passwordは省略できる。Promptのデフォルト値はNever。Sessionは、既存のCASセッションへの再接続に使用できる。セッションは、接続に使用されているURL、ユーザ名、パスワードで使用可能なものでなければならない。オプションのCertificates引数は、CASへのHTTPS接続の際に信頼された証明書を提供するのに使用できる。オプションのVerify Certificates引数またはNo Verify Certificates引数は、自己署名証明書を一時的に受け入れるのに使用できる。オプションのProxy Server引数は、プロキシ環境でプロキシホストを指定するのに使用できる。オプションのProxy User引数は、プロキシ環境のためのユーザ名とパスワード情報を指定するのに使用できる。オプションのBypass Proxy引数は、特定のホストについてプロキシをバイパスする場合に使用する。オプションのTimeout引数は、CAS接続処理のタイムアウト値を設定する。オプションのAuthorization Method引数は、JMPからCASへの接続方法を指定する。これは、CASのデプロイメントによって異なる。
 
@@ -28,7 +26,7 @@ cas = CAS Connect(
 
 ### CAS Delete Table
 
-**構文:** CAS Delete Table(tablename, <remove>)
+**構文:** CAS Delete Table(tablename, &lt;remove&gt;)
 
 **説明:** このアクションはファイルシステムのテーブルを削除する。メモリ上のテーブルには影響しない。Quietを指定すると、存在しないテーブルについてのエラーは表示されない。remACsを指定すると、テーブルのアクセス制御が削除される。Removeを指定すると、テーブルがメモリから削除される。
 
@@ -64,7 +62,7 @@ CAS Disconnect();
 
 ### CAS Export Data
 
-**構文:** y = CAS Export Data(jmp_data_table, cas_libref, cas_dataset, <named_arguments>)
+**構文:** y = CAS Export Data(jmp_data_table, cas_libref, cas_dataset, &lt;named_arguments&gt;)
 
 **説明:** CASサーバーにテーブルを書き出す。jmp_data_tableは書き出すJMPデータテーブル、cas_librefおよびcas_datasetはCASサーバー上にある書き出し先の場所。オプションとして、名前付き引数のSave(1|0)がある。Saveオプションが指定されない限り、CASのファイルシステムまでは書き込まれない。多くのCASアクションはインメモリで行われる。
 
@@ -81,7 +79,7 @@ CAS Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "CASUSER", "Big Class" );
 
 ### CAS Get Data Sets
 
-**構文:** y = CAS Get Data Sets(<"caslib">)
+**構文:** y = CAS Get Data Sets(&lt;"caslib"&gt;)
 
 **説明:** 利用可能なCASデータセットのリストを取得する。これらのデータセットはCASファイルシステム上にある。オプションの引数により、指定したライブラリのCASデータセットのみのリストも取得できる。引数を指定しない場合、データセットのリストは「ライブラリ名.データセット名」の完全修飾の形式で戻される。引数が指定されると、データセット名のみのリストとなる。
 
@@ -121,7 +119,7 @@ Show( libraries );
 
 ### CAS Import Data
 
-**構文:** dt = CAS Import Data(libref, dataset, <named_arguments>)
+**構文:** dt = CAS Import Data(libref, dataset, &lt;named_arguments&gt;)
 
 **説明:** CASサーバーからテーブルを読み込む。オプションの名前付きの引数として、Invisible(0|1)、Private(0|1)、UseLabelsForVarNames(0|1)がある。
 
@@ -156,7 +154,7 @@ Show( connected );
 
 ### CAS Remove Table
 
-**構文:** CAS Remove Table(tablename, <delete>)
+**構文:** CAS Remove Table(tablename, &lt;delete&gt;)
 
 **説明:** インメモリ上のテーブルを削除する。Saveアクションによりファイルに保存されているテーブルは削除されない。ファイルに保存されているテーブルは、Delete Tableにより削除される。
 
@@ -174,7 +172,7 @@ CAS Remove Table( "Casuser", "Big Class" );
 
 ### CAS Table To Data Table
 
-**構文:** dt = CAS Table To Data Table(jsonstring, <Invisible(1|0) | Private(1|0) | Use Labels for Var Names(1|0)>)
+**構文:** dt = CAS Table To Data Table(jsonstring, &lt;Invisible(1|0) | Private(1|0) | Use Labels for Var Names(1|0)&gt;)
 
 **説明:** SAS CASテーブルのJSONテキストをJMPデータテーブルに変換する。
 
@@ -485,7 +483,7 @@ cas << Submit( action );
 
 ### New CAS Server
 
-**構文:** cas = New CAS Server(<...>)
+**構文:** cas = New CAS Server(&lt;...&gt;)
 
 **説明:** 新しいCASサーバーを作成する。
 

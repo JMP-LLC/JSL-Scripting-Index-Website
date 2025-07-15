@@ -6,7 +6,7 @@
 
 ### Get Description
 
-**Syntaxe :** string = jmplivepost << Get Description()
+**Syntaxe :** string = jmplivepost &lt;&lt; Get Description()
 
 **Description :** Récupère la description du Rapport JMP Live, du Dossier JMP Live ou du Post JMP Live en tant que chaîne.
 
@@ -48,7 +48,7 @@ Write( "\!nDescription: ", report << Get Description );
 
 ### Get ID
 
-**Syntaxe :** string = jmplivepost << Get ID()
+**Syntaxe :** string = jmplivepost &lt;&lt; Get ID()
 
 **Description :** Récupère l&apos;ID du Rapport JMP Live, du Dossier JMP Live ou du Post JMP Live en tant que chaîne.
 
@@ -91,7 +91,7 @@ Write( "\!n\!nID: ", report << Get ID );
 
 ### Get Path
 
-**Syntaxe :** string = jmplivepost << Get Path()
+**Syntaxe :** string = jmplivepost &lt;&lt; Get Path()
 
 **Description :** Récupère le chemin d&apos;accès à ce rapport, dossier ou post JMP Live en tant que chaîne.
 
@@ -134,7 +134,7 @@ Write( "\!n\!nPath: ", report << Get Path );
 
 ### Get Title
 
-**Syntaxe :** string = jmplivepost << Get Title()
+**Syntaxe :** string = jmplivepost &lt;&lt; Get Title()
 
 **Description :** Récupère le titre du Rapport JMP Live, du Dossier JMP Live ou du Post JMP Live en tant que chaîne.
 
@@ -177,7 +177,7 @@ Write( "\!nTitle: ", report << Get Title );
 
 ### Get Type
 
-**Syntaxe :** string = jmplivepost << Get Type()
+**Syntaxe :** string = jmplivepost &lt;&lt; Get Type()
 
 **Description :** Obtenir le type spécifique de post (dossier, données ou rapport)
 
@@ -221,7 +221,7 @@ Write( "\!nType: ", report << Get Type );
 
 ### Get URL
 
-**Syntaxe :** string = jmplivepost << Get URL()
+**Syntaxe :** string = jmplivepost &lt;&lt; Get URL()
 
 **Description :** Récupère l&apos;URL du Rapport JMP Live, du Dossier JMP Live ou du Post JMP Live en tant que chaîne.
 
@@ -264,7 +264,7 @@ Write( "\!nURL: ", report << Get URL );
 
 ### Set Description
 
-**Syntaxe :** success = jmplivepost << Set Description("string value")
+**Syntaxe :** success = jmplivepost &lt;&lt; Set Description("string value")
 
 **Description :** Avec une chaîne donnée, définit la description du Rapport JMP Live, du Dossier JMP Live ou du Post JMP Live. Renvoie vrai ou faux en cas de réussite ou d&apos;échec.
 
@@ -314,7 +314,7 @@ Write( "\!nDecription: ", report << Get Description );
 
 ### Set Title
 
-**Syntaxe :** success = jmplivepost << Set Title("New Title")
+**Syntaxe :** success = jmplivepost &lt;&lt; Set Title("New Title")
 
 **Description :** Définit le titre du Rapport JMP Live, du Dossier JMP Live ou du Post JMP Live. Renvoie vrai ou faux en cas de réussite ou d&apos;échec.
 

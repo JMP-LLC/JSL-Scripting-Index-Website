@@ -6,7 +6,7 @@
 
 ### Action
 
-**구문:** obj << Action
+**구문:** obj &lt;&lt; Action
 
 **설명:** 실행할 표현식을 삽입하기 위한 플랫폼 내의 다목적 트랩도어. 임시로 표시 상자 및 데이터 테이블 유형을 플랫폼에 설정합니다.
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**구문:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**구문:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **설명:** 이전에 생성된 사전 설정을 개체에 적용하여 옵션과 사용자 정의를 저장된 설정과 일치하도록 업데이트합니다.
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Copy Script
 
-**구문:** obj << Copy Script
+**구문:** obj &lt;&lt; Copy Script
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 클립보드에 넣습니다.
 
@@ -94,7 +94,7 @@ obj << Copy Script;
 
 ### Get By Levels
 
-**구문:** obj << Get By Levels
+**구문:** obj &lt;&lt; Get By Levels
 
 **설명:** 기준 그룹 열을 값에 매핑하는 연관 배열을 반환합니다.
 
@@ -111,7 +111,7 @@ biv << Get By Levels;
 
 ### Get Container
 
-**구문:** obj << Get Container
+**구문:** obj &lt;&lt; Get Container
 
 **설명:** 개체의 콘텐츠를 담고 있는 컨테이너 상자에 대한 참조를 반환합니다.
 
@@ -166,7 +166,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**구문:** obj << Get Data Table
+**구문:** obj &lt;&lt; Get Data Table
 
 **설명:** 데이터 테이블에 대한 참조를 반환합니다.
 
@@ -190,7 +190,7 @@ Show( N Rows( t ) );
 
 ### Get Script
 
-**구문:** obj << Get Script
+**구문:** obj &lt;&lt; Get Script
 
 **설명:** 이 분석을 수행하기 위한 스크립트(JSL)를 생성하고 표현식으로 반환합니다.
 
@@ -214,7 +214,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**구문:** obj << Get Script With Data Table
+**구문:** obj &lt;&lt; Get Script With Data Table
 
 **설명:** 이 데이터 테이블을 참조하는 분석을 수행하기 위한 스크립트(JSL)를 생성하고 표현식으로 반환합니다.
 
@@ -238,7 +238,7 @@ Show( t );
 
 ### Get Timing
 
-**구문:** obj << Get Timing
+**구문:** obj &lt;&lt; Get Timing
 
 **설명:** 플랫폼 시작 시간을 설정합니다.
 
@@ -262,7 +262,7 @@ Show( t );
 
 ### Get Web Support
 
-**구문:** obj << Get Web Support
+**구문:** obj &lt;&lt; Get Web Support
 
 **설명:** 표시 개체에 대한 대화식 HTML 지원 수준을 나타내는 숫자를 반환합니다. 1은 일부 또는 모든 요소가 지원됨을 의미하고 0은 지원되지 않음을 의미합니다.
 
@@ -278,7 +278,7 @@ Show( s );
 
 ### Get Where Expr
 
-**구문:** obj << Get Where Expr
+**구문:** obj &lt;&lt; Get Where Expr
 
 **설명:** By() 또는 Where()를 사용하여 플랫폼이 시작된 경우 데이터 부분집합에 대한 Where 표현식을 반환하고, 그렇지 않은 경우 Empty()를 반환합니다.
 
@@ -368,9 +368,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**구문:** obj << Report;
-
-Report( obj )
+**구문:** obj &lt;&lt; Report;Report( obj )
 
 **설명:** 보고서 개체에 대한 참조를 반환합니다.
 
@@ -395,7 +393,7 @@ Show( t );
 
 ### Save Script for All Objects
 
-**구문:** obj << Save Script for All Objects
+**구문:** obj &lt;&lt; Save Script for All Objects
 
 **설명:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -418,7 +416,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**구문:** obj << Save Script for All Objects To Data Table( <name> )
+**구문:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **설명:** 모든 보고서 개체에 대한 스크립트를 현재 데이터 테이블에 저장합니다. 이 옵션은 창에 여러 보고서가 있을 때 유용합니다. 스크립트 이름을 따옴표로 묶어 지정하는 경우 외에는 첫 번째 플랫폼 이름을 따라 스크립트 이름이 지정됩니다.
 
@@ -470,7 +468,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**구문:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**구문:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 데이터 테이블에 테이블 특성으로 저장합니다.
 
@@ -493,7 +491,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**구문:** obj << Save Script to Journal
+**구문:** obj &lt;&lt; Save Script to Journal
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 이 스크립트가 포함된 저널에 버튼을 추가합니다.
 
@@ -516,7 +514,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**구문:** obj << Save Script to Report
+**구문:** obj &lt;&lt; Save Script to Report
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 보고서 자체에 표시합니다. 수행된 작업에 대한 인쇄된 기록을 유지하려는 경우에 유용합니다.
 
@@ -539,7 +537,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**구문:** obj << Save Script to Script Window
+**구문:** obj &lt;&lt; Save Script to Script Window
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 현재 스크립트 텍스트 창에 추가합니다.
 
@@ -623,7 +621,7 @@ dt << Distribution(
 
 ### Title
 
-**구문:** obj << Title( "new title" )
+**구문:** obj &lt;&lt; Title( "new title" )
 
 **설명:** 플랫폼의 제목을 설정합니다.
 
@@ -646,7 +644,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**구문:** obj << Top Report
+**구문:** obj &lt;&lt; Top Report
 
 **설명:** 보고서의 루트 노드에 대한 참조를 반환합니다.
 
@@ -671,7 +669,7 @@ Show( t );
 
 ### View Web XML
 
-**구문:** obj << View Web XML
+**구문:** obj &lt;&lt; View Web XML
 
 **설명:** 대화식 HTML 보고서를 생성하는 데 사용된 XML 코드를 반환합니다.
 
@@ -712,7 +710,7 @@ fd2 = Formula Depot[1];
 
 ### Add Formula from Column
 
-**구문:** 예측 변수 = obj << Add Formula from Column( Table(name|reference), Columns(name|index|reference, ...), <Expand Intermediate Formulas(number)> )
+**구문:** 예측 변수 = obj &lt;&lt; Add Formula from Column( Table(name|reference), Columns(name|index|reference, ...), &lt;Expand Intermediate Formulas(number)&gt; )
 
 **설명:** 지정한 테이블의 기존 예측 계산식 열을 계산식 저장소에 추가
 
@@ -731,7 +729,7 @@ mp << Generate Python Code;
 
 ### Copy Formulas as Functions
 
-**구문:** obj << Copy Formulas as Functions( <Formulas(name|index|reference, ...)> )
+**구문:** obj &lt;&lt; Copy Formulas as Functions( &lt;Formulas(name|index|reference, ...)&gt; )
 
 **설명:** 지정된 모형을 스칼라 Function() 문으로 클립보드에 복사합니다.
 
@@ -754,7 +752,7 @@ Show( text );
 
 ### Copy Formulas as Transforms
 
-**구문:** obj << Copy Formulas as Transforms( <Table(name|reference)>, <Formulas(name|index|reference, ...)> )
+**구문:** obj &lt;&lt; Copy Formulas as Transforms( &lt;Table(name|reference)&gt;, &lt;Formulas(name|index|reference, ...)&gt; )
 
 **설명:** Transform Column() 문 내의 지정된 모형을 클립보드에 복사합니다.
 
@@ -778,7 +776,7 @@ Show( text );
 
 ### Copy Scripts
 
-**구문:** obj << Copy Scripts( <Formulas(name|index|reference, ...)> )
+**구문:** obj &lt;&lt; Copy Scripts( &lt;Formulas(name|index|reference, ...)&gt; )
 
 **설명:** 계산식 저장소에 저장된 지정된 계산식에 대한 스크립트를 클립보드에 복사합니다.
 
@@ -799,7 +797,7 @@ Show( text );
 
 ### Generate C Code
 
-**구문:** obj << Generate C Code( <Formulas(name|index|reference, ...)>, <No Editor> )
+**구문:** obj &lt;&lt; Generate C Code( &lt;Formulas(name|index|reference, ...)&gt;, &lt;No Editor&gt; )
 
 **설명:** 계산식 저장소에 저장된 지정된 모형에 대한 C 코드를 생성합니다. 결과는 편집기 창 또는 문자열 변수(&apos;No Editor&apos; 인수가 지정된 경우)로 이동합니다.
 
@@ -823,7 +821,7 @@ fd << Generate C Code( Formulas( predictor ) );
 
 ### Generate JavaScript Code
 
-**구문:** obj << Generate JavaScript Code( <Formulas(name|index|reference, ...)>, <No Editor> )
+**구문:** obj &lt;&lt; Generate JavaScript Code( &lt;Formulas(name|index|reference, ...)&gt;, &lt;No Editor&gt; )
 
 **설명:** 계산식 저장소에 저장된 지정된 모형에 대한 JavaScript 코드를 생성합니다. 결과는 편집기 창 또는 문자열 변수(&apos;No Editor&apos; 인수가 지정된 경우)로 이동합니다.
 
@@ -847,7 +845,7 @@ fd << Generate JavaScript Code( Formulas( predictor ) );
 
 ### Generate Python Code
 
-**구문:** obj << Generate Python Code( <Formulas(name|index|reference, ...)>, <No Editor> )
+**구문:** obj &lt;&lt; Generate Python Code( &lt;Formulas(name|index|reference, ...)&gt;, &lt;No Editor&gt; )
 
 **설명:** 계산식 저장소에 저장된 지정된 모형에 대한 Python 코드를 생성합니다. 결과는 편집기 창 또는 문자열 변수(&apos;No Editor&apos; 인수가 지정된 경우)로 이동합니다.
 
@@ -871,7 +869,7 @@ fd << Generate Python Code( Formulas( predictor ) );
 
 ### Generate SAS Code
 
-**구문:** obj << Generate SAS Code( <Formulas(name|index|reference, ...)>, <No Editor> )
+**구문:** obj &lt;&lt; Generate SAS Code( &lt;Formulas(name|index|reference, ...)&gt;, &lt;No Editor&gt; )
 
 **설명:** 계산식 저장소에 저장된 지정된 모형에 대한 SAS(DS2) 코드를 생성합니다. 결과는 편집기 창 또는 문자열 변수(&apos;No Editor&apos; 인수가 지정된 경우)로 이동합니다.
 
@@ -895,7 +893,7 @@ fd << Generate SAS Code( Formulas( predictor ) );
 
 ### Generate SQL Code
 
-**구문:** obj << Generate SQL Code( <Formulas(name|index|reference, ...)>, <No Editor>, <QUOTE_STYLE> )
+**구문:** obj &lt;&lt; Generate SQL Code( &lt;Formulas(name|index|reference, ...)&gt;, &lt;No Editor&gt;, &lt;QUOTE_STYLE&gt; )
 
 **설명:** 계산식 저장소에 저장된 지정된 모형에 대한 SQL 코드(SQL Select 문에서 사용하기에 적합한 열 정의)를 생성합니다. 결과는 편집기 창 또는 문자열 변수("No Editor" 인수가 지정된 경우)로 이동합니다. QUOTE_STYLE은 JMP에서 지원되는 SQL 데이터베이스(MySQL, Impala, Hive 등) 또는 SQL 인용 부호 유형("밑줄", "따옴표", "대괄호" 또는 "큰따옴표")을 나타내는 문자열입니다.
 
@@ -922,7 +920,7 @@ fd << Generate SQL Code( Formulas( predictor ), "MySQL" );
 
 ### Model Comparison
 
-**구문:** obj << Model Comparison( <Table(name|reference)>, <Formulas(name|index|reference, ...)> )
+**구문:** obj &lt;&lt; Model Comparison( &lt;Table(name|reference)&gt;, &lt;Formulas(name|index|reference, ...)&gt; )
 
 **설명:** 지정한 테이블의 내용을 기반으로 계산식 저장소에 저장된 지정된 모형을 모형 비교 유틸리티를 사용하여 비교합니다.
 
@@ -953,7 +951,7 @@ mc_plat = fd << ModelComparison( Formulas( 1, 2 ) );
 
 ### Profiler
 
-**구문:** obj << Profiler( <Table(name|reference)>, <Formulas(name|index|reference, ...)> )
+**구문:** obj &lt;&lt; Profiler( &lt;Table(name|reference)&gt;, &lt;Formulas(name|index|reference, ...)&gt; )
 
 **설명:** 지정한 테이블의 내용을 기반으로 계산식 저장소에 저장된 지정된 모형을 프로파일러 유틸리티를 사용하여 프로파일링합니다.
 
@@ -979,7 +977,7 @@ fd << Profiler( Formulas( nl_mp, nn_mp ) );
 
 ### Remove Model Comparison
 
-**구문:** obj << Remove Model Comparison
+**구문:** obj &lt;&lt; Remove Model Comparison
 
 **설명:** 모든 모형 비교 보고서를 현재 계산식 저장소에서 제거합니다.
 
@@ -998,7 +996,7 @@ fd << Remove Model Comparison();
 
 ### Remove Profiler
 
-**구문:** obj << Remove Profiler
+**구문:** obj &lt;&lt; Remove Profiler
 
 **설명:** 모든 프로파일러를 현재 계산식 저장소에서 제거합니다.
 
@@ -1017,7 +1015,7 @@ fd << Remove Profiler();
 
 ### Rename Formula Depot
 
-**구문:** obj << Rename Formula Depot( text )
+**구문:** obj &lt;&lt; Rename Formula Depot( text )
 
 ```jsl
 
@@ -1030,7 +1028,7 @@ fd << Rename Formula Depot( "New Name" );
 
 ### Run Scripts
 
-**구문:** obj << Run Scripts( <Table(name|reference)>, <Formulas(name|index|reference, ...)> )
+**구문:** obj &lt;&lt; Run Scripts( &lt;Table(name|reference)&gt;, &lt;Formulas(name|index|reference, ...)&gt; )
 
 **설명:** 지정된 모형을 현재 JMP 데이터 테이블 또는 지정된 JMP 데이터 테이블에 하나 이상의 계산식 열로 저장합니다.
 
@@ -1059,7 +1057,7 @@ fd2 << Run Scripts( Table( dt2 ), Formulas( 1 ) );
 
 ### Show Scripts
 
-**구문:** obj << Show Scripts( <Formulas(name|index|reference, ...)> )
+**구문:** obj &lt;&lt; Show Scripts( &lt;Formulas(name|index|reference, ...)&gt; )
 
 **설명:** 계산식 저장소에 저장된 지정된 계산식에 대한 스크립트가 포함된 새 계산식 창을 열거나 열려 있는 계산식 창에 추가합니다.
 

@@ -2,8 +2,6 @@
 
 
 
-## 함수
-
 ### Pat Abort
 
 **구문:** Pat Abort()
@@ -244,7 +242,7 @@ result;
 
 ### Pat Look Ahead
 
-**구문:** Pat Look Ahead( pattern, <0|1> )
+**구문:** Pat Look Ahead( pattern, &lt;0|1&gt; )
 
 **설명:** 현재 위치 뒤에서 너비가 0인 패턴 매칭. 두 번째 선택적 인수는 기본적으로 0입니다. 1은 부정 매칭 또는 매칭되지 않음을 지정합니다.
 
@@ -295,7 +293,7 @@ While( /* keep repeating the match until it won't match */
 
 ### Pat Look Behind
 
-**구문:** Pat Look Behind( pattern, <0|1> )
+**구문:** Pat Look Behind( pattern, &lt;0|1&gt; )
 
 **설명:** 현재 위치 앞에서 너비가 0인 패턴 매칭. 두 번째 선택적 인수는 기본적으로 0입니다. 1은 부정 매칭 또는 매칭되지 않음을 지정합니다.
 
@@ -346,7 +344,7 @@ While( /* keep repeating the match until it won't match */
 
 ### Pat Match
 
-**구문:** Pat Match( source, pattern, <replacement> )
+**구문:** Pat Match( source, pattern, &lt;replacement&gt; )
 
 **설명:** source 변수의 문자열에 대해 pattern 변수의 패턴 매칭을 실행합니다. 선택적 replacement 텍스트는 매칭되는 텍스트를 대체합니다.
 
@@ -466,7 +464,7 @@ result;
 
 ### Pat Repeat
 
-**구문:** Pat Repeat( pattern, <min=1>, <max=infinity>, <GREEDY or RELUCTANT=GREEDY> )
+**구문:** Pat Repeat( pattern, &lt;min=1&gt;, &lt;max=infinity&gt;, &lt;GREEDY or RELUCTANT=GREEDY&gt; )
 
 **설명:** 제공된 패턴과 min~max번 매칭되는 패턴 값을 생성합니다.
 
@@ -586,7 +584,7 @@ string;
 
 ### Regex Match
 
-**구문:** Regex Match( source, pattern, <replacement | NULL>, <MATCHCASE> )
+**구문:** Regex Match( source, pattern, &lt;replacement | NULL&gt;, &lt;MATCHCASE&gt; )
 
 **설명:** 정규 표현식 매칭을 실행하고 전체 매칭 텍스트 및 여는 괄호에 의해 생성된 각 역참조에 대한 매칭 목록을 반환합니다. 필요한 경우 세 번째 인수를 사용하여 전체 매칭의 대체 문자열을 지정합니다. 대체 문자열은 역참조를 사용할 수 있습니다.
 

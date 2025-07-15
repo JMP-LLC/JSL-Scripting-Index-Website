@@ -6,7 +6,7 @@
 
 ### Dump
 
-**Sintaxis:** res = obj << Dump()
+**Sintaxis:** res = obj &lt;&lt; Dump()
 
 **Descripción:** Obtiene el contenido de este conector de datos como una cadena de especificación que especifica el tipo y cualquier valor no predeterminado.
 
@@ -24,7 +24,7 @@ New Data Connector(
 
 ### Get
 
-**Sintaxis:** res = obj << Get( OPTION )
+**Sintaxis:** res = obj &lt;&lt; Get( OPTION )
 
 **Descripción:** Obtiene el valor de una opción.
 
@@ -40,7 +40,7 @@ dc << Get( Supports Schemas );
 
 ### Open
 
-**Sintaxis:** res = obj << Open()
+**Sintaxis:** res = obj &lt;&lt; Open()
 
 **Descripción:** Abre una nueva tabla de datos, tal y como especifica este conector de datos.
 
@@ -57,7 +57,7 @@ New Data Connector(
 
 ### Save
 
-**Sintaxis:** obj << Save( file path )
+**Sintaxis:** obj &lt;&lt; Save( file path )
 
 **Descripción:** Guarda el contenido de este conector de datos en un archivo. El contenido del archivo es el mismo que el resultado de << Dump().
 
@@ -75,7 +75,7 @@ New Data Connector(
 
 ### Set
 
-**Sintaxis:** obj << Set( < Option1( value1 ) >, ..., < OptionN( valueN ) > )
+**Sintaxis:** obj &lt;&lt; Set( &lt; Option1( value1 ) &gt;, ..., &lt; OptionN( valueN ) &gt; )
 
 **Descripción:** Establece el valor de cualquier número de opciones.
 
@@ -92,7 +92,7 @@ Show( dc << Get( Block Fetch ), dc << Get( Supports Schemas ) );
 
 ### Type
 
-**Sintaxis:** res = obj << Type()
+**Sintaxis:** res = obj &lt;&lt; Type()
 
 **Descripción:** Obtiene el tipo del conector de datos.
 

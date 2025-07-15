@@ -6,7 +6,7 @@
 
 ### Socket
 
-**구문:** socketHandle = Socket( <STREAM | DGRAM> )
+**구문:** socketHandle = Socket( &lt;STREAM | DGRAM&gt; )
 
 **설명:** 이 컴퓨터 또는 네트워크에 연결된 다른 컴퓨터의 소켓과 통신할 수 있는 소켓 변수를 생성합니다. 기본 인수는 STREAM입니다. 귀사의 웹 사이트와 통신을 시도해 보십시오.
 
@@ -51,7 +51,7 @@ If( rc[2] == "ok",
 
 ### Accept
 
-**구문:** obj << Accept
+**구문:** obj &lt;&lt; Accept
 
 **설명:** 수신 소켓에서 컴퓨터의 연결을 허용합니다.
 
@@ -69,7 +69,7 @@ rc = skt << accept();
 
 ### Accept Fast
 
-**구문:** obj << Accept Fast
+**구문:** obj &lt;&lt; Accept Fast
 
 **설명:** 수신 소켓에서 컴퓨터의 연결을 허용합니다.
 
@@ -92,7 +92,7 @@ rc = skt << AcceptFast();
 
 ### Bind
 
-**구문:** obj << Bind
+**구문:** obj &lt;&lt; Bind
 
 **설명:** 연결 수신 준비를 위해 컴퓨터의 포트에 소켓을 바인딩합니다.
 
@@ -108,7 +108,7 @@ rc = skt << bind( "localhost", "80" );
 
 ### Close
 
-**구문:** obj << Close
+**구문:** obj &lt;&lt; Close
 
 **설명:** 소켓을 닫습니다. 다시 사용하기 전에 소켓을 재생성해야 합니다. 연결된 소켓은 로컬 또는 원격으로 닫을 수 있습니다. 수신 소켓은 로컬로 닫을 수 있습니다.
 
@@ -121,7 +121,7 @@ x = Socket();/* use the socket...*/ x << Close();
 
 ### Connect
 
-**구문:** obj << Connect
+**구문:** obj &lt;&lt; Connect
 
 **설명:** 원격 컴퓨터에 연결합니다.
 
@@ -181,7 +181,7 @@ Show( Length( blob ) );
 
 ### GetPeerName
 
-**구문:** obj << GetPeerName
+**구문:** obj &lt;&lt; GetPeerName
 
 **설명:** 원격 컴퓨터의 이름을 가져옵니다.
 
@@ -197,7 +197,7 @@ Show( rc, tCall << getPeerName );
 
 ### GetSockName
 
-**구문:** obj << GetSockName
+**구문:** obj &lt;&lt; GetSockName
 
 **설명:** 로컬 컴퓨터의 이름을 가져옵니다.
 
@@ -213,7 +213,7 @@ Show( rc, tCall << getSockName );
 
 ### Ioctl
 
-**구문:** obj << Ioctl
+**구문:** obj &lt;&lt; Ioctl
 
 **설명:** 소켓을 비차단 모드로 전환하거나 얼마나 대기하다가 읽을지 데이터 양을 결정합니다.
 
@@ -231,7 +231,7 @@ len = skt << Ioctl( FIONREAD ); // how much data available
 
 ### Listen
 
-**구문:** obj << Listen
+**구문:** obj &lt;&lt; Listen
 
 **설명:** 소켓을 수신 모드로 설정합니다. 원격 컴퓨터에서 연결을 허용하려면 허용을 사용하십시오.
 
@@ -338,7 +338,7 @@ conskt << close; // nothing else to send to the browser
 
 ### Recv
 
-**구문:** obj << Recv
+**구문:** obj &lt;&lt; Recv
 
 **설명:** 원격 컴퓨터에서 데이터를 수신합니다. 수신할 최대 바이트를 지정하십시오. 소켓이 차단 모드로 설정된 경우 일부 데이터가 있거나 연결이 원격으로 닫힐 때까지 수신이 반환되지 않습니다. 비차단 모드에서는 0바이트 및 Would Block 반환 코드가 발생합니다.
 
@@ -360,7 +360,7 @@ rc = skt << recv( 1000 ); // specifie the UPPER limit on the amount of data retu
 
 ### RecvFrom
 
-**구문:** obj << RecvFrom
+**구문:** obj &lt;&lt; RecvFrom
 
 **설명:** (DGram 지원, 필요한 이유를 알지 못하는 경우 이 메시지를 피하십시오.) 원격 컴퓨터에서 DGram을 수신합니다.
 
@@ -426,7 +426,7 @@ Show( result );
 
 ### Send
 
-**구문:** obj << Send
+**구문:** obj &lt;&lt; Send
 
 **설명:** 데이터를 원격 컴퓨터에 전송합니다.
 
@@ -443,7 +443,7 @@ rc = skt << Send( Char To Blob( "Hello World" ) );
 
 ### SendTo
 
-**구문:** obj << SendTo
+**구문:** obj &lt;&lt; SendTo
 
 **설명:** (DGram 지원, 필요한 이유를 알지 못하는 경우 이 메시지를 피하십시오.) 원격 컴퓨터에 DGram을 전송합니다.
 

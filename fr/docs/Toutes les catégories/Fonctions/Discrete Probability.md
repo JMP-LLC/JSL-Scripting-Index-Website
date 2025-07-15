@@ -2,8 +2,6 @@
 
 
 
-## Fonctions
-
 ### Beta Binomial Distribution
 
 **Syntaxe :** cumprob = Beta Binomial Distribution( k, p, n, delta )
@@ -422,7 +420,7 @@ New Window( "Example: Gamma Poisson Quantile",
 
 ### Hypergeometric Distribution
 
-**Syntaxe :** cumprob = Hypergeometric Distribution( N, K, n, x, <r> )
+**Syntaxe :** cumprob = Hypergeometric Distribution( N, K, n, x, &lt;r&gt; )
 
 **Description :** Renvoie la probabilité qu&apos;une variable aléatoire distribuée de façon hypergéométrique soit inférieure ou égale à x, N étant la taille de la population, K le nombre d&apos;éléments dans la catégorie d&apos;intérêt, n la taille d&apos;échantillon, x le nombre d&apos;éléments dans la catégorie d&apos;intérêt et r un rapport de probabilités facultatif.
 
@@ -476,7 +474,7 @@ New Window( "Example: Hypergeometric Distribution",
 
 ### Hypergeometric Probability
 
-**Syntaxe :** prob = Hypergeometric Probability( N, K, n, x, <r> )
+**Syntaxe :** prob = Hypergeometric Probability( N, K, n, x, &lt;r&gt; )
 
 **Description :** Renvoie la probabilité qu&apos;une variable aléatoire distribuée de façon hypergéométrique soit égale à x, N étant la taille de la population, K le nombre d&apos;éléments dans la catégorie d&apos;intérêt, n la taille d&apos;échantillon, x le nombre d&apos;éléments dans la catégorie d&apos;intérêt et r un rapport de probabilités facultatif.
 

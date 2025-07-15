@@ -2,8 +2,6 @@
 
 
 
-## Funktionen
-
 ### Pat Abort
 
 **Syntax:** Pat Abort()
@@ -250,7 +248,7 @@ result;
 
 ### Pat Look Ahead
 
-**Syntax:** Pat Look Ahead( pattern, <0|1> )
+**Syntax:** Pat Look Ahead( pattern, &lt;0|1&gt; )
 
 **Beschreibung:** Eine Musterübereinstimmung mit Breite null nach der aktuellen Position. Das zweite optionale Argument ist standardmäßig 0. 1 weist auf eine negative Übereinstimmung oder eine Nichtübereinstimmung hin.
 
@@ -309,7 +307,7 @@ While( /* keep repeating the match until it won't match */
 
 ### Pat Look Behind
 
-**Syntax:** Pat Look Behind( pattern, <0|1> )
+**Syntax:** Pat Look Behind( pattern, &lt;0|1&gt; )
 
 **Beschreibung:** Eine Musterübereinstimmung mit Breite null vor der aktuellen Position. Das zweite optionale Argument ist standardmäßig 0. 1 weist auf eine negative Übereinstimmung oder eine Nichtübereinstimmung hin.
 
@@ -367,7 +365,7 @@ While( /* keep repeating the match until it won't match */
 
 ### Pat Match
 
-**Syntax:** Pat Match( source, pattern, <replacement> )
+**Syntax:** Pat Match( source, pattern, &lt;replacement&gt; )
 
 **Beschreibung:** Führt die Musterübereinstimmung in der Variable pattern gegen die Zeichenkette in der Variable source aus. Optional wird der übereinstimmende Text durch den Text replacement ersetzt.
 
@@ -491,7 +489,7 @@ result;
 
 ### Pat Repeat
 
-**Syntax:** Pat Repeat( pattern, <min=1>, <max=infinity>, <GREEDY or RELUCTANT=GREEDY> )
+**Syntax:** Pat Repeat( pattern, &lt;min=1&gt;, &lt;max=infinity&gt;, &lt;GREEDY or RELUCTANT=GREEDY&gt; )
 
 **Beschreibung:** Erzeugt einen Musterwert, der mit dem vorgegebenen Muster zwischen min und max Male übereinstimmt.
 
@@ -614,7 +612,7 @@ string;
 
 ### Regex Match
 
-**Syntax:** Regex Match( source, pattern, <replacement | NULL>, <MATCHCASE> )
+**Syntax:** Regex Match( source, pattern, &lt;replacement | NULL&gt;, &lt;MATCHCASE&gt; )
 
 **Beschreibung:** Führt eine Übereinstimmung von regulären Ausdrücken durch und gibt eine Liste des gesamten verglichenen Texts zurück sowie die Übereinstimmungen für jeden Rückverweis, erstellt durch eine offene Klammer. Optional gibt das dritte Argument eine Ersetzungszeichenkette für die gesamte Übereinstimmung an. Die Ersetzungszeichenkette kann Rückverweise verwenden.
 

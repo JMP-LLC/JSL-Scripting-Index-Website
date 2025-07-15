@@ -6,7 +6,7 @@
 
 ### Dump
 
-**Syntaxe :** res = obj << Dump()
+**Syntaxe :** res = obj &lt;&lt; Dump()
 
 **Description :** Obtenez les contenus de ce connecteur de données en tant que chaîne de spécification pour le type et les valeurs autres que les valeurs par défaut.
 
@@ -24,7 +24,7 @@ New Data Connector(
 
 ### Get
 
-**Syntaxe :** res = obj << Get( OPTION )
+**Syntaxe :** res = obj &lt;&lt; Get( OPTION )
 
 **Description :** Obtenez la valeur d&apos;une option.
 
@@ -40,7 +40,7 @@ dc << Get( Supports Schemas );
 
 ### Open
 
-**Syntaxe :** res = obj << Open()
+**Syntaxe :** res = obj &lt;&lt; Open()
 
 **Description :** Ouvrez une nouvelle table de données comme spécifié par ce connecteur de données.
 
@@ -57,7 +57,7 @@ New Data Connector(
 
 ### Save
 
-**Syntaxe :** obj << Save( file path )
+**Syntaxe :** obj &lt;&lt; Save( file path )
 
 **Description :** Enregistrez les contenus de ce connecteur de données dans un fichier. Les contenus du fichier sont identiques au résultat de << Dump().
 
@@ -75,7 +75,7 @@ New Data Connector(
 
 ### Set
 
-**Syntaxe :** obj << Set( < Option1( value1 ) >, ..., < OptionN( valueN ) > )
+**Syntaxe :** obj &lt;&lt; Set( &lt; Option1( value1 ) &gt;, ..., &lt; OptionN( valueN ) &gt; )
 
 **Description :** Définissez la valeur d&apos;un nombre quelconque d&apos;options.
 
@@ -92,7 +92,7 @@ Show( dc << Get( Block Fetch ), dc << Get( Supports Schemas ) );
 
 ### Type
 
-**Syntaxe :** res = obj << Type()
+**Syntaxe :** res = obj &lt;&lt; Type()
 
 **Description :** Obtenez le type du connecteur de données.
 

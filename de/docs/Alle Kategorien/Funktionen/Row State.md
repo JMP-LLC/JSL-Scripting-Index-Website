@@ -2,8 +2,6 @@
 
 
 
-## Funktionen
-
 ### As Row State
 
 **Syntax:** rs = As Row State( x )
@@ -27,7 +25,7 @@ For Each Row(
 
 ### Color Of
 
-**Syntax:** y = Color Of( <rs> ); Color Of( <Row State( <r> )> ) = y
+**Syntax:** y = Color Of( &lt;rs&gt; ); Color Of( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **Beschreibung:** Gibt die Farbkomponente des angegebenen Zeileneigenschaftswerts zurück, entweder einen positiven JMP-Farbpalettenindex oder einen negativen RGB-codierten Wert. Wenn die Farbe als L-Wert verwendet wird, ändert sie die Farbe der aktuellen (oder r-ten) Zeile in der aktuellen Datentabelle.
 
@@ -78,7 +76,7 @@ Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 
 ### Excluded
 
-**Syntax:** y = Excluded( <rs> ); Excluded( <Row State( <r> )> ) = y
+**Syntax:** y = Excluded( &lt;rs&gt; ); Excluded( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **Beschreibung:** Gibt die Komponente „ausgeschlossen“ des angegebenen Zeileneigenschaftswerts zurück, 0 oder 1. Wenn die Funktion Excluded() als L-Wert verwendet wird, ändert es den ausgeschlossenen Zustand der aktuellen (oder r-ten) Zeile in der aktuellen Datentabelle.
 
@@ -114,7 +112,7 @@ Excluded( Row State( 3 ) );
 
 ### Hidden
 
-**Syntax:** y = Hidden( <rs> ); Hidden( <Row State( <r> )> ) = y
+**Syntax:** y = Hidden( &lt;rs&gt; ); Hidden( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **Beschreibung:** Gibt die Komponente „ausgeblendet“ des angegebenen Zeileneigenschaftswerts zurück, 0 oder 1. Wenn „ausgeblendet“ als L-Wert verwendet wird, ändert es den ausgeblendeten Zustand der aktuellen (oder r-ten) Zeile in der aktuellen Datentabelle.
 
@@ -166,7 +164,7 @@ Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 
 ### Labeled
 
-**Syntax:** y = Labeled( <rs> ); Labeled( <Row State( <r> )> ) = y
+**Syntax:** y = Labeled( &lt;rs&gt; ); Labeled( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **Beschreibung:** Gibt die Komponente „Beschriftung“ des angegebenen Zeileneigenschaftswerts zurück, 0 oder 1. Wenn „Beschriftung“ als L-Wert verwendet wird, ändert es den ausgeblendeten Zustand der aktuellen (oder r-ten) Zeile in der aktuellen Datentabelle.
 
@@ -202,7 +200,7 @@ Labeled( Row State( 3 ) );
 
 ### Marker Of
 
-**Syntax:** y = Marker Of( <rs> ); Marker Of( <Row State( <r> )> ) = y
+**Syntax:** y = Marker Of( &lt;rs&gt; ); Marker Of( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **Beschreibung:** Gibt die Symbolkomponente des angegebenen Zeileneigenschaftswerts zurück. Wenn das Symbol als L-Wert verwendet wird, ändert es das Symbol der aktuellen (oder r-ten) Zeile in der aktuellen Datentabelle.
 
@@ -238,7 +236,7 @@ Marker Of( Row State( 3 ) );
 
 ### Row State
 
-**Syntax:** y = Row State( <dt>, <r> ); Row State( <dt>, <r> ) = y
+**Syntax:** y = Row State( &lt;dt&gt;, &lt;r&gt; ); Row State( &lt;dt&gt;, &lt;r&gt; ) = y
 
 **Beschreibung:** Gibt die Zeileneigenschaft der aktuellen (oder r-ten) Zeile in der aktuellen Datentabelle zurück. Wenn die Funktion Row State() als L-Wert verwendet wird, ändert sie die Zeileneigenschaft der aktuellen (oder r-ten) Zeile in der aktuellen Datentabelle.
 
@@ -255,7 +253,7 @@ Color To RGB( Color Of( Row State( 3 ) ) );
 
 ### Selected
 
-**Syntax:** y = Selected( <rs> );Selected( <Row State( <r> )> ) = y
+**Syntax:** y = Selected( &lt;rs&gt; );Selected( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **Beschreibung:** Gibt die Komponente „ausgewählt“ des angegebenen Zeileneigenschaftswerts zurück, 0 oder 1. Wenn „ausgewählt“ als L-Wert verwendet wird, ändert es den ausgewählten Zustand der aktuellen (oder r-ten) Zeile in der aktuellen Datentabelle.
 

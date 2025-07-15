@@ -2,11 +2,9 @@
 
 
 
-## 函数
-
 ### Beta Density
 
-**语法:** y = Beta Density( q, alpha, beta, <theta=0>, <sigma=1> )
+**语法:** y = Beta Density( q, alpha, beta, &lt;theta=0&gt;, &lt;sigma=1&gt; )
 
 **说明:** 返回 beta 分布在 q 处的密度，其中 q 介于 theta 和 theta + sigma 之间，alpha 和 beta 为形状参数，theta 和 sigma 分别为阈值和极值参数。
 
@@ -34,7 +32,7 @@ New Window( "Example: Beta Density",
 
 ### Beta Distribution
 
-**语法:** p = Beta Distribution( q, alpha, beta, <theta=0>, <sigma=1> )
+**语法:** p = Beta Distribution( q, alpha, beta, &lt;theta=0&gt;, &lt;sigma=1&gt; )
 
 **说明:** 返回 beta 分布随机变量小于 q 的概率，其中 alpha 和 beta 为形状参数，theta 和 sigma 分别为阈值和极值参数。
 
@@ -62,7 +60,7 @@ New Window( "Example: Beta Distribution",
 
 ### Beta Quantile
 
-**语法:** q = Beta Quantile( p, alpha, beta, <theta=0>, <sigma=1> )
+**语法:** q = Beta Quantile( p, alpha, beta, &lt;theta=0&gt;, &lt;sigma=1&gt; )
 
 **说明:** 返回随机值小于该值概率为 p 的 Beta 分布的分位数，其中 alpha 和 beta 是形状参数，theta 和 sigma 分别为阈值和范围参数。
 
@@ -77,7 +75,7 @@ Beta Quantile( 0.95, 2, 5 );
 
 ### Cauchy Density
 
-**语法:** y = Cauchy Density( q, <center>, <scale> )
+**语法:** y = Cauchy Density( q, &lt;center&gt;, &lt;scale&gt; )
 
 **说明:** 返回中心为 mu、尺度为 sigma 的 Cauchy 分布在 q 处的密度。
 
@@ -100,7 +98,7 @@ New Window( "Example: Cauchy Density",
 
 ### Cauchy Distribution
 
-**语法:** p = Cauchy Distribution( q, <center>, <scale> )
+**语法:** p = Cauchy Distribution( q, &lt;center&gt;, &lt;scale&gt; )
 
 **说明:** 返回 Cauchy 分布随机变量小于 q 的概率。
 
@@ -123,7 +121,7 @@ New Window( "Example: Cauchy Distribution",
 
 ### Cauchy Quantile
 
-**语法:** q = Cauchy Quantile( p, <center>, <scale> )
+**语法:** q = Cauchy Quantile( p, &lt;center&gt;, &lt;scale&gt; )
 
 **说明:** 返回 Cauchy 分布的一个分位数，当随机变量小于该分位数时的概率为 p。
 
@@ -146,7 +144,7 @@ New Window( "Example: Cauchy Quantile",
 
 ### ChiSquare Density
 
-**语法:** p = ChiSquare Density( q, df, <nonCentrality=0> )
+**语法:** p = ChiSquare Density( q, df, &lt;nonCentrality=0&gt; )
 
 **说明:** 返回自由度为 df 的卡方分布在 q 处的密度。
 
@@ -172,7 +170,7 @@ New Window( "Example: ChiSquare Density",
 
 ### ChiSquare Distribution
 
-**语法:** p = ChiSquare Distribution( q, df, <nonCentrality=0> )
+**语法:** p = ChiSquare Distribution( q, df, &lt;nonCentrality=0&gt; )
 
 **说明:** 返回卡方分布随机变量小于 q 的概率。
 
@@ -198,7 +196,7 @@ New Window( "Example: ChiSquare Distribution",
 
 ### ChiSquare Log CDistribution
 
-**语法:** y = ChiSquare Log CDistribution( x, df, <nonCentrality=0> )
+**语法:** y = ChiSquare Log CDistribution( x, df, &lt;nonCentrality=0&gt; )
 
 **说明:** 返回 1 - 卡方分布的对数。
 
@@ -224,7 +222,7 @@ New Window( "Example: ChiSquare Log CDistribution",
 
 ### ChiSquare Log Density
 
-**语法:** y = ChiSquare Log Density( x, df, <nonCentrality=0> )
+**语法:** y = ChiSquare Log Density( x, df, &lt;nonCentrality=0&gt; )
 
 **说明:** 返回卡方概率密度的对数。
 
@@ -250,7 +248,7 @@ New Window( "Example: ChiSquare Log Density",
 
 ### ChiSquare Log Distribution
 
-**语法:** y = ChiSquare Log Distribution( x, df, <nonCentrality=0> )
+**语法:** y = ChiSquare Log Distribution( x, df, &lt;nonCentrality=0&gt; )
 
 **说明:** 返回卡方分布的对数。
 
@@ -300,7 +298,7 @@ ChiSquare Noncentrality( 3, 2, ChiSquare Distribution( 3, 2, 0.5 ) );
 
 ### ChiSquare Quantile
 
-**语法:** q = ChiSquare Quantile( p, df, <nonCentrality=0> )
+**语法:** q = ChiSquare Quantile( p, df, &lt;nonCentrality=0&gt; )
 
 **说明:** 返回随机值小于该值概率为 p 的卡方分布的分位数。
 
@@ -315,7 +313,7 @@ ChiSquare Quantile( 0.15, 5 );
 
 ### Dunnett P value
 
-**语法:** p = Dunnett P value( q, nTrt, dfe, <lambdaVec = .> )
+**语法:** p = Dunnett P value( q, nTrt, dfe, &lt;lambdaVec = .&gt; )
 
 **说明:** 返回 Dunnett 多重比较检验中的 p 值，其中 q 为检验统计量，nTrt 为较于控制组的处理数量，dfe 为误差自由度（基于总研究样本），可选 lambdaVec 为参数向量，默认设置为 1/sqrt(2)。
 
@@ -330,7 +328,7 @@ Dunnett P value( 1.67623, 3, 11 );
 
 ### Dunnett Quantile
 
-**语法:** q = Dunnett Quantile( 1-alpha, nTrt, dfe, <lambdaVec = .> )
+**语法:** q = Dunnett Quantile( 1-alpha, nTrt, dfe, &lt;lambdaVec = .&gt; )
 
 **说明:** 返回 Dunnett 多重比较检验中所需的分位数，其中 1-alpha 为置信水平，nTrt 为较于控制组的处理数量，dfe 为误差自由度（基于总研究样本），可选 lambdaVec 为参数向量，默认设置为 1/sqrt(2)。
 
@@ -414,7 +412,7 @@ New Window( "Example: ExGaussian Quantile",
 
 ### Exp Density
 
-**语法:** y = Exp Density( x, <theta=1> )
+**语法:** y = Exp Density( x, &lt;theta=1&gt; )
 
 **说明:** 返回参数为“theta”的指数分布在 x 处的密度。
 
@@ -437,7 +435,7 @@ New Window( "Example: Exp Density",
 
 ### Exp Distribution
 
-**语法:** p = Exp Distribution( x, <theta=1> )
+**语法:** p = Exp Distribution( x, &lt;theta=1&gt; )
 
 **说明:** 返回指数分布随机变量小于 x 的概率。
 
@@ -460,7 +458,7 @@ New Window( "Example: Exp Distribution",
 
 ### Exp Quantile
 
-**语法:** q = Exp Quantile( p, <theta=1> )
+**语法:** q = Exp Quantile( p, &lt;theta=1&gt; )
 
 **说明:** 返回随机值小于该值概率为 p 的指数分布的分位数。
 
@@ -482,7 +480,7 @@ New Window( "Example: Exp Quantile",
 
 ### Exponential Density
 
-**语法:** y = Exponential Density( x, <theta=1> )
+**语法:** y = Exponential Density( x, &lt;theta=1&gt; )
 
 **说明:** 返回参数为“theta”的指数分布在 x 处的密度。
 
@@ -505,7 +503,7 @@ New Window( "Example: Exponential Density",
 
 ### Exponential Distribution
 
-**语法:** p = Exponential Distribution( x, <theta=1> )
+**语法:** p = Exponential Distribution( x, &lt;theta=1&gt; )
 
 **说明:** 返回指数分布随机变量小于 x 的概率。
 
@@ -528,7 +526,7 @@ New Window( "Example: Exponential Distribution",
 
 ### Exponential Quantile
 
-**语法:** q = Exponential Quantile( p, <theta=1> )
+**语法:** q = Exponential Quantile( p, &lt;theta=1&gt; )
 
 **说明:** 返回随机值小于该值概率为 p 的指数分布的分位数。
 
@@ -550,7 +548,7 @@ New Window( "Example: Exponential Quantile",
 
 ### F Density
 
-**语法:** y = F Density( q, dfnum, dfden, <nonCentrality=0> )
+**语法:** y = F Density( q, dfnum, dfden, &lt;nonCentrality=0&gt; )
 
 **说明:** 返回具有 dfn 和 dfd 自由度的 F 分布在 q 处的密度。
 
@@ -578,7 +576,7 @@ New Window( "Example: F Density",
 
 ### F Distribution
 
-**语法:** y = F Distribution( q, dfnum, dfden, <nonCentrality=0> )
+**语法:** y = F Distribution( q, dfnum, dfden, &lt;nonCentrality=0&gt; )
 
 **说明:** 返回 F 分布随机变量小于 q 的概率。
 
@@ -606,7 +604,7 @@ New Window( "Example: F Distribution",
 
 ### F Log CDistribution
 
-**语法:** y = F Log CDistribution( x, dfnum, dfden, <nonCentrality=0> )
+**语法:** y = F Log CDistribution( x, dfnum, dfden, &lt;nonCentrality=0&gt; )
 
 **说明:** 返回 1 - F 分布的对数。
 
@@ -634,7 +632,7 @@ New Window( "Example: F Log CDistribution",
 
 ### F Log Density
 
-**语法:** y = F Log Density( x, dfnum, dfden, <nonCentrality=0> )
+**语法:** y = F Log Density( x, dfnum, dfden, &lt;nonCentrality=0&gt; )
 
 **说明:** 返回 F 概率密度的对数。
 
@@ -662,7 +660,7 @@ New Window( "Example: F Log Density",
 
 ### F Log Distribution
 
-**语法:** y = F Log Distribution( x, dfnum, dfden, <nonCentrality=0> )
+**语法:** y = F Log Distribution( x, dfnum, dfden, &lt;nonCentrality=0&gt; )
 
 **说明:** 返回 F 分布的对数。
 
@@ -745,7 +743,7 @@ New Window( "Example: F Power (alpha=.05,dfh=5,dfm=5)",
 
 ### F Quantile
 
-**语法:** q = F Quantile( p, dfnum, dfden, <nonCentrality=0> )
+**语法:** q = F Quantile( p, dfnum, dfden, &lt;nonCentrality=0&gt; )
 
 **说明:** 返回随机值小于该值概率为 p 的 F 分布的分位数。
 
@@ -1008,7 +1006,7 @@ New Window( "Example: GLog Quantile",
 
 ### Gamma Density
 
-**语法:** y = Gamma Density( q, <alpha=1>, <scale=1>, <threshold=0> )
+**语法:** y = Gamma Density( q, &lt;alpha=1&gt;, &lt;scale=1&gt;, &lt;threshold=0&gt; )
 
 **说明:** 返回 Gamma 概率分布在 q 处的密度，其中 alpha 形状参数必须为正。
 
@@ -1037,7 +1035,7 @@ New Window( "Example: Gamma Density",
 
 ### Gamma Distribution
 
-**语法:** p = Gamma Distribution( q, <alpha=1>, <scale=1>, <threshold=0> )
+**语法:** p = Gamma Distribution( q, &lt;alpha=1&gt;, &lt;scale=1&gt;, &lt;threshold=0&gt; )
 
 **说明:** 返回 Gamma 分布随机变量小于 q 的概率，其中 alpha 形状参数必须为正。IGamma() 是 Gamma Distribution() 的别名。Gamma Distribution() 函数等价于 Gamma(alpha,q)/Gamma(alpha)。
 
@@ -1066,7 +1064,7 @@ New Window( "Example: Gamma Distribution",
 
 ### Gamma Log CDistribution
 
-**语法:** p = Gamma Log CDistribution( x, <alpha=1>, <scale=1>, <threshold=0> )
+**语法:** p = Gamma Log CDistribution( x, &lt;alpha=1&gt;, &lt;scale=1&gt;, &lt;threshold=0&gt; )
 
 **说明:** 返回 1 - Gamma 分布的对数。
 
@@ -1095,7 +1093,7 @@ New Window( "Example: Gamma Log CDistribution",
 
 ### Gamma Log Density
 
-**语法:** y = Gamma Log Density( x, <alpha=1>, <scale=1>, <threshold=0> )
+**语法:** y = Gamma Log Density( x, &lt;alpha=1&gt;, &lt;scale=1&gt;, &lt;threshold=0&gt; )
 
 **说明:** 返回 Gamma 概率密度的对数。
 
@@ -1124,7 +1122,7 @@ New Window( "Example: Gamma Log Density",
 
 ### Gamma Log Distribution
 
-**语法:** p = Gamma Log Distribution( x, <alpha=1>, <scale=1>, <threshold=0> )
+**语法:** p = Gamma Log Distribution( x, &lt;alpha=1&gt;, &lt;scale=1&gt;, &lt;threshold=0&gt; )
 
 **说明:** 返回 Gamma 分布的对数。
 
@@ -1153,7 +1151,7 @@ New Window( "Example: Gamma Log Distribution",
 
 ### Gamma Quantile
 
-**语法:** q = Gamma Quantile( p, <alpha=1>, <scale=1>, <threshold=0> )
+**语法:** q = Gamma Quantile( p, &lt;alpha=1&gt;, &lt;scale=1&gt;, &lt;threshold=0&gt; )
 
 **说明:** 返回随机值小于该值概率为 p 的 Gamma 分布的分位数。
 
@@ -1278,7 +1276,7 @@ New Window( "Example: GenGamma Quantile",
 
 ### IGamma
 
-**语法:** p = Gamma Distribution( q, <alpha=1>, <scale=1>, <threshold=0> )
+**语法:** p = Gamma Distribution( q, &lt;alpha=1&gt;, &lt;scale=1&gt;, &lt;threshold=0&gt; )
 
 **说明:** 返回 Gamma 分布随机变量小于 q 的概率，其中 alpha 形状参数必须为正。IGamma() 是 Gamma Distribution() 的别名。Gamma Distribution() 函数等价于 Gamma(alpha,q)/Gamma(alpha)。
 
@@ -1406,7 +1404,7 @@ Johnson Sb Quantile( 0.5, 0.5, 1, 1, 1 );
 
 ### Johnson Sl Density
 
-**语法:** y = Johnson Sl Density( q, gamma, delta, theta, <sigma=1> )
+**语法:** y = Johnson Sl Density( q, gamma, delta, theta, &lt;sigma=1&gt; )
 
 **说明:** 返回 Johnson Sl 分布在 q 处的密度，其中 q 位于 theta 到 +∞ 这一区间中。delta（大于零）和 gamma（介于 -∞ 到 +∞ 之间）是形状参数，sigma（等于 +1 或 -1）是尺度参数，theta（介于 -∞ 到 +∞ 之间）是阈值参数。注意: 当 sigma = 1 时，theta 为分布下限。当 sigma=-1 时，theta 为分布上限。此外，正 sigma 表示正偏度，负 sigma 表示负偏度。
 
@@ -1451,7 +1449,7 @@ New Window( "Example: Johnson Sl Density",
 
 ### Johnson Sl Distribution
 
-**语法:** p = Johnson Sl Distribution( q, gamma, delta, theta, <sigma=1> )
+**语法:** p = Johnson Sl Distribution( q, gamma, delta, theta, &lt;sigma=1&gt; )
 
 **说明:** 返回 Johnson Sl 分布随机变量小于 q 的概率。（注意: 有关参数说明，请参见 Johnson Sl Density() 函数。）
 
@@ -1496,7 +1494,7 @@ New Window( "Example: Johnson Sl Distribution",
 
 ### Johnson Sl Quantile
 
-**语法:** q = Johnson Sl Quantile( p, gamma, delta, theta, <sigma=1> )
+**语法:** q = Johnson Sl Quantile( p, gamma, delta, theta, &lt;sigma=1&gt; )
 
 **说明:** 返回随机值小于该值概率为 p 的 Johnson Sl 分布的分位数。（注意: p 是第一个参数。有关参数说明，请参见 Johnson Sl Density() 函数。）
 
@@ -2104,7 +2102,7 @@ New Window( "Example: Lognormal Quantile",
 
 ### Normal Biv Distribution
 
-**语法:** y = Normal Biv Distribution( x, y, r, <mu1=0>, <s1=1>, <mu2=0>, <s2=1> )
+**语法:** y = Normal Biv Distribution( x, y, r, &lt;mu1=0&gt;, &lt;s1=1&gt;, &lt;mu2=0&gt;, &lt;s2=1&gt; )
 
 **说明:** 计算观测值 (X, Y) 小于等于相关系数为 r 的 (x, y) 的概率，其中 X 服从均值为 mu1 且标准差为 s1 的边缘正态分布，Y 服从均值为 mu2 且标准差为 s2 的边缘正态分布。若未给定 mu1、s1、mu2 和 s2，则函数会假定服从标准二元正态分布，其中 mu1=0，s1=1，mu2=0 且 s2=1。
 
@@ -2119,7 +2117,7 @@ Normal Biv Distribution( -2, -2, .5, 1, 1.5, -1, 2 );
 
 ### Normal Density
 
-**语法:** y = Normal Density( q, <mu=0>, <sigma=1> )
+**语法:** y = Normal Density( q, &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **说明:** 返回具有均值 mu 和标准差 sigma 的正态分布 q 处的密度。
 
@@ -2142,7 +2140,7 @@ New Window( "Example: Normal Density",
 
 ### Normal Distribution
 
-**语法:** p = Normal Distribution( q, <mu=0>, <sigma=1> )
+**语法:** p = Normal Distribution( q, &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **说明:** 返回正态分布随机变量小于 q 的概率。
 
@@ -2165,7 +2163,7 @@ New Window( "Example: Normal Distribution",
 
 ### Normal Log CDistribution
 
-**语法:** y = Normal Log CDistribution( x, <mean=0>, <std dev=1> )
+**语法:** y = Normal Log CDistribution( x, &lt;mean=0&gt;, &lt;std dev=1&gt; )
 
 **说明:** 返回均值为 mu 且标准差为 sigma 在 x 处的 1 - 正态分布的对数。
 
@@ -2188,7 +2186,7 @@ New Window( "Example: Normal Log CDistribution",
 
 ### Normal Log Density
 
-**语法:** y = Normal Log Density( x, <mu=0>, <sigma=1>)
+**语法:** y = Normal Log Density( x, &lt;mu=0&gt;, &lt;sigma=1&gt;)
 
 **说明:** 返回均值为 mu 且标准差为 sigma 在 x 处的正态概率密度的对数。
 
@@ -2211,7 +2209,7 @@ New Window( "Example: Normal Log Density",
 
 ### Normal Log Distribution
 
-**语法:** y = Normal Log Distribution( x, <mean=0>, <std dev=1> )
+**语法:** y = Normal Log Distribution( x, &lt;mean=0&gt;, &lt;std dev=1&gt; )
 
 **说明:** 返回均值为 mu 且标准差为 sigma 在 x 处的正态分布的对数。
 
@@ -2374,7 +2372,7 @@ New Window( "Example: Normal Mixture Quantile",
 
 ### Normal Quantile
 
-**语法:** q = Normal Quantile( p, <mu=0>, <sigma=1> ); q = Probit( p )
+**语法:** q = Normal Quantile( p, &lt;mu=0&gt;, &lt;sigma=1&gt; ); q = Probit( p )
 
 **说明:** 返回随机值小于该值概率为 p 的正态分布的分位数。
 
@@ -2389,7 +2387,7 @@ Normal Quantile( 0.9 );
 
 ### Probit
 
-**语法:** q = Normal Quantile( p, <mu=0>, <sigma=1> ); q = Probit( p )
+**语法:** q = Normal Quantile( p, &lt;mu=0&gt;, &lt;sigma=1&gt; ); q = Probit( p )
 
 **说明:** 返回随机值小于该值概率为 p 的正态分布的分位数。
 
@@ -2626,7 +2624,7 @@ SHASH Quantile( .5, 1, 2, 3, 1 );
 
 ### Students t Density
 
-**语法:** p = t Density( q, df, <nonCentrality=0> )
+**语法:** p = t Density( q, df, &lt;nonCentrality=0&gt; )
 
 **说明:** 返回 Student t 检验的密度函数。
 
@@ -2661,7 +2659,7 @@ New Window( "Example: Students t Density",
 
 ### Students t Distribution
 
-**语法:** p = t Distribution( q, df, <nonCentrality=0> )
+**语法:** p = t Distribution( q, df, &lt;nonCentrality=0&gt; )
 
 **说明:** 返回 Student t 分布随机变量小于 q 的概率。
 
@@ -2687,7 +2685,7 @@ New Window( "Example: Students t Distribution",
 
 ### Students t Quantile
 
-**语法:** q = t Quantile( p, df, <nonCentrality=0> )
+**语法:** q = t Quantile( p, df, &lt;nonCentrality=0&gt; )
 
 **说明:** 返回随机值小于该值概率为 p 的 Student t 分布的分位数。
 
@@ -2772,7 +2770,7 @@ New Window( "Example: Tukey HSD Quantile",
 
 ### Weibull Density
 
-**语法:** y = Weibull Density( x, shape, <scale=1>, <threshold=0> )
+**语法:** y = Weibull Density( x, shape, &lt;scale=1&gt;, &lt;threshold=0&gt; )
 
 **说明:** 返回具有 shape 参数和可选 scale 参数的 Weibull 概率分布在 x 处的密度。
 
@@ -2798,7 +2796,7 @@ New Window( "Example: Weibull Density",
 
 ### Weibull Distribution
 
-**语法:** p = Weibull Distribution( x, shape, <scale=1>, <threshold=0> )
+**语法:** p = Weibull Distribution( x, shape, &lt;scale=1&gt;, &lt;threshold=0&gt; )
 
 **说明:** 返回 Weibull 分布随机变量（具有 shape 参数和可选 scale 参数 ）小于 x 的概率。
 
@@ -2824,7 +2822,7 @@ New Window( "Example: Weibull Distribution",
 
 ### Weibull Quantile
 
-**语法:** q = Weibull Quantile( p, beta, <alpha=1>, <threshold=0> )
+**语法:** q = Weibull Quantile( p, beta, &lt;alpha=1&gt;, &lt;threshold=0&gt; )
 
 **说明:** 返回随机值小于该值概率为 p 的 Weibull 分布的分位数，其中 beta 和 alpha 分别为形状和尺度参数。
 
@@ -2860,7 +2858,7 @@ New Window( "Example: Weibull Quantile",
 
 ### t Density
 
-**语法:** p = t Density( q, df, <nonCentrality=0> )
+**语法:** p = t Density( q, df, &lt;nonCentrality=0&gt; )
 
 **说明:** 返回 Student t 检验的密度函数。
 
@@ -2895,7 +2893,7 @@ New Window( "Example: Students t Density",
 
 ### t Distribution
 
-**语法:** p = t Distribution( q, df, <nonCentrality=0> )
+**语法:** p = t Distribution( q, df, &lt;nonCentrality=0&gt; )
 
 **说明:** 返回 Student t 分布随机变量小于 q 的概率。
 
@@ -2921,7 +2919,7 @@ New Window( "Example: Students t Distribution",
 
 ### t Log CDistribution
 
-**语法:** y = t Log CDistribution( x, df, <nc> )
+**语法:** y = t Log CDistribution( x, df, &lt;nc&gt; )
 
 **说明:** 返回 1 - t 分布的对数。
 
@@ -2947,7 +2945,7 @@ New Window( "Example: Students t Log CDistribution",
 
 ### t Log Density
 
-**语法:** y = t Log Density( x, df, <nc> )
+**语法:** y = t Log Density( x, df, &lt;nc&gt; )
 
 **说明:** 返回 t 概率密度的对数。
 
@@ -2973,7 +2971,7 @@ New Window( "Example: Students t Log Density",
 
 ### t Log Distribution
 
-**语法:** y = t Log Distribution( x, df, <nc> )
+**语法:** y = t Log Distribution( x, df, &lt;nc&gt; )
 
 **说明:** 返回 t 分布的对数。
 
@@ -3023,7 +3021,7 @@ t Distribution( 3, 2, t Noncentrality( 3, 2, 0.5 ) );
 
 ### t Quantile
 
-**语法:** q = t Quantile( p, df, <nonCentrality=0> )
+**语法:** q = t Quantile( p, df, &lt;nonCentrality=0&gt; )
 
 **说明:** 返回随机值小于该值概率为 p 的 Student t 分布的分位数。
 

@@ -27,7 +27,7 @@ obj = dt << Custom Profiler(
 
 ### Noise Factors
 
-**Syntax:** obj = Custom Profiler(...<Noise Factors( column(s) )>...)
+**Syntax:** obj = Custom Profiler(...&lt;Noise Factors( column(s) )&gt;...)
 
 **Description:** Specifies noise factors, which must be columns that are ingredients to the formula columns. Noise factors are used to study robustness (or flatness) with respect to transmitted variation from these factors. The resulting profiler includes derivatives of the formulas with respect to the noise factors.
 
@@ -131,7 +131,7 @@ obj = dt << Custom Profiler(
 
 ### Append Settings to Table
 
-**Syntax:** obj << Append Settings to Table
+**Syntax:** obj &lt;&lt; Append Settings to Table
 
 **Description:** Saves the settings of the current profiler as a new row at the end of the data table.
 
@@ -151,7 +151,7 @@ obj << Append Settings to Table;
 
 ### Broadcast Factor Settings
 
-**Syntax:** obj << Broadcast Factor Settings
+**Syntax:** obj &lt;&lt; Broadcast Factor Settings
 
 **Description:** Sends the factor settings for the current profiler to all other profilers. This option does not link the profilers.
 
@@ -179,7 +179,7 @@ obj << Broadcast Factor Settings;
 
 ### Contour Profiler
 
-**Syntax:** obj << Contour Profiler( state=0|1 )
+**Syntax:** obj &lt;&lt; Contour Profiler( state=0|1 )
 
 **Description:** Shows or hides the Contour Profiler.
 
@@ -199,7 +199,7 @@ obj << Contour Profiler( 1 );
 
 ### Converge Limit
 
-**Syntax:** obj << Converge Limit( number )
+**Syntax:** obj &lt;&lt; Converge Limit( number )
 
 **Description:** Specifies the criterion for convergence for the optimization algorithm. If the convergence criterion is less than this value for two consecutive iterations, the algorithm stops.
 
@@ -220,7 +220,7 @@ obj << Optimize;
 
 ### Copy Settings Script
 
-**Syntax:** obj << Copy Settings Script
+**Syntax:** obj &lt;&lt; Copy Settings Script
 
 **Description:** Copies the current factor settings to the clipboard. The settings can then be pasted into another profiler.
 
@@ -249,7 +249,7 @@ obj2 << Paste Settings Script;
 
 ### Edit Constraints
 
-**Syntax:** obj << Edit Constraints
+**Syntax:** obj &lt;&lt; Edit Constraints
 
 **Description:** Adds, changes, or deletes linear constraints.
 
@@ -269,7 +269,7 @@ obj << Edit Constraints;
 
 ### Formulas for OPTMODEL
 
-**Syntax:** obj << Formulas for OPTMODEL
+**Syntax:** obj &lt;&lt; Formulas for OPTMODEL
 
 **Description:** Saves the prediction formulas from the model in a new file as SAS statements for PROC OPTMODEL.
 
@@ -289,7 +289,7 @@ obj << Formulas for OPTMODEL;
 
 ### Get Constraints
 
-**Syntax:** obj << Get Constraints
+**Syntax:** obj &lt;&lt; Get Constraints
 
 **Description:** Returns a list of factor constraints.
 
@@ -307,7 +307,7 @@ obj << Get Constraints;
 
 ### Get Factor Settings
 
-**Syntax:** obj << Get Factor Settings
+**Syntax:** obj &lt;&lt; Get Factor Settings
 
 **Description:** Returns the current factor settings as a list.
 
@@ -327,7 +327,7 @@ obj << Get Factor Settings;
 
 ### Get Factor Settings Script
 
-**Syntax:** obj << Get Factor Settings Script
+**Syntax:** obj &lt;&lt; Get Factor Settings Script
 
 **Description:** Returns the current factor settings as an expression that can be used in a script.
 
@@ -347,7 +347,7 @@ obj << Get Factor Settings Script;
 
 ### Get Objective
 
-**Syntax:** obj << Get Objective
+**Syntax:** obj &lt;&lt; Get Objective
 
 **Description:** Returns the current value of the objective function in the custom profiler.
 
@@ -364,7 +364,7 @@ Show( o );
 
 ### Get Objective Formula
 
-**Syntax:** obj << Get Objective Formula
+**Syntax:** obj &lt;&lt; Get Objective Formula
 
 **Description:** Returns the formula for the objective function as an expression in the custom profiler output.
 
@@ -381,7 +381,7 @@ Show( form );
 
 ### Get Simulator
 
-**Syntax:** obj << Get Simulator
+**Syntax:** obj &lt;&lt; Get Simulator
 
 **Description:** Returns a reference to the Simulator.
 
@@ -414,11 +414,11 @@ obj2 << Simulation Experiment;
 
 ### Goal
 
-**Syntax:** obj << Goal( "Maximize"|"Minimize" )
+**Syntax:** obj &lt;&lt; Goal( "Maximize"|"Minimize" )
 
 ### Link Profilers
 
-**Syntax:** obj << Link Profilers( state=0|1 )
+**Syntax:** obj &lt;&lt; Link Profilers( state=0|1 )
 
 **Description:** Links all the profilers in a single report together, so that a change in a factor in one profiler causes that factor to change to that value in all other profilers.
 
@@ -442,7 +442,7 @@ obj << Term Value( :Silica( 1.78 ), :Sulfur( 2.34 ) );
 
 ### Load Constraints from Table
 
-**Syntax:** obj << Load Constraints from Table
+**Syntax:** obj &lt;&lt; Load Constraints from Table
 
 **Description:** Loads linear constraints from a data table.
 
@@ -472,7 +472,7 @@ obj << Profile at Boundary( "Stop at Boundaries" );
 
 ### Log Iterations
 
-**Syntax:** obj << Log Iterations( state=0|1 )
+**Syntax:** obj &lt;&lt; Log Iterations( state=0|1 )
 
 **Description:** Creates a new data table that contains iterations of the optimization algorithm.
 
@@ -489,7 +489,7 @@ obj << Optimize;
 
 ### Max Cycles
 
-**Syntax:** obj << Max Cycles( number )
+**Syntax:** obj &lt;&lt; Max Cycles( number )
 
 **Description:** Specifies the maximum number of cycles within each trip in the optimization algorithm.
 
@@ -510,7 +510,7 @@ obj << Optimize;
 
 ### MaxIter
 
-**Syntax:** obj << MaxIter( number )
+**Syntax:** obj &lt;&lt; MaxIter( number )
 
 **Description:** Specifies the maximum number of iterations within each trip in the optimization algorithm.
 
@@ -531,7 +531,7 @@ obj << Optimize;
 
 ### Objective Formula
 
-**Syntax:** obj << Objective Formula
+**Syntax:** obj &lt;&lt; Objective Formula
 
 **Description:** Specifies the formula to be optimized.
 
@@ -549,7 +549,7 @@ obj << Get Objective Formula;
 
 ### Optimize
 
-**Syntax:** obj << Optimize
+**Syntax:** obj &lt;&lt; Optimize
 
 **Description:** Optimizes the current settings in the custom profiler.
 
@@ -566,7 +566,7 @@ obj << Optimize;
 
 ### Paste Settings Script
 
-**Syntax:** obj << Paste Settings Script
+**Syntax:** obj &lt;&lt; Paste Settings Script
 
 **Description:** Pastes the profiler settings from the clipboard to a profiler in another report.
 
@@ -595,7 +595,7 @@ obj2 << Paste Settings Script;
 
 ### Predict for Another Table
 
-**Syntax:** obj << Predict for Another Table( <data table> )
+**Syntax:** obj &lt;&lt; Predict for Another Table( &lt;data table&gt; )
 
 **Description:** Adds prediction columns to a specified data table, using the factors in that table. This option is available only for continuous responses.
 
@@ -620,7 +620,7 @@ obj << Predict For Another Table( dt2 );
 
 ### Prediction Profiler
 
-**Syntax:** obj << Prediction Profiler( state=0|1 )
+**Syntax:** obj &lt;&lt; Prediction Profiler( state=0|1 )
 
 **Description:** Shows or hides the Prediction Profiler.
 
@@ -640,7 +640,7 @@ obj << Prediction Profiler( 1 );
 
 ### Remember Settings
 
-**Syntax:** obj << Remember Settings
+**Syntax:** obj &lt;&lt; Remember Settings
 
 **Description:** Adds an outline node to the report with the values of the factor settings.
 
@@ -660,7 +660,7 @@ obj << Remember Settings;
 
 ### Reset
 
-**Syntax:** obj << Reset
+**Syntax:** obj &lt;&lt; Reset
 
 **Description:** Resets any changes made to the response variables. On by default.
 
@@ -681,7 +681,7 @@ obj << Reset;
 
 ### Save Constraints to Script
 
-**Syntax:** obj << Save Constraints to Script
+**Syntax:** obj &lt;&lt; Save Constraints to Script
 
 **Description:** Saves existing linear constraints to a table script called Constraint.
 
@@ -710,7 +710,7 @@ obj << Save Constraints to Script;
 
 ### Save Constraints to Table
 
-**Syntax:** obj << Save Constraints to Table
+**Syntax:** obj &lt;&lt; Save Constraints to Table
 
 **Description:** Saves existing linear constraints to a new data table.
 
@@ -734,7 +734,7 @@ obj << Save Constraints to Table;
 
 ### Save Expanded Formulas
 
-**Syntax:** obj << Save Expanded Formulas
+**Syntax:** obj &lt;&lt; Save Expanded Formulas
 
 **Description:** Saves a new formula column to the data table. The new column contains resolved formula references within the formulas used as Y variables to see the underlying variables. This is available only after the Expand Intermediate Formulas option is selected in the launch window or the Expand message is specified in the Profiler script.
 
@@ -749,7 +749,7 @@ obj << Save Expanded Formulas;
 
 ### Set Script
 
-**Syntax:** obj << Set Script( Function( {arguments}, <{locals}>, expr ) )
+**Syntax:** obj &lt;&lt; Set Script( Function( {arguments}, &lt;{locals}&gt;, expr ) )
 
 **Description:** Sets a script that is run each time a factor changes.
 
@@ -771,7 +771,7 @@ obj << Term Value( :Silica( 1 ) );
 
 ### Set to Data in Row
 
-**Syntax:** obj << Set to Data in Row( row number )
+**Syntax:** obj &lt;&lt; Set to Data in Row( row number )
 
 **Description:** Assigns the values of a data table row to the X variables in the profiler.
 
@@ -792,7 +792,7 @@ obj << Set to Data in Row( 4 );
 
 ### Show Formulas
 
-**Syntax:** obj << Show Formulas
+**Syntax:** obj &lt;&lt; Show Formulas
 
 **Description:** Opens a script window that contains JSL for all formulas that are being profiled.
 
@@ -812,7 +812,7 @@ obj << Show Formulas;
 
 ### Simulator
 
-**Syntax:** obj << Simulator( state=0|1 )
+**Syntax:** obj &lt;&lt; Simulator( state=0|1 )
 
 **Description:** Shows or hides the Simulator.
 
@@ -832,7 +832,7 @@ obj << Simulator( 1 );
 
 ### Surface Profiler
 
-**Syntax:** obj << Surface Profiler( state=0|1 )
+**Syntax:** obj &lt;&lt; Surface Profiler( state=0|1 )
 
 **Description:** Shows or hides the Surface Profiler.
 
@@ -852,7 +852,7 @@ obj << Surface Profiler( 1 );
 
 ### Term Value
 
-**Syntax:** obj << Term Value( x1( number ),x2( number ), ... )
+**Syntax:** obj &lt;&lt; Term Value( x1( number ),x2( number ), ... )
 
 **Description:** Sets specific term values for factors on the custom profiler.
 
@@ -873,7 +873,7 @@ obj << Term Value( :Silica( 1.78 ), :Sulfur( 2.34 ) );
 
 ### Trips
 
-**Syntax:** obj << Trips( number )
+**Syntax:** obj &lt;&lt; Trips( number )
 
 **Description:** Specifies the number of random starts in the optimization algorithm. Each trip restarts the algorithm at a different starting point.
 
@@ -894,7 +894,7 @@ obj << Optimize;
 
 ### Unthreaded
 
-**Syntax:** obj << Unthreaded( state=0|1 )
+**Syntax:** obj &lt;&lt; Unthreaded( state=0|1 )
 
 **Description:** To suppress any multithreading in evaluating the profile traces, the contour grid, and the optimizer trips.
 
@@ -918,7 +918,7 @@ obj << Maximize Desirability;
 
 ### Action
 
-**Syntax:** obj << Action
+**Syntax:** obj &lt;&lt; Action
 
 **Description:** All-purpose trapdoor within a platform to insert expressions to evaluate. Temporarily sets the DisplayBox and DataTable contexts to the Platform.
 
@@ -936,7 +936,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Syntax:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntax:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Description:** Apply a previously created preset to the object, updating the options and customizations to match the saved settings.
 
@@ -981,7 +981,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Column Switcher
 
-**Syntax:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Syntax:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Description:** Adds a control panel for changing the platform&apos;s variables
 
@@ -999,7 +999,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy Script
 
-**Syntax:** obj << Copy Script
+**Syntax:** obj &lt;&lt; Copy Script
 
 **Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
 
@@ -1019,7 +1019,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Syntax:** obj << Data Table Window
+**Syntax:** obj &lt;&lt; Data Table Window
 
 **Description:** Move the data table window for this analysis to the front.
 
@@ -1039,7 +1039,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Syntax:** obj << Get By Levels
+**Syntax:** obj &lt;&lt; Get By Levels
 
 **Description:** Returns an associative array mapping the by group columns to their values.
 
@@ -1054,7 +1054,7 @@ biv << Get By Levels;
 
 ### Get Container
 
-**Syntax:** obj << Get Container
+**Syntax:** obj &lt;&lt; Get Container
 
 **Description:** Returns a reference to the container box that holds the content for the object.
 
@@ -1106,7 +1106,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Syntax:** obj << Get Data Table
+**Syntax:** obj &lt;&lt; Get Data Table
 
 **Description:** Returns a reference to the data table.
 
@@ -1127,7 +1127,7 @@ Show( N Rows( t ) );
 
 ### Get Script
 
-**Syntax:** obj << Get Script
+**Syntax:** obj &lt;&lt; Get Script
 
 **Description:** Creates a script (JSL) to produce this analysis and returns it as an expression.
 
@@ -1148,7 +1148,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Syntax:** obj << Get Script With Data Table
+**Syntax:** obj &lt;&lt; Get Script With Data Table
 
 **Description:** Creates a script(JSL) to produce this analysis specifically referencing this data table and returns it as an expression.
 
@@ -1169,7 +1169,7 @@ Show( t );
 
 ### Get Timing
 
-**Syntax:** obj << Get Timing
+**Syntax:** obj &lt;&lt; Get Timing
 
 **Description:** Times the platform launch.
 
@@ -1190,7 +1190,7 @@ Show( t );
 
 ### Get Web Support
 
-**Syntax:** obj << Get Web Support
+**Syntax:** obj &lt;&lt; Get Web Support
 
 **Description:** Return a number indicating the level of Interactive HTML support for the display object. 1 means some or all elements are supported. 0 means no support.
 
@@ -1206,7 +1206,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Syntax:** obj << Get Where Expr
+**Syntax:** obj &lt;&lt; Get Where Expr
 
 **Description:** Returns the Where expression for the data subset, if the platform was launched with By() or Where(). Otherwise, returns Empty()
 
@@ -1241,7 +1241,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Syntax:** obj << Local Data Filter
+**Syntax:** obj &lt;&lt; Local Data Filter
 
 **Description:** To filter data to specific groups or ranges, but local to this platform
 
@@ -1293,7 +1293,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Syntax:** obj << Paste Local Data Filter
+**Syntax:** obj &lt;&lt; Paste Local Data Filter
 
 **Description:** Apply the local data filter from the clipboard to the current report.
 
@@ -1314,7 +1314,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**Syntax:** obj << Redo Analysis
+**Syntax:** obj &lt;&lt; Redo Analysis
 
 **Description:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
 
@@ -1334,7 +1334,7 @@ obj << Redo Analysis;
 
 ### Relaunch Analysis
 
-**Syntax:** obj << Relaunch Analysis
+**Syntax:** obj &lt;&lt; Relaunch Analysis
 
 **Description:** Opens the platform launch window and recalls the settings that were used to create the report.
 
@@ -1354,7 +1354,7 @@ obj << Relaunch Analysis;
 
 ### Remove Column Switcher
 
-**Syntax:** obj << Remove Column Switcher
+**Syntax:** obj &lt;&lt; Remove Column Switcher
 
 **Description:** Removes the most recent Column Switcher that has been added to the platform.
 
@@ -1374,7 +1374,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Syntax:** obj << Remove Local Data Filter
+**Syntax:** obj &lt;&lt; Remove Local Data Filter
 
 **Description:** If a local data filter has been created, this removes it and restores the platform to use all the data in the data table directly
 
@@ -1411,9 +1411,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Syntax:** obj << Report;
-
-Report( obj )
+**Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Description:** Returns a reference to the report object.
 
@@ -1435,7 +1433,7 @@ Show( t );
 
 ### Report View
 
-**Syntax:** obj << Report View( "Full"|"Summary" )
+**Syntax:** obj &lt;&lt; Report View( "Full"|"Summary" )
 
 **Description:** The report view determines the level of detail visible in a platform report. Full shows all of the detail, while Summary shows only select content, dependent on the platform. For customized behavior, display boxes support a <<Set Summary Behavior message.
 
@@ -1455,7 +1453,7 @@ obj << Report View( "Summary" );
 
 ### Save Script for All Objects
 
-**Syntax:** obj << Save Script for All Objects
+**Syntax:** obj &lt;&lt; Save Script for All Objects
 
 **Description:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -1475,7 +1473,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Syntax:** obj << Save Script for All Objects To Data Table( <name> )
+**Syntax:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Description:** Saves a script for all report objects to the current data table. This option is useful when you have multiple reports in the window. The script is named after the first platform unless you specify the script name in quotes.
 
@@ -1525,7 +1523,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Syntax:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description:** Create a JSL script to produce this analysis, and save it as a table property in the data table.
 
@@ -1545,7 +1543,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Syntax:** obj << Save Script to Journal
+**Syntax:** obj &lt;&lt; Save Script to Journal
 
 **Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
 
@@ -1565,7 +1563,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Syntax:** obj << Save Script to Report
+**Syntax:** obj &lt;&lt; Save Script to Report
 
 **Description:** Create a JSL script to produce this analysis, and show it in the report itself. Useful to preserve a printed record of what was done.
 
@@ -1585,7 +1583,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Syntax:** obj << Save Script to Script Window
+**Syntax:** obj &lt;&lt; Save Script to Script Window
 
 **Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
 
@@ -1670,7 +1668,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Syntax:** obj << Sync to Data Table Changes
+**Syntax:** obj &lt;&lt; Sync to Data Table Changes
 
 **Description:** Sync with the exclude and data changes that have been made.
 
@@ -1687,7 +1685,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Syntax:** obj << Title( "new title" )
+**Syntax:** obj &lt;&lt; Title( "new title" )
 
 **Description:** Sets the title of the platform.
 
@@ -1707,7 +1705,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Syntax:** obj << Top Report
+**Syntax:** obj &lt;&lt; Top Report
 
 **Description:** Returns a reference to the root node in the report.
 
@@ -1729,7 +1727,7 @@ Show( t );
 
 ### View Web XML
 
-**Syntax:** obj << View Web XML
+**Syntax:** obj &lt;&lt; View Web XML
 
 **Description:** Returns the XML code that is used to create the interactive HTML report.
 

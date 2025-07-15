@@ -6,7 +6,7 @@
 
 ### Action
 
-**语法:** obj << Action
+**语法:** obj &lt;&lt; Action
 
 **说明:** 平台内用于插入表达式以求值的所有用途的陷门。暂时将 DisplayBox 和 DataTable 上下文设置为平台。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**语法:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**语法:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **说明:** 将以前创建的预设应用到对象，从而更新选项和定制以匹配保存的设置。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Copy Script
 
-**语法:** obj << Copy Script
+**语法:** obj &lt;&lt; Copy Script
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其置于剪贴板上。
 
@@ -94,7 +94,7 @@ obj << Copy Script;
 
 ### Get By Levels
 
-**语法:** obj << Get By Levels
+**语法:** obj &lt;&lt; Get By Levels
 
 **说明:** 返回将“依据”组列映射到其值的关联数组。
 
@@ -111,7 +111,7 @@ biv << Get By Levels;
 
 ### Get Container
 
-**语法:** obj << Get Container
+**语法:** obj &lt;&lt; Get Container
 
 **说明:** 返回对保留对象内容的容器框的引用。
 
@@ -166,7 +166,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**语法:** obj << Get Data Table
+**语法:** obj &lt;&lt; Get Data Table
 
 **说明:** 返回对该数据表的引用。
 
@@ -190,7 +190,7 @@ Show( N Rows( t ) );
 
 ### Get Script
 
-**语法:** obj << Get Script
+**语法:** obj &lt;&lt; Get Script
 
 **说明:** 创建生成该分析的脚本 (JSL)，并将其作为表达式返回。
 
@@ -214,7 +214,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**语法:** obj << Get Script With Data Table
+**语法:** obj &lt;&lt; Get Script With Data Table
 
 **说明:** 创建生成该分析的脚本 (JSL) 以专门引用该数据表，并将其作为表达式返回。
 
@@ -238,7 +238,7 @@ Show( t );
 
 ### Get Timing
 
-**语法:** obj << Get Timing
+**语法:** obj &lt;&lt; Get Timing
 
 **说明:** 平台启动过程计时。
 
@@ -262,7 +262,7 @@ Show( t );
 
 ### Get Web Support
 
-**语法:** obj << Get Web Support
+**语法:** obj &lt;&lt; Get Web Support
 
 **说明:** 返回一个数字，指示显示对象的交互式 HTML 支持的水平。1 表示支持部分或全部元素。0 表示不支持。
 
@@ -278,7 +278,7 @@ Show( s );
 
 ### Get Where Expr
 
-**语法:** obj << Get Where Expr
+**语法:** obj &lt;&lt; Get Where Expr
 
 **说明:** 若平台是使用 By() 或 Where() 启动的，则返回数据子集的 Where 表达式。否则返回 Empty()
 
@@ -368,9 +368,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**语法:** obj << Report;
-
-Report( obj )
+**语法:** obj &lt;&lt; Report;Report( obj )
 
 **说明:** 返回对该报表对象的引用。
 
@@ -395,7 +393,7 @@ Show( t );
 
 ### Save Script for All Objects
 
-**语法:** obj << Save Script for All Objects
+**语法:** obj &lt;&lt; Save Script for All Objects
 
 **说明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -418,7 +416,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**语法:** obj << Save Script for All Objects To Data Table( <name> )
+**语法:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **说明:** 将所有报表对象的脚本保存至当前数据表。当您在该窗口中具有多个报表时，该选项很有用。除非您在引号中指定脚本名称，否则脚本将以第一个平台命名。
 
@@ -470,7 +468,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**语法:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**语法:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其作为表属性保存至数据表中。
 
@@ -493,7 +491,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**语法:** obj << Save Script to Journal
+**语法:** obj &lt;&lt; Save Script to Journal
 
 **说明:** 创建生成该分析的 JSL 脚本，并将一个按钮添加至包含该脚本的记录中。
 
@@ -516,7 +514,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**语法:** obj << Save Script to Report
+**语法:** obj &lt;&lt; Save Script to Report
 
 **说明:** 创建生成该分析的 JSL 脚本，并在报表中显示。有助于保留打印的已完成操作记录。
 
@@ -539,7 +537,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**语法:** obj << Save Script to Script Window
+**语法:** obj &lt;&lt; Save Script to Script Window
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其追加至当前的脚本文本窗口中。
 
@@ -627,7 +625,7 @@ dt << Distribution(
 
 ### Title
 
-**语法:** obj << Title( "new title" )
+**语法:** obj &lt;&lt; Title( "new title" )
 
 **说明:** 设置平台的标题。
 
@@ -650,7 +648,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**语法:** obj << Top Report
+**语法:** obj &lt;&lt; Top Report
 
 **说明:** 返回对报表中根节点的引用。
 
@@ -675,7 +673,7 @@ Show( t );
 
 ### View Web XML
 
-**语法:** obj << View Web XML
+**语法:** obj &lt;&lt; View Web XML
 
 **说明:** 返回用于创建交互式 HTML 报表的 XML 代码。
 
@@ -716,7 +714,7 @@ fd2 = Formula Depot[1];
 
 ### Add Formula from Column
 
-**语法:** 预测变量 = obj << Add Formula from Column( Table(name|reference), Columns(name|index|reference, ...), <Expand Intermediate Formulas(number)> )
+**语法:** 预测变量 = obj &lt;&lt; Add Formula from Column( Table(name|reference), Columns(name|index|reference, ...), &lt;Expand Intermediate Formulas(number)&gt; )
 
 **说明:** 将给定表中的现有预测公式列添加至“公式存储库”
 
@@ -735,7 +733,7 @@ mp << Generate Python Code;
 
 ### Copy Formulas as Functions
 
-**语法:** obj << Copy Formulas as Functions( <Formulas(name|index|reference, ...)> )
+**语法:** obj &lt;&lt; Copy Formulas as Functions( &lt;Formulas(name|index|reference, ...)&gt; )
 
 **说明:** 将给定模型作为标量 Function() 语句复制到剪贴板。
 
@@ -758,7 +756,7 @@ Show( text );
 
 ### Copy Formulas as Transforms
 
-**语法:** obj << Copy Formulas as Transforms( <Table(name|reference)>, <Formulas(name|index|reference, ...)> )
+**语法:** obj &lt;&lt; Copy Formulas as Transforms( &lt;Table(name|reference)&gt;, &lt;Formulas(name|index|reference, ...)&gt; )
 
 **说明:** 将给定模型复制到剪贴板 Transform Column() 语句中。
 
@@ -782,7 +780,7 @@ Show( text );
 
 ### Copy Scripts
 
-**语法:** obj << Copy Scripts( <Formulas(name|index|reference, ...)> )
+**语法:** obj &lt;&lt; Copy Scripts( &lt;Formulas(name|index|reference, ...)&gt; )
 
 **说明:** 将“公式存储库”中储存的给定公式的脚本复制到剪贴板。
 
@@ -803,7 +801,7 @@ Show( text );
 
 ### Generate C Code
 
-**语法:** obj << Generate C Code( <Formulas(name|index|reference, ...)>, <No Editor> )
+**语法:** obj &lt;&lt; Generate C Code( &lt;Formulas(name|index|reference, ...)&gt;, &lt;No Editor&gt; )
 
 **说明:** 为“公式存储库”中储存的给定模型生成 C 代码。输出写到编辑器窗口，若给定了“无编辑器”参数，则输出写到字符串变量。
 
@@ -827,7 +825,7 @@ fd << Generate C Code( Formulas( predictor ) );
 
 ### Generate JavaScript Code
 
-**语法:** obj << Generate JavaScript Code( <Formulas(name|index|reference, ...)>, <No Editor> )
+**语法:** obj &lt;&lt; Generate JavaScript Code( &lt;Formulas(name|index|reference, ...)&gt;, &lt;No Editor&gt; )
 
 **说明:** 为“公式存储库”中储存的给定模型生成 JavaScript 代码。输出写到编辑器窗口，若给定了“无编辑器”参数，则输出写到字符串变量。
 
@@ -851,7 +849,7 @@ fd << Generate JavaScript Code( Formulas( predictor ) );
 
 ### Generate Python Code
 
-**语法:** obj << Generate Python Code( <Formulas(name|index|reference, ...)>, <No Editor> )
+**语法:** obj &lt;&lt; Generate Python Code( &lt;Formulas(name|index|reference, ...)&gt;, &lt;No Editor&gt; )
 
 **说明:** 为“公式存储库”中储存的给定模型生成 Python 代码。输出写到编辑器窗口，若给定了“无编辑器”参数，则输出写到字符串变量。
 
@@ -875,7 +873,7 @@ fd << Generate Python Code( Formulas( predictor ) );
 
 ### Generate SAS Code
 
-**语法:** obj << Generate SAS Code( <Formulas(name|index|reference, ...)>, <No Editor> )
+**语法:** obj &lt;&lt; Generate SAS Code( &lt;Formulas(name|index|reference, ...)&gt;, &lt;No Editor&gt; )
 
 **说明:** 为“公式存储库”中储存的给定模型生成 SAS (DS2) 代码。输出写到编辑器窗口，若给定了“无编辑器”参数，则输出写到字符串变量。
 
@@ -899,7 +897,7 @@ fd << Generate SAS Code( Formulas( predictor ) );
 
 ### Generate SQL Code
 
-**语法:** obj << Generate SQL Code( <Formulas(name|index|reference, ...)>, <No Editor>, <QUOTE_STYLE> )
+**语法:** obj &lt;&lt; Generate SQL Code( &lt;Formulas(name|index|reference, ...)&gt;, &lt;No Editor&gt;, &lt;QUOTE_STYLE&gt; )
 
 **说明:** 为“公式存储库”中储存的给定模型生成 SQL 代码（适合在 SQL Select 语句中使用的列定义）。输出写到编辑器窗口，若给定了“无编辑器”参数，则输出写到编辑器窗口或字符串变量。QUOTE_STYLE 是表示 JMP 支持的 SQL 数据库（MySQL、Impala、Hive 等）之一的字符串或 SQL 引用类型（“下划线”、“反引号”、“括号”或“双引号”）。
 
@@ -926,7 +924,7 @@ fd << Generate SQL Code( Formulas( predictor ), "MySQL" );
 
 ### Model Comparison
 
-**语法:** obj << Model Comparison( <Table(name|reference)>, <Formulas(name|index|reference, ...)> )
+**语法:** obj &lt;&lt; Model Comparison( &lt;Table(name|reference)&gt;, &lt;Formulas(name|index|reference, ...)&gt; )
 
 **说明:** 基于给定表的内容，使用模型比较实用工具比较“公式存储库”中储存的给定模型。
 
@@ -957,7 +955,7 @@ mc_plat = fd << ModelComparison( Formulas( 1, 2 ) );
 
 ### Profiler
 
-**语法:** obj << Profiler( <Table(name|reference)>, <Formulas(name|index|reference, ...)> )
+**语法:** obj &lt;&lt; Profiler( &lt;Table(name|reference)&gt;, &lt;Formulas(name|index|reference, ...)&gt; )
 
 **说明:** 基于给定表的内容，使用刻画器实用工具刻画“公式存储库”中储存的给定模型。
 
@@ -983,7 +981,7 @@ fd << Profiler( Formulas( nl_mp, nn_mp ) );
 
 ### Remove Model Comparison
 
-**语法:** obj << Remove Model Comparison
+**语法:** obj &lt;&lt; Remove Model Comparison
 
 **说明:** 从当前“公式存储库”中删除所有“模型比较”报表。
 
@@ -1002,7 +1000,7 @@ fd << Remove Model Comparison();
 
 ### Remove Profiler
 
-**语法:** obj << Remove Profiler
+**语法:** obj &lt;&lt; Remove Profiler
 
 **说明:** 从当前“公式存储库”中删除所有刻画器。
 
@@ -1021,7 +1019,7 @@ fd << Remove Profiler();
 
 ### Rename Formula Depot
 
-**语法:** obj << Rename Formula Depot( text )
+**语法:** obj &lt;&lt; Rename Formula Depot( text )
 
 ```jsl
 
@@ -1034,7 +1032,7 @@ fd << Rename Formula Depot( "New Name" );
 
 ### Run Scripts
 
-**语法:** obj << Run Scripts( <Table(name|reference)>, <Formulas(name|index|reference, ...)> )
+**语法:** obj &lt;&lt; Run Scripts( &lt;Table(name|reference)&gt;, &lt;Formulas(name|index|reference, ...)&gt; )
 
 **说明:** 将给定模型作为一个或多个公式列保存至当前或给定 JMP 数据表。
 
@@ -1063,7 +1061,7 @@ fd2 << Run Scripts( Table( dt2 ), Formulas( 1 ) );
 
 ### Show Scripts
 
-**语法:** obj << Show Scripts( <Formulas(name|index|reference, ...)> )
+**语法:** obj &lt;&lt; Show Scripts( &lt;Formulas(name|index|reference, ...)&gt; )
 
 **说明:** 打开新的“公式”窗口（或追加至打开的“公式”窗口），它包含“公式存储库”中储存的给定公式的脚本。
 

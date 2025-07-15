@@ -2,8 +2,6 @@
 
 
 
-## 函数
-
 ### As C Expr
 
 **语法:** y = As C Expr( x )

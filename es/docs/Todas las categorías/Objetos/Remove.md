@@ -6,7 +6,7 @@
 
 ### Remove
 
-**Sintaxis:** obj << Remove
+**Sintaxis:** obj &lt;&lt; Remove
 
 **JMP Versión agregada:** 18
 

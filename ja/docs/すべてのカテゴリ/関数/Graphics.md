@@ -2,8 +2,6 @@
 
 
 
-## 関数
-
 ### Add Color Theme
 
 **説明:** 新しいカスタムカラーテーマを作成し、テーマピッカーに登録する。
@@ -73,7 +71,7 @@ New Window( "Example",
 
 ### Back Color
 
-**構文:** Back Color( <name|index|rgbList> )
+**構文:** Back Color( &lt;name|index|rgbList&gt; )
 
 **説明:** Text()関数でErasedモードを選択した時の背景色を設定する。
 
@@ -93,7 +91,7 @@ New Window( "Example",
 
 ### Blend Colors
 
-**構文:** color = Blend Colors( color1, color2, <percent2>, <colorSpace>, <hueDirection> )
+**構文:** color = Blend Colors( color1, color2, &lt;percent2&gt;, &lt;colorSpace&gt;, &lt;hueDirection&gt; )
 
 **説明:** 2つの色を混ぜる。割合と色空間を指定することができる。
 
@@ -231,7 +229,7 @@ Show( Char To Path( "M10 10 L50 10 L30 50 Z M20 20 L40 20 L30 40 Z" ) );
 
 ### Circle
 
-**構文:** Circle( {x, y}, radius|PixelRadius( px ), ..., <"FILL"> )
+**構文:** Circle( {x, y}, radius|PixelRadius( px ), ..., &lt;"FILL"&gt; )
 
 **説明:** {x, y}を中心とした円を描く。縦軸の値に基づいた数値またはピクセルで半径を指定する。半径をピクセルで指定した場合は縦軸が変更されても円は変化しない。複数の円を描く場合は、引数を任意の順序で繰り返す。"FILL"を使用する場合は、必ず最後に配置する。"FILL"を使用すると、円がPenColorの色で線画されるのではなく、FillColorの色で塗りつぶされる。
 
@@ -262,7 +260,7 @@ New Window( "Example",
 
 ### Color Difference
 
-**構文:** color = Color Difference( color1, color2, <difference metric>)
+**構文:** color = Color Difference( color1, color2, &lt;difference metric&gt;)
 
 **説明:** 2つの色の差を戻す。差は、指定された指標に基づく。
 
@@ -363,7 +361,7 @@ Color To RGB( HLS Color( 30 / 360, 0.5, 1 ) );
 
 ### Contour
 
-**構文:** Contour( xVector, yVector, zGridMatrix, zContours, < <<zColor( color, option )>, < <<Fill|Fill Between|Fill Below|Fill Above>, < <<Transparency(vector)> )
+**構文:** Contour( xVector, yVector, zGridMatrix, zContours, &lt; &lt;&lt;zColor( color, option )&gt;, &lt; &lt;&lt;Fill|Fill Between|Fill Below|Fill Above&gt;, &lt; &lt;&lt;Transparency(vector)&gt; )
 
 **説明:** 指定したグリッド値で等高線を描画する。指定された色の数が等高線の数より少ない場合、Interpolate ColorsまたはCycle Colorsのオプションによって色の適用方法が決まる。
 
@@ -427,7 +425,7 @@ New Window( "Example",
 
 ### Contour Function
 
-**構文:** Contour Function( zExpr, xName, yName, z|zMatrix, < <<XGrid( min, max, incr )>, < <<YGrid( min, max, incr )>, < <<ZColor( color, option )>, < <<ZLabeled>, < <<Filled>, < <<FillBetween>, < <<Ternary>, < <<Transparency( t )> )
+**構文:** Contour Function( zExpr, xName, yName, z|zMatrix, &lt; &lt;&lt;XGrid( min, max, incr )&gt;, &lt; &lt;&lt;YGrid( min, max, incr )&gt;, &lt; &lt;&lt;ZColor( color, option )&gt;, &lt; &lt;&lt;ZLabeled&gt;, &lt; &lt;&lt;Filled&gt;, &lt; &lt;&lt;FillBetween&gt;, &lt; &lt;&lt;Ternary&gt;, &lt; &lt;&lt;Transparency( t )&gt; )
 
 **説明:** 式を評価し、xNameとyNameのグリッド上で等高線を描く。colorは、数値、行列、RGB値のリスト、色名のリスト、またはカラーテーマで指定できる。透明度tは、数値または行列で指定できる。Ternaryオプションを指定した場合、等高線は三角図の座標に設定される。
 
@@ -475,7 +473,7 @@ New Window( "Example",
 
 ### Drag Line
 
-**構文:** Drag Line( xMatrixName, yMatrixName, <dragScript>, <MouseUpScript> )
+**構文:** Drag Line( xMatrixName, yMatrixName, &lt;dragScript&gt;, &lt;MouseUpScript&gt; )
 
 **説明:** 指定の点に線を描く。ただしLineとは異なり、画面で点をドラッグでき、ドラッグすると引数の行列の値が更新される。
 
@@ -497,7 +495,7 @@ New Window( "Example",
 
 ### Drag Marker
 
-**構文:** Drag Marker( xMatrixName, yMatrixName, <dragScript>, <MouseUpScript> )
+**構文:** Drag Marker( xMatrixName, yMatrixName, &lt;dragScript&gt;, &lt;MouseUpScript&gt; )
 
 **説明:** 指定された点に移動可能なマーカーを描画する。行列の値はマーカーの移動に合わせて更新される。
 
@@ -519,7 +517,7 @@ New Window( "Example",
 
 ### Drag Polygon
 
-**構文:** Drag Polygon( xMatrixName, yMatrixName, <dragScript>, <MouseUpScript> )
+**構文:** Drag Polygon( xMatrixName, yMatrixName, &lt;dragScript&gt;, &lt;MouseUpScript&gt; )
 
 **説明:** 指定された点の塗りつぶした多角形を描く。ただしPolygonとは異なり、画面で点をドラッグでき、ドラッグすると引数の行列の値が更新される。
 
@@ -541,7 +539,7 @@ New Window( "Example",
 
 ### Drag Rect
 
-**構文:** Drag Rect( xMatrixName, yMatrixName, <dragScript>, <MouseUpScript> )
+**構文:** Drag Rect( xMatrixName, yMatrixName, &lt;dragScript&gt;, &lt;MouseUpScript&gt; )
 
 **説明:** 指定の点に長方形を描く。ただしRectとは異なり、画面で長方形の角をドラッグでき、ドラッグすると引数の行列の値が更新される。
 
@@ -563,7 +561,7 @@ New Window( "Example",
 
 ### Drag Text
 
-**構文:** Drag Text( xMatrixName, yMatrixName, text, <dragScript>, <MouseUpScript> )
+**構文:** Drag Text( xMatrixName, yMatrixName, text, &lt;dragScript&gt;, &lt;MouseUpScript&gt; )
 
 **説明:** 指定された点にテキストを描画する。ただし、Text()関数とは異なり、点は画面でドラッグでき、ドラッグされるたびにxMatrixNameとyMatrixNameの行列引数内の値が更新される。引数textは、1つの文字列でも文字列のリストでもよい。
 
@@ -585,7 +583,7 @@ New Window( "Example",
 
 ### Fill Color
 
-**構文:** Fill Color( <name|index|rgbList> )
+**構文:** Fill Color( &lt;name|index|rgbList&gt; )
 
 **説明:** 塗りつぶしの色を設定する。
 
@@ -658,7 +656,7 @@ Get Color Theme Detail( "JMP Default" );
 
 ### Get Color Theme Names
 
-**構文:** {list of names} = Get Color Theme Names(<kind>)
+**構文:** {list of names} = Get Color Theme Names(&lt;kind&gt;)
 
 **説明:** オプションパラメータkindに一致するカラーテーマの名前のリストを戻す。kind には次のいずれかを指定可能。「continuous」、「categorical」、「sequential」、「diverging」、「qualitative」、「chromatic」。
 
@@ -684,7 +682,7 @@ Get Color Theme Names( "sequential" );
 
 ### Gradient Function
 
-**構文:** Gradient Function( zExpr, xName, yName, zLimits, zColor( color list or matrix ), < <<XGrid( min, max, incr )>, < <<YGrid( min, max, incr )>, < <<Transparency( t )> )
+**構文:** Gradient Function( zExpr, xName, yName, zLimits, zColor( color list or matrix ), &lt; &lt;&lt;XGrid( min, max, incr )&gt;, &lt; &lt;&lt;YGrid( min, max, incr )&gt;, &lt; &lt;&lt;Transparency( t )&gt; )
 
 **説明:** グラフを2色間のグラデーションで塗る。引数zExprは後続の2つの変数(xNameとyName)の関数。ベクトルzLimitsはzExprの値の範囲を指定する。引数zColorは、グラデーションの生成に使われる2つの色を定義するベクトルまたはリスト引数。Transparencyは、グリッド全体に適用される1つの値。
 
@@ -774,7 +772,7 @@ New Window( "Color Wheel",
 
 ### Handle
 
-**構文:** Handle( xPos, yPos, dragScript, <mouseUpScript> )
+**構文:** Handle( xPos, yPos, dragScript, &lt;mouseUpScript&gt; )
 
 **説明:** xPosとyPosで指定された座標に四角いマーカーを描画する。マーカー上でマウスが押されているときに、スクリプトdragScriptが繰り返し実行される。グローバル変数のxとyにマウスの座標値が一時的に設定される。マウスボタンが放された後に、スクリプトmouseUpScriptが実行される。
 
@@ -802,7 +800,7 @@ New Window( "Example",
 
 ### Heat Color
 
-**構文:** y = Heat Color( x ); y = Heat Color( x, < <<theme> )
+**構文:** y = Heat Color( x ); y = Heat Color( x, &lt; &lt;&lt;theme&gt; )
 
 **説明:** 0～1の値に対応する色を戻す。デフォルトのテーマは「青->グレー->赤」("Blue to Gray to Red")。この関数では、セルプロットでサポートされているカラーテーマがすべてサポートされている。引数は行列であっても良い。
 
@@ -855,7 +853,7 @@ New Window( "Example",
 
 ### In Polygon
 
-**構文:** b = In Polygon( x, y, xMatrix, <yMatrix> )
+**構文:** b = In Polygon( x, y, xMatrix, &lt;yMatrix&gt; )
 
 **説明:** 点(x,y)がベクトル引数によって定義された多角形の内側であれば1を戻し、そうでない場合は0を戻す。
 
@@ -870,7 +868,7 @@ In Polygon( 11, 22, [10 20 30], [10 30 20] );
 
 ### Level Color
 
-**構文:** y = Level Color( i ); y = Level Color( i, n ); y = Level Color( i, n, <theme> ); y = Level Color( i, <theme> )
+**構文:** y = Level Color( i ); y = Level Color( i, n ); y = Level Color( i, n, &lt;theme&gt; ); y = Level Color( i, &lt;theme&gt; )
 
 **説明:** カテゴリの色を戻す。ここで、iはカテゴリの水準。nはカテゴリの数（オプション）。themeは「列情報」ダイアログの「値の色」コンボボックスに使用されるカラーテーマ。（［JMP標準］がデフォルトのテーマ。）カテゴリのインデックスは1以上、かつ、コールで指定されたカテゴリ数またはテーマによって定義されたカテゴリ数以下でなければならない。第2引数が文字である場合は、それがカラーテーマを示し、nは指定しない。
 
@@ -892,7 +890,7 @@ New Window( "Color Bar",
 
 ### Line
 
-**構文:** Line( {x1, y1}, {x2, y2}, ..., < <<Value Space( 0|1 ) >, < <<Smooth( tension, domain, min response, max response ) > ); Line( xMatrix, yMatrix, < <<Value Space(0 | 1) >, < <<Smooth( tension, domain, min response, max response ) > )
+**構文:** Line( {x1, y1}, {x2, y2}, ..., &lt; &lt;&lt;Value Space( 0|1 ) &gt;, &lt; &lt;&lt;Smooth( tension, domain, min response, max response ) &gt; ); Line( xMatrix, yMatrix, &lt; &lt;&lt;Value Space(0 | 1) &gt;, &lt; &lt;&lt;Smooth( tension, domain, min response, max response ) &gt; )
 
 **説明:** 直線や折れ線、もしくは、滑らかな曲線を引く。デフォルトのケースでは、2つの点の間に直線が引かれる。Value Spaceが指定されている場合は、元のスケールでは直線だが、軸のスケールでは曲線となる曲線が描かれる。Smoothオプションが指定された場合、 tension、domain dimension、min response、max responseによって制約された、平滑曲線が描かれる。
 
@@ -1047,7 +1045,7 @@ g << Set Y Axis(
 
 ### Marker
 
-**構文:** Marker( <rs>, {x1, y1}, {x2, y2}, ... ); Marker( <rs>, xMatrix, yMatrix )
+**構文:** Marker( &lt;rs&gt;, {x1, y1}, {x2, y2}, ... ); Marker( &lt;rs&gt;, xMatrix, yMatrix )
 
 **説明:** 指定された座標にマーカーを描く。
 
@@ -1082,7 +1080,7 @@ New Window( "Example",
 
 ### Mousetrap
 
-**構文:** Mousetrap( dragScript, <mouseUpScript> )
+**構文:** Mousetrap( dragScript, &lt;mouseUpScript&gt; )
 
 **説明:** マウスがグラフ内で押され、他のグラフオブジェクトによって処理されていない間、dragScriptを反復して評価する。グローバル変数xおよびyは、スクリプトの実行前にマウスの座標値に設定され、処理後、元の値に戻される。マウスボタンが放されると、スクリプトmouseUpScriptが実行される。
 
@@ -1108,7 +1106,7 @@ New Window( "Example",
 
 ### New Heat Image
 
-**構文:** New Heat Image( Matrix, <Color Theme / gradient ( ... )>
+**構文:** New Heat Image( Matrix, &lt;Color Theme / gradient ( ... )&gt;
 
 **説明:** 指定した行列とカラーテーマ、グラデーションに基づいてヒートマップのイメージを作成する。
 
@@ -1156,7 +1154,7 @@ New Window( "small and big",
 
 ### Normal Contour
 
-**構文:** Normal Contour( prob, meanMatrix, stdMatrix, corrMatrix, <colorsMatrix>, <fill=0> )
+**構文:** Normal Contour( prob, meanMatrix, stdMatrix, corrMatrix, &lt;colorsMatrix&gt;, &lt;fill=0&gt; )
 
 **説明:** 二変量正規分布の等高線を描く。k個の母集団に対する等高線を描くことができる。prob引数は累積確率か、または複数の累積確率を行列で指定することも可。引数meanMatrixおよび引数stdsMatrixはk行2列、引数corrMatrixはk行1列の行列。引数colorsMatrixにはk個の等高線の色を指定する。色は、JSL色の整数値、またはRGB Color()やHLS Color()などのJSL色関数の戻り値で指定。引数fillは、塗りつぶしの色の透明度を指定する。
 
@@ -1184,7 +1182,7 @@ New Window( "Example",
 
 ### Oval
 
-**構文:** Oval( left, top, right, bottom, <fill=0> )
+**構文:** Oval( left, top, right, bottom, &lt;fill=0&gt; )
 
 **説明:** 楕円を描く。指定された長方形内に楕円は描かれる。fillが0でない場合は、塗りつぶした楕円が描かれる。
 
@@ -1207,7 +1205,7 @@ New Window( "Example",
 
 ### Path
 
-**構文:** Path( pathMatrix|pathText, <fill=0> )
+**構文:** Path( pathMatrix|pathText, &lt;fill=0&gt; )
 
 **説明:** fillの値が0の場合は指定のパスに沿って線を描き、fillの値が0でない場合は指定のパスの内側を塗りつぶす。パスは、N x 3の行列として、または、テキストで指定する。パスを行列で指定する場合は、x、y、およびパスに含まれる各点のフラグで構成する。フラグの値は、0(コントロール点)、1(移動)、2(線分)、3(3次ベジエ曲線)または負の値(点がパスの終点でもある場合)。パスをテキストで指定する場合には、SVG構文を用いる。
 
@@ -1243,7 +1241,7 @@ Path To Char( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] );
 
 ### Pen Color
 
-**構文:** Pen Color( <name|index|rgbList> )
+**構文:** Pen Color( &lt;name|index|rgbList&gt; )
 
 **説明:** 線を描画する色を設定する。
 
@@ -1263,7 +1261,7 @@ New Window( "Example",
 
 ### Pen Size
 
-**構文:** Pen Size( <x> )
+**構文:** Pen Size( &lt;x&gt; )
 
 **説明:** 描画線のペンサイズをピクセル単位で設定する。
 
@@ -1283,7 +1281,7 @@ New Window( "Example",
 
 ### Pick Color
 
-**構文:** color = Pick Color( <window title>, <name|index|rgbList> )
+**構文:** color = Pick Color( &lt;window title&gt;, &lt;name|index|rgbList&gt; )
 
 **説明:** 標準のカラーピッカー(色を選択する画面)で選択された色を戻す。
 
@@ -1306,7 +1304,7 @@ New Window( "Example",
 
 ### Pick Color Theme
 
-**構文:** theme = Pick Color Theme( <window title>, <Color Theme(name|specification)>, <Type("Continuous" | "Sequential" | "Bad to Good" | "Categorical")>)
+**構文:** theme = Pick Color Theme( &lt;window title&gt;, &lt;Color Theme(name|specification)&gt;, &lt;Type("Continuous" | "Sequential" | "Bad to Good" | "Categorical")&gt;)
 
 **説明:** 標準のカラーテーマピッカーで選択されたカラーテーマを戻す。初期テーマは明示的に指定するか、またはTypeを指定して環境設定で設定されているテーマを使用できる。
 
@@ -1443,7 +1441,7 @@ New Window( "Example",
 
 ### Pixel Path
 
-**構文:** PixelPath( h, v, pathMatrix|pathText, <fill=0>, <scale=1.0>, <orient={0.0,1.0}> )
+**構文:** PixelPath( h, v, pathMatrix|pathText, &lt;fill=0&gt;, &lt;scale=1.0&gt;, &lt;orient={0.0,1.0}&gt; )
 
 **説明:** 指定されたピクセルの座標にそって、線や塗りつぶしの図形を描く。fillが0の場合は線を描き、0以外の場合は塗りつぶした図形を描く。座標は、N x 3の行列、または、テキストで指定する。座標を行列で指定する場合は、x座標、y座標、および、それらの座標の各点に対するフラグで構成する。フラグの値は、0(コントロール点)、1(移動)、2(線分)、3(3次ベジエ曲線)または負の値(点がパスの終点でもある場合)。座標をテキストで指定する場合は、SVG構文を用いる。座標は、オプションのパラメータに応じて、基点、方向、および尺度が決められる。
 
@@ -1484,7 +1482,7 @@ New Window( "Example",
 
 ### Pixel Text
 
-**構文:** Pixel Text( <properties>, {h, v}, text, ... )
+**構文:** Pixel Text( &lt;properties&gt;, {h, v}, text, ... )
 
 **説明:** ピクセル位置{h, v}に移動し、引数textで指定したテキストを描画する。名前付きプロパティ引数には、Center Justified、Right Justified、Top Align、Bottom Align、Erased、Boxed、Counterclockwise、Clockwiseがある。位置引数、名前付き引数、および文字列は任意の順で組み合わせることができる。
 
@@ -1514,7 +1512,7 @@ New Window( "Example",
 
 ### Polygon
 
-**構文:** Polygon( {x1, y1}, {x2, y2}, ..., <<fill(bool) ); Polygon( xMatrix, <yMatrix>, <<fill(bool) )
+**構文:** Polygon( {x1, y1}, {x2, y2}, ..., &lt;&lt;fill(bool) ); Polygon( xMatrix, &lt;yMatrix&gt;, &lt;&lt;fill(bool) )
 
 **説明:** 点で指定された多角形を描画する。
 
@@ -1535,9 +1533,7 @@ New Window( "Example",
 
 ### Polygon Area
 
-**構文:** area = Polygon Area( {x1, y1}, {x2, y2}, ... );
-
-area = Polygon Area( xMatrix, yMatrix )
+**構文:** area = Polygon Area( {x1, y1}, {x2, y2}, ... );area = Polygon Area( xMatrix, yMatrix )
 
 **説明:** 指定した多角形の面積を計算する。
 
@@ -1563,9 +1559,7 @@ area = Polygon Area( [10 20 30], [10 30 20] );
 
 ### Polygon Centroid
 
-**構文:** {cx, cy} = Polygon Centroid( {x1, y1}, {x2, y2}, ... );
-
-centroid = Polygon Centroid( xMatrix, yMatrix )
+**構文:** {cx, cy} = Polygon Centroid( {x1, y1}, {x2, y2}, ... );centroid = Polygon Centroid( xMatrix, yMatrix )
 
 **説明:** 指定した多角形の重心を計算する。
 
@@ -1591,7 +1585,7 @@ centroid = Polygon Centroid( [10 20 30], [10 30 20] );
 
 ### Polygon Simplify
 
-**構文:** rows = Polygon Simplify( xMatrix|xyMatrix, <yMatrix>, <<<detail factor(f=200)>, <<<multiple(ids)>, <<<geodesic(bool)> )
+**構文:** rows = Polygon Simplify( xMatrix|xyMatrix, &lt;yMatrix&gt;, &lt;&lt;&lt;detail factor(f=200)&gt;, &lt;&lt;&lt;multiple(ids)&gt;, &lt;&lt;&lt;geodesic(bool)&gt; )
 
 **説明:** 多角形から、余分な詳細を削除し、残りの点のインデックスを戻す。detail factorは、詳細の許容誤差の逆数に比例する。multiple(ids)は、多数の多角形をまとめて単純化し、共通の辺が同じに扱われるようにすることを示す。idsは、各点を行とした行列。geodesic(1)は、座標が測地系の緯度と経度であることを示す。
 
@@ -1708,7 +1702,7 @@ New Window( "RGB Color Example",
 
 ### Rect
 
-**構文:** Rect( left, top, right, bottom, <fill=0> ); Rect( {left, top}, {right, bottom} )
+**構文:** Rect( left, top, right, bottom, &lt;fill=0&gt; ); Rect( {left, top}, {right, bottom} )
 
 **説明:** 長方形を描く。塗りつぶし(fill)が0でない場合は、塗りつぶしたもの。
 
@@ -1731,7 +1725,7 @@ New Window( "Example",
 
 ### Remove Color Theme
 
-**構文:** Remove Color Theme("Name"|{"Name", <flags>, {color, ...}, <{position, ...}>})
+**構文:** Remove Color Theme("Name"|{"Name", &lt;flags&gt;, {color, ...}, &lt;{position, ...}&gt;})
 
 **説明:** グローバルリストから、名前またはフルカラーテーマオブジェクトとして指定されたカスタムカラーテーマを削除する。
 
@@ -1746,9 +1740,7 @@ Remove Color Theme( "Yellow To Blue" );
 
 ### Text
 
-**構文:** Text( <properties>, {x, y}, text, ... )
-
-Text( {left, top, right, bottom}, text )
+**構文:** Text( &lt;properties&gt;, {x, y}, text, ... )Text( {left, top, right, bottom}, text )
 
 **説明:** {x, y}の位置に移動して引数textで指定されたテキストを描く。名前付き引数には、Center Justified、Right Justified、Erased、Boxed、Counterclockwise、Clockwiseがある。位置引数、名前付き引数、文字列は、任意の順序で指定できる。4組のx-y座標を使ってテキストのボックスを指定することもできる。その場合、プロパティは使用されない。
 
@@ -1784,7 +1776,7 @@ New Window( "Example",
 
 ### Text Color
 
-**構文:** Text Color( <name|index|rgbList> )
+**構文:** Text Color( &lt;name|index|rgbList&gt; )
 
 **説明:** テキストを描画する色を設定する。
 
@@ -1804,7 +1796,7 @@ New Window( "Example",
 
 ### Text Font
 
-**構文:** {nm, sz, st, an} = Text Font(fontName, <size>, <"bold italic underline strikeout">, <angle>
+**構文:** {nm, sz, st, an} = Text Font(fontName, &lt;size&gt;, &lt;"bold italic underline strikeout"&gt;, &lt;angle&gt;
 
 **説明:** 後続のText()で使用するフォントを設定する。引数なしで使用すると、現在のフォント設定が取得できる。Angleは時計回りの角度。
 
@@ -1891,7 +1883,7 @@ To Color Space( {0.941, 0.196, 0.274, "lRGB", 0.871, 0.032, 0.061}, "HLS" );
 
 ### Transparency
 
-**構文:** Transparency( <alpha> )
+**構文:** Transparency( &lt;alpha&gt; )
 
 **説明:** 描画コマンドで使用される透明度を設定する。alphaの範囲は0(透明)～1(不透明、デフォルト)。これをサポートしていないオペレーティングシステムもある。
 
@@ -1957,7 +1949,7 @@ New Window( "Example",
 
 ### X Function
 
-**構文:** X Function( xExpr, yName, <properties> )
+**構文:** X Function( xExpr, yName, &lt;properties&gt; )
 
 **説明:** 関数の値をX軸上にプロットする。yNameの値をY軸に沿って変化させたときの式xExprの値が描かれる。次の名前付き引数を追加で指定できる。Min(下限値)、Max(上限値)、Fill(0もしくは1)、Inc(インクリメントの上限値)。
 
@@ -2029,7 +2021,7 @@ New Window( "Example",
 
 ### X Scale
 
-**構文:** X Scale( <xMin>, <xMax> )
+**構文:** X Scale( &lt;xMin&gt;, &lt;xMax&gt; )
 
 **説明:** グラフィックフレームに対して新しいスケールを設定。
 
@@ -2091,7 +2083,7 @@ New Window( "Spiral",
 
 ### Y Function
 
-**構文:** Y Function( yExpr, xName, <properties> )
+**構文:** Y Function( yExpr, xName, &lt;properties&gt; )
 
 **説明:** 関数の値をY軸上にプロットする。xNameの値をX軸に沿って変化させたときの式yExprの値が描かれる。次の名前付き引数を追加で指定できる。Min(下限値)、Max(上限値)、Fill(0もしくは1)、Inc(インクリメントの上限値)。
 
@@ -2163,7 +2155,7 @@ New Window( "Example",
 
 ### Y Scale
 
-**構文:** Y Scale( <yMin>, <yMax> )
+**構文:** Y Scale( &lt;yMin&gt;, &lt;yMax&gt; )
 
 **説明:** グラフィックフレームに対して新しいスケールを設定。
 

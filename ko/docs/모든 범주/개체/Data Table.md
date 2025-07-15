@@ -98,7 +98,7 @@ obj = dt << Bootstrap Forest(
 
 ### Bubble Plot
 
-**구문:** Bubble Plot( X( column ), Y( column ), <Sizes( column )>, <Time( column )>, <ID( column )>, <Coloring( column ) )
+**구문:** Bubble Plot( X( column ), Y( column ), &lt;Sizes( column )&gt;, &lt;Time( column )&gt;, &lt;ID( column )&gt;, &lt;Coloring( column ) )
 
 **설명:** 시간 변수에 대해 애니메이션을 적용할 수 있는 버블의 2차원 산점도를 생성합니다. 추가 변수를 사용하여 버블의 크기와 색상을 지정할 수 있습니다.
 
@@ -112,7 +112,7 @@ obj = dt << Bubble Plot( X( :"Portion 0-19"n ), Y( :"Portion60+"n ), Sizes( :Pop
 
 ### CUSUM Control Chart
 
-**구문:** CUSUM Control Chart( Y( column ), <X( column )>, <By( column )>, <Data Units( 0|1 )>, <Show Excluded Region( 0|1 )>  )
+**구문:** CUSUM Control Chart( Y( column ), &lt;X( column )&gt;, &lt;By( column )&gt;, &lt;Data Units( 0|1 )&gt;, &lt;Show Excluded Region( 0|1 )&gt; )
 
 **설명:** 부분군 평균과 목표값 간 편차의 누적합을 표시하는 차트를 생성합니다. 이 차트를 테이블 형식 CUSUM이라고도 합니다.
 
@@ -150,7 +150,7 @@ obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
 
 ### Cell Plot
 
-**구문:** Cell Plot( Y( column(s) ), <X( column )> )
+**구문:** Cell Plot( Y( column(s) ), &lt;X( column )&gt; )
 
 **설명:** 데이터 테이블 값에 일대일로 대응하여 그려진 직사각형 격자 셀을 생성합니다. 격자의 셀은 셀 값에 따라 색상이 지정됩니다.
 
@@ -170,7 +170,7 @@ obj = dt << Cell Plot(
 
 ### Choice
 
-**구문:** Choice( Profile DataTable( data table ), Profile ID( column ), Profile Effects( column(s) ), <Response Data Table( data table )>, <Subject Data Table( data table )>, <Response Profile ID Chosen( column )>, <Response Subject ID( column)>, <Response Grouping( column(s) )>, <Response Profile ID Choices( column(s) )>, <Profile Grouping( column(s) )>, <Subject Subject ID( column )>, <Subject Effects( column(s) )> )
+**구문:** Choice( Profile DataTable( data table ), Profile ID( column ), Profile Effects( column(s) ), &lt;Response Data Table( data table )&gt;, &lt;Subject Data Table( data table )&gt;, &lt;Response Profile ID Chosen( column )&gt;, &lt;Response Subject ID( column)&gt;, &lt;Response Grouping( column(s) )&gt;, &lt;Response Profile ID Choices( column(s) )&gt;, &lt;Profile Grouping( column(s) )&gt;, &lt;Subject Subject ID( column )&gt;, &lt;Subject Effects( column(s) )&gt; )
 
 **설명:** 고객 선호도를 연구하는 선택 실험에서 얻은 데이터를 모델링합니다. 일종의 조건부 로지스틱 회귀를 사용하여 특정 구성이 선호되는 확률을 추정합니다.
 
@@ -211,7 +211,7 @@ obj = Choice(
 
 ### Close
 
-**구문:** Close( data table name, <NoSave|Save("path")> )
+**구문:** Close( data table name, &lt;NoSave|Save("path")&gt; )
 
 **설명:** 첫 번째 인수에 의해 참조되는 데이터 테이블(기본적으로 현재 데이터 테이블)을 닫습니다. 두 번째 인수는 데이터 테이블을 저장하는 데 사용됩니다. 경로에 적절한 파일 확장자를 사용하여 데이터 테이블을 비 JMP 형식으로 저장하십시오. NoSave를 지정하면 변경 사항을 저장할지 또는 삭제할지 묻는 메시지가 표시되지 않습니다.
 
@@ -268,7 +268,7 @@ obj = dt << Contour Plot( X( :X, :Y ), Y( :Z ) );
 
 ### Contour Profiler
 
-**구문:** Contour Profiler( Y( column1, column2, ...  ) )
+**구문:** Contour Profiler( Y( column1, column2, ... ) )
 
 **설명:** 전체 요인 쌍에 대해 하나 이상의 예측 반응이 어떻게 변하는지 탐색할 수 있는 대화식 등고선 그림을 생성합니다. 그림에 사용되지 않는 요인의 값은 요인 설정이 예측 반응에 미치는 영향을 추가로 탐색하기 위해 변경될 수 있습니다.
 
@@ -284,7 +284,7 @@ obj = dt << Contour Profiler(
 
 ### Control Chart Builder
 
-**구문:** Control Chart Builder( Class( "Shewhart Variables"|"Shewhart Attribute"|"Short Run"|"Rare Event" ), Variables( variables ), <Chart( Position( number ), Points( Statistic( "statistic" ), <points options> ), Limits( Sigma( "sigma" ), <limits options> )> ) ) )
+**구문:** Control Chart Builder( Class( "Shewhart Variables"|"Shewhart Attribute"|"Short Run"|"Rare Event" ), Variables( variables ), &lt;Chart( Position( number ), Points( Statistic( "statistic" ), &lt;points options&gt; ), Limits( Sigma( "sigma" ), &lt;limits options&gt; )&gt; ) ) )
 
 **설명:** 공정이 안정적이고 예측 가능한지 여부를 판단하는 데 사용되는 관리도를 대화식으로 생성할 수 있습니다. 관리도 빌더 플랫폼을 사용하여 IMR, XBar, 단기 런, 런, P, NP, C, U, Laney P&apos;, Laney U&apos;, Levey-Jennings, 평균 IMR, 삼원 및 희귀 사건 차트와 같은 유형의 관리도를 생성할 수 있습니다.
 
@@ -819,7 +819,7 @@ obj = dt << Custom Profiler(
 
 ### Degradation
 
-**구문:** Degradation( Y( column ), Time( column ), Application( "Repeated Measures Degradation"|"Destructive Degradation"|"Stability Test" ), <X( column )>, <Label( column )>, <Freq( column )>, <Censor( column )>, <Censor Code( value )>, <Upper Spec Limit( value )>, <Lower Spec Limit( value )>, <Censoring Time( value )> )
+**구문:** Degradation( Y( column ), Time( column ), Application( "Repeated Measures Degradation"|"Destructive Degradation"|"Stability Test" ), &lt;X( column )&gt;, &lt;Label( column )&gt;, &lt;Freq( column )&gt;, &lt;Censor( column )&gt;, &lt;Censor Code( value )&gt;, &lt;Upper Spec Limit( value )&gt;, &lt;Lower Spec Limit( value )&gt;, &lt;Censoring Time( value )&gt; )
 
 **설명:** 선형 및 비선형 곡선을 사용하여 시간 경과에 따른 열화를 모델링합니다. 분석 옵션으로는 안정성 분석과 유사 고장 데이터 생성이 있습니다.
 
@@ -842,7 +842,7 @@ obj = dt << Degradation(
 
 ### Destructive Degradation
 
-**구문:** Destructive Degradation( Y( column ), Time( column ), <X( column )>, <Freq( column )>, <Censor( column ), Censor Code( value )> )
+**구문:** Destructive Degradation( Y( column ), Time( column ), &lt;X( column )&gt;, &lt;Freq( column )&gt;, &lt;Censor( column ), Censor Code( value )&gt; )
 
 **설명:** 시간 경과에 따른 파괴 열화 데이터를 모델링합니다.
 
@@ -958,7 +958,7 @@ obj = dt << EMP Measurement Systems Analysis(
 
 ### EWMA Control Chart
 
-**구문:** EWMA Control Chart( Y( column ), <Subgroup( column )>, <By( column )>, <Center Data( 1 )> )
+**구문:** EWMA Control Chart( Y( column ), &lt;Subgroup( column )&gt;, &lt;By( column )&gt;, &lt;Center Data( 1 )&gt; )
 
 **설명:** 지수 가중 이동 평균을 표시하는 차트와 개별 관측값 또는 부분군 평균을 표시하는 차트를 생성합니다. EWMA 차트를 피드백 관리도라고도 합니다.
 
@@ -1037,7 +1037,7 @@ obj = dt << Factor Analysis(
 
 ### Fatigue Model
 
-**구문:** Fatigue Model( N( column ), X( column ), <Freq( column )>, <Censor( column ), Censor Code( value )> )
+**구문:** Fatigue Model( N( column ), X( column ), &lt;Freq( column )&gt;, &lt;Censor( column ), Censor Code( value )&gt; )
 
 **설명:** 피로 데이터를 분석하며 S-N 곡선 모델링이라고도 합니다.
 
@@ -1072,7 +1072,7 @@ obj << Fit Logistic 4P;
 
 ### Fit Life by X
 
-**구문:** Fit Life by X( Y( column ), X( column ), Relationship( string ), Distribution( string ), <Censor( column )> )
+**구문:** Fit Life by X( Y( column ), X( column ), Relationship( string ), Distribution( string ), &lt;Censor( column )&gt; )
 
 **설명:** 단일 회귀 계수로 파라미터화된 사건 발생 시간 데이터의 분포를 분석합니다. 분석 옵션으로는 가속 고장 시간 모형, 그룹 간 수명 분포 및 회귀 요인 변환이 있습니다.
 
@@ -1184,7 +1184,7 @@ obj = dt << Gaussian Process( Y( :Y ), X( :X1, :X2 ) );
 
 ### Graph Builder
 
-**구문:** Graph Builder( Variables( X(column ), Y( column ), <Group X( column )>, <Group Y( column )>, <Shape( column )>, <Color( column )>, <Overlay( column )>, <Freq( column )> ), <Elements(...)> ) )
+**구문:** Graph Builder( Variables( X(column ), Y( column ), &lt;Group X( column )&gt;, &lt;Group Y( column )&gt;, &lt;Shape( column )&gt;, &lt;Color( column )&gt;, &lt;Overlay( column )&gt;, &lt;Freq( column )&gt; ), &lt;Elements(...)&gt; ) )
 
 **설명:** 데이터 탐색에 사용할 수 있는 대화식 그래픽 인터페이스를 제공합니다. 열을 그래프 영역으로 드래그하여 산점도, 등고선 그림, 막대 차트, 영역 차트, 상자 그림, 히스토그램, 히트맵, 파이 차트, 트리맵, 모자이크 그림, 맵 등 다양한 그래프를 생성할 수 있습니다.
 
@@ -1309,7 +1309,7 @@ obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );
 
 ### Make Validation Column
 
-**구문:** Make Validation Column( <층화 열(columns)>, <그룹화 열(columns)>, <절단점 열(column)>, <절단점 배치 ID(column)> )
+**구문:** Make Validation Column( &lt;층화 열(columns)&gt;, &lt;그룹화 열(columns)&gt;, &lt;절단점 열(column)&gt;, &lt;절단점 배치 ID(column)&gt; )
 
 **설명:** 데이터를 훈련 데이터 집합, 검증 데이터 집합 및 테스트 데이터 집합으로 나누는 데 사용되는 열을 생성합니다.
 
@@ -1650,7 +1650,7 @@ obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 
 ### MaxDiff
 
-**구문:** MaxDiff( Profile DataTable( data table ), Profile ID( column ), Profile Effects( column(s) ), <Response Data Table( data table )>, <Subject Data Table( data table )>, <Response Profile ID Chosen( column )>, <Response Subject ID( column)>, <Response Grouping( column(s) )>, <Response Profile ID Choices( column(s) )>, <Profile Grouping( column(s) )>, <Subject Subject ID( column )>, <Subject Effects( column(s) )> )
+**구문:** MaxDiff( Profile DataTable( data table ), Profile ID( column ), Profile Effects( column(s) ), &lt;Response Data Table( data table )&gt;, &lt;Subject Data Table( data table )&gt;, &lt;Response Profile ID Chosen( column )&gt;, &lt;Response Subject ID( column)&gt;, &lt;Response Grouping( column(s) )&gt;, &lt;Response Profile ID Choices( column(s) )&gt;, &lt;Profile Grouping( column(s) )&gt;, &lt;Subject Subject ID( column )&gt;, &lt;Subject Effects( column(s) )&gt; )
 
 **설명:** 고객이 가장 선호하거나 가장 선호하지 않는 제품 속성 조합을 찾기 위한 설계를 생성합니다.
 
@@ -1673,7 +1673,7 @@ obj = dt << MaxDiff(
 
 ### Mixture Profiler
 
-**구문:** Mixture Profiler( Y( column1, column2, ...  ) )
+**구문:** Mixture Profiler( Y( column1, column2, ... ) )
 
 **설명:** 세 개 이상의 요인이 있는 혼합물 모형에 대해 저장된 예측 계산식의 등고선을 탐색하는 데 사용할 수 있는 대화식 삼원 그림을 생성합니다.
 
@@ -1912,7 +1912,7 @@ obj = dt << Naive Bayes( Y( :Species ), X( :Sepal length, :Sepal width, :Petal l
 
 ### Neural
 
-**구문:** Neural( Y( column ), X( columns ), <Validation( column )> )
+**구문:** Neural( Y( column ), X( columns ), &lt;Validation( column )&gt; )
 
 **설명:** 입력 변수의 유연한 함수를 사용하여 하나 이상의 반응 변수를 예측합니다. 유연한 프레임워크에는 여러 층 및 s 형태의 함수가 통합되어 있습니다.
 
@@ -1926,7 +1926,7 @@ obj = dt << Neural( Y( :Y ), X( :Age, :BMI, :BP, :Total Cholesterol, :LDL, :HDL,
 
 ### New Table
 
-**구문:** New Table( name, <invisible>, <private>, <actions> )
+**구문:** New Table( name, &lt;invisible&gt;, &lt;private&gt;, &lt;actions&gt; )
 
 **설명:** 새 데이터 테이블을 생성합니다. "Invisible"은 데이터 테이블을 보기에서 숨기되 JMP 홈 창의 목록에 표시합니다. "Private"은 테이블을 완전히 숨깁니다. "Visible"은 기본값으로, 표시 가능하고 JMP 홈 창에 나열되는 정규 테이블을 생성합니다. 선택적인 actions 인수는 데이터 테이블이 지원하는 메시지입니다.
 
@@ -2019,7 +2019,7 @@ obj = dt << Oneway( Y( :Height ), X( :Age ) );
 
 ### Open
 
-**구문:** Open( file path, <invisible>, <private>, <select columns(list)> | <ignore columns(list)>, <column names only>, <Table Info> )
+**구문:** Open( file path, &lt;invisible&gt;, &lt;private&gt;, &lt;select columns(list)&gt; | &lt;ignore columns(list)&gt;, &lt;column names only&gt;, &lt;Table Info&gt; )
 
 **설명:** JMP 파일을 열거나, 지원되는 다른 파일 유형을 가져옵니다. 데이터 테이블 열기 옵션 &apos;Invisible&apos;은 파일을 보기에서 숨기지만 JMP 홈 창에 나열합니다. &apos;Private&apos;은 파일을 완전히 숨깁니다. &apos;Select Columns&apos; 파일 옵션은 지정된 열에서만 읽습니다. &apos;Ignore Columns&apos;는 &apos;Select Columns&apos;의 반대로, 지정된 열에서 읽지 않습니다. JMP 파일 옵션 &apos;Column Names Only&apos;와 &apos;Table Info&apos;는 데이터를 읽거나 데이터 테이블을 생성하지 않습니다. &apos;Column Names Only&apos;는 데이터 테이블의 열 이름 목록을 반환하고, &apos;Table Info&apos;는 데이터 테이블의 열 및 행 수를 반환합니다. &apos;FIRST(n)&apos;/&apos;LAST(n)&apos;/&apos;RANDOM(n)&apos; 옵션은 데이터 테이블의 n개 행에서만 읽습니다. n이 0에서 1 사이의 숫자인 경우 n은 데이터 테이블의 총 행 수에 대한 비율입니다.
 
@@ -2082,7 +2082,7 @@ Print( info );
 
 ### Parallel Plot
 
-**구문:** Parallel Plot( Y( columns ),  <X( column )> )
+**구문:** Parallel Plot( Y( columns ), &lt;X( column )&gt; )
 
 **설명:** 각 행에 대한 연결선 세그먼트를 사용하여 둘 이상의 변수가 있는 그림을 생성합니다.
 
@@ -2114,7 +2114,7 @@ obj = dt << Parallel Plot( Y( :hist0, :hist1, :hist3, :hist5 ) );
 
 ### Pareto Plot
 
-**구문:** Pareto Plot( Cause( column ), <X( column )>, <Subcategory( column )>, <Freq( column )>, <Weight( column )> )
+**구문:** Pareto Plot( Cause( column ), &lt;X( column )&gt;, &lt;Subcategory( column )&gt;, &lt;Freq( column )&gt;, &lt;Weight( column )&gt; )
 
 **설명:** 품질 관련 공정에 포함된 항목의 상대 빈도를 내림차순으로 표시합니다. 하나 이상의 분류 변수를 정의하여 비교 가능한 파레토도를 생성할 수 있습니다.
 
@@ -2220,7 +2220,7 @@ obj = dt << Principal Components( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetr
 
 ### Process Capability
 
-**구문:** Process Capability( Process Variables (columns), < Spec Limits() > )
+**구문:** Process Capability( Process Variables (columns), &lt; Spec Limits() &gt; )
 
 **설명:** 각 공정에 대한 공정 능력 분석을 계산하고 여러 공정의 공정 능력을 한 번에 분석하는 데 유용한 그래프를 생성합니다. 규격 한계도 정의할 수 있습니다.
 
@@ -2275,7 +2275,7 @@ obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 
 
 ### Profiler
 
-**구문:** Profiler( Y( column1, <column2>, ..., <PredSE column1, PredSE column2>, ... ), <Expand> )
+**구문:** Profiler( Y( column1, &lt;column2&gt;, ..., &lt;PredSE column1, PredSE column2&gt;, ... ), &lt;Expand&gt; )
 
 **설명:** 요인 설정을 변경하면 예측 반응이 어떻게 변하는지 탐색할 수 있는 대화식 그래프를 생성합니다. 각 요인에 대해 프로파일러는 저장된 예측 계산식 및 선형 제약 조건에 기반한 예측 추적선을 표시하고, 해당 요인과 관련하여 반응이 어떻게 변하는지 보여 줍니다. Expand 인수는 시작 창의 중간 계산식 확장 옵션에 해당합니다.
 
@@ -2327,7 +2327,7 @@ dt << Profiler( Y( :Yield ), Profiler( 1, Desirability Functions( 1 ), ), Expand
 
 ### Recurrence Analysis
 
-**구문:** Recurrence Analysis( Y( column ), Cost( column ), Label( column ), <Grouping( column )> )
+**구문:** Recurrence Analysis( Y( column ), Cost( column ), Label( column ), &lt;Grouping( column )&gt; )
 
 **설명:** 재발 사건의 분포를 시간대 및 시스템별로, 또는 시스템의 서비스가 중단될 때까지 분석합니다.
 
@@ -2491,19 +2491,7 @@ obj = dt << Reliability Forecast(
 
 ### Reliability Growth
 
-**구문:** obj = Reliability Growth( Input Format( Time to Event ), Time to Event( column, <column> ), <Event Count( column )>, <Phase( column )> );
-
-
-
-obj = Reliability Growth( Input Format( Dates ), Timestamp( column, <column> ), <Event Count( column )>, <Phase( column )> );
-
-
-
-obj = Reliability Growth( Input Format( Concurrent Systems ), Time to Event( column, column, ... ), System ID( column ), <Phase( column )> )
-
-
-
-obj = Reliability Growth( Input Format( Parallel Systems ), Time to Event( column, column, ... ), <Event Count( column )>, System ID( column ), <Phase( column )> )
+**구문:** obj = Reliability Growth( Input Format( Time to Event ), Time to Event( column, &lt;column&gt; ), &lt;Event Count( column )&gt;, &lt;Phase( column )&gt; );obj = Reliability Growth( Input Format( Dates ), Timestamp( column, &lt;column&gt; ), &lt;Event Count( column )&gt;, &lt;Phase( column )&gt; );obj = Reliability Growth( Input Format( Concurrent Systems ), Time to Event( column, column, ... ), System ID( column ), &lt;Phase( column )&gt; )obj = Reliability Growth( Input Format( Parallel Systems ), Time to Event( column, column, ... ), &lt;Event Count( column )&gt;, System ID( column ), &lt;Phase( column )&gt; )
 
 **설명:** 시간이 경과하면서 설계에 개선 사항이 반영됨에 따른 단일 수리 가능 시스템의 신뢰성 변화를 모델링합니다. 이 플랫폼에서는 여러 가지 입력 형식이 허용됩니다. 규격에 대한 자세한 내용은 각 형식을 참조하십시오.
 
@@ -2563,7 +2551,7 @@ obj << Crow AMSAA;
 
 ### Repeated Measures Degradation
 
-**구문:** Repeated Measures Degradation( Y( column ), Time( column ), <X( column )>, <Freq( column )>, <Censor( column ), Censor Code( value )> )
+**구문:** Repeated Measures Degradation( Y( column ), Time( column ), &lt;X( column )&gt;, &lt;Freq( column )&gt;, &lt;Censor( column ), Censor Code( value )&gt; )
 
 **설명:** 랜덤 모수를 사용하여 시간 경과에 따른 반복 측정 열화 데이터를 모델링합니다.
 
@@ -2628,7 +2616,7 @@ obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Peta
 
 ### Scatterplot Matrix
 
-**구문:** Scatterplot Matrix( Y( columns ), <X( columns )>, <Group( column )>, <By( column )> )
+**구문:** Scatterplot Matrix( Y( columns ), &lt;X( columns )&gt;, &lt;Group( column )&gt;, &lt;By( column )&gt; )
 
 **설명:** 이변량 관계를 탐색하는 데 사용할 수 있는 산점도 격자를 생성합니다. X 변수가 지정되지 않은 경우 산점도는 모든 Y 변수 쌍을 대상으로 합니다. 하나 이상의 X 변수가 지정된 경우 산점도는 X 변수에 대해 그림에 표시된 Y 변수를 대상으로 합니다.
 
@@ -2707,7 +2695,7 @@ obj = dt << Surface Plot(
 
 ### Survival
 
-**구문:** Survival( Y( columns ), Censor( column ), <Grouping( column )> )
+**구문:** Survival( Y( columns ), Censor( column ), &lt;Grouping( column )&gt; )
 
 **설명:** 하나 이상의 그룹에 대해 승법 극한(Kaplan-Meier) 방법을 사용하여 생존 함수의 추정값을 계산합니다.
 
@@ -2796,7 +2784,7 @@ obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );
 
 ### Uplift
 
-**구문:** Uplift( Y( column ), X( columns ), Treatment( column )  )
+**구문:** Uplift( Y( column ), X( columns ), Treatment( column ) )
 
 **설명:** 처리 차이를 최대화하기 위한 분할을 선택하는 재귀 분할 트리를 적합시킵니다. 이 모형은 처리에 반응할 확률이 가장 높은 개인 그룹을 식별합니다.
 
@@ -2995,7 +2983,7 @@ Write( "\!n", cID:person[2], " likes ", Favs:color[4] );
 
 ### Add Properties to Table
 
-**구문:** obj << Add Properties to Table
+**구문:** obj &lt;&lt; Add Properties to Table
 
 **설명:** 테이블에 특성을 추가합니다.
 
@@ -3012,7 +3000,7 @@ dt2 << Add Properties to Table( proplist );
 
 ### Add Scripts to Table
 
-**구문:** obj << Add Scripts to Table
+**구문:** obj &lt;&lt; Add Scripts to Table
 
 **설명:** 이 명령은 &apos;Add properties to table&apos;의 별칭입니다.
 
@@ -3029,7 +3017,7 @@ dt2 << Add scripts to table( proplist );
 
 ### Anonymize
 
-**구문:** obj << Anonymize( columns( columns ), <Output Table( name )> )
+**구문:** obj &lt;&lt; Anonymize( columns( columns ), &lt;Output Table( name )&gt; )
 
 **설명:** 고유 식별자가 제거된 새 데이터 테이블을 생성합니다.
 
@@ -3043,7 +3031,7 @@ dt << anonymize( columns( :name, :age ), output table name( "anonymized" ) );
 
 ### Apply Columns List Filter To Data Grid
 
-**구문:** obj << Apply Columns List Filter To Data Grid( state=0|1 )
+**구문:** obj &lt;&lt; Apply Columns List Filter To Data Grid( state=0|1 )
 
 **설명:** 데이터 테이블 열 목록의 필터를 데이터 격자에 적용하려면 설정합니다.
 
@@ -3063,7 +3051,7 @@ dt << Apply Columns List Filter To Data Grid( 1 );
 
 ### Apply Formula
 
-**구문:** dt << Apply Formula([Columns(<col|{cols}|Group(col, count)|<group name>, [Ref(<name>)], [List Ref(<name>)]]+, [Output(In Place|In Place Formula|New Formula(<prefix>|New Static(<prefix>)], [Group(<name>)])
+**구문:** dt &lt;&lt; Apply Formula([Columns(&lt;col|{cols}|Group(col, count)|&lt;group name&gt;, [Ref(&lt;name&gt;)], [List Ref(&lt;name&gt;)]]+, [Output(In Place|In Place Formula|New Formula(&lt;prefix&gt;|New Static(&lt;prefix&gt;)], [Group(&lt;name&gt;)])
 
 **설명:** 계산식을 사용하여 하나 이상의 열을 변환하고 결과(계산식 또는 데이터)를 새 열 또는 기존 열에 배치합니다.
 
@@ -3119,7 +3107,7 @@ Data Table( "Big Class" ) << Apply Formula(
 
 ### Begin Data Update
 
-**구문:** obj << Begin Data Update
+**구문:** obj &lt;&lt; Begin Data Update
 
 **설명:** &apos;End Data Update&apos; 명령에 도달할 때까지 모든 &apos;Update&apos; 메시지를 보류합니다. 많은 셀을 한꺼번에 업데이트하려는 경우에 유용합니다. 이는 데이터 셀의 변경에만 적용됩니다.
 
@@ -3138,7 +3126,7 @@ dt << End Data Update;
 
 ### Checksum
 
-**구문:** obj << Checksum( < Version(version) >, < Include(flags) >, < Exclude(flags) > )
+**구문:** obj &lt;&lt; Checksum( &lt; Version(version) &gt;, &lt; Include(flags) &gt;, &lt; Exclude(flags) &gt; )
 
 **설명:** Compute the table&apos;s checksum. Available flags include: "ColData", "ColName", "ColDataType", "ColModelingType", "ColFormat", "ColInFormat", "ColFormatWidth", "ColAttributes", "ColProperties", "ColListCheck", "ColRangeCheck", "ColCompact", "ColLabel", "ColHidden", "ColExclude", "ColSelection", "ColState", "ColDisplayWidth", "TableVariables", "TableScripts", "RowExclude", "RowHidden", "RowLabel", "RowColor", "RowMarker", "RowSelection", "RowState"
 
@@ -3187,7 +3175,7 @@ dt << Checksum( Include( flags ) );
 
 ### Clear Cell Colors
 
-**구문:** obj << Clear Cell Colors
+**구문:** obj &lt;&lt; Clear Cell Colors
 
 **설명:** 선택된 열의 셀 색상을 지웁니다. 선택된 열이 없으면 모든 열의 셀 색상이 지워집니다.
 
@@ -3227,7 +3215,7 @@ dt << Clear cell colors();
 
 ### Clear Column Selection
 
-**구문:** obj << Clear Column Selection
+**구문:** obj &lt;&lt; Clear Column Selection
 
 **설명:** 데이터 테이블의 열 선택을 지웁니다.
 
@@ -3243,7 +3231,7 @@ dt << Clear Column Selection();
 
 ### Clear Edit Lock
 
-**구문:** obj << Clear Edit Lock( [ <"Modify Cells">, <"Add rows">, <"Add Columns">, <"Delete Rows">, <"Delete Columns">] )
+**구문:** obj &lt;&lt; Clear Edit Lock( [ &lt;"Modify Cells"&gt;, &lt;"Add rows"&gt;, &lt;"Add Columns"&gt;, &lt;"Delete Rows"&gt;, &lt;"Delete Columns"&gt;] )
 
 **설명:** 앞서 데이터 테이블에 허용되지 않았던 지정된 연산자를 허용합니다.
 
@@ -3261,7 +3249,7 @@ dt << Clear Edit Lock( "Delete Columns" );
 
 ### Clear Properties Selection
 
-**구문:** obj << Clear Properties Selection( { property1, property2, ... )
+**구문:** obj &lt;&lt; Clear Properties Selection( { property1, property2, ... )
 
 **설명:** 지정된 테이블 특성을 선택 취소합니다. 여기서 목록은 특성 이름 목록 또는 특성에 대한 인덱스 목록일 수 있습니다. 목록이 제공되지 않은 경우 선택된 모든 특성을 선택 취소합니다.
 
@@ -3293,7 +3281,7 @@ dt << clear properties selecction();
 
 ### Clone
 
-**구문:** dt << Clone( < Table Name(name) >, < Copy Formulas(1|0) >, < Eval Formulas(1|0) > )
+**구문:** dt &lt;&lt; Clone( &lt; Table Name(name) &gt;, &lt; Copy Formulas(1|0) &gt;, &lt; Eval Formulas(1|0) &gt; )
 
 **설명:** 데이터 테이블의 복사본을 생성합니다.
 
@@ -3309,7 +3297,7 @@ dtClone = dt << Clone;
 
 ### Close Data Grid
 
-**구문:** obj << Close Data Grid
+**구문:** obj &lt;&lt; Close Data Grid
 
 **설명:** 데이터 격자를 닫거나 엽니다.
 
@@ -3323,7 +3311,7 @@ dt << Close Data Grid( 1 );
 
 ### Close Side Panels
 
-**구문:** obj << Close Side Panels
+**구문:** obj &lt;&lt; Close Side Panels
 
 **설명:** 데이터 테이블의 측면 패널을 닫거나 엽니다.
 
@@ -3337,7 +3325,7 @@ dt << Close Side Panels( 1 );
 
 ### Close summary panels
 
-**구문:** obj << Close summary panels
+**구문:** obj &lt;&lt; Close summary panels
 
 **설명:** 데이터 테이블의 요약 패널을 닫거나 엽니다.
 
@@ -3353,11 +3341,11 @@ dt << Close Summary Panels( 1 );
 
 ### Cluster
 
-**구문:** obj << Cluster
+**구문:** obj &lt;&lt; Cluster
 
 ### Collapse All Column Groups
 
-**구문:** obj << Collapse All Column Groups
+**구문:** obj &lt;&lt; Collapse All Column Groups
 
 **설명:** 모든 열 그룹을 접습니다.
 
@@ -3378,7 +3366,7 @@ dt << Collapse All Column Groups;
 
 ### Column Filter
 
-**구문:** obj << Column Filter
+**구문:** obj &lt;&lt; Column Filter
 
 **설명:** Retrieves object to manipulate active column filter for the table.
 
@@ -3411,7 +3399,7 @@ dt << Apply Columns List Filter to Data Grid( 0 );
 
 ### Column Switcher
 
-**구문:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**구문:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **설명:** 독립 실행형 열 전환기를 생성합니다.
 
@@ -3466,7 +3454,7 @@ cs << Link Platform( b[2] );
 
 ### Combine Columns
 
-**구문:** obj << Combine Columns
+**구문:** obj &lt;&lt; Combine Columns
 
 **설명:** 각 소스 열의 값을 지정된 구분자로 구분하여 여러 열을 단일 열로 결합합니다.
 
@@ -3501,7 +3489,7 @@ dt << Combine Columns(
 
 ### Compare Data Tables
 
-**구문:** obj << Compare Data Tables( Compare with( Data Table( name )), <Compare table variables and scripts( 0|1)>, <show window>,<Compare columns attributes and properties( 0|1)>, <Compare data( 0|1 )>, <Show difference summary(0|1)>, <Show difference plot(0|1)> )
+**구문:** obj &lt;&lt; Compare Data Tables( Compare with( Data Table( name )), &lt;Compare table variables and scripts( 0|1)&gt;, &lt;show window&gt;,&lt;Compare columns attributes and properties( 0|1)&gt;, &lt;Compare data( 0|1 )&gt;, &lt;Show difference summary(0|1)&gt;, &lt;Show difference plot(0|1)&gt; )
 
 **설명:** 두 개의 열린 데이터 테이블을 비교하고 메타데이터 및 데이터 간의 차이를 보고합니다.
 
@@ -3516,7 +3504,7 @@ dt << compare data tables( compare With( Data Table( "Students2" ) ) );
 
 ### Compress File When Saved
 
-**구문:** obj << Compress File When Saved( state=0|1 )
+**구문:** obj &lt;&lt; Compress File When Saved( state=0|1 )
 
 **설명:** 데이터 테이블을 저장할 때 파일을 압축합니다.
 
@@ -3530,7 +3518,7 @@ dt << Compress File When Saved( 1 );
 
 ### Compress Selected Columns
 
-**구문:** obj << Compress Selected Columns( { column1, column2, ...} )
+**구문:** obj &lt;&lt; Compress Selected Columns( { column1, column2, ...} )
 
 **설명:** 각 열을 가장 압축된 형식으로 압축합니다.
 
@@ -3548,7 +3536,7 @@ dt << Compress Selected Columns( {:Age, :sex, :Height, :Weight} );
 
 ### Concatenate
 
-**구문:** obj << Concatenate( <Private>, <Invisible>, Data Table( name ), <Data Table(name), ...> <Label( column )>, <Output Table( name ) | Append to first table>, <Keep Formulas>, <Create Source Column> )
+**구문:** obj &lt;&lt; Concatenate( &lt;Private&gt;, &lt;Invisible&gt;, Data Table( name ), &lt;Data Table(name), ...&gt; &lt;Label( column )&gt;, &lt;Output Table( name ) | Append to first table&gt;, &lt;Keep Formulas&gt;, &lt;Create Source Column&gt; )
 
 **설명:** 여러 데이터 테이블의 행을 결합하여 새 데이터 테이블을 생성하거나 첫 번째 데이터 테이블에 행을 추가합니다.
 
@@ -3577,7 +3565,7 @@ dt << Concatenate( Data Table( dt1 ), Data Table( dt2 ), "Append to first table"
 
 ### Copy Column Properties
 
-**구문:** obj << Copy Column Properties( <column 1 column 2, ...> )
+**구문:** obj &lt;&lt; Copy Column Properties( &lt;column 1 column 2, ...&gt; )
 
 **설명:** 선택한 열의 열 특성을 별도의 특성 목록으로 클립보드에 복사합니다. 데이터 테이블에서 소스 열을 사전 선택하는 대신 소스 열 목록을 지정할 수도 있습니다.
 
@@ -3608,7 +3596,7 @@ New Window( "Script", Script Box( "//Try Paste here
 
 ### Copy Selected Properties
 
-**구문:** obj << Copy Selected Properties
+**구문:** obj &lt;&lt; Copy Selected Properties
 
 **설명:** 선택된 테이블 특성을 클립보드에 복사합니다.
 
@@ -3625,7 +3613,7 @@ New Window( "Script", Script Box( "//Try Paste here
 
 ### Copy Table Script
 
-**구문:** obj << Copy Table Script( <"No data"> )
+**구문:** obj &lt;&lt; Copy Table Script( &lt;"No data"&gt; )
 
 **설명:** 스크립트를 복사하여 데이터 테이블을 다시 생성합니다. 결과 스크립트에는 데이터 테이블에 저장된 모든 테이블 스크립트가 포함됩니다. 필요한 경우 스크립트에서 데이터를 생략하려면 "No Data" 키워드를 추가하십시오.
 
@@ -3655,7 +3643,7 @@ New Window( "Script", Script Box( "//Try Paste here
 
 ### Debug Script
 
-**구문:** obj << Debug Script( name )
+**구문:** obj &lt;&lt; Debug Script( name )
 
 **설명:** 데이터 테이블에 특성으로 저장된 명명된 스크립트를 디버깅합니다.
 
@@ -3669,11 +3657,11 @@ dt << Debug Script( "Distribution" );
 
 ### Decision Tree
 
-**구문:** obj << Decision Tree
+**구문:** obj &lt;&lt; Decision Tree
 
 ### Define Tag
 
-**구문:** Define Tag(<name>, [Color(<color>)], [Symbol(<symbol char>)], [Description(<text>)], [Replace(<existing tag name>)])
+**구문:** Define Tag(&lt;name&gt;, [Color(&lt;color&gt;)], [Symbol(&lt;symbol char&gt;)], [Description(&lt;text&gt;)], [Replace(&lt;existing tag name&gt;)])
 
 **설명:** 테이블에 열 태그 정의를 생성하거나 업데이트합니다. 태그가 없는 경우 생성하고 필요에 따라 색상, 기호 및 기타 속성을 할당합니다.
 
@@ -3716,7 +3704,7 @@ dt << Define Tag( "Identifier", Replace( "ID" ), Color( Blue ) );
 
 ### Delete Columns
 
-**구문:** obj << Delete Columns( <column>, <column>, ... )
+**구문:** obj &lt;&lt; Delete Columns( &lt;column&gt;, &lt;column&gt;, ... )
 
 **설명:** 지정된 열을 삭제합니다. 인수가 지정되지 않은 경우 데이터 테이블에서 선택된 열을 삭제합니다.
 
@@ -3759,7 +3747,7 @@ dt << Delete Columns( cols );
 
 ### Delete Filter View
 
-**구문:** obj << Delete Filter View( name | obj )
+**구문:** obj &lt;&lt; Delete Filter View( name | obj )
 
 **설명:** 지정된 필터 보기를 삭제합니다.
 
@@ -3787,7 +3775,7 @@ dt << Delete Filter View( "Male" );
 
 ### Delete Scripts
 
-**구문:** obj << Delete Scripts( <script| {script 1, script 2, script 3, ...} > )
+**구문:** obj &lt;&lt; Delete Scripts( &lt;script| {script 1, script 2, script 3, ...} &gt; )
 
 **설명:** 지정된 스크립트를 데이터 테이블에서 삭제합니다.
 
@@ -3819,7 +3807,7 @@ dt << Delete Scripts( list );
 
 ### Delete Table Property
 
-**구문:** obj << Delete Table Property
+**구문:** obj &lt;&lt; Delete Table Property
 
 **설명:** &apos;Delete Scripts&apos;의 별칭입니다.
 
@@ -3835,7 +3823,7 @@ dt << Delete Table Property( "New Script" );
 
 ### Delete Table Variable
 
-**구문:** obj << Delete Table Variable( name )
+**구문:** obj &lt;&lt; Delete Table Variable( name )
 
 **설명:** 데이터 테이블에 저장된 테이블 변수를 삭제합니다.
 
@@ -3851,7 +3839,7 @@ dt << Delete Table Variable( "Days" );
 
 ### Delete Tag
 
-**구문:** Delete Tag(<tag>|{<tag>, <tag>, ...}, [force(0|1)
+**구문:** Delete Tag(&lt;tag&gt;|{&lt;tag&gt;, &lt;tag&gt;, ...}, [force(0|1)
 
 **설명:** 테이블에서 태그를 삭제합니다. 강제 적용(1) 플래그가 제공된 경우가 아니면 열에 사용 중인 태그는 삭제되지 않습니다.
 
@@ -3884,7 +3872,7 @@ dt << Delete Tag( "ID", Force( 1 ) );
 
 ### Deselect Column Group
 
-**구문:** obj << Deselect Column Group( name of group | list of names )
+**구문:** obj &lt;&lt; Deselect Column Group( name of group | list of names )
 
 **설명:** 열 그룹을 선택 취소합니다. 열 그룹을 생략하면 모든 열 그룹이 선택 취소됩니다.
 
@@ -3902,7 +3890,7 @@ dt << deselect column group( "pollutants" );
 
 ### Disable Undo
 
-**구문:** obj << Disable Undo( state=0|1 )
+**구문:** obj &lt;&lt; Disable Undo( state=0|1 )
 
 **설명:** 이 옵션이 설정되어 있으면 데이터 테이블에 대한 모든 작업을 실행 취소할 수 없습니다.
 
@@ -3916,7 +3904,7 @@ dt << disable undo( 1 );
 
 ### End Data Update
 
-**구문:** obj << End Data Update
+**구문:** obj &lt;&lt; End Data Update
 
 **설명:** &apos;Begin Data Update&apos; 명령이 실행된 후 보류했던 모든 &apos;Update&apos; 메시지를 보냅니다. 많은 셀을 한꺼번에 업데이트하려는 경우에 유용합니다. 이는 데이터 셀의 변경에만 적용됩니다.
 
@@ -3935,7 +3923,7 @@ dt << End Data Update;
 
 ### Exclude Columns
 
-**구문:** obj << Exclude Columns( < 0|1 > | < { column1, column2, ... } >  )
+**구문:** obj &lt;&lt; Exclude Columns( &lt; 0|1 &gt; | &lt; { column1, column2, ... } &gt; )
 
 **설명:** 모든 분석 실행에서 열을 제외합니다.
 
@@ -3951,7 +3939,7 @@ dt << Exclude Columns( 1, {:Age, :Name} );
 
 ### Exit Filter View
 
-**구문:** obj << Exit Filter View
+**구문:** obj &lt;&lt; Exit Filter View
 
 **설명:** 필터링되지 않은 보기로 돌아갑니다. 이미 필터링되지 않은 보기 상태인 경우 달라지는 것이 없습니다.
 
@@ -3972,7 +3960,7 @@ dt << Exit Filter View;
 
 ### Expand All Column Groups
 
-**구문:** obj << Expand All Column Groups
+**구문:** obj &lt;&lt; Expand All Column Groups
 
 **설명:** 모든 열 그룹을 펼칩니다.
 
@@ -4007,7 +3995,7 @@ dt << Fit Model( Y( :y ), Effects( :Drug, :x ), Personality( "Standard Least Squ
 
 ### Get Active Filter View
 
-**구문:** fv = obj << Get Active Filter View
+**구문:** fv = obj &lt;&lt; Get Active Filter View
 
 **설명:** 활성 필터 보기를 가져오고 FilterView 개체를 반환합니다.
 
@@ -4028,7 +4016,7 @@ Show( fv active << Get Name );
 
 ### Get All Columns As Matrix
 
-**구문:** obj << Get All Columns As Matrix
+**구문:** obj &lt;&lt; Get All Columns As Matrix
 
 **설명:** 데이터 테이블을 행렬로 반환합니다. 문자 열은 1부터 시작하여 정렬된 수준에 따라 번호가 매겨집니다.
 
@@ -4043,7 +4031,7 @@ Show( m );
 
 ### Get As Report
 
-**구문:** obj << Get As Report
+**구문:** obj &lt;&lt; Get As Report
 
 **설명:** 데이터 테이블의 보고서를 반환합니다.
 
@@ -4079,7 +4067,7 @@ jmp_report = New Window( "Big Class",
 
 ### Get Cell Height
 
-**구문:** obj << Get Cell Height
+**구문:** obj &lt;&lt; Get Cell Height
 
 **설명:** 행 표시 높이를 가져옵니다.
 
@@ -4093,7 +4081,7 @@ ht = dt << Get Cell Height;
 
 ### Get Column Group
 
-**구문:** obj << Get Column Group( name of column group | list of names )
+**구문:** obj &lt;&lt; Get Column Group( name of column group | list of names )
 
 **설명:** 열 그룹의 열 목록을 반환합니다.
 
@@ -4109,7 +4097,7 @@ dt << get column group( "xy" );
 
 ### Get Column Groups Names
 
-**구문:** obj << Get Column Groups Names
+**구문:** obj &lt;&lt; Get Column Groups Names
 
 **설명:** 열 그룹의 이름을 반환합니다.
 
@@ -4125,7 +4113,7 @@ dt << get column groups names;
 
 ### Get Column Names
 
-**구문:** obj << Get Column Names( <Numeric|Character|RowState>, <Continuous|Ordinal|Nominal>,<String> )
+**구문:** obj &lt;&lt; Get Column Names( &lt;Numeric|Character|RowState&gt;, &lt;Continuous|Ordinal|Nominal&gt;,&lt;String&gt; )
 
 **설명:** 데이터 테이블의 열 이름을 반환합니다. 문자열 키워드가 사용된 경우에는 문자열이 반환됩니다.
 
@@ -4144,7 +4132,7 @@ Show( SNames );
 
 ### Get Column Reference
 
-**구문:** obj << Get Column Reference( list of column names )
+**구문:** obj &lt;&lt; Get Column Reference( list of column names )
 
 **설명:** 목록에 있는 문자열의 열 참조를 반환합니다.
 
@@ -4173,7 +4161,7 @@ Show( refList );
 
 ### Get Edit Lock
 
-**구문:** obj << Get Edit Lock
+**구문:** obj &lt;&lt; Get Edit Lock
 
 **설명:** 데이터 테이블에 허용되지 않은 연산자 목록 가져오기
 
@@ -4189,7 +4177,7 @@ dt << Get Edit Lock();
 
 ### Get Excluded Columns
 
-**구문:** obj << Get Excluded Columns
+**구문:** obj &lt;&lt; Get Excluded Columns
 
 **설명:** 데이터 테이블에서 현재 제외된 열을 반환합니다.
 
@@ -4205,7 +4193,7 @@ Show( exCols );
 
 ### Get Excluded Rows
 
-**구문:** obj << Get Excluded Rows
+**구문:** obj &lt;&lt; Get Excluded Rows
 
 **설명:** 데이터 테이블에서 현재 제외된 행을 반환합니다. Where을(를) 사용하는 것이 좋습니다.
 
@@ -4224,7 +4212,7 @@ Show( r1, r2 );
 
 ### Get Filter View
 
-**구문:** fv = obj << Get Filter View( name | <<Temporary | <<Unfiltered )
+**구문:** fv = obj &lt;&lt; Get Filter View( name | &lt;&lt;Temporary | &lt;&lt;Unfiltered )
 
 **설명:** Get a filter view by name, or get one of the special filter views by using <<Temporary or <<Unfiltered. If a filter view by the given name does not exist, returns Empty().
 
@@ -4247,7 +4235,7 @@ Show( (dt << Get Filter View( <<Unfiltered )) << Get Name );
 
 ### Get Filter Views
 
-**구문:** { fv, ... } = obj << Get Filter Views( < Temporary(0|1) >, < Unfiltered(0|1) > )
+**구문:** { fv, ... } = obj &lt;&lt; Get Filter Views( &lt; Temporary(0|1) &gt;, &lt; Unfiltered(0|1) &gt; )
 
 **설명:** 모든 필터 보기 목록을 가져옵니다. 기본적으로 임시 보기와 필터링되지 않은 보기는 포함되지 않습니다.
 
@@ -4269,7 +4257,7 @@ Show( fvs << Get Name );
 
 ### Get Header Height
 
-**구문:** obj << Get Header Height
+**구문:** obj &lt;&lt; Get Header Height
 
 **설명:** 열 머리글 표시 높이를 가져옵니다.
 
@@ -4283,7 +4271,7 @@ ht = dt << Get Header Height;
 
 ### Get Hidden Columns
 
-**구문:** obj << Get Hidden Columns
+**구문:** obj &lt;&lt; Get Hidden Columns
 
 **설명:** 데이터 테이블에서 현재 숨겨진 열을 반환합니다.
 
@@ -4299,7 +4287,7 @@ Show( hidCols );
 
 ### Get Hidden Rows
 
-**구문:** obj << Get Hidden Rows
+**구문:** obj &lt;&lt; Get Hidden Rows
 
 **설명:** 데이터 테이블에서 현재 숨겨진 행을 반환합니다. Where을(를) 사용하는 것이 좋습니다.
 
@@ -4318,7 +4306,7 @@ Show( r1, r2 );
 
 ### Get Label Columns
 
-**구문:** obj << Get Label Columns
+**구문:** obj &lt;&lt; Get Label Columns
 
 **설명:** 행에 라벨을 지정하는 데 사용된 열을 반환합니다.
 
@@ -4335,7 +4323,7 @@ Show( labelCols );
 
 ### Get Labeled Rows
 
-**구문:** obj << Get Labeled Rows
+**구문:** obj &lt;&lt; Get Labeled Rows
 
 **설명:** 데이터 테이블에서 현재 라벨이 지정된 행을 반환합니다. Where을(를) 사용하는 것이 좋습니다.
 
@@ -4354,7 +4342,7 @@ Show( r1, r2 );
 
 ### Get Lock
 
-**구문:** obj << Get Lock( state=0|1 )
+**구문:** obj &lt;&lt; Get Lock( state=0|1 )
 
 **설명:** 데이터 테이블이 잠겨 있는지 확인합니다.
 
@@ -4374,7 +4362,7 @@ Show( a );
 
 ### Get MM SAS DATA Step for Formula Columns
 
-**구문:** obj << Get MM SAS DATA Step for Formula Columns
+**구문:** obj &lt;&lt; Get MM SAS DATA Step for Formula Columns
 
 **설명:** JMP 데이터 테이블에 계산식 열에 해당하는 모형 관리자 SAS DATA 스텝 코드를 생성합니다.
 
@@ -4389,7 +4377,7 @@ dt << Get MM SAS Data Step for Formula Columns;
 
 ### Get Name
 
-**구문:** obj << Get Name( <"Ignore Extension"> )
+**구문:** obj &lt;&lt; Get Name( &lt;"Ignore Extension"&gt; )
 
 **설명:** 데이터 테이블의 표시 이름을 반환합니다. 선택적 인수인 &apos;Ignore Extension&apos;을 이 명령에 사용하면 확장자를 제외한 데이터 테이블 이름이 반환됩니다.
 
@@ -4417,7 +4405,7 @@ Show( n );
 
 ### Get Path
 
-**구문:** obj << Get Path
+**구문:** obj &lt;&lt; Get Path
 
 **설명:** 데이터 테이블의 전체 경로를 반환합니다.
 
@@ -4432,7 +4420,7 @@ Show( path );
 
 ### Get Property
 
-**구문:** obj << Get Property(  name  )
+**구문:** obj &lt;&lt; Get Property( name )
 
 **설명:** 데이터 테이블의 명명된 특성을 스크립트로 반환합니다.
 
@@ -4447,7 +4435,7 @@ Show( s );
 
 ### Get Row ID Width
 
-**구문:** obj << Get Row ID Width
+**구문:** obj &lt;&lt; Get Row ID Width
 
 **설명:** 행 ID 영역의 표시 너비를 가져옵니다.
 
@@ -4461,7 +4449,7 @@ ht = dt << Get Row ID Width;
 
 ### Get Row States
 
-**구문:** obj << Get Row States
+**구문:** obj &lt;&lt; Get Row States
 
 **설명:** 데이터 테이블의 모든 행에 대해 인코딩된 행 상태 값이 포함된 벡터를 반환합니다. Color Of와 같은 행 상태 함수에서는 인코딩된 행 상태 값이 행 상태 구조로 사용될 수 없습니다. 벡터를 직접 사용할 수 있는 방법은 예제 2를 참조하십시오.
 
@@ -4491,7 +4479,7 @@ Row State( dt2, 5 ) = Marker State( w );
 
 ### Get Rows Where
 
-**구문:** obj << Get Rows Where
+**구문:** obj &lt;&lt; Get Rows Where
 
 **설명:** 데이터 테이블에서 Where 기준과 매칭되는 행을 반환합니다. 대신 Where을(를) 사용하는 것이 좋습니다.
 
@@ -4507,7 +4495,7 @@ Show( r1, r2 );
 
 ### Get SAS DATA Step for Formula Columns
 
-**구문:** obj << Get SAS DATA Step for Formula Columns
+**구문:** obj &lt;&lt; Get SAS DATA Step for Formula Columns
 
 **설명:** JMP 데이터 테이블에 계산식 열에 해당하는 SAS DATA 스텝 코드를 생성합니다.
 
@@ -4522,7 +4510,7 @@ dt << Get SAS Data Step for Formula Columns;
 
 ### Get Script
 
-**구문:** obj << Get Script( <script name> )
+**구문:** obj &lt;&lt; Get Script( &lt;script name&gt; )
 
 **설명:** 요청된 스크립트를 반환합니다. 스크립트 이름을 생략하면 데이터 테이블의 텍스트 표현과 함께 데이터에 저장된 모든 스크립트를 반환합니다.
 
@@ -4549,7 +4537,7 @@ s = dt << Get Script( "Distribution" );
 
 ### Get Script Group
 
-**구문:** obj << Get Script Group( name of script group )
+**구문:** obj &lt;&lt; Get Script Group( name of script group )
 
 **설명:** 그룹의 스크립트 목록을 반환합니다.
 
@@ -4573,7 +4561,7 @@ dt << run script( gb[2] );
 
 ### Get Script Groups Names
 
-**구문:** obj << Get Script Groups Names
+**구문:** obj &lt;&lt; Get Script Groups Names
 
 **설명:** 스크립트 그룹의 이름 목록을 반환합니다.
 
@@ -4595,7 +4583,7 @@ gb = dt << get script groups names;
 
 ### Get Scroll Locked Columns
 
-**구문:** obj << Get Scroll Locked Columns
+**구문:** obj &lt;&lt; Get Scroll Locked Columns
 
 **설명:** 데이터 테이블에서 현재 스크롤 잠금이 설정된 열을 반환합니다.
 
@@ -4611,7 +4599,7 @@ Show( lockCols );
 
 ### Get Selected Columns
 
-**구문:** obj << Get Selected Columns
+**구문:** obj &lt;&lt; Get Selected Columns
 
 **설명:** 데이터 테이블에서 선택된 열 이름을 반환합니다.
 
@@ -4627,7 +4615,7 @@ Show( names );
 
 ### Get Selected Properties
 
-**구문:** obj << Get Selected Properties( <{list of properties}> )
+**구문:** obj &lt;&lt; Get Selected Properties( &lt;{list of properties}&gt; )
 
 **설명:** 선택한 테이블 특성(변수 및 스크립트)을 목록으로 가져옵니다. 선택하는 대신 선택적 목록을 사용하여 가져올 특성을 지정할 수 있습니다.
 
@@ -4654,7 +4642,7 @@ proplist = dt << Get Selected Properties( {2, 4} );
 
 ### Get Selected Rows
 
-**구문:** obj << Get Selected Rows
+**구문:** obj &lt;&lt; Get Selected Rows
 
 **설명:** 데이터 테이블의 현재 선택된 행을 반환합니다.
 
@@ -4671,7 +4659,7 @@ Show( r );
 
 ### Get Table Script Names
 
-**구문:** obj << Get Table Script Names
+**구문:** obj &lt;&lt; Get Table Script Names
 
 **설명:** 데이터 테이블에 있는 모든 특성의 이름을 반환합니다.
 
@@ -4686,7 +4674,7 @@ Show( names );
 
 ### Get Table Variable
 
-**구문:** obj << Get Table Variable( name )
+**구문:** obj &lt;&lt; Get Table Variable( name )
 
 **설명:** 데이터 테이블에서 지정된 테이블 변수의 값을 반환합니다.
 
@@ -4702,7 +4690,7 @@ Show( var );
 
 ### Get Table Variable Names
 
-**구문:** obj << Get Table Variable Names
+**구문:** obj &lt;&lt; Get Table Variable Names
 
 **설명:** 데이터 테이블에 있는 모든 변수의 이름을 반환합니다.
 
@@ -4717,7 +4705,7 @@ Show( names );
 
 ### Get Tagged Columns
 
-**구문:** obj << Get Tagged Columns( tag|{tag1, tag2, ...}, [Intersection] )
+**구문:** obj &lt;&lt; Get Tagged Columns( tag|{tag1, tag2, ...}, [Intersection] )
 
 **설명:** 제공된 태그와 매칭되는 열 목록을 반환합니다. 교차가 요청되면 나열된 모든 태그를 포함하는 열만 반환됩니다.
 
@@ -4737,7 +4725,7 @@ dt << Get Tagged Columns( "Air Pollution Levels" );
 
 ### Get Transforms
 
-**구문:** dt << Get Transforms()
+**구문:** dt &lt;&lt; Get Transforms()
 
 **설명:** 이 데이터 테이블과 연결된 변환 열 목록을 가져옵니다.
 
@@ -4756,7 +4744,7 @@ dt << Delete Columns( {:A, :B} );
 
 ### Get as Matrix
 
-**구문:** obj << Get as Matrix( <list of columns by name>, <list of columns by number>, <column range> )
+**구문:** obj &lt;&lt; Get as Matrix( &lt;list of columns by name&gt;, &lt;list of columns by number&gt;, &lt;column range&gt; )
 
 **설명:** 데이터 테이블의 지정된 열을 행렬로 반환합니다. 기본값은 모든 숫자 열입니다.
 
@@ -4773,13 +4761,7 @@ Show( x );
 
 ### Group Columns
 
-**구문:** obj << Group Columns( first column, number )
-
-obj << Group Columns( {column1, column2, ...})
-
-obj << Group Columns(group name | Path({<a>, <b>, ...}), {column1, column2, ...})
-
-obj << Group Columns( group name | Path({<a>, <b>, ...}), first column, number )
+**구문:** obj &lt;&lt; Group Columns( first column, number )obj &lt;&lt; Group Columns( {column1, column2, ...})obj &lt;&lt; Group Columns(group name | Path({&lt;a&gt;, &lt;b&gt;, ...}), {column1, column2, ...})obj &lt;&lt; Group Columns( group name | Path({&lt;a&gt;, &lt;b&gt;, ...}), first column, number )
 
 **설명:** 열 목록을 그룹화합니다.
 
@@ -4821,9 +4803,7 @@ group = dt << Group Columns( BP 8M, 9 );
 
 ### Group Scripts
 
-**구문:** obj << Group Scripts({ script1, script2, ...}) 
-
-obj << Group Scripts(group name | Path({<a>, <b>, ...}), {script1, script1, ...})
+**구문:** obj &lt;&lt; Group Scripts({ script1, script2, ...}) obj &lt;&lt; Group Scripts(group name | Path({&lt;a&gt;, &lt;b&gt;, ...}), {script1, script1, ...})
 
 **설명:** 스크립트 목록을 그룹화합니다.
 
@@ -4859,7 +4839,7 @@ dt << group scripts(
 
 ### Has Column
 
-**구문:** dt << Has Column( name, < Exact Match(1|0) > )
+**구문:** dt &lt;&lt; Has Column( name, &lt; Exact Match(1|0) &gt; )
 
 **설명:** 데이터 테이블에 지정된 이름의 열이 있는지 여부를 조회합니다.
 
@@ -4892,7 +4872,7 @@ Show(
 
 ### Has data view
 
-**구문:** obj << Has data view
+**구문:** obj &lt;&lt; Has data view
 
 **설명:** 데이터 테이블에 표시되는 창이 열려 있으면 true를 반환합니다.
 
@@ -4906,7 +4886,7 @@ dt << Has Data View();
 
 ### Hide Columns
 
-**구문:** obj << Hide Columns( < 0|1 > | < { column1, column2, ... } >  )
+**구문:** obj &lt;&lt; Hide Columns( &lt; 0|1 &gt; | &lt; { column1, column2, ... } &gt; )
 
 **설명:** 데이터 격자에서 열을 숨깁니다.
 
@@ -4922,7 +4902,7 @@ dt << Hide Columns( 1, {:Age, :Name} );
 
 ### Is Dirty
 
-**구문:** obj << Is Dirty
+**구문:** obj &lt;&lt; Is Dirty
 
 **설명:** 데이터 테이블이 수정되었는지 여부를 조회합니다.
 
@@ -4940,7 +4920,7 @@ Show( b );
 
 ### Is Linked Subset
 
-**구문:** obj << Is Linked Subset
+**구문:** obj &lt;&lt; Is Linked Subset
 
 **설명:** 데이터 테이블이 연결된 부분집합인지 여부 조회
 
@@ -4958,7 +4938,7 @@ Show( dt << Is Linked Subset, linkedSubset << Is Linked Subset, subset << Is Lin
 
 ### JMP Query Builder
 
-**구문:** obj << JMP Query Builder
+**구문:** obj &lt;&lt; JMP Query Builder
 
 **설명:** 하나 이상의 JMP 데이터 테이블에 대한 쿼리를 생성합니다.
 
@@ -4972,7 +4952,7 @@ dt << JMP Query Builder();
 
 ### Join
 
-**구문:** obj << Join( <Private>, <Invisible>,With( Data Table( name )), By Matching Columns( column1 = column2, ...), Selected( columns ), SelectedWith( columns ), <Drop Multiples( 0|1, 0|1 )>, <Include nonmatches( 0|1, 0|1 )>,<Copy formula( 0|1 )>, <Suppress Formula Evaluation>, <Update>, <Merge Same Name Columns>, <Preserve Main Table Order> )
+**구문:** obj &lt;&lt; Join( &lt;Private&gt;, &lt;Invisible&gt;,With( Data Table( name )), By Matching Columns( column1 = column2, ...), Selected( columns ), SelectedWith( columns ), &lt;Drop Multiples( 0|1, 0|1 )&gt;, &lt;Include nonmatches( 0|1, 0|1 )&gt;,&lt;Copy formula( 0|1 )&gt;, &lt;Suppress Formula Evaluation&gt;, &lt;Update&gt;, &lt;Merge Same Name Columns&gt;, &lt;Preserve Main Table Order&gt; )
 
 **설명:** 여러 데이터 테이블을 하나의 새 데이터 테이블로 결합합니다. 행 할당, 열 값 매칭 또는 Cartesian 방식을 통해 데이터를 결합할 수 있습니다.
 
@@ -4992,7 +4972,7 @@ dt << Join(
 
 ### Journal
 
-**구문:** obj << Journal
+**구문:** obj &lt;&lt; Journal
 
 **설명:** 데이터 테이블에서 저널을 만듭니다. 데이터 격자만 포함되고 노트, 변수 또는 스크립트는 포함되지 않습니다.
 
@@ -5006,7 +4986,7 @@ dt << Journal();
 
 ### Journal Link
 
-**구문:** dt << Journal Link( < Save( <filepath> ) | Embed( ) >, < Button Name( "Ben") > )
+**구문:** dt &lt;&lt; Journal Link( &lt; Save( &lt;filepath&gt; ) | Embed( ) &gt;, &lt; Button Name( "Ben") &gt; )
 
 **설명:** 저널에 데이터 테이블 연결 버튼을 추가합니다. embed() 또는 save() 중 하나만 사용하십시오. Embed()에는 옵션이 없고 Save()의 옵션은 dt<<save()와 유사합니다. 버튼 라벨을 재정의하려면 ButtonName()을 사용하십시오. 새 연결 버튼을 반환합니다.
 
@@ -5030,7 +5010,7 @@ Close( dt, "NoSave" );
 
 ### Last Modified
 
-**구문:** obj << Last Modified
+**구문:** obj &lt;&lt; Last Modified
 
 **설명:** 데이터 테이블에 마지막으로 저장된 수정 날짜를 반환합니다.
 
@@ -5045,7 +5025,7 @@ Show( date );
 
 ### Lock Data Table
 
-**구문:** obj << Lock Data Table( state=0|1 )
+**구문:** obj &lt;&lt; Lock Data Table( state=0|1 )
 
 **설명:** 데이터 테이블을 잠가, 값을 편집하거나 추가할 수 없도록 합니다.
 
@@ -5060,7 +5040,7 @@ dt << Lock Data Table( 1 );
 
 ### MSA Variability Chart
 
-**구문:** obj << MSA Variability Chart( Y( column ), X( columns ) )
+**구문:** obj &lt;&lt; MSA Variability Chart( Y( column ), X( columns ) )
 
 **설명:** 범주 간에 측정이 어떻게 다른지 보여 주는 계량형 차트를 표시하고 범주 간에 평균 및 분산이 어떻게 변경되는지 검토하는 분석을 수행합니다.
 
@@ -5074,7 +5054,7 @@ dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
 
 ### Make Indicator Columns
 
-**구문:** obj << Make Indicator Columns
+**구문:** obj &lt;&lt; Make Indicator Columns
 
 **설명:** 명목형 또는 순서형 열을 범주 수만큼의 열로 변환합니다. 결과 열의 열 이름은 소스 열의 범주입니다. 결과 열의 값은 0 또는 1입니다.
 
@@ -5088,7 +5068,7 @@ dt << Make Indicator Columns( columns( {:species, :season} ) );
 
 ### Make RowState Handler
 
-**구문:** rs = dt << Make RowState Handler( function(a) )
+**구문:** rs = dt &lt;&lt; Make RowState Handler( function(a) )
 
 **설명:** 데이터 테이블에 대한 행 상태 처리기를 생성합니다. 함수의 인수는 행 상태가 변경되는 행을 보유합니다.
 
@@ -5105,9 +5085,7 @@ dt << Select Rows( 5 );
 
 ### Make SAS DATA Step
 
-**구문:** sd = dt << Make SAS Data Step( )
-
-sd = dt << Make SAS Data Step( SaveJMPMetadata(true) )
+**구문:** sd = dt &lt;&lt; Make SAS Data Step( )sd = dt &lt;&lt; Make SAS Data Step( SaveJMPMetadata(true) )
 
 **설명:** 데이터 테이블을 SAS DATA 스텝으로 반환합니다.
 
@@ -5122,9 +5100,7 @@ Show( sd );
 
 ### Make SAS DATA Step Window
 
-**구문:** sd = dt << Make SAS Data Step Window( )
-
-sd = dt << Make SAS Data Step Window( SaveJMPMetadata(true) )
+**구문:** sd = dt &lt;&lt; Make SAS Data Step Window( )sd = dt &lt;&lt; Make SAS Data Step Window( SaveJMPMetadata(true) )
 
 **설명:** 유형 SAS의 새 창을 열고 데이터 테이블에서 SAS DATA 스텝을 생성합니다.
 
@@ -5138,7 +5114,7 @@ sd = dt << Make SAS Data Step Window();
 
 ### Merge Referenced Data
 
-**구문:** obj << Merge Referenced Data
+**구문:** obj &lt;&lt; Merge Referenced Data
 
 **설명:** 소스 테이블의 데이터를 참조된 열에 병합하고 연결을 끊어 테이블을 독립 실행형으로 설정합니다. 참조하는 열의 연결 참조 특성도 제거됩니다.
 
@@ -5157,7 +5133,7 @@ dt2 << Merge Referenced Data();
 
 ### Missing Data Pattern
 
-**구문:** obj << Missing Data Pattern( columns( columns ), <Output Table( name )> )
+**구문:** obj &lt;&lt; Missing Data Pattern( columns( columns ), &lt;Output Table( name )&gt; )
 
 **설명:** 데이터 테이블에서 결측값 패턴을 찾은 후 각 패턴 및 해당 빈도에 대한 테이블을 생성합니다.
 
@@ -5171,7 +5147,7 @@ dt << Missing Data Pattern( columns( :POP, :Max deg. F Jan, :OZONE, :CO, :SO2, :
 
 ### Move Column Group
 
-**구문:** obj << Move Column Group( name of group | Path({<a>, <b>, ...}), to first | to last | after(column) | after(group) | after(Path({<a>, <b>, ...})) )
+**구문:** obj &lt;&lt; Move Column Group( name of group | Path({&lt;a&gt;, &lt;b&gt;, ...}), to first | to last | after(column) | after(group) | after(Path({&lt;a&gt;, &lt;b&gt;, ...})) )
 
 **설명:** 열 그룹을 지정한 위치로 이동합니다. 열 그룹 이름을 생략하면 모든 그룹이 이동됩니다.
 
@@ -5213,7 +5189,7 @@ dt << move column group( "xy", to first );
 
 ### Move Script Group
 
-**구문:** obj << Move Script Group( name of group | Path({<a>, <b>, ...}), to first | to last | after(script) | after(group) | after(Path({<a>, <b>, ...})) )
+**구문:** obj &lt;&lt; Move Script Group( name of group | Path({&lt;a&gt;, &lt;b&gt;, ...}), to first | to last | after(script) | after(group) | after(Path({&lt;a&gt;, &lt;b&gt;, ...})) )
 
 **설명:** 스크립트 그룹을 지정한 위치로 이동합니다. 스크립트 그룹 이름을 생략하면 모든 그룹이 이동됩니다.
 
@@ -5242,7 +5218,7 @@ dt << move script group( to first );
 
 ### Move Selected Scripts
 
-**구문:** obj << Move Selected Scripts( script|list of scripts|group|Path({<a>, <b>, ...}), to first | to last | after(script) | after(group) | after(Path({<a>, <b>, ...})) )
+**구문:** obj &lt;&lt; Move Selected Scripts( script|list of scripts|group|Path({&lt;a&gt;, &lt;b&gt;, ...}), to first | to last | after(script) | after(group) | after(Path({&lt;a&gt;, &lt;b&gt;, ...})) )
 
 **설명:** 스크립트를 지정한 위치로 이동합니다.
 
@@ -5294,7 +5270,7 @@ dt << Move Selected scripts(
 
 ### Move down
 
-**구문:** obj << Move down
+**구문:** obj &lt;&lt; Move down
 
 **설명:** 데이터 테이블의 첫 번째 행에 있는 값을 열 이름으로 바꾸고 열 이름을 기본 시퀀싱 이름으로 바꿉니다.
 
@@ -5310,7 +5286,7 @@ dt << Move down;
 
 ### Move up
 
-**구문:** obj << Move up
+**구문:** obj &lt;&lt; Move up
 
 **설명:** 열 이름을 데이터 테이블의 첫 번째 행에 있는 값으로 바꿉니다.
 
@@ -5326,7 +5302,7 @@ dt << Move up;
 
 ### Move up and append
 
-**구문:** obj << Move up and append
+**구문:** obj &lt;&lt; Move up and append
 
 **설명:** 데이터 테이블의 첫 번째 행에 있는 값을 해당 열 이름에 추가하여 열 이름을 바꿉니다.
 
@@ -5342,7 +5318,7 @@ dt << Move up and append;
 
 ### New Data Box
 
-**구문:** obj << New Data Box( < <<Enable Filter Views(0|1) > )
+**구문:** obj &lt;&lt; New Data Box( &lt; &lt;&lt;Enable Filter Views(0|1) &gt; )
 
 **설명:** 표시 상자 트리에 데이터 테이블 보기를 생성하고 현재 데이터 테이블을 지정된 데이터 테이블로 변경합니다. 선택적 Enable Filter Views 인수는 필터 보기를 허용할지 여부를 제어하며 기본값은 필터 보기를 허용합니다.
 
@@ -5366,7 +5342,7 @@ dtA = 0;
 
 ### New Data View
 
-**구문:** obj << New Data View
+**구문:** obj &lt;&lt; New Data View
 
 **설명:** 데이터 테이블의 새 보기를 만듭니다. 새 보기는 원래 보기에 연결되며 항목이 강조 표시되거나 변경되면 원래 보기에 영향을 줍니다. 동일한 테이블의 다른 부분으로 스크롤하려는 경우에 유용합니다.
 
@@ -5380,7 +5356,7 @@ dt << New Data View();
 
 ### New Filter View
 
-**구문:** fv = dt << New Filter View( < name >, < Copy From(name|obj) >, < Temporary(0|1) >, < Active(0|1) >, < DataFilter(expr) >)
+**구문:** fv = dt &lt;&lt; New Filter View( &lt; name &gt;, &lt; Copy From(name|obj) &gt;, &lt; Temporary(0|1) &gt;, &lt; Active(0|1) &gt;, &lt; DataFilter(expr) &gt;)
 
 **설명:** 새 필터 보기를 생성하고 생성된 FilterView 개체가 반환됩니다. 새 필터 보기는 기본적으로 활성화됩니다. 필터 보기의 이름을 지정하지 않으면 &apos;Temporary&apos;를 &apos;0&apos;으로 설정한 경우 외에는 &apos;temporary&apos;가 사용됩니다.
 
@@ -5425,9 +5401,7 @@ dt << New Filter View( "Unknown Sex", CopyFrom( fv ), Active( 0 ) );
 
 ### New Script
 
-**구문:** New Property( name, script ) 
-
-New Script( name, script )
+**구문:** New Property( name, script ) New Script( name, script )
 
 **설명:** 데이터 테이블에 새 특성을 생성하고 스크립트로 설정합니다.
 
@@ -5441,7 +5415,7 @@ dt << New Script( "New Script", Distribution( Column( :Height, :Weight ), By( :s
 
 ### New Table Variable
 
-**구문:** obj << New Table Variable( name, number )
+**구문:** obj &lt;&lt; New Table Variable( name, number )
 
 **설명:** 데이터 테이블에 새 변수를 생성하고 상수 값으로 설정합니다. 이름이 같은 기존 변수가 있으면 새 변수 이름에 숫자가 추가되어 고유하게 만듭니다. 대부분의 경우 유사한 &apos;테이블 변수 설정&apos; 명령을 사용하는 것이 좋습니다.
 
@@ -5455,7 +5429,7 @@ dt << New Table Variable( "Days", 42 );
 
 ### OC Curves
 
-**구문:** obj << OC Curves
+**구문:** obj &lt;&lt; OC Curves
 
 **설명:** 공정 변화를 감지하지 못할 확률을 변화 크기의 함수로 표시하는 그래프를 생성합니다.
 
@@ -5463,7 +5437,7 @@ dt << New Table Variable( "Days", 42 );
 
 ### Partition
 
-**구문:** obj << Partition( Y( column ), X( column(s) ) )
+**구문:** obj &lt;&lt; Partition( Y( column ), X( column(s) ) )
 
 **설명:** 예측 변수와 반응 값 사이의 관계에 따라 데이터를 재귀적으로 분할하여 의사 결정 나무를 생성합니다. 반응과 예측 변수는 모두 연속형이거나 모두 범주형일 수 있습니다.
 
@@ -5481,7 +5455,7 @@ dt << Partition(
 
 ### Paste Column Properties
 
-**구문:** obj << Paste Column Properties
+**구문:** obj &lt;&lt; Paste Column Properties
 
 **설명:** 클립보드의 여러 열 특성 목록을 여러 열에 붙여 넣습니다. 데이터 테이블에서 대상 열을 선택하는 대신 대상 열 목록을 지정할 수도 있습니다.
 
@@ -5504,7 +5478,7 @@ dt2 << Paste Column Properties( {:T1, :T3} );
 
 ### Recode
 
-**구문:** obj << Recode
+**구문:** obj &lt;&lt; Recode
 
 **설명:** 선택한 열의 이전 값을 새 값으로 재코딩하십시오.
 
@@ -5519,7 +5493,7 @@ dt << Recode;
 
 ### Recode Column
 
-**구문:** obj << Recode Column(<source column reference>, {<transform>, ...}, <Update Properties(0|1)>, <By Word(Delimiters(<chars>)>, Target Column(<column reference> | <column name>))
+**구문:** obj &lt;&lt; Recode Column(&lt;source column reference&gt;, {&lt;transform&gt;, ...}, &lt;Update Properties(0|1)&gt;, &lt;By Word(Delimiters(&lt;chars&gt;)&gt;, Target Column(&lt;column reference&gt; | &lt;column name&gt;))
 
 **설명:** 나열된 변환을 소스 열의 각 값에 적용하고 결과를 원래 열 또는 지정된 대상 열에 저장합니다. &apos;단어별&apos; 옵션은 제공된 문자 데이터를 더 작은 입력 값으로 분할합니다. 입력 값이 결정되면 해당 값에 개별적으로 변환이 적용됩니다.
 
@@ -5547,7 +5521,7 @@ dt << Recode Column(
 
 ### Rename Column Group
 
-**구문:** obj << Rename Column Group( oldname | Path({<a>, <b>, ...}), newname )
+**구문:** obj &lt;&lt; Rename Column Group( oldname | Path({&lt;a&gt;, &lt;b&gt;, ...}), newname )
 
 **설명:** 열 그룹의 이름을 바꿉니다.
 
@@ -5579,7 +5553,7 @@ dt << rename column group( "xy", "coordinates" );
 
 ### Rename Script Group
 
-**구문:** obj << Rename Script Group( oldname | Path({<a>, <b>, ...}), newname )
+**구문:** obj &lt;&lt; Rename Script Group( oldname | Path({&lt;a&gt;, &lt;b&gt;, ...}), newname )
 
 **설명:** 스크립트 그룹의 이름을 바꿉니다.
 
@@ -5617,7 +5591,7 @@ dt << rename script group( "GB", "GraphBuilders" );
 
 ### Rename Table Property
 
-**구문:** obj << Rename Table Property( old name, new name )
+**구문:** obj &lt;&lt; Rename Table Property( old name, new name )
 
 **설명:** 지정된 테이블 특성의 이름을 바꿉니다.
 
@@ -5633,7 +5607,7 @@ dt << Rename Table Property( "New Script", "Great Script" );
 
 ### Rename Table Script
 
-**구문:** obj << Rename Table Script( old name, new name )
+**구문:** obj &lt;&lt; Rename Table Script( old name, new name )
 
 **설명:** 지정된 테이블 스크립트의 이름을 바꿉니다.
 
@@ -5649,7 +5623,7 @@ dt << Rename Table Script( "New Script", "Great Script" );
 
 ### Rename Table Variable
 
-**구문:** obj << Rename Table Variable( old name, new name )
+**구문:** obj &lt;&lt; Rename Table Variable( old name, new name )
 
 **설명:** 지정된 테이블 변수의 이름을 바꿉니다.
 
@@ -5665,7 +5639,7 @@ dt << Rename Table Variable( "Days", "Hours" );
 
 ### Rerun Formulas
 
-**구문:** obj << Rerun Formulas
+**구문:** obj &lt;&lt; Rerun Formulas
 
 **설명:** 데이터 테이블에 있는 모든 열 계산식을 재실행합니다.
 
@@ -5680,7 +5654,7 @@ dt << Rerun Formulas;
 
 ### Reset Transforms
 
-**구문:** dt >> Reset Transforms()
+**구문:** dt &gt;&gt; Reset Transforms()
 
 **설명:** 변환 열에 액세스하면 이후의 호출을 위해 데이터를 캐시합니다. 이 기능은 캐시된 데이터를 제거합니다. 열에 다시 액세스하면 데이터가 재생성됩니다.
 
@@ -5696,7 +5670,7 @@ dt << Reset Transforms();
 
 ### Revert
 
-**구문:** obj << Revert
+**구문:** obj &lt;&lt; Revert
 
 **설명:** 데이터 테이블에 대한 변경 사항을 되돌립니다.
 
@@ -5715,7 +5689,7 @@ dt << revert();
 
 ### Run Formulas
 
-**구문:** obj << Run Formulas
+**구문:** obj &lt;&lt; Run Formulas
 
 **설명:** 보류 중인 모든 계산식 실행을 수행합니다. 모든 계산식을 실행하지는 않습니다.
 
@@ -5731,7 +5705,7 @@ Distribution( Column( :"N=1"n, :"N=5"n, :"N=10"n ) );
 
 ### Run Script
 
-**구문:** obj << Run Script( name )
+**구문:** obj &lt;&lt; Run Script( name )
 
 **설명:** 데이터 테이블에 특성으로 저장된 명명된 스크립트를 실행합니다.
 
@@ -5745,9 +5719,7 @@ dt << Run Script( "Distribution" );
 
 ### Save
 
-**구문:** obj << Save( <filepath>, <file type> ) 
-
-obj << Save As( filepath, <file type> )
+**구문:** obj &lt;&lt; Save( &lt;filepath&gt;, &lt;file type&gt; ) obj &lt;&lt; Save As( filepath, &lt;file type&gt; )
 
 **설명:** 데이터 테이블을 지원되는 형식으로 저장합니다. 지원되는 형식에는 .jmp, .xls, .xlsx, .txt, .csv, .tsv, .xpt, .v8xpt, .stx 등이 있습니다. 일부 형식은 Windows에서만 지원됩니다. 자세한 내용은 "JMP 사용"에서 확인하십시오.
 
@@ -5767,9 +5739,7 @@ Close( dt, "NoSave" );
 
 ### Save As
 
-**구문:** obj << Save( <filepath>, <file type> ) 
-
-obj << Save As( filepath, <file type> )
+**구문:** obj &lt;&lt; Save( &lt;filepath&gt;, &lt;file type&gt; ) obj &lt;&lt; Save As( filepath, &lt;file type&gt; )
 
 **설명:** 데이터 테이블을 지원되는 형식으로 저장합니다. 지원되는 형식에는 .jmp, .xls, .xlsx, .txt, .csv, .tsv, .xpt, .v8xpt, .stx 등이 있습니다. 일부 형식은 Windows에서만 지원됩니다. 자세한 내용은 "JMP 사용"에서 확인하십시오.
 
@@ -5789,7 +5759,7 @@ Close( dt, "NoSave" );
 
 ### Save Database
 
-**구문:** obj << Save Database( connectInfo, TableName )
+**구문:** obj &lt;&lt; Save Database( connectInfo, TableName )
 
 **설명:** 데이터 테이블을 다시 데이터베이스에 저장합니다.
 
@@ -5803,7 +5773,7 @@ dt << Save Database( "Connect Dialog", "My_Class" );
 
 ### Screen Predictors
 
-**구문:** obj << Screen Predictors
+**구문:** obj &lt;&lt; Screen Predictors
 
 **설명:** &apos;Predictor Screening&apos;의 별칭이자 기존 이름입니다.
 
@@ -5817,7 +5787,7 @@ obj = dt << Predictor Screening( Y( :Banding? ), X( Column Group( "Predictors" )
 
 ### Select Column Group
 
-**구문:** obj << Select Column Group( name of group | list of names )
+**구문:** obj &lt;&lt; Select Column Group( name of group | list of names )
 
 **설명:** 열 그룹을 선택합니다.
 
@@ -5833,7 +5803,7 @@ dt << select column group( "xy", "pollutants" );
 
 ### Select Properties
 
-**구문:** obj << Select Properties( { property1, property2, ... )
+**구문:** obj &lt;&lt; Select Properties( { property1, property2, ... )
 
 **설명:** 지정된 테이블 특성을 선택합니다. 여기서 목록은 특성 이름 목록 또는 특성에 대한 인덱스 목록일 수 있습니다.
 
@@ -5859,7 +5829,7 @@ proplist = dt << Select Properties( {"Bivariate", "Logistic"} );
 
 ### Select Script Group
 
-**구문:** obj << Select Script Group( <name of group | { group1, group2, ...} > )
+**구문:** obj &lt;&lt; Select Script Group( &lt;name of group | { group1, group2, ...} &gt; )
 
 **설명:** 스크립트 그룹을 선택합니다. 스크립트 그룹을 제공하지 않으면 모든 그룹이 선택됩니다.
 
@@ -5882,7 +5852,7 @@ dt << select script group( "VL" );
 
 ### Select Scripts
 
-**구문:** obj << Select Scripts( <name of script | { script1, script2, ...} > )
+**구문:** obj &lt;&lt; Select Scripts( &lt;name of script | { script1, script2, ...} &gt; )
 
 **설명:** 명명된 스크립트를 선택합니다.
 
@@ -5925,7 +5895,7 @@ dt << select scripts( a );
 
 ### Select columns
 
-**구문:** obj << Select columns( <column>, <column>, ... )
+**구문:** obj &lt;&lt; Select columns( &lt;column&gt;, &lt;column&gt;, ... )
 
 **설명:** 지정한 열을 선택합니다. 모든 열을 선택하려면 &apos;All&apos; 키워드를 사용하십시오.
 
@@ -5967,13 +5937,13 @@ dt << Select Columns( clist );
 
 ### Sequencing Variants Toolset
 
-**구문:** obj << Sequencing Variants Toolset
+**구문:** obj &lt;&lt; Sequencing Variants Toolset
 
 **설명:** 시퀀싱 변이 도구 집합 추가기능 플랫폼 인터페이스
 
 ### Set Active Filter View
 
-**구문:** obj << Set Active Filter View( name | obj )
+**구문:** obj &lt;&lt; Set Active Filter View( name | obj )
 
 **설명:** 활성 필터 보기를 설정합니다.
 
@@ -5995,7 +5965,7 @@ dt << Set Active Filter View( "Dream" );
 
 ### Set Cell Height
 
-**구문:** obj << Set Cell Height( number )
+**구문:** obj &lt;&lt; Set Cell Height( number )
 
 **설명:** 각 데이터 테이블 셀의 표시 높이를 설정합니다.
 
@@ -6009,7 +5979,7 @@ dt << Set Cell Height( 20 );
 
 ### Set Dirty
 
-**구문:** obj << Set Dirty( state=0|1 )
+**구문:** obj &lt;&lt; Set Dirty( state=0|1 )
 
 **설명:** 데이터 테이블이 변경되지 않은 경우에도 데이터 테이블을 변경된 것으로 표시합니다. 닫을 때 저장할지 묻는 메시지를 표시하려는 경우에 유용합니다.
 
@@ -6023,7 +5993,7 @@ dt << Set Dirty();
 
 ### Set Edit Lock
 
-**구문:** obj << Set Edit Lock( [ <"Modify Cells">, <"Add rows">, <"Add Columns">, <"Delete Rows">, <"Delete Columns">] )
+**구문:** obj &lt;&lt; Set Edit Lock( [ &lt;"Modify Cells"&gt;, &lt;"Add rows"&gt;, &lt;"Add Columns"&gt;, &lt;"Delete Rows"&gt;, &lt;"Delete Columns"&gt;] )
 
 **설명:** 데이터 테이블에 지정된 연산자를 허용하지 않습니다.
 
@@ -6037,7 +6007,7 @@ dt << Set Edit Lock( "Add Rows", "Delete Columns" );
 
 ### Set Header Height
 
-**구문:** obj << Set Header Height( number )
+**구문:** obj &lt;&lt; Set Header Height( number )
 
 **설명:** 열 머리글 표시 높이를 설정합니다.
 
@@ -6051,7 +6021,7 @@ dt << Set Header Height( 20 );
 
 ### Set Label Columns
 
-**구문:** obj << Set Label Columns( column(s) )
+**구문:** obj &lt;&lt; Set Label Columns( column(s) )
 
 **설명:** 데이터 테이블의 선택된 열에 라벨 역할을 할당합니다.
 
@@ -6066,7 +6036,7 @@ dt << Set Label Columns( :City, :State );
 
 ### Set Matrix
 
-**구문:** obj << Set Matrix( [ matrix with rows separated by commas ] )
+**구문:** obj &lt;&lt; Set Matrix( [ matrix with rows separated by commas ] )
 
 **설명:** 행렬에서 데이터 테이블을 생성합니다.
 
@@ -6080,7 +6050,7 @@ dt << Set Matrix( [12 59 95, 12 61 123, 12 55 74, 12 66 145] );
 
 ### Set Name
 
-**구문:** obj << Set Name( new TableName )
+**구문:** obj &lt;&lt; Set Name( new TableName )
 
 **설명:** 데이터 테이블의 이름을 변경합니다.
 
@@ -6094,7 +6064,7 @@ dt << Set Name( "New Class" );
 
 ### Set Property
 
-**구문:** obj << Set Property(  name, script  )
+**구문:** obj &lt;&lt; Set Property( name, script )
 
 **설명:** 데이터 테이블에 새 특성을 생성하고 스크립트로 설정합니다.
 
@@ -6108,7 +6078,7 @@ dt << Set Property( "New Script", Distribution( Column( :Height, :Weight ), By( 
 
 ### Set Row ID Width
 
-**구문:** obj << Set Row ID Width( number )
+**구문:** obj &lt;&lt; Set Row ID Width( number )
 
 **설명:** 행 ID 영역의 표시 너비를 설정합니다.
 
@@ -6122,7 +6092,7 @@ dt << Set Row ID Width( 80 );
 
 ### Set Row States
 
-**구문:** obj << Set Row States( [state1, state2, ... stateN] )
+**구문:** obj &lt;&lt; Set Row States( [state1, state2, ... stateN] )
 
 **설명:** 데이터 테이블의 모든 행에 대한 행 상태를 설정합니다.
 
@@ -6139,7 +6109,7 @@ dt << Set Row States(
 
 ### Set Scroll Lock Columns
 
-**구문:** obj << Set Scroll Lock Columns( column(s) )
+**구문:** obj &lt;&lt; Set Scroll Lock Columns( column(s) )
 
 **설명:** 데이터 테이블의 선택된 열을 잠가, 스크롤할 수 없도록 합니다. 열이 잠겨 있음을 나타내기 위해 배경 색상이 바뀝니다.
 
@@ -6153,7 +6123,7 @@ dt << Set Scroll Lock Columns( :City );
 
 ### Set Table Variable
 
-**구문:** obj << Set Table Variable( name, number )
+**구문:** obj &lt;&lt; Set Table Variable( name, number )
 
 **설명:** 데이터 테이블에 새 변수를 생성하고 상수 값으로 설정합니다. 이름이 같은 기존 변수를 덮어씁니다.
 
@@ -6167,7 +6137,7 @@ dt << Set Table Variable( "Days", 42 );
 
 ### Show Header Filter Icons
 
-**구문:** obj << Show Header Filter Icons( state=0|1 )
+**구문:** obj &lt;&lt; Show Header Filter Icons( state=0|1 )
 
 **설명:** Show or hide the filter icons on columns in the current filter view.
 
@@ -6183,7 +6153,7 @@ dt << Show Header Filter Icons( 0 );
 
 ### Show Header Graphs
 
-**구문:** obj << Show Header Graphs( state=0|1 )
+**구문:** obj &lt;&lt; Show Header Graphs( state=0|1 )
 
 **설명:** Show or hide the header graphs in the data table display.
 
@@ -6199,7 +6169,7 @@ dt << Show Header Graphs( 0 );
 
 ### Show Header Groups
 
-**구문:** obj << Show Header Groups( state=0|1 )
+**구문:** obj &lt;&lt; Show Header Groups( state=0|1 )
 
 **설명:** Show or hide the column groups in the data table display.
 
@@ -6215,7 +6185,7 @@ dt << Show Header Groups( 0 );
 
 ### Show Header Statistics
 
-**구문:** obj << Show Header Statistics( state=0|1 )
+**구문:** obj &lt;&lt; Show Header Statistics( state=0|1 )
 
 **설명:** Show or hide the header statistics in the data table display.
 
@@ -6231,7 +6201,7 @@ dt << Show Header Statistics( 0 );
 
 ### Show Header Tags
 
-**구문:** obj << Show Header Tags( state=0|1 )
+**구문:** obj &lt;&lt; Show Header Tags( state=0|1 )
 
 **설명:** Show or hide the column tags in the data table display.
 
@@ -6247,7 +6217,7 @@ dt << Show Header Tags( 0 );
 
 ### Show Hidden Columns In Columns List
 
-**구문:** obj << Show Hidden Columns In Columns List( state=0|1 )
+**구문:** obj &lt;&lt; Show Hidden Columns In Columns List( state=0|1 )
 
 **설명:** 데이터 테이블 열 목록에서 숨겨진 열을 제외하려면 해제합니다. 이러한 열은 데이터 격자에 표시되지 않습니다.
 
@@ -6265,7 +6235,7 @@ dt << Show Hidden Columns In Columns List( 0 );
 
 ### Show Transforms
 
-**구문:** dt << Show Transforms()
+**구문:** dt &lt;&lt; Show Transforms()
 
 **설명:** 이 데이터 테이블 및 해당 플랫폼과 연결된 변환 열에 대한 정보를 로그에 출력합니다. 이것은 정보 제공용이며 형식이 변경될 수 있으므로 파싱하면 안 됩니다.
 
@@ -6283,7 +6253,7 @@ dt << Delete Columns( :A );
 
 ### Sort
 
-**구문:** obj << Sort( <Private>, <Invisible>, <Replace table>, By( column ), Order( ascending|descending ) )
+**구문:** obj &lt;&lt; Sort( &lt;Private&gt;, &lt;Invisible&gt;, &lt;Replace table&gt;, By( column ), Order( ascending|descending ) )
 
 **설명:** 지정된 열을 기준으로 오름차순 또는 내림차순으로 정렬되는 새 데이터 테이블을 생성합니다.
 
@@ -6309,7 +6279,7 @@ dt << Sort( replace table, By( :name ), Order( Ascending ) );
 
 ### Split
 
-**구문:** obj << Split( Split( columns ), Split by( column ), <Group(column)>, <Private>|<Invisible>, <Remaining Columns( Keep All | Drop All | Drop( columns ) | Keep( columns ) )>, <Copy formula( 0|1 )>, <Suppress formula evaluation( 0|1 )>, <Sort by Column Property>, <Output Table( "name" )> )
+**구문:** obj &lt;&lt; Split( Split( columns ), Split by( column ), &lt;Group(column)&gt;, &lt;Private&gt;|&lt;Invisible&gt;, &lt;Remaining Columns( Keep All | Drop All | Drop( columns ) | Keep( columns ) )&gt;, &lt;Copy formula( 0|1 )&gt;, &lt;Suppress formula evaluation( 0|1 )&gt;, &lt;Sort by Column Property&gt;, &lt;Output Table( "name" )&gt; )
 
 **설명:** 한 열의 여러 행이 여러 열의 한 행으로 매핑되는 새 데이터 테이블을 생성합니다.
 
@@ -6329,7 +6299,7 @@ dt << Split(
 
 ### Stack
 
-**구문:** obj << Stack( <Private>, <Invisible>, columns( columns ), <Source Label Column( string )>, <Stacked Data Column( string )>, <Copy formula( 0|1 )>, <Number of Series(n)>, <Contiguous>, <Drop All Other Columns(1) | Name("Non-stacked columns")(Keep( col1, ... )) | Name("Non-stacked columns")(Drop( col1, ... ))>, <Output Table( "name" )>) )
+**구문:** obj &lt;&lt; Stack( &lt;Private&gt;, &lt;Invisible&gt;, columns( columns ), &lt;Source Label Column( string )&gt;, &lt;Stacked Data Column( string )&gt;, &lt;Copy formula( 0|1 )&gt;, &lt;Number of Series(n)&gt;, &lt;Contiguous&gt;, &lt;Drop All Other Columns(1) | Name("Non-stacked columns")(Keep( col1, ... )) | Name("Non-stacked columns")(Drop( col1, ... ))&gt;, &lt;Output Table( "name" )&gt;) )
 
 **설명:** 단일 열로 쌓은 여러 열의 값으로 새 데이터 테이블을 생성합니다.
 
@@ -6382,7 +6352,7 @@ dt << Stack(
 
 ### Subscribe
 
-**구문:** obj << Subscribe( Key( <"client"> ), OnDeleteColumns| OnAddColumns| OnAddRows| OnDeleteRows| OnRenameColumn | OnClose | OnSave | OnRename (function) )
+**구문:** obj &lt;&lt; Subscribe( Key( &lt;"client"&gt; ), OnDeleteColumns| OnAddColumns| OnAddRows| OnDeleteRows| OnRenameColumn | OnClose | OnSave | OnRename (function) )
 
 **설명:** 구독하여 데이터 테이블의 변경 사항과 관련된 메시지를 가져옵니다. 키는 구독 이름이므로 참조될 수 있습니다. 선택적으로 사용되는 변수인 client는 데이터 테이블에 대해 닫기가 시도될 때 닫기 확인을 트리거합니다. 함수는 이전에 정의된 함수의 이름이거나 함수 자체일 수 있습니다. On Close는 함수에 대해 하나의 인수(데이터 테이블)만 필요로 합니다. 다른 메시지에는 선택적 인수(영향을 받는 열 목록 또는 행 수)가 필요합니다. 각 구독은 구독을 취소할 때까지 유효합니다.
 
@@ -6462,7 +6432,7 @@ dt << subscribe( "Test Add", onAddRows( addRowsFn, 3 ) );
 
 ### Subset
 
-**구문:** obj << Subset( <Private>, <Invisible>, <Selected columns>, <Columns(column list)>, <All rows | Selected Rows | Filtered Rows(where clause) | Rows([number, number, ...])>, <By(column list)>, <Sampling Rate(fraction)>, <Sample Size(integer)>, <Stratify(column list)>, <Link to original data table(0|1)>, <Copy formula(0|1)>, <Suppress Formula Evaluation>, <Keep by columns> )
+**구문:** obj &lt;&lt; Subset( &lt;Private&gt;, &lt;Invisible&gt;, &lt;Selected columns&gt;, &lt;Columns(column list)&gt;, &lt;All rows | Selected Rows | Filtered Rows(where clause) | Rows([number, number, ...])&gt;, &lt;By(column list)&gt;, &lt;Sampling Rate(fraction)&gt;, &lt;Sample Size(integer)&gt;, &lt;Stratify(column list)&gt;, &lt;Link to original data table(0|1)&gt;, &lt;Copy formula(0|1)&gt;, &lt;Suppress Formula Evaluation&gt;, &lt;Keep by columns&gt; )
 
 **설명:** 소스 데이터 테이블의 선택된 행 및 열을 이용하여 새 데이터 테이블을 생성합니다. 부분집합을 생성하기 위해 행을 무작위로 선택할 수도 있습니다.
 
@@ -6508,7 +6478,7 @@ dt << Subset( Rows( [28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40] ) );
 
 ### Summary
 
-**구문:** obj << Summary( <Private>, <Invisible>, FREQ(column | "none"), WEIGHT(column | "none"),Group( columns ),Subgroup(columns), <N (column)>, <Mean( column )>, <Std Dev( column )>, <Min( column )>, <Max( column )>, <Range( column )>, <Sum( column )>, <CV( column )>...,Include marginal statistics, Link to original data table (0|1),statistics column name format( "stat(column)" | "column" | "stat of column" | "column stat" | "stat") )
+**구문:** obj &lt;&lt; Summary( &lt;Private&gt;, &lt;Invisible&gt;, FREQ(column | "none"), WEIGHT(column | "none"),Group( columns ),Subgroup(columns), &lt;N (column)&gt;, &lt;Mean( column )&gt;, &lt;Std Dev( column )&gt;, &lt;Min( column )&gt;, &lt;Max( column )&gt;, &lt;Range( column )&gt;, &lt;Sum( column )&gt;, &lt;CV( column )&gt;...,Include marginal statistics, Link to original data table (0|1),statistics column name format( "stat(column)" | "column" | "stat of column" | "column stat" | "stat") )
 
 **설명:** 요약 통계량에 대한 새 데이터 테이블을 생성합니다. 지정할 경우 그룹화 변수의 각 수준 또는 여러 그룹화 변수의 각 수준 조합에 대한 행이 있습니다.
 
@@ -6534,7 +6504,7 @@ dt << Summary( Group( :Age ), Mean( :Height ), statistics column name format( "s
 
 ### Suppress Formula Eval
 
-**구문:** obj << Suppress Formula Eval( state=0|1 )
+**구문:** obj &lt;&lt; Suppress Formula Eval( state=0|1 )
 
 **설명:** 계산식 실행을 제한하거나 활성화합니다. 행 추가, 여러 분석 실행 및 정렬을 빠르게 수행하려는 경우에 유용합니다.
 
@@ -6551,7 +6521,7 @@ dt << Suppress Formula Eval( 0 );
 
 ### Text to Columns
 
-**구문:** obj << Text to Columns( delimiters(<"separator">, <TAB>, <NEWLINE>), columns(column1, column2, ...) )
+**구문:** obj &lt;&lt; Text to Columns( delimiters(&lt;"separator"&gt;, &lt;TAB&gt;, &lt;NEWLINE&gt;), columns(column1, column2, ...) )
 
 **설명:** 구분자가 포함된 문자열 열을 여러 개의 별도의 열로 변환합니다. 결과 열은 표시자 열일 수 있습니다. 구분자는 모든 문자, TAB 키워드 또는 NEWLINE 키워드일 수 있습니다.
 
@@ -6577,13 +6547,13 @@ dt << Text To Columns( delimiter( "," ), columns( :Brush Delimited ), Make Indic
 
 ### Torch Deep Learning
 
-**구문:** obj << Torch Deep Learning
+**구문:** obj &lt;&lt; Torch Deep Learning
 
 **설명:** Torch Deep Learning 추가기능 플랫폼에 대한 인터페이스
 
 ### Transform Column
 
-**구문:** dt << Transform Column(<name>, Formula(<expression>), [Replace(0|1)], [Private(0|1)], [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]
+**구문:** dt &lt;&lt; Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Replace(0|1)], [Private(0|1)], [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]
 
 **설명:** 목표 테이블과 연결된 변환 열을 생성합니다. 변환 열은 실제 열처럼 액세스할 수 있습니다. 
 
@@ -6643,7 +6613,7 @@ dt << Delete Columns( :A );
 
 ### Transpose
 
-**구문:** obj << Transpose( <Private>, <Invisible>,columns( columns ), By( column ), <Label( column )>, <Output Table( name )> )
+**구문:** obj &lt;&lt; Transpose( &lt;Private&gt;, &lt;Invisible&gt;,columns( columns ), By( column ), &lt;Label( column )&gt;, &lt;Output Table( name )&gt; )
 
 **설명:** 소스 테이블에서 행과 열이 교환된 새 데이터 테이블을 생성합니다.
 
@@ -6661,7 +6631,7 @@ dt << Transpose(
 
 ### Type 1 Gauge
 
-**구문:** obj << Type 1 Gauge( Y( column ) )
+**구문:** obj &lt;&lt; Type 1 Gauge( Y( column ) )
 
 **설명:** 한 부품의 측정 공정 능력을 평가하기 위해 유형 1 게이지 방법을 사용하여 연속형 데이터에 대한 측정 시스템을 분석합니다.
 
@@ -6682,7 +6652,7 @@ dt << Type 1 Gauge(
 
 ### Ungroup Columns
 
-**구문:** obj << Ungroup Columns( {column1, column2, ...} | Column Group( group name ) )
+**구문:** obj &lt;&lt; Ungroup Columns( {column1, column2, ...} | Column Group( group name ) )
 
 **설명:** 열 목록 그룹을 해제합니다.
 
@@ -6716,7 +6686,7 @@ dt << Ungroup Columns( Column Group( "Monday" ) );
 
 ### Ungroup Scripts
 
-**구문:** obj << Ungroup Scripts( name of script group | list of scripts )
+**구문:** obj &lt;&lt; Ungroup Scripts( name of script group | list of scripts )
 
 **설명:** 스크립트 목록의 그룹 해제 스크립트가 제공되지 않은 경우 선택된 스크립트가 해당 그룹에서 분리됩니다. 제공된 스크립트도 없고 선택된 스크립트도 없으면 모든 그룹에 대해 그룹화가 취소됩니다.
 
@@ -6762,7 +6732,7 @@ dt << ungroup scripts();
 
 ### Unsubscribe
 
-**구문:** obj << Unsubscribe( Key, OnDeleteColumns| OnAddColumns| OnAddRows| OnDeleteRows| OnClose | OnColRename | All )
+**구문:** obj &lt;&lt; Unsubscribe( Key, OnDeleteColumns| OnAddColumns| OnAddRows| OnDeleteRows| OnClose | OnColRename | All )
 
 **설명:** 데이터 테이블에 대한 이전 구독을 취소합니다.
 
@@ -6777,7 +6747,7 @@ dt << Unsubscribe( "myname", On Close );
 
 ### Update
 
-**구문:** obj << Update( With( Data Table( name )), Match Columns( column1 = column2, ...), Selected( columns ), Add columns from Update table(<ALL>, <NONE>, <{column1, column2, ...}>), Replace columns in main table(<ALL>, <NONE>, <{column1, column2, ...}>), <Ignore missing> )
+**구문:** obj &lt;&lt; Update( With( Data Table( name )), Match Columns( column1 = column2, ...), Selected( columns ), Add columns from Update table(&lt;ALL&gt;, &lt;NONE&gt;, &lt;{column1, column2, ...}&gt;), Replace columns in main table(&lt;ALL&gt;, &lt;NONE&gt;, &lt;{column1, column2, ...}&gt;), &lt;Ignore missing&gt; )
 
 **설명:** 선택한 열을 바꾸거나 추가하여 업데이트된 데이터 테이블을 원래 데이터 테이블에 병합합니다.
 
@@ -6844,7 +6814,7 @@ dt1 << Update(
 
 ### Update From Database
 
-**구문:** obj << Update From Database( connectInfo )
+**구문:** obj &lt;&lt; Update From Database( connectInfo )
 
 **설명:** 테이블의 데이터를 데이터베이스에서 다시 가져온 데이터로 업데이트합니다.
 
@@ -6858,13 +6828,13 @@ dt << Update From Database( "Connect Dialog" );
 
 ### XGBoost
 
-**구문:** obj << XGBoost
+**구문:** obj &lt;&lt; XGBoost
 
 **설명:** Stochastic 그래디언트 부스트 예측 모델링을 위한 XGBoost에 대한 시험적 인터페이스입니다.
 
 ### set private
 
-**구문:** obj << set private( <1|0> )
+**구문:** obj &lt;&lt; set private( &lt;1|0&gt; )
 
 **설명:** 테이블을 비공개로 설정합니다. 비공개 테이블은 데이터 테이블 목록 및 구독에서 생략됩니다.
 
@@ -6893,7 +6863,7 @@ Close( dt, No Save );
 
 #### Add Column Properties
 
-**구문:** obj << Add Column Properties
+**구문:** obj &lt;&lt; Add Column Properties
 
 **설명:** 선택한 열에 특성을 추가합니다.
 
@@ -6907,7 +6877,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Add From Row States
 
-**구문:** obj << Add From Row States
+**구문:** obj &lt;&lt; Add From Row States
 
 **설명:** 행 상태 열을 기본 상태가 아닌 현재 사용되는 모든 행 상태 변경 사항으로 업데이트합니다.
 
@@ -6926,7 +6896,7 @@ col << Add From Row States();
 
 #### Add To Row States
 
-**구문:** obj << Add To Row States
+**구문:** obj &lt;&lt; Add To Row States
 
 **설명:** 기본 상태가 아닌 열의 모든 행 상태 값을 데이터 테이블에서 현재 사용되는 행 상태에 복사합니다.
 
@@ -6944,7 +6914,7 @@ col << Add To Row States();
 
 #### Codes to Labels
 
-**구문:** :col << Codes To Labels(<AssociativeArray>|<ListOfAssignments>)
+**구문:** :col &lt;&lt; Codes To Labels(&lt;AssociativeArray&gt;|&lt;ListOfAssignments&gt;)
 
 **설명:** 원래 코드에 해당하는 값 라벨을 사용하여 문자 값 열을 생성합니다.
 
@@ -6985,7 +6955,7 @@ dt = Open( "$Sample_Data/Big Class.jmp" );
 
 #### Color Cell by Value
 
-**구문:** obj << Color Cell by Value( state=0|1 )
+**구문:** obj &lt;&lt; Color Cell by Value( state=0|1 )
 
 **설명:** 열의 셀 표시 색상을 변경합니다.
 
@@ -7004,7 +6974,7 @@ Wait( 1 );
 
 #### Color Cells
 
-**구문:** obj << Color Cells( color, <row | { row1, row2, ...} > )
+**구문:** obj &lt;&lt; Color Cells( color, &lt;row | { row1, row2, ...} &gt; )
 
 **설명:** 열의 셀에 지정된 색상을 적용합니다. 행이 지정되지 않은 경우 전체 열에 동일한 색상이 적용됩니다.
 
@@ -7043,7 +7013,7 @@ b = {2, 4, 6};
 
 #### Compact
 
-**구문:** :col << Compact( <1|0> )
+**구문:** :col &lt;&lt; Compact( &lt;1|0&gt; )
 
 **설명:** 각 값의 복사본을 하나만 저장하여 결과적으로 메모리를 절약하고 일부 작업 속도를 높일 수 있도록 문자 열의 내부를 변경합니다. 선택적 &apos;Save Format&apos;은 열이 저장되는 형식을 제어합니다. 압축 형식은 크기가 작고 로드 속도가 빠르지만 JMP 17 및 이전 버전에서 테이블을 열 수 없습니다. &apos;Default&apos; 형식은 저장 형식 환경 설정을 사용합니다.
 
@@ -7072,7 +7042,7 @@ dt = Open( "$SAMPLE_DATA/Air Traffic.jmp" );
 
 #### Convert to Table Column
 
-**구문:** obj << Convert to Table Column
+**구문:** obj &lt;&lt; Convert to Table Column
 
 **설명:** 변환 열을 데이터 테이블에 추가합니다.
 
@@ -7089,7 +7059,7 @@ dt << Transform Column( "New Col", Formula( 1 ) );
 
 #### Copy from Row States
 
-**구문:** obj << Copy from Row States
+**구문:** obj &lt;&lt; Copy from Row States
 
 **설명:** 현재 데이터 테이블에서 사용되는 모든 행 상태 값을 열에 복사합니다.
 
@@ -7103,7 +7073,7 @@ dt << New Column( "Row State Col", Row State, Copy from Row States );
 
 #### Copy to Row States
 
-**구문:** obj << Copy to Row States
+**구문:** obj &lt;&lt; Copy to Row States
 
 **설명:** 열의 모든 행 상태 값을 데이터 테이블에서 현재 사용되는 행 상태에 복사합니다.
 
@@ -7119,7 +7089,7 @@ col << Copy To Row States();
 
 #### Data Type
 
-**구문:** obj << Data Type(  "Numeric"|"Character"|"Expression"|"Row State", <Format("format string")>, <Input Format("format string")>, <1|2|4>, < <<Fail On Conversion Error >, < <<Return Failed Rows > )
+**구문:** obj &lt;&lt; Data Type( "Numeric"|"Character"|"Expression"|"Row State", &lt;Format("format string")&gt;, &lt;Input Format("format string")&gt;, &lt;1|2|4&gt;, &lt; &lt;&lt;Fail On Conversion Error &gt;, &lt; &lt;&lt;Return Failed Rows &gt; )
 
 **설명:** 열의 데이터 유형을 설정합니다. 숫자 열인 경우 선택적 인수를 사용하여 형식, 입력 형식 및 너비(바이트)도 설정할 수 있습니다. &apos;Fail On Conversion Error&apos;는 변환에 실패한 값이 있을 경우 데이터 유형 변경을 중단합니다. 이 옵션은 문자 열을 숫자 열로 변환할 때 특히 유용합니다. &apos;Return Failed Rows&apos;는 변환에 실패한 행의 인덱스를 포함하는 목록을 반환합니다.
 
@@ -7176,7 +7146,7 @@ Show( r );
 
 #### Delete Formula
 
-**구문:** obj << Delete Formula
+**구문:** obj &lt;&lt; Delete Formula
 
 **설명:** 열의 모든 계산식을 삭제합니다.
 
@@ -7190,7 +7160,7 @@ dt = Open( "$SAMPLE_DATA/Bank Loan.jmp" );
 
 #### Delete Property
 
-**구문:** obj << Delete Property( property name )
+**구문:** obj &lt;&lt; Delete Property( property name )
 
 **설명:** 이름이 지정된 특성을 열에서 삭제합니다.
 
@@ -7204,7 +7174,7 @@ dt = Open( "$SAMPLE_DATA/Bank Loan.jmp" );
 
 #### Eval Formula
 
-**구문:** obj << Eval Formula
+**구문:** obj &lt;&lt; Eval Formula
 
 **설명:** 열의 계산식을 실행합니다.
 
@@ -7220,15 +7190,7 @@ col << Eval Formula;
 
 #### Format
 
-**구문:** obj << Format( "Best|Fixed Dec...", <width>, <dec>, <"Use Thousands Separator">  )
-
-obj << Format( "mdy|ddmmyy|Long Date...", width )
-
-obj << Format( "Format Pattern", pattern )
-
-obj << Format("Currency", <Country symbol>, <width>, <"Use Thousands Separator"> ) 
-
-obj << Format("Use Thousands Separator" )
+**구문:** obj &lt;&lt; Format( "Best|Fixed Dec...", &lt;width&gt;, &lt;dec&gt;, &lt;"Use Thousands Separator"&gt; )obj &lt;&lt; Format( "mdy|ddmmyy|Long Date...", width )obj &lt;&lt; Format( "Format Pattern", pattern )obj &lt;&lt; Format("Currency", &lt;Country symbol&gt;, &lt;width&gt;, &lt;"Use Thousands Separator"&gt; ) obj &lt;&lt; Format("Use Thousands Separator" )
 
 **설명:** 열에 데이터를 표시하는 데 사용되는 형식을 설정합니다. 사용할 수 있는 형식에는 열 정보 대화상자의 형식 아래에 있는 모든 항목이 포함됩니다.
 
@@ -7273,9 +7235,7 @@ dt = New Table( "hour24_times",
 
 #### Formula
 
-**구문:** obj << Set Formula( formula ) 
-
-obj << Formula( formula )
+**구문:** obj &lt;&lt; Set Formula( formula ) obj &lt;&lt; Formula( formula )
 
 **설명:** 열에 계산식을 설정합니다.
 
@@ -7290,7 +7250,7 @@ col << Set Formula( :Height / :Weight );
 
 #### Get Column Properties
 
-**구문:** obj << Get Column Properties
+**구문:** obj &lt;&lt; Get Column Properties
 
 **설명:** 선택한 열에 정의된 모든 특성을 복사합니다.
 
@@ -7304,7 +7264,7 @@ dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 
 #### Get Compact
 
-**구문:** obj << Get Compact
+**구문:** obj &lt;&lt; Get Compact
 
 **설명:** 열에 압축이 설정되었는지 여부를 나타냅니다.
 
@@ -7333,7 +7293,7 @@ Show( :Airline << Get Compact );
 
 #### Get Data Table
 
-**구문:** obj << Get Data Table
+**구문:** obj &lt;&lt; Get Data Table
 
 **설명:** 열의 데이터 테이블을 가져옵니다.
 
@@ -7350,7 +7310,7 @@ Show( c << Get Name, c << Get Data Table );
 
 #### Get Data Type
 
-**구문:** obj << Get Data Type( <"English">  )
+**구문:** obj &lt;&lt; Get Data Type( &lt;"English"&gt; )
 
 **설명:** 열의 데이터 유형을 반환합니다. 키워드 "English"를 생략하면 JMP가 실행 중인 언어로 데이터 유형이 반환됩니다.
 
@@ -7365,7 +7325,7 @@ Show( which );
 
 #### Get Data Type Length
 
-**구문:** obj << Get Data Type Length( <English> )
+**구문:** obj &lt;&lt; Get Data Type Length( &lt;English&gt; )
 
 **설명:** 열의 데이터 유형 및 데이터 길이를 반환합니다. 대부분의 문자 열처럼 데이터 길이가 고정되지 않은 경우 데이터 유형만 반환됩니다.
 
@@ -7398,7 +7358,7 @@ Show( nameTypeLength, ageTypeLength );
 
 #### Get Display Width
 
-**구문:** obj << Get Display Width
+**구문:** obj &lt;&lt; Get Display Width
 
 **설명:** 열 표시 너비를 가져옵니다.
 
@@ -7413,7 +7373,7 @@ w = :Height << Get Display Width;
 
 #### Get Excluded
 
-**구문:** obj << Get Excluded
+**구문:** obj &lt;&lt; Get Excluded
 
 **설명:** 열이 제외되었으면 1을 반환합니다.
 
@@ -7428,7 +7388,7 @@ Show( s );
 
 #### Get Field Width
 
-**구문:** obj << Get Field Width
+**구문:** obj &lt;&lt; Get Field Width
 
 **설명:** 열에 데이터를 표시하는 데 사용된 필드 너비를 반환합니다.
 
@@ -7443,7 +7403,7 @@ Show( width );
 
 #### Get Format
 
-**구문:** obj << Get Format
+**구문:** obj &lt;&lt; Get Format
 
 **설명:** 열 형식을 반환합니다.
 
@@ -7458,7 +7418,7 @@ Show( f );
 
 #### Get Formula
 
-**구문:** obj << Get Formula
+**구문:** obj &lt;&lt; Get Formula
 
 **설명:** 열의 계산식을 반환합니다.
 
@@ -7476,7 +7436,7 @@ Show( result );
 
 #### Get Group Name
 
-**구문:** obj << Get Group Name
+**구문:** obj &lt;&lt; Get Group Name
 
 **설명:** 이 열이 포함된 그룹의 이름 또는 경로를 반환합니다(있는 경우).
 
@@ -7507,7 +7467,7 @@ Show( :height << Get Group Name );
 
 #### Get Header Background Color
 
-**구문:** obj << Get Header Background Color
+**구문:** obj &lt;&lt; Get Header Background Color
 
 **설명:** 머리글 색상을 가져옵니다.
 
@@ -7524,7 +7484,7 @@ Show( :height << Get Header Background Color );
 
 #### Get Header Chart Type
 
-**구문:** obj << Get Header Chart Type
+**구문:** obj &lt;&lt; Get Header Chart Type
 
 **설명:** 데이터 테이블 열 머리글에 표시되는 차트 유형을 가져옵니다.
 
@@ -7540,7 +7500,7 @@ Show( :height << Get Header Chart Type );
 
 #### Get Header Text Color
 
-**구문:** obj << Get Header Text Color
+**구문:** obj &lt;&lt; Get Header Text Color
 
 **설명:** 머리글 텍스트 색상을 가져옵니다.
 
@@ -7557,7 +7517,7 @@ Show( :height << Get Header Text Color );
 
 #### Get Hidden
 
-**구문:** obj << Get Hidden
+**구문:** obj &lt;&lt; Get Hidden
 
 **설명:** 열이 숨겨졌으면 1을 반환합니다.
 
@@ -7572,7 +7532,7 @@ Show( s );
 
 #### Get Initial Data
 
-**구문:** obj << Get Initial Data
+**구문:** obj &lt;&lt; Get Initial Data
 
 **설명:** 열 데이터를 초기화하는 데 사용된 값 또는 표현식을 가져옵니다.
 
@@ -7588,7 +7548,7 @@ Column( dt, 1 ) << get initial data;
 
 #### Get Input Format
 
-**구문:** obj << Get Input Format
+**구문:** obj &lt;&lt; Get Input Format
 
 **설명:** 열에 데이터를 입력하고 정렬하는 데 사용된 형식을 반환합니다.
 
@@ -7603,7 +7563,7 @@ Show( f );
 
 #### Get Labeled
 
-**구문:** obj << Get Labeled
+**구문:** obj &lt;&lt; Get Labeled
 
 **설명:** 열에 라벨이 지정되었으면 1을 반환합니다.
 
@@ -7618,7 +7578,7 @@ Show( s );
 
 #### Get List Check
 
-**구문:** obj << Get List Check
+**구문:** obj &lt;&lt; Get List Check
 
 **설명:** 목록 확인(열에 정의된 경우)을 반환합니다.
 
@@ -7633,7 +7593,7 @@ Show( prop );
 
 #### Get Lock
 
-**구문:** obj << Get Lock
+**구문:** obj &lt;&lt; Get Lock
 
 **설명:** 열이 잠겨 있으면 true를 반환합니다.
 
@@ -7648,7 +7608,7 @@ Show( lock );
 
 #### Get Modeling Type
 
-**구문:** obj << Get Modeling Type( <"English">  )
+**구문:** obj &lt;&lt; Get Modeling Type( &lt;"English"&gt; )
 
 **설명:** 열의 모델링 유형을 반환합니다. 키워드 "English"를 생략하면 JMP가 실행 중인 언어로 모델링 유형이 반환됩니다.
 
@@ -7663,7 +7623,7 @@ Show( which );
 
 #### Get Name
 
-**구문:** obj << Get Name
+**구문:** obj &lt;&lt; Get Name
 
 **설명:** 열 이름을 반환합니다.
 
@@ -7678,7 +7638,7 @@ Show( col name );
 
 #### Get Properties List
 
-**구문:** obj << Get Properties List
+**구문:** obj &lt;&lt; Get Properties List
 
 **설명:** 이 열에 대한 모든 특성의 이름 목록을 가져옵니다.
 
@@ -7692,7 +7652,7 @@ dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 
 #### Get Property
 
-**구문:** obj << Get Property( Notes| Range Check| List Check| Missing Value Codes| Value Labels| Value Scores | Value Order | Value Colors| Color Gradient| Axis| Units| Response Limits| Design Role| Coding| Mixture| Factor Changes | Spec Limits| Control Limits| Process Screening | Sigma| Process Capability Distribution| MSA | Distribution | Time Frequency|  Map Role| Super Categories | Multiple Response | Target Level | Control Level| Profit Matrix | Expression Role | Event Handler | Link ID | Link Reference | Next In Hierarchy )
+**구문:** obj &lt;&lt; Get Property( Notes| Range Check| List Check| Missing Value Codes| Value Labels| Value Scores | Value Order | Value Colors| Color Gradient| Axis| Units| Response Limits| Design Role| Coding| Mixture| Factor Changes | Spec Limits| Control Limits| Process Screening | Sigma| Process Capability Distribution| MSA | Distribution | Time Frequency| Map Role| Super Categories | Multiple Response | Target Level | Control Level| Profit Matrix | Expression Role | Event Handler | Link ID | Link Reference | Next In Hierarchy )
 
 **설명:** 특정 특성(열에 정의된 경우)을 반환합니다.
 
@@ -7707,7 +7667,7 @@ Show( prop );
 
 #### Get Range Check
 
-**구문:** obj << Get Range Check
+**구문:** obj &lt;&lt; Get Range Check
 
 **설명:** 범위 확인(열에 정의된 경우)을 반환합니다.
 
@@ -7723,7 +7683,7 @@ Show( check );
 
 #### Get Role
 
-**구문:** obj << Get Role( <"English">  )
+**구문:** obj &lt;&lt; Get Role( &lt;"English"&gt; )
 
 **설명:** 열의 역할을 반환합니다. 키워드 "English"를 생략하면 JMP가 실행 중인 언어로 역할이 반환됩니다
 
@@ -7738,7 +7698,7 @@ Show( which );
 
 #### Get Script
 
-**구문:** obj << Get Script
+**구문:** obj &lt;&lt; Get Script
 
 **설명:** 열을 다시 생성하기 위한 스크립트를 반환합니다.
 
@@ -7753,7 +7713,7 @@ Show( s );
 
 #### Get Scroll Locked
 
-**구문:** obj << Get Scroll Locked
+**구문:** obj &lt;&lt; Get Scroll Locked
 
 **설명:** 열에 스크롤 잠금이 설정되었으면 1을 반환합니다.
 
@@ -7768,7 +7728,7 @@ Show( s );
 
 #### Get Selected
 
-**구문:** obj << Get Selected
+**구문:** obj &lt;&lt; Get Selected
 
 **설명:** 열이 선택되었으면 1을 반환합니다.
 
@@ -7783,7 +7743,7 @@ Show( s );
 
 #### Get Stored Values
 
-**구문:** obj << Get Stored Values
+**구문:** obj &lt;&lt; Get Stored Values
 
 **설명:** 결측값 코드 변환 없이 열의 값을 반환합니다.
 
@@ -7810,7 +7770,7 @@ Show( valuesList );
 
 #### Get Use Value Labels
 
-**구문:** obj << Get Use Value Labels
+**구문:** obj &lt;&lt; Get Use Value Labels
 
 **설명:** 값 라벨 사용 플래그의 상태를 반환합니다.
 
@@ -7825,7 +7785,7 @@ Show( flag );
 
 #### Get Value Labels
 
-**구문:** obj << Get Value Labels
+**구문:** obj &lt;&lt; Get Value Labels
 
 **설명:** 값 라벨(열에 정의된 경우)을 반환합니다.
 
@@ -7840,7 +7800,7 @@ Show( values );
 
 #### Get Values
 
-**구문:** obj << Get Values
+**구문:** obj &lt;&lt; Get Values
 
 **설명:** 열의 값을 반환합니다.
 
@@ -7891,7 +7851,7 @@ Show( valuesList );
 
 #### Ignore Errors
 
-**구문:** obj << Ignore Errors( state=0|1 )
+**구문:** obj &lt;&lt; Ignore Errors( state=0|1 )
 
 **설명:** 열 계산식을 실행할 때 오류를 무시하도록 플래그를 설정합니다.
 
@@ -7907,9 +7867,7 @@ col << ignore errors( true );
 
 #### Input Format
 
-**구문:** obj << Input Format( format )
-
-obj << Input Format( "Format Pattern", pattern )
+**구문:** obj &lt;&lt; Input Format( format )obj &lt;&lt; Input Format( "Format Pattern", pattern )
 
 **설명:** 열에 데이터를 입력 및 저장하는 데 사용되는 형식을 설정합니다. 대개 날짜 및 시간 형식에 사용됩니다.
 
@@ -7942,7 +7900,7 @@ dt = New Table( "duration_table",
 
 #### Is Transform Column
 
-**구문:** obj << Is Transform Column
+**구문:** obj &lt;&lt; Is Transform Column
 
 **설명:** 열이 변환 열이면 1을 반환하고 그렇지 않으면 0을 반환합니다.
 
@@ -7958,7 +7916,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### IsTransformedOnSASExport
 
-**구문:** obj << IsTransformedOnSASExport
+**구문:** obj &lt;&lt; IsTransformedOnSASExport
 
 **설명:** 이 열에 대한 결과 SAS 데이터 집합의 데이터를 SAS로 내보낼 때 데이터가 변경되면 true를 반환합니다. 참고: 날짜 열에만 적용됩니다. 날짜는 SAS와 JMP에서 저장되는 방법이 다르기 때문입니다.
 
@@ -7973,7 +7931,7 @@ Show( flag );
 
 #### Labels to Codes
 
-**구문:** :col << Labels to Codes(<AssociativeArray>|<ListOfAssignments>)
+**구문:** :col &lt;&lt; Labels to Codes(&lt;AssociativeArray&gt;|&lt;ListOfAssignments&gt;)
 
 **설명:** 원래 문자 값에 해당하는 값 라벨을 사용하여 숫자 코드 열을 생성합니다.
 
@@ -8011,7 +7969,7 @@ dt = Open( "$Sample_Data/Big Class.jmp" );
 
 #### Lock
 
-**구문:** obj << Lock
+**구문:** obj &lt;&lt; Lock
 
 **설명:** 열이 더 이상 변경되지 않도록 잠급니다.
 
@@ -8025,7 +7983,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Preselect Role
 
-**구문:** obj << Preselect Role( "역할 없음"|"X"|"Y"|"가중치"|"빈도"|"검증" )
+**구문:** obj &lt;&lt; Preselect Role( "역할 없음"|"X"|"Y"|"가중치"|"빈도"|"검증" )
 
 **설명:** 데이터 테이블 열에 사전 선택된 역할을 지정합니다.
 
@@ -8039,7 +7997,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Remove Value Labels
 
-**구문:** obj << Remove Value Labels
+**구문:** obj &lt;&lt; Remove Value Labels
 
 **설명:** 열에 정의된 모든 값 라벨을 제거합니다.
 
@@ -8053,7 +8011,7 @@ dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 
 #### Reset Transform
 
-**구문:** obj << Reset Transform
+**구문:** obj &lt;&lt; Reset Transform
 
 **설명:** 변환 열에 대해 캐시된 데이터를 제거합니다. 열 데이터에 액세스하면 캐시가 다시 생성됩니다. 이를 사용하여 메모리를 줄이거나, 계산식이 외부 정보에 종속된 경우 다시 계산할 수 있습니다.
 
@@ -8074,7 +8032,7 @@ Show( :"sqrt[height]"n[1] );
 
 #### Set Data Type
 
-**구문:** obj << Set Data Type(  "Numeric"|"Character"|"Expression"|"Row State", <Format("format string")>, <Input Format("format string")>, <1|2|4>, < <<Fail On Conversion Error >, < <<Return Failed Rows > )
+**구문:** obj &lt;&lt; Set Data Type( "Numeric"|"Character"|"Expression"|"Row State", &lt;Format("format string")&gt;, &lt;Input Format("format string")&gt;, &lt;1|2|4&gt;, &lt; &lt;&lt;Fail On Conversion Error &gt;, &lt; &lt;&lt;Return Failed Rows &gt; )
 
 **설명:** 열의 데이터 유형을 설정합니다. 숫자 열인 경우 선택적 인수를 사용하여 형식, 입력 형식 및 너비(바이트)도 설정할 수 있습니다. &apos;Fail On Conversion Error&apos;는 변환에 실패한 값이 있을 경우 데이터 유형 변경을 중단합니다. 이 옵션은 문자 열을 숫자 열로 변환할 때 특히 유용합니다. &apos;Return Failed Rows&apos;는 변환에 실패한 행의 인덱스를 포함하는 목록을 반환합니다.
 
@@ -8131,7 +8089,7 @@ Show( r );
 
 #### Set Display Width
 
-**구문:** obj << Set Display Width( number )
+**구문:** obj &lt;&lt; Set Display Width( number )
 
 **설명:** 열 표시 너비를 변경합니다.
 
@@ -8147,7 +8105,7 @@ w = :Height << Get Display Width;
 
 #### Set Each Value
 
-**구문:** obj << Set Each Value( number )
+**구문:** obj &lt;&lt; Set Each Value( number )
 
 **설명:** 열의 모든 값을 상수로 설정합니다.
 
@@ -8162,7 +8120,7 @@ dt:X << Set Each Value( 5 );
 
 #### Set Excluded
 
-**구문:** obj << Set Excluded
+**구문:** obj &lt;&lt; Set Excluded
 
 **설명:** 열을 제외합니다.
 
@@ -8176,7 +8134,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Set Field Width
 
-**구문:** obj << Set Field Width( number )
+**구문:** obj &lt;&lt; Set Field Width( number )
 
 **설명:** 열에 데이터를 표시하는 데 사용되는 필드 너비를 설정합니다.
 
@@ -8190,9 +8148,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Set Formula
 
-**구문:** obj << Set Formula( formula ) 
-
-obj << Formula( formula )
+**구문:** obj &lt;&lt; Set Formula( formula ) obj &lt;&lt; Formula( formula )
 
 **설명:** 열에 계산식을 설정합니다.
 
@@ -8207,7 +8163,7 @@ col << Set Formula( :Height / :Weight );
 
 #### Set Header Background Color
 
-**구문:** obj << Set Header Background Color
+**구문:** obj &lt;&lt; Set Header Background Color
 
 **설명:** 머리글 색상을 설정합니다. 기본 색상을 사용하려면 "없음"으로 설정합니다.
 
@@ -8235,7 +8191,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Set Header Chart Type
 
-**구문:** obj << Set Header Chart Type
+**구문:** obj &lt;&lt; Set Header Chart Type
 
 **설명:** 데이터 테이블 열 머리글에 표시할 차트 유형을 설정합니다.
 
@@ -8251,7 +8207,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Set Header Text Color
 
-**구문:** obj << Set Header Text Color
+**구문:** obj &lt;&lt; Set Header Text Color
 
 **설명:** 머리글 텍스트 색상을 설정합니다. 기본 색상을 사용하려면 "없음"으로 설정합니다.
 
@@ -8279,7 +8235,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Set Hidden
 
-**구문:** obj << Set Hidden
+**구문:** obj &lt;&lt; Set Hidden
 
 **설명:** 열을 숨깁니다.
 
@@ -8293,7 +8249,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Set Initial Data
 
-**구문:** obj << Set Initial Data
+**구문:** obj &lt;&lt; Set Initial Data
 
 **설명:** 열 데이터를 상수 또는 단순 표현식을 사용하여 초기화합니다.
 
@@ -8322,7 +8278,7 @@ Column( dt, 1 ) << set initial data( Log( 1 ) );
 
 #### Set Labeled
 
-**구문:** obj << Set Labeled
+**구문:** obj &lt;&lt; Set Labeled
 
 **설명:** 열의 데이터 값을 라벨로 사용합니다.
 
@@ -8338,7 +8294,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Set Modeling Type
 
-**구문:** obj << Set Modeling Type( "없음"|"연속형"|"순서형"|"명목형"|"행 상태"|"다중 반응"|"비정형 텍스트"|"벡터" )
+**구문:** obj &lt;&lt; Set Modeling Type( "없음"|"연속형"|"순서형"|"명목형"|"행 상태"|"다중 반응"|"비정형 텍스트"|"벡터" )
 
 **설명:** 데이터 테이블 열에 대한 모델링 유형을 설정합니다.
 
@@ -8352,7 +8308,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Set Name
 
-**구문:** obj << Set Name( name )
+**구문:** obj &lt;&lt; Set Name( name )
 
 **설명:** 열 이름을 설정합니다.
 
@@ -8366,7 +8322,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Set Property
 
-**구문:** obj << Set Property( Notes | List Check | Range Check | Axis | Spec Limits | Control Limits | Sigma | Process Capability Distribution | Coding | Mixture | Design Role | Response Limits | Units | Value Order | Value Labels | Value Scores | Row Order Levels | Distribution | Time Frequency | Value Colors | Color Gradient | Missing Value Codes | Factor Change | Map Role | Supercategories | Multiple Response | Profit Matrix | Informative Missing | Expression Role | Link ID | Link Reference | Event Handler | Custom Property, {argument list} )
+**구문:** obj &lt;&lt; Set Property( Notes | List Check | Range Check | Axis | Spec Limits | Control Limits | Sigma | Process Capability Distribution | Coding | Mixture | Design Role | Response Limits | Units | Value Order | Value Labels | Value Scores | Row Order Levels | Distribution | Time Frequency | Value Colors | Color Gradient | Missing Value Codes | Factor Change | Map Role | Supercategories | Multiple Response | Profit Matrix | Informative Missing | Expression Role | Link ID | Link Reference | Event Handler | Custom Property, {argument list} )
 
 **설명:** 열에 특성을 설정합니다.
 
@@ -8380,7 +8336,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Set Scroll Locked
 
-**구문:** obj << Set Scroll Locked
+**구문:** obj &lt;&lt; Set Scroll Locked
 
 **설명:** 열에 대해 스크롤 잠금을 설정합니다.
 
@@ -8394,7 +8350,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Set Selected
 
-**구문:** obj << Set Selected( state=0|1 )
+**구문:** obj &lt;&lt; Set Selected( state=0|1 )
 
 **설명:** 열을 선택합니다.
 
@@ -8408,7 +8364,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Set Use for Marker
 
-**구문:** obj << Set Use for Marker
+**구문:** obj &lt;&lt; Set Use for Marker
 
 **설명:** 이 열의 값을 그래프에서 표식으로 사용합니다. 그림이 있는 표현식 열이나 ID가 있는 문자 열은 제대로 작동할 수 있습니다.
 
@@ -8424,7 +8380,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Set Values
 
-**구문:** obj << Set Values( [ value1, value2, value3, ... ] )
+**구문:** obj &lt;&lt; Set Values( [ value1, value2, value3, ... ] )
 
 **설명:** 열에 값을 설정합니다.
 
@@ -8442,7 +8398,7 @@ New Column( "X" );
 
 #### SetLock
 
-**구문:** obj << SetLock
+**구문:** obj &lt;&lt; SetLock
 
 **설명:** 열이 더 이상 변경되지 않도록 잠급니다.
 
@@ -8456,7 +8412,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Suppress Eval
 
-**구문:** obj << Suppress Eval( state=0|1 )
+**구문:** obj &lt;&lt; Suppress Eval( state=0|1 )
 
 **설명:** 열에서 계산식 실행을 제한하도록 플래그를 설정합니다.
 
@@ -8472,7 +8428,7 @@ col << suppress eval( true );
 
 #### Use Value Labels
 
-**구문:** obj << Use Value Labels( state=0|1 )
+**구문:** obj &lt;&lt; Use Value Labels( state=0|1 )
 
 **설명:** 모든 출력에서 열에 정의된 값 라벨을 대체합니다.
 
@@ -8487,7 +8443,7 @@ Distribution( Column( :Color ) );
 
 #### Value Labels
 
-**구문:** obj << Value Labels( { value1 = "label1", value2 = "label2", ... } )
+**구문:** obj &lt;&lt; Value Labels( { value1 = "label1", value2 = "label2", ... } )
 
 **설명:** 값 라벨을 설정합니다.
 
@@ -8505,7 +8461,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Column
 
-**구문:** Column( <data table>, "column name"|column number )
+**구문:** Column( &lt;data table&gt;, "column name"|column number )
 
 **설명:** 지정된 데이터 테이블 열에 대한 참조를 반환합니다.
 
@@ -8521,7 +8477,7 @@ col = Column( "height" );
 
 #### Add Multiple Columns
 
-**구문:** obj << Add Multiple Columns( Column prefix, number of columns, <before first|after last|after(column)>, Character|Numeric|Row State, <fieldwidth(number)> )
+**구문:** obj &lt;&lt; Add Multiple Columns( Column prefix, number of columns, &lt;before first|after last|after(column)&gt;, Character|Numeric|Row State, &lt;fieldwidth(number)&gt; )
 
 **설명:** 현재 데이터 테이블에 새 열을 여러 개 생성합니다.
 
@@ -8535,7 +8491,7 @@ dt << Add Multiple Columns( "Date", 5, Character );
 
 #### Clear Column Selection
 
-**구문:** obj << Clear Column Selection
+**구문:** obj &lt;&lt; Clear Column Selection
 
 **설명:** 데이터 테이블의 열 선택을 지웁니다.
 
@@ -8551,7 +8507,7 @@ dt << Clear Column Selection();
 
 #### Clone Formula Column
 
-**구문:** obj << Clone Formula Column( column, n, <Substitute Column Reference( column1, list )> )
+**구문:** obj &lt;&lt; Clone Formula Column( column, n, &lt;Substitute Column Reference( column1, list )&gt; )
 
 **설명:** 제공된 column을 기반으로 n개의 새 계산식 열을 생성합니다. 원래 계산식의 column1에 대한 열 참조는 n개의 모든 열에 대해 list의 각 열로 대체됩니다. 원래 계산식에서 둘 이상의 열 참조를 바꾸는 경우 Substitute Column Reference 인수를 여러 개 사용합니다.
 
@@ -8575,7 +8531,7 @@ dt << Clone Formula Column(
 
 #### Columns Manager
 
-**구문:** obj << Columns Manager
+**구문:** obj &lt;&lt; Columns Manager
 
 **설명:** 현재 테이블에서 열 관리자를 호출하여 열의 특성과 통계량을 표시합니다.
 
@@ -8591,7 +8547,7 @@ col1 = dt << Columns Manager;
 
 #### Combine Columns
 
-**구문:** obj << Combine Columns
+**구문:** obj &lt;&lt; Combine Columns
 
 **설명:** 열 집합을 구분자로 구분된(다중 반응) 열에 결합합니다.
 
@@ -8626,7 +8582,7 @@ dt << Combine Columns(
 
 #### Compress Selected Columns
 
-**구문:** obj << Compress Selected Columns( { column1, column2, ... )
+**구문:** obj &lt;&lt; Compress Selected Columns( { column1, column2, ... )
 
 **설명:** 각 열을 가장 압축된 형식으로 압축합니다.
 
@@ -8644,7 +8600,7 @@ dt << Compress Selected Columns( {:Age, :sex, :Height, :Weight} );
 
 #### Exclude/Unexclude
 
-**구문:** obj << Exclude( 0|1 )
+**구문:** obj &lt;&lt; Exclude( 0|1 )
 
 **설명:** 열을 모든 분석 실행에서 제외합니다.
 
@@ -8658,7 +8614,7 @@ dt:Name << Exclude( 1 );
 
 #### Formula
 
-**구문:** obj << Formula
+**구문:** obj &lt;&lt; Formula
 
 **설명:** 열에 계산식을 설정합니다.
 
@@ -8673,7 +8629,7 @@ col1 << Formula( :height / :weight );
 
 #### Freq
 
-**구문:** obj << Preselect Role( Freq )
+**구문:** obj &lt;&lt; Preselect Role( Freq )
 
 **설명:** 데이터 테이블 열에 빈도 역할을 할당합니다.
 
@@ -8688,7 +8644,7 @@ col << Preselect Role( "freq" );
 
 #### Go to
 
-**구문:** obj << Go to( column name|column number )
+**구문:** obj &lt;&lt; Go to( column name|column number )
 
 **설명:** 현재 데이터 테이블에서 지정된 열을 선택하고 해당 열로 이동합니다.
 
@@ -8702,7 +8658,7 @@ dt << Go to( :BP 12F );
 
 #### Hide/Unhide
 
-**구문:** obj << Hide( 0|1 )
+**구문:** obj &lt;&lt; Hide( 0|1 )
 
 **설명:** 데이터 격자에서 열을 숨깁니다.
 
@@ -8716,7 +8672,7 @@ dt:Age << Hide( 1 );
 
 #### Invert Column Selection
 
-**구문:** obj << Invert Column Selection( <list of columns> )
+**구문:** obj &lt;&lt; Invert Column Selection( &lt;list of columns&gt; )
 
 **설명:** 현재 열 선택을 반전합니다. 열 목록이 제공된 경우 목록에 없는 열이 선택됩니다.
 
@@ -8746,7 +8702,7 @@ b = dt << Invert Column Selection( a );
 
 #### Label/Unlabel
 
-**구문:** obj << Label( 0|1 )
+**구문:** obj &lt;&lt; Label( 0|1 )
 
 **설명:** 이 열을 식별을 위한 라벨로 설정합니다. 점을 선택하면 열의 값이 그래프에 나타납니다.
 
@@ -8760,7 +8716,7 @@ dt:Age << Label( 1 );
 
 #### Make Indicator Columns
 
-**구문:** obj << Make Indicator Columns
+**구문:** obj &lt;&lt; Make Indicator Columns
 
 **설명:** 선택한 열에서 표시자 열 집합을 생성합니다.
 
@@ -8774,7 +8730,7 @@ dt << Make Indicator Columns( columns( {:species, :season} ) );
 
 #### Move Selected Columns
 
-**구문:** obj << Move Selected Columns( column|column list, To first|To last|After(column)|after(group)|after(Path({<a>, <b>, ...}) )
+**구문:** obj &lt;&lt; Move Selected Columns( column|column list, To first|To last|After(column)|after(group)|after(Path({&lt;a&gt;, &lt;b&gt;, ...}) )
 
 **설명:** 선택한 열을 데이터 테이블에서 이동합니다.
 
@@ -8827,7 +8783,7 @@ dt << Move Selected Columns( To last );
 
 #### New Column
 
-**구문:** obj << New Column( <name>, <data type>, <modeling type>, <Format()>, <Formula()>, <Set Property()>, <Set Values()>, <Like()> )
+**구문:** obj &lt;&lt; New Column( &lt;name&gt;, &lt;data type&gt;, &lt;modeling type&gt;, &lt;Format()&gt;, &lt;Formula()&gt;, &lt;Set Property()&gt;, &lt;Set Values()&gt;, &lt;Like()&gt; )
 
 **설명:** 현재 데이터 테이블에 새 열을 생성합니다.
 
@@ -8876,7 +8832,7 @@ New Table( "test",
 
 #### New Formula Column
 
-**구문:** dt << New Formula Column(Operation(name, <Category(name)>), Columns(columns), <Group By(columns)>)
+**구문:** dt &lt;&lt; New Formula Column(Operation(name, &lt;Category(name)&gt;), Columns(columns), &lt;Group By(columns)&gt;)
 
 **설명:** 지정된 열을 사용하고 연산 및 선택적 그룹화 열을 적용하여 테이블에 계산식 열을 생성합니다. 필요한 경우 연산 범주를 지정하여 연산 이름을 명확히 구분할 수 있습니다. 생성된 열에 대한 열 참조 목록을 반환합니다.
 
@@ -8904,7 +8860,7 @@ dt << New Formula Column( Operation( "Mean" ), Columns( :height, :weight ), Grou
 
 #### Next Selected Column
 
-**구문:** obj << Next Selected Column
+**구문:** obj &lt;&lt; Next Selected Column
 
 **설명:** 다음 선택 열로 이동합니다.
 
@@ -8923,7 +8879,7 @@ dt << Next Selected Column;
 
 #### No Role
 
-**구문:** obj << Preselect Role( No Role )
+**구문:** obj &lt;&lt; Preselect Role( No Role )
 
 **설명:** 데이터 테이블 열에서 할당된 역할을 제거합니다.
 
@@ -8937,7 +8893,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Original Order
 
-**구문:** obj << Original Order
+**구문:** obj &lt;&lt; Original Order
 
 **설명:** 열을 다시 데이터 테이블의 원래 위치로 이동합니다.
 
@@ -8954,7 +8910,7 @@ dt << Original Order();
 
 #### Paste Column Properties
 
-**구문:** obj << Paste Column Properties
+**구문:** obj &lt;&lt; Paste Column Properties
 
 **설명:** 클립보드의 여러 열 특성 목록을 여러 열에 붙여 넣습니다. 데이터 테이블에서 대상 열을 선택하는 대신 대상 열 목록을 지정할 수도 있습니다.
 
@@ -8975,7 +8931,7 @@ dt2 << Paste Column Properties( {:T1, :T3} );
 
 #### Previous Selected Column
 
-**구문:** obj << Previous Selected Column
+**구문:** obj &lt;&lt; Previous Selected Column
 
 **설명:** 이전 선택 열로 이동합니다.
 
@@ -8995,7 +8951,7 @@ dt << Previous Selected Column;
 
 #### Reorder by Data Type
 
-**구문:** obj << Reorder by Data Type
+**구문:** obj &lt;&lt; Reorder by Data Type
 
 **설명:** 데이터 테이블의 열을 데이터 유형을 기준으로 재정렬합니다.
 
@@ -9010,7 +8966,7 @@ dt << Reorder By Data Type();
 
 #### Reorder by Modeling Type
 
-**구문:** obj << Reorder by Modeling Type
+**구문:** obj &lt;&lt; Reorder by Modeling Type
 
 **설명:** 데이터 테이블의 열을 모델링 유형을 기준으로 재정렬합니다.
 
@@ -9025,7 +8981,7 @@ dt << Reorder By Modeling Type();
 
 #### Reorder by Name
 
-**구문:** obj << Reorder by Name
+**구문:** obj &lt;&lt; Reorder by Name
 
 **설명:** 데이터 테이블의 열을 열 이름을 기준으로 재정렬합니다.
 
@@ -9040,7 +8996,7 @@ dt << Reorder By Name();
 
 #### Reverse Order
 
-**구문:** obj << Reverse Order
+**구문:** obj &lt;&lt; Reverse Order
 
 **설명:** 데이터 테이블의 열 순서를 역순으로 바꿉니다.
 
@@ -9055,7 +9011,7 @@ dt << Reverse Order();
 
 #### Set Label Columns
 
-**구문:** obj << Set Label Columns( column(s) )
+**구문:** obj &lt;&lt; Set Label Columns( column(s) )
 
 **설명:** 데이터 테이블의 선택된 열에 라벨 역할을 할당합니다.
 
@@ -9070,7 +9026,7 @@ dt << Set Label Columns( :City, :State );
 
 #### Set Scroll Lock Columns
 
-**구문:** obj << Set Scroll Lock Columns( column(s) )
+**구문:** obj &lt;&lt; Set Scroll Lock Columns( column(s) )
 
 **설명:** 데이터 테이블의 선택된 열을 잠가, 스크롤할 수 없도록 합니다. 열이 잠겨 있음을 나타내기 위해 배경 색상이 바뀝니다.
 
@@ -9084,7 +9040,7 @@ dt << Set Scroll Lock Columns( :City );
 
 #### Text to Columns
 
-**구문:** obj << Text to Columns
+**구문:** obj &lt;&lt; Text to Columns
 
 **설명:** 구분자로 구분된 텍스트 열에서 여러 텍스트 열의 집합 또는 여러 표시자 열 집합을 생성합니다.
 
@@ -9110,7 +9066,7 @@ dt << Text To Columns( delimiter( "," ), columns( :Brush Delimited ), Make Indic
 
 #### Use for Marker
 
-**구문:** obj << UseForMarker( 0|1 )
+**구문:** obj &lt;&lt; UseForMarker( 0|1 )
 
 **설명:** 이 열의 값을 그래프에서 표식으로 사용합니다. 그림이 있는 표현식 열이나 ID가 있는 문자 열은 제대로 작동할 수 있습니다.
 
@@ -9126,7 +9082,7 @@ dt:Name << UseForMarker( 1 );
 
 #### Validation
 
-**구문:** obj << Preselect Role( Validation)
+**구문:** obj &lt;&lt; Preselect Role( Validation)
 
 **설명:** 데이터 테이블 열에 검증 역할을 할당합니다.
 
@@ -9143,7 +9099,7 @@ col << Preselect Role( "Validation" );
 
 #### Weight
 
-**구문:** obj << Preselect Role( Weight )
+**구문:** obj &lt;&lt; Preselect Role( Weight )
 
 **설명:** 데이터 테이블 열에 가중치 역할을 할당합니다.
 
@@ -9157,7 +9113,7 @@ dt:Weight << Preselect Role( "weight" );
 
 #### X
 
-**구문:** obj << Preselect Role( X )
+**구문:** obj &lt;&lt; Preselect Role( X )
 
 **설명:** 데이터 테이블 열에 X 역할을 할당합니다.
 
@@ -9172,7 +9128,7 @@ col << Preselect Role( "X" );
 
 #### Y
 
-**구문:** obj << Preselect Role( Y )
+**구문:** obj &lt;&lt; Preselect Role( Y )
 
 **설명:** 데이터 테이블 열에 Y 역할을 할당합니다.
 
@@ -9190,7 +9146,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Add Rows
 
-**구문:** obj << Add Rows( <n>, <At Start|At End|After(m)> | {list of (column name = value) pairs}) )
+**구문:** obj &lt;&lt; Add Rows( &lt;n&gt;, &lt;At Start|At End|After(m)&gt; | {list of (column name = value) pairs}) )
 
 **설명:** 데이터 테이블의 시작 부분, 끝 부분 및 m 행 뒤에 n개의 행을 추가합니다.
 
@@ -9216,7 +9172,7 @@ dt << Add Rows( {name = "David", age = 15} );
 
 #### Clear Row States
 
-**구문:** obj << Clear Row States
+**구문:** obj &lt;&lt; Clear Row States
 
 **설명:** 모든 행에서 선택됨, 제외됨, 숨김, 표식, 라벨 및 색상과 같은 상태를 지웁니다.
 
@@ -9232,7 +9188,7 @@ dt << Clear Row States;
 
 #### Clear Select
 
-**구문:** obj << Clear Select
+**구문:** obj &lt;&lt; Clear Select
 
 **설명:** 선택한 행을 지우거나 선택 취소합니다.
 
@@ -9248,7 +9204,7 @@ dt << Clear Select();
 
 #### Clear Selected Row States
 
-**구문:** obj << Clear Selected Row States
+**구문:** obj &lt;&lt; Clear Selected Row States
 
 **설명:** 선택한 행에서 선택됨, 제외됨, 숨김, 표식, 라벨 및 색상과 같은 상태를 지웁니다.
 
@@ -9267,7 +9223,7 @@ dt << Clear Selected Row States;
 
 #### Color Rows by Row State
 
-**구문:** obj << Color Rows by Row State
+**구문:** obj &lt;&lt; Color Rows by Row State
 
 **설명:** 데이터 테이블의 행 상태로 지정된 색상을 셀에 표시하거나 숨깁니다.
 
@@ -9283,7 +9239,7 @@ dt << Color Rows by Row State;
 
 #### Color by Column
 
-**구문:** obj << Color by Column( column, <Color( number )>, <Color Theme( color theme )>, < Continuous scale(0|1)>, <Reverse scale(0|1)>, <Excluded Row( 0|1 ), <Make window with legend> )
+**구문:** obj &lt;&lt; Color by Column( column, &lt;Color( number )&gt;, &lt;Color Theme( color theme )&gt;, &lt; Continuous scale(0|1)&gt;, &lt;Reverse scale(0|1)&gt;, &lt;Excluded Row( 0|1 ), &lt;Make window with legend&gt; )
 
 **설명:** 지정된 열의 값을 기반으로 데이터 테이블의 각 행에 색상을 할당합니다.
 
@@ -9297,7 +9253,7 @@ dt << Color by Column( :Age );
 
 #### Color or Mark by Column
 
-**구문:** obj << Color or Mark by Column( column, <Color( number )>, <Color Theme( color theme )>, <Marker Theme( standard|hollow|solid|paired|classic|alphanumeric )> )
+**구문:** obj &lt;&lt; Color or Mark by Column( column, &lt;Color( number )&gt;, &lt;Color Theme( color theme )&gt;, &lt;Marker Theme( standard|hollow|solid|paired|classic|alphanumeric )&gt; )
 
 **설명:** 지정된 열의 값에 색상 또는 표식을 연결합니다.
 
@@ -9311,7 +9267,7 @@ dt << Color or Mark by Column( :Age );
 
 #### Colors
 
-**구문:** obj << Colors( color )
+**구문:** obj &lt;&lt; Colors( color )
 
 **설명:** 표식으로 표현된 모든 그래픽 출력에서 선택한 행에 색상을 적용합니다.
 
@@ -9329,7 +9285,7 @@ dt << Colors( "Red" );
 
 #### Data Filter
 
-**구문:** obj << Data Filter( <Location(x,y)>, <"Close Outline">, <"Local">, <Inverse(0|1)>, <Show Columns Selector(0|1)>, <Title(string)>, <Save And Restore Current Row States(0|1)>, <Conditional(0|1)>, <Auto Clear(0|1)>, <Group By AND(0|1)>, <Show Histograms And Bars(0|1)>, <Count Excluded Rows(0|1)>, <Mode(...)>, <Add Filter(Columns(...), Where(...), Display(...), <Select Missing(cols)>, <Order By Count(cols)>)>, <Favorites(...)>, <Animation(...)> )
+**구문:** obj &lt;&lt; Data Filter( &lt;Location(x,y)&gt;, &lt;"Close Outline"&gt;, &lt;"Local"&gt;, &lt;Inverse(0|1)&gt;, &lt;Show Columns Selector(0|1)&gt;, &lt;Title(string)&gt;, &lt;Save And Restore Current Row States(0|1)&gt;, &lt;Conditional(0|1)&gt;, &lt;Auto Clear(0|1)&gt;, &lt;Group By AND(0|1)&gt;, &lt;Show Histograms And Bars(0|1)&gt;, &lt;Count Excluded Rows(0|1)&gt;, &lt;Mode(...)&gt;, &lt;Add Filter(Columns(...), Where(...), Display(...), &lt;Select Missing(cols)&gt;, &lt;Order By Count(cols)&gt;)&gt;, &lt;Favorites(...)&gt;, &lt;Animation(...)&gt; )
 
 **설명:** 복합 조건을 만족하는 데이터 부분집합을 대화식으로 선택하는 데이터 필터를 생성하거나 표시합니다. Mode 옵션은 필터에서 선택한 항목에 따라 영향을 받는 행 상태를 결정합니다. Add Filter 명령은 지정된 Columns 및 Where 절을 사용하여 필터 그룹을 추가합니다. 필터 그룹이 여러 개 있는 경우에는 Group By AND 옵션에 따라 결합된 동작이 결정됩니다. Local 키워드가 지정된 경우에는 보고서에 필터를 포함하여 다른 보고서에 영향을 주지 않고 하나 이상의 플랫폼을 필터링할 수 있습니다.
 
@@ -9381,7 +9337,7 @@ dt << Data Filter(
 
 #### Data View
 
-**구문:** obj << Data View
+**구문:** obj &lt;&lt; Data View
 
 **설명:** 현재 선택한 행으로 구성된 데이터 보기를 새로 만듭니다.
 
@@ -9396,7 +9352,7 @@ dt << Data View;
 
 #### Delete Rows
 
-**구문:** obj << Delete Rows
+**구문:** obj &lt;&lt; Delete Rows
 
 **설명:** 선택한 행을 삭제합니다.
 
@@ -9413,7 +9369,7 @@ Show( r );
 
 #### Exclude/Unexclude
 
-**구문:** obj << Exclude/Unexclude
+**구문:** obj &lt;&lt; Exclude/Unexclude
 
 **설명:** 계산에 사용되지 않도록 선택한 행을 제외합니다.
 
@@ -9428,7 +9384,7 @@ r << Exclude;
 
 #### Get Rows
 
-**구문:** obj << Get Rows( number )
+**구문:** obj &lt;&lt; Get Rows( number )
 
 **설명:** 지정한 행에 대한 열 값 목록을 반환합니다.
 
@@ -9443,7 +9399,7 @@ dt << Get Rows( {1, 2, 3} );
 
 #### Go to Row
 
-**구문:** obj << Go to Row( row number )
+**구문:** obj &lt;&lt; Go to Row( row number )
 
 **설명:** 행 개체를 반환합니다. 지정한 행으로 이동합니다. 행을 선택하고 강조 표시합니다.
 
@@ -9457,7 +9413,7 @@ dt << Go To Row( 5 );
 
 #### Hide and Exclude
 
-**구문:** obj << Hide and Exclude
+**구문:** obj &lt;&lt; Hide and Exclude
 
 **설명:** 선택한 행이 그래프에 나타나지 않도록 숨기고 계산에 사용되지 않도록 제외합니다.
 
@@ -9472,7 +9428,7 @@ r << Hide and Exclude;
 
 #### Hide/Unhide
 
-**구문:** obj << Hide/Unhide
+**구문:** obj &lt;&lt; Hide/Unhide
 
 **설명:** 그래프에 나타나지 않도록 선택한 행을 숨깁니다.
 
@@ -9487,7 +9443,7 @@ r << Hide;
 
 #### Insert Rows
 
-**구문:** obj << Insert Rows
+**구문:** obj &lt;&lt; Insert Rows
 
 **설명:** 선택한 행 앞에 행을 삽입합니다. 행을 선택하지 않으면 효과가 없습니다.
 
@@ -9504,7 +9460,7 @@ dt << Insert Rows;
 
 #### Invert Row Selection
 
-**구문:** obj << Invert Row Selection
+**구문:** obj &lt;&lt; Invert Row Selection
 
 **설명:** 현재 행 선택을 반전합니다.
 
@@ -9520,7 +9476,7 @@ r << Invert Row Selection;
 
 #### Label/Unlabel
 
-**구문:** obj << Label/Unlabel
+**구문:** obj &lt;&lt; Label/Unlabel
 
 **설명:** 표식으로 표현된 모든 그래픽 출력에서 선택한 행에 라벨을 지정합니다.
 
@@ -9535,7 +9491,7 @@ r << Label;
 
 #### Marker by Column
 
-**구문:** obj << Marker by Column( column, <Marker( number )>, <Marker Theme( standard | hollow | solid | paired | classic | alphanumeric )>, <Color theme( string )>, < Continuous scale(0|1)>, <Reverse scale(0|1)>, <Excluded Row( 0|1 ), <Make window with legend> )
+**구문:** obj &lt;&lt; Marker by Column( column, &lt;Marker( number )&gt;, &lt;Marker Theme( standard | hollow | solid | paired | classic | alphanumeric )&gt;, &lt;Color theme( string )&gt;, &lt; Continuous scale(0|1)&gt;, &lt;Reverse scale(0|1)&gt;, &lt;Excluded Row( 0|1 ), &lt;Make window with legend&gt; )
 
 **설명:** 지정된 열의 값을 기반으로 데이터 테이블의 각 행에 표식을 할당합니다.
 
@@ -9568,7 +9524,7 @@ dt << Marker By Column(
 
 #### Markers
 
-**구문:** obj << Markers( marker )
+**구문:** obj &lt;&lt; Markers( marker )
 
 **설명:** 표식으로 표현된 모든 그래픽 출력에서 선택한 행의 표식을 변경합니다.
 
@@ -9583,7 +9539,7 @@ r << Markers( "+" );
 
 #### Move Rows
 
-**구문:** obj << Move Rows( At Start|At End|After(n) )
+**구문:** obj &lt;&lt; Move Rows( At Start|At End|After(n) )
 
 **설명:** 선택한 행을 데이터 테이블에서 위나 아래로 움직여 지정한 새 위치로 이동합니다.
 
@@ -9599,7 +9555,7 @@ r << Move Rows( At Start );
 
 #### Name Selection in Column
 
-**구문:** obj << Name Selection in Column( Column Name( name ), Selected( string ), Unselected( string ) )
+**구문:** obj &lt;&lt; Name Selection in Column( Column Name( name ), Selected( string ), Unselected( string ) )
 
 **설명:** 선택된 행과 선택되지 않은 행에 대해 각각 하나씩 두 개의 값을 사용하여 새 범주형 열을 생성합니다.
 
@@ -9614,7 +9570,7 @@ dt << Name Selection in Column( Column Name( "Younger" ), Selected( "Yes" ), Uns
 
 #### Next Selected
 
-**구문:** obj << Next Selected
+**구문:** obj &lt;&lt; Next Selected
 
 **설명:** 선택한 행 그룹에서 다음 행을 강조 표시합니다.
 
@@ -9630,7 +9586,7 @@ r << Next Selected;
 
 #### Previous Selected
 
-**구문:** obj << Previous Selected
+**구문:** obj &lt;&lt; Previous Selected
 
 **설명:** 선택한 행 그룹에서 이전 행을 강조 표시합니다.
 
@@ -9646,7 +9602,7 @@ r << Previous Selected;
 
 #### Row Editor
 
-**구문:** obj << Row Editor
+**구문:** obj &lt;&lt; Row Editor
 
 **설명:** 선택한 행에 대한 행 편집기 대화상자를 엽니다.
 
@@ -9661,7 +9617,7 @@ r << Row Editor();
 
 #### Row Selection
 
-**구문:** obj << Row Selection( Select Where(condition), < current selection("extend" | "restrict" | "clear")>, <Dialog("Keep Dialog Open")>, <Match Case(0|1)> )
+**구문:** obj &lt;&lt; Row Selection( Select Where(condition), &lt; current selection("extend" | "restrict" | "clear")&gt;, &lt;Dialog("Keep Dialog Open")&gt;, &lt;Match Case(0|1)&gt; )
 
 **설명:** 정의된 조건을 충족하는 모든 행을 선택합니다. 이때 기존 선택을 확장 또는 제한하는 옵션과 선택을 실행하거나 대화상자만 표시하는 옵션을 지정할 수 있습니다. &apos;대/소문자 구분&apos;이 생략된 경우 기본값은 대/소문자를 구분합니다.
 
@@ -9720,7 +9676,7 @@ dt << Row Selection( Select where( :name == "jane" ), Match Case( 0 ) );
 
 #### Select All Matching Cells
 
-**구문:** obj << Select All Matching Cells
+**구문:** obj &lt;&lt; Select All Matching Cells
 
 **설명:** 열려 있는 모든 데이터 테이블에서 선택된 열의 값이 해당 열에서 선택된 행의 값 중 하나와 매칭되는 모든 행을 선택합니다.
 
@@ -9738,7 +9694,7 @@ dt << Select All Matching Cells();
 
 #### Select All Rows
 
-**구문:** obj << Select All Rows
+**구문:** obj &lt;&lt; Select All Rows
 
 **설명:** 데이터 테이블의 모든 행을 선택합니다.
 
@@ -9752,7 +9708,7 @@ dt << Select All Rows;
 
 #### Select Dominant
 
-**구문:** obj << Select Dominant( {column1, column2, ...},{0|1, 0|1, ...} )
+**구문:** obj &lt;&lt; Select Dominant( {column1, column2, ...},{0|1, 0|1, ...} )
 
 **설명:** 파레토 프론티어의 높음(1) 또는 낮음(0) 값을 기반으로 모든 행을 선택합니다.
 
@@ -9767,7 +9723,7 @@ dt << Select Dominant( {:height, :weight}, {0, 0} );
 
 #### Select Duplicate Rows
 
-**구문:** obj << Select Duplicate Rows( <match(column1, column2, ...)> )
+**구문:** obj &lt;&lt; Select Duplicate Rows( &lt;match(column1, column2, ...)&gt; )
 
 **설명:** 중복 행을 선택하고 선택한 열에서 매칭을 수행합니다. 매칭 열을 제공하지 않으면 테이블의 모든 열에서 행 매칭이 수행됩니다. 중복 행 개수를 반환합니다.
 
@@ -9783,7 +9739,7 @@ dt << Select duplicate rows( Match( :age, :height ) );
 
 #### Select Excluded
 
-**구문:** obj << Select Excluded
+**구문:** obj &lt;&lt; Select Excluded
 
 **설명:** 데이터 테이블의 모든 제외된 행을 선택합니다.
 
@@ -9801,7 +9757,7 @@ dt << Select Excluded;
 
 #### Select Hidden
 
-**구문:** obj << Select Hidden
+**구문:** obj &lt;&lt; Select Hidden
 
 **설명:** 데이터 테이블의 모든 숨겨진 행을 선택합니다.
 
@@ -9819,7 +9775,7 @@ dt << Select Hidden;
 
 #### Select Labeled
 
-**구문:** obj << Select Labeled
+**구문:** obj &lt;&lt; Select Labeled
 
 **설명:** 데이터 테이블의 모든 라벨이 지정된 행을 선택합니다.
 
@@ -9837,7 +9793,7 @@ dt << Select Labeled;
 
 #### Select Matching Cells
 
-**구문:** obj << Select Matching Cells
+**구문:** obj &lt;&lt; Select Matching Cells
 
 **설명:** 선택된 열의 값이 해당 열에서 선택된 행의 값 중 하나와 매칭되는 모든 행을 선택합니다.
 
@@ -9854,7 +9810,7 @@ dt << Select Matching Cells();
 
 #### Select Randomly
 
-**구문:** obj << Select Randomly( number | probability | Sample Size( number ) | Sampling Rate( probability ) )
+**구문:** obj &lt;&lt; Select Randomly( number | probability | Sample Size( number ) | Sampling Rate( probability ) )
 
 **설명:** 지정된 비율만큼 무작위로 행을 선택합니다.
 
@@ -9890,7 +9846,7 @@ dt << Select Randomly( Sampling Rate( 0.3 ) );
 
 #### Select Rows
 
-**구문:** obj << Select Rows( [row1, row2, ...] )
+**구문:** obj &lt;&lt; Select Rows( [row1, row2, ...] )
 
 **설명:** 지정한 행을 선택합니다.
 
@@ -9904,7 +9860,7 @@ dt << Select Rows( [5, 7, 8, 10] );
 
 #### Select Where
 
-**구문:** obj << Select Where( condition, < current selection("extend" | "restrict" | "clear")> )
+**구문:** obj &lt;&lt; Select Where( condition, &lt; current selection("extend" | "restrict" | "clear")&gt; )
 
 **설명:** 옵션은 선택 사항을 확장 또는 제한하고, 선택 사항을 실행하거나 대화상자만 표시합니다.
 
@@ -9946,7 +9902,7 @@ dt << Select Where( Contains( :name, "AR" ) );
 
 #### Get Data Filter
 
-**구문:** expr = obj << Get Data Filter
+**구문:** expr = obj &lt;&lt; Get Data Filter
 
 **설명:** 필터 보기의 필터 정의를 반환합니다.
 
@@ -9967,7 +9923,7 @@ Show( fv << Get Data Filter );
 
 #### Get Data Table
 
-**구문:** data table = obj << Get Data Table
+**구문:** data table = obj &lt;&lt; Get Data Table
 
 **설명:** 필터 보기를 소유한 테이블을 반환합니다.
 
@@ -9988,7 +9944,7 @@ Show( fv << Get Data Table );
 
 #### Get Name
 
-**구문:** string = obj << Get Name
+**구문:** string = obj &lt;&lt; Get Name
 
 **설명:** 필터 보기의 이름을 가져옵니다.
 
@@ -10009,7 +9965,7 @@ Show( fv << Get Name );
 
 #### Get Show Hidden Rows
 
-**구문:** 0|1 = obj << Get Show Hidden Rows
+**구문:** 0|1 = obj &lt;&lt; Get Show Hidden Rows
 
 **설명:** 이 필터 보기의 숨겨진 행 표시 설정을 반환합니다.
 
@@ -10031,7 +9987,7 @@ Show( fv << Get Show Hidden Rows );
 
 #### Get Type
 
-**구문:** obj << Get Type
+**구문:** obj &lt;&lt; Get Type
 
 **설명:** 필터 보기의 유형인 "Unfiltered", "Filtered" 또는 "TemporaryFiltered" 중 하나를 가져옵니다.
 
@@ -10052,7 +10008,7 @@ Show( fv << Get Type, fv << Is Temporary, fv << Is Unfiltered );
 
 #### Is Locked
 
-**구문:** 0|1 = obj << Is Locked
+**구문:** 0|1 = obj &lt;&lt; Is Locked
 
 **설명:** 이 필터 보기의 잠금 설정을 반환합니다.
 
@@ -10074,7 +10030,7 @@ Show( fv << Is Locked );
 
 #### Is Temporary
 
-**구문:** 0|1 = obj << Is Temporary
+**구문:** 0|1 = obj &lt;&lt; Is Temporary
 
 **설명:** 필터링된 보기가 임시 필터 보기이면 1을 반환합니다.
 
@@ -10095,7 +10051,7 @@ Show( fv << Get Type, fv << Is Temporary, fv << Is Unfiltered );
 
 #### Is Unfiltered
 
-**구문:** 0|1 = obj << Is Unfiltered
+**구문:** 0|1 = obj &lt;&lt; Is Unfiltered
 
 **설명:** 필터링된 보기가 필터링되지 않은 필터 보기이면 1을 반환합니다.
 
@@ -10116,7 +10072,7 @@ Show( fv << Get Type, fv << Is Temporary, fv << Is Unfiltered );
 
 #### Lock
 
-**구문:** obj << Lock( 0|1 )
+**구문:** obj &lt;&lt; Lock( 0|1 )
 
 **설명:** 이 필터 보기를 편집할 수 없도록 합니다.
 
@@ -10138,7 +10094,7 @@ Show( fv << Is Locked );
 
 #### Set Data Filter
 
-**구문:** obj << Set Data Filter( expr )
+**구문:** obj &lt;&lt; Set Data Filter( expr )
 
 **설명:** 필터 보기의 필터 정의를 변경합니다. 필터링되지 않은 보기의 필터 정의는 변경할 수 없습니다.
 
@@ -10172,7 +10128,7 @@ Show( fv << Get Data Filter );
 
 #### Set Name
 
-**구문:** string = obj << Set Name( name )
+**구문:** string = obj &lt;&lt; Set Name( name )
 
 **설명:** 필터 보기의 이름을 변경합니다. 필터링되지 않은 보기와 필터링된 임시 보기의 이름은 변경할 수 없습니다.
 
@@ -10194,7 +10150,7 @@ Show( fv << Get Name );
 
 #### Show Hidden Rows
 
-**구문:** obj << Show Hidden Rows( 0|1 )
+**구문:** obj &lt;&lt; Show Hidden Rows( 0|1 )
 
 **설명:** 이 필터 보기의 숨겨진 행 표시 설정을 변경합니다.
 

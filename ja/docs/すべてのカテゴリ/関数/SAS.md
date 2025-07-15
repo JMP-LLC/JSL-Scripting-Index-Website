@@ -2,8 +2,6 @@
 
 
 
-## 関数
-
 ### As C Expr
 
 **構文:** y = As C Expr( x )

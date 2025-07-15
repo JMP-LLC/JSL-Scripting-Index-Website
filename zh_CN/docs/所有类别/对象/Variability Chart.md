@@ -6,7 +6,7 @@
 
 ### Action
 
-**语法:** obj << Action
+**语法:** obj &lt;&lt; Action
 
 **说明:** 平台内用于插入表达式以求值的所有用途的陷门。暂时将 DisplayBox 和 DataTable 上下文设置为平台。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**语法:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**语法:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **说明:** 将以前创建的预设应用到对象，从而更新选项和定制以匹配保存的设置。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**语法:** obj << Automatic Recalc( state=0|1 )
+**语法:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **说明:** 对排除和数据更改自动重新执行分析。若启用了“自动重新计算”选项，则应考虑使用 Wait(0) 命令来确保排除和数据更改在重新计算前生效。
 
@@ -87,7 +87,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**语法:** obj << Broadcast(message)
+**语法:** obj &lt;&lt; Broadcast(message)
 
 **说明:** 将消息广播到平台。若各个对象的返回结果是表，则它们会尽可能拼接，并且最终格式与表框中“保存合并表”选项的结果或使用“源”列的“拼接”选项的结果相同。除此之外，结果存储在列表中并返回。
 
@@ -107,7 +107,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**语法:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**语法:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **说明:** 添加用于更改平台变量的控制面板
 
@@ -125,7 +125,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**语法:** obj << Copy ByGroup Script
+**语法:** obj &lt;&lt; Copy ByGroup Script
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其置于剪贴板上。
 
@@ -145,7 +145,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**语法:** obj << Copy Script
+**语法:** obj &lt;&lt; Copy Script
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其置于剪贴板上。
 
@@ -160,7 +160,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**语法:** obj << Data Table Window
+**语法:** obj &lt;&lt; Data Table Window
 
 **说明:** 将该分析的数据表窗口移动到前面。
 
@@ -175,7 +175,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**语法:** obj << Get By Levels
+**语法:** obj &lt;&lt; Get By Levels
 
 **说明:** 返回将“依据”组列映射到其值的关联数组。
 
@@ -192,7 +192,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**语法:** obj << Get ByGroup Script
+**语法:** obj &lt;&lt; Get ByGroup Script
 
 **说明:** 创建生成该分析的脚本 (JSL)，并将其作为表达式返回。
 
@@ -213,7 +213,7 @@ Show( t );
 
 ### Get Container
 
-**语法:** obj << Get Container
+**语法:** obj &lt;&lt; Get Container
 
 **说明:** 返回对保留对象内容的容器框的引用。
 
@@ -260,7 +260,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**语法:** obj << Get Data Table
+**语法:** obj &lt;&lt; Get Data Table
 
 **说明:** 返回对该数据表的引用。
 
@@ -276,7 +276,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**语法:** obj << Get Group Platform
+**语法:** obj &lt;&lt; Get Group Platform
 
 **说明:** 若该平台是组的一部分，则返回组平台对象。否则返回 Empty()。
 
@@ -293,7 +293,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**语法:** obj << Get Script
+**语法:** obj &lt;&lt; Get Script
 
 **说明:** 创建生成该分析的脚本 (JSL)，并将其作为表达式返回。
 
@@ -309,7 +309,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**语法:** obj << Get Script With Data Table
+**语法:** obj &lt;&lt; Get Script With Data Table
 
 **说明:** 创建生成该分析的脚本 (JSL) 以专门引用该数据表，并将其作为表达式返回。
 
@@ -325,7 +325,7 @@ Show( t );
 
 ### Get Timing
 
-**语法:** obj << Get Timing
+**语法:** obj &lt;&lt; Get Timing
 
 **说明:** 平台启动过程计时。
 
@@ -341,7 +341,7 @@ Show( t );
 
 ### Get Web Support
 
-**语法:** obj << Get Web Support
+**语法:** obj &lt;&lt; Get Web Support
 
 **说明:** 返回一个数字，指示显示对象的交互式 HTML 支持的水平。1 表示支持部分或全部元素。0 表示不支持。
 
@@ -357,7 +357,7 @@ Show( s );
 
 ### Get Where Expr
 
-**语法:** obj << Get Where Expr
+**语法:** obj &lt;&lt; Get Where Expr
 
 **说明:** 若平台是使用 By() 或 Where() 启动的，则返回数据子集的 Where 表达式。否则返回 Empty()
 
@@ -394,7 +394,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**语法:** obj << Local Data Filter
+**语法:** obj &lt;&lt; Local Data Filter
 
 **说明:** 将数据过滤到特定的组或范围，但在该平台中是本地的
 
@@ -450,7 +450,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**语法:** obj << Paste Local Data Filter
+**语法:** obj &lt;&lt; Paste Local Data Filter
 
 **说明:** 将剪贴板中的本地数据过滤器应用于当前报表。
 
@@ -471,7 +471,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**语法:** obj << Redo Analysis
+**语法:** obj &lt;&lt; Redo Analysis
 
 **说明:** 在新窗口中重新运行相同的分析。若数据发生更改，分析也将不同。
 
@@ -486,7 +486,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**语法:** obj << Redo ByGroup Analysis
+**语法:** obj &lt;&lt; Redo ByGroup Analysis
 
 **说明:** 在新窗口中重新运行相同的分析。若数据发生更改，分析也将不同。
 
@@ -506,7 +506,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**语法:** obj << Relaunch Analysis
+**语法:** obj &lt;&lt; Relaunch Analysis
 
 **说明:** 打开平台启动窗口并重新调用曾用于创建报表的设置。
 
@@ -521,7 +521,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**语法:** obj << Relaunch ByGroup
+**语法:** obj &lt;&lt; Relaunch ByGroup
 
 **说明:** 打开平台启动窗口并重新调用曾用于创建报表的设置。
 
@@ -541,7 +541,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**语法:** obj << Remove Column Switcher
+**语法:** obj &lt;&lt; Remove Column Switcher
 
 **说明:** 删除已添加至平台的最近使用的“列切换器”。
 
@@ -561,7 +561,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**语法:** obj << Remove Local Data Filter
+**语法:** obj &lt;&lt; Remove Local Data Filter
 
 **说明:** 若已创建本地数据过滤器，这会将它删除并将平台恢复为直接使用数据表中的所有数据
 
@@ -600,9 +600,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**语法:** obj << Report;
-
-Report( obj )
+**语法:** obj &lt;&lt; Report;Report( obj )
 
 **说明:** 返回对该报表对象的引用。
 
@@ -619,7 +617,7 @@ Show( t );
 
 ### Report View
 
-**语法:** obj << Report View( "完全"|"汇总" )
+**语法:** obj &lt;&lt; Report View( "完全"|"汇总" )
 
 **说明:** 报表视图确定平台报表中可见的详细程度。Full 显示所有详细信息，而 Summary 仅显示根据平台确定的选定内容。对于定制行为，显示框支持 <<Set Summary Behavior 消息。
 
@@ -634,7 +632,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**语法:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**语法:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **说明:** 创建生成该分析的 JSL 脚本并将其保存为数据表中的表属性。您可以为脚本指定一个名称。Append Suffix 选项在脚本名称后追加一个数字后缀，用于将该脚本与现有的同名脚本区别出来。Prompt 选项提示用户指定脚本名称。Replace 选项会替换同名的现有脚本。
 
@@ -654,7 +652,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**语法:** obj << Save ByGroup Script to Journal
+**语法:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **说明:** 创建生成该分析的 JSL 脚本，并将一个按钮添加至包含该脚本的记录中。
 
@@ -674,7 +672,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**语法:** obj << Save ByGroup Script to Script Window
+**语法:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其追加至当前的脚本文本窗口中。
 
@@ -694,7 +692,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**语法:** obj << Save Script for All Objects
+**语法:** obj &lt;&lt; Save Script for All Objects
 
 **说明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -709,7 +707,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**语法:** obj << Save Script for All Objects To Data Table( <name> )
+**语法:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **说明:** 将所有报表对象的脚本保存至当前数据表。当您在该窗口中具有多个报表时，该选项很有用。除非您在引号中指定脚本名称，否则脚本将以第一个平台命名。
 
@@ -747,7 +745,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**语法:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**语法:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其作为表属性保存至数据表中。
 
@@ -762,7 +760,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**语法:** obj << Save Script to Journal
+**语法:** obj &lt;&lt; Save Script to Journal
 
 **说明:** 创建生成该分析的 JSL 脚本，并将一个按钮添加至包含该脚本的记录中。
 
@@ -777,7 +775,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**语法:** obj << Save Script to Report
+**语法:** obj &lt;&lt; Save Script to Report
 
 **说明:** 创建生成该分析的 JSL 脚本，并在报表中显示。有助于保留打印的已完成操作记录。
 
@@ -792,7 +790,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**语法:** obj << Save Script to Script Window
+**语法:** obj &lt;&lt; Save Script to Script Window
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其追加至当前的脚本文本窗口中。
 
@@ -872,7 +870,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**语法:** obj << Sync to Data Table Changes
+**语法:** obj &lt;&lt; Sync to Data Table Changes
 
 **说明:** 与已进行的排除和数据的更改同步。
 
@@ -889,7 +887,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**语法:** obj << Title( "new title" )
+**语法:** obj &lt;&lt; Title( "new title" )
 
 **说明:** 设置平台的标题。
 
@@ -904,7 +902,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**语法:** obj << Top Report
+**语法:** obj &lt;&lt; Top Report
 
 **说明:** 返回对报表中根节点的引用。
 
@@ -921,7 +919,7 @@ Show( t );
 
 ### Transform Column
 
-**语法:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**语法:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **说明:** 在对象（通常是平台）的本地上下文中创建变换列。变换列仅在平台的生命周期内是活动的。
 
@@ -942,7 +940,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**语法:** obj << View Web XML
+**语法:** obj &lt;&lt; View Web XML
 
 **说明:** 返回用于创建交互式 HTML 报表的 XML 代码。
 
@@ -957,9 +955,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**语法:** obj = Variability Chart(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Variability Chart(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 设置要为报表创建的窗口类型。默认情况下将创建 Visible 报表窗口。Invisible 窗口将不显示在屏幕上，但可被函数（例如 Window()）发现。Private 窗口会响应大多数窗口消息，但不可发现并且必须通过报表对象处理
 
@@ -996,9 +992,7 @@ obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
 
 ### By
 
-**语法:** obj = Variability Chart(...<By( column(s) )>...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Variability Chart(...&lt;By( column(s) )&gt;...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 生成多个报表，每个报表对应变量的每个水平。
 
@@ -1017,9 +1011,7 @@ obj = dt << Variability Chart(
 
 ### Freq
 
-**语法:** obj = Variability Chart(...<Freq( column )>...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Variability Chart(...&lt;Freq( column )&gt;...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 其数值为分析中的每一行都分配一个频数的列。
 
@@ -1034,9 +1026,7 @@ obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ), Freq( 
 
 ### Grouping
 
-**语法:** obj = Variability Chart(...<Grouping( column(s) )>...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Variability Chart(...&lt;Grouping( column(s) )&gt;...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 将分类列指定为分组变量。列表中的最后一列应是被测量的部件或单元。
 
@@ -1062,9 +1052,7 @@ obj = dt << Variability Chart( Y( :Measurement ), Grouping( :Operator, :part# ) 
 
 ### Response
 
-**语法:** obj = Variability Chart(...Response( column(s) )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Variability Chart(...Response( column(s) )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定测量值的连续列。
 
@@ -1090,9 +1078,7 @@ obj = dt << Variability Chart( Response( :Measurement ), X( :Operator, :part# ) 
 
 ### Standard
 
-**语法:** obj = Variability Chart(...<Standard( column )>...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Variability Chart(...&lt;Standard( column )&gt;...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定一个标准或引用列，它包含被测量部件的已知值。
 
@@ -1111,9 +1097,7 @@ obj = dt << Variability Chart(
 
 ### X
 
-**语法:** obj = Variability Chart(...<X( column(s) )>...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Variability Chart(...&lt;X( column(s) )&gt;...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 将分类列指定为分组变量。列表中的最后一列应是被测量的部件或单元。
 
@@ -1139,9 +1123,7 @@ obj = dt << Variability Chart( Y( :Measurement ), Grouping( :Operator, :part# ) 
 
 ### Y
 
-**语法:** obj = Variability Chart(...Y( column(s) )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Variability Chart(...Y( column(s) )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定测量值的连续列。
 
@@ -1169,9 +1151,7 @@ obj = dt << Variability Chart( Response( :Measurement ), X( :Operator, :part# ) 
 
 ### Analysis Type
 
-**语法:** obj = Variability Chart(...Analysis Type( "选择最佳分析 (EMS REML Bayes)"|"选择最佳分析 (EMS REML)"|"使用 REML 分析"|"使用 Bayes 分析" )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Variability Chart(...Analysis Type( "选择最佳分析 (EMS REML Bayes)"|"选择最佳分析 (EMS REML)"|"使用 REML 分析"|"使用 Bayes 分析" )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 标识用于计算方差分量的方法。
 
@@ -1191,9 +1171,7 @@ obj << (Variability Analysis[1] << Variance Components( 1 ));
 
 ### Conv Limit
 
-**语法:** obj = Variability Chart(...Conv Limit( number )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Variability Chart(...Conv Limit( number )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 设置用于计算方差分量的收敛极限。该选项仅影响 REML 分析。
 
@@ -1214,7 +1192,7 @@ obj << (Variability Analysis[1] << Variance Components( 1 ));
 
 ### Edit MSA Metadata
 
-**语法:** obj << Edit MSA Metadata( :column( Lower Tolerance( number ), Upper Tolerance( number ), <Historical Mean( number ), Historical Process Sigma( number )> ) )
+**语法:** obj &lt;&lt; Edit MSA Metadata( :column( Lower Tolerance( number ), Upper Tolerance( number ), &lt;Historical Mean( number ), Historical Process Sigma( number )&gt; ) )
 
 **说明:** 打开一个窗口，允许您添加或编辑所有分析的容差范围、容差限值、历史均值和历史过程 sigma。报表将自动更新。
 
@@ -1236,9 +1214,7 @@ obj << Edit MSA Metadata( :Measurement( Lower Tolerance( .1 ), Upper Tolerance( 
 
 ### Max Iter
 
-**语法:** obj = Variability Chart(...Max Iter( number )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Variability Chart(...Max Iter( number )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 设置用于计算方差分量的最大迭代次数。该选项仅影响 REML 分析。
 
@@ -1259,9 +1235,7 @@ obj << (Variability Analysis[1] << Variance Components( 1 ));
 
 ### Number Function Evals
 
-**语法:** obj = Variability Chart(...Number Function Evals( number )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Variability Chart(...Number Function Evals( number )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 设置用于计算方差分量的函数最大计算次数。该选项仅影响 Bayes 分析。
 
@@ -1282,9 +1256,7 @@ obj << (Variability Analysis[1] << Variance Components( 1 ));
 
 ### Number Integration Abscissas
 
-**语法:** obj = Variability Chart(...Number Integration Abscissas( number )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Variability Chart(...Number Integration Abscissas( number )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 设置用于计算方差分量的积分横坐标数。该选项仅影响 Bayes 分析。
 
@@ -1305,7 +1277,7 @@ obj << (Variability Analysis[1] << Variance Components( 1 ));
 
 ### Save All Metadata to Table
 
-**语法:** obj << Save All Metadata to Table( < MSA( state=0|1 ) >, < Measurement Sigma( state=0|1 ) >, < Tolerance as Specs( state=0|1 ) > )
+**语法:** obj &lt;&lt; Save All Metadata to Table( &lt; MSA( state=0|1 ) &gt;, &lt; Measurement Sigma( state=0|1 ) &gt;, &lt; Tolerance as Specs( state=0|1 ) &gt; )
 
 **说明:** 创建一个新数据表，其中包含测量数据每列的 MSA 元数据和“测量值 Sigma”。该表为高格式，每个测量变量都包含一行。有一个选项用于将容差下限和上限值保存为数据表中的附加列。
 
@@ -1332,7 +1304,7 @@ obj << Save All Metadata to Table;
 
 ### Save Metadata as Column Properties
 
-**语法:** obj << Save Metadata as Column Properties( < MSA( 0|1 ) >, < Measurement Sigma( 0|1 ) >, < Tolerance as Specs( 0|1 ) > )
+**语法:** obj &lt;&lt; Save Metadata as Column Properties( &lt; MSA( 0|1 ) &gt;, &lt; Measurement Sigma( 0|1 ) &gt;, &lt; Tolerance as Specs( 0|1 ) &gt; )
 
 **说明:** 对于测量数据的每一列，将 MSA 元数据和“测量值 Sigma”保存为原始数据表中列的列属性。有一个选项用于将容差下限和上限值保存为“规格限”列属性。
 
@@ -1359,9 +1331,7 @@ obj << Save Metadata as Column Properties;
 
 ### Set Alpha Level
 
-**语法:** obj = Variability Chart(...Set Alpha Level( number )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Variability Chart(...Set Alpha Level( number )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 更改用于置信区间和均值菱形的 alpha 水平。该选项对应于“变异性图”启动窗口中的“指定 Alpha 水平”选项。
 
@@ -1380,9 +1350,7 @@ obj << (Variability Analysis[1] << Mean Diamonds( 1 ));
 
 ### Set Random Seed
 
-**语法:** obj = Variability Chart(...Set Random Seed( number )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Variability Chart(...Set Random Seed( number )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 将随机种子设置为特定值，以确保使用相同种子的所有后续试验都是可再现的。
 
@@ -1402,9 +1370,7 @@ obj << (Variability Analysis[1] << Heterogeneity of Variance Tests( 1 ));
 
 ### Sigma Multiplier
 
-**语法:** obj = Variability Chart(...Sigma Multiplier( number=6 )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Variability Chart(...Sigma Multiplier( number=6 )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定乘以 sigma 的常数值。 默认为“6”。
 
@@ -1424,7 +1390,7 @@ obj = dt << Variability Chart(
 
 ### Variability Analysis
 
-**语法:** obj << Variability Analysis
+**语法:** obj &lt;&lt; Variability Analysis
 
 **说明:** 指定每个测量响应的“变异性分析”报表选项。
 
@@ -1447,7 +1413,7 @@ obj = dt << Variability Chart(
 
 #### Confidence Intervals
 
-**语法:** obj << (Variability Analysis[number] << Bias Report(Confidence Intervals( state=0|1 )))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Bias Report(Confidence Intervals( state=0|1 )))
 
 **说明:** 在“相对于标准值的测量值偏倚报表”部分中的图形上显示或隐藏置信区间。仅当在启动窗口中指定了标准变量时该选项才可用。
 
@@ -1467,7 +1433,7 @@ obj << (Variability Analysis[1] << Bias Report( Confidence Intervals( 1 ) ));
 
 #### Measurement Error Graphs
 
-**语法:** obj << (Variability Analysis[number] << Bias Report(Measurement Error Graphs( state=0|1 )))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Bias Report(Measurement Error Graphs( state=0|1 )))
 
 **说明:** 显示或隐藏相对于部件的偏倚的测量值误差图。仅当在启动窗口中指定了标准变量时该选项才可用。
 
@@ -1491,7 +1457,7 @@ obj << (Variability Analysis[1] << Bias Report( Measurement Error Graphs( 1 ) ))
 
 #### Point Options
 
-**语法:** obj << (Variability Analysis[number] << Heterogeneity of Variance Tests(1, Point Options("Show Needles" | "Show Connected Points" | "Show Only Points")))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Heterogeneity of Variance Tests(1, Point Options("Show Needles" | "Show Connected Points" | "Show Only Points")))
 
 **说明:** 指定图表中点的绘制样式。您可以在垂直针、连接点和仅点之间进行选择。默认情况下，图表使用针绘制，这些针将点连接到在平均值处绘制的水平线。
 
@@ -1507,7 +1473,7 @@ Heterogeneity of Variance Tests( 1, Point Options( Show Only Points ) ));
 
 #### Set Alpha Level
 
-**语法:** obj << (Variability Analysis[number] << Heterogeneity of Variance Tests(1, Set Alpha Level( number )))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Heterogeneity of Variance Tests(1, Set Alpha Level( number )))
 
 **说明:** 更改用于计算决策限的 alpha 水平。
 
@@ -1523,7 +1489,7 @@ Heterogeneity of Variance Tests( 1, Set Alpha Level( 0.1 ) ));
 
 #### Show Center Line
 
-**语法:** obj << (Variability Analysis[number] << Heterogeneity of Variance Tests(1, Show Center Line(state=0|1)))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Heterogeneity of Variance Tests(1, Show Center Line(state=0|1)))
 
 **说明:** 显示或隐藏中心线（总 ADM 均值）。 默认开启。
 
@@ -1539,7 +1505,7 @@ Heterogeneity of Variance Tests( 1, Show Center Line( 0 ) ));
 
 #### Show Decision Limit Shading
 
-**语法:** obj << (Variability Analysis[number] << Heterogeneity of Variance Tests(1, Show Decision Limit Shading(state=0|1)))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Heterogeneity of Variance Tests(1, Show Decision Limit Shading(state=0|1)))
 
 **说明:** 显示或隐藏 ANOMV-Levene (ADM) 图的决策限着色。 默认开启。
 
@@ -1555,7 +1521,7 @@ Heterogeneity of Variance Tests( 1, Show Decision Limit Shading( 0 ) ));
 
 #### Show Decision Limits
 
-**语法:** obj << (Variability Analysis[number] << Heterogeneity of Variance Tests(1, Show Decision Limits(state=0|1)))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Heterogeneity of Variance Tests(1, Show Decision Limits(state=0|1)))
 
 **说明:** 显示或隐藏 ANOMV-Levene (ADM) 图的决策限线。 默认开启。
 
@@ -1571,7 +1537,7 @@ Heterogeneity of Variance Tests( 1, Show Decision Limits( 0 ) ));
 
 #### Show Summary Report
 
-**语法:** obj << (Variability Analysis[number] << Heterogeneity of Variance Tests(1, Show Summary Report(state=0|1)))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Heterogeneity of Variance Tests(1, Show Summary Report(state=0|1)))
 
 **说明:** 显示或隐藏包含组标准差和相应决策限的报表。
 
@@ -1591,7 +1557,7 @@ Heterogeneity of Variance Tests( 1, Show Summary Report( 1 ) ));
 
 #### Linearity by Groups
 
-**语法:** obj << (Variability Analysis[number] << Linearity Study(1, Linearity By Groups( state=0|1 )))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Linearity Study(1, Linearity By Groups( state=0|1 )))
 
 **说明:** 显示或隐藏模型中每个因子的单个线性图。
 
@@ -1612,7 +1578,7 @@ obj << (Variability Analysis[1] << Linearity Study( 1, Linearity By Groups( 1 ) 
 
 #### Set Alpha Level
 
-**语法:** obj << (Variability Analysis[number] << Linearity Study(1, Set Alpha Level( number )))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Linearity Study(1, Set Alpha Level( number )))
 
 **说明:** 指定用于计算偏倚置信限的 alpha 水平。 默认为“0.05”。
 
@@ -1632,7 +1598,7 @@ obj << (Variability Analysis[1] << Linearity Study( 1, Set Alpha Level( .01 ) ))
 
 #### Show Avg Bias Points
 
-**语法:** obj << (Variability Analysis[number] << Linearity Study(1, Show Avg Bias Points( state=0|1 )))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Linearity Study(1, Show Avg Bias Points( state=0|1 )))
 
 **说明:** 在图形中显示或隐藏平均偏倚点。 默认开启。
 
@@ -1657,7 +1623,7 @@ obj << (Variability Analysis[1] << Linearity Study( 1, Show Avg Bias Points( 1 )
 
 #### Show Bias Points
 
-**语法:** obj << (Variability Analysis[number] << Linearity Study(1, Show Bias Points( state=0|1 )))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Linearity Study(1, Show Bias Points( state=0|1 )))
 
 **说明:** 在图形中显示或隐藏偏倚点。 默认开启。
 
@@ -1682,7 +1648,7 @@ obj << (Variability Analysis[1] << Linearity Study( 1, Show Bias Points( 1 ) ));
 
 #### Show Fit Confidence Curves
 
-**语法:** obj << (Variability Analysis[number] << Linearity Study(1, Show Fit Confidence Curves( state=0|1 )))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Linearity Study(1, Show Fit Confidence Curves( state=0|1 )))
 
 **说明:** 在图形中显示或隐藏拟合置信度曲线。 默认开启。
 
@@ -1707,7 +1673,7 @@ obj << (Variability Analysis[1] << Linearity Study( 1, Show Fit Confidence Curve
 
 #### Show Line of Fit
 
-**语法:** obj << (Variability Analysis[number] << Linearity Study(1, Show Line of Fit( state=0|1 )))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Linearity Study(1, Show Line of Fit( state=0|1 )))
 
 **说明:** 在图形中显示或隐藏拟合线。 默认开启。
 
@@ -1732,7 +1698,7 @@ obj << (Variability Analysis[1] << Linearity Study( 1, Show Line of Fit( 1 ) ));
 
 #### Show Overall Avg Bias Line
 
-**语法:** obj << (Variability Analysis[number] << Linearity Study(1, Show Overall Avg Bias Line( state=0|1 )))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Linearity Study(1, Show Overall Avg Bias Line( state=0|1 )))
 
 **说明:** 在图形中显示或隐藏总平均偏倚线。 默认开启。
 
@@ -1761,7 +1727,7 @@ obj << (Variability Analysis[1] << Linearity Study( 1, Show Overall Avg Bias Lin
 
 #### AIAG Labels
 
-**语法:** obj << (Variability Analysis[number] << AIAG Labels( state=0|1 ))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; AIAG Labels( state=0|1 ))
 
 **说明:** 显示或隐藏量具 R&R 输出中的标签。这些标签由美国汽车工业行动集团 (AIAG) 定义。 默认开启。
 
@@ -1786,7 +1752,7 @@ obj << (Variability Analysis[1] << AIAG Labels( 1 ));
 
 #### Bias Report
 
-**语法:** obj << (Variability Analysis[number] << Bias Report( state=0|1 ))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Bias Report( state=0|1 ))
 
 **说明:** 显示或隐藏包含观测值与标准之间的平均差值的报表。仅当指定标准变量时该选项才可用。
 
@@ -1806,7 +1772,7 @@ obj << (Variability Analysis[1] << Bias Report( 1 ));
 
 #### Connect Cell Means
 
-**语法:** obj << (Variability Analysis[number] << Connect Cell Means( state=0|1 ))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Connect Cell Means( state=0|1 ))
 
 **说明:** 显示或隐藏变异性图中连接一组单元格内的单元格均值的线。
 
@@ -1821,7 +1787,7 @@ obj << (Variability Analysis[1] << Connect Cell Means( 1 ));
 
 #### Discrimination Ratio
 
-**语法:** obj << (Variability Analysis[number] << Discrimination Ratio( state=0|1 ))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Discrimination Ratio( state=0|1 ))
 
 **说明:** 显示或隐藏给定模型的分辨比率。
 
@@ -1841,7 +1807,7 @@ obj << (Variability Analysis[1] << Discrimination Ratio( 1 ));
 
 #### Edit MSA Metadata
 
-**语法:** obj << (Variability Analysis[number] << Edit MSA Metadata(Lower Tolerance(number), Upper Tolerance(number), Tolerance Range(number), Historical Mean(number), Historical Process Sigma(number)))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Edit MSA Metadata(Lower Tolerance(number), Upper Tolerance(number), Tolerance Range(number), Historical Mean(number), Historical Process Sigma(number)))
 
 **说明:** 打开一个窗口，允许您添加或编辑所有分析的容差范围、容差限值、历史均值和历史过程 sigma。报表将自动更新。
 
@@ -1866,7 +1832,7 @@ obj << (Variability Analysis[1] << Edit MSA Metadata(
 
 #### Group Means of Std Dev
 
-**语法:** obj << (Variability Analysis[number] << Group Means of Std Dev( state=0|1 ))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Group Means of Std Dev( state=0|1 ))
 
 **说明:** 显示或隐藏标准差图中单元格标准差组的均值线。
 
@@ -1881,7 +1847,7 @@ obj << (Variability Analysis[1] << Group Means of Std Dev( 1 ));
 
 #### Heterogeneity of Variance Tests
 
-**语法:** obj << (Variability Analysis[number] << Heterogeneity of Variance Tests( state=0|1 ))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Heterogeneity of Variance Tests( state=0|1 ))
 
 **说明:** 显示或隐藏比较组间方差的报表。该报表包括显示模型中每个因子的方差非齐性检验的图形。
 
@@ -1900,7 +1866,7 @@ obj << (Variability Analysis[1] << Heterogeneity of Variance Tests( 1 ));
 
 #### Linearity Study
 
-**语法:** obj << (Variability Analysis[number] << Linearity Study( state=0|1 ))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Linearity Study( state=0|1 ))
 
 **说明:** 执行一个回归，该回归使用标准值作为 X 变量，偏倚作为 Y 变量。
 
@@ -1921,7 +1887,7 @@ obj << (Variability Analysis[1] << Linearity Study( 1 ));
 
 #### Mean Diamonds
 
-**语法:** obj << (Variability Analysis[number] << Mean Diamonds( state=0|1 ))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Mean Diamonds( state=0|1 ))
 
 **说明:** 显示或隐藏变异性图中的均值菱形。置信区间使用每个单元格的组内标准差。
 
@@ -1936,7 +1902,7 @@ obj << (Variability Analysis[1] << Mean Diamonds( 1 ));
 
 #### Mean Plots
 
-**语法:** obj << (Variability Analysis[number] << Mean Plots( state=0|1 ))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Mean Plots( state=0|1 ))
 
 **说明:** 显示或隐藏模型中每个因子的因子水平均值图。
 
@@ -1955,7 +1921,7 @@ obj << (Variability Analysis[1] << Mean Plots( 1 ));
 
 #### Mean of Std Dev
 
-**语法:** obj << (Variability Analysis[number] << Mean of Std Dev( state=0|1 ))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Mean of Std Dev( state=0|1 ))
 
 **说明:** 显示或隐藏标准差图中标准差均值处的灰色虚线。
 
@@ -1970,7 +1936,7 @@ obj << (Variability Analysis[1] << Mean of Std Dev( 1 ));
 
 #### Misclassification Probabilities
 
-**语法:** obj << (Variability Analysis[number] << Misclassification Probabilities( state=0|1 ))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Misclassification Probabilities( state=0|1 ))
 
 **说明:** 显示或隐藏包含给定模型误分类概率的报表。
 
@@ -1991,7 +1957,7 @@ obj << (Variability Analysis[1] << Misclassification Probabilities( 1 ));
 
 #### Points Jittered
 
-**语法:** obj << (Variability Analysis[number] << Points Jittered( state=0|1 ))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Points Jittered( state=0|1 ))
 
 **说明:** 在变异性图中，向各点添加随机水平散布效果。
 
@@ -2006,7 +1972,7 @@ obj << (Variability Analysis[1] << Points Jittered( 1 ));
 
 #### S Control Limits
 
-**语法:** obj << (Variability Analysis[number] << S Control Limits( state=0|1 ))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; S Control Limits( state=0|1 ))
 
 **说明:** 显示或隐藏标准差图中位于下控制限 (LCL) 和上控制限 (UCL) 处的红线。
 
@@ -2021,7 +1987,7 @@ obj << (Variability Analysis[1] << S Control Limits( 1 ));
 
 #### Show Box Plots
 
-**语法:** obj << (Variability Analysis[number] << Show Box Plots( state=0|1 ))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Show Box Plots( state=0|1 ))
 
 **说明:** 显示或隐藏变异性图中每个单元格的箱线图。
 
@@ -2036,7 +2002,7 @@ obj << (Variability Analysis[1] << Show Box Plots( 1 ));
 
 #### Show Cell Means
 
-**语法:** obj << (Variability Analysis[number] << Show Cell Means( state=0|1 ))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Show Cell Means( state=0|1 ))
 
 **说明:** 显示或隐藏变异性图中每个单元格的均值标记。 默认开启。
 
@@ -2054,7 +2020,7 @@ obj << (Variability Analysis[1] << Show Cell Means( 1 ));
 
 #### Show Grand Mean
 
-**语法:** obj << (Variability Analysis[number] << Show Grand Mean( state=0|1 ))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Show Grand Mean( state=0|1 ))
 
 **说明:** 显示或隐藏总均值，它通过一条横跨整个图形的灰色虚线来表示。
 
@@ -2069,7 +2035,7 @@ obj << (Variability Analysis[1] << Show Grand Mean( 1 ));
 
 #### Show Grand Median
 
-**语法:** obj << (Variability Analysis[number] << Show Grand Median( state=0|1 ))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Show Grand Median( state=0|1 ))
 
 **说明:** 显示或隐藏总中位数，它通过一条横跨整个图形的蓝色虚线来表示。
 
@@ -2084,7 +2050,7 @@ obj << (Variability Analysis[1] << Show Grand Median( 1 ));
 
 #### Show Group Means
 
-**语法:** obj << (Variability Analysis[number] << Show Group Means( state=0|1 ))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Show Group Means( state=0|1 ))
 
 **说明:** 显示或隐藏单元格组的均值，它通过一条水平实线来表示。
 
@@ -2099,7 +2065,7 @@ obj << (Variability Analysis[1] << Show Group Means( 1 ));
 
 #### Show Points
 
-**语法:** obj << (Variability Analysis[number] << Show Points( state=0|1 ))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Show Points( state=0|1 ))
 
 **说明:** 显示或隐藏变异性图中的点。 默认开启。
 
@@ -2117,7 +2083,7 @@ obj << (Variability Analysis[1] << Show Points( 1 ));
 
 #### Show Range Bars
 
-**语法:** obj << (Variability Analysis[number] << Show Range Bars( state=0|1 ))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Show Range Bars( state=0|1 ))
 
 **说明:** 显示或隐藏指示每个单元格的最小值和最大值的直条。 默认开启。
 
@@ -2135,7 +2101,7 @@ obj << (Variability Analysis[1] << Show Range Bars( 1 ));
 
 #### Show Separators
 
-**语法:** obj << (Variability Analysis[number] << Show Separators( state=0|1 ))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Show Separators( state=0|1 ))
 
 **说明:** 显示或隐藏变异性图中分组变量水平之间的分隔线。 默认开启。
 
@@ -2153,7 +2119,7 @@ obj << (Variability Analysis[1] << Show Separators( 1 ));
 
 #### Show Standard Mean
 
-**语法:** obj << (Variability Analysis[number] << Show Standard Mean( state=0|1 ))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Show Standard Mean( state=0|1 ))
 
 **说明:** 显示或隐藏标准值均值处的线。仅当在启动窗口中指定了标准变量时该选项才可用。
 
@@ -2169,7 +2135,7 @@ obj << (Variability Analysis[1] << Show Standard Mean( 1 ));
 
 #### Std Dev Chart
 
-**语法:** obj << (Variability Analysis[number] << Std Dev Chart( state=0|1 ))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Std Dev Chart( state=0|1 ))
 
 **说明:** 显示或隐藏标绘每个单元格的标准差的图表。 默认开启。
 
@@ -2187,7 +2153,7 @@ obj << (Variability Analysis[1] << Std Dev Chart( 1 ));
 
 #### Std Dev Plots
 
-**语法:** obj << (Variability Analysis[number] << Std Dev Plots( state=0|1 ))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Std Dev Plots( state=0|1 ))
 
 **说明:** 显示或隐藏按每个因子水平分组的标准差图。为模型中的每个因子都显示一个图。
 
@@ -2206,7 +2172,7 @@ obj << (Variability Analysis[1] << Std Dev Plots( 1 ));
 
 #### Variability Chart
 
-**语法:** obj << (Variability Analysis[number] << Variability Chart( state=0|1 ))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Variability Chart( state=0|1 ))
 
 **说明:** 显示或隐藏变异性图。 默认开启。
 
@@ -2224,7 +2190,7 @@ obj << (Variability Analysis[1] << Variability Chart( 1 ));
 
 #### Variability Summary Report
 
-**语法:** obj << (Variability Analysis[number] << Variability Summary Report( state=0|1 ))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Variability Summary Report( state=0|1 ))
 
 **说明:** 显示或隐藏一个报表，该报表显示均值、标准差、变异系数 (CV)、均值标准误差、置信区间下限和上限。还显示最小值、最大值、极差、中位数和观测数。
 
@@ -2239,7 +2205,7 @@ obj << (Variability Analysis[1] << Variability Summary Report( 1 ));
 
 #### Variance Components
 
-**语法:** obj << (Variability Analysis[number] << Variance Components( state=0|1 ))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Variance Components( state=0|1 ))
 
 **说明:** 显示或隐藏特定模型的方差分量。
 
@@ -2259,7 +2225,7 @@ obj << (Variability Analysis[1] << Variance Components( 1 ));
 
 #### Vertical Charts
 
-**语法:** obj << (Variability Analysis[number] << Vertical Charts( state=0|1 ))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Vertical Charts( state=0|1 ))
 
 **说明:** 旋转变异性图。
 
@@ -2274,7 +2240,7 @@ obj << (Variability Analysis[1] << Vertical Charts( 1 ));
 
 #### XBar Control Limits
 
-**语法:** obj << (Variability Analysis[number] << XBar Control Limits( state=0|1 ))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; XBar Control Limits( state=0|1 ))
 
 **说明:** 显示或隐藏变异性图中位于下控制限 (LCL) 和上控制限 (UCL) 处的线。
 
@@ -2289,7 +2255,7 @@ obj << (Variability Analysis[1] << XBar Control Limits( 1 ));
 
 #### 量具 R&R 报表
 
-**语法:** obj << (Variability Analysis[number] << "Gauge R & R Report"n( state=0|1 ))
+**语法:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; "Gauge R & R Report"n( state=0|1 ))
 
 **说明:** 计算并显示“量具 R&R”（再现性和重复性）汇总报表。
 

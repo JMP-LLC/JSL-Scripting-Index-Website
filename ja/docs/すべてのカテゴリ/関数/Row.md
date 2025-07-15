@@ -2,11 +2,9 @@
 
 
 
-## 関数
-
 ### As Table
 
-**構文:** dt = As Table( matrix, <matrix2,...> < <<invisible/private>, < <<Column Names(name list) > )
+**構文:** dt = As Table( matrix, &lt;matrix2,...&gt; &lt; &lt;&lt;invisible/private&gt;, &lt; &lt;&lt;Column Names(name list) &gt; )
 
 **説明:** 行列をデータテーブルに変換する。オプションの引数invisibleを指定すると、テーブルが表示されない。
 
@@ -21,7 +19,7 @@ As Table( [1 2 3, 4 5 6] );
 
 ### Col Stored Value
 
-**構文:** y = Col Stored Value( <dt>, xCol, <row=Row()> )
+**構文:** y = Col Stored Value( &lt;dt&gt;, xCol, &lt;row=Row()&gt; )
 
 **説明:** 「欠測値のコード」列プロパティを適用せずに、列の値をそのまま戻す。行番号が指定されていない場合は、現在の行が対象となる。
 
@@ -42,9 +40,7 @@ Show( y1, y2, y3, y4 );
 
 ### Column
 
-**構文:** y = Column( name|number );
-
-y = Column( dataTable, name|number, <"formatted"> )
+**構文:** y = Column( name|number );y = Column( dataTable, name|number, &lt;"formatted"&gt; )
 
 **説明:** 指定したデータテーブル列への参照を戻す。formattedキーワードを使うことで、値ラベルのような代替値へのアクセスを許可する。
 
@@ -93,7 +89,7 @@ Column Name( 4 );
 
 ### Count
 
-**構文:** y = Count( start, end, s, <n=1> )
+**構文:** y = Count( start, end, s, &lt;n=1&gt; )
 
 **説明:** s段階に分けてstartからendまでの各数字をn回反復させた数列のうち、i番目の値を戻す。iは、Row()関数の値。Count()関数はRow()関数に依存するため、主に計算式での使用に便利。
 
@@ -117,7 +113,7 @@ For Each Row(
 
 ### Current Data Table
 
-**構文:** dt = Current Data Table( <Project(title|index|box|window)> ); Current Data Table( dt )
+**構文:** dt = Current Data Table( &lt;Project(title|index|box|window)&gt; ); Current Data Table( dt )
 
 **説明:** 現在のテーブルを戻す。またはデータテーブルを指定した場合には、そのデータテーブルを現在のデータテーブルにする。
 
@@ -154,7 +150,7 @@ Data Table( 1 );
 
 ### Dif
 
-**構文:** y = Dif( x, <n=1> )
+**構文:** y = Dif( x, &lt;n=1&gt; )
 
 **説明:** x - Lag( x, n )を戻す。「1階差分」ともいう。Dif()関数はRow()関数に依存して結果を戻すため、データ列の計算式で使用すると便利。
 
@@ -186,7 +182,7 @@ Dim( [11 22, 33 44, 55 66] );
 
 ### Get Data Table
 
-**構文:** dt = Get Data Table( <Project(title|index|box|window)>, name|index )
+**構文:** dt = Get Data Table( &lt;Project(title|index|box|window)&gt;, name|index )
 
 **説明:** 指定のデータテーブルへの参照を戻す。
 
@@ -211,7 +207,7 @@ Get Data Table( 1 );
 
 ### Get Data Table List
 
-**構文:** tableList = Get Data Table List( <Project(title|index|box|window)> )
+**構文:** tableList = Get Data Table List( &lt;Project(title|index|box|window)&gt; )
 
 **説明:** 現在開いているすべてのデータテーブルのリストを戻す。
 
@@ -248,7 +244,7 @@ Get Data Table List( Project( project ) );
 
 ### Lag
 
-**構文:** y = Lag( <x>, <n=1> )
+**構文:** y = Lag( &lt;x&gt;, &lt;n=1&gt; )
 
 **説明:** 引数xのRow() - n番目の値を戻す。Lag()関数はRow()関数に依存して結果を戻すため、データ列の計算式で使用すると便利。
 
@@ -329,7 +325,7 @@ d;
 
 ### New Column
 
-**構文:** dc = New Column( name, <"Numeric"|"Character"|"RowState"|"Expression">, <"Continuous"|"Ordinal"|"Nominal"|"Multiple Response"|"Unstructured Text"|"Vector"|"None">, <Width( n )|Format(format name, width, precision)>, <Like(:other column)>, <actions> )
+**構文:** dc = New Column( name, &lt;"Numeric"|"Character"|"RowState"|"Expression"&gt;, &lt;"Continuous"|"Ordinal"|"Nominal"|"Multiple Response"|"Unstructured Text"|"Vector"|"None"&gt;, &lt;Width( n )|Format(format name, width, precision)&gt;, &lt;Like(:other column)&gt;, &lt;actions&gt; )
 
 **説明:** 現在のデータテーブルに新しい列を作成する。オプションの引数actionsはデータ列がサポートするメッセージ。
 
@@ -357,7 +353,7 @@ New Column( "example", "Numeric", "Continuous", Width( 5 ), <<Set Each Value( 10
 
 ### New Column by Text Matching
 
-**構文:** dc = New Column by Text Matching( Column(:name), Set Regex(), <Output Column Name("Name")>, <Use Result(0 | 1)> )
+**構文:** dc = New Column by Text Matching( Column(:name), Set Regex(), &lt;Output Column Name("Name")&gt;, &lt;Use Result(0 | 1)&gt; )
 
 **説明:** 既存の列に対して正規表現パターンマッチを実行し、新しい列を作成する。
 
@@ -378,7 +374,7 @@ New Column by Text Matching(
 
 ### New Table
 
-**構文:** dt = New Table( name, <visibility("private"|"invisible"|"visible")>, <Enable Filter Views(bool)>, <actions> )
+**構文:** dt = New Table( name, &lt;visibility("private"|"invisible"|"visible")&gt;, &lt;Enable Filter Views(bool)&gt;, &lt;actions&gt; )
 
 **説明:** 新しいデータテーブルを作成する。"Invisible"を指定すると、データテーブルは非表示になるが、JMPホームウィンドウにはリストされる。"Private"を指定すると、テーブルが完全に非表示になる。デフォルトの"Visible"を使用すると、通常のテーブルが作成され、表示され、JMPホームウィンドウにもリストされる。オプションのactions引数には、データテーブルがサポートするメッセージならどれでも使用できる。
 
@@ -429,7 +425,7 @@ Row() = 3;
 
 ### Sequence
 
-**構文:** y = Sequence( start, end, <incr=1>, <n=1> )
+**構文:** y = Sequence( start, end, &lt;incr=1&gt;, &lt;n=1&gt; )
 
 **説明:** startから始まり、incrを増分としてendまで続く番号のシーケンスのうち、Row()番目の項目を戻す。シーケンスの各番号は、n回繰り返される。Sequence()関数は、Row()に依存して結果を戻すため、データ列の計算式で使用すると便利。シーケンスをJSL行列として作成する場合は、Index()を参照のこと。
 
@@ -445,7 +441,7 @@ Sequence( 1, 9, 2 );
 
 ### Subscribe to Data Table List
 
-**構文:** aSub = Subscribe to Data Table List( <subscriber name | "">, <OnOpen(fn) | OnClose(fn) | On Rename(fn)>)
+**構文:** aSub = Subscribe to Data Table List( &lt;subscriber name | ""&gt;, &lt;OnOpen(fn) | OnClose(fn) | On Rename(fn)&gt;)
 
 **説明:** 新しいデータテーブルが追加されたときや、閉じられたときに通知されるようにデータテーブルに登録する。
 
@@ -513,7 +509,7 @@ Names Default To Here( 1 );
 
 ### Suppress Formula Eval
 
-**構文:** Suppress Formula Eval( <suppress=1> )
+**構文:** Suppress Formula Eval( &lt;suppress=1&gt; )
 
 **説明:** 引数がゼロ以外の場合、すべてのデータテーブル内で計算式の評価を抑制する。
 
@@ -528,7 +524,7 @@ Suppress Formula Eval( 1 );
 
 ### Unsubscribe to Data Table List
 
-**構文:** aSub = Unsubscribe to Data Table List(<subscriber name>, <"OnOpen" | "OnClose" | "OnRename" | "ALL">)
+**構文:** aSub = Unsubscribe to Data Table List(&lt;subscriber name&gt;, &lt;"OnOpen" | "OnClose" | "OnRename" | "ALL"&gt;)
 
 **説明:** コマンド"subscribe to data table list"で追加されたデータテーブルリストから登録を削除する。
 

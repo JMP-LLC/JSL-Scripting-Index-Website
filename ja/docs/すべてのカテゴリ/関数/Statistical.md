@@ -2,8 +2,6 @@
 
 
 
-## 関数
-
 ### ARIMA Forecast
 
 **構文:** x = ARIMA Forecast( dtcol, length, model, estimates, from, to )
@@ -30,7 +28,7 @@ ARIMA Forecast(
 
 ### Arc Finder
 
-**構文:** Arc Finder( Group( lot, wafer ), X( col ), Y( col ), <optional arguments> )
+**構文:** Arc Finder( Group( lot, wafer ), X( col ), Y( col ), &lt;optional arguments&gt; )
 
 **説明:** 点のデータにおいて円弧を見つけ、円弧を示す新しい列を作成する。
 
@@ -64,7 +62,7 @@ dt << Graph Builder(
 
 ### Best Partition
 
-**構文:** {c1, c2, g2} = Best Partition( xIndices, yIndices, <<Ordered, <<ContinuousY, <<ContinuousX )
+**構文:** {c1, c2, g2} = Best Partition( xIndices, yIndices, &lt;&lt;Ordered, &lt;&lt;ContinuousY, &lt;&lt;ContinuousX )
 
 **説明:** 最適なグループ分けを判断する(試験的な関数)。
 
@@ -84,7 +82,7 @@ Names Default To Here( 1 );
 
 ### Col At
 
-**構文:** y = Col At( col, index, <byVar, ...>, < <<relative(bool)>, < <<skip missing(expr)> )
+**構文:** y = Col At( col, index, &lt;byVar, ...&gt;, &lt; &lt;&lt;relative(bool)&gt;, &lt; &lt;&lt;skip missing(expr)&gt; )
 
 **説明:** byVarグループ内での行の位置indexにおけるcolの値を戻す。skip missing式が欠測値になる行は、インデックスに含まれない。
 
@@ -102,7 +100,7 @@ New Column( "Relative to Last Height", Formula( :height / Col At( :height, -1, :
 
 ### Col Cumulative Sum
 
-**構文:** y = Col Cumulative Sum( xCol, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**構文:** y = Col Cumulative Sum( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **説明:** 現在の行までの累積和を戻す。BY変数は事前にソートされている必要はない。
 
@@ -137,7 +135,7 @@ dt << New Column( "Col Cumulative Sum for each Sex grouped by Excluded",
 
 ### Col Interpolate
 
-**構文:** y = Col Interpolate( v, xCol, yCol, <byVar, ...>, < <<method(linear|nearest|previous|next)>, < <<extrapolate(bool)> )
+**構文:** y = Col Interpolate( v, xCol, yCol, &lt;byVar, ...&gt;, &lt; &lt;&lt;method(linear|nearest|previous|next)&gt;, &lt; &lt;&lt;extrapolate(bool)&gt; )
 
 **説明:** xCol のv の位置に対応するyCol の補間値を戻す。xCol の範囲の外にある値に対しては、extrapolate がオンでない限り欠測値が戻される。このオプションがオンの場合は、最も近いyCol の値が戻される。
 
@@ -156,7 +154,7 @@ dt << New Column( "gnp30",
 
 ### Col Max
 
-**構文:** y = Col Maximum( xCol, <byVar, <Excluded( Row State() )>, ...> )
+**構文:** y = Col Maximum( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt; )
 
 **説明:** 指定された列の行全体における最大値を求める。計算結果が内部的に保持されるので、複数の統計量を求めるのに効率が良い。オプションの引数byVarbyVarによってByグループを指定できる(これは、列の計算式またはFor Each Row()関数で使用されなければならない)。
 
@@ -210,7 +208,7 @@ dt << New Column( "Col Max for each Sex grouped by Excluded",
 
 ### Col Maximum
 
-**構文:** y = Col Maximum( xCol, <byVar, <Excluded( Row State() )>, ...> )
+**構文:** y = Col Maximum( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt; )
 
 **説明:** 指定された列の行全体における最大値を求める。計算結果が内部的に保持されるので、複数の統計量を求めるのに効率が良い。オプションの引数byVarbyVarによってByグループを指定できる(これは、列の計算式またはFor Each Row()関数で使用されなければならない)。
 
@@ -264,7 +262,7 @@ dt << New Column( "Col Max for each Sex grouped by Excluded",
 
 ### Col Mean
 
-**構文:** y = Col Mean( xCol, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**構文:** y = Col Mean( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **説明:** 指定された列の行全体における平均を求める。計算結果が内部的に保持されるので、複数の統計量を求めるのに効率が良い。オプションの引数byVarbyVarによってByグループを指定できる(これは、列の計算式またはFor Each Row()関数で使用されなければならない)。
 
@@ -328,7 +326,7 @@ dt << New Column( "Col Mean for each Sex grouped by Excluded",
 
 ### Col Median
 
-**構文:** y = Col Median( xCol, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**構文:** y = Col Median( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **説明:** 指定された列の行全体における、中央値を求める。データの順序が内部的に保持されるので、複数の統計量を求めるのに効率が良い。
 
@@ -382,7 +380,7 @@ dt << New Column( "Col Median for each Sex grouped by Excluded",
 
 ### Col Min
 
-**構文:** y = Col Minimum( xCol, <byVar, <Excluded( Row State() )>, ...> )
+**構文:** y = Col Minimum( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt; )
 
 **説明:** 指定された列の行全体における最小値を求める。計算結果が内部的に保持されるので、複数の統計量を求めるのに効率が良い。オプションの引数byVarbyVarによってByグループを指定できる(これは、列の計算式またはFor Each Row()関数で使用されなければならない)。
 
@@ -436,7 +434,7 @@ dt << New Column( "Col Min for each Sex grouped by Excluded",
 
 ### Col Minimum
 
-**構文:** y = Col Minimum( xCol, <byVar, <Excluded( Row State() )>, ...> )
+**構文:** y = Col Minimum( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt; )
 
 **説明:** 指定された列の行全体における最小値を求める。計算結果が内部的に保持されるので、複数の統計量を求めるのに効率が良い。オプションの引数byVarbyVarによってByグループを指定できる(これは、列の計算式またはFor Each Row()関数で使用されなければならない)。
 
@@ -490,7 +488,7 @@ dt << New Column( "Col Min for each Sex grouped by Excluded",
 
 ### Col Mode
 
-**構文:** y = Col Mode( xCol, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**構文:** y = Col Mode( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **説明:** 指定された列における最頻値を求める。複数の最頻値がある場合、最小のものが戻される。計算結果が内部的に保持されるので、複数回の評価が効率良く行われる。オプションの引数byVarによってByグループを指定できる。byVarは、列の計算式またはFor Each Row()で使用する必要がある。
 
@@ -544,7 +542,7 @@ dt << New Column( "Col Mode for each Sex grouped by Excluded",
 
 ### Col Moving Average
 
-**構文:** y = Col Moving Average( xCol, <weighting=0.25>, <before=-1>, <after=0>, <partial window is missing=1>, <byVar, <Excluded( Row State() )>, ...> )
+**構文:** y = Col Moving Average( xCol, &lt;weighting=0.25&gt;, &lt;before=-1&gt;, &lt;after=0&gt;, &lt;partial window is missing=1&gt;, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt; )
 
 **説明:** 指定された期間で、現在の行における移動平均を戻す。移動平均を求めるときの重みとして、等しい重み(1)、線形の重み(0)、指数の重み(0と1以外)を指定できる。BY変数は事前にソートされている必要はない。
 
@@ -579,7 +577,7 @@ dt << New Column( "Col Moving Average for each Sex grouped by Excluded",
 
 ### Col N Missing
 
-**構文:** y = Col N Missing( xCol, <byVar, <Excluded( Row State() )>, ...> )
+**構文:** y = Col N Missing( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt; )
 
 **説明:** 指定された列の行全体における欠測値の数を求める。計算結果が内部的に保持されるので、複数の統計量を求めるのに効率が良い。オプションの引数byVarbyVarによってByグループを指定できる(これは、列の計算式またはFor Each Row()関数で使用されなければならない)。
 
@@ -634,7 +632,7 @@ dt << New Column( "Col N Missing for each Sex grouped by Excluded",
 
 ### Col N Unique
 
-**構文:** y = Col N Unique( xCol, <byVar, ...>, < <<score missing(bool)> )
+**構文:** y = Col N Unique( xCol, &lt;byVar, ...&gt;, &lt; &lt;&lt;score missing(bool)&gt; )
 
 **説明:** 列にある一意な値の個数を戻す。欠測値もカウントするよう指定した場合は、すべての欠測値コードを1つの値として数える。
 
@@ -651,7 +649,7 @@ New Column( "N unique height by age", Formula( Col N Unique( :height, :age ) ) )
 
 ### Col Number
 
-**構文:** y = Col Number( xCol, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**構文:** y = Col Number( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **説明:** 指定された列の行全体における欠測値でない値の数を求める。計算結果が内部的に保持されるので、複数の統計量を求めるのに効率が良い。オプションの引数byVarbyVarによってByグループを指定できる(これは、列の計算式またはFor Each Row()関数で使用されなければならない)。
 
@@ -706,7 +704,7 @@ dt << New Column( "Col Number for each Sex grouped by Excluded",
 
 ### Col Quantile
 
-**構文:** y = Col Quantile( xCol, p, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**構文:** y = Col Quantile( xCol, p, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **説明:** 指定された列の行全体における、指定された累積確率における分位点を求める。データの順序が内部的に保持されるので、複数の統計量を求めるのに効率が良い。
 
@@ -762,7 +760,7 @@ dt << New Column( "Col Quantile for each Sex grouped by Excluded",
 
 ### Col Rank
 
-**構文:** y = Col Rank( xCol, <byVar, <Excluded( Row State() )>, ...>, < <<tie("average"|"row"|"minimum"|"maximum"|"arbitrary")> )
+**構文:** y = Col Rank( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt;tie("average"|"row"|"minimum"|"maximum"|"arbitrary")&gt; )
 
 **説明:** 最小値を1とした列の順位を戻す。<<Tie引数が指定されていない場合、同順位のものには行の順番に順位がつけられる。この引数を［average］とすると同順位の平均、［minimum］とすると最も小さな順位が割り当てられる。［row］または［arbitrary］の場合は、行ごとに異なる値が割り当てられる。
 
@@ -795,7 +793,7 @@ dt << New Column( "Col Rank for each Sex grouped by Excluded",
 
 ### Col Score
 
-**構文:** y = Col Score( xCol, <byVar, ...>, < <<score missing(bool)> )
+**構文:** y = Col Score( xCol, &lt;byVar, ...&gt;, &lt; &lt;&lt;score missing(bool)&gt; )
 
 **説明:** 一意な値の整数スコアを、順序に関連する列プロパティに応じた順序で戻す。
 
@@ -812,7 +810,7 @@ New Column( "Score Height by age", Formula( Col Score( :height, :age ) ) );
 
 ### Col Sequence
 
-**構文:** y = Col Sequence( <byVar, ...>, < <<skip missing(expr)>, < <<sequence(start=1, end=unbounded, incr=1, repeat=1)>)
+**構文:** y = Col Sequence( &lt;byVar, ...&gt;, &lt; &lt;&lt;skip missing(expr)&gt;, &lt; &lt;&lt;sequence(start=1, end=unbounded, incr=1, repeat=1)&gt;)
 
 **説明:** byVarグループ内でのこの行の位置を戻す。skip missingパラメータとsequenceパラメータで調整される。
 
@@ -832,7 +830,7 @@ New Column( "Row within sex, 60+",
 
 ### Col Simple Exponential Smoothing
 
-**構文:** y = Col Simple Exponential Smoothing( xCol, alpha, <byVar, ...> )
+**構文:** y = Col Simple Exponential Smoothing( xCol, alpha, &lt;byVar, ...&gt; )
 
 **説明:** 現在の行から1重指数平滑化法(平滑化の重みはalpha)で求めた予測値を戻す。BY変数は事前にソートされている必要はない。計算式は、予測値[t]=alpha × 観測値[t-1] + (1-alpha) × 予測値[t-1]である。ただし、最初の予測値は、予測値[1] = 観測値[1]と置く。
 
@@ -849,7 +847,7 @@ Col Simple Exponential Smoothing( :Column1, .7 );
 
 ### Col Standardize
 
-**構文:** y = Col Standardize( xCol, <byVar, <Excluded( Row State() )>, ...> )
+**構文:** y = Col Standardize( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt; )
 
 **説明:** 値から列平均を引き、列の標準偏差で割った値を戻す。Byグループの列が指定されている場合、値は、Byグループごとの平均と標準偏差で標準化される。
 
@@ -894,7 +892,7 @@ dt << New Column( "Col Standardize for each Sex grouped by Excluded",
 
 ### Col Std Dev
 
-**構文:** y = Col Std Dev( xCol, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**構文:** y = Col Std Dev( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **説明:** 指定された列の行全体における標準偏差を求める。計算結果が内部的に保持されるので、複数の統計量を求めるのに効率が良い。オプションの引数byVarで、計算に使うByグループを指定する。引数byVarは、列計算式の中、またはFor Each Row()関数の中で使用する。
 
@@ -960,7 +958,7 @@ dt << New Column( "Col Standard Deviation for each Sex grouped by Excluded",
 
 ### Col Sum
 
-**構文:** y = Col Sum( xCol, <byVar, <Excluded( Row State() )>, ...>, < << Freq( freqCol ) > )
+**構文:** y = Col Sum( xCol, &lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;, &lt; &lt;&lt; Freq( freqCol ) &gt; )
 
 **説明:** 指定された列の行全体における合計を求める。計算結果が内部的に保持されるので、複数の統計量を求めるのに効率が良い。オプションの引数byVarで、Byグループを指定する。引数byVarは、列計算式の中、またはFor Each Row()関数の中で使用する。
 
@@ -1039,7 +1037,7 @@ Cumulative Sum( [1 1 1 1 . 10 20] );
 
 ### Fit Censored
 
-**構文:** result = FitCensored( Distribution(name), YLow(vector) | Y(vector), <YHigh(vector)>, <Weight(vector)>, <X(matrix)>, <Z(matrix)>, <HoldParm(vector)>, <Use random sample to compute initial values(percent)>, <Use first N observations to compute initial values(nobs)> )
+**構文:** result = FitCensored( Distribution(name), YLow(vector) | Y(vector), &lt;YHigh(vector)&gt;, &lt;Weight(vector)&gt;, &lt;X(matrix)&gt;, &lt;Z(matrix)&gt;, &lt;HoldParm(vector)&gt;, &lt;Use random sample to compute initial values(percent)&gt;, &lt;Use first N observations to compute initial values(nobs)&gt; )
 
 **説明:** 打ち切りのあるデータに対して確率分布をあてはめる。必須の引数は、Distributionと、YLowまたはYのいずれか。パラメータ推定値、共分散行列、対数尤度AICc、BIC、および収束メッセージのリストが戻される。X引数には位置に対する計画行列、Z引数には尺度に対する計画行列を指定する。データベクトルが大きいときは、2つのオプションの引数によって、初期値の計算に使う標本を指定できる。その場合、percentでオブザベーションの割合を指定するか、nobsでオブザベーションの(最初から数えた)個数を指定する(ただし、その標本サイズは100を超えていなければならない)。
 
@@ -1153,7 +1151,7 @@ mthlst;
 
 ### KDE
 
-**構文:** {Estimates, Bins, Counts, ActualBandwidth, Error} = KDE( Vector, <<weights, <<bandwidth( 0 ), <<bandwidth scale( 1 ), <<bandwidth selection( 0 ), <<kernel )
+**構文:** {Estimates, Bins, Counts, ActualBandwidth, Error} = KDE( Vector, &lt;&lt;weights, &lt;&lt;bandwidth( 0 ), &lt;&lt;bandwidth scale( 1 ), &lt;&lt;bandwidth selection( 0 ), &lt;&lt;kernel )
 
 **説明:** バンド幅を自動選択して、カーネル密度推定量を戻す。オプションの引数weightsは、引数Vectorと同じ長さのベクトルでなければならない。オプションの引数bandwidthは、正の数または0でなければならない。0を指定した場合、バンド幅は引数bandwidth selectionの値によって自動選択される。オプションの引数bandwidth scaleは、正の数でなければならない。オプションの引数bandwidth selectionは、0(Sheather and Jones)、1(正規分布参照)、2(Silvermanの経験則)、3(過平滑化)のいずれかの値を取る。オプションの引数kernelは、0(Gauss)、1(Epanechnikov)、2(双加重)、3(三角)、4(矩形)のいずれかの値を取る。
 
@@ -1328,7 +1326,7 @@ Eval List( {Min( Pi(), e() ), Min( [33 44 22] )} );
 
 ### Moving Average
 
-**構文:** y = Moving Average( x, weighting, <before=-1>, <after=0>, <partial window is missing=0> )
+**構文:** y = Moving Average( x, weighting, &lt;before=-1&gt;, &lt;after=0&gt;, &lt;partial window is missing=0&gt; )
 
 **説明:** 入力行列の移動平均を行列で戻す。beforeとafter移動平均の範囲(ウィンドウ)を決める。ここで、beforeが-1の場合は過去のすべての項が使われる。weightingが1の場合はすべての項に等しい重みが、weightingが0の場合は線形に増加する重みが与えられる。それ以外の場合、weightingには指数的な重みが与えられる。partial window is missingは、ウィンドウ内でデータが欠けていても移動平均を計算するかどうかを指定する。最後のほうのデータや欠測値がある場合に、このオプションが関係してくる。そのような場合に対する移動平均は、partial window is missingが0でない場合、欠測値となる。
 
@@ -1363,7 +1361,7 @@ N Missing( 1, 2, ., 3, [11 22 . .], 4 );
 
 ### Normal Tolerance Factor
 
-**構文:** q = Normal Tolerance Factor( 1-alpha, p, n, <One Sided> )
+**構文:** q = Normal Tolerance Factor( 1-alpha, p, n, &lt;One Sided&gt; )
 
 **説明:** 正規分布に従う標本サイズnの標本に対して、割合がpで信頼係数が (1-α) である許容区間を求める時に用いる係数を計算する。オプションによって、片側許容区間の係数も計算できる。
 
@@ -1498,7 +1496,7 @@ Eval List( {Sum( Pi(), e() ), Sum( [33 44 22 20 30] )} );
 
 ### Summarize
 
-**構文:** Summarize( <dt>, nameBy=By( colBy ), name1=statName1( col1 ), ... )
+**構文:** Summarize( &lt;dt&gt;, nameBy=By( colBy ), name1=statName1( col1 ), ... )
 
 **説明:** By変数の値ごとに、さまざまな要約統計量を計算する。統計量の名前はCount、Sum、Mean、Max/Maximum、Min/Minimum、StdDev、Corr、Quantile、First。結果は数値列に対してのみ計算される。結果は指定された変数に行列として保存される。
 

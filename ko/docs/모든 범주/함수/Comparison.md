@@ -2,8 +2,6 @@
 
 
 
-## 함수
-
 ### Equal
 
 **구문:** z = x == y == ...; z = Equal( x, y, ... )
@@ -21,7 +19,7 @@ Names Default To Here( 1 );
 
 ### Greater
 
-**구문:** z = x > y > ... ; z = Greater( x, y, ... )
+**구문:** z = x &gt; y &gt; ... ; z = Greater( x, y, ... )
 
 **설명:** 각 인수가 다음 인수보다 크면 1을 반환하고 그렇지 않으면 0을 반환합니다.
 
@@ -36,7 +34,7 @@ Names Default To Here( 1 );
 
 ### Greater or Equal
 
-**구문:** z = x >= y >= ... ; z = Greater or Equal( x, y, ... )
+**구문:** z = x &gt;= y &gt;= ... ; z = Greater or Equal( x, y, ... )
 
 **설명:** 각 인수가 다음 인수보다 크거나 같으면 1을 반환하고 그렇지 않으면 0을 반환합니다.
 
@@ -110,7 +108,7 @@ Is Same Color( To Color Space( "LUV", "red" ), "red" );
 
 ### Less
 
-**구문:** z = x < y < ... ; z = Less( x, y, ... )
+**구문:** z = x &lt; y &lt; ... ; z = Less( x, y, ... )
 
 **설명:** 각 인수가 다음 인수보다 작으면 1을 반환하고 그렇지 않으면 0을 반환합니다.
 
@@ -125,7 +123,7 @@ Names Default To Here( 1 );
 
 ### Less LessEqual
 
-**구문:** z = x < y <= ... ; z = Less LessEqual( x, y, ... )
+**구문:** z = x &lt; y &lt;= ... ; z = Less LessEqual( x, y, ... )
 
 **설명:** 첫 번째 인수가 두 번째 인수보다 작고 첫 번째 인수를 제외한 각 인수가 다음 인수보다 작거나 같으면 1을 반환하고 그렇지 않으면 0을 반환합니다.
 
@@ -140,7 +138,7 @@ Names Default To Here( 1 );
 
 ### Less or Equal
 
-**구문:** z = x <= y <= ... ; z = Less or Equal( x, y, ... )
+**구문:** z = x &lt;= y &lt;= ... ; z = Less or Equal( x, y, ... )
 
 **설명:** 각 인수가 다음 인수보다 작거나 같으면 1을 반환하고 그렇지 않으면 0을 반환합니다.
 
@@ -155,7 +153,7 @@ Names Default To Here( 1 );
 
 ### LessEqual Less
 
-**구문:** z = x <= y < ... ; z = LessEqual Less( x, y, ... )
+**구문:** z = x &lt;= y &lt; ... ; z = LessEqual Less( x, y, ... )
 
 **설명:** 첫 번째 인수가 두 번째 인수보다 작거나 같고 첫 번째 인수를 제외한 각 인수가 다음 인수보다 작으면 1을 반환하고 그렇지 않으면 0을 반환합니다.
 

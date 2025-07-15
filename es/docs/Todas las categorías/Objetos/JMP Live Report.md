@@ -6,7 +6,7 @@
 
 ### Get Description
 
-**Sintaxis:** string = jmplivepost << Get Description()
+**Sintaxis:** string = jmplivepost &lt;&lt; Get Description()
 
 **Descripción:** Obtiene la descripción del informe de JMP Live, la carpeta de JMP Live o la publicación de JMP Live como cadena de caracteres.
 
@@ -48,7 +48,7 @@ Write( "\!nDescription: ", report << Get Description );
 
 ### Get ID
 
-**Sintaxis:** string = jmplivepost << Get ID()
+**Sintaxis:** string = jmplivepost &lt;&lt; Get ID()
 
 **Descripción:** Obtiene el ID de este informe de JMP Live, carpeta de JMP Live o publicación de JMP Live como cadena de caracteres.
 
@@ -91,7 +91,7 @@ Write( "\!n\!nID: ", report << Get ID );
 
 ### Get Path
 
-**Sintaxis:** string = jmplivepost << Get Path()
+**Sintaxis:** string = jmplivepost &lt;&lt; Get Path()
 
 **Descripción:** Obtiene la ruta de este informe, carpeta o publicación de JMP Live en forma de cadena.
 
@@ -134,7 +134,7 @@ Write( "\!n\!nPath: ", report << Get Path );
 
 ### Get Title
 
-**Sintaxis:** string = jmplivepost << Get Title()
+**Sintaxis:** string = jmplivepost &lt;&lt; Get Title()
 
 **Descripción:** Obtiene el título del informe de JMP Live, la carpeta de JMP Live o la publicación de JMP Live como cadena de caracteres.
 
@@ -177,7 +177,7 @@ Write( "\!nTitle: ", report << Get Title );
 
 ### Get Type
 
-**Sintaxis:** string = jmplivepost << Get Type()
+**Sintaxis:** string = jmplivepost &lt;&lt; Get Type()
 
 **Descripción:** Obtiene el tipo de publicación específica (carpeta, datos o informe).
 
@@ -221,7 +221,7 @@ Write( "\!nType: ", report << Get Type );
 
 ### Get URL
 
-**Sintaxis:** string = jmplivepost << Get URL()
+**Sintaxis:** string = jmplivepost &lt;&lt; Get URL()
 
 **Descripción:** Obtiene la URL de este informe de JMP Live, carpeta de JMP Live o publicación de JMP Live como cadena de caracteres.
 
@@ -264,7 +264,7 @@ Write( "\!nURL: ", report << Get URL );
 
 ### Set Description
 
-**Sintaxis:** success = jmplivepost << Set Description("string value")
+**Sintaxis:** success = jmplivepost &lt;&lt; Set Description("string value")
 
 **Descripción:** Dada una cadena de caracteres, establece la descripción del informe de JMP Live, la carpeta de JMP Live o la publicación de JMP Live. Devuelve verdadero o falso si la operación se realiza correctamente o falla.
 
@@ -314,7 +314,7 @@ Write( "\!nDecription: ", report << Get Description );
 
 ### Set Title
 
-**Sintaxis:** success = jmplivepost << Set Title("New Title")
+**Sintaxis:** success = jmplivepost &lt;&lt; Set Title("New Title")
 
 **Descripción:** Establece el título del informe de JMP Live, la carpeta de JMP Live o la publicación de JMP Live. Devuelve verdadero o falso si la operación se realiza correctamente o falla.
 

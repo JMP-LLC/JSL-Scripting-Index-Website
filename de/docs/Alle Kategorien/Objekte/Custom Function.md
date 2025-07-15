@@ -6,7 +6,7 @@
 
 ### Custom Format Category
 
-**Syntax:** f << Custom Format Category(1|0)
+**Syntax:** f &lt;&lt; Custom Format Category(1|0)
 
 **Beschreibung:** Benutzerdefinierte Funktion als benutzerdefiniertes Format behandeln. Geben Sie 0 an, um die Funktion aus dem Menü der benutzerdefinierten Formate auszuschließen.
 
@@ -22,7 +22,7 @@ myAdd << Custom Format Category( 1 );
 
 ### Description
 
-**Syntax:** obj << Description( text )
+**Syntax:** obj &lt;&lt; Description( text )
 
 **Beschreibung:** Beschreibung für die benutzerdefinierte Funktion festlegen. Diese Beschreibung wird im Skriptindex und in Tooltipps angezeigt.
 
@@ -38,7 +38,7 @@ myAdd << Description( "Add two numbers together, but subtract 1" );
 
 ### Example
 
-**Syntax:** f << Example(example text | Expr(example JSL code), <example name>)
+**Syntax:** f &lt;&lt; Example(example text | Expr(example JSL code), &lt;example name&gt;)
 
 **Beschreibung:** Ergänzen Sie ein Beispiel, um zu zeigen, wie die Funktion effektiv verwendet wird. Das Beispiel ist als Textzeichenkette oder als JSL-Code mit dem Befehl Expr zu übergeben. Sie können die Meldung mehrere Male senden, um mehrere Beispiele hinzuzufügen.
 
@@ -67,7 +67,7 @@ myAdd << Example( "Add(1, 500)", "bigger add" );
 
 ### Formula Category
 
-**Syntax:** f << Formula Category(name|""|1|0)
+**Syntax:** f &lt;&lt; Formula Category(name|""|1|0)
 
 **Beschreibung:** Funktion in die angegebene Kategorie des Formeleditors aufnehmen. Wenn angegeben, wird die Funktion am Ende der übereinstimmenden Kategorie hinzugefügt. Wenn die Kategorie nicht vorhanden ist, wird eine neue Kategorie erstellt. Geben Sie 0 oder eine leere Zeichenkette an, wenn die Funktion nicht im Baum des Formeleditors angezeigt werden soll.
 
@@ -83,7 +83,7 @@ myAdd << Formula Category( "NumberStuff" );
 
 ### Get Custom Format Category
 
-**Syntax:** f << Get Custom Format Category
+**Syntax:** f &lt;&lt; Get Custom Format Category
 
 **Beschreibung:** Kategorie des benutzerdefinierten Formats für die benutzerdefinierte Funktion abrufen.
 
@@ -100,7 +100,7 @@ myAdd << Get Custom Format Category;
 
 ### Get Description
 
-**Syntax:** f << Get Description
+**Syntax:** f &lt;&lt; Get Description
 
 **Beschreibung:** Beschreibung für die benutzerdefinierte Funktion abrufen.
 
@@ -117,7 +117,7 @@ myAdd << Get Description;
 
 ### Get Examples
 
-**Syntax:** f << Get Examples
+**Syntax:** f &lt;&lt; Get Examples
 
 **Beschreibung:** Liste von Beispielen als Zeichenketten abrufen.
 
@@ -135,7 +135,7 @@ myAdd << Get Examples;
 
 ### Get Formula Category
 
-**Syntax:** f << Get Formula Category
+**Syntax:** f &lt;&lt; Get Formula Category
 
 **Beschreibung:** Zurückgeben, zu welcher Kategorie des Formeleditors diese Funktion gegebenenfalls gehören soll.
 
@@ -152,7 +152,7 @@ myAdd << Get Formula Category;
 
 ### Get Function
 
-**Syntax:** f << Get Function
+**Syntax:** f &lt;&lt; Get Function
 
 **Beschreibung:** Definition der Funktion abrufen.
 
@@ -168,7 +168,7 @@ myAdd << Get Function;
 
 ### Get Name
 
-**Syntax:** f << Get Name
+**Syntax:** f &lt;&lt; Get Name
 
 **Beschreibung:** Funktionsname abrufen.
 
@@ -184,7 +184,7 @@ myAdd << Get Name;
 
 ### Get Namespace
 
-**Syntax:** f << Get Namespace
+**Syntax:** f &lt;&lt; Get Namespace
 
 **Beschreibung:** Namensraum der Funktion abrufen.
 
@@ -200,7 +200,7 @@ myAdd << Get Namespace;
 
 ### Get Parameters
 
-**Syntax:** f << Get Parameters
+**Syntax:** f &lt;&lt; Get Parameters
 
 **Beschreibung:** Liste von Parametern abrufen.
 
@@ -218,7 +218,7 @@ myAdd << Get Parameters;
 
 ### Get Prototype
 
-**Syntax:** f << Get Prototype
+**Syntax:** f &lt;&lt; Get Prototype
 
 **Beschreibung:** Prototyp abrufen, der für diese Funktion im Skriptindex angezeigt wird.
 
@@ -235,7 +235,7 @@ myAdd << Get Prototype;
 
 ### Get Result Type
 
-**Syntax:** f << Get Result Type
+**Syntax:** f &lt;&lt; Get Result Type
 
 **Beschreibung:** Ergebnistyp der Funktion abrufen.
 
@@ -252,7 +252,7 @@ myAdd << Get Result Type;
 
 ### Get Scripting Index Category
 
-**Syntax:** f << Get Scripting Index Category
+**Syntax:** f &lt;&lt; Get Scripting Index Category
 
 **Beschreibung:** Kategorie für die benutzerdefinierte Funktion im Skriptindex abrufen.
 
@@ -269,7 +269,7 @@ myAdd << Get Scripting Index Category;
 
 ### Get Transform Category
 
-**Syntax:** f << Get Transform Category
+**Syntax:** f &lt;&lt; Get Transform Category
 
 **Beschreibung:** Transformationskategorie für die benutzerdefinierte Funktion abrufen.
 
@@ -286,7 +286,7 @@ myAdd << Get Transform Category;
 
 ### Parameter
 
-**Syntax:** f << Parameter(typename | {typename1, typename2, ...}, hint text)
+**Syntax:** f &lt;&lt; Parameter(typename | {typename1, typename2, ...}, hint text)
 
 **Beschreibung:** Ergänzen Sie Informationen zu den Parametern der Funktion. Senden Sie diese Meldung einmal für jeden Parameter der Funktion. Dies kann für die Validierung des Codes verwendet werden. Gültige Parametertypen sind: Beliebig, Name, Zahl, Zeichenkette, Liste, Matrix, Zeileneigenschaft. Wenn mehrere Ergebnistypen möglich sind, geben Sie die Namen der Typen in einer Liste an. Der Hinweistext soll angeben, welche Daten im entsprechenden Argument im Formeleditor verwendet werden sollen. Geben Sie eine leere Zeichenkette an, wenn kein Hinweistext gewünscht ist.
 
@@ -303,7 +303,7 @@ myAdd << Parameter( "Number", "<number=1>" );
 
 ### Prototype
 
-**Syntax:** obj << Prototype( text )
+**Syntax:** obj &lt;&lt; Prototype( text )
 
 **Beschreibung:** Prototyp festlegen, der für diese Funktion im Skriptindex angezeigt wird.
 
@@ -319,7 +319,7 @@ myAdd << Prototype( "Add(number, <number=1>)" );
 
 ### Result Type
 
-**Syntax:** f << Result Type(typename | {typename1, typename2 ...})
+**Syntax:** f &lt;&lt; Result Type(typename | {typename1, typename2 ...})
 
 **Beschreibung:** Ergebnistyp der Funktion festlegen. Dies kann für die Validierung des Codes verwendet werden. Gültig sind: Beliebig, Name, Zahl, Zeichenkette, Liste, Matrix, Zeileneigenschaft. Wenn mehrere Ergebnistypen möglich sind, geben Sie die Namen der Typen in einer Liste an.
 
@@ -347,7 +347,7 @@ myAdd << Result Type( {"Number", "String"} );
 
 ### Scripting Index Category
 
-**Syntax:** f << Scripting Index Category(name|""|1|0)
+**Syntax:** f &lt;&lt; Scripting Index Category(name|""|1|0)
 
 **Beschreibung:** Legt die Kategorie für die benutzerdefinierte Funktion im Skriptindex fest. Jede benutzerdefinierte Funktion wird zusätzlich zu der von Ihnen angegebenen Kategorie in der Kategorie „Alle Funktionen“ aufgelistet. Geben Sie 0 oder „“ an, um die Funktion nur in der Kategorie „Alle Funktionen“ aufzuführen.
 
@@ -363,7 +363,7 @@ myAdd << Scripting Index Category( "My Functions" );
 
 ### Transform Category
 
-**Syntax:** f << Transform Category(1|0)
+**Syntax:** f &lt;&lt; Transform Category(1|0)
 
 **Beschreibung:** Benutzerdefinierte Funktion als Spaltentransformation behandeln. Geben Sie 0 an, um die Funktion aus dem Menü der Spaltentransformationen auszuschließen.
 

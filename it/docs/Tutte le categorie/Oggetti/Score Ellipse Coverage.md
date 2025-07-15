@@ -6,13 +6,13 @@
 
 ### Remove Fit
 
-**Sintassi:** obj << Remove Fit
+**Sintassi:** obj &lt;&lt; Remove Fit
 
 **JMP Versione aggiunta:** 15
 
 ### Shaded Contour
 
-**Sintassi:** obj << Shaded Contour( state=0|1 )
+**Sintassi:** obj &lt;&lt; Shaded Contour( state=0|1 )
 
 **Descrizione:** Mostra/nasconde il profilo isometrico ombreggiato.
 

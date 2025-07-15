@@ -6,7 +6,7 @@
 
 ### By
 
-**Sintaxis:** obj << By( column(s) )
+**Sintaxis:** obj &lt;&lt; By( column(s) )
 
 ```jsl
 
@@ -26,7 +26,7 @@ obj = dt << Multivariate Embedding(
 
 ### Columns
 
-**Sintaxis:** obj << Columns( column(s) )
+**Sintaxis:** obj &lt;&lt; Columns( column(s) )
 
 ```jsl
 
@@ -40,7 +40,7 @@ obj = dt << Multivariate Embedding(
 
 ### Y
 
-**Sintaxis:** obj << Y( column(s) )
+**Sintaxis:** obj &lt;&lt; Y( column(s) )
 
 ```jsl
 
@@ -116,9 +116,7 @@ obj = dt << Multivariate Embedding(
 
 ### Batch Mode if N Greater Than
 
-**Sintaxis:** Batch Mode if N greater than( number = 4096 )
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** Batch Mode if N greater than( number = 4096 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica que se utilizan múltiples subprocesos para optimizar las coordenadas de incrustación cuando el tamaño muestral es mayor que el número especificado. "4096" de forma predeterminada.
 
@@ -135,9 +133,7 @@ obj = dt << Multivariate Embedding(
 
 ### Convergence Criterion
 
-**Sintaxis:** Convergence Criterion( number = 1e-8 )
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** Convergence Criterion( number = 1e-8 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** "1e-8" de forma predeterminada.
 
@@ -155,17 +151,13 @@ obj = dt << Multivariate Embedding(
 
 ### Distance Metric
 
-**Sintaxis:** Distance Metric( "Euclidean" |  "Angular" | "Hamming" | "Manhattan")
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** Distance Metric( "Euclidean" | "Angular" | "Hamming" | "Manhattan")&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica la métrica que se utiliza para calcular las distancias entre los vecinos más cercanos. Las opciones para la métrica de distancia son Euclidiana (opción predeterminada), Angular, Hamming y Manhattan. Esta opción solo es aplicable cuando se especifica ANNOY como Método de vecinos más cercanos.
 
 ### Eta
 
-**Sintaxis:** Eta( number = 200 )
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** Eta( number = 200 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica la tasa de aprendizaje. "200" de forma predeterminada.
 
@@ -183,17 +175,13 @@ obj = dt << Multivariate Embedding(
 
 ### Gradient Descent Method
 
-**Sintaxis:** Gradient Descent Method( "SGD" |  "ADAM")
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** Gradient Descent Method( "SGD" | "ADAM")&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el método del descenso del gradiente que se utiliza para optimizar el diseño de incrustación. Puede elegir entre el descenso del gradiente estocástico (SGD) o la estimación adaptativa de momentos (ADAM). El método predeterminado es el SGD. La opción ADAM solo está disponible en el modo por lotes.
 
 ### Inflate Iterations
 
-**Sintaxis:** Inflate Iterations( number = 250 )
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** Inflate Iterations( number = 250 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica la iteración tras la cual las perplejidades ya no se exageran. "250" de forma predeterminada.
 
@@ -211,9 +199,7 @@ obj = dt << Multivariate Embedding(
 
 ### Initial Principal Component Dimensions
 
-**Sintaxis:** Initial Principal Component Dimensions( number = 50 )
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** Initial Principal Component Dimensions( number = 50 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el número de dimensiones que se deben conservar en el paso PCA inicial. "50" de forma predeterminada.
 
@@ -231,9 +217,7 @@ obj = dt << Multivariate Embedding(
 
 ### Initial Scale
 
-**Sintaxis:** Initial Scale( number = 0.0001 )
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** Initial Scale( number = 0.0001 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica la escala inicial que se utiliza para los componentes derivados. ".0001" de forma predeterminada.
 
@@ -251,9 +235,7 @@ obj = dt << Multivariate Embedding(
 
 ### Learning Rate
 
-**Sintaxis:** Learning Rate( number = 1.0 )
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** Learning Rate( number = 1.0 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el valor de la tasa de aprendizaje en los cálculos, lo que repercute en la rapidez con la que el modelo se adapta al problema. "1.0" de forma predeterminada.
 
@@ -270,9 +252,7 @@ obj = dt << Multivariate Embedding(
 
 ### Local Connectivity
 
-**Sintaxis:** Local Connectivity( number = 1 )
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** Local Connectivity( number = 1 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el número de vecinos más cercanos que se supone que están conectados a nivel local. El valor predeterminado es 1, lo que asume que cada punto del espacio de alta dimensionalidad tiene al menos otro vecino con el que está conectado. "1" de forma predeterminada.
 
@@ -289,9 +269,7 @@ obj = dt << Multivariate Embedding(
 
 ### Maximum Iterations
 
-**Sintaxis:** Maximum Iterations( number = 1000 )
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** Maximum Iterations( number = 1000 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el número máximo de iteraciones que se utilizan al calcular los componentes incrustados. "1000" de forma predeterminada.
 
@@ -309,9 +287,7 @@ obj = dt << Multivariate Embedding(
 
 ### Method
 
-**Sintaxis:** Method( "t-SNE" | "UMAP" )
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** Method( "t-SNE" | "UMAP" )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el método de reducción de la dimensión.
 
@@ -343,9 +319,7 @@ obj = dt << Multivariate Embedding(
 
 ### Minimum Distance
 
-**Sintaxis:** Minimum Distance( number = 0.01 )
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** Minimum Distance( number = 0.01 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica la distancia mínima estandarizada a la que pueden estar los puntos en el espacio de baja dimensionalidad. "0.01" de forma predeterminada.
 
@@ -362,9 +336,7 @@ obj = dt << Multivariate Embedding(
 
 ### Missing Value Imputation
 
-**Sintaxis:** Missing Value Imputation( state =0|1 )
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** Missing Value Imputation( state =0|1 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica que los valores faltantes en los datos se imputan mediante una técnica de descomposición en valores singulares (SVD) multivariantes. Opción activada de forma predeterminada.
 
@@ -381,9 +353,7 @@ obj = dt << Multivariate Embedding(
 
 ### Nearest Neighbor Method
 
-**Sintaxis:** Nearest Neighbor Method( "Default" | "VPTree (Exact)" |  "ANNOY (Approximate)")
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** Nearest Neighbor Method( "Default" | "VPTree (Exact)" | "ANNOY (Approximate)")&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el método que se utiliza para encontrar los vecinos más cercanos. Puede elegir entre una atalaya (VPTree) o el método de los vecinos más cercanos aproximados (ANNOY). La opción predeterminada elige el método de los vecinos más cercanos en función del tamaño muestral y del número de variables.
 
@@ -417,9 +387,7 @@ obj = dt << Multivariate Embedding(
 
 ### Negative Sample Rate
 
-**Sintaxis:** Negative Sample Rate( number = 5 )
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** Negative Sample Rate( number = 5 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el número de muestras 1-simplex negativas que se utilizan por muestra 1-simplex positiva en la búsqueda de la representación de baja dimensionalidad de los datos. El valor Tasa de muestreo negativa puede oscilar entre 2 y 20. "5" de forma predeterminada.
 
@@ -436,9 +404,7 @@ obj = dt << Multivariate Embedding(
 
 ### Number of Epochs
 
-**Sintaxis:** Number of Epochs( number = 500 )
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** Number of Epochs( number = 500 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el número de ciclos de entrenamiento que se utilizan al optimizar la representación de baja dimensionalidad. Es el número de veces que el algoritmo examina los datos de entrenamiento completos. "500" de forma predeterminada.
 
@@ -455,9 +421,7 @@ obj = dt << Multivariate Embedding(
 
 ### Number of Neighbors
 
-**Sintaxis:** Number of Neighbors( number = 15 )
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** Number of Neighbors( number = 15 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el número de vecinos cercanos que se encuentran para cada punto de datos. Cuanto menor sea el número de vecinos cercanos especificado, más se concentra el algoritmo UMAP en la estructura local de los datos. A medida que aumenta el número de vecinos cercanos, el algoritmo UMAP captura en mayor medida la estructura global de los datos. "15" de forma predeterminada.
 
@@ -475,9 +439,7 @@ obj = dt << Multivariate Embedding(
 
 ### Output Dimensions
 
-**Sintaxis:** Output Dimensions( number = 2 )
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** Output Dimensions( number = 2 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el número de componentes que se derivan mediante el método seleccionado. Este número debe ser >=2. "2" de forma predeterminada.
 
@@ -494,9 +456,7 @@ obj = dt << Multivariate Embedding(
 
 ### Perplexity
 
-**Sintaxis:** Perplexity( number = 30 )
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** Perplexity( number = 30 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el valor del parámetro de perplejidad, que está relacionado con el cálculo de las similitudes de las muestras. El valor del parámetro de perplejidad debe estar entre 5 y 50 y no debe ser mayor que un octavo del tamaño muestral. El valor predeterminado es el menor de 30 o un octavo del tamaño muestral. "30" de forma predeterminada.
 
@@ -514,9 +474,7 @@ obj = dt << Multivariate Embedding(
 
 ### Random Seed
 
-**Sintaxis:** Random Seed( number = 1234 )
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** Random Seed( number = 1234 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el número de semillas aleatorias que se utilizan para obtener resultados reproducibles. "123" de forma predeterminada.
 
@@ -534,7 +492,7 @@ obj = dt << Multivariate Embedding(
 
 ### Save Embedding Component Values
 
-**Sintaxis:** obj << Save Embedding Component Values
+**Sintaxis:** obj &lt;&lt; Save Embedding Component Values
 
 **Descripción:** Guarda los componentes de incrustación derivados como nuevas columnas en la tabla de datos.
 
@@ -552,7 +510,7 @@ obj << Save Embedding Component Values;
 
 ### Save PQ Matrices
 
-**Sintaxis:** obj << Save PQ Matrices
+**Sintaxis:** obj &lt;&lt; Save PQ Matrices
 
 **Descripción:** Muestra las matrices P y Q, que hacen referencia a van der Maaten (2008). Esta opción solo es válida cuando no se selecciona el modo disperso para t-SNE.
 
@@ -572,9 +530,7 @@ obj << Save PQ Matrices;
 
 ### Sparse
 
-**Sintaxis:** Sparse( state =0|1 )
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** Sparse( state =0|1 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica si se utiliza el modo disperso. El modo disperso permite el cálculo de conjuntos de datos de alta dimensionalidad. Opción activada de forma predeterminada.
 
@@ -592,9 +548,7 @@ obj = dt << Multivariate Embedding(
 
 ### Standardize
 
-**Sintaxis:** Standardize( state =0|1 )
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** Standardize( state =0|1 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica si los datos se estandarizan internamente antes de los cálculos de distancia. Opción activada de forma predeterminada.
 
@@ -612,9 +566,7 @@ obj = dt << Multivariate Embedding(
 
 ### a
 
-**Sintaxis:** a( number = 0 )
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** a( number = 0 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica uno de los parámetros que controlan el algoritmo de optimización de la incrustación. Si este valor se establece en 0 o en un número negativo, a se calcula en el algoritmo mediante un procedimiento de mínimos cuadrados no lineales. "0" de forma predeterminada.
 
@@ -631,9 +583,7 @@ obj = dt << Multivariate Embedding(
 
 ### b
 
-**Sintaxis:** b( number = 0 )
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** b( number = 0 )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica uno de los parámetros que controlan el algoritmo de optimización de la incrustación. Si este valor se establece en 0 o en un número negativo, b se calcula en el algoritmo mediante un procedimiento de mínimos cuadrados no lineales. "0" de forma predeterminada.
 
@@ -652,7 +602,7 @@ obj = dt << Multivariate Embedding(
 
 ### Action
 
-**Sintaxis:** obj << Action
+**Sintaxis:** obj &lt;&lt; Action
 
 **Descripción:** Trampa multiuso dentro de una plataforma para insertar expresiones que se desean evaluar. Temporalmente establece los contextos de cuadros de visualización y tablas de datos en la plataforma.
 
@@ -670,7 +620,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descripción:** Aplica al objeto un preajuste creado previamente, actualizando las opciones y personalizaciones para que coincidan con la configuración guardada.
 
@@ -717,7 +667,7 @@ obj2 << Apply Preset( preset );
 
 ### Automatic Recalc
 
-**Sintaxis:** obj << Automatic Recalc( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Descripción:** Rehace automáticamente el análisis para modificaciones de datos y de exclusión. Si está activada la opción Recálculo automático, le recomendamos que utilice los comandos Wait(0) para asegurarse de que las modificaciones de datos y de exclusión surtan efecto antes del recálculo.
 
@@ -735,7 +685,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**Sintaxis:** obj << Broadcast(message)
+**Sintaxis:** obj &lt;&lt; Broadcast(message)
 
 **Descripción:** Difunde un mensaje a una plataforma. Si los resultados devueltos de objetos individuales son tablas, se concatenan si es posible y el formato final es idéntico al resultado de la opción Guardar tabla combinada en un cuadro de tabla o al resultado de la opción Concatenar mediante una columna de origen. Los demás resultados se almacenan en una lista y se devuelven.
 
@@ -755,7 +705,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**Sintaxis:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Sintaxis:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Descripción:** Añade un panel de control para cambiar las variables de la plataforma
 
@@ -773,7 +723,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**Sintaxis:** obj << Copy ByGroup Script
+**Sintaxis:** obj &lt;&lt; Copy ByGroup Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -796,7 +746,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Sintaxis:** obj << Copy Script
+**Sintaxis:** obj &lt;&lt; Copy Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -813,7 +763,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Sintaxis:** obj << Data Table Window
+**Sintaxis:** obj &lt;&lt; Data Table Window
 
 **Descripción:** Mueve al frente la ventana de la tabla de datos que se utiliza en este análisis.
 
@@ -830,7 +780,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Sintaxis:** obj << Get By Levels
+**Sintaxis:** obj &lt;&lt; Get By Levels
 
 **Descripción:** Devuelve un arreglo asociativo que asigna las columnas Por grupo a sus valores.
 
@@ -847,7 +797,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Sintaxis:** obj << Get ByGroup Script
+**Sintaxis:** obj &lt;&lt; Get ByGroup Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -871,7 +821,7 @@ Show( t );
 
 ### Get Container
 
-**Sintaxis:** obj << Get Container
+**Sintaxis:** obj &lt;&lt; Get Container
 
 **Descripción:** Devuelve una referencia al cuadro contenedor que incluye el contenido del objeto.
 
@@ -920,7 +870,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Sintaxis:** obj << Get Data Table
+**Sintaxis:** obj &lt;&lt; Get Data Table
 
 **Descripción:** Devuelve una referencia a la tabla de datos.
 
@@ -938,7 +888,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**Sintaxis:** obj << Get Group Platform
+**Sintaxis:** obj &lt;&lt; Get Group Platform
 
 **Descripción:** Devuelve el objeto Plataforma grupal si esta plataforma forma parte de un grupo. De lo contrario, devuelve Empty().
 
@@ -955,7 +905,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**Sintaxis:** obj << Get Script
+**Sintaxis:** obj &lt;&lt; Get Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -973,7 +923,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Sintaxis:** obj << Get Script With Data Table
+**Sintaxis:** obj &lt;&lt; Get Script With Data Table
 
 **Descripción:** Crea un script (JSL) para generar este análisis haciendo referencia específica a esta tabla de datos y lo devuelve en forma de expresión.
 
@@ -991,7 +941,7 @@ Show( t );
 
 ### Get Timing
 
-**Sintaxis:** obj << Get Timing
+**Sintaxis:** obj &lt;&lt; Get Timing
 
 **Descripción:** Determina el tiempo de inicio de una plataforma.
 
@@ -1009,7 +959,7 @@ Show( t );
 
 ### Get Web Support
 
-**Sintaxis:** obj << Get Web Support
+**Sintaxis:** obj &lt;&lt; Get Web Support
 
 **Descripción:** Devuelve un número que indica el nivel de compatibilidad del HTML interactivo para el objeto de visualización. 1 significa que algunos o todos los elementos son compatibles. 0 significa que no existe compatibilidad.
 
@@ -1025,7 +975,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Sintaxis:** obj << Get Where Expr
+**Sintaxis:** obj &lt;&lt; Get Where Expr
 
 **Descripción:** Devuelve la expresión Where para el subconjunto de datos, si la plataforma se inició con By() o Where(). De lo contrario, devuelve Empty().
 
@@ -1062,7 +1012,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Sintaxis:** obj << Local Data Filter
+**Sintaxis:** obj &lt;&lt; Local Data Filter
 
 **Descripción:** Para filtrar los datos según grupos o rangos determinados, pero locales para esta plataforma.
 
@@ -1118,7 +1068,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Sintaxis:** obj << Paste Local Data Filter
+**Sintaxis:** obj &lt;&lt; Paste Local Data Filter
 
 **Descripción:** Se aplica el filtro de datos locales del portapapeles al informe actual.
 
@@ -1139,7 +1089,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**Sintaxis:** obj << Redo Analysis
+**Sintaxis:** obj &lt;&lt; Redo Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -1156,7 +1106,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**Sintaxis:** obj << Redo ByGroup Analysis
+**Sintaxis:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -1179,7 +1129,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**Sintaxis:** obj << Relaunch Analysis
+**Sintaxis:** obj &lt;&lt; Relaunch Analysis
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -1196,7 +1146,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**Sintaxis:** obj << Relaunch ByGroup
+**Sintaxis:** obj &lt;&lt; Relaunch ByGroup
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -1219,7 +1169,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**Sintaxis:** obj << Remove Column Switcher
+**Sintaxis:** obj &lt;&lt; Remove Column Switcher
 
 **Descripción:** Quita el Cambiador de columnas más reciente que se haya agregado a la plataforma.
 
@@ -1239,7 +1189,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Sintaxis:** obj << Remove Local Data Filter
+**Sintaxis:** obj &lt;&lt; Remove Local Data Filter
 
 **Descripción:** Si se ha creado un filtro de datos local, esto lo eliminará y restaurará la plataforma para usar todos los datos de la tabla de datos directamente.
 
@@ -1278,9 +1228,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Sintaxis:** obj << Report;
-
-Report( obj )
+**Sintaxis:** obj &lt;&lt; Report;Report( obj )
 
 **Descripción:** Devuelve una referencia al objeto informe.
 
@@ -1299,7 +1247,7 @@ Show( t );
 
 ### Report View
 
-**Sintaxis:** obj << Report View( "Completa"|"Resumen" )
+**Sintaxis:** obj &lt;&lt; Report View( "Completa"|"Resumen" )
 
 **Descripción:** La vista del informe determina el nivel de detalle visible en el informe de una plataforma. Full muestra todos los detalles, mientras que Summary solo muestra el contenido seleccionado, con independencia de la plataforma. Para el comportamiento personalizado, los cuadros de visualización admiten un mensaje <<Set Summary Behavior.
 
@@ -1316,7 +1264,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**Sintaxis:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis, y lo guarda como propiedad de tabla en la tabla de datos. Puede especificar un nombre para el script. La opción Append Suffix añade un sufijo numérico al nombre del script, que diferencia el script de un script existente que tenga el mismo nombre. La opción Prompt solicita al usuario que especifique un nombre de script. La opción Replace reemplaza un script existente que tenga el mismo nombre.
 
@@ -1339,7 +1287,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Sintaxis:** obj << Save ByGroup Script to Journal
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -1362,7 +1310,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Sintaxis:** obj << Save ByGroup Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -1385,7 +1333,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**Sintaxis:** obj << Save Script for All Objects
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects
 
 **Descripción:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -1402,7 +1350,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Sintaxis:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descripción:** Guarda un script para todos los objetos de informe en la tabla de datos actual. Esta opción es útil cuando tiene varios informes en la ventana. El script recibe el nombre de la primera plataforma a menos que especifique el nombre del script entre comillas.
 
@@ -1446,7 +1394,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Sintaxis:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis y lo guarda en forma de propiedad de tabla en la tabla de datos.
 
@@ -1463,7 +1411,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Sintaxis:** obj << Save Script to Journal
+**Sintaxis:** obj &lt;&lt; Save Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -1480,7 +1428,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Sintaxis:** obj << Save Script to Report
+**Sintaxis:** obj &lt;&lt; Save Script to Report
 
 **Descripción:** Crea un script JSL para generar este análisis y lo muestra en el propio informe. Resulta útil para conservar un registro impreso de lo que se ha hecho.
 
@@ -1497,7 +1445,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Sintaxis:** obj << Save Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -1579,7 +1527,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Sintaxis:** obj << Sync to Data Table Changes
+**Sintaxis:** obj &lt;&lt; Sync to Data Table Changes
 
 **Descripción:** Realiza una sincronización con las modificaciones de datos y de exclusión que se hayan realizado.
 
@@ -1596,7 +1544,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Sintaxis:** obj << Title( "new title" )
+**Sintaxis:** obj &lt;&lt; Title( "new title" )
 
 **Descripción:** Establece el título de la plataforma.
 
@@ -1613,7 +1561,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Sintaxis:** obj << Top Report
+**Sintaxis:** obj &lt;&lt; Top Report
 
 **Descripción:** Devuelve una referencia al nodo raíz del informe.
 
@@ -1632,7 +1580,7 @@ Show( t );
 
 ### Transform Column
 
-**Sintaxis:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Sintaxis:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Descripción:** Crea una columna de transformación en el contexto local de un objeto (una plataforma por lo general). La columna de transformación solo está activa mientras esté en uso la plataforma.
 
@@ -1653,7 +1601,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**Sintaxis:** obj << View Web XML
+**Sintaxis:** obj &lt;&lt; View Web XML
 
 **Descripción:** Devuelve el código XML que se utiliza para crear el informe HTML interactivo.
 
@@ -1668,9 +1616,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**Sintaxis:** obj = Multivariate Embedding(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Multivariate Embedding(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Establece el tipo de ventana que se creará para el informe. De forma predeterminada, se creará una ventana de informe Visible. Una ventana Invisible no aparecerá en pantalla, pero se puede detectar mediante funciones como Window(). Una ventana Private responde a la mayoría de los mensajes de ventana pero no es detectable y se debe abordar a través del objeto de informe.
 

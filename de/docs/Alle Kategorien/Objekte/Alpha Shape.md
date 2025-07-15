@@ -6,7 +6,7 @@
 
 ### Get Alpha
 
-**Syntax:** alpha = obj << Get Alpha
+**Syntax:** alpha = obj &lt;&lt; Get Alpha
 
 **Beschreibung:** Gibt den aktuellen Alpha-Wert zurück.
 
@@ -22,7 +22,7 @@ ashape << Get Alpha();
 
 ### Get Edges
 
-**Syntax:** edges = obj << Get Edges
+**Syntax:** edges = obj &lt;&lt; Get Edges
 
 **Beschreibung:** Gibt die Indizes der Kanten in der Form einer Nx2-Matrix zurück.
 
@@ -38,7 +38,7 @@ tri << Get Edges;
 
 ### Get Hull Edges
 
-**Syntax:** ind = obj << Get Hull Edges
+**Syntax:** ind = obj &lt;&lt; Get Hull Edges
 
 **Beschreibung:** Gibt die Indizes der Kanten am Rand der Triangulierung zurück.
 
@@ -54,7 +54,7 @@ tri << Get Hull Edges;
 
 ### Get Hull Path
 
-**Syntax:** ind = obj << Get Hull Path
+**Syntax:** ind = obj &lt;&lt; Get Hull Path
 
 **Beschreibung:** Gibt den Rand der Triangulierung als Pfad zurück.
 
@@ -70,7 +70,7 @@ tri << Get Hull Path;
 
 ### Get Hull Points
 
-**Syntax:** ind = obj << Get Hull Points
+**Syntax:** ind = obj &lt;&lt; Get Hull Points
 
 **Beschreibung:** Gibt die Indizes der Punkte am Rand der Triangulierung zurück.
 
@@ -86,7 +86,7 @@ tri << Get Hull Points;
 
 ### Get N Edges
 
-**Syntax:** nedge = obj << Get N Edges
+**Syntax:** nedge = obj &lt;&lt; Get N Edges
 
 **Beschreibung:** Gibt die Anzahl der Kanten in der Triangulierung zurück.
 
@@ -102,7 +102,7 @@ tri << Get NEdges;
 
 ### Get N Hull Edges
 
-**Syntax:** nhull = obj << Get N Hull Edges
+**Syntax:** nhull = obj &lt;&lt; Get N Hull Edges
 
 **Beschreibung:** Gibt die Anzahl der Kanten am Rand der Triangulierung zurück.
 
@@ -118,7 +118,7 @@ tri << Get N Hull Edges;
 
 ### Get N Hull Points
 
-**Syntax:** nhull = obj << Get N Hull Points
+**Syntax:** nhull = obj &lt;&lt; Get N Hull Points
 
 **Beschreibung:** Gibt die Anzahl der Punkte am Rand der Triangulierung zurück.
 
@@ -134,7 +134,7 @@ tri << Get N Hull Points;
 
 ### Get N Points
 
-**Syntax:** npt = obj << Get N Points
+**Syntax:** npt = obj &lt;&lt; Get N Points
 
 **Beschreibung:** Gibt die Anzahl der eindeutigen Punkte in der Triangulierung zurück.
 
@@ -150,7 +150,7 @@ tri << Get N Points;
 
 ### Get N Triangles
 
-**Syntax:** ntri = obj << Get N Triangles
+**Syntax:** ntri = obj &lt;&lt; Get N Triangles
 
 **Beschreibung:** Gibt die Anzahl der Dreiecke zurück.
 
@@ -166,7 +166,7 @@ tri << Get N Triangles;
 
 ### Get Points
 
-**Syntax:** {x1,x2} = obj << Get Points
+**Syntax:** {x1,x2} = obj &lt;&lt; Get Points
 
 **Beschreibung:** Gibt die Koordinaten der eindeutigen Punkte in der Triangulierung zurück.
 
@@ -182,7 +182,7 @@ tri << Get Points;
 
 ### Get Tri Alpha
 
-**Syntax:** [alpha1, ...] = obj << Get Tri Alpha
+**Syntax:** [alpha1, ...] = obj &lt;&lt; Get Tri Alpha
 
 **Beschreibung:** Gibt die Alpha-Werte für jedes Dreieck zurück.
 
@@ -198,7 +198,7 @@ ashape << Get Tri Alpha();
 
 ### Get Triangles
 
-**Syntax:** m = obj << Get Triangles
+**Syntax:** m = obj &lt;&lt; Get Triangles
 
 **Beschreibung:** Gibt die Indizes der Dreiecke in der Form einer Nx3-Matrix zurück.
 
@@ -214,7 +214,7 @@ tri << Get Triangles;
 
 ### Get Y
 
-**Syntax:** y = obj << Get Y
+**Syntax:** y = obj &lt;&lt; Get Y
 
 **Beschreibung:** Gibt die Anzahl der Y-Werte der eindeutigen Punkte in der Triangulierung zurück.
 
@@ -230,7 +230,7 @@ tri << Get Y;
 
 ### Peel
 
-**Syntax:** tri = obj << Peel
+**Syntax:** tri = obj &lt;&lt; Peel
 
 **Beschreibung:** Rand einer Triangulierung entfernen und neue Triangulierung zurückgeben.
 
@@ -248,7 +248,7 @@ Show( tri2 << Get N Triangles );
 
 ### Set Alpha
 
-**Syntax:** obj << Set Alpha( alpha )
+**Syntax:** obj &lt;&lt; Set Alpha( alpha )
 
 **Beschreibung:** Legt den aktuellen Alpha-Wert fest und berechnet die Triangulierung neu.
 
@@ -264,7 +264,7 @@ ashape << Set Alpha( 0.5 );
 
 ### Subset
 
-**Syntax:** tri = obj << Subset( {indices} )
+**Syntax:** tri = obj &lt;&lt; Subset( {indices} )
 
 **Beschreibung:** Gibt eine Triangulierung resultierend aus der vorgegebenen Teilmenge von Punkten zurück.
 

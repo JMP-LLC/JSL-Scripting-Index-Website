@@ -6,7 +6,7 @@
 
 ### Custom Graph
 
-**Sintassi:** New Window(Window title, <Editable|Dialog>, Graph Box( named arguments, ..., script segment
+**Sintassi:** New Window(Window title, &lt;Editable|Dialog&gt;, Graph Box( named arguments, ..., script segment
 
 **Descrizione:** Crea un grafico che utilizza uno script personalizzato.
 
@@ -34,7 +34,7 @@ obj = New Window( "Example",
 
 ### Append Seg
 
-**Sintassi:** obj << Append Seg( display seg )
+**Sintassi:** obj &lt;&lt; Append Seg( display seg )
 
 **Descrizione:** Aggiunge un segmento di visualizzazione alla casella del frame.
 
@@ -50,11 +50,11 @@ New Window( "Example",
 
 ### Background Map
 
-**Sintassi:** obj << Background Map
+**Sintassi:** obj &lt;&lt; Background Map
 
 ### Bottom
 
-**Sintassi:** obj << Bottom( number )
+**Sintassi:** obj &lt;&lt; Bottom( number )
 
 ### FrameSize
 
@@ -134,111 +134,111 @@ New Window( "Example",
 
 ### Get Background Color
 
-**Sintassi:** obj << Get Background Color( color )
+**Sintassi:** obj &lt;&lt; Get Background Color( color )
 
 ### Get Background Fill
 
-**Sintassi:** obj << Get Background Fill( state=0|1 )
+**Sintassi:** obj &lt;&lt; Get Background Fill( state=0|1 )
 
 ### Get Bottom
 
-**Sintassi:** obj << Get Bottom
+**Sintassi:** obj &lt;&lt; Get Bottom
 
 ### Get Graphics Script
 
-**Sintassi:** obj << Get Graphics Script
+**Sintassi:** obj &lt;&lt; Get Graphics Script
 
 ### Get Height
 
-**Sintassi:** obj << Get Height
+**Sintassi:** obj &lt;&lt; Get Height
 
 ### Get Left
 
-**Sintassi:** obj << Get Left
+**Sintassi:** obj &lt;&lt; Get Left
 
 ### Get Right
 
-**Sintassi:** obj << Get Right
+**Sintassi:** obj &lt;&lt; Get Right
 
 ### Get Sides
 
-**Sintassi:** obj << Get Sides
+**Sintassi:** obj &lt;&lt; Get Sides
 
 ### Get Top
 
-**Sintassi:** obj << Get Top
+**Sintassi:** obj &lt;&lt; Get Top
 
 ### Get Width
 
-**Sintassi:** obj << Get Width
+**Sintassi:** obj &lt;&lt; Get Width
 
 ### Get X Axis
 
-**Sintassi:** obj << Get X Axis
+**Sintassi:** obj &lt;&lt; Get X Axis
 
 ### Get X Name
 
-**Sintassi:** obj << Get X Name
+**Sintassi:** obj &lt;&lt; Get X Name
 
 ### Get Y Axis
 
-**Sintassi:** obj << Get Y Axis
+**Sintassi:** obj &lt;&lt; Get Y Axis
 
 ### Get Y Name
 
-**Sintassi:** obj << Get Y Name
+**Sintassi:** obj &lt;&lt; Get Y Name
 
 ### Left
 
-**Sintassi:** obj << Left( number )
+**Sintassi:** obj &lt;&lt; Left( number )
 
 ### Right
 
-**Sintassi:** obj << Right( number )
+**Sintassi:** obj &lt;&lt; Right( number )
 
 ### Set Background Color
 
-**Sintassi:** obj << Set Background Color( color )
+**Sintassi:** obj &lt;&lt; Set Background Color( color )
 
 ### Set Background Fill
 
-**Sintassi:** obj << Set Background Fill( state=0|1 )
+**Sintassi:** obj &lt;&lt; Set Background Fill( state=0|1 )
 
 ### Set Graphics Script
 
-**Sintassi:** obj << Set Graphics Script
+**Sintassi:** obj &lt;&lt; Set Graphics Script
 
 ### Set Height
 
-**Sintassi:** obj << Set Height
+**Sintassi:** obj &lt;&lt; Set Height
 
 ### Set Width
 
-**Sintassi:** obj << Set Width
+**Sintassi:** obj &lt;&lt; Set Width
 
 ### Set X Axis
 
-**Sintassi:** obj << Set X Axis
+**Sintassi:** obj &lt;&lt; Set X Axis
 
 ### Set X Name
 
-**Sintassi:** obj << Set X Name
+**Sintassi:** obj &lt;&lt; Set X Name
 
 ### Set Y Axis
 
-**Sintassi:** obj << Set Y Axis
+**Sintassi:** obj &lt;&lt; Set Y Axis
 
 ### Set Y Name
 
-**Sintassi:** obj << Set Y Name
+**Sintassi:** obj &lt;&lt; Set Y Name
 
 ### Sides
 
-**Sintassi:** obj << Sides( number )
+**Sintassi:** obj &lt;&lt; Sides( number )
 
 ### Suppress Axes
 
-**Sintassi:** obj << Suppress Axes
+**Sintassi:** obj &lt;&lt; Suppress Axes
 
 **Descrizione:** Nasconde gli assi del riquadro del grafico.
 
@@ -280,7 +280,7 @@ obj = New Window( "Example",
 
 ### Top
 
-**Sintassi:** obj << Top( number )
+**Sintassi:** obj &lt;&lt; Top( number )
 
 ### X Scale
 

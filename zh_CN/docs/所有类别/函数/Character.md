@@ -2,11 +2,9 @@
 
 
 
-## 函数
-
 ### Blob To Char
 
-**语法:** s = Blob To Char( blob, <encoding="utf-8"> )
+**语法:** s = Blob To Char( blob, &lt;encoding="utf-8"&gt; )
 
 **说明:** 使用指定编码，根据 BLOB（二进制大对象）创建字符串。支持的编码包括 utf-8、utf-16le、utf-16be、us-ascii、iso-8859-1、shift_jis、euc-jp和 ascii~hex。
 
@@ -24,7 +22,7 @@ Blob To Char( Hex To Blob( "436166C3A9" ) ) || Blob To Char(
 
 ### Blob To Matrix
 
-**语法:** m = Blob To Matrix( blob, type, bytesEach, endian, <nCols=1> )
+**语法:** m = Blob To Matrix( blob, type, bytesEach, endian, &lt;nCols=1&gt; )
 
 **说明:** 通过将 blob 形式的字节转换为数值来生成矩阵。type 为“int”、“uint”或“float”。bytesEach 为 1、2、4 或 8。endian 表示第一个字节是最高位的（“big”）还是最低位的（“little”）；“native”表示机器的本机格式。
 
@@ -39,7 +37,7 @@ Blob To Matrix( Hex To Blob( "00010002FFFFFFFE" ), "int", 2, "big", 2 );
 
 ### Char
 
-**语法:** s = Char( x, <w>, <d>, < <<Use Locale( Boolean ) >, < <<Full Precision( Boolean ) > )
+**语法:** s = Char( x, &lt;w&gt;, &lt;d&gt;, &lt; &lt;&lt;Use Locale( Boolean ) &gt;, &lt; &lt;&lt;Full Precision( Boolean ) &gt; )
 
 **说明:** 返回 x 的字符串表示，若 x 参数为数值型，则使用最大宽度 w 和小数位数 d。<<FullPrecision 使用所有可用的精度写入数值。
 
@@ -74,7 +72,7 @@ Char( Pi(), 10, 4 );
 
 ### Char To Blob
 
-**语法:** blob = Char To Blob( string, <encoding="utf-8"> )
+**语法:** blob = Char To Blob( string, &lt;encoding="utf-8"&gt; )
 
 **说明:** 使用指定编码，根据字符串创建 BLOB（二进制大对象）。支持的编码包括 utf-8、utf-16le、utf-16be、us-ascii、iso-8859-1、shift_jis、euc-jp和 ascii~hex。
 
@@ -89,7 +87,7 @@ Char To Blob( "Café", "utf-16be" );
 
 ### Char To Hex
 
-**语法:** h = Char To Hex( value, <"integer">|<encoding="utf-8"> )
+**语法:** h = Char To Hex( value, &lt;"integer"&gt;|&lt;encoding="utf-8"&gt; )
 
 **说明:** 返回与给定值和编码对应的十六进制文本，可以是数值、字符串或 blob。若值是数值，除非已提供可选参数 "integer"，否则使用 IEEE 754 64 位编码。支持的编码包括 utf-8、utf-16le、utf-16be、us-ascii、iso-8859-1、ascii~hex、shift_jis 和 euc-jp。
 
@@ -134,7 +132,7 @@ Names Default To Here( 1 );
 
 ### Concat Items
 
-**语法:** string = Concat Items( {list of strings}, <separatorString> )
+**语法:** string = Concat Items( {list of strings}, &lt;separatorString&gt; )
 
 **说明:** 将字符串列表连接成一个长字符串，并用分隔符分隔相邻的字符串，若未指定分隔符则使用空格。
 
@@ -165,7 +163,7 @@ ex ||= "world";
 
 ### Contains
 
-**语法:** pos = Contains( x, item, <start=1> )
+**语法:** pos = Contains( x, item, &lt;start=1&gt; )
 
 **说明:** 返回“item”在“x”中的位置。若提供了 start，则会从该位置起计。若 start 为负，则从 length( x ) - start 开始往回搜索。参数 x 可以是一个字符串，也可以是一个列表。
 
@@ -181,7 +179,7 @@ Show( Contains( {"A", 2, "C", [1 5], "C"}, "C", 4 ) );
 
 ### Contains Item
 
-**语法:** b = Contains Item( x, item | list | Pat Regex(), <delimiter> )
+**语法:** b = Contains Item( x, item | list | Pat Regex(), &lt;delimiter&gt; )
 
 **说明:** 返回一个布尔值，该值指示某个单词 [项]、单词列表之一 [列表] 或模式 [模式] 是否与 [x] 所表示的文本中的某一单词匹配。文字由可选分隔符 [分隔符] 字符串中的字符来分隔。逗号“quot;,”是默认分隔符。从输入文本字符串 [x] 的每个提取单词的末尾修剪掉空格。
 
@@ -238,7 +236,7 @@ Ends With( "http://www.jmp.com", ".com" );
 
 ### Hex
 
-**语法:** h = Hex( value, <"integer">|<encoding="utf-8">|<Base(number)>,<Pad To(number)> )
+**语法:** h = Hex( value, &lt;"integer"&gt;|&lt;encoding="utf-8"&gt;|&lt;Base(number)&gt;,&lt;Pad To(number)&gt; )
 
 **说明:** 返回与给定值和编码对应的十六进制（或其他基数系统）文本，可以是数值、字符串或 blob。若值是数值，除非已提供可选参数 integer 或 Base，否则使用 IEEE 754 64 位编码。若指定了 Base，则函数返回与该基数系统中的指定数字而非十六进制对应的文本。基数必须是介于 2 和 36（包括端值）的整数值。支持的编码包括 utf-8、utf-16le、utf-16be、us-ascii、iso-8859-1、ascii~hex、shift_jis 和 euc-jp。
 
@@ -269,7 +267,7 @@ Hex To Blob( "FF78CE" );
 
 ### Hex To Char
 
-**语法:** s = Hex To Char( hextext, <encoding="utf-8"> )
+**语法:** s = Hex To Char( hextext, &lt;encoding="utf-8"&gt; )
 
 **说明:** 使用指定编码返回与十六进制文本对应的文本。支持的编码包括  utf-8、utf-16le、utf-16be、us-ascii、iso-8859-1、ascii~hex、shift_jis 和 euc-jp。
 
@@ -284,7 +282,7 @@ Hex To Char( "436166C3A9" ) || Hex To Char( "00430061006600E9", "utf-16be" );
 
 ### Hex To Number
 
-**语法:** x = Hex To Number( hextext, <Base(number)> )
+**语法:** x = Hex To Number( hextext, &lt;Base(number)&gt; )
 
 **说明:** 返回与十六进制（或其他基数系统）文本对应的数字。16 进制数转换成 IEEE 754 64 位浮点数，否则视输入为十六进制整数。若指定了 Base，则文本视为表示该基数系统中数字的字符串。基数必须是介于 2 和 36（包括端值）的整数值。
 
@@ -299,7 +297,7 @@ Hex To Number( "11110000", Base( 2 ) );
 
 ### Insert
 
-**语法:** z = Insert( x, y, <i> )
+**语法:** z = Insert( x, y, &lt;i&gt; )
 
 **说明:** 返回在第 i 位插入 y 的列表 x 的副本，若没有指定可选 i 参数，则追加至末尾。
 
@@ -315,7 +313,7 @@ z = Insert( z, 99, 2 );
 
 ### Insert Into
 
-**语法:** Insert Into( x, y, <i> )
+**语法:** Insert Into( x, y, &lt;i&gt; )
 
 **说明:** 通过在集合中插入“y”修改列表、关联数组或显示框“x”。列表和显示框支持通过可选的“i”指定位置；若不指定位置，则会追加项。注意:“x”参数必须是变量。
 
@@ -356,7 +354,7 @@ Insert Into( hlist, Button Box( "c" ) );
 
 ### Item
 
-**语法:** w = Item( n|[first last], s, <delim>, <Unmatched(result string)>, <Include Boundary Delimiters(0|1)>)
+**语法:** w = Item( n|[first last], s, &lt;delim&gt;, &lt;Unmatched(result string)&gt;, &lt;Include Boundary Delimiters(0|1)&gt;)
 
 **说明:** 返回 s 参数的第 n 项，其中项是由 delim 参数中指定的任意一个（且只能为一个）字符所分隔的子字符串（可能为空）。若没有 delim，则使用空格字符。若 delim 为空字符串，则每个字符均被视为一个单独的项。
 
@@ -418,7 +416,7 @@ Item( 2, ",abcd", ",", Include Boundary Delimiters );
 
 ### Items
 
-**语法:** wl = Items(<[first last]>, s, <delim>, <Include Boundary Delimiters(0|1)>)
+**语法:** wl = Items(&lt;[first last]&gt;, s, &lt;delim&gt;, &lt;Include Boundary Delimiters(0|1)&gt;)
 
 **说明:** 返回由 delim 参数中指定的任意一个（且只能为一个）字符所分隔的子字符串列表（可能为空）。若没有 delim，则使用空格字符。若 delim 为空字符串，则每个字符均被视为一个单独的项。
 
@@ -466,7 +464,7 @@ Items( [1 2], ",Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ### Left
 
-**语法:** sub = Left( s, n, <filler> )
+**语法:** sub = Left( s, n, &lt;filler&gt; )
 
 **说明:** 返回原始字符串或列表 s 的截断或填补版本。结果包含左侧的 n 个字符或列表项，若 s 的长度小于 n，则在右侧填补任意 filler。
 
@@ -556,7 +554,7 @@ Matrix To Blob( [3.14, 1.414], "float", 4, "big" );
 
 ### Munger
 
-**语法:** r = Munger( s, startPos, findStringOrNChars, <replaceString> )
+**语法:** r = Munger( s, startPos, findStringOrNChars, &lt;replaceString&gt; )
 
 **说明:** 根据参数组合，在 s 参数中搜索子字符串或位置。
 
@@ -571,7 +569,7 @@ Eval List( {Munger( "over there", 1, "t", "" ), Munger( "17 June 2000", 4, 4, "M
 
 ### Num
 
-**语法:** y = Num( s, < <<Use Locale( use=1 ) >, < <<Restrict > )
+**语法:** y = Num( s, &lt; &lt;&lt;Use Locale( use=1 ) &gt;, &lt; &lt;&lt;Restrict &gt; )
 
 **说明:** 使用任何内置格式（包括日期和货币格式）将 s 转换为一个数值。若转换失败，返回缺失值。可选 <<Restrict 仅允许使用整数、小数和科学记数法格式进行转换。
 
@@ -602,7 +600,7 @@ Show(
 
 ### Regex
 
-**语法:** result = Regex( source, pattern, <format, <IGNORECASE>, <GLOBALREPLACE>> )
+**语法:** result = Regex( source, pattern, &lt;format, &lt;IGNORECASE&gt;, &lt;GLOBALREPLACE&gt;&gt; )
 
 **说明:** 在 source 文本中搜索 pattern 的匹配。format 默认值为“\0”（整个匹配），但可以是“Fred”（对于常数替换）或“\1”（使用 pattern 中第一个圆括号匹配的文本）。返回数值缺失值表示无匹配。默认大小写必须匹配。
 
@@ -621,7 +619,7 @@ Regex(
 
 ### Remove
 
-**语法:** y = Remove( x, <i>, <n=1> ); y = Remove( x, {list} )
+**语法:** y = Remove( x, &lt;i&gt;, &lt;n=1&gt; ); y = Remove( x, {list} )
 
 **说明:** 返回列表 x 的以下副本: 从第 i 项开始删除 n 项，或删除 list 参数指定的项列表。
 
@@ -636,7 +634,7 @@ Remove( {11, 22, 33, 44, 55}, 3, 2 );
 
 ### Remove From
 
-**语法:** Remove From( x, <i>, <n=1> )
+**语法:** Remove From( x, &lt;i&gt;, &lt;n=1&gt; )
 
 **说明:** 通过删除项来修改列表、关联数组或显示框“x”。关联数组使用键值“i”指定要删除的项。列表和显示框从位于“i”的项开始删除。若指定“n”选项，则将从列表中同时删除多项。注意:“x”参数必须是变量。
 
@@ -679,7 +677,7 @@ Remove From( hlist, 1 );
 
 ### Repeat
 
-**语法:** s = Repeat( x, n, <m=1> )
+**语法:** s = Repeat( x, n, &lt;m=1&gt; )
 
 **说明:** 返回由 x 参数指定的文本、矩阵或列表本身拼接 n 次的结果。若 x 是数字或矩阵，则 n 表示垂直重复，可选参数 m 表示水平重复。
 
@@ -741,7 +739,7 @@ Reverse Into( hlist );
 
 ### Right
 
-**语法:** sub = Right( s, n, <filler> )
+**语法:** sub = Right( s, n, &lt;filler&gt; )
 
 **说明:** 返回原始字符串或列表 s 的截断或填补版本。结果包含右侧的 n 个字符或列表项，若 s 的长度小于 n，则在左侧填补任意 filler。
 
@@ -830,7 +828,7 @@ Show( Set Unique( :sports ) );
 
 ### Shift
 
-**语法:** y = Shift( x, <n=1> )
+**语法:** y = Shift( x, &lt;n=1&gt; )
 
 **说明:** 返回列表 x 的以下副本: 将头 n 项移动到列表末尾，若 n 为负数，则将后 n 项移动到列表的起始位置。
 
@@ -845,7 +843,7 @@ Shift( {11, 22, 33, 44, 55}, 2 );
 
 ### Shift Into
 
-**语法:** Shift Into( x, <n=1> )
+**语法:** Shift Into( x, &lt;n=1&gt; )
 
 **说明:** 修改列表或显示框 x: 将头 n 项移动到列表末尾，若 n 为负数，则将后 n 项移动到列表的起始位置。注意: x 参数必须是变量。
 
@@ -892,9 +890,7 @@ Starts With( "http://www.jmp.com", "http:" );
 
 ### Substitute
 
-**语法:** y = Substitute( x, patternExpr1, replacementExpr1, ... )
-
-y = Substitute( x, patternString1, replacementString1, ..., < <<IGNORECASE > )
+**语法:** y = Substitute( x, patternExpr1, replacementExpr1, ... )y = Substitute( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
 
 **说明:** 返回字符串、列表或表达式 x 的副本，将每个模式表达式的实例替换为相应的替换表达式。若 x 是字符串，则可选 <<IGNORECASE 参数允许不区分大小写匹配。
 
@@ -959,9 +955,7 @@ Substitute( "Apple,APPLE,apple", "apple", "orange", <<IGNORECASE );
 
 ### Substitute Into
 
-**语法:** Substitute Into( x, patternExpr1, replacementExpr1, ... )
-
-Substitute Into( x, patternString1, replacementString1, ..., < <<IGNORECASE > )
+**语法:** Substitute Into( x, patternExpr1, replacementExpr1, ... )Substitute Into( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
 
 **说明:** 修改字符串、列表或表达式 x，将每个模式表达式的实例替换为相应的替换表达式。请注意，x 参数必须是变量。若 x 是字符串，则可选 <<IGNORECASE 参数允许不区分大小写匹配。
 
@@ -1013,7 +1007,7 @@ Show( s );
 
 ### Substr
 
-**语法:** sub = Substr( s, start, <count> )
+**语法:** sub = Substr( s, start, &lt;count&gt; )
 
 **说明:** 返回由 count 个字符组成的 s 的部分字符串，从位置 start 开始计算。count 为负或缺失表示字符串的其余部分。start 为负表示从字符串末尾的 start 个字符开始计算。Substr() 函数也适用于列表。
 
@@ -1028,7 +1022,7 @@ Eval List( {Substr( "undergo", 4 ), Substr( {10, 11, 12, 13, 14}, 2, 3 )} );
 
 ### Text Score
 
-**语法:** score vector = Text Score( text column, text-to-number, <weighting>, <{<center>, <scale>, scoring matrix}>);
+**语法:** score vector = Text Score( text column, text-to-number, &lt;weighting&gt;, &lt;{&lt;center&gt;, &lt;scale&gt;, scoring matrix}&gt;);
 
 **说明:** 用于在文本分析器中创建评分公式。文本转数字参数是可将小写单词映射为数字的关联数组。权重参数为 "Binary", "Ternary", "Count", "LogCount", "LCA" 或 TFLogIDF 的反转文档频数权重数组。评分矩阵必须具有与关联数组中的单词数相同的列数，或多一个若是 LCA。输出为得分向量。若未指定评分矩阵，则返回计数得分向量。若未指定权重，则使用“计数”。该函数不支持“要组合的词干”选项。
 
@@ -1064,7 +1058,7 @@ Titlecase( "The dog crossed the road" );
 
 ### Trim
 
-**语法:** sub = Trim( s, <left|right|both> )
+**语法:** sub = Trim( s, &lt;left|right|both&gt; )
 
 **说明:** 返回已删除首部或尾部空格字符的字符串 s 副本。第二个参数指定首部空格或尾部空格字符。若没有第二个参数，则删除首尾两端的空格字符。
 
@@ -1079,7 +1073,7 @@ Trim( " title   ", both );
 
 ### Trim Whitespace
 
-**语法:** sub = Trim Whitespace( s, <left|right|both> )
+**语法:** sub = Trim Whitespace( s, &lt;left|right|both&gt; )
 
 **说明:** 返回已删除首部或尾部空格字符的字符串 s 副本。第二个参数指定首部空格或尾部空格字符。若没有第二个参数，则删除首尾两端的空格字符。
 
@@ -1109,7 +1103,7 @@ Uppercase( "Café #23" );
 
 ### Word
 
-**语法:** w = Word( n|[first last], s, <delim>, <Unmatched(result string)>
+**语法:** w = Word( n|[first last], s, &lt;delim&gt;, &lt;Unmatched(result string)&gt;
 
 **说明:** 返回字符串 s 的第 n 个词，其中词为由delim 参数中任意数量的任意字符所分隔的子字符串。若没有 delim，则使用空格字符。若 delim 为空字符串，则每个字符均视为一个单独的词。
 
@@ -1162,7 +1156,7 @@ Word( 2, "abcd", "" );
 
 ### Words
 
-**语法:** wl = Words( <[first last]>, s, <delim>)
+**语法:** wl = Words( &lt;[first last]&gt;, s, &lt;delim&gt;)
 
 **说明:** 返回由 delim 参数中指定的任意字符所分隔的子字符串列表。若没有 delim，则使用空格字符。若 delim 为空字符串，则每个字符均被视为一个单独的词。
 

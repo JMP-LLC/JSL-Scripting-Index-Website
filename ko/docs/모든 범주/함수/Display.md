@@ -2,11 +2,9 @@
 
 
 
-## 함수
-
 ### Alignment Cell Box
 
-**구문:** y = Alignment Cell Box( row, col, nRow, nCol, <Sides(left+2*top+4*right+8*bottom=15)> <RowSpan(nRow matrix)> <ColSpan(nCol matrix)>, matrix or list of strings )
+**구문:** y = Alignment Cell Box( row, col, nRow, nCol, &lt;Sides(left+2*top+4*right+8*bottom=15)&gt; &lt;RowSpan(nRow matrix)&gt; &lt;ColSpan(nCol matrix)&gt;, matrix or list of strings )
 
 **설명:** 정렬 격자 상자 안의 행 또는 열 내용을 포함하는 표시 상자에 대한 참조를 반환합니다.
 
@@ -124,7 +122,7 @@ ashape = Alpha Shape( triang );
 
 ### Border Box
 
-**구문:** y = Border Box( <Left( pix )>, <Right( pix )>, <Top( pix )>, <Bottom( pix )>, <Sides( 0 )>, displayBoxArg )
+**구문:** y = Border Box( &lt;Left( pix )&gt;, &lt;Right( pix )&gt;, &lt;Top( pix )&gt;, &lt;Bottom( pix )&gt;, &lt;Sides( 0 )&gt;, displayBoxArg )
 
 **설명:** 인수 표시 상자 주위에 공백을 추가하기 위한 표시 상자를 반환합니다.
 
@@ -146,7 +144,7 @@ New Window( "Example",
 
 ### Box Plot Seg
 
-**구문:** b = Box Plot Seg(<data>, <frequency>, <weight>, <vertical=0|1>)
+**구문:** b = Box Plot Seg(&lt;data&gt;, &lt;frequency&gt;, &lt;weight&gt;, &lt;vertical=0|1&gt;)
 
 **설명:** 전달된 x 및 y 값을 기반으로 한 상자 그림을 나타내는 표시 세그먼트를 반환합니다.
 
@@ -165,7 +163,7 @@ seg = (g[FrameBox( 1 )] << Find Seg( "Box Plot Seg" ));
 
 ### Busy Light
 
-**구문:** y = Busy Light( < <<Automatic(0|1)>, <Size(x, y)>, < <<Disable> )
+**구문:** y = Busy Light( &lt; &lt;&lt;Automatic(0|1)&gt;, &lt;Size(x, y)&gt;, &lt; &lt;&lt;Disable&gt; )
 
 **설명:** 실행 중을 나타내는 회전하는 이미지를 생성합니다.
 
@@ -210,7 +208,7 @@ New Window( "Calendar Box Example", Calendar Box() );
 
 ### Check Box
 
-**구문:** y = Check Box( {item, ...}, <script> )
+**구문:** y = Check Box( {item, ...}, &lt;script&gt; )
 
 **설명:** 하나 이상의 체크박스를 표시하기 위한 표시 상자를 반환합니다.
 
@@ -275,7 +273,7 @@ dt = New Window( "Example",
 
 ### Col List Box
 
-**구문:** y = Col List Box( <Data Table( name )>, <all>|<character|numeric>, <width( pix )>, <grouped>, <maxSelected( n )>, <nlines( n )>, <MaxItems( n )>, <MinItems( n )>, <onChange( expr )>, < <<Modeling Type({"Any","Continuous","Nominal","Ordinal","Multiple Response","Unstructured Text","Vector","None","Row State"}) >, < << Set Data Type(Any|Numeric|Character)>, <script> )
+**구문:** y = Col List Box( &lt;Data Table( name )&gt;, &lt;all&gt;|&lt;character|numeric&gt;, &lt;width( pix )&gt;, &lt;grouped&gt;, &lt;maxSelected( n )&gt;, &lt;nlines( n )&gt;, &lt;MaxItems( n )&gt;, &lt;MinItems( n )&gt;, &lt;onChange( expr )&gt;, &lt; &lt;&lt;Modeling Type({"Any","Continuous","Nominal","Ordinal","Multiple Response","Unstructured Text","Vector","None","Row State"}) &gt;, &lt; &lt;&lt; Set Data Type(Any|Numeric|Character)&gt;, &lt;script&gt; )
 
 **설명:** 데이터 테이블 열 선택을 위한 목록 상자를 표시하는 표시 상자를 반환합니다. <<Modeling Type을 사용하면 모델링 유형을 설정하거나 제한할 수 있습니다. 기본값 "Any"는 열이 기본 모델링 유형인 "Continuous", "Nominal" 또는 "Ordinal"을 취할 수 있게 허용합니다.
 
@@ -345,7 +343,7 @@ New Window( "test",
 
 ### Column Dialog
 
-**구문:** y = Column Dialog( <var = ColList("Label", <Min Col(min)>, <Max Col(max)>, <Width(w)>, <Data Type("Numeric"|"Character"|"Any")>, <Modeling Type({<"Continuous">, <"Nominal">, <"Ordinal">, <"None">, <"Multiple Response">, <"Unstructured Text">, <"Vector">})> )>, <var=EditText("string")>, <var=EditNumber(num)>, <var=Check Box( "Text", 0|1)>, <var=RadioButtons( "a", "b" )>, <var=Combo Box("choice1", ...)>, <HList(box, ...)>, <VList(box, ...)>, <LineUp(ncol, box, ...)>, <Text Box("string")>, <Window Title("title")>, <Window Icon("icon string")>, <Dialog Description("description")>, <Recall(script)>, <Help Script(script)>)
+**구문:** y = Column Dialog( &lt;var = ColList("Label", &lt;Min Col(min)&gt;, &lt;Max Col(max)&gt;, &lt;Width(w)&gt;, &lt;Data Type("Numeric"|"Character"|"Any")&gt;, &lt;Modeling Type({&lt;"Continuous"&gt;, &lt;"Nominal"&gt;, &lt;"Ordinal"&gt;, &lt;"None"&gt;, &lt;"Multiple Response"&gt;, &lt;"Unstructured Text"&gt;, &lt;"Vector"&gt;})&gt; )&gt;, &lt;var=EditText("string")&gt;, &lt;var=EditNumber(num)&gt;, &lt;var=Check Box( "Text", 0|1)&gt;, &lt;var=RadioButtons( "a", "b" )&gt;, &lt;var=Combo Box("choice1", ...)&gt;, &lt;HList(box, ...)&gt;, &lt;VList(box, ...)&gt;, &lt;LineUp(ncol, box, ...)&gt;, &lt;Text Box("string")&gt;, &lt;Window Title("title")&gt;, &lt;Window Icon("icon string")&gt;, &lt;Dialog Description("description")&gt;, &lt;Recall(script)&gt;, &lt;Help Script(script)&gt;)
 
 **설명:** 데이터 테이블의 열을 선택할 수 있는 필드가 포함된 모달 창을 사용자에게 표시합니다. 여러 가지 유형의 입력 상자와 컨테이너 상자를 지정하여 창을 구성할 수 있습니다
 
@@ -380,7 +378,7 @@ Column Dialog(
 
 ### Combo Box
 
-**구문:** y = Combo Box( {item <( tipstr )>, ...}, <script> )
+**구문:** y = Combo Box( {item &lt;( tipstr )&gt;, ...}, &lt;script&gt; )
 
 **설명:** 팝업 메뉴가 포함된 콤보 상자를 표시하기 위한 표시 상자를 반환합니다. 필요한 경우 콤보 상자의 각 항목에 툴팁(항목 텍스트 문자열 다음에 괄호로 묶은 문자열 추가)을 지정할 수 있습니다.
 
@@ -412,7 +410,7 @@ New Window( "Example",
 
 ### Contour Seg
 
-**구문:** me = Contour Seg( Triangulation, [ levels ], < zColor([colors], <Cycle Colors|Interpolate Colors>) >, < Transparency([] | t) >
+**구문:** me = Contour Seg( Triangulation, [ levels ], &lt; zColor([colors], &lt;Cycle Colors|Interpolate Colors&gt;) &gt;, &lt; Transparency([] | t) &gt;
 
 **설명:** 삼각 분할의 등고선을 나타내는 표시 세그먼트를 반환합니다. 각 수준에 대해 행렬 또는 목록으로 선택적 색상을 지정할 수 있습니다. 투명도는 숫자 또는 행렬로 지정할 수 있습니다.
 
@@ -441,7 +439,7 @@ New Window( "Contour Seg Example",
 
 ### Current Report
 
-**구문:** y = Current Report( <Project(title|index|box|window)> )
+**구문:** y = Current Report( &lt;Project(title|index|box|window)&gt; )
 
 **설명:** 현재 프로젝트(또는 프로젝트의 스크립트를 실행 중이지 않은 경우 프로젝트 없음)의 현재 보고서를 참조하는 표시 상자 참조를 반환합니다.
 
@@ -460,7 +458,7 @@ Current Report();
 
 ### Current Window
 
-**구문:** y = Current Window( <Project(title|index|box|window)> )
+**구문:** y = Current Window( &lt;Project(title|index|box|window)&gt; )
 
 **설명:** 현재 프로젝트(또는 프로젝트의 스크립트를 실행 중이지 않은 경우 프로젝트 없음)의 현재 창에 대한 참조를 반환합니다.
 
@@ -556,7 +554,7 @@ New Window( "Selection Filter",
 
 ### Data Grid Box
 
-**구문:** y = Data Grid Box(  )
+**구문:** y = Data Grid Box( )
 
 **설명:** 데이터 테이블을 포함할 수 있는 표시 상자를 반환합니다.
 
@@ -724,7 +722,7 @@ New Window( "Example",
 
 ### Expr As Picture
 
-**구문:** y = Expr As Picture( expr( ... ), <width in pixels>, <Max Matrix Size( dim )> )
+**구문:** y = Expr As Picture( expr( ... ), &lt;width in pixels&gt;, &lt;Max Matrix Size( dim )&gt; )
 
 **설명:** 지정된 표현식을 포함하는 이미지를 계산식 그림으로 반환합니다. 기본 너비는 600픽셀이고 기본 최대 행렬 크기는 100입니다.
 
@@ -746,7 +744,7 @@ New Window( "Example",
 
 ### Filter Col Selector
 
-**구문:** y = Filter Col Selector(<Data Table(name)>, <width(pixels)>, <nlines(n)>, <script>, <onchange(expr)>)
+**구문:** y = Filter Col Selector(&lt;Data Table(name)&gt;, &lt;width(pixels)&gt;, &lt;nlines(n)&gt;, &lt;script&gt;, &lt;onchange(expr)&gt;)
 
 **설명:** 항목 목록이 포함된 표시 상자를 반환합니다. 컨트롤은 열 필터링을 허용합니다.
 
@@ -812,7 +810,7 @@ Print( Get Project List() << Get Window Title() );
 
 ### Get Window
 
-**구문:** window = Get Window( <Project(title|index|box|window)>, <Type(string)>, title|index|box )
+**구문:** window = Get Window( &lt;Project(title|index|box|window)&gt;, &lt;Type(string)&gt;, title|index|box )
 
 **설명:** 열려 있는 특정 창에 대한 참조(제목, 인덱스 또는 상자)를 반환합니다.
 
@@ -854,7 +852,7 @@ window = Get Window( Project( project ), "Big Class" );
 
 ### Get Window List
 
-**구문:** windowList = Get Window List( <Project(title|index|box|window)>, <Type(string)> )
+**구문:** windowList = Get Window List( &lt;Project(title|index|box|window)&gt;, &lt;Type(string)&gt; )
 
 **설명:** 열려 있는 모든 창의 목록을 반환합니다.
 
@@ -995,7 +993,7 @@ New Window( "Example",
 
 ### H Center Box
 
-**구문:** y = H Center Box( <childbox> )
+**구문:** y = H Center Box( &lt;childbox&gt; )
 
 **설명:** childbox 표시 상자 인수가 포함된 표시 상자를 반환합니다. 인수에 해당하는 표시 상자는 중심 상자의 모든 다른 형제 항목 및 하위 항목의 최대 크기로 정의된 수평 공간의 가운데에 있습니다.
 
@@ -1022,7 +1020,7 @@ New Window( "test",
 
 ### H List Box
 
-**구문:** y = H List Box( <Align( center|bottom )>, displayBox, ... )
+**구문:** y = H List Box( &lt;Align( center|bottom )&gt;, displayBox, ... )
 
 **설명:** 인수에 의해 제공된 표시 상자를 가로 레이아웃에 배열하는 표시 상자를 반환합니다. <<Hold 메시지는 발췌될 보고서를 소유할 시트를 알려 줍니다. 선택적 Align 인수는 표시 상자 안에서 내용의 bottom 맞춤 또는 center 맞춤을 지정합니다.
 
@@ -1039,7 +1037,7 @@ New Window( "Example",
 
 ### H Scroll Box
 
-**구문:** y = H Scroll Box( <Size( x )>, displayBox )
+**구문:** y = H Scroll Box( &lt;Size( x )&gt;, displayBox )
 
 **설명:** 가로 스크롤 막대를 사용하여 더 큰 하위 상자를 배치하는 표시 상자를 반환합니다.
 
@@ -1068,7 +1066,7 @@ New Window( "Example",
 
 ### H Sheet Box
 
-**구문:** y = H Sheet Box( <<Hold( rpt ), displayBox, ... )
+**구문:** y = H Sheet Box( &lt;&lt;Hold( rpt ), displayBox, ... )
 
 **설명:** 인수에 의해 제공된 여러 표시 상자가 가로 형태로 배열된 하나의 표시 상자를 반환합니다. <<Hold 메시지는 발췌될 보고서가 소속될 시트를 알려 줍니다. 선택적 Align 인수를 사용하여 표시 상자 안에서 right 맞춤 또는 center 맞춤을 지정할 수 있습니다.
 
@@ -1118,7 +1116,7 @@ New Window( "Example",
 
 ### H Splitter Box
 
-**구문:** y = H Splitter Box( <Size(x,y)>, displayBox, ... )
+**구문:** y = H Splitter Box( &lt;Size(x,y)&gt;, displayBox, ... )
 
 **설명:** 대화식 크기 컨트롤을 사용하여 다른 표시 상자를 가로로 배열하는 표시 상자를 반환합니다. 하위 크기는 Splitter Box의 너비 또는 높이의 비율로 지정됩니다. 선택적 Size 인수는 최상위 분할 상자에만 사용됩니다. 하위 수준 상자는 다른 하위 상자처럼 크기가 조정됩니다.
 
@@ -1173,7 +1171,7 @@ New Window( "Example",
 
 ### Hist Seg
 
-**구문:** b = Hist Seg([data], <[freq data]>,<[weight data]>, <vertical=0|1>, <Row States()>)
+**구문:** b = Hist Seg([data], &lt;[freq data]&gt;,&lt;[weight data]&gt;, &lt;vertical=0|1&gt;, &lt;Row States()&gt;)
 
 **설명:** 기록 세그먼트를 반환합니다.
 
@@ -1258,7 +1256,7 @@ frenchBox << Set( 1 );
 
 ### If Seg
 
-**구문:** seg = If Seg(<state=0|1>)
+**구문:** seg = If Seg(&lt;state=0|1&gt;)
 
 **설명:** 표시 세그먼트 하위 항목을 표시하거나 숨기는 표시 세그먼트를 반환합니다.
 
@@ -1323,7 +1321,7 @@ New Window( "Distribution of Height",
 
 ### Line Seg
 
-**구문:** ls = Line Seg(x values, y values, <Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) >, < Sizes( s ) > )>)
+**구문:** ls = Line Seg(x values, y values, &lt;Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) &gt;, &lt; Sizes( s ) &gt; )&gt;)
 
 **설명:** 모든 x 및 y 값을 연결하는 선이 포함된 표시 세그먼트를 반환합니다.
 
@@ -1390,7 +1388,7 @@ seg = (frame << Find Seg( "Lines Seg" ));
 
 ### Lineup Box
 
-**구문:** y = Lineup Box( <NCol( nc )>, <Spacing( pixels, <vspace> )>, displayBoxArgs, ... )
+**구문:** y = Lineup Box( &lt;NCol( nc )&gt;, &lt;Spacing( pixels, &lt;vspace&gt; )&gt;, displayBoxArgs, ... )
 
 **설명:** nc 열의 상자 맞춤을 표시하기 위한 표시 상자를 반환합니다. 선택적으로 지정할 수 있는 Spacing 인수는 표시 상자 주위에 가로 및 세로 공백을 지정합니다. vspace 인수를 사용할 경우 vspace가 세로 공백이고 pixels은 가로 공백입니다.
 
@@ -1412,7 +1410,7 @@ New Window( "Example",
 
 ### Lineup Ruler Box
 
-**구문:** y = Lineup Box( <Widths( {width1, width2, ...} )>, displayBoxArgs, ... )
+**구문:** y = Lineup Box( &lt;Widths( {width1, width2, ...} )&gt;, displayBoxArgs, ... )
 
 **설명:** 포함된 정렬 상자의 열 너비를 설정하는 표시 상자를 반환합니다.
 
@@ -1450,7 +1448,7 @@ New Window( "Lineup Ruler",
 
 ### List Box
 
-**구문:** y = List Box( {item, ...}, <width( pixels )>, <maxSelected( 9999 )>, <nlines( 12 )>, <script> )
+**구문:** y = List Box( {item, ...}, &lt;width( pixels )&gt;, &lt;maxSelected( 9999 )&gt;, &lt;nlines( 12 )&gt;, &lt;script&gt; )
 
 **설명:** 선택 항목 목록 상자를 표시하기 위한 표시 상자를 반환합니다. item 자체가 항목 이름과 문자열(모델링 유형 또는 정렬 순서(예: "Ordinal" 또는 "Ascending") 지정)이 포함된 두 항목 목록일 경우 목록 상자에서 해당 항목 옆에 적절한 아이콘이 표시됩니다.
 
@@ -1483,7 +1481,7 @@ New Window( "Example",
 
 ### Marker Seg
 
-**구문:** me = Marker Seg( x, y, < Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) >, < Sizes( s ) > )
+**구문:** me = Marker Seg( x, y, &lt; Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) &gt;, &lt; Sizes( s ) &gt; )
 
 **설명:** 모든 x 및 y 값에 대한 표식이 포함된 표시 세그먼트를 반환합니다.
 
@@ -1599,7 +1597,7 @@ New Window( "Marker Seg Example",
 
 ### Matrix Box
 
-**구문:** y = Matrix Box( matrix, < <<Column Names( "c1", "c2", ... )>, < <<Row Names( "r1", "r2", ... )> )
+**구문:** y = Matrix Box( matrix, &lt; &lt;&lt;Column Names( "c1", "c2", ... )&gt;, &lt; &lt;&lt;Row Names( "r1", "r2", ... )&gt; )
 
 **설명:** 숫자 행렬을 표시하기 위한 표시 상자를 반환합니다.
 
@@ -1663,7 +1661,7 @@ New Window( "Example",
 
 ### Move to Project
 
-**구문:** Move to Project(<Source(project)>, <Destination(project)>, <Windows({list of windows to move})>)
+**구문:** Move to Project(&lt;Source(project)&gt;, &lt;Destination(project)&gt;, &lt;Windows({list of windows to move})&gt;)
 
 **설명:** 하나 이상의 창을 프로젝트 내부, 프로젝트 외부 또는 프로젝트 간에 이동합니다. 소스와 대상 중 하나만 지정해야 합니다. 다른 하나는 기본적으로 현재 프로젝트로 지정됩니다. 창을 현재 프로젝트로 이동하려면 소스만 지정하고 창을 프로젝트 외부로 이동하려면 대상만 지정하십시오. Windows 인수에는 창을 하나만 지정하지만 데이터 테이블 창은 창에 종속된 보고서와 함께 이동됩니다. Windows 인수를 생략하면 기본적으로 소스 프로젝트의 열려 있는 모든 창이 지정됩니다.
 
@@ -1696,17 +1694,7 @@ project << Close Window();
 
 ### New Image
 
-**구문:** img = New Image()
-
-img = New Image( width, height )
-
-img = New Image( pathname )
-
-img = New Image( picture )
-
-img = New Image( matrix of JSL color pixels ) 
-
-img = New Image( rgb|r|g|rgba, {i, i, i} )
+**구문:** img = New Image()img = New Image( width, height )img = New Image( pathname )img = New Image( picture )img = New Image( matrix of JSL color pixels ) img = New Image( rgb|r|g|rgba, {i, i, i} )
 
 **설명:** 새 이미지를 반환합니다. JSL 명령을 통해 이 이미지를 편집할 수 있습니다. 기존 이미지 파일에 대한 경로를 지정할 경우에는 .JPG, .PNG, .GIF, .BMP 또는 .TIF 파일이어야 합니다.
 
@@ -1752,7 +1740,7 @@ New Window( "image", image3 );
 
 ### New Project
 
-**구문:** project = new Project( <project messages> )
+**구문:** project = new Project( &lt;project messages&gt; )
 
 **설명:** 비어 있는 새 프로젝트 창을 생성합니다. 한 단계로 프로젝트를 생성하려는 경우 하나 이상의 프로젝트 메시지를 인수로 포함할 수 있습니다.
 
@@ -1834,7 +1822,7 @@ project = New Project(
 
 ### New Window
 
-**구문:** w = New Window( title, < <<Type("Report" | "Dialog" | "Modal Dialog" | "Journal" | "Launcher" | "Script")>, < << Return Result>, < << On Open(expr | function | method)>, < << On Close(expr | function | method)>, < <<On Validate(expr | function | method)>, < <<Show Menu(0 | 1)>, < <<Show Toolbars(0 | 1)>, < <<Suppress AutoHide(0 | 1)>, < <<Window View("Visible" | "Invisible")>, < <<Language("C" | "JavaScript" | "JSL" | "JSON" | "Python" | "R" | "SAS"  | "SQL" | "Text" | "XML")>, < <<Size(x, y)>, displayBox | script)
+**구문:** w = New Window( title, &lt; &lt;&lt;Type("Report" | "Dialog" | "Modal Dialog" | "Journal" | "Launcher" | "Script")&gt;, &lt; &lt;&lt; Return Result&gt;, &lt; &lt;&lt; On Open(expr | function | method)&gt;, &lt; &lt;&lt; On Close(expr | function | method)&gt;, &lt; &lt;&lt;On Validate(expr | function | method)&gt;, &lt; &lt;&lt;Show Menu(0 | 1)&gt;, &lt; &lt;&lt;Show Toolbars(0 | 1)&gt;, &lt; &lt;&lt;Suppress AutoHide(0 | 1)&gt;, &lt; &lt;&lt;Window View("Visible" | "Invisible")&gt;, &lt; &lt;&lt;Language("C" | "JavaScript" | "JSL" | "JSON" | "Python" | "R" | "SAS" | "SQL" | "Text" | "XML")&gt;, &lt; &lt;&lt;Size(x, y)&gt;, displayBox | script)
 
 **설명:** 지정된 표시 상자 또는 스크립트를 포함하는 창을 생성합니다. Type 옵션이 지정되지 않으면 기본적으로 보고서 창이 생성됩니다. Type("Modal Dialog") 창은 대화상자가 응답할 때까지 실행을 중지합니다. On Open, On Validate 및 Return Result는 모달 창에만 사용할 수 있습니다. On Open()은 창이 생성될 때 표현식, 함수 또는 클래스 메서드를 실행합니다. On Close()가 false를 반환하면 창이 닫히지 않습니다. On Validate()는 &apos;확인&apos; 버튼을 클릭할 때 표현식, 함수 또는 클래스 메서드를 실행합니다. 표현식이 true를 반환하면 창이 닫히고 그렇지 않으면 창이 계속 열려 있습니다. Return Result는 창을 닫을 때 더 이상 사용되지 않는 Dialog() 함수의 반환 값과 일치하도록 창의 반환 값을 변경합니다. 도구 모음을 지원하는 창 유형의 경우 Show Toolbars 옵션을 사용하여 기본 동작에서 변경 사항을 지정합니다. Show Menu 및 Suppress AutoHide 옵션은 Windows에만 해당됩니다. Window View("Invisible") 옵션은 Modal Dialog 이외의 모든 창에 사용할 수 있습니다. <<Language 옵션이 지정되지 않은 경우 Type("Script") 창은 JSL 문서를 생성합니다.
 
@@ -2021,7 +2009,7 @@ New Window( "Example",
 
 ### Number Edit Box
 
-**구문:** y = Number Edit Box( initValue, <width> )
+**구문:** y = Number Edit Box( initValue, &lt;width&gt; )
 
 **설명:** 숫자 입력만 허용하는 편집 상자를 반환합니다. 필요한 경우 width 인수를 선택적으로 지정하여 상자 너비를 문자 수로 설정할 수 있습니다.
 
@@ -2037,7 +2025,7 @@ x = neb << get;
 
 ### Outline Box
 
-**구문:** y = Outline Box( title, <command script pairs list>, displayBox, ... )
+**구문:** y = Outline Box( title, &lt;command script pairs list&gt;, displayBox, ... )
 
 **설명:** 보고서에 표시 상자 참조를 반환하는 개요 요소를 생성합니다. 개요 노드에 메뉴를 포함하려면 메뉴 명령 및 연결된 스크립트를 지정하는 목록인 command script pairs list를 지정하십시오.
 
@@ -2135,7 +2123,7 @@ New Window( "Example", Picture Box( pict ) );
 
 ### Pie Seg
 
-**구문:** ps = Pie Seg(<{ xorigin, yorigin }>, <radius>, <style("pie", "ring", "coxcomb")>, values)
+**구문:** ps = Pie Seg(&lt;{ xorigin, yorigin }&gt;, &lt;radius&gt;, &lt;style("pie", "ring", "coxcomb")&gt;, values)
 
 **설명:** 행렬 형식으로 지정된 값을 기반으로, 지정된 radius를 사용하여 지정된 origin에 파이 세그먼트를 생성합니다.
 
@@ -2239,7 +2227,7 @@ New Window( "Example",
 
 ### Radio Box
 
-**구문:** y = Radio Box( {item, ...}, <script> )
+**구문:** y = Radio Box( {item, ...}, &lt;script&gt; )
 
 **설명:** 라디오 버튼 집합을 표시하기 위한 표시 상자를 반환합니다.
 
@@ -2350,7 +2338,7 @@ exScene << update;
 
 ### Script Box
 
-**구문:** y = Script Box( <s>, <"C" | "JavaScript" | "JSL" | "JSON" | "Python" | "R" | "SAS" | "SQL" | "Text" | "XML">, <width>, <height> )
+**구문:** y = Script Box( &lt;s&gt;, &lt;"C" | "JavaScript" | "JSL" | "JSON" | "Python" | "R" | "SAS" | "SQL" | "Text" | "XML"&gt;, &lt;width&gt;, &lt;height&gt; )
 
 **설명:** 스크립트 편집을 위한 표시 상자를 반환합니다. 기본적으로 편집기에는 강조 표시된 JSL 구문과 동작이 있습니다.
 
@@ -2380,7 +2368,7 @@ New Window( "This is a python script box", Script );
 
 ### Scroll Box
 
-**구문:** y = Scroll Box( <Size( x, y )>, displayBox )
+**구문:** y = Scroll Box( &lt;Size( x, y )&gt;, displayBox )
 
 **설명:** 더 큰 하위 상자를 배치하는 표시 상자를 반환합니다. 하위 상자가 더 크기 때문에 스크롤 막대를 사용하게 됩니다.
 
@@ -2431,7 +2419,7 @@ Clear Global Window Handler();
 
 ### Shape Seg
 
-**구문:** me = Shape Seg( {Path(<path>), ...}, < Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) > )
+**구문:** me = Shape Seg( {Path(&lt;path&gt;), ...}, &lt; Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) &gt; )
 
 **설명:** 형태 컬렉션과 함께 표시 세그먼트를 반환합니다. 각 형태는 지정한 경로를 따라 스트로크를 그리거나(채우기가 0일 경우) 지정한 경로의 내부가 채워집니다(채우기가 0이 아닐 경우). N x 3 행렬 또는 텍스트 표현을 사용하여 경로를 지정할 수 있습니다. 경로 행렬에는 x, y에 대한 세 개의 열과 경로의 각 점에 대한 플래그가 있습니다. 플래그 값은 제어의 경우 0, 이동의 경우 1, 선분의 경우 2, 3차 Bézier 세그먼트의 경우 3이며 점이 경로를 닫는 경우에는 음수입니다. 경로 텍스트는 SVG 구문을 지원합니다.
 
@@ -2500,7 +2488,7 @@ New Window( "Example",
 
 ### Slider Box
 
-**구문:** box = Slider Box(minValue, maxValue, variable, script, <set width(n)>, <rescale slider(minValue, maxValue)>)
+**구문:** box = Slider Box(minValue, maxValue, variable, script, &lt;set width(n)&gt;, &lt;rescale slider(minValue, maxValue)&gt;)
 
 **설명:** 범위가 minValue에서 maxValue까지인 슬라이더 컨트롤을 표시하는 표시 상자를 반환합니다. 슬라이더 위치가 변경되면 해당 값이 variable에 지정되고 스크립트가 실행됩니다.
 
@@ -2521,7 +2509,7 @@ New Window( "Example",
 
 ### Spacer Box
 
-**구문:** y = Spacer Box( <Size( x, y )>, <Color( c )>)
+**구문:** y = Spacer Box( &lt;Size( x, y )&gt;, &lt;Color( c )&gt;)
 
 **설명:** 다른 표시 상자 사이에 공백을 유지하거나 Lineup Box의 셀을 채우는 데 사용될 수 있는 표시 상자를 반환합니다. Size 인수는 픽셀로 지정되고 Color 인수는 유효한 JSL 색상입니다.
 
@@ -2544,7 +2532,7 @@ New Window( "Example",
 
 ### Spin Box
 
-**구문:** y = Spin Box( <script> )
+**구문:** y = Spin Box( &lt;script&gt; )
 
 **설명:** 위쪽/아래쪽 컨트롤이 있는 버튼을 표시하는 상자를 반환합니다. script 인수는 화살표 클릭 방향을 나타내는 인수(음수는 아래쪽, 양수는 위쪽)와 함께 호출됩니다. 값이 1이면 한 번 클릭을 나타내고 값이 클수록 반복 동작을 나타낼 수 있습니다.
 
@@ -2631,7 +2619,7 @@ New Window( "Example",
 
 ### Tab Page Box
 
-**구문:** y = Tab Page Box( <Title("string")>, <Tip(0|1)>,  <Closeable(0|1)>, <Icon("string")>, <Moveable(0|1)>, contents)
+**구문:** y = Tab Page Box( &lt;Title("string")&gt;, &lt;Tip(0|1)&gt;, &lt;Closeable(0|1)&gt;, &lt;Icon("string")&gt;, &lt;Moveable(0|1)&gt;, contents)
 
 **설명:** Tab Box 내에서 사용되거나 제목이 있는 독립 컨테이너로 사용될 수 있는 표시 상자를 반환합니다. 옵션으로는 제목을 지정하기 위한 Title(문자열), 툴팁을 지정하기 위한 Title(문자열), 페이지를 닫을 수 있는지 여부를 지정하기 위한 Closeable(0|1), 아이콘을 지정하기 위한Icon(문자열) 및 페이지를 이동할 수 있는지 여부를 지정하기 위한 Moveable(0|1)이 있습니다.
 
@@ -2674,7 +2662,7 @@ New Window( "Example",
 
 ### Text Box
 
-**구문:** y = Text Box( text, <<Justify Text( strPos ), <<Set Wrap( width ) )
+**구문:** y = Text Box( text, &lt;&lt;Justify Text( strPos ), &lt;&lt;Set Wrap( width ) )
 
 **설명:** 문자열 인수 text의 텍스트가 포함된 표시 상자를 생성합니다. 텍스트 맞춤을 제어하거나 텍스트 줄바꿈 너비를 설정하기 위한 선택적 인수를 사용할 수 있습니다. Justify Text에 대한 인수는 left, right 또는 center가 포함된 문자열이어야 합니다.
 
@@ -2713,7 +2701,7 @@ New Window( "Justification Example",
 
 ### Text Edit Box
 
-**구문:** y = Text Edit Box( text, <<Password Style( bool ), <<Set Script( script ), <<Set Width( value ) )
+**구문:** y = Text Edit Box( text, &lt;&lt;Password Style( bool ), &lt;&lt;Set Script( script ), &lt;&lt;Set Width( value ) )
 
 **설명:** 따옴표로 묶인 문자열 text가 포함된 편집 가능한 상자를 생성하고 표시 상자 참조를 반환합니다. 선택적 인수를 사용하여 텍스트 표시를 제어하고 텍스트 상자에 스크립트를 연결하고 텍스트 상자의 너비(픽셀)를 설정할 수 있습니다. Set Width(-1)을 지정하면 내용에 맞게 크기가 조정됩니다. 스크립트를 선택적 인수로 추가하거나 Set Script 메시지를 보내 스크립트를 텍스트 편집 상자에 연결할 수 있습니다.
 
@@ -2771,7 +2759,7 @@ If(
 
 ### Tree Box
 
-**구문:** tree = Tree Box( <{rootnodes}>, <Size( x, y )>, <Multiselect( 0|1 )> )
+**구문:** tree = Tree Box( &lt;{rootnodes}&gt;, &lt;Size( x, y )&gt;, &lt;Multiselect( 0|1 )&gt; )
 
 **설명:** 계층적 정보를 보여주기 위한 표시 상자를 생성합니다.
 
@@ -2799,7 +2787,7 @@ New Window( "TreeBox", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
 
 ### Tree Node
 
-**구문:** node = Tree Node( <label> )
+**구문:** node = Tree Node( &lt;label&gt; )
 
 **설명:** 트리 상자 내에 표시할 트리 노드를 생성합니다.
 
@@ -2827,7 +2815,7 @@ New Window( "TreeBox Nodes", tree = Tree Box( {root1, root2}, Size( 300, 200 ) )
 
 ### Triangulation
 
-**구문:** triangulation = Triangulation( X(Column1, Column2), < Y(Column) > )
+**구문:** triangulation = Triangulation( X(Column1, Column2), &lt; Y(Column) &gt; )
 
 **설명:** 지정된 점 집합의 Delaunay 삼각 분할이 포함된 개체를 반환합니다. 선택적 Y는 중복 점에 대해 평균화되고 출력의 모든 점은 고유합니다.
 
@@ -2878,7 +2866,7 @@ New Window( "unlineup",
 
 ### V Center Box
 
-**구문:** y = V Center Box( <childbox> )
+**구문:** y = V Center Box( &lt;childbox&gt; )
 
 **설명:** childbox 표시 상자 인수가 포함된 표시 상자를 반환합니다. 인수에 해당하는 표시 상자는 중심 상자의 모든 다른 형제 항목 및 하위 항목의 최대 크기로 정의된 수직 공간의 가운데에 있습니다.
 
@@ -2905,7 +2893,7 @@ New Window( "test",
 
 ### V List Box
 
-**구문:** y = V List Box( <Align( center|right )>, displayBox, ... )
+**구문:** y = V List Box( &lt;Align( center|right )&gt;, displayBox, ... )
 
 **설명:** 인수에 의해 제공된 여러 표시 상자가 세로 형태로 배열된 하나의 표시 상자를 반환합니다. <<Hold 메시지는 발췌될 보고서가 소속될 시트를 알려 줍니다. 선택적 Align 인수를 사용하여 표시 상자 안에서 right 맞춤 또는 center 맞춤을 지정할 수 있습니다.
 
@@ -2922,7 +2910,7 @@ New Window( "Example",
 
 ### V Scroll Box
 
-**구문:** y = V Scroll Box( <Size( y )>, displayBox )
+**구문:** y = V Scroll Box( &lt;Size( y )&gt;, displayBox )
 
 **설명:** 세로 스크롤 막대를 사용하여 더 큰 하위 상자를 배치하는 표시 상자를 반환합니다.
 
@@ -2953,7 +2941,7 @@ New Window( "Example",
 
 ### V Sheet Box
 
-**구문:** y = V Sheet Box( <<Hold( rpt ), displayBox, ... )
+**구문:** y = V Sheet Box( &lt;&lt;Hold( rpt ), displayBox, ... )
 
 **설명:** 인수에 의해 제공된 여러 표시 상자가 세로 형태로 배열된 하나의 표시 상자를 반환합니다. <<Hold 메시지는 발췌될 보고서가 소속될 시트를 알려 줍니다. 선택적 Align 인수를 사용하여 표시 상자 안에서 right 맞춤 또는 center 맞춤을 지정할 수 있습니다.
 
@@ -3003,7 +2991,7 @@ New Window( "Example",
 
 ### V Splitter Box
 
-**구문:** y = V Splitter Box( <Size(x,y)>, displayBox, ... )
+**구문:** y = V Splitter Box( &lt;Size(x,y)&gt;, displayBox, ... )
 
 **설명:** 대화식 컨트롤을 사용하여 다른 표시 상자를 세로로 배열하는 표시 상자를 반환합니다. 하위 크기는 Splitter Box의 너비 또는 높이의 비율로 지정됩니다. 선택적 Size 인수는 최상위 분할 상자에만 사용됩니다.
 
@@ -3053,7 +3041,7 @@ wb << Set Max Size( 10000, 10000 );
 
 ### Window
 
-**구문:** y = Window( <string|int> )
+**구문:** y = Window( &lt;string|int&gt; )
 
 **설명:** 이 함수는 더 이상 사용되지 않으며 기존 스크립트와의 호환성을 위해서만 유지됩니다. 새 스크립트의 경우 Get Window() 또는 Get Window List()를 사용하십시오.
 

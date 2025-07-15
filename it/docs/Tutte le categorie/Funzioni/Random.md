@@ -2,11 +2,9 @@
 
 
 
-## Funzioni
-
 ### Col Shuffle
 
-**Sintassi:** y = Col Shuffle(<byVar, <Excluded( Row State() )>, ...>)
+**Sintassi:** y = Col Shuffle(&lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;)
 
 **Descrizione:** Restituisce un numero intero casuale compreso tra 1 e il numero di righe della tabella di dati corrente. Se usato in una formula della colonna, Col Shuffle() crea un ordinamento casuale dei numeri di riga con ogni numero di riga che appare una sola volta. Tale ordinamento viene memorizzato nella cache interna, in modo che le valutazioni multiple siano efficienti.
 
@@ -49,7 +47,7 @@ dt << New Column( "Col Shuffle for each Sex grouped by Excluded",
 
 ### Make KFold Formula
 
-**Sintassi:** y = Make KFold Formula( folds, Y Columns( cols ), <<Stratification Columns( cols ), <<Grouping Columns( cols ) )
+**Sintassi:** y = Make KFold Formula( folds, Y Columns( cols ), &lt;&lt;Stratification Columns( cols ), &lt;&lt;Grouping Columns( cols ) )
 
 **Descrizione:** Genera una colonna di validazione con folds livelli se utilizzato in una formula della colonna. Questa funzione JSL è utilizzata principalmente dalla piattaforma Crea colonna di validazione per generare colonne con formule.
 
@@ -87,7 +85,7 @@ dt << New Column( "Stratified KFold",
 
 ### Make Validation Formula
 
-**Sintassi:** y = Make Validation Formula( rates, <<Stratification Columns( cols ), <<Grouping Columns( cols ), <<Cutpoint Column ( col ), <<Cutpoint Batch ID( col ), <<Determine cutpoints using( "Proportions"|"Numbers of Rows"|"Fixed Time or Date"|"Elapsed Time" ), <<Assign Extra Rows( "To Training"|"To Validation"|"To Test" ) )
+**Sintassi:** y = Make Validation Formula( rates, &lt;&lt;Stratification Columns( cols ), &lt;&lt;Grouping Columns( cols ), &lt;&lt;Cutpoint Column ( col ), &lt;&lt;Cutpoint Batch ID( col ), &lt;&lt;Determine cutpoints using( "Proportions"|"Numbers of Rows"|"Fixed Time or Date"|"Elapsed Time" ), &lt;&lt;Assign Extra Rows( "To Training"|"To Validation"|"To Test" ) )
 
 **Descrizione:** Genera una colonna di validazione a due o tre livelli se utilizzato in una formula della colonna. L&apos;argomento rates è una matrice 3 per 1 che contiene rispettivamente i tassi di training, validazione e test. Questa funzione JSL è utilizzata principalmente dalla piattaforma Crea colonna di validazione per generare colonne con formule.
 
@@ -147,7 +145,7 @@ dt << New Column( "Validation",
 
 ### Random Beta
 
-**Sintassi:** y = Random Beta( alpha, beta, <theta=0>, <sigma=1> )
+**Sintassi:** y = Random Beta( alpha, beta, &lt;theta=0&gt;, &lt;sigma=1&gt; )
 
 **Descrizione:** Restituisce un numero casuale da una distribuzione beta.
 
@@ -168,7 +166,7 @@ Show( x, v );
 
 ### Random Beta Binomial
 
-**Sintassi:** y = Random Beta Binomial( n, p, <delta=0> )
+**Sintassi:** y = Random Beta Binomial( n, p, &lt;delta=0&gt; )
 
 **Descrizione:** Restituisce un numero casuale da una distribuzione beta-binomiale per n prove con probabilità p e correlazione delta.
 
@@ -289,7 +287,7 @@ Show( x, v );
 
 ### Random ChiSquare
 
-**Sintassi:** y = Random ChiSquare( df, <nonCentrality=0> )
+**Sintassi:** y = Random ChiSquare( df, &lt;nonCentrality=0&gt; )
 
 **Descrizione:** Restituisce un numero casuale da una distribuzione Chi-Square.
 
@@ -352,7 +350,7 @@ Show( x, v );
 
 ### Random F
 
-**Sintassi:** y = Random F( dfnum, dfden, <nonCentrality=0> )
+**Sintassi:** y = Random F( dfnum, dfden, &lt;nonCentrality=0&gt; )
 
 **Descrizione:** Restituisce un numero casuale da una distribuzione F.
 
@@ -373,7 +371,7 @@ Show( x, v );
 
 ### Random Frechet
 
-**Sintassi:** y = Random Frechet( <mu=0>, <sigma=1> )
+**Sintassi:** y = Random Frechet( &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **Descrizione:** Restituisce un numero casuale a partire da una distribuzione di Fréchet.
 
@@ -415,7 +413,7 @@ Show( x, v );
 
 ### Random Gamma
 
-**Sintassi:** y = Random Gamma( alpha, <scale=1> )
+**Sintassi:** y = Random Gamma( alpha, &lt;scale=1&gt; )
 
 **Descrizione:** Restituisce un numero casuale da una distribuzione gamma.
 
@@ -436,7 +434,7 @@ Show( x, v );
 
 ### Random Gamma Poisson
 
-**Sintassi:** y = Random Gamma Poisson( lambda, <sigma=1> )
+**Sintassi:** y = Random Gamma Poisson( lambda, &lt;sigma=1&gt; )
 
 **Descrizione:** Restituisce un numero casuale a partire da una distribuzione gamma di Poisson con parametri lambda e sigma.
 
@@ -457,7 +455,7 @@ Show( x, v );
 
 ### Random GenGamma
 
-**Sintassi:** y = Random GenGamma( <mu=0>, <sigma=1>, <lambda=0> )
+**Sintassi:** y = Random GenGamma( &lt;mu=0&gt;, &lt;sigma=1&gt;, &lt;lambda=0&gt; )
 
 **Descrizione:** Restituisce un numero casuale da una distribuzione gamma generalizzata estesa con i parametri mu, sigma e lambda.
 
@@ -586,7 +584,7 @@ Show( x, v );
 
 ### Random Johnson Sl
 
-**Sintassi:** y = Random Johnson Sl( gamma, delta, theta, <sigma=1> )
+**Sintassi:** y = Random Johnson Sl( gamma, delta, theta, &lt;sigma=1&gt; )
 
 **Descrizione:** Restituisce un numero casuale a partire da una distribuzione Sl di Johnson.
 
@@ -628,7 +626,7 @@ Show( x, v );
 
 ### Random LEV
 
-**Sintassi:** y = Random LEV( <mu=0>, <sigma=1> )
+**Sintassi:** y = Random LEV( &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **Descrizione:** Restituisce un numero casuale a partire da una distribuzione LEV.
 
@@ -649,7 +647,7 @@ Show( x, v );
 
 ### Random LogGenGamma
 
-**Sintassi:** y = Random LogGenGamma( <mu=0>, <sigma=1>, <lambda=0> )
+**Sintassi:** y = Random LogGenGamma( &lt;mu=0&gt;, &lt;sigma=1&gt;, &lt;lambda=0&gt; )
 
 **Descrizione:** Restituisce un numero casuale da una distribuzione log gamma generalizzata con i parametri mu, sigma e lambda.
 
@@ -670,7 +668,7 @@ Show( x, v );
 
 ### Random Logistic
 
-**Sintassi:** y = Random Logistic( <mu=0>, <sigma=1> )
+**Sintassi:** y = Random Logistic( &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **Descrizione:** Restituisce un numero casuale a partire da una distribuzione logistica.
 
@@ -691,7 +689,7 @@ Show( x, v );
 
 ### Random Loglogistic
 
-**Sintassi:** y = Random Loglogistic( <mu=0>, <sigma=1> )
+**Sintassi:** y = Random Loglogistic( &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **Descrizione:** Restituisce un numero casuale a partire da una distribuzione log-logistica.
 
@@ -712,7 +710,7 @@ Show( x, v );
 
 ### Random Lognormal
 
-**Sintassi:** y = Random Lognormal( <mu=0>, <sigma=1> )
+**Sintassi:** y = Random Lognormal( &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **Descrizione:** Restituisce un numero casuale a partire da una distribuzione lognormale, con parametro di posizione mu e parametro di scala sigma.
 
@@ -765,7 +763,7 @@ New Window( "Example: Random Lognormal and Empirical Distribution",
 
 ### Random Multivariate Normal
 
-**Sintassi:** y = Random Multivariate Normal( mean, covar, <nrows=1>)
+**Sintassi:** y = Random Multivariate Normal( mean, covar, &lt;nrows=1&gt;)
 
 **Descrizione:** Restituisce una matrice casuale nrows per p da una distribuzione normale multivariata con vettore medio mean e matrice di covarianza (positiva semi-definita) covar, dove p è definito come il numero di righe di covar.
 
@@ -828,7 +826,7 @@ New Window( "Example: Neg Binomial Probability",
 
 ### Random Normal
 
-**Sintassi:** y = Random Normal( <mu=0>, <sigma=1> )
+**Sintassi:** y = Random Normal( &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **Descrizione:** Restituisce un numero casuale da una distribuzione normale con media mu e deviazione standard sigma.
 
@@ -987,7 +985,7 @@ Random Normal();
 
 ### Random SEV
 
-**Sintassi:** y = Random SEV( <mu=0>, <sigma=1> )
+**Sintassi:** y = Random SEV( &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **Descrizione:** Restituisce un numero casuale a partire da una distribuzione SEV.
 
@@ -1047,7 +1045,7 @@ Show( result1, result2 );
 
 ### Random Seed State
 
-**Sintassi:** Random Seed State( <seed state> )
+**Sintassi:** Random Seed State( &lt;seed state&gt; )
 
 **Descrizione:** Recupera o ripristina lo stato di seme casuale, da o in un oggetto blob.
 
@@ -1079,11 +1077,7 @@ Random Shuffle( exA );
 
 ### Random Triangular
 
-**Sintassi:** y = Random Triangular( a, b, c );
-
-y = Random Triangular( b, c );
-
-y = Random Triangular( b )
+**Sintassi:** y = Random Triangular( a, b, c );y = Random Triangular( b, c );y = Random Triangular( b )
 
 **Descrizione:** Restituisce un numero casuale da una distribuzione triangolare con limite inferiore a, moda b e limite superiore c. Random Triangular(b,c) è equivalente a Random Triangular(0,b,c). Random Triangular(b) è equivalente a Random Triangular(0,b,1).
 
@@ -1102,7 +1096,7 @@ Show( x, y );
 
 ### Random Uniform
 
-**Sintassi:** y = Random Uniform( <min>, <max> )
+**Sintassi:** y = Random Uniform( &lt;min&gt;, &lt;max&gt; )
 
 **Descrizione:** Restituisce un numero casuale da una distribuzione uniforme tra min e max, esclusivamente.
 
@@ -1134,7 +1128,7 @@ Random Uniform( 1, 10 );
 
 ### Random Weibull
 
-**Sintassi:** y = Random Weibull( beta, <alpha=1> )
+**Sintassi:** y = Random Weibull( beta, &lt;alpha=1&gt; )
 
 **Descrizione:** Restituisce un numero casuale a partire da una distribuzione di Weibull.
 
@@ -1295,7 +1289,7 @@ dt << Distribution(
 
 ### Random t
 
-**Sintassi:** y = Random t( df, <nonCentrality=0> )
+**Sintassi:** y = Random t( df, &lt;nonCentrality=0&gt; )
 
 **Descrizione:** Restituisce un numero casuale da una distribuzione T.
 
@@ -1316,7 +1310,7 @@ Show( x, v );
 
 ### Resample Freq
 
-**Sintassi:** Resample Freq( <rate=1>, <column> )
+**Sintassi:** Resample Freq( &lt;rate=1&gt;, &lt;column&gt; )
 
 **Descrizione:** Genera un conteggio di frequenza per il campionamento con sostituzione, utile per campioni bootstrap. Senza argomenti, la funzione genera un ricampionamento del 100%. L&apos;argomento rate specifica il tasso di ricampionamento. Se è specificato l&apos;argomento column, la dimensione campionaria scelta è rate moltiplicato per la somma della colonna specificata. Un valore negativo rate segnala che le frequenze frazionarie non sono consentite.
 

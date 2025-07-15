@@ -2,11 +2,9 @@
 
 
 
-## Funzioni
-
 ### CAS Connect
 
-**Sintassi:** CAS Connect(<URL(...)>, <Username(...)>, <Password(...)>, <Prompt(Never | Always | IfNeeded)>, <Session("session id")>, <Proxy Server("http://my_proxy:80")>, <Proxy User("proxy_username")>, <Bypass Proxy("http://localhost:80")>, <Certificates(...)>, <Verify Certificates(1 | 0)>, <No Verify Certificates(1 | 0)>, <Timeout(seconds)>, <Authorization Method("Basic" | "Bearer")>)
+**Sintassi:** CAS Connect(&lt;URL(...)&gt;, &lt;Username(...)&gt;, &lt;Password(...)&gt;, &lt;Prompt(Never | Always | IfNeeded)&gt;, &lt;Session("session id")&gt;, &lt;Proxy Server("http://my_proxy:80")&gt;, &lt;Proxy User("proxy_username")&gt;, &lt;Bypass Proxy("http://localhost:80")&gt;, &lt;Certificates(...)&gt;, &lt;Verify Certificates(1 | 0)&gt;, &lt;No Verify Certificates(1 | 0)&gt;, &lt;Timeout(seconds)&gt;, &lt;Authorization Method("Basic" | "Bearer")&gt;)
 
 **Descrizione:** Si connette a un nuovo server CAS. CAS Connect utilizza gli argomenti URL, Nome utente, Password e facoltativamente Richiedi e Sessione. Richiedi può essere Se necessario, Sempre o Mai. URL, nome utente e password possono essere omessi se l&apos;argomento di Richiedi è Se necessario o Sempre. Il valore di default per Richiedi è Mai. L’argomento Sessione può essere utilizzato per riconnettersi a una sessione CAS esistente. La sessione deve essere valida per l&apos;URL, il nome utente e la password utilizzati nella connessione. L&apos;argomento facoltativo Certificati è utile per fornire certificati affidabili per connessioni https a CAS. L&apos;argomento facoltativo Verifica certificati o Nessuna verifica certificato è utile per accettare temporaneamente certificati autofirmati. L&apos;argomento facoltativo Proxy Server è utile per fornire un host proxy in un ambiente proxy. L&apos;argomento facoltativo Utente proxy è utile per fornire informazioni su utente e password per un ambiente proxy. L&apos;argomento facoltativo Ignora proxy è utilizzato per ignorare il proxy per alcuni host. L&apos;argomento facoltativo Timeout imposta un valore di timeout per le operazioni di connessione a CAS. L&apos;argomento facoltativo Metodo di autorizzazione specifica come JMP si connette a CAS. Dipende dal deployment CAS.
 
@@ -28,7 +26,7 @@ cas = CAS Connect(
 
 ### CAS Delete Table
 
-**Sintassi:** CAS Delete Table(tablename, <remove>)
+**Sintassi:** CAS Delete Table(tablename, &lt;remove&gt;)
 
 **Descrizione:** Questa azione elimina la tabella del filesystem. La tabella in memoria non è interessata. Specificando Nessuna info si eliminano gli errori per tabelle non esistenti. Specificando remACs si rimuovono i controlli di accesso per una tabella. Specificando Rimuovi si rimuove anche la tabella dalla memoria.
 
@@ -64,7 +62,7 @@ CAS Disconnect();
 
 ### CAS Export Data
 
-**Sintassi:** y = CAS Export Data(jmp_data_table, cas_libref, cas_dataset, <named_arguments>)
+**Sintassi:** y = CAS Export Data(jmp_data_table, cas_libref, cas_dataset, &lt;named_arguments&gt;)
 
 **Descrizione:** Esporta una tabella in un server CAS. jmp_data_table è la tabella di dati di JMP da esportare mentre cas_libref e cas_dataset sono le posizioni di destinazione sul server CAS. L&apos;argomento denominato facoltativo è Save(1|0). Quando una tabella viene esportata in CAS non viene mantenuta nel file system CAS a meno che si utilizzi l&apos;opzione Salva. La maggior parte delle operazioni CAS avviene in memoria.
 
@@ -81,7 +79,7 @@ CAS Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "CASUSER", "Big Class" );
 
 ### CAS Get Data Sets
 
-**Sintassi:** y = CAS Get Data Sets(<"caslib">)
+**Sintassi:** y = CAS Get Data Sets(&lt;"caslib"&gt;)
 
 **Descrizione:** Ottiene un elenco di data set CAS disponibili. Questi data set sono presenti nel file system CAS. L&apos;argomento facoltativo limita l&apos;elenco dei data set alla libreria CAS. Se non viene utilizzato alcun argomento, l&apos;elenco dei data set contiene il nome del data set completo (libreria.dataset). Se si utilizza l&apos;argomento, l&apos;elenco dei data set è un elenco di nomi di data set.
 
@@ -121,7 +119,7 @@ Show( libraries );
 
 ### CAS Import Data
 
-**Sintassi:** dt = CAS Import Data(libref, dataset, <named_arguments>)
+**Sintassi:** dt = CAS Import Data(libref, dataset, &lt;named_arguments&gt;)
 
 **Descrizione:** Importa una tabella da un server CAS. Gli argomenti facoltativi sono Invisible(0|1), Private(0|1) e UseLabelsForVarNames(0|1).
 
@@ -156,7 +154,7 @@ Show( connected );
 
 ### CAS Remove Table
 
-**Sintassi:** CAS Remove Table(tablename, <delete>)
+**Sintassi:** CAS Remove Table(tablename, &lt;delete&gt;)
 
 **Descrizione:** Questa operazione ignora la tabella in memoria. Il file creato con l&apos;operazione di salvataggio non è coinvolto. Se si specifica l&apos;eliminazione, la tabella sarà eliminata anche dal file system.
 
@@ -174,7 +172,7 @@ CAS Remove Table( "Casuser", "Big Class" );
 
 ### CAS Table To Data Table
 
-**Sintassi:** dt = CAS Table To Data Table(jsonstring, <Invisible(1|0) | Private(1|0) | Use Labels for Var Names(1|0)>)
+**Sintassi:** dt = CAS Table To Data Table(jsonstring, &lt;Invisible(1|0) | Private(1|0) | Use Labels for Var Names(1|0)&gt;)
 
 **Descrizione:** Converte il testo JSON di una tabella CAS SAS in una tabella di dati JMP.
 
@@ -485,7 +483,7 @@ cas << Submit( action );
 
 ### New CAS Server
 
-**Sintassi:** cas = New CAS Server(<...>)
+**Sintassi:** cas = New CAS Server(&lt;...&gt;)
 
 **Descrizione:** Crea un nuovo server CAS.
 

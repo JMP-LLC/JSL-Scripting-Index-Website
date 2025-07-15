@@ -6,7 +6,7 @@
 
 ### Add Line Annotation
 
-**语法:** obj << Add Line Annotation
+**语法:** obj &lt;&lt; Add Line Annotation
 
 **说明:** 在显示框上添加线条。
 
@@ -23,7 +23,7 @@ rbiv << Add Line Annotation( Line( 160, 235, 240, 235 ) );
 
 ### Add Pin Annotation
 
-**语法:** obj << Add Pin Annotation
+**语法:** obj &lt;&lt; Add Pin Annotation
 
 **说明:** 在显示框顶部添加固定注解。大多数特性（例如“Index Row”、“UniqueID”和“FoundPt”）专为内部使用设计。
 
@@ -56,7 +56,7 @@ dt << Bivariate(
 
 ### Add Polygon Annotation
 
-**语法:** obj << Add Polygon Annotation
+**语法:** obj &lt;&lt; Add Polygon Annotation
 
 **说明:** 在显示框上添加多边形。
 
@@ -77,7 +77,7 @@ rbiv << Add Polygon Annotation(
 
 ### Add Simple Shape Annotation
 
-**语法:** obj << Add Simple Shape Annotation
+**语法:** obj &lt;&lt; Add Simple Shape Annotation
 
 **说明:** 在显示框上添加简单形状。
 
@@ -95,7 +95,7 @@ rbiv << Add Simple Shape Annotation( Rectangle( 70, 180, 95, 215 ) );
 
 ### Add Text Annotation
 
-**语法:** obj << Add Text Annotation
+**语法:** obj &lt;&lt; Add Text Annotation
 
 **说明:** 在显示框上添加文本。
 
@@ -115,7 +115,7 @@ rbiv << Add Text Annotation(
 
 ### Append
 
-**语法:** obj << Append( db2 )
+**语法:** obj &lt;&lt; Append( db2 )
 
 **说明:** 将“db2”添加到显示树的“db”之后。
 
@@ -132,9 +132,7 @@ rbiv << append( Text Box( "=== below ===" ) );
 
 ### Background Color
 
-**语法:** obj << Background Color( color );
-
-color = obj << Get Background Color
+**语法:** obj &lt;&lt; Background Color( color );color = obj &lt;&lt; Get Background Color
 
 **说明:** 若背景颜色已设置，在绘制框内容之前将使用背景颜色填满框。若未设置背景颜色，包含框的背景和内容将显现。
 
@@ -156,9 +154,7 @@ tb << Background Color( "Yellow" );
 
 ### Border
 
-**语法:** obj << Border( sides );
-
-sides = obj << Get Border
+**语法:** obj &lt;&lt; Border( sides );sides = obj &lt;&lt; Get Border
 
 **说明:** 边框是沿显示框四周绘制的实线。若提供单个值，它将应用于所有边。若指定两个值，它们将应用于水平和垂直边框。
 
@@ -178,9 +174,7 @@ tb << Border( 1 );
 
 ### Border Color
 
-**语法:** obj << Border Color( color );
-
-color = obj << Get Border Color
+**语法:** obj &lt;&lt; Border Color( color );color = obj &lt;&lt; Get Border Color
 
 **说明:** 用于覆盖框边框默认颜色的可选颜色。
 
@@ -202,7 +196,7 @@ tb << Border Color( "Light Red" );
 
 ### Bring Window To Front
 
-**语法:** obj << Bring Window To Front
+**语法:** obj &lt;&lt; Bring Window To Front
 
 **说明:** 将窗口移至最前面。
 
@@ -218,7 +212,7 @@ w << Bring Window To Front;
 
 ### Child
 
-**语法:** obj << Child
+**语法:** obj &lt;&lt; Child
 
 **说明:** 返回该显示框的子级项。
 
@@ -238,7 +232,7 @@ Print( axisChild << Class Name() );
 
 ### Class Name
 
-**语法:** obj << Class Name
+**语法:** obj &lt;&lt; Class Name
 
 **说明:** 返回显示框的显示类的名称。
 
@@ -256,7 +250,7 @@ axisbox << Class Name();
 
 ### Clone Box
 
-**语法:** obj << Clone Box
+**语法:** obj &lt;&lt; Clone Box
 
 **说明:** 创建显示框的新副本。
 
@@ -275,7 +269,7 @@ rbiv << append( clonedBox );
 
 ### Close Window
 
-**语法:** obj << Close Window( <"NoSave"> )
+**语法:** obj &lt;&lt; Close Window( &lt;"NoSave"&gt; )
 
 **说明:** 关闭窗口。
 
@@ -291,7 +285,7 @@ w << Close Window;
 
 ### Copy Data
 
-**语法:** obj << Copy Data
+**语法:** obj &lt;&lt; Copy Data
 
 **说明:** 将矩阵或表中的制表符分隔数据复制到剪贴板。
 
@@ -305,7 +299,7 @@ mat << CopyData;
 
 ### Copy Graph
 
-**语法:** obj << Copy Graph
+**语法:** obj &lt;&lt; Copy Graph
 
 **说明:** 将包含图形和坐标轴的图片置于剪贴板中。
 
@@ -323,7 +317,7 @@ rbiv = biv << report;
 
 ### Copy Picture
 
-**语法:** obj << Copy Picture
+**语法:** obj &lt;&lt; Copy Picture
 
 **说明:** 将显示框图片置于剪贴板中。
 
@@ -340,7 +334,7 @@ rbiv << Copy Picture();
 
 ### Delete Box
 
-**语法:** obj << Delete Box
+**语法:** obj &lt;&lt; Delete Box
 
 **说明:** 删除该显示框。
 
@@ -358,7 +352,7 @@ axisbox << Delete Box();
 
 ### Deselect
 
-**语法:** obj << Deselect
+**语法:** obj &lt;&lt; Deselect
 
 **说明:** 取消选择用于“编辑”菜单命令的该对象。
 
@@ -384,7 +378,7 @@ refresh = Function( {},
 
 ### Dispatch
 
-**语法:** obj << Dispatch( {outline node, ...}, display element, display element type, command )
+**语法:** obj &lt;&lt; Dispatch( {outline node, ...}, display element, display element type, command )
 
 **说明:** 将“command”发送到显示树的特定部分。
 
@@ -401,9 +395,7 @@ rbiv << Dispatch( {}, "Bivar Plot", FrameBox, {Marker Size( 3 )} );
 
 ### Enabled
 
-**语法:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**语法:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **说明:** 未启用的对象不会响应键盘或鼠标输入。子对象会继承该属性，所以禁用的容器对象会导致所有子孙对象都被禁用。
 
@@ -435,7 +427,7 @@ New Window( "enabled",
 
 ### Find
 
-**语法:** obj << Find
+**语法:** obj &lt;&lt; Find
 
 **说明:** 返回使用指定的“argument”的显示框。
 
@@ -453,7 +445,7 @@ axisbox << Delete();
 
 ### Get Annotation
 
-**语法:** obj << Get Annotation
+**语法:** obj &lt;&lt; Get Annotation
 
 **说明:** 返回固定到该显示框的第一个注解。可以通过对结果使用 Sib() 来访问其他注解。
 
@@ -475,9 +467,7 @@ annotation << delete;
 
 ### Get Background Color
 
-**语法:** obj << Background Color( color );
-
-color = obj << Get Background Color
+**语法:** obj &lt;&lt; Background Color( color );color = obj &lt;&lt; Get Background Color
 
 **说明:** 若背景颜色已设置，在绘制框内容之前将使用背景颜色填满框。若未设置背景颜色，包含框的背景和内容将显现。
 
@@ -499,9 +489,7 @@ tb << Background Color( "Yellow" );
 
 ### Get Border
 
-**语法:** obj << Border( sides );
-
-sides = obj << Get Border
+**语法:** obj &lt;&lt; Border( sides );sides = obj &lt;&lt; Get Border
 
 **说明:** 边框是沿显示框四周绘制的实线。若提供单个值，它将应用于所有边。若指定两个值，它们将应用于水平和垂直边框。
 
@@ -521,9 +509,7 @@ tb << Border( 1 );
 
 ### Get Border Color
 
-**语法:** obj << Border Color( color );
-
-color = obj << Get Border Color
+**语法:** obj &lt;&lt; Border Color( color );color = obj &lt;&lt; Get Border Color
 
 **说明:** 用于覆盖框边框默认颜色的可选颜色。
 
@@ -545,7 +531,7 @@ tb << Border Color( "Light Red" );
 
 ### Get Content Size
 
-**语法:** obj << Get Content Size
+**语法:** obj &lt;&lt; Get Content Size
 
 **说明:** 返回窗口中内容的大小。
 
@@ -561,7 +547,7 @@ Show( c );
 
 ### Get Display Path
 
-**语法:** obj << Get Display Path( parent box, <receiver expr>, <Mode("XPath"|"Subscript")> )
+**语法:** obj &lt;&lt; Get Display Path( parent box, &lt;receiver expr&gt;, &lt;Mode("XPath"|"Subscript")&gt; )
 
 **说明:** 获取相对稳健的表达式以在 parent box 和 obj 之间导航。该路径不能保证在 JMP 版本之间是稳定的。receiver expr 归入到输出表达式（若提供）。若未提供，则改用为 parent box 提供的表达式。如示例中所示，该消息主要用于增加已有路径的稳健性。默认为 XPath 模式。
 
@@ -597,9 +583,7 @@ xpath expr << Select;
 
 ### Get Enabled
 
-**语法:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**语法:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **说明:** 未启用的对象不会响应键盘或鼠标输入。子对象会继承该属性，所以禁用的容器对象会导致所有子孙对象都被禁用。
 
@@ -631,7 +615,7 @@ New Window( "enabled",
 
 ### Get HTML
 
-**语法:** obj << Get HTML( <format> )
+**语法:** obj &lt;&lt; Get HTML( &lt;format&gt; )
 
 **说明:** 返回包含显示框的 HTML 源的字符串。
 
@@ -661,7 +645,7 @@ Web( "$TEMP/Oneway.html", JMPWindow );
 
 ### Get Height
 
-**语法:** width = obj << Get Height
+**语法:** width = obj &lt;&lt; Get Height
 
 **说明:** 返回显示框的高度。
 
@@ -679,9 +663,7 @@ fb << Get Height;
 
 ### Get Horizontal Alignment
 
-**语法:** obj << Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );
-
-"Default"|"Left"|"Center"|"Right" = obj << Get Horizontal Alignment
+**语法:** obj &lt;&lt; Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );"Default"|"Left"|"Center"|"Right" = obj &lt;&lt; Get Horizontal Alignment
 
 **说明:** 水平对齐控制框在容器中的位置（若框未占满整个空间）。
 
@@ -701,7 +683,7 @@ lb << Horizontal Alignment( "Right" );
 
 ### Get Journal
 
-**语法:** obj << Get Journal
+**语法:** obj &lt;&lt; Get Journal
 
 **说明:** 返回包含显示框的记录源的字符串。
 
@@ -718,9 +700,7 @@ Print( rbiv << Get Journal );
 
 ### Get Margin
 
-**语法:** obj << Margin( sides );
-
-sides = obj << Get Margin
+**语法:** obj &lt;&lt; Margin( sides );sides = obj &lt;&lt; Get Margin
 
 **说明:** 边距在框和邻接框的边框之间添加空白。使用命名参数，或提供值列表。若提供单个值，它将应用于所有边。若指定两个值，它们将应用于水平和垂直边距。
 
@@ -741,7 +721,7 @@ tb << Margin( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ### Get Max Size
 
-**语法:** width,height = obj << Get Max Size
+**语法:** width,height = obj &lt;&lt; Get Max Size
 
 **说明:** 返回该显示框的最大自动拉伸尺寸。
 
@@ -759,7 +739,7 @@ fb << Get Max Size;
 
 ### Get Min Size
 
-**语法:** width,height = obj << Get Min Size
+**语法:** width,height = obj &lt;&lt; Get Min Size
 
 **说明:** 返回该显示框的最小自动拉伸尺寸。
 
@@ -777,7 +757,7 @@ fb << Get Min Size;
 
 ### Get Namespace
 
-**语法:** obj << Get Namespace
+**语法:** obj &lt;&lt; Get Namespace
 
 **说明:** 返回与该显示对象关联的命名空间。
 
@@ -795,7 +775,7 @@ Show( ns:x, x );
 
 ### Get On Close
 
-**语法:** obj << Get On Close
+**语法:** obj &lt;&lt; Get On Close
 
 **说明:** 返回当窗口关闭时将运行的脚本或函数。
 
@@ -820,9 +800,7 @@ Show( w << Get On Close );
 
 ### Get Padding
 
-**语法:** obj << Padding( sides );
-
-sides = obj << Get Padding
+**语法:** obj &lt;&lt; Padding( sides );sides = obj &lt;&lt; Get Padding
 
 **说明:** 填充在内容和框的边框之间添加空白。使用命名参数，或提供值列表。若提供单个值，它将应用于所有边。若指定两个值，它们将应用于水平和垂直填充。
 
@@ -843,7 +821,7 @@ tb << Padding( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ### Get Page Setup
 
-**语法:** obj << Get Page Setup
+**语法:** obj &lt;&lt; Get Page Setup
 
 **说明:** 获取 PDF 的页面设置信息
 
@@ -858,7 +836,7 @@ w << get page setup();
 
 ### Get Picture
 
-**语法:** obj << Get Picture( <Scale(factor)>, <Type("Bitmap" | "Scalable")>, <View("Picture" | "Screen" | "Print"), <Appearance("Default" | "Current")>, <SubRect(Left(number), Top(number), Right(number), Bottom(number))> )
+**语法:** obj &lt;&lt; Get Picture( &lt;Scale(factor)&gt;, &lt;Type("Bitmap" | "Scalable")&gt;, &lt;View("Picture" | "Screen" | "Print"), &lt;Appearance("Default" | "Current")&gt;, &lt;SubRect(Left(number), Top(number), Right(number), Bottom(number))&gt; )
 
 **说明:** 将 db 捕获为图像对象。可选 Scale 参数将以统一尺度的分辨率呈现图像。统一尺度要求显示框可伸缩。Type 参数确定结果将是可缩放矢量图像还是位图。默认返回可缩放图像，它适合保存为矢量格式，例如 PDF。View 选项更改某些框的行为。"Picture" 的默认选项按照导出为图像格式时的方式绘制报表，其滚动区域完全显示。"Screen" 的视图模式按照屏幕上看到的方式绘制报表，"Print" 按照打印时的方式绘制报表，而没有任何页面设置功能。SubRect 选项将捕获生成的图像的一部分而不是整个图像。Appearance 选项可以从 "Default" 输出颜色更改为屏幕上看到的 "Current" 颜色。仅 Type "Bitmap"Appearance 支持 View、SubRect 和 Appearance 选项。
 
@@ -916,7 +894,7 @@ New Window( "Example", rbiv << Get Picture );
 
 ### Get Project
 
-**语法:** project = obj << Get Project()
+**语法:** project = obj &lt;&lt; Get Project()
 
 **说明:** 返回窗口的父项目，若它不在项目中则返回 Empty()。
 
@@ -934,7 +912,7 @@ Show( c );
 
 ### Get Properties
 
-**语法:** obj << Get Properties
+**语法:** obj &lt;&lt; Get Properties
 
 **说明:** 返回包含显示框的属性及其值的关联数组。
 
@@ -948,7 +926,7 @@ bb << Get Properties;
 
 ### Get Property
 
-**语法:** obj << Get Property( "property" )
+**语法:** obj &lt;&lt; Get Property( "property" )
 
 **说明:** 返回已命名的“property”的当前设置。
 
@@ -962,7 +940,7 @@ bb << Get Property( "Enabled" );
 
 ### Get Property List
 
-**语法:** obj << Get Property List
+**语法:** obj &lt;&lt; Get Property List
 
 **说明:** 返回显示框具有的属性列表。
 
@@ -976,7 +954,7 @@ bb << Get Property List;
 
 ### Get RTF
 
-**语法:** obj << Get RTF( <format> )
+**语法:** obj &lt;&lt; Get RTF( &lt;format&gt; )
 
 **说明:** 返回包含显示框的 RTF 源的字符串。
 
@@ -1006,7 +984,7 @@ Open( "$TEMP/Oneway.rtf" );
 
 ### Get Row States
 
-**语法:** rs = obj << Get Row States( <dt> )
+**语法:** rs = obj &lt;&lt; Get Row States( &lt;dt&gt; )
 
 **说明:** 返回一个向量，它包含给定数据表或当前数据表中每行的行状态。行状态可以来自表或来自框的过滤器上下文。
 
@@ -1095,7 +1073,7 @@ updatetext();
 
 ### Get Show Window
 
-**语法:** obj << Get Show Window
+**语法:** obj &lt;&lt; Get Show Window
 
 **说明:** 返回窗口的可见性。
 
@@ -1113,7 +1091,7 @@ Print( w << Get Show Window() );
 
 ### Get Size
 
-**语法:** width,height = obj << Get Size
+**语法:** width,height = obj &lt;&lt; Get Size
 
 **说明:** 返回显示框大小。
 
@@ -1131,7 +1109,7 @@ Print( fb << Get Size );
 
 ### Get Stretch
 
-**语法:** x,y = obj << Get Stretch
+**语法:** x,y = obj &lt;&lt; Get Stretch
 
 **说明:** 返回该显示框在水平和垂直方向的拉伸标志。
 
@@ -1157,9 +1135,7 @@ spacer << Get Stretch();
 
 ### Get Text Color
 
-**语法:** obj << Text Color( color );
-
-color = obj << Get Text Color
+**语法:** obj &lt;&lt; Text Color( color );color = obj &lt;&lt; Get Text Color
 
 **说明:** 将使用文本颜色（若已设置）绘制文本。若未设置属性，则框将继承包含框的文本颜色。
 
@@ -1181,15 +1157,11 @@ tb << Text Color( "Red" );
 
 ### Get UI Only
 
-**语法:** obj << UI Only( state=0|1 );
-
-state = obj << Get UI Only
+**语法:** obj &lt;&lt; UI Only( state=0|1 );state = obj &lt;&lt; Get UI Only
 
 ### Get User Resizable
 
-**语法:** obj << User Resizable;
-
-obj << Get User Resizable
+**语法:** obj &lt;&lt; User Resizable;obj &lt;&lt; Get User Resizable
 
 **说明:** 若用户可以调整该框的大小，则光标将在底部和右边缘附近改变，允许拖放式调整大小。
 
@@ -1226,9 +1198,7 @@ scroll << User Resizable( {0, 0} );
 
 ### Get Vertical Alignment
 
-**语法:** obj << Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );
-
-"Default"|"Top"|"Center"|"Bottom" = obj << Get Vertical Alignment
+**语法:** obj &lt;&lt; Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );"Default"|"Top"|"Center"|"Bottom" = obj &lt;&lt; Get Vertical Alignment
 
 **说明:** 垂直对齐控制在容器中的位置（若框未占满整个空间）。
 
@@ -1250,9 +1220,7 @@ lb << Vertical Alignment( "Bottom" );
 
 ### Get Visibility
 
-**语法:** obj << Visibility( "Visible"|"Hidden"|"Collapse" );
-
-"Visible"|"Hidden"|"Collapse" = obj << Get Visibility
+**语法:** obj &lt;&lt; Visibility( "Visible"|"Hidden"|"Collapse" );"Visible"|"Hidden"|"Collapse" = obj &lt;&lt; Get Visibility
 
 **说明:** 可见性决定框是否显示以及框是否占据空间。"Visible" 的默认值表示将显示对象。"Hidden" 框为不显示但仍占据空间，而 "Collapsed" 框不在布局中占据空间。
 
@@ -1273,7 +1241,7 @@ Show( tb << Get Visibility );
 
 ### Get Web Support
 
-**语法:** obj << Get Web Support
+**语法:** obj &lt;&lt; Get Web Support
 
 **说明:** 返回一个数字，指示显示对象的交互式 HTML 支持的水平。1 表示支持部分或全部元素。0 表示不支持。
 
@@ -1289,7 +1257,7 @@ Show( s );
 
 ### Get Window Icon
 
-**语法:** obj << Get Window Icon
+**语法:** obj &lt;&lt; Get Window Icon
 
 **说明:** 返回窗口图标。
 
@@ -1305,7 +1273,7 @@ Show( t );
 
 ### Get Window Position
 
-**语法:** obj << Get Window Position
+**语法:** obj &lt;&lt; Get Window Position
 
 **说明:** 返回窗口的位置。
 
@@ -1321,7 +1289,7 @@ Show( p );
 
 ### Get Window Size
 
-**语法:** obj << Get Window Size
+**语法:** obj &lt;&lt; Get Window Size
 
 **说明:** 返回窗口大小。
 
@@ -1337,7 +1305,7 @@ Show( s );
 
 ### Get Window Title
 
-**语法:** obj << Get Window Title
+**语法:** obj &lt;&lt; Get Window Title
 
 **说明:** 返回窗口标题。
 
@@ -1353,7 +1321,7 @@ Show( t );
 
 ### Get Window View
 
-**语法:** obj << Get Window View
+**语法:** obj &lt;&lt; Get Window View
 
 **说明:** 返回当前窗口视图。窗口可以为“可见”、“不可见”或“私有”。
 
@@ -1368,7 +1336,7 @@ Print( w << Get Window View() );
 
 ### Get XML
 
-**语法:** obj << Get XML( <English(0|1)>, <NoData(0|1)> )
+**语法:** obj &lt;&lt; Get XML( &lt;English(0|1)&gt;, &lt;NoData(0|1)&gt; )
 
 **说明:** 检索 XML 格式的显示树。默认情况下，字符串以本地语言返回，XML 在某些框中包括数据值。使用 English 选项返回可用的英语字符串。使用 NoData 选项省略框中的数据值，对于某些显示树来说，这些数据值可能非常大。
 
@@ -1383,7 +1351,7 @@ a << set text( win << get xml );
 
 ### GetOffset
 
-**语法:** x,y = obj << GetOffset
+**语法:** x,y = obj &lt;&lt; GetOffset
 
 **说明:** 返回相对于父框该显示框的偏移。您可能需要在循环中使用 <<Parent 消息来累积若干偏移。
 
@@ -1428,9 +1396,7 @@ New Window( "example",
 
 ### Horizontal Alignment
 
-**语法:** obj << Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );
-
-"Default"|"Left"|"Center"|"Right" = obj << Get Horizontal Alignment
+**语法:** obj &lt;&lt; Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );"Default"|"Left"|"Center"|"Right" = obj &lt;&lt; Get Horizontal Alignment
 
 **说明:** 水平对齐控制框在容器中的位置（若框未占满整个空间）。
 
@@ -1450,7 +1416,7 @@ lb << Horizontal Alignment( "Right" );
 
 ### Inval
 
-**语法:** obj << Inval
+**语法:** obj &lt;&lt; Inval
 
 **说明:** 使显示框无效。若 <<UpdateWindow 消息已发送或操作系统有时间更新，窗口将更新。
 
@@ -1492,7 +1458,7 @@ New Window( "Inval example",
 
 ### Is Dirty
 
-**语法:** obj << Is Dirty
+**语法:** obj &lt;&lt; Is Dirty
 
 **说明:** 获取文档的修改状态。1 表示文档已修改并且将提示保存；0 表示文档未修改。
 
@@ -1511,7 +1477,7 @@ Show( ww << Is Dirty );
 
 ### Is Modal Dialog
 
-**语法:** obj << Is Modal Dialog
+**语法:** obj &lt;&lt; Is Modal Dialog
 
 **说明:** 若窗口是模态对话框，则返回 true。仅当从窗口处理程序回调调用时有用。
 
@@ -1530,7 +1496,7 @@ With Window Handler(
 
 ### Journal
 
-**语法:** obj << Journal
+**语法:** obj &lt;&lt; Journal
 
 **说明:** 从显示框生成记录。
 
@@ -1547,7 +1513,7 @@ rbiv << journal;
 
 ### Journal Window
 
-**语法:** obj << Journal Window
+**语法:** obj &lt;&lt; Journal Window
 
 **说明:** 打开窗口的记录窗口。
 
@@ -1562,7 +1528,7 @@ w << Journal Window;
 
 ### Launch
 
-**语法:** obj << Launch
+**语法:** obj &lt;&lt; Launch
 
 **说明:** 在显示框的上下文中对指定的“argument”求值。
 
@@ -1584,7 +1550,7 @@ ob3 << launch( Bivariate( Y( :height ), X( :weight ) ) );
 
 ### Make RowState Handler
 
-**语法:** rs = obj << Make RowState Handler( <dt>, function(a) )
+**语法:** rs = obj &lt;&lt; Make RowState Handler( &lt;dt&gt;, function(a) )
 
 **说明:** 为给定的数据表或当前数据表创建行状态处理程序。当框的过滤器上下文中的行状态更改时调用该函数。函数的参数保存已更改的行号，若行状态过滤器已更改，则保存 -1。
 
@@ -1673,9 +1639,7 @@ updatetext();
 
 ### Margin
 
-**语法:** obj << Margin( sides );
-
-sides = obj << Get Margin
+**语法:** obj &lt;&lt; Margin( sides );sides = obj &lt;&lt; Get Margin
 
 **说明:** 边距在框和邻接框的边框之间添加空白。使用命名参数，或提供值列表。若提供单个值，它将应用于所有边。若指定两个值，它们将应用于水平和垂直边距。
 
@@ -1696,7 +1660,7 @@ tb << Margin( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ### Maximize Window
 
-**语法:** obj << Maximize Window( <state=0|1> )
+**语法:** obj &lt;&lt; Maximize Window( &lt;state=0|1&gt; )
 
 **说明:** 最大化窗口。默认参数为 1。
 
@@ -1714,7 +1678,7 @@ w << Maximize Window( 0 );
 
 ### Minimize Window
 
-**语法:** obj << Minimize Window( <state=0|1> )
+**语法:** obj &lt;&lt; Minimize Window( &lt;state=0|1&gt; )
 
 **说明:** 最小化窗口。默认参数为 1。
 
@@ -1732,7 +1696,7 @@ w << Minimize Window( 0 );
 
 ### Move Window
 
-**语法:** obj << Move Window( x,y )
+**语法:** obj &lt;&lt; Move Window( x,y )
 
 **说明:** 将窗口移至指定位置。
 
@@ -1748,7 +1712,7 @@ w << Move Window( 500, 500 );
 
 ### Next
 
-**语法:** obj << Next
+**语法:** obj &lt;&lt; Next
 
 **说明:** 返回该显示框后的显示框。
 
@@ -1766,7 +1730,7 @@ Print( next << Class Name() );
 
 ### On Close
 
-**语法:** obj << On Close( script )
+**语法:** obj &lt;&lt; On Close( script )
 
 **说明:** 设置脚本或函数以在关闭窗口时运行。该脚本应返回 1 以允许关闭，或返回 0 以阻止窗口关闭。
 
@@ -1814,7 +1778,7 @@ w << On Close(
 
 ### Optimize Display
 
-**语法:** obj << Optimize Display
+**语法:** obj &lt;&lt; Optimize Display
 
 **说明:** 将数据表的列宽度和窗口设置为最佳大小。
 
@@ -1831,7 +1795,7 @@ dt << Optimize Display;
 
 ### Pad Window
 
-**语法:** obj << Pad Window( bool )
+**语法:** obj &lt;&lt; Pad Window( bool )
 
 **说明:** 开启或关闭窗口填充。
 
@@ -1848,9 +1812,7 @@ r << Pad Window( 0 );
 
 ### Padding
 
-**语法:** obj << Padding( sides );
-
-sides = obj << Get Padding
+**语法:** obj &lt;&lt; Padding( sides );sides = obj &lt;&lt; Get Padding
 
 **说明:** 填充在内容和框的边框之间添加空白。使用命名参数，或提供值列表。若提供单个值，它将应用于所有边。若指定两个值，它们将应用于水平和垂直填充。
 
@@ -1871,7 +1833,7 @@ tb << Padding( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ### Page Break
 
-**语法:** obj << Page Break
+**语法:** obj &lt;&lt; Page Break
 
 **说明:** 在显示框之前插入分页符。
 
@@ -1897,7 +1859,7 @@ ob3 << Page Break;
 
 ### Parent
 
-**语法:** obj << Parent
+**语法:** obj &lt;&lt; Parent
 
 **说明:** 返回该显示框的父级项。
 
@@ -1916,7 +1878,7 @@ Print( axisParent << Class Name() );
 
 ### Prepend
 
-**语法:** obj << Prepend( db2 )
+**语法:** obj &lt;&lt; Prepend( db2 )
 
 **说明:** 将“db2”添加到显示树的“db”之前。
 
@@ -1933,7 +1895,7 @@ rbiv << prepend( Text Box( "=== above ===" ) );
 
 ### Prev Sib
 
-**语法:** obj << Prev Sib
+**语法:** obj &lt;&lt; Prev Sib
 
 **说明:** 返回该显示框的前一个平级项。
 
@@ -1954,7 +1916,7 @@ Print( axisSibling << Class Name() );
 
 ### Print Window
 
-**语法:** obj << Print Window
+**语法:** obj &lt;&lt; Print Window
 
 **说明:** 打印窗口。
 
@@ -1969,7 +1931,7 @@ w << Print Window;
 
 ### Reshow
 
-**语法:** obj << Reshow
+**语法:** obj &lt;&lt; Reshow
 
 **说明:** 使显示框无效并用新内容更新窗口。若随着更新需要更多的控件，请参见 <<Inval 和 <<UpdateWindow 消息。
 
@@ -1998,7 +1960,7 @@ New Window( "Reshow example",
 
 ### Save Capture
 
-**语法:** obj << Save Capture( <"path">, <format>, <Add Sibling(n)> )
+**语法:** obj &lt;&lt; Save Capture( &lt;"path"&gt;, &lt;format&gt;, &lt;Add Sibling(n)&gt; )
 
 **说明:** 在指定的 path 处保存显示框抓屏图。若未指定 path，则显示“另存为”窗口。
 
@@ -2015,7 +1977,7 @@ rbiv << Save Capture( "$TEMP/jmp_example.png", "png" );
 
 ### Save HTML
 
-**语法:** obj << Save HTML( <pathname>, <format> )
+**语法:** obj &lt;&lt; Save HTML( &lt;pathname&gt;, &lt;format&gt; )
 
 **说明:** 以指定的“format”格式保存 HTML 源和图形文件夹。
 
@@ -2032,7 +1994,7 @@ rbiv << Save HTML( "$TEMP/jmp_example.html" );
 
 ### Save Interactive HTML
 
-**语法:** obj << Save Interactive HTML( <pathname>, <Boolean> )
+**语法:** obj &lt;&lt; Save Interactive HTML( &lt;pathname&gt;, &lt;Boolean&gt; )
 
 **说明:** 将带数据的交互式 HTML 保存至文件。Boolean 参数表示报表为静态。
 
@@ -2049,7 +2011,7 @@ rbiv << Save Interactive HTML( "$TEMP/jmp_example.html" );
 
 ### Save Journal
 
-**语法:** obj << Save Journal( <pathname> )
+**语法:** obj &lt;&lt; Save Journal( &lt;pathname&gt; )
 
 **说明:** 保存显示框的记录源。
 
@@ -2066,7 +2028,7 @@ rbiv << Save Journal( "$TEMP/jmp_example.jrn" );
 
 ### Save MSWord
 
-**语法:** obj << Save MSWord( <pathname>, <format> )
+**语法:** obj &lt;&lt; Save MSWord( &lt;pathname&gt;, &lt;format&gt; )
 
 **说明:** 将显示框保存为 Microsoft Word 文档（仅限于 Windows）。
 
@@ -2083,7 +2045,7 @@ rbiv << Save MSWord( "$TEMP/jmp_example.doc" );
 
 ### Save PDF
 
-**语法:** obj << Save PDF( <pathname>, <Show Page Setup(0|1)>, <Portrait(0|1)> )
+**语法:** obj &lt;&lt; Save PDF( &lt;pathname&gt;, &lt;Show Page Setup(0|1)&gt;, &lt;Portrait(0|1)&gt; )
 
 **说明:** 将显示框保存为 PDF 文件。
 
@@ -2100,7 +2062,7 @@ rbiv << Save PDF( "$TEMP/jmp_example.pdf" );
 
 ### Save Picture
 
-**语法:** obj << Save Picture( <pathname>, <format>, <Scale(factor)>, <Type("Bitmap" | "Scalable")>, <View("Picture" | "Screen" | "Print"), <Appearance("Default" | "Current")>, <SubRect(Left(number), Top(number), Right(number), Bottom(number))> )
+**语法:** obj &lt;&lt; Save Picture( &lt;pathname&gt;, &lt;format&gt;, &lt;Scale(factor)&gt;, &lt;Type("Bitmap" | "Scalable")&gt;, &lt;View("Picture" | "Screen" | "Print"), &lt;Appearance("Default" | "Current")&gt;, &lt;SubRect(Left(number), Top(number), Right(number), Bottom(number))&gt; )
 
 **说明:** 保存显示框的图片。支持的格式包括 EMF(Windows)、PICT(Macintosh)、JPEG 或 JPG、GIF 或 PNG。可选的 Scale 参数将以统一尺度的分辨率呈现图像。统一尺度要求显示框可伸缩。Type 参数确定结果将是可缩放矢量图像还是位图。默认返回可缩放图像，它适合保存为矢量格式，例如 PDF。View 选项更改某些框的行为。"Picture" 的默认选项按照导出为图像格式时的方式绘制报表，其滚动区域完全显示。"Screen" 的视图模式按照屏幕上看到的方式绘制报表，"Print" 按照打印时的方式绘制报表，而没有任何页面设置功能。SubRect 选项将捕获生成的图像的一部分而不是整个图像。Appearance 选项可以从 "Default" 输出颜色更改为屏幕上看到的 "Current" 颜色。只有 Type "Bitmap" 支持 View、SubRect 和 Appearance 选项。
 
@@ -2170,7 +2132,7 @@ rbiv << Save Picture( "$TEMP/jmp_example.png", "png" );
 
 ### Save Presentation
 
-**语法:** obj << Save Presentation( "filename.pptx", <Template("path\to\my_template.pptx")>, <Insert(Begin|End|#) | Replace(Begin|End|#) | Append>, <Outline Titles(None|Hide|TopLeft|TopRight|BottomLeft|BottomRight)>, <"EMF"|"PNG"|"JPG"|"Native"> )
+**语法:** obj &lt;&lt; Save Presentation( "filename.pptx", &lt;Template("path\to\my_template.pptx")&gt;, &lt;Insert(Begin|End|#) | Replace(Begin|End|#) | Append&gt;, &lt;Outline Titles(None|Hide|TopLeft|TopRight|BottomLeft|BottomRight)&gt;, &lt;"EMF"|"PNG"|"JPG"|"Native"&gt; )
 
 **说明:** 在演示文稿中保存显示框表和图形幻灯片。演示文稿可以使用 Microsoft PowerPoint 或其他演示文稿软件打开。
 
@@ -2187,7 +2149,7 @@ Open( "$TEMP/jmp_example.pptx" );
 
 ### Save RTF
 
-**语法:** obj << Save RTF( <pathname>, <format> )
+**语法:** obj &lt;&lt; Save RTF( &lt;pathname&gt;, &lt;format&gt; )
 
 **说明:** 以指定的“format”格式保存带图形的 RTF 源。
 
@@ -2204,7 +2166,7 @@ rbiv << Save RTF( "$TEMP/jmp_example.rtf", "png" );
 
 ### Save Text
 
-**语法:** obj << Save Text( <pathname>, <format> )
+**语法:** obj &lt;&lt; Save Text( &lt;pathname&gt;, &lt;format&gt; )
 
 **说明:** 保存包含显示框的文本的文件。
 
@@ -2219,7 +2181,7 @@ a << save text( "$TEMP/jmp_example.txt" );
 
 ### Save Window Report
 
-**语法:** obj << Save Window Report( pathname, <embed data(0|1)> )
+**语法:** obj &lt;&lt; Save Window Report( pathname, &lt;embed data(0|1)&gt; )
 
 **说明:** 将当前报表窗口保存至 JMP 报表文件 (.jrp)。
 
@@ -2237,7 +2199,7 @@ d << Save Window Report( "$DOCUMENTS/test.jrp", embed data( 1 ) );
 
 ### Scroll Window
 
-**语法:** obj << Scroll Window( DisplayBox | <Relative(<v> | <h>,<v>)> | <Absolute(<v> | <h>,<v>) )
+**语法:** obj &lt;&lt; Scroll Window( DisplayBox | &lt;Relative(&lt;v&gt; | &lt;h&gt;,&lt;v&gt;)&gt; | &lt;Absolute(&lt;v&gt; | &lt;h&gt;,&lt;v&gt;) )
 
 **说明:** 调整窗口滚动条以显示给定的 DisplayBox，或滚动相对像素数，或滚动至绝对像素位置。可以使用关键字 "Start" 或 "End" 来代替像素数。
 
@@ -2312,7 +2274,7 @@ Wait( 1 );
 
 ### Select
 
-**语法:** obj << Select
+**语法:** obj &lt;&lt; Select
 
 **说明:** 选择该对象，以供“编辑”菜单命令使用。
 
@@ -2327,7 +2289,7 @@ ex << Select;
 
 ### Set Content Size
 
-**语法:** obj << Set Content Size( x,y )
+**语法:** obj &lt;&lt; Set Content Size( x,y )
 
 **说明:** 设置窗口中内容的大小。
 
@@ -2353,7 +2315,7 @@ w << Set Content Size( 400, 300 );
 
 ### Set Dirty
 
-**语法:** obj << Set Dirty
+**语法:** obj &lt;&lt; Set Dirty
 
 **说明:** 设置文档的修改状态。0 将不提示保存；1 将提示。
 
@@ -2372,7 +2334,7 @@ Show( ww << Is Dirty );
 
 ### Set Height
 
-**语法:** obj << Set Height( width )
+**语法:** obj &lt;&lt; Set Height( width )
 
 **说明:** 设置显示框的高度。
 
@@ -2390,7 +2352,7 @@ fb << Set Height( 150 );
 
 ### Set Main Window
 
-**语法:** obj << Set Main Window
+**语法:** obj &lt;&lt; Set Main Window
 
 **说明:** 将窗口设置为 JMP 中的主窗口，并将之前的主窗口设置为常规窗口
 
@@ -2405,7 +2367,7 @@ w << Set Main Window;
 
 ### Set Max Size
 
-**语法:** obj << Set Max Size( width,height )
+**语法:** obj &lt;&lt; Set Max Size( width,height )
 
 **说明:** 设置该显示框的最大自动拉伸尺寸。
 
@@ -2424,7 +2386,7 @@ fb << Get Max Size;
 
 ### Set Min Size
 
-**语法:** obj << Set Min Size( width,height )
+**语法:** obj &lt;&lt; Set Min Size( width,height )
 
 **说明:** 设置该显示框的最小自动拉伸尺寸。
 
@@ -2443,7 +2405,7 @@ fb << Get Min Size;
 
 ### Set Page Setup
 
-**语法:** obj << Set Page Setup( <margins(left, top, right, bottom)>, <scale(s)>, <portrait(0|1)>, <paper size(p)>, <Table of Contents(always, never, default)>  )
+**语法:** obj &lt;&lt; Set Page Setup( &lt;margins(left, top, right, bottom)&gt;, &lt;scale(s)&gt;, &lt;portrait(0|1)&gt;, &lt;paper size(p)&gt;, &lt;Table of Contents(always, never, default)&gt; )
 
 **说明:** 设置打印或保存为 pdf 时使用的页面设置信息。可以选择从分级显示项框生成目录。
 
@@ -2465,7 +2427,7 @@ w << Save pdf( "$DOCUMENTS\test.pdf" );
 
 ### Set Print Footers
 
-**语法:** obj << Set Print Footers( left footer, center footer, right header )
+**语法:** obj &lt;&lt; Set Print Footers( left footer, center footer, right header )
 
 **说明:** 为打印输出设置居左、居中和居右的页脚
 
@@ -2484,7 +2446,7 @@ w << Print Window;
 
 ### Set Print Headers
 
-**语法:** obj << Set Print Headers( left header, center header, right header )
+**语法:** obj &lt;&lt; Set Print Headers( left header, center header, right header )
 
 **说明:** 为打印输出设置居左、居中和居右的页眉
 
@@ -2503,7 +2465,7 @@ w << Print Window;
 
 ### Set Property
 
-**语法:** obj << Set Property( "property", value )
+**语法:** obj &lt;&lt; Set Property( "property", value )
 
 **说明:** 设置显示框的已命名的“property”的值。
 
@@ -2517,7 +2479,7 @@ bb << Set Property( "Enabled", 0 );
 
 ### Set Report Title
 
-**语法:** obj << Set Report Title( "string" )
+**语法:** obj &lt;&lt; Set Report Title( "string" )
 
 **说明:** 更改报表标题。
 
@@ -2534,7 +2496,7 @@ rbiv << Set Report Title( "New Title" );
 
 ### Set Stretch
 
-**语法:** obj << Set Stretch( x,y )
+**语法:** obj &lt;&lt; Set Stretch( x,y )
 
 **说明:** 设置框的水平和垂直拉伸行为。随 Window 拉伸的框将随窗口或拆分窗口大小更改调整大小。拉伸 Fill 的框将拉伸以填充它们容器中的可用空间。拉伸设置为 Off 的框通常情况下不拉伸。大多数框默认设置为 Neutral，这表示它们将根据其子框确定行为。
 
@@ -2582,7 +2544,7 @@ ts << Set Stretch( "Window", "Window" );
 
 ### Set Summary Behavior
 
-**语法:** obj << Set Summary Behavior( "Default"|"Visible"|"Collapse" )
+**语法:** obj &lt;&lt; Set Summary Behavior( "Default"|"Visible"|"Collapse" )
 
 **说明:** Sets the behavior of the box when a report is viewed in Summary mode.
 
@@ -2601,7 +2563,7 @@ tb << Set Summary Behavior( "Visible" );
 
 ### Set Window Icon
 
-**语法:** obj << Set Window Icon( icon name )
+**语法:** obj &lt;&lt; Set Window Icon( icon name )
 
 **说明:** 设置窗口图标。
 
@@ -2616,7 +2578,7 @@ w << Set Window Icon( "Scatter3D" );
 
 ### Set Window Size
 
-**语法:** obj << Set Window Size( x,y )
+**语法:** obj &lt;&lt; Set Window Size( x,y )
 
 **说明:** 设置窗口大小。
 
@@ -2631,7 +2593,7 @@ w << Set Window Size( 800, 1200 );
 
 ### Set Window Title
 
-**语法:** obj << Set Window Title( "string" )
+**语法:** obj &lt;&lt; Set Window Title( "string" )
 
 **说明:** 更改窗口标题。
 
@@ -2648,7 +2610,7 @@ rbiv << Set Window Title( "New Title" );
 
 ### Show Properties
 
-**语法:** obj << Show Properties
+**语法:** obj &lt;&lt; Show Properties
 
 **说明:** 为显示框显示属性编辑器
 
@@ -2665,7 +2627,7 @@ rbiv << Show Properties();
 
 ### Show Tree Structure
 
-**语法:** obj << Show Tree Structure
+**语法:** obj &lt;&lt; Show Tree Structure
 
 **说明:** 显示该显示框及其相关节点的层次树状结构。
 
@@ -2682,7 +2644,7 @@ rbiv << Show Tree Structure();
 
 ### Show Window
 
-**语法:** obj << Show Window( state=0|1 )
+**语法:** obj &lt;&lt; Show Window( state=0|1 )
 
 **说明:** 显示或隐藏窗口。该功能可用于临时隐藏窗口。 默认开启。
 
@@ -2700,7 +2662,7 @@ w << Show Window( 1 );
 
 ### Sib
 
-**语法:** obj << Sib
+**语法:** obj &lt;&lt; Sib
 
 **说明:** 返回该显示框的平级项。
 
@@ -2719,7 +2681,7 @@ Print( axisSibling << Class Name() );
 
 ### Sib Append
 
-**语法:** obj << Sib Append( Display box, Horizontal|Vertical )
+**语法:** obj &lt;&lt; Sib Append( Display box, Horizontal|Vertical )
 
 **说明:** 紧接在该显示框之后添加一个显示框。
 
@@ -2741,7 +2703,7 @@ fb << sib append( Text Box( "=== below ===" ), "Vertical" );
 
 ### Sib Prepend
 
-**语法:** obj << Sib Prepend( Display box, Horizontal|Vertical )
+**语法:** obj &lt;&lt; Sib Prepend( Display box, Horizontal|Vertical )
 
 **说明:** 紧接在该显示框之前添加一个显示框。
 
@@ -2763,7 +2725,7 @@ fb << sib prepend( Text Box( "=== above ===" ), "Vertical" );
 
 ### Size Window
 
-**语法:** obj << Size Window( x,y )
+**语法:** obj &lt;&lt; Size Window( x,y )
 
 **说明:** 设置窗口大小。
 
@@ -2778,9 +2740,7 @@ w << Size Window( 500, 500 );
 
 ### Text Color
 
-**语法:** obj << Text Color( color );
-
-color = obj << Get Text Color
+**语法:** obj &lt;&lt; Text Color( color );color = obj &lt;&lt; Get Text Color
 
 **说明:** 将使用文本颜色（若已设置）绘制文本。若未设置属性，则框将继承包含框的文本颜色。
 
@@ -2802,7 +2762,7 @@ tb << Text Color( "Red" );
 
 ### Top Parent
 
-**语法:** obj << Top Parent
+**语法:** obj &lt;&lt; Top Parent
 
 **说明:** 返回该显示框的根级。
 
@@ -2820,13 +2780,11 @@ Print( rootParent << Class Name() );
 
 ### UI Only
 
-**语法:** obj << UI Only( state=0|1 );
-
-state = obj << Get UI Only
+**语法:** obj &lt;&lt; UI Only( state=0|1 );state = obj &lt;&lt; Get UI Only
 
 ### Update Window
 
-**语法:** obj << Update Window
+**语法:** obj &lt;&lt; Update Window
 
 **说明:** 若有失效的区域，则更新包含显示框的窗口。<<Inval 消息创建失效区域。
 
@@ -2878,9 +2836,7 @@ New Window( "rect",
 
 ### User Resizable
 
-**语法:** obj << User Resizable;
-
-obj << Get User Resizable
+**语法:** obj &lt;&lt; User Resizable;obj &lt;&lt; Get User Resizable
 
 **说明:** 若用户可以调整该框的大小，则光标将在底部和右边缘附近改变，允许拖放式调整大小。
 
@@ -2917,9 +2873,7 @@ scroll << User Resizable( {0, 0} );
 
 ### Vertical Alignment
 
-**语法:** obj << Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );
-
-"Default"|"Top"|"Center"|"Bottom" = obj << Get Vertical Alignment
+**语法:** obj &lt;&lt; Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );"Default"|"Top"|"Center"|"Bottom" = obj &lt;&lt; Get Vertical Alignment
 
 **说明:** 垂直对齐控制在容器中的位置（若框未占满整个空间）。
 
@@ -2941,9 +2895,7 @@ lb << Vertical Alignment( "Bottom" );
 
 ### Visibility
 
-**语法:** obj << Visibility( "Visible"|"Hidden"|"Collapse" );
-
-"Visible"|"Hidden"|"Collapse" = obj << Get Visibility
+**语法:** obj &lt;&lt; Visibility( "Visible"|"Hidden"|"Collapse" );"Visible"|"Hidden"|"Collapse" = obj &lt;&lt; Get Visibility
 
 **说明:** 可见性决定框是否显示以及框是否占据空间。"Visible" 的默认值表示将显示对象。"Hidden" 框为不显示但仍占据空间，而 "Collapsed" 框不在布局中占据空间。
 
@@ -2964,7 +2916,7 @@ Show( tb << Get Visibility );
 
 ### Window Class Name
 
-**语法:** obj << Window Class Name
+**语法:** obj &lt;&lt; Window Class Name
 
 **说明:** 返回显示框的窗口类的名称。
 
@@ -2982,7 +2934,7 @@ Show( rbiv << Window Class Name() );
 
 ### XPath
 
-**语法:** obj << XPath( XPath expression, <English(0|1)>, <NoData(0|1)> )
+**语法:** obj &lt;&lt; XPath( XPath expression, &lt;English(0|1)&gt;, &lt;NoData(0|1)&gt; )
 
 **说明:** 将 XPath 表达式应用于显示树的 XML 表示并返回结果。默认情况下，字符串以本地语言返回，XML 在某些框中包括数据值。使用 English 选项返回可用的英语字符串。使用 NoData 选项来省略框中的数据值，当您的查询仅基于框特性时，这些数据值对性能很有用。
 
@@ -3062,7 +3014,7 @@ biv = dt << Run Script( "Bivariate" );
 
 ### Zoom Window
 
-**语法:** obj << Zoom Window
+**语法:** obj &lt;&lt; Zoom Window
 
 **说明:** 调整窗口大小，使其大到足够显示其所有内容。
 
@@ -3081,7 +3033,7 @@ w << Zoom Window;
 
 ### Text Edit Box
 
-**语法:** y = Text Edit Box( text, <<Password Style( bool ), <<Set Script( script ), <<Set Width( value ) )
+**语法:** y = Text Edit Box( text, &lt;&lt;Password Style( bool ), &lt;&lt;Set Script( script ), &lt;&lt;Set Width( value ) )
 
 **说明:** 返回包含可编辑文本的显示框。
 
@@ -3096,7 +3048,7 @@ win = New Window( "Example", fontobj = text = Text Edit Box( "Example Text" ) );
 
 ### Bullet point
 
-**语法:** obj << Bullet point( state=0|1 )
+**语法:** obj &lt;&lt; Bullet point( state=0|1 )
 
 **说明:** 绘制置于文本之前的项目符号字符。
 
@@ -3110,7 +3062,7 @@ text << Bullet Point( 1 );
 
 ### Enable
 
-**语法:** obj << Enable( state=0|1 )
+**语法:** obj &lt;&lt; Enable( state=0|1 )
 
 **说明:** 设置是否可以编辑 TextEditBox。
 
@@ -3124,7 +3076,7 @@ text << Enable( 0 );
 
 ### Fixed Size
 
-**语法:** obj << Fixed Size( state=0|1, <width>, <height> )
+**语法:** obj &lt;&lt; Fixed Size( state=0|1, &lt;width&gt;, &lt;height&gt; )
 
 **说明:** 若启用，当文本宽度大于 TextBox 宽度时 TextBox 不会加宽。
 
@@ -3139,7 +3091,7 @@ text << Set Text( "Some More Text" );
 
 ### Get Base Font
 
-**语法:** font = obj << Get Base Font
+**语法:** font = obj &lt;&lt; Get Base Font
 
 **说明:** 返回该框绘制的文本所用的基本字体。基本字体包括“Title”、“Text”、“Annotation”之类的预定义名称，以及在字体“首选项”中指定的那些字体。
 
@@ -3153,7 +3105,7 @@ fontobj << Get Base Font;
 
 ### Get Bullet
 
-**语法:** bullet = obj << Get Bullet
+**语法:** bullet = obj &lt;&lt; Get Bullet
 
 **说明:** 返回指示值，指示是否在文本之前绘制项目符号字符。
 
@@ -3168,7 +3120,7 @@ text << Get Bullet;
 
 ### Get Font
 
-**语法:** obj << Get Font
+**语法:** obj &lt;&lt; Get Font
 
 ```jsl
 
@@ -3180,7 +3132,7 @@ fontobj << Get Font;
 
 ### Get Font Name
 
-**语法:** obj << Get Font Name
+**语法:** obj &lt;&lt; Get Font Name
 
 **说明:** 返回字体名称。
 
@@ -3195,7 +3147,7 @@ fontobj << Get Font Name;
 
 ### Get Font Scale
 
-**语法:** obj << Get Font Scale
+**语法:** obj &lt;&lt; Get Font Scale
 
 **说明:** 返回字体的当前缩放因子。
 
@@ -3209,7 +3161,7 @@ fontobj << Get Font Scale;
 
 ### Get Font Size
 
-**语法:** obj << Get Font Size
+**语法:** obj &lt;&lt; Get Font Size
 
 **说明:** 返回字体大小。
 
@@ -3223,7 +3175,7 @@ fontobj << Get Font Size;
 
 ### Get Font Style
 
-**语法:** obj << Get Font Style
+**语法:** obj &lt;&lt; Get Font Style
 
 **说明:** 返回字体样式名称。
 
@@ -3239,7 +3191,7 @@ fontobj << Get Font Style;
 
 ### Get Function
 
-**语法:** obj << Get Function
+**语法:** obj &lt;&lt; Get Function
 
 **说明:** 获取在编辑文本后执行的函数。
 
@@ -3263,7 +3215,7 @@ teb << Get Function;
 
 ### Get Hidden State
 
-**语法:** 0|1 = obj << Get Hidden State( state=0|1 )
+**语法:** 0|1 = obj &lt;&lt; Get Hidden State( state=0|1 )
 
 ```jsl
 
@@ -3276,7 +3228,7 @@ text << Get Hidden State;
 
 ### Get Hint
 
-**语法:** "string" = obj << Get Hint
+**语法:** "string" = obj &lt;&lt; Get Hint
 
 **说明:** 当文本框为空时作为提示显示的文本。
 
@@ -3291,7 +3243,7 @@ text << Get Hint;
 
 ### Get Justify
 
-**语法:** justify = obj << Get Justify
+**语法:** justify = obj &lt;&lt; Get Justify
 
 **说明:** 左对齐、居中或右对齐文本。
 
@@ -3306,7 +3258,7 @@ text << Get Justify();
 
 ### Get Rotation
 
-**语法:** rotation = obj << Get Rotation
+**语法:** rotation = obj &lt;&lt; Get Rotation
 
 **说明:** 返回文本的旋转状态。
 
@@ -3320,7 +3272,7 @@ text << Get Rotation();
 
 ### Get Text
 
-**语法:** obj << Get Text
+**语法:** obj &lt;&lt; Get Text
 
 **说明:** 返回框中的字符串内容。
 
@@ -3334,7 +3286,7 @@ Print( text << Get Text() );
 
 ### Get Text Changed
 
-**语法:** function = obj << Get Text Changed
+**语法:** function = obj &lt;&lt; Get Text Changed
 
 **说明:** 返回每次对文本更改时执行的函数。
 
@@ -3353,7 +3305,7 @@ teb << Get Text Changed;
 
 ### Get Tip
 
-**语法:** "string" = obj << Get Tip
+**语法:** "string" = obj &lt;&lt; Get Tip
 
 **说明:** 返回 Text Box 的工具提示。
 
@@ -3368,7 +3320,7 @@ text << Get Tip();
 
 ### Get Width
 
-**语法:** width = obj << Get Width
+**语法:** width = obj &lt;&lt; Get Width
 
 **说明:** 返回 TextBox 的宽度。
 
@@ -3384,7 +3336,7 @@ text << Get Width;
 
 ### Get Wrap
 
-**语法:** obj << Get Wrap
+**语法:** obj &lt;&lt; Get Wrap
 
 **说明:** 返回当前换行点（像素）
 
@@ -3399,7 +3351,7 @@ text << Get Wrap;
 
 ### Hide
 
-**语法:** obj << Hide( state=0|1 )
+**语法:** obj &lt;&lt; Hide( state=0|1 )
 
 **说明:** 显示或隐藏文本。
 
@@ -3413,7 +3365,7 @@ text << Hide( 1 );
 
 ### Is Enabled
 
-**语法:** obj << Is Enabled( state=0|1 )
+**语法:** obj &lt;&lt; Is Enabled( state=0|1 )
 
 **说明:** 设置是否可以编辑 TextEditBox。
 
@@ -3428,7 +3380,7 @@ text << Is Enabled();
 
 ### Justify Text
 
-**语法:** obj << Justify Text( "左对齐"|"居中"|"右对齐" )
+**语法:** obj &lt;&lt; Justify Text( "左对齐"|"居中"|"右对齐" )
 
 **说明:** 左对齐、居中或右对齐文本。
 
@@ -3443,7 +3395,7 @@ text << Justify Text( "right" );
 
 ### Markup
 
-**语法:** obj << Markup( state=0|1 )
+**语法:** obj &lt;&lt; Markup( state=0|1 )
 
 **说明:** 表明该文本可能包含 HTML 标记，应该进行解释处理。支持的 HTML 标记包括粗体 (<b></b>)、斜体 (<i></i>)、下划线 (<u></u>)、字体 (<font face=&apos;&apos;></font>)、字体颜色 (<font color=&apos;&apos;></font>)、字号 (<font size=&apos;&apos;></font>) 和背景色 (<background color=&apos;&apos;></background>)。对于字体颜色和背景色，您可以通过名称 (blue)、以 HTML语法指定的十六进制三联代码 (#0000ff) 或十六进制格式 (0x0000ff) 进行指定。若使用名称指定颜色，则该名称使用 JMP 定义的颜色。
 
@@ -3497,7 +3449,7 @@ text << markup;
 
 ### Password Style
 
-**语法:** obj << Password Style( state=0|1 )
+**语法:** obj &lt;&lt; Password Style( state=0|1 )
 
 **说明:** 若启用，TextEditBox 显示 ***** 来代替密码。
 
@@ -3511,7 +3463,7 @@ text << Password Style( 1 );
 
 ### Preprocess Markup
 
-**语法:** obj << Preprocess Markup( state=0|1 )
+**语法:** obj &lt;&lt; Preprocess Markup( state=0|1 )
 
 **说明:** 指示应对文本进行预处理，以将 JMP 标记替换为格式正确的 HTML 标记。
 
@@ -3529,7 +3481,7 @@ text << preprocess markup;
 
 ### Revert
 
-**语法:** obj << Revert
+**语法:** obj &lt;&lt; Revert
 
 **说明:** 将文本内容恢复为其初始值。
 
@@ -3545,7 +3497,7 @@ text << Revert();
 
 ### Rotate Text
 
-**语法:** obj << Rotate Text( left|right|horizontal )
+**语法:** obj &lt;&lt; Rotate Text( left|right|horizontal )
 
 **说明:** 将文本向左或向右旋转 90 度，或者恢复为横向。
 
@@ -3559,9 +3511,7 @@ text << Rotate Text( "left" );
 
 ### Script
 
-**语法:** obj << Set Script( script ) 
-
-obj << Script( script )
+**语法:** obj &lt;&lt; Set Script( script ) obj &lt;&lt; Script( script )
 
 **说明:** 在编辑文本后，将执行指定的脚本。
 
@@ -3575,7 +3525,7 @@ text << Set Script( Print( "New Value: " || Char( text << Get Text ) ) );
 
 ### Set Base Font
 
-**语法:** obj << Set Base Font( "文本"|"题头"|"标题"|"小字体"|"单字"|"公式编辑器"|"注解"|"轴"|"标记"|"轴标题"|"图形标签"|"图例"|"图形标题"|"说明文字"|"数据表"|"悬停标签" )
+**语法:** obj &lt;&lt; Set Base Font( "文本"|"题头"|"标题"|"小字体"|"单字"|"公式编辑器"|"注解"|"轴"|"标记"|"轴标题"|"图形标签"|"图例"|"图形标题"|"说明文字"|"数据表"|"悬停标签" )
 
 **说明:** 设置该框绘制的文本的基本字体。
 
@@ -3590,7 +3540,7 @@ fontobj << Set Base Font( "Title" );
 
 ### Set Font
 
-**语法:** obj << Set Font( fontName, <size>, <"bold italic underline strikeout">, <angle> )
+**语法:** obj &lt;&lt; Set Font( fontName, &lt;size&gt;, &lt;"bold italic underline strikeout"&gt;, &lt;angle&gt; )
 
 **示例 1**
 
@@ -3614,7 +3564,7 @@ fontobj << Set Font( "Arial Black", 12, "Italic Underline" );
 
 ### Set Font Name
 
-**语法:** obj << Set Font Name( fontname )
+**语法:** obj &lt;&lt; Set Font Name( fontname )
 
 **说明:** 设置文本字符串的字体。
 
@@ -3628,7 +3578,7 @@ fontobj << Set Font Name( "Arial Black" );
 
 ### Set Font Scale
 
-**语法:** obj << Set Font Scale( f )
+**语法:** obj &lt;&lt; Set Font Scale( f )
 
 **说明:** 设置当前字体的比例因子。比例因子将应用到由基本字体和磅值决定的字号。
 
@@ -3643,7 +3593,7 @@ fontobj << Set Font Scale( 2.0 );
 
 ### Set Font Size
 
-**语法:** obj << Set Font Size( n )
+**语法:** obj &lt;&lt; Set Font Size( n )
 
 **说明:** 以磅为单位设置文本字符串的字体大小。
 
@@ -3657,7 +3607,7 @@ fontobj << Set Font Size( 14 );
 
 ### Set Font Style
 
-**语法:** obj << Set Font Style( style )
+**语法:** obj &lt;&lt; Set Font Style( style )
 
 **说明:** 设置文本字符串的字体样式。要一次设置多种样式，将它们放置在同一个字符串中，用空格分隔（请参见下面的示例 2）。
 
@@ -3683,7 +3633,7 @@ fontobj << Set Font Style( "Italic Bold Underline" );
 
 ### Set Function
 
-**语法:** obj << Set Function( Function( {thisBox}, <script> ) )
+**语法:** obj &lt;&lt; Set Function( Function( {thisBox}, &lt;script&gt; ) )
 
 **说明:** 设置控件的给定函数。当提交对“文本编辑框”的更改时会运行该函数的脚本。
 
@@ -3706,7 +3656,7 @@ New Window( "Example",
 
 ### Set Hint
 
-**语法:** obj << Set Hint( "string" )
+**语法:** obj &lt;&lt; Set Hint( "string" )
 
 **说明:** 当文本框为空时作为提示显示的文本。
 
@@ -3721,9 +3671,7 @@ text << Fixed Size( 0 );
 
 ### Set Script
 
-**语法:** obj << Set Script( script ) 
-
-obj << Script( script )
+**语法:** obj &lt;&lt; Set Script( script ) obj &lt;&lt; Script( script )
 
 **说明:** 在编辑文本后，将执行指定的脚本。
 
@@ -3737,7 +3685,7 @@ text << Set Script( Print( "New Value: " || Char( text << Get Text ) ) );
 
 ### Set Text
 
-**语法:** obj << Set Text( "string", <Run Script(bool)> )
+**语法:** obj &lt;&lt; Set Text( "string", &lt;Run Script(bool)&gt; )
 
 **说明:** 更改框的字符串内容。对于“文本编辑框”，可选 Run Script(bool) 参数设置当“设置文本”运行时是否运行“文本编辑框”的脚本。默认值为 0（不运行脚本）。
 
@@ -3765,7 +3713,7 @@ text << Set Text( "New Text", Run Script( 1 ) );
 
 ### Set Text Changed
 
-**语法:** obj << Set Text Changed( Function( {this, value}, <script> ) )
+**语法:** obj &lt;&lt; Set Text Changed( Function( {this, value}, &lt;script&gt; ) )
 
 **说明:** 设置每次更改文本时执行的“function”。该回调在提交更改之前于编辑期间调用。若取消了“编辑”操作，则会生成另一个回调来提供原始值。
 
@@ -3783,7 +3731,7 @@ New Window( "Example",
 
 ### Set Tip
 
-**语法:** obj << Set Tip( text )
+**语法:** obj &lt;&lt; Set Tip( text )
 
 **说明:** 设置 Text Box 的工具提示。
 
@@ -3797,7 +3745,7 @@ text << Set Tip( "Example Tooltip" );
 
 ### Set Width
 
-**语法:** obj << Set Width( width )
+**语法:** obj &lt;&lt; Set Width( width )
 
 **说明:** 设置 TextBox 的宽度。
 
@@ -3812,7 +3760,7 @@ text << Justify Text( "right" );
 
 ### Set Wrap
 
-**语法:** obj << Set Wrap( n )
+**语法:** obj &lt;&lt; Set Wrap( n )
 
 **说明:** 以像素为单位设置文字环绕点 (n)。
 
@@ -3826,7 +3774,7 @@ text << Set Wrap( 50 );
 
 ### SetNLines
 
-**语法:** obj << SetNLines( number )
+**语法:** obj &lt;&lt; SetNLines( number )
 
 **说明:** 设置可显示的文本行数。
 
@@ -3841,7 +3789,7 @@ win << Append( Text Box( "More Text" ) );
 
 ### White Box Style
 
-**语法:** obj << White Box Style( 0=ordinary text, 1=bordered white box entry field )
+**语法:** obj &lt;&lt; White Box Style( 0=ordinary text, 1=bordered white box entry field )
 
 **说明:** 显示为输入字段（带边框的白色文本框）或单击即可编辑的纯文本
 

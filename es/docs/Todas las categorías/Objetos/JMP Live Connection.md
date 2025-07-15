@@ -6,7 +6,7 @@
 
 ### Create Folder
 
-**Sintaxis:** liveresult = liveconnection << Create Folder(Title(folder_title), Parent Folder(id | path | JMP Live Folder), <Description(folder_description)>, <If Exists("use" | "fail" | "default")>)
+**Sintaxis:** liveresult = liveconnection &lt;&lt; Create Folder(Title(folder_title), Parent Folder(id | path | JMP Live Folder), &lt;Description(folder_description)&gt;, &lt;If Exists("use" | "fail" | "default")&gt;)
 
 **Descripción:** Crea una nueva carpeta en JMP Live. Devuelve un resultado de JMP Live, que se puede utilizar para obtener el objeto Carpeta de JMP Live para la nueva carpeta. Título y Carpeta principal son parámetros obligatorios. Carpeta principal se puede abreviar como Principal o Carpeta. Descripción es opcional. "Si existe" indica a JMP Live qué hacer si la carpeta especificada ya existe: "Usar" significa que se devuelve simplemente la carpeta existente, "Error" significa que se lanza un error, y "Predeterminado" significa que se crea una nueva carpeta y se le añade "(2)", "(3)", etc. al nombre para que sea único.
 
@@ -86,7 +86,7 @@ Show( subFolder2 );
 
 ### Delete Data
 
-**Sintaxis:** jmpliveresult = liveconnection << Delete Data(id | path | JMP Live Data)
+**Sintaxis:** jmpliveresult = liveconnection &lt;&lt; Delete Data(id | path | JMP Live Data)
 
 **Descripción:** Elimina la publicación de datos especificada. Devuelve si la acción se ha realizado correctamente (1) o no (0).
 
@@ -136,7 +136,7 @@ If( result == 1,
 
 ### Delete Folder
 
-**Sintaxis:** jmpliveresult = liveconnection << Delete Folder(id | path | JMP Live Folder)
+**Sintaxis:** jmpliveresult = liveconnection &lt;&lt; Delete Folder(id | path | JMP Live Folder)
 
 **Descripción:** Elimina la carpeta especificada. Devuelve si la acción se ha realizado correctamente (1) o no (0).
 
@@ -186,7 +186,7 @@ If( result == 1,
 
 ### Delete Report
 
-**Sintaxis:** jmpliveresult = liveconnection << Delete Report(id | path | JMP Live Report)
+**Sintaxis:** jmpliveresult = liveconnection &lt;&lt; Delete Report(id | path | JMP Live Report)
 
 **Descripción:** Elimina el informe especificado. Devuelve si la acción se ha realizado correctamente (1) o no (0).
 
@@ -236,7 +236,7 @@ If( result == 1,
 
 ### Find Folders
 
-**Sintaxis:** jmpliveresult = liveconnection << Find Folders(<Search(search_string)>, <Publisher(user_name)>, <PageSize(val)>)
+**Sintaxis:** jmpliveresult = liveconnection &lt;&lt; Find Folders(&lt;Search(search_string)&gt;, &lt;Publisher(user_name)&gt;, &lt;PageSize(val)&gt;)
 
 **Descripción:** Busca carpetas según una cadena de caracteres de búsqueda, editor o ambas cosas. Devuelve una lista de resultados de JMP Live que se puede utilizar para hacer referencia a carpetas individuales. Las siguientes llamadas a Next() en esta lista devuelven más carpetas. PageSize especifica cuántas carpetas se deben devolver y vale 10 de forma predetermianda. Todos los parámetros de búsqueda son opcionales y, si no se proporciona ninguno, se devuelven todas las carpetas.
 
@@ -305,7 +305,7 @@ For( i = 1, i <= folderlist << Get Number Of Items, i += 1,
 
 ### Find Posts
 
-**Sintaxis:** jmpliveresult = liveconnection << Find Posts(<Search(search_string)>, <Publisher(user_name)>, <PageSize(val)>)
+**Sintaxis:** jmpliveresult = liveconnection &lt;&lt; Find Posts(&lt;Search(search_string)&gt;, &lt;Publisher(user_name)&gt;, &lt;PageSize(val)&gt;)
 
 **Descripción:** Busca publicaciones (todos los elementos, incluidas las carpetas, informes y datos) por cadena de caracteres de búsqueda, editor o ambas cosas. Devuelve una lista de resultados de JMP Live que se puede utilizar para hacer referencia a publicaciones individuales. Las siguientes llamadas a Next() en esta lista devuelven más publicaciones. PageSize especifica cuántas publicaciones devolver y vale 10 de forma predeterminada. Todos los parámetros de búsqueda son opcionales y, si no se proporciona ninguno, se devuelven todas las publicaciones.
 
@@ -387,7 +387,7 @@ For( i = 1, i <= postlist << Get Number Of Items, i += 1,
 
 ### Find Reports
 
-**Sintaxis:** jmpliveresult = liveconnection << Find Reports(<Search(search_string)>, <Publisher(user_name)>, <PageSize(val)>)
+**Sintaxis:** jmpliveresult = liveconnection &lt;&lt; Find Reports(&lt;Search(search_string)&gt;, &lt;Publisher(user_name)&gt;, &lt;PageSize(val)&gt;)
 
 **Descripción:** Busca informes por cadena de caracteres de búsqueda, editor o ambos. Devuelve una lista de resultados de JMP Live que se puede utilizar para hacer referencia a informes individuales. Las siguientes llamadas a Next() en esta lista devuelven más informes. PageSize especifica cuántos informes se deben devolver y vale 10 de forma predeterminada. Todos los parámetros de búsqueda son opcionales y, si no se proporciona ninguno, se devuelven todos los informes.
 
@@ -469,7 +469,7 @@ For( i = 1, i <= reportlist << Get Number Of Items, i += 1,
 
 ### Find Spaces
 
-**Sintaxis:** jmpliveresult = liveconnection << Find Spaces(<Permissions( "Contribute" )>, <Search(search_string)>, <PageSize(val)>)
+**Sintaxis:** jmpliveresult = liveconnection &lt;&lt; Find Spaces(&lt;Permissions( "Contribute" )&gt;, &lt;Search(search_string)&gt;, &lt;PageSize(val)&gt;)
 
 **Descripción:** Busca espacios por cadena de búsqueda opcional y un parámetro opcional de permisos para filtrar aún más los espacios hasta quedar solo los que permiten contribuciones. Actualmente el permiso Contribuir es el único valor de permiso compatible. Devuelve una lista de resultados de JMP Live que se puede utilizar para hacer referencia a espacios específicos de la lista. Se puede especificar un valor de paginación para indicar cuántos elementos de espacio se deben devolver en la lista de resultados. Se pueden realizar llamadas Next() adicionales en esta lista de resultados para obtener más espacios.
 
@@ -517,7 +517,7 @@ For( i = 1, i <= spaceList << Get Number Of Items, i += 1,
 
 ### Get Connection Name
 
-**Sintaxis:** string = liveconnection << Get Connection Name()
+**Sintaxis:** string = liveconnection &lt;&lt; Get Connection Name()
 
 **Descripción:** Recupera el nombre de la conexión de JMP Live como cadena de caracteres.
 
@@ -534,7 +534,7 @@ Write( "Connection Name: ", connectionname );
 
 ### Get Data
 
-**Sintaxis:** liveresult = liveconnection << Get Data(id | path)
+**Sintaxis:** liveresult = liveconnection &lt;&lt; Get Data(id | path)
 
 **Descripción:** Recupera una publicación de datos como objeto Resultado de JMP Live, que se puede utilizar para obtener el objeto Datos de JMP Live para esa publicación.
 
@@ -579,7 +579,7 @@ Write( "\!n\!nData post retrieved by path: ", dataPost );
 
 ### Get Folder
 
-**Sintaxis:** liveresult = liveconnection << Get Folder(id | path)
+**Sintaxis:** liveresult = liveconnection &lt;&lt; Get Folder(id | path)
 
 **Descripción:** Recupera un objeto de carpeta como objeto Resultado de JMP Live, que se puede utilizar para obtener el objeto Carpeta de JMP Live para la carpeta.
 
@@ -612,7 +612,7 @@ Write( "\!n\!nPath of retrieved folder: ", retrieved << Get Path );
 
 ### Get HTTP Request
 
-**Sintaxis:** httprequest = liveconnection << Get HTTP Request()
+**Sintaxis:** httprequest = liveconnection &lt;&lt; Get HTTP Request()
 
 **Descripción:** Devuelve una instancia de solicitud HTTP que puede utilizarse para llamar a las funciones REST de JMP Live.
 
@@ -631,7 +631,7 @@ httprequest << Get Status Message();
 
 ### Get Post
 
-**Sintaxis:** liveresult = liveconnection << Get Post(id | path)
+**Sintaxis:** liveresult = liveconnection &lt;&lt; Get Post(id | path)
 
 **Descripción:** Recupera una publicación como objeto Resultado de JMP Live, que se puede utilizar para obtener el objeto Publicación de JMP Live para esa publicación.
 
@@ -671,7 +671,7 @@ Write( "\!n\!nPost retrieved by path: ", postByPath );
 
 ### Get Report
 
-**Sintaxis:** liveresult = liveconnection << Get Report(id | path)
+**Sintaxis:** liveresult = liveconnection &lt;&lt; Get Report(id | path)
 
 **Descripción:** Recupera una publicación de informe como objeto Resultado de JMP Live, que se puede utilizar para obtener el objeto Informe de JMP Live para esa publicación.
 
@@ -717,7 +717,7 @@ Write( "\!n\!nReport post retrieved by path: ", reportPost );
 
 ### Get URL
 
-**Sintaxis:** string = liveconnection << Get URL()
+**Sintaxis:** string = liveconnection &lt;&lt; Get URL()
 
 **Descripción:** Recupera la URL al sitio de JMP Live si está disponible.
 
@@ -734,7 +734,7 @@ Write( "URL: ", url );
 
 ### Get Username
 
-**Sintaxis:** string = liveconnection << Get Username()
+**Sintaxis:** string = liveconnection &lt;&lt; Get Username()
 
 **Descripción:** Recupera el nombre de usuario del objeto de JMP Live si está disponible.
 
@@ -751,7 +751,7 @@ Write( "Username: ", username );
 
 ### Is Logged In
 
-**Sintaxis:** value = liveconnection << Is Logged In()
+**Sintaxis:** value = liveconnection &lt;&lt; Is Logged In()
 
 **Descripción:** Indica si hay establecida una sesión autenticada en el servidor. Devuelve si la acción se ha realizado correctamente (1) o no (0).
 
@@ -768,7 +768,7 @@ Write( "Logged In: ", isloggedin );
 
 ### Publish
 
-**Sintaxis:** liveresult = liveconnection << Publish(JMPLiveContent, Folder(id | path | JMP Live Folder), <Use Existing Data({{dt_or_name, data_id | data_path | JMP Live Data}})>)
+**Sintaxis:** liveresult = liveconnection &lt;&lt; Publish(JMPLiveContent, Folder(id | path | JMP Live Folder), &lt;Use Existing Data({{dt_or_name, data_id | data_path | JMP Live Data}})&gt;)
 
 **Descripción:** Publica informes o datos independientes en JMP Live. Devuelve un objeto Lista de resultados de JMP Live. Debe especificar la carpeta de Debe especificar la carpeta de JMP Live en la que se debe publicar el contenido. No está permitido mezclar informes y datos independientes en el mismo comando Publicar. Al publicar informes, si el informe debe utilizar datos que ya están en JMP Live, se puede utilizar el parámetro opcional Utilizar datos existentes para especificarlo. El parámetro Utilizar datos existentes no es válido al publicar datos independientes.
 
@@ -955,7 +955,7 @@ For( i = 1, i <= postlist << Get Number Of Items, i += 1,
 
 ### Replace
 
-**Sintaxis:** liveresult = liveconnection << Replace(JMPLiveContent, Report(id | path | JMP Live Report), <Use Existing Data({{dt_or_name, data_id | data_path | JMP Live Data}})>, <Update Existing Data({{dt_or_name, data_id | data_path | JMP Live Data}})>, <Publish New Data({dt_or_name})> )
+**Sintaxis:** liveresult = liveconnection &lt;&lt; Replace(JMPLiveContent, Report(id | path | JMP Live Report), &lt;Use Existing Data({{dt_or_name, data_id | data_path | JMP Live Data}})&gt;, &lt;Update Existing Data({{dt_or_name, data_id | data_path | JMP Live Data}})&gt;, &lt;Publish New Data({dt_or_name})&gt; )
 
 **Descripción:** Sustituye un informe existente de JMP Live por otro informe. Las opciones de datos son necesarias para especificar cómo se gestionan los datos que se proporcionan con el informe. "Utilizar datos existentes" indica al servidor que debe utilizar los datos presentes en JMP Live para los datos especificados. "Actualizar datos existentes" indica al servidor que debe sustituir los datos del servidor por los datos proporcionados en el comando. "Publicar datos nuevos" indica al servidor que debe publicar una nueva tabla de datos y utilizarla para el informe que se va a sustituir. "Publicar nuevos datos" es la opción predeterminada para los datos de todas las tablas de datos. Se puede especificar cualquier combinación de opciones de datos. Devuelve un objeto Lista de resultados de JMP Live.
 
@@ -1069,7 +1069,7 @@ Write( "\!n\!nOpen this URL to see results: ", folderURL );
 
 ### Update Data
 
-**Sintaxis:** jmpliveresult = liveconnection << Update Data( Data(id | path | JMP Live Data), dataTable | path | JMPLiveContent )
+**Sintaxis:** jmpliveresult = liveconnection &lt;&lt; Update Data( Data(id | path | JMP Live Data), dataTable | path | JMPLiveContent )
 
 **Descripción:** Actualiza la tabla de datos o el mapa de una publicación de datos con el contenido proporcionado. El parámetro Datos identifica los datos en JMP Live que se van a actualizar. El segundo parámetro es el contenido que se utilizará para la actualización. Puede ser un objeto de tabla de datos, una ruta a una tabla de datos o un objeto de contenido de JMP Live creado a partir de una tabla de datos o un mapa.
 

@@ -6,43 +6,39 @@
 
 ### Attribute ID
 
-**Syntax:** obj = Y(...<Attribute ID( column(s) )>...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Y(...&lt;Attribute ID( column(s) )&gt;...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Bei gestapelten Daten werden hiermit Attribute identifiziert, bei denen es sich um Spalten (Variablen) handeln würde, wenn die Daten nicht gestapelt wären.
 
 ### Columns
 
-**Syntax:** obj << Columns( column(s) )
+**Syntax:** obj &lt;&lt; Columns( column(s) )
 
 ### Freq
 
-**Syntax:** obj << Freq( column )
+**Syntax:** obj &lt;&lt; Freq( column )
 
 ### Label
 
-**Syntax:** obj << Label( column )
+**Syntax:** obj &lt;&lt; Label( column )
 
 ### Object ID
 
-**Syntax:** obj = Y(...<Object ID( column(s) )>...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Y(...&lt;Object ID( column(s) )&gt;...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Bei gestapelten Daten werden hiermit Fälle zum Clustern identifiziert. Ansonsten dient es zum Aggregieren über Zeilen von Daten.
 
 ### Ordering
 
-**Syntax:** obj << Ordering( column )
+**Syntax:** obj &lt;&lt; Ordering( column )
 
 ### Weight
 
-**Syntax:** obj << Weight( column )
+**Syntax:** obj &lt;&lt; Weight( column )
 
 ### Y
 
-**Syntax:** obj << Y( column(s) )
+**Syntax:** obj &lt;&lt; Y( column(s) )
 
 ## Hierarchical Cluster
 
@@ -50,9 +46,7 @@
 
 #### Add Spatial Measures
 
-**Syntax:** obj = Hierarchical Cluster(...Add Spatial Measures( state=0|1 )...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Hierarchical Cluster(...Add Spatial Measures( state=0|1 )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Ermöglicht Ihnen, räumliche Komponenten zum Clustern von defekten Strukturen auszuwählen und zu gewichten. Ist nur dann verfügbar, wenn es sich bei der angegebenen Datenstruktur um „Daten sind gestapelt“ handelt.
 
@@ -82,7 +76,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Cluster Criterion
 
-**Syntax:** obj << Cluster Criterion( state=0|1 )
+**Syntax:** obj &lt;&lt; Cluster Criterion( state=0|1 )
 
 **Beschreibung:** Zeigt das Kubische Cluster-Kriterium (Cubic Clustering Criterion, CCC) für den gesamten Bereich der Anzahl der Cluster an oder blendet es aus. Das CCC wird verwendet, um die Anzahl der Cluster zu schätzen, wenn größere Werte auf eine bessere Anpassung hindeuten.
 
@@ -96,7 +90,7 @@ obj = dt << Hierarchical Cluster( Y( :birth, :death ), Label( :country ), Cluste
 
 #### Cluster Summary
 
-**Syntax:** obj << Cluster Summary( state=0|1 )
+**Syntax:** obj &lt;&lt; Cluster Summary( state=0|1 )
 
 **Beschreibung:** Blendet statistische Kenngrößen für jede angegebene Anzahl der Cluster ein oder aus.
 
@@ -114,7 +108,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Clustering History
 
-**Syntax:** obj << Clustering History( state=0|1 )
+**Syntax:** obj &lt;&lt; Clustering History( state=0|1 )
 
 **Beschreibung:** Zeigt den Agglomerationsverlauf in der Reihenfolge der Verbindungen an. Die Tabelle enthält Entfernungen und ist vom nächsten zum entferntesten sortiert. Standardmäßig ein.
 
@@ -133,7 +127,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Color Clusters
 
-**Syntax:** obj << Color Clusters( state=0|1 )
+**Syntax:** obj &lt;&lt; Color Clusters( state=0|1 )
 
 **Beschreibung:** Färbt die Spalten und die Dendrogramm-Beschriftungen nach Cluster-Mitgliedschaft. Die Farben werden aktualisiert, wenn sich die Anzahl der Cluster ändert.
 
@@ -152,7 +146,7 @@ obj << Color Clusters( 1 );
 
 #### Color Map
 
-**Syntax:** obj << Color Map
+**Syntax:** obj &lt;&lt; Color Map
 
 **Beschreibung:** Zeigt eine Farbmatrix neben dem Dendrogramm an oder blendet sie aus.
 
@@ -173,11 +167,11 @@ obj << Color Map( Blue to Gray to Red );
 
 #### Column Cluster Criterion
 
-**Syntax:** obj << Column Cluster Criterion( state=0|1 )
+**Syntax:** obj &lt;&lt; Column Cluster Criterion( state=0|1 )
 
 #### Column Dendrogram Position
 
-**Syntax:** obj << Column Dendrogram Position( "Darunter"|"Darüber" )
+**Syntax:** obj &lt;&lt; Column Dendrogram Position( "Darunter"|"Darüber" )
 
 **Beschreibung:** Verschiebt die Position des Dendrogramms für Spalten, wenn Zwei-Wege-Clustern verwendet wird.
 
@@ -196,7 +190,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Column Label Position
 
-**Syntax:** obj << Column Label Position( "Darunter"|"Darüber" )
+**Syntax:** obj &lt;&lt; Column Label Position( "Darunter"|"Darüber" )
 
 **Beschreibung:** Verschiebt die Position der Beschriftungen im Dendrogramm für Spalten, wenn Zwei-Wege-Clustern verwendet wird.
 
@@ -216,7 +210,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Constellation Plot
 
-**Syntax:** obj << Constellation Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; Constellation Plot( state=0|1 )
 
 **Beschreibung:** Blendet eine alternative Möglichkeit ein oder aus, die Informationen im Dendrogramm für hierarchisches Clustern zu präsentieren. Jede Beobachtung (Zeile) wird von einem Endpunkt dargestellt und jede Clusterverbindung wird von einem neuen Punkt dargestellt. Die gezeichneten Linien stellen die Cluster-Zugehörigkeit dar.
 
@@ -235,7 +229,7 @@ obj << Constellation Plot( 1 );
 
 #### Dendrogram Scale
 
-**Syntax:** obj << Dendrogram Scale( "Distanzskala"|"Gleiche Abstände"|"Geometrische Abstände" )
+**Syntax:** obj &lt;&lt; Dendrogram Scale( "Distanzskala"|"Gleiche Abstände"|"Geometrische Abstände" )
 
 **Beschreibung:** Legt die Skala für das Dendrogramm fest. Mit der Option „Gleiche Abstände“ haben die Zweige im Dendrogramm gleiche Abstände. Mit der Option „Geometrische Abstände“ nehmen die Abstände im Dendrogramm multiplikativ den Baum entlang zu. Bei der Option „Distanzskala“ sind die Abstände der Zweige proportional zur Distanz.
 
@@ -254,13 +248,13 @@ obj << Dendrogram Scale( Geometric Spacing );
 
 #### Dendrogram Width
 
-**Syntax:** obj << Dendrogram Width( number=min(max(256,n*3),500) )
+**Syntax:** obj &lt;&lt; Dendrogram Width( number=min(max(256,n*3),500) )
 
 **Beschreibung:** Die Breite des Dendrogrammrahmens für das Clustern von Zeilen. Standardmäßig „min(max(256,n*3),500)“.
 
 #### Distance Graph
 
-**Syntax:** obj << Distance Graph( state=0|1 )
+**Syntax:** obj &lt;&lt; Distance Graph( state=0|1 )
 
 **Beschreibung:** Zeigt einen Graphen an oder blendet ihn aus, der die Distanz an jeder Clusterverbindung anzeigt. Standardmäßig ein.
 
@@ -281,7 +275,7 @@ obj << Distance Graph( 1 );
 
 #### Get Clusters
 
-**Syntax:** obj << Get Clusters
+**Syntax:** obj &lt;&lt; Get Clusters
 
 **Beschreibung:** Gibt einen Vektor mit Clusterzuweisungen für jede Zeile zurück.
 
@@ -301,7 +295,7 @@ Show( c );
 
 #### Get Column Display Order
 
-**Syntax:** obj << Get Column Display Order
+**Syntax:** obj &lt;&lt; Get Column Display Order
 
 **Beschreibung:** Gibt einen Vektor der Anzeigeposition für jede Spalte beim Zwei-Wege-Clustern zurück.
 
@@ -319,7 +313,7 @@ rowOrder = obj << Get Column Display Order;
 
 #### Get Column Names
 
-**Syntax:** obj << Get Column Names
+**Syntax:** obj &lt;&lt; Get Column Names
 
 **Beschreibung:** Gibt nach dem Zwei-Wege-Clustern die Spaltennamen in der Clusterreihenfolge zurück.
 
@@ -335,7 +329,7 @@ Show( c );
 
 #### Get Display Order
 
-**Syntax:** obj << Get Display Order
+**Syntax:** obj &lt;&lt; Get Display Order
 
 **Beschreibung:** Gibt einen Vektor der Anzeigeposition für jede Zeile im Cluster zurück, mit fehlenden Werten für nicht angezeigte Zeilen.
 
@@ -352,7 +346,7 @@ rowOrder = obj << Get Display Order;
 
 #### Get Distance Matrix
 
-**Syntax:** obj << Get Distance Matrix
+**Syntax:** obj &lt;&lt; Get Distance Matrix
 
 **Beschreibung:** Gibt die Distanzmatrix für hierarchisches Clustern zurück.
 
@@ -371,9 +365,7 @@ Show( m );
 
 #### Hybrid Cycles
 
-**Syntax:** obj = Hierarchical Cluster(...Hybrid Cycles( number=30 )...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Hierarchical Cluster(...Hybrid Cycles( number=30 )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Gibt die minimale Anzahl von Verbindungszyklen bei der Methode „nächste Nachbarn“ an, die durchgeführt werden, bevor zur Routine für hierarchisches Clustern gewechselt wird. Standardmäßig „30“.
 
@@ -391,9 +383,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Hybrid Goal
 
-**Syntax:** obj = Hierarchical Cluster(...Hybrid Goal( number=400 )...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Hierarchical Cluster(...Hybrid Goal( number=400 )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Gibt die maximal zulässige Anzahl von Clustern an, bevor zur Routine für hierarchisches Clustern gewechselt wird. Wenn die Routine für hierarchisches Clustern startet, muss die Anzahl der Cluster kleiner oder gleich dem Wert bei Hybrid Goal sein. Standardmäßig „400“.
 
@@ -411,9 +401,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Hybrid Initial K
 
-**Syntax:** obj = Hierarchical Cluster(...Hybrid Initial K( number=10 )...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Hierarchical Cluster(...Hybrid Initial K( number=10 )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Gibt die anfängliche Anzahl der Nachbarn an, die in den Verbindungszyklen bei der Methode „nächste Nachbarn“ verwendet werden. Die Anzahl der Nachbarn kann steigen oder fallen, je nachdem, wie viele eindeutige nächste Nachbarn im vorherigen Zyklus gefunden wurden. Standardmäßig „10“.
 
@@ -431,9 +419,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Hybrid Log Details
 
-**Syntax:** obj = Hierarchical Cluster(...Hybrid Log Details( state=0|1 )...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Hierarchical Cluster(...Hybrid Log Details( state=0|1 )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Gibt an, ob der Status und die Zeiten jedes Zustands der Methode „Hybrides Ward“ im Log angezeigt werden sollen.
 
@@ -451,9 +437,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Hybrid RandomPCA Dim
 
-**Syntax:** obj = Hierarchical Cluster(...Hybrid RandomPCA Dim( number=0 )...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Hierarchical Cluster(...Hybrid RandomPCA Dim( number=0 )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Gibt die Anzahl der Dimensionen an, die in der Technik zur Dimensionsreduktion „randomisierte PCA“ verwendet werden sollen. Diese Technik wird verwendet, wenn der Wert bei Hybrid RandomPCA Dim größer als 0 ist. Sie sorgt für eine weitere Verbesserung der Geschwindigkeit. Standardmäßig „0“.
 
@@ -471,7 +455,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Late Join Outliers
 
-**Syntax:** obj << Late Join Outliers( state=0|1 )
+**Syntax:** obj &lt;&lt; Late Join Outliers( state=0|1 )
 
 **Beschreibung:** Zeigt einen Bericht dazu an, welche Elemente sehr spät in der Agglomeration geclustert wurden, oder blendet ihn aus.
 
@@ -491,7 +475,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Legend
 
-**Syntax:** obj << Legend( state=0|1 )
+**Syntax:** obj &lt;&lt; Legend( state=0|1 )
 
 **Beschreibung:** Zeigt eine Legende für die Farbmatrix neben dem Dendrogramm an oder blendet sie aus.
 
@@ -511,7 +495,7 @@ obj << Legend( 1 );
 
 #### Mark Clusters
 
-**Syntax:** obj << Mark Clusters( state=0|1 )
+**Syntax:** obj &lt;&lt; Mark Clusters( state=0|1 )
 
 **Beschreibung:** Kennzeichnet die Clusterzugehörigkeit der Zeilen in der Datentabelle durch Symbole. Die Symbole werden aktualisiert, wenn Sie die Anzahl der Cluster ändern. Wenn Sie diese Option abwählen, werden die Symbole nicht mehr basierend auf der Anzahl der Cluster aktualisiert.
 
@@ -530,9 +514,7 @@ obj << Mark Clusters;
 
 #### Method
 
-**Syntax:** Method( "Average"|"Centroid"|"Ward"|"Single"|"Complete"|"Fast Ward"|"Hybrid Ward" )
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** Method( "Average"|"Centroid"|"Ward"|"Single"|"Complete"|"Fast Ward"|"Hybrid Ward" )&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Gibt die Distanzmethode zur Bildung von Clustern an.
 
@@ -551,9 +533,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Missing value imputation
 
-**Syntax:** obj = Hierarchical Cluster(...Missing value imputation( state=0|1 )...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Hierarchical Cluster(...Missing value imputation( state=0|1 )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Setzt fehlende Werte durch multivariate normalverteilte Imputation oder multivariate SWZ-Imputation ein.
 
@@ -574,7 +554,7 @@ obj = dt << Hierarchical Cluster(
 
 #### More Color Map Columns
 
-**Syntax:** obj << More Color Map Columns( column )
+**Syntax:** obj &lt;&lt; More Color Map Columns( column )
 
 **Beschreibung:** Fügt eine weitere Farbmatrix basierend auf der angegebenen Spalte hinzu.
 
@@ -592,7 +572,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Number of Clusters
 
-**Syntax:** obj << Number of Clusters( number )
+**Syntax:** obj &lt;&lt; Number of Clusters( number )
 
 **Beschreibung:** Stellt die Anzahl der Cluster ein, die Stelle zum Schneiden des Baums, um Clustergruppen zu definieren. Sie können die Anzahl der Cluster auch durch Ziehen des diamantförmigen Piktogramms ändern.
 
@@ -610,7 +590,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Number of Column Clusters
 
-**Syntax:** obj << Number of Column Clusters( number )
+**Syntax:** obj &lt;&lt; Number of Column Clusters( number )
 
 **Beschreibung:** Gibt die Anzahl von Spaltenclustern vor dem Speichern an. Nur verfügbar beim Zwei-Wege-Clustern.
 
@@ -618,7 +598,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Parallel Coord Plots
 
-**Syntax:** obj << Parallel Coord Plots
+**Syntax:** obj &lt;&lt; Parallel Coord Plots
 
 **Beschreibung:** Erstellt ein Parallelkoordinatendiagramm für jedes Cluster in einem eigenen Fenster.
 
@@ -637,7 +617,7 @@ obj << Parallel Coord Plots;
 
 #### Pivot on Selected Cluster
 
-**Syntax:** obj << Pivot on Selected Cluster
+**Syntax:** obj &lt;&lt; Pivot on Selected Cluster
 
 **Beschreibung:** Kehrt die Reihenfolge der zwei Teilcluster des ausgewählten Clusters um.
 
@@ -654,7 +634,7 @@ obj << Pivot on Selected Cluster;
 
 #### Release Zoom
 
-**Syntax:** obj << Release Zoom
+**Syntax:** obj &lt;&lt; Release Zoom
 
 **Beschreibung:** Hebt den Zoom im Dendrogramm für die ausgewählten Zeilen auf.
 
@@ -675,7 +655,7 @@ obj << Release Zoom;
 
 #### Row Dendrogram Position
 
-**Syntax:** obj << Row Dendrogram Position( "Links"|"Rechts" )
+**Syntax:** obj &lt;&lt; Row Dendrogram Position( "Links"|"Rechts" )
 
 **Beschreibung:** Verändert die Position des Dendrogramms für Zeilen.
 
@@ -693,7 +673,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Row Label Position
 
-**Syntax:** obj << Row Label Position( "Links"|"Rechts" )
+**Syntax:** obj &lt;&lt; Row Label Position( "Links"|"Rechts" )
 
 **Beschreibung:** Verändert die Position der Beschriftungen im Dendrogramm für Zeilen.
 
@@ -711,7 +691,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Row More Position
 
-**Syntax:** obj << Row More Position( "Links"|"Rechts" )
+**Syntax:** obj &lt;&lt; Row More Position( "Links"|"Rechts" )
 
 **Beschreibung:** Verändert die Position der Farbmatrix, die mit dem Befehl „Weitere Spalten für die Farbmatrix“ hinzugefügt wurde.
 
@@ -730,7 +710,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Save Cluster Hierarchy
 
-**Syntax:** obj << Save Cluster Hierarchy
+**Syntax:** obj &lt;&lt; Save Cluster Hierarchy
 
 **Beschreibung:** Erstellt eine Datentabelle mit Informationen, die bei der Wiedererstellung des Dendrogramms nützlich sind.
 
@@ -749,7 +729,7 @@ obj << Save Cluster Hierarchy;
 
 #### Save Cluster History
 
-**Syntax:** obj << Save Cluster History
+**Syntax:** obj &lt;&lt; Save Cluster History
 
 **Beschreibung:** Speichert die Tabelle, die im Bericht des Clusteringverlaufs als neue Datentabelle erscheint.
 
@@ -767,7 +747,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Save Cluster Means
 
-**Syntax:** obj << Save Cluster Means
+**Syntax:** obj &lt;&lt; Save Cluster Means
 
 **Beschreibung:** Speichert für die vorgegebene Anzahl der Cluster eine Tabelle von Clustermittelwerten.
 
@@ -785,7 +765,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Save Cluster Tree
 
-**Syntax:** obj << Save Cluster Tree
+**Syntax:** obj &lt;&lt; Save Cluster Tree
 
 **Beschreibung:** Erstellt eine Datentabelle mit den Knoten des Dendrogramms.
 
@@ -804,7 +784,7 @@ obj << Save Cluster Tree;
 
 #### Save Clusters
 
-**Syntax:** obj << Save Clusters
+**Syntax:** obj &lt;&lt; Save Clusters
 
 **Beschreibung:** Erstellt eine Spalte in der Datentabelle, die die Clusternummern enthält.
 
@@ -823,7 +803,7 @@ obj << Save Clusters;
 
 #### Save Column Clusters
 
-**Syntax:** obj << Save Column Clusters
+**Syntax:** obj &lt;&lt; Save Column Clusters
 
 **Beschreibung:** Eine neue Datentabelle speichern, die Informationen zur Cluster-Zugehörigkeit für die Spalten enthält. Nur verfügbar beim Zwei-Wege-Clustern.
 
@@ -831,7 +811,7 @@ obj << Save Clusters;
 
 #### Save Constellation Coordinates
 
-**Syntax:** obj << Save Constellation Coordinates
+**Syntax:** obj &lt;&lt; Save Constellation Coordinates
 
 **Beschreibung:** Speichert die Koordinaten des Konstellationsdiagramms in einer neuen Spalte in der Datentabelle.
 
@@ -851,7 +831,7 @@ obj << Save Constellation Coordinates( 1 );
 
 #### Save Display Order
 
-**Syntax:** obj << Save Display Order
+**Syntax:** obj &lt;&lt; Save Display Order
 
 **Beschreibung:** Erstellt eine Spalte in der Datentabelle mit der Reihenfolge, in der die Zeile im Dendrogramm erscheint.
 
@@ -870,7 +850,7 @@ obj << Save Display Order;
 
 #### Save Distance Matrix
 
-**Syntax:** obj << Save Distance Matrix
+**Syntax:** obj &lt;&lt; Save Distance Matrix
 
 **Beschreibung:** Erstellt eine Datentabelle mit den Distanzen zwischen Beobachtungen.
 
@@ -888,7 +868,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Save Formula for Closest Cluster
 
-**Syntax:** obj << Save Formula for Closest Cluster
+**Syntax:** obj &lt;&lt; Save Formula for Closest Cluster
 
 **Beschreibung:** Speichert eine Formelspalte in der Datentabelle, die die Clusternummer des nächstgelegenen Clusters angibt.
 
@@ -907,7 +887,7 @@ obj << Save Formula for Closest Cluster;
 
 #### Scatterplot Matrix
 
-**Syntax:** obj << Scatterplot Matrix
+**Syntax:** obj &lt;&lt; Scatterplot Matrix
 
 **Beschreibung:** Erstellt eine Streudiagramm-Matrix in einem neuen Fenster mit Konfidenzellipsen basierend auf der aktuellen Anzahl der Cluster.
 
@@ -925,13 +905,13 @@ obj = dt << Hierarchical Cluster(
 
 #### Set Random Seed
 
-**Syntax:** obj << Set Random Seed( number )
+**Syntax:** obj &lt;&lt; Set Random Seed( number )
 
 **Beschreibung:** Gibt einen zufälligen Startwert an, um die Ergebnisse für künftige Aufrufe der Plattform zu reproduzieren.
 
 #### Show Dendrogram
 
-**Syntax:** obj << Show Dendrogram( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Dendrogram( state=0|1 )
 
 **Beschreibung:** Ermöglicht Ihnen, das Dendrogramm auszuschalten, wenn Sie nur die Farbmatrix anzeigen möchten. Standardmäßig ein.
 
@@ -953,7 +933,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Show NCluster Handle
 
-**Syntax:** obj << Show NCluster Handle( state=0|1 )
+**Syntax:** obj &lt;&lt; Show NCluster Handle( state=0|1 )
 
 **Beschreibung:** Zeigt den Diamant-Handle an oder blendet ihn aus, mit dem die Anzahl der Cluster im Dendrogramm ausgewählt werden kann. Standardmäßig ein.
 
@@ -973,15 +953,13 @@ obj = dt << Hierarchical Cluster(
 
 #### Standardize
 
-**Syntax:** obj << Standardize( "Nicht standardisiert"|"Spalten"|"Zeilen"|"Spalten und Zeilen" )
+**Syntax:** obj &lt;&lt; Standardize( "Nicht standardisiert"|"Spalten"|"Zeilen"|"Spalten und Zeilen" )
 
 **Beschreibung:** Alias für „Standardisieren nach“, womit angegeben wird, wie die Werte vor dem Clustern standardisiert werden sollen.
 
 #### Standardize By
 
-**Syntax:** obj = Hierarchical Cluster(...Standardize By( "Nicht standardisiert"|"Spalten"|"Zeilen"|"Spalten und Zeilen" )...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Hierarchical Cluster(...Standardize By( "Nicht standardisiert"|"Spalten"|"Zeilen"|"Spalten und Zeilen" )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Gibt an, wie die Werte vor dem Clustern standardisiert werden sollen. Sie können nach Spalten, nach Zeilen, nach Spalten und Zeilen oder gar nicht standardisieren.
 
@@ -1000,23 +978,19 @@ obj = dt << Hierarchical Cluster(
 
 #### Standardize Data
 
-**Syntax:** obj << Standardize Data( state=0|1 )
+**Syntax:** obj &lt;&lt; Standardize Data( state=0|1 )
 
 **Beschreibung:** Alter Name der Option, wird noch unterstützt, wurde aber durch „Standardize by“ ersetzt.
 
 #### Standardize Robustly
 
-**Syntax:** obj = Hierarchical Cluster(...Standardize Robustly( state=0|1 )...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Hierarchical Cluster(...Standardize Robustly( state=0|1 )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Verwendet für die Standardisierung der Daten	robuste Schätzer von Mittelwert und Standardabweichung.
 
 #### Two Way Clustering
 
-**Syntax:** obj = Hierarchical Cluster(...Two Way Clustering...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Hierarchical Cluster(...Two Way Clustering...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Clustert Spalten und Zeilen. Die Spalten müssen alle auf der gleichen Skala gemessen werden.
 
@@ -1035,15 +1009,13 @@ obj << Two Way Clustering;
 
 #### Use Saved Cluster Table
 
-**Syntax:** obj = Hierarchical Cluster(...Use Saved Cluster Table( state=0|1 )...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Hierarchical Cluster(...Use Saved Cluster Table( state=0|1 )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Verwendet eine separate Clusterverlaufstabelle zum Angeben des Clustern.
 
 #### Zoom to Selected Rows
 
-**Syntax:** obj << Zoom to Selected Rows
+**Syntax:** obj &lt;&lt; Zoom to Selected Rows
 
 **Beschreibung:** Zeigt nur die ausgewählten Zeilen im Dendrogramm an.
 
@@ -1065,7 +1037,7 @@ obj << Zoom to Selected Rows;
 
 #### By
 
-**Syntax:** obj << By( column(s) )
+**Syntax:** obj &lt;&lt; By( column(s) )
 
 ```jsl
 
@@ -1102,7 +1074,7 @@ obj = dt << Hierarchical Cluster( Y( :birth, :death ), Label( :country ) );
 
 #### Distance between rows
 
-**Syntax:** distance = KDTable << Distance between rows( row1, row2 )
+**Syntax:** distance = KDTable &lt;&lt; Distance between rows( row1, row2 )
 
 **Beschreibung:** Gibt die Distanz zwischen zwei Zeilen zurück. Die Distanz gilt bei entfernten Zeilen ebenso wie bei eingefügten Zeilen.
 
@@ -1118,7 +1090,7 @@ Show( distance );
 
 #### Insert rows
 
-**Syntax:** n = KDTable << Insert rows( number|[ vector ] )
+**Syntax:** n = KDTable &lt;&lt; Insert rows( number|[ vector ] )
 
 **Beschreibung:** Ermöglicht Ihnen, Zeilen für Suchvorgänge in die Tabelle wieder einzufügen. Die Zeilenindizes ändern sich nicht, wenn Zeilen eingefügt oder entfernt werden, und nur die ursprünglichen Zeilen können entfernt und dann wieder eingefügt werden. Es wird die Anzahl der eingefügten Zeilen zurückgegeben. Wenn eine Zeile bereits eingefügt wurde, wird sie ignoriert.
 
@@ -1140,7 +1112,7 @@ Show( rows );
 
 #### K nearest rows
 
-**Syntax:** {rows, dist} = KDTable << K nearest rows( stop, <position> )
+**Syntax:** {rows, dist} = KDTable &lt;&lt; K nearest rows( stop, &lt;position&gt; )
 
 **Beschreibung:** Gibt die n nächsten Zeilen und Distanzen zu einem Punkt oder zu einer Zeile (falls eine Position angegebenen ist) oder zu allen Zeilen (falls keine Position angegeben ist) zurück und stoppt die Suche, wenn der Distanzgrenzwert überschritten wird. Der Stopp kann entweder n oder {n,limit} sein. Die optionale Position ist ein Punkt entweder als (1xK)-Matrix, wobei K die Anzahl der Dimensionen oder die Nummer einer Zeile ist. Falls die Position nicht angegeben ist, werden die nächsten n Zeilen zu jeder Zeile in einer (Zeilen x n)-Matrix zurückgegeben.
 
@@ -1156,7 +1128,7 @@ Show( rows );
 
 #### Remove rows
 
-**Syntax:** n = KDTable << Remove rows( number|[ vector ] )
+**Syntax:** n = KDTable &lt;&lt; Remove rows( number|[ vector ] )
 
 **Beschreibung:** Entfernt Zeilen aus Suchvorgängen in der Tabelle. Die Zeilenindizes ändern sich nicht, wenn Zeilen eingefügt oder entfernt werden, und nur die ursprünglichen Zeilen können entfernt und dann wieder eingefügt werden. Der Index einer entfernten Zeile kann trotzdem noch als Startpunkt für K nächste Zeilen verwendet werden. Es wird die Anzahl der entfernten Zeilen zurückgegeben. Wenn eine Zeile bereits entfernt wurde, wird sie ignoriert.
 

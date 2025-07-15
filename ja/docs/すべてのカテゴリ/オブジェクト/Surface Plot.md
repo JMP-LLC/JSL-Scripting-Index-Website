@@ -6,7 +6,7 @@
 
 ### Action
 
-**構文:** obj << Action
+**構文:** obj &lt;&lt; Action
 
 **説明:** 評価する式を挿入するための、プラットフォーム内の汎用トラップドア。プラットフォームに一時的にディスプレイボックスおよびデータテーブルのコンテキストを設定する。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**構文:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**構文:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **説明:** 作成されたプリセットをオブジェクトに適用する。保存された設定に合わせてオプションとカスタマイズが更新される。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Broadcast
 
-**構文:** obj << Broadcast(message)
+**構文:** obj &lt;&lt; Broadcast(message)
 
 **説明:** メッセージをプラットフォームに一括適用する。個々のオブジェクトから戻される結果がデータテーブルである場合は、可能な限り連結する。その最終的な形式は、Table BoxのSave Combined Tableオプションの結果と同じになるか、またはソース列を使用したConcanateオプションの結果と同じになる。それ以外の場合、結果はリストの形で戻される。
 
@@ -91,7 +91,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**構文:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**構文:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **説明:** プラットフォームの変数を変更するための設定パネルを追加する。
 
@@ -109,7 +109,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**構文:** obj << Copy ByGroup Script
+**構文:** obj &lt;&lt; Copy ByGroup Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -135,7 +135,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**構文:** obj << Copy Script
+**構文:** obj &lt;&lt; Copy Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -155,7 +155,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**構文:** obj << Data Table Window
+**構文:** obj &lt;&lt; Data Table Window
 
 **説明:** この分析に使用したデータテーブルのウィンドウを手前に表示する。
 
@@ -175,7 +175,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**構文:** obj << Get By Levels
+**構文:** obj &lt;&lt; Get By Levels
 
 **説明:** By列が指定されている場合、列名をキー、データ値を値とした連想配列を戻す。
 
@@ -192,7 +192,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**構文:** obj << Get ByGroup Script
+**構文:** obj &lt;&lt; Get ByGroup Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -219,7 +219,7 @@ Show( t );
 
 ### Get Container
 
-**構文:** obj << Get Container
+**構文:** obj &lt;&lt; Get Container
 
 **説明:** オブジェクトのコンテンツを含んだコンテナボックスの参照を戻す。
 
@@ -271,7 +271,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**構文:** obj << Get Data Table
+**構文:** obj &lt;&lt; Get Data Table
 
 **説明:** データテーブルへの参照を戻す。
 
@@ -292,7 +292,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**構文:** obj << Get Group Platform
+**構文:** obj &lt;&lt; Get Group Platform
 
 **説明:** 該当のプラットフォームがグループに属している場合に、Group Platformオブジェクトを戻す。それ以外の場合はEmpty()を戻す。
 
@@ -309,7 +309,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**構文:** obj << Get Script
+**構文:** obj &lt;&lt; Get Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -330,7 +330,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**構文:** obj << Get Script With Data Table
+**構文:** obj &lt;&lt; Get Script With Data Table
 
 **説明:** この分析を再現するスクリプト(JSL)をデータテーブルへの参照も含めて生成し、それを式として戻す。
 
@@ -351,7 +351,7 @@ Show( t );
 
 ### Get Timing
 
-**構文:** obj << Get Timing
+**構文:** obj &lt;&lt; Get Timing
 
 **説明:** プラットフォームの起動にかかった時間を取得する。
 
@@ -372,7 +372,7 @@ Show( t );
 
 ### Get Web Support
 
-**構文:** obj << Get Web Support
+**構文:** obj &lt;&lt; Get Web Support
 
 **説明:** ディスプレイオブジェクトにおけるインタラクティブHTMLサポートのレベルを数値で戻す。1は、一部または全部の要素がサポートされていることを示し、0は、サポートされないことを示す。
 
@@ -388,7 +388,7 @@ Show( s );
 
 ### Get Where Expr
 
-**構文:** obj << Get Where Expr
+**構文:** obj &lt;&lt; Get Where Expr
 
 **説明:** プラットフォームがBy()またはWhere()を使って起動された場合に、データをサブセットするためのWhere式を戻す。By()やWhere()が使われていない場合はEmpty()を戻す。
 
@@ -425,7 +425,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**構文:** obj << Local Data Filter
+**構文:** obj &lt;&lt; Local Data Filter
 
 **説明:** このプラットフォームに対してのみ有効なフィルタで、データを特定のグループまたは範囲にフィルタリングする。
 
@@ -481,7 +481,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**構文:** obj << Paste Local Data Filter
+**構文:** obj &lt;&lt; Paste Local Data Filter
 
 **説明:** クリップボードにあるローカルデータフィルタを現在のレポートに適用する。
 
@@ -502,7 +502,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**構文:** obj << Redo Analysis
+**構文:** obj &lt;&lt; Redo Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -522,7 +522,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**構文:** obj << Redo ByGroup Analysis
+**構文:** obj &lt;&lt; Redo ByGroup Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -548,7 +548,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**構文:** obj << Relaunch Analysis
+**構文:** obj &lt;&lt; Relaunch Analysis
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -568,7 +568,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**構文:** obj << Relaunch ByGroup
+**構文:** obj &lt;&lt; Relaunch ByGroup
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -594,7 +594,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**構文:** obj << Remove Column Switcher
+**構文:** obj &lt;&lt; Remove Column Switcher
 
 **説明:** プラットフォームに最後に追加された列スイッチャーを削除する。
 
@@ -614,7 +614,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**構文:** obj << Remove Local Data Filter
+**構文:** obj &lt;&lt; Remove Local Data Filter
 
 **説明:** すでに作成されているローカルデータフィルタを削除し、プラットフォームはデータテーブル内のすべてのデータを使用した状態に戻る。
 
@@ -653,9 +653,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**構文:** obj << Report;
-
-Report( obj )
+**構文:** obj &lt;&lt; Report;Report( obj )
 
 **説明:** レポートオブジェクトへの参照を戻す。
 
@@ -677,7 +675,7 @@ Show( t );
 
 ### Report View
 
-**構文:** obj << Report View( "完全"|"要約" )
+**構文:** obj &lt;&lt; Report View( "完全"|"要約" )
 
 **説明:** レポートビューは、プラットフォームレポートの詳細を表示するかどうかを決定する。Fullはすべての詳細を表示し、Summaryはプラットフォームにより限定されたものだけを表示する。 動作をカスタマイズするため、各ディスプレイボックスは<<Set Summary Behaviorメッセージをサポートする。
 
@@ -697,7 +695,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**構文:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** 分析を再現するためのJSLスクリプトを作成し、データテーブルにテーブルプロパティとして保存する。スクリプトの名前を指定できる。Append Suffixオプションは、スクリプト名に数字の接尾辞を追加する。これにより、同名のスクリプトが存在していても区別できる。Promptオプションは、ユーザにスクリプト名の指定を促す。Replaceオプションは、同名の既存のスクリプトを置き換える。
 
@@ -723,7 +721,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**構文:** obj << Save ByGroup Script to Journal
+**構文:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -749,7 +747,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**構文:** obj << Save ByGroup Script to Script Window
+**構文:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -775,7 +773,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**構文:** obj << Save Script for All Objects
+**構文:** obj &lt;&lt; Save Script for All Objects
 
 **説明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -795,7 +793,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**構文:** obj << Save Script for All Objects To Data Table( <name> )
+**構文:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **説明:** すべてのレポートオブジェクトを再現するスクリプトを現在のデータテーブルに保存する。このオプションは、ウィンドウ内にレポートが複数ある場合に便利。作成されるスクリプトの名前は、引用符で囲んで指定しない限り、1つ目のプラットフォーム名となる。
 
@@ -845,7 +843,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**構文:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** この分析を再現するJSLスクリプトを生成し、データテーブルのテーブルプロパティとして保存する。
 
@@ -865,7 +863,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**構文:** obj << Save Script to Journal
+**構文:** obj &lt;&lt; Save Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -885,7 +883,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**構文:** obj << Save Script to Report
+**構文:** obj &lt;&lt; Save Script to Report
 
 **説明:** この分析を再現するJSLスクリプトを生成し、レポートウィンドウに表示する。分析手順の記録を結果と一緒に残せる。
 
@@ -905,7 +903,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**構文:** obj << Save Script to Script Window
+**構文:** obj &lt;&lt; Save Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -990,7 +988,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**構文:** obj << Sync to Data Table Changes
+**構文:** obj &lt;&lt; Sync to Data Table Changes
 
 **説明:** 除外やデータの変更が行われた場合に同期する。
 
@@ -1007,7 +1005,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**構文:** obj << Title( "new title" )
+**構文:** obj &lt;&lt; Title( "new title" )
 
 **説明:** プラットフォームのタイトルを設定する。
 
@@ -1027,7 +1025,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**構文:** obj << Top Report
+**構文:** obj &lt;&lt; Top Report
 
 **説明:** レポート内のルートノードへの参照を戻す。
 
@@ -1049,7 +1047,7 @@ Show( t );
 
 ### Transform Column
 
-**構文:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**構文:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **説明:** オブジェクトのローカルコンテキスト(通常はプラットフォーム)内に変換列を作成する。この変換列は、それを作成したプラットフォームの中のみで使用可能。
 
@@ -1068,7 +1066,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**構文:** obj << View Web XML
+**構文:** obj &lt;&lt; View Web XML
 
 **説明:** インタラクティブHTMLレポートの作成に使うXMLコードを戻す。
 
@@ -1104,7 +1102,7 @@ New Window( "Bivariate Equation",
 
 ### By
 
-**構文:** obj << By( column(s) )
+**構文:** obj &lt;&lt; By( column(s) )
 
 **説明:** 変数の水準ごとに1つずつ、複数のレポートを作成する。
 
@@ -1129,7 +1127,7 @@ obj = dt << Surface Plot(
 
 ### Columns
 
-**構文:** obj << Columns( column(s) )
+**構文:** obj &lt;&lt; Columns( column(s) )
 
 **説明:** 3次元グラフのX・Y・Z座標に使うための変数。
 
@@ -1143,7 +1141,7 @@ obj = dt << Surface Plot( Columns( :silane, :silica, :hardness ) );
 
 ### Factors
 
-**構文:** obj << Factors( column(s) )
+**構文:** obj &lt;&lt; Factors( column(s) )
 
 **説明:** 3次元グラフのX・Y・Z座標に使うための変数。
 
@@ -1180,9 +1178,7 @@ obj = dt << Surface Plot(
 
 ### Clip Sheet
 
-**構文:** obj << Clip Sheet( state=0|1 ); 
-
-obj << Clip Sheet1( state=0|1 )
+**構文:** obj &lt;&lt; Clip Sheet( state=0|1 ); obj &lt;&lt; Clip Sheet1( state=0|1 )
 
 **説明:** 計算式を持つ1つ目の応答列の値の範囲内だけで、曲面を表示する。
 
@@ -1204,9 +1200,7 @@ obj << Clip Sheet( 1 );
 
 ### Clip Sheet1
 
-**構文:** obj << Clip Sheet( state=0|1 ); 
-
-obj << Clip Sheet1( state=0|1 )
+**構文:** obj &lt;&lt; Clip Sheet( state=0|1 ); obj &lt;&lt; Clip Sheet1( state=0|1 )
 
 **説明:** 計算式を持つ1つ目の応答列の値の範囲内だけで、曲面を表示する。
 
@@ -1228,7 +1222,7 @@ obj << Clip Sheet( 1 );
 
 ### Clip Sheet2
 
-**構文:** obj << Clip Sheet2( state=0|1 )
+**構文:** obj &lt;&lt; Clip Sheet2( state=0|1 )
 
 **説明:** 計算式を持つ2つ目の応答列の値の範囲内だけで、曲面を表示する。
 
@@ -1251,7 +1245,7 @@ obj << Clip Sheet2( 1 );
 
 ### Clip Sheet3
 
-**構文:** obj << Clip Sheet3( state=0|1 )
+**構文:** obj &lt;&lt; Clip Sheet3( state=0|1 )
 
 **説明:** 計算式を持つ3つ目の応答列の値の範囲内だけで、曲面を表示する。
 
@@ -1274,7 +1268,7 @@ obj << Clip Sheet3( 1 );
 
 ### Clip Sheet4
 
-**構文:** obj << Clip Sheet4( state=0|1 )
+**構文:** obj &lt;&lt; Clip Sheet4( state=0|1 )
 
 **説明:** 計算式を持つ4つ目の応答列の値の範囲内だけで、曲面を表示する。
 
@@ -1300,9 +1294,7 @@ obj << Clip Sheet4( 1 );
 
 ### Contour Color
 
-**構文:** obj << Contour Color( color ); 
-
-obj << Contour Color1( color )
+**構文:** obj &lt;&lt; Contour Color( color ); obj &lt;&lt; Contour Color1( color )
 
 **説明:** 1つ目の曲面における等高線の色を指定する。
 
@@ -1319,9 +1311,7 @@ obj << Contour Color( {255, 128, 0} );
 
 ### Contour Color1
 
-**構文:** obj << Contour Color( color ); 
-
-obj << Contour Color1( color )
+**構文:** obj &lt;&lt; Contour Color( color ); obj &lt;&lt; Contour Color1( color )
 
 **説明:** 1つ目の曲面における等高線の色を指定する。
 
@@ -1338,7 +1328,7 @@ obj << Contour Color( {255, 128, 0} );
 
 ### Contour Color2
 
-**構文:** obj << Contour Color2( color )
+**構文:** obj &lt;&lt; Contour Color2( color )
 
 **説明:** 2つ目の曲面における等高線の色を指定する。
 
@@ -1358,7 +1348,7 @@ obj << Contour Color2( {255, 128, 0} );
 
 ### Contour Color3
 
-**構文:** obj << Contour Color3( color )
+**構文:** obj &lt;&lt; Contour Color3( color )
 
 **説明:** 3つ目の曲面における等高線の色を指定する。
 
@@ -1378,7 +1368,7 @@ obj << Contour Color3( {255, 0, 0} );
 
 ### Contour Color4
 
-**構文:** obj << Contour Color4( color )
+**構文:** obj &lt;&lt; Contour Color4( color )
 
 **説明:** 4つ目の曲面における等高線の色を指定する。
 
@@ -1402,7 +1392,7 @@ obj << Contour Color4( {100, 0, 200} );
 
 ### Control Panel
 
-**構文:** obj << Control Panel( state=0|1 )
+**構文:** obj &lt;&lt; Control Panel( state=0|1 )
 
 **説明:** 設定パネルの表示/非表示を切り替える。設定パネルでは、表示の仕方、独立変数、従属変数を制御できる。 デフォルトではオン。
 
@@ -1423,9 +1413,7 @@ obj << Control Panel( 0 );
 
 ### Data points Color
 
-**構文:** obj << Data Points Color( color ); 
-
-obj << Data Points Color1( color )
+**構文:** obj &lt;&lt; Data Points Color( color ); obj &lt;&lt; Data Points Color1( color )
 
 **説明:** 第1応答変数のデータ点の色を変更する。
 
@@ -1442,9 +1430,7 @@ obj << Data Points Color( {0, 0, 255} );
 
 ### Data points Color1
 
-**構文:** obj << Data Points Color( color ); 
-
-obj << Data Points Color1( color )
+**構文:** obj &lt;&lt; Data Points Color( color ); obj &lt;&lt; Data Points Color1( color )
 
 **説明:** 第1応答変数のデータ点の色を変更する。
 
@@ -1461,7 +1447,7 @@ obj << Data Points Color( {0, 0, 255} );
 
 ### Data points Color2
 
-**構文:** obj << Data points Color2( color )
+**構文:** obj &lt;&lt; Data points Color2( color )
 
 **説明:** 第2応答変数のデータ点の色を変更する。
 
@@ -1478,7 +1464,7 @@ obj << Data Points Color2( {0, 0, 255} );
 
 ### Data points Color3
 
-**構文:** obj << Data points Color3( color )
+**構文:** obj &lt;&lt; Data points Color3( color )
 
 **説明:** 第3応答変数のデータ点の色を変更する。
 
@@ -1497,7 +1483,7 @@ obj << Data Points Color3( {255, 0, 0} );
 
 ### Data points Color4
 
-**構文:** obj << Data points Color4( color )
+**構文:** obj &lt;&lt; Data points Color4( color )
 
 **説明:** 第4応答変数のデータ点の色を変更する。
 
@@ -1523,9 +1509,7 @@ obj << Frame3D( Set Rotation( -79.3688859847019, -1.23001727812475, 27.709687956
 
 ### Datapoints Choice
 
-**構文:** obj << Datapoints Choice( "Off"|"Points"|"Needles"|"Mesh"|"Surface" ); 
-
-obj << Datapoints Choice1( "Off"|"Points"|"Needles"|"Mesh"|"Surface" )
+**構文:** obj &lt;&lt; Datapoints Choice( "Off"|"Points"|"Needles"|"Mesh"|"Surface" ); obj &lt;&lt; Datapoints Choice1( "Off"|"Points"|"Needles"|"Mesh"|"Surface" )
 
 **説明:** 1つ目の応答の曲面における点の表示の仕方を指定する。デフォルトのスタイルはPoints。
 
@@ -1546,9 +1530,7 @@ obj << Datapoints Choice( "Needles" );
 
 ### Datapoints Choice1
 
-**構文:** obj << Datapoints Choice( "Off"|"Points"|"Needles"|"Mesh"|"Surface" ); 
-
-obj << Datapoints Choice1( "Off"|"Points"|"Needles"|"Mesh"|"Surface" )
+**構文:** obj &lt;&lt; Datapoints Choice( "Off"|"Points"|"Needles"|"Mesh"|"Surface" ); obj &lt;&lt; Datapoints Choice1( "Off"|"Points"|"Needles"|"Mesh"|"Surface" )
 
 **説明:** 1つ目の応答の曲面における点の表示の仕方を指定する。デフォルトのスタイルはPoints。
 
@@ -1569,7 +1551,7 @@ obj << Datapoints Choice( "Needles" );
 
 ### Datapoints Choice2
 
-**構文:** obj << Datapoints Choice2( "オフ"|"点"|"垂線"|"メッシュ"|"曲面" )
+**構文:** obj &lt;&lt; Datapoints Choice2( "オフ"|"点"|"垂線"|"メッシュ"|"曲面" )
 
 **説明:** 2つ目の応答の曲面における点の表示の仕方を指定する。デフォルトのスタイルはPoints。
 
@@ -1591,7 +1573,7 @@ obj << Datapoints Choice2( "Off" );
 
 ### Datapoints Choice3
 
-**構文:** obj << Datapoints Choice3( "オフ"|"点"|"垂線"|"メッシュ"|"曲面" )
+**構文:** obj &lt;&lt; Datapoints Choice3( "オフ"|"点"|"垂線"|"メッシュ"|"曲面" )
 
 **説明:** 3つ目の応答の曲面における点の表示の仕方を指定する。デフォルトのスタイルはPoints。
 
@@ -1612,7 +1594,7 @@ obj << Datapoints Choice3( "Mesh" );
 
 ### Datapoints Choice4
 
-**構文:** obj << Datapoints Choice4( "オフ"|"点"|"垂線"|"メッシュ"|"曲面" )
+**構文:** obj &lt;&lt; Datapoints Choice4( "オフ"|"点"|"垂線"|"メッシュ"|"曲面" )
 
 **説明:** 4つ目の応答の曲面における点の表示の仕方を指定する。デフォルトのスタイルはPoints。
 
@@ -1636,7 +1618,7 @@ obj << Datapoints Choice4( "Surface" );
 
 ### Dependent Variables Points
 
-**構文:** obj << Dependent Variables Points( state=0|1 )
+**構文:** obj &lt;&lt; Dependent Variables Points( state=0|1 )
 
 **説明:** 従属変数のパネルにおける点のオプションの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1657,7 +1639,7 @@ obj << Dependent Variables Points( 0 );
 
 ### Dependent Variables Response Grid
 
-**構文:** obj << Dependent Variables Response Grid( state=0|1 )
+**構文:** obj &lt;&lt; Dependent Variables Response Grid( state=0|1 )
 
 **説明:** 従属変数のパネルにおけるグリッドオプションの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1678,7 +1660,7 @@ obj << Dependent Variables Response Grid( 0 );
 
 ### Equation
 
-**構文:** obj << Equation( equation1, <equation2>, <equation3>, <equation4>  )
+**構文:** obj &lt;&lt; Equation( equation1, &lt;equation2&gt;, &lt;equation3&gt;, &lt;equation4&gt; )
 
 **説明:** [従属変数]セクションで指定された順序でシートに計算式を割り当てる。途中の応答列を飛ばしたい場合には、ピリオドを使って欠測値を指定する。
 
@@ -1697,7 +1679,7 @@ obj << Show Formula( 1 );
 
 ### Fit to Window
 
-**構文:** obj << Fit to Window( "自動"|"オン"|"オフ" )
+**構文:** obj &lt;&lt; Fit to Window( "自動"|"オン"|"オフ" )
 
 **説明:** レポートの自動伸縮の動作を設定する。
 
@@ -1718,7 +1700,7 @@ obj << Fit to Window( "Off" );
 
 ### Formula
 
-**構文:** obj << Formula( column, <column>, <column>, <column>  )
+**構文:** obj &lt;&lt; Formula( column, &lt;column&gt;, &lt;column&gt;, &lt;column&gt; )
 
 **説明:** 「従属変数」セクションで表示されている順番に従い、列に保存されている計算式を割り当てる。
 
@@ -1737,7 +1719,7 @@ obj << Formula( :Pred Formula ABRASION, :Pred Formula ELONG );
 
 ### Frame3D
 
-**構文:** obj << Frame3D( Scatterplot 3D options )
+**構文:** obj &lt;&lt; Frame3D( Scatterplot 3D options )
 
 **説明:** 曲面の表示オプションを変更する。このオプションは、[三次元散布図]プラットフォームのメッセージを使用する。メッセージの詳細については、三次元散布図の説明を参照のこと。
 
@@ -1759,7 +1741,7 @@ obj << Frame3D(
 
 ### Hide Lights Border
 
-**構文:** obj << Hide Lights Border( state=0|1 )
+**構文:** obj &lt;&lt; Hide Lights Border( state=0|1 )
 
 **説明:** ライトコントロールの表示/非表示を切り替える。
 
@@ -1774,7 +1756,7 @@ obj << Hide Lights Border( 1 );
 
 ### Iso Value
 
-**構文:** obj << Iso Value( id, value )
+**構文:** obj &lt;&lt; Iso Value( id, value )
 
 **説明:** 特定の従属変数に対する等値面スライダの値を変更する。id引数には、0を基準とするインデックスで従属変数を指定する。
 
@@ -1792,7 +1774,7 @@ obj << Iso Value( 1, 1500 );
 
 ### Lock Z Scale
 
-**構文:** obj << Lock Z Scale( state=0|1 )
+**構文:** obj &lt;&lt; Lock Z Scale( state=0|1 )
 
 **説明:** Z軸を現在の値でロックする。
 
@@ -1806,9 +1788,7 @@ obj << Lock Z Scale( 1 );
 
 ### Mesh Color
 
-**構文:** obj << Mesh Color( color ); 
-
-obj << Mesh Color1( color )
+**構文:** obj &lt;&lt; Mesh Color( color ); obj &lt;&lt; Mesh Color1( color )
 
 **説明:** 1つ目の従属変数に対する曲面メッシュの色を指定する。このオプションは、メッシュのオプションとして[オフ]以外の値が選択されている場合のみ利用できる。
 
@@ -1825,9 +1805,7 @@ obj << Mesh Color( {0, 0, 255} );
 
 ### Mesh Color1
 
-**構文:** obj << Mesh Color( color ); 
-
-obj << Mesh Color1( color )
+**構文:** obj &lt;&lt; Mesh Color( color ); obj &lt;&lt; Mesh Color1( color )
 
 **説明:** 1つ目の従属変数に対する曲面メッシュの色を指定する。このオプションは、メッシュのオプションとして[オフ]以外の値が選択されている場合のみ利用できる。
 
@@ -1844,7 +1822,7 @@ obj << Mesh Color( {0, 0, 255} );
 
 ### Mesh Color2
 
-**構文:** obj << Mesh Color2( color )
+**構文:** obj &lt;&lt; Mesh Color2( color )
 
 **説明:** 2つ目の従属変数に対する曲面メッシュの色を指定する。このオプションは、メッシュのオプションとして[オフ]以外の値が選択されている場合のみ利用できる。
 
@@ -1862,7 +1840,7 @@ obj << Mesh Color2( {255, 0, 0} );
 
 ### Mesh Color3
 
-**構文:** obj << Mesh Color3( color )
+**構文:** obj &lt;&lt; Mesh Color3( color )
 
 **説明:** 3つ目の従属変数に対する曲面メッシュの色を指定する。このオプションは、メッシュのオプションとして[オフ]以外の値が選択されている場合のみ利用できる。
 
@@ -1882,7 +1860,7 @@ obj << Mesh Color3( {50, 0, 100} );
 
 ### Mesh Color4
 
-**構文:** obj << Mesh Color4( color )
+**構文:** obj &lt;&lt; Mesh Color4( color )
 
 **説明:** 4つ目の従属変数に対する曲面メッシュの色を指定する。このオプションは、メッシュのオプションとして[オフ]以外の値が選択されている場合のみ利用できる。
 
@@ -1905,7 +1883,7 @@ obj << Mesh Color4( {0, 250, 0} );
 
 ### Mode
 
-**構文:** obj << Mode( "点と曲面"|"等値面"|"密度グリッド" )
+**構文:** obj &lt;&lt; Mode( "点と曲面"|"等値面"|"密度グリッド" )
 
 **説明:** プロットでの曲面の表示の仕方を指定する。[Sheets, points]オプションは、点、曲面、線を表示する。等値面のオプションは、3つの独立変数を含んだ計算式を使用する。
 
@@ -1927,11 +1905,7 @@ obj << Mode( "Isosurface" );
 
 ### Resolution
 
-**構文:** obj << Resolution( number )
-
-obj << X Resolution( number )
-
-obj << Y Resolution( number )
+**構文:** obj &lt;&lt; Resolution( number )obj &lt;&lt; X Resolution( number )obj &lt;&lt; Y Resolution( number )
 
 **説明:** 曲面プロットを描画するのに使用される解像度を変更する。
 
@@ -1950,7 +1924,7 @@ obj << Resolution( 12 );
 
 ### Response
 
-**構文:** obj << Response( column, <column>, <column>, <column>  )
+**構文:** obj &lt;&lt; Response( column, &lt;column&gt;, &lt;column&gt;, &lt;column&gt; )
 
 **説明:** 点をプロットしたい応答列を指定する。途中の応答列を飛ばしたい場合には、引用符付きの空の文字列を指定する。
 
@@ -1968,9 +1942,7 @@ obj << Response( :Pred Formula ABRASION, "", :Pred Formula ELONG );
 
 ### Response Column Color Theme
 
-**構文:** obj << Response Column Color Theme( color theme ); 
-
-obj << Response Column Color Theme1( color theme )
+**構文:** obj &lt;&lt; Response Column Color Theme( color theme ); obj &lt;&lt; Response Column Color Theme1( color theme )
 
 **説明:** 1つ目の曲面におけるカラーテーマを変更する。このオプションは、連続グラデーションを使った応答列でのみ利用できる。
 
@@ -1992,9 +1964,7 @@ obj << Response Column Color Theme( "Jet" );
 
 ### Response Column Color Theme1
 
-**構文:** obj << Response Column Color Theme( color theme ); 
-
-obj << Response Column Color Theme1( color theme )
+**構文:** obj &lt;&lt; Response Column Color Theme( color theme ); obj &lt;&lt; Response Column Color Theme1( color theme )
 
 **説明:** 1つ目の曲面におけるカラーテーマを変更する。このオプションは、連続グラデーションを使った応答列でのみ利用できる。
 
@@ -2016,7 +1986,7 @@ obj << Response Column Color Theme( "Jet" );
 
 ### Response Column Color Theme2
 
-**構文:** obj << Response Column Color Theme2( color theme )
+**構文:** obj &lt;&lt; Response Column Color Theme2( color theme )
 
 **説明:** 2つ目の曲面におけるカラーテーマを変更する。このオプションは、連続グラデーションを使った応答列でのみ利用できる。
 
@@ -2038,7 +2008,7 @@ obj << Response Column Color Theme2( "White to Black" );
 
 ### Response Column Color Theme3
 
-**構文:** obj << Response Column Color Theme3( color theme )
+**構文:** obj &lt;&lt; Response Column Color Theme3( color theme )
 
 **説明:** 3つ目の曲面におけるカラーテーマを変更する。このオプションは、連続グラデーションを使った応答列でのみ利用できる。
 
@@ -2060,7 +2030,7 @@ obj << Response Column Color Theme3( "Blue to Gray to Red" );
 
 ### Response Column Color Theme4
 
-**構文:** obj << Response Column Color Theme4( color theme )
+**構文:** obj &lt;&lt; Response Column Color Theme4( color theme )
 
 **説明:** 4つ目の曲面におけるカラーテーマを変更する。このオプションは、連続グラデーションを使った応答列でのみ利用できる。
 
@@ -2088,9 +2058,7 @@ obj << Response Column Color Theme4( "White to Red" );
 
 ### Response Column Fill
 
-**構文:** obj << Response Column Fill( "Solid"|"Continuous Gradients"|"Discrete Gradients" ); 
-
-obj << Response Column Fill1( "Solid"|"Continuous Gradients"|"Discrete Gradients" )
+**構文:** obj &lt;&lt; Response Column Fill( "Solid"|"Continuous Gradients"|"Discrete Gradients" ); obj &lt;&lt; Response Column Fill1( "Solid"|"Continuous Gradients"|"Discrete Gradients" )
 
 **説明:** 1つ目の曲面を、単色・連続グラデーション・不連続グラデーションのどれで色付けするかを指定する。このオプションは、計算式を持たない応答列を使った曲面の場合のみ利用できる。
 
@@ -2111,9 +2079,7 @@ obj << Response Column Fill( "Discrete Gradients" );
 
 ### Response Column Fill1
 
-**構文:** obj << Response Column Fill( "Solid"|"Continuous Gradients"|"Discrete Gradients" ); 
-
-obj << Response Column Fill1( "Solid"|"Continuous Gradients"|"Discrete Gradients" )
+**構文:** obj &lt;&lt; Response Column Fill( "Solid"|"Continuous Gradients"|"Discrete Gradients" ); obj &lt;&lt; Response Column Fill1( "Solid"|"Continuous Gradients"|"Discrete Gradients" )
 
 **説明:** 1つ目の曲面を、単色・連続グラデーション・不連続グラデーションのどれで色付けするかを指定する。このオプションは、計算式を持たない応答列を使った曲面の場合のみ利用できる。
 
@@ -2134,7 +2100,7 @@ obj << Response Column Fill( "Discrete Gradients" );
 
 ### Response Column Fill2
 
-**構文:** obj << Response Column Fill2( "単色"|"連続グラデーション"|"不連続グラデーション" )
+**構文:** obj &lt;&lt; Response Column Fill2( "単色"|"連続グラデーション"|"不連続グラデーション" )
 
 **説明:** 2つ目の曲面を、単色・連続グラデーション・不連続グラデーションのどれで色付けするかを指定する。このオプションは、計算式を持たない応答列を使った曲面の場合のみ利用できる。
 
@@ -2155,7 +2121,7 @@ obj << Response Column Fill2( "Continuous Gradients" );
 
 ### Response Column Fill3
 
-**構文:** obj << Response Column Fill3( "単色"|"連続グラデーション"|"不連続グラデーション" )
+**構文:** obj &lt;&lt; Response Column Fill3( "単色"|"連続グラデーション"|"不連続グラデーション" )
 
 **説明:** 3つ目の曲面を、単色・連続グラデーション・不連続グラデーションのどれで色付けするかを指定する。このオプションは、計算式を持たない応答列を使った曲面の場合のみ利用できる。
 
@@ -2176,7 +2142,7 @@ obj << Response Column Fill3( "Discrete Gradients" );
 
 ### Response Column Fill4
 
-**構文:** obj << Response Column Fill4( "単色"|"連続グラデーション"|"不連続グラデーション" )
+**構文:** obj &lt;&lt; Response Column Fill4( "単色"|"連続グラデーション"|"不連続グラデーション" )
 
 **説明:** 4つ目の曲面を、単色・連続グラデーション・不連続グラデーションのどれで色付けするかを指定する。このオプションは、計算式を持たない応答列を使った曲面の場合のみ利用できる。
 
@@ -2203,9 +2169,7 @@ obj << Response Column Fill4( "Continuous Gradients" );
 
 ### Response Column Gradient Lines
 
-**構文:** obj << Response Column Gradient Lines( state=0|1 ); 
-
-obj << Response Column Gradient Lines1( state=0|1 )
+**構文:** obj &lt;&lt; Response Column Gradient Lines( state=0|1 ); obj &lt;&lt; Response Column Gradient Lines1( state=0|1 )
 
 **説明:** 1つ目の曲面におけるグラデーションの水準間を区切る線の表示/非表示を切り替える。このオプションは、計算式を持たない応答列を使った不連続グラデーションの曲面の場合のみ利用できる。 デフォルトではオン。
 
@@ -2227,9 +2191,7 @@ obj << Response Column Gradient Lines( 0 );
 
 ### Response Column Gradient Lines1
 
-**構文:** obj << Response Column Gradient Lines( state=0|1 ); 
-
-obj << Response Column Gradient Lines1( state=0|1 )
+**構文:** obj &lt;&lt; Response Column Gradient Lines( state=0|1 ); obj &lt;&lt; Response Column Gradient Lines1( state=0|1 )
 
 **説明:** 1つ目の曲面におけるグラデーションの水準間を区切る線の表示/非表示を切り替える。このオプションは、計算式を持たない応答列を使った不連続グラデーションの曲面の場合のみ利用できる。 デフォルトではオン。
 
@@ -2251,7 +2213,7 @@ obj << Response Column Gradient Lines( 0 );
 
 ### Response Column Gradient Lines2
 
-**構文:** obj << Response Column Gradient Lines2( state=0|1 )
+**構文:** obj &lt;&lt; Response Column Gradient Lines2( state=0|1 )
 
 **説明:** 2つ目の曲面におけるグラデーションの水準間を区切る線の表示/非表示を切り替える。このオプションは、計算式を持たない応答列を使った不連続グラデーションの曲面の場合のみ利用できる。 デフォルトではオン。
 
@@ -2273,7 +2235,7 @@ obj << Response Column Gradient Lines2( 0 );
 
 ### Response Column Gradient Lines3
 
-**構文:** obj << Response Column Gradient Lines3( state=0|1 )
+**構文:** obj &lt;&lt; Response Column Gradient Lines3( state=0|1 )
 
 **説明:** 3つ目の曲面におけるグラデーションの水準間を区切る線の表示/非表示を切り替える。このオプションは、計算式を持たない応答列を使った不連続グラデーションの曲面の場合のみ利用できる。 デフォルトではオン。
 
@@ -2296,7 +2258,7 @@ obj << Response Column Gradient Lines3( 1 );
 
 ### Response Column Gradient Lines4
 
-**構文:** obj << Response Column Gradient Lines4( state=0|1 )
+**構文:** obj &lt;&lt; Response Column Gradient Lines4( state=0|1 )
 
 **説明:** 4つ目の曲面におけるグラデーションの水準間を区切る線の表示/非表示を切り替える。このオプションは、計算式を持たない応答列を使った不連続グラデーションの曲面の場合のみ利用できる。 デフォルトではオン。
 
@@ -2325,9 +2287,7 @@ obj << Response Column Gradient Lines4( 1 );
 
 ### Response Column Gradients
 
-**構文:** obj << Response Column Gradients( number ); 
-
-obj << Response Column Gradients1( number )
+**構文:** obj &lt;&lt; Response Column Gradients( number ); obj &lt;&lt; Response Column Gradients1( number )
 
 **説明:** 1つ目の曲面におけるグラデーションの水準数を指定する。このオプションは、計算式を持たない応答列を使った不連続グラデーションの曲面の場合のみ利用できる。
 
@@ -2349,9 +2309,7 @@ obj << Response Column Gradients( 9 );
 
 ### Response Column Gradients1
 
-**構文:** obj << Response Column Gradients( number ); 
-
-obj << Response Column Gradients1( number )
+**構文:** obj &lt;&lt; Response Column Gradients( number ); obj &lt;&lt; Response Column Gradients1( number )
 
 **説明:** 1つ目の曲面におけるグラデーションの水準数を指定する。このオプションは、計算式を持たない応答列を使った不連続グラデーションの曲面の場合のみ利用できる。
 
@@ -2373,7 +2331,7 @@ obj << Response Column Gradients( 9 );
 
 ### Response Column Gradients2
 
-**構文:** obj << Response Column Gradients2( number )
+**構文:** obj &lt;&lt; Response Column Gradients2( number )
 
 **説明:** 2つ目の曲面におけるグラデーションの水準数を指定する。このオプションは、計算式を持たない応答列を使った不連続グラデーションの曲面の場合のみ利用できる。
 
@@ -2395,7 +2353,7 @@ obj << Response Column Gradients2( 8 );
 
 ### Response Column Gradients3
 
-**構文:** obj << Response Column Gradients3( number )
+**構文:** obj &lt;&lt; Response Column Gradients3( number )
 
 **説明:** 3つ目の曲面におけるグラデーションの水準数を指定する。このオプションは、計算式を持たない応答列を使った不連続グラデーションの曲面の場合のみ利用できる。
 
@@ -2417,7 +2375,7 @@ obj << Response Column Gradients3( 7 );
 
 ### Response Column Gradients4
 
-**構文:** obj << Response Column Gradients4( number )
+**構文:** obj &lt;&lt; Response Column Gradients4( number )
 
 **説明:** 4つ目の曲面におけるグラデーションの水準数を指定する。このオプションは、計算式を持たない応答列を使った不連続グラデーションの曲面の場合のみ利用できる。
 
@@ -2445,9 +2403,7 @@ obj << Response Column Gradients4( 10 );
 
 ### Scale response axes independently
 
-**構文:** obj = Surface Plot(...Scale response axes indenpendently( state=0|1 )...); 
-
-obj << Scale response axes independently( state=0|1 )
+**構文:** obj = Surface Plot(...Scale response axes indenpendently( state=0|1 )...); obj &lt;&lt; Scale response axes independently( state=0|1 )
 
 **説明:** 応答ごとに個別のスケールを使用するか、起動ウィンドウで1つ目に入力された応答のスケールをすべての応答に適用するかを指定する。
 
@@ -2470,7 +2426,7 @@ obj << Scale response axes independently( 0 );
 
 ### Set Z Variable
 
-**構文:** obj << Set Z Variable( column )
+**構文:** obj &lt;&lt; Set Z Variable( column )
 
 **説明:** 曲面プロットのZ変数とする列を設定する。このオプションは、等値面でのみ利用できる。
 
@@ -2490,7 +2446,7 @@ obj << Set Z Variable( :SILANE );
 
 ### SetVariableAxis
 
-**構文:** obj << SetVariableAxis( column, <Current Value( number )>, <Axis Data( axis options )> )
+**構文:** obj &lt;&lt; SetVariableAxis( column, &lt;Current Value( number )&gt;, &lt;Axis Data( axis options )&gt; )
 
 **説明:** 独立変数の軸の属性を指定する。
 
@@ -2508,7 +2464,7 @@ obj << Set Variable Axis( :SILANE, Axis Data( {Format( "Fixed", 8, 1 )} ) );
 
 ### SetXVariable
 
-**構文:** obj << SetXVariable( column )
+**構文:** obj &lt;&lt; SetXVariable( column )
 
 **説明:** 曲面プロットのX変数とする列を設定する。
 
@@ -2524,7 +2480,7 @@ obj << Set X Variable( :SULFUR );
 
 ### SetYVariable
 
-**構文:** obj << SetYVariable( column )
+**構文:** obj &lt;&lt; SetYVariable( column )
 
 **説明:** 曲面プロットのY変数とする列を設定する。
 
@@ -2540,7 +2496,7 @@ obj << Set Y Variable( :SULFUR );
 
 ### SetZAxis
 
-**構文:** obj << SetZAxis( column, Current Value( number ), <Axis Data( axis options )> )
+**構文:** obj &lt;&lt; SetZAxis( column, Current Value( number ), &lt;Axis Data( axis options )&gt; )
 
 **説明:** Z軸の属性を指定する。
 
@@ -2556,9 +2512,7 @@ obj << Set Z Axis( :Pred Formula ABRASION, Axis Data( {Format( "Fixed", 8, 1 )} 
 
 ### Show Contour
 
-**構文:** obj << Show Contour( "Off"|"Below"|"Above"|"On Surface" ); 
-
-obj << Show Contour1( "Off"|"Below|Above"|"On Surface" )
+**構文:** obj &lt;&lt; Show Contour( "Off"|"Below"|"Above"|"On Surface" ); obj &lt;&lt; Show Contour1( "Off"|"Below|Above"|"On Surface" )
 
 **説明:** 1つ目の応答の曲面に対する等高線の配置を指定する。
 
@@ -2579,9 +2533,7 @@ obj << Show Contour( "On Surface" );
 
 ### Show Contour1
 
-**構文:** obj << Show Contour( "Off"|"Below"|"Above"|"On Surface" ); 
-
-obj << Show Contour1( "Off"|"Below|Above"|"On Surface" )
+**構文:** obj &lt;&lt; Show Contour( "Off"|"Below"|"Above"|"On Surface" ); obj &lt;&lt; Show Contour1( "Off"|"Below|Above"|"On Surface" )
 
 **説明:** 1つ目の応答の曲面に対する等高線の配置を指定する。
 
@@ -2602,7 +2554,7 @@ obj << Show Contour( "On Surface" );
 
 ### Show Contour2
 
-**構文:** obj << Show Contour2( "オフ"|"下"|"上"|"曲面上" )
+**構文:** obj &lt;&lt; Show Contour2( "オフ"|"下"|"上"|"曲面上" )
 
 **説明:** 2つ目の応答の曲面に対する等高線の配置を指定する。
 
@@ -2623,7 +2575,7 @@ obj << Show Contour2( "Above" );
 
 ### Show Contour3
 
-**構文:** obj << Show Contour3( "オフ"|"下"|"上"|"曲面上" )
+**構文:** obj &lt;&lt; Show Contour3( "オフ"|"下"|"上"|"曲面上" )
 
 **説明:** 3つ目の応答の曲面に対する等高線の配置を指定する。
 
@@ -2645,7 +2597,7 @@ obj << Show Contour3( "Below" );
 
 ### Show Contour4
 
-**構文:** obj << Show Contour4( "オフ"|"下"|"上"|"曲面上" )
+**構文:** obj &lt;&lt; Show Contour4( "オフ"|"下"|"上"|"曲面上" )
 
 **説明:** 4つ目の応答の曲面に対する等高線の配置を指定する。
 
@@ -2667,9 +2619,7 @@ obj << Show Contour4( "On Surface" );
 
 ### Show Mesh
 
-**構文:** obj << Show Mesh( "Off"|"X"|"Y"|"X and Y" ); 
-
-obj << Show Mesh1( "Off"|"X"|"Y"|"X and Y" )
+**構文:** obj &lt;&lt; Show Mesh( "Off"|"X"|"Y"|"X and Y" ); obj &lt;&lt; Show Mesh1( "Off"|"X"|"Y"|"X and Y" )
 
 **説明:** 1つ目の応答における曲面メッシュのスタイルを指定する。
 
@@ -2689,9 +2639,7 @@ obj << Show Mesh( "X and Y" );
 
 ### Show Mesh1
 
-**構文:** obj << Show Mesh( "Off"|"X"|"Y"|"X and Y" ); 
-
-obj << Show Mesh1( "Off"|"X"|"Y"|"X and Y" )
+**構文:** obj &lt;&lt; Show Mesh( "Off"|"X"|"Y"|"X and Y" ); obj &lt;&lt; Show Mesh1( "Off"|"X"|"Y"|"X and Y" )
 
 **説明:** 1つ目の応答における曲面メッシュのスタイルを指定する。
 
@@ -2711,7 +2659,7 @@ obj << Show Mesh( "X and Y" );
 
 ### Show Mesh2
 
-**構文:** obj << Show Mesh2( "オフ"|"XとY"|"X"|"Y" )
+**構文:** obj &lt;&lt; Show Mesh2( "オフ"|"XとY"|"X"|"Y" )
 
 **説明:** 2つ目の応答における曲面メッシュのスタイルを指定する。
 
@@ -2731,7 +2679,7 @@ obj << Show Mesh2( "X" );
 
 ### Show Mesh3
 
-**構文:** obj << Show Mesh3( "オフ"|"XとY"|"X"|"Y" )
+**構文:** obj &lt;&lt; Show Mesh3( "オフ"|"XとY"|"X"|"Y" )
 
 **説明:** 3つ目の応答における曲面メッシュのスタイルを指定する。
 
@@ -2751,7 +2699,7 @@ obj << Show Mesh3( "Y" );
 
 ### Show Mesh4
 
-**構文:** obj << Show Mesh4( "オフ"|"XとY"|"X"|"Y" )
+**構文:** obj &lt;&lt; Show Mesh4( "オフ"|"XとY"|"X"|"Y" )
 
 **説明:** 4つ目の応答における曲面メッシュのスタイルを指定する。
 
@@ -2771,9 +2719,7 @@ obj << Show Mesh4( "X and Y" );
 
 ### Show Surface
 
-**構文:** obj << Show Surface( "Off"|"Both sides"|"Above only"|"Below only" ); 
-
-obj << Show Surface1( "Off"|"Both sides"|"Above only"|"Below only" )
+**構文:** obj &lt;&lt; Show Surface( "Off"|"Both sides"|"Above only"|"Below only" ); obj &lt;&lt; Show Surface1( "Off"|"Both sides"|"Above only"|"Below only" )
 
 **説明:** 第1の曲面の表示形式を指定する。このオプションは、計算式を持つ応答列から生成した曲面でのみ利用できる。
 
@@ -2794,9 +2740,7 @@ obj << Show Surface( "Below Only" );
 
 ### Show Surface1
 
-**構文:** obj << Show Surface( "Off"|"Both sides"|"Above only"|"Below only" ); 
-
-obj << Show Surface1( "Off"|"Both sides"|"Above only"|"Below only" )
+**構文:** obj &lt;&lt; Show Surface( "Off"|"Both sides"|"Above only"|"Below only" ); obj &lt;&lt; Show Surface1( "Off"|"Both sides"|"Above only"|"Below only" )
 
 **説明:** 第1の曲面の表示形式を指定する。このオプションは、計算式を持つ応答列から生成した曲面でのみ利用できる。
 
@@ -2817,7 +2761,7 @@ obj << Show Surface( "Below Only" );
 
 ### Show Surface2
 
-**構文:** obj << Show Surface2( "オフ"|"両面"|"表のみ"|"裏のみ" )
+**構文:** obj &lt;&lt; Show Surface2( "オフ"|"両面"|"表のみ"|"裏のみ" )
 
 **説明:** 2つ目の曲面の表示について指定する。このオプションは、計算式を持つ応答列を使った曲面の場合のみ利用できる。
 
@@ -2838,7 +2782,7 @@ obj << Show Surface2( "Both Sides" );
 
 ### Show Surface3
 
-**構文:** obj << Show Surface3( "オフ"|"両面"|"表のみ"|"裏のみ" )
+**構文:** obj &lt;&lt; Show Surface3( "オフ"|"両面"|"表のみ"|"裏のみ" )
 
 **説明:** 3つ目の曲面の表示について指定する。このオプションは、計算式を持つ応答列を使った曲面の場合のみ利用できる。
 
@@ -2859,7 +2803,7 @@ obj << Show Surface3( "Above Only" );
 
 ### Show Surface4
 
-**構文:** obj << Show Surface4( "オフ"|"両面"|"表のみ"|"裏のみ" )
+**構文:** obj &lt;&lt; Show Surface4( "オフ"|"両面"|"表のみ"|"裏のみ" )
 
 **説明:** 4つ目の曲面の表示について指定する。このオプションは、計算式を持つ応答列を使った曲面の場合のみ利用できる。
 
@@ -2880,7 +2824,7 @@ obj << Show Surface4( "Both Sides" );
 
 ### Show formula
 
-**構文:** obj << Show formula( state=0|1 )
+**構文:** obj &lt;&lt; Show formula( state=0|1 )
 
 **説明:** 曲面プロットに現在表示されているすべての従属変数において、計算式の表示/非表示を切り替える。
 
@@ -2894,9 +2838,7 @@ obj << Show Formula( 1 );
 
 ### Surface Alpha
 
-**構文:** obj << Surface Alpha( number ); 
-
-obj << Surface Alpha1( number )
+**構文:** obj &lt;&lt; Surface Alpha( number ); obj &lt;&lt; Surface Alpha1( number )
 
 **説明:** 1つ目の応答変数について、等値面の不透明度を指定する。
 
@@ -2918,9 +2860,7 @@ obj << Surface Alpha( 0.25 );
 
 ### Surface Alpha1
 
-**構文:** obj << Surface Alpha( number ); 
-
-obj << Surface Alpha1( number )
+**構文:** obj &lt;&lt; Surface Alpha( number ); obj &lt;&lt; Surface Alpha1( number )
 
 **説明:** 1つ目の応答変数について、等値面の不透明度を指定する。
 
@@ -2942,7 +2882,7 @@ obj << Surface Alpha( 0.25 );
 
 ### Surface Alpha2
 
-**構文:** obj << Surface Alpha2( number )
+**構文:** obj &lt;&lt; Surface Alpha2( number )
 
 **説明:** 2つ目の応答変数について、等値面の不透明度を指定する。
 
@@ -2965,7 +2905,7 @@ obj << Surface Alpha2( 0.3 );
 
 ### Surface Alpha3
 
-**構文:** obj << Surface Alpha3( number )
+**構文:** obj &lt;&lt; Surface Alpha3( number )
 
 **説明:** 3つ目の応答変数について、等値面の不透明度を指定する。
 
@@ -2988,7 +2928,7 @@ obj << Surface Alpha3( 0.75 );
 
 ### Surface Alpha4
 
-**構文:** obj << Surface Alpha4( number )
+**構文:** obj &lt;&lt; Surface Alpha4( number )
 
 **説明:** 4つ目の応答変数について、等値面の不透明度を指定する。
 
@@ -3011,9 +2951,7 @@ obj << Surface Alpha4( 0.90 );
 
 ### Surface Color
 
-**構文:** obj << Surface Color( color ); 
-
-obj << Surface Color1( color )
+**構文:** obj &lt;&lt; Surface Color( color ); obj &lt;&lt; Surface Color1( color )
 
 **説明:** 1つ目の曲面を塗りつぶすときの色を指定する。
 
@@ -3029,7 +2967,7 @@ obj << Surface Color( {0, 0, 255} );
 
 ### Surface Color Method
 
-**構文:** obj << Surface Color Method( "Solid"|formula, <"Solid"|formula>, <"Solid"|formula>, <"Solid"|formula> )
+**構文:** obj &lt;&lt; Surface Color Method( "Solid"|formula, &lt;"Solid"|formula&gt;, &lt;"Solid"|formula&gt;, &lt;"Solid"|formula&gt; )
 
 **説明:** 4つの曲面それぞれに対して、曲面の塗り方を指定する。曲面の色の計算式は、曲面そのものの計算式と異なってもよい。
 
@@ -3050,9 +2988,7 @@ obj << Surface Color Theme2( "Blue to Gray to Red" );
 
 ### Surface Color Range
 
-**構文:** obj << Surface Color Range( "Data"|"Axis" ); 
-
-obj << Surface Color Range1( "Data"|"Axis" )
+**構文:** obj &lt;&lt; Surface Color Range( "Data"|"Axis" ); obj &lt;&lt; Surface Color Range1( "Data"|"Axis" )
 
 **説明:** 1つ目の曲面におけるカラーグラデーションの範囲を指定する。このオプションは、グラデーションが使われている場合のみ利用できる。
 
@@ -3075,9 +3011,7 @@ obj << Surface Color Range( "Axis" );
 
 ### Surface Color Range1
 
-**構文:** obj << Surface Color Range( "Data"|"Axis" ); 
-
-obj << Surface Color Range1( "Data"|"Axis" )
+**構文:** obj &lt;&lt; Surface Color Range( "Data"|"Axis" ); obj &lt;&lt; Surface Color Range1( "Data"|"Axis" )
 
 **説明:** 1つ目の曲面におけるカラーグラデーションの範囲を指定する。このオプションは、グラデーションが使われている場合のみ利用できる。
 
@@ -3100,7 +3034,7 @@ obj << Surface Color Range( "Axis" );
 
 ### Surface Color Range2
 
-**構文:** obj << Surface Color Range2( "データ"|"軸" )
+**構文:** obj &lt;&lt; Surface Color Range2( "データ"|"軸" )
 
 **説明:** 2つ目の曲面におけるカラーグラデーションの範囲を指定する。このオプションは、グラデーションが使われている場合のみ利用できる。
 
@@ -3123,7 +3057,7 @@ obj << Surface Color Range2( "Data" );
 
 ### Surface Color Range3
 
-**構文:** obj << Surface Color Range3( "データ"|"軸" )
+**構文:** obj &lt;&lt; Surface Color Range3( "データ"|"軸" )
 
 **説明:** 3つ目の曲面におけるカラーグラデーションの範囲を指定する。このオプションは、グラデーションが使われている場合のみ利用できる。
 
@@ -3146,7 +3080,7 @@ obj << Surface Color Range3( "Axis" );
 
 ### Surface Color Range4
 
-**構文:** obj << Surface Color Range4( "データ"|"軸" )
+**構文:** obj &lt;&lt; Surface Color Range4( "データ"|"軸" )
 
 **説明:** 4つ目の曲面におけるカラーグラデーションの範囲を指定する。このオプションは、グラデーションが使われている場合のみ利用できる。
 
@@ -3169,9 +3103,7 @@ obj << Surface Color Range4( "Data" );
 
 ### Surface Color Theme
 
-**構文:** obj << Surface Color Theme( color theme ); 
-
-obj << Surface Color Theme1( color theme )
+**構文:** obj &lt;&lt; Surface Color Theme( color theme ); obj &lt;&lt; Surface Color Theme1( color theme )
 
 **説明:** 1つ目の曲面におけるカラーテーマを指定する。このオプションは、グラデーションを使った、計算式を持つ応答の列でのみ利用できる。
 
@@ -3189,9 +3121,7 @@ obj << Surface Color Theme( "Blue to Gray to Red" );
 
 ### Surface Color Theme1
 
-**構文:** obj << Surface Color Theme( color theme ); 
-
-obj << Surface Color Theme1( color theme )
+**構文:** obj &lt;&lt; Surface Color Theme( color theme ); obj &lt;&lt; Surface Color Theme1( color theme )
 
 **説明:** 1つ目の曲面におけるカラーテーマを指定する。このオプションは、グラデーションを使った、計算式を持つ応答の列でのみ利用できる。
 
@@ -3209,7 +3139,7 @@ obj << Surface Color Theme( "Blue to Gray to Red" );
 
 ### Surface Color Theme2
 
-**構文:** obj << Surface Color Theme2( color theme )
+**構文:** obj &lt;&lt; Surface Color Theme2( color theme )
 
 **説明:** 2つ目の曲面におけるカラーテーマを指定する。このオプションは、グラデーションを使った、計算式を持つ応答の列でのみ利用できる。
 
@@ -3230,7 +3160,7 @@ obj << Surface Color Theme2( "White to Black" );
 
 ### Surface Color Theme3
 
-**構文:** obj << Surface Color Theme3( color theme )
+**構文:** obj &lt;&lt; Surface Color Theme3( color theme )
 
 **説明:** 3つ目の曲面におけるカラーテーマを指定する。このオプションは、グラデーションを使った、計算式を持つ応答の列でのみ利用できる。
 
@@ -3251,7 +3181,7 @@ obj << Surface Color Theme3( "Spectral" );
 
 ### Surface Color Theme4
 
-**構文:** obj << Surface Color Theme4( color theme )
+**構文:** obj &lt;&lt; Surface Color Theme4( color theme )
 
 **説明:** 4つ目の曲面におけるカラーテーマを指定する。このオプションは、グラデーションを使った、計算式を持つ応答の列でのみ利用できる。
 
@@ -3275,9 +3205,7 @@ obj << Surface Color Theme4( "Jet" );
 
 ### Surface Color1
 
-**構文:** obj << Surface Color( color ); 
-
-obj << Surface Color1( color )
+**構文:** obj &lt;&lt; Surface Color( color ); obj &lt;&lt; Surface Color1( color )
 
 **説明:** 1つ目の曲面を塗りつぶすときの色を指定する。
 
@@ -3293,7 +3221,7 @@ obj << Surface Color( {0, 0, 255} );
 
 ### Surface Color2
 
-**構文:** obj << Surface Color2( color )
+**構文:** obj &lt;&lt; Surface Color2( color )
 
 **説明:** 2つ目の曲面を塗りつぶすときの色を指定する。
 
@@ -3311,7 +3239,7 @@ obj << Surface Color2( {255, 128, 0} );
 
 ### Surface Color3
 
-**構文:** obj << Surface Color3( color )
+**構文:** obj &lt;&lt; Surface Color3( color )
 
 **説明:** 3つ目の曲面を塗りつぶすときの色を指定する。
 
@@ -3329,7 +3257,7 @@ obj << Surface Color3( {255, 0, 0} );
 
 ### Surface Color4
 
-**構文:** obj << Surface Color4( color )
+**構文:** obj &lt;&lt; Surface Color4( color )
 
 **説明:** 4つ目の曲面を塗りつぶすときの色を指定する。
 
@@ -3350,9 +3278,7 @@ obj << Surface Color4( {100, 0, 200} );
 
 ### Surface Gradient Type
 
-**構文:** obj << Surface Gradient Type( "Solid"|"Continuous Gradients"|"Discrete Gradients" ); 
-
-obj << Surface Gradient Type1( "Solid"|"Continuous Gradients"|"Discrete Gradients" )
+**構文:** obj &lt;&lt; Surface Gradient Type( "Solid"|"Continuous Gradients"|"Discrete Gradients" ); obj &lt;&lt; Surface Gradient Type1( "Solid"|"Continuous Gradients"|"Discrete Gradients" )
 
 **説明:** 1つ目の曲面における塗りつぶしの種類を指定する。
 
@@ -3369,9 +3295,7 @@ obj << Surface Color Method( ":Pred Formula ABRASION" );
 
 ### Surface Gradient Type1
 
-**構文:** obj << Surface Gradient Type( "Solid"|"Continuous Gradients"|"Discrete Gradients" ); 
-
-obj << Surface Gradient Type1( "Solid"|"Continuous Gradients"|"Discrete Gradients" )
+**構文:** obj &lt;&lt; Surface Gradient Type( "Solid"|"Continuous Gradients"|"Discrete Gradients" ); obj &lt;&lt; Surface Gradient Type1( "Solid"|"Continuous Gradients"|"Discrete Gradients" )
 
 **説明:** 1つ目の曲面における塗りつぶしの種類を指定する。
 
@@ -3388,7 +3312,7 @@ obj << Surface Color Method( ":Pred Formula ABRASION" );
 
 ### Surface Gradient Type2
 
-**構文:** obj << Surface Gradient Type2( "単色"|"連続グラデーション"|"不連続グラデーション" )
+**構文:** obj &lt;&lt; Surface Gradient Type2( "単色"|"連続グラデーション"|"不連続グラデーション" )
 
 **説明:** 2つ目の曲面における塗りつぶしの種類を指定する。
 
@@ -3408,7 +3332,7 @@ obj << Surface Color Method( "Solid", ":Pred Formula MODULUS" );
 
 ### Surface Gradient Type3
 
-**構文:** obj << Surface Gradient Type3( "単色"|"連続グラデーション"|"不連続グラデーション" )
+**構文:** obj &lt;&lt; Surface Gradient Type3( "単色"|"連続グラデーション"|"不連続グラデーション" )
 
 **説明:** 3つ目の曲面における塗りつぶしの種類を指定する。
 
@@ -3428,7 +3352,7 @@ obj << Surface Color Method( "Solid", "Solid", ":Pred Formula ELONG" );
 
 ### Surface Gradient Type4
 
-**構文:** obj << Surface Gradient Type4( "単色"|"連続グラデーション"|"不連続グラデーション" )
+**構文:** obj &lt;&lt; Surface Gradient Type4( "単色"|"連続グラデーション"|"不連続グラデーション" )
 
 **説明:** 4つ目の曲面における塗りつぶしの種類を指定する。
 
@@ -3451,9 +3375,7 @@ obj << Surface Color Method( "Solid", "Solid", "Solid", ":Pred Formula HARDNESS"
 
 ### Surface Gradients
 
-**構文:** obj << Surface Gradients( number ); 
-
-obj << Surface Gradients1( number )
+**構文:** obj &lt;&lt; Surface Gradients( number ); obj &lt;&lt; Surface Gradients1( number )
 
 **説明:** 1つ目の曲面におけるグラデーションの水準数を指定する。このオプションは、不連続グラデーションが使われている場合のみ利用できる。
 
@@ -3473,9 +3395,7 @@ obj << Surface Gradients( 9 );
 
 ### Surface Gradients1
 
-**構文:** obj << Surface Gradients( number ); 
-
-obj << Surface Gradients1( number )
+**構文:** obj &lt;&lt; Surface Gradients( number ); obj &lt;&lt; Surface Gradients1( number )
 
 **説明:** 1つ目の曲面におけるグラデーションの水準数を指定する。このオプションは、不連続グラデーションが使われている場合のみ利用できる。
 
@@ -3495,7 +3415,7 @@ obj << Surface Gradients( 9 );
 
 ### Surface Gradients2
 
-**構文:** obj << Surface Gradients2( number )
+**構文:** obj &lt;&lt; Surface Gradients2( number )
 
 **説明:** 2つ目の曲面におけるグラデーションの水準数を指定する。このオプションは、不連続グラデーションが使われている場合のみ利用できる。
 
@@ -3516,7 +3436,7 @@ obj << Surface Gradients2( 8 );
 
 ### Surface Gradients3
 
-**構文:** obj << Surface Gradients3( number )
+**構文:** obj &lt;&lt; Surface Gradients3( number )
 
 **説明:** 3つ目の曲面におけるグラデーションの水準数を指定する。このオプションは、不連続グラデーションが使われている場合のみ利用できる。
 
@@ -3537,7 +3457,7 @@ obj << Surface Gradients3( 10 );
 
 ### Surface Gradients4
 
-**構文:** obj << Surface Gradients4( number )
+**構文:** obj &lt;&lt; Surface Gradients4( number )
 
 **説明:** 4つ目の曲面におけるグラデーションの水準数を指定する。このオプションは、不連続グラデーションが使われている場合のみ利用できる。
 
@@ -3561,9 +3481,7 @@ obj << Surface Gradients4( 9 );
 
 ### Surface Lighting
 
-**構文:** obj << Surface Lighting( "None"|"Low Reflection"|"Normal" ); 
-
-obj << Surface Lighting1( "None"|"Low Reflection"|"Normal" )
+**構文:** obj &lt;&lt; Surface Lighting( "None"|"Low Reflection"|"Normal" ); obj &lt;&lt; Surface Lighting1( "None"|"Low Reflection"|"Normal" )
 
 **説明:** 1つ目の曲面におけるライトの設定をする。このオプションは、連続グラデーションと不連続グラデーションでのみ利用できる。
 
@@ -3580,9 +3498,7 @@ obj << Surface Lighting( "Low Reflection" );
 
 ### Surface Lighting1
 
-**構文:** obj << Surface Lighting( "None"|"Low Reflection"|"Normal" ); 
-
-obj << Surface Lighting1( "None"|"Low Reflection"|"Normal" )
+**構文:** obj &lt;&lt; Surface Lighting( "None"|"Low Reflection"|"Normal" ); obj &lt;&lt; Surface Lighting1( "None"|"Low Reflection"|"Normal" )
 
 **説明:** 1つ目の曲面におけるライトの設定をする。このオプションは、連続グラデーションと不連続グラデーションでのみ利用できる。
 
@@ -3599,7 +3515,7 @@ obj << Surface Lighting( "Low Reflection" );
 
 ### Surface Lighting2
 
-**構文:** obj << Surface Lighting2( "なし"|"低反射"|"通常" )
+**構文:** obj &lt;&lt; Surface Lighting2( "なし"|"低反射"|"通常" )
 
 **説明:** 2つ目の曲面におけるライトの設定をする。このオプションは、連続グラデーションと不連続グラデーションでのみ利用できる。
 
@@ -3617,7 +3533,7 @@ obj << Surface Lighting2( "Normal" );
 
 ### Surface Lighting3
 
-**構文:** obj << Surface Lighting3( "なし"|"低反射"|"通常" )
+**構文:** obj &lt;&lt; Surface Lighting3( "なし"|"低反射"|"通常" )
 
 **説明:** 3つ目の曲面におけるライトの設定をする。このオプションは、連続グラデーションと不連続グラデーションでのみ利用できる。
 
@@ -3640,7 +3556,7 @@ obj << Surface Lighting3( "Low Reflection" );
 
 ### Surface Lighting4
 
-**構文:** obj << Surface Lighting4( "なし"|"低反射"|"通常" )
+**構文:** obj &lt;&lt; Surface Lighting4( "なし"|"低反射"|"通常" )
 
 **説明:** 4つ目の曲面におけるライトの設定をする。このオプションは、連続グラデーションと不連続グラデーションでのみ利用できる。
 
@@ -3663,7 +3579,7 @@ obj << Surface Lighting4( "Normal" );
 
 ### Surface Selector
 
-**構文:** obj << Surface Selector( state=0|1 )
+**構文:** obj &lt;&lt; Surface Selector( state=0|1 )
 
 **説明:** 従属変数のパネルにおける曲面オプションの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -3684,7 +3600,7 @@ obj << Surface Selector( 0 );
 
 ### X Grid
 
-**構文:** obj << X Grid( state=0|1 )
+**構文:** obj &lt;&lt; X Grid( state=0|1 )
 
 **説明:** X軸と垂直なグリッドの表示/非表示を切り替える。
 
@@ -3704,11 +3620,7 @@ obj << X Grid( 1 );
 
 ### X Resolution
 
-**構文:** obj << Resolution( number )
-
-obj << X Resolution( number )
-
-obj << Y Resolution( number )
+**構文:** obj &lt;&lt; Resolution( number )obj &lt;&lt; X Resolution( number )obj &lt;&lt; Y Resolution( number )
 
 **説明:** 曲面プロットを描画するのに使用される解像度を変更する。
 
@@ -3727,7 +3639,7 @@ obj << Resolution( 12 );
 
 ### XRotate
 
-**構文:** obj << XRotate( degrees )
+**構文:** obj &lt;&lt; XRotate( degrees )
 
 **説明:** X軸上で曲面プロットを回転する。
 
@@ -3743,7 +3655,7 @@ obj << XRotate( 30 );
 
 ### Y Grid
 
-**構文:** obj << Y Grid( state=0|1 )
+**構文:** obj &lt;&lt; Y Grid( state=0|1 )
 
 **説明:** Y軸と垂直なグリッドの表示/非表示を切り替える。
 
@@ -3763,11 +3675,7 @@ obj << Y Grid( 1 );
 
 ### Y Resolution
 
-**構文:** obj << Resolution( number )
-
-obj << X Resolution( number )
-
-obj << Y Resolution( number )
+**構文:** obj &lt;&lt; Resolution( number )obj &lt;&lt; X Resolution( number )obj &lt;&lt; Y Resolution( number )
 
 **説明:** 曲面プロットを描画するのに使用される解像度を変更する。
 
@@ -3786,7 +3694,7 @@ obj << Resolution( 12 );
 
 ### YRotate
 
-**構文:** obj << YRotate( degrees )
+**構文:** obj &lt;&lt; YRotate( degrees )
 
 **説明:** Y軸上で曲面プロットを回転する。
 
@@ -3802,7 +3710,7 @@ obj << YRotate( 20 );
 
 ### Z Grid
 
-**構文:** obj << Z Grid( state=0|1 )
+**構文:** obj &lt;&lt; Z Grid( state=0|1 )
 
 **説明:** Z軸と垂直なグリッドの表示/非表示を切り替える。
 
@@ -3822,7 +3730,7 @@ obj << Z Grid( 1 );
 
 ### Z Grid Position
 
-**構文:** obj << Z Grid Position( fraction )
+**構文:** obj &lt;&lt; Z Grid Position( fraction )
 
 **説明:** Zグリッドを指定の割合だけ移動する。
 
@@ -3839,7 +3747,7 @@ obj << Z Grid Position( 0.733 );
 
 ### ZRotate
 
-**構文:** obj << ZRotate( degrees )
+**構文:** obj &lt;&lt; ZRotate( degrees )
 
 **説明:** Z軸上で曲面プロットを回転する。
 
@@ -3859,7 +3767,7 @@ obj << ZRotate( 45 );
 
 #### Surface Frame3D
 
-**構文:** Surface Frame3D( <commands passed to Frame3D> )
+**構文:** Surface Frame3D( &lt;commands passed to Frame3D&gt; )
 
 **説明:** 表示コマンドを3Dプロットに送信する。
 
@@ -3880,11 +3788,7 @@ obj = Surface Plot(
 
 #### Add Ellipsoid
 
-**構文:** obj << Add Ellipsoid( 4x4 matrix )
-
-obj << Add Ellipsoid(3x3 cov,3x1 means)
-
-obj << Add Ellipsoid(3x3 corr,3x1 means,3x1 std dev)
+**構文:** obj &lt;&lt; Add Ellipsoid( 4x4 matrix )obj &lt;&lt; Add Ellipsoid(3x3 cov,3x1 means)obj &lt;&lt; Add Ellipsoid(3x3 corr,3x1 means,3x1 std dev)
 
 **説明:** プロットに楕円を描画する。
 
@@ -3912,7 +3816,7 @@ obj << Frame3D(
 
 #### Add Markers
 
-**構文:** obj << Add Markers( [ nx1 X matrix ], [ nx1 Y matrix ], [ nx1 Z matrix ] )
+**構文:** obj &lt;&lt; Add Markers( [ nx1 X matrix ], [ nx1 Y matrix ], [ nx1 Z matrix ] )
 
 **説明:** プロットにn個のマーカーを描画する。
 
@@ -3934,7 +3838,7 @@ obj << Frame3D( Add Markers( [2 3 4], [5 6 7], [1 8 9] ) );
 
 #### Add Vector
 
-**構文:** obj << Add Vector( [ 3xn from matrix ], [ 3xn to matrix ], FromCap( CutOff|Sphere|Point|Feather ), ToCap( CutOff|Sphere|Point|Feather ), Facets( Triangle|Square|Round ), Shaft Color( color ), Shaft Thickness( number ), From Thickness( number ), To Thickness( number ), From Color( number ), To Color( number ) ) )
+**構文:** obj &lt;&lt; Add Vector( [ 3xn from matrix ], [ 3xn to matrix ], FromCap( CutOff|Sphere|Point|Feather ), ToCap( CutOff|Sphere|Point|Feather ), Facets( Triangle|Square|Round ), Shaft Color( color ), Shaft Thickness( number ), From Thickness( number ), To Thickness( number ), From Color( number ), To Color( number ) ) )
 
 **説明:** プロットにベクトルまたは矢印を描画する。
 
@@ -3956,7 +3860,7 @@ obj << Frame3D( Add Vector( [4.5 2 1], [7.5 4 6], FromCap( "Feather" ), ToCap( "
 
 #### Get Axes
 
-**構文:** obj << Get Axes
+**構文:** obj &lt;&lt; Get Axes
 
 **説明:** プロットの軸の表示状態を戻す。
 
@@ -3979,7 +3883,7 @@ Show( s );
 
 #### Get Box
 
-**構文:** obj << Get Box
+**構文:** obj &lt;&lt; Get Box
 
 **説明:** プロットのボックスフレームの表示状態を戻す。
 
@@ -4002,7 +3906,7 @@ Show( s );
 
 #### Get Grab Handles
 
-**構文:** obj << Get Grab Handles
+**構文:** obj &lt;&lt; Get Grab Handles
 
 **説明:** プロットのグラブハンドルの表示状態を戻す。
 
@@ -4025,7 +3929,7 @@ Show( s );
 
 #### Get Graph Size
 
-**構文:** obj << Get Graph Size
+**構文:** obj &lt;&lt; Get Graph Size
 
 **説明:** グラフのサイズを戻す。
 
@@ -4048,7 +3952,7 @@ Show( s );
 
 #### Get Grids
 
-**構文:** obj << Get Grids
+**構文:** obj &lt;&lt; Get Grids
 
 **説明:** プロットのグリッドの表示状態を戻す。
 
@@ -4071,7 +3975,7 @@ Show( s );
 
 #### Get Hide Lights Border
 
-**構文:** obj << Get Hide Lights Border
+**構文:** obj &lt;&lt; Get Hide Lights Border
 
 **説明:** プロットの周りのライト枠の状態を戻す。
 
@@ -4094,7 +3998,7 @@ Show( state );
 
 #### Get Line Scale
 
-**構文:** obj << Get Line Scale
+**構文:** obj &lt;&lt; Get Line Scale
 
 **説明:** プロットのグリッドの線幅を戻す。
 
@@ -4117,7 +4021,7 @@ Show( w );
 
 #### Get Marker Quality
 
-**構文:** obj << Get Marker Quality
+**構文:** obj &lt;&lt; Get Marker Quality
 
 **説明:** プロットのマーカー特性(形状や濃淡などの綺麗さ)を戻す。
 
@@ -4140,7 +4044,7 @@ Show( q );
 
 #### Get Marker Scale
 
-**構文:** obj << Get Marker Scale
+**構文:** obj &lt;&lt; Get Marker Scale
 
 **説明:** プロットのマーカーサイズを戻す。
 
@@ -4163,7 +4067,7 @@ Show( s );
 
 #### Get Marker Transparency
 
-**構文:** obj << Get Marker Transparency
+**構文:** obj &lt;&lt; Get Marker Transparency
 
 **説明:** プロットのマーカーの透明度を戻す。
 
@@ -4186,7 +4090,7 @@ Show( t );
 
 #### Get Rotation
 
-**構文:** obj << Get Rotation
+**構文:** obj &lt;&lt; Get Rotation
 
 **説明:** フレームの現在の回転を戻す。
 
@@ -4209,7 +4113,7 @@ Show( r );
 
 #### Get Text Scale
 
-**構文:** obj << Get Text Scale
+**構文:** obj &lt;&lt; Get Text Scale
 
 **説明:** プロットの軸テキストのテキストサイズを戻す。
 
@@ -4232,7 +4136,7 @@ Show( s );
 
 #### Get View Ortho
 
-**構文:** obj << Get View Ortho
+**構文:** obj &lt;&lt; Get View Ortho
 
 **説明:** プロットにおける平行投影の状態を戻す。
 
@@ -4255,7 +4159,7 @@ Show( o );
 
 #### Get View Perspective
 
-**構文:** obj << Get View Perspective
+**構文:** obj &lt;&lt; Get View Perspective
 
 **説明:** プロットの透視投影を戻す。
 
@@ -4278,7 +4182,7 @@ Show( p );
 
 #### Get View Zoom
 
-**構文:** obj << Get View Zoom
+**構文:** obj &lt;&lt; Get View Zoom
 
 **説明:** プロットの現在のズームを戻す。
 
@@ -4301,7 +4205,7 @@ Show( z );
 
 #### Get Wall Color
 
-**構文:** obj << Get Wall Color
+**構文:** obj &lt;&lt; Get Wall Color
 
 **説明:** プロットの壁の色を戻す。
 
@@ -4324,7 +4228,7 @@ Show( c );
 
 #### Get Walls
 
-**構文:** obj << Get Walls
+**構文:** obj &lt;&lt; Get Walls
 
 **説明:** プロットの壁の表示状態を戻す。
 
@@ -4347,7 +4251,7 @@ Show( s );
 
 #### Get X Axis Color
 
-**構文:** obj << Get X Axis Color
+**構文:** obj &lt;&lt; Get X Axis Color
 
 **説明:** プロットのX軸の色を戻す。
 
@@ -4370,7 +4274,7 @@ Show( c );
 
 #### Get X Axis Label
 
-**構文:** obj << Get X Axis Label
+**構文:** obj &lt;&lt; Get X Axis Label
 
 **説明:** プロットのX軸のラベルを戻す。
 
@@ -4393,7 +4297,7 @@ Show( label );
 
 #### Get Y Axis Color
 
-**構文:** obj << Get Y Axis Color
+**構文:** obj &lt;&lt; Get Y Axis Color
 
 **説明:** プロットのY軸の色を戻す。
 
@@ -4416,7 +4320,7 @@ Show( c );
 
 #### Get Y Axis Label
 
-**構文:** obj << Get Y Axis Label
+**構文:** obj &lt;&lt; Get Y Axis Label
 
 **説明:** プロットのY軸のラベルを戻す。
 
@@ -4439,7 +4343,7 @@ Show( label );
 
 #### Get Z Axis Color
 
-**構文:** obj << Get Z Axis Color
+**構文:** obj &lt;&lt; Get Z Axis Color
 
 **説明:** プロットのZ軸の色を戻す。
 
@@ -4462,7 +4366,7 @@ Show( c );
 
 #### Get Z Axis Label
 
-**構文:** obj << Get Z Axis Label
+**構文:** obj &lt;&lt; Get Z Axis Label
 
 **説明:** プロットのZ軸のラベルを戻す。
 
@@ -4485,7 +4389,7 @@ Show( label );
 
 #### Legend
 
-**構文:** obj << Legend( state=0|1 )
+**構文:** obj &lt;&lt; Legend( state=0|1 )
 
 **説明:** プロットの凡例の表示/非表示を切り替える。
 
@@ -4510,7 +4414,7 @@ obj << Frame3D( Legend( 1 ) );
 
 #### Set Axes
 
-**構文:** obj << Set Axes( state=0|1 )
+**構文:** obj &lt;&lt; Set Axes( state=0|1 )
 
 **説明:** プロットのX、Y、Z軸の表示/非表示を切り替える。デフォルトでは表示。
 
@@ -4532,7 +4436,7 @@ obj << Frame3D( Set Axes( 1 ) );
 
 #### Set Box
 
-**構文:** obj << Set Box( state=0|1 )
+**構文:** obj &lt;&lt; Set Box( state=0|1 )
 
 **説明:** プロットのボックスフレームの表示/非表示を切り替える。デフォルトでは表示。
 
@@ -4554,7 +4458,7 @@ obj << Frame3D( Set Box( 1 ) );
 
 #### Set Graph Size
 
-**構文:** obj << Set Graph Size( x, y )
+**構文:** obj &lt;&lt; Set Graph Size( x, y )
 
 **説明:** グラフのサイズを設定する。
 
@@ -4576,7 +4480,7 @@ obj << Frame3D( Set Graph Size( 700, 800 ) );
 
 #### Set Grids
 
-**構文:** obj << Set Grids( state=0|1 )
+**構文:** obj &lt;&lt; Set Grids( state=0|1 )
 
 **説明:** プロットのグリッドの表示/非表示を切り替える。デフォルトでは表示。
 
@@ -4598,7 +4502,7 @@ obj << Frame3D( Set Grids( 1 ) );
 
 #### Set Hide Lights Border
 
-**構文:** obj << Set Hide Lights Border( state=0|1 )
+**構文:** obj &lt;&lt; Set Hide Lights Border( state=0|1 )
 
 **説明:** プロットの周りのライト枠の表示/非表示を切り替える。デフォルトでは表示。
 
@@ -4620,7 +4524,7 @@ obj << Frame3D( Set Hide Lights Border( 0 ) );
 
 #### Set Line Scale
 
-**構文:** obj << Set Line Scale( number )
+**構文:** obj &lt;&lt; Set Line Scale( number )
 
 **説明:** プロットのグリッドの線幅を設定する。
 
@@ -4642,7 +4546,7 @@ obj << Frame3D( Set Line Scale( 6.5 ) );
 
 #### Set Marker Quality
 
-**構文:** obj << Set Marker Quality( number )
+**構文:** obj &lt;&lt; Set Marker Quality( number )
 
 **説明:** プロットのマーカー特性(形状や濃淡などの綺麗さ)を設定する。
 
@@ -4664,7 +4568,7 @@ obj << Frame3D( Set Marker Scale( 3 ), Set Marker Quality( 0.2625 ) );
 
 #### Set Marker Scale
 
-**構文:** obj << Set Marker Scale( number )
+**構文:** obj &lt;&lt; Set Marker Scale( number )
 
 **説明:** プロットのマーカーサイズを設定する。
 
@@ -4686,7 +4590,7 @@ obj << Frame3D( Set Marker Scale( 3.5 ) );
 
 #### Set Marker Transparency
 
-**構文:** obj << Set Marker Transparency( fraction )
+**構文:** obj &lt;&lt; Set Marker Transparency( fraction )
 
 **説明:** プロットにマーカーの透明度を設定する。
 
@@ -4708,7 +4612,7 @@ obj << Frame3D( Set Marker Transparency( 0.4125 ) );
 
 #### Set Oscillation
 
-**構文:** obj << Set Oscillation( X, Y, Z, duration )
+**構文:** obj &lt;&lt; Set Oscillation( X, Y, Z, duration )
 
 **説明:** プロットの振幅を設定する。
 
@@ -4730,7 +4634,7 @@ obj << Frame3D( Set Rotation( -60, -3, 35 ), Set Oscillation( -54, 0, 38, 100 ) 
 
 #### Set Rotation
 
-**構文:** obj << Set Rotation( X, Y, Z )
+**構文:** obj &lt;&lt; Set Rotation( X, Y, Z )
 
 **説明:** 指定の座標にフレームを回転する。
 
@@ -4752,7 +4656,7 @@ obj << Frame3D( Set Rotation( -60, -3, 35 ) );
 
 #### Set Spin
 
-**構文:** obj << Set Spin(  dx, dy, sx, sy  )
+**構文:** obj &lt;&lt; Set Spin( dx, dy, sx, sy )
 
 **説明:** 指定の軸上でグラフを回転する。dxとdyの値は、ポイント(sx, sy)からどれだけ動かすかの値。
 
@@ -4774,7 +4678,7 @@ obj << Frame3D( Set Spin( .01, .01, 0, 0 ) );
 
 #### Set Text Scale
 
-**構文:** obj << Set Text Scale( number )
+**構文:** obj &lt;&lt; Set Text Scale( number )
 
 **説明:** プロットの軸テキストのテキストサイズを設定する。
 
@@ -4796,7 +4700,7 @@ obj << Frame3D( Set Text Scale( 1.4 ) );
 
 #### Set View Ortho
 
-**構文:** obj << Set View Ortho( state=0|1 )
+**構文:** obj &lt;&lt; Set View Ortho( state=0|1 )
 
 **説明:** プロットを平行投影(直交射影)で表示する。
 
@@ -4818,7 +4722,7 @@ obj << Frame3D( Set View Ortho( 1 ) );
 
 #### Set View Perspective
 
-**構文:** obj << Set View Perspective( fraction )
+**構文:** obj &lt;&lt; Set View Perspective( fraction )
 
 **説明:** プロットの透視投影を設定する。
 
@@ -4840,7 +4744,7 @@ obj << Frame3D( Set View Perspective( 0.275 ) );
 
 #### Set View Zoom
 
-**構文:** obj << Set View Zoom( number )
+**構文:** obj &lt;&lt; Set View Zoom( number )
 
 **説明:** プロットのズームを設定する。
 
@@ -4864,7 +4768,7 @@ obj << Frame3D( Set View Zoom( 2 ) );
 
 #### Set Wall Color
 
-**構文:** obj << Set Wall Color( number )
+**構文:** obj &lt;&lt; Set Wall Color( number )
 
 **説明:** プロットの壁の色を設定する。
 
@@ -4886,7 +4790,7 @@ obj << Frame3D( Set Wall Color( -16775543 ) );
 
 #### Set Walls
 
-**構文:** obj << Set Walls( state=0|1 )
+**構文:** obj &lt;&lt; Set Walls( state=0|1 )
 
 **説明:** プロットの壁の表示/非表示を切り替える。デフォルトでは表示。
 
@@ -4908,7 +4812,7 @@ obj << Frame3D( Set Walls( 1 ) );
 
 #### Set X Axis Color
 
-**構文:** obj << Set X Axis Color( color )
+**構文:** obj &lt;&lt; Set X Axis Color( color )
 
 **説明:** プロットのX軸の色を設定する。
 
@@ -4930,7 +4834,7 @@ obj << Frame3D( Set X Axis Color( 5 ) );
 
 #### Set X Axis Label
 
-**構文:** obj << Set X Axis Label( string )
+**構文:** obj &lt;&lt; Set X Axis Label( string )
 
 **説明:** プロットのX軸のラベルを設定する。
 
@@ -4952,7 +4856,7 @@ obj << Frame3D( Set X Axis Label( "Iris Sepal Length" ) );
 
 #### Set Y Axis Color
 
-**構文:** obj << Set Y Axis Color( color )
+**構文:** obj &lt;&lt; Set Y Axis Color( color )
 
 **説明:** プロットのY軸の色を設定する。
 
@@ -4974,7 +4878,7 @@ obj << Frame3D( Set Y Axis Color( 11 ) );
 
 #### Set Y Axis Label
 
-**構文:** obj << Set Y Axis Label( string )
+**構文:** obj &lt;&lt; Set Y Axis Label( string )
 
 **説明:** プロットのY軸のラベルを設定する。
 
@@ -4996,7 +4900,7 @@ obj << Frame3D( Set Y Axis Label( "Iris Petal Length" ) );
 
 #### Set Z Axis Color
 
-**構文:** obj << Set Z Axis Color( color )
+**構文:** obj &lt;&lt; Set Z Axis Color( color )
 
 **説明:** プロットのZ軸の色を設定する。
 
@@ -5018,7 +4922,7 @@ obj << Frame3D( Set Z Axis Color( "Green" ) );
 
 #### Set Z Axis Label
 
-**構文:** obj << Set Z Axis Label( string )
+**構文:** obj &lt;&lt; Set Z Axis Label( string )
 
 **説明:** プロットのZ軸のラベルを設定する。
 
@@ -5040,7 +4944,7 @@ obj << Frame3D( Set Z Axis Label( "Iris Sepal Width" ) );
 
 #### XAxis
 
-**構文:** obj << XAxis( Min( number ), Max( number ), Inc( number ), Format( ) )
+**構文:** obj &lt;&lt; XAxis( Min( number ), Max( number ), Inc( number ), Format( ) )
 
 **説明:** プロットのX軸の値を設定する。
 
@@ -5062,7 +4966,7 @@ obj << Frame3D( XAxis( Min( 3 ), Max( 10 ) ) );
 
 #### YAxis
 
-**構文:** obj << YAxis( Min( number ), Max( number ), Inc( number ), Format( ) )
+**構文:** obj &lt;&lt; YAxis( Min( number ), Max( number ), Inc( number ), Format( ) )
 
 **説明:** プロットのY軸の値を設定する。
 
@@ -5084,7 +4988,7 @@ obj << Frame3D( YAxis( Min( 1 ), Max( 10 ), Inc( 0.5 ) ) );
 
 #### Z Axis
 
-**構文:** obj << Z Axis( Min( number ), Max( number ), Inc( number ), Format( ) )
+**構文:** obj &lt;&lt; Z Axis( Min( number ), Max( number ), Inc( number ), Format( ) )
 
 **説明:** プロットのZ軸の値を設定する。
 
@@ -5106,7 +5010,7 @@ obj << Frame3D( ZAxis( Min( 1 ), Max( 5 ), Inc( 0.25 ) ) );
 
 #### get light active
 
-**構文:** obj << get light active( light number )
+**構文:** obj &lt;&lt; get light active( light number )
 
 **説明:** プロットを照らす指定のライトのオン/オフの状態を戻す。
 
@@ -5129,7 +5033,7 @@ Show( p );
 
 #### get light color
 
-**構文:** obj << get light color( light number )
+**構文:** obj &lt;&lt; get light color( light number )
 
 **説明:** プロットを照らす指定のライトの色をリスト{red, green, blue}で戻す。
 
@@ -5152,7 +5056,7 @@ Show( c );
 
 #### get light position
 
-**構文:** obj << get light position( light number )
+**構文:** obj &lt;&lt; get light position( light number )
 
 **説明:** プロットを照らす指定のライトの位置をリスト{x, y, z}で戻す。
 
@@ -5175,7 +5079,7 @@ Show( p );
 
 #### set light active
 
-**構文:** obj << set light active( light number, state=0|1 )
+**構文:** obj &lt;&lt; set light active( light number, state=0|1 )
 
 **説明:** プロットを照らす指定のライトをオンにする。
 
@@ -5197,7 +5101,7 @@ obj << Frame3D( Set Hide Lights Border( 0 ), Set Light Active( 4, 1 ) );
 
 #### set light color
 
-**構文:** obj << set light color( light number, red value, green value, blue value )
+**構文:** obj &lt;&lt; set light color( light number, red value, green value, blue value )
 
 **説明:** プロットを照らすライトの色を設定する。
 
@@ -5219,7 +5123,7 @@ obj << Frame3D( Set Hide Lights Border( 0 ), Set Light Color( 2, 240, 50, 70 ) )
 
 #### set light position
 
-**構文:** obj << set light position( light number, X, Y, Z )
+**構文:** obj &lt;&lt; set light position( light number, X, Y, Z )
 
 **説明:** プロットを照らすライトの位置を設定する。
 

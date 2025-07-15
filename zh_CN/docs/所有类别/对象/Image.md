@@ -6,9 +6,7 @@
 
 ### New Image
 
-**语法:** img = Open( filepath, jpg|png|gif|bmp|tif )
-
-New Image(<width, height>, <existing image> )
+**语法:** img = Open( filepath, jpg|png|gif|bmp|tif )New Image(&lt;width, height&gt;, &lt;existing image&gt; )
 
 **说明:** 图片对象，可用于将图片添加到帧或显示框。
 
@@ -22,7 +20,7 @@ obj = New Window( "tile(40,40)", img );
 
 ### Open
 
-**语法:** Open( filePath, <data table options | Excel import options | text import options | SAS import options | HTML import options | esriShapeFile import options | PDF import options | other file options > )
+**语法:** Open( filePath, &lt;data table options | Excel import options | text import options | SAS import options | HTML import options | esriShapeFile import options | PDF import options | other file options &gt; )
 
 **说明:** 返回对数据表或其他 JMP 文件或基于文件创建的对象的引用。若未指定路径，则“打开”对话框显示。若指定了文件夹路径，则打开系统文件浏览器并且不返回对象。请参阅语法参考获取可用选项的完整说明。
 
@@ -52,7 +50,7 @@ dt2 = Open( "$SAMPLE_DATA/Fitness.jmp", Select Columns( "Name", "Sex", "Age", "W
 
 ### Add Frame
 
-**语法:** obj << Add Frame
+**语法:** obj &lt;&lt; Add Frame
 
 **说明:** 向动画图像添加新帧。在使用“设置像素”之前，该帧不包含任何内容。可以指定可选的持续时间参数，该参数指示以毫秒表示的帧持续时间。若省略持续时间参数，当前帧的持续时间将被用作新添帧的持续时间。若没有其他帧，将使用默认持续时间 100 毫秒。
 
@@ -83,7 +81,7 @@ win << Close Window();
 
 ### Crop
 
-**语法:** obj << Crop( Left( number ), Right( number ), Top( number ), Bottom( number ) )
+**语法:** obj &lt;&lt; Crop( Left( number ), Right( number ), Top( number ), Bottom( number ) )
 
 **说明:** Modifies the image to be the sub-image at the specified pixel coordinates within the existing image.
 
@@ -100,7 +98,7 @@ obj2 = New Window( "Cropped", img );
 
 ### Filter
 
-**语法:** obj << Filter( despeckle|edge|enhance|median|negate|normalize|sharpen|contrast|gamma|reduce noise|gaussian blur|canny, <number> )
+**语法:** obj &lt;&lt; Filter( despeckle|edge|enhance|median|negate|normalize|sharpen|contrast|gamma|reduce noise|gaussian blur|canny, &lt;number&gt; )
 
 **说明:** 根据指定的算法过滤图像。过滤对于清除图像中的噪点很有用。对比度、Gamma 和降噪需要一个额外的（数值）参数。高斯模糊需要两个参数: radius 和 sigma。
 
@@ -225,7 +223,7 @@ refilter();
 
 ### Flip Both
 
-**语法:** obj << Flip Both
+**语法:** obj &lt;&lt; Flip Both
 
 **说明:** 同时将图像水平和垂直翻转。
 
@@ -242,7 +240,7 @@ obj2 = New Window( "Diagonal Flip", img );
 
 ### Flip Horizontal
 
-**语法:** obj << Flip Horizontal
+**语法:** obj &lt;&lt; Flip Horizontal
 
 **说明:** 将图像水平翻转。
 
@@ -259,7 +257,7 @@ obj2 = New Window( "Horizontal Flip", img );
 
 ### Flip Vertical
 
-**语法:** obj << Flip Vertical
+**语法:** obj &lt;&lt; Flip Vertical
 
 **说明:** 将图像上面向下翻转。
 
@@ -276,7 +274,7 @@ obj2 = New Window( "Vertical Flip", img );
 
 ### Get Current Frame
 
-**语法:** obj << Get Current Frame
+**语法:** obj &lt;&lt; Get Current Frame
 
 **说明:** 返回当前帧号。对于大多数图像，该值为 0。对于动画 GIF 文件，该值可以介于 0 和帧数减 1 之间。操作（例如，getPixels 和 setPixels）将对当前帧进行。
 
@@ -290,7 +288,7 @@ num = img << Get Current Frame();
 
 ### Get EXIF
 
-**语法:** obj << Get EXIF
+**语法:** obj &lt;&lt; Get EXIF
 
 **说明:** 获取与图像一起在内部储存的 EXIF 数据。将返回键/值对的数组。
 
@@ -312,7 +310,7 @@ While( !Is Empty( key ),
 
 ### Get Frame Durations
 
-**语法:** obj << Get Frame Durations
+**语法:** obj &lt;&lt; Get Frame Durations
 
 **说明:** 返回每帧之间的暂停时间矩阵。指定的时间以毫秒为单位。
 
@@ -326,7 +324,7 @@ durs = img << Get Frame Durations();
 
 ### Get N Frames
 
-**语法:** obj << Get N Frames
+**语法:** obj &lt;&lt; Get N Frames
 
 **说明:** 返回图像的帧数。对于大多数图像，该结果为 1。对于动画 GIF 文件，该结果可能大于 1。
 
@@ -340,7 +338,7 @@ num = img << Get N Frames();
 
 ### Get N Loops
 
-**语法:** obj << Get N Loops
+**语法:** obj &lt;&lt; Get N Loops
 
 **说明:** 返回动画图像应遍历它的序列的次数。值为零表示它应无限次遍历。
 
@@ -354,15 +352,11 @@ loops = img << Get N Loops();
 
 ### Get Path
 
-**语法:** obj << Get Path
+**语法:** obj &lt;&lt; Get Path
 
 ### Get Pixels
 
-**语法:** mat = img << Get Pixels();
-
-{r, g, b} = img << Get Pixels("rgb");
-
-{r, g, b, a} = img << Get Pixels("rgba")
+**语法:** mat = img &lt;&lt; Get Pixels();{r, g, b} = img &lt;&lt; Get Pixels("rgb");{r, g, b, a} = img &lt;&lt; Get Pixels("rgba")
 
 **说明:** 若未指定颜色指示符，则返回表示像素值的 JSL 颜色的矩阵。颜色指示符“rgb”将返回三个矩阵（分别为红色、绿色和蓝色）的列表。指定“rgba”将返回 alpha（透明度）通道以及红色、绿色和蓝色。
 
@@ -402,9 +396,7 @@ win = New Window( "tile(40,40)", img );
 
 ### GetSize
 
-**语法:** {w,h} = pic << Get Size 
-
-{w,h} = pic << Size
+**语法:** {w,h} = pic &lt;&lt; Get Size {w,h} = pic &lt;&lt; Size
 
 **说明:** 返回包含图像宽度和高度的列表。
 
@@ -420,7 +412,7 @@ Show( s );
 
 ### Remove Frame
 
-**语法:** obj << Remove Frame
+**语法:** obj &lt;&lt; Remove Frame
 
 **说明:** 从动画图像中删除一帧。传递要删除的帧的索引。
 
@@ -434,7 +426,7 @@ img << Remove Frame( 0 );
 
 ### Rotate
 
-**语法:** obj << Rotate( angle )
+**语法:** obj &lt;&lt; Rotate( angle )
 
 **说明:** 按指定的旋转角度旋转图像。
 
@@ -451,7 +443,7 @@ obj2 = New Window( "Rotated", img );
 
 ### Save Image
 
-**语法:** obj << Save Image( filePath, image type )
+**语法:** obj &lt;&lt; Save Image( filePath, image type )
 
 **说明:** 采用指定的位置和文件名保存图像。第二个参数表示保存的图像类型，不考虑文件名中使用的扩展名。有效的图像类型包括 PNG、JPG、GIF、TIFF、BMP 和 PDF。若未指定图像类型，或指定的图像类型无法理解，则图像将另存为 PNG 文件。
 
@@ -466,7 +458,7 @@ img << Save Image( "$TEMP/Mediterranean.jpg", "jpg" );
 
 ### Scale
 
-**语法:** obj << Scale( scale | xscale, yscale )
+**语法:** obj &lt;&lt; Scale( scale | xscale, yscale )
 
 **说明:** 将尺度因子应用于图像的宽度和高度或分别统一宽度 (xscale) 和高度 (yscale) 的尺度。
 
@@ -496,13 +488,13 @@ obj2 = New Window( "Tile scaled by 2 vertically and by 0.5 horizontally", img );
 
 ### Set Blob
 
-**语法:** obj << Set Blob
+**语法:** obj &lt;&lt; Set Blob
 
 **说明:** 设置 blob 中的图像。
 
 ### Set Current Frame
 
-**语法:** obj << Set Current Frame( frame )
+**语法:** obj &lt;&lt; Set Current Frame( frame )
 
 **说明:** 设置当前帧号。对于大多数图像，该结果为 0。对于动画 GIF 文件，该结果可以介于 0 和帧数减 1 之间。操作（例如，getPixels 和 setPixels）将对当前帧进行。
 
@@ -523,7 +515,7 @@ win << Close Window();
 
 ### Set Frame Duration
 
-**语法:** obj << Set Frame Duration( duration )
+**语法:** obj &lt;&lt; Set Frame Duration( duration )
 
 **说明:** 设置动画图像中当前帧的持续时间。该时间以毫秒来指定。
 
@@ -538,7 +530,7 @@ durs = img << Get Frame Durations();
 
 ### Set N Loops
 
-**语法:** obj << Set N Loops( loops )
+**语法:** obj &lt;&lt; Set N Loops( loops )
 
 **说明:** 设置动画图像应遍历它的序列的次数。值为 0 表示该图像应无限次遍历。
 
@@ -553,9 +545,7 @@ loops = img << Get N Loops();
 
 ### Set Pixels
 
-**语法:** img << Set Pixels(jslmat);
-
-img << Set Pixels ("rgb", {r, g, b})
+**语法:** img &lt;&lt; Set Pixels(jslmat);img &lt;&lt; Set Pixels ("rgb", {r, g, b})
 
 **说明:** 设置图像的像素矩阵。若指定了一个不带颜色指示符的矩阵，则该矩阵视为 JSL 颜色的矩阵。可以指定颜色指示符（例如，rgb）以指出下列矩阵分别为红色、绿色和蓝色。在这种情况下，所有指定矩阵的大小应相同。
 
@@ -591,7 +581,7 @@ win2 = New Window( "Gray Scale", img );
 
 ### SetSize
 
-**语法:** obj << SetSize( {width, height} )
+**语法:** obj &lt;&lt; SetSize( {width, height} )
 
 **说明:** 根据指定的宽度和高度设置图像大小。
 
@@ -607,9 +597,7 @@ obj2 = New Window( "Larger tile(40,40)", img );
 
 ### Size
 
-**语法:** {w,h} = pic << Get Size 
-
-{w,h} = pic << Size
+**语法:** {w,h} = pic &lt;&lt; Get Size {w,h} = pic &lt;&lt; Size
 
 **说明:** 返回包含图像宽度和高度的列表。
 
@@ -625,7 +613,7 @@ Show( s );
 
 ### Transparency
 
-**语法:** obj << Transparency( fraction )
+**语法:** obj &lt;&lt; Transparency( fraction )
 
 **说明:** 对图像应用透明度。有效值介于 0.0（透明）和 1.0（不透明）之间
 

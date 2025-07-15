@@ -6,7 +6,7 @@
 
 ### Action
 
-**構文:** obj << Action
+**構文:** obj &lt;&lt; Action
 
 **説明:** 評価する式を挿入するための、プラットフォーム内の汎用トラップドア。プラットフォームに一時的にディスプレイボックスおよびデータテーブルのコンテキストを設定する。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**構文:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**構文:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **説明:** 作成されたプリセットをオブジェクトに適用する。保存された設定に合わせてオプションとカスタマイズが更新される。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**構文:** obj << Automatic Recalc( state=0|1 )
+**構文:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **説明:** データの除外や変更があった場合に分析を自動的にやり直す。Automatic Recalcオプションがオンになっている場合で、データの除外や変更が再計算の前に確実に適用されるようにするには、Wait(0)コマンドを使用すること。
 
@@ -124,7 +124,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Column Switcher
 
-**構文:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**構文:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **説明:** プラットフォームの変数を変更するための設定パネルを追加する。
 
@@ -142,7 +142,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy Script
 
-**構文:** obj << Copy Script
+**構文:** obj &lt;&lt; Copy Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -194,7 +194,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**構文:** obj << Data Table Window
+**構文:** obj &lt;&lt; Data Table Window
 
 **説明:** この分析に使用したデータテーブルのウィンドウを手前に表示する。
 
@@ -246,7 +246,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**構文:** obj << Get By Levels
+**構文:** obj &lt;&lt; Get By Levels
 
 **説明:** By列が指定されている場合、列名をキー、データ値を値とした連想配列を戻す。
 
@@ -263,7 +263,7 @@ biv << Get By Levels;
 
 ### Get Container
 
-**構文:** obj << Get Container
+**構文:** obj &lt;&lt; Get Container
 
 **説明:** オブジェクトのコンテンツを含んだコンテナボックスの参照を戻す。
 
@@ -347,7 +347,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**構文:** obj << Get Data Table
+**構文:** obj &lt;&lt; Get Data Table
 
 **説明:** データテーブルへの参照を戻す。
 
@@ -400,7 +400,7 @@ Show( N Rows( t ) );
 
 ### Get Script
 
-**構文:** obj << Get Script
+**構文:** obj &lt;&lt; Get Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -453,7 +453,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**構文:** obj << Get Script With Data Table
+**構文:** obj &lt;&lt; Get Script With Data Table
 
 **説明:** この分析を再現するスクリプト(JSL)をデータテーブルへの参照も含めて生成し、それを式として戻す。
 
@@ -506,7 +506,7 @@ Show( t );
 
 ### Get Timing
 
-**構文:** obj << Get Timing
+**構文:** obj &lt;&lt; Get Timing
 
 **説明:** プラットフォームの起動にかかった時間を取得する。
 
@@ -559,7 +559,7 @@ Show( t );
 
 ### Get Web Support
 
-**構文:** obj << Get Web Support
+**構文:** obj &lt;&lt; Get Web Support
 
 **説明:** ディスプレイオブジェクトにおけるインタラクティブHTMLサポートのレベルを数値で戻す。1は、一部または全部の要素がサポートされていることを示し、0は、サポートされないことを示す。
 
@@ -575,7 +575,7 @@ Show( s );
 
 ### Get Where Expr
 
-**構文:** obj << Get Where Expr
+**構文:** obj &lt;&lt; Get Where Expr
 
 **説明:** プラットフォームがBy()またはWhere()を使って起動された場合に、データをサブセットするためのWhere式を戻す。By()やWhere()が使われていない場合はEmpty()を戻す。
 
@@ -612,7 +612,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**構文:** obj << Local Data Filter
+**構文:** obj &lt;&lt; Local Data Filter
 
 **説明:** このプラットフォームに対してのみ有効なフィルタで、データを特定のグループまたは範囲にフィルタリングする。
 
@@ -668,7 +668,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**構文:** obj << Paste Local Data Filter
+**構文:** obj &lt;&lt; Paste Local Data Filter
 
 **説明:** クリップボードにあるローカルデータフィルタを現在のレポートに適用する。
 
@@ -689,7 +689,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**構文:** obj << Redo Analysis
+**構文:** obj &lt;&lt; Redo Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -741,7 +741,7 @@ obj << Redo Analysis;
 
 ### Relaunch Analysis
 
-**構文:** obj << Relaunch Analysis
+**構文:** obj &lt;&lt; Relaunch Analysis
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -793,7 +793,7 @@ obj << Relaunch Analysis;
 
 ### Remove Column Switcher
 
-**構文:** obj << Remove Column Switcher
+**構文:** obj &lt;&lt; Remove Column Switcher
 
 **説明:** プラットフォームに最後に追加された列スイッチャーを削除する。
 
@@ -813,7 +813,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**構文:** obj << Remove Local Data Filter
+**構文:** obj &lt;&lt; Remove Local Data Filter
 
 **説明:** すでに作成されているローカルデータフィルタを削除し、プラットフォームはデータテーブル内のすべてのデータを使用した状態に戻る。
 
@@ -852,9 +852,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**構文:** obj << Report;
-
-Report( obj )
+**構文:** obj &lt;&lt; Report;Report( obj )
 
 **説明:** レポートオブジェクトへの参照を戻す。
 
@@ -908,7 +906,7 @@ Show( t );
 
 ### Report View
 
-**構文:** obj << Report View( "完全"|"要約" )
+**構文:** obj &lt;&lt; Report View( "完全"|"要約" )
 
 **説明:** レポートビューは、プラットフォームレポートの詳細を表示するかどうかを決定する。Fullはすべての詳細を表示し、Summaryはプラットフォームにより限定されたものだけを表示する。 動作をカスタマイズするため、各ディスプレイボックスは<<Set Summary Behaviorメッセージをサポートする。
 
@@ -960,7 +958,7 @@ obj << Report View( "Summary" );
 
 ### Save Script for All Objects
 
-**構文:** obj << Save Script for All Objects
+**構文:** obj &lt;&lt; Save Script for All Objects
 
 **説明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -1012,7 +1010,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**構文:** obj << Save Script for All Objects To Data Table( <name> )
+**構文:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **説明:** すべてのレポートオブジェクトを再現するスクリプトを現在のデータテーブルに保存する。このオプションは、ウィンドウ内にレポートが複数ある場合に便利。作成されるスクリプトの名前は、引用符で囲んで指定しない限り、1つ目のプラットフォーム名となる。
 
@@ -1124,7 +1122,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**構文:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** この分析を再現するJSLスクリプトを生成し、データテーブルのテーブルプロパティとして保存する。
 
@@ -1176,7 +1174,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**構文:** obj << Save Script to Journal
+**構文:** obj &lt;&lt; Save Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -1228,7 +1226,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**構文:** obj << Save Script to Report
+**構文:** obj &lt;&lt; Save Script to Report
 
 **説明:** この分析を再現するJSLスクリプトを生成し、レポートウィンドウに表示する。分析手順の記録を結果と一緒に残せる。
 
@@ -1280,7 +1278,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**構文:** obj << Save Script to Script Window
+**構文:** obj &lt;&lt; Save Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -1397,7 +1395,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**構文:** obj << Sync to Data Table Changes
+**構文:** obj &lt;&lt; Sync to Data Table Changes
 
 **説明:** 除外やデータの変更が行われた場合に同期する。
 
@@ -1414,7 +1412,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**構文:** obj << Title( "new title" )
+**構文:** obj &lt;&lt; Title( "new title" )
 
 **説明:** プラットフォームのタイトルを設定する。
 
@@ -1466,7 +1464,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**構文:** obj << Top Report
+**構文:** obj &lt;&lt; Top Report
 
 **説明:** レポート内のルートノードへの参照を戻す。
 
@@ -1520,7 +1518,7 @@ Show( t );
 
 ### View Web XML
 
-**構文:** obj << View Web XML
+**構文:** obj &lt;&lt; View Web XML
 
 **説明:** インタラクティブHTMLレポートの作成に使うXMLコードを戻す。
 
@@ -1688,7 +1686,7 @@ obj = dt1 << Reliability Forecast(
 
 ### Contract
 
-**構文:** obj << Forecast( Contract( length, unit ) )
+**構文:** obj &lt;&lt; Forecast( Contract( length, unit ) )
 
 **説明:** 契約の期間とその時間単位を指定する。これらの情報は、将来の予測に使われる。
 
@@ -1756,7 +1754,7 @@ obj << Forecast(
 
 ### Distribution
 
-**構文:** obj << Forecast( Distribution( name ) )
+**構文:** obj &lt;&lt; Forecast( Distribution( name ) )
 
 **説明:** 確率分布を指定する。指定された確率分布は、将来の予測に使われる。
 
@@ -1824,9 +1822,7 @@ obj << Forecast(
 
 ### Forecast Options
 
-**構文:** obj << Forecast Options( forecast message(), ... );
-
-(obj << Forecast Options) << forecast message()
+**構文:** obj &lt;&lt; Forecast Options( forecast message(), ... );(obj &lt;&lt; Forecast Options) &lt;&lt; forecast message()
 
 **説明:** 「予測」レポートのスクリプト可能オブジェクトにメッセージを送信する。「予測」レポートの赤い三角ボタンのメニューから、1つまたは複数のオプションを指定できる。引数がない場合、このオプションは、「予測」レポートのスクリプト可能オブジェクトへのJSL参照を戻す。引数がある場合は、プラットフォームのスクリプト可能オブジェクトへのJSL参照を戻す。詳しくは、Forecast（予測）オプションを参照。
 
@@ -1854,7 +1850,7 @@ obj = dt << Run Script( "Reliability Forecast" );
 
 ### Forecast To
 
-**構文:** obj << Forecast( Forecast To( time ) )
+**構文:** obj &lt;&lt; Forecast( Forecast To( time ) )
 
 **説明:** 予測を行いたい将来の最終時点を指定する。
 
@@ -1922,7 +1918,7 @@ obj << Forecast(
 
 ### Forecast Type
 
-**構文:** obj << Forecast( Forecast Type( type ) )
+**構文:** obj &lt;&lt; Forecast( Forecast Type( type ) )
 
 **説明:** 将来のリスクの予測に使う数量の種類を指定する。type引数では、Incremental (増分)またはCumulative (累積)を指定する。
 
@@ -1990,7 +1986,7 @@ obj << Forecast(
 
 ### Future Risk Set
 
-**構文:** obj << Forecast( Future Risk Set( count vector, time vector ) )
+**構文:** obj &lt;&lt; Forecast( Future Risk Set( count vector, time vector ) )
 
 **説明:** 将来のリスク集合を指定する。指定されたリスク集合は、将来の予測に使われる。引数は、生産数および時点が含まれたベクトル。
 
@@ -2058,7 +2054,7 @@ obj << Forecast(
 
 ### Get Results
 
-**構文:** obj << Get Results
+**構文:** obj &lt;&lt; Get Results
 
 **説明:** 予測結果を含む名前付きリストを戻す。
 
@@ -2073,7 +2069,7 @@ result = obj << Get Results;
 
 ### Group
 
-**構文:** obj << Forecast( Group( group ), ... )
+**構文:** obj &lt;&lt; Forecast( Group( group ), ... )
 
 **説明:** 予測を行いたいグループを特定する。つまり、Forecast節で指定したメッセージをどのグループに送信するかを特定する。
 
@@ -2279,7 +2275,7 @@ obj = dt1 << Reliability Forecast(
 
 ### Interval Type
 
-**構文:** obj << Forecast( Interval Type( type ) )
+**構文:** obj &lt;&lt; Forecast( Interval Type( type ) )
 
 **説明:** 将来のリスクの誤差を予測するのに使う区間の種類を指定する。typeの区間には、No Interval(区間なし)、Plugin Interval(プラグイン区間)、Prediction Interval(予測区間)を指定する。
 
@@ -2347,7 +2343,7 @@ obj << Forecast(
 
 ### Risk Set
 
-**構文:** obj << Forecast( Risk Set( count vector ) )
+**構文:** obj &lt;&lt; Forecast( Risk Set( count vector ) )
 
 **説明:** 現時点までに観測されたリスク集合を指定する。指定されたリスク集合は、将来の予測に使われる。
 
@@ -2415,7 +2411,7 @@ obj << Forecast(
 
 ### Save Data in Time to Event Format
 
-**構文:** obj << Save Data in Time to Event Format
+**構文:** obj &lt;&lt; Save Data in Time to Event Format
 
 **説明:** ネバダ形式または日付形式のデータを、「イベントまでの時間」形式で作成した新しいデータテーブルに保存する。
 
@@ -2430,7 +2426,7 @@ obj << Save Data in Time to Event Format;
 
 ### Save Forecast Data Table
 
-**構文:** obj << Save Forecast Data Table
+**構文:** obj &lt;&lt; Save Forecast Data Table
 
 **説明:** 累積した返品数と1期あたりの返品数を、起動ウィンドウで選択された変数とともに新しいデータテーブルに保存する。グループ列を指定してグループごとの分析を行った場合、グループごとのデータテーブルと、全体に対するデータテーブルが作成される。集計したデータテーブルには、既存の返品数も含まれる。
 
@@ -2445,7 +2441,7 @@ dt results = obj << Save Forecast Data Table;
 
 ### Set Interval Level
 
-**構文:** obj << Forecast( Set Interval Level( value ) )
+**構文:** obj &lt;&lt; Forecast( Set Interval Level( value ) )
 
 **説明:** 将来の故障数や返品数を予測する際の区間の信頼水準を指定する。
 
@@ -2513,7 +2509,7 @@ obj << Forecast(
 
 ### Show Graph Filter
 
-**構文:** obj << Show Graph Filter( state=0|1 )
+**構文:** obj &lt;&lt; Show Graph Filter( state=0|1 )
 
 **説明:** グラフフィルタの表示/非表示を切り替える。グラフフィルタでは、「観測データ」のグラフに表示する生産期間を選択できる。選択されていない期間の棒は薄く表示される。期間の選択を解除すると、グラフが元の状態に戻る。このオプションは、「イベントまでの時間」データには使用できない。
 
@@ -2528,7 +2524,7 @@ obj << Show Graph Filter( 1 );
 
 ### Show Legend
 
-**構文:** obj << Show Legend( state=0|1 )
+**構文:** obj &lt;&lt; Show Legend( state=0|1 )
 
 **説明:** 「観測データ」レポートにおいて、凡例の表示/非表示を切り替える。このオプションは、「イベントまでの時間」データには使用できない。
 
@@ -2547,7 +2543,7 @@ obj << Show Legend( 1 );
 
 #### Animation
 
-**構文:** obj << Animation( state=0|1 )
+**構文:** obj &lt;&lt; Animation( state=0|1 )
 
 **説明:** 「予測」グラフのホットスポットの点滅を制御する。 デフォルトではオン。
 
@@ -2573,7 +2569,7 @@ option << Use Approximate Distribution( 1 );
 
 #### Forecasting Interval Type
 
-**構文:** obj << Forecasting Interval Type( type )
+**構文:** obj &lt;&lt; Forecasting Interval Type( type )
 
 **説明:** 将来のリスクの誤差を予測するのに使う区間の種類を指定する。typeの区間には、プラグイン区間または予測区間を指定する。
 
@@ -2599,7 +2595,7 @@ option << Use Approximate Distribution( 1 );
 
 #### Import Future Risk Set
 
-**構文:** obj << Import Future Risk Set
+**構文:** obj &lt;&lt; Import Future Risk Set
 
 **説明:** 開いている別のデータテーブルから将来の生産データを読み込める。将来のリスクのグラフに、その新しいリスク集合が表示される。読み込むデータテーブルには、タイムスタンプの列と生産数の列がなければならない。
 
@@ -2618,7 +2614,7 @@ option << Import Future Risk Set;
 
 #### Interactive Configuration of Risk Sets
 
-**構文:** obj << Interactive Configuration of Risk Sets( state=0|1 )
+**構文:** obj &lt;&lt; Interactive Configuration of Risk Sets( state=0|1 )
 
 **説明:** グラフ上でホットスポットのドラッグが可能かどうかを指定する。
 
@@ -2644,7 +2640,7 @@ option << Use Approximate Distribution( 1 );
 
 #### Monte Carlo Sample Size
 
-**構文:** obj << Monte Carlo Sample Size( number )
+**構文:** obj &lt;&lt; Monte Carlo Sample Size( number )
 
 **説明:** 予測区間の計算に使う乱数シミュレーションの標本サイズを指定する。
 
@@ -2670,7 +2666,7 @@ option << Use Approximate Distribution( 1 );
 
 #### Random Seed
 
-**構文:** obj << Random Seed( number )
+**構文:** obj &lt;&lt; Random Seed( number )
 
 **説明:** 乱数シード値を指定する。乱数シード値を使うと、予測区間のシミュレーションが再現できる。
 
@@ -2696,7 +2692,7 @@ option << Use Approximate Distribution( 1 );
 
 #### Save Forecast Data Table
 
-**構文:** obj << Save Forecast Data Table
+**構文:** obj &lt;&lt; Save Forecast Data Table
 
 **説明:** 累積した返品数と1期あたりの返品数を、起動ウィンドウで選択された変数とともに新しいデータテーブルに保存する。グループ列を指定してグループごとの分析を行った場合、グループごとのデータテーブルと、全体に対するデータテーブルが作成される。集計したデータテーブルには、既存の返品数も含まれる。
 
@@ -2712,7 +2708,7 @@ option << Save Forecast Data Table;
 
 #### Set Failure Cost
 
-**構文:** obj << Set Failure Cost( number )
+**構文:** obj &lt;&lt; Set Failure Cost( number )
 
 **説明:** 各故障のコストを指定する。
 
@@ -2738,7 +2734,7 @@ option << Use Approximate Distribution( 1 );
 
 #### Show Interval
 
-**構文:** obj << Show Interval( state=0|1 )
+**構文:** obj &lt;&lt; Show Interval( state=0|1 )
 
 **説明:** グラフに95%信頼限界を表示する。
 
@@ -2764,7 +2760,7 @@ option << Use Approximate Distribution( 1 );
 
 #### Spreadsheet Configuration of Risk Sets
 
-**構文:** obj << Spreadsheet Configuration of Risk Sets( state=0|1 )
+**構文:** obj &lt;&lt; Spreadsheet Configuration of Risk Sets( state=0|1 )
 
 **説明:** リスク集合を入力するための表を表示する。この表において、生産数やタイムスタンプを入力することができる。この表を使えば、グラフで対話式にリスク集合を入力する必要がない。
 
@@ -2790,7 +2786,7 @@ option << Use Approximate Distribution( 1 );
 
 #### Use Approximate Distribution
 
-**構文:** obj << Use Approximate Distribution( state=0|1 )
+**構文:** obj &lt;&lt; Use Approximate Distribution( state=0|1 )
 
 **説明:** 区間ごとの故障数を近似し、予測区間を求めるのに、Poisson分布を用いることを指定する。、このオプションを選択しなかった場合、多項分布が使われる。
 
@@ -2816,7 +2812,7 @@ option << Use Approximate Distribution( 1 );
 
 #### Use Contract Length
 
-**構文:** obj << Use Contract Length( state=0|1 )
+**構文:** obj &lt;&lt; Use Contract Length( state=0|1 )
 
 **説明:** 予測において契約期間を考慮するかどうかを指定する。
 
@@ -2842,7 +2838,7 @@ option << Use Approximate Distribution( 1 );
 
 #### Use Failure Cost
 
-**構文:** obj << Use Failure Cost( state=0|1 )
+**構文:** obj &lt;&lt; Use Failure Cost( state=0|1 )
 
 **説明:** 将来のリスクのグラフに故障数ではなく故障コストを表示する。
 
@@ -2872,27 +2868,27 @@ option << Use Approximate Distribution( 1 );
 
 #### Failure Count
 
-**構文:** obj << Failure Count( column )
+**構文:** obj &lt;&lt; Failure Count( column )
 
 #### Failure Time
 
-**構文:** obj << Failure Time( column(s) )
+**構文:** obj &lt;&lt; Failure Time( column(s) )
 
 #### Group ID
 
-**構文:** obj << Group ID( column )
+**構文:** obj &lt;&lt; Group ID( column )
 
 #### Left Censor
 
-**構文:** obj << Left Censor( column )
+**構文:** obj &lt;&lt; Left Censor( column )
 
 #### Production Count
 
-**構文:** obj << Production Count( column )
+**構文:** obj &lt;&lt; Production Count( column )
 
 #### Timestamp
 
-**構文:** obj << Timestamp( column )
+**構文:** obj &lt;&lt; Timestamp( column )
 
 ### 項目のメッセージ
 
@@ -2968,19 +2964,19 @@ obj = dt1 << Reliability Forecast(
 
 #### Failure Count
 
-**構文:** obj << Failure Count( column(s) )
+**構文:** obj &lt;&lt; Failure Count( column(s) )
 
 #### Group ID
 
-**構文:** obj << Group ID( column )
+**構文:** obj &lt;&lt; Group ID( column )
 
 #### Production Count
 
-**構文:** obj << Production Count( column )
+**構文:** obj &lt;&lt; Production Count( column )
 
 #### Timestamp
 
-**構文:** obj << Timestamp( column )
+**構文:** obj &lt;&lt; Timestamp( column )
 
 ### 項目のメッセージ
 
@@ -3092,19 +3088,19 @@ obj = dt << Reliability Forecast(
 
 #### Censor
 
-**構文:** obj << Censor( column )
+**構文:** obj &lt;&lt; Censor( column )
 
 #### Freq
 
-**構文:** obj << Freq( column )
+**構文:** obj &lt;&lt; Freq( column )
 
 #### Group ID
 
-**構文:** obj << Group ID( column )
+**構文:** obj &lt;&lt; Group ID( column )
 
 #### Time to Event
 
-**構文:** obj << Time to Event( column(s) )
+**構文:** obj &lt;&lt; Time to Event( column(s) )
 
 ### 項目のメッセージ
 

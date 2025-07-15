@@ -22,7 +22,7 @@ obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
 
 ### By
 
-**Syntax:** obj = Variability Chart(...<By( column(s) )>...)
+**Syntax:** obj = Variability Chart(...&lt;By( column(s) )&gt;...)
 
 **Description:** Produce multiple reports, one for each level of the variable(s).
 
@@ -41,7 +41,7 @@ obj = dt << Variability Chart(
 
 ### Freq
 
-**Syntax:** obj = Variability Chart(...<Freq( column )>...)
+**Syntax:** obj = Variability Chart(...&lt;Freq( column )&gt;...)
 
 **Description:** A column whose values assign a frequency to each row for the analysis.
 
@@ -56,7 +56,7 @@ obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ), Freq( 
 
 ### Grouping
 
-**Syntax:** obj = Variability Chart(...<Grouping( column(s) )>...)
+**Syntax:** obj = Variability Chart(...&lt;Grouping( column(s) )&gt;...)
 
 **Description:** Specifies categorical column(s) as grouping variables. The last column in the list should be the part or unit being measured.
 
@@ -108,7 +108,7 @@ obj = dt << Variability Chart( Response( :Measurement ), X( :Operator, :part# ) 
 
 ### Standard
 
-**Syntax:** obj = Variability Chart(...<Standard( column )>...)
+**Syntax:** obj = Variability Chart(...&lt;Standard( column )&gt;...)
 
 **Description:** Specifies a standard or reference column that contains the known values for the measured part.
 
@@ -127,7 +127,7 @@ obj = dt << Variability Chart(
 
 ### X
 
-**Syntax:** obj = Variability Chart(...<X( column(s) )>...)
+**Syntax:** obj = Variability Chart(...&lt;X( column(s) )&gt;...)
 
 **Description:** Specifies categorical column(s) as grouping variables. The last column in the list should be the part or unit being measured.
 
@@ -222,7 +222,7 @@ obj << (Variability Analysis[1] << Variance Components( 1 ));
 
 ### Edit MSA Metadata
 
-**Syntax:** obj << Edit MSA Metadata( :column( Lower Tolerance( number ), Upper Tolerance( number ), <Historical Mean( number ), Historical Process Sigma( number )> ) )
+**Syntax:** obj &lt;&lt; Edit MSA Metadata( :column( Lower Tolerance( number ), Upper Tolerance( number ), &lt;Historical Mean( number ), Historical Process Sigma( number )&gt; ) )
 
 **Description:** Opens a window that enables you to add or edit the tolerance range, tolerance limits, historical mean, and historical process sigma for all analyses. The reports are automatically updated.
 
@@ -307,7 +307,7 @@ obj << (Variability Analysis[1] << Variance Components( 1 ));
 
 ### Save All Metadata to Table
 
-**Syntax:** obj << Save All Metadata to Table( < MSA( state=0|1 ) >, < Measurement Sigma( state=0|1 ) >, < Tolerance as Specs( state=0|1 ) > )
+**Syntax:** obj &lt;&lt; Save All Metadata to Table( &lt; MSA( state=0|1 ) &gt;, &lt; Measurement Sigma( state=0|1 ) &gt;, &lt; Tolerance as Specs( state=0|1 ) &gt; )
 
 **Description:** Creates a new data table that contains the MSA metadata and Measurement Sigma for each column of measurement data. The table is in a tall format and contains a row for each measurement variable. There is an option to save the lower and upper tolerance values as additional columns in the data table.
 
@@ -334,7 +334,7 @@ obj << Save All Metadata to Table;
 
 ### Save Metadata as Column Properties
 
-**Syntax:** obj << Save Metadata as Column Properties( < MSA( 0|1 ) >, < Measurement Sigma( 0|1 ) >, < Tolerance as Specs( 0|1 ) > )
+**Syntax:** obj &lt;&lt; Save Metadata as Column Properties( &lt; MSA( 0|1 ) &gt;, &lt; Measurement Sigma( 0|1 ) &gt;, &lt; Tolerance as Specs( 0|1 ) &gt; )
 
 **Description:** For each column of measurement data, saves the MSA metadata and Measurement Sigma as column properties within the column of the original data table. There is an option to save the lower and upper tolerance values as Spec Limits column properties.
 
@@ -420,7 +420,7 @@ obj = dt << Variability Chart(
 
 ### Variability Analysis
 
-**Syntax:** obj << Variability Analysis
+**Syntax:** obj &lt;&lt; Variability Analysis
 
 **Description:** Specifies the Variability Analysis report options for each measurement response.
 
@@ -441,7 +441,7 @@ obj = dt << Variability Chart(
 
 ### Action
 
-**Syntax:** obj << Action
+**Syntax:** obj &lt;&lt; Action
 
 **Description:** All-purpose trapdoor within a platform to insert expressions to evaluate. Temporarily sets the DisplayBox and DataTable contexts to the Platform.
 
@@ -459,7 +459,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Syntax:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntax:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Description:** Apply a previously created preset to the object, updating the options and customizations to match the saved settings.
 
@@ -504,7 +504,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Automatic Recalc
 
-**Syntax:** obj << Automatic Recalc( state=0|1 )
+**Syntax:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Description:** Redoes the analysis automatically for exclude and data changes. If the Automatic Recalc option is turned on, you should consider using Wait(0) commands to ensure that the exclude and data changes take effect before the recalculation.
 
@@ -520,7 +520,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**Syntax:** obj << Broadcast(message)
+**Syntax:** obj &lt;&lt; Broadcast(message)
 
 **Description:** Broadcasts a message to a platform. If return results from individual objects are tables, they are concatenated if possible, and the final format is identical to either the result from the Save Combined Table option in a Table Box or the result from the Concatenate option using a Source column. Other than those, results are stored in a list and returned.
 
@@ -538,7 +538,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**Syntax:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Syntax:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Description:** Adds a control panel for changing the platform&apos;s variables
 
@@ -556,7 +556,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**Syntax:** obj << Copy ByGroup Script
+**Syntax:** obj &lt;&lt; Copy ByGroup Script
 
 **Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
 
@@ -576,7 +576,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Syntax:** obj << Copy Script
+**Syntax:** obj &lt;&lt; Copy Script
 
 **Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
 
@@ -591,7 +591,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Syntax:** obj << Data Table Window
+**Syntax:** obj &lt;&lt; Data Table Window
 
 **Description:** Move the data table window for this analysis to the front.
 
@@ -606,7 +606,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Syntax:** obj << Get By Levels
+**Syntax:** obj &lt;&lt; Get By Levels
 
 **Description:** Returns an associative array mapping the by group columns to their values.
 
@@ -621,7 +621,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Syntax:** obj << Get ByGroup Script
+**Syntax:** obj &lt;&lt; Get ByGroup Script
 
 **Description:** Creates a script (JSL) to produce this analysis and returns it as an expression.
 
@@ -642,7 +642,7 @@ Show( t );
 
 ### Get Container
 
-**Syntax:** obj << Get Container
+**Syntax:** obj &lt;&lt; Get Container
 
 **Description:** Returns a reference to the container box that holds the content for the object.
 
@@ -689,7 +689,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Syntax:** obj << Get Data Table
+**Syntax:** obj &lt;&lt; Get Data Table
 
 **Description:** Returns a reference to the data table.
 
@@ -705,7 +705,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**Syntax:** obj << Get Group Platform
+**Syntax:** obj &lt;&lt; Get Group Platform
 
 **Description:** Return the Group Platform object if this platform is part of a Group. Otherwise, returns Empty().
 
@@ -722,7 +722,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**Syntax:** obj << Get Script
+**Syntax:** obj &lt;&lt; Get Script
 
 **Description:** Creates a script (JSL) to produce this analysis and returns it as an expression.
 
@@ -738,7 +738,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Syntax:** obj << Get Script With Data Table
+**Syntax:** obj &lt;&lt; Get Script With Data Table
 
 **Description:** Creates a script(JSL) to produce this analysis specifically referencing this data table and returns it as an expression.
 
@@ -754,7 +754,7 @@ Show( t );
 
 ### Get Timing
 
-**Syntax:** obj << Get Timing
+**Syntax:** obj &lt;&lt; Get Timing
 
 **Description:** Times the platform launch.
 
@@ -770,7 +770,7 @@ Show( t );
 
 ### Get Web Support
 
-**Syntax:** obj << Get Web Support
+**Syntax:** obj &lt;&lt; Get Web Support
 
 **Description:** Return a number indicating the level of Interactive HTML support for the display object. 1 means some or all elements are supported. 0 means no support.
 
@@ -786,7 +786,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Syntax:** obj << Get Where Expr
+**Syntax:** obj &lt;&lt; Get Where Expr
 
 **Description:** Returns the Where expression for the data subset, if the platform was launched with By() or Where(). Otherwise, returns Empty()
 
@@ -821,7 +821,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Syntax:** obj << Local Data Filter
+**Syntax:** obj &lt;&lt; Local Data Filter
 
 **Description:** To filter data to specific groups or ranges, but local to this platform
 
@@ -873,7 +873,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Syntax:** obj << Paste Local Data Filter
+**Syntax:** obj &lt;&lt; Paste Local Data Filter
 
 **Description:** Apply the local data filter from the clipboard to the current report.
 
@@ -894,7 +894,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**Syntax:** obj << Redo Analysis
+**Syntax:** obj &lt;&lt; Redo Analysis
 
 **Description:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
 
@@ -909,7 +909,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**Syntax:** obj << Redo ByGroup Analysis
+**Syntax:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Description:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
 
@@ -929,7 +929,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**Syntax:** obj << Relaunch Analysis
+**Syntax:** obj &lt;&lt; Relaunch Analysis
 
 **Description:** Opens the platform launch window and recalls the settings that were used to create the report.
 
@@ -944,7 +944,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**Syntax:** obj << Relaunch ByGroup
+**Syntax:** obj &lt;&lt; Relaunch ByGroup
 
 **Description:** Opens the platform launch window and recalls the settings that were used to create the report.
 
@@ -964,7 +964,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**Syntax:** obj << Remove Column Switcher
+**Syntax:** obj &lt;&lt; Remove Column Switcher
 
 **Description:** Removes the most recent Column Switcher that has been added to the platform.
 
@@ -984,7 +984,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Syntax:** obj << Remove Local Data Filter
+**Syntax:** obj &lt;&lt; Remove Local Data Filter
 
 **Description:** If a local data filter has been created, this removes it and restores the platform to use all the data in the data table directly
 
@@ -1021,9 +1021,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Syntax:** obj << Report;
-
-Report( obj )
+**Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Description:** Returns a reference to the report object.
 
@@ -1040,7 +1038,7 @@ Show( t );
 
 ### Report View
 
-**Syntax:** obj << Report View( "Full"|"Summary" )
+**Syntax:** obj &lt;&lt; Report View( "Full"|"Summary" )
 
 **Description:** The report view determines the level of detail visible in a platform report. Full shows all of the detail, while Summary shows only select content, dependent on the platform. For customized behavior, display boxes support a <<Set Summary Behavior message.
 
@@ -1055,7 +1053,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**Syntax:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description:** Creates a JSL script to produce this analysis, and save it as a table property in the data table. You can specify a name for the script. The Append Suffix option appends a numeric suffix to the script name, which differentiates the script from an existing script with the same name. The Prompt option prompts the user to specify a script name. The Replace option replaces an existing script with the same name.
 
@@ -1075,7 +1073,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Syntax:** obj << Save ByGroup Script to Journal
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
 
@@ -1095,7 +1093,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Syntax:** obj << Save ByGroup Script to Script Window
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
 
@@ -1115,7 +1113,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**Syntax:** obj << Save Script for All Objects
+**Syntax:** obj &lt;&lt; Save Script for All Objects
 
 **Description:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -1130,7 +1128,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Syntax:** obj << Save Script for All Objects To Data Table( <name> )
+**Syntax:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Description:** Saves a script for all report objects to the current data table. This option is useful when you have multiple reports in the window. The script is named after the first platform unless you specify the script name in quotes.
 
@@ -1168,7 +1166,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Syntax:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description:** Create a JSL script to produce this analysis, and save it as a table property in the data table.
 
@@ -1183,7 +1181,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Syntax:** obj << Save Script to Journal
+**Syntax:** obj &lt;&lt; Save Script to Journal
 
 **Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
 
@@ -1198,7 +1196,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Syntax:** obj << Save Script to Report
+**Syntax:** obj &lt;&lt; Save Script to Report
 
 **Description:** Create a JSL script to produce this analysis, and show it in the report itself. Useful to preserve a printed record of what was done.
 
@@ -1213,7 +1211,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Syntax:** obj << Save Script to Script Window
+**Syntax:** obj &lt;&lt; Save Script to Script Window
 
 **Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
 
@@ -1293,7 +1291,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Syntax:** obj << Sync to Data Table Changes
+**Syntax:** obj &lt;&lt; Sync to Data Table Changes
 
 **Description:** Sync with the exclude and data changes that have been made.
 
@@ -1310,7 +1308,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Syntax:** obj << Title( "new title" )
+**Syntax:** obj &lt;&lt; Title( "new title" )
 
 **Description:** Sets the title of the platform.
 
@@ -1325,7 +1323,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Syntax:** obj << Top Report
+**Syntax:** obj &lt;&lt; Top Report
 
 **Description:** Returns a reference to the root node in the report.
 
@@ -1342,7 +1340,7 @@ Show( t );
 
 ### Transform Column
 
-**Syntax:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Syntax:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Description:** Create a transform column in the local context of an object, usually a platform. The transform column is active only for the lifetime of the platform.
 
@@ -1359,7 +1357,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**Syntax:** obj << View Web XML
+**Syntax:** obj &lt;&lt; View Web XML
 
 **Description:** Returns the XML code that is used to create the interactive HTML report.
 
@@ -1397,7 +1395,7 @@ New Window( "Bivariate Equation",
 
 #### Confidence Intervals
 
-**Syntax:** obj << (Variability Analysis[number] << Bias Report(Confidence Intervals( state=0|1 )))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Bias Report(Confidence Intervals( state=0|1 )))
 
 **Description:** Shows or hides confidence intervals on the graph in the Measurement Bias Report by Standard section. This option is available only when a standard variable is specified in the launch window.
 
@@ -1417,7 +1415,7 @@ obj << (Variability Analysis[1] << Bias Report( Confidence Intervals( 1 ) ));
 
 #### Measurement Error Graphs
 
-**Syntax:** obj << (Variability Analysis[number] << Bias Report(Measurement Error Graphs( state=0|1 )))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Bias Report(Measurement Error Graphs( state=0|1 )))
 
 **Description:** Shows or hides measurement error charts of the bias by part. This option is available only when a standard variable is specified in the launch window.
 
@@ -1441,7 +1439,7 @@ obj << (Variability Analysis[1] << Bias Report( Measurement Error Graphs( 1 ) ))
 
 #### Point Options
 
-**Syntax:** obj << (Variability Analysis[number] << Heterogeneity of Variance Tests(1, Point Options("Show Needles" | "Show Connected Points" | "Show Only Points")))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Heterogeneity of Variance Tests(1, Point Options("Show Needles" | "Show Connected Points" | "Show Only Points")))
 
 **Description:** Specifies the drawing style of the points in the chart. You can choose between vertical needles, connected points, and points only. By default, the chart is drawn with needles that connect the points to the horizontal line that is drawn at the average.
 
@@ -1457,7 +1455,7 @@ Heterogeneity of Variance Tests( 1, Point Options( Show Only Points ) ));
 
 #### Set Alpha Level
 
-**Syntax:** obj << (Variability Analysis[number] << Heterogeneity of Variance Tests(1, Set Alpha Level( number )))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Heterogeneity of Variance Tests(1, Set Alpha Level( number )))
 
 **Description:** Changes the alpha level used to compute the decision limits.
 
@@ -1473,7 +1471,7 @@ Heterogeneity of Variance Tests( 1, Set Alpha Level( 0.1 ) ));
 
 #### Show Center Line
 
-**Syntax:** obj << (Variability Analysis[number] << Heterogeneity of Variance Tests(1, Show Center Line(state=0|1)))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Heterogeneity of Variance Tests(1, Show Center Line(state=0|1)))
 
 **Description:** Shows or hides the center line (overall mean ADM). On by default.
 
@@ -1489,7 +1487,7 @@ Heterogeneity of Variance Tests( 1, Show Center Line( 0 ) ));
 
 #### Show Decision Limit Shading
 
-**Syntax:** obj << (Variability Analysis[number] << Heterogeneity of Variance Tests(1, Show Decision Limit Shading(state=0|1)))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Heterogeneity of Variance Tests(1, Show Decision Limit Shading(state=0|1)))
 
 **Description:** Shows or hides the decision limit shading for the ANOMV-Levene (ADM) chart. On by default.
 
@@ -1505,7 +1503,7 @@ Heterogeneity of Variance Tests( 1, Show Decision Limit Shading( 0 ) ));
 
 #### Show Decision Limits
 
-**Syntax:** obj << (Variability Analysis[number] << Heterogeneity of Variance Tests(1, Show Decision Limits(state=0|1)))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Heterogeneity of Variance Tests(1, Show Decision Limits(state=0|1)))
 
 **Description:** Shows or hides the decision limit lines for the ANOMV-Levene (ADM) chart. On by default.
 
@@ -1521,7 +1519,7 @@ Heterogeneity of Variance Tests( 1, Show Decision Limits( 0 ) ));
 
 #### Show Summary Report
 
-**Syntax:** obj << (Variability Analysis[number] << Heterogeneity of Variance Tests(1, Show Summary Report(state=0|1)))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Heterogeneity of Variance Tests(1, Show Summary Report(state=0|1)))
 
 **Description:** Shows or hides a report that contains the group standard deviations and corresponding decision limits.
 
@@ -1541,7 +1539,7 @@ Heterogeneity of Variance Tests( 1, Show Summary Report( 1 ) ));
 
 #### Linearity by Groups
 
-**Syntax:** obj << (Variability Analysis[number] << Linearity Study(1, Linearity By Groups( state=0|1 )))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Linearity Study(1, Linearity By Groups( state=0|1 )))
 
 **Description:** Shows or hides individual linearity graphs for each factor in the model.
 
@@ -1562,7 +1560,7 @@ obj << (Variability Analysis[1] << Linearity Study( 1, Linearity By Groups( 1 ) 
 
 #### Set Alpha Level
 
-**Syntax:** obj << (Variability Analysis[number] << Linearity Study(1, Set Alpha Level( number )))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Linearity Study(1, Set Alpha Level( number )))
 
 **Description:** Specifies the alpha level that is used to compute the bias confidence limits. "0.05" by default.
 
@@ -1582,7 +1580,7 @@ obj << (Variability Analysis[1] << Linearity Study( 1, Set Alpha Level( .01 ) ))
 
 #### Show Avg Bias Points
 
-**Syntax:** obj << (Variability Analysis[number] << Linearity Study(1, Show Avg Bias Points( state=0|1 )))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Linearity Study(1, Show Avg Bias Points( state=0|1 )))
 
 **Description:** Shows or hides the average bias points on the graph. On by default.
 
@@ -1607,7 +1605,7 @@ obj << (Variability Analysis[1] << Linearity Study( 1, Show Avg Bias Points( 1 )
 
 #### Show Bias Points
 
-**Syntax:** obj << (Variability Analysis[number] << Linearity Study(1, Show Bias Points( state=0|1 )))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Linearity Study(1, Show Bias Points( state=0|1 )))
 
 **Description:** Shows or hides the bias points on the graph. On by default.
 
@@ -1632,7 +1630,7 @@ obj << (Variability Analysis[1] << Linearity Study( 1, Show Bias Points( 1 ) ));
 
 #### Show Fit Confidence Curves
 
-**Syntax:** obj << (Variability Analysis[number] << Linearity Study(1, Show Fit Confidence Curves( state=0|1 )))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Linearity Study(1, Show Fit Confidence Curves( state=0|1 )))
 
 **Description:** Shows or hides the line of fit confidence curves on the graph. On by default.
 
@@ -1657,7 +1655,7 @@ obj << (Variability Analysis[1] << Linearity Study( 1, Show Fit Confidence Curve
 
 #### Show Line of Fit
 
-**Syntax:** obj << (Variability Analysis[number] << Linearity Study(1, Show Line of Fit( state=0|1 )))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Linearity Study(1, Show Line of Fit( state=0|1 )))
 
 **Description:** Shows or hides the line of fit on the graph. On by default.
 
@@ -1682,7 +1680,7 @@ obj << (Variability Analysis[1] << Linearity Study( 1, Show Line of Fit( 1 ) ));
 
 #### Show Overall Avg Bias Line
 
-**Syntax:** obj << (Variability Analysis[number] << Linearity Study(1, Show Overall Avg Bias Line( state=0|1 )))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Linearity Study(1, Show Overall Avg Bias Line( state=0|1 )))
 
 **Description:** Shows or hides the overall average bias line on the graph. On by default.
 
@@ -1711,7 +1709,7 @@ obj << (Variability Analysis[1] << Linearity Study( 1, Show Overall Avg Bias Lin
 
 #### AIAG Labels
 
-**Syntax:** obj << (Variability Analysis[number] << AIAG Labels( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; AIAG Labels( state=0|1 ))
 
 **Description:** Shows or hides the labels in the Gauge R&R output. The labels are defined by the Automotive Industry Action Group (AIAG). On by default.
 
@@ -1736,7 +1734,7 @@ obj << (Variability Analysis[1] << AIAG Labels( 1 ));
 
 #### Bias Report
 
-**Syntax:** obj << (Variability Analysis[number] << Bias Report( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Bias Report( state=0|1 ))
 
 **Description:** Shows or hides a report that contains the average difference between the observed values and the standard. This option is available only when a standard variable is specified.
 
@@ -1756,7 +1754,7 @@ obj << (Variability Analysis[1] << Bias Report( 1 ));
 
 #### Connect Cell Means
 
-**Syntax:** obj << (Variability Analysis[number] << Connect Cell Means( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Connect Cell Means( state=0|1 ))
 
 **Description:** Shows or hides a line that connects the cell means within a group of cells on the variability chart.
 
@@ -1771,7 +1769,7 @@ obj << (Variability Analysis[1] << Connect Cell Means( 1 ));
 
 #### Discrimination Ratio
 
-**Syntax:** obj << (Variability Analysis[number] << Discrimination Ratio( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Discrimination Ratio( state=0|1 ))
 
 **Description:** Shows or hides the discrimination ratio for the given model.
 
@@ -1791,7 +1789,7 @@ obj << (Variability Analysis[1] << Discrimination Ratio( 1 ));
 
 #### Edit MSA Metadata
 
-**Syntax:** obj << (Variability Analysis[number] << Edit MSA Metadata(Lower Tolerance(number), Upper Tolerance(number), Tolerance Range(number), Historical Mean(number), Historical Process Sigma(number)))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Edit MSA Metadata(Lower Tolerance(number), Upper Tolerance(number), Tolerance Range(number), Historical Mean(number), Historical Process Sigma(number)))
 
 **Description:** Opens a window that enables you to add or edit the tolerance range, tolerance limits, historical mean, and historical process sigma for all analyses. The reports are automatically updated.
 
@@ -1816,7 +1814,7 @@ obj << (Variability Analysis[1] << Edit MSA Metadata(
 
 #### Gauge R&R Report
 
-**Syntax:** obj << (Variability Analysis[number] << "Gauge R & R Report"n( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; "Gauge R & R Report"n( state=0|1 ))
 
 **Description:** Computes and displays a Gauge R&R (reproducibility and repeatability) summary report.
 
@@ -1838,7 +1836,7 @@ obj << (Variability Analysis[1] << "Gauge R&R Report"n( 1 ));
 
 #### Group Means of Std Dev
 
-**Syntax:** obj << (Variability Analysis[number] << Group Means of Std Dev( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Group Means of Std Dev( state=0|1 ))
 
 **Description:** Shows or hides the mean lines for groups of cell standard deviations on the standard deviation chart.
 
@@ -1853,7 +1851,7 @@ obj << (Variability Analysis[1] << Group Means of Std Dev( 1 ));
 
 #### Heterogeneity of Variance Tests
 
-**Syntax:** obj << (Variability Analysis[number] << Heterogeneity of Variance Tests( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Heterogeneity of Variance Tests( state=0|1 ))
 
 **Description:** Shows or hides a report that compares variances across groups. The report includes graphs that show the heterogeneity of variance test for each factor in the model.
 
@@ -1872,7 +1870,7 @@ obj << (Variability Analysis[1] << Heterogeneity of Variance Tests( 1 ));
 
 #### Linearity Study
 
-**Syntax:** obj << (Variability Analysis[number] << Linearity Study( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Linearity Study( state=0|1 ))
 
 **Description:** Performs a regression that uses the standard values as the X variable and the bias as the Y variable.
 
@@ -1893,7 +1891,7 @@ obj << (Variability Analysis[1] << Linearity Study( 1 ));
 
 #### Mean Diamonds
 
-**Syntax:** obj << (Variability Analysis[number] << Mean Diamonds( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Mean Diamonds( state=0|1 ))
 
 **Description:** Shows or hides mean diamonds on the variability chart. The confidence intervals use the within-group standard deviation for each cell.
 
@@ -1908,7 +1906,7 @@ obj << (Variability Analysis[1] << Mean Diamonds( 1 ));
 
 #### Mean Plots
 
-**Syntax:** obj << (Variability Analysis[number] << Mean Plots( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Mean Plots( state=0|1 ))
 
 **Description:** Shows or hides a plot of the factor level means for each factor in the model.
 
@@ -1927,7 +1925,7 @@ obj << (Variability Analysis[1] << Mean Plots( 1 ));
 
 #### Mean of Std Dev
 
-**Syntax:** obj << (Variability Analysis[number] << Mean of Std Dev( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Mean of Std Dev( state=0|1 ))
 
 **Description:** Shows or hides a gray dashed line at the mean standard deviation on the standard deviation chart.
 
@@ -1942,7 +1940,7 @@ obj << (Variability Analysis[1] << Mean of Std Dev( 1 ));
 
 #### Misclassification Probabilities
 
-**Syntax:** obj << (Variability Analysis[number] << Misclassification Probabilities( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Misclassification Probabilities( state=0|1 ))
 
 **Description:** Shows or hides a report containing the probabilities of misclassification for the given model.
 
@@ -1963,7 +1961,7 @@ obj << (Variability Analysis[1] << Misclassification Probabilities( 1 ));
 
 #### Points Jittered
 
-**Syntax:** obj << (Variability Analysis[number] << Points Jittered( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Points Jittered( state=0|1 ))
 
 **Description:** Adds random horizontal jitter to the points in the variability chart.
 
@@ -1978,7 +1976,7 @@ obj << (Variability Analysis[1] << Points Jittered( 1 ));
 
 #### S Control Limits
 
-**Syntax:** obj << (Variability Analysis[number] << S Control Limits( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; S Control Limits( state=0|1 ))
 
 **Description:** Shows or hides red lines at the lower control limit (LCL) and upper control limit (UCL) on the standard deviation chart.
 
@@ -1993,7 +1991,7 @@ obj << (Variability Analysis[1] << S Control Limits( 1 ));
 
 #### Show Box Plots
 
-**Syntax:** obj << (Variability Analysis[number] << Show Box Plots( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Show Box Plots( state=0|1 ))
 
 **Description:** Shows or hides box plots for each cell on the variability chart.
 
@@ -2008,7 +2006,7 @@ obj << (Variability Analysis[1] << Show Box Plots( 1 ));
 
 #### Show Cell Means
 
-**Syntax:** obj << (Variability Analysis[number] << Show Cell Means( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Show Cell Means( state=0|1 ))
 
 **Description:** Shows or hides the mean mark for each cell on the variability chart. On by default.
 
@@ -2026,7 +2024,7 @@ obj << (Variability Analysis[1] << Show Cell Means( 1 ));
 
 #### Show Grand Mean
 
-**Syntax:** obj << (Variability Analysis[number] << Show Grand Mean( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Show Grand Mean( state=0|1 ))
 
 **Description:** Shows or hides the overall mean, which is represented by a gray dotted line across the entire graph.
 
@@ -2041,7 +2039,7 @@ obj << (Variability Analysis[1] << Show Grand Mean( 1 ));
 
 #### Show Grand Median
 
-**Syntax:** obj << (Variability Analysis[number] << Show Grand Median( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Show Grand Median( state=0|1 ))
 
 **Description:** Shows or hides the overall median, which is represented by a blue dotted line across the entire graph.
 
@@ -2056,7 +2054,7 @@ obj << (Variability Analysis[1] << Show Grand Median( 1 ));
 
 #### Show Group Means
 
-**Syntax:** obj << (Variability Analysis[number] << Show Group Means( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Show Group Means( state=0|1 ))
 
 **Description:** Shows or hides the mean for groups of cells, which is represented by a horizontal solid line.
 
@@ -2071,7 +2069,7 @@ obj << (Variability Analysis[1] << Show Group Means( 1 ));
 
 #### Show Points
 
-**Syntax:** obj << (Variability Analysis[number] << Show Points( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Show Points( state=0|1 ))
 
 **Description:** Shows or hides the points on the variability chart. On by default.
 
@@ -2089,7 +2087,7 @@ obj << (Variability Analysis[1] << Show Points( 1 ));
 
 #### Show Range Bars
 
-**Syntax:** obj << (Variability Analysis[number] << Show Range Bars( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Show Range Bars( state=0|1 ))
 
 **Description:** Shows or hides the bars that indicate the minimum and the maximum value of each cell. On by default.
 
@@ -2107,7 +2105,7 @@ obj << (Variability Analysis[1] << Show Range Bars( 1 ));
 
 #### Show Separators
 
-**Syntax:** obj << (Variability Analysis[number] << Show Separators( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Show Separators( state=0|1 ))
 
 **Description:** Shows or hides the separator lines between levels of the grouping variables on the variability chart. On by default.
 
@@ -2125,7 +2123,7 @@ obj << (Variability Analysis[1] << Show Separators( 1 ));
 
 #### Show Standard Mean
 
-**Syntax:** obj << (Variability Analysis[number] << Show Standard Mean( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Show Standard Mean( state=0|1 ))
 
 **Description:** Shows or hides a line at the mean of the standard values. This option is available only if a standard variable is specified in the launch window.
 
@@ -2141,7 +2139,7 @@ obj << (Variability Analysis[1] << Show Standard Mean( 1 ));
 
 #### Std Dev Chart
 
-**Syntax:** obj << (Variability Analysis[number] << Std Dev Chart( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Std Dev Chart( state=0|1 ))
 
 **Description:** Shows or hides a chart that plots the standard deviation of each cell. On by default.
 
@@ -2159,7 +2157,7 @@ obj << (Variability Analysis[1] << Std Dev Chart( 1 ));
 
 #### Std Dev Plots
 
-**Syntax:** obj << (Variability Analysis[number] << Std Dev Plots( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Std Dev Plots( state=0|1 ))
 
 **Description:** Shows or hides plots of the standard deviations grouped by each factor level. A plot is shown for each factor in the model.
 
@@ -2178,7 +2176,7 @@ obj << (Variability Analysis[1] << Std Dev Plots( 1 ));
 
 #### Variability Chart
 
-**Syntax:** obj << (Variability Analysis[number] << Variability Chart( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Variability Chart( state=0|1 ))
 
 **Description:** Shows or hides the variability chart. On by default.
 
@@ -2196,7 +2194,7 @@ obj << (Variability Analysis[1] << Variability Chart( 1 ));
 
 #### Variability Summary Report
 
-**Syntax:** obj << (Variability Analysis[number] << Variability Summary Report( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Variability Summary Report( state=0|1 ))
 
 **Description:** Shows or hides a report that shows the mean, standard deviation, coefficient of variation (CV), standard error of the mean, the lower and upper confidence intervals. The minimum, maximum, range, median, and number of observations are also shown.
 
@@ -2211,7 +2209,7 @@ obj << (Variability Analysis[1] << Variability Summary Report( 1 ));
 
 #### Variance Components
 
-**Syntax:** obj << (Variability Analysis[number] << Variance Components( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Variance Components( state=0|1 ))
 
 **Description:** Shows or hides the variance components for a specific model.
 
@@ -2231,7 +2229,7 @@ obj << (Variability Analysis[1] << Variance Components( 1 ));
 
 #### Vertical Charts
 
-**Syntax:** obj << (Variability Analysis[number] << Vertical Charts( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Vertical Charts( state=0|1 ))
 
 **Description:** Rotates the variability chart.
 
@@ -2246,7 +2244,7 @@ obj << (Variability Analysis[1] << Vertical Charts( 1 ));
 
 #### XBar Control Limits
 
-**Syntax:** obj << (Variability Analysis[number] << XBar Control Limits( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; XBar Control Limits( state=0|1 ))
 
 **Description:** Shows or hides lines at the lower control limit (LCL) and upper control limit (UCL) on the variability chart.
 

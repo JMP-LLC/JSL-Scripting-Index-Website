@@ -6,7 +6,7 @@
 
 ### Blink
 
-**Syntaxe :** obj << Blink
+**Syntaxe :** obj &lt;&lt; Blink
 
 **Description :** Fait clignoter la ligne affichée dans la zone d&apos;édition des données.
 
@@ -32,7 +32,7 @@ dataedit << Blink;
 
 ### Find
 
-**Syntaxe :** obj << Find( search term )
+**Syntaxe :** obj &lt;&lt; Find( search term )
 
 **Description :** Affiche la ligne trouvée par la recherche du terme saisi.
 
@@ -58,7 +58,7 @@ dataedit << Find( Contains( :State, "North Carolina" ) );
 
 ### Go to row
 
-**Syntaxe :** obj << Go to row( row )
+**Syntaxe :** obj &lt;&lt; Go to row( row )
 
 **Description :** Affiche la ligne saisie dans la zone d&apos;édition des données.
 
@@ -84,7 +84,7 @@ dataedit << Go To Row( 23 );
 
 ### New Row
 
-**Syntaxe :** obj << New Row
+**Syntaxe :** obj &lt;&lt; New Row
 
 **Description :** Crée une nouvelle ligne dans la table de données et affiche cette ligne dans la zone d&apos;édition des données.
 
@@ -110,7 +110,7 @@ dataedit << New Row;
 
 ### Next
 
-**Syntaxe :** obj << Next
+**Syntaxe :** obj &lt;&lt; Next
 
 **Description :** Afficher la prochaine ligne sélectionnée dans la zone d&apos;édition des données.
 
@@ -136,7 +136,7 @@ dataedit << Next;
 
 ### Next Selected
 
-**Syntaxe :** obj << Next Selected
+**Syntaxe :** obj &lt;&lt; Next Selected
 
 **Description :** Dans les lignes sélectionnées, afficher la prochaine ligne sélectionnée dans la zone d&apos;édition des données.
 
@@ -163,7 +163,7 @@ dataedit << Next Selected;
 
 ### Prev
 
-**Syntaxe :** obj << Prev
+**Syntaxe :** obj &lt;&lt; Prev
 
 **Description :** Afficher la ligne sélectionnée précédemment dans la zone d&apos;édition des données.
 
@@ -190,7 +190,7 @@ dataedit << Prev;
 
 ### Prev Selected
 
-**Syntaxe :** obj << Prev Selected
+**Syntaxe :** obj &lt;&lt; Prev Selected
 
 **Description :** Parmi les lignes sélectionnées, afficher la ligne sélectionnée précédemment dans la zone d&apos;édition des données.
 
@@ -217,7 +217,7 @@ dataedit << Prev Selected;
 
 ### Save
 
-**Syntaxe :** obj << Save
+**Syntaxe :** obj &lt;&lt; Save
 
 **Description :** Enregistre les valeurs de ligne de la zone d&apos;édition des données dans une table de données.
 

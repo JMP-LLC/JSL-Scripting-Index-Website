@@ -6,7 +6,7 @@
 
 ### Create Objects
 
-**Syntax:** obj << Create Objects
+**Syntax:** obj &lt;&lt; Create Objects
 
 **Beschreibung:** Objekte der Modulinstanz erstellen.  Kann nur im Skript für ein JMP-Anwendungsmodul aufgerufen werden.
 
@@ -19,7 +19,7 @@ Names Default To Here( 1 );
 
 ### Get Box
 
-**Syntax:** obj << Get Box
+**Syntax:** obj &lt;&lt; Get Box
 
 **Beschreibung:** Anzeigefeld der Modulinstanz abrufen.
 
@@ -37,7 +37,7 @@ inst << Get Box;
 
 ### Get Namespace
 
-**Syntax:** obj << Get Namespace
+**Syntax:** obj &lt;&lt; Get Namespace
 
 **Beschreibung:** Namensraum der Modulinstanz abrufen.
 
@@ -51,7 +51,7 @@ app = JMP App();
 
 ### Get User Data
 
-**Syntax:** obj << Get User Data
+**Syntax:** obj &lt;&lt; Get User Data
 
 **Beschreibung:** Gibt die der Modulinstanz zugewiesenen Anwenderdaten zurück.
 
@@ -64,7 +64,7 @@ Names Default To Here( 1 );
 
 ### Set User Data
 
-**Syntax:** inst << Set User Data(expr)
+**Syntax:** inst &lt;&lt; Set User Data(expr)
 
 **Beschreibung:** Speichert einen JSL-Wert in der Modulinstanz der JMP-App. Bei dem Wert kann es sich um eine Zahl, Zeichenkette, Liste, ein assoziatives Array oder einen anderen JSL-Typ handeln.
 

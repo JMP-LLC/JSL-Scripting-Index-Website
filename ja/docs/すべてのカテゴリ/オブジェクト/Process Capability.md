@@ -6,7 +6,7 @@
 
 ### Action
 
-**構文:** obj << Action
+**構文:** obj &lt;&lt; Action
 
 **説明:** 評価する式を挿入するための、プラットフォーム内の汎用トラップドア。プラットフォームに一時的にディスプレイボックスおよびデータテーブルのコンテキストを設定する。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**構文:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**構文:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **説明:** 作成されたプリセットをオブジェクトに適用する。保存された設定に合わせてオプションとカスタマイズが更新される。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**構文:** obj << Automatic Recalc( state=0|1 )
+**構文:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **説明:** データの除外や変更があった場合に分析を自動的にやり直す。Automatic Recalcオプションがオンになっている場合で、データの除外や変更が再計算の前に確実に適用されるようにするには、Wait(0)コマンドを使用すること。
 
@@ -92,7 +92,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**構文:** obj << Broadcast(message)
+**構文:** obj &lt;&lt; Broadcast(message)
 
 **説明:** メッセージをプラットフォームに一括適用する。個々のオブジェクトから戻される結果がデータテーブルである場合は、可能な限り連結する。その最終的な形式は、Table BoxのSave Combined Tableオプションの結果と同じになるか、またはソース列を使用したConcanateオプションの結果と同じになる。それ以外の場合、結果はリストの形で戻される。
 
@@ -112,7 +112,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Copy ByGroup Script
 
-**構文:** obj << Copy ByGroup Script
+**構文:** obj &lt;&lt; Copy ByGroup Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -138,7 +138,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**構文:** obj << Copy Script
+**構文:** obj &lt;&lt; Copy Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -158,7 +158,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**構文:** obj << Data Table Window
+**構文:** obj &lt;&lt; Data Table Window
 
 **説明:** この分析に使用したデータテーブルのウィンドウを手前に表示する。
 
@@ -178,7 +178,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**構文:** obj << Get By Levels
+**構文:** obj &lt;&lt; Get By Levels
 
 **説明:** By列が指定されている場合、列名をキー、データ値を値とした連想配列を戻す。
 
@@ -195,7 +195,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**構文:** obj << Get ByGroup Script
+**構文:** obj &lt;&lt; Get ByGroup Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -222,7 +222,7 @@ Show( t );
 
 ### Get Container
 
-**構文:** obj << Get Container
+**構文:** obj &lt;&lt; Get Container
 
 **説明:** オブジェクトのコンテンツを含んだコンテナボックスの参照を戻す。
 
@@ -274,7 +274,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**構文:** obj << Get Data Table
+**構文:** obj &lt;&lt; Get Data Table
 
 **説明:** データテーブルへの参照を戻す。
 
@@ -295,7 +295,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**構文:** obj << Get Group Platform
+**構文:** obj &lt;&lt; Get Group Platform
 
 **説明:** 該当のプラットフォームがグループに属している場合に、Group Platformオブジェクトを戻す。それ以外の場合はEmpty()を戻す。
 
@@ -312,7 +312,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**構文:** obj << Get Script
+**構文:** obj &lt;&lt; Get Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -333,7 +333,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**構文:** obj << Get Script With Data Table
+**構文:** obj &lt;&lt; Get Script With Data Table
 
 **説明:** この分析を再現するスクリプト(JSL)をデータテーブルへの参照も含めて生成し、それを式として戻す。
 
@@ -354,7 +354,7 @@ Show( t );
 
 ### Get Timing
 
-**構文:** obj << Get Timing
+**構文:** obj &lt;&lt; Get Timing
 
 **説明:** プラットフォームの起動にかかった時間を取得する。
 
@@ -375,7 +375,7 @@ Show( t );
 
 ### Get Web Support
 
-**構文:** obj << Get Web Support
+**構文:** obj &lt;&lt; Get Web Support
 
 **説明:** ディスプレイオブジェクトにおけるインタラクティブHTMLサポートのレベルを数値で戻す。1は、一部または全部の要素がサポートされていることを示し、0は、サポートされないことを示す。
 
@@ -391,7 +391,7 @@ Show( s );
 
 ### Get Where Expr
 
-**構文:** obj << Get Where Expr
+**構文:** obj &lt;&lt; Get Where Expr
 
 **説明:** プラットフォームがBy()またはWhere()を使って起動された場合に、データをサブセットするためのWhere式を戻す。By()やWhere()が使われていない場合はEmpty()を戻す。
 
@@ -428,7 +428,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**構文:** obj << Local Data Filter
+**構文:** obj &lt;&lt; Local Data Filter
 
 **説明:** このプラットフォームに対してのみ有効なフィルタで、データを特定のグループまたは範囲にフィルタリングする。
 
@@ -484,7 +484,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**構文:** obj << Paste Local Data Filter
+**構文:** obj &lt;&lt; Paste Local Data Filter
 
 **説明:** クリップボードにあるローカルデータフィルタを現在のレポートに適用する。
 
@@ -505,7 +505,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**構文:** obj << Redo Analysis
+**構文:** obj &lt;&lt; Redo Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -525,7 +525,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**構文:** obj << Redo ByGroup Analysis
+**構文:** obj &lt;&lt; Redo ByGroup Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -551,7 +551,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**構文:** obj << Relaunch Analysis
+**構文:** obj &lt;&lt; Relaunch Analysis
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -571,7 +571,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**構文:** obj << Relaunch ByGroup
+**構文:** obj &lt;&lt; Relaunch ByGroup
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -597,7 +597,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Local Data Filter
 
-**構文:** obj << Remove Local Data Filter
+**構文:** obj &lt;&lt; Remove Local Data Filter
 
 **説明:** すでに作成されているローカルデータフィルタを削除し、プラットフォームはデータテーブル内のすべてのデータを使用した状態に戻る。
 
@@ -636,9 +636,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**構文:** obj << Report;
-
-Report( obj )
+**構文:** obj &lt;&lt; Report;Report( obj )
 
 **説明:** レポートオブジェクトへの参照を戻す。
 
@@ -660,7 +658,7 @@ Show( t );
 
 ### Report View
 
-**構文:** obj << Report View( "完全"|"要約" )
+**構文:** obj &lt;&lt; Report View( "完全"|"要約" )
 
 **説明:** レポートビューは、プラットフォームレポートの詳細を表示するかどうかを決定する。Fullはすべての詳細を表示し、Summaryはプラットフォームにより限定されたものだけを表示する。 動作をカスタマイズするため、各ディスプレイボックスは<<Set Summary Behaviorメッセージをサポートする。
 
@@ -680,7 +678,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**構文:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** 分析を再現するためのJSLスクリプトを作成し、データテーブルにテーブルプロパティとして保存する。スクリプトの名前を指定できる。Append Suffixオプションは、スクリプト名に数字の接尾辞を追加する。これにより、同名のスクリプトが存在していても区別できる。Promptオプションは、ユーザにスクリプト名の指定を促す。Replaceオプションは、同名の既存のスクリプトを置き換える。
 
@@ -706,7 +704,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**構文:** obj << Save ByGroup Script to Journal
+**構文:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -732,7 +730,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**構文:** obj << Save ByGroup Script to Script Window
+**構文:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -758,7 +756,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**構文:** obj << Save Script for All Objects
+**構文:** obj &lt;&lt; Save Script for All Objects
 
 **説明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -778,7 +776,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**構文:** obj << Save Script for All Objects To Data Table( <name> )
+**構文:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **説明:** すべてのレポートオブジェクトを再現するスクリプトを現在のデータテーブルに保存する。このオプションは、ウィンドウ内にレポートが複数ある場合に便利。作成されるスクリプトの名前は、引用符で囲んで指定しない限り、1つ目のプラットフォーム名となる。
 
@@ -828,7 +826,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**構文:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** この分析を再現するJSLスクリプトを生成し、データテーブルのテーブルプロパティとして保存する。
 
@@ -848,7 +846,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**構文:** obj << Save Script to Journal
+**構文:** obj &lt;&lt; Save Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -868,7 +866,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**構文:** obj << Save Script to Report
+**構文:** obj &lt;&lt; Save Script to Report
 
 **説明:** この分析を再現するJSLスクリプトを生成し、レポートウィンドウに表示する。分析手順の記録を結果と一緒に残せる。
 
@@ -888,7 +886,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**構文:** obj << Save Script to Script Window
+**構文:** obj &lt;&lt; Save Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -973,7 +971,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**構文:** obj << Sync to Data Table Changes
+**構文:** obj &lt;&lt; Sync to Data Table Changes
 
 **説明:** 除外やデータの変更が行われた場合に同期する。
 
@@ -990,7 +988,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**構文:** obj << Title( "new title" )
+**構文:** obj &lt;&lt; Title( "new title" )
 
 **説明:** プラットフォームのタイトルを設定する。
 
@@ -1010,7 +1008,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**構文:** obj << Top Report
+**構文:** obj &lt;&lt; Top Report
 
 **説明:** レポート内のルートノードへの参照を戻す。
 
@@ -1032,7 +1030,7 @@ Show( t );
 
 ### Transform Column
 
-**構文:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**構文:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **説明:** オブジェクトのローカルコンテキスト(通常はプラットフォーム)内に変換列を作成する。この変換列は、それを作成したプラットフォームの中のみで使用可能。
 
@@ -1051,7 +1049,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**構文:** obj << View Web XML
+**構文:** obj &lt;&lt; View Web XML
 
 **説明:** インタラクティブHTMLレポートの作成に使うXMLコードを戻す。
 
@@ -1087,7 +1085,7 @@ New Window( "Bivariate Equation",
 
 ### By
 
-**構文:** obj = Process Capability(...<By( column(s) )>...)
+**構文:** obj = Process Capability(...&lt;By( column(s) )&gt;...)
 
 **説明:** 指定された列の各水準に対して、個別に分析を実行する。
 
@@ -1172,7 +1170,7 @@ obj = dt << Process Capability(
 
 ### Process Capability
 
-**構文:** Process Capability( Process Variables (columns), < Spec Limits() > )
+**構文:** Process Capability( Process Variables (columns), &lt; Spec Limits() &gt; )
 
 **説明:** 各変数の工程能力分析を行い、複数の工程変数における工程能力を一度に分析するのに役立つグラフを作成する。仕様限界も定義できる。
 
@@ -1193,7 +1191,7 @@ obj = dt << Process Capability(
 
 ### AIAG (Ppk) Labeling
 
-**構文:** obj << "AIAG (Ppk) Labeling"n( state=0|1 )
+**構文:** obj &lt;&lt; "AIAG (Ppk) Labeling"n( state=0|1 )
 
 **説明:** 工程能力指数のラベルをAIAG形式とし、「Cp」ではなく「Pp」というラベルに変更する。 デフォルトではオン。
 
@@ -1212,7 +1210,7 @@ obj << "AIAG (Ppk) Labeling"n( 0 );
 
 ### Capability Box Plots
 
-**構文:** obj << Capability Box Plots( state=0|1 )
+**構文:** obj &lt;&lt; Capability Box Plots( state=0|1 )
 
 **説明:** 並列箱ひげ図の表示/非表示を切り替える。この箱ひげ図の値は、各工程のデータ値を目標値で中心化し、仕様限界で尺度化している。 デフォルトではオン。
 
@@ -1234,7 +1232,7 @@ obj << Capability Box Plots( 1 );
 
 ### Capability Index Plot
 
-**構文:** obj << Capability Index Plot( state=0|1, <plot options> )
+**構文:** obj &lt;&lt; Capability Index Plot( state=0|1, &lt;plot options&gt; )
 
 **説明:** 各工程の全体Ppkをプロットしたグラフの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1258,7 +1256,7 @@ obj << Capability Index Plot( 1 );
 
 ### Color Out of Spec Values
 
-**構文:** obj << Color Out of Spec Values( state=0|1 )
+**構文:** obj &lt;&lt; Color Out of Spec Values( state=0|1 )
 
 **説明:** データテーブルにおいて、仕様限界外となっている値のセルに色を付ける。下側仕様限界(LSL)より小さい値のセルは赤で、上側仕様限界(USL)より大きい値のセルは青で色付けされる。
 
@@ -1294,7 +1292,7 @@ obj = dt << Process Capability(
 
 ### Goal Plot
 
-**構文:** obj << Goal Plot( state=0|1, <plot options> )
+**構文:** obj &lt;&lt; Goal Plot( state=0|1, &lt;plot options&gt; )
 
 **説明:** ゴールプロットの表示/非表示を切り替える。ゴールプロットは、仕様限界で正規化した平均のシフトをX座標とし、仕様限界で正規化した標準偏差をY座標として、各工程をプロットしたグラフである。ゴールの外側にある点は、指定したPpk (Cpk)を下回っている工程。 デフォルトではオン。
 
@@ -1316,7 +1314,7 @@ obj << Goal Plot( 1 );
 
 ### Individual Detail Reports
 
-**構文:** obj << Individual Detail Reports( state=0|1 )
+**構文:** obj &lt;&lt; Individual Detail Reports( state=0|1 )
 
 **説明:** 各工程に対して個別に表示される、詳細な工程能力レポートの表示/非表示を切り替える。
 
@@ -1336,7 +1334,7 @@ obj << Individual Detail Reports( 1 );
 
 ### Individual Detail Reports Cutoff
 
-**構文:** obj << Individual Detail Reports Cutoff( number=1 )
+**構文:** obj &lt;&lt; Individual Detail Reports Cutoff( number=1 )
 
 **説明:** 工程変数の個数が指定された閾値以下の場合、「各列の詳細レポート」を表示し、ゴールプロットと工程能力箱ひげ図を非表示にする。 デフォルトの値は"1"。
 
@@ -1356,7 +1354,7 @@ obj << Individual Detail Reports Cutoff( 7 );
 
 ### Make Goal Plot Summary Table
 
-**構文:** obj << Make Goal Plot Summary Table
+**構文:** obj &lt;&lt; Make Goal Plot Summary Table
 
 **説明:** ゴールプロットに描画される点の座標を含む新しいデータテーブルを作成する。これらには、群内シグマおよび全体シグマの両方から計算された座標が含まれる。
 
@@ -1376,7 +1374,7 @@ obj << Make Goal Plot Summary Table;
 
 ### Order By
 
-**構文:** obj << Order By( "最初の表示順序"|"最初の表示順序の逆順"|"群内シグマCpkの昇順"|"群内シグマCpkの降順"|"全体シグマPpkの昇順"|"全体シグマPpkの降順" )
+**構文:** obj &lt;&lt; Order By( "最初の表示順序"|"最初の表示順序の逆順"|"群内シグマCpkの昇順"|"群内シグマCpkの降順"|"全体シグマPpkの昇順"|"全体シグマPpkの降順" )
 
 **説明:** 箱ひげ図、要約レポート、および各列の詳細レポートを指定された順序で並べ替える。
 
@@ -1398,7 +1396,7 @@ obj << Order By( "Within Sigma Cpk Ascending" );
 
 ### Overall Sigma Normalized Box Plots
 
-**構文:** obj << Overall Sigma Normalized Box Plots( state=0|1 )
+**構文:** obj &lt;&lt; Overall Sigma Normalized Box Plots( state=0|1 )
 
 **説明:** 各工程の並列箱ひげ図の表示/非表示を切り替える。この箱ひげ図の値は、各工程のデータ値を平均で中心化し、群内シグマで割って計算される。
 
@@ -1419,7 +1417,7 @@ obj << Overall Sigma Normalized Box Plots( 1 );
 
 ### Overall Sigma Summary Report
 
-**構文:** obj << Overall Sigma Summary Report( state=0|1 )
+**構文:** obj &lt;&lt; Overall Sigma Summary Report( state=0|1 )
 
 **説明:** 工程能力指数の要約レポートの表示/非表示を切り替える。工程能力指数は、全体シグマを使って計算される。
 
@@ -1440,7 +1438,7 @@ obj << Overall Sigma Summary Report( 1 );
 
 ### Process Performance Plot
 
-**構文:** obj << Process Performance Plot( state=0|1, <plot options> )
+**構文:** obj &lt;&lt; Process Performance Plot( state=0|1, &lt;plot options&gt; )
 
 **説明:** 安定性に対して全体工程性能Ppkをプロットした4象限グラフの表示/非表示を切り替える。
 
@@ -1466,7 +1464,7 @@ obj << Process Performance Plot( 1 );
 
 ### Save Distributions as Column Properties
 
-**構文:** obj << Save Distributions as Column Properties
+**構文:** obj &lt;&lt; Save Distributions as Column Properties
 
 **説明:** 分析に含まれる各工程変数に対し、工程能力の計算に使う分布を[工程能力分布]列プロパティとして保存する。
 
@@ -1484,7 +1482,7 @@ obj << Save Distributions as Column Properties;
 
 ### Save In Spec Indicator Formulas
 
-**構文:** obj << Save In Spec Indicator Formulas
+**構文:** obj &lt;&lt; Save In Spec Indicator Formulas
 
 **説明:** 各行が仕様限界内にあるかどうかを示す値を求める計算式の列をデータテーブルに作成する。
 
@@ -1504,7 +1502,7 @@ obj << Save In Spec Indicator Formulas;
 
 ### Save Spec Limits as Column Properties
 
-**構文:** obj << Save Spec Limits as Column Properties
+**構文:** obj &lt;&lt; Save Spec Limits as Column Properties
 
 **説明:** 分析に含まれる各工程変数の列プロパティに仕様限界を保存する。
 
@@ -1522,7 +1520,7 @@ obj << Save Spec Limits as Column Properties;
 
 ### Save Spec Limits to New Table
 
-**構文:** obj << Save Spec Limits to New Table
+**構文:** obj &lt;&lt; Save Spec Limits to New Table
 
 **説明:** 各工程変数に関して、仕様限界、工程の重要度、および分布を含む新しいデータテーブルを作成する。このデータテーブルは、縦長形式で、1つの工程変数につき1行を含む。工程の重要度と分布の種類は、該当する場合にのみ保存される。
 
@@ -1542,7 +1540,7 @@ obj << Save Spec Limits to New Table;
 
 ### Select Out of Spec Values
 
-**構文:** obj << Select Out of Spec Values( state=0|1 )
+**構文:** obj &lt;&lt; Select Out of Spec Values( state=0|1 )
 
 **説明:** 少なくとも1つの値が仕様限界の外にある行と列をデータテーブルで選択する。
 
@@ -1578,7 +1576,7 @@ obj = dt << Process Capability(
 
 ### Within Sigma Normalized Box Plots
 
-**構文:** obj << Within Sigma Normalized Box Plots( state=0|1 )
+**構文:** obj &lt;&lt; Within Sigma Normalized Box Plots( state=0|1 )
 
 **説明:** 各工程の並列箱ひげ図の表示/非表示を切り替える。この箱ひげ図の値は、各工程のデータ値を平均で中心化し、群内シグマで割って計算される。
 
@@ -1599,7 +1597,7 @@ obj << Within Sigma Normalized Box Plots( 1 );
 
 ### Within Sigma Summary Report
 
-**構文:** obj << Within Sigma Summary Report( state=0|1 )
+**構文:** obj &lt;&lt; Within Sigma Summary Report( state=0|1 )
 
 **説明:** 工程能力指数の要約レポートの表示/非表示を切り替える。工程能力指数は、標準偏差の群内推定値を使って計算される。正規分布を指定した変数のみが対象。
 
@@ -1620,7 +1618,7 @@ obj << Within Sigma Summary Report( 1 );
 
 ### Within or Between-and-Within Sigma Normalized Box Plots
 
-**構文:** obj << "Within or Between-and-Within Sigma Normalized Box Plots"n( state=0|1 )
+**構文:** obj &lt;&lt; "Within or Between-and-Within Sigma Normalized Box Plots"n( state=0|1 )
 
 **説明:** 並列箱ひげ図の表示/非表示を切り替える。この箱ひげ図の値は、各工程のデータ値を平均で中心化し、群内シグマ(「群間＋群内シグマ」を指定した場合は「群間＋群内シグマ」)で割って計算される。
 
@@ -1643,7 +1641,7 @@ obj << "Within or Between-and-Within Sigma Normalized Box Plots"n( 1 );
 
 ### Within or Between-and-Within Sigma Summary Report
 
-**構文:** obj << "Within or Between-and-Within Sigma Summary Report"n( state=0|1 )
+**構文:** obj &lt;&lt; "Within or Between-and-Within Sigma Summary Report"n( state=0|1 )
 
 **説明:** 工程能力指数の要約レポートの表示/非表示を切り替える。工程能力指数は、群内シグマを使って計算されるか、「群間＋群内シグマ」を指定した場合はそれを使って計算される。このオプションは、起動ウィンドウにおいて少なくとも1つの工程に対して[群間＋群内シグマを計算する]を選択した場合のみ利用可能。
 
@@ -1670,7 +1668,7 @@ obj << "Within or Between-and-Within Sigma Summary Report"n( 1 );
 
 #### Parametric Fit Confidence Limits Shading
 
-**構文:** scrobj << Parametric Fit Confidence Limits Shading( state=0|1 )
+**構文:** scrobj &lt;&lt; Parametric Fit Confidence Limits Shading( state=0|1 )
 
 **説明:** パラメトリックな推定結果に対する信頼限界の陰影の表示/非表示を切り替える。
 
@@ -1704,7 +1702,7 @@ scrobj << Parametric Fit Confidence Limits Shading( 0 );
 
 #### Parametric Fit Line
 
-**構文:** scrobj << Parametric Fit Line( state=0|1 )
+**構文:** scrobj &lt;&lt; Parametric Fit Line( state=0|1 )
 
 **説明:** パラメトリックな推定結果を示す参照線の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1735,7 +1733,7 @@ scrobj << Parametric Fit Line( 1 );
 
 #### Simultaneous Empirical Confidence Limits
 
-**構文:** scrobj << Simultaneous Empirical Confidence Limits( state=0|1 )
+**構文:** scrobj &lt;&lt; Simultaneous Empirical Confidence Limits( state=0|1 )
 
 **説明:** 同時経験的信頼限界の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1769,7 +1767,7 @@ scrobj << Simultaneous Empirical Confidence Limits( 1 );
 
 #### Simultaneous Empirical Confidence Limits Shading
 
-**構文:** scrobj << Simultaneous Empirical Confidence Limits Shading( state=0|1 )
+**構文:** scrobj &lt;&lt; Simultaneous Empirical Confidence Limits Shading( state=0|1 )
 
 **説明:** 同時経験的信頼限界を示す陰影の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1809,7 +1807,7 @@ scrobj << Simultaneous Empirical Confidence Limits Shading( 1 );
 
 #### Comparison Details
 
-**構文:** scrobj << Comparison Details( state=0|1 )
+**構文:** scrobj &lt;&lt; Comparison Details( state=0|1 )
 
 **説明:** 各確率分布に対するAICc、BIC、(-2)*対数尤度の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1844,7 +1842,7 @@ scrobj << Comparison Details( 1 );
 
 #### Comparison Histogram
 
-**構文:** scrobj << Comparison Histogram( state=0|1 )
+**構文:** scrobj &lt;&lt; Comparison Histogram( state=0|1 )
 
 **説明:** 「分布の比較」において、ヒストグラムの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1879,7 +1877,7 @@ scrobj << Comparison Histogram( 1 );
 
 #### Fit Beta
 
-**構文:** scrobj << Compare Distributions( 1, <<Fit Beta )
+**構文:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit Beta )
 
 **説明:** 「比較の詳細」レポートに、ベータ分布の適合度統計量を表示する。また、ベータ分布の密度曲線をヒストグラムに描画する。
 
@@ -1903,7 +1901,7 @@ scrobj << Compare Distributions( 1, <<Fit Beta );
 
 #### Fit Exponential
 
-**構文:** scrobj << Compare Distributions( 1, <<Fit Exponential )
+**構文:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit Exponential )
 
 **説明:** 「比較の詳細」レポートに、指数分布の適合度統計量を表示する。また、指数分布の密度曲線をヒストグラムに描画する。
 
@@ -1927,7 +1925,7 @@ scrobj << Compare Distributions( 1, <<Fit Exponential );
 
 #### Fit Gamma
 
-**構文:** scrobj << Compare Distributions( 1, <<Fit Gamma )
+**構文:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit Gamma )
 
 **説明:** 「比較の詳細」レポートに、ガンマ分布の適合度統計量を表示する。また、ガンマ分布の密度曲線をヒストグラムに描画する。
 
@@ -1949,7 +1947,7 @@ scrobj << Compare Distributions( 1, <<Fit Gamma );
 
 #### Fit Johnson
 
-**構文:** scrobj << Compare Distributions( 1, <<Fit Johnson )
+**構文:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit Johnson )
 
 **説明:** 「比較の詳細」レポートに、Johnson分布の適合度統計量を表示する。また、Johnson分布の密度曲線をヒストグラムに描画する。
 
@@ -1971,7 +1969,7 @@ scrobj << Compare Distributions( 1, <<Fit Johnson );
 
 #### Fit Largest Extreme Value
 
-**構文:** scrobj << Compare Distributions( 1, <<Fit Largest Extreme Value )
+**構文:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit Largest Extreme Value )
 
 **説明:** 「比較の詳細」レポートに、最大極値分布の適合度統計量を表示する。また、最大極値分布の密度曲線をヒストグラムに描画する。
 
@@ -1993,7 +1991,7 @@ scrobj << Compare Distributions( 1, <<Fit Largest Extreme Value );
 
 #### Fit Lognormal
 
-**構文:** scrobj << Compare Distributions( 1, <<Fit Lognormal )
+**構文:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit Lognormal )
 
 **説明:** 「比較の詳細」レポートに、対数正規分布の適合度統計量を表示する。また、対数正規分布の密度曲線をヒストグラムに描画する。
 
@@ -2015,7 +2013,7 @@ scrobj << Compare Distributions( 1, <<Fit Lognormal );
 
 #### Fit Nonparametric
 
-**構文:** scrobj << Compare Distributions( 1, <<Fit Nonparametric )
+**構文:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit Nonparametric )
 
 **説明:** ノンパラメトリック推定におけるカーネルのバンド幅を調整するスライダーを表示する。また、ノンパラメトリックな密度曲線をヒストグラムに描画する。
 
@@ -2037,7 +2035,7 @@ scrobj << Compare Distributions( 1, <<Fit Nonparametric );
 
 #### Fit Normal
 
-**構文:** scrobj << Compare Distributions( 1, <<Fit Normal )
+**構文:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit Normal )
 
 **説明:** 「比較の詳細」レポートに、正規分布の適合度統計量を表示する。また、正規分布の密度曲線をヒストグラムに描画する。
 
@@ -2056,7 +2054,7 @@ obj = dt << Process Capability(
 
 #### Fit SHASH
 
-**構文:** scrobj << Compare Distributions( 1, <<Fit SHASH )
+**構文:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit SHASH )
 
 **説明:** 「比較の詳細」レポートに、SHASH分布の適合度統計量を表示する。また、SHASH分布の密度曲線をヒストグラムに描画する。
 
@@ -2080,7 +2078,7 @@ scrobj << Compare Distributions( 1, <<Fit SHASH );
 
 #### Fit Smallest Extreme Value
 
-**構文:** scrobj << Compare Distributions( 1, <<Fit Smallest Extreme Value )
+**構文:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit Smallest Extreme Value )
 
 **説明:** 「比較の詳細」レポートに、最小極値分布の適合度統計量を表示する。また、最小極値分布の密度曲線をヒストグラムに描画する。
 
@@ -2102,7 +2100,7 @@ scrobj << Compare Distributions( 1, <<Fit Smallest Extreme Value );
 
 #### Fit Weibull
 
-**構文:** scrobj << Compare Distributions( 1, <<Fit Weibull )
+**構文:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit Weibull )
 
 **説明:** 「比較の詳細」レポートに、Weibull分布の適合度統計量を表示する。また、Weibull分布の密度曲線をヒストグラムに描画する。
 
@@ -2124,7 +2122,7 @@ scrobj << Compare Distributions( 1, <<Fit Weibull );
 
 #### Mixture of 2 Normals
 
-**構文:** scrobj << Compare Distributions( 1, <<Mixture of 2 Normals )
+**構文:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Mixture of 2 Normals )
 
 **説明:** 「比較の詳細」レポートに、二重正規混合分布の適合度統計量を表示する。また、二重正規混合分布の密度曲線をヒストグラムに描画する。
 
@@ -2148,7 +2146,7 @@ scrobj << Compare Distributions( 1, <<Mixture of 2 Normals );
 
 #### Mixture of 3 Normals
 
-**構文:** scrobj << Compare Distributions( 1, <<Mixture of 3 Normals )
+**構文:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Mixture of 3 Normals )
 
 **説明:** 「比較の詳細」レポートに、三重正規混合分布の適合度統計量を表示する。また、三重正規混合分布の混合分布の密度曲線をヒストグラムに描画する。
 
@@ -2172,7 +2170,7 @@ scrobj << Compare Distributions( 1, <<Mixture of 3 Normals );
 
 #### Order by Comparison Criterion
 
-**構文:** scrobj << Order by Comparison Criterion( "AICc"|"BIC"|"-2Loglikelihood" )
+**構文:** scrobj &lt;&lt; Order by Comparison Criterion( "AICc"|"BIC"|"-2Loglikelihood" )
 
 **説明:** 「比較の詳細」レポートにおいて、順序を並べ替える。AICc、BIC、または-2対数尤度で並べ替えることができる。
 
@@ -2198,7 +2196,7 @@ scrobj << Order by Comparison Criterion( "-2Loglikelihood" );
 
 #### Probability Plots
 
-**構文:** scrobj << Probability Plots( state=0|1 )
+**構文:** scrobj &lt;&lt; Probability Plots( state=0|1 )
 
 **説明:** 「分布の比較」において、確率プロットの表示/非表示を切り替える。
 
@@ -2224,7 +2222,7 @@ scrobj << Probability Plots( 1 );
 
 #### Show Between-and-Within Sigma Density
 
-**構文:** scrobj << "Show Between-and-Within Sigma Density"n( state=0|1 )
+**構文:** scrobj &lt;&lt; "Show Between-and-Within Sigma Density"n( state=0|1 )
 
 **説明:** 群間＋群内シグマに基づいた確率密度曲線の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2250,7 +2248,7 @@ scrobj << "Show Between-and-Within Sigma Density"n( 1 );
 
 #### Show Count Axis
 
-**構文:** scrobj << Show Count Axis( state=0|1 )
+**構文:** scrobj &lt;&lt; Show Count Axis( state=0|1 )
 
 **説明:** ヒストグラムフレームの右側にある度数軸を表示または非表示にする。
 
@@ -2271,7 +2269,7 @@ scrobj << Show Count Axis( 1 );
 
 #### Show Density Axis
 
-**構文:** scrobj << Show Density Axis( state=0|1 )
+**構文:** scrobj &lt;&lt; Show Density Axis( state=0|1 )
 
 **説明:** ヒストグラムフレームの右側にある密度軸を表示または非表示にする。
 
@@ -2292,7 +2290,7 @@ scrobj << Show Density Axis( 1 );
 
 #### Show Overall Sigma Density
 
-**構文:** scrobj << Show Overall Sigma Density( state=0|1 )
+**構文:** scrobj &lt;&lt; Show Overall Sigma Density( state=0|1 )
 
 **説明:** ヒストグラムに描かれている、全体シグマに基づいた密度曲線の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2315,7 +2313,7 @@ scrobj << Show Overall Sigma Density( 1 );
 
 #### Show Spec Limits
 
-**構文:** scrobj << Show Spec Limits( state=0|1 )
+**構文:** scrobj &lt;&lt; Show Spec Limits( state=0|1 )
 
 **説明:** ヒストグラムにおいて、下側および上側仕様限界の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2336,7 +2334,7 @@ scrobj << Show Spec Limits( 1 );
 
 #### Show Target
 
-**構文:** scrobj << Show Target( state=0|1 )
+**構文:** scrobj &lt;&lt; Show Target( state=0|1 )
 
 **説明:** ヒストグラムで目標値を示す線の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2357,7 +2355,7 @@ scrobj << Show Target( 1 );
 
 #### Show Within Sigma Density
 
-**構文:** scrobj << Show Within Sigma Density( state=0|1 )
+**構文:** scrobj &lt;&lt; Show Within Sigma Density( state=0|1 )
 
 **説明:** ヒストグラムに描かれている、群内シグマに基づいた密度曲線の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2384,7 +2382,7 @@ scrobj << Show Within Sigma Density( 1 );
 
 #### Capability
 
-**構文:** scrobj << Capability( state=0|1 )
+**構文:** scrobj &lt;&lt; Capability( state=0|1 )
 
 **説明:** 工程能力指数の表示/非表示を切り替える。なお、元の工程能力指数は全体シグマに基づいて計算されている。 デフォルトではオン。
 
@@ -2415,7 +2413,7 @@ scrobj << Capability( 1 );
 
 #### Nonconformance
 
-**構文:** scrobj << Nonconformance( state=0|1 )
+**構文:** scrobj &lt;&lt; Nonconformance( state=0|1 )
 
 **説明:** 不適合率の表示/非表示を切り替える。レポートに最初に表示されている不適合率の値は全体シグマに基づく。 デフォルトではオン。
 
@@ -2446,7 +2444,7 @@ scrobj << Nonconformance( 1 );
 
 #### Revert to Original Values
 
-**構文:** scrobj << Revert to Original Values
+**構文:** scrobj &lt;&lt; Revert to Original Values
 
 **説明:** 「対話式工程能力プロット」を最初の設定に戻す。
 
@@ -2477,7 +2475,7 @@ scrobj << Revert to Original Values;
 
 #### Save New Spec Limits as a Column Property
 
-**構文:** scrobj << Save New Spec Limits as a Column Property
+**構文:** scrobj &lt;&lt; Save New Spec Limits as a Column Property
 
 **説明:** 元のデータテーブルの列に、新しい仕様限界を列プロパティとして保存する。
 
@@ -2512,7 +2510,7 @@ scrobj << Save New Spec Limits as a Column Property;
 
 #### Normal Fit Confidence Limits Shading
 
-**構文:** scrobj << Normal Fit Confidence Limits Shading( state=0|1 )
+**構文:** scrobj &lt;&lt; Normal Fit Confidence Limits Shading( state=0|1 )
 
 **説明:** 正規確率プロットの正規分布のあてはめにおいて、信頼限界の陰影の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2535,7 +2533,7 @@ scrobj << Normal Fit Confidence Limits Shading( 1 );
 
 #### Normal Fit Line
 
-**構文:** scrobj << Normal Fit Line( state=0|1 )
+**構文:** scrobj &lt;&lt; Normal Fit Line( state=0|1 )
 
 **説明:** 正規確率プロットにおいて、正規分布を示す参照線の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2558,7 +2556,7 @@ scrobj << Normal Fit Line( 1 );
 
 #### Simultaneous Empirical Confidence Limits
 
-**構文:** scrobj << Simultaneous Empirical Confidence Limits( state=0|1 )
+**構文:** scrobj &lt;&lt; Simultaneous Empirical Confidence Limits( state=0|1 )
 
 **説明:** 「工程能力分析」レポートにおいて、正規確率プロットの同時経験的信頼限界の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2581,7 +2579,7 @@ scrobj << Simultaneous Empirical Confidence Limits( 1 );
 
 #### Simultaneous Empirical Confidence Limits Shading
 
-**構文:** scrobj << Simultaneous Empirical Confidence Limits Shading( state=0|1 )
+**構文:** scrobj &lt;&lt; Simultaneous Empirical Confidence Limits Shading( state=0|1 )
 
 **説明:** 「工程能力分析」レポートにおいて、正規確率プロットの同時経験的信頼限界の陰影の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2608,7 +2606,7 @@ scrobj << Simultaneous Empirical Confidence Limits Shading( 1 );
 
 #### Between-and-Within Sigma Capability
 
-**構文:** scrobj << "Between-and-Within Sigma Capability"n( state=0|1 )
+**構文:** scrobj &lt;&lt; "Between-and-Within Sigma Capability"n( state=0|1 )
 
 **説明:** 群間＋群内シグマに基づいた工程能力分析の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2633,7 +2631,7 @@ scrobj << "Between-and-Within Sigma Capability"n( 1 );
 
 #### Between-and-Within Sigma Target Index
 
-**構文:** scrobj << "Between-and-Within Sigma Target Index"n( state=0|1 )
+**構文:** scrobj &lt;&lt; "Between-and-Within Sigma Target Index"n( state=0|1 )
 
 **説明:** 「群間＋群内シグマ」に基づく目標指数の推定値の表示/非表示を切り替える。
 
@@ -2658,7 +2656,7 @@ scrobj << "Between-and-Within Sigma Target Index"n( 0 );
 
 #### Between-and-Within Sigma Z Benchmark
 
-**構文:** scrobj << "Between-and-Within Sigma Z Benchmark"n( state=0|1 )
+**構文:** scrobj &lt;&lt; "Between-and-Within Sigma Z Benchmark"n( state=0|1 )
 
 **説明:** 群間＋群内シグマに基づいたZベンチマークの表示/非表示を切り替える。
 
@@ -2683,7 +2681,7 @@ scrobj << "Between-and-Within Sigma Z Benchmark"n( 1 );
 
 #### Compare Distributions
 
-**構文:** scrobj << Compare Distributions( state=0|1, < <<distribution options > )
+**構文:** scrobj &lt;&lt; Compare Distributions( state=0|1, &lt; &lt;&lt;distribution options &gt; )
 
 **説明:** 複数の確率分布を選択できる設定パネルの表示/非表示を切り替える。
 
@@ -2768,7 +2766,7 @@ scrobj << Compare Distributions( 0 );
 
 #### Fix Parameters
 
-**構文:** scrobj << Fix Parameters( vector )
+**構文:** scrobj &lt;&lt; Fix Parameters( vector )
 
 **説明:** 一部のパラメータを指定の値に固定し、残りのパラメータを再推定する。
 
@@ -2792,7 +2790,7 @@ scrobj << Fix Parameters( [., .] );
 
 #### Histogram
 
-**構文:** scrobj << Histogram( state=0|1 )
+**構文:** scrobj &lt;&lt; Histogram( state=0|1 )
 
 **説明:** 「各列の詳細レポート」において、ヒストグラムの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2813,7 +2811,7 @@ scrobj << Histogram( 1 );
 
 #### Interactive Capability Plot
 
-**構文:** scrobj << Interactive Capability Plot( state=0|1 )
+**構文:** scrobj &lt;&lt; Interactive Capability Plot( state=0|1 )
 
 **説明:** 「対話的工程能力プロット」の表示/非表示を切り替える。このレポートでは、工程や仕様限界を変更することで工程能力指数にどのような影響が及ぶかを調べることができる。
 
@@ -2836,7 +2834,7 @@ scrobj << Interactive Capability Plot( 1 );
 
 #### Nonconformance
 
-**構文:** scrobj << Nonconformance( state=0|1 )
+**構文:** scrobj &lt;&lt; Nonconformance( state=0|1 )
 
 **説明:** 仕様限界外にある割合について、観測割合と期待割合をまとめたレポートの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2857,7 +2855,7 @@ scrobj << Nonconformance( 1 );
 
 #### Nonparametric Density
 
-**構文:** scrobj << Nonparametric Density( state=0|1 )
+**構文:** scrobj &lt;&lt; Nonparametric Density( state=0|1 )
 
 **説明:** 「ノンパラメトリック密度」レポートの表示/非表示を切り替える。このレポートでは、ノンパラメトリック分布のあてはめに使用されたカーネルのバンド幅が表示される。 デフォルトではオン。
 
@@ -2879,7 +2877,7 @@ scrobj << Nonparametric Density( 1 );
 
 #### Normal Probability Plot
 
-**構文:** scrobj << Normal Probability Plot( state=0|1 )
+**構文:** scrobj &lt;&lt; Normal Probability Plot( state=0|1 )
 
 **説明:** 正規確率プロットの表示/非表示を切り替える。
 
@@ -2902,7 +2900,7 @@ scrobj << Normal Probability Plot( 1 );
 
 #### Overall Sigma Capability
 
-**構文:** scrobj << Overall Sigma Capability( state=0|1 )
+**構文:** scrobj &lt;&lt; Overall Sigma Capability( state=0|1 )
 
 **説明:** 全体シグマに基づいた工程能力指数の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2923,7 +2921,7 @@ scrobj << Overall Sigma Capability( 1 );
 
 #### Overall Sigma Z Benchmark
 
-**構文:** scrobj << Overall Sigma Z Benchmark( state=0|1 )
+**構文:** scrobj &lt;&lt; Overall Sigma Z Benchmark( state=0|1 )
 
 **説明:** 全体シグマに基づいたZベンチマーク指数の表示/非表示を切り替える。
 
@@ -2944,7 +2942,7 @@ scrobj << Overall Sigma Z Benchmark( 1 );
 
 #### Parameter Estimates
 
-**構文:** scrobj << Parameter Estimates( state=0|1 )
+**構文:** scrobj &lt;&lt; Parameter Estimates( state=0|1 )
 
 **説明:** 非正規分布に対する「パラメータ推定値」レポートの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2966,7 +2964,7 @@ scrobj << Parameter Estimates( 1 );
 
 #### Process Summary
 
-**構文:** scrobj << Process Summary( state=0|1 )
+**構文:** scrobj &lt;&lt; Process Summary( state=0|1 )
 
 **説明:** 工程要約統計量の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2987,7 +2985,7 @@ scrobj << Process Summary( 1 );
 
 #### Within Sigma Capability
 
-**構文:** scrobj << Within Sigma Capability( state=0|1 )
+**構文:** scrobj &lt;&lt; Within Sigma Capability( state=0|1 )
 
 **説明:** 群内シグマに基づいた工程能力指数とその信頼区間の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -3008,7 +3006,7 @@ scrobj << Within Sigma Capability( 1 );
 
 #### Within Sigma Target Index
 
-**構文:** scrobj << Within Sigma Target Index( state=0|1 )
+**構文:** scrobj &lt;&lt; Within Sigma Target Index( state=0|1 )
 
 **説明:** 群内シグマに基づく目標指数の推定値の表示/非表示を切り替える。
 
@@ -3031,7 +3029,7 @@ scrobj << Within Sigma Target Index( 1 );
 
 #### Within Sigma Z Benchmark
 
-**構文:** scrobj << Within Sigma Z Benchmark( state=0|1 )
+**構文:** scrobj &lt;&lt; Within Sigma Z Benchmark( state=0|1 )
 
 **説明:** 群内シグマに基づいたZベンチマーク指数の表示/非表示を切り替える。
 
@@ -3056,9 +3054,7 @@ scrobj << Within Sigma Z Benchmark( 1 );
 
 #### Capability Lines
 
-**構文:** obj << Goal Plot( 1, Capability Lines( number=1.0 ) ); 
-
-scrobj << Capability Lines( number=1.0 )
+**構文:** obj &lt;&lt; Goal Plot( 1, Capability Lines( number=1.0 ) ); scrobj &lt;&lt; Capability Lines( number=1.0 )
 
 **説明:** ゴールプロットの三角形部分を示すPpk (Cpk)の値を設定する。この値はPpk (Cpk)編集ボックスにも表示される。 デフォルトの値は"1.0"。
 
@@ -3081,9 +3077,7 @@ scrobj << Capability Lines( 1 );
 
 #### Defect Rate Contour
 
-**構文:** obj << Goal Plot( 1, Defect Rate Contour( number=0.0001 ) ); 
-
-scrobj << Defect Rate Contour( number=0.0001 )
+**構文:** obj &lt;&lt; Goal Plot( 1, Defect Rate Contour( number=0.0001 ) ); scrobj &lt;&lt; Defect Rate Contour( number=0.0001 )
 
 **説明:** 指定された不適合率を示す等高線の表示/非表示を切り替える。 デフォルトの値は"0.0001"。
 
@@ -3123,9 +3117,7 @@ scrobj << Defect Rate Contour( 0.01 );
 
 #### Label Overall Sigma Points
 
-**構文:** obj << Goal Plot( 1, Label Overall Sigma Points( state=0|1 ) ); 
-
-scrobj << Label Overall Sigma Points( state=0|1 )
+**構文:** obj &lt;&lt; Goal Plot( 1, Label Overall Sigma Points( state=0|1 ) ); scrobj &lt;&lt; Label Overall Sigma Points( state=0|1 )
 
 **説明:** ゴールプロットにおける点のラベルの表示/非表示を切り替える。プロットの点は全体シグマの推定値を使って計算される。
 
@@ -3148,9 +3140,7 @@ scrobj << Label Overall Sigma Points( 1 );
 
 #### Label Within Sigma Points
 
-**構文:** obj << Goal Plot( 1, Label Within Sigma Points( state=0|1 ) ); 
-
-scrobj << Label Within Sigma Points( state=0|1 )
+**構文:** obj &lt;&lt; Goal Plot( 1, Label Within Sigma Points( state=0|1 ) ); scrobj &lt;&lt; Label Within Sigma Points( state=0|1 )
 
 **説明:** ゴールプロットにおける点のラベルの表示/非表示を切り替える。プロットの点は群内シグマの推定値を使って計算される。
 
@@ -3179,9 +3169,7 @@ scrobj << Label Within Sigma Points( 0 );
 
 #### Label Within or Between-and-Within Sigma Points
 
-**構文:** obj << Goal Plot( 1, "Label Within or Between-and-Within Sigma Points"n( state=0|1 ) ); 
-
-scrobj << "Label Within or Between-and-Within Sigma Points"n( state=0|1 )
+**構文:** obj &lt;&lt; Goal Plot( 1, "Label Within or Between-and-Within Sigma Points"n( state=0|1 ) ); scrobj &lt;&lt; "Label Within or Between-and-Within Sigma Points"n( state=0|1 )
 
 **説明:** ゴールプロットにおける点のラベルの表示/非表示を切り替える。プロットの点は、群内シグマの推定値(「群間＋群内シグマ」が指定されている場合はその推定値)を使って計算される。
 
@@ -3212,9 +3200,7 @@ scrobj << "Label Within or Between-and-Within Sigma Points"n( 0 );
 
 #### Shade Levels
 
-**構文:** obj << Goal Plot( 1, Shade Levels( state=0|1 ) ); 
-
-scrobj << Shade Levels( state=0|1 )
+**構文:** obj &lt;&lt; Goal Plot( 1, Shade Levels( state=0|1 ) ); scrobj &lt;&lt; Shade Levels( state=0|1 )
 
 **説明:** ゴールプロットにおいて、指定したPpk (Cpk)に対する陰影の表示/非表示を切り替える。編集ボックスに入力されたPpkの値をpとすると、2p < Ppkは緑色、p > Ppkは赤色、p < Ppk < 2pは黄色の陰影で描かれる。
 
@@ -3237,9 +3223,7 @@ scrobj << Shade Levels( 0 );
 
 #### Show Overall Sigma Points
 
-**構文:** obj << Goal Plot( 1, Show Overall Sigma Points( state=0|1 ) ); 
-
-scrobj << Show Overall Sigma Points( state=0|1 )
+**構文:** obj &lt;&lt; Goal Plot( 1, Show Overall Sigma Points( state=0|1 ) ); scrobj &lt;&lt; Show Overall Sigma Points( state=0|1 )
 
 **説明:** ゴールプロットの表示/非表示を切り替える。プロットの点は全体シグマの推定値を使って計算される。 デフォルトではオン。
 
@@ -3264,9 +3248,7 @@ scrobj << Show Overall Sigma Points( 1 );
 
 #### Show Within Sigma Points
 
-**構文:** obj << Goal Plot( 1, Show Within Sigma Points( state=0|1 ) ); 
-
-scrobj << Show Within Sigma Points( state=0|1 )
+**構文:** obj &lt;&lt; Goal Plot( 1, Show Within Sigma Points( state=0|1 ) ); scrobj &lt;&lt; Show Within Sigma Points( state=0|1 )
 
 **説明:** ゴールプロットの表示/非表示を切り替える。プロットの点は群内シグマの推定値を使って計算される。
 
@@ -3290,9 +3272,7 @@ scrobj << Show Within Sigma Points( 0 );
 
 #### Show Within or Between-and-Within Sigma Points
 
-**構文:** obj << Goal Plot( 1, "Show Within or Between-and-Within Sigma Points"n( state=0|1 ) ); 
-
-scrobj << "Show Within or Between-and-Within Sigma Points"n( state=0|1 )
+**構文:** obj &lt;&lt; Goal Plot( 1, "Show Within or Between-and-Within Sigma Points"n( state=0|1 ) ); scrobj &lt;&lt; "Show Within or Between-and-Within Sigma Points"n( state=0|1 )
 
 **説明:** ゴールプロットの表示/非表示を切り替える。プロットの点は、群内シグマの推定値を使って計算されるか、「群間＋群内シグマ」が指定されている場合はその推定値を使って計算される。
 
@@ -3322,9 +3302,7 @@ scrobj << "Show Within or Between-and-Within Sigma Points"n( 0 );
 
 #### Capability Lines
 
-**構文:** obj << Capability Index Plot( 1, Capability Lines( number=1.0 ) ); 
-
-scrobj << Capability Lines( number=1.0 )
+**構文:** obj &lt;&lt; Capability Index Plot( 1, Capability Lines( number=1.0 ) ); scrobj &lt;&lt; Capability Lines( number=1.0 )
 
 **説明:** 工程能力指数プロットの参照線に使われるPpk (Cpk)の値を設定する。この値は、グラフ下にある「Ppk」のテキスト編集ボックスにも表示される。 デフォルトの値は"1.0"。
 
@@ -3350,9 +3328,7 @@ scrobj << Capability Lines( 1.0 );
 
 #### Label Overall Sigma Points
 
-**構文:** obj << Capability Index Plot( 1, Label Overall Sigma Points( state=0|1 ) ); 
-
-scrobj << Label Overall Sigma Points( state=0|1 )
+**構文:** obj &lt;&lt; Capability Index Plot( 1, Label Overall Sigma Points( state=0|1 ) ); scrobj &lt;&lt; Label Overall Sigma Points( state=0|1 )
 
 **説明:** 工程能力指数プロットにおける点のラベルの表示/非表示を切り替える。プロットの点は全体シグマの推定値を使って計算される。
 
@@ -3378,9 +3354,7 @@ scrobj << Label Overall Sigma Points( 0 );
 
 #### Label Within Sigma Points
 
-**構文:** obj << Capability Index Plot( 1, Label Within Sigma Points( state=0|1 ) ); 
-
-scrobj << Label Within Sigma Points( state=0|1 )
+**構文:** obj &lt;&lt; Capability Index Plot( 1, Label Within Sigma Points( state=0|1 ) ); scrobj &lt;&lt; Label Within Sigma Points( state=0|1 )
 
 **説明:** 工程能力指数プロットにおける点のラベルの表示/非表示を切り替える。プロットの点は群内シグマの推定値を使って計算される。
 
@@ -3411,9 +3385,7 @@ scrobj << Label Within Sigma Points( 0 );
 
 #### Label Within or Between-and-Within Sigma Points
 
-**構文:** obj << Capability Index Plot( 1, "Label Within or Between-and-Within Sigma Points"n( state=0|1 ) ); 
-
-scrobj << "Label Within or Between-and-Within Sigma Points"n( state=0|1 )
+**構文:** obj &lt;&lt; Capability Index Plot( 1, "Label Within or Between-and-Within Sigma Points"n( state=0|1 ) ); scrobj &lt;&lt; "Label Within or Between-and-Within Sigma Points"n( state=0|1 )
 
 **説明:** 工程能力指数プロットにおける点のラベルの表示/非表示を切り替える。プロットの点は、群内シグマの推定値(「群間＋群内シグマ」が指定されている場合はその推定値)を使って計算される。
 
@@ -3445,9 +3417,7 @@ scrobj << "Label Within or Between-and-Within Sigma Points"n( 0 );
 
 #### Shade Levels
 
-**構文:** obj << Capability Index Plot( 1, Shade Levels( state=0|1 ) ); 
-
-scrobj << Shade Levels( state=0|1 )
+**構文:** obj &lt;&lt; Capability Index Plot( 1, Shade Levels( state=0|1 ) ); scrobj &lt;&lt; Shade Levels( state=0|1 )
 
 **説明:** 工程能力指数プロットにおいて、Ppk (Cpk)に対する陰影の表示/非表示を切り替える。編集ボックスに入力されたPpkの値をpとすると、2p < Ppkは緑色、p > Ppkは赤色、p < Ppk < 2pは黄色の陰影で描かれる。
 
@@ -3473,9 +3443,7 @@ scrobj << Shade Levels( 0 );
 
 #### Show Overall Sigma Points
 
-**構文:** obj << Capability Index Plot( 1, Show Overall Sigma Points( state=0|1 ) ); 
-
-scrobj << Show Overall Sigma Points( state=0|1 )
+**構文:** obj &lt;&lt; Capability Index Plot( 1, Show Overall Sigma Points( state=0|1 ) ); scrobj &lt;&lt; Show Overall Sigma Points( state=0|1 )
 
 **説明:** 工程能力指数プロットの表示/非表示を切り替える。プロットの点は全体シグマの推定値を使って計算される。 デフォルトではオン。
 
@@ -3505,9 +3473,7 @@ scrobj << Show Overall Sigma Points( 1 );
 
 #### Show Within Sigma Points
 
-**構文:** obj << Capability Index Plot( 1, Show Within Sigma Points( state=0|1 ) ); 
-
-scrobj << Show Within Sigma Points( state=0|1 )
+**構文:** obj &lt;&lt; Capability Index Plot( 1, Show Within Sigma Points( state=0|1 ) ); scrobj &lt;&lt; Show Within Sigma Points( state=0|1 )
 
 **説明:** 工程能力指数プロットの表示/非表示を切り替える。プロットの点は群内シグマの推定値を使って計算される。
 
@@ -3534,9 +3500,7 @@ scrobj << Show Within Sigma Points( 0 );
 
 #### Show Within or Between-and-Within Sigma Points
 
-**構文:** obj << Capability Index Plot( 1, "Show Within or Between-and-Within Sigma Points"n( state=0|1 ) ); 
-
-scrobj << "Show Within or Between-and-Within Sigma Points"n( state=0|1 )
+**構文:** obj &lt;&lt; Capability Index Plot( 1, "Show Within or Between-and-Within Sigma Points"n( state=0|1 ) ); scrobj &lt;&lt; "Show Within or Between-and-Within Sigma Points"n( state=0|1 )
 
 **説明:** 工程能力指数プロットの表示/非表示を切り替える。プロットの点は、群内シグマの推定値(「群間＋群内シグマ」が指定されている場合はその推定値)を使って計算される。
 
@@ -3568,9 +3532,7 @@ scrobj << "Show Within or Between-and-Within Sigma Points"n( 0 );
 
 #### Capability Boundary
 
-**構文:** obj << Process Performance Plot( 1, Capability Boundary( number=1.0 ) ); 
-
-scrobj << Capability Boundary( number=1.0 )
+**構文:** obj &lt;&lt; Process Performance Plot( 1, Capability Boundary( number=1.0 ) ); scrobj &lt;&lt; Capability Boundary( number=1.0 )
 
 **説明:** 工程性能プロットにおいて、Ppkに対する境界を指定する。設定された値で、工程能力があるかないかを判断するための境界線が引かれる。この値は、「全体シグマPpk」編集ボックスにも表示される。 デフォルトの値は"1.0"。
 
@@ -3600,9 +3562,7 @@ scrobj << Capability Boundary( 1 );
 
 #### Label Points
 
-**構文:** obj << Process Performance Plot( 1, Label Points( state=0|1 ) ); 
-
-scrobj << Label Points( state=0|1 )
+**構文:** obj &lt;&lt; Process Performance Plot( 1, Label Points( state=0|1 ) ); scrobj &lt;&lt; Label Points( state=0|1 )
 
 **説明:** 工程性能プロットにおいて、点に付けられている工程名ラベルの表示/非表示を切り替える。
 
@@ -3631,9 +3591,7 @@ scrobj << Label Points( 0 );
 
 #### Show Within Cpk Curve
 
-**構文:** obj << Process Performance Plot( 1, Show Within Cpk Curve( state=0|1 ) ); 
-
-scrobj << Show Within Cpk Curve( state=0|1 )
+**構文:** obj &lt;&lt; Process Performance Plot( 1, Show Within Cpk Curve( state=0|1 ) ); scrobj &lt;&lt; Show Within Cpk Curve( state=0|1 )
 
 **説明:** 工程性能プロットにおいて、群内Cpk曲線の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -3662,9 +3620,7 @@ scrobj << Show Within Cpk Curve( 1 );
 
 #### Stability Boundary
 
-**構文:** obj << Process Performance Plot( 1, Stability Boundary( number=1.25 ) ); 
-
-scrobj << Stability Boundary( number=1.25 )
+**構文:** obj &lt;&lt; Process Performance Plot( 1, Stability Boundary( number=1.25 ) ); scrobj &lt;&lt; Stability Boundary( number=1.25 )
 
 **説明:** 「工程性能プロット」において、安定比に対する境界を指定する。設定された値で、安定しているかどうかの境界線が引かれる。 デフォルトの値は"1.25"。
 

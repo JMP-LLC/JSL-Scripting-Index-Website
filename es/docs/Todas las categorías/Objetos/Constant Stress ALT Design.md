@@ -48,7 +48,7 @@ d = Constant Stress ALT Design(
 
 ### Factor
 
-**Sintaxis:** obj << Factor
+**Sintaxis:** obj &lt;&lt; Factor
 
 **Descripción:** Agrega un factor con las propiedades especificadas.
 
@@ -84,7 +84,7 @@ d = Constant Stress ALT Design(
 
 ### Factor Name
 
-**Sintaxis:** obj << Factor Name
+**Sintaxis:** obj &lt;&lt; Factor Name
 
 **Descripción:** Establece el nombre del factor.
 
@@ -120,7 +120,7 @@ d = Constant Stress ALT Design(
 
 ### Factor Transformation
 
-**Sintaxis:** obj << Factor Transformation( Arrhenius Celsius|Arrhenius Fahrenheit|Arrhenius Kelvin|Reciprocal|Log|Root|None )
+**Sintaxis:** obj &lt;&lt; Factor Transformation( Arrhenius Celsius|Arrhenius Fahrenheit|Arrhenius Kelvin|Reciprocal|Log|Root|None )
 
 **Descripción:** Establece la función de transformación para los niveles del factor.
 
@@ -156,7 +156,7 @@ d = Constant Stress ALT Design(
 
 ### High Test Condition
 
-**Sintaxis:** obj << High Test Condition
+**Sintaxis:** obj &lt;&lt; High Test Condition
 
 **Descripción:** Establece el nivel de prueba más alto para el factor.
 
@@ -192,7 +192,7 @@ d = Constant Stress ALT Design(
 
 ### High Usage Condition
 
-**Sintaxis:** obj << High Usage Condition
+**Sintaxis:** obj &lt;&lt; High Usage Condition
 
 **Descripción:** Establece el nivel más alto para la condición de uso del factor. Este valor puede ser el mismo que la condición de uso más baja.
 
@@ -228,7 +228,7 @@ d = Constant Stress ALT Design(
 
 ### Low Test Condition
 
-**Sintaxis:** obj << Low Test Condition
+**Sintaxis:** obj &lt;&lt; Low Test Condition
 
 **Descripción:** Establece el nivel de prueba más bajo para el factor.
 
@@ -264,7 +264,7 @@ d = Constant Stress ALT Design(
 
 ### Low Usage Condition
 
-**Sintaxis:** obj << Low Usage Condition
+**Sintaxis:** obj &lt;&lt; Low Usage Condition
 
 **Descripción:** Establece el nivel más bajo para la condición de uso del factor. Este valor puede ser el mismo que la condición de uso más alta.
 
@@ -300,7 +300,7 @@ d = Constant Stress ALT Design(
 
 ### Number of Levels
 
-**Sintaxis:** obj << Number of Levels
+**Sintaxis:** obj &lt;&lt; Number of Levels
 
 **Descripción:** Establece el número de niveles para el factor. Se utiliza principalmente para diseños equilibrados.
 
@@ -336,7 +336,7 @@ d = Constant Stress ALT Design(
 
 ### Save Script to Script Window
 
-**Sintaxis:** obj << Save Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save Script to Script Window
 
 **Descripción:** Crea un script que reproducirá este diseño.
 

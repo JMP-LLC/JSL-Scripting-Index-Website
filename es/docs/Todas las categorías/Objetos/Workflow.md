@@ -6,7 +6,7 @@
 
 ### Close
 
-**Sintaxis:** workflow << Close()
+**Sintaxis:** workflow &lt;&lt; Close()
 
 **Descripción:** Cierra el flujo de trabajo.
 
@@ -22,7 +22,7 @@ wf << Close();
 
 ### Execute Next
 
-**Sintaxis:** workflow << Execute Next()
+**Sintaxis:** workflow &lt;&lt; Execute Next()
 
 **Descripción:** Ejecuta el paso actual del flujo de trabajo y mueve el puntero de ejecución al paso siguiente.
 
@@ -38,7 +38,7 @@ wf << Execute Next();
 
 ### Get Execution Info
 
-**Sintaxis:** workflow << Get Execution Info(<index>)
+**Sintaxis:** workflow &lt;&lt; Get Execution Info(&lt;index&gt;)
 
 **Descripción:** Devuelve una estructura que contiene información sobre los pasos del flujo de trabajo que se han ejecutado.
 
@@ -55,7 +55,7 @@ wf << Get Execution Info( 1 );
 
 ### Get Step Count
 
-**Sintaxis:** workflow << Get Step Count
+**Sintaxis:** workflow &lt;&lt; Get Step Count
 
 **Descripción:** Devuelve el número de pasos del flujo de trabajo.
 
@@ -71,7 +71,7 @@ wf << Get Step Count;
 
 ### Get Step JSL
 
-**Sintaxis:** workflow << Get Step JSL(<index>)
+**Sintaxis:** workflow &lt;&lt; Get Step JSL(&lt;index&gt;)
 
 **Descripción:** Devuelve el código JSL del paso indicado en el flujo de trabajo.
 
@@ -87,7 +87,7 @@ wf << Get Step JSL( 1 );
 
 ### Get Step Name
 
-**Sintaxis:** workflow << Get Step Name(<index>)
+**Sintaxis:** workflow &lt;&lt; Get Step Name(&lt;index&gt;)
 
 **Descripción:** Devuelve el nombre del paso indicado en el flujo de trabajo.
 
@@ -103,7 +103,7 @@ wf << Get Step Name( 1 );
 
 ### Log Executed Steps
 
-**Sintaxis:** obj << Log Executed Steps( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Log Executed Steps( state=0|1 )
 
 **Descripción:** Registra el script JSL para cada paso que se ejecuta.
 
@@ -120,7 +120,7 @@ wf << Resume();
 
 ### Presentation Mode
 
-**Sintaxis:** obj << Presentation Mode( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Presentation Mode( state=0|1 )
 
 **Descripción:** El modo de presentación quita las opciones de edición y las interfaces de soporte innecesarias.
 
@@ -136,7 +136,7 @@ wf << Presentation Mode( 1 );
 
 ### Resume
 
-**Sintaxis:** workflow << Resume()
+**Sintaxis:** workflow &lt;&lt; Resume()
 
 **Descripción:** Ejecuta o reanuda la ejecución del flujo de trabajo.
 
@@ -152,7 +152,7 @@ wf << Resume();
 
 ### Set Execution Callback
 
-**Sintaxis:** workflow << Set Execution Callback(<callback>)
+**Sintaxis:** workflow &lt;&lt; Set Execution Callback(&lt;callback&gt;)
 
 **Descripción:** Establece una rellamada en el flujo de trabajo que recibirá una notificación cada vez que finalice la ejecución de un paso con la información asociada.
 
@@ -170,7 +170,7 @@ wf << Resume;
 
 ### Set Next Step To Execute
 
-**Sintaxis:** workflow << Set Next Step To Execute(<index>)
+**Sintaxis:** workflow &lt;&lt; Set Next Step To Execute(&lt;index&gt;)
 
 **Descripción:** Mueve el cursor de ejecución a un paso del flujo de trabajo.
 
@@ -186,7 +186,7 @@ wf << Set Next Step To Execute( 2 );
 
 ### Start Over
 
-**Sintaxis:** workflow << Start Over()
+**Sintaxis:** workflow &lt;&lt; Start Over()
 
 **Descripción:** Restablece el flujo de trabajo al principio, a la vez que cierra todas las tablas y demás ventanas que haya abierto el flujo de trabajo.
 

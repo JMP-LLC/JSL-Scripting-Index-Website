@@ -2,8 +2,6 @@
 
 
 
-## Funktionen
-
 ### And
 
 **Syntax:** y = x1 & x2; y = And( x1, x2, ... )
@@ -87,7 +85,7 @@ For( i = 1, i <= 10, i++,
 
 ### Filter Each
 
-**Syntax:** list = Filter Each({<value>, <index>} | {<element>, <index | {row, col}>} | {<key | {key, value}>, <index>} | {<values | {value1, ..., valueN}>, <index>}, list | matrix | associative array | expression | Across( container1, ..., <containerN>, <Count( "Longest" | "Shortest" | "Enforce Equal" | n )> ), <locals list>, body)
+**Syntax:** list = Filter Each({&lt;value&gt;, &lt;index&gt;} | {&lt;element&gt;, &lt;index | {row, col}&gt;} | {&lt;key | {key, value}&gt;, &lt;index&gt;} | {&lt;values | {value1, ..., valueN}&gt;, &lt;index&gt;}, list | matrix | associative array | expression | Across( container1, ..., &lt;containerN&gt;, &lt;Count( "Longest" | "Shortest" | "Enforce Equal" | n )&gt; ), &lt;locals list&gt;, body)
 
 **Beschreibung:** Macht alles, was die Funktion „For Each“ macht, gibt jedoch auch eine Liste gefilterter Werte aus dem ursprünglichen Container basierend auf dem Ergebnis eines Booleschen Werts zurück. Der Typ des Ergebnisses stimmt mit dem Typ des Eingabecontainers überein. Bei einer Eingabe als Matrix wird eine Zeilenvektormatrix zurückgegeben, da die Größe der Matrix nicht bekannt sein kann.
 
@@ -154,7 +152,7 @@ Trim( s );
 
 ### For Each
 
-**Syntax:** For Each({<value>, <index>} | {<element>, <index | {row, col}>} | {<key | {key, value}>, <index>} | {<values | {value1, ..., valueN}>, <index>}, list | matrix | associative array | expression | Across( container1, ..., <containerN>, <Count( "Longest" | "Shortest" | "Enforce Equal" | n )> ), <locals list>, body)
+**Syntax:** For Each({&lt;value&gt;, &lt;index&gt;} | {&lt;element&gt;, &lt;index | {row, col}&gt;} | {&lt;key | {key, value}&gt;, &lt;index&gt;} | {&lt;values | {value1, ..., valueN}&gt;, &lt;index&gt;}, list | matrix | associative array | expression | Across( container1, ..., &lt;containerN&gt;, &lt;Count( "Longest" | "Shortest" | "Enforce Equal" | n )&gt; ), &lt;locals list&gt;, body)
 
 **Beschreibung:** Iteriert über einen Container entweder eine Liste, eine Matrix, ein assoziatives Array oder einen Ausdruck und liefert den Wert, das Element oder den Schlüssel bei jeder Iteration. Die Indexnummer ist bei jeder Iteration verfügbar. Bei Containern mit assoziativen Arrays kann über eine Liste aus zwei Elementen auf den Schlüssel und den Wert zugegriffen werden. Bei Matrix-Containern wird standardmäßig ein linearer Index angegeben, doch mithilfe einer Liste aus zwei Elementen kann auf die Zeilen- und Spaltenindizes zugegriffen werden. Diese Symbole werden nur innerhalb des Körpers der Schleife angegeben, mit einem integrierten Block lokaler Variablen. Es kann auch eine Liste der lokalen Variablen angegeben werden, die nach Festlegung der ersten Iterationssymbole initialisiert werden.
 
@@ -250,7 +248,7 @@ For Each( {element, index}, 10 :: 15, Show( element, index ) );
 
 ### For Each Row
 
-**Syntax:** y = For Each Row( <dt>, body )
+**Syntax:** y = For Each Row( &lt;dt&gt;, body )
 
 **Beschreibung:** Wertet den Ausdruck „body“ für jede Zeile in der aktuellen Datentabelle iterativ aus.
 
@@ -266,7 +264,7 @@ For Each Row( :height = -:height );
 
 ### If
 
-**Syntax:** y = If( condition1, result1, <condition2, result2>, ..., <elseResult> )
+**Syntax:** y = If( condition1, result1, &lt;condition2, result2&gt;, ..., &lt;elseResult&gt; )
 
 **Beschreibung:** Wertet das erste Paar jedes Argumentenpaares aus und gibt die Auswertung des Ausdrucks result zurück, der dem ersten Argument condition zugeordnet ist, das zu einem Ergebnis ungleich 0 ausgewertet wird. Die Argumente condition werden der Reihe nach ausgewertet. Wenn alle Argumente condition als 0 ausgewertet werden, wird das optionale elseResult ausgewertet und das Ergebnis zurückgegeben. Wenn kein elseResult angegeben ist und keine der Bedingungen wahr ist, wird ein fehlender Wert zurückgegeben. Wenn alle Argumente condition als fehlend ausgewertet werden, wird ein fehlender Wert zurückgegeben.
 
@@ -284,7 +282,7 @@ If( Random Uniform() < 0.5,
 
 ### IfMZ
 
-**Syntax:** y = IfMZ( condition1, result1, <condition2, result2>, ..., <elseResult> )
+**Syntax:** y = IfMZ( condition1, result1, &lt;condition2, result2&gt;, ..., &lt;elseResult&gt; )
 
 **Beschreibung:** Wertet das erste Paar jedes Argumentenpaares aus und gibt die Auswertung des Ausdrucks result zurück, der dem ersten Argument condition zugeordnet ist, das zu einem Ergebnis ungleich 0 ausgewertet wird. Die Argumente condition werden der Reihe nach ausgewertet. Wenn alle Argumente condition als 0 oder fehlend ausgewertet werden, wird das optionale elseResult ausgewertet und das Ergebnis zurückgegeben. Wenn kein elseResult angegeben ist und keine der Bedingungen wahr ist, wird ein fehlender Wert zurückgegeben. (IfMZ() ist äquivalent zu If(), wobei fehlende Werte für ausgewertete Argumente condition als 0 behandelt werden.)
 
@@ -304,7 +302,7 @@ Show( If( x == 1, 10, x == 2, 20, 30 ) );
 
 ### IfMax
 
-**Syntax:** y = IfMax( expr1, result1, expr2, result2, ..., <allMissingResult> )
+**Syntax:** y = IfMax( expr1, result1, expr2, result2, ..., &lt;allMissingResult&gt; )
 
 **Beschreibung:** Wertet jeweils das erste der Argumentenpaare aus und gibt die Auswertung des Ergebnisausdrucks für das Maximum der Ausdrücke zurück. Liegen Gleichheiten vor, wird das erste Maximum zurückgegeben. Wenn alle Ausdrücke fehlen, wird bei gerader Anzahl der Argumente Leer und bei ungerader Anzahl der Argumente das letzte Argument zurückgegeben. Die Testausdrücke müssen mit einem numerischen Ergebnis ausgewertet werden, doch die Ergebnisausdrücke können beliebigen Typs sein.
 
@@ -322,7 +320,7 @@ highestScorer = IfMax( TomScore, "Tom", JonScore, "Jon", TimScore, "Tim", "Noone
 
 ### IfMin
 
-**Syntax:** y = IfMin( expr1, result1, expr2, result2, ..., <allMissingResult> )
+**Syntax:** y = IfMin( expr1, result1, expr2, result2, ..., &lt;allMissingResult&gt; )
 
 **Beschreibung:** Wertet jeweils das erste der Argumentenpaare aus und gibt die Auswertung des Ergebnisausdrucks für das Minimum der Ausdrücke zurück. Liegen Gleichheiten vor, wird das erste Minimum zurückgegeben. Wenn alle Ausdrücke fehlen, wird bei gerader Anzahl der Argumente Leer und bei ungerader Anzahl der Argumente das letzte Argument zurückgegeben. Die Testausdrücke müssen mit einem numerischen Ergebnis ausgewertet werden, doch die Ergebnisausdrücke können beliebigen Typs sein.
 
@@ -340,11 +338,7 @@ lowestScorer = IfMin( TomScore, "Tom", JonScore, "Jon", TimScore, "Tim", "Noone"
 
 ### Interpolate
 
-**Syntax:** y = Interpolate(x|xmatrix|xlist, x1, y1, x2, y2);
-
-y = Interpolate(x | xmatrix | xlist, xmatrix, ymatrix);
-
-z = Interpolate({ x, y }, xvector, yvector, zmatrix)
+**Syntax:** y = Interpolate(x|xmatrix|xlist, x1, y1, x2, y2);y = Interpolate(x | xmatrix | xlist, xmatrix, ymatrix);z = Interpolate({ x, y }, xvector, yvector, zmatrix)
 
 **Beschreibung:** Sucht die xi-Argumente, zwischen denen sich x befindet, und interpoliert linear die entsprechenden yi-Argumente. Beachten Sie, dass die xi-Argumente geordnet angegeben werden müssen.
 
@@ -745,7 +739,7 @@ OrMZ( 1 < 2, 3 < 2 );
 
 ### Return
 
-**Syntax:** Return(<Expr>, ..., <ExprN>)
+**Syntax:** Return(&lt;Expr&gt;, ..., &lt;ExprN&gt;)
 
 **Beschreibung:** Gibt einen Ausdruckswert aus einer benutzerdefinierten Funktion zurück.
 
@@ -794,9 +788,7 @@ Show( f( 7, 15 ) );
 
 ### Step
 
-**Syntax:** y = Step( x, x1, y1, x2, y2, ... )
-
-y = Step( x, [x1, x2, ...], [y1, y2, ...] )
+**Syntax:** y = Step( x, x1, y1, x2, y2, ... )y = Step( x, [x1, x2, ...], [y1, y2, ...] )
 
 **Beschreibung:** Gibt das Argument yi zurück, das dem größten Wert xi entspricht, der xi kleiner als oder gleich dem Argument x ist. Beachten Sie, dass die Argumente xi geordnet angegeben werden müssen.
 
@@ -829,7 +821,7 @@ For( i = 1, i <= 10, i++,
 
 ### Transform Each
 
-**Syntax:** list = Transform Each({<value>, <index>} | {<element>, <index | {row, col}>} | {<key | {key, value}>, <index>} | {<values | {value1, ..., valueN}>, <index>}, list | matrix | associative array | expression | Across( container1, ..., <containerN>, <Count( "Longest" | "Shortest" | "Enforce Equal" | n )> ), <Output( "List" | "Matrix" | "Associative Array" | "Expression", <expr head name> )>, <locals list>, body)
+**Syntax:** list = Transform Each({&lt;value&gt;, &lt;index&gt;} | {&lt;element&gt;, &lt;index | {row, col}&gt;} | {&lt;key | {key, value}&gt;, &lt;index&gt;} | {&lt;values | {value1, ..., valueN}&gt;, &lt;index&gt;}, list | matrix | associative array | expression | Across( container1, ..., &lt;containerN&gt;, &lt;Count( "Longest" | "Shortest" | "Enforce Equal" | n )&gt; ), &lt;Output( "List" | "Matrix" | "Associative Array" | "Expression", &lt;expr head name&gt; )&gt;, &lt;locals list&gt;, body)
 
 **Beschreibung:** Macht alles, was die Funktion „For Each“ macht, gibt jedoch auch an jeder Iteration einen Container mit dem Ergebnis zurück. Standardmäßig wird ein Container zurückgegeben, der mit dem Typ des Eingabecontainers übereinstimmt, doch mit dem Argument Output geändert werden kann. Bei einer Ausgabe als Liste oder Ausdruck wird Empty() verwendet, wenn es kein Ergebnis gibt. Bei einer Ausgabe als Matrix wird ein numerischer fehlender Wert verwendet, wenn es kein Ergebnis gibt oder wenn das Ergebnis nicht-numerisch ist. Bei einer Ausgabe als assoziatives Array ist kein Schlüssel vorhanden, wenn es kein Ergebnis gibt. Wenn Continue() verwendet wird, entspricht dies der Rückgabe von keinem Wert für die Iteration.
 

@@ -6,7 +6,7 @@
 
 ### Get
 
-**Syntax:** Data Connector Registry() << Get ( name )
+**Syntax:** Data Connector Registry() &lt;&lt; Get ( name )
 
 **Description:** Retrieves a data connector from the registry
 
@@ -20,7 +20,7 @@ dc = Data Connector Registry() << Get( "com.jmp.sql_server" );
 
 ### Get Available
 
-**Syntax:** Data Connector Registry() << Get Available()
+**Syntax:** Data Connector Registry() &lt;&lt; Get Available()
 
 **Description:** Retrieves a list of available data connectors in the registry
 
@@ -34,7 +34,7 @@ list = Data Connector Registry() << Get Available();
 
 ### Get Metadata
 
-**Syntax:** Data Connector Registry() << Get Metadata ( name )
+**Syntax:** Data Connector Registry() &lt;&lt; Get Metadata ( name )
 
 **Description:** Gets data connector metadata from the registry
 
@@ -48,7 +48,7 @@ metadata = Data Connector Registry() << Get Metadata( "com.jmp.sql_server" );
 
 ### Register
 
-**Syntax:** Data Connector Registry() << Register( Path(path), <Name(name)>, <Description(Description)> )
+**Syntax:** Data Connector Registry() &lt;&lt; Register( Path(path), &lt;Name(name)&gt;, &lt;Description(Description)&gt; )
 
 **Description:** Adds a data connector to the registry
 
@@ -65,7 +65,7 @@ Data Connector Registry() << Register(
 
 ### Unregister
 
-**Syntax:** Data Connector Registry() << Unregister ( name )
+**Syntax:** Data Connector Registry() &lt;&lt; Unregister ( name )
 
 **Description:** Removes a data connector from the registry
 

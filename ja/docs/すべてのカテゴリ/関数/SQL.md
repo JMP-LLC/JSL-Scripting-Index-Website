@@ -2,11 +2,9 @@
 
 
 
-## 関数
-
 ### As SQL Expr
 
-**構文:** y = As SQL Expr( x, <style> )
+**構文:** y = As SQL Expr( x, &lt;style&gt; )
 
 **説明:** SQLのSelectステートメントで使用できる形式に式を変換して、文字列で戻す。
 
@@ -36,7 +34,7 @@ Close Database Connection( databaseConnectionHandle );
 
 ### Create Database Connection
 
-**構文:** dbc = Create Database Connection( dataSourceName|"Connect Dialog", <DriverPrompt(true|false)> )
+**構文:** dbc = Create Database Connection( dataSourceName|"Connect Dialog", &lt;DriverPrompt(true|false)&gt; )
 
 **説明:** データベース接続を確立し、接続へのハンドルを戻す。DriverPromptが真の場合、ODBCドライバの確認メッセージが表示され、必要に応じてユーザがログイン情報を入力する。
 
@@ -53,7 +51,7 @@ dbc = Create Database Connection(
 
 ### Execute SQL
 
-**構文:** dt = Execute SQL(databaseConnectionHandle|dataConnector,  "SELECT ..."|"SQLFILE=..."|tableName, <invisible(0|1)>, <outputTableName>, <Batch Submit(0|1)> )
+**構文:** dt = Execute SQL(databaseConnectionHandle|dataConnector, "SELECT ..."|"SQLFILE=..."|tableName, &lt;invisible(0|1)&gt;, &lt;outputTableName&gt;, &lt;Batch Submit(0|1)&gt; )
 
 **説明:** Create Database Connectionまたはデータコネクタから戻されたデータベース接続に対し、SQLを実行する。Batch Submitを有効にすると、複数のSQLステートメントから複数の結果をリストとして受け取ることができる(サポートしているドライバのみ)。
 
@@ -98,7 +96,7 @@ resultList = Execute SQL(
 
 ### New Data Connector
 
-**構文:** result = New Data Connector( Type( type ) | ID( id ) | File( path ) | Spec( string ) | Base( data connector ), < Option1( value1 ) >, ..., < OptionN( valueN ) > )
+**構文:** result = New Data Connector( Type( type ) | ID( id ) | File( path ) | Spec( string ) | Base( data connector ), &lt; Option1( value1 ) &gt;, ..., &lt; OptionN( valueN ) &gt; )
 
 **説明:** データコネクタの構成オブジェクトを作成する。
 
@@ -141,11 +139,7 @@ New SQL Query( Connection( dc ) ) << Modify;
 
 ### New SQL Query
 
-**構文:** obj = New SQL Query( Connection( "ODBC:my_connection_string" ), Select( Column( "mycolumn", "t1" ) ), From( Table( "my_table", Schema( "my_schema" ), Alias( "t1" ) ) ) );
-
-
-
-		obj = New SQL Query( Connection( "ODBC:my_connection_string;" ), CustomSQL( "SELECT c1, c2, c3 FROM my_table;" ) )
+**構文:** obj = New SQL Query( Connection( "ODBC:my_connection_string" ), Select( Column( "mycolumn", "t1" ) ), From( Table( "my_table", Schema( "my_schema" ), Alias( "t1" ) ) ) ); obj = New SQL Query( Connection( "ODBC:my_connection_string;" ), CustomSQL( "SELECT c1, c2, c3 FROM my_table;" ) )
 
 **説明:** SQLクエリーのオブジェクトを作成する。接続、列、テーブルを指定することによって、もしくは、スクリプトで指定することによって、クエリーを作成できる。クエリーのスクリプトは、クエリービルダーによって生成してください。
 
@@ -165,7 +159,7 @@ obj = New SQL Query(
 
 ### Open Database
 
-**構文:** dt = Open Database( dataSourceName|"Connect Dialog", "SELECT ..."|"SQLFILE=..."|tableName, <invisible | private>, <outputTableName> )
+**構文:** dt = Open Database( dataSourceName|"Connect Dialog", "SELECT ..."|"SQLFILE=..."|tableName, &lt;invisible | private&gt;, &lt;outputTableName&gt; )
 
 **説明:** ODBCを使ってデータベースを開き、指定されたSQLを実行し、データテーブルにデータを格納する。そのデータテーブルの名前は、output table nameに指定された文字列となる。
 
@@ -184,9 +178,7 @@ Open Database(
 
 ### Query
 
-**構文:** result = Query( < < dt1 | Table( dt1, alias1 ) >, ..., < dtN | Table( dtN, aliasN ) > >,
-
-     <Private|Invisible>, <Scalar>, sqlStatement )
+**構文:** result = Query( &lt; &lt; dt1 | Table( dt1, alias1 ) &gt;, ..., &lt; dtN | Table( dtN, aliasN ) &gt; &gt;, &lt;Private|Invisible&gt;, &lt;Scalar&gt;, sqlStatement )
 
 **説明:** JMPデータテーブルに対し、SQLクエリーを実行する。最後の引数であるsqlStatementの部分に、SQLクエリーを必ず指定すること(ほとんどの場合において、SELECTステートメントを指定すること)。 SQLステートメントで参照されるJMPデータテーブルは、Query()の引数で指定する必要がある。必要に応じ、Table(dt, "エイリアス")で、SQLステートメントで参照するテーブル名のエイリアスを定義すること。InvisibleやPrivateによって、結果のデータテーブルを表示するかどうかを制御できる。Scalarを指定すると、SQLステートメントはデータテーブルではなく、1つの値を戻す。
 
@@ -226,11 +218,7 @@ retval = Query( Scalar, "SELECT SQRT(152399025);" );
 
 ### New SQL Query
 
-**構文:** obj = New SQL Query( Connection( "ODBC:DSN=SampleDSN" ), Select( Column( "mycolumn", "t1" ) ), From( Table( "my_table", Schema( "my_schema" ), Alias( "t1" ) ) ) );
-
-
-
-obj = New SQL Query( Connection( "ODBC:DSN=SampleDSN;" ), Custom SQL( "SELECT c1, c2, c3 FROM my_table;" ) )
+**構文:** obj = New SQL Query( Connection( "ODBC:DSN=SampleDSN" ), Select( Column( "mycolumn", "t1" ) ), From( Table( "my_table", Schema( "my_schema" ), Alias( "t1" ) ) ) );obj = New SQL Query( Connection( "ODBC:DSN=SampleDSN;" ), Custom SQL( "SELECT c1, c2, c3 FROM my_table;" ) )
 
 **説明:** SQLクエリーのオブジェクトを作成する。接続、列、テーブルを指定することによって、もしくは、スクリプトで指定することによって、クエリーを作成できる。クエリーのスクリプトは、クエリービルダーによって生成してください。
 
@@ -251,7 +239,7 @@ obj = New SQL Query(
 
 #### CustomSQL
 
-**構文:** obj << Custom SQL( sql )
+**構文:** obj &lt;&lt; Custom SQL( sql )
 
 **説明:** クエリーをカスタムSQLクエリーに変更し、SQLを設定する。
 
@@ -268,7 +256,7 @@ obj << Custom SQL( "SELECT c4, c5, c6 FROM my_table;" );
 
 #### GenerateSQL
 
-**構文:** sql = obj << Generate SQL
+**構文:** sql = obj &lt;&lt; Generate SQL
 
 **説明:** クエリーのSQLステートメントを生成し、戻す。
 
@@ -285,7 +273,7 @@ sql = obj << Generate SQL;
 
 #### Modify
 
-**構文:** obj << Modify
+**構文:** obj &lt;&lt; Modify
 
 **説明:** クエリーをクエリービルダで開く。
 
@@ -298,7 +286,7 @@ query << Modify;
 
 #### PostQueryScript
 
-**構文:** obj << Post Query Script( script_as_text )
+**構文:** obj &lt;&lt; Post Query Script( script_as_text )
 
 **説明:** クエリーが実行された後に必ず実行されるJSLスクリプトを設定する。
 
@@ -315,7 +303,7 @@ obj << Post Query Script( "show( queryResult << Get As Matrix );" );
 
 #### QueryName
 
-**構文:** obj << Query Name( <newName> )
+**構文:** obj &lt;&lt; Query Name( &lt;newName&gt; )
 
 **説明:** クエリーの名前を取得または設定する。クエリーの名前は、そのクエリーを実行した結果のデータテーブル名に使用される。
 
@@ -334,7 +322,7 @@ Show( name );
 
 #### Run
 
-**構文:** result = obj << Run( <Private|Invisible>, <UpdateTable(table)>, <OnRunComplete(script)>, <OnRunCanceled(script)>, <OnError(script)> )
+**構文:** result = obj &lt;&lt; Run( &lt;Private|Invisible&gt;, &lt;UpdateTable(table)&gt;, &lt;OnRunComplete(script)&gt;, &lt;OnRunCanceled(script)&gt;, &lt;OnError(script)&gt; )
 
 **説明:** クエリーを実行する。クエリービルダー環境設定での設定に応じて、クエリーをフォアグランドまたはバックグランドで実行する。UpdateTableが指定されている場合、クエリーはフォアグランドで実行される。クエリーがフォアグランドで実行された場合、[実行]による戻り値はクエリー結果のデータテーブル。クエリーがバックグランドで実行されるか、エラーがある場合、[実行]は値を戻さない。クエリーの終了時にスクリプトを実行するには、引数OnRunComplete、OnRunCanceled、OnErrorを使用する。
 
@@ -347,7 +335,7 @@ query << Run;
 
 #### Run Background
 
-**構文:** result = obj << Run Background( <OnRunComplete(script), <Private|Invisible>>, <OnRunCanceled(script)>, <OnError(script)> )
+**構文:** result = obj &lt;&lt; Run Background( &lt;OnRunComplete(script), &lt;Private|Invisible&gt;&gt;, &lt;OnRunCanceled(script)&gt;, &lt;OnError(script)&gt; )
 
 **説明:** クエリーをバックグラウンドで実行する。クエリーの終了時に、結果のデータテーブルが開く。クエリーの終了時にスクリプトを実行するには、引数OnRunComplete、OnRunCanceled、OnErrorを使用する。OnRunCompleteが指定された場合のみ、Privateも指定できる。[Run Background]は値を戻さない。
 
@@ -369,7 +357,7 @@ query << Run Background( OnRunComplete( MyRunCompleteFunc ) );
 
 #### Run Foreground
 
-**構文:** result = obj << Run Foreground( <Private|Invisible>, <UpdateTable(table)>, <OnRunComplete(script)>, <OnRunCanceled(script)>, <OnError(script)> )
+**構文:** result = obj &lt;&lt; Run Foreground( &lt;Private|Invisible&gt;, &lt;UpdateTable(table)&gt;, &lt;OnRunComplete(script)&gt;, &lt;OnRunCanceled(script)&gt;, &lt;OnError(script)&gt; )
 
 **説明:** クエリーをフォアグラウンドで実行する。クエリーに成功した場合、または結果の一部を生成した後にキャンセルされた場合、結果のデータテーブルを戻す。クエリーに失敗した場合は値を戻さない。クエリーの終了時にスクリプトを実行するには、引数OnRunComplete、OnRunCanceled、OnErrorを使用する。
 
@@ -391,7 +379,7 @@ query << Run Foreground( OnRunComplete( MyRunCompleteFunc ) );
 
 #### Save
 
-**構文:** obj << Save
+**構文:** obj &lt;&lt; Save
 
 **説明:** クエリーを、それが関連付けられているファイルに保存する。関連付けられているファイルがまだない場合、保存に失敗する。
 
@@ -406,7 +394,7 @@ obj << Save;
 
 #### Save As
 
-**構文:** obj << Save As( path, <ReplaceExisting(0|1)> )
+**構文:** obj &lt;&lt; Save As( path, &lt;ReplaceExisting(0|1)&gt; )
 
 **説明:** クエリーを、指定されたファイルに保存する。ファイルがすでに存在している場合、Replace Existingが真でない限り保存に失敗する。
 

@@ -2,8 +2,6 @@
 
 
 
-## 函数
-
 ### As List
 
 **语法:** y = As List( matrix )
@@ -21,7 +19,7 @@ As List( [11 22 33, 44 55 66] );
 
 ### Concat Items
 
-**语法:** string = Concat Items( {list of strings}, <separatorString> )
+**语法:** string = Concat Items( {list of strings}, &lt;separatorString&gt; )
 
 **说明:** 将字符串列表连接成一个长字符串，并用分隔符分隔相邻的字符串，若未指定分隔符则使用空格。
 
@@ -64,7 +62,7 @@ Eval List( {x, y} );
 
 ### Insert
 
-**语法:** z = Insert( x, y, <i> )
+**语法:** z = Insert( x, y, &lt;i&gt; )
 
 **说明:** 返回在第 i 位插入 y 的列表 x 的副本，若没有指定可选 i 参数，则追加至末尾。
 
@@ -80,7 +78,7 @@ z = Insert( z, 99, 2 );
 
 ### Insert Into
 
-**语法:** Insert Into( x, y, <i> )
+**语法:** Insert Into( x, y, &lt;i&gt; )
 
 **说明:** 通过在集合中插入“y”修改列表、关联数组或显示框“x”。列表和显示框支持通过可选的“i”指定位置；若不指定位置，则会追加项。注意:“x”参数必须是变量。
 
@@ -136,7 +134,7 @@ Is List( {1, 2, 3} );
 
 ### Items
 
-**语法:** wl = Items(<[first last]>, s, <delim>, <Include Boundary Delimiters(0|1)>)
+**语法:** wl = Items(&lt;[first last]&gt;, s, &lt;delim&gt;, &lt;Include Boundary Delimiters(0|1)&gt;)
 
 **说明:** 返回由 delim 参数中指定的任意一个（且只能为一个）字符所分隔的子字符串列表（可能为空）。若没有 delim，则使用空格字符。若 delim 为空字符串，则每个字符均被视为一个单独的项。
 
@@ -279,7 +277,7 @@ N Items( hlist );
 
 ### Remove
 
-**语法:** y = Remove( x, <i>, <n=1> ); y = Remove( x, {list} )
+**语法:** y = Remove( x, &lt;i&gt;, &lt;n=1&gt; ); y = Remove( x, {list} )
 
 **说明:** 返回列表 x 的以下副本: 从第 i 项开始删除 n 项，或删除 list 参数指定的项列表。
 
@@ -294,7 +292,7 @@ Remove( {11, 22, 33, 44, 55}, 3, 2 );
 
 ### Remove From
 
-**语法:** Remove From( x, <i>, <n=1> )
+**语法:** Remove From( x, &lt;i&gt;, &lt;n=1&gt; )
 
 **说明:** 通过删除项来修改列表、关联数组或显示框“x”。关联数组使用键值“i”指定要删除的项。列表和显示框从位于“i”的项开始删除。若指定“n”选项，则将从列表中同时删除多项。注意:“x”参数必须是变量。
 
@@ -458,7 +456,7 @@ Show( Set Unique( :sports ) );
 
 ### Shift
 
-**语法:** y = Shift( x, <n=1> )
+**语法:** y = Shift( x, &lt;n=1&gt; )
 
 **说明:** 返回列表 x 的以下副本: 将头 n 项移动到列表末尾，若 n 为负数，则将后 n 项移动到列表的起始位置。
 
@@ -473,7 +471,7 @@ Shift( {11, 22, 33, 44, 55}, 2 );
 
 ### Shift Into
 
-**语法:** Shift Into( x, <n=1> )
+**语法:** Shift Into( x, &lt;n=1&gt; )
 
 **说明:** 修改列表或显示框 x: 将头 n 项移动到列表末尾，若 n 为负数，则将后 n 项移动到列表的起始位置。注意: x 参数必须是变量。
 
@@ -537,9 +535,7 @@ ex;
 
 ### Substitute
 
-**语法:** y = Substitute( x, patternExpr1, replacementExpr1, ... )
-
-y = Substitute( x, patternString1, replacementString1, ..., < <<IGNORECASE > )
+**语法:** y = Substitute( x, patternExpr1, replacementExpr1, ... )y = Substitute( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
 
 **说明:** 返回字符串、列表或表达式 x 的副本，将每个模式表达式的实例替换为相应的替换表达式。若 x 是字符串，则可选 <<IGNORECASE 参数允许不区分大小写匹配。
 
@@ -604,9 +600,7 @@ Substitute( "Apple,APPLE,apple", "apple", "orange", <<IGNORECASE );
 
 ### Substitute Into
 
-**语法:** Substitute Into( x, patternExpr1, replacementExpr1, ... )
-
-Substitute Into( x, patternString1, replacementString1, ..., < <<IGNORECASE > )
+**语法:** Substitute Into( x, patternExpr1, replacementExpr1, ... )Substitute Into( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
 
 **说明:** 修改字符串、列表或表达式 x，将每个模式表达式的实例替换为相应的替换表达式。请注意，x 参数必须是变量。若 x 是字符串，则可选 <<IGNORECASE 参数允许不区分大小写匹配。
 
@@ -658,7 +652,7 @@ Show( s );
 
 ### Words
 
-**语法:** wl = Words( <[first last]>, s, <delim>)
+**语法:** wl = Words( &lt;[first last]&gt;, s, &lt;delim&gt;)
 
 **说明:** 返回由 delim 参数中指定的任意字符所分隔的子字符串列表。若没有 delim，则使用空格字符。若 delim 为空字符串，则每个字符均被视为一个单独的词。
 

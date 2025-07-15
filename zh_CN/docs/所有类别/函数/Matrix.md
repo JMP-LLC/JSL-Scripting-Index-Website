@@ -2,8 +2,6 @@
 
 
 
-## 函数
-
 ### Add Vectors BLAS
 
 **语法:** z = Add Vectors BLAS( x, y, alpha )
@@ -52,7 +50,7 @@ Any( [1 0 2] );
 
 ### B Spline Coef
 
-**语法:** coef = B Spline Coef( x, Internal Knot Grid, <degree = 3>, <KnotEndPoints = min(x) || max(x)> )
+**语法:** coef = B Spline Coef( x, Internal Knot Grid, &lt;degree = 3&gt;, &lt;KnotEndPoints = min(x) || max(x)&gt; )
 
 **说明:** 返回 B 样条系数的矩阵。Internal Knot Grid 是基于 x 的百分位数的所需结点数或指定内部结点的向量。可选参数 degree 指定 B 样条的次数，默认值为 3。可选参数 KnotEndPoints 取 2x1 矩阵，它包含边界上结点的 [下限, 上限] 位置。结点端点默认为 x 的最小值和最大值。第二个示例显示 B 样条系数如何用作线性模型中的设计矩阵。
 
@@ -174,7 +172,7 @@ Cholesky( [1 2, 2 13] );
 
 ### Correlation
 
-**语法:** y = Correlation( x , < <<"Pairwise" >, < <<"Shrink" >, < <<Freq(vector) >, < <<Weight(vector) > )
+**语法:** y = Correlation( x , &lt; &lt;&lt;"Pairwise" &gt;, &lt; &lt;&lt;"Shrink" &gt;, &lt; &lt;&lt;Freq(vector) &gt;, &lt; &lt;&lt;Weight(vector) &gt; )
 
 **说明:** 返回矩阵参数“x”的相关性矩阵。“"Pairwise"”参数成对而不是逐行处理缺失值。“"Shrink"”参数通过 Schafer and Strimmer, 2005 中描述的方法所确定的因子来减少非对角线元素。“Freq”和“Weight”参数分别指定频数向量或权重值。
 
@@ -189,7 +187,7 @@ Correlation( [1 3 5, 3 2 6, 5 6 1] );
 
 ### Covariance
 
-**语法:** y = Covariance( x , < <<"Pairwise" >, < <<"Shrink" >, < <<Freq(vector) >, < <<Weight(vector) > )
+**语法:** y = Covariance( x , &lt; &lt;&lt;"Pairwise" &gt;, &lt; &lt;&lt;"Shrink" &gt;, &lt; &lt;&lt;Freq(vector) &gt;, &lt; &lt;&lt;Weight(vector) &gt; )
 
 **说明:** 返回矩阵参数“x”的协方差矩阵。“"Pairwise"”参数成对而不是逐行处理缺失值。“"Shrink"”参数通过 Schafer and Strimmer, 2005 中描述的方法所确定的因子来减少非对角线元素。“Freq”和“Weight”参数分别指定频数向量或权重值。
 
@@ -204,7 +202,7 @@ Covariance( [1 3 5, 3 2 6, 5 6 1] );
 
 ### Design
 
-**语法:** y = Design( v, < levelsList|<<Levels, <<ElseMissing > )
+**语法:** y = Design( v, &lt; levelsList|&lt;&lt;Levels, &lt;&lt;ElseMissing &gt; )
 
 **说明:** 创建一个设计矩阵，其中包含一个由 1 和 0 组成的列，对应于参数的每个唯一值。使用 levelsList 参数指定设计矩阵的水平列表。若指定了 <<Levels 参数，则返回值为包含设计矩阵及水平列表的列表。若指定了 <<ElseMissing 参数，对于 v 参数中不出现在 levelsList 中的值，则会在设计矩阵中放入缺失值。否则，会在设计矩阵中放入 0。
 
@@ -233,7 +231,7 @@ Show( Design( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ### Design Last
 
-**语法:** y = Design Last( v, < levelsList, <<ElseMissing > )
+**语法:** y = Design Last( v, &lt; levelsList, &lt;&lt;ElseMissing &gt; )
 
 **说明:** 创建一个设计矩阵，其中包含一个由 1 和 0 组成的列，对应于参数唯一值除最后一个之外的所有值。最后一个水平编码为值为 0 的行。若指定了 levelsList 参数，则最后一个水平为 levelsList 中的最后一个水平。否则，最后一个水平定义为 v 中的最大值。若指定了 <<Levels 参数，返回值为包含设计矩阵和水平列表的列表。若指定了 <<ElseMissing 参数，对于 v 参数中不出现在 levelsList 中的值，则会在设计矩阵中放入缺失值。否则，会在设计矩阵中放入 0。
 
@@ -269,7 +267,7 @@ Show( Design Last( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ### Design Nom
 
-**语法:** y = Design Nom( v, < levelsList|<<Levels, <<ElseMissing > )
+**语法:** y = Design Nom( v, &lt; levelsList|&lt;&lt;Levels, &lt;&lt;ElseMissing &gt; )
 
 **说明:** 为参数唯一值除最后一个之外的所有值创建一个设计矩阵，其中包含一个由 1 和 0 组成的列。最后一个水平编码为值为 -1 的行。若指定了 levelsList 参数，则最后一个水平为 levelsList 中的最后一个水平。否则，最后一个水平定义为 v 中的最大值。若指定了 <<Levels 参数，返回值为包含设计矩阵和水平列表的列表。若指定了 <<ElseMissing 参数，对于 v 参数中不出现在 levelsList 中的值，则会在设计矩阵中放入缺失值。否则，会在设计矩阵中放入 0。
 
@@ -305,7 +303,7 @@ Show( Design Nom( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ### Design Ord
 
-**语法:** y = Design Ord( v, < levelsList|<<Levels, <<ElseMissing > )
+**语法:** y = Design Ord( v, &lt; levelsList|&lt;&lt;Levels, &lt;&lt;ElseMissing &gt; )
 
 **说明:** 创建一个设计矩阵，其中包含一列，对应于参数唯一值除最后一个之外的所有值。第一个水平编码为值为 0 的行。levelsList 参数中每个后续（第 n 个）的水平编码为 (n-1) 个值为 1 的行，其余为 0。若指定了 <<Levels 参数，返回值为包含设计矩阵和水平列表的列表。若指定了 <<ElseMissing 参数，对于 v 参数中不出现在 levelsList 中的值，则会在设计矩阵中放入缺失值。否则，会在设计矩阵中放入 0。
 
@@ -341,7 +339,7 @@ Show( Design Ord( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ### DesignF
 
-**语法:** y = DesignF( v, < levelsList|<<Levels, <<ElseMissing > )
+**语法:** y = DesignF( v, &lt; levelsList|&lt;&lt;Levels, &lt;&lt;ElseMissing &gt; )
 
 **说明:** 为参数唯一值除最后一个之外的所有值创建一个设计矩阵，其中包含一个由 1 和 0 组成的列。最后一个水平编码为值为 -1 的行。若指定了 levelsList 参数，则最后一个水平为 levelsList 中的最后一个水平。否则，最后一个水平定义为 v 中的最大值。若指定了 <<Levels 参数，返回值为包含设计矩阵和水平列表的列表。若指定了 <<ElseMissing 参数，对于 v 参数中不出现在 levelsList 中的值，则会在设计矩阵中放入缺失值。否则，会在设计矩阵中放入 0。
 
@@ -433,7 +431,7 @@ Show( exProd[4 :: 6, 4 :: 6] == (exB * 4) );
 
 ### Distance
 
-**语法:** y = Distance( x1, x2, <scales>, <powers> )
+**语法:** y = Distance( x1, x2, &lt;scales&gt;, &lt;powers&gt; )
 
 **说明:** 生成行 x1 和行 x2 之间距离的矩阵。要定制每列的尺度和幂，指定额外的参数 scale 和 powers。对于 Kriging，使用 Exp(-distance(x1,x2))。
 
@@ -581,7 +579,7 @@ E * Diag( M ) * E`;
 
 ### Eigen BLAS
 
-**语法:** z = Eigen BLAS( X, <nvec = ncol> )
+**语法:** z = Eigen BLAS( X, &lt;nvec = ncol&gt; )
 
 **JMP添加的版本:** 17
 
@@ -651,7 +649,7 @@ Estimate Factor Score(
 
 ### Fourier Basis Coef
 
-**语法:** coef = Fourier Basis Coef( x, Number Pairs, <Period = max(x)-min(x)+1> )
+**语法:** coef = Fourier Basis Coef( x, Number Pairs, &lt;Period = max(x)-min(x)+1&gt; )
 
 **说明:** 返回傅里叶基函数系数的矩阵。Number Pairs 是基函数的 sin() 和 cos() 对的个数。可选参数 Period 指定三角函数的周期，默认值为 max(x) - min(x) + 1。
 
@@ -704,7 +702,7 @@ Show( exProd[2, 1 :: 6] == Direct Product( exA[2, 1 :: 2], exB[2, 1 :: 3] ) );
 
 ### Hadamard
 
-**语法:** y = Hadamard( n, <normalize = 0> )
+**语法:** y = Hadamard( n, &lt;normalize = 0&gt; )
 
 **说明:** 创建 n 阶 Hadamard 矩阵。
 
@@ -719,7 +717,7 @@ Show( Hadamard( 12 ), Hadamard( 12, 1 ) );
 
 ### Hough Line Transform
 
-**语法:** accum = Hough Line Transform( matrix, <NAngle(number)> <NRadius(number)> )
+**语法:** accum = Hough Line Transform( matrix, &lt;NAngle(number)&gt; &lt;NRadius(number)&gt; )
 
 **说明:** 返回用于检测图像数据内线的 Hough 变换
 
@@ -895,7 +893,7 @@ Identity( 2 );
 
 ### Index
 
-**语法:** ii = n1::n2; ii = n1::n2::n3; ii = Index( n1, n2, <n3=1>)
+**语法:** ii = n1::n2; ii = n1::n2::n3; ii = Index( n1, n2, &lt;n3=1&gt;)
 
 **说明:** 返回包含从 n1 到 n2 增量为 n3 的一系列值的行矩阵。
 
@@ -940,7 +938,7 @@ Round( Inverse( [11 22, 33 44] ), 2 );
 
 ### Inv Update
 
-**语法:** y = Inv Update( S, X, <w=1> )
+**语法:** y = Inv Update( S, X, &lt;w=1&gt; )
 
 **说明:** 返回更新的逆矩阵。第一个参数 S 是对称正定矩阵，列数与 X 相同。第二个参数 X 是包含要添加或删除的行的矩阵。第三个参数 w 确定是否添加或删除行（使用 1 添加行，使用 -1 删除行）。该函数按照 S-w*S*X`*Inv(I+w*X*S*X`)*X*S 计算，其中 I 是单位矩阵，Inv(A) 表示 A 的逆矩阵。
 
@@ -1018,7 +1016,7 @@ Is Matrix( [11 22 33] );
 
 ### J
 
-**语法:** y = J( nr, <nc>, <v> ); y = J( nr, nc ); y = J( n )
+**语法:** y = J( nr, &lt;nc&gt;, &lt;v&gt; ); y = J( nr, nc ); y = J( n )
 
 **说明:** 创建由第三个参数确定的值组成的矩阵 (nr * nc)。第二个参数的默认值等于第一个参数。第三个参数的默认值为 1。但是第三个参数可以是数字、数字的变量名或 JSL 代码。若第三个参数是代码，则对代码进行求值并将返回值分配给矩阵中的每个元素，逐元素逐行地分配。
 
@@ -1074,7 +1072,7 @@ tab = KDTable( [1 1 1, 1 2 1, 1 2 2, 2 2 2, 3 3 3, 4 5 6] );
 
 ### Least Squares Solve
 
-**语法:** {Beta, VarBeta} = Least Squares Solve(y, X, <<noIntercept, <<weights(optionalWeightVector), <<method("Sweep"|"GInv"))
+**语法:** {Beta, VarBeta} = Least Squares Solve(y, X, &lt;&lt;noIntercept, &lt;&lt;weights(optionalWeightVector), &lt;&lt;method("Sweep"|"GInv"))
 
 **说明:** 返回包含估计值 Beta = Inverse(X&apos;X)X&apos;y 和 Beta 的估计方差矩阵的向量的列表。可选 <<noIntercept 参数指定无截距模型。可选 <<weights 参数指定用于执行加权最小二乘的权重向量。可选 <<method 参数支持您在默认 Sweep 方法和广义逆矩阵 ("GInv") 方法之间选择，以求解正规方差。
 
@@ -1092,7 +1090,7 @@ X = [1, 2, 3, 4];
 
 ### Linear Regression
 
-**语法:** {Estimates, Std_Error, Diagnostics} = Linear Regression(y, X, <<noIntercept, <<printToLog, <<weight(WeightVector), <<freq(FrequencyVector)
+**语法:** {Estimates, Std_Error, Diagnostics} = Linear Regression(y, X, &lt;&lt;noIntercept, &lt;&lt;printToLog, &lt;&lt;weight(WeightVector), &lt;&lt;freq(FrequencyVector)
 
 **说明:** 拟合假设模型 y = X * beta + error 的线性回归。可选 <<noIntercept 参数指定无截距模型。可选 <<printToLog 参数指定打印至日志窗口的拟合汇总。可选 weight 参数指定用于执行加权最小二乘的权重向量，可选 freq 参数指定频数向量。返回包含估计值向量、标准误差向量和诊断列表的列表。诊断列表包含估计值的 t 统计量和 p 值，以及回归拟合的 R 方和调整 R 方值的向量。
 
@@ -1286,11 +1284,7 @@ AUpdate = Low Rank Symmetric Update BLAS( A, U, s );
 
 ### Matrix
 
-**语法:** y = Matrix( {{x11, ..., x1m}, {...}, {xn1, ..., xnm}} )
-
-y = Matrix( {x1, ..., xn} )
-
-y = Matrix( n, m )
+**语法:** y = Matrix( {{x11, ..., x1m}, {...}, {xn1, ..., xnm}} )y = Matrix( {x1, ..., xn} )y = Matrix( n, m )
 
 **说明:** 构建 n×m 矩阵。若您指定包含 n 个列表的列表，其中每个列表包含 m 个行值，则通过垂直拼接计算过的列表组成矩阵。若您指定包含 n 项的单个列表，则返回值为 n×1 列向量。若您指定两个整数参数，则返回值是包含 n 行和 m 列的零矩阵。
 
@@ -1474,7 +1468,7 @@ Print( NChooseK Matrix( 5, 3 ) );
 
 ### Ortho
 
-**语法:** L = Ortho( A, <Centered( 0 )>, <Scaled( 1 )> )
+**语法:** L = Ortho( A, &lt;Centered( 0 )&gt;, &lt;Scaled( 1 )&gt; )
 
 **说明:** 正交化矩阵的列。“中心”选项使其总和为 0。“尺度”选项将其限制为单位长度。
 
@@ -1504,7 +1498,7 @@ Ortho Poly( 1 :: 10, 2 );
 
 ### P Spline Coef
 
-**语法:** coef = P Spline Coef( x, Internal Knot Grid, <degree = 3>, <KnotEndPoints = min(x) || max(x)> )
+**语法:** coef = P Spline Coef( x, Internal Knot Grid, &lt;degree = 3&gt;, &lt;KnotEndPoints = min(x) || max(x)&gt; )
 
 **说明:** 返回 P 样条系数的矩阵。Internal Knot Grid 是基于 x 的百分位数的所需结点数或指定内部结点的向量。可选参数 degree 指定 P 样条的次数，默认值为 3。
 
@@ -1539,7 +1533,7 @@ m;/* 1*1+1  1*1+2, 2*2+1  2*2+2, 3*3+1  3*3+2 */
 
 ### Print Matrix
 
-**语法:** s = Print Matrix( M, <<ignore locale( 0 ), <<style( "parseable" ), <<separate( ", " ), <<line begin( "[ " ), <<line end( " ]" ) )
+**语法:** s = Print Matrix( M, &lt;&lt;ignore locale( 0 ), &lt;&lt;style( "parseable" ), &lt;&lt;separate( ", " ), &lt;&lt;line begin( "[ " ), &lt;&lt;line end( " ]" ) )
 
 **说明:** 打印矩阵 M。可选参数 ignore locale 确定小数分隔符的打印格式是否遵循语言/区域规范，其中零值表示遵循语言/区域规范。可选参数 style 确定是否使用样式以及使用何种样式。可用的样式是 parseable（重新格式化的 JSL 矩阵表达式）、latex 和 other。若 style 参数为 other，最后三个可选参数将定义打印行的开始字符和结束字符，以及拼接项的分隔字符。
 
@@ -1609,7 +1603,7 @@ y = Quadratic Form BLAS( A, x );
 
 ### Random SVD
 
-**语法:** {U, M, V} = Random SVD( X , <nSingularValues=min(nRow,nCol)>, <nOver=10>, <nIter=2>)
+**语法:** {U, M, V} = Random SVD( X , &lt;nSingularValues=min(nRow,nCol)&gt;, &lt;nOver=10&gt;, &lt;nIter=2&gt;)
 
 **说明:** 使用随机奇异值分解计算矩阵 X 的奇异值分解，返回列表 {U、M、V}，使得 U*diag(M)*V` 等于 X。
 
@@ -1654,7 +1648,7 @@ Rank Index( [33, 22, 44, 11, ., 33] );
 
 ### Ranking
 
-**语法:** y = Ranking( x, < <<tie("average"|"row"|"minimum"|"maximum"|"arbitrary")> )
+**语法:** y = Ranking( x, &lt; &lt;&lt;tie("average"|"row"|"minimum"|"maximum"|"arbitrary")&gt; )
 
 **说明:** 返回 x 值的秩的向量，从低到高（如从 1 到 n）排列，结值随意排列。
 
@@ -1670,7 +1664,7 @@ Ranking( [22, 11, 33, 11, 44, 55, 44, 44, 44], <<Tie( "minimum" ) );
 
 ### Ranking Tie
 
-**语法:** y = Ranking Tie( x, < <<tie("average"|"row"|"minimum"|"maximum"|"arbitrary")> )
+**语法:** y = Ranking Tie( x, &lt; &lt;&lt;tie("average"|"row"|"minimum"|"maximum"|"arbitrary")&gt; )
 
 **说明:** 返回 x 值的秩的向量，但结值的秩取平均值。
 
@@ -1685,7 +1679,7 @@ Ranking Tie( [33, 22, 44, 11, 33] );
 
 ### Robust PCA
 
-**语法:** {A,E} = Robust PCA( X , <Lambda(2/sqrt(max(nrow,ncol)))>, <tolerance=1e-10>,<maxit(75)>,<Center(1)>,<Scale(1)>
+**语法:** {A,E} = Robust PCA( X , &lt;Lambda(2/sqrt(max(nrow,ncol)))&gt;, &lt;tolerance=1e-10&gt;,&lt;maxit(75)&gt;,&lt;Center(1)&gt;,&lt;Scale(1)&gt;
 
 **说明:** 将数据稳健分解为残差的低秩矩阵和稀疏矩阵。残差中会检测离群值。它还可以插补缺失值。
 
@@ -1752,7 +1746,7 @@ Scoring Impute(
 
 ### Shape
 
-**语法:** r = Shape( M, nr, <nc>, <<bycol)
+**语法:** r = Shape( M, nr, &lt;nc&gt;, &lt;&lt;bycol)
 
 **说明:** 将 M 矩阵或标量各行重构为 nr 行×nc 列。nr 允许缺失值。M 中的数据根据需要重复填充该 nr×nc 矩阵。可选参数 <<bycol 按列填充数据。默认情况下，数据按行填充。常见用法是将向量重构为矩阵或向量化成一个矩阵。
 
@@ -1815,7 +1809,7 @@ Sort Descending( {111, 212, 133, 114, 55} );
 
 ### Sparse SVD
 
-**语法:** {U, M, V} = Sparse SVD( X , <nSingularValues=min(nRow,nCol)>, <tolerance=1e-10>)
+**语法:** {U, M, V} = Sparse SVD( X , &lt;nSingularValues=min(nRow,nCol)&gt;, &lt;tolerance=1e-10&gt;)
 
 **说明:** 计算矩阵“X”的奇异值分解，这需要对稀疏矩阵使用隐式重新启动的偏重新正交化的 Lanczos 方法，通过返回列表“{U, M, V}”使得“U*diag(M)*V`”等于“X”。
 
@@ -1830,7 +1824,7 @@ Sparse SVD( [11 22, 33 44], 1, 1e-8 );
 
 ### Spline Coef
 
-**语法:** coef = Spline Coef( x, y, lambda, <weights> )
+**语法:** coef = Spline Coef( x, y, lambda, &lt;weights&gt; )
 
 **说明:** Returns a five-column matrix of coefficients in the following order: knots||a||b||c||d for each of the unique values in x. The smoothing parameter lambda must be a positive value, where larger values of lambda result in greater stiffness of the spline. The optional weights vector specifies a weight for each value in x. A weight of zero removes the corresponding point from the spline fit.
 
@@ -1845,7 +1839,7 @@ Spline Eval( 0 :: 10, Spline Coef( 0 :: 10, Sqrt( 0 :: 10 ), 100 ) );
 
 ### Spline Eval
 
-**语法:** yhat = Spline Eval( x, coef, <extrapolation=-1> )
+**语法:** yhat = Spline Eval( x, coef, &lt;extrapolation=-1&gt; )
 
 **说明:** 使用 coef 矩阵计算样条预测值，该矩阵与 Spline Coef() 函数返回的矩阵形式相同。extrapolation 指示超出样条范围多远（表示为范围的比例）以在返回缺失值之前扩展计算。
 
@@ -1880,7 +1874,7 @@ New Window( "Spline Fit",
 
 ### Spline Smooth
 
-**语法:** yhat = Spline Smooth( x, y, lambda, <weights> )
+**语法:** yhat = Spline Smooth( x, y, lambda, &lt;weights&gt; )
 
 **说明:** Returns the smoothed predicted values from a spline fit. The smoothing parameter lambda must be a positive value, where larger values of lambda result in greater stiffness of the spline. The optional weights vector specifies a weight for each value in x. A weight of zero removes the corresponding point from the spline fit.
 
@@ -1895,7 +1889,7 @@ Spline Smooth( 0 :: 10, Sqrt( 0 :: 10 ), 100 );
 
 ### Sweep
 
-**语法:** y = Sweep( A, <indices> )
+**语法:** y = Sweep( A, &lt;indices&gt; )
 
 **说明:** 返回矩阵 A 按 indices 指定的对角枢轴求得的逆矩阵。这是一种按每次一个枢轴量求逆矩阵的方法。
 
@@ -2074,7 +2068,7 @@ V Quantile( [11 22, 33 44, 35 46, 55 66], .25 );
 
 ### V Robust Standardize
 
-**语法:** b = V Robust Standardize( X, <center=1>, <scale=1> )
+**语法:** b = V Robust Standardize( X, &lt;center=1&gt;, &lt;scale=1&gt; )
 
 **说明:** 返回以中位数为中心，以矩阵 X 的标准差的稳健估计值为尺度的矩阵。可选布尔参数指定是否执行中心化和尺度化。
 
@@ -2151,7 +2145,7 @@ tab = VPTree( [1 1 1, 1 2 1, 1 2 2, 2 2 2, 3 3 3, 4 5 6] );
 
 ### Varimax
 
-**语法:** {R,T} = Varimax( F, <norm=1> )
+**语法:** {R,T} = Varimax( F, &lt;norm=1&gt; )
 
 **说明:** 执行指定矩阵“F”的最大方差旋转。返回包含旋转矩阵和正交旋转矩阵的列表。默认情况下，执行标准化最大方差旋转。指定 norm = 0 以执行非标准化最大方差旋转。
 
@@ -2198,7 +2192,7 @@ Vec Quadratic( exS, exX );
 
 ### Wavelet Basis Coef
 
-**语法:** y = Wavelet Basis Coef( x, grid, coef, <wavelet = "Haar" or "Biorthogonal" or "Coiflet" or "Daubechies" or "Symlet">, <param = 0> )
+**语法:** y = Wavelet Basis Coef( x, grid, coef, &lt;wavelet = "Haar" or "Biorthogonal" or "Coiflet" or "Daubechies" or "Symlet"&gt;, &lt;param = 0&gt; )
 
 **说明:** 返回指定小波模型在 x 点处的预测。grid 参数是一个向量，指定小波模型的数据网格。coef 参数是小波系数的向量。wavelet 参数是小波模型的名称。可选 param 参数是小波模型参数（若需要，默认值为 0）。
 

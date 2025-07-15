@@ -12,25 +12,25 @@
 
 ### Factor
 
-**Syntax:** obj << Factor( column(s) )
+**Syntax:** obj &lt;&lt; Factor( column(s) )
 
 ### Response
 
-**Syntax:** obj << Response( column(s) )
+**Syntax:** obj &lt;&lt; Response( column(s) )
 
 ### X
 
-**Syntax:** obj << X( column(s) )
+**Syntax:** obj &lt;&lt; X( column(s) )
 
 ### Y
 
-**Syntax:** obj << Y( column(s) )
+**Syntax:** obj &lt;&lt; Y( column(s) )
 
 ## Item Messages
 
 ### A-Optimality Parameter Weights
 
-**Syntax:** obj << A-Optimality Parameter Weights
+**Syntax:** obj &lt;&lt; A-Optimality Parameter Weights
 
 **Description:** Sets the weights to be used for creating an A-optimal design.
 
@@ -51,7 +51,7 @@ DOE(
 
 ### ALT Factor Settings
 
-**Syntax:** obj << ALT Factor Settings
+**Syntax:** obj &lt;&lt; ALT Factor Settings
 
 **Description:** For the given factor number in an accelerated life test plan, allows specification of factor name, number of levels, factor transformation, usage conditions and test conditions.
 
@@ -74,7 +74,7 @@ DOE(
 
 ### ALT Plan Setup
 
-**Syntax:** obj << ALT Plan Setup( 1|2|3 )
+**Syntax:** obj &lt;&lt; ALT Plan Setup( 1|2|3 )
 
 **Description:** Specifies the initial choice of model for an accelerated life test plan.
 
@@ -97,7 +97,7 @@ DOE(
 
 ### Add Alias Term
 
-**Syntax:** obj << Add Alias Term
+**Syntax:** obj &lt;&lt; Add Alias Term
 
 **Description:** Adds an alias term to the list of alias terms. Specify the factor number and power for each effect in a list. Create interactions by separating effects with commas.
 
@@ -116,7 +116,7 @@ d << Add Alias Term( {1, 2} );
 
 ### Add Constraint
 
-**Syntax:** obj << Add Constraint
+**Syntax:** obj &lt;&lt; Add Constraint
 
 **Description:** Adds linear constraints through a matrix. Each row represents a constraint. The last column is for values on the right side of the inequality constraints. In JSL, the inequality constraints must be less than or equal to the values on the right.
 
@@ -136,7 +136,7 @@ DOE(
 
 ### Add Factor
 
-**Syntax:** obj << Add Factor( Continuous|Discrete Numeric|Blocking|Constant|Categorical|Mixture )
+**Syntax:** obj &lt;&lt; Add Factor( Continuous|Discrete Numeric|Blocking|Constant|Categorical|Mixture )
 
 **Description:** Adds a factor of the specified type and optional arguments. If nothing is specified, this command adds a continuous factor.
 
@@ -154,7 +154,7 @@ d << Add Factor( Constant, 3, "X5" );
 
 ### Add Functional Response
 
-**Syntax:** obj << Add Functional Response
+**Syntax:** obj &lt;&lt; Add Functional Response
 
 **Description:** Adds a functional response with the specified name, number of measurements per run, and values.
 
@@ -174,7 +174,7 @@ DOE(
 
 ### Add Potential Term
 
-**Syntax:** obj << Add Potential Term
+**Syntax:** obj &lt;&lt; Add Potential Term
 
 **Description:** Adds an If Possible term to the list of model terms. Specify the factor number and power for each effect in a list. Create interactions by separating effects with commas.
 
@@ -193,7 +193,7 @@ d << Add Potential Term( {1, 2} );
 
 ### Add Response
 
-**Syntax:** obj << Add Response( goal, name, lower limit, upper limit, importance, lower detection limit, upper detection limit )
+**Syntax:** obj &lt;&lt; Add Response( goal, name, lower limit, upper limit, importance, lower detection limit, upper detection limit )
 
 **Description:** Adds a response with the specified goal, name, lower limit, upper limit, and importance.
 
@@ -217,7 +217,7 @@ DOE( Custom Design, Add Response( Match Target, "Y", ., ., 1, 10, 30 ) );
 
 ### Add Term
 
-**Syntax:** obj << Add Term
+**Syntax:** obj &lt;&lt; Add Term
 
 **Description:** Adds a "Necessary" term to list of the model terms. Effects are specified by {factor number, power}. Interactions can be created by separating effects by commas.
 
@@ -236,7 +236,7 @@ d << Add Term( {1, 2} );
 
 ### Additional Designs
 
-**Syntax:** obj << Additional Designs
+**Syntax:** obj &lt;&lt; Additional Designs
 
 **Description:** Specify up to nine additional designs to be compared to the reference design.
 
@@ -277,7 +277,7 @@ DOE(
 
 ### Allow covariate rows to be repeated
 
-**Syntax:** obj << Allow covariate rows to be repeated( state=0|1 )
+**Syntax:** obj &lt;&lt; Allow covariate rows to be repeated( state=0|1 )
 
 **Description:** Specifies if covariate rows are allowed to be repeated in the design.
 
@@ -305,7 +305,7 @@ DOE(
 
 ### Augment Method
 
-**Syntax:** obj << Augment Method( Replicate|Centerpoints|Fold Over|Add Axial|Augment )
+**Syntax:** obj &lt;&lt; Augment Method( Replicate|Centerpoints|Fold Over|Add Axial|Augment )
 
 **Description:** Specifies the type of augment method and its parameters.
 
@@ -368,7 +368,7 @@ d << Augment Method( Add Axial, 1, 2 );
 
 ### Blocks
 
-**Syntax:** obj << Blocks
+**Syntax:** obj &lt;&lt; Blocks
 
 **Description:** Specifies the block size for a balanced incomplete block design (BIBD).
 
@@ -383,7 +383,7 @@ d << Make Design;
 
 ### Center Points
 
-**Syntax:** obj << Center Points
+**Syntax:** obj &lt;&lt; Center Points
 
 **Description:** Specifies the number of center points.
 
@@ -424,7 +424,7 @@ DOE(
 
 ### Change Anticipated Coefficients
 
-**Syntax:** obj << Change Anticipated Coefficients
+**Syntax:** obj &lt;&lt; Change Anticipated Coefficients
 
 **Description:** Change the Anticipated Coefficients in Power Analysis.
 
@@ -439,7 +439,7 @@ d << Change Anticipated Coefficients( [1 2 3 4 2 2 2 3 3 3] );
 
 ### Change Factor Settings
 
-**Syntax:** obj << Change Factor Settings
+**Syntax:** obj &lt;&lt; Change Factor Settings
 
 **Description:** Specifies the minimum, maximum, and name of the continuous or mixture factor that you included in the first argument. Most useful for platforms that initially have predefined factors.
 
@@ -467,7 +467,7 @@ d << Change Factor Settings( 3, 0, 0.8, "C" );
 
 ### Check Inscribe
 
-**Syntax:** obj << Check Inscribe
+**Syntax:** obj &lt;&lt; Check Inscribe
 
 **Description:** Rescales the design so that axial points are at the low and high ends of the range.
 
@@ -482,7 +482,7 @@ d << Check Inscribe;
 
 ### Choice Design Table Output
 
-**Syntax:** obj << Choice Design Table Output( "Separate"|"Combined" )
+**Syntax:** obj &lt;&lt; Choice Design Table Output( "Separate"|"Combined" )
 
 **Description:** Specifies how to create a data table for a choice design.
 
@@ -504,7 +504,7 @@ DOE(
 
 ### D Efficiency Weight
 
-**Syntax:** obj << D Efficiency Weight
+**Syntax:** obj &lt;&lt; D Efficiency Weight
 
 **Description:** Use this option to control the relative importance of D-efficiency and reduction of aliasing. Supply a number between zero and one.
 
@@ -523,7 +523,7 @@ DOE(
 
 ### Design Search Time
 
-**Syntax:** obj << Design Search Time( number )
+**Syntax:** obj &lt;&lt; Design Search Time( number )
 
 **Description:** Specifies the number of seconds to search for a design.
 
@@ -540,7 +540,7 @@ DOE(
 
 ### Disallowed Combinations
 
-**Syntax:** obj << Disallowed Combinations
+**Syntax:** obj &lt;&lt; Disallowed Combinations
 
 **Description:** Enables you to supply a script that returns true for any factor combinations that should be excluded from your design.
 
@@ -560,7 +560,7 @@ DOE(
 
 ### Discrete Numeric Powers Set to Necessary
 
-**Syntax:** obj << Discrete Numeric Powers Set to Necessary( state=0|1 )
+**Syntax:** obj &lt;&lt; Discrete Numeric Powers Set to Necessary( state=0|1 )
 
 **Description:** Specifies if powers in discrete numeric factors should be necessary model terms.
 
@@ -579,7 +579,7 @@ DOE(
 
 ### Distribution Choice
 
-**Syntax:** obj << Distribution Choice
+**Syntax:** obj &lt;&lt; Distribution Choice
 
 **Description:** Specifies the distribution for an accelerated life test plan.
 
@@ -602,7 +602,7 @@ DOE(
 
 ### Enforce Use of Selected Covariate Rows
 
-**Syntax:** obj << Enforce Use of Selected Covariate Rows( state=0|1 )
+**Syntax:** obj &lt;&lt; Enforce Use of Selected Covariate Rows( state=0|1 )
 
 **Description:** Specifies if all selected covariate rows should be included in the design.
 
@@ -630,7 +630,7 @@ DOE(
 
 ### FFF Optimality Criterion
 
-**Syntax:** obj << FFF Optimality Criterion( "MaxPro"|"Centroid" )
+**Syntax:** obj &lt;&lt; FFF Optimality Criterion( "MaxPro"|"Centroid" )
 
 **Description:** Specifies the criterion used in the design. Recommended is the default value.
 
@@ -668,7 +668,7 @@ DOE(
 
 ### Find Subset
 
-**Syntax:** obj << Find Subset
+**Syntax:** obj &lt;&lt; Find Subset
 
 **Description:** Finds the D-optimal subset of an Extreme Vertices design.
 
@@ -683,7 +683,7 @@ d << Find Subset( 10 );
 
 ### GOSSDDetails
 
-**Syntax:** obj << GOSSDDetails
+**Syntax:** obj &lt;&lt; GOSSDDetails
 
 **Description:** Returns the current factor settings as a list.
 
@@ -697,7 +697,7 @@ Show( d << GOSSDDetails );
 
 ### GOSSDStructure
 
-**Syntax:** obj << GOSSDStructure
+**Syntax:** obj &lt;&lt; GOSSDStructure
 
 **Description:** Specifies the structure of a GOSSD
 
@@ -711,7 +711,7 @@ d << GOSSDStructure( 6, 8 );
 
 ### Get Alias Matrix
 
-**Syntax:** obj << Get Alias Matrix
+**Syntax:** obj &lt;&lt; Get Alias Matrix
 
 **Description:** Returns the alias matrix from design evaluation.
 
@@ -726,7 +726,7 @@ d << Get Alias Matrix;
 
 ### Get Design Diagnostics
 
-**Syntax:** obj << Get Design Diagnostics
+**Syntax:** obj &lt;&lt; Get Design Diagnostics
 
 **Description:** Return D-Efficiency, G-Efficiency, A-Efficiency and Average Variance of Prediction.
 
@@ -741,7 +741,7 @@ d << Get Design Diagnostics;
 
 ### Get Effect Power
 
-**Syntax:** obj << Get Effect Power
+**Syntax:** obj &lt;&lt; Get Effect Power
 
 **Description:** Return vector of powers for effect estimates.
 
@@ -756,7 +756,7 @@ d << Get Effect Power;
 
 ### Get Estimation Efficiencies
 
-**Syntax:** obj << Get Estimation Efficiencies
+**Syntax:** obj &lt;&lt; Get Estimation Efficiencies
 
 **Description:** Returns a vector for the increased width of each parameter estimate compared to an ideal design.
 
@@ -771,7 +771,7 @@ d << Get Estimation Efficiencies;
 
 ### Get MaxPro Values
 
-**Syntax:** obj << Get MaxPro Values
+**Syntax:** obj &lt;&lt; Get MaxPro Values
 
 **Description:** Returns the MaxPro values for a fast-flexible design, including any subdesigns based on levels of a categorical factor.
 
@@ -791,13 +791,13 @@ d << Get MaxPro Values;
 
 ### Get Number of Random Starts
 
-**Syntax:** obj << Get Number of Random Starts
+**Syntax:** obj &lt;&lt; Get Number of Random Starts
 
 **Description:** Returns the number of random starts used in design generation.
 
 ### Get Power
 
-**Syntax:** obj << Get Power
+**Syntax:** obj &lt;&lt; Get Power
 
 **Description:** Return vector of powers for parameter estimates.
 
@@ -812,7 +812,7 @@ d << Get Power;
 
 ### Get Prediction Variances
 
-**Syntax:** obj << Get Prediction Variances
+**Syntax:** obj &lt;&lt; Get Prediction Variances
 
 **Description:** Returns the vector of prediction variances from the Fraction of Design Space Plot.
 
@@ -831,7 +831,7 @@ d << Get Prediction Variances;
 
 ### Get X Matrix
 
-**Syntax:** obj << Get X Matrix
+**Syntax:** obj &lt;&lt; Get X Matrix
 
 **Description:** Returns the design matrix (also called the X matrix).
 
@@ -846,7 +846,7 @@ d << Get X Matrix;
 
 ### Group New Runs Into Separate Block
 
-**Syntax:** obj << Group New Runs Into Separate Block
+**Syntax:** obj &lt;&lt; Group New Runs Into Separate Block
 
 **Description:** Adds a blocking factor, which groups new runs into separate blocks when augmenting a design.
 
@@ -861,7 +861,7 @@ d << Group New Runs Into Separate Block;
 
 ### Load Constraints
 
-**Syntax:** obj << Load Constraints
+**Syntax:** obj &lt;&lt; Load Constraints
 
 **Description:** Load a previously saved factor constraints table for use in this experiment.
 
@@ -881,7 +881,7 @@ d = DOE(
 
 ### Load Design
 
-**Syntax:** obj << Load Design
+**Syntax:** obj &lt;&lt; Load Design
 
 **Description:** Load Design
 
@@ -895,7 +895,7 @@ d << Load Design();
 
 ### Load Factors
 
-**Syntax:** obj << Load Factors
+**Syntax:** obj &lt;&lt; Load Factors
 
 **Description:** Load a previously saved factors table for use in this experiment.
 
@@ -909,7 +909,7 @@ DOE( Custom Design, Load Factors );
 
 ### Load Responses
 
-**Syntax:** obj << Load Responses
+**Syntax:** obj &lt;&lt; Load Responses
 
 **Description:** Loads a previously saved data table of responses.
 
@@ -923,7 +923,7 @@ DOE( Custom Design, Load Responses );
 
 ### Local Design
 
-**Syntax:** obj << Local Design( state=0|1 )
+**Syntax:** obj &lt;&lt; Local Design( state=0|1 )
 
 **Description:** Specifies if local design for the prior mean should be created.
 
@@ -947,7 +947,7 @@ DOE(
 
 ### Make Design
 
-**Syntax:** obj << Make Design
+**Syntax:** obj &lt;&lt; Make Design
 
 **Description:** Creates the design that you specified in the script.
 
@@ -962,7 +962,7 @@ d << Make Design;
 
 ### Make Model
 
-**Syntax:** obj << Make Model( Linear|Interactions|RSM )
+**Syntax:** obj &lt;&lt; Make Model( Linear|Interactions|RSM )
 
 **Description:** Adds terms to the list of model terms for the specified model.
 
@@ -988,7 +988,7 @@ d << Make Model( Interactions );
 
 ### Make Strip Plot Design
 
-**Syntax:** obj << Make Strip Plot Design
+**Syntax:** obj &lt;&lt; Make Strip Plot Design
 
 **Description:** Specifies a strip plot design when hard-to-change factors vary independently from very hard-to-change factors.
 
@@ -1008,7 +1008,7 @@ d << Make Strip Plot Design;
 
 ### Make Table
 
-**Syntax:** obj << Make Table
+**Syntax:** obj &lt;&lt; Make Table
 
 **Description:** Creates a data table from the current design.
 
@@ -1023,7 +1023,7 @@ d << Make Table;
 
 ### Make Test Plan
 
-**Syntax:** obj << Make Test Plan
+**Syntax:** obj &lt;&lt; Make Test Plan
 
 **Description:** Creates the test plan for an accelerated life test plan.
 
@@ -1048,7 +1048,7 @@ DOE(
 
 ### MaxPro Categorical Weight
 
-**Syntax:** obj << MaxPro Categorical Weight
+**Syntax:** obj &lt;&lt; MaxPro Categorical Weight
 
 **Description:** Specifies MaxPro weight. Values larger than 1 increase the separation of points that have the same categorical level.
 
@@ -1067,7 +1067,7 @@ DOE(
 
 ### Mixture Design Type
 
-**Syntax:** obj << Mixture Design Type( Simplex Centroid|Simplex Lattice|ABCD|Extreme Vertices|Space Filling )
+**Syntax:** obj &lt;&lt; Mixture Design Type( Simplex Centroid|Simplex Lattice|ABCD|Extreme Vertices|Space Filling )
 
 **Description:** Specifies the type of mixture design. The default parameters are used unless you specify the parameter as the second argument.
 
@@ -1124,7 +1124,7 @@ d << Mixture Design Type( Space Filling, 25 );
 
 ### Mixture Sum
 
-**Syntax:** obj << Mixture Sum
+**Syntax:** obj &lt;&lt; Mixture Sum
 
 **Description:** Use this option when you want to express the sum of all the ingredients to be other than 1. The mixture total is the sum of all the ingredient amounts.
 
@@ -1144,7 +1144,7 @@ DOE(
 
 ### Nesting Structure
 
-**Syntax:** obj << Nesting Structure
+**Syntax:** obj &lt;&lt; Nesting Structure
 
 **Description:** Specifies the nesting structure of the design. Use a bracketed list to indicate nesting (first element is nesting factor, second element is bracketed list of nested factors or structures). Use horizontal concatenation (&apos;||&apos;) to indicate crossed factors or structures.
 
@@ -1163,7 +1163,7 @@ DOE(
 
 ### Number of Column Starts
 
-**Syntax:** obj << Number of Column Starts
+**Syntax:** obj &lt;&lt; Number of Column Starts
 
 **Description:** Specifies the number of times that random columns are optimized for each factor of a main effects screening design.
 
@@ -1185,7 +1185,7 @@ DOE(
 
 ### Number of Extra Runs
 
-**Syntax:** obj << Number of Extra Runs
+**Syntax:** obj &lt;&lt; Number of Extra Runs
 
 **Description:** Specifies the number of extra runs to include in a definitive screening design.
 
@@ -1208,7 +1208,7 @@ DOE(
 
 ### Number of Starts
 
-**Syntax:** obj << Number of Starts
+**Syntax:** obj &lt;&lt; Number of Starts
 
 **Description:** Specifies the number of times the design is regenerated to optimize the overall design.
 
@@ -1228,7 +1228,7 @@ DOE(
 
 ### Optimality Criterion
 
-**Syntax:** obj << Optimality Criterion( "Recommended"|"Make D-Optimal Design"|"Make I-Optimal Design"|"Make A-Optimal Design"|"Make Alias Optimal Design" )
+**Syntax:** obj &lt;&lt; Optimality Criterion( "Recommended"|"Make D-Optimal Design"|"Make I-Optimal Design"|"Make A-Optimal Design"|"Make Alias Optimal Design" )
 
 **Description:** Specifies the criterion used in the design. Recommended is the default value.
 
@@ -1266,7 +1266,7 @@ DOE(
 
 ### Order Column
 
-**Syntax:** obj << Order Column
+**Syntax:** obj &lt;&lt; Order Column
 
 **Description:** Requests an order column when the data table is created.
 
@@ -1282,7 +1282,7 @@ d << OrderColumn( 1 );
 
 ### Prior Parameter Variance
 
-**Syntax:** obj << Prior Parameter Variance
+**Syntax:** obj &lt;&lt; Prior Parameter Variance
 
 **Description:** Use this option to control the weight used for If Possible terms in a model. Higher values mean more prior information and smaller variance. The variances are the reciprocals of the entered values.
 
@@ -1304,7 +1304,7 @@ DOE(
 
 ### Prior Specification Choice
 
-**Syntax:** obj << Prior Specification Choice
+**Syntax:** obj &lt;&lt; Prior Specification Choice
 
 **Description:** Sets the option for specifying prior parameters, where 1 indicates Specify Intercept and 2 indicates Specify Quantile.
 
@@ -1328,7 +1328,7 @@ DOE(
 
 ### Reference Design
 
-**Syntax:** obj << Reference Design
+**Syntax:** obj &lt;&lt; Reference Design
 
 **Description:** Specify the reference design for design comparison.
 
@@ -1369,7 +1369,7 @@ DOE(
 
 ### Remove Alias Term
 
-**Syntax:** obj << Remove Alias Term
+**Syntax:** obj &lt;&lt; Remove Alias Term
 
 **Description:** Removes a term from the list of alias terms. Specify the factor number and power for each effect in a list. Create interactions by separating effects with commas.
 
@@ -1384,7 +1384,7 @@ d << Remove Alias Term( {1, 1}, {3, 1} );
 
 ### Remove All Alias Terms
 
-**Syntax:** obj << Remove All Alias Terms
+**Syntax:** obj &lt;&lt; Remove All Alias Terms
 
 **Description:** Removes all Alias Terms from the list of alias terms
 
@@ -1403,7 +1403,7 @@ d << Remove All Alias Terms;
 
 ### Remove Term
 
-**Syntax:** obj << Remove Term
+**Syntax:** obj &lt;&lt; Remove Term
 
 **Description:** Removes a term from the list of model terms. Specify the factor number and power for each effect in a list. Create interactions by separating effects with commas.
 
@@ -1419,7 +1419,7 @@ d << Remove Term( {3, 2} );
 
 ### Replicates
 
-**Syntax:** obj << Replicates
+**Syntax:** obj &lt;&lt; Replicates
 
 **Description:** Specifies the number of replicate runs. For MSA Designs, a second argument specifies the replicate structure: 0=Completely Randomized, 1=Batch Repeat, 2=Fast Repeat.
 
@@ -1459,7 +1459,7 @@ d = DOE(
 
 ### Report
 
-**Syntax:** obj << Report
+**Syntax:** obj &lt;&lt; Report
 
 **Description:** Returns a reference to the report object.
 
@@ -1475,7 +1475,7 @@ Show( t );
 
 ### Save Constraints
 
-**Syntax:** obj << Save Constraints
+**Syntax:** obj &lt;&lt; Save Constraints
 
 **Description:** Save the factor constraints of the current experiment to a JMP table for use in another experiment
 
@@ -1497,7 +1497,7 @@ DOE(
 
 ### Save Factors
 
-**Syntax:** obj << Save Factors
+**Syntax:** obj &lt;&lt; Save Factors
 
 **Description:** Save the factors you just created to a JMP table so you can use these factors for another experiment.
 
@@ -1517,7 +1517,7 @@ DOE(
 
 ### Save Responses
 
-**Syntax:** obj << Save Responses
+**Syntax:** obj &lt;&lt; Save Responses
 
 **Description:** Saves the responses that you created as a JMP data table. You can load these responses in other experiments.
 
@@ -1537,13 +1537,13 @@ DOE(
 
 ### Save Script to Data Table
 
-**Syntax:** obj << Save Script to Data Table
+**Syntax:** obj &lt;&lt; Save Script to Data Table
 
 **Description:** Create a Script that will reproduce this design.
 
 ### Save Script to Script Window
 
-**Syntax:** obj << Save Script to Script Window
+**Syntax:** obj &lt;&lt; Save Script to Script Window
 
 **Description:** Create a Script that will reproduce this design.
 
@@ -1562,7 +1562,7 @@ DOE(
 
 ### Save X Matrix
 
-**Syntax:** obj << Save X Matrix( state=0|1 )
+**Syntax:** obj &lt;&lt; Save X Matrix( state=0|1 )
 
 **Description:** Saves the design matrix (also called the X matrix) as a table property in the JMP data table that contains the design.
 
@@ -1582,7 +1582,7 @@ DOE(
 
 ### Screening Type
 
-**Syntax:** obj << Screening Type
+**Syntax:** obj &lt;&lt; Screening Type
 
 **Description:** Specifies a main effects screening design, which is orthogonal or near orthogonal.
 
@@ -1603,7 +1603,7 @@ d << Make Design;
 
 ### Select Covariate Rows
 
-**Syntax:** obj << Select Covariate Rows
+**Syntax:** obj &lt;&lt; Select Covariate Rows
 
 **Description:** Specifies the rows from the covariate table to be selected in DOE.
 
@@ -1631,7 +1631,7 @@ DOE(
 
 ### Set ALT Probability of Interest
 
-**Syntax:** obj << Set ALT Probability of Interest
+**Syntax:** obj &lt;&lt; Set ALT Probability of Interest
 
 **Description:** Sets the probability of interest for an accelerated life test plan.
 
@@ -1654,7 +1654,7 @@ DOE(
 
 ### Set ALT Time Range
 
-**Syntax:** obj << Set ALT Time Range
+**Syntax:** obj &lt;&lt; Set ALT Time Range
 
 **Description:** Sets the time range of interest for an accelerated life test plan.
 
@@ -1677,7 +1677,7 @@ DOE(
 
 ### Set Average Cluster Size
 
-**Syntax:** obj << Set Average Cluster Size
+**Syntax:** obj &lt;&lt; Set Average Cluster Size
 
 **Description:** Controls number of random points for clustering a Fast Flexible Filling Design.
 
@@ -1696,7 +1696,7 @@ DOE(
 
 ### Set Axial Choice
 
-**Syntax:** obj << Set Axial Choice( 1|2|3|4 )
+**Syntax:** obj &lt;&lt; Set Axial Choice( 1|2|3|4 )
 
 **Description:** Specifies the axial value settings. Use 1 for Rotatable, 2 for Orthogonal, 3 for On Face, and 4 User Specified.
 
@@ -1710,7 +1710,7 @@ d << Set Axial Choice( 2 );
 
 ### Set Axial Value
 
-**Syntax:** obj << Set Axial Value
+**Syntax:** obj &lt;&lt; Set Axial Value
 
 **Description:** Specifies the User Specified axial value.
 
@@ -1724,7 +1724,7 @@ d << Set Axial Value( 2 );
 
 ### Set Candidate Runs
 
-**Syntax:** obj << Set Candidate Runs
+**Syntax:** obj &lt;&lt; Set Candidate Runs
 
 **Description:** Sets the candidate runs for an accelerated life test plan.
 
@@ -1748,7 +1748,7 @@ DOE(
 
 ### Set Delta For Power
 
-**Syntax:** obj << Set Delta For Power
+**Syntax:** obj &lt;&lt; Set Delta For Power
 
 **Description:** Specifies the values of the anticipated coefficients in Power Analysis. Anticipated coefficients will be one half of the specified value.
 
@@ -1767,7 +1767,7 @@ DOE(
 
 ### Set Expected Number of Respondents
 
-**Syntax:** obj << Set Expected Number of Respondents
+**Syntax:** obj &lt;&lt; Set Expected Number of Respondents
 
 **Description:** Sets the expected number of respondents per survey.
 
@@ -1788,7 +1788,7 @@ DOE(
 
 ### Set Generators
 
-**Syntax:** obj << Set Generators
+**Syntax:** obj &lt;&lt; Set Generators
 
 **Description:** Specifies the generators to be used in a screening design.
 
@@ -1804,7 +1804,7 @@ DOE(
 
 ### Set Inspection Times
 
-**Syntax:** obj << Set Inspection Times
+**Syntax:** obj &lt;&lt; Set Inspection Times
 
 **Description:** Sets the inspection times for an accelerated life test plan.
 
@@ -1828,7 +1828,7 @@ DOE(
 
 ### Set Length of Test
 
-**Syntax:** obj << Set Length of Test
+**Syntax:** obj &lt;&lt; Set Length of Test
 
 **Description:** Sets the length of test for an accelerated life test plan.
 
@@ -1851,7 +1851,7 @@ DOE(
 
 ### Set Level Values
 
-**Syntax:** obj << Set Level Values
+**Syntax:** obj &lt;&lt; Set Level Values
 
 **Description:** Sets the level values for the accelerating factor(s) in an accelerated life test plan.
 
@@ -1875,7 +1875,7 @@ DOE(
 
 ### Set Monitoring Choice
 
-**Syntax:** obj << Set Monitoring Choice
+**Syntax:** obj &lt;&lt; Set Monitoring Choice
 
 **Description:** Specifies the type of monitoring for an accelerated life test plan.
 
@@ -1898,7 +1898,7 @@ DOE(
 
 ### Set N Subplots
 
-**Syntax:** obj << Set N Subplots
+**Syntax:** obj &lt;&lt; Set N Subplots
 
 **Description:** Specifies the number of subplots when there are both hard-to-change and very hard-to-change factors.
 
@@ -1918,7 +1918,7 @@ d << Set N Subplots( 8 );
 
 ### Set N Whole Plots
 
-**Syntax:** obj << Set N Whole Plots
+**Syntax:** obj &lt;&lt; Set N Whole Plots
 
 **Description:** Specifies the number of whole plots when there are hard-to-change or very hard-to-change factors.
 
@@ -1936,7 +1936,7 @@ d << Set N Whole Plots( 6 );
 
 ### Set Number of Attributes
 
-**Syntax:** obj << Set Number of Attributes
+**Syntax:** obj &lt;&lt; Set Number of Attributes
 
 **Description:** Sets the number of attributes that can change within a choice set.
 
@@ -1957,7 +1957,7 @@ DOE(
 
 ### Set Number of Choice Sets
 
-**Syntax:** obj << Set Number of Choice Sets
+**Syntax:** obj &lt;&lt; Set Number of Choice Sets
 
 **Description:** Sets the number of choice sets per survey.
 
@@ -1978,7 +1978,7 @@ DOE(
 
 ### Set Number of FDS points
 
-**Syntax:** obj << Set Number of FDS points
+**Syntax:** obj &lt;&lt; Set Number of FDS points
 
 **Description:** Sets the number of points used to generate the Fraction of Design Space Plot.
 
@@ -1996,7 +1996,7 @@ DOE(
 
 ### Set Number of Profiles
 
-**Syntax:** obj << Set Number of Profiles
+**Syntax:** obj &lt;&lt; Set Number of Profiles
 
 **Description:** Sets the number of profiles per choice set.
 
@@ -2017,7 +2017,7 @@ DOE(
 
 ### Set Number of Surveys
 
-**Syntax:** obj << Set Number of Surveys
+**Syntax:** obj &lt;&lt; Set Number of Surveys
 
 **Description:** Sets the number of surveys for a choice design.
 
@@ -2038,7 +2038,7 @@ DOE(
 
 ### Set Number of Units
 
-**Syntax:** obj << Set Number of Units
+**Syntax:** obj &lt;&lt; Set Number of Units
 
 **Description:** Sets the number of units under test for an accelerated life test plan.
 
@@ -2061,7 +2061,7 @@ DOE(
 
 ### Set Prior Correlation ALT
 
-**Syntax:** obj << Set Prior Correlation ALT
+**Syntax:** obj &lt;&lt; Set Prior Correlation ALT
 
 **Description:** Sets the prior correlations for an accelerated life test plan.
 
@@ -2084,7 +2084,7 @@ DOE(
 
 ### Set Prior Mean ALT
 
-**Syntax:** obj << Set Prior Mean ALT
+**Syntax:** obj &lt;&lt; Set Prior Mean ALT
 
 **Description:** Sets the prior mean for an accelerated life test plan.
 
@@ -2107,7 +2107,7 @@ DOE(
 
 ### Set Prior Mean Choice
 
-**Syntax:** obj << Set Prior Mean Choice
+**Syntax:** obj &lt;&lt; Set Prior Mean Choice
 
 **Description:** Sets the Prior Mean for a choice design.
 
@@ -2128,7 +2128,7 @@ DOE(
 
 ### Set Prior Quantile ALT
 
-**Syntax:** obj << Set Prior Quantile ALT
+**Syntax:** obj &lt;&lt; Set Prior Quantile ALT
 
 **Description:** Sets the information for specifying the prior intercept based on a quantile.
 
@@ -2152,7 +2152,7 @@ DOE(
 
 ### Set Prior Std Error ALT
 
-**Syntax:** obj << Set Prior Std Error ALT
+**Syntax:** obj &lt;&lt; Set Prior Std Error ALT
 
 **Description:** Sets the prior standard error for an accelerated life test plan.
 
@@ -2175,7 +2175,7 @@ DOE(
 
 ### Set Prior Variance ALT
 
-**Syntax:** obj << Set Prior Variance ALT
+**Syntax:** obj &lt;&lt; Set Prior Variance ALT
 
 **Description:** Sets the prior variance for an accelerated life test plan.
 
@@ -2198,7 +2198,7 @@ DOE(
 
 ### Set Prior Variance Matrix
 
-**Syntax:** obj << Set Prior Variance Matrix
+**Syntax:** obj &lt;&lt; Set Prior Variance Matrix
 
 **Description:** Sets the Prior Variance Matrix for a choice design.
 
@@ -2219,7 +2219,7 @@ DOE(
 
 ### Set RMSE
 
-**Syntax:** obj << Set RMSE
+**Syntax:** obj &lt;&lt; Set RMSE
 
 **Description:** Specifies the anticipated root mean square error (RMSE) in Power Analysis.
 
@@ -2234,7 +2234,7 @@ d << Set RMSE( 1.5 );
 
 ### Set Random Seed
 
-**Syntax:** obj << Set Random Seed
+**Syntax:** obj &lt;&lt; Set Random Seed
 
 **Description:** Useful for teaching. Setting the random seed to a specific value assures that all class members get the same design.
 
@@ -2253,7 +2253,7 @@ DOE(
 
 ### Set Run Order
 
-**Syntax:** obj << Set Run Order
+**Syntax:** obj &lt;&lt; Set Run Order
 
 **Description:** Specifies how the run order should be set when making a data table from a design.
 
@@ -2269,7 +2269,7 @@ d << Make Table;
 
 ### Set Runs Per Random Block
 
-**Syntax:** obj << Set Runs Per Random Block
+**Syntax:** obj &lt;&lt; Set Runs Per Random Block
 
 **Description:** Specifies the size of random blocks in the design.
 
@@ -2288,7 +2288,7 @@ d << Set Runs Per Random Block( 4 );
 
 ### Set Sample Size
 
-**Syntax:** obj << Set Sample Size
+**Syntax:** obj &lt;&lt; Set Sample Size
 
 **Description:** Specifies the sample size before the design is created. If the specified number is less than the minimum value shown in the designer, the sample size is set to the minimum value.
 
@@ -2303,7 +2303,7 @@ d << Set Sample Size( 12 );
 
 ### Set Significance Level
 
-**Syntax:** obj << Set Significance Level
+**Syntax:** obj &lt;&lt; Set Significance Level
 
 **Description:** Change the significance level in Power Analysis.
 
@@ -2318,7 +2318,7 @@ d << Set Significance Level( 0.10 );
 
 ### Set Strength
 
-**Syntax:** obj << Set Strength
+**Syntax:** obj &lt;&lt; Set Strength
 
 **Description:** Sets the strength for Covering Arrays
 
@@ -2338,7 +2338,7 @@ d << Make Table;
 
 ### Show Blocking Options
 
-**Syntax:** obj << Show Blocking Options
+**Syntax:** obj &lt;&lt; Show Blocking Options
 
 **Description:** Specifies the blocking choice and number of blocks for a definitive screening design. Specifying a value of 0 indicates no blocks.
 
@@ -2382,7 +2382,7 @@ DOE(
 
 ### Simulate Responses
 
-**Syntax:** obj << Simulate Responses( state=0|1 )
+**Syntax:** obj &lt;&lt; Simulate Responses( state=0|1 )
 
 **Description:** Add data for the responses to the JMP design table. For use in teaching DOE.
 
@@ -2402,7 +2402,7 @@ DOE(
 
 ### Solve for Power
 
-**Syntax:** obj << Solve for Power
+**Syntax:** obj &lt;&lt; Solve for Power
 
 **Description:** Sets the anticipated coefficients in Power Analysis so that the power is near the specified value.
 
@@ -2421,7 +2421,7 @@ DOE(
 
 ### Space Filling Design Type
 
-**Syntax:** obj << Space Filling Design Type( Sphere Packing|Latin Hypercube|Uniform|Minimum Potential|Maximum Entropy|IMSE Optimal|Fast Flexible Filling )
+**Syntax:** obj &lt;&lt; Space Filling Design Type( Sphere Packing|Latin Hypercube|Uniform|Minimum Potential|Maximum Entropy|IMSE Optimal|Fast Flexible Filling )
 
 **Description:** Specifies the type of space filling design and the number of runs.
 
@@ -2478,7 +2478,7 @@ d << Make Design;
 
 ### Sphere Radius
 
-**Syntax:** obj << Sphere Radius
+**Syntax:** obj &lt;&lt; Sphere Radius
 
 **Description:** Specifies a spherical design region and enables you to set the radius of the region.
 
@@ -2497,7 +2497,7 @@ DOE(
 
 ### Split Plot Variance Ratio
 
-**Syntax:** obj << Split Plot Variance Ratio( Whole Plot Ratio | [Whole Plot Ratio, Subplot Ratio] )
+**Syntax:** obj &lt;&lt; Split Plot Variance Ratio( Whole Plot Ratio | [Whole Plot Ratio, Subplot Ratio] )
 
 **Description:** For hard-to-change factors, specify the ratio of the whole-plot error variance to the run-to-run error. For hard-to-change and very hard-to-change factors, specify the ratio of the whole plot and subplot error to the run-to-run error.
 
@@ -2536,7 +2536,7 @@ d << Make Design;
 
 ### Suppress Cotter Designs
 
-**Syntax:** obj << Suppress Cotter Designs( state=0|1 )
+**Syntax:** obj &lt;&lt; Suppress Cotter Designs( state=0|1 )
 
 **Description:** Shows or hides Cotter designs in the list of screening designs. This option is selected by default, which means that Cotters designs are initially not in the screening design list. On by default.
 
@@ -2556,7 +2556,7 @@ DOE(
 
 ### Table of Correlations
 
-**Syntax:** obj << Table of Correlations
+**Syntax:** obj &lt;&lt; Table of Correlations
 
 **Description:** Create a data table with the Table of Correlations from Design Diagnostics.
 
@@ -2575,7 +2575,7 @@ DOE(
 
 ### Theta
 
-**Syntax:** obj << Theta
+**Syntax:** obj &lt;&lt; Theta
 
 **Description:** Specifies the Covariance Parameter Vector for Space Filling designs.
 
@@ -2589,7 +2589,7 @@ d << Theta( [2, 3] );
 
 ### Treatments
 
-**Syntax:** obj << Treatments
+**Syntax:** obj &lt;&lt; Treatments
 
 **Description:** Specifies the number of treatments for a balanced incomplete block design (BIBD).
 
@@ -2604,7 +2604,7 @@ d << Make Design;
 
 ### Use Bayesian information
 
-**Syntax:** obj << Use Bayesian information( state=0|1 )
+**Syntax:** obj &lt;&lt; Use Bayesian information( state=0|1 )
 
 **Description:** Uses prior information in the Bayesian setting for the design diagnostics.
 
@@ -2627,13 +2627,13 @@ DOE(
 
 ### Use Blue to Red color theme for color map
 
-**Syntax:** obj << Use Blue to Red color theme for color map( state=0|1 )
+**Syntax:** obj &lt;&lt; Use Blue to Red color theme for color map( state=0|1 )
 
 **Description:** Uses blue to red color theme for color map on correlations.
 
 ### Use Prior Uncertainty
 
-**Syntax:** obj << Use Prior Uncertainty( state=0|1 )
+**Syntax:** obj &lt;&lt; Use Prior Uncertainty( state=0|1 )
 
 **Description:** Specifies if the prior uncertainty should be used to construct the optimal design.
 
@@ -2657,7 +2657,7 @@ DOE(
 
 ### Utility Neutral Design
 
-**Syntax:** obj << Utility Neutral Design( state=0|1 )
+**Syntax:** obj &lt;&lt; Utility Neutral Design( state=0|1 )
 
 **Description:** Specifies if Utility Neutral Choice Design should be created.
 

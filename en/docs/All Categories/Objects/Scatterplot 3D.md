@@ -22,7 +22,7 @@ obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Peta
 
 ### By
 
-**Syntax:** obj << By( column(s) )
+**Syntax:** obj &lt;&lt; By( column(s) )
 
 **Description:** Produce multiple reports, one for each level of the variable(s).
 
@@ -44,7 +44,7 @@ obj = dt << Scatterplot 3D(
 
 ### Coloring
 
-**Syntax:** obj << Coloring( column )
+**Syntax:** obj &lt;&lt; Coloring( column )
 
 **Description:** Colors the markers according to the selected variable.
 
@@ -61,7 +61,7 @@ obj = dt << Scatterplot 3D(
 
 ### Freq
 
-**Syntax:** obj << Freq( column )
+**Syntax:** obj &lt;&lt; Freq( column )
 
 **Description:** A column whose values assign a frequency to each row for the analysis.
 
@@ -79,7 +79,7 @@ obj = dt << Scatterplot 3D(
 
 ### Weight
 
-**Syntax:** obj << Weight( column )
+**Syntax:** obj &lt;&lt; Weight( column )
 
 **Description:** A column whose values assign a weight to each row for the analysis.
 
@@ -97,7 +97,7 @@ obj = dt << Scatterplot 3D(
 
 ### Y
 
-**Syntax:** obj << Y( column(s) )
+**Syntax:** obj &lt;&lt; Y( column(s) )
 
 **Description:** Variables that will be available for the X, Y, and Z coordinates in the 3D graph.
 
@@ -113,7 +113,7 @@ obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Peta
 
 ### Biplot Rays
 
-**Syntax:** obj << Biplot Rays( state=0|1 )
+**Syntax:** obj &lt;&lt; Biplot Rays( state=0|1 )
 
 **Description:** Shows or hides the biplot rays on the graph. On by default with principal components.
 
@@ -129,7 +129,7 @@ obj << Biplot Rays( 1 );
 
 ### Circle Size
 
-**Syntax:** obj << Circle Size( number=0.2 )
+**Syntax:** obj &lt;&lt; Circle Size( number=0.2 )
 
 **Description:** Sets the marker size when "Sized Points" is set or a Weight or Freq role is used. "0.2" by default.
 
@@ -148,7 +148,7 @@ obj = dt << Scatterplot 3D(
 
 ### Connect Points
 
-**Syntax:** obj << Connect Points( state=0|1, <group column name> )
+**Syntax:** obj &lt;&lt; Connect Points( state=0|1, &lt;group column name&gt; )
 
 **Description:** Displays or hides lines connecting the points. Optionally, the points can be grouped.
 
@@ -163,7 +163,7 @@ obj << Connect Points( 1, :Species );
 
 ### Drop Line Thickness
 
-**Syntax:** obj << Drop Line Thickness( fraction=0.03 )
+**Syntax:** obj &lt;&lt; Drop Line Thickness( fraction=0.03 )
 
 **Description:** Sets the line thickness of the drop line. "0.03" by default.
 
@@ -180,7 +180,7 @@ obj << Drop Line Thickness( 0.8 );
 
 ### Drop Lines
 
-**Syntax:** obj << Drop Lines( state=0|1 )
+**Syntax:** obj &lt;&lt; Drop Lines( state=0|1 )
 
 **Description:** Draws or hides lines from the floor defined by the first and third variables to each point in the graph.
 
@@ -195,7 +195,7 @@ obj << Drop Lines( 1 );
 
 ### Ellipsoid Coverage
 
-**Syntax:** obj << Ellipsoid Coverage( fraction=0.5 )
+**Syntax:** obj &lt;&lt; Ellipsoid Coverage( fraction=0.5 )
 
 **Description:** Sets the coverage for the ellipse. For example, 0.5 covers the most dense half of the data. "0.5" by default.
 
@@ -211,7 +211,7 @@ obj << Normal Contour Ellipsoids( 1, :Species );
 
 ### Ellipsoid Transparency
 
-**Syntax:** obj << Ellipsoid Transparency( fraction=0.5 )
+**Syntax:** obj &lt;&lt; Ellipsoid Transparency( fraction=0.5 )
 
 **Description:** Sets the transparency for the ellipse. 0 [clear] and 1 [opaque]. "0.5" by default.
 
@@ -227,7 +227,7 @@ obj << Normal Contour Ellipsoids( 1, :Species );
 
 ### Frame3D
 
-**Syntax:** obj << Frame3D( <commands passed to Frame3D> )
+**Syntax:** obj &lt;&lt; Frame3D( &lt;commands passed to Frame3D&gt; )
 
 **Description:** Sends display commands to the 3D plot.
 
@@ -242,7 +242,7 @@ obj << Frame3D( Set View Zoom( 0.9075 ) );
 
 ### Jitter
 
-**Syntax:** obj << Jitter( state=0|1 )
+**Syntax:** obj &lt;&lt; Jitter( state=0|1 )
 
 **Description:** Jitters the points by moving them slightly on the scatterplot. On by default.
 
@@ -256,11 +256,11 @@ obj = Scatterplot 3D( Y( :Petal length, :Petal width, :Species ), Jitter( 0 ) );
 
 ### Legend
 
-**Syntax:** obj << Legend( <Legend Model ID> )
+**Syntax:** obj &lt;&lt; Legend( &lt;Legend Model ID&gt; )
 
 ### Nonpar Density Contour
 
-**Syntax:** obj << Nonpar Density Contour( state=0|1, <group column name> )
+**Syntax:** obj &lt;&lt; Nonpar Density Contour( state=0|1, &lt;group column name&gt; )
 
 **Description:** Draws a 95% kernel contour shell around the points.
 
@@ -275,7 +275,7 @@ obj << Nonpar Density Contour( 1, :Species );
 
 ### Nonpar Density Contour Settings
 
-**Syntax:** obj << Nonpar Density Contour Settings( surface, on=0|1, <quantile>, <transparency>, <color> )
+**Syntax:** obj &lt;&lt; Nonpar Density Contour Settings( surface, on=0|1, &lt;quantile&gt;, &lt;transparency&gt;, &lt;color&gt; )
 
 **Description:** Settings for the isosurface
 
@@ -291,7 +291,7 @@ obj << Nonpar Density Contour Settings( 1, 1, .5, .6, Green );
 
 ### Normal Contour Ellipsoids
 
-**Syntax:** obj << Normal Contour Ellipsoids( state=0|1, <group column name> )
+**Syntax:** obj &lt;&lt; Normal Contour Ellipsoids( state=0|1, &lt;group column name&gt; )
 
 **Description:** Displays or hides the normal contour ellipsoids.
 
@@ -306,7 +306,7 @@ obj << Normal Contour Ellipsoids( 1, :Species );
 
 ### Principal Components
 
-**Syntax:** obj << Principal Components( state=0|1 )
+**Syntax:** obj &lt;&lt; Principal Components( state=0|1 )
 
 **Description:** Displays both the Principal Components report and the rays on the graph.
 
@@ -321,7 +321,7 @@ obj << Principal Components;
 
 ### Remove Prin Comp
 
-**Syntax:** obj << Remove Prin Comp
+**Syntax:** obj &lt;&lt; Remove Prin Comp
 
 **Description:** Removes the Principal Components report and the rays on the graph.
 
@@ -338,7 +338,7 @@ obj << Remove Prin Comp;
 
 ### Rotated Components
 
-**Syntax:** obj << Rotated Components( PC|ML, ONE|SMC , number, Varimax| Biquartimax| Quartimax|Equamax|Orthomax| Factorparsimax... )
+**Syntax:** obj &lt;&lt; Rotated Components( PC|ML, ONE|SMC , number, Varimax| Biquartimax| Quartimax|Equamax|Orthomax| Factorparsimax... )
 
 **Description:** Displays a report with rotated principal components, where the components more closely align with the coordinate space. The second parameter defines the diagonals used in the prior communality and can be either SMC or ONE (principal components).
 
@@ -353,7 +353,7 @@ obj << Rotated Components( PC, ONE, 3, Varimax );
 
 ### Save Prin Components
 
-**Syntax:** obj << Save Prin Components( number )
+**Syntax:** obj &lt;&lt; Save Prin Components( number )
 
 **Description:** Saves the principal components as new columns in the data table
 
@@ -369,7 +369,7 @@ obj << Save Prin Components( 3 );
 
 ### Save Rotated Components
 
-**Syntax:** obj << Save Rotated Components
+**Syntax:** obj &lt;&lt; Save Rotated Components
 
 **Description:** Saves the rotated principal components as new columns in the data table
 
@@ -385,7 +385,7 @@ obj << Save Rotated Components;
 
 ### Show Controls
 
-**Syntax:** obj << Show Controls( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Controls( state=0|1 )
 
 **Description:** Shows or hides the control panel at the bottom of the scatterplot. On by default.
 
@@ -400,7 +400,7 @@ obj << Show Controls( 1 );
 
 ### Show Points
 
-**Syntax:** obj << Show Points( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Points( state=0|1 )
 
 **Description:** Shows or hides the points on the scatterplot. On by default.
 
@@ -415,7 +415,7 @@ obj << Show Points( 1 );
 
 ### Show Ray Labels
 
-**Syntax:** obj << Show Ray Labels( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Ray Labels( state=0|1 )
 
 **Description:** Shows or hides labels on rays. On by default.
 
@@ -432,7 +432,7 @@ obj << Show Ray Labels( 1 );
 
 ### Sized Points
 
-**Syntax:** obj << Sized Points( state=0|1 )
+**Syntax:** obj &lt;&lt; Sized Points( state=0|1 )
 
 **Description:** Grows or shrinks the points on the scatterplot.
 
@@ -447,7 +447,7 @@ obj << Sized Points( 1 );
 
 ### Std Prin Components
 
-**Syntax:** obj << Std Prin Components( state=0|1 )
+**Syntax:** obj &lt;&lt; Std Prin Components( state=0|1 )
 
 **Description:** Displays both the standardized Principal Components report and the rays on the graph.
 
@@ -464,7 +464,7 @@ obj << Std Prin Components;
 
 ### Action
 
-**Syntax:** obj << Action
+**Syntax:** obj &lt;&lt; Action
 
 **Description:** All-purpose trapdoor within a platform to insert expressions to evaluate. Temporarily sets the DisplayBox and DataTable contexts to the Platform.
 
@@ -482,7 +482,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Syntax:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntax:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Description:** Apply a previously created preset to the object, updating the options and customizations to match the saved settings.
 
@@ -527,7 +527,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Automatic Recalc
 
-**Syntax:** obj << Automatic Recalc( state=0|1 )
+**Syntax:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Description:** Redoes the analysis automatically for exclude and data changes. If the Automatic Recalc option is turned on, you should consider using Wait(0) commands to ensure that the exclude and data changes take effect before the recalculation.
 
@@ -543,7 +543,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**Syntax:** obj << Broadcast(message)
+**Syntax:** obj &lt;&lt; Broadcast(message)
 
 **Description:** Broadcasts a message to a platform. If return results from individual objects are tables, they are concatenated if possible, and the final format is identical to either the result from the Save Combined Table option in a Table Box or the result from the Concatenate option using a Source column. Other than those, results are stored in a list and returned.
 
@@ -561,7 +561,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**Syntax:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Syntax:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Description:** Adds a control panel for changing the platform&apos;s variables
 
@@ -579,7 +579,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**Syntax:** obj << Copy ByGroup Script
+**Syntax:** obj &lt;&lt; Copy ByGroup Script
 
 **Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
 
@@ -602,7 +602,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Syntax:** obj << Copy Script
+**Syntax:** obj &lt;&lt; Copy Script
 
 **Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
 
@@ -617,7 +617,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Syntax:** obj << Data Table Window
+**Syntax:** obj &lt;&lt; Data Table Window
 
 **Description:** Move the data table window for this analysis to the front.
 
@@ -632,7 +632,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Syntax:** obj << Get By Levels
+**Syntax:** obj &lt;&lt; Get By Levels
 
 **Description:** Returns an associative array mapping the by group columns to their values.
 
@@ -647,7 +647,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Syntax:** obj << Get ByGroup Script
+**Syntax:** obj &lt;&lt; Get ByGroup Script
 
 **Description:** Creates a script (JSL) to produce this analysis and returns it as an expression.
 
@@ -671,7 +671,7 @@ Show( t );
 
 ### Get Container
 
-**Syntax:** obj << Get Container
+**Syntax:** obj &lt;&lt; Get Container
 
 **Description:** Returns a reference to the container box that holds the content for the object.
 
@@ -718,7 +718,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Syntax:** obj << Get Data Table
+**Syntax:** obj &lt;&lt; Get Data Table
 
 **Description:** Returns a reference to the data table.
 
@@ -734,7 +734,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**Syntax:** obj << Get Group Platform
+**Syntax:** obj &lt;&lt; Get Group Platform
 
 **Description:** Return the Group Platform object if this platform is part of a Group. Otherwise, returns Empty().
 
@@ -751,7 +751,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**Syntax:** obj << Get Script
+**Syntax:** obj &lt;&lt; Get Script
 
 **Description:** Creates a script (JSL) to produce this analysis and returns it as an expression.
 
@@ -767,7 +767,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Syntax:** obj << Get Script With Data Table
+**Syntax:** obj &lt;&lt; Get Script With Data Table
 
 **Description:** Creates a script(JSL) to produce this analysis specifically referencing this data table and returns it as an expression.
 
@@ -783,7 +783,7 @@ Show( t );
 
 ### Get Timing
 
-**Syntax:** obj << Get Timing
+**Syntax:** obj &lt;&lt; Get Timing
 
 **Description:** Times the platform launch.
 
@@ -799,7 +799,7 @@ Show( t );
 
 ### Get Web Support
 
-**Syntax:** obj << Get Web Support
+**Syntax:** obj &lt;&lt; Get Web Support
 
 **Description:** Return a number indicating the level of Interactive HTML support for the display object. 1 means some or all elements are supported. 0 means no support.
 
@@ -815,7 +815,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Syntax:** obj << Get Where Expr
+**Syntax:** obj &lt;&lt; Get Where Expr
 
 **Description:** Returns the Where expression for the data subset, if the platform was launched with By() or Where(). Otherwise, returns Empty()
 
@@ -850,7 +850,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Syntax:** obj << Local Data Filter
+**Syntax:** obj &lt;&lt; Local Data Filter
 
 **Description:** To filter data to specific groups or ranges, but local to this platform
 
@@ -902,7 +902,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Syntax:** obj << Paste Local Data Filter
+**Syntax:** obj &lt;&lt; Paste Local Data Filter
 
 **Description:** Apply the local data filter from the clipboard to the current report.
 
@@ -923,7 +923,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**Syntax:** obj << Redo Analysis
+**Syntax:** obj &lt;&lt; Redo Analysis
 
 **Description:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
 
@@ -938,7 +938,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**Syntax:** obj << Redo ByGroup Analysis
+**Syntax:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Description:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
 
@@ -961,7 +961,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**Syntax:** obj << Relaunch Analysis
+**Syntax:** obj &lt;&lt; Relaunch Analysis
 
 **Description:** Opens the platform launch window and recalls the settings that were used to create the report.
 
@@ -976,7 +976,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**Syntax:** obj << Relaunch ByGroup
+**Syntax:** obj &lt;&lt; Relaunch ByGroup
 
 **Description:** Opens the platform launch window and recalls the settings that were used to create the report.
 
@@ -999,7 +999,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**Syntax:** obj << Remove Column Switcher
+**Syntax:** obj &lt;&lt; Remove Column Switcher
 
 **Description:** Removes the most recent Column Switcher that has been added to the platform.
 
@@ -1019,7 +1019,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Syntax:** obj << Remove Local Data Filter
+**Syntax:** obj &lt;&lt; Remove Local Data Filter
 
 **Description:** If a local data filter has been created, this removes it and restores the platform to use all the data in the data table directly
 
@@ -1056,9 +1056,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Syntax:** obj << Report;
-
-Report( obj )
+**Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Description:** Returns a reference to the report object.
 
@@ -1075,7 +1073,7 @@ Show( t );
 
 ### Report View
 
-**Syntax:** obj << Report View( "Full"|"Summary" )
+**Syntax:** obj &lt;&lt; Report View( "Full"|"Summary" )
 
 **Description:** The report view determines the level of detail visible in a platform report. Full shows all of the detail, while Summary shows only select content, dependent on the platform. For customized behavior, display boxes support a <<Set Summary Behavior message.
 
@@ -1090,7 +1088,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**Syntax:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description:** Creates a JSL script to produce this analysis, and save it as a table property in the data table. You can specify a name for the script. The Append Suffix option appends a numeric suffix to the script name, which differentiates the script from an existing script with the same name. The Prompt option prompts the user to specify a script name. The Replace option replaces an existing script with the same name.
 
@@ -1113,7 +1111,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Syntax:** obj << Save ByGroup Script to Journal
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
 
@@ -1136,7 +1134,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Syntax:** obj << Save ByGroup Script to Script Window
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
 
@@ -1159,7 +1157,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**Syntax:** obj << Save Script for All Objects
+**Syntax:** obj &lt;&lt; Save Script for All Objects
 
 **Description:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -1174,7 +1172,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Syntax:** obj << Save Script for All Objects To Data Table( <name> )
+**Syntax:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Description:** Saves a script for all report objects to the current data table. This option is useful when you have multiple reports in the window. The script is named after the first platform unless you specify the script name in quotes.
 
@@ -1218,7 +1216,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Syntax:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description:** Create a JSL script to produce this analysis, and save it as a table property in the data table.
 
@@ -1233,7 +1231,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Syntax:** obj << Save Script to Journal
+**Syntax:** obj &lt;&lt; Save Script to Journal
 
 **Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
 
@@ -1248,7 +1246,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Syntax:** obj << Save Script to Report
+**Syntax:** obj &lt;&lt; Save Script to Report
 
 **Description:** Create a JSL script to produce this analysis, and show it in the report itself. Useful to preserve a printed record of what was done.
 
@@ -1263,7 +1261,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Syntax:** obj << Save Script to Script Window
+**Syntax:** obj &lt;&lt; Save Script to Script Window
 
 **Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
 
@@ -1343,7 +1341,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Syntax:** obj << Sync to Data Table Changes
+**Syntax:** obj &lt;&lt; Sync to Data Table Changes
 
 **Description:** Sync with the exclude and data changes that have been made.
 
@@ -1360,7 +1358,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Syntax:** obj << Title( "new title" )
+**Syntax:** obj &lt;&lt; Title( "new title" )
 
 **Description:** Sets the title of the platform.
 
@@ -1375,7 +1373,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Syntax:** obj << Top Report
+**Syntax:** obj &lt;&lt; Top Report
 
 **Description:** Returns a reference to the root node in the report.
 
@@ -1392,7 +1390,7 @@ Show( t );
 
 ### Transform Column
 
-**Syntax:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Syntax:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Description:** Create a transform column in the local context of an object, usually a platform. The transform column is active only for the lifetime of the platform.
 
@@ -1409,7 +1407,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**Syntax:** obj << View Web XML
+**Syntax:** obj &lt;&lt; View Web XML
 
 **Description:** Returns the XML code that is used to create the interactive HTML report.
 
@@ -1463,11 +1461,7 @@ obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal widt
 
 #### Add Ellipsoid
 
-**Syntax:** obj << Add Ellipsoid( 4x4 matrix )
-
-obj << Add Ellipsoid(3x3 cov,3x1 means)
-
-obj << Add Ellipsoid(3x3 corr,3x1 means,3x1 std dev)
+**Syntax:** obj &lt;&lt; Add Ellipsoid( 4x4 matrix )obj &lt;&lt; Add Ellipsoid(3x3 cov,3x1 means)obj &lt;&lt; Add Ellipsoid(3x3 corr,3x1 means,3x1 std dev)
 
 **Description:** Draws an ellipsoid on the plot.
 
@@ -1488,7 +1482,7 @@ obj << Frame3D(
 
 #### Add Markers
 
-**Syntax:** obj << Add Markers( [ nx1 X matrix ], [ nx1 Y matrix ], [ nx1 Z matrix ] )
+**Syntax:** obj &lt;&lt; Add Markers( [ nx1 X matrix ], [ nx1 Y matrix ], [ nx1 Z matrix ] )
 
 **Description:** Draws n markers on the plot.
 
@@ -1503,7 +1497,7 @@ obj << Frame3D( Add Markers( [2 3 4], [5 6 7], [1 8 9] ) );
 
 #### Add Vector
 
-**Syntax:** obj << Add Vector( [ 3xn from matrix ], [ 3xn to matrix ], FromCap( CutOff|Sphere|Point|Feather ), ToCap( CutOff|Sphere|Point|Feather ), Facets( Triangle|Square|Round ), Shaft Color( color ), Shaft Thickness( number ), From Thickness( number ), To Thickness( number ), From Color( number ), To Color( number ) ) )
+**Syntax:** obj &lt;&lt; Add Vector( [ 3xn from matrix ], [ 3xn to matrix ], FromCap( CutOff|Sphere|Point|Feather ), ToCap( CutOff|Sphere|Point|Feather ), Facets( Triangle|Square|Round ), Shaft Color( color ), Shaft Thickness( number ), From Thickness( number ), To Thickness( number ), From Color( number ), To Color( number ) ) )
 
 **Description:** Draws a vector or arrow on the plot.
 
@@ -1518,7 +1512,7 @@ obj << Frame3D( Add Vector( [4.5 2 1], [7.5 4 6], FromCap( "Feather" ), ToCap( "
 
 #### Get Axes
 
-**Syntax:** obj << Get Axes
+**Syntax:** obj &lt;&lt; Get Axes
 
 **Description:** Returns the state of displaying the axes on the plot.
 
@@ -1534,7 +1528,7 @@ Show( s );
 
 #### Get Box
 
-**Syntax:** obj << Get Box
+**Syntax:** obj &lt;&lt; Get Box
 
 **Description:** Returns the state of displaying the box frame on the plot.
 
@@ -1550,7 +1544,7 @@ Show( s );
 
 #### Get Grab Handles
 
-**Syntax:** obj << Get Grab Handles
+**Syntax:** obj &lt;&lt; Get Grab Handles
 
 **Description:** Returns the state of displaying the grab handles on the plot.
 
@@ -1566,7 +1560,7 @@ Show( s );
 
 #### Get Graph Size
 
-**Syntax:** obj << Get Graph Size
+**Syntax:** obj &lt;&lt; Get Graph Size
 
 **Description:** Returns the size of the graph.
 
@@ -1582,7 +1576,7 @@ Show( s );
 
 #### Get Grids
 
-**Syntax:** obj << Get Grids
+**Syntax:** obj &lt;&lt; Get Grids
 
 **Description:** Returns the state of displaying the grids on the plot.
 
@@ -1598,7 +1592,7 @@ Show( s );
 
 #### Get Hide Lights Border
 
-**Syntax:** obj << Get Hide Lights Border
+**Syntax:** obj &lt;&lt; Get Hide Lights Border
 
 **Description:** Returns the state of the lights border around the plot.
 
@@ -1614,7 +1608,7 @@ Show( state );
 
 #### Get Line Scale
 
-**Syntax:** obj << Get Line Scale
+**Syntax:** obj &lt;&lt; Get Line Scale
 
 **Description:** Returns the line width for the plot.
 
@@ -1630,7 +1624,7 @@ Show( w );
 
 #### Get Marker Quality
 
-**Syntax:** obj << Get Marker Quality
+**Syntax:** obj &lt;&lt; Get Marker Quality
 
 **Description:** Returns the marker characteristics such as shape and shade for the plot.
 
@@ -1646,7 +1640,7 @@ Show( q );
 
 #### Get Marker Scale
 
-**Syntax:** obj << Get Marker Scale
+**Syntax:** obj &lt;&lt; Get Marker Scale
 
 **Description:** Returns the marker size for the plot.
 
@@ -1662,7 +1656,7 @@ Show( s );
 
 #### Get Marker Transparency
 
-**Syntax:** obj << Get Marker Transparency
+**Syntax:** obj &lt;&lt; Get Marker Transparency
 
 **Description:** Returns the marker transparency for the plot.
 
@@ -1678,7 +1672,7 @@ Show( t );
 
 #### Get Rotation
 
-**Syntax:** obj << Get Rotation
+**Syntax:** obj &lt;&lt; Get Rotation
 
 **Description:** Returns the current rotation for the frame.
 
@@ -1694,7 +1688,7 @@ Show( r );
 
 #### Get Text Scale
 
-**Syntax:** obj << Get Text Scale
+**Syntax:** obj &lt;&lt; Get Text Scale
 
 **Description:** Returns the text size for the plot.
 
@@ -1710,7 +1704,7 @@ Show( s );
 
 #### Get View Ortho
 
-**Syntax:** obj << Get View Ortho
+**Syntax:** obj &lt;&lt; Get View Ortho
 
 **Description:** Returns the state of the orthographic view for the plot.
 
@@ -1726,7 +1720,7 @@ Show( o );
 
 #### Get View Perspective
 
-**Syntax:** obj << Get View Perspective
+**Syntax:** obj &lt;&lt; Get View Perspective
 
 **Description:** Returns the view perspective for the plot.
 
@@ -1742,7 +1736,7 @@ Show( p );
 
 #### Get View Zoom
 
-**Syntax:** obj << Get View Zoom
+**Syntax:** obj &lt;&lt; Get View Zoom
 
 **Description:** Returns the current zoom for the plot.
 
@@ -1758,7 +1752,7 @@ Show( z );
 
 #### Get Wall Color
 
-**Syntax:** obj << Get Wall Color
+**Syntax:** obj &lt;&lt; Get Wall Color
 
 **Description:** Returns the wall color for the plot.
 
@@ -1774,7 +1768,7 @@ Show( c );
 
 #### Get Walls
 
-**Syntax:** obj << Get Walls
+**Syntax:** obj &lt;&lt; Get Walls
 
 **Description:** Returns the state of displaying the walls on the plot.
 
@@ -1790,7 +1784,7 @@ Show( s );
 
 #### Get X Axis Color
 
-**Syntax:** obj << Get X Axis Color
+**Syntax:** obj &lt;&lt; Get X Axis Color
 
 **Description:** Returns the x axis color for the plot.
 
@@ -1806,7 +1800,7 @@ Show( c );
 
 #### Get X Axis Label
 
-**Syntax:** obj << Get X Axis Label
+**Syntax:** obj &lt;&lt; Get X Axis Label
 
 **Description:** Returns the label for the X Axis on the plot.
 
@@ -1822,7 +1816,7 @@ Show( label );
 
 #### Get Y Axis Color
 
-**Syntax:** obj << Get Y Axis Color
+**Syntax:** obj &lt;&lt; Get Y Axis Color
 
 **Description:** Returns the y axis color for the plot.
 
@@ -1838,7 +1832,7 @@ Show( c );
 
 #### Get Y Axis Label
 
-**Syntax:** obj << Get Y Axis Label
+**Syntax:** obj &lt;&lt; Get Y Axis Label
 
 **Description:** Returns the label for the Y Axis on the plot.
 
@@ -1854,7 +1848,7 @@ Show( label );
 
 #### Get Z Axis Color
 
-**Syntax:** obj << Get Z Axis Color
+**Syntax:** obj &lt;&lt; Get Z Axis Color
 
 **Description:** Returns the z axis color for the plot.
 
@@ -1870,7 +1864,7 @@ Show( c );
 
 #### Get Z Axis Label
 
-**Syntax:** obj << Get Z Axis Label
+**Syntax:** obj &lt;&lt; Get Z Axis Label
 
 **Description:** Returns the label for the Z Axis on the plot.
 
@@ -1886,7 +1880,7 @@ Show( label );
 
 #### Set Axes
 
-**Syntax:** obj << Set Axes( state=0|1 )
+**Syntax:** obj &lt;&lt; Set Axes( state=0|1 )
 
 **Description:** Shows or hides the x, y, and z axes on the plot. On by default.
 
@@ -1901,7 +1895,7 @@ obj << Frame3D( Set Axes( 1 ) );
 
 #### Set Box
 
-**Syntax:** obj << Set Box( state=0|1 )
+**Syntax:** obj &lt;&lt; Set Box( state=0|1 )
 
 **Description:** Shows or hides the box frame on the plot. On by default.
 
@@ -1916,7 +1910,7 @@ obj << Frame3D( Set Box( 1 ) );
 
 #### Set Graph Size
 
-**Syntax:** obj << Set Graph Size( x, y )
+**Syntax:** obj &lt;&lt; Set Graph Size( x, y )
 
 **Description:** Sets the size of the graph.
 
@@ -1931,7 +1925,7 @@ obj << Frame3D( Set Graph Size( 700, 800 ) );
 
 #### Set Grids
 
-**Syntax:** obj << Set Grids( state=0|1 )
+**Syntax:** obj &lt;&lt; Set Grids( state=0|1 )
 
 **Description:** Shows or hides the grids on the plot. On by default.
 
@@ -1946,7 +1940,7 @@ obj << Frame3D( Set Grids( 1 ) );
 
 #### Set Hide Lights Border
 
-**Syntax:** obj << Set Hide Lights Border( state=0|1 )
+**Syntax:** obj &lt;&lt; Set Hide Lights Border( state=0|1 )
 
 **Description:** Hides or displays the lights border around the plot. On by default.
 
@@ -1961,7 +1955,7 @@ obj << Frame3D( Set Hide Lights Border( 0 ) );
 
 #### Set Line Scale
 
-**Syntax:** obj << Set Line Scale( number )
+**Syntax:** obj &lt;&lt; Set Line Scale( number )
 
 **Description:** Sets the line width for the grid on the plot.
 
@@ -1976,7 +1970,7 @@ obj << Frame3D( Set Line Scale( 6.5 ) );
 
 #### Set Marker Quality
 
-**Syntax:** obj << Set Marker Quality( number )
+**Syntax:** obj &lt;&lt; Set Marker Quality( number )
 
 **Description:** Sets the marker characteristics such as shape and shade for the plot.
 
@@ -1991,7 +1985,7 @@ obj << Frame3D( Set Marker Scale( 3 ), Set Marker Quality( 0.2625 ) );
 
 #### Set Marker Scale
 
-**Syntax:** obj << Set Marker Scale( number )
+**Syntax:** obj &lt;&lt; Set Marker Scale( number )
 
 **Description:** Sets the marker size for the plot.
 
@@ -2006,7 +2000,7 @@ obj << Frame3D( Set Marker Scale( 3.5 ) );
 
 #### Set Marker Transparency
 
-**Syntax:** obj << Set Marker Transparency( fraction )
+**Syntax:** obj &lt;&lt; Set Marker Transparency( fraction )
 
 **Description:** Sets the marker transparency for the plot.
 
@@ -2021,7 +2015,7 @@ obj << Frame3D( Set Marker Transparency( 0.4125 ) );
 
 #### Set Oscillation
 
-**Syntax:** obj << Set Oscillation( X, Y, Z, duration )
+**Syntax:** obj &lt;&lt; Set Oscillation( X, Y, Z, duration )
 
 **Description:** Sets oscillation rate on the plot.
 
@@ -2036,7 +2030,7 @@ obj << Frame3D( Set Rotation( -60, -3, 35 ), Set Oscillation( -54, 0, 38, 100 ) 
 
 #### Set Rotation
 
-**Syntax:** obj << Set Rotation( X, Y, Z )
+**Syntax:** obj &lt;&lt; Set Rotation( X, Y, Z )
 
 **Description:** Rotates the frame to the specified coordinates.
 
@@ -2051,7 +2045,7 @@ obj << Frame3D( Set Rotation( -60, -3, 35 ) );
 
 #### Set Spin
 
-**Syntax:** obj << Set Spin(  dx, dy, sx, sy  )
+**Syntax:** obj &lt;&lt; Set Spin( dx, dy, sx, sy )
 
 **Description:** Spins the graph on a specified axis. The values dx and dy are a delta motion of the mouse from the point, (sx, sy).
 
@@ -2066,7 +2060,7 @@ obj << Frame3D( Set Spin( .01, .01, 0, 0 ) );
 
 #### Set Text Scale
 
-**Syntax:** obj << Set Text Scale( number )
+**Syntax:** obj &lt;&lt; Set Text Scale( number )
 
 **Description:** Sets the text size for the axis text on the plot.
 
@@ -2081,7 +2075,7 @@ obj << Frame3D( Set Text Scale( 1.4 ) );
 
 #### Set View Ortho
 
-**Syntax:** obj << Set View Ortho( state=0|1 )
+**Syntax:** obj &lt;&lt; Set View Ortho( state=0|1 )
 
 **Description:** Displays the plot orthographically or linearly.
 
@@ -2096,7 +2090,7 @@ obj << Frame3D( Set View Ortho( 1 ) );
 
 #### Set View Perspective
 
-**Syntax:** obj << Set View Perspective( fraction )
+**Syntax:** obj &lt;&lt; Set View Perspective( fraction )
 
 **Description:** Sets the view perspective on the plot.
 
@@ -2111,7 +2105,7 @@ obj << Frame3D( Set View Perspective( 0.275 ) );
 
 #### Set View Zoom
 
-**Syntax:** obj << Set View Zoom( number )
+**Syntax:** obj &lt;&lt; Set View Zoom( number )
 
 **Description:** Sets the zoom on the plot.
 
@@ -2128,7 +2122,7 @@ obj << Frame3D( Set View Zoom( 2 ) );
 
 #### Set Wall Color
 
-**Syntax:** obj << Set Wall Color( number )
+**Syntax:** obj &lt;&lt; Set Wall Color( number )
 
 **Description:** Sets the wall color on the plot.
 
@@ -2143,7 +2137,7 @@ obj << Frame3D( Set Wall Color( -16775543 ) );
 
 #### Set Walls
 
-**Syntax:** obj << Set Walls( state=0|1 )
+**Syntax:** obj &lt;&lt; Set Walls( state=0|1 )
 
 **Description:** Shows or hides the walls on the plot. On by default.
 
@@ -2158,7 +2152,7 @@ obj << Frame3D( Set Walls( 1 ) );
 
 #### Set X Axis Color
 
-**Syntax:** obj << Set X Axis Color( color )
+**Syntax:** obj &lt;&lt; Set X Axis Color( color )
 
 **Description:** Sets the x axis color on the plot.
 
@@ -2173,7 +2167,7 @@ obj << Frame3D( Set X Axis Color( 5 ) );
 
 #### Set X Axis Label
 
-**Syntax:** obj << Set X Axis Label( string )
+**Syntax:** obj &lt;&lt; Set X Axis Label( string )
 
 **Description:** Sets the label for the X Axis on the plot.
 
@@ -2188,7 +2182,7 @@ obj << Frame3D( Set X Axis Label( "Iris Sepal Length" ) );
 
 #### Set Y Axis Color
 
-**Syntax:** obj << Set Y Axis Color( color )
+**Syntax:** obj &lt;&lt; Set Y Axis Color( color )
 
 **Description:** Sets the y axis color on the plot.
 
@@ -2203,7 +2197,7 @@ obj << Frame3D( Set Y Axis Color( 11 ) );
 
 #### Set Y Axis Label
 
-**Syntax:** obj << Set Y Axis Label( string )
+**Syntax:** obj &lt;&lt; Set Y Axis Label( string )
 
 **Description:** Sets the label for the Y Axis on the plot.
 
@@ -2218,7 +2212,7 @@ obj << Frame3D( Set Y Axis Label( "Iris Petal Length" ) );
 
 #### Set Z Axis Color
 
-**Syntax:** obj << Set Z Axis Color( color )
+**Syntax:** obj &lt;&lt; Set Z Axis Color( color )
 
 **Description:** Sets the z axis color on the plot.
 
@@ -2233,7 +2227,7 @@ obj << Frame3D( Set Z Axis Color( "Green" ) );
 
 #### Set Z Axis Label
 
-**Syntax:** obj << Set Z Axis Label( string )
+**Syntax:** obj &lt;&lt; Set Z Axis Label( string )
 
 **Description:** Sets the label for the Z Axis on the plot.
 
@@ -2248,7 +2242,7 @@ obj << Frame3D( Set Z Axis Label( "Iris Sepal Width" ) );
 
 #### XAxis
 
-**Syntax:** obj << XAxis( Min( number ), Max( number ), Inc( number ), Format( ) )
+**Syntax:** obj &lt;&lt; XAxis( Min( number ), Max( number ), Inc( number ), Format( ) )
 
 **Description:** Sets the values for the X Axis on the plot.
 
@@ -2263,7 +2257,7 @@ obj << Frame3D( XAxis( Min( 3 ), Max( 10 ) ) );
 
 #### YAxis
 
-**Syntax:** obj << YAxis( Min( number ), Max( number ), Inc( number ), Format( ) )
+**Syntax:** obj &lt;&lt; YAxis( Min( number ), Max( number ), Inc( number ), Format( ) )
 
 **Description:** Sets the values for the Y Axis on the plot.
 
@@ -2278,7 +2272,7 @@ obj << Frame3D( YAxis( Min( 1 ), Max( 10 ), Inc( 0.5 ) ) );
 
 #### Z Axis
 
-**Syntax:** obj << Z Axis( Min( number ), Max( number ), Inc( number ), Format( ) )
+**Syntax:** obj &lt;&lt; Z Axis( Min( number ), Max( number ), Inc( number ), Format( ) )
 
 **Description:** Sets the values for the Z Axis on the plot.
 
@@ -2293,7 +2287,7 @@ obj << Frame3D( ZAxis( Min( 1 ), Max( 5 ), Inc( 0.25 ) ) );
 
 #### get light active
 
-**Syntax:** obj << get light active( light number )
+**Syntax:** obj &lt;&lt; get light active( light number )
 
 **Description:** Returns the specified light activation shining on the plot.
 
@@ -2309,7 +2303,7 @@ Show( p );
 
 #### get light color
 
-**Syntax:** obj << get light color( light number )
+**Syntax:** obj &lt;&lt; get light color( light number )
 
 **Description:** Returns the specified light color shining on the plot as a list {red, green, blue}.
 
@@ -2325,7 +2319,7 @@ Show( c );
 
 #### get light position
 
-**Syntax:** obj << get light position( light number )
+**Syntax:** obj &lt;&lt; get light position( light number )
 
 **Description:** Returns the specified light position shining on the plot as a list {x, y, z}.
 
@@ -2341,7 +2335,7 @@ Show( p );
 
 #### set light active
 
-**Syntax:** obj << set light active( light number, state=0|1 )
+**Syntax:** obj &lt;&lt; set light active( light number, state=0|1 )
 
 **Description:** Turns on the specified light shining on the plot.
 
@@ -2356,7 +2350,7 @@ obj << Frame3D( Set Hide Lights Border( 0 ), Set Light Active( 4, 1 ) );
 
 #### set light color
 
-**Syntax:** obj << set light color( light number, red value, green value, blue value )
+**Syntax:** obj &lt;&lt; set light color( light number, red value, green value, blue value )
 
 **Description:** Sets the color of the light shining on the plot.
 
@@ -2371,7 +2365,7 @@ obj << Frame3D( Set Hide Lights Border( 0 ), Set Light Color( 2, 240, 50, 70 ) )
 
 #### set light position
 
-**Syntax:** obj << set light position( light number, X, Y, Z )
+**Syntax:** obj &lt;&lt; set light position( light number, X, Y, Z )
 
 **Description:** Sets the light position shining on the plot.
 

@@ -6,7 +6,7 @@
 
 ### Blink
 
-**Syntax:** obj << Blink
+**Syntax:** obj &lt;&lt; Blink
 
 **Beschreibung:** Zeigt die angezeigte Zeile im Datenbearbeitungsfeld blinkend an.
 
@@ -32,7 +32,7 @@ dataedit << Blink;
 
 ### Find
 
-**Syntax:** obj << Find( search term )
+**Syntax:** obj &lt;&lt; Find( search term )
 
 **Beschreibung:** Zeigt die vom eingegebenen Suchbegriff gefundene Zeile.
 
@@ -58,7 +58,7 @@ dataedit << Find( Contains( :State, "North Carolina" ) );
 
 ### Go to row
 
-**Syntax:** obj << Go to row( row )
+**Syntax:** obj &lt;&lt; Go to row( row )
 
 **Beschreibung:** Zeigt die eingegebene Zeile im Datenbearbeitungsfeld an.
 
@@ -84,7 +84,7 @@ dataedit << Go To Row( 23 );
 
 ### New Row
 
-**Syntax:** obj << New Row
+**Syntax:** obj &lt;&lt; New Row
 
 **Beschreibung:** Erstellt eine neue Zeile in der Datentabelle und zeigt diese Zeile im Datenbearbeitungsfeld an.
 
@@ -110,7 +110,7 @@ dataedit << New Row;
 
 ### Next
 
-**Syntax:** obj << Next
+**Syntax:** obj &lt;&lt; Next
 
 **Beschreibung:** Zeigt die nächste ausgewählte Zeile im Datenbearbeitungsfeld an.
 
@@ -136,7 +136,7 @@ dataedit << Next;
 
 ### Next Selected
 
-**Syntax:** obj << Next Selected
+**Syntax:** obj &lt;&lt; Next Selected
 
 **Beschreibung:** Zeigt aus den ausgewählten Zeilen die nächste ausgewählte Zeile im Datenbearbeitungsfeld an.
 
@@ -163,7 +163,7 @@ dataedit << Next Selected;
 
 ### Prev
 
-**Syntax:** obj << Prev
+**Syntax:** obj &lt;&lt; Prev
 
 **Beschreibung:** Zeigt die vorherige ausgewählte Zeile im Datenbearbeitungsfeld an.
 
@@ -190,7 +190,7 @@ dataedit << Prev;
 
 ### Prev Selected
 
-**Syntax:** obj << Prev Selected
+**Syntax:** obj &lt;&lt; Prev Selected
 
 **Beschreibung:** Zeigt aus den ausgewählten Zeilen die vorherige ausgewählte Zeile im Datenbearbeitungsfeld an.
 
@@ -217,7 +217,7 @@ dataedit << Prev Selected;
 
 ### Save
 
-**Syntax:** obj << Save
+**Syntax:** obj &lt;&lt; Save
 
 **Beschreibung:** Speichert die Zeilenwerte im Datenbearbeitungsfeld in der Datentabelle.
 

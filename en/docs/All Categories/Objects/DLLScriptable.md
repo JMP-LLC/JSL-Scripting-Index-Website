@@ -6,7 +6,7 @@
 
 ### Load DLL
 
-**Syntax:** dll = Load DLL( file path | Base Name( file path without extension ), < AutoDeclare( bool | Quiet | Verbose) | Quiet | Verbose )> )
+**Syntax:** dll = Load DLL( file path | Base Name( file path without extension ), &lt; AutoDeclare( bool | Quiet | Verbose) | Quiet | Verbose )&gt; )
 
 **Description:** Loads a DLL pointed to by the specified path.
 
@@ -27,7 +27,7 @@ If( Host is( "Windows" ),
 
 ### Call DLL
 
-**Syntax:** obj << Call DLL( function name, signature, args )
+**Syntax:** obj &lt;&lt; Call DLL( function name, signature, args )
 
 **Description:** Calls a specified function within the DLL, with a given signature and arguments.
 
@@ -46,7 +46,7 @@ If( Host is( "Windows" ),
 
 ### Declare Function
 
-**Syntax:** obj << Declare Function( name, Convention( STDCALL| CDECL| Pascal ), Alias( string ), Arg( Int8| UInt8| Int16| UInt16| Int32| UInt32| Int64| UInt64| Float| Double| AnsiString| UnicodeString| Struct| IntPtr| UIntPtr| ObjPtr, string ), Returns( type ); )
+**Syntax:** obj &lt;&lt; Declare Function( name, Convention( STDCALL| CDECL| Pascal ), Alias( string ), Arg( Int8| UInt8| Int16| UInt16| Int32| UInt32| Int64| UInt64| Float| Double| AnsiString| UnicodeString| Struct| IntPtr| UIntPtr| ObjPtr, string ), Returns( type ); )
 
 **Description:** Declares the return type and parameter types of a function defined in the DLL so that it can be successfully invoked from JSL.
 
@@ -73,7 +73,7 @@ If( Host is( "Windows" ),
 
 ### Get Declaration JSL
 
-**Syntax:** obj << Get Declaration JSL
+**Syntax:** obj &lt;&lt; Get Declaration JSL
 
 **Description:** Retrieves the declaration JSL from the DLL and displays it in the log. This message applies only to DLLs that contain the function, _JMP_Declarations().
 
@@ -87,7 +87,7 @@ dll = Load DLL( /*DLL with JSL keyword*/ );
 
 ### Show Functions
 
-**Syntax:** obj << Show Functions
+**Syntax:** obj &lt;&lt; Show Functions
 
 **Description:** Stream the list of declared functions to the log
 
@@ -113,7 +113,7 @@ If( Host is( "Windows" ),
 
 ### Unload DLL
 
-**Syntax:** obj << Unload DLL
+**Syntax:** obj &lt;&lt; Unload DLL
 
 **Description:** Unloads the DLL.
 

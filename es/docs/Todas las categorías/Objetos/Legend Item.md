@@ -6,7 +6,7 @@
 
 ### Get Label
 
-**Sintaxis:** obj << Get Label
+**Sintaxis:** obj &lt;&lt; Get Label
 
 **Descripción:** Devuelve la etiqueta del elemento de la leyenda.
 
@@ -29,7 +29,7 @@ Print( item << Get Label );
 
 ### Get Position
 
-**Sintaxis:** obj << Get Position
+**Sintaxis:** obj &lt;&lt; Get Position
 
 **Descripción:** Devuelve la posición secuencial de un elemento en la leyenda o un código negativo si no se muestra. Códigos: -1 = ocultado por el usuario, -2 = ocultado por Si se muestra, -3 = Ocultado por Dependencia, -4 = Ocultado por configuración inicial
 
@@ -52,7 +52,7 @@ Print( item << Get Position );
 
 ### Get Type
 
-**Sintaxis:** obj << Get Type
+**Sintaxis:** obj &lt;&lt; Get Type
 
 **Descripción:** Devuelve el tipo de elemento de la leyenda. Los tipos son: "Ninguno", "Marcador", "Línea H", "Línea V", "Paso", "Barra", "Diagrama de caja V", "Intervalo H", "Intervalo V", "Diagrama de caja de barra H", "Diagrama de caja de barra V", "Gráfico OHLC", "Diagrama de caja H", "Gradiente", "Gradiente de densidad", "Relleno y línea", "Tamaño de marcador", "Tamaño de línea", "Línea del gradiente", "Contorno del gradiente", "Color de marca", "Tamaño de marcador categórico", "Tamaño de celda".
 
@@ -75,7 +75,7 @@ Print( item << Get Type );
 
 ### Set Label
 
-**Sintaxis:** obj << Set Label( text )
+**Sintaxis:** obj &lt;&lt; Set Label( text )
 
 **Descripción:** Establece la etiqueta de un elemento en la leyenda.
 
@@ -98,7 +98,7 @@ item << Set Label( "Label Set Through Script" );
 
 ### Set Visible
 
-**Sintaxis:** obj << Set Visible( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Set Visible( state=0|1 )
 
 **Descripción:** Establece la visibilidad de un elemento en la leyenda.
 

@@ -2,8 +2,6 @@
 
 
 
-## 함수
-
 ### Add Vectors BLAS
 
 **구문:** z = Add Vectors BLAS( x, y, alpha )
@@ -52,7 +50,7 @@ Any( [1 0 2] );
 
 ### B Spline Coef
 
-**구문:** coef = B Spline Coef( x, Internal Knot Grid, <degree = 3>, <KnotEndPoints = min(x) || max(x)> )
+**구문:** coef = B Spline Coef( x, Internal Knot Grid, &lt;degree = 3&gt;, &lt;KnotEndPoints = min(x) || max(x)&gt; )
 
 **설명:** B-스플라인 계수의 행렬을 반환합니다. Internal Knot Grid는 x의 백분위수를 기반으로 하는 원하는 매듭 점의 수이거나 내부 매듭 점을 지정하는 벡터입니다. 선택적 모수 degree는 B-스플라인의 차수를 지정하며 기본값은 3입니다. 선택적 모수 KnotEndPoints는 경계의 매듭에 대한 [하위, 상위] 위치가 포함된 2x1 행렬을 사용합니다. 매듭 끝점은 기본적으로 x의 최소값 및 최대값입니다. 두 번째 예제에서는 선형 모형에서 B-스플라인 계수를 설계 행렬로 사용하는 방법을 보여 줍니다.
 
@@ -174,7 +172,7 @@ Cholesky( [1 2, 2 13] );
 
 ### Correlation
 
-**구문:** y = Correlation( x , < <<"Pairwise" >, < <<"Shrink" >, < <<Freq(vector) >, < <<Weight(vector) > )
+**구문:** y = Correlation( x , &lt; &lt;&lt;"Pairwise" &gt;, &lt; &lt;&lt;"Shrink" &gt;, &lt; &lt;&lt;Freq(vector) &gt;, &lt; &lt;&lt;Weight(vector) &gt; )
 
 **설명:** 행렬 인수 x의 상관 행렬을 반환합니다. "Pairwise" 인수는 행별 방식 대신 쌍별로 결측값을 처리합니다. "Shrink" 인수는 Schafer and Strimmer(2005)에 설명된 방법을 사용하여 결정된 요인만큼 비대각 요소를 줄입니다. Freq 및 Weight 인수는 각각 빈도 또는 가중치 값의 벡터를 지정합니다.
 
@@ -189,7 +187,7 @@ Correlation( [1 3 5, 3 2 6, 5 6 1] );
 
 ### Covariance
 
-**구문:** y = Covariance( x , < <<"Pairwise" >, < <<"Shrink" >, < <<Freq(vector) >, < <<Weight(vector) > )
+**구문:** y = Covariance( x , &lt; &lt;&lt;"Pairwise" &gt;, &lt; &lt;&lt;"Shrink" &gt;, &lt; &lt;&lt;Freq(vector) &gt;, &lt; &lt;&lt;Weight(vector) &gt; )
 
 **설명:** 행렬 인수 x의 공분산 행렬을 반환합니다. "Pairwise" 인수는 행별 방식 대신 쌍별로 결측값을 처리합니다. "Shrink" 인수는 Schafer and Strimmer (2005)에 설명된 방법을 사용하여 결정된 요인만큼 비대각 요소를 줄입니다. Freq 및 Weight 인수는 각각 빈도 또는 가중치 값의 벡터를 지정합니다.
 
@@ -204,7 +202,7 @@ Covariance( [1 3 5, 3 2 6, 5 6 1] );
 
 ### Design
 
-**구문:** y = Design( v, < levelsList|<<Levels, <<ElseMissing > )
+**구문:** y = Design( v, &lt; levelsList|&lt;&lt;Levels, &lt;&lt;ElseMissing &gt; )
 
 **설명:** 인수의 각 고유 값에 대해 1과 0으로 구성된 설계 행렬을 생성합니다. 설계 행렬에 수준을 지정하기 위해 levelsList 인수를 사용합니다. <<Levels 인수를 지정한 경우 반환 값은 설계 행렬 및 수준이 포함된 목록입니다. <<ElseMissing 인수를 지정한 경우 levelsList에 없는 v 인수 값은 설계 행렬에서 결측값으로 처리됩니다. 지정하지 않은 경우 0으로 채워집니다.
 
@@ -233,7 +231,7 @@ Show( Design( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ### Design Last
 
-**구문:** y = Design Last( v, < levelsList, <<ElseMissing > )
+**구문:** y = Design Last( v, &lt; levelsList, &lt;&lt;ElseMissing &gt; )
 
 **설명:** 인수의 마지막 고유 값을 제외한 전체에 대해 1 및 0의 열을 포함하는 설계 행렬을 생성합니다. 마지막 수준은 0의 행으로 코딩됩니다. levelsList 인수가 지정된 경우 마지막 수준은 levelsList의 마지막 수준입니다. 이 인수가 지정되지 않은 경우에는 v의 가장 큰 값으로 마지막 수준이 정의됩니다. <<Levels 인수가 지정된 경우 반환되는 값은 수준 목록과 설계 행렬이 포함된 목록입니다. <<ElseMissing 인수가 지정된 경우 결측값은 levelsList에 없는 v 인수의 값에 대한 설계 행렬에 추가됩니다. 그렇지 않으면 0이 설계 행렬에 추가됩니다.
 
@@ -269,7 +267,7 @@ Show( Design Last( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ### Design Nom
 
-**구문:** y = Design Nom( v, < levelsList|<<Levels, <<ElseMissing > )
+**구문:** y = Design Nom( v, &lt; levelsList|&lt;&lt;Levels, &lt;&lt;ElseMissing &gt; )
 
 **설명:** 인수의 마지막 고유 값을 제외한 전체에 대해 1 및 0의 열을 포함하는 설계 행렬을 생성합니다. 마지막 수준은 -1의 행으로 코딩됩니다. levelsList 인수가 지정된 경우 마지막 수준은 levelsList의 마지막 수준입니다. 이 인수가 지정되지 않은 경우에는 v의 가장 큰 인수로 마지막 수준이 정의됩니다. <<Levels 인수가 지정된 경우 반환되는 값은 수준 목록과 설계 행렬이 포함된 목록입니다. <<ElseMissing 인수가 지정된 경우에는 levelsList에 나타나지 않는 v 인수 값을 설계 행렬에 결측값으로 나타내게 됩니다. 그렇지 않으면 0이 설계 행렬에 추가됩니다.
 
@@ -305,7 +303,7 @@ Show( Design Nom( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ### Design Ord
 
-**구문:** y = Design Ord( v, < levelsList|<<Levels, <<ElseMissing > )
+**구문:** y = Design Ord( v, &lt; levelsList|&lt;&lt;Levels, &lt;&lt;ElseMissing &gt; )
 
 **설명:** 인수의 마지막 고유 값을 제외한 전체에 대해 하나의 열을 포함하는 설계 행렬을 생성합니다. 첫 번째 수준은 0의 행으로 코딩됩니다. levelsList의 그 다음 수준(n번째 수준)은 (n-1) 1과 나머지 0의 행으로 코딩됩니다. <<Levels 인수가 지정된 경우 반환되는 값은 수준 목록과 설계 행렬이 포함된 목록입니다. <<ElseMissing 인수가 지정된 경우에는 levelsList에 나타나지 않는 v 인수 값을 설계 행렬에 결측값으로 나타내게 됩니다. 그렇지 않으면 0이 설계 행렬에 추가됩니다.
 
@@ -341,7 +339,7 @@ Show( Design Ord( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ### DesignF
 
-**구문:** y = DesignF( v, < levelsList|<<Levels, <<ElseMissing > )
+**구문:** y = DesignF( v, &lt; levelsList|&lt;&lt;Levels, &lt;&lt;ElseMissing &gt; )
 
 **설명:** 인수의 마지막 고유 값을 제외한 전체에 대해 1 및 0의 열을 포함하는 설계 행렬을 생성합니다. 마지막 수준은 -1의 행으로 코딩됩니다. levelsList 인수가 지정된 경우 마지막 수준은 levelsList의 마지막 수준입니다. 이 인수가 지정되지 않은 경우에는 v의 가장 큰 인수로 마지막 수준이 정의됩니다. <<Levels 인수가 지정된 경우 반환되는 값은 수준 목록과 설계 행렬이 포함된 목록입니다. <<ElseMissing 인수가 지정된 경우에는 levelsList에 나타나지 않는 v 인수 값을 설계 행렬에 결측값으로 나타내게 됩니다. 그렇지 않으면 0이 설계 행렬에 추가됩니다.
 
@@ -433,7 +431,7 @@ Show( exProd[4 :: 6, 4 :: 6] == (exB * 4) );
 
 ### Distance
 
-**구문:** y = Distance( x1, x2, <scales>, <powers> )
+**구문:** y = Distance( x1, x2, &lt;scales&gt;, &lt;powers&gt; )
 
 **설명:** x1 행과 x2 행 사이의 거리 행렬을 생성합니다. 각 열에 대한 척도 및 멱을 사용자 정의하려면 추가 인수 scale 및 powers를 지정하십시오. Kriging의 경우 Exp(-distance(x1,x2))가 사용됩니다.
 
@@ -579,7 +577,7 @@ E * Diag( M ) * E`;
 
 ### Eigen BLAS
 
-**구문:** z = Eigen BLAS( X, <nvec = ncol> )
+**구문:** z = Eigen BLAS( X, &lt;nvec = ncol&gt; )
 
 **JMP추가된 버전:** 17
 
@@ -645,7 +643,7 @@ Estimate Factor Score(
 
 ### Fourier Basis Coef
 
-**구문:** coef = Fourier Basis Coef( x, Number Pairs, <Period = max(x)-min(x)+1> )
+**구문:** coef = Fourier Basis Coef( x, Number Pairs, &lt;Period = max(x)-min(x)+1&gt; )
 
 **설명:** Fourier 기저 계수의 행렬을 반환합니다. Number Pairs는 Fourier 기저의 sin() 및 cos() 쌍의 수입니다. 선택적 모수 Period는 삼각 함수의 기간을 지정하며 기본값은 max(x) - min(x) + 1입니다.
 
@@ -698,7 +696,7 @@ Show( exProd[2, 1 :: 6] == Direct Product( exA[2, 1 :: 2], exB[2, 1 :: 3] ) );
 
 ### Hadamard
 
-**구문:** y = Hadamard( n, <normalize = 0> )
+**구문:** y = Hadamard( n, &lt;normalize = 0&gt; )
 
 **설명:** 차수 n의 Hadamard 행렬을 생성합니다.
 
@@ -713,7 +711,7 @@ Show( Hadamard( 12 ), Hadamard( 12, 1 ) );
 
 ### Hough Line Transform
 
-**구문:** accum = Hough Line Transform( matrix, <NAngle(number)> <NRadius(number)> )
+**구문:** accum = Hough Line Transform( matrix, &lt;NAngle(number)&gt; &lt;NRadius(number)&gt; )
 
 **설명:** 이미지 데이터에서 선을 검색하기 위한 Hough 변환을 반환합니다.
 
@@ -884,7 +882,7 @@ Identity( 2 );
 
 ### Index
 
-**구문:** ii = n1::n2; ii = n1::n2::n3; ii = Index( n1, n2, <n3=1>)
+**구문:** ii = n1::n2; ii = n1::n2::n3; ii = Index( n1, n2, &lt;n3=1&gt;)
 
 **설명:** n3씩 증분하여 n1 ~ n2 사이의 값 시퀀스가 포함된 행 행렬을 반환합니다.
 
@@ -929,7 +927,7 @@ Round( Inverse( [11 22, 33 44] ), 2 );
 
 ### Inv Update
 
-**구문:** y = Inv Update( S, X, <w=1> )
+**구문:** y = Inv Update( S, X, &lt;w=1&gt; )
 
 **설명:** 업데이트된 역행렬을 반환합니다. 여기서 첫 번째 인수S는 X와 동일한 수의 열을 가진 대칭 양정치 행렬이고 두 번째 인수 X는 추가 또는 삭제할 행이 포함된 행렬이며 세 번째 인수 w는 행을 추가할지 아니면 삭제할지 결정합니다. 행을 추가하려면 1을 사용하고 삭제하려면 -1을 사용하십시오. 이 함수는 S-w*S*X`*Inv(I+w*X*S*X`)*X*S로 실행되며 여기서 I는 단위 행렬이고 Inv(A)는 A의 역행렬을 의미합니다.
 
@@ -1007,7 +1005,7 @@ Is Matrix( [11 22 33] );
 
 ### J
 
-**구문:** y = J( nr, <nc>, <v> ); y = J( nr, nc ); y = J( n )
+**구문:** y = J( nr, &lt;nc&gt;, &lt;v&gt; ); y = J( nr, nc ); y = J( n )
 
 **설명:** 세 번째 인수에 의해 결정되는 값 행렬(nr x nc)을 생성합니다. 두 번째 인수의 기본값은 첫 번째 인수와 같고 세 번째 인수의 기본값은 1입니다. 그러나 세 번째 인수는 숫자, 숫자의 변수 이름 또는 JSL 코드일 수 있습니다. 세 번째 인수가 코드인 경우 코드가 실행되고 행렬의 모든 요소에 요소별, 행별로 반환 값이 할당됩니다.
 
@@ -1063,7 +1061,7 @@ tab = KDTable( [1 1 1, 1 2 1, 1 2 2, 2 2 2, 3 3 3, 4 5 6] );
 
 ### Least Squares Solve
 
-**구문:** {Beta, VarBeta} = Least Squares Solve(y, X, <<noIntercept, <<weights(optionalWeightVector), <<method("Sweep"|"GInv"))
+**구문:** {Beta, VarBeta} = Least Squares Solve(y, X, &lt;&lt;noIntercept, &lt;&lt;weights(optionalWeightVector), &lt;&lt;method("Sweep"|"GInv"))
 
 **설명:** 추정값의 벡터, Beta = Inverse(X&apos;X)X&apos;y 및 Beta의 추정 분산 행렬이 포함된 목록을 반환합니다. 선택적 <<noIntercept 인수는 절편이 없는 모형을 지정합니다. 선택적 <<weights 인수는 가중 최소 제곱을 수행하기 위한 가중치의 벡터를 지정합니다. 선택적 <<method 인수를 사용하면 정규 방정식의 해를 찾기 위한 방법으로 기본 Sweep 방법과 일반화 역행렬("GInv") 방법 중에서 선택할 수 있습니다.
 
@@ -1081,7 +1079,7 @@ X = [1, 2, 3, 4];
 
 ### Linear Regression
 
-**구문:** {Estimates, Std_Error, Diagnostics} = Linear Regression(y, X, <<noIntercept, <<printToLog, <<weight(WeightVector), <<freq(FrequencyVector)
+**구문:** {Estimates, Std_Error, Diagnostics} = Linear Regression(y, X, &lt;&lt;noIntercept, &lt;&lt;printToLog, &lt;&lt;weight(WeightVector), &lt;&lt;freq(FrequencyVector)
 
 **설명:** 가정된 모형 y = X * beta + error에 대해 선형 회귀를 적합시킵니다. 선택적 인수 <<noIntercept는 절편이 없는 모형을 지정합니다. 선택적 인수 <<printToLog는 적합 요약을 로그 창에 인쇄하도록 지정합니다. 선택적 인수 weight는 가중 최소 제곱을 수행하기 위한 가중치의 벡터를 지정하고 선택적 인수 freq는 빈도 벡터를 지정합니다. 추정값의 벡터가 포함된 목록, 표준 오차의 벡터 및 진단 목록을 반환합니다. 진단 목록에는 t 통계량의 벡터 및 추정값에 대한 p 값과 회귀 적합에 대한 R² 및 수정 R²이 포함됩니다.
 
@@ -1270,11 +1268,7 @@ AUpdate = Low Rank Symmetric Update BLAS( A, U, s );
 
 ### Matrix
 
-**구문:** y = Matrix( {{x11, ..., x1m}, {...}, {xn1, ..., xnm}} )
-
-y = Matrix( {x1, ..., xn} )
-
-y = Matrix( n, m )
+**구문:** y = Matrix( {{x11, ..., x1m}, {...}, {xn1, ..., xnm}} )y = Matrix( {x1, ..., xn} )y = Matrix( n, m )
 
 **설명:** n x m 행렬을 생성합니다. 각각 m개의 행 값을 포함하는 n개의 목록으로 구성된 목록을 지정하면 평가된 목록을 세로로 연결하여 행렬을 생성합니다. n개의 항목으로 구성된 단일 목록을 지정할 경우 반환 값은 n x 1 열 벡터입니다. 두 개의 정수 인수를 지정할 경우 반환 값은 n개의 행과 m개의 열을 포함하는 0 행렬입니다.
 
@@ -1458,7 +1452,7 @@ Print( NChooseK Matrix( 5, 3 ) );
 
 ### Ortho
 
-**구문:** L = Ortho( A, <Centered( 0 )>, <Scaled( 1 )> )
+**구문:** L = Ortho( A, &lt;Centered( 0 )&gt;, &lt;Scaled( 1 )&gt; )
 
 **설명:** 행렬의 열을 직교화합니다. 중심화 옵션은 열 합을 0으로 만듭니다. 척도화 옵션은 열을 단위 길이로 만듭니다.
 
@@ -1488,7 +1482,7 @@ Ortho Poly( 1 :: 10, 2 );
 
 ### P Spline Coef
 
-**구문:** coef = P Spline Coef( x, Internal Knot Grid, <degree = 3>, <KnotEndPoints = min(x) || max(x)> )
+**구문:** coef = P Spline Coef( x, Internal Knot Grid, &lt;degree = 3&gt;, &lt;KnotEndPoints = min(x) || max(x)&gt; )
 
 **설명:** P-스플라인 계수의 행렬을 반환합니다. Internal Knot Grid는 x의 백분위수를 기반으로 하는 원하는 매듭 점의 수이거나 내부 매듭 점을 지정하는 벡터입니다. 선택적 모수 degree는 P-스플라인의 차수를 지정하며 기본값은 3입니다.
 
@@ -1523,7 +1517,7 @@ m;/* 1*1+1  1*1+2, 2*2+1  2*2+2, 3*3+1  3*3+2 */
 
 ### Print Matrix
 
-**구문:** s = Print Matrix( M, <<ignore locale( 0 ), <<style( "parseable" ), <<separate( ", " ), <<line begin( "[ " ), <<line end( " ]" ) )
+**구문:** s = Print Matrix( M, &lt;&lt;ignore locale( 0 ), &lt;&lt;style( "parseable" ), &lt;&lt;separate( ", " ), &lt;&lt;line begin( "[ " ), &lt;&lt;line end( " ]" ) )
 
 **설명:** M 행렬을 다양한 방법으로 표시합니다. 선택적 인수 ignore locale은 로케일 정보를 따를지 여부를 지정합니다. 0은 로케일 정보를 따르는 것을 의미합니다. 선택적 인수 style은 스타일을 사용할지 여부와 사용할 스타일을 지정합니다. 사용 가능한 스타일은 parseable(형식이 조정된 JSL 행렬 표현식), latex 및 other입니다. style 인수가 other이면 마지막 세 개의 선택적 인수는 인쇄된 행의 시작 및 끝 문자와 연결된 항목을 구분하는 문자를 정의합니다.
 
@@ -1587,7 +1581,7 @@ y = Quadratic Form BLAS( A, x );
 
 ### Random SVD
 
-**구문:** {U, M, V} = Random SVD( X , <nSingularValues=min(nRow,nCol)>, <nOver=10>, <nIter=2>)
+**구문:** {U, M, V} = Random SVD( X , &lt;nSingularValues=min(nRow,nCol)&gt;, &lt;nOver=10&gt;, &lt;nIter=2&gt;)
 
 **설명:** 행렬 X에 대한 특이값 분해를 계산합니다. 이때 U*diag(M)*V`가 X와 동일하도록 {U, M, V} 목록을 반환하여 랜덤화 특이값 분해를 사용합니다.
 
@@ -1632,7 +1626,7 @@ Rank Index( [33, 22, 44, 11, ., 33] );
 
 ### Ranking
 
-**구문:** y = Ranking( x, < <<tie("average"|"row"|"minimum"|"maximum"|"arbitrary")> )
+**구문:** y = Ranking( x, &lt; &lt;&lt;tie("average"|"row"|"minimum"|"maximum"|"arbitrary")&gt; )
 
 **설명:** 1(낮음)에서 n(높음)까지 x 값의 순위 벡터를 반환합니다. 같은 값의 경우 임의로 순위가 정해집니다.
 
@@ -1648,7 +1642,7 @@ Ranking( [22, 11, 33, 11, 44, 55, 44, 44, 44], <<Tie( "minimum" ) );
 
 ### Ranking Tie
 
-**구문:** y = Ranking Tie( x, < <<tie("average"|"row"|"minimum"|"maximum"|"arbitrary")> )
+**구문:** y = Ranking Tie( x, &lt; &lt;&lt;tie("average"|"row"|"minimum"|"maximum"|"arbitrary")&gt; )
 
 **설명:** 1(낮음)에서 n(높음)까지 x 값의 순위 벡터를 반환합니다. 같은 값의 경우 순위를 평균합니다.
 
@@ -1663,7 +1657,7 @@ Ranking Tie( [33, 22, 44, 11, 33] );
 
 ### Robust PCA
 
-**구문:** {A,E} = Robust PCA( X , <Lambda(2/sqrt(max(nrow,ncol)))>, <tolerance=1e-10>,<maxit(75)>,<Center(1)>,<Scale(1)>
+**구문:** {A,E} = Robust PCA( X , &lt;Lambda(2/sqrt(max(nrow,ncol)))&gt;, &lt;tolerance=1e-10&gt;,&lt;maxit(75)&gt;,&lt;Center(1)&gt;,&lt;Scale(1)&gt;
 
 **설명:** 데이터를 낮은 계수 행렬 및 잔차 희소 행렬로 로버스트하게 분해합니다. 잔차에서 이상치가 감지됩니다. 결측값을 대치할 수도 있습니다.
 
@@ -1730,7 +1724,7 @@ Scoring Impute(
 
 ### Shape
 
-**구문:** r = Shape( M, nr, <nc>, <<bycol)
+**구문:** r = Shape( M, nr, &lt;nc&gt;, &lt;&lt;bycol)
 
 **설명:** 전체 행에 대한 M 행렬 또는 스칼라를 nr행 x nc열 형식으로 재구성합니다. nr에는 결측값이 허용됩니다. M의 데이터가 nr x nc 행렬을 채우는 데 필요한 만큼 복제됩니다. 선택적인 <<bycol 인수를 사용하면 열별로 데이터가 채워집니다. 기본적으로는 행별로 데이터가 채워집니다. 일반적으로 벡터를 행렬로 재구성하거나 행렬을 벡터화할 때 이 방법을 사용합니다.
 
@@ -1790,7 +1784,7 @@ Sort Descending( {111, 212, 133, 114, 55} );
 
 ### Sparse SVD
 
-**구문:** {U, M, V} = Sparse SVD( X , <nSingularValues=min(nRow,nCol)>, <tolerance=1e-10>)
+**구문:** {U, M, V} = Sparse SVD( X , &lt;nSingularValues=min(nRow,nCol)&gt;, &lt;tolerance=1e-10&gt;)
 
 **설명:** 행렬 X에 대한 특이값 분해를 수행합니다. U*diag(M)*V`가 X와 동일하게 되는 {U, M, V}를 반환하며 희소 행렬에 대해 부분적으로 재직교된 Lanczos 방법을 사용합니다.
 
@@ -1805,7 +1799,7 @@ Sparse SVD( [11 22, 33 44], 1, 1e-8 );
 
 ### Spline Coef
 
-**구문:** coef = Spline Coef( x, y, lambda, <weights> )
+**구문:** coef = Spline Coef( x, y, lambda, &lt;weights&gt; )
 
 **설명:** Returns a five-column matrix of coefficients in the following order: knots||a||b||c||d for each of the unique values in x. The smoothing parameter lambda must be a positive value, where larger values of lambda result in greater stiffness of the spline. The optional weights vector specifies a weight for each value in x. A weight of zero removes the corresponding point from the spline fit.
 
@@ -1820,7 +1814,7 @@ Spline Eval( 0 :: 10, Spline Coef( 0 :: 10, Sqrt( 0 :: 10 ), 100 ) );
 
 ### Spline Eval
 
-**구문:** yhat = Spline Eval( x, coef, <extrapolation=-1> )
+**구문:** yhat = Spline Eval( x, coef, &lt;extrapolation=-1&gt; )
 
 **설명:** Spline Coef() 함수에서 반환된 것과 동일한 형식의 coef 행렬을 사용하여 스플라인 예측을 실행합니다. extrapolation은 결측값을 반환하기 전에 스플라인 범위(범위에 대한 분수로 지정)에서 어느 정도까지 계산을 확장할지를 나타냅니다.
 
@@ -1848,7 +1842,7 @@ New Window( "Spline Fit",
 
 ### Spline Smooth
 
-**구문:** yhat = Spline Smooth( x, y, lambda, <weights> )
+**구문:** yhat = Spline Smooth( x, y, lambda, &lt;weights&gt; )
 
 **설명:** Returns the smoothed predicted values from a spline fit. The smoothing parameter lambda must be a positive value, where larger values of lambda result in greater stiffness of the spline. The optional weights vector specifies a weight for each value in x. A weight of zero removes the corresponding point from the spline fit.
 
@@ -1863,7 +1857,7 @@ Spline Smooth( 0 :: 10, Sqrt( 0 :: 10 ), 100 );
 
 ### Sweep
 
-**구문:** y = Sweep( A, <indices> )
+**구문:** y = Sweep( A, &lt;indices&gt; )
 
 **설명:** indices로 지정된 대각 피벗에서의 A 행렬 지우기를 반환합니다. 이것은 행렬을 한 번에 한 피벗씩 반전하는 방법입니다.
 
@@ -2042,7 +2036,7 @@ V Quantile( [11 22, 33 44, 35 46, 55 66], .25 );
 
 ### V Robust Standardize
 
-**구문:** b = V Robust Standardize( X, <center=1>, <scale=1> )
+**구문:** b = V Robust Standardize( X, &lt;center=1&gt;, &lt;scale=1&gt; )
 
 **설명:** 중앙값으로 중심화되고 X 행렬의 표준편차에 대한 로버스트 추정값으로 척도화된 행렬을 반환합니다. 선택적 부울 인수는 중심화 및 척도화가 수행되는지 여부를 지정합니다.
 
@@ -2119,7 +2113,7 @@ tab = VPTree( [1 1 1, 1 2 1, 1 2 2, 2 2 2, 3 3 3, 4 5 6] );
 
 ### Varimax
 
-**구문:** {R,T} = Varimax( F, <norm=1> )
+**구문:** {R,T} = Varimax( F, &lt;norm=1&gt; )
 
 **설명:** 지정된 행렬 F에 대한 Varimax 회전을 수행합니다. 회전된 행렬 및 직교 회전 행렬이 포함된 목록을 반환합니다. 기본적으로 정규화된 Varimax 회전이 수행됩니다. 정규화되지 않은 Varimax 회전을 수행하려면 norm = 0을 지정하십시오.
 
@@ -2166,7 +2160,7 @@ Vec Quadratic( exS, exX );
 
 ### Wavelet Basis Coef
 
-**구문:** y = Wavelet Basis Coef( x, grid, coef, <wavelet = "Haar" or "Biorthogonal" or "Coiflet" or "Daubechies" or "Symlet">, <param = 0> )
+**구문:** y = Wavelet Basis Coef( x, grid, coef, &lt;wavelet = "Haar" or "Biorthogonal" or "Coiflet" or "Daubechies" or "Symlet"&gt;, &lt;param = 0&gt; )
 
 **설명:** 지정된 소파동 모형에 대해 점 x에서의 예측을 반환합니다. grid 모수는 소파동 모형의 데이터 격자를 지정하는 벡터입니다. coef 모수는 소파동 계수의 벡터이고, wavelet 모수는 소파동 모형의 이름입니다. 선택적 param 모수는 소파동 모형 모수(필요한 경우, 기본값 0)입니다.
 

@@ -6,7 +6,7 @@
 
 ### Socket
 
-**Syntax:** socketHandle = Socket( <STREAM | DGRAM> )
+**Syntax:** socketHandle = Socket( &lt;STREAM | DGRAM&gt; )
 
 **Description:** Creates a socket variable that can communicate with sockets on this or another networked computer. The default argument is STREAM. Try your own company&apos;s website.
 
@@ -51,7 +51,7 @@ If( rc[2] == "ok",
 
 ### Accept
 
-**Syntax:** obj << Accept
+**Syntax:** obj &lt;&lt; Accept
 
 **Description:** Accept a connection from a remote computer on a Listening socket
 
@@ -69,7 +69,7 @@ rc = skt << accept();
 
 ### Accept Fast
 
-**Syntax:** obj << Accept Fast
+**Syntax:** obj &lt;&lt; Accept Fast
 
 **Description:** Accept a connection from a remote computer on a Listening socket
 
@@ -90,7 +90,7 @@ rc = skt << AcceptFast();
 
 ### Bind
 
-**Syntax:** obj << Bind
+**Syntax:** obj &lt;&lt; Bind
 
 **Description:** Bind a socket to a port on your computer in preparation for Listening for connections.
 
@@ -106,7 +106,7 @@ rc = skt << bind( "localhost", "80" );
 
 ### Close
 
-**Syntax:** obj << Close
+**Syntax:** obj &lt;&lt; Close
 
 **Description:** Close a socket.  The socket should be recreated before using it again.  Connected sockets can be closed locally or remotely.  Listening sockets can be closed locally.
 
@@ -119,7 +119,7 @@ x = Socket();/* use the socket...*/ x << Close();
 
 ### Connect
 
-**Syntax:** obj << Connect
+**Syntax:** obj &lt;&lt; Connect
 
 **Description:** Connect to a remote computer.
 
@@ -179,7 +179,7 @@ Show( Length( blob ) );
 
 ### GetPeerName
 
-**Syntax:** obj << GetPeerName
+**Syntax:** obj &lt;&lt; GetPeerName
 
 **Description:** Get the name of the remote computer.
 
@@ -195,7 +195,7 @@ Show( rc, tCall << getPeerName );
 
 ### GetSockName
 
-**Syntax:** obj << GetSockName
+**Syntax:** obj &lt;&lt; GetSockName
 
 **Description:** Get the name of the local computer.
 
@@ -211,7 +211,7 @@ Show( rc, tCall << getSockName );
 
 ### Ioctl
 
-**Syntax:** obj << Ioctl
+**Syntax:** obj &lt;&lt; Ioctl
 
 **Description:** Switch a socket into non-blocking mode or determine how much data is waiting to be read.
 
@@ -229,7 +229,7 @@ len = skt << Ioctl( FIONREAD ); // how much data available
 
 ### Listen
 
-**Syntax:** obj << Listen
+**Syntax:** obj &lt;&lt; Listen
 
 **Description:** Puts the socket in Listen mode.  Use Accept to accept a connection from a remote computer.
 
@@ -336,7 +336,7 @@ conskt << close; // nothing else to send to the browser
 
 ### Recv
 
-**Syntax:** obj << Recv
+**Syntax:** obj &lt;&lt; Recv
 
 **Description:** Receive data from a remote computer. Specify the maximum bytes you want to receive. If the socket is in blocking mode, the receive will not return until there is some data or the connection is closed remotely. In non-blocking mode, zero bytes and a Would Block return code might happen.
 
@@ -358,7 +358,7 @@ rc = skt << recv( 1000 ); // specifie the UPPER limit on the amount of data retu
 
 ### RecvFrom
 
-**Syntax:** obj << RecvFrom
+**Syntax:** obj &lt;&lt; RecvFrom
 
 **Description:** (DGram support, avoid this message if you don&apos;t know why you need it.) Receive a DGram from a remote computer.
 
@@ -424,7 +424,7 @@ Show( result );
 
 ### Send
 
-**Syntax:** obj << Send
+**Syntax:** obj &lt;&lt; Send
 
 **Description:** Send data to a remote computer.
 
@@ -441,7 +441,7 @@ rc = skt << Send( Char To Blob( "Hello World" ) );
 
 ### SendTo
 
-**Syntax:** obj << SendTo
+**Syntax:** obj &lt;&lt; SendTo
 
 **Description:** (DGram support, avoid this message if you don&apos;t know why you need it.) Send a DGram to a remote computer.
 

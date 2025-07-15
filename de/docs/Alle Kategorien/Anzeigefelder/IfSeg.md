@@ -6,7 +6,7 @@
 
 ### Append
 
-**Syntax:** obj << Append( seg2 )
+**Syntax:** obj &lt;&lt; Append( seg2 )
 
 **Beschreibung:** Fügt das Segment als letztes untergeordnetes Element des aktuellen Segments ein.
 
@@ -25,7 +25,7 @@ seg << Append( Lines Seg( [5 50 95 50] ) );
 
 ### Child
 
-**Syntax:** seg2 = obj << Child
+**Syntax:** seg2 = obj &lt;&lt; Child
 
 **Beschreibung:** Gibt das erste untergeordnete Element des Anzeigesegments zurück.
 
@@ -44,7 +44,7 @@ seg << Child; // not many segs support children
 
 ### Class Name
 
-**Syntax:** classname = obj << Class Name
+**Syntax:** classname = obj &lt;&lt; Class Name
 
 **Beschreibung:** Gibt den Namen der Anzeigeklasse für das Anzeigefeld zurück.
 
@@ -63,7 +63,7 @@ seg << Class Name;
 
 ### Clip Shape
 
-**Syntax:** seg << Clip Shape(Boundaries(Shape File, [ID(string)]) | Path([string] | [matrix]) | Empty())
+**Syntax:** seg &lt;&lt; Clip Shape(Boundaries(Shape File, [ID(string)]) | Path([string] | [matrix]) | Empty())
 
 **Beschreibung:** Stellt die Geometrie in der gewünschten Form dar. Die Form kann mittels einer Formendatei oder einem Pfad angegeben werden. Optional kann mit einer Formendatei eine ID angegeben werden, um eine einzelne Form aus der Datei auszuwählen, ansonsten wird die Verbindung sämtlicher Formen als Beschneidungsbereich verwendet. Ein Beschneidungspfad kann mit einer Nx3-Matrix oder mit einer Textdarstellung angegeben werden. Eine Pfadmatrix hat drei Spalten für x, y und Flags für jeden Punkt im Pfad. Die Flag-Werte sind 0 für Steuern, 1 für Verschieben, 2 für Liniensegment, 3 für kubisches Bézier-Segment und sie sind negativ, wenn der Punkt den Pfad auch schließt. Der Pfadtext unterstützt die SVG-Syntax.
 
@@ -93,7 +93,7 @@ cs << Clip Shape( Boundaries( "US States" ) );
 
 ### Delete
 
-**Syntax:** obj << Delete
+**Syntax:** obj &lt;&lt; Delete
 
 **Beschreibung:** Löscht das Anzeigesegment.
 
@@ -112,7 +112,7 @@ seg << Delete;
 
 ### Frame
 
-**Syntax:** FrameBox = obj << Frame
+**Syntax:** FrameBox = obj &lt;&lt; Frame
 
 **Beschreibung:** Gibt das Rahmenfeld zurück, in dem sich das Anzeigesegment befindet.
 
@@ -131,7 +131,7 @@ seg << Frame;
 
 ### Get
 
-**Syntax:** 0|1 = obj << Get
+**Syntax:** 0|1 = obj &lt;&lt; Get
 
 **Beschreibung:** Gibt den Zustand des IfSeg zurück.
 
@@ -152,7 +152,7 @@ seg << get;
 
 ### Get Clip Shape
 
-**Syntax:** obj << Get Clip Shape
+**Syntax:** obj &lt;&lt; Get Clip Shape
 
 **Beschreibung:** Gibt die aktuelle Beschneidungsform aus
 
@@ -183,7 +183,7 @@ cs << Get Clip Shape();
 
 ### Get Description
 
-**Syntax:** description = obj << Get Description
+**Syntax:** description = obj &lt;&lt; Get Description
 
 **Beschreibung:** Ruft die Beschreibung des Anzeigesegments ab.
 
@@ -202,7 +202,7 @@ seg << get description();
 
 ### Parent
 
-**Syntax:** seg2 = obj << Parent
+**Syntax:** seg2 = obj &lt;&lt; Parent
 
 **Beschreibung:** Gibt das übergeordnete Element des Anzeigesegments zurück.
 
@@ -221,7 +221,7 @@ seg << Parent;
 
 ### Set
 
-**Syntax:** obj << Set( state=0|1 )
+**Syntax:** obj &lt;&lt; Set( state=0|1 )
 
 **Beschreibung:** Blendet die Anzeigesegmente innerhalb des IfSeg ein oder aus.
 
@@ -245,7 +245,7 @@ seg << set( 1 );
 
 ### Set Description
 
-**Syntax:** obj << Set Description( description )
+**Syntax:** obj &lt;&lt; Set Description( description )
 
 **Beschreibung:** Legt die Beschreibung des Anzeigesegments fest.
 
@@ -264,7 +264,7 @@ seg << set description( "my seg" );
 
 ### Sib
 
-**Syntax:** seg2 = obj << Sib
+**Syntax:** seg2 = obj &lt;&lt; Sib
 
 **Beschreibung:** Gibt das Geschwisterelement des Anzeigesegments zurück.
 
@@ -283,7 +283,7 @@ seg << Sib;
 
 ### Sib Append
 
-**Syntax:** obj << Sib Append( seg2 )
+**Syntax:** obj &lt;&lt; Sib Append( seg2 )
 
 **Beschreibung:** Fügt ein Anzeigesegment direkt nach dem Anzeigesegment ein.
 
@@ -321,7 +321,7 @@ mapSeg << Sib Append( Line Seg( xval, yval, <<line color( "Green" ), <<line widt
 
 ### Sib Prepend
 
-**Syntax:** obj << Sib Prepend( seg2 )
+**Syntax:** obj &lt;&lt; Sib Prepend( seg2 )
 
 **Beschreibung:** Fügt ein Anzeigesegment direkt vor dem Anzeigesegment ein.
 
@@ -355,9 +355,7 @@ seg << Sib Prepend( Line Seg( xval, yval, <<line color( "Green" ), <<line width(
 
 ### Enabled
 
-**Syntax:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**Syntax:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Beschreibung:** Ein Objekt, das nicht aktiviert ist, reagiert nicht auf Tastatur- oder Mauseingabe. Diese Eigenschaft wird von untergeordneten Objekten geerbt, deshalb verursacht ein Containerobjekt, das deaktiviert ist, die Deaktivierung aller untergeordneten Objekte.
 
@@ -389,9 +387,7 @@ New Window( "enabled",
 
 ### Get Enabled
 
-**Syntax:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**Syntax:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Beschreibung:** Ein Objekt, das nicht aktiviert ist, reagiert nicht auf Tastatur- oder Mauseingabe. Diese Eigenschaft wird von untergeordneten Objekten geerbt, deshalb verursacht ein Containerobjekt, das deaktiviert ist, die Deaktivierung aller untergeordneten Objekte.
 
@@ -423,7 +419,7 @@ New Window( "enabled",
 
 ### Get Namespace
 
-**Syntax:** obj << Get Namespace
+**Syntax:** obj &lt;&lt; Get Namespace
 
 **Beschreibung:** Gibt den zu diesem Anzeigeobjekt zugehörigen Namensraum zurück.
 
@@ -441,7 +437,7 @@ Show( ns:x, x );
 
 ### Get Properties
 
-**Syntax:** obj << Get Properties
+**Syntax:** obj &lt;&lt; Get Properties
 
 **Beschreibung:** Gibt ein assoziatives Array zurück, das die Eigenschaften und deren Werte des Anzeigefelds enthält.
 
@@ -455,7 +451,7 @@ bb << Get Properties;
 
 ### Get Property
 
-**Syntax:** obj << Get Property( "property" )
+**Syntax:** obj &lt;&lt; Get Property( "property" )
 
 **Beschreibung:** Gibt die aktuelle Einstellung für die benannte property zurück.
 
@@ -469,7 +465,7 @@ bb << Get Property( "Enabled" );
 
 ### Get Property List
 
-**Syntax:** obj << Get Property List
+**Syntax:** obj &lt;&lt; Get Property List
 
 **Beschreibung:** Gibt eine Liste von Eigenschaften des Anzeigefelds zurück.
 
@@ -483,7 +479,7 @@ bb << Get Property List;
 
 ### Set Property
 
-**Syntax:** obj << Set Property( "property", value )
+**Syntax:** obj &lt;&lt; Set Property( "property", value )
 
 **Beschreibung:** Legt den Wert für die benannte property für das Anzeigefeld fest.
 
@@ -499,7 +495,7 @@ bb << Set Property( "Enabled", 0 );
 
 ### If Seg
 
-**Syntax:** seg = If Seg(<state=0|1>)
+**Syntax:** seg = If Seg(&lt;state=0|1&gt;)
 
 **Beschreibung:** Erstellt ein Segment, das untergeordnete Elemente von Anzeigesegmenten ein- oder ausblendet.
 

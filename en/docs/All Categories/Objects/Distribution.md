@@ -38,7 +38,7 @@ Distribution( colref );
 
 ### By
 
-**Syntax:** obj = Distribution(...<By( column(s) )>...)
+**Syntax:** obj = Distribution(...&lt;By( column(s) )&gt;...)
 
 **Description:** Performs a separate analysis for each level of the specified column.
 
@@ -57,7 +57,7 @@ obj = dt << Distribution( Column( :Age, :Weight ), By( _bycol ) );
 
 ### Column
 
-**Syntax:** obj = Distribution(...<Column( column(s) )>...)
+**Syntax:** obj = Distribution(...&lt;Column( column(s) )&gt;...)
 
 ```jsl
 
@@ -69,7 +69,7 @@ obj = dt << Distribution( Column( :Age, :Weight ) );
 
 ### Freq
 
-**Syntax:** obj = Distribution(...<Freq( column )>...)
+**Syntax:** obj = Distribution(...&lt;Freq( column )&gt;...)
 
 **Description:** Specifies a column whose values assign a frequency to each row for the analysis.
 
@@ -84,7 +84,7 @@ obj = dt << Distribution( Column( :Age, :Weight ), Freq( _freqcol ) );
 
 ### Weight
 
-**Syntax:** obj = Distribution(...<Weight( column )>...)
+**Syntax:** obj = Distribution(...&lt;Weight( column )&gt;...)
 
 **Description:** Specifies a column whose values assign a weight to each row for the analysis.
 
@@ -127,7 +127,7 @@ obj = dt << Distribution( Y( :Age, :Weight ) );
 
 ### Apply Preset
 
-**Syntax:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntax:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Description:** Apply a previously created preset to the object, updating the options and customizations to match the saved settings.
 
@@ -169,7 +169,7 @@ obj[1] << Apply Preset( "Sample Presets", "Check Normality" );
 
 ### Arrange in Rows
 
-**Syntax:** obj << Arrange in Rows( number )
+**Syntax:** obj &lt;&lt; Arrange in Rows( number )
 
 **Description:** Specifies the number of distribution reports to display across the window.
 
@@ -184,7 +184,7 @@ obj << ArrangeInRows( 3 );
 
 ### Axes on Left
 
-**Syntax:** obj << Axes on Left( state=0|1 )
+**Syntax:** obj &lt;&lt; Axes on Left( state=0|1 )
 
 **Description:** Moves the count, probability, density, and normal quantile plot axes to the left side of a horizontal graph.
 
@@ -199,7 +199,7 @@ obj << Axes on Left( 1 );
 
 ### CDF Plot
 
-**Syntax:** obj << CDF Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; CDF Plot( state=0|1 )
 
 **Description:** Shows or hides a plot of the empirical cumulative distribution function.
 
@@ -214,7 +214,7 @@ obj << CDF Plot( 1 );
 
 ### Capability Analysis
 
-**Syntax:** obj << Capability Analysis( LSL( number ), Target( number ), USL( number ) )
+**Syntax:** obj &lt;&lt; Capability Analysis( LSL( number ), Target( number ), USL( number ) )
 
 **Description:** Performs a capability analysis given the stated lower specification limit (LSL), target, and upper specification limit (USL).
 
@@ -229,7 +229,7 @@ obj << Capability Analysis( LSL( 16 ), USL( 24 ), Target( 20 ) );
 
 ### Confidence Interval
 
-**Syntax:** obj << Confidence Interval( number, <Upper | Lower>, <Sigma( number )> )
+**Syntax:** obj &lt;&lt; Confidence Interval( number, &lt;Upper | Lower&gt;, &lt;Sigma( number )&gt; )
 
 **Description:** Computes the specified confidence intervals around both the mean and the standard deviation. If you specify sigma, the specified value is used to compute the confidence interval around the mean.
 
@@ -248,7 +248,7 @@ obj << Confidence Interval( 0.95, Sigma( 4 ) );
 
 ### Count Axis
 
-**Syntax:** obj << Count Axis( state=0|1 )
+**Syntax:** obj &lt;&lt; Count Axis( state=0|1 )
 
 **Description:** Shows or hides the count axis for the histogram.
 
@@ -263,7 +263,7 @@ obj << Count Axis( 1 );
 
 ### Custom Quantiles
 
-**Syntax:** obj << Custom Quantiles( fraction, [quantile1, quantile2, ... quantileN] )
+**Syntax:** obj &lt;&lt; Custom Quantiles( fraction, [quantile1, quantile2, ... quantileN] )
 
 **Description:** Creates a report of the quantile rank estimates and a report of the smoothed empirical likelihood quantile estimates for the specified quantiles. Uses the fraction as the confidence level for confidence intervals in both reports.
 
@@ -278,7 +278,7 @@ obj << Custom Quantiles( 0.975, [0.075, 0.1, 0.125, 0.975, 0.99] );
 
 ### Customize Summary Statistics
 
-**Syntax:** obj << Customize Summary Statistics(statistic1( state=0|1 ), statistic2( state=0|1 ), ..., statisticN( state=0|1 ), <Set Trimmed Mean Percent(number)>, <Set Alpha Level(number)>)
+**Syntax:** obj &lt;&lt; Customize Summary Statistics(statistic1( state=0|1 ), statistic2( state=0|1 ), ..., statisticN( state=0|1 ), &lt;Set Trimmed Mean Percent(number)&gt;, &lt;Set Alpha Level(number)&gt;)
 
 **Description:** Customizes the summary statistics that are displayed in the Summary Statistics report.
 
@@ -293,7 +293,7 @@ obj << Customize Summary Statistics( N( 0 ), Variance( 1 ), Skewness( 1 ) );
 
 ### Density Axis
 
-**Syntax:** obj << Density Axis( state=0|1 )
+**Syntax:** obj &lt;&lt; Density Axis( state=0|1 )
 
 **Description:** Shows or hides the density axis for the density curve on the histogram.
 
@@ -308,7 +308,7 @@ obj << Density Axis( 1 );
 
 ### Fit All
 
-**Syntax:** obj << Fit All
+**Syntax:** obj &lt;&lt; Fit All
 
 **Description:** Compares all possible distributions.
 
@@ -323,7 +323,7 @@ obj << Fit All;
 
 ### Fit Beta
 
-**Syntax:** obj << Fit Beta
+**Syntax:** obj &lt;&lt; Fit Beta
 
 **Description:** Fits a two-parameter beta distribution to data between 0 and 1 (not inclusive).
 
@@ -338,7 +338,7 @@ obj << Fit Beta;
 
 ### Fit Beta Binomial
 
-**Syntax:** obj << Fit Beta Binomial( Sample Size( n | column ) )
+**Syntax:** obj &lt;&lt; Fit Beta Binomial( Sample Size( n | column ) )
 
 **Description:** Fits a beta binomial distribution given a specified constant sample size or a column that contains the sample sizes. This distribution is a more flexible version of the binomial distribution.
 
@@ -366,7 +366,7 @@ obj << Fit Beta Binomial( Sample Size( :Box Size ) );
 
 ### Fit Binomial
 
-**Syntax:** obj << Fit Binomial( Sample size( n | column ) )
+**Syntax:** obj &lt;&lt; Fit Binomial( Sample size( n | column ) )
 
 **Description:** Fits a binomial distribution given a specified constant sample size or a column that contains the sample sizes. This distribution models the total number of successes in n independent trials.
 
@@ -381,7 +381,7 @@ obj << Fit Binomial( Sample Size( :Box Size ) );
 
 ### Fit Cauchy
 
-**Syntax:** obj << Fit Cauchy
+**Syntax:** obj &lt;&lt; Fit Cauchy
 
 **Description:** Fits a Cauchy distribution to the data. The Cauchy distribution is robust to outliers and is equivalent to a t distribution with one degree of freedom.
 
@@ -401,7 +401,7 @@ Distribution( Column( :X ), Fit Normal, Fit Cauchy );
 
 ### Fit ExGaussian
 
-**Syntax:** obj << Fit ExGaussian
+**Syntax:** obj &lt;&lt; Fit ExGaussian
 
 **Description:** Fits an exponentially modified Gaussian distribution to the data.
 
@@ -431,7 +431,7 @@ obj << Fit Exponential;
 
 ### Fit Exponential
 
-**Syntax:** obj << Fit Exponential
+**Syntax:** obj &lt;&lt; Fit Exponential
 
 **Description:** Fits an exponential distribution to nonnegative data.
 
@@ -446,7 +446,7 @@ obj << Fit Exponential;
 
 ### Fit Gamma
 
-**Syntax:** obj << Fit Gamma
+**Syntax:** obj &lt;&lt; Fit Gamma
 
 **Description:** Fits a two-parameter gamma distribution to positive data.
 
@@ -461,9 +461,7 @@ obj << Fit Gamma;
 
 ### Fit Handle
 
-**Syntax:** obj << (Fit Handle[number] << {option}); 
-
- obj << (Fit Handle["Distribution Name"] << {option})
+**Syntax:** obj &lt;&lt; (Fit Handle[number] &lt;&lt; {option}); obj &lt;&lt; (Fit Handle["Distribution Name"] &lt;&lt; {option})
 
 **Description:** Array of handles to the fitted distributions. This enables you to send commands to specific distributions that have been fit.
 
@@ -481,7 +479,7 @@ obj << (Fit Handle["Lognormal"] << QQ Plot( 1 ));
 
 ### Fit Johnson
 
-**Syntax:** obj << Fit Johnson
+**Syntax:** obj &lt;&lt; Fit Johnson
 
 **Description:** Fits a Johnson distribution to the data. The most appropriate of the three types of Johnson distributions (Su, Sb, and Sl) is chosen based on the quantiles.
 
@@ -509,7 +507,7 @@ obj << Fit Johnson;
 
 ### Fit Largest Extreme Value
 
-**Syntax:** obj << Fit Largest Extreme Value
+**Syntax:** obj &lt;&lt; Fit Largest Extreme Value
 
 **Description:** Fits a largest extreme value distribution to the data.
 
@@ -524,7 +522,7 @@ obj << Fit Largest Extreme Value;
 
 ### Fit Lognormal
 
-**Syntax:** obj << Fit Lognormal
+**Syntax:** obj &lt;&lt; Fit Lognormal
 
 **Description:** Fits a lognormal distribution to positive data.
 
@@ -539,7 +537,7 @@ obj << Fit Lognormal;
 
 ### Fit Negative Binomial
 
-**Syntax:** obj << Fit Negative Binomial
+**Syntax:** obj &lt;&lt; Fit Negative Binomial
 
 **Description:** Fits a negative binomial distribution to the data. This distribution is equivalent to the Gamma Poisson distribution.
 
@@ -554,7 +552,7 @@ obj << Fit Negative Binomial;
 
 ### Fit Normal
 
-**Syntax:** obj << Fit Normal
+**Syntax:** obj &lt;&lt; Fit Normal
 
 **Description:** Fits a normal distribution to the data.
 
@@ -569,7 +567,7 @@ obj << Fit Normal;
 
 ### Fit Normal 2 Mixture
 
-**Syntax:** obj << Fit Normal 2 Mixture
+**Syntax:** obj &lt;&lt; Fit Normal 2 Mixture
 
 **Description:** Fits a mixture of two normal distributions. This distribution is capable of fitting bimodal data.
 
@@ -584,7 +582,7 @@ obj << Fit Normal 2 Mixture;
 
 ### Fit Normal 3 Mixture
 
-**Syntax:** obj << Fit Normal 3 Mixture
+**Syntax:** obj &lt;&lt; Fit Normal 3 Mixture
 
 **Description:** Fits a mixture of three normal distributions. This distribution is capable of fitting multi-modal data.
 
@@ -599,7 +597,7 @@ obj << Fit Normal 3 Mixture;
 
 ### Fit Poisson
 
-**Syntax:** obj << Fit Poisson
+**Syntax:** obj &lt;&lt; Fit Poisson
 
 **Description:** Fits a Poisson distribution to the data. This distribution is a popular choice for count data. The fitted mean of the Poisson distribution is equal to the variance.
 
@@ -614,7 +612,7 @@ obj << Fit Poisson;
 
 ### Fit SHASH
 
-**Syntax:** obj << Fit Shash
+**Syntax:** obj &lt;&lt; Fit Shash
 
 **Description:** Fits a sinh-arcsinh (SHASH) distribution to the data.
 
@@ -629,7 +627,7 @@ obj << Fit Shash;
 
 ### Fit Smallest Extreme Value
 
-**Syntax:** obj << Fit Smallest Extreme Value
+**Syntax:** obj &lt;&lt; Fit Smallest Extreme Value
 
 **Description:** Fits a smallest extreme value distribution to the data.
 
@@ -644,7 +642,7 @@ obj << Fit Smallest Extreme Value;
 
 ### Fit Smooth Curve
 
-**Syntax:** obj << Fit Smooth Curve( <Bandwidth( number )> )
+**Syntax:** obj &lt;&lt; Fit Smooth Curve( &lt;Bandwidth( number )&gt; )
 
 **Description:** Fits a smooth curve to the data using nonparametric density estimation. You can set the smoothness by specifying the bandwidth.
 
@@ -672,7 +670,7 @@ obj << Fit Smooth Curve( Bandwidth( 0.02 ) );
 
 ### Fit Student's t
 
-**Syntax:** obj << Fit Student&apos;s t
+**Syntax:** obj &lt;&lt; Fit Student&apos;s t
 
 **Description:** Fits a Student&apos;s t distribution to the data. This distribution is a robust option that spans the space between a normal distribution and a Cauchy distribution.
 
@@ -692,7 +690,7 @@ Distribution( Column( :X ), Fit Normal, Fit Student's t );
 
 ### Fit Weibull
 
-**Syntax:** obj << Fit Weibull
+**Syntax:** obj &lt;&lt; Fit Weibull
 
 **Description:** Fits a two-parameter Weibull distribution to positive data.
 
@@ -707,7 +705,7 @@ obj << Fit Weibull;
 
 ### Fit ZI Beta Binomial
 
-**Syntax:** obj << Fit ZI Beta Binomial( Sample Size( n | column ) )
+**Syntax:** obj &lt;&lt; Fit ZI Beta Binomial( Sample Size( n | column ) )
 
 **Description:** Fits a zero inflated beta binomial distribution given the specified constant sample size or a column that contains the sample size. This distribution models the total number of successes in n independent trials where there are more zeros observed than would be expected for the beta binomial distribution.
 
@@ -722,7 +720,7 @@ obj << Fit ZI Beta Binomial( Sample Size( :Box Size ) );
 
 ### Fit ZI Binomial
 
-**Syntax:** obj << Fit ZI Binomial( Sample Size( n | column ) )
+**Syntax:** obj &lt;&lt; Fit ZI Binomial( Sample Size( n | column ) )
 
 **Description:** Fits a zero inflated binomial distribution given the specified constant sample size or a column that contains the sample size. This distribution models the total number of successes in n independent trials where there are more zeros observed than would be expected for the binomial distribution.
 
@@ -737,7 +735,7 @@ obj << Fit ZI Binomial( Sample Size( :Box Size ) );
 
 ### Fit ZI Negative Binomial
 
-**Syntax:** obj << Fit ZI Negative Binomial
+**Syntax:** obj &lt;&lt; Fit ZI Negative Binomial
 
 **Description:** Fits a zero-inflated negative binomial distribution to data that contain values of zero.
 
@@ -751,7 +749,7 @@ dt << Distribution( Column( :satell ), Fit ZI Negative Binomial );
 
 ### Fit ZI Poisson
 
-**Syntax:** obj << Fit ZI Poisson
+**Syntax:** obj &lt;&lt; Fit ZI Poisson
 
 **Description:** Fits a zero-inflated Poisson distribution to data that contain values of zero.
 
@@ -765,7 +763,7 @@ dt << Distribution( Column( :satell ), Fit ZI Poisson );
 
 ### Fit ZI SHASH
 
-**Syntax:** obj << Fit ZI SHASH
+**Syntax:** obj &lt;&lt; Fit ZI SHASH
 
 **Description:** Fits a SHASH distribution with a point mass at zero to the data.
 
@@ -787,7 +785,7 @@ Distribution( Column( :X ), Fit ZI SHASH, Fit SHASH );
 
 ### Frequencies
 
-**Syntax:** obj << Frequencies( state=0|1 )
+**Syntax:** obj &lt;&lt; Frequencies( state=0|1 )
 
 **Description:** Shows or hides the Frequencies report, which lists the counts and probabilities for each level. On by default.
 
@@ -817,7 +815,7 @@ obj << Frequencies( 0 );
 
 ### Histogram
 
-**Syntax:** obj << Histogram( state=0|1 )
+**Syntax:** obj &lt;&lt; Histogram( state=0|1 )
 
 **Description:** Shows or hides the histogram. On by default.
 
@@ -833,7 +831,7 @@ obj << Histogram( 0 );
 
 ### Histogram Color
 
-**Syntax:** obj << Histogram Color( color )
+**Syntax:** obj &lt;&lt; Histogram Color( color )
 
 **Description:** Changes the color of the histogram bars.
 
@@ -848,7 +846,7 @@ obj << Histogram Color( "Red" );
 
 ### Horizontal Layout
 
-**Syntax:** obj << Horizontal Layout( state=0|1 )
+**Syntax:** obj &lt;&lt; Horizontal Layout( state=0|1 )
 
 **Description:** Changes the orientation of the histogram and the reports to be horizontal.
 
@@ -863,7 +861,7 @@ obj << Horizontal Layout( 1 );
 
 ### Mosaic Plot
 
-**Syntax:** obj << Mosaic Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; Mosaic Plot( state=0|1 )
 
 **Description:** Shows or hides a mosaic bar chart for each nominal or ordinal response variable. A mosaic plot is a stacked bar chart where each segment is proportional to its group&apos;s frequency count.
 
@@ -918,7 +916,7 @@ preset = obj[1] << New Preset();
 
 ### Normal Quantile Plot
 
-**Syntax:** obj << Normal Quantile Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; Normal Quantile Plot( state=0|1 )
 
 **Description:** Shows or hides a plot that can be used to visualize the extent to which a variable is normally distributed.
 
@@ -933,7 +931,7 @@ obj << Normal Quantile Plot( 1 );
 
 ### Order By
 
-**Syntax:** obj << Order By( "Default"|"Count Descending"|"Count Ascending" )
+**Syntax:** obj &lt;&lt; Order By( "Default"|"Count Descending"|"Count Ascending" )
 
 **Description:** Orders the histogram, mosaic plot, and Frequencies report in ascending or descending order, by count. You can also revert back to the default ordering.
 
@@ -948,7 +946,7 @@ obj << Order By( "Count Descending" );
 
 ### Outlier Box Plot
 
-**Syntax:** obj << Outlier Box Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; Outlier Box Plot( state=0|1 )
 
 **Description:** Shows or hides a box plot that enables you to see the distribution and identify possible outliers. On by default.
 
@@ -964,7 +962,7 @@ obj << Outlier Box Plot( 0 );
 
 ### Outlier Box Plot Row Cutoff
 
-**Syntax:** obj << Outlier Box Plot Row Cutoff( number )
+**Syntax:** obj &lt;&lt; Outlier Box Plot Row Cutoff( number )
 
 **Description:** Sets the launch option for the maximum number of rows before the outlier box plot is turned off initially. "100000" by default.
 
@@ -979,7 +977,7 @@ obj << Outlier Box Plot Row Cutoff( 10000 );
 
 ### PpK Capability Labeling
 
-**Syntax:** obj << PpK Capability Labeling( state=0|1 )
+**Syntax:** obj &lt;&lt; PpK Capability Labeling( state=0|1 )
 
 **Description:** In Process Capability output, switches the labeling of the overall capability indices to use the prefix Pp instead of Cp. On by default.
 
@@ -995,7 +993,7 @@ obj << Process Capability( LSL( 5 ), Target( 40 ), USL( 75 ) );
 
 ### Prediction Interval
 
-**Syntax:** obj << Prediction Interval( Alpha, N Samples, <Lower | Upper> )
+**Syntax:** obj &lt;&lt; Prediction Interval( Alpha, N Samples, &lt;Lower | Upper&gt; )
 
 **Description:** Computes the prediction intervals for an individual future observation and the mean of a specified number (N Samples) of future observations. You can create one-sided or two-sided prediction intervals.
 
@@ -1010,7 +1008,7 @@ obj << Prediction Interval( 0.95, 20 );
 
 ### Prob Axis
 
-**Syntax:** obj << Prob Axis( state=0|1 )
+**Syntax:** obj &lt;&lt; Prob Axis( state=0|1 )
 
 **Description:** Shows or hides the probability or proportion axis for this histogram.
 
@@ -1025,7 +1023,7 @@ obj << Prob Axis( 1 );
 
 ### Process Capability
 
-**Syntax:** obj << Process Capability( LSL( number ), Target( number ), USL( number ) )
+**Syntax:** obj &lt;&lt; Process Capability( LSL( number ), Target( number ), USL( number ) )
 
 **Description:** Computes a process capability analysis given the lower specification limit (LSL), target, and upper specification limit (USL). The Process Capability report includes a histogram, summary details, capability indices, and nonconformance statistics.
 
@@ -1040,7 +1038,7 @@ obj << Process Capability( LSL( 5 ), Target( 40 ), USL( 75 ) );
 
 ### Quantile Box Plot
 
-**Syntax:** obj << Quantile Box Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; Quantile Box Plot( state=0|1 )
 
 **Description:** Shows or hides a box plot with the following quantiles: 0%, 0.5%, 2.5%, 10%, 25%, 50%, 75%, 90%, 97.5%, 99%, and 100%.
 
@@ -1056,7 +1054,7 @@ obj << Quantile Box Plot( 1 );
 
 ### Quantiles
 
-**Syntax:** obj << Quantiles( state=0|1 )
+**Syntax:** obj &lt;&lt; Quantiles( state=0|1 )
 
 **Description:** Shows or hides the Quantiles report, which lists the values of selected quantiles. By default, the quantiles listed are 0%, 0.5%, 2.5%, 10%, 25%, 50%, 75%, 90%, 97.5%, 99.5%, and 100%. On by default.
 
@@ -1094,7 +1092,7 @@ obj[1] << Render Preset(
 
 ### Save
 
-**Syntax:** obj << Save( "Level Numbers"|"Level Midpoints"|"Ranks"|"Ranks averaged"|"Prob Scores"|"Normal Quantiles"|"Standardized"|"Centered"|"Robust Standardized"|"Robust Centered"|"Spec Limits"|"Script to Log" )
+**Syntax:** obj &lt;&lt; Save( "Level Numbers"|"Level Midpoints"|"Ranks"|"Ranks averaged"|"Prob Scores"|"Normal Quantiles"|"Standardized"|"Centered"|"Robust Standardized"|"Robust Centered"|"Spec Limits"|"Script to Log" )
 
 **Description:** Saves the specified observation-specific statistic to a new column in the data table. There is also an option to print the script commands that generate the current report to the log window.
 
@@ -1109,7 +1107,7 @@ obj << Save( "Ranks" );
 
 ### Separate Bars
 
-**Syntax:** obj << Separate Bars( state=0|1 )
+**Syntax:** obj &lt;&lt; Separate Bars( state=0|1 )
 
 **Description:** Adds space between the bars of the histogram. This option is available only for categorical variables.
 
@@ -1137,7 +1135,7 @@ obj << Separate Bars( 1 );
 
 ### Set Bin Width
 
-**Syntax:** obj << Set Bin Width( number )
+**Syntax:** obj &lt;&lt; Set Bin Width( number )
 
 **Description:** Sets the histogram bin width, using the axis as the origin. This option is available only for continuous variables.
 
@@ -1152,7 +1150,7 @@ obj << Set Bin Width( 5 );
 
 ### Set Quantile Increment
 
-**Syntax:** obj << Set Quantile Increment( fraction | "revert to default quantiles" )
+**Syntax:** obj &lt;&lt; Set Quantile Increment( fraction | "revert to default quantiles" )
 
 **Description:** Sets the increment used in the Quantiles report to the specified fraction or changes back to the default quantiles. This option is available only for continuous variables.
 
@@ -1169,7 +1167,7 @@ obj << Set Quantile Increment( "revert to default quantiles" );
 
 ### Shadowgram
 
-**Syntax:** obj << Shadowgram( state=0|1 )
+**Syntax:** obj &lt;&lt; Shadowgram( state=0|1 )
 
 **Description:** Shows or hides a smooth shadowgram in place of the histogram. A shadowgram overlays histograms with different bin widths. This option is available only for continuous variables.
 
@@ -1184,7 +1182,7 @@ obj << Shadowgram( 1 );
 
 ### Show Counts
 
-**Syntax:** obj << Show Counts( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Counts( state=0|1 )
 
 **Description:** Shows or hides the bar counts on the histogram, which give the frequency of column values represented by each histogram bar.
 
@@ -1199,7 +1197,7 @@ obj << Show Counts( 1 );
 
 ### Show Percents
 
-**Syntax:** obj << Show Percents( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Percents( state=0|1 )
 
 **Description:** Shows or hides the bar percents on the histogram, which give the percentage of column values represented by each histogram bar.
 
@@ -1214,7 +1212,7 @@ obj << Show Percents( 1 );
 
 ### Stack
 
-**Syntax:** obj << Stack( state=0|1 )
+**Syntax:** obj &lt;&lt; Stack( state=0|1 )
 
 **Description:** Changes the orientation of the histogram and reports to horizontal and stacks the individual distribution reports vertically.
 
@@ -1229,7 +1227,7 @@ obj << Stack( 1 );
 
 ### Std Error Bars
 
-**Syntax:** obj << Std Error Bars( state=0|1 )
+**Syntax:** obj &lt;&lt; Std Error Bars( state=0|1 )
 
 **Description:** Shows or hides standard error bars on each of the histogram bars.
 
@@ -1244,7 +1242,7 @@ obj << Std Error Bars( 1 );
 
 ### Stem and Leaf
 
-**Syntax:** obj << Stem and Leaf( state=0|1 )
+**Syntax:** obj &lt;&lt; Stem and Leaf( state=0|1 )
 
 **Description:** Shows or hides a stem-and-leaf plot.
 
@@ -1259,7 +1257,7 @@ obj << Stem and Leaf( 1 );
 
 ### Summary Statistics
 
-**Syntax:** obj << Summary Statistics( state=0|1 )
+**Syntax:** obj &lt;&lt; Summary Statistics( state=0|1 )
 
 **Description:** Shows or hides the Summary Statistics report, which lists the mean, standard deviation, and other summary statistics for continuous variables. On by default.
 
@@ -1275,7 +1273,7 @@ obj << Summary Statistics( 0 );
 
 ### Test Equivalence
 
-**Syntax:** obj << Test Equivalence( Target( number ), Practical Difference( number ), <Confidence( fraction )> )
+**Syntax:** obj &lt;&lt; Test Equivalence( Target( number ), Practical Difference( number ), &lt;Confidence( fraction )&gt; )
 
 **Description:** Tests whether the sample mean is equivalent to a hypothesized value (Target) using the Two One-Sided Tests (TOST) approach.
 
@@ -1290,7 +1288,7 @@ obj << Test Equivalence( Target( 62 ), Practical Difference( 1 ), Confidence( 0.
 
 ### Test Mean
 
-**Syntax:** obj << Test Mean( number, <Sigma( number )>, < Wilcoxon Signed Rank( 0|1 ) >, <PValue Animation>, <Power Animation> )
+**Syntax:** obj &lt;&lt; Test Mean( number, &lt;Sigma( number )&gt;, &lt; Wilcoxon Signed Rank( 0|1 ) &gt;, &lt;PValue Animation&gt;, &lt;Power Animation&gt; )
 
 **Description:** Performs a one-sample test for the mean. If you specify a value for the standard deviation (Sigma), a z test is performed. Otherwise, the sample standard deviation is used to perform a t test. There is also an option to perform an additional nonparametric Wilcoxon Signed-Rank test.
 
@@ -1309,7 +1307,7 @@ obj << Test Mean( 60, Wilcoxon Signed Rank( 1 ) );
 
 ### Test Probabilities
 
-**Syntax:** obj << Test Probabilities( Test( Hypothesized|Greater than|Less than ), Fix( Hypothesized|Omitted ), p1, <f>, p2, <f>, p3, <f>, etc. )
+**Syntax:** obj &lt;&lt; Test Probabilities( Test( Hypothesized|Greater than|Less than ), Fix( Hypothesized|Omitted ), p1, &lt;f&gt;, p2, &lt;f&gt;, p3, &lt;f&gt;, etc. )
 
 **Description:** Tests the estimated probabilities of the levels of a categorical variable against the specified hypothesized probabilities (p1, p2, p3, and so on). For variables with two levels, use the Test option to specify the sign for the alternative hypothesis of the test. For variables with more than two levels, use the Fix option to specify how missing hypothesized values are handled. Note that f is an optional argument that specifies that the preceding level is treated as fixed.
 
@@ -1356,7 +1354,7 @@ obj << Test Probabilities( Test( Hypothesized ), 0.4, f, 0.6, f );
 
 ### Test Std Dev
 
-**Syntax:** obj << Test Std Dev( number )
+**Syntax:** obj &lt;&lt; Test Std Dev( number )
 
 **Description:** Performs a chi-squared test for the standard deviation, given the hypothesized value (number).
 
@@ -1371,7 +1369,7 @@ obj << Test Std Dev( 3 );
 
 ### Tolerance Interval
 
-**Syntax:** obj << Tolerance Interval( Alpha(number), Proportion(number), <Lower | Upper>, <Normal|Lognormal|Gamma|Exponential|Weibull|Smallest Extreme Value|Largest Extreme Value|Nonparametric> )
+**Syntax:** obj &lt;&lt; Tolerance Interval( Alpha(number), Proportion(number), &lt;Lower | Upper&gt;, &lt;Normal|Lognormal|Gamma|Exponential|Weibull|Smallest Extreme Value|Largest Extreme Value|Nonparametric&gt; )
 
 **Description:** Computes an interval that contains at least a specified portion of the population. A standard normal distribution is assumed. You can also specify other nonnormal distributions including lognormal, Gamma, exponential, Weibull, smallest extreme value, largest extreme value, and nonparametric distributions. There are also options for computing one-sided intervals.
 
@@ -1389,7 +1387,7 @@ obj << Tolerance Interval( Alpha( 0.95 ), Proportion( 0.8 ), Lower, Nonparametri
 
 ### Uniform Scaling
 
-**Syntax:** obj << Uniform Scaling( state=0|1 )
+**Syntax:** obj &lt;&lt; Uniform Scaling( state=0|1 )
 
 **Description:** Sets all histogram axes to the same minimum, maximum, and increment values so that distributions can be easily compared.
 
@@ -1404,7 +1402,7 @@ obj << Uniform Scaling( 1 );
 
 ### Vertical
 
-**Syntax:** obj << Vertical( state=0|1 )
+**Syntax:** obj &lt;&lt; Vertical( state=0|1 )
 
 **Description:** Changes the orientation of the histogram, box plots, and quantile plots to be vertical. On by default.
 
@@ -1421,7 +1419,7 @@ obj << Vertical( 0 );
 
 ### Action
 
-**Syntax:** obj << Action
+**Syntax:** obj &lt;&lt; Action
 
 **Description:** All-purpose trapdoor within a platform to insert expressions to evaluate. Temporarily sets the DisplayBox and DataTable contexts to the Platform.
 
@@ -1439,7 +1437,7 @@ dt << Bivariate(
 
 ### Automatic Recalc
 
-**Syntax:** obj << Automatic Recalc( state=0|1 )
+**Syntax:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Description:** Redoes the analysis automatically for exclude and data changes. If the Automatic Recalc option is turned on, you should consider using Wait(0) commands to ensure that the exclude and data changes take effect before the recalculation.
 
@@ -1455,7 +1453,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**Syntax:** obj << Broadcast(message)
+**Syntax:** obj &lt;&lt; Broadcast(message)
 
 **Description:** Broadcasts a message to a platform. If return results from individual objects are tables, they are concatenated if possible, and the final format is identical to either the result from the Save Combined Table option in a Table Box or the result from the Concatenate option using a Source column. Other than those, results are stored in a list and returned.
 
@@ -1473,7 +1471,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**Syntax:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Syntax:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Description:** Adds a control panel for changing the platform&apos;s variables
 
@@ -1491,7 +1489,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**Syntax:** obj << Copy ByGroup Script
+**Syntax:** obj &lt;&lt; Copy ByGroup Script
 
 **Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
 
@@ -1511,7 +1509,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Syntax:** obj << Copy Script
+**Syntax:** obj &lt;&lt; Copy Script
 
 **Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
 
@@ -1526,7 +1524,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Syntax:** obj << Data Table Window
+**Syntax:** obj &lt;&lt; Data Table Window
 
 **Description:** Move the data table window for this analysis to the front.
 
@@ -1541,7 +1539,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Syntax:** obj << Get By Levels
+**Syntax:** obj &lt;&lt; Get By Levels
 
 **Description:** Returns an associative array mapping the by group columns to their values.
 
@@ -1556,7 +1554,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Syntax:** obj << Get ByGroup Script
+**Syntax:** obj &lt;&lt; Get ByGroup Script
 
 **Description:** Creates a script (JSL) to produce this analysis and returns it as an expression.
 
@@ -1577,7 +1575,7 @@ Show( t );
 
 ### Get Container
 
-**Syntax:** obj << Get Container
+**Syntax:** obj &lt;&lt; Get Container
 
 **Description:** Returns a reference to the container box that holds the content for the object.
 
@@ -1624,7 +1622,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Syntax:** obj << Get Data Table
+**Syntax:** obj &lt;&lt; Get Data Table
 
 **Description:** Returns a reference to the data table.
 
@@ -1640,7 +1638,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**Syntax:** obj << Get Group Platform
+**Syntax:** obj &lt;&lt; Get Group Platform
 
 **Description:** Return the Group Platform object if this platform is part of a Group. Otherwise, returns Empty().
 
@@ -1657,7 +1655,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**Syntax:** obj << Get Script
+**Syntax:** obj &lt;&lt; Get Script
 
 **Description:** Creates a script (JSL) to produce this analysis and returns it as an expression.
 
@@ -1673,7 +1671,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Syntax:** obj << Get Script With Data Table
+**Syntax:** obj &lt;&lt; Get Script With Data Table
 
 **Description:** Creates a script(JSL) to produce this analysis specifically referencing this data table and returns it as an expression.
 
@@ -1689,7 +1687,7 @@ Show( t );
 
 ### Get Timing
 
-**Syntax:** obj << Get Timing
+**Syntax:** obj &lt;&lt; Get Timing
 
 **Description:** Times the platform launch.
 
@@ -1705,7 +1703,7 @@ Show( t );
 
 ### Get Web Support
 
-**Syntax:** obj << Get Web Support
+**Syntax:** obj &lt;&lt; Get Web Support
 
 **Description:** Return a number indicating the level of Interactive HTML support for the display object. 1 means some or all elements are supported. 0 means no support.
 
@@ -1721,7 +1719,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Syntax:** obj << Get Where Expr
+**Syntax:** obj &lt;&lt; Get Where Expr
 
 **Description:** Returns the Where expression for the data subset, if the platform was launched with By() or Where(). Otherwise, returns Empty()
 
@@ -1756,7 +1754,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Syntax:** obj << Local Data Filter
+**Syntax:** obj &lt;&lt; Local Data Filter
 
 **Description:** To filter data to specific groups or ranges, but local to this platform
 
@@ -1776,7 +1774,7 @@ dt << Distribution(
 
 ### Paste Local Data Filter
 
-**Syntax:** obj << Paste Local Data Filter
+**Syntax:** obj &lt;&lt; Paste Local Data Filter
 
 **Description:** Apply the local data filter from the clipboard to the current report.
 
@@ -1797,7 +1795,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**Syntax:** obj << Redo Analysis
+**Syntax:** obj &lt;&lt; Redo Analysis
 
 **Description:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
 
@@ -1812,7 +1810,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**Syntax:** obj << Redo ByGroup Analysis
+**Syntax:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Description:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
 
@@ -1832,7 +1830,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**Syntax:** obj << Relaunch Analysis
+**Syntax:** obj &lt;&lt; Relaunch Analysis
 
 **Description:** Opens the platform launch window and recalls the settings that were used to create the report.
 
@@ -1847,7 +1845,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**Syntax:** obj << Relaunch ByGroup
+**Syntax:** obj &lt;&lt; Relaunch ByGroup
 
 **Description:** Opens the platform launch window and recalls the settings that were used to create the report.
 
@@ -1867,7 +1865,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**Syntax:** obj << Remove Column Switcher
+**Syntax:** obj &lt;&lt; Remove Column Switcher
 
 **Description:** Removes the most recent Column Switcher that has been added to the platform.
 
@@ -1887,7 +1885,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Syntax:** obj << Remove Local Data Filter
+**Syntax:** obj &lt;&lt; Remove Local Data Filter
 
 **Description:** If a local data filter has been created, this removes it and restores the platform to use all the data in the data table directly
 
@@ -1909,9 +1907,7 @@ dist << remove local data filter;
 
 ### Report
 
-**Syntax:** obj << Report;
-
-Report( obj )
+**Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Description:** Returns a reference to the report object.
 
@@ -1928,7 +1924,7 @@ Show( t );
 
 ### Report View
 
-**Syntax:** obj << Report View( "Full"|"Summary" )
+**Syntax:** obj &lt;&lt; Report View( "Full"|"Summary" )
 
 **Description:** The report view determines the level of detail visible in a platform report. Full shows all of the detail, while Summary shows only select content, dependent on the platform. For customized behavior, display boxes support a <<Set Summary Behavior message.
 
@@ -1943,7 +1939,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**Syntax:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description:** Creates a JSL script to produce this analysis, and save it as a table property in the data table. You can specify a name for the script. The Append Suffix option appends a numeric suffix to the script name, which differentiates the script from an existing script with the same name. The Prompt option prompts the user to specify a script name. The Replace option replaces an existing script with the same name.
 
@@ -1963,7 +1959,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Syntax:** obj << Save ByGroup Script to Journal
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
 
@@ -1983,7 +1979,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Syntax:** obj << Save ByGroup Script to Script Window
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
 
@@ -2003,7 +1999,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**Syntax:** obj << Save Script for All Objects
+**Syntax:** obj &lt;&lt; Save Script for All Objects
 
 **Description:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -2018,7 +2014,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Syntax:** obj << Save Script for All Objects To Data Table( <name> )
+**Syntax:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Description:** Saves a script for all report objects to the current data table. This option is useful when you have multiple reports in the window. The script is named after the first platform unless you specify the script name in quotes.
 
@@ -2056,7 +2052,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Syntax:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description:** Create a JSL script to produce this analysis, and save it as a table property in the data table.
 
@@ -2071,7 +2067,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Syntax:** obj << Save Script to Journal
+**Syntax:** obj &lt;&lt; Save Script to Journal
 
 **Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
 
@@ -2086,7 +2082,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Syntax:** obj << Save Script to Report
+**Syntax:** obj &lt;&lt; Save Script to Report
 
 **Description:** Create a JSL script to produce this analysis, and show it in the report itself. Useful to preserve a printed record of what was done.
 
@@ -2101,7 +2097,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Syntax:** obj << Save Script to Script Window
+**Syntax:** obj &lt;&lt; Save Script to Script Window
 
 **Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
 
@@ -2181,7 +2177,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Syntax:** obj << Sync to Data Table Changes
+**Syntax:** obj &lt;&lt; Sync to Data Table Changes
 
 **Description:** Sync with the exclude and data changes that have been made.
 
@@ -2198,7 +2194,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Syntax:** obj << Title( "new title" )
+**Syntax:** obj &lt;&lt; Title( "new title" )
 
 **Description:** Sets the title of the platform.
 
@@ -2213,7 +2209,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Syntax:** obj << Top Report
+**Syntax:** obj &lt;&lt; Top Report
 
 **Description:** Returns a reference to the root node in the report.
 
@@ -2230,7 +2226,7 @@ Show( t );
 
 ### Transform Column
 
-**Syntax:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Syntax:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Description:** Create a transform column in the local context of an object, usually a platform. The transform column is active only for the lifetime of the platform.
 
@@ -2247,7 +2243,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**Syntax:** obj << View Web XML
+**Syntax:** obj &lt;&lt; View Web XML
 
 **Description:** Returns the XML code that is used to create the interactive HTML report.
 
@@ -2285,7 +2281,7 @@ New Window( "Bivariate Equation",
 
 #### Capability Animation
 
-**Syntax:** obj << Capability Animation
+**Syntax:** obj &lt;&lt; Capability Animation
 
 **Description:** Opens a separate window that shows an animation of a normal distribution that uses parameters and capability statistics from the current sample.
 
@@ -2300,7 +2296,7 @@ obj << Capability Analysis( LSL( 16 ), USL( 24 ), Target( 20 ), Capability Anima
 
 #### Z Bench
 
-**Syntax:** obj << Z Bench( state=0|1 )
+**Syntax:** obj &lt;&lt; Z Bench( state=0|1 )
 
 **Description:** Shows or hides Z statistics, which are described by AIAG as the number of standard deviation units from the process average to a specification.
 
@@ -2319,7 +2315,7 @@ obj << Capability Analysis( LSL( 16 ), USL( 24 ), Target( 20 ), Z Bench( 1 ) );
 
 #### Column
 
-**Syntax:** obj = Quantiles(...<Column( column(s) )>...)
+**Syntax:** obj = Quantiles(...&lt;Column( column(s) )&gt;...)
 
 ```jsl
 
@@ -2335,7 +2331,7 @@ obj << Quantiles( 0 );
 
 #### Apply Preset
 
-**Syntax:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntax:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Description:** Apply a previously created preset to the object, updating the options and customizations to match the saved settings.
 
@@ -2377,7 +2373,7 @@ obj[1] << Apply Preset( "Sample Presets", "Check Normality" );
 
 #### Axes on Left
 
-**Syntax:** obj << Axes on Left( state=0|1 )
+**Syntax:** obj &lt;&lt; Axes on Left( state=0|1 )
 
 **Description:** Moves the count, probability, density, and normal quantile plot axes to the left side of a horizontal graph.
 
@@ -2392,7 +2388,7 @@ obj << Axes on Left( 1 );
 
 #### CDF Plot
 
-**Syntax:** obj << CDF Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; CDF Plot( state=0|1 )
 
 **Description:** Shows or hides a plot of the empirical cumulative distribution function.
 
@@ -2407,7 +2403,7 @@ obj << CDF Plot( 1 );
 
 #### Capability Analysis
 
-**Syntax:** obj << Capability Analysis( LSL( number ), Target( number ), USL( number ) )
+**Syntax:** obj &lt;&lt; Capability Analysis( LSL( number ), Target( number ), USL( number ) )
 
 **Description:** Performs a capability analysis given the stated lower specification limit (LSL), target, and upper specification limit (USL).
 
@@ -2422,7 +2418,7 @@ obj << Capability Analysis( LSL( 16 ), USL( 24 ), Target( 20 ) );
 
 #### Confidence Interval
 
-**Syntax:** obj << Confidence Interval( number, <Upper | Lower>, <Sigma( number )> )
+**Syntax:** obj &lt;&lt; Confidence Interval( number, &lt;Upper | Lower&gt;, &lt;Sigma( number )&gt; )
 
 **Description:** Computes the specified confidence intervals around both the mean and the standard deviation. If you specify sigma, the specified value is used to compute the confidence interval around the mean.
 
@@ -2441,7 +2437,7 @@ obj << Confidence Interval( 0.95, Sigma( 4 ) );
 
 #### Count Axis
 
-**Syntax:** obj << Count Axis( state=0|1 )
+**Syntax:** obj &lt;&lt; Count Axis( state=0|1 )
 
 **Description:** Shows or hides the count axis for the histogram.
 
@@ -2456,7 +2452,7 @@ obj << Count Axis( 1 );
 
 #### Custom Quantiles
 
-**Syntax:** obj << Custom Quantiles( fraction, [quantile1, quantile2, ... quantileN] )
+**Syntax:** obj &lt;&lt; Custom Quantiles( fraction, [quantile1, quantile2, ... quantileN] )
 
 **Description:** Creates a report of the quantile rank estimates and a report of the smoothed empirical likelihood quantile estimates for the specified quantiles. Uses the fraction as the confidence level for confidence intervals in both reports.
 
@@ -2471,7 +2467,7 @@ obj << Custom Quantiles( 0.975, [0.075, 0.1, 0.125, 0.975, 0.99] );
 
 #### Customize Summary Statistics
 
-**Syntax:** obj << Customize Summary Statistics(statistic1( state=0|1 ), statistic2( state=0|1 ), ..., statisticN( state=0|1 ), <Set Trimmed Mean Percent(number)>, <Set Alpha Level(number)>)
+**Syntax:** obj &lt;&lt; Customize Summary Statistics(statistic1( state=0|1 ), statistic2( state=0|1 ), ..., statisticN( state=0|1 ), &lt;Set Trimmed Mean Percent(number)&gt;, &lt;Set Alpha Level(number)&gt;)
 
 **Description:** Customizes the summary statistics that are displayed in the Summary Statistics report.
 
@@ -2486,7 +2482,7 @@ obj << Customize Summary Statistics( N( 0 ), Variance( 1 ), Skewness( 1 ) );
 
 #### Density Axis
 
-**Syntax:** obj << Density Axis( state=0|1 )
+**Syntax:** obj &lt;&lt; Density Axis( state=0|1 )
 
 **Description:** Shows or hides the density axis for the density curve on the histogram.
 
@@ -2501,7 +2497,7 @@ obj << Density Axis( 1 );
 
 #### Fit All
 
-**Syntax:** obj << Fit All
+**Syntax:** obj &lt;&lt; Fit All
 
 **Description:** Compares all possible distributions.
 
@@ -2516,7 +2512,7 @@ obj << Fit All;
 
 #### Fit Beta
 
-**Syntax:** obj << Fit Beta
+**Syntax:** obj &lt;&lt; Fit Beta
 
 **Description:** Fits a two-parameter beta distribution to data between 0 and 1 (not inclusive).
 
@@ -2531,7 +2527,7 @@ obj << Fit Beta;
 
 #### Fit Beta Binomial
 
-**Syntax:** obj << Fit Beta Binomial( Sample Size( n | column ) )
+**Syntax:** obj &lt;&lt; Fit Beta Binomial( Sample Size( n | column ) )
 
 **Description:** Fits a beta binomial distribution given a specified constant sample size or a column that contains the sample sizes. This distribution is a more flexible version of the binomial distribution.
 
@@ -2559,7 +2555,7 @@ obj << Fit Beta Binomial( Sample Size( :Box Size ) );
 
 #### Fit Binomial
 
-**Syntax:** obj << Fit Binomial( Sample size( n | column ) )
+**Syntax:** obj &lt;&lt; Fit Binomial( Sample size( n | column ) )
 
 **Description:** Fits a binomial distribution given a specified constant sample size or a column that contains the sample sizes. This distribution models the total number of successes in n independent trials.
 
@@ -2574,7 +2570,7 @@ obj << Fit Binomial( Sample Size( :Box Size ) );
 
 #### Fit Cauchy
 
-**Syntax:** obj << Fit Cauchy
+**Syntax:** obj &lt;&lt; Fit Cauchy
 
 **Description:** Fits a Cauchy distribution to the data. The Cauchy distribution is robust to outliers and is equivalent to a t distribution with one degree of freedom.
 
@@ -2594,7 +2590,7 @@ Distribution( Column( :X ), Fit Normal, Fit Cauchy );
 
 #### Fit ExGaussian
 
-**Syntax:** obj << Fit ExGaussian
+**Syntax:** obj &lt;&lt; Fit ExGaussian
 
 **Description:** Fits an exponentially modified Gaussian distribution to the data.
 
@@ -2624,7 +2620,7 @@ obj << Fit Exponential;
 
 #### Fit Exponential
 
-**Syntax:** obj << Fit Exponential
+**Syntax:** obj &lt;&lt; Fit Exponential
 
 **Description:** Fits an exponential distribution to nonnegative data.
 
@@ -2639,7 +2635,7 @@ obj << Fit Exponential;
 
 #### Fit Gamma
 
-**Syntax:** obj << Fit Gamma
+**Syntax:** obj &lt;&lt; Fit Gamma
 
 **Description:** Fits a two-parameter gamma distribution to positive data.
 
@@ -2654,9 +2650,7 @@ obj << Fit Gamma;
 
 #### Fit Handle
 
-**Syntax:** obj << (Fit Handle[number] << {option}); 
-
- obj << (Fit Handle["Distribution Name"] << {option})
+**Syntax:** obj &lt;&lt; (Fit Handle[number] &lt;&lt; {option}); obj &lt;&lt; (Fit Handle["Distribution Name"] &lt;&lt; {option})
 
 **Description:** Array of handles to the fitted distributions. This enables you to send commands to specific distributions that have been fit.
 
@@ -2674,7 +2668,7 @@ obj << (Fit Handle["Lognormal"] << QQ Plot( 1 ));
 
 #### Fit Johnson
 
-**Syntax:** obj << Fit Johnson
+**Syntax:** obj &lt;&lt; Fit Johnson
 
 **Description:** Fits a Johnson distribution to the data. The most appropriate of the three types of Johnson distributions (Su, Sb, and Sl) is chosen based on the quantiles.
 
@@ -2702,7 +2696,7 @@ obj << Fit Johnson;
 
 #### Fit Largest Extreme Value
 
-**Syntax:** obj << Fit Largest Extreme Value
+**Syntax:** obj &lt;&lt; Fit Largest Extreme Value
 
 **Description:** Fits a largest extreme value distribution to the data.
 
@@ -2717,7 +2711,7 @@ obj << Fit Largest Extreme Value;
 
 #### Fit Lognormal
 
-**Syntax:** obj << Fit Lognormal
+**Syntax:** obj &lt;&lt; Fit Lognormal
 
 **Description:** Fits a lognormal distribution to positive data.
 
@@ -2732,7 +2726,7 @@ obj << Fit Lognormal;
 
 #### Fit Negative Binomial
 
-**Syntax:** obj << Fit Negative Binomial
+**Syntax:** obj &lt;&lt; Fit Negative Binomial
 
 **Description:** Fits a negative binomial distribution to the data. This distribution is equivalent to the Gamma Poisson distribution.
 
@@ -2747,7 +2741,7 @@ obj << Fit Negative Binomial;
 
 #### Fit Normal
 
-**Syntax:** obj << Fit Normal
+**Syntax:** obj &lt;&lt; Fit Normal
 
 **Description:** Fits a normal distribution to the data.
 
@@ -2762,7 +2756,7 @@ obj << Fit Normal;
 
 #### Fit Normal 2 Mixture
 
-**Syntax:** obj << Fit Normal 2 Mixture
+**Syntax:** obj &lt;&lt; Fit Normal 2 Mixture
 
 **Description:** Fits a mixture of two normal distributions. This distribution is capable of fitting bimodal data.
 
@@ -2777,7 +2771,7 @@ obj << Fit Normal 2 Mixture;
 
 #### Fit Normal 3 Mixture
 
-**Syntax:** obj << Fit Normal 3 Mixture
+**Syntax:** obj &lt;&lt; Fit Normal 3 Mixture
 
 **Description:** Fits a mixture of three normal distributions. This distribution is capable of fitting multi-modal data.
 
@@ -2792,7 +2786,7 @@ obj << Fit Normal 3 Mixture;
 
 #### Fit Poisson
 
-**Syntax:** obj << Fit Poisson
+**Syntax:** obj &lt;&lt; Fit Poisson
 
 **Description:** Fits a Poisson distribution to the data. This distribution is a popular choice for count data. The fitted mean of the Poisson distribution is equal to the variance.
 
@@ -2807,7 +2801,7 @@ obj << Fit Poisson;
 
 #### Fit SHASH
 
-**Syntax:** obj << Fit Shash
+**Syntax:** obj &lt;&lt; Fit Shash
 
 **Description:** Fits a sinh-arcsinh (SHASH) distribution to the data.
 
@@ -2822,7 +2816,7 @@ obj << Fit Shash;
 
 #### Fit Smallest Extreme Value
 
-**Syntax:** obj << Fit Smallest Extreme Value
+**Syntax:** obj &lt;&lt; Fit Smallest Extreme Value
 
 **Description:** Fits a smallest extreme value distribution to the data.
 
@@ -2837,7 +2831,7 @@ obj << Fit Smallest Extreme Value;
 
 #### Fit Smooth Curve
 
-**Syntax:** obj << Fit Smooth Curve( <Bandwidth( number )> )
+**Syntax:** obj &lt;&lt; Fit Smooth Curve( &lt;Bandwidth( number )&gt; )
 
 **Description:** Fits a smooth curve to the data using nonparametric density estimation. You can set the smoothness by specifying the bandwidth.
 
@@ -2865,7 +2859,7 @@ obj << Fit Smooth Curve( Bandwidth( 0.02 ) );
 
 #### Fit Student's t
 
-**Syntax:** obj << Fit Student&apos;s t
+**Syntax:** obj &lt;&lt; Fit Student&apos;s t
 
 **Description:** Fits a Student&apos;s t distribution to the data. This distribution is a robust option that spans the space between a normal distribution and a Cauchy distribution.
 
@@ -2885,7 +2879,7 @@ Distribution( Column( :X ), Fit Normal, Fit Student's t );
 
 #### Fit Weibull
 
-**Syntax:** obj << Fit Weibull
+**Syntax:** obj &lt;&lt; Fit Weibull
 
 **Description:** Fits a two-parameter Weibull distribution to positive data.
 
@@ -2900,7 +2894,7 @@ obj << Fit Weibull;
 
 #### Fit ZI Beta Binomial
 
-**Syntax:** obj << Fit ZI Beta Binomial( Sample Size( n | column ) )
+**Syntax:** obj &lt;&lt; Fit ZI Beta Binomial( Sample Size( n | column ) )
 
 **Description:** Fits a zero inflated beta binomial distribution given the specified constant sample size or a column that contains the sample size. This distribution models the total number of successes in n independent trials where there are more zeros observed than would be expected for the beta binomial distribution.
 
@@ -2915,7 +2909,7 @@ obj << Fit ZI Beta Binomial( Sample Size( :Box Size ) );
 
 #### Fit ZI Binomial
 
-**Syntax:** obj << Fit ZI Binomial( Sample Size( n | column ) )
+**Syntax:** obj &lt;&lt; Fit ZI Binomial( Sample Size( n | column ) )
 
 **Description:** Fits a zero inflated binomial distribution given the specified constant sample size or a column that contains the sample size. This distribution models the total number of successes in n independent trials where there are more zeros observed than would be expected for the binomial distribution.
 
@@ -2930,7 +2924,7 @@ obj << Fit ZI Binomial( Sample Size( :Box Size ) );
 
 #### Fit ZI Negative Binomial
 
-**Syntax:** obj << Fit ZI Negative Binomial
+**Syntax:** obj &lt;&lt; Fit ZI Negative Binomial
 
 **Description:** Fits a zero-inflated negative binomial distribution to data that contain values of zero.
 
@@ -2944,7 +2938,7 @@ dt << Distribution( Column( :satell ), Fit ZI Negative Binomial );
 
 #### Fit ZI Poisson
 
-**Syntax:** obj << Fit ZI Poisson
+**Syntax:** obj &lt;&lt; Fit ZI Poisson
 
 **Description:** Fits a zero-inflated Poisson distribution to data that contain values of zero.
 
@@ -2958,7 +2952,7 @@ dt << Distribution( Column( :satell ), Fit ZI Poisson );
 
 #### Fit ZI SHASH
 
-**Syntax:** obj << Fit ZI SHASH
+**Syntax:** obj &lt;&lt; Fit ZI SHASH
 
 **Description:** Fits a SHASH distribution with a point mass at zero to the data.
 
@@ -2980,7 +2974,7 @@ Distribution( Column( :X ), Fit ZI SHASH, Fit SHASH );
 
 #### Histogram
 
-**Syntax:** obj << Histogram( state=0|1 )
+**Syntax:** obj &lt;&lt; Histogram( state=0|1 )
 
 **Description:** Shows or hides the histogram. On by default.
 
@@ -2996,7 +2990,7 @@ obj << Histogram( 0 );
 
 #### Histogram Color
 
-**Syntax:** obj << Histogram Color( color )
+**Syntax:** obj &lt;&lt; Histogram Color( color )
 
 **Description:** Changes the color of the histogram bars.
 
@@ -3011,7 +3005,7 @@ obj << Histogram Color( "Red" );
 
 #### Horizontal Layout
 
-**Syntax:** obj << Horizontal Layout( state=0|1 )
+**Syntax:** obj &lt;&lt; Horizontal Layout( state=0|1 )
 
 **Description:** Changes the orientation of the histogram and the reports to be horizontal.
 
@@ -3066,7 +3060,7 @@ preset = obj[1] << New Preset();
 
 #### Normal Quantile Plot
 
-**Syntax:** obj << Normal Quantile Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; Normal Quantile Plot( state=0|1 )
 
 **Description:** Shows or hides a plot that can be used to visualize the extent to which a variable is normally distributed.
 
@@ -3081,7 +3075,7 @@ obj << Normal Quantile Plot( 1 );
 
 #### Outlier Box Plot
 
-**Syntax:** obj << Outlier Box Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; Outlier Box Plot( state=0|1 )
 
 **Description:** Shows or hides a box plot that enables you to see the distribution and identify possible outliers. On by default.
 
@@ -3097,7 +3091,7 @@ obj << Outlier Box Plot( 0 );
 
 #### Outlier Box Plot Row Cutoff
 
-**Syntax:** obj << Outlier Box Plot Row Cutoff( number )
+**Syntax:** obj &lt;&lt; Outlier Box Plot Row Cutoff( number )
 
 **Description:** Sets the launch option for the maximum number of rows before the outlier box plot is turned off initially. "100000" by default.
 
@@ -3112,7 +3106,7 @@ obj << Outlier Box Plot Row Cutoff( 10000 );
 
 #### PpK Capability Labeling
 
-**Syntax:** obj << PpK Capability Labeling( state=0|1 )
+**Syntax:** obj &lt;&lt; PpK Capability Labeling( state=0|1 )
 
 **Description:** In Process Capability output, switches the labeling of the overall capability indices to use the prefix Pp instead of Cp. On by default.
 
@@ -3128,7 +3122,7 @@ obj << Process Capability( LSL( 5 ), Target( 40 ), USL( 75 ) );
 
 #### Prediction Interval
 
-**Syntax:** obj << Prediction Interval( Alpha, N Samples, <Lower | Upper> )
+**Syntax:** obj &lt;&lt; Prediction Interval( Alpha, N Samples, &lt;Lower | Upper&gt; )
 
 **Description:** Computes the prediction intervals for an individual future observation and the mean of a specified number (N Samples) of future observations. You can create one-sided or two-sided prediction intervals.
 
@@ -3143,7 +3137,7 @@ obj << Prediction Interval( 0.95, 20 );
 
 #### Prob Axis
 
-**Syntax:** obj << Prob Axis( state=0|1 )
+**Syntax:** obj &lt;&lt; Prob Axis( state=0|1 )
 
 **Description:** Shows or hides the probability or proportion axis for this histogram.
 
@@ -3158,7 +3152,7 @@ obj << Prob Axis( 1 );
 
 #### Process Capability
 
-**Syntax:** obj << Process Capability( LSL( number ), Target( number ), USL( number ) )
+**Syntax:** obj &lt;&lt; Process Capability( LSL( number ), Target( number ), USL( number ) )
 
 **Description:** Computes a process capability analysis given the lower specification limit (LSL), target, and upper specification limit (USL). The Process Capability report includes a histogram, summary details, capability indices, and nonconformance statistics.
 
@@ -3173,7 +3167,7 @@ obj << Process Capability( LSL( 5 ), Target( 40 ), USL( 75 ) );
 
 #### Quantile Box Plot
 
-**Syntax:** obj << Quantile Box Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; Quantile Box Plot( state=0|1 )
 
 **Description:** Shows or hides a box plot with the following quantiles: 0%, 0.5%, 2.5%, 10%, 25%, 50%, 75%, 90%, 97.5%, 99%, and 100%.
 
@@ -3189,7 +3183,7 @@ obj << Quantile Box Plot( 1 );
 
 #### Quantiles
 
-**Syntax:** obj << Quantiles( state=0|1 )
+**Syntax:** obj &lt;&lt; Quantiles( state=0|1 )
 
 **Description:** Shows or hides the Quantiles report, which lists the values of selected quantiles. By default, the quantiles listed are 0%, 0.5%, 2.5%, 10%, 25%, 50%, 75%, 90%, 97.5%, 99.5%, and 100%. On by default.
 
@@ -3227,7 +3221,7 @@ obj[1] << Render Preset(
 
 #### Save
 
-**Syntax:** obj << Save( "Level Numbers"|"Level Midpoints"|"Ranks"|"Ranks averaged"|"Prob Scores"|"Normal Quantiles"|"Standardized"|"Centered"|"Robust Standardized"|"Robust Centered"|"Spec Limits"|"Script to Log" )
+**Syntax:** obj &lt;&lt; Save( "Level Numbers"|"Level Midpoints"|"Ranks"|"Ranks averaged"|"Prob Scores"|"Normal Quantiles"|"Standardized"|"Centered"|"Robust Standardized"|"Robust Centered"|"Spec Limits"|"Script to Log" )
 
 **Description:** Saves the specified observation-specific statistic to a new column in the data table. There is also an option to print the script commands that generate the current report to the log window.
 
@@ -3242,7 +3236,7 @@ obj << Save( "Ranks" );
 
 #### Set Bin Width
 
-**Syntax:** obj << Set Bin Width( number )
+**Syntax:** obj &lt;&lt; Set Bin Width( number )
 
 **Description:** Sets the histogram bin width, using the axis as the origin. This option is available only for continuous variables.
 
@@ -3257,7 +3251,7 @@ obj << Set Bin Width( 5 );
 
 #### Set Quantile Increment
 
-**Syntax:** obj << Set Quantile Increment( fraction | "revert to default quantiles" )
+**Syntax:** obj &lt;&lt; Set Quantile Increment( fraction | "revert to default quantiles" )
 
 **Description:** Sets the increment used in the Quantiles report to the specified fraction or changes back to the default quantiles. This option is available only for continuous variables.
 
@@ -3274,7 +3268,7 @@ obj << Set Quantile Increment( "revert to default quantiles" );
 
 #### Shadowgram
 
-**Syntax:** obj << Shadowgram( state=0|1 )
+**Syntax:** obj &lt;&lt; Shadowgram( state=0|1 )
 
 **Description:** Shows or hides a smooth shadowgram in place of the histogram. A shadowgram overlays histograms with different bin widths. This option is available only for continuous variables.
 
@@ -3289,7 +3283,7 @@ obj << Shadowgram( 1 );
 
 #### Show Counts
 
-**Syntax:** obj << Show Counts( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Counts( state=0|1 )
 
 **Description:** Shows or hides the bar counts on the histogram, which give the frequency of column values represented by each histogram bar.
 
@@ -3304,7 +3298,7 @@ obj << Show Counts( 1 );
 
 #### Show Percents
 
-**Syntax:** obj << Show Percents( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Percents( state=0|1 )
 
 **Description:** Shows or hides the bar percents on the histogram, which give the percentage of column values represented by each histogram bar.
 
@@ -3319,7 +3313,7 @@ obj << Show Percents( 1 );
 
 #### Std Error Bars
 
-**Syntax:** obj << Std Error Bars( state=0|1 )
+**Syntax:** obj &lt;&lt; Std Error Bars( state=0|1 )
 
 **Description:** Shows or hides standard error bars on each of the histogram bars.
 
@@ -3334,7 +3328,7 @@ obj << Std Error Bars( 1 );
 
 #### Stem and Leaf
 
-**Syntax:** obj << Stem and Leaf( state=0|1 )
+**Syntax:** obj &lt;&lt; Stem and Leaf( state=0|1 )
 
 **Description:** Shows or hides a stem-and-leaf plot.
 
@@ -3349,7 +3343,7 @@ obj << Stem and Leaf( 1 );
 
 #### Summary Statistics
 
-**Syntax:** obj << Summary Statistics( state=0|1 )
+**Syntax:** obj &lt;&lt; Summary Statistics( state=0|1 )
 
 **Description:** Shows or hides the Summary Statistics report, which lists the mean, standard deviation, and other summary statistics for continuous variables. On by default.
 
@@ -3365,7 +3359,7 @@ obj << Summary Statistics( 0 );
 
 #### Test Equivalence
 
-**Syntax:** obj << Test Equivalence( Target( number ), Practical Difference( number ), <Confidence( fraction )> )
+**Syntax:** obj &lt;&lt; Test Equivalence( Target( number ), Practical Difference( number ), &lt;Confidence( fraction )&gt; )
 
 **Description:** Tests whether the sample mean is equivalent to a hypothesized value (Target) using the Two One-Sided Tests (TOST) approach.
 
@@ -3380,7 +3374,7 @@ obj << Test Equivalence( Target( 62 ), Practical Difference( 1 ), Confidence( 0.
 
 #### Test Mean
 
-**Syntax:** obj << Test Mean( number, <Sigma( number )>, < Wilcoxon Signed Rank( 0|1 ) >, <PValue Animation>, <Power Animation> )
+**Syntax:** obj &lt;&lt; Test Mean( number, &lt;Sigma( number )&gt;, &lt; Wilcoxon Signed Rank( 0|1 ) &gt;, &lt;PValue Animation&gt;, &lt;Power Animation&gt; )
 
 **Description:** Performs a one-sample test for the mean. If you specify a value for the standard deviation (Sigma), a z test is performed. Otherwise, the sample standard deviation is used to perform a t test. There is also an option to perform an additional nonparametric Wilcoxon Signed-Rank test.
 
@@ -3399,7 +3393,7 @@ obj << Test Mean( 60, Wilcoxon Signed Rank( 1 ) );
 
 #### Test Std Dev
 
-**Syntax:** obj << Test Std Dev( number )
+**Syntax:** obj &lt;&lt; Test Std Dev( number )
 
 **Description:** Performs a chi-squared test for the standard deviation, given the hypothesized value (number).
 
@@ -3414,7 +3408,7 @@ obj << Test Std Dev( 3 );
 
 #### Tolerance Interval
 
-**Syntax:** obj << Tolerance Interval( Alpha(number), Proportion(number), <Lower | Upper>, <Normal|Lognormal|Gamma|Exponential|Weibull|Smallest Extreme Value|Largest Extreme Value|Nonparametric> )
+**Syntax:** obj &lt;&lt; Tolerance Interval( Alpha(number), Proportion(number), &lt;Lower | Upper&gt;, &lt;Normal|Lognormal|Gamma|Exponential|Weibull|Smallest Extreme Value|Largest Extreme Value|Nonparametric&gt; )
 
 **Description:** Computes an interval that contains at least a specified portion of the population. A standard normal distribution is assumed. You can also specify other nonnormal distributions including lognormal, Gamma, exponential, Weibull, smallest extreme value, largest extreme value, and nonparametric distributions. There are also options for computing one-sided intervals.
 
@@ -3432,7 +3426,7 @@ obj << Tolerance Interval( Alpha( 0.95 ), Proportion( 0.8 ), Lower, Nonparametri
 
 #### Vertical
 
-**Syntax:** obj << Vertical( state=0|1 )
+**Syntax:** obj &lt;&lt; Vertical( state=0|1 )
 
 **Description:** Changes the orientation of the histogram, box plots, and quantile plots to be vertical. On by default.
 
@@ -3451,9 +3445,7 @@ obj << Vertical( 0 );
 
 #### Density Curve
 
-**Syntax:** obj << Fit Distribution Name( Density Curve( state=0|1 ) ); 
-
-obj << ( Fit Handle[number] << Density Curve( state=0|1 ))
+**Syntax:** obj &lt;&lt; Fit Distribution Name( Density Curve( state=0|1 ) ); obj &lt;&lt; ( Fit Handle[number] &lt;&lt; Density Curve( state=0|1 ))
 
 **Description:** Shows or hides a density curve on the histogram. The estimated parameters from the specified fit are used to create the density curve. On by default.
 
@@ -3468,9 +3460,7 @@ obj << Fit Lognormal( Density Curve( 0 ) );
 
 #### Distribution Profiler
 
-**Syntax:** obj << Fit Distribution Name( Distribution Profiler( state=0|1 ) ); 
-
-obj << ( Fit Handle[number] << Distribution Profiler( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Fit Distribution Name( Distribution Profiler( state=0|1 ) ); obj &lt;&lt; ( Fit Handle[number] &lt;&lt; Distribution Profiler( state=0|1 ) )
 
 **Description:** Shows or hides a prediction profiler of the cumulative distribution function for the specified fitted distribution.
 
@@ -3485,9 +3475,7 @@ obj << Fit Lognormal( Distribution Profiler( 1 ) );
 
 #### Fitted CDF
 
-**Syntax:** obj << Fit Distribution Name( Fitted CDF( vector ));
-
- obj << ( Fit Handle[number] << Fitted CDF( vector ))
+**Syntax:** obj &lt;&lt; Fit Distribution Name( Fitted CDF( vector )); obj &lt;&lt; ( Fit Handle[number] &lt;&lt; Fitted CDF( vector ))
 
 **Description:** Shows or hides the specified fitted probabilities for the fitted distribution.
 
@@ -3502,9 +3490,7 @@ obj << Fit Lognormal( Fitted CDF( [5 8 11] ) );
 
 #### Fitted Quantiles
 
-**Syntax:** obj << Fit Distribution Name( Fitted Quantiles( vector ));
-
- obj << ( Fit Handle[number] << Fitted Quantiles( vector ))
+**Syntax:** obj &lt;&lt; Fit Distribution Name( Fitted Quantiles( vector )); obj &lt;&lt; ( Fit Handle[number] &lt;&lt; Fitted Quantiles( vector ))
 
 **Description:** Shows or hides the specified quantiles for the specified fitted distribution.
 
@@ -3519,9 +3505,7 @@ obj << Fit Lognormal( Fitted Quantiles( [.9 .95 .99] ) );
 
 #### Fix Parameters
 
-**Syntax:** obj << Fit Distribution Name( Fix Parameters( vector ));
-
- obj << ( Fit Handle[number] << Fix Parameters( vector ))
+**Syntax:** obj &lt;&lt; Fit Distribution Name( Fix Parameters( vector )); obj &lt;&lt; ( Fit Handle[number] &lt;&lt; Fix Parameters( vector ))
 
 **Description:** Fixes the specified parameters as constants and re-estimates the non-fixed parameters.
 
@@ -3536,9 +3520,7 @@ obj << Fit Normal( Fix Parameters( [. 2.8] ) );
 
 #### Goodness of Fit
 
-**Syntax:** obj << Fit Distribution Name( Goodness of Fit( state=0|1 )); 
-
-obj << ( Fit Handle[number] << Goodness of Fit( state=0|1 ))
+**Syntax:** obj &lt;&lt; Fit Distribution Name( Goodness of Fit( state=0|1 )); obj &lt;&lt; ( Fit Handle[number] &lt;&lt; Goodness of Fit( state=0|1 ))
 
 **Description:** Shows or hides a report that contains a goodness-of-fit test for the specified fitted distribution.
 
@@ -3553,9 +3535,7 @@ obj << Fit Lognormal( Goodness of Fit( 1 ) );
 
 #### PP Plot
 
-**Syntax:** obj << Fit Distribution Name( PP Plot( state=0|1 ) ); 
-
- obj << (Fit Handle[ number ] << PP Plot( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Fit Distribution Name( PP Plot( state=0|1 ) ); obj &lt;&lt; (Fit Handle[ number ] &lt;&lt; PP Plot( state=0|1 ) )
 
 **Description:** Shows or hides a percentile-percentile (PP) plot that shows the relationship between the empirical cumulative distribution function (CDF) and the CDF of the specified fitted distribution.
 
@@ -3570,9 +3550,7 @@ obj << Fit Gamma( PP Plot( 1 ) );
 
 #### Process Capability
 
-**Syntax:** obj << Fit Distribution Name( Process Capability( LSL( number ), Target( number ), USL( number ))); 
-
- obj << (Fit Handle[number] << ( Process Capability( LSL( number ), Target( number ), USL( number ))))
+**Syntax:** obj &lt;&lt; Fit Distribution Name( Process Capability( LSL( number ), Target( number ), USL( number ))); obj &lt;&lt; (Fit Handle[number] &lt;&lt; ( Process Capability( LSL( number ), Target( number ), USL( number ))))
 
 **Description:** Computes a process capability analysis given the lower specification limit (LSL), target, and upper specification limit (USL). The Process Capability report includes a histogram, summary details, capability indices, and nonconformance statistics.
 
@@ -3587,9 +3565,7 @@ obj << Fit Lognormal( Process Capability( LSL( .03 ), Target( .15 ), USL( .27 ) 
 
 #### QQ Plot
 
-**Syntax:** obj << Fit Distribution Name( QQ Plot( state=0|1 ) ); 
-
-obj << ( Fit Handle[number] << QQ Plot( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Fit Distribution Name( QQ Plot( state=0|1 ) ); obj &lt;&lt; ( Fit Handle[number] &lt;&lt; QQ Plot( state=0|1 ) )
 
 **Description:** Shows or hides a quantile-quantile (QQ) plot that shows the relationship between the observed data and the quantiles of the specified fitted distribution.
 
@@ -3604,9 +3580,7 @@ obj << Fit Gamma( QQ Plot( 1 ) );
 
 #### Quantile Profiler
 
-**Syntax:** obj << Fit Distribution Name( Quantile Profiler( state=0|1 ) ); 
-
-obj << ( Fit Handle[number] << Quantile Profiler( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Fit Distribution Name( Quantile Profiler( state=0|1 ) ); obj &lt;&lt; ( Fit Handle[number] &lt;&lt; Quantile Profiler( state=0|1 ) )
 
 **Description:** Shows or hides a prediction profiler of the quantile function for the specified fitted distribution.
 
@@ -3621,7 +3595,7 @@ obj << Fit Lognormal( Quantile Profiler( 1 ) );
 
 #### Remove Fit
 
-**Syntax:** obj << (Fit Handle[number] << Remove Fit )
+**Syntax:** obj &lt;&lt; (Fit Handle[number] &lt;&lt; Remove Fit )
 
 **Description:** Removes the fit and JSL object of the specified distribution.
 
@@ -3639,9 +3613,7 @@ obj << (Fit Handle[1] << Remove Fit);
 
 #### Save Density Formula
 
-**Syntax:** obj << Fit Distribution Name( Save Density Formula ) ; 
-
-obj << ( Fit Handle[number] << Save Density Formula )
+**Syntax:** obj &lt;&lt; Fit Distribution Name( Save Density Formula ) ; obj &lt;&lt; ( Fit Handle[number] &lt;&lt; Save Density Formula )
 
 **Description:** Saves a column to the data table that contains the density formula of the specified fitted distribution.
 
@@ -3656,9 +3628,7 @@ obj << Fit Lognormal( Save Density Formula );
 
 #### Save Distribution Formula
 
-**Syntax:** obj << Fit Distribution Name( Save Distribution Formula ) ; 
-
-obj << ( Fit Handle[number] << Save Distribution Formula )
+**Syntax:** obj &lt;&lt; Fit Distribution Name( Save Distribution Formula ) ; obj &lt;&lt; ( Fit Handle[number] &lt;&lt; Save Distribution Formula )
 
 **Description:** Saves a column to the data table that contains the cumulative distribution function of the specified fitted distribution.
 
@@ -3673,9 +3643,7 @@ obj << Fit Lognormal( Save Distribution Formula );
 
 #### Save Simulation Formula
 
-**Syntax:** obj << Fit Distribution Name( Save Simulation Formula ) ; 
-
-obj << ( Fit Handle[number] << Save Simulation Formula )
+**Syntax:** obj &lt;&lt; Fit Distribution Name( Save Simulation Formula ) ; obj &lt;&lt; ( Fit Handle[number] &lt;&lt; Save Simulation Formula )
 
 **Description:** Saves a column to the data table that contains a formula that generates simulated values from the specified fitted distribution.
 
@@ -3690,9 +3658,7 @@ obj << Fit Lognormal( Save Simulation Formula );
 
 #### Save Transformed
 
-**Syntax:** obj << Fit Distribution Name( Save Transformed ); 
-
-obj << ( Fit Handle[number] << Save Transformed )
+**Syntax:** obj &lt;&lt; Fit Distribution Name( Save Transformed ); obj &lt;&lt; ( Fit Handle[number] &lt;&lt; Save Transformed )
 
 **Description:** Saves a column to the data table that contains a formula used to transform the analysis column to normality using the specified fitted distribution.
 
@@ -3711,7 +3677,7 @@ obj << Fit Shash( Save Transformed );
 
 #### Color Out of Spec Values
 
-**Syntax:** obj << Color Out of Spec Values
+**Syntax:** obj &lt;&lt; Color Out of Spec Values
 
 **Description:** Colors the cells in the data table for values that are out of spec. Cells with values below the lower specification limit (LSL) are colored red, and cells with values above the upper specification limit (USL) are colored blue.
 
@@ -3731,7 +3697,7 @@ obj << Process Capability(
 
 #### Save Distribution as a Column Property
 
-**Syntax:** obj << Process Capability( Save Distribution as a Column Property )
+**Syntax:** obj &lt;&lt; Process Capability( Save Distribution as a Column Property )
 
 **Description:** Saves the Process Capability Distribution type as a column property within the column of the original data table.
 
@@ -3752,7 +3718,7 @@ obj << Process Capability(
 
 #### Save In Spec Indicator Formula
 
-**Syntax:** obj << Save In Spec Indicator Formula
+**Syntax:** obj &lt;&lt; Save In Spec Indicator Formula
 
 **Description:** Creates a new formula column in the data table. The new column contains a value that indicates whether or not a row is within the specification limits.
 
@@ -3772,7 +3738,7 @@ obj << Process Capability(
 
 #### Save Spec Limits and Distribution to Column Properties without Report
 
-**Syntax:** obj << Fit Distribution Name( Process Capability(Save Spec Limits and Distribution to Column Properties without Report))
+**Syntax:** obj &lt;&lt; Fit Distribution Name( Process Capability(Save Spec Limits and Distribution to Column Properties without Report))
 
 **Description:** Saves the calculated specification limits and process capability distribution type for the fitted distribution as column properties within the column of the original data table and shows no capability report.
 
@@ -3792,9 +3758,7 @@ obj << Fit Lognormal(
 
 #### Save Spec Limits as a Column Property
 
-**Syntax:** obj << Fit Distribution Name( Process Capability( Save Spec Limits as a Column Property )); 
-
- obj << Process Capability( Save Spec Limits as a Column Property )
+**Syntax:** obj &lt;&lt; Fit Distribution Name( Process Capability( Save Spec Limits as a Column Property )); obj &lt;&lt; Process Capability( Save Spec Limits as a Column Property )
 
 **Description:** Saves the specification limits as a column property within the column of the original data table.
 
@@ -3834,9 +3798,7 @@ obj << Process Capability(
 
 #### Set Probabilities for Quantile Spec Limits
 
-**Syntax:** obj << Fit Distribution Name( Process Capability(Set Probabilties for Quantile Spec Limits( LSL Prob(p1), Target Prob(p2), USL Prob(p3)))); 
-
- obj << Process Capability(Set Probabilties for Quantile Spec Limits( LSL Prob(p1), Target Prob(p2), USL Prob(p3)))
+**Syntax:** obj &lt;&lt; Fit Distribution Name( Process Capability(Set Probabilties for Quantile Spec Limits( LSL Prob(p1), Target Prob(p2), USL Prob(p3)))); obj &lt;&lt; Process Capability(Set Probabilties for Quantile Spec Limits( LSL Prob(p1), Target Prob(p2), USL Prob(p3)))
 
 **Description:** Sets the probabilities that are used to calculate the quantile specification limits for the fitted distribution.
 
@@ -3859,9 +3821,7 @@ obj << Fit Lognormal(
 
 #### Set Sigma Multiplier for Quantile Spec Limits
 
-**Syntax:** obj << Fit Distribution Name( Process Capability(Set Sigma Multiplier for Quantile Spec Limits(K, <sided=1|2>))); 
-
- obj << Process Capability(Set Sigma Multiplier for Quantile Spec Limits(K, <sided=1|2>))
+**Syntax:** obj &lt;&lt; Fit Distribution Name( Process Capability(Set Sigma Multiplier for Quantile Spec Limits(K, &lt;sided=1|2&gt;))); obj &lt;&lt; Process Capability(Set Sigma Multiplier for Quantile Spec Limits(K, &lt;sided=1|2&gt;))
 
 **Description:** Sets a sigma multiplier, K, that is used to calculate the quantile specification limits for the fitted distribution. The optional sided argument equals 1 for LSL only or 2 for USL only.
 
@@ -3882,7 +3842,7 @@ obj << Fit Lognormal(
 
 #### Customize Summary Statistics
 
-**Syntax:** obj << Customize Summary Statistics(statistic1( state=0|1 ), statistic2( state=0|1 ), ..., statisticN( state=0|1 ), <Set Trimmed Mean Percent(number)>, <Set Alpha Level(number)>)
+**Syntax:** obj &lt;&lt; Customize Summary Statistics(statistic1( state=0|1 ), statistic2( state=0|1 ), ..., statisticN( state=0|1 ), &lt;Set Trimmed Mean Percent(number)&gt;, &lt;Set Alpha Level(number)&gt;)
 
 **Description:** Customizes the summary statistics that are displayed in the Summary Statistics report.
 
@@ -3897,7 +3857,7 @@ obj << Customize Summary Statistics( N( 0 ), Variance( 1 ), Skewness( 1 ) );
 
 #### Show All Modes
 
-**Syntax:** obj << Customize Summary Statistics( Show all Modes( state=0|1 ))
+**Syntax:** obj &lt;&lt; Customize Summary Statistics( Show all Modes( state=0|1 ))
 
 **Description:** Shows or hides all modes in the Summary Statistics report.
 
@@ -3916,7 +3876,7 @@ obj << Customize Summary Statistics( Mode( 1 ), Show All Modes( 1 ) );
 
 #### Apply Preset
 
-**Syntax:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntax:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Description:** Apply a previously created preset to the object, updating the options and customizations to match the saved settings.
 
@@ -3958,7 +3918,7 @@ obj[1] << Apply Preset( "Sample Presets", "Check Normality" );
 
 #### Axes on Left
 
-**Syntax:** obj << Axes on Left( state=0|1 )
+**Syntax:** obj &lt;&lt; Axes on Left( state=0|1 )
 
 **Description:** Moves the count, probability, density, and normal quantile plot axes to the left side of a horizontal graph.
 
@@ -3994,7 +3954,7 @@ obj << Axes on Left( 1 );
 
 #### Confidence Interval
 
-**Syntax:** obj << Confidence Interval( "0.90"|"0.95"|"0.99"|"Other…" )
+**Syntax:** obj &lt;&lt; Confidence Interval( "0.90"|"0.95"|"0.99"|"Other…" )
 
 **Description:** Computes score confidence intervals about the probabilities.
 
@@ -4009,7 +3969,7 @@ obj << Confidence Interval( 0.95 );
 
 #### Count Axis
 
-**Syntax:** obj << Count Axis( state=0|1 )
+**Syntax:** obj &lt;&lt; Count Axis( state=0|1 )
 
 **Description:** Shows or hides the count axis for the histogram.
 
@@ -4037,7 +3997,7 @@ obj << Count Axis( 1 );
 
 #### Density Axis
 
-**Syntax:** obj << Density Axis( state=0|1 )
+**Syntax:** obj &lt;&lt; Density Axis( state=0|1 )
 
 **Description:** Shows or hides the density axis for the density curve on the histogram.
 
@@ -4052,7 +4012,7 @@ obj << Density Axis( 1 );
 
 #### Frequencies
 
-**Syntax:** obj << Frequencies( state=0|1 )
+**Syntax:** obj &lt;&lt; Frequencies( state=0|1 )
 
 **Description:** Shows or hides the Frequencies report, which lists the counts and probabilities for each level. On by default.
 
@@ -4082,7 +4042,7 @@ obj << Frequencies( 0 );
 
 #### Histogram
 
-**Syntax:** obj << Histogram( state=0|1 )
+**Syntax:** obj &lt;&lt; Histogram( state=0|1 )
 
 **Description:** Shows or hides the histogram. On by default.
 
@@ -4112,7 +4072,7 @@ obj << Histogram( 0 );
 
 #### Histogram Color
 
-**Syntax:** obj << Histogram Color( color )
+**Syntax:** obj &lt;&lt; Histogram Color( color )
 
 **Description:** Changes the color of the histogram bars.
 
@@ -4140,7 +4100,7 @@ obj << Histogram Color( "Red" );
 
 #### Horizontal Layout
 
-**Syntax:** obj << Horizontal Layout( state=0|1 )
+**Syntax:** obj &lt;&lt; Horizontal Layout( state=0|1 )
 
 **Description:** Changes the orientation of the histogram and the reports to be horizontal.
 
@@ -4168,7 +4128,7 @@ obj << Horizontal Layout( 1 );
 
 #### Mosaic Plot
 
-**Syntax:** obj << Mosaic Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; Mosaic Plot( state=0|1 )
 
 **Description:** Shows or hides a mosaic bar chart for each nominal or ordinal response variable. A mosaic plot is a stacked bar chart where each segment is proportional to its group&apos;s frequency count.
 
@@ -4223,7 +4183,7 @@ preset = obj[1] << New Preset();
 
 #### Order By
 
-**Syntax:** obj << Order By( "Default"|"Count Descending"|"Count Ascending" )
+**Syntax:** obj &lt;&lt; Order By( "Default"|"Count Descending"|"Count Ascending" )
 
 **Description:** Orders the histogram, mosaic plot, and Frequencies report in ascending or descending order, by count. You can also revert back to the default ordering.
 
@@ -4238,7 +4198,7 @@ obj << Order By( "Count Descending" );
 
 #### Prob Axis
 
-**Syntax:** obj << Prob Axis( state=0|1 )
+**Syntax:** obj &lt;&lt; Prob Axis( state=0|1 )
 
 **Description:** Shows or hides the probability or proportion axis for this histogram.
 
@@ -4288,7 +4248,7 @@ obj[1] << Render Preset(
 
 #### Save
 
-**Syntax:** obj << Save( "Level Numbers"|"Value Ordering"|"Script to Log" )
+**Syntax:** obj &lt;&lt; Save( "Level Numbers"|"Value Ordering"|"Script to Log" )
 
 **Description:** Saves the Level Numbers to a new column in the data table or the script to the log.
 
@@ -4303,7 +4263,7 @@ obj << Save( "Level Numbers" );
 
 #### Separate Bars
 
-**Syntax:** obj << Separate Bars( state=0|1 )
+**Syntax:** obj &lt;&lt; Separate Bars( state=0|1 )
 
 **Description:** Adds space between the bars of the histogram. This option is available only for categorical variables.
 
@@ -4331,7 +4291,7 @@ obj << Separate Bars( 1 );
 
 #### Show Counts
 
-**Syntax:** obj << Show Counts( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Counts( state=0|1 )
 
 **Description:** Shows or hides the bar counts on the histogram, which give the frequency of column values represented by each histogram bar.
 
@@ -4359,7 +4319,7 @@ obj << Show Counts( 1 );
 
 #### Show Percents
 
-**Syntax:** obj << Show Percents( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Percents( state=0|1 )
 
 **Description:** Shows or hides the bar percents on the histogram, which give the percentage of column values represented by each histogram bar.
 
@@ -4387,7 +4347,7 @@ obj << Show Percents( 1 );
 
 #### Std Error Bars
 
-**Syntax:** obj << Std Error Bars( state=0|1 )
+**Syntax:** obj &lt;&lt; Std Error Bars( state=0|1 )
 
 **Description:** Shows or hides standard error bars on each of the histogram bars.
 
@@ -4402,7 +4362,7 @@ obj << Std Error Bars( 1 );
 
 #### Test Probabilities
 
-**Syntax:** obj << Test Probabilities( Test( Hypothesized|Greater than|Less than ), Fix( Hypothesized|Omitted ), p1, <f>, p2, <f>, p3, <f>, etc. )
+**Syntax:** obj &lt;&lt; Test Probabilities( Test( Hypothesized|Greater than|Less than ), Fix( Hypothesized|Omitted ), p1, &lt;f&gt;, p2, &lt;f&gt;, p3, &lt;f&gt;, etc. )
 
 **Description:** Tests the estimated probabilities of the levels of a categorical variable against the specified hypothesized probabilities (p1, p2, p3, and so on). For variables with two levels, use the Test option to specify the sign for the alternative hypothesis of the test. For variables with more than two levels, use the Fix option to specify how missing hypothesized values are handled. Note that f is an optional argument that specifies that the preceding level is treated as fixed.
 
@@ -4449,7 +4409,7 @@ obj << Test Probabilities( Test( Hypothesized ), 0.4, f, 0.6, f );
 
 #### Vertical
 
-**Syntax:** obj << Vertical( state=0|1 )
+**Syntax:** obj &lt;&lt; Vertical( state=0|1 )
 
 **Description:** Changes the orientation of the histogram, box plots, and quantile plots to be vertical. On by default.
 
@@ -4481,7 +4441,7 @@ obj << Vertical( 0 );
 
 #### Apply Preset
 
-**Syntax:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntax:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Description:** Apply a previously created preset to the object, updating the options and customizations to match the saved settings.
 
@@ -4523,7 +4483,7 @@ obj[1] << Apply Preset( "Sample Presets", "Check Normality" );
 
 #### Axes on Left
 
-**Syntax:** obj << Axes on Left( state=0|1 )
+**Syntax:** obj &lt;&lt; Axes on Left( state=0|1 )
 
 **Description:** Moves the count, probability, density, and normal quantile plot axes to the left side of a horizontal graph.
 
@@ -4559,7 +4519,7 @@ obj << Axes on Left( 1 );
 
 #### Confidence Interval
 
-**Syntax:** obj << Confidence Interval( "0.90"|"0.95"|"0.99"|"Other…" )
+**Syntax:** obj &lt;&lt; Confidence Interval( "0.90"|"0.95"|"0.99"|"Other…" )
 
 **Description:** Computes score confidence intervals about the probabilities.
 
@@ -4574,7 +4534,7 @@ obj << Confidence Interval( 0.95 );
 
 #### Count Axis
 
-**Syntax:** obj << Count Axis( state=0|1 )
+**Syntax:** obj &lt;&lt; Count Axis( state=0|1 )
 
 **Description:** Shows or hides the count axis for the histogram.
 
@@ -4602,7 +4562,7 @@ obj << Count Axis( 1 );
 
 #### Density Axis
 
-**Syntax:** obj << Density Axis( state=0|1 )
+**Syntax:** obj &lt;&lt; Density Axis( state=0|1 )
 
 **Description:** Shows or hides the density axis for the density curve on the histogram.
 
@@ -4617,7 +4577,7 @@ obj << Density Axis( 1 );
 
 #### Frequencies
 
-**Syntax:** obj << Frequencies( state=0|1 )
+**Syntax:** obj &lt;&lt; Frequencies( state=0|1 )
 
 **Description:** Shows or hides the Frequencies report, which lists the counts and probabilities for each level. On by default.
 
@@ -4647,7 +4607,7 @@ obj << Frequencies( 0 );
 
 #### Histogram
 
-**Syntax:** obj << Histogram( state=0|1 )
+**Syntax:** obj &lt;&lt; Histogram( state=0|1 )
 
 **Description:** Shows or hides the histogram. On by default.
 
@@ -4677,7 +4637,7 @@ obj << Histogram( 0 );
 
 #### Histogram Color
 
-**Syntax:** obj << Histogram Color( color )
+**Syntax:** obj &lt;&lt; Histogram Color( color )
 
 **Description:** Changes the color of the histogram bars.
 
@@ -4705,7 +4665,7 @@ obj << Histogram Color( "Red" );
 
 #### Horizontal Layout
 
-**Syntax:** obj << Horizontal Layout( state=0|1 )
+**Syntax:** obj &lt;&lt; Horizontal Layout( state=0|1 )
 
 **Description:** Changes the orientation of the histogram and the reports to be horizontal.
 
@@ -4733,7 +4693,7 @@ obj << Horizontal Layout( 1 );
 
 #### Mosaic Plot
 
-**Syntax:** obj << Mosaic Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; Mosaic Plot( state=0|1 )
 
 **Description:** Shows or hides a mosaic bar chart for each nominal or ordinal response variable. A mosaic plot is a stacked bar chart where each segment is proportional to its group&apos;s frequency count.
 
@@ -4788,7 +4748,7 @@ preset = obj[1] << New Preset();
 
 #### Order By
 
-**Syntax:** obj << Order By( "Default"|"Count Descending"|"Count Ascending" )
+**Syntax:** obj &lt;&lt; Order By( "Default"|"Count Descending"|"Count Ascending" )
 
 **Description:** Orders the histogram, mosaic plot, and Frequencies report in ascending or descending order, by count. You can also revert back to the default ordering.
 
@@ -4803,7 +4763,7 @@ obj << Order By( "Count Descending" );
 
 #### Prob Axis
 
-**Syntax:** obj << Prob Axis( state=0|1 )
+**Syntax:** obj &lt;&lt; Prob Axis( state=0|1 )
 
 **Description:** Shows or hides the probability or proportion axis for this histogram.
 
@@ -4853,7 +4813,7 @@ obj[1] << Render Preset(
 
 #### Save
 
-**Syntax:** obj << Save( "Level Numbers"|"Value Ordering"|"Script to Log" )
+**Syntax:** obj &lt;&lt; Save( "Level Numbers"|"Value Ordering"|"Script to Log" )
 
 **Description:** Saves the Level Numbers to a new column in the data table or the script to the log.
 
@@ -4868,7 +4828,7 @@ obj << Save( "Level Numbers" );
 
 #### Separate Bars
 
-**Syntax:** obj << Separate Bars( state=0|1 )
+**Syntax:** obj &lt;&lt; Separate Bars( state=0|1 )
 
 **Description:** Adds space between the bars of the histogram. This option is available only for categorical variables.
 
@@ -4896,7 +4856,7 @@ obj << Separate Bars( 1 );
 
 #### Show Counts
 
-**Syntax:** obj << Show Counts( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Counts( state=0|1 )
 
 **Description:** Shows or hides the bar counts on the histogram, which give the frequency of column values represented by each histogram bar.
 
@@ -4924,7 +4884,7 @@ obj << Show Counts( 1 );
 
 #### Show Percents
 
-**Syntax:** obj << Show Percents( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Percents( state=0|1 )
 
 **Description:** Shows or hides the bar percents on the histogram, which give the percentage of column values represented by each histogram bar.
 
@@ -4952,7 +4912,7 @@ obj << Show Percents( 1 );
 
 #### Std Error Bars
 
-**Syntax:** obj << Std Error Bars( state=0|1 )
+**Syntax:** obj &lt;&lt; Std Error Bars( state=0|1 )
 
 **Description:** Shows or hides standard error bars on each of the histogram bars.
 
@@ -4967,7 +4927,7 @@ obj << Std Error Bars( 1 );
 
 #### Test Probabilities
 
-**Syntax:** obj << Test Probabilities( Test( Hypothesized|Greater than|Less than ), Fix( Hypothesized|Omitted ), p1, <f>, p2, <f>, p3, <f>, etc. )
+**Syntax:** obj &lt;&lt; Test Probabilities( Test( Hypothesized|Greater than|Less than ), Fix( Hypothesized|Omitted ), p1, &lt;f&gt;, p2, &lt;f&gt;, p3, &lt;f&gt;, etc. )
 
 **Description:** Tests the estimated probabilities of the levels of a categorical variable against the specified hypothesized probabilities (p1, p2, p3, and so on). For variables with two levels, use the Test option to specify the sign for the alternative hypothesis of the test. For variables with more than two levels, use the Fix option to specify how missing hypothesized values are handled. Note that f is an optional argument that specifies that the preceding level is treated as fixed.
 
@@ -5014,7 +4974,7 @@ obj << Test Probabilities( Test( Hypothesized ), 0.4, f, 0.6, f );
 
 #### Vertical
 
-**Syntax:** obj << Vertical( state=0|1 )
+**Syntax:** obj &lt;&lt; Vertical( state=0|1 )
 
 **Description:** Changes the orientation of the histogram, box plots, and quantile plots to be vertical. On by default.
 
@@ -5046,7 +5006,7 @@ obj << Vertical( 0 );
 
 #### PValue animation
 
-**Syntax:** obj << Test Mean( PValue Animation )
+**Syntax:** obj &lt;&lt; Test Mean( PValue Animation )
 
 **Description:** Opens a separate window that shows an animation of how p-values change as the mean changes.
 
@@ -5061,7 +5021,7 @@ obj << Test Mean( 60, PValue Animation );
 
 #### Power animation
 
-**Syntax:** obj << Test Mean( Power Animation )
+**Syntax:** obj &lt;&lt; Test Mean( Power Animation )
 
 **Description:** Opens a separate window that shows an animation of how the power changes as the mean changes and whether the test is one-sided or two-sided.
 
@@ -5080,7 +5040,7 @@ obj << Test Mean( 60, Power Animation );
 
 #### Save Distribution as a Column Property
 
-**Syntax:** obj << Tolerance Interval( Save Distribution as a Column Property )
+**Syntax:** obj &lt;&lt; Tolerance Interval( Save Distribution as a Column Property )
 
 **Description:** Saves the Tolerance Interval Distribution type as a column property within the column of the original data table.
 
@@ -5100,7 +5060,7 @@ obj << Tolerance Interval(
 
 #### Save to Spec Limits Column Property
 
-**Syntax:** obj << Save to Spec Limits Column Property( Alpha(number), Proportion(number), <Lower | Upper>, <Nonparametric>, <Save to Spec Limits Column Property> )
+**Syntax:** obj &lt;&lt; Save to Spec Limits Column Property( Alpha(number), Proportion(number), &lt;Lower | Upper&gt;, &lt;Nonparametric&gt;, &lt;Save to Spec Limits Column Property&gt; )
 
 **Description:** Saves the tolerance interval as specification limits in the Spec Limits column property in the data table.
 

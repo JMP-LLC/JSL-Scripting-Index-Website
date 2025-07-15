@@ -6,7 +6,7 @@
 
 ### As Scriptable
 
-**構文:** jmplivereportlist = jmplivelist << As Scriptable()
+**構文:** jmplivereportlist = jmplivelist &lt;&lt; As Scriptable()
 
 **説明:** JMP Live結果リストを生成するために実行された検索の操作に応じて、JMP Liveフォルダ、JMP Liveレポート、またはJMP Live投稿の、スクリプト可能なオブジェクトのリストを戻す。
 
@@ -55,7 +55,7 @@ If( jmpliveresult << Succeeded,
 
 ### Get Current Page Number
 
-**構文:** value = jmplivelist << Get Current Page Number()
+**構文:** value = jmplivelist &lt;&lt; Get Current Page Number()
 
 **説明:** リスト内の項目の現在のページ番号を取得する。
 
@@ -165,7 +165,7 @@ While( count > 0,
 
 ### Get Number Of Items
 
-**構文:** value = jmplivelist << Get Number Of Items()
+**構文:** value = jmplivelist &lt;&lt; Get Number Of Items()
 
 **説明:** この結果セットの項目数を取得する。
 
@@ -250,7 +250,7 @@ If( jmpliveresult << Succeeded,
 
 ### Get Page
 
-**構文:** reportlist = jmplivelist << Get Page(value)
+**構文:** reportlist = jmplivelist &lt;&lt; Get Page(value)
 
 **説明:** 検索操作の結果リストの中から、JMP Liveフォルダ、JMP Liveレポート、またはJMP Live投稿オブジェクトの特定のページを取得する。
 
@@ -360,7 +360,7 @@ While( count > 0,
 
 ### Next
 
-**構文:** reportlist = jmplivelist << Next()
+**構文:** reportlist = jmplivelist &lt;&lt; Next()
 
 **説明:** 検索結果の、次ページの内容を戻す。このリストには、検索操作に応じてJMP Liveフォルダ、JMP Liveレポート、またはJMP Live投稿が含まれる。
 
@@ -470,7 +470,7 @@ While( count > 0,
 
 ### Previous
 
-**構文:** reportlist = jmplivelist << Previous()
+**構文:** reportlist = jmplivelist &lt;&lt; Previous()
 
 **説明:** 検索結果の、前ページの内容を戻す。このリストには、検索操作に応じてJMP Liveフォルダ、JMP Liveレポート、またはJMP Live投稿が含まれる。
 

@@ -2,8 +2,6 @@
 
 
 
-## 関数
-
 ### Arrhenius
 
 **構文:** y = Arrhenius( tempC )
@@ -126,7 +124,7 @@ Digamma( 5 );
 
 ### Exp
 
-**構文:** y = Exp( <x=1> )
+**構文:** y = Exp( &lt;x=1&gt; )
 
 **説明:** eのx乗を戻す。引数は数値、行列、または数値のリスト。
 
@@ -156,7 +154,7 @@ Show( ExpM1( 1.1e-18 ), Exp( 1.1e-18 ) - 1 );
 
 ### FFT
 
-**構文:** ret = FFT( L, <<inverse( 0 ), <<multivariate( 0 ), <<scale( 1.0 ) )
+**構文:** ret = FFT( L, &lt;&lt;inverse( 0 ), &lt;&lt;multivariate( 0 ), &lt;&lt;scale( 1.0 ) )
 
 **説明:** 引数Lに対して高速Fourier変換(FFT)を行う。Lは、データの実数部分と虚数部分を行列で表したリストでなければならない。Lが1つの行列で構成されている場合、その行列は実数とみなされる。が2つの行列で構成されている場合、1つ目が実数部分、2つ目が虚数部分とみなされる。2つの行列は次元が同じで、どちらも行が2つ以上なければならない。オプションの引数には、inverse(逆FFTを行うかどうか)、multivariate (空間FFT、つまり多変量FFTを行うかどうか)、scale(戻り値の乗数とする定数を指定する)がある。戻り値は、第1入力引数と次元が同じ2つの行列でできたリストの形を取る。
 
@@ -242,7 +240,7 @@ Factorial( 5 );
 
 ### Fit Transform To Normal
 
-**構文:** result = Fit Transform To Normal( Distribution(name), Y(vector), <Freq(vector)> )
+**構文:** result = Fit Transform To Normal( Distribution(name), Y(vector), &lt;Freq(vector)&gt; )
 
 **説明:** データのベクトルに対し、正規分布へと変換するための分布をあてはめる。Johnson Sl、Johnson Sb、Johnson Su、一般化対数(Glog)といった分布をあてはめることができる。パラメータ推定値、共分散行列、対数尤度、AICc、収束メッセージを含むリストを戻す。
 
@@ -268,7 +266,7 @@ Show( results );
 
 ### Gamma
 
-**構文:** y = Gamma( x, <limit> )
+**構文:** y = Gamma( x, &lt;limit&gt; )
 
 **説明:** xに対するガンマ関数の値を戻す。ガンマ関数は、z^(x-1)*exp(-z) dzに関して(0, +∞)の範囲で積分した関数。なお、limitが指定されている場合は、(0, limit)の範囲で積分した不完全ガンマ関数の値を戻す。
 
@@ -313,7 +311,7 @@ Ln( Exp( 2 ) );
 
 ### Log
 
-**構文:** y = Log( x, <b> )
+**構文:** y = Log( x, &lt;b&gt; )
 
 **説明:** bを底とするxの対数を戻す。bが指定されていない場合は、xの自然対数を戻す。
 
@@ -433,7 +431,7 @@ N Choose K( 5, 3 );
 
 ### Power
 
-**構文:** z = x ^ y; z = Power( x, <y=2> )
+**構文:** z = x ^ y; z = Power( x, &lt;y=2&gt; )
 
 **説明:** xのy乗を戻す。xが負の場合、yは整数でなければならない。
 
@@ -448,7 +446,7 @@ Power( 2, 5 );
 
 ### Root
 
-**構文:** y = Root( x, <n=2> )
+**構文:** y = Root( x, &lt;n=2&gt; )
 
 **説明:** xのn乗根を戻す。
 
@@ -553,7 +551,7 @@ Scheffe Cubic( [1, -1, 1, -1, 1], [-1, -1, 1, 1, -1] );
 
 ### SlInv
 
-**構文:** x = SlInv( z, gamma, delta, theta, <sigma=1> )
+**構文:** x = SlInv( z, gamma, delta, theta, &lt;sigma=1&gt; )
 
 **説明:** 標準正規分布の変数をJohnson-SL分布の変数に変換する。
 
@@ -568,7 +566,7 @@ SlInv( 1.96, 1.5, 2, 1 );
 
 ### SlTrans
 
-**構文:** z = SlTrans( x, gamma, delta, theta, <sigma=1> )
+**構文:** z = SlTrans( x, gamma, delta, theta, &lt;sigma=1&gt; )
 
 **説明:** Johnson-SL分布の変数を標準正規分布の変数に変換する。
 

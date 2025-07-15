@@ -6,7 +6,7 @@
 
 ### Open
 
-**语法:** Open( filePath, <data table options | Excel import options | text import options | SAS import options | HTML import options | esriShapeFile import options | PDF import options | other file options > )
+**语法:** Open( filePath, &lt;data table options | Excel import options | text import options | SAS import options | HTML import options | esriShapeFile import options | PDF import options | other file options &gt; )
 
 **说明:** 返回对数据表或其他 JMP 文件或基于文件创建的对象的引用。若未指定路径，则“打开”对话框显示。若指定了文件夹路径，则打开系统文件浏览器并且不返回对象。请参阅语法参考获取可用选项的完整说明。
 
@@ -36,7 +36,7 @@ dt2 = Open( "$SAMPLE_DATA/Fitness.jmp", Select Columns( "Name", "Sex", "Age", "W
 
 ### Dir
 
-**语法:** memlist = obj << Dir
+**语法:** memlist = obj &lt;&lt; Dir
 
 **说明:** 在 zip 存档中返回成员文件列表。
 
@@ -54,7 +54,7 @@ dirlist[1] || ": " || text;
 
 ### Read
 
-**语法:** memdata = obj << Read( memname, <Format(blob|string)>, <Encoding(charset)> )
+**语法:** memdata = obj &lt;&lt; Read( memname, &lt;Format(blob|string)&gt;, &lt;Encoding(charset)&gt; )
 
 **说明:** 将 zip 存档成员文件读入字符串或 blob。
 
@@ -72,7 +72,7 @@ dirlist[1] || ": " || text;
 
 ### Write
 
-**语法:** actual name = obj << Write( memname, memdata, < "replace" > )
+**语法:** actual name = obj &lt;&lt; Write( memname, memdata, &lt; "replace" &gt; )
 
 **说明:** 将文本或 Blob 写入 zip 存档成员文件。若指定了可选的“replace”参数，并且存在具有该名称的现有文件，则将替换成员文件。否则，将更改此成员名称，以防止覆盖现有成员；返回实际使用的名称。
 

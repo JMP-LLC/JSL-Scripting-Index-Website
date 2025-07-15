@@ -8,33 +8,33 @@
 
 #### Censor
 
-**Syntaxe :** obj << Censor( column )
+**Syntaxe :** obj &lt;&lt; Censor( column )
 
 #### Freq
 
-**Syntaxe :** obj << Freq( column )
+**Syntaxe :** obj &lt;&lt; Freq( column )
 
 #### Grouping
 
-**Syntaxe :** obj << Grouping( column(s) )
+**Syntaxe :** obj &lt;&lt; Grouping( column(s) )
 
 #### Label
 
-**Syntaxe :** obj << Label( column )
+**Syntaxe :** obj &lt;&lt; Label( column )
 
 #### Time to Event
 
-**Syntaxe :** obj << Time to Event( column(s) )
+**Syntaxe :** obj &lt;&lt; Time to Event( column(s) )
 
 #### Y
 
-**Syntaxe :** obj << Y( column(s) )
+**Syntaxe :** obj &lt;&lt; Y( column(s) )
 
 ### Messages d'éléments
 
 #### Change Confidence Level
 
-**Syntaxe :** obj << Change Confidence Level( fraction )
+**Syntaxe :** obj &lt;&lt; Change Confidence Level( fraction )
 
 **Description :** Spécifie le niveau de confiance pour l&apos;ensemble de la plate-forme. Tous les graphiques et les rapports sont mis à jour en conséquence.
 
@@ -55,11 +55,11 @@ obj << Change Confidence Level( 0.99 );
 
 #### Default Parametric Distribution
 
-**Syntaxe :** obj << Default Parametric Distribution( "Log-normale"|"Weibull"|"Log-logistique"|"Fréchet"|"Normale"|"Plus petite valeur extrême"|"Logistique"|"Plus grande valeur extrême"|"Exponentielle"|"Log gamma généralisée"|"Gamma généralisée"|"Weibull avec seuillage"|"Lognormale avec seuillage"|"Fréchet avec seuillage"|"Log-logistique avec seuillage"|"Distribution de Weibull comportant un Dirac en 0"|"Distribution log-normale comportant un Dirac en 0"|"Distribution de Fréchet comportant un Dirac en 0"|"Distribution log-logistique comportant un Dirac en 0"|"Weibull des sous-populations à défauts"|"Log-normale des sous-populations à défauts"|"Fréchet des sous-populations à défauts"|"Distribution log-logistique pour des sous-populations à défauts" )
+**Syntaxe :** obj &lt;&lt; Default Parametric Distribution( "Log-normale"|"Weibull"|"Log-logistique"|"Fréchet"|"Normale"|"Plus petite valeur extrême"|"Logistique"|"Plus grande valeur extrême"|"Exponentielle"|"Log gamma généralisée"|"Gamma généralisée"|"Weibull avec seuillage"|"Lognormale avec seuillage"|"Fréchet avec seuillage"|"Log-logistique avec seuillage"|"Distribution de Weibull comportant un Dirac en 0"|"Distribution log-normale comportant un Dirac en 0"|"Distribution de Fréchet comportant un Dirac en 0"|"Distribution log-logistique comportant un Dirac en 0"|"Weibull des sous-populations à défauts"|"Log-normale des sous-populations à défauts"|"Fréchet des sous-populations à défauts"|"Distribution log-logistique pour des sous-populations à défauts" )
 
 #### Estimate Probability
 
-**Syntaxe :** obj << Estimate Probability( state=<0|1> | <Compute( array )> )
+**Syntaxe :** obj &lt;&lt; Estimate Probability( state=&lt;0|1&gt; | &lt;Compute( array )&gt; )
 
 **Description :** Affiche ou masque un rapport Estimer la probabilité qui correspond à la distribution sélectionnée le plus récemment dans le rapport Comparer la distribution. Utiliser l&apos;argument Calculer pour spécifier une gamme de valeurs temporelles pour l&apos;estimation de la probabilité.
 
@@ -81,7 +81,7 @@ obj << Estimate Probability( Compute( [1000] ) );
 
 #### Estimate Quantile
 
-**Syntaxe :** obj << Estimate Quantile( state=<0|1> | <Compute( array )> )
+**Syntaxe :** obj &lt;&lt; Estimate Quantile( state=&lt;0|1&gt; | &lt;Compute( array )&gt; )
 
 **Description :** Affiche ou masque un rapport Estimer le quantile qui correspond à la distribution sélectionnée le plus récemment dans le rapport Comparer le quantile. Utiliser l&apos;argument Calculer pour spécifier une gamme de valeurs de probabilité pour l&apos;estimation du quantile.
 
@@ -104,7 +104,7 @@ obj << Estimate Quantile( Compute( [.1] ) );
 
 #### Fit Distribution
 
-**Syntaxe :** obj << Fit Distribution( distribution )
+**Syntaxe :** obj &lt;&lt; Fit Distribution( distribution )
 
 **Description :** Ajuste la distribution spécifiée.
 
@@ -124,7 +124,7 @@ obj << Fit Distribution( "Loglogistic" );
 
 #### Interval Type
 
-**Syntaxe :** obj << Interval Type( "Simultané"|"Point pPoint par point" )
+**Syntaxe :** obj &lt;&lt; Interval Type( "Simultané"|"Point pPoint par point" )
 
 **Description :** Spécifie le type d&apos;intervalle de confiance affiché pour l&apos;ajustement non paramétrique dans le graphique Comparer les distributions. Les options disponibles sont intervalles de confiance par point ou simultanés.
 
@@ -145,7 +145,7 @@ obj << Interval Type( "Pointwise" );
 
 #### Select Distribution
 
-**Syntaxe :** obj << Select Distribution( Distribution|Quantile|Hazard|Density, distribution )
+**Syntaxe :** obj &lt;&lt; Select Distribution( Distribution|Quantile|Hazard|Density, distribution )
 
 **Description :** Spécifie une distribution à afficher pour chaque groupe sur le graphique spécifié. Cela est équivalent à sélectionner une option de distribution dans les rapports Comparer la distribution, Comparer le quantile ou Comparer la densité.
 
@@ -165,7 +165,7 @@ obj << Select Distribution( Distribution, Weibull );
 
 #### Select Scale
 
-**Syntaxe :** obj << Select Scale( distribution )
+**Syntaxe :** obj &lt;&lt; Select Scale( distribution )
 
 **Description :** Spécifie une échelle pour l&apos;axe de probabilité dans le graphique Comparer la distribution. Cela est équivalent à sélectionner une option sous Échelle dans le rapport Comparer la distribution.
 
@@ -185,7 +185,7 @@ obj << Select Scale( Normal );
 
 #### Show Confidence Area
 
-**Syntaxe :** obj << Show Confidence Area( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Show Confidence Area( state=0|1 )
 
 **Description :** Affiche ou masque les régions de confiance ombrées dans les graphiques. Actif par défaut.
 
@@ -207,7 +207,7 @@ obj << Show Confidence Area( 0 );
 
 #### Show Density Functions
 
-**Syntaxe :** obj << Show Density Functions( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Show Density Functions( state=0|1 )
 
 **Description :** Affiche ou masque le rapport Comparer la densité, qui superpose les graphiques des fonctions de densité pour chaque groupe de la distribution sélectionnée.
 
@@ -228,7 +228,7 @@ obj << Select Distribution( Density, Weibull );
 
 #### Show Hazard Functions
 
-**Syntaxe :** obj << Show Hazard Functions( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Show Hazard Functions( state=0|1 )
 
 **Description :** Affiche ou masque le rapport Comparer le risque, qui superpose les graphiques des fonctions de risque pour chaque groupe de la distribution sélectionnée.
 
@@ -249,7 +249,7 @@ obj << Select Distribution( Hazard, Weibull );
 
 #### Show Points
 
-**Syntaxe :** obj << Show Points( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Show Points( state=0|1 )
 
 **Description :** Affiche ou masque les points de données dans le graphique de probabilité. La plate-forme Distribution de survie utilise les estimations du point milieu de la fonction en escalier pour construire les graphiques de probabilité. Lorsque vous désélectionnez l&apos;option Afficher les points, les estimations du point milieu sont remplacées par les estimations de Kaplan-Meier. Actif par défaut.
 
@@ -270,7 +270,7 @@ obj << Show Points( 0 );
 
 #### Show Quantile Functions
 
-**Syntaxe :** obj << Show Quantile Functions( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Show Quantile Functions( state=0|1 )
 
 **Description :** Affiche ou masque le rapport Comparer le quantile, qui superpose les graphiques des fonctions de quantile pour chaque groupe de la distribution sélectionnée.
 
@@ -291,7 +291,7 @@ obj << Select Distribution( Quantile, Weibull );
 
 #### Show Survival Curve
 
-**Syntaxe :** obj << Show Survival Curve( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Show Survival Curve( state=0|1 )
 
 **Description :** Bascule entre la probabilité de défaillance et la courbe de survie sur le graphique de probabilité Comparer les distributions.
 
@@ -311,7 +311,7 @@ obj = Life Distribution(
 
 #### Tabbed Report
 
-**Syntaxe :** obj << Tabbed Report( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Tabbed Report( state=0|1 )
 
 **Description :** Affiche les graphiques et les données dans des onglets individuels plutôt que dans le style de structure par défaut.
 
@@ -333,7 +333,7 @@ obj = Life Distribution(
 
 #### Action
 
-**Syntaxe :** obj << Action
+**Syntaxe :** obj &lt;&lt; Action
 
 **Description :** Trappe tout usage dans une plate-forme pour y insérer les expressions à calculer. Définit provisoirement les contextes des boîtes d’affichage et des tables de données dans la plate-forme.
 
@@ -351,7 +351,7 @@ dt << Bivariate(
 
 #### Apply Preset
 
-**Syntaxe :** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntaxe :** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Description :** Appliquez une préconfiguration créée précédemment à l&apos;objet, ce qui met à jour les options et les personnalisations pour correspondre aux paramètres enregistrés.
 
@@ -398,7 +398,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 #### Automatic Recalc
 
-**Syntaxe :** obj << Automatic Recalc( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Description :** Refait l&apos;analyse automatiquement pour l&apos;exclusion et les modifications de données. Si l&apos;option Nouveau calcul automatique est activée, envisagez d&apos;utiliser les commandes Wait(0) pour vous assurer que l&apos;exclusion et les modifications de données sont prises en compte avant le recalcul.
 
@@ -412,7 +412,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 #### Broadcast
 
-**Syntaxe :** obj << Broadcast(message)
+**Syntaxe :** obj &lt;&lt; Broadcast(message)
 
 **Description :** Diffuse un message sur une plate-forme. Si les résultats de renvoi des objets individuels sont des tables, elles sont concaténées si possible, et le format final est identique au résultat de l&apos;option Enregistrer la table de données combinée dans une boîte de tableau ou au résultat de l&apos;option Concaténer avec une colonne Source. Sinon, les résultats sont stockés dans une liste et renvoyés.
 
@@ -432,7 +432,7 @@ objs[1] << Broadcast( Save Summaries );
 
 #### Column Switcher
 
-**Syntaxe :** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Syntaxe :** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Description :** Ajoute un panneau de contrôle pour changer les variables de la plate-forme.
 
@@ -450,7 +450,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 #### Copy ByGroup Script
 
-**Syntaxe :** obj << Copy ByGroup Script
+**Syntaxe :** obj &lt;&lt; Copy ByGroup Script
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis le place dans le presse-papiers.
 
@@ -463,7 +463,7 @@ obj[1] << Copy ByGroup Script;
 
 #### Copy Script
 
-**Syntaxe :** obj << Copy Script
+**Syntaxe :** obj &lt;&lt; Copy Script
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis le place dans le presse-papiers.
 
@@ -476,7 +476,7 @@ obj << Copy Script;
 
 #### Data Table Window
 
-**Syntaxe :** obj << Data Table Window
+**Syntaxe :** obj &lt;&lt; Data Table Window
 
 **Description :** Déplace en premier plan la fenêtre de la table de données utilisée dans cette analyse.
 
@@ -489,7 +489,7 @@ obj << Data Table Window;
 
 #### Get By Levels
 
-**Syntaxe :** obj << Get By Levels
+**Syntaxe :** obj &lt;&lt; Get By Levels
 
 **Description :** Renvoie un tableau associatif de mappage des colonnes par groupe à leurs valeurs.
 
@@ -506,7 +506,7 @@ biv << Get By Levels;
 
 #### Get ByGroup Script
 
-**Syntaxe :** obj << Get ByGroup Script
+**Syntaxe :** obj &lt;&lt; Get ByGroup Script
 
 **Description :** Crée un script (JSL) pour produire cette analyse et la renvoyer sous forme d’une expression.
 
@@ -520,7 +520,7 @@ Show( t );
 
 #### Get Container
 
-**Syntaxe :** obj << Get Container
+**Syntaxe :** obj &lt;&lt; Get Container
 
 **Description :** Renvoie une référence à la zone conteneur où se trouve le contenu de l&apos;objet.
 
@@ -567,7 +567,7 @@ New Window( "platform boxes",
 
 #### Get Data Table
 
-**Syntaxe :** obj << Get Data Table
+**Syntaxe :** obj &lt;&lt; Get Data Table
 
 **Description :** Renvoie une référence à la table de données.
 
@@ -581,7 +581,7 @@ Show( N Rows( t ) );
 
 #### Get Group Platform
 
-**Syntaxe :** obj << Get Group Platform
+**Syntaxe :** obj &lt;&lt; Get Group Platform
 
 **Description :** Renvoie l&apos;objet de Plate-forme de groupe si cette plate-forme fait partie d&apos;un groupe. Sinon, renvoie Empty().
 
@@ -598,7 +598,7 @@ group << Layout( "Arrange in Tabs" );
 
 #### Get Script
 
-**Syntaxe :** obj << Get Script
+**Syntaxe :** obj &lt;&lt; Get Script
 
 **Description :** Crée un script (JSL) pour produire cette analyse et la renvoyer sous forme d’une expression.
 
@@ -612,7 +612,7 @@ Show( t );
 
 #### Get Script With Data Table
 
-**Syntaxe :** obj << Get Script With Data Table
+**Syntaxe :** obj &lt;&lt; Get Script With Data Table
 
 **Description :** Crée un script (JSL) pour produire cette analyse faisant spécifiquement référence à cette table de données et la renvoyer sous forme d’une expression.
 
@@ -626,7 +626,7 @@ Show( t );
 
 #### Get Timing
 
-**Syntaxe :** obj << Get Timing
+**Syntaxe :** obj &lt;&lt; Get Timing
 
 **Description :** Détermine une heure de lancement de la plate-forme.
 
@@ -640,7 +640,7 @@ Show( t );
 
 #### Get Web Support
 
-**Syntaxe :** obj << Get Web Support
+**Syntaxe :** obj &lt;&lt; Get Web Support
 
 **Description :** Renvoyer un nombre indiquant le niveau de support HTML interactif pour l&apos;objet d&apos;affichage. 1 signifie que tout ou partie des éléments sont pris en charge. 0 signifie qu&apos;il n&apos;y a aucun support.
 
@@ -656,7 +656,7 @@ Show( s );
 
 #### Get Where Expr
 
-**Syntaxe :** obj << Get Where Expr
+**Syntaxe :** obj &lt;&lt; Get Where Expr
 
 **Description :** Renvoie l&apos;expression Where pour le sous-ensemble de données, si la plate-forme a été lancée avec By() ou Where(). Sinon, renvoie la Empty()
 
@@ -697,7 +697,7 @@ dt << Bivariate(
 
 #### Local Data Filter
 
-**Syntaxe :** obj << Local Data Filter
+**Syntaxe :** obj &lt;&lt; Local Data Filter
 
 **Description :** Permet de filtrer les données locales, dans la plate-forme concernée, par groupes ou étendues spécifiques
 
@@ -753,7 +753,7 @@ preset = obj << New Preset();
 
 #### Paste Local Data Filter
 
-**Syntaxe :** obj << Paste Local Data Filter
+**Syntaxe :** obj &lt;&lt; Paste Local Data Filter
 
 **Description :** Appliquer le filtre des données locales du presse-papiers au rapport actif.
 
@@ -774,7 +774,7 @@ dist2 << Paste Local Data Filter;
 
 #### Redo Analysis
 
-**Syntaxe :** obj << Redo Analysis
+**Syntaxe :** obj &lt;&lt; Redo Analysis
 
 **Description :** Exécute à nouveau cette même analyse dans une nouvelle fenêtre. L&apos;analyse sera différente si les données ont été modifiées.
 
@@ -787,7 +787,7 @@ obj << Redo Analysis;
 
 #### Redo ByGroup Analysis
 
-**Syntaxe :** obj << Redo ByGroup Analysis
+**Syntaxe :** obj &lt;&lt; Redo ByGroup Analysis
 
 **Description :** Exécute à nouveau cette même analyse dans une nouvelle fenêtre. L&apos;analyse sera différente si les données ont été modifiées.
 
@@ -800,7 +800,7 @@ obj[1] << Redo ByGroup Analysis;
 
 #### Relaunch Analysis
 
-**Syntaxe :** obj << Relaunch Analysis
+**Syntaxe :** obj &lt;&lt; Relaunch Analysis
 
 **Description :** Ouvre la fenêtre de lancement de la plate-forme et rappelle les paramètres utilisés pour créer le rapport.
 
@@ -813,7 +813,7 @@ obj << Relaunch Analysis;
 
 #### Relaunch ByGroup
 
-**Syntaxe :** obj << Relaunch ByGroup
+**Syntaxe :** obj &lt;&lt; Relaunch ByGroup
 
 **Description :** Ouvre la fenêtre de lancement de la plate-forme et rappelle les paramètres utilisés pour créer le rapport.
 
@@ -826,7 +826,7 @@ obj[1] << Relaunch ByGroup;
 
 #### Remove Column Switcher
 
-**Syntaxe :** obj << Remove Column Switcher
+**Syntaxe :** obj &lt;&lt; Remove Column Switcher
 
 **Description :** Supprime le sélecteur de colonne le plus récent ajouté à la plate-forme.
 
@@ -846,7 +846,7 @@ obj << Remove Column Switcher;
 
 #### Remove Local Data Filter
 
-**Syntaxe :** obj << Remove Local Data Filter
+**Syntaxe :** obj &lt;&lt; Remove Local Data Filter
 
 **Description :** Permet de supprimer un filtre de données locales créé précédemment et rétablit toutes les valeurs des données directement dans la table de données utilisée dans la plate-forme.
 
@@ -885,9 +885,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 #### Report
 
-**Syntaxe :** obj << Report;
-
-Report( obj )
+**Syntaxe :** obj &lt;&lt; Report;Report( obj )
 
 **Description :** Renvoie une référence à l’objet rapport.
 
@@ -902,7 +900,7 @@ Show( t );
 
 #### Report View
 
-**Syntaxe :** obj << Report View( "Complet"|"Résumé" )
+**Syntaxe :** obj &lt;&lt; Report View( "Complet"|"Résumé" )
 
 **Description :** L&apos;affichage du rapport détermine le niveau de détail visible dans un rapport de plate-forme. Full affiche tous les détails, alors que Summary affiche uniquement le contenu sélectionné, selon la plate-forme. Pour un comportement personnalisé, les boîtes d&apos;affichage prennent en charge un message <<Set Summary Behavior.
 
@@ -915,7 +913,7 @@ obj << Report View( "Summary" );
 
 #### Save ByGroup Script to Data Table
 
-**Syntaxe :** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntaxe :** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;enregistre sous forme de propriété de table dans la table de données. Vous pouvez spécifier un nom pour le script. L&apos;option Append Suffix ajoute un suffixe numérique au nom du script, ce qui différentie le script d&apos;un script existant portant le même nom. L&apos;option Prompt invite l&apos;utilisateur à spécifier un nom de script. L&apos;option Replace remplace un script existant avec le même nom.
 
@@ -928,7 +926,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 #### Save ByGroup Script to Journal
 
-**Syntaxe :** obj << Save ByGroup Script to Journal
+**Syntaxe :** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis ajoute un bouton dans le journal qui contient ce script.
 
@@ -941,7 +939,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 #### Save ByGroup Script to Script Window
 
-**Syntaxe :** obj << Save ByGroup Script to Script Window
+**Syntaxe :** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;ajoute à la fenêtre de script active.
 
@@ -954,7 +952,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 #### Save Script for All Objects
 
-**Syntaxe :** obj << Save Script for All Objects
+**Syntaxe :** obj &lt;&lt; Save Script for All Objects
 
 **Description :** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -967,7 +965,7 @@ obj << Save Script for All Objects;
 
 #### Save Script for All Objects To Data Table
 
-**Syntaxe :** obj << Save Script for All Objects To Data Table( <name> )
+**Syntaxe :** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Description :** Enregistre un script pour tous les objets de rapport dans la table de données active. Cette option est utile lorsque vous avez plusieurs rapports dans la fenêtre. Le script est nommé d&apos;après la première plate-forme, sauf si vous spécifiez le nom du script entre guillemets.
 
@@ -991,7 +989,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 #### Save Script to Data Table
 
-**Syntaxe :** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntaxe :** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;enregistre sous forme de propriété de tableau dans la table de données.
 
@@ -1004,7 +1002,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 #### Save Script to Journal
 
-**Syntaxe :** obj << Save Script to Journal
+**Syntaxe :** obj &lt;&lt; Save Script to Journal
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis ajoute un bouton dans le journal qui contient ce script.
 
@@ -1017,7 +1015,7 @@ obj << Save Script to Journal;
 
 #### Save Script to Report
 
-**Syntaxe :** obj << Save Script to Report
+**Syntaxe :** obj &lt;&lt; Save Script to Report
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;affiche dans le rapport lui-même. Utile pour conserver une trace écrite de ce qui a été effectué.
 
@@ -1030,7 +1028,7 @@ obj << Save Script to Report;
 
 #### Save Script to Script Window
 
-**Syntaxe :** obj << Save Script to Script Window
+**Syntaxe :** obj &lt;&lt; Save Script to Script Window
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;ajoute à la fenêtre de script active.
 
@@ -1113,7 +1111,7 @@ dt << Distribution(
 
 #### Sync to Data Table Changes
 
-**Syntaxe :** obj << Sync to Data Table Changes
+**Syntaxe :** obj &lt;&lt; Sync to Data Table Changes
 
 **Description :** Sync avec l&apos;exclusion et les modifications apportées aux données.
 
@@ -1130,7 +1128,7 @@ dist << Sync To Data Table Changes;
 
 #### Title
 
-**Syntaxe :** obj << Title( "new title" )
+**Syntaxe :** obj &lt;&lt; Title( "new title" )
 
 **Description :** Définit le titre de la plate-forme.
 
@@ -1143,7 +1141,7 @@ obj << Title( "My Platform" );
 
 #### Top Report
 
-**Syntaxe :** obj << Top Report
+**Syntaxe :** obj &lt;&lt; Top Report
 
 **Description :** Renvoie une référence au nœud racine dans le rapport.
 
@@ -1158,7 +1156,7 @@ Show( t );
 
 #### Transform Column
 
-**Syntaxe :** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Syntaxe :** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Description :** Créez une colonne de transformation dans le contexte local d&apos;un objet, généralement une plate-forme. La colonne de transformation est active uniquement pendant la durée de vie de la plateforme.
 
@@ -1179,7 +1177,7 @@ dt << Distribution(
 
 #### View Web XML
 
-**Syntaxe :** obj << View Web XML
+**Syntaxe :** obj &lt;&lt; View Web XML
 
 **Description :** Renvoie le code XML utilisé pour créer le rapport au format HTML interactif.
 
@@ -1194,9 +1192,7 @@ xml = obj << View Web XML;
 
 #### Window View
 
-**Syntaxe :** obj = Y(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Y(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Définir le type de fenêtre à créer pour le rapport. Par défaut, une fenêtre de rapport Visible sera créée. Une fenêtre Invisible ne s&apos;affichera pas à l&apos;écran, mais sera visible par les fonctions comme Window(). Une fenêtre Private répond à la plupart des messages de fenêtre mais n&apos;est pas visible et doit être adressée au moyen de l&apos;objet rapport
 
@@ -1226,7 +1222,7 @@ New Window( "Bivariate Equation",
 
 #### Compute
 
-**Syntaxe :** obj << Mean Remaining Life( Compute( array ) )
+**Syntaxe :** obj &lt;&lt; Mean Remaining Life( Compute( array ) )
 
 **Description :** Spécifie une plage de valeurs de temps à ajouter au Calculateur de la durée de vie résiduelle moyenne.
 
@@ -1248,7 +1244,7 @@ obj << Mean Remaining Life(
 
 #### Configuration
 
-**Syntaxe :** obj << Mean Remaining Life( Configuration( useBootstrap, BootstrapSize, SampleSize, RandomSeed ) )
+**Syntaxe :** obj &lt;&lt; Mean Remaining Life( Configuration( useBootstrap, BootstrapSize, SampleSize, RandomSeed ) )
 
 **Description :** Spécifie les paramètres pour le Calculateur de la durée de vie résiduelle moyenne, qui estime la durée de vie résiduelle moyenne d&apos;une unité pour un ensemble de temps de survie donnés. Les arguments spécifient si un bootstrap doit être utilisé, le nombre de distributions agrégées du bootstrap, le nombre de temps de défaillance simulés et une graine aléatoire. Actif par défaut.
 
@@ -1270,7 +1266,7 @@ obj << Mean Remaining Life(
 
 #### Get Results
 
-**Syntaxe :** obj << Mean Remaining Life( Get Results )
+**Syntaxe :** obj &lt;&lt; Mean Remaining Life( Get Results )
 
 **Description :** Renvoie une matrice de la table de données dans le Calculateur de la durée de vie résiduelle moyenne.
 
@@ -1297,37 +1293,37 @@ obj << Mean Remaining Life( Get Results );
 
 #### By
 
-**Syntaxe :** obj << By( column(s) )
+**Syntaxe :** obj &lt;&lt; By( column(s) )
 
 #### Censor
 
-**Syntaxe :** obj << Censor( column )
+**Syntaxe :** obj &lt;&lt; Censor( column )
 
 #### Failure Cause
 
-**Syntaxe :** obj << Failure Cause( column )
+**Syntaxe :** obj &lt;&lt; Failure Cause( column )
 
 #### Freq
 
-**Syntaxe :** obj << Freq( column )
+**Syntaxe :** obj &lt;&lt; Freq( column )
 
 #### Label
 
-**Syntaxe :** obj << Label( column )
+**Syntaxe :** obj &lt;&lt; Label( column )
 
 #### Time to Event
 
-**Syntaxe :** obj << Time to Event( column(s) )
+**Syntaxe :** obj &lt;&lt; Time to Event( column(s) )
 
 #### Y
 
-**Syntaxe :** obj << Y( column(s) )
+**Syntaxe :** obj &lt;&lt; Y( column(s) )
 
 ### Messages d'éléments
 
 #### Bootstrap Sample Size
 
-**Syntaxe :** obj << Bootstrap Sample Size( n )
+**Syntaxe :** obj &lt;&lt; Bootstrap Sample Size( n )
 
 **Description :** Spécifie le nombre d&apos;échantillons à utiliser dans la méthode bootstrap utilisée pour obtenir les estimations Bayésiennes ou les résultats de Weibayes. Pour les méthodes Bayésiennes et de Weibayes, les limites de confiance pour les fonctions agrégées qui apparaissent dans le Profileur de distribution doivent être simulées en utilisant un bootstrap paramétrique.
 
@@ -1352,7 +1348,7 @@ obj << Bootstrap Sample Size( 1000 );
 
 #### Compute Remaining Life Distribution
 
-**Syntaxe :** obj << Compute Remaining Life Distribution( time0, time1 )
+**Syntaxe :** obj &lt;&lt; Compute Remaining Life Distribution( time0, time1 )
 
 **Description :** Renvoie une liste qui contient la valeur de la distribution de la durée de vie résiduelle à temps1, à condition que l&apos;unité a survécu jusqu&apos;à temps0. La liste contient également les limites inférieure et supérieure des estimations de la vie résiduelle.
 
@@ -1372,7 +1368,7 @@ p = obj << Compute Remaining Life Distribution( 2000, 4000 );
 
 #### Density
 
-**Syntaxe :** obj << Density( t )
+**Syntaxe :** obj &lt;&lt; Density( t )
 
 **Description :** Renvoie la valeur de densité au temps spécifié.
 
@@ -1391,7 +1387,7 @@ d = obj << Density( .5 );
 
 #### Export Bootstrap Results
 
-**Syntaxe :** obj << Export Bootstrap Results( time )
+**Syntaxe :** obj &lt;&lt; Export Bootstrap Results( time )
 
 **Description :** Enregistre les résultats du bootstrap dans une nouvelle table de données. Une méthode bootstrap est utilisée pour obtenir les estimations Bayésiennes ou les résultats de Weibayes. Pour les méthodes Bayésiennes et de Weibayes, les limites de confiance pour les fonctions agrégées qui apparaissent dans le Profileur de distribution doivent être simulées en utilisant un bootstrap paramétrique.
 
@@ -1416,7 +1412,7 @@ obj << Export Bootstrap Results( 15000 );
 
 #### Export Lifetime Data for Individual Causes
 
-**Syntaxe :** obj << Export Lifetime Data for Individual Causes
+**Syntaxe :** obj &lt;&lt; Export Lifetime Data for Individual Causes
 
 **Description :** Exporte un jeu de données empilé contenant les données de durée de vie pour les causes individuelles. Une donnée de durée de vie pour une cause est une copie des données d&apos;origine qui censure les observations autres que la cause.
 
@@ -1436,7 +1432,7 @@ dt = obj << Export Lifetime Data for Individual Causes();
 
 #### Fit Model
 
-**Syntaxe :** obj << Fit Model( specification )
+**Syntaxe :** obj &lt;&lt; Fit Model( specification )
 
 **Description :** Ajuste un modèle de cause concurrente en utilisant la spécification donnée. Le modèle est spécifié par une liste de 3 éléments pour chaque cause. Chaque sous-liste comprend un code de cause, une distribution et un indicateur pour omettre la cause ou non.
 
@@ -1458,7 +1454,7 @@ obj << Fit Model(
 
 #### Get Causes
 
-**Syntaxe :** obj << Get Causes
+**Syntaxe :** obj &lt;&lt; Get Causes
 
 **Description :** Renvoie une liste des codes de cause.
 
@@ -1477,7 +1473,7 @@ lst = obj << Get Causes;
 
 #### Get Estimates
 
-**Syntaxe :** obj << Get Estimates
+**Syntaxe :** obj &lt;&lt; Get Estimates
 
 **Description :** Renvoie une liste qui contient les causes, les dénombrements, les distributions et les estimations de paramètres pour le modèle de cause concurrente.
 
@@ -1496,7 +1492,7 @@ res = obj << Get Estimates;
 
 #### Get Life Distribution
 
-**Syntaxe :** obj << Get Life Distribution( i )
+**Syntaxe :** obj &lt;&lt; Get Life Distribution( i )
 
 **Description :** Renvoie une référence à l&apos;objet rapport Distribution de survie spécifié dans la section Causes individuelles du rapport Cause concurrente. Pour l&apos;argument de cette option, les rapports Distribution de survie sont indexés de 0 à n-1, où n est le nombre de causes.
 
@@ -1515,7 +1511,7 @@ ld = (obj << Get Life Distribution( 1 ));
 
 #### Get Model Specification
 
-**Syntaxe :** obj << Get Model Specification
+**Syntaxe :** obj &lt;&lt; Get Model Specification
 
 **Description :** Renvoie une liste qui contient les spécifications pour le modèle de cause concurrente. Cette liste peut être utilisée comme argument passé au message Modèle linéaire pour la plate-forme Cause concurrente.
 
@@ -1534,7 +1530,7 @@ spec = obj << Get Model Specification;
 
 #### Hazard
 
-**Syntaxe :** obj << Hazard( t )
+**Syntaxe :** obj &lt;&lt; Hazard( t )
 
 **Description :** Renvoie la valeur de la fonction de risque au temps spécifié.
 
@@ -1553,9 +1549,7 @@ h = obj << Hazard( 2500 );
 
 #### Mean Remaining Life
 
-**Syntaxe :** obj << Mean Remaining Life( state=0|1 )
-
-obj << Mean Remaining Life( Configuration(), Compute(), Get Results )
+**Syntaxe :** obj &lt;&lt; Mean Remaining Life( state=0|1 )obj &lt;&lt; Mean Remaining Life( Configuration(), Compute(), Get Results )
 
 **Description :** Affiche ou masque le Calculateur de la durée de vie résiduelle moyenne, qui vous permet d&apos;estimer la durée de vie résiduelle moyenne d&apos;une unité à un temps de survie donné. Vous pouvez également utiliser cette option pour envoyer des messages à l&apos;objet Calculateur de la durée de vie résiduelle moyenne.
 
@@ -1594,7 +1588,7 @@ obj << Mean Remaining Life(
 
 #### Omit
 
-**Syntaxe :** obj << Omit( k, 0|1 )
+**Syntaxe :** obj &lt;&lt; Omit( k, 0|1 )
 
 **Description :** Affiche ou masque la cause spécifiée sur le graphique Combinaison de causes. Le premier argument spécifie le nombre de causes. Si le second argument est 1, la cause spécifiée est supprimée ; si le second argument est 0, la cause spécifiée est incluse.
 
@@ -1614,7 +1608,7 @@ obj << Omit( 1, 1 );
 
 #### Probability
 
-**Syntaxe :** obj << Probability( t )
+**Syntaxe :** obj &lt;&lt; Probability( t )
 
 **Description :** Renvoie la probabilité de défaillance au temps spécifié.
 
@@ -1633,7 +1627,7 @@ p = obj << Probability( 2500 );
 
 #### Quantile
 
-**Syntaxe :** obj << Quantile( p )
+**Syntaxe :** obj &lt;&lt; Quantile( p )
 
 **Description :** Renvoie la valeur de quantile à la probabilité spécifiée.
 
@@ -1652,7 +1646,7 @@ q = obj << Quantile( .5 );
 
 #### Set Scale
 
-**Syntaxe :** obj << Set Scale( name )
+**Syntaxe :** obj &lt;&lt; Set Scale( name )
 
 **Description :** Spécifie l&apos;échelle de probabilité pour l&apos;axe vertical du graphique Combinaison de causes.
 
@@ -1672,7 +1666,7 @@ obj << Set Scale( Weibull );
 
 #### Show Points
 
-**Syntaxe :** obj << Show Points( <0|1> )
+**Syntaxe :** obj &lt;&lt; Show Points( &lt;0|1&gt; )
 
 **Description :** Affiche ou masque les points de données dans le graphique Combinaison de causes. La plate-forme Distribution de survie utilise les estimations du point milieu de la fonction en escalier pour construire les graphiques de probabilité. Lorsque vous désélectionnez l&apos;option Afficher les points, les estimations du point milieu sont remplacées par les estimations de Kaplan-Meier. Actif par défaut.
 
@@ -1692,7 +1686,7 @@ obj << Show Points( 0 );
 
 #### Show Remaining Life Distribution
 
-**Syntaxe :** obj << Show Remaining Life Distribution( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Show Remaining Life Distribution( state=0|1 )
 
 **Description :** Affiche ou masque le profileur de la distribution de la durée de vie résiduelle, qui dépend de la survie de l&apos;unité durant une période donnée.
 
@@ -1711,7 +1705,7 @@ obj << Show Remaining Life Distribution( 1 );
 
 #### Show Subdistributions
 
-**Syntaxe :** obj << Show Subdistributions( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Show Subdistributions( state=0|1 )
 
 **Description :** Affiche ou masque le profileur pour chaque sous-distribution de cause individuelle. Lorsque vous sélectionnez l&apos;option Afficher les sous-distributions, le graphique Combinaison de causes se met à jour pour afficher les fonctions de sous-distribution pour toutes les causes.
 
@@ -1730,7 +1724,7 @@ obj << Show Subdistributions( 1 );
 
 #### Subdistribution
 
-**Syntaxe :** obj << Subdistribution( Cause(i), Compute(m) )
+**Syntaxe :** obj &lt;&lt; Subdistribution( Cause(i), Compute(m) )
 
 **Description :** Spécifie la cause et les valeurs de temps pour les calculs des sous-distributions. L&apos;argument Cause spécifie le nombre de causes. L&apos;argument Calculer est un vecteur colonne de valeurs de temps. L&apos;option Afficher les sous-distributions doit être sélectionnée avant d&apos;utiliser ce message.
 
@@ -1750,7 +1744,7 @@ obj << Subdistribution( Cause( 2 ), Compute( [5000, 10000] ) );
 
 #### Tabbed Report
 
-**Syntaxe :** obj << Tabbed Report( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Tabbed Report( state=0|1 )
 
 **Description :** Organise les sections du rapport Cause concurrente en onglets.
 
@@ -1769,7 +1763,7 @@ obj = dt << Life Distribution(
 
 #### Tabbed Report for Individual Causes
 
-**Syntaxe :** obj << Tabbed Report for Individual Causes( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Tabbed Report for Individual Causes( state=0|1 )
 
 **Description :** Organise les rapports Distribution de survie qui se trouvent dans les sections Causes individuelles du rapport Cause concurrente en onglets.
 
@@ -1790,7 +1784,7 @@ obj = dt << Life Distribution(
 
 #### Action
 
-**Syntaxe :** obj << Action
+**Syntaxe :** obj &lt;&lt; Action
 
 **Description :** Trappe tout usage dans une plate-forme pour y insérer les expressions à calculer. Définit provisoirement les contextes des boîtes d’affichage et des tables de données dans la plate-forme.
 
@@ -1808,7 +1802,7 @@ dt << Bivariate(
 
 #### Apply Preset
 
-**Syntaxe :** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntaxe :** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Description :** Appliquez une préconfiguration créée précédemment à l&apos;objet, ce qui met à jour les options et les personnalisations pour correspondre aux paramètres enregistrés.
 
@@ -1855,7 +1849,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 #### Automatic Recalc
 
-**Syntaxe :** obj << Automatic Recalc( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Description :** Refait l&apos;analyse automatiquement pour l&apos;exclusion et les modifications de données. Si l&apos;option Nouveau calcul automatique est activée, envisagez d&apos;utiliser les commandes Wait(0) pour vous assurer que l&apos;exclusion et les modifications de données sont prises en compte avant le recalcul.
 
@@ -1869,7 +1863,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 #### Broadcast
 
-**Syntaxe :** obj << Broadcast(message)
+**Syntaxe :** obj &lt;&lt; Broadcast(message)
 
 **Description :** Diffuse un message sur une plate-forme. Si les résultats de renvoi des objets individuels sont des tables, elles sont concaténées si possible, et le format final est identique au résultat de l&apos;option Enregistrer la table de données combinée dans une boîte de tableau ou au résultat de l&apos;option Concaténer avec une colonne Source. Sinon, les résultats sont stockés dans une liste et renvoyés.
 
@@ -1889,7 +1883,7 @@ objs[1] << Broadcast( Save Summaries );
 
 #### Column Switcher
 
-**Syntaxe :** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Syntaxe :** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Description :** Ajoute un panneau de contrôle pour changer les variables de la plate-forme.
 
@@ -1907,7 +1901,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 #### Copy ByGroup Script
 
-**Syntaxe :** obj << Copy ByGroup Script
+**Syntaxe :** obj &lt;&lt; Copy ByGroup Script
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis le place dans le presse-papiers.
 
@@ -1920,7 +1914,7 @@ obj[1] << Copy ByGroup Script;
 
 #### Copy Script
 
-**Syntaxe :** obj << Copy Script
+**Syntaxe :** obj &lt;&lt; Copy Script
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis le place dans le presse-papiers.
 
@@ -1933,7 +1927,7 @@ obj << Copy Script;
 
 #### Data Table Window
 
-**Syntaxe :** obj << Data Table Window
+**Syntaxe :** obj &lt;&lt; Data Table Window
 
 **Description :** Déplace en premier plan la fenêtre de la table de données utilisée dans cette analyse.
 
@@ -1946,7 +1940,7 @@ obj << Data Table Window;
 
 #### Get By Levels
 
-**Syntaxe :** obj << Get By Levels
+**Syntaxe :** obj &lt;&lt; Get By Levels
 
 **Description :** Renvoie un tableau associatif de mappage des colonnes par groupe à leurs valeurs.
 
@@ -1963,7 +1957,7 @@ biv << Get By Levels;
 
 #### Get ByGroup Script
 
-**Syntaxe :** obj << Get ByGroup Script
+**Syntaxe :** obj &lt;&lt; Get ByGroup Script
 
 **Description :** Crée un script (JSL) pour produire cette analyse et la renvoyer sous forme d’une expression.
 
@@ -1977,7 +1971,7 @@ Show( t );
 
 #### Get Container
 
-**Syntaxe :** obj << Get Container
+**Syntaxe :** obj &lt;&lt; Get Container
 
 **Description :** Renvoie une référence à la zone conteneur où se trouve le contenu de l&apos;objet.
 
@@ -2024,7 +2018,7 @@ New Window( "platform boxes",
 
 #### Get Data Table
 
-**Syntaxe :** obj << Get Data Table
+**Syntaxe :** obj &lt;&lt; Get Data Table
 
 **Description :** Renvoie une référence à la table de données.
 
@@ -2038,7 +2032,7 @@ Show( N Rows( t ) );
 
 #### Get Group Platform
 
-**Syntaxe :** obj << Get Group Platform
+**Syntaxe :** obj &lt;&lt; Get Group Platform
 
 **Description :** Renvoie l&apos;objet de Plate-forme de groupe si cette plate-forme fait partie d&apos;un groupe. Sinon, renvoie Empty().
 
@@ -2055,7 +2049,7 @@ group << Layout( "Arrange in Tabs" );
 
 #### Get Script
 
-**Syntaxe :** obj << Get Script
+**Syntaxe :** obj &lt;&lt; Get Script
 
 **Description :** Crée un script (JSL) pour produire cette analyse et la renvoyer sous forme d’une expression.
 
@@ -2069,7 +2063,7 @@ Show( t );
 
 #### Get Script With Data Table
 
-**Syntaxe :** obj << Get Script With Data Table
+**Syntaxe :** obj &lt;&lt; Get Script With Data Table
 
 **Description :** Crée un script (JSL) pour produire cette analyse faisant spécifiquement référence à cette table de données et la renvoyer sous forme d’une expression.
 
@@ -2083,7 +2077,7 @@ Show( t );
 
 #### Get Timing
 
-**Syntaxe :** obj << Get Timing
+**Syntaxe :** obj &lt;&lt; Get Timing
 
 **Description :** Détermine une heure de lancement de la plate-forme.
 
@@ -2097,7 +2091,7 @@ Show( t );
 
 #### Get Web Support
 
-**Syntaxe :** obj << Get Web Support
+**Syntaxe :** obj &lt;&lt; Get Web Support
 
 **Description :** Renvoyer un nombre indiquant le niveau de support HTML interactif pour l&apos;objet d&apos;affichage. 1 signifie que tout ou partie des éléments sont pris en charge. 0 signifie qu&apos;il n&apos;y a aucun support.
 
@@ -2113,7 +2107,7 @@ Show( s );
 
 #### Get Where Expr
 
-**Syntaxe :** obj << Get Where Expr
+**Syntaxe :** obj &lt;&lt; Get Where Expr
 
 **Description :** Renvoie l&apos;expression Where pour le sous-ensemble de données, si la plate-forme a été lancée avec By() ou Where(). Sinon, renvoie la Empty()
 
@@ -2154,7 +2148,7 @@ dt << Bivariate(
 
 #### Local Data Filter
 
-**Syntaxe :** obj << Local Data Filter
+**Syntaxe :** obj &lt;&lt; Local Data Filter
 
 **Description :** Permet de filtrer les données locales, dans la plate-forme concernée, par groupes ou étendues spécifiques
 
@@ -2210,7 +2204,7 @@ preset = obj << New Preset();
 
 #### Paste Local Data Filter
 
-**Syntaxe :** obj << Paste Local Data Filter
+**Syntaxe :** obj &lt;&lt; Paste Local Data Filter
 
 **Description :** Appliquer le filtre des données locales du presse-papiers au rapport actif.
 
@@ -2231,7 +2225,7 @@ dist2 << Paste Local Data Filter;
 
 #### Redo Analysis
 
-**Syntaxe :** obj << Redo Analysis
+**Syntaxe :** obj &lt;&lt; Redo Analysis
 
 **Description :** Exécute à nouveau cette même analyse dans une nouvelle fenêtre. L&apos;analyse sera différente si les données ont été modifiées.
 
@@ -2244,7 +2238,7 @@ obj << Redo Analysis;
 
 #### Redo ByGroup Analysis
 
-**Syntaxe :** obj << Redo ByGroup Analysis
+**Syntaxe :** obj &lt;&lt; Redo ByGroup Analysis
 
 **Description :** Exécute à nouveau cette même analyse dans une nouvelle fenêtre. L&apos;analyse sera différente si les données ont été modifiées.
 
@@ -2257,7 +2251,7 @@ obj[1] << Redo ByGroup Analysis;
 
 #### Relaunch Analysis
 
-**Syntaxe :** obj << Relaunch Analysis
+**Syntaxe :** obj &lt;&lt; Relaunch Analysis
 
 **Description :** Ouvre la fenêtre de lancement de la plate-forme et rappelle les paramètres utilisés pour créer le rapport.
 
@@ -2270,7 +2264,7 @@ obj << Relaunch Analysis;
 
 #### Relaunch ByGroup
 
-**Syntaxe :** obj << Relaunch ByGroup
+**Syntaxe :** obj &lt;&lt; Relaunch ByGroup
 
 **Description :** Ouvre la fenêtre de lancement de la plate-forme et rappelle les paramètres utilisés pour créer le rapport.
 
@@ -2283,7 +2277,7 @@ obj[1] << Relaunch ByGroup;
 
 #### Remove Column Switcher
 
-**Syntaxe :** obj << Remove Column Switcher
+**Syntaxe :** obj &lt;&lt; Remove Column Switcher
 
 **Description :** Supprime le sélecteur de colonne le plus récent ajouté à la plate-forme.
 
@@ -2303,7 +2297,7 @@ obj << Remove Column Switcher;
 
 #### Remove Local Data Filter
 
-**Syntaxe :** obj << Remove Local Data Filter
+**Syntaxe :** obj &lt;&lt; Remove Local Data Filter
 
 **Description :** Permet de supprimer un filtre de données locales créé précédemment et rétablit toutes les valeurs des données directement dans la table de données utilisée dans la plate-forme.
 
@@ -2342,9 +2336,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 #### Report
 
-**Syntaxe :** obj << Report;
-
-Report( obj )
+**Syntaxe :** obj &lt;&lt; Report;Report( obj )
 
 **Description :** Renvoie une référence à l’objet rapport.
 
@@ -2359,7 +2351,7 @@ Show( t );
 
 #### Report View
 
-**Syntaxe :** obj << Report View( "Complet"|"Résumé" )
+**Syntaxe :** obj &lt;&lt; Report View( "Complet"|"Résumé" )
 
 **Description :** L&apos;affichage du rapport détermine le niveau de détail visible dans un rapport de plate-forme. Full affiche tous les détails, alors que Summary affiche uniquement le contenu sélectionné, selon la plate-forme. Pour un comportement personnalisé, les boîtes d&apos;affichage prennent en charge un message <<Set Summary Behavior.
 
@@ -2372,7 +2364,7 @@ obj << Report View( "Summary" );
 
 #### Save ByGroup Script to Data Table
 
-**Syntaxe :** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntaxe :** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;enregistre sous forme de propriété de table dans la table de données. Vous pouvez spécifier un nom pour le script. L&apos;option Append Suffix ajoute un suffixe numérique au nom du script, ce qui différentie le script d&apos;un script existant portant le même nom. L&apos;option Prompt invite l&apos;utilisateur à spécifier un nom de script. L&apos;option Replace remplace un script existant avec le même nom.
 
@@ -2385,7 +2377,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 #### Save ByGroup Script to Journal
 
-**Syntaxe :** obj << Save ByGroup Script to Journal
+**Syntaxe :** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis ajoute un bouton dans le journal qui contient ce script.
 
@@ -2398,7 +2390,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 #### Save ByGroup Script to Script Window
 
-**Syntaxe :** obj << Save ByGroup Script to Script Window
+**Syntaxe :** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;ajoute à la fenêtre de script active.
 
@@ -2411,7 +2403,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 #### Save Script for All Objects
 
-**Syntaxe :** obj << Save Script for All Objects
+**Syntaxe :** obj &lt;&lt; Save Script for All Objects
 
 **Description :** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -2424,7 +2416,7 @@ obj << Save Script for All Objects;
 
 #### Save Script for All Objects To Data Table
 
-**Syntaxe :** obj << Save Script for All Objects To Data Table( <name> )
+**Syntaxe :** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Description :** Enregistre un script pour tous les objets de rapport dans la table de données active. Cette option est utile lorsque vous avez plusieurs rapports dans la fenêtre. Le script est nommé d&apos;après la première plate-forme, sauf si vous spécifiez le nom du script entre guillemets.
 
@@ -2448,7 +2440,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 #### Save Script to Data Table
 
-**Syntaxe :** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntaxe :** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;enregistre sous forme de propriété de tableau dans la table de données.
 
@@ -2461,7 +2453,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 #### Save Script to Journal
 
-**Syntaxe :** obj << Save Script to Journal
+**Syntaxe :** obj &lt;&lt; Save Script to Journal
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis ajoute un bouton dans le journal qui contient ce script.
 
@@ -2474,7 +2466,7 @@ obj << Save Script to Journal;
 
 #### Save Script to Report
 
-**Syntaxe :** obj << Save Script to Report
+**Syntaxe :** obj &lt;&lt; Save Script to Report
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;affiche dans le rapport lui-même. Utile pour conserver une trace écrite de ce qui a été effectué.
 
@@ -2487,7 +2479,7 @@ obj << Save Script to Report;
 
 #### Save Script to Script Window
 
-**Syntaxe :** obj << Save Script to Script Window
+**Syntaxe :** obj &lt;&lt; Save Script to Script Window
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;ajoute à la fenêtre de script active.
 
@@ -2570,7 +2562,7 @@ dt << Distribution(
 
 #### Sync to Data Table Changes
 
-**Syntaxe :** obj << Sync to Data Table Changes
+**Syntaxe :** obj &lt;&lt; Sync to Data Table Changes
 
 **Description :** Sync avec l&apos;exclusion et les modifications apportées aux données.
 
@@ -2587,7 +2579,7 @@ dist << Sync To Data Table Changes;
 
 #### Title
 
-**Syntaxe :** obj << Title( "new title" )
+**Syntaxe :** obj &lt;&lt; Title( "new title" )
 
 **Description :** Définit le titre de la plate-forme.
 
@@ -2600,7 +2592,7 @@ obj << Title( "My Platform" );
 
 #### Top Report
 
-**Syntaxe :** obj << Top Report
+**Syntaxe :** obj &lt;&lt; Top Report
 
 **Description :** Renvoie une référence au nœud racine dans le rapport.
 
@@ -2615,7 +2607,7 @@ Show( t );
 
 #### Transform Column
 
-**Syntaxe :** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Syntaxe :** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Description :** Créez une colonne de transformation dans le contexte local d&apos;un objet, généralement une plate-forme. La colonne de transformation est active uniquement pendant la durée de vie de la plateforme.
 
@@ -2636,7 +2628,7 @@ dt << Distribution(
 
 #### View Web XML
 
-**Syntaxe :** obj << View Web XML
+**Syntaxe :** obj &lt;&lt; View Web XML
 
 **Description :** Renvoie le code XML utilisé pour créer le rapport au format HTML interactif.
 
@@ -2651,9 +2643,7 @@ xml = obj << View Web XML;
 
 #### Window View
 
-**Syntaxe :** obj = Y(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Y(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Définir le type de fenêtre à créer pour le rapport. Par défaut, une fenêtre de rapport Visible sera créée. Une fenêtre Invisible ne s&apos;affichera pas à l&apos;écran, mais sera visible par les fonctions comme Window(). Une fenêtre Private répond à la plupart des messages de fenêtre mais n&apos;est pas visible et doit être adressée au moyen de l&apos;objet rapport
 
@@ -2683,7 +2673,7 @@ New Window( "Bivariate Equation",
 
 #### By
 
-**Syntaxe :** obj << By( column(s) )
+**Syntaxe :** obj &lt;&lt; By( column(s) )
 
 ```jsl
 
@@ -2700,7 +2690,7 @@ obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ), By( _bycol ) );
 
 #### Censor
 
-**Syntaxe :** obj << Censor( column )
+**Syntaxe :** obj &lt;&lt; Censor( column )
 
 ```jsl
 
@@ -2712,7 +2702,7 @@ obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
 
 #### Failure Cause
 
-**Syntaxe :** obj << Failure Cause( column )
+**Syntaxe :** obj &lt;&lt; Failure Cause( column )
 
 ```jsl
 
@@ -2724,7 +2714,7 @@ obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
 
 #### Freq
 
-**Syntaxe :** obj << Freq( column )
+**Syntaxe :** obj &lt;&lt; Freq( column )
 
 ```jsl
 
@@ -2741,7 +2731,7 @@ obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ), Freq( _freqcol ) )
 
 #### Label
 
-**Syntaxe :** obj << Label( column )
+**Syntaxe :** obj &lt;&lt; Label( column )
 
 ```jsl
 
@@ -2753,7 +2743,7 @@ obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
 
 #### Time to Event
 
-**Syntaxe :** obj << Time to Event( column(s) )
+**Syntaxe :** obj &lt;&lt; Time to Event( column(s) )
 
 ```jsl
 
@@ -2765,7 +2755,7 @@ obj = dt << Life Distribution( Y( :Time ), Censor( :Censor ) );
 
 #### Y
 
-**Syntaxe :** obj << Y( column(s) )
+**Syntaxe :** obj &lt;&lt; Y( column(s) )
 
 ```jsl
 
@@ -2815,7 +2805,7 @@ obj << Fit Lognormal;
 
 #### Change Confidence Level
 
-**Syntaxe :** obj << Change Confidence Level( fraction )
+**Syntaxe :** obj &lt;&lt; Change Confidence Level( fraction )
 
 **Description :** Spécifie le niveau de confiance pour l&apos;ensemble de la plate-forme. Tous les graphiques et les rapports sont mis à jour en conséquence.
 
@@ -2830,7 +2820,7 @@ obj << Change Confidence Level( 0.99 );
 
 #### Comparison Criterion
 
-**Syntaxe :** obj << Comparison Criterion( <Negative Loglikelihood|AICc|BIC> )
+**Syntaxe :** obj &lt;&lt; Comparison Criterion( &lt;Negative Loglikelihood|AICc|BIC&gt; )
 
 **Description :** Spécifie le critère utilisé pour classer les modèles dans le rapport Comparaison de modèles. Pour tous ces critères, des valeurs inférieures indiquent un meilleur ajustement.
 
@@ -2867,7 +2857,7 @@ obj << Fit Lognormal;
 
 #### Do Same Analyses For All Groups
 
-**Syntaxe :** obj << Do Same Analyses For All Groups
+**Syntaxe :** obj &lt;&lt; Do Same Analyses For All Groups
 
 **Description :** Applique toutes les options sélectionnées dans le groupe actif à toutes les sections de la sortie par groupe.
 
@@ -2889,7 +2879,7 @@ obj[2] << Do Same Analyses For All Groups;
 
 #### Fit All DS Distributions
 
-**Syntaxe :** obj << Fit All DS Distributions
+**Syntaxe :** obj &lt;&lt; Fit All DS Distributions
 
 **Description :** Ajuste toutes les distributions des sous-populations à défauts (DS).
 
@@ -2904,7 +2894,7 @@ obj << Fit All DS Distributions;
 
 #### Fit All Distributions
 
-**Syntaxe :** obj << Fit All Distributions
+**Syntaxe :** obj &lt;&lt; Fit All Distributions
 
 **Description :** Ajuste toutes les distributions à l&apos;exception des distributions avec seuillage (TH).
 
@@ -2919,7 +2909,7 @@ obj << Fit All Distributions;
 
 #### Fit All Nonnegative
 
-**Syntaxe :** obj << Fit All Nonnegative
+**Syntaxe :** obj &lt;&lt; Fit All Nonnegative
 
 **Description :** Ajuste toutes les distributions qui prennent en charge les observations non-négatives.
 
@@ -2934,7 +2924,7 @@ obj << Fit All Nonnegative;
 
 #### Fit Competing Risk Mixture
 
-**Syntaxe :** obj << Fit Competing Risk Mixture( Mix( distribution( n ), <distribution( n ), ...>, method, <Show Profilers( 0|1 )>
+**Syntaxe :** obj &lt;&lt; Fit Competing Risk Mixture( Mix( distribution( n ), &lt;distribution( n ), ...&gt;, method, &lt;Show Profilers( 0|1 )&gt;
 
 **Description :** Spécifie les distributions et les options pour un modèle de mélange de risques concurrents. L&apos;argument method est obligatoire et doit être l&apos;une de ces méthodes de valeur de départ : Cluster unique, Clusters séparables ou Clusters superposés.
 
@@ -2957,7 +2947,7 @@ obj << Fit Competing Risk Mixture(
 
 #### Fit DS Frechet
 
-**Syntaxe :** obj << Fit DS Frechet
+**Syntaxe :** obj &lt;&lt; Fit DS Frechet
 
 **Description :** Ajuste une distribution de Fréchet des sous-populations à défauts en fonction des données. Actif par défaut.
 
@@ -2972,7 +2962,7 @@ obj << Fit DS Frechet;
 
 #### Fit DS Loglogistic
 
-**Syntaxe :** obj << Fit DS Loglogistic
+**Syntaxe :** obj &lt;&lt; Fit DS Loglogistic
 
 **Description :** Ajuste une distribution log-logistique des sous-populations à défauts aux données. Actif par défaut.
 
@@ -2987,7 +2977,7 @@ obj << Fit DS Loglogistic;
 
 #### Fit DS Lognormal
 
-**Syntaxe :** obj << Fit DS Lognormal
+**Syntaxe :** obj &lt;&lt; Fit DS Lognormal
 
 **Description :** Ajuste une distribution log-normale des sous-populations à défauts aux données. Actif par défaut.
 
@@ -3002,7 +2992,7 @@ obj << Fit DS Lognormal;
 
 #### Fit DS Weibull
 
-**Syntaxe :** obj << Fit DS Weibull
+**Syntaxe :** obj &lt;&lt; Fit DS Weibull
 
 **Description :** Ajuste une distribution de Weibull des sous-populations à défauts en fonction des données. Actif par défaut.
 
@@ -3017,7 +3007,7 @@ obj << Fit DS Weibull;
 
 #### Fit Exponential
 
-**Syntaxe :** obj << Fit Exponential
+**Syntaxe :** obj &lt;&lt; Fit Exponential
 
 **Description :** Ajuste une distribution exponentielle aux données.
 
@@ -3032,7 +3022,7 @@ obj << Fit Exponential;
 
 #### Fit Frechet
 
-**Syntaxe :** obj << Fit Frechet
+**Syntaxe :** obj &lt;&lt; Fit Frechet
 
 **Description :** Ajuste une distribution de Fréchet aux données.
 
@@ -3047,7 +3037,7 @@ obj << Fit Frechet;
 
 #### Fit GenGamma
 
-**Syntaxe :** obj << Fit GenGamma
+**Syntaxe :** obj &lt;&lt; Fit GenGamma
 
 **Description :** Ajuste une distribution gamma généralisée aux données. Actif par défaut.
 
@@ -3062,7 +3052,7 @@ obj << Fit GenGamma;
 
 #### Fit LEV
 
-**Syntaxe :** obj << Fit LEV
+**Syntaxe :** obj &lt;&lt; Fit LEV
 
 **Description :** Ajuste une distribution de la plus grande valeur extrême (LEV) aux données.
 
@@ -3077,7 +3067,7 @@ obj << Fit LEV;
 
 #### Fit LogGenGamma
 
-**Syntaxe :** obj << Fit LogGenGamma
+**Syntaxe :** obj &lt;&lt; Fit LogGenGamma
 
 **Description :** Ajuste une distribution log gamma généralisée aux données. Actif par défaut.
 
@@ -3092,7 +3082,7 @@ obj << Fit LogGenGamma;
 
 #### Fit Logistic
 
-**Syntaxe :** obj << Fit Logistic
+**Syntaxe :** obj &lt;&lt; Fit Logistic
 
 **Description :** Ajuste une distribution log-logistique aux données.
 
@@ -3107,7 +3097,7 @@ obj << Fit Logistic;
 
 #### Fit Loglogistic
 
-**Syntaxe :** obj << Fit Loglogistic
+**Syntaxe :** obj &lt;&lt; Fit Loglogistic
 
 **Description :** Ajuste une distribution log-logistique aux données.
 
@@ -3122,7 +3112,7 @@ obj << Fit Loglogistic;
 
 #### Fit Lognormal
 
-**Syntaxe :** obj << Fit Lognormal
+**Syntaxe :** obj &lt;&lt; Fit Lognormal
 
 **Description :** Ajuste une distribution log-normale aux données.
 
@@ -3137,7 +3127,7 @@ obj << Fit Lognormal;
 
 #### Fit Mixture
 
-**Syntaxe :** obj << Fit Mixture( Mix( distribution( n ), <distribution( n ), ...>, method, <Show Profilers( 0|1 )>
+**Syntaxe :** obj &lt;&lt; Fit Mixture( Mix( distribution( n ), &lt;distribution( n ), ...&gt;, method, &lt;Show Profilers( 0|1 )&gt;
 
 **Description :** Spécifie les distributions et les options pour un modèle de mélange. L&apos;argument method est obligatoire et doit être l&apos;une de ces méthodes de valeur de départ : Cluster unique, Clusters séparables ou Clusters superposés.
 
@@ -3158,7 +3148,7 @@ obj << Fit Mixture( Mix( Lognormal( 2 ), Single Cluster, Show Profilers( 0 ) ) )
 
 #### Fit Normal
 
-**Syntaxe :** obj << Fit Normal
+**Syntaxe :** obj &lt;&lt; Fit Normal
 
 **Description :** Ajuste une distribution normale en fonction des données.
 
@@ -3173,7 +3163,7 @@ obj << Fit Normal;
 
 #### Fit SEV
 
-**Syntaxe :** obj << Fit SEV
+**Syntaxe :** obj &lt;&lt; Fit SEV
 
 **Description :** Ajuste une distribution de la plus petite valeur extrême (SEV) aux données.
 
@@ -3188,7 +3178,7 @@ obj << Fit SEV;
 
 #### Fit TH Frechet
 
-**Syntaxe :** obj << Fit TH Frechet
+**Syntaxe :** obj &lt;&lt; Fit TH Frechet
 
 **Description :** Ajuste une distribution de Fréchet avec seuillage en fonction des données. Actif par défaut.
 
@@ -3203,7 +3193,7 @@ obj << Fit TH Frechet;
 
 #### Fit TH Loglogistic
 
-**Syntaxe :** obj << Fit TH Loglogistic
+**Syntaxe :** obj &lt;&lt; Fit TH Loglogistic
 
 **Description :** Ajuste une distribution log-logistique avec aux données. Actif par défaut.
 
@@ -3218,7 +3208,7 @@ obj << Fit TH Loglogistic;
 
 #### Fit TH Lognormal
 
-**Syntaxe :** obj << Fit TH Lognormal
+**Syntaxe :** obj &lt;&lt; Fit TH Lognormal
 
 **Description :** Ajuste une distribution log-normale avec seuillage aux données. Actif par défaut.
 
@@ -3233,7 +3223,7 @@ obj << Fit TH Lognormal;
 
 #### Fit TH Weibull
 
-**Syntaxe :** obj << Fit TH Weibull
+**Syntaxe :** obj &lt;&lt; Fit TH Weibull
 
 **Description :** Ajuste une distribution de Weibull avec seuillage en fonction des données. Actif par défaut.
 
@@ -3248,7 +3238,7 @@ obj << Fit TH Weibull;
 
 #### Fit Weibull
 
-**Syntaxe :** obj << Fit Weibull
+**Syntaxe :** obj &lt;&lt; Fit Weibull
 
 **Description :** Ajuste une distribution de Weibull aux données.
 
@@ -3263,7 +3253,7 @@ obj << Fit Weibull;
 
 #### Fit ZI Frechet
 
-**Syntaxe :** obj << Fit ZI Frechet
+**Syntaxe :** obj &lt;&lt; Fit ZI Frechet
 
 **Description :** Ajuste une distribution de Fréchet comportant un Dirac en 0 en fonction des données. Actif par défaut.
 
@@ -3278,7 +3268,7 @@ obj << Fit ZI Frechet;
 
 #### Fit ZI Loglogistic
 
-**Syntaxe :** obj << Fit ZI Loglogistic
+**Syntaxe :** obj &lt;&lt; Fit ZI Loglogistic
 
 **Description :** Ajuste une distribution log-logistique comportant un Dirac en 0 aux données. Actif par défaut.
 
@@ -3293,7 +3283,7 @@ obj << Fit ZI Loglogistic;
 
 #### Fit ZI Lognormal
 
-**Syntaxe :** obj << Fit ZI Lognormal
+**Syntaxe :** obj &lt;&lt; Fit ZI Lognormal
 
 **Description :** Ajuste une distribution log-normale comportant un Dirac en 0 aux données. Actif par défaut.
 
@@ -3308,7 +3298,7 @@ obj << Fit ZI Lognormal;
 
 #### Fit ZI Weibull
 
-**Syntaxe :** obj << Fit ZI Weibull
+**Syntaxe :** obj &lt;&lt; Fit ZI Weibull
 
 **Description :** Ajuste une distribution de Weibull comportant un Dirac en 0 en fonction des données. Actif par défaut.
 
@@ -3323,7 +3313,7 @@ obj << Fit ZI Weibull;
 
 #### Get Estimates
 
-**Syntaxe :** obj << Get Estimates
+**Syntaxe :** obj &lt;&lt; Get Estimates
 
 **Description :** Renvoie une liste qui contient les estimations pour toutes les distributions ajustées. La liste contient également les données d&apos;origine.
 
@@ -3344,7 +3334,7 @@ Show( estimate );
 
 #### Get Formula
 
-**Syntaxe :** obj << Get Formula
+**Syntaxe :** obj &lt;&lt; Get Formula
 
 **Description :** Renvoie une liste qui contient les formules pour toutes les distributions ajustées. La liste contient également les données d&apos;origine.
 
@@ -3365,7 +3355,7 @@ Show( formula );
 
 #### Get Results
 
-**Syntaxe :** obj << Get Results
+**Syntaxe :** obj &lt;&lt; Get Results
 
 **Description :** Renvoie une liste qui contient les résultats de toutes les distributions ajustées. La liste contient également les données d&apos;origine.
 
@@ -3386,7 +3376,7 @@ Show( r );
 
 #### Interval Type
 
-**Syntaxe :** obj << Interval Type( "Simultané"|"Point pPoint par point" )
+**Syntaxe :** obj &lt;&lt; Interval Type( "Simultané"|"Point pPoint par point" )
 
 **Description :** Spécifie le type d&apos;intervalle de confiance affiché pour l&apos;ajustement non paramétrique dans le graphique Comparer les distributions. Les options disponibles sont intervalles de confiance par point ou simultanés.
 
@@ -3401,7 +3391,7 @@ obj << Interval Type( "Pointwise" );
 
 #### Nonparametric Estimate Plot Options
 
-**Syntaxe :** obj << Nonparametric Estimate Plot Options( "Points"|"Fonction incrémentale"|"Les deux"|"Aucun" )
+**Syntaxe :** obj &lt;&lt; Nonparametric Estimate Plot Options( "Points"|"Fonction incrémentale"|"Les deux"|"Aucun" )
 
 **Description :** Spécifie comment les points de données sont représentés dans le graphique de probabilité. Vous pouvez choisir entre points, fonctions en escalier, points et fonctions en escalier ou aucun des deux.
 
@@ -3417,7 +3407,7 @@ obj << Nonparametric Estimate Plot Options( "Step Function" );
 
 #### Rejection Sampler Maximum Trials
 
-**Syntaxe :** obj << Rejection Sampler Maximum Trials( number=10000 )
+**Syntaxe :** obj &lt;&lt; Rejection Sampler Maximum Trials( number=10000 )
 
 **Description :** "10000" par défaut.
 
@@ -3425,7 +3415,7 @@ obj << Nonparametric Estimate Plot Options( "Step Function" );
 
 #### Save By Group Results
 
-**Syntaxe :** obj << Save By Group Results
+**Syntaxe :** obj &lt;&lt; Save By Group Results
 
 **Description :** Enregistre les estimations résultantes pour tous les groupes sous une ligne séparée dans une nouvelle table de données.
 
@@ -3445,7 +3435,7 @@ obj[1] << Save By Group Results;
 
 #### Set Scale
 
-**Syntaxe :** obj << Set Scale( Linear|Lognormal|Weibull|Loglogistic|Frechet|Normal|SEV|Logistic|LEV|Exponential )
+**Syntaxe :** obj &lt;&lt; Set Scale( Linear|Lognormal|Weibull|Loglogistic|Frechet|Normal|SEV|Logistic|LEV|Exponential )
 
 **Description :** Spécifie une échelle pour l&apos;axe de probabilité dans le graphique Comparer les distributions.
 
@@ -3460,7 +3450,7 @@ obj << Set Scale( Exponential );
 
 #### Show Confidence Area
 
-**Syntaxe :** obj << Show Confidence Area( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Show Confidence Area( state=0|1 )
 
 **Description :** Affiche ou masque les régions de confiance ombrées dans les graphiques. Actif par défaut.
 
@@ -3476,7 +3466,7 @@ obj << Show Confidence Area( 0 );
 
 #### Show Event Plot Frequency Label
 
-**Syntaxe :** obj << Show Event Plot Frequency Label( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Show Event Plot Frequency Label( state=0|1 )
 
 **Description :** Affiche ou masque les étiquettes de fréquence dans le graphique d&apos;événements. Actif par défaut.
 
@@ -3493,7 +3483,7 @@ obj << Show Event Plot Frequency Label( 0 );
 
 #### Show Hazard Functions
 
-**Syntaxe :** obj << Show Hazard Functions( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Show Hazard Functions( state=0|1 )
 
 **Description :** Affiche ou masque le rapport Profileur de risque, qui superpose les graphiques de fonctions de risque pour les distributions sélectionnées.
 
@@ -3508,7 +3498,7 @@ obj << Show Hazard Functions( 1 );
 
 #### Show Points
 
-**Syntaxe :** obj << Show Points( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Show Points( state=0|1 )
 
 **Description :** Affiche ou masque les points de données dans le graphique de probabilité. La plate-forme Distribution de survie utilise les estimations du point milieu de la fonction en escalier pour construire les graphiques de probabilité. Lorsque vous désélectionnez l&apos;option Afficher les points, les estimations du point milieu sont remplacées par les estimations de Kaplan-Meier. Actif par défaut.
 
@@ -3524,7 +3514,7 @@ obj << Show Points( 0 );
 
 #### Show Quantile Functions
 
-**Syntaxe :** obj << Show Quantile Functions( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Show Quantile Functions( state=0|1 )
 
 **Description :** Affiche ou masque le rapport Profileur de quantile, qui superpose les graphiques de fonctions de quantile pour les distributions sélectionnées.
 
@@ -3539,7 +3529,7 @@ obj << Show Quantile Functions( 1 );
 
 #### Show Statistics
 
-**Syntaxe :** obj << Show Statistics( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Show Statistics( state=0|1 )
 
 **Description :** Affiche ou masque le rapport Statistiques, qui contient les comparaisons des modèles, un résumé des données et des estimations paramétriques et non paramétriques. Actif par défaut.
 
@@ -3555,7 +3545,7 @@ obj << Show Statistics( 0 );
 
 #### Show Survival Curve
 
-**Syntaxe :** obj << Show Survival Curve( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Show Survival Curve( state=0|1 )
 
 **Description :** Bascule entre la probabilité de défaillance et la courbe de survie sur le graphique de probabilité Comparer les distributions et les graphiques Profileur de distribution.
 
@@ -3574,7 +3564,7 @@ obj = dt << Life Distribution(
 
 #### Suppress Plot
 
-**Syntaxe :** obj << Suppress Plot( distribution name )
+**Syntaxe :** obj &lt;&lt; Suppress Plot( distribution name )
 
 **Description :** Supprime la distribution spécifiée des graphiques dans le rapport. Cette option est équivalente à décocher la case correspondante sous Distribution dans les rapports Comparer les distributions, Profileur de risque ou Profileur de quantile.
 
@@ -3595,7 +3585,7 @@ obj << Suppress Plot( Lognormal );
 
 #### Tabbed Report
 
-**Syntaxe :** obj << Tabbed Report( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Tabbed Report( state=0|1 )
 
 **Description :** Affiche les graphiques et les données dans des onglets individuels plutôt que dans le style de structure par défaut.
 
@@ -3612,7 +3602,7 @@ obj << Tabbed Report( 1 );
 
 #### Action
 
-**Syntaxe :** obj << Action
+**Syntaxe :** obj &lt;&lt; Action
 
 **Description :** Trappe tout usage dans une plate-forme pour y insérer les expressions à calculer. Définit provisoirement les contextes des boîtes d’affichage et des tables de données dans la plate-forme.
 
@@ -3630,7 +3620,7 @@ dt << Bivariate(
 
 #### Apply Preset
 
-**Syntaxe :** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntaxe :** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Description :** Appliquez une préconfiguration créée précédemment à l&apos;objet, ce qui met à jour les options et les personnalisations pour correspondre aux paramètres enregistrés.
 
@@ -3677,7 +3667,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 #### Automatic Recalc
 
-**Syntaxe :** obj << Automatic Recalc( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Description :** Refait l&apos;analyse automatiquement pour l&apos;exclusion et les modifications de données. Si l&apos;option Nouveau calcul automatique est activée, envisagez d&apos;utiliser les commandes Wait(0) pour vous assurer que l&apos;exclusion et les modifications de données sont prises en compte avant le recalcul.
 
@@ -3693,7 +3683,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 #### Broadcast
 
-**Syntaxe :** obj << Broadcast(message)
+**Syntaxe :** obj &lt;&lt; Broadcast(message)
 
 **Description :** Diffuse un message sur une plate-forme. Si les résultats de renvoi des objets individuels sont des tables, elles sont concaténées si possible, et le format final est identique au résultat de l&apos;option Enregistrer la table de données combinée dans une boîte de tableau ou au résultat de l&apos;option Concaténer avec une colonne Source. Sinon, les résultats sont stockés dans une liste et renvoyés.
 
@@ -3713,7 +3703,7 @@ objs[1] << Broadcast( Save Summaries );
 
 #### Column Switcher
 
-**Syntaxe :** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Syntaxe :** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Description :** Ajoute un panneau de contrôle pour changer les variables de la plate-forme.
 
@@ -3731,7 +3721,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 #### Copy ByGroup Script
 
-**Syntaxe :** obj << Copy ByGroup Script
+**Syntaxe :** obj &lt;&lt; Copy ByGroup Script
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis le place dans le presse-papiers.
 
@@ -3751,7 +3741,7 @@ obj[1] << Copy ByGroup Script;
 
 #### Copy Script
 
-**Syntaxe :** obj << Copy Script
+**Syntaxe :** obj &lt;&lt; Copy Script
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis le place dans le presse-papiers.
 
@@ -3766,7 +3756,7 @@ obj << Copy Script;
 
 #### Data Table Window
 
-**Syntaxe :** obj << Data Table Window
+**Syntaxe :** obj &lt;&lt; Data Table Window
 
 **Description :** Déplace en premier plan la fenêtre de la table de données utilisée dans cette analyse.
 
@@ -3781,7 +3771,7 @@ obj << Data Table Window;
 
 #### Get By Levels
 
-**Syntaxe :** obj << Get By Levels
+**Syntaxe :** obj &lt;&lt; Get By Levels
 
 **Description :** Renvoie un tableau associatif de mappage des colonnes par groupe à leurs valeurs.
 
@@ -3798,7 +3788,7 @@ biv << Get By Levels;
 
 #### Get ByGroup Script
 
-**Syntaxe :** obj << Get ByGroup Script
+**Syntaxe :** obj &lt;&lt; Get ByGroup Script
 
 **Description :** Crée un script (JSL) pour produire cette analyse et la renvoyer sous forme d’une expression.
 
@@ -3819,7 +3809,7 @@ Show( t );
 
 #### Get Container
 
-**Syntaxe :** obj << Get Container
+**Syntaxe :** obj &lt;&lt; Get Container
 
 **Description :** Renvoie une référence à la zone conteneur où se trouve le contenu de l&apos;objet.
 
@@ -3868,7 +3858,7 @@ New Window( "platform boxes",
 
 #### Get Data Table
 
-**Syntaxe :** obj << Get Data Table
+**Syntaxe :** obj &lt;&lt; Get Data Table
 
 **Description :** Renvoie une référence à la table de données.
 
@@ -3884,7 +3874,7 @@ Show( N Rows( t ) );
 
 #### Get Group Platform
 
-**Syntaxe :** obj << Get Group Platform
+**Syntaxe :** obj &lt;&lt; Get Group Platform
 
 **Description :** Renvoie l&apos;objet de Plate-forme de groupe si cette plate-forme fait partie d&apos;un groupe. Sinon, renvoie Empty().
 
@@ -3901,7 +3891,7 @@ group << Layout( "Arrange in Tabs" );
 
 #### Get Script
 
-**Syntaxe :** obj << Get Script
+**Syntaxe :** obj &lt;&lt; Get Script
 
 **Description :** Crée un script (JSL) pour produire cette analyse et la renvoyer sous forme d’une expression.
 
@@ -3917,7 +3907,7 @@ Show( t );
 
 #### Get Script With Data Table
 
-**Syntaxe :** obj << Get Script With Data Table
+**Syntaxe :** obj &lt;&lt; Get Script With Data Table
 
 **Description :** Crée un script (JSL) pour produire cette analyse faisant spécifiquement référence à cette table de données et la renvoyer sous forme d’une expression.
 
@@ -3933,7 +3923,7 @@ Show( t );
 
 #### Get Timing
 
-**Syntaxe :** obj << Get Timing
+**Syntaxe :** obj &lt;&lt; Get Timing
 
 **Description :** Détermine une heure de lancement de la plate-forme.
 
@@ -3949,7 +3939,7 @@ Show( t );
 
 #### Get Web Support
 
-**Syntaxe :** obj << Get Web Support
+**Syntaxe :** obj &lt;&lt; Get Web Support
 
 **Description :** Renvoyer un nombre indiquant le niveau de support HTML interactif pour l&apos;objet d&apos;affichage. 1 signifie que tout ou partie des éléments sont pris en charge. 0 signifie qu&apos;il n&apos;y a aucun support.
 
@@ -3965,7 +3955,7 @@ Show( s );
 
 #### Get Where Expr
 
-**Syntaxe :** obj << Get Where Expr
+**Syntaxe :** obj &lt;&lt; Get Where Expr
 
 **Description :** Renvoie l&apos;expression Where pour le sous-ensemble de données, si la plate-forme a été lancée avec By() ou Where(). Sinon, renvoie la Empty()
 
@@ -4006,7 +3996,7 @@ dt << Bivariate(
 
 #### Local Data Filter
 
-**Syntaxe :** obj << Local Data Filter
+**Syntaxe :** obj &lt;&lt; Local Data Filter
 
 **Description :** Permet de filtrer les données locales, dans la plate-forme concernée, par groupes ou étendues spécifiques
 
@@ -4062,7 +4052,7 @@ preset = obj << New Preset();
 
 #### Paste Local Data Filter
 
-**Syntaxe :** obj << Paste Local Data Filter
+**Syntaxe :** obj &lt;&lt; Paste Local Data Filter
 
 **Description :** Appliquer le filtre des données locales du presse-papiers au rapport actif.
 
@@ -4083,7 +4073,7 @@ dist2 << Paste Local Data Filter;
 
 #### Redo Analysis
 
-**Syntaxe :** obj << Redo Analysis
+**Syntaxe :** obj &lt;&lt; Redo Analysis
 
 **Description :** Exécute à nouveau cette même analyse dans une nouvelle fenêtre. L&apos;analyse sera différente si les données ont été modifiées.
 
@@ -4098,7 +4088,7 @@ obj << Redo Analysis;
 
 #### Redo ByGroup Analysis
 
-**Syntaxe :** obj << Redo ByGroup Analysis
+**Syntaxe :** obj &lt;&lt; Redo ByGroup Analysis
 
 **Description :** Exécute à nouveau cette même analyse dans une nouvelle fenêtre. L&apos;analyse sera différente si les données ont été modifiées.
 
@@ -4118,7 +4108,7 @@ obj[1] << Redo ByGroup Analysis;
 
 #### Relaunch Analysis
 
-**Syntaxe :** obj << Relaunch Analysis
+**Syntaxe :** obj &lt;&lt; Relaunch Analysis
 
 **Description :** Ouvre la fenêtre de lancement de la plate-forme et rappelle les paramètres utilisés pour créer le rapport.
 
@@ -4133,7 +4123,7 @@ obj << Relaunch Analysis;
 
 #### Relaunch ByGroup
 
-**Syntaxe :** obj << Relaunch ByGroup
+**Syntaxe :** obj &lt;&lt; Relaunch ByGroup
 
 **Description :** Ouvre la fenêtre de lancement de la plate-forme et rappelle les paramètres utilisés pour créer le rapport.
 
@@ -4153,7 +4143,7 @@ obj[1] << Relaunch ByGroup;
 
 #### Remove Column Switcher
 
-**Syntaxe :** obj << Remove Column Switcher
+**Syntaxe :** obj &lt;&lt; Remove Column Switcher
 
 **Description :** Supprime le sélecteur de colonne le plus récent ajouté à la plate-forme.
 
@@ -4173,7 +4163,7 @@ obj << Remove Column Switcher;
 
 #### Remove Local Data Filter
 
-**Syntaxe :** obj << Remove Local Data Filter
+**Syntaxe :** obj &lt;&lt; Remove Local Data Filter
 
 **Description :** Permet de supprimer un filtre de données locales créé précédemment et rétablit toutes les valeurs des données directement dans la table de données utilisée dans la plate-forme.
 
@@ -4212,9 +4202,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 #### Report
 
-**Syntaxe :** obj << Report;
-
-Report( obj )
+**Syntaxe :** obj &lt;&lt; Report;Report( obj )
 
 **Description :** Renvoie une référence à l’objet rapport.
 
@@ -4231,7 +4219,7 @@ Show( t );
 
 #### Report View
 
-**Syntaxe :** obj << Report View( "Complet"|"Résumé" )
+**Syntaxe :** obj &lt;&lt; Report View( "Complet"|"Résumé" )
 
 **Description :** L&apos;affichage du rapport détermine le niveau de détail visible dans un rapport de plate-forme. Full affiche tous les détails, alors que Summary affiche uniquement le contenu sélectionné, selon la plate-forme. Pour un comportement personnalisé, les boîtes d&apos;affichage prennent en charge un message <<Set Summary Behavior.
 
@@ -4246,7 +4234,7 @@ obj << Report View( "Summary" );
 
 #### Save ByGroup Script to Data Table
 
-**Syntaxe :** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntaxe :** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;enregistre sous forme de propriété de table dans la table de données. Vous pouvez spécifier un nom pour le script. L&apos;option Append Suffix ajoute un suffixe numérique au nom du script, ce qui différentie le script d&apos;un script existant portant le même nom. L&apos;option Prompt invite l&apos;utilisateur à spécifier un nom de script. L&apos;option Replace remplace un script existant avec le même nom.
 
@@ -4266,7 +4254,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 #### Save ByGroup Script to Journal
 
-**Syntaxe :** obj << Save ByGroup Script to Journal
+**Syntaxe :** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis ajoute un bouton dans le journal qui contient ce script.
 
@@ -4286,7 +4274,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 #### Save ByGroup Script to Script Window
 
-**Syntaxe :** obj << Save ByGroup Script to Script Window
+**Syntaxe :** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;ajoute à la fenêtre de script active.
 
@@ -4306,7 +4294,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 #### Save Script for All Objects
 
-**Syntaxe :** obj << Save Script for All Objects
+**Syntaxe :** obj &lt;&lt; Save Script for All Objects
 
 **Description :** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -4321,7 +4309,7 @@ obj << Save Script for All Objects;
 
 #### Save Script for All Objects To Data Table
 
-**Syntaxe :** obj << Save Script for All Objects To Data Table( <name> )
+**Syntaxe :** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Description :** Enregistre un script pour tous les objets de rapport dans la table de données active. Cette option est utile lorsque vous avez plusieurs rapports dans la fenêtre. Le script est nommé d&apos;après la première plate-forme, sauf si vous spécifiez le nom du script entre guillemets.
 
@@ -4359,7 +4347,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 #### Save Script to Data Table
 
-**Syntaxe :** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntaxe :** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;enregistre sous forme de propriété de tableau dans la table de données.
 
@@ -4374,7 +4362,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 #### Save Script to Journal
 
-**Syntaxe :** obj << Save Script to Journal
+**Syntaxe :** obj &lt;&lt; Save Script to Journal
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis ajoute un bouton dans le journal qui contient ce script.
 
@@ -4389,7 +4377,7 @@ obj << Save Script to Journal;
 
 #### Save Script to Report
 
-**Syntaxe :** obj << Save Script to Report
+**Syntaxe :** obj &lt;&lt; Save Script to Report
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;affiche dans le rapport lui-même. Utile pour conserver une trace écrite de ce qui a été effectué.
 
@@ -4404,7 +4392,7 @@ obj << Save Script to Report;
 
 #### Save Script to Script Window
 
-**Syntaxe :** obj << Save Script to Script Window
+**Syntaxe :** obj &lt;&lt; Save Script to Script Window
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;ajoute à la fenêtre de script active.
 
@@ -4489,7 +4477,7 @@ dt << Distribution(
 
 #### Sync to Data Table Changes
 
-**Syntaxe :** obj << Sync to Data Table Changes
+**Syntaxe :** obj &lt;&lt; Sync to Data Table Changes
 
 **Description :** Sync avec l&apos;exclusion et les modifications apportées aux données.
 
@@ -4506,7 +4494,7 @@ dist << Sync To Data Table Changes;
 
 #### Title
 
-**Syntaxe :** obj << Title( "new title" )
+**Syntaxe :** obj &lt;&lt; Title( "new title" )
 
 **Description :** Définit le titre de la plate-forme.
 
@@ -4521,7 +4509,7 @@ obj << Title( "My Platform" );
 
 #### Top Report
 
-**Syntaxe :** obj << Top Report
+**Syntaxe :** obj &lt;&lt; Top Report
 
 **Description :** Renvoie une référence au nœud racine dans le rapport.
 
@@ -4538,7 +4526,7 @@ Show( t );
 
 #### Transform Column
 
-**Syntaxe :** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Syntaxe :** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Description :** Créez une colonne de transformation dans le contexte local d&apos;un objet, généralement une plate-forme. La colonne de transformation est active uniquement pendant la durée de vie de la plateforme.
 
@@ -4559,7 +4547,7 @@ dt << Distribution(
 
 #### View Web XML
 
-**Syntaxe :** obj << View Web XML
+**Syntaxe :** obj &lt;&lt; View Web XML
 
 **Description :** Renvoie le code XML utilisé pour créer le rapport au format HTML interactif.
 
@@ -4574,9 +4562,7 @@ xml = obj << View Web XML;
 
 #### Window View
 
-**Syntaxe :** obj = Life Distribution(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Life Distribution(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Définir le type de fenêtre à créer pour le rapport. Par défaut, une fenêtre de rapport Visible sera créée. Une fenêtre Invisible ne s&apos;affichera pas à l&apos;écran, mais sera visible par les fonctions comme Window(). Une fenêtre Private répond à la plupart des messages de fenêtre mais n&apos;est pas visible et doit être adressée au moyen de l&apos;objet rapport
 

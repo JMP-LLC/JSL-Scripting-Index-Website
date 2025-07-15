@@ -2,8 +2,6 @@
 
 
 
-## 関数
-
 ### Python Connect
 
 **構文:** PythonConnection = Python Connect ()
@@ -51,7 +49,7 @@ conn << Create JPIP CMD();
 
 ### Python Execute
 
-**構文:** Python Execute( { list of Inputs }, { list of Outputs }, statements < , echo( 1 | 0 ) > )
+**構文:** Python Execute( { list of Inputs }, { list of Outputs }, statements &lt; , echo( 1 | 0 ) &gt; )
 
 **説明:** 入力値のリストを送り、ステートメントを実行し、結果のリストを戻す。オプションのecho()パラメータのデフォルト値はTrue。echoパラメータは、Pythonソースのログへのエコーを制御する。True (1)はソースのエコーを有効にし、0はログへのエコーを抑制する。
 
@@ -322,7 +320,7 @@ Python Submit( "print(pi)" );
 
 ### Python Send
 
-**構文:** Python Send( name, <Python Name( name ) | "as_name" > )
+**構文:** Python Send( name, &lt;Python Name( name ) | "as_name" &gt; )
 
 **説明:** Sends data to Python, where the name argument can represent any of the following JMP data types ( numeric | string | matrix | list | data table | data table column | date ).
 
@@ -369,7 +367,7 @@ Python Submit( "print(date)" );
 
 ### Python Send File
 
-**構文:** Python Send File( filename, <Python Name( name )> )
+**構文:** Python Send File( filename, &lt;Python Name( name )&gt; )
 
 **説明:** Pythonにデータファイルを送る。引数filenameは、Pythonに送られるファイルのパス名。
 
@@ -388,7 +386,7 @@ Python Submit( "print(Baseball)" );
 
 ### Python Submit
 
-**構文:** Python Submit( statements < , echo( 1 | 0 ) > )
+**構文:** Python Submit( statements &lt; , echo( 1 | 0 ) &gt; )
 
 **説明:** Pythonにステートメントをサブミットする。ステートメントは、文字列の値、または文字列の値のリスト。オプションのecho()パラメータのデフォルトは1。echoパラメータは、Pythonソースのログへのエコーを制御する。True (1)はソースのエコーを有効にし、0はログへのエコーを抑制する。
 

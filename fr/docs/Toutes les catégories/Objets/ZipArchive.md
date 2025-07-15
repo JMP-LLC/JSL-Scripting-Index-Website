@@ -6,7 +6,7 @@
 
 ### Open
 
-**Syntaxe :** Open( filePath, <data table options | Excel import options | text import options | SAS import options | HTML import options | esriShapeFile import options | PDF import options | other file options > )
+**Syntaxe :** Open( filePath, &lt;data table options | Excel import options | text import options | SAS import options | HTML import options | esriShapeFile import options | PDF import options | other file options &gt; )
 
 **Description :** Renvoie une référence vers une table de données, ou vers un autre fichier JMP ou objet créé à partir d&apos;un fichier. Si aucun chemin n&apos;est spécifié, la boîte de dialogue Ouvrir s&apos;affiche. Si un chemin vers un répertoire est spécifié, l&apos;explorateur de fichiers du système est ouvert et aucun objet n&apos;est renvoyé. Consultez la syntaxe de référence pour obtenir une description complète des options disponibles.
 
@@ -39,7 +39,7 @@ dt2 = Open(
 
 ### Dir
 
-**Syntaxe :** memlist = obj << Dir
+**Syntaxe :** memlist = obj &lt;&lt; Dir
 
 **Description :** Renvoie la liste des fichiers membres dans une archive zip.
 
@@ -57,7 +57,7 @@ dirlist[1] || ": " || text;
 
 ### Read
 
-**Syntaxe :** memdata = obj << Read( memname, <Format(blob|string)>, <Encoding(charset)> )
+**Syntaxe :** memdata = obj &lt;&lt; Read( memname, &lt;Format(blob|string)&gt;, &lt;Encoding(charset)&gt; )
 
 **Description :** Lit le fichier membre d’une archive zip dans une chaîne ou un blob.
 
@@ -75,7 +75,7 @@ dirlist[1] || ": " || text;
 
 ### Write
 
-**Syntaxe :** actual name = obj << Write( memname, memdata, < "replace" > )
+**Syntaxe :** actual name = obj &lt;&lt; Write( memname, memdata, &lt; "replace" &gt; )
 
 **Description :** Ajoute un texte ou un blob à un fichier membre d&apos;une archive zip. Si le paramètre facultatif « replace » est spécifié et si un fichier existe avec ce nom, le fichier membre est remplacé. Dans le cas contraire, le nom du membre est modifié pour empêcher d&apos;écraser le membre existant ; le nom utilisé est renvoyé.
 

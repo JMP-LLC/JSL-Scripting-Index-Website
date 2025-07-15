@@ -6,7 +6,7 @@
 
 ### New Namespace
 
-**Syntaxe :** ns = New Namespace( <name>, <list of expressions> )
+**Syntaxe :** ns = New Namespace( &lt;name&gt;, &lt;list of expressions&gt; )
 
 **Description :** Crée un espace de noms où toutes les fonctions et les variables créées ne sont définies que dans le nom spécifié.
 
@@ -28,7 +28,7 @@ Add Class:append = Function( {a, b},
 
 ### Contains
 
-**Syntaxe :** obj << Contains( string )
+**Syntaxe :** obj &lt;&lt; Contains( string )
 
 **Description :** Renvoie 1 si l’espace de noms contient l’expression chaîne spécifiée, ou 0 dans le cas contraire.
 
@@ -49,7 +49,7 @@ result = nsref << Contains( "nObs" );
 
 ### Delete Namespace
 
-**Syntaxe :** nsref << Delete Namespace( < Force( boolean ) > )
+**Syntaxe :** nsref &lt;&lt; Delete Namespace( &lt; Force( boolean ) &gt; )
 
 **Description :** Supprime cet espace de noms.
 
@@ -73,7 +73,7 @@ Show( nsref );
 
 ### First
 
-**Syntaxe :** obj << First
+**Syntaxe :** obj &lt;&lt; First
 
 **Description :** Renvoie l’expression de la chaîne du premier élément de cet espace de noms.
 
@@ -94,7 +94,7 @@ result = nsref << First;
 
 ### Get Contents
 
-**Syntaxe :** obj << Get Contents
+**Syntaxe :** obj &lt;&lt; Get Contents
 
 **Description :** Renvoie une liste d’éléments dans cet espace de noms, où chaque élément consiste en une liste de deux items contenant une clé et sa valeur.
 
@@ -115,7 +115,7 @@ result = nsref << Get Contents;
 
 ### Get Keys
 
-**Syntaxe :** obj << Get Keys
+**Syntaxe :** obj &lt;&lt; Get Keys
 
 **Description :** Renvoie une liste de clés dans cet espace de noms, où une clé est une représentation chaîne d&apos;un élément indépendant contenu dans l&apos;espace de noms.
 
@@ -136,7 +136,7 @@ result = nsref << Get Keys;
 
 ### Get Name
 
-**Syntaxe :** obj << Get Name
+**Syntaxe :** obj &lt;&lt; Get Name
 
 **Description :** Renvoie le nom de cet espace de noms.
 
@@ -157,7 +157,7 @@ space name = nsref << Get Name;
 
 ### Get Value
 
-**Syntaxe :** obj << Get Value( string )
+**Syntaxe :** obj &lt;&lt; Get Value( string )
 
 **Description :** Renvoie la valeur de l’élément spécifié dans cet espace de noms. La "chaîne" est la clé de l’élément.
 
@@ -178,7 +178,7 @@ result = nsref << Get Value( "nObs" );
 
 ### Get Values
 
-**Syntaxe :** obj << Get Values
+**Syntaxe :** obj &lt;&lt; Get Values
 
 **Description :** Renvoie une liste de valeurs correspondantes à chaque élément contenu dans cet espace de noms.
 
@@ -199,7 +199,7 @@ result = nsref << Get Values;
 
 ### Insert
 
-**Syntaxe :** obj << Insert( string, value )
+**Syntaxe :** obj &lt;&lt; Insert( string, value )
 
 **Description :** Introduit une expression chaîne, avec une valeur spécifiée dans cet espace de noms.
 
@@ -221,7 +221,7 @@ Show( nsref );
 
 ### Lock Namespace
 
-**Syntaxe :** obj << Lock Namespace( <string, | {string, ...}>* )
+**Syntaxe :** obj &lt;&lt; Lock Namespace( &lt;string, | {string, ...}&gt;* )
 
 **Description :** Verrouille toutes les variables ou les variables nommées spécifiées dans cet espace de noms et empêche tout ajout, suppression ou modification de variables.
 
@@ -245,7 +245,7 @@ Try( Add Class:nObs = 40, "Add Class is locked." );
 
 ### N Items
 
-**Syntaxe :** obj << N Items
+**Syntaxe :** obj &lt;&lt; N Items
 
 **Description :** Renvoie le nombre d’éléments contenus dans cet espace de noms.
 
@@ -266,7 +266,7 @@ n = nsref << N Items;
 
 ### Next
 
-**Syntaxe :** obj << Next( string )
+**Syntaxe :** obj &lt;&lt; Next( string )
 
 **Description :** Renvoie l’expression de la chaîne de l&apos;élément qui suit la clé spécifiée dans cet espace de noms.
 
@@ -287,7 +287,7 @@ result = nsref << Next( "addition" );
 
 ### Remove
 
-**Syntaxe :** obj << Remove( <string | {string, ...}>* )
+**Syntaxe :** obj &lt;&lt; Remove( &lt;string | {string, ...}&gt;* )
 
 **Description :** Supprime l’expression chaîne spécifiée de l’espace de noms.
 
@@ -309,7 +309,7 @@ Show( nsref );
 
 ### Show Contents
 
-**Syntaxe :** obj << Show Contents
+**Syntaxe :** obj &lt;&lt; Show Contents
 
 **Description :** Affiche le contenu d’un espace de noms dans le log JMP.
 
@@ -330,7 +330,7 @@ result = nsref << Show Contents;
 
 ### Unlock Namespace
 
-**Syntaxe :** obj << Unlock Namespace( <string | {string, ...}>* )
+**Syntaxe :** obj &lt;&lt; Unlock Namespace( &lt;string | {string, ...}&gt;* )
 
 **Description :** Déverrouille un espace de noms préalablement verrouillé avec toutes les variables verrouillées dans cet espace de travail et empêche tout ajout, suppression ou modification de variables.
 

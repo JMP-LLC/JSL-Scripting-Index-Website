@@ -6,19 +6,7 @@
 
 ### Run Program
 
-**構文:** obj = Run Program(
-
-    Executable( "path/etc.exe" ),
-
-  < Options( {"/a", "/b etc" } ) >,
-
-  < Parameter( optParm ) >,
-
-  < Read Function( Function( {this, optParm}, etc ) | "text" | "blob" ) >,
-
-  < Write Function( Function( {this, optParm}, etc ) ) >
-
-)
+**構文:** obj = Run Program( Executable( "path/etc.exe" ), &lt; Options( {"/a", "/b etc" } ) &gt;, &lt; Parameter( optParm ) &gt;, &lt; Read Function( Function( {this, optParm}, etc ) | "text" | "blob" ) &gt;, &lt; Write Function( Function( {this, optParm}, etc ) ) &gt;)
 
 **説明:** 標準入力(stdin)と標準出力(stdout)を使って外部プログラムを実行する。
 
@@ -37,7 +25,7 @@ RP = Run Program(
 
 ### Can Read
 
-**構文:** bool = obj << Can Read
+**構文:** bool = obj &lt;&lt; Can Read
 
 **説明:** Returns 1 if the RunProgram object can be read from and 0 if not.
 
@@ -54,13 +42,13 @@ Show( value );
 
 ### Can Write
 
-**構文:** bool = obj << Can Write
+**構文:** bool = obj &lt;&lt; Can Write
 
 **説明:** Returns boolean for whether or not the RunProgram object can be written to via standard input.
 
 ### Is Read EOF
 
-**構文:** bool = obj << Is Read EOF
+**構文:** bool = obj &lt;&lt; Is Read EOF
 
 **説明:** Returns 1 if the program has finished writing to standard output and 0 if not.
 
@@ -77,7 +65,7 @@ Show( value );
 
 ### Read
 
-**構文:** value = obj << Read( < "blob" > )
+**構文:** value = obj &lt;&lt; Read( &lt; "blob" &gt; )
 
 **説明:** Read standard output from executable as text or blob.
 
@@ -101,13 +89,13 @@ rp = Run Program(
 
 ### Write
 
-**構文:** obj << Write( string )
+**構文:** obj &lt;&lt; Write( string )
 
 **説明:** Write text to the program&apos;s standard input.
 
 ### Write EOF
 
-**構文:** obj << Write EOF
+**構文:** obj &lt;&lt; Write EOF
 
 **説明:** Write the end of file for the RunProgram object.
 

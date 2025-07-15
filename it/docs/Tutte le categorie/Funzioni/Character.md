@@ -2,11 +2,9 @@
 
 
 
-## Funzioni
-
 ### Blob To Char
 
-**Sintassi:** s = Blob To Char( blob, <encoding="utf-8"> )
+**Sintassi:** s = Blob To Char( blob, &lt;encoding="utf-8"&gt; )
 
 **Descrizione:** Crea una stringa di caratteri da un BLOB (Binary Large OBject), utilizzando la codifica specificata. Le codifiche supportate comprendono utf-8, utf-16le, utf-16be, us-ascii, iso-8859-1, shift_jis, euc-jp e ascii~hex.
 
@@ -24,7 +22,7 @@ Blob To Char( Hex To Blob( "436166C3A9" ) ) || Blob To Char(
 
 ### Blob To Matrix
 
-**Sintassi:** m = Blob To Matrix( blob, type, bytesEach, endian, <nCols=1> )
+**Sintassi:** m = Blob To Matrix( blob, type, bytesEach, endian, &lt;nCols=1&gt; )
 
 **Descrizione:** Crea una matrice convertendo in numeri i byte nel blob. type può essere "int", "uint" o "float". bytesEach può essere 1, 2, 4 o 8. endian indica se il primo byte è il più significativo ("big") o il meno significativo ("little"); "native" indica il formato nativo del computer.
 
@@ -39,7 +37,7 @@ Blob To Matrix( Hex To Blob( "00010002FFFFFFFE" ), "int", 2, "big", 2 );
 
 ### Char
 
-**Sintassi:** s = Char( x, <w>, <d>, < <<Use Locale( Boolean ) >, < <<Full Precision( Boolean ) > )
+**Sintassi:** s = Char( x, &lt;w&gt;, &lt;d&gt;, &lt; &lt;&lt;Use Locale( Boolean ) &gt;, &lt; &lt;&lt;Full Precision( Boolean ) &gt; )
 
 **Descrizione:** Restituisce una rappresentazione di x come stringa di caratteri, utilizzando la larghezza massima w e le posizioni decimali d se l&apos;argomento x è numerico. <<FullPrecision scrive valori numerici utilizzando tutta la precisione disponibile.
 
@@ -74,7 +72,7 @@ Char( 2.1, <<Use Locale( 1 ) );
 
 ### Char To Blob
 
-**Sintassi:** blob = Char To Blob( string, <encoding="utf-8"> )
+**Sintassi:** blob = Char To Blob( string, &lt;encoding="utf-8"&gt; )
 
 **Descrizione:** Crea un BLOB (Binary Large OBject) da una stringa di caratteri , utilizzando la codifica specificata. Le codifiche supportate comprendono utf-8, utf-16le, utf-16be, us-ascii, iso-8859-1, euc-jp e ascii~hex.
 
@@ -89,7 +87,7 @@ Char To Blob( "Café", "utf-16be" );
 
 ### Char To Hex
 
-**Sintassi:** h = Char To Hex( value, <"integer">|<encoding="utf-8"> )
+**Sintassi:** h = Char To Hex( value, &lt;"integer"&gt;|&lt;encoding="utf-8"&gt; )
 
 **Descrizione:** Restituisce il testo esadecimale corrispondente al valore e codifica specificati, che possono essere un numero, una stringa o un blob. Se il valore è un numero, si utilizza la codifica IEEE 754 a 64 bit a meno che sia indicato l&apos;argomento opzionale, "integer". Le codifiche supportate sono utf-8, utf-16le, utf-16be, us-ascii, iso-8859-1, ascii~hex, shift_jis e euc-jp.
 
@@ -134,7 +132,7 @@ Names Default To Here( 1 );
 
 ### Concat Items
 
-**Sintassi:** string = Concat Items( {list of strings}, <separatorString> )
+**Sintassi:** string = Concat Items( {list of strings}, &lt;separatorString&gt; )
 
 **Descrizione:** Unisce un elenco di stringhe in una stringa lunga separando ognuna dalla successiva con un separatore, uno spazio vuoto se non altrimenti specificato.
 
@@ -165,7 +163,7 @@ ex ||= "world";
 
 ### Contains
 
-**Sintassi:** pos = Contains( x, item, <start=1> )
+**Sintassi:** pos = Contains( x, item, &lt;start=1&gt; )
 
 **Descrizione:** Restituisce la posizione di item entro x, iniziando dalla posizione start, se indicata. Se tale posizione start è negativa, la ricerca avviene all&apos;indietro a partire da length( x ) - start. L&apos;argomento x può essere una stringa o un elenco.
 
@@ -181,7 +179,7 @@ Show( Contains( {"A", 2, "C", [1 5], "C"}, "C", 4 ) );
 
 ### Contains Item
 
-**Sintassi:** b = Contains Item( x, item | list | Pat Regex(), <delimiter> )
+**Sintassi:** b = Contains Item( x, item | list | Pat Regex(), &lt;delimiter&gt; )
 
 **Descrizione:** Restituisce un valore booleano che indica se la parola [elemento], una di un elenco di parole [elenco], o il pattern [pattern] corrisponde a una delle parole nel testo rappresentato da [x]. Le parole sono delimitate dai caratteri nella stringa facoltativa del delimitatore [delimitatore]. Il carattere virgola, ",", è il delimitatore predefinito. Gli spazi sono troncati dalle estremità di ciascuna parola estratta dalla stringa di testo di input [x].
 
@@ -238,7 +236,7 @@ Ends With( "http://www.jmp.com", ".com" );
 
 ### Hex
 
-**Sintassi:** h = Hex( value, <"integer">|<encoding="utf-8">|<Base(number)>,<Pad To(number)> )
+**Sintassi:** h = Hex( value, &lt;"integer"&gt;|&lt;encoding="utf-8"&gt;|&lt;Base(number)&gt;,&lt;Pad To(number)&gt; )
 
 **Descrizione:** Restituisce il testo esadecimale (o altro sistema di numerazione base) corrispondente al valore e codifica specificati, che possono essere un numero, una stringa o un blob. Se il valore è un numero, si utilizza la codifica IEEE 754 a 64 bit, a meno che sia indicato uno degli argomenti facoltativi, integer o Base. Se è specificata Base, la funzione restituisce il testo corrispondente al numero specificato in tale sistema numerico base specificato invece di esadecimale. La base deve essere un numero intero tra 2 e 36 compresi. Le codifiche supportate comprendono utf-8, utf-16le, utf-16be, us-ascii, iso-8859-1, ascii~hex, shift_jis e euc-jp.
 
@@ -269,7 +267,7 @@ Hex To Blob( "FF78CE" );
 
 ### Hex To Char
 
-**Sintassi:** s = Hex To Char( hextext, <encoding="utf-8"> )
+**Sintassi:** s = Hex To Char( hextext, &lt;encoding="utf-8"&gt; )
 
 **Descrizione:** Restituisce il testo corrispondente al testo esadecimale utilizzando la codifica specificata. Le codifiche supportate sono utf-8, utf-16le, utf-16be, us-ascii, iso-8859-1, ascii~hex, shift_jis e euc-jp.
 
@@ -284,7 +282,7 @@ Hex To Char( "436166C3A9" ) || Hex To Char( "00430061006600E9", "utf-16be" );
 
 ### Hex To Number
 
-**Sintassi:** x = Hex To Number( hextext, <Base(number)> )
+**Sintassi:** x = Hex To Number( hextext, &lt;Base(number)&gt; )
 
 **Descrizione:** Restituisce il numero corrispondente al testo esadecimale (o altro sistema di numerazione base). 16 cifre esadecimali sono convertite come numeri in virgola mobile IEEE 754 a 64 bit; altrimenti l&apos;input è trattato come numero intero esadecimale. Se è specificata Base, il testo è trattato come una stringa rappresentante il numero in tale base. La base deve essere un numero intero compreso tra 2 e 36 inclusi.
 
@@ -299,7 +297,7 @@ Hex To Number( "11110000", Base( 2 ) );
 
 ### Insert
 
-**Sintassi:** z = Insert( x, y, <i> )
+**Sintassi:** z = Insert( x, y, &lt;i&gt; )
 
 **Descrizione:** Restituisce una copia dell&apos;elenco x con y inserito alla i-esima posizione o aggiunto alla fine se l&apos;argomento facoltativo i non è specificato.
 
@@ -315,7 +313,7 @@ z = Insert( z, 99, 2 );
 
 ### Insert Into
 
-**Sintassi:** Insert Into( x, y, <i> )
+**Sintassi:** Insert Into( x, y, &lt;i&gt; )
 
 **Descrizione:** Modifica l&apos;elenco, l&apos;array associativo o il riquadro di visualizzazione x con y inserito nella raccolta. Gli elenchi e i riquadro di visualizzazione supportano un i facoltativo per specificare la posizione oppure gli elementi vengono accodati se non si specifica la posizione. Nota: l&apos;argomento x deve essere una variabile.
 
@@ -356,7 +354,7 @@ Insert Into( hlist, Button Box( "c" ) );
 
 ### Item
 
-**Sintassi:** w = Item( n|[first last], s, <delim>, <Unmatched(result string)>, <Include Boundary Delimiters(0|1)>)
+**Sintassi:** w = Item( n|[first last], s, &lt;delim&gt;, &lt;Unmatched(result string)&gt;, &lt;Include Boundary Delimiters(0|1)&gt;)
 
 **Descrizione:** Restituisce l&apos;n-esimo elemento dell&apos;argomento s, dove gli elementi sono le sottostringhe (possibilmente vuote) separate esattamente da uno qualsiasi dei caratteri specificati nell&apos;argomento delim. Se delim è assente viene utilizzato uno spazio. Se delim è la stringa vuota, ogni carattere è trattato come un elemento separato.
 
@@ -418,7 +416,7 @@ Item( 2, ",abcd", ",", Include Boundary Delimiters );
 
 ### Items
 
-**Sintassi:** wl = Items(<[first last]>, s, <delim>, <Include Boundary Delimiters(0|1)>)
+**Sintassi:** wl = Items(&lt;[first last]&gt;, s, &lt;delim&gt;, &lt;Include Boundary Delimiters(0|1)&gt;)
 
 **Descrizione:** Restituisce un elenco di sottostringhe (eventualmente vuote) separate esattamente da uno qualsiasi dei caratteri specificati nell&apos;argomento delim. Se delim è assente, viene utilizzato uno spazio. Se delim è la stringa vuota, ogni carattere è trattato come un elemento separato.
 
@@ -466,7 +464,7 @@ Items( [1 2], ",Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ### Left
 
-**Sintassi:** sub = Left( s, n, <filler> )
+**Sintassi:** sub = Left( s, n, &lt;filler&gt; )
 
 **Descrizione:** Restituisce una versione troncata o riempita della stringa o elemento originale s. Il risultato contiene i caratteri n di sinistra o gli elementi dell&apos;elenco, riempiti con qualsiasi filler sulla destra se la lunghezza di s è inferiore a n.
 
@@ -556,7 +554,7 @@ Matrix To Blob( [3.14, 1.414], "float", 4, "big" );
 
 ### Munger
 
-**Sintassi:** r = Munger( s, startPos, findStringOrNChars, <replaceString> )
+**Sintassi:** r = Munger( s, startPos, findStringOrNChars, &lt;replaceString&gt; )
 
 **Descrizione:** Ricerca l&apos;argomento s per una sottostringa o posizione in base alla combinazione di argomenti.
 
@@ -571,7 +569,7 @@ Eval List( {Munger( "over there", 1, "t", "" ), Munger( "17 June 2000", 4, 4, "M
 
 ### Num
 
-**Sintassi:** y = Num( s, < <<Use Locale( use=1 ) >, < <<Restrict > )
+**Sintassi:** y = Num( s, &lt; &lt;&lt;Use Locale( use=1 ) &gt;, &lt; &lt;&lt;Restrict &gt; )
 
 **Descrizione:** Converte s in un numero usando qualsiasi formato incorporato, inclusi i formati data e valuta. Restituisce mancante se la conversione non riesce. L&apos;opzione facoltativa <<Restrict consente solo la conversione usando formati interi, decimali e scientifici.
 
@@ -602,7 +600,7 @@ Show(
 
 ### Regex
 
-**Sintassi:** result = Regex( source, pattern, <format, <IGNORECASE>, <GLOBALREPLACE>> )
+**Sintassi:** result = Regex( source, pattern, &lt;format, &lt;IGNORECASE&gt;, &lt;GLOBALREPLACE&gt;&gt; )
 
 **Descrizione:** Cerca nel testo di source una corrispondenza con pattern. L&apos;impostazione predefinita di format è "\0" (l&apos;intera corrispondenza) ma potrebbe essere "Fred" (per una sostituzione costante) o "\1" (per usare il testo corrispondente alla prima parentesi in pattern). Restituisce un numero mancante per nessuna corrispondenza. La distinzione tra maiuscole/minuscole è l&apos;impostazione predefinita.
 
@@ -621,7 +619,7 @@ Regex(
 
 ### Remove
 
-**Sintassi:** y = Remove( x, <i>, <n=1> ); y = Remove( x, {list} )
+**Sintassi:** y = Remove( x, &lt;i&gt;, &lt;n=1&gt; ); y = Remove( x, {list} )
 
 **Descrizione:** Restituisce una copia dell&apos;elenco x eliminando n elementi a partire dall&apos;i-esimo elemento o eliminando un elenco di elementi specificati dall&apos;argomento list.
 
@@ -636,7 +634,7 @@ Remove( {11, 22, 33, 44, 55}, 3, 2 );
 
 ### Remove From
 
-**Sintassi:** Remove From( x, <i>, <n=1> )
+**Sintassi:** Remove From( x, &lt;i&gt;, &lt;n=1&gt; )
 
 **Descrizione:** Modifica l&apos;elenco, l&apos;array associativo o il riquadro di visualizzazione x rimuovendo elementi. Gli array associativi specificano l&apos;elemento da rimuovere con un valore di chiave i. Gli elenchi e i riquadri di visualizzazione rimuovo iniziando dall&apos;elemento in posizione i. Un elenco rimuove più elementi contemporaneamente se è specificata l&apos;opzione n. Nota: l&apos;argomento x deve essere una variabile.
 
@@ -679,7 +677,7 @@ Remove From( hlist, 1 );
 
 ### Repeat
 
-**Sintassi:** s = Repeat( x, n, <m=1> )
+**Sintassi:** s = Repeat( x, n, &lt;m=1&gt; )
 
 **Descrizione:** Restituisce il testo, matrice o elenco specificati dall&apos;argomento x concatenato con se stesso n volte. Se x è un numero o una matrice, n indica la ripetizione verticale e l&apos;argomento facoltativo m indica la ripetizione orizzontale.
 
@@ -741,7 +739,7 @@ Reverse Into( hlist );
 
 ### Right
 
-**Sintassi:** sub = Right( s, n, <filler> )
+**Sintassi:** sub = Right( s, n, &lt;filler&gt; )
 
 **Descrizione:** Restituisce una versione troncata o riempita della stringa o elemento originale s. Il risultato contiene i caratteri n di destra o gli elementi dell&apos;elenco, riempiti con qualsiasi filler sulla sinistra se la lunghezza di s è inferiore a n.
 
@@ -830,7 +828,7 @@ Show( Set Unique( :sports ) );
 
 ### Shift
 
-**Sintassi:** y = Shift( x, <n=1> )
+**Sintassi:** y = Shift( x, &lt;n=1&gt; )
 
 **Descrizione:** Restituisce una copia dell&apos;elenco x con i primi n elementi spostati alla fine dell&apos;elenco o, se n è negativo, gli ultimi n elementi spostati all&apos;inizio.
 
@@ -845,7 +843,7 @@ Shift( {11, 22, 33, 44, 55}, 2 );
 
 ### Shift Into
 
-**Sintassi:** Shift Into( x, <n=1> )
+**Sintassi:** Shift Into( x, &lt;n=1&gt; )
 
 **Descrizione:** Modifica l&apos;elenco o il riquadro di visualizzazione x con i primi elementi n spostati alla fine dell&apos;elenco o, se n è negativo, gli ultimi elementi n spostati all&apos;inizio. Nota: l&apos;argomento x deve essere una variabile.
 
@@ -892,9 +890,7 @@ Starts With( "http://www.jmp.com", "http:" );
 
 ### Substitute
 
-**Sintassi:** y = Substitute( x, patternExpr1, replacementExpr1, ... )
-
-y = Substitute( x, patternString1, replacementString1, ..., < <<IGNORECASE > )
+**Sintassi:** y = Substitute( x, patternExpr1, replacementExpr1, ... )y = Substitute( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
 
 **Descrizione:** Restituisce una copia di stringa, elenco o espressione x, sostituendo istanze di ciascuna espressione di pattern con la rispettiva espressione di sostituzione. L&apos;argomento facoltativo <<IGNORECASE abilita la ricerca senza distinzione fra maiuscole e minuscole se x è una stringa.
 
@@ -959,9 +955,7 @@ Substitute( "Apple,APPLE,apple", "apple", "orange", <<IGNORECASE );
 
 ### Substitute Into
 
-**Sintassi:** Substitute Into( x, patternExpr1, replacementExpr1, ... )
-
-Substitute Into( x, patternString1, replacementString1, ..., < <<IGNORECASE > )
+**Sintassi:** Substitute Into( x, patternExpr1, replacementExpr1, ... )Substitute Into( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
 
 **Descrizione:** Modifica la stringa, elenco o espressione x, sostituendo istanze di ciascuna espressione di pattern con la rispettiva espressione di sostituzione. Nota: l&apos;argomento x deve essere una variabile. L&apos;argomento facoltativo <<IGNORECASE abilita la ricerca senza distinzione fra maiuscole e minuscole se x è una stringa.
 
@@ -1013,7 +1007,7 @@ Show( s );
 
 ### Substr
 
-**Sintassi:** sub = Substr( s, start, <count> )
+**Sintassi:** sub = Substr( s, start, &lt;count&gt; )
 
 **Descrizione:** Restituisce la parte di stringa s composta da count caratteri che partono dalla posizione start. Un count negativo o assente significa il resto della stringa. Un start negativo significa fare partire i caratteri di start dalla fine. La funzione Substr() può anche essere applicata a elenchi.
 
@@ -1028,7 +1022,7 @@ Eval List( {Substr( "undergo", 4 ), Substr( {10, 11, 12, 13, 14}, 2, 3 )} );
 
 ### Text Score
 
-**Sintassi:** score vector = Text Score( text column, text-to-number, <weighting>, <{<center>, <scale>, scoring matrix}>);
+**Sintassi:** score vector = Text Score( text column, text-to-number, &lt;weighting&gt;, &lt;{&lt;center&gt;, &lt;scale&gt;, scoring matrix}&gt;);
 
 **Descrizione:** Utilizzato per creare formule di scoring in Explorer del testo. L&apos;argomento da-testo-a-numero è un array associativo che associa parole minuscole a numeri. L&apos;argomento di ponderazione è "Binary", "Ternary", "Count", "LogCount", "LCA" o un array di pesi con frequenza inversa del documento per TFLogIDF. La matrice di scoring deve avere un numero di colonne uguale alle parole dell&apos;array associativo o una in più se LCA. L&apos;output è un vettore di score. Se non è specificata alcuna matrice di scoring, viene restituito un vettore di score di conteggio. Se non è specificata alcuna ponderazione, viene usato Conteggio. Questa funzione non supporta l&apos;opzione Lemmatizza per combinare.
 
@@ -1064,7 +1058,7 @@ Titlecase( "The dog crossed the road" );
 
 ### Trim
 
-**Sintassi:** sub = Trim( s, <left|right|both> )
+**Sintassi:** sub = Trim( s, &lt;left|right|both&gt; )
 
 **Descrizione:** Restituisce una copia della stringa s dove gli spazi vuoti iniziali o finali sono rimossi. Il secondo argomento specifica gli spazi vuoti iniziali o finali. Se non si specifica il secondo argomento, gli spazi vuoti vengono rimossi a entrambe le estremità.
 
@@ -1079,7 +1073,7 @@ Trim( " title   ", both );
 
 ### Trim Whitespace
 
-**Sintassi:** sub = Trim Whitespace( s, <left|right|both> )
+**Sintassi:** sub = Trim Whitespace( s, &lt;left|right|both&gt; )
 
 **Descrizione:** Restituisce una copia della stringa s dove gli spazi vuoti iniziali o finali sono rimossi. Il secondo argomento specifica gli spazi vuoti iniziali o finali. Se non si specifica il secondo argomento, gli spazi vuoti vengono rimossi a entrambe le estremità.
 
@@ -1109,7 +1103,7 @@ Uppercase( "Café #23" );
 
 ### Word
 
-**Sintassi:** w = Word( n|[first last], s, <delim>, <Unmatched(result string)>
+**Sintassi:** w = Word( n|[first last], s, &lt;delim&gt;, &lt;Unmatched(result string)&gt;
 
 **Descrizione:** Restituisce l&apos;n-esima parola della stringa s, dove le parole sono sottostringhe separate da un numero qualsiasi di uno qualunque dei caratteri nell&apos;argomento delim. Se delim è assente viene utilizzato uno spazio. Se delim è la stringa vuota, ogni carattere è trattato come una parola separata.
 
@@ -1162,7 +1156,7 @@ Word( 2, "abcd", "" );
 
 ### Words
 
-**Sintassi:** wl = Words( <[first last]>, s, <delim>)
+**Sintassi:** wl = Words( &lt;[first last]&gt;, s, &lt;delim&gt;)
 
 **Descrizione:** Restituisce un elenco di sottostringhe separate da uno qualsiasi dei caratteri nell&apos;argomento delim. Se delim è assente viene utilizzato uno spazio. Se delim è la stringa vuota, ogni carattere è trattato come una parola separata.
 

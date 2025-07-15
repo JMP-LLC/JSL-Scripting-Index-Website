@@ -2,11 +2,9 @@
 
 
 
-## 함수
-
 ### Constrained Maximize
 
-**구문:** Constrained Maximize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, <<LessThanEQ({mat_A, vec_b}), <<GreaterThanEQ({mat_A, vec_b}), <<EqualTo({mat_A, vec_b}), <<MaxIter( 250 ), <<tolerance( .00001 ), <<ShowDetails(True), <<StartingValues([x1, x2, ... ])), <<SetVariableLimit({lowerLimitVector,upperLimitVector})
+**구문:** Constrained Maximize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;LessThanEQ({mat_A, vec_b}), &lt;&lt;GreaterThanEQ({mat_A, vec_b}), &lt;&lt;EqualTo({mat_A, vec_b}), &lt;&lt;MaxIter( 250 ), &lt;&lt;tolerance( .00001 ), &lt;&lt;ShowDetails(True), &lt;&lt;StartingValues([x1, x2, ... ])), &lt;&lt;SetVariableLimit({lowerLimitVector,upperLimitVector})
 
 **설명:** {x1, x2, ...} 목록으로 지정된 함수 인수에 대해 선택적 선형 제약 조건을 사용하여 expr 표현식을 최대화하는 값을 찾습니다. x1, x2 등의 변수는 스칼라 또는 벡터일 수 있습니다. 각 변수 이름 뒤에 변수의 하한과 상한을 괄호로 묶어 지정해야 합니다. 또는 선택적 파라미터 <<SetVariableLimits()를 사용하여 지정해도 됩니다. Constrained Maximize 함수의 선택적 인수를 사용하면 선형 제약 조건, 최대 반복 수, 원하는 공차, 출력 상세 정보, 시작 값 및 최적화 변수 한계를 지정할 수 있습니다(예제 2 참조). 선형 제약 조건은 계수 행렬 mat_A 및 오른쪽 벡터 vec_b로 지정합니다.
 
@@ -61,7 +59,7 @@ Show( x, objVal, iters, gradient, hessian );
 
 ### Constrained Minimize
 
-**구문:** Constrained Minimize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, <<LessThanEQ({mat_A, vec_b}), <<GreaterThanEQ({mat_A, vec_b}), <<EqualTo({mat_A, vec_b}), <<MaxIter( 250 ), <<tolerance( .00001 ), <<ShowDetails(True), <<StartingValues([x1, x2, ... ])), <<SetVariableLimit({low,high})
+**구문:** Constrained Minimize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;LessThanEQ({mat_A, vec_b}), &lt;&lt;GreaterThanEQ({mat_A, vec_b}), &lt;&lt;EqualTo({mat_A, vec_b}), &lt;&lt;MaxIter( 250 ), &lt;&lt;tolerance( .00001 ), &lt;&lt;ShowDetails(True), &lt;&lt;StartingValues([x1, x2, ... ])), &lt;&lt;SetVariableLimit({low,high})
 
 **설명:** {x1, x2, ...} 목록으로 지정된 함수 인수에 대해 선택적 선형 제약 조건을 사용하여 expr 표현식을 최소화하는 값을 찾습니다. x1, x2 등의 변수는 스칼라 또는 벡터일 수 있습니다. 각 변수 이름 뒤에 변수의 하한과 상한을 괄호로 묶어 지정해야 합니다. 또는 선택적 파라미터 <<SetVariableLimits()를 사용하여 지정해도 됩니다. Constrained Minimize 함수의 선택적 인수를 사용하면 선형 제약 조건, 최대 반복 수, 원하는 공차, 출력 상세 정보, 시작 값 및 최적화 변수 한계를 지정할 수 있습니다(예제 2 참조). 선형 제약 조건은 계수 행렬 mat_A 및 오른쪽 벡터 vec_b로 지정합니다.
 
@@ -141,7 +139,7 @@ New Window( "Desirability",
 
 ### LPSolve
 
-**구문:** {x, z} = LPSolve( A, b, c, L, U, neq, nle, nge, <slackVars=0> )
+**구문:** {x, z} = LPSolve( A, b, c, L, U, neq, nle, nge, &lt;slackVars=0&gt; )
 
 **설명:** 지정된 제약 조건이 있는 경우 목적 함수를 최소화하여 두 항목으로 구성된 목록을 반환합니다. 첫 번째 목록 항목 x에는 결정 변수(및 slackVars=1인 경우 slack 변수 값)가 포함됩니다. 두 번째 목록 항목 z에는 최적 목적 함수 값(있는 경우)이 포함됩니다. 처음 5개의 인수는 행렬입니다. A 인수는 제약 조건 계수 행렬입니다. b 인수는 제약 조건의 오른쪽 값 열입니다. c 인수는 목적 함수의 비용 계수 벡터입니다. L 및 U 인수는 각각 변수의 하한 및 상한입니다. neq, nle 및 nge 인수는 각각 등식 제약 조건, 작거나 같음 제약 조건 및 크거나 같음 제약 조건의 개수입니다. 제약 조건은 등식, 작거나 같음, 크거나 같음의 순서로 나열되어야 합니다.
 
@@ -162,9 +160,7 @@ Show( x, z );
 
 ### Maximize
 
-**구문:** Maximize( expr, {x1, x2, ...} );
-
-Maximize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, <<MaxIter( 250 ), <<Tolerance( .00000001 ), <<details(both | returnDetails | displaySteps), <<gradient(), <<hessian(), method(NR | SR1), <<useNumericDeriv(True))
+**구문:** Maximize( expr, {x1, x2, ...} );Maximize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;MaxIter( 250 ), &lt;&lt;Tolerance( .00000001 ), &lt;&lt;details(both | returnDetails | displaySteps), &lt;&lt;gradient(), &lt;&lt;hessian(), method(NR | SR1), &lt;&lt;useNumericDeriv(True))
 
 **설명:** {x1, x2, ...} 목록으로 지정된 함수 인수에 대해 expr 표현식을 최대화하는 값을 찾습니다. 각 인수 이름 뒤에 인수의 하한과 상한을 괄호로 묶어 지정할 수 있습니다. expr이 오목 함수가 아니면 Maximize가 전역 최대값 대신 지역 최대값을 찾을 수 있습니다. 이것이 문제가 되는 경우 여러 개의 시작 값을 사용하여 시도해 보십시오. 또한 Maximize는 연속형 2차 도함수를 사용하는 함수에서 가장 잘 작동합니다. Maximize 함수의 추가 인수를 사용하면 최대 반복 수 및 수렴 공차를 설정하고 최적화에 대한 자세한 내용을 볼 수 있습니다. 선택적 인수에 대한 자세한 내용을 보려면 "도움말 항목" 버튼을 클릭하십시오.
 
@@ -220,9 +216,7 @@ y = 0;
 
 ### Minimize
 
-**구문:** Minimize( expr, {x1, x2, ...} );
-
-Minimize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, <<MaxIter( 250 ), <<Tolerance( .00000001 ), <<details(both | returnDetails | displaySteps), <<gradient(), <<Hessian(), <<method(NR | SR1), <<useNumericDeriv(True))
+**구문:** Minimize( expr, {x1, x2, ...} );Minimize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;MaxIter( 250 ), &lt;&lt;Tolerance( .00000001 ), &lt;&lt;details(both | returnDetails | displaySteps), &lt;&lt;gradient(), &lt;&lt;Hessian(), &lt;&lt;method(NR | SR1), &lt;&lt;useNumericDeriv(True))
 
 **설명:** {x1, x2, ...} 목록으로 지정된 함수 인수에 대해 expr 표현식을 최소화하는 값을 찾습니다. 각 인수 이름 뒤에 인수의 하한과 상한을 괄호로 묶어 지정할 수 있습니다. expr이 볼록 함수가 아니면 Minimize가 전역 최소값 대신 지역 최소값을 찾을 수 있습니다. 이것이 문제가 되는 경우 여러 개의 시작 값을 사용하여 시도해 보십시오. 또한 Minimize는 연속형 2차 도함수를 사용하는 함수에서 가장 잘 작동합니다. Minimize 함수의 추가 인수를 사용하면 최대 반복 수 및 수렴 공차를 설정하고 최적화에 대한 자세한 내용을 볼 수 있습니다. 선택적 인수에 대한 자세한 내용을 보려면 "도움말 항목" 버튼을 클릭하십시오.
 

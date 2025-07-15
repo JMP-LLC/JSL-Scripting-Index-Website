@@ -2,8 +2,6 @@
 
 
 
-## Funciones
-
 ### Abs
 
 **Sintaxis:** y = Abs( x )
@@ -66,7 +64,7 @@ Floor( 1.2 );
 
 ### Integrate
 
-**Sintaxis:** y = Integrate( expr, varname, lowLimit, upLimit, <<Tolerance(1e-10), <<StoreInfo(list), <<StartingValue(val) )
+**Sintaxis:** y = Integrate( expr, varname, lowLimit, upLimit, &lt;&lt;Tolerance(1e-10), &lt;&lt;StoreInfo(list), &lt;&lt;StartingValue(val) )
 
 **Descripción:** Integra una expresión con respecto a un valor escalar, utilizando el método de cuadratura adaptativa de Gander y Gautschi (2000). Si la variable especificada con varname tiene un valor asignado o el argumento opcional <<StartingValue() especifica un valor de inicio, dicho valor se utilizará como valor típico para mejorar la precisión de la integral. Para especificar rangos de integración infinitos, establezca lowLimit, upLimit o ambos en faltante. Si se especifica <<StoreInfo(), el argumento de <<StoreInfo() contendrá diagnósticos de la rutina de integración numérica. Si se especifica <<Tolerance(), el argumento de <<Tolerance() se utilizará como el nivel de tolerancia en la función de autointegración utilizada para evaluar la integral. Los valores más pequeños se traducen en tiempos de corrida más prolongados pero con resultados más precisos.
 
@@ -160,7 +158,7 @@ Normal Integrate(
 
 ### Num Deriv
 
-**Sintaxis:** y = Num Deriv( f( x, ... ),  <parnum>)
+**Sintaxis:** y = Num Deriv( f( x, ... ), &lt;parnum&gt;)
 
 **Descripción:** Devuelve la derivada numérica de la función f( x,... ) con respecto a uno de sus argumentos. Puede especificar ese argumento como el segundo argumento de la función Num Deriv. Si no se especifica un segundo argumento, se toma la derivada con respecto al primer argumento de la función. La derivada se evalúa mediante variables numéricas especificadas en la expresión de función f( x,... ).
 
@@ -193,7 +191,7 @@ Num Deriv2( f( 2 ) );
 
 ### Round
 
-**Sintaxis:** y = Round( x, <n> )
+**Sintaxis:** y = Round( x, &lt;n&gt; )
 
 **Descripción:** Redondea x a n dígitos después de la coma decimal (o a 0 dígitos si no se especifica n). Tenga en cuenta que el argumento n puede ser negativo.
 

@@ -6,7 +6,7 @@
 
 ### Action
 
-**语法:** obj << Action
+**语法:** obj &lt;&lt; Action
 
 **说明:** 平台内用于插入表达式以求值的所有用途的陷门。暂时将 DisplayBox 和 DataTable 上下文设置为平台。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**语法:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**语法:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **说明:** 将以前创建的预设应用到对象，从而更新选项和定制以匹配保存的设置。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Copy ByGroup Script
 
-**语法:** obj << Copy ByGroup Script
+**语法:** obj &lt;&lt; Copy ByGroup Script
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其置于剪贴板上。
 
@@ -91,7 +91,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**语法:** obj << Copy Script
+**语法:** obj &lt;&lt; Copy Script
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其置于剪贴板上。
 
@@ -106,7 +106,7 @@ obj << Copy Script;
 
 ### Get By Levels
 
-**语法:** obj << Get By Levels
+**语法:** obj &lt;&lt; Get By Levels
 
 **说明:** 返回将“依据”组列映射到其值的关联数组。
 
@@ -123,7 +123,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**语法:** obj << Get ByGroup Script
+**语法:** obj &lt;&lt; Get ByGroup Script
 
 **说明:** 创建生成该分析的脚本 (JSL)，并将其作为表达式返回。
 
@@ -144,7 +144,7 @@ Show( t );
 
 ### Get Container
 
-**语法:** obj << Get Container
+**语法:** obj &lt;&lt; Get Container
 
 **说明:** 返回对保留对象内容的容器框的引用。
 
@@ -191,7 +191,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**语法:** obj << Get Data Table
+**语法:** obj &lt;&lt; Get Data Table
 
 **说明:** 返回对该数据表的引用。
 
@@ -207,7 +207,7 @@ Show( N Rows( t ) );
 
 ### Get Script
 
-**语法:** obj << Get Script
+**语法:** obj &lt;&lt; Get Script
 
 **说明:** 创建生成该分析的脚本 (JSL)，并将其作为表达式返回。
 
@@ -223,7 +223,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**语法:** obj << Get Script With Data Table
+**语法:** obj &lt;&lt; Get Script With Data Table
 
 **说明:** 创建生成该分析的脚本 (JSL) 以专门引用该数据表，并将其作为表达式返回。
 
@@ -239,7 +239,7 @@ Show( t );
 
 ### Get Timing
 
-**语法:** obj << Get Timing
+**语法:** obj &lt;&lt; Get Timing
 
 **说明:** 平台启动过程计时。
 
@@ -255,7 +255,7 @@ Show( t );
 
 ### Get Web Support
 
-**语法:** obj << Get Web Support
+**语法:** obj &lt;&lt; Get Web Support
 
 **说明:** 返回一个数字，指示显示对象的交互式 HTML 支持的水平。1 表示支持部分或全部元素。0 表示不支持。
 
@@ -271,7 +271,7 @@ Show( s );
 
 ### Get Where Expr
 
-**语法:** obj << Get Where Expr
+**语法:** obj &lt;&lt; Get Where Expr
 
 **说明:** 若平台是使用 By() 或 Where() 启动的，则返回数据子集的 Where 表达式。否则返回 Empty()
 
@@ -361,9 +361,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**语法:** obj << Report;
-
-Report( obj )
+**语法:** obj &lt;&lt; Report;Report( obj )
 
 **说明:** 返回对该报表对象的引用。
 
@@ -380,7 +378,7 @@ Show( t );
 
 ### Save ByGroup Script to Data Table
 
-**语法:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**语法:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **说明:** 创建生成该分析的 JSL 脚本并将其保存为数据表中的表属性。您可以为脚本指定一个名称。Append Suffix 选项在脚本名称后追加一个数字后缀，用于将该脚本与现有的同名脚本区别出来。Prompt 选项提示用户指定脚本名称。Replace 选项会替换同名的现有脚本。
 
@@ -400,7 +398,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**语法:** obj << Save ByGroup Script to Journal
+**语法:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **说明:** 创建生成该分析的 JSL 脚本，并将一个按钮添加至包含该脚本的记录中。
 
@@ -420,7 +418,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**语法:** obj << Save ByGroup Script to Script Window
+**语法:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其追加至当前的脚本文本窗口中。
 
@@ -440,7 +438,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**语法:** obj << Save Script for All Objects
+**语法:** obj &lt;&lt; Save Script for All Objects
 
 **说明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -455,7 +453,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**语法:** obj << Save Script for All Objects To Data Table( <name> )
+**语法:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **说明:** 将所有报表对象的脚本保存至当前数据表。当您在该窗口中具有多个报表时，该选项很有用。除非您在引号中指定脚本名称，否则脚本将以第一个平台命名。
 
@@ -493,7 +491,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**语法:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**语法:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其作为表属性保存至数据表中。
 
@@ -508,7 +506,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**语法:** obj << Save Script to Journal
+**语法:** obj &lt;&lt; Save Script to Journal
 
 **说明:** 创建生成该分析的 JSL 脚本，并将一个按钮添加至包含该脚本的记录中。
 
@@ -523,7 +521,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**语法:** obj << Save Script to Report
+**语法:** obj &lt;&lt; Save Script to Report
 
 **说明:** 创建生成该分析的 JSL 脚本，并在报表中显示。有助于保留打印的已完成操作记录。
 
@@ -538,7 +536,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**语法:** obj << Save Script to Script Window
+**语法:** obj &lt;&lt; Save Script to Script Window
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其追加至当前的脚本文本窗口中。
 
@@ -618,7 +616,7 @@ dt << Distribution(
 
 ### Title
 
-**语法:** obj << Title( "new title" )
+**语法:** obj &lt;&lt; Title( "new title" )
 
 **说明:** 设置平台的标题。
 
@@ -633,7 +631,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**语法:** obj << Top Report
+**语法:** obj &lt;&lt; Top Report
 
 **说明:** 返回对报表中根节点的引用。
 
@@ -650,7 +648,7 @@ Show( t );
 
 ### View Web XML
 
-**语法:** obj << View Web XML
+**语法:** obj &lt;&lt; View Web XML
 
 **说明:** 返回用于创建交互式 HTML 报表的 XML 代码。
 
@@ -683,7 +681,7 @@ obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 ### Censor
 
-**语法:** obj << Censor( column )
+**语法:** obj &lt;&lt; Censor( column )
 
 **JMP添加的版本:** 18
 
@@ -697,7 +695,7 @@ obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 ### Freq
 
-**语法:** obj << Freq( column )
+**语法:** obj &lt;&lt; Freq( column )
 
 **JMP添加的版本:** 18
 
@@ -712,7 +710,7 @@ obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 ### Inputs
 
-**语法:** obj << Inputs( column(s) )
+**语法:** obj &lt;&lt; Inputs( column(s) )
 
 **JMP添加的版本:** 18
 
@@ -726,7 +724,7 @@ obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 ### Responses
 
-**语法:** obj << Responses( column(s) )
+**语法:** obj &lt;&lt; Responses( column(s) )
 
 **JMP添加的版本:** 18
 
@@ -740,7 +738,7 @@ obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 ### Subject
 
-**语法:** obj << Subject( column )
+**语法:** obj &lt;&lt; Subject( column )
 
 **JMP添加的版本:** 18
 
@@ -754,7 +752,7 @@ obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 ### Validation
 
-**语法:** obj << Validation( column(s) )
+**语法:** obj &lt;&lt; Validation( column(s) )
 
 **JMP添加的版本:** 18
 
@@ -768,7 +766,7 @@ obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 ### Weight
 
-**语法:** obj << Weight( column )
+**语法:** obj &lt;&lt; Weight( column )
 
 **JMP添加的版本:** 18
 
@@ -783,7 +781,7 @@ obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 ### X
 
-**语法:** obj << X( column(s) )
+**语法:** obj &lt;&lt; X( column(s) )
 
 **JMP添加的版本:** 18
 
@@ -797,7 +795,7 @@ obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 ### Y
 
-**语法:** obj << Y( column(s) )
+**语法:** obj &lt;&lt; Y( column(s) )
 
 **JMP添加的版本:** 18
 
@@ -813,7 +811,7 @@ obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 ### Change Variables
 
-**语法:** obj << Change Variables
+**语法:** obj &lt;&lt; Change Variables
 
 **说明:** Changes X, Y, and other variables for subsequent models.
 
@@ -821,7 +819,7 @@ obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 ### Compare
 
-**语法:** obj << Compare
+**语法:** obj &lt;&lt; Compare
 
 **说明:** Updates the Torch Deep Learning comparison metrics.
 
@@ -838,7 +836,7 @@ obj << Compare( AUC( 1 ) );
 
 ### Fit
 
-**语法:** obj << Fit
+**语法:** obj &lt;&lt; Fit
 
 **说明:** Fits a Torch Deep Learning model. You can specify parameters and fitting specifications within this command.
 
@@ -854,13 +852,13 @@ obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 ### Get Measures
 
-**语法:** obj << Get Measures
+**语法:** obj &lt;&lt; Get Measures
 
 **JMP添加的版本:** 18
 
 ### Redo Analysis
 
-**语法:** obj << Redo Analysis
+**语法:** obj &lt;&lt; Redo Analysis
 
 **说明:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
 
@@ -877,7 +875,7 @@ obj << Redo Analysis;
 
 ### Relaunch Analysis
 
-**语法:** obj << Relaunch Analysis
+**语法:** obj &lt;&lt; Relaunch Analysis
 
 **说明:** Return to the launcher for this analysis.
 
@@ -894,7 +892,7 @@ obj << Relaunch Analysis;
 
 ### Set
 
-**语法:** obj << Set
+**语法:** obj &lt;&lt; Set
 
 **说明:** Specifies parameters for a Torch Deep Learning model.
 
@@ -910,7 +908,7 @@ obj = Torch Deep Learning( Y( :sex ), X( :picture ), Set( Epochs( 5 ) ) );
 
 ### Show Details
 
-**语法:** obj << Show Details( state=0|1 )
+**语法:** obj &lt;&lt; Show Details( state=0|1 )
 
 **说明:** Shows more details.
 
@@ -936,7 +934,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Show Details( 1 ) );
 
 #### AUC
 
-**语法:** obj << AUC( state=0|1 )
+**语法:** obj &lt;&lt; AUC( state=0|1 )
 
 **说明:** Shows or hides the AUROC, which is the area under the receiver operating characteristic curve. 默认开启。
 
@@ -944,7 +942,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Show Details( 1 ) );
 
 #### Accuracy
 
-**语法:** obj << Accuracy( state=0|1 )
+**语法:** obj &lt;&lt; Accuracy( state=0|1 )
 
 **说明:** Shows or hides the accuracy, which is the proportion of correct classifications. 默认开启。
 
@@ -952,7 +950,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Show Details( 1 ) );
 
 #### Censor
 
-**语法:** obj << Censor( state=0|1 )
+**语法:** obj &lt;&lt; Censor( state=0|1 )
 
 **说明:** Shows or hides the Censor command 默认开启。
 
@@ -960,7 +958,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Show Details( 1 ) );
 
 #### Concordance
 
-**语法:** obj << Concordance( state=0|1 )
+**语法:** obj &lt;&lt; Concordance( state=0|1 )
 
 **说明:** Shows or hides the concordance, which is the Harrell C-Index and measures strength of sorting efficiency 默认开启。
 
@@ -968,7 +966,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Show Details( 1 ) );
 
 #### Correlation
 
-**语法:** obj << Correlation( state=0|1 )
+**语法:** obj &lt;&lt; Correlation( state=0|1 )
 
 **说明:** Shows or hides the Pearson correlation, which is a measure of the strength of the linear relationship. 默认开启。
 
@@ -976,7 +974,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Show Details( 1 ) );
 
 #### F1
 
-**语法:** obj << F1( state=0|1 )
+**语法:** obj &lt;&lt; F1( state=0|1 )
 
 **说明:** Shows or hides the F1 Score, which is the harmonic average of precision and recall. 默认开启。
 
@@ -984,7 +982,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Show Details( 1 ) );
 
 #### Freq
 
-**语法:** obj << Freq( state=0|1 )
+**语法:** obj &lt;&lt; Freq( state=0|1 )
 
 **说明:** Shows or hides the Freq column. 默认开启。
 
@@ -992,7 +990,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Show Details( 1 ) );
 
 #### H Measure
 
-**语法:** obj << H Measure( state=0|1 )
+**语法:** obj &lt;&lt; H Measure( state=0|1 )
 
 **说明:** Shows or hides the H Measure, which measures proportion improvement over baseline. 默认开启。
 
@@ -1000,7 +998,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Show Details( 1 ) );
 
 #### Hide All Models
 
-**语法:** obj << Hide All Models
+**语法:** obj &lt;&lt; Hide All Models
 
 **说明:** Hides all models.
 
@@ -1008,7 +1006,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Show Details( 1 ) );
 
 #### LogLoss
 
-**语法:** obj << LogLoss( state=0|1 )
+**语法:** obj &lt;&lt; LogLoss( state=0|1 )
 
 **说明:** Shows or hides the logarithm of the likelihood-based loss function. 默认开启。
 
@@ -1016,7 +1014,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Show Details( 1 ) );
 
 #### MAE
 
-**语法:** obj << MAE( state=0|1 )
+**语法:** obj &lt;&lt; MAE( state=0|1 )
 
 **说明:** Shows or hides the MAE, which is the mean absolute error. 默认开启。
 
@@ -1024,7 +1022,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Show Details( 1 ) );
 
 #### MCC
 
-**语法:** obj << MCC( state=0|1 )
+**语法:** obj &lt;&lt; MCC( state=0|1 )
 
 **说明:** Shows or hides the Matthews correlation coefficient, which is the Pearson correlation for binary variables. 默认开启。
 
@@ -1032,7 +1030,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Show Details( 1 ) );
 
 #### Misclass
 
-**语法:** obj << Misclass( state=0|1 )
+**语法:** obj &lt;&lt; Misclass( state=0|1 )
 
 **说明:** Shows or hides the misclassification rate, which is the proportion of incorrect classifications. 默认开启。
 
@@ -1040,7 +1038,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Show Details( 1 ) );
 
 #### Precision Recall AUC
 
-**语法:** obj << Precision Recall AUC( state=0|1 )
+**语法:** obj &lt;&lt; Precision Recall AUC( state=0|1 )
 
 **说明:** Shows or hides the Precision Recall AUC, which is the area under the precision-recall curve. 默认开启。
 
@@ -1048,7 +1046,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Show Details( 1 ) );
 
 #### Predictors
 
-**语法:** obj << Predictors( state=0|1 )
+**语法:** obj &lt;&lt; Predictors( state=0|1 )
 
 **说明:** Shows or hides the Predictors column. 默认开启。
 
@@ -1056,7 +1054,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Show Details( 1 ) );
 
 #### Profit
 
-**语法:** obj << Profit( state=0|1 )
+**语法:** obj &lt;&lt; Profit( state=0|1 )
 
 **说明:** Shows or hides the expected profit. 默认开启。
 
@@ -1064,7 +1062,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Show Details( 1 ) );
 
 #### RMSE
 
-**语法:** obj << RMSE( state=0|1 )
+**语法:** obj &lt;&lt; RMSE( state=0|1 )
 
 **说明:** Shows or hides the RMSE, which is the root mean square error. 默认开启。
 
@@ -1072,7 +1070,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Show Details( 1 ) );
 
 #### RSquare
 
-**语法:** obj << RSquare( state=0|1 )
+**语法:** obj &lt;&lt; RSquare( state=0|1 )
 
 **说明:** Shows or hides RSquare value, which is the proportion of variability explained. 默认开启。
 
@@ -1080,7 +1078,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Show Details( 1 ) );
 
 #### Remove Hidden Models
 
-**语法:** obj << Remove Hidden Models
+**语法:** obj &lt;&lt; Remove Hidden Models
 
 **说明:** Removes all models for which the Show box is not checked.
 
@@ -1088,7 +1086,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Show Details( 1 ) );
 
 #### Remove Shown Models
 
-**语法:** obj << Remove Shown Models
+**语法:** obj &lt;&lt; Remove Shown Models
 
 **说明:** Removes all models for which the Show check box is checked and shows the remaining models.
 
@@ -1096,7 +1094,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Show Details( 1 ) );
 
 #### Response
 
-**语法:** obj << Response( state=0|1 )
+**语法:** obj &lt;&lt; Response( state=0|1 )
 
 **说明:** Shows or hides the Response column. 默认开启。
 
@@ -1104,7 +1102,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Show Details( 1 ) );
 
 #### Show All Models
 
-**语法:** obj << Show All Models
+**语法:** obj &lt;&lt; Show All Models
 
 **说明:** Shows all models.
 
@@ -1112,7 +1110,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Show Details( 1 ) );
 
 #### Subject
 
-**语法:** obj << Subject( state=0|1 )
+**语法:** obj &lt;&lt; Subject( state=0|1 )
 
 **说明:** Shows or hides the Subject column 默认开启。
 
@@ -1120,7 +1118,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Show Details( 1 ) );
 
 #### Training Metrics
 
-**语法:** obj << Training Metrics( state=0|1 )
+**语法:** obj &lt;&lt; Training Metrics( state=0|1 )
 
 **说明:** Shows or hides all training metrics. 默认开启。
 
@@ -1128,7 +1126,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Show Details( 1 ) );
 
 #### Validation
 
-**语法:** obj << Validation( state=0|1 )
+**语法:** obj &lt;&lt; Validation( state=0|1 )
 
 **说明:** Shows or hides the Validation column. 默认开启。
 
@@ -1136,7 +1134,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Show Details( 1 ) );
 
 #### Validation Metrics
 
-**语法:** obj << Validation Metrics( state=0|1 )
+**语法:** obj &lt;&lt; Validation Metrics( state=0|1 )
 
 **说明:** Shows or hides all validation metrics. 默认开启。
 
@@ -1144,7 +1142,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Show Details( 1 ) );
 
 #### Weight
 
-**语法:** obj << Weight( state=0|1 )
+**语法:** obj &lt;&lt; Weight( state=0|1 )
 
 **说明:** Shows or hides the Weight column. 默认开启。
 
@@ -1156,7 +1154,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Show Details( 1 ) );
 
 #### Actual by Predicted Plots
 
-**语法:** obj << Actual by Predicted Plots( state=0|1 )
+**语法:** obj &lt;&lt; Actual by Predicted Plots( state=0|1 )
 
 **说明:** Shows or hides a plot using the training data with the predicted values on the X axis and actual values on the Y axis. 默认开启。
 
@@ -1164,7 +1162,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Show Details( 1 ) );
 
 #### Confusion Matrices
 
-**语法:** obj << ( fit[number] << Confusion Matrices( state=0|1 ) )
+**语法:** obj &lt;&lt; ( fit[number] &lt;&lt; Confusion Matrices( state=0|1 ) )
 
 **说明:** Shows or hides a crosstabulation matrix of actual and predicted levels. 默认开启。
 
@@ -1185,7 +1183,7 @@ obj << (fit[1] << Confusion Matrices( 1 ));
 
 #### Contour Profiler.
 
-**语法:** obj << Contour Profiler.
+**语法:** obj &lt;&lt; Contour Profiler.
 
 **说明:** Shows or hides interactive graphs of cross-sections of the prediction function.
 
@@ -1193,7 +1191,7 @@ obj << (fit[1] << Confusion Matrices( 1 ));
 
 #### Decision Thresholds
 
-**语法:** obj << Decision Thresholds( state=0|1 )
+**语法:** obj &lt;&lt; Decision Thresholds( state=0|1 )
 
 **说明:** Shows or hides decision threshold graphs and tables. 默认开启。
 
@@ -1201,7 +1199,7 @@ obj << (fit[1] << Confusion Matrices( 1 ));
 
 #### Fit Details
 
-**语法:** obj << Fit Details( state=0|1 )
+**语法:** obj &lt;&lt; Fit Details( state=0|1 )
 
 **说明:** Shows or hides the statistics for the fitted model. 默认开启。
 
@@ -1209,7 +1207,7 @@ obj << (fit[1] << Confusion Matrices( 1 ));
 
 #### Lift Curves
 
-**语法:** obj << Lift Curves( state=0|1 )
+**语法:** obj &lt;&lt; Lift Curves( state=0|1 )
 
 **说明:** Plots how much more saturated the top x-percent of predicted values are compared to the whole population.
 
@@ -1217,7 +1215,7 @@ obj << (fit[1] << Confusion Matrices( 1 ));
 
 #### Model Details
 
-**语法:** obj << Model Details( state=0|1 )
+**语法:** obj &lt;&lt; Model Details( state=0|1 )
 
 **说明:** Shows or hides model details 默认开启。
 
@@ -1225,7 +1223,7 @@ obj << (fit[1] << Confusion Matrices( 1 ));
 
 #### Precision Recall Curves
 
-**语法:** obj << Precision Recall Curves( state=0|1 )
+**语法:** obj &lt;&lt; Precision Recall Curves( state=0|1 )
 
 **说明:** Plots the trade-off between precision and recall for different classification thresholds. It is preferred in scenarios where class imbalances exist.
 
@@ -1233,7 +1231,7 @@ obj << (fit[1] << Confusion Matrices( 1 ));
 
 #### Profiler
 
-**语法:** obj << Profiler
+**语法:** obj &lt;&lt; Profiler
 
 **说明:** Shows or hides the Prediction Profiler.
 
@@ -1241,7 +1239,7 @@ obj << (fit[1] << Confusion Matrices( 1 ));
 
 #### ROC Curves
 
-**语法:** obj << ROC Curves( state=0|1 )
+**语法:** obj &lt;&lt; ROC Curves( state=0|1 )
 
 **说明:** Plots the response-category sorting efficiency of the model predictions.
 
@@ -1249,7 +1247,7 @@ obj << (fit[1] << Confusion Matrices( 1 ));
 
 #### Surface Profiler
 
-**语法:** obj << Surface Profiler
+**语法:** obj &lt;&lt; Surface Profiler
 
 **说明:** Shows or hides interactive graphs of cross-sections of the prediction function.
 
@@ -1271,7 +1269,7 @@ obj << (fit[1] << Confusion Matrices( 1 ));
 
 #### Activation
 
-**语法:** obj << Activation( "CELU"|"ELU"|"GELU"|"Hardshrink"|"Hardtanh"|"LeakyReLU"|"LogSigmoid"|"Mish"|"PReLU"|"ReLU"|"ReLU6"|"RReLU"|"SELU"|"Sigmoid"|"SiLU"|"Softplus"|"Softshrink"|"Softsign"|"Tanh"|"Tanhshrink"|"None"="ReLU" )
+**语法:** obj &lt;&lt; Activation( "CELU"|"ELU"|"GELU"|"Hardshrink"|"Hardtanh"|"LeakyReLU"|"LogSigmoid"|"Mish"|"PReLU"|"ReLU"|"ReLU6"|"RReLU"|"SELU"|"Sigmoid"|"SiLU"|"Softplus"|"Softshrink"|"Softsign"|"Tanh"|"Tanhshrink"|"None"="ReLU" )
 
 **说明:** Specifies the activation function to use after each layer. 默认为“ReLU”。
 
@@ -1287,7 +1285,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Activation( "ReLU" )
 
 #### Activations
 
-**语法:** obj << Activations( text )
+**语法:** obj &lt;&lt; Activations( text )
 
 **说明:** Specifies a space-delimited list of activation functions to use in sequential layers.  This parameter overrides Activation when it is specified, and the last value carries forward.
 
@@ -1303,7 +1301,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Activations( "ReLU" 
 
 #### Anchor Scale
 
-**语法:** obj << Anchor Scale( number=16 )
+**语法:** obj &lt;&lt; Anchor Scale( number=16 )
 
 **说明:** Specifies a multiplier applied to an internal range of anchor sizes.  Larger values tend to work better for larger boxes. 默认为“16”。
 
@@ -1319,7 +1317,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Anchor Scale( "16" )
 
 #### Aspect Sigma
 
-**语法:** obj << Aspect Sigma( number=0 )
+**语法:** obj &lt;&lt; Aspect Sigma( number=0 )
 
 **说明:** Standard deviation of Gaussian aspect ratio deformation 默认为“0”。
 
@@ -1335,7 +1333,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Aspect Sigma( 0.0 ) ) );
 
 #### Attention Heads
 
-**语法:** obj << Attention Heads( text=4 )
+**语法:** obj &lt;&lt; Attention Heads( text=4 )
 
 **说明:** For transformer models, specifies the number of attention heads as a space delimited list of positive integers, each of which must evenly divide its corresponding layer size. Last value carries forward if necessary. 默认为“4”。
 
@@ -1351,7 +1349,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Attention Heads( 1 )
 
 #### Base Activation
 
-**语法:** obj << Base Activation( "CELU"|"ELU"|"GELU"|"Hardshrink"|"Hardtanh"|"LeakyReLU"|"LogSigmoid"|"Mish"|"PReLU"|"ReLU"|"ReLU6"|"RReLU"|"SELU"|"Sigmoid"|"SiLU"|"Softplus"|"Softshrink"|"Softsign"|"Tanh"|"Tanhshrink"|"None"="GELU" )
+**语法:** obj &lt;&lt; Base Activation( "CELU"|"ELU"|"GELU"|"Hardshrink"|"Hardtanh"|"LeakyReLU"|"LogSigmoid"|"Mish"|"PReLU"|"ReLU"|"ReLU6"|"RReLU"|"SELU"|"Sigmoid"|"SiLU"|"Softplus"|"Softshrink"|"Softsign"|"Tanh"|"Tanhshrink"|"None"="GELU" )
 
 **说明:** Specifies the base activation function for Kolmogorov Arnold B Splines. 默认为“GELU”。
 
@@ -1367,7 +1365,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Base Activation( "GE
 
 #### Basis Function
 
-**语法:** obj << Basis Function( "Gaussian"|"Linear"|"Quadradic"|"InverseQuadradic"|"MultiQuadric"|"InverseMultiQuadric"|"Spline"|"Poisson1"|"Poisson2"|"Matern32"|"Matern52"="Gaussian" )
+**语法:** obj &lt;&lt; Basis Function( "Gaussian"|"Linear"|"Quadradic"|"InverseQuadradic"|"MultiQuadric"|"InverseMultiQuadric"|"Spline"|"Poisson1"|"Poisson2"|"Matern32"|"Matern52"="Gaussian" )
 
 **说明:** For Radial Basis Machine models, specify the basis function. 默认为“Gaussian”。
 
@@ -1387,7 +1385,7 @@ Torch Deep Learning(
 
 #### Batch Size
 
-**语法:** obj << Batch Size( number=128 )
+**语法:** obj &lt;&lt; Batch Size( number=128 )
 
 **说明:** Specifies the number of rows to randomly sample for each training batch and optimization update. Decrease it to save memory and update gradients more frequently; increase it to pass through the data faster and regularize the model more. 默认为“128”。
 
@@ -1403,7 +1401,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Batch Size( 128 ) ) );
 
 #### Binary Loss
 
-**语法:** obj << Binary Loss( "BCE"|"SM"="BCE" )
+**语法:** obj &lt;&lt; Binary Loss( "BCE"|"SM"="BCE" )
 
 **说明:** Specifies the loss function for binary responses. Choose from Binary Cross Entropy (BCE) or Soft Margin (SM). 默认为“BCE”。
 
@@ -1419,7 +1417,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Binary Loss( "BCE" ) ) );
 
 #### Blur Max Sigma
 
-**语法:** obj << Blur Max Sigma( number=0 )
+**语法:** obj &lt;&lt; Blur Max Sigma( number=0 )
 
 **说明:** Maximum standard deviation of Gaussian blur 默认为“0”。
 
@@ -1435,7 +1433,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Blur Max Sigma( 1 ) ) );
 
 #### Class Loss Weight
 
-**语法:** obj << Class Loss Weight( number=4.0 )
+**语法:** obj &lt;&lt; Class Loss Weight( number=4.0 )
 
 **说明:** Specifies the multiplier for class loss. 默认为“4.0”。
 
@@ -1451,7 +1449,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Class Loss Weight( 4.0 ) ) )
 
 #### Confidence Threshold
 
-**语法:** obj << Confidence Threshold( number=0.05 )
+**语法:** obj &lt;&lt; Confidence Threshold( number=0.05 )
 
 **说明:** Specifies the confidence score threshold for predicted boxes.  Boxes with probability score less than this threshold are dropped. 默认为“0.05”。
 
@@ -1467,7 +1465,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Confidence Threshold
 
 #### Continuous Loss
 
-**语法:** obj << Continuous Loss( "MSE"|"L1"|"SmoothL1"|"Huber"|"Poisson"|"Quantile"|"CoxPH"="MSE" )
+**语法:** obj &lt;&lt; Continuous Loss( "MSE"|"L1"|"SmoothL1"|"Huber"|"Poisson"|"Quantile"|"CoxPH"="MSE" )
 
 **说明:** Specifies the loss function for continuous responses. Choose from Mean Squared Error (MSE), Mean Absolute Error (L1), Smoothed L1 (with margin), Huber (with margin), or Poisson (for count responses). 默认为“MSE”。
 
@@ -1483,7 +1481,7 @@ Torch Deep Learning( Y( :weight ), X( :picture ), Fit( Continuous Loss( "MSE" ) 
 
 #### Copy Parameters to Launch
 
-**语法:** obj << Copy Parameters to Launch
+**语法:** obj &lt;&lt; Copy Parameters to Launch
 
 **说明:** Copies the parameter values from this model to the model launch section.
 
@@ -1491,7 +1489,7 @@ Torch Deep Learning( Y( :weight ), X( :picture ), Fit( Continuous Loss( "MSE" ) 
 
 #### Covariance Structure
 
-**语法:** obj << Covariance Structure( "DotProduct"|"Gaussian"="DotProduct" )
+**语法:** obj &lt;&lt; Covariance Structure( "DotProduct"|"Gaussian"="DotProduct" )
 
 **说明:** For mixed models, specify the covariance structure. 默认为“DotProduct”。
 
@@ -1511,7 +1509,7 @@ Torch Deep Learning(
 
 #### Data Threads
 
-**语法:** obj << Data Threads( number=4 )
+**语法:** obj &lt;&lt; Data Threads( number=4 )
 
 **说明:** Specifies the number of threads to use to load data into memory. A number near half the number of actual cores is usually near optimal. 默认为“4”。
 
@@ -1527,7 +1525,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Data Threads( 0 ) ) );
 
 #### Device
 
-**语法:** obj << Device( "auto"|"cpu"|"cuda:0"|"cuda:1"|"cuda:2"|"cuda:3"="auto" )
+**语法:** obj &lt;&lt; Device( "auto"|"cpu"|"cuda:0"|"cuda:1"|"cuda:2"|"cuda:3"="auto" )
 
 **说明:** Specifies the computational device that Torch uses. 默认为“auto”。
 
@@ -1543,7 +1541,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Device( "cpu" ) ) );
 
 #### Dilations
 
-**语法:** obj << Dilations( text=1 )
+**语法:** obj &lt;&lt; Dilations( text=1 )
 
 **说明:** For custom convolutional models, specifies the dilations as a space-delimited list of positive integers. Last value carries forward if necessary. 默认为“1”。
 
@@ -1559,7 +1557,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Dilations( "1" ) ) )
 
 #### Dropout Probs
 
-**语法:** obj << Dropout Probs( text=0.0 )
+**语法:** obj &lt;&lt; Dropout Probs( text=0.0 )
 
 **说明:** Specifies the probabilities of dropout to use after each layer as a space-delimited list of decimals between 0 and 1. Last value carries forward if necessary. 默认为“0.0”。
 
@@ -1575,7 +1573,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Dropout Probs( "0.1"
 
 #### Epochs
 
-**语法:** obj << Epochs( number=20 )
+**语法:** obj &lt;&lt; Epochs( number=20 )
 
 **说明:** Specifies the number of iterations through the training data to optimize the loss function for each batch and train the model. 默认为“20”。
 
@@ -1591,7 +1589,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Epochs( 100 ) ) );
 
 #### Factorization Machine Layers
 
-**语法:** obj << Factorization Machine Layers( text=0 )
+**语法:** obj &lt;&lt; Factorization Machine Layers( text=0 )
 
 **说明:** Specify a space-separated list of 0s and 1s indicating if factorization machine interactions should be added to each linear layer.  Last value carries forward. 默认为“0”。
 
@@ -1611,7 +1609,7 @@ Torch Deep Learning(
 
 #### Fit Ys Separately
 
-**语法:** obj << Fit Ys Separately( state=0 )
+**语法:** obj &lt;&lt; Fit Ys Separately( state=0 )
 
 **说明:** Check to fit a distinct model for each Y variable, and uncheck to model them jointly. 默认为“0”。
 
@@ -1627,7 +1625,7 @@ Torch Deep Learning( Y( :sex, :height ), X( :picture ), Fit( Model Ys Separately
 
 #### Fixed Effects
 
-**语法:** obj << Fixed Effects( number=0 )
+**语法:** obj &lt;&lt; Fixed Effects( number=0 )
 
 **说明:** Specify the number of fixed effects, all of which must be at the beginning of the X variable list 默认为“0”。
 
@@ -1643,7 +1641,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Fixed Effects( 0 ) )
 
 #### Folder
 
-**语法:** obj << Folder( text )
+**语法:** obj &lt;&lt; Folder( text )
 
 **说明:** Select a folder in which to save modeling results. A subfolder for each model is created in this folder.
 
@@ -1659,7 +1657,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Folder( "" ) ) );
 
 #### Frozen Epochs
 
-**语法:** obj << Frozen Epochs( number=0 )
+**语法:** obj &lt;&lt; Frozen Epochs( number=0 )
 
 **说明:** Specifies the number of epochs for which pretrained model bodies remain frozen.  After this number there is full training gradients for all parameters. 默认为“0”。
 
@@ -1675,7 +1673,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Frozen Epochs( 3 ) ) );
 
 #### Generate Python Code
 
-**语法:** obj << Generate Python Code
+**语法:** obj &lt;&lt; Generate Python Code
 
 **说明:** Creates Python code for model deployment.
 
@@ -1683,7 +1681,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Frozen Epochs( 3 ) ) );
 
 #### Grid Size
 
-**语法:** obj << Grid Size( number=5 )
+**语法:** obj &lt;&lt; Grid Size( number=5 )
 
 **说明:** For Kolmogorov Arnold B Spline networks, specifies the number of points in the grid for the spline interpolation. 默认为“5”。
 
@@ -1699,7 +1697,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Grid Size( 5 ) ) );
 
 #### HFlip Prob
 
-**语法:** obj << HFlip Prob( number=0 )
+**语法:** obj &lt;&lt; HFlip Prob( number=0 )
 
 **说明:** Probability of horizontal flip 默认为“0”。
 
@@ -1715,7 +1713,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( HFlip Prob( 0.3 ) ) );
 
 #### Highway Layers
 
-**语法:** obj << Highway Layers( text=0 )
+**语法:** obj &lt;&lt; Highway Layers( text=0 )
 
 **说明:** Specify a space-separated list of nonnegative integers specifying the number of highway layers to insert in the network.  Last value carries forward. 默认为“0”。
 
@@ -1731,7 +1729,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Highway Layers( "1" 
 
 #### Image Model
 
-**语法:** obj << Image Model( ="LeNet5" )
+**语法:** obj &lt;&lt; Image Model( ="LeNet5" )
 
 **说明:** Specifies the image network architecture to use. Models are ordered by size. Smaller models train faster but may not perform as well as larger models. 默认为“LeNet5”。
 
@@ -1747,7 +1745,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Image Model( "LeNet5" ) ) );
 
 #### Image Size
 
-**语法:** obj << Image Size( number=28 )
+**语法:** obj &lt;&lt; Image Size( number=28 )
 
 **说明:** Specifies the size of image to use while training. Input images are transformed to this size square; larger images have higher resolution but slower training times. 默认为“28”。
 
@@ -1763,7 +1761,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Image Size( 28 ) ) );
 
 #### Kernel Sizes
 
-**语法:** obj << Kernel Sizes( text=3 )
+**语法:** obj &lt;&lt; Kernel Sizes( text=3 )
 
 **说明:** For custom convolutional models, specifies the kernel sizes as a space-delimited list of positive integers. Last value carries forward if necessary. 默认为“3”。
 
@@ -1779,7 +1777,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Kernel Sizes( "3" ) 
 
 #### L1 Penalty
 
-**语法:** obj << L1 Penalty( number=0.0 )
+**语法:** obj &lt;&lt; L1 Penalty( number=0.0 )
 
 **说明:** Specifies a multiplier for the sum of absolute values of weight parameters to be added to the loss and induce sparsity. 默认为“0.0”。
 
@@ -1795,7 +1793,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( L1 Penalty( 0.0001 ) ) );
 
 #### Layer Sizes
 
-**语法:** obj << Layer Sizes( text=16 )
+**语法:** obj &lt;&lt; Layer Sizes( text=16 )
 
 **说明:** Specifies output sizes of hidden layers as a space-delimited list of integers (actual sizes) or decimals (multipliers of the previous layer size). The final value is the embedding size. 默认为“16”。
 
@@ -1811,7 +1809,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Layer Sizes( "16" ) 
 
 #### Learning Rate
 
-**语法:** obj << Learning Rate( number=0.001 )
+**语法:** obj &lt;&lt; Learning Rate( number=0.001 )
 
 **说明:** Specifies the learning rate. Smaller learning rates tend to fit better but require more iterations to converge, whereas larger learning rates fit faster. 默认为“0.001”。
 
@@ -1827,7 +1825,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Learning Rate( 0.001 ) ) );
 
 #### Margin
 
-**语法:** obj << Margin( number=1.0 )
+**语法:** obj &lt;&lt; Margin( number=1.0 )
 
 **说明:** Specifies the margin used in margin-based loss functions. Larger values should produce larger embedding distances between nominal responses with different levels, but may adversely affect training. 默认为“1.0”。
 
@@ -1843,7 +1841,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Margin( 1.0 ) ) );
 
 #### Max Boxes
 
-**语法:** obj << Max Boxes( number=5 )
+**语法:** obj &lt;&lt; Max Boxes( number=5 )
 
 **说明:** Specifies the maximum number of predicted boxes per image. 默认为“5”。
 
@@ -1859,7 +1857,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Max Boxes( 5 ) ) );
 
 #### Max Seq Length
 
-**语法:** obj << Max Seq Length( number=512 )
+**语法:** obj &lt;&lt; Max Seq Length( number=512 )
 
 **说明:** For text models, specifies the maximum number of tokens to create for each text item. 默认为“512”。
 
@@ -1879,7 +1877,7 @@ Torch Deep Learning(
 
 #### Mixup Portion
 
-**语法:** obj << Mixup Portion( number=0.0 )
+**语法:** obj &lt;&lt; Mixup Portion( number=0.0 )
 
 **说明:** Specifies portion of mixup samples to add to each training batch. For example, if Batch Size is 128 and Mixup Portion is 0.5, then 64 mixup samples are added. 默认为“0.0”。
 
@@ -1895,7 +1893,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Mixup Portion( 0.5 ) ) );
 
 #### NMS Threshold
 
-**语法:** obj << NMS Threshold( number=0.5 )
+**语法:** obj &lt;&lt; NMS Threshold( number=0.5 )
 
 **说明:** Specifies the non-maximum suppression threshold for predicted boxes.  Overlapping boxes with IOU values above this threshold are dropped. 默认为“0.5”。
 
@@ -1911,7 +1909,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( NMS Threshold( 0.5 )
 
 #### Noise Max Sigma
 
-**语法:** obj << Noise Max Sigma( number=0 )
+**语法:** obj &lt;&lt; Noise Max Sigma( number=0 )
 
 **说明:** Maximum standard deviation of additive Gaussian noise 默认为“0”。
 
@@ -1927,7 +1925,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Noise Max Sigma( 1 ) ) );
 
 #### Nominal Image Threshold
 
-**语法:** obj << Nominal Image Threshold( number=10 )
+**语法:** obj &lt;&lt; Nominal Image Threshold( number=10 )
 
 **说明:** Specifies the cutoff for determining if images in a column are nominal or continuous.  If the number of unique pixel levels is <= this number, then the images are considered to be nominal. 默认为“10”。
 
@@ -1943,7 +1941,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Nominal Image Threshold( 10 
 
 #### Nominal Loss
 
-**语法:** obj << Nominal Loss( "NLL"="NLL" )
+**语法:** obj &lt;&lt; Nominal Loss( "NLL"="NLL" )
 
 **说明:** Specifies the loss function for nominal responses. Choose from Negative Loglikelihood (NLL). 默认为“NLL”。
 
@@ -1959,7 +1957,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Nominal Loss( "NLL" ) ) );
 
 #### Norm
 
-**语法:** obj << Norm( "None"|"Batch"|"Group"|"Instance"="Batch" )
+**语法:** obj &lt;&lt; Norm( "None"|"Batch"|"Group"|"Instance"="Batch" )
 
 **说明:** Specifies the type of normalization to apply to each MLP layer. 默认为“Batch”。
 
@@ -1975,7 +1973,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Norm( "Batch" ) ) );
 
 #### Norm First
 
-**语法:** obj << Norm First( "None"|"Batch"="Batch" )
+**语法:** obj &lt;&lt; Norm First( "None"|"Batch"="Batch" )
 
 **说明:** Specifies the type of normalization to apply to the input data to the tabular model. Batch norm effectively centers and scales each input. 默认为“Batch”。
 
@@ -1991,7 +1989,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Norm First( "Batch" 
 
 #### Num Linear
 
-**语法:** obj << Num Linear( number=1 )
+**语法:** obj &lt;&lt; Num Linear( number=1 )
 
 **说明:** For custom convolutional and message passing models, specifies the number of linear layers at the end of Layer Sizes. 默认为“1”。
 
@@ -2007,7 +2005,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Num Linear( 1 ) ) );
 
 #### Optimizer
 
-**语法:** obj << Optimizer( "Adam"|"AdamW"|"SGD"|"SGDAGC"="AdamW" )
+**语法:** obj &lt;&lt; Optimizer( "Adam"|"AdamW"|"SGD"|"SGDAGC"="AdamW" )
 
 **说明:** Specifies the optimization method. Choose between Adaptive moment estimation (Adam), Adam weight decay (AdamW), Stochastic Gradient Descent (SGD), or SGD with Adaptive Gradient Clipping (SGDAGC). 默认为“AdamW”。
 
@@ -2023,7 +2021,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Optimizer( "AdamW" ) ) );
 
 #### Pitch Sigma
 
-**语法:** obj << Pitch Sigma( number=0 )
+**语法:** obj &lt;&lt; Pitch Sigma( number=0 )
 
 **说明:** Standard deviation of Gaussian pitch 默认为“0”。
 
@@ -2039,7 +2037,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Pitch Sigma( 5 ) ) );
 
 #### Pooling Layers
 
-**语法:** obj << Pooling Layers( text=Max )
+**语法:** obj &lt;&lt; Pooling Layers( text=Max )
 
 **说明:** Specifies pooling layers as a space-delimited list of one of four keywords:  Max, Avg, Cat, or None. Last value carries forward if necessary. 默认为“Max”。
 
@@ -2055,7 +2053,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Pooling Layers( "Max
 
 #### Pretrained Tabular
 
-**语法:** obj << Pretrained Tabular( ="None" )
+**语法:** obj &lt;&lt; Pretrained Tabular( ="None" )
 
 **说明:** Specify a pretrained tabular model that is prepended to the Tabular Model. 默认为“None”。
 
@@ -2071,7 +2069,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Pretrained Tabular( 
 
 #### Quantiles
 
-**语法:** obj << Quantiles( text=0.9 )
+**语法:** obj &lt;&lt; Quantiles( text=0.9 )
 
 **说明:** Specify a space-delimited list of quantiles to use for Quantile loss. 默认为“0.9”。
 
@@ -2087,7 +2085,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Quantiles( "0.9" ) )
 
 #### RPN NMS Threshold
 
-**语法:** obj << RPN NMS Threshold( number=0.7 )
+**语法:** obj &lt;&lt; RPN NMS Threshold( number=0.7 )
 
 **说明:** Specifies the non-maximum suppression threshold for region proposals.  Overlapping boxes with IOU values above this threshold are dropped. 默认为“0.7”。
 
@@ -2103,7 +2101,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( RPN NMS Threshold( 0
 
 #### Remove All But This Fit
 
-**语法:** obj << ( fit[number] << Remove All But This Fit )
+**语法:** obj &lt;&lt; ( fit[number] &lt;&lt; Remove All But This Fit )
 
 **说明:** Removes the reports and plots for all models except this one.
 
@@ -2125,7 +2123,7 @@ obj << (Fit[1] << Remove All But This Fit);
 
 #### Remove Fit
 
-**语法:** obj << ( fit[number] << Remove Fit )
+**语法:** obj &lt;&lt; ( fit[number] &lt;&lt; Remove Fit )
 
 **说明:** Removes the entire model report.
 
@@ -2147,7 +2145,7 @@ obj << (Fit[1] << Remove Fit);
 
 #### Restore From
 
-**语法:** obj << Restore From( " "=" " )
+**语法:** obj &lt;&lt; Restore From( " "=" " )
 
 **说明:** Select a subfolder containing saved files from a previously fit model. Training for a new model will begin where this model finished. Model architectures and validation variables should match. Leave this field blank to train from scratch. 默认为“ ”。
 
@@ -2163,7 +2161,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Restore From( "" ) ) );
 
 #### Roll Sigma
 
-**语法:** obj << Roll Sigma( number=0 )
+**语法:** obj &lt;&lt; Roll Sigma( number=0 )
 
 **说明:** Standard deviation of Gaussian roll 默认为“0”。
 
@@ -2179,7 +2177,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Roll Sigma( 5 ) ) );
 
 #### Save CAMs
 
-**语法:** obj << Save CAMs
+**语法:** obj &lt;&lt; Save CAMs
 
 **说明:** Save gradient-based class activation maps (CAMs) as a new column.
 
@@ -2187,7 +2185,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Roll Sigma( 5 ) ) );
 
 #### Save Embeddings
 
-**语法:** obj << Save Embeddings
+**语法:** obj &lt;&lt; Save Embeddings
 
 **说明:** Saves model embeddings (from final hidden layer) as new columns in the data table
 
@@ -2195,7 +2193,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Roll Sigma( 5 ) ) );
 
 #### Save Model
 
-**语法:** obj << Save Model
+**语法:** obj &lt;&lt; Save Model
 
 **说明:** Saves serialized modeling components to disk in a folder that you name.  You can then specify this folder in Restore From to begin training with this model.
 
@@ -2203,7 +2201,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Roll Sigma( 5 ) ) );
 
 #### Save Predicteds
 
-**语法:** obj << Save Predicteds
+**语法:** obj &lt;&lt; Save Predicteds
 
 **说明:** Saves the predicted values in a new column in the data table.
 
@@ -2211,7 +2209,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Roll Sigma( 5 ) ) );
 
 #### Screening Method
 
-**语法:** obj << Screening Method( "ResponseScreening"|"BootstrapForest"="ResponseScreening" )
+**语法:** obj &lt;&lt; Screening Method( "ResponseScreening"|"BootstrapForest"="ResponseScreening" )
 
 **说明:** Choose a method by which to screen Tabular Model predictors prior to fitting the model within each fold.  ResponseScreening is fast and BootstrapForest is more thorough. 默认为“ResponseScreening”。
 
@@ -2231,7 +2229,7 @@ Torch Deep Learning(
 
 #### Screening Threshold
 
-**语法:** obj << Screening Threshold( number=0 )
+**语法:** obj &lt;&lt; Screening Threshold( number=0 )
 
 **说明:** If >= 1, the number of Tabular Model predictors to select by screening.  If < 1, the predictors with cumulative portion less than the threshold. 默认为“0”。
 
@@ -2247,7 +2245,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Screening Threshold(
 
 #### Seed
 
-**语法:** obj << Seed( number=0 )
+**语法:** obj &lt;&lt; Seed( number=0 )
 
 **说明:** Specifies the seed for the random number generator.  Note results may not be fully reproducible with the same seed due to the stochastic nature of certain Torch calculations. 默认为“0”。
 
@@ -2263,7 +2261,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Seed( 0 ) ) );
 
 #### Segmentation Model
 
-**语法:** obj << Segmentation Model( "UNet"|"FPN"|"LinkNet"|"DeepLabV3"|"DeepLabV3Plus"|"PAN"|"PSPNet"="UNet" )
+**语法:** obj &lt;&lt; Segmentation Model( "UNet"|"FPN"|"LinkNet"|"DeepLabV3"|"DeepLabV3Plus"|"PAN"|"PSPNet"="UNet" )
 
 **说明:** Specifies the image segmentation model. 默认为“UNet”。
 
@@ -2279,7 +2277,7 @@ Torch Deep Learning( Y( :Mask ), X( :Picture ), Sett( Segmentation Model( "VGG11
 
 #### Spline Order
 
-**语法:** obj << Spline Order( number=3 )
+**语法:** obj &lt;&lt; Spline Order( number=3 )
 
 **说明:** For Kolmogorov Arnold B Spline networks, specifies the order of the spline used for interpolation. 默认为“3”。
 
@@ -2295,7 +2293,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Spline Order( 3 ) ) 
 
 #### Strides
 
-**语法:** obj << Strides( text=1 )
+**语法:** obj &lt;&lt; Strides( text=1 )
 
 **说明:** For custom convolutional models, specifies the strides as a space-delimited list of positive integers. Last value carries forward if necessary. 默认为“1”。
 
@@ -2311,7 +2309,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Strides( "1" ) ) );
 
 #### Tabular Model
 
-**语法:** obj << Tabular Model( "MultiLayerPerceptron"|"FTTransformer"|"KolmogorovArnoldBSpline"|"CustomConv1d"|"RadialBasisMachine"|"MixedModel"="MultiLayerPerceptron" )
+**语法:** obj &lt;&lt; Tabular Model( "MultiLayerPerceptron"|"FTTransformer"|"KolmogorovArnoldBSpline"|"CustomConv1d"|"RadialBasisMachine"|"MixedModel"="MultiLayerPerceptron" )
 
 **说明:** Specifies the tabular network architecture to use. Choose from Multilayer Perceptron (MLP), Feature Tokenized Transformer (FTTransformer), Kolmogorov Arnold Network (KolmogorovArnoldBSpline), or other options 默认为“MultiLayerPerceptron”。
 
@@ -2331,7 +2329,7 @@ Torch Deep Learning(
 
 #### Text Model
 
-**语法:** obj << Text Model( ="BertTiny" )
+**语法:** obj &lt;&lt; Text Model( ="BertTiny" )
 
 **说明:** Specifies the text network architecture to use. Models are ordered by size. Smaller models train faster but may not perform as well as larger models. 默认为“BertTiny”。
 
@@ -2351,7 +2349,7 @@ Torch Deep Learning(
 
 #### Triplet Loss Weight
 
-**语法:** obj << Triplet Loss Weight( number=0.0 )
+**语法:** obj &lt;&lt; Triplet Loss Weight( number=0.0 )
 
 **说明:** Specifies the multiplier alpha to use in the following compound loss function: alpha * triplet_loss + (1 - alpha) * loss_function. Must be between 0 and 1. 默认为“0.0”。
 
@@ -2367,7 +2365,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Triplet Loss Weight( 0.5 ) )
 
 #### Use Data As Knots
 
-**语法:** obj << Use Data As Knots( state=0 )
+**语法:** obj &lt;&lt; Use Data As Knots( state=0 )
 
 **说明:** For Radial Basis Machine models, check to use the training data as knots to form an interpolation-style model. 默认为“0”。
 
@@ -2387,7 +2385,7 @@ Torch Deep Learning(
 
 #### VFlip Prob
 
-**语法:** obj << VFlip Prob( number=0 )
+**语法:** obj &lt;&lt; VFlip Prob( number=0 )
 
 **说明:** Probability of vertical flip 默认为“0”。
 
@@ -2403,7 +2401,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( VFlip Prob( 0.2 ) ) );
 
 #### Weight Decay
 
-**语法:** obj << Weight Decay( number=0.0 )
+**语法:** obj &lt;&lt; Weight Decay( number=0.0 )
 
 **说明:** Specifies a penalty term multiplier of the L2 norm of the trainable parameters, which regularizes them in a way similar to ridge regression. 默认为“0.0”。
 
@@ -2419,7 +2417,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Weight Decay( 0.0001 ) ) );
 
 #### Worker Count
 
-**语法:** obj << Worker Count( number=4 )
+**语法:** obj &lt;&lt; Worker Count( number=4 )
 
 **说明:** Specifies the number of workers to use to load batches of data during training. A number near half the number of actual cores is usually near optimal. 默认为“4”。
 
@@ -2435,7 +2433,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Worker Count( 0 ) ) );
 
 #### X Slide Sigma
 
-**语法:** obj << X Slide Sigma( number=0 )
+**语法:** obj &lt;&lt; X Slide Sigma( number=0 )
 
 **说明:** Standard deviation of Gaussian random shift along the X axis 默认为“0”。
 
@@ -2451,7 +2449,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( X Slide Sigma( 5 ) ) );
 
 #### Y Slide Sigma
 
-**语法:** obj << Y Slide Sigma( number=0 )
+**语法:** obj &lt;&lt; Y Slide Sigma( number=0 )
 
 **说明:** Standard deviation of Gaussian random shift along the Y axis 默认为“0”。
 
@@ -2467,7 +2465,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Y Slide Sigma( 5 ) ) );
 
 #### Yaw Sigma
 
-**语法:** obj << Yaw Sigma( number=0 )
+**语法:** obj &lt;&lt; Yaw Sigma( number=0 )
 
 **说明:** Standard deviation of Gaussian yaw 默认为“0”。
 

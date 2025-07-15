@@ -6,9 +6,7 @@
 
 ### By
 
-**Sintaxis:** obj = Principal Components(...<By( column(s) )>...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Principal Components(...&lt;By( column(s) )&gt;...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Realiza un análisis independiente para cada nivel de la columna especificada.
 
@@ -30,9 +28,7 @@ obj = dt << Principal Components(
 
 ### Columns
 
-**Sintaxis:** obj = Principal Components(...<Columns( column(s) )>...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Principal Components(...&lt;Columns( column(s) )&gt;...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica las variables que se van a analizar para los componentes.
 
@@ -48,9 +44,7 @@ obj = dt << Principal Components(
 
 ### Freq
 
-**Sintaxis:** obj = Principal Components(...<Freq( column )>...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Principal Components(...&lt;Freq( column )&gt;...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica una columna cuyos valores asignan una frecuencia a cada fila del análisis.
 
@@ -68,7 +62,7 @@ obj = dt << Principal Components(
 
 ### Supplementary Variable
 
-**Sintaxis:** obj << Supplementary Variable( column(s) )
+**Sintaxis:** obj &lt;&lt; Supplementary Variable( column(s) )
 
 **Descripción:** Especifica una o más variables suplementarias. Las variables suplementarias no se utilizan en ninguno de los cálculos de la plataforma e incluirlas no afecta a los resultados. Estas variables pueden mejorar la interpretación de los datos o pueden servir para análisis futuros.
 
@@ -86,9 +80,7 @@ obj = dt << Principal Components(
 
 ### Weight
 
-**Sintaxis:** obj = Principal Components(...<Weight( column )>...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Principal Components(...&lt;Weight( column )&gt;...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica una columna cuyos valores asignan un peso a cada fila del análisis.
 
@@ -106,9 +98,7 @@ obj = dt << Principal Components(
 
 ### Y
 
-**Sintaxis:** obj = Principal Components(...<Y( column(s) )>...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Principal Components(...&lt;Y( column(s) )&gt;...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica las variables que se van a analizar para los componentes.
 
@@ -124,7 +114,7 @@ obj = dt << Principal Components(
 
 ### Z
 
-**Sintaxis:** obj << Z( column(s) )
+**Sintaxis:** obj &lt;&lt; Z( column(s) )
 
 **Descripción:** Especifica una o más variables suplementarias. Las variables suplementarias no se utilizan en ninguno de los cálculos de la plataforma e incluirlas no afecta a los resultados. Estas variables pueden mejorar la interpretación de los datos o pueden servir para análisis futuros.
 
@@ -162,7 +152,7 @@ obj = dt << Principal Components(
 
 ### 3D Score Plot
 
-**Sintaxis:** obj << 3D Score Plot( state=0|1 )
+**Sintaxis:** obj &lt;&lt; 3D Score Plot( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico de dispersión 3D de los componentes principales como rayos en un espacio tridimensional.
 
@@ -180,7 +170,7 @@ obj << "3D Score Plot"n( 1 );
 
 ### Arrow Lines
 
-**Sintaxis:** obj << Arrow Lines( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Arrow Lines( state=0|1 )
 
 **Descripción:** Muestra u oculta las líneas de flecha en el gráfico.
 
@@ -198,7 +188,7 @@ obj << Arrow Lines( 0 );
 
 ### Bartlett Test
 
-**Sintaxis:** obj << Bartlett Test( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Bartlett Test( state=0|1 )
 
 **Descripción:** Muestra u oculta un informe de los resultados de la prueba de homogeneidad de cada uno de los componentes principales.
 
@@ -216,7 +206,7 @@ obj << Bartlett Test( 1 );
 
 ### Biplot
 
-**Sintaxis:** obj << Biplot( number )
+**Sintaxis:** obj &lt;&lt; Biplot( number )
 
 **Descripción:** Muestra u oculta un gráfico que superpone el gráfico de puntuaciones y el gráfico de cargas factoriales para el número especificado de componentes.
 
@@ -234,7 +224,7 @@ obj << Biplot( 2 );
 
 ### Cluster Components
 
-**Sintaxis:** obj << Cluster Components( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Cluster Components( state=0|1 )
 
 **Descripción:** Muestra u oculta el informe Componentes estandarizados, que contiene los vectores propios del primer componente principal dentro de cada conglomerado. Opción activada de forma predeterminada.
 
@@ -249,7 +239,7 @@ obj << Cluster Variables( Cluster Components( 1 ) );
 
 ### Cluster Members
 
-**Sintaxis:** obj << Cluster Members( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Cluster Members( state=0|1 )
 
 **Descripción:** Muestra u oculta un informe de las variables en cada conglomerado. Opción activada de forma predeterminada.
 
@@ -264,7 +254,7 @@ obj << Cluster Variables( Cluster Members( 1 ) );
 
 ### Cluster Summary
 
-**Sintaxis:** obj << Cluster Summary( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Cluster Summary( state=0|1 )
 
 **Descripción:** Muestra u oculta un informe que resume los resultados de la conglomeración de variables. Opción activada de forma predeterminada.
 
@@ -279,7 +269,7 @@ obj << Cluster Variables( Cluster Summary( 1 ) );
 
 ### Cluster Variables
 
-**Sintaxis:** obj << Cluster Variables( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Cluster Variables( state=0|1 )
 
 **Descripción:** Conglomera las variables en grupos similares.
 
@@ -297,7 +287,7 @@ obj << Cluster Variables( 1 );
 
 ### Color Map on Correlations
 
-**Sintaxis:** obj << Color Map on Correlations( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Color Map on Correlations( state=0|1 )
 
 **Descripción:** Muestra u oculta un mapa de color de las correlaciones entre variables, donde las variables se organizan de modo que los miembros del mismo conglomerado estén juntos en el gráfico. Opción activada de forma predeterminada.
 
@@ -312,7 +302,7 @@ obj << Cluster Variables( Color Map On Correlations( 1 ) );
 
 ### Coordinate Matrix
 
-**Sintaxis:** obj << Coordinate Matrix( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Coordinate Matrix( state=0|1 )
 
 **Descripción:** Shows or hides a table that contains the component coordinates. This option is available only when there is a categorical variable in the analysis.
 
@@ -330,7 +320,7 @@ obj << Coordinate  Matrix( 1 );
 
 ### Correlations
 
-**Sintaxis:** obj << Correlations( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Correlations( state=0|1 )
 
 **Descripción:** Muestra u oculta una matriz de coeficientes de correlación que resumen la fuerza de las relaciones lineales entre cada par de variables Y.
 
@@ -348,7 +338,7 @@ obj << Correlations( 1 );
 
 ### Covariance Matrix
 
-**Sintaxis:** obj << Covariance Matrix( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Covariance Matrix( state=0|1 )
 
 **Descripción:** Muestra u oculta una matriz de covarianzas para cada par de variables Y.
 
@@ -366,7 +356,7 @@ obj << Covariance Matrix( 1 );
 
 ### Eigenvalues
 
-**Sintaxis:** obj << Eigenvalues( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Eigenvalues( state=0|1 )
 
 **Descripción:** Muestra u oculta los valores propios ordenados, su variación porcentual y la variación porcentual acumulada.
 
@@ -384,7 +374,7 @@ obj << Eigenvalues( 1 );
 
 ### Eigenvectors
 
-**Sintaxis:** obj << Eigenvectors( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Eigenvectors( state=0|1 )
 
 **Descripción:** Muestra u oculta un informe de los vectores propios de cada uno de los componentes principales.
 
@@ -402,9 +392,7 @@ obj << Eigenvectors( 1 );
 
 ### Estimation Method
 
-**Sintaxis:** Estimation Method( REML | ML | Robust | Row-wise | Pairwise | Full SVD | Truncated SVD | Randomized SVD | Robust SVD | Sparse SVD)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** Estimation Method( REML | ML | Robust | Row-wise | Pairwise | Full SVD | Truncated SVD | Randomized SVD | Robust SVD | Sparse SVD)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Establece el método de estimación para calcular las correlaciones.
 
@@ -428,7 +416,7 @@ obj = dt << Principal Components(
 
 ### Factor Analysis
 
-**Sintaxis:** obj << Factor Analysis( ML|PC, ONE|SMC, n Rotated, Varimax| Biquartimax| Equamax| Factorparsimax| Orthomax| Parsimax| Quartimax| Biquartimin| Covarimin| Obbiquartimax| Obequamax| Obfactorparsimax| Obequamax| Obfactorparsimax| Oblimin| Obparsimax| Obquartimax| Obvarimax| Quartimin| UnRotated| Promax )
+**Sintaxis:** obj &lt;&lt; Factor Analysis( ML|PC, ONE|SMC, n Rotated, Varimax| Biquartimax| Equamax| Factorparsimax| Orthomax| Parsimax| Quartimax| Biquartimin| Covarimin| Obbiquartimax| Obequamax| Obfactorparsimax| Obequamax| Obfactorparsimax| Oblimin| Obparsimax| Obquartimax| Obvarimax| Quartimin| UnRotated| Promax )
 
 **Descripción:** Muestra u oculta un informe del patrón de rotación factorial para los componentes principales.
 
@@ -446,7 +434,7 @@ obj << Factor Analysis( "ML", "SMC", 2, "Varimax" );
 
 ### Formatted Loading Matrix
 
-**Sintaxis:** obj << Formatted Loading Matrix( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Formatted Loading Matrix( state=0|1 )
 
 **Descripción:** Muestra u oculta un informe que contiene las cargas de los componentes con formato.
 
@@ -464,7 +452,7 @@ obj << Formatted Loading Matrix( 1 );
 
 ### Impute Missing Data
 
-**Sintaxis:** obj << Impute Missing Data
+**Sintaxis:** obj &lt;&lt; Impute Missing Data
 
 **Descripción:** Imputa valores faltantes a todas las variables Y y crea una nueva tabla de datos que contiene los valores existentes y los valores de datos faltantes recientemente imputados.
 
@@ -479,7 +467,7 @@ obj << Impute Missing Data( 1 );
 
 ### Launch Fit Model
 
-**Sintaxis:** obj << Launch Fit Model
+**Sintaxis:** obj &lt;&lt; Launch Fit Model
 
 **Descripción:** Inicia Ajuste del modelo con las variables más representativas como predictores. Seleccione Guardar componentes del conglomerado en primer lugar si quiere usarlos como predictores.
 
@@ -494,7 +482,7 @@ obj << Cluster Variables( Launch Fit Model );
 
 ### Loading Matrix
 
-**Sintaxis:** obj << Loading Matrix( number )
+**Sintaxis:** obj &lt;&lt; Loading Matrix( number )
 
 **Descripción:** Muestra u oculta una tabla que contiene las cargas de los componentes.
 
@@ -512,7 +500,7 @@ obj << Loading Matrix( 1 );
 
 ### Loading Plot
 
-**Sintaxis:** obj << Loading Plot( number )
+**Sintaxis:** obj &lt;&lt; Loading Plot( number )
 
 **Descripción:** Muestra u oculta una matriz de gráficos que son representaciones bidimensionales de cargas factoriales.
 
@@ -530,9 +518,7 @@ obj << Loading Plot( 2 );
 
 ### Missing value imputation
 
-**Sintaxis:** obj = Principal Components(...Missing value imputation( state=0|1 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Principal Components(...Missing value imputation( state=0|1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Imputa valores faltantes a través de finalización de la matriz. Esta opción es aplicable a los métodos amplios. Opción activada de forma predeterminada.
 
@@ -552,7 +538,7 @@ obj = dt << Principal Components(
 
 ### Model Driven Multivariate Control Chart
 
-**Sintaxis:** obj << Model Driven Multivariate Control Chart
+**Sintaxis:** obj &lt;&lt; Model Driven Multivariate Control Chart
 
 **Descripción:** Inicia un gráfico de control multivariante basado en el modelo para el número especificado de componentes.
 
@@ -572,9 +558,7 @@ obj << Model Driven Multivariate Control Chart( 2 );
 
 ### Number of Components
 
-**Sintaxis:** obj = Principal Components(...Number of Components( number=10 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Principal Components(...Number of Components( number=10 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Establece el número de componentes que se deben extraer. Para reducir el tiempo de cálculo, introduzca un número de componentes pequeño. "10" de forma predeterminada.
 
@@ -593,7 +577,7 @@ obj = dt << Principal Components(
 
 ### Outlier Analysis
 
-**Sintaxis:** obj << Outlier Analysis( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Outlier Analysis( state=0|1 )
 
 **Descripción:** Muestra u oculta el informe Análisis de valores atípicos, que le permite detectar valores atípicos en los datos a través de estadísticos de contribución y T².
 
@@ -614,7 +598,7 @@ obj = dt << Principal Components(
 
 ### Partial Contribution of Variables
 
-**Sintaxis:** obj << Partial Contribution of Variables( number )
+**Sintaxis:** obj &lt;&lt; Partial Contribution of Variables( number )
 
 **Descripción:** Muestra u oculta una tabla que contiene las contribuciones parciales de las variables y un gráfico de las contribuciones parciales de los tres primeros componentes principales.
 
@@ -634,7 +618,7 @@ obj << Partial Contribution of Variables(
 
 ### Profiler for Predicteds
 
-**Sintaxis:** obj << Profiler for Predicteds
+**Sintaxis:** obj &lt;&lt; Profiler for Predicteds
 
 **Descripción:** Inicia un perfilador para las predicciones utilizando el número de componentes especificado.
 
@@ -654,7 +638,7 @@ obj << Profiler for Predicteds( 2 );
 
 ### Publish Components Formulas
 
-**Sintaxis:** obj << Publish Components Formulas( number )
+**Sintaxis:** obj &lt;&lt; Publish Components Formulas( number )
 
 **Descripción:** Crea un número especificado de fórmulas de componentes principales y las guarda como scripts de columnas de fórmulas en la plataforma Almacén de fórmulas. Si no hay abierto un informe del Almacén de fórmulas, esta opción crea un informe del Almacén de fórmulas.
 
@@ -672,7 +656,7 @@ obj << Publish Components Formulas( 3 );
 
 ### Publish Normalized DModX Formula
 
-**Sintaxis:** obj << Publish Normalized DModX Formula( number )
+**Sintaxis:** obj &lt;&lt; Publish Normalized DModX Formula( number )
 
 **Descripción:** Guarda la fórmula DModX normalizada basada en un número especificado de componentes principales como script de columnas de fórmulas en la plataforma Almacén de fórmulas. Si no hay abierto un informe del Almacén de fórmulas, esta opción crea un informe del Almacén de fórmulas.
 
@@ -692,7 +676,7 @@ obj << Publish Normalized DModX Formula( 3 );
 
 ### Save Cluster Components
 
-**Sintaxis:** obj << Save Cluster Components
+**Sintaxis:** obj &lt;&lt; Save Cluster Components
 
 **Descripción:** Guarda en la tabla de datos el componente de conglomerado (el primero principal) para cada conglomerado.
 
@@ -707,7 +691,7 @@ obj << Cluster Variables( Save Cluster Components );
 
 ### Save Imputed Formula
 
-**Sintaxis:** obj << Save Imputed Formula
+**Sintaxis:** obj &lt;&lt; Save Imputed Formula
 
 **Descripción:** Imputa valores en los valores faltantes de la columna Y. Crea y guarda una nueva columna con una fórmula de imputación en la tabla de datos original.
 
@@ -722,7 +706,7 @@ obj << Save Imputed Formula( 1 );
 
 ### Save Individual Partial Contributions
 
-**Sintaxis:** obj << Save Individual Partial Contributions( number )
+**Sintaxis:** obj &lt;&lt; Save Individual Partial Contributions( number )
 
 **Descripción:** Guarda las contribuciones parciales individuales en nuevas columnas de la tabla de datos.
 
@@ -739,7 +723,7 @@ obj << Save Individual Partial Contributions( 3 );
 
 ### Save Individual Squared Cosines
 
-**Sintaxis:** obj << Save Individual Squared Cosines( number )
+**Sintaxis:** obj &lt;&lt; Save Individual Squared Cosines( number )
 
 **Descripción:** Guarda los cosenos al cuadrado individuales en nuevas columnas de la tabla de datos.
 
@@ -756,7 +740,7 @@ obj << Save Individual Squared Cosines( 3 );
 
 ### Save Low Rank Principal Components
 
-**Sintaxis:** obj << Save Low Rank Principal Components( number )
+**Sintaxis:** obj &lt;&lt; Save Low Rank Principal Components( number )
 
 **Descripción:** Guarda las puntuaciones de los componentes principales de los datos de rango bajo, limpios de valores atípicos y ruido. Esta opción solo se aplica al método de estimación PCA robusto.
 
@@ -776,7 +760,7 @@ obj << Save Low Rank Principal Components( 3 );
 
 ### Save Normalized DModX
 
-**Sintaxis:** obj << Save Normalized DModX( number )
+**Sintaxis:** obj &lt;&lt; Save Normalized DModX( number )
 
 **Descripción:** Guarda los valores DModX normalizados en una nueva columna de la tabla de datos.
 
@@ -793,7 +777,7 @@ obj << Save Normalized DMODX( 3 );
 
 ### Save Predicteds
 
-**Sintaxis:** obj << Save Predicteds( number )
+**Sintaxis:** obj &lt;&lt; Save Predicteds( number )
 
 **Descripción:** Guarda las variables predichas con un número especificado de componentes principales en columnas nuevas de la tabla de datos.
 
@@ -810,7 +794,7 @@ obj << Save Predicteds( 3 );
 
 ### Save Predicteds as Component Formulas
 
-**Sintaxis:** obj << Save Predicteds as Component Formulas
+**Sintaxis:** obj &lt;&lt; Save Predicteds as Component Formulas
 
 **Descripción:** Guarda las fórmulas de componentes para un número especificado de componentes principales en columnas nuevas de la tabla de datos.
 
@@ -828,7 +812,7 @@ obj << Save Predicteds As Component Formulas( 3 );
 
 ### Save Principal Component Script
 
-**Sintaxis:** obj << Save Principal Component Script( number )
+**Sintaxis:** obj &lt;&lt; Save Principal Component Script( number )
 
 **Descripción:** Guarda un script en la ventana de scripts que cuando se ejecute creará columnas nuevas en la tabla de datos para el número especificado de componentes principales.
 
@@ -846,7 +830,7 @@ obj << save principal Component script( 3 );
 
 ### Save Principal Component Values
 
-**Sintaxis:** obj << Save Principal Component Values( number )
+**Sintaxis:** obj &lt;&lt; Save Principal Component Values( number )
 
 **Descripción:** Guarda el número especificado de componentes principales en nuevas columnas sin fórmula de la tabla de datos, incluso desde las celdas imputadas.
 
@@ -864,7 +848,7 @@ obj << Save Principal Component Values( 3 );
 
 ### Save Principal Components
 
-**Sintaxis:** obj << Save Principal Components( number )
+**Sintaxis:** obj &lt;&lt; Save Principal Components( number )
 
 **Descripción:** Guarda el número especificado de componentes principales en nuevas columnas de fórmulas de la tabla de datos.
 
@@ -882,7 +866,7 @@ obj << Save Principal Components( 3 );
 
 ### Save Principal Components with Imputation
 
-**Sintaxis:** obj << Save Principal Components with Imputation( number )
+**Sintaxis:** obj &lt;&lt; Save Principal Components with Imputation( number )
 
 **Descripción:** Guarda el número especificado de componentes principales calculados mediante la imputación de los valores faltantes en nuevas columnas de la tabla de datos.
 
@@ -902,7 +886,7 @@ obj << Save Principal Components with Imputation( 3 );
 
 ### Save Rotated Components
 
-**Sintaxis:** obj << Save Rotated Components
+**Sintaxis:** obj &lt;&lt; Save Rotated Components
 
 **Descripción:** Guarda los componentes rotados en nuevas columnas de la tabla de datos.
 
@@ -923,7 +907,7 @@ obj << Save Rotated Components;
 
 ### Save Rotated Components with Imputation
 
-**Sintaxis:** obj << Save Rotated Components with Imputation
+**Sintaxis:** obj &lt;&lt; Save Rotated Components with Imputation
 
 **Descripción:** Guarda los componentes rotados calculados mediante la imputación de los valores faltantes en nuevas columnas de la tabla de datos. Nota: esta opción solo está disponible una vez ejecutada la Rotación factorial.
 
@@ -942,7 +926,7 @@ obj << Save Rotated Components with Imputation;
 
 ### Scatterplot Matrix
 
-**Sintaxis:** obj << Scatterplot Matrix( number )
+**Sintaxis:** obj &lt;&lt; Scatterplot Matrix( number )
 
 **Descripción:** Muestra u oculta una matriz de gráficos de cargas factoriales y puntuaciones para un número especificado de componentes principales.
 
@@ -960,7 +944,7 @@ obj << Scatterplot Matrix( 4 );
 
 ### Score Ellipse Coverage
 
-**Sintaxis:** obj << Score Ellipse Coverage( "0.90"|"0.95"|"0.99"|"1-sigma"|"2-sigma"|"3-sigma"|"Otro…" )
+**Sintaxis:** obj &lt;&lt; Score Ellipse Coverage( "0.90"|"0.95"|"0.99"|"1-sigma"|"2-sigma"|"3-sigma"|"Otro…" )
 
 **Descripción:** Cambia el nivel alfa de las elipses de confianza en el gráfico de puntuaciones para cada par de componentes principales.
 
@@ -980,7 +964,7 @@ obj << Score Ellipse Coverage( 0.9 );
 
 ### Score Ellipses
 
-**Sintaxis:** obj << Score Ellipses( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Score Ellipses( state=0|1 )
 
 **Descripción:** Muestra u oculta elipses de confianza en el gráfico de puntuaciones para cada par de componentes principales.
 
@@ -1000,7 +984,7 @@ obj << Score Ellipses( 1 );
 
 ### Score Plot
 
-**Sintaxis:** obj << Score Plot( number )
+**Sintaxis:** obj &lt;&lt; Score Plot( number )
 
 **Descripción:** Muestra u oculta una matriz de gráficos de dispersión que contienen las puntuaciones para cada par del número especificado de componentes principales.
 
@@ -1018,7 +1002,7 @@ obj << Score Plot( 2 );
 
 ### Score Plot with Imputation
 
-**Sintaxis:** obj << Score Plot with Imputation( number of principal components )
+**Sintaxis:** obj &lt;&lt; Score Plot with Imputation( number of principal components )
 
 **Descripción:** Muestra u oculta una matriz de gráficos de dispersión que contienen las puntuaciones para cada par del número especificado de componentes principales, utilizando la imputación para los valores faltantes.
 
@@ -1036,7 +1020,7 @@ obj << Score Plot with Imputation( 2 );
 
 ### Scree Plot
 
-**Sintaxis:** obj << Scree Plot( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Scree Plot( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico de líneas de los valores propios para cada componente.
 
@@ -1054,7 +1038,7 @@ obj << Scree Plot( 1 );
 
 ### Select component
 
-**Sintaxis:** obj << Select component( <specify dimension to plot> )
+**Sintaxis:** obj &lt;&lt; Select component( &lt;specify dimension to plot&gt; )
 
 **Descripción:** Selecciona las dimensiones que se utilizan como ejes en los gráficos de resumen.
 
@@ -1072,7 +1056,7 @@ obj << Select Component( 1, 3 );
 
 ### Show Supplementary Variable
 
-**Sintaxis:** obj << Show Supplementary Variable( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Show Supplementary Variable( state=0|1 )
 
 **Descripción:** Muestra u oculta las líneas de flecha para las variables suplementarias en el gráfico.
 
@@ -1091,7 +1075,7 @@ obj << Show Supplementary Variable( 0 );
 
 ### Squared Cosines of Variables
 
-**Sintaxis:** obj << Squared Cosines of Variables( number )
+**Sintaxis:** obj &lt;&lt; Squared Cosines of Variables( number )
 
 **Descripción:** Muestra u oculta una tabla que contiene los cosenos al cuadrado de las variables.
 
@@ -1111,9 +1095,7 @@ obj << Squared Cosines of Variables(
 
 ### Standardize
 
-**Sintaxis:** obj = Principal Components(...Standardize( "Estandarizado"|"No escalado"|"No escalado y no centrado" )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Principal Components(...Standardize( "Estandarizado"|"No escalado"|"No escalado y no centrado" )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica si se debe estandarizar individualmente cada columna.
 
@@ -1131,7 +1113,7 @@ obj = dt << Principal Components(
 
 ### Summary Plots
 
-**Sintaxis:** obj << Summary Plots( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Summary Plots( state=0|1 )
 
 **Descripción:** Muestra u oculta un nodo de esquema que contiene un gráfico de los valores propios, un gráfico de puntuaciones y un gráfico de cargas factoriales. Opción activada de forma predeterminada.
 

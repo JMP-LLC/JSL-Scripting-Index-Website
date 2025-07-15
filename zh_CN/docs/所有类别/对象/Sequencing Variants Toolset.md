@@ -6,7 +6,7 @@
 
 ### Action
 
-**语法:** obj << Action
+**语法:** obj &lt;&lt; Action
 
 **说明:** 平台内用于插入表达式以求值的所有用途的陷门。暂时将 DisplayBox 和 DataTable 上下文设置为平台。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**语法:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**语法:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **说明:** 将以前创建的预设应用到对象，从而更新选项和定制以匹配保存的设置。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Copy Script
 
-**语法:** obj << Copy Script
+**语法:** obj &lt;&lt; Copy Script
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其置于剪贴板上。
 
@@ -84,7 +84,7 @@ obj << Copy Script;
 
 ### Get By Levels
 
-**语法:** obj << Get By Levels
+**语法:** obj &lt;&lt; Get By Levels
 
 **说明:** 返回将“依据”组列映射到其值的关联数组。
 
@@ -101,7 +101,7 @@ biv << Get By Levels;
 
 ### Get Container
 
-**语法:** obj << Get Container
+**语法:** obj &lt;&lt; Get Container
 
 **说明:** 返回对保留对象内容的容器框的引用。
 
@@ -146,7 +146,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**语法:** obj << Get Data Table
+**语法:** obj &lt;&lt; Get Data Table
 
 **说明:** 返回对该数据表的引用。
 
@@ -160,7 +160,7 @@ Show( N Rows( t ) );
 
 ### Get Script
 
-**语法:** obj << Get Script
+**语法:** obj &lt;&lt; Get Script
 
 **说明:** 创建生成该分析的脚本 (JSL)，并将其作为表达式返回。
 
@@ -174,7 +174,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**语法:** obj << Get Script With Data Table
+**语法:** obj &lt;&lt; Get Script With Data Table
 
 **说明:** 创建生成该分析的脚本 (JSL) 以专门引用该数据表，并将其作为表达式返回。
 
@@ -188,7 +188,7 @@ Show( t );
 
 ### Get Timing
 
-**语法:** obj << Get Timing
+**语法:** obj &lt;&lt; Get Timing
 
 **说明:** 平台启动过程计时。
 
@@ -202,7 +202,7 @@ Show( t );
 
 ### Get Web Support
 
-**语法:** obj << Get Web Support
+**语法:** obj &lt;&lt; Get Web Support
 
 **说明:** 返回一个数字，指示显示对象的交互式 HTML 支持的水平。1 表示支持部分或全部元素。0 表示不支持。
 
@@ -218,7 +218,7 @@ Show( s );
 
 ### Get Where Expr
 
-**语法:** obj << Get Where Expr
+**语法:** obj &lt;&lt; Get Where Expr
 
 **说明:** 若平台是使用 By() 或 Where() 启动的，则返回数据子集的 Where 表达式。否则返回 Empty()
 
@@ -308,9 +308,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**语法:** obj << Report;
-
-Report( obj )
+**语法:** obj &lt;&lt; Report;Report( obj )
 
 **说明:** 返回对该报表对象的引用。
 
@@ -325,7 +323,7 @@ Show( t );
 
 ### Save Script for All Objects
 
-**语法:** obj << Save Script for All Objects
+**语法:** obj &lt;&lt; Save Script for All Objects
 
 **说明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -338,7 +336,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**语法:** obj << Save Script for All Objects To Data Table( <name> )
+**语法:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **说明:** 将所有报表对象的脚本保存至当前数据表。当您在该窗口中具有多个报表时，该选项很有用。除非您在引号中指定脚本名称，否则脚本将以第一个平台命名。
 
@@ -362,7 +360,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**语法:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**语法:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其作为表属性保存至数据表中。
 
@@ -375,7 +373,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**语法:** obj << Save Script to Journal
+**语法:** obj &lt;&lt; Save Script to Journal
 
 **说明:** 创建生成该分析的 JSL 脚本，并将一个按钮添加至包含该脚本的记录中。
 
@@ -388,7 +386,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**语法:** obj << Save Script to Report
+**语法:** obj &lt;&lt; Save Script to Report
 
 **说明:** 创建生成该分析的 JSL 脚本，并在报表中显示。有助于保留打印的已完成操作记录。
 
@@ -401,7 +399,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**语法:** obj << Save Script to Script Window
+**语法:** obj &lt;&lt; Save Script to Script Window
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其追加至当前的脚本文本窗口中。
 
@@ -479,7 +477,7 @@ dt << Distribution(
 
 ### Title
 
-**语法:** obj << Title( "new title" )
+**语法:** obj &lt;&lt; Title( "new title" )
 
 **说明:** 设置平台的标题。
 
@@ -492,7 +490,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**语法:** obj << Top Report
+**语法:** obj &lt;&lt; Top Report
 
 **说明:** 返回对报表中根节点的引用。
 
@@ -507,7 +505,7 @@ Show( t );
 
 ### View Web XML
 
-**语法:** obj << View Web XML
+**语法:** obj &lt;&lt; View Web XML
 
 **说明:** 返回用于创建交互式 HTML 报表的 XML 代码。
 
@@ -532,25 +530,25 @@ xml = obj << View Web XML;
 
 ### Arguments
 
-**语法:** obj << Arguments
+**语法:** obj &lt;&lt; Arguments
 
 **说明:** 允许选项指定从脚本窗口运行该平台。
 
 ### Run Cmd
 
-**语法:** obj << Run Cmd
+**语法:** obj &lt;&lt; Run Cmd
 
 **说明:** 确定要从脚本窗口运行测序变异工具集任务。
 
 ### Run Spec
 
-**语法:** obj << Run Spec
+**语法:** obj &lt;&lt; Run Spec
 
 **说明:** 确定要从界面窗口运行测序变异工具集任务。
 
 ### Specification
 
-**语法:** obj << Specification
+**语法:** obj &lt;&lt; Specification
 
 **说明:** 允许任务的指定。
 
@@ -560,31 +558,31 @@ xml = obj << View Web XML;
 
 #### Auto Send Output to Files List
 
-**语法:** obj << Auto Send Output to Files List( state=0|1 )
+**语法:** obj &lt;&lt; Auto Send Output to Files List( state=0|1 )
 
 **说明:** 将输出文件发送至文件列表面板。
 
 #### Bam Files
 
-**语法:** obj << Bam Files
+**语法:** obj &lt;&lt; Bam Files
 
 **说明:** 指定 BAM 文件。
 
 #### Bcf Files
 
-**语法:** obj << Bcf Files
+**语法:** obj &lt;&lt; Bcf Files
 
 **说明:** 指定 BCF 文件。
 
 #### Caller
 
-**语法:** obj << Caller( "多等位基因"|"一致性"="多等位基因" )
+**语法:** obj &lt;&lt; Caller( "多等位基因"|"一致性"="多等位基因" )
 
 **说明:** 默认为“多等位基因”。
 
 #### Copy Task Specification
 
-**语法:** obj << Copy Task Specification
+**语法:** obj &lt;&lt; Copy Task Specification
 
 **说明:** 将当前测序变异工具集规格复制到剪贴板。
 
@@ -592,91 +590,91 @@ xml = obj << View Web XML;
 
 #### Files
 
-**语法:** obj << Files
+**语法:** obj &lt;&lt; Files
 
 **说明:** 加载要在 samtools 中运行的输入文件。
 
 #### Ploidy
 
-**语法:** obj << Ploidy( number=2 )
+**语法:** obj &lt;&lt; Ploidy( number=2 )
 
 **说明:** 默认为“2”。
 
 #### Recall in Task Specification
 
-**语法:** obj << Recall in Task Specification
+**语法:** obj &lt;&lt; Recall in Task Specification
 
 **说明:** 将“任务规格”报表中的任务规格设置为指定的模型。
 
 #### Ref Files
 
-**语法:** obj << Ref Files
+**语法:** obj &lt;&lt; Ref Files
 
 **说明:** 指定参考基因组文件。
 
 #### Remove Run
 
-**语法:** obj << ( Run[number] << Remove Run( state=0|1 ) )
+**语法:** obj &lt;&lt; ( Run[number] &lt;&lt; Remove Run( state=0|1 ) )
 
 **说明:** 从报表窗口删除指定的运行报表。
 
 #### Results Folder
 
-**语法:** obj << Results Folder
+**语法:** obj &lt;&lt; Results Folder
 
 **说明:** 指定结果文件夹。
 
 #### Sam Files
 
-**语法:** obj << Sam Files
+**语法:** obj &lt;&lt; Sam Files
 
 **说明:** 指定 SAM 文件。
 
 #### Send Output to Files List
 
-**语法:** obj << Send Output to Files List( state=0|1 )
+**语法:** obj &lt;&lt; Send Output to Files List( state=0|1 )
 
 **说明:** 将输出文件发送至文件列表面板。
 
 #### Sort Reads By
 
-**语法:** obj << Sort Reads By( "坐标"|"字母数字"|"词典"="坐标" )
+**语法:** obj &lt;&lt; Sort Reads By( "坐标"|"字母数字"|"词典"="坐标" )
 
 **说明:** 默认为“坐标”。
 
 #### Summary
 
-**语法:** obj << Summary( state=0|1 )
+**语法:** obj &lt;&lt; Summary( state=0|1 )
 
 **说明:** 显示或隐藏包含运行详细信息的报表。 默认开启。
 
 #### Target Regions
 
-**语法:** obj << Target Regions
+**语法:** obj &lt;&lt; Target Regions
 
 **说明:** 设置目标区域。区域规范要求 BAM 文件按坐标排序并添加了索引。
 
 #### Task
 
-**语法:** obj << Task( "索引 Fasta"|"将 SAM 转换为 BAM"|"排序读取"|"添加配对坐标"|"删除重复项"|"合并文件"|"索引 BAM"|"将 BAM 转换为 SAM"|"提取映射的读取"|"提取未映射的读取"|"提取目标区域"|"提取正确对齐"|"提取第一个读取"|"标记不匹配和插入"|"计数对齐"|"按标记计数对齐"|"按参考计数对齐"|"生成统计量"|"生成碱基对齐质量"|"生成读取深度"|"Bgzip 压缩"|"Bgzip 解压缩"|"生成遗传型可能性"|"生成遗传型识别"|"将 Bcf 转换为 Vcf"|"将 Vcf 转换为 Bcf" )
+**语法:** obj &lt;&lt; Task( "索引 Fasta"|"将 SAM 转换为 BAM"|"排序读取"|"添加配对坐标"|"删除重复项"|"合并文件"|"索引 BAM"|"将 BAM 转换为 SAM"|"提取映射的读取"|"提取未映射的读取"|"提取目标区域"|"提取正确对齐"|"提取第一个读取"|"标记不匹配和插入"|"计数对齐"|"按标记计数对齐"|"按参考计数对齐"|"生成统计量"|"生成碱基对齐质量"|"生成读取深度"|"Bgzip 压缩"|"Bgzip 解压缩"|"生成遗传型可能性"|"生成遗传型识别"|"将 Bcf 转换为 Vcf"|"将 Vcf 转换为 Bcf" )
 
 **说明:** 确定要运行的任务。
 
 #### Title
 
-**语法:** obj << Title
+**语法:** obj &lt;&lt; Title
 
 **说明:** 设置标题。
 
 #### Unthreaded
 
-**语法:** obj << Unthreaded( state=0|1 )
+**语法:** obj &lt;&lt; Unthreaded( state=0|1 )
 
 **说明:** 仅使用主线程进行计算
 
 #### Vcf Files
 
-**语法:** obj << Vcf Files
+**语法:** obj &lt;&lt; Vcf Files
 
 **说明:** 指定 VCF 文件。
 
@@ -686,91 +684,91 @@ xml = obj << View Web XML;
 
 #### Auto Send Output to Files List
 
-**语法:** obj << Auto Send Output to Files List( state=0|1 )
+**语法:** obj &lt;&lt; Auto Send Output to Files List( state=0|1 )
 
 **说明:** 将输出文件发送至文件列表面板。
 
 #### Bam Files
 
-**语法:** obj << Bam Files
+**语法:** obj &lt;&lt; Bam Files
 
 **说明:** 指定 BAM 文件。
 
 #### Bcf Files
 
-**语法:** obj << Bcf Files
+**语法:** obj &lt;&lt; Bcf Files
 
 **说明:** 指定 BCF 文件。
 
 #### Caller
 
-**语法:** obj << Caller( "多等位基因"|"一致性"="多等位基因" )
+**语法:** obj &lt;&lt; Caller( "多等位基因"|"一致性"="多等位基因" )
 
 **说明:** 默认为“多等位基因”。
 
 #### Files
 
-**语法:** obj << Files
+**语法:** obj &lt;&lt; Files
 
 **说明:** 加载要在 samtools 中运行的输入文件。
 
 #### Ploidy
 
-**语法:** obj << Ploidy( number=2 )
+**语法:** obj &lt;&lt; Ploidy( number=2 )
 
 **说明:** 指定指示倍性水平的正数。 默认为“2”。
 
 #### Ref Files
 
-**语法:** obj << Ref Files
+**语法:** obj &lt;&lt; Ref Files
 
 **说明:** 指定参考基因组文件。
 
 #### Results Folder
 
-**语法:** obj << Results Folder
+**语法:** obj &lt;&lt; Results Folder
 
 **说明:** 指定结果文件夹。
 
 #### Sam Files
 
-**语法:** obj << Sam Files
+**语法:** obj &lt;&lt; Sam Files
 
 **说明:** 指定 SAM 文件。
 
 #### Sort Reads By
 
-**语法:** obj << Sort Reads By( "坐标"|"字母数字"|"词典"="坐标" )
+**语法:** obj &lt;&lt; Sort Reads By( "坐标"|"字母数字"|"词典"="坐标" )
 
 **说明:** 默认为“坐标”。
 
 #### Target Regions
 
-**语法:** obj << Target Regions
+**语法:** obj &lt;&lt; Target Regions
 
 **说明:** 设置目标区域。区域规范要求 BAM 文件按坐标排序并添加了索引。
 
 #### Task
 
-**语法:** obj << Task( "索引 Fasta"|"将 SAM 转换为 BAM"|"排序读取"|"添加配对坐标"|"删除重复项"|"合并文件"|"索引 BAM"|"将 BAM 转换为 SAM"|"提取映射的读取"|"提取未映射的读取"|"提取目标区域"|"提取正确对齐"|"提取第一个读取"|"标记不匹配和插入"|"计数对齐"|"按标记计数对齐"|"按参考计数对齐"|"生成统计量"|"生成碱基对齐质量"|"生成读取深度"|"Bgzip 压缩"|"Bgzip 解压缩"|"生成遗传型可能性"|"生成遗传型识别"|"将 Bcf 转换为 Vcf"|"将 Vcf 转换为 Bcf"="索引 Fasta" )
+**语法:** obj &lt;&lt; Task( "索引 Fasta"|"将 SAM 转换为 BAM"|"排序读取"|"添加配对坐标"|"删除重复项"|"合并文件"|"索引 BAM"|"将 BAM 转换为 SAM"|"提取映射的读取"|"提取未映射的读取"|"提取目标区域"|"提取正确对齐"|"提取第一个读取"|"标记不匹配和插入"|"计数对齐"|"按标记计数对齐"|"按参考计数对齐"|"生成统计量"|"生成碱基对齐质量"|"生成读取深度"|"Bgzip 压缩"|"Bgzip 解压缩"|"生成遗传型可能性"|"生成遗传型识别"|"将 Bcf 转换为 Vcf"|"将 Vcf 转换为 Bcf"="索引 Fasta" )
 
 **说明:** 确定要运行的任务。 默认为“索引 Fasta”。
 
 #### Title
 
-**语法:** obj << Title
+**语法:** obj &lt;&lt; Title
 
 **说明:** 设置标题。
 
 #### Unthreaded
 
-**语法:** obj << Unthreaded( state=0|1 )
+**语法:** obj &lt;&lt; Unthreaded( state=0|1 )
 
 **说明:** 仅使用主线程进行计算
 
 #### Vcf Files
 
-**语法:** obj << Vcf Files
+**语法:** obj &lt;&lt; Vcf Files
 
 **说明:** 指定 VCF 文件。
 

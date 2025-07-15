@@ -24,7 +24,7 @@ seg = (frame << Find Seg( Lines Seg( 1 ) ));
 
 ### Child
 
-**Sintaxis:** seg2 = obj << Child
+**Sintaxis:** seg2 = obj &lt;&lt; Child
 
 **Descripción:** Devuelve el primer hijo del segmento de visualización.
 
@@ -41,7 +41,7 @@ seg << Child; // not many segs support children
 
 ### Class Name
 
-**Sintaxis:** classname = obj << Class Name
+**Sintaxis:** classname = obj &lt;&lt; Class Name
 
 **Descripción:** Devuelve el nombre de la clase de visualización correspondiente al segmento de visualización.
 
@@ -58,7 +58,7 @@ seg << Class Name;
 
 ### Clip Shape
 
-**Sintaxis:** seg << Clip Shape(Boundaries(Shape File, [ID(string)]) | Path([string] | [matrix]) | Empty())
+**Sintaxis:** seg &lt;&lt; Clip Shape(Boundaries(Shape File, [ID(string)]) | Path([string] | [matrix]) | Empty())
 
 **Descripción:** Recorta la geometría según la forma dada. La forma puede especificarse con una ruta o archivo de forma. Se puede especificar un ID opcional con un archivo de forma para seleccionar una única forma desde el archivo; de lo contrario, se utiliza la unión de todas las formas como región de corte. Se puede especificar una ruta de corte con una matriz N x 3 o con una representación de texto. Una matriz de ruta tiene tres columnas para x, y y marcas para cada punto de la ruta. Los valores de marca son 0 para control, 1 para movimiento, 2 para segmento lineal, 3 para segmento cúbico de Bézier, y son negativos si el punto también cierra la ruta. El texto de la ruta admite la sintaxis SVG.
 
@@ -88,7 +88,7 @@ cs << Clip Shape( Boundaries( "US States" ) );
 
 ### Delete
 
-**Sintaxis:** obj << Delete
+**Sintaxis:** obj &lt;&lt; Delete
 
 **Descripción:** Eliminar el segmento de visualización.
 
@@ -105,13 +105,13 @@ seg << Delete;
 
 ### First Value
 
-**Sintaxis:** obj << First Value( state=0|1 )
+**Sintaxis:** obj &lt;&lt; First Value( state=0|1 )
 
 **JMP Versión agregada:** 16
 
 ### Frame
 
-**Sintaxis:** FrameBox = obj << Frame
+**Sintaxis:** FrameBox = obj &lt;&lt; Frame
 
 **Descripción:** Devuelve el marco dentro del cual se encuentra el segmento de visualización.
 
@@ -128,7 +128,7 @@ seg << Frame;
 
 ### Get Clip Shape
 
-**Sintaxis:** obj << Get Clip Shape
+**Sintaxis:** obj &lt;&lt; Get Clip Shape
 
 **Descripción:** Devuelve la forma de corte actual
 
@@ -159,7 +159,7 @@ cs << Get Clip Shape();
 
 ### Get Connected
 
-**Sintaxis:** 0|1 = obj << Get Connected
+**Sintaxis:** 0|1 = obj &lt;&lt; Get Connected
 
 **Descripción:** Devuelve el estado de unión de todos los segmentos lineales del segmento de visualización.
 
@@ -176,7 +176,7 @@ seg << Get Connected;
 
 ### Get Description
 
-**Sintaxis:** description = obj << Get Description
+**Sintaxis:** description = obj &lt;&lt; Get Description
 
 **Descripción:** Obtiene la descripción del segmento de visualización.
 
@@ -193,7 +193,7 @@ seg << get description();
 
 ### Get Line
 
-**Sintaxis:** [x1 y1 x2 y2] = obj << Get Line( index )
+**Sintaxis:** [x1 y1 x2 y2] = obj &lt;&lt; Get Line( index )
 
 **Descripción:** Devuelve las coordenadas X e Y de la línea especificada.
 
@@ -210,7 +210,7 @@ seg << Get Line( 2 );
 
 ### Get Line Color
 
-**Sintaxis:** color = obj << Get Line Color
+**Sintaxis:** color = obj &lt;&lt; Get Line Color
 
 **Descripción:** Devuelve el color de las líneas.
 
@@ -227,7 +227,7 @@ seg << Get Line Color;
 
 ### Get Line Count
 
-**Sintaxis:** Number = obj << Get Line Count
+**Sintaxis:** Number = obj &lt;&lt; Get Line Count
 
 **Descripción:** Devuelve el número de líneas del segmento de visualización.
 
@@ -244,7 +244,7 @@ seg << Get Line Count;
 
 ### Get Line Style
 
-**Sintaxis:** pen style = obj << Get Line Style
+**Sintaxis:** pen style = obj &lt;&lt; Get Line Style
 
 **Descripción:** Devuelve el estilo de las líneas.
 
@@ -263,7 +263,7 @@ seg << Get Line Style;
 
 ### Get Line Width
 
-**Sintaxis:** number = obj << Get Line Width
+**Sintaxis:** number = obj &lt;&lt; Get Line Width
 
 **Descripción:** Devuelve el grosor de las líneas.
 
@@ -282,7 +282,7 @@ seg << Get Line Width;
 
 ### Get Lines
 
-**Sintaxis:** [x1 y1 x2 y2, ...] = obj << Get Lines
+**Sintaxis:** [x1 y1 x2 y2, ...] = obj &lt;&lt; Get Lines
 
 **Descripción:** Devuelve los valores de las coordenadas X e Y de todas las líneas.
 
@@ -299,13 +299,13 @@ seg << Get Lines;
 
 ### Last Value
 
-**Sintaxis:** obj << Last Value( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Last Value( state=0|1 )
 
 **JMP Versión agregada:** 16
 
 ### Line Color
 
-**Sintaxis:** obj << Line Color( color )
+**Sintaxis:** obj &lt;&lt; Line Color( color )
 
 **Descripción:** Establece el color de todas las líneas del segmento de visualización.
 
@@ -322,7 +322,7 @@ seg << Set Line Color( "Green" );
 
 ### Line Style
 
-**Sintaxis:** obj << Line Style( pen style )
+**Sintaxis:** obj &lt;&lt; Line Style( pen style )
 
 **Descripción:** Establece el estilo de las líneas. Las opciones son sólido, punteado, discontinuo, guión-punto y guión-punto-punto.
 
@@ -341,7 +341,7 @@ seg << Set Line Style( "Dotted" );
 
 ### Line Width
 
-**Sintaxis:** obj << Line Width( "1"|"2"|"3"|"4"|"5"|"6"|"Otro..." )
+**Sintaxis:** obj &lt;&lt; Line Width( "1"|"2"|"3"|"4"|"5"|"6"|"Otro..." )
 
 **Descripción:** Establece el grosor de las líneas.
 
@@ -360,25 +360,25 @@ seg << Set Line Width( 3 );
 
 ### Max Value
 
-**Sintaxis:** obj << Max Value( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Max Value( state=0|1 )
 
 **JMP Versión agregada:** 16
 
 ### Min Value
 
-**Sintaxis:** obj << Min Value( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Min Value( state=0|1 )
 
 **JMP Versión agregada:** 16
 
 ### Name
 
-**Sintaxis:** obj << Name( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Name( state=0|1 )
 
 **JMP Versión agregada:** 16
 
 ### Parent
 
-**Sintaxis:** seg2 = obj << Parent
+**Sintaxis:** seg2 = obj &lt;&lt; Parent
 
 **Descripción:** Devuelve el progenitor del segmento de visualización.
 
@@ -395,7 +395,7 @@ seg << Parent;
 
 ### Set Connected
 
-**Sintaxis:** obj << Set Connected( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Set Connected( state=0|1 )
 
 **Descripción:** Establece el estado de unión de todos los segmentos lineales del segmento de visualización
 
@@ -412,7 +412,7 @@ seg << Set Connected( 1 );
 
 ### Set Description
 
-**Sintaxis:** obj << Set Description( description )
+**Sintaxis:** obj &lt;&lt; Set Description( description )
 
 **Descripción:** Establece la descripción del segmento de visualización.
 
@@ -429,7 +429,7 @@ seg << set description( "my seg" );
 
 ### Set Line Color
 
-**Sintaxis:** obj << Set Line Color( color )
+**Sintaxis:** obj &lt;&lt; Set Line Color( color )
 
 **Descripción:** Establece el color de todas las líneas del segmento de visualización.
 
@@ -446,7 +446,7 @@ seg << Set Line Color( "Green" );
 
 ### Set Line Style
 
-**Sintaxis:** obj << Set Line Style( pen style )
+**Sintaxis:** obj &lt;&lt; Set Line Style( pen style )
 
 **Descripción:** Establece el estilo de las líneas. Las opciones son sólido, punteado, discontinuo, guión-punto y guión-punto-punto.
 
@@ -465,7 +465,7 @@ seg << Set Line Style( "Dotted" );
 
 ### Set Line Width
 
-**Sintaxis:** obj << Set Line Width( "1"|"2"|"3"|"4"|"5"|"6"|"Otro..." )
+**Sintaxis:** obj &lt;&lt; Set Line Width( "1"|"2"|"3"|"4"|"5"|"6"|"Otro..." )
 
 **Descripción:** Establece el grosor de las líneas.
 
@@ -484,7 +484,7 @@ seg << Set Line Width( 3 );
 
 ### Sib
 
-**Sintaxis:** seg2 = obj << Sib
+**Sintaxis:** seg2 = obj &lt;&lt; Sib
 
 **Descripción:** Devuelve el hermano del segmento de visualización.
 
@@ -501,7 +501,7 @@ seg << Sib;
 
 ### Sib Append
 
-**Sintaxis:** obj << Sib Append( seg2 )
+**Sintaxis:** obj &lt;&lt; Sib Append( seg2 )
 
 **Descripción:** Agrega un segmento de visualización inmediatamente después del segmento de visualización.
 
@@ -539,7 +539,7 @@ mapSeg << Sib Append( Line Seg( xval, yval, <<line color( "Green" ), <<line widt
 
 ### Sib Prepend
 
-**Sintaxis:** obj << Sib Prepend( seg2 )
+**Sintaxis:** obj &lt;&lt; Sib Prepend( seg2 )
 
 **Descripción:** Agrega un segmento de visualización inmediatamente antes del segmento de visualización.
 
@@ -571,9 +571,7 @@ seg << Sib Prepend( Line Seg( xval, yval, <<line color( "Green" ), <<line width(
 
 ### Enabled
 
-**Sintaxis:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**Sintaxis:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Descripción:** Un objeto que no esté habilitado no responderá a la entrada del teclado o el ratón. Esta propiedad la heredan los objetos hijo, por lo que un objeto contenedor que esté deshabilitado provocará que todos los objetos descendientes se deshabiliten.
 
@@ -605,9 +603,7 @@ New Window( "enabled",
 
 ### Get Enabled
 
-**Sintaxis:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**Sintaxis:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Descripción:** Un objeto que no esté habilitado no responderá a la entrada del teclado o el ratón. Esta propiedad la heredan los objetos hijo, por lo que un objeto contenedor que esté deshabilitado provocará que todos los objetos descendientes se deshabiliten.
 
@@ -639,7 +635,7 @@ New Window( "enabled",
 
 ### Get Namespace
 
-**Sintaxis:** obj << Get Namespace
+**Sintaxis:** obj &lt;&lt; Get Namespace
 
 **Descripción:** Devuelve el espacio de nombres asociado a este objeto de visualización.
 
@@ -657,7 +653,7 @@ Show( ns:x, x );
 
 ### Get Properties
 
-**Sintaxis:** obj << Get Properties
+**Sintaxis:** obj &lt;&lt; Get Properties
 
 **Descripción:** Devuelve un arreglo asociativo que contiene las propiedades del cuadro de visualización y sus valores.
 
@@ -671,7 +667,7 @@ bb << Get Properties;
 
 ### Get Property
 
-**Sintaxis:** obj << Get Property( "property" )
+**Sintaxis:** obj &lt;&lt; Get Property( "property" )
 
 **Descripción:** Devuelve la configuración actual de la property con nombre.
 
@@ -685,7 +681,7 @@ bb << Get Property( "Enabled" );
 
 ### Get Property List
 
-**Sintaxis:** obj << Get Property List
+**Sintaxis:** obj &lt;&lt; Get Property List
 
 **Descripción:** Devuelve una lista de propiedades que tiene el cuadro de visualización.
 
@@ -699,7 +695,7 @@ bb << Get Property List;
 
 ### Set Property
 
-**Sintaxis:** obj << Set Property( "property", value )
+**Sintaxis:** obj &lt;&lt; Set Property( "property", value )
 
 **Descripción:** Establece el valor de la property con nombre para el cuadro de visualización.
 

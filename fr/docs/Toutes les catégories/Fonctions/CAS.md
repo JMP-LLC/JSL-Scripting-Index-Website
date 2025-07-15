@@ -2,11 +2,9 @@
 
 
 
-## Fonctions
-
 ### CAS Connect
 
-**Syntaxe :** CAS Connect(<URL(...)>, <Username(...)>, <Password(...)>, <Prompt(Never | Always | IfNeeded)>, <Session("session id")>, <Proxy Server("http://my_proxy:80")>, <Proxy User("proxy_username")>, <Bypass Proxy("http://localhost:80")>, <Certificates(...)>, <Verify Certificates(1 | 0)>, <No Verify Certificates(1 | 0)>, <Timeout(seconds)>, <Authorization Method("Basic" | "Bearer")>)
+**Syntaxe :** CAS Connect(&lt;URL(...)&gt;, &lt;Username(...)&gt;, &lt;Password(...)&gt;, &lt;Prompt(Never | Always | IfNeeded)&gt;, &lt;Session("session id")&gt;, &lt;Proxy Server("http://my_proxy:80")&gt;, &lt;Proxy User("proxy_username")&gt;, &lt;Bypass Proxy("http://localhost:80")&gt;, &lt;Certificates(...)&gt;, &lt;Verify Certificates(1 | 0)&gt;, &lt;No Verify Certificates(1 | 0)&gt;, &lt;Timeout(seconds)&gt;, &lt;Authorization Method("Basic" | "Bearer")&gt;)
 
 **Description :** Se connecte à un nouveau serveur CAS. CAS Connect utilise l&apos;URL, le nom d&apos;utilisateur, les arguments de mot de passe et, en option, l&apos;invite et la session. L&apos;invite peut être IfNeeded, Always ou Never. L&apos;URL, le nom d&apos;utilisateur et le mot de passe peuvent être omis si l&apos;argument d&apos;invite est IfNeeded ou Always. La valeur par défaut pour l&apos;invite est Never. La session peut servir à se reconnecter à une session CAS existante. La session doit être valide pour l&apos;URL, le nom d&apos;utilisateur et le mot de passe utilisés pour la connexion. L&apos;argument facultatif Certificates est utile pour fournir des certificats de confiance à CAS pour les connexions https. L&apos;argument facultatif Verify Certificates ou No Verify Certificates est utile pour accepter temporairement les certificats auto-signés. L&apos;argument facultatif Proxy Server est utile pour fournir un hôte proxy dans un environnement proxy. L&apos;argument facultatif Proxy User est utile pour fournir des informations sur l&apos;utilisateur et le mot de passe pour un environnement proxy. L&apos;argument facultatif Bypass Proxy permet d&apos;ignorer le proxy pour certains hôtes. L&apos;argument facultatif Timeout définit une valeur de dépassement de temps pour les opérations de connexion à CAS. L&apos;argument facultatif Authorization Method spécifie comment JMP se connecte à CAS. Cela est dépendant du déploiement de CAS.
 
@@ -28,7 +26,7 @@ cas = CAS Connect(
 
 ### CAS Delete Table
 
-**Syntaxe :** CAS Delete Table(tablename, <remove>)
+**Syntaxe :** CAS Delete Table(tablename, &lt;remove&gt;)
 
 **Description :** Cette action supprime la table de données filesystem. La table de données en mémoire n&apos;est pas affectée. Spécifier Quiet supprimera les erreurs en cas de table de données inexistante. Spécifier remACs supprimera les commandes d&apos;accès pour une table de données. Spécifier Remove supprimera également la table de données de la mémoire.
 
@@ -72,7 +70,7 @@ CAS Disconnect();
 
 ### CAS Export Data
 
-**Syntaxe :** y = CAS Export Data(jmp_data_table, cas_libref, cas_dataset, <named_arguments>)
+**Syntaxe :** y = CAS Export Data(jmp_data_table, cas_libref, cas_dataset, &lt;named_arguments&gt;)
 
 **Description :** Exporte une table de données dans un serveur CAS. La table jmp_data_table est la table de données JMP à exporter, tandis que cas_libref et cas_dataset sont les emplacements cibles sur le serveur CAS. L&apos;argument nommé facultatif est Save(1|0). Lorsqu&apos;une table de données est exportée dans CAS, elle n&apos;est pas conservée dans le système de fichiers CAS, à moins que l&apos;option Enregistrer soit utilisée. La plupart des actions CAS se trouvent en mémoire.
 
@@ -93,7 +91,7 @@ CAS Export Data(
 
 ### CAS Get Data Sets
 
-**Syntaxe :** y = CAS Get Data Sets(<"caslib">)
+**Syntaxe :** y = CAS Get Data Sets(&lt;"caslib"&gt;)
 
 **Description :** Obtient une liste des ensembles de données CAS disponibles. Ces ensembles de données se trouvent dans le système de fichiers CAS. L&apos;argument facultatif limite la liste des ensembles de données dans la bibliothèque CAS. Si aucun argument n&apos;est spécifié, la liste contiendra le nom complet de l&apos;ensemble de données (library.dataset). Si l&apos;argument est utilisé, la liste sera une liste de noms d&apos;ensembles de données.
 
@@ -138,7 +136,7 @@ Show( libraries );
 
 ### CAS Import Data
 
-**Syntaxe :** dt = CAS Import Data(libref, dataset, <named_arguments>)
+**Syntaxe :** dt = CAS Import Data(libref, dataset, &lt;named_arguments&gt;)
 
 **Description :** Importe une table depuis un serveur CAS. Les arguments nommés facultatifs sont Invisible(0|1), Private(0|1) et UseLabelsForVarNames(0|1).
 
@@ -177,7 +175,7 @@ Show( connected );
 
 ### CAS Remove Table
 
-**Syntaxe :** CAS Remove Table(tablename, <delete>)
+**Syntaxe :** CAS Remove Table(tablename, &lt;delete&gt;)
 
 **Description :** Cette action supprime la table en mémoire. Le fichier qui avait été créé lors de la sauvegarde n&apos;est pas affecté. Cette action  entraînera également la suppression de la table dans le système de fichiers.
 
@@ -199,7 +197,7 @@ CAS Remove Table( "Casuser", "Big Class" );
 
 ### CAS Table To Data Table
 
-**Syntaxe :** dt = CAS Table To Data Table(jsonstring, <Invisible(1|0) | Private(1|0) | Use Labels for Var Names(1|0)>)
+**Syntaxe :** dt = CAS Table To Data Table(jsonstring, &lt;Invisible(1|0) | Private(1|0) | Use Labels for Var Names(1|0)&gt;)
 
 **Description :** Convertit un texte JSON de table de données CAS SAS en une table de données JMP.
 
@@ -510,7 +508,7 @@ cas << Submit( action );
 
 ### New CAS Server
 
-**Syntaxe :** cas = New CAS Server(<...>)
+**Syntaxe :** cas = New CAS Server(&lt;...&gt;)
 
 **Description :** Crée un nouveau serveur CAS.
 

@@ -2,11 +2,9 @@
 
 
 
-## 함수
-
 ### Beta Density
 
-**구문:** y = Beta Density( q, alpha, beta, <theta=0>, <sigma=1> )
+**구문:** y = Beta Density( q, alpha, beta, &lt;theta=0&gt;, &lt;sigma=1&gt; )
 
 **설명:** 베타 분포의 q에서의 밀도를 반환합니다. 여기서 q는 theta ~ theta + sigma 구간에 있습니다. alpha 및 beta는 형상 모수이고 theta 및 sigma는 각각 임계 및 범위 모수입니다.
 
@@ -34,7 +32,7 @@ New Window( "Example: Beta Density",
 
 ### Beta Distribution
 
-**구문:** p = Beta Distribution( q, alpha, beta, <theta=0>, <sigma=1> )
+**구문:** p = Beta Distribution( q, alpha, beta, &lt;theta=0&gt;, &lt;sigma=1&gt; )
 
 **설명:** 베타 분포 확률 변수가 q보다 작을 확률을 반환합니다. 여기서 alpha 및 beta는 형상 모수이고 theta 및 sigma는 각각 임계 및 범위 모수입니다.
 
@@ -62,7 +60,7 @@ New Window( "Example: Beta Distribution",
 
 ### Beta Quantile
 
-**구문:** q = Beta Quantile( p, alpha, beta, <theta=0>, <sigma=1> )
+**구문:** q = Beta Quantile( p, alpha, beta, &lt;theta=0&gt;, &lt;sigma=1&gt; )
 
 **설명:** 베타 분포에서 분위수를 반환합니다. 누적 확률이 p인 확률 변수의 값입니다. 여기서 alpha 및 beta는 형상 모수이고 theta 및 sigma는 각각 임계 및 범위 모수입니다.
 
@@ -77,7 +75,7 @@ Beta Quantile( 0.95, 2, 5 );
 
 ### Cauchy Density
 
-**구문:** y = Cauchy Density( q, <center>, <scale> )
+**구문:** y = Cauchy Density( q, &lt;center&gt;, &lt;scale&gt; )
 
 **설명:** Cauchy 분포(중심 mu 및 척도 sigma)의 q에서의 밀도를 반환합니다.
 
@@ -100,7 +98,7 @@ New Window( "Example: Cauchy Density",
 
 ### Cauchy Distribution
 
-**구문:** p = Cauchy Distribution( q, <center>, <scale> )
+**구문:** p = Cauchy Distribution( q, &lt;center&gt;, &lt;scale&gt; )
 
 **설명:** Cauchy 분포 확률 변수가 q보다 작을 확률을 반환합니다.
 
@@ -123,7 +121,7 @@ New Window( "Example: Cauchy Distribution",
 
 ### Cauchy Quantile
 
-**구문:** q = Cauchy Quantile( p, <center>, <scale> )
+**구문:** q = Cauchy Quantile( p, &lt;center&gt;, &lt;scale&gt; )
 
 **설명:** Cauchy 분포에서 분위수를 반환합니다. 누적 확률이 p인 확률 변수의 값입니다.
 
@@ -146,7 +144,7 @@ New Window( "Example: Cauchy Quantile",
 
 ### ChiSquare Density
 
-**구문:** p = ChiSquare Density( q, df, <nonCentrality=0> )
+**구문:** p = ChiSquare Density( q, df, &lt;nonCentrality=0&gt; )
 
 **설명:** 자유도가 df인 카이제곱 분포의 q에서의 밀도를 반환합니다.
 
@@ -172,7 +170,7 @@ New Window( "Example: ChiSquare Density",
 
 ### ChiSquare Distribution
 
-**구문:** p = ChiSquare Distribution( q, df, <nonCentrality=0> )
+**구문:** p = ChiSquare Distribution( q, df, &lt;nonCentrality=0&gt; )
 
 **설명:** 카이제곱 분포 확률 변수가 q보다 작을 확률을 반환합니다.
 
@@ -198,7 +196,7 @@ New Window( "Example: ChiSquare Distribution",
 
 ### ChiSquare Log CDistribution
 
-**구문:** y = ChiSquare Log CDistribution( x, df, <nonCentrality=0> )
+**구문:** y = ChiSquare Log CDistribution( x, df, &lt;nonCentrality=0&gt; )
 
 **설명:** 1 - 카이제곱 분포의 로그를 반환합니다.
 
@@ -224,7 +222,7 @@ New Window( "Example: ChiSquare Log CDistribution",
 
 ### ChiSquare Log Density
 
-**구문:** y = ChiSquare Log Density( x, df, <nonCentrality=0> )
+**구문:** y = ChiSquare Log Density( x, df, &lt;nonCentrality=0&gt; )
 
 **설명:** 카이제곱 확률 밀도의 로그를 반환합니다.
 
@@ -250,7 +248,7 @@ New Window( "Example: ChiSquare Log Density",
 
 ### ChiSquare Log Distribution
 
-**구문:** y = ChiSquare Log Distribution( x, df, <nonCentrality=0> )
+**구문:** y = ChiSquare Log Distribution( x, df, &lt;nonCentrality=0&gt; )
 
 **설명:** 카이제곱 분포의 로그를 반환합니다.
 
@@ -300,7 +298,7 @@ ChiSquare Noncentrality( 3, 2, ChiSquare Distribution( 3, 2, 0.5 ) );
 
 ### ChiSquare Quantile
 
-**구문:** q = ChiSquare Quantile( p, df, <nonCentrality=0> )
+**구문:** q = ChiSquare Quantile( p, df, &lt;nonCentrality=0&gt; )
 
 **설명:** 카이제곱 분포에서 분위수를 반환합니다. 누적 확률이 p인 확률 변수의 값입니다.
 
@@ -315,7 +313,7 @@ ChiSquare Quantile( 0.15, 5 );
 
 ### Dunnett P value
 
-**구문:** p = Dunnett P value( q, nTrt, dfe, <lambdaVec = .> )
+**구문:** p = Dunnett P value( q, nTrt, dfe, &lt;lambdaVec = .&gt; )
 
 **설명:** Dunnett 다중 비교 검정에서 얻은 p 값을 반환합니다. 여기서 q는 검정 통계량, nTrt는 대조군과 비교할 처리 수, dfe는 총 표본 수에 기반한 오차 자유도이며 선택적 lambdaVec는 모수의 벡터(기본적으로 1/sqrt(2)으로 설정됨)입니다.
 
@@ -330,7 +328,7 @@ Dunnett P value( 1.67623, 3, 11 );
 
 ### Dunnett Quantile
 
-**구문:** q = Dunnett Quantile( 1-alpha, nTrt, dfe, <lambdaVec = .> )
+**구문:** q = Dunnett Quantile( 1-alpha, nTrt, dfe, &lt;lambdaVec = .&gt; )
 
 **설명:** Dunnett 다중 비교 검정에 필요한 분위수를 반환합니다. 여기서 1-alpha는 신뢰 수준, nTrt는 대조군과 비교할 처리 수, dfe는 총 표본 수에 기반한 오차 자유도이며, 선택적 lambdaVec는 모수의 벡터(기본적으로 1/sqrt(2)로 설정됨)입니다.
 
@@ -414,7 +412,7 @@ New Window( "Example: ExGaussian Quantile",
 
 ### Exp Density
 
-**구문:** y = Exp Density( x, <theta=1> )
+**구문:** y = Exp Density( x, &lt;theta=1&gt; )
 
 **설명:** 모수가 theta인 지수 분포의 x에서의 밀도를 반환합니다.
 
@@ -437,7 +435,7 @@ New Window( "Example: Exp Density",
 
 ### Exp Distribution
 
-**구문:** p = Exp Distribution( x, <theta=1> )
+**구문:** p = Exp Distribution( x, &lt;theta=1&gt; )
 
 **설명:** 지수 분포를 따르는 확률 변수가 x보다 작을 확률을 반환합니다.
 
@@ -460,7 +458,7 @@ New Window( "Example: Exp Distribution",
 
 ### Exp Quantile
 
-**구문:** q = Exp Quantile( p, <theta=1> )
+**구문:** q = Exp Quantile( p, &lt;theta=1&gt; )
 
 **설명:** 지수 분포에서 분위수를 반환합니다. 누적 확률이 p인 확률 변수의 값입니다.
 
@@ -482,7 +480,7 @@ New Window( "Example: Exp Quantile",
 
 ### Exponential Density
 
-**구문:** y = Exponential Density( x, <theta=1> )
+**구문:** y = Exponential Density( x, &lt;theta=1&gt; )
 
 **설명:** 모수가 theta인 지수 분포의 x에서의 밀도를 반환합니다.
 
@@ -505,7 +503,7 @@ New Window( "Example: Exponential Density",
 
 ### Exponential Distribution
 
-**구문:** p = Exponential Distribution( x, <theta=1> )
+**구문:** p = Exponential Distribution( x, &lt;theta=1&gt; )
 
 **설명:** 지수 분포를 따르는 확률 변수가 x보다 작을 확률을 반환합니다.
 
@@ -528,7 +526,7 @@ New Window( "Example: Exponential Distribution",
 
 ### Exponential Quantile
 
-**구문:** q = Exponential Quantile( p, <theta=1> )
+**구문:** q = Exponential Quantile( p, &lt;theta=1&gt; )
 
 **설명:** 지수 분포에서 분위수를 반환합니다. 누적 확률이 p인 확률 변수의 값입니다.
 
@@ -550,7 +548,7 @@ New Window( "Example: Exponential Quantile",
 
 ### F Density
 
-**구문:** y = F Density( q, dfnum, dfden, <nonCentrality=0> )
+**구문:** y = F Density( q, dfnum, dfden, &lt;nonCentrality=0&gt; )
 
 **설명:** 분자의 자유도와 분모의 자유도가 각각 dfn과 dfd인 F 분포의 q에서의 밀도를 반환합니다.
 
@@ -578,7 +576,7 @@ New Window( "Example: F Density",
 
 ### F Distribution
 
-**구문:** y = F Distribution( q, dfnum, dfden, <nonCentrality=0> )
+**구문:** y = F Distribution( q, dfnum, dfden, &lt;nonCentrality=0&gt; )
 
 **설명:** F 분포 확률 변수가 q보다 작을 확률을 반환합니다.
 
@@ -606,7 +604,7 @@ New Window( "Example: F Distribution",
 
 ### F Log CDistribution
 
-**구문:** y = F Log CDistribution( x, dfnum, dfden, <nonCentrality=0> )
+**구문:** y = F Log CDistribution( x, dfnum, dfden, &lt;nonCentrality=0&gt; )
 
 **설명:** 1 - F 분포의 로그를 반환합니다.
 
@@ -634,7 +632,7 @@ New Window( "Example: F Log CDistribution",
 
 ### F Log Density
 
-**구문:** y = F Log Density( x, dfnum, dfden, <nonCentrality=0> )
+**구문:** y = F Log Density( x, dfnum, dfden, &lt;nonCentrality=0&gt; )
 
 **설명:** F 확률 밀도의 로그를 반환합니다.
 
@@ -662,7 +660,7 @@ New Window( "Example: F Log Density",
 
 ### F Log Distribution
 
-**구문:** y = F Log Distribution( x, dfnum, dfden, <nonCentrality=0> )
+**구문:** y = F Log Distribution( x, dfnum, dfden, &lt;nonCentrality=0&gt; )
 
 **설명:** F 분포의 로그를 반환합니다.
 
@@ -745,7 +743,7 @@ New Window( "Example: F Power (alpha=.05,dfh=5,dfm=5)",
 
 ### F Quantile
 
-**구문:** q = F Quantile( p, dfnum, dfden, <nonCentrality=0> )
+**구문:** q = F Quantile( p, dfnum, dfden, &lt;nonCentrality=0&gt; )
 
 **설명:** F 분포에서 분위수를 반환합니다. 누적 확률이 p인 확률 변수의 값입니다.
 
@@ -1000,7 +998,7 @@ New Window( "Example: GLog Quantile",
 
 ### Gamma Density
 
-**구문:** y = Gamma Density( q, <alpha=1>, <scale=1>, <threshold=0> )
+**구문:** y = Gamma Density( q, &lt;alpha=1&gt;, &lt;scale=1&gt;, &lt;threshold=0&gt; )
 
 **설명:** 감마 분포의 q에서의 밀도를 반환합니다. 여기서 alpha 형상 모수 인수는 양수여야 합니다.
 
@@ -1026,7 +1024,7 @@ New Window( "Example: Gamma Density",
 
 ### Gamma Distribution
 
-**구문:** p = Gamma Distribution( q, <alpha=1>, <scale=1>, <threshold=0> )
+**구문:** p = Gamma Distribution( q, &lt;alpha=1&gt;, &lt;scale=1&gt;, &lt;threshold=0&gt; )
 
 **설명:** 감마 분포 확률 변수가 q보다 작을 확률을 반환합니다. 여기서 alpha 형상 모수 인수는 양수여야 합니다. IGamma()는 Gamma Distribution()의 별칭 이름입니다. Gamma Distribution() 함수는 Gamma(alpha,q)/Gamma(alpha)와 동등합니다.
 
@@ -1052,7 +1050,7 @@ New Window( "Example: Gamma Distribution",
 
 ### Gamma Log CDistribution
 
-**구문:** p = Gamma Log CDistribution( x, <alpha=1>, <scale=1>, <threshold=0> )
+**구문:** p = Gamma Log CDistribution( x, &lt;alpha=1&gt;, &lt;scale=1&gt;, &lt;threshold=0&gt; )
 
 **설명:** 1 - 감마 분포의 로그를 반환합니다.
 
@@ -1078,7 +1076,7 @@ New Window( "Example: Gamma Log CDistribution",
 
 ### Gamma Log Density
 
-**구문:** y = Gamma Log Density( x, <alpha=1>, <scale=1>, <threshold=0> )
+**구문:** y = Gamma Log Density( x, &lt;alpha=1&gt;, &lt;scale=1&gt;, &lt;threshold=0&gt; )
 
 **설명:** 감마 확률 밀도의 로그를 반환합니다.
 
@@ -1104,7 +1102,7 @@ New Window( "Example: Gamma Log Density",
 
 ### Gamma Log Distribution
 
-**구문:** p = Gamma Log Distribution( x, <alpha=1>, <scale=1>, <threshold=0> )
+**구문:** p = Gamma Log Distribution( x, &lt;alpha=1&gt;, &lt;scale=1&gt;, &lt;threshold=0&gt; )
 
 **설명:** 감마 분포의 로그를 반환합니다.
 
@@ -1130,7 +1128,7 @@ New Window( "Example: Gamma Log Distribution",
 
 ### Gamma Quantile
 
-**구문:** q = Gamma Quantile( p, <alpha=1>, <scale=1>, <threshold=0> )
+**구문:** q = Gamma Quantile( p, &lt;alpha=1&gt;, &lt;scale=1&gt;, &lt;threshold=0&gt; )
 
 **설명:** 감마 분포에서 분위수를 반환합니다. 누적 확률이 p인 확률 변수의 값입니다.
 
@@ -1251,7 +1249,7 @@ New Window( "Example: GenGamma Quantile",
 
 ### IGamma
 
-**구문:** p = Gamma Distribution( q, <alpha=1>, <scale=1>, <threshold=0> )
+**구문:** p = Gamma Distribution( q, &lt;alpha=1&gt;, &lt;scale=1&gt;, &lt;threshold=0&gt; )
 
 **설명:** 감마 분포 확률 변수가 q보다 작을 확률을 반환합니다. 여기서 alpha 형상 모수 인수는 양수여야 합니다. IGamma()는 Gamma Distribution()의 별칭 이름입니다. Gamma Distribution() 함수는 Gamma(alpha,q)/Gamma(alpha)와 동등합니다.
 
@@ -1376,7 +1374,7 @@ Johnson Sb Quantile( 0.5, 0.5, 1, 1, 1 );
 
 ### Johnson Sl Density
 
-**구문:** y = Johnson Sl Density( q, gamma, delta, theta, <sigma=1> )
+**구문:** y = Johnson Sl Density( q, gamma, delta, theta, &lt;sigma=1&gt; )
 
 **설명:** Johnson Sl 분포의 q에서의 밀도를 반환합니다. 여기서 q는 theta ~ +∞ 구간에 있습니다. delta>0 및 gamma(-∞에서 +∞ 사이)는 형상 모수이고 sigma(+1 또는 -1과 같음)는 척도 모수이며 theta(-∞에서 +∞ 사이)는 임계 모수입니다. (참고: sigma = 1일 경우에는 theta가 분포에서 하한이고 sigma=-1일 경우에는 theta가 상한입니다. 또한 양수 sigma는 양수 왜도를 나타내고 음수 sigma는 음수 왜도를 나타냅니다.)
 
@@ -1421,7 +1419,7 @@ New Window( "Example: Johnson Sl Density",
 
 ### Johnson Sl Distribution
 
-**구문:** p = Johnson Sl Distribution( q, gamma, delta, theta, <sigma=1> )
+**구문:** p = Johnson Sl Distribution( q, gamma, delta, theta, &lt;sigma=1&gt; )
 
 **설명:** Johnson Sl 분포 확률 변수가 q보다 작을 확률을 반환합니다. (참고: 모수에 대한 설명은 Johnson Sl Density() 함수를 참조하십시오.)
 
@@ -1466,7 +1464,7 @@ New Window( "Example: Johnson Sl Distribution",
 
 ### Johnson Sl Quantile
 
-**구문:** q = Johnson Sl Quantile( p, gamma, delta, theta, <sigma=1> )
+**구문:** q = Johnson Sl Quantile( p, gamma, delta, theta, &lt;sigma=1&gt; )
 
 **설명:** Johnson Sl 분포에서 분위수를 반환합니다. 누적 확률이 p인 확률 변수의 값입니다. (참고: p는 첫 번째 모수입니다. 모수에 대한 설명은 Johnson Sl Density() 함수를 참조하십시오.)
 
@@ -2038,7 +2036,7 @@ New Window( "Example: Lognormal Quantile",
 
 ### Normal Biv Distribution
 
-**구문:** y = Normal Biv Distribution( x, y, r, <mu1=0>, <s1=1>, <mu2=0>, <s2=1> )
+**구문:** y = Normal Biv Distribution( x, y, r, &lt;mu1=0&gt;, &lt;s1=1&gt;, &lt;mu2=0&gt;, &lt;s2=1&gt; )
 
 **설명:** 관측값 (X, Y)가 (x, y)보다 작거나 같을 확률을 계산합니다. 여기서 r은 두 변수의 상관계수입니다. X는 평균 mu1 및 표준편차 s1의 주변 정규분포의 관측값이고 Y는 평균 mu2 및 표준편차 s2의 주변 정규분포의 관측값입니다. mu1, s1, mu2 및 s2가 제공되지 않으면 mu1=0, s1=1, mu2=0 및 s2=1을 사용하여 이변량 표준 정규 분포를 가정합니다.
 
@@ -2053,7 +2051,7 @@ Normal Biv Distribution( -2, -2, .5, 1, 1.5, -1, 2 );
 
 ### Normal Density
 
-**구문:** y = Normal Density( q, <mu=0>, <sigma=1> )
+**구문:** y = Normal Density( q, &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **설명:** 평균이 mu이고 표준편차가 sigma인 정규 분포의 q에서의 밀도를 반환합니다.
 
@@ -2076,7 +2074,7 @@ New Window( "Example: Normal Density",
 
 ### Normal Distribution
 
-**구문:** p = Normal Distribution( q, <mu=0>, <sigma=1> )
+**구문:** p = Normal Distribution( q, &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **설명:** 정규 분포 확률 변수가 q보다 작을 확률을 반환합니다.
 
@@ -2099,7 +2097,7 @@ New Window( "Example: Normal Distribution",
 
 ### Normal Log CDistribution
 
-**구문:** y = Normal Log CDistribution( x, <mean=0>, <std dev=1> )
+**구문:** y = Normal Log CDistribution( x, &lt;mean=0&gt;, &lt;std dev=1&gt; )
 
 **설명:** 평균이 mu이고 표준편차가 sigma인 x에서의 1 - 정규 분포의 로그를 반환합니다.
 
@@ -2122,7 +2120,7 @@ New Window( "Example: Normal Log CDistribution",
 
 ### Normal Log Density
 
-**구문:** y = Normal Log Density( x, <mu=0>, <sigma=1>)
+**구문:** y = Normal Log Density( x, &lt;mu=0&gt;, &lt;sigma=1&gt;)
 
 **설명:** 평균이 mu이고 표준편차가 sigma인 x에서의 정규 확률 밀도의 로그를 반환합니다.
 
@@ -2145,7 +2143,7 @@ New Window( "Example: Normal Log Density",
 
 ### Normal Log Distribution
 
-**구문:** y = Normal Log Distribution( x, <mean=0>, <std dev=1> )
+**구문:** y = Normal Log Distribution( x, &lt;mean=0&gt;, &lt;std dev=1&gt; )
 
 **설명:** 평균이 mu이고 표준편차가 sigma인 x에서의 정규 분포의 로그를 반환합니다.
 
@@ -2295,7 +2293,7 @@ New Window( "Example: Normal Mixture Quantile",
 
 ### Normal Quantile
 
-**구문:** q = Normal Quantile( p, <mu=0>, <sigma=1> ); q = Probit( p )
+**구문:** q = Normal Quantile( p, &lt;mu=0&gt;, &lt;sigma=1&gt; ); q = Probit( p )
 
 **설명:** 정규 분포에서 분위수를 반환합니다. 누적 확률이 p인 확률 변수의 값입니다.
 
@@ -2310,7 +2308,7 @@ Normal Quantile( 0.9 );
 
 ### Probit
 
-**구문:** q = Normal Quantile( p, <mu=0>, <sigma=1> ); q = Probit( p )
+**구문:** q = Normal Quantile( p, &lt;mu=0&gt;, &lt;sigma=1&gt; ); q = Probit( p )
 
 **설명:** 정규 분포에서 분위수를 반환합니다. 누적 확률이 p인 확률 변수의 값입니다.
 
@@ -2539,7 +2537,7 @@ SHASH Quantile( .5, 1, 2, 3, 1 );
 
 ### Students t Density
 
-**구문:** p = t Density( q, df, <nonCentrality=0> )
+**구문:** p = t Density( q, df, &lt;nonCentrality=0&gt; )
 
 **설명:** 스튜던트 t의 밀도 함수를 반환합니다.
 
@@ -2571,7 +2569,7 @@ New Window( "Example: Students t Density",
 
 ### Students t Distribution
 
-**구문:** p = t Distribution( q, df, <nonCentrality=0> )
+**구문:** p = t Distribution( q, df, &lt;nonCentrality=0&gt; )
 
 **설명:** 스튜던트 t 확률 변수가 q보다 작을 확률을 반환합니다.
 
@@ -2597,7 +2595,7 @@ New Window( "Example: Students t Distribution",
 
 ### Students t Quantile
 
-**구문:** q = t Quantile( p, df, <nonCentrality=0> )
+**구문:** q = t Quantile( p, df, &lt;nonCentrality=0&gt; )
 
 **설명:** 스튜던트 t-검정에서 분위수를 반환합니다. 누적 확률이 p인 확률 변수의 값입니다.
 
@@ -2682,7 +2680,7 @@ New Window( "Example: Tukey HSD Quantile",
 
 ### Weibull Density
 
-**구문:** y = Weibull Density( x, shape, <scale=1>, <threshold=0> )
+**구문:** y = Weibull Density( x, shape, &lt;scale=1&gt;, &lt;threshold=0&gt; )
 
 **설명:** 모수가 shape이고 선택적 모수가 scale인 Weibull 확률 분포의 x에서의 밀도를 반환합니다.
 
@@ -2708,7 +2706,7 @@ New Window( "Example: Weibull Density",
 
 ### Weibull Distribution
 
-**구문:** p = Weibull Distribution( x, shape, <scale=1>, <threshold=0> )
+**구문:** p = Weibull Distribution( x, shape, &lt;scale=1&gt;, &lt;threshold=0&gt; )
 
 **설명:** 모수가 shape이고 선택적 모수가 scale인 Weibull 분포 확률 변수가 x보다 작을 확률을 반환합니다.
 
@@ -2734,7 +2732,7 @@ New Window( "Example: Weibull Distribution",
 
 ### Weibull Quantile
 
-**구문:** q = Weibull Quantile( p, beta, <alpha=1>, <threshold=0> )
+**구문:** q = Weibull Quantile( p, beta, &lt;alpha=1&gt;, &lt;threshold=0&gt; )
 
 **설명:** Weibull 분포에서 분위수를 반환합니다. 누적 확률이 p인 확률 변수의 값입니다. 여기서 beta 및 alpha는 각각 형상 및 척도 모수입니다.
 
@@ -2764,7 +2762,7 @@ New Window( "Example: Weibull Quantile",
 
 ### t Density
 
-**구문:** p = t Density( q, df, <nonCentrality=0> )
+**구문:** p = t Density( q, df, &lt;nonCentrality=0&gt; )
 
 **설명:** 스튜던트 t의 밀도 함수를 반환합니다.
 
@@ -2796,7 +2794,7 @@ New Window( "Example: Students t Density",
 
 ### t Distribution
 
-**구문:** p = t Distribution( q, df, <nonCentrality=0> )
+**구문:** p = t Distribution( q, df, &lt;nonCentrality=0&gt; )
 
 **설명:** 스튜던트 t 확률 변수가 q보다 작을 확률을 반환합니다.
 
@@ -2822,7 +2820,7 @@ New Window( "Example: Students t Distribution",
 
 ### t Log CDistribution
 
-**구문:** y = t Log CDistribution( x, df, <nc> )
+**구문:** y = t Log CDistribution( x, df, &lt;nc&gt; )
 
 **설명:** 1 - t 분포의 로그를 반환합니다.
 
@@ -2848,7 +2846,7 @@ New Window( "Example: Students t Log CDistribution",
 
 ### t Log Density
 
-**구문:** y = t Log Density( x, df, <nc> )
+**구문:** y = t Log Density( x, df, &lt;nc&gt; )
 
 **설명:** t 확률 밀도의 로그를 반환합니다.
 
@@ -2874,7 +2872,7 @@ New Window( "Example: Students t Log Density",
 
 ### t Log Distribution
 
-**구문:** y = t Log Distribution( x, df, <nc> )
+**구문:** y = t Log Distribution( x, df, &lt;nc&gt; )
 
 **설명:** t 분포의 로그를 반환합니다.
 
@@ -2924,7 +2922,7 @@ t Distribution( 3, 2, t Noncentrality( 3, 2, 0.5 ) );
 
 ### t Quantile
 
-**구문:** q = t Quantile( p, df, <nonCentrality=0> )
+**구문:** q = t Quantile( p, df, &lt;nonCentrality=0&gt; )
 
 **설명:** 스튜던트 t-검정에서 분위수를 반환합니다. 누적 확률이 p인 확률 변수의 값입니다.
 

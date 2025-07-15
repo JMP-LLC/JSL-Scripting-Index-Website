@@ -6,7 +6,7 @@
 
 ### Hist Seg
 
-**Sintaxis:** b = Hist Seg([data], <[freq data]>,<[weight data]>, <vertical=0|1>, <Row States()>)
+**Sintaxis:** b = Hist Seg([data], &lt;[freq data]&gt;,&lt;[weight data]&gt;, &lt;vertical=0|1&gt;, &lt;Row States()&gt;)
 
 **Descripción:** Devuelve un segmento de histograma.
 
@@ -32,7 +32,7 @@ seg = (frame << Find Seg( Hist Seg( 1 ) ));
 
 ### Child
 
-**Sintaxis:** seg2 = obj << Child
+**Sintaxis:** seg2 = obj &lt;&lt; Child
 
 **Descripción:** Devuelve el primer hijo del segmento de visualización.
 
@@ -57,7 +57,7 @@ seg << Child; // not many segs support children
 
 ### Class Name
 
-**Sintaxis:** classname = obj << Class Name
+**Sintaxis:** classname = obj &lt;&lt; Class Name
 
 **Descripción:** Devuelve el nombre de la clase de visualización correspondiente al segmento de visualización.
 
@@ -82,7 +82,7 @@ seg << Class Name;
 
 ### Clip Shape
 
-**Sintaxis:** seg << Clip Shape(Boundaries(Shape File, [ID(string)]) | Path([string] | [matrix]) | Empty())
+**Sintaxis:** seg &lt;&lt; Clip Shape(Boundaries(Shape File, [ID(string)]) | Path([string] | [matrix]) | Empty())
 
 **Descripción:** Recorta la geometría según la forma dada. La forma puede especificarse con una ruta o archivo de forma. Se puede especificar un ID opcional con un archivo de forma para seleccionar una única forma desde el archivo; de lo contrario, se utiliza la unión de todas las formas como región de corte. Se puede especificar una ruta de corte con una matriz N x 3 o con una representación de texto. Una matriz de ruta tiene tres columnas para x, y y marcas para cada punto de la ruta. Los valores de marca son 0 para control, 1 para movimiento, 2 para segmento lineal, 3 para segmento cúbico de Bézier, y son negativos si el punto también cierra la ruta. El texto de la ruta admite la sintaxis SVG.
 
@@ -112,7 +112,7 @@ cs << Clip Shape( Boundaries( "US States" ) );
 
 ### Delete
 
-**Sintaxis:** obj << Delete
+**Sintaxis:** obj &lt;&lt; Delete
 
 **Descripción:** Eliminar el segmento de visualización.
 
@@ -137,7 +137,7 @@ seg << Delete;
 
 ### Frame
 
-**Sintaxis:** FrameBox = obj << Frame
+**Sintaxis:** FrameBox = obj &lt;&lt; Frame
 
 **Descripción:** Devuelve el marco dentro del cual se encuentra el segmento de visualización.
 
@@ -162,7 +162,7 @@ seg << Frame;
 
 ### Get Clip Shape
 
-**Sintaxis:** obj << Get Clip Shape
+**Sintaxis:** obj &lt;&lt; Get Clip Shape
 
 **Descripción:** Devuelve la forma de corte actual
 
@@ -193,7 +193,7 @@ cs << Get Clip Shape();
 
 ### Get Description
 
-**Sintaxis:** description = obj << Get Description
+**Sintaxis:** description = obj &lt;&lt; Get Description
 
 **Descripción:** Obtiene la descripción del segmento de visualización.
 
@@ -218,7 +218,7 @@ seg << get description();
 
 ### Get Fill Pattern
 
-**Sintaxis:** obj << Get Fill Pattern
+**Sintaxis:** obj &lt;&lt; Get Fill Pattern
 
 ```jsl
 
@@ -241,7 +241,7 @@ seg << Get Fill Pattern;
 
 ### Get Line Color
 
-**Sintaxis:** color = obj << Get Line Color( color )
+**Sintaxis:** color = obj &lt;&lt; Get Line Color( color )
 
 **Descripción:** Obtiene el color de los recuadros de las barras.
 
@@ -266,7 +266,7 @@ seg << Get Line Color;
 
 ### Get Line Style
 
-**Sintaxis:** linestyle = obj << Get Line Style( pen style )
+**Sintaxis:** linestyle = obj &lt;&lt; Get Line Style( pen style )
 
 **Descripción:** Obtiene el estilo de línea de los recuadros de las barras.
 
@@ -291,7 +291,7 @@ seg << Get Line Style;
 
 ### Get Line Width
 
-**Sintaxis:** integer = obj << Get Line Width( number )
+**Sintaxis:** integer = obj &lt;&lt; Get Line Width( number )
 
 **Descripción:** Obtiene el ancho de los recuadros de las barras.
 
@@ -316,7 +316,7 @@ seg << Get Line Width;
 
 ### Get Transparency
 
-**Sintaxis:** 0.0 to 1.0 = obj << Get Transparency( number )
+**Sintaxis:** 0.0 to 1.0 = obj &lt;&lt; Get Transparency( number )
 
 **Descripción:** Obtiene la transparencia del segmento de histograma.
 
@@ -341,7 +341,7 @@ seg << Get Transparency;
 
 ### Histogram Color
 
-**Sintaxis:** obj << Histogram Color( color )
+**Sintaxis:** obj &lt;&lt; Histogram Color( color )
 
 **Descripción:** Establece el color de las barras del histograma.
 
@@ -366,7 +366,7 @@ seg << Histogram Color( "Red" );
 
 ### Line Color
 
-**Sintaxis:** obj << Line Color( color )
+**Sintaxis:** obj &lt;&lt; Line Color( color )
 
 **Descripción:** Establece el color de los recuadros de las barras.
 
@@ -391,7 +391,7 @@ seg << Set Line Color( "Green" );
 
 ### Line Style
 
-**Sintaxis:** obj << Line Style( Estilo de línea )
+**Sintaxis:** obj &lt;&lt; Line Style( Estilo de línea )
 
 **Descripción:** Establece el estilo de línea de los recuadros de las barras.
 
@@ -416,7 +416,7 @@ seg << Set Line Style( "dashed" );
 
 ### Line Width
 
-**Sintaxis:** obj << Line Width( integer )
+**Sintaxis:** obj &lt;&lt; Line Width( integer )
 
 **Descripción:** Establece el ancho de los recuadros de las barras.
 
@@ -441,7 +441,7 @@ seg << Set Line Width( 3 );
 
 ### Parent
 
-**Sintaxis:** seg2 = obj << Parent
+**Sintaxis:** seg2 = obj &lt;&lt; Parent
 
 **Descripción:** Devuelve el progenitor del segmento de visualización.
 
@@ -466,7 +466,7 @@ seg << Parent;
 
 ### Save Color Preference
 
-**Sintaxis:** obj << Save Color Preference
+**Sintaxis:** obj &lt;&lt; Save Color Preference
 
 **Descripción:** Establece el color actual de las barras como predeterminado para las barras de histograma.
 
@@ -491,7 +491,7 @@ seg << Save Color Preference;
 
 ### Set Description
 
-**Sintaxis:** obj << Set Description( description )
+**Sintaxis:** obj &lt;&lt; Set Description( description )
 
 **Descripción:** Establece la descripción del segmento de visualización.
 
@@ -516,7 +516,7 @@ seg << set description( "my seg" );
 
 ### Set Fill Pattern
 
-**Sintaxis:** obj << Set Fill Pattern
+**Sintaxis:** obj &lt;&lt; Set Fill Pattern
 
 ```jsl
 
@@ -539,7 +539,7 @@ seg << Set Fill Pattern( "h wave medium" );
 
 ### Set Line Color
 
-**Sintaxis:** obj << Set Line Color( color )
+**Sintaxis:** obj &lt;&lt; Set Line Color( color )
 
 **Descripción:** Establece el color de los recuadros de las barras.
 
@@ -564,7 +564,7 @@ seg << Set Line Color( "Green" );
 
 ### Set Line Style
 
-**Sintaxis:** obj << Set Line Style( Estilo de línea )
+**Sintaxis:** obj &lt;&lt; Set Line Style( Estilo de línea )
 
 **Descripción:** Establece el estilo de línea de los recuadros de las barras.
 
@@ -589,7 +589,7 @@ seg << Set Line Style( "dashed" );
 
 ### Set Line Width
 
-**Sintaxis:** obj << Set Line Width( integer )
+**Sintaxis:** obj &lt;&lt; Set Line Width( integer )
 
 **Descripción:** Establece el ancho de los recuadros de las barras.
 
@@ -614,7 +614,7 @@ seg << Set Line Width( 3 );
 
 ### Set Transparency
 
-**Sintaxis:** obj << Set Transparency( 0.0 to 1.0 )
+**Sintaxis:** obj &lt;&lt; Set Transparency( 0.0 to 1.0 )
 
 **Descripción:** Establece la transparencia del segmento de histograma.
 
@@ -639,7 +639,7 @@ seg << Set Transparency( .5 );
 
 ### Sib
 
-**Sintaxis:** seg2 = obj << Sib
+**Sintaxis:** seg2 = obj &lt;&lt; Sib
 
 **Descripción:** Devuelve el hermano del segmento de visualización.
 
@@ -664,7 +664,7 @@ seg << Sib;
 
 ### Sib Append
 
-**Sintaxis:** obj << Sib Append( seg2 )
+**Sintaxis:** obj &lt;&lt; Sib Append( seg2 )
 
 **Descripción:** Agrega un segmento de visualización inmediatamente después del segmento de visualización.
 
@@ -702,7 +702,7 @@ mapSeg << Sib Append( Line Seg( xval, yval, <<line color( "Green" ), <<line widt
 
 ### Sib Prepend
 
-**Sintaxis:** obj << Sib Prepend( seg2 )
+**Sintaxis:** obj &lt;&lt; Sib Prepend( seg2 )
 
 **Descripción:** Agrega un segmento de visualización inmediatamente antes del segmento de visualización.
 
@@ -740,7 +740,7 @@ seg << Sib Prepend( Line Seg( xval, yval, <<line color( "Green" ), <<line width(
 
 ### Subset
 
-**Sintaxis:** obj << Subset
+**Sintaxis:** obj &lt;&lt; Subset
 
 **Descripción:** Crea una tabla de datos de subconjunto basada en la selección actual.
 
@@ -765,7 +765,7 @@ seg << Subset;
 
 ### Transparency
 
-**Sintaxis:** obj << Transparency( 0.0 to 1.0 )
+**Sintaxis:** obj &lt;&lt; Transparency( 0.0 to 1.0 )
 
 **Descripción:** Establece la transparencia del segmento de histograma.
 
@@ -792,9 +792,7 @@ seg << Set Transparency( .5 );
 
 ### Enabled
 
-**Sintaxis:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**Sintaxis:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Descripción:** Un objeto que no esté habilitado no responderá a la entrada del teclado o el ratón. Esta propiedad la heredan los objetos hijo, por lo que un objeto contenedor que esté deshabilitado provocará que todos los objetos descendientes se deshabiliten.
 
@@ -826,9 +824,7 @@ New Window( "enabled",
 
 ### Get Enabled
 
-**Sintaxis:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**Sintaxis:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Descripción:** Un objeto que no esté habilitado no responderá a la entrada del teclado o el ratón. Esta propiedad la heredan los objetos hijo, por lo que un objeto contenedor que esté deshabilitado provocará que todos los objetos descendientes se deshabiliten.
 
@@ -860,7 +856,7 @@ New Window( "enabled",
 
 ### Get Namespace
 
-**Sintaxis:** obj << Get Namespace
+**Sintaxis:** obj &lt;&lt; Get Namespace
 
 **Descripción:** Devuelve el espacio de nombres asociado a este objeto de visualización.
 
@@ -878,7 +874,7 @@ Show( ns:x, x );
 
 ### Get Properties
 
-**Sintaxis:** obj << Get Properties
+**Sintaxis:** obj &lt;&lt; Get Properties
 
 **Descripción:** Devuelve un arreglo asociativo que contiene las propiedades del cuadro de visualización y sus valores.
 
@@ -892,7 +888,7 @@ bb << Get Properties;
 
 ### Get Property
 
-**Sintaxis:** obj << Get Property( "property" )
+**Sintaxis:** obj &lt;&lt; Get Property( "property" )
 
 **Descripción:** Devuelve la configuración actual de la property con nombre.
 
@@ -906,7 +902,7 @@ bb << Get Property( "Enabled" );
 
 ### Get Property List
 
-**Sintaxis:** obj << Get Property List
+**Sintaxis:** obj &lt;&lt; Get Property List
 
 **Descripción:** Devuelve una lista de propiedades que tiene el cuadro de visualización.
 
@@ -920,7 +916,7 @@ bb << Get Property List;
 
 ### Set Property
 
-**Sintaxis:** obj << Set Property( "property", value )
+**Sintaxis:** obj &lt;&lt; Set Property( "property", value )
 
 **Descripción:** Establece el valor de la property con nombre para el cuadro de visualización.
 

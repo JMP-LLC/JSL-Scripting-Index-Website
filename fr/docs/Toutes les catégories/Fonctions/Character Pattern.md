@@ -2,8 +2,6 @@
 
 
 
-## Fonctions
-
 ### Pat Abort
 
 **Syntaxe :** Pat Abort()
@@ -261,7 +259,7 @@ result;
 
 ### Pat Look Ahead
 
-**Syntaxe :** Pat Look Ahead( pattern, <0|1> )
+**Syntaxe :** Pat Look Ahead( pattern, &lt;0|1&gt; )
 
 **Description :** Une correspondance de largeur zéro après la position actuelle. Le deuxième argument facultatif prend par défaut la valeur zéro. 1 désigne une correspondance négative, ou une absence de correspondance.
 
@@ -316,7 +314,7 @@ While( /* keep repeating the match until it won't match */
 
 ### Pat Look Behind
 
-**Syntaxe :** Pat Look Behind( pattern, <0|1> )
+**Syntaxe :** Pat Look Behind( pattern, &lt;0|1&gt; )
 
 **Description :** Une correspondance de largeur zéro avant la position actuelle. Le deuxième argument facultatif prend par défaut la valeur zéro. 1 désigne une correspondance négative, ou une absence de correspondance.
 
@@ -371,7 +369,7 @@ While( /* keep repeating the match until it won't match */
 
 ### Pat Match
 
-**Syntaxe :** Pat Match( source, pattern, <replacement> )
+**Syntaxe :** Pat Match( source, pattern, &lt;replacement&gt; )
 
 **Description :** Exécute la correspondance de configuration dans la variable pattern sur la chaîne dans la variable source ; le texte de remplacement replacement facultatif remplace le texte correspondant.
 
@@ -500,7 +498,7 @@ result;
 
 ### Pat Repeat
 
-**Syntaxe :** Pat Repeat( pattern, <min=1>, <max=infinity>, <GREEDY or RELUCTANT=GREEDY> )
+**Syntaxe :** Pat Repeat( pattern, &lt;min=1&gt;, &lt;max=infinity&gt;, &lt;GREEDY or RELUCTANT=GREEDY&gt; )
 
 **Description :** Génère une valeur de configuration qui correspond à la configuration donnée entre min et max fois.
 
@@ -625,7 +623,7 @@ string;
 
 ### Regex Match
 
-**Syntaxe :** Regex Match( source, pattern, <replacement | NULL>, <MATCHCASE> )
+**Syntaxe :** Regex Match( source, pattern, &lt;replacement | NULL&gt;, &lt;MATCHCASE&gt; )
 
 **Description :** Exécute un appariement d&apos;expression régulière et renvoie une liste de l&apos;ensemble du texte apparié ainsi que les appariements pour chaque référence inverse créée par une parenthèse ouverte. Le troisième argument peut éventuellement spécifier une chaîne de remplacement pour l&apos;ensemble de l&apos;appariement ; la chaîne de remplacement peut utiliser des références inverses.
 

@@ -6,9 +6,7 @@
 
 ### Enabled
 
-**语法:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**语法:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **说明:** 未启用的对象不会响应键盘或鼠标输入。子对象会继承该属性，所以禁用的容器对象会导致所有子孙对象都被禁用。
 
@@ -40,9 +38,7 @@ New Window( "enabled",
 
 ### Get Enabled
 
-**语法:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**语法:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **说明:** 未启用的对象不会响应键盘或鼠标输入。子对象会继承该属性，所以禁用的容器对象会导致所有子孙对象都被禁用。
 
@@ -74,7 +70,7 @@ New Window( "enabled",
 
 ### Get Namespace
 
-**语法:** obj << Get Namespace
+**语法:** obj &lt;&lt; Get Namespace
 
 **说明:** 返回与该显示对象关联的命名空间。
 
@@ -92,7 +88,7 @@ Show( ns:x, x );
 
 ### Get Properties
 
-**语法:** obj << Get Properties
+**语法:** obj &lt;&lt; Get Properties
 
 **说明:** 返回包含显示框的属性及其值的关联数组。
 
@@ -106,7 +102,7 @@ bb << Get Properties;
 
 ### Get Property
 
-**语法:** obj << Get Property( "property" )
+**语法:** obj &lt;&lt; Get Property( "property" )
 
 **说明:** 返回已命名的“property”的当前设置。
 
@@ -120,7 +116,7 @@ bb << Get Property( "Enabled" );
 
 ### Get Property List
 
-**语法:** obj << Get Property List
+**语法:** obj &lt;&lt; Get Property List
 
 **说明:** 返回显示框具有的属性列表。
 
@@ -134,7 +130,7 @@ bb << Get Property List;
 
 ### Set Property
 
-**语法:** obj << Set Property( "property", value )
+**语法:** obj &lt;&lt; Set Property( "property", value )
 
 **说明:** 设置显示框的已命名的“property”的值。
 
@@ -168,7 +164,7 @@ seg = (frame << Find Seg( Lines Seg( 1 ) ));
 
 ### Child
 
-**语法:** seg2 = obj << Child
+**语法:** seg2 = obj &lt;&lt; Child
 
 **说明:** 返回显示段的第一个子级。
 
@@ -185,7 +181,7 @@ seg << Child; // not many segs support children
 
 ### Class Name
 
-**语法:** classname = obj << Class Name
+**语法:** classname = obj &lt;&lt; Class Name
 
 **说明:** 返回显示段的显示类的名称。
 
@@ -202,7 +198,7 @@ seg << Class Name;
 
 ### Clip Shape
 
-**语法:** seg << Clip Shape(Boundaries(Shape File, [ID(string)]) | Path([string] | [matrix]) | Empty())
+**语法:** seg &lt;&lt; Clip Shape(Boundaries(Shape File, [ID(string)]) | Path([string] | [matrix]) | Empty())
 
 **说明:** 按给定形状剪切几何形状。可以使用形状文件或路径指定形状。可以使用形状文件指定可选 ID 以从文件中选择单个形状，否则所有形状的合集用作剪切区域。可以使用 N x 3 矩阵或文本表示法来指定剪切路径。路径矩阵包含三列（x、y 和标志），用于指定路径上的各点。标志值为 0 表示控制，为 1 表示移动，为 2 表示线段，为 3 表示三次 Bézier 线段，还可为负值（若该点还起到闭合路径的作用）。路径文本支持 SVG 语法。
 
@@ -232,7 +228,7 @@ cs << Clip Shape( Boundaries( "US States" ) );
 
 ### Delete
 
-**语法:** obj << Delete
+**语法:** obj &lt;&lt; Delete
 
 **说明:** 删除显示段。
 
@@ -249,13 +245,13 @@ seg << Delete;
 
 ### First Value
 
-**语法:** obj << First Value( state=0|1 )
+**语法:** obj &lt;&lt; First Value( state=0|1 )
 
 **JMP添加的版本:** 16
 
 ### Frame
 
-**语法:** FrameBox = obj << Frame
+**语法:** FrameBox = obj &lt;&lt; Frame
 
 **说明:** 返回显示段所在的框架框。
 
@@ -272,7 +268,7 @@ seg << Frame;
 
 ### Get Clip Shape
 
-**语法:** obj << Get Clip Shape
+**语法:** obj &lt;&lt; Get Clip Shape
 
 **说明:** 返回当前的剪切形状
 
@@ -303,7 +299,7 @@ cs << Get Clip Shape();
 
 ### Get Connected
 
-**语法:** 0|1 = obj << Get Connected
+**语法:** 0|1 = obj &lt;&lt; Get Connected
 
 **说明:** 返回显示段中所有线段的连接状态。
 
@@ -320,7 +316,7 @@ seg << Get Connected;
 
 ### Get Description
 
-**语法:** description = obj << Get Description
+**语法:** description = obj &lt;&lt; Get Description
 
 **说明:** 获取显示段的说明。
 
@@ -337,7 +333,7 @@ seg << get description();
 
 ### Get Line
 
-**语法:** [x1 y1 x2 y2] = obj << Get Line( index )
+**语法:** [x1 y1 x2 y2] = obj &lt;&lt; Get Line( index )
 
 **说明:** 返回指定线条的 X 和 Y 坐标。
 
@@ -354,7 +350,7 @@ seg << Get Line( 2 );
 
 ### Get Line Color
 
-**语法:** color = obj << Get Line Color
+**语法:** color = obj &lt;&lt; Get Line Color
 
 **说明:** 返回线条的颜色。
 
@@ -371,7 +367,7 @@ seg << Get Line Color;
 
 ### Get Line Count
 
-**语法:** Number = obj << Get Line Count
+**语法:** Number = obj &lt;&lt; Get Line Count
 
 **说明:** 返回显示段中的线条数。
 
@@ -388,7 +384,7 @@ seg << Get Line Count;
 
 ### Get Line Style
 
-**语法:** pen style = obj << Get Line Style
+**语法:** pen style = obj &lt;&lt; Get Line Style
 
 **说明:** 返回线条的样式。
 
@@ -407,7 +403,7 @@ seg << Get Line Style;
 
 ### Get Line Width
 
-**语法:** number = obj << Get Line Width
+**语法:** number = obj &lt;&lt; Get Line Width
 
 **说明:** 返回线条的宽度。
 
@@ -426,7 +422,7 @@ seg << Get Line Width;
 
 ### Get Lines
 
-**语法:** [x1 y1 x2 y2, ...] = obj << Get Lines
+**语法:** [x1 y1 x2 y2, ...] = obj &lt;&lt; Get Lines
 
 **说明:** 返回所有线条的 X 和 Y 坐标值。
 
@@ -443,13 +439,13 @@ seg << Get Lines;
 
 ### Last Value
 
-**语法:** obj << Last Value( state=0|1 )
+**语法:** obj &lt;&lt; Last Value( state=0|1 )
 
 **JMP添加的版本:** 16
 
 ### Line Color
 
-**语法:** obj << Line Color( color )
+**语法:** obj &lt;&lt; Line Color( color )
 
 **说明:** 设置显示段中所有线条的颜色。
 
@@ -466,7 +462,7 @@ seg << Set Line Color( "Green" );
 
 ### Line Style
 
-**语法:** obj << Line Style( pen style )
+**语法:** obj &lt;&lt; Line Style( pen style )
 
 **说明:** 设置线条的样式。选项包括“实线”、“点线”、“虚线”、“点划线”和“双点划线”。
 
@@ -485,7 +481,7 @@ seg << Set Line Style( "Dotted" );
 
 ### Line Width
 
-**语法:** obj << Line Width( "1"|"2"|"3"|"4"|"5"|"6"|"其他..." )
+**语法:** obj &lt;&lt; Line Width( "1"|"2"|"3"|"4"|"5"|"6"|"其他..." )
 
 **说明:** 设置线条的宽度。
 
@@ -504,25 +500,25 @@ seg << Set Line Width( 3 );
 
 ### Max Value
 
-**语法:** obj << Max Value( state=0|1 )
+**语法:** obj &lt;&lt; Max Value( state=0|1 )
 
 **JMP添加的版本:** 16
 
 ### Min Value
 
-**语法:** obj << Min Value( state=0|1 )
+**语法:** obj &lt;&lt; Min Value( state=0|1 )
 
 **JMP添加的版本:** 16
 
 ### Name
 
-**语法:** obj << Name( state=0|1 )
+**语法:** obj &lt;&lt; Name( state=0|1 )
 
 **JMP添加的版本:** 16
 
 ### Parent
 
-**语法:** seg2 = obj << Parent
+**语法:** seg2 = obj &lt;&lt; Parent
 
 **说明:** 返回显示段的父级。
 
@@ -539,7 +535,7 @@ seg << Parent;
 
 ### Set Connected
 
-**语法:** obj << Set Connected( state=0|1 )
+**语法:** obj &lt;&lt; Set Connected( state=0|1 )
 
 **说明:** 设置显示段中所有线段的连接状态。
 
@@ -556,7 +552,7 @@ seg << Set Connected( 1 );
 
 ### Set Description
 
-**语法:** obj << Set Description( description )
+**语法:** obj &lt;&lt; Set Description( description )
 
 **说明:** 设置显示段的说明。
 
@@ -573,7 +569,7 @@ seg << set description( "my seg" );
 
 ### Set Line Color
 
-**语法:** obj << Set Line Color( color )
+**语法:** obj &lt;&lt; Set Line Color( color )
 
 **说明:** 设置显示段中所有线条的颜色。
 
@@ -590,7 +586,7 @@ seg << Set Line Color( "Green" );
 
 ### Set Line Style
 
-**语法:** obj << Set Line Style( pen style )
+**语法:** obj &lt;&lt; Set Line Style( pen style )
 
 **说明:** 设置线条的样式。选项包括“实线”、“点线”、“虚线”、“点划线”和“双点划线”。
 
@@ -609,7 +605,7 @@ seg << Set Line Style( "Dotted" );
 
 ### Set Line Width
 
-**语法:** obj << Set Line Width( "1"|"2"|"3"|"4"|"5"|"6"|"其他..." )
+**语法:** obj &lt;&lt; Set Line Width( "1"|"2"|"3"|"4"|"5"|"6"|"其他..." )
 
 **说明:** 设置线条的宽度。
 
@@ -628,7 +624,7 @@ seg << Set Line Width( 3 );
 
 ### Sib
 
-**语法:** seg2 = obj << Sib
+**语法:** seg2 = obj &lt;&lt; Sib
 
 **说明:** 返回显示段的平级项。
 
@@ -645,7 +641,7 @@ seg << Sib;
 
 ### Sib Append
 
-**语法:** obj << Sib Append( seg2 )
+**语法:** obj &lt;&lt; Sib Append( seg2 )
 
 **说明:** 紧接在显示段之后添加一个显示段。
 
@@ -683,7 +679,7 @@ mapSeg << Sib Append( Line Seg( xval, yval, <<line color( "Green" ), <<line widt
 
 ### Sib Prepend
 
-**语法:** obj << Sib Prepend( seg2 )
+**语法:** obj &lt;&lt; Sib Prepend( seg2 )
 
 **说明:** 紧接在显示段之前添加一个显示段。
 

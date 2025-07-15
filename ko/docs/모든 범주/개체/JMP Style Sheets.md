@@ -16,7 +16,7 @@
 
 ### <C++>
 
-**구문:** obj << <C++>
+**구문:** obj &lt;&lt; &lt;C++&gt;
 
 **설명:** Use DisplayBoxPtr::jssClasses and DisplayBoxPtr::jssID and then target those using selectors. OutlineBoxes and some others automatically set classes from their Scriptable, etc.
 
@@ -33,7 +33,7 @@ Names Default To Here( 1 );
 
 ### <Editing>
 
-**구문:** obj << <Editing>
+**구문:** obj &lt;&lt; &lt;Editing&gt;
 
 **설명:** New files must be added to *.jss in the correct order. Use the in-JMP Property Panel for looking at classes, ids, and box structure. Syncing from Perforce gets you the latest styles after you build since the build step copies the files into the build directory. Or you can use the JSS Dir preference to point JMP directly at the files in your Perforce workspace. Then you can check-out files and edit them directly. As soon as you edit a file and save it, JMP will update automatically.
 
@@ -49,7 +49,7 @@ Preferences[1] << Set( JSS Dir( "C:\JMPDev\source\Portable\Jss\" ) );
 
 ### <Rule>
 
-**구문:** obj << <Rule>
+**구문:** obj &lt;&lt; &lt;Rule&gt;
 
 **설명:** The main unit of a JSS file. Composed of a Selector and multiple Declarations/Messages.
 
@@ -57,7 +57,7 @@ Preferences[1] << Set( JSS Dir( "C:\JMPDev\source\Portable\Jss\" ) );
 
 ### <Selector>
 
-**구문:** obj << <Selector>
+**구문:** obj &lt;&lt; &lt;Selector&gt;
 
 **설명:** The first part of a Rule; Used to select boxes. You can compose selectors together to make more complex selectors.
 
@@ -65,7 +65,7 @@ Preferences[1] << Set( JSS Dir( "C:\JMPDev\source\Portable\Jss\" ) );
 
 ### <Specificity>
 
-**구문:** obj << <Specificity>
+**구문:** obj &lt;&lt; &lt;Specificity&gt;
 
 **설명:** This helps us be more declarative with our Rules. See CSS documentation for details.
 
@@ -134,7 +134,7 @@ New Window( "And",
 
 ### Attr
 
-**구문:** Attr( <<Boolean Box Message == 0|1 )
+**구문:** Attr( &lt;&lt;Boolean Box Message == 0|1 )
 
 **설명:** Matches boxes with the given attribute. Where the box responds to the given message with that value. Currently only supports boolean attributes.
 
@@ -464,7 +464,7 @@ New Window( "If Theme Is",
 
 ### Include
 
-**구문:** Include( path, <<NoWarnIfMissing )
+**구문:** Include( path, &lt;&lt;NoWarnIfMissing )
 
 **설명:** Includes another JSS file from a path relative to this one. Errors within that file will be ignored. Errors accessing that file will not, unless you use the <<NoWarnIfMissing flag.
 

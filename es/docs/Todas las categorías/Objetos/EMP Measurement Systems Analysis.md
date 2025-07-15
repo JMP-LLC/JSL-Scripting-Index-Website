@@ -6,9 +6,7 @@
 
 ### By
 
-**Sintaxis:** obj = EMP Measurement Systems Analysis(...<By( column(s) )>...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = EMP Measurement Systems Analysis(...&lt;By( column(s) )&gt;...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Genera varios informes, uno para cada nivel de las variables.
 
@@ -29,9 +27,7 @@ EMP Measurement Systems Analysis(
 
 ### Grouping
 
-**Sintaxis:** obj = EMP Measurement Systems Analysis(...<Grouping( column(s) )>...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = EMP Measurement Systems Analysis(...&lt;Grouping( column(s) )&gt;...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica las columnas categóricas como variables de agrupación.
 
@@ -71,9 +67,7 @@ obj = dt << EMP Measurement Systems Analysis(
 
 ### Measurement
 
-**Sintaxis:** obj = EMP Measurement Systems Analysis(...Measurement( column(s) )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = EMP Measurement Systems Analysis(...Measurement( column(s) )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica las columnas continuas de las mediciones.
 
@@ -113,9 +107,7 @@ obj = dt << EMP Measurement Systems Analysis(
 
 ### Part
 
-**Sintaxis:** obj = EMP Measurement Systems Analysis(...Part( column )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = EMP Measurement Systems Analysis(...Part( column )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica la columna categórica que determina la parte o unidad.
 
@@ -155,9 +147,7 @@ obj = dt << EMP Measurement Systems Analysis(
 
 ### Sample ID
 
-**Sintaxis:** obj = EMP Measurement Systems Analysis(...Sample ID( column )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = EMP Measurement Systems Analysis(...Sample ID( column )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica la columna categórica que determina la parte o unidad.
 
@@ -197,9 +187,7 @@ obj = dt << EMP Measurement Systems Analysis(
 
 ### Standard
 
-**Sintaxis:** obj = EMP Measurement Systems Analysis(...<Standard( column )>...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = EMP Measurement Systems Analysis(...&lt;Standard( column )&gt;...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica una columna estándar o de referencia que contiene los valores conocidos de la parte medida.
 
@@ -219,9 +207,7 @@ obj = dt << EMP Measurement Systems Analysis(
 
 ### X
 
-**Sintaxis:** obj = EMP Measurement Systems Analysis(...<X( column(s) )>...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = EMP Measurement Systems Analysis(...&lt;X( column(s) )&gt;...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica las columnas categóricas como variables de agrupación.
 
@@ -261,9 +247,7 @@ obj = dt << EMP Measurement Systems Analysis(
 
 ### Y
 
-**Sintaxis:** obj = EMP Measurement Systems Analysis(...Y( column(s) )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = EMP Measurement Systems Analysis(...Y( column(s) )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica las columnas continuas de las mediciones.
 
@@ -376,7 +360,7 @@ obj = dt << EMP Measurement Systems Analysis(
 
 ### Edit MSA Metadata
 
-**Sintaxis:** obj << Edit MSA Metadata( :column( Lower Tolerance( number ), Upper Tolerance( number ), <Historical Mean( number ), Historical Process Sigma( number )> ) )
+**Sintaxis:** obj &lt;&lt; Edit MSA Metadata( :column( Lower Tolerance( number ), Upper Tolerance( number ), &lt;Historical Mean( number ), Historical Process Sigma( number )&gt; ) )
 
 **Descripción:** Abre una ventana que le permite agregar o editar el rango de tolerancia, los límites de tolerancia, la media histórica y el valor sigma histórico del proceso para todos los análisis. Los informes se actualizan automáticamente.
 
@@ -447,7 +431,7 @@ obj << (EMP MSA Analysis[1] << Variance Components( 1 ));
 
 ### Save All Metadata to Table
 
-**Sintaxis:** obj << Save All Metadata to Table( < MSA( state=0|1 ) >, < Measurement Sigma( state=0|1 ) >, < Tolerance as Specs( state=0|1 ) > )
+**Sintaxis:** obj &lt;&lt; Save All Metadata to Table( &lt; MSA( state=0|1 ) &gt;, &lt; Measurement Sigma( state=0|1 ) &gt;, &lt; Tolerance as Specs( state=0|1 ) &gt; )
 
 **Descripción:** Crea una nueva tabla de datos que contiene los metadatos MSA y sigma de medición para cada columna de datos de medición. La tabla está en formato alto y contiene una fila para cada variable de medición. Hay una opción para guardar los valores de tolerancia inferior y superior como columnas adicionales en la tabla de datos.
 
@@ -469,7 +453,7 @@ obj << Save All Metadata to Table;
 
 ### Save Metadata as Column Properties
 
-**Sintaxis:** obj << Save Metadata as Column Properties( < MSA( state=0|1 ) >, < Measurement Sigma( state=0|1 ) >, < Tolerance as Specs( state=0|1 ) > )
+**Sintaxis:** obj &lt;&lt; Save Metadata as Column Properties( &lt; MSA( state=0|1 ) &gt;, &lt; Measurement Sigma( state=0|1 ) &gt;, &lt; Tolerance as Specs( state=0|1 ) &gt; )
 
 **Descripción:** Para cada columna de datos de medición, guarda los metadatos MSA y la sigma de medición como propiedades de columna dentro de la columna de la tabla de datos original. Existe una opción para guardar los valores de tolerancia inferior y superior como propiedades de columna Límites de especificación.
 
@@ -491,9 +475,7 @@ obj << Save Metadata as Column Properties;
 
 ### Set Alpha Level
 
-**Sintaxis:** obj = EMP Measurement Systems Analysis(...Set Alpha Level( number )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = EMP Measurement Systems Analysis(...Set Alpha Level( number )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el nivel de significación que se utiliza para los informes de comparación de sesgo y de comparación del error de medir y remedir. "0.05" de forma predeterminada.
 
@@ -515,9 +497,7 @@ obj << (EMP MSA Analysis[1] << Bias Comparison( 1 ));
 
 ### Set Random Seed
 
-**Sintaxis:** obj = EMP Measurement Systems Analysis(...Set Random Seed( number )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = EMP Measurement Systems Analysis(...Set Random Seed( number )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Establece un valor específico para la semilla aleatoria, lo cual garantiza que todas las corridas subsiguientes que utilizan la misma semilla sean reproducibles.
 
@@ -539,9 +519,7 @@ obj << (EMP MSA Analysis[1] << "Test-Retest Error Comparison"n( 1 ));
 
 ### Sigma Multiplier
 
-**Sintaxis:** obj = EMP Measurement Systems Analysis(...Sigma Multiplier( number=6 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = EMP Measurement Systems Analysis(...Sigma Multiplier( number=6 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica un valor constante que se multiplica por sigma. "6" de forma predeterminada.
 
@@ -565,7 +543,7 @@ obj = dt << EMP Measurement Systems Analysis(
 
 ### Action
 
-**Sintaxis:** obj << Action
+**Sintaxis:** obj &lt;&lt; Action
 
 **Descripción:** Trampa multiuso dentro de una plataforma para insertar expresiones que se desean evaluar. Temporalmente establece los contextos de cuadros de visualización y tablas de datos en la plataforma.
 
@@ -583,7 +561,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descripción:** Aplica al objeto un preajuste creado previamente, actualizando las opciones y personalizaciones para que coincidan con la configuración guardada.
 
@@ -630,7 +608,7 @@ obj2 << Apply Preset( preset );
 
 ### Automatic Recalc
 
-**Sintaxis:** obj << Automatic Recalc( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Descripción:** Rehace automáticamente el análisis para modificaciones de datos y de exclusión. Si está activada la opción Recálculo automático, le recomendamos que utilice los comandos Wait(0) para asegurarse de que las modificaciones de datos y de exclusión surtan efecto antes del recálculo.
 
@@ -652,7 +630,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**Sintaxis:** obj << Broadcast(message)
+**Sintaxis:** obj &lt;&lt; Broadcast(message)
 
 **Descripción:** Difunde un mensaje a una plataforma. Si los resultados devueltos de objetos individuales son tablas, se concatenan si es posible y el formato final es idéntico al resultado de la opción Guardar tabla combinada en un cuadro de tabla o al resultado de la opción Concatenar mediante una columna de origen. Los demás resultados se almacenan en una lista y se devuelven.
 
@@ -672,7 +650,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**Sintaxis:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Sintaxis:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Descripción:** Añade un panel de control para cambiar las variables de la plataforma
 
@@ -690,7 +668,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**Sintaxis:** obj << Copy ByGroup Script
+**Sintaxis:** obj &lt;&lt; Copy ByGroup Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -717,7 +695,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Sintaxis:** obj << Copy Script
+**Sintaxis:** obj &lt;&lt; Copy Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -738,7 +716,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Sintaxis:** obj << Data Table Window
+**Sintaxis:** obj &lt;&lt; Data Table Window
 
 **Descripción:** Mueve al frente la ventana de la tabla de datos que se utiliza en este análisis.
 
@@ -759,7 +737,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Sintaxis:** obj << Get By Levels
+**Sintaxis:** obj &lt;&lt; Get By Levels
 
 **Descripción:** Devuelve un arreglo asociativo que asigna las columnas Por grupo a sus valores.
 
@@ -776,7 +754,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Sintaxis:** obj << Get ByGroup Script
+**Sintaxis:** obj &lt;&lt; Get ByGroup Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -804,7 +782,7 @@ Show( t );
 
 ### Get Container
 
-**Sintaxis:** obj << Get Container
+**Sintaxis:** obj &lt;&lt; Get Container
 
 **Descripción:** Devuelve una referencia al cuadro contenedor que incluye el contenido del objeto.
 
@@ -857,7 +835,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Sintaxis:** obj << Get Data Table
+**Sintaxis:** obj &lt;&lt; Get Data Table
 
 **Descripción:** Devuelve una referencia a la tabla de datos.
 
@@ -879,7 +857,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**Sintaxis:** obj << Get Group Platform
+**Sintaxis:** obj &lt;&lt; Get Group Platform
 
 **Descripción:** Devuelve el objeto Plataforma grupal si esta plataforma forma parte de un grupo. De lo contrario, devuelve Empty().
 
@@ -896,7 +874,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**Sintaxis:** obj << Get Script
+**Sintaxis:** obj &lt;&lt; Get Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -918,7 +896,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Sintaxis:** obj << Get Script With Data Table
+**Sintaxis:** obj &lt;&lt; Get Script With Data Table
 
 **Descripción:** Crea un script (JSL) para generar este análisis haciendo referencia específica a esta tabla de datos y lo devuelve en forma de expresión.
 
@@ -940,7 +918,7 @@ Show( t );
 
 ### Get Timing
 
-**Sintaxis:** obj << Get Timing
+**Sintaxis:** obj &lt;&lt; Get Timing
 
 **Descripción:** Determina el tiempo de inicio de una plataforma.
 
@@ -962,7 +940,7 @@ Show( t );
 
 ### Get Web Support
 
-**Sintaxis:** obj << Get Web Support
+**Sintaxis:** obj &lt;&lt; Get Web Support
 
 **Descripción:** Devuelve un número que indica el nivel de compatibilidad del HTML interactivo para el objeto de visualización. 1 significa que algunos o todos los elementos son compatibles. 0 significa que no existe compatibilidad.
 
@@ -978,7 +956,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Sintaxis:** obj << Get Where Expr
+**Sintaxis:** obj &lt;&lt; Get Where Expr
 
 **Descripción:** Devuelve la expresión Where para el subconjunto de datos, si la plataforma se inició con By() o Where(). De lo contrario, devuelve Empty().
 
@@ -1015,7 +993,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Sintaxis:** obj << Local Data Filter
+**Sintaxis:** obj &lt;&lt; Local Data Filter
 
 **Descripción:** Para filtrar los datos según grupos o rangos determinados, pero locales para esta plataforma.
 
@@ -1071,7 +1049,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Sintaxis:** obj << Paste Local Data Filter
+**Sintaxis:** obj &lt;&lt; Paste Local Data Filter
 
 **Descripción:** Se aplica el filtro de datos locales del portapapeles al informe actual.
 
@@ -1092,7 +1070,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**Sintaxis:** obj << Redo Analysis
+**Sintaxis:** obj &lt;&lt; Redo Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -1113,7 +1091,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**Sintaxis:** obj << Redo ByGroup Analysis
+**Sintaxis:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -1140,7 +1118,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**Sintaxis:** obj << Relaunch Analysis
+**Sintaxis:** obj &lt;&lt; Relaunch Analysis
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -1161,7 +1139,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**Sintaxis:** obj << Relaunch ByGroup
+**Sintaxis:** obj &lt;&lt; Relaunch ByGroup
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -1188,7 +1166,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**Sintaxis:** obj << Remove Column Switcher
+**Sintaxis:** obj &lt;&lt; Remove Column Switcher
 
 **Descripción:** Quita el Cambiador de columnas más reciente que se haya agregado a la plataforma.
 
@@ -1208,7 +1186,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Sintaxis:** obj << Remove Local Data Filter
+**Sintaxis:** obj &lt;&lt; Remove Local Data Filter
 
 **Descripción:** Si se ha creado un filtro de datos local, esto lo eliminará y restaurará la plataforma para usar todos los datos de la tabla de datos directamente.
 
@@ -1247,9 +1225,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Sintaxis:** obj << Report;
-
-Report( obj )
+**Sintaxis:** obj &lt;&lt; Report;Report( obj )
 
 **Descripción:** Devuelve una referencia al objeto informe.
 
@@ -1272,7 +1248,7 @@ Show( t );
 
 ### Report View
 
-**Sintaxis:** obj << Report View( "Completa"|"Resumen" )
+**Sintaxis:** obj &lt;&lt; Report View( "Completa"|"Resumen" )
 
 **Descripción:** La vista del informe determina el nivel de detalle visible en el informe de una plataforma. Full muestra todos los detalles, mientras que Summary solo muestra el contenido seleccionado, con independencia de la plataforma. Para el comportamiento personalizado, los cuadros de visualización admiten un mensaje <<Set Summary Behavior.
 
@@ -1293,7 +1269,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**Sintaxis:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis, y lo guarda como propiedad de tabla en la tabla de datos. Puede especificar un nombre para el script. La opción Append Suffix añade un sufijo numérico al nombre del script, que diferencia el script de un script existente que tenga el mismo nombre. La opción Prompt solicita al usuario que especifique un nombre de script. La opción Replace reemplaza un script existente que tenga el mismo nombre.
 
@@ -1320,7 +1296,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Sintaxis:** obj << Save ByGroup Script to Journal
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -1347,7 +1323,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Sintaxis:** obj << Save ByGroup Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -1374,7 +1350,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**Sintaxis:** obj << Save Script for All Objects
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects
 
 **Descripción:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -1395,7 +1371,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Sintaxis:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descripción:** Guarda un script para todos los objetos de informe en la tabla de datos actual. Esta opción es útil cuando tiene varios informes en la ventana. El script recibe el nombre de la primera plataforma a menos que especifique el nombre del script entre comillas.
 
@@ -1447,7 +1423,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Sintaxis:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis y lo guarda en forma de propiedad de tabla en la tabla de datos.
 
@@ -1468,7 +1444,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Sintaxis:** obj << Save Script to Journal
+**Sintaxis:** obj &lt;&lt; Save Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -1489,7 +1465,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Sintaxis:** obj << Save Script to Report
+**Sintaxis:** obj &lt;&lt; Save Script to Report
 
 **Descripción:** Crea un script JSL para generar este análisis y lo muestra en el propio informe. Resulta útil para conservar un registro impreso de lo que se ha hecho.
 
@@ -1510,7 +1486,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Sintaxis:** obj << Save Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -1596,7 +1572,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Sintaxis:** obj << Sync to Data Table Changes
+**Sintaxis:** obj &lt;&lt; Sync to Data Table Changes
 
 **Descripción:** Realiza una sincronización con las modificaciones de datos y de exclusión que se hayan realizado.
 
@@ -1613,7 +1589,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Sintaxis:** obj << Title( "new title" )
+**Sintaxis:** obj &lt;&lt; Title( "new title" )
 
 **Descripción:** Establece el título de la plataforma.
 
@@ -1634,7 +1610,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Sintaxis:** obj << Top Report
+**Sintaxis:** obj &lt;&lt; Top Report
 
 **Descripción:** Devuelve una referencia al nodo raíz del informe.
 
@@ -1657,7 +1633,7 @@ Show( t );
 
 ### Transform Column
 
-**Sintaxis:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Sintaxis:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Descripción:** Crea una columna de transformación en el contexto local de un objeto (una plataforma por lo general). La columna de transformación solo está activa mientras esté en uso la plataforma.
 
@@ -1678,7 +1654,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**Sintaxis:** obj << View Web XML
+**Sintaxis:** obj &lt;&lt; View Web XML
 
 **Descripción:** Devuelve el código XML que se utiliza para crear el informe HTML interactivo.
 
@@ -1693,9 +1669,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**Sintaxis:** obj = EMP Measurement Systems Analysis(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = EMP Measurement Systems Analysis(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Establece el tipo de ventana que se creará para el informe. De forma predeterminada, se creará una ventana de informe Visible. Una ventana Invisible no aparecerá en pantalla, pero se puede detectar mediante funciones como Window(). Una ventana Private responde a la mayoría de los mensajes de ventana pero no es detectable y se debe abordar a través del objeto de informe.
 
@@ -1718,7 +1692,7 @@ New Window( "Bivariate Equation",
 
 #### AIAG Labels
 
-**Sintaxis:** obj << (EMP MSA Analysis[number] << "AIAG Gauge R&R Results"n(1, AIAG Labels( state=0|1 )))
+**Sintaxis:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; "AIAG Gauge R&R Results"n(1, AIAG Labels( state=0|1 )))
 
 **Descripción:** Muestra u oculta etiquetas en la tabla Resultados del estudio R&R de sistemas de medición de AIAG. Las etiquetas las define la asociación Automotive Industry Action Group (AIAG). Opción activada de forma predeterminada.
 
@@ -1739,7 +1713,7 @@ obj << (EMP MSA Analysis[1] << "AIAG Gauge R&R Results"n( 1, AIAG Labels( 0 ) ))
 
 #### Discrimination Ratio
 
-**Sintaxis:** obj << (EMP MSA Analysis[number] << "AIAG Gauge R&R Results"n(1, Discrimination Ratio( state=0|1 )))
+**Sintaxis:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; "AIAG Gauge R&R Results"n(1, Discrimination Ratio( state=0|1 )))
 
 **Descripción:** Muestra u oculta la razón de discriminación para el modelo dado.
 
@@ -1764,7 +1738,7 @@ obj << (EMP MSA Analysis[1] << "AIAG Gauge R&R Results"n( 1, Discrimination Rati
 
 #### Show Connected Means
 
-**Sintaxis:** obj << (EMP MSA Analysis[number] << Average Chart( 1, Show Connected Means( state=0|1 )))
+**Sintaxis:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Average Chart( 1, Show Connected Means( state=0|1 )))
 
 **Descripción:** Muestra u oculta líneas que conectan los valores de medición medios en el gráfico de medias. Opción activada de forma predeterminada.
 
@@ -1785,7 +1759,7 @@ obj << (EMP MSA Analysis[1] << Average Chart( 1, Show Connected Means( 0 ) ));
 
 #### Show Control Limits
 
-**Sintaxis:** obj << (EMP MSA Analysis[number] << Average Chart( 1, Show Control Limits( state=0|1 )))
+**Sintaxis:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Average Chart( 1, Show Control Limits( state=0|1 )))
 
 **Descripción:** Muestra u oculta los límites de control en el gráfico de medias. Opción activada de forma predeterminada.
 
@@ -1806,7 +1780,7 @@ obj << (EMP MSA Analysis[1] << Average Chart( 1, Show Control Limits( 0 ) ));
 
 #### Show Control Limits Shading
 
-**Sintaxis:** obj << (EMP MSA Analysis[number] << Average Chart( 1, Show Control Limits Shading( state=0|1 )))
+**Sintaxis:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Average Chart( 1, Show Control Limits Shading( state=0|1 )))
 
 **Descripción:** Muestra u oculta el sombreado entre los límites de control en el gráfico de medias. Opción activada de forma predeterminada.
 
@@ -1827,7 +1801,7 @@ obj << (EMP MSA Analysis[1] << Average Chart( 1, Show Control Limits Shading( 0 
 
 #### Show Data
 
-**Sintaxis:** obj << (EMP MSA Analysis[number] << Average Chart( 1, Show Data( state=0|1 )))
+**Sintaxis:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Average Chart( 1, Show Data( state=0|1 )))
 
 **Descripción:** Muestra u oculta los puntos de datos en el gráfico de medias.
 
@@ -1848,7 +1822,7 @@ obj << (EMP MSA Analysis[1] << Average Chart( 1, Show Data( 1 ) ));
 
 #### Show Grand Mean
 
-**Sintaxis:** obj << (EMP MSA Analysis[number] << Average Chart( 1, Show Grand Mean( state=0|1 )))
+**Sintaxis:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Average Chart( 1, Show Grand Mean( state=0|1 )))
 
 **Descripción:** Muestra u oculta la media general de la variable Y en el gráfico de medias. Opción activada de forma predeterminada.
 
@@ -1869,7 +1843,7 @@ obj << (EMP MSA Analysis[1] << Average Chart( 1, Show Grand Mean( 0 ) ));
 
 #### Show Separators
 
-**Sintaxis:** obj << (EMP MSA Analysis[number] << Average Chart( 1, Show Separators( state=0|1 )))
+**Sintaxis:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Average Chart( 1, Show Separators( state=0|1 )))
 
 **Descripción:** Muestra u oculta las líneas verticales que separan las variables X en el gráfico de medias. Opción activada de forma predeterminada.
 
@@ -1894,7 +1868,7 @@ obj << (EMP MSA Analysis[1] << Average Chart( 1, Show Separators( 0 ) ));
 
 #### Show Average Dispersion
 
-**Sintaxis:** obj << (EMP MSA Analysis[number] << Dispersion Chart( 1, Show Average Dispersion( state=0|1 )))
+**Sintaxis:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Dispersion Chart( 1, Show Average Dispersion( state=0|1 )))
 
 **Descripción:** Muestra u oculta el rango medio o la desviación estándar en el gráfico de dispersión. Opción activada de forma predeterminada.
 
@@ -1915,7 +1889,7 @@ obj << (EMP MSA Analysis[1] << Dispersion Chart( 1, Show Average Dispersion( 0 )
 
 #### Show Connected Points
 
-**Sintaxis:** obj << (EMP MSA Analysis[number] << Dispersion Chart( 1, Show Connected Points( state=0|1 )))
+**Sintaxis:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Dispersion Chart( 1, Show Connected Points( state=0|1 )))
 
 **Descripción:** Muestra u oculta líneas que conectan todos los rangos o desviaciones estándar en el gráfico de dispersión. Opción activada de forma predeterminada.
 
@@ -1936,7 +1910,7 @@ obj << (EMP MSA Analysis[1] << Dispersion Chart( 1, Show Connected Points( 0 ) )
 
 #### Show Control Limits
 
-**Sintaxis:** obj << (EMP MSA Analysis[number] << Dispersion Chart( 1, Show Control Limits( state=0|1 )))
+**Sintaxis:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Dispersion Chart( 1, Show Control Limits( state=0|1 )))
 
 **Descripción:** Muestra u oculta los límites de control en el gráfico de dispersión. Opción activada de forma predeterminada.
 
@@ -1957,7 +1931,7 @@ obj << (EMP MSA Analysis[1] << Dispersion Chart( 1, Show Control Limits( 0 ) ));
 
 #### Show Control Limits Shading
 
-**Sintaxis:** obj << (EMP MSA Analysis[number] << Dispersion Chart( 1, Show Control Limits Shading( state=0|1 )))
+**Sintaxis:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Dispersion Chart( 1, Show Control Limits Shading( state=0|1 )))
 
 **Descripción:** Muestra u oculta el sombreado entre los límites de control en el gráfico de dispersión. Opción activada de forma predeterminada.
 
@@ -1978,7 +1952,7 @@ obj << (EMP MSA Analysis[1] << Dispersion Chart( 1, Show Control Limits Shading(
 
 #### Show Separators
 
-**Sintaxis:** obj << (EMP MSA Analysis[number] << Dispersion Chart( 1, Show Separators( state=0|1 )))
+**Sintaxis:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Dispersion Chart( 1, Show Separators( state=0|1 )))
 
 **Descripción:** Muestra u oculta las líneas verticales que separan las variables X en el gráfico de dispersión. Opción activada de forma predeterminada.
 
@@ -2003,7 +1977,7 @@ obj << (EMP MSA Analysis[1] << Dispersion Chart( 1, Show Separators( 0 ) ));
 
 #### Show Avg Bias Points
 
-**Sintaxis:** obj << (EMP MSA Analysis[number] << Linearity and Bias Results( 1, Show Avg Bias Points( state=0|1 )))
+**Sintaxis:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Linearity and Bias Results( 1, Show Avg Bias Points( state=0|1 )))
 
 **Descripción:** Muestra u oculta los puntos del sesgo medio en el gráfico. Opción activada de forma predeterminada.
 
@@ -2030,7 +2004,7 @@ obj << (EMP MSA Analysis[1] << Linearity and Bias Results( 1, Show Avg Bias Poin
 
 #### Show Bias Points
 
-**Sintaxis:** obj << (EMP MSA Analysis[number] << Linearity and Bias Results( 1, Show Bias Points( state=0|1 )))
+**Sintaxis:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Linearity and Bias Results( 1, Show Bias Points( state=0|1 )))
 
 **Descripción:** Muestra u oculta los puntos de sesgo en el gráfico. Opción activada de forma predeterminada.
 
@@ -2057,7 +2031,7 @@ obj << (EMP MSA Analysis[1] << Linearity and Bias Results( 1, Show Bias Points( 
 
 #### Show Fit Confidence Curves
 
-**Sintaxis:** obj << (EMP MSA Analysis[number] << Linearity and Bias Results( 1, Show Fit Confidence Curves( state=0|1 )))
+**Sintaxis:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Linearity and Bias Results( 1, Show Fit Confidence Curves( state=0|1 )))
 
 **Descripción:** Muestra u oculta las curvas de confianza de la recta de ajuste en el gráfico. Opción activada de forma predeterminada.
 
@@ -2093,7 +2067,7 @@ obj << (EMP MSA Analysis[1] << Linearity and Bias Results(
 
 #### Show Line of Fit
 
-**Sintaxis:** obj << (EMP MSA Analysis[number] << Linearity and Bias Results( 1, Show Line of Fit( state=0|1 )))
+**Sintaxis:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Linearity and Bias Results( 1, Show Line of Fit( state=0|1 )))
 
 **Descripción:** Muestra u oculta la recta de ajuste en el gráfico. Opción activada de forma predeterminada.
 
@@ -2120,7 +2094,7 @@ obj << (EMP MSA Analysis[1] << Linearity and Bias Results( 1, Show Line of Fit( 
 
 #### Show Overall Avg Bias Line
 
-**Sintaxis:** obj << (EMP MSA Analysis[number] << Linearity and Bias Results( 1, Show Overall Avg Bias Line( state=0|1 )))
+**Sintaxis:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Linearity and Bias Results( 1, Show Overall Avg Bias Line( state=0|1 )))
 
 **Descripción:** Muestra u oculta la línea del sesgo medio general en el gráfico. Opción activada de forma predeterminada.
 
@@ -2160,7 +2134,7 @@ obj << (EMP MSA Analysis[1] << Linearity and Bias Results(
 
 #### Apply Preset
 
-**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descripción:** Aplica al objeto un preajuste creado previamente, actualizando las opciones y personalizaciones para que coincidan con la configuración guardada.
 
@@ -2198,7 +2172,7 @@ obj2 << (EMP MSA Analysis[1] << Apply Preset( preset ));
 
 #### Average Chart
 
-**Sintaxis:** obj << (EMP MSA Analysis[number] << Average Chart( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Average Chart( state=0|1 ))
 
 **Descripción:** Muestra u oculta un gráfico de los valores de medición medios para cada combinación de la parte y las variables X. Opción activada de forma predeterminada.
 
@@ -2219,7 +2193,7 @@ obj << (EMP MSA Analysis[1] << Average Chart( 0 ));
 
 #### Bias Comparison
 
-**Sintaxis:** obj << (EMP MSA Analysis[number] << Bias Comparison( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Bias Comparison( state=0|1 ))
 
 **Descripción:** Muestra u oculta un gráfico de Análisis de medias para probar si las variables X tienen medias distintas.
 
@@ -2240,7 +2214,7 @@ obj << (EMP MSA Analysis[1] << Bias Comparison( 1 ));
 
 #### Dispersion Chart
 
-**Sintaxis:** obj << (EMP MSA Analysis[number] << Dispersion Chart( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Dispersion Chart( state=0|1 ))
 
 **Descripción:** Muestra u oculta el gráfico de dispersión especificado. El gráfico de dispersión predeterminado es el gráfico de rangos. Opción activada de forma predeterminada.
 
@@ -2261,7 +2235,7 @@ obj << (EMP MSA Analysis[1] << Dispersion Chart( 0 ));
 
 #### EMP Results
 
-**Sintaxis:** obj << (EMP MSA Analysis[number] << EMP Results( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; EMP Results( state=0|1 ))
 
 **Descripción:** Muestra u oculta un informe que calcula varios estadísticos para ayudarle a evaluar y clasificar su sistema de medición.
 
@@ -2282,7 +2256,7 @@ obj << (EMP MSA Analysis[1] << EMP Results( 1 ));
 
 #### Edit MSA Metadata
 
-**Sintaxis:** obj << (EMP MSA Analysis[number] << Linearity and Bias Results( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Linearity and Bias Results( state=0|1 ))
 
 **Descripción:** Abre una ventana que le permite agregar o editar el rango de tolerancia, los límites de tolerancia, la media histórica y el valor sigma histórico del proceso para todos los análisis. Los informes se actualizan automáticamente.
 
@@ -2309,7 +2283,7 @@ obj << (EMP MSA Analysis[1] << Edit MSA Metadata(
 
 #### Effective Resolution
 
-**Sintaxis:** obj << (EMP MSA Analysis[number] << Effective Resolution( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Effective Resolution( state=0|1 ))
 
 **Descripción:** Muestra u oculta una tabla que contiene resultados para la resolución de un sistema de medición, lo que le ayuda a determinar el rendimiento de los incrementos de medición.
 
@@ -2330,7 +2304,7 @@ obj << (EMP MSA Analysis[1] << Effective Resolution( 1 ));
 
 #### Linearity and Bias Results
 
-**Sintaxis:** obj << (EMP MSA Analysis[number] << Linearity and Bias Results( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Linearity and Bias Results( state=0|1 ))
 
 **Descripción:** Muestra u oculta un gráfico y un resumen de un análisis de regresión utilizando la columna estándar como variable X y el sesgo como variable Y.
 
@@ -2353,7 +2327,7 @@ obj << (EMP MSA Analysis[1] << Linearity and Bias Results( 1 ));
 
 #### Misclassification Probabilities
 
-**Sintaxis:** obj << (EMP MSA Analysis[number] << Misclassification Probabilties( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Misclassification Probabilties( state=0|1 ))
 
 **Descripción:** Muestra u oculta un informe que contiene las probabilidades de clasificación errónea para el modelo dado.
 
@@ -2401,7 +2375,7 @@ preset = obj << (EMP MSA Analysis[1] << New Preset);
 
 #### Parallelism Plots
 
-**Sintaxis:** obj << (EMP MSA Analysis[number] << Parallelism Plots( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Parallelism Plots( state=0|1 ))
 
 **Descripción:** Muestra u oculta un gráfico superpuesto que refleja los valores de medición medios para cada parte.
 
@@ -2422,7 +2396,7 @@ obj << (EMP MSA Analysis[1] << Parallelism Plots( 1 ));
 
 #### Resultados del estudio R&R de sistemas de medición basado en el método EMP
 
-**Sintaxis:** obj << (EMP MSA Analysis[number] << "EMP Gauge R&R Results"n( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; "EMP Gauge R&R Results"n( state=0|1 ))
 
 **Descripción:** Muestra u oculta un informe que divide la variabilidad de las mediciones en variación parcial y variación del sistema de medición. Los cálculos de este informe se basan en varianzas, no en rangos.
 
@@ -2443,7 +2417,7 @@ obj << (EMP MSA Analysis[1] << "EMP Gauge R&R Results"n( 1 ));
 
 #### Resultados del estudio R&R de sistemas de medición de AIAG
 
-**Sintaxis:** obj << (EMP MSA Analysis[number] << "AIAG Gauge R&R Results"n( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; "AIAG Gauge R&R Results"n( state=0|1 ))
 
 **Descripción:** Muestra u oculta un informe que divide la variabilidad de las mediciones en variación parcial y variación del sistema de medición. El cálculo de Reproducibilidad incluye interacciones.
 
@@ -2472,7 +2446,7 @@ obj << (EMP MSA Analysis[1] << "AIAG Gauge R&R Results"n( 1 ));
 
 #### Shift Detection Profiler
 
-**Sintaxis:** obj << (EMP MSA Analysis[number] << Shift Detection Profiler( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Shift Detection Profiler( state=0|1 ))
 
 **Descripción:** Muestra u oculta un conjunto interactivo de gráficos que puede ajustar para ver las probabilidades de obtener advertencias en el gráfico de comportamiento del proceso.
 
@@ -2493,7 +2467,7 @@ obj << (EMP MSA Analysis[1] << Shift Detection Profiler( 1 ));
 
 #### Show Monitor Classification Legend
 
-**Sintaxis:** obj << (EMP MSA Analysis[number] << Show Monitor Classification Legend( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Show Monitor Classification Legend( state=0|1 ))
 
 **Descripción:** Muestra u oculta la leyenda de clasificación del monitor en el informe de resultados EMP. Opción activada de forma predeterminada.
 
@@ -2516,7 +2490,7 @@ obj << (EMP MSA Analysis[1] << Show Monitor Classification Legend( 0 ));
 
 #### Show Part Legend
 
-**Sintaxis:** obj << (EMP MSA Analysis[number] << Show Part Legend( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Show Part Legend( state=0|1 ))
 
 **Descripción:** Muestra u oculta la leyenda parcial de los gráficos de dispersión y de medias. Opción activada de forma predeterminada.
 
@@ -2537,7 +2511,7 @@ obj << (EMP MSA Analysis[1] << Show Part Legend( 0 ));
 
 #### Show Shift Detection Profiler Legend
 
-**Sintaxis:** obj << (EMP MSA Analysis[number] << Show Shift Detection Profiler Legend( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Show Shift Detection Profiler Legend( state=0|1 ))
 
 **Descripción:** Muestra u oculta la leyenda en el perfilador de detección del desplazamiento. Opción activada de forma predeterminada.
 
@@ -2560,7 +2534,7 @@ obj << (EMP MSA Analysis[1] << Show Shift Detection Profiler Legend( 0 ));
 
 #### Test-Retest Error Comparison
 
-**Sintaxis:** obj << (EMP MSA Analysis[number] << "Test-Retest Error Comparison"n( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; "Test-Retest Error Comparison"n( state=0|1 ))
 
 **Descripción:** Muestra u oculta un gráfico del Análisis de medias para varianzas o del Análisis de medias para rangos para comprobar si alguno de los grupos tiene niveles de error de medir y remedir distintos.
 
@@ -2581,7 +2555,7 @@ obj << (EMP MSA Analysis[1] << "Test-Retest Error Comparison"n( 1 ));
 
 #### Variance Components
 
-**Sintaxis:** obj << (EMP MSA Analysis[number] << Variance Components( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (EMP MSA Analysis[number] &lt;&lt; Variance Components( state=0|1 ))
 
 **Descripción:** Muestra u oculta un informe que contiene las estimaciones de los componentes de varianza para el modelo dado.
 

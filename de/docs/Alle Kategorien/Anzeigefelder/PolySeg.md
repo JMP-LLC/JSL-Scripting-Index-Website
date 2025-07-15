@@ -6,7 +6,7 @@
 
 ### Child
 
-**Syntax:** seg2 = obj << Child
+**Syntax:** seg2 = obj &lt;&lt; Child
 
 **Beschreibung:** Gibt das erste untergeordnete Element des Anzeigesegments zurück.
 
@@ -24,7 +24,7 @@ seg << Child; // not many segs support children
 
 ### Class Name
 
-**Syntax:** classname = obj << Class Name
+**Syntax:** classname = obj &lt;&lt; Class Name
 
 **Beschreibung:** Gibt den Namen der Anzeigeklasse für das Anzeigefeld zurück.
 
@@ -42,7 +42,7 @@ seg << Class Name;
 
 ### Clip Shape
 
-**Syntax:** seg << Clip Shape(Boundaries(Shape File, [ID(string)]) | Path([string] | [matrix]) | Empty())
+**Syntax:** seg &lt;&lt; Clip Shape(Boundaries(Shape File, [ID(string)]) | Path([string] | [matrix]) | Empty())
 
 **Beschreibung:** Stellt die Geometrie in der gewünschten Form dar. Die Form kann mittels einer Formendatei oder einem Pfad angegeben werden. Optional kann mit einer Formendatei eine ID angegeben werden, um eine einzelne Form aus der Datei auszuwählen, ansonsten wird die Verbindung sämtlicher Formen als Beschneidungsbereich verwendet. Ein Beschneidungspfad kann mit einer Nx3-Matrix oder mit einer Textdarstellung angegeben werden. Eine Pfadmatrix hat drei Spalten für x, y und Flags für jeden Punkt im Pfad. Die Flag-Werte sind 0 für Steuern, 1 für Verschieben, 2 für Liniensegment, 3 für kubisches Bézier-Segment und sie sind negativ, wenn der Punkt den Pfad auch schließt. Der Pfadtext unterstützt die SVG-Syntax.
 
@@ -72,11 +72,11 @@ cs << Clip Shape( Boundaries( "US States" ) );
 
 ### Color Theme
 
-**Syntax:** obj << Color Theme
+**Syntax:** obj &lt;&lt; Color Theme
 
 ### Delete
 
-**Syntax:** obj << Delete
+**Syntax:** obj &lt;&lt; Delete
 
 **Beschreibung:** Löscht das Anzeigesegment.
 
@@ -94,7 +94,7 @@ seg << Delete;
 
 ### Density Gradient
 
-**Syntax:** obj << Density Gradient( "Nach Weiß ausblenden"|"Nach Grau ausblenden"|"Vollfarbig"="Nach Weiß ausblenden" )
+**Syntax:** obj &lt;&lt; Density Gradient( "Nach Weiß ausblenden"|"Nach Grau ausblenden"|"Vollfarbig"="Nach Weiß ausblenden" )
 
 **Beschreibung:** Legt das Farbverhalten von Dichtegradienten fest. Standardmäßig „Nach Weiß ausblenden“.
 
@@ -114,7 +114,7 @@ seg << Density Gradient( "Fade to Gray" );
 
 ### Error Bar Cap
 
-**Syntax:** obj << Error Bar Cap( "Keine"|"Sehr klein"|"Klein"|"Mittel"|"Groß" )
+**Syntax:** obj &lt;&lt; Error Bar Cap( "Keine"|"Sehr klein"|"Klein"|"Mittel"|"Groß" )
 
 **Beschreibung:** Gibt an, welche Art von Abschluss für Fehlerbalken verwendet werden soll.
 
@@ -137,7 +137,7 @@ seg << Set Error Bar Cap( "Large" );
 
 ### Error Bar Cap Shape
 
-**Syntax:** obj << Error Bar Cap Shape( begin, end )
+**Syntax:** obj &lt;&lt; Error Bar Cap Shape( begin, end )
 
 **Beschreibung:** Gibt die Form des Abschlusses an, die in Fehlerbalken angezeigt werden soll. Ein einzelnes Argument legt die Form für beide Enden des Balkens fest, oder es können separate Argumente für Anfang und Ende des Balkens angegeben werden. Die Standardform ist "Line". Die Form "Arrow" zeichnet einen nach außen zeigenden Pfeil und "None" lässt den Abschluss aus.
 
@@ -160,7 +160,7 @@ seg << Set Error Bar Cap Shape( "Line", "Arrow" );
 
 ### Fill Color
 
-**Syntax:** obj << Fill Color( color )
+**Syntax:** obj &lt;&lt; Fill Color( color )
 
 ```jsl
 
@@ -176,13 +176,13 @@ seg << Set Fill Color( "Green" );
 
 ### First Value
 
-**Syntax:** obj << First Value( state=0|1 )
+**Syntax:** obj &lt;&lt; First Value( state=0|1 )
 
 **JMP Version hinzugefügt:** 16
 
 ### Frame
 
-**Syntax:** FrameBox = obj << Frame
+**Syntax:** FrameBox = obj &lt;&lt; Frame
 
 **Beschreibung:** Gibt das Rahmenfeld zurück, in dem sich das Anzeigesegment befindet.
 
@@ -200,7 +200,7 @@ seg << Frame;
 
 ### Get Base Font
 
-**Syntax:** font = obj << Get Base Font
+**Syntax:** font = obj &lt;&lt; Get Base Font
 
 **Beschreibung:** Gibt die Basisschriftart für vom Feld dargestellten Text zurück. Basisschriftarten sind vordefinierte Namen wie Title, Text, Annotation und andere, die in den Voreinstellungen für Schriftarten angegeben sind.
 
@@ -218,7 +218,7 @@ fontobj << Get Base Font;
 
 ### Get Clip Shape
 
-**Syntax:** obj << Get Clip Shape
+**Syntax:** obj &lt;&lt; Get Clip Shape
 
 **Beschreibung:** Gibt die aktuelle Beschneidungsform aus
 
@@ -249,7 +249,7 @@ cs << Get Clip Shape();
 
 ### Get Density Gradient
 
-**Syntax:** obj << Get Density Gradient
+**Syntax:** obj &lt;&lt; Get Density Gradient
 
 **Beschreibung:** Ruft das Farbverhalten von Dichtegradienten ab.
 
@@ -269,7 +269,7 @@ seg << Get Density Gradient;
 
 ### Get Description
 
-**Syntax:** description = obj << Get Description
+**Syntax:** description = obj &lt;&lt; Get Description
 
 **Beschreibung:** Ruft die Beschreibung des Anzeigesegments ab.
 
@@ -287,7 +287,7 @@ seg << get description();
 
 ### Get Error Bar Cap
 
-**Syntax:** obj << Get Error Bar Cap
+**Syntax:** obj &lt;&lt; Get Error Bar Cap
 
 **Beschreibung:** Gibt die aktuelle Abschlussart der Fehlerbalken zurück.
 
@@ -310,7 +310,7 @@ seg << Get Error Bar Cap();
 
 ### Get Error Bar Cap Shape
 
-**Syntax:** { begin, end } = obj << Get Error Bar Cap Shape
+**Syntax:** { begin, end } = obj &lt;&lt; Get Error Bar Cap Shape
 
 **Beschreibung:** Gibt die Form des Abschlusses bei Fehlerbalken zurück.
 
@@ -333,7 +333,7 @@ seg << Get Error Bar Cap Shape();
 
 ### Get Fill Color
 
-**Syntax:** color = obj << Get Fill Color
+**Syntax:** color = obj &lt;&lt; Get Fill Color
 
 ```jsl
 
@@ -349,7 +349,7 @@ seg << Get Fill Color;
 
 ### Get Fill Pattern
 
-**Syntax:** obj << Get Fill Pattern
+**Syntax:** obj &lt;&lt; Get Fill Pattern
 
 ```jsl
 
@@ -365,7 +365,7 @@ seg << Get Fill Pattern;
 
 ### Get Font
 
-**Syntax:** obj << Get Font
+**Syntax:** obj &lt;&lt; Get Font
 
 ```jsl
 
@@ -381,7 +381,7 @@ fontobj << Get Font;
 
 ### Get Font Name
 
-**Syntax:** obj << Get Font Name
+**Syntax:** obj &lt;&lt; Get Font Name
 
 **Beschreibung:** Gibt den Namen der Schriftart zurück.
 
@@ -400,7 +400,7 @@ fontobj << Get Font Name;
 
 ### Get Font Scale
 
-**Syntax:** obj << Get Font Scale
+**Syntax:** obj &lt;&lt; Get Font Scale
 
 **Beschreibung:** Gibt den aktuellen Skalierungsfaktor für die Schriftart zurück.
 
@@ -418,7 +418,7 @@ fontobj << Get Font Scale;
 
 ### Get Font Size
 
-**Syntax:** obj << Get Font Size
+**Syntax:** obj &lt;&lt; Get Font Size
 
 **Beschreibung:** Gibt die Größe der Schriftart zurück.
 
@@ -436,7 +436,7 @@ fontobj << Get Font Size;
 
 ### Get Font Style
 
-**Syntax:** obj << Get Font Style
+**Syntax:** obj &lt;&lt; Get Font Style
 
 **Beschreibung:** Gibt den Namen des Schriftschnitts zurück.
 
@@ -456,7 +456,7 @@ fontobj << Get Font Style;
 
 ### Get Gradient
 
-**Syntax:** obj << Get Gradient
+**Syntax:** obj &lt;&lt; Get Gradient
 
 **Beschreibung:** Ruft den Farbverlauf ab.
 
@@ -474,7 +474,7 @@ seg << Get Gradient;
 
 ### Get Gradient Color Theme
 
-**Syntax:** obj << Get Gradient Color Theme
+**Syntax:** obj &lt;&lt; Get Gradient Color Theme
 
 **Beschreibung:** Ruft das Farbschema des Verlaufs ab.
 
@@ -494,7 +494,7 @@ seg << Get Gradient Color Theme;
 
 ### Get Gradient Discrete Colors
 
-**Syntax:** obj << Get Gradient Discrete Colors
+**Syntax:** obj &lt;&lt; Get Gradient Discrete Colors
 
 **Beschreibung:** Ruft ab, ob jede Stufe in einem Verlauf eine einzelne Farbe sein soll oder ob die Farben glatte Übergänge haben.
 
@@ -514,7 +514,7 @@ seg << Get Gradient Discrete Colors;
 
 ### Get Gradient Fill
 
-**Syntax:** obj << Get Gradient Fill
+**Syntax:** obj &lt;&lt; Get Gradient Fill
 
 **Beschreibung:** Ruft das Farbverhalten für Werte außerhalb des Bereichs der Verlaufsskala ab.
 
@@ -533,7 +533,7 @@ seg << Get Gradient Fill;
 
 ### Get Gradient Label Count
 
-**Syntax:** obj << Get Gradient Label Count
+**Syntax:** obj &lt;&lt; Get Gradient Label Count
 
 **Beschreibung:** Ruft die Anzahl der Beschriftungen in der Legende eines Verlaufs ab.
 
@@ -553,7 +553,7 @@ seg << Get Gradient Label Count;
 
 ### Get Gradient Label Levels
 
-**Syntax:** [value1,value1, ... value N] = obj << Get Gradient Label Levels
+**Syntax:** [value1,value1, ... value N] = obj &lt;&lt; Get Gradient Label Levels
 
 **Beschreibung:** Ruft den Satz von Werten für Beschriftungen in der Verlaufsskala ab.
 
@@ -588,7 +588,7 @@ seg << Get Gradient Scale Values;
 
 ### Get Gradient Legend Horizontal
 
-**Syntax:** obj << Get Gradient Legend Horizontal
+**Syntax:** obj &lt;&lt; Get Gradient Legend Horizontal
 
 **Beschreibung:** Ruft ab, ob die Legende des Verlaufs horizontal gezeichnet wird.
 
@@ -608,7 +608,7 @@ seg << Get Gradient Legend Horizontal;
 
 ### Get Gradient Legend Label Format
 
-**Syntax:** obj << Get Gradient Legend Label Format
+**Syntax:** obj &lt;&lt; Get Gradient Legend Label Format
 
 **Beschreibung:** Ruft das Format der Beschriftungen der Verlaufslegende ab
 
@@ -628,7 +628,7 @@ seg << Get Gradient Legend Label Format;
 
 ### Get Gradient Legend Label Width
 
-**Syntax:** obj << Get Gradient Legend Label Width
+**Syntax:** obj &lt;&lt; Get Gradient Legend Label Width
 
 **Beschreibung:** Ruft die maximale Zeichenlänge von Beschriftungen der Verlaufslegende ab.
 
@@ -648,7 +648,7 @@ seg << Get Gradient Legend Label Width;
 
 ### Get Gradient Legend Show Labels
 
-**Syntax:** obj << Get Gradient Legend Show Labels
+**Syntax:** obj &lt;&lt; Get Gradient Legend Show Labels
 
 **Beschreibung:** Ruft ab, ob die Stufenbeschriftungen in der Legende des Verlaufs angezeigt werden sollen.
 
@@ -668,7 +668,7 @@ seg << Get Gradient Legend Show Labels;
 
 ### Get Gradient Level Count
 
-**Syntax:** obj << Get Gradient Level Count
+**Syntax:** obj &lt;&lt; Get Gradient Level Count
 
 **Beschreibung:** Ruft die Anzahl der Stufen in einem Verlauf ab.
 
@@ -688,7 +688,7 @@ seg << Get Gradient Levels;
 
 ### Get Gradient Lightness Range
 
-**Syntax:** obj << Get Gradient Lightness Range
+**Syntax:** obj &lt;&lt; Get Gradient Lightness Range
 
 **Beschreibung:** Ruft die minimale und maximale Helligkeit für Stufenfarben in einem Verlauf ab. Fehlende Werte weisen darauf hin, dass der ursprüngliche Wert des Farbschemas verwendet wird.
 
@@ -708,7 +708,7 @@ seg << Get Gradient Lightness Range;
 
 ### Get Gradient Range
 
-**Syntax:** obj << Get Gradient Range
+**Syntax:** obj &lt;&lt; Get Gradient Range
 
 **Beschreibung:** Ruft den Bereich ab, über den nicht benutzerdefinierte Verlaufsskalen generiert werden.
 
@@ -727,7 +727,7 @@ seg << Get Gradient Range;
 
 ### Get Gradient Reverse Color Order
 
-**Syntax:** obj << Get Gradient Reverse Color Order
+**Syntax:** obj &lt;&lt; Get Gradient Reverse Color Order
 
 **Beschreibung:** Ruft ab, ob die Reihenfolge der Farben in einem Verlauf umgekehrt ist.
 
@@ -747,7 +747,7 @@ seg << Get Gradient Reverse Color Order;
 
 ### Get Gradient Reverse Label Order
 
-**Syntax:** obj << Get Gradient Reverse Label Order
+**Syntax:** obj &lt;&lt; Get Gradient Reverse Label Order
 
 **Beschreibung:** Ruft ab, ob die Reihenfolge der Beschriftungen in einem Verlauf umgekehrt ist.
 
@@ -767,7 +767,7 @@ seg << Get Gradient Reverse Label Order;
 
 ### Get Gradient Scale
 
-**Syntax:** obj << Get Gradient Scale
+**Syntax:** obj &lt;&lt; Get Gradient Scale
 
 **Beschreibung:** Ruft den Skalentyp des Verlaufs ab.
 
@@ -786,7 +786,7 @@ seg << Get Gradient Scale;
 
 ### Get Gradient Scale Values
 
-**Syntax:** [value1,value1, ... value N] = obj << Get Gradient Scale Values
+**Syntax:** [value1,value1, ... value N] = obj &lt;&lt; Get Gradient Scale Values
 
 **Beschreibung:** Ruft den Satz von Werten für Beschriftungen in der Verlaufsskala ab.
 
@@ -821,7 +821,7 @@ seg << Get Gradient Scale Values;
 
 ### Get Gradient Show Missing
 
-**Syntax:** obj << Get Gradient Show Missing
+**Syntax:** obj &lt;&lt; Get Gradient Show Missing
 
 **Beschreibung:** Ruft ab, wann der Legendeneintrag für fehlende Werte angezeigt wird.
 
@@ -841,7 +841,7 @@ seg << Get Gradient Show Missing;
 
 ### Get Gradient Transparency
 
-**Syntax:** obj << Get Gradient Transparency
+**Syntax:** obj &lt;&lt; Get Gradient Transparency
 
 **Beschreibung:** Ruft das Transparenzverhalten von Verläufen ab.
 
@@ -861,7 +861,7 @@ seg << Get Gradient Transparency;
 
 ### Get Interval Draw Directions
 
-**Syntax:** obj << Get Interval Draw Directions
+**Syntax:** obj &lt;&lt; Get Interval Draw Directions
 
 **Beschreibung:** Ruft die Richtungen ab, in die Intervalle gezeichnet werden sollen.
 
@@ -900,7 +900,7 @@ seg << Get Interval Draw Directions;
 
 ### Get Line Color
 
-**Syntax:** color = obj << Get Line Color
+**Syntax:** color = obj &lt;&lt; Get Line Color
 
 **Beschreibung:** Gibt die Farbe der Linien zurück.
 
@@ -918,7 +918,7 @@ seg << Get Line Color;
 
 ### Get Line Style
 
-**Syntax:** pen style = obj << Get Line Style
+**Syntax:** pen style = obj &lt;&lt; Get Line Style
 
 **Beschreibung:** Gibt den Stil der Linien zurück.
 
@@ -938,7 +938,7 @@ seg << Get Line Style;
 
 ### Get Line Width
 
-**Syntax:** number = obj << Get Line Width
+**Syntax:** number = obj &lt;&lt; Get Line Width
 
 **Beschreibung:** Gibt die Breite der Linien zurück.
 
@@ -958,7 +958,7 @@ seg << Get Line Width;
 
 ### Get Marker
 
-**Syntax:** marker = obj << Get Marker
+**Syntax:** marker = obj &lt;&lt; Get Marker
 
 **Beschreibung:** Gibt den Symbolstil zurück.
 
@@ -978,7 +978,7 @@ seg << Get Marker;
 
 ### Get Marker Size
 
-**Syntax:** size = obj << Get Marker Size
+**Syntax:** size = obj &lt;&lt; Get Marker Size
 
 **Beschreibung:** Gibt die Größe der Symbole zurück.
 
@@ -998,7 +998,7 @@ seg << Get Marker Size;
 
 ### Get Point
 
-**Syntax:** Point = obj << Get Point( index )
+**Syntax:** Point = obj &lt;&lt; Get Point( index )
 
 ```jsl
 
@@ -1014,7 +1014,7 @@ seg << Get Point( 2 );
 
 ### Get Point Count
 
-**Syntax:** Number = obj << Get Point Count
+**Syntax:** Number = obj &lt;&lt; Get Point Count
 
 ```jsl
 
@@ -1030,7 +1030,7 @@ seg << Get Point Count;
 
 ### Get Text Color
 
-**Syntax:** obj << Get Text Color
+**Syntax:** obj &lt;&lt; Get Text Color
 
 ```jsl
 
@@ -1046,7 +1046,7 @@ seg << Get Text Color;
 
 ### Get Text Style
 
-**Syntax:** obj << Get Text Style
+**Syntax:** obj &lt;&lt; Get Text Style
 
 **Beschreibung:** Ruft ab, wie der Text in Bezug auf den Mauszeiger-Stift gezeichnet wird.
 
@@ -1069,7 +1069,7 @@ seg << Get Text Style;
 
 ### Get Transparency
 
-**Syntax:** obj << Get Transparency
+**Syntax:** obj &lt;&lt; Get Transparency
 
 **Beschreibung:** Gibt einen numerischen Wert zurück, der die Transparenz zwischen 0 (durchsichtig) und 1 (undurchsichtig) darstellt.
 
@@ -1087,7 +1087,7 @@ seg << Get Transparency;
 
 ### Get X Values
 
-**Syntax:** matrix = obj << Get X Values
+**Syntax:** matrix = obj &lt;&lt; Get X Values
 
 ```jsl
 
@@ -1103,7 +1103,7 @@ seg << Get X Values;
 
 ### Get Y Values
 
-**Syntax:** matrix = obj << Get Y Values
+**Syntax:** matrix = obj &lt;&lt; Get Y Values
 
 ```jsl
 
@@ -1119,9 +1119,7 @@ seg << Get Y Values;
 
 ### Gradient
 
-**Syntax:** obj << { <Color Theme(theme)>, <Min Lightness(0-1)>, <Max Lightness(0-1)>, <Contour Levels(num)>, <Reverse Gradient(0|1)>, <Density Gradient("Fade To White"|"Fade To Gray"|"Full Color")>, <Gradient Transparency("None"|"Linear")> }
-
-obj << { <Color Theme(theme)>, <Min Lightness(0-1)>, <Max Lightness(0-1)>, <N Labels(num)>, <Show Missing Color("On"|"Off"|"Auto")>, <Scale Type("Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom")>, <Scale Values([v1, v2, …])>, <Range Type("Default"|"Exact Data Range"|"Middle 90%")>, <Fill("Between"|"Above"|"Below"|"Above Below")>, <Reverse Gradient(0|1)>, <Reverse Labels(0|1)>, <Discrete Color(0|1)> }, <Label Format(labelFormat)>, <Width(num)>, <Horizontal(0|1)>, <Show Labels(0|1)>
+**Syntax:** obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;Contour Levels(num)&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Density Gradient("Fade To White"|"Fade To Gray"|"Full Color")&gt;, &lt;Gradient Transparency("None"|"Linear")&gt; }obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;N Labels(num)&gt;, &lt;Show Missing Color("On"|"Off"|"Auto")&gt;, &lt;Scale Type("Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom")&gt;, &lt;Scale Values([v1, v2, …])&gt;, &lt;Range Type("Default"|"Exact Data Range"|"Middle 90%")&gt;, &lt;Fill("Between"|"Above"|"Below"|"Above Below")&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Reverse Labels(0|1)&gt;, &lt;Discrete Color(0|1)&gt; }, &lt;Label Format(labelFormat)&gt;, &lt;Width(num)&gt;, &lt;Horizontal(0|1)&gt;, &lt;Show Labels(0|1)&gt;
 
 **Beschreibung:** Legt den Farbverlauf fest.
 
@@ -1139,7 +1137,7 @@ seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
 
 ### Gradient Color Theme
 
-**Syntax:** obj << Gradient Color Theme
+**Syntax:** obj &lt;&lt; Gradient Color Theme
 
 **Beschreibung:** Legt das Farbschema für den Verlauf fest.
 
@@ -1159,7 +1157,7 @@ seg << Set Gradient Color Theme( "Viridis" );
 
 ### Gradient Discrete Colors
 
-**Syntax:** obj << Gradient Discrete Colors
+**Syntax:** obj &lt;&lt; Gradient Discrete Colors
 
 **Beschreibung:** Legt fest, ob jede Stufe in einem Verlauf eine einzelne Farbe sein soll oder ob die Farben glatte Übergänge haben sollen.
 
@@ -1178,7 +1176,7 @@ seg << Set Gradient Discrete Colors( 1 );
 
 ### Gradient Fill
 
-**Syntax:** obj << Gradient Fill( "Zwischen"|"Darüber"|"Darunter"|"Darüber Darunter"="Darüber Darunter" )
+**Syntax:** obj &lt;&lt; Gradient Fill( "Zwischen"|"Darüber"|"Darunter"|"Darüber Darunter"="Darüber Darunter" )
 
 **Beschreibung:** Legt das Farbverhalten für Werte außerhalb des Bereichs der Verlaufsskala fest. Standardmäßig „Darüber Darunter“.
 
@@ -1198,7 +1196,7 @@ seg << Set Gradient Fill( "Between" );
 
 ### Gradient Label Count
 
-**Syntax:** obj << Gradient Label Count
+**Syntax:** obj &lt;&lt; Gradient Label Count
 
 **Beschreibung:** Legt die Anzahl der Beschriftungen in der Legende eines Verlaufs fest. Diese Anzahl ist um eins kleiner als die Anzahl der Konturstufen.
 
@@ -1218,7 +1216,7 @@ seg << Set Gradient Label Count( 8 );
 
 ### Gradient Label Levels
 
-**Syntax:** obj << Gradient Label Levels( [value1,value1, ... value N] )
+**Syntax:** obj &lt;&lt; Gradient Label Levels( [value1,value1, ... value N] )
 
 **Beschreibung:** Legt einen benutzerdefinierten Satz von Werten für die Verwendung in der Verlaufsskala fest.
 
@@ -1237,7 +1235,7 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ### Gradient Legend Horizontal
 
-**Syntax:** obj << Gradient Legend Horizontal
+**Syntax:** obj &lt;&lt; Gradient Legend Horizontal
 
 **Beschreibung:** Legt fest, ob die Legende des Verlaufs horizontal gezeichnet werden soll.
 
@@ -1257,7 +1255,7 @@ seg << Set Gradient Legend Horizontal( 1 );
 
 ### Gradient Legend Label Format
 
-**Syntax:** obj << Gradient Legend Label Format
+**Syntax:** obj &lt;&lt; Gradient Legend Label Format
 
 **Beschreibung:** Legt das Format für die Beschriftungen der Verlaufslegende fest
 
@@ -1277,7 +1275,7 @@ seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
 
 ### Gradient Legend Label Width
 
-**Syntax:** obj << Gradient Legend Label Width
+**Syntax:** obj &lt;&lt; Gradient Legend Label Width
 
 **Beschreibung:** Legt die maximale Zeichenlänge von Beschriftungen der Verlaufslegende fest.
 
@@ -1297,7 +1295,7 @@ seg << Set Gradient Legend Label Width( 4 );
 
 ### Gradient Legend Show Labels
 
-**Syntax:** obj << Gradient Legend Show Labels
+**Syntax:** obj &lt;&lt; Gradient Legend Show Labels
 
 **Beschreibung:** Legt fest, ob die Stufenbeschriftungen in der Legende des Verlaufs angezeigt werden sollen.
 
@@ -1317,7 +1315,7 @@ seg << Set Gradient Legend Show Labels( 0 );
 
 ### Gradient Level Count
 
-**Syntax:** obj << Gradient Level Count
+**Syntax:** obj &lt;&lt; Gradient Level Count
 
 **Beschreibung:** Legt die Anzahl der Stufen in einem Verlauf fest. Diese Anzahl ist um eins kleiner als die Anzahl der Beschriftungen.
 
@@ -1337,7 +1335,7 @@ seg << Set Gradient Levels( 7 );
 
 ### Gradient Lightness Range
 
-**Syntax:** obj << Gradient Lightness Range
+**Syntax:** obj &lt;&lt; Gradient Lightness Range
 
 **Beschreibung:** Legt die minimale und maximale Helligkeit für Stufenfarben in einem Verlauf fest. Die Farben werden skaliert, um den Bereich abzudecken. Ein fehlender Wert wird behandelt wie keine Änderung.
 
@@ -1387,7 +1385,7 @@ seg << Set Gradient Lightness Range( ., 0.75 );
 
 ### Gradient Range
 
-**Syntax:** obj << Gradient Range( "Standard"|"Exakter Datenbereich"|"Mittlere 90 %"="Standard" )
+**Syntax:** obj &lt;&lt; Gradient Range( "Standard"|"Exakter Datenbereich"|"Mittlere 90 %"="Standard" )
 
 **Beschreibung:** Legt den Bereich fest, über den nicht benutzerspezifische Verlaufsskalen generiert werden. Standardmäßig „Standard“.
 
@@ -1406,7 +1404,7 @@ seg << Set Gradient Range( "Exact Data Range" );
 
 ### Gradient Reverse Color Order
 
-**Syntax:** obj << Gradient Reverse Color Order
+**Syntax:** obj &lt;&lt; Gradient Reverse Color Order
 
 **Beschreibung:** Kehrt die Reihenfolge der Farben in einem Verlauf um.
 
@@ -1426,7 +1424,7 @@ seg << Set Gradient Reverse Color Order( 1 );
 
 ### Gradient Reverse Label Order
 
-**Syntax:** obj << Gradient Reverse Label Order
+**Syntax:** obj &lt;&lt; Gradient Reverse Label Order
 
 **Beschreibung:** Kehrt die Reihenfolge der Beschriftungen in einem Verlauf um.
 
@@ -1446,7 +1444,7 @@ seg << Set Gradient Reverse Label Order( 1 );
 
 ### Gradient Scale
 
-**Syntax:** obj << Gradient Scale( "Linear"|"Quantil"|"Standardabweichung"|"Log"|"Log-Offset"|"Benutzerdefiniert"="Linear" )
+**Syntax:** obj &lt;&lt; Gradient Scale( "Linear"|"Quantil"|"Standardabweichung"|"Log"|"Log-Offset"|"Benutzerdefiniert"="Linear" )
 
 **Beschreibung:** Legt den Skalentyp des Verlaufs fest. Standardmäßig „Linear“.
 
@@ -1465,7 +1463,7 @@ seg << Set Gradient Scale( "Quantile" );
 
 ### Gradient Scale Values
 
-**Syntax:** obj << Gradient Scale Values( [value1,value1, ... value N] )
+**Syntax:** obj &lt;&lt; Gradient Scale Values( [value1,value1, ... value N] )
 
 **Beschreibung:** Legt einen benutzerdefinierten Satz von Werten für die Verwendung in der Verlaufsskala fest.
 
@@ -1484,7 +1482,7 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ### Gradient Show Missing
 
-**Syntax:** obj << Gradient Show Missing( "Automatisch"|"Ein"|"Aus"="Automatisch" )
+**Syntax:** obj &lt;&lt; Gradient Show Missing( "Automatisch"|"Ein"|"Aus"="Automatisch" )
 
 **Beschreibung:** Legt fest, wann der Legendeneintrag für fehlende Werte angezeigt werden soll. Standardmäßig „Automatisch“.
 
@@ -1506,7 +1504,7 @@ seg << Set Gradient Show Missing( "Off" );
 
 ### Gradient Transparency
 
-**Syntax:** obj << Gradient Transparency( "Keine"|"Linear"="Linear" )
+**Syntax:** obj &lt;&lt; Gradient Transparency( "Keine"|"Linear"="Linear" )
 
 **Beschreibung:** Legt das Transparenzverhalten von Verläufen fest. Standardmäßig „Linear“.
 
@@ -1526,13 +1524,13 @@ seg << Gradient Transparency( "None" );
 
 ### Last Value
 
-**Syntax:** obj << Last Value( state=0|1 )
+**Syntax:** obj &lt;&lt; Last Value( state=0|1 )
 
 **JMP Version hinzugefügt:** 16
 
 ### Line Color
 
-**Syntax:** obj << Line Color( color )
+**Syntax:** obj &lt;&lt; Line Color( color )
 
 **Beschreibung:** Legt die Farbe für alle Linien im Anzeigesegment fest.
 
@@ -1550,7 +1548,7 @@ seg << Set Line Color( "Green" );
 
 ### Line Style
 
-**Syntax:** obj << Line Style( pen style )
+**Syntax:** obj &lt;&lt; Line Style( pen style )
 
 **Beschreibung:** Legt den Stil der Linien fest. Mögliche Optionen sind Durchgezogen, Gepunktet, Gestrichelt, Strich-Punkt oder Strich-Punkt-Punkt.
 
@@ -1570,7 +1568,7 @@ seg << Set Line Style( "Dotted" );
 
 ### Line Width
 
-**Syntax:** obj << Line Width( "1"|"2"|"3"|"4"|"5"|"6"|"Sonstige…" )
+**Syntax:** obj &lt;&lt; Line Width( "1"|"2"|"3"|"4"|"5"|"6"|"Sonstige…" )
 
 **Beschreibung:** Legt die Breite der Linien fest.
 
@@ -1590,7 +1588,7 @@ seg << Set Line Width( 3 );
 
 ### Marker
 
-**Syntax:** obj << Marker( marker )
+**Syntax:** obj &lt;&lt; Marker( marker )
 
 **Beschreibung:** Legt den Symbolstil für alle Symbole fest.
 
@@ -1610,7 +1608,7 @@ seg << Set Marker( "Square" );
 
 ### Marker Size
 
-**Syntax:** obj << Marker Size( size )
+**Syntax:** obj &lt;&lt; Marker Size( size )
 
 **Beschreibung:** Legt die Größe der Symbole fest. Mögliche Größen sind Punkt, Klein, Mittel, Groß, XL, XXL und XXXL.
 
@@ -1631,25 +1629,25 @@ seg << Set Marker Size( "XL" );
 
 ### Max Value
 
-**Syntax:** obj << Max Value( state=0|1 )
+**Syntax:** obj &lt;&lt; Max Value( state=0|1 )
 
 **JMP Version hinzugefügt:** 16
 
 ### Min Value
 
-**Syntax:** obj << Min Value( state=0|1 )
+**Syntax:** obj &lt;&lt; Min Value( state=0|1 )
 
 **JMP Version hinzugefügt:** 16
 
 ### Name
 
-**Syntax:** obj << Name( state=0|1 )
+**Syntax:** obj &lt;&lt; Name( state=0|1 )
 
 **JMP Version hinzugefügt:** 16
 
 ### Parent
 
-**Syntax:** seg2 = obj << Parent
+**Syntax:** seg2 = obj &lt;&lt; Parent
 
 **Beschreibung:** Gibt das übergeordnete Element des Anzeigesegments zurück.
 
@@ -1667,7 +1665,7 @@ seg << Parent;
 
 ### Revert
 
-**Syntax:** obj << Revert
+**Syntax:** obj &lt;&lt; Revert
 
 ```jsl
 
@@ -1683,7 +1681,7 @@ seg << Revert;
 
 ### Set Base Font
 
-**Syntax:** obj << Set Base Font( "Text"|"Überschrift"|"Titel"|"Klein"|"Mono"|"Formeleditor"|"Anmerkung"|"Achse"|"Symbol"|"Achsentitel"|"Graphenbeschriftung"|"Legende"|"Graphentitel"|"Titel"|"Datentabelle"|"Hover-Beschriftung" )
+**Syntax:** obj &lt;&lt; Set Base Font( "Text"|"Überschrift"|"Titel"|"Klein"|"Mono"|"Formeleditor"|"Anmerkung"|"Achse"|"Symbol"|"Achsentitel"|"Graphenbeschriftung"|"Legende"|"Graphentitel"|"Titel"|"Datentabelle"|"Hover-Beschriftung" )
 
 **Beschreibung:** Legt die Basisschriftart für vom Feld dargestellten Text fest.
 
@@ -1702,7 +1700,7 @@ fontobj << Set Base Font( "Title" );
 
 ### Set Description
 
-**Syntax:** obj << Set Description( description )
+**Syntax:** obj &lt;&lt; Set Description( description )
 
 **Beschreibung:** Legt die Beschreibung des Anzeigesegments fest.
 
@@ -1720,7 +1718,7 @@ seg << set description( "my seg" );
 
 ### Set Error Bar Cap
 
-**Syntax:** obj << Set Error Bar Cap( "Keine"|"Sehr klein"|"Klein"|"Mittel"|"Groß" )
+**Syntax:** obj &lt;&lt; Set Error Bar Cap( "Keine"|"Sehr klein"|"Klein"|"Mittel"|"Groß" )
 
 **Beschreibung:** Gibt an, welche Art von Abschluss für Fehlerbalken verwendet werden soll.
 
@@ -1743,7 +1741,7 @@ seg << Set Error Bar Cap( "Large" );
 
 ### Set Error Bar Cap Shape
 
-**Syntax:** obj << Set Error Bar Cap Shape( begin, end )
+**Syntax:** obj &lt;&lt; Set Error Bar Cap Shape( begin, end )
 
 **Beschreibung:** Gibt die Form des Abschlusses an, die in Fehlerbalken angezeigt werden soll. Ein einzelnes Argument legt die Form für beide Enden des Balkens fest, oder es können separate Argumente für Anfang und Ende des Balkens angegeben werden. Die Standardform ist "Line". Die Form "Arrow" zeichnet einen nach außen zeigenden Pfeil und "None" lässt den Abschluss aus.
 
@@ -1766,7 +1764,7 @@ seg << Set Error Bar Cap Shape( "Line", "Arrow" );
 
 ### Set Fill Color
 
-**Syntax:** obj << Set Fill Color( color )
+**Syntax:** obj &lt;&lt; Set Fill Color( color )
 
 ```jsl
 
@@ -1782,7 +1780,7 @@ seg << Set Fill Color( "Green" );
 
 ### Set Fill Pattern
 
-**Syntax:** obj << Set Fill Pattern
+**Syntax:** obj &lt;&lt; Set Fill Pattern
 
 ```jsl
 
@@ -1798,7 +1796,7 @@ seg << Set Fill Pattern( "h wave medium" );
 
 ### Set Font
 
-**Syntax:** obj << Set Font( fontName, <size>, <"bold italic underline strikeout">, <angle> )
+**Syntax:** obj &lt;&lt; Set Font( fontName, &lt;size&gt;, &lt;"bold italic underline strikeout"&gt;, &lt;angle&gt; )
 
 **Beispiel 1**
 
@@ -1830,7 +1828,7 @@ fontobj << Set Font( "Arial Black", 12, "Italic Underline" );
 
 ### Set Font Name
 
-**Syntax:** obj << Set Font Name( fontname )
+**Syntax:** obj &lt;&lt; Set Font Name( fontname )
 
 **Beschreibung:** Legt die Schriftart für den Text fest.
 
@@ -1848,7 +1846,7 @@ fontobj << Set Font Name( "Arial Black" );
 
 ### Set Font Scale
 
-**Syntax:** obj << Set Font Scale( f )
+**Syntax:** obj &lt;&lt; Set Font Scale( f )
 
 **Beschreibung:** Legt einen Skalierungsfaktor für die aktuelle Schriftart fest. Der Skalierungsfaktor wird auf die Größe angewendet, die anhand der Basisschriftart und der Punktgröße ermittelt wird.
 
@@ -1867,7 +1865,7 @@ fontobj << Set Font Scale( 2.0 );
 
 ### Set Font Size
 
-**Syntax:** obj << Set Font Size( n )
+**Syntax:** obj &lt;&lt; Set Font Size( n )
 
 **Beschreibung:** Legt die Schriftgröße in Punkten für den Text fest.
 
@@ -1885,7 +1883,7 @@ fontobj << Set Font Size( 14 );
 
 ### Set Font Style
 
-**Syntax:** obj << Set Font Style( style )
+**Syntax:** obj &lt;&lt; Set Font Style( style )
 
 **Beschreibung:** Legt den Schriftstil für Textzeichenketten fest. Um mehrere Stile gleichzeitig festzulegen, platzieren Sie sie getrennt durch Leerzeichen in der gleichen Zeichenkette (siehe Beispiel 2 unten).
 
@@ -1919,9 +1917,7 @@ fontobj << Set Font Style( "Italic Bold Underline" );
 
 ### Set Gradient
 
-**Syntax:** obj << { <Color Theme(theme)>, <Min Lightness(0-1)>, <Max Lightness(0-1)>, <Contour Levels(num)>, <Reverse Gradient(0|1)>, <Density Gradient("Fade To White"|"Fade To Gray"|"Full Color")>, <Gradient Transparency("None"|"Linear")> }
-
-obj << { <Color Theme(theme)>, <Min Lightness(0-1)>, <Max Lightness(0-1)>, <N Labels(num)>, <Show Missing Color("On"|"Off"|"Auto")>, <Scale Type("Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom")>, <Scale Values([v1, v2, …])>, <Range Type("Default"|"Exact Data Range"|"Middle 90%")>, <Fill("Between"|"Above"|"Below"|"Above Below")>, <Reverse Gradient(0|1)>, <Reverse Labels(0|1)>, <Discrete Color(0|1)> }, <Label Format(labelFormat)>, <Width(num)>, <Horizontal(0|1)>, <Show Labels(0|1)>
+**Syntax:** obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;Contour Levels(num)&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Density Gradient("Fade To White"|"Fade To Gray"|"Full Color")&gt;, &lt;Gradient Transparency("None"|"Linear")&gt; }obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;N Labels(num)&gt;, &lt;Show Missing Color("On"|"Off"|"Auto")&gt;, &lt;Scale Type("Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom")&gt;, &lt;Scale Values([v1, v2, …])&gt;, &lt;Range Type("Default"|"Exact Data Range"|"Middle 90%")&gt;, &lt;Fill("Between"|"Above"|"Below"|"Above Below")&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Reverse Labels(0|1)&gt;, &lt;Discrete Color(0|1)&gt; }, &lt;Label Format(labelFormat)&gt;, &lt;Width(num)&gt;, &lt;Horizontal(0|1)&gt;, &lt;Show Labels(0|1)&gt;
 
 **Beschreibung:** Legt den Farbverlauf fest.
 
@@ -1939,7 +1935,7 @@ seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
 
 ### Set Gradient Color Theme
 
-**Syntax:** obj << Set Gradient Color Theme
+**Syntax:** obj &lt;&lt; Set Gradient Color Theme
 
 **Beschreibung:** Legt das Farbschema für den Verlauf fest.
 
@@ -1959,7 +1955,7 @@ seg << Set Gradient Color Theme( "Viridis" );
 
 ### Set Gradient Custom Scale
 
-**Syntax:** obj << Set Gradient Custom Scale
+**Syntax:** obj &lt;&lt; Set Gradient Custom Scale
 
 **Beschreibung:** Legt für den Verlauf fest, dass eine Liste von Werten für eine benutzerdefinierte Skala verwendet wird.
 
@@ -1979,7 +1975,7 @@ seg << Set Gradient Custom Scale( {0.0, 5.0, 10.0, 20.0} );
 
 ### Set Gradient Discrete Colors
 
-**Syntax:** obj << Set Gradient Discrete Colors
+**Syntax:** obj &lt;&lt; Set Gradient Discrete Colors
 
 **Beschreibung:** Legt fest, ob jede Stufe in einem Verlauf eine einzelne Farbe sein soll oder ob die Farben glatte Übergänge haben sollen.
 
@@ -1998,7 +1994,7 @@ seg << Set Gradient Discrete Colors( 1 );
 
 ### Set Gradient Fill
 
-**Syntax:** obj << Set Gradient Fill( "Zwischen"|"Darüber"|"Darunter"|"Darüber Darunter"="Darüber Darunter" )
+**Syntax:** obj &lt;&lt; Set Gradient Fill( "Zwischen"|"Darüber"|"Darunter"|"Darüber Darunter"="Darüber Darunter" )
 
 **Beschreibung:** Legt das Farbverhalten für Werte außerhalb des Bereichs der Verlaufsskala fest. Standardmäßig „Darüber Darunter“.
 
@@ -2018,7 +2014,7 @@ seg << Set Gradient Fill( "Between" );
 
 ### Set Gradient Label Count
 
-**Syntax:** obj << Set Gradient Label Count
+**Syntax:** obj &lt;&lt; Set Gradient Label Count
 
 **Beschreibung:** Legt die Anzahl der Beschriftungen in der Legende eines Verlaufs fest. Diese Anzahl ist um eins kleiner als die Anzahl der Konturstufen.
 
@@ -2038,7 +2034,7 @@ seg << Set Gradient Label Count( 8 );
 
 ### Set Gradient Label Levels
 
-**Syntax:** obj << Set Gradient Label Levels( [value1,value1, ... value N] )
+**Syntax:** obj &lt;&lt; Set Gradient Label Levels( [value1,value1, ... value N] )
 
 **Beschreibung:** Legt einen benutzerdefinierten Satz von Werten für die Verwendung in der Verlaufsskala fest.
 
@@ -2057,7 +2053,7 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ### Set Gradient Legend Horizontal
 
-**Syntax:** obj << Set Gradient Legend Horizontal
+**Syntax:** obj &lt;&lt; Set Gradient Legend Horizontal
 
 **Beschreibung:** Legt fest, ob die Legende des Verlaufs horizontal gezeichnet werden soll.
 
@@ -2077,7 +2073,7 @@ seg << Set Gradient Legend Horizontal( 1 );
 
 ### Set Gradient Legend Label Format
 
-**Syntax:** obj << Set Gradient Legend Label Format
+**Syntax:** obj &lt;&lt; Set Gradient Legend Label Format
 
 **Beschreibung:** Legt das Format für die Beschriftungen der Verlaufslegende fest
 
@@ -2097,7 +2093,7 @@ seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
 
 ### Set Gradient Legend Label Width
 
-**Syntax:** obj << Set Gradient Legend Label Width
+**Syntax:** obj &lt;&lt; Set Gradient Legend Label Width
 
 **Beschreibung:** Legt die maximale Zeichenlänge von Beschriftungen der Verlaufslegende fest.
 
@@ -2117,7 +2113,7 @@ seg << Set Gradient Legend Label Width( 4 );
 
 ### Set Gradient Legend Show Labels
 
-**Syntax:** obj << Set Gradient Legend Show Labels
+**Syntax:** obj &lt;&lt; Set Gradient Legend Show Labels
 
 **Beschreibung:** Legt fest, ob die Stufenbeschriftungen in der Legende des Verlaufs angezeigt werden sollen.
 
@@ -2137,7 +2133,7 @@ seg << Set Gradient Legend Show Labels( 0 );
 
 ### Set Gradient Level Count
 
-**Syntax:** obj << Set Gradient Level Count
+**Syntax:** obj &lt;&lt; Set Gradient Level Count
 
 **Beschreibung:** Legt die Anzahl der Stufen in einem Verlauf fest. Diese Anzahl ist um eins kleiner als die Anzahl der Beschriftungen.
 
@@ -2157,7 +2153,7 @@ seg << Set Gradient Levels( 7 );
 
 ### Set Gradient Lightness Range
 
-**Syntax:** obj << Set Gradient Lightness Range
+**Syntax:** obj &lt;&lt; Set Gradient Lightness Range
 
 **Beschreibung:** Legt die minimale und maximale Helligkeit für Stufenfarben in einem Verlauf fest. Die Farben werden skaliert, um den Bereich abzudecken. Ein fehlender Wert wird behandelt wie keine Änderung.
 
@@ -2207,7 +2203,7 @@ seg << Set Gradient Lightness Range( ., 0.75 );
 
 ### Set Gradient Range
 
-**Syntax:** obj << Set Gradient Range( "Standard"|"Exakter Datenbereich"|"Mittlere 90 %"="Standard" )
+**Syntax:** obj &lt;&lt; Set Gradient Range( "Standard"|"Exakter Datenbereich"|"Mittlere 90 %"="Standard" )
 
 **Beschreibung:** Legt den Bereich fest, über den nicht benutzerspezifische Verlaufsskalen generiert werden. Standardmäßig „Standard“.
 
@@ -2226,7 +2222,7 @@ seg << Set Gradient Range( "Exact Data Range" );
 
 ### Set Gradient Reverse Color Order
 
-**Syntax:** obj << Set Gradient Reverse Color Order
+**Syntax:** obj &lt;&lt; Set Gradient Reverse Color Order
 
 **Beschreibung:** Kehrt die Reihenfolge der Farben in einem Verlauf um.
 
@@ -2246,7 +2242,7 @@ seg << Set Gradient Reverse Color Order( 1 );
 
 ### Set Gradient Reverse Label Order
 
-**Syntax:** obj << Set Gradient Reverse Label Order
+**Syntax:** obj &lt;&lt; Set Gradient Reverse Label Order
 
 **Beschreibung:** Kehrt die Reihenfolge der Beschriftungen in einem Verlauf um.
 
@@ -2266,7 +2262,7 @@ seg << Set Gradient Reverse Label Order( 1 );
 
 ### Set Gradient Scale
 
-**Syntax:** obj << Set Gradient Scale( "Linear"|"Quantil"|"Standardabweichung"|"Log"|"Log-Offset"|"Benutzerdefiniert"="Linear" )
+**Syntax:** obj &lt;&lt; Set Gradient Scale( "Linear"|"Quantil"|"Standardabweichung"|"Log"|"Log-Offset"|"Benutzerdefiniert"="Linear" )
 
 **Beschreibung:** Legt den Skalentyp des Verlaufs fest. Standardmäßig „Linear“.
 
@@ -2285,7 +2281,7 @@ seg << Set Gradient Scale( "Quantile" );
 
 ### Set Gradient Scale Values
 
-**Syntax:** obj << Set Gradient Scale Values( [value1,value1, ... value N] )
+**Syntax:** obj &lt;&lt; Set Gradient Scale Values( [value1,value1, ... value N] )
 
 **Beschreibung:** Legt einen benutzerdefinierten Satz von Werten für die Verwendung in der Verlaufsskala fest.
 
@@ -2304,7 +2300,7 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ### Set Gradient Show Missing
 
-**Syntax:** obj << Set Gradient Show Missing( "Automatisch"|"Ein"|"Aus"="Automatisch" )
+**Syntax:** obj &lt;&lt; Set Gradient Show Missing( "Automatisch"|"Ein"|"Aus"="Automatisch" )
 
 **Beschreibung:** Legt fest, wann der Legendeneintrag für fehlende Werte angezeigt werden soll. Standardmäßig „Automatisch“.
 
@@ -2326,7 +2322,7 @@ seg << Set Gradient Show Missing( "Off" );
 
 ### Set Interval Draw Directions
 
-**Syntax:** obj << Set Interval Draw Directions( Both|Upper|Lower|None )
+**Syntax:** obj &lt;&lt; Set Interval Draw Directions( Both|Upper|Lower|None )
 
 **Beschreibung:** Legt die Richtungen fest, in die Intervalle gezeichnet werden sollen.
 
@@ -2365,7 +2361,7 @@ seg << Set Interval Draw Directions( "Lower" );
 
 ### Set Line Color
 
-**Syntax:** obj << Set Line Color( color )
+**Syntax:** obj &lt;&lt; Set Line Color( color )
 
 **Beschreibung:** Legt die Farbe für alle Linien im Anzeigesegment fest.
 
@@ -2383,7 +2379,7 @@ seg << Set Line Color( "Green" );
 
 ### Set Line Style
 
-**Syntax:** obj << Set Line Style( pen style )
+**Syntax:** obj &lt;&lt; Set Line Style( pen style )
 
 **Beschreibung:** Legt den Stil der Linien fest. Mögliche Optionen sind Durchgezogen, Gepunktet, Gestrichelt, Strich-Punkt oder Strich-Punkt-Punkt.
 
@@ -2403,7 +2399,7 @@ seg << Set Line Style( "Dotted" );
 
 ### Set Line Width
 
-**Syntax:** obj << Set Line Width( "1"|"2"|"3"|"4"|"5"|"6"|"Sonstige…" )
+**Syntax:** obj &lt;&lt; Set Line Width( "1"|"2"|"3"|"4"|"5"|"6"|"Sonstige…" )
 
 **Beschreibung:** Legt die Breite der Linien fest.
 
@@ -2423,7 +2419,7 @@ seg << Set Line Width( 3 );
 
 ### Set Marker
 
-**Syntax:** obj << Set Marker( marker )
+**Syntax:** obj &lt;&lt; Set Marker( marker )
 
 **Beschreibung:** Legt den Symbolstil für alle Symbole fest.
 
@@ -2443,7 +2439,7 @@ seg << Set Marker( "Square" );
 
 ### Set Marker Size
 
-**Syntax:** obj << Set Marker Size( size )
+**Syntax:** obj &lt;&lt; Set Marker Size( size )
 
 **Beschreibung:** Legt die Größe der Symbole fest. Mögliche Größen sind Punkt, Klein, Mittel, Groß, XL, XXL und XXXL.
 
@@ -2464,7 +2460,7 @@ seg << Set Marker Size( "XL" );
 
 ### Set Text Color
 
-**Syntax:** obj << Set Text Color( color )
+**Syntax:** obj &lt;&lt; Set Text Color( color )
 
 ```jsl
 
@@ -2480,7 +2476,7 @@ seg << Set Text Color( "Green" );
 
 ### Set Text Style
 
-**Syntax:** obj << Set Text Style( [Links|Mitte|Rechts], [Oben|VMitte|Baseline|Unten], [Hintergrund überschreiben], [Boxen] )
+**Syntax:** obj &lt;&lt; Set Text Style( [Links|Mitte|Rechts], [Oben|VMitte|Baseline|Unten], [Hintergrund überschreiben], [Boxen] )
 
 **Beschreibung:** Legt fest, wie der Text in Bezug auf den Mauszeiger-Stift gezeichnet wird. Wenn unterstützt, füllt „Hintergrund überschreiben“ das Rahmenfeld des Texts und „Hintergrund überschreiben“ umrandet es. Wenn nicht angegeben, ist die standardmäßige horizontale Ausrichtung „Links“ und vertikal ist „Baseline“.
 
@@ -2503,7 +2499,7 @@ seg << Set Text Style( {Center, VCenter} );
 
 ### Set Transparency
 
-**Syntax:** obj << Set Transparency( number )
+**Syntax:** obj &lt;&lt; Set Transparency( number )
 
 ```jsl
 
@@ -2519,7 +2515,7 @@ seg << Set Transparency( .3 );
 
 ### Sib
 
-**Syntax:** seg2 = obj << Sib
+**Syntax:** seg2 = obj &lt;&lt; Sib
 
 **Beschreibung:** Gibt das Geschwisterelement des Anzeigesegments zurück.
 
@@ -2537,7 +2533,7 @@ seg << Sib;
 
 ### Sib Append
 
-**Syntax:** obj << Sib Append( seg2 )
+**Syntax:** obj &lt;&lt; Sib Append( seg2 )
 
 **Beschreibung:** Fügt ein Anzeigesegment direkt nach dem Anzeigesegment ein.
 
@@ -2575,7 +2571,7 @@ mapSeg << Sib Append( Line Seg( xval, yval, <<line color( "Green" ), <<line widt
 
 ### Sib Prepend
 
-**Syntax:** obj << Sib Prepend( seg2 )
+**Syntax:** obj &lt;&lt; Sib Prepend( seg2 )
 
 **Beschreibung:** Fügt ein Anzeigesegment direkt vor dem Anzeigesegment ein.
 
@@ -2606,7 +2602,7 @@ seg << Sib Prepend( Line Seg( xval, yval, <<line color( "Green" ), <<line width(
 
 ### Text Color
 
-**Syntax:** obj << Text Color( color )
+**Syntax:** obj &lt;&lt; Text Color( color )
 
 ```jsl
 
@@ -2622,7 +2618,7 @@ seg << Set Text Color( "Green" );
 
 ### Text Style
 
-**Syntax:** obj << Text Style( [Links|Mitte|Rechts], [Oben|VMitte|Baseline|Unten], [Hintergrund überschreiben], [Boxen] )
+**Syntax:** obj &lt;&lt; Text Style( [Links|Mitte|Rechts], [Oben|VMitte|Baseline|Unten], [Hintergrund überschreiben], [Boxen] )
 
 **Beschreibung:** Legt fest, wie der Text in Bezug auf den Mauszeiger-Stift gezeichnet wird. Wenn unterstützt, füllt „Hintergrund überschreiben“ das Rahmenfeld des Texts und „Hintergrund überschreiben“ umrandet es. Wenn nicht angegeben, ist die standardmäßige horizontale Ausrichtung „Links“ und vertikal ist „Baseline“.
 
@@ -2645,7 +2641,7 @@ seg << Set Text Style( {Center, VCenter} );
 
 ### Transparency
 
-**Syntax:** obj << Transparency( number )
+**Syntax:** obj &lt;&lt; Transparency( number )
 
 **Beschreibung:** Legt die Formentransparenz fest. Das Argument muss ein numerischer Wert zwischen 0 und 1 sein.
 
@@ -2667,9 +2663,7 @@ seg << Set Transparency( .3 );
 
 ### Enabled
 
-**Syntax:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**Syntax:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Beschreibung:** Ein Objekt, das nicht aktiviert ist, reagiert nicht auf Tastatur- oder Mauseingabe. Diese Eigenschaft wird von untergeordneten Objekten geerbt, deshalb verursacht ein Containerobjekt, das deaktiviert ist, die Deaktivierung aller untergeordneten Objekte.
 
@@ -2701,9 +2695,7 @@ New Window( "enabled",
 
 ### Get Enabled
 
-**Syntax:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**Syntax:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Beschreibung:** Ein Objekt, das nicht aktiviert ist, reagiert nicht auf Tastatur- oder Mauseingabe. Diese Eigenschaft wird von untergeordneten Objekten geerbt, deshalb verursacht ein Containerobjekt, das deaktiviert ist, die Deaktivierung aller untergeordneten Objekte.
 
@@ -2735,7 +2727,7 @@ New Window( "enabled",
 
 ### Get Namespace
 
-**Syntax:** obj << Get Namespace
+**Syntax:** obj &lt;&lt; Get Namespace
 
 **Beschreibung:** Gibt den zu diesem Anzeigeobjekt zugehörigen Namensraum zurück.
 
@@ -2753,7 +2745,7 @@ Show( ns:x, x );
 
 ### Get Properties
 
-**Syntax:** obj << Get Properties
+**Syntax:** obj &lt;&lt; Get Properties
 
 **Beschreibung:** Gibt ein assoziatives Array zurück, das die Eigenschaften und deren Werte des Anzeigefelds enthält.
 
@@ -2767,7 +2759,7 @@ bb << Get Properties;
 
 ### Get Property
 
-**Syntax:** obj << Get Property( "property" )
+**Syntax:** obj &lt;&lt; Get Property( "property" )
 
 **Beschreibung:** Gibt die aktuelle Einstellung für die benannte property zurück.
 
@@ -2781,7 +2773,7 @@ bb << Get Property( "Enabled" );
 
 ### Get Property List
 
-**Syntax:** obj << Get Property List
+**Syntax:** obj &lt;&lt; Get Property List
 
 **Beschreibung:** Gibt eine Liste von Eigenschaften des Anzeigefelds zurück.
 
@@ -2795,7 +2787,7 @@ bb << Get Property List;
 
 ### Set Property
 
-**Syntax:** obj << Set Property( "property", value )
+**Syntax:** obj &lt;&lt; Set Property( "property", value )
 
 **Beschreibung:** Legt den Wert für die benannte property für das Anzeigefeld fest.
 

@@ -2,11 +2,9 @@
 
 
 
-## 함수
-
 ### Blob To Char
 
-**구문:** s = Blob To Char( blob, <encoding="utf-8"> )
+**구문:** s = Blob To Char( blob, &lt;encoding="utf-8"&gt; )
 
 **설명:** 지정된 인코딩을 사용하여 BLOB(Binary Large Object)에서 문자열을 생성합니다. 지원되는 인코딩으로는 utf-8, utf-16le, utf-16be, us-ascii, iso-8859-1, shift_jis, euc-jp 및 ascii~hex가 있습니다.
 
@@ -21,7 +19,7 @@ Blob To Char( Hex To Blob( "436166C3A9" ) ) || Blob To Char( Hex To Blob( "43616
 
 ### Blob To Matrix
 
-**구문:** m = Blob To Matrix( blob, type, bytesEach, endian, <nCols=1> )
+**구문:** m = Blob To Matrix( blob, type, bytesEach, endian, &lt;nCols=1&gt; )
 
 **설명:** BLOB의 바이트를 숫자로 변환하여 행렬을 생성합니다. type은 "int", "uint" 또는 "float"입니다. bytesEach는 1, 2, 4 또는 8입니다. endian은 첫 번째 바이트가 유의성이 가장 높은지("big") 아니면 유의성이 가장 낮은지("little")를 나타냅니다. "native"는 컴퓨터의 기본 형식을 나타냅니다.
 
@@ -36,7 +34,7 @@ Blob To Matrix( Hex To Blob( "00010002FFFFFFFE" ), "int", 2, "big", 2 );
 
 ### Char
 
-**구문:** s = Char( x, <w>, <d>, < <<Use Locale( Boolean ) >, < <<Full Precision( Boolean ) > )
+**구문:** s = Char( x, &lt;w&gt;, &lt;d&gt;, &lt; &lt;&lt;Use Locale( Boolean ) &gt;, &lt; &lt;&lt;Full Precision( Boolean ) &gt; )
 
 **설명:** x 인수가 숫자인 경우 최대 너비 w 및 소수 자릿수 d을(를) 사용하여 x의 문자열 표현을 반환합니다. <<FullPrecision 인수는 사용 가능한 모든 정밀도를 사용하여 숫자 값을 씁니다.
 
@@ -71,7 +69,7 @@ Show( Char( 88.54 ), Char( 88.54, <<Full Precision( 1 ) ) );
 
 ### Char To Blob
 
-**구문:** blob = Char To Blob( string, <encoding="utf-8"> )
+**구문:** blob = Char To Blob( string, &lt;encoding="utf-8"&gt; )
 
 **설명:** 지정된 인코딩을 사용하여 문자열에서 BLOB(Binary Large Object)를 생성합니다. 지원되는 인코딩으로는 utf-8, utf-16le, utf-16be, us-ascii, iso-8859-1, shift_jis, euc-jp 및 ascii~hex가 있습니다.
 
@@ -86,7 +84,7 @@ Char To Blob( "Café", "utf-16be" );
 
 ### Char To Hex
 
-**구문:** h = Char To Hex( value, <"integer">|<encoding="utf-8"> )
+**구문:** h = Char To Hex( value, &lt;"integer"&gt;|&lt;encoding="utf-8"&gt; )
 
 **설명:** 지정된 값 및 인코딩에 해당하는 16진수 텍스트를 반환합니다. 숫자, 문자열 또는 BLOB일 수 있습니다. 값이 숫자일 경우 선택적 인수 "integer"가 제공되지 않으면 IEEE 754 64비트 인코딩이 사용됩니다. 지원되는 인코딩에는 utf-8, utf-16le, utf-16be, us-ascii, iso-8859-1, ascii~hex, shift_jis 및 euc-jp가 있습니다.
 
@@ -131,7 +129,7 @@ Names Default To Here( 1 );
 
 ### Concat Items
 
-**구문:** string = Concat Items( {list of strings}, <separatorString> )
+**구문:** string = Concat Items( {list of strings}, &lt;separatorString&gt; )
 
 **설명:** 문자열 목록을 긴 문자열 하나로 결합합니다. 각 문자열은 구분 기호(지정하지 않을 경우 공백)로 구분합니다.
 
@@ -162,7 +160,7 @@ ex ||= "world";
 
 ### Contains
 
-**구문:** pos = Contains( x, item, <start=1> )
+**구문:** pos = Contains( x, item, &lt;start=1&gt; )
 
 **설명:** 위치 start에서 시작하여(제공된 경우) x 내의 item 위치를 반환합니다. start가 음수면 검색이 length( x ) - start부터 역방향으로 시작됩니다. 인수 x는 문자열 또는 목록일 수 있습니다.
 
@@ -178,7 +176,7 @@ Show( Contains( {"A", 2, "C", [1 5], "C"}, "C", 4 ) );
 
 ### Contains Item
 
-**구문:** b = Contains Item( x, item | list | Pat Regex(), <delimiter> )
+**구문:** b = Contains Item( x, item | list | Pat Regex(), &lt;delimiter&gt; )
 
 **설명:** 단어[항목], 단어 목록[목록] 또는 패턴[패턴]이 [x]가 나타내는 텍스트의 단어 중 하나와 매칭되는지 여부를 나타내는 부울을 반환합니다. 단어는 선택적 구분자[구분자] 문자열의 문자로 구분됩니다. 쉼표("","")가 기본 구분자입니다. 공백은 입력 텍스트 문자열 [x]에서 추출된 각 단어의 양쪽 끝에서 잘립니다.
 
@@ -231,7 +229,7 @@ Ends With( "http://www.jmp.com", ".com" );
 
 ### Hex
 
-**구문:** h = Hex( value, <"integer">|<encoding="utf-8">|<Base(number)>,<Pad To(number)> )
+**구문:** h = Hex( value, &lt;"integer"&gt;|&lt;encoding="utf-8"&gt;|&lt;Base(number)&gt;,&lt;Pad To(number)&gt; )
 
 **설명:** 지정된 값 및 인코딩(숫자, 문자열 또는 BLOB)에 해당하는 16진(또는 다른 진법) 텍스트를 반환합니다. 값이 숫자이면 선택적 인수인 integer 또는 Base 중 하나가 지정되지 않은 한 IEEE 754 64비트 인코딩이 사용됩니다. Base가 지정된 경우 이 함수는 지정된 숫자에 해당하는 텍스트를 16진법 대신 해당 진법으로 반환합니다. Base 인수는 2에서 36 사이(경계값 포함)의 정수여야 합니다. 지원되는 인코딩은 utf-8, utf-16le, utf-16be, us-ascii, iso-8859-1, ascii~hex, shift_jis 및 euc-jp입니다.
 
@@ -261,7 +259,7 @@ Hex To Blob( "FF78CE" );
 
 ### Hex To Char
 
-**구문:** s = Hex To Char( hextext, <encoding="utf-8"> )
+**구문:** s = Hex To Char( hextext, &lt;encoding="utf-8"&gt; )
 
 **설명:** 지정된 인코딩을 사용하여 16진수 텍스트에 해당하는 텍스트를 반환합니다. 지원되는 인코딩에는 utf-8, utf-16le, utf-16be, us-ascii, iso-8859-1, ascii~hex, shift_jis 및 euc-jp가 있습니다.
 
@@ -276,7 +274,7 @@ Hex To Char( "436166C3A9" ) || Hex To Char( "00430061006600E9", "utf-16be" );
 
 ### Hex To Number
 
-**구문:** x = Hex To Number( hextext, <Base(number)> )
+**구문:** x = Hex To Number( hextext, &lt;Base(number)&gt; )
 
 **설명:** 16진(또는 다른 진법) 텍스트에 해당하는 숫자를 반환합니다. 16진 숫자는 IEEE 754 64비트 부동 소수점 숫자로 변환되며, 그렇지 않으면 입력이 16진 정수로 처리됩니다. Base가 지정된 경우에는 텍스트가 해당 진법의 숫자를 나타내는 문자열로 처리됩니다. Base 인수는 2에서 36 사이(경계값 포함)의 정수여야 합니다.
 
@@ -291,7 +289,7 @@ Hex To Number( "11110000", Base( 2 ) );
 
 ### Insert
 
-**구문:** z = Insert( x, y, <i> )
+**구문:** z = Insert( x, y, &lt;i&gt; )
 
 **설명:** y를 i번째 위치에 삽입한 목록 i의 복사본을 반환합니다. 선택적 인수 x가 지정되지 않은 경우 마지막에 삽입합니다.
 
@@ -307,7 +305,7 @@ z = Insert( z, 99, 2 );
 
 ### Insert Into
 
-**구문:** Insert Into( x, y, <i> )
+**구문:** Insert Into( x, y, &lt;i&gt; )
 
 **설명:** y를 삽입하여 목록, 연관 배열 또는 표시 상자 x를 수정합니다. 목록 및 표시 상자는 위치를 지정하기 위한 i인수를 선택적으로 사용할 수 있도록 지원합니다. 위치를 지정하지 않으면 마지막에 추가됩니다. x 인수는 변수여야 합니다.
 
@@ -348,7 +346,7 @@ Insert Into( hlist, Button Box( "c" ) );
 
 ### Item
 
-**구문:** w = Item( n|[first last], s, <delim>, <Unmatched(result string)>, <Include Boundary Delimiters(0|1)>)
+**구문:** w = Item( n|[first last], s, &lt;delim&gt;, &lt;Unmatched(result string)&gt;, &lt;Include Boundary Delimiters(0|1)&gt;)
 
 **설명:** s 인수의 n번째 항목을 반환합니다. 여기서 항목은 delim 인수에 지정된 문자 중 하나로만 구분된 하위 문자열입니다(비어 있을 수 있음). delim이 없으면 공백 문자가 사용됩니다. delim이 빈 문자열이면 각 문자가 별개의 항목으로 처리됩니다.
 
@@ -410,7 +408,7 @@ Item( 2, ",abcd", ",", Include Boundary Delimiters );
 
 ### Items
 
-**구문:** wl = Items(<[first last]>, s, <delim>, <Include Boundary Delimiters(0|1)>)
+**구문:** wl = Items(&lt;[first last]&gt;, s, &lt;delim&gt;, &lt;Include Boundary Delimiters(0|1)&gt;)
 
 **설명:** delim 인수에 지정된 문자 중 하나로만 구분된 하위 문자열 목록을 반환합니다(비어 있을 수 있음). delim이 없으면 공백 문자가 사용됩니다. delim이 빈 문자열이면 각 문자가 별개의 항목으로 처리됩니다.
 
@@ -454,7 +452,7 @@ Items( [1 2], ",Apple,Banana Tree,Peach", Get Punctuation Characters() );
 
 ### Left
 
-**구문:** sub = Left( s, n, <filler> )
+**구문:** sub = Left( s, n, &lt;filler&gt; )
 
 **설명:** 원래 문자열 또는 목록 s의 절단되었거나 채워진 버전을 반환합니다. 결과에는 왼쪽 n개 문자 또는 목록 항목이 포함되며 오른쪽은 filler로 채워집니다(s의 길이가 n보다 작은 경우).
 
@@ -544,7 +542,7 @@ Matrix To Blob( [3.14, 1.414], "float", 4, "big" );
 
 ### Munger
 
-**구문:** r = Munger( s, startPos, findStringOrNChars, <replaceString> )
+**구문:** r = Munger( s, startPos, findStringOrNChars, &lt;replaceString&gt; )
 
 **설명:** 인수 조합에 따라 s 인수에서 하위 문자열 또는 위치를 검색합니다.
 
@@ -559,7 +557,7 @@ Eval List( {Munger( "over there", 1, "t", "" ), Munger( "17 June 2000", 4, 4, "M
 
 ### Num
 
-**구문:** y = Num( s, < <<Use Locale( use=1 ) >, < <<Restrict > )
+**구문:** y = Num( s, &lt; &lt;&lt;Use Locale( use=1 ) &gt;, &lt; &lt;&lt;Restrict &gt; )
 
 **설명:** 날짜 및 통화 형식을 포함한 기본 제공 형식을 사용하여 s를 숫자로 변환합니다. 변환에 실패하면 결측값을 반환합니다. 선택적 <<Restrict는 정수, 십진수 및 과학적 형식을 사용한 변환만 허용합니다.
 
@@ -590,7 +588,7 @@ Show(
 
 ### Regex
 
-**구문:** result = Regex( source, pattern, <format, <IGNORECASE>, <GLOBALREPLACE>> )
+**구문:** result = Regex( source, pattern, &lt;format, &lt;IGNORECASE&gt;, &lt;GLOBALREPLACE&gt;&gt; )
 
 **설명:** source 텍스트에서 pattern에 대한 매칭 항목을 검색합니다. format의 기본값은 "\0"(전체 매칭)이지만 "Fred"(상수 대체의 경우) 또는 "\1"(pattern의 첫 번째 괄호에 의해 매칭된 텍스트 사용)이 될 수 있습니다. 매칭 항목이 없으면 숫자 결측값을 반환합니다. 대/소문자는 기본적으로 일치해야 합니다.
 
@@ -609,7 +607,7 @@ Regex(
 
 ### Remove
 
-**구문:** y = Remove( x, <i>, <n=1> ); y = Remove( x, {list} )
+**구문:** y = Remove( x, &lt;i&gt;, &lt;n=1&gt; ); y = Remove( x, {list} )
 
 **설명:** i번째 항목부터 시작해 n개의 항목을 삭제하거나 list 인수로 지정된 항목 목록을 삭제하여 목록 x의 복사본을 반환합니다.
 
@@ -624,7 +622,7 @@ Remove( {11, 22, 33, 44, 55}, 3, 2 );
 
 ### Remove From
 
-**구문:** Remove From( x, <i>, <n=1> )
+**구문:** Remove From( x, &lt;i&gt;, &lt;n=1&gt; )
 
 **설명:** 항목을 제거하여 목록, 연관 배열 또는 표시 상자 x를 수정합니다. 연관 배열에서는 키 값 i를 사용하여 제거할 항목을 지정합니다. 목록 및 표시 상자에서는 i 위치에 있는 항목부터 제거합니다. n 옵션이 지정된 경우 목록에서는 여러 항목을 한 번에 제거합니다. x 인수는 변수여야 합니다.
 
@@ -665,7 +663,7 @@ Remove From( hlist, 1 );
 
 ### Repeat
 
-**구문:** s = Repeat( x, n, <m=1> )
+**구문:** s = Repeat( x, n, &lt;m=1&gt; )
 
 **설명:** x 인수로 지정된 텍스트, 행렬 또는 목록을 자신과 n번 연결하여 반환합니다. x가 숫자 또는 행렬이면 n은 수직 반복을 나타내고 선택적 인수 m은 수평 반복을 지정합니다.
 
@@ -725,7 +723,7 @@ Reverse Into( hlist );
 
 ### Right
 
-**구문:** sub = Right( s, n, <filler> )
+**구문:** sub = Right( s, n, &lt;filler&gt; )
 
 **설명:** 원래 문자열 또는 목록 s의 절단되었거나 채워진 버전을 반환합니다. 결과에는 오른쪽 n개 문자 또는 목록 항목이 포함되며 왼쪽은 filler로 채워집니다(s의 길이가 n보다 작은 경우).
 
@@ -814,7 +812,7 @@ Show( Set Unique( :sports ) );
 
 ### Shift
 
-**구문:** y = Shift( x, <n=1> )
+**구문:** y = Shift( x, &lt;n=1&gt; )
 
 **설명:** 처음 n개 항목을 목록 끝으로 이동하여 목록 x의 복사본을 반환합니다. n이 음수인 경우 마지막 n개 항목을 시작 위치로 이동합니다.
 
@@ -829,7 +827,7 @@ Shift( {11, 22, 33, 44, 55}, 2 );
 
 ### Shift Into
 
-**구문:** Shift Into( x, <n=1> )
+**구문:** Shift Into( x, &lt;n=1&gt; )
 
 **설명:** 처음 n개 항목을 목록 끝으로 이동하여 목록 또는 표시 상자 x를 수정합니다. n이 음수인 경우 마지막 n개 항목을 시작 위치로 이동합니다. x 인수는 변수여야 합니다.
 
@@ -874,9 +872,7 @@ Starts With( "http://www.jmp.com", "http:" );
 
 ### Substitute
 
-**구문:** y = Substitute( x, patternExpr1, replacementExpr1, ... )
-
-y = Substitute( x, patternString1, replacementString1, ..., < <<IGNORECASE > )
+**구문:** y = Substitute( x, patternExpr1, replacementExpr1, ... )y = Substitute( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
 
 **설명:** 각 패턴 표현식의 인스턴스를 해당하는 대체 표현식으로 바꿔 문자열, 목록 또는 표현식 x의 복사본을 반환합니다. x가 문자열인 경우 선택적 <<IGNORECASE 인수를 설정하면 대/소문자 구분 없이 매칭할 수 있습니다.
 
@@ -939,9 +935,7 @@ Substitute( "Apple,APPLE,apple", "apple", "orange", <<IGNORECASE );
 
 ### Substitute Into
 
-**구문:** Substitute Into( x, patternExpr1, replacementExpr1, ... )
-
-Substitute Into( x, patternString1, replacementString1, ..., < <<IGNORECASE > )
+**구문:** Substitute Into( x, patternExpr1, replacementExpr1, ... )Substitute Into( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
 
 **설명:** 각 패턴 표현식의 인스턴스를 해당하는 대체 표현식으로 바꿔 문자열, 목록 또는 표현식 x를 수정합니다. x 인수는 변수여야 합니다. x가 문자열인 경우 선택적 <<IGNORECASE 인수를 설정하면 대/소문자 구분 없이 매칭할 수 있습니다.
 
@@ -993,7 +987,7 @@ Show( s );
 
 ### Substr
 
-**구문:** sub = Substr( s, start, <count> )
+**구문:** sub = Substr( s, start, &lt;count&gt; )
 
 **설명:** 위치 start에서 시작하여 count개의 문자로 구성된 문자열 s의 일부를 반환합니다. count가 음수이거나 없으면 문자열의 나머지 부분을 의미합니다. start가 음수면 끝에서 start 문자 위치에서 시작하는 것을 의미합니다. 목록에 Substr() 함수를 적용할 수도 있습니다.
 
@@ -1008,7 +1002,7 @@ Eval List( {Substr( "undergo", 4 ), Substr( {10, 11, 12, 13, 14}, 2, 3 )} );
 
 ### Text Score
 
-**구문:** score vector = Text Score( text column, text-to-number, <weighting>, <{<center>, <scale>, scoring matrix}>);
+**구문:** score vector = Text Score( text column, text-to-number, &lt;weighting&gt;, &lt;{&lt;center&gt;, &lt;scale&gt;, scoring matrix}&gt;);
 
 **설명:** 텍스트 탐색기에서 스코어링 계산식을 생성하는 데 사용됩니다. text-to-number 인수는 소문자 단어를 숫자에 매핑하는 연관 배열입니다. 가중치 인수는 "Binary", "Ternary", "Count", "LogCount", "LCA"이거나 TFLogIDF에 대한 역 문서 빈도 가중치 배열입니다. 스코어링 행렬에는 연관 배열의 단어 수와 동일한 수의 열이 있거나, LCA의 경우에는 열이 하나 더 있어야 합니다. 출력은 스코어 벡터입니다. 스코어링 행렬을 지정하지 않으면 개수 스코어의 벡터가 반환됩니다. 가중치를 지정하지 않으면 Count가 사용됩니다. 이 함수는 "결합 가능한 경우 어간 추출" 옵션을 지원하지 않습니다.
 
@@ -1039,7 +1033,7 @@ Titlecase( "The dog crossed the road" );
 
 ### Trim
 
-**구문:** sub = Trim( s, <left|right|both> )
+**구문:** sub = Trim( s, &lt;left|right|both&gt; )
 
 **설명:** 선행 또는 후행 공백 문자를 제거하여 문자열 s의 복사본을 반환합니다. 두 번째 인수는 선행 공백 문자를 제거할지 아니면 후행 공백 문자를 제거할지 지정합니다. 두 번째 인수를 지정하지 않으면 양쪽 모두에서 공백 문자가 제거됩니다.
 
@@ -1054,7 +1048,7 @@ Trim( " title   ", both );
 
 ### Trim Whitespace
 
-**구문:** sub = Trim Whitespace( s, <left|right|both> )
+**구문:** sub = Trim Whitespace( s, &lt;left|right|both&gt; )
 
 **설명:** 선행 또는 후행 공백 문자를 제거하여 문자열 s의 복사본을 반환합니다. 두 번째 인수는 선행 공백 문자를 제거할지 아니면 후행 공백 문자를 제거할지 지정합니다. 두 번째 인수를 지정하지 않으면 양쪽 모두에서 공백 문자가 제거됩니다.
 
@@ -1084,7 +1078,7 @@ Uppercase( "Café #23" );
 
 ### Word
 
-**구문:** w = Word( n|[first last], s, <delim>, <Unmatched(result string)>
+**구문:** w = Word( n|[first last], s, &lt;delim&gt;, &lt;Unmatched(result string)&gt;
 
 **설명:** 문자열 s의 n번째 단어를 반환합니다. 여기서 단어는 delim 인수에 있는 임의의 수의 문자로 구분된 하위 문자열입니다. delim이 없으면 공백 문자가 사용됩니다. delim이 빈 문자열이면 각 문자가 별개의 단어로 처리됩니다.
 
@@ -1137,7 +1131,7 @@ Word( 2, "abcd", "" );
 
 ### Words
 
-**구문:** wl = Words( <[first last]>, s, <delim>)
+**구문:** wl = Words( &lt;[first last]&gt;, s, &lt;delim&gt;)
 
 **설명:** delim 인수에 지정된 문자로 구분된 하위 문자열 목록을 반환합니다. delim이 없으면 공백 문자가 사용됩니다. delim이 빈 문자열이면 각 문자가 별개의 단어로 처리됩니다.
 

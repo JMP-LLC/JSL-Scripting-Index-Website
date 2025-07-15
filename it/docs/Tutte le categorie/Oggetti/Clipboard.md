@@ -6,7 +6,7 @@
 
 ### New Clipboard
 
-**Sintassi:** clp = New Clipboard(<<<Get From OS>)
+**Sintassi:** clp = New Clipboard(&lt;&lt;&lt;Get From OS&gt;)
 
 **Descrizione:** Creates a new Clipboard, either empty or with access to the OS clipboard.
 
@@ -26,7 +26,7 @@ New Window( "Img", clp << Get Flavor Data( "Graphic" ) )
 
 ### Get Flavor Data
 
-**Sintassi:** clp << Get Flavor Data( "Text" | "Graphic" | "RTF" | "DataTablePrivate" | ..., <<<Text>)
+**Sintassi:** clp &lt;&lt; Get Flavor Data( "Text" | "Graphic" | "RTF" | "DataTablePrivate" | ..., &lt;&lt;&lt;Text&gt;)
 
 **Descrizione:** Returns data from the Clipboard for the named flavor if it exists, error otherwise. Graphic returns an Image. All other flavors, even Text, return a Blob unless you use the <<Text option.
 
@@ -45,7 +45,7 @@ Show( clp << Get Flavor Data( "Text", <<Text ) );
 
 ### Has Flavor
 
-**Sintassi:** clp << Has Flavor( "Text" | "Graphic" | "RTF" | "DataTablePrivate" | ... )
+**Sintassi:** clp &lt;&lt; Has Flavor( "Text" | "Graphic" | "RTF" | "DataTablePrivate" | ... )
 
 **Descrizione:** Returns 1 if the Clipboard offers the named flavor of data, 0 otherwise.
 
@@ -64,7 +64,7 @@ Show( clp << Has Flavor( "Graphic" ) );
 
 ### Send To OS
 
-**Sintassi:** clp << Send To OS
+**Sintassi:** clp &lt;&lt; Send To OS
 
 **Descrizione:** Places the contents of the Clipboard onto the OS Clipboard.
 
@@ -83,7 +83,7 @@ Show( Get Clipboard() );
 
 ### Set Flavor Data
 
-**Sintassi:** clp << Set Flavor Data( "Text" | "Graphic" | "RTF" | "DataTablePrivate" | ..., String | Blob | Image)
+**Sintassi:** clp &lt;&lt; Set Flavor Data( "Text" | "Graphic" | "RTF" | "DataTablePrivate" | ..., String | Blob | Image)
 
 **Descrizione:** Provides data to the Clipboard for the named flavor and adds the flavor to the Clipboard. You should provide Graphic with an Image. All other flavors can be provided String or Blob data.
 

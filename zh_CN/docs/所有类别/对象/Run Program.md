@@ -6,19 +6,7 @@
 
 ### Run Program
 
-**语法:** obj = Run Program(
-
-    Executable( "path/etc.exe" ),
-
-  < Options( {"/a", "/b etc" } ) >,
-
-  < Parameter( optParm ) >,
-
-  < Read Function( Function( {this, optParm}, etc ) | "text" | "blob" ) >,
-
-  < Write Function( Function( {this, optParm}, etc ) ) >
-
-)
+**语法:** obj = Run Program( Executable( "path/etc.exe" ), &lt; Options( {"/a", "/b etc" } ) &gt;, &lt; Parameter( optParm ) &gt;, &lt; Read Function( Function( {this, optParm}, etc ) | "text" | "blob" ) &gt;, &lt; Write Function( Function( {this, optParm}, etc ) ) &gt;)
 
 **说明:** 使用 stdin 和 stdout 控制外部程序。
 
@@ -37,7 +25,7 @@ RP = Run Program(
 
 ### Can Read
 
-**语法:** bool = obj << Can Read
+**语法:** bool = obj &lt;&lt; Can Read
 
 **说明:** Returns 1 if the RunProgram object can be read from and 0 if not.
 
@@ -54,13 +42,13 @@ Show( value );
 
 ### Can Write
 
-**语法:** bool = obj << Can Write
+**语法:** bool = obj &lt;&lt; Can Write
 
 **说明:** Returns boolean for whether or not the RunProgram object can be written to via standard input.
 
 ### Is Read EOF
 
-**语法:** bool = obj << Is Read EOF
+**语法:** bool = obj &lt;&lt; Is Read EOF
 
 **说明:** Returns 1 if the program has finished writing to standard output and 0 if not.
 
@@ -77,7 +65,7 @@ Show( value );
 
 ### Read
 
-**语法:** value = obj << Read( < "blob" > )
+**语法:** value = obj &lt;&lt; Read( &lt; "blob" &gt; )
 
 **说明:** Read standard output from executable as text or blob.
 
@@ -101,13 +89,13 @@ rp = Run Program(
 
 ### Write
 
-**语法:** obj << Write( string )
+**语法:** obj &lt;&lt; Write( string )
 
 **说明:** Write text to the program&apos;s standard input.
 
 ### Write EOF
 
-**语法:** obj << Write EOF
+**语法:** obj &lt;&lt; Write EOF
 
 **说明:** Write the end of file for the RunProgram object.
 

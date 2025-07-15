@@ -6,7 +6,7 @@
 
 ### Compare Data Tables
 
-**语法:** Compare Data Tables( <Compare with( Data Table( name ))>, <show window(0 | 1)>, <limit(integer)>, <Compare table properties(0 | 1)>, <Compare column attributes and properties(0 | 1)>, <Compare data(0 | 1)>, <Fuzzy compare( <0 | 1>, <Relative Error(number)>)>, <Show difference summary(0 | 1)>, <Show difference plot(0 | 1)> )
+**语法:** Compare Data Tables( &lt;Compare with( Data Table( name ))&gt;, &lt;show window(0 | 1)&gt;, &lt;limit(integer)&gt;, &lt;Compare table properties(0 | 1)&gt;, &lt;Compare column attributes and properties(0 | 1)&gt;, &lt;Compare data(0 | 1)&gt;, &lt;Fuzzy compare( &lt;0 | 1&gt;, &lt;Relative Error(number)&gt;)&gt;, &lt;Show difference summary(0 | 1)&gt;, &lt;Show difference plot(0 | 1)&gt; )
 
 **说明:** 比较两个打开的数据表和数据之间的报表差异，以及元数据。
 
@@ -23,7 +23,7 @@ obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
 
 ### Are Data Different
 
-**语法:** obj << Are Data Different
+**语法:** obj &lt;&lt; Are Data Different
 
 **说明:** 根据两个表中的数据是否相同返回 true 或 false。
 
@@ -57,7 +57,7 @@ obj << Auto Compare( 1 );
 
 ### Close
 
-**语法:** obj << Close
+**语法:** obj &lt;&lt; Close
 
 **说明:** 关闭“比较数据表”对象
 
@@ -91,7 +91,7 @@ obj << Compare();
 
 ### Compare Column Attributes and Properties
 
-**语法:** obj << Compare Column Attributes and Properties( state=0|1 )
+**语法:** obj &lt;&lt; Compare Column Attributes and Properties( state=0|1 )
 
 **说明:** 设置或清除用于比较列特性和属性的标志。 默认开启。
 
@@ -107,7 +107,7 @@ obj << compare column attributes and properties( 1 );
 
 ### Compare Data
 
-**语法:** obj << Compare Data( state=0|1 )
+**语法:** obj &lt;&lt; Compare Data( state=0|1 )
 
 **说明:** 设置或清除用于比较列数据的标志。 默认开启。
 
@@ -123,7 +123,7 @@ obj << compare data( 0 );
 
 ### Compare Table Properties
 
-**语法:** obj << Compare Table Properties( state=0|1 )
+**语法:** obj &lt;&lt; Compare Table Properties( state=0|1 )
 
 **说明:** 设置或清除用于比较表变量和脚本的标志。 默认开启。
 
@@ -139,7 +139,7 @@ obj << compare table properties;
 
 ### Compare With
 
-**语法:** obj << Compare With( Data Table( name ) )
+**语法:** obj &lt;&lt; Compare With( Data Table( name ) )
 
 **说明:** 将第一个表与该表进行比较。返回 True 或 False。
 
@@ -155,7 +155,7 @@ same = obj << compare with( dt2 );
 
 ### Copy Script
 
-**语法:** obj << Copy Script
+**语法:** obj &lt;&lt; Copy Script
 
 **说明:** 将“比较数据表”脚本置于剪贴板中。
 
@@ -171,7 +171,7 @@ obj << Copy Script;
 
 ### Fuzzy Compare
 
-**语法:** obj << Fuzzy Compare( <(state= 1 | 0)>, <Relative Error (number)> )
+**语法:** obj &lt;&lt; Fuzzy Compare( &lt;(state= 1 | 0)&gt;, &lt;Relative Error (number)&gt; )
 
 **说明:** 设置或清除用于比较列数据的标志。
 
@@ -187,7 +187,7 @@ obj << fuzzy compare( relative error( 0.0001 ) );
 
 ### Get column attributes differences
 
-**语法:** obj << Get column attributes differences( columns( column) )
+**语法:** obj &lt;&lt; Get column attributes differences( columns( column) )
 
 **说明:** 获取比较列中存在差异的列特性的列表。
 
@@ -203,7 +203,7 @@ attribDiff = (obj << Get columns attributes differences( :name ));
 
 ### Get column properties differences
 
-**语法:** obj << Get column properties differences( columns( column) )
+**语法:** obj &lt;&lt; Get column properties differences( columns( column) )
 
 **说明:** 获取比较列中存在差异的列属性的列表。
 
@@ -219,7 +219,7 @@ propDiff = (obj << Get columns properties differences( :name ));
 
 ### Get columns list
 
-**语法:** obj << Get columns list( ( <differed in data> |  <differed in properties> | <mismatched data type> | <differed in attributes>) )
+**语法:** obj &lt;&lt; Get columns list( ( &lt;differed in data&gt; | &lt;differed in properties&gt; | &lt;mismatched data type&gt; | &lt;differed in attributes&gt;) )
 
 **说明:** 获取在数据、列属性、数据类型或其他列特性方面存在差异的列的列表。
 
@@ -236,7 +236,7 @@ Show( colDiff );
 
 ### Get difference summary matrix
 
-**语法:** obj << Get difference summary matrix
+**语法:** obj &lt;&lt; Get difference summary matrix
 
 **说明:** 以矩阵方式获取差异汇总。矩阵列对应于差异汇总中的列。第一列操作在矩阵中分别用 -1 表示删除，0 表示替换，1 表示添加。
 
@@ -252,7 +252,7 @@ mtx = (obj << Get Difference Summary matrix);
 
 ### Get table scripts difference list
 
-**语法:** obj << Get table scripts difference list
+**语法:** obj &lt;&lt; Get table scripts difference list
 
 **说明:** 获取存在差异或缺失的表脚本的列表。
 
@@ -268,7 +268,7 @@ scriptDiff = (obj << Get table scripts difference list);
 
 ### Get table variables difference list
 
-**语法:** obj << Get table variables difference list
+**语法:** obj &lt;&lt; Get table variables difference list
 
 **说明:** 获取存在差异或缺失的表变量的列表。
 
@@ -284,7 +284,7 @@ tvdiff = (obj << Get table variables difference list);
 
 ### Get unmatched columns list
 
-**语法:** obj << Get unmatched columns list
+**语法:** obj &lt;&lt; Get unmatched columns list
 
 **说明:** 获取不匹配列（即没有要比较的对应列）的列表。
 
@@ -426,7 +426,7 @@ obj << Ignore Whitespace( 1 );
 
 ### Limit
 
-**语法:** obj << Limit( integer )
+**语法:** obj &lt;&lt; Limit( integer )
 
 **说明:** 设置差异数限值。达到限值后比较将停止。
 
@@ -442,7 +442,7 @@ obj << limit( 100 );
 
 ### Link
 
-**语法:** Link({"col1", "col2", <ID(0|1)>, <No Compare(0|1)>, <Fuzzy Compare(<Ignore Case(0|1)>, <Ignore Whitespace(0|1)>, <Ignore Missing(0|1)>, <Relative Error(<amount>)>)>
+**语法:** Link({"col1", "col2", &lt;ID(0|1)&gt;, &lt;No Compare(0|1)&gt;, &lt;Fuzzy Compare(&lt;Ignore Case(0|1)&gt;, &lt;Ignore Whitespace(0|1)&gt;, &lt;Ignore Missing(0|1)&gt;, &lt;Relative Error(&lt;amount&gt;)&gt;)&gt;
 
 **说明:** 指定要比较的列对和其他比较选项。
 
@@ -460,7 +460,7 @@ obj << Link( {:age, :weight}, );
 
 ### Relative Error
 
-**语法:** obj << Relative Error( integer )
+**语法:** obj &lt;&lt; Relative Error( integer )
 
 **说明:** 设置模糊比较的相对误差。
 
@@ -476,7 +476,7 @@ obj << Relative Error( 0.00001 );
 
 ### Report
 
-**语法:** obj << Report
+**语法:** obj &lt;&lt; Report
 
 **说明:** 返回对该报表对象的引用。
 
@@ -494,7 +494,7 @@ Show( t );
 
 ### Row Alignment
 
-**语法:** obj << Row Alignment (Flexible by Row|By Row|Use ID Columns)
+**语法:** obj &lt;&lt; Row Alignment (Flexible by Row|By Row|Use ID Columns)
 
 **说明:** 设置如何对齐行进行比较。
 
@@ -518,7 +518,7 @@ obj << Row Alignment( "By Row" );
 
 ### Save Difference Summary
 
-**语法:** obj << Save Difference Summary( <invisible(0 | 1)> )
+**语法:** obj &lt;&lt; Save Difference Summary( &lt;invisible(0 | 1)&gt; )
 
 **说明:** 在数据表中保存差异汇总。
 
@@ -534,7 +534,7 @@ summaryDT = (obj << save difference summary( invisible ));
 
 ### Save Script to Data Table
 
-**语法:** obj << Save Script to Data Table
+**语法:** obj &lt;&lt; Save Script to Data Table
 
 **说明:** 将“比较数据表”脚本另存为数据表中的表属性。
 
@@ -550,7 +550,7 @@ obj << Save Script to Data Table;
 
 ### Save Script to Journal
 
-**语法:** obj << Save Script to Journal
+**语法:** obj &lt;&lt; Save Script to Journal
 
 **说明:** 添加指向包含“比较数据表”脚本的记录的按钮。
 
@@ -566,7 +566,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Script Window
 
-**语法:** obj << Save Script to Script Window
+**语法:** obj &lt;&lt; Save Script to Script Window
 
 **说明:** 将“比较数据表”脚本追加至当前“脚本”文本窗口。
 
@@ -582,7 +582,7 @@ obj << Save Script to Script Window;
 
 ### Show Window
 
-**语法:** obj << Show Window( Show window( 0|1) )
+**语法:** obj &lt;&lt; Show Window( Show window( 0|1) )
 
 **说明:** 显示或隐藏“比较数据表”的窗口
 
@@ -616,7 +616,7 @@ obj << Show Fuzzy Differences( 1 );
 
 ### Unlink
 
-**语法:** Unlink(<column name 1>, <column name 2>)
+**语法:** Unlink(&lt;column name 1&gt;, &lt;column name 2&gt;)
 
 **说明:** 删除列比较。
 

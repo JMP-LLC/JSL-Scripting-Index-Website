@@ -16,7 +16,7 @@
 
 ### <C++>
 
-**構文:** obj << <C++>
+**構文:** obj &lt;&lt; &lt;C++&gt;
 
 **説明:** Use DisplayBoxPtr::jssClasses and DisplayBoxPtr::jssID and then target those using selectors. OutlineBoxes and some others automatically set classes from their Scriptable, etc.
 
@@ -33,7 +33,7 @@ Names Default To Here( 1 );
 
 ### <Editing>
 
-**構文:** obj << <Editing>
+**構文:** obj &lt;&lt; &lt;Editing&gt;
 
 **説明:** New files must be added to *.jss in the correct order. Use the in-JMP Property Panel for looking at classes, ids, and box structure. Syncing from Perforce gets you the latest styles after you build since the build step copies the files into the build directory. Or you can use the JSS Dir preference to point JMP directly at the files in your Perforce workspace. Then you can check-out files and edit them directly. As soon as you edit a file and save it, JMP will update automatically.
 
@@ -49,7 +49,7 @@ Preferences[1] << Set( JSS Dir( "C:\JMPDev\source\Portable\Jss\" ) );
 
 ### <Rule>
 
-**構文:** obj << <Rule>
+**構文:** obj &lt;&lt; &lt;Rule&gt;
 
 **説明:** The main unit of a JSS file. Composed of a Selector and multiple Declarations/Messages.
 
@@ -57,7 +57,7 @@ Preferences[1] << Set( JSS Dir( "C:\JMPDev\source\Portable\Jss\" ) );
 
 ### <Selector>
 
-**構文:** obj << <Selector>
+**構文:** obj &lt;&lt; &lt;Selector&gt;
 
 **説明:** The first part of a Rule; Used to select boxes. You can compose selectors together to make more complex selectors.
 
@@ -65,7 +65,7 @@ Preferences[1] << Set( JSS Dir( "C:\JMPDev\source\Portable\Jss\" ) );
 
 ### <Specificity>
 
-**構文:** obj << <Specificity>
+**構文:** obj &lt;&lt; &lt;Specificity&gt;
 
 **説明:** This helps us be more declarative with our Rules. See CSS documentation for details.
 
@@ -139,7 +139,7 @@ New Window( "And",
 
 ### Attr
 
-**構文:** Attr( <<Boolean Box Message == 0|1 )
+**構文:** Attr( &lt;&lt;Boolean Box Message == 0|1 )
 
 **説明:** Matches boxes with the given attribute. Where the box responds to the given message with that value. Currently only supports boolean attributes.
 
@@ -494,7 +494,7 @@ New Window( "If Theme Is",
 
 ### Include
 
-**構文:** Include( path, <<NoWarnIfMissing )
+**構文:** Include( path, &lt;&lt;NoWarnIfMissing )
 
 **説明:** Includes another JSS file from a path relative to this one. Errors within that file will be ignored. Errors accessing that file will not, unless you use the <<NoWarnIfMissing flag.
 

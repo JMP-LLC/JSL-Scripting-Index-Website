@@ -6,19 +6,7 @@
 
 ### Reliability Growth
 
-**Syntax:** obj = Reliability Growth( Input Format( Time to Event ), Time to Event( column, <column> ), <Event Count( column )>, <Phase( column )> );
-
-
-
-obj = Reliability Growth( Input Format( Dates ), Timestamp( column, <column> ), <Event Count( column )>, <Phase( column )> );
-
-
-
-obj = Reliability Growth( Input Format( Concurrent Systems ), Time to Event( column, column, ... ), System ID( column ), <Phase( column )> )
-
-
-
-obj = Reliability Growth( Input Format( Parallel Systems ), Time to Event( column, column, ... ), <Event Count( column )>, System ID( column ), <Phase( column )> )
+**Syntax:** obj = Reliability Growth( Input Format( Time to Event ), Time to Event( column, &lt;column&gt; ), &lt;Event Count( column )&gt;, &lt;Phase( column )&gt; );obj = Reliability Growth( Input Format( Dates ), Timestamp( column, &lt;column&gt; ), &lt;Event Count( column )&gt;, &lt;Phase( column )&gt; );obj = Reliability Growth( Input Format( Concurrent Systems ), Time to Event( column, column, ... ), System ID( column ), &lt;Phase( column )&gt; )obj = Reliability Growth( Input Format( Parallel Systems ), Time to Event( column, column, ... ), &lt;Event Count( column )&gt;, System ID( column ), &lt;Phase( column )&gt; )
 
 **Description:** Models the change in reliability of a single repairable system over time as improvements are incorporated into its design. The platform accepts several input formats. See each format for specification details.
 
@@ -84,7 +72,7 @@ obj << Crow AMSAA;
 
 ### Crow AMSAA
 
-**Syntax:** obj << Crow AMSAA
+**Syntax:** obj &lt;&lt; Crow AMSAA
 
 **Description:** Fits a Crow-AMSAA model. On by default.
 
@@ -99,7 +87,7 @@ obj << Crow AMSAA;
 
 ### Crow AMSAA with Modified MLE
 
-**Syntax:** obj << Crow AMSAA with Modified MLE
+**Syntax:** obj &lt;&lt; Crow AMSAA with Modified MLE
 
 **Description:** Fits a Crow-AMSAA model with bias correction for beta. On by default.
 
@@ -114,7 +102,7 @@ obj << Crow AMSAA with Modified MLE;
 
 ### Distinct Phase Weibull NHPP
 
-**Syntax:** obj << Distinct Phase Weibull NHPP
+**Syntax:** obj &lt;&lt; Distinct Phase Weibull NHPP
 
 **Description:** Fits a Distinct Phase Weibull NHPP model, where each system in a multi-phase study follows the same Crow-AMSAA model in each phase. This model contains one beta parameter and one lambda parameter for each phase. On by default.
 
@@ -135,7 +123,7 @@ obj << Distinct Phase Weibull NHPP;
 
 ### Distinct System Weibull NHPP
 
-**Syntax:** obj << Distinct System Weibull NHPP
+**Syntax:** obj &lt;&lt; Distinct System Weibull NHPP
 
 **Description:** Fits a Distinct System Weibull NHPP model, where each system in the study follows a separate Crow-AMSAA model with different parameters. On by default.
 
@@ -155,7 +143,7 @@ obj << Distinct System Weibull NHPP;
 
 ### Distinct Weibull NHPP
 
-**Syntax:** obj << Distinct Weibull NHPP
+**Syntax:** obj &lt;&lt; Distinct Weibull NHPP
 
 **Description:** Fits a Distinct Weibull NHPP model, where each system in a multi-phase study follows a separate Crow-AMSAA model in each phase. This model contains one beta parameter and one lambda parameter for each combination of system and phase in the study. On by default.
 
@@ -176,7 +164,7 @@ obj << Distinct Weibull NHPP;
 
 ### Fixed Parameter Crow AMSAA
 
-**Syntax:** obj << Fixed Parameter Crow AMSAA( <lambda ( number )>, <beta ( number )> )
+**Syntax:** obj &lt;&lt; Fixed Parameter Crow AMSAA( &lt;lambda ( number )&gt;, &lt;beta ( number )&gt; )
 
 **Description:** Fits a Fixed Parameter Crow-AMSAA model. On by default.
 
@@ -191,7 +179,7 @@ obj << Fixed Parameter Crow AMSAA( lambda( .02 ) );
 
 ### Get Results
 
-**Syntax:** obj << Get Results
+**Syntax:** obj &lt;&lt; Get Results
 
 **Description:** Returns a named list that contains the model estimation results.
 
@@ -207,7 +195,7 @@ Show( obj << Get Results );
 
 ### Identical System Weibull NHPP
 
-**Syntax:** obj << Identical System Weibull NHPP
+**Syntax:** obj &lt;&lt; Identical System Weibull NHPP
 
 **Description:** Fits an Identical System Weibull NHPP model, where each system in the study follows a single Crow-AMSAA model. The differences among the systems are assumed to be due to the randomness of individual realizations of the same model. On by default.
 
@@ -227,7 +215,7 @@ obj << Identical System Weibull NHPP;
 
 ### Piecewise Weibull NHPP
 
-**Syntax:** obj << Piecewise Weibull NHPP
+**Syntax:** obj &lt;&lt; Piecewise Weibull NHPP
 
 **Description:** Fits a Piecewise Weibull NHPP model. On by default.
 
@@ -247,7 +235,7 @@ obj << Piecewise Weibull NHPP;
 
 ### Piecewise Weibull NHPP Change Point Detection
 
-**Syntax:** obj << Piecewise Weibull NHPP Change Point Detection
+**Syntax:** obj &lt;&lt; Piecewise Weibull NHPP Change Point Detection
 
 **Description:** Estimates a change point in the data and fits a Piecewise Weibull NHPP model. This option is not available when a Phase variable is specified. On by default.
 
@@ -266,7 +254,7 @@ obj << Piecewise Weibull NHPP Change Point Detection;
 
 ### Piecewise Weibull NHPP with Different Intercepts
 
-**Syntax:** obj << Piecewise Weibull NHPP with Different Intercepts
+**Syntax:** obj &lt;&lt; Piecewise Weibull NHPP with Different Intercepts
 
 **Description:** Fits a Piecewise Weibull NHPP with Different Intercepts model, where each system in a multi-phase study follows a separate piecewise Weibull NHPP model. This model contains one beta parameter for each phase and one lambda parameter for each system. On by default.
 
@@ -287,7 +275,7 @@ obj << Piecewise Weibull NHPP with Different Intercepts;
 
 ### Reinitialized Weibull NHPP
 
-**Syntax:** obj << Reinitialized Weibull NHPP
+**Syntax:** obj &lt;&lt; Reinitialized Weibull NHPP
 
 **Description:** Fits a Reinitialized Weibull NHPP model. On by default.
 
@@ -309,7 +297,7 @@ obj << Reinitialized Weibull NHPP;
 
 ### Action
 
-**Syntax:** obj << Action
+**Syntax:** obj &lt;&lt; Action
 
 **Description:** All-purpose trapdoor within a platform to insert expressions to evaluate. Temporarily sets the DisplayBox and DataTable contexts to the Platform.
 
@@ -327,7 +315,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Syntax:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntax:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Description:** Apply a previously created preset to the object, updating the options and customizations to match the saved settings.
 
@@ -372,7 +360,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Automatic Recalc
 
-**Syntax:** obj << Automatic Recalc( state=0|1 )
+**Syntax:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Description:** Redoes the analysis automatically for exclude and data changes. If the Automatic Recalc option is turned on, you should consider using Wait(0) commands to ensure that the exclude and data changes take effect before the recalculation.
 
@@ -389,7 +377,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Column Switcher
 
-**Syntax:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Syntax:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Description:** Adds a control panel for changing the platform&apos;s variables
 
@@ -407,7 +395,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy Script
 
-**Syntax:** obj << Copy Script
+**Syntax:** obj &lt;&lt; Copy Script
 
 **Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
 
@@ -423,7 +411,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Syntax:** obj << Data Table Window
+**Syntax:** obj &lt;&lt; Data Table Window
 
 **Description:** Move the data table window for this analysis to the front.
 
@@ -439,7 +427,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Syntax:** obj << Get By Levels
+**Syntax:** obj &lt;&lt; Get By Levels
 
 **Description:** Returns an associative array mapping the by group columns to their values.
 
@@ -454,7 +442,7 @@ biv << Get By Levels;
 
 ### Get Container
 
-**Syntax:** obj << Get Container
+**Syntax:** obj &lt;&lt; Get Container
 
 **Description:** Returns a reference to the container box that holds the content for the object.
 
@@ -502,7 +490,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Syntax:** obj << Get Data Table
+**Syntax:** obj &lt;&lt; Get Data Table
 
 **Description:** Returns a reference to the data table.
 
@@ -519,7 +507,7 @@ Show( N Rows( t ) );
 
 ### Get Script
 
-**Syntax:** obj << Get Script
+**Syntax:** obj &lt;&lt; Get Script
 
 **Description:** Creates a script (JSL) to produce this analysis and returns it as an expression.
 
@@ -536,7 +524,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Syntax:** obj << Get Script With Data Table
+**Syntax:** obj &lt;&lt; Get Script With Data Table
 
 **Description:** Creates a script(JSL) to produce this analysis specifically referencing this data table and returns it as an expression.
 
@@ -553,7 +541,7 @@ Show( t );
 
 ### Get Timing
 
-**Syntax:** obj << Get Timing
+**Syntax:** obj &lt;&lt; Get Timing
 
 **Description:** Times the platform launch.
 
@@ -570,7 +558,7 @@ Show( t );
 
 ### Get Web Support
 
-**Syntax:** obj << Get Web Support
+**Syntax:** obj &lt;&lt; Get Web Support
 
 **Description:** Return a number indicating the level of Interactive HTML support for the display object. 1 means some or all elements are supported. 0 means no support.
 
@@ -586,7 +574,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Syntax:** obj << Get Where Expr
+**Syntax:** obj &lt;&lt; Get Where Expr
 
 **Description:** Returns the Where expression for the data subset, if the platform was launched with By() or Where(). Otherwise, returns Empty()
 
@@ -621,7 +609,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Syntax:** obj << Local Data Filter
+**Syntax:** obj &lt;&lt; Local Data Filter
 
 **Description:** To filter data to specific groups or ranges, but local to this platform
 
@@ -673,7 +661,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Syntax:** obj << Paste Local Data Filter
+**Syntax:** obj &lt;&lt; Paste Local Data Filter
 
 **Description:** Apply the local data filter from the clipboard to the current report.
 
@@ -694,7 +682,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**Syntax:** obj << Redo Analysis
+**Syntax:** obj &lt;&lt; Redo Analysis
 
 **Description:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
 
@@ -710,7 +698,7 @@ obj << Redo Analysis;
 
 ### Relaunch Analysis
 
-**Syntax:** obj << Relaunch Analysis
+**Syntax:** obj &lt;&lt; Relaunch Analysis
 
 **Description:** Opens the platform launch window and recalls the settings that were used to create the report.
 
@@ -726,7 +714,7 @@ obj << Relaunch Analysis;
 
 ### Remove Column Switcher
 
-**Syntax:** obj << Remove Column Switcher
+**Syntax:** obj &lt;&lt; Remove Column Switcher
 
 **Description:** Removes the most recent Column Switcher that has been added to the platform.
 
@@ -746,7 +734,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Syntax:** obj << Remove Local Data Filter
+**Syntax:** obj &lt;&lt; Remove Local Data Filter
 
 **Description:** If a local data filter has been created, this removes it and restores the platform to use all the data in the data table directly
 
@@ -783,9 +771,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Syntax:** obj << Report;
-
-Report( obj )
+**Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Description:** Returns a reference to the report object.
 
@@ -803,7 +789,7 @@ Show( t );
 
 ### Report View
 
-**Syntax:** obj << Report View( "Full"|"Summary" )
+**Syntax:** obj &lt;&lt; Report View( "Full"|"Summary" )
 
 **Description:** The report view determines the level of detail visible in a platform report. Full shows all of the detail, while Summary shows only select content, dependent on the platform. For customized behavior, display boxes support a <<Set Summary Behavior message.
 
@@ -819,7 +805,7 @@ obj << Report View( "Summary" );
 
 ### Save Script for All Objects
 
-**Syntax:** obj << Save Script for All Objects
+**Syntax:** obj &lt;&lt; Save Script for All Objects
 
 **Description:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -835,7 +821,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Syntax:** obj << Save Script for All Objects To Data Table( <name> )
+**Syntax:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Description:** Saves a script for all report objects to the current data table. This option is useful when you have multiple reports in the window. The script is named after the first platform unless you specify the script name in quotes.
 
@@ -883,7 +869,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Syntax:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description:** Create a JSL script to produce this analysis, and save it as a table property in the data table.
 
@@ -899,7 +885,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Syntax:** obj << Save Script to Journal
+**Syntax:** obj &lt;&lt; Save Script to Journal
 
 **Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
 
@@ -915,7 +901,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Syntax:** obj << Save Script to Report
+**Syntax:** obj &lt;&lt; Save Script to Report
 
 **Description:** Create a JSL script to produce this analysis, and show it in the report itself. Useful to preserve a printed record of what was done.
 
@@ -931,7 +917,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Syntax:** obj << Save Script to Script Window
+**Syntax:** obj &lt;&lt; Save Script to Script Window
 
 **Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
 
@@ -1012,7 +998,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Syntax:** obj << Sync to Data Table Changes
+**Syntax:** obj &lt;&lt; Sync to Data Table Changes
 
 **Description:** Sync with the exclude and data changes that have been made.
 
@@ -1029,7 +1015,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Syntax:** obj << Title( "new title" )
+**Syntax:** obj &lt;&lt; Title( "new title" )
 
 **Description:** Sets the title of the platform.
 
@@ -1045,7 +1031,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Syntax:** obj << Top Report
+**Syntax:** obj &lt;&lt; Top Report
 
 **Description:** Returns a reference to the root node in the report.
 
@@ -1063,7 +1049,7 @@ Show( t );
 
 ### View Web XML
 
-**Syntax:** obj << View Web XML
+**Syntax:** obj &lt;&lt; View Web XML
 
 **Description:** Returns the XML code that is used to create the interactive HTML report.
 
@@ -1082,7 +1068,7 @@ xml = obj << View Web XML;
 
 #### Achieved MTBF
 
-**Syntax:** scrobj << Achieved MTBF( state=0|1 )
+**Syntax:** scrobj &lt;&lt; Achieved MTBF( state=0|1 )
 
 **Description:** Shows or hides the Achieved MTBF report. Use the optional alpha argument to specify alpha.
 
@@ -1099,7 +1085,7 @@ report << Achieved MTBF( .01 );
 
 #### Goodness of Fit
 
-**Syntax:** scrobj << Goodness of Fit( state=0|1 )
+**Syntax:** scrobj &lt;&lt; Goodness of Fit( state=0|1 )
 
 **Description:** Shows or hides the Goodness of Fit report that contains a test of the null hypothesis that the data follow a Crow-AMSAA model.
 
@@ -1116,7 +1102,7 @@ report << Goodness of Fit( 1 );
 
 #### Show Cumulative Events Plot
 
-**Syntax:** scrobj << Show Cumulative Events Plot( state=0|1 )
+**Syntax:** scrobj &lt;&lt; Show Cumulative Events Plot( state=0|1 )
 
 **Description:** Shows or hides the Cumulative Events plot.
 
@@ -1133,7 +1119,7 @@ report << Show Cumulative Events Plot( 1 );
 
 #### Show Intensity Plot
 
-**Syntax:** scrobj << Show Intensity Plot( state=0|1 )
+**Syntax:** scrobj &lt;&lt; Show Intensity Plot( state=0|1 )
 
 **Description:** Shows or hides the Intensity plot.
 
@@ -1150,7 +1136,7 @@ report << Show Intensity Plot( 1 );
 
 #### Show MTBF Plot
 
-**Syntax:** scrobj << Show MTBF Plot( state=0|1 )
+**Syntax:** scrobj &lt;&lt; Show MTBF Plot( state=0|1 )
 
 **Description:** Shows or hides the mean time between failures (MTBF) plot. On by default.
 
@@ -1167,7 +1153,7 @@ report << Show MTBF Plot( 0 );
 
 #### Show Profilers
 
-**Syntax:** scrobj << Show Profilers( state=0|1 )
+**Syntax:** scrobj &lt;&lt; Show Profilers( state=0|1 )
 
 **Description:** Shows or hides the profilers for mean time between failures (MTBF), failure intensity, and cumulative events.
 
@@ -1188,9 +1174,7 @@ report << Show Profilers( 1 );
 
 #### Cumulative Events Plot
 
-**Syntax:** obj << Cumulative Events Plot( ... );
-
-scrobj = obj << Cumulative Events Plot
+**Syntax:** obj &lt;&lt; Cumulative Events Plot( ... );scrobj = obj &lt;&lt; Cumulative Events Plot
 
 **Description:** Enables you to show or hide models in the Cumulative Events plot. If specified without an argument, this option returns a scriptable reference to the plot.
 
@@ -1209,11 +1193,7 @@ plot << Crow AMSAA( 0 );
 
 #### Crow AMSAA
 
-**Syntax:** obj << Cumulative Events Plot( Crow AMSAA( state=0|1 ) );
-
-obj << Mean Time Between Failures Plot( Crow AMSAA( state=0|1 ) );
-
-scrobj << Crow AMSAA( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Cumulative Events Plot( Crow AMSAA( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Crow AMSAA( state=0|1 ) );scrobj &lt;&lt; Crow AMSAA( state=0|1 ) )
 
 **Description:** Shows or hides the Crow-AMSAA model in the Cumulative Events or Mean Time Between Failures plot. On by default.
 
@@ -1251,11 +1231,7 @@ mtbf << Crow AMSAA( 0 );
 
 #### Crow AMSAA with Modified MLE
 
-**Syntax:** obj << Cumulative Events Plot( Crow AMSAA with Modified MLE( state=0|1 ) );
-
-obj << Mean Time Between Failures Plot( Crow AMSAA with Modified MLE( state=0|1 ) );
-
-scrobj << Crow AMSAA with Modified MLE( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Cumulative Events Plot( Crow AMSAA with Modified MLE( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Crow AMSAA with Modified MLE( state=0|1 ) );scrobj &lt;&lt; Crow AMSAA with Modified MLE( state=0|1 ) )
 
 **Description:** Shows or hides the Crow-AMSAA model with bias correction for beta in the Cumulative Events or Mean Time Between Failures plot. On by default.
 
@@ -1293,11 +1269,7 @@ mtbf << Crow AMSAA with Modified MLE( 0 );
 
 #### Fixed Parameter Crow AMSAA
 
-**Syntax:** obj << Cumulative Events Plot( Fixed Parameter Crow AMSAA( state=0|1 ) );
-
-obj << Mean Time Between Failures Plot( Fixed Parameter Crow AMSAA( state=0|1 ) );
-
-scrobj << Fixed Parameter Crow AMSAA( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Cumulative Events Plot( Fixed Parameter Crow AMSAA( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Fixed Parameter Crow AMSAA( state=0|1 ) );scrobj &lt;&lt; Fixed Parameter Crow AMSAA( state=0|1 ) )
 
 **Description:** Shows or hides the Fixed Parameter Crow-AMSAA model in the Cumulative Events or Mean Time Between Failures plot. On by default.
 
@@ -1335,11 +1307,7 @@ mtbf << Fixed Parameter Crow AMSAA( 0 );
 
 #### Piecewise Weibull NHPP
 
-**Syntax:** obj << Cumulative Events Plot( Piecewise Weibull NHPP( state=0|1 ) );
-
-obj << Mean Time Between Failures Plot( Piecewise Weibull NHPP( state=0|1 ) );
-
-scrobj << Piecewise Weibull NHPP( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Cumulative Events Plot( Piecewise Weibull NHPP( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Piecewise Weibull NHPP( state=0|1 ) );scrobj &lt;&lt; Piecewise Weibull NHPP( state=0|1 ) )
 
 **Description:** Shows or hides the Piecewise Weibull NHPP model in the Cumulative Events or Mean Time Between Failures plot. On by default.
 
@@ -1387,11 +1355,7 @@ mtbf << Piecewise Weibull NHPP( 0 );
 
 #### Piecewise Weibull NHPP Change Point Detection
 
-**Syntax:** obj << Cumulative Events Plot( Piecewise Weibull NHPP Change Point Detection( state=0|1 ) );
-
-obj << Mean Time Between Failures Plot( Piecewise Weibull NHPP Change Point Detection( state=0|1 ) );
-
-scrobj << Piecewise Weibull NHPP Change Point Detection( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Cumulative Events Plot( Piecewise Weibull NHPP Change Point Detection( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Piecewise Weibull NHPP Change Point Detection( state=0|1 ) );scrobj &lt;&lt; Piecewise Weibull NHPP Change Point Detection( state=0|1 ) )
 
 **Description:** Shows or hides the Reinitialized Weibull NHPP model in the Cumulative Events or Mean Time Between Failures plot. On by default.
 
@@ -1437,11 +1401,7 @@ mtbf << Piecewise Weibull NHPP Change Point Detection( 0 );
 
 #### Reinitialized Weibull NHPP
 
-**Syntax:** obj << Cumulative Events Plot( Reinitialized Weibull NHPP( state=0|1 ) );
-
-obj << Mean Time Between Failures Plot( Reinitialized Weibull NHPP( state=0|1 ) );
-
-scrobj << Reinitialized Weibull NHPP( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Cumulative Events Plot( Reinitialized Weibull NHPP( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Reinitialized Weibull NHPP( state=0|1 ) );scrobj &lt;&lt; Reinitialized Weibull NHPP( state=0|1 ) )
 
 **Description:** Shows or hides the Reinitialized Weibull NHPP model in the Cumulative Events or Mean Time Between Failures plot. On by default.
 
@@ -1493,7 +1453,7 @@ mtbf << Reinitialized Weibull NHPP( 0 );
 
 #### Show Cumulative Events Plot
 
-**Syntax:** scrobj << Show Cumulative Events Plot( state=0|1 )
+**Syntax:** scrobj &lt;&lt; Show Cumulative Events Plot( state=0|1 )
 
 **Description:** Shows or hides the Cumulative Events plot.
 
@@ -1510,7 +1470,7 @@ report << Show Cumulative Events Plot( 1 );
 
 #### Show Intensity Plot
 
-**Syntax:** scrobj << Show Intensity Plot( state=0|1 )
+**Syntax:** scrobj &lt;&lt; Show Intensity Plot( state=0|1 )
 
 **Description:** Shows or hides the Intensity plot.
 
@@ -1527,7 +1487,7 @@ report << Show Intensity Plot( 1 );
 
 #### Show MTBF Plot
 
-**Syntax:** scrobj << Show MTBF Plot( state=0|1 )
+**Syntax:** scrobj &lt;&lt; Show MTBF Plot( state=0|1 )
 
 **Description:** Shows or hides the mean time between failures (MTBF) plot. On by default.
 
@@ -1544,7 +1504,7 @@ report << Show MTBF Plot( 0 );
 
 #### Show Profilers
 
-**Syntax:** scrobj << Show Profilers( state=0|1 )
+**Syntax:** scrobj &lt;&lt; Show Profilers( state=0|1 )
 
 **Description:** Shows or hides the profilers for mean time between failures (MTBF), failure intensity, and cumulative events.
 
@@ -1561,7 +1521,7 @@ report << Show Profilers( 1 );
 
 #### beta
 
-**Syntax:** obj << Fixed Parameter Crow AMSAA( beta( number ) )
+**Syntax:** obj &lt;&lt; Fixed Parameter Crow AMSAA( beta( number ) )
 
 **Description:** Specifies the value of the fixed beta parameter. If the argument is a missing value, then the parameter is not fixed.
 
@@ -1578,7 +1538,7 @@ Report( obj )["Crow-AMSAA"] << Close( 1 );
 
 #### lambda
 
-**Syntax:** obj << Fixed Parameter Crow AMSAA( lambda( number ) )
+**Syntax:** obj &lt;&lt; Fixed Parameter Crow AMSAA( lambda( number ) )
 
 **Description:** Specifies the value of the fixed lambda parameter. If the argument is a missing value, then the parameter is not fixed.
 
@@ -1599,9 +1559,7 @@ Report( obj )["Crow-AMSAA"] << Close( 1 );
 
 #### Mean Time Between Failures Plot
 
-**Syntax:** obj << Mean Time Between Failures Plot( ... );
-
-scrobj = obj << Mean Time Between Failures Plot
+**Syntax:** obj &lt;&lt; Mean Time Between Failures Plot( ... );scrobj = obj &lt;&lt; Mean Time Between Failures Plot
 
 **Description:** Enables you to show or hide models in the Mean Time Between Failures plot. If specified without an argument, this option returns a scriptable reference to the plot.
 
@@ -1621,11 +1579,7 @@ plot << Crow AMSAA( 0 );
 
 #### Crow AMSAA
 
-**Syntax:** obj << Cumulative Events Plot( Crow AMSAA( state=0|1 ) );
-
-obj << Mean Time Between Failures Plot( Crow AMSAA( state=0|1 ) );
-
-scrobj << Crow AMSAA( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Cumulative Events Plot( Crow AMSAA( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Crow AMSAA( state=0|1 ) );scrobj &lt;&lt; Crow AMSAA( state=0|1 ) )
 
 **Description:** Shows or hides the Crow-AMSAA model in the Cumulative Events or Mean Time Between Failures plot. On by default.
 
@@ -1663,11 +1617,7 @@ mtbf << Crow AMSAA( 0 );
 
 #### Crow AMSAA with Modified MLE
 
-**Syntax:** obj << Cumulative Events Plot( Crow AMSAA with Modified MLE( state=0|1 ) );
-
-obj << Mean Time Between Failures Plot( Crow AMSAA with Modified MLE( state=0|1 ) );
-
-scrobj << Crow AMSAA with Modified MLE( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Cumulative Events Plot( Crow AMSAA with Modified MLE( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Crow AMSAA with Modified MLE( state=0|1 ) );scrobj &lt;&lt; Crow AMSAA with Modified MLE( state=0|1 ) )
 
 **Description:** Shows or hides the Crow-AMSAA model with bias correction for beta in the Cumulative Events or Mean Time Between Failures plot. On by default.
 
@@ -1705,9 +1655,7 @@ mtbf << Crow AMSAA with Modified MLE( 0 );
 
 #### Customize Average MTBF
 
-**Syntax:** obj << Mean Time Between Failures( Options( Sample MTBF Type( "Customized Average MTBF" ), Customize Average MTBF( vector ) ) );
-
-scrobj << Options( Sample MTBF Type( "Customized Average MTBF" ), Customize Average MTBF( vector ) )
+**Syntax:** obj &lt;&lt; Mean Time Between Failures( Options( Sample MTBF Type( "Customized Average MTBF" ), Customize Average MTBF( vector ) ) );scrobj &lt;&lt; Options( Sample MTBF Type( "Customized Average MTBF" ), Customize Average MTBF( vector ) )
 
 **Description:** Specifies a set of disjoint intervals that are used to calculate mean time between failures (MTBF).
 
@@ -1746,11 +1694,7 @@ plot << Options(
 
 #### Fixed Parameter Crow AMSAA
 
-**Syntax:** obj << Cumulative Events Plot( Fixed Parameter Crow AMSAA( state=0|1 ) );
-
-obj << Mean Time Between Failures Plot( Fixed Parameter Crow AMSAA( state=0|1 ) );
-
-scrobj << Fixed Parameter Crow AMSAA( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Cumulative Events Plot( Fixed Parameter Crow AMSAA( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Fixed Parameter Crow AMSAA( state=0|1 ) );scrobj &lt;&lt; Fixed Parameter Crow AMSAA( state=0|1 ) )
 
 **Description:** Shows or hides the Fixed Parameter Crow-AMSAA model in the Cumulative Events or Mean Time Between Failures plot. On by default.
 
@@ -1788,9 +1732,7 @@ mtbf << Fixed Parameter Crow AMSAA( 0 );
 
 #### Interval Size
 
-**Syntax:** obj << Mean Time Between Failures( Options( Sample MTBF Type( "Equal Interval Average MTBF" ), Interval Size( number ) ) );
-
-scrobj << Options( Sample MTBF Type( "Equal Interval Average MTBF" ), Interval Size( number ) )
+**Syntax:** obj &lt;&lt; Mean Time Between Failures( Options( Sample MTBF Type( "Equal Interval Average MTBF" ), Interval Size( number ) ) );scrobj &lt;&lt; Options( Sample MTBF Type( "Equal Interval Average MTBF" ), Interval Size( number ) )
 
 **Description:** Specifies the size of the interval that is used to calculate mean time between failures (MTBF).
 
@@ -1823,9 +1765,7 @@ plot << Options( Sample MTBF Type( "Equal Interval Average MTBF" ), Interval Siz
 
 #### Options
 
-**Syntax:** obj << Mean Time Between Failures( Options( ... ) );
-
-scrobj << Options( ... )
+**Syntax:** obj &lt;&lt; Mean Time Between Failures( Options( ... ) );scrobj &lt;&lt; Options( ... )
 
 **Description:** Enables you to configure the Mean Time Between Failures plot.
 
@@ -1868,11 +1808,7 @@ mtbf << Options( Sample MTBF Type( "Equal Interval Average MTBF" ) );
 
 #### Piecewise Weibull NHPP
 
-**Syntax:** obj << Cumulative Events Plot( Piecewise Weibull NHPP( state=0|1 ) );
-
-obj << Mean Time Between Failures Plot( Piecewise Weibull NHPP( state=0|1 ) );
-
-scrobj << Piecewise Weibull NHPP( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Cumulative Events Plot( Piecewise Weibull NHPP( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Piecewise Weibull NHPP( state=0|1 ) );scrobj &lt;&lt; Piecewise Weibull NHPP( state=0|1 ) )
 
 **Description:** Shows or hides the Piecewise Weibull NHPP model in the Cumulative Events or Mean Time Between Failures plot. On by default.
 
@@ -1920,11 +1856,7 @@ mtbf << Piecewise Weibull NHPP( 0 );
 
 #### Piecewise Weibull NHPP Change Point Detection
 
-**Syntax:** obj << Cumulative Events Plot( Piecewise Weibull NHPP Change Point Detection( state=0|1 ) );
-
-obj << Mean Time Between Failures Plot( Piecewise Weibull NHPP Change Point Detection( state=0|1 ) );
-
-scrobj << Piecewise Weibull NHPP Change Point Detection( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Cumulative Events Plot( Piecewise Weibull NHPP Change Point Detection( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Piecewise Weibull NHPP Change Point Detection( state=0|1 ) );scrobj &lt;&lt; Piecewise Weibull NHPP Change Point Detection( state=0|1 ) )
 
 **Description:** Shows or hides the Reinitialized Weibull NHPP model in the Cumulative Events or Mean Time Between Failures plot. On by default.
 
@@ -1970,11 +1902,7 @@ mtbf << Piecewise Weibull NHPP Change Point Detection( 0 );
 
 #### Reinitialized Weibull NHPP
 
-**Syntax:** obj << Cumulative Events Plot( Reinitialized Weibull NHPP( state=0|1 ) );
-
-obj << Mean Time Between Failures Plot( Reinitialized Weibull NHPP( state=0|1 ) );
-
-scrobj << Reinitialized Weibull NHPP( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Cumulative Events Plot( Reinitialized Weibull NHPP( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Reinitialized Weibull NHPP( state=0|1 ) );scrobj &lt;&lt; Reinitialized Weibull NHPP( state=0|1 ) )
 
 **Description:** Shows or hides the Reinitialized Weibull NHPP model in the Cumulative Events or Mean Time Between Failures plot. On by default.
 
@@ -2022,9 +1950,7 @@ mtbf << Reinitialized Weibull NHPP( 0 );
 
 #### Sample MTBF Type
 
-**Syntax:** obj << Mean Time Between Failures( Options( Sample MTBF Type( "Equal Interval Average MTBF"|"Customized Average MTBF" ) ) );
-
-scrobj << Options( Sample MTBF Type( "Equal Interval Average MTBF"|"Customized Average MTBF" ) )
+**Syntax:** obj &lt;&lt; Mean Time Between Failures( Options( Sample MTBF Type( "Equal Interval Average MTBF"|"Customized Average MTBF" ) ) );scrobj &lt;&lt; Options( Sample MTBF Type( "Equal Interval Average MTBF"|"Customized Average MTBF" ) )
 
 **Description:** Specifies the calculation method for the Mean Time Between Failures plot.
 
@@ -2071,7 +1997,7 @@ mtbf << Options( Sample MTBF Type( "Equal Interval Average MTBF" ) );
 
 #### Show Cumulative Events Plot
 
-**Syntax:** scrobj << Show Cumulative Events Plot( state=0|1 )
+**Syntax:** scrobj &lt;&lt; Show Cumulative Events Plot( state=0|1 )
 
 **Description:** Shows or hides the Cumulative Events plot.
 
@@ -2088,7 +2014,7 @@ report << Show Cumulative Events Plot( 1 );
 
 #### Show Intensity Plot
 
-**Syntax:** scrobj << Show Intensity Plot( state=0|1 )
+**Syntax:** scrobj &lt;&lt; Show Intensity Plot( state=0|1 )
 
 **Description:** Shows or hides the Intensity plot.
 
@@ -2105,7 +2031,7 @@ report << Show Intensity Plot( 1 );
 
 #### Show MTBF Plot
 
-**Syntax:** scrobj << Show MTBF Plot( state=0|1 )
+**Syntax:** scrobj &lt;&lt; Show MTBF Plot( state=0|1 )
 
 **Description:** Shows or hides the mean time between failures (MTBF) plot. On by default.
 
@@ -2122,7 +2048,7 @@ report << Show MTBF Plot( 0 );
 
 #### Show Profilers
 
-**Syntax:** scrobj << Show Profilers( state=0|1 )
+**Syntax:** scrobj &lt;&lt; Show Profilers( state=0|1 )
 
 **Description:** Shows or hides the profilers for mean time between failures (MTBF), failure intensity, and cumulative events.
 

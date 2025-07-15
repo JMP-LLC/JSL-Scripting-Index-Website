@@ -2,11 +2,9 @@
 
 
 
-## 関数
-
 ### Alignment Cell Box
 
-**構文:** y = Alignment Cell Box( row, col, nRow, nCol, <Sides(left+2*top+4*right+8*bottom=15)> <RowSpan(nRow matrix)> <ColSpan(nCol matrix)>, matrix or list of strings )
+**構文:** y = Alignment Cell Box( row, col, nRow, nCol, &lt;Sides(left+2*top+4*right+8*bottom=15)&gt; &lt;RowSpan(nRow matrix)&gt; &lt;ColSpan(nCol matrix)&gt;, matrix or list of strings )
 
 **説明:** Alignment Grid Boxの内側に含まれている行(または列)を含んだディスプレイボックスの参照を戻す。
 
@@ -130,7 +128,7 @@ ashape = Alpha Shape( triang );
 
 ### Border Box
 
-**構文:** y = Border Box( <Left( pix )>, <Right( pix )>, <Top( pix )>, <Bottom( pix )>, <Sides( 0 )>, displayBoxArg )
+**構文:** y = Border Box( &lt;Left( pix )&gt;, &lt;Right( pix )&gt;, &lt;Top( pix )&gt;, &lt;Bottom( pix )&gt;, &lt;Sides( 0 )&gt;, displayBoxArg )
 
 **説明:** 引数に指定されたディスプレイボックスの周りに隙間を追加したディスプレイボックスを戻す。
 
@@ -152,7 +150,7 @@ New Window( "Example",
 
 ### Box Plot Seg
 
-**構文:** b = Box Plot Seg(<data>, <frequency>, <weight>, <vertical=0|1>)
+**構文:** b = Box Plot Seg(&lt;data&gt;, &lt;frequency&gt;, &lt;weight&gt;, &lt;vertical=0|1&gt;)
 
 **説明:** 指定されたデータの箱ひげ図を描くディスプレイセグメントを戻す。
 
@@ -171,7 +169,7 @@ seg = (g[FrameBox( 1 )] << Find Seg( "Box Plot Seg" ));
 
 ### Busy Light
 
-**構文:** y = Busy Light( < <<Automatic(0|1)>, <Size(x, y)>, < <<Disable> )
+**構文:** y = Busy Light( &lt; &lt;&lt;Automatic(0|1)&gt;, &lt;Size(x, y)&gt;, &lt; &lt;&lt;Disable&gt; )
 
 **説明:** ビジー状態を示す、回転するイメージを作成する。
 
@@ -216,7 +214,7 @@ New Window( "Calendar Box Example", Calendar Box() );
 
 ### Check Box
 
-**構文:** y = Check Box( {item, ...}, <script> )
+**構文:** y = Check Box( {item, ...}, &lt;script&gt; )
 
 **説明:** 1つまたは複数のチェックボックスが表示されたディスプレイボックスを戻す。
 
@@ -281,7 +279,7 @@ dt = New Window( "Example",
 
 ### Col List Box
 
-**構文:** y = Col List Box( <Data Table( name )>, <all>|<character|numeric>, <width( pix )>, <grouped>, <maxSelected( n )>, <nlines( n )>, <MaxItems( n )>, <MinItems( n )>, <onChange( expr )>, < <<Modeling Type({"Any","Continuous","Nominal","Ordinal","Multiple Response","Unstructured Text","Vector","None","Row State"}) >, < << Set Data Type(Any|Numeric|Character)>, <script> )
+**構文:** y = Col List Box( &lt;Data Table( name )&gt;, &lt;all&gt;|&lt;character|numeric&gt;, &lt;width( pix )&gt;, &lt;grouped&gt;, &lt;maxSelected( n )&gt;, &lt;nlines( n )&gt;, &lt;MaxItems( n )&gt;, &lt;MinItems( n )&gt;, &lt;onChange( expr )&gt;, &lt; &lt;&lt;Modeling Type({"Any","Continuous","Nominal","Ordinal","Multiple Response","Unstructured Text","Vector","None","Row State"}) &gt;, &lt; &lt;&lt; Set Data Type(Any|Numeric|Character)&gt;, &lt;script&gt; )
 
 **説明:** データテーブル列を選択するためのリストボックスを表示したディスプレイボックスを戻す。特殊な尺度を許可する場合、または尺度を制約する場合は、<<Modeling Typeメッセージを使用します。デフォルト値の"Any"では、従来型の尺度("Continuous"、"Nominal"、"Ordinal")の列をすべて使用できます。
 
@@ -351,7 +349,7 @@ New Window( "test",
 
 ### Column Dialog
 
-**構文:** y = Column Dialog( <var = ColList("Label", <Min Col(min)>, <Max Col(max)>, <Width(w)>, <Data Type("Numeric"|"Character"|"Any")>, <Modeling Type({<"Continuous">, <"Nominal">, <"Ordinal">, <"None">, <"Multiple Response">, <"Unstructured Text">, <"Vector">})> )>, <var=EditText("string")>, <var=EditNumber(num)>, <var=Check Box( "Text", 0|1)>, <var=RadioButtons( "a", "b" )>, <var=Combo Box("choice1", ...)>, <HList(box, ...)>, <VList(box, ...)>, <LineUp(ncol, box, ...)>, <Text Box("string")>, <Window Title("title")>, <Window Icon("icon string")>, <Dialog Description("description")>, <Recall(script)>, <Help Script(script)>)
+**構文:** y = Column Dialog( &lt;var = ColList("Label", &lt;Min Col(min)&gt;, &lt;Max Col(max)&gt;, &lt;Width(w)&gt;, &lt;Data Type("Numeric"|"Character"|"Any")&gt;, &lt;Modeling Type({&lt;"Continuous"&gt;, &lt;"Nominal"&gt;, &lt;"Ordinal"&gt;, &lt;"None"&gt;, &lt;"Multiple Response"&gt;, &lt;"Unstructured Text"&gt;, &lt;"Vector"&gt;})&gt; )&gt;, &lt;var=EditText("string")&gt;, &lt;var=EditNumber(num)&gt;, &lt;var=Check Box( "Text", 0|1)&gt;, &lt;var=RadioButtons( "a", "b" )&gt;, &lt;var=Combo Box("choice1", ...)&gt;, &lt;HList(box, ...)&gt;, &lt;VList(box, ...)&gt;, &lt;LineUp(ncol, box, ...)&gt;, &lt;Text Box("string")&gt;, &lt;Window Title("title")&gt;, &lt;Window Icon("icon string")&gt;, &lt;Dialog Description("description")&gt;, &lt;Recall(script)&gt;, &lt;Help Script(script)&gt;)
 
 **説明:** ユーザに対し、データテーブル内の列を選択するためのモーダルウィンドウを表示する。複数の種類の入力ボックスとウィンドウを配置するためのコンテナボックスを指定できる。
 
@@ -389,7 +387,7 @@ Column Dialog(
 
 ### Combo Box
 
-**構文:** y = Combo Box( {item <( tipstr )>, ...}, <script> )
+**構文:** y = Combo Box( {item &lt;( tipstr )&gt;, ...}, &lt;script&gt; )
 
 **説明:** ポップアップメニューが付いたコンボボックスのディスプレイボックスを戻す。オプションでコンボボックス内の各項目にツールヒントを付けることもできる。その場合、各項目のテキスト文字列の後ろに、ツールヒントのテキストを括弧で囲んで入力する。
 
@@ -427,7 +425,7 @@ New Window( "Example",
 
 ### Contour Seg
 
-**構文:** me = Contour Seg( Triangulation, [ levels ], < zColor([colors], <Cycle Colors|Interpolate Colors>) >, < Transparency([] | t) >
+**構文:** me = Contour Seg( Triangulation, [ levels ], &lt; zColor([colors], &lt;Cycle Colors|Interpolate Colors&gt;) &gt;, &lt; Transparency([] | t) &gt;
 
 **説明:** 三角分割 (Triangulation) のオブジェクトを引数とし、等高線を描くディスプレイセグメントを戻す。各水準の色を、行列またはリストによってオプション指定できる。透明度も、数字または行列で指定できる。
 
@@ -456,7 +454,7 @@ New Window( "Contour Seg Example",
 
 ### Current Report
 
-**構文:** y = Current Report( <Project(title|index|box|window)> )
+**構文:** y = Current Report( &lt;Project(title|index|box|window)&gt; )
 
 **説明:** 現在のプロジェクトにある現在のレポートのディスプレイボックスへの参照を戻す。(スクリプトがプロジェクト内で実行されていない場合はプロジェクトはなし。)
 
@@ -475,7 +473,7 @@ Current Report();
 
 ### Current Window
 
-**構文:** y = Current Window( <Project(title|index|box|window)> )
+**構文:** y = Current Window( &lt;Project(title|index|box|window)&gt; )
 
 **説明:** 現在のプロジェクトにある現在のウィンドウへの参照を戻す。(スクリプトがプロジェクト内で実行されていない場合はプロジェクトはなし。)
 
@@ -578,7 +576,7 @@ New Window( "Selection Filter",
 
 ### Data Grid Box
 
-**構文:** y = Data Grid Box(  )
+**構文:** y = Data Grid Box( )
 
 **説明:** データテーブルを含むことのできるディスプレイボックスを戻す。
 
@@ -750,7 +748,7 @@ New Window( "Example",
 
 ### Expr As Picture
 
-**構文:** y = Expr As Picture( expr( ... ), <width in pixels>, <Max Matrix Size( dim )> )
+**構文:** y = Expr As Picture( expr( ... ), &lt;width in pixels&gt;, &lt;Max Matrix Size( dim )&gt; )
 
 **説明:** 指定した式を計算式の画像として含むイメージを戻す。デフォルトの幅は600ピクセル、デフォルトの行列の最大サイズは100。
 
@@ -772,7 +770,7 @@ New Window( "Example",
 
 ### Filter Col Selector
 
-**構文:** y = Filter Col Selector(<Data Table(name)>, <width(pixels)>, <nlines(n)>, <script>, <onchange(expr)>)
+**構文:** y = Filter Col Selector(&lt;Data Table(name)&gt;, &lt;width(pixels)&gt;, &lt;nlines(n)&gt;, &lt;script&gt;, &lt;onchange(expr)&gt;)
 
 **説明:** 項目のリストを含んだディスプレイボックスを戻す。コントロールが列のフィルタリングを可能にする。
 
@@ -838,7 +836,7 @@ Print( Get Project List() << Get Window Title() );
 
 ### Get Window
 
-**構文:** window = Get Window( <Project(title|index|box|window)>, <Type(string)>, title|index|box )
+**構文:** window = Get Window( &lt;Project(title|index|box|window)&gt;, &lt;Type(string)&gt;, title|index|box )
 
 **説明:** title、index、またはboxで指定されたウィンドウへの参照を戻す。
 
@@ -880,7 +878,7 @@ window = Get Window( Project( project ), "Big Class" );
 
 ### Get Window List
 
-**構文:** windowList = Get Window List( <Project(title|index|box|window)>, <Type(string)> )
+**構文:** windowList = Get Window List( &lt;Project(title|index|box|window)&gt;, &lt;Type(string)&gt; )
 
 **説明:** 現在開いているすべてのウィンドウのリストを戻す。
 
@@ -1026,7 +1024,7 @@ New Window( "Example",
 
 ### H Center Box
 
-**構文:** y = H Center Box( <childbox> )
+**構文:** y = H Center Box( &lt;childbox&gt; )
 
 **説明:** childboxを水平方向に中央揃えで配置したディスプレイボックスを戻す。水平方向の長さは、子ディスプレイボックスのうち、最大のものに設定され、それ以外の子ディスプレイボックスは水平方向に中央揃えされる。
 
@@ -1053,7 +1051,7 @@ New Window( "test",
 
 ### H List Box
 
-**構文:** y = H List Box( <Align( center|bottom )>, displayBox, ... )
+**構文:** y = H List Box( &lt;Align( center|bottom )&gt;, displayBox, ... )
 
 **説明:** 引数によって与えられる複数のディスプレイボックスを横方向にレイアウトしたディスプレイボックスを戻す。<<Holdメッセージにより抜粋元となるレポートをどのシートが保持するかを示す。オプションのAlign引数は、ディスプレイボックス内の配置を右寄せ(bottom)または中央寄せ(center)にすることを指定する。
 
@@ -1070,7 +1068,7 @@ New Window( "Example",
 
 ### H Scroll Box
 
-**構文:** y = H Scroll Box( <Size( x )>, displayBox )
+**構文:** y = H Scroll Box( &lt;Size( x )&gt;, displayBox )
 
 **説明:** 横方向のスクロールバーがついたディスプレイボックスを戻す。中により大きな子ボックスを配置することができる。
 
@@ -1099,7 +1097,7 @@ New Window( "Example",
 
 ### H Sheet Box
 
-**構文:** y = H Sheet Box( <<Hold( rpt ), displayBox, ... )
+**構文:** y = H Sheet Box( &lt;&lt;Hold( rpt ), displayBox, ... )
 
 **説明:** 引数によって与えられる複数のディスプレイボックスを横方向にレイアウトしたディスプレイボックスを戻す。<<Holdメッセージにより抜粋元となるレポートをどのシートが保持するかを示す。オプションのAlign引数は、ディスプレイボックス内の配置を右寄せ(right)または中央寄せ(center)にすることを指定する。
 
@@ -1149,7 +1147,7 @@ New Window( "Example",
 
 ### H Splitter Box
 
-**構文:** y = H Splitter Box( <Size(x,y)>, displayBox, ... )
+**構文:** y = H Splitter Box( &lt;Size(x,y)&gt;, displayBox, ... )
 
 **説明:** 引数によって与えられる複数のディスプレイボックスを横方向にレイアウトし、仕切りをつけたディスプレイボックスを戻す。子のサイズはSplitter Boxの幅または高さの割合で指定する。オプションのSize引数は、最上位のSplitter Boxに対する指定(ボックス全体のサイズ)で、子ボックスはそれに対する割合での指定となる。
 
@@ -1204,7 +1202,7 @@ New Window( "Example",
 
 ### Hist Seg
 
-**構文:** b = Hist Seg([data], <[freq data]>,<[weight data]>, <vertical=0|1>, <Row States()>)
+**構文:** b = Hist Seg([data], &lt;[freq data]&gt;,&lt;[weight data]&gt;, &lt;vertical=0|1&gt;, &lt;Row States()&gt;)
 
 **説明:** ヒストグラムセグメントを戻す。
 
@@ -1289,7 +1287,7 @@ frenchBox << Set( 1 );
 
 ### If Seg
 
-**構文:** seg = If Seg(<state=0|1>)
+**構文:** seg = If Seg(&lt;state=0|1&gt;)
 
 **説明:** 子のディスプレイセグメントを表示したり非表示にしたりするディスプレイセグメントを戻す。
 
@@ -1356,7 +1354,7 @@ New Window( "Distribution of Height",
 
 ### Line Seg
 
-**構文:** ls = Line Seg(x values, y values, <Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) >, < Sizes( s ) > )>)
+**構文:** ls = Line Seg(x values, y values, &lt;Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) &gt;, &lt; Sizes( s ) &gt; )&gt;)
 
 **説明:** 指定された(x,y)座標を通る、繋がった線分を描くディスプレイセグメントを戻す。
 
@@ -1425,7 +1423,7 @@ seg = (frame << Find Seg( "Lines Seg" ));
 
 ### Lineup Box
 
-**構文:** y = Lineup Box( <NCol( nc )>, <Spacing( pixels, <vspace> )>, displayBoxArgs, ... )
+**構文:** y = Lineup Box( &lt;NCol( nc )&gt;, &lt;Spacing( pixels, &lt;vspace&gt; )&gt;, displayBoxArgs, ... )
 
 **説明:** 各ボックスをnc列に配置したディスプレイボックスを戻す。オプションの引数Spacingは、ディスプレイボックスの周囲における水平と垂直の空白を指定する。引数vspaceが指定された場合、vspaceは垂直方向の空白、pixelsは水平方向の空白を示す。
 
@@ -1447,7 +1445,7 @@ New Window( "Example",
 
 ### Lineup Ruler Box
 
-**構文:** y = Lineup Box( <Widths( {width1, width2, ...} )>, displayBoxArgs, ... )
+**構文:** y = Lineup Box( &lt;Widths( {width1, width2, ...} )&gt;, displayBoxArgs, ... )
 
 **説明:** 中にあるLineup Boxの列の幅を設定するディスプレイボックスを戻す。
 
@@ -1485,7 +1483,7 @@ New Window( "Lineup Ruler",
 
 ### List Box
 
-**構文:** y = List Box( {item, ...}, <width( pixels )>, <maxSelected( 9999 )>, <nlines( 12 )>, <script> )
+**構文:** y = List Box( {item, ...}, &lt;width( pixels )&gt;, &lt;maxSelected( 9999 )&gt;, &lt;nlines( 12 )&gt;, &lt;script&gt; )
 
 **説明:** 複数の項目を含むリストボックスを表示するためのディスプレイボックスを戻す。item自身が、項目名と、尺度または並べ替え順序("Ordinal"または"Ascending"など)を示す文字列の2項目からなるリストである場合は、リストボックス内でその項目の隣に該当するアイコンが表示される。
 
@@ -1518,7 +1516,7 @@ New Window( "Example",
 
 ### Marker Seg
 
-**構文:** me = Marker Seg( x, y, < Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) >, < Sizes( s ) > )
+**構文:** me = Marker Seg( x, y, &lt; Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) &gt;, &lt; Sizes( s ) &gt; )
 
 **説明:** 指定された(x,y)座標にマーカーを描くディスプレイセグメントを戻す。
 
@@ -1638,7 +1636,7 @@ New Window( "Marker Seg Example",
 
 ### Matrix Box
 
-**構文:** y = Matrix Box( matrix, < <<Column Names( "c1", "c2", ... )>, < <<Row Names( "r1", "r2", ... )> )
+**構文:** y = Matrix Box( matrix, &lt; &lt;&lt;Column Names( "c1", "c2", ... )&gt;, &lt; &lt;&lt;Row Names( "r1", "r2", ... )&gt; )
 
 **説明:** 数値の行列を表示するディスプレイボックスを戻す。
 
@@ -1705,7 +1703,7 @@ New Window( "Example",
 
 ### Move to Project
 
-**構文:** Move to Project(<Source(project)>, <Destination(project)>, <Windows({list of windows to move})>)
+**構文:** Move to Project(&lt;Source(project)&gt;, &lt;Destination(project)&gt;, &lt;Windows({list of windows to move})&gt;)
 
 **説明:** 1つまたは複数のウィンドウをプロジェクトに移動、またはプロジェクト間で移動させる。SourceまたはDestinationのいずれか1つのみを指定できる。指定しなかったほうは、現在のプロジェクトとなる。(ウィンドウを現在のプロジェクトに移動させるには、Sourceのみを指定する。ウィンドウを現在のプロジェクトの外に出すにはDestinationのみを指定する。)Windows引数にデータテーブルを指定した場合、そのデータテーブルから作成されたレポートも一緒に移動する。Windows引数を指定しない場合は、移動元のプロジェクトのすべてのウィンドウが対象となる。
 
@@ -1738,17 +1736,7 @@ project << Close Window();
 
 ### New Image
 
-**構文:** img = New Image()
-
-img = New Image( width, height )
-
-img = New Image( pathname )
-
-img = New Image( picture )
-
-img = New Image( matrix of JSL color pixels ) 
-
-img = New Image( rgb|r|g|rgba, {i, i, i} )
+**構文:** img = New Image()img = New Image( width, height )img = New Image( pathname )img = New Image( picture )img = New Image( matrix of JSL color pixels ) img = New Image( rgb|r|g|rgba, {i, i, i} )
 
 **説明:** JSLコマンドで編集可能な新しいイメージを戻す。既存のイメージファイルへのパスを指定する場合、ファイルは.JPG、.PNG、.GIF、.BMP、または.TIF形式でなければならない。
 
@@ -1794,7 +1782,7 @@ New Window( "image", image3 );
 
 ### New Project
 
-**構文:** project = new Project( <project messages> )
+**構文:** project = new Project( &lt;project messages&gt; )
 
 **説明:** 新しい空のプロジェクトウィンドウを作成する。プロジェクトへの複数のメッセージを引数として含めることも可能で、ワンステップでプロジェクトを作成できる。
 
@@ -1882,7 +1870,7 @@ project = New Project(
 
 ### New Window
 
-**構文:** w = New Window( title, < <<Type("Report" | "Dialog" | "Modal Dialog" | "Journal" | "Launcher" | "Script")>, < << Return Result>, < << On Open(expr | function | method)>, < << On Close(expr | function | method)>, < <<On Validate(expr | function | method)>, < <<Show Menu(0 | 1)>, < <<Show Toolbars(0 | 1)>, < <<Suppress AutoHide(0 | 1)>, < <<Window View("Visible" | "Invisible")>, < <<Language("C" | "JavaScript" | "JSL" | "JSON" | "Python" | "R" | "SAS"  | "SQL" | "Text" | "XML")>, < <<Size(x, y)>, displayBox | script)
+**構文:** w = New Window( title, &lt; &lt;&lt;Type("Report" | "Dialog" | "Modal Dialog" | "Journal" | "Launcher" | "Script")&gt;, &lt; &lt;&lt; Return Result&gt;, &lt; &lt;&lt; On Open(expr | function | method)&gt;, &lt; &lt;&lt; On Close(expr | function | method)&gt;, &lt; &lt;&lt;On Validate(expr | function | method)&gt;, &lt; &lt;&lt;Show Menu(0 | 1)&gt;, &lt; &lt;&lt;Show Toolbars(0 | 1)&gt;, &lt; &lt;&lt;Suppress AutoHide(0 | 1)&gt;, &lt; &lt;&lt;Window View("Visible" | "Invisible")&gt;, &lt; &lt;&lt;Language("C" | "JavaScript" | "JSL" | "JSON" | "Python" | "R" | "SAS" | "SQL" | "Text" | "XML")&gt;, &lt; &lt;&lt;Size(x, y)&gt;, displayBox | script)
 
 **説明:** 指定のディスプレイボックスまたはスクリプトを含むウィンドウを作成する。Typeオプションが指定されていない場合、デフォルトでレポートウィンドウが作成される。Type("Modal Dialog")で作成したウィンドウは、ダイアログに応答するまで実行を停止する。On Open、On Validate、およびReturn Resultは、モーダルウィンドウにのみ使用できる。On Open()の式・関数・クラスメソッドは、ウィンドウが作成されたときに評価される。On Close()がfalseを戻すと、ウィンドウは閉じない。On Validate()の式・関数・クラスメソッドは、[OK]ボタンがクリックされたときに評価される。式がtrueを戻すと、ウィンドウは閉じ、そうでない場合、ウィンドウは開いたままになる。Return Resultは、ウィンドウを閉じたときの戻り値を、廃止予定のDialog()関数の戻り値に合うように変更する。ツールバーをサポートしているウィンドウの場合は、Show Toolbarsを使ってデフォルトの動作を変更できる。オプションShow MenuとSuppress AutoHideはWindowsでのみ使用できる。Window View("Invisible")オプションは、Modal Dialog以外のどのウィンドウにも使用できる。Type("Script")のウィンドウは、<<Languageオプションが指定されていない限り、JSLスクリプトのウィンドウを作成する。
 
@@ -2073,7 +2061,7 @@ New Window( "Example",
 
 ### Number Edit Box
 
-**構文:** y = Number Edit Box( initValue, <width> )
+**構文:** y = Number Edit Box( initValue, &lt;width&gt; )
 
 **説明:** 数値のみを入力できる編集ボックスを戻す。オプションの引数widthを指定することにより、ボックスの幅を文字数で設定できる。
 
@@ -2089,7 +2077,7 @@ x = neb << get;
 
 ### Outline Box
 
-**構文:** y = Outline Box( title, <command script pairs list>, displayBox, ... )
+**構文:** y = Outline Box( title, &lt;command script pairs list&gt;, displayBox, ... )
 
 **説明:** レポート内にアウトラインを作成し、そのディスプレイボックスへの参照を戻す。アウトラインノードにメニューを含めるには、command script pairs list(メニューコマンドと関連スクリプトを指定したリスト)を指定する。
 
@@ -2189,7 +2177,7 @@ New Window( "Example", Picture Box( pict ) );
 
 ### Pie Seg
 
-**構文:** ps = Pie Seg(<{ xorigin, yorigin }>, <radius>, <style("pie", "ring", "coxcomb")>, values)
+**構文:** ps = Pie Seg(&lt;{ xorigin, yorigin }&gt;, &lt;radius&gt;, &lt;style("pie", "ring", "coxcomb")&gt;, values)
 
 **説明:** 指定されたoriginとradiusを持ち、行列の形式で与えられた値を示す円のセグメントを作成する。
 
@@ -2302,7 +2290,7 @@ New Window( "Example",
 
 ### Radio Box
 
-**構文:** y = Radio Box( {item, ...}, <script> )
+**構文:** y = Radio Box( {item, ...}, &lt;script&gt; )
 
 **説明:** 複数のラジオボタンが表示されたディスプレイボックスを戻す。
 
@@ -2415,7 +2403,7 @@ exScene << update;
 
 ### Script Box
 
-**構文:** y = Script Box( <s>, <"C" | "JavaScript" | "JSL" | "JSON" | "Python" | "R" | "SAS" | "SQL" | "Text" | "XML">, <width>, <height> )
+**構文:** y = Script Box( &lt;s&gt;, &lt;"C" | "JavaScript" | "JSL" | "JSON" | "Python" | "R" | "SAS" | "SQL" | "Text" | "XML"&gt;, &lt;width&gt;, &lt;height&gt; )
 
 **説明:** スクリプトを編集するためのディスプレイボックスを戻す。デフォルトでは、エディタにおける強調表示と動作はJSLの構文に従う。
 
@@ -2445,7 +2433,7 @@ New Window( "This is a python script box", Script );
 
 ### Scroll Box
 
-**構文:** y = Scroll Box( <Size( x, y )>, displayBox )
+**構文:** y = Scroll Box( &lt;Size( x, y )&gt;, displayBox )
 
 **説明:** スクロールバー付きのディスプレイボックスを戻す。中により大きな子ボックスを配置することができる。
 
@@ -2496,7 +2484,7 @@ Clear Global Window Handler();
 
 ### Shape Seg
 
-**構文:** me = Shape Seg( {Path(<path>), ...}, < Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) > )
+**構文:** me = Shape Seg( {Path(&lt;path&gt;), ...}, &lt; Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) &gt; )
 
 **説明:** パスで指定された様々な形状をもつ複数のセグメントを、オブジェクトとして戻す。指定のパスに沿って線を描いたり、もしくは、内側を塗りつぶしたりする。パスは、N x 3の行列または文字列で指定する。N x 3の行列で指定する場合は、x座標、y座標、および、各点のフラグで構成する。フラグの値は、0(コントロール点)、1(移動)、2(線分)、3(3次ベジエ曲線)または負の値(点がパスの終点でもある場合)。パスを文字列で指定する場合は、SVG構文を用いる。
 
@@ -2568,7 +2556,7 @@ New Window( "Example",
 
 ### Slider Box
 
-**構文:** box = Slider Box(minValue, maxValue, variable, script, <set width(n)>, <rescale slider(minValue, maxValue)>)
+**構文:** box = Slider Box(minValue, maxValue, variable, script, &lt;set width(n)&gt;, &lt;rescale slider(minValue, maxValue)&gt;)
 
 **説明:** スライダコントロールを表示するディスプレイボックスを戻す。スライダの範囲はminValue～maxValue。スライダの位置が変わると、値がvariableに代入され、スクリプトが実行される。
 
@@ -2594,7 +2582,7 @@ New Window( "Example",
 
 ### Spacer Box
 
-**構文:** y = Spacer Box( <Size( x, y )>, <Color( c )>)
+**構文:** y = Spacer Box( &lt;Size( x, y )&gt;, &lt;Color( c )&gt;)
 
 **説明:** 複数のディスプレイボックスの間にスペースを作成するディスプレイボックスを戻す。これは、Lineup Boxにおいて、空白のセルを作成するのにも用いることができる。引数のSizeはピクセル数。ColorはJSLの有効な色。
 
@@ -2617,7 +2605,7 @@ New Window( "Example",
 
 ### Spin Box
 
-**構文:** y = Spin Box( <script> )
+**構文:** y = Spin Box( &lt;script&gt; )
 
 **説明:** 上向き/下向きの矢印ボタンを持つディスプレイボックスを戻す。script引数は、クリックされた矢印の方向を示す引数と共に呼び出される(負は下向き、正は上向き)。絶対値1が1回のクリックを示し、2以上の値は、アクションの繰り返しを示す。
 
@@ -2704,7 +2692,7 @@ New Window( "Example",
 
 ### Tab Page Box
 
-**構文:** y = Tab Page Box( <Title("string")>, <Tip(0|1)>,  <Closeable(0|1)>, <Icon("string")>, <Moveable(0|1)>, contents)
+**構文:** y = Tab Page Box( &lt;Title("string")&gt;, &lt;Tip(0|1)&gt;, &lt;Closeable(0|1)&gt;, &lt;Icon("string")&gt;, &lt;Moveable(0|1)&gt;, contents)
 
 **説明:** Tab Box内で使用するか、またはタイトルのついたスタンドアロンのコンテナとして使用できるディスプレイボックスを戻す。オプションとして、タイトルを指定するTitle(文字列)、ツールヒントを指定するTip(文字列)、ページを閉じることができるかどうかを指定するCloseable(0|1)、アイコンを指定するIcon(文字列)、ページの移動が可能かどうかを指定するMoveable(0|1)を設定できる。
 
@@ -2747,7 +2735,7 @@ New Window( "Example",
 
 ### Text Box
 
-**構文:** y = Text Box( text, <<Justify Text( strPos ), <<Set Wrap( width ) )
+**構文:** y = Text Box( text, &lt;&lt;Justify Text( strPos ), &lt;&lt;Set Wrap( width ) )
 
 **説明:** 引数textのテキストを含んだディスプレイボックスを作成する。オプションの引数でテキストの配置を指定したり、行あたりの文字数を指定したりできる。Justify Textの引数は、left、right、またはcenterを指定する。
 
@@ -2786,7 +2774,7 @@ New Window( "Justification Example",
 
 ### Text Edit Box
 
-**構文:** y = Text Edit Box( text, <<Password Style( bool ), <<Set Script( script ), <<Set Width( value ) )
+**構文:** y = Text Edit Box( text, &lt;&lt;Password Style( bool ), &lt;&lt;Set Script( script ), &lt;&lt;Set Width( value ) )
 
 **説明:** 引用符で囲んだ文字列のtextを含む編集可能なボックスを作成する。オプションの引数では、テキストの表示を制御したり、テキストボックスにスクリプトを追加したり、テキストボックスの幅をピクセルで設定したりできる。Set Width(-1)を指定すると、テキストボックスが内容にあったサイズに変更される。テキストボックスにスクリプトを設定するには、オプションの引数としてスクリプトを追加するか、Set Scriptメッセージを送る。
 
@@ -2846,7 +2834,7 @@ If(
 
 ### Tree Box
 
-**構文:** tree = Tree Box( <{rootnodes}>, <Size( x, y )>, <Multiselect( 0|1 )> )
+**構文:** tree = Tree Box( &lt;{rootnodes}&gt;, &lt;Size( x, y )&gt;, &lt;Multiselect( 0|1 )&gt; )
 
 **説明:** 階層型情報を表示するディスプレイボックスを作成する。
 
@@ -2874,7 +2862,7 @@ New Window( "TreeBox", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
 
 ### Tree Node
 
-**構文:** node = Tree Node( <label> )
+**構文:** node = Tree Node( &lt;label&gt; )
 
 **説明:** ツリーボックス内に表示するツリーノードを作成する。
 
@@ -2902,7 +2890,7 @@ New Window( "TreeBox Nodes", tree = Tree Box( {root1, root2}, Size( 300, 200 ) )
 
 ### Triangulation
 
-**構文:** triangulation = Triangulation( X(Column1, Column2), < Y(Column) > )
+**構文:** triangulation = Triangulation( X(Column1, Column2), &lt; Y(Column) &gt; )
 
 **説明:** 与えられたデータ点に対して、Delaunayの三角分割を行い、その結果のオブジェクトを戻す。データ点の座標に重複があった場合、それらのデータ点は一つにまとめられ、オプション指定のY値には平均が使われる。
 
@@ -2953,7 +2941,7 @@ New Window( "unlineup",
 
 ### V Center Box
 
-**構文:** y = V Center Box( <childbox> )
+**構文:** y = V Center Box( &lt;childbox&gt; )
 
 **説明:** childboxを垂直方向に中央揃えで配置したディスプレイボックスを戻す。垂直方向の長さは、子ディスプレイボックスのうち、最大のものに設定され、それ以外の子ディスプレイボックスは垂直方向に中央揃えされる。
 
@@ -2980,7 +2968,7 @@ New Window( "test",
 
 ### V List Box
 
-**構文:** y = V List Box( <Align( center|right )>, displayBox, ... )
+**構文:** y = V List Box( &lt;Align( center|right )&gt;, displayBox, ... )
 
 **説明:** 引数によって与えられる複数のディスプレイボックスを縦方向にレイアウトしたディスプレイボックスを戻す<<Holdメッセージにより抜粋元となるレポートをどのシートが保持するかを示す。オプションのAlign引数は、ディスプレイボックス内の配置を右寄せ(right)または中央寄せ(center)にすることを指定する。
 
@@ -2997,7 +2985,7 @@ New Window( "Example",
 
 ### V Scroll Box
 
-**構文:** y = V Scroll Box( <Size( y )>, displayBox )
+**構文:** y = V Scroll Box( &lt;Size( y )&gt;, displayBox )
 
 **説明:** 縦方向のスクロールバーがついたディスプレイボックスを戻す。中により大きな子ボックスを配置することができる。
 
@@ -3028,7 +3016,7 @@ New Window( "Example",
 
 ### V Sheet Box
 
-**構文:** y = V Sheet Box( <<Hold( rpt ), displayBox, ... )
+**構文:** y = V Sheet Box( &lt;&lt;Hold( rpt ), displayBox, ... )
 
 **説明:** 引数によって与えられる複数のディスプレイボックスを縦方向にレイアウトしたディスプレイボックスを戻す<<Holdメッセージにより抜粋元となるレポートをどのシートが保持するかを示す。オプションのAlign引数は、ディスプレイボックス内の配置を右寄せ(right)または中央寄せ(center)にすることを指定する。
 
@@ -3078,7 +3066,7 @@ New Window( "Example",
 
 ### V Splitter Box
 
-**構文:** y = V Splitter Box( <Size(x,y)>, displayBox, ... )
+**構文:** y = V Splitter Box( &lt;Size(x,y)&gt;, displayBox, ... )
 
 **説明:** 引数によって与えられる複数のディスプレイボックスを縦方向にレイアウトし、仕切りをつけたディスプレイボックスを戻す。子のサイズはSplitter Boxの幅または高さの割合で指定する。オプションのSize引数は、最上位のSplitter Boxに対する指定(ボックス全体のサイズ)で、子ボックスはそれに対する割合での指定となる。
 
@@ -3128,7 +3116,7 @@ wb << Set Max Size( 10000, 10000 );
 
 ### Window
 
-**構文:** y = Window( <string|int> )
+**構文:** y = Window( &lt;string|int&gt; )
 
 **説明:** この関数は、以前のバージョンで作成されたスクリプトの互換性を保つために使用可能となっているが、将来廃止される。今後作成されるスクリプトではGet Window()またはGet Window List()を使用すること。
 

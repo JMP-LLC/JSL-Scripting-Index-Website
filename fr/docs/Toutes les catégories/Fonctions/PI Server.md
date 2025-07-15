@@ -2,13 +2,9 @@
 
 
 
-## Fonctions
-
 ### New PI Client
 
-**Syntaxe :** New Pi Client(URL(base URL), <Authentication Method("None"|"Basic"|"NTLM"|"Kerberos")>,
-
-                   <Username(userid)>,<Password(password)>)
+**Syntaxe :** New Pi Client(URL(base URL), &lt;Authentication Method("None"|"Basic"|"NTLM"|"Kerberos")&gt;, &lt;Username(userid)&gt;,&lt;Password(password)&gt;)
 
 **Description :** Crée une nouvelle instance de client PI qui peut être utilisée pour importer les données depuis un serveur PI.
 
@@ -98,13 +94,7 @@ importer << Run;
 
 ### Importer
 
-**Syntaxe :** Importer(AF Path(Asset Framework path), <Series(string)>, <Start Time(PI time string)>,
-
-			   <End Time(PI time string)>, <UTC(boolean)>, <Boundary Type(string)>, <Max Count(integer)>,
-
-			   <Filter(string)>, <Retrieve Attribute Status(boolean)>, <Intervals(integer)>,  <Sync Time(PI time string)>, <Sync Time Boundary Type(string)>,
-
-			   <Interval(duration in PI AFTimeSpan format)>, <Timeout(integer)>)
+**Syntaxe :** Importer(AF Path(Asset Framework path), &lt;Series(string)&gt;, &lt;Start Time(PI time string)&gt;, &lt;End Time(PI time string)&gt;, &lt;UTC(boolean)&gt;, &lt;Boundary Type(string)&gt;, &lt;Max Count(integer)&gt;, &lt;Filter(string)&gt;, &lt;Retrieve Attribute Status(boolean)&gt;, &lt;Intervals(integer)&gt;, &lt;Sync Time(PI time string)&gt;, &lt;Sync Time Boundary Type(string)&gt;, &lt;Interval(duration in PI AFTimeSpan format)&gt;, &lt;Timeout(integer)&gt;)
 
 **Description :** Crée une nouvelle instance brute de l&apos;importeur.
 

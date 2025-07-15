@@ -6,9 +6,7 @@
 
 ### By
 
-**Sintassi:** obj = Discriminant(...<By( column(s) )>...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Discriminant(...&lt;By( column(s) )&gt;...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Esegue un&apos;analisi separata per ogni livello della colonna specificata.
 
@@ -31,9 +29,7 @@ obj = dt << Discriminant(
 
 ### Categories
 
-**Sintassi:** obj = Discriminant(...Categories( column )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Discriminant(...Categories( column )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica la colonna che contiene le categorie o i gruppi in cui le osservazioni devono essere classificate.
 
@@ -50,9 +46,7 @@ obj = dt << Discriminant(
 
 ### Covariates
 
-**Sintassi:** obj = Discriminant(...Covariates( column(s) )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Discriminant(...Covariates( column(s) )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica le colonne che contengono variabili continue utilizzate per classificare le osservazioni in categorie.
 
@@ -69,9 +63,7 @@ obj = dt << Discriminant(
 
 ### Freq
 
-**Sintassi:** obj = Discriminant(...<Freq( column )>...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Discriminant(...&lt;Freq( column )&gt;...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica una colonna i cui valori assegnano una frequenza a ogni riga per l&apos;analisi.
 
@@ -90,9 +82,7 @@ obj = dt << Discriminant(
 
 ### Validation
 
-**Sintassi:** obj = Discriminant(...<Validation( column )>...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Discriminant(...&lt;Validation( column )&gt;...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica una colonna numerica che definisce i set di validazione. Questa colonna deve contenere al massimo tre valori distinti.
 
@@ -111,9 +101,7 @@ obj = dt << Discriminant(
 
 ### Weight
 
-**Sintassi:** obj = Discriminant(...<Weight( column )>...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Discriminant(...&lt;Weight( column )&gt;...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica una colonna i cui valori assegnano un peso a ogni riga per l&apos;analisi.
 
@@ -132,9 +120,7 @@ obj = dt << Discriminant(
 
 ### X
 
-**Sintassi:** obj = Discriminant(...X( column )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Discriminant(...X( column )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica la colonna che contiene le categorie o i gruppi in cui le osservazioni devono essere classificate.
 
@@ -151,9 +137,7 @@ obj = dt << Discriminant(
 
 ### Y
 
-**Sintassi:** obj = Discriminant(...Y( column(s) )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Discriminant(...Y( column(s) )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica le colonne che contengono variabili continue utilizzate per classificare le osservazioni in categorie.
 
@@ -191,7 +175,7 @@ obj = dt << Discriminant(
 
 ### Action
 
-**Sintassi:** obj << Action
+**Sintassi:** obj &lt;&lt; Action
 
 **Descrizione:** Trapdoor generica all&apos;interno di una piattaforma per inserire espressioni da valutare. Imposta temporaneamente i contesti del riquadro di visualizzazione e della tabella di dati per la piattaforma.
 
@@ -209,7 +193,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Sintassi:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintassi:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descrizione:** Applica all’oggetto una preimpostazione precedentemente creata, aggiornando le opzioni e le personalizzazioni in base alle impostazioni salvate.
 
@@ -256,7 +240,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Apply This Model
 
-**Sintassi:** obj << Apply This Model
+**Sintassi:** obj &lt;&lt; Apply This Model
 
 **Descrizione:** Applica la selezione corrente di variabili al modello di selezione stepwise delle variabili e chiude la finestra di dialogo.
 
@@ -277,7 +261,7 @@ obj << Apply This Model;
 
 ### Automatic Recalc
 
-**Sintassi:** obj << Automatic Recalc( state=0|1 )
+**Sintassi:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Descrizione:** Ripete l&apos;analisi automaticamente per l&apos;esclusione e le modifiche ai dati. Se l&apos;opzione Ricalcolo automatico è attivata, si consiglia di usare i comandi Attendi(0) per garantire che le modifiche di esclusione e di dati abbiano effetto prima del ricalcolo.
 
@@ -296,7 +280,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Biplot Ray Position
 
-**Sintassi:** obj << Biplot Ray Position( [x position, y position, radius scaling] )
+**Sintassi:** obj &lt;&lt; Biplot Ray Position( [x position, y position, radius scaling] )
 
 **Descrizione:** Permette di specificare la posizione e il raggio di scala dei raggi del biplot nel diagramma canonico e nel diagramma canonico 3D.
 
@@ -314,7 +298,7 @@ obj << Biplot Ray Position( [0, 1.7, 3.5] );
 
 ### Broadcast
 
-**Sintassi:** obj << Broadcast(message)
+**Sintassi:** obj &lt;&lt; Broadcast(message)
 
 **Descrizione:** Diffonde un messaggio a una piattaforma. Se i risultati di restituzione dei singoli oggetti sono tabelle, esse sono concatenate se possibile e il formato finale è identico al risultato dell&apos;opzione Salva tabella combinata in un riquadro della tabella o il risultato dell&apos;opzione Concatena utilizzando una colonna di origine. Oltre a quelli, i risultati sono memorizzati in un elenco e restituiti.
 
@@ -334,7 +318,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Canonical 3D Plot
 
-**Sintassi:** obj << Canonical 3D Plot( state=0|1 )
+**Sintassi:** obj &lt;&lt; Canonical 3D Plot( state=0|1 )
 
 **Descrizione:** Mostra/Nasconde una versione tridimensionale del diagramma canonico. Nota: disponibile solo in presenza di quattro o più gruppi.
 
@@ -353,7 +337,7 @@ obj << Canonical 3D Plot( 1 );
 
 ### Canonical Plot
 
-**Sintassi:** obj << Canonical Plot( state=0|1 )
+**Sintassi:** obj &lt;&lt; Canonical Plot( state=0|1 )
 
 **Descrizione:** Mostra/Nasconde il diagramma canonico. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -371,7 +355,7 @@ obj << Canonical Plot( 1 );
 
 ### Color Points
 
-**Sintassi:** obj << Color Points
+**Sintassi:** obj &lt;&lt; Color Points
 
 **Descrizione:** Colora i punti del diagramma canonico e del diagramma canonico 3D in base ai livelli della variabile X. Gli indicatori di colore vengono aggiunti alle righe della tabella dati.
 
@@ -391,7 +375,7 @@ obj << Color Points;
 
 ### Column Switcher
 
-**Sintassi:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Sintassi:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Descrizione:** Aggiunge un pannello di controllo per modificare le variabili della piattaforma
 
@@ -409,7 +393,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Consider New Levels
 
-**Sintassi:** obj << Consider New Levels( fraction )
+**Sintassi:** obj &lt;&lt; Consider New Levels( fraction )
 
 **Descrizione:** Specifica che alcuni punti potrebbero non rientrare in alcun gruppo conosciuto e dovrebbero essere considerati come appartenenti a un nuovo gruppo non classificato. Inserire la probabilità a priori di un nuovo livello.
 
@@ -427,7 +411,7 @@ obj << Consider New Levels( 0.05 );
 
 ### Copy ByGroup Script
 
-**Sintassi:** obj << Copy ByGroup Script
+**Sintassi:** obj &lt;&lt; Copy ByGroup Script
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo inserisce negli Appunti.
 
@@ -451,7 +435,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Sintassi:** obj << Copy Script
+**Sintassi:** obj &lt;&lt; Copy Script
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo inserisce negli Appunti.
 
@@ -479,7 +463,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Sintassi:** obj << Data Table Window
+**Sintassi:** obj &lt;&lt; Data Table Window
 
 **Descrizione:** Sposta in primo piano la finestra della tabella di dati per questa analisi.
 
@@ -497,15 +481,7 @@ obj << Data Table Window;
 
 ### Discriminant Method
 
-**Sintassi:** obj << Discriminant Method( Linear );
-
-obj << Discriminant Method( Quadratic );
-
-obj << Discriminant Method( Regularized, Regularization Lambda( fraction ), Regularization Gamma( fraction ) );
-
-obj << Discriminant Method( Wide Linear )
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj &lt;&lt; Discriminant Method( Linear );obj &lt;&lt; Discriminant Method( Quadratic );obj &lt;&lt; Discriminant Method( Regularized, Regularization Lambda( fraction ), Regularization Gamma( fraction ) );obj &lt;&lt; Discriminant Method( Wide Linear )&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica il metodo discriminante.
 
@@ -529,7 +505,7 @@ obj << Discriminant Method(
 
 ### Discriminant Scores
 
-**Sintassi:** obj << Discriminant Scores( state=0|1 )
+**Sintassi:** obj &lt;&lt; Discriminant Scores( state=0|1 )
 
 **Descrizione:** Mostra o nasconde una tabella degli score discriminanti per ogni riga. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -547,7 +523,7 @@ obj << Discriminant Scores( 1 );
 
 ### Enter All
 
-**Sintassi:** obj << Enter All
+**Sintassi:** obj &lt;&lt; Enter All
 
 **Descrizione:** Aggiunge tutte le variabili al modello di selezione stepwise delle variabili.
 
@@ -566,7 +542,7 @@ obj << Enter All;
 
 ### Get By Levels
 
-**Sintassi:** obj << Get By Levels
+**Sintassi:** obj &lt;&lt; Get By Levels
 
 **Descrizione:** Restituisce un array associativo che mappa le colonne del gruppo di By ai rispettivi valori.
 
@@ -583,7 +559,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Sintassi:** obj << Get ByGroup Script
+**Sintassi:** obj &lt;&lt; Get ByGroup Script
 
 **Descrizione:** Crea uno script (JSL) per generare questa analisi e la restituisce come espressione.
 
@@ -608,7 +584,7 @@ Show( t );
 
 ### Get Container
 
-**Sintassi:** obj << Get Container
+**Sintassi:** obj &lt;&lt; Get Container
 
 **Descrizione:** Restituisce un riferimento al riquadro contenitore che racchiude il contenuto dell&apos;oggetto.
 
@@ -658,7 +634,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Sintassi:** obj << Get Data Table
+**Sintassi:** obj &lt;&lt; Get Data Table
 
 **Descrizione:** Restituisce un riferimento alla tabella di dati.
 
@@ -677,7 +653,7 @@ Show( N Rows( t ) );
 
 ### Get Discrim Matrices
 
-**Sintassi:** obj << Get Discrim Matrices
+**Sintassi:** obj &lt;&lt; Get Discrim Matrices
 
 **Descrizione:** Restituisce un elenco che contiene le matrici discriminanti dell&apos;analisi. Questo elenco contiene una lista con nome per ciascuno dei seguenti elementi: i nomi Y, i nomi X, i valori X e le medie Y.
 
@@ -696,7 +672,7 @@ Show( z );
 
 ### Get Group Platform
 
-**Sintassi:** obj << Get Group Platform
+**Sintassi:** obj &lt;&lt; Get Group Platform
 
 **Descrizione:** Restituisce l&apos;oggetto Raggruppa piattaforma se la piattaforma fa parte di un gruppo. In caso contrario, restituisce Vuoto().
 
@@ -713,7 +689,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Measures
 
-**Sintassi:** obj << Get Measures
+**Sintassi:** obj &lt;&lt; Get Measures
 
 **Descrizione:** Restituisce misure di stima sintetiche del modello.
 
@@ -733,7 +709,7 @@ obj << Get Measures;
 
 ### Get Script
 
-**Sintassi:** obj << Get Script
+**Sintassi:** obj &lt;&lt; Get Script
 
 **Descrizione:** Crea uno script (JSL) per generare questa analisi e la restituisce come espressione.
 
@@ -752,7 +728,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Sintassi:** obj << Get Script With Data Table
+**Sintassi:** obj &lt;&lt; Get Script With Data Table
 
 **Descrizione:** Crea uno script (JSL) per generare questa analisi facendo specifico riferimento a questa tabella di dati e la restituisce come espressione.
 
@@ -771,7 +747,7 @@ Show( t );
 
 ### Get Timing
 
-**Sintassi:** obj << Get Timing
+**Sintassi:** obj &lt;&lt; Get Timing
 
 **Descrizione:** Determina il tempo di avvio della piattaforma.
 
@@ -790,7 +766,7 @@ Show( t );
 
 ### Get Web Support
 
-**Sintassi:** obj << Get Web Support
+**Sintassi:** obj &lt;&lt; Get Web Support
 
 **Descrizione:** Restituisce un numero indicante il livello di supporto HTML interattivo per l&apos;oggetto visualizzato. 1 significa che alcuni o tutti gli elementi sono supportati. 0 significa nessun supporto.
 
@@ -806,7 +782,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Sintassi:** obj << Get Where Expr
+**Sintassi:** obj &lt;&lt; Get Where Expr
 
 **Descrizione:** Restituisce l&apos;espressione Where per il sottoinsieme di dati, se la piattaforma è stata avviata con By() o Where(). Altrimenti, restituisce Vuoto()
 
@@ -824,7 +800,7 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ### Go
 
-**Sintassi:** obj << Go
+**Sintassi:** obj &lt;&lt; Go
 
 **Descrizione:** Inserisce le covariate in passi progressivi fino a quando l&apos;R-quadro smetterà di crescere.
 
@@ -862,7 +838,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Sintassi:** obj << Local Data Filter
+**Sintassi:** obj &lt;&lt; Local Data Filter
 
 **Descrizione:** Filtra dati in specifici gruppi o range, ma localmente in questa piattaforma
 
@@ -882,7 +858,7 @@ dt << Distribution(
 
 ### Make Scoring Script
 
-**Sintassi:** obj << Make Scoring Script
+**Sintassi:** obj &lt;&lt; Make Scoring Script
 
 **Descrizione:** Crea uno script che costruisce le colonne della formula salvate dall&apos;opzione Salva formule. È possibile salvare questo script e utilizzarlo, magari con altre tabelle di dati, per creare le colonne delle formule che calcolano le probabilità di appartenenza e prevedono l&apos;appartenenza a gruppi.
 
@@ -938,7 +914,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Sintassi:** obj << Paste Local Data Filter
+**Sintassi:** obj &lt;&lt; Paste Local Data Filter
 
 **Descrizione:** Applicare il filtro sui dati locali dagli Appunti al report corrente.
 
@@ -959,7 +935,7 @@ dist2 << Paste Local Data Filter;
 
 ### Precision Recall Curve
 
-**Sintassi:** obj << Precision Recall Curve( state=0|1 )
+**Sintassi:** obj &lt;&lt; Precision Recall Curve( state=0|1 )
 
 **Descrizione:** Mostra o nasconde il diagramma della curva di Precisione-Richiamo che contiene una curva per ogni livello della variabile di risposta. Una curva di precisione-richiamo traccia i valori di precisione rispetto ai valori di richiamo a una serie di soglie.
 
@@ -977,7 +953,7 @@ obj << Precision Recall Curve( 1 );
 
 ### Profiler
 
-**Sintassi:** obj << Profiler( state=0|1 )
+**Sintassi:** obj &lt;&lt; Profiler( state=0|1 )
 
 **Descrizione:** Mostra o nasconde il profiler di previsione, che viene utilizzato per esplorare graficamente l&apos;equazione di previsione sezionandola fattore per fattore. Il profiler di previsione contiene funzioni di ottimizzazione.
 
@@ -997,7 +973,7 @@ obj << Profiler;
 
 ### Publish Probability Formulas
 
-**Sintassi:** obj << Publish Probability Formulas
+**Sintassi:** obj &lt;&lt; Publish Probability Formulas
 
 **Descrizione:** Crea formule di probabilità e le salva come script della colonna della formula nella piattaforma Depot delle formule. Se un report di Depot delle formule non è aperto, questa opzione crea il report di Depot.
 
@@ -1015,7 +991,7 @@ obj << Publish Probability Formulas;
 
 ### ROC Curve
 
-**Sintassi:** obj << ROC Curve( state=0|1 )
+**Sintassi:** obj &lt;&lt; ROC Curve( state=0|1 )
 
 **Descrizione:** Mostra o nasconde la curva ROC (Receiver Operating Characteristic) per ciascun livello della variabile di risposta. La curva ROC è un grafico della sensibilità rispetto a (1 - specificità).
 
@@ -1034,7 +1010,7 @@ obj << ROC Curve( 1 );
 
 ### Redo Analysis
 
-**Sintassi:** obj << Redo Analysis
+**Sintassi:** obj &lt;&lt; Redo Analysis
 
 **Descrizione:** Ripete questa stessa analisi in una nuova finestra. L&apos;analisi sarà differente se i dati sono stati modificati.
 
@@ -1052,7 +1028,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**Sintassi:** obj << Redo ByGroup Analysis
+**Sintassi:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Descrizione:** Ripete questa stessa analisi in una nuova finestra. L&apos;analisi sarà differente se i dati sono stati modificati.
 
@@ -1076,7 +1052,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**Sintassi:** obj << Relaunch Analysis
+**Sintassi:** obj &lt;&lt; Relaunch Analysis
 
 **Descrizione:** Apre la finestra di avvio della piattaforma e richiama le impostazioni utilizzate per creare il report.
 
@@ -1094,7 +1070,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**Sintassi:** obj << Relaunch ByGroup
+**Sintassi:** obj &lt;&lt; Relaunch ByGroup
 
 **Descrizione:** Apre la finestra di avvio della piattaforma e richiama le impostazioni utilizzate per creare il report.
 
@@ -1118,7 +1094,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove All
 
-**Sintassi:** obj << Remove All
+**Sintassi:** obj &lt;&lt; Remove All
 
 **Descrizione:** Rimuove tutte le variabili dal modello di selezione stepwise delle variabili.
 
@@ -1139,7 +1115,7 @@ obj << Remove All;
 
 ### Remove Column Switcher
 
-**Sintassi:** obj << Remove Column Switcher
+**Sintassi:** obj &lt;&lt; Remove Column Switcher
 
 **Descrizione:** Rimuove l&apos;ultimo Scambia colonne che è stato aggiunto alla piattaforma.
 
@@ -1159,7 +1135,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Sintassi:** obj << Remove Local Data Filter
+**Sintassi:** obj &lt;&lt; Remove Local Data Filter
 
 **Descrizione:** Se è stato creato un filtro di dati locali viene rimosso per ripristinare la piattaforma e utilizzare direttamente tutti i dati nella tabella di dati
 
@@ -1198,9 +1174,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Sintassi:** obj << Report;
-
-Report( obj )
+**Sintassi:** obj &lt;&lt; Report;Report( obj )
 
 **Descrizione:** Restituisce un riferimento all&apos;oggetto del report.
 
@@ -1220,7 +1194,7 @@ Show( t );
 
 ### Report View
 
-**Sintassi:** obj << Report View( "Completo"|"Riepilogo" )
+**Sintassi:** obj &lt;&lt; Report View( "Completo"|"Riepilogo" )
 
 **Descrizione:** La visualizzazione Report determina il livello di dettaglio visibile in un report della piattaforma. Full mostra tutti i dettagli mentre Summary mostra solo contenuti selezionati, in base alla piattaforma. Per un comportamento personalizzato, i riquadri di visualizzazione supportano un messaggio <<Set Summary Behavior.
 
@@ -1238,7 +1212,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**Sintassi:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintassi:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e salvarla come proprietà della tabella nella tabella di dati. È possibile specificare un nome per lo script. L&apos;opzione Append Suffix aggiunge un suffisso numerico al nome dello script, che differenzia lo script da uno script esistente con lo stesso nome. L&apos;opzione Prompt richiede all&apos;utente di specificare un nome di script. L&apos;opzione Replace sostituisce uno script esistente con lo stesso nome.
 
@@ -1262,7 +1236,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Sintassi:** obj << Save ByGroup Script to Journal
+**Sintassi:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e aggiunge un pulsante con lo script al journal.
 
@@ -1286,7 +1260,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Sintassi:** obj << Save ByGroup Script to Script Window
+**Sintassi:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo aggiunge alla finestra di testo dello script corrente.
 
@@ -1310,7 +1284,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Canonical Scores
 
-**Sintassi:** obj << Save Canonical Scores
+**Sintassi:** obj &lt;&lt; Save Canonical Scores
 
 **Descrizione:** Salva le colonne nella tabella di dati che contengono le formule di score canonico per ogni osservazione.
 
@@ -1328,7 +1302,7 @@ obj << Save Canonical Scores;
 
 ### Save Discrim Matrices
 
-**Sintassi:** obj << Save Discrim Matrices
+**Sintassi:** obj &lt;&lt; Save Discrim Matrices
 
 **Descrizione:** Salva uno script nella tabella di dati che contiene un elenco delle matrici discriminanti dell&apos;analisi. Questo elenco contiene un elenco con nome per ciascuno dei seguenti elementi: i nomi Y, i nomi X, i valori X e le medie Y.
 
@@ -1346,7 +1320,7 @@ obj << Save Discrim Matrices;
 
 ### Save Formulas
 
-**Sintassi:** obj << Save Formulas
+**Sintassi:** obj &lt;&lt; Save Formulas
 
 **Descrizione:** Salva le formule di distanza, di probabilità e di previsione di appartenenza nella tabella di dati.
 
@@ -1364,7 +1338,7 @@ obj << Save Formulas;
 
 ### Save Script for All Objects
 
-**Sintassi:** obj << Save Script for All Objects
+**Sintassi:** obj &lt;&lt; Save Script for All Objects
 
 **Descrizione:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -1382,7 +1356,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Sintassi:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintassi:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descrizione:** Salva uno script per tutti gli oggetti del report nella tabella di dati corrente. Questa opzione è utile quando sono presenti più report nella finestra. Lo script prende il nome dalla prima piattaforma, a meno che non si specifichi il nome dello script tra apici.
 
@@ -1428,7 +1402,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Sintassi:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintassi:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo salva come una proprietà di tabella nella tabella di dati.
 
@@ -1446,7 +1420,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Sintassi:** obj << Save Script to Journal
+**Sintassi:** obj &lt;&lt; Save Script to Journal
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e aggiunge un pulsante con lo script al journal.
 
@@ -1464,7 +1438,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Sintassi:** obj << Save Script to Report
+**Sintassi:** obj &lt;&lt; Save Script to Report
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo mostra nel report. Utile per avere una copia stampata di quanto è stato fatto.
 
@@ -1482,7 +1456,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Sintassi:** obj << Save Script to Script Window
+**Sintassi:** obj &lt;&lt; Save Script to Script Window
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo aggiunge alla finestra di testo dello script corrente.
 
@@ -1500,7 +1474,7 @@ obj << Save Script to Script Window;
 
 ### Save To New Data Table
 
-**Sintassi:** obj << Save To New Data Table
+**Sintassi:** obj &lt;&lt; Save To New Data Table
 
 **Descrizione:** Salva le medie di gruppo e i raggi del biplot sulle variabili canoniche insieme agli score canonici in una nuova tabella di dati.
 
@@ -1518,7 +1492,7 @@ obj << Save To New Data Table;
 
 ### Scatterplot Matrix
 
-**Sintassi:** obj << Scatterplot Matrix
+**Sintassi:** obj &lt;&lt; Scatterplot Matrix
 
 **Descrizione:** Apre un report di matrice di grafici a dispersione, che mostra una matrice con un grafico a dispersione per ogni coppia di covariate. L&apos;opzione richiama la piattaforma Matrice grafico a dispersione con ellissi di densità ombreggiate per ogni gruppo. I grafici a dispersione includono tutte le osservazioni nella tabella di dati, anche se viene usata la validazione.
 
@@ -1536,11 +1510,11 @@ obj << Scatterplot Matrix( 1 );
 
 ### Score Data
 
-**Sintassi:** obj << Score Data( state=0|1 )
+**Sintassi:** obj &lt;&lt; Score Data( state=0|1 )
 
 ### Select Misclassified Rows
 
-**Sintassi:** obj << Select Misclassified Rows
+**Sintassi:** obj &lt;&lt; Select Misclassified Rows
 
 **Descrizione:** Seleziona le righe con errori di classificazione nella tabella di dati e nelle finestre di report che visualizzano un elenco per riga.
 
@@ -1559,7 +1533,7 @@ obj << Select Misclassified Rows;
 
 ### Select Uncertain Rows
 
-**Sintassi:** obj << Select Uncertain Rows( fraction )
+**Sintassi:** obj &lt;&lt; Select Uncertain Rows( fraction )
 
 **Descrizione:** Seleziona le righe con classificazioni incerte nella tabella di dati e nelle finestre di report che visualizzano un elenco per riga. Una riga incerta è una riga la cui probabilità di appartenenza a un gruppo non è né vicina a 0 né vicina a 1. L&apos;argomento fraction rappresenta la differenza di probabilità da 0 o 1 che definisce quando una probabilità è incerta.
 
@@ -1643,7 +1617,7 @@ dt << Distribution(
 
 ### Show Biplot Rays
 
-**Sintassi:** obj << Show Biplot Rays( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Biplot Rays( state=0|1 )
 
 **Descrizione:** Mostra o nasconde i raggi del biplot nel diagramma canonico e nel diagramma canonico 3D. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1661,7 +1635,7 @@ obj << Show Biplot Rays( 1 );
 
 ### Show Canonical Details
 
-**Sintassi:** obj << Show Canonical Details( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Canonical Details( state=0|1 )
 
 **Descrizione:** Mostra o nasconde il report dei dettagli dell&apos;analisi canonica.
 
@@ -1679,7 +1653,7 @@ obj << Show Canonical Details( 1 );
 
 ### Show Canonical Structure
 
-**Sintassi:** obj << Show Canonical Structure( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Canonical Structure( state=0|1 )
 
 **Descrizione:** Mostra o nasconde il report delle strutture canoniche.
 
@@ -1699,11 +1673,11 @@ obj << Show Canonical Structure( 1 );
 
 ### Show Canonical Structures
 
-**Sintassi:** obj << Show Canonical Structures( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Canonical Structures( state=0|1 )
 
 ### Show Classification Counts
 
-**Sintassi:** obj << Show Classification Counts( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Classification Counts( state=0|1 )
 
 **Descrizione:** Mostra o nasconde le matrici di confusione, mostrando i conteggi osservati rispetto a quelli previsti, nel report Riepiloghi di score. Per impostazione predefinita, il report Riepiloghi di score mostra una matrice di confusione per ogni livello della X categorica.
 
@@ -1721,7 +1695,7 @@ obj << Show Classification Counts( 1 );
 
 ### Show Distances to Each Group
 
-**Sintassi:** obj << Show Distances to Each Group( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Distances to Each Group( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un report che contiene la distanza di Mahalanobis quadratica di ogni osservazione rispetto alla media di ogni gruppo.
 
@@ -1739,7 +1713,7 @@ obj << Show Distances to each group( 1 );
 
 ### Show Group Means
 
-**Sintassi:** obj << Show Group Means( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Group Means( state=0|1 )
 
 **Descrizione:** Mostra o nasconde il report Medie di gruppo che fornisce la media di ogni covariata. Vengono visualizzate le medie per ogni livello della variabile X e le medie complessive.
 
@@ -1757,7 +1731,7 @@ obj << Show Group Means( 1 );
 
 ### Show Interesting Rows Only
 
-**Sintassi:** obj << Show Interesting Rows Only( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Interesting Rows Only( state=0|1 )
 
 **Descrizione:** Nel report Score discriminanti, mostra solo le righe che contengono errori di classificazione e quelle con probabilità prevista tra 0,05 e 0,95.
 
@@ -1775,7 +1749,7 @@ obj << Show Interesting Rows Only( 1 );
 
 ### Show Means CL Ellipses
 
-**Sintassi:** obj << Show Means CL Ellipses( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Means CL Ellipses( state=0|1 )
 
 **Descrizione:** Mostra o nasconde le ellissi di confidenza al 95% per la media di ogni gruppo sul diagramma canonico e sul diagramma canonico 3D, assumendo la normalità. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1793,7 +1767,7 @@ obj << Show Means CL Ellipses( 1 );
 
 ### Show Normal 50% Contours
 
-**Sintassi:** obj << Show Normal 50% Contours( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Normal 50% Contours( state=0|1 )
 
 **Descrizione:** Mostra o nasconde nel diagramma canonico e nel diagramma canonico 3D la regione dell&apos;ellisse normale stimata in modo da contenere il 50% della popolazione per ciascun gruppo. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1811,7 +1785,7 @@ obj << Show Normal 50% Contours( 1 );
 
 ### Show Points
 
-**Sintassi:** obj << Show Points( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Points( state=0|1 )
 
 **Descrizione:** Mostra o nasconde i punti nel diagramma canonico e nel diagramma canonico 3D. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1829,7 +1803,7 @@ obj << Show Points( 1 );
 
 ### Show Probabilities to Each Group
 
-**Sintassi:** obj << Show Probabilities to Each Group( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Probabilities to Each Group( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un report che contiene la probabilità che un&apos;osservazione appartenga a ciascuno dei gruppi definiti dalla X categorica.
 
@@ -1847,7 +1821,7 @@ obj << Show Probabilities to each group( 1 );
 
 ### Show Within Covariances
 
-**Sintassi:** obj << Show Within Covariances( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Within Covariances( state=0|1 )
 
 **Descrizione:** Mostra o nasconde report relativi alle matrici di covarianza. I report che compaiono dipendono dal metodo discriminante specificato. Non disponibile per il metodo discriminante ampio lineare.
 
@@ -1865,9 +1839,7 @@ obj << Show Within Covariances( 1 );
 
 ### Shrink Covariances
 
-**Sintassi:** obj = Discriminant(...Shrink Covariances( state=0|1 )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Discriminant(...Shrink Covariances( state=0|1 )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Restringe gli elementi fuori diagonale della matrice aggregata di covarianza entro gruppi e delle matrici di covarianza entro gruppi. Questo può migliorare la stabilità e ridurre la varianza della previsione.
 
@@ -1885,7 +1857,7 @@ obj = dt << Discriminant(
 
 ### Specify Priors
 
-**Sintassi:** obj << Specify Priors( Equal Probabilities | Proportional to Occurrence | [matrix of priors] )
+**Sintassi:** obj &lt;&lt; Specify Priors( Equal Probabilities | Proportional to Occurrence | [matrix of priors] )
 
 **Descrizione:** Imposta le probabilità a priori per ciascun livello della variabile X.
 
@@ -1903,7 +1875,7 @@ obj << Specify Priors( Proportional to Occurrence );
 
 ### Step Backward
 
-**Sintassi:** obj << Step Backward
+**Sintassi:** obj &lt;&lt; Step Backward
 
 **Descrizione:** Si sposta un passo indietro nella selezione stepwise delle variabili rimuovendo una variabile dal modello.
 
@@ -1924,7 +1896,7 @@ obj << Step Backward;
 
 ### Step Forward
 
-**Sintassi:** obj << Step Forward
+**Sintassi:** obj &lt;&lt; Step Forward
 
 **Descrizione:** Si sposta un passo avanti nella selezione stepwise delle variabili aggiungendo una variabile al modello.
 
@@ -1943,9 +1915,7 @@ obj << Step Forward;
 
 ### Stepwise Variable Selection
 
-**Sintassi:** obj = Discriminant(...Stepwise Variable Selection( state=0|1 )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Discriminant(...Stepwise Variable Selection( state=0|1 )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Mostra o nasconde il pannello di controllo di Selezione colonne. Questo pannello di controllo contiene opzioni che consentono di eseguire la selezione delle variabili in modalità stepwise utilizzando l&apos;analisi di covarianza e i p-value. Questa opzione non è disponibile per il metodo ampio lineare.
 
@@ -1963,7 +1933,7 @@ obj << Stepwise Variable Selection( 1 );
 
 ### Sync to Data Table Changes
 
-**Sintassi:** obj << Sync to Data Table Changes
+**Sintassi:** obj &lt;&lt; Sync to Data Table Changes
 
 **Descrizione:** Sincronizza con l&apos;esclusione e le modifiche ai dati effettuate.
 
@@ -1980,7 +1950,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Sintassi:** obj << Title( "new title" )
+**Sintassi:** obj &lt;&lt; Title( "new title" )
 
 **Descrizione:** Imposta il titolo della piattaforma.
 
@@ -1998,7 +1968,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Sintassi:** obj << Top Report
+**Sintassi:** obj &lt;&lt; Top Report
 
 **Descrizione:** Restituisce un riferimento al nodo principale nel report.
 
@@ -2018,7 +1988,7 @@ Show( t );
 
 ### Transform Column
 
-**Sintassi:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Sintassi:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Descrizione:** Crea una colonna di trasformazione nel contesto locale di un oggetto, di solito una piattaforma. La colonna di trasformazione è attiva solo per la durata della piattaforma.
 
@@ -2039,9 +2009,7 @@ dt << Distribution(
 
 ### Uncentered Canonical
 
-**Sintassi:** obj = Discriminant(...Uncentered Canonical( state=0|1 )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Discriminant(...Uncentered Canonical( state=0|1 )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Elimina la centratura degli score canonici per la compatibilità con versioni precedenti di JMP.
 
@@ -2059,7 +2027,7 @@ obj = dt << Discriminant(
 
 ### Use Matrix Columns
 
-**Sintassi:** obj << Use Matrix Columns( state=0|1 )
+**Sintassi:** obj &lt;&lt; Use Matrix Columns( state=0|1 )
 
 **Descrizione:** Specifica che le colonne delle matrici devono essere utilizzate nei calcoli. Le colonne delle matrici possono ridurre l&apos;overhead nel calcolo delle previsioni di scoring nelle colonne delle formule.
 
@@ -2077,9 +2045,7 @@ obj = dt << Discriminant(
 
 ### Use Pseudoinverses
 
-**Sintassi:** obj = Discriminant(...Use Pseudoinverses( state=0|1 )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Discriminant(...Use Pseudoinverses( state=0|1 )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Utilizza le pseudoinverse di Moore-Penrose nell&apos;analisi quando la matrice di covarianza è singolare. Gli score risultanti coinvolgono tutte le covariate. Se lasciata deselezionata, l&apos;analisi ignora le covariate che sono combinazioni lineari di covariate che le precedono nell’elenco di Y, covariate. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -2097,7 +2063,7 @@ obj = dt << Discriminant(
 
 ### View Web XML
 
-**Sintassi:** obj << View Web XML
+**Sintassi:** obj &lt;&lt; View Web XML
 
 **Descrizione:** Restituisce il codice XML utilizzato per creare il report HTML interattivo.
 
@@ -2112,9 +2078,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**Sintassi:** obj = Discriminant(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Discriminant(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Impostare il tipo di finestra da creare per il report. Per impostazione predefinita verrà creata una finestra di report Visible. Una finestra Invisible non comparirà sullo schermo, ma è individuabile da funzioni come Window(). Una finestra Private risponde alla maggior parte dei messaggi della finestra, ma non è individuabile e deve essere indirizzata attraverso l&apos;oggetto report
 

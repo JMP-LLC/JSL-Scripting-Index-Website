@@ -6,7 +6,7 @@
 
 ### Create Objects
 
-**Sintassi:** obj << Create Objects
+**Sintassi:** obj &lt;&lt; Create Objects
 
 **Descrizione:** Crea gli oggetti dell&apos;istanza del modulo.  Questa operazione può essere effettuata solo all&apos;interno dello script per un modulo di applicazione JMP.
 
@@ -19,7 +19,7 @@ Names Default To Here( 1 );
 
 ### Get Box
 
-**Sintassi:** obj << Get Box
+**Sintassi:** obj &lt;&lt; Get Box
 
 **Descrizione:** Ottiene il riquadro di visualizzazione per l&apos;istanza del modulo.
 
@@ -37,7 +37,7 @@ inst << Get Box;
 
 ### Get Namespace
 
-**Sintassi:** obj << Get Namespace
+**Sintassi:** obj &lt;&lt; Get Namespace
 
 **Descrizione:** Ottiene lo spazio dei nomi per l&apos;istanza del modulo.
 
@@ -51,7 +51,7 @@ app = JMP App();
 
 ### Get User Data
 
-**Sintassi:** obj << Get User Data
+**Sintassi:** obj &lt;&lt; Get User Data
 
 **Descrizione:** Restituisce i dati utente associati all&apos;istanza del modulo.
 
@@ -64,7 +64,7 @@ Names Default To Here( 1 );
 
 ### Set User Data
 
-**Sintassi:** inst << Set User Data(expr)
+**Sintassi:** inst &lt;&lt; Set User Data(expr)
 
 **Descrizione:** Memorizza un valore JSL nell&apos;istanza del modulo della app JMP; il valore può essere un numero, una stringa, un elenco, un array associativo o un altro tipo di JSL.
 

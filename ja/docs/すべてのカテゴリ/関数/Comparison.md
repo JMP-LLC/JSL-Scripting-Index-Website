@@ -2,8 +2,6 @@
 
 
 
-## 関数
-
 ### Equal
 
 **構文:** z = x == y == ...; z = Equal( x, y, ... )
@@ -21,7 +19,7 @@ Names Default To Here( 1 );
 
 ### Greater
 
-**構文:** z = x > y > ... ; z = Greater( x, y, ... )
+**構文:** z = x &gt; y &gt; ... ; z = Greater( x, y, ... )
 
 **説明:** すべての引数が右隣の引数より大きい場合に1、それ以外の場合は0を戻す。
 
@@ -36,7 +34,7 @@ Names Default To Here( 1 );
 
 ### Greater or Equal
 
-**構文:** z = x >= y >= ... ; z = Greater or Equal( x, y, ... )
+**構文:** z = x &gt;= y &gt;= ... ; z = Greater or Equal( x, y, ... )
 
 **説明:** すべての引数が右隣の引数以上になっている場合に1、それ以外の場合は0を戻す。
 
@@ -110,7 +108,7 @@ Is Same Color( To Color Space( "LUV", "red" ), "red" );
 
 ### Less
 
-**構文:** z = x < y < ... ; z = Less( x, y, ... )
+**構文:** z = x &lt; y &lt; ... ; z = Less( x, y, ... )
 
 **説明:** すべての引数が右隣の引数より小さい場合に1、それ以外の場合は0を戻す。
 
@@ -125,7 +123,7 @@ Names Default To Here( 1 );
 
 ### Less LessEqual
 
-**構文:** z = x < y <= ... ; z = Less LessEqual( x, y, ... )
+**構文:** z = x &lt; y &lt;= ... ; z = Less LessEqual( x, y, ... )
 
 **説明:** 第1引数が第2引数より小さく、かつ第1引数以外の各引数が次の引数以下の場合に1、それ以外の場合は0を戻す。
 
@@ -140,7 +138,7 @@ Names Default To Here( 1 );
 
 ### Less or Equal
 
-**構文:** z = x <= y <= ... ; z = Less or Equal( x, y, ... )
+**構文:** z = x &lt;= y &lt;= ... ; z = Less or Equal( x, y, ... )
 
 **説明:** すべての引数が右隣の引数以下になっている場合に1、それ以外の場合は0を戻す。
 
@@ -155,7 +153,7 @@ Names Default To Here( 1 );
 
 ### LessEqual Less
 
-**構文:** z = x <= y < ... ; z = LessEqual Less( x, y, ... )
+**構文:** z = x &lt;= y &lt; ... ; z = LessEqual Less( x, y, ... )
 
 **説明:** 第1引数が第2引数以下で、かつ第1引数以外の各引数が次の引数より小さい場合に1、それ以外の場合は0を戻す。
 

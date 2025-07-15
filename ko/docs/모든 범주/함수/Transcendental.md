@@ -2,8 +2,6 @@
 
 
 
-## 함수
-
 ### Arrhenius
 
 **구문:** y = Arrhenius( tempC )
@@ -126,7 +124,7 @@ Digamma( 5 );
 
 ### Exp
 
-**구문:** y = Exp( <x=1> )
+**구문:** y = Exp( &lt;x=1&gt; )
 
 **설명:** e를 x 거듭제곱하여 반환합니다. 인수는 숫자, 행렬 또는 숫자 목록일 수 있습니다.
 
@@ -156,7 +154,7 @@ Show( ExpM1( 1.1e-18 ), Exp( 1.1e-18 ) - 1 );
 
 ### FFT
 
-**구문:** ret = FFT( L, <<inverse( 0 ), <<multivariate( 0 ), <<scale( 1.0 ) )
+**구문:** ret = FFT( L, &lt;&lt;inverse( 0 ), &lt;&lt;multivariate( 0 ), &lt;&lt;scale( 1.0 ) )
 
 **설명:** L 인수에 대해 FFT(Fast Fourier Transformation)를 수행합니다. 여기서 L은 목록 형식이며 행렬로 구성된 실수와 허수 부분을 포함합니다. L이 하나의 행렬로만 구성된 경우에는 실수 부분으로 간주됩니다. L이 두 개의 행렬로 구성되어 있으면 첫 번째 행렬이 실수 부분이고 두 번째 행렬이 허수 부분입니다. 두 행렬은 동일한 차원과 둘 이상의 행을 가지고 있어야 합니다. 세 개의 선택적 인수가 있습니다. inverse 인수는 역 FFT를 수행할지 여부를 결정합니다. multivariate는 공간 또는 다변량 FFT를 수행할지 여부를 결정합니다. scale 인수는 반환 값을 곱할 상수를 결정합니다. 반환 값은 첫 번째 입력 인수로 동일한 차원을 가진 두 개의 행렬로 구성된 목록입니다.
 
@@ -231,7 +229,7 @@ Factorial( 5 );
 
 ### Fit Transform To Normal
 
-**구문:** result = Fit Transform To Normal( Distribution(name), Y(vector), <Freq(vector)> )
+**구문:** result = Fit Transform To Normal( Distribution(name), Y(vector), &lt;Freq(vector)&gt; )
 
 **설명:** 데이터 벡터에 대해 정규성 적합을 수행합니다. 여기에는 Johnson Sl, Johnson Sb, Johnson Su 및 GLog 분포가 포함됩니다. 함수는 모수 추정값, 공분산 행렬, 로그 가능도, AICc, 수렴 메시지 및 변환된 값이 포함된 목록을 반환합니다.
 
@@ -254,7 +252,7 @@ Show( results );
 
 ### Gamma
 
-**구문:** y = Gamma( x, <limit> )
+**구문:** y = Gamma( x, &lt;limit&gt; )
 
 **설명:** x의 감마 함수를 반환합니다. 감마 함수는 0에서 ∞까지 z^(x-1)*exp(-z) dz의 적분으로 정의됩니다. limit을 정의하면 해당 한계를 사용하여 적분하므로 불완전 감마가 계산됩니다.
 
@@ -299,7 +297,7 @@ Ln( Exp( 2 ) );
 
 ### Log
 
-**구문:** y = Log( x, <b> )
+**구문:** y = Log( x, &lt;b&gt; )
 
 **설명:** x의 밑이 b인 로그 또는 x의 자연 로그(b가 지정되지 않은 경우)를 반환합니다.
 
@@ -419,7 +417,7 @@ N Choose K( 5, 3 );
 
 ### Power
 
-**구문:** z = x ^ y; z = Power( x, <y=2> )
+**구문:** z = x ^ y; z = Power( x, &lt;y=2&gt; )
 
 **설명:** x를 y 거듭제곱하여 반환합니다. x가 음수면 y는 정수여야 합니다.
 
@@ -434,7 +432,7 @@ Power( 2, 5 );
 
 ### Root
 
-**구문:** y = Root( x, <n=2> )
+**구문:** y = Root( x, &lt;n=2&gt; )
 
 **설명:** x의 n번째 근을 반환합니다.
 
@@ -539,7 +537,7 @@ Scheffe Cubic( [1, -1, 1, -1, 1], [-1, -1, 1, 1, -1] );
 
 ### SlInv
 
-**구문:** x = SlInv( z, gamma, delta, theta, <sigma=1> )
+**구문:** x = SlInv( z, gamma, delta, theta, &lt;sigma=1&gt; )
 
 **설명:** 표준 정규 변수를 Johnson SL 변수로 변환합니다.
 
@@ -554,7 +552,7 @@ SlInv( 1.96, 1.5, 2, 1 );
 
 ### SlTrans
 
-**구문:** z = SlTrans( x, gamma, delta, theta, <sigma=1> )
+**구문:** z = SlTrans( x, gamma, delta, theta, &lt;sigma=1&gt; )
 
 **설명:** Johnson SL 변수를 표준 정규 변수로 변환합니다.
 

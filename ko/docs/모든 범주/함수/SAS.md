@@ -2,8 +2,6 @@
 
 
 
-## 함수
-
 ### As C Expr
 
 **구문:** y = As C Expr( x )

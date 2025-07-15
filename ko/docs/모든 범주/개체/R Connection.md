@@ -23,7 +23,7 @@ Show( x );
 
 ### Control
 
-**구문:** obj << Control( Echo( Boolean ) )
+**구문:** obj &lt;&lt; Control( Echo( Boolean ) )
 
 **설명:** R의 제어 옵션을 변경합니다.
 
@@ -38,7 +38,7 @@ RConnection << Submit( "rnorm(10)" );
 
 ### Disconnect
 
-**구문:** obj << Disconnect
+**구문:** obj &lt;&lt; Disconnect
 
 **설명:** JMP 19에서 더 이상 사용되지 않으며 효과가 없습니다.
 
@@ -52,7 +52,7 @@ RConnection << Disconnect;
 
 ### Execute
 
-**구문:** list = obj << Execute( { list of Inputs }, { list of Outputs }, statements )
+**구문:** list = obj &lt;&lt; Execute( { list of Inputs }, { list of Outputs }, statements )
 
 **설명:** 입력 목록을 보내고 명령문을 실행하고 출력 목록을 반환합니다.
 
@@ -77,7 +77,7 @@ Show( v, m, rc, x, z, a, d );
 
 ### Get
 
-**구문:** y = obj << Get( name )
+**구문:** y = obj &lt;&lt; Get( name )
 
 **설명:** R에서 데이터를 반환합니다. name 인수는 R 데이터 유형(숫자 | 문자열 | 행렬 | 목록 | 데이터 프레임) 중 하나를 나타낼 수 있습니다.
 
@@ -98,7 +98,7 @@ Close( dt1, No Save );
 
 ### Get Graphics
 
-**구문:** R graphics = obj << Get Graphics( format )
+**구문:** R graphics = obj &lt;&lt; Get Graphics( format )
 
 **설명:** JMP 19에서 더 이상 사용되지 않으며 효과가 없습니다. 대신 장치를 png("r_plot.png")와 같은 파일 이름으로 설정한 후 파일을 열어 이미지를 검색합니다. 이 옵션은 JMP 20에서 제거될 예정입니다. 아래 코드에서 해결 방법을 확인하십시오.
 
@@ -119,7 +119,7 @@ rc = Delete File( img_path );
 
 ### Get Version
 
-**구문:** version = obj << Get Version
+**구문:** version = obj &lt;&lt; Get Version
 
 **설명:** 현재 연결에 사용된 R의 버전 번호를 반환합니다.
 
@@ -134,7 +134,7 @@ Show( version );
 
 ### Is Connected
 
-**구문:** x = obj << Is Connected
+**구문:** x = obj &lt;&lt; Is Connected
 
 **설명:** 활성 R 연결이 있으면 1을 반환하고 그렇지 않으면 0을 반환합니다.
 
@@ -164,7 +164,7 @@ Show( RName );
 
 ### Send
 
-**구문:** y = obj << Send( name, <R Name( name )> )
+**구문:** y = obj &lt;&lt; Send( name, &lt;R Name( name )&gt; )
 
 **설명:** 데이터를 R로 보냅니다. name 인수는 JMP 데이터 유형(숫자 | 문자열 | 행렬 | 목록 | 데이터 테이블) 중 하나를 나타낼 수 있습니다.
 
@@ -183,7 +183,7 @@ RConnection << Submit( "dt" );
 
 ### Send File
 
-**구문:** y = obj << Send File( filename, <R Name( name )> )
+**구문:** y = obj &lt;&lt; Send File( filename, &lt;R Name( name )&gt; )
 
 **설명:** 데이터 파일을 R로 보냅니다. 여기서 filename 인수는 R로 보낼 파일의 경로 이름을 지정하는 문자열입니다.
 
@@ -200,7 +200,7 @@ RConnection << Send File( dtname );
 
 ### Set
 
-**구문:** y = obj << Set( name, <R Name( name )> )
+**구문:** y = obj &lt;&lt; Set( name, &lt;R Name( name )&gt; )
 
 **설명:** 데이터를 R로 보냅니다. name 인수는 JMP 데이터 유형(숫자 | 문자열 | 행렬 | 목록 | 데이터 테이블) 중 하나를 나타낼 수 있습니다.
 
@@ -219,7 +219,7 @@ RConnection << Submit( "dt" );
 
 ### Submit
 
-**구문:** obj << Submit( statements )
+**구문:** obj &lt;&lt; Submit( statements )
 
 **설명:** 명령문을 R로 전송합니다. 명령문은 문자열 값 또는 문자열 값 목록 형식일 수 있습니다.
 
@@ -251,7 +251,7 @@ rc = Delete File( img_path );
 
 ### Submit File
 
-**구문:** obj << Submit File( path )
+**구문:** obj &lt;&lt; Submit File( path )
 
 **설명:** path 인수에 지정된 파일을 사용하여 명령문을 R로 전송합니다.
 

@@ -6,7 +6,7 @@
 
 ### Col List Box
 
-**Sintassi:** y = Col List Box( <Data Table( name )>, <all>|<character|numeric>, <width( pix )>, <grouped>, <maxSelected( n )>, <nlines( n )>, <MaxItems( n )>, <MinItems( n )>, <onChange( expr )>, < <<Modeling Type({"Any","Continuous","Nominal","Ordinal","Multiple Response","Unstructured Text","Vector","None","Row State"}) >, < << Set Data Type(Any|Numeric|Character)>, <script> )
+**Sintassi:** y = Col List Box( &lt;Data Table( name )&gt;, &lt;all&gt;|&lt;character|numeric&gt;, &lt;width( pix )&gt;, &lt;grouped&gt;, &lt;maxSelected( n )&gt;, &lt;nlines( n )&gt;, &lt;MaxItems( n )&gt;, &lt;MinItems( n )&gt;, &lt;onChange( expr )&gt;, &lt; &lt;&lt;Modeling Type({"Any","Continuous","Nominal","Ordinal","Multiple Response","Unstructured Text","Vector","None","Row State"}) &gt;, &lt; &lt;&lt; Set Data Type(Any|Numeric|Character)&gt;, &lt;script&gt; )
 
 **Descrizione:** Restituisce un riquadro di visualizzazione per mostrare una casella di riepilogo per la selezione delle colonne di una tabella di dati. Usare il messaggio <<Modeling Type per consentire tipi di modellizzazione speciali o per limitare i tipi consentiti. Il valore predefinito "Any" consentirà qualsiasi colonna con un tipo di modellizzazione classico ("Continuous", "Nominal", "Ordinal").
 
@@ -56,7 +56,7 @@ New Window( "Col List Box Example 3",
 
 ### Add Line Annotation
 
-**Sintassi:** obj << Add Line Annotation
+**Sintassi:** obj &lt;&lt; Add Line Annotation
 
 **Descrizione:** Aggiunge una linea sopra il riquadro di visualizzazione.
 
@@ -73,7 +73,7 @@ rbiv << Add Line Annotation( Line( 160, 235, 240, 235 ) );
 
 ### Add Pin Annotation
 
-**Sintassi:** obj << Add Pin Annotation
+**Sintassi:** obj &lt;&lt; Add Pin Annotation
 
 **Descrizione:** Aggiunge un&apos;annotazione sopra il riquadro di visualizzazione. La maggior parte degli attributi (come Riga indice, IDUnico e PtTrovato) è progettata solo per uso interno.
 
@@ -106,7 +106,7 @@ dt << Bivariate(
 
 ### Add Polygon Annotation
 
-**Sintassi:** obj << Add Polygon Annotation
+**Sintassi:** obj &lt;&lt; Add Polygon Annotation
 
 **Descrizione:** Aggiunge un poligono sopra il riquadro di visualizzazione.
 
@@ -127,7 +127,7 @@ rbiv << Add Polygon Annotation(
 
 ### Add Simple Shape Annotation
 
-**Sintassi:** obj << Add Simple Shape Annotation
+**Sintassi:** obj &lt;&lt; Add Simple Shape Annotation
 
 **Descrizione:** Aggiunge una forma semplice sopra il riquadro di visualizzazione.
 
@@ -145,7 +145,7 @@ rbiv << Add Simple Shape Annotation( Rectangle( 70, 180, 95, 215 ) );
 
 ### Add Text Annotation
 
-**Sintassi:** obj << Add Text Annotation
+**Sintassi:** obj &lt;&lt; Add Text Annotation
 
 **Descrizione:** Aggiunge testo sopra il riquadro di visualizzazione.
 
@@ -165,7 +165,7 @@ rbiv << Add Text Annotation(
 
 ### Append
 
-**Sintassi:** obj << Append( "string" | {"string", ...} )
+**Sintassi:** obj &lt;&lt; Append( "string" | {"string", ...} )
 
 **Descrizione:** Aggiunge la nuova stringa o un elenco di stringhe all&apos;ultima posizione.
 
@@ -199,9 +199,7 @@ slb << Append( {"weight", "height", "name"} );
 
 ### Background Color
 
-**Sintassi:** obj << Background Color( color );
-
-color = obj << Get Background Color
+**Sintassi:** obj &lt;&lt; Background Color( color );color = obj &lt;&lt; Get Background Color
 
 **Descrizione:** Se è impostato un colore di sfondo, il riquadro è riempito con il colore di sfondo prima di visualizzarne il contenuto. Se non è impostato alcun colore di sfondo, traspare lo sfondo e il contenuto dei riquadri.
 
@@ -223,9 +221,7 @@ tb << Background Color( "Yellow" );
 
 ### Border
 
-**Sintassi:** obj << Border( sides );
-
-sides = obj << Get Border
+**Sintassi:** obj &lt;&lt; Border( sides );sides = obj &lt;&lt; Get Border
 
 **Descrizione:** I bordi sono linee continue tracciate attorno alla parte esterna di un riquadro di visualizzazione. Se viene indicato un solo valore sarà applicato a tutti i lati. Se vengono specificati due valori essi saranno applicati ai bordi orizzontali e verticali.
 
@@ -245,9 +241,7 @@ tb << Border( 1 );
 
 ### Border Color
 
-**Sintassi:** obj << Border Color( color );
-
-color = obj << Get Border Color
+**Sintassi:** obj &lt;&lt; Border Color( color );color = obj &lt;&lt; Get Border Color
 
 **Descrizione:** Colore facoltativo che sostituisce il colore di default per i bordi dei riquadri.
 
@@ -269,7 +263,7 @@ tb << Border Color( "Light Red" );
 
 ### Bring Window To Front
 
-**Sintassi:** obj << Bring Window To Front
+**Sintassi:** obj &lt;&lt; Bring Window To Front
 
 **Descrizione:** Porta la finestra in primo piano.
 
@@ -285,7 +279,7 @@ w << Bring Window To Front;
 
 ### Child
 
-**Sintassi:** obj << Child
+**Sintassi:** obj &lt;&lt; Child
 
 **Descrizione:** Restituisce il nodo di livello inferiore a questo riquadro di visualizzazione.
 
@@ -305,7 +299,7 @@ Print( axisChild << Class Name() );
 
 ### Class Name
 
-**Sintassi:** obj << Class Name
+**Sintassi:** obj &lt;&lt; Class Name
 
 **Descrizione:** Restituisce il nome della classe di visualizzazione per questo riquadro.
 
@@ -323,7 +317,7 @@ axisbox << Class Name();
 
 ### Clear selection
 
-**Sintassi:** obj << Clear selection
+**Sintassi:** obj &lt;&lt; Clear selection
 
 **Descrizione:** Cancella la selezione corrente; gli elementi sono ancora presenti ma non sono più selezionati.
 
@@ -364,7 +358,7 @@ New Window( "Each box clears the other box",
 
 ### Clone Box
 
-**Sintassi:** obj << Clone Box
+**Sintassi:** obj &lt;&lt; Clone Box
 
 **Descrizione:** Crea una nuova copia del riquadro di visualizzazione.
 
@@ -383,7 +377,7 @@ rbiv << append( clonedBox );
 
 ### Close Window
 
-**Sintassi:** obj << Close Window( <"NoSave"> )
+**Sintassi:** obj &lt;&lt; Close Window( &lt;"NoSave"&gt; )
 
 **Descrizione:** Chiude la finestra.
 
@@ -399,7 +393,7 @@ w << Close Window;
 
 ### Copy Data
 
-**Sintassi:** obj << Copy Data
+**Sintassi:** obj &lt;&lt; Copy Data
 
 **Descrizione:** copia i dati delimitati da tabulazioni da una matrice o tabella negli Appunti.
 
@@ -413,7 +407,7 @@ mat << CopyData;
 
 ### Copy Graph
 
-**Sintassi:** obj << Copy Graph
+**Sintassi:** obj &lt;&lt; Copy Graph
 
 **Descrizione:** Trasferisce negli Appunti un&apos;immagine del grafico con gli assi.
 
@@ -431,7 +425,7 @@ rbiv = biv << report;
 
 ### Copy Picture
 
-**Sintassi:** obj << Copy Picture
+**Sintassi:** obj &lt;&lt; Copy Picture
 
 **Descrizione:** Trasferisce negli Appunti un&apos;immagine del riquadro di visualizzazione.
 
@@ -448,7 +442,7 @@ rbiv << Copy Picture();
 
 ### Delete Box
 
-**Sintassi:** obj << Delete Box
+**Sintassi:** obj &lt;&lt; Delete Box
 
 **Descrizione:** Elimina il riquadro di visualizzazione.
 
@@ -466,7 +460,7 @@ axisbox << Delete Box();
 
 ### Deselect
 
-**Sintassi:** obj << Deselect
+**Sintassi:** obj &lt;&lt; Deselect
 
 **Descrizione:** Deseleziona questo oggetto per essere utilizzato dai comandi del menu Modifica.
 
@@ -492,7 +486,7 @@ refresh = Function( {},
 
 ### Dispatch
 
-**Sintassi:** obj << Dispatch( {outline node, ...}, display element, display element type, command )
+**Sintassi:** obj &lt;&lt; Dispatch( {outline node, ...}, display element, display element type, command )
 
 **Descrizione:** Invia command a una sezione specificata della struttura di visualizzazione.
 
@@ -509,7 +503,7 @@ rbiv << Dispatch( {}, "Bivar Plot", FrameBox, {Marker Size( 3 )} );
 
 ### Enable
 
-**Sintassi:** obj << Enable( 0|1 )
+**Sintassi:** obj &lt;&lt; Enable( 0|1 )
 
 **Descrizione:** Imposta questo comando per essere attivato (1) o disattivato (0).
 
@@ -526,9 +520,7 @@ New Window( "Example",
 
 ### Enabled
 
-**Sintassi:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**Sintassi:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Descrizione:** Un oggetto non abilitato non risponderà agli input della tastiera o del mouse. Questa proprietà è ereditata da oggetti secondari, pertanto un oggetto contenitore non abilitato causerà la disabilitazione di tutti gli oggetti dipendenti.
 
@@ -560,7 +552,7 @@ New Window( "enabled",
 
 ### Find
 
-**Sintassi:** obj << Find
+**Sintassi:** obj &lt;&lt; Find
 
 **Descrizione:** Restituisce un riquadro di visualizzazione con argument indicato.
 
@@ -578,7 +570,7 @@ axisbox << Delete();
 
 ### Get Annotation
 
-**Sintassi:** obj << Get Annotation
+**Sintassi:** obj &lt;&lt; Get Annotation
 
 **Descrizione:** Restituisce la prima annotazione ancorata a questo riquadro di visualizzazione. È possibile accedere ad altre annotazioni utilizzando Sib() sul risultato.
 
@@ -600,9 +592,7 @@ annotation << delete;
 
 ### Get Background Color
 
-**Sintassi:** obj << Background Color( color );
-
-color = obj << Get Background Color
+**Sintassi:** obj &lt;&lt; Background Color( color );color = obj &lt;&lt; Get Background Color
 
 **Descrizione:** Se è impostato un colore di sfondo, il riquadro è riempito con il colore di sfondo prima di visualizzarne il contenuto. Se non è impostato alcun colore di sfondo, traspare lo sfondo e il contenuto dei riquadri.
 
@@ -624,7 +614,7 @@ tb << Background Color( "Yellow" );
 
 ### Get Base Font
 
-**Sintassi:** font = obj << Get Base Font
+**Sintassi:** font = obj &lt;&lt; Get Base Font
 
 **Descrizione:** Restituisce il carattere di base usato per il testo tracciato dal riquadro. I caratteri di base sono nomi già definiti come Title, Text, Annotation e altri, che sono specificati nelle Preferenze dei caratteri.
 
@@ -642,9 +632,7 @@ fontobj << Get Base Font;
 
 ### Get Border
 
-**Sintassi:** obj << Border( sides );
-
-sides = obj << Get Border
+**Sintassi:** obj &lt;&lt; Border( sides );sides = obj &lt;&lt; Get Border
 
 **Descrizione:** I bordi sono linee continue tracciate attorno alla parte esterna di un riquadro di visualizzazione. Se viene indicato un solo valore sarà applicato a tutti i lati. Se vengono specificati due valori essi saranno applicati ai bordi orizzontali e verticali.
 
@@ -664,9 +652,7 @@ tb << Border( 1 );
 
 ### Get Border Color
 
-**Sintassi:** obj << Border Color( color );
-
-color = obj << Get Border Color
+**Sintassi:** obj &lt;&lt; Border Color( color );color = obj &lt;&lt; Get Border Color
 
 **Descrizione:** Colore facoltativo che sostituisce il colore di default per i bordi dei riquadri.
 
@@ -688,7 +674,7 @@ tb << Border Color( "Light Red" );
 
 ### Get Case Sensitive
 
-**Sintassi:** "bool" = obj << Get Case Sensitive
+**Sintassi:** "bool" = obj &lt;&lt; Get Case Sensitive
 
 **Descrizione:** Restituisce vero se gli elementi aggiunti all&apos;elenco possono corrispondere a eccezione delle maiuscole/minuscole
 
@@ -707,7 +693,7 @@ slb << Get Case Sensitive();
 
 ### Get Content Size
 
-**Sintassi:** obj << Get Content Size
+**Sintassi:** obj &lt;&lt; Get Content Size
 
 **Descrizione:** Restituisce le dimensioni del contenuto nella finestra.
 
@@ -723,7 +709,7 @@ Show( c );
 
 ### Get Context Menu Script
 
-**Sintassi:** list = obj << Get Context Menu Script
+**Sintassi:** list = obj &lt;&lt; Get Context Menu Script
 
 **Descrizione:** Restituisce lo script del menu di scelta rapida aggiunto all&apos;oggetto chiamante.
 
@@ -744,7 +730,7 @@ lb << Set Context Menu Script(
 
 ### Get Data Type
 
-**Sintassi:** obj << Get Data Type
+**Sintassi:** obj &lt;&lt; Get Data Type
 
 **Descrizione:** Restituisce il tipo di dati di una casella di riepilogo di colonna.
 
@@ -762,7 +748,7 @@ lb << Get Data Type();
 
 ### Get Display Path
 
-**Sintassi:** obj << Get Display Path( parent box, <receiver expr>, <Mode("XPath"|"Subscript")> )
+**Sintassi:** obj &lt;&lt; Get Display Path( parent box, &lt;receiver expr&gt;, &lt;Mode("XPath"|"Subscript")&gt; )
 
 **Descrizione:** Ottiene un&apos;espressione relativamente robusta per navigare tra parent box e obj. Non si garantisce la stabilità di questo percorso in tutte le versioni di JMP. receiver expr è incorporato nell&apos;espressione di output se fornita. In caso contrario viene utilizzata in sostituzione l&apos;espressione fornita per parent box. Come mostrato nell&apos;esempio, questo messaggio è utile principalmente per aumentare la robustezza di un percorso già disponibile. La modalità XPath è predefinita.
 
@@ -798,9 +784,7 @@ subscript expr << Select;
 
 ### Get Enabled
 
-**Sintassi:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**Sintassi:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Descrizione:** Un oggetto non abilitato non risponderà agli input della tastiera o del mouse. Questa proprietà è ereditata da oggetti secondari, pertanto un oggetto contenitore non abilitato causerà la disabilitazione di tutti gli oggetti dipendenti.
 
@@ -832,7 +816,7 @@ New Window( "enabled",
 
 ### Get Font
 
-**Sintassi:** obj << Get Font
+**Sintassi:** obj &lt;&lt; Get Font
 
 ```jsl
 
@@ -848,7 +832,7 @@ fontobj << Get Font;
 
 ### Get Font Name
 
-**Sintassi:** obj << Get Font Name
+**Sintassi:** obj &lt;&lt; Get Font Name
 
 **Descrizione:** Restituisce il nome del carattere.
 
@@ -867,7 +851,7 @@ fontobj << Get Font Name;
 
 ### Get Font Scale
 
-**Sintassi:** obj << Get Font Scale
+**Sintassi:** obj &lt;&lt; Get Font Scale
 
 **Descrizione:** Restituisce il fattore di scala corrente per il carattere.
 
@@ -885,7 +869,7 @@ fontobj << Get Font Scale;
 
 ### Get Font Size
 
-**Sintassi:** obj << Get Font Size
+**Sintassi:** obj &lt;&lt; Get Font Size
 
 **Descrizione:** Restituisce la dimensione del carattere.
 
@@ -903,7 +887,7 @@ fontobj << Get Font Size;
 
 ### Get Font Style
 
-**Sintassi:** obj << Get Font Style
+**Sintassi:** obj &lt;&lt; Get Font Style
 
 **Descrizione:** Restituisce il nome dello stile carattere.
 
@@ -923,7 +907,7 @@ fontobj << Get Font Style;
 
 ### Get Function
 
-**Sintassi:** obj << Get Function
+**Sintassi:** obj &lt;&lt; Get Function
 
 **Descrizione:** Restituisce la funzione o lo script specificati per il controllo, se presenti.
 
@@ -946,7 +930,7 @@ bb << Get Function;
 
 ### Get HTML
 
-**Sintassi:** obj << Get HTML( <format> )
+**Sintassi:** obj &lt;&lt; Get HTML( &lt;format&gt; )
 
 **Descrizione:** Restituisce una stringa che contiene l&apos;origine HTML del riquadro di visualizzazione.
 
@@ -976,7 +960,7 @@ Web( "$TEMP/Oneway.html", JMPWindow );
 
 ### Get Height
 
-**Sintassi:** width = obj << Get Height
+**Sintassi:** width = obj &lt;&lt; Get Height
 
 **Descrizione:** Restituisce l&apos;altezza del riquadro di visualizzazione.
 
@@ -994,9 +978,7 @@ fb << Get Height;
 
 ### Get Horizontal Alignment
 
-**Sintassi:** obj << Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );
-
-"Default"|"Left"|"Center"|"Right" = obj << Get Horizontal Alignment
+**Sintassi:** obj &lt;&lt; Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );"Default"|"Left"|"Center"|"Right" = obj &lt;&lt; Get Horizontal Alignment
 
 **Descrizione:** L&apos;allineamento orizzontale controlla il posizionamento del riquadro all&apos;interno di un contenitore se il riquadro non riempie l&apos;intero spazio.
 
@@ -1016,9 +998,7 @@ lb << Horizontal Alignment( "Right" );
 
 ### Get Item Padding
 
-**Sintassi:** obj << Item Padding( sides );
-
-sides = obj << Get Item Padding
+**Sintassi:** obj &lt;&lt; Item Padding( sides );sides = obj &lt;&lt; Get Item Padding
 
 **Descrizione:** La spaziatura interna aggiunge spazio tra il testo degli elementi della casella di riepilogo
 
@@ -1036,7 +1016,7 @@ lb << Item Padding( Left( 10 ), Top( 5 ), Right( 20 ), Bottom( 10 ) );
 
 ### Get Items
 
-**Sintassi:** list = obj << Get Items( <"Column Reference">)
+**Sintassi:** list = obj &lt;&lt; Get Items( &lt;"Column Reference"&gt;)
 
 **Descrizione:** Restituisce un elenco di tutti gli elementi.
 
@@ -1074,7 +1054,7 @@ slb << Get Items( "Column Reference" );
 
 ### Get Journal
 
-**Sintassi:** obj << Get Journal
+**Sintassi:** obj &lt;&lt; Get Journal
 
 **Descrizione:** Restituisce una stringa che contiene l&apos;origine journal del riquadro di visualizzazione.
 
@@ -1091,9 +1071,7 @@ Print( rbiv << Get Journal );
 
 ### Get Margin
 
-**Sintassi:** obj << Margin( sides );
-
-sides = obj << Get Margin
+**Sintassi:** obj &lt;&lt; Margin( sides );sides = obj &lt;&lt; Get Margin
 
 **Descrizione:** Il margine aggiunge spazio tra il bordo del riquadro e i riquadri adiacenti. Usare argomenti con nome, oppure fornire un elenco di valori. Se viene indicato un solo valore sarà applicato a tutti i lati. Se vengono specificati due valori essi saranno applicati ai margini orizzontali e verticali.
 
@@ -1114,7 +1092,7 @@ tb << Margin( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ### Get Max Items
 
-**Sintassi:** obj << Get Max Items
+**Sintassi:** obj &lt;&lt; Get Max Items
 
 **Descrizione:** Restituisce il numero massimo di elementi consentiti per l&apos;elenco.
 
@@ -1132,7 +1110,7 @@ lb << Get Max Items();
 
 ### Get Max Selected
 
-**Sintassi:** max = obj << Get Max Selected
+**Sintassi:** max = obj &lt;&lt; Get Max Selected
 
 **Descrizione:** Restituisce il numero massimo di elementi selezionabili nell&apos;elenco.
 
@@ -1150,7 +1128,7 @@ lb << Get Max Selected();
 
 ### Get Max Size
 
-**Sintassi:** width,height = obj << Get Max Size
+**Sintassi:** width,height = obj &lt;&lt; Get Max Size
 
 **Descrizione:** Restituisce la dimensione massima di questo riquadro di visualizzazione per l&apos;estensione automatica.
 
@@ -1168,7 +1146,7 @@ fb << Get Max Size;
 
 ### Get Menu Item State
 
-**Sintassi:** 0|1|-1 = obj << Get Menu Item State( index )
+**Sintassi:** 0|1|-1 = obj &lt;&lt; Get Menu Item State( index )
 
 **Descrizione:** Ottiene lo stato della voce di menu index del menu di scelta. Lo stato può essere normale (0), selezionato (1) o disattivato (-1).
 
@@ -1188,7 +1166,7 @@ lb << Get Menu Item State( 2 );
 
 ### Get Min Items
 
-**Sintassi:** obj << Get Min Items
+**Sintassi:** obj &lt;&lt; Get Min Items
 
 **Descrizione:** Restituisce il numero minimo di elementi richiesti per l&apos;elenco.
 
@@ -1206,7 +1184,7 @@ lb << Get Min Items();
 
 ### Get Min Size
 
-**Sintassi:** width,height = obj << Get Min Size
+**Sintassi:** width,height = obj &lt;&lt; Get Min Size
 
 **Descrizione:** Restituisce la dimensione minima di questo riquadro di visualizzazione per l&apos;estensione automatica.
 
@@ -1224,7 +1202,7 @@ fb << Get Min Size;
 
 ### Get Modeling Type
 
-**Sintassi:** obj << Get Modeling Type
+**Sintassi:** obj &lt;&lt; Get Modeling Type
 
 **Descrizione:** Restituisce un elenco di tipi di modellizzazione per una casella di riepilogo di colonna.
 
@@ -1242,7 +1220,7 @@ lb << Get Modeling Type();
 
 ### Get N Lines
 
-**Sintassi:** nlines = obj << Get N Lines
+**Sintassi:** nlines = obj &lt;&lt; Get N Lines
 
 **Descrizione:** Restituisce il numero di linee visibili nell&apos;elenco.
 
@@ -1260,7 +1238,7 @@ lb << Get N Lines();
 
 ### Get Namespace
 
-**Sintassi:** obj << Get Namespace
+**Sintassi:** obj &lt;&lt; Get Namespace
 
 **Descrizione:** Restituisce lo spazio dei nomi associato a questo oggetto di visualizzazione.
 
@@ -1278,7 +1256,7 @@ Show( ns:x, x );
 
 ### Get On Close
 
-**Sintassi:** obj << Get On Close
+**Sintassi:** obj &lt;&lt; Get On Close
 
 **Descrizione:** Restituisce lo script o la funzione che verrà eseguita alla chiusura della finestra.
 
@@ -1303,9 +1281,7 @@ Show( w << Get On Close );
 
 ### Get Padding
 
-**Sintassi:** obj << Padding( sides );
-
-sides = obj << Get Padding
+**Sintassi:** obj &lt;&lt; Padding( sides );sides = obj &lt;&lt; Get Padding
 
 **Descrizione:** La spaziatura interna aggiunge spazio tra il contenuto e il bordo del riquadro. Usare argomenti con nome, oppure fornire un elenco di valori. Se viene indicato un solo valore sarà applicato a tutti i lati. Se vengono specificati due valori essi saranno applicati alle spaziature interne orizzontali e verticali.
 
@@ -1326,7 +1302,7 @@ tb << Padding( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ### Get Page Setup
 
-**Sintassi:** obj << Get Page Setup
+**Sintassi:** obj &lt;&lt; Get Page Setup
 
 **Descrizione:** Ottieni le informazioni di impostazione della pagina per il pdf
 
@@ -1341,7 +1317,7 @@ w << get page setup();
 
 ### Get Picture
 
-**Sintassi:** obj << Get Picture( <Scale(factor)>, <Type("Bitmap" | "Scalable")>, <View("Picture" | "Screen" | "Print"), <Appearance("Default" | "Current")>, <SubRect(Left(number), Top(number), Right(number), Bottom(number))> )
+**Sintassi:** obj &lt;&lt; Get Picture( &lt;Scale(factor)&gt;, &lt;Type("Bitmap" | "Scalable")&gt;, &lt;View("Picture" | "Screen" | "Print"), &lt;Appearance("Default" | "Current")&gt;, &lt;SubRect(Left(number), Top(number), Right(number), Bottom(number))&gt; )
 
 **Descrizione:** Cattura db come un oggetto immagine. L&apos;argomento facoltativo Scale effettuerà il rendering dell&apos;immagine a una risoluzione ridimensionata. Il ridimensionamento richiede che il riquadro di visualizzazione sia estensibile. L&apos;argomento Type determina se il risultato sarà un&apos;immagine vettoriale scalabile o una bitmap. Per impostazione predefinita viene restituita un&apos;immagine scalabile, adatta al salvataggio in formati vettoriali come PDF. L&apos;opzione View cambia il comportamento di alcuni riquadri. L&apos;opzione predefinita di "Picture" rappresenta il report come sarebbe se fosse esportato in un formato immagine, con aree fatte scorrere completamente visibili. La modalità di visualizzazione di "Screen" rappresenta il report come visibile sullo schermo e "Print" rappresenta il report come se fosse stampato, senza funzioni di impostazione della pagina. L&apos;opzione SubRect acquisisce una parte dell&apos;immagine risultante piuttosto che un&apos;immagine completa. L&apos;opzione Appearance può cambiare dai colori di output "Default" ai colori "Current" come visibili sullo schermo. Le opzioni View, SubRect e Appearance sono supportate solo per Type "Bitmap".
 
@@ -1399,7 +1375,7 @@ New Window( "Example",
 
 ### Get Project
 
-**Sintassi:** project = obj << Get Project()
+**Sintassi:** project = obj &lt;&lt; Get Project()
 
 **Descrizione:** Restituisce il progetto padre della finestra, o Vuoto() se non è in un progetto.
 
@@ -1417,7 +1393,7 @@ Show( c );
 
 ### Get Properties
 
-**Sintassi:** obj << Get Properties
+**Sintassi:** obj &lt;&lt; Get Properties
 
 **Descrizione:** Restituisce un array associativo che contiene le proprietà del riquadro di visualizzazione e i rispettivi valori.
 
@@ -1431,7 +1407,7 @@ bb << Get Properties;
 
 ### Get Property
 
-**Sintassi:** obj << Get Property( "property" )
+**Sintassi:** obj &lt;&lt; Get Property( "property" )
 
 **Descrizione:** Restituisce l&apos;impostazione corrente per la property nominata.
 
@@ -1445,7 +1421,7 @@ bb << Get Property( "Enabled" );
 
 ### Get Property List
 
-**Sintassi:** obj << Get Property List
+**Sintassi:** obj &lt;&lt; Get Property List
 
 **Descrizione:** Restituisce un elenco di proprietà del riquadro di visualizzazione.
 
@@ -1459,7 +1435,7 @@ bb << Get Property List;
 
 ### Get RTF
 
-**Sintassi:** obj << Get RTF( <format> )
+**Sintassi:** obj &lt;&lt; Get RTF( &lt;format&gt; )
 
 **Descrizione:** Restituisce una stringa che contiene l&apos;origine RTF del riquadro di visualizzazione.
 
@@ -1489,7 +1465,7 @@ Open( "$TEMP/Oneway.rtf" );
 
 ### Get Row States
 
-**Sintassi:** rs = obj << Get Row States( <dt> )
+**Sintassi:** rs = obj &lt;&lt; Get Row States( &lt;dt&gt; )
 
 **Descrizione:** Restituisce un vettore contenente lo stato della riga per ogni riga nella tabella di dati specificata o nella tabella di dati corrente. Gli stati delle righe possono provenire dalla tabella o dal contesto del filtro del riquadro.
 
@@ -1578,7 +1554,7 @@ updatetext();
 
 ### Get Selected
 
-**Sintassi:** list = obj << Get Selected(<"Column Reference">)
+**Sintassi:** list = obj &lt;&lt; Get Selected(&lt;"Column Reference"&gt;)
 
 **Descrizione:** Restituisce un elenco degli elementi selezionati.
 
@@ -1616,7 +1592,7 @@ Print( lb << Get Selected( "Column Reference" ) );
 
 ### Get Selected Indices
 
-**Sintassi:** indices = obj << Get Selected Indices
+**Sintassi:** indices = obj &lt;&lt; Get Selected Indices
 
 **Descrizione:** Restituisce un elenco di tutti gli indici selezionati.
 
@@ -1635,7 +1611,7 @@ Print( lb << Get Selected Indices );
 
 ### Get Show Window
 
-**Sintassi:** obj << Get Show Window
+**Sintassi:** obj &lt;&lt; Get Show Window
 
 **Descrizione:** Restituisce la visibilità della finestra.
 
@@ -1653,7 +1629,7 @@ Print( w << Get Show Window() );
 
 ### Get Size
 
-**Sintassi:** width,height = obj << Get Size
+**Sintassi:** width,height = obj &lt;&lt; Get Size
 
 **Descrizione:** Restituisce la dimensione del riquadro di visualizzazione.
 
@@ -1671,7 +1647,7 @@ Print( fb << Get Size );
 
 ### Get Stretch
 
-**Sintassi:** x,y = obj << Get Stretch
+**Sintassi:** x,y = obj &lt;&lt; Get Stretch
 
 **Descrizione:** Restituisce i flag di estensione per questo riquadro di visualizzazione in direzione orizzontale e verticale.
 
@@ -1697,7 +1673,7 @@ spacer << Get Stretch();
 
 ### Get Submenu
 
-**Sintassi:** obj << Get Submenu( index )
+**Sintassi:** obj &lt;&lt; Get Submenu( index )
 
 **Descrizione:** Restituisce il numero di sottomenu sotto la voce di menu specificata.
 
@@ -1720,7 +1696,7 @@ lb << Get Submenu( 2 );
 
 ### Get Text
 
-**Sintassi:** obj << Get Text
+**Sintassi:** obj &lt;&lt; Get Text
 
 **Descrizione:** Restituisce una stringa che contiene il testo del riquadro di visualizzazione.
 
@@ -1735,9 +1711,7 @@ a << Set Text( win << Get Text );
 
 ### Get Text Color
 
-**Sintassi:** obj << Text Color( color );
-
-color = obj << Get Text Color
+**Sintassi:** obj &lt;&lt; Text Color( color );color = obj &lt;&lt; Get Text Color
 
 **Descrizione:** Il testo sarà visualizzato nel colore del testo, se impostato. Se questa proprietà non è stata impostata, il riquadro assumerà il colore del testo del riquadro che lo contiene.
 
@@ -1759,15 +1733,11 @@ tb << Text Color( "Red" );
 
 ### Get UI Only
 
-**Sintassi:** obj << UI Only( state=0|1 );
-
-state = obj << Get UI Only
+**Sintassi:** obj &lt;&lt; UI Only( state=0|1 );state = obj &lt;&lt; Get UI Only
 
 ### Get User Resizable
 
-**Sintassi:** obj << User Resizable;
-
-obj << Get User Resizable
+**Sintassi:** obj &lt;&lt; User Resizable;obj &lt;&lt; Get User Resizable
 
 **Descrizione:** Se il riquadro è ridimensionabile dall&apos;utente, il cursore cambierà in prossimità dei bordi inferiore e destro per consentire di ridimensionare il riquadro in modalità drag-and-drop.
 
@@ -1804,9 +1774,7 @@ scroll << User Resizable( {0, 0} );
 
 ### Get Vertical Alignment
 
-**Sintassi:** obj << Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );
-
-"Default"|"Top"|"Center"|"Bottom" = obj << Get Vertical Alignment
+**Sintassi:** obj &lt;&lt; Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );"Default"|"Top"|"Center"|"Bottom" = obj &lt;&lt; Get Vertical Alignment
 
 **Descrizione:** L&apos;allineamento verticale controlla il posizionamento del riquadro all&apos;interno di un contenitore se il riquadro non riempie l&apos;intero spazio.
 
@@ -1828,9 +1796,7 @@ lb << Vertical Alignment( "Bottom" );
 
 ### Get Visibility
 
-**Sintassi:** obj << Visibility( "Visible"|"Hidden"|"Collapse" );
-
-"Visible"|"Hidden"|"Collapse" = obj << Get Visibility
+**Sintassi:** obj &lt;&lt; Visibility( "Visible"|"Hidden"|"Collapse" );"Visible"|"Hidden"|"Collapse" = obj &lt;&lt; Get Visibility
 
 **Descrizione:** La visibilità determina se mostrare un riquadro e se richiede spazio. Il valore predefinito di "Visible" significa che l&apos;oggetto verrà mostrato. Un riquadro "Hidden" non viene mostrato ma richiede spazio, mentre un riquadro "Collapsed" non richiede spazio nel layout.
 
@@ -1851,7 +1817,7 @@ Show( tb << Get Visibility );
 
 ### Get Web Support
 
-**Sintassi:** obj << Get Web Support
+**Sintassi:** obj &lt;&lt; Get Web Support
 
 **Descrizione:** Restituisce un numero indicante il livello di supporto HTML interattivo per l&apos;oggetto visualizzato. 1 significa che alcuni o tutti gli elementi sono supportati. 0 significa nessun supporto.
 
@@ -1867,7 +1833,7 @@ Show( s );
 
 ### Get Width
 
-**Sintassi:** width = obj << Get Width
+**Sintassi:** width = obj &lt;&lt; Get Width
 
 **Descrizione:** Restituisce la larghezza del riquadro di visualizzazione.
 
@@ -1885,7 +1851,7 @@ fb << Get Width;
 
 ### Get Window Icon
 
-**Sintassi:** obj << Get Window Icon
+**Sintassi:** obj &lt;&lt; Get Window Icon
 
 **Descrizione:** Restituisce l&apos;icona della finestra.
 
@@ -1901,7 +1867,7 @@ Show( t );
 
 ### Get Window Position
 
-**Sintassi:** obj << Get Window Position
+**Sintassi:** obj &lt;&lt; Get Window Position
 
 **Descrizione:** Restituisce la posizione della finestra.
 
@@ -1917,7 +1883,7 @@ Show( p );
 
 ### Get Window Size
 
-**Sintassi:** obj << Get Window Size
+**Sintassi:** obj &lt;&lt; Get Window Size
 
 **Descrizione:** Restituisce le dimensioni della finestra.
 
@@ -1933,7 +1899,7 @@ Show( s );
 
 ### Get Window Title
 
-**Sintassi:** obj << Get Window Title
+**Sintassi:** obj &lt;&lt; Get Window Title
 
 **Descrizione:** Restituisce il titolo della finestra.
 
@@ -1949,7 +1915,7 @@ Show( t );
 
 ### Get Window View
 
-**Sintassi:** obj << Get Window View
+**Sintassi:** obj &lt;&lt; Get Window View
 
 **Descrizione:** Restituisce la visualizzazione della finestra corrente. Le finestre possono essere "Visibile", "Invisibile" o "Privata".
 
@@ -1964,7 +1930,7 @@ Print( w << Get Window View() );
 
 ### Get XML
 
-**Sintassi:** obj << Get XML( <English(0|1)>, <NoData(0|1)> )
+**Sintassi:** obj &lt;&lt; Get XML( &lt;English(0|1)&gt;, &lt;NoData(0|1)&gt; )
 
 **Descrizione:** Recupera la struttura di visualizzazione formattata come XML. Di default, le stringhe vengono restituite nella lingua locale e l&apos;XML include i valori dei dati in alcuni riquadri. Usare l&apos;opzione English per restituire le stringhe in inglese, se disponibili. Usare l&apos;opzione NoData per omettere i valori dei dati all&apos;interno dei riquadri, che possono essere molto grandi per alcune strutture di visualizzazione.
 
@@ -1979,7 +1945,7 @@ a << set text( win << get xml );
 
 ### GetOffset
 
-**Sintassi:** x,y = obj << GetOffset
+**Sintassi:** x,y = obj &lt;&lt; GetOffset
 
 **Descrizione:** Restituisce l&apos;offset del riquadro di visualizzazione rispetto al riquadro principale. Potrebbe essere necessario usare il messaggio <<principale in un ciclo per accumulare diversi offset.
 
@@ -2024,9 +1990,7 @@ New Window( "example",
 
 ### Horizontal Alignment
 
-**Sintassi:** obj << Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );
-
-"Default"|"Left"|"Center"|"Right" = obj << Get Horizontal Alignment
+**Sintassi:** obj &lt;&lt; Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );"Default"|"Left"|"Center"|"Right" = obj &lt;&lt; Get Horizontal Alignment
 
 **Descrizione:** L&apos;allineamento orizzontale controlla il posizionamento del riquadro all&apos;interno di un contenitore se il riquadro non riempie l&apos;intero spazio.
 
@@ -2046,7 +2010,7 @@ lb << Horizontal Alignment( "Right" );
 
 ### Insert
 
-**Sintassi:** obj << Insert( "string",index )
+**Sintassi:** obj &lt;&lt; Insert( "string",index )
 
 **Descrizione:** Aggiunge l&apos;elemento o elenco di elementi specificato alla casella di riepilogo dopo index specificato.
 
@@ -2064,7 +2028,7 @@ slb << Insert( "name", 2 );
 
 ### Inval
 
-**Sintassi:** obj << Inval
+**Sintassi:** obj &lt;&lt; Inval
 
 **Descrizione:** Invalida il riquadro di visualizzazione.  La finestra verrà aggiornata quando viene inviato il messaggio <<Aggiorna finestra o il sistema operativo avrà tempo per l&apos;aggiornamento.
 
@@ -2106,7 +2070,7 @@ New Window( "Inval example",
 
 ### Is Dirty
 
-**Sintassi:** obj << Is Dirty
+**Sintassi:** obj &lt;&lt; Is Dirty
 
 **Descrizione:** Ottiene lo stato modificato del documento. 1 significa che il documento è stato modificato e richiederà il salvataggio; 0 significa che il documento non è stato modificato.
 
@@ -2125,7 +2089,7 @@ Show( ww << Is Dirty );
 
 ### Is Enabled
 
-**Sintassi:** 0|1 = obj << Is Enabled
+**Sintassi:** 0|1 = obj &lt;&lt; Is Enabled
 
 **Descrizione:** Restituisce lo stato abilitato del controllo
 
@@ -2143,7 +2107,7 @@ cb2 << Is Enabled();
 
 ### Is Modal Dialog
 
-**Sintassi:** obj << Is Modal Dialog
+**Sintassi:** obj &lt;&lt; Is Modal Dialog
 
 **Descrizione:** Restituisce vero se la finestra è una finestra di dialogo modale. Utile solo se chiamato da un callback del gestore della finestra.
 
@@ -2162,9 +2126,7 @@ With Window Handler(
 
 ### Item Padding
 
-**Sintassi:** obj << Item Padding( sides );
-
-sides = obj << Get Item Padding
+**Sintassi:** obj &lt;&lt; Item Padding( sides );sides = obj &lt;&lt; Get Item Padding
 
 **Descrizione:** La spaziatura interna aggiunge spazio tra il testo degli elementi della casella di riepilogo
 
@@ -2182,7 +2144,7 @@ lb << Item Padding( Left( 10 ), Top( 5 ), Right( 20 ), Bottom( 10 ) );
 
 ### Journal
 
-**Sintassi:** obj << Journal
+**Sintassi:** obj &lt;&lt; Journal
 
 **Descrizione:** Crea un journal dal riquadro di visualizzazione.
 
@@ -2199,7 +2161,7 @@ rbiv << journal;
 
 ### Journal Window
 
-**Sintassi:** obj << Journal Window
+**Sintassi:** obj &lt;&lt; Journal Window
 
 **Descrizione:** Apre una finestra journal della finestra.
 
@@ -2214,7 +2176,7 @@ w << Journal Window;
 
 ### Launch
 
-**Sintassi:** obj << Launch
+**Sintassi:** obj &lt;&lt; Launch
 
 **Descrizione:** Valuta argument indicato nel contesto del riquadro di visualizzazione.
 
@@ -2236,13 +2198,13 @@ ob3 << launch( Bivariate( Y( :height ), X( :weight ) ) );
 
 ### Locate Item
 
-**Sintassi:** obj << Locate Item
+**Sintassi:** obj &lt;&lt; Locate Item
 
 **JMP Versione aggiunta:** 14
 
 ### Make RowState Handler
 
-**Sintassi:** rs = obj << Make RowState Handler( <dt>, function(a) )
+**Sintassi:** rs = obj &lt;&lt; Make RowState Handler( &lt;dt&gt;, function(a) )
 
 **Descrizione:** Crea un gestore dello stato delle righe per la tabella di dati specificata o per la tabella di dati corrente. La funzione viene chiamata quando gli stati delle righe cambiano nel contesto del filtro del riquadro. L&apos;argomento della funzione contiene i numeri di riga che sono cambiati o -1 se il filtro di stato della riga è cambiato.
 
@@ -2331,9 +2293,7 @@ updatetext();
 
 ### Margin
 
-**Sintassi:** obj << Margin( sides );
-
-sides = obj << Get Margin
+**Sintassi:** obj &lt;&lt; Margin( sides );sides = obj &lt;&lt; Get Margin
 
 **Descrizione:** Il margine aggiunge spazio tra il bordo del riquadro e i riquadri adiacenti. Usare argomenti con nome, oppure fornire un elenco di valori. Se viene indicato un solo valore sarà applicato a tutti i lati. Se vengono specificati due valori essi saranno applicati ai margini orizzontali e verticali.
 
@@ -2354,7 +2314,7 @@ tb << Margin( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ### Maximize Window
 
-**Sintassi:** obj << Maximize Window( <state=0|1> )
+**Sintassi:** obj &lt;&lt; Maximize Window( &lt;state=0|1&gt; )
 
 **Descrizione:** Ingrandisce la finestra. L&apos;argomento predefinito è 1.
 
@@ -2372,7 +2332,7 @@ w << Maximize Window( 0 );
 
 ### Menus Enabled
 
-**Sintassi:** obj << Menus Enabled( state=0|1 )
+**Sintassi:** obj &lt;&lt; Menus Enabled( state=0|1 )
 
 **Descrizione:** Attiva o disattiva la comparsa del menu della casella di riepilogo quando si fa clic con il pulsante destro del mouse.
 
@@ -2392,7 +2352,7 @@ lb << Menus Enabled( 0 );
 
 ### Minimize Window
 
-**Sintassi:** obj << Minimize Window( <state=0|1> )
+**Sintassi:** obj &lt;&lt; Minimize Window( &lt;state=0|1&gt; )
 
 **Descrizione:** Riduce a icona la finestra. L&apos;argomento predefinito è 1.
 
@@ -2410,7 +2370,7 @@ w << Minimize Window( 0 );
 
 ### Modeling Type
 
-**Sintassi:** obj << Modeling Type( {"Any","Continuous","Nominal","Ordinal","Multiple Response","Unstructured Text","Vector","None","Row State"}) > )
+**Sintassi:** obj &lt;&lt; Modeling Type( {"Any","Continuous","Nominal","Ordinal","Multiple Response","Unstructured Text","Vector","None","Row State"}) &gt; )
 
 **Descrizione:** Imposta i tipi di modellizzazione di colonne accettati per una casella di riepilogo di colonna. Il valore predefinito "Any" consentirà qualsiasi colonna con un tipo di modellizzazione classico ("Continuous", "Nominal", "Ordinal").
 
@@ -2428,7 +2388,7 @@ lb << Modeling Type( {"Continuous"} );
 
 ### Move Window
 
-**Sintassi:** obj << Move Window( x,y )
+**Sintassi:** obj &lt;&lt; Move Window( x,y )
 
 **Descrizione:** Sposta la finestra nella posizione specificata.
 
@@ -2444,7 +2404,7 @@ w << Move Window( 500, 500 );
 
 ### Next
 
-**Sintassi:** obj << Next
+**Sintassi:** obj &lt;&lt; Next
 
 **Descrizione:** Restituisce il riquadro di visualizzazione successivo a questo.
 
@@ -2462,7 +2422,7 @@ Print( next << Class Name() );
 
 ### On Change
 
-**Sintassi:** obj << On Change( script )
+**Sintassi:** obj &lt;&lt; On Change( script )
 
 **Descrizione:** Esegue lo script quando cambia la selezione nell&apos;elenco.
 
@@ -2478,7 +2438,7 @@ dt << Delete Column( "height" );
 
 ### On Close
 
-**Sintassi:** obj << On Close( script )
+**Sintassi:** obj &lt;&lt; On Close( script )
 
 **Descrizione:** Imposta l&apos;esecuzione di uno script o di una funzione alla chiusura della finestra. Questo script dovrebbe restituire 1 per consentire la chiusura o 0 per impedire la chiusura della finestra.
 
@@ -2526,7 +2486,7 @@ w << On Close(
 
 ### Optimize Display
 
-**Sintassi:** obj << Optimize Display
+**Sintassi:** obj &lt;&lt; Optimize Display
 
 **Descrizione:** Imposta la larghezza delle colonne della tabella di dati e la finestra a una dimensione ottimale.
 
@@ -2543,7 +2503,7 @@ dt << Optimize Display;
 
 ### Pad Window
 
-**Sintassi:** obj << Pad Window( bool )
+**Sintassi:** obj &lt;&lt; Pad Window( bool )
 
 **Descrizione:** Attiva o disattiva la spaziatura interna della finestra.
 
@@ -2560,9 +2520,7 @@ r << Pad Window( 0 );
 
 ### Padding
 
-**Sintassi:** obj << Padding( sides );
-
-sides = obj << Get Padding
+**Sintassi:** obj &lt;&lt; Padding( sides );sides = obj &lt;&lt; Get Padding
 
 **Descrizione:** La spaziatura interna aggiunge spazio tra il contenuto e il bordo del riquadro. Usare argomenti con nome, oppure fornire un elenco di valori. Se viene indicato un solo valore sarà applicato a tutti i lati. Se vengono specificati due valori essi saranno applicati alle spaziature interne orizzontali e verticali.
 
@@ -2583,7 +2541,7 @@ tb << Padding( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ### Page Break
 
-**Sintassi:** obj << Page Break
+**Sintassi:** obj &lt;&lt; Page Break
 
 **Descrizione:** Inserisce un&apos;interruzione di pagina prima del riquadro di visualizzazione.
 
@@ -2609,7 +2567,7 @@ ob3 << Page Break;
 
 ### Parent
 
-**Sintassi:** obj << Parent
+**Sintassi:** obj &lt;&lt; Parent
 
 **Descrizione:** Restituisce il nodo di livello superiore a questo riquadro di visualizzazione.
 
@@ -2628,7 +2586,7 @@ Print( axisParent << Class Name() );
 
 ### Prepend
 
-**Sintassi:** obj << Prepend( db2 )
+**Sintassi:** obj &lt;&lt; Prepend( db2 )
 
 **Descrizione:** Aggiunge db2 alla struttura di visualizzazione prima di db.
 
@@ -2645,7 +2603,7 @@ rbiv << prepend( Text Box( "=== above ===" ) );
 
 ### Prev Sib
 
-**Sintassi:** obj << Prev Sib
+**Sintassi:** obj &lt;&lt; Prev Sib
 
 **Descrizione:** Restituisce l&apos;elemento di pari livello precedente del riquadro di visualizzazione.
 
@@ -2666,7 +2624,7 @@ Print( axisSibling << Class Name() );
 
 ### Print Window
 
-**Sintassi:** obj << Print Window
+**Sintassi:** obj &lt;&lt; Print Window
 
 **Descrizione:** Stampa la finestra.
 
@@ -2681,7 +2639,7 @@ w << Print Window;
 
 ### Remove All
 
-**Sintassi:** obj << Remove All
+**Sintassi:** obj &lt;&lt; Remove All
 
 **Descrizione:** Rimuove tutti gli elementi.
 
@@ -2699,7 +2657,7 @@ lb << Remove All;
 
 ### Remove Item
 
-**Sintassi:** obj << Remove Item( index )
+**Sintassi:** obj &lt;&lt; Remove Item( index )
 
 **Descrizione:** Rimuove gli elementi specificati in index.
 
@@ -2719,7 +2677,7 @@ lb << Remove Item( 2 );
 
 ### Remove Selected
 
-**Sintassi:** obj << Remove Selected
+**Sintassi:** obj &lt;&lt; Remove Selected
 
 **Descrizione:** Rimuove gli elementi selezionati.
 
@@ -2738,7 +2696,7 @@ lb << Remove Selected();
 
 ### Reshow
 
-**Sintassi:** obj << Reshow
+**Sintassi:** obj &lt;&lt; Reshow
 
 **Descrizione:** Invalida riquadro di visualizzazione e aggiorna la finestra con il nuovo contenuto.  Vedere i messaggi <<Inval e <<Aggiorna finestra se è necessario un maggiore controllo sui tempi di aggiornamento.
 
@@ -2767,7 +2725,7 @@ New Window( "Reshow example",
 
 ### Save Capture
 
-**Sintassi:** obj << Save Capture( <"path">, <format>, <Add Sibling(n)> )
+**Sintassi:** obj &lt;&lt; Save Capture( &lt;"path"&gt;, &lt;format&gt;, &lt;Add Sibling(n)&gt; )
 
 **Descrizione:** Salva una schermata del riquadro di visualizzazione nel percorso path specificato. Se non viene specificato un path, compare la finestra Salva con nome.
 
@@ -2784,7 +2742,7 @@ rbiv << Save Capture( "$TEMP/jmp_example.png", "png" );
 
 ### Save HTML
 
-**Sintassi:** obj << Save HTML( <pathname>, <format> )
+**Sintassi:** obj &lt;&lt; Save HTML( &lt;pathname&gt;, &lt;format&gt; )
 
 **Descrizione:** Salva l&apos;origine HTML e la cartella di file grafici nel format specificato.
 
@@ -2801,7 +2759,7 @@ rbiv << Save HTML( "$TEMP/jmp_example.html" );
 
 ### Save Interactive HTML
 
-**Sintassi:** obj << Save Interactive HTML( <pathname>, <Boolean> )
+**Sintassi:** obj &lt;&lt; Save Interactive HTML( &lt;pathname&gt;, &lt;Boolean&gt; )
 
 **Descrizione:** Salva il formato HTML interattivo con dati in un file. L&apos;argomento Boolean rappresenta la staticità del report.
 
@@ -2818,7 +2776,7 @@ rbiv << Save Interactive HTML( "$TEMP/jmp_example.html" );
 
 ### Save Journal
 
-**Sintassi:** obj << Save Journal( <pathname> )
+**Sintassi:** obj &lt;&lt; Save Journal( &lt;pathname&gt; )
 
 **Descrizione:** Salva l&apos;origine journal del riquadro di visualizzazione.
 
@@ -2835,7 +2793,7 @@ rbiv << Save Journal( "$TEMP/jmp_example.jrn" );
 
 ### Save MSWord
 
-**Sintassi:** obj << Save MSWord( <pathname>, <format> )
+**Sintassi:** obj &lt;&lt; Save MSWord( &lt;pathname&gt;, &lt;format&gt; )
 
 **Descrizione:** Salva il riquadro di visualizzazione come documento Microsoft Word (disponibile solo per Windows).
 
@@ -2852,7 +2810,7 @@ rbiv << Save MSWord( "$TEMP/jmp_example.doc" );
 
 ### Save PDF
 
-**Sintassi:** obj << Save PDF( <pathname>, <Show Page Setup(0|1)>, <Portrait(0|1)> )
+**Sintassi:** obj &lt;&lt; Save PDF( &lt;pathname&gt;, &lt;Show Page Setup(0|1)&gt;, &lt;Portrait(0|1)&gt; )
 
 **Descrizione:** Salva il riquadro di visualizzazione in formato PDF.
 
@@ -2869,7 +2827,7 @@ rbiv << Save PDF( "$TEMP/jmp_example.pdf" );
 
 ### Save Picture
 
-**Sintassi:** obj << Save Picture( <pathname>, <format>, <Scale(factor)>, <Type("Bitmap" | "Scalable")>, <View("Picture" | "Screen" | "Print"), <Appearance("Default" | "Current")>, <SubRect(Left(number), Top(number), Right(number), Bottom(number))> )
+**Sintassi:** obj &lt;&lt; Save Picture( &lt;pathname&gt;, &lt;format&gt;, &lt;Scale(factor)&gt;, &lt;Type("Bitmap" | "Scalable")&gt;, &lt;View("Picture" | "Screen" | "Print"), &lt;Appearance("Default" | "Current")&gt;, &lt;SubRect(Left(number), Top(number), Right(number), Bottom(number))&gt; )
 
 **Descrizione:** Salva un&apos;immagine del riquadro di visualizzazione. I formati supportati sono EMF (Windows), PICT (Macintosh), JPEG o JPG, GIF o PNG. L&apos;argomento facoltativo Scale effettuerà il rendering dell&apos;immagine a una risoluzione ridimensionata. Il ridimensionamento richiede che il riquadro di visualizzazione sia estensibile. L&apos;argomento Type determina se il risultato sarà un&apos;immagine vettoriale scalabile o una bitmap. Per impostazione predefinita viene restituita un&apos;immagine scalabile, adatta al salvataggio in formati vettoriali come PDF. L&apos;opzione View cambia il comportamento di alcuni riquadri. L&apos;opzione predefinita di "Picture" rappresenta il report come sarebbe se fosse esportato in un formato immagine, con aree fatte scorrere completamente visibili. La modalità di visualizzazione di "Screen" rappresenta il report come visibile sullo schermo e "Print" rappresenta il report come se fosse stampato, senza funzioni di impostazione della pagina. L&apos;opzione SubRect acquisisce una parte dell&apos;immagine risultante piuttosto che un&apos;immagine completa. L&apos;opzione Appearance può cambiare dai colori di output "Default" ai colori "Current" come visibili sullo schermo. Le opzioni View, SubRect e Appearance sono supportate solo per Type "Bitmap".
 
@@ -2939,7 +2897,7 @@ New Window( "Example",
 
 ### Save Presentation
 
-**Sintassi:** obj << Save Presentation( "filename.pptx", <Template("path\to\my_template.pptx")>, <Insert(Begin|End|#) | Replace(Begin|End|#) | Append>, <Outline Titles(None|Hide|TopLeft|TopRight|BottomLeft|BottomRight)>, <"EMF"|"PNG"|"JPG"|"Native"> )
+**Sintassi:** obj &lt;&lt; Save Presentation( "filename.pptx", &lt;Template("path\to\my_template.pptx")&gt;, &lt;Insert(Begin|End|#) | Replace(Begin|End|#) | Append&gt;, &lt;Outline Titles(None|Hide|TopLeft|TopRight|BottomLeft|BottomRight)&gt;, &lt;"EMF"|"PNG"|"JPG"|"Native"&gt; )
 
 **Descrizione:** Salva le tabelle dei riquadri di visualizzazione e le diapositive di grafici in una presentazione. La presentazione può essere aperta con Microsoft PowerPoint o altri software di presentazione.
 
@@ -2956,7 +2914,7 @@ Open( "$TEMP/jmp_example.pptx" );
 
 ### Save RTF
 
-**Sintassi:** obj << Save RTF( <pathname>, <format> )
+**Sintassi:** obj &lt;&lt; Save RTF( &lt;pathname&gt;, &lt;format&gt; )
 
 **Descrizione:** Salva l&apos;origine RTF e la cartella di file grafici nel format specificato.
 
@@ -2973,7 +2931,7 @@ rbiv << Save RTF( "$TEMP/jmp_example.rtf", "png" );
 
 ### Save Text
 
-**Sintassi:** obj << Save Text( <pathname>, <format> )
+**Sintassi:** obj &lt;&lt; Save Text( &lt;pathname&gt;, &lt;format&gt; )
 
 **Descrizione:** Salva un file che contiene il testo del riquadro di visualizzazione.
 
@@ -2988,7 +2946,7 @@ a << save text( "$TEMP/jmp_example.txt" );
 
 ### Save Window Report
 
-**Sintassi:** obj << Save Window Report( pathname, <embed data(0|1)> )
+**Sintassi:** obj &lt;&lt; Save Window Report( pathname, &lt;embed data(0|1)&gt; )
 
 **Descrizione:** Salva la finestra del report corrente in un file di report JMP (.jrp).
 
@@ -3006,7 +2964,7 @@ d << Save Window Report( "$DOCUMENTS/test.jrp", embed data( 1 ) );
 
 ### Scroll Window
 
-**Sintassi:** obj << Scroll Window( DisplayBox | <Relative(<v> | <h>,<v>)> | <Absolute(<v> | <h>,<v>) )
+**Sintassi:** obj &lt;&lt; Scroll Window( DisplayBox | &lt;Relative(&lt;v&gt; | &lt;h&gt;,&lt;v&gt;)&gt; | &lt;Absolute(&lt;v&gt; | &lt;h&gt;,&lt;v&gt;) )
 
 **Descrizione:** Regola la barra di scorrimento della finestra per visualizzare il riquadro di visualizzazione specificato, oppure scorre un numero relativo di pixel o scorre fino a una posizione assoluta dei pixel. Al posto di un numero di pixel si possono usare le parole chiave "Start" o "End".
 
@@ -3081,7 +3039,7 @@ Wait( 1 );
 
 ### Select
 
-**Sintassi:** obj << Select
+**Sintassi:** obj &lt;&lt; Select
 
 **Descrizione:** Seleziona questo oggetto per essere utilizzato dai comandi del menu Modifica.
 
@@ -3096,7 +3054,7 @@ ex << Select;
 
 ### Set Base Font
 
-**Sintassi:** obj << Set Base Font( "Testo"|"Intestazione"|"Titolo"|"Piccolo"|"Mono"|"Editor delle formule"|"Annotazione"|"Asse"|"Indicatore"|"Titolo dell&apos;asse"|"Etichetta del grafico"|"Legenda"|"Titolo del grafico"|"Didascalia"|"Tabella di dati"|"Etichetta al passaggio del mouse" )
+**Sintassi:** obj &lt;&lt; Set Base Font( "Testo"|"Intestazione"|"Titolo"|"Piccolo"|"Mono"|"Editor delle formule"|"Annotazione"|"Asse"|"Indicatore"|"Titolo dell&apos;asse"|"Etichetta del grafico"|"Legenda"|"Titolo del grafico"|"Didascalia"|"Tabella di dati"|"Etichetta al passaggio del mouse" )
 
 **Descrizione:** Imposta il carattere di base del testo tracciato dal riquadro.
 
@@ -3115,7 +3073,7 @@ fontobj << Set Base Font( "Title" );
 
 ### Set Case Sensitive
 
-**Sintassi:** obj << Set Case Sensitive( "bool" )
+**Sintassi:** obj &lt;&lt; Set Case Sensitive( "bool" )
 
 **Descrizione:** Determina se gli elementi aggiunti alla casella di riepilogo devono essere confrontati con elementi esistenti facendo distinzione o meno fra maiuscole/minuscole
 
@@ -3134,7 +3092,7 @@ lb2 << Append( "first item" );
 
 ### Set Content Size
 
-**Sintassi:** obj << Set Content Size( x,y )
+**Sintassi:** obj &lt;&lt; Set Content Size( x,y )
 
 **Descrizione:** Imposta le dimensioni del contenuto nella finestra.
 
@@ -3160,7 +3118,7 @@ w << Set Content Size( 400, 300 );
 
 ### Set Context Menu Script
 
-**Sintassi:** obj << Set Context Menu Script( {"string",script,"string",script, ...} )
+**Sintassi:** obj &lt;&lt; Set Context Menu Script( {"string",script,"string",script, ...} )
 
 **Descrizione:** Aggiunge un menu di scelta rapida al riquadro con le opzioni e script specificati.
 
@@ -3181,7 +3139,7 @@ lb << Set Context Menu Script(
 
 ### Set Data Type
 
-**Sintassi:** obj << Set Data Type( "Qualsiasi"|"Numerico"|"Alfanumerico" )
+**Sintassi:** obj &lt;&lt; Set Data Type( "Qualsiasi"|"Numerico"|"Alfanumerico" )
 
 **Descrizione:** Imposta il tipo di colonne che una casella di riepilogo di colonna può accettare: Qualsiasi, Alfanumerico o Numerico.
 
@@ -3199,7 +3157,7 @@ slb << Set Data Type( "Numeric" );
 
 ### Set Dirty
 
-**Sintassi:** obj << Set Dirty
+**Sintassi:** obj &lt;&lt; Set Dirty
 
 **Descrizione:** Imposta lo stato modificato del documento. 0 non richiederà il salvataggio; 1 lo richiederà.
 
@@ -3218,7 +3176,7 @@ Show( ww << Is Dirty );
 
 ### Set Font
 
-**Sintassi:** obj << Set Font( fontName, <size>, <"bold italic underline strikeout">, <angle> )
+**Sintassi:** obj &lt;&lt; Set Font( fontName, &lt;size&gt;, &lt;"bold italic underline strikeout"&gt;, &lt;angle&gt; )
 
 **Esempio 1**
 
@@ -3250,7 +3208,7 @@ fontobj << Set Font( "Arial Black", 12, "Italic Underline" );
 
 ### Set Font Name
 
-**Sintassi:** obj << Set Font Name( fontname )
+**Sintassi:** obj &lt;&lt; Set Font Name( fontname )
 
 **Descrizione:** Imposta il carattere per le stringhe di testo.
 
@@ -3268,7 +3226,7 @@ fontobj << Set Font Name( "Arial Black" );
 
 ### Set Font Scale
 
-**Sintassi:** obj << Set Font Scale( f )
+**Sintassi:** obj &lt;&lt; Set Font Scale( f )
 
 **Descrizione:** Imposta un fattore di scala per il carattere corrente. Il fattore di scala verrà applicato alla dimensione determinata dal carattere di base e alla dimensione in punti.
 
@@ -3287,7 +3245,7 @@ fontobj << Set Font Scale( 2.0 );
 
 ### Set Font Size
 
-**Sintassi:** obj << Set Font Size( n )
+**Sintassi:** obj &lt;&lt; Set Font Size( n )
 
 **Descrizione:** Imposta la dimensione del carattere (in punti) per le stringhe di testo.
 
@@ -3305,7 +3263,7 @@ fontobj << Set Font Size( 14 );
 
 ### Set Font Style
 
-**Sintassi:** obj << Set Font Style( style )
+**Sintassi:** obj &lt;&lt; Set Font Style( style )
 
 **Descrizione:** Imposta lo stile carattere per le stringhe di testo. Per impostare più di uno stile contemporaneamente, posizionare le stringhe nella stessa stringa, separate da spazi (Vedere Esempio 2 di seguito).
 
@@ -3339,7 +3297,7 @@ fontobj << Set Font Style( "Italic Bold Underline" );
 
 ### Set Function
 
-**Sintassi:** obj << Set Function( Function( {thisBox}, <script> ) )
+**Sintassi:** obj &lt;&lt; Set Function( Function( {thisBox}, &lt;script&gt; ) )
 
 **Descrizione:** Imposta la funzione specificata per il controllo. Lo script della funzione viene eseguito quando vengono selezionati uno o più elementi.
 
@@ -3360,7 +3318,7 @@ lb << Set Function(
 
 ### Set Height
 
-**Sintassi:** obj << Set Height( width )
+**Sintassi:** obj &lt;&lt; Set Height( width )
 
 **Descrizione:** Imposta l&apos;altezza del riquadro di visualizzazione.
 
@@ -3378,7 +3336,7 @@ fb << Set Height( 150 );
 
 ### Set Items
 
-**Sintassi:** obj << Set Items( list )
+**Sintassi:** obj &lt;&lt; Set Items( list )
 
 **Descrizione:** Imposta l&apos;elenco di tutti gli elementi.
 
@@ -3398,7 +3356,7 @@ lb << Get Items;
 
 ### Set Main Window
 
-**Sintassi:** obj << Set Main Window
+**Sintassi:** obj &lt;&lt; Set Main Window
 
 **Descrizione:** Imposta questa finestra come finestra principale di JMP e imposta come normale la precedente finestra principale
 
@@ -3413,7 +3371,7 @@ w << Set Main Window;
 
 ### Set Max Items
 
-**Sintassi:** obj << Set Max Items( number )
+**Sintassi:** obj &lt;&lt; Set Max Items( number )
 
 **Descrizione:** Imposta il numero massimo di elementi consentiti per l&apos;elenco.
 
@@ -3431,7 +3389,7 @@ slb << Set Max Items( 4 );
 
 ### Set Max Selected
 
-**Sintassi:** obj << Set Max Selected( max )
+**Sintassi:** obj &lt;&lt; Set Max Selected( max )
 
 **Descrizione:** Imposta il numero massimo di elementi selezionabili nell&apos;elenco.
 
@@ -3449,7 +3407,7 @@ lb << Set Max Selected( 1 );
 
 ### Set Max Size
 
-**Sintassi:** obj << Set Max Size( width,height )
+**Sintassi:** obj &lt;&lt; Set Max Size( width,height )
 
 **Descrizione:** Imposta la dimensione massima di questo riquadro di visualizzazione per l&apos;estensione automatica.
 
@@ -3468,7 +3426,7 @@ fb << Get Max Size;
 
 ### Set Menu Item State
 
-**Sintassi:** obj << Set Menu Item State( index, 0|1|-1 )
+**Sintassi:** obj &lt;&lt; Set Menu Item State( index, 0|1|-1 )
 
 **Descrizione:** Imposta l&apos;elemento nel menu di scelta rapida in index: normale (0), selezionato (1) o disattivato (-1).
 
@@ -3487,7 +3445,7 @@ lb << Set Menu Item State( 2, -1 );
 
 ### Set Min Items
 
-**Sintassi:** obj << Set Min Items( number )
+**Sintassi:** obj &lt;&lt; Set Min Items( number )
 
 **Descrizione:** Imposta il numero minimo di elementi richiesti per l&apos;elenco.
 
@@ -3505,7 +3463,7 @@ slb << Set Min Items( 2 );
 
 ### Set Min Size
 
-**Sintassi:** obj << Set Min Size( width,height )
+**Sintassi:** obj &lt;&lt; Set Min Size( width,height )
 
 **Descrizione:** Imposta la dimensione minima di questo riquadro di visualizzazione per l&apos;estensione automatica.
 
@@ -3524,7 +3482,7 @@ fb << Get Min Size;
 
 ### Set N Lines
 
-**Sintassi:** obj << Set N Lines( nlines )
+**Sintassi:** obj &lt;&lt; Set N Lines( nlines )
 
 **Descrizione:** Imposta il numero di linee visibili nell&apos;elenco.
 
@@ -3542,7 +3500,7 @@ lb << Set N Lines( 4 );
 
 ### Set Page Setup
 
-**Sintassi:** obj << Set Page Setup( <margins(left, top, right, bottom)>, <scale(s)>, <portrait(0|1)>, <paper size(p)>, <Table of Contents(always, never, default)>  )
+**Sintassi:** obj &lt;&lt; Set Page Setup( &lt;margins(left, top, right, bottom)&gt;, &lt;scale(s)&gt;, &lt;portrait(0|1)&gt;, &lt;paper size(p)&gt;, &lt;Table of Contents(always, never, default)&gt; )
 
 **Descrizione:** Imposta le informazioni di impostazione della pagina che vengono utilizzate durante la stampa o il salvataggio in formato pdf. È possibile generare facoltativamente un sommario dai riquadri.
 
@@ -3564,7 +3522,7 @@ w << Save pdf( "$DOCUMENTS\test.pdf" );
 
 ### Set Print Footers
 
-**Sintassi:** obj << Set Print Footers( left footer, center footer, right header )
+**Sintassi:** obj &lt;&lt; Set Print Footers( left footer, center footer, right header )
 
 **Descrizione:** Imposta i piè di pagina a sinistra, al centro e a destra per l&apos;output stampato.
 
@@ -3583,7 +3541,7 @@ w << Print Window;
 
 ### Set Print Headers
 
-**Sintassi:** obj << Set Print Headers( left header, center header, right header )
+**Sintassi:** obj &lt;&lt; Set Print Headers( left header, center header, right header )
 
 **Descrizione:** Imposta le intestazioni a sinistra, al centro e a destra per l&apos;output stampato.
 
@@ -3602,7 +3560,7 @@ w << Print Window;
 
 ### Set Property
 
-**Sintassi:** obj << Set Property( "property", value )
+**Sintassi:** obj &lt;&lt; Set Property( "property", value )
 
 **Descrizione:** Imposta il valore per la property nominata per il riquadro di visualizzazione.
 
@@ -3616,7 +3574,7 @@ bb << Set Property( "Enabled", 0 );
 
 ### Set Report Title
 
-**Sintassi:** obj << Set Report Title( "string" )
+**Sintassi:** obj &lt;&lt; Set Report Title( "string" )
 
 **Descrizione:** Cambia il titolo del report.
 
@@ -3633,7 +3591,7 @@ rbiv << Set Report Title( "New Title" );
 
 ### Set Script
 
-**Sintassi:** obj << Set Script( script )
+**Sintassi:** obj &lt;&lt; Set Script( script )
 
 **Descrizione:** Imposta l&apos;esecuzione dello script specificato quando si fa clic sul comando.
 
@@ -3650,7 +3608,7 @@ ex << Set Script( Print( "Pressed." ) );
 
 ### Set Selected
 
-**Sintassi:** obj << Set Selected( index|{index1, index2, ...}|"All",<selected>,<Run Script(0|1)> )
+**Sintassi:** obj &lt;&lt; Set Selected( index|{index1, index2, ...}|"All",&lt;selected&gt;,&lt;Run Script(0|1)&gt; )
 
 **Descrizione:** Imposta l&apos;elemento che si trova in index per essere selezionato (1) o deselezionato (0). Per impostazione predefinita questo messaggio esegue lo script per il rispettivo ListBoxBox. Usare l&apos;opzione RunScript(0) per annullare l&apos;esecuzione dello script. L&apos;uso dell&apos;opzione RunScript richiede inoltre di specificare l&apos;argomento selected poiché gli argomenti sono posizionali.
 
@@ -3704,7 +3662,7 @@ Print( lb << Get Selected );
 
 ### Set Size
 
-**Sintassi:** obj << Set Size( width,height )
+**Sintassi:** obj &lt;&lt; Set Size( width,height )
 
 **Descrizione:** Imposta la larghezza e l&apos;altezza della casella di riepilogo.
 
@@ -3722,7 +3680,7 @@ lb << Set Size( 150, 400 );
 
 ### Set Stretch
 
-**Sintassi:** obj << Set Stretch( x,y )
+**Sintassi:** obj &lt;&lt; Set Stretch( x,y )
 
 **Descrizione:** Imposta il comportamento per l&apos;estensione orizzontale e verticale del riquadro. I riquadri che si estendono con Window si ridimensioneranno al variare delle dimensioni della finestra o della barra di divisione. I riquadri che si estendono fino a Fill si estenderanno per riempire lo spazio disponibile nel loro contenitore. I riquadri con estensione impostata a Off in genere non si estendono. La maggior parte dei riquadri è impostata per impostazione predefinita a Neutral, il che significa che determineranno il loro comportamento in base ai loro riquadri figli.
 
@@ -3770,7 +3728,7 @@ New Window( "Stretch",
 
 ### Set Submenu
 
-**Sintassi:** obj << Set Submenu( index, submenu count )
+**Sintassi:** obj &lt;&lt; Set Submenu( index, submenu count )
 
 **Descrizione:** Trasforma la voce di menu "indice" in un sottomenu con le voci di menu "conteggio sottomenu"
 
@@ -3792,7 +3750,7 @@ lb << Set Submenu( 2, 3 );
 
 ### Set Summary Behavior
 
-**Sintassi:** obj << Set Summary Behavior( "Default"|"Visible"|"Collapse" )
+**Sintassi:** obj &lt;&lt; Set Summary Behavior( "Default"|"Visible"|"Collapse" )
 
 **Descrizione:** Sets the behavior of the box when a report is viewed in Summary mode.
 
@@ -3811,7 +3769,7 @@ tb << Set Summary Behavior( "Visible" );
 
 ### Set Tip
 
-**Sintassi:** obj << Set Tip( tip )
+**Sintassi:** obj &lt;&lt; Set Tip( tip )
 
 **Descrizione:** Imposta la visualizzazione del testo come descrizione quando si passa il mouse sul comando.
 
@@ -3826,7 +3784,7 @@ ex << Set Tip( "Print message to log" );
 
 ### Set Tips
 
-**Sintassi:** obj << Set Tips( Elenco di suggerimenti )
+**Sintassi:** obj &lt;&lt; Set Tips( Elenco di suggerimenti )
 
 **Descrizione:** Imposta i suggerimenti per i singoli elementi della casella di riepilogo.
 
@@ -3844,7 +3802,7 @@ lb << Set Tips( {"Tip 1", "Tip 2", "Tip 3"} );
 
 ### Set Width
 
-**Sintassi:** obj << Set Width( width )
+**Sintassi:** obj &lt;&lt; Set Width( width )
 
 **Descrizione:** Imposta la larghezza del riquadro di visualizzazione.
 
@@ -3862,7 +3820,7 @@ fb << Set Width( 400 );
 
 ### Set Window Icon
 
-**Sintassi:** obj << Set Window Icon( icon name )
+**Sintassi:** obj &lt;&lt; Set Window Icon( icon name )
 
 **Descrizione:** Imposta l&apos;icona della finestra.
 
@@ -3877,7 +3835,7 @@ w << Set Window Icon( "Scatter3D" );
 
 ### Set Window Size
 
-**Sintassi:** obj << Set Window Size( x,y )
+**Sintassi:** obj &lt;&lt; Set Window Size( x,y )
 
 **Descrizione:** Imposta le dimensioni della finestra.
 
@@ -3892,7 +3850,7 @@ w << Set Window Size( 800, 1200 );
 
 ### Set Window Title
 
-**Sintassi:** obj << Set Window Title( "string" )
+**Sintassi:** obj &lt;&lt; Set Window Title( "string" )
 
 **Descrizione:** Cambia il titolo della finestra.
 
@@ -3909,7 +3867,7 @@ rbiv << Set Window Title( "New Title" );
 
 ### Show Properties
 
-**Sintassi:** obj << Show Properties
+**Sintassi:** obj &lt;&lt; Show Properties
 
 **Descrizione:** Visualizza un editor delle proprietà per i riquadri di visualizzazione
 
@@ -3926,7 +3884,7 @@ rbiv << Show Properties();
 
 ### Show Tree Structure
 
-**Sintassi:** obj << Show Tree Structure
+**Sintassi:** obj &lt;&lt; Show Tree Structure
 
 **Descrizione:** Visualizza la struttura gerarchica del riquadro di visualizzazione e dei nodi correlati.
 
@@ -3943,7 +3901,7 @@ rbiv << Show Tree Structure();
 
 ### Show Window
 
-**Sintassi:** obj << Show Window( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Window( state=0|1 )
 
 **Descrizione:** Mostra/Nasconde la finestra. Questa opzione è utile per nascondere temporaneamente le finestre. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -3961,7 +3919,7 @@ w << Show Window( 1 );
 
 ### Sib
 
-**Sintassi:** obj << Sib
+**Sintassi:** obj &lt;&lt; Sib
 
 **Descrizione:** Restituisce l&apos;elemento di pari livello del riquadro di visualizzazione.
 
@@ -3980,7 +3938,7 @@ Print( axisSibling << Class Name() );
 
 ### Sib Append
 
-**Sintassi:** obj << Sib Append( Display box, Horizontal|Vertical )
+**Sintassi:** obj &lt;&lt; Sib Append( Display box, Horizontal|Vertical )
 
 **Descrizione:** Aggiunge un riquadro di visualizzazione immediatamente dopo questo.
 
@@ -4002,7 +3960,7 @@ fb << sib append( Text Box( "=== below ===" ), "Vertical" );
 
 ### Sib Prepend
 
-**Sintassi:** obj << Sib Prepend( Display box, Horizontal|Vertical )
+**Sintassi:** obj &lt;&lt; Sib Prepend( Display box, Horizontal|Vertical )
 
 **Descrizione:** Aggiunge un riquadro di visualizzazione immediatamente prima di questo.
 
@@ -4024,7 +3982,7 @@ fb << sib prepend( Text Box( "=== above ===" ), "Vertical" );
 
 ### Size Window
 
-**Sintassi:** obj << Size Window( x,y )
+**Sintassi:** obj &lt;&lt; Size Window( x,y )
 
 **Descrizione:** Imposta le dimensioni della finestra.
 
@@ -4039,9 +3997,7 @@ w << Size Window( 500, 500 );
 
 ### Text Color
 
-**Sintassi:** obj << Text Color( color );
-
-color = obj << Get Text Color
+**Sintassi:** obj &lt;&lt; Text Color( color );color = obj &lt;&lt; Get Text Color
 
 **Descrizione:** Il testo sarà visualizzato nel colore del testo, se impostato. Se questa proprietà non è stata impostata, il riquadro assumerà il colore del testo del riquadro che lo contiene.
 
@@ -4063,7 +4019,7 @@ tb << Text Color( "Red" );
 
 ### Top Parent
 
-**Sintassi:** obj << Top Parent
+**Sintassi:** obj &lt;&lt; Top Parent
 
 **Descrizione:** Restituisce il riquadro di visualizzazione principale di livello superiore a questo.
 
@@ -4081,13 +4037,11 @@ Print( rootParent << Class Name() );
 
 ### UI Only
 
-**Sintassi:** obj << UI Only( state=0|1 );
-
-state = obj << Get UI Only
+**Sintassi:** obj &lt;&lt; UI Only( state=0|1 );state = obj &lt;&lt; Get UI Only
 
 ### Update Window
 
-**Sintassi:** obj << Update Window
+**Sintassi:** obj &lt;&lt; Update Window
 
 **Descrizione:** Aggiorna la finestra mantenendo il riquadro di visualizzazione se sono presenti regioni invalidate.  Il messaggio <<Inval crea regioni invalidate.
 
@@ -4139,9 +4093,7 @@ New Window( "rect",
 
 ### User Resizable
 
-**Sintassi:** obj << User Resizable;
-
-obj << Get User Resizable
+**Sintassi:** obj &lt;&lt; User Resizable;obj &lt;&lt; Get User Resizable
 
 **Descrizione:** Se il riquadro è ridimensionabile dall&apos;utente, il cursore cambierà in prossimità dei bordi inferiore e destro per consentire di ridimensionare il riquadro in modalità drag-and-drop.
 
@@ -4178,9 +4130,7 @@ scroll << User Resizable( {0, 0} );
 
 ### Vertical Alignment
 
-**Sintassi:** obj << Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );
-
-"Default"|"Top"|"Center"|"Bottom" = obj << Get Vertical Alignment
+**Sintassi:** obj &lt;&lt; Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );"Default"|"Top"|"Center"|"Bottom" = obj &lt;&lt; Get Vertical Alignment
 
 **Descrizione:** L&apos;allineamento verticale controlla il posizionamento del riquadro all&apos;interno di un contenitore se il riquadro non riempie l&apos;intero spazio.
 
@@ -4202,9 +4152,7 @@ lb << Vertical Alignment( "Bottom" );
 
 ### Visibility
 
-**Sintassi:** obj << Visibility( "Visible"|"Hidden"|"Collapse" );
-
-"Visible"|"Hidden"|"Collapse" = obj << Get Visibility
+**Sintassi:** obj &lt;&lt; Visibility( "Visible"|"Hidden"|"Collapse" );"Visible"|"Hidden"|"Collapse" = obj &lt;&lt; Get Visibility
 
 **Descrizione:** La visibilità determina se mostrare un riquadro e se richiede spazio. Il valore predefinito di "Visible" significa che l&apos;oggetto verrà mostrato. Un riquadro "Hidden" non viene mostrato ma richiede spazio, mentre un riquadro "Collapsed" non richiede spazio nel layout.
 
@@ -4225,7 +4173,7 @@ Show( tb << Get Visibility );
 
 ### Window Class Name
 
-**Sintassi:** obj << Window Class Name
+**Sintassi:** obj &lt;&lt; Window Class Name
 
 **Descrizione:** Restituisce il nome della classe della finestra per il riquadro di visualizzazione.
 
@@ -4243,7 +4191,7 @@ Show( rbiv << Window Class Name() );
 
 ### XPath
 
-**Sintassi:** obj << XPath( XPath expression, <English(0|1)>, <NoData(0|1)> )
+**Sintassi:** obj &lt;&lt; XPath( XPath expression, &lt;English(0|1)&gt;, &lt;NoData(0|1)&gt; )
 
 **Descrizione:** Applica un&apos;espressione XPath alla rappresentazione XML della struttura di visualizzazione e restituisce i risultati. Di default, le stringhe vengono restituite nella lingua locale e l&apos;XML include i valori dei dati all&apos;interno di alcuni riquadri. Usare l&apos;opzione English per restituire le stringhe in inglese, se disponibili. Usare l&apos;opzione NoData per omettere i valori dei dati all&apos;interno dei riquadri, utile per le prestazioni quando la query si basa solo sugli attributi dei riquadri.
 
@@ -4323,7 +4271,7 @@ biv = dt << Run Script( "Bivariate" );
 
 ### Zoom Window
 
-**Sintassi:** obj << Zoom Window
+**Sintassi:** obj &lt;&lt; Zoom Window
 
 **Descrizione:** Ridimensiona la finestra in modo che sia sufficientemente grande da mostrarne tutto il contenuto.
 

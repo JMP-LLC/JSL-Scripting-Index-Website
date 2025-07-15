@@ -2,11 +2,9 @@
 
 
 
-## 函数
-
 ### Alignment Cell Box
 
-**语法:** y = Alignment Cell Box( row, col, nRow, nCol, <Sides(left+2*top+4*right+8*bottom=15)> <RowSpan(nRow matrix)> <ColSpan(nCol matrix)>, matrix or list of strings )
+**语法:** y = Alignment Cell Box( row, col, nRow, nCol, &lt;Sides(left+2*top+4*right+8*bottom=15)&gt; &lt;RowSpan(nRow matrix)&gt; &lt;ColSpan(nCol matrix)&gt;, matrix or list of strings )
 
 **说明:** 返回对显示框的引用，该显示框包含对齐网格框内的行（或列）内容。
 
@@ -130,7 +128,7 @@ ashape = Alpha Shape( triang );
 
 ### Border Box
 
-**语法:** y = Border Box( <Left( pix )>, <Right( pix )>, <Top( pix )>, <Bottom( pix )>, <Sides( 0 )>, displayBoxArg )
+**语法:** y = Border Box( &lt;Left( pix )&gt;, &lt;Right( pix )&gt;, &lt;Top( pix )&gt;, &lt;Bottom( pix )&gt;, &lt;Sides( 0 )&gt;, displayBoxArg )
 
 **说明:** 返回一个显示框以在参数显示框周围添加空间。
 
@@ -152,7 +150,7 @@ New Window( "Example",
 
 ### Box Plot Seg
 
-**语法:** b = Box Plot Seg(<data>, <frequency>, <weight>, <vertical=0|1>)
+**语法:** b = Box Plot Seg(&lt;data&gt;, &lt;frequency&gt;, &lt;weight&gt;, &lt;vertical=0|1&gt;)
 
 **说明:** 返回基于传入的 x 和 y 值表示箱线图的显示段。
 
@@ -171,7 +169,7 @@ seg = (g[FrameBox( 1 )] << Find Seg( "Box Plot Seg" ));
 
 ### Busy Light
 
-**语法:** y = Busy Light( < <<Automatic(0|1)>, <Size(x, y)>, < <<Disable> )
+**语法:** y = Busy Light( &lt; &lt;&lt;Automatic(0|1)&gt;, &lt;Size(x, y)&gt;, &lt; &lt;&lt;Disable&gt; )
 
 **说明:** 创建指示繁忙过程的旋转图像。
 
@@ -216,7 +214,7 @@ New Window( "Calendar Box Example", Calendar Box() );
 
 ### Check Box
 
-**语法:** y = Check Box( {item, ...}, <script> )
+**语法:** y = Check Box( {item, ...}, &lt;script&gt; )
 
 **说明:** 返回一个显示框以显示一个或多个复选框。
 
@@ -281,7 +279,7 @@ dt = New Window( "Example",
 
 ### Col List Box
 
-**语法:** y = Col List Box( <Data Table( name )>, <all>|<character|numeric>, <width( pix )>, <grouped>, <maxSelected( n )>, <nlines( n )>, <MaxItems( n )>, <MinItems( n )>, <onChange( expr )>, < <<Modeling Type({"Any","Continuous","Nominal","Ordinal","Multiple Response","Unstructured Text","Vector","None","Row State"}) >, < << Set Data Type(Any|Numeric|Character)>, <script> )
+**语法:** y = Col List Box( &lt;Data Table( name )&gt;, &lt;all&gt;|&lt;character|numeric&gt;, &lt;width( pix )&gt;, &lt;grouped&gt;, &lt;maxSelected( n )&gt;, &lt;nlines( n )&gt;, &lt;MaxItems( n )&gt;, &lt;MinItems( n )&gt;, &lt;onChange( expr )&gt;, &lt; &lt;&lt;Modeling Type({"Any","Continuous","Nominal","Ordinal","Multiple Response","Unstructured Text","Vector","None","Row State"}) &gt;, &lt; &lt;&lt; Set Data Type(Any|Numeric|Character)&gt;, &lt;script&gt; )
 
 **说明:** 返回显示框以显示列表框，从而选择数据表列。使用“<<Modeling Type”消息允许专业建模类型，或限制允许的类型。“"Any"”的默认值将允许包含经典建模类型（"Continuous"、"Nominal"、"Ordinal"）的任意列。
 
@@ -351,7 +349,7 @@ New Window( "test",
 
 ### Column Dialog
 
-**语法:** y = Column Dialog( <var = ColList("Label", <Min Col(min)>, <Max Col(max)>, <Width(w)>, <Data Type("Numeric"|"Character"|"Any")>, <Modeling Type({<"Continuous">, <"Nominal">, <"Ordinal">, <"None">, <"Multiple Response">, <"Unstructured Text">, <"Vector">})> )>, <var=EditText("string")>, <var=EditNumber(num)>, <var=Check Box( "Text", 0|1)>, <var=RadioButtons( "a", "b" )>, <var=Combo Box("choice1", ...)>, <HList(box, ...)>, <VList(box, ...)>, <LineUp(ncol, box, ...)>, <Text Box("string")>, <Window Title("title")>, <Window Icon("icon string")>, <Dialog Description("description")>, <Recall(script)>, <Help Script(script)>)
+**语法:** y = Column Dialog( &lt;var = ColList("Label", &lt;Min Col(min)&gt;, &lt;Max Col(max)&gt;, &lt;Width(w)&gt;, &lt;Data Type("Numeric"|"Character"|"Any")&gt;, &lt;Modeling Type({&lt;"Continuous"&gt;, &lt;"Nominal"&gt;, &lt;"Ordinal"&gt;, &lt;"None"&gt;, &lt;"Multiple Response"&gt;, &lt;"Unstructured Text"&gt;, &lt;"Vector"&gt;})&gt; )&gt;, &lt;var=EditText("string")&gt;, &lt;var=EditNumber(num)&gt;, &lt;var=Check Box( "Text", 0|1)&gt;, &lt;var=RadioButtons( "a", "b" )&gt;, &lt;var=Combo Box("choice1", ...)&gt;, &lt;HList(box, ...)&gt;, &lt;VList(box, ...)&gt;, &lt;LineUp(ncol, box, ...)&gt;, &lt;Text Box("string")&gt;, &lt;Window Title("title")&gt;, &lt;Window Icon("icon string")&gt;, &lt;Dialog Description("description")&gt;, &lt;Recall(script)&gt;, &lt;Help Script(script)&gt;)
 
 **说明:** 使用模态窗口（其中带有用于选择数据表列的字段）提示用户。指定内容可包含若干类型的输入框以及用于组织窗口的容器框。
 
@@ -389,7 +387,7 @@ Column Dialog(
 
 ### Combo Box
 
-**语法:** y = Combo Box( {item <( tipstr )>, ...}, <script> )
+**语法:** y = Combo Box( {item &lt;( tipstr )&gt;, ...}, &lt;script&gt; )
 
 **说明:** 返回一个显示框以显示具有弹出式菜单的组合框。组合框中的每一项都可以具有一个可选的工具提示，提示内容通过项文本字符串后面括号内的字符串指定。
 
@@ -427,7 +425,7 @@ New Window( "Example",
 
 ### Contour Seg
 
-**语法:** me = Contour Seg( Triangulation, [ levels ], < zColor([colors], <Cycle Colors|Interpolate Colors>) >, < Transparency([] | t) >
+**语法:** me = Contour Seg( Triangulation, [ levels ], &lt; zColor([colors], &lt;Cycle Colors|Interpolate Colors&gt;) &gt;, &lt; Transparency([] | t) &gt;
 
 **说明:** 返回表示三角测量等高线的显示段。可以针对每个水平选择将颜色指定为矩阵或列表。透明度可以指定为数值或矩阵。
 
@@ -456,7 +454,7 @@ New Window( "Contour Seg Example",
 
 ### Current Report
 
-**语法:** y = Current Report( <Project(title|index|box|window)> )
+**语法:** y = Current Report( &lt;Project(title|index|box|window)&gt; )
 
 **说明:** 返回对当前项目中当前报表的显示框引用（若项目中没有运行脚本则没有项目）。
 
@@ -475,7 +473,7 @@ Current Report();
 
 ### Current Window
 
-**语法:** y = Current Window( <Project(title|index|box|window)> )
+**语法:** y = Current Window( &lt;Project(title|index|box|window)&gt; )
 
 **说明:** 返回对当前项目中的当前窗口的引用（若项目中没有运行脚本则没有项目）。
 
@@ -578,7 +576,7 @@ New Window( "Selection Filter",
 
 ### Data Grid Box
 
-**语法:** y = Data Grid Box(  )
+**语法:** y = Data Grid Box( )
 
 **说明:** 返回可存放数据表的显示框。
 
@@ -750,7 +748,7 @@ New Window( "Example",
 
 ### Expr As Picture
 
-**语法:** y = Expr As Picture( expr( ... ), <width in pixels>, <Max Matrix Size( dim )> )
+**语法:** y = Expr As Picture( expr( ... ), &lt;width in pixels&gt;, &lt;Max Matrix Size( dim )&gt; )
 
 **说明:** 返回包含指定表达式作为公式图片的图像。默认宽度是 600 像素，默认最大矩阵大小是 100。
 
@@ -772,7 +770,7 @@ New Window( "Example",
 
 ### Filter Col Selector
 
-**语法:** y = Filter Col Selector(<Data Table(name)>, <width(pixels)>, <nlines(n)>, <script>, <onchange(expr)>)
+**语法:** y = Filter Col Selector(&lt;Data Table(name)&gt;, &lt;width(pixels)&gt;, &lt;nlines(n)&gt;, &lt;script&gt;, &lt;onchange(expr)&gt;)
 
 **说明:** 返回包含项列表的显示框。该控件允许进行列过滤。
 
@@ -838,7 +836,7 @@ Print( Get Project List() << Get Window Title() );
 
 ### Get Window
 
-**语法:** window = Get Window( <Project(title|index|box|window)>, <Type(string)>, title|index|box )
+**语法:** window = Get Window( &lt;Project(title|index|box|window)&gt;, &lt;Type(string)&gt;, title|index|box )
 
 **说明:** 按标题、索引或框返回对特定打开窗口的引用。
 
@@ -880,7 +878,7 @@ window = Get Window( Project( project ), "Big Class" );
 
 ### Get Window List
 
-**语法:** windowList = Get Window List( <Project(title|index|box|window)>, <Type(string)> )
+**语法:** windowList = Get Window List( &lt;Project(title|index|box|window)&gt;, &lt;Type(string)&gt; )
 
 **说明:** 返回所有打开窗口的列表。
 
@@ -1026,7 +1024,7 @@ New Window( "Example",
 
 ### H Center Box
 
-**语法:** y = H Center Box( <childbox> )
+**语法:** y = H Center Box( &lt;childbox&gt; )
 
 **说明:** 返回一个显示框，其中 childbox 显示框参数在由中心框的该子级框和所有其他平级框的最大大小所确定的水平空间中居中。
 
@@ -1053,7 +1051,7 @@ New Window( "test",
 
 ### H List Box
 
-**语法:** y = H List Box( <Align( center|bottom )>, displayBox, ... )
+**语法:** y = H List Box( &lt;Align( center|bottom )&gt;, displayBox, ... )
 
 **说明:** 返回一个显示框，其中以水平布局排列参数指定的显示框。<<Hold 消息用于指示工作表获取将被摘录的报表的所有权。可选的 Align 参数用于将显示框中的内容“bottom”对齐或“center”对齐。
 
@@ -1070,7 +1068,7 @@ New Window( "Example",
 
 ### H Scroll Box
 
-**语法:** y = H Scroll Box( <Size( x )>, displayBox )
+**语法:** y = H Scroll Box( &lt;Size( x )&gt;, displayBox )
 
 **说明:** 返回一个使用水平滚动条的显示框，该框中放置更大的子框。
 
@@ -1099,7 +1097,7 @@ New Window( "Example",
 
 ### H Sheet Box
 
-**语法:** y = H Sheet Box( <<Hold( rpt ), displayBox, ... )
+**语法:** y = H Sheet Box( &lt;&lt;Hold( rpt ), displayBox, ... )
 
 **说明:** 返回一个显示框，其中以水平布局排列参数指定的显示框。<<Hold 消息用于指示工作表获取将被摘录的报表的所有权。可选的 Align 参数用于将显示框中的内容“right”对齐或“center”对齐。
 
@@ -1149,7 +1147,7 @@ New Window( "Example",
 
 ### H Splitter Box
 
-**语法:** y = H Splitter Box( <Size(x,y)>, displayBox, ... )
+**语法:** y = H Splitter Box( &lt;Size(x,y)&gt;, displayBox, ... )
 
 **说明:** 返回一个显示框，它可以交互式控制大小，以水平方式组织其他显示框。子级大小指定为一定比例的 Splitter Box 宽度或高度。可选 Size 参数仅用于最顶层的拆分窗口框；低级别框的大小与其他子级框类似。
 
@@ -1204,7 +1202,7 @@ New Window( "Example",
 
 ### Hist Seg
 
-**语法:** b = Hist Seg([data], <[freq data]>,<[weight data]>, <vertical=0|1>, <Row States()>)
+**语法:** b = Hist Seg([data], &lt;[freq data]&gt;,&lt;[weight data]&gt;, &lt;vertical=0|1&gt;, &lt;Row States()&gt;)
 
 **说明:** 返回直方图段
 
@@ -1289,7 +1287,7 @@ frenchBox << Set( 1 );
 
 ### If Seg
 
-**语法:** seg = If Seg(<state=0|1>)
+**语法:** seg = If Seg(&lt;state=0|1&gt;)
 
 **说明:** 返回显示或隐藏显示段子级的显示段。
 
@@ -1356,7 +1354,7 @@ New Window( "Distribution of Height",
 
 ### Line Seg
 
-**语法:** ls = Line Seg(x values, y values, <Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) >, < Sizes( s ) > )>)
+**语法:** ls = Line Seg(x values, y values, &lt;Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) &gt;, &lt; Sizes( s ) &gt; )&gt;)
 
 **说明:** 返回包含连接所有 x 和 y 值的线条的显示段。
 
@@ -1425,7 +1423,7 @@ seg = (frame << Find Seg( "Lines Seg" ));
 
 ### Lineup Box
 
-**语法:** y = Lineup Box( <NCol( nc )>, <Spacing( pixels, <vspace> )>, displayBoxArgs, ... )
+**语法:** y = Lineup Box( &lt;NCol( nc )&gt;, &lt;Spacing( pixels, &lt;vspace&gt; )&gt;, displayBoxArgs, ... )
 
 **说明:** 返回一个显示框以显示 nc 列中框的对齐方式。可选的 Spacing 参数指定显示框周围的水平和垂直间距。若使用 vspace 参数，则 vspace 为垂直间距，而 pixels 为水平间距。
 
@@ -1447,7 +1445,7 @@ New Window( "Example",
 
 ### Lineup Ruler Box
 
-**语法:** y = Lineup Box( <Widths( {width1, width2, ...} )>, displayBoxArgs, ... )
+**语法:** y = Lineup Box( &lt;Widths( {width1, width2, ...} )&gt;, displayBoxArgs, ... )
 
 **说明:** 返回一个显示框，它设置其所包含的排列框的列宽。
 
@@ -1485,7 +1483,7 @@ New Window( "Lineup Ruler",
 
 ### List Box
 
-**语法:** y = List Box( {item, ...}, <width( pixels )>, <maxSelected( 9999 )>, <nlines( 12 )>, <script> )
+**语法:** y = List Box( {item, ...}, &lt;width( pixels )&gt;, &lt;maxSelected( 9999 )&gt;, &lt;nlines( 12 )&gt;, &lt;script&gt; )
 
 **说明:** 返回一个显示框以显示选择项的列表框。若“item”本身就是一个两项目列表（包含项名称和指定模型类型或排序顺序的字符串，例如“"Ordinal"”或“"Ascending"”），则列表框中该项的旁边会显示相应的图标。
 
@@ -1518,7 +1516,7 @@ New Window( "Example",
 
 ### Marker Seg
 
-**语法:** me = Marker Seg( x, y, < Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) >, < Sizes( s ) > )
+**语法:** me = Marker Seg( x, y, &lt; Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) &gt;, &lt; Sizes( s ) &gt; )
 
 **说明:** 返回包含所有 x 和 y 值的标记的显示段。
 
@@ -1638,7 +1636,7 @@ New Window( "Marker Seg Example",
 
 ### Matrix Box
 
-**语法:** y = Matrix Box( matrix, < <<Column Names( "c1", "c2", ... )>, < <<Row Names( "r1", "r2", ... )> )
+**语法:** y = Matrix Box( matrix, &lt; &lt;&lt;Column Names( "c1", "c2", ... )&gt;, &lt; &lt;&lt;Row Names( "r1", "r2", ... )&gt; )
 
 **说明:** 返回一个显示框以显示数字矩阵。
 
@@ -1705,7 +1703,7 @@ New Window( "Example",
 
 ### Move to Project
 
-**语法:** Move to Project(<Source(project)>, <Destination(project)>, <Windows({list of windows to move})>)
+**语法:** Move to Project(&lt;Source(project)&gt;, &lt;Destination(project)&gt;, &lt;Windows({list of windows to move})&gt;)
 
 **说明:** 将一个或多个窗口移入项目，移出项目或在项目之间移动。只能指定 Source 和 Destination 中的一个；另一个默认为当前项目。（仅使用 Source 将窗口移入当前项目，仅使用 Destination 将窗口移出项目。）数据表窗口将与其相关报表一起移动，尽管在 Windows 参数中只需指定一个。若忽略，则 Windows 参数默认为源项目中的所有打开窗口。
 
@@ -1738,17 +1736,7 @@ project << Close Window();
 
 ### New Image
 
-**语法:** img = New Image()
-
-img = New Image( width, height )
-
-img = New Image( pathname )
-
-img = New Image( picture )
-
-img = New Image( matrix of JSL color pixels ) 
-
-img = New Image( rgb|r|g|rgba, {i, i, i} )
+**语法:** img = New Image()img = New Image( width, height )img = New Image( pathname )img = New Image( picture )img = New Image( matrix of JSL color pixels ) img = New Image( rgb|r|g|rgba, {i, i, i} )
 
 **说明:** 返回可通过 JSL 命令编辑的新图像。若将路径指定为现有图像文件，则文件应该为 .JPG、.PNG、.GIF、.BMP 或 .TIF 文件。
 
@@ -1794,7 +1782,7 @@ New Window( "image", image3 );
 
 ### New Project
 
-**语法:** project = new Project( <project messages> )
+**语法:** project = new Project( &lt;project messages&gt; )
 
 **说明:** 创建新的空项目窗口。为了一步创建项目，可以将一个或多个项目消息作为参数包括在内。
 
@@ -1882,7 +1870,7 @@ project = New Project(
 
 ### New Window
 
-**语法:** w = New Window( title, < <<Type("Report" | "Dialog" | "Modal Dialog" | "Journal" | "Launcher" | "Script")>, < << Return Result>, < << On Open(expr | function | method)>, < << On Close(expr | function | method)>, < <<On Validate(expr | function | method)>, < <<Show Menu(0 | 1)>, < <<Show Toolbars(0 | 1)>, < <<Suppress AutoHide(0 | 1)>, < <<Window View("Visible" | "Invisible")>, < <<Language("C" | "JavaScript" | "JSL" | "JSON" | "Python" | "R" | "SAS"  | "SQL" | "Text" | "XML")>, < <<Size(x, y)>, displayBox | script)
+**语法:** w = New Window( title, &lt; &lt;&lt;Type("Report" | "Dialog" | "Modal Dialog" | "Journal" | "Launcher" | "Script")&gt;, &lt; &lt;&lt; Return Result&gt;, &lt; &lt;&lt; On Open(expr | function | method)&gt;, &lt; &lt;&lt; On Close(expr | function | method)&gt;, &lt; &lt;&lt;On Validate(expr | function | method)&gt;, &lt; &lt;&lt;Show Menu(0 | 1)&gt;, &lt; &lt;&lt;Show Toolbars(0 | 1)&gt;, &lt; &lt;&lt;Suppress AutoHide(0 | 1)&gt;, &lt; &lt;&lt;Window View("Visible" | "Invisible")&gt;, &lt; &lt;&lt;Language("C" | "JavaScript" | "JSL" | "JSON" | "Python" | "R" | "SAS" | "SQL" | "Text" | "XML")&gt;, &lt; &lt;&lt;Size(x, y)&gt;, displayBox | script)
 
 **说明:** 创建包含指定显示框或脚本的窗口。默认会创建报表窗口，除非指定了 Type 选项。Type("Modal Dialog") 的窗口会停止执行，直到对话框有反应。On Open、On Validate 和 Return Result 仅可用于模态窗口。创建窗口时，On Open() 计算其表达式、函数或类方法。若 On Close() 返回 false，则阻止该窗口关闭。当点击“确定”按钮时，On Validate() 运行其表达式、函数或类方法。若表达式返回 true，则该窗口关闭。否则该窗口保持打开。当它关闭以匹配废弃 Dialog() 函数时，Return Result 更改窗口的返回值。对于支持工具栏的窗口类型，使用 Show Toolbars 指定对默认行为的更改。选项 Show Menu 和 Suppress AutoHide 仅限 Windows。Window View("Invisible") 选项可以用于除 Modal Dialog 之外的任何窗口。Type("Script") 的窗口会创建 JSL 文档，除非指定了 <<Language 选项。
 
@@ -2073,7 +2061,7 @@ New Window( "Example",
 
 ### Number Edit Box
 
-**语法:** y = Number Edit Box( initValue, <width> )
+**语法:** y = Number Edit Box( initValue, &lt;width&gt; )
 
 **说明:** 返回仅接受数值输入的编辑框。指定可选 width 参数以设置用字符数表示的框宽度。
 
@@ -2089,7 +2077,7 @@ x = neb << get;
 
 ### Outline Box
 
-**语法:** y = Outline Box( title, <command script pairs list>, displayBox, ... )
+**语法:** y = Outline Box( title, &lt;command script pairs list&gt;, displayBox, ... )
 
 **说明:** 在报表中创建分级显示元素，返回显示框引用。要在分级显示节点中包含菜单，请指定 command script pairs list，即用于指定菜单命令和相关脚本的列表。
 
@@ -2189,7 +2177,7 @@ New Window( "Example", Picture Box( pict ) );
 
 ### Pie Seg
 
-**语法:** ps = Pie Seg(<{ xorigin, yorigin }>, <radius>, <style("pie", "ring", "coxcomb")>, values)
+**语法:** ps = Pie Seg(&lt;{ xorigin, yorigin }&gt;, &lt;radius&gt;, &lt;style("pie", "ring", "coxcomb")&gt;, values)
 
 **说明:** 以指定的 origin，以指定的 radius，基于采用矩阵格式指定的值创建饼图段。
 
@@ -2302,7 +2290,7 @@ New Window( "Example",
 
 ### Radio Box
 
-**语法:** y = Radio Box( {item, ...}, <script> )
+**语法:** y = Radio Box( {item, ...}, &lt;script&gt; )
 
 **说明:** 返回一个显示框以显示一组单选按钮。
 
@@ -2415,7 +2403,7 @@ exScene << update;
 
 ### Script Box
 
-**语法:** y = Script Box( <s>, <"C" | "JavaScript" | "JSL" | "JSON" | "Python" | "R" | "SAS" | "SQL" | "Text" | "XML">, <width>, <height> )
+**语法:** y = Script Box( &lt;s&gt;, &lt;"C" | "JavaScript" | "JSL" | "JSON" | "Python" | "R" | "SAS" | "SQL" | "Text" | "XML"&gt;, &lt;width&gt;, &lt;height&gt; )
 
 **说明:** 返回一个用于编辑脚本的显示框。默认情况下，编辑器具有 JSL 语法突出显示和行为。
 
@@ -2445,7 +2433,7 @@ New Window( "This is a python script box", Script );
 
 ### Scroll Box
 
-**语法:** y = Scroll Box( <Size( x, y )>, displayBox )
+**语法:** y = Scroll Box( &lt;Size( x, y )&gt;, displayBox )
 
 **说明:** 返回一个使用滚动条的显示框，该框中放置更大的子框。
 
@@ -2496,7 +2484,7 @@ Clear Global Window Handler();
 
 ### Shape Seg
 
-**语法:** me = Shape Seg( {Path(<path>), ...}, < Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) > )
+**语法:** me = Shape Seg( {Path(&lt;path&gt;), ...}, &lt; Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) &gt; )
 
 **说明:** 返回带一组形状的显示段。若“填充”为 0，则沿指定路径绘线；若“填充”不为 0，则在指定路径内部填充颜色。可以使用 N x 3 矩阵或文本表示法来指定路径。路径矩阵包含三列（x、y 和标志），用于指定路径上的各点。标志值为 0 表示控制，为 1 表示移动，为 2 表示线段，为 3 表示三次 Bézier 线段，还可以为负值（若该点还起到闭合路径的作用）。路径文本支持 SVG 语法。
 
@@ -2568,7 +2556,7 @@ New Window( "Example",
 
 ### Slider Box
 
-**语法:** box = Slider Box(minValue, maxValue, variable, script, <set width(n)>, <rescale slider(minValue, maxValue)>)
+**语法:** box = Slider Box(minValue, maxValue, variable, script, &lt;set width(n)&gt;, &lt;rescale slider(minValue, maxValue)&gt;)
 
 **说明:** 返回一个显示框，其显示范围从 minValue 至 maxValue 的滑块控件。当滑块的位置发生更改时，其值会放置在 variable 中并且脚本会运行。
 
@@ -2594,7 +2582,7 @@ New Window( "Example",
 
 ### Spacer Box
 
-**语法:** y = Spacer Box( <Size( x, y )>, <Color( c )>)
+**语法:** y = Spacer Box( &lt;Size( x, y )&gt;, &lt;Color( c )&gt;)
 
 **说明:** 返回显示框，该显示框可用于保持其他显示框的间距或在 Lineup Box 中填充单元格。Size 参数以像素为单位进行指定，而 Color 参数是任何有效的 JSL 颜色。
 
@@ -2617,7 +2605,7 @@ New Window( "Example",
 
 ### Spin Box
 
-**语法:** y = Spin Box( <script> )
+**语法:** y = Spin Box( &lt;script&gt; )
 
 **说明:** 返回显示框以显示带向上/向下控件的按钮。调用 script 参数，其带一个参数指示所点击箭头的方向（负值表示向下，正值表示向上）。数量级 1 表示单击，而较大的值可用于表示重复操作。
 
@@ -2704,7 +2692,7 @@ New Window( "Example",
 
 ### Tab Page Box
 
-**语法:** y = Tab Page Box( <Title("string")>, <Tip(0|1)>,  <Closeable(0|1)>, <Icon("string")>, <Moveable(0|1)>, contents)
+**语法:** y = Tab Page Box( &lt;Title("string")&gt;, &lt;Tip(0|1)&gt;, &lt;Closeable(0|1)&gt;, &lt;Icon("string")&gt;, &lt;Moveable(0|1)&gt;, contents)
 
 **说明:** 返回一个显示框，该框可用在“Tab Box”中或用作带标题的独立容器。可识别的选项包括用来指定标题的“Title”（字符串）、用来指定工具提示的“Tip”（字符串）、用来指定是否可关闭页的“Closeable”(0|1)、用来指定图标的“Icon”（字符串），以及用来指定是否可移动页的“Moveable”(0|1)。
 
@@ -2747,7 +2735,7 @@ New Window( "Example",
 
 ### Text Box
 
-**语法:** y = Text Box( text, <<Justify Text( strPos ), <<Set Wrap( width ) )
+**语法:** y = Text Box( text, &lt;&lt;Justify Text( strPos ), &lt;&lt;Set Wrap( width ) )
 
 **说明:** 构造一个显示框，其中包含字符串参数 text 中的文本。可选参数可以用于控制文本的对齐方式或设置文本换行宽度。用于 Justify Text 的参数应为包含 left、right 或 center 的字符串。
 
@@ -2786,7 +2774,7 @@ New Window( "Justification Example",
 
 ### Text Edit Box
 
-**语法:** y = Text Edit Box( text, <<Password Style( bool ), <<Set Script( script ), <<Set Width( value ) )
+**语法:** y = Text Edit Box( text, &lt;&lt;Password Style( bool ), &lt;&lt;Set Script( script ), &lt;&lt;Set Width( value ) )
 
 **说明:** 构造包含带引号字符串 text 的可编辑框，返回对显示框的引用。此外，还提供了可选参数，用于控制文本的显示，将脚本附加到文本框，以及设置文本框的宽度（以像素为单位）。指定 Set Width(-1) 会强制重新调整大小以适合内容。注意: 通过将脚本添加为可选参数或通过发送 Set Script 消息，都能将脚本附加到文本框。
 
@@ -2846,7 +2834,7 @@ If(
 
 ### Tree Box
 
-**语法:** tree = Tree Box( <{rootnodes}>, <Size( x, y )>, <Multiselect( 0|1 )> )
+**语法:** tree = Tree Box( &lt;{rootnodes}&gt;, &lt;Size( x, y )&gt;, &lt;Multiselect( 0|1 )&gt; )
 
 **说明:** 构造用于显示层次信息的显示框。
 
@@ -2874,7 +2862,7 @@ New Window( "TreeBox", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
 
 ### Tree Node
 
-**语法:** node = Tree Node( <label> )
+**语法:** node = Tree Node( &lt;label&gt; )
 
 **说明:** 构造用于在树形框中显示的树形节点。
 
@@ -2902,7 +2890,7 @@ New Window( "TreeBox Nodes", tree = Tree Box( {root1, root2}, Size( 300, 200 ) )
 
 ### Triangulation
 
-**语法:** triangulation = Triangulation( X(Column1, Column2), < Y(Column) > )
+**语法:** triangulation = Triangulation( X(Column1, Column2), &lt; Y(Column) &gt; )
 
 **说明:** 返回包含给定点集的 Delaunay 三角测量的对象。可选 Y 将对重复点求平均值，并且输出中的所有点都是唯一的。
 
@@ -2953,7 +2941,7 @@ New Window( "unlineup",
 
 ### V Center Box
 
-**语法:** y = V Center Box( <childbox> )
+**语法:** y = V Center Box( &lt;childbox&gt; )
 
 **说明:** 返回一个显示框，其中 childbox 显示框参数在由中心框的该子级框和所有其他平级框的最大大小所确定的垂直空间中居中。
 
@@ -2980,7 +2968,7 @@ New Window( "test",
 
 ### V List Box
 
-**语法:** y = V List Box( <Align( center|right )>, displayBox, ... )
+**语法:** y = V List Box( &lt;Align( center|right )&gt;, displayBox, ... )
 
 **说明:** 返回一个显示框，其中以垂直布局排列参数指定的显示框。<<Hold 消息用于指示工作表获取将被摘录的报表的所有权。可选的 Align 参数用于将显示框中的内容“right”对齐或“center”对齐。
 
@@ -2997,7 +2985,7 @@ New Window( "Example",
 
 ### V Scroll Box
 
-**语法:** y = V Scroll Box( <Size( y )>, displayBox )
+**语法:** y = V Scroll Box( &lt;Size( y )&gt;, displayBox )
 
 **说明:** 返回一个使用垂直滚动条的显示框，该框中放置更大的子框。
 
@@ -3028,7 +3016,7 @@ New Window( "Example",
 
 ### V Sheet Box
 
-**语法:** y = V Sheet Box( <<Hold( rpt ), displayBox, ... )
+**语法:** y = V Sheet Box( &lt;&lt;Hold( rpt ), displayBox, ... )
 
 **说明:** 返回一个显示框，其中以垂直布局排列参数指定的显示框。<<Hold 消息用于指示工作表获取将被摘录的报表的所有权。可选的 Align 参数用于将显示框中的内容“right”对齐或“center”对齐。
 
@@ -3078,7 +3066,7 @@ New Window( "Example",
 
 ### V Splitter Box
 
-**语法:** y = V Splitter Box( <Size(x,y)>, displayBox, ... )
+**语法:** y = V Splitter Box( &lt;Size(x,y)&gt;, displayBox, ... )
 
 **说明:** 返回一个显示框，它可以交互式控制大小，以垂直方式组织其他显示框。子级大小指定为一定比例的 Splitter Box 宽度或高度。可选 Size 参数仅用于最顶层的拆分窗口框；低级别框的大小与其他子级框类似。
 
@@ -3128,7 +3116,7 @@ wb << Set Max Size( 10000, 10000 );
 
 ### Window
 
-**语法:** y = Window( <string|int> )
+**语法:** y = Window( &lt;string|int&gt; )
 
 **说明:** 该函数已废弃，仅为了与现有脚本向后兼容才保留。对于新脚本，使用 Get Window() 或 Get Window List()。
 

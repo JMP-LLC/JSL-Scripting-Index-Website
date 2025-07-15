@@ -2,8 +2,6 @@
 
 
 
-## 関数
-
 ### Add Vectors BLAS
 
 **構文:** z = Add Vectors BLAS( x, y, alpha )
@@ -52,7 +50,7 @@ Any( [1 0 2] );
 
 ### B Spline Coef
 
-**構文:** coef = B Spline Coef( x, Internal Knot Grid, <degree = 3>, <KnotEndPoints = min(x) || max(x)> )
+**構文:** coef = B Spline Coef( x, Internal Knot Grid, &lt;degree = 3&gt;, &lt;KnotEndPoints = min(x) || max(x)&gt; )
 
 **説明:** B-スプライン曲線の係数の行列を戻す。Internal Knot Gridは、xのパーセント点に基づく、必要な節点の数か、または内部節点を指定するベクトル。オプションのパラメータdegreeは、Bスプライン曲線の次数を指定し、デフォルトの値は3。オプションのパラメータKnotEndPointsは、境界線上の節点の[下側, 上側]位置から成る2X1行列を取る。境界線上の節点は、デフォルトではxの最小値と最大値。2つ目の例は、B-スプライン曲線の係数を計画行列として使用した線形モデル。
 
@@ -174,7 +172,7 @@ Cholesky( [1 2, 2 13] );
 
 ### Correlation
 
-**構文:** y = Correlation( x , < <<"Pairwise" >, < <<"Shrink" >, < <<Freq(vector) >, < <<Weight(vector) > )
+**構文:** y = Correlation( x , &lt; &lt;&lt;"Pairwise" &gt;, &lt; &lt;&lt;"Shrink" &gt;, &lt; &lt;&lt;Freq(vector) &gt;, &lt; &lt;&lt;Weight(vector) &gt; )
 
 **説明:** 引数に指定された行列xの相関行列を戻す。引数"Pairwise"は、欠測値を行ごとにではなくペアごとに処理する。引数"Shrink"は、Schafer and Strimmer(2005)の方法で、非対角要素を縮小させる。引数Freqと引数Weightに、度数と重みのベクトルを指定することもできる。
 
@@ -189,7 +187,7 @@ Correlation( [1 3 5, 3 2 6, 5 6 1] );
 
 ### Covariance
 
-**構文:** y = Covariance( x , < <<"Pairwise" >, < <<"Shrink" >, < <<Freq(vector) >, < <<Weight(vector) > )
+**構文:** y = Covariance( x , &lt; &lt;&lt;"Pairwise" &gt;, &lt; &lt;&lt;"Shrink" &gt;, &lt; &lt;&lt;Freq(vector) &gt;, &lt; &lt;&lt;Weight(vector) &gt; )
 
 **説明:** 引数に指定された行列xの共分散行列を戻す。引数"Pairwise"は、欠測値を行ごとにではなくペアごとに処理する。引数"Shrink"は、Schafer and Strimmer(2005)の方法で、非対角要素を縮小させる。引数Freqと引数Weightに、度数と重みのベクトルを指定することもできる。
 
@@ -204,7 +202,7 @@ Covariance( [1 3 5, 3 2 6, 5 6 1] );
 
 ### Design
 
-**構文:** y = Design( v, < levelsList|<<Levels, <<ElseMissing > )
+**構文:** y = Design( v, &lt; levelsList|&lt;&lt;Levels, &lt;&lt;ElseMissing &gt; )
 
 **説明:** 1と0の列でできた計画行列を作成する。計画行列の水準のリストを指定するには、levelsList引数を使用する。<<Levels引数が指定されている場合、計画行列と水準のリストを戻す。<<ElseMissing引数が指定されている場合、levelsListに表示されない引数vの値を計画行列内で欠測値として示す。そうでない場合は、0を挿入する。
 
@@ -233,7 +231,7 @@ Show( Design( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ### Design Last
 
-**構文:** y = Design Last( v, < levelsList, <<ElseMissing > )
+**構文:** y = Design Last( v, &lt; levelsList, &lt;&lt;ElseMissing &gt; )
 
 **説明:** 0と1の指示変数を列とした計画行列を戻す。なお、最後の水準は0だけの行とし、計画行列の列には含まない。levelsList引数が指定されている場合、levelsListで最後に指定されている値が最後の水準とみなされる。そうでない場合、v内の最も大きな値が最後の水準とみなされる。<<Levels引数が指定されている場合、計画行列、および、全水準のリストが、リスト形式で戻される。<<ElseMissing引数が指定されている場合、levelsListで指定されていないv引数に対しては、計画行列で欠測値の行とする(指定されている場合には、0だけの行とする)。
 
@@ -269,7 +267,7 @@ Show( Design Last( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ### Design Nom
 
-**構文:** y = Design Nom( v, < levelsList|<<Levels, <<ElseMissing > )
+**構文:** y = Design Nom( v, &lt; levelsList|&lt;&lt;Levels, &lt;&lt;ElseMissing &gt; )
 
 **説明:** 引数の最後の一意の値以外の、1と0の列でできた計画行列を作成する。最後の水準は-1の行としてコード化する。levelsList引数が指定されている場合、最後の水準はlevelsList内の最後の水準となる。そうでない場合、最後の水準はv内の最も大きな値となる。<<Levels引数が指定されている場合、戻り値は計画行列と水準を含むリストとなる。<<ElseMissing引数が指定されている場合、levelsListに表示されない引数vの値を、計画行列内で欠測値として示す。そうでない場合は、0を挿入する。
 
@@ -305,7 +303,7 @@ Show( Design Nom( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ### Design Ord
 
-**構文:** y = Design Ord( v, < levelsList|<<Levels, <<ElseMissing > )
+**構文:** y = Design Ord( v, &lt; levelsList|&lt;&lt;Levels, &lt;&lt;ElseMissing &gt; )
 
 **説明:** 引数の最後の一意の値以外の値の列を含む計画行列を作成する。最初の水準は0の行としてコード化する。levelsList引数の後続のn番目の水準は(n-1)個の1と残りの0の行としてコード化する。<<Levels引数が指定されている場合、戻り値は計画行列と水準を含むリストとなる。<<ElseMissing引数が指定されている場合、levelsListに表示されない引数vの値を、計画行列内で欠測値として示す。 そうでない場合は、0を挿入する。
 
@@ -341,7 +339,7 @@ Show( Design Ord( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ### DesignF
 
-**構文:** y = DesignF( v, < levelsList|<<Levels, <<ElseMissing > )
+**構文:** y = DesignF( v, &lt; levelsList|&lt;&lt;Levels, &lt;&lt;ElseMissing &gt; )
 
 **説明:** 引数の最後の一意の値以外の、1と0の列でできた計画行列を作成する。最後の水準は-1の行としてコード化する。levelsList引数が指定されている場合、最後の水準はlevelsList内の最後の水準となる。そうでない場合、最後の水準はv内の最も大きな値となる。<<Levels引数が指定されている場合、戻り値は計画行列と水準を含むリストとなる。<<ElseMissing引数が指定されている場合、levelsListに表示されない引数vの値を、計画行列内で欠測値として示す。そうでない場合は、0を挿入する。
 
@@ -433,7 +431,7 @@ Show( exProd[4 :: 6, 4 :: 6] == (exB * 4) );
 
 ### Distance
 
-**構文:** y = Distance( x1, x2, <scales>, <powers> )
+**構文:** y = Distance( x1, x2, &lt;scales&gt;, &lt;powers&gt; )
 
 **説明:** x1の行とx2の行との間の距離の行列を生成する。各列の尺度とべき乗をカスタマイズしたい場合は、追加の引数scaleとpowersを指定する。クリギングでは、Exp(-distance(x1,x2))を使用する。
 
@@ -581,7 +579,7 @@ E * Diag( M ) * E`;
 
 ### Eigen BLAS
 
-**構文:** z = Eigen BLAS( X, <nvec = ncol> )
+**構文:** z = Eigen BLAS( X, &lt;nvec = ncol&gt; )
 
 **JMP追加されたバージョン:** 17
 
@@ -651,7 +649,7 @@ Estimate Factor Score(
 
 ### Fourier Basis Coef
 
-**構文:** coef = Fourier Basis Coef( x, Number Pairs, <Period = max(x)-min(x)+1> )
+**構文:** coef = Fourier Basis Coef( x, Number Pairs, &lt;Period = max(x)-min(x)+1&gt; )
 
 **説明:** フーリエ基底の計画行列を返す。Number Pairsは、基底の個数（sin関数とcos関数のペアの個数）です。オプションのパラメータPeriodで三角関数の周期を指定できる。デフォルトの周期はmax(x)-min(x) + 1。
 
@@ -704,7 +702,7 @@ Show( exProd[2, 1 :: 6] == Direct Product( exA[2, 1 :: 2], exB[2, 1 :: 3] ) );
 
 ### Hadamard
 
-**構文:** y = Hadamard( n, <normalize = 0> )
+**構文:** y = Hadamard( n, &lt;normalize = 0&gt; )
 
 **説明:** 次数nのHadamard行列を作成する。
 
@@ -719,7 +717,7 @@ Show( Hadamard( 12 ), Hadamard( 12, 1 ) );
 
 ### Hough Line Transform
 
-**構文:** accum = Hough Line Transform( matrix, <NAngle(number)> <NRadius(number)> )
+**構文:** accum = Hough Line Transform( matrix, &lt;NAngle(number)&gt; &lt;NRadius(number)&gt; )
 
 **説明:** 画像データ内で線を検出するためのハフ変換を戻す。
 
@@ -895,7 +893,7 @@ Identity( 2 );
 
 ### Index
 
-**構文:** ii = n1::n2; ii = n1::n2::n3; ii = Index( n1, n2, <n3=1>)
+**構文:** ii = n1::n2; ii = n1::n2::n3; ii = Index( n1, n2, &lt;n3=1&gt;)
 
 **説明:** n1から始まり、n3を増分としてn2まで続く値のシーケンスを含む行ベクトルを戻す。
 
@@ -940,7 +938,7 @@ Round( Inverse( [11 22, 33 44] ), 2 );
 
 ### Inv Update
 
-**構文:** y = Inv Update( S, X, <w=1> )
+**構文:** y = Inv Update( S, X, &lt;w=1&gt; )
 
 **説明:** 更新された逆行列を戻す。第1引数Sは、Xと同じ列数を持つ正値定符号の対称行列。第2引数Xは、追加または削除する行を含む行列。第3引数wは、行を追加するか削除するかを指定する(追加する場合は1を、削除する場合は-1を使用する)。この関数は、S-w*S*X`*Inv(I+w*X*S*X`)*X*Sを戻す。ここで、Iは単位行列、Inv(A)はAの逆行列。
 
@@ -1018,7 +1016,7 @@ Is Matrix( [11 22 33] );
 
 ### J
 
-**構文:** y = J( nr, <nc>, <v> ); y = J( nr, nc ); y = J( n )
+**構文:** y = J( nr, &lt;nc&gt;, &lt;v&gt; ); y = J( nr, nc ); y = J( n )
 
 **説明:** 第3引数で指定された値を含む行列(nr行nc列)を作成する。第2引数のデフォルト値は、第1引数と等しい。第3引数は、数値、数値の変数名、JSLコードのいずれでもかまわない。第3引数がJSLコードの場合、行列の要素ごとや行ごとに、コードが評価され、戻り値が各要素に割り当てられる。第3引数を省略した場合のデフォルト値は、1。
 
@@ -1074,7 +1072,7 @@ tab = KDTable( [1 1 1, 1 2 1, 1 2 2, 2 2 2, 3 3 3, 4 5 6] );
 
 ### Least Squares Solve
 
-**構文:** {Beta, VarBeta} = Least Squares Solve(y, X, <<noIntercept, <<weights(optionalWeightVector), <<method("Sweep"|"GInv"))
+**構文:** {Beta, VarBeta} = Least Squares Solve(y, X, &lt;&lt;noIntercept, &lt;&lt;weights(optionalWeightVector), &lt;&lt;method("Sweep"|"GInv"))
 
 **説明:** 推定値のベクトル、Beta = Inverse(X&apos;X)X&apos;yと、Betaの共分散行列を含むリストを戻す。オプションの引数<<noInterceptは、切片なしのモデルを指定する。オプションの引数<<weightsは、重み付き最小2乗法を行うための重みのベクトルを指定する。オプションの引数<<methodでは、正規方程式を解く上でデフォルトのSweep法と一般化逆行列("GInv")のどちらを使用するかを指定できる。
 
@@ -1092,7 +1090,7 @@ X = [1, 2, 3, 4];
 
 ### Linear Regression
 
-**構文:** {Estimates, Std_Error, Diagnostics} = Linear Regression(y, X, <<noIntercept, <<printToLog, <<weight(WeightVector), <<freq(FrequencyVector)
+**構文:** {Estimates, Std_Error, Diagnostics} = Linear Regression(y, X, &lt;&lt;noIntercept, &lt;&lt;printToLog, &lt;&lt;weight(WeightVector), &lt;&lt;freq(FrequencyVector)
 
 **説明:** y = X * beta + errorというモデルを仮定し、線形回帰をあてはめる。オプションの<<noIntercept引数は、切片なしのモデルをあてはめる。オプションの<<printToLog引数は、ログウィンドウにあてはめの要約を出力する。オプションのweight引数では、重み付き最小2乗法をあてはめるための重みのベクトルを指定する。また、オプションのfreq引数では、度数のベクトルを指定する。戻り値は、推定値のベクトルと標準誤差のベクトルのリスト、および診断統計量のリスト。 診断統計量のリストには、t値のベクトル、推定値のp値のベクトル、R2乗、自由度調整R2乗が含まれる。
 
@@ -1286,11 +1284,7 @@ AUpdate = Low Rank Symmetric Update BLAS( A, U, s );
 
 ### Matrix
 
-**構文:** y = Matrix( {{x11, ..., x1m}, {...}, {xn1, ..., xnm}} )
-
-y = Matrix( {x1, ..., xn} )
-
-y = Matrix( n, m )
+**構文:** y = Matrix( {{x11, ..., x1m}, {...}, {xn1, ..., xnm}} )y = Matrix( {x1, ..., xn} )y = Matrix( n, m )
 
 **説明:** nxm行列を作成する。m個の要素からなるリストをn個だけ用意し、それらをリストにしたものを引数に指定すると、リスト内の各リストを行にした行列が作成される。n個の要素から成るリストを1つだけ指定すると、nx1の列ベクトルが戻される。整数の引数を2つ指定すると、nxmのゼロ行列が戻される。
 
@@ -1474,7 +1468,7 @@ Print( NChooseK Matrix( 5, 3 ) );
 
 ### Ortho
 
-**構文:** L = Ortho( A, <Centered( 0 )>, <Scaled( 1 )> )
+**構文:** L = Ortho( A, &lt;Centered( 0 )&gt;, &lt;Scaled( 1 )&gt; )
 
 **説明:** 行列の列を直交化する。中心化のオプションCenteredに0を指定すると、直交化後の列の和がゼロに中心化されない。Scaledに0を指定すると、長さが1に尺度化されない。
 
@@ -1504,7 +1498,7 @@ Ortho Poly( 1 :: 10, 2 );
 
 ### P Spline Coef
 
-**構文:** coef = P Spline Coef( x, Internal Knot Grid, <degree = 3>, <KnotEndPoints = min(x) || max(x)> )
+**構文:** coef = P Spline Coef( x, Internal Knot Grid, &lt;degree = 3&gt;, &lt;KnotEndPoints = min(x) || max(x)&gt; )
 
 **説明:** P-スプライン曲線の計画行列を戻す。Internal Knot Gridには、節点の個数（位置はxのパーセント点で決められる）、もしくは、節点の位置を指定したベクトルを指定する。オプションのパラメータdegreeにはP-スプライン曲線の次数を指定する。デフォルトの次数は3。
 
@@ -1539,7 +1533,7 @@ m;/* 1*1+1  1*1+2, 2*2+1  2*2+2, 3*3+1  3*3+2 */
 
 ### Print Matrix
 
-**構文:** s = Print Matrix( M, <<ignore locale( 0 ), <<style( "parseable" ), <<separate( ", " ), <<line begin( "[ " ), <<line end( " ]" ) )
+**構文:** s = Print Matrix( M, &lt;&lt;ignore locale( 0 ), &lt;&lt;style( "parseable" ), &lt;&lt;separate( ", " ), &lt;&lt;line begin( "[ " ), &lt;&lt;line end( " ]" ) )
 
 **説明:** 行列Mを指定された形式で出力する。オプションの引数ignore localeは、小数点記号にロケール情報を考慮するかどうかを指定する。引数が0の場合、ロケールが考慮される。オプションの引数styleは、スタイルを使用するかどうか、および、どのスタイルを使用するかを指定する。使用できるスタイルは、parseable(変更されたJSL行列式)、latex、およびother。引数styleがotherの場合、最後の3つのオプション引数によって行の開始文字と終了文字、要素間の区切り文字を定義する。
 
@@ -1609,7 +1603,7 @@ y = Quadratic Form BLAS( A, x );
 
 ### Random SVD
 
-**構文:** {U, M, V} = Random SVD( X , <nSingularValues=min(nRow,nCol)>, <nOver=10>, <nIter=2>)
+**構文:** {U, M, V} = Random SVD( X , &lt;nSingularValues=min(nRow,nCol)&gt;, &lt;nOver=10&gt;, &lt;nIter=2&gt;)
 
 **説明:** ランダム化特異値分解を使用して、行列Xの特異値分解を行う。U*diag(M)*V`がXとなるようなリスト{U, M, V}を戻す。
 
@@ -1654,7 +1648,7 @@ Rank Index( [33, 22, 44, 11, ., 33] );
 
 ### Ranking
 
-**構文:** y = Ranking( x, < <<tie("average"|"row"|"minimum"|"maximum"|"arbitrary")> )
+**構文:** y = Ranking( x, &lt; &lt;&lt;tie("average"|"row"|"minimum"|"maximum"|"arbitrary")&gt; )
 
 **説明:** x値の順位のベクトルを戻す。最小値は1、最大値はn。同順位のデータに対しては恣意的な順位が与えられる。
 
@@ -1670,7 +1664,7 @@ Ranking( [22, 11, 33, 11, 44, 55, 44, 44, 44], <<Tie( "minimum" ) );
 
 ### Ranking Tie
 
-**構文:** y = Ranking Tie( x, < <<tie("average"|"row"|"minimum"|"maximum"|"arbitrary")> )
+**構文:** y = Ranking Tie( x, &lt; &lt;&lt;tie("average"|"row"|"minimum"|"maximum"|"arbitrary")&gt; )
 
 **説明:** x値の順位のベクトルを戻す。同順位のデータに対しては平均順位が与えられる。
 
@@ -1685,7 +1679,7 @@ Ranking Tie( [33, 22, 44, 11, 33] );
 
 ### Robust PCA
 
-**構文:** {A,E} = Robust PCA( X , <Lambda(2/sqrt(max(nrow,ncol)))>, <tolerance=1e-10>,<maxit(75)>,<Center(1)>,<Scale(1)>
+**構文:** {A,E} = Robust PCA( X , &lt;Lambda(2/sqrt(max(nrow,ncol)))&gt;, &lt;tolerance=1e-10&gt;,&lt;maxit(75)&gt;,&lt;Center(1)&gt;,&lt;Scale(1)&gt;
 
 **説明:** データの行列を、低ランク近似行列と残差行列に分解する。残差が大きくなっている外れ値が検出される。同時に、欠測値の補完もできる。
 
@@ -1752,7 +1746,7 @@ Scoring Impute(
 
 ### Shape
 
-**構文:** r = Shape( M, nr, <nc>, <<bycol)
+**構文:** r = Shape( M, nr, &lt;nc&gt;, &lt;&lt;bycol)
 
 **説明:** nrxncの行列になるように、行列またはスカラーのMを変形する。nrには欠測値も指定できる。Mのデータを、必要に応じて反復しながら、nrxnc行列を埋めていく。オプションの引数<<bycolを指定すると、1列ごとに順にデータを埋めていく。デフォルトでは、1行ごとに順にデータを埋めていく。通常は、ベクトルを行列にする場合や、行列をベクトルにする場合に使う。
 
@@ -1815,7 +1809,7 @@ Sort Descending( {111, 212, 133, 114, 55} );
 
 ### Sparse SVD
 
-**構文:** {U, M, V} = Sparse SVD( X , <nSingularValues=min(nRow,nCol)>, <tolerance=1e-10>)
+**構文:** {U, M, V} = Sparse SVD( X , &lt;nSingularValues=min(nRow,nCol)&gt;, &lt;tolerance=1e-10&gt;)
 
 **説明:** 疎な行列Xの特異値分解を行う。疎な行列に対して、暗黙的なリスタートと部分的な再直交化を用いたLanczos法で特異値分解を行う。U*diag(M)*V`がXとなるような{U, M, V}をリストで戻す。
 
@@ -1830,7 +1824,7 @@ Sparse SVD( [11 22, 33 44], 1, 1e-8 );
 
 ### Spline Coef
 
-**構文:** coef = Spline Coef( x, y, lambda, <weights> )
+**構文:** coef = Spline Coef( x, y, lambda, &lt;weights&gt; )
 
 **説明:** Returns a five-column matrix of coefficients in the following order: knots||a||b||c||d for each of the unique values in x. The smoothing parameter lambda must be a positive value, where larger values of lambda result in greater stiffness of the spline. The optional weights vector specifies a weight for each value in x. A weight of zero removes the corresponding point from the spline fit.
 
@@ -1845,7 +1839,7 @@ Spline Eval( 0 :: 10, Spline Coef( 0 :: 10, Sqrt( 0 :: 10 ), 100 ) );
 
 ### Spline Eval
 
-**構文:** yhat = Spline Eval( x, coef, <extrapolation=-1> )
+**構文:** yhat = Spline Eval( x, coef, &lt;extrapolation=-1&gt; )
 
 **説明:** Spline Coef()関数によって戻されるのと同じ形式のcoef行列を使ってスプラインの予測値を計算する。extrapolationには、外挿して非欠測値を戻すスプラインの範囲をどの程度までに広げるかを、範囲の割合として指定する。
 
@@ -1880,7 +1874,7 @@ New Window( "Spline Fit",
 
 ### Spline Smooth
 
-**構文:** yhat = Spline Smooth( x, y, lambda, <weights> )
+**構文:** yhat = Spline Smooth( x, y, lambda, &lt;weights&gt; )
 
 **説明:** Returns the smoothed predicted values from a spline fit. The smoothing parameter lambda must be a positive value, where larger values of lambda result in greater stiffness of the spline. The optional weights vector specifies a weight for each value in x. A weight of zero removes the corresponding point from the spline fit.
 
@@ -1895,7 +1889,7 @@ Spline Smooth( 0 :: 10, Sqrt( 0 :: 10 ), 100 );
 
 ### Sweep
 
-**構文:** y = Sweep( A, <indices> )
+**構文:** y = Sweep( A, &lt;indices&gt; )
 
 **説明:** indicesによって指定される対角ビボットにより、行列Aに掃き出し法を施す。これは、1ビボットずつ行列を逆行列に変換していく方法。
 
@@ -2074,7 +2068,7 @@ V Quantile( [11 22, 33 44, 35 46, 55 66], .25 );
 
 ### V Robust Standardize
 
-**構文:** b = V Robust Standardize( X, <center=1>, <scale=1> )
+**構文:** b = V Robust Standardize( X, &lt;center=1&gt;, &lt;scale=1&gt; )
 
 **説明:** 中央値で中心化し、行列Xの標準偏差のロバストな推定値で尺度化した行列を戻す。オプションのブール値引数は、中心化と尺度化を実行するかどうかを指定する。
 
@@ -2151,7 +2145,7 @@ tab = VPTree( [1 1 1, 1 2 1, 1 2 2, 2 2 2, 3 3 3, 4 5 6] );
 
 ### Varimax
 
-**構文:** {R,T} = Varimax( F, <norm=1> )
+**構文:** {R,T} = Varimax( F, &lt;norm=1&gt; )
 
 **説明:** Fで指定した行列のVarimax回転を実行する。回転後の行列と直交回転行列を含むリストを戻す。デフォルトでは正規化を伴うVarimax回転。正規化を伴わないVarimax回転を実行するには、normに0を指定する。
 
@@ -2198,7 +2192,7 @@ Vec Quadratic( exS, exX );
 
 ### Wavelet Basis Coef
 
-**構文:** y = Wavelet Basis Coef( x, grid, coef, <wavelet = "Haar" or "Biorthogonal" or "Coiflet" or "Daubechies" or "Symlet">, <param = 0> )
+**構文:** y = Wavelet Basis Coef( x, grid, coef, &lt;wavelet = "Haar" or "Biorthogonal" or "Coiflet" or "Daubechies" or "Symlet"&gt;, &lt;param = 0&gt; )
 
 **説明:** 指定したウェーブレットモデルの、点xにおける予測値を戻す。gridパラメータはウェーブレットモデルのデータグリッドを指定するベクトル。coefパラメータはウェーブレット係数のベクトル。waveletパラメータはウェーブレットモデルの名前。オプションのparamパラメータはウェーブレットモデルパラメータ(デフォルトは0)。
 

@@ -2,8 +2,6 @@
 
 
 
-## 함수
-
 ### R Connect
 
 **구문:** RConnection = R Connect()
@@ -173,7 +171,7 @@ R name = R JMP Name to R Name( a b c );
 
 ### R Send
 
-**구문:** R Send( name, <R Name( as_name ) | "as_name"> )
+**구문:** R Send( name, &lt;R Name( as_name ) | "as_name"&gt; )
 
 **설명:** 데이터를 R로 보냅니다. name 인수는 JMP 데이터 유형(숫자 | 문자열 | 행렬 | 목록 | 데이터 테이블| 데이터 테이블 열) 중 하나를 나타낼 수 있습니다.
 
@@ -210,7 +208,7 @@ w = R Get( "weight" );
 
 ### R Send File
 
-**구문:** R Send File( filename, <R Name( name )> )
+**구문:** R Send File( filename, &lt;R Name( name )&gt; )
 
 **설명:** 데이터 파일을 R로 보냅니다. filename 인수는 R로 보낼 파일의 경로 이름을 지정하는 문자열입니다.
 

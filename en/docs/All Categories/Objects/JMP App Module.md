@@ -6,7 +6,7 @@
 
 ### Create Instance
 
-**Syntax:** instance = obj << Create Instance( <parameters> )
+**Syntax:** instance = obj &lt;&lt; Create Instance( &lt;parameters&gt; )
 
 **Description:** Create an instance of the module.  The parameters are passed to the OnModuleLoad() function defined in the module script.
 
@@ -23,7 +23,7 @@ modules[1] << Create Instance;
 
 ### Get Application
 
-**Syntax:** app = obj << Get Application
+**Syntax:** app = obj &lt;&lt; Get Application
 
 **Description:** Returns the application that owns the module.
 

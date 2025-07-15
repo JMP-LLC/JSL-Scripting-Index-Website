@@ -6,9 +6,7 @@
 
 ### By
 
-**Sintaxis:** obj = Process Capability(...<By( column(s) )>...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Process Capability(...&lt;By( column(s) )&gt;...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Realiza un análisis independiente para cada nivel de la columna especificada.
 
@@ -72,9 +70,7 @@ obj = dt << Process Capability(
 
 ### Process Variables
 
-**Sintaxis:** obj = Process Capability(...Process Variables( column(s) )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Process Capability(...Process Variables( column(s) )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica las columnas de datos del proceso que contienen las mediciones que se van a analizar.
 
@@ -95,7 +91,7 @@ obj = dt << Process Capability(
 
 ### Process Capability
 
-**Sintaxis:** Process Capability( Process Variables (columns), < Spec Limits() > )
+**Sintaxis:** Process Capability( Process Variables (columns), &lt; Spec Limits() &gt; )
 
 **Descripción:** Calcula un análisis de capacidad del proceso para cada proceso y crea gráficos útiles para analizar la capacidad de varios procesos a la vez. También se pueden definir límites de especificación.
 
@@ -116,7 +112,7 @@ obj = dt << Process Capability(
 
 ### AIAG (Ppk) Labeling
 
-**Sintaxis:** obj << "AIAG (Ppk) Labeling"n( state=0|1 )
+**Sintaxis:** obj &lt;&lt; "AIAG (Ppk) Labeling"n( state=0|1 )
 
 **Descripción:** Activa o desactiva el etiquetado de AIAG de los índices de capacidad cambiando la etiqueta "Cp" a "Pp". Opción activada de forma predeterminada.
 
@@ -135,7 +131,7 @@ obj << "AIAG (Ppk) Labeling"n( 0 );
 
 ### Capability Box Plots
 
-**Sintaxis:** obj << Capability Box Plots( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Capability Box Plots( state=0|1 )
 
 **Descripción:** Muestra u oculta un diagrama de caja para cada proceso. Para crear diagramas de caja, los valores para cada proceso se centran según su objetivo y se escalan según sus límites de especificación. Opción activada de forma predeterminada.
 
@@ -157,7 +153,7 @@ obj << Capability Box Plots( 1 );
 
 ### Capability Index Plot
 
-**Sintaxis:** obj << Capability Index Plot( state=0|1, <plot options> )
+**Sintaxis:** obj &lt;&lt; Capability Index Plot( state=0|1, &lt;plot options&gt; )
 
 **Descripción:** Muestra u oculta un gráfico que representa el Ppk general de cada proceso. Opción activada de forma predeterminada.
 
@@ -181,7 +177,7 @@ obj << Capability Index Plot( 1 );
 
 ### Color Out of Spec Values
 
-**Sintaxis:** obj << Color Out of Spec Values( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Color Out of Spec Values( state=0|1 )
 
 **Descripción:** Colorea las celdas de la tabla de datos correspondientes a valores fuera de la especificación. Las celdas con valores por debajo del límite inferior de especificación (LSL) se muestran en rojo y las celdas con valores por encima del límite superior de especificación (USL) se muestran en azul.
 
@@ -217,7 +213,7 @@ obj = dt << Process Capability(
 
 ### Goal Plot
 
-**Sintaxis:** obj << Goal Plot( state=0|1, <plot options> )
+**Sintaxis:** obj &lt;&lt; Goal Plot( state=0|1, &lt;plot options&gt; )
 
 **Descripción:** Muestra u oculta un gráfico con un punto para cada proceso. La media estandarizada a la especificación se encuentra en el eje horizontal y la desviación estándar estandarizada a la especificación en el eje vertical. Los puntos que se muestran por encima del arco de portería representan procesos que están por debajo del umbral Ppk (Cpk) especificado. Opción activada de forma predeterminada.
 
@@ -239,7 +235,7 @@ obj << Goal Plot( 1 );
 
 ### Individual Detail Reports
 
-**Sintaxis:** obj << Individual Detail Reports( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Individual Detail Reports( state=0|1 )
 
 **Descripción:** Muestra u oculta un informe de capacidad de detalles individuales independiente para cada proceso.
 
@@ -259,7 +255,7 @@ obj << Individual Detail Reports( 1 );
 
 ### Individual Detail Reports Cutoff
 
-**Sintaxis:** obj << Individual Detail Reports Cutoff( number=1 )
+**Sintaxis:** obj &lt;&lt; Individual Detail Reports Cutoff( number=1 )
 
 **Descripción:** Muestra los informes de detalles individuales y oculta el gráfico de portería y los diagramas de caja de capacidad si el número de variables del proceso es inferior o igual al valor límite. "1" de forma predeterminada.
 
@@ -279,7 +275,7 @@ obj << Individual Detail Reports Cutoff( 7 );
 
 ### Make Goal Plot Summary Table
 
-**Sintaxis:** obj << Make Goal Plot Summary Table
+**Sintaxis:** obj &lt;&lt; Make Goal Plot Summary Table
 
 **Descripción:** Crea una nueva tabla de datos que contiene las coordenadas de los puntos intra y generales que se representan en el gráfico de portería.
 
@@ -299,7 +295,7 @@ obj << Make Goal Plot Summary Table;
 
 ### Order By
 
-**Sintaxis:** obj << Order By( "Orden inicial"|"Invertir orden inicial"|"Cpk de sigma intra ascendente"|"Cpk de sigma intra descendente"|"Ppk de sigma global ascendente"|"Ppk de sigma global descendente" )
+**Sintaxis:** obj &lt;&lt; Order By( "Orden inicial"|"Invertir orden inicial"|"Cpk de sigma intra ascendente"|"Cpk de sigma intra descendente"|"Ppk de sigma global ascendente"|"Ppk de sigma global descendente" )
 
 **Descripción:** Reorganiza todos los diagramas de caja, informes de resumen e informes de detalles individuales en el orden especificado.
 
@@ -321,7 +317,7 @@ obj << Order By( "Within Sigma Cpk Ascending" );
 
 ### Overall Sigma Normalized Box Plots
 
-**Sintaxis:** obj << Overall Sigma Normalized Box Plots( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Overall Sigma Normalized Box Plots( state=0|1 )
 
 **Descripción:** Muestra u oculta un diagrama de caja para cada proceso. Los valores de los diagramas de caja están centrados por la media general y escalados según la estimación general de la desviación estándar.
 
@@ -342,7 +338,7 @@ obj << Overall Sigma Normalized Box Plots( 1 );
 
 ### Overall Sigma Summary Report
 
-**Sintaxis:** obj << Overall Sigma Summary Report( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Overall Sigma Summary Report( state=0|1 )
 
 **Descripción:** Muestra u oculta un informe de resumen de los índices de capacidad. Los índices de capacidad se calculan utilizando la estimación general de la desviación estándar.
 
@@ -363,7 +359,7 @@ obj << Overall Sigma Summary Report( 1 );
 
 ### Process Performance Plot
 
-**Sintaxis:** obj << Process Performance Plot( state=0|1, <plot options> )
+**Sintaxis:** obj &lt;&lt; Process Performance Plot( state=0|1, &lt;plot options&gt; )
 
 **Descripción:** Muestra u oculta un gráfico de cuatro cuadrantes de la Ppk de capacidad general frente a la estabilidad.
 
@@ -389,7 +385,7 @@ obj << Process Performance Plot( 1 );
 
 ### Save Distributions as Column Properties
 
-**Sintaxis:** obj << Save Distributions as Column Properties
+**Sintaxis:** obj &lt;&lt; Save Distributions as Column Properties
 
 **Descripción:** Guarda la distribución que se utiliza para calcular la capacidad como propiedad de columna Distribución de la capacidad de proceso. Se guarda una propiedad de columna para cada variable de proceso en el análisis.
 
@@ -407,7 +403,7 @@ obj << Save Distributions as Column Properties;
 
 ### Save In Spec Indicator Formulas
 
-**Sintaxis:** obj << Save In Spec Indicator Formulas
+**Sintaxis:** obj &lt;&lt; Save In Spec Indicator Formulas
 
 **Descripción:** Crea una nueva columna de fórmulas en la tabla de datos. La nueva columna contiene un valor que indica si una fila está o no dentro de los límites de especificación.
 
@@ -427,7 +423,7 @@ obj << Save In Spec Indicator Formulas;
 
 ### Save Spec Limits as Column Properties
 
-**Sintaxis:** obj << Save Spec Limits as Column Properties
+**Sintaxis:** obj &lt;&lt; Save Spec Limits as Column Properties
 
 **Descripción:** Guarda los límites de especificación en una propiedad de columna para cada variable de proceso en el análisis.
 
@@ -445,7 +441,7 @@ obj << Save Spec Limits as Column Properties;
 
 ### Save Spec Limits to New Table
 
-**Sintaxis:** obj << Save Spec Limits to New Table
+**Sintaxis:** obj &lt;&lt; Save Spec Limits to New Table
 
 **Descripción:** Crea una nueva tabla de datos que contiene los límites de especificación, la importancia de proceso y las distribuciones para cada variable del proceso. La tabla está en un formato alto y contiene una fila para cada variable del proceso. La importancia del proceso y el tipo de distribución solo se guardan cuando procede.
 
@@ -465,7 +461,7 @@ obj << Save Spec Limits to New Table;
 
 ### Select Out of Spec Values
 
-**Sintaxis:** obj << Select Out of Spec Values( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Select Out of Spec Values( state=0|1 )
 
 **Descripción:** Selecciona todas las filas y columnas de la tabla de datos que contienen al menos un valor fuera de los límites de especificación.
 
@@ -501,7 +497,7 @@ obj = dt << Process Capability(
 
 ### Within Sigma Normalized Box Plots
 
-**Sintaxis:** obj << Within Sigma Normalized Box Plots( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Within Sigma Normalized Box Plots( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico que contiene un diagrama de caja para cada proceso. Los valores de los diagramas de caja están centrados por la media y se dividen por la estimación de subgrupo intra de la desviación estándar.
 
@@ -522,7 +518,7 @@ obj << Within Sigma Normalized Box Plots( 1 );
 
 ### Within Sigma Summary Report
 
-**Sintaxis:** obj << Within Sigma Summary Report( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Within Sigma Summary Report( state=0|1 )
 
 **Descripción:** Muestra u oculta un informe de resumen de los índices de capacidad. Los índices de capacidad se calculan utilizando la estimación de subgrupo intra de la desviación estándar. Solo se muestran resultados para las variables que tengan distribuciones normales.
 
@@ -543,7 +539,7 @@ obj << Within Sigma Summary Report( 1 );
 
 ### Within or Between-and-Within Sigma Normalized Box Plots
 
-**Sintaxis:** obj << "Within or Between-and-Within Sigma Normalized Box Plots"n( state=0|1 )
+**Sintaxis:** obj &lt;&lt; "Within or Between-and-Within Sigma Normalized Box Plots"n( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico que contiene un diagrama de caja para cada proceso. Los valores de los diagramas de caja están centrados en la media y divididos según la estimación grupo intra de la desviación estándar o, si se especifica, según la estimación inter e intra.
 
@@ -566,7 +562,7 @@ obj << "Within or Between-and-Within Sigma Normalized Box Plots"n( 1 );
 
 ### Within or Between-and-Within Sigma Summary Report
 
-**Sintaxis:** obj << "Within or Between-and-Within Sigma Summary Report"n( state=0|1 )
+**Sintaxis:** obj &lt;&lt; "Within or Between-and-Within Sigma Summary Report"n( state=0|1 )
 
 **Descripción:** Muestra u oculta un informe de resumen de los índices de capacidad. Los índices de capacidad se calculan utilizando la estimación de subgrupo intra de la desviación estándar o, si se especifica, la estimación de grupo inter e intra. Esta opción solo está disponible cuando se selecciona la opción Calcular capacidad inter e intra para al menos un proceso en la ventana de inicio.
 
@@ -591,7 +587,7 @@ obj << "Within or Between-and-Within Sigma Summary Report"n( 1 );
 
 ### Action
 
-**Sintaxis:** obj << Action
+**Sintaxis:** obj &lt;&lt; Action
 
 **Descripción:** Trampa multiuso dentro de una plataforma para insertar expresiones que se desean evaluar. Temporalmente establece los contextos de cuadros de visualización y tablas de datos en la plataforma.
 
@@ -609,7 +605,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descripción:** Aplica al objeto un preajuste creado previamente, actualizando las opciones y personalizaciones para que coincidan con la configuración guardada.
 
@@ -656,7 +652,7 @@ obj2 << Apply Preset( preset );
 
 ### Automatic Recalc
 
-**Sintaxis:** obj << Automatic Recalc( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Descripción:** Rehace automáticamente el análisis para modificaciones de datos y de exclusión. Si está activada la opción Recálculo automático, le recomendamos que utilice los comandos Wait(0) para asegurarse de que las modificaciones de datos y de exclusión surtan efecto antes del recálculo.
 
@@ -677,7 +673,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**Sintaxis:** obj << Broadcast(message)
+**Sintaxis:** obj &lt;&lt; Broadcast(message)
 
 **Descripción:** Difunde un mensaje a una plataforma. Si los resultados devueltos de objetos individuales son tablas, se concatenan si es posible y el formato final es idéntico al resultado de la opción Guardar tabla combinada en un cuadro de tabla o al resultado de la opción Concatenar mediante una columna de origen. Los demás resultados se almacenan en una lista y se devuelven.
 
@@ -697,7 +693,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Copy ByGroup Script
 
-**Sintaxis:** obj << Copy ByGroup Script
+**Sintaxis:** obj &lt;&lt; Copy ByGroup Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -723,7 +719,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Sintaxis:** obj << Copy Script
+**Sintaxis:** obj &lt;&lt; Copy Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -743,7 +739,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Sintaxis:** obj << Data Table Window
+**Sintaxis:** obj &lt;&lt; Data Table Window
 
 **Descripción:** Mueve al frente la ventana de la tabla de datos que se utiliza en este análisis.
 
@@ -763,7 +759,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Sintaxis:** obj << Get By Levels
+**Sintaxis:** obj &lt;&lt; Get By Levels
 
 **Descripción:** Devuelve un arreglo asociativo que asigna las columnas Por grupo a sus valores.
 
@@ -780,7 +776,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Sintaxis:** obj << Get ByGroup Script
+**Sintaxis:** obj &lt;&lt; Get ByGroup Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -807,7 +803,7 @@ Show( t );
 
 ### Get Container
 
-**Sintaxis:** obj << Get Container
+**Sintaxis:** obj &lt;&lt; Get Container
 
 **Descripción:** Devuelve una referencia al cuadro contenedor que incluye el contenido del objeto.
 
@@ -859,7 +855,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Sintaxis:** obj << Get Data Table
+**Sintaxis:** obj &lt;&lt; Get Data Table
 
 **Descripción:** Devuelve una referencia a la tabla de datos.
 
@@ -880,7 +876,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**Sintaxis:** obj << Get Group Platform
+**Sintaxis:** obj &lt;&lt; Get Group Platform
 
 **Descripción:** Devuelve el objeto Plataforma grupal si esta plataforma forma parte de un grupo. De lo contrario, devuelve Empty().
 
@@ -897,7 +893,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**Sintaxis:** obj << Get Script
+**Sintaxis:** obj &lt;&lt; Get Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -918,7 +914,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Sintaxis:** obj << Get Script With Data Table
+**Sintaxis:** obj &lt;&lt; Get Script With Data Table
 
 **Descripción:** Crea un script (JSL) para generar este análisis haciendo referencia específica a esta tabla de datos y lo devuelve en forma de expresión.
 
@@ -939,7 +935,7 @@ Show( t );
 
 ### Get Timing
 
-**Sintaxis:** obj << Get Timing
+**Sintaxis:** obj &lt;&lt; Get Timing
 
 **Descripción:** Determina el tiempo de inicio de una plataforma.
 
@@ -960,7 +956,7 @@ Show( t );
 
 ### Get Web Support
 
-**Sintaxis:** obj << Get Web Support
+**Sintaxis:** obj &lt;&lt; Get Web Support
 
 **Descripción:** Devuelve un número que indica el nivel de compatibilidad del HTML interactivo para el objeto de visualización. 1 significa que algunos o todos los elementos son compatibles. 0 significa que no existe compatibilidad.
 
@@ -976,7 +972,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Sintaxis:** obj << Get Where Expr
+**Sintaxis:** obj &lt;&lt; Get Where Expr
 
 **Descripción:** Devuelve la expresión Where para el subconjunto de datos, si la plataforma se inició con By() o Where(). De lo contrario, devuelve Empty().
 
@@ -1013,7 +1009,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Sintaxis:** obj << Local Data Filter
+**Sintaxis:** obj &lt;&lt; Local Data Filter
 
 **Descripción:** Para filtrar los datos según grupos o rangos determinados, pero locales para esta plataforma.
 
@@ -1069,7 +1065,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Sintaxis:** obj << Paste Local Data Filter
+**Sintaxis:** obj &lt;&lt; Paste Local Data Filter
 
 **Descripción:** Se aplica el filtro de datos locales del portapapeles al informe actual.
 
@@ -1090,7 +1086,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**Sintaxis:** obj << Redo Analysis
+**Sintaxis:** obj &lt;&lt; Redo Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -1110,7 +1106,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**Sintaxis:** obj << Redo ByGroup Analysis
+**Sintaxis:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -1136,7 +1132,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**Sintaxis:** obj << Relaunch Analysis
+**Sintaxis:** obj &lt;&lt; Relaunch Analysis
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -1156,7 +1152,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**Sintaxis:** obj << Relaunch ByGroup
+**Sintaxis:** obj &lt;&lt; Relaunch ByGroup
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -1182,7 +1178,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Local Data Filter
 
-**Sintaxis:** obj << Remove Local Data Filter
+**Sintaxis:** obj &lt;&lt; Remove Local Data Filter
 
 **Descripción:** Si se ha creado un filtro de datos local, esto lo eliminará y restaurará la plataforma para usar todos los datos de la tabla de datos directamente.
 
@@ -1221,9 +1217,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Sintaxis:** obj << Report;
-
-Report( obj )
+**Sintaxis:** obj &lt;&lt; Report;Report( obj )
 
 **Descripción:** Devuelve una referencia al objeto informe.
 
@@ -1245,7 +1239,7 @@ Show( t );
 
 ### Report View
 
-**Sintaxis:** obj << Report View( "Completa"|"Resumen" )
+**Sintaxis:** obj &lt;&lt; Report View( "Completa"|"Resumen" )
 
 **Descripción:** La vista del informe determina el nivel de detalle visible en el informe de una plataforma. Full muestra todos los detalles, mientras que Summary solo muestra el contenido seleccionado, con independencia de la plataforma. Para el comportamiento personalizado, los cuadros de visualización admiten un mensaje <<Set Summary Behavior.
 
@@ -1265,7 +1259,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**Sintaxis:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis, y lo guarda como propiedad de tabla en la tabla de datos. Puede especificar un nombre para el script. La opción Append Suffix añade un sufijo numérico al nombre del script, que diferencia el script de un script existente que tenga el mismo nombre. La opción Prompt solicita al usuario que especifique un nombre de script. La opción Replace reemplaza un script existente que tenga el mismo nombre.
 
@@ -1291,7 +1285,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Sintaxis:** obj << Save ByGroup Script to Journal
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -1317,7 +1311,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Sintaxis:** obj << Save ByGroup Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -1343,7 +1337,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**Sintaxis:** obj << Save Script for All Objects
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects
 
 **Descripción:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -1363,7 +1357,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Sintaxis:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descripción:** Guarda un script para todos los objetos de informe en la tabla de datos actual. Esta opción es útil cuando tiene varios informes en la ventana. El script recibe el nombre de la primera plataforma a menos que especifique el nombre del script entre comillas.
 
@@ -1413,7 +1407,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Sintaxis:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis y lo guarda en forma de propiedad de tabla en la tabla de datos.
 
@@ -1433,7 +1427,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Sintaxis:** obj << Save Script to Journal
+**Sintaxis:** obj &lt;&lt; Save Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -1453,7 +1447,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Sintaxis:** obj << Save Script to Report
+**Sintaxis:** obj &lt;&lt; Save Script to Report
 
 **Descripción:** Crea un script JSL para generar este análisis y lo muestra en el propio informe. Resulta útil para conservar un registro impreso de lo que se ha hecho.
 
@@ -1473,7 +1467,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Sintaxis:** obj << Save Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -1558,7 +1552,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Sintaxis:** obj << Sync to Data Table Changes
+**Sintaxis:** obj &lt;&lt; Sync to Data Table Changes
 
 **Descripción:** Realiza una sincronización con las modificaciones de datos y de exclusión que se hayan realizado.
 
@@ -1575,7 +1569,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Sintaxis:** obj << Title( "new title" )
+**Sintaxis:** obj &lt;&lt; Title( "new title" )
 
 **Descripción:** Establece el título de la plataforma.
 
@@ -1595,7 +1589,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Sintaxis:** obj << Top Report
+**Sintaxis:** obj &lt;&lt; Top Report
 
 **Descripción:** Devuelve una referencia al nodo raíz del informe.
 
@@ -1617,7 +1611,7 @@ Show( t );
 
 ### Transform Column
 
-**Sintaxis:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Sintaxis:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Descripción:** Crea una columna de transformación en el contexto local de un objeto (una plataforma por lo general). La columna de transformación solo está activa mientras esté en uso la plataforma.
 
@@ -1638,7 +1632,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**Sintaxis:** obj << View Web XML
+**Sintaxis:** obj &lt;&lt; View Web XML
 
 **Descripción:** Devuelve el código XML que se utiliza para crear el informe HTML interactivo.
 
@@ -1653,9 +1647,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**Sintaxis:** obj = Process Capability(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Process Capability(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Establece el tipo de ventana que se creará para el informe. De forma predeterminada, se creará una ventana de informe Visible. Una ventana Invisible no aparecerá en pantalla, pero se puede detectar mediante funciones como Window(). Una ventana Private responde a la mayoría de los mensajes de ventana pero no es detectable y se debe abordar a través del objeto de informe.
 
@@ -1678,7 +1670,7 @@ New Window( "Bivariate Equation",
 
 #### Parametric Fit Confidence Limits Shading
 
-**Sintaxis:** scrobj << Parametric Fit Confidence Limits Shading( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Parametric Fit Confidence Limits Shading( state=0|1 )
 
 **Descripción:** Muestra u oculta el sombreado de los límites de confianza del ajuste paramétrico.
 
@@ -1712,7 +1704,7 @@ scrobj << Parametric Fit Confidence Limits Shading( 0 );
 
 #### Parametric Fit Line
 
-**Sintaxis:** scrobj << Parametric Fit Line( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Parametric Fit Line( state=0|1 )
 
 **Descripción:** Muestra u oculta la línea del ajuste paramétrico. Opción activada de forma predeterminada.
 
@@ -1743,7 +1735,7 @@ scrobj << Parametric Fit Line( 1 );
 
 #### Simultaneous Empirical Confidence Limits
 
-**Sintaxis:** scrobj << Simultaneous Empirical Confidence Limits( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Simultaneous Empirical Confidence Limits( state=0|1 )
 
 **Descripción:** Muestra u oculta los límites de confianza empíricos simultáneos. Opción activada de forma predeterminada.
 
@@ -1777,7 +1769,7 @@ scrobj << Simultaneous Empirical Confidence Limits( 1 );
 
 #### Simultaneous Empirical Confidence Limits Shading
 
-**Sintaxis:** scrobj << Simultaneous Empirical Confidence Limits Shading( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Simultaneous Empirical Confidence Limits Shading( state=0|1 )
 
 **Descripción:** Muestra u oculta el sombreado de los límites de confianza empíricos simultáneos. Opción activada de forma predeterminada.
 
@@ -1817,7 +1809,7 @@ scrobj << Simultaneous Empirical Confidence Limits Shading( 1 );
 
 #### Comparison Details
 
-**Sintaxis:** scrobj << Comparison Details( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Comparison Details( state=0|1 )
 
 **Descripción:** Muestra u oculta un informe que contiene los valores AICc, BIC y -2 Log-verosimilitud para cada distribución. Opción activada de forma predeterminada.
 
@@ -1852,7 +1844,7 @@ scrobj << Comparison Details( 1 );
 
 #### Comparison Histogram
 
-**Sintaxis:** scrobj << Comparison Histogram( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Comparison Histogram( state=0|1 )
 
 **Descripción:** Muestra u oculta el histograma de la comparación de distribuciones. Opción activada de forma predeterminada.
 
@@ -1887,7 +1879,7 @@ scrobj << Comparison Histogram( 1 );
 
 #### Fit Beta
 
-**Sintaxis:** scrobj << Compare Distributions( 1, <<Fit Beta )
+**Sintaxis:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit Beta )
 
 **Descripción:** Muestra los estadísticos de ajuste de la distribución beta en el informe de detalles de la comparación y la curva de densidad en el histograma.
 
@@ -1911,7 +1903,7 @@ scrobj << Compare Distributions( 1, <<Fit Beta );
 
 #### Fit Exponential
 
-**Sintaxis:** scrobj << Compare Distributions( 1, <<Fit Exponential )
+**Sintaxis:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit Exponential )
 
 **Descripción:** Muestra los estadísticos de ajuste de la distribución exponencial en el informe de detalles de la comparación y la curva de densidad en el histograma.
 
@@ -1935,7 +1927,7 @@ scrobj << Compare Distributions( 1, <<Fit Exponential );
 
 #### Fit Gamma
 
-**Sintaxis:** scrobj << Compare Distributions( 1, <<Fit Gamma )
+**Sintaxis:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit Gamma )
 
 **Descripción:** Muestra los estadísticos de ajuste de la distribución gamma en el informe de detalles de la comparación y la curva de densidad en el histograma.
 
@@ -1957,7 +1949,7 @@ scrobj << Compare Distributions( 1, <<Fit Gamma );
 
 #### Fit Johnson
 
-**Sintaxis:** scrobj << Compare Distributions( 1, <<Fit Johnson )
+**Sintaxis:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit Johnson )
 
 **Descripción:** Muestra los estadísticos de ajuste de la distribución de Johnson en el informe de detalles de la comparación y la curva de densidad en el histograma.
 
@@ -1979,7 +1971,7 @@ scrobj << Compare Distributions( 1, <<Fit Johnson );
 
 #### Fit Largest Extreme Value
 
-**Sintaxis:** scrobj << Compare Distributions( 1, <<Fit Largest Extreme Value )
+**Sintaxis:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit Largest Extreme Value )
 
 **Descripción:** Muestra los estadísticos de ajuste de distribución del valor extremo más alto en el informe de detalles de comparación y la curva de densidad en el histograma.
 
@@ -2001,7 +1993,7 @@ scrobj << Compare Distributions( 1, <<Fit Largest Extreme Value );
 
 #### Fit Lognormal
 
-**Sintaxis:** scrobj << Compare Distributions( 1, <<Fit Lognormal )
+**Sintaxis:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit Lognormal )
 
 **Descripción:** Muestra los estadísticos de ajuste de la distribución log-normal en el informe de detalles de la comparación y la curva de densidad en el histograma.
 
@@ -2023,7 +2015,7 @@ scrobj << Compare Distributions( 1, <<Fit Lognormal );
 
 #### Fit Nonparametric
 
-**Sintaxis:** scrobj << Compare Distributions( 1, <<Fit Nonparametric )
+**Sintaxis:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit Nonparametric )
 
 **Descripción:** Muestra el control deslizante del ancho de banda kernel de la distribución no paramétrica y la curva de densidad en el histograma.
 
@@ -2045,7 +2037,7 @@ scrobj << Compare Distributions( 1, <<Fit Nonparametric );
 
 #### Fit Normal
 
-**Sintaxis:** scrobj << Compare Distributions( 1, <<Fit Normal )
+**Sintaxis:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit Normal )
 
 **Descripción:** Muestra los estadísticos de ajuste de la distribución normal en el informe de detalles de la comparación y la curva de densidad en el histograma.
 
@@ -2064,7 +2056,7 @@ obj = dt << Process Capability(
 
 #### Fit SHASH
 
-**Sintaxis:** scrobj << Compare Distributions( 1, <<Fit SHASH )
+**Sintaxis:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit SHASH )
 
 **Descripción:** Muestra los estadísticos de ajuste de la distribución SHASH en el informe de detalles de la comparación y la curva de densidad en el histograma.
 
@@ -2088,7 +2080,7 @@ scrobj << Compare Distributions( 1, <<Fit SHASH );
 
 #### Fit Smallest Extreme Value
 
-**Sintaxis:** scrobj << Compare Distributions( 1, <<Fit Smallest Extreme Value )
+**Sintaxis:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit Smallest Extreme Value )
 
 **Descripción:** Muestra los estadísticos de ajuste de distribución del valor extremo más bajo en el informe de detalles de comparación y la curva de densidad en el histograma.
 
@@ -2110,7 +2102,7 @@ scrobj << Compare Distributions( 1, <<Fit Smallest Extreme Value );
 
 #### Fit Weibull
 
-**Sintaxis:** scrobj << Compare Distributions( 1, <<Fit Weibull )
+**Sintaxis:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Fit Weibull )
 
 **Descripción:** Muestra los estadísticos de ajuste de la distribución de Weibull en el informe de detalles de la comparación y la curva de densidad en el histograma.
 
@@ -2132,7 +2124,7 @@ scrobj << Compare Distributions( 1, <<Fit Weibull );
 
 #### Mixture of 2 Normals
 
-**Sintaxis:** scrobj << Compare Distributions( 1, <<Mixture of 2 Normals )
+**Sintaxis:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Mixture of 2 Normals )
 
 **Descripción:** Muestra los estadísticos de ajuste de la mezcla de 2 distribuciones normales en el informe de detalles de la comparación y la curva de densidad en el histograma.
 
@@ -2156,7 +2148,7 @@ scrobj << Compare Distributions( 1, <<Mixture of 2 Normals );
 
 #### Mixture of 3 Normals
 
-**Sintaxis:** scrobj << Compare Distributions( 1, <<Mixture of 3 Normals )
+**Sintaxis:** scrobj &lt;&lt; Compare Distributions( 1, &lt;&lt;Mixture of 3 Normals )
 
 **Descripción:** Muestra los estadísticos de ajuste de la mezcla de 3 distribuciones normales en el informe de detalles de la comparación y la curva de densidad en el histograma.
 
@@ -2180,7 +2172,7 @@ scrobj << Compare Distributions( 1, <<Mixture of 3 Normals );
 
 #### Order by Comparison Criterion
 
-**Sintaxis:** scrobj << Order by Comparison Criterion( "AICc"|"BIC"|"-2Loglikelihood" )
+**Sintaxis:** scrobj &lt;&lt; Order by Comparison Criterion( "AICc"|"BIC"|"-2Loglikelihood" )
 
 **Descripción:** Reordena el informe de detalles de la comparación. Se puede reordenar por AICc, BIC o -2 log-verosimilitud.
 
@@ -2206,7 +2198,7 @@ scrobj << Order by Comparison Criterion( "-2Loglikelihood" );
 
 #### Probability Plots
 
-**Sintaxis:** scrobj << Probability Plots( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Probability Plots( state=0|1 )
 
 **Descripción:** Muestra u oculta los gráficos de probabilidad de la comparación de distribuciones.
 
@@ -2232,7 +2224,7 @@ scrobj << Probability Plots( 1 );
 
 #### Show Between-and-Within Sigma Density
 
-**Sintaxis:** scrobj << "Show Between-and-Within Sigma Density"n( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; "Show Between-and-Within Sigma Density"n( state=0|1 )
 
 **Descripción:** Muestra u oculta la curva de densidad que utiliza el valor sigma intra en el histograma. Opción activada de forma predeterminada.
 
@@ -2258,7 +2250,7 @@ scrobj << "Show Between-and-Within Sigma Density"n( 1 );
 
 #### Show Count Axis
 
-**Sintaxis:** scrobj << Show Count Axis( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Show Count Axis( state=0|1 )
 
 **Descripción:** Muestra u oculta un eje de conteo a la derecha del marco del histograma.
 
@@ -2279,7 +2271,7 @@ scrobj << Show Count Axis( 1 );
 
 #### Show Density Axis
 
-**Sintaxis:** scrobj << Show Density Axis( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Show Density Axis( state=0|1 )
 
 **Descripción:** Muestra u oculta un eje de densidad a la derecha del marco del histograma.
 
@@ -2300,7 +2292,7 @@ scrobj << Show Density Axis( 1 );
 
 #### Show Overall Sigma Density
 
-**Sintaxis:** scrobj << Show Overall Sigma Density( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Show Overall Sigma Density( state=0|1 )
 
 **Descripción:** Muestra u oculta la curva de densidad que utiliza el valor sigma global en el histograma. Opción activada de forma predeterminada.
 
@@ -2323,7 +2315,7 @@ scrobj << Show Overall Sigma Density( 1 );
 
 #### Show Spec Limits
 
-**Sintaxis:** scrobj << Show Spec Limits( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Show Spec Limits( state=0|1 )
 
 **Descripción:** Muestra u oculta los límites de especificación superior e inferior en el histograma. Opción activada de forma predeterminada.
 
@@ -2344,7 +2336,7 @@ scrobj << Show Spec Limits( 1 );
 
 #### Show Target
 
-**Sintaxis:** scrobj << Show Target( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Show Target( state=0|1 )
 
 **Descripción:** Muestra u oculta la línea objetivo en el histograma. Opción activada de forma predeterminada.
 
@@ -2365,7 +2357,7 @@ scrobj << Show Target( 1 );
 
 #### Show Within Sigma Density
 
-**Sintaxis:** scrobj << Show Within Sigma Density( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Show Within Sigma Density( state=0|1 )
 
 **Descripción:** Muestra u oculta la curva de densidad que utiliza el valor sigma intra en el histograma. Opción activada de forma predeterminada.
 
@@ -2392,7 +2384,7 @@ scrobj << Show Within Sigma Density( 1 );
 
 #### Capability
 
-**Sintaxis:** scrobj << Capability( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Capability( state=0|1 )
 
 **Descripción:** Muestra u oculta los índices de capacidad. Los índices de capacidad originales están basados en el valor sigma global. Opción activada de forma predeterminada.
 
@@ -2423,7 +2415,7 @@ scrobj << Capability( 1 );
 
 #### Nonconformance
 
-**Sintaxis:** scrobj << Nonconformance( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Nonconformance( state=0|1 )
 
 **Descripción:** Muestra u oculta la disconformidad. Los valores originales de disconformidad se basan en el valor de sigma global. Opción activada de forma predeterminada.
 
@@ -2454,7 +2446,7 @@ scrobj << Nonconformance( 1 );
 
 #### Revert to Original Values
 
-**Sintaxis:** scrobj << Revert to Original Values
+**Sintaxis:** scrobj &lt;&lt; Revert to Original Values
 
 **Descripción:** Revierte el gráfico de capacidad interactivo a sus valores originales.
 
@@ -2485,7 +2477,7 @@ scrobj << Revert to Original Values;
 
 #### Save New Spec Limits as a Column Property
 
-**Sintaxis:** scrobj << Save New Spec Limits as a Column Property
+**Sintaxis:** scrobj &lt;&lt; Save New Spec Limits as a Column Property
 
 **Descripción:** Guarda los nuevos límites de especificación en una propiedad de columna en la tabla de datos originales.
 
@@ -2520,7 +2512,7 @@ scrobj << Save New Spec Limits as a Column Property;
 
 #### Normal Fit Confidence Limits Shading
 
-**Sintaxis:** scrobj << Normal Fit Confidence Limits Shading( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Normal Fit Confidence Limits Shading( state=0|1 )
 
 **Descripción:** Muestra u oculta el sombreado de los límites de confianza del ajuste normal en el gráfico de probabilidad normal. Opción activada de forma predeterminada.
 
@@ -2543,7 +2535,7 @@ scrobj << Normal Fit Confidence Limits Shading( 1 );
 
 #### Normal Fit Line
 
-**Sintaxis:** scrobj << Normal Fit Line( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Normal Fit Line( state=0|1 )
 
 **Descripción:** Muestra u oculta la línea de ajuste normal en el gráfico de probabilidad normal. Opción activada de forma predeterminada.
 
@@ -2566,7 +2558,7 @@ scrobj << Normal Fit Line( 1 );
 
 #### Simultaneous Empirical Confidence Limits
 
-**Sintaxis:** scrobj << Simultaneous Empirical Confidence Limits( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Simultaneous Empirical Confidence Limits( state=0|1 )
 
 **Descripción:** Muestra u oculta los límites de confianza empíricos simultáneos en el gráfico de probabilidad del informe Capacidad del proceso. Opción activada de forma predeterminada.
 
@@ -2589,7 +2581,7 @@ scrobj << Simultaneous Empirical Confidence Limits( 1 );
 
 #### Simultaneous Empirical Confidence Limits Shading
 
-**Sintaxis:** scrobj << Simultaneous Empirical Confidence Limits Shading( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Simultaneous Empirical Confidence Limits Shading( state=0|1 )
 
 **Descripción:** Muestra u oculta el sombreado de los límites de confianza empíricos simultáneos en el gráfico de probabilidad del informe Capacidad del proceso. Opción activada de forma predeterminada.
 
@@ -2616,7 +2608,7 @@ scrobj << Simultaneous Empirical Confidence Limits Shading( 1 );
 
 #### Between-and-Within Sigma Capability
 
-**Sintaxis:** scrobj << "Between-and-Within Sigma Capability"n( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; "Between-and-Within Sigma Capability"n( state=0|1 )
 
 **Descripción:** Muestra u oculta los índices de capacidad que utilizan el valor sigma inter e intra. Opción activada de forma predeterminada.
 
@@ -2641,7 +2633,7 @@ scrobj << "Between-and-Within Sigma Capability"n( 1 );
 
 #### Between-and-Within Sigma Target Index
 
-**Sintaxis:** scrobj << "Between-and-Within Sigma Target Index"n( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; "Between-and-Within Sigma Target Index"n( state=0|1 )
 
 **Descripción:** Muestra u oculta una estimación del índice objetivo que se basa en el valor de sigma inter e intra.
 
@@ -2666,7 +2658,7 @@ scrobj << "Between-and-Within Sigma Target Index"n( 0 );
 
 #### Between-and-Within Sigma Z Benchmark
 
-**Sintaxis:** scrobj << "Between-and-Within Sigma Z Benchmark"n( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; "Between-and-Within Sigma Z Benchmark"n( state=0|1 )
 
 **Descripción:** Muestra u oculta los índices de benchmark Z que utilizan el valor sigma inter e intra.
 
@@ -2691,7 +2683,7 @@ scrobj << "Between-and-Within Sigma Z Benchmark"n( 1 );
 
 #### Compare Distributions
 
-**Sintaxis:** scrobj << Compare Distributions( state=0|1, < <<distribution options > )
+**Sintaxis:** scrobj &lt;&lt; Compare Distributions( state=0|1, &lt; &lt;&lt;distribution options &gt; )
 
 **Descripción:** Muestra u oculta el panel de control para comparar distribuciones del proceso.
 
@@ -2776,7 +2768,7 @@ scrobj << Compare Distributions( 0 );
 
 #### Fix Parameters
 
-**Sintaxis:** scrobj << Fix Parameters( vector )
+**Sintaxis:** scrobj &lt;&lt; Fix Parameters( vector )
 
 **Descripción:** Fija determinados parámetros a los valores especificados y vuelve a estimar el resto.
 
@@ -2800,7 +2792,7 @@ scrobj << Fix Parameters( [., .] );
 
 #### Histogram
 
-**Sintaxis:** scrobj << Histogram( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Histogram( state=0|1 )
 
 **Descripción:** Muestra u oculta el histograma de los datos del proceso en el Informe de detalles individuales. Opción activada de forma predeterminada.
 
@@ -2821,7 +2813,7 @@ scrobj << Histogram( 1 );
 
 #### Interactive Capability Plot
 
-**Sintaxis:** scrobj << Interactive Capability Plot( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Interactive Capability Plot( state=0|1 )
 
 **Descripción:** Muestra u oculta un informe de capacidad interactivo que permite explorar cómo afectan a la capacidad los cambios del proceso o de los límites de especificación.
 
@@ -2844,7 +2836,7 @@ scrobj << Interactive Capability Plot( 1 );
 
 #### Nonconformance
 
-**Sintaxis:** scrobj << Nonconformance( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Nonconformance( state=0|1 )
 
 **Descripción:** Muestra u oculta un informe del porcentaje observado y esperado de observaciones que quedan fuera de los límites de especificación. Opción activada de forma predeterminada.
 
@@ -2865,7 +2857,7 @@ scrobj << Nonconformance( 1 );
 
 #### Nonparametric Density
 
-**Sintaxis:** scrobj << Nonparametric Density( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Nonparametric Density( state=0|1 )
 
 **Descripción:** Muestra u oculta el informe Densidad no paramétrica, que proporciona el ancho de banda de kernel que se utiliza para ajustar la distribución no paramétrica. Opción activada de forma predeterminada.
 
@@ -2887,7 +2879,7 @@ scrobj << Nonparametric Density( 1 );
 
 #### Normal Probability Plot
 
-**Sintaxis:** scrobj << Normal Probability Plot( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Normal Probability Plot( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico de probabilidad normal.
 
@@ -2910,7 +2902,7 @@ scrobj << Normal Probability Plot( 1 );
 
 #### Overall Sigma Capability
 
-**Sintaxis:** scrobj << Overall Sigma Capability( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Overall Sigma Capability( state=0|1 )
 
 **Descripción:** Muestra u oculta los índices de capacidad que están basados en el valor sigma global. Opción activada de forma predeterminada.
 
@@ -2931,7 +2923,7 @@ scrobj << Overall Sigma Capability( 1 );
 
 #### Overall Sigma Z Benchmark
 
-**Sintaxis:** scrobj << Overall Sigma Z Benchmark( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Overall Sigma Z Benchmark( state=0|1 )
 
 **Descripción:** Muestra u oculta los índices benchmark Z que están basados en el valor sigma global.
 
@@ -2952,7 +2944,7 @@ scrobj << Overall Sigma Z Benchmark( 1 );
 
 #### Parameter Estimates
 
-**Sintaxis:** scrobj << Parameter Estimates( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Parameter Estimates( state=0|1 )
 
 **Descripción:** Muestra u oculta el informe de estimaciones de los parámetros para las distribuciones paramétricas no normales. Opción activada de forma predeterminada.
 
@@ -2974,7 +2966,7 @@ scrobj << Parameter Estimates( 1 );
 
 #### Process Summary
 
-**Sintaxis:** scrobj << Process Summary( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Process Summary( state=0|1 )
 
 **Descripción:** Muestra u oculta los estadísticos de resumen del proceso. Opción activada de forma predeterminada.
 
@@ -2995,7 +2987,7 @@ scrobj << Process Summary( 1 );
 
 #### Within Sigma Capability
 
-**Sintaxis:** scrobj << Within Sigma Capability( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Within Sigma Capability( state=0|1 )
 
 **Descripción:** Muestra u oculta los índices de capacidad y sus intervalos de confianza que están basados en el valor de sigma intra. Opción activada de forma predeterminada.
 
@@ -3016,7 +3008,7 @@ scrobj << Within Sigma Capability( 1 );
 
 #### Within Sigma Target Index
 
-**Sintaxis:** scrobj << Within Sigma Target Index( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Within Sigma Target Index( state=0|1 )
 
 **Descripción:** Muestra u oculta una estimación del índice objetivo que se basa en el valor de sigma intra.
 
@@ -3039,7 +3031,7 @@ scrobj << Within Sigma Target Index( 1 );
 
 #### Within Sigma Z Benchmark
 
-**Sintaxis:** scrobj << Within Sigma Z Benchmark( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Within Sigma Z Benchmark( state=0|1 )
 
 **Descripción:** Muestra u oculta los índices benchmark Z que están basados en el valor sigma intra.
 
@@ -3064,9 +3056,7 @@ scrobj << Within Sigma Z Benchmark( 1 );
 
 #### Capability Lines
 
-**Sintaxis:** obj << Goal Plot( 1, Capability Lines( number=1.0 ) ); 
-
-scrobj << Capability Lines( number=1.0 )
+**Sintaxis:** obj &lt;&lt; Goal Plot( 1, Capability Lines( number=1.0 ) ); scrobj &lt;&lt; Capability Lines( number=1.0 )
 
 **Descripción:** Establece el valor Ppk (Cpk) que controla las líneas del triángulo de portería en el Gráfico de portería. Este valor también aparece en el cuadro de edición de Ppk (Cpk). "1.0" de forma predeterminada.
 
@@ -3089,9 +3079,7 @@ scrobj << Capability Lines( 1 );
 
 #### Defect Rate Contour
 
-**Sintaxis:** obj << Goal Plot( 1, Defect Rate Contour( number=0.0001 ) ); 
-
-scrobj << Defect Rate Contour( number=0.0001 )
+**Sintaxis:** obj &lt;&lt; Goal Plot( 1, Defect Rate Contour( number=0.0001 ) ); scrobj &lt;&lt; Defect Rate Contour( number=0.0001 )
 
 **Descripción:** Muestra u oculta el contorno de la tasa de defecto especificada. "0.0001" de forma predeterminada.
 
@@ -3131,9 +3119,7 @@ scrobj << Defect Rate Contour( 0.01 );
 
 #### Label Overall Sigma Points
 
-**Sintaxis:** obj << Goal Plot( 1, Label Overall Sigma Points( state=0|1 ) ); 
-
-scrobj << Label Overall Sigma Points( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Goal Plot( 1, Label Overall Sigma Points( state=0|1 ) ); scrobj &lt;&lt; Label Overall Sigma Points( state=0|1 )
 
 **Descripción:** Muestra u oculta las etiquetas de los puntos en el gráfico de portería. Los puntos se calculan utilizando la estimación de sigma global.
 
@@ -3156,9 +3142,7 @@ scrobj << Label Overall Sigma Points( 1 );
 
 #### Label Within Sigma Points
 
-**Sintaxis:** obj << Goal Plot( 1, Label Within Sigma Points( state=0|1 ) ); 
-
-scrobj << Label Within Sigma Points( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Goal Plot( 1, Label Within Sigma Points( state=0|1 ) ); scrobj &lt;&lt; Label Within Sigma Points( state=0|1 )
 
 **Descripción:** Muestra u oculta etiquetas para los puntos en el gráfico de portería. Los puntos se calculan utilizando la estimación de sigma intra.
 
@@ -3187,9 +3171,7 @@ scrobj << Label Within Sigma Points( 0 );
 
 #### Label Within or Between-and-Within Sigma Points
 
-**Sintaxis:** obj << Goal Plot( 1, "Label Within or Between-and-Within Sigma Points"n( state=0|1 ) ); 
-
-scrobj << "Label Within or Between-and-Within Sigma Points"n( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Goal Plot( 1, "Label Within or Between-and-Within Sigma Points"n( state=0|1 ) ); scrobj &lt;&lt; "Label Within or Between-and-Within Sigma Points"n( state=0|1 )
 
 **Descripción:** Muestra u oculta las etiquetas de los puntos en el gráfico de portería. Los puntos se calculan utilizando la estimación de sigma intra o, si se especifica, la estimación de sigma inter e intra.
 
@@ -3220,9 +3202,7 @@ scrobj << "Label Within or Between-and-Within Sigma Points"n( 0 );
 
 #### Shade Levels
 
-**Sintaxis:** obj << Goal Plot( 1, Shade Levels( state=0|1 ) ); 
-
-scrobj << Shade Levels( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Goal Plot( 1, Shade Levels( state=0|1 ) ); scrobj &lt;&lt; Shade Levels( state=0|1 )
 
 **Descripción:** Muestra u oculta el sombreado del nivel Ppk (Cpk) en el gráfico de portería. Si p representa el objetivo de Ppk (Cpk) introducido en el cuadro de edición, los procesos con un valor de Ppk (Cpk) superior a 2*p se muestran sombreados en verde, los procesos con un valor de Ppk (Cpk) inferior a p se muestran sombreados en rojo y los procesos con un valor de Ppk (Cpk) superior a p e inferior a 2*p se muestran sombreados en amarillo.
 
@@ -3245,9 +3225,7 @@ scrobj << Shade Levels( 0 );
 
 #### Show Overall Sigma Points
 
-**Sintaxis:** obj << Goal Plot( 1, Show Overall Sigma Points( state=0|1 ) ); 
-
-scrobj << Show Overall Sigma Points( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Goal Plot( 1, Show Overall Sigma Points( state=0|1 ) ); scrobj &lt;&lt; Show Overall Sigma Points( state=0|1 )
 
 **Descripción:** Muestra u oculta puntos en el gráfico de portería. Los puntos se calculan utilizando la estimación de sigma global. Opción activada de forma predeterminada.
 
@@ -3272,9 +3250,7 @@ scrobj << Show Overall Sigma Points( 1 );
 
 #### Show Within Sigma Points
 
-**Sintaxis:** obj << Goal Plot( 1, Show Within Sigma Points( state=0|1 ) ); 
-
-scrobj << Show Within Sigma Points( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Goal Plot( 1, Show Within Sigma Points( state=0|1 ) ); scrobj &lt;&lt; Show Within Sigma Points( state=0|1 )
 
 **Descripción:** Muestra u oculta puntos en el gráfico de portería. Los puntos se calculan utilizando la estimación de sigma intra.
 
@@ -3298,9 +3274,7 @@ scrobj << Show Within Sigma Points( 0 );
 
 #### Show Within or Between-and-Within Sigma Points
 
-**Sintaxis:** obj << Goal Plot( 1, "Show Within or Between-and-Within Sigma Points"n( state=0|1 ) ); 
-
-scrobj << "Show Within or Between-and-Within Sigma Points"n( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Goal Plot( 1, "Show Within or Between-and-Within Sigma Points"n( state=0|1 ) ); scrobj &lt;&lt; "Show Within or Between-and-Within Sigma Points"n( state=0|1 )
 
 **Descripción:** Muestra u oculta puntos en el gráfico de portería. Los puntos se calculan utilizando la estimación de sigma intra o, si se especifica, la estimación de sigma inter e intra.
 
@@ -3330,9 +3304,7 @@ scrobj << "Show Within or Between-and-Within Sigma Points"n( 0 );
 
 #### Capability Lines
 
-**Sintaxis:** obj << Capability Index Plot( 1, Capability Lines( number=1.0 ) ); 
-
-scrobj << Capability Lines( number=1.0 )
+**Sintaxis:** obj &lt;&lt; Capability Index Plot( 1, Capability Lines( number=1.0 ) ); scrobj &lt;&lt; Capability Lines( number=1.0 )
 
 **Descripción:** Establece el valor Ppk (Cpk) que controla la línea de referencia Ppk (Cpk) en el gráfico de índices de capacidad. Este valor también aparece en el cuadro de edición de Ppk (Cpk). "1.0" de forma predeterminada.
 
@@ -3358,9 +3330,7 @@ scrobj << Capability Lines( 1.0 );
 
 #### Label Overall Sigma Points
 
-**Sintaxis:** obj << Capability Index Plot( 1, Label Overall Sigma Points( state=0|1 ) ); 
-
-scrobj << Label Overall Sigma Points( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Capability Index Plot( 1, Label Overall Sigma Points( state=0|1 ) ); scrobj &lt;&lt; Label Overall Sigma Points( state=0|1 )
 
 **Descripción:** Muestra u oculta etiquetas para los puntos en el gráfico de índices de capacidad. Los puntos se calculan utilizando la estimación de sigma global.
 
@@ -3386,9 +3356,7 @@ scrobj << Label Overall Sigma Points( 0 );
 
 #### Label Within Sigma Points
 
-**Sintaxis:** obj << Capability Index Plot( 1, Label Within Sigma Points( state=0|1 ) ); 
-
-scrobj << Label Within Sigma Points( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Capability Index Plot( 1, Label Within Sigma Points( state=0|1 ) ); scrobj &lt;&lt; Label Within Sigma Points( state=0|1 )
 
 **Descripción:** Muestra u oculta etiquetas para los puntos en el gráfico de índices de capacidad. Los puntos se calculan utilizando la estimación de sigma intra.
 
@@ -3419,9 +3387,7 @@ scrobj << Label Within Sigma Points( 0 );
 
 #### Label Within or Between-and-Within Sigma Points
 
-**Sintaxis:** obj << Capability Index Plot( 1, "Label Within or Between-and-Within Sigma Points"n( state=0|1 ) ); 
-
-scrobj << "Label Within or Between-and-Within Sigma Points"n( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Capability Index Plot( 1, "Label Within or Between-and-Within Sigma Points"n( state=0|1 ) ); scrobj &lt;&lt; "Label Within or Between-and-Within Sigma Points"n( state=0|1 )
 
 **Descripción:** Muestra u oculta las etiquetas de los puntos en el gráfico de índices de capacidad. Los puntos se calculan utilizando la estimación de sigma intra o, si se especifica, la estimación de sigma inter e intra.
 
@@ -3453,9 +3419,7 @@ scrobj << "Label Within or Between-and-Within Sigma Points"n( 0 );
 
 #### Shade Levels
 
-**Sintaxis:** obj << Capability Index Plot( 1, Shade Levels( state=0|1 ) ); 
-
-scrobj << Shade Levels( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Capability Index Plot( 1, Shade Levels( state=0|1 ) ); scrobj &lt;&lt; Shade Levels( state=0|1 )
 
 **Descripción:** Muestra u oculta el sombreado del nivel Ppk (Cpk) en el gráfico de índices de capacidad. Si p representa el valor Ppk (Cpk) introducido en el cuadro de edición, los procesos con un valor de Ppk (Cpk) superior a 2*p se sombrean en verde, los procesos con un valor de Ppk (Cpk) inferior a p se sombrean en rojo y los procesos con un valor de Ppk (Cpk) superior a p e inferior a 2*p se sombrean en amarillo.
 
@@ -3481,9 +3445,7 @@ scrobj << Shade Levels( 0 );
 
 #### Show Overall Sigma Points
 
-**Sintaxis:** obj << Capability Index Plot( 1, Show Overall Sigma Points( state=0|1 ) ); 
-
-scrobj << Show Overall Sigma Points( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Capability Index Plot( 1, Show Overall Sigma Points( state=0|1 ) ); scrobj &lt;&lt; Show Overall Sigma Points( state=0|1 )
 
 **Descripción:** Muestra u oculta puntos en el gráfico de índices de capacidad. Los puntos se calculan utilizando la estimación de sigma global. Opción activada de forma predeterminada.
 
@@ -3513,9 +3475,7 @@ scrobj << Show Overall Sigma Points( 1 );
 
 #### Show Within Sigma Points
 
-**Sintaxis:** obj << Capability Index Plot( 1, Show Within Sigma Points( state=0|1 ) ); 
-
-scrobj << Show Within Sigma Points( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Capability Index Plot( 1, Show Within Sigma Points( state=0|1 ) ); scrobj &lt;&lt; Show Within Sigma Points( state=0|1 )
 
 **Descripción:** Muestra u oculta puntos en el gráfico de índices de capacidad. Los puntos se calculan utilizando la estimación de sigma intra.
 
@@ -3542,9 +3502,7 @@ scrobj << Show Within Sigma Points( 0 );
 
 #### Show Within or Between-and-Within Sigma Points
 
-**Sintaxis:** obj << Capability Index Plot( 1, "Show Within or Between-and-Within Sigma Points"n( state=0|1 ) ); 
-
-scrobj << "Show Within or Between-and-Within Sigma Points"n( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Capability Index Plot( 1, "Show Within or Between-and-Within Sigma Points"n( state=0|1 ) ); scrobj &lt;&lt; "Show Within or Between-and-Within Sigma Points"n( state=0|1 )
 
 **Descripción:** Muestra u oculta puntos en el gráfico de índices de capacidad. Los puntos se calculan utilizando la estimación de sigma intra o, si se especifica, la estimación de sigma inter e intra.
 
@@ -3576,9 +3534,7 @@ scrobj << "Show Within or Between-and-Within Sigma Points"n( 0 );
 
 #### Capability Boundary
 
-**Sintaxis:** obj << Process Performance Plot( 1, Capability Boundary( number=1.0 ) ); 
-
-scrobj << Capability Boundary( number=1.0 )
+**Sintaxis:** obj &lt;&lt; Process Performance Plot( 1, Capability Boundary( number=1.0 ) ); scrobj &lt;&lt; Capability Boundary( number=1.0 )
 
 **Descripción:** Establece el valor Ppk de capacidad global que controla los límites del gráfico de rendimiento de procesos para determinar si es capaz o no es capaz. Este valor también aparece en el cuadro de edición de Ppk global. "1.0" de forma predeterminada.
 
@@ -3608,9 +3564,7 @@ scrobj << Capability Boundary( 1 );
 
 #### Label Points
 
-**Sintaxis:** obj << Process Performance Plot( 1, Label Points( state=0|1 ) ); 
-
-scrobj << Label Points( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Process Performance Plot( 1, Label Points( state=0|1 ) ); scrobj &lt;&lt; Label Points( state=0|1 )
 
 **Descripción:** Muestra u oculta los nombres de proceso en forma de etiquetas para los puntos en el gráfico de rendimiento de procesos.
 
@@ -3639,9 +3593,7 @@ scrobj << Label Points( 0 );
 
 #### Show Within Cpk Curve
 
-**Sintaxis:** obj << Process Performance Plot( 1, Show Within Cpk Curve( state=0|1 ) ); 
-
-scrobj << Show Within Cpk Curve( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Process Performance Plot( 1, Show Within Cpk Curve( state=0|1 ) ); scrobj &lt;&lt; Show Within Cpk Curve( state=0|1 )
 
 **Descripción:** Muestra u oculta la curva Cpk intra en el gráfico de rendimiento de procesos. Opción activada de forma predeterminada.
 
@@ -3670,9 +3622,7 @@ scrobj << Show Within Cpk Curve( 1 );
 
 #### Stability Boundary
 
-**Sintaxis:** obj << Process Performance Plot( 1, Stability Boundary( number=1.25 ) ); 
-
-scrobj << Stability Boundary( number=1.25 )
+**Sintaxis:** obj &lt;&lt; Process Performance Plot( 1, Stability Boundary( number=1.25 ) ); scrobj &lt;&lt; Stability Boundary( number=1.25 )
 
 **Descripción:** Establece el valor de la razón de estabilidad que controla los límites del gráfico de rendimiento del proceso para determinar si es estable o inestable. "1.25" de forma predeterminada.
 

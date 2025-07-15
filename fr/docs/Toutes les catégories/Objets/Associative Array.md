@@ -6,9 +6,7 @@
 
 ### Associative Array
 
-**Syntaxe :** y = Associative Array( {{key1, value1}, ...} );
-
-y = Associative Array( keys, values )
+**Syntaxe :** y = Associative Array( {{key1, value1}, ...} );y = Associative Array( keys, values )
 
 **Description :** Crée un tableau associatif, également appelé dictionnaire ou table de hachage. Sous la forme à deux arguments, les codes et valeurs peuvent être une liste, une matrice ou une colonne de table de données.
 
@@ -25,7 +23,7 @@ ex << get contents;
 
 ### Contains
 
-**Syntaxe :** bool = AAobj << Contains( key | AAobj )
+**Syntaxe :** bool = AAobj &lt;&lt; Contains( key | AAobj )
 
 **Description :** Examine si la clé ou le jeu de clés se trouve dans le tableau associatif. Voir également « Contient l’élément », pour un exemple plus simple.
 
@@ -44,7 +42,7 @@ Local(
 
 ### Contains Item
 
-**Syntaxe :** bool = AAobj << Contains Item( key )
+**Syntaxe :** bool = AAobj &lt;&lt; Contains Item( key )
 
 **Description :** Examine si la clé se trouve dans le tableau associatif. Voir aussi Contient, qui possède des fonctionnalités supplémentaires.
 
@@ -59,7 +57,7 @@ Local( {rhymes = ["mouse" => "house", "car" => "star", "orange" => ""]},
 
 ### First
 
-**Syntaxe :** key = AAobj << first
+**Syntaxe :** key = AAobj &lt;&lt; first
 
 **Description :** Itérateur pour tableau associatif.
 
@@ -83,7 +81,7 @@ Local(
 
 ### Get Contents
 
-**Syntaxe :** list = AAObj << Get Contents
+**Syntaxe :** list = AAObj &lt;&lt; Get Contents
 
 **Description :** Renvoie le contenu du tableau associatif sous forme d&apos;une liste.
 
@@ -98,7 +96,7 @@ Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"]},
 
 ### Get Default Value
 
-**Syntaxe :** value = AAobj << Get Default Value()
+**Syntaxe :** value = AAobj &lt;&lt; Get Default Value()
 
 **Description :** Renvoie la valeur renvoyée par le tableau associatif pour les clés non trouvées.
 
@@ -117,7 +115,7 @@ Local( {aa = [=> 99], v1, v2}, /* initial value used for non-existing key is 99 
 
 ### Get Keys
 
-**Syntaxe :** list = AAObj << Get Keys
+**Syntaxe :** list = AAObj &lt;&lt; Get Keys
 
 **Description :** Renvoie la liste des clés trouvées dans le tableau associatif.
 
@@ -132,7 +130,7 @@ Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"]},
 
 ### Get Value
 
-**Syntaxe :** value = AAobj << Get Value( key )
+**Syntaxe :** value = AAobj &lt;&lt; Get Value( key )
 
 **Description :** Renvoie la valeur stockée sous la clé dans le tableau associatif.
 
@@ -150,7 +148,7 @@ Local(
 
 ### Get Values
 
-**Syntaxe :** list = AAObj << Get Values
+**Syntaxe :** list = AAObj &lt;&lt; Get Values
 
 **Description :** Renvoie une liste de valeurs trouvées dans le tableau associatif.
 
@@ -165,7 +163,7 @@ Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"]},
 
 ### Insert
 
-**Syntaxe :** AAobj1 << Insert( AAobj2 | key,  { value } )
+**Syntaxe :** AAobj1 &lt;&lt; Insert( AAobj2 | key, { value } )
 
 **Description :** Insère un tableau associatif dans un autre ou stocke la valeur sous une clé dans le tableau associatif. Voir Insérer un élément, pour un exemple plus simple.
 
@@ -184,7 +182,7 @@ Local(
 
 ### Insert Item
 
-**Syntaxe :** AAobj << Insert Item( key, value )
+**Syntaxe :** AAobj &lt;&lt; Insert Item( key, value )
 
 **Description :** Stocke la valeur sous une clé dans le tableau associatif. Voir aussi Insérer, qui dispose des fonctionnalités supplémentaires.
 
@@ -200,7 +198,7 @@ Local( {decode = [".-" => "a", "-..." => "b"]},
 
 ### Intersect
 
-**Syntaxe :** AAobj1 << Intersect( AAobj2 )
+**Syntaxe :** AAobj1 &lt;&lt; Intersect( AAobj2 )
 
 **Description :** Traite un tableau associatif comme un ensemble d’objets. Les valeurs doivent être 1 pour les objets appartenant à l’ensemble. La valeur par défaut doit être 0. L’ensemble actuel est remplacé par son intersection avec l’ensemble contenu dans le message.
 
@@ -247,7 +245,7 @@ dt << selectrows( desiredSelection << getkeys ); // males <= 12
 
 ### Next
 
-**Syntaxe :** key = AAobj << next( previous key )
+**Syntaxe :** key = AAobj &lt;&lt; next( previous key )
 
 **Description :** Itérateur pour tableau associatif.
 
@@ -271,7 +269,7 @@ Local(
 
 ### Remove
 
-**Syntaxe :** AAobj1 << Remove( AAobj2 | key )
+**Syntaxe :** AAobj1 &lt;&lt; Remove( AAobj2 | key )
 
 **Description :** Supprime le jeu de clés ou la clé du tableau associatif. Voir également « Supprimer l’élément », pour un exemple plus simple.
 
@@ -295,7 +293,7 @@ Local(
 
 ### Remove Item
 
-**Syntaxe :** AAobj << Remove Item( key )
+**Syntaxe :** AAobj &lt;&lt; Remove Item( key )
 
 **Description :** Supprime la clé du tableau associatif. Voir aussi Supprimer, qui possède des fonctionnalités supplémentaires.
 
@@ -327,7 +325,7 @@ Local(
 
 ### Set Default Value
 
-**Syntaxe :** AAobj << Set Default Value( value )
+**Syntaxe :** AAobj &lt;&lt; Set Default Value( value )
 
 **Description :** Modifie la valeur renvoyée par le tableau associatif pour les clés non trouvées.
 

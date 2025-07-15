@@ -2,11 +2,9 @@
 
 
 
-## Funciones
-
 ### Alignment Cell Box
 
-**Sintaxis:** y = Alignment Cell Box( row, col, nRow, nCol, <Sides(left+2*top+4*right+8*bottom=15)> <RowSpan(nRow matrix)> <ColSpan(nCol matrix)>, matrix or list of strings )
+**Sintaxis:** y = Alignment Cell Box( row, col, nRow, nCol, &lt;Sides(left+2*top+4*right+8*bottom=15)&gt; &lt;RowSpan(nRow matrix)&gt; &lt;ColSpan(nCol matrix)&gt;, matrix or list of strings )
 
 **Descripción:** Devuelve una referencia a un cuadro de visualización que incluye el contenido de la fila (o columna) que se encuentra en un cuadro de la cuadrícula de alineación.
 
@@ -130,7 +128,7 @@ ashape = Alpha Shape( triang );
 
 ### Border Box
 
-**Sintaxis:** y = Border Box( <Left( pix )>, <Right( pix )>, <Top( pix )>, <Bottom( pix )>, <Sides( 0 )>, displayBoxArg )
+**Sintaxis:** y = Border Box( &lt;Left( pix )&gt;, &lt;Right( pix )&gt;, &lt;Top( pix )&gt;, &lt;Bottom( pix )&gt;, &lt;Sides( 0 )&gt;, displayBoxArg )
 
 **Descripción:** Devuelve un cuadro de visualización para añadir espacio alrededor del cuadro de visualización indicado en el argumento.
 
@@ -152,7 +150,7 @@ New Window( "Example",
 
 ### Box Plot Seg
 
-**Sintaxis:** b = Box Plot Seg(<data>, <frequency>, <weight>, <vertical=0|1>)
+**Sintaxis:** b = Box Plot Seg(&lt;data&gt;, &lt;frequency&gt;, &lt;weight&gt;, &lt;vertical=0|1&gt;)
 
 **Descripción:** Devuelve un segmento de visualización que representa un diagrama de caja basado en los valores x e y indicados.
 
@@ -171,7 +169,7 @@ seg = (g[FrameBox( 1 )] << Find Seg( "Box Plot Seg" ));
 
 ### Busy Light
 
-**Sintaxis:** y = Busy Light( < <<Automatic(0|1)>, <Size(x, y)>, < <<Disable> )
+**Sintaxis:** y = Busy Light( &lt; &lt;&lt;Automatic(0|1)&gt;, &lt;Size(x, y)&gt;, &lt; &lt;&lt;Disable&gt; )
 
 **Descripción:** Crea una imagen rotatoria que indica un proceso en curso.
 
@@ -216,7 +214,7 @@ New Window( "Calendar Box Example", Calendar Box() );
 
 ### Check Box
 
-**Sintaxis:** y = Check Box( {item, ...}, <script> )
+**Sintaxis:** y = Check Box( {item, ...}, &lt;script&gt; )
 
 **Descripción:** Devuelve un cuadro de visualización para mostrar una o más casillas de selección.
 
@@ -281,7 +279,7 @@ dt = New Window( "Example",
 
 ### Col List Box
 
-**Sintaxis:** y = Col List Box( <Data Table( name )>, <all>|<character|numeric>, <width( pix )>, <grouped>, <maxSelected( n )>, <nlines( n )>, <MaxItems( n )>, <MinItems( n )>, <onChange( expr )>, < <<Modeling Type({"Any","Continuous","Nominal","Ordinal","Multiple Response","Unstructured Text","Vector","None","Row State"}) >, < << Set Data Type(Any|Numeric|Character)>, <script> )
+**Sintaxis:** y = Col List Box( &lt;Data Table( name )&gt;, &lt;all&gt;|&lt;character|numeric&gt;, &lt;width( pix )&gt;, &lt;grouped&gt;, &lt;maxSelected( n )&gt;, &lt;nlines( n )&gt;, &lt;MaxItems( n )&gt;, &lt;MinItems( n )&gt;, &lt;onChange( expr )&gt;, &lt; &lt;&lt;Modeling Type({"Any","Continuous","Nominal","Ordinal","Multiple Response","Unstructured Text","Vector","None","Row State"}) &gt;, &lt; &lt;&lt; Set Data Type(Any|Numeric|Character)&gt;, &lt;script&gt; )
 
 **Descripción:** Devuelve un cuadro de visualización para mostrar un cuadro de lista en el que seleccionar columnas de la tabla de datos. Use el mensaje <<Modeling Type para permitir tipos de modelización especiales o restringir los tipos permitidos. El valor predeterminado de "Any" permitirá cualquier columna con un tipo de modelización clásico ("Continuous", "Nominal", "Ordinal").
 
@@ -351,7 +349,7 @@ New Window( "test",
 
 ### Column Dialog
 
-**Sintaxis:** y = Column Dialog( <var = ColList("Label", <Min Col(min)>, <Max Col(max)>, <Width(w)>, <Data Type("Numeric"|"Character"|"Any")>, <Modeling Type({<"Continuous">, <"Nominal">, <"Ordinal">, <"None">, <"Multiple Response">, <"Unstructured Text">, <"Vector">})> )>, <var=EditText("string")>, <var=EditNumber(num)>, <var=Check Box( "Text", 0|1)>, <var=RadioButtons( "a", "b" )>, <var=Combo Box("choice1", ...)>, <HList(box, ...)>, <VList(box, ...)>, <LineUp(ncol, box, ...)>, <Text Box("string")>, <Window Title("title")>, <Window Icon("icon string")>, <Dialog Description("description")>, <Recall(script)>, <Help Script(script)>)
+**Sintaxis:** y = Column Dialog( &lt;var = ColList("Label", &lt;Min Col(min)&gt;, &lt;Max Col(max)&gt;, &lt;Width(w)&gt;, &lt;Data Type("Numeric"|"Character"|"Any")&gt;, &lt;Modeling Type({&lt;"Continuous"&gt;, &lt;"Nominal"&gt;, &lt;"Ordinal"&gt;, &lt;"None"&gt;, &lt;"Multiple Response"&gt;, &lt;"Unstructured Text"&gt;, &lt;"Vector"&gt;})&gt; )&gt;, &lt;var=EditText("string")&gt;, &lt;var=EditNumber(num)&gt;, &lt;var=Check Box( "Text", 0|1)&gt;, &lt;var=RadioButtons( "a", "b" )&gt;, &lt;var=Combo Box("choice1", ...)&gt;, &lt;HList(box, ...)&gt;, &lt;VList(box, ...)&gt;, &lt;LineUp(ncol, box, ...)&gt;, &lt;Text Box("string")&gt;, &lt;Window Title("title")&gt;, &lt;Window Icon("icon string")&gt;, &lt;Dialog Description("description")&gt;, &lt;Recall(script)&gt;, &lt;Help Script(script)&gt;)
 
 **Descripción:** Muestra al usuario una ventana modal con campos para seleccionar columnas de una tabla de datos. La especificación puede incluir varios tipos de cuadros de entrada, así como cuadros contenedores para organizar la ventana.
 
@@ -389,7 +387,7 @@ Column Dialog(
 
 ### Combo Box
 
-**Sintaxis:** y = Combo Box( {item <( tipstr )>, ...}, <script> )
+**Sintaxis:** y = Combo Box( {item &lt;( tipstr )&gt;, ...}, &lt;script&gt; )
 
 **Descripción:** Devuelve un cuadro de visualización para mostrar un cuadro combinado con un menú desplegable. Cada elemento del cuadro combinado puede contener información sobre la herramienta que se especifique en forma de cadena de caracteres entre paréntesis, a continuación de la cadena de texto que corresponde al elemento.
 
@@ -427,7 +425,7 @@ New Window( "Example",
 
 ### Contour Seg
 
-**Sintaxis:** me = Contour Seg( Triangulation, [ levels ], < zColor([colors], <Cycle Colors|Interpolate Colors>) >, < Transparency([] | t) >
+**Sintaxis:** me = Contour Seg( Triangulation, [ levels ], &lt; zColor([colors], &lt;Cycle Colors|Interpolate Colors&gt;) &gt;, &lt; Transparency([] | t) &gt;
 
 **Descripción:** Devuelve un segmento de visualización que representa los contornos de una triangulación. Se pueden especificar colores opcionales para cada nivel en forma de matriz o lista. La transparencia puede indicarse en forma de número o matriz.
 
@@ -456,7 +454,7 @@ New Window( "Contour Seg Example",
 
 ### Current Report
 
-**Sintaxis:** y = Current Report( <Project(title|index|box|window)> )
+**Sintaxis:** y = Current Report( &lt;Project(title|index|box|window)&gt; )
 
 **Descripción:** Devuelve una referencia de cuadro de visualización al informe actual del proyecto actual (o a ningún proyecto si no se ejecuta el script en un proyecto).
 
@@ -475,7 +473,7 @@ Current Report();
 
 ### Current Window
 
-**Sintaxis:** y = Current Window( <Project(title|index|box|window)> )
+**Sintaxis:** y = Current Window( &lt;Project(title|index|box|window)&gt; )
 
 **Descripción:** Devuelve una referencia a la ventana actual del proyecto actual (o a ningún proyecto si no se ejecuta el script en un proyecto).
 
@@ -578,7 +576,7 @@ New Window( "Selection Filter",
 
 ### Data Grid Box
 
-**Sintaxis:** y = Data Grid Box(  )
+**Sintaxis:** y = Data Grid Box( )
 
 **Descripción:** Devuelve un cuadro de visualización que puede contener una tabla de datos.
 
@@ -750,7 +748,7 @@ New Window( "Example",
 
 ### Expr As Picture
 
-**Sintaxis:** y = Expr As Picture( expr( ... ), <width in pixels>, <Max Matrix Size( dim )> )
+**Sintaxis:** y = Expr As Picture( expr( ... ), &lt;width in pixels&gt;, &lt;Max Matrix Size( dim )&gt; )
 
 **Descripción:** Devuelve una imagen que contiene la expresión especificada como imagen de la fórmula. El ancho predeterminado es 600 píxeles y el tamaño de matriz máximo predeterminado es 100.
 
@@ -772,7 +770,7 @@ New Window( "Example",
 
 ### Filter Col Selector
 
-**Sintaxis:** y = Filter Col Selector(<Data Table(name)>, <width(pixels)>, <nlines(n)>, <script>, <onchange(expr)>)
+**Sintaxis:** y = Filter Col Selector(&lt;Data Table(name)&gt;, &lt;width(pixels)&gt;, &lt;nlines(n)&gt;, &lt;script&gt;, &lt;onchange(expr)&gt;)
 
 **Descripción:** Devuelve un cuadro de visualización que contiene una lista de elementos. El control permite el filtrado de columnas.
 
@@ -838,7 +836,7 @@ Print( Get Project List() << Get Window Title() );
 
 ### Get Window
 
-**Sintaxis:** window = Get Window( <Project(title|index|box|window)>, <Type(string)>, title|index|box )
+**Sintaxis:** window = Get Window( &lt;Project(title|index|box|window)&gt;, &lt;Type(string)&gt;, title|index|box )
 
 **Descripción:** Devuelve una referencia a una ventana abierta específica por título, índice o cuadro.
 
@@ -880,7 +878,7 @@ window = Get Window( Project( project ), "Big Class" );
 
 ### Get Window List
 
-**Sintaxis:** windowList = Get Window List( <Project(title|index|box|window)>, <Type(string)> )
+**Sintaxis:** windowList = Get Window List( &lt;Project(title|index|box|window)&gt;, &lt;Type(string)&gt; )
 
 **Descripción:** Devuelve una lista de todas las ventanas abiertas.
 
@@ -1026,7 +1024,7 @@ New Window( "Example",
 
 ### H Center Box
 
-**Sintaxis:** y = H Center Box( <childbox> )
+**Sintaxis:** y = H Center Box( &lt;childbox&gt; )
 
 **Descripción:** Devuelve un cuadro de visualización con el argumento del cuadro de visualización childbox centrado horizontalmente según el tamaño máximo de este hijo y de todos los demás hermanos del recuadro central.
 
@@ -1053,7 +1051,7 @@ New Window( "test",
 
 ### H List Box
 
-**Sintaxis:** y = H List Box( <Align( center|bottom )>, displayBox, ... )
+**Sintaxis:** y = H List Box( &lt;Align( center|bottom )&gt;, displayBox, ... )
 
 **Descripción:** Devuelve un cuadro de visualización que organiza los cuadros de visualización indicados por los argumentos en disposición horizontal. El mensaje <<Hold indica a la hoja que se convierta en propietaria de los informes extraídos. El argumento opcional Align permite alinear los contenidos a la derecha (bottom) o en el centro (center) dentro del cuadro de visualización.
 
@@ -1070,7 +1068,7 @@ New Window( "Example",
 
 ### H Scroll Box
 
-**Sintaxis:** y = H Scroll Box( <Size( x )>, displayBox )
+**Sintaxis:** y = H Scroll Box( &lt;Size( x )&gt;, displayBox )
 
 **Descripción:** Devuelve un cuadro de visualización que sirve para posicionar un cuadro hijo mayor usando una barra de desplazamiento horizontal.
 
@@ -1099,7 +1097,7 @@ New Window( "Example",
 
 ### H Sheet Box
 
-**Sintaxis:** y = H Sheet Box( <<Hold( rpt ), displayBox, ... )
+**Sintaxis:** y = H Sheet Box( &lt;&lt;Hold( rpt ), displayBox, ... )
 
 **Descripción:** Devuelve un cuadro de visualización que organiza los cuadros de visualización indicados por los argumentos en disposición horizontal. El mensaje <<Hold indica a la hoja que se convierta en propietaria de los informes extraídos. El argumento opcional Align permite alinear los contenidos a la derecha (right) o en el centro (center) dentro del cuadro de visualización.
 
@@ -1149,7 +1147,7 @@ New Window( "Example",
 
 ### H Splitter Box
 
-**Sintaxis:** y = H Splitter Box( <Size(x,y)>, displayBox, ... )
+**Sintaxis:** y = H Splitter Box( &lt;Size(x,y)&gt;, displayBox, ... )
 
 **Descripción:** Devuelve un cuadro de visualización que organiza otros cuadros de visualización horizontalmente, con un control interactivo de los tamaños. Los tamaños de los hijos se especifican como proporciones del ancho o el alto de Splitter Box. El argumento Size opcional solo se utiliza para el cuadro divisor superior. A los cuadros de nivel inferior se les asignan tamaños como los de cualquier otro cuadro hijo.
 
@@ -1204,7 +1202,7 @@ New Window( "Example",
 
 ### Hist Seg
 
-**Sintaxis:** b = Hist Seg([data], <[freq data]>,<[weight data]>, <vertical=0|1>, <Row States()>)
+**Sintaxis:** b = Hist Seg([data], &lt;[freq data]&gt;,&lt;[weight data]&gt;, &lt;vertical=0|1&gt;, &lt;Row States()&gt;)
 
 **Descripción:** Devuelve un segmento de histograma
 
@@ -1289,7 +1287,7 @@ frenchBox << Set( 1 );
 
 ### If Seg
 
-**Sintaxis:** seg = If Seg(<state=0|1>)
+**Sintaxis:** seg = If Seg(&lt;state=0|1&gt;)
 
 **Descripción:** Devuelve un segmento de visualización que muestra u oculta los segmentos de visualización hijos.
 
@@ -1356,7 +1354,7 @@ New Window( "Distribution of Height",
 
 ### Line Seg
 
-**Sintaxis:** ls = Line Seg(x values, y values, <Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) >, < Sizes( s ) > )>)
+**Sintaxis:** ls = Line Seg(x values, y values, &lt;Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) &gt;, &lt; Sizes( s ) &gt; )&gt;)
 
 **Descripción:** Devuelve un segmento de visualización que contiene líneas que conectan todos los valores x e y indicados.
 
@@ -1425,7 +1423,7 @@ seg = (frame << Find Seg( "Lines Seg" ));
 
 ### Lineup Box
 
-**Sintaxis:** y = Lineup Box( <NCol( nc )>, <Spacing( pixels, <vspace> )>, displayBoxArgs, ... )
+**Sintaxis:** y = Lineup Box( &lt;NCol( nc )&gt;, &lt;Spacing( pixels, &lt;vspace&gt; )&gt;, displayBoxArgs, ... )
 
 **Descripción:** Devuelve un cuadro de visualización para mostrar la alineación de cuadros en nc columnas. El argumento opcional Spacing especifica el espaciado horizontal y vertical alrededor de los cuadros de visualización. Cuando se utiliza el argumento vspace, vspace es el espaciado vertical y pixels el horizontal.
 
@@ -1447,7 +1445,7 @@ New Window( "Example",
 
 ### Lineup Ruler Box
 
-**Sintaxis:** y = Lineup Box( <Widths( {width1, width2, ...} )>, displayBoxArgs, ... )
+**Sintaxis:** y = Lineup Box( &lt;Widths( {width1, width2, ...} )&gt;, displayBoxArgs, ... )
 
 **Descripción:** Devuelve un cuadro de visualización que establece el ancho de las columnas de los cuadros de alineación que contiene.
 
@@ -1485,7 +1483,7 @@ New Window( "Lineup Ruler",
 
 ### List Box
 
-**Sintaxis:** y = List Box( {item, ...}, <width( pixels )>, <maxSelected( 9999 )>, <nlines( 12 )>, <script> )
+**Sintaxis:** y = List Box( {item, ...}, &lt;width( pixels )&gt;, &lt;maxSelected( 9999 )&gt;, &lt;nlines( 12 )&gt;, &lt;script&gt; )
 
 **Descripción:** Devuelve un cuadro de visualización que muestra un cuadro de lista de elementos de selección. Si el propio item es una lista de dos elementos que contiene el nombre del elemento y una cadena de caracteres que especifica un tipo de modelización o criterio de ordenación, como "Ordinal" o "Ascending", el icono correspondiente se mostrará junto a ese elemento en el cuadro de lista.
 
@@ -1518,7 +1516,7 @@ New Window( "Example",
 
 ### Marker Seg
 
-**Sintaxis:** me = Marker Seg( x, y, < Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) >, < Sizes( s ) > )
+**Sintaxis:** me = Marker Seg( x, y, &lt; Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) &gt;, &lt; Sizes( s ) &gt; )
 
 **Descripción:** Devuelve un segmento de visualización que contiene marcadores en todos los valores x e y indicados.
 
@@ -1638,7 +1636,7 @@ New Window( "Marker Seg Example",
 
 ### Matrix Box
 
-**Sintaxis:** y = Matrix Box( matrix, < <<Column Names( "c1", "c2", ... )>, < <<Row Names( "r1", "r2", ... )> )
+**Sintaxis:** y = Matrix Box( matrix, &lt; &lt;&lt;Column Names( "c1", "c2", ... )&gt;, &lt; &lt;&lt;Row Names( "r1", "r2", ... )&gt; )
 
 **Descripción:** Devuelve un cuadro de visualización para mostrar una matriz de números.
 
@@ -1705,7 +1703,7 @@ New Window( "Example",
 
 ### Move to Project
 
-**Sintaxis:** Move to Project(<Source(project)>, <Destination(project)>, <Windows({list of windows to move})>)
+**Sintaxis:** Move to Project(&lt;Source(project)&gt;, &lt;Destination(project)&gt;, &lt;Windows({list of windows to move})&gt;)
 
 **Descripción:** Mueve una o más ventanas a un proyecto, fuera de un proyecto o entre proyectos. Solo se debe especificar un origen y un destino; el resto serán los valores predeterminados del proyecto actual. (Utilice solo el origen para mover ventanas al proyecto actual, y solo destino para mover ventanas fuera de él). Se moverá una ventana de tabla de datos junto con sus informes dependientes, aunque solo es necesario especificar uno en el argumento Ventanas. Si se omite, el argumento Ventanas será el predeterminado para todas las ventanas abiertas en el proyecto de origen.
 
@@ -1738,17 +1736,7 @@ project << Close Window();
 
 ### New Image
 
-**Sintaxis:** img = New Image()
-
-img = New Image( width, height )
-
-img = New Image( pathname )
-
-img = New Image( picture )
-
-img = New Image( matrix of JSL color pixels ) 
-
-img = New Image( rgb|r|g|rgba, {i, i, i} )
+**Sintaxis:** img = New Image()img = New Image( width, height )img = New Image( pathname )img = New Image( picture )img = New Image( matrix of JSL color pixels ) img = New Image( rgb|r|g|rgba, {i, i, i} )
 
 **Descripción:** Devuelve una nueva imagen editable mediante comandos de JSL. Si se especifica una ruta hasta un archivo de imagen existente, el archivo debe estar en formato .JPG, .PNG, .GIF, .BMP o .TIF.
 
@@ -1794,7 +1782,7 @@ New Window( "image", image3 );
 
 ### New Project
 
-**Sintaxis:** project = new Project( <project messages> )
+**Sintaxis:** project = new Project( &lt;project messages&gt; )
 
 **Descripción:** Crea una nueva ventana de proyecto vacía. Pueden incluirse uno o más mensajes de proyecto como argumentos para crear un proyecto en un paso.
 
@@ -1882,7 +1870,7 @@ project = New Project(
 
 ### New Window
 
-**Sintaxis:** w = New Window( title, < <<Type("Report" | "Dialog" | "Modal Dialog" | "Journal" | "Launcher" | "Script")>, < << Return Result>, < << On Open(expr | function | method)>, < << On Close(expr | function | method)>, < <<On Validate(expr | function | method)>, < <<Show Menu(0 | 1)>, < <<Show Toolbars(0 | 1)>, < <<Suppress AutoHide(0 | 1)>, < <<Window View("Visible" | "Invisible")>, < <<Language("C" | "JavaScript" | "JSL" | "JSON" | "Python" | "R" | "SAS"  | "SQL" | "Text" | "XML")>, < <<Size(x, y)>, displayBox | script)
+**Sintaxis:** w = New Window( title, &lt; &lt;&lt;Type("Report" | "Dialog" | "Modal Dialog" | "Journal" | "Launcher" | "Script")&gt;, &lt; &lt;&lt; Return Result&gt;, &lt; &lt;&lt; On Open(expr | function | method)&gt;, &lt; &lt;&lt; On Close(expr | function | method)&gt;, &lt; &lt;&lt;On Validate(expr | function | method)&gt;, &lt; &lt;&lt;Show Menu(0 | 1)&gt;, &lt; &lt;&lt;Show Toolbars(0 | 1)&gt;, &lt; &lt;&lt;Suppress AutoHide(0 | 1)&gt;, &lt; &lt;&lt;Window View("Visible" | "Invisible")&gt;, &lt; &lt;&lt;Language("C" | "JavaScript" | "JSL" | "JSON" | "Python" | "R" | "SAS" | "SQL" | "Text" | "XML")&gt;, &lt; &lt;&lt;Size(x, y)&gt;, displayBox | script)
 
 **Descripción:** Crea una ventana que contiene el cuadro de visualización o script especificados. De forma predeterminada, se crea una ventana de resultados, a menos que se especifique la opción Type. Una ventana de Type("Modal Dialog") detiene la ejecución hasta que se responda al cuadro de diálogo. On Open, On Validate y Return Result solo están disponibles para las ventanas modales. On Open() evalúa su expresión, función o método de clase cuando se crea la ventana. Si On Close() devuelve falso, se impide que la ventana se cierre. On Validate() ejecuta su expresión, función o método de clase cuando se hace clic en el botón Aceptar. Si la expresión devuelve verdadero, la ventana se cierra. De lo contrario, la ventana permanece abierta. Return Result cambia el valor devuelto por la ventana cuando se cierra para que coincida con el de la función Dialog() en desuso. Para los tipos de ventanas que admiten barras de herramientas, utilice Show Toolbars para especificar los cambios con respecto al comportamiento predeterminado. Las opciones Show Menu y Suppress AutoHide son solo para Windows. La opción Window View("Invisible") se puede utilizar para cualquier ventana que no sea Modal Dialog. Una ventana de Type("Script") crea un documento de JSL a menos que se especifique la opción <<Language.
 
@@ -2073,7 +2061,7 @@ New Window( "Example",
 
 ### Number Edit Box
 
-**Sintaxis:** y = Number Edit Box( initValue, <width> )
+**Sintaxis:** y = Number Edit Box( initValue, &lt;width&gt; )
 
 **Descripción:** Devuelve un cuadro de edición que solo acepta entradas numéricas. Especifique el argumento width opcional para establecer el ancho del cuadro en caracteres.
 
@@ -2089,7 +2077,7 @@ x = neb << get;
 
 ### Outline Box
 
-**Sintaxis:** y = Outline Box( title, <command script pairs list>, displayBox, ... )
+**Sintaxis:** y = Outline Box( title, &lt;command script pairs list&gt;, displayBox, ... )
 
 **Descripción:** Crea un cuadro de esquema en el informe y devuelve la referencia al cuadro de visualización. Para incluir un menú en el nodo de esquema, especifique la lista command script pairs list con los comandos de menú y los scripts asociados.
 
@@ -2189,7 +2177,7 @@ New Window( "Example", Picture Box( pict ) );
 
 ### Pie Seg
 
-**Sintaxis:** ps = Pie Seg(<{ xorigin, yorigin }>, <radius>, <style("pie", "ring", "coxcomb")>, values)
+**Sintaxis:** ps = Pie Seg(&lt;{ xorigin, yorigin }&gt;, &lt;radius&gt;, &lt;style("pie", "ring", "coxcomb")&gt;, values)
 
 **Descripción:** Crea un segmento de gráfico circular en el origin especificado, con el radius especificado, basado en los valores especificados en el formato de matriz.
 
@@ -2302,7 +2290,7 @@ New Window( "Example",
 
 ### Radio Box
 
-**Sintaxis:** y = Radio Box( {item, ...}, <script> )
+**Sintaxis:** y = Radio Box( {item, ...}, &lt;script&gt; )
 
 **Descripción:** Devuelve un cuadro de visualización para mostrar un conjunto de botones de opción.
 
@@ -2415,7 +2403,7 @@ exScene << update;
 
 ### Script Box
 
-**Sintaxis:** y = Script Box( <s>, <"C" | "JavaScript" | "JSL" | "JSON" | "Python" | "R" | "SAS" | "SQL" | "Text" | "XML">, <width>, <height> )
+**Sintaxis:** y = Script Box( &lt;s&gt;, &lt;"C" | "JavaScript" | "JSL" | "JSON" | "Python" | "R" | "SAS" | "SQL" | "Text" | "XML"&gt;, &lt;width&gt;, &lt;height&gt; )
 
 **Descripción:** Devuelve un cuadro de visualización para editar un script. De forma predeterminada, el editor tiene el resaltado de sintaxis y el comportamiento JSL.
 
@@ -2445,7 +2433,7 @@ New Window( "This is a python script box", Script );
 
 ### Scroll Box
 
-**Sintaxis:** y = Scroll Box( <Size( x, y )>, displayBox )
+**Sintaxis:** y = Scroll Box( &lt;Size( x, y )&gt;, displayBox )
 
 **Descripción:** Devuelve un cuadro de visualización que sirve para posicionar un cuadro hijo mayor usando barras de desplazamiento.
 
@@ -2496,7 +2484,7 @@ Clear Global Window Handler();
 
 ### Shape Seg
 
-**Sintaxis:** me = Shape Seg( {Path(<path>), ...}, < Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) > )
+**Sintaxis:** me = Shape Seg( {Path(&lt;path&gt;), ...}, &lt; Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) &gt; )
 
 **Descripción:** Devuelve un segmento de visualización con una colección de formas. Cada forma dibuja un trazo a lo largo de una trayectoria determinada si el valor del relleno es 0. En caso contrario, pinta el interior de ese trazo. La trayectoria se puede especificar en forma de matriz N x 3 o en forma de texto. Una matriz de trayectoria tiene tres columnas para x, y, y marcas para cada punto de la trayectoria. Los valores de las marcas son 0 para control, 1 para movimiento, 2 para segmento lineal, 3 para segmento cúbico de Bézier, y son negativos si, además, el punto cierra la trayectoria. El formato de texto de la trayectoria es compatible con la sintaxis SVG.
 
@@ -2568,7 +2556,7 @@ New Window( "Example",
 
 ### Slider Box
 
-**Sintaxis:** box = Slider Box(minValue, maxValue, variable, script, <set width(n)>, <rescale slider(minValue, maxValue)>)
+**Sintaxis:** box = Slider Box(minValue, maxValue, variable, script, &lt;set width(n)&gt;, &lt;rescale slider(minValue, maxValue)&gt;)
 
 **Descripción:** Devuelve un cuadro de visualización que muestra un control deslizante que va de minValue a maxValue. A medida que la posición del selector deslizante varía, el valor se coloca en variable y se ejecuta la secuencia de comandos.
 
@@ -2594,7 +2582,7 @@ New Window( "Example",
 
 ### Spacer Box
 
-**Sintaxis:** y = Spacer Box( <Size( x, y )>, <Color( c )>)
+**Sintaxis:** y = Spacer Box( &lt;Size( x, y )&gt;, &lt;Color( c )&gt;)
 
 **Descripción:** Devuelve un cuadro de visualización que se puede usar para mantener un espacio entre otros cuadros de visualización o para rellenar una celda en un Lineup Box. Los argumentos Size se especifican en píxeles, y el argumento Color es cualquier color de JSL válido.
 
@@ -2617,7 +2605,7 @@ New Window( "Example",
 
 ### Spin Box
 
-**Sintaxis:** y = Spin Box( <script> )
+**Sintaxis:** y = Spin Box( &lt;script&gt; )
 
 **Descripción:** Devuelve un cuadro de visualización que sirve para mostrar un botón con controles hacia arriba/abajo. Se llama al argumento script con un argumento que indica la dirección de la flecha en la que se ha hecho clic (negativo es hacia abajo, positivo es hacia arriba). Una magnitud de 1 indica un solo clic y se pueden usar valores mayores para indicar una acción repetida.
 
@@ -2704,7 +2692,7 @@ New Window( "Example",
 
 ### Tab Page Box
 
-**Sintaxis:** y = Tab Page Box( <Title("string")>, <Tip(0|1)>,  <Closeable(0|1)>, <Icon("string")>, <Moveable(0|1)>, contents)
+**Sintaxis:** y = Tab Page Box( &lt;Title("string")&gt;, &lt;Tip(0|1)&gt;, &lt;Closeable(0|1)&gt;, &lt;Icon("string")&gt;, &lt;Moveable(0|1)&gt;, contents)
 
 **Descripción:** Devuelve un cuadro de visualización que se puede utilizar en un Tab Box o en un contenedor independiente con título. Algunas de las opciones reconocidas son Title(cadena) para especificar un título, Tip(cadena) para especificar una instancia de información sobre herramienta, Closeable(0|1) para especificar si la página puede cerrarse, Icon(cadena) para especificar el icono y Moveable(0|1) para especificar si la página puede moverse.
 
@@ -2747,7 +2735,7 @@ New Window( "Example",
 
 ### Text Box
 
-**Sintaxis:** y = Text Box( text, <<Justify Text( strPos ), <<Set Wrap( width ) )
+**Sintaxis:** y = Text Box( text, &lt;&lt;Justify Text( strPos ), &lt;&lt;Set Wrap( width ) )
 
 **Descripción:** Construye un cuadro de visualización que contiene el texto indicado en el argumento de cadena de caracteres text. Los argumentos opcionales sirven para controlar la justificación del texto o la sangría. El argumento Justify Text debe ser una cadena de caracteres con uno de los valores left, right o center.
 
@@ -2786,7 +2774,7 @@ New Window( "Justification Example",
 
 ### Text Edit Box
 
-**Sintaxis:** y = Text Edit Box( text, <<Password Style( bool ), <<Set Script( script ), <<Set Width( value ) )
+**Sintaxis:** y = Text Edit Box( text, &lt;&lt;Password Style( bool ), &lt;&lt;Set Script( script ), &lt;&lt;Set Width( value ) )
 
 **Descripción:** Construye un cuadro editable que contiene la cadena de caracteres entrecomillada text y devuelve una referencia al cuadro de visualización. Los argumentos opcionales sirven para controlar la visualización del texto, para asignar un script al cuadro de texto y para establecer el ancho del cuadro en píxeles. Al especificar Set Width(-1) se configura un cuadro que se ajusta al tamaño del texto. Tenga en cuenta que se puede añadir un script al cuadro de texto añadiéndolo como argumento opcional o enviándole el mensaje Set Script.
 
@@ -2846,7 +2834,7 @@ If(
 
 ### Tree Box
 
-**Sintaxis:** tree = Tree Box( <{rootnodes}>, <Size( x, y )>, <Multiselect( 0|1 )> )
+**Sintaxis:** tree = Tree Box( &lt;{rootnodes}&gt;, &lt;Size( x, y )&gt;, &lt;Multiselect( 0|1 )&gt; )
 
 **Descripción:** Genera un cuadro de visualización para mostrar información jerárquica.
 
@@ -2874,7 +2862,7 @@ New Window( "TreeBox", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
 
 ### Tree Node
 
-**Sintaxis:** node = Tree Node( <label> )
+**Sintaxis:** node = Tree Node( &lt;label&gt; )
 
 **Descripción:** Genera un nodo de un árbol para visualizarlo dentro de un cuadro de árbol.
 
@@ -2902,7 +2890,7 @@ New Window( "TreeBox Nodes", tree = Tree Box( {root1, root2}, Size( 300, 200 ) )
 
 ### Triangulation
 
-**Sintaxis:** triangulation = Triangulation( X(Column1, Column2), < Y(Column) > )
+**Sintaxis:** triangulation = Triangulation( X(Column1, Column2), &lt; Y(Column) &gt; )
 
 **Descripción:** Devuelve un objeto que contiene la triangulación de Delaunay del conjunto de puntos indicado. De la Y opcional se calcula la media de los puntos duplicados y todos los puntos de salida son únicos.
 
@@ -2953,7 +2941,7 @@ New Window( "unlineup",
 
 ### V Center Box
 
-**Sintaxis:** y = V Center Box( <childbox> )
+**Sintaxis:** y = V Center Box( &lt;childbox&gt; )
 
 **Descripción:** Devuelve un cuadro de visualización con el argumento del cuadro de visualización childbox centrado verticalmente según el tamaño máximo de este hijo y de todos los demás hermanos del recuadro central.
 
@@ -2980,7 +2968,7 @@ New Window( "test",
 
 ### V List Box
 
-**Sintaxis:** y = V List Box( <Align( center|right )>, displayBox, ... )
+**Sintaxis:** y = V List Box( &lt;Align( center|right )&gt;, displayBox, ... )
 
 **Descripción:** Devuelve un cuadro de visualización que organiza los cuadros de visualización indicados por los argumentos en disposición vertical. El mensaje <<Hold indica a la hoja que se convierta en propietaria de los informes extraídos. El argumento opcional Align permite alinear los contenidos a la derecha (right) o en el centro (center) dentro del cuadro de visualización.
 
@@ -2997,7 +2985,7 @@ New Window( "Example",
 
 ### V Scroll Box
 
-**Sintaxis:** y = V Scroll Box( <Size( y )>, displayBox )
+**Sintaxis:** y = V Scroll Box( &lt;Size( y )&gt;, displayBox )
 
 **Descripción:** Devuelve un cuadro de visualización que sirve para posicionar un cuadro hijo mayor usando una barra de desplazamiento vertical.
 
@@ -3028,7 +3016,7 @@ New Window( "Example",
 
 ### V Sheet Box
 
-**Sintaxis:** y = V Sheet Box( <<Hold( rpt ), displayBox, ... )
+**Sintaxis:** y = V Sheet Box( &lt;&lt;Hold( rpt ), displayBox, ... )
 
 **Descripción:** Devuelve un cuadro de visualización que organiza los cuadros de visualización indicados por los argumentos en disposición vertical. El mensaje <<Hold indica a la hoja que se convierta en propietaria de los informes extraídos. El argumento opcional Align permite alinear los contenidos a la derecha (right) o en el centro (center) dentro del cuadro de visualización.
 
@@ -3078,7 +3066,7 @@ New Window( "Example",
 
 ### V Splitter Box
 
-**Sintaxis:** y = V Splitter Box( <Size(x,y)>, displayBox, ... )
+**Sintaxis:** y = V Splitter Box( &lt;Size(x,y)&gt;, displayBox, ... )
 
 **Descripción:** Devuelve un cuadro de visualización que organiza otros cuadros de visualización verticalmente, con un control interactivo de los tamaños. Los tamaños de los hijos se especifican como proporciones del ancho o el alto de Splitter Box. El argumento Size opcional solo se utiliza para el cuadro divisor superior. A los cuadros de nivel inferior se les asignan tamaños como los de cualquier otro cuadro hijo.
 
@@ -3128,7 +3116,7 @@ wb << Set Max Size( 10000, 10000 );
 
 ### Window
 
-**Sintaxis:** y = Window( <string|int> )
+**Sintaxis:** y = Window( &lt;string|int&gt; )
 
 **Descripción:** Esta función está en desuso y solo se conserva para la compatibilidad retroactiva con scripts existentes. Para los nuevos scripts, utilice Get Window() o Get Window List().
 

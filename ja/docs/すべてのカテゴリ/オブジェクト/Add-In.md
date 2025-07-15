@@ -6,7 +6,7 @@
 
 ### Auto Load
 
-**構文:** addin << Auto Load( boolean )
+**構文:** addin &lt;&lt; Auto Load( boolean )
 
 **説明:** JMP起動時にアドインを自動的にロードするかどうかを設定する。
 
@@ -23,7 +23,7 @@ If( !Is Missing( addin ),
 
 ### Display Name
 
-**構文:** name = addin << Display Name
+**構文:** name = addin &lt;&lt; Display Name
 
 **説明:** アドインの表示名を戻す。
 
@@ -52,7 +52,7 @@ If( !Is Missing( addin ),
 
 ### Home Folder
 
-**構文:** folder = addin << Home Folder
+**構文:** folder = addin &lt;&lt; Home Folder
 
 **説明:** アドインのホームフォルダを戻す。
 
@@ -81,7 +81,7 @@ If( !Is Missing( addin ),
 
 ### ID
 
-**構文:** id = addin << ID
+**構文:** id = addin &lt;&lt; ID
 
 **説明:** アドインの一意のIDを戻す。
 
@@ -110,7 +110,7 @@ If( !Is Missing( addin ),
 
 ### Is Loaded
 
-**構文:** x = addin << Is Loaded
+**構文:** x = addin &lt;&lt; Is Loaded
 
 **説明:** アドインが現在ロードされているかどうかを戻す。
 
@@ -139,7 +139,7 @@ If( !Is Missing( addin ),
 
 ### Load
 
-**構文:** addin << Load
+**構文:** addin &lt;&lt; Load
 
 **説明:** アドインをロードする。
 
@@ -156,7 +156,7 @@ If( !Is Missing( addin ),
 
 ### Unload
 
-**構文:** addin << Unload
+**構文:** addin &lt;&lt; Unload
 
 **説明:** アドインをアンロードする。
 
@@ -173,7 +173,7 @@ If( !Is Missing( addin ),
 
 ### Version
 
-**構文:** ver = addin << Version
+**構文:** ver = addin &lt;&lt; Version
 
 **説明:** アドインのバージョン番号を戻す。
 

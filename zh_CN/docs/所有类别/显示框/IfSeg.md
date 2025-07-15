@@ -6,9 +6,7 @@
 
 ### Enabled
 
-**语法:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**语法:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **说明:** 未启用的对象不会响应键盘或鼠标输入。子对象会继承该属性，所以禁用的容器对象会导致所有子孙对象都被禁用。
 
@@ -40,9 +38,7 @@ New Window( "enabled",
 
 ### Get Enabled
 
-**语法:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**语法:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **说明:** 未启用的对象不会响应键盘或鼠标输入。子对象会继承该属性，所以禁用的容器对象会导致所有子孙对象都被禁用。
 
@@ -74,7 +70,7 @@ New Window( "enabled",
 
 ### Get Namespace
 
-**语法:** obj << Get Namespace
+**语法:** obj &lt;&lt; Get Namespace
 
 **说明:** 返回与该显示对象关联的命名空间。
 
@@ -92,7 +88,7 @@ Show( ns:x, x );
 
 ### Get Properties
 
-**语法:** obj << Get Properties
+**语法:** obj &lt;&lt; Get Properties
 
 **说明:** 返回包含显示框的属性及其值的关联数组。
 
@@ -106,7 +102,7 @@ bb << Get Properties;
 
 ### Get Property
 
-**语法:** obj << Get Property( "property" )
+**语法:** obj &lt;&lt; Get Property( "property" )
 
 **说明:** 返回已命名的“property”的当前设置。
 
@@ -120,7 +116,7 @@ bb << Get Property( "Enabled" );
 
 ### Get Property List
 
-**语法:** obj << Get Property List
+**语法:** obj &lt;&lt; Get Property List
 
 **说明:** 返回显示框具有的属性列表。
 
@@ -134,7 +130,7 @@ bb << Get Property List;
 
 ### Set Property
 
-**语法:** obj << Set Property( "property", value )
+**语法:** obj &lt;&lt; Set Property( "property", value )
 
 **说明:** 设置显示框的已命名的“property”的值。
 
@@ -150,7 +146,7 @@ bb << Set Property( "Enabled", 0 );
 
 ### If Seg
 
-**语法:** seg = If Seg(<state=0|1>)
+**语法:** seg = If Seg(&lt;state=0|1&gt;)
 
 **说明:** 创建用于显示或隐藏相应显示段子级的段。
 
@@ -170,7 +166,7 @@ seg = (frame << Find Seg( If Seg( 1 ) ));
 
 ### Append
 
-**语法:** obj << Append( seg2 )
+**语法:** obj &lt;&lt; Append( seg2 )
 
 **说明:** 将段作为当前段的最后一个子级添加。
 
@@ -189,7 +185,7 @@ seg << Append( Lines Seg( [5 50 95 50] ) );
 
 ### Child
 
-**语法:** seg2 = obj << Child
+**语法:** seg2 = obj &lt;&lt; Child
 
 **说明:** 返回显示段的第一个子级。
 
@@ -208,7 +204,7 @@ seg << Child; // not many segs support children
 
 ### Class Name
 
-**语法:** classname = obj << Class Name
+**语法:** classname = obj &lt;&lt; Class Name
 
 **说明:** 返回显示段的显示类的名称。
 
@@ -227,7 +223,7 @@ seg << Class Name;
 
 ### Clip Shape
 
-**语法:** seg << Clip Shape(Boundaries(Shape File, [ID(string)]) | Path([string] | [matrix]) | Empty())
+**语法:** seg &lt;&lt; Clip Shape(Boundaries(Shape File, [ID(string)]) | Path([string] | [matrix]) | Empty())
 
 **说明:** 按给定形状剪切几何形状。可以使用形状文件或路径指定形状。可以使用形状文件指定可选 ID 以从文件中选择单个形状，否则所有形状的合集用作剪切区域。可以使用 N x 3 矩阵或文本表示法来指定剪切路径。路径矩阵包含三列（x、y 和标志），用于指定路径上的各点。标志值为 0 表示控制，为 1 表示移动，为 2 表示线段，为 3 表示三次 Bézier 线段，还可为负值（若该点还起到闭合路径的作用）。路径文本支持 SVG 语法。
 
@@ -257,7 +253,7 @@ cs << Clip Shape( Boundaries( "US States" ) );
 
 ### Delete
 
-**语法:** obj << Delete
+**语法:** obj &lt;&lt; Delete
 
 **说明:** 删除显示段。
 
@@ -276,7 +272,7 @@ seg << Delete;
 
 ### Frame
 
-**语法:** FrameBox = obj << Frame
+**语法:** FrameBox = obj &lt;&lt; Frame
 
 **说明:** 返回显示段所在的框架框。
 
@@ -295,7 +291,7 @@ seg << Frame;
 
 ### Get
 
-**语法:** 0|1 = obj << Get
+**语法:** 0|1 = obj &lt;&lt; Get
 
 **说明:** 返回 IfSeg 的状态。
 
@@ -316,7 +312,7 @@ seg << get;
 
 ### Get Clip Shape
 
-**语法:** obj << Get Clip Shape
+**语法:** obj &lt;&lt; Get Clip Shape
 
 **说明:** 返回当前的剪切形状
 
@@ -347,7 +343,7 @@ cs << Get Clip Shape();
 
 ### Get Description
 
-**语法:** description = obj << Get Description
+**语法:** description = obj &lt;&lt; Get Description
 
 **说明:** 获取显示段的说明。
 
@@ -366,7 +362,7 @@ seg << get description();
 
 ### Parent
 
-**语法:** seg2 = obj << Parent
+**语法:** seg2 = obj &lt;&lt; Parent
 
 **说明:** 返回显示段的父级。
 
@@ -385,7 +381,7 @@ seg << Parent;
 
 ### Set
 
-**语法:** obj << Set( state=0|1 )
+**语法:** obj &lt;&lt; Set( state=0|1 )
 
 **说明:** 在 IfSeg 内显示或隐藏显示段。
 
@@ -409,7 +405,7 @@ seg << set( 1 );
 
 ### Set Description
 
-**语法:** obj << Set Description( description )
+**语法:** obj &lt;&lt; Set Description( description )
 
 **说明:** 设置显示段的说明。
 
@@ -428,7 +424,7 @@ seg << set description( "my seg" );
 
 ### Sib
 
-**语法:** seg2 = obj << Sib
+**语法:** seg2 = obj &lt;&lt; Sib
 
 **说明:** 返回显示段的平级项。
 
@@ -447,7 +443,7 @@ seg << Sib;
 
 ### Sib Append
 
-**语法:** obj << Sib Append( seg2 )
+**语法:** obj &lt;&lt; Sib Append( seg2 )
 
 **说明:** 紧接在显示段之后添加一个显示段。
 
@@ -485,7 +481,7 @@ mapSeg << Sib Append( Line Seg( xval, yval, <<line color( "Green" ), <<line widt
 
 ### Sib Prepend
 
-**语法:** obj << Sib Prepend( seg2 )
+**语法:** obj &lt;&lt; Sib Prepend( seg2 )
 
 **说明:** 紧接在显示段之前添加一个显示段。
 

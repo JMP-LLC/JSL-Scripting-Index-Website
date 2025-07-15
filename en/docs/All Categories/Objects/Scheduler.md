@@ -25,7 +25,7 @@ s = Schedule(
 
 ### Clear Schedule
 
-**Syntax:** obj << Clear Schedule
+**Syntax:** obj &lt;&lt; Clear Schedule
 
 **Description:** Clears the scheduler of all events currently scheduled.
 
@@ -43,7 +43,7 @@ s << Clear Schedule;
 
 ### Close
 
-**Syntax:** obj << Close
+**Syntax:** obj &lt;&lt; Close
 
 **Description:** Closes the scheduler.
 
@@ -62,7 +62,7 @@ s << Close;
 
 ### Get Container
 
-**Syntax:** obj << Get Container
+**Syntax:** obj &lt;&lt; Get Container
 
 **Description:** Returns a reference to the container box that holds the content for the object.
 
@@ -81,7 +81,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Restart
 
-**Syntax:** obj << Restart
+**Syntax:** obj &lt;&lt; Restart
 
 **Description:** Restarts the scheduler after it was stopped from running all events currently scheduled.
 
@@ -101,7 +101,7 @@ s << Restart;
 
 ### Show Schedule
 
-**Syntax:** obj << Show Schedule
+**Syntax:** obj &lt;&lt; Show Schedule
 
 **Description:** Shows the next event currently scheduled.
 
@@ -119,7 +119,7 @@ s << Show Schedule;
 
 ### Stop
 
-**Syntax:** obj << Stop
+**Syntax:** obj &lt;&lt; Stop
 
 **Description:** Stops the scheduler from running all events currently scheduled.
 

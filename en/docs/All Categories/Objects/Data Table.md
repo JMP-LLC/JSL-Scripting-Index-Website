@@ -96,7 +96,7 @@ obj = dt << Bootstrap Forest(
 
 ### Bubble Plot
 
-**Syntax:** Bubble Plot( X( column ), Y( column ), <Sizes( column )>, <Time( column )>, <ID( column )>, <Coloring( column ) )
+**Syntax:** Bubble Plot( X( column ), Y( column ), &lt;Sizes( column )&gt;, &lt;Time( column )&gt;, &lt;ID( column )&gt;, &lt;Coloring( column ) )
 
 **Description:** Produces a two-dimensional scatterplot of bubbles that can be animated over a time variable. Additional variables can be used to size and color the bubbles.
 
@@ -115,7 +115,7 @@ obj = dt << Bubble Plot(
 
 ### CUSUM Control Chart
 
-**Syntax:** CUSUM Control Chart( Y( column ), <X( column )>, <By( column )>, <Data Units( 0|1 )>, <Show Excluded Region( 0|1 )>  )
+**Syntax:** CUSUM Control Chart( Y( column ), &lt;X( column )&gt;, &lt;By( column )&gt;, &lt;Data Units( 0|1 )&gt;, &lt;Show Excluded Region( 0|1 )&gt; )
 
 **Description:** Creates a chart that plots the cumulative sums of deviations of subgroup means from a target. This chart is also called a tabular CUSUM chart.
 
@@ -151,7 +151,7 @@ obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
 
 ### Cell Plot
 
-**Syntax:** Cell Plot( Y( column(s) ), <X( column )> )
+**Syntax:** Cell Plot( Y( column(s) ), &lt;X( column )&gt; )
 
 **Description:** Produces a rectangular grid of cells drawn with one-to-one correspondence to data table values. The cells in the grid are colored by the values in the cells.
 
@@ -172,7 +172,7 @@ obj = dt << Cell Plot(
 
 ### Choice
 
-**Syntax:** Choice( Profile DataTable( data table ), Profile ID( column ), Profile Effects( column(s) ), <Response Data Table( data table )>, <Subject Data Table( data table )>, <Response Profile ID Chosen( column )>, <Response Subject ID( column)>, <Response Grouping( column(s) )>, <Response Profile ID Choices( column(s) )>, <Profile Grouping( column(s) )>, <Subject Subject ID( column )>, <Subject Effects( column(s) )> )
+**Syntax:** Choice( Profile DataTable( data table ), Profile ID( column ), Profile Effects( column(s) ), &lt;Response Data Table( data table )&gt;, &lt;Subject Data Table( data table )&gt;, &lt;Response Profile ID Chosen( column )&gt;, &lt;Response Subject ID( column)&gt;, &lt;Response Grouping( column(s) )&gt;, &lt;Response Profile ID Choices( column(s) )&gt;, &lt;Profile Grouping( column(s) )&gt;, &lt;Subject Subject ID( column )&gt;, &lt;Subject Effects( column(s) )&gt; )
 
 **Description:** Models data from a choice experiment that studies customer preferences. Estimates the probability that a specific configuration is preferred using a form of conditional logistic regression.
 
@@ -213,7 +213,7 @@ obj = Choice(
 
 ### Close
 
-**Syntax:** Close( <dataTableRef|name>, <NoSave|Save( "path" )> )
+**Syntax:** Close( &lt;dataTableRef|name&gt;, &lt;NoSave|Save( "path" )&gt; )
 
 **Description:** Closes the data table referenced by the first argument, which defaults to the current data table. The second argument is used to save the data table. Use an appropriate file extension in the path to save the data table as a non-JMP format. Specifying NoSave bypasses the prompt to save or disregard changes.
 
@@ -270,7 +270,7 @@ obj = dt << Contour Plot( X( :X, :Y ), Y( :Z ) );
 
 ### Contour Profiler
 
-**Syntax:** Contour Profiler( Y( column1, column2, ...  ) )
+**Syntax:** Contour Profiler( Y( column1, column2, ... ) )
 
 **Description:** Produces an interactive contour plot that enables you to explore how one or more predicted responses change across pairs of factors. The values of factors not used in the plot can be varied to further explore the impact of the factor settings on the predicted responses.
 
@@ -289,7 +289,7 @@ obj = dt << Contour Profiler(
 
 ### Control Chart Builder
 
-**Syntax:** Control Chart Builder( Class( "Shewhart Variables"|"Shewhart Attribute"|"Short Run"|"Rare Event" ), Variables( variables ), <Chart( Position( number ), Points( Statistic( "statistic" ), <points options> ), Limits( Sigma( "sigma" ), <limits options> )> ) ) )
+**Syntax:** Control Chart Builder( Class( "Shewhart Variables"|"Shewhart Attribute"|"Short Run"|"Rare Event" ), Variables( variables ), &lt;Chart( Position( number ), Points( Statistic( "statistic" ), &lt;points options&gt; ), Limits( Sigma( "sigma" ), &lt;limits options&gt; )&gt; ) ) )
 
 **Description:** Enables you to interactively create control charts, which are used to determine whether a process is stable and predictable. The Control Chart Builder platform can be used to create the following types of control charts: IMR, XBar, Short Run, Run, P, NP, C, U, Laney P&apos;, Laney U&apos;, Levey-Jennings, IMR on Means, Three Way, and Rare Event charts.
 
@@ -862,7 +862,7 @@ obj = dt << Custom Profiler(
 
 ### Degradation
 
-**Syntax:** Degradation( Y( column ), Time( column ), Application( "Repeated Measures Degradation"|"Destructive Degradation"|"Stability Test" ), <X( column )>, <Label( column )>, <Freq( column )>, <Censor( column )>, <Censor Code( value )>, <Upper Spec Limit( value )>, <Lower Spec Limit( value )>, <Censoring Time( value )> )
+**Syntax:** Degradation( Y( column ), Time( column ), Application( "Repeated Measures Degradation"|"Destructive Degradation"|"Stability Test" ), &lt;X( column )&gt;, &lt;Label( column )&gt;, &lt;Freq( column )&gt;, &lt;Censor( column )&gt;, &lt;Censor Code( value )&gt;, &lt;Upper Spec Limit( value )&gt;, &lt;Lower Spec Limit( value )&gt;, &lt;Censoring Time( value )&gt; )
 
 **Description:** Models degradation over time using linear and nonlinear curves. Analysis options include stability analysis and generation of pseudo-failure data.
 
@@ -890,7 +890,7 @@ obj = dt << Degradation(
 
 ### Destructive Degradation
 
-**Syntax:** Destructive Degradation( Y( column ), Time( column ), <X( column )>, <Freq( column )>, <Censor( column ), Censor Code( value )> )
+**Syntax:** Destructive Degradation( Y( column ), Time( column ), &lt;X( column )&gt;, &lt;Freq( column )&gt;, &lt;Censor( column ), Censor Code( value )&gt; )
 
 **Description:** Models destructive degradation data over time.
 
@@ -1007,7 +1007,7 @@ obj = dt << EMP Measurement Systems Analysis(
 
 ### EWMA Control Chart
 
-**Syntax:** EWMA Control Chart( Y( column ), <Subgroup( column )>, <By( column )>, <Center Data( 1 )> )
+**Syntax:** EWMA Control Chart( Y( column ), &lt;Subgroup( column )&gt;, &lt;By( column )&gt;, &lt;Center Data( 1 )&gt; )
 
 **Description:** Creates a chart that plots the exponentially weighted moving averages and a chart that plots either the individual observations or the subgroup means. An EWMA chart is also known as a feedback control chart.
 
@@ -1084,7 +1084,7 @@ obj = dt << Factor Analysis(
 
 ### Fatigue Model
 
-**Syntax:** Fatigue Model( N( column ), X( column ), <Freq( column )>, <Censor( column ), Censor Code( value )> )
+**Syntax:** Fatigue Model( N( column ), X( column ), &lt;Freq( column )&gt;, &lt;Censor( column ), Censor Code( value )&gt; )
 
 **Description:** Analyzes fatigue data, also known as S-N curve modeling.
 
@@ -1119,7 +1119,7 @@ obj << Fit Logistic 4P;
 
 ### Fit Life by X
 
-**Syntax:** Fit Life by X( Y( column ), X( column ), Relationship( string ), Distribution( string ), <Censor( column )> )
+**Syntax:** Fit Life by X( Y( column ), X( column ), Relationship( string ), Distribution( string ), &lt;Censor( column )&gt; )
 
 **Description:** Analyzes the distribution of time-to-event data parameterized by a single regression factor. Analysis options include accelerated failure models, life distributions across groups, and transformations of regression factors.
 
@@ -1231,7 +1231,7 @@ obj = dt << Gaussian Process( Y( :Y ), X( :X1, :X2 ) );
 
 ### Graph Builder
 
-**Syntax:** Graph Builder( Variables( X(column ), Y( column ), <Group X( column )>, <Group Y( column )>, <Shape( column )>, <Color( column )>, <Overlay( column )>, <Freq( column )> ), <Elements(...)> ) )
+**Syntax:** Graph Builder( Variables( X(column ), Y( column ), &lt;Group X( column )&gt;, &lt;Group Y( column )&gt;, &lt;Shape( column )&gt;, &lt;Color( column )&gt;, &lt;Overlay( column )&gt;, &lt;Freq( column )&gt; ), &lt;Elements(...)&gt; ) )
 
 **Description:** Provides an interactive graphical interface that enables you to explore your data. You can drag columns into graph zones to create a variety of graphs including scatterplots, contour plots, bar charts, area charts, box plots, histograms, heat maps, pie charts, treemaps, mosaic plots, and maps.
 
@@ -1357,7 +1357,7 @@ obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );
 
 ### Make Validation Column
 
-**Syntax:** Make Validation Column( <Stratification Columns(columns)>, <Grouping Columns(columns)>, <Cutpoint Column(column)>, <Cutpoint Batch ID(column)> )
+**Syntax:** Make Validation Column( &lt;Stratification Columns(columns)&gt;, &lt;Grouping Columns(columns)&gt;, &lt;Cutpoint Column(column)&gt;, &lt;Cutpoint Batch ID(column)&gt; )
 
 **Description:** Makes a column used to divide the data into training, validation, and test sets.
 
@@ -1688,7 +1688,7 @@ obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 
 ### MaxDiff
 
-**Syntax:** MaxDiff( Profile DataTable( data table ), Profile ID( column ), Profile Effects( column(s) ), <Response Data Table( data table )>, <Subject Data Table( data table )>, <Response Profile ID Chosen( column )>, <Response Subject ID( column)>, <Response Grouping( column(s) )>, <Response Profile ID Choices( column(s) )>, <Profile Grouping( column(s) )>, <Subject Subject ID( column )>, <Subject Effects( column(s) )> )
+**Syntax:** MaxDiff( Profile DataTable( data table ), Profile ID( column ), Profile Effects( column(s) ), &lt;Response Data Table( data table )&gt;, &lt;Subject Data Table( data table )&gt;, &lt;Response Profile ID Chosen( column )&gt;, &lt;Response Subject ID( column)&gt;, &lt;Response Grouping( column(s) )&gt;, &lt;Response Profile ID Choices( column(s) )&gt;, &lt;Profile Grouping( column(s) )&gt;, &lt;Subject Subject ID( column )&gt;, &lt;Subject Effects( column(s) )&gt; )
 
 **Description:** Creates a design to find the combination of product attributes that customers most prefer and least prefer.
 
@@ -1711,7 +1711,7 @@ obj = dt << MaxDiff(
 
 ### Mixture Profiler
 
-**Syntax:** Mixture Profiler( Y( column1, column2, ...  ) )
+**Syntax:** Mixture Profiler( Y( column1, column2, ... ) )
 
 **Description:** Produces an interactive ternary plot that enables you to explore the contours of the saved prediction formulas for mixture models with three or more factors.
 
@@ -1955,7 +1955,7 @@ obj = dt << Naive Bayes(
 
 ### Neural
 
-**Syntax:** Neural( Y( column ), X( columns ), <Validation( column )> )
+**Syntax:** Neural( Y( column ), X( columns ), &lt;Validation( column )&gt; )
 
 **Description:** Predicts one or more response variables using a flexible function of the input variables. The flexible framework incorporates layering and s-shaped functions.
 
@@ -1973,7 +1973,7 @@ obj = dt << Neural(
 
 ### New Table
 
-**Syntax:** dt = New Table( name, <visibility("private"|"invisible"|"visible")>, <Enable Filter Views(bool)>, <actions> )
+**Syntax:** dt = New Table( name, &lt;visibility("private"|"invisible"|"visible")&gt;, &lt;Enable Filter Views(bool)&gt;, &lt;actions&gt; )
 
 **Description:** Creates a new data table. "Invisible" hides the data table from view but lists it in the JMP Home Window. "Private" hides the table completely. "Visible" is the default, and creates a normal table that is visible and listed in the JMP Home Window. The optional actions arguments are any messages that data tables support.
 
@@ -2064,7 +2064,7 @@ obj = dt << Oneway( Y( :Height ), X( :Age ) );
 
 ### Open
 
-**Syntax:** Open( filePath, <data table options | Excel import options | text import options | SAS import options | HTML import options | esriShapeFile import options | PDF import options | other file options > )
+**Syntax:** Open( filePath, &lt;data table options | Excel import options | text import options | SAS import options | HTML import options | esriShapeFile import options | PDF import options | other file options &gt; )
 
 **Description:** Opens a JMP file or imports another supported file type. The open data table option &apos;Invisible&apos; hides the file from view but lists it in the JMP Home Window, &apos;Private&apos; hides the file completely. The file option &apos;Select Columns&apos; reads in only the specified columns, &apos;Ignore Columns&apos; is the inverse of &apos;Select Columns&apos;, it does not read in the specified columns. The JMP file options &apos;Column Names Only&apos; and &apos;Table Info&apos; do not read in the data, nor create a data table. &apos;Column Names Only&apos; returns the list of the data table&apos;s columns names, &apos;Table Info&apos; returns the number of columns and rows in the data table. The options &apos;FIRST(n)&apos;/&apos;LAST(n)&apos;/&apos;RANDOM(n)&apos; read in only n rows of the data table. If n is a number between 0 and 1, n is a fraction of the total number of rows in the data table.
 
@@ -2127,7 +2127,7 @@ Print( info );
 
 ### Parallel Plot
 
-**Syntax:** Parallel Plot( Y( columns ),  <X( column )> )
+**Syntax:** Parallel Plot( Y( columns ), &lt;X( column )&gt; )
 
 **Description:** Produces a plot of two or more variables with connecting line segments for each row.
 
@@ -2160,7 +2160,7 @@ obj = dt << Parallel Plot( Y( :hist0, :hist1, :hist3, :hist5 ) );
 
 ### Pareto Plot
 
-**Syntax:** Pareto Plot( Cause( column ), <X( column )>, <Subcategory( column )>, <Freq( column )>, <Weight( column )> )
+**Syntax:** Pareto Plot( Cause( column ), &lt;X( column )&gt;, &lt;Subcategory( column )&gt;, &lt;Freq( column )&gt;, &lt;Weight( column )&gt; )
 
 **Description:** Displays the relative frequency of items in a quality-related process in decreasing order. You can define one or more classification variables to create a comparative Pareto plot.
 
@@ -2268,7 +2268,7 @@ obj = dt << Principal Components(
 
 ### Process Capability
 
-**Syntax:** Process Capability( Process Variables (columns), < Spec Limits() > )
+**Syntax:** Process Capability( Process Variables (columns), &lt; Spec Limits() &gt; )
 
 **Description:** Computes a process capability analysis for each process and creates graphs useful for analyzing the capability of multiple processes at one time. Specification limits can also be defined.
 
@@ -2323,7 +2323,7 @@ obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 
 
 ### Profiler
 
-**Syntax:** Profiler( Y( column1, <column2>, ..., <PredSE column1, PredSE column2>, ... ), <Expand> )
+**Syntax:** Profiler( Y( column1, &lt;column2&gt;, ..., &lt;PredSE column1, PredSE column2&gt;, ... ), &lt;Expand&gt; )
 
 **Description:** Produces an interactive graph that enables you to explore how a predicted response changes as you change factor settings. For each factor, the profiler shows prediction traces that are based on saved predictions formulas and linear constraints and illustrate how the response changes with respect to that factor. The Expand argument corresponds to the Expand Intermediate Formulas option in the launch window.
 
@@ -2382,7 +2382,7 @@ dt << Profiler( Y( :Yield ), Profiler( 1, Desirability Functions( 1 ), ), Expand
 
 ### Recurrence Analysis
 
-**Syntax:** Recurrence Analysis( Y( column ), Cost( column ), Label( column ), <Grouping( column )> )
+**Syntax:** Recurrence Analysis( Y( column ), Cost( column ), Label( column ), &lt;Grouping( column )&gt; )
 
 **Description:** Analyzes how a recurring event is distributed over time, per system, or until the system goes out of service.
 
@@ -2550,19 +2550,7 @@ obj = dt << Reliability Forecast(
 
 ### Reliability Growth
 
-**Syntax:** obj = Reliability Growth( Input Format( Time to Event ), Time to Event( column, <column> ), <Event Count( column )>, <Phase( column )> );
-
-
-
-obj = Reliability Growth( Input Format( Dates ), Timestamp( column, <column> ), <Event Count( column )>, <Phase( column )> );
-
-
-
-obj = Reliability Growth( Input Format( Concurrent Systems ), Time to Event( column, column, ... ), System ID( column ), <Phase( column )> )
-
-
-
-obj = Reliability Growth( Input Format( Parallel Systems ), Time to Event( column, column, ... ), <Event Count( column )>, System ID( column ), <Phase( column )> )
+**Syntax:** obj = Reliability Growth( Input Format( Time to Event ), Time to Event( column, &lt;column&gt; ), &lt;Event Count( column )&gt;, &lt;Phase( column )&gt; );obj = Reliability Growth( Input Format( Dates ), Timestamp( column, &lt;column&gt; ), &lt;Event Count( column )&gt;, &lt;Phase( column )&gt; );obj = Reliability Growth( Input Format( Concurrent Systems ), Time to Event( column, column, ... ), System ID( column ), &lt;Phase( column )&gt; )obj = Reliability Growth( Input Format( Parallel Systems ), Time to Event( column, column, ... ), &lt;Event Count( column )&gt;, System ID( column ), &lt;Phase( column )&gt; )
 
 **Description:** Models the change in reliability of a single repairable system over time as improvements are incorporated into its design. The platform accepts several input formats. See each format for specification details.
 
@@ -2626,7 +2614,7 @@ obj << Crow AMSAA;
 
 ### Repeated Measures Degradation
 
-**Syntax:** Repeated Measures Degradation( Y( column ), Time( column ), <X( column )>, <Freq( column )>, <Censor( column ), Censor Code( value )> )
+**Syntax:** Repeated Measures Degradation( Y( column ), Time( column ), &lt;X( column )&gt;, &lt;Freq( column )&gt;, &lt;Censor( column ), Censor Code( value )&gt; )
 
 **Description:** Models repeated measures degradation data over time with random parameters.
 
@@ -2691,7 +2679,7 @@ obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Peta
 
 ### Scatterplot Matrix
 
-**Syntax:** Scatterplot Matrix( Y( columns ), <X( columns )>, <Group( column )>, <By( column )> )
+**Syntax:** Scatterplot Matrix( Y( columns ), &lt;X( columns )&gt;, &lt;Group( column )&gt;, &lt;By( column )&gt; )
 
 **Description:** Produces a grid of scatterplots that enables you to explore bivariate relationships. If no X variables are specified, the scatterplots are for all pairs of the Y variables. If one or more X variables are specified, the scatterplots are for the Y variables plotted against the X variables.
 
@@ -2774,7 +2762,7 @@ obj = dt << Surface Plot(
 
 ### Survival
 
-**Syntax:** Survival( Y( columns ), Censor( column ), <Grouping( column )> )
+**Syntax:** Survival( Y( columns ), Censor( column ), &lt;Grouping( column )&gt; )
 
 **Description:** Calculates estimates of survival functions using the product-limit (Kaplan-Meier) method for one or more groups.
 
@@ -2863,7 +2851,7 @@ obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );
 
 ### Uplift
 
-**Syntax:** Uplift( Y( column ), X( columns ), Treatment( column )  )
+**Syntax:** Uplift( Y( column ), X( columns ), Treatment( column ) )
 
 **Description:** Fits a recursive partition tree that selects splits to maximize treatment differences. The models identify groups of individuals who are most likely to respond to a treatment.
 
@@ -3062,7 +3050,7 @@ Write( "\!n", cID:person[2], " likes ", Favs:color[4] );
 
 ### Add Properties to Table
 
-**Syntax:** obj << Add Properties to Table
+**Syntax:** obj &lt;&lt; Add Properties to Table
 
 **Description:** Add the properties to the table.
 
@@ -3079,7 +3067,7 @@ dt2 << Add Properties to Table( proplist );
 
 ### Add Scripts to Table
 
-**Syntax:** obj << Add Scripts to Table
+**Syntax:** obj &lt;&lt; Add Scripts to Table
 
 **Description:** This command is an alias of &apos;Add properties to table&apos;.
 
@@ -3096,7 +3084,7 @@ dt2 << Add scripts to table( proplist );
 
 ### Anonymize
 
-**Syntax:** obj << Anonymize( columns( columns ), <Output Table( name )> )
+**Syntax:** obj &lt;&lt; Anonymize( columns( columns ), &lt;Output Table( name )&gt; )
 
 **Description:** Creates a new data table with unique identifiers removed.
 
@@ -3110,7 +3098,7 @@ dt << anonymize( columns( :name, :age ), output table name( "anonymized" ) );
 
 ### Apply Columns List Filter To Data Grid
 
-**Syntax:** obj << Apply Columns List Filter To Data Grid( state=0|1 )
+**Syntax:** obj &lt;&lt; Apply Columns List Filter To Data Grid( state=0|1 )
 
 **Description:** Turn on to apply filters in the data table Columns list to the data grid.
 
@@ -3128,7 +3116,7 @@ dt << Apply Columns List Filter To Data Grid( 1 );
 
 ### Apply Formula
 
-**Syntax:** dt << Apply Formula([Columns(<col|{cols}|Group(col, count)|<group name>, [Ref(<name>)], [List Ref(<name>)]]+, [Output(In Place|In Place Formula|New Formula(<prefix>|New Static(<prefix>)], [Group(<name>)])
+**Syntax:** dt &lt;&lt; Apply Formula([Columns(&lt;col|{cols}|Group(col, count)|&lt;group name&gt;, [Ref(&lt;name&gt;)], [List Ref(&lt;name&gt;)]]+, [Output(In Place|In Place Formula|New Formula(&lt;prefix&gt;|New Static(&lt;prefix&gt;)], [Group(&lt;name&gt;)])
 
 **Description:** Use a formula to transform one or more columns and place the results (either as formulas or data) into new or existing columns.
 
@@ -3186,7 +3174,7 @@ Data Table( "Big Class" ) << Apply Formula(
 
 ### Begin Data Update
 
-**Syntax:** obj << Begin Data Update
+**Syntax:** obj &lt;&lt; Begin Data Update
 
 **Description:** Holds all Update messages until the End Data Update command is reached. This is useful for updating many cells without interruption. This applies only to changes in data cells.
 
@@ -3205,7 +3193,7 @@ dt << End Data Update;
 
 ### Checksum
 
-**Syntax:** obj << Checksum( < Version(version) >, < Include(flags) >, < Exclude(flags) > )
+**Syntax:** obj &lt;&lt; Checksum( &lt; Version(version) &gt;, &lt; Include(flags) &gt;, &lt; Exclude(flags) &gt; )
 
 **Description:** Compute the table&apos;s checksum. Available flags include: "ColData", "ColName", "ColDataType", "ColModelingType", "ColFormat", "ColInFormat", "ColFormatWidth", "ColAttributes", "ColProperties", "ColListCheck", "ColRangeCheck", "ColCompact", "ColLabel", "ColHidden", "ColExclude", "ColSelection", "ColState", "ColDisplayWidth", "TableVariables", "TableScripts", "RowExclude", "RowHidden", "RowLabel", "RowColor", "RowMarker", "RowSelection", "RowState"
 
@@ -3252,7 +3240,7 @@ dt << Checksum( Include( flags ) );
 
 ### Clear Cell Colors
 
-**Syntax:** obj << Clear Cell Colors
+**Syntax:** obj &lt;&lt; Clear Cell Colors
 
 **Description:** Clear the cell color of the selected columns. If no columns are selected, cell colors of all columns are cleared.
 
@@ -3290,7 +3278,7 @@ dt << Clear cell colors();
 
 ### Clear Column Selection
 
-**Syntax:** obj << Clear Column Selection
+**Syntax:** obj &lt;&lt; Clear Column Selection
 
 **Description:** Clears the column selection in the data table.
 
@@ -3306,7 +3294,7 @@ dt << Clear Column Selection();
 
 ### Clear Edit Lock
 
-**Syntax:** obj << Clear Edit Lock( [ <"Modify Cells">, <"Add rows">, <"Add Columns">, <"Delete Rows">, <"Delete Columns">] )
+**Syntax:** obj &lt;&lt; Clear Edit Lock( [ &lt;"Modify Cells"&gt;, &lt;"Add rows"&gt;, &lt;"Add Columns"&gt;, &lt;"Delete Rows"&gt;, &lt;"Delete Columns"&gt;] )
 
 **Description:** Allow specified operations on the data table which were previously disallowed.
 
@@ -3324,7 +3312,7 @@ dt << Clear Edit Lock( "Delete Columns" );
 
 ### Clear Properties Selection
 
-**Syntax:** obj << Clear Properties Selection( { property1, property2, ... )
+**Syntax:** obj &lt;&lt; Clear Properties Selection( { property1, property2, ... )
 
 **Description:** Deselect the specified table properties, where the list can be a list of property name or indices to the properties. If no list is given, deselect all the selected properties.
 
@@ -3356,7 +3344,7 @@ dt << clear properties selecction();
 
 ### Clone
 
-**Syntax:** dt << Clone( < Table Name(name) >, < Copy Formulas(1|0) >, < Eval Formulas(1|0) > )
+**Syntax:** dt &lt;&lt; Clone( &lt; Table Name(name) &gt;, &lt; Copy Formulas(1|0) &gt;, &lt; Eval Formulas(1|0) &gt; )
 
 **Description:** Create a copy of the data table
 
@@ -3370,7 +3358,7 @@ dtClone = dt << Clone;
 
 ### Close Data Grid
 
-**Syntax:** obj << Close Data Grid
+**Syntax:** obj &lt;&lt; Close Data Grid
 
 **Description:** Close or open the data grid.
 
@@ -3384,7 +3372,7 @@ dt << Close Data Grid( 1 );
 
 ### Close Side Panels
 
-**Syntax:** obj << Close Side Panels
+**Syntax:** obj &lt;&lt; Close Side Panels
 
 **Description:** Close or open the data table&apos;s side panels.
 
@@ -3398,7 +3386,7 @@ dt << Close Side Panels( 1 );
 
 ### Close summary panels
 
-**Syntax:** obj << Close summary panels
+**Syntax:** obj &lt;&lt; Close summary panels
 
 **Description:** Close or open the data table&apos;s summary panels.
 
@@ -3412,11 +3400,11 @@ dt << Close Summary Panels( 1 );
 
 ### Cluster
 
-**Syntax:** obj << Cluster
+**Syntax:** obj &lt;&lt; Cluster
 
 ### Collapse All Column Groups
 
-**Syntax:** obj << Collapse All Column Groups
+**Syntax:** obj &lt;&lt; Collapse All Column Groups
 
 **Description:** Collapses all column groups
 
@@ -3435,7 +3423,7 @@ dt << Collapse All Column Groups;
 
 ### Column Filter
 
-**Syntax:** obj << Column Filter
+**Syntax:** obj &lt;&lt; Column Filter
 
 **Description:** Retrieves object to manipulate active column filter for the table.
 
@@ -3466,7 +3454,7 @@ dt << Apply Columns List Filter to Data Grid( 0 );
 
 ### Column Switcher
 
-**Syntax:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Syntax:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Description:** Creates a standalone column switcher
 
@@ -3522,7 +3510,7 @@ cs << Link Platform( b[2] );
 
 ### Combine Columns
 
-**Syntax:** obj << Combine Columns
+**Syntax:** obj &lt;&lt; Combine Columns
 
 **Description:** Combine several columns into a single column, with each source column&apos;s values separated by the given delimiter.
 
@@ -3561,7 +3549,7 @@ dt << Combine Columns(
 
 ### Compare Data Tables
 
-**Syntax:** obj << Compare Data Tables( Compare with( Data Table( name )), <Compare table variables and scripts( 0|1)>, <show window>,<Compare columns attributes and properties( 0|1)>, <Compare data( 0|1 )>, <Show difference summary(0|1)>, <Show difference plot(0|1)> )
+**Syntax:** obj &lt;&lt; Compare Data Tables( Compare with( Data Table( name )), &lt;Compare table variables and scripts( 0|1)&gt;, &lt;show window&gt;,&lt;Compare columns attributes and properties( 0|1)&gt;, &lt;Compare data( 0|1 )&gt;, &lt;Show difference summary(0|1)&gt;, &lt;Show difference plot(0|1)&gt; )
 
 **Description:** Compares two open data tables and reports differences between data, as well as metadata.
 
@@ -3576,7 +3564,7 @@ dt << compare data tables( compare With( Data Table( "Students2" ) ) );
 
 ### Compress File When Saved
 
-**Syntax:** obj << Compress File When Saved( state=0|1 )
+**Syntax:** obj &lt;&lt; Compress File When Saved( state=0|1 )
 
 **Description:** Compress the file when saving the data table.
 
@@ -3590,7 +3578,7 @@ dt << Compress File When Saved( 1 );
 
 ### Compress Selected Columns
 
-**Syntax:** obj << Compress Selected Columns( { column1, column2, ...} )
+**Syntax:** obj &lt;&lt; Compress Selected Columns( { column1, column2, ...} )
 
 **Description:** Compresses each column into the most compact form.
 
@@ -3608,7 +3596,7 @@ dt << Compress Selected Columns( {:Age, :sex, :Height, :Weight} );
 
 ### Concatenate
 
-**Syntax:** obj << Concatenate( <Private>, <Invisible>, Data Table( name ), <Data Table(name), ...> <Label( column )>, <Output Table( name ) | Append to first table>, <Keep Formulas>, <Create Source Column> )
+**Syntax:** obj &lt;&lt; Concatenate( &lt;Private&gt;, &lt;Invisible&gt;, Data Table( name ), &lt;Data Table(name), ...&gt; &lt;Label( column )&gt;, &lt;Output Table( name ) | Append to first table&gt;, &lt;Keep Formulas&gt;, &lt;Create Source Column&gt; )
 
 **Description:** Combines rows from several data tables and creates a new data table or appends the rows to the first data table.
 
@@ -3642,7 +3630,7 @@ dt << Concatenate(
 
 ### Copy Column Properties
 
-**Syntax:** obj << Copy Column Properties( <column 1 column 2, ...> )
+**Syntax:** obj &lt;&lt; Copy Column Properties( &lt;column 1 column 2, ...&gt; )
 
 **Description:** Copies to the clipboard the column properties of selected columns into a list of separate lists of properties. Optionally, you can specify a list of source columns instead of pre-selecting them in the data table.
 
@@ -3673,7 +3661,7 @@ New Window( "Script", Script Box( "//Try Paste here
 
 ### Copy Selected Properties
 
-**Syntax:** obj << Copy Selected Properties
+**Syntax:** obj &lt;&lt; Copy Selected Properties
 
 **Description:** Copy the selected table properties to the clipboard.
 
@@ -3690,7 +3678,7 @@ New Window( "Script", Script Box( "//Try Paste here
 
 ### Copy Table Script
 
-**Syntax:** obj << Copy Table Script( <"No data"> )
+**Syntax:** obj &lt;&lt; Copy Table Script( &lt;"No data"&gt; )
 
 **Description:** Copies a script to re-create the data table. The resultant script includes all the table scripts stored in the data table. Optionally, add the keyword "No Data" to omit data from the script.
 
@@ -3720,7 +3708,7 @@ New Window( "Script", Script Box( "//Try Paste here
 
 ### Debug Script
 
-**Syntax:** obj << Debug Script( name )
+**Syntax:** obj &lt;&lt; Debug Script( name )
 
 **Description:** Debugs a named script stored as a property in the data table.
 
@@ -3734,11 +3722,11 @@ dt << Debug Script( "Distribution" );
 
 ### Decision Tree
 
-**Syntax:** obj << Decision Tree
+**Syntax:** obj &lt;&lt; Decision Tree
 
 ### Define Tag
 
-**Syntax:** Define Tag(<name>, [Color(<color>)], [Symbol(<symbol char>)], [Description(<text>)], [Replace(<existing tag name>)])
+**Syntax:** Define Tag(&lt;name&gt;, [Color(&lt;color&gt;)], [Symbol(&lt;symbol char&gt;)], [Description(&lt;text&gt;)], [Replace(&lt;existing tag name&gt;)])
 
 **Description:** Create or update a column tag definition on the table. If the tag doesn&apos;t exist, create it. Optionally assign color, symbol, and other attributes.
 
@@ -3779,7 +3767,7 @@ dt << Define Tag( "Identifier", Replace( "ID" ), Color( Blue ) );
 
 ### Delete Columns
 
-**Syntax:** obj << Delete Columns( <column>, <column>, ... )
+**Syntax:** obj &lt;&lt; Delete Columns( &lt;column&gt;, &lt;column&gt;, ... )
 
 **Description:** Deletes the specified column(s). If no argument is specified, deletes selected columns in the data table.
 
@@ -3820,7 +3808,7 @@ dt << Delete Columns( cols );
 
 ### Delete Filter View
 
-**Syntax:** obj << Delete Filter View( name | obj )
+**Syntax:** obj &lt;&lt; Delete Filter View( name | obj )
 
 **Description:** Delete the given filter view.
 
@@ -3846,7 +3834,7 @@ dt << Delete Filter View( "Male" );
 
 ### Delete Scripts
 
-**Syntax:** obj << Delete Scripts( <script| {script 1, script 2, script 3, ...} > )
+**Syntax:** obj &lt;&lt; Delete Scripts( &lt;script| {script 1, script 2, script 3, ...} &gt; )
 
 **Description:** Deletes the specified scripts from the data table.
 
@@ -3879,7 +3867,7 @@ dt << Delete Scripts( list );
 
 ### Delete Table Property
 
-**Syntax:** obj << Delete Table Property
+**Syntax:** obj &lt;&lt; Delete Table Property
 
 **Description:** Alias for Delete Scripts.
 
@@ -3898,7 +3886,7 @@ dt << Delete Table Property( "New Script" );
 
 ### Delete Table Variable
 
-**Syntax:** obj << Delete Table Variable( name )
+**Syntax:** obj &lt;&lt; Delete Table Variable( name )
 
 **Description:** Deletes a table variable stored in the data table.
 
@@ -3914,7 +3902,7 @@ dt << Delete Table Variable( "Days" );
 
 ### Delete Tag
 
-**Syntax:** Delete Tag(<tag>|{<tag>, <tag>, ...}, [force(0|1)
+**Syntax:** Delete Tag(&lt;tag&gt;|{&lt;tag&gt;, &lt;tag&gt;, ...}, [force(0|1)
 
 **Description:** Delete a tag from the table. Tags will not be deleted if any columns still use them, unless the Force(1) flag is provided.
 
@@ -3945,7 +3933,7 @@ dt << Delete Tag( "ID", Force( 1 ) );
 
 ### Deselect Column Group
 
-**Syntax:** obj << Deselect Column Group( name of group | list of names )
+**Syntax:** obj &lt;&lt; Deselect Column Group( name of group | list of names )
 
 **Description:** Deselect the column groups. If the column group is omitted, all column groups will be deselected.
 
@@ -3963,7 +3951,7 @@ dt << deselect column group( "pollutants" );
 
 ### Disable Undo
 
-**Syntax:** obj << Disable Undo( state=0|1 )
+**Syntax:** obj &lt;&lt; Disable Undo( state=0|1 )
 
 **Description:** When the option is set, any operation on the data table cannot be undone.
 
@@ -3977,7 +3965,7 @@ dt << disable undo( 1 );
 
 ### End Data Update
 
-**Syntax:** obj << End Data Update
+**Syntax:** obj &lt;&lt; End Data Update
 
 **Description:** Sends all Update messages held since the Begin Data Update command was issued. This is useful for updating many cells without interruption. This applies only to changes in data cells.
 
@@ -3996,7 +3984,7 @@ dt << End Data Update;
 
 ### Exclude Columns
 
-**Syntax:** obj << Exclude Columns( < 0|1 > | < { column1, column2, ... } >  )
+**Syntax:** obj &lt;&lt; Exclude Columns( &lt; 0|1 &gt; | &lt; { column1, column2, ... } &gt; )
 
 **Description:** Excludes the columns from any analysis run
 
@@ -4010,7 +3998,7 @@ dt << Exclude Columns( 1, {:Age, :Name} );
 
 ### Exit Filter View
 
-**Syntax:** obj << Exit Filter View
+**Syntax:** obj &lt;&lt; Exit Filter View
 
 **Description:** Return to the unfiltered view. If already in the unfiltered view, this has no effect.
 
@@ -4029,7 +4017,7 @@ dt << Exit Filter View;
 
 ### Expand All Column Groups
 
-**Syntax:** obj << Expand All Column Groups
+**Syntax:** obj &lt;&lt; Expand All Column Groups
 
 **Description:** Expands all column groups
 
@@ -4067,7 +4055,7 @@ dt << Fit Model(
 
 ### Get Active Filter View
 
-**Syntax:** fv = obj << Get Active Filter View
+**Syntax:** fv = obj &lt;&lt; Get Active Filter View
 
 **Description:** Get the active filter view. Returns a FilterView object.
 
@@ -4086,7 +4074,7 @@ Show( fv active << Get Name );
 
 ### Get All Columns As Matrix
 
-**Syntax:** obj << Get All Columns As Matrix
+**Syntax:** obj &lt;&lt; Get All Columns As Matrix
 
 **Description:** Returns the data table as a matrix. Character columns are numbered according to the sorted levels, starting at 1.
 
@@ -4101,7 +4089,7 @@ Show( m );
 
 ### Get As Report
 
-**Syntax:** obj << Get As Report
+**Syntax:** obj &lt;&lt; Get As Report
 
 **Description:** Returns a report of the data table.
 
@@ -4137,7 +4125,7 @@ jmp_report = New Window( "Big Class",
 
 ### Get Cell Height
 
-**Syntax:** obj << Get Cell Height
+**Syntax:** obj &lt;&lt; Get Cell Height
 
 **Description:** Get a row&apos;s display height.
 
@@ -4151,7 +4139,7 @@ ht = dt << Get Cell Height;
 
 ### Get Column Group
 
-**Syntax:** obj << Get Column Group( name of column group | list of names )
+**Syntax:** obj &lt;&lt; Get Column Group( name of column group | list of names )
 
 **Description:** Returns the list of the columns in the column group.
 
@@ -4167,7 +4155,7 @@ dt << get column group( "xy" );
 
 ### Get Column Groups Names
 
-**Syntax:** obj << Get Column Groups Names
+**Syntax:** obj &lt;&lt; Get Column Groups Names
 
 **Description:** Returns the names of the columns groups.
 
@@ -4183,7 +4171,7 @@ dt << get column groups names;
 
 ### Get Column Names
 
-**Syntax:** obj << Get Column Names( <Numeric|Character|RowState>, <Continuous|Ordinal|Nominal>,<String> )
+**Syntax:** obj &lt;&lt; Get Column Names( &lt;Numeric|Character|RowState&gt;, &lt;Continuous|Ordinal|Nominal&gt;,&lt;String&gt; )
 
 **Description:** Returns the column names in the data table. If the string keyword is used, strings are returned.
 
@@ -4202,7 +4190,7 @@ Show( SNames );
 
 ### Get Column Reference
 
-**Syntax:** obj << Get Column Reference( list of column names )
+**Syntax:** obj &lt;&lt; Get Column Reference( list of column names )
 
 **Description:** Returns the column reference of the strings in the list
 
@@ -4231,7 +4219,7 @@ Show( refList );
 
 ### Get Edit Lock
 
-**Syntax:** obj << Get Edit Lock
+**Syntax:** obj &lt;&lt; Get Edit Lock
 
 **Description:** Get the list of disallowed operations on the data table.
 
@@ -4247,7 +4235,7 @@ dt << Get Edit Lock();
 
 ### Get Excluded Columns
 
-**Syntax:** obj << Get Excluded Columns
+**Syntax:** obj &lt;&lt; Get Excluded Columns
 
 **Description:** Returns the currently excluded columns in the data table.
 
@@ -4263,7 +4251,7 @@ Show( exCols );
 
 ### Get Excluded Rows
 
-**Syntax:** obj << Get Excluded Rows
+**Syntax:** obj &lt;&lt; Get Excluded Rows
 
 **Description:** Returns the currently excluded rows in the data table. Prefer Where.
 
@@ -4282,7 +4270,7 @@ Show( r1, r2 );
 
 ### Get Filter View
 
-**Syntax:** fv = obj << Get Filter View( name | <<Temporary | <<Unfiltered )
+**Syntax:** fv = obj &lt;&lt; Get Filter View( name | &lt;&lt;Temporary | &lt;&lt;Unfiltered )
 
 **Description:** Get a filter view by name, or get one of the special filter views by using <<Temporary or <<Unfiltered. If a filter view by the given name does not exist, returns Empty().
 
@@ -4303,7 +4291,7 @@ Show( (dt << Get Filter View( <<Unfiltered )) << Get Name );
 
 ### Get Filter Views
 
-**Syntax:** { fv, ... } = obj << Get Filter Views( < Temporary(0|1) >, < Unfiltered(0|1) > )
+**Syntax:** { fv, ... } = obj &lt;&lt; Get Filter Views( &lt; Temporary(0|1) &gt;, &lt; Unfiltered(0|1) &gt; )
 
 **Description:** Get a list of all filter views. By default, the temporary and unfiltered views are not included.
 
@@ -4323,7 +4311,7 @@ Show( fvs << Get Name );
 
 ### Get Header Height
 
-**Syntax:** obj << Get Header Height
+**Syntax:** obj &lt;&lt; Get Header Height
 
 **Description:** Get column header&apos;s display height
 
@@ -4337,7 +4325,7 @@ ht = dt << Get Header Height;
 
 ### Get Hidden Columns
 
-**Syntax:** obj << Get Hidden Columns
+**Syntax:** obj &lt;&lt; Get Hidden Columns
 
 **Description:** Returns the columns currently hidden in the data table.
 
@@ -4353,7 +4341,7 @@ Show( hidCols );
 
 ### Get Hidden Rows
 
-**Syntax:** obj << Get Hidden Rows
+**Syntax:** obj &lt;&lt; Get Hidden Rows
 
 **Description:** Returns the currently hidden rows in the data table. Prefer Where.
 
@@ -4372,7 +4360,7 @@ Show( r1, r2 );
 
 ### Get Label Columns
 
-**Syntax:** obj << Get Label Columns
+**Syntax:** obj &lt;&lt; Get Label Columns
 
 **Description:** Returns the columns used to label rows.
 
@@ -4387,7 +4375,7 @@ Show( labelCols );
 
 ### Get Labeled Rows
 
-**Syntax:** obj << Get Labeled Rows
+**Syntax:** obj &lt;&lt; Get Labeled Rows
 
 **Description:** Returns the currently labeled rows in the data table. Prefer Where.
 
@@ -4406,7 +4394,7 @@ Show( r1, r2 );
 
 ### Get Lock
 
-**Syntax:** obj << Get Lock( state=0|1 )
+**Syntax:** obj &lt;&lt; Get Lock( state=0|1 )
 
 **Description:** Checks whether the data table is locked.
 
@@ -4426,7 +4414,7 @@ Show( a );
 
 ### Get MM SAS DATA Step for Formula Columns
 
-**Syntax:** obj << Get MM SAS DATA Step for Formula Columns
+**Syntax:** obj &lt;&lt; Get MM SAS DATA Step for Formula Columns
 
 **Description:** Creates Model Manager SAS DATA step code corresponding to formula columns in a JMP data table.
 
@@ -4441,7 +4429,7 @@ dt << Get MM SAS Data Step for Formula Columns;
 
 ### Get Name
 
-**Syntax:** obj << Get Name( <"Ignore Extension"> )
+**Syntax:** obj &lt;&lt; Get Name( &lt;"Ignore Extension"&gt; )
 
 **Description:** Returns the display name of the data table. With the optional argument &apos;Ignore Extension&apos;, the command returns the name of the data table without the extension
 
@@ -4469,7 +4457,7 @@ Show( n );
 
 ### Get Path
 
-**Syntax:** obj << Get Path
+**Syntax:** obj &lt;&lt; Get Path
 
 **Description:** Returns the complete path of the data table.
 
@@ -4484,7 +4472,7 @@ Show( path );
 
 ### Get Property
 
-**Syntax:** obj << Get Property(  name  )
+**Syntax:** obj &lt;&lt; Get Property( name )
 
 **Description:** Returns the named property in the data table as a script.
 
@@ -4499,7 +4487,7 @@ Show( s );
 
 ### Get Row ID Width
 
-**Syntax:** obj << Get Row ID Width
+**Syntax:** obj &lt;&lt; Get Row ID Width
 
 **Description:** Get row ID area&apos;s display width
 
@@ -4513,7 +4501,7 @@ ht = dt << Get Row ID Width;
 
 ### Get Row States
 
-**Syntax:** obj << Get Row States
+**Syntax:** obj &lt;&lt; Get Row States
 
 **Description:** Returns a vector containing encoded row state values for every row in the data table. Note that encoded row state values cannot be used as a row state structure in row state functions like Color Of. See Example 2 for a way you can use the vector directly.
 
@@ -4543,7 +4531,7 @@ Row State( dt2, 5 ) = Marker State( w );
 
 ### Get Rows Where
 
-**Syntax:** obj << Get Rows Where
+**Syntax:** obj &lt;&lt; Get Rows Where
 
 **Description:** Returns the rows in the data table matching the where criteria. Prefer Where instead.
 
@@ -4559,7 +4547,7 @@ Show( r1, r2 );
 
 ### Get SAS DATA Step for Formula Columns
 
-**Syntax:** obj << Get SAS DATA Step for Formula Columns
+**Syntax:** obj &lt;&lt; Get SAS DATA Step for Formula Columns
 
 **Description:** Creates SAS DATA step code corresponding to formula columns in a JMP data table.
 
@@ -4574,7 +4562,7 @@ dt << Get SAS Data Step for Formula Columns;
 
 ### Get Script
 
-**Syntax:** obj << Get Script( <script name> )
+**Syntax:** obj &lt;&lt; Get Script( &lt;script name&gt; )
 
 **Description:** Returns the requested script. If the script name is omitted, returns a text representation of the data table together with all scripts stored in the data.
 
@@ -4601,7 +4589,7 @@ s = dt << Get Script( "Distribution" );
 
 ### Get Script Group
 
-**Syntax:** obj << Get Script Group( name of script group )
+**Syntax:** obj &lt;&lt; Get Script Group( name of script group )
 
 **Description:** Returns the list of scripts in the group.
 
@@ -4623,7 +4611,7 @@ dt << run script( gb[2] );
 
 ### Get Script Groups Names
 
-**Syntax:** obj << Get Script Groups Names
+**Syntax:** obj &lt;&lt; Get Script Groups Names
 
 **Description:** Returns the list of names of script groups.
 
@@ -4643,7 +4631,7 @@ gb = dt << get script groups names;
 
 ### Get Scroll Locked Columns
 
-**Syntax:** obj << Get Scroll Locked Columns
+**Syntax:** obj &lt;&lt; Get Scroll Locked Columns
 
 **Description:** Returns the columns currently locked from scrolling in the data table.
 
@@ -4659,7 +4647,7 @@ Show( lockCols );
 
 ### Get Selected Columns
 
-**Syntax:** obj << Get Selected Columns
+**Syntax:** obj &lt;&lt; Get Selected Columns
 
 **Description:** Returns the names of the selected columns in the data table.
 
@@ -4675,7 +4663,7 @@ Show( names );
 
 ### Get Selected Properties
 
-**Syntax:** obj << Get Selected Properties( <{list of properties}> )
+**Syntax:** obj &lt;&lt; Get Selected Properties( &lt;{list of properties}&gt; )
 
 **Description:** Get the selected table properties (variable and scripts) into a list. Instead of selecting, you can use an optional list to specify the properties to get.
 
@@ -4702,7 +4690,7 @@ proplist = dt << Get Selected Properties( {2, 4} );
 
 ### Get Selected Rows
 
-**Syntax:** obj << Get Selected Rows
+**Syntax:** obj &lt;&lt; Get Selected Rows
 
 **Description:** Returns the currently selected rows in the data table.
 
@@ -4719,7 +4707,7 @@ Show( r );
 
 ### Get Table Script Names
 
-**Syntax:** obj << Get Table Script Names
+**Syntax:** obj &lt;&lt; Get Table Script Names
 
 **Description:** Returns the names of all the properties in the data table.
 
@@ -4734,7 +4722,7 @@ Show( names );
 
 ### Get Table Variable
 
-**Syntax:** obj << Get Table Variable( name )
+**Syntax:** obj &lt;&lt; Get Table Variable( name )
 
 **Description:** Returns the value of a specified table variable in the data table.
 
@@ -4750,7 +4738,7 @@ Show( var );
 
 ### Get Table Variable Names
 
-**Syntax:** obj << Get Table Variable Names
+**Syntax:** obj &lt;&lt; Get Table Variable Names
 
 **Description:** Returns the names of all the variables in the data table.
 
@@ -4765,7 +4753,7 @@ Show( names );
 
 ### Get Tagged Columns
 
-**Syntax:** obj << Get Tagged Columns( tag|{tag1, tag2, ...}, [Intersection] )
+**Syntax:** obj &lt;&lt; Get Tagged Columns( tag|{tag1, tag2, ...}, [Intersection] )
 
 **Description:** Returns the list of the columns matching the supplied tags. If intersection is requested, only the columns containing all listed tags are returned.
 
@@ -4785,7 +4773,7 @@ dt << Get Tagged Columns( "Air Pollution Levels" );
 
 ### Get Transforms
 
-**Syntax:** dt << Get Transforms()
+**Syntax:** dt &lt;&lt; Get Transforms()
 
 **Description:** Retrieve the list of transform columns associated with this data table.
 
@@ -4802,7 +4790,7 @@ dt << Delete Columns( {:A, :B} );
 
 ### Get as Matrix
 
-**Syntax:** obj << Get as Matrix( <list of columns by name>, <list of columns by number>, <column range> )
+**Syntax:** obj &lt;&lt; Get as Matrix( &lt;list of columns by name&gt;, &lt;list of columns by number&gt;, &lt;column range&gt; )
 
 **Description:** Returns the specified columns in the data table as a matrix. The default is all numeric columns.
 
@@ -4819,13 +4807,7 @@ Show( x );
 
 ### Group Columns
 
-**Syntax:** obj << Group Columns( first column, number )
-
-obj << Group Columns( {column1, column2, ...})
-
-obj << Group Columns(group name | Path({<a>, <b>, ...}), {column1, column2, ...})
-
-obj << Group Columns( group name | Path({<a>, <b>, ...}), first column, number )
+**Syntax:** obj &lt;&lt; Group Columns( first column, number )obj &lt;&lt; Group Columns( {column1, column2, ...})obj &lt;&lt; Group Columns(group name | Path({&lt;a&gt;, &lt;b&gt;, ...}), {column1, column2, ...})obj &lt;&lt; Group Columns( group name | Path({&lt;a&gt;, &lt;b&gt;, ...}), first column, number )
 
 **Description:** Groups a list of columns.
 
@@ -4867,9 +4849,7 @@ group = dt << Group Columns( BP 8M, 9 );
 
 ### Group Scripts
 
-**Syntax:** obj << Group Scripts({ script1, script2, ...}) 
-
-obj << Group Scripts(group name | Path({<a>, <b>, ...}), {script1, script1, ...})
+**Syntax:** obj &lt;&lt; Group Scripts({ script1, script2, ...}) obj &lt;&lt; Group Scripts(group name | Path({&lt;a&gt;, &lt;b&gt;, ...}), {script1, script1, ...})
 
 **Description:** Group a list of scripts.
 
@@ -4903,7 +4883,7 @@ dt << group scripts(
 
 ### Has Column
 
-**Syntax:** dt << Has Column( name, < Exact Match(1|0) > )
+**Syntax:** dt &lt;&lt; Has Column( name, &lt; Exact Match(1|0) &gt; )
 
 **Description:** Inquire whether the data table has a column with the given name.
 
@@ -4934,7 +4914,7 @@ Show(
 
 ### Has data view
 
-**Syntax:** obj << Has data view
+**Syntax:** obj &lt;&lt; Has data view
 
 **Description:** Returns true if the data table has a visible window opened.
 
@@ -4948,7 +4928,7 @@ dt << Has Data View();
 
 ### Hide Columns
 
-**Syntax:** obj << Hide Columns( < 0|1 > | < { column1, column2, ... } >  )
+**Syntax:** obj &lt;&lt; Hide Columns( &lt; 0|1 &gt; | &lt; { column1, column2, ... } &gt; )
 
 **Description:** Hides the columns in the data grid
 
@@ -4962,7 +4942,7 @@ dt << Hide Columns( 1, {:Age, :Name} );
 
 ### Is Dirty
 
-**Syntax:** obj << Is Dirty
+**Syntax:** obj &lt;&lt; Is Dirty
 
 **Description:** Inquire whether the data table has been modified.
 
@@ -4980,7 +4960,7 @@ Show( b );
 
 ### Is Linked Subset
 
-**Syntax:** obj << Is Linked Subset
+**Syntax:** obj &lt;&lt; Is Linked Subset
 
 **Description:** Inquire whether the data table is a linked subset
 
@@ -4996,7 +4976,7 @@ Show( dt << Is Linked Subset, linkedSubset << Is Linked Subset, subset << Is Lin
 
 ### JMP Query Builder
 
-**Syntax:** obj << JMP Query Builder
+**Syntax:** obj &lt;&lt; JMP Query Builder
 
 **Description:** Builds a query for one or more JMP data tables.
 
@@ -5010,7 +4990,7 @@ dt << JMP Query Builder();
 
 ### Join
 
-**Syntax:** obj << Join( <Private>, <Invisible>,With( Data Table( name )), By Matching Columns( column1 = column2, ...), Selected( columns ), SelectedWith( columns ), <Drop Multiples( 0|1, 0|1 )>, <Include nonmatches( 0|1, 0|1 )>,<Copy formula( 0|1 )>, <Suppress Formula Evaluation>, <Update>, <Merge Same Name Columns>, <Preserve Main Table Order> )
+**Syntax:** obj &lt;&lt; Join( &lt;Private&gt;, &lt;Invisible&gt;,With( Data Table( name )), By Matching Columns( column1 = column2, ...), Selected( columns ), SelectedWith( columns ), &lt;Drop Multiples( 0|1, 0|1 )&gt;, &lt;Include nonmatches( 0|1, 0|1 )&gt;,&lt;Copy formula( 0|1 )&gt;, &lt;Suppress Formula Evaluation&gt;, &lt;Update&gt;, &lt;Merge Same Name Columns&gt;, &lt;Preserve Main Table Order&gt; )
 
 **Description:** Combines multiple data tables into one new data table. The data can be combined by row assignment, matching column values, or in a Cartesian fashion.
 
@@ -5030,7 +5010,7 @@ dt << Join(
 
 ### Journal
 
-**Syntax:** obj << Journal
+**Syntax:** obj &lt;&lt; Journal
 
 **Description:** Makes a journal from the data table. Only the data grid is included, not notes, variables, or scripts.
 
@@ -5044,7 +5024,7 @@ dt << Journal();
 
 ### Journal Link
 
-**Syntax:** dt << Journal Link( < Save( <filepath> ) | Embed( ) >, < Button Name( "Ben") > )
+**Syntax:** dt &lt;&lt; Journal Link( &lt; Save( &lt;filepath&gt; ) | Embed( ) &gt;, &lt; Button Name( "Ben") &gt; )
 
 **Description:** Appends a data table link-button to a journal.  Use embed() or save(), but not both.  Embed() has no options.  Save() option is similar to dt<<save(). Use ButtonName() to override the button label.  Returns new link-button.
 
@@ -5071,7 +5051,7 @@ Close( dt, "NoSave" );
 
 ### Last Modified
 
-**Syntax:** obj << Last Modified
+**Syntax:** obj &lt;&lt; Last Modified
 
 **Description:** Returns the date of the last saved modification to the data table.
 
@@ -5086,7 +5066,7 @@ Show( date );
 
 ### Lock Data Table
 
-**Syntax:** obj << Lock Data Table( state=0|1 )
+**Syntax:** obj &lt;&lt; Lock Data Table( state=0|1 )
 
 **Description:** Locks the data table so values cannot be edited or added.
 
@@ -5101,7 +5081,7 @@ dt << Lock Data Table( 1 );
 
 ### MSA Variability Chart
 
-**Syntax:** obj << MSA Variability Chart( Y( column ), X( columns ) )
+**Syntax:** obj &lt;&lt; MSA Variability Chart( Y( column ), X( columns ) )
 
 **Description:** Displays a variability chart showing how a measurement varies across categories and performs analysis examining how the mean and variance change across the categories.
 
@@ -5115,7 +5095,7 @@ dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
 
 ### Make Indicator Columns
 
-**Syntax:** obj << Make Indicator Columns
+**Syntax:** obj &lt;&lt; Make Indicator Columns
 
 **Description:** Convert a nominal or ordinal column to as many columns as the number of categories. The column names of the resultant columns are the categories of the source column. The values of the resultant columns are zeroes or ones.
 
@@ -5129,7 +5109,7 @@ dt << Make Indicator Columns( columns( {:species, :season} ) );
 
 ### Make RowState Handler
 
-**Syntax:** rs = dt << Make RowState Handler( function(a) )
+**Syntax:** rs = dt &lt;&lt; Make RowState Handler( function(a) )
 
 **Description:** Creates a row state handler to the data table. The argument of the function holds the rows whose row states get changed.
 
@@ -5146,9 +5126,7 @@ dt << Select Rows( 5 );
 
 ### Make SAS DATA Step
 
-**Syntax:** sd = dt << Make SAS Data Step( )
-
-sd = dt << Make SAS Data Step( SaveJMPMetadata(true) )
+**Syntax:** sd = dt &lt;&lt; Make SAS Data Step( )sd = dt &lt;&lt; Make SAS Data Step( SaveJMPMetadata(true) )
 
 **Description:** Returns the data table as a SAS DATA step.
 
@@ -5163,9 +5141,7 @@ Show( sd );
 
 ### Make SAS DATA Step Window
 
-**Syntax:** sd = dt << Make SAS Data Step Window( )
-
-sd = dt << Make SAS Data Step Window( SaveJMPMetadata(true) )
+**Syntax:** sd = dt &lt;&lt; Make SAS Data Step Window( )sd = dt &lt;&lt; Make SAS Data Step Window( SaveJMPMetadata(true) )
 
 **Description:** Opens a new window of type sas and creates a SAS DATA step from the data table.
 
@@ -5179,7 +5155,7 @@ sd = dt << Make SAS Data Step Window();
 
 ### Merge Referenced Data
 
-**Syntax:** obj << Merge Referenced Data
+**Syntax:** obj &lt;&lt; Merge Referenced Data
 
 **Description:** Makes the table stand-alone by merging the data from the source table to the referenced columns and unlinking them. The Link Reference property of the referencing columns is also removed.
 
@@ -5198,7 +5174,7 @@ dt2 << Merge Referenced Data();
 
 ### Missing Data Pattern
 
-**Syntax:** obj << Missing Data Pattern( columns( columns ), <Output Table( name )> )
+**Syntax:** obj &lt;&lt; Missing Data Pattern( columns( columns ), &lt;Output Table( name )&gt; )
 
 **Description:** Finds patterns of missing values in the data table and creates a table of each pattern and its frequency.
 
@@ -5214,7 +5190,7 @@ dt << Missing Data Pattern(
 
 ### Move Column Group
 
-**Syntax:** obj << Move Column Group( name of group | Path({<a>, <b>, ...}), to first | to last | after(column) | after(group) | after(Path({<a>, <b>, ...})) )
+**Syntax:** obj &lt;&lt; Move Column Group( name of group | Path({&lt;a&gt;, &lt;b&gt;, ...}), to first | to last | after(column) | after(group) | after(Path({&lt;a&gt;, &lt;b&gt;, ...})) )
 
 **Description:** Move the column group to specified location. If the column group name is omitted, all groups are moved.
 
@@ -5256,7 +5232,7 @@ dt << move column group( "xy", to first );
 
 ### Move Script Group
 
-**Syntax:** obj << Move Script Group( name of group | Path({<a>, <b>, ...}), to first | to last | after(script) | after(group) | after(Path({<a>, <b>, ...})) )
+**Syntax:** obj &lt;&lt; Move Script Group( name of group | Path({&lt;a&gt;, &lt;b&gt;, ...}), to first | to last | after(script) | after(group) | after(Path({&lt;a&gt;, &lt;b&gt;, ...})) )
 
 **Description:** Move the script group to specified location. If the script group name is omitted, all groups are moved.
 
@@ -5283,7 +5259,7 @@ dt << move script group( to first );
 
 ### Move Selected Scripts
 
-**Syntax:** obj << Move Selected Scripts( script|list of scripts|group|Path({<a>, <b>, ...}), to first | to last | after(script) | after(group) | after(Path({<a>, <b>, ...})) )
+**Syntax:** obj &lt;&lt; Move Selected Scripts( script|list of scripts|group|Path({&lt;a&gt;, &lt;b&gt;, ...}), to first | to last | after(script) | after(group) | after(Path({&lt;a&gt;, &lt;b&gt;, ...})) )
 
 **Description:** Move the scripts to specified location.
 
@@ -5333,7 +5309,7 @@ dt << Move Selected scripts(
 
 ### Move down
 
-**Syntax:** obj << Move down
+**Syntax:** obj &lt;&lt; Move down
 
 **Description:** Replaces the values in the first row of the data table with the column names and replaces the column names with default sequencing names.
 
@@ -5347,7 +5323,7 @@ dt << Move down;
 
 ### Move up
 
-**Syntax:** obj << Move up
+**Syntax:** obj &lt;&lt; Move up
 
 **Description:** Replaces the column names with the values in the first row of the data table.
 
@@ -5361,7 +5337,7 @@ dt << Move up;
 
 ### Move up and append
 
-**Syntax:** obj << Move up and append
+**Syntax:** obj &lt;&lt; Move up and append
 
 **Description:** Replaces the column names by appending the values in the first row of the data table to the corresponding column names.
 
@@ -5375,7 +5351,7 @@ dt << Move up and append;
 
 ### New Data Box
 
-**Syntax:** obj << New Data Box( < <<Enable Filter Views(0|1) > )
+**Syntax:** obj &lt;&lt; New Data Box( &lt; &lt;&lt;Enable Filter Views(0|1) &gt; )
 
 **Description:** Makes a data table view in a display box tree. Changes the current data table to the given data table. The optional Enable Filter Views argument controls whether the view allows filter views; the default is to allow them.
 
@@ -5399,7 +5375,7 @@ dtA = 0;
 
 ### New Data View
 
-**Syntax:** obj << New Data View
+**Syntax:** obj &lt;&lt; New Data View
 
 **Description:** Makes a new view of the data table. This view is linked to the original in that anything highlighted or changed will affect the original. This is useful when you need to scroll to different parts of the same table.
 
@@ -5413,7 +5389,7 @@ dt << New Data View();
 
 ### New Filter View
 
-**Syntax:** fv = dt << New Filter View( < name >, < Copy From(name|obj) >, < Temporary(0|1) >, < Active(0|1) >, < DataFilter(expr) >)
+**Syntax:** fv = dt &lt;&lt; New Filter View( &lt; name &gt;, &lt; Copy From(name|obj) &gt;, &lt; Temporary(0|1) &gt;, &lt; Active(0|1) &gt;, &lt; DataFilter(expr) &gt;)
 
 **Description:** Create a new filter view. The created FilterView object is returned. The new filter view will be active by default. If you do not name the filter view, it is temporary, unless you set Temporary to zero.
 
@@ -5463,9 +5439,7 @@ dt << New Filter View( "Unknown Sex", CopyFrom( fv ), Active( 0 ) );
 
 ### New Script
 
-**Syntax:** New Property( name, script ) 
-
-New Script( name, script )
+**Syntax:** New Property( name, script ) New Script( name, script )
 
 **Description:** Creates and sets a new property in the data table as a script.
 
@@ -5479,7 +5453,7 @@ dt << New Script( "New Script", Distribution( Column( :Height, :Weight ), By( :s
 
 ### New Table Variable
 
-**Syntax:** obj << New Table Variable( name, number )
+**Syntax:** obj &lt;&lt; New Table Variable( name, number )
 
 **Description:** Creates and sets a new variable in the data table as a constant value. If there is an existing variable with the same name, a number is appended to the name of the new variable to make it unique. The similar command Set Table Variable is recommended for most cases.
 
@@ -5493,13 +5467,13 @@ dt << New Table Variable( "Days", 42 );
 
 ### OC Curves
 
-**Syntax:** obj << OC Curves
+**Syntax:** obj &lt;&lt; OC Curves
 
 **Description:** Creates a graph that plots the probability of not detecting a shift in process as a function of the size of the shift.
 
 ### Partition
 
-**Syntax:** obj << Partition( Y( column ), X( column(s) ) )
+**Syntax:** obj &lt;&lt; Partition( Y( column ), X( column(s) ) )
 
 **Description:** Constructs a decision tree by recursively partitioning the data according to a relationship between the predictor and response values. Both the response and predictors can be either continuous or categorical.
 
@@ -5517,7 +5491,7 @@ dt << Partition(
 
 ### Paste Column Properties
 
-**Syntax:** obj << Paste Column Properties
+**Syntax:** obj &lt;&lt; Paste Column Properties
 
 **Description:** Pastes from the clipboard multiple lists of column properties to multiple columns. Optionally, you can specify a list of target columns instead of selecting them in the data table.
 
@@ -5538,7 +5512,7 @@ dt2 << Paste Column Properties( {:T1, :T3} );
 
 ### Recode
 
-**Syntax:** obj << Recode
+**Syntax:** obj &lt;&lt; Recode
 
 **Description:** Recode the old values of selected columns to new values.
 
@@ -5553,7 +5527,7 @@ dt << Recode;
 
 ### Recode Column
 
-**Syntax:** obj << Recode Column(<source column reference>, {<transform>, ...}, <Update Properties(0|1)>, <By Word(Delimiters(<chars>)>, Target Column(<column reference> | <column name>))
+**Syntax:** obj &lt;&lt; Recode Column(&lt;source column reference&gt;, {&lt;transform&gt;, ...}, &lt;Update Properties(0|1)&gt;, &lt;By Word(Delimiters(&lt;chars&gt;)&gt;, Target Column(&lt;column reference&gt; | &lt;column name&gt;))
 
 **Description:** Apply the listed transformations to each value from the source column and store the result in the original column or specified target column. The By Word option splits supplied character data into smaller input values. Once the input values are determined, the transformations are applied to those values separately.
 
@@ -5579,7 +5553,7 @@ dt << Recode Column(
 
 ### Rename Column Group
 
-**Syntax:** obj << Rename Column Group( oldname | Path({<a>, <b>, ...}), newname )
+**Syntax:** obj &lt;&lt; Rename Column Group( oldname | Path({&lt;a&gt;, &lt;b&gt;, ...}), newname )
 
 **Description:** Rename the column group.
 
@@ -5611,7 +5585,7 @@ dt << rename column group( "xy", "coordinates" );
 
 ### Rename Script Group
 
-**Syntax:** obj << Rename Script Group( oldname | Path({<a>, <b>, ...}), newname )
+**Syntax:** obj &lt;&lt; Rename Script Group( oldname | Path({&lt;a&gt;, &lt;b&gt;, ...}), newname )
 
 **Description:** Rename the script group
 
@@ -5647,7 +5621,7 @@ dt << rename script group( "GB", "GraphBuilders" );
 
 ### Rename Table Property
 
-**Syntax:** obj << Rename Table Property( old name, new name )
+**Syntax:** obj &lt;&lt; Rename Table Property( old name, new name )
 
 **Description:** Renames the specified Table Property.
 
@@ -5663,7 +5637,7 @@ dt << Rename Table Property( "New Script", "Great Script" );
 
 ### Rename Table Script
 
-**Syntax:** obj << Rename Table Script( old name, new name )
+**Syntax:** obj &lt;&lt; Rename Table Script( old name, new name )
 
 **Description:** Renames the specified Table Script.
 
@@ -5679,7 +5653,7 @@ dt << Rename Table Script( "New Script", "Great Script" );
 
 ### Rename Table Variable
 
-**Syntax:** obj << Rename Table Variable( old name, new name )
+**Syntax:** obj &lt;&lt; Rename Table Variable( old name, new name )
 
 **Description:** Renames a specified Table Variable.
 
@@ -5695,7 +5669,7 @@ dt << Rename Table Variable( "Days", "Hours" );
 
 ### Rerun Formulas
 
-**Syntax:** obj << Rerun Formulas
+**Syntax:** obj &lt;&lt; Rerun Formulas
 
 **Description:** Re-evaluates all column formulas in the data table.
 
@@ -5710,7 +5684,7 @@ dt << Rerun Formulas;
 
 ### Reset Transforms
 
-**Syntax:** dt >> Reset Transforms()
+**Syntax:** dt &gt;&gt; Reset Transforms()
 
 **Description:** When transform columns are accessed, they cache their data for future calls. This function removes that data. The data will be recreated if the column is accessed again.
 
@@ -5724,7 +5698,7 @@ dt << Reset Transforms();
 
 ### Revert
 
-**Syntax:** obj << Revert
+**Syntax:** obj &lt;&lt; Revert
 
 **Description:** Reverts any changes to the data table.
 
@@ -5743,7 +5717,7 @@ dt << revert();
 
 ### Run Formulas
 
-**Syntax:** obj << Run Formulas
+**Syntax:** obj &lt;&lt; Run Formulas
 
 **Description:** Performs all pending formula evaluations. Not all formulas will be evaluated.
 
@@ -5759,7 +5733,7 @@ Distribution( Column( :"N=1"n, :"N=5"n, :"N=10"n ) );
 
 ### Run Script
 
-**Syntax:** obj << Run Script( name )
+**Syntax:** obj &lt;&lt; Run Script( name )
 
 **Description:** Runs a named script stored as a property in the data table.
 
@@ -5773,9 +5747,7 @@ dt << Run Script( "Distribution" );
 
 ### Save
 
-**Syntax:** obj << Save( <filepath>, <file type> ) 
-
-obj << Save As( filepath, <file type> )
+**Syntax:** obj &lt;&lt; Save( &lt;filepath&gt;, &lt;file type&gt; ) obj &lt;&lt; Save As( filepath, &lt;file type&gt; )
 
 **Description:** Saves the data table to any supported format. Supported formats include .jmp, .xls, .xlsx, .txt, .csv, .tsv, .xpt, .v8xpt and .stx. Some formats are supported only on Windows. See Using JMP for details.
 
@@ -5795,9 +5767,7 @@ Close( dt, "NoSave" );
 
 ### Save As
 
-**Syntax:** obj << Save( <filepath>, <file type> ) 
-
-obj << Save As( filepath, <file type> )
+**Syntax:** obj &lt;&lt; Save( &lt;filepath&gt;, &lt;file type&gt; ) obj &lt;&lt; Save As( filepath, &lt;file type&gt; )
 
 **Description:** Saves the data table to any supported format. Supported formats include .jmp, .xls, .xlsx, .txt, .csv, .tsv, .xpt, .v8xpt and .stx. Some formats are supported only on Windows. See Using JMP for details.
 
@@ -5817,7 +5787,7 @@ Close( dt, "NoSave" );
 
 ### Save Database
 
-**Syntax:** obj << Save Database( connectInfo, TableName )
+**Syntax:** obj &lt;&lt; Save Database( connectInfo, TableName )
 
 **Description:** Saves the data table back to a database.
 
@@ -5831,7 +5801,7 @@ dt << Save Database( "Connect Dialog", "My_Class" );
 
 ### Screen Predictors
 
-**Syntax:** obj << Screen Predictors
+**Syntax:** obj &lt;&lt; Screen Predictors
 
 **Description:** This is an alias and old name for Predictor Screening
 
@@ -5845,7 +5815,7 @@ obj = dt << Predictor Screening( Y( :Banding? ), X( Column Group( "Predictors" )
 
 ### Select Column Group
 
-**Syntax:** obj << Select Column Group( name of group | list of names )
+**Syntax:** obj &lt;&lt; Select Column Group( name of group | list of names )
 
 **Description:** Select the column groups.
 
@@ -5861,7 +5831,7 @@ dt << select column group( "xy", "pollutants" );
 
 ### Select Properties
 
-**Syntax:** obj << Select Properties( { property1, property2, ... )
+**Syntax:** obj &lt;&lt; Select Properties( { property1, property2, ... )
 
 **Description:** Select the specified table properties, where the list can be a list of property name or indices to the properties.
 
@@ -5887,7 +5857,7 @@ proplist = dt << Select Properties( {"Bivariate", "Logistic"} );
 
 ### Select Script Group
 
-**Syntax:** obj << Select Script Group( <name of group | { group1, group2, ...} > )
+**Syntax:** obj &lt;&lt; Select Script Group( &lt;name of group | { group1, group2, ...} &gt; )
 
 **Description:** Select the script groups. If no script group is given, all groups are selected.
 
@@ -5908,7 +5878,7 @@ dt << select script group( "VL" );
 
 ### Select Scripts
 
-**Syntax:** obj << Select Scripts( <name of script | { script1, script2, ...} > )
+**Syntax:** obj &lt;&lt; Select Scripts( &lt;name of script | { script1, script2, ...} &gt; )
 
 **Description:** Select the named scripts.
 
@@ -5949,7 +5919,7 @@ dt << select scripts( a );
 
 ### Select columns
 
-**Syntax:** obj << Select columns( <column>, <column>, ... )
+**Syntax:** obj &lt;&lt; Select columns( &lt;column&gt;, &lt;column&gt;, ... )
 
 **Description:** Select the specified columns. To select all columns, use the keyword &apos;All&apos;.
 
@@ -5989,13 +5959,13 @@ dt << Select Columns( clist );
 
 ### Sequencing Variants Toolset
 
-**Syntax:** obj << Sequencing Variants Toolset
+**Syntax:** obj &lt;&lt; Sequencing Variants Toolset
 
 **Description:** Interface to Sequencing Variants Toolset Add-in Platform
 
 ### Set Active Filter View
 
-**Syntax:** obj << Set Active Filter View( name | obj )
+**Syntax:** obj &lt;&lt; Set Active Filter View( name | obj )
 
 **Description:** Set the active filter view
 
@@ -6015,7 +5985,7 @@ dt << Set Active Filter View( "Dream" );
 
 ### Set Cell Height
 
-**Syntax:** obj << Set Cell Height( number )
+**Syntax:** obj &lt;&lt; Set Cell Height( number )
 
 **Description:** Set the display height of each data table cell.
 
@@ -6029,7 +5999,7 @@ dt << Set Cell Height( 20 );
 
 ### Set Dirty
 
-**Syntax:** obj << Set Dirty( state=0|1 )
+**Syntax:** obj &lt;&lt; Set Dirty( state=0|1 )
 
 **Description:** Marks the data table as changed, even though no change has occurred. This is helpful for causing a prompt to save on closing.
 
@@ -6043,7 +6013,7 @@ dt << Set Dirty();
 
 ### Set Edit Lock
 
-**Syntax:** obj << Set Edit Lock( [ <"Modify Cells">, <"Add rows">, <"Add Columns">, <"Delete Rows">, <"Delete Columns">] )
+**Syntax:** obj &lt;&lt; Set Edit Lock( [ &lt;"Modify Cells"&gt;, &lt;"Add rows"&gt;, &lt;"Add Columns"&gt;, &lt;"Delete Rows"&gt;, &lt;"Delete Columns"&gt;] )
 
 **Description:** Disallow specified operations on the data table.
 
@@ -6057,7 +6027,7 @@ dt << Set Edit Lock( "Add Rows", "Delete Columns" );
 
 ### Set Header Height
 
-**Syntax:** obj << Set Header Height( number )
+**Syntax:** obj &lt;&lt; Set Header Height( number )
 
 **Description:** Set column header&apos;s display height
 
@@ -6071,7 +6041,7 @@ dt << Set Header Height( 20 );
 
 ### Set Label Columns
 
-**Syntax:** obj << Set Label Columns( column(s) )
+**Syntax:** obj &lt;&lt; Set Label Columns( column(s) )
 
 **Description:** Assigns a label role to selected columns in the data table.
 
@@ -6086,7 +6056,7 @@ dt << Set Label Columns( :City, :State );
 
 ### Set Matrix
 
-**Syntax:** obj << Set Matrix( [ matrix with rows separated by commas ] )
+**Syntax:** obj &lt;&lt; Set Matrix( [ matrix with rows separated by commas ] )
 
 **Description:** Creates a data table from a matrix.
 
@@ -6100,7 +6070,7 @@ dt << Set Matrix( [12 59 95, 12 61 123, 12 55 74, 12 66 145] );
 
 ### Set Name
 
-**Syntax:** obj << Set Name( new TableName )
+**Syntax:** obj &lt;&lt; Set Name( new TableName )
 
 **Description:** Changes the name of the data table.
 
@@ -6114,7 +6084,7 @@ dt << Set Name( "New Class" );
 
 ### Set Property
 
-**Syntax:** obj << Set Property(  name, script  )
+**Syntax:** obj &lt;&lt; Set Property( name, script )
 
 **Description:** Creates and sets a new property in the data table as a script.
 
@@ -6128,7 +6098,7 @@ dt << Set Property( "New Script", Distribution( Column( :Height, :Weight ), By( 
 
 ### Set Row ID Width
 
-**Syntax:** obj << Set Row ID Width( number )
+**Syntax:** obj &lt;&lt; Set Row ID Width( number )
 
 **Description:** Set row ID area&apos;s display width
 
@@ -6142,7 +6112,7 @@ dt << Set Row ID Width( 80 );
 
 ### Set Row States
 
-**Syntax:** obj << Set Row States( [state1, state2, ... stateN] )
+**Syntax:** obj &lt;&lt; Set Row States( [state1, state2, ... stateN] )
 
 **Description:** Sets the Row States for all rows in the data table.
 
@@ -6159,7 +6129,7 @@ dt << Set Row States(
 
 ### Set Scroll Lock Columns
 
-**Syntax:** obj << Set Scroll Lock Columns( column(s) )
+**Syntax:** obj &lt;&lt; Set Scroll Lock Columns( column(s) )
 
 **Description:** Locks selected columns in the data table from scrolling.  To indicate that a column is locked, the background color changes.
 
@@ -6173,7 +6143,7 @@ dt << Set Scroll Lock Columns( :City );
 
 ### Set Table Variable
 
-**Syntax:** obj << Set Table Variable( name, number )
+**Syntax:** obj &lt;&lt; Set Table Variable( name, number )
 
 **Description:** Creates and sets a new variable in the data table as a constant value. An existing variable with the same name will be overwritten.
 
@@ -6187,7 +6157,7 @@ dt << Set Table Variable( "Days", 42 );
 
 ### Show Header Filter Icons
 
-**Syntax:** obj << Show Header Filter Icons( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Header Filter Icons( state=0|1 )
 
 **Description:** Show or hide the filter icons on columns in the current filter view.
 
@@ -6201,7 +6171,7 @@ dt << Show Header Filter Icons( 0 );
 
 ### Show Header Graphs
 
-**Syntax:** obj << Show Header Graphs( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Header Graphs( state=0|1 )
 
 **Description:** Show or hide the header graphs in the data table display.
 
@@ -6215,7 +6185,7 @@ dt << Show Header Graphs( 0 );
 
 ### Show Header Groups
 
-**Syntax:** obj << Show Header Groups( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Header Groups( state=0|1 )
 
 **Description:** Show or hide the column groups in the data table display.
 
@@ -6229,7 +6199,7 @@ dt << Show Header Groups( 0 );
 
 ### Show Header Statistics
 
-**Syntax:** obj << Show Header Statistics( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Header Statistics( state=0|1 )
 
 **Description:** Show or hide the header statistics in the data table display.
 
@@ -6243,7 +6213,7 @@ dt << Show Header Statistics( 0 );
 
 ### Show Header Tags
 
-**Syntax:** obj << Show Header Tags( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Header Tags( state=0|1 )
 
 **Description:** Show or hide the column tags in the data table display.
 
@@ -6257,7 +6227,7 @@ dt << Show Header Tags( 0 );
 
 ### Show Hidden Columns In Columns List
 
-**Syntax:** obj << Show Hidden Columns In Columns List( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Hidden Columns In Columns List( state=0|1 )
 
 **Description:** Turn off to omit Hidden columns from the data table Columns list. These columns never show in the data grid.
 
@@ -6273,7 +6243,7 @@ dt << Show Hidden Columns In Columns List( 0 );
 
 ### Show Transforms
 
-**Syntax:** dt << Show Transforms()
+**Syntax:** dt &lt;&lt; Show Transforms()
 
 **Description:** Print information to the log about the transform columns associated with this data table and its platforms. This is informational and the format might change. It should not be parsed.
 
@@ -6289,7 +6259,7 @@ dt << Delete Columns( :A );
 
 ### Sort
 
-**Syntax:** obj << Sort( <Private>, <Invisible>, <Replace table>, By( column ), Order( ascending|descending ) )
+**Syntax:** obj &lt;&lt; Sort( &lt;Private&gt;, &lt;Invisible&gt;, &lt;Replace table&gt;, By( column ), Order( ascending|descending ) )
 
 **Description:** Creates a new data table that is sorted by specified columns in either ascending or descending order.
 
@@ -6315,7 +6285,7 @@ dt << Sort( replace table, By( :name ), Order( Ascending ) );
 
 ### Split
 
-**Syntax:** obj << Split( Split( columns ), Split by( column ), <Group(column)>, <Private>|<Invisible>, <Remaining Columns( Keep All | Drop All | Drop( columns ) | Keep( columns ) )>, <Copy formula( 0|1 )>, <Suppress formula evaluation( 0|1 )>, <Sort by Column Property>, <Output Table( "name" )> )
+**Syntax:** obj &lt;&lt; Split( Split( columns ), Split by( column ), &lt;Group(column)&gt;, &lt;Private&gt;|&lt;Invisible&gt;, &lt;Remaining Columns( Keep All | Drop All | Drop( columns ) | Keep( columns ) )&gt;, &lt;Copy formula( 0|1 )&gt;, &lt;Suppress formula evaluation( 0|1 )&gt;, &lt;Sort by Column Property&gt;, &lt;Output Table( "name" )&gt; )
 
 **Description:** Creates a new data table that maps several rows of one column into one row in several columns.
 
@@ -6335,7 +6305,7 @@ dt << Split(
 
 ### Stack
 
-**Syntax:** obj << Stack( <Private>, <Invisible>, columns( columns ), <Source Label Column( string )>, <Stacked Data Column( string )>, <Copy formula( 0|1 )>, <Number of Series(n)>, <Contiguous>, <Drop All Other Columns(1) | Name("Non-stacked columns")(Keep( col1, ... )) | Name("Non-stacked columns")(Drop( col1, ... ))>, <Output Table( "name" )>) )
+**Syntax:** obj &lt;&lt; Stack( &lt;Private&gt;, &lt;Invisible&gt;, columns( columns ), &lt;Source Label Column( string )&gt;, &lt;Stacked Data Column( string )&gt;, &lt;Copy formula( 0|1 )&gt;, &lt;Number of Series(n)&gt;, &lt;Contiguous&gt;, &lt;Drop All Other Columns(1) | Name("Non-stacked columns")(Keep( col1, ... )) | Name("Non-stacked columns")(Drop( col1, ... ))&gt;, &lt;Output Table( "name" )&gt;) )
 
 **Description:** Creates a new data table with values from multiple columns stacked into a single column.
 
@@ -6388,7 +6358,7 @@ dt << Stack(
 
 ### Subscribe
 
-**Syntax:** obj << Subscribe( Key( <"client"> ), OnDeleteColumns| OnAddColumns| OnAddRows| OnDeleteRows| OnRenameColumn | OnClose | OnSave | OnRename (function) )
+**Syntax:** obj &lt;&lt; Subscribe( Key( &lt;"client"&gt; ), OnDeleteColumns| OnAddColumns| OnAddRows| OnDeleteRows| OnRenameColumn | OnClose | OnSave | OnRename (function) )
 
 **Description:** Subscribes to get messages regarding changes in the data table. Key is the subscription name, so that it can be referenced. The optional parameter, client, will trigger a close confirmation when a close is attempted on the data table. Function can either be the name of a previously defined function, or the function itself. On Close only requires one argument to the function, the data table. The other messages require an additional argument, either a list of columns or number of rows affected. Each subscription remains in effect until you unsubscribe.
 
@@ -6468,7 +6438,7 @@ dt << subscribe( "Test Add", onAddRows( addRowsFn, 3 ) );
 
 ### Subset
 
-**Syntax:** obj << Subset( <Private>, <Invisible>, <Selected columns>, <Columns(column list)>, <All rows | Selected Rows | Filtered Rows(where clause) | Rows([number, number, ...])>, <By(column list)>, <Sampling Rate(fraction)>, <Sample Size(integer)>, <Stratify(column list)>, <Link to original data table(0|1)>, <Copy formula(0|1)>, <Suppress Formula Evaluation>, <Keep by columns> )
+**Syntax:** obj &lt;&lt; Subset( &lt;Private&gt;, &lt;Invisible&gt;, &lt;Selected columns&gt;, &lt;Columns(column list)&gt;, &lt;All rows | Selected Rows | Filtered Rows(where clause) | Rows([number, number, ...])&gt;, &lt;By(column list)&gt;, &lt;Sampling Rate(fraction)&gt;, &lt;Sample Size(integer)&gt;, &lt;Stratify(column list)&gt;, &lt;Link to original data table(0|1)&gt;, &lt;Copy formula(0|1)&gt;, &lt;Suppress Formula Evaluation&gt;, &lt;Keep by columns&gt; )
 
 **Description:** Creates a new data table from the selected rows and columns of the source data table. You can also randomly select rows to subset.
 
@@ -6514,7 +6484,7 @@ dt << Subset( Sample Size( 10 ), Stratify( :sex ) );
 
 ### Summary
 
-**Syntax:** obj << Summary( <Private>, <Invisible>, FREQ(column | "none"), WEIGHT(column | "none"),Group( columns ),Subgroup(columns), <N (column)>, <Mean( column )>, <Std Dev( column )>, <Min( column )>, <Max( column )>, <Range( column )>, <Sum( column )>, <CV( column )>...,Include marginal statistics, Link to original data table (0|1),statistics column name format( "stat(column)" | "column" | "stat of column" | "column stat" | "stat") )
+**Syntax:** obj &lt;&lt; Summary( &lt;Private&gt;, &lt;Invisible&gt;, FREQ(column | "none"), WEIGHT(column | "none"),Group( columns ),Subgroup(columns), &lt;N (column)&gt;, &lt;Mean( column )&gt;, &lt;Std Dev( column )&gt;, &lt;Min( column )&gt;, &lt;Max( column )&gt;, &lt;Range( column )&gt;, &lt;Sum( column )&gt;, &lt;CV( column )&gt;...,Include marginal statistics, Link to original data table (0|1),statistics column name format( "stat(column)" | "column" | "stat of column" | "column stat" | "stat") )
 
 **Description:** Creates a new data table of summary statistics. If specified, there is a row for each level of a grouping variable or each combination of levels of multiple grouping variables.
 
@@ -6549,7 +6519,7 @@ dt << Summary(
 
 ### Suppress Formula Eval
 
-**Syntax:** obj << Suppress Formula Eval( state=0|1 )
+**Syntax:** obj &lt;&lt; Suppress Formula Eval( state=0|1 )
 
 **Description:** Suppresses or enables formula evaluation. This is useful for faster adding of rows, running multiple analyses, and sorting.
 
@@ -6566,7 +6536,7 @@ dt << Suppress Formula Eval( 0 );
 
 ### Text to Columns
 
-**Syntax:** obj << Text to Columns( delimiters(<"separator">, <TAB>, <NEWLINE>), columns(column1, column2, ...) )
+**Syntax:** obj &lt;&lt; Text to Columns( delimiters(&lt;"separator"&gt;, &lt;TAB&gt;, &lt;NEWLINE&gt;), columns(column1, column2, ...) )
 
 **Description:** Convert a column of strings with embedded delimiter into separate columns. The resultant columns can be indicator columns. Delimiters can be any character, the key word TAB, or the key word NEWLINE.
 
@@ -6596,13 +6566,13 @@ dt << Text To Columns(
 
 ### Torch Deep Learning
 
-**Syntax:** obj << Torch Deep Learning
+**Syntax:** obj &lt;&lt; Torch Deep Learning
 
 **Description:** Interface to Torch Deep Learning Add-in Platform
 
 ### Transform Column
 
-**Syntax:** dt << Transform Column(<name>, Formula(<expression>), [Replace(0|1)], [Private(0|1)], [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]
+**Syntax:** dt &lt;&lt; Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Replace(0|1)], [Private(0|1)], [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]
 
 **Description:** Create a transform column associated with the target table. The transform column can be accessed like a real column. 
 
@@ -6660,7 +6630,7 @@ dt << Delete Columns( :A );
 
 ### Transpose
 
-**Syntax:** obj << Transpose( <Private>, <Invisible>,columns( columns ), By( column ), <Label( column )>, <Output Table( name )> )
+**Syntax:** obj &lt;&lt; Transpose( &lt;Private&gt;, &lt;Invisible&gt;,columns( columns ), By( column ), &lt;Label( column )&gt;, &lt;Output Table( name )&gt; )
 
 **Description:** Creates a new data table from the source table where the rows and columns are interchanged.
 
@@ -6678,7 +6648,7 @@ dt << Transpose(
 
 ### Type 1 Gauge
 
-**Syntax:** obj << Type 1 Gauge( Y( column ) )
+**Syntax:** obj &lt;&lt; Type 1 Gauge( Y( column ) )
 
 **Description:** Analyzes measurement systems on continuous data using the Type 1 Gauge method to evaluate the capability of a measurement process on one part.
 
@@ -6699,7 +6669,7 @@ dt << Type 1 Gauge(
 
 ### Ungroup Columns
 
-**Syntax:** obj << Ungroup Columns( {column1, column2, ...} | Column Group( group name ) )
+**Syntax:** obj &lt;&lt; Ungroup Columns( {column1, column2, ...} | Column Group( group name ) )
 
 **Description:** Ungroups a list of columns.
 
@@ -6733,7 +6703,7 @@ dt << Ungroup Columns( Column Group( "Monday" ) );
 
 ### Ungroup Scripts
 
-**Syntax:** obj << Ungroup Scripts( name of script group | list of scripts )
+**Syntax:** obj &lt;&lt; Ungroup Scripts( name of script group | list of scripts )
 
 **Description:** Ungroup a list of scripts. If scripts are not given, selected scripts will be detached from its group. All of the groups will be removed from their grouping if no script is given and no script is selected.
 
@@ -6777,7 +6747,7 @@ dt << ungroup scripts();
 
 ### Unsubscribe
 
-**Syntax:** obj << Unsubscribe( Key, OnDeleteColumns| OnAddColumns| OnAddRows| OnDeleteRows| OnClose | OnColRename | All )
+**Syntax:** obj &lt;&lt; Unsubscribe( Key, OnDeleteColumns| OnAddColumns| OnAddRows| OnDeleteRows| OnClose | OnColRename | All )
 
 **Description:** Cancel previous subscription to the data table.
 
@@ -6792,7 +6762,7 @@ dt << Unsubscribe( "myname", On Close );
 
 ### Update
 
-**Syntax:** obj << Update( With( Data Table( name )), Match Columns( column1 = column2, ...), Selected( columns ), Add columns from Update table(<ALL>, <NONE>, <{column1, column2, ...}>), Replace columns in main table(<ALL>, <NONE>, <{column1, column2, ...}>), <Ignore missing> )
+**Syntax:** obj &lt;&lt; Update( With( Data Table( name )), Match Columns( column1 = column2, ...), Selected( columns ), Add columns from Update table(&lt;ALL&gt;, &lt;NONE&gt;, &lt;{column1, column2, ...}&gt;), Replace columns in main table(&lt;ALL&gt;, &lt;NONE&gt;, &lt;{column1, column2, ...}&gt;), &lt;Ignore missing&gt; )
 
 **Description:** Merges a table of updated data into the original data table by adding or replacing selected columns.
 
@@ -6859,7 +6829,7 @@ dt1 << Update(
 
 ### Update From Database
 
-**Syntax:** obj << Update From Database( connectInfo )
+**Syntax:** obj &lt;&lt; Update From Database( connectInfo )
 
 **Description:** Updates the data in the table with data re-imported from the database.
 
@@ -6873,13 +6843,13 @@ dt << Update From Database( "Connect Dialog" );
 
 ### XGBoost
 
-**Syntax:** obj << XGBoost
+**Syntax:** obj &lt;&lt; XGBoost
 
 **Description:** Experimental interface to XGBoost for stochastic gradient boosting predictive modeling.
 
 ### set private
 
-**Syntax:** obj << set private( <1|0> )
+**Syntax:** obj &lt;&lt; set private( &lt;1|0&gt; )
 
 **Description:** Make the table private. A private table is omitted from the data table list and subscriptions.
 
@@ -6908,7 +6878,7 @@ Close( dt, No Save );
 
 #### Add Column Properties
 
-**Syntax:** obj << Add Column Properties
+**Syntax:** obj &lt;&lt; Add Column Properties
 
 **Description:** Adds properties to the selected column.
 
@@ -6922,7 +6892,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Add From Row States
 
-**Syntax:** obj << Add From Row States
+**Syntax:** obj &lt;&lt; Add From Row States
 
 **Description:** Updates a row state column with any currently used row state changes that are not the default state.
 
@@ -6941,7 +6911,7 @@ col << Add From Row States();
 
 #### Add To Row States
 
-**Syntax:** obj << Add To Row States
+**Syntax:** obj &lt;&lt; Add To Row States
 
 **Description:** Copies all row state values in a column that are not the default state to the currently used row state in the data table.
 
@@ -6959,7 +6929,7 @@ col << Add To Row States();
 
 #### Codes to Labels
 
-**Syntax:** :col << Codes To Labels(<AssociativeArray>|<ListOfAssignments>)
+**Syntax:** :col &lt;&lt; Codes To Labels(&lt;AssociativeArray&gt;|&lt;ListOfAssignments&gt;)
 
 **Description:** Make a column of character values using value labels corresponding to the original codes.
 
@@ -7000,7 +6970,7 @@ dt = Open( "$Sample_Data/Big Class.jmp" );
 
 #### Color Cell by Value
 
-**Syntax:** obj << Color Cell by Value( state=0|1 )
+**Syntax:** obj &lt;&lt; Color Cell by Value( state=0|1 )
 
 **Description:** Changes the display color for cells in the column.
 
@@ -7020,7 +6990,7 @@ Wait( 1 );
 
 #### Color Cells
 
-**Syntax:** obj << Color Cells( color, <row | { row1, row2, ...} > )
+**Syntax:** obj &lt;&lt; Color Cells( color, &lt;row | { row1, row2, ...} &gt; )
 
 **Description:** Color the cells in the column with the specified color. If rows are not given, the same color is applied to the entire column.
 
@@ -7059,7 +7029,7 @@ b = {2, 4, 6};
 
 #### Compact
 
-**Syntax:** :col << Compact( <1|0> )
+**Syntax:** :col &lt;&lt; Compact( &lt;1|0&gt; )
 
 **Description:** Changes a character column&apos;s internals so it only stores one copy of each value, potentially saving memory and speeding up some operations. The optional Save Format controls the format in which the column is saved. The condensed format is smaller and faster to load, but the table cannot be opened in JMP 17 and earlier. The Default format uses the save format preference.
 
@@ -7086,7 +7056,7 @@ dt = Open( "$SAMPLE_DATA/Air Traffic.jmp" );
 
 #### Convert to Table Column
 
-**Syntax:** obj << Convert to Table Column
+**Syntax:** obj &lt;&lt; Convert to Table Column
 
 **Description:** Adds the transform column to the data table.
 
@@ -7101,7 +7071,7 @@ dt << Transform Column( "New Col", Formula( 1 ) );
 
 #### Copy from Row States
 
-**Syntax:** obj << Copy from Row States
+**Syntax:** obj &lt;&lt; Copy from Row States
 
 **Description:** Copies all row state values currently used in the data table to a column.
 
@@ -7115,7 +7085,7 @@ dt << New Column( "Row State Col", Row State, Copy from Row States );
 
 #### Copy to Row States
 
-**Syntax:** obj << Copy to Row States
+**Syntax:** obj &lt;&lt; Copy to Row States
 
 **Description:** Copies all row state values in a column to the currently used row state in the data table.
 
@@ -7131,7 +7101,7 @@ col << Copy To Row States();
 
 #### Data Type
 
-**Syntax:** obj << Data Type(  "Numeric"|"Character"|"Expression"|"Row State", <Format("format string")>, <Input Format("format string")>, <1|2|4>, < <<Fail On Conversion Error >, < <<Return Failed Rows > )
+**Syntax:** obj &lt;&lt; Data Type( "Numeric"|"Character"|"Expression"|"Row State", &lt;Format("format string")&gt;, &lt;Input Format("format string")&gt;, &lt;1|2|4&gt;, &lt; &lt;&lt;Fail On Conversion Error &gt;, &lt; &lt;&lt;Return Failed Rows &gt; )
 
 **Description:** Sets the data type for the column. Using the optional arguments, you can also set the format, input format, and the width in bytes if the column is numeric. Fail On Conversion Error aborts the data type change if any values fail to convert. This is especially useful when converting a character column to a numeric column. Return Failed Rows returns a list containing indices of the rows that failed to convert.
 
@@ -7200,7 +7170,7 @@ Show( r );
 
 #### Delete Formula
 
-**Syntax:** obj << Delete Formula
+**Syntax:** obj &lt;&lt; Delete Formula
 
 **Description:** Deletes any formula in the column.
 
@@ -7214,7 +7184,7 @@ dt = Open( "$SAMPLE_DATA/Bank Loan.jmp" );
 
 #### Delete Property
 
-**Syntax:** obj << Delete Property( property name )
+**Syntax:** obj &lt;&lt; Delete Property( property name )
 
 **Description:** Deletes the named property from the column.
 
@@ -7228,7 +7198,7 @@ dt = Open( "$SAMPLE_DATA/Bank Loan.jmp" );
 
 #### Eval Formula
 
-**Syntax:** obj << Eval Formula
+**Syntax:** obj &lt;&lt; Eval Formula
 
 **Description:** Evaluates the formula in the column.
 
@@ -7244,15 +7214,7 @@ col << Eval Formula;
 
 #### Format
 
-**Syntax:** obj << Format( "Best|Fixed Dec...", <width>, <dec>, <"Use Thousands Separator">  )
-
-obj << Format( "mdy|ddmmyy|Long Date...", width )
-
-obj << Format( "Format Pattern", pattern )
-
-obj << Format("Currency", <Country symbol>, <width>, <"Use Thousands Separator"> ) 
-
-obj << Format("Use Thousands Separator" )
+**Syntax:** obj &lt;&lt; Format( "Best|Fixed Dec...", &lt;width&gt;, &lt;dec&gt;, &lt;"Use Thousands Separator"&gt; )obj &lt;&lt; Format( "mdy|ddmmyy|Long Date...", width )obj &lt;&lt; Format( "Format Pattern", pattern )obj &lt;&lt; Format("Currency", &lt;Country symbol&gt;, &lt;width&gt;, &lt;"Use Thousands Separator"&gt; ) obj &lt;&lt; Format("Use Thousands Separator" )
 
 **Description:** Sets the format used for displaying data in the column. Available formats include all items in the Column Info dialog under format.
 
@@ -7297,9 +7259,7 @@ dt = New Table( "hour24_times",
 
 #### Formula
 
-**Syntax:** obj << Set Formula( formula ) 
-
-obj << Formula( formula )
+**Syntax:** obj &lt;&lt; Set Formula( formula ) obj &lt;&lt; Formula( formula )
 
 **Description:** Sets the formula in the column.
 
@@ -7314,7 +7274,7 @@ col << Set Formula( :Height / :Weight );
 
 #### Get Column Properties
 
-**Syntax:** obj << Get Column Properties
+**Syntax:** obj &lt;&lt; Get Column Properties
 
 **Description:** Copies all properties defined in the selected columns.
 
@@ -7328,7 +7288,7 @@ dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 
 #### Get Compact
 
-**Syntax:** obj << Get Compact
+**Syntax:** obj &lt;&lt; Get Compact
 
 **Description:** Is compact set on the column
 
@@ -7355,7 +7315,7 @@ Show( :Airline << Get Compact );
 
 #### Get Data Table
 
-**Syntax:** obj << Get Data Table
+**Syntax:** obj &lt;&lt; Get Data Table
 
 **Description:** Gets the column&apos;s data table.
 
@@ -7370,7 +7330,7 @@ Show( c << Get Name, c << Get Data Table );
 
 #### Get Data Type
 
-**Syntax:** obj << Get Data Type( <"English">  )
+**Syntax:** obj &lt;&lt; Get Data Type( &lt;"English"&gt; )
 
 **Description:** Returns the data type for the column. If the keyword "English" is omitted, the data type is returned in the language that JMP is running in.
 
@@ -7385,7 +7345,7 @@ Show( which );
 
 #### Get Data Type Length
 
-**Syntax:** obj << Get Data Type Length( <English> )
+**Syntax:** obj &lt;&lt; Get Data Type Length( &lt;English&gt; )
 
 **Description:** Returns the data type and data length of the column. Only the data type is returned if the data length is not fixed, like most character columns.
 
@@ -7418,7 +7378,7 @@ Show( nameTypeLength, ageTypeLength );
 
 #### Get Display Width
 
-**Syntax:** obj << Get Display Width
+**Syntax:** obj &lt;&lt; Get Display Width
 
 **Description:** Get column&apos;s display width.
 
@@ -7433,7 +7393,7 @@ w = :Height << Get Display Width;
 
 #### Get Excluded
 
-**Syntax:** obj << Get Excluded
+**Syntax:** obj &lt;&lt; Get Excluded
 
 **Description:** Returns 1 if the column is excluded
 
@@ -7448,7 +7408,7 @@ Show( s );
 
 #### Get Field Width
 
-**Syntax:** obj << Get Field Width
+**Syntax:** obj &lt;&lt; Get Field Width
 
 **Description:** Returns the field width used for displaying data in the column.
 
@@ -7463,7 +7423,7 @@ Show( width );
 
 #### Get Format
 
-**Syntax:** obj << Get Format
+**Syntax:** obj &lt;&lt; Get Format
 
 **Description:** Returns the format for the column.
 
@@ -7478,7 +7438,7 @@ Show( f );
 
 #### Get Formula
 
-**Syntax:** obj << Get Formula
+**Syntax:** obj &lt;&lt; Get Formula
 
 **Description:** Returns the formula in the column.
 
@@ -7496,7 +7456,7 @@ Show( result );
 
 #### Get Group Name
 
-**Syntax:** obj << Get Group Name
+**Syntax:** obj &lt;&lt; Get Group Name
 
 **Description:** Return the group name or path of the group containing this column, if any.
 
@@ -7525,7 +7485,7 @@ Show( :height << Get Group Name );
 
 #### Get Header Background Color
 
-**Syntax:** obj << Get Header Background Color
+**Syntax:** obj &lt;&lt; Get Header Background Color
 
 **Description:** Get the header color
 
@@ -7540,7 +7500,7 @@ Show( :height << Get Header Background Color );
 
 #### Get Header Chart Type
 
-**Syntax:** obj << Get Header Chart Type
+**Syntax:** obj &lt;&lt; Get Header Chart Type
 
 **Description:** Gets the type of chart displayed in the data table column header.
 
@@ -7554,7 +7514,7 @@ Show( :height << Get Header Chart Type );
 
 #### Get Header Text Color
 
-**Syntax:** obj << Get Header Text Color
+**Syntax:** obj &lt;&lt; Get Header Text Color
 
 **Description:** Get the header text color
 
@@ -7569,7 +7529,7 @@ Show( :height << Get Header Text Color );
 
 #### Get Hidden
 
-**Syntax:** obj << Get Hidden
+**Syntax:** obj &lt;&lt; Get Hidden
 
 **Description:** Returns 1 if the column is hidden
 
@@ -7584,7 +7544,7 @@ Show( s );
 
 #### Get Initial Data
 
-**Syntax:** obj << Get Initial Data
+**Syntax:** obj &lt;&lt; Get Initial Data
 
 **Description:** Get the value or the expression used to initialize column&apos;s data.
 
@@ -7600,7 +7560,7 @@ Column( dt, 1 ) << get initial data;
 
 #### Get Input Format
 
-**Syntax:** obj << Get Input Format
+**Syntax:** obj &lt;&lt; Get Input Format
 
 **Description:** Returns the format used for inputting and storing the data for the column.
 
@@ -7615,7 +7575,7 @@ Show( f );
 
 #### Get Labeled
 
-**Syntax:** obj << Get Labeled
+**Syntax:** obj &lt;&lt; Get Labeled
 
 **Description:** Returns 1 if the column is labeled
 
@@ -7630,7 +7590,7 @@ Show( s );
 
 #### Get List Check
 
-**Syntax:** obj << Get List Check
+**Syntax:** obj &lt;&lt; Get List Check
 
 **Description:** Returns the List Check, if defined in the column.
 
@@ -7645,7 +7605,7 @@ Show( prop );
 
 #### Get Lock
 
-**Syntax:** obj << Get Lock
+**Syntax:** obj &lt;&lt; Get Lock
 
 **Description:** Returns true if a column is locked.
 
@@ -7660,7 +7620,7 @@ Show( lock );
 
 #### Get Modeling Type
 
-**Syntax:** obj << Get Modeling Type( <"English">  )
+**Syntax:** obj &lt;&lt; Get Modeling Type( &lt;"English"&gt; )
 
 **Description:** Returns the modeling type for the column. If the keyword "English" is omitted, the modeling type is returned in the language that JMP is running in.
 
@@ -7675,7 +7635,7 @@ Show( which );
 
 #### Get Name
 
-**Syntax:** obj << Get Name
+**Syntax:** obj &lt;&lt; Get Name
 
 **Description:** Returns the name of the column.
 
@@ -7690,7 +7650,7 @@ Show( col name );
 
 #### Get Properties List
 
-**Syntax:** obj << Get Properties List
+**Syntax:** obj &lt;&lt; Get Properties List
 
 **Description:** Get the list of names of all the properties for this column
 
@@ -7704,7 +7664,7 @@ dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 
 #### Get Property
 
-**Syntax:** obj << Get Property( Notes| Range Check| List Check| Missing Value Codes| Value Labels| Value Scores | Value Order | Value Colors| Color Gradient| Axis| Units| Response Limits| Design Role| Coding| Mixture| Factor Changes | Spec Limits| Control Limits| Process Screening | Sigma| Process Capability Distribution| MSA | Distribution | Time Frequency|  Map Role| Super Categories | Multiple Response | Target Level | Control Level| Profit Matrix | Expression Role | Event Handler | Link ID | Link Reference | Next In Hierarchy )
+**Syntax:** obj &lt;&lt; Get Property( Notes| Range Check| List Check| Missing Value Codes| Value Labels| Value Scores | Value Order | Value Colors| Color Gradient| Axis| Units| Response Limits| Design Role| Coding| Mixture| Factor Changes | Spec Limits| Control Limits| Process Screening | Sigma| Process Capability Distribution| MSA | Distribution | Time Frequency| Map Role| Super Categories | Multiple Response | Target Level | Control Level| Profit Matrix | Expression Role | Event Handler | Link ID | Link Reference | Next In Hierarchy )
 
 **Description:** Returns specific properties, if defined in the column.
 
@@ -7719,7 +7679,7 @@ Show( prop );
 
 #### Get Range Check
 
-**Syntax:** obj << Get Range Check
+**Syntax:** obj &lt;&lt; Get Range Check
 
 **Description:** Returns the Range Check, if defined in the column.
 
@@ -7735,7 +7695,7 @@ Show( check );
 
 #### Get Role
 
-**Syntax:** obj << Get Role( <"English">  )
+**Syntax:** obj &lt;&lt; Get Role( &lt;"English"&gt; )
 
 **Description:** Returns the role for the column. If the keyword "English" is omitted, the role is returned in the language that JMP is running in.
 
@@ -7750,7 +7710,7 @@ Show( which );
 
 #### Get Script
 
-**Syntax:** obj << Get Script
+**Syntax:** obj &lt;&lt; Get Script
 
 **Description:** Returns the script to recreate the column.
 
@@ -7765,7 +7725,7 @@ Show( s );
 
 #### Get Scroll Locked
 
-**Syntax:** obj << Get Scroll Locked
+**Syntax:** obj &lt;&lt; Get Scroll Locked
 
 **Description:** Returns 1 if the column is scroll locked
 
@@ -7780,7 +7740,7 @@ Show( s );
 
 #### Get Selected
 
-**Syntax:** obj << Get Selected
+**Syntax:** obj &lt;&lt; Get Selected
 
 **Description:** Returns 1 if the column is selected.
 
@@ -7795,7 +7755,7 @@ Show( s );
 
 #### Get Stored Values
 
-**Syntax:** obj << Get Stored Values
+**Syntax:** obj &lt;&lt; Get Stored Values
 
 **Description:** Returns the values in the columns without Missing Values Codes conversion
 
@@ -7822,7 +7782,7 @@ Show( valuesList );
 
 #### Get Use Value Labels
 
-**Syntax:** obj << Get Use Value Labels
+**Syntax:** obj &lt;&lt; Get Use Value Labels
 
 **Description:** Returns the state of the Use Value Labels flag.
 
@@ -7837,7 +7797,7 @@ Show( flag );
 
 #### Get Value Labels
 
-**Syntax:** obj << Get Value Labels
+**Syntax:** obj &lt;&lt; Get Value Labels
 
 **Description:** Returns the value labels, if defined in the column.
 
@@ -7852,7 +7812,7 @@ Show( values );
 
 #### Get Values
 
-**Syntax:** obj << Get Values
+**Syntax:** obj &lt;&lt; Get Values
 
 **Description:** Returns the values in the column.
 
@@ -7903,7 +7863,7 @@ Show( valuesList );
 
 #### Ignore Errors
 
-**Syntax:** obj << Ignore Errors( state=0|1 )
+**Syntax:** obj &lt;&lt; Ignore Errors( state=0|1 )
 
 **Description:** Set the flag to ignore errors when a column formula is being evaluated
 
@@ -7919,9 +7879,7 @@ col << ignore errors( true );
 
 #### Input Format
 
-**Syntax:** obj << Input Format( format )
-
-obj << Input Format( "Format Pattern", pattern )
+**Syntax:** obj &lt;&lt; Input Format( format )obj &lt;&lt; Input Format( "Format Pattern", pattern )
 
 **Description:** Sets the format used for inputting and storing the data for the column. This is often used for date and time formats.
 
@@ -7954,7 +7912,7 @@ dt = New Table( "duration_table",
 
 #### Is Transform Column
 
-**Syntax:** obj << Is Transform Column
+**Syntax:** obj &lt;&lt; Is Transform Column
 
 **Description:** Returns 1 if the column is a transform column, 0 otherwise.
 
@@ -7968,7 +7926,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### IsTransformedOnSASExport
 
-**Syntax:** obj << IsTransformedOnSASExport
+**Syntax:** obj &lt;&lt; IsTransformedOnSASExport
 
 **Description:** Returns true if the data in the resulting SAS dataset for this column will be changed upon exporting to SAS. Note: This applies only to date columns, as dates are stored differently in SAS and JMP.
 
@@ -7983,7 +7941,7 @@ Show( flag );
 
 #### Labels to Codes
 
-**Syntax:** :col << Labels to Codes(<AssociativeArray>|<ListOfAssignments>)
+**Syntax:** :col &lt;&lt; Labels to Codes(&lt;AssociativeArray&gt;|&lt;ListOfAssignments&gt;)
 
 **Description:** Make a column of numeric codes with value labels corresponding to the original character values.
 
@@ -8019,7 +7977,7 @@ dt = Open( "$Sample_Data/Big Class.jmp" );
 
 #### Lock
 
-**Syntax:** obj << Lock
+**Syntax:** obj &lt;&lt; Lock
 
 **Description:** Locks the column from any further changes.
 
@@ -8033,7 +7991,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Preselect Role
 
-**Syntax:** obj << Preselect Role( "No Role"|"X"|"Y"|"Weight"|"Freq"|"Validation" )
+**Syntax:** obj &lt;&lt; Preselect Role( "No Role"|"X"|"Y"|"Weight"|"Freq"|"Validation" )
 
 **Description:** Assigns a preselected role to the data table column.
 
@@ -8047,7 +8005,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Remove Value Labels
 
-**Syntax:** obj << Remove Value Labels
+**Syntax:** obj &lt;&lt; Remove Value Labels
 
 **Description:** Removes any value labels defined in the column.
 
@@ -8061,7 +8019,7 @@ dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 
 #### Reset Transform
 
-**Syntax:** obj << Reset Transform
+**Syntax:** obj &lt;&lt; Reset Transform
 
 **Description:** Removes the cached data for the transform column. Accessing column data will rebuild the cache. Use this to reduce memory or to allow recalculation if the formula depends on external information.
 
@@ -8080,7 +8038,7 @@ Show( :"sqrt[height]"n[1] );
 
 #### Set Data Type
 
-**Syntax:** obj << Set Data Type(  "Numeric"|"Character"|"Expression"|"Row State", <Format("format string")>, <Input Format("format string")>, <1|2|4>, < <<Fail On Conversion Error >, < <<Return Failed Rows > )
+**Syntax:** obj &lt;&lt; Set Data Type( "Numeric"|"Character"|"Expression"|"Row State", &lt;Format("format string")&gt;, &lt;Input Format("format string")&gt;, &lt;1|2|4&gt;, &lt; &lt;&lt;Fail On Conversion Error &gt;, &lt; &lt;&lt;Return Failed Rows &gt; )
 
 **Description:** Sets the data type for the column. Using the optional arguments, you can also set the format, input format, and the width in bytes if the column is numeric. Fail On Conversion Error aborts the data type change if any values fail to convert. This is especially useful when converting a character column to a numeric column. Return Failed Rows returns a list containing indices of the rows that failed to convert.
 
@@ -8149,7 +8107,7 @@ Show( r );
 
 #### Set Display Width
 
-**Syntax:** obj << Set Display Width( number )
+**Syntax:** obj &lt;&lt; Set Display Width( number )
 
 **Description:** Change column&apos;s display width.
 
@@ -8165,7 +8123,7 @@ w = :Height << Get Display Width;
 
 #### Set Each Value
 
-**Syntax:** obj << Set Each Value( number )
+**Syntax:** obj &lt;&lt; Set Each Value( number )
 
 **Description:** Sets all the values in a column to a constant.
 
@@ -8180,7 +8138,7 @@ dt:X << Set Each Value( 5 );
 
 #### Set Excluded
 
-**Syntax:** obj << Set Excluded
+**Syntax:** obj &lt;&lt; Set Excluded
 
 **Description:** Excludes the column.
 
@@ -8194,7 +8152,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Set Field Width
 
-**Syntax:** obj << Set Field Width( number )
+**Syntax:** obj &lt;&lt; Set Field Width( number )
 
 **Description:** Sets the field width used for displaying data in the column.
 
@@ -8208,9 +8166,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Set Formula
 
-**Syntax:** obj << Set Formula( formula ) 
-
-obj << Formula( formula )
+**Syntax:** obj &lt;&lt; Set Formula( formula ) obj &lt;&lt; Formula( formula )
 
 **Description:** Sets the formula in the column.
 
@@ -8225,7 +8181,7 @@ col << Set Formula( :Height / :Weight );
 
 #### Set Header Background Color
 
-**Syntax:** obj << Set Header Background Color
+**Syntax:** obj &lt;&lt; Set Header Background Color
 
 **Description:** Set the header color. Set to "None" to use the default color
 
@@ -8251,7 +8207,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Set Header Chart Type
 
-**Syntax:** obj << Set Header Chart Type
+**Syntax:** obj &lt;&lt; Set Header Chart Type
 
 **Description:** Sets the type of chart to display in the data table column header.
 
@@ -8265,7 +8221,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Set Header Text Color
 
-**Syntax:** obj << Set Header Text Color
+**Syntax:** obj &lt;&lt; Set Header Text Color
 
 **Description:** Set the header text color. Set to "None" to use the default color
 
@@ -8291,7 +8247,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Set Hidden
 
-**Syntax:** obj << Set Hidden
+**Syntax:** obj &lt;&lt; Set Hidden
 
 **Description:** Hides the column.
 
@@ -8305,7 +8261,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Set Initial Data
 
-**Syntax:** obj << Set Initial Data
+**Syntax:** obj &lt;&lt; Set Initial Data
 
 **Description:** Initialize the column&apos;s data with any constant, or a simple expression.
 
@@ -8334,7 +8290,7 @@ Column( dt, 1 ) << set initial data( Log( 1 ) );
 
 #### Set Labeled
 
-**Syntax:** obj << Set Labeled
+**Syntax:** obj &lt;&lt; Set Labeled
 
 **Description:** Use the column&apos;s data value for label.
 
@@ -8348,7 +8304,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Set Modeling Type
 
-**Syntax:** obj << Set Modeling Type( "None"|"Continuous"|"Ordinal"|"Nominal"|"Row State"|"Multiple Response"|"Unstructured Text"|"Vector" )
+**Syntax:** obj &lt;&lt; Set Modeling Type( "None"|"Continuous"|"Ordinal"|"Nominal"|"Row State"|"Multiple Response"|"Unstructured Text"|"Vector" )
 
 **Description:** Sets the modeling type for the data table column.
 
@@ -8362,7 +8318,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Set Name
 
-**Syntax:** obj << Set Name( name )
+**Syntax:** obj &lt;&lt; Set Name( name )
 
 **Description:** Sets the column name.
 
@@ -8376,7 +8332,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Set Property
 
-**Syntax:** obj << Set Property( Notes | List Check | Range Check | Axis | Spec Limits | Control Limits | Sigma | Process Capability Distribution | Coding | Mixture | Design Role | Response Limits | Units | Value Order | Value Labels | Value Scores | Row Order Levels | Distribution | Time Frequency | Value Colors | Color Gradient | Missing Value Codes | Factor Change | Map Role | Supercategories | Multiple Response | Profit Matrix | Informative Missing | Expression Role | Link ID | Link Reference | Event Handler | Custom Property, {argument list} )
+**Syntax:** obj &lt;&lt; Set Property( Notes | List Check | Range Check | Axis | Spec Limits | Control Limits | Sigma | Process Capability Distribution | Coding | Mixture | Design Role | Response Limits | Units | Value Order | Value Labels | Value Scores | Row Order Levels | Distribution | Time Frequency | Value Colors | Color Gradient | Missing Value Codes | Factor Change | Map Role | Supercategories | Multiple Response | Profit Matrix | Informative Missing | Expression Role | Link ID | Link Reference | Event Handler | Custom Property, {argument list} )
 
 **Description:** Sets properties in the column.
 
@@ -8390,7 +8346,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Set Scroll Locked
 
-**Syntax:** obj << Set Scroll Locked
+**Syntax:** obj &lt;&lt; Set Scroll Locked
 
 **Description:** Scroll locks the column.
 
@@ -8404,7 +8360,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Set Selected
 
-**Syntax:** obj << Set Selected( state=0|1 )
+**Syntax:** obj &lt;&lt; Set Selected( state=0|1 )
 
 **Description:** Selects the column.
 
@@ -8418,7 +8374,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Set Use for Marker
 
-**Syntax:** obj << Set Use for Marker
+**Syntax:** obj &lt;&lt; Set Use for Marker
 
 **Description:** Use the values in this column as the markers in a graph.  Expression columns with pictures or character columns with IDs might work well.
 
@@ -8432,7 +8388,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Set Values
 
-**Syntax:** obj << Set Values( [ value1, value2, value3, ... ] )
+**Syntax:** obj &lt;&lt; Set Values( [ value1, value2, value3, ... ] )
 
 **Description:** Sets the values in a column.
 
@@ -8450,7 +8406,7 @@ New Column( "X" );
 
 #### SetLock
 
-**Syntax:** obj << SetLock
+**Syntax:** obj &lt;&lt; SetLock
 
 **Description:** Locks the column from any further changes.
 
@@ -8464,7 +8420,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Suppress Eval
 
-**Syntax:** obj << Suppress Eval( state=0|1 )
+**Syntax:** obj &lt;&lt; Suppress Eval( state=0|1 )
 
 **Description:** Set the flag to suppress evaluation of the formula in the column.
 
@@ -8480,7 +8436,7 @@ col << suppress eval( true );
 
 #### Use Value Labels
 
-**Syntax:** obj << Use Value Labels( state=0|1 )
+**Syntax:** obj &lt;&lt; Use Value Labels( state=0|1 )
 
 **Description:** Substitutes value labels defined in the column in all output.
 
@@ -8495,7 +8451,7 @@ Distribution( Column( :Color ) );
 
 #### Value Labels
 
-**Syntax:** obj << Value Labels( { value1 = "label1", value2 = "label2", ... } )
+**Syntax:** obj &lt;&lt; Value Labels( { value1 = "label1", value2 = "label2", ... } )
 
 **Description:** Sets the Value Labels
 
@@ -8513,9 +8469,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Column
 
-**Syntax:** y = Column( name|number );
-
-y = Column( dataTable, name|number, <"formatted"> )
+**Syntax:** y = Column( name|number );y = Column( dataTable, name|number, &lt;"formatted"&gt; )
 
 **Description:** Returns a reference to the specified data table column.
 
@@ -8531,7 +8485,7 @@ col = Column( "height" );
 
 #### Add Multiple Columns
 
-**Syntax:** obj << Add Multiple Columns( Column prefix, number of columns, <before first|after last|after(column)>, Character|Numeric|Row State, <fieldwidth(number)> )
+**Syntax:** obj &lt;&lt; Add Multiple Columns( Column prefix, number of columns, &lt;before first|after last|after(column)&gt;, Character|Numeric|Row State, &lt;fieldwidth(number)&gt; )
 
 **Description:** Creates multiple new columns in the current data table.
 
@@ -8545,7 +8499,7 @@ dt << Add Multiple Columns( "Date", 5, Character );
 
 #### Clear Column Selection
 
-**Syntax:** obj << Clear Column Selection
+**Syntax:** obj &lt;&lt; Clear Column Selection
 
 **Description:** Clears the column selection in the data table.
 
@@ -8561,7 +8515,7 @@ dt << Clear Column Selection();
 
 #### Clone Formula Column
 
-**Syntax:** obj << Clone Formula Column( column, n, <Substitute Column Reference( column1, list )> )
+**Syntax:** obj &lt;&lt; Clone Formula Column( column, n, &lt;Substitute Column Reference( column1, list )&gt; )
 
 **Description:** Creates n new formula columns based on the given column. Column references to column1 from the original formula will be replaced by each column in list for all n columns. Use multiple Substitute Column Reference arguments when replacing more than one column reference from the original formula.
 
@@ -8585,7 +8539,7 @@ dt << Clone Formula Column(
 
 #### Columns Manager
 
-**Syntax:** obj << Columns Manager
+**Syntax:** obj &lt;&lt; Columns Manager
 
 **Description:** Invoke the Columns Manager on the current table, showing properties and statistics for the columns.
 
@@ -8599,7 +8553,7 @@ col1 = dt << Columns Manager;
 
 #### Combine Columns
 
-**Syntax:** obj << Combine Columns
+**Syntax:** obj &lt;&lt; Combine Columns
 
 **Description:** Combine a set of columns into a delimited (multiple response) column.
 
@@ -8638,7 +8592,7 @@ dt << Combine Columns(
 
 #### Compress Selected Columns
 
-**Syntax:** obj << Compress Selected Columns( { column1, column2, ... )
+**Syntax:** obj &lt;&lt; Compress Selected Columns( { column1, column2, ... )
 
 **Description:** Compresses each column into the most compact form.
 
@@ -8656,7 +8610,7 @@ dt << Compress Selected Columns( {:Age, :sex, :Height, :Weight} );
 
 #### Exclude/Unexclude
 
-**Syntax:** obj << Exclude( 0|1 )
+**Syntax:** obj &lt;&lt; Exclude( 0|1 )
 
 **Description:** Excludes the column from any analysis run.
 
@@ -8670,7 +8624,7 @@ dt:Name << Exclude( 1 );
 
 #### Formula
 
-**Syntax:** obj << Formula
+**Syntax:** obj &lt;&lt; Formula
 
 **Description:** Sets a formula in the column.
 
@@ -8685,7 +8639,7 @@ col1 << Formula( :height / :weight );
 
 #### Freq
 
-**Syntax:** obj << Preselect Role( Freq )
+**Syntax:** obj &lt;&lt; Preselect Role( Freq )
 
 **Description:** Assigns the Freq role to the data table column
 
@@ -8700,7 +8654,7 @@ col << Preselect Role( "freq" );
 
 #### Go to
 
-**Syntax:** obj << Go to( column name|column number )
+**Syntax:** obj &lt;&lt; Go to( column name|column number )
 
 **Description:** Selects and moves to the specified column in the current data table.
 
@@ -8714,7 +8668,7 @@ dt << Go to( :BP 12F );
 
 #### Hide/Unhide
 
-**Syntax:** obj << Hide( 0|1 )
+**Syntax:** obj &lt;&lt; Hide( 0|1 )
 
 **Description:** Hides the column in the data grid.
 
@@ -8728,7 +8682,7 @@ dt:Age << Hide( 1 );
 
 #### Invert Column Selection
 
-**Syntax:** obj << Invert Column Selection( <list of columns> )
+**Syntax:** obj &lt;&lt; Invert Column Selection( &lt;list of columns&gt; )
 
 **Description:** Inverts the current column selection. If a list of columns is given, the columns that are not in the list will be selected.
 
@@ -8758,7 +8712,7 @@ b = dt << Invert Column Selection( a );
 
 #### Label/Unlabel
 
-**Syntax:** obj << Label( 0|1 )
+**Syntax:** obj &lt;&lt; Label( 0|1 )
 
 **Description:** Sets this column as a label for identification. Values in the column will appear on a graphs when a point is selected.
 
@@ -8772,7 +8726,7 @@ dt:Age << Label( 1 );
 
 #### Make Indicator Columns
 
-**Syntax:** obj << Make Indicator Columns
+**Syntax:** obj &lt;&lt; Make Indicator Columns
 
 **Description:** Make a set of indicator columns from the selected column
 
@@ -8786,7 +8740,7 @@ dt << Make Indicator Columns( columns( {:species, :season} ) );
 
 #### Move Selected Columns
 
-**Syntax:** obj << Move Selected Columns( column|column list, To first|To last|After(column)|after(group)|after(Path({<a>, <b>, ...}) )
+**Syntax:** obj &lt;&lt; Move Selected Columns( column|column list, To first|To last|After(column)|after(group)|after(Path({&lt;a&gt;, &lt;b&gt;, ...}) )
 
 **Description:** Moves selected columns in the data table.
 
@@ -8839,7 +8793,7 @@ dt << Move Selected Columns( To last );
 
 #### New Column
 
-**Syntax:** obj << New Column( <name>, <data type>, <modeling type>, <Format()>, <Formula()>, <Set Property()>, <Set Values()>, <Like()> )
+**Syntax:** obj &lt;&lt; New Column( &lt;name&gt;, &lt;data type&gt;, &lt;modeling type&gt;, &lt;Format()&gt;, &lt;Formula()&gt;, &lt;Set Property()&gt;, &lt;Set Values()&gt;, &lt;Like()&gt; )
 
 **Description:** Creates a new column in the current data table.
 
@@ -8892,7 +8846,7 @@ dt << New Column( "X", Formula( Random Uniform() ) );
 
 #### New Formula Column
 
-**Syntax:** dt << New Formula Column(Operation(name, <Category(name)>), Columns(columns), <Group By(columns)>)
+**Syntax:** dt &lt;&lt; New Formula Column(Operation(name, &lt;Category(name)&gt;), Columns(columns), &lt;Group By(columns)&gt;)
 
 **Description:** Create a formula column in the table, using the columns specified and applying the operation and optional grouping columns. The operation category can be specified if necessary to disambiguate the operation name. Returns a list of column references to the created columns.
 
@@ -8922,7 +8876,7 @@ dt << New Formula Column( Operation( "Log 2" ), Columns( :height, :weight ) );
 
 #### Next Selected Column
 
-**Syntax:** obj << Next Selected Column
+**Syntax:** obj &lt;&lt; Next Selected Column
 
 **Description:** Go to the next selected column.
 
@@ -8941,7 +8895,7 @@ dt << Next Selected Column;
 
 #### No Role
 
-**Syntax:** obj << Preselect Role( No Role )
+**Syntax:** obj &lt;&lt; Preselect Role( No Role )
 
 **Description:** Removes the assigned role from the data table column.
 
@@ -8955,7 +8909,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Original Order
 
-**Syntax:** obj << Original Order
+**Syntax:** obj &lt;&lt; Original Order
 
 **Description:** Moves columns back to their original order in the data table.
 
@@ -8972,7 +8926,7 @@ dt << Original Order();
 
 #### Paste Column Properties
 
-**Syntax:** obj << Paste Column Properties
+**Syntax:** obj &lt;&lt; Paste Column Properties
 
 **Description:** Pastes from the clipboard multiple lists of column properties to multiple columns. Optionally, you can specify a list of target columns instead of selecting them in the data table.
 
@@ -8993,7 +8947,7 @@ dt2 << Paste Column Properties( {:T1, :T3} );
 
 #### Previous Selected Column
 
-**Syntax:** obj << Previous Selected Column
+**Syntax:** obj &lt;&lt; Previous Selected Column
 
 **Description:** Go to the previously selected column.
 
@@ -9013,7 +8967,7 @@ dt << Previous Selected Column;
 
 #### Reorder by Data Type
 
-**Syntax:** obj << Reorder by Data Type
+**Syntax:** obj &lt;&lt; Reorder by Data Type
 
 **Description:** Reorders columns in the data table sorting by data type.
 
@@ -9028,7 +8982,7 @@ dt << Reorder By Data Type();
 
 #### Reorder by Modeling Type
 
-**Syntax:** obj << Reorder by Modeling Type
+**Syntax:** obj &lt;&lt; Reorder by Modeling Type
 
 **Description:** Reorders columns in the data table sorting by modeling type.
 
@@ -9043,7 +8997,7 @@ dt << Reorder By Modeling Type();
 
 #### Reorder by Name
 
-**Syntax:** obj << Reorder by Name
+**Syntax:** obj &lt;&lt; Reorder by Name
 
 **Description:** Reorders columns in the data table sorting by column name.
 
@@ -9058,7 +9012,7 @@ dt << Reorder By Name();
 
 #### Reverse Order
 
-**Syntax:** obj << Reverse Order
+**Syntax:** obj &lt;&lt; Reverse Order
 
 **Description:** Reverses the order of columns in the data table.
 
@@ -9073,7 +9027,7 @@ dt << Reverse Order();
 
 #### Set Label Columns
 
-**Syntax:** obj << Set Label Columns( column(s) )
+**Syntax:** obj &lt;&lt; Set Label Columns( column(s) )
 
 **Description:** Assigns a label role to selected columns in the data table.
 
@@ -9088,7 +9042,7 @@ dt << Set Label Columns( :City, :State );
 
 #### Set Scroll Lock Columns
 
-**Syntax:** obj << Set Scroll Lock Columns( column(s) )
+**Syntax:** obj &lt;&lt; Set Scroll Lock Columns( column(s) )
 
 **Description:** Locks selected columns in the data table from scrolling.  To indicate that a column is locked, the background color changes.
 
@@ -9102,7 +9056,7 @@ dt << Set Scroll Lock Columns( :City );
 
 #### Text to Columns
 
-**Syntax:** obj << Text to Columns
+**Syntax:** obj &lt;&lt; Text to Columns
 
 **Description:** Make a set of text columns or indicator columns from a delimited text column
 
@@ -9132,7 +9086,7 @@ dt << Text To Columns(
 
 #### Use for Marker
 
-**Syntax:** obj << UseForMarker( 0|1 )
+**Syntax:** obj &lt;&lt; UseForMarker( 0|1 )
 
 **Description:** Use the values in this column as the markers in a graph.  Expression columns with pictures or character columns with IDs might work well.
 
@@ -9146,7 +9100,7 @@ dt:Name << UseForMarker( 1 );
 
 #### Validation
 
-**Syntax:** obj << Preselect Role( Validation)
+**Syntax:** obj &lt;&lt; Preselect Role( Validation)
 
 **Description:** Assigns the Validation role to the data table column
 
@@ -9161,7 +9115,7 @@ col << Preselect Role( "Validation" );
 
 #### Weight
 
-**Syntax:** obj << Preselect Role( Weight )
+**Syntax:** obj &lt;&lt; Preselect Role( Weight )
 
 **Description:** Assigns the Weight role to the data table column
 
@@ -9175,7 +9129,7 @@ dt:Weight << Preselect Role( "weight" );
 
 #### X
 
-**Syntax:** obj << Preselect Role( X )
+**Syntax:** obj &lt;&lt; Preselect Role( X )
 
 **Description:** Assigns the X role to the data table column
 
@@ -9190,7 +9144,7 @@ col << Preselect Role( "X" );
 
 #### Y
 
-**Syntax:** obj << Preselect Role( Y )
+**Syntax:** obj &lt;&lt; Preselect Role( Y )
 
 **Description:** Assigns the Y role to the data table column
 
@@ -9208,7 +9162,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Add Rows
 
-**Syntax:** obj << Add Rows( <n>, <At Start|At End|After(m)> | {list of (column name = value) pairs}) )
+**Syntax:** obj &lt;&lt; Add Rows( &lt;n&gt;, &lt;At Start|At End|After(m)&gt; | {list of (column name = value) pairs}) )
 
 **Description:** Adds n rows, at start, at end, or after row m to the data table.
 
@@ -9234,7 +9188,7 @@ dt << Add Rows( {name = "David", age = 15} );
 
 #### Clear Row States
 
-**Syntax:** obj << Clear Row States
+**Syntax:** obj &lt;&lt; Clear Row States
 
 **Description:** Clears from all rows the states, including selected, excluded, hidden, markers, labels, and colors.
 
@@ -9250,7 +9204,7 @@ dt << Clear Row States;
 
 #### Clear Select
 
-**Syntax:** obj << Clear Select
+**Syntax:** obj &lt;&lt; Clear Select
 
 **Description:** Clears or deselects the selected rows.
 
@@ -9266,7 +9220,7 @@ dt << Clear Select();
 
 #### Clear Selected Row States
 
-**Syntax:** obj << Clear Selected Row States
+**Syntax:** obj &lt;&lt; Clear Selected Row States
 
 **Description:** Clears from the selected rows the states, including selected, excluded, hidden, markers, labels, and colors.
 
@@ -9285,7 +9239,7 @@ dt << Clear Selected Row States;
 
 #### Color Rows by Row State
 
-**Syntax:** obj << Color Rows by Row State
+**Syntax:** obj &lt;&lt; Color Rows by Row State
 
 **Description:** Displays or hides in the cells of the data table, the color assigned in the row state.
 
@@ -9301,7 +9255,7 @@ dt << Color Rows by Row State;
 
 #### Color by Column
 
-**Syntax:** obj << Color by Column( column, <Color( number )>, <Color Theme( color theme )>, < Continuous scale(0|1)>, <Reverse scale(0|1)>, <Excluded Row( 0|1 ), <Make window with legend> )
+**Syntax:** obj &lt;&lt; Color by Column( column, &lt;Color( number )&gt;, &lt;Color Theme( color theme )&gt;, &lt; Continuous scale(0|1)&gt;, &lt;Reverse scale(0|1)&gt;, &lt;Excluded Row( 0|1 ), &lt;Make window with legend&gt; )
 
 **Description:** Assigns a color for each row in the data table based on the value of the column specified.
 
@@ -9315,7 +9269,7 @@ dt << Color by Column( :Age );
 
 #### Color or Mark by Column
 
-**Syntax:** obj << Color or Mark by Column( column, <Color( number )>, <Color Theme( color theme )>, <Marker Theme( standard|hollow|solid|paired|classic|alphanumeric )> )
+**Syntax:** obj &lt;&lt; Color or Mark by Column( column, &lt;Color( number )&gt;, &lt;Color Theme( color theme )&gt;, &lt;Marker Theme( standard|hollow|solid|paired|classic|alphanumeric )&gt; )
 
 **Description:** Associate colors or markers with the values of a specified column
 
@@ -9329,7 +9283,7 @@ dt << Color or Mark by Column( :Age );
 
 #### Colors
 
-**Syntax:** obj << Colors( color )
+**Syntax:** obj &lt;&lt; Colors( color )
 
 **Description:** Colors the selected rows in all graphical output containing markers.
 
@@ -9347,7 +9301,7 @@ dt << Colors( "Red" );
 
 #### Data Filter
 
-**Syntax:** obj << Data Filter( <Location(x,y)>, <"Close Outline">, <"Local">, <Inverse(0|1)>, <Show Columns Selector(0|1)>, <Title(string)>, <Save And Restore Current Row States(0|1)>, <Conditional(0|1)>, <Auto Clear(0|1)>, <Group By AND(0|1)>, <Show Histograms And Bars(0|1)>, <Count Excluded Rows(0|1)>, <Mode(...)>, <Add Filter(Columns(...), Where(...), Display(...), <Select Missing(cols)>, <Order By Count(cols)>)>, <Favorites(...)>, <Animation(...)> )
+**Syntax:** obj &lt;&lt; Data Filter( &lt;Location(x,y)&gt;, &lt;"Close Outline"&gt;, &lt;"Local"&gt;, &lt;Inverse(0|1)&gt;, &lt;Show Columns Selector(0|1)&gt;, &lt;Title(string)&gt;, &lt;Save And Restore Current Row States(0|1)&gt;, &lt;Conditional(0|1)&gt;, &lt;Auto Clear(0|1)&gt;, &lt;Group By AND(0|1)&gt;, &lt;Show Histograms And Bars(0|1)&gt;, &lt;Count Excluded Rows(0|1)&gt;, &lt;Mode(...)&gt;, &lt;Add Filter(Columns(...), Where(...), Display(...), &lt;Select Missing(cols)&gt;, &lt;Order By Count(cols)&gt;)&gt;, &lt;Favorites(...)&gt;, &lt;Animation(...)&gt; )
 
 **Description:** Creates or shows a Data Filter, where you interactively select complex subsets of data. The Mode option determines which row states are affected by selection in the filter. The Add Filter command will add a filter group with the given Columns and Where clauses. When multiple filter groups are present, the combined behavior is determined by the Group By AND option. If the Local keyword is given, the filter can be embedded in a report to filter one or more platforms without affecting other reports.
 
@@ -9399,7 +9353,7 @@ New Window( "Local Data Filter",
 
 #### Data View
 
-**Syntax:** obj << Data View
+**Syntax:** obj &lt;&lt; Data View
 
 **Description:** Makes a new data view of the currently selected rows.
 
@@ -9414,7 +9368,7 @@ dt << Data View;
 
 #### Delete Rows
 
-**Syntax:** obj << Delete Rows
+**Syntax:** obj &lt;&lt; Delete Rows
 
 **Description:** Deletes the selected row(s).
 
@@ -9431,7 +9385,7 @@ Show( r );
 
 #### Exclude/Unexclude
 
-**Syntax:** obj << Exclude/Unexclude
+**Syntax:** obj &lt;&lt; Exclude/Unexclude
 
 **Description:** Excludes the selected rows from contributing to calculations.
 
@@ -9446,7 +9400,7 @@ r << Exclude;
 
 #### Get Rows
 
-**Syntax:** obj << Get Rows( number )
+**Syntax:** obj &lt;&lt; Get Rows( number )
 
 **Description:** returns a list of column values for the specified rows
 
@@ -9461,7 +9415,7 @@ dt << Get Rows( {1, 2, 3} );
 
 #### Go to Row
 
-**Syntax:** obj << Go to Row( row number )
+**Syntax:** obj &lt;&lt; Go to Row( row number )
 
 **Description:** Returns a row object, moves to the specified row, selects the row and highlights it.
 
@@ -9475,7 +9429,7 @@ dt << Go To Row( 5 );
 
 #### Hide and Exclude
 
-**Syntax:** obj << Hide and Exclude
+**Syntax:** obj &lt;&lt; Hide and Exclude
 
 **Description:** Hides the selected rows from appearing on graphs and excludes them from contributing to calculations.
 
@@ -9490,7 +9444,7 @@ r << Hide and Exclude;
 
 #### Hide/Unhide
 
-**Syntax:** obj << Hide/Unhide
+**Syntax:** obj &lt;&lt; Hide/Unhide
 
 **Description:** Hides the selected rows from appearing on graphs.
 
@@ -9505,7 +9459,7 @@ r << Hide;
 
 #### Insert Rows
 
-**Syntax:** obj << Insert Rows
+**Syntax:** obj &lt;&lt; Insert Rows
 
 **Description:** Inserts rows before selected rows. Has no effect if no rows are selected.
 
@@ -9520,7 +9474,7 @@ dt << Insert Rows;
 
 #### Invert Row Selection
 
-**Syntax:** obj << Invert Row Selection
+**Syntax:** obj &lt;&lt; Invert Row Selection
 
 **Description:** Inverts the current row selection.
 
@@ -9536,7 +9490,7 @@ r << Invert Row Selection;
 
 #### Label/Unlabel
 
-**Syntax:** obj << Label/Unlabel
+**Syntax:** obj &lt;&lt; Label/Unlabel
 
 **Description:** Labels the selected rows in all graphical output containing markers.
 
@@ -9551,7 +9505,7 @@ r << Label;
 
 #### Marker by Column
 
-**Syntax:** obj << Marker by Column( column, <Marker( number )>, <Marker Theme( standard | hollow | solid | paired | classic | alphanumeric )>, <Color theme( string )>, < Continuous scale(0|1)>, <Reverse scale(0|1)>, <Excluded Row( 0|1 ), <Make window with legend> )
+**Syntax:** obj &lt;&lt; Marker by Column( column, &lt;Marker( number )&gt;, &lt;Marker Theme( standard | hollow | solid | paired | classic | alphanumeric )&gt;, &lt;Color theme( string )&gt;, &lt; Continuous scale(0|1)&gt;, &lt;Reverse scale(0|1)&gt;, &lt;Excluded Row( 0|1 ), &lt;Make window with legend&gt; )
 
 **Description:** Assigns a marker for each row in the data table based on the value of the column specified.
 
@@ -9584,7 +9538,7 @@ dt << Marker By Column(
 
 #### Markers
 
-**Syntax:** obj << Markers( marker )
+**Syntax:** obj &lt;&lt; Markers( marker )
 
 **Description:** Changes the markers for the selected rows in all graphical output containing markers.
 
@@ -9599,7 +9553,7 @@ r << Markers( "+" );
 
 #### Move Rows
 
-**Syntax:** obj << Move Rows( At Start|At End|After(n) )
+**Syntax:** obj &lt;&lt; Move Rows( At Start|At End|After(n) )
 
 **Description:** Moves the selected rows up or down in the data table to the specified new location.
 
@@ -9615,7 +9569,7 @@ r << Move Rows( At Start );
 
 #### Name Selection in Column
 
-**Syntax:** obj << Name Selection in Column( Column Name( name ), Selected( string ), Unselected( string ) )
+**Syntax:** obj &lt;&lt; Name Selection in Column( Column Name( name ), Selected( string ), Unselected( string ) )
 
 **Description:** Creates a new categorical column with two values, one each for the selected and nonselected rows.
 
@@ -9634,7 +9588,7 @@ dt << Name Selection in Column(
 
 #### Next Selected
 
-**Syntax:** obj << Next Selected
+**Syntax:** obj &lt;&lt; Next Selected
 
 **Description:** Highlights the next row in the group of selected rows.
 
@@ -9650,7 +9604,7 @@ r << Next Selected;
 
 #### Previous Selected
 
-**Syntax:** obj << Previous Selected
+**Syntax:** obj &lt;&lt; Previous Selected
 
 **Description:** Highlights the previous row in the group of selected rows.
 
@@ -9666,7 +9620,7 @@ r << Previous Selected;
 
 #### Row Editor
 
-**Syntax:** obj << Row Editor
+**Syntax:** obj &lt;&lt; Row Editor
 
 **Description:** Opens the Row Editor dialog for the selected row(s).
 
@@ -9681,7 +9635,7 @@ r << Row Editor();
 
 #### Row Selection
 
-**Syntax:** obj << Row Selection( Select Where(condition), < current selection("extend" | "restrict" | "clear")>, <Dialog("Keep Dialog Open")>, <Match Case(0|1)> )
+**Syntax:** obj &lt;&lt; Row Selection( Select Where(condition), &lt; current selection("extend" | "restrict" | "clear")&gt;, &lt;Dialog("Keep Dialog Open")&gt;, &lt;Match Case(0|1)&gt; )
 
 **Description:** Selects all rows that meet the defined condition, with option to extend or restrict existing selections, option to execute the selection or just show the dialog. When Match Case is omitted, the default is a case-sensitive match.
 
@@ -9738,7 +9692,7 @@ dt << Row Selection( Select where( :name == "jane" ), Match Case( 0 ) );
 
 #### Select All Matching Cells
 
-**Syntax:** obj << Select All Matching Cells
+**Syntax:** obj &lt;&lt; Select All Matching Cells
 
 **Description:** Selects in all open data tables, all rows where the values in the column selected match one of the values for the rows selected in that column.
 
@@ -9756,7 +9710,7 @@ dt << Select All Matching Cells();
 
 #### Select All Rows
 
-**Syntax:** obj << Select All Rows
+**Syntax:** obj &lt;&lt; Select All Rows
 
 **Description:** Selects all the rows in the data table.
 
@@ -9770,7 +9724,7 @@ dt << Select All Rows;
 
 #### Select Dominant
 
-**Syntax:** obj << Select Dominant( {column1, column2, ...},{0|1, 0|1, ...} )
+**Syntax:** obj &lt;&lt; Select Dominant( {column1, column2, ...},{0|1, 0|1, ...} )
 
 **Description:** Selects all rows based on the high (1) or low (0) values of the Pareto Frontier.
 
@@ -9785,7 +9739,7 @@ dt << Select Dominant( {:height, :weight}, {0, 0} );
 
 #### Select Duplicate Rows
 
-**Syntax:** obj << Select Duplicate Rows( <match(column1, column2, ...)> )
+**Syntax:** obj &lt;&lt; Select Duplicate Rows( &lt;match(column1, column2, ...)&gt; )
 
 **Description:** Selects duplicate rows and matches on the selected columns. If no match columns are given, rows are matched on all columns of the table. Returns the number of duplicate rows.
 
@@ -9799,7 +9753,7 @@ dt << Select duplicate rows( Match( :age, :height ) );
 
 #### Select Excluded
 
-**Syntax:** obj << Select Excluded
+**Syntax:** obj &lt;&lt; Select Excluded
 
 **Description:** Selects all excluded rows in the data table.
 
@@ -9817,7 +9771,7 @@ dt << Select Excluded;
 
 #### Select Hidden
 
-**Syntax:** obj << Select Hidden
+**Syntax:** obj &lt;&lt; Select Hidden
 
 **Description:** Selects all hidden rows in the data table.
 
@@ -9835,7 +9789,7 @@ dt << Select Hidden;
 
 #### Select Labeled
 
-**Syntax:** obj << Select Labeled
+**Syntax:** obj &lt;&lt; Select Labeled
 
 **Description:** Selects all labeled rows in the data table.
 
@@ -9853,7 +9807,7 @@ dt << Select Labeled;
 
 #### Select Matching Cells
 
-**Syntax:** obj << Select Matching Cells
+**Syntax:** obj &lt;&lt; Select Matching Cells
 
 **Description:** Selects all rows where the values in the column selected match one of the values for the rows selected in that column.
 
@@ -9870,7 +9824,7 @@ dt << Select Matching Cells();
 
 #### Select Randomly
 
-**Syntax:** obj << Select Randomly( number | probability | Sample Size( number ) | Sampling Rate( probability ) )
+**Syntax:** obj &lt;&lt; Select Randomly( number | probability | Sample Size( number ) | Sampling Rate( probability ) )
 
 **Description:** Selects a specified fraction of rows randomly.
 
@@ -9906,7 +9860,7 @@ dt << Select Randomly( Sampling Rate( 0.3 ) );
 
 #### Select Rows
 
-**Syntax:** obj << Select Rows( [row1, row2, ...] )
+**Syntax:** obj &lt;&lt; Select Rows( [row1, row2, ...] )
 
 **Description:** Selects the specified rows.
 
@@ -9920,7 +9874,7 @@ dt << Select Rows( [5, 7, 8, 10] );
 
 #### Select Where
 
-**Syntax:** obj << Select Where( condition, < current selection("extend" | "restrict" | "clear")> )
+**Syntax:** obj &lt;&lt; Select Where( condition, &lt; current selection("extend" | "restrict" | "clear")&gt; )
 
 **Description:** The options are extending or restricting selections, executing the selection, or showing only the dialog.
 
@@ -9962,7 +9916,7 @@ dt << Select Where( Contains( :name, "AR" ) );
 
 #### Get Data Filter
 
-**Syntax:** expr = obj << Get Data Filter
+**Syntax:** expr = obj &lt;&lt; Get Data Filter
 
 **Description:** Returns the filter view&apos;s filter definition
 
@@ -9981,7 +9935,7 @@ Show( fv << Get Data Filter );
 
 #### Get Data Table
 
-**Syntax:** data table = obj << Get Data Table
+**Syntax:** data table = obj &lt;&lt; Get Data Table
 
 **Description:** Returns the table that owns the filter view
 
@@ -10000,7 +9954,7 @@ Show( fv << Get Data Table );
 
 #### Get Name
 
-**Syntax:** string = obj << Get Name
+**Syntax:** string = obj &lt;&lt; Get Name
 
 **Description:** Get the name of the filter view
 
@@ -10019,7 +9973,7 @@ Show( fv << Get Name );
 
 #### Get Show Hidden Rows
 
-**Syntax:** 0|1 = obj << Get Show Hidden Rows
+**Syntax:** 0|1 = obj &lt;&lt; Get Show Hidden Rows
 
 **Description:** Returns the show hidden rows setting for this filter view
 
@@ -10039,7 +9993,7 @@ Show( fv << Get Show Hidden Rows );
 
 #### Get Type
 
-**Syntax:** obj << Get Type
+**Syntax:** obj &lt;&lt; Get Type
 
 **Description:** Get the type of the filter view; one of: "Unfiltered", "Filtered", or "TemporaryFiltered".
 
@@ -10058,7 +10012,7 @@ Show( fv << Get Type, fv << Is Temporary, fv << Is Unfiltered );
 
 #### Is Locked
 
-**Syntax:** 0|1 = obj << Is Locked
+**Syntax:** 0|1 = obj &lt;&lt; Is Locked
 
 **Description:** Returns the lock setting for this filter view
 
@@ -10078,7 +10032,7 @@ Show( fv << Is Locked );
 
 #### Is Temporary
 
-**Syntax:** 0|1 = obj << Is Temporary
+**Syntax:** 0|1 = obj &lt;&lt; Is Temporary
 
 **Description:** Returns 1 if the filtered view is a temporary filter view
 
@@ -10097,7 +10051,7 @@ Show( fv << Get Type, fv << Is Temporary, fv << Is Unfiltered );
 
 #### Is Unfiltered
 
-**Syntax:** 0|1 = obj << Is Unfiltered
+**Syntax:** 0|1 = obj &lt;&lt; Is Unfiltered
 
 **Description:** Returns 1 if the filtered view is the unfiltered filter view
 
@@ -10116,7 +10070,7 @@ Show( fv << Get Type, fv << Is Temporary, fv << Is Unfiltered );
 
 #### Lock
 
-**Syntax:** obj << Lock( 0|1 )
+**Syntax:** obj &lt;&lt; Lock( 0|1 )
 
 **Description:** Prevent editing this filter view.
 
@@ -10136,7 +10090,7 @@ Show( fv << Is Locked );
 
 #### Set Data Filter
 
-**Syntax:** obj << Set Data Filter( expr )
+**Syntax:** obj &lt;&lt; Set Data Filter( expr )
 
 **Description:** Changes the filter definition of the filter view. The filter definition of the unfiltered view cannot be changed
 
@@ -10171,7 +10125,7 @@ Show( fv << Get Data Filter );
 
 #### Set Name
 
-**Syntax:** string = obj << Set Name( name )
+**Syntax:** string = obj &lt;&lt; Set Name( name )
 
 **Description:** Changes the name of the filter view. The names of the unfiltered view and the temporary filtered view cannot be changed.
 
@@ -10191,7 +10145,7 @@ Show( fv << Get Name );
 
 #### Show Hidden Rows
 
-**Syntax:** obj << Show Hidden Rows( 0|1 )
+**Syntax:** obj &lt;&lt; Show Hidden Rows( 0|1 )
 
 **Description:** Changes the show hidden rows setting for this filter view.
 

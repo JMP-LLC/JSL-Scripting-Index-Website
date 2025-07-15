@@ -6,7 +6,7 @@
 
 ### Add Formula from Column
 
-**Syntax:** Prädiktor = obj << Add Formula from Column( Table(name|reference), Columns(name|index|reference, ...), <Expand Intermediate Formulas(number)> )
+**Syntax:** Prädiktor = obj &lt;&lt; Add Formula from Column( Table(name|reference), Columns(name|index|reference, ...), &lt;Expand Intermediate Formulas(number)&gt; )
 
 **Beschreibung:** Fügen Sie dem Formeldepot eine vorhandene Vorhersageformelspalte aus der vorgegebenen Tabelle hinzu
 
@@ -25,7 +25,7 @@ mp << Generate Python Code;
 
 ### Copy Formulas as Functions
 
-**Syntax:** obj << Copy Formulas as Functions( <Formulas(name|index|reference, ...)> )
+**Syntax:** obj &lt;&lt; Copy Formulas as Functions( &lt;Formulas(name|index|reference, ...)&gt; )
 
 **Beschreibung:** Kopiert die vorgegebenen Modelle als skalare Anweisung Funktion() in die Zwischenablage.
 
@@ -48,7 +48,7 @@ Show( text );
 
 ### Copy Formulas as Transforms
 
-**Syntax:** obj << Copy Formulas as Transforms( <Table(name|reference)>, <Formulas(name|index|reference, ...)> )
+**Syntax:** obj &lt;&lt; Copy Formulas as Transforms( &lt;Table(name|reference)&gt;, &lt;Formulas(name|index|reference, ...)&gt; )
 
 **Beschreibung:** Kopiert die vorgegebenen Modelle innerhalb einer Anweisung Transformationsspalte() in die Zwischenablage.
 
@@ -72,7 +72,7 @@ Show( text );
 
 ### Copy Scripts
 
-**Syntax:** obj << Copy Scripts( <Formulas(name|index|reference, ...)> )
+**Syntax:** obj &lt;&lt; Copy Scripts( &lt;Formulas(name|index|reference, ...)&gt; )
 
 **Beschreibung:** Kopiert die Skripte für die vorgegebenen im Formeldepot gespeicherten Formeln in die Zwischenablage.
 
@@ -93,7 +93,7 @@ Show( text );
 
 ### Generate C Code
 
-**Syntax:** obj << Generate C Code( <Formulas(name|index|reference, ...)>, <No Editor> )
+**Syntax:** obj &lt;&lt; Generate C Code( &lt;Formulas(name|index|reference, ...)&gt;, &lt;No Editor&gt; )
 
 **Beschreibung:** Generiert C-Code für die im Formeldepot gespeicherten vorgegebenen Modelle. Die Ausgabe erfolgt in einem Editorfenster oder, wenn das Argument „Kein Editor“ vorgegeben ist, in einer Zeichenkettenvariablen.
 
@@ -117,7 +117,7 @@ fd << Generate C Code( Formulas( predictor ) );
 
 ### Generate JavaScript Code
 
-**Syntax:** obj << Generate JavaScript Code( <Formulas(name|index|reference, ...)>, <No Editor> )
+**Syntax:** obj &lt;&lt; Generate JavaScript Code( &lt;Formulas(name|index|reference, ...)&gt;, &lt;No Editor&gt; )
 
 **Beschreibung:** Generiert JavaScript-Code für die im Formeldepot gespeicherten vorgegebenen Modelle. Die Ausgabe erfolgt in einem Editorfenster oder, wenn das Argument „Kein Editor“ vorgegeben ist, in einer Zeichenkettenvariablen.
 
@@ -141,7 +141,7 @@ fd << Generate JavaScript Code( Formulas( predictor ) );
 
 ### Generate Python Code
 
-**Syntax:** obj << Generate Python Code( <Formulas(name|index|reference, ...)>, <No Editor> )
+**Syntax:** obj &lt;&lt; Generate Python Code( &lt;Formulas(name|index|reference, ...)&gt;, &lt;No Editor&gt; )
 
 **Beschreibung:** Generiert Python-Code für die im Formeldepot gespeicherten vorgegebenen Modelle. Die Ausgabe erfolgt in einem Editorfenster oder, wenn das Argument „Kein Editor“ vorgegeben ist, in einer Zeichenkettenvariablen.
 
@@ -165,7 +165,7 @@ fd << Generate Python Code( Formulas( predictor ) );
 
 ### Generate SAS Code
 
-**Syntax:** obj << Generate SAS Code( <Formulas(name|index|reference, ...)>, <No Editor> )
+**Syntax:** obj &lt;&lt; Generate SAS Code( &lt;Formulas(name|index|reference, ...)&gt;, &lt;No Editor&gt; )
 
 **Beschreibung:** Generiert SAS (DS2)-Code für die im Formeldepot gespeicherten vorgegebenen Modelle. Die Ausgabe erfolgt in einem Editorfenster oder, wenn das Argument „Kein Editor“ vorgegeben ist, in einer Zeichenkettenvariablen.
 
@@ -189,7 +189,7 @@ fd << Generate SAS Code( Formulas( predictor ) );
 
 ### Generate SQL Code
 
-**Syntax:** obj << Generate SQL Code( <Formulas(name|index|reference, ...)>, <No Editor>, <QUOTE_STYLE> )
+**Syntax:** obj &lt;&lt; Generate SQL Code( &lt;Formulas(name|index|reference, ...)&gt;, &lt;No Editor&gt;, &lt;QUOTE_STYLE&gt; )
 
 **Beschreibung:** Generiert SQL-Code (Spaltendefinitionen, die für die Verwendung in einer SQL-Select-Anweisung geeignet sind) für die vorgegebenen Modelle im Formeldepot. Die Ausgabe erfolgt in einem Editorfenster oder, wenn das Argument „Kein Editor“ vorgegeben ist, in einer Zeichenkettenvariablen. QUOTE_STYLE ist eine Zeichenkette, die eine der von JMP unterstützten SQL-Datenbanken (MySQL, Impala, Hive usw.) oder einen SQL-Zitiertyp („Unterstreichung“, „Backquote“, „Klammer“ oder „Doppelte Anführungszeichen“) angibt.
 
@@ -216,7 +216,7 @@ fd << Generate SQL Code( Formulas( predictor ), "MySQL" );
 
 ### Model Comparison
 
-**Syntax:** obj << Model Comparison( <Table(name|reference)>, <Formulas(name|index|reference, ...)> )
+**Syntax:** obj &lt;&lt; Model Comparison( &lt;Table(name|reference)&gt;, &lt;Formulas(name|index|reference, ...)&gt; )
 
 **Beschreibung:** Vergleicht die vorgegebenen im Formeldepot gespeicherten Modelle mit der Funktion für Modellvergleich basierend auf dem Inhalt der vorgegebenen Tabelle.
 
@@ -247,7 +247,7 @@ mc_plat = fd << ModelComparison( Formulas( 1, 2 ) );
 
 ### Profiler
 
-**Syntax:** obj << Profiler( <Table(name|reference)>, <Formulas(name|index|reference, ...)> )
+**Syntax:** obj &lt;&lt; Profiler( &lt;Table(name|reference)&gt;, &lt;Formulas(name|index|reference, ...)&gt; )
 
 **Beschreibung:** Analysiert die vorgegebenen im Formeldepot gespeicherten Modelle mit der Analysefunktion basierend auf dem Inhalt der vorgegebenen Tabelle.
 
@@ -273,7 +273,7 @@ fd << Profiler( Formulas( nl_mp, nn_mp ) );
 
 ### Remove Model Comparison
 
-**Syntax:** obj << Remove Model Comparison
+**Syntax:** obj &lt;&lt; Remove Model Comparison
 
 **Beschreibung:** Entfernt alle Modellvergleichsberichte aus dem aktuellen Formeldepot.
 
@@ -292,7 +292,7 @@ fd << Remove Model Comparison();
 
 ### Remove Profiler
 
-**Syntax:** obj << Remove Profiler
+**Syntax:** obj &lt;&lt; Remove Profiler
 
 **Beschreibung:** Entfernt alle Analysediagramme aus dem aktuellen Formeldepot.
 
@@ -311,7 +311,7 @@ fd << Remove Profiler();
 
 ### Rename Formula Depot
 
-**Syntax:** obj << Rename Formula Depot( text )
+**Syntax:** obj &lt;&lt; Rename Formula Depot( text )
 
 ```jsl
 
@@ -324,7 +324,7 @@ fd << Rename Formula Depot( "New Name" );
 
 ### Run Scripts
 
-**Syntax:** obj << Run Scripts( <Table(name|reference)>, <Formulas(name|index|reference, ...)> )
+**Syntax:** obj &lt;&lt; Run Scripts( &lt;Table(name|reference)&gt;, &lt;Formulas(name|index|reference, ...)&gt; )
 
 **Beschreibung:** Speichert die vorgegebenen Modelle als eine oder mehrere Formelspalten in der aktuellen oder vorgegebenen JMP-Datentabelle.
 
@@ -353,7 +353,7 @@ fd2 << Run Scripts( Table( dt2 ), Formulas( 1 ) );
 
 ### Show Scripts
 
-**Syntax:** obj << Show Scripts( <Formulas(name|index|reference, ...)> )
+**Syntax:** obj &lt;&lt; Show Scripts( &lt;Formulas(name|index|reference, ...)&gt; )
 
 **Beschreibung:** Öffnet ein neues Formelfenster (oder hängt es an ein geöffnetes Formelfenster an), das Skripte für die vorgegebenen im Formeldepot gespeicherten Formeln enthält.
 
@@ -373,7 +373,7 @@ fd << Show Scripts( Formulas( 1 ) );
 
 ### Action
 
-**Syntax:** obj << Action
+**Syntax:** obj &lt;&lt; Action
 
 **Beschreibung:** Allzwecköffnung innerhalb einer Plattform zum Einfügen von auszuwertenden Ausdrücken. Setzt die Kontexte für Anzeigefeld und Datentabelle kurzzeitig auf die Plattform.
 
@@ -391,7 +391,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Syntax:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntax:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Beschreibung:** Wendet eine zuvor erstellte Voreinstellung auf das Objekt an und aktualisiert die Optionen und Anpassungen entsprechend den gespeicherten Einstellungen.
 
@@ -438,7 +438,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Copy Script
 
-**Syntax:** obj << Copy Script
+**Syntax:** obj &lt;&lt; Copy Script
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und legt es in der Zwischenablage ab.
 
@@ -461,7 +461,7 @@ obj << Copy Script;
 
 ### Get By Levels
 
-**Syntax:** obj << Get By Levels
+**Syntax:** obj &lt;&lt; Get By Levels
 
 **Beschreibung:** Gibt ein assoziatives Array zurück, das die Nach-Gruppenspalten ihren Werten zuordnet.
 
@@ -478,7 +478,7 @@ biv << Get By Levels;
 
 ### Get Container
 
-**Syntax:** obj << Get Container
+**Syntax:** obj &lt;&lt; Get Container
 
 **Beschreibung:** Gibt einen Verweis auf das Containerfeld zurück, das den Inhalt des Objekts enthält.
 
@@ -533,7 +533,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Syntax:** obj << Get Data Table
+**Syntax:** obj &lt;&lt; Get Data Table
 
 **Beschreibung:** Gibt eine Referenz auf die Datentabelle zurück.
 
@@ -557,7 +557,7 @@ Show( N Rows( t ) );
 
 ### Get Script
 
-**Syntax:** obj << Get Script
+**Syntax:** obj &lt;&lt; Get Script
 
 **Beschreibung:** Erstellt ein Skript (JSL) zum Erzeugen dieser Analyse und gibt es als Ausdruck zurück.
 
@@ -581,7 +581,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Syntax:** obj << Get Script With Data Table
+**Syntax:** obj &lt;&lt; Get Script With Data Table
 
 **Beschreibung:** Erstellt ein Skript (JSL) zum Erzeugen dieser Analyse und referenziert dabei spezifisch diese Datentabelle und gibt das Skript als Ausdruck zurück.
 
@@ -605,7 +605,7 @@ Show( t );
 
 ### Get Timing
 
-**Syntax:** obj << Get Timing
+**Syntax:** obj &lt;&lt; Get Timing
 
 **Beschreibung:** Steuert den Start der Plattform zeitlich.
 
@@ -629,7 +629,7 @@ Show( t );
 
 ### Get Web Support
 
-**Syntax:** obj << Get Web Support
+**Syntax:** obj &lt;&lt; Get Web Support
 
 **Beschreibung:** Gibt eine Zahl zurück, die angibt, ob für das Anzeigeobjekt interaktive HTML unterstützt wird. 1 bedeutet einige oder alle Elemente werden unterstützt. 0 bedeutet keine Unterstützung.
 
@@ -645,7 +645,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Syntax:** obj << Get Where Expr
+**Syntax:** obj &lt;&lt; Get Where Expr
 
 **Beschreibung:** Gibt den Ausdruck Where für die Teilmenge der Daten zurück, wenn die Plattform mit By() oder Where() gestartet wurde. Andernfalls wird Empty() zurückgegeben.
 
@@ -735,9 +735,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Syntax:** obj << Report;
-
-Report( obj )
+**Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Beschreibung:** Gibt eine Referenz auf das Berichtsobjekt zurück.
 
@@ -762,7 +760,7 @@ Show( t );
 
 ### Save Script for All Objects
 
-**Syntax:** obj << Save Script for All Objects
+**Syntax:** obj &lt;&lt; Save Script for All Objects
 
 **Beschreibung:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -785,7 +783,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Syntax:** obj << Save Script for All Objects To Data Table( <name> )
+**Syntax:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Beschreibung:** Speichert ein Skript für alle Berichtsobjekte in der aktuellen Datentabelle. Diese Option ist nützlich, wenn Sie mehrere Berichte im Fenster haben. Das Skript wird nach der ersten Plattform benannt, sofern Sie keine Skriptnamen in Anführungszeichen angeben.
 
@@ -837,7 +835,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Syntax:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und speichert es als Tabelleneigenschaft in der Datentabelle.
 
@@ -860,7 +858,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Syntax:** obj << Save Script to Journal
+**Syntax:** obj &lt;&lt; Save Script to Journal
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und fügt eine Schaltfläche mit diesem Skript zum Journal hinzu.
 
@@ -883,7 +881,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Syntax:** obj << Save Script to Report
+**Syntax:** obj &lt;&lt; Save Script to Report
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und zeigt es im Bericht selbst an. Nützlich zum Anlegen eines gedruckten Nachweises der durchgeführten Aktivitäten.
 
@@ -906,7 +904,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Syntax:** obj << Save Script to Script Window
+**Syntax:** obj &lt;&lt; Save Script to Script Window
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und hängt es an das Textfenster mit dem aktuellen Skript an.
 
@@ -994,7 +992,7 @@ dt << Distribution(
 
 ### Title
 
-**Syntax:** obj << Title( "new title" )
+**Syntax:** obj &lt;&lt; Title( "new title" )
 
 **Beschreibung:** Legt den Titel für die Plattform fest.
 
@@ -1017,7 +1015,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Syntax:** obj << Top Report
+**Syntax:** obj &lt;&lt; Top Report
 
 **Beschreibung:** Gibt eine Referenz auf den Stammknoten im Bericht zurück.
 
@@ -1042,7 +1040,7 @@ Show( t );
 
 ### View Web XML
 
-**Syntax:** obj << View Web XML
+**Syntax:** obj &lt;&lt; View Web XML
 
 **Beschreibung:** Gibt den XML-Code zurück, der zum Erstellen des interaktiven HTML-Berichts verwendet wird.
 

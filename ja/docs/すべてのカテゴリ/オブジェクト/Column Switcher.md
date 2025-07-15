@@ -6,7 +6,7 @@
 
 ### Close Outline
 
-**構文:** obj << Close Outline( state=0|1 )
+**構文:** obj &lt;&lt; Close Outline( state=0|1 )
 
 **説明:** 列スイッチャーアウトラインボックスを開く、または閉じる。
 
@@ -25,7 +25,7 @@ ColumnSwitcherObject << Close Outline( 1 );
 
 ### Get Current
 
-**構文:** obj << Get Current
+**構文:** obj &lt;&lt; Get Current
 
 **説明:** 現在の変数の名前を取得する。
 
@@ -45,7 +45,7 @@ ColumnSwitcherObject << Get Current/*country*/ ;
 
 ### Get Layout
 
-**構文:** obj << Get Layout
+**構文:** obj &lt;&lt; Get Layout
 
 **説明:** 複数の列スイッチャーのレイアウトを取得する。値は縦(0)または横(1)。
 
@@ -71,7 +71,7 @@ If( cs2 << Get Layout() == 1,
 
 ### Get List
 
-**構文:** obj << Get List
+**構文:** obj &lt;&lt; Get List
 
 **説明:** 使用可能な変数のリストを取得する。
 
@@ -90,7 +90,7 @@ ColumnSwitcherObject << Get List/*{"sex","country","marital status"}*/ ;
 
 ### Get Original
 
-**構文:** obj << Get Original
+**構文:** obj &lt;&lt; Get Original
 
 **説明:** 元の変数の名前を取得する。
 
@@ -110,7 +110,7 @@ ColumnSwitcherObject << Get Original/*marital status*/ ;
 
 ### Get Speed
 
-**構文:** obj << Get Speed
+**構文:** obj &lt;&lt; Get Speed
 
 **説明:** fpm = obj<<getSpeed /* in Frames Per Minute */;
 
@@ -129,7 +129,7 @@ FPM = ColumnSwitcherObject << Get Speed;
 
 ### Link Platform
 
-**構文:** obj << Link Platform( platform )
+**構文:** obj &lt;&lt; Link Platform( platform )
 
 **説明:** この列スイッチャーにプラットフォームをリンクする。
 
@@ -150,7 +150,7 @@ columnSwitcher << Link Platform( gb );
 
 ### Make Column Switch Handler
 
-**構文:** handler = cs << Make Column Switch Handler( function(pre), function(post) )
+**構文:** handler = cs &lt;&lt; Make Column Switch Handler( function(pre), function(post) )
 
 **説明:** 列を切り替えるハンドラを、列の切り替え前後に呼び出される関数つきで作成する。コールバック関数は、前の列、次の列、列スイッチャーを受け取る。切り替え前の関数がゼロ以外の値を戻したときは切り替えができる。0を戻したときは切り替えが行われない。切り替え後の関数は値を戻さない。
 
@@ -188,7 +188,7 @@ columnSwitcher << Run;
 
 ### Next
 
-**構文:** obj << Next
+**構文:** obj &lt;&lt; Next
 
 **説明:** 列スイッチャーの選択内容を、使用可能な次の選択肢に切り替える。
 
@@ -207,7 +207,7 @@ ColumnSwitcherObject << Next;
 
 ### Pause
 
-**構文:** obj << Pause
+**構文:** obj &lt;&lt; Pause
 
 **説明:** アニメーションを一時停止する。
 
@@ -228,7 +228,7 @@ ColumnSwitcherObject << Pause;
 
 ### Previous
 
-**構文:** obj << Previous
+**構文:** obj &lt;&lt; Previous
 
 **説明:** 列スイッチャーの選択内容を、使用可能な直前の選択肢に切り替える。
 
@@ -247,7 +247,7 @@ ColumnSwitcherObject << Previous;
 
 ### Remove Column Switcher
 
-**構文:** obj << Remove Column Switcher
+**構文:** obj &lt;&lt; Remove Column Switcher
 
 **説明:** この列スイッチャーを削除する。
 
@@ -268,7 +268,7 @@ ColumnSwitcherObject << Remove Column Switcher;
 
 ### Retain Axis Settings
 
-**構文:** obj << Retain Axis Settings( state=0|1 )
+**構文:** obj &lt;&lt; Retain Axis Settings( state=0|1 )
 
 **説明:** 一部のグラフでは、軸のカスタマイズ内容が列の名前に基づいて保存される。デフォルトでは、列を切り替えるとこれらのカスタマイズ内容が削除される。このオプションをオンにすると、列を切り替えたときに列が更新され、新しいグラフにカスタマイズ内容が適用されるようになる。
 
@@ -296,7 +296,7 @@ Graph Builder(
 
 ### Run
 
-**構文:** obj << Run
+**構文:** obj &lt;&lt; Run
 
 **説明:** アニメーションを開始する。
 
@@ -315,7 +315,7 @@ ColumnSwitcherObject << Run;
 
 ### Script
 
-**構文:** obj << Script( script )
+**構文:** obj &lt;&lt; Script( script )
 
 **説明:** 列が切り替わる際に実行されるスクリプトを設定する。
 
@@ -340,7 +340,7 @@ Wait( 5/*seconds, while it animates*/ );
 
 ### Set Current
 
-**構文:** obj << Set Current( string )
+**構文:** obj &lt;&lt; Set Current( string )
 
 **説明:** 現在の変数(入れ替え後使われるようになるもの)を設定する。
 
@@ -359,7 +359,7 @@ ColumnSwitcherObject << Set Current( "country" );
 
 ### Set Layout
 
-**構文:** obj << Set Layout( 0 = Vertical | 1 = Horizontal )
+**構文:** obj &lt;&lt; Set Layout( 0 = Vertical | 1 = Horizontal )
 
 **説明:** 複数の列スイッチャーのレイアウトを縦(0)または横(1)に設定する。
 
@@ -382,7 +382,7 @@ cs1 << Set Layout( 1 );
 
 ### Set N Lines
 
-**構文:** obj << Set N Lines( number )
+**構文:** obj &lt;&lt; Set N Lines( number )
 
 **説明:** 列名のリストボックスの行数を設定する。
 
@@ -401,7 +401,7 @@ ColumnSwitcherObject << Set N Lines( 20 );
 
 ### Set Script
 
-**構文:** obj << Set Script( script )
+**構文:** obj &lt;&lt; Set Script( script )
 
 **説明:** 列が切り替わる際に実行されるスクリプトを設定する。
 
@@ -426,7 +426,7 @@ Wait( 5/*seconds, while it animates*/ );
 
 ### Set Size
 
-**構文:** obj << Set Size( number )
+**構文:** obj &lt;&lt; Set Size( number )
 
 **説明:** 列名のリストボックスの幅をピクセル数で設定する。
 
@@ -445,7 +445,7 @@ ColumnSwitcherObject << Set Size( 300 );
 
 ### Set Speed
 
-**構文:** obj << Set Speed( number )
+**構文:** obj &lt;&lt; Set Speed( number )
 
 **説明:** obj<<setSpeed(60) /* in Frames Per Minute */;
 
@@ -464,7 +464,7 @@ ColumnSwitcherObject << Set Speed( 60 );/*FPM*/ColumnSwitcherObject << Run;
 
 ### Title
 
-**構文:** obj << Title( string )
+**構文:** obj &lt;&lt; Title( string )
 
 **説明:** 列スイッチャーアウトラインボックスのタイトルを設定する。
 

@@ -6,7 +6,7 @@
 
 ### Close Outline
 
-**Sintassi:** obj << Close Outline( state=0|1 )
+**Sintassi:** obj &lt;&lt; Close Outline( state=0|1 )
 
 **Descrizione:** Apre o chiude il riquadro Scambia colonne
 
@@ -25,7 +25,7 @@ ColumnSwitcherObject << Close Outline( 1 );
 
 ### Get Current
 
-**Sintassi:** obj << Get Current
+**Sintassi:** obj &lt;&lt; Get Current
 
 **Descrizione:** ottiene il nome della variabile corrente
 
@@ -45,7 +45,7 @@ ColumnSwitcherObject << Get Current/*country*/ ;
 
 ### Get Layout
 
-**Sintassi:** obj << Get Layout
+**Sintassi:** obj &lt;&lt; Get Layout
 
 **Descrizione:** Ottiene il layout per Scambia colonne multipli. Verticale(0) o orizzontale(1).
 
@@ -71,7 +71,7 @@ If( cs2 << Get Layout() == 1,
 
 ### Get List
 
-**Sintassi:** obj << Get List
+**Sintassi:** obj &lt;&lt; Get List
 
 **Descrizione:** ottiene l&apos;elenco di variabili disponibili
 
@@ -90,7 +90,7 @@ ColumnSwitcherObject << Get List/*{"sex","country","marital status"}*/ ;
 
 ### Get Original
 
-**Sintassi:** obj << Get Original
+**Sintassi:** obj &lt;&lt; Get Original
 
 **Descrizione:** ottiene il nome della variabile originale
 
@@ -110,7 +110,7 @@ ColumnSwitcherObject << Get Original/*marital status*/ ;
 
 ### Get Speed
 
-**Sintassi:** obj << Get Speed
+**Sintassi:** obj &lt;&lt; Get Speed
 
 **Descrizione:** fpm = obj<<getSpeed /* in Frames Per Minute */;
 
@@ -129,7 +129,7 @@ FPM = ColumnSwitcherObject << Get Speed;
 
 ### Link Platform
 
-**Sintassi:** obj << Link Platform( platform )
+**Sintassi:** obj &lt;&lt; Link Platform( platform )
 
 **Descrizione:** Collega una piattaforma a questo Scambia colonne.
 
@@ -150,7 +150,7 @@ columnSwitcher << Link Platform( gb );
 
 ### Make Column Switch Handler
 
-**Sintassi:** handler = cs << Make Column Switch Handler( function(pre), function(post) )
+**Sintassi:** handler = cs &lt;&lt; Make Column Switch Handler( function(pre), function(post) )
 
 **Descrizione:** Crea un gestore per gli scambi di colonna con funzioni di richiamo (callback) che vengono attivate prima e dopo lo scambio di colonne. Le funzioni di richiamo ricevono la colonna precedente, la colonna successiva e lo Scambia colonne. La funzione specificata per essere eseguita prima dello scambio deve restituire un valore diverso da zero per consentire lo scambio. Restituendo 0 si impedisce lo scambio. La funzione chiamata dopo lo scambio non dovrebbe restituire alcun valore.
 
@@ -188,7 +188,7 @@ columnSwitcher << Run;
 
 ### Next
 
-**Sintassi:** obj << Next
+**Sintassi:** obj &lt;&lt; Next
 
 **Descrizione:** Cambia la selezione di Scambia colonne nella scelta successiva disponibile
 
@@ -207,7 +207,7 @@ ColumnSwitcherObject << Next;
 
 ### Pause
 
-**Sintassi:** obj << Pause
+**Sintassi:** obj &lt;&lt; Pause
 
 **Descrizione:** sospende l&apos;animazione
 
@@ -228,7 +228,7 @@ ColumnSwitcherObject << Pause;
 
 ### Previous
 
-**Sintassi:** obj << Previous
+**Sintassi:** obj &lt;&lt; Previous
 
 **Descrizione:** Cambia la selezione di Scambia colonne nella scelta precedente disponibile
 
@@ -247,7 +247,7 @@ ColumnSwitcherObject << Previous;
 
 ### Remove Column Switcher
 
-**Sintassi:** obj << Remove Column Switcher
+**Sintassi:** obj &lt;&lt; Remove Column Switcher
 
 **Descrizione:** Rimuove questo Scambia colonne
 
@@ -268,7 +268,7 @@ ColumnSwitcherObject << Remove Column Switcher;
 
 ### Retain Axis Settings
 
-**Sintassi:** obj << Retain Axis Settings( state=0|1 )
+**Sintassi:** obj &lt;&lt; Retain Axis Settings( state=0|1 )
 
 **Descrizione:** Alcuni grafici memorizzano le personalizzazioni degli assi in base al nome della colonna. Di default, queste personalizzazioni vengono rimosse quando si cambia colonna. Se l&apos;opzione è abilitata, la colonna viene aggiornata quando avviene un cambio, in modo che le personalizzazioni vengano applicate al nuovo grafico.
 
@@ -296,7 +296,7 @@ Graph Builder(
 
 ### Run
 
-**Sintassi:** obj << Run
+**Sintassi:** obj &lt;&lt; Run
 
 **Descrizione:** avvia l&apos;animazione
 
@@ -315,7 +315,7 @@ ColumnSwitcherObject << Run;
 
 ### Script
 
-**Sintassi:** obj << Script( script )
+**Sintassi:** obj &lt;&lt; Script( script )
 
 **Descrizione:** Imposta uno script che viene eseguito quando la colonna è scambiata
 
@@ -340,7 +340,7 @@ Wait( 5/*seconds, while it animates*/ );
 
 ### Set Current
 
-**Sintassi:** obj << Set Current( string )
+**Sintassi:** obj &lt;&lt; Set Current( string )
 
 **Descrizione:** imposta la variabile corrente
 
@@ -359,7 +359,7 @@ ColumnSwitcherObject << Set Current( "country" );
 
 ### Set Layout
 
-**Sintassi:** obj << Set Layout( 0 = Vertical | 1 = Horizontal )
+**Sintassi:** obj &lt;&lt; Set Layout( 0 = Vertical | 1 = Horizontal )
 
 **Descrizione:** Imposta il layout per Scambia colonne multipli su verticale(0) o orizzontale(1).
 
@@ -382,7 +382,7 @@ cs1 << Set Layout( 1 );
 
 ### Set N Lines
 
-**Sintassi:** obj << Set N Lines( number )
+**Sintassi:** obj &lt;&lt; Set N Lines( number )
 
 **Descrizione:** Imposta il numero di righe nella casella di riepilogo dei nomi di colonne
 
@@ -401,7 +401,7 @@ ColumnSwitcherObject << Set N Lines( 20 );
 
 ### Set Script
 
-**Sintassi:** obj << Set Script( script )
+**Sintassi:** obj &lt;&lt; Set Script( script )
 
 **Descrizione:** Imposta uno script che viene eseguito quando la colonna è scambiata
 
@@ -426,7 +426,7 @@ Wait( 5/*seconds, while it animates*/ );
 
 ### Set Size
 
-**Sintassi:** obj << Set Size( number )
+**Sintassi:** obj &lt;&lt; Set Size( number )
 
 **Descrizione:** Imposta la larghezza in pixel della casella di riepilogo dei nomi di colonne
 
@@ -445,7 +445,7 @@ ColumnSwitcherObject << Set Size( 300 );
 
 ### Set Speed
 
-**Sintassi:** obj << Set Speed( number )
+**Sintassi:** obj &lt;&lt; Set Speed( number )
 
 **Descrizione:** obj<<setSpeed(60) /* in Frames Per Minute */;
 
@@ -464,7 +464,7 @@ ColumnSwitcherObject << Set Speed( 60 );/*FPM*/ColumnSwitcherObject << Run;
 
 ### Title
 
-**Sintassi:** obj << Title( string )
+**Sintassi:** obj &lt;&lt; Title( string )
 
 **Descrizione:** Imposta il titolo per il riquadro Scambia colonne
 

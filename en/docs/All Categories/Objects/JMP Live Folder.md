@@ -6,13 +6,13 @@
 
 ### Add Reports To Folder
 
-**Syntax:** jmpliveresultlist = folder << Add Reports To Folder(JMPLiveContent, <Use Existing Data({{dt_or_name, id | relative_path | JMP Live Data}})>)
+**Syntax:** jmpliveresultlist = folder &lt;&lt; Add Reports To Folder(JMPLiveContent, &lt;Use Existing Data({{dt_or_name, id | relative_path | JMP Live Data}})&gt;)
 
 **Description:** The Add Reports To Folder message is deprecated. Use Publish instead.
 
 ### Create Folder
 
-**Syntax:** liveresult = folder << Create Folder(Title("Title"), <Description("Description")>, <If Exists("use" | "fail" | "default")>)
+**Syntax:** liveresult = folder &lt;&lt; Create Folder(Title("Title"), &lt;Description("Description")&gt;, &lt;If Exists("use" | "fail" | "default")&gt;)
 
 **Description:** Creates a subfolder of this folder on JMP Live. Returns a JMP Live Result, which can be used to obtain the JMP Live Folder object for the new folder. Title is required. Description is optional. If Exists tells JMP Live what to do if the specified folder already exists: "use" means to just return the existing folder, "fail" means to throw an error, and "default" means to create a new folder and make its name unique by adding "(2)", "(3)", etc.
 
@@ -34,7 +34,7 @@ Write( "New folder path: ", newFolder << Get Path );
 
 ### Get Children
 
-**Syntax:** jmpliveresultlist = folder << Get Children(<PAGESIZE(10)>)
+**Syntax:** jmpliveresultlist = folder &lt;&lt; Get Children(&lt;PAGESIZE(10)&gt;)
 
 **Description:** Retrieves the child posts contained in the folder as a JMP Live Result List. An optional pagesize argument can be used to control the number of posts returned.
 
@@ -88,7 +88,7 @@ For( i = 1, i <= children << Get Number Of Items, i += 1,
 
 ### Get Data
 
-**Syntax:** result = jmplivefolder << Get Data(id | relative_path)
+**Syntax:** result = jmplivefolder &lt;&lt; Get Data(id | relative_path)
 
 **Description:** Retrieves a data post from the folder as a JMP Live Result object, which can be used to obtain the JMP Live Data object for that post.
 
@@ -122,7 +122,7 @@ Write( "\!n\!nTitle: ", post << Get Title );
 
 ### Get Description
 
-**Syntax:** string = jmplivepost << Get Description()
+**Syntax:** string = jmplivepost &lt;&lt; Get Description()
 
 **Description:** Gets the description of the JMP Live Report, JMP Live Folder, or JMP Live Post as a string.
 
@@ -162,7 +162,7 @@ Write( "\!nDescription: ", report << Get Description );
 
 ### Get Folder
 
-**Syntax:** result = jmplivefolder << Get Folder(id | relative_path)
+**Syntax:** result = jmplivefolder &lt;&lt; Get Folder(id | relative_path)
 
 **Description:** Retrieves a child folder from the folder as a JMP Live Result object, which can be used to obtain the JMP Live Folder object for that child folder.
 
@@ -197,7 +197,7 @@ Write( "\!n\!nTitle: ", folder << Get Title );
 
 ### Get ID
 
-**Syntax:** string = jmplivepost << Get ID()
+**Syntax:** string = jmplivepost &lt;&lt; Get ID()
 
 **Description:** Gets the ID for this JMP Live Report, JMP Live Folder, or JMP Live Post as a string.
 
@@ -238,7 +238,7 @@ Write( "\!n\!nID: ", report << Get ID );
 
 ### Get Number Of Items
 
-**Syntax:** value = jmplivefolder << Get Number Of Items()
+**Syntax:** value = jmplivefolder &lt;&lt; Get Number Of Items()
 
 **Description:** Gets the number of items in the folder.
 
@@ -288,7 +288,7 @@ Write( "\!n\!nChild Count: ", count );
 
 ### Get Path
 
-**Syntax:** string = jmplivepost << Get Path()
+**Syntax:** string = jmplivepost &lt;&lt; Get Path()
 
 **Description:** Gets the path of this JMP Live Report, Folder or Post as a string.
 
@@ -329,7 +329,7 @@ Write( "\!n\!nPath: ", report << Get Path );
 
 ### Get Post
 
-**Syntax:** result = jmplivefolder << Get Post(id | relative_path)
+**Syntax:** result = jmplivefolder &lt;&lt; Get Post(id | relative_path)
 
 **Description:** Retrieves a post from the folder as a JMP Live Result object, which can be used to obtain the JMP Live Post object for that post.
 
@@ -362,7 +362,7 @@ Write( "\!n\!nTitle: ", post << Get Title );
 
 ### Get Report
 
-**Syntax:** result = jmplivepost << Get Report(id | relative_path)
+**Syntax:** result = jmplivepost &lt;&lt; Get Report(id | relative_path)
 
 **Description:** Retrieves a report post from the folder as a JMP Live Result object, which can be used to obtain the JMP Live Report object for that report.
 
@@ -396,7 +396,7 @@ Write( "\!n\!nTitle: ", post << Get Title );
 
 ### Get Title
 
-**Syntax:** string = jmplivepost << Get Title()
+**Syntax:** string = jmplivepost &lt;&lt; Get Title()
 
 **Description:** Gets the title of the JMP Live Report, JMP Live Folder, or JMP Live Post as a string.
 
@@ -437,7 +437,7 @@ Write( "\!nTitle: ", report << Get Title );
 
 ### Get Type
 
-**Syntax:** string = jmplivepost << Get Type()
+**Syntax:** string = jmplivepost &lt;&lt; Get Type()
 
 **Description:** Get the specific type of Post (Folder, Data or Report)
 
@@ -479,7 +479,7 @@ Write( "\!nType: ", report << Get Type );
 
 ### Get URL
 
-**Syntax:** string = jmplivepost << Get URL()
+**Syntax:** string = jmplivepost &lt;&lt; Get URL()
 
 **Description:** Gets the URL for this JMP Live Report, JMP Live Folder, or JMP Live Post as a string.
 
@@ -520,7 +520,7 @@ Write( "\!nURL: ", report << Get URL );
 
 ### Publish
 
-**Syntax:** jmpliveresultlist = folder << Publish(JMPLiveContent, <Use Existing Data({{dt_or_name, id | relative_path | JMP Live Data}})>)
+**Syntax:** jmpliveresultlist = folder &lt;&lt; Publish(JMPLiveContent, &lt;Use Existing Data({{dt_or_name, id | relative_path | JMP Live Data}})&gt;)
 
 **Description:** Publish reports or standalone data to the JMP Live folder. Returns a JMP Live Result List object. Replaces the Add Reports To Folder message. Mixing reports and standalone data in the same Publish command is not allowed. When publishing reports, if the report should use data that is already on JMP Live, the optional Use Existing Data parameter can be used to specify that. The Use Existing Data parameter is not valid when publishing standalone data.
 
@@ -574,7 +574,7 @@ For( i = 1, i <= postlist << Get Number Of Items, i += 1,
 
 ### Replace
 
-**Syntax:** liveresult = jmplivefolder << Replace(Report(id | relative_path | JMP Live Report), JMPLiveContent, <Use Existing Data({{dt_or_name, data_id | data_path | JMP Live Data}})>, <Update Existing Data({{dt_or_name, data_id | data_path | JMP Live Data}})>, <Publish New Data({dt_or_name})> )
+**Syntax:** liveresult = jmplivefolder &lt;&lt; Replace(Report(id | relative_path | JMP Live Report), JMPLiveContent, &lt;Use Existing Data({{dt_or_name, data_id | data_path | JMP Live Data}})&gt;, &lt;Update Existing Data({{dt_or_name, data_id | data_path | JMP Live Data}})&gt;, &lt;Publish New Data({dt_or_name})&gt; )
 
 **Description:** Replaces an existing JMP Live report in the folder with another report. The data options are required to specify how to manage the data being provided with the report. "Use Existing Data" instructs the server to use the existing data on JMP Live for the data specified. "Update Existing Data" instructs the server to replace the data on the server with the data provided in the command. "Publish New Data" instructs the server to publish a new data table and use it for the report being replaced. "Publish New Data" is the default data option for all data tables. Any combination of the data options can be specified. Returns a JMP Live Result List object.
 
@@ -606,7 +606,7 @@ Write( "\!n\!nUpdated report and data: ", resultList );
 
 ### Set Description
 
-**Syntax:** success = jmplivepost << Set Description("string value")
+**Syntax:** success = jmplivepost &lt;&lt; Set Description("string value")
 
 **Description:** Given a string, sets the description of the JMP Live Report, JMP Live Folder, or JMP Live Post.  Returns true or false for success or failure.
 
@@ -654,7 +654,7 @@ Write( "\!nDecription: ", report << Get Description );
 
 ### Set Title
 
-**Syntax:** success = jmplivepost << Set Title("New Title")
+**Syntax:** success = jmplivepost &lt;&lt; Set Title("New Title")
 
 **Description:** Sets the title of the JMP Live Report, JMP Live Folder, or JMP Live Post. Returns a true or false for success or failure.
 
@@ -704,7 +704,7 @@ Write( "\!nTitle: ", report << Get Title );
 
 ### Update Data
 
-**Syntax:** result = jmplivefolder << Update Data(Data(id | relative_path | JMP Live Data), dataTable | path | JMPLiveContent)
+**Syntax:** result = jmplivefolder &lt;&lt; Update Data(Data(id | relative_path | JMP Live Data), dataTable | path | JMPLiveContent)
 
 **Description:** Updates the data table or map for a data post in the folder. The Data parameter identifies the data on JMP Live to be updated. The second parameter is the content to use for the update. It can be a data table object, a path to a data table, or a JMP Live Content object created from a data table or map.
 

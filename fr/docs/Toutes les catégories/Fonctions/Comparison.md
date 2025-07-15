@@ -2,8 +2,6 @@
 
 
 
-## Fonctions
-
 ### Equal
 
 **Syntaxe :** z = x == y == ...; z = Equal( x, y, ... )
@@ -21,7 +19,7 @@ Names Default To Here( 1 );
 
 ### Greater
 
-**Syntaxe :** z = x > y > ... ; z = Greater( x, y, ... )
+**Syntaxe :** z = x &gt; y &gt; ... ; z = Greater( x, y, ... )
 
 **Description :** Renvoie 1 si chaque argument est supérieur à l&apos;argument suivant, et 0 dans le cas contraire.
 
@@ -36,7 +34,7 @@ Names Default To Here( 1 );
 
 ### Greater or Equal
 
-**Syntaxe :** z = x >= y >= ... ; z = Greater or Equal( x, y, ... )
+**Syntaxe :** z = x &gt;= y &gt;= ... ; z = Greater or Equal( x, y, ... )
 
 **Description :** Renvoie 1 si chaque argument est supérieur ou égal à l&apos;argument suivant, et 0 dans le cas contraire.
 
@@ -110,7 +108,7 @@ Is Same Color( To Color Space( "LUV", "red" ), "red" );
 
 ### Less
 
-**Syntaxe :** z = x < y < ... ; z = Less( x, y, ... )
+**Syntaxe :** z = x &lt; y &lt; ... ; z = Less( x, y, ... )
 
 **Description :** Renvoie 1 si chaque argument est inférieur à l&apos;argument suivant, et 0 dans le cas contraire.
 
@@ -125,7 +123,7 @@ Names Default To Here( 1 );
 
 ### Less LessEqual
 
-**Syntaxe :** z = x < y <= ... ; z = Less LessEqual( x, y, ... )
+**Syntaxe :** z = x &lt; y &lt;= ... ; z = Less LessEqual( x, y, ... )
 
 **Description :** Renvoie 1 si le premier argument est inférieur au second et que chaque argument, sauf le premier, est inférieur ou égal à l&apos;argument suivant ; retourne 0 dans le cas contraire.
 
@@ -140,7 +138,7 @@ Names Default To Here( 1 );
 
 ### Less or Equal
 
-**Syntaxe :** z = x <= y <= ... ; z = Less or Equal( x, y, ... )
+**Syntaxe :** z = x &lt;= y &lt;= ... ; z = Less or Equal( x, y, ... )
 
 **Description :** Renvoie 1 si chaque argument est inférieur ou égal à l&apos;argument suivant, et 0 dans le cas contraire.
 
@@ -155,7 +153,7 @@ Names Default To Here( 1 );
 
 ### LessEqual Less
 
-**Syntaxe :** z = x <= y < ... ; z = LessEqual Less( x, y, ... )
+**Syntaxe :** z = x &lt;= y &lt; ... ; z = LessEqual Less( x, y, ... )
 
 **Description :** Renvoie 1 si le premier argument est inférieur ou égal au second et que chaque argument, sauf le premier, est inférieur à l&apos;argument suivant ; retourne 0 dans le cas contraire.
 

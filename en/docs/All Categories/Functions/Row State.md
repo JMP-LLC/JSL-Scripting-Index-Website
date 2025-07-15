@@ -2,8 +2,6 @@
 
 
 
-## Functions
-
 ### As Row State
 
 **Syntax:** rs = As Row State( x )
@@ -25,7 +23,7 @@ For Each Row(
 
 ### Color Of
 
-**Syntax:** y = Color Of( <rs> ); Color Of( <Row State( <r> )> ) = y
+**Syntax:** y = Color Of( &lt;rs&gt; ); Color Of( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **Description:** Returns the color component of the specified row state value, either a positive JMP color palette index or a negative RGB-encoded value. If Color Of is used as an L-value, it changes the color of the current (or rth) row in the current data table.
 
@@ -70,7 +68,7 @@ Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 
 ### Excluded
 
-**Syntax:** y = Excluded( <rs> ); Excluded( <Row State( <r> )> ) = y
+**Syntax:** y = Excluded( &lt;rs&gt; ); Excluded( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **Description:** Returns the excluded component of the specified row state value, 0 or 1. If the Excluded() function is used as an L-value, it changes the excluded state of the current (or rth) row in the current data table.
 
@@ -102,7 +100,7 @@ Excluded( Row State( 3 ) );
 
 ### Hidden
 
-**Syntax:** y = Hidden( <rs> ); Hidden( <Row State( <r> )> ) = y
+**Syntax:** y = Hidden( &lt;rs&gt; ); Hidden( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **Description:** Returns the hidden component of the specified row state value, 0 or 1. If Hidden is used as an L-value, it changes the hidden state of the current (or rth) row in the current data table.
 
@@ -148,7 +146,7 @@ Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 
 ### Labeled
 
-**Syntax:** y = Labeled( <rs> ); Labeled( <Row State( <r> )> ) = y
+**Syntax:** y = Labeled( &lt;rs&gt; ); Labeled( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **Description:** Returns the labeled component of the specified row state value, 0 or 1. If Labeled is used as an L-value, it changes the labeled state of the current (or rth) row in the current data table.
 
@@ -180,7 +178,7 @@ Labeled( Row State( 3 ) );
 
 ### Marker Of
 
-**Syntax:** y = Marker Of( <rs> ); Marker Of( <Row State( <r> )> ) = y
+**Syntax:** y = Marker Of( &lt;rs&gt; ); Marker Of( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **Description:** Returns the marker component of the specified row state value. If Marker Of is used as an L-value, it changes the marker of the current (or rth) row in the current data table.
 
@@ -212,7 +210,7 @@ Marker Of( Row State( 3 ) );
 
 ### Row State
 
-**Syntax:** y = Row State( <dt>, <r> ); Row State( <dt>, <r> ) = y
+**Syntax:** y = Row State( &lt;dt&gt;, &lt;r&gt; ); Row State( &lt;dt&gt;, &lt;r&gt; ) = y
 
 **Description:** Returns the row state of the current (or rth) row in the current data table. If the Row State() function is used as an L-value, it changes the row state of the current (or rth) row in the current data table.
 
@@ -227,7 +225,7 @@ Color To RGB( Color Of( Row State( 3 ) ) );
 
 ### Selected
 
-**Syntax:** y = Selected( <rs> );Selected( <Row State( <r> )> ) = y
+**Syntax:** y = Selected( &lt;rs&gt; );Selected( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **Description:** Returns the selected component of the specified row state value, 0 or 1. If Selected is used as an L-value, it changes the selected state of the current (or rth) row in the current data table.
 

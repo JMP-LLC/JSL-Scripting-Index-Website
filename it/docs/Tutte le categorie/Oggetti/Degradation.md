@@ -6,7 +6,7 @@
 
 ### Censor
 
-**Sintassi:** obj << Censor( column )
+**Sintassi:** obj &lt;&lt; Censor( column )
 
 ```jsl
 
@@ -24,7 +24,7 @@ obj = dt << Degradation(
 
 ### Freq
 
-**Sintassi:** obj << Freq( column )
+**Sintassi:** obj &lt;&lt; Freq( column )
 
 ```jsl
 
@@ -52,7 +52,7 @@ obj = dt << Degradation(
 
 ### Label
 
-**Sintassi:** obj << Label( column )
+**Sintassi:** obj &lt;&lt; Label( column )
 
 ```jsl
 
@@ -70,7 +70,7 @@ obj = dt << Degradation(
 
 ### Response
 
-**Sintassi:** obj << Response( column(s) )
+**Sintassi:** obj &lt;&lt; Response( column(s) )
 
 ```jsl
 
@@ -88,7 +88,7 @@ obj = dt << Degradation(
 
 ### System ID
 
-**Sintassi:** obj << System ID( column )
+**Sintassi:** obj &lt;&lt; System ID( column )
 
 ```jsl
 
@@ -106,7 +106,7 @@ obj = dt << Degradation(
 
 ### Time
 
-**Sintassi:** obj << Time( column )
+**Sintassi:** obj &lt;&lt; Time( column )
 
 ```jsl
 
@@ -124,7 +124,7 @@ obj = dt << Degradation(
 
 ### X
 
-**Sintassi:** obj << X( column(s) )
+**Sintassi:** obj &lt;&lt; X( column(s) )
 
 ```jsl
 
@@ -142,7 +142,7 @@ obj = dt << Degradation(
 
 ### Y
 
-**Sintassi:** obj << Y( column(s) )
+**Sintassi:** obj &lt;&lt; Y( column(s) )
 
 ```jsl
 
@@ -162,7 +162,7 @@ obj = dt << Degradation(
 
 ### Degradation
 
-**Sintassi:** Degradation( Y( column ), Time( column ), Application( "Repeated Measures Degradation"|"Destructive Degradation"|"Stability Test" ), <X( column )>, <Label( column )>, <Freq( column )>, <Censor( column )>, <Censor Code( value )>, <Upper Spec Limit( value )>, <Lower Spec Limit( value )>, <Censoring Time( value )> )
+**Sintassi:** Degradation( Y( column ), Time( column ), Application( "Repeated Measures Degradation"|"Destructive Degradation"|"Stability Test" ), &lt;X( column )&gt;, &lt;Label( column )&gt;, &lt;Freq( column )&gt;, &lt;Censor( column )&gt;, &lt;Censor Code( value )&gt;, &lt;Upper Spec Limit( value )&gt;, &lt;Lower Spec Limit( value )&gt;, &lt;Censoring Time( value )&gt; )
 
 **Descrizione:** Modella la degradazione nel tempo usando curve lineari e non lineari. Le opzioni di analisi comprendono l&apos;analisi della stabilità e la generazione di pseudo dati di guasto.
 
@@ -192,7 +192,7 @@ obj = dt << Degradation(
 
 ### Action
 
-**Sintassi:** obj << Action
+**Sintassi:** obj &lt;&lt; Action
 
 **Descrizione:** Trapdoor generica all&apos;interno di una piattaforma per inserire espressioni da valutare. Imposta temporaneamente i contesti del riquadro di visualizzazione e della tabella di dati per la piattaforma.
 
@@ -210,7 +210,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Sintassi:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintassi:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descrizione:** Applica all’oggetto una preimpostazione precedentemente creata, aggiornando le opzioni e le personalizzazioni in base alle impostazioni salvate.
 
@@ -257,7 +257,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Automatic Recalc
 
-**Sintassi:** obj << Automatic Recalc( state=0|1 )
+**Sintassi:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Descrizione:** Ripete l&apos;analisi automaticamente per l&apos;esclusione e le modifiche ai dati. Se l&apos;opzione Ricalcolo automatico è attivata, si consiglia di usare i comandi Attendi(0) per garantire che le modifiche di esclusione e di dati abbiano effetto prima del ricalcolo.
 
@@ -287,7 +287,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**Sintassi:** obj << Broadcast(message)
+**Sintassi:** obj &lt;&lt; Broadcast(message)
 
 **Descrizione:** Diffonde un messaggio a una piattaforma. Se i risultati di restituzione dei singoli oggetti sono tabelle, esse sono concatenate se possibile e il formato finale è identico al risultato dell&apos;opzione Salva tabella combinata in un riquadro della tabella o il risultato dell&apos;opzione Concatena utilizzando una colonna di origine. Oltre a quelli, i risultati sono memorizzati in un elenco e restituiti.
 
@@ -307,9 +307,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Censor Code
 
-**Sintassi:** obj = Degradation(...Censor Code( value=1 )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Degradation(...Censor Code( value=1 )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Identifica il valore nella colonna Censura che indica le osservazioni con censura a destra. "1", per impostazione predefinita.
 
@@ -330,7 +328,7 @@ obj = dt << Degradation(
 
 ### Column Switcher
 
-**Sintassi:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Sintassi:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Descrizione:** Aggiunge un pannello di controllo per modificare le variabili della piattaforma
 
@@ -348,7 +346,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Connect Data Markers
 
-**Sintassi:** obj << Connect Data Markers( state=0|1 )
+**Sintassi:** obj &lt;&lt; Connect Data Markers( state=0|1 )
 
 **Descrizione:** Mostra o nasconde le linee che collegano i punti sul grafico sovrapposto. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -370,7 +368,7 @@ obj << Connect Data Markers( 1 );
 
 ### Copy ByGroup Script
 
-**Sintassi:** obj << Copy ByGroup Script
+**Sintassi:** obj &lt;&lt; Copy ByGroup Script
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo inserisce negli Appunti.
 
@@ -405,7 +403,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Sintassi:** obj << Copy Script
+**Sintassi:** obj &lt;&lt; Copy Script
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo inserisce negli Appunti.
 
@@ -434,7 +432,7 @@ obj << Copy Script;
 
 ### Curve Interval Alpha
 
-**Sintassi:** obj << Curve Interval Alpha( fraction )
+**Sintassi:** obj &lt;&lt; Curve Interval Alpha( fraction )
 
 **Descrizione:** Specifica il livello alfa utilizzato per le curve degli intervalli di confidenza nel grafico sovrapposto.
 
@@ -456,7 +454,7 @@ obj << Curve Interval Alpha( .01 );
 
 ### Data Table Window
 
-**Sintassi:** obj << Data Table Window
+**Sintassi:** obj &lt;&lt; Data Table Window
 
 **Descrizione:** Sposta in primo piano la finestra della tabella di dati per questa analisi.
 
@@ -485,7 +483,7 @@ obj << Data Table Window;
 
 ### Generate Pseudo Failure Data
 
-**Sintassi:** Generate Pseudo Failure Data(interval_censor, <alpha>)
+**Sintassi:** Generate Pseudo Failure Data(interval_censor, &lt;alpha&gt;)
 
 **Descrizione:** Salva il tempo previsto in cui ogni unità supera il limite di specifica in una nuova tabella di dati. La nuova tabella di dati contiene uno script Distribuzione di vita residua o Stima la vita rispetto a X che può essere utilizzato per stimare una distribuzione in funzione dei tempi di pseudo guasto.
 
@@ -508,7 +506,7 @@ dt1 = obj << Generate Pseudo Failure Data( 1, .05 );
 
 ### Generate Report for Current Model
 
-**Sintassi:** obj << Generate Report for Current Model
+**Sintassi:** obj &lt;&lt; Generate Report for Current Model
 
 **Descrizione:** Crea un report per le impostazioni del modello corrente. Sono inclusi un report di riepilogo del modello e un report delle stime che contiene le stime dei parametri.
 
@@ -529,7 +527,7 @@ obj << Generate Report for Current Model;
 
 ### Get By Levels
 
-**Sintassi:** obj << Get By Levels
+**Sintassi:** obj &lt;&lt; Get By Levels
 
 **Descrizione:** Restituisce un array associativo che mappa le colonne del gruppo di By ai rispettivi valori.
 
@@ -546,7 +544,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Sintassi:** obj << Get ByGroup Script
+**Sintassi:** obj &lt;&lt; Get ByGroup Script
 
 **Descrizione:** Crea uno script (JSL) per generare questa analisi e la restituisce come espressione.
 
@@ -582,7 +580,7 @@ Show( t );
 
 ### Get Container
 
-**Sintassi:** obj << Get Container
+**Sintassi:** obj &lt;&lt; Get Container
 
 **Descrizione:** Restituisce un riferimento al riquadro contenitore che racchiude il contenuto dell&apos;oggetto.
 
@@ -643,7 +641,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Sintassi:** obj << Get Data Table
+**Sintassi:** obj &lt;&lt; Get Data Table
 
 **Descrizione:** Restituisce un riferimento alla tabella di dati.
 
@@ -673,7 +671,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**Sintassi:** obj << Get Group Platform
+**Sintassi:** obj &lt;&lt; Get Group Platform
 
 **Descrizione:** Restituisce l&apos;oggetto Raggruppa piattaforma se la piattaforma fa parte di un gruppo. In caso contrario, restituisce Vuoto().
 
@@ -690,7 +688,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Inverse Prediction Results
 
-**Sintassi:** obj << Get Inverse Prediction Results
+**Sintassi:** obj &lt;&lt; Get Inverse Prediction Results
 
 **Descrizione:** Restituisce un elenco con nome che contiene i risultati del diagramma di previsione inversa.
 
@@ -711,7 +709,7 @@ obj << Get Inverse Prediction Results;
 
 ### Get Prediction Results
 
-**Sintassi:** obj << Get Prediction Results
+**Sintassi:** obj &lt;&lt; Get Prediction Results
 
 **Descrizione:** Restituisce un elenco con nome che contiene i risultati del diagramma di previsione.
 
@@ -732,7 +730,7 @@ obj << Get Prediction Results;
 
 ### Get Residuals
 
-**Sintassi:** obj << Get Residuals
+**Sintassi:** obj &lt;&lt; Get Residuals
 
 **Descrizione:** Restituisce un elenco con nome che contiene i risultati del diagramma dei residui.
 
@@ -752,7 +750,7 @@ obj << Get Residuals;
 
 ### Get Results
 
-**Sintassi:** obj << Get Results
+**Sintassi:** obj &lt;&lt; Get Results
 
 **Descrizione:** Restituisce un elenco con nome che contiene i risultati per tutti i modelli stimati.
 
@@ -773,7 +771,7 @@ obj << Get Results;
 
 ### Get Script
 
-**Sintassi:** obj << Get Script
+**Sintassi:** obj &lt;&lt; Get Script
 
 **Descrizione:** Crea uno script (JSL) per generare questa analisi e la restituisce come espressione.
 
@@ -803,7 +801,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Sintassi:** obj << Get Script With Data Table
+**Sintassi:** obj &lt;&lt; Get Script With Data Table
 
 **Descrizione:** Crea uno script (JSL) per generare questa analisi facendo specifico riferimento a questa tabella di dati e la restituisce come espressione.
 
@@ -833,7 +831,7 @@ Show( t );
 
 ### Get Timing
 
-**Sintassi:** obj << Get Timing
+**Sintassi:** obj &lt;&lt; Get Timing
 
 **Descrizione:** Determina il tempo di avvio della piattaforma.
 
@@ -863,7 +861,7 @@ Show( t );
 
 ### Get Web Support
 
-**Sintassi:** obj << Get Web Support
+**Sintassi:** obj &lt;&lt; Get Web Support
 
 **Descrizione:** Restituisce un numero indicante il livello di supporto HTML interattivo per l&apos;oggetto visualizzato. 1 significa che alcuni o tutti gli elementi sono supportati. 0 significa nessun supporto.
 
@@ -879,7 +877,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Sintassi:** obj << Get Where Expr
+**Sintassi:** obj &lt;&lt; Get Where Expr
 
 **Descrizione:** Restituisce l&apos;espressione Where per il sottoinsieme di dati, se la piattaforma è stata avviata con By() o Where(). Altrimenti, restituisce Vuoto()
 
@@ -916,7 +914,7 @@ dt << Bivariate(
 
 ### Inverse Prediction Alpha
 
-**Sintassi:** obj << Inverse Prediction Alpha( fraction )
+**Sintassi:** obj &lt;&lt; Inverse Prediction Alpha( fraction )
 
 **Descrizione:** Specifica il livello alfa utilizzato per gli intervalli nel grafico Previsione inversa.
 
@@ -942,7 +940,7 @@ obj << Inverse Prediction Alpha( .01 );
 
 ### Inverse Prediction Interval
 
-**Sintassi:** obj << Inverse Prediction Interval( "Nessun intervallo"|"Intervallo di confidenza"|"Intervallo di previsione" )
+**Sintassi:** obj &lt;&lt; Inverse Prediction Interval( "Nessun intervallo"|"Intervallo di confidenza"|"Intervallo di previsione" )
 
 **Descrizione:** Mostra o nasconde gli intervalli di confidenza o di previsione per i tempi di pseudo guasto mostrati sul diagramma di previsione inversa. Quando gli intervalli sono abilitati, essi sono inclusi anche nella tabella di dati che viene creata quando si utilizza l&apos;opzione Salva tempo di incrocio.
 
@@ -967,7 +965,7 @@ obj << Inverse Prediction Interval( "Prediction Interval" );
 
 ### Inverse Prediction Side
 
-**Sintassi:** obj << Inverse Prediction Side( "Bilaterale"|"Unilaterale inferiore"|"Unilaterale superiore" )
+**Sintassi:** obj &lt;&lt; Inverse Prediction Side( "Bilaterale"|"Unilaterale inferiore"|"Unilaterale superiore" )
 
 **Descrizione:** Specifica se gli intervalli unilaterali o bilaterali sono mostrati nel diagramma Previsione inversa.
 
@@ -993,7 +991,7 @@ obj << Inverse Prediction Side( "Lower One Sided" );
 
 ### Local Data Filter
 
-**Sintassi:** obj << Local Data Filter
+**Sintassi:** obj &lt;&lt; Local Data Filter
 
 **Descrizione:** Filtra dati in specifici gruppi o range, ma localmente in questa piattaforma
 
@@ -1013,7 +1011,7 @@ dt << Distribution(
 
 ### Longitudinal Prediction Alpha
 
-**Sintassi:** obj << Longitudinal Prediction Alpha( fraction )
+**Sintassi:** obj &lt;&lt; Longitudinal Prediction Alpha( fraction )
 
 **Descrizione:** Specifica il livello alfa utilizzato per gli intervalli nel diagramma di previsione.
 
@@ -1041,7 +1039,7 @@ obj << Longitudinal Prediction Alpha( .01 );
 
 ### Longitudinal Prediction Interval
 
-**Sintassi:** obj << Longitudinal Prediction Interval( "Nessun intervallo"|"Intervallo di confidenza"|"Intervallo di previsione" )
+**Sintassi:** obj &lt;&lt; Longitudinal Prediction Interval( "Nessun intervallo"|"Intervallo di confidenza"|"Intervallo di previsione" )
 
 **Descrizione:** Mostra o nasconde gli intervalli di confidenza o di previsione per le risposte stimate che sono mostrate sul diagramma di previsione. Quando gli intervalli sono abilitati, essi sono inclusi anche nella tabella di dati che viene creata quando si utilizza l&apos;opzione Salva previsioni.
 
@@ -1068,7 +1066,7 @@ obj << Longitudinal Prediction Interval( "Prediction Interval" );
 
 ### Longitudinal Prediction Time
 
-**Sintassi:** obj << Longitudinal Prediction Time( number )
+**Sintassi:** obj &lt;&lt; Longitudinal Prediction Time( number )
 
 **Descrizione:** Specifica il valore di tempo per il quale si desidera prevedere la risposta.
 
@@ -1133,7 +1131,7 @@ preset = obj << New Preset();
 
 ### No Tab List
 
-**Sintassi:** obj << No Tab List( state=0|1 )
+**Sintassi:** obj &lt;&lt; No Tab List( state=0|1 )
 
 **Descrizione:** Dispone le schede Diagramma dei residui, Previsione inversa e Grafico di previsione come un report impilato.
 
@@ -1154,7 +1152,7 @@ obj << No Tab List( 1 );
 
 ### Nonlinear Path
 
-**Sintassi:** obj << Nonlinear Path
+**Sintassi:** obj &lt;&lt; Nonlinear Path
 
 **Descrizione:** Imposta il tipo curva di degradazione a Non Lineare.
 
@@ -1175,7 +1173,7 @@ obj << Nonlinear Path;
 
 ### Paste Local Data Filter
 
-**Sintassi:** obj << Paste Local Data Filter
+**Sintassi:** obj &lt;&lt; Paste Local Data Filter
 
 **Descrizione:** Applicare il filtro sui dati locali dagli Appunti al report corrente.
 
@@ -1196,7 +1194,7 @@ dist2 << Paste Local Data Filter;
 
 ### Prediction Settings
 
-**Sintassi:** obj << Prediction Settings
+**Sintassi:** obj &lt;&lt; Prediction Settings
 
 **Descrizione:** Apre una finestra che contiene opzioni per modificare le impostazioni utilizzate nelle previsioni del modello.
 
@@ -1217,7 +1215,7 @@ obj << Prediction Settings;
 
 ### Redo Analysis
 
-**Sintassi:** obj << Redo Analysis
+**Sintassi:** obj &lt;&lt; Redo Analysis
 
 **Descrizione:** Ripete questa stessa analisi in una nuova finestra. L&apos;analisi sarà differente se i dati sono stati modificati.
 
@@ -1246,7 +1244,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**Sintassi:** obj << Redo ByGroup Analysis
+**Sintassi:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Descrizione:** Ripete questa stessa analisi in una nuova finestra. L&apos;analisi sarà differente se i dati sono stati modificati.
 
@@ -1281,7 +1279,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**Sintassi:** obj << Relaunch Analysis
+**Sintassi:** obj &lt;&lt; Relaunch Analysis
 
 **Descrizione:** Apre la finestra di avvio della piattaforma e richiama le impostazioni utilizzate per creare il report.
 
@@ -1310,7 +1308,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**Sintassi:** obj << Relaunch ByGroup
+**Sintassi:** obj &lt;&lt; Relaunch ByGroup
 
 **Descrizione:** Apre la finestra di avvio della piattaforma e richiama le impostazioni utilizzate per creare il report.
 
@@ -1345,7 +1343,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**Sintassi:** obj << Remove Column Switcher
+**Sintassi:** obj &lt;&lt; Remove Column Switcher
 
 **Descrizione:** Rimuove l&apos;ultimo Scambia colonne che è stato aggiunto alla piattaforma.
 
@@ -1365,7 +1363,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Sintassi:** obj << Remove Local Data Filter
+**Sintassi:** obj &lt;&lt; Remove Local Data Filter
 
 **Descrizione:** Se è stato creato un filtro di dati locali viene rimosso per ripristinare la piattaforma e utilizzare direttamente tutti i dati nella tabella di dati
 
@@ -1404,9 +1402,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Sintassi:** obj << Report;
-
-Report( obj )
+**Sintassi:** obj &lt;&lt; Report;Report( obj )
 
 **Descrizione:** Restituisce un riferimento all&apos;oggetto del report.
 
@@ -1437,7 +1433,7 @@ Show( t );
 
 ### Report View
 
-**Sintassi:** obj << Report View( "Completo"|"Riepilogo" )
+**Sintassi:** obj &lt;&lt; Report View( "Completo"|"Riepilogo" )
 
 **Descrizione:** La visualizzazione Report determina il livello di dettaglio visibile in un report della piattaforma. Full mostra tutti i dettagli mentre Summary mostra solo contenuti selezionati, in base alla piattaforma. Per un comportamento personalizzato, i riquadri di visualizzazione supportano un messaggio <<Set Summary Behavior.
 
@@ -1466,7 +1462,7 @@ obj << Report View( "Summary" );
 
 ### Residual Plot
 
-**Sintassi:** obj << Residual Plot( <Jittering( state=0|1 )>, <Jittering Scale( number )>, <Separate Groups( state=0|1 )> )
+**Sintassi:** obj &lt;&lt; Residual Plot( &lt;Jittering( state=0|1 )&gt;, &lt;Jittering Scale( number )&gt;, &lt;Separate Groups( state=0|1 )&gt; )
 
 **Descrizione:** Permette di specificare le opzioni per il diagramma dei residui.
 
@@ -1508,7 +1504,7 @@ obj << Residual Plot( Jittering( 1 ), Separate Groups( 1 ) );
 
 ### Save ByGroup Script to Data Table
 
-**Sintassi:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintassi:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e salvarla come proprietà della tabella nella tabella di dati. È possibile specificare un nome per lo script. L&apos;opzione Append Suffix aggiunge un suffisso numerico al nome dello script, che differenzia lo script da uno script esistente con lo stesso nome. L&apos;opzione Prompt richiede all&apos;utente di specificare un nome di script. L&apos;opzione Replace sostituisce uno script esistente con lo stesso nome.
 
@@ -1543,7 +1539,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Sintassi:** obj << Save ByGroup Script to Journal
+**Sintassi:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e aggiunge un pulsante con lo script al journal.
 
@@ -1578,7 +1574,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Sintassi:** obj << Save ByGroup Script to Script Window
+**Sintassi:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo aggiunge alla finestra di testo dello script corrente.
 
@@ -1613,7 +1609,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Crossing Time
 
-**Sintassi:** obj << Save Crossing Time
+**Sintassi:** obj &lt;&lt; Save Crossing Time
 
 **Descrizione:** Salva i tempi di pseudo guasto per il modello corrente in una nuova tabella di dati. La nuova tabella di dati contiene uno script Distribuzione di vita residua o Stima la vita rispetto a X che può essere utilizzato per stimare una distribuzione in funzione dei tempi di pseudo guasto. Quando è abilitata una delle opzioni di intervallo di previsione inversa, la tabella include anche gli intervalli.
 
@@ -1642,7 +1638,7 @@ obj << Save Crossing Time;
 
 ### Save Predictions
 
-**Sintassi:** obj << Save Predictions
+**Sintassi:** obj &lt;&lt; Save Predictions
 
 **Descrizione:** Salva i valori di risposta previsti per il modello corrente in una nuova tabella di dati. La tabella include anche colonne per i limiti inferiore e superiore in base all&apos;impostazione dell&apos;opzione Intervallo di previsione longitudinale.
 
@@ -1672,7 +1668,7 @@ obj << Save Predictions;
 
 ### Save Residuals
 
-**Sintassi:** obj << Save Residuals
+**Sintassi:** obj &lt;&lt; Save Residuals
 
 **Descrizione:** Salva i residui del modello corrente in una nuova tabella di dati.
 
@@ -1701,7 +1697,7 @@ obj << Save Residuals;
 
 ### Save Script for All Objects
 
-**Sintassi:** obj << Save Script for All Objects
+**Sintassi:** obj &lt;&lt; Save Script for All Objects
 
 **Descrizione:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -1730,7 +1726,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Sintassi:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintassi:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descrizione:** Salva uno script per tutti gli oggetti del report nella tabella di dati corrente. Questa opzione è utile quando sono presenti più report nella finestra. Lo script prende il nome dalla prima piattaforma, a meno che non si specifichi il nome dello script tra apici.
 
@@ -1798,7 +1794,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Sintassi:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintassi:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo salva come una proprietà di tabella nella tabella di dati.
 
@@ -1827,7 +1823,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Sintassi:** obj << Save Script to Journal
+**Sintassi:** obj &lt;&lt; Save Script to Journal
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e aggiunge un pulsante con lo script al journal.
 
@@ -1856,7 +1852,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Sintassi:** obj << Save Script to Report
+**Sintassi:** obj &lt;&lt; Save Script to Report
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo mostra nel report. Utile per avere una copia stampata di quanto è stato fatto.
 
@@ -1885,7 +1881,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Sintassi:** obj << Save Script to Script Window
+**Sintassi:** obj &lt;&lt; Save Script to Script Window
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo aggiunge alla finestra di testo dello script corrente.
 
@@ -1979,7 +1975,7 @@ dt << Distribution(
 
 ### Set Baseline
 
-**Sintassi:** obj << Set Baseline( number )
+**Sintassi:** obj &lt;&lt; Set Baseline( number )
 
 **Descrizione:** Specifica le condizioni di utilizzo normale per la variabile esplicativa nei percorsi di degradazione non lineare. Il valore di riferimento appare sul grafico sovrapposto come una linea nera.
 
@@ -2027,7 +2023,7 @@ obj << Set Baseline( 130 );
 
 ### Set Censoring Time
 
-**Sintassi:** obj << Set Censoring Time( number )
+**Sintassi:** obj &lt;&lt; Set Censoring Time( number )
 
 **Descrizione:** Specifica il tempo di censura, che appare sui grafici di sovrapposizione e di previsione inversa come una linea verticale punteggiata. Quando è selezionata l&apos;opzione Nessun intervallo per l&apos;opzione Inverti intervallo di previsione, le osservazioni che superano il tempo di censura sono visualizzate su linee orizzontali a partire dal tempo di censura. Se si seleziona Intervallo di confidenza o Intervallo di previsione per l&apos;opzione Intervallo inverso di previsione, le linee orizzontali si estendono indefinitamente a destra delle osservazioni i cui limiti superiori superano il tempo di censura. Il tempo di censura si riflette nelle tabelle di dati create utilizzando le opzioni Salva tempo di incrocio e Genera pseudo dati di guasto.
 
@@ -2049,7 +2045,7 @@ obj << Set Censoring Time( 3800 );
 
 ### Set Lower Spec Limit
 
-**Sintassi:** obj << Set Lower Spec Limit( number )
+**Sintassi:** obj &lt;&lt; Set Lower Spec Limit( number )
 
 **Descrizione:** Indica il limite di specifica inferiore. I limiti di specifica compaiono sul grafico sovrapposto.
 
@@ -2072,7 +2068,7 @@ obj << Set Lower Spec Limit( -1.5 );
 
 ### Set Upper Spec Limit
 
-**Sintassi:** obj << Set Upper Spec Limit( number )
+**Sintassi:** obj &lt;&lt; Set Upper Spec Limit( number )
 
 **Descrizione:** Indica il limite di specifica superiore. I limiti di specifica compaiono sul grafico sovrapposto.
 
@@ -2094,7 +2090,7 @@ obj << Set Upper Spec Limit( 6 );
 
 ### Show Curve Interval
 
-**Sintassi:** obj << Show Curve Interval( "Nessun intervallo"|"Intervallo di confidenza"|"Intervallo di previsione" )
+**Sintassi:** obj &lt;&lt; Show Curve Interval( "Nessun intervallo"|"Intervallo di confidenza"|"Intervallo di previsione" )
 
 **Descrizione:** Mostra o nasconde gli intervalli di confidenza o di previsione per le linee stimate che sono mostrate sul grafico sovrapposto.
 
@@ -2115,7 +2111,7 @@ obj << Show Curve Interval( "Prediction Interval" );
 
 ### Show Fitted Lines
 
-**Sintassi:** obj << Show Fitted Lines( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Fitted Lines( state=0|1 )
 
 **Descrizione:** Mostra o nasconde le linee stimate sul grafico sovrapposto.
 
@@ -2137,7 +2133,7 @@ obj << Show Fitted Lines( 1 );
 
 ### Show Inverse Prediction Plot
 
-**Sintassi:** obj << Show Inverse Prediction Plot( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Inverse Prediction Plot( state=0|1 )
 
 **Descrizione:** Mostra o nasconde il diagramma di previsione inversa. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -2162,7 +2158,7 @@ obj << Show Inverse Prediction Plot( 1 );
 
 ### Show Legend
 
-**Sintassi:** obj << Show Legend( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Legend( state=0|1 )
 
 **Descrizione:** Mostra o nasconde una legenda per gli indicatori utilizzati sul grafico sovrapposto.
 
@@ -2182,7 +2178,7 @@ obj << Show Legend( 1 );
 
 ### Show Residual Plot
 
-**Sintassi:** obj << Show Residual Plot( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Residual Plot( state=0|1 )
 
 **Descrizione:** Mostra o nasconde il diagramma dei residui. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -2204,7 +2200,7 @@ obj << Show Residual Plot( 1 );
 
 ### Show Spec Limits
 
-**Sintassi:** obj << Show Spec Limits( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Spec Limits( state=0|1 )
 
 **Descrizione:** Mostra o nasconde i limiti di specifica sul grafico sovrapposto.
 
@@ -2226,7 +2222,7 @@ obj << Show Spec Limits( 0 );
 
 ### Simple Linear Path
 
-**Sintassi:** obj << Simple Linear Path
+**Sintassi:** obj &lt;&lt; Simple Linear Path
 
 **Descrizione:** Imposta il tipo curva di degradazione a Lineare Semplice.
 
@@ -2248,7 +2244,7 @@ obj << Simple Linear Path;
 
 ### Specify and Fit Path
 
-**Sintassi:** obj << Specify and Fit Path( Formula Name( string ), Formula( Model Type( string ), Parameter(...)|specification ), fitting command )
+**Sintassi:** obj &lt;&lt; Specify and Fit Path( Formula Name( string ), Formula( Model Type( string ), Parameter(...)|specification ), fitting command )
 
 **Descrizione:** Permette di specificare e stimare un modello di percorso direttamente in uno script. La piattaforma Degradazione identifica i valori iniziali e stima il modello automaticamente senza ulteriore intervento da parte dell&apos;utente. Ogni modello è specificato con un nome di modello, una definizione del modello e un comando di stima. Il tipo di modello nell&apos;argomento Formula deve essere uno dei seguenti: Lineare personalizzato, Velocità di reazione, Velocità di reazione di tipo I o Velocità costante. Per un modello lineare personalizzato, usare la funzione Parametro() per definire la formula, analogamente a quando si specificano modelli nella Piattaforma non lineare. Per altri tipi di modelli, le informazioni specification differiscono in base al tipo di modello; vedere gli esempi per dettagli. fitting command può essere Fit Model o Fit by System ID.
 
@@ -2359,7 +2355,7 @@ obj << Specify and Fit Path(
 
 ### Sync to Data Table Changes
 
-**Sintassi:** obj << Sync to Data Table Changes
+**Sintassi:** obj &lt;&lt; Sync to Data Table Changes
 
 **Descrizione:** Sincronizza con l&apos;esclusione e le modifiche ai dati effettuate.
 
@@ -2376,7 +2372,7 @@ dist << Sync To Data Table Changes;
 
 ### Test Stability
 
-**Sintassi:** obj << Test Stability
+**Sintassi:** obj &lt;&lt; Test Stability
 
 **Descrizione:** Esegue un&apos;analisi di stabilità per determinare le date di scadenza stimate.
 
@@ -2396,7 +2392,7 @@ obj << Test Stability;
 
 ### Title
 
-**Sintassi:** obj << Title( "new title" )
+**Sintassi:** obj &lt;&lt; Title( "new title" )
 
 **Descrizione:** Imposta il titolo della piattaforma.
 
@@ -2425,7 +2421,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Sintassi:** obj << Top Report
+**Sintassi:** obj &lt;&lt; Top Report
 
 **Descrizione:** Restituisce un riferimento al nodo principale nel report.
 
@@ -2456,7 +2452,7 @@ Show( t );
 
 ### Transform Column
 
-**Sintassi:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Sintassi:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Descrizione:** Crea una colonna di trasformazione nel contesto locale di un oggetto, di solito una piattaforma. La colonna di trasformazione è attiva solo per la durata della piattaforma.
 
@@ -2477,7 +2473,7 @@ dt << Distribution(
 
 ### Use Interpolation through Data
 
-**Sintassi:** obj << Use Interpolation through Data( state=0|1 )
+**Sintassi:** obj &lt;&lt; Use Interpolation through Data( state=0|1 )
 
 **Descrizione:** Specifica l&apos;uso dell&apos;interpolazione lineare tra punti (invece del modello stimato) per prevedere quando un&apos;unità supera il limite di specifica. Il comportamento dipende dal fatto che un&apos;unità abbia o meno osservazioni che superano il limite di specifica. Se un&apos;unità ha osservazioni che superano il limite di specifica, la previsione inversa è l&apos;interpolazione lineare tra le osservazioni che circondano il limite di specifica. Se un&apos;unità non ha osservazioni che superano il limite di specifica, la previsione inversa è censurata e ha un valore pari al tempo massimo osservato per quell&apos;unità.
 
@@ -2502,9 +2498,7 @@ obj << Use Interpolation through Data( 1 );
 
 ### Use Pooled MSE for Nonpoolable Model
 
-**Sintassi:** obj = Degradation(...Use Pooled MSE for Nonpoolable Model( state=0 )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Degradation(...Use Pooled MSE for Nonpoolable Model( state=0 )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica che il primo modello nell&apos;analisi di stabilità utilizza un modello con errore quadratico medio (MSE) aggregato per calcolare il primo tempo di incrocio. "0", per impostazione predefinita.
 
@@ -2525,7 +2519,7 @@ obj = dt << Degradation(
 
 ### View Web XML
 
-**Sintassi:** obj << View Web XML
+**Sintassi:** obj &lt;&lt; View Web XML
 
 **Descrizione:** Restituisce il codice XML utilizzato per creare il report HTML interattivo.
 
@@ -2540,9 +2534,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**Sintassi:** obj = Degradation(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Degradation(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Impostare il tipo di finestra da creare per il report. Per impostazione predefinita verrà creata una finestra di report Visible. Una finestra Invisible non comparirà sullo schermo, ma è individuabile da funzioni come Window(). Una finestra Private risponde alla maggior parte dei messaggi della finestra, ma non è individuabile e deve essere indirizzata attraverso l&apos;oggetto report
 

@@ -2,11 +2,9 @@
 
 
 
-## 함수
-
 ### Abbrev Date
 
-**구문:** s = Abbrev Date( datetime, <format> )
+**구문:** s = Abbrev Date( datetime, &lt;format&gt; )
 
 **설명:** 날짜/시간 값에 대한 로케일별 약어 표현을 반환합니다.
 
@@ -51,7 +49,7 @@ As Date( Date DMY( 15, 7, 2000 ) );
 
 ### Date Difference
 
-**구문:** delta = Date Difference( dt1, dt2, intervalName, <alignment="start"> )
+**구문:** delta = Date Difference( dt1, dt2, intervalName, &lt;alignment="start"&gt; )
 
 **설명:** 두 날짜/시간 값의 간격 차이를 반환합니다. intervalName에 지원되는 값은 "연도", "분기", "월", "주", "일", "시", "분", "초" 및 "숫자"입니다. alignment가 "Start"이면 전체 또는 부분 간격을 포함하고 "Actual"이면 전체 간격만 포함합니다. alignment가 "Fractional"이면 "연도", "분기" 및 "월" 간격 기간에 대한 평균을 사용하여 소수 차이를 반환합니다.
 
@@ -86,7 +84,7 @@ Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "frac
 
 ### Date Increment
 
-**구문:** d = Date Increment( datetime, intervalName, <incr=1>, <alignment="start"> )
+**구문:** d = Date Increment( datetime, intervalName, &lt;incr=1&gt;, &lt;alignment="start"&gt; )
 
 **설명:** incr개의 간격을 추가하여 새 날짜/시간 값을 반환합니다. intervalName에 지원되는 값은 "연도", "분기", "월", "주", "일", "시", "분", "초" 및 "숫자"입니다. alignment가 "Start"이면 증분을 추가하기 전에 가장 가까운 간격으로 절단되고 "Actual"이면 전체 입력 날짜/시간이 유지됩니다. alignment가 "Fractional"이면 "연도", "분기" 및 "월" 간격 기간에 대한 평균을 사용하여 소수 incr 값이 허용됩니다.
 
@@ -196,9 +194,7 @@ v = Days In Month( 2016, 2 );
 
 ### Format
 
-**구문:** s = Format( x, formatString, <options> )
-
-s = Format( x, "Format Pattern", pattern, <options> )
+**구문:** s = Format( x, formatString, &lt;options&gt; )s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
 
 **설명:** 지정된 형식으로 숫자를 반환합니다. 형식에는 열 정보 대화상자의 항목(예: "최적" 및 "h:m:s")이 포함됩니다. p 값, 통화, 날짜 및 시간, 지리 형식을 포함한 다른 옵션의 경우 도움말 항목을 참조하십시오.
 
@@ -244,9 +240,7 @@ Print( Format( Today(), "Format Pattern", "<YYYY></><MM></><DD> <hh24><:><mm><:>
 
 ### Format Date
 
-**구문:** s = Format( x, formatString, <options> )
-
-s = Format( x, "Format Pattern", pattern, <options> )
+**구문:** s = Format( x, formatString, &lt;options&gt; )s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
 
 **설명:** 지정된 형식으로 숫자를 반환합니다. 형식에는 열 정보 대화상자의 항목(예: "최적" 및 "h:m:s")이 포함됩니다. p 값, 통화, 날짜 및 시간, 지리 형식을 포함한 다른 옵션의 경우 도움말 항목을 참조하십시오.
 
@@ -302,7 +296,7 @@ Show( it );
 
 ### Hour
 
-**구문:** hr = Hour( datetime, <12> )
+**구문:** hr = Hour( datetime, &lt;12&gt; )
 
 **설명:** 날짜/시간 값의 시간 부분을 반환합니다. 12시간 모드의 경우 (12, 1 ~ 11)이고 24시간 모드의 경우 (0 ~ 23)입니다.
 
@@ -332,7 +326,7 @@ ISO Year( Today() );
 
 ### In Days
 
-**구문:** y = In Days( <x=1> )
+**구문:** y = In Days( &lt;x=1&gt; )
 
 **설명:** x를 일 수에서 동등한 수의 초로 변환합니다.
 
@@ -347,7 +341,7 @@ In Days( 1.5 );
 
 ### In Hours
 
-**구문:** y = In Hours( <x=1> )
+**구문:** y = In Hours( &lt;x=1&gt; )
 
 **설명:** x를 시간 수에서 동등한 수의 초로 변환합니다.
 
@@ -362,7 +356,7 @@ In Hours( 0.5 );
 
 ### In Minutes
 
-**구문:** y = In Minutes( <x=1> )
+**구문:** y = In Minutes( &lt;x=1&gt; )
 
 **설명:** x를 분 수에서 동등한 수의 초로 변환합니다.
 
@@ -377,7 +371,7 @@ In Minutes( 1 );
 
 ### In Weeks
 
-**구문:** y = In Weeks( <x=1> )
+**구문:** y = In Weeks( &lt;x=1&gt; )
 
 **설명:** x를 주 수에서 동등한 수의 초로 변환합니다.
 
@@ -392,7 +386,7 @@ In Weeks( 1 );
 
 ### In Years
 
-**구문:** y = In Years( <x=1> )
+**구문:** y = In Years( &lt;x=1&gt; )
 
 **설명:** x를 연도 수에서 동등한 수의 초로 변환합니다.
 
@@ -407,9 +401,7 @@ In Years( 1 );
 
 ### Informat
 
-**구문:** dt = In Format( s, formatString, < <<Use Locale(b=1)>, < <<Restrict > )
-
-dt = In Format( s, "Format Pattern", pattern, < <<Use Locale(b=1)> )
+**구문:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; )dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
 
 **설명:** 지정된 형식의 문자열을 파싱합니다. 날짜/시간 형식의 경우 값은 As Date()로 묶인 것처럼 표현되고 ddMonyyyy 형식의 날짜를 반환합니다. "Best" formatString과 함께 사용되는 선택적 <<Restrict는 정수, 십진수 및 과학적 형식을 사용한 변환만 허용합니다.
 
@@ -482,7 +474,7 @@ v = Is Leap Year( 2016 );
 
 ### Long Date
 
-**구문:** s = Long Date( datetime, <format> )
+**구문:** s = Long Date( datetime, &lt;format&gt; )
 
 **설명:** 날짜/시간 값에 대한 long 형식의 로케일별 표현을 반환합니다.
 
@@ -497,7 +489,7 @@ Long Date( Today() );
 
 ### MDYHMS
 
-**구문:** s = MDYHMS( datetime, <format> )
+**구문:** s = MDYHMS( datetime, &lt;format&gt; )
 
 **설명:** 월, 일, 연도, 시간, 분, 초 순서로 날짜/시간 값 표현을 반환합니다.
 
@@ -557,9 +549,7 @@ Nth Day Of Week in the Month( Date MDY( 11, 28, 2019 ) );
 
 ### Parse Date
 
-**구문:** dt = In Format( s, formatString, < <<Use Locale(b=1)>, < <<Restrict > )
-
-dt = In Format( s, "Format Pattern", pattern, < <<Use Locale(b=1)> )
+**구문:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; )dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
 
 **설명:** 지정된 형식의 문자열을 파싱합니다. 날짜/시간 형식의 경우 값은 As Date()로 묶인 것처럼 표현되고 ddMonyyyy 형식의 날짜를 반환합니다. "Best" formatString과 함께 사용되는 선택적 <<Restrict는 정수, 십진수 및 과학적 형식을 사용한 변환만 허용합니다.
 
@@ -647,7 +637,7 @@ Second( Today() );
 
 ### Short Date
 
-**구문:** s = Short Date( datetime, <format> )
+**구문:** s = Short Date( datetime, &lt;format&gt; )
 
 **설명:** 날짜/시간 값에 대한 숫자 형식(MM/DD/YYYY)의 로케일별 표현을 반환합니다.
 
@@ -710,7 +700,7 @@ As Date( Today() );
 
 ### Week Of Year
 
-**구문:** d = Week Of Year( datetime, <rule=1> )
+**구문:** d = Week Of Year( datetime, &lt;rule=1&gt; )
 
 **설명:** 세 개의 규칙 중 하나를 사용하여 날짜/시간 값이 포함된 주를 반환합니다. 기본적으로(규칙 1) 주가 일요일에 시작되고 해당 연도의 첫 번째 일요일은 주 2가 됩니다. 주 1은 부분 주이거나 비어 있습니다(2006년처럼). 규칙 2에서는 첫 번째 일요일이 주 1이고 그 앞의 일은 주 0입니다. 규칙 3에서는 ISO 주 번호가 반환되며 이때 주는 월요일에 시작되고 주 1이 한 해의 첫 번째 주(해당 연도의 4개 일 포함)입니다. ISO 주를 사용할 경우 한 해의 처음 또는 마지막 3일은 이웃 연도의 주 번호에 속할 수 있습니다.
 

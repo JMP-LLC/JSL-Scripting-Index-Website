@@ -2,8 +2,6 @@
 
 
 
-## Functions
-
 ### Add
 
 **Syntax:** y = x0 + x1; y = Add( x0, x1, ... )
@@ -51,7 +49,7 @@ Hex(/* make it printable */ Blob MD5(/* get the hash */
 
 ### Blob Peek
 
-**Syntax:** blobResult = Blob Peek( blob, offset, <length> )
+**Syntax:** blobResult = Blob Peek( blob, offset, &lt;length&gt; )
 
 **Description:** Makes a new blob from a subrange of bytes of the given blob. The offset argument is zero-based, so the first byte is at offset zero.
 
@@ -77,7 +75,7 @@ Build Information();
 
 ### Caption
 
-**Syntax:** y = Caption( <{h, v}>, text | remove, <Delayed( seconds )>, <Font(font)>, <Font Size(size)>, <Text Color(color)>, <Back Color(color)>, <Spoken(bool)> )
+**Syntax:** y = Caption( &lt;{h, v}&gt;, text | remove, &lt;Delayed( seconds )&gt;, &lt;Font(font)&gt;, &lt;Font Size(size)&gt;, &lt;Text Color(color)&gt;, &lt;Back Color(color)&gt;, &lt;Spoken(bool)&gt; )
 
 **Description:** Shows a caption window at the location specified by {h, v} and containing the text specified by the text argument. The Delayed( seconds ) argument sets the waiting time in seconds before each caption.
 
@@ -111,7 +109,7 @@ Caption( remove );
 
 ### Clipboard Capture
 
-**Syntax:** clp = Clipboard Capture( box << Copy )
+**Syntax:** clp = Clipboard Capture( box &lt;&lt; Copy )
 
 **Description:** If the JSL within this function would have normally copied something to the OS Clipboard, it is instead copied to a Clipboard object and returned.
 
@@ -129,7 +127,7 @@ Show( clp << Get Flavor Data( "Text", <<Text ) );
 
 ### Current Journal
 
-**Syntax:** y = Current Journal( <Project(title|index|box|window)> )
+**Syntax:** y = Current Journal( &lt;Project(title|index|box|window)&gt; )
 
 **Description:** Returns a reference to the current journal in the current project (or no project when not running the script in a project).
 
@@ -273,7 +271,7 @@ Disable Proxy Settings( 1 );
 
 ### Divide
 
-**Syntax:** y = x0 / x1; y = Divide( x0, <x1>, ... )
+**Syntax:** y = x0 / x1; y = Divide( x0, &lt;x1&gt;, ... )
 
 **Description:** Divides all subsequent arguments from the first argument. Arguments can be numbers, matrices, or lists of numbers. When called with only one argument, the result will be the reciprocal.
 
@@ -397,11 +395,7 @@ Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
 
 ### Format Pattern
 
-**Syntax:** s = Format( x, "Format Pattern", pattern, <width>, <dec>)
-
-x = In Format( s, "Format Pattern", pattern, < <<Use Locale(b=1)> )
-
-obj = Format("Format Pattern", pattern, <width>, <dec>)
+**Syntax:** s = Format( x, "Format Pattern", pattern, &lt;width&gt;, &lt;dec&gt;)x = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )obj = Format("Format Pattern", pattern, &lt;width&gt;, &lt;dec&gt;)
 
 **Description:** Format Patterns are strings that define a date-time format, such as "<YYYY></><MM></><DD> <hh><:><mm><:><ss><ampm>". The parts of the pattern in angle brackets are called field descriptors. The field descriptors represent a value (such as "<YYYY>", which is a four-digit year) or other date-time text (such as "</>", which is a locale-specific date separator). A format pattern enables you to build formats that aren&apos;t provided in JMP. These formats can be used for both formatting and inputting data.
 
@@ -550,7 +544,7 @@ Get Clipboard();
 
 ### Get Expr Location
 
-**Syntax:** Get Expr Location(<expression>, [{"TokenStartLine"|"TokenStartCol"|"TokenStart"|"TokenLength"|"TreeStart"|"TreeEnd"|"TreeLength"}+]
+**Syntax:** Get Expr Location(&lt;expression&gt;, [{"TokenStartLine"|"TokenStartCol"|"TokenStart"|"TokenLength"|"TreeStart"|"TreeEnd"|"TreeLength"}+]
 
 **Description:** Retrieve the locations of the top token in a parsed expression. The default invocation returns {the source file, TokenStartLine, TokenStartCol, TokenLength}.
 
@@ -642,7 +636,7 @@ Show( aa );
 
 ### Get Platform Preference
 
-**Syntax:** Get Platform Preferences( < platformName < ( optionName, ... ) > ... > )
+**Syntax:** Get Platform Preferences( &lt; platformName &lt; ( optionName, ... ) &gt; ... &gt; )
 
 **Description:** Gets platform preferences as specified.
 
@@ -655,7 +649,7 @@ Get Platform Preferences( Bivariate( Fit Line ), DOE );
 
 ### Get Platform Preferences
 
-**Syntax:** Get Platform Preferences( < platformName < ( optionName, ... ) > ... > )
+**Syntax:** Get Platform Preferences( &lt; platformName &lt; ( optionName, ... ) &gt; ... &gt; )
 
 **Description:** Gets platform preferences as specified.
 
@@ -668,7 +662,7 @@ Get Platform Preferences( Bivariate( Fit Line ), DOE );
 
 ### Get Policies
 
-**Syntax:** Get Policies( <Machine|User|Both> )
+**Syntax:** Get Policies( &lt;Machine|User|Both&gt; )
 
 **Description:** Returns an associative array containing the current policy names and values.
 
@@ -1020,7 +1014,7 @@ New Window( "editor", Script Box( x ) );
 
 ### Load DLL
 
-**Syntax:** dll = Load DLL( file path | Base Name( file path without extension ), < AutoDeclare( bool | Quiet | Verbose) | Quiet | Verbose )> )
+**Syntax:** dll = Load DLL( file path | Base Name( file path without extension ), &lt; AutoDeclare( bool | Quiet | Verbose) | Quiet | Verbose )&gt; )
 
 **Description:** Loads a DLL pointed to by the specified path.
 
@@ -1055,7 +1049,7 @@ If( Host is( "Windows" ),
 
 ### Log Table Messages
 
-**Syntax:** Log Table Messages( <On|Off>, <Enable(subject, ...)>, <Disable(subject, ...)>, <Include(msgname, ...)>, <Exclude(msgname, )>
+**Syntax:** Log Table Messages( &lt;On|Off&gt;, &lt;Enable(subject, ...)&gt;, &lt;Disable(subject, ...)&gt;, &lt;Include(msgname, ...)&gt;, &lt;Exclude(msgname, )&gt;
 
 **Description:** Control logging of data table messages (such as DtMsgClose). By default logging is off, but all subjects are enabled. (If you turn logging on, you do not need to enable the subjects you&apos;re interested in.) Only a subset of all messages are logged. Not available in retail builds.
 
@@ -1116,7 +1110,7 @@ Log Table Messages( Disable( "Table" ) );
 
 ### Mail
 
-**Syntax:** Mail( "address", "subject", "message", <"attachment filepath"> | { "attachment filepath", ...} )
+**Syntax:** Mail( "address", "subject", "message", &lt;"attachment filepath"&gt; | { "attachment filepath", ...} )
 
 **Description:** Creates an outgoing e-mail message as specified if the operating system allows doing so. Not all options will work on all operating system versions. See Help for details.
 
@@ -1129,7 +1123,7 @@ Mail( "test@example.com", "revelation", "JMP is great.", "$SAMPLE_DATA/Big Class
 
 ### Main Menu
 
-**Syntax:** menu = Main Menu( command, <window name> )
+**Syntax:** menu = Main Menu( command, &lt;window name&gt; )
 
 **Description:** Executes the specified main menu command.
 
@@ -1230,7 +1224,7 @@ Print( tax * Name( "taxable income(2011)" ) );
 
 ### New Clipboard
 
-**Syntax:** clp = New Clipboard( <<<Get From OS> )
+**Syntax:** clp = New Clipboard( &lt;&lt;&lt;Get From OS&gt; )
 
 **Description:** Creates a new Clipboard, either empty or with access to the OS clipboard.
 
@@ -1246,7 +1240,7 @@ New Window( "Img", clp << Get Flavor Data( "Graphic" ) )
 
 ### New HTTP Request
 
-**Syntax:** obj = New HTTP Request(URL(...), Method(...), <Form(<Fields(...)>, <Files(...)>)> | <File(...)> | <Blob(...)> | <JSON(...)>, <QueryString(...)>, <Headers(...)>, <Username(...)>, <Password(...)>)
+**Syntax:** obj = New HTTP Request(URL(...), Method(...), &lt;Form(&lt;Fields(...)&gt;, &lt;Files(...)&gt;)&gt; | &lt;File(...)&gt; | &lt;Blob(...)&gt; | &lt;JSON(...)&gt;, &lt;QueryString(...)&gt;, &lt;Headers(...)&gt;, &lt;Username(...)&gt;, &lt;Password(...)&gt;)
 
 **Description:** Creates a request to send to a web service.
 
@@ -1641,7 +1635,7 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ### Polytope Uniform Random
 
-**Syntax:** points = Polytope Uniform Random( numSamples, A, b, L, U, neq, nle, nge, <nwarm=200>, <nstride=25> )
+**Syntax:** points = Polytope Uniform Random( numSamples, A, b, L, U, neq, nle, nge, &lt;nwarm=200&gt;, &lt;nstride=25&gt; )
 
 **Description:** Generates random uniform points over a convex polytope. The numSamples argument specifies the number of random points to be generated. The A argument is the constraint coefficient matrix. The B argument is the right hand side values of constraints. The L and U arguments are the lower and upper bounds for the variables, respectively. The neq, mle, and nge arguments are the number of equality constraints, the number of less than or equal constraints, and the number of greater than or equal constraints, respectively. The nwarm argument is the number of warm-up repetitions before points are written to the output matrix. The nstride argument is the number of repetitions between each point that is written to the output matrix. Note that the constraints must be listed as equality first, less than or equal next, and greater than or equal last.
 
@@ -1727,7 +1721,7 @@ Preferences( Graph marker size( "Large" ) );
 
 ### Register Addin
 
-**Syntax:** Register Addin( uniqueId, homeFolder, <displayName(name)>, <MinJMPVersion(version)>, <MaxJMPVersion(version)>, <LoadsAtStartup(autoLoad)>, <LoadNow(load)> )
+**Syntax:** Register Addin( uniqueId, homeFolder, &lt;displayName(name)&gt;, &lt;MinJMPVersion(version)&gt;, &lt;MaxJMPVersion(version)&gt;, &lt;LoadsAtStartup(autoLoad)&gt;, &lt;LoadNow(load)&gt; )
 
 **Description:** Register an add-in
 
@@ -1804,19 +1798,7 @@ Show( Rummage( Window( dt ), "graph builder", Algorithm( "Basic" ) )[1 :: 3] << 
 
 ### Run Program
 
-**Syntax:** obj = Run Program(
-
-    Executable( "path/etc.exe" ),
-
-  < Options( {"/a", "/b etc" } ) >,
-
-  < Parameter( optParm ) >,
-
-  < Read Function( Function( {this, optParm}, etc ) | "text" | "blob" ) >,
-
-  < Write Function( Function( {this, optParm}, etc ) ) >
-
-)
+**Syntax:** obj = Run Program( Executable( "path/etc.exe" ), &lt; Options( {"/a", "/b etc" } ) &gt;, &lt; Parameter( optParm ) &gt;, &lt; Read Function( Function( {this, optParm}, etc ) | "text" | "blob" ) &gt;, &lt; Write Function( Function( {this, optParm}, etc ) ) &gt;)
 
 **Description:** Control an external program using stdin and stdout.
 
@@ -1931,7 +1913,7 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ### Set Policy
 
-**Syntax:** Set Policy("PolicyName", <Empty()|#|"value"> )
+**Syntax:** Set Policy("PolicyName", &lt;Empty()|#|"value"&gt; )
 
 ### Set Preference
 
@@ -1961,7 +1943,7 @@ Preferences( Graph marker size( "Large" ) );
 
 ### Set Toolbar Visibility
 
-**Syntax:** rc = Set Toolbar Visibility( "toolbar-name" | Default | All, <window-class-name | All>, <True | False> )
+**Syntax:** rc = Set Toolbar Visibility( "toolbar-name" | Default | All, &lt;window-class-name | All&gt;, &lt;True | False&gt; )
 
 **Description:** Sets the visibility of a given toolbar for a given class of windows. toolbar-name is the internal name of the toolbar. If Default is passed in as the toolbar name, the specified window class is restored to the default toolbar set for that class of windows. Examples of window-class-name are Data Table, Script, Report, and Journal. If window-class-name is All, then visibility for the specified toolbar is set for all classes of windows.
 
@@ -2033,7 +2015,7 @@ Show Addins Dialog();
 
 ### Show Commands
 
-**Syntax:** Show Commands( <keyword=Builtins> )
+**Syntax:** Show Commands( &lt;keyword=Builtins&gt; )
 
 **Description:** Creates one or more data tables that contain information about various JSL components. The keyword argument determines the content of the output table. Specify Builtins (the default) for built-in operators and functions. Specify Scriptables for all the scriptable commands for objects. Specify Translations for English and localized versions of the scriptable commands. Specify Display Boxes for scriptable commands related to display boxes and display segs. Specify Scriptable Names for the names of scriptable objects. Specify Platform Names for names of platforms.
 
@@ -2087,7 +2069,7 @@ Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
 
 ### Socket
 
-**Syntax:** socketHandle = Socket( <STREAM | DGRAM> )
+**Syntax:** socketHandle = Socket( &lt;STREAM | DGRAM&gt; )
 
 **Description:** Creates a socket variable that can communicate with sockets on this or another networked computer. The default argument is STREAM. Try your own company&apos;s website.
 
@@ -2130,7 +2112,7 @@ If( rc[2] == "ok",
 
 ### Speak
 
-**Syntax:** Speak( text, <Wait( sync )> )
+**Syntax:** Speak( text, &lt;Wait( sync )&gt; )
 
 **Description:** Speaks the text if supported by the operating system. Specifying the optional Wait(true) argument delays script execution until speech has finished.
 
@@ -2188,7 +2170,7 @@ Unregister Addin( "com.mycompany.myaddin" );
 
 ### Web
 
-**Syntax:** Web( string, <JMP Window> )
+**Syntax:** Web( string, &lt;JMP Window&gt; )
 
 **Description:** Opens the URL or file stored in string in the default web browser. The optional second argument specifies that the HTML open in a JMP browser window.
 
@@ -2231,7 +2213,7 @@ Web( "http://www.jmp.com/" );
 
 ### With Clipboard
 
-**Syntax:** two = With Clipboard( clp, box << Paste; 1 + 1 )
+**Syntax:** two = With Clipboard( clp, box &lt;&lt; Paste; 1 + 1 )
 
 **Description:** If the JSL within this function would have normally pasted something from the OS Clipboard, it is instead pasted from the provided Clipboard object.
 

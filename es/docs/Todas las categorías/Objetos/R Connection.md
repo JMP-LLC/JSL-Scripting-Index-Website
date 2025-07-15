@@ -23,7 +23,7 @@ Show( x );
 
 ### Control
 
-**Sintaxis:** obj << Control( Echo( Boolean ) )
+**Sintaxis:** obj &lt;&lt; Control( Echo( Boolean ) )
 
 **Descripción:** Cambia las opciones de control para R.
 
@@ -38,7 +38,7 @@ RConnection << Submit( "rnorm(10)" );
 
 ### Disconnect
 
-**Sintaxis:** obj << Disconnect
+**Sintaxis:** obj &lt;&lt; Disconnect
 
 **Descripción:** En desuso en JMP 19 y no tiene ningún efecto.
 
@@ -52,7 +52,7 @@ RConnection << Disconnect;
 
 ### Execute
 
-**Sintaxis:** list = obj << Execute( { list of Inputs }, { list of Outputs }, statements )
+**Sintaxis:** list = obj &lt;&lt; Execute( { list of Inputs }, { list of Outputs }, statements )
 
 **Descripción:** Envía una lista de entradas, ejecuta unas instrucciones y devuelve una lista de salidas.
 
@@ -77,7 +77,7 @@ Show( v, m, rc, x, z, a, d );
 
 ### Get
 
-**Sintaxis:** y = obj << Get( name )
+**Sintaxis:** y = obj &lt;&lt; Get( name )
 
 **Descripción:** Devuelve datos de R, donde el argumento name representa cualquiera de los siguientes tipos de datos de R (numérico | cadena de caracteres | matriz | lista | data frame).
 
@@ -98,7 +98,7 @@ Close( dt1, No Save );
 
 ### Get Graphics
 
-**Sintaxis:** R graphics = obj << Get Graphics( format )
+**Sintaxis:** R graphics = obj &lt;&lt; Get Graphics( format )
 
 **Descripción:** EN DESUSO en JMP 19 y no tiene ningún efecto. En su lugar, defina un nombre de archivo como png ("r_plot.png") para el dispositivo y, a continuación, abra el archivo para recuperar la imagen. Esta opción se eliminará de JMP 20. El código siguiente muestra una solución alternativa.
 
@@ -119,7 +119,7 @@ rc = Delete File( img_path );
 
 ### Get Version
 
-**Sintaxis:** version = obj << Get Version
+**Sintaxis:** version = obj &lt;&lt; Get Version
 
 **Descripción:** Devuelve el número de versión de R empleado en la conexión actual.
 
@@ -134,7 +134,7 @@ Show( version );
 
 ### Is Connected
 
-**Sintaxis:** x = obj << Is Connected
+**Sintaxis:** x = obj &lt;&lt; Is Connected
 
 **Descripción:** Devuelve 1 si hay una conexión a R activa y 0 en caso contrario.
 
@@ -164,7 +164,7 @@ Show( RName );
 
 ### Send
 
-**Sintaxis:** y = obj << Send( name, <R Name( name )> )
+**Sintaxis:** y = obj &lt;&lt; Send( name, &lt;R Name( name )&gt; )
 
 **Descripción:** Envía datos a R. El argumento name representa cualquiera de los tipos de datos de JMP (numérico | cadena de caracteres | matriz | lista | tabla de datos).
 
@@ -183,7 +183,7 @@ RConnection << Submit( "dt" );
 
 ### Send File
 
-**Sintaxis:** y = obj << Send File( filename, <R Name( name )> )
+**Sintaxis:** y = obj &lt;&lt; Send File( filename, &lt;R Name( name )&gt; )
 
 **Descripción:** Envía un archivo de datos a R. El argumento filename es una cadena de caracteres que especifica el nombre de la ruta del archivo que se debe enviar a R.
 
@@ -200,7 +200,7 @@ RConnection << Send File( dtname );
 
 ### Set
 
-**Sintaxis:** y = obj << Set( name, <R Name( name )> )
+**Sintaxis:** y = obj &lt;&lt; Set( name, &lt;R Name( name )&gt; )
 
 **Descripción:** Envía datos a R. El argumento name representa cualquiera de los tipos de datos de JMP (numérico | cadena de caracteres | matriz | lista | tabla de datos).
 
@@ -219,7 +219,7 @@ RConnection << Submit( "dt" );
 
 ### Submit
 
-**Sintaxis:** obj << Submit( statements )
+**Sintaxis:** obj &lt;&lt; Submit( statements )
 
 **Descripción:** Envía instrucciones a R. Las instrucciones pueden estar en forma de cadena de caracteres o de lista de cadenas de caracteres.
 
@@ -251,7 +251,7 @@ rc = Delete File( img_path );
 
 ### Submit File
 
-**Sintaxis:** obj << Submit File( path )
+**Sintaxis:** obj &lt;&lt; Submit File( path )
 
 **Descripción:** Envía instrucciones a R empleando un archivo especificado en el argumento path.
 

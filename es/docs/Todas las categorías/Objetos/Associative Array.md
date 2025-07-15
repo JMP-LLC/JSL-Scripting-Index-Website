@@ -6,9 +6,7 @@
 
 ### Associative Array
 
-**Sintaxis:** y = Associative Array( {{key1, value1}, ...} );
-
-y = Associative Array( keys, values )
+**Sintaxis:** y = Associative Array( {{key1, value1}, ...} );y = Associative Array( keys, values )
 
 **Descripción:** Crea un arreglo asociativo, que también se conoce como diccionario o mapa hash. En la forma con dos argumentos, las claves y los valores pueden ser una lista, una matriz o una columna de una tabla de datos.
 
@@ -25,7 +23,7 @@ ex << get contents;
 
 ### Contains
 
-**Sintaxis:** bool = AAobj << Contains( key | AAobj )
+**Sintaxis:** bool = AAobj &lt;&lt; Contains( key | AAobj )
 
 **Descripción:** Examina si la clave o conjunto de claves están presentes en el arreglo asociativo. Véase también un ejemplo más sencillo en Contiene elemento.
 
@@ -44,7 +42,7 @@ Local(
 
 ### Contains Item
 
-**Sintaxis:** bool = AAobj << Contains Item( key )
+**Sintaxis:** bool = AAobj &lt;&lt; Contains Item( key )
 
 **Descripción:** Examina si la clave está presente en el arreglo asociativo. Véase también Contiene, que ofrece capacidades adicionales.
 
@@ -59,7 +57,7 @@ Local( {rhymes = ["mouse" => "house", "car" => "star", "orange" => ""]},
 
 ### First
 
-**Sintaxis:** key = AAobj << first
+**Sintaxis:** key = AAobj &lt;&lt; first
 
 **Descripción:** Iterador para un arreglo asociativo.
 
@@ -80,7 +78,7 @@ Local(
 
 ### Get Contents
 
-**Sintaxis:** list = AAObj << Get Contents
+**Sintaxis:** list = AAObj &lt;&lt; Get Contents
 
 **Descripción:** Devuelve el contenido del arreglo asociativo en forma de lista.
 
@@ -95,7 +93,7 @@ Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"]},
 
 ### Get Default Value
 
-**Sintaxis:** value = AAobj << Get Default Value()
+**Sintaxis:** value = AAobj &lt;&lt; Get Default Value()
 
 **Descripción:** Devuelve el valor que devolverá el arreglo asociativo cuando no encuentre una clave.
 
@@ -114,7 +112,7 @@ Local( {aa = [=> 99], v1, v2}, /* initial value used for non-existing key is 99 
 
 ### Get Keys
 
-**Sintaxis:** list = AAObj << Get Keys
+**Sintaxis:** list = AAObj &lt;&lt; Get Keys
 
 **Descripción:** Devuelve una lista de las claves que contiene el arreglo asociativo.
 
@@ -129,7 +127,7 @@ Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"]},
 
 ### Get Value
 
-**Sintaxis:** value = AAobj << Get Value( key )
+**Sintaxis:** value = AAobj &lt;&lt; Get Value( key )
 
 **Descripción:** Devuelve el valor almacenado en el arreglo asociativo asociado a la clave indicada.
 
@@ -147,7 +145,7 @@ Local(
 
 ### Get Values
 
-**Sintaxis:** list = AAObj << Get Values
+**Sintaxis:** list = AAObj &lt;&lt; Get Values
 
 **Descripción:** Devuelve una lista de los valores que contiene el arreglo asociativo.
 
@@ -162,7 +160,7 @@ Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"]},
 
 ### Insert
 
-**Sintaxis:** AAobj1 << Insert( AAobj2 | key,  { value } )
+**Sintaxis:** AAobj1 &lt;&lt; Insert( AAobj2 | key, { value } )
 
 **Descripción:** Inserta un arreglo asociativo en otro o bien almacena un valor asociándolo a la clave indicada dentro del arreglo asociativo. Véase también un ejemplo más sencillo en Insertar elemento.
 
@@ -181,7 +179,7 @@ Local(
 
 ### Insert Item
 
-**Sintaxis:** AAobj << Insert Item( key, value )
+**Sintaxis:** AAobj &lt;&lt; Insert Item( key, value )
 
 **Descripción:** Almacena el valor vinculándolo a la clave en el arreglo asociativo. Véase también Insertar, que ofrece funcionalidades adicionales.
 
@@ -197,7 +195,7 @@ Local( {decode = [".-" => "a", "-..." => "b"]},
 
 ### Intersect
 
-**Sintaxis:** AAobj1 << Intersect( AAobj2 )
+**Sintaxis:** AAobj1 &lt;&lt; Intersect( AAobj2 )
 
 **Descripción:** Trata un arreglo asociativo como un conjunto de objetos. Los valores deben ser 1 para los objetos que pertenecen al conjunto. El valor predeterminado debe ser 0. El conjunto actual se sustituye por la intersección de este conjunto con el conjunto que figura en el mensaje.
 
@@ -244,7 +242,7 @@ dt << selectrows( desiredSelection << getkeys ); // males <= 12
 
 ### Next
 
-**Sintaxis:** key = AAobj << next( previous key )
+**Sintaxis:** key = AAobj &lt;&lt; next( previous key )
 
 **Descripción:** Iterador para un arreglo asociativo.
 
@@ -265,7 +263,7 @@ Local(
 
 ### Remove
 
-**Sintaxis:** AAobj1 << Remove( AAobj2 | key )
+**Sintaxis:** AAobj1 &lt;&lt; Remove( AAobj2 | key )
 
 **Descripción:** Quita el conjunto de claves o la clave del arreglo asociativo. Véase también un ejemplo más sencillo en Quitar elemento.
 
@@ -282,7 +280,7 @@ Local(
 
 ### Remove Item
 
-**Sintaxis:** AAobj << Remove Item( key )
+**Sintaxis:** AAobj &lt;&lt; Remove Item( key )
 
 **Descripción:** Quita la clave del arreglo asociativo. Véase también Quitar, que ofrece funcionalidades adicionales.
 
@@ -314,7 +312,7 @@ Local(
 
 ### Set Default Value
 
-**Sintaxis:** AAobj << Set Default Value( value )
+**Sintaxis:** AAobj &lt;&lt; Set Default Value( value )
 
 **Descripción:** Modifica el valor que devolverá el arreglo asociativo en relación con las claves no encontradas.
 

@@ -14,7 +14,7 @@
 
 ### <C++>
 
-**Syntax:** obj << <C++>
+**Syntax:** obj &lt;&lt; &lt;C++&gt;
 
 **Description:** Use DisplayBoxPtr::jssClasses and DisplayBoxPtr::jssID and then target those using selectors. OutlineBoxes and some others automatically set classes from their Scriptable, etc.
 
@@ -29,7 +29,7 @@ Names Default To Here( 1 );
 
 ### <Editing>
 
-**Syntax:** obj << <Editing>
+**Syntax:** obj &lt;&lt; &lt;Editing&gt;
 
 **Description:** New files must be added to *.jss in the correct order. Use the in-JMP Property Panel for looking at classes, ids, and box structure. Syncing from Perforce gets you the latest styles after you build since the build step copies the files into the build directory. Or you can use the JSS Dir preference to point JMP directly at the files in your Perforce workspace. Then you can check-out files and edit them directly. As soon as you edit a file and save it, JMP will update automatically.
 
@@ -43,19 +43,19 @@ Preferences[1] << Set( JSS Dir( "C:\JMPDev\source\Portable\Jss\" ) );
 
 ### <Rule>
 
-**Syntax:** obj << <Rule>
+**Syntax:** obj &lt;&lt; &lt;Rule&gt;
 
 **Description:** The main unit of a JSS file. Composed of a Selector and multiple Declarations/Messages.
 
 ### <Selector>
 
-**Syntax:** obj << <Selector>
+**Syntax:** obj &lt;&lt; &lt;Selector&gt;
 
 **Description:** The first part of a Rule; Used to select boxes. You can compose selectors together to make more complex selectors.
 
 ### <Specificity>
 
-**Syntax:** obj << <Specificity>
+**Syntax:** obj &lt;&lt; &lt;Specificity&gt;
 
 **Description:** This helps us be more declarative with our Rules. See CSS documentation for details.
 
@@ -125,7 +125,7 @@ New Window( "And",
 
 ### Attr
 
-**Syntax:** Attr( <<Boolean Box Message == 0|1 )
+**Syntax:** Attr( &lt;&lt;Boolean Box Message == 0|1 )
 
 **Description:** Matches boxes with the given attribute. Where the box responds to the given message with that value. Currently only supports boolean attributes.
 
@@ -464,7 +464,7 @@ New Window( "If Theme Is",
 
 ### Include
 
-**Syntax:** Include( path, <<NoWarnIfMissing )
+**Syntax:** Include( path, &lt;&lt;NoWarnIfMissing )
 
 **Description:** Includes another JSS file from a path relative to this one. Errors within that file will be ignored. Errors accessing that file will not, unless you use the <<NoWarnIfMissing flag.
 

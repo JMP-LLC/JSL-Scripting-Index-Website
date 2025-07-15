@@ -6,7 +6,7 @@
 
 ### Get Description
 
-**Sintaxis:**  metadata << Get Description()
+**Sintaxis:** metadata &lt;&lt; Get Description()
 
 **Descripción:** Obtiene la descripción del conector de datos.
 
@@ -22,7 +22,7 @@ description = metadata << Get Description();
 
 ### Get Driver
 
-**Sintaxis:**  metadata << Get Driver()
+**Sintaxis:** metadata &lt;&lt; Get Driver()
 
 **Descripción:** Obtiene el controlador del conector de datos, si lo hay.
 
@@ -38,7 +38,7 @@ type = metadata << Get Driver();
 
 ### Get Name
 
-**Sintaxis:**  metadata << Get Name()
+**Sintaxis:** metadata &lt;&lt; Get Name()
 
 **Descripción:** Obtiene el nombre del conector de datos.
 
@@ -54,7 +54,7 @@ name = metadata << Get Name();
 
 ### Get Path
 
-**Sintaxis:** metadaata << Get Path()
+**Sintaxis:** metadaata &lt;&lt; Get Path()
 
 **Descripción:** Obtiene la ruta del conector de datos.
 
@@ -70,7 +70,7 @@ path = metadata << Get Path();
 
 ### Get Type
 
-**Sintaxis:**  metadata << Get Type()
+**Sintaxis:** metadata &lt;&lt; Get Type()
 
 **Descripción:** Obtiene el tipo de conector de datos.
 
@@ -86,7 +86,7 @@ type = metadata << Get Type();
 
 ### Set Description
 
-**Sintaxis:**  metadata << Set Description(description)
+**Sintaxis:** metadata &lt;&lt; Set Description(description)
 
 **Descripción:** Establece la descripción del conector de datos.
 
@@ -102,7 +102,7 @@ metadata << Set Description( "My frequently used SQL Server connection." );
 
 ### Set Name
 
-**Sintaxis:**  metadata << Set Name( name )
+**Sintaxis:** metadata &lt;&lt; Set Name( name )
 
 **Descripción:** Establece el nombre del conector de datos.
 

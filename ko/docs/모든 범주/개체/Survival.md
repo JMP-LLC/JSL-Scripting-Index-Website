@@ -6,7 +6,7 @@
 
 ### Action
 
-**구문:** obj << Action
+**구문:** obj &lt;&lt; Action
 
 **설명:** 실행할 표현식을 삽입하기 위한 플랫폼 내의 다목적 트랩도어. 임시로 표시 상자 및 데이터 테이블 유형을 플랫폼에 설정합니다.
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**구문:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**구문:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **설명:** 이전에 생성된 사전 설정을 개체에 적용하여 옵션과 사용자 정의를 저장된 설정과 일치하도록 업데이트합니다.
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Automatic Recalc
 
-**구문:** obj << Automatic Recalc( state=0|1 )
+**구문:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **설명:** 제외 항목 및 데이터 변경이 있을 때 분석을 자동으로 다시 실행합니다. 자동 재계산 옵션이 설정된 경우 재계산하기 전에 제외 항목 및 데이터 변경이 적용되게 하려면 Wait(0) 명령을 사용하는 것이 좋습니다.
 
@@ -87,7 +87,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**구문:** obj << Broadcast(message)
+**구문:** obj &lt;&lt; Broadcast(message)
 
 **설명:** 플랫폼에 메시지를 브로드캐스트합니다. 개별 개체의 반환 결과가 테이블인 경우 가능하면 테이블이 연결되고 최종 형식은 테이블 상자의 &apos;결합 테이블 저장&apos; 옵션 결과 또는 소스 열을 사용한 &apos;연결&apos; 옵션 결과와 동일합니다. 그 외의 경우에는 결과가 목록에 저장되어 반환됩니다.
 
@@ -104,7 +104,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**구문:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**구문:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **설명:** 플랫폼 변수를 변경하기 위한 제어판을 추가합니다.
 
@@ -119,7 +119,7 @@ ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country,
 
 ### Copy ByGroup Script
 
-**구문:** obj << Copy ByGroup Script
+**구문:** obj &lt;&lt; Copy ByGroup Script
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 클립보드에 넣습니다.
 
@@ -139,7 +139,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**구문:** obj << Copy Script
+**구문:** obj &lt;&lt; Copy Script
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 클립보드에 넣습니다.
 
@@ -154,7 +154,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**구문:** obj << Data Table Window
+**구문:** obj &lt;&lt; Data Table Window
 
 **설명:** 이 분석에 대한 데이터 테이블 창을 앞으로 가져옵니다.
 
@@ -169,7 +169,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**구문:** obj << Get By Levels
+**구문:** obj &lt;&lt; Get By Levels
 
 **설명:** 기준 그룹 열을 값에 매핑하는 연관 배열을 반환합니다.
 
@@ -186,7 +186,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**구문:** obj << Get ByGroup Script
+**구문:** obj &lt;&lt; Get ByGroup Script
 
 **설명:** 이 분석을 수행하기 위한 스크립트(JSL)를 생성하고 표현식으로 반환합니다.
 
@@ -207,7 +207,7 @@ Show( t );
 
 ### Get Container
 
-**구문:** obj << Get Container
+**구문:** obj &lt;&lt; Get Container
 
 **설명:** 개체의 콘텐츠를 담고 있는 컨테이너 상자에 대한 참조를 반환합니다.
 
@@ -254,7 +254,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**구문:** obj << Get Data Table
+**구문:** obj &lt;&lt; Get Data Table
 
 **설명:** 데이터 테이블에 대한 참조를 반환합니다.
 
@@ -270,7 +270,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**구문:** obj << Get Group Platform
+**구문:** obj &lt;&lt; Get Group Platform
 
 **설명:** 이 플랫폼이 그룹의 일부인 경우 그룹 플랫폼 개체를 반환하고, 그렇지 않은 경우 Empty()를 반환합니다.
 
@@ -287,7 +287,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**구문:** obj << Get Script
+**구문:** obj &lt;&lt; Get Script
 
 **설명:** 이 분석을 수행하기 위한 스크립트(JSL)를 생성하고 표현식으로 반환합니다.
 
@@ -303,7 +303,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**구문:** obj << Get Script With Data Table
+**구문:** obj &lt;&lt; Get Script With Data Table
 
 **설명:** 이 데이터 테이블을 참조하는 분석을 수행하기 위한 스크립트(JSL)를 생성하고 표현식으로 반환합니다.
 
@@ -319,7 +319,7 @@ Show( t );
 
 ### Get Timing
 
-**구문:** obj << Get Timing
+**구문:** obj &lt;&lt; Get Timing
 
 **설명:** 플랫폼 시작 시간을 설정합니다.
 
@@ -335,7 +335,7 @@ Show( t );
 
 ### Get Web Support
 
-**구문:** obj << Get Web Support
+**구문:** obj &lt;&lt; Get Web Support
 
 **설명:** 표시 개체에 대한 대화식 HTML 지원 수준을 나타내는 숫자를 반환합니다. 1은 일부 또는 모든 요소가 지원됨을 의미하고 0은 지원되지 않음을 의미합니다.
 
@@ -351,7 +351,7 @@ Show( s );
 
 ### Get Where Expr
 
-**구문:** obj << Get Where Expr
+**구문:** obj &lt;&lt; Get Where Expr
 
 **설명:** By() 또는 Where()를 사용하여 플랫폼이 시작된 경우 데이터 부분집합에 대한 Where 표현식을 반환하고, 그렇지 않은 경우 Empty()를 반환합니다.
 
@@ -388,7 +388,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**구문:** obj << Local Data Filter
+**구문:** obj &lt;&lt; Local Data Filter
 
 **설명:** 데이터를 특정 그룹 또는 범위로 필터링합니다. 이 플랫폼에서만 사용 가능합니다.
 
@@ -444,7 +444,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**구문:** obj << Paste Local Data Filter
+**구문:** obj &lt;&lt; Paste Local Data Filter
 
 **설명:** 클립보드의 로컬 데이터 필터를 현재 보고서에 적용합니다.
 
@@ -463,7 +463,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**구문:** obj << Redo Analysis
+**구문:** obj &lt;&lt; Redo Analysis
 
 **설명:** 동일한 분석을 새 창에서 다시 실행합니다. 데이터가 변경된 경우에는 분석결과가 달라집니다.
 
@@ -478,7 +478,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**구문:** obj << Redo ByGroup Analysis
+**구문:** obj &lt;&lt; Redo ByGroup Analysis
 
 **설명:** 동일한 분석을 새 창에서 다시 실행합니다. 데이터가 변경된 경우에는 분석결과가 달라집니다.
 
@@ -498,7 +498,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**구문:** obj << Relaunch Analysis
+**구문:** obj &lt;&lt; Relaunch Analysis
 
 **설명:** 플랫폼 시작 창을 열고 보고서를 생성하는 데 사용된 설정을 불러옵니다.
 
@@ -513,7 +513,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**구문:** obj << Relaunch ByGroup
+**구문:** obj &lt;&lt; Relaunch ByGroup
 
 **설명:** 플랫폼 시작 창을 열고 보고서를 생성하는 데 사용된 설정을 불러옵니다.
 
@@ -533,7 +533,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**구문:** obj << Remove Column Switcher
+**구문:** obj &lt;&lt; Remove Column Switcher
 
 **설명:** 플랫폼에 추가된 가장 최근 열 전환기를 제거합니다.
 
@@ -550,7 +550,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**구문:** obj << Remove Local Data Filter
+**구문:** obj &lt;&lt; Remove Local Data Filter
 
 **설명:** 로컬 데이터 필터가 생성된 경우 로컬 데이터 필터를 제거하고 데이터 테이블의 모든 데이터를 직접 사용하도록 플랫폼을 복원합니다.
 
@@ -589,9 +589,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**구문:** obj << Report;
-
-Report( obj )
+**구문:** obj &lt;&lt; Report;Report( obj )
 
 **설명:** 보고서 개체에 대한 참조를 반환합니다.
 
@@ -608,7 +606,7 @@ Show( t );
 
 ### Report View
 
-**구문:** obj << Report View( "전체"|"요약" )
+**구문:** obj &lt;&lt; Report View( "전체"|"요약" )
 
 **설명:** 보고서 보기는 플랫폼 보고서에 표시되는 상세 수준을 결정합니다. Full은 모든 상세 정보를 표시하고 Summary는 플랫폼에 따라 선택된 콘텐츠만 표시합니다. 사용자 정의된 동작의 경우 표시 상자는 <<Set Summary Behavior 메시지를 지원합니다.
 
@@ -623,7 +621,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**구문:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**구문:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 데이터 테이블에 테이블 특성으로 저장합니다. 스크립트 이름을 지정할 수 있습니다. Append Suffix 옵션은 스크립트 이름에 숫자 접미사를 추가하여 이름이 같은 기존 스크립트와 구분합니다. Prompt 옵션은 사용자에게 스크립트 이름을 지정하라는 메시지를 표시합니다. Replace 옵션은 이름이 같은 기존 스크립트를 바꿉니다.
 
@@ -643,7 +641,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**구문:** obj << Save ByGroup Script to Journal
+**구문:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 이 스크립트가 포함된 저널에 버튼을 추가합니다.
 
@@ -663,7 +661,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**구문:** obj << Save ByGroup Script to Script Window
+**구문:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 현재 스크립트 텍스트 창에 추가합니다.
 
@@ -683,7 +681,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**구문:** obj << Save Script for All Objects
+**구문:** obj &lt;&lt; Save Script for All Objects
 
 **설명:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -698,7 +696,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**구문:** obj << Save Script for All Objects To Data Table( <name> )
+**구문:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **설명:** 모든 보고서 개체에 대한 스크립트를 현재 데이터 테이블에 저장합니다. 이 옵션은 창에 여러 보고서가 있을 때 유용합니다. 스크립트 이름을 따옴표로 묶어 지정하는 경우 외에는 첫 번째 플랫폼 이름을 따라 스크립트 이름이 지정됩니다.
 
@@ -736,7 +734,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**구문:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**구문:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 데이터 테이블에 테이블 특성으로 저장합니다.
 
@@ -751,7 +749,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**구문:** obj << Save Script to Journal
+**구문:** obj &lt;&lt; Save Script to Journal
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 이 스크립트가 포함된 저널에 버튼을 추가합니다.
 
@@ -766,7 +764,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**구문:** obj << Save Script to Report
+**구문:** obj &lt;&lt; Save Script to Report
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 보고서 자체에 표시합니다. 수행된 작업에 대한 인쇄된 기록을 유지하려는 경우에 유용합니다.
 
@@ -781,7 +779,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**구문:** obj << Save Script to Script Window
+**구문:** obj &lt;&lt; Save Script to Script Window
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 현재 스크립트 텍스트 창에 추가합니다.
 
@@ -857,7 +855,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**구문:** obj << Sync to Data Table Changes
+**구문:** obj &lt;&lt; Sync to Data Table Changes
 
 **설명:** 제외 항목 및 데이터 변경 사항과 동기화합니다.
 
@@ -874,7 +872,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**구문:** obj << Title( "new title" )
+**구문:** obj &lt;&lt; Title( "new title" )
 
 **설명:** 플랫폼의 제목을 설정합니다.
 
@@ -889,7 +887,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**구문:** obj << Top Report
+**구문:** obj &lt;&lt; Top Report
 
 **설명:** 보고서의 루트 노드에 대한 참조를 반환합니다.
 
@@ -906,7 +904,7 @@ Show( t );
 
 ### Transform Column
 
-**구문:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**구문:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **설명:** 개체의 로컬 컨텍스트(대개 플랫폼)에서 변환 열을 생성합니다. 변환 열은 플랫폼의 수명 동안에만 활성화됩니다.
 
@@ -927,7 +925,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**구문:** obj << View Web XML
+**구문:** obj &lt;&lt; View Web XML
 
 **설명:** 대화식 HTML 보고서를 생성하는 데 사용된 XML 코드를 반환합니다.
 
@@ -942,9 +940,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**구문:** obj = Survival(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Survival(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 보고서에 대해 생성할 창 유형을 설정합니다. 기본적으로 Visible 보고서 창이 생성됩니다. Invisible 창은 화면에 나타나지 않지만 Window()와 같은 함수로 검색할 수 있습니다. Private 창은 대부분의 창 메시지에 응답하지만 검색할 수 없으며 보고서 개체를 통해 처리해야 합니다.
 
@@ -965,7 +961,7 @@ New Window( "Bivariate Equation",
 
 ### Survival
 
-**구문:** Survival( Y( columns ), Censor( column ), <Grouping( column )> )
+**구문:** Survival( Y( columns ), Censor( column ), &lt;Grouping( column )&gt; )
 
 **설명:** 하나 이상의 그룹에 대해 승법 극한(Kaplan-Meier) 방법을 사용하여 생존 함수의 추정값을 계산합니다.
 
@@ -981,7 +977,7 @@ obj = dt << Survival( Y( :days ), Censor( :Censor ), Grouping( :Group ) );
 
 ### By
 
-**구문:** obj << By( column(s) )
+**구문:** obj &lt;&lt; By( column(s) )
 
 ```jsl
 
@@ -998,7 +994,7 @@ obj = dt << Survival( Y( :days ), Censor( :Censor ), Grouping( :Group ), By( _by
 
 ### Censor
 
-**구문:** obj << Censor( column )
+**구문:** obj &lt;&lt; Censor( column )
 
 ```jsl
 
@@ -1010,7 +1006,7 @@ obj = dt << Survival( Y( :days ), Censor( :Censor ), Grouping( :Group ) );
 
 ### Freq
 
-**구문:** obj << Freq( column )
+**구문:** obj &lt;&lt; Freq( column )
 
 ```jsl
 
@@ -1023,7 +1019,7 @@ obj = dt << Survival( Y( :days ), Censor( :Censor ), Grouping( :Group ), Freq( _
 
 ### Grouping
 
-**구문:** obj << Grouping( column )
+**구문:** obj &lt;&lt; Grouping( column )
 
 ```jsl
 
@@ -1035,7 +1031,7 @@ obj = dt << Survival( Y( :days ), Censor( :Censor ), Grouping( :Group ) );
 
 ### Time to Event
 
-**구문:** obj << Time to Event( column(s) )
+**구문:** obj &lt;&lt; Time to Event( column(s) )
 
 ```jsl
 
@@ -1047,7 +1043,7 @@ obj = dt << Survival( Y( :days ), Censor( :Censor ), Grouping( :Group ) );
 
 ### Y
 
-**구문:** obj << Y( column(s) )
+**구문:** obj &lt;&lt; Y( column(s) )
 
 ```jsl
 
@@ -1061,9 +1057,7 @@ obj = dt << Survival( Y( :days ), Censor( :Censor ), Grouping( :Group ) );
 
 ### Censor Code
 
-**구문:** obj = Survival(...Censor Code( value=1 )...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Survival(...Censor Code( value=1 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 오른쪽 중도절단된 관측값을 지정하는 중도절단 열의 값을 식별합니다. 기본값은 "1"입니다.
 
@@ -1077,7 +1071,7 @@ obj = dt << Survival( Y( :Time ), Censor( :Censor ), Censor Code( 0 ) );
 
 ### Competing Causes
 
-**구문:** obj << Competing Causes( column )
+**구문:** obj &lt;&lt; Competing Causes( column )
 
 **설명:** 고장 사건을 나타내는 지정된 원인과 중도절단된 관측값을 나타내는 기타 원인을 사용하여 Weibull 모형 추정을 수행합니다. 적합 분포는 생존 그림에 파선으로 나타납니다.
 
@@ -1092,7 +1086,7 @@ obj << Competing Causes( :Failure Cause );
 
 ### Connect Quantile Points
 
-**구문:** obj << Connect Quantile Points( state=0|1 )
+**구문:** obj &lt;&lt; Connect Quantile Points( state=0|1 )
 
 **설명:** 지수 그림, Weibull 그림 및 로그 정규 확률도에 선을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -1109,7 +1103,7 @@ obj << Connect Quantile Points( 0 );
 
 ### Estimate Survival Probability
 
-**구문:** obj << Estimate Survival Probability( [time1, time2, ...], Alpha( level ) )
+**구문:** obj &lt;&lt; Estimate Survival Probability( [time1, time2, ...], Alpha( level ) )
 
 **설명:** 적합 분포를 사용하여 지정된 시간 값에 대한 생존 확률 및 신뢰 구간을 추정합니다.
 
@@ -1125,7 +1119,7 @@ obj << Estimate Survival Probability( [100, 200, 300], Alpha( 0.001 ) );
 
 ### Estimate Time Quantile
 
-**구문:** obj << Estimate Time Quantile( [p1, p2, ...], Alpha( level ) )
+**구문:** obj &lt;&lt; Estimate Time Quantile( [p1, p2, ...], Alpha( level ) )
 
 **설명:** 적합 분포를 사용하여 지정된 각 생존 확률에 대한 시간 분위수 및 신뢰 구간을 추정합니다.
 
@@ -1141,7 +1135,7 @@ obj << Estimate Time Quantile( [0.5, 0.9, 0.95], Alpha( 0.01 ) );
 
 ### Exponential Fit
 
-**구문:** obj << Exponential Fit( state=0|1 )
+**구문:** obj &lt;&lt; Exponential Fit( state=0|1 )
 
 **설명:** 지수 모수 추정값 테이블을 표시하거나 숨깁니다. 이 옵션은 지수 그림에서 지수 누적 분포 함수에 대한 선형 적합도 추가합니다.
 
@@ -1158,7 +1152,7 @@ obj << Exponential Fit( 1 );
 
 ### Exponential Plot
 
-**구문:** obj << Exponential Plot( state=0|1 )
+**구문:** obj &lt;&lt; Exponential Plot( state=0|1 )
 
 **설명:** 각 그룹에 대한 누적 지수 고장 확률 대 시간을 보여 주는 지수 그림을 표시하거나 숨깁니다. 경험적으로 거의 선형에 가까운 선은 지수 모형을 추가 분석에 사용하는 것이 적절함을 나타냅니다.
 
@@ -1173,7 +1167,7 @@ obj << Exponential Plot( 1 );
 
 ### Failure Plot
 
-**구문:** obj << Failure Plot( state=0|1 )
+**구문:** obj &lt;&lt; Failure Plot( state=0|1 )
 
 **설명:** 각 그룹에 대한 중첩 고장 곡선(시간 경과에 따른 고장 비율)이 포함된 고장 그림을 표시하거나 숨깁니다. 고장 그림은 세로 축을 뒤집어 생존 수 대신 고장 수를 표시합니다. 이 옵션은 신뢰성 분석에 유용합니다.
 
@@ -1188,7 +1182,7 @@ obj << Failure Plot( 1 );
 
 ### Fitted Distribution Plots
 
-**구문:** obj << Fitted Distribution Plots( state=0|1 )
+**구문:** obj &lt;&lt; Fitted Distribution Plots( state=0|1 )
 
 **설명:** 각 적합 분포에 대한 그림 집합을 표시하거나 숨깁니다. 이 그림 집합에는 적합 생존 함수, 적합 밀도 함수 및 적합 위험 함수가 포함됩니다. 적합을 수행하지 않은 경우 그림이 나타나지 않습니다.
 
@@ -1204,7 +1198,7 @@ obj << Fitted Distribution Plots( 1 );
 
 ### Fitted Failure CI
 
-**구문:** obj << Fitted Failure CI( state=0|1 )
+**구문:** obj &lt;&lt; Fitted Failure CI( state=0|1 )
 
 **설명:** 고장 그림에 각 그룹에 대한 신뢰 구간을 표시하거나 숨깁니다. 각 적합 분포에 대해 구간 집합이 표시됩니다.
 
@@ -1220,7 +1214,7 @@ obj << Fitted Failure CI( 1 );
 
 ### Fitted Quantile
 
-**구문:** obj << Fitted Quantile( state=0|1 )
+**구문:** obj &lt;&lt; Fitted Quantile( state=0|1 )
 
 **설명:** 지수 그림, Weibull 그림 및 로그 정규 확률도에 각 그룹에 대한 직선 적합을 표시하거나 숨깁니다.
 
@@ -1238,7 +1232,7 @@ obj << Fitted Quantile( 0 );
 
 ### Fitted Quantile CI Lines
 
-**구문:** obj << Fitted Quantile CI Lines( state=0|1 )
+**구문:** obj &lt;&lt; Fitted Quantile CI Lines( state=0|1 )
 
 **설명:** 지수 그림, Weibull 그림 및 로그 정규 확률도에 각 그룹에 대한 95% 신뢰 대역을 표시하거나 숨깁니다.
 
@@ -1255,7 +1249,7 @@ obj << Fitted Quantile CI Lines( 1 );
 
 ### Fitted Quantile CI Shaded
 
-**구문:** obj << Fitted Quantile CI Shaded( state=0|1 )
+**구문:** obj &lt;&lt; Fitted Quantile CI Shaded( state=0|1 )
 
 **설명:** 지수 그림, Weibull 그림 및 로그 정규 확률도에 각 그룹에 대한 95% 신뢰 대역의 음영 영역을 표시하거나 숨깁니다.
 
@@ -1272,7 +1266,7 @@ obj << Fitted Quantile CI Shaded( 1 );
 
 ### Fitted Survival CI
 
-**구문:** obj << Fitted Survival CI( state=0|1 )
+**구문:** obj &lt;&lt; Fitted Survival CI( state=0|1 )
 
 **설명:** 생존 그림에 각 그룹에 대한 신뢰 구간을 표시하거나 숨깁니다. 각 적합 분포에 대해 구간 집합이 표시됩니다.
 
@@ -1288,7 +1282,7 @@ obj << Fitted Survival CI( 1 );
 
 ### LogNormal Fit
 
-**구문:** obj << LogNormal Fit( state=0|1 )
+**구문:** obj &lt;&lt; LogNormal Fit( state=0|1 )
 
 **설명:** 로그 정규 모수 추정값 테이블을 표시하거나 숨깁니다. 이 옵션은 로그 정규 확률도에서 로그 정규 누적 분포 함수에 대한 선형 적합도 추가합니다.
 
@@ -1305,7 +1299,7 @@ obj << LogNormal Fit( 1 );
 
 ### LogNormal Plot
 
-**구문:** obj << LogNormal Plot( state=0|1 )
+**구문:** obj &lt;&lt; LogNormal Plot( state=0|1 )
 
 **설명:** 각 그룹에 대한 누적 로그 정규 고장 확률 대 log(시간)를 보여 주는 로그 정규 확률도를 표시하거나 숨깁니다. 경험적으로 거의 선형에 가까운 선은 로그 정규 모형을 추가 분석에 사용하는 것이 적절함을 나타냅니다.
 
@@ -1320,7 +1314,7 @@ obj << LogNormal Plot( 1 );
 
 ### Midstep Quantile Points
 
-**구문:** obj << Midstep Quantile Points( state=0|1 )
+**구문:** obj &lt;&lt; Midstep Quantile Points( state=0|1 )
 
 **설명:** 지수 그림, Weibull 그림 및 로그 정규 확률도에 수정된 Kaplan-Meier 도표화 위치를 사용하도록 지정합니다. 이는 하단 위치가 아니라 Kaplan-Meier 곡선의 중간 단계 위치를 사용하는 것과 동일합니다. 기본적으로 설정되어 있습니다.
 
@@ -1337,9 +1331,7 @@ obj << Midstep Quantile Points( 0 );
 
 ### Plot Failure Instead of Survival
 
-**구문:** obj = Survival(...Plot Failure instead of Surivival( state=0|1 )...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Survival(...Plot Failure instead of Surivival( state=0|1 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 생존 확률 그림 대신 고장 확률 그림을 표시합니다.
 
@@ -1358,7 +1350,7 @@ obj = dt << Survival(
 
 ### Save Estimates
 
-**구문:** obj << Save Estimates
+**구문:** obj &lt;&lt; Save Estimates
 
 **설명:** 각 그룹에 대한 생존 추정값, 고장 추정값, 신뢰 구간 및 기타 분포 통계량이 포함된 새 데이터 테이블을 생성합니다.
 
@@ -1373,7 +1365,7 @@ obj << Save Estimates;
 
 ### Show Combined
 
-**구문:** obj << Show Combined( state=0|1 )
+**구문:** obj &lt;&lt; Show Combined( state=0|1 )
 
 **설명:** 생존 그림과 고장 그림에 결합된 Kaplan-Meier 생존 함수를 표시하거나 숨깁니다.
 
@@ -1390,7 +1382,7 @@ obj << Show Combined( 1 );
 
 ### Show Confid Interval
 
-**구문:** obj << Show Confid Interval( state=0|1 )
+**구문:** obj &lt;&lt; Show Confid Interval( state=0|1 )
 
 **설명:** 생존 그림과 고장 그림에 Kaplan-Meier 생존 함수에 대한 95% 점별 신뢰 대역을 표시하거나 숨깁니다. 또한 이 옵션은 &apos;결합 표시&apos; 옵션이 선택된 경우 결합 생존 함수에 대한 신뢰 대역도 표시합니다.
 
@@ -1409,7 +1401,7 @@ obj << Show Combined( 1 );
 
 ### Show Kaplan Meier
 
-**구문:** obj << Show Kaplan Meier( state=0|1 )
+**구문:** obj &lt;&lt; Show Kaplan Meier( state=0|1 )
 
 **설명:** 생존 그림 및 고장 그림에 각 그룹에 대한 Kaplan-Meier 생존 함수를 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -1425,7 +1417,7 @@ obj << Show Kaplan Meier( 1 );
 
 ### Show Points
 
-**구문:** obj << Show Points( state=0|1 )
+**구문:** obj &lt;&lt; Show Points( state=0|1 )
 
 **설명:** 생존 그림과 고장 그림에 점을 표시하거나 숨깁니다. 고장은 계단 맨 아래에 나타나고 중도절단된 관측값은 계단 위의 점으로 표시됩니다.
 
@@ -1442,7 +1434,7 @@ obj << Show Points( 1 );
 
 ### Show Shaded Pointwise CI
 
-**구문:** obj << Show Shaded Pointwise CI( state=0|1 )
+**구문:** obj &lt;&lt; Show Shaded Pointwise CI( state=0|1 )
 
 **설명:** 생존 그림과 고장 그림에 Kaplan-Meier 생존 함수에 대한 95% 점별 신뢰 대역의 음영 영역을 표시하거나 숨깁니다. 또한 이 옵션은 &apos;결합 표시&apos; 옵션이 선택된 경우 결합 생존 함수에 대한 음영 신뢰 영역도 표시합니다.
 
@@ -1457,7 +1449,7 @@ obj << Show Shaded Pointwise CI( 1 );
 
 ### Show Shaded Simultaneous CI
 
-**구문:** obj << Show Shaded Simultaneous CI( state=0|1 )
+**구문:** obj &lt;&lt; Show Shaded Simultaneous CI( state=0|1 )
 
 **설명:** 생존 그림과 고장 그림에 Kaplan-Meier 생존 함수에 대한 95% 동시 신뢰 대역의 음영 영역을 표시하거나 숨깁니다. 또한 이 옵션은 &apos;결합 표시&apos; 옵션이 선택된 경우 결합 생존 함수에 대한 신뢰 대역도 표시합니다.
 
@@ -1472,7 +1464,7 @@ obj << Show Shaded Simultaneous CI( 1 );
 
 ### Show Simultaneous CI
 
-**구문:** obj << Show Simultaneous CI( state=0|1 )
+**구문:** obj &lt;&lt; Show Simultaneous CI( state=0|1 )
 
 **설명:** 생존 그림과 고장 그림에 Kaplan-Meier 생존 함수에 대한 95% 동시 신뢰 대역을 표시하거나 숨깁니다. 또한 이 옵션은 &apos;결합 표시&apos; 옵션이 선택된 경우 결합 생존 함수에 대한 신뢰 대역도 표시합니다.
 
@@ -1487,7 +1479,7 @@ obj << Show Simultaneous CI( 1 );
 
 ### Survival Plot
 
-**구문:** obj << Survival Plot( state=0|1 )
+**구문:** obj &lt;&lt; Survival Plot( state=0|1 )
 
 **설명:** 각 그룹에 대한 중첩 생존 곡선이 포함된 생존 그림을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -1504,7 +1496,7 @@ obj << Survival Plot( 1 );
 
 ### Weibull Fit
 
-**구문:** obj << Weibull Fit( state=0|1 )
+**구문:** obj &lt;&lt; Weibull Fit( state=0|1 )
 
 **설명:** 극단값 모수 추정값 테이블과 Weibull 모수 추정값 테이블을 표시하거나 숨깁니다. 이 옵션은 Weibull 그림에서 Weibull 누적 분포 함수에 대한 선형 적합도 추가합니다.
 
@@ -1521,7 +1513,7 @@ obj << Weibull Fit( 1 );
 
 ### Weibull Plot
 
-**구문:** obj << Weibull Plot( state=0|1 )
+**구문:** obj &lt;&lt; Weibull Plot( state=0|1 )
 
 **설명:** 각 그룹에 대한 누적 Weibull 고장 확률 대 log(시간)를 보여 주는 Weibull 그림을 표시하거나 숨깁니다. 경험적으로 거의 선형에 가까운 선은 Weibull 모형을 추가 분석에 사용하는 것이 적절함을 나타냅니다.
 
@@ -1540,7 +1532,7 @@ obj << Weibull Plot( 1 );
 
 #### Hazard Plot
 
-**구문:** obj << Hazard Plot( state=0|1 )
+**구문:** obj &lt;&lt; Hazard Plot( state=0|1 )
 
 **설명:** 경쟁 원인 분석을 기반으로 데이터에 대한 위험 함수 그림을 표시하거나 숨깁니다.
 
@@ -1556,7 +1548,7 @@ obj << Hazard Plot( 1 );
 
 #### Omit Causes
 
-**구문:** obj << Omit Causes( cause1, <cause2>, ... )
+**구문:** obj &lt;&lt; Omit Causes( cause1, &lt;cause2&gt;, ... )
 
 **설명:** 분석에서 특정 원인 값을 제거할 수 있습니다. 생존 추정값이 자동으로 다시 계산됩니다. 이 옵션을 사용하면 특정 원인이 더 이상 위험하지 않은 대립가설을 설명할 수 있습니다.
 
@@ -1572,7 +1564,7 @@ obj << Omit Causes( "accident" );
 
 #### Save Cause Coordinates
 
-**구문:** obj << Save Cause Coordinates
+**구문:** obj &lt;&lt; Save Cause Coordinates
 
 **설명:** 새 열을 원래 데이터 테이블에 저장합니다. 새 열은 log(-log(생존율))로 계산됩니다. 대개 이 값은 고장 유형 코드와 같은 그룹화 변수의 값에 따른 시간 변수에 대해 표시됩니다.
 
@@ -1588,7 +1580,7 @@ obj << Save Cause Coordinates;
 
 #### Simulate
 
-**구문:** obj << Simulate( number )
+**구문:** obj &lt;&lt; Simulate( number )
 
 **설명:** 시뮬레이션된 시간과 원인 정보를 포함하는 새 데이터 테이블을 생성합니다. 적합된 Weibull 분포를 사용하여 새 데이터를 시뮬레이션합니다.
 
@@ -1604,7 +1596,7 @@ obj << Simulate( 1000 );
 
 #### Weibull Lines
 
-**구문:** obj << Weibull Lines( state=0|1 )
+**구문:** obj &lt;&lt; Weibull Lines( state=0|1 )
 
 **설명:** 생존 그림에 Weibull 선을 표시하거나 숨깁니다.
 

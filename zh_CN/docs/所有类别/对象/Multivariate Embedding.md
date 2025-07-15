@@ -6,7 +6,7 @@
 
 ### Action
 
-**语法:** obj << Action
+**语法:** obj &lt;&lt; Action
 
 **说明:** 平台内用于插入表达式以求值的所有用途的陷门。暂时将 DisplayBox 和 DataTable 上下文设置为平台。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**语法:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**语法:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **说明:** 将以前创建的预设应用到对象，从而更新选项和定制以匹配保存的设置。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**语法:** obj << Automatic Recalc( state=0|1 )
+**语法:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **说明:** 对排除和数据更改自动重新执行分析。若启用了“自动重新计算”选项，则应考虑使用 Wait(0) 命令来确保排除和数据更改在重新计算前生效。
 
@@ -89,7 +89,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**语法:** obj << Broadcast(message)
+**语法:** obj &lt;&lt; Broadcast(message)
 
 **说明:** 将消息广播到平台。若各个对象的返回结果是表，则它们会尽可能拼接，并且最终格式与表框中“保存合并表”选项的结果或使用“源”列的“拼接”选项的结果相同。除此之外，结果存储在列表中并返回。
 
@@ -109,7 +109,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**语法:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**语法:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **说明:** 添加用于更改平台变量的控制面板
 
@@ -127,7 +127,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**语法:** obj << Copy ByGroup Script
+**语法:** obj &lt;&lt; Copy ByGroup Script
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其置于剪贴板上。
 
@@ -150,7 +150,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**语法:** obj << Copy Script
+**语法:** obj &lt;&lt; Copy Script
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其置于剪贴板上。
 
@@ -167,7 +167,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**语法:** obj << Data Table Window
+**语法:** obj &lt;&lt; Data Table Window
 
 **说明:** 将该分析的数据表窗口移动到前面。
 
@@ -184,7 +184,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**语法:** obj << Get By Levels
+**语法:** obj &lt;&lt; Get By Levels
 
 **说明:** 返回将“依据”组列映射到其值的关联数组。
 
@@ -201,7 +201,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**语法:** obj << Get ByGroup Script
+**语法:** obj &lt;&lt; Get ByGroup Script
 
 **说明:** 创建生成该分析的脚本 (JSL)，并将其作为表达式返回。
 
@@ -225,7 +225,7 @@ Show( t );
 
 ### Get Container
 
-**语法:** obj << Get Container
+**语法:** obj &lt;&lt; Get Container
 
 **说明:** 返回对保留对象内容的容器框的引用。
 
@@ -274,7 +274,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**语法:** obj << Get Data Table
+**语法:** obj &lt;&lt; Get Data Table
 
 **说明:** 返回对该数据表的引用。
 
@@ -292,7 +292,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**语法:** obj << Get Group Platform
+**语法:** obj &lt;&lt; Get Group Platform
 
 **说明:** 若该平台是组的一部分，则返回组平台对象。否则返回 Empty()。
 
@@ -309,7 +309,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**语法:** obj << Get Script
+**语法:** obj &lt;&lt; Get Script
 
 **说明:** 创建生成该分析的脚本 (JSL)，并将其作为表达式返回。
 
@@ -327,7 +327,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**语法:** obj << Get Script With Data Table
+**语法:** obj &lt;&lt; Get Script With Data Table
 
 **说明:** 创建生成该分析的脚本 (JSL) 以专门引用该数据表，并将其作为表达式返回。
 
@@ -345,7 +345,7 @@ Show( t );
 
 ### Get Timing
 
-**语法:** obj << Get Timing
+**语法:** obj &lt;&lt; Get Timing
 
 **说明:** 平台启动过程计时。
 
@@ -363,7 +363,7 @@ Show( t );
 
 ### Get Web Support
 
-**语法:** obj << Get Web Support
+**语法:** obj &lt;&lt; Get Web Support
 
 **说明:** 返回一个数字，指示显示对象的交互式 HTML 支持的水平。1 表示支持部分或全部元素。0 表示不支持。
 
@@ -379,7 +379,7 @@ Show( s );
 
 ### Get Where Expr
 
-**语法:** obj << Get Where Expr
+**语法:** obj &lt;&lt; Get Where Expr
 
 **说明:** 若平台是使用 By() 或 Where() 启动的，则返回数据子集的 Where 表达式。否则返回 Empty()
 
@@ -416,7 +416,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**语法:** obj << Local Data Filter
+**语法:** obj &lt;&lt; Local Data Filter
 
 **说明:** 将数据过滤到特定的组或范围，但在该平台中是本地的
 
@@ -472,7 +472,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**语法:** obj << Paste Local Data Filter
+**语法:** obj &lt;&lt; Paste Local Data Filter
 
 **说明:** 将剪贴板中的本地数据过滤器应用于当前报表。
 
@@ -493,7 +493,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**语法:** obj << Redo Analysis
+**语法:** obj &lt;&lt; Redo Analysis
 
 **说明:** 在新窗口中重新运行相同的分析。若数据发生更改，分析也将不同。
 
@@ -510,7 +510,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**语法:** obj << Redo ByGroup Analysis
+**语法:** obj &lt;&lt; Redo ByGroup Analysis
 
 **说明:** 在新窗口中重新运行相同的分析。若数据发生更改，分析也将不同。
 
@@ -533,7 +533,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**语法:** obj << Relaunch Analysis
+**语法:** obj &lt;&lt; Relaunch Analysis
 
 **说明:** 打开平台启动窗口并重新调用曾用于创建报表的设置。
 
@@ -550,7 +550,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**语法:** obj << Relaunch ByGroup
+**语法:** obj &lt;&lt; Relaunch ByGroup
 
 **说明:** 打开平台启动窗口并重新调用曾用于创建报表的设置。
 
@@ -573,7 +573,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**语法:** obj << Remove Column Switcher
+**语法:** obj &lt;&lt; Remove Column Switcher
 
 **说明:** 删除已添加至平台的最近使用的“列切换器”。
 
@@ -593,7 +593,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**语法:** obj << Remove Local Data Filter
+**语法:** obj &lt;&lt; Remove Local Data Filter
 
 **说明:** 若已创建本地数据过滤器，这会将它删除并将平台恢复为直接使用数据表中的所有数据
 
@@ -632,9 +632,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**语法:** obj << Report;
-
-Report( obj )
+**语法:** obj &lt;&lt; Report;Report( obj )
 
 **说明:** 返回对该报表对象的引用。
 
@@ -653,7 +651,7 @@ Show( t );
 
 ### Report View
 
-**语法:** obj << Report View( "完全"|"汇总" )
+**语法:** obj &lt;&lt; Report View( "完全"|"汇总" )
 
 **说明:** 报表视图确定平台报表中可见的详细程度。Full 显示所有详细信息，而 Summary 仅显示根据平台确定的选定内容。对于定制行为，显示框支持 <<Set Summary Behavior 消息。
 
@@ -670,7 +668,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**语法:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**语法:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **说明:** 创建生成该分析的 JSL 脚本并将其保存为数据表中的表属性。您可以为脚本指定一个名称。Append Suffix 选项在脚本名称后追加一个数字后缀，用于将该脚本与现有的同名脚本区别出来。Prompt 选项提示用户指定脚本名称。Replace 选项会替换同名的现有脚本。
 
@@ -693,7 +691,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**语法:** obj << Save ByGroup Script to Journal
+**语法:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **说明:** 创建生成该分析的 JSL 脚本，并将一个按钮添加至包含该脚本的记录中。
 
@@ -716,7 +714,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**语法:** obj << Save ByGroup Script to Script Window
+**语法:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其追加至当前的脚本文本窗口中。
 
@@ -739,7 +737,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**语法:** obj << Save Script for All Objects
+**语法:** obj &lt;&lt; Save Script for All Objects
 
 **说明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -756,7 +754,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**语法:** obj << Save Script for All Objects To Data Table( <name> )
+**语法:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **说明:** 将所有报表对象的脚本保存至当前数据表。当您在该窗口中具有多个报表时，该选项很有用。除非您在引号中指定脚本名称，否则脚本将以第一个平台命名。
 
@@ -800,7 +798,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**语法:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**语法:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其作为表属性保存至数据表中。
 
@@ -817,7 +815,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**语法:** obj << Save Script to Journal
+**语法:** obj &lt;&lt; Save Script to Journal
 
 **说明:** 创建生成该分析的 JSL 脚本，并将一个按钮添加至包含该脚本的记录中。
 
@@ -834,7 +832,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**语法:** obj << Save Script to Report
+**语法:** obj &lt;&lt; Save Script to Report
 
 **说明:** 创建生成该分析的 JSL 脚本，并在报表中显示。有助于保留打印的已完成操作记录。
 
@@ -851,7 +849,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**语法:** obj << Save Script to Script Window
+**语法:** obj &lt;&lt; Save Script to Script Window
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其追加至当前的脚本文本窗口中。
 
@@ -933,7 +931,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**语法:** obj << Sync to Data Table Changes
+**语法:** obj &lt;&lt; Sync to Data Table Changes
 
 **说明:** 与已进行的排除和数据的更改同步。
 
@@ -950,7 +948,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**语法:** obj << Title( "new title" )
+**语法:** obj &lt;&lt; Title( "new title" )
 
 **说明:** 设置平台的标题。
 
@@ -967,7 +965,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**语法:** obj << Top Report
+**语法:** obj &lt;&lt; Top Report
 
 **说明:** 返回对报表中根节点的引用。
 
@@ -986,7 +984,7 @@ Show( t );
 
 ### Transform Column
 
-**语法:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**语法:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **说明:** 在对象（通常是平台）的本地上下文中创建变换列。变换列仅在平台的生命周期内是活动的。
 
@@ -1007,7 +1005,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**语法:** obj << View Web XML
+**语法:** obj &lt;&lt; View Web XML
 
 **说明:** 返回用于创建交互式 HTML 报表的 XML 代码。
 
@@ -1022,9 +1020,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**语法:** obj = Multivariate Embedding(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Multivariate Embedding(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 设置要为报表创建的窗口类型。默认情况下将创建 Visible 报表窗口。Invisible 窗口将不显示在屏幕上，但可被函数（例如 Window()）发现。Private 窗口会响应大多数窗口消息，但不可发现并且必须通过报表对象处理
 
@@ -1105,7 +1101,7 @@ obj = dt << Multivariate Embedding(
 
 ### By
 
-**语法:** obj << By( column(s) )
+**语法:** obj &lt;&lt; By( column(s) )
 
 ```jsl
 
@@ -1125,7 +1121,7 @@ obj = dt << Multivariate Embedding(
 
 ### Columns
 
-**语法:** obj << Columns( column(s) )
+**语法:** obj &lt;&lt; Columns( column(s) )
 
 ```jsl
 
@@ -1139,7 +1135,7 @@ obj = dt << Multivariate Embedding(
 
 ### Y
 
-**语法:** obj << Y( column(s) )
+**语法:** obj &lt;&lt; Y( column(s) )
 
 ```jsl
 
@@ -1155,9 +1151,7 @@ obj = dt << Multivariate Embedding(
 
 ### Batch Mode if N Greater Than
 
-**语法:** Batch Mode if N greater than( number = 4096 )
-
-<b>启动窗口项: 是</b>
+**语法:** Batch Mode if N greater than( number = 4096 )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定当样本大小大于指定数时使用多线程来优化嵌入坐标。 默认为“4096”。
 
@@ -1174,9 +1168,7 @@ obj = dt << Multivariate Embedding(
 
 ### Convergence Criterion
 
-**语法:** Convergence Criterion( number = 1e-8 )
-
-<b>启动窗口项: 是</b>
+**语法:** Convergence Criterion( number = 1e-8 )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 默认为“1e-8”。
 
@@ -1194,17 +1186,13 @@ obj = dt << Multivariate Embedding(
 
 ### Distance Metric
 
-**语法:** Distance Metric( "Euclidean" |  "Angular" | "Hamming" | "Manhattan")
-
-<b>启动窗口项: 是</b>
+**语法:** Distance Metric( "Euclidean" | "Angular" | "Hamming" | "Manhattan")&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定用于计算最近邻之间距离的量度。距离量度的选项为“欧氏”（默认值）、“角”、“Hamming”和“Manhattan”。该选项仅在 ANNOY 指定为“最近邻方法”时适用。
 
 ### Eta
 
-**语法:** Eta( number = 200 )
-
-<b>启动窗口项: 是</b>
+**语法:** Eta( number = 200 )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定学习率。 默认为“200”。
 
@@ -1222,17 +1210,13 @@ obj = dt << Multivariate Embedding(
 
 ### Gradient Descent Method
 
-**语法:** Gradient Descent Method( "SGD" |  "ADAM")
-
-<b>启动窗口项: 是</b>
+**语法:** Gradient Descent Method( "SGD" | "ADAM")&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定用于优化嵌入布局的梯度下降方法。您可以在随机梯度下降 (SGD) 或自适应矩估计 (ADAM) 之间进行选择。默认方法是 SGD。ADAM 选项仅在批处理模式下可用。
 
 ### Inflate Iterations
 
-**语法:** Inflate Iterations( number = 250 )
-
-<b>启动窗口项: 是</b>
+**语法:** Inflate Iterations( number = 250 )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定在此之后困惑度不再扩大的迭代。 默认为“250”。
 
@@ -1250,9 +1234,7 @@ obj = dt << Multivariate Embedding(
 
 ### Initial Principal Component Dimensions
 
-**语法:** Initial Principal Component Dimensions( number = 50 )
-
-<b>启动窗口项: 是</b>
+**语法:** Initial Principal Component Dimensions( number = 50 )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定应保留在初始 PCA 步骤中的维数。 默认为“50”。
 
@@ -1270,9 +1252,7 @@ obj = dt << Multivariate Embedding(
 
 ### Initial Scale
 
-**语法:** Initial Scale( number = 0.0001 )
-
-<b>启动窗口项: 是</b>
+**语法:** Initial Scale( number = 0.0001 )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定用于所导出成分的初始尺度。 默认为“.0001”。
 
@@ -1290,9 +1270,7 @@ obj = dt << Multivariate Embedding(
 
 ### Learning Rate
 
-**语法:** Learning Rate( number = 1.0 )
-
-<b>启动窗口项: 是</b>
+**语法:** Learning Rate( number = 1.0 )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定计算中学习率的值，它影响模型适应问题有多快。 默认为“1.0”。
 
@@ -1309,9 +1287,7 @@ obj = dt << Multivariate Embedding(
 
 ### Local Connectivity
 
-**语法:** Local Connectivity( number = 1 )
-
-<b>启动窗口项: 是</b>
+**语法:** Local Connectivity( number = 1 )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定假定在局部级别连通的最近邻数。默认值是 1，它假定高维空间中的每个点至少有一个与它相连的其他近邻。 默认为“1”。
 
@@ -1328,9 +1304,7 @@ obj = dt << Multivariate Embedding(
 
 ### Maximum Iterations
 
-**语法:** Maximum Iterations( number = 1000 )
-
-<b>启动窗口项: 是</b>
+**语法:** Maximum Iterations( number = 1000 )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定计算嵌入成分时使用的最大迭代次数。 默认为“1000”。
 
@@ -1348,9 +1322,7 @@ obj = dt << Multivariate Embedding(
 
 ### Method
 
-**语法:** Method( "t-SNE" | "UMAP" )
-
-<b>启动窗口项: 是</b>
+**语法:** Method( "t-SNE" | "UMAP" )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定降维方法。
 
@@ -1382,9 +1354,7 @@ obj = dt << Multivariate Embedding(
 
 ### Minimum Distance
 
-**语法:** Minimum Distance( number = 0.01 )
-
-<b>启动窗口项: 是</b>
+**语法:** Minimum Distance( number = 0.01 )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定低维空间中点之间的最小标准化距离。 默认为“0.01”。
 
@@ -1401,9 +1371,7 @@ obj = dt << Multivariate Embedding(
 
 ### Missing Value Imputation
 
-**语法:** Missing Value Imputation( state =0|1 )
-
-<b>启动窗口项: 是</b>
+**语法:** Missing Value Imputation( state =0|1 )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定数据中使用多元奇异值分解 (SVD) 方法插补的缺失值。 默认开启。
 
@@ -1420,9 +1388,7 @@ obj = dt << Multivariate Embedding(
 
 ### Nearest Neighbor Method
 
-**语法:** Nearest Neighbor Method( "Default" | "VPTree (Exact)" |  "ANNOY (Approximate)")
-
-<b>启动窗口项: 是</b>
+**语法:** Nearest Neighbor Method( "Default" | "VPTree (Exact)" | "ANNOY (Approximate)")&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定用于查找最近邻的方法。您可以在优点树 (VPTree) 或近似最近邻方法 (ANNOY) 之间进行选择。默认选项根据样本大小和变量数选择最近邻方法。
 
@@ -1456,9 +1422,7 @@ obj = dt << Multivariate Embedding(
 
 ### Negative Sample Rate
 
-**语法:** Negative Sample Rate( number = 5 )
-
-<b>启动窗口项: 是</b>
+**语法:** Negative Sample Rate( number = 5 )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定在查找数据的低维表示时每个正 1 单纯形样本要使用的负 1 单纯形样本数。“负抽样率”值的范围为 2 至 20。 默认为“5”。
 
@@ -1475,9 +1439,7 @@ obj = dt << Multivariate Embedding(
 
 ### Number of Epochs
 
-**语法:** Number of Epochs( number = 500 )
-
-<b>启动窗口项: 是</b>
+**语法:** Number of Epochs( number = 500 )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定优化低维表示时要使用的训练时期数。这是算法处理完整训练数据的次数。 默认为“500”。
 
@@ -1494,9 +1456,7 @@ obj = dt << Multivariate Embedding(
 
 ### Number of Neighbors
 
-**语法:** Number of Neighbors( number = 15 )
-
-<b>启动窗口项: 是</b>
+**语法:** Number of Neighbors( number = 15 )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定为每个数据点找到的近邻数。指定的近邻数越小，UMAP 算法越着重于数据局部结构。随着近邻数增加，UMAP 算法会捕获更多的数据全局结构。 默认为“15”。
 
@@ -1514,9 +1474,7 @@ obj = dt << Multivariate Embedding(
 
 ### Output Dimensions
 
-**语法:** Output Dimensions( number = 2 )
-
-<b>启动窗口项: 是</b>
+**语法:** Output Dimensions( number = 2 )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定所选方法导出的成分数。该数值必须 >=2。 默认为“2”。
 
@@ -1533,9 +1491,7 @@ obj = dt << Multivariate Embedding(
 
 ### Perplexity
 
-**语法:** Perplexity( number = 30 )
-
-<b>启动窗口项: 是</b>
+**语法:** Perplexity( number = 30 )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定困惑度参数的值，该值与计算样本的相似性有关。困惑度参数的值应介于 5 和 50 之间，并且不应大于样本大小的八分之一。默认值是 30 或样本大小八分之一中的较小值。 默认为“30”。
 
@@ -1553,9 +1509,7 @@ obj = dt << Multivariate Embedding(
 
 ### Random Seed
 
-**语法:** Random Seed( number = 1234 )
-
-<b>启动窗口项: 是</b>
+**语法:** Random Seed( number = 1234 )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定用于获取可再现结果的随机种子数。 默认为“123”。
 
@@ -1573,7 +1527,7 @@ obj = dt << Multivariate Embedding(
 
 ### Save Embedding Component Values
 
-**语法:** obj << Save Embedding Component Values
+**语法:** obj &lt;&lt; Save Embedding Component Values
 
 **说明:** 将派生的嵌入成分另存为数据表中的新列。
 
@@ -1591,7 +1545,7 @@ obj << Save Embedding Component Values;
 
 ### Save PQ Matrices
 
-**语法:** obj << Save PQ Matrices
+**语法:** obj &lt;&lt; Save PQ Matrices
 
 **说明:** 显示 P 和 Q 矩阵，它们可参考 van der Maaten (2008)。该选项仅在未选择 t-SNE 的稀疏模式时有效。
 
@@ -1611,9 +1565,7 @@ obj << Save PQ Matrices;
 
 ### Sparse
 
-**语法:** Sparse( state =0|1 )
-
-<b>启动窗口项: 是</b>
+**语法:** Sparse( state =0|1 )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定是否使用稀疏模式。稀疏模式允许计算高维数据集。 默认开启。
 
@@ -1631,9 +1583,7 @@ obj = dt << Multivariate Embedding(
 
 ### Standardize
 
-**语法:** Standardize( state =0|1 )
-
-<b>启动窗口项: 是</b>
+**语法:** Standardize( state =0|1 )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定在距离计算之前数据是否经过内部标准化。 默认开启。
 
@@ -1651,9 +1601,7 @@ obj = dt << Multivariate Embedding(
 
 ### a
 
-**语法:** a( number = 0 )
-
-<b>启动窗口项: 是</b>
+**语法:** a( number = 0 )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定控制嵌入优化的参数之一。若该值指定为 0 或负数，则算法中通过非线性最小二乘法过程计算 a。 默认为“0”。
 
@@ -1670,9 +1618,7 @@ obj = dt << Multivariate Embedding(
 
 ### b
 
-**语法:** b( number = 0 )
-
-<b>启动窗口项: 是</b>
+**语法:** b( number = 0 )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定控制嵌入优化的参数之一。若该值指定为 0 或负数，则算法中通过非线性最小二乘法过程计算 b。 默认为“0”。
 

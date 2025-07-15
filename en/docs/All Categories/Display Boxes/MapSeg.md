@@ -6,7 +6,7 @@
 
 ### Child
 
-**Syntax:** seg2 = obj << Child
+**Syntax:** seg2 = obj &lt;&lt; Child
 
 **Description:** Returns the first child of the display seg.
 
@@ -30,7 +30,7 @@ seg << Child; // not many segs support children
 
 ### Class Name
 
-**Syntax:** classname = obj << Class Name
+**Syntax:** classname = obj &lt;&lt; Class Name
 
 **Description:** Returns the name of the display class for the display seg.
 
@@ -54,7 +54,7 @@ seg << Class Name;
 
 ### Clip Shape
 
-**Syntax:** seg << Clip Shape(Boundaries(Shape File, [ID(string)]) | Path([string] | [matrix]) | Empty())
+**Syntax:** seg &lt;&lt; Clip Shape(Boundaries(Shape File, [ID(string)]) | Path([string] | [matrix]) | Empty())
 
 **Description:** Clips the geometry by the given shape. The shape can be specified using a shape file or a path. An optional ID can be specified with a shape file to select a single shape from the file, otherwise the union of all shapes is used as the clipping region. A clipping path can be specified with an N x 3 matrix or with a text representation. A path matrix has three columns for x, y, and flags for each point in the path. The flag values are 0 for control, 1 for move, 2 for line segment, 3 for cubic Bézier segment, and are negative if the point also closes the path. Path text supports SVG syntax.
 
@@ -82,7 +82,7 @@ cs << Clip Shape( Boundaries( "US States" ) );
 
 ### Delete
 
-**Syntax:** obj << Delete
+**Syntax:** obj &lt;&lt; Delete
 
 **Description:** Delete the display seg.
 
@@ -106,7 +106,7 @@ seg << Delete;
 
 ### Frame
 
-**Syntax:** FrameBox = obj << Frame
+**Syntax:** FrameBox = obj &lt;&lt; Frame
 
 **Description:** Returns the frame box that the display seg is in.
 
@@ -130,7 +130,7 @@ seg << Frame;
 
 ### Get Clip Shape
 
-**Syntax:** obj << Get Clip Shape
+**Syntax:** obj &lt;&lt; Get Clip Shape
 
 **Description:** Returns the current clipping shape
 
@@ -159,7 +159,7 @@ cs << Get Clip Shape();
 
 ### Get Description
 
-**Syntax:** description = obj << Get Description
+**Syntax:** description = obj &lt;&lt; Get Description
 
 **Description:** Gets the description for the display seg.
 
@@ -183,7 +183,7 @@ seg << get description();
 
 ### Parent
 
-**Syntax:** seg2 = obj << Parent
+**Syntax:** seg2 = obj &lt;&lt; Parent
 
 **Description:** Returns the parent of the display seg.
 
@@ -207,7 +207,7 @@ seg << Parent;
 
 ### Set Description
 
-**Syntax:** obj << Set Description( description )
+**Syntax:** obj &lt;&lt; Set Description( description )
 
 **Description:** Sets the description for the display seg.
 
@@ -231,7 +231,7 @@ seg << set description( "my seg" );
 
 ### Sib
 
-**Syntax:** seg2 = obj << Sib
+**Syntax:** seg2 = obj &lt;&lt; Sib
 
 **Description:** Returns the sibling of the display seg.
 
@@ -255,7 +255,7 @@ seg << Sib;
 
 ### Sib Append
 
-**Syntax:** obj << Sib Append( seg2 )
+**Syntax:** obj &lt;&lt; Sib Append( seg2 )
 
 **Description:** Adds a display seg immediately after the display seg.
 
@@ -293,7 +293,7 @@ mapSeg << Sib Append( Line Seg( xval, yval, <<line color( "Green" ), <<line widt
 
 ### Sib Prepend
 
-**Syntax:** obj << Sib Prepend( seg2 )
+**Syntax:** obj &lt;&lt; Sib Prepend( seg2 )
 
 **Description:** Adds a display seg immediately before the display seg.
 
@@ -330,7 +330,7 @@ seg << Sib Prepend( Line Seg( xval, yval, <<line color( "Green" ), <<line width(
 
 ### Transparency
 
-**Syntax:** obj << Transparency( transparency )
+**Syntax:** obj &lt;&lt; Transparency( transparency )
 
 **Description:** Sets the transparency for the map where 0.0 is completely transparent and 1.0 is completely opaque.
 
@@ -355,9 +355,7 @@ mapSeg << Transparency( 0.5 );
 
 ### Enabled
 
-**Syntax:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**Syntax:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Description:** An object that is not enabled will not respond to keyboard or mouse input. This property is inherited by child objects, so a container object that is disabled will cause all descendent objects to be disabled.
 
@@ -389,9 +387,7 @@ New Window( "enabled",
 
 ### Get Enabled
 
-**Syntax:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**Syntax:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Description:** An object that is not enabled will not respond to keyboard or mouse input. This property is inherited by child objects, so a container object that is disabled will cause all descendent objects to be disabled.
 
@@ -423,7 +419,7 @@ New Window( "enabled",
 
 ### Get Namespace
 
-**Syntax:** obj << Get Namespace
+**Syntax:** obj &lt;&lt; Get Namespace
 
 **Description:** Returns the namespace associated with this display object.
 
@@ -441,7 +437,7 @@ Show( ns:x, x );
 
 ### Get Properties
 
-**Syntax:** obj << Get Properties
+**Syntax:** obj &lt;&lt; Get Properties
 
 **Description:** Returns an associative array that contains the display box&apos;s properties and their values.
 
@@ -455,7 +451,7 @@ bb << Get Properties;
 
 ### Get Property
 
-**Syntax:** obj << Get Property( "property" )
+**Syntax:** obj &lt;&lt; Get Property( "property" )
 
 **Description:** Returns the current setting for the named property.
 
@@ -469,7 +465,7 @@ bb << Get Property( "Enabled" );
 
 ### Get Property List
 
-**Syntax:** obj << Get Property List
+**Syntax:** obj &lt;&lt; Get Property List
 
 **Description:** Returns a list of properties the display box has.
 
@@ -483,7 +479,7 @@ bb << Get Property List;
 
 ### Set Property
 
-**Syntax:** obj << Set Property( "property", value )
+**Syntax:** obj &lt;&lt; Set Property( "property", value )
 
 **Description:** Sets the value for the named property for the display box.
 

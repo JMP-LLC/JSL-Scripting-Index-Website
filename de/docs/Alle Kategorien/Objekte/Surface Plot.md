@@ -6,9 +6,7 @@
 
 ### Clip Sheet
 
-**Syntax:** obj << Clip Sheet( state=0|1 ); 
-
-obj << Clip Sheet1( state=0|1 )
+**Syntax:** obj &lt;&lt; Clip Sheet( state=0|1 ); obj &lt;&lt; Clip Sheet1( state=0|1 )
 
 **Beschreibung:** Begrenzt die Fläche auf die Bereiche der Spalten, die in der Formelspalte der ersten Zielgröße verwendet werden.
 
@@ -30,9 +28,7 @@ obj << Clip Sheet( 1 );
 
 ### Clip Sheet1
 
-**Syntax:** obj << Clip Sheet( state=0|1 ); 
-
-obj << Clip Sheet1( state=0|1 )
+**Syntax:** obj &lt;&lt; Clip Sheet( state=0|1 ); obj &lt;&lt; Clip Sheet1( state=0|1 )
 
 **Beschreibung:** Begrenzt die Fläche auf die Bereiche der Spalten, die in der Formelspalte der ersten Zielgröße verwendet werden.
 
@@ -54,7 +50,7 @@ obj << Clip Sheet( 1 );
 
 ### Clip Sheet2
 
-**Syntax:** obj << Clip Sheet2( state=0|1 )
+**Syntax:** obj &lt;&lt; Clip Sheet2( state=0|1 )
 
 **Beschreibung:** Begrenzt die Fläche auf die Bereiche der Spalten, die in der Formelspalte der zweiten Zielgröße verwendet werden.
 
@@ -77,7 +73,7 @@ obj << Clip Sheet2( 1 );
 
 ### Clip Sheet3
 
-**Syntax:** obj << Clip Sheet3( state=0|1 )
+**Syntax:** obj &lt;&lt; Clip Sheet3( state=0|1 )
 
 **Beschreibung:** Begrenzt die Fläche auf die Bereiche der Spalten, die in der Formelspalte der dritten Zielgröße verwendet werden.
 
@@ -100,7 +96,7 @@ obj << Clip Sheet3( 1 );
 
 ### Clip Sheet4
 
-**Syntax:** obj << Clip Sheet4( state=0|1 )
+**Syntax:** obj &lt;&lt; Clip Sheet4( state=0|1 )
 
 **Beschreibung:** Begrenzt die Fläche auf die Bereiche der Spalten, die in der Formelspalte der vierten Zielgröße verwendet werden.
 
@@ -126,9 +122,7 @@ obj << Clip Sheet4( 1 );
 
 ### Contour Color
 
-**Syntax:** obj << Contour Color( color ); 
-
-obj << Contour Color1( color )
+**Syntax:** obj &lt;&lt; Contour Color( color ); obj &lt;&lt; Contour Color1( color )
 
 **Beschreibung:** Gibt die Farbe der Kontur auf der Fläche für die erste Zielgröße an.
 
@@ -145,9 +139,7 @@ obj << Contour Color( {255, 128, 0} );
 
 ### Contour Color1
 
-**Syntax:** obj << Contour Color( color ); 
-
-obj << Contour Color1( color )
+**Syntax:** obj &lt;&lt; Contour Color( color ); obj &lt;&lt; Contour Color1( color )
 
 **Beschreibung:** Gibt die Farbe der Kontur auf der Fläche für die erste Zielgröße an.
 
@@ -164,7 +156,7 @@ obj << Contour Color( {255, 128, 0} );
 
 ### Contour Color2
 
-**Syntax:** obj << Contour Color2( color )
+**Syntax:** obj &lt;&lt; Contour Color2( color )
 
 **Beschreibung:** Gibt die Farbe der Kontur auf der Fläche für die zweite Zielgröße an.
 
@@ -184,7 +176,7 @@ obj << Contour Color2( {255, 128, 0} );
 
 ### Contour Color3
 
-**Syntax:** obj << Contour Color3( color )
+**Syntax:** obj &lt;&lt; Contour Color3( color )
 
 **Beschreibung:** Gibt die Farbe der Kontur auf der Fläche für die dritte Zielgröße an.
 
@@ -204,7 +196,7 @@ obj << Contour Color3( {255, 0, 0} );
 
 ### Contour Color4
 
-**Syntax:** obj << Contour Color4( color )
+**Syntax:** obj &lt;&lt; Contour Color4( color )
 
 **Beschreibung:** Gibt die Farbe der Kontur auf der Fläche für die vierte Zielgröße an.
 
@@ -228,7 +220,7 @@ obj << Contour Color4( {100, 0, 200} );
 
 ### Control Panel
 
-**Syntax:** obj << Control Panel( state=0|1 )
+**Syntax:** obj &lt;&lt; Control Panel( state=0|1 )
 
 **Beschreibung:** Blendet das Bedienfeld ein oder aus, das die Bedienelemente für das Erscheinungsbild, die unabhängigen und die abhängigen Variablen enthält. Standardmäßig ein.
 
@@ -249,9 +241,7 @@ obj << Control Panel( 0 );
 
 ### Data points Color
 
-**Syntax:** obj << Data Points Color( color ); 
-
-obj << Data Points Color1( color )
+**Syntax:** obj &lt;&lt; Data Points Color( color ); obj &lt;&lt; Data Points Color1( color )
 
 **Beschreibung:** Ändert die Farbe der Datenpunkte für die erste abhängige Variable, die auf der Fläche gezeichnet wird.
 
@@ -268,9 +258,7 @@ obj << Data Points Color( {0, 0, 255} );
 
 ### Data points Color1
 
-**Syntax:** obj << Data Points Color( color ); 
-
-obj << Data Points Color1( color )
+**Syntax:** obj &lt;&lt; Data Points Color( color ); obj &lt;&lt; Data Points Color1( color )
 
 **Beschreibung:** Ändert die Farbe der Datenpunkte für die erste abhängige Variable, die auf der Fläche gezeichnet wird.
 
@@ -287,7 +275,7 @@ obj << Data Points Color( {0, 0, 255} );
 
 ### Data points Color2
 
-**Syntax:** obj << Data points Color2( color )
+**Syntax:** obj &lt;&lt; Data points Color2( color )
 
 **Beschreibung:** Ändert die Farbe der Datenpunkte für die zweite abhängige Variable, die auf der Fläche gezeichnet wird.
 
@@ -304,7 +292,7 @@ obj << Data Points Color2( {0, 0, 255} );
 
 ### Data points Color3
 
-**Syntax:** obj << Data points Color3( color )
+**Syntax:** obj &lt;&lt; Data points Color3( color )
 
 **Beschreibung:** Ändert die Farbe der Datenpunkte für die dritte abhängige Variable, die auf der Fläche gezeichnet wird.
 
@@ -323,7 +311,7 @@ obj << Data Points Color3( {255, 0, 0} );
 
 ### Data points Color4
 
-**Syntax:** obj << Data points Color4( color )
+**Syntax:** obj &lt;&lt; Data points Color4( color )
 
 **Beschreibung:** Ändert die Farbe der Datenpunkte für die vierte abhängige Variable, die auf der Fläche gezeichnet wird.
 
@@ -349,9 +337,7 @@ obj << Frame3D( Set Rotation( -79.3688859847019, -1.23001727812475, 27.709687956
 
 ### Datapoints Choice
 
-**Syntax:** obj << Datapoints Choice( "Off"|"Points"|"Needles"|"Mesh"|"Surface" ); 
-
-obj << Datapoints Choice1( "Off"|"Points"|"Needles"|"Mesh"|"Surface" )
+**Syntax:** obj &lt;&lt; Datapoints Choice( "Off"|"Points"|"Needles"|"Mesh"|"Surface" ); obj &lt;&lt; Datapoints Choice1( "Off"|"Points"|"Needles"|"Mesh"|"Surface" )
 
 **Beschreibung:** Gibt an, wie Punkte auf der Fläche für die erste Zielgröße angezeigt werden. Der Standardstil ist die Option „Punkte“.
 
@@ -372,9 +358,7 @@ obj << Datapoints Choice( "Needles" );
 
 ### Datapoints Choice1
 
-**Syntax:** obj << Datapoints Choice( "Off"|"Points"|"Needles"|"Mesh"|"Surface" ); 
-
-obj << Datapoints Choice1( "Off"|"Points"|"Needles"|"Mesh"|"Surface" )
+**Syntax:** obj &lt;&lt; Datapoints Choice( "Off"|"Points"|"Needles"|"Mesh"|"Surface" ); obj &lt;&lt; Datapoints Choice1( "Off"|"Points"|"Needles"|"Mesh"|"Surface" )
 
 **Beschreibung:** Gibt an, wie Punkte auf der Fläche für die erste Zielgröße angezeigt werden. Der Standardstil ist die Option „Punkte“.
 
@@ -395,7 +379,7 @@ obj << Datapoints Choice( "Needles" );
 
 ### Datapoints Choice2
 
-**Syntax:** obj << Datapoints Choice2( "Aus"|"Punkte"|"Stäbe"|"Netz"|"Oberfläche" )
+**Syntax:** obj &lt;&lt; Datapoints Choice2( "Aus"|"Punkte"|"Stäbe"|"Netz"|"Oberfläche" )
 
 **Beschreibung:** Gibt an, wie Punkte auf der Fläche für die zweite Zielgröße angezeigt werden. Der Standardstil ist die Option „Punkte“.
 
@@ -417,7 +401,7 @@ obj << Datapoints Choice2( "Off" );
 
 ### Datapoints Choice3
 
-**Syntax:** obj << Datapoints Choice3( "Aus"|"Punkte"|"Stäbe"|"Netz"|"Oberfläche" )
+**Syntax:** obj &lt;&lt; Datapoints Choice3( "Aus"|"Punkte"|"Stäbe"|"Netz"|"Oberfläche" )
 
 **Beschreibung:** Gibt an, wie Punkte auf der Fläche für die dritte Zielgröße angezeigt werden. Der Standardstil ist die Option „Punkte“.
 
@@ -438,7 +422,7 @@ obj << Datapoints Choice3( "Mesh" );
 
 ### Datapoints Choice4
 
-**Syntax:** obj << Datapoints Choice4( "Aus"|"Punkte"|"Stäbe"|"Netz"|"Oberfläche" )
+**Syntax:** obj &lt;&lt; Datapoints Choice4( "Aus"|"Punkte"|"Stäbe"|"Netz"|"Oberfläche" )
 
 **Beschreibung:** Gibt an, wie Punkte auf der Fläche für die vierte Zielgröße angezeigt werden. Der Standardstil ist die Option „Punkte“.
 
@@ -462,7 +446,7 @@ obj << Datapoints Choice4( "Surface" );
 
 ### Dependent Variables Points
 
-**Syntax:** obj << Dependent Variables Points( state=0|1 )
+**Syntax:** obj &lt;&lt; Dependent Variables Points( state=0|1 )
 
 **Beschreibung:** Blendet die Optionen für Punkte in den Bedienelementen für abhängige Variablen ein oder aus. Standardmäßig ein.
 
@@ -483,7 +467,7 @@ obj << Dependent Variables Points( 0 );
 
 ### Dependent Variables Response Grid
 
-**Syntax:** obj << Dependent Variables Response Grid( state=0|1 )
+**Syntax:** obj &lt;&lt; Dependent Variables Response Grid( state=0|1 )
 
 **Beschreibung:** Blendet die Rasteroptionen in den Bedienelementen für abhängige Variablen ein oder aus. Standardmäßig ein.
 
@@ -504,7 +488,7 @@ obj << Dependent Variables Response Grid( 0 );
 
 ### Equation
 
-**Syntax:** obj << Equation( equation1, <equation2>, <equation3>, <equation4>  )
+**Syntax:** obj &lt;&lt; Equation( equation1, &lt;equation2&gt;, &lt;equation3&gt;, &lt;equation4&gt; )
 
 **Beschreibung:** Weist den Blättern in einer bestimmten Reihenfolge im Abschnitt „Abhängige Variablen“ Gleichungen zu. Um eine Zielgröße zu überspringen, geben Sie einen fehlenden Wert mit einem Punkt an.
 
@@ -523,7 +507,7 @@ obj << Show Formula( 1 );
 
 ### Fit to Window
 
-**Syntax:** obj << Fit to Window( "Automatisch"|"Ein"|"Aus" )
+**Syntax:** obj &lt;&lt; Fit to Window( "Automatisch"|"Ein"|"Aus" )
 
 **Beschreibung:** Legt das Verhalten für die automatische Streckung des Berichts fest.
 
@@ -544,7 +528,7 @@ obj << Fit to Window( "Off" );
 
 ### Formula
 
-**Syntax:** obj << Formula( column, <column>, <column>, <column>  )
+**Syntax:** obj &lt;&lt; Formula( column, &lt;column&gt;, &lt;column&gt;, &lt;column&gt; )
 
 **Beschreibung:** Weist im Abschnitt der abhängigen Variablen den Flächen in einer angegebenen Reihenfolge Formeln aus Spalten zu.
 
@@ -563,7 +547,7 @@ obj << Formula( :Pred Formula ABRASION, :Pred Formula ELONG );
 
 ### Frame3D
 
-**Syntax:** obj << Frame3D( Scatterplot 3D options )
+**Syntax:** obj &lt;&lt; Frame3D( Scatterplot 3D options )
 
 **Beschreibung:** Ändert die Anzeigeoptionen auf der Fläche. Diese Option verwendet Meldungen von der Plattform „3D-Streudiagramm“. Eine vollständige Beschreibung finden Sie unter „3D-Streudiagramm“.
 
@@ -585,7 +569,7 @@ obj << Frame3D(
 
 ### Hide Lights Border
 
-**Syntax:** obj << Hide Lights Border( state=0|1 )
+**Syntax:** obj &lt;&lt; Hide Lights Border( state=0|1 )
 
 **Beschreibung:** Blendet die Bedienelemente für die Beleuchtung ein oder aus.
 
@@ -600,7 +584,7 @@ obj << Hide Lights Border( 1 );
 
 ### Iso Value
 
-**Syntax:** obj << Iso Value( id, value )
+**Syntax:** obj &lt;&lt; Iso Value( id, value )
 
 **Beschreibung:** Ändert den Wert des Isoflächenschiebereglers für eine bestimmte abhängige Variable. Das Argument id identifiziert die abhängige Variable mit einem nullbasierten Index.
 
@@ -618,7 +602,7 @@ obj << Iso Value( 1, 1500 );
 
 ### Lock Z Scale
 
-**Syntax:** obj << Lock Z Scale( state=0|1 )
+**Syntax:** obj &lt;&lt; Lock Z Scale( state=0|1 )
 
 **Beschreibung:** Sperrt die Z-Achse auf ihre aktuellen Werte.
 
@@ -632,9 +616,7 @@ obj << Lock Z Scale( 1 );
 
 ### Mesh Color
 
-**Syntax:** obj << Mesh Color( color ); 
-
-obj << Mesh Color1( color )
+**Syntax:** obj &lt;&lt; Mesh Color( color ); obj &lt;&lt; Mesh Color1( color )
 
 **Beschreibung:** Gibt die Farbe des Flächennetzes für die erste abhängige Variable an. Diese Option ist nur verfügbar, wenn für die Option „Netz“ ein anderer Wert als „Aus“ gewählt wurde.
 
@@ -651,9 +633,7 @@ obj << Mesh Color( {0, 0, 255} );
 
 ### Mesh Color1
 
-**Syntax:** obj << Mesh Color( color ); 
-
-obj << Mesh Color1( color )
+**Syntax:** obj &lt;&lt; Mesh Color( color ); obj &lt;&lt; Mesh Color1( color )
 
 **Beschreibung:** Gibt die Farbe des Flächennetzes für die erste abhängige Variable an. Diese Option ist nur verfügbar, wenn für die Option „Netz“ ein anderer Wert als „Aus“ gewählt wurde.
 
@@ -670,7 +650,7 @@ obj << Mesh Color( {0, 0, 255} );
 
 ### Mesh Color2
 
-**Syntax:** obj << Mesh Color2( color )
+**Syntax:** obj &lt;&lt; Mesh Color2( color )
 
 **Beschreibung:** Gibt die Farbe des Flächennetzes für die zweite abhängige Variable an. Diese Option ist nur verfügbar, wenn für die Option „Netz“ ein anderer Wert als „Aus“ gewählt wurde.
 
@@ -688,7 +668,7 @@ obj << Mesh Color2( {255, 0, 0} );
 
 ### Mesh Color3
 
-**Syntax:** obj << Mesh Color3( color )
+**Syntax:** obj &lt;&lt; Mesh Color3( color )
 
 **Beschreibung:** Gibt die Farbe des Flächennetzes für die dritte abhängige Variable an. Diese Option ist nur verfügbar, wenn für die Option „Netz“ ein anderer Wert als „Aus“ gewählt wurde.
 
@@ -708,7 +688,7 @@ obj << Mesh Color3( {50, 0, 100} );
 
 ### Mesh Color4
 
-**Syntax:** obj << Mesh Color4( color )
+**Syntax:** obj &lt;&lt; Mesh Color4( color )
 
 **Beschreibung:** Gibt die Farbe des Flächennetzes für die vierte abhängige Variable an. Diese Option ist nur verfügbar, wenn für die Option „Netz“ ein anderer Wert als „Aus“ gewählt wurde.
 
@@ -731,7 +711,7 @@ obj << Mesh Color4( {0, 250, 0} );
 
 ### Mode
 
-**Syntax:** obj << Mode( "Blatt, Punkte"|"Isofläche"|"Dichtegitter" )
+**Syntax:** obj &lt;&lt; Mode( "Blatt, Punkte"|"Isofläche"|"Dichtegitter" )
 
 **Beschreibung:** Gibt an, wie Flächen im Diagramm angezeigt werden. Die Option „Blätter, Punkte“ zeigt Blätter, Punkte und Linien auf der Fläche an. Die Option „Isofläche“ verwendet eine Formel mit drei unabhängigen Variablen.
 
@@ -753,11 +733,7 @@ obj << Mode( "Isosurface" );
 
 ### Resolution
 
-**Syntax:** obj << Resolution( number )
-
-obj << X Resolution( number )
-
-obj << Y Resolution( number )
+**Syntax:** obj &lt;&lt; Resolution( number )obj &lt;&lt; X Resolution( number )obj &lt;&lt; Y Resolution( number )
 
 **Beschreibung:** Ändert die Auflösung, die verwendet wird, um das Wirkungsflächendiagramm zu zeichnen.
 
@@ -776,7 +752,7 @@ obj << Resolution( 12 );
 
 ### Response
 
-**Syntax:** obj << Response( column, <column>, <column>, <column>  )
+**Syntax:** obj &lt;&lt; Response( column, &lt;column&gt;, &lt;column&gt;, &lt;column&gt; )
 
 **Beschreibung:** Identifiziert bis zu vier Zielgrößenspalten zum Zeichnen von überlagerten Punkten. Um eine Zielgröße zu überspringen, geben Sie eine beliebige Zeichenkette in Anführungszeichen als Platzhalter ein.
 
@@ -794,9 +770,7 @@ obj << Response( :Pred Formula ABRASION, "", :Pred Formula ELONG );
 
 ### Response Column Color Theme
 
-**Syntax:** obj << Response Column Color Theme( color theme ); 
-
-obj << Response Column Color Theme1( color theme )
+**Syntax:** obj &lt;&lt; Response Column Color Theme( color theme ); obj &lt;&lt; Response Column Color Theme1( color theme )
 
 **Beschreibung:** Ändert das Farbschema der Fläche für die erste Zielgröße. Diese Option ist nur für Zielgrößenspalten verfügbar, die einen stetigen Verlauf verwenden.
 
@@ -818,9 +792,7 @@ obj << Response Column Color Theme( "Jet" );
 
 ### Response Column Color Theme1
 
-**Syntax:** obj << Response Column Color Theme( color theme ); 
-
-obj << Response Column Color Theme1( color theme )
+**Syntax:** obj &lt;&lt; Response Column Color Theme( color theme ); obj &lt;&lt; Response Column Color Theme1( color theme )
 
 **Beschreibung:** Ändert das Farbschema der Fläche für die erste Zielgröße. Diese Option ist nur für Zielgrößenspalten verfügbar, die einen stetigen Verlauf verwenden.
 
@@ -842,7 +814,7 @@ obj << Response Column Color Theme( "Jet" );
 
 ### Response Column Color Theme2
 
-**Syntax:** obj << Response Column Color Theme2( color theme )
+**Syntax:** obj &lt;&lt; Response Column Color Theme2( color theme )
 
 **Beschreibung:** Ändert das Farbschema der Fläche für die zweite Zielgröße. Diese Option ist nur für Zielgrößenspalten verfügbar, die einen stetigen Verlauf verwenden.
 
@@ -864,7 +836,7 @@ obj << Response Column Color Theme2( "White to Black" );
 
 ### Response Column Color Theme3
 
-**Syntax:** obj << Response Column Color Theme3( color theme )
+**Syntax:** obj &lt;&lt; Response Column Color Theme3( color theme )
 
 **Beschreibung:** Ändert das Farbschema der Fläche für die dritte Zielgröße Diese Option ist nur für Zielgrößenspalten verfügbar, die einen stetigen Verlauf verwenden.
 
@@ -886,7 +858,7 @@ obj << Response Column Color Theme3( "Blue to Gray to Red" );
 
 ### Response Column Color Theme4
 
-**Syntax:** obj << Response Column Color Theme4( color theme )
+**Syntax:** obj &lt;&lt; Response Column Color Theme4( color theme )
 
 **Beschreibung:** Ändert das Farbschema der Fläche für die vierte Zielgröße. Diese Option ist nur für Zielgrößenspalten verfügbar, die einen stetigen Verlauf verwenden.
 
@@ -914,9 +886,7 @@ obj << Response Column Color Theme4( "White to Red" );
 
 ### Response Column Fill
 
-**Syntax:** obj << Response Column Fill( "Solid"|"Continuous Gradients"|"Discrete Gradients" ); 
-
-obj << Response Column Fill1( "Solid"|"Continuous Gradients"|"Discrete Gradients" )
+**Syntax:** obj &lt;&lt; Response Column Fill( "Solid"|"Continuous Gradients"|"Discrete Gradients" ); obj &lt;&lt; Response Column Fill1( "Solid"|"Continuous Gradients"|"Discrete Gradients" )
 
 **Beschreibung:** Gibt an, ob die erste Fläche einfarbig, mit stetigen oder diskreten Verläufen gefärbt wird. Diese Option ist nur verfügbar, wenn die Fläche mit einer abhängigen Zielgrößenspalte erstellt wird.
 
@@ -937,9 +907,7 @@ obj << Response Column Fill( "Discrete Gradients" );
 
 ### Response Column Fill1
 
-**Syntax:** obj << Response Column Fill( "Solid"|"Continuous Gradients"|"Discrete Gradients" ); 
-
-obj << Response Column Fill1( "Solid"|"Continuous Gradients"|"Discrete Gradients" )
+**Syntax:** obj &lt;&lt; Response Column Fill( "Solid"|"Continuous Gradients"|"Discrete Gradients" ); obj &lt;&lt; Response Column Fill1( "Solid"|"Continuous Gradients"|"Discrete Gradients" )
 
 **Beschreibung:** Gibt an, ob die erste Fläche einfarbig, mit stetigen oder diskreten Verläufen gefärbt wird. Diese Option ist nur verfügbar, wenn die Fläche mit einer abhängigen Zielgrößenspalte erstellt wird.
 
@@ -960,7 +928,7 @@ obj << Response Column Fill( "Discrete Gradients" );
 
 ### Response Column Fill2
 
-**Syntax:** obj << Response Column Fill2( "Gefüllt"|"Stetiger Verlauf"|"Diskreter Verlauf" )
+**Syntax:** obj &lt;&lt; Response Column Fill2( "Gefüllt"|"Stetiger Verlauf"|"Diskreter Verlauf" )
 
 **Beschreibung:** Gibt an, ob die zweite Fläche einfarbig, mit stetigen oder diskreten Verläufen gefärbt wird. Diese Option ist nur verfügbar, wenn die Fläche mit einer abhängigen Zielgrößenspalte erstellt wird.
 
@@ -981,7 +949,7 @@ obj << Response Column Fill2( "Continuous Gradients" );
 
 ### Response Column Fill3
 
-**Syntax:** obj << Response Column Fill3( "Gefüllt"|"Stetiger Verlauf"|"Diskreter Verlauf" )
+**Syntax:** obj &lt;&lt; Response Column Fill3( "Gefüllt"|"Stetiger Verlauf"|"Diskreter Verlauf" )
 
 **Beschreibung:** Gibt an, ob die dritte Fläche einfarbig, mit stetigen oder diskreten Verläufen gefärbt wird. Diese Option ist nur verfügbar, wenn die Fläche mit einer abhängigen Zielgrößenspalte erstellt wird.
 
@@ -1002,7 +970,7 @@ obj << Response Column Fill3( "Discrete Gradients" );
 
 ### Response Column Fill4
 
-**Syntax:** obj << Response Column Fill4( "Gefüllt"|"Stetiger Verlauf"|"Diskreter Verlauf" )
+**Syntax:** obj &lt;&lt; Response Column Fill4( "Gefüllt"|"Stetiger Verlauf"|"Diskreter Verlauf" )
 
 **Beschreibung:** Gibt an, ob die vierte Fläche einfarbig, mit stetigen oder diskreten Verläufen gefärbt wird. Diese Option ist nur verfügbar, wenn die Fläche mit einer abhängigen Zielgrößenspalte erstellt wird.
 
@@ -1029,9 +997,7 @@ obj << Response Column Fill4( "Continuous Gradients" );
 
 ### Response Column Gradient Lines
 
-**Syntax:** obj << Response Column Gradient Lines( state=0|1 ); 
-
-obj << Response Column Gradient Lines1( state=0|1 )
+**Syntax:** obj &lt;&lt; Response Column Gradient Lines( state=0|1 ); obj &lt;&lt; Response Column Gradient Lines1( state=0|1 )
 
 **Beschreibung:** Zeigt oder verbirgt Linien zwischen den Verlaufsstufen auf der Fläche für die erste Zielgröße. Diese Option ist nur verfügbar, wenn die Fläche mit diskreten Verläufen mit einer abhängigen Zielgrößenspalte erzeugt wird. Standardmäßig ein.
 
@@ -1053,9 +1019,7 @@ obj << Response Column Gradient Lines( 0 );
 
 ### Response Column Gradient Lines1
 
-**Syntax:** obj << Response Column Gradient Lines( state=0|1 ); 
-
-obj << Response Column Gradient Lines1( state=0|1 )
+**Syntax:** obj &lt;&lt; Response Column Gradient Lines( state=0|1 ); obj &lt;&lt; Response Column Gradient Lines1( state=0|1 )
 
 **Beschreibung:** Zeigt oder verbirgt Linien zwischen den Verlaufsstufen auf der Fläche für die erste Zielgröße. Diese Option ist nur verfügbar, wenn die Fläche mit diskreten Verläufen mit einer abhängigen Zielgrößenspalte erzeugt wird. Standardmäßig ein.
 
@@ -1077,7 +1041,7 @@ obj << Response Column Gradient Lines( 0 );
 
 ### Response Column Gradient Lines2
 
-**Syntax:** obj << Response Column Gradient Lines2( state=0|1 )
+**Syntax:** obj &lt;&lt; Response Column Gradient Lines2( state=0|1 )
 
 **Beschreibung:** Zeigt oder verbirgt Linien zwischen den Verlaufsstufen auf der Fläche für die zweite Zielgröße. Diese Option ist nur verfügbar, wenn die Fläche mit diskreten Verläufen mit einer abhängigen Zielgrößenspalte erzeugt wird. Standardmäßig ein.
 
@@ -1099,7 +1063,7 @@ obj << Response Column Gradient Lines2( 0 );
 
 ### Response Column Gradient Lines3
 
-**Syntax:** obj << Response Column Gradient Lines3( state=0|1 )
+**Syntax:** obj &lt;&lt; Response Column Gradient Lines3( state=0|1 )
 
 **Beschreibung:** Zeigt oder verbirgt Linien zwischen den Verlaufsstufen auf der Fläche für die dritte Zielgröße. Diese Option ist nur verfügbar, wenn die Fläche mit diskreten Verläufen mit einer abhängigen Zielgrößenspalte erzeugt wird. Standardmäßig ein.
 
@@ -1122,7 +1086,7 @@ obj << Response Column Gradient Lines3( 1 );
 
 ### Response Column Gradient Lines4
 
-**Syntax:** obj << Response Column Gradient Lines4( state=0|1 )
+**Syntax:** obj &lt;&lt; Response Column Gradient Lines4( state=0|1 )
 
 **Beschreibung:** Zeigt oder verbirgt Linien zwischen den Verlaufsstufen auf der Fläche für die vierte Zielgröße. Diese Option ist nur verfügbar, wenn die Fläche mit diskreten Verläufen mit einer abhängigen Zielgrößenspalte erzeugt wird. Standardmäßig ein.
 
@@ -1151,9 +1115,7 @@ obj << Response Column Gradient Lines4( 1 );
 
 ### Response Column Gradients
 
-**Syntax:** obj << Response Column Gradients( number ); 
-
-obj << Response Column Gradients1( number )
+**Syntax:** obj &lt;&lt; Response Column Gradients( number ); obj &lt;&lt; Response Column Gradients1( number )
 
 **Beschreibung:** Gibt die Anzahl der Verläufe auf der Fläche für die erste Zielgröße an. Diese Option ist nur verfügbar, wenn die Fläche mit diskreten Verläufen mit einer abhängigen Zielgrößenspalte erzeugt wird.
 
@@ -1175,9 +1137,7 @@ obj << Response Column Gradients( 9 );
 
 ### Response Column Gradients1
 
-**Syntax:** obj << Response Column Gradients( number ); 
-
-obj << Response Column Gradients1( number )
+**Syntax:** obj &lt;&lt; Response Column Gradients( number ); obj &lt;&lt; Response Column Gradients1( number )
 
 **Beschreibung:** Gibt die Anzahl der Verläufe auf der Fläche für die erste Zielgröße an. Diese Option ist nur verfügbar, wenn die Fläche mit diskreten Verläufen mit einer abhängigen Zielgrößenspalte erzeugt wird.
 
@@ -1199,7 +1159,7 @@ obj << Response Column Gradients( 9 );
 
 ### Response Column Gradients2
 
-**Syntax:** obj << Response Column Gradients2( number )
+**Syntax:** obj &lt;&lt; Response Column Gradients2( number )
 
 **Beschreibung:** Gibt die Anzahl der Verläufe auf der Fläche für die zweite Zielgröße an. Diese Option ist nur verfügbar, wenn die Fläche mit diskreten Verläufen mit einer abhängigen Zielgrößenspalte erzeugt wird.
 
@@ -1221,7 +1181,7 @@ obj << Response Column Gradients2( 8 );
 
 ### Response Column Gradients3
 
-**Syntax:** obj << Response Column Gradients3( number )
+**Syntax:** obj &lt;&lt; Response Column Gradients3( number )
 
 **Beschreibung:** Gibt die Anzahl der Verläufe auf der Fläche für die dritte Zielgröße an. Diese Option ist nur verfügbar, wenn die Fläche mit diskreten Verläufen mit einer abhängigen Zielgrößenspalte erzeugt wird.
 
@@ -1243,7 +1203,7 @@ obj << Response Column Gradients3( 7 );
 
 ### Response Column Gradients4
 
-**Syntax:** obj << Response Column Gradients4( number )
+**Syntax:** obj &lt;&lt; Response Column Gradients4( number )
 
 **Beschreibung:** Gibt die Anzahl der Verläufe auf der Fläche für die vierte Zielgröße an. Diese Option ist nur verfügbar, wenn die Fläche mit diskreten Verläufen mit einer abhängigen Zielgrößenspalte erzeugt wird.
 
@@ -1271,11 +1231,7 @@ obj << Response Column Gradients4( 10 );
 
 ### Scale response axes independently
 
-**Syntax:** obj = Surface Plot(...Scale response axes indenpendently( state=0|1 )...); 
-
-obj << Scale response axes independently( state=0|1 )
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Surface Plot(...Scale response axes indenpendently( state=0|1 )...); obj &lt;&lt; Scale response axes independently( state=0|1 )&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Gibt an, ob es für jede Zielgröße eine eigene Skala gibt oder ob die Achsenskala für alle Zielgrößen mit der Skala für die erste im Startfenster eingegebene Zielgröße übereinstimmt.
 
@@ -1298,7 +1254,7 @@ obj << Scale response axes independently( 0 );
 
 ### Set Z Variable
 
-**Syntax:** obj << Set Z Variable( column )
+**Syntax:** obj &lt;&lt; Set Z Variable( column )
 
 **Beschreibung:** Legt die angegebene Spalte als Z-Variable im Wirkungsflächendiagramm fest. Diese Option ist nur bei Isoflächen verfügbar.
 
@@ -1318,7 +1274,7 @@ obj << Set Z Variable( :SILANE );
 
 ### SetVariableAxis
 
-**Syntax:** obj << SetVariableAxis( column, <Current Value( number )>, <Axis Data( axis options )> )
+**Syntax:** obj &lt;&lt; SetVariableAxis( column, &lt;Current Value( number )&gt;, &lt;Axis Data( axis options )&gt; )
 
 **Beschreibung:** Gibt Attribute für die angegebene Achse der unabhängigen Variablen an.
 
@@ -1336,7 +1292,7 @@ obj << Set Variable Axis( :SILANE, Axis Data( {Format( "Fixed", 8, 1 )} ) );
 
 ### SetXVariable
 
-**Syntax:** obj << SetXVariable( column )
+**Syntax:** obj &lt;&lt; SetXVariable( column )
 
 **Beschreibung:** Legt die angegebene Spalte als X-Variable im Wirkungsflächendiagramm fest.
 
@@ -1352,7 +1308,7 @@ obj << Set X Variable( :SULFUR );
 
 ### SetYVariable
 
-**Syntax:** obj << SetYVariable( column )
+**Syntax:** obj &lt;&lt; SetYVariable( column )
 
 **Beschreibung:** Legt die angegebene Spalte als Y-Variable im Wirkungsflächendiagramm fest.
 
@@ -1368,7 +1324,7 @@ obj << Set Y Variable( :SULFUR );
 
 ### SetZAxis
 
-**Syntax:** obj << SetZAxis( column, Current Value( number ), <Axis Data( axis options )> )
+**Syntax:** obj &lt;&lt; SetZAxis( column, Current Value( number ), &lt;Axis Data( axis options )&gt; )
 
 **Beschreibung:** Gibt Attribute für Z-Achse an.
 
@@ -1384,9 +1340,7 @@ obj << Set Z Axis( :Pred Formula ABRASION, Axis Data( {Format( "Fixed", 8, 1 )} 
 
 ### Show Contour
 
-**Syntax:** obj << Show Contour( "Off"|"Below"|"Above"|"On Surface" ); 
-
-obj << Show Contour1( "Off"|"Below|Above"|"On Surface" )
+**Syntax:** obj &lt;&lt; Show Contour( "Off"|"Below"|"Above"|"On Surface" ); obj &lt;&lt; Show Contour1( "Off"|"Below|Above"|"On Surface" )
 
 **Beschreibung:** Gibt die Platzierung der Konturlinien im Diagramm in Bezug auf die Fläche für die erste Zielgröße an.
 
@@ -1407,9 +1361,7 @@ obj << Show Contour( "On Surface" );
 
 ### Show Contour1
 
-**Syntax:** obj << Show Contour( "Off"|"Below"|"Above"|"On Surface" ); 
-
-obj << Show Contour1( "Off"|"Below|Above"|"On Surface" )
+**Syntax:** obj &lt;&lt; Show Contour( "Off"|"Below"|"Above"|"On Surface" ); obj &lt;&lt; Show Contour1( "Off"|"Below|Above"|"On Surface" )
 
 **Beschreibung:** Gibt die Platzierung der Konturlinien im Diagramm in Bezug auf die Fläche für die erste Zielgröße an.
 
@@ -1430,7 +1382,7 @@ obj << Show Contour( "On Surface" );
 
 ### Show Contour2
 
-**Syntax:** obj << Show Contour2( "Aus"|"Darunter"|"Darüber"|"Auf Oberfläche" )
+**Syntax:** obj &lt;&lt; Show Contour2( "Aus"|"Darunter"|"Darüber"|"Auf Oberfläche" )
 
 **Beschreibung:** Gibt die Platzierung der Konturlinien im Diagramm in Bezug auf die Fläche für die zweite Zielgröße an.
 
@@ -1451,7 +1403,7 @@ obj << Show Contour2( "Above" );
 
 ### Show Contour3
 
-**Syntax:** obj << Show Contour3( "Aus"|"Darunter"|"Darüber"|"Auf Oberfläche" )
+**Syntax:** obj &lt;&lt; Show Contour3( "Aus"|"Darunter"|"Darüber"|"Auf Oberfläche" )
 
 **Beschreibung:** Gibt die Platzierung der Konturlinien im Diagramm in Bezug auf die Fläche für die dritte Zielgröße an.
 
@@ -1473,7 +1425,7 @@ obj << Show Contour3( "Below" );
 
 ### Show Contour4
 
-**Syntax:** obj << Show Contour4( "Aus"|"Darunter"|"Darüber"|"Auf Oberfläche" )
+**Syntax:** obj &lt;&lt; Show Contour4( "Aus"|"Darunter"|"Darüber"|"Auf Oberfläche" )
 
 **Beschreibung:** Gibt die Platzierung der Konturlinien im Diagramm in Bezug auf die Fläche für die vierte Zielgröße an.
 
@@ -1495,9 +1447,7 @@ obj << Show Contour4( "On Surface" );
 
 ### Show Mesh
 
-**Syntax:** obj << Show Mesh( "Off"|"X"|"Y"|"X and Y" ); 
-
-obj << Show Mesh1( "Off"|"X"|"Y"|"X and Y" )
+**Syntax:** obj &lt;&lt; Show Mesh( "Off"|"X"|"Y"|"X and Y" ); obj &lt;&lt; Show Mesh1( "Off"|"X"|"Y"|"X and Y" )
 
 **Beschreibung:** Gibt den Stil des Flächennetzes für die erste Zielgröße an.
 
@@ -1517,9 +1467,7 @@ obj << Show Mesh( "X and Y" );
 
 ### Show Mesh1
 
-**Syntax:** obj << Show Mesh( "Off"|"X"|"Y"|"X and Y" ); 
-
-obj << Show Mesh1( "Off"|"X"|"Y"|"X and Y" )
+**Syntax:** obj &lt;&lt; Show Mesh( "Off"|"X"|"Y"|"X and Y" ); obj &lt;&lt; Show Mesh1( "Off"|"X"|"Y"|"X and Y" )
 
 **Beschreibung:** Gibt den Stil des Flächennetzes für die erste Zielgröße an.
 
@@ -1539,7 +1487,7 @@ obj << Show Mesh( "X and Y" );
 
 ### Show Mesh2
 
-**Syntax:** obj << Show Mesh2( "Aus"|"X und Y"|"X"|"Y" )
+**Syntax:** obj &lt;&lt; Show Mesh2( "Aus"|"X und Y"|"X"|"Y" )
 
 **Beschreibung:** Gibt den Stil des Flächennetzes für die zweite Zielgröße an.
 
@@ -1559,7 +1507,7 @@ obj << Show Mesh2( "X" );
 
 ### Show Mesh3
 
-**Syntax:** obj << Show Mesh3( "Aus"|"X und Y"|"X"|"Y" )
+**Syntax:** obj &lt;&lt; Show Mesh3( "Aus"|"X und Y"|"X"|"Y" )
 
 **Beschreibung:** Gibt den Stil des Flächennetzes für die dritte Zielgröße an.
 
@@ -1579,7 +1527,7 @@ obj << Show Mesh3( "Y" );
 
 ### Show Mesh4
 
-**Syntax:** obj << Show Mesh4( "Aus"|"X und Y"|"X"|"Y" )
+**Syntax:** obj &lt;&lt; Show Mesh4( "Aus"|"X und Y"|"X"|"Y" )
 
 **Beschreibung:** Gibt den Stil des Flächennetzes für die vierte Zielgröße an.
 
@@ -1599,9 +1547,7 @@ obj << Show Mesh4( "X and Y" );
 
 ### Show Surface
 
-**Syntax:** obj << Show Surface( "Off"|"Both sides"|"Above only"|"Below only" ); 
-
-obj << Show Surface1( "Off"|"Both sides"|"Above only"|"Below only" )
+**Syntax:** obj &lt;&lt; Show Surface( "Off"|"Both sides"|"Above only"|"Below only" ); obj &lt;&lt; Show Surface1( "Off"|"Both sides"|"Above only"|"Below only" )
 
 **Beschreibung:** Gibt an, wie die Fläche für die erste Zielgröße dargestellt wird. Diese Option ist nur verfügbar, wenn die Zielgröße durch eine Formelspalte erzeugt wird.
 
@@ -1622,9 +1568,7 @@ obj << Show Surface( "Below Only" );
 
 ### Show Surface1
 
-**Syntax:** obj << Show Surface( "Off"|"Both sides"|"Above only"|"Below only" ); 
-
-obj << Show Surface1( "Off"|"Both sides"|"Above only"|"Below only" )
+**Syntax:** obj &lt;&lt; Show Surface( "Off"|"Both sides"|"Above only"|"Below only" ); obj &lt;&lt; Show Surface1( "Off"|"Both sides"|"Above only"|"Below only" )
 
 **Beschreibung:** Gibt an, wie die Fläche für die erste Zielgröße dargestellt wird. Diese Option ist nur verfügbar, wenn die Zielgröße durch eine Formelspalte erzeugt wird.
 
@@ -1645,7 +1589,7 @@ obj << Show Surface( "Below Only" );
 
 ### Show Surface2
 
-**Syntax:** obj << Show Surface2( "Aus"|"Beide Seiten"|"Nur darüber"|"Nur darunter" )
+**Syntax:** obj &lt;&lt; Show Surface2( "Aus"|"Beide Seiten"|"Nur darüber"|"Nur darunter" )
 
 **Beschreibung:** Gibt an, wie die Fläche für die zweite Zielgröße dargestellt wird. Diese Option ist verfügbar, wenn die Zielgröße durch eine Formelspalte erzeugt wird.
 
@@ -1666,7 +1610,7 @@ obj << Show Surface2( "Both Sides" );
 
 ### Show Surface3
 
-**Syntax:** obj << Show Surface3( "Aus"|"Beide Seiten"|"Nur darüber"|"Nur darunter" )
+**Syntax:** obj &lt;&lt; Show Surface3( "Aus"|"Beide Seiten"|"Nur darüber"|"Nur darunter" )
 
 **Beschreibung:** Gibt an, wie die Fläche für die dritte Zielgröße dargestellt wird. Diese Option ist nur verfügbar, wenn die Zielgröße durch eine Formelspalte erzeugt wird.
 
@@ -1687,7 +1631,7 @@ obj << Show Surface3( "Above Only" );
 
 ### Show Surface4
 
-**Syntax:** obj << Show Surface4( "Aus"|"Beide Seiten"|"Nur darüber"|"Nur darunter" )
+**Syntax:** obj &lt;&lt; Show Surface4( "Aus"|"Beide Seiten"|"Nur darüber"|"Nur darunter" )
 
 **Beschreibung:** Gibt an, wie die Fläche für die vierte Zielgröße dargestellt wird. Diese Option ist nur verfügbar, wenn die Zielgröße durch eine Formelspalte erzeugt wird.
 
@@ -1708,7 +1652,7 @@ obj << Show Surface4( "Both Sides" );
 
 ### Show formula
 
-**Syntax:** obj << Show formula( state=0|1 )
+**Syntax:** obj &lt;&lt; Show formula( state=0|1 )
 
 **Beschreibung:** Zeigt oder verbirgt die Formel für alle abhängigen Variablen, die derzeit im Wirkungsflächendiagramm erscheinen.
 
@@ -1722,9 +1666,7 @@ obj << Show Formula( 1 );
 
 ### Surface Alpha
 
-**Syntax:** obj << Surface Alpha( number ); 
-
-obj << Surface Alpha1( number )
+**Syntax:** obj &lt;&lt; Surface Alpha( number ); obj &lt;&lt; Surface Alpha1( number )
 
 **Beschreibung:** Gibt die Undurchsichtigkeit der Isofläche für die erste Zielgrößenvariable an.
 
@@ -1746,9 +1688,7 @@ obj << Surface Alpha( 0.25 );
 
 ### Surface Alpha1
 
-**Syntax:** obj << Surface Alpha( number ); 
-
-obj << Surface Alpha1( number )
+**Syntax:** obj &lt;&lt; Surface Alpha( number ); obj &lt;&lt; Surface Alpha1( number )
 
 **Beschreibung:** Gibt die Undurchsichtigkeit der Isofläche für die erste Zielgrößenvariable an.
 
@@ -1770,7 +1710,7 @@ obj << Surface Alpha( 0.25 );
 
 ### Surface Alpha2
 
-**Syntax:** obj << Surface Alpha2( number )
+**Syntax:** obj &lt;&lt; Surface Alpha2( number )
 
 **Beschreibung:** Gibt die Undurchsichtigkeit der Isofläche für die zweite Zielgrößenvariable an.
 
@@ -1793,7 +1733,7 @@ obj << Surface Alpha2( 0.3 );
 
 ### Surface Alpha3
 
-**Syntax:** obj << Surface Alpha3( number )
+**Syntax:** obj &lt;&lt; Surface Alpha3( number )
 
 **Beschreibung:** Gibt die Undurchsichtigkeit der Isofläche für die dritte Zielgrößenvariable an.
 
@@ -1816,7 +1756,7 @@ obj << Surface Alpha3( 0.75 );
 
 ### Surface Alpha4
 
-**Syntax:** obj << Surface Alpha4( number )
+**Syntax:** obj &lt;&lt; Surface Alpha4( number )
 
 **Beschreibung:** Gibt die Undurchsichtigkeit der Isofläche für die vierte Zielgrößenvariable an.
 
@@ -1839,9 +1779,7 @@ obj << Surface Alpha4( 0.90 );
 
 ### Surface Color
 
-**Syntax:** obj << Surface Color( color ); 
-
-obj << Surface Color1( color )
+**Syntax:** obj &lt;&lt; Surface Color( color ); obj &lt;&lt; Surface Color1( color )
 
 **Beschreibung:** Gibt die Farbe der Fläche für die erste Zielgröße bei der Füllart „einfarbig“ an.
 
@@ -1857,7 +1795,7 @@ obj << Surface Color( {0, 0, 255} );
 
 ### Surface Color Method
 
-**Syntax:** obj << Surface Color Method( "Solid"|formula, <"Solid"|formula>, <"Solid"|formula>, <"Solid"|formula> )
+**Syntax:** obj &lt;&lt; Surface Color Method( "Solid"|formula, &lt;"Solid"|formula&gt;, &lt;"Solid"|formula&gt;, &lt;"Solid"|formula&gt; )
 
 **Beschreibung:** Gibt die Methode an, die zum Färben jeder der vier möglichen Flächen verwendet wird. Beachten Sie, dass die Formel von derjenigen Formel abweichen kann, die zum Zeichnen der Fläche verwendet wird.
 
@@ -1878,9 +1816,7 @@ obj << Surface Color Theme2( "Blue to Gray to Red" );
 
 ### Surface Color Range
 
-**Syntax:** obj << Surface Color Range( "Data"|"Axis" ); 
-
-obj << Surface Color Range1( "Data"|"Axis" )
+**Syntax:** obj &lt;&lt; Surface Color Range( "Data"|"Axis" ); obj &lt;&lt; Surface Color Range1( "Data"|"Axis" )
 
 **Beschreibung:** Gibt die Endpunkte für den Farbverlauf auf der Fläche für die erste Zielgröße an. Diese Option ist nur verfügbar, wenn ein Verlauf verwendet wird.
 
@@ -1903,9 +1839,7 @@ obj << Surface Color Range( "Axis" );
 
 ### Surface Color Range1
 
-**Syntax:** obj << Surface Color Range( "Data"|"Axis" ); 
-
-obj << Surface Color Range1( "Data"|"Axis" )
+**Syntax:** obj &lt;&lt; Surface Color Range( "Data"|"Axis" ); obj &lt;&lt; Surface Color Range1( "Data"|"Axis" )
 
 **Beschreibung:** Gibt die Endpunkte für den Farbverlauf auf der Fläche für die erste Zielgröße an. Diese Option ist nur verfügbar, wenn ein Verlauf verwendet wird.
 
@@ -1928,7 +1862,7 @@ obj << Surface Color Range( "Axis" );
 
 ### Surface Color Range2
 
-**Syntax:** obj << Surface Color Range2( "Daten"|"Achse" )
+**Syntax:** obj &lt;&lt; Surface Color Range2( "Daten"|"Achse" )
 
 **Beschreibung:** Gibt die Endpunkte für den Farbverlauf auf der Fläche für die zweite Zielgröße an. Diese Option ist nur verfügbar, wenn ein Verlauf verwendet wird.
 
@@ -1951,7 +1885,7 @@ obj << Surface Color Range2( "Data" );
 
 ### Surface Color Range3
 
-**Syntax:** obj << Surface Color Range3( "Daten"|"Achse" )
+**Syntax:** obj &lt;&lt; Surface Color Range3( "Daten"|"Achse" )
 
 **Beschreibung:** Gibt die Endpunkte für den Farbverlauf auf der Fläche für die dritte Zielgröße an. Diese Option ist nur verfügbar, wenn ein Verlauf verwendet wird.
 
@@ -1974,7 +1908,7 @@ obj << Surface Color Range3( "Axis" );
 
 ### Surface Color Range4
 
-**Syntax:** obj << Surface Color Range4( "Daten"|"Achse" )
+**Syntax:** obj &lt;&lt; Surface Color Range4( "Daten"|"Achse" )
 
 **Beschreibung:** Gibt die Endpunkte für den Farbverlauf auf der Fläche für die vierte Zielgröße an. Diese Option ist nur verfügbar, wenn ein Verlauf verwendet wird.
 
@@ -1997,9 +1931,7 @@ obj << Surface Color Range4( "Data" );
 
 ### Surface Color Theme
 
-**Syntax:** obj << Surface Color Theme( color theme ); 
-
-obj << Surface Color Theme1( color theme )
+**Syntax:** obj &lt;&lt; Surface Color Theme( color theme ); obj &lt;&lt; Surface Color Theme1( color theme )
 
 **Beschreibung:** Gibt das Farbschema der Fläche für die erste Zielgröße an. Diese Option ist nur für Formelzielgrößenspalten verfügbar, die einen Verlauf verwenden.
 
@@ -2017,9 +1949,7 @@ obj << Surface Color Theme( "Blue to Gray to Red" );
 
 ### Surface Color Theme1
 
-**Syntax:** obj << Surface Color Theme( color theme ); 
-
-obj << Surface Color Theme1( color theme )
+**Syntax:** obj &lt;&lt; Surface Color Theme( color theme ); obj &lt;&lt; Surface Color Theme1( color theme )
 
 **Beschreibung:** Gibt das Farbschema der Fläche für die erste Zielgröße an. Diese Option ist nur für Formelzielgrößenspalten verfügbar, die einen Verlauf verwenden.
 
@@ -2037,7 +1967,7 @@ obj << Surface Color Theme( "Blue to Gray to Red" );
 
 ### Surface Color Theme2
 
-**Syntax:** obj << Surface Color Theme2( color theme )
+**Syntax:** obj &lt;&lt; Surface Color Theme2( color theme )
 
 **Beschreibung:** Gibt das Farbschema der Fläche für die zweite Zielgröße an. Diese Option ist nur für Formelzielgrößenspalten verfügbar, die einen Verlauf verwenden.
 
@@ -2058,7 +1988,7 @@ obj << Surface Color Theme2( "White to Black" );
 
 ### Surface Color Theme3
 
-**Syntax:** obj << Surface Color Theme3( color theme )
+**Syntax:** obj &lt;&lt; Surface Color Theme3( color theme )
 
 **Beschreibung:** Gibt das Farbschema der Fläche für die dritte Zielgröße an. Diese Option ist nur für Formelzielgrößenspalten verfügbar, die einen Verlauf verwenden.
 
@@ -2079,7 +2009,7 @@ obj << Surface Color Theme3( "Spectral" );
 
 ### Surface Color Theme4
 
-**Syntax:** obj << Surface Color Theme4( color theme )
+**Syntax:** obj &lt;&lt; Surface Color Theme4( color theme )
 
 **Beschreibung:** Gibt das Farbschema der Fläche für die vierte Zielgröße an. Diese Option ist nur für Formelzielgrößenspalten verfügbar, die einen Verlauf verwenden.
 
@@ -2103,9 +2033,7 @@ obj << Surface Color Theme4( "Jet" );
 
 ### Surface Color1
 
-**Syntax:** obj << Surface Color( color ); 
-
-obj << Surface Color1( color )
+**Syntax:** obj &lt;&lt; Surface Color( color ); obj &lt;&lt; Surface Color1( color )
 
 **Beschreibung:** Gibt die Farbe der Fläche für die erste Zielgröße bei der Füllart „einfarbig“ an.
 
@@ -2121,7 +2049,7 @@ obj << Surface Color( {0, 0, 255} );
 
 ### Surface Color2
 
-**Syntax:** obj << Surface Color2( color )
+**Syntax:** obj &lt;&lt; Surface Color2( color )
 
 **Beschreibung:** Gibt die Farbe der Fläche für die zweite Zielgröße bei der Füllart „einfarbig“ an.
 
@@ -2139,7 +2067,7 @@ obj << Surface Color2( {255, 128, 0} );
 
 ### Surface Color3
 
-**Syntax:** obj << Surface Color3( color )
+**Syntax:** obj &lt;&lt; Surface Color3( color )
 
 **Beschreibung:** Gibt die Farbe der Fläche für die dritte Zielgröße bei der Füllart „einfarbig“ an.
 
@@ -2157,7 +2085,7 @@ obj << Surface Color3( {255, 0, 0} );
 
 ### Surface Color4
 
-**Syntax:** obj << Surface Color4( color )
+**Syntax:** obj &lt;&lt; Surface Color4( color )
 
 **Beschreibung:** Gibt die Farbe der Fläche für die vierte Zielgröße bei der Füllart „einfarbig“ an.
 
@@ -2178,9 +2106,7 @@ obj << Surface Color4( {100, 0, 200} );
 
 ### Surface Gradient Type
 
-**Syntax:** obj << Surface Gradient Type( "Solid"|"Continuous Gradients"|"Discrete Gradients" ); 
-
-obj << Surface Gradient Type1( "Solid"|"Continuous Gradients"|"Discrete Gradients" )
+**Syntax:** obj &lt;&lt; Surface Gradient Type( "Solid"|"Continuous Gradients"|"Discrete Gradients" ); obj &lt;&lt; Surface Gradient Type1( "Solid"|"Continuous Gradients"|"Discrete Gradients" )
 
 **Beschreibung:** Gibt die Füllart der Fläche für die erste Zielgröße an.
 
@@ -2197,9 +2123,7 @@ obj << Surface Color Method( ":Pred Formula ABRASION" );
 
 ### Surface Gradient Type1
 
-**Syntax:** obj << Surface Gradient Type( "Solid"|"Continuous Gradients"|"Discrete Gradients" ); 
-
-obj << Surface Gradient Type1( "Solid"|"Continuous Gradients"|"Discrete Gradients" )
+**Syntax:** obj &lt;&lt; Surface Gradient Type( "Solid"|"Continuous Gradients"|"Discrete Gradients" ); obj &lt;&lt; Surface Gradient Type1( "Solid"|"Continuous Gradients"|"Discrete Gradients" )
 
 **Beschreibung:** Gibt die Füllart der Fläche für die erste Zielgröße an.
 
@@ -2216,7 +2140,7 @@ obj << Surface Color Method( ":Pred Formula ABRASION" );
 
 ### Surface Gradient Type2
 
-**Syntax:** obj << Surface Gradient Type2( "Gefüllt"|"Stetiger Verlauf"|"Diskreter Verlauf" )
+**Syntax:** obj &lt;&lt; Surface Gradient Type2( "Gefüllt"|"Stetiger Verlauf"|"Diskreter Verlauf" )
 
 **Beschreibung:** Gibt die Füllart der Fläche für die zweite Zielgröße an.
 
@@ -2236,7 +2160,7 @@ obj << Surface Color Method( "Solid", ":Pred Formula MODULUS" );
 
 ### Surface Gradient Type3
 
-**Syntax:** obj << Surface Gradient Type3( "Gefüllt"|"Stetiger Verlauf"|"Diskreter Verlauf" )
+**Syntax:** obj &lt;&lt; Surface Gradient Type3( "Gefüllt"|"Stetiger Verlauf"|"Diskreter Verlauf" )
 
 **Beschreibung:** Gibt die Füllart der Fläche für die dritte Zielgröße an.
 
@@ -2256,7 +2180,7 @@ obj << Surface Color Method( "Solid", "Solid", ":Pred Formula ELONG" );
 
 ### Surface Gradient Type4
 
-**Syntax:** obj << Surface Gradient Type4( "Gefüllt"|"Stetiger Verlauf"|"Diskreter Verlauf" )
+**Syntax:** obj &lt;&lt; Surface Gradient Type4( "Gefüllt"|"Stetiger Verlauf"|"Diskreter Verlauf" )
 
 **Beschreibung:** Gibt die Füllart der Fläche für die vierte Zielgröße an.
 
@@ -2279,9 +2203,7 @@ obj << Surface Color Method( "Solid", "Solid", "Solid", ":Pred Formula HARDNESS"
 
 ### Surface Gradients
 
-**Syntax:** obj << Surface Gradients( number ); 
-
-obj << Surface Gradients1( number )
+**Syntax:** obj &lt;&lt; Surface Gradients( number ); obj &lt;&lt; Surface Gradients1( number )
 
 **Beschreibung:** Gibt die Anzahl der Verlaufslinien auf der Fläche der ersten Zielgröße an. Diese Option ist nur verfügbar, wenn diskrete Verläufe verwendet werden.
 
@@ -2301,9 +2223,7 @@ obj << Surface Gradients( 9 );
 
 ### Surface Gradients1
 
-**Syntax:** obj << Surface Gradients( number ); 
-
-obj << Surface Gradients1( number )
+**Syntax:** obj &lt;&lt; Surface Gradients( number ); obj &lt;&lt; Surface Gradients1( number )
 
 **Beschreibung:** Gibt die Anzahl der Verlaufslinien auf der Fläche der ersten Zielgröße an. Diese Option ist nur verfügbar, wenn diskrete Verläufe verwendet werden.
 
@@ -2323,7 +2243,7 @@ obj << Surface Gradients( 9 );
 
 ### Surface Gradients2
 
-**Syntax:** obj << Surface Gradients2( number )
+**Syntax:** obj &lt;&lt; Surface Gradients2( number )
 
 **Beschreibung:** Gibt die Anzahl der Verlaufslinien auf der Fläche der zweiten Zielgröße an. Diese Option ist nur verfügbar, wenn diskrete Verläufe verwendet werden.
 
@@ -2344,7 +2264,7 @@ obj << Surface Gradients2( 8 );
 
 ### Surface Gradients3
 
-**Syntax:** obj << Surface Gradients3( number )
+**Syntax:** obj &lt;&lt; Surface Gradients3( number )
 
 **Beschreibung:** Gibt die Anzahl der Verlaufslinien auf der Fläche der dritten Zielgröße an. Diese Option ist nur verfügbar, wenn diskrete Verläufe verwendet werden.
 
@@ -2365,7 +2285,7 @@ obj << Surface Gradients3( 10 );
 
 ### Surface Gradients4
 
-**Syntax:** obj << Surface Gradients4( number )
+**Syntax:** obj &lt;&lt; Surface Gradients4( number )
 
 **Beschreibung:** Gibt die Anzahl der Verlaufslinien auf der Fläche der vierten Zielgröße an. Diese Option ist nur verfügbar, wenn diskrete Verläufe verwendet werden.
 
@@ -2389,9 +2309,7 @@ obj << Surface Gradients4( 9 );
 
 ### Surface Lighting
 
-**Syntax:** obj << Surface Lighting( "None"|"Low Reflection"|"Normal" ); 
-
-obj << Surface Lighting1( "None"|"Low Reflection"|"Normal" )
+**Syntax:** obj &lt;&lt; Surface Lighting( "None"|"Low Reflection"|"Normal" ); obj &lt;&lt; Surface Lighting1( "None"|"Low Reflection"|"Normal" )
 
 **Beschreibung:** Gibt die Flächenbeleuchtung auf der Fläche für die erste Zielgröße an. Diese Option ist nur bei stetigen und diskreten Verläufen verfügbar.
 
@@ -2408,9 +2326,7 @@ obj << Surface Lighting( "Low Reflection" );
 
 ### Surface Lighting1
 
-**Syntax:** obj << Surface Lighting( "None"|"Low Reflection"|"Normal" ); 
-
-obj << Surface Lighting1( "None"|"Low Reflection"|"Normal" )
+**Syntax:** obj &lt;&lt; Surface Lighting( "None"|"Low Reflection"|"Normal" ); obj &lt;&lt; Surface Lighting1( "None"|"Low Reflection"|"Normal" )
 
 **Beschreibung:** Gibt die Flächenbeleuchtung auf der Fläche für die erste Zielgröße an. Diese Option ist nur bei stetigen und diskreten Verläufen verfügbar.
 
@@ -2427,7 +2343,7 @@ obj << Surface Lighting( "Low Reflection" );
 
 ### Surface Lighting2
 
-**Syntax:** obj << Surface Lighting2( "Keine"|"Geringe Reflektion"|"Normal" )
+**Syntax:** obj &lt;&lt; Surface Lighting2( "Keine"|"Geringe Reflektion"|"Normal" )
 
 **Beschreibung:** Gibt die Flächenbeleuchtung auf der Fläche für die zweite Zielgröße an. Diese Option ist nur bei stetigen und diskreten Verläufen verfügbar.
 
@@ -2445,7 +2361,7 @@ obj << Surface Lighting2( "Normal" );
 
 ### Surface Lighting3
 
-**Syntax:** obj << Surface Lighting3( "Keine"|"Geringe Reflektion"|"Normal" )
+**Syntax:** obj &lt;&lt; Surface Lighting3( "Keine"|"Geringe Reflektion"|"Normal" )
 
 **Beschreibung:** Gibt die Flächenbeleuchtung auf der Fläche für die dritte Zielgröße an. Diese Option ist nur bei stetigen und diskreten Verläufen verfügbar.
 
@@ -2468,7 +2384,7 @@ obj << Surface Lighting3( "Low Reflection" );
 
 ### Surface Lighting4
 
-**Syntax:** obj << Surface Lighting4( "Keine"|"Geringe Reflektion"|"Normal" )
+**Syntax:** obj &lt;&lt; Surface Lighting4( "Keine"|"Geringe Reflektion"|"Normal" )
 
 **Beschreibung:** Gibt die Flächenbeleuchtung auf der Fläche für die vierte Zielgröße an. Diese Option ist nur bei stetigen und diskreten Verläufen verfügbar.
 
@@ -2491,7 +2407,7 @@ obj << Surface Lighting4( "Normal" );
 
 ### Surface Selector
 
-**Syntax:** obj << Surface Selector( state=0|1 )
+**Syntax:** obj &lt;&lt; Surface Selector( state=0|1 )
 
 **Beschreibung:** Blendet die Flächenoptionen in den Bedienelementen für abhängige Variablen ein oder aus. Standardmäßig ein.
 
@@ -2512,7 +2428,7 @@ obj << Surface Selector( 0 );
 
 ### X Grid
 
-**Syntax:** obj << X Grid( state=0|1 )
+**Syntax:** obj &lt;&lt; X Grid( state=0|1 )
 
 **Beschreibung:** Blendet ein Raster ein oder aus, das senkrecht zur X-Achse verläuft.
 
@@ -2532,11 +2448,7 @@ obj << X Grid( 1 );
 
 ### X Resolution
 
-**Syntax:** obj << Resolution( number )
-
-obj << X Resolution( number )
-
-obj << Y Resolution( number )
+**Syntax:** obj &lt;&lt; Resolution( number )obj &lt;&lt; X Resolution( number )obj &lt;&lt; Y Resolution( number )
 
 **Beschreibung:** Ändert die Auflösung, die verwendet wird, um das Wirkungsflächendiagramm zu zeichnen.
 
@@ -2555,7 +2467,7 @@ obj << Resolution( 12 );
 
 ### XRotate
 
-**Syntax:** obj << XRotate( degrees )
+**Syntax:** obj &lt;&lt; XRotate( degrees )
 
 **Beschreibung:** Dreht das Wirkungsflächendiagramm um die X-Achse.
 
@@ -2571,7 +2483,7 @@ obj << XRotate( 30 );
 
 ### Y Grid
 
-**Syntax:** obj << Y Grid( state=0|1 )
+**Syntax:** obj &lt;&lt; Y Grid( state=0|1 )
 
 **Beschreibung:** Blendet ein Raster ein oder aus, das senkrecht zur Y-Achse verläuft.
 
@@ -2591,11 +2503,7 @@ obj << Y Grid( 1 );
 
 ### Y Resolution
 
-**Syntax:** obj << Resolution( number )
-
-obj << X Resolution( number )
-
-obj << Y Resolution( number )
+**Syntax:** obj &lt;&lt; Resolution( number )obj &lt;&lt; X Resolution( number )obj &lt;&lt; Y Resolution( number )
 
 **Beschreibung:** Ändert die Auflösung, die verwendet wird, um das Wirkungsflächendiagramm zu zeichnen.
 
@@ -2614,7 +2522,7 @@ obj << Resolution( 12 );
 
 ### YRotate
 
-**Syntax:** obj << YRotate( degrees )
+**Syntax:** obj &lt;&lt; YRotate( degrees )
 
 **Beschreibung:** Dreht das Wirkungsflächendiagramm um die Y-Achse.
 
@@ -2630,7 +2538,7 @@ obj << YRotate( 20 );
 
 ### Z Grid
 
-**Syntax:** obj << Z Grid( state=0|1 )
+**Syntax:** obj &lt;&lt; Z Grid( state=0|1 )
 
 **Beschreibung:** Blendet ein Raster ein oder aus, das senkrecht zur Z-Achse verläuft.
 
@@ -2650,7 +2558,7 @@ obj << Z Grid( 1 );
 
 ### Z Grid Position
 
-**Syntax:** obj << Z Grid Position( fraction )
+**Syntax:** obj &lt;&lt; Z Grid Position( fraction )
 
 **Beschreibung:** Verschiebt das Z-Raster auf den angegebenen Prozentsatz.
 
@@ -2667,7 +2575,7 @@ obj << Z Grid Position( 0.733 );
 
 ### ZRotate
 
-**Syntax:** obj << ZRotate( degrees )
+**Syntax:** obj &lt;&lt; ZRotate( degrees )
 
 **Beschreibung:** Dreht das Wirkungsflächendiagramm um die Z-Achse.
 
@@ -2685,7 +2593,7 @@ obj << ZRotate( 45 );
 
 ### Action
 
-**Syntax:** obj << Action
+**Syntax:** obj &lt;&lt; Action
 
 **Beschreibung:** Allzwecköffnung innerhalb einer Plattform zum Einfügen von auszuwertenden Ausdrücken. Setzt die Kontexte für Anzeigefeld und Datentabelle kurzzeitig auf die Plattform.
 
@@ -2703,7 +2611,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Syntax:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntax:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Beschreibung:** Wendet eine zuvor erstellte Voreinstellung auf das Objekt an und aktualisiert die Optionen und Anpassungen entsprechend den gespeicherten Einstellungen.
 
@@ -2750,7 +2658,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Broadcast
 
-**Syntax:** obj << Broadcast(message)
+**Syntax:** obj &lt;&lt; Broadcast(message)
 
 **Beschreibung:** Sendet eine Meldung an eine Plattform. Wenn es sich bei den zurückgegebenen Ergebnissen von einzelnen Objekten um Tabellen handelt, werden sie, wenn möglich, verkettet. Das endgültige Format ist entweder identisch mit dem Ergebnis der Option „Kombinierte Tabelle speichern“ in einem Tabellenfeld oder mit dem Ergebnis der Option „Verketten“ mithilfe einer Quellspalte. Ansonsten werden die Ergebnisse in einer Liste gespeichert und zurückgegeben.
 
@@ -2770,7 +2678,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**Syntax:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Syntax:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Beschreibung:** Fügt ein Bedienfeld zum Ändern der Variablen der Plattform hinzu
 
@@ -2788,7 +2696,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**Syntax:** obj << Copy ByGroup Script
+**Syntax:** obj &lt;&lt; Copy ByGroup Script
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und legt es in der Zwischenablage ab.
 
@@ -2814,7 +2722,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Syntax:** obj << Copy Script
+**Syntax:** obj &lt;&lt; Copy Script
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und legt es in der Zwischenablage ab.
 
@@ -2834,7 +2742,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Syntax:** obj << Data Table Window
+**Syntax:** obj &lt;&lt; Data Table Window
 
 **Beschreibung:** Zeigt das Fenster mit der Datentabelle für diese Analyse im Vordergrund an.
 
@@ -2854,7 +2762,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Syntax:** obj << Get By Levels
+**Syntax:** obj &lt;&lt; Get By Levels
 
 **Beschreibung:** Gibt ein assoziatives Array zurück, das die Nach-Gruppenspalten ihren Werten zuordnet.
 
@@ -2871,7 +2779,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Syntax:** obj << Get ByGroup Script
+**Syntax:** obj &lt;&lt; Get ByGroup Script
 
 **Beschreibung:** Erstellt ein Skript (JSL) zum Erzeugen dieser Analyse und gibt es als Ausdruck zurück.
 
@@ -2898,7 +2806,7 @@ Show( t );
 
 ### Get Container
 
-**Syntax:** obj << Get Container
+**Syntax:** obj &lt;&lt; Get Container
 
 **Beschreibung:** Gibt einen Verweis auf das Containerfeld zurück, das den Inhalt des Objekts enthält.
 
@@ -2950,7 +2858,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Syntax:** obj << Get Data Table
+**Syntax:** obj &lt;&lt; Get Data Table
 
 **Beschreibung:** Gibt eine Referenz auf die Datentabelle zurück.
 
@@ -2971,7 +2879,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**Syntax:** obj << Get Group Platform
+**Syntax:** obj &lt;&lt; Get Group Platform
 
 **Beschreibung:** Plattformobjekt der Gruppe zurückgeben, wenn diese Plattform Teil einer Gruppe ist. Andernfalls wird Empty() zurückgegeben.
 
@@ -2988,7 +2896,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**Syntax:** obj << Get Script
+**Syntax:** obj &lt;&lt; Get Script
 
 **Beschreibung:** Erstellt ein Skript (JSL) zum Erzeugen dieser Analyse und gibt es als Ausdruck zurück.
 
@@ -3009,7 +2917,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Syntax:** obj << Get Script With Data Table
+**Syntax:** obj &lt;&lt; Get Script With Data Table
 
 **Beschreibung:** Erstellt ein Skript (JSL) zum Erzeugen dieser Analyse und referenziert dabei spezifisch diese Datentabelle und gibt das Skript als Ausdruck zurück.
 
@@ -3030,7 +2938,7 @@ Show( t );
 
 ### Get Timing
 
-**Syntax:** obj << Get Timing
+**Syntax:** obj &lt;&lt; Get Timing
 
 **Beschreibung:** Steuert den Start der Plattform zeitlich.
 
@@ -3051,7 +2959,7 @@ Show( t );
 
 ### Get Web Support
 
-**Syntax:** obj << Get Web Support
+**Syntax:** obj &lt;&lt; Get Web Support
 
 **Beschreibung:** Gibt eine Zahl zurück, die angibt, ob für das Anzeigeobjekt interaktive HTML unterstützt wird. 1 bedeutet einige oder alle Elemente werden unterstützt. 0 bedeutet keine Unterstützung.
 
@@ -3067,7 +2975,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Syntax:** obj << Get Where Expr
+**Syntax:** obj &lt;&lt; Get Where Expr
 
 **Beschreibung:** Gibt den Ausdruck Where für die Teilmenge der Daten zurück, wenn die Plattform mit By() oder Where() gestartet wurde. Andernfalls wird Empty() zurückgegeben.
 
@@ -3104,7 +3012,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Syntax:** obj << Local Data Filter
+**Syntax:** obj &lt;&lt; Local Data Filter
 
 **Beschreibung:** Filtert Daten für bestimmte Gruppen oder Bereiche, aber nur lokal in dieser Plattform.
 
@@ -3160,7 +3068,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Syntax:** obj << Paste Local Data Filter
+**Syntax:** obj &lt;&lt; Paste Local Data Filter
 
 **Beschreibung:** Lokalen Datenfilter aus der Zwischenablage auf den aktuellen Bericht anwenden.
 
@@ -3181,7 +3089,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**Syntax:** obj << Redo Analysis
+**Syntax:** obj &lt;&lt; Redo Analysis
 
 **Beschreibung:** Führt die gleiche Analyse in einem neuen Fenster aus. Die Analyse ist unterschiedlich, wenn sich die Daten verändert haben.
 
@@ -3201,7 +3109,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**Syntax:** obj << Redo ByGroup Analysis
+**Syntax:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Beschreibung:** Führt die gleiche Analyse in einem neuen Fenster aus. Die Analyse ist unterschiedlich, wenn sich die Daten verändert haben.
 
@@ -3227,7 +3135,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**Syntax:** obj << Relaunch Analysis
+**Syntax:** obj &lt;&lt; Relaunch Analysis
 
 **Beschreibung:** Öffnet das Plattform-Startfenster und ruft die Einstellungen ab, die zum Erstellen des Berichts verwendet wurden.
 
@@ -3247,7 +3155,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**Syntax:** obj << Relaunch ByGroup
+**Syntax:** obj &lt;&lt; Relaunch ByGroup
 
 **Beschreibung:** Öffnet das Plattform-Startfenster und ruft die Einstellungen ab, die zum Erstellen des Berichts verwendet wurden.
 
@@ -3273,7 +3181,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**Syntax:** obj << Remove Column Switcher
+**Syntax:** obj &lt;&lt; Remove Column Switcher
 
 **Beschreibung:** Entfernt den letzten Spaltenwechsler, der der Plattform hinzugefügt wurde.
 
@@ -3293,7 +3201,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Syntax:** obj << Remove Local Data Filter
+**Syntax:** obj &lt;&lt; Remove Local Data Filter
 
 **Beschreibung:** Wenn ein lokaler Filter verwendet wurde, wird dieser entfernt und die Plattform verwendet wieder direkt alle Daten aus der Datentabelle
 
@@ -3332,9 +3240,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Syntax:** obj << Report;
-
-Report( obj )
+**Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Beschreibung:** Gibt eine Referenz auf das Berichtsobjekt zurück.
 
@@ -3356,7 +3262,7 @@ Show( t );
 
 ### Report View
 
-**Syntax:** obj << Report View( "Vollständig"|"Übersicht" )
+**Syntax:** obj &lt;&lt; Report View( "Vollständig"|"Übersicht" )
 
 **Beschreibung:** Die Berichtsanzeige legt das Detailniveau für einen Plattformbericht fest. Full zeigt alle Details an, während Summary abhängig von der Plattform nur ausgewählte Inhalte anzeigt. Für benutzerdefiniertes Verhalten unterstützen Anzeigefelder eine Meldung <<Set Summary Behavior.
 
@@ -3376,7 +3282,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**Syntax:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und speichert sie als Tabelleneigenschaft in der Datentabelle. Sie können einen Namen für das Skript angeben. Die Option Append Suffix hängt ein numerisches Suffix an den Skriptnamen an, das das Skript von einem vorhandenen Skript mit dem gleichen Namen unterscheidet. Die Option Prompt fordert den Benutzer auf, einen Skriptnamen anzugeben. Die Option Replace ersetzt ein vorhandenes Skript mit dem gleichen Namen.
 
@@ -3402,7 +3308,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Syntax:** obj << Save ByGroup Script to Journal
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und fügt eine Schaltfläche mit diesem Skript zum Journal hinzu.
 
@@ -3428,7 +3334,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Syntax:** obj << Save ByGroup Script to Script Window
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und hängt es an das Textfenster mit dem aktuellen Skript an.
 
@@ -3454,7 +3360,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**Syntax:** obj << Save Script for All Objects
+**Syntax:** obj &lt;&lt; Save Script for All Objects
 
 **Beschreibung:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -3474,7 +3380,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Syntax:** obj << Save Script for All Objects To Data Table( <name> )
+**Syntax:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Beschreibung:** Speichert ein Skript für alle Berichtsobjekte in der aktuellen Datentabelle. Diese Option ist nützlich, wenn Sie mehrere Berichte im Fenster haben. Das Skript wird nach der ersten Plattform benannt, sofern Sie keine Skriptnamen in Anführungszeichen angeben.
 
@@ -3524,7 +3430,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Syntax:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und speichert es als Tabelleneigenschaft in der Datentabelle.
 
@@ -3544,7 +3450,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Syntax:** obj << Save Script to Journal
+**Syntax:** obj &lt;&lt; Save Script to Journal
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und fügt eine Schaltfläche mit diesem Skript zum Journal hinzu.
 
@@ -3564,7 +3470,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Syntax:** obj << Save Script to Report
+**Syntax:** obj &lt;&lt; Save Script to Report
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und zeigt es im Bericht selbst an. Nützlich zum Anlegen eines gedruckten Nachweises der durchgeführten Aktivitäten.
 
@@ -3584,7 +3490,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Syntax:** obj << Save Script to Script Window
+**Syntax:** obj &lt;&lt; Save Script to Script Window
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und hängt es an das Textfenster mit dem aktuellen Skript an.
 
@@ -3669,7 +3575,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Syntax:** obj << Sync to Data Table Changes
+**Syntax:** obj &lt;&lt; Sync to Data Table Changes
 
 **Beschreibung:** Mit Ausgeschlossenen und vorgenommenen Datenänderungen synchronisieren.
 
@@ -3686,7 +3592,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Syntax:** obj << Title( "new title" )
+**Syntax:** obj &lt;&lt; Title( "new title" )
 
 **Beschreibung:** Legt den Titel für die Plattform fest.
 
@@ -3706,7 +3612,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Syntax:** obj << Top Report
+**Syntax:** obj &lt;&lt; Top Report
 
 **Beschreibung:** Gibt eine Referenz auf den Stammknoten im Bericht zurück.
 
@@ -3728,7 +3634,7 @@ Show( t );
 
 ### Transform Column
 
-**Syntax:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Syntax:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Beschreibung:** Transformationsspalte im lokalen Kontext eines Objekts erstellen, üblicherweise als Plattform. Die Transformationsspalte ist nur für die Lebensdauer der Plattform aktiv.
 
@@ -3749,7 +3655,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**Syntax:** obj << View Web XML
+**Syntax:** obj &lt;&lt; View Web XML
 
 **Beschreibung:** Gibt den XML-Code zurück, der zum Erstellen des interaktiven HTML-Berichts verwendet wird.
 
@@ -3764,9 +3670,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**Syntax:** obj = Surface Plot(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Surface Plot(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Typ des Fensters festlegen, das für den Bericht erstellt werden soll. Standardmäßig wird ein Berichtsfenster vom Typ Visible erstellt. Ein Fenster vom Typ Invisible wird auf dem Bildschirm nicht angezeigt, kann jedoch von Funktionen wie Window() erkannt werden. Ein Fenster vom Typ Private reagiert auf die meisten Fenstermeldungen, kann jedoch nicht erkannt werden und muss über das Berichtsobjekt adressiert werden.
 
@@ -3787,7 +3691,7 @@ New Window( "Bivariate Equation",
 
 ### By
 
-**Syntax:** obj << By( column(s) )
+**Syntax:** obj &lt;&lt; By( column(s) )
 
 **Beschreibung:** Mehrere Berichte erzeugen, einen für jede Stufe der Variable(n).
 
@@ -3812,7 +3716,7 @@ obj = dt << Surface Plot(
 
 ### Columns
 
-**Syntax:** obj << Columns( column(s) )
+**Syntax:** obj &lt;&lt; Columns( column(s) )
 
 **Beschreibung:** Variablen, die für die X-, Y- und Z-Koordinaten im 3D-Graphen verfügbar sein werden.
 
@@ -3826,7 +3730,7 @@ obj = dt << Surface Plot( Columns( :silane, :silica, :hardness ) );
 
 ### Factors
 
-**Syntax:** obj << Factors( column(s) )
+**Syntax:** obj &lt;&lt; Factors( column(s) )
 
 **Beschreibung:** Variablen, die für die X-, Y- und Z-Koordinaten im 3D-Graphen verfügbar sein werden.
 
@@ -3865,11 +3769,7 @@ obj = dt << Surface Plot(
 
 #### Add Ellipsoid
 
-**Syntax:** obj << Add Ellipsoid( 4x4 matrix )
-
-obj << Add Ellipsoid(3x3 cov,3x1 means)
-
-obj << Add Ellipsoid(3x3 corr,3x1 means,3x1 std dev)
+**Syntax:** obj &lt;&lt; Add Ellipsoid( 4x4 matrix )obj &lt;&lt; Add Ellipsoid(3x3 cov,3x1 means)obj &lt;&lt; Add Ellipsoid(3x3 corr,3x1 means,3x1 std dev)
 
 **Beschreibung:** Zeichnet ein Ellipsoid im Diagramm.
 
@@ -3897,7 +3797,7 @@ obj << Frame3D(
 
 #### Add Markers
 
-**Syntax:** obj << Add Markers( [ nx1 X matrix ], [ nx1 Y matrix ], [ nx1 Z matrix ] )
+**Syntax:** obj &lt;&lt; Add Markers( [ nx1 X matrix ], [ nx1 Y matrix ], [ nx1 Z matrix ] )
 
 **Beschreibung:** Zeichnet n Symbole im Diagramm.
 
@@ -3919,7 +3819,7 @@ obj << Frame3D( Add Markers( [2 3 4], [5 6 7], [1 8 9] ) );
 
 #### Add Vector
 
-**Syntax:** obj << Add Vector( [ 3xn from matrix ], [ 3xn to matrix ], FromCap( CutOff|Sphere|Point|Feather ), ToCap( CutOff|Sphere|Point|Feather ), Facets( Triangle|Square|Round ), Shaft Color( color ), Shaft Thickness( number ), From Thickness( number ), To Thickness( number ), From Color( number ), To Color( number ) ) )
+**Syntax:** obj &lt;&lt; Add Vector( [ 3xn from matrix ], [ 3xn to matrix ], FromCap( CutOff|Sphere|Point|Feather ), ToCap( CutOff|Sphere|Point|Feather ), Facets( Triangle|Square|Round ), Shaft Color( color ), Shaft Thickness( number ), From Thickness( number ), To Thickness( number ), From Color( number ), To Color( number ) ) )
 
 **Beschreibung:** Zeichnet einen Vektor bzw. Pfeil im Diagramm.
 
@@ -3941,7 +3841,7 @@ obj << Frame3D( Add Vector( [4.5 2 1], [7.5 4 6], FromCap( "Feather" ), ToCap( "
 
 #### Get Axes
 
-**Syntax:** obj << Get Axes
+**Syntax:** obj &lt;&lt; Get Axes
 
 **Beschreibung:** Gibt den Zustand der Anzeige der Achsen des Diagramms zurück.
 
@@ -3964,7 +3864,7 @@ Show( s );
 
 #### Get Box
 
-**Syntax:** obj << Get Box
+**Syntax:** obj &lt;&lt; Get Box
 
 **Beschreibung:** Gibt den Zustand der Anzeige des Feldrahmens im Diagramm zurück.
 
@@ -3987,7 +3887,7 @@ Show( s );
 
 #### Get Grab Handles
 
-**Syntax:** obj << Get Grab Handles
+**Syntax:** obj &lt;&lt; Get Grab Handles
 
 **Beschreibung:** Gibt den Zustand der Anzeige der Ziehpunkte im Diagramm zurück.
 
@@ -4010,7 +3910,7 @@ Show( s );
 
 #### Get Graph Size
 
-**Syntax:** obj << Get Graph Size
+**Syntax:** obj &lt;&lt; Get Graph Size
 
 **Beschreibung:** Gibt die Größe des Graphen zurück.
 
@@ -4033,7 +3933,7 @@ Show( s );
 
 #### Get Grids
 
-**Syntax:** obj << Get Grids
+**Syntax:** obj &lt;&lt; Get Grids
 
 **Beschreibung:** Gibt den Zustand der Anzeige des Rasters im Diagramm zurück.
 
@@ -4056,7 +3956,7 @@ Show( s );
 
 #### Get Hide Lights Border
 
-**Syntax:** obj << Get Hide Lights Border
+**Syntax:** obj &lt;&lt; Get Hide Lights Border
 
 **Beschreibung:** Gibt den Zustand der Beleuchtungsränder des Diagramms zurück.
 
@@ -4079,7 +3979,7 @@ Show( state );
 
 #### Get Line Scale
 
-**Syntax:** obj << Get Line Scale
+**Syntax:** obj &lt;&lt; Get Line Scale
 
 **Beschreibung:** Gibt die Linienbreite des Diagramms zurück.
 
@@ -4102,7 +4002,7 @@ Show( w );
 
 #### Get Marker Quality
 
-**Syntax:** obj << Get Marker Quality
+**Syntax:** obj &lt;&lt; Get Marker Quality
 
 **Beschreibung:** Gibt die Symboleigenschaften wie Form und Schattierung für das Diagramm zurück.
 
@@ -4125,7 +4025,7 @@ Show( q );
 
 #### Get Marker Scale
 
-**Syntax:** obj << Get Marker Scale
+**Syntax:** obj &lt;&lt; Get Marker Scale
 
 **Beschreibung:** Gibt die Symbolgröße des Diagramms zurück.
 
@@ -4148,7 +4048,7 @@ Show( s );
 
 #### Get Marker Transparency
 
-**Syntax:** obj << Get Marker Transparency
+**Syntax:** obj &lt;&lt; Get Marker Transparency
 
 **Beschreibung:** Gibt die Symboltransparenz des Diagramms zurück.
 
@@ -4171,7 +4071,7 @@ Show( t );
 
 #### Get Rotation
 
-**Syntax:** obj << Get Rotation
+**Syntax:** obj &lt;&lt; Get Rotation
 
 **Beschreibung:** Gibt die aktuelle Drehung des Rahmens zurück.
 
@@ -4194,7 +4094,7 @@ Show( r );
 
 #### Get Text Scale
 
-**Syntax:** obj << Get Text Scale
+**Syntax:** obj &lt;&lt; Get Text Scale
 
 **Beschreibung:** Gibt die Textgröße des Diagramms zurück.
 
@@ -4217,7 +4117,7 @@ Show( s );
 
 #### Get View Ortho
 
-**Syntax:** obj << Get View Ortho
+**Syntax:** obj &lt;&lt; Get View Ortho
 
 **Beschreibung:** Gibt den Zustand der orthografischen Ansicht des Diagramms zurück.
 
@@ -4240,7 +4140,7 @@ Show( o );
 
 #### Get View Perspective
 
-**Syntax:** obj << Get View Perspective
+**Syntax:** obj &lt;&lt; Get View Perspective
 
 **Beschreibung:** Gibt die Perspektive für die Ansicht des Diagramms zurück.
 
@@ -4263,7 +4163,7 @@ Show( p );
 
 #### Get View Zoom
 
-**Syntax:** obj << Get View Zoom
+**Syntax:** obj &lt;&lt; Get View Zoom
 
 **Beschreibung:** Gibt den aktuellen Zoom des Diagramms zurück.
 
@@ -4286,7 +4186,7 @@ Show( z );
 
 #### Get Wall Color
 
-**Syntax:** obj << Get Wall Color
+**Syntax:** obj &lt;&lt; Get Wall Color
 
 **Beschreibung:** Gibt die Wandfarbe des Diagramms zurück.
 
@@ -4309,7 +4209,7 @@ Show( c );
 
 #### Get Walls
 
-**Syntax:** obj << Get Walls
+**Syntax:** obj &lt;&lt; Get Walls
 
 **Beschreibung:** Gibt den Zustand der Anzeige der Wände des Diagramms zurück.
 
@@ -4332,7 +4232,7 @@ Show( s );
 
 #### Get X Axis Color
 
-**Syntax:** obj << Get X Axis Color
+**Syntax:** obj &lt;&lt; Get X Axis Color
 
 **Beschreibung:** Gibt die Farbe der X-Achse des Diagramms zurück.
 
@@ -4355,7 +4255,7 @@ Show( c );
 
 #### Get X Axis Label
 
-**Syntax:** obj << Get X Axis Label
+**Syntax:** obj &lt;&lt; Get X Axis Label
 
 **Beschreibung:** Gibt die Beschriftung für die X-Achse des Diagramms zurück.
 
@@ -4378,7 +4278,7 @@ Show( label );
 
 #### Get Y Axis Color
 
-**Syntax:** obj << Get Y Axis Color
+**Syntax:** obj &lt;&lt; Get Y Axis Color
 
 **Beschreibung:** Gibt die Farbe der Y-Achse des Diagramms zurück.
 
@@ -4401,7 +4301,7 @@ Show( c );
 
 #### Get Y Axis Label
 
-**Syntax:** obj << Get Y Axis Label
+**Syntax:** obj &lt;&lt; Get Y Axis Label
 
 **Beschreibung:** Gibt die Beschriftung für die Y-Achse des Diagramms zurück.
 
@@ -4424,7 +4324,7 @@ Show( label );
 
 #### Get Z Axis Color
 
-**Syntax:** obj << Get Z Axis Color
+**Syntax:** obj &lt;&lt; Get Z Axis Color
 
 **Beschreibung:** Gibt die Farbe der Z-Achse des Diagramms zurück.
 
@@ -4447,7 +4347,7 @@ Show( c );
 
 #### Get Z Axis Label
 
-**Syntax:** obj << Get Z Axis Label
+**Syntax:** obj &lt;&lt; Get Z Axis Label
 
 **Beschreibung:** Gibt die Beschriftung für die Z-Achse des Diagramms zurück.
 
@@ -4470,7 +4370,7 @@ Show( label );
 
 #### Legend
 
-**Syntax:** obj << Legend( state=0|1 )
+**Syntax:** obj &lt;&lt; Legend( state=0|1 )
 
 **Beschreibung:** Zeigt die Legende im Diagramm an oder blendet sie aus.
 
@@ -4495,7 +4395,7 @@ obj << Frame3D( Legend( 1 ) );
 
 #### Set Axes
 
-**Syntax:** obj << Set Axes( state=0|1 )
+**Syntax:** obj &lt;&lt; Set Axes( state=0|1 )
 
 **Beschreibung:** Zeigt die X-, Y- und Z-Achse des Diagramms an oder blendet sie aus. Standardmäßig ein.
 
@@ -4517,7 +4417,7 @@ obj << Frame3D( Set Axes( 1 ) );
 
 #### Set Box
 
-**Syntax:** obj << Set Box( state=0|1 )
+**Syntax:** obj &lt;&lt; Set Box( state=0|1 )
 
 **Beschreibung:** Zeigt den Feldrahmen im Diagramm an oder blendet ihn aus. Standardmäßig ein.
 
@@ -4539,7 +4439,7 @@ obj << Frame3D( Set Box( 1 ) );
 
 #### Set Graph Size
 
-**Syntax:** obj << Set Graph Size( x, y )
+**Syntax:** obj &lt;&lt; Set Graph Size( x, y )
 
 **Beschreibung:** Legt die Größe des Graphen fest.
 
@@ -4561,7 +4461,7 @@ obj << Frame3D( Set Graph Size( 700, 800 ) );
 
 #### Set Grids
 
-**Syntax:** obj << Set Grids( state=0|1 )
+**Syntax:** obj &lt;&lt; Set Grids( state=0|1 )
 
 **Beschreibung:** Zeigt das Raster im Diagramm an oder blendet es aus. Standardmäßig ein.
 
@@ -4583,7 +4483,7 @@ obj << Frame3D( Set Grids( 1 ) );
 
 #### Set Hide Lights Border
 
-**Syntax:** obj << Set Hide Lights Border( state=0|1 )
+**Syntax:** obj &lt;&lt; Set Hide Lights Border( state=0|1 )
 
 **Beschreibung:** Zeigt die Beleuchtungsränder des Diagramms an oder blendet sie aus. Standardmäßig ein.
 
@@ -4605,7 +4505,7 @@ obj << Frame3D( Set Hide Lights Border( 0 ) );
 
 #### Set Line Scale
 
-**Syntax:** obj << Set Line Scale( number )
+**Syntax:** obj &lt;&lt; Set Line Scale( number )
 
 **Beschreibung:** Legt die Linienbreite für das Raster im Diagramm fest.
 
@@ -4627,7 +4527,7 @@ obj << Frame3D( Set Line Scale( 6.5 ) );
 
 #### Set Marker Quality
 
-**Syntax:** obj << Set Marker Quality( number )
+**Syntax:** obj &lt;&lt; Set Marker Quality( number )
 
 **Beschreibung:** Legt die Symboleigenschaften wie Form und Schattierung für das Diagramm fest.
 
@@ -4649,7 +4549,7 @@ obj << Frame3D( Set Marker Scale( 3 ), Set Marker Quality( 0.2625 ) );
 
 #### Set Marker Scale
 
-**Syntax:** obj << Set Marker Scale( number )
+**Syntax:** obj &lt;&lt; Set Marker Scale( number )
 
 **Beschreibung:** Legt die Symbolgröße für das Diagramm fest.
 
@@ -4671,7 +4571,7 @@ obj << Frame3D( Set Marker Scale( 3.5 ) );
 
 #### Set Marker Transparency
 
-**Syntax:** obj << Set Marker Transparency( fraction )
+**Syntax:** obj &lt;&lt; Set Marker Transparency( fraction )
 
 **Beschreibung:** Legt die Symboltransparenz für das Diagramm fest.
 
@@ -4693,7 +4593,7 @@ obj << Frame3D( Set Marker Transparency( 0.4125 ) );
 
 #### Set Oscillation
 
-**Syntax:** obj << Set Oscillation( X, Y, Z, duration )
+**Syntax:** obj &lt;&lt; Set Oscillation( X, Y, Z, duration )
 
 **Beschreibung:** Legt die Oszillationsrate des Diagramms fest.
 
@@ -4715,7 +4615,7 @@ obj << Frame3D( Set Rotation( -60, -3, 35 ), Set Oscillation( -54, 0, 38, 100 ) 
 
 #### Set Rotation
 
-**Syntax:** obj << Set Rotation( X, Y, Z )
+**Syntax:** obj &lt;&lt; Set Rotation( X, Y, Z )
 
 **Beschreibung:** Dreht den Rahmen zu den angegebenen Koordinaten.
 
@@ -4737,7 +4637,7 @@ obj << Frame3D( Set Rotation( -60, -3, 35 ) );
 
 #### Set Spin
 
-**Syntax:** obj << Set Spin(  dx, dy, sx, sy  )
+**Syntax:** obj &lt;&lt; Set Spin( dx, dy, sx, sy )
 
 **Beschreibung:** Dreht den Graphen um eine angegebene Achse. Die Werte dx und dy sind eine Deltabewegung der Maus ab dem Punkt (sx, sy).
 
@@ -4759,7 +4659,7 @@ obj << Frame3D( Set Spin( .01, .01, 0, 0 ) );
 
 #### Set Text Scale
 
-**Syntax:** obj << Set Text Scale( number )
+**Syntax:** obj &lt;&lt; Set Text Scale( number )
 
 **Beschreibung:** Legt die Textgröße für den Achsentext im Diagramm fest.
 
@@ -4781,7 +4681,7 @@ obj << Frame3D( Set Text Scale( 1.4 ) );
 
 #### Set View Ortho
 
-**Syntax:** obj << Set View Ortho( state=0|1 )
+**Syntax:** obj &lt;&lt; Set View Ortho( state=0|1 )
 
 **Beschreibung:** Zeigt das Diagramm orthografisch oder linear an.
 
@@ -4803,7 +4703,7 @@ obj << Frame3D( Set View Ortho( 1 ) );
 
 #### Set View Perspective
 
-**Syntax:** obj << Set View Perspective( fraction )
+**Syntax:** obj &lt;&lt; Set View Perspective( fraction )
 
 **Beschreibung:** Legt die Perspektive für die Ansicht des Diagramms fest.
 
@@ -4825,7 +4725,7 @@ obj << Frame3D( Set View Perspective( 0.275 ) );
 
 #### Set View Zoom
 
-**Syntax:** obj << Set View Zoom( number )
+**Syntax:** obj &lt;&lt; Set View Zoom( number )
 
 **Beschreibung:** Legt den Zoom für das Diagramm fest.
 
@@ -4849,7 +4749,7 @@ obj << Frame3D( Set View Zoom( 2 ) );
 
 #### Set Wall Color
 
-**Syntax:** obj << Set Wall Color( number )
+**Syntax:** obj &lt;&lt; Set Wall Color( number )
 
 **Beschreibung:** Legt die Wandfarbe für das Diagramm fest.
 
@@ -4871,7 +4771,7 @@ obj << Frame3D( Set Wall Color( -16775543 ) );
 
 #### Set Walls
 
-**Syntax:** obj << Set Walls( state=0|1 )
+**Syntax:** obj &lt;&lt; Set Walls( state=0|1 )
 
 **Beschreibung:** Zeigt die Wände des Diagramms an oder blendet sie aus. Standardmäßig ein.
 
@@ -4893,7 +4793,7 @@ obj << Frame3D( Set Walls( 1 ) );
 
 #### Set X Axis Color
 
-**Syntax:** obj << Set X Axis Color( color )
+**Syntax:** obj &lt;&lt; Set X Axis Color( color )
 
 **Beschreibung:** Legt die Farbe der X-Achse des Diagramms fest.
 
@@ -4915,7 +4815,7 @@ obj << Frame3D( Set X Axis Color( 5 ) );
 
 #### Set X Axis Label
 
-**Syntax:** obj << Set X Axis Label( string )
+**Syntax:** obj &lt;&lt; Set X Axis Label( string )
 
 **Beschreibung:** Legt die Beschriftung für die X-Achse des Diagramms fest.
 
@@ -4937,7 +4837,7 @@ obj << Frame3D( Set X Axis Label( "Iris Sepal Length" ) );
 
 #### Set Y Axis Color
 
-**Syntax:** obj << Set Y Axis Color( color )
+**Syntax:** obj &lt;&lt; Set Y Axis Color( color )
 
 **Beschreibung:** Legt die Farbe der Y-Achse des Diagramms fest.
 
@@ -4959,7 +4859,7 @@ obj << Frame3D( Set Y Axis Color( 11 ) );
 
 #### Set Y Axis Label
 
-**Syntax:** obj << Set Y Axis Label( string )
+**Syntax:** obj &lt;&lt; Set Y Axis Label( string )
 
 **Beschreibung:** Legt die Beschriftung für die Y-Achse des Diagramms fest.
 
@@ -4981,7 +4881,7 @@ obj << Frame3D( Set Y Axis Label( "Iris Petal Length" ) );
 
 #### Set Z Axis Color
 
-**Syntax:** obj << Set Z Axis Color( color )
+**Syntax:** obj &lt;&lt; Set Z Axis Color( color )
 
 **Beschreibung:** Legt die Farbe der Z-Achse des Diagramms fest.
 
@@ -5003,7 +4903,7 @@ obj << Frame3D( Set Z Axis Color( "Green" ) );
 
 #### Set Z Axis Label
 
-**Syntax:** obj << Set Z Axis Label( string )
+**Syntax:** obj &lt;&lt; Set Z Axis Label( string )
 
 **Beschreibung:** Legt die Beschriftung für die Z-Achse des Diagramms fest.
 
@@ -5025,7 +4925,7 @@ obj << Frame3D( Set Z Axis Label( "Iris Sepal Width" ) );
 
 #### XAxis
 
-**Syntax:** obj << XAxis( Min( number ), Max( number ), Inc( number ), Format( ) )
+**Syntax:** obj &lt;&lt; XAxis( Min( number ), Max( number ), Inc( number ), Format( ) )
 
 **Beschreibung:** Legt die Werte für die X-Achse des Diagramms fest.
 
@@ -5047,7 +4947,7 @@ obj << Frame3D( XAxis( Min( 3 ), Max( 10 ) ) );
 
 #### YAxis
 
-**Syntax:** obj << YAxis( Min( number ), Max( number ), Inc( number ), Format( ) )
+**Syntax:** obj &lt;&lt; YAxis( Min( number ), Max( number ), Inc( number ), Format( ) )
 
 **Beschreibung:** Legt die Werte für die Y-Achse des Diagramms fest.
 
@@ -5069,7 +4969,7 @@ obj << Frame3D( YAxis( Min( 1 ), Max( 10 ), Inc( 0.5 ) ) );
 
 #### Z Axis
 
-**Syntax:** obj << Z Axis( Min( number ), Max( number ), Inc( number ), Format( ) )
+**Syntax:** obj &lt;&lt; Z Axis( Min( number ), Max( number ), Inc( number ), Format( ) )
 
 **Beschreibung:** Legt die Werte für die Z-Achse des Diagramms fest.
 
@@ -5091,7 +4991,7 @@ obj << Frame3D( ZAxis( Min( 1 ), Max( 5 ), Inc( 0.25 ) ) );
 
 #### get light active
 
-**Syntax:** obj << get light active( light number )
+**Syntax:** obj &lt;&lt; get light active( light number )
 
 **Beschreibung:** Gibt die Aktivierung des angegebenen Lichts, das das Diagramm beleuchtet, zurück.
 
@@ -5114,7 +5014,7 @@ Show( p );
 
 #### get light color
 
-**Syntax:** obj << get light color( light number )
+**Syntax:** obj &lt;&lt; get light color( light number )
 
 **Beschreibung:** Gibt die angegebene Farbe des Lichts, das das Diagramm beleuchtet, als Liste zurück {red, green, blue}.
 
@@ -5137,7 +5037,7 @@ Show( c );
 
 #### get light position
 
-**Syntax:** obj << get light position( light number )
+**Syntax:** obj &lt;&lt; get light position( light number )
 
 **Beschreibung:** Gibt die angegebene Position des Lichts, das das Diagramm beleuchtet, als Liste zurück {x, y, z}.
 
@@ -5160,7 +5060,7 @@ Show( p );
 
 #### set light active
 
-**Syntax:** obj << set light active( light number, state=0|1 )
+**Syntax:** obj &lt;&lt; set light active( light number, state=0|1 )
 
 **Beschreibung:** Schaltet das angegebene Licht ein, das das Diagramm beleuchtet.
 
@@ -5182,7 +5082,7 @@ obj << Frame3D( Set Hide Lights Border( 0 ), Set Light Active( 4, 1 ) );
 
 #### set light color
 
-**Syntax:** obj << set light color( light number, red value, green value, blue value )
+**Syntax:** obj &lt;&lt; set light color( light number, red value, green value, blue value )
 
 **Beschreibung:** Legt die Farbe des Lichts fest, das das Diagramm beleuchtet.
 
@@ -5204,7 +5104,7 @@ obj << Frame3D( Set Hide Lights Border( 0 ), Set Light Color( 2, 240, 50, 70 ) )
 
 #### set light position
 
-**Syntax:** obj << set light position( light number, X, Y, Z )
+**Syntax:** obj &lt;&lt; set light position( light number, X, Y, Z )
 
 **Beschreibung:** Legt die Position des Lichts fest, das das Diagramm beleuchtet.
 
@@ -5228,7 +5128,7 @@ obj << Frame3D( Set Hide Lights Border( 0 ), Set Light Position( 2, -1.5833, 10,
 
 #### Surface Frame3D
 
-**Syntax:** Surface Frame3D( <commands passed to Frame3D> )
+**Syntax:** Surface Frame3D( &lt;commands passed to Frame3D&gt; )
 
 **Beschreibung:** Sendet Anzeigebefehle an das 3D-Diagramm.
 

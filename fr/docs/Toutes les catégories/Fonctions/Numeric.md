@@ -2,8 +2,6 @@
 
 
 
-## Fonctions
-
 ### Abs
 
 **Syntaxe :** y = Abs( x )
@@ -66,7 +64,7 @@ Floor( 1.2 );
 
 ### Integrate
 
-**Syntaxe :** y = Integrate( expr, varname, lowLimit, upLimit, <<Tolerance(1e-10), <<StoreInfo(list), <<StartingValue(val) )
+**Syntaxe :** y = Integrate( expr, varname, lowLimit, upLimit, &lt;&lt;Tolerance(1e-10), &lt;&lt;StoreInfo(list), &lt;&lt;StartingValue(val) )
 
 **Description :** Intègre une expression par rapport à une valeur scalaire en utilisant la méthode de quadrature adaptative de Gander et Gautschi (2000). Si la variable spécifiée avec varname a une valeur assignée, ou si l&apos;argument facultatif <<StartingValue() spécifie une valeur de départ, cette valeur sera utilisée en tant que valeur type pour améliorer la précision de l&apos;intégrale. Pour spécifier des étendues infinies d&apos;intégration, définir lowLimit, upLimit, ou les deux, comme manquantes. Si <<StoreInfo() est spécifié, l&apos;argument de <<StoreInfo() contiendra les diagnostics de la routine d&apos;intégration numérique. Si <<Tolerance() est spécifié, l&apos;argument <<Tolerance() sera utilisé comme niveau de tolérance dans la fonction d&apos;auto-intégration utilisée pour évaluer l&apos;intégrale. Des valeurs plus petites entraînent un temps d&apos;exécution plus long mais permettent d&apos;obtenir des résultats plus précis.
 
@@ -160,7 +158,7 @@ Normal Integrate(
 
 ### Num Deriv
 
-**Syntaxe :** y = Num Deriv( f( x, ... ),  <parnum>)
+**Syntaxe :** y = Num Deriv( f( x, ... ), &lt;parnum&gt;)
 
 **Description :** Renvoie la dérivée numérique de la fonction f( x,... ) par rapport à l&apos;un de ses arguments. Vous pouvez spécifier cet argument comme le second argument de la fonction Num Deriv. S&apos;il n&apos;y a pas de second argument spécifié, la dérivée est prise par rapport au premier argument de la fonction. La dérivée est évaluée à l&apos;aide des valeurs numériques spécifiées dans l&apos;expression de la fonction f( x,... ).
 
@@ -193,7 +191,7 @@ Num Deriv2( f( 2 ) );
 
 ### Round
 
-**Syntaxe :** y = Round( x, <n> )
+**Syntaxe :** y = Round( x, &lt;n&gt; )
 
 **Description :** Arrondit x à n chiffres après la virgule (ou 0 chiffre si n n&apos;est pas spécifié). Notez que l&apos;argument n peut être négatif.
 

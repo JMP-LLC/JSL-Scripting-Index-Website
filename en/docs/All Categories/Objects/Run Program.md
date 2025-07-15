@@ -6,19 +6,7 @@
 
 ### Run Program
 
-**Syntax:** obj = Run Program(
-
-    Executable( "path/etc.exe" ),
-
-  < Options( {"/a", "/b etc" } ) >,
-
-  < Parameter( optParm ) >,
-
-  < Read Function( Function( {this, optParm}, etc ) | "text" | "blob" ) >,
-
-  < Write Function( Function( {this, optParm}, etc ) ) >
-
-)
+**Syntax:** obj = Run Program( Executable( "path/etc.exe" ), &lt; Options( {"/a", "/b etc" } ) &gt;, &lt; Parameter( optParm ) &gt;, &lt; Read Function( Function( {this, optParm}, etc ) | "text" | "blob" ) &gt;, &lt; Write Function( Function( {this, optParm}, etc ) ) &gt;)
 
 **Description:** Control an external program using stdin and stdout.
 
@@ -37,7 +25,7 @@ RP = Run Program(
 
 ### Can Read
 
-**Syntax:** bool = obj << Can Read
+**Syntax:** bool = obj &lt;&lt; Can Read
 
 **Description:** Returns 1 if the RunProgram object can be read from and 0 if not.
 
@@ -54,13 +42,13 @@ Show( value );
 
 ### Can Write
 
-**Syntax:** bool = obj << Can Write
+**Syntax:** bool = obj &lt;&lt; Can Write
 
 **Description:** Returns boolean for whether or not the RunProgram object can be written to via standard input.
 
 ### Is Read EOF
 
-**Syntax:** bool = obj << Is Read EOF
+**Syntax:** bool = obj &lt;&lt; Is Read EOF
 
 **Description:** Returns 1 if the program has finished writing to standard output and 0 if not.
 
@@ -77,7 +65,7 @@ Show( value );
 
 ### Read
 
-**Syntax:** value = obj << Read( < "blob" > )
+**Syntax:** value = obj &lt;&lt; Read( &lt; "blob" &gt; )
 
 **Description:** Read standard output from executable as text or blob.
 
@@ -101,13 +89,13 @@ rp = Run Program(
 
 ### Write
 
-**Syntax:** obj << Write( string )
+**Syntax:** obj &lt;&lt; Write( string )
 
 **Description:** Write text to the program&apos;s standard input.
 
 ### Write EOF
 
-**Syntax:** obj << Write EOF
+**Syntax:** obj &lt;&lt; Write EOF
 
 **Description:** Write the end of file for the RunProgram object.
 

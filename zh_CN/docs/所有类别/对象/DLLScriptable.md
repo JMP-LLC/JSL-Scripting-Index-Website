@@ -6,7 +6,7 @@
 
 ### Load DLL
 
-**语法:** dll = Load DLL( file path | Base Name( file path without extension ), < AutoDeclare( bool | Quiet | Verbose) | Quiet | Verbose )> )
+**语法:** dll = Load DLL( file path | Base Name( file path without extension ), &lt; AutoDeclare( bool | Quiet | Verbose) | Quiet | Verbose )&gt; )
 
 **说明:** 加载指定路径所指向的 DLL。
 
@@ -27,7 +27,7 @@ If( Host is( "Windows" ),
 
 ### Call DLL
 
-**语法:** obj << Call DLL( function name, signature, args )
+**语法:** obj &lt;&lt; Call DLL( function name, signature, args )
 
 **说明:** 使用指定的签名和参数调用 DLL 中的指定函数。
 
@@ -46,7 +46,7 @@ If( Host is( "Windows" ),
 
 ### Declare Function
 
-**语法:** obj << Declare Function( name, Convention( STDCALL| CDECL| Pascal ), Alias( string ), Arg( Int8| UInt8| Int16| UInt16| Int32| UInt32| Int64| UInt64| Float| Double| AnsiString| UnicodeString| Struct| IntPtr| UIntPtr| ObjPtr, string ), Returns( type ); )
+**语法:** obj &lt;&lt; Declare Function( name, Convention( STDCALL| CDECL| Pascal ), Alias( string ), Arg( Int8| UInt8| Int16| UInt16| Int32| UInt32| Int64| UInt64| Float| Double| AnsiString| UnicodeString| Struct| IntPtr| UIntPtr| ObjPtr, string ), Returns( type ); )
 
 **说明:** 声明 DLL 中定义的函数的返回类型和参数类型，以便能从 JSL 成功调用该函数。
 
@@ -73,7 +73,7 @@ If( Host is( "Windows" ),
 
 ### Get Declaration JSL
 
-**语法:** obj << Get Declaration JSL
+**语法:** obj &lt;&lt; Get Declaration JSL
 
 **说明:** 从 DLL 检索声明 JSL，然后显示在日志中。该消息仅适用于包含函数 _JMP_Declarations() 的 DLL。
 
@@ -87,7 +87,7 @@ dll = Load DLL( /*DLL with JSL keyword*/ );
 
 ### Show Functions
 
-**语法:** obj << Show Functions
+**语法:** obj &lt;&lt; Show Functions
 
 **说明:** 将声明的函数列表发送至日志
 
@@ -113,7 +113,7 @@ If( Host is( "Windows" ),
 
 ### Unload DLL
 
-**语法:** obj << Unload DLL
+**语法:** obj &lt;&lt; Unload DLL
 
 **说明:** 卸载 DLL。
 

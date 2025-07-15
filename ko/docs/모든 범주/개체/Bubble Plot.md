@@ -6,7 +6,7 @@
 
 ### Action
 
-**구문:** obj << Action
+**구문:** obj &lt;&lt; Action
 
 **설명:** 실행할 표현식을 삽입하기 위한 플랫폼 내의 다목적 트랩도어. 임시로 표시 상자 및 데이터 테이블 유형을 플랫폼에 설정합니다.
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**구문:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**구문:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **설명:** 이전에 생성된 사전 설정을 개체에 적용하여 옵션과 사용자 정의를 저장된 설정과 일치하도록 업데이트합니다.
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Automatic Recalc
 
-**구문:** obj << Automatic Recalc( state=0|1 )
+**구문:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **설명:** 제외 항목 및 데이터 변경이 있을 때 분석을 자동으로 다시 실행합니다. 자동 재계산 옵션이 설정된 경우 재계산하기 전에 제외 항목 및 데이터 변경이 적용되게 하려면 Wait(0) 명령을 사용하는 것이 좋습니다.
 
@@ -87,7 +87,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**구문:** obj << Broadcast(message)
+**구문:** obj &lt;&lt; Broadcast(message)
 
 **설명:** 플랫폼에 메시지를 브로드캐스트합니다. 개별 개체의 반환 결과가 테이블인 경우 가능하면 테이블이 연결되고 최종 형식은 테이블 상자의 &apos;결합 테이블 저장&apos; 옵션 결과 또는 소스 열을 사용한 &apos;연결&apos; 옵션 결과와 동일합니다. 그 외의 경우에는 결과가 목록에 저장되어 반환됩니다.
 
@@ -104,7 +104,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**구문:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**구문:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **설명:** 플랫폼 변수를 변경하기 위한 제어판을 추가합니다.
 
@@ -119,7 +119,7 @@ ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country,
 
 ### Copy ByGroup Script
 
-**구문:** obj << Copy ByGroup Script
+**구문:** obj &lt;&lt; Copy ByGroup Script
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 클립보드에 넣습니다.
 
@@ -145,7 +145,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**구문:** obj << Copy Script
+**구문:** obj &lt;&lt; Copy Script
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 클립보드에 넣습니다.
 
@@ -160,7 +160,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**구문:** obj << Data Table Window
+**구문:** obj &lt;&lt; Data Table Window
 
 **설명:** 이 분석에 대한 데이터 테이블 창을 앞으로 가져옵니다.
 
@@ -175,7 +175,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**구문:** obj << Get By Levels
+**구문:** obj &lt;&lt; Get By Levels
 
 **설명:** 기준 그룹 열을 값에 매핑하는 연관 배열을 반환합니다.
 
@@ -192,7 +192,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**구문:** obj << Get ByGroup Script
+**구문:** obj &lt;&lt; Get ByGroup Script
 
 **설명:** 이 분석을 수행하기 위한 스크립트(JSL)를 생성하고 표현식으로 반환합니다.
 
@@ -219,7 +219,7 @@ Show( t );
 
 ### Get Container
 
-**구문:** obj << Get Container
+**구문:** obj &lt;&lt; Get Container
 
 **설명:** 개체의 콘텐츠를 담고 있는 컨테이너 상자에 대한 참조를 반환합니다.
 
@@ -266,7 +266,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**구문:** obj << Get Data Table
+**구문:** obj &lt;&lt; Get Data Table
 
 **설명:** 데이터 테이블에 대한 참조를 반환합니다.
 
@@ -282,7 +282,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**구문:** obj << Get Group Platform
+**구문:** obj &lt;&lt; Get Group Platform
 
 **설명:** 이 플랫폼이 그룹의 일부인 경우 그룹 플랫폼 개체를 반환하고, 그렇지 않은 경우 Empty()를 반환합니다.
 
@@ -299,7 +299,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**구문:** obj << Get Script
+**구문:** obj &lt;&lt; Get Script
 
 **설명:** 이 분석을 수행하기 위한 스크립트(JSL)를 생성하고 표현식으로 반환합니다.
 
@@ -315,7 +315,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**구문:** obj << Get Script With Data Table
+**구문:** obj &lt;&lt; Get Script With Data Table
 
 **설명:** 이 데이터 테이블을 참조하는 분석을 수행하기 위한 스크립트(JSL)를 생성하고 표현식으로 반환합니다.
 
@@ -331,7 +331,7 @@ Show( t );
 
 ### Get Timing
 
-**구문:** obj << Get Timing
+**구문:** obj &lt;&lt; Get Timing
 
 **설명:** 플랫폼 시작 시간을 설정합니다.
 
@@ -347,7 +347,7 @@ Show( t );
 
 ### Get Web Support
 
-**구문:** obj << Get Web Support
+**구문:** obj &lt;&lt; Get Web Support
 
 **설명:** 표시 개체에 대한 대화식 HTML 지원 수준을 나타내는 숫자를 반환합니다. 1은 일부 또는 모든 요소가 지원됨을 의미하고 0은 지원되지 않음을 의미합니다.
 
@@ -363,7 +363,7 @@ Show( s );
 
 ### Get Where Expr
 
-**구문:** obj << Get Where Expr
+**구문:** obj &lt;&lt; Get Where Expr
 
 **설명:** By() 또는 Where()를 사용하여 플랫폼이 시작된 경우 데이터 부분집합에 대한 Where 표현식을 반환하고, 그렇지 않은 경우 Empty()를 반환합니다.
 
@@ -400,7 +400,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**구문:** obj << Local Data Filter
+**구문:** obj &lt;&lt; Local Data Filter
 
 **설명:** 데이터를 특정 그룹 또는 범위로 필터링합니다. 이 플랫폼에서만 사용 가능합니다.
 
@@ -456,7 +456,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**구문:** obj << Paste Local Data Filter
+**구문:** obj &lt;&lt; Paste Local Data Filter
 
 **설명:** 클립보드의 로컬 데이터 필터를 현재 보고서에 적용합니다.
 
@@ -475,7 +475,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**구문:** obj << Redo Analysis
+**구문:** obj &lt;&lt; Redo Analysis
 
 **설명:** 동일한 분석을 새 창에서 다시 실행합니다. 데이터가 변경된 경우에는 분석결과가 달라집니다.
 
@@ -490,7 +490,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**구문:** obj << Redo ByGroup Analysis
+**구문:** obj &lt;&lt; Redo ByGroup Analysis
 
 **설명:** 동일한 분석을 새 창에서 다시 실행합니다. 데이터가 변경된 경우에는 분석결과가 달라집니다.
 
@@ -516,7 +516,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**구문:** obj << Relaunch Analysis
+**구문:** obj &lt;&lt; Relaunch Analysis
 
 **설명:** 플랫폼 시작 창을 열고 보고서를 생성하는 데 사용된 설정을 불러옵니다.
 
@@ -531,7 +531,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**구문:** obj << Relaunch ByGroup
+**구문:** obj &lt;&lt; Relaunch ByGroup
 
 **설명:** 플랫폼 시작 창을 열고 보고서를 생성하는 데 사용된 설정을 불러옵니다.
 
@@ -557,7 +557,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**구문:** obj << Remove Column Switcher
+**구문:** obj &lt;&lt; Remove Column Switcher
 
 **설명:** 플랫폼에 추가된 가장 최근 열 전환기를 제거합니다.
 
@@ -574,7 +574,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**구문:** obj << Remove Local Data Filter
+**구문:** obj &lt;&lt; Remove Local Data Filter
 
 **설명:** 로컬 데이터 필터가 생성된 경우 로컬 데이터 필터를 제거하고 데이터 테이블의 모든 데이터를 직접 사용하도록 플랫폼을 복원합니다.
 
@@ -613,9 +613,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**구문:** obj << Report;
-
-Report( obj )
+**구문:** obj &lt;&lt; Report;Report( obj )
 
 **설명:** 보고서 개체에 대한 참조를 반환합니다.
 
@@ -632,7 +630,7 @@ Show( t );
 
 ### Report View
 
-**구문:** obj << Report View( "전체"|"요약" )
+**구문:** obj &lt;&lt; Report View( "전체"|"요약" )
 
 **설명:** 보고서 보기는 플랫폼 보고서에 표시되는 상세 수준을 결정합니다. Full은 모든 상세 정보를 표시하고 Summary는 플랫폼에 따라 선택된 콘텐츠만 표시합니다. 사용자 정의된 동작의 경우 표시 상자는 <<Set Summary Behavior 메시지를 지원합니다.
 
@@ -647,7 +645,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**구문:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**구문:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 데이터 테이블에 테이블 특성으로 저장합니다. 스크립트 이름을 지정할 수 있습니다. Append Suffix 옵션은 스크립트 이름에 숫자 접미사를 추가하여 이름이 같은 기존 스크립트와 구분합니다. Prompt 옵션은 사용자에게 스크립트 이름을 지정하라는 메시지를 표시합니다. Replace 옵션은 이름이 같은 기존 스크립트를 바꿉니다.
 
@@ -673,7 +671,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**구문:** obj << Save ByGroup Script to Journal
+**구문:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 이 스크립트가 포함된 저널에 버튼을 추가합니다.
 
@@ -699,7 +697,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**구문:** obj << Save ByGroup Script to Script Window
+**구문:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 현재 스크립트 텍스트 창에 추가합니다.
 
@@ -725,7 +723,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**구문:** obj << Save Script for All Objects
+**구문:** obj &lt;&lt; Save Script for All Objects
 
 **설명:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -740,7 +738,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**구문:** obj << Save Script for All Objects To Data Table( <name> )
+**구문:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **설명:** 모든 보고서 개체에 대한 스크립트를 현재 데이터 테이블에 저장합니다. 이 옵션은 창에 여러 보고서가 있을 때 유용합니다. 스크립트 이름을 따옴표로 묶어 지정하는 경우 외에는 첫 번째 플랫폼 이름을 따라 스크립트 이름이 지정됩니다.
 
@@ -790,7 +788,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**구문:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**구문:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 데이터 테이블에 테이블 특성으로 저장합니다.
 
@@ -805,7 +803,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**구문:** obj << Save Script to Journal
+**구문:** obj &lt;&lt; Save Script to Journal
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 이 스크립트가 포함된 저널에 버튼을 추가합니다.
 
@@ -820,7 +818,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**구문:** obj << Save Script to Report
+**구문:** obj &lt;&lt; Save Script to Report
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 보고서 자체에 표시합니다. 수행된 작업에 대한 인쇄된 기록을 유지하려는 경우에 유용합니다.
 
@@ -835,7 +833,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**구문:** obj << Save Script to Script Window
+**구문:** obj &lt;&lt; Save Script to Script Window
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 현재 스크립트 텍스트 창에 추가합니다.
 
@@ -911,7 +909,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**구문:** obj << Sync to Data Table Changes
+**구문:** obj &lt;&lt; Sync to Data Table Changes
 
 **설명:** 제외 항목 및 데이터 변경 사항과 동기화합니다.
 
@@ -928,7 +926,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**구문:** obj << Title( "new title" )
+**구문:** obj &lt;&lt; Title( "new title" )
 
 **설명:** 플랫폼의 제목을 설정합니다.
 
@@ -943,7 +941,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**구문:** obj << Top Report
+**구문:** obj &lt;&lt; Top Report
 
 **설명:** 보고서의 루트 노드에 대한 참조를 반환합니다.
 
@@ -960,7 +958,7 @@ Show( t );
 
 ### Transform Column
 
-**구문:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**구문:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **설명:** 개체의 로컬 컨텍스트(대개 플랫폼)에서 변환 열을 생성합니다. 변환 열은 플랫폼의 수명 동안에만 활성화됩니다.
 
@@ -981,7 +979,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**구문:** obj << View Web XML
+**구문:** obj &lt;&lt; View Web XML
 
 **설명:** 대화식 HTML 보고서를 생성하는 데 사용된 XML 코드를 반환합니다.
 
@@ -996,9 +994,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**구문:** obj = Bubble Plot(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Bubble Plot(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 보고서에 대해 생성할 창 유형을 설정합니다. 기본적으로 Visible 보고서 창이 생성됩니다. Invisible 창은 화면에 나타나지 않지만 Window()와 같은 함수로 검색할 수 있습니다. Private 창은 대부분의 창 메시지에 응답하지만 검색할 수 없으며 보고서 개체를 통해 처리해야 합니다.
 
@@ -1019,7 +1015,7 @@ New Window( "Bivariate Equation",
 
 ### Bubble Plot
 
-**구문:** Bubble Plot( X( column ), Y( column ), <Sizes( column )>, <Time( column )>, <ID( column )>, <Coloring( column ) )
+**구문:** Bubble Plot( X( column ), Y( column ), &lt;Sizes( column )&gt;, &lt;Time( column )&gt;, &lt;ID( column )&gt;, &lt;Coloring( column ) )
 
 **설명:** 시간 변수에 대해 애니메이션을 적용할 수 있는 버블의 2차원 산점도를 생성합니다. 추가 변수를 사용하여 버블의 크기와 색상을 지정할 수 있습니다.
 
@@ -1035,9 +1031,7 @@ obj = dt << Bubble Plot( X( :"Portion 0-19"n ), Y( :"Portion60+"n ), Sizes( :Pop
 
 ### By
 
-**구문:** obj = Bubble Plot(...<By( column(s) )>...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Bubble Plot(...&lt;By( column(s) )&gt;...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 변수의 각 수준에 대해 하나씩 여러 보고서를 생성합니다.
 
@@ -1062,9 +1056,7 @@ obj = dt << Bubble Plot(
 
 ### Coloring
 
-**구문:** obj = Bubble Plot(...<Coloring( column )>...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Bubble Plot(...&lt;Coloring( column )&gt;...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 선택한 변수에 따라 버블에 색상을 적용합니다.
 
@@ -1084,9 +1076,7 @@ obj = dt << Bubble Plot(
 
 ### Freq
 
-**구문:** obj = Bubble Plot(...<Freq( column )>...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Bubble Plot(...&lt;Freq( column )&gt;...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 버블의 위치, 크기 및 색상을 계산할 때 계산에 가중치를 적용합니다.
 
@@ -1114,9 +1104,7 @@ dtSummary << Bubble Plot(
 
 ### ID
 
-**구문:** obj = Bubble Plot(...<ID( column(s) )>...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Bubble Plot(...&lt;ID( column(s) )&gt;...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 집계하여 단일 버블로 표시해야 하는 행을 식별합니다.
 
@@ -1130,9 +1118,7 @@ obj = dt << Bubble Plot( X( :"Portion 0-19"n ), Y( :"Portion60+"n ), Sizes( :Pop
 
 ### Sizes
 
-**구문:** obj = Bubble Plot(...<Sizes( column )>...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Bubble Plot(...&lt;Sizes( column )&gt;...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 버블 크기로 사용할 열입니다. 지정하지 않을 경우 버블 크기는 관측값 수에 비례합니다.
 
@@ -1146,9 +1132,7 @@ obj = dt << Bubble Plot( X( :"Portion 0-19"n ), Y( :"Portion60+"n ), Sizes( :Pop
 
 ### Time
 
-**구문:** obj = Bubble Plot(...<Time( column )>...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Bubble Plot(...&lt;Time( column )&gt;...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 각 고유 기간에 대해 별도의 좌표, 크기 및 색상을 유지합니다.
 
@@ -1168,9 +1152,7 @@ obj = dt << Bubble Plot(
 
 ### X
 
-**구문:** obj = Bubble Plot(...X( column )...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Bubble Plot(...X( column )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 그림에서 버블의 x 좌표로 사용할 열입니다.
 
@@ -1184,9 +1166,7 @@ obj = dt << Bubble Plot( X( :"Portion 0-19"n ), Y( :"Portion60+"n ), Sizes( :Pop
 
 ### Y
 
-**구문:** obj = Bubble Plot(...Y( column )...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Bubble Plot(...Y( column )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 그림에서 버블의 y 좌표로 사용할 열입니다.
 
@@ -1202,7 +1182,7 @@ obj = dt << Bubble Plot( X( :"Portion 0-19"n ), Y( :"Portion60+"n ), Sizes( :Pop
 
 ### Auto Stretching
 
-**구문:** obj << Auto Stretching( "자동"|"켜짐"|"해제" )
+**구문:** obj &lt;&lt; Auto Stretching( "자동"|"켜짐"|"해제" )
 
 **설명:** 보고서 자동 늘이기 동작을 설정합니다.
 
@@ -1217,7 +1197,7 @@ obj << Auto Stretching( "Off" );
 
 ### Bubble Size
 
-**구문:** obj << Bubble Size( number )
+**구문:** obj &lt;&lt; Bubble Size( number )
 
 **설명:** 산점도의 버블 크기를 변경합니다.
 
@@ -1232,7 +1212,7 @@ obj << Bubble Size( 50 );
 
 ### Color Levels
 
-**구문:** obj << Color Levels
+**구문:** obj &lt;&lt; Color Levels
 
 **설명:** 연속형 범례의 수준을 설정합니다.
 
@@ -1253,7 +1233,7 @@ obj << Color Levels( [100000 1000000 10000000] );
 
 ### Color Theme
 
-**구문:** obj << Color Theme
+**구문:** obj &lt;&lt; Color Theme
 
 **설명:** 버블의 색상 테마를 설정합니다.
 
@@ -1275,7 +1255,7 @@ obj << Color Theme( "White to Red" );
 
 ### Color as Sum
 
-**구문:** obj << Color as Sum( state=0|1 )
+**구문:** obj &lt;&lt; Color as Sum( state=0|1 )
 
 **설명:** 색상 변수의 평균 대신 색상 변수의 합을 색상 역할로 사용합니다.
 
@@ -1296,7 +1276,7 @@ obj << Color as Sum( 1 );
 
 ### Combine
 
-**구문:** obj << Combine( <id> )
+**구문:** obj &lt;&lt; Combine( &lt;id&gt; )
 
 **설명:** 그룹 내의 선택된 버블(또는 지정한 ID)을 큰 버블로 결합합니다. 이 옵션은 두 개의 ID 변수가 사용되는 경우에만 사용할 수 있습니다.
 
@@ -1320,7 +1300,7 @@ obj << Combine( "Europe" );
 
 ### Combine All
 
-**구문:** obj << Combine All
+**구문:** obj &lt;&lt; Combine All
 
 **설명:** 그룹의 모든 구성 버블을 큰 버블로 결합합니다. 이 옵션은 두 개의 ID 변수가 사용되는 경우에만 사용할 수 있습니다.
 
@@ -1343,7 +1323,7 @@ obj << Combine All;
 
 ### Draw
 
-**구문:** obj << Draw( "채우기"|"외곽선 표시"|"채우기 및 외곽선 표시" )
+**구문:** obj &lt;&lt; Draw( "채우기"|"외곽선 표시"|"채우기 및 외곽선 표시" )
 
 **설명:** 버블 표시 모드를 설정합니다.
 
@@ -1358,7 +1338,7 @@ obj << Draw( "Outlined" );
 
 ### Fit to Window
 
-**구문:** obj << Fit to Window( "자동"|"켜짐"|"해제" )
+**구문:** obj &lt;&lt; Fit to Window( "자동"|"켜짐"|"해제" )
 
 **설명:** 보고서 자동 늘이기 동작을 설정합니다.
 
@@ -1373,7 +1353,7 @@ obj << Fit to Window( "Off" );
 
 ### Get Custom Path
 
-**구문:** obj << Get Custom Path
+**구문:** obj &lt;&lt; Get Custom Path
 
 **설명:** 버블에 대한 사용자 경로를 행렬로 반환합니다. 경로 행렬에는 경로의 각 점에 대한 플래그, x, y에 대한 세 개의 열이 있습니다. 플래그 값은 제어에 대해 0, 이동에 대해 1, 선분에 대해 2, 3차 Bézier 세그먼트에 대해 3이며, 점이 경로를 닫는 경우에는 음수입니다.
 
@@ -1390,7 +1370,7 @@ obj << Get Custom Path();
 
 ### Get Draw
 
-**구문:** obj << Get Draw
+**구문:** obj &lt;&lt; Get Draw
 
 **설명:** 버블 표시 모드를 반환합니다.
 
@@ -1405,7 +1385,7 @@ obj << Get Draw();
 
 ### Get Label
 
-**구문:** obj << Get Label
+**구문:** obj &lt;&lt; Get Label
 
 **설명:** 버블 라벨 그리기 모드를 반환합니다.
 
@@ -1420,7 +1400,7 @@ obj << Get Label();
 
 ### Get Shape
 
-**구문:** obj << Get Shape
+**구문:** obj &lt;&lt; Get Shape
 
 **설명:** 버블 셰이프를 반환합니다.
 
@@ -1436,7 +1416,7 @@ obj << Get Shape();
 
 ### Go
 
-**구문:** obj << Go
+**구문:** obj &lt;&lt; Go
 
 **설명:** 시간 변수가 사용되는 경우 애니메이션을 시작합니다.
 
@@ -1458,7 +1438,7 @@ obj << Go;
 
 ### Label
 
-**구문:** obj << Label( "없음"|"선택됨"|"모두" )
+**구문:** obj &lt;&lt; Label( "없음"|"선택됨"|"모두" )
 
 **설명:** 버블 라벨 그리기 모드를 설정합니다.
 
@@ -1473,7 +1453,7 @@ obj << Label( "All" );
 
 ### Label Offset
 
-**구문:** obj << Label Offset( {pt, x offset, y offset}, ... )
+**구문:** obj &lt;&lt; Label Offset( {pt, x offset, y offset}, ... )
 
 ```jsl
 
@@ -1493,7 +1473,7 @@ obj << Label Offset( {4, -75, -43}, {7, 80, -34} );
 
 ### Legend
 
-**구문:** obj << Legend( state=0|1 )
+**구문:** obj &lt;&lt; Legend( state=0|1 )
 
 **설명:** 색상 지정 열이 사용되는 경우 색상 범례를 표시합니다. 기본적으로 설정되어 있습니다.
 
@@ -1515,7 +1495,7 @@ obj << Legend( 1 );
 
 ### Lock Scales
 
-**구문:** obj << Lock Scales( state=0|1 )
+**구문:** obj &lt;&lt; Lock Scales( state=0|1 )
 
 **설명:** 축, 그래디언트 및 크기 범위를 잠가 데이터 또는 필터링 변경에 반응하여 변경되지 않도록 합니다. 기본적으로 설정되어 있습니다.
 
@@ -1531,7 +1511,7 @@ dt << Data Filter( Mode( Select( 0 ), Show( 0 ), Include( 1 ) ), Add Filter( Col
 
 ### Orient Shapes
 
-**구문:** obj << Orient Shapes( state=0|1 )
+**구문:** obj &lt;&lt; Orient Shapes( state=0|1 )
 
 **설명:** 위쪽이 이동 방향을 가리키도록 셰이프를 배치합니다.
 
@@ -1553,7 +1533,7 @@ obj << Orient Shapes( 1 );
 
 ### Prev
 
-**구문:** obj << Prev
+**구문:** obj &lt;&lt; Prev
 
 **설명:** 시간 변수를 애니메이션에서 한 단계 뒤로 이동합니다.
 
@@ -1576,7 +1556,7 @@ obj << Prev;
 
 ### Revert Color Theme
 
-**구문:** obj << Revert Color Theme
+**구문:** obj &lt;&lt; Revert Color Theme
 
 **설명:** 사용자 색상 테마에서 열 특성 또는 환경 설정의 기본 테마로 되돌립니다.
 
@@ -1600,7 +1580,7 @@ obj << Revert Color Theme();
 
 ### Selectable Across Gaps
 
-**구문:** obj << Selectable Across Gaps( state=0|1 )
+**구문:** obj &lt;&lt; Selectable Across Gaps( state=0|1 )
 
 **설명:** 버블을 선택할 수 있도록 허용하고 데이터가 결측된 시간 주기 동안 버블을 선택된 상태로 유지합니다. 이 옵션이 해제되어 있으면 데이터가 결측된 시간 주기 동안 버블을 선택할 수 없습니다.
 
@@ -1624,7 +1604,7 @@ obj << Go;
 
 ### Set Custom Path
 
-**구문:** obj << Set Custom Path
+**구문:** obj &lt;&lt; Set Custom Path
 
 **설명:** 버블의 사용자 경로를 설정합니다. N x 3 행렬 또는 텍스트 표현을 사용하여 경로를 지정할 수 있습니다. 경로 행렬에는 경로의 각 점에 대한 플래그, x, y에 대한 세 개의 열이 있습니다. 플래그 값은 제어에 대해 0, 이동에 대해 1, 선분에 대해 2, 3차 Bézier 세그먼트에 대해 3이며, 점이 경로를 닫는 경우에는 음수입니다. 경로 텍스트는 SVG 구문을 지원합니다.
 
@@ -1640,7 +1620,7 @@ obj << Set Shape( "Custom" );
 
 ### Set Shape
 
-**구문:** obj << Set Shape( "원"|"삼각형"|"정사각형"|"마름모"|"화살표"|"사용자 정의" )
+**구문:** obj &lt;&lt; Set Shape( "원"|"삼각형"|"정사각형"|"마름모"|"화살표"|"사용자 정의" )
 
 **설명:** 버블 셰이프를 설정합니다.
 
@@ -1655,7 +1635,7 @@ obj << Set Shape( "Triangle" );
 
 ### Show Roles
 
-**구문:** obj << Show Roles( state=0|1 )
+**구문:** obj &lt;&lt; Show Roles( state=0|1 )
 
 **설명:** 각 역할에 사용되는 변수를 보고서 위쪽의 범례에 표시합니다.
 
@@ -1677,7 +1657,7 @@ obj << Show Roles( 1 );
 
 ### Show Time Annotation
 
-**구문:** obj << Show Time Annotation( state=0|1 )
+**구문:** obj &lt;&lt; Show Time Annotation( state=0|1 )
 
 **설명:** 애니메이션이 적용된 버블 그림에 현재 시간을 주석으로 표시합니다. 기본적으로 설정되어 있습니다.
 
@@ -1702,7 +1682,7 @@ obj << Show Time Annotation( 0 );
 
 ### Size as Sum
 
-**구문:** obj << Size as Sum( state=0|1 )
+**구문:** obj &lt;&lt; Size as Sum( state=0|1 )
 
 **설명:** 크기 변수의 평균 대신 크기 변수의 합을 크기 역할로 사용합니다. 기본적으로 설정되어 있습니다.
 
@@ -1717,7 +1697,7 @@ obj << Size as Sum( 1 );
 
 ### Speed
 
-**구문:** obj << Speed( number )
+**구문:** obj &lt;&lt; Speed( number )
 
 **설명:** 시간 경과에 따른 버블 이동 속도를 변경합니다.
 
@@ -1740,7 +1720,7 @@ obj << Go;
 
 ### Split
 
-**구문:** obj << Split( <id> )
+**구문:** obj &lt;&lt; Split( &lt;id&gt; )
 
 **설명:** 선택된 버블(또는 지정한 ID)을 구성 버블로 분할합니다. 이 옵션은 두 개의 ID 변수가 사용되는 경우에만 사용할 수 있습니다.
 
@@ -1765,7 +1745,7 @@ obj << Split( "Asia" );
 
 ### Split All
 
-**구문:** obj << Split All
+**구문:** obj &lt;&lt; Split All
 
 **설명:** 버블을 구성 버블로 분할합니다. 이 옵션은 두 개의 ID 변수가 사용되는 경우에만 사용할 수 있습니다.
 
@@ -1787,7 +1767,7 @@ obj << Split All;
 
 ### Step
 
-**구문:** obj << Step
+**구문:** obj &lt;&lt; Step
 
 **설명:** 시간 변수를 애니메이션에서 한 단계 앞으로 이동합니다.
 
@@ -1809,7 +1789,7 @@ obj << Step;
 
 ### Stop
 
-**구문:** obj << Stop
+**구문:** obj &lt;&lt; Stop
 
 **설명:** 시간 변수가 사용되는 경우 애니메이션을 중지합니다.
 
@@ -1833,7 +1813,7 @@ obj << Stop;
 
 ### Time Index
 
-**구문:** obj << Time Index( number )
+**구문:** obj &lt;&lt; Time Index( number )
 
 **설명:** 산점도의 시간 변수 값을 설정합니다.
 
@@ -1854,7 +1834,7 @@ obj << Time Index( 19 );
 
 ### Title Position
 
-**구문:** obj << Title Position( X,Y )
+**구문:** obj &lt;&lt; Title Position( X,Y )
 
 **설명:** 제목 위치를 설정합니다. 이 옵션을 보려면 시간 변수를 지정해야 합니다.
 
@@ -1875,7 +1855,7 @@ obj << Title Position( 0.8, 0.06 );
 
 ### Toggle Animation
 
-**구문:** obj << Toggle Animation
+**구문:** obj &lt;&lt; Toggle Animation
 
 **설명:** 현재 애니메이션 상태를 전환합니다.
 
@@ -1899,7 +1879,7 @@ obj << Toggle Animation;
 
 ### Trail Bubbles
 
-**구문:** obj << Trail Bubbles( "없음"|"선택됨"|"모두" )
+**구문:** obj &lt;&lt; Trail Bubbles( "없음"|"선택됨"|"모두" )
 
 **설명:** 버블의 시간에 따른 이동 경로를 반투명 버블로 표시합니다. 버블 궤적을 표시하려면 시간 열을 지정해야 하고 먼저 버블을 선택해야 합니다.
 
@@ -1922,7 +1902,7 @@ obj << Go;
 
 ### Trail Lines
 
-**구문:** obj << Trail Lines( "없음"|"선택됨"|"모두" )
+**구문:** obj &lt;&lt; Trail Lines( "없음"|"선택됨"|"모두" )
 
 **설명:** 버블의 시간에 따른 이동 경로를 연결된 선분으로 표시합니다. 버블 궤적을 표시하려면 시간 열을 지정해야 하고 먼저 버블을 선택해야 합니다.
 
@@ -1945,7 +1925,7 @@ obj << Go;
 
 ### X as Sum
 
-**구문:** obj << X as Sum( state=0|1 )
+**구문:** obj &lt;&lt; X as Sum( state=0|1 )
 
 **설명:** X 변수의 평균 대신 X 변수의 합을 X 역할로 사용합니다.
 
@@ -1960,7 +1940,7 @@ obj << X as Sum( 1 );
 
 ### Y as Sum
 
-**구문:** obj << Y as Sum( state=0|1 )
+**구문:** obj &lt;&lt; Y as Sum( state=0|1 )
 
 **설명:** Y 변수의 평균 대신 Y 변수의 합을 Y 역할로 사용합니다.
 

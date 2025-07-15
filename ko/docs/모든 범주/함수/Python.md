@@ -2,8 +2,6 @@
 
 
 
-## 함수
-
 ### Python Connect
 
 **구문:** PythonConnection = Python Connect ()
@@ -51,7 +49,7 @@ conn << Create JPIP CMD();
 
 ### Python Execute
 
-**구문:** Python Execute( { list of Inputs }, { list of Outputs }, statements < , echo( 1 | 0 ) > )
+**구문:** Python Execute( { list of Inputs }, { list of Outputs }, statements &lt; , echo( 1 | 0 ) &gt; )
 
 **설명:** 입력 목록을 보내고 명령문을 실행하고 출력 목록을 반환합니다. 선택적 echo() 파라미터의 기본값은 True입니다. echo 파라미터는 Python 소스의 로그 출력을 제어합니다. 논리적 True(1)는 소스를 로그에 출력하고 0은 로그에 출력하지 않습니다.
 
@@ -322,7 +320,7 @@ Python Submit( "print(pi)" );
 
 ### Python Send
 
-**구문:** Python Send( name, <Python Name( name ) | "as_name" > )
+**구문:** Python Send( name, &lt;Python Name( name ) | "as_name" &gt; )
 
 **설명:** Sends data to Python, where the name argument can represent any of the following JMP data types ( numeric | string | matrix | list | data table | data table column | date ).
 
@@ -369,7 +367,7 @@ Python Submit( "print(weight)" );
 
 ### Python Send File
 
-**구문:** Python Send File( filename, <Python Name( name )> )
+**구문:** Python Send File( filename, &lt;Python Name( name )&gt; )
 
 **설명:** 데이터 파일을 Python으로 보냅니다. 여기서 filename 인수는 Python으로 보낼 파일의 경로 이름을 지정하는 문자열입니다.
 
@@ -388,7 +386,7 @@ Python Submit( "print(Baseball)" );
 
 ### Python Submit
 
-**구문:** Python Submit( statements < , echo( 1 | 0 ) > )
+**구문:** Python Submit( statements &lt; , echo( 1 | 0 ) &gt; )
 
 **설명:** 명령문을 Python으로 전송합니다. 명령문은 문자열 값 또는 문자열 값 목록 형식일 수 있습니다. 선택적 echo() 파라미터의 기본값은 1입니다. echo 파라미터는 Python 소스의 로그 출력을 제어합니다. 논리적 True(1)는 소스를 로그에 출력하고 0은 로그에 출력하지 않습니다.
 

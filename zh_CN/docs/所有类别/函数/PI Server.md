@@ -2,13 +2,9 @@
 
 
 
-## 函数
-
 ### New PI Client
 
-**语法:** New Pi Client(URL(base URL), <Authentication Method("None"|"Basic"|"NTLM"|"Kerberos")>,
-
-                   <Username(userid)>,<Password(password)>)
+**语法:** New Pi Client(URL(base URL), &lt;Authentication Method("None"|"Basic"|"NTLM"|"Kerberos")&gt;, &lt;Username(userid)&gt;,&lt;Password(password)&gt;)
 
 **说明:** 创建可用于从 PI 服务器导入数据的新 PI 客户端实例。
 
@@ -92,13 +88,7 @@ importer << Run;
 
 ### Importer
 
-**语法:** Importer(AF Path(Asset Framework path), <Series(string)>, <Start Time(PI time string)>,
-
-			   <End Time(PI time string)>, <UTC(boolean)>, <Boundary Type(string)>, <Max Count(integer)>,
-
-			   <Filter(string)>, <Retrieve Attribute Status(boolean)>, <Intervals(integer)>,  <Sync Time(PI time string)>, <Sync Time Boundary Type(string)>,
-
-			   <Interval(duration in PI AFTimeSpan format)>, <Timeout(integer)>)
+**语法:** Importer(AF Path(Asset Framework path), &lt;Series(string)&gt;, &lt;Start Time(PI time string)&gt;, &lt;End Time(PI time string)&gt;, &lt;UTC(boolean)&gt;, &lt;Boundary Type(string)&gt;, &lt;Max Count(integer)&gt;, &lt;Filter(string)&gt;, &lt;Retrieve Attribute Status(boolean)&gt;, &lt;Intervals(integer)&gt;, &lt;Sync Time(PI time string)&gt;, &lt;Sync Time Boundary Type(string)&gt;, &lt;Interval(duration in PI AFTimeSpan format)&gt;, &lt;Timeout(integer)&gt;)
 
 **说明:** 创建新的原始导入程序实例。
 

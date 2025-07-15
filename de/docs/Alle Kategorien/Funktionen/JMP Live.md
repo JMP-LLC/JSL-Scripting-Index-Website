@@ -2,11 +2,9 @@
 
 
 
-## Funktionen
-
 ### New JMP Live
 
-**Syntax:** New JMP Live(Connection("Connection Name"), <Prompt("No" | "If Needed")>)
+**Syntax:** New JMP Live(Connection("Connection Name"), &lt;Prompt("No" | "If Needed")&gt;)
 
 **Beschreibung:** Startet eine Verbindung mit JMP Live und verwendet gespeicherte Verbindungsinformationen. Connection ist optional und der Standardwert ist die im Verbindungsmanager angegebene Standardverbindung. Wenn angegeben, wird die Verbindung nach dem Namen gesucht. Prompt ist optional und der Standardwert dafür ist „No“. Die gültigen Werte für die Eingabeaufforderung sind „Yes“, „No“ und „If needed“. Der Wert „Yes“ fordert immer zur Eingabe der Login-Benutzerdaten auf. Der Wert „No“ fordert niemals zur Eingabe der Login-Benutzerdaten auf, kann jedoch zu einem Authentifizierungsfehler führen. Der Wert „If Needed“ fordert nur dann zur Eingabe der Benutzerdaten auf, wenn die aktuell gespeicherten Benutzerdaten nicht gültig sind. Gibt ein JMP Live-Verbindungsobjekt zurück.
 
@@ -41,7 +39,7 @@ jmplive = New JMP Live( Connection( "MyJMPLive" ), Prompt( If Needed ) );
 
 ### New JMP Live Content
 
-**Syntax:** obj = New JMP Live Content(jmpreport|Image(path_to_image)|Data(jmpdatatable)|Map(jmpmap), <Title(...)>, <Description(...)>, <Publish Data(0|1)>, <Enable Warnings(0|1)>, <Optimization("Interactivity" | "Performance")>
+**Syntax:** obj = New JMP Live Content(jmpreport|Image(path_to_image)|Data(jmpdatatable)|Map(jmpmap), &lt;Title(...)&gt;, &lt;Description(...)&gt;, &lt;Publish Data(0|1)&gt;, &lt;Enable Warnings(0|1)&gt;, &lt;Optimization("Interactivity" | "Performance")&gt;
 
 **Beschreibung:** Erzeugt interaktive Inhalte für die Veröffentlichung auf JMP Live. 
 

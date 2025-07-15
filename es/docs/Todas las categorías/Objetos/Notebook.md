@@ -22,7 +22,7 @@ nb = Notebook();
 
 ### Enable Inline Logging
 
-**Sintaxis:** obj << Enable Inline Logging( 0|1 )
+**Sintaxis:** obj &lt;&lt; Enable Inline Logging( 0|1 )
 
 **Descripción:** Habilita o deshabilita el registro de la salida en bloques del cuaderno.
 
@@ -39,7 +39,7 @@ nb << Enable Inline Logging( 0 );
 
 ### Export to a Workflow
 
-**Sintaxis:** obj << Export to a Workflow( <Create(wfb name)>|<AddTo(wfb name)> )
+**Sintaxis:** obj &lt;&lt; Export to a Workflow( &lt;Create(wfb name)&gt;|&lt;AddTo(wfb name)&gt; )
 
 **Descripción:** Exporta los bloques del cuaderno a un flujo de trabajo.
 
@@ -60,7 +60,7 @@ nb << Export to a Workflow;
 
 ### Get Window
 
-**Sintaxis:** obj << Get Window
+**Sintaxis:** obj &lt;&lt; Get Window
 
 **Descripción:** Devuelve la ventana de este cuaderno.
 
@@ -77,7 +77,7 @@ nb << Get Window;
 
 ### Import .ipynb File
 
-**Sintaxis:** obj << Import .ipynb File( file path )
+**Sintaxis:** obj &lt;&lt; Import .ipynb File( file path )
 
 **Descripción:** Carga el archivo .ipynb proporcionado como bloques en el cuaderno.
 
@@ -94,7 +94,7 @@ nb << Import .ipynb File( NOTEBOOKPATH );
 
 ### Run All Scripts
 
-**Sintaxis:** obj << Run All Scripts
+**Sintaxis:** obj &lt;&lt; Run All Scripts
 
 **Descripción:** Ejecuta el cuaderno completo.
 
@@ -116,7 +116,7 @@ nb << Run All Scripts;
 
 ### Show Embedded Log
 
-**Sintaxis:** obj << Show Embedded Log( 0|1 )
+**Sintaxis:** obj &lt;&lt; Show Embedded Log( 0|1 )
 
 **Descripción:** Habilita o deshabilita el registro incrustado en el cuaderno.
 
@@ -133,7 +133,7 @@ nb << Show Embedded Log( 1 );
 
 ### Title
 
-**Sintaxis:** obj << Title( title )
+**Sintaxis:** obj &lt;&lt; Title( title )
 
 **Descripción:** Establece el título de este cuaderno.
 
@@ -170,7 +170,7 @@ block = nb << Add New Block( "JSL", "Open (\!"$SAMPLE_DATA/Big Class.jmp\!")" );
 
 #### Block Name
 
-**Sintaxis:** obj << Block Name( name )
+**Sintaxis:** obj &lt;&lt; Block Name( name )
 
 **Descripción:** Establece u obtiene el título de este bloque.
 
@@ -188,7 +188,7 @@ block << Block Name( "Test Block Name" );
 
 #### Duplicate Block
 
-**Sintaxis:** obj << Duplicate Block
+**Sintaxis:** obj &lt;&lt; Duplicate Block
 
 **Descripción:** Duplica este bloque y agrega el nuevo bloque como hermano.
 
@@ -206,7 +206,7 @@ block << Duplicate Block;
 
 #### Get Content
 
-**Sintaxis:** obj << Get Content
+**Sintaxis:** obj &lt;&lt; Get Content
 
 **Descripción:** Obtiene el contenido del bloque.
 
@@ -224,7 +224,7 @@ Show( block << Get Content );
 
 #### Get Output
 
-**Sintaxis:** obj << Get Output
+**Sintaxis:** obj &lt;&lt; Get Output
 
 **Descripción:** Obtiene la salida del árbol de visualización del bloque.
 
@@ -247,7 +247,7 @@ block2 << Get Output;
 
 #### Import .ipynb File
 
-**Sintaxis:** obj << Import .ipynb File( file path )
+**Sintaxis:** obj &lt;&lt; Import .ipynb File( file path )
 
 **Descripción:** Carga el archivo .ipynb proporcionado como bloques agregados a esta sección.
 
@@ -263,7 +263,7 @@ section << Import .ipynb File( NOTEBOOKPATH );
 
 #### Line Count
 
-**Sintaxis:** obj << Line Count( number )
+**Sintaxis:** obj &lt;&lt; Line Count( number )
 
 **Descripción:** Establece el número máximo de líneas mostradas en este bloque antes de activar el desplazamiento. Defínalo como cero para habilitar el tamaño automático.
 
@@ -281,7 +281,7 @@ block << Line Count( 1 );
 
 #### Move Block Down
 
-**Sintaxis:** obj << Move Block Down
+**Sintaxis:** obj &lt;&lt; Move Block Down
 
 **Descripción:** Desplaza este bloque una posición hacia abajo en la lista.
 
@@ -302,7 +302,7 @@ block << Move Block Down;
 
 #### Move Block Up
 
-**Sintaxis:** obj << Move Block Up
+**Sintaxis:** obj &lt;&lt; Move Block Up
 
 **Descripción:** Desplaza este bloque una posición hacia arriba en la lista.
 
@@ -323,7 +323,7 @@ block2 << Move Block Up;
 
 #### Popout Results
 
-**Sintaxis:** obj << Popout Results
+**Sintaxis:** obj &lt;&lt; Popout Results
 
 **Descripción:** Envía la salida actual de este bloque a una nueva ventana.
 
@@ -346,7 +346,7 @@ block2 << Popout Results;
 
 #### Remove Block
 
-**Sintaxis:** obj << Remove Block
+**Sintaxis:** obj &lt;&lt; Remove Block
 
 **Descripción:** Quita este bloque de su progenitor.
 
@@ -364,7 +364,7 @@ block << Remove Block;
 
 #### Remove Section
 
-**Sintaxis:** obj << Remove Section
+**Sintaxis:** obj &lt;&lt; Remove Section
 
 **Descripción:** Quita esta sección de su progenitor.
 
@@ -380,7 +380,7 @@ section << Remove Section;
 
 #### Run Script
 
-**Sintaxis:** obj << Run Script
+**Sintaxis:** obj &lt;&lt; Run Script
 
 **Descripción:** Ejecuta el contenido del bloque actual.
 
@@ -399,7 +399,7 @@ block << Run Script;
 
 #### Run Section
 
-**Sintaxis:** obj << Run Section
+**Sintaxis:** obj &lt;&lt; Run Section
 
 **Descripción:** Ejecuta los hijos de esta sección en orden.
 
@@ -417,7 +417,7 @@ section << Run Section;
 
 #### Set Content
 
-**Sintaxis:** obj << Set Content( content )
+**Sintaxis:** obj &lt;&lt; Set Content( content )
 
 **Descripción:** Establece el contenido del bloque.
 

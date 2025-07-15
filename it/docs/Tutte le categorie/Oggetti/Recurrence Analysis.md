@@ -6,7 +6,7 @@
 
 ### Age
 
-**Sintassi:** obj << Age( column )
+**Sintassi:** obj &lt;&lt; Age( column )
 
 ```jsl
 
@@ -23,7 +23,7 @@ obj = dt << Recurrence Analysis(
 
 ### By
 
-**Sintassi:** obj << By( column(s) )
+**Sintassi:** obj &lt;&lt; By( column(s) )
 
 ```jsl
 
@@ -46,7 +46,7 @@ obj = dt << Recurrence Analysis(
 
 ### Cause
 
-**Sintassi:** obj << Cause( column )
+**Sintassi:** obj &lt;&lt; Cause( column )
 
 ```jsl
 
@@ -63,7 +63,7 @@ obj = dt << Recurrence Analysis(
 
 ### Cost
 
-**Sintassi:** obj << Cost( column )
+**Sintassi:** obj &lt;&lt; Cost( column )
 
 ```jsl
 
@@ -80,7 +80,7 @@ obj = dt << Recurrence Analysis(
 
 ### Event Timestamp
 
-**Sintassi:** obj << Event Timestamp( column )
+**Sintassi:** obj &lt;&lt; Event Timestamp( column )
 
 ```jsl
 
@@ -97,7 +97,7 @@ obj = dt << Recurrence Analysis(
 
 ### Failure Mode
 
-**Sintassi:** obj << Failure Mode( column )
+**Sintassi:** obj &lt;&lt; Failure Mode( column )
 
 ```jsl
 
@@ -114,7 +114,7 @@ obj = dt << Recurrence Analysis(
 
 ### Grouping
 
-**Sintassi:** obj << Grouping( column )
+**Sintassi:** obj &lt;&lt; Grouping( column )
 
 ```jsl
 
@@ -131,7 +131,7 @@ obj = dt << Recurrence Analysis(
 
 ### Label
 
-**Sintassi:** obj << Label( column )
+**Sintassi:** obj &lt;&lt; Label( column )
 
 ```jsl
 
@@ -148,7 +148,7 @@ obj = dt << Recurrence Analysis(
 
 ### System ID
 
-**Sintassi:** obj << System ID( column )
+**Sintassi:** obj &lt;&lt; System ID( column )
 
 ```jsl
 
@@ -165,7 +165,7 @@ obj = dt << Recurrence Analysis(
 
 ### Timestamp at End
 
-**Sintassi:** obj << Timestamp at End( column )
+**Sintassi:** obj &lt;&lt; Timestamp at End( column )
 
 ```jsl
 
@@ -182,7 +182,7 @@ obj = dt << Recurrence Analysis(
 
 ### Timestamp at Start
 
-**Sintassi:** obj << Timestamp at Start( column )
+**Sintassi:** obj &lt;&lt; Timestamp at Start( column )
 
 ```jsl
 
@@ -199,7 +199,7 @@ obj = dt << Recurrence Analysis(
 
 ### Y
 
-**Sintassi:** obj << Y( column )
+**Sintassi:** obj &lt;&lt; Y( column )
 
 ```jsl
 
@@ -218,7 +218,7 @@ obj = dt << Recurrence Analysis(
 
 ### Recurrence Analysis
 
-**Sintassi:** Recurrence Analysis( Y( column ), Cost( column ), Label( column ), <Grouping( column )> )
+**Sintassi:** Recurrence Analysis( Y( column ), Cost( column ), Label( column ), &lt;Grouping( column )&gt; )
 
 **Descrizione:** Analizza come un evento ricorrente è distribuito nel tempo, per sistema o finché il sistema stesso va fuori servizio.
 
@@ -239,7 +239,7 @@ obj = dt << Recurrence Analysis(
 
 ### Action
 
-**Sintassi:** obj << Action
+**Sintassi:** obj &lt;&lt; Action
 
 **Descrizione:** Trapdoor generica all&apos;interno di una piattaforma per inserire espressioni da valutare. Imposta temporaneamente i contesti del riquadro di visualizzazione e della tabella di dati per la piattaforma.
 
@@ -257,7 +257,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Sintassi:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintassi:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descrizione:** Applica all’oggetto una preimpostazione precedentemente creata, aggiornando le opzioni e le personalizzazioni in base alle impostazioni salvate.
 
@@ -304,7 +304,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Automatic Recalc
 
-**Sintassi:** obj << Automatic Recalc( state=0|1 )
+**Sintassi:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Descrizione:** Ripete l&apos;analisi automaticamente per l&apos;esclusione e le modifiche ai dati. Se l&apos;opzione Ricalcolo automatico è attivata, si consiglia di usare i comandi Attendi(0) per garantire che le modifiche di esclusione e di dati abbiano effetto prima del ricalcolo.
 
@@ -325,7 +325,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**Sintassi:** obj << Broadcast(message)
+**Sintassi:** obj &lt;&lt; Broadcast(message)
 
 **Descrizione:** Diffonde un messaggio a una piattaforma. Se i risultati di restituzione dei singoli oggetti sono tabelle, esse sono concatenate se possibile e il formato finale è identico al risultato dell&apos;opzione Salva tabella combinata in un riquadro della tabella o il risultato dell&apos;opzione Concatena utilizzando una colonna di origine. Oltre a quelli, i risultati sono memorizzati in un elenco e restituiti.
 
@@ -345,7 +345,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Calendar Event Plot
 
-**Sintassi:** obj << Calendar Event Plot( state=0|1 )
+**Sintassi:** obj &lt;&lt; Calendar Event Plot( state=0|1 )
 
 **Descrizione:** Mostra/Nasconde un grafico degli eventi in funzione del tempo, invece che dell&apos;età.
 
@@ -368,7 +368,7 @@ obj << Calendar Event Plot( 1 );
 
 ### Column Switcher
 
-**Sintassi:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Sintassi:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Descrizione:** Aggiunge un pannello di controllo per modificare le variabili della piattaforma
 
@@ -386,7 +386,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**Sintassi:** obj << Copy ByGroup Script
+**Sintassi:** obj &lt;&lt; Copy ByGroup Script
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo inserisce negli Appunti.
 
@@ -412,7 +412,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Sintassi:** obj << Copy Script
+**Sintassi:** obj &lt;&lt; Copy Script
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo inserisce negli Appunti.
 
@@ -432,7 +432,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Sintassi:** obj << Data Table Window
+**Sintassi:** obj &lt;&lt; Data Table Window
 
 **Descrizione:** Sposta in primo piano la finestra della tabella di dati per questa analisi.
 
@@ -452,7 +452,7 @@ obj << Data Table Window;
 
 ### Event Plot
 
-**Sintassi:** obj << Event Plot( state=0|1 )
+**Sintassi:** obj &lt;&lt; Event Plot( state=0|1 )
 
 **Descrizione:** Mostra/Nasconde il diagramma degli eventi.
 
@@ -474,7 +474,7 @@ obj << Event Plot( 1 );
 
 ### Fit Model
 
-**Sintassi:** obj << Fit Model
+**Sintassi:** obj &lt;&lt; Fit Model
 
 **Descrizione:** Consente di stimare i modelli per l&apos;intensità di ricorrenza e le funzioni cumulative.
 
@@ -495,7 +495,7 @@ obj << Fit Model;
 
 ### Get By Levels
 
-**Sintassi:** obj << Get By Levels
+**Sintassi:** obj &lt;&lt; Get By Levels
 
 **Descrizione:** Restituisce un array associativo che mappa le colonne del gruppo di By ai rispettivi valori.
 
@@ -512,7 +512,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Sintassi:** obj << Get ByGroup Script
+**Sintassi:** obj &lt;&lt; Get ByGroup Script
 
 **Descrizione:** Crea uno script (JSL) per generare questa analisi e la restituisce come espressione.
 
@@ -539,7 +539,7 @@ Show( t );
 
 ### Get Container
 
-**Sintassi:** obj << Get Container
+**Sintassi:** obj &lt;&lt; Get Container
 
 **Descrizione:** Restituisce un riferimento al riquadro contenitore che racchiude il contenuto dell&apos;oggetto.
 
@@ -591,7 +591,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Sintassi:** obj << Get Data Table
+**Sintassi:** obj &lt;&lt; Get Data Table
 
 **Descrizione:** Restituisce un riferimento alla tabella di dati.
 
@@ -612,7 +612,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**Sintassi:** obj << Get Group Platform
+**Sintassi:** obj &lt;&lt; Get Group Platform
 
 **Descrizione:** Restituisce l&apos;oggetto Raggruppa piattaforma se la piattaforma fa parte di un gruppo. In caso contrario, restituisce Vuoto().
 
@@ -629,7 +629,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**Sintassi:** obj << Get Script
+**Sintassi:** obj &lt;&lt; Get Script
 
 **Descrizione:** Crea uno script (JSL) per generare questa analisi e la restituisce come espressione.
 
@@ -650,7 +650,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Sintassi:** obj << Get Script With Data Table
+**Sintassi:** obj &lt;&lt; Get Script With Data Table
 
 **Descrizione:** Crea uno script (JSL) per generare questa analisi facendo specifico riferimento a questa tabella di dati e la restituisce come espressione.
 
@@ -671,7 +671,7 @@ Show( t );
 
 ### Get Timing
 
-**Sintassi:** obj << Get Timing
+**Sintassi:** obj &lt;&lt; Get Timing
 
 **Descrizione:** Determina il tempo di avvio della piattaforma.
 
@@ -692,7 +692,7 @@ Show( t );
 
 ### Get Web Support
 
-**Sintassi:** obj << Get Web Support
+**Sintassi:** obj &lt;&lt; Get Web Support
 
 **Descrizione:** Restituisce un numero indicante il livello di supporto HTML interattivo per l&apos;oggetto visualizzato. 1 significa che alcuni o tutti gli elementi sono supportati. 0 significa nessun supporto.
 
@@ -708,7 +708,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Sintassi:** obj << Get Where Expr
+**Sintassi:** obj &lt;&lt; Get Where Expr
 
 **Descrizione:** Restituisce l&apos;espressione Where per il sottoinsieme di dati, se la piattaforma è stata avviata con By() o Where(). Altrimenti, restituisce Vuoto()
 
@@ -745,7 +745,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Sintassi:** obj << Local Data Filter
+**Sintassi:** obj &lt;&lt; Local Data Filter
 
 **Descrizione:** Filtra dati in specifici gruppi o range, ma localmente in questa piattaforma
 
@@ -765,7 +765,7 @@ dt << Distribution(
 
 ### MCF Confid Limits
 
-**Sintassi:** obj << MCF Confid Limits( state=0|1 )
+**Sintassi:** obj &lt;&lt; MCF Confid Limits( state=0|1 )
 
 **Descrizione:** Mostra o nasconde le linee sul diagramma MCF che corrispondono ai limiti di confidenza approssimativi al 95% della funzione cumulativa media (MCF).
 
@@ -786,7 +786,7 @@ obj << MCF Confid Limits( 1 );
 
 ### MCF Plot
 
-**Sintassi:** obj << MCF Plot( state=0|1 )
+**Sintassi:** obj &lt;&lt; MCF Plot( state=0|1 )
 
 **Descrizione:** Mostra/Nasconde il diagramma MCF o il diagramma di funzione cumulativo della media. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -809,7 +809,7 @@ obj << MCF Plot( 1 );
 
 ### MCF Plot Each Group
 
-**Sintassi:** obj << MCF Plot Each Group( state=0|1 )
+**Sintassi:** obj &lt;&lt; MCF Plot Each Group( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un report che contiene un diagramma della funzione cumulativa media (MCF) per ciascun livello della variabile di raggruppamento. Questa opzione è disponibile solo quando si specifica una variabile di raggruppamento.
 
@@ -868,7 +868,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Sintassi:** obj << Paste Local Data Filter
+**Sintassi:** obj &lt;&lt; Paste Local Data Filter
 
 **Descrizione:** Applicare il filtro sui dati locali dagli Appunti al report corrente.
 
@@ -889,7 +889,7 @@ dist2 << Paste Local Data Filter;
 
 ### Plot Interarrival by Age
 
-**Sintassi:** obj << Plot Interarrival by Age( state=0|1 )
+**Sintassi:** obj &lt;&lt; Plot Interarrival by Age( state=0|1 )
 
 **Descrizione:** Mostra/Nasconde un diagramma del tempo dall&apos;ultimo evento per l&apos;età dell&apos;evento corrente.
 
@@ -912,7 +912,7 @@ obj << Plot Interarrival by Age( 1 );
 
 ### Plot MCF Differences
 
-**Sintassi:** obj << Plot MCF Differences( state=0|1 )
+**Sintassi:** obj &lt;&lt; Plot MCF Differences( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un diagramma per ogni differenza di funzioni cumulative medie (MCF), compreso un intervallo di confidenza al 95% per tale differenza. Questa opzione è disponibile solo quando si specifica una variabile di raggruppamento.
 
@@ -933,7 +933,7 @@ obj << Plot MCF Differences( 1 );
 
 ### Redo Analysis
 
-**Sintassi:** obj << Redo Analysis
+**Sintassi:** obj &lt;&lt; Redo Analysis
 
 **Descrizione:** Ripete questa stessa analisi in una nuova finestra. L&apos;analisi sarà differente se i dati sono stati modificati.
 
@@ -953,7 +953,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**Sintassi:** obj << Redo ByGroup Analysis
+**Sintassi:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Descrizione:** Ripete questa stessa analisi in una nuova finestra. L&apos;analisi sarà differente se i dati sono stati modificati.
 
@@ -979,7 +979,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**Sintassi:** obj << Relaunch Analysis
+**Sintassi:** obj &lt;&lt; Relaunch Analysis
 
 **Descrizione:** Apre la finestra di avvio della piattaforma e richiama le impostazioni utilizzate per creare il report.
 
@@ -999,7 +999,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**Sintassi:** obj << Relaunch ByGroup
+**Sintassi:** obj &lt;&lt; Relaunch ByGroup
 
 **Descrizione:** Apre la finestra di avvio della piattaforma e richiama le impostazioni utilizzate per creare il report.
 
@@ -1025,7 +1025,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**Sintassi:** obj << Remove Column Switcher
+**Sintassi:** obj &lt;&lt; Remove Column Switcher
 
 **Descrizione:** Rimuove l&apos;ultimo Scambia colonne che è stato aggiunto alla piattaforma.
 
@@ -1045,7 +1045,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Sintassi:** obj << Remove Local Data Filter
+**Sintassi:** obj &lt;&lt; Remove Local Data Filter
 
 **Descrizione:** Se è stato creato un filtro di dati locali viene rimosso per ripristinare la piattaforma e utilizzare direttamente tutti i dati nella tabella di dati
 
@@ -1084,9 +1084,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Sintassi:** obj << Report;
-
-Report( obj )
+**Sintassi:** obj &lt;&lt; Report;Report( obj )
 
 **Descrizione:** Restituisce un riferimento all&apos;oggetto del report.
 
@@ -1108,7 +1106,7 @@ Show( t );
 
 ### Report View
 
-**Sintassi:** obj << Report View( "Completo"|"Riepilogo" )
+**Sintassi:** obj &lt;&lt; Report View( "Completo"|"Riepilogo" )
 
 **Descrizione:** La visualizzazione Report determina il livello di dettaglio visibile in un report della piattaforma. Full mostra tutti i dettagli mentre Summary mostra solo contenuti selezionati, in base alla piattaforma. Per un comportamento personalizzato, i riquadri di visualizzazione supportano un messaggio <<Set Summary Behavior.
 
@@ -1128,7 +1126,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**Sintassi:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintassi:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e salvarla come proprietà della tabella nella tabella di dati. È possibile specificare un nome per lo script. L&apos;opzione Append Suffix aggiunge un suffisso numerico al nome dello script, che differenzia lo script da uno script esistente con lo stesso nome. L&apos;opzione Prompt richiede all&apos;utente di specificare un nome di script. L&apos;opzione Replace sostituisce uno script esistente con lo stesso nome.
 
@@ -1154,7 +1152,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Sintassi:** obj << Save ByGroup Script to Journal
+**Sintassi:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e aggiunge un pulsante con lo script al journal.
 
@@ -1180,7 +1178,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Sintassi:** obj << Save ByGroup Script to Script Window
+**Sintassi:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo aggiunge alla finestra di testo dello script corrente.
 
@@ -1206,7 +1204,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save MCF Differences
 
-**Sintassi:** obj << Save MCF Differences( <Last> )
+**Sintassi:** obj &lt;&lt; Save MCF Differences( &lt;Last&gt; )
 
 **Descrizione:** Crea una nuova tabella di dati che contiene le differenze della funzione cumulativa media (MCF) per ogni livello della variabile di raggruppamento. L&apos;argomento opzionale specifica che solo la riga finale di ogni differenza viene salvata nella nuova tabella di dati. Questa opzione è disponibile solo quando si specifica una variabile di raggruppamento.
 
@@ -1230,7 +1228,7 @@ obj << Save MCF Differences( Last );
 
 ### Save Script for All Objects
 
-**Sintassi:** obj << Save Script for All Objects
+**Sintassi:** obj &lt;&lt; Save Script for All Objects
 
 **Descrizione:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -1250,7 +1248,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Sintassi:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintassi:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descrizione:** Salva uno script per tutti gli oggetti del report nella tabella di dati corrente. Questa opzione è utile quando sono presenti più report nella finestra. Lo script prende il nome dalla prima piattaforma, a meno che non si specifichi il nome dello script tra apici.
 
@@ -1300,7 +1298,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Sintassi:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintassi:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo salva come una proprietà di tabella nella tabella di dati.
 
@@ -1320,7 +1318,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Sintassi:** obj << Save Script to Journal
+**Sintassi:** obj &lt;&lt; Save Script to Journal
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e aggiunge un pulsante con lo script al journal.
 
@@ -1340,7 +1338,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Sintassi:** obj << Save Script to Report
+**Sintassi:** obj &lt;&lt; Save Script to Report
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo mostra nel report. Utile per avere una copia stampata di quanto è stato fatto.
 
@@ -1360,7 +1358,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Sintassi:** obj << Save Script to Script Window
+**Sintassi:** obj &lt;&lt; Save Script to Script Window
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo aggiunge alla finestra di testo dello script corrente.
 
@@ -1445,7 +1443,7 @@ dt << Distribution(
 
 ### Show MCF Legend
 
-**Sintassi:** obj << Show MCF Legend( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show MCF Legend( state=0|1 )
 
 **Descrizione:** Mostra o nasconde la legenda per il diagramma della funzione cumulativa media (MCF). Questa opzione è disponibile solo quando si specifica una variabile di raggruppamento. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1468,7 +1466,7 @@ obj << Show MCF Legend( 1 );
 
 ### Sync to Data Table Changes
 
-**Sintassi:** obj << Sync to Data Table Changes
+**Sintassi:** obj &lt;&lt; Sync to Data Table Changes
 
 **Descrizione:** Sincronizza con l&apos;esclusione e le modifiche ai dati effettuate.
 
@@ -1485,7 +1483,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Sintassi:** obj << Title( "new title" )
+**Sintassi:** obj &lt;&lt; Title( "new title" )
 
 **Descrizione:** Imposta il titolo della piattaforma.
 
@@ -1505,7 +1503,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Sintassi:** obj << Top Report
+**Sintassi:** obj &lt;&lt; Top Report
 
 **Descrizione:** Restituisce un riferimento al nodo principale nel report.
 
@@ -1527,7 +1525,7 @@ Show( t );
 
 ### Transform Column
 
-**Sintassi:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Sintassi:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Descrizione:** Crea una colonna di trasformazione nel contesto locale di un oggetto, di solito una piattaforma. La colonna di trasformazione è attiva solo per la durata della piattaforma.
 
@@ -1548,7 +1546,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**Sintassi:** obj << View Web XML
+**Sintassi:** obj &lt;&lt; View Web XML
 
 **Descrizione:** Restituisce il codice XML utilizzato per creare il report HTML interattivo.
 
@@ -1563,9 +1561,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**Sintassi:** obj = Recurrence Analysis(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Recurrence Analysis(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Impostare il tipo di finestra da creare per il report. Per impostazione predefinita verrà creata una finestra di report Visible. Una finestra Invisible non comparirà sullo schermo, ma è individuabile da funzioni come Window(). Una finestra Private risponde alla maggior parte dei messaggi della finestra, ma non è individuabile e deve essere indirizzata attraverso l&apos;oggetto report
 

@@ -6,7 +6,7 @@
 
 ### Bring Window To Front
 
-**構文:** obj << Bring Window To Front
+**構文:** obj &lt;&lt; Bring Window To Front
 
 **説明:** ウィンドウを最前面に移動する。
 
@@ -22,7 +22,7 @@ w << Bring Window To Front;
 
 ### Close Window
 
-**構文:** obj << Close Window( <"NoSave"> )
+**構文:** obj &lt;&lt; Close Window( &lt;"NoSave"&gt; )
 
 **説明:** ウィンドウを閉じる。
 
@@ -38,7 +38,7 @@ w << Close Window;
 
 ### Get Content Size
 
-**構文:** obj << Get Content Size
+**構文:** obj &lt;&lt; Get Content Size
 
 **説明:** ウィンドウ内のコンテンツのサイズを戻す。
 
@@ -54,7 +54,7 @@ Show( c );
 
 ### Get On Close
 
-**構文:** obj << Get On Close
+**構文:** obj &lt;&lt; Get On Close
 
 **説明:** ウィンドウを閉じるときに実行されるスクリプトまたは関数を戻す。
 
@@ -79,7 +79,7 @@ Show( w << Get On Close );
 
 ### Get Page Setup
 
-**構文:** obj << Get Page Setup
+**構文:** obj &lt;&lt; Get Page Setup
 
 **説明:** PDFファイルのページ設定情報を取得する。
 
@@ -94,7 +94,7 @@ w << get page setup();
 
 ### Get Project
 
-**構文:** project = obj << Get Project()
+**構文:** project = obj &lt;&lt; Get Project()
 
 **説明:** ウィンドウの親プロジェクトを戻す。プロジェクトの中にない場合は、Empty()を戻す。
 
@@ -112,7 +112,7 @@ Show( c );
 
 ### Get Show Window
 
-**構文:** obj << Get Show Window
+**構文:** obj &lt;&lt; Get Show Window
 
 **説明:** ウィンドウの表示/非表示を戻す。
 
@@ -130,7 +130,7 @@ Print( w << Get Show Window() );
 
 ### Get Web Support
 
-**構文:** obj << Get Web Support
+**構文:** obj &lt;&lt; Get Web Support
 
 **説明:** ディスプレイオブジェクトにおけるインタラクティブHTMLサポートのレベルを数値で戻す。1は、一部または全部の要素がサポートされていることを示し、0は、サポートされないことを示す。
 
@@ -146,7 +146,7 @@ Show( s );
 
 ### Get Window Icon
 
-**構文:** obj << Get Window Icon
+**構文:** obj &lt;&lt; Get Window Icon
 
 **説明:** ウィンドウのアイコンを戻す。
 
@@ -162,7 +162,7 @@ Show( t );
 
 ### Get Window Position
 
-**構文:** obj << Get Window Position
+**構文:** obj &lt;&lt; Get Window Position
 
 **説明:** ウィンドウの位置を戻す。
 
@@ -178,7 +178,7 @@ Show( p );
 
 ### Get Window Size
 
-**構文:** obj << Get Window Size
+**構文:** obj &lt;&lt; Get Window Size
 
 **説明:** ウィンドウのサイズを戻す。
 
@@ -194,7 +194,7 @@ Show( s );
 
 ### Get Window Title
 
-**構文:** obj << Get Window Title
+**構文:** obj &lt;&lt; Get Window Title
 
 **説明:** ウィンドウのタイトルを戻す。
 
@@ -210,7 +210,7 @@ Show( t );
 
 ### Get Window View
 
-**構文:** obj << Get Window View
+**構文:** obj &lt;&lt; Get Window View
 
 **説明:** 現在のウィンドウ表示を戻す。戻り値は"Visible"、"Invisible"、"Private"のいずれかになる。
 
@@ -225,7 +225,7 @@ Print( w << Get Window View() );
 
 ### Is Modal Dialog
 
-**構文:** obj << Is Modal Dialog
+**構文:** obj &lt;&lt; Is Modal Dialog
 
 **説明:** ウィンドウがモーダルダイアログの場合、Trueを戻す。ウィンドウハンドラコールバックから呼び出される場合のみ有用。
 
@@ -244,7 +244,7 @@ With Window Handler(
 
 ### Maximize Window
 
-**構文:** obj << Maximize Window( <state=0|1> )
+**構文:** obj &lt;&lt; Maximize Window( &lt;state=0|1&gt; )
 
 **説明:** ウィンドウを最大化する。デフォルトの引数は1。
 
@@ -262,7 +262,7 @@ w << Maximize Window( 0 );
 
 ### Minimize Window
 
-**構文:** obj << Minimize Window( <state=0|1> )
+**構文:** obj &lt;&lt; Minimize Window( &lt;state=0|1&gt; )
 
 **説明:** ウィンドウを最小化する。デフォルトの引数は1。
 
@@ -280,7 +280,7 @@ w << Minimize Window( 0 );
 
 ### Move Window
 
-**構文:** obj << Move Window( x,y )
+**構文:** obj &lt;&lt; Move Window( x,y )
 
 **説明:** ウィンドウを指定した位置に移動させる。
 
@@ -296,7 +296,7 @@ w << Move Window( 500, 500 );
 
 ### On Close
 
-**構文:** obj << On Close( script )
+**構文:** obj &lt;&lt; On Close( script )
 
 **説明:** ウィンドウを閉じる際に実行するスクリプトまたは関数を設定する。このスクリプトが1を戻すとウィンドウが閉じ、0を戻すとウィンドウは閉じない。
 
@@ -344,7 +344,7 @@ w << On Close(
 
 ### Optimize Display
 
-**構文:** obj << Optimize Display
+**構文:** obj &lt;&lt; Optimize Display
 
 **説明:** データテーブルの列の幅とウィンドウを最適なサイズに設定する。
 
@@ -361,7 +361,7 @@ dt << Optimize Display;
 
 ### Pad Window
 
-**構文:** obj << Pad Window( bool )
+**構文:** obj &lt;&lt; Pad Window( bool )
 
 **説明:** ウィンドウパディングのオン／オフを切り替える。
 
@@ -378,7 +378,7 @@ r << Pad Window( 0 );
 
 ### Print Window
 
-**構文:** obj << Print Window
+**構文:** obj &lt;&lt; Print Window
 
 **説明:** ウィンドウを印刷する。
 
@@ -393,7 +393,7 @@ w << Print Window;
 
 ### Save Window Report
 
-**構文:** obj << Save Window Report( pathname, <embed data(0|1)> )
+**構文:** obj &lt;&lt; Save Window Report( pathname, &lt;embed data(0|1)&gt; )
 
 **説明:** 現在のレポートウィンドウをJMPレポートファイル(.jrp)に保存する。
 
@@ -411,7 +411,7 @@ d << Save Window Report( "$DOCUMENTS/test.jrp", embed data( 1 ) );
 
 ### Set Content Size
 
-**構文:** obj << Set Content Size( x,y )
+**構文:** obj &lt;&lt; Set Content Size( x,y )
 
 **説明:** ウィンドウ内のコンテンツのサイズを設定する。
 
@@ -437,7 +437,7 @@ w << Set Content Size( 400, 300 );
 
 ### Set Main Window
 
-**構文:** obj << Set Main Window
+**構文:** obj &lt;&lt; Set Main Window
 
 **説明:** このウィンドウをJMPの主ウィンドウに設定し、以前の主ウィンドウを通常のウィンドウに設定する。
 
@@ -452,7 +452,7 @@ w << Set Main Window;
 
 ### Set Page Setup
 
-**構文:** obj << Set Page Setup( <margins(left, top, right, bottom)>, <scale(s)>, <portrait(0|1)>, <paper size(p)>, <Table of Contents(always, never, default)>  )
+**構文:** obj &lt;&lt; Set Page Setup( &lt;margins(left, top, right, bottom)&gt;, &lt;scale(s)&gt;, &lt;portrait(0|1)&gt;, &lt;paper size(p)&gt;, &lt;Table of Contents(always, never, default)&gt; )
 
 **説明:** 印刷する際、またはPDFとして保存する際に必要なページ設定情報を指定する。アウトラインボックスから生成される目次はオプション。
 
@@ -474,7 +474,7 @@ w << Save pdf( "$DOCUMENTS\test.pdf" );
 
 ### Set Print Footers
 
-**構文:** obj << Set Print Footers( left footer, center footer, right header )
+**構文:** obj &lt;&lt; Set Print Footers( left footer, center footer, right header )
 
 **説明:** 印刷時の左、中央、右のフッタを設定する。
 
@@ -493,7 +493,7 @@ w << Print Window;
 
 ### Set Print Headers
 
-**構文:** obj << Set Print Headers( left header, center header, right header )
+**構文:** obj &lt;&lt; Set Print Headers( left header, center header, right header )
 
 **説明:** 印刷時の左、中央、右のヘッダを設定する。
 
@@ -512,7 +512,7 @@ w << Print Window;
 
 ### Set Window Icon
 
-**構文:** obj << Set Window Icon( icon name )
+**構文:** obj &lt;&lt; Set Window Icon( icon name )
 
 **説明:** ウィンドウのアイコンを設定する。
 
@@ -527,7 +527,7 @@ w << Set Window Icon( "Scatter3D" );
 
 ### Set Window Size
 
-**構文:** obj << Set Window Size( x,y )
+**構文:** obj &lt;&lt; Set Window Size( x,y )
 
 **説明:** ウィンドウのサイズを設定する。
 
@@ -542,7 +542,7 @@ w << Set Window Size( 800, 1200 );
 
 ### Show Window
 
-**構文:** obj << Show Window( state=0|1 )
+**構文:** obj &lt;&lt; Show Window( state=0|1 )
 
 **説明:** ウィンドウの表示/非表示を切り替える。これはウィンドウを一時的に隠すのに便利。 デフォルトではオン。
 
@@ -560,7 +560,7 @@ w << Show Window( 1 );
 
 ### Size Window
 
-**構文:** obj << Size Window( x,y )
+**構文:** obj &lt;&lt; Size Window( x,y )
 
 **説明:** ウィンドウのサイズを設定する。
 
@@ -575,7 +575,7 @@ w << Size Window( 500, 500 );
 
 ### Zoom Window
 
-**構文:** obj << Zoom Window
+**構文:** obj &lt;&lt; Zoom Window
 
 **説明:** 内容がすべて表示されるようにウィンドウのサイズを変更する。
 
@@ -594,7 +594,7 @@ w << Zoom Window;
 
 ### Set Window Title
 
-**構文:** obj << Set Window Title
+**構文:** obj &lt;&lt; Set Window Title
 
 **説明:** ウィンドウのタイトルを設定する。
 

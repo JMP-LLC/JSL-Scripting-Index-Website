@@ -30,7 +30,7 @@ fd2 = Formula Depot[1];
 
 ### Add Formula from Column
 
-**Sintaxis:** Predictor = obj << Add Formula from Column( Table(name|reference), Columns(name|index|reference, ...), <Expand Intermediate Formulas(number)> )
+**Sintaxis:** Predictor = obj &lt;&lt; Add Formula from Column( Table(name|reference), Columns(name|index|reference, ...), &lt;Expand Intermediate Formulas(number)&gt; )
 
 **Descripción:** Añade una columna de fórmulas de predicción existentes de la tabla especificada al almacén de fórmulas
 
@@ -49,7 +49,7 @@ mp << Generate Python Code;
 
 ### Copy Formulas as Functions
 
-**Sintaxis:** obj << Copy Formulas as Functions( <Formulas(name|index|reference, ...)> )
+**Sintaxis:** obj &lt;&lt; Copy Formulas as Functions( &lt;Formulas(name|index|reference, ...)&gt; )
 
 **Descripción:** Copia los modelos especificados en el portapapeles como una instrucción Function() escalar.
 
@@ -72,7 +72,7 @@ Show( text );
 
 ### Copy Formulas as Transforms
 
-**Sintaxis:** obj << Copy Formulas as Transforms( <Table(name|reference)>, <Formulas(name|index|reference, ...)> )
+**Sintaxis:** obj &lt;&lt; Copy Formulas as Transforms( &lt;Table(name|reference)&gt;, &lt;Formulas(name|index|reference, ...)&gt; )
 
 **Descripción:** Copia los modelos especificados en el portapapeles dentro de una instrucción Transform Column().
 
@@ -96,7 +96,7 @@ Show( text );
 
 ### Copy Scripts
 
-**Sintaxis:** obj << Copy Scripts( <Formulas(name|index|reference, ...)> )
+**Sintaxis:** obj &lt;&lt; Copy Scripts( &lt;Formulas(name|index|reference, ...)&gt; )
 
 **Descripción:** Copia los scripts para las fórmulas especificadas guardadas en el almacén de fórmulas en el portapapeles.
 
@@ -117,7 +117,7 @@ Show( text );
 
 ### Generate C Code
 
-**Sintaxis:** obj << Generate C Code( <Formulas(name|index|reference, ...)>, <No Editor> )
+**Sintaxis:** obj &lt;&lt; Generate C Code( &lt;Formulas(name|index|reference, ...)&gt;, &lt;No Editor&gt; )
 
 **Descripción:** Genera código C para los modelos especificados guardados en el almacén de fórmulas. La salida se muestra en una ventana del editor o en una variable de cadena si se especifica el argumento "Sin editor".
 
@@ -141,7 +141,7 @@ fd << Generate C Code( Formulas( predictor ) );
 
 ### Generate JavaScript Code
 
-**Sintaxis:** obj << Generate JavaScript Code( <Formulas(name|index|reference, ...)>, <No Editor> )
+**Sintaxis:** obj &lt;&lt; Generate JavaScript Code( &lt;Formulas(name|index|reference, ...)&gt;, &lt;No Editor&gt; )
 
 **Descripción:** Genera código JavaScript para los modelos especificados guardados en el almacén de fórmulas. La salida se muestra en una ventana del editor o en una variable de cadena si se especifica el argumento "Sin editor".
 
@@ -165,7 +165,7 @@ fd << Generate JavaScript Code( Formulas( predictor ) );
 
 ### Generate Python Code
 
-**Sintaxis:** obj << Generate Python Code( <Formulas(name|index|reference, ...)>, <No Editor> )
+**Sintaxis:** obj &lt;&lt; Generate Python Code( &lt;Formulas(name|index|reference, ...)&gt;, &lt;No Editor&gt; )
 
 **Descripción:** Genera código Python para los modelos especificados guardados en el almacén de fórmulas. La salida se muestra en una ventana del editor o en una variable de cadena si se especifica el argumento "Sin editor".
 
@@ -189,7 +189,7 @@ fd << Generate Python Code( Formulas( predictor ) );
 
 ### Generate SAS Code
 
-**Sintaxis:** obj << Generate SAS Code( <Formulas(name|index|reference, ...)>, <No Editor> )
+**Sintaxis:** obj &lt;&lt; Generate SAS Code( &lt;Formulas(name|index|reference, ...)&gt;, &lt;No Editor&gt; )
 
 **Descripción:** Genera código SAS (DS2) para los modelos especificados guardados en el almacén de fórmulas. La salida se muestra en una ventana del editor o en una variable de cadena si se especifica el argumento "Sin editor".
 
@@ -213,7 +213,7 @@ fd << Generate SAS Code( Formulas( predictor ) );
 
 ### Generate SQL Code
 
-**Sintaxis:** obj << Generate SQL Code( <Formulas(name|index|reference, ...)>, <No Editor>, <QUOTE_STYLE> )
+**Sintaxis:** obj &lt;&lt; Generate SQL Code( &lt;Formulas(name|index|reference, ...)&gt;, &lt;No Editor&gt;, &lt;QUOTE_STYLE&gt; )
 
 **Descripción:** Genera código SQL (definiciones de columna adecuadas para su uso en una instrucción Select de SQL) para los modelos dados guardados en el Almacén de fórmulas. La salida se muestra en una ventana del editor o en una variable de cadena si se especifica el argumento "Sin editor". QUOTE_STYLE es una cadena que denota una de las bases de datos SQL compatibles con JMP (MySQL, Impala, Hive, etc.) o un tipo de cita SQL ("Subrayado", "Comilla inversa", "Paréntesis" o "Comilla doble").
 
@@ -240,7 +240,7 @@ fd << Generate SQL Code( Formulas( predictor ), "MySQL" );
 
 ### Model Comparison
 
-**Sintaxis:** obj << Model Comparison( <Table(name|reference)>, <Formulas(name|index|reference, ...)> )
+**Sintaxis:** obj &lt;&lt; Model Comparison( &lt;Table(name|reference)&gt;, &lt;Formulas(name|index|reference, ...)&gt; )
 
 **Descripción:** Compara los modelos especificados guardados en el almacén de fórmulas con la utilidad de comparación de modelos, en función del contenido de la tabla especificada.
 
@@ -271,7 +271,7 @@ mc_plat = fd << ModelComparison( Formulas( 1, 2 ) );
 
 ### Profiler
 
-**Sintaxis:** obj << Profiler( <Table(name|reference)>, <Formulas(name|index|reference, ...)> )
+**Sintaxis:** obj &lt;&lt; Profiler( &lt;Table(name|reference)&gt;, &lt;Formulas(name|index|reference, ...)&gt; )
 
 **Descripción:** Perfila los modelos especificados guardados en el almacén de fórmulas con la utilidad Perfilador, en función del contenido de la tabla especificada.
 
@@ -297,7 +297,7 @@ fd << Profiler( Formulas( nl_mp, nn_mp ) );
 
 ### Remove Model Comparison
 
-**Sintaxis:** obj << Remove Model Comparison
+**Sintaxis:** obj &lt;&lt; Remove Model Comparison
 
 **Descripción:** Quita todos los informes de comparación de modelos del almacén de fórmulas actual.
 
@@ -316,7 +316,7 @@ fd << Remove Model Comparison();
 
 ### Remove Profiler
 
-**Sintaxis:** obj << Remove Profiler
+**Sintaxis:** obj &lt;&lt; Remove Profiler
 
 **Descripción:** Quita todos los Perfiladores del almacén de fórmulas actual.
 
@@ -335,7 +335,7 @@ fd << Remove Profiler();
 
 ### Rename Formula Depot
 
-**Sintaxis:** obj << Rename Formula Depot( text )
+**Sintaxis:** obj &lt;&lt; Rename Formula Depot( text )
 
 ```jsl
 
@@ -348,7 +348,7 @@ fd << Rename Formula Depot( "New Name" );
 
 ### Run Scripts
 
-**Sintaxis:** obj << Run Scripts( <Table(name|reference)>, <Formulas(name|index|reference, ...)> )
+**Sintaxis:** obj &lt;&lt; Run Scripts( &lt;Table(name|reference)&gt;, &lt;Formulas(name|index|reference, ...)&gt; )
 
 **Descripción:** Guarda los modelos especificados en la tabla de datos JMP actual o especificada como una o más columnas de fórmulas.
 
@@ -377,7 +377,7 @@ fd2 << Run Scripts( Table( dt2 ), Formulas( 1 ) );
 
 ### Show Scripts
 
-**Sintaxis:** obj << Show Scripts( <Formulas(name|index|reference, ...)> )
+**Sintaxis:** obj &lt;&lt; Show Scripts( &lt;Formulas(name|index|reference, ...)&gt; )
 
 **Descripción:** Abre una nueva ventana de fórmulas (o añade una ventana de fórmulas abierta) que contiene scripts para las fórmulas especificadas guardadas en el almacén de fórmulas.
 
@@ -397,7 +397,7 @@ fd << Show Scripts( Formulas( 1 ) );
 
 ### Action
 
-**Sintaxis:** obj << Action
+**Sintaxis:** obj &lt;&lt; Action
 
 **Descripción:** Trampa multiuso dentro de una plataforma para insertar expresiones que se desean evaluar. Temporalmente establece los contextos de cuadros de visualización y tablas de datos en la plataforma.
 
@@ -415,7 +415,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descripción:** Aplica al objeto un preajuste creado previamente, actualizando las opciones y personalizaciones para que coincidan con la configuración guardada.
 
@@ -462,7 +462,7 @@ obj2 << Apply Preset( preset );
 
 ### Copy Script
 
-**Sintaxis:** obj << Copy Script
+**Sintaxis:** obj &lt;&lt; Copy Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -485,7 +485,7 @@ obj << Copy Script;
 
 ### Get By Levels
 
-**Sintaxis:** obj << Get By Levels
+**Sintaxis:** obj &lt;&lt; Get By Levels
 
 **Descripción:** Devuelve un arreglo asociativo que asigna las columnas Por grupo a sus valores.
 
@@ -502,7 +502,7 @@ biv << Get By Levels;
 
 ### Get Container
 
-**Sintaxis:** obj << Get Container
+**Sintaxis:** obj &lt;&lt; Get Container
 
 **Descripción:** Devuelve una referencia al cuadro contenedor que incluye el contenido del objeto.
 
@@ -557,7 +557,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Sintaxis:** obj << Get Data Table
+**Sintaxis:** obj &lt;&lt; Get Data Table
 
 **Descripción:** Devuelve una referencia a la tabla de datos.
 
@@ -581,7 +581,7 @@ Show( N Rows( t ) );
 
 ### Get Script
 
-**Sintaxis:** obj << Get Script
+**Sintaxis:** obj &lt;&lt; Get Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -605,7 +605,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Sintaxis:** obj << Get Script With Data Table
+**Sintaxis:** obj &lt;&lt; Get Script With Data Table
 
 **Descripción:** Crea un script (JSL) para generar este análisis haciendo referencia específica a esta tabla de datos y lo devuelve en forma de expresión.
 
@@ -629,7 +629,7 @@ Show( t );
 
 ### Get Timing
 
-**Sintaxis:** obj << Get Timing
+**Sintaxis:** obj &lt;&lt; Get Timing
 
 **Descripción:** Determina el tiempo de inicio de una plataforma.
 
@@ -653,7 +653,7 @@ Show( t );
 
 ### Get Web Support
 
-**Sintaxis:** obj << Get Web Support
+**Sintaxis:** obj &lt;&lt; Get Web Support
 
 **Descripción:** Devuelve un número que indica el nivel de compatibilidad del HTML interactivo para el objeto de visualización. 1 significa que algunos o todos los elementos son compatibles. 0 significa que no existe compatibilidad.
 
@@ -669,7 +669,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Sintaxis:** obj << Get Where Expr
+**Sintaxis:** obj &lt;&lt; Get Where Expr
 
 **Descripción:** Devuelve la expresión Where para el subconjunto de datos, si la plataforma se inició con By() o Where(). De lo contrario, devuelve Empty().
 
@@ -759,9 +759,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Sintaxis:** obj << Report;
-
-Report( obj )
+**Sintaxis:** obj &lt;&lt; Report;Report( obj )
 
 **Descripción:** Devuelve una referencia al objeto informe.
 
@@ -786,7 +784,7 @@ Show( t );
 
 ### Save Script for All Objects
 
-**Sintaxis:** obj << Save Script for All Objects
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects
 
 **Descripción:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -809,7 +807,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Sintaxis:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descripción:** Guarda un script para todos los objetos de informe en la tabla de datos actual. Esta opción es útil cuando tiene varios informes en la ventana. El script recibe el nombre de la primera plataforma a menos que especifique el nombre del script entre comillas.
 
@@ -861,7 +859,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Sintaxis:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis y lo guarda en forma de propiedad de tabla en la tabla de datos.
 
@@ -884,7 +882,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Sintaxis:** obj << Save Script to Journal
+**Sintaxis:** obj &lt;&lt; Save Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -907,7 +905,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Sintaxis:** obj << Save Script to Report
+**Sintaxis:** obj &lt;&lt; Save Script to Report
 
 **Descripción:** Crea un script JSL para generar este análisis y lo muestra en el propio informe. Resulta útil para conservar un registro impreso de lo que se ha hecho.
 
@@ -930,7 +928,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Sintaxis:** obj << Save Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -1018,7 +1016,7 @@ dt << Distribution(
 
 ### Title
 
-**Sintaxis:** obj << Title( "new title" )
+**Sintaxis:** obj &lt;&lt; Title( "new title" )
 
 **Descripción:** Establece el título de la plataforma.
 
@@ -1041,7 +1039,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Sintaxis:** obj << Top Report
+**Sintaxis:** obj &lt;&lt; Top Report
 
 **Descripción:** Devuelve una referencia al nodo raíz del informe.
 
@@ -1066,7 +1064,7 @@ Show( t );
 
 ### View Web XML
 
-**Sintaxis:** obj << View Web XML
+**Sintaxis:** obj &lt;&lt; View Web XML
 
 **Descripción:** Devuelve el código XML que se utiliza para crear el informe HTML interactivo.
 

@@ -6,7 +6,7 @@
 
 ### Action
 
-**语法:** obj << Action
+**语法:** obj &lt;&lt; Action
 
 **说明:** 平台内用于插入表达式以求值的所有用途的陷门。暂时将 DisplayBox 和 DataTable 上下文设置为平台。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**语法:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**语法:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **说明:** 将以前创建的预设应用到对象，从而更新选项和定制以匹配保存的设置。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Broadcast
 
-**语法:** obj << Broadcast(message)
+**语法:** obj &lt;&lt; Broadcast(message)
 
 **说明:** 将消息广播到平台。若各个对象的返回结果是表，则它们会尽可能拼接，并且最终格式与表框中“保存合并表”选项的结果或使用“源”列的“拼接”选项的结果相同。除此之外，结果存储在列表中并返回。
 
@@ -91,7 +91,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**语法:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**语法:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **说明:** 添加用于更改平台变量的控制面板
 
@@ -109,7 +109,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**语法:** obj << Copy ByGroup Script
+**语法:** obj &lt;&lt; Copy ByGroup Script
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其置于剪贴板上。
 
@@ -134,7 +134,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**语法:** obj << Copy Script
+**语法:** obj &lt;&lt; Copy Script
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其置于剪贴板上。
 
@@ -153,7 +153,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**语法:** obj << Data Table Window
+**语法:** obj &lt;&lt; Data Table Window
 
 **说明:** 将该分析的数据表窗口移动到前面。
 
@@ -172,7 +172,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**语法:** obj << Get By Levels
+**语法:** obj &lt;&lt; Get By Levels
 
 **说明:** 返回将“依据”组列映射到其值的关联数组。
 
@@ -189,7 +189,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**语法:** obj << Get ByGroup Script
+**语法:** obj &lt;&lt; Get ByGroup Script
 
 **说明:** 创建生成该分析的脚本 (JSL)，并将其作为表达式返回。
 
@@ -215,7 +215,7 @@ Show( t );
 
 ### Get Container
 
-**语法:** obj << Get Container
+**语法:** obj &lt;&lt; Get Container
 
 **说明:** 返回对保留对象内容的容器框的引用。
 
@@ -266,7 +266,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**语法:** obj << Get Data Table
+**语法:** obj &lt;&lt; Get Data Table
 
 **说明:** 返回对该数据表的引用。
 
@@ -286,7 +286,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**语法:** obj << Get Group Platform
+**语法:** obj &lt;&lt; Get Group Platform
 
 **说明:** 若该平台是组的一部分，则返回组平台对象。否则返回 Empty()。
 
@@ -303,7 +303,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**语法:** obj << Get Script
+**语法:** obj &lt;&lt; Get Script
 
 **说明:** 创建生成该分析的脚本 (JSL)，并将其作为表达式返回。
 
@@ -323,7 +323,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**语法:** obj << Get Script With Data Table
+**语法:** obj &lt;&lt; Get Script With Data Table
 
 **说明:** 创建生成该分析的脚本 (JSL) 以专门引用该数据表，并将其作为表达式返回。
 
@@ -343,7 +343,7 @@ Show( t );
 
 ### Get Timing
 
-**语法:** obj << Get Timing
+**语法:** obj &lt;&lt; Get Timing
 
 **说明:** 平台启动过程计时。
 
@@ -363,7 +363,7 @@ Show( t );
 
 ### Get Web Support
 
-**语法:** obj << Get Web Support
+**语法:** obj &lt;&lt; Get Web Support
 
 **说明:** 返回一个数字，指示显示对象的交互式 HTML 支持的水平。1 表示支持部分或全部元素。0 表示不支持。
 
@@ -379,7 +379,7 @@ Show( s );
 
 ### Get Where Expr
 
-**语法:** obj << Get Where Expr
+**语法:** obj &lt;&lt; Get Where Expr
 
 **说明:** 若平台是使用 By() 或 Where() 启动的，则返回数据子集的 Where 表达式。否则返回 Empty()
 
@@ -416,7 +416,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**语法:** obj << Local Data Filter
+**语法:** obj &lt;&lt; Local Data Filter
 
 **说明:** 将数据过滤到特定的组或范围，但在该平台中是本地的
 
@@ -472,7 +472,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**语法:** obj << Paste Local Data Filter
+**语法:** obj &lt;&lt; Paste Local Data Filter
 
 **说明:** 将剪贴板中的本地数据过滤器应用于当前报表。
 
@@ -493,7 +493,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**语法:** obj << Redo Analysis
+**语法:** obj &lt;&lt; Redo Analysis
 
 **说明:** 在新窗口中重新运行相同的分析。若数据发生更改，分析也将不同。
 
@@ -512,7 +512,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**语法:** obj << Redo ByGroup Analysis
+**语法:** obj &lt;&lt; Redo ByGroup Analysis
 
 **说明:** 在新窗口中重新运行相同的分析。若数据发生更改，分析也将不同。
 
@@ -537,7 +537,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**语法:** obj << Relaunch Analysis
+**语法:** obj &lt;&lt; Relaunch Analysis
 
 **说明:** 打开平台启动窗口并重新调用曾用于创建报表的设置。
 
@@ -556,7 +556,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**语法:** obj << Relaunch ByGroup
+**语法:** obj &lt;&lt; Relaunch ByGroup
 
 **说明:** 打开平台启动窗口并重新调用曾用于创建报表的设置。
 
@@ -581,7 +581,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**语法:** obj << Remove Column Switcher
+**语法:** obj &lt;&lt; Remove Column Switcher
 
 **说明:** 删除已添加至平台的最近使用的“列切换器”。
 
@@ -601,7 +601,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**语法:** obj << Remove Local Data Filter
+**语法:** obj &lt;&lt; Remove Local Data Filter
 
 **说明:** 若已创建本地数据过滤器，这会将它删除并将平台恢复为直接使用数据表中的所有数据
 
@@ -640,9 +640,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**语法:** obj << Report;
-
-Report( obj )
+**语法:** obj &lt;&lt; Report;Report( obj )
 
 **说明:** 返回对该报表对象的引用。
 
@@ -663,7 +661,7 @@ Show( t );
 
 ### Report View
 
-**语法:** obj << Report View( "完全"|"汇总" )
+**语法:** obj &lt;&lt; Report View( "完全"|"汇总" )
 
 **说明:** 报表视图确定平台报表中可见的详细程度。Full 显示所有详细信息，而 Summary 仅显示根据平台确定的选定内容。对于定制行为，显示框支持 <<Set Summary Behavior 消息。
 
@@ -682,7 +680,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**语法:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**语法:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **说明:** 创建生成该分析的 JSL 脚本并将其保存为数据表中的表属性。您可以为脚本指定一个名称。Append Suffix 选项在脚本名称后追加一个数字后缀，用于将该脚本与现有的同名脚本区别出来。Prompt 选项提示用户指定脚本名称。Replace 选项会替换同名的现有脚本。
 
@@ -707,7 +705,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**语法:** obj << Save ByGroup Script to Journal
+**语法:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **说明:** 创建生成该分析的 JSL 脚本，并将一个按钮添加至包含该脚本的记录中。
 
@@ -732,7 +730,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**语法:** obj << Save ByGroup Script to Script Window
+**语法:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其追加至当前的脚本文本窗口中。
 
@@ -757,7 +755,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**语法:** obj << Save Script for All Objects
+**语法:** obj &lt;&lt; Save Script for All Objects
 
 **说明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -776,7 +774,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**语法:** obj << Save Script for All Objects To Data Table( <name> )
+**语法:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **说明:** 将所有报表对象的脚本保存至当前数据表。当您在该窗口中具有多个报表时，该选项很有用。除非您在引号中指定脚本名称，否则脚本将以第一个平台命名。
 
@@ -824,7 +822,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**语法:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**语法:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其作为表属性保存至数据表中。
 
@@ -843,7 +841,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**语法:** obj << Save Script to Journal
+**语法:** obj &lt;&lt; Save Script to Journal
 
 **说明:** 创建生成该分析的 JSL 脚本，并将一个按钮添加至包含该脚本的记录中。
 
@@ -862,7 +860,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**语法:** obj << Save Script to Report
+**语法:** obj &lt;&lt; Save Script to Report
 
 **说明:** 创建生成该分析的 JSL 脚本，并在报表中显示。有助于保留打印的已完成操作记录。
 
@@ -881,7 +879,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**语法:** obj << Save Script to Script Window
+**语法:** obj &lt;&lt; Save Script to Script Window
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其追加至当前的脚本文本窗口中。
 
@@ -965,7 +963,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**语法:** obj << Sync to Data Table Changes
+**语法:** obj &lt;&lt; Sync to Data Table Changes
 
 **说明:** 与已进行的排除和数据的更改同步。
 
@@ -982,7 +980,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**语法:** obj << Title( "new title" )
+**语法:** obj &lt;&lt; Title( "new title" )
 
 **说明:** 设置平台的标题。
 
@@ -1001,7 +999,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**语法:** obj << Top Report
+**语法:** obj &lt;&lt; Top Report
 
 **说明:** 返回对报表中根节点的引用。
 
@@ -1022,7 +1020,7 @@ Show( t );
 
 ### Transform Column
 
-**语法:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**语法:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **说明:** 在对象（通常是平台）的本地上下文中创建变换列。变换列仅在平台的生命周期内是活动的。
 
@@ -1043,7 +1041,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**语法:** obj << View Web XML
+**语法:** obj &lt;&lt; View Web XML
 
 **说明:** 返回用于创建交互式 HTML 报表的 XML 代码。
 
@@ -1058,9 +1056,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**语法:** obj = Neural(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Neural(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 设置要为报表创建的窗口类型。默认情况下将创建 Visible 报表窗口。Invisible 窗口将不显示在屏幕上，但可被函数（例如 Window()）发现。Private 窗口会响应大多数窗口消息，但不可发现并且必须通过报表对象处理
 
@@ -1081,7 +1077,7 @@ New Window( "Bivariate Equation",
 
 ### Neural
 
-**语法:** Neural( Y( column ), X( columns ), <Validation( column )> )
+**语法:** Neural( Y( column ), X( columns ), &lt;Validation( column )&gt; )
 
 **说明:** 使用灵活的输入变量函数预测一个或多个响应变量。灵活的框架引入了分层与 s 形函数。
 
@@ -1101,9 +1097,7 @@ obj = dt << Neural(
 
 ### By
 
-**语法:** obj = Neural(...<By( column(s) )>...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Neural(...&lt;By( column(s) )&gt;...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 为指定列的每个水平执行单独的分析。
 
@@ -1127,9 +1121,7 @@ obj = dt << Neural(
 
 ### Factor
 
-**语法:** obj = Neural(...Factor( column(s) )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Neural(...Factor( column(s) )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定预测变量。
 
@@ -1147,9 +1139,7 @@ obj = dt << Neural(
 
 ### Freq
 
-**语法:** obj = Neural(...<Freq( column )>...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Neural(...&lt;Freq( column )&gt;...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定一列，其值为分析中的每一行都分配一个频数。
 
@@ -1169,9 +1159,7 @@ obj = dt << Neural(
 
 ### Response
 
-**语法:** obj = Neural(...Response( column(s) )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Neural(...Response( column(s) )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定您想要分析的一个或多个响应变量。
 
@@ -1189,9 +1177,7 @@ obj = dt << Neural(
 
 ### Validation
 
-**语法:** obj = Neural(...<Validation( column )>...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Neural(...&lt;Validation( column )&gt;...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定定义验证集的数值列。该列应包含最多三个非重复值。
 
@@ -1210,9 +1196,7 @@ obj << Go;
 
 ### X
 
-**语法:** obj = Neural(...X( column(s) )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Neural(...X( column(s) )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定预测变量。
 
@@ -1230,9 +1214,7 @@ obj = dt << Neural(
 
 ### Y
 
-**语法:** obj = Neural(...Y( column(s) )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Neural(...Y( column(s) )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定您想要分析的一个或多个响应变量。
 
@@ -1252,7 +1234,7 @@ obj = dt << Neural(
 
 ### Fit
 
-**语法:** obj << Fit( NTanH|NLinear|NTanH2|NLinear2|NGaussian|NGaussian2( number ) )
+**语法:** obj &lt;&lt; Fit( NTanH|NLinear|NTanH2|NLinear2|NGaussian|NGaussian2( number ) )
 
 **说明:** 指定和拟合数据的神经网络隐藏层结构。多个层和非 TanH 激活函数仅限于 JMP Pro。要指定多个层和激活函数，请用逗号分隔参数。
 
@@ -1270,7 +1252,7 @@ obj << Fit( NTanH( 4 ) );
 
 ### Go
 
-**语法:** obj << Go
+**语法:** obj &lt;&lt; Go
 
 **说明:** 开始对神经网络模型求解。
 
@@ -1289,9 +1271,7 @@ obj << Go;
 
 ### Informative Missing
 
-**语法:** obj = Neural(...Informative Missing( state=0|1 )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Neural(...Informative Missing( state=0|1 )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 启用缺失值插补和编码。当未选择该选项时，将忽略带有缺失值的行。
 
@@ -1314,7 +1294,7 @@ obj = dt << Neural( Y( :weight ), X( :height, :age ), Informative Missing( 1 ), 
 
 ### Learning Rate
 
-**语法:** obj << Learning Rate( fraction )
+**语法:** obj &lt;&lt; Learning Rate( fraction )
 
 **说明:** 指定用于提升的尺度因子。学习率接近 1 会导致最终模型更快收敛，但也会使过度拟合数据的趋势更高。 该选项仅限于 JMP Pro。
 
@@ -1335,9 +1315,7 @@ obj << SendToReport( Dispatch( {}, "Model Launch", OutlineBox, {Close( 0 )} ) );
 
 ### Multithreading
 
-**语法:** obj = Neural(...Multithreading( state=0|1 )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Neural(...Multithreading( state=0|1 )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 在机器的可用线程间分配计算任务。 默认开启。
 
@@ -1356,7 +1334,7 @@ obj << Go;
 
 ### N Boost
 
-**语法:** obj << N Boost( number )
+**语法:** obj &lt;&lt; N Boost( number )
 
 **说明:** 指定用于提升的最大模型数。 该选项仅限于 JMP Pro。
 
@@ -1376,7 +1354,7 @@ obj << SendToReport( Dispatch( {}, "Model Launch", OutlineBox, {Close( 0 )} ) );
 
 ### Penalty Method
 
-**语法:** obj << Penalty Method( "平方"|"绝对值"|"加权衰减"|"无惩罚" )
+**语法:** obj &lt;&lt; Penalty Method( "平方"|"绝对值"|"加权衰减"|"无惩罚" )
 
 **说明:** 指定在拟合过程中对似然施加惩罚的惩罚方法。惩罚参数降低神经网络中过度拟合数据的趋势。若大多数 X 变量都对模型的预测能力有贡献的话，则“平方”选项较为适用。若 X 变量数量很多并且一小部分的贡献超过其他部分，则“绝对”和“加权衰减”选项较为适用。
 
@@ -1396,7 +1374,7 @@ obj << SendToReport( Dispatch( {}, "Model Launch", OutlineBox, {Close( 0 )} ) );
 
 ### Robust Fit
 
-**语法:** obj << Robust Fit( state=0|1 )
+**语法:** obj &lt;&lt; Robust Fit( state=0|1 )
 
 **说明:** 使用最小绝对偏差而不是最小二乘训练模型。若您想最小化响应离群值的影响，则该选项很有用。该选项仅可用于 JMP Pro 中的连续响应。
 
@@ -1416,9 +1394,7 @@ obj << SendToReport( Dispatch( {}, "Model Launch", OutlineBox, {Close( 0 )} ) );
 
 ### Set Random Seed
 
-**语法:** obj = Neural(...Set Random Seed( number )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Neural(...Set Random Seed( number )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定用于重现开始值和验证分配的随机种子。
 
@@ -1438,7 +1414,7 @@ obj << Go;
 
 ### Transform Covariates
 
-**语法:** obj << Transform Covariates( state=0|1 )
+**语法:** obj &lt;&lt; Transform Covariates( state=0|1 )
 
 **说明:** 使用 Johnson Su 或 Johnson Sb 分布将所有连续变量变换为接近正态性。变换连续变量有助于减轻离群值或高偏斜分布的不利影响。 该选项仅限于 JMP Pro。
 
@@ -1458,7 +1434,7 @@ obj << SendToReport( Dispatch( {}, "Model Launch", OutlineBox, {Close( 0 )} ) );
 
 ### Validation Method
 
-**语法:** obj = Neural(...Validation Method( "Excluded Rows Holdback"|"Holdback", <fraction = 0.3333>|"KFold", <number = 5> )...);
+**语法:** obj = Neural(...Validation Method( "Excluded Rows Holdback"|"Holdback", &lt;fraction = 0.3333&gt;|"KFold", &lt;number = 5&gt; )...);
 
 **说明:** 指定用于验证模型的方法。
 
@@ -1481,7 +1457,7 @@ obj = dt << Neural(
 
 #### Categorical Profiler
 
-**语法:** obj << (fit[number] << Categorical Profiler( state=0|1 ))
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Categorical Profiler( state=0|1 ))
 
 **说明:** 显示或隐藏预测刻画器，其中所有分类响应已合并为刻画器中的一行。
 
@@ -1501,7 +1477,7 @@ obj << (Fit[1] << Categorical Profiler( 1 ));
 
 #### Contour Profiler
 
-**语法:** obj << (fit[number] << Contour Profiler( state=0|1 ))
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Contour Profiler( state=0|1 ))
 
 **说明:** 显示或隐藏等高线刻画器，它一次对两个因子图示其响应变量的等高线图。仅当模型包含多个连续因子时可用。
 
@@ -1521,7 +1497,7 @@ obj << (Fit[1] << Contour Profiler( 1 ));
 
 #### Decision Threshold
 
-**语法:** obj << fit([number] << Decision Threshold( state = 0|1, Set Probability Threshold( number ) ))
+**语法:** obj &lt;&lt; fit([number] &lt;&lt; Decision Threshold( state = 0|1, Set Probability Threshold( number ) ))
 
 **说明:** 显示或隐藏每个模型的拟合概率分布和预测值 - 实际值表。您可以更改概率阈值，以探索不同的阈值如何影响分类结果。
 
@@ -1546,7 +1522,7 @@ obj << (Fit[1] << Decision Threshold( 1, Set Probability Threshold( .7 ) ));
 
 #### Diagram
 
-**语法:** obj << (fit[number] << Diagram( state=0|1 ))
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Diagram( state=0|1 ))
 
 **说明:** 显示或隐藏表示隐藏层结构的关系图。
 
@@ -1566,7 +1542,7 @@ obj << (Fit[1] << Diagram( 1 ));
 
 #### Get Average Absolute Error Test
 
-**语法:** obj << (fit[number] << Get Average Absolute Error Test)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get Average Absolute Error Test)
 
 **说明:** 返回测试集的绝对偏差的均值统计量。 该选项仅在 JMP Pro 中使用验证集时可用。
 
@@ -1591,7 +1567,7 @@ Show( ae );
 
 #### Get Average Absolute Error Training
 
-**语法:** obj << (fit[number] << Get Average Absolute Error Training)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get Average Absolute Error Training)
 
 **说明:** 返回训练集的绝对偏差的均值统计量。
 
@@ -1612,7 +1588,7 @@ Show( ae );
 
 #### Get Average Absolute Error Validation
 
-**语法:** obj << (fit[number] << Get Average Absolute Error Validation)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get Average Absolute Error Validation)
 
 **说明:** 返回验证集的绝对偏差的均值统计量。 该选项仅在使用验证集时可用。
 
@@ -1633,7 +1609,7 @@ Show( ae );
 
 #### Get Average Log Error Test
 
-**语法:** obj << (fit[number] << Get Average Log Error Test)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get Average Log Error Test)
 
 **说明:** 返回测试集的 -log(p) 均值，其中 p 等于归因于模型的响应实际发生的概率。 该选项仅在 JMP Pro 中使用验证集时可用。
 
@@ -1658,7 +1634,7 @@ Show( avg );
 
 #### Get Average Log Error Training
 
-**语法:** obj << (fit[number] << Get Average Log Error Training)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get Average Log Error Training)
 
 **说明:** 返回训练集的 -log(p) 均值，其中 p 等于模型归因的响应实际发生的概率。
 
@@ -1679,7 +1655,7 @@ Show( avg );
 
 #### Get Average Log Error Validation
 
-**语法:** obj << (fit[number] << Get Average Log Error Validation)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get Average Log Error Validation)
 
 **说明:** 返回验证集的 -log(p) 均值，其中 p 等于模型归因的响应实际发生的概率。 该选项仅在使用验证集时可用。
 
@@ -1700,7 +1676,7 @@ Show( avg );
 
 #### Get Confusion Matrix Test
 
-**语法:** obj << (fit[number] << Get Confusion Matrix Test)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get Confusion Matrix Test)
 
 **说明:** 返回测试集的混淆矩阵。 该选项仅在 JMP Pro 中使用验证集时可用。
 
@@ -1725,7 +1701,7 @@ Show( cm );
 
 #### Get Confusion Matrix Training
 
-**语法:** obj << (fit[number] << Get Confusion Matrix Training)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get Confusion Matrix Training)
 
 **说明:** 返回训练集的混淆矩阵。
 
@@ -1746,7 +1722,7 @@ Show( cm );
 
 #### Get Confusion Matrix Validation
 
-**语法:** obj << (fit[number] << Get Confusion Matrix Validation)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get Confusion Matrix Validation)
 
 **说明:** 返回验证集的混淆矩阵。 该选项仅在使用验证集时可用。
 
@@ -1767,7 +1743,7 @@ Show( cm );
 
 #### Get Confusion Rates Test
 
-**语法:** obj << (fit[number] << Get Confusion Rates Test)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get Confusion Rates Test)
 
 **说明:** 返回测试集的混淆率。 该选项仅在 JMP Pro 中使用验证集时可用。
 
@@ -1792,7 +1768,7 @@ Show( cr );
 
 #### Get Confusion Rates Training
 
-**语法:** obj << (fit[number] << Get Confusion Rates Training)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get Confusion Rates Training)
 
 **说明:** 返回训练集的混淆率。
 
@@ -1813,7 +1789,7 @@ Show( cr );
 
 #### Get Confusion Rates Validation
 
-**语法:** obj << (fit[number] << Get Confusion Rates Validation)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get Confusion Rates Validation)
 
 **说明:** 返回验证集的混淆率。 该选项仅在使用验证集时可用。
 
@@ -1834,7 +1810,7 @@ Show( cr );
 
 #### Get Gen RSquare Test
 
-**语法:** obj << (fit[number] << Get Gen RSquare Test)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get Gen RSquare Test)
 
 **说明:** 返回测试集的广义 R 方统计量。 该选项仅在 JMP Pro 中使用验证集时可用。
 
@@ -1859,7 +1835,7 @@ Show( rt );
 
 #### Get Gen RSquare Training
 
-**语法:** obj << (fit[number] << Get Gen RSquare Training)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get Gen RSquare Training)
 
 **说明:** 返回训练集的广义 R 方统计量。
 
@@ -1880,7 +1856,7 @@ Show( rt );
 
 #### Get Gen RSquare Validation
 
-**语法:** obj << (fit[number] << Get Gen RSquare Validation)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get Gen RSquare Validation)
 
 **说明:** 返回验证集的广义 R 方统计量。 该选项仅在使用验证集时可用。
 
@@ -1901,7 +1877,7 @@ Show( rt );
 
 #### Get MM SAS DATA Step
 
-**语法:** text = obj << (fit[number] << Get MM SAS Data Step)
+**语法:** text = obj &lt;&lt; (fit[number] &lt;&lt; Get MM SAS Data Step)
 
 **说明:** 创建可以在 SAS Model Manager 中注册的 SAS 代码。
 
@@ -1921,7 +1897,7 @@ code = obj << (Fit[1] << Get MM SAS Data Step);
 
 #### Get Measures
 
-**语法:** obj << (fit[number] << Get Measures)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get Measures)
 
 **说明:** 从模型返回拟合测度汇总。
 
@@ -1942,7 +1918,7 @@ obj << (Fit[1] << Get Measures);
 
 #### Get Misclassification Rate Test
 
-**语法:** obj << (fit[number] << Get Misclassification Rate Test)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get Misclassification Rate Test)
 
 **说明:** 返回测试集的误分类率。 该选项仅在 JMP Pro 中使用验证集时可用。
 
@@ -1967,7 +1943,7 @@ Show( mr );
 
 #### Get Misclassification Rate Training
 
-**语法:** obj << (fit[number] << Get Misclassification Rate Training)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get Misclassification Rate Training)
 
 **说明:** 返回训练集的误分类率。
 
@@ -1988,7 +1964,7 @@ Show( mrt );
 
 #### Get Misclassification Rate Validation
 
-**语法:** obj << (fit[number] << Get Misclassification Rate Validation)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get Misclassification Rate Validation)
 
 **说明:** 返回验证集的误分类率。 该选项仅在使用验证集时可用。
 
@@ -2009,7 +1985,7 @@ Show( mrt );
 
 #### Get NBoost
 
-**语法:** obj << (fit[number] << Get NBoost)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get NBoost)
 
 **说明:** 返回用于提升的模型数。
 
@@ -2030,7 +2006,7 @@ Show( n );
 
 #### Get Precision Recall Area Test
 
-**语法:** obj << (fit[number] << Get Precision Recall Area Test)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get Precision Recall Area Test)
 
 **说明:** 返回测试集的精度-召回曲线下的面积。精度-召回曲线必须在计算面积之前显示。 该选项仅在 JMP Pro 中使用验证集时可用。
 
@@ -2056,7 +2032,7 @@ Show( ra );
 
 #### Get Precision Recall Area Training
 
-**语法:** obj << (fit[number] << Get Precision Recall Area Training)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get Precision Recall Area Training)
 
 **说明:** 返回训练集的精度-召回曲线下的面积。精度-召回曲线必须在计算面积之前显示。
 
@@ -2078,7 +2054,7 @@ Show( ra );
 
 #### Get Precision Recall Area Validation
 
-**语法:** obj << (fit[number] << Get Precision Recall Area Validation)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get Precision Recall Area Validation)
 
 **说明:** 返回验证集的精度-召回曲线下的面积。精度-召回曲线必须在计算面积之前显示。 该选项仅在使用验证集时可用。
 
@@ -2100,7 +2076,7 @@ Show( ra );
 
 #### Get Prediction Formula
 
-**语法:** obj << (fit[number] << Get Prediction Formula)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get Prediction Formula)
 
 **说明:** 构造一个脚本，以便创建预测公式列并返回它。
 
@@ -2120,7 +2096,7 @@ obj << (Fit[1] << Get Prediction Formula);
 
 #### Get RMS Error Test
 
-**语法:** obj << (fit[number] << Get RMS Error Test)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get RMS Error Test)
 
 **说明:** 返回检验误差的均方平方根。 该选项仅在 JMP Pro 中使用验证集时可用。
 
@@ -2145,7 +2121,7 @@ Show( re );
 
 #### Get RMS Error Training
 
-**语法:** obj << (fit[number] << Get RMS Error Training)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get RMS Error Training)
 
 **说明:** 返回训练误差的均方平方根。
 
@@ -2166,7 +2142,7 @@ Show( re );
 
 #### Get RMS Error Validation
 
-**语法:** obj << (fit[number] << Get RMS Error Validation)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get RMS Error Validation)
 
 **说明:** 返回验证误差的均方平方根。 该选项仅在使用验证集时可用。
 
@@ -2187,7 +2163,7 @@ Show( re );
 
 #### Get ROC Area Test
 
-**语法:** obj << (fit[number] << Get ROC Area Test)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get ROC Area Test)
 
 **说明:** 返回测试数据的受试者操作特征 (ROC) 曲线下的面积。首先需要显示 ROC 曲线，然后才会计算该面积。 该选项仅在 JMP Pro 中使用验证集时可用。
 
@@ -2213,7 +2189,7 @@ Show( ra );
 
 #### Get ROC Area Training
 
-**语法:** obj << (fit[number] << Get ROC Area Training)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get ROC Area Training)
 
 **说明:** 返回训练数据集的受试者操作特征 (ROC) 曲线下的面积。首先需要显示 ROC 曲线，然后才会计算该面积。
 
@@ -2235,7 +2211,7 @@ Show( ra );
 
 #### Get ROC Area Validation
 
-**语法:** obj << (fit[number] << Get ROC Area Validation)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get ROC Area Validation)
 
 **说明:** 返回验证数据集的受试者操作特征 (ROC) 曲线下的面积。首先需要显示 ROC 曲线，然后才会计算该面积。 该选项仅在使用验证集时可用。
 
@@ -2257,7 +2233,7 @@ Show( ra );
 
 #### Get RSquare Test
 
-**语法:** obj << (fit[number] << Get RSquare Test)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get RSquare Test)
 
 **说明:** 返回测试集的熵 R 方统计量。 该选项仅在 JMP Pro 中使用验证集时可用。
 
@@ -2282,7 +2258,7 @@ Show( rt );
 
 #### Get RSquare Training
 
-**语法:** obj << (fit[number] << Get RSquare Training)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get RSquare Training)
 
 **说明:** 返回训练集的熵 R 方统计量。
 
@@ -2304,7 +2280,7 @@ Show( rt );
 
 #### Get RSquare Validation
 
-**语法:** obj << (fit[number] << Get RSquare Validation)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get RSquare Validation)
 
 **说明:** 返回验证集的熵 R 方统计量。 该选项仅在使用验证集时可用。
 
@@ -2326,7 +2302,7 @@ Show( rt );
 
 #### Get SAS DATA Step
 
-**语法:** text = obj << (fit[number] << Get SAS Data Step)
+**语法:** text = obj &lt;&lt; (fit[number] &lt;&lt; Get SAS Data Step)
 
 **说明:** 创建可用于对新数据集进行评分的 SAS 代码。
 
@@ -2346,7 +2322,7 @@ code = obj << (Fit[1] << Get SAS Data Step);
 
 #### Get Seconds
 
-**语法:** obj << (fit[number] << Get Seconds)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get Seconds)
 
 **说明:** 返回完成分析所用的秒数。
 
@@ -2367,7 +2343,7 @@ Show( s );
 
 #### Lift Curve
 
-**语法:** obj << (fit[number] << Lift Curve( state=0|1 ))
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Lift Curve( state=0|1 ))
 
 **说明:** 显示或隐藏“提升曲线”图。提升曲线绘制提升与观测对应部分的关系，并提供另一种方式来展示模型预测的能力。若您使用了验证，则会为训练集、验证集和测试集分别显示一个图。
 
@@ -2387,7 +2363,7 @@ obj << (Fit[1] << Lift Curve( 1 ));
 
 #### Make SAS DATA Step
 
-**语法:** obj << (fit[number] << Make SAS Data Step)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Make SAS Data Step)
 
 **说明:** 创建可用于对新数据集进行评分的 SAS 代码。
 
@@ -2407,7 +2383,7 @@ obj << (Fit[1] << Make SAS Data Step);
 
 #### Plot Actual by Predicted
 
-**语法:** obj << (fit[number] << Plot Actual by Predicted( state=0|1 ))
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Plot Actual by Predicted( state=0|1 ))
 
 **说明:** 显示或隐藏一个图，垂直轴上显示实际值，水平轴上显示预测值。该选项仅可用于连续变量。若使用了验证，将为每个训练集、验证集和测试集都显示一个图。
 
@@ -2427,7 +2403,7 @@ obj << (Fit[1] << Plot Actual By Predicted( 1 ));
 
 #### Plot Residual by Predicted
 
-**语法:** obj << (fit[number] << Plot Residual by Predicted( state= 0|1 ))
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Plot Residual by Predicted( state= 0|1 ))
 
 **说明:** 显示或隐藏一个图，垂直轴上显示残差，水平轴上显示预测值。该选项仅可用于连续响应。若使用了验证，将为每个训练集、验证集和测试集都显示一个图。
 
@@ -2447,7 +2423,7 @@ obj << (Fit[1] << Plot Residual By Predicted( 1 ));
 
 #### Precision Recall Curve
 
-**语法:** obj << (fit[number] << Precision Recall Curve( state=0|1 ))
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Precision Recall Curve( state=0|1 ))
 
 **说明:** 显示或隐藏“精度-召回曲线”图，它包含响应变量每个水平的曲线。精度-召回曲线绘制不同阈值下的精度值和召回值。若您使用了验证，则会为训练集、验证集和测试集分别显示一个图。
 
@@ -2467,7 +2443,7 @@ obj << (Fit[1] << Precision Recall Curve( 1 ));
 
 #### Profiler
 
-**语法:** obj << (fit[number] << Profiler( state=0|1 ))
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Profiler( state=0|1 ))
 
 **说明:** 显示或隐藏预测刻画器，它用于通过从预测方程中一次分离出一个因子来图形化探索该预测方程。预测刻画器包含进行优化的特征。
 
@@ -2487,7 +2463,7 @@ obj << (Fit[1] << Profiler( 1 ));
 
 #### Publish Prediction Formula
 
-**语法:** obj << (fit[number] << Publish Prediction Formula)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Publish Prediction Formula)
 
 **说明:** 创建预测公式并将它们保存为“公式存储库”平台中的公式列脚本。
 
@@ -2507,7 +2483,7 @@ obj << (Fit[1] << Publish Prediction Formula);
 
 #### ROC Curve
 
-**语法:** obj << (fit[number] << ROC Curve( state=0|1 ))
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; ROC Curve( state=0|1 ))
 
 **说明:** 显示或隐藏响应变量每个水平的“受试者操作特征”(ROC) 曲线。ROC 曲线是（1 - 特异度）-灵敏度图。若您使用了验证，则会为训练集、验证集和测试集分别显示一个图。
 
@@ -2527,7 +2503,7 @@ obj << (Fit[1] << ROC Curve( 1 ));
 
 #### Remove Fit
 
-**语法:** obj << (fit[number] << Remove Fit)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Remove Fit)
 
 **说明:** 删除整个模型报表。
 
@@ -2548,7 +2524,7 @@ obj << (Fit[1] << Remove Fit);
 
 #### Save Fast Formulas
 
-**语法:** obj << (fit[number] << Save Fast Formulas)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Save Fast Formulas)
 
 **说明:** 将新的公式列保存至数据表。该列包含用于预测响应的公式，其中包括隐藏层节点的嵌入公式。该选项生成快速计算的公式，但这些公式不能供交互式版本的刻画器使用。
 
@@ -2568,7 +2544,7 @@ obj << (Fit[1] << Save Fast Formulas);
 
 #### Save Formulas
 
-**语法:** obj << (fit[number] << Save Formulas)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Save Formulas)
 
 **说明:** 将新的公式列保存至数据表。预测响应和隐藏层节点有单独的公式列。
 
@@ -2588,7 +2564,7 @@ obj << (Fit[1] << Save Formulas);
 
 #### Save Profile Formulas
 
-**语法:** obj << (fit[number] << Save Profile Formulas)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Save Profile Formulas)
 
 **说明:** 将新的公式列保存至数据表。该列包含用于预测响应的公式，其中包括隐藏层节点的嵌入公式。该选项生成可供交互式版本的刻画器使用的公式。
 
@@ -2608,7 +2584,7 @@ obj << (Fit[1] << Save Profile Formulas);
 
 #### Save Transformed Covariates
 
-**语法:** obj << (fit[number] << Save Transformed Covariates)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Save Transformed Covariates)
 
 **说明:** 将新的公式列保存至数据表。新列包含用于变换协变量的公式。该选项仅限于 JMP Pro 并且在启动中指定了“变换协变量”选项时可用。
 
@@ -2629,7 +2605,7 @@ obj << (Fit[1] << Save Transformed Covariates);
 
 #### Save Validation
 
-**语法:** obj << (fit[number] << Save Validation)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Save Validation)
 
 **说明:** 将新列保存至数据表。该列标识训练集和验证集中使用的行。
 
@@ -2649,7 +2625,7 @@ obj << (Fit[1] << Save Validation);
 
 #### Show Estimates
 
-**语法:** obj << (fit[number] << Show Estimates( state=0|1 ))
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Show Estimates( state=0|1 ))
 
 **说明:** 显示或隐藏参数估计值的报表。
 
@@ -2669,7 +2645,7 @@ obj << (Fit[1] << Show Estimates( 1 ));
 
 #### Surface Profiler
 
-**语法:** obj << (fit[number] << Surface Profiler( state=0|1 ))
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Surface Profiler( state=0|1 ))
 
 **说明:** 显示或隐藏三维曲面图。该选项仅可用于具有两个或更多 X 变量的模型。
 

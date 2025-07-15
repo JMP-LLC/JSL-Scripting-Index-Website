@@ -6,9 +6,7 @@
 
 ### New Image
 
-**Syntax:** img = Open( filepath, jpg|png|gif|bmp|tif )
-
-New Image(<width, height>, <existing image> )
+**Syntax:** img = Open( filepath, jpg|png|gif|bmp|tif )New Image(&lt;width, height&gt;, &lt;existing image&gt; )
 
 **Description:** A picture object, which can be used for adding a picture to a frame or a display box.
 
@@ -22,7 +20,7 @@ obj = New Window( "tile(40,40)", img );
 
 ### Open
 
-**Syntax:** Open( filePath, <data table options | Excel import options | text import options | SAS import options | HTML import options | esriShapeFile import options | PDF import options | other file options > )
+**Syntax:** Open( filePath, &lt;data table options | Excel import options | text import options | SAS import options | HTML import options | esriShapeFile import options | PDF import options | other file options &gt; )
 
 **Description:** Returns a reference to a data table or other JMP file or object created from a file. If no path is specified, the Open dialog appears. If a folder path is specified, the system file browser is opened and no object is returned. Refer to the Syntax Reference for a complete description of available options.
 
@@ -52,7 +50,7 @@ dt2 = Open( "$SAMPLE_DATA/Fitness.jmp", Select Columns( "Name", "Sex", "Age", "W
 
 ### Add Frame
 
-**Syntax:** obj << Add Frame
+**Syntax:** obj &lt;&lt; Add Frame
 
 **Description:** Adds a new frame to an animated image. The frame will not contain any content until Set Pixels is used. An optional duration argument can be specified, which indicates the frame duration in milliseconds. If the duration argument is omitted, the duration of the current frame will be used as the duration of the added frame. If there are no other frames, a default duration of 100 milliseconds is used.
 
@@ -81,7 +79,7 @@ win << Close Window();
 
 ### Crop
 
-**Syntax:** obj << Crop( Left( number ), Right( number ), Top( number ), Bottom( number ) )
+**Syntax:** obj &lt;&lt; Crop( Left( number ), Right( number ), Top( number ), Bottom( number ) )
 
 **Description:** Modifies the image to be the sub-image at the specified pixel coordinates within the existing image.
 
@@ -98,7 +96,7 @@ obj2 = New Window( "Cropped", img );
 
 ### Filter
 
-**Syntax:** obj << Filter( despeckle|edge|enhance|median|negate|normalize|sharpen|contrast|gamma|reduce noise|gaussian blur|canny, <number> )
+**Syntax:** obj &lt;&lt; Filter( despeckle|edge|enhance|median|negate|normalize|sharpen|contrast|gamma|reduce noise|gaussian blur|canny, &lt;number&gt; )
 
 **Description:** Filters the image based on the specified algorithm. Filtering is useful for cleaning up noise in the image. Contrast, gamma and reduce noise require one additional (numeric) parameter. Gaussian blur requires two: radius and sigma.
 
@@ -223,7 +221,7 @@ refilter();
 
 ### Flip Both
 
-**Syntax:** obj << Flip Both
+**Syntax:** obj &lt;&lt; Flip Both
 
 **Description:** Flips the image both horizontally and vertically.
 
@@ -240,7 +238,7 @@ obj2 = New Window( "Diagonal Flip", img );
 
 ### Flip Horizontal
 
-**Syntax:** obj << Flip Horizontal
+**Syntax:** obj &lt;&lt; Flip Horizontal
 
 **Description:** Flips the image horizontally.
 
@@ -257,7 +255,7 @@ obj2 = New Window( "Horizontal Flip", img );
 
 ### Flip Vertical
 
-**Syntax:** obj << Flip Vertical
+**Syntax:** obj &lt;&lt; Flip Vertical
 
 **Description:** Flips the image upside down.
 
@@ -274,7 +272,7 @@ obj2 = New Window( "Vertical Flip", img );
 
 ### Get Current Frame
 
-**Syntax:** obj << Get Current Frame
+**Syntax:** obj &lt;&lt; Get Current Frame
 
 **Description:** Returns the current frame number. For most images, the value is 0. For animated GIF files, the value can be between 0 and one less than the number of frames. Actions, such as getPixels and setPixels, will act on the current frame.
 
@@ -288,7 +286,7 @@ num = img << Get Current Frame();
 
 ### Get EXIF
 
-**Syntax:** obj << Get EXIF
+**Syntax:** obj &lt;&lt; Get EXIF
 
 **Description:** Gets EXIF data that is stored internally with the image. An array of key/value pairs will be returned.
 
@@ -308,7 +306,7 @@ While( !Is Empty( key ),
 
 ### Get Frame Durations
 
-**Syntax:** obj << Get Frame Durations
+**Syntax:** obj &lt;&lt; Get Frame Durations
 
 **Description:** Returns a matrix of the pause duration between each frame. The time is specified in milliseconds.
 
@@ -322,7 +320,7 @@ durs = img << Get Frame Durations();
 
 ### Get N Frames
 
-**Syntax:** obj << Get N Frames
+**Syntax:** obj &lt;&lt; Get N Frames
 
 **Description:** Returns the number of frames in the image. For most images this will be one. For animated GIF files this could be more than one.
 
@@ -336,7 +334,7 @@ num = img << Get N Frames();
 
 ### Get N Loops
 
-**Syntax:** obj << Get N Loops
+**Syntax:** obj &lt;&lt; Get N Loops
 
 **Description:** Returns the number of times an animated image should loop through its sequence. A value of zero indicates it should loop indefinitely.
 
@@ -350,15 +348,11 @@ loops = img << Get N Loops();
 
 ### Get Path
 
-**Syntax:** obj << Get Path
+**Syntax:** obj &lt;&lt; Get Path
 
 ### Get Pixels
 
-**Syntax:** mat = img << Get Pixels();
-
-{r, g, b} = img << Get Pixels("rgb");
-
-{r, g, b, a} = img << Get Pixels("rgba")
+**Syntax:** mat = img &lt;&lt; Get Pixels();{r, g, b} = img &lt;&lt; Get Pixels("rgb");{r, g, b, a} = img &lt;&lt; Get Pixels("rgba")
 
 **Description:** If no color designator is specified, a matrix of JSL colors representing the pixel values is returned. A color designator of  rgb will return a list of three matrices, red, green, and blue, respectively. Specifying rgba will return the alpha (transparency) channel as well as the red, green, and blue.
 
@@ -398,9 +392,7 @@ win = New Window( "tile(40,40)", img );
 
 ### GetSize
 
-**Syntax:** {w,h} = pic << Get Size 
-
-{w,h} = pic << Size
+**Syntax:** {w,h} = pic &lt;&lt; Get Size {w,h} = pic &lt;&lt; Size
 
 **Description:** Returns a list containing the width and height of the image.
 
@@ -416,7 +408,7 @@ Show( s );
 
 ### Remove Frame
 
-**Syntax:** obj << Remove Frame
+**Syntax:** obj &lt;&lt; Remove Frame
 
 **Description:** Removes a frame from an animated image. The index of the frame to remove is passed.
 
@@ -430,7 +422,7 @@ img << Remove Frame( 0 );
 
 ### Rotate
 
-**Syntax:** obj << Rotate( angle )
+**Syntax:** obj &lt;&lt; Rotate( angle )
 
 **Description:** Rotates the image by the specified angle of rotation.
 
@@ -447,7 +439,7 @@ obj2 = New Window( "Rotated", img );
 
 ### Save Image
 
-**Syntax:** obj << Save Image( filePath, image type )
+**Syntax:** obj &lt;&lt; Save Image( filePath, image type )
 
 **Description:** Saves the image in the specified location and file name. The second parameter indicates what type of image to save, regardless of the extension used in the file name. Valid image types include PNG, JPG, GIF, TIFF, BMP, and PDF. If no image type is specified, or the specified image type is not understood, the image is saved as a PNG file.
 
@@ -462,7 +454,7 @@ img << Save Image( "$TEMP/Mediterranean.jpg", "jpg" );
 
 ### Scale
 
-**Syntax:** obj << Scale( scale | xscale, yscale )
+**Syntax:** obj &lt;&lt; Scale( scale | xscale, yscale )
 
 **Description:** Applies a scale factor to the width and height of the image or scales the width (xscale) and height (yscale) independently.
 
@@ -492,13 +484,13 @@ obj2 = New Window( "Tile scaled by 2 vertically and by 0.5 horizontally", img );
 
 ### Set Blob
 
-**Syntax:** obj << Set Blob
+**Syntax:** obj &lt;&lt; Set Blob
 
 **Description:** Sets the image from a blob.
 
 ### Set Current Frame
 
-**Syntax:** obj << Set Current Frame( frame )
+**Syntax:** obj &lt;&lt; Set Current Frame( frame )
 
 **Description:** Sets the current frame number. For most images this will be 0. For animated GIF files, this can be between 0 and one less than the number of frames. Actions, such as getPixels and setPixels, will act on the current frame.
 
@@ -519,7 +511,7 @@ win << Close Window();
 
 ### Set Frame Duration
 
-**Syntax:** obj << Set Frame Duration( duration )
+**Syntax:** obj &lt;&lt; Set Frame Duration( duration )
 
 **Description:** Set the duration of the current frame in an animated image. The time is specified in milliseconds.
 
@@ -534,7 +526,7 @@ durs = img << Get Frame Durations();
 
 ### Set N Loops
 
-**Syntax:** obj << Set N Loops( loops )
+**Syntax:** obj &lt;&lt; Set N Loops( loops )
 
 **Description:** Sets the number of times an animated image should loop through its sequence. A value of 0 indicates that the image should loop indefinitely.
 
@@ -549,9 +541,7 @@ loops = img << Get N Loops();
 
 ### Set Pixels
 
-**Syntax:** img << Set Pixels(jslmat);
-
-img << Set Pixels ("rgb", {r, g, b})
+**Syntax:** img &lt;&lt; Set Pixels(jslmat);img &lt;&lt; Set Pixels ("rgb", {r, g, b})
 
 **Description:** Sets the pixel matrix, or matrices, for the image. If one matrix is specified with no color designator, the matrix is treated as a matrix of JSL colors. A color designator can be specified, such as rgb, to indicate the following matrices are red, green, and blue, respectively. In this case, the size of all the specified matrices should be the same.
 
@@ -587,7 +577,7 @@ win2 = New Window( "Gray Scale", img );
 
 ### SetSize
 
-**Syntax:** obj << SetSize( {width, height} )
+**Syntax:** obj &lt;&lt; SetSize( {width, height} )
 
 **Description:** Sets the image size based on the specified width and height.
 
@@ -603,9 +593,7 @@ obj2 = New Window( "Larger tile(40,40)", img );
 
 ### Size
 
-**Syntax:** {w,h} = pic << Get Size 
-
-{w,h} = pic << Size
+**Syntax:** {w,h} = pic &lt;&lt; Get Size {w,h} = pic &lt;&lt; Size
 
 **Description:** Returns a list containing the width and height of the image.
 
@@ -621,7 +609,7 @@ Show( s );
 
 ### Transparency
 
-**Syntax:** obj << Transparency( fraction )
+**Syntax:** obj &lt;&lt; Transparency( fraction )
 
 **Description:** Applies transparency to an image. Valid values are between 0.0 (transparent) and 1.0 (opaque)
 

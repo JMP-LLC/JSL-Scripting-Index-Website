@@ -2,8 +2,6 @@
 
 
 
-## Funzioni
-
 ### Add
 
 **Sintassi:** y = x0 + x1; y = Add( x0, x1, ... )
@@ -57,7 +55,7 @@ Hex(/* make it printable */ Blob MD5(/* get the hash */
 
 ### Blob Peek
 
-**Sintassi:** blobResult = Blob Peek( blob, offset, <length> )
+**Sintassi:** blobResult = Blob Peek( blob, offset, &lt;length&gt; )
 
 **Descrizione:** Crea un nuovo blob da un range secondario di byte del blob dato. L&apos;argomento offset è basato su zero e quindi il primo byte si trova a offset zero.
 
@@ -87,7 +85,7 @@ Build Information();
 
 ### Caption
 
-**Sintassi:** y = Caption( <{h, v}>, text | remove, <Delayed( seconds )>, <Font(font)>, <Font Size(size)>, <Text Color(color)>, <Back Color(color)>, <Spoken(bool)> )
+**Sintassi:** y = Caption( &lt;{h, v}&gt;, text | remove, &lt;Delayed( seconds )&gt;, &lt;Font(font)&gt;, &lt;Font Size(size)&gt;, &lt;Text Color(color)&gt;, &lt;Back Color(color)&gt;, &lt;Spoken(bool)&gt; )
 
 **Descrizione:** Mostra una finestra didascalia al percorso specificato da {h, v} e contenente il testo specificato dall&apos;argomento text. L&apos;argomento Delayed( seconds ) imposta il tempo di attesa in secondi prima di ogni didascalia.
 
@@ -123,7 +121,7 @@ Caption( remove );
 
 ### Clipboard Capture
 
-**Sintassi:** clp = Clipboard Capture( box << Copy )
+**Sintassi:** clp = Clipboard Capture( box &lt;&lt; Copy )
 
 **Descrizione:** If the JSL within this function would have normally copied something to the OS Clipboard, it is instead copied to a Clipboard object and returned.
 
@@ -143,7 +141,7 @@ Show( clp << Get Flavor Data( "Text", <<Text ) );
 
 ### Current Journal
 
-**Sintassi:** y = Current Journal( <Project(title|index|box|window)> )
+**Sintassi:** y = Current Journal( &lt;Project(title|index|box|window)&gt; )
 
 **Descrizione:** Restituisce un riferimento al journal corrente nel progetto corrente (oppure nessun progetto se non si sta eseguendo lo script in un progetto).
 
@@ -305,7 +303,7 @@ Disable Proxy Settings( 1 );
 
 ### Divide
 
-**Sintassi:** y = x0 / x1; y = Divide( x0, <x1>, ... )
+**Sintassi:** y = x0 / x1; y = Divide( x0, &lt;x1&gt;, ... )
 
 **Descrizione:** Divide tutti gli argomenti successivi dal primo argomento. Gli argomenti possono essere numeri, matrici o elenchi di numeri. Se chiamato con un solo argomento, il risultato sarà il reciproco.
 
@@ -447,11 +445,7 @@ Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
 
 ### Format Pattern
 
-**Sintassi:** s = Format( x, "Format Pattern", pattern, <width>, <dec>)
-
-x = In Format( s, "Format Pattern", pattern, < <<Use Locale(b=1)> )
-
-obj = Format("Format Pattern", pattern, <width>, <dec>)
+**Sintassi:** s = Format( x, "Format Pattern", pattern, &lt;width&gt;, &lt;dec&gt;)x = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )obj = Format("Format Pattern", pattern, &lt;width&gt;, &lt;dec&gt;)
 
 **Descrizione:** I pattern di formato sono stringhe che definiscono un formato di data e ora come, ad esempio, “<AAAA></><MM></><GG> <hh><:><mm><:><ss><ampm>". Le parti del pattern tra parentesi angolari sono dette descrittori di campo. I descrittori di campo rappresentano un valore (come "<AAAA>", che è un anno a quattro cifre) o un altro testo di data e ora (come "</>", che è un separatore di data specifico locale). Un pattern di formato permette di costruire formati che non sono forniti da JMP. Questi formati possono essere utilizzati sia per la formattazione sia per l&apos;input dei dati.
 
@@ -616,7 +610,7 @@ Get Clipboard();
 
 ### Get Expr Location
 
-**Sintassi:** Get Expr Location(<expression>, [{"TokenStartLine"|"TokenStartCol"|"TokenStart"|"TokenLength"|"TreeStart"|"TreeEnd"|"TreeLength"}+]
+**Sintassi:** Get Expr Location(&lt;expression&gt;, [{"TokenStartLine"|"TokenStartCol"|"TokenStart"|"TokenLength"|"TreeStart"|"TreeEnd"|"TreeLength"}+]
 
 **Descrizione:** Recupera le posizioni del primo token in un&apos;espressione analizzata. L&apos;invocazione di default restituisce {il file di origine, InizioLineaToken, InizioColToken, LunghezzaToken}.
 
@@ -720,7 +714,7 @@ Show( aa );
 
 ### Get Platform Preference
 
-**Sintassi:** Get Platform Preferences( < platformName < ( optionName, ... ) > ... > )
+**Sintassi:** Get Platform Preferences( &lt; platformName &lt; ( optionName, ... ) &gt; ... &gt; )
 
 **Descrizione:** Ottiene preferenze della piattaforma come specificato.
 
@@ -735,7 +729,7 @@ Get Platform Preferences( Bivariate( Fit Line ), DOE );
 
 ### Get Platform Preferences
 
-**Sintassi:** Get Platform Preferences( < platformName < ( optionName, ... ) > ... > )
+**Sintassi:** Get Platform Preferences( &lt; platformName &lt; ( optionName, ... ) &gt; ... &gt; )
 
 **Descrizione:** Ottiene preferenze della piattaforma come specificato.
 
@@ -750,7 +744,7 @@ Get Platform Preferences( Bivariate( Fit Line ), DOE );
 
 ### Get Policies
 
-**Sintassi:** Get Policies( <Machine|User|Both> )
+**Sintassi:** Get Policies( &lt;Machine|User|Both&gt; )
 
 **Descrizione:** Restituisce un array associativo contenente i nomi e i valori dei criteri correnti.
 
@@ -1140,7 +1134,7 @@ New Window( "editor", Script Box( x ) );
 
 ### Load DLL
 
-**Sintassi:** dll = Load DLL( file path | Base Name( file path without extension ), < AutoDeclare( bool | Quiet | Verbose) | Quiet | Verbose )> )
+**Sintassi:** dll = Load DLL( file path | Base Name( file path without extension ), &lt; AutoDeclare( bool | Quiet | Verbose) | Quiet | Verbose )&gt; )
 
 **Descrizione:** Carica una DLL verso la quale conduce il percorso specificato.
 
@@ -1177,7 +1171,7 @@ If( Host is( "Windows" ),
 
 ### Log Table Messages
 
-**Sintassi:** Log Table Messages( <On|Off>, <Enable(subject, ...)>, <Disable(subject, ...)>, <Include(msgname, ...)>, <Exclude(msgname, )>
+**Sintassi:** Log Table Messages( &lt;On|Off&gt;, &lt;Enable(subject, ...)&gt;, &lt;Disable(subject, ...)&gt;, &lt;Include(msgname, ...)&gt;, &lt;Exclude(msgname, )&gt;
 
 **Descrizione:** Control logging of data table messages (such as DtMsgClose). By default logging is off, but all subjects are enabled. (If you turn logging on, you do not need to enable the subjects you&apos;re interested in.) Only a subset of all messages are logged. Not available in retail builds.
 
@@ -1240,7 +1234,7 @@ Log Table Messages( Disable( "Table" ) );
 
 ### Mail
 
-**Sintassi:** Mail( "address", "subject", "message", <"attachment filepath"> | { "attachment filepath", ...} )
+**Sintassi:** Mail( "address", "subject", "message", &lt;"attachment filepath"&gt; | { "attachment filepath", ...} )
 
 **Descrizione:** Crea un messaggio e-mail in uscita come specificato se il sistema operativo lo consente. Non tutte le opzioni funzionano su tutte le versioni di sistemi operativi. Consultare la Guida per ulteriori dettagli.
 
@@ -1255,7 +1249,7 @@ Mail( "test@example.com", "revelation", "JMP is great.", "$SAMPLE_DATA/Big Class
 
 ### Main Menu
 
-**Sintassi:** menu = Main Menu( command, <window name> )
+**Sintassi:** menu = Main Menu( command, &lt;window name&gt; )
 
 **Descrizione:** Esegue il comando del menu principale specificato.
 
@@ -1366,7 +1360,7 @@ Print( tax * Name( "taxable income(2011)" ) );
 
 ### New Clipboard
 
-**Sintassi:** clp = New Clipboard( <<<Get From OS> )
+**Sintassi:** clp = New Clipboard( &lt;&lt;&lt;Get From OS&gt; )
 
 **Descrizione:** Creates a new Clipboard, either empty or with access to the OS clipboard.
 
@@ -1384,7 +1378,7 @@ New Window( "Img", clp << Get Flavor Data( "Graphic" ) )
 
 ### New HTTP Request
 
-**Sintassi:** obj = New HTTP Request(URL(...), Method(...), <Form(<Fields(...)>, <Files(...)>)> | <File(...)> | <Blob(...)> | <JSON(...)>, <QueryString(...)>, <Headers(...)>, <Username(...)>, <Password(...)>)
+**Sintassi:** obj = New HTTP Request(URL(...), Method(...), &lt;Form(&lt;Fields(...)&gt;, &lt;Files(...)&gt;)&gt; | &lt;File(...)&gt; | &lt;Blob(...)&gt; | &lt;JSON(...)&gt;, &lt;QueryString(...)&gt;, &lt;Headers(...)&gt;, &lt;Username(...)&gt;, &lt;Password(...)&gt;)
 
 **Descrizione:** Crea una richiesta di invio al servizio web.
 
@@ -1803,7 +1797,7 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ### Polytope Uniform Random
 
-**Sintassi:** points = Polytope Uniform Random( numSamples, A, b, L, U, neq, nle, nge, <nwarm=200>, <nstride=25> )
+**Sintassi:** points = Polytope Uniform Random( numSamples, A, b, L, U, neq, nle, nge, &lt;nwarm=200&gt;, &lt;nstride=25&gt; )
 
 **Descrizione:** Genera punti uniformi casuali su un politopo convesso. L&apos;argomento numSamples specifica il numero di punti casuali da generare. L&apos;argomento A è la matrice di coefficienti del vincolo. L&apos;argomento B sono i valori sul lato destro dei vincoli. Gli argomenti L e U sono rispettivamente i limiti inferiore e superiore per le variabili. Gli argomenti neq, mle e nge sono rispettivamente il numero dei vincoli di uguaglianza, il numero delle disuguaglianze minori o uguali e il numero delle disuguaglianze maggiori o uguali. L&apos;argomento nwarm è il numero di ripetizioni di warm-up prima di scrivere i punti nella matrice di output. L&apos;argomento nstride è il numero di ripetizioni tra ogni punto che è scritto nella matrice di output. Si noti che i vincoli devono essere elencati inizialmente come uguaglianze, poi come disuguaglianze minori o uguali e infine come disuguaglianze maggiori o uguali.
 
@@ -1899,7 +1893,7 @@ Preferences( Graph marker size( "Large" ) );
 
 ### Register Addin
 
-**Sintassi:** Register Addin( uniqueId, homeFolder, <displayName(name)>, <MinJMPVersion(version)>, <MaxJMPVersion(version)>, <LoadsAtStartup(autoLoad)>, <LoadNow(load)> )
+**Sintassi:** Register Addin( uniqueId, homeFolder, &lt;displayName(name)&gt;, &lt;MinJMPVersion(version)&gt;, &lt;MaxJMPVersion(version)&gt;, &lt;LoadsAtStartup(autoLoad)&gt;, &lt;LoadNow(load)&gt; )
 
 **Descrizione:** Registra un add-in
 
@@ -1984,19 +1978,7 @@ Show( Rummage( Window( dt ), "graph builder", Algorithm( "Basic" ) )[1 :: 3] << 
 
 ### Run Program
 
-**Sintassi:** obj = Run Program(
-
-    Executable( "path/etc.exe" ),
-
-  < Options( {"/a", "/b etc" } ) >,
-
-  < Parameter( optParm ) >,
-
-  < Read Function( Function( {this, optParm}, etc ) | "text" | "blob" ) >,
-
-  < Write Function( Function( {this, optParm}, etc ) ) >
-
-)
+**Sintassi:** obj = Run Program( Executable( "path/etc.exe" ), &lt; Options( {"/a", "/b etc" } ) &gt;, &lt; Parameter( optParm ) &gt;, &lt; Read Function( Function( {this, optParm}, etc ) | "text" | "blob" ) &gt;, &lt; Write Function( Function( {this, optParm}, etc ) ) &gt;)
 
 **Descrizione:** Controlla un programma esterno mediante stdin e stdout.
 
@@ -2121,7 +2103,7 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ### Set Policy
 
-**Sintassi:** Set Policy("PolicyName", <Empty()|#|"value"> )
+**Sintassi:** Set Policy("PolicyName", &lt;Empty()|#|"value"&gt; )
 
 **JMP Versione aggiunta:** 18
 
@@ -2157,7 +2139,7 @@ Preferences( Graph marker size( "Large" ) );
 
 ### Set Toolbar Visibility
 
-**Sintassi:** rc = Set Toolbar Visibility( "toolbar-name" | Default | All, <window-class-name | All>, <True | False> )
+**Sintassi:** rc = Set Toolbar Visibility( "toolbar-name" | Default | All, &lt;window-class-name | All&gt;, &lt;True | False&gt; )
 
 **Descrizione:** Imposta la visibilità di una barra degli strumenti specificata per una data classe di finestre. Il nome della barra degli strumenti è il nome interno della barra degli strumenti. Se viene passato Predefinito come nome della barra degli strumenti, la classe di finestre specificata viene ripristinata alla barra degli strumenti predefinita impostata per quella classe di finestre. Esempi di nome-classe-finestre sono Tabella di dati, Script, Report e Journal. Se il nome della classe di finestre è Tutto, la visibilità per la barra strumenti specificata viene impostata per tutte le classi di finestre.
 
@@ -2237,7 +2219,7 @@ Show Addins Dialog();
 
 ### Show Commands
 
-**Sintassi:** Show Commands( <keyword=Builtins> )
+**Sintassi:** Show Commands( &lt;keyword=Builtins&gt; )
 
 **Descrizione:** Crea una o più tabelle di dati che contengono informazioni su vari componenti JSL. L&apos;argomento keyword determina il contenuto della tabella di output. Specificare elementi incorporati (di default) per operatori e funzioni incorporati. Specificare oggetti che supportano script per tutti i comandi che supportano script per gli oggetti. Specificare traduzioni per le versioni inglesi e localizzate dei comandi che supportano script. Specificare riquadri di visualizzazione per i comandi che supportano script relativi a riquadri e segmenti di visualizzazione. Specificare nomi che supportano script per i nomi degli oggetti che supportano script. Specificare i nomi delle piattaforme per i nomi delle piattaforme.
 
@@ -2299,7 +2281,7 @@ Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
 
 ### Socket
 
-**Sintassi:** socketHandle = Socket( <STREAM | DGRAM> )
+**Sintassi:** socketHandle = Socket( &lt;STREAM | DGRAM&gt; )
 
 **Descrizione:** Crea una variabile di socket che può comunicare con i socket su questo o un altro computer connesso in rete. L&apos;argomento predefinito è STREAM. Provare con il sito Web della società/organizzazione dell&apos;utente.
 
@@ -2344,7 +2326,7 @@ If( rc[2] == "ok",
 
 ### Speak
 
-**Sintassi:** Speak( text, <Wait( sync )> )
+**Sintassi:** Speak( text, &lt;Wait( sync )&gt; )
 
 **Descrizione:** Enuncia il testo se supportato dal sistema operativo. Specificando l&apos;argomento facoltativo Wait(true) si ritarda l&apos;esecuzione dello script fino al termine del discorso.
 
@@ -2416,7 +2398,7 @@ Unregister Addin( "com.mycompany.myaddin" );
 
 ### Web
 
-**Sintassi:** Web( string, <JMP Window> )
+**Sintassi:** Web( string, &lt;JMP Window&gt; )
 
 **Descrizione:** Apre l&apos;URL o il file memorizzato in string nel browser Web predefinito. Il secondo argomento facoltativo specifica che l’HTML si apre in una finestra del browser di JMP.
 
@@ -2461,7 +2443,7 @@ Web( "http://www.jmp.com/" );
 
 ### With Clipboard
 
-**Sintassi:** two = With Clipboard( clp, box << Paste; 1 + 1 )
+**Sintassi:** two = With Clipboard( clp, box &lt;&lt; Paste; 1 + 1 )
 
 **Descrizione:** If the JSL within this function would have normally pasted something from the OS Clipboard, it is instead pasted from the provided Clipboard object.
 

@@ -6,7 +6,7 @@
 
 ### Custom Graph
 
-**Sintaxis:** New Window(Window title, <Editable|Dialog>, Graph Box( named arguments, ..., script segment
+**Sintaxis:** New Window(Window title, &lt;Editable|Dialog&gt;, Graph Box( named arguments, ..., script segment
 
 **Descripción:** Crea un gráfico mediante un script personalizado.
 
@@ -34,7 +34,7 @@ obj = New Window( "Example",
 
 ### Append Seg
 
-**Sintaxis:** obj << Append Seg( display seg )
+**Sintaxis:** obj &lt;&lt; Append Seg( display seg )
 
 **Descripción:** Agrega un segmento de visualización al cuadro del marco
 
@@ -50,11 +50,11 @@ New Window( "Example",
 
 ### Background Map
 
-**Sintaxis:** obj << Background Map
+**Sintaxis:** obj &lt;&lt; Background Map
 
 ### Bottom
 
-**Sintaxis:** obj << Bottom( number )
+**Sintaxis:** obj &lt;&lt; Bottom( number )
 
 ### FrameSize
 
@@ -134,111 +134,111 @@ New Window( "Example",
 
 ### Get Background Color
 
-**Sintaxis:** obj << Get Background Color( color )
+**Sintaxis:** obj &lt;&lt; Get Background Color( color )
 
 ### Get Background Fill
 
-**Sintaxis:** obj << Get Background Fill( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Get Background Fill( state=0|1 )
 
 ### Get Bottom
 
-**Sintaxis:** obj << Get Bottom
+**Sintaxis:** obj &lt;&lt; Get Bottom
 
 ### Get Graphics Script
 
-**Sintaxis:** obj << Get Graphics Script
+**Sintaxis:** obj &lt;&lt; Get Graphics Script
 
 ### Get Height
 
-**Sintaxis:** obj << Get Height
+**Sintaxis:** obj &lt;&lt; Get Height
 
 ### Get Left
 
-**Sintaxis:** obj << Get Left
+**Sintaxis:** obj &lt;&lt; Get Left
 
 ### Get Right
 
-**Sintaxis:** obj << Get Right
+**Sintaxis:** obj &lt;&lt; Get Right
 
 ### Get Sides
 
-**Sintaxis:** obj << Get Sides
+**Sintaxis:** obj &lt;&lt; Get Sides
 
 ### Get Top
 
-**Sintaxis:** obj << Get Top
+**Sintaxis:** obj &lt;&lt; Get Top
 
 ### Get Width
 
-**Sintaxis:** obj << Get Width
+**Sintaxis:** obj &lt;&lt; Get Width
 
 ### Get X Axis
 
-**Sintaxis:** obj << Get X Axis
+**Sintaxis:** obj &lt;&lt; Get X Axis
 
 ### Get X Name
 
-**Sintaxis:** obj << Get X Name
+**Sintaxis:** obj &lt;&lt; Get X Name
 
 ### Get Y Axis
 
-**Sintaxis:** obj << Get Y Axis
+**Sintaxis:** obj &lt;&lt; Get Y Axis
 
 ### Get Y Name
 
-**Sintaxis:** obj << Get Y Name
+**Sintaxis:** obj &lt;&lt; Get Y Name
 
 ### Left
 
-**Sintaxis:** obj << Left( number )
+**Sintaxis:** obj &lt;&lt; Left( number )
 
 ### Right
 
-**Sintaxis:** obj << Right( number )
+**Sintaxis:** obj &lt;&lt; Right( number )
 
 ### Set Background Color
 
-**Sintaxis:** obj << Set Background Color( color )
+**Sintaxis:** obj &lt;&lt; Set Background Color( color )
 
 ### Set Background Fill
 
-**Sintaxis:** obj << Set Background Fill( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Set Background Fill( state=0|1 )
 
 ### Set Graphics Script
 
-**Sintaxis:** obj << Set Graphics Script
+**Sintaxis:** obj &lt;&lt; Set Graphics Script
 
 ### Set Height
 
-**Sintaxis:** obj << Set Height
+**Sintaxis:** obj &lt;&lt; Set Height
 
 ### Set Width
 
-**Sintaxis:** obj << Set Width
+**Sintaxis:** obj &lt;&lt; Set Width
 
 ### Set X Axis
 
-**Sintaxis:** obj << Set X Axis
+**Sintaxis:** obj &lt;&lt; Set X Axis
 
 ### Set X Name
 
-**Sintaxis:** obj << Set X Name
+**Sintaxis:** obj &lt;&lt; Set X Name
 
 ### Set Y Axis
 
-**Sintaxis:** obj << Set Y Axis
+**Sintaxis:** obj &lt;&lt; Set Y Axis
 
 ### Set Y Name
 
-**Sintaxis:** obj << Set Y Name
+**Sintaxis:** obj &lt;&lt; Set Y Name
 
 ### Sides
 
-**Sintaxis:** obj << Sides( number )
+**Sintaxis:** obj &lt;&lt; Sides( number )
 
 ### Suppress Axes
 
-**Sintaxis:** obj << Suppress Axes
+**Sintaxis:** obj &lt;&lt; Suppress Axes
 
 **Descripción:** Oculta los ejes del cuadro gráfico.
 
@@ -280,7 +280,7 @@ obj = New Window( "Example",
 
 ### Top
 
-**Sintaxis:** obj << Top( number )
+**Sintaxis:** obj &lt;&lt; Top( number )
 
 ### X Scale
 

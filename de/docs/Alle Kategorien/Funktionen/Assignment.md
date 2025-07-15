@@ -2,8 +2,6 @@
 
 
 
-## Funktionen
-
 ### Add To
 
 **Syntax:** y += x; Add To( y, x )

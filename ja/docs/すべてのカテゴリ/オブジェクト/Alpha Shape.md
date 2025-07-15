@@ -23,7 +23,7 @@ ashape = tri = Alpha Shape( triang );
 
 ### Get Alpha
 
-**構文:** alpha = obj << Get Alpha
+**構文:** alpha = obj &lt;&lt; Get Alpha
 
 **説明:** 現在のアルファ値を戻す。
 
@@ -39,7 +39,7 @@ ashape << Get Alpha();
 
 ### Get Edges
 
-**構文:** edges = obj << Get Edges
+**構文:** edges = obj &lt;&lt; Get Edges
 
 **説明:** 辺のインデックスをNx2の行列で戻す。
 
@@ -55,7 +55,7 @@ tri << Get Edges;
 
 ### Get Hull Edges
 
-**構文:** ind = obj << Get Hull Edges
+**構文:** ind = obj &lt;&lt; Get Hull Edges
 
 **説明:** 三角分割において、凸包を構成する辺の通し番号を戻す。
 
@@ -71,7 +71,7 @@ tri << Get Hull Edges;
 
 ### Get Hull Path
 
-**構文:** ind = obj << Get Hull Path
+**構文:** ind = obj &lt;&lt; Get Hull Path
 
 **説明:** 三角分割において、凸包の情報をパス形式で戻す。
 
@@ -87,7 +87,7 @@ tri << Get Hull Path;
 
 ### Get Hull Points
 
-**構文:** ind = obj << Get Hull Points
+**構文:** ind = obj &lt;&lt; Get Hull Points
 
 **説明:** 三角分割の境界の点のインデックスを戻す。
 
@@ -103,7 +103,7 @@ tri << Get Hull Points;
 
 ### Get N Edges
 
-**構文:** nedge = obj << Get N Edges
+**構文:** nedge = obj &lt;&lt; Get N Edges
 
 **説明:** 三角分割の辺の数を戻す。
 
@@ -119,7 +119,7 @@ tri << Get NEdges;
 
 ### Get N Hull Edges
 
-**構文:** nhull = obj << Get N Hull Edges
+**構文:** nhull = obj &lt;&lt; Get N Hull Edges
 
 **説明:** 三角分割において、凸包を構成する辺の数を戻す。
 
@@ -135,7 +135,7 @@ tri << Get N Hull Edges;
 
 ### Get N Hull Points
 
-**構文:** nhull = obj << Get N Hull Points
+**構文:** nhull = obj &lt;&lt; Get N Hull Points
 
 **説明:** 三角分割において、凸包を構成する点の個数を戻す。
 
@@ -151,7 +151,7 @@ tri << Get N Hull Points;
 
 ### Get N Points
 
-**構文:** npt = obj << Get N Points
+**構文:** npt = obj &lt;&lt; Get N Points
 
 **説明:** 三角分割において、一意な点の個数を戻す。
 
@@ -167,7 +167,7 @@ tri << Get N Points;
 
 ### Get N Triangles
 
-**構文:** ntri = obj << Get N Triangles
+**構文:** ntri = obj &lt;&lt; Get N Triangles
 
 **説明:** 三角形の個数を戻す。
 
@@ -183,7 +183,7 @@ tri << Get N Triangles;
 
 ### Get Points
 
-**構文:** {x1,x2} = obj << Get Points
+**構文:** {x1,x2} = obj &lt;&lt; Get Points
 
 **説明:** 三角分割において、一意な点の座標を戻す。
 
@@ -199,7 +199,7 @@ tri << Get Points;
 
 ### Get Tri Alpha
 
-**構文:** [alpha1, ...] = obj << Get Tri Alpha
+**構文:** [alpha1, ...] = obj &lt;&lt; Get Tri Alpha
 
 **説明:** 各三角形のアルファ値を戻す。
 
@@ -215,7 +215,7 @@ ashape << Get Tri Alpha();
 
 ### Get Triangles
 
-**構文:** m = obj << Get Triangles
+**構文:** m = obj &lt;&lt; Get Triangles
 
 **説明:** 三角分割において、各三角形の情報を Nx3の行列で戻す。
 
@@ -231,7 +231,7 @@ tri << Get Triangles;
 
 ### Get Y
 
-**構文:** y = obj << Get Y
+**構文:** y = obj &lt;&lt; Get Y
 
 **説明:** 三角分割において、一意な各座標に対するY値を戻す。
 
@@ -247,7 +247,7 @@ tri << Get Y;
 
 ### Peel
 
-**構文:** tri = obj << Peel
+**構文:** tri = obj &lt;&lt; Peel
 
 **説明:** 現在の三角分割から、凸包を構成する辺 (一番外側の辺) を削除する。
 
@@ -265,7 +265,7 @@ Show( tri2 << Get N Triangles );
 
 ### Set Alpha
 
-**構文:** obj << Set Alpha( alpha )
+**構文:** obj &lt;&lt; Set Alpha( alpha )
 
 **説明:** アルファ値を設定し、その値によってアルファシェイプによる三角分割を再計算する。
 
@@ -281,7 +281,7 @@ ashape << Set Alpha( 0.5 );
 
 ### Subset
 
-**構文:** tri = obj << Subset( {indices} )
+**構文:** tri = obj &lt;&lt; Subset( {indices} )
 
 **説明:** 指定された点の部分集合に対して、その三角分割を戻す。
 

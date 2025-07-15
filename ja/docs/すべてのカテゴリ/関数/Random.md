@@ -2,11 +2,9 @@
 
 
 
-## 関数
-
 ### Col Shuffle
 
-**構文:** y = Col Shuffle(<byVar, <Excluded( Row State() )>, ...>)
+**構文:** y = Col Shuffle(&lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;)
 
 **説明:** 1から現在のデータテーブルの行数までの整数乱数を戻す。Col Shuffle()を列の計算式で使用した場合、行番号をそれぞれ1回ずつ表示するランダムな行番号の順序が作成される。この順序は内部でキャッシュされ、複数回の評価が効率的に行えるようになる。
 
@@ -49,7 +47,7 @@ dt << New Column( "Col Shuffle for each Sex grouped by Excluded",
 
 ### Make KFold Formula
 
-**構文:** y = Make KFold Formula( folds, Y Columns( cols ), <<Stratification Columns( cols ), <<Grouping Columns( cols ) )
+**構文:** y = Make KFold Formula( folds, Y Columns( cols ), &lt;&lt;Stratification Columns( cols ), &lt;&lt;Grouping Columns( cols ) )
 
 **説明:** 列の計算式で使用された場合、folds水準の検証列を生成する。このJSL関数は、主に「検証列の作成」プラットフォームで計算式列を生成するために使用される。
 
@@ -87,7 +85,7 @@ dt << New Column( "Stratified KFold",
 
 ### Make Validation Formula
 
-**構文:** y = Make Validation Formula( rates, <<Stratification Columns( cols ), <<Grouping Columns( cols ), <<Cutpoint Column ( col ), <<Cutpoint Batch ID( col ), <<Determine cutpoints using( "Proportions"|"Numbers of Rows"|"Fixed Time or Date"|"Elapsed Time" ), <<Assign Extra Rows( "To Training"|"To Validation"|"To Test" ) )
+**構文:** y = Make Validation Formula( rates, &lt;&lt;Stratification Columns( cols ), &lt;&lt;Grouping Columns( cols ), &lt;&lt;Cutpoint Column ( col ), &lt;&lt;Cutpoint Batch ID( col ), &lt;&lt;Determine cutpoints using( "Proportions"|"Numbers of Rows"|"Fixed Time or Date"|"Elapsed Time" ), &lt;&lt;Assign Extra Rows( "To Training"|"To Validation"|"To Test" ) )
 
 **説明:** 列の計算式で使用された場合、2水準または3水準の検証列を生成する。rates引数は、学習・検証・テストの割合を含む3行1列の行列。このJSL関数は、主に「検証列の作成」プラットフォームで計算式列を生成するために使用される。
 
@@ -147,7 +145,7 @@ dt << New Column( "Validation",
 
 ### Random Beta
 
-**構文:** y = Random Beta( alpha, beta, <theta=0>, <sigma=1> )
+**構文:** y = Random Beta( alpha, beta, &lt;theta=0&gt;, &lt;sigma=1&gt; )
 
 **説明:** ベータ分布に従う(擬似)乱数を戻す。
 
@@ -168,7 +166,7 @@ Show( x, v );
 
 ### Random Beta Binomial
 
-**構文:** y = Random Beta Binomial( n, p, <delta=0> )
+**構文:** y = Random Beta Binomial( n, p, &lt;delta=0&gt; )
 
 **説明:** 試行回数n、確率p、相関deltaのベータ二項分布に基づく(擬似)乱数を戻す。
 
@@ -289,7 +287,7 @@ Show( x, v );
 
 ### Random ChiSquare
 
-**構文:** y = Random ChiSquare( df, <nonCentrality=0> )
+**構文:** y = Random ChiSquare( df, &lt;nonCentrality=0&gt; )
 
 **説明:** カイ2乗分布に従う乱数を戻す。
 
@@ -352,7 +350,7 @@ Show( x, v );
 
 ### Random F
 
-**構文:** y = Random F( dfnum, dfden, <nonCentrality=0> )
+**構文:** y = Random F( dfnum, dfden, &lt;nonCentrality=0&gt; )
 
 **説明:** F分布に従う乱数を戻す。
 
@@ -373,7 +371,7 @@ Show( x, v );
 
 ### Random Frechet
 
-**構文:** y = Random Frechet( <mu=0>, <sigma=1> )
+**構文:** y = Random Frechet( &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **説明:** Frechet分布に従う(擬似)乱数を戻す。
 
@@ -415,7 +413,7 @@ Show( x, v );
 
 ### Random Gamma
 
-**構文:** y = Random Gamma( alpha, <scale=1> )
+**構文:** y = Random Gamma( alpha, &lt;scale=1&gt; )
 
 **説明:** ガンマ分布に従う(擬似)乱数を戻す。
 
@@ -436,7 +434,7 @@ Show( x, v );
 
 ### Random Gamma Poisson
 
-**構文:** y = Random Gamma Poisson( lambda, <sigma=1> )
+**構文:** y = Random Gamma Poisson( lambda, &lt;sigma=1&gt; )
 
 **説明:** パラメータがlambdaとsigmaのガンマPoisson分布に基づく(擬似)乱数を戻す。
 
@@ -457,7 +455,7 @@ Show( x, v );
 
 ### Random GenGamma
 
-**構文:** y = Random GenGamma( <mu=0>, <sigma=1>, <lambda=0> )
+**構文:** y = Random GenGamma( &lt;mu=0&gt;, &lt;sigma=1&gt;, &lt;lambda=0&gt; )
 
 **説明:** パラメータがmu、sigma、lambdaの拡張一般化ガンマ分布に基づく(擬似)乱数を戻す。
 
@@ -586,7 +584,7 @@ Show( x, v );
 
 ### Random Johnson Sl
 
-**構文:** y = Random Johnson Sl( gamma, delta, theta, <sigma=1> )
+**構文:** y = Random Johnson Sl( gamma, delta, theta, &lt;sigma=1&gt; )
 
 **説明:** Johnson Sl分布に従う(擬似)乱数を戻す。
 
@@ -628,7 +626,7 @@ Show( x, v );
 
 ### Random LEV
 
-**構文:** y = Random LEV( <mu=0>, <sigma=1> )
+**構文:** y = Random LEV( &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **説明:** 最大極値分布に従う(擬似)乱数を戻す。
 
@@ -649,7 +647,7 @@ Show( x, v );
 
 ### Random LogGenGamma
 
-**構文:** y = Random LogGenGamma( <mu=0>, <sigma=1>, <lambda=0> )
+**構文:** y = Random LogGenGamma( &lt;mu=0&gt;, &lt;sigma=1&gt;, &lt;lambda=0&gt; )
 
 **説明:** パラメータがmu、sigma、lambdaの対数一般化ガンマ分布に基づく(擬似)乱数を戻す。
 
@@ -670,7 +668,7 @@ Show( x, v );
 
 ### Random Logistic
 
-**構文:** y = Random Logistic( <mu=0>, <sigma=1> )
+**構文:** y = Random Logistic( &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **説明:** ロジスティック分布に従う(擬似)乱数を戻す。
 
@@ -691,7 +689,7 @@ Show( x, v );
 
 ### Random Loglogistic
 
-**構文:** y = Random Loglogistic( <mu=0>, <sigma=1> )
+**構文:** y = Random Loglogistic( &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **説明:** 対数ロジスティック分布に従う(擬似)乱数を戻す。
 
@@ -712,7 +710,7 @@ Show( x, v );
 
 ### Random Lognormal
 
-**構文:** y = Random Lognormal( <mu=0>, <sigma=1> )
+**構文:** y = Random Lognormal( &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **説明:** パラメータmuおよびsigmaの対数正規分布に従う(擬似)乱数を戻す。
 
@@ -765,7 +763,7 @@ New Window( "Example: Random Lognormal and Empirical Distribution",
 
 ### Random Multivariate Normal
 
-**構文:** y = Random Multivariate Normal( mean, covar, <nrows=1>)
+**構文:** y = Random Multivariate Normal( mean, covar, &lt;nrows=1&gt;)
 
 **説明:** 多変量正規分布の乱数を生成する。平均ベクトルmeanと(半正値定符号である)共分散行列covarを指定すると、多変量正規分布の乱数を含むnrowsxp行列が戻される。ここで、pはcovarの行数。
 
@@ -828,7 +826,7 @@ New Window( "Example: Neg Binomial Probability",
 
 ### Random Normal
 
-**構文:** y = Random Normal( <mu=0>, <sigma=1> )
+**構文:** y = Random Normal( &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **説明:** 平均mu、標準偏差sigmaの正規分布に従う(擬似)乱数を戻す。
 
@@ -987,7 +985,7 @@ Random Normal();
 
 ### Random SEV
 
-**構文:** y = Random SEV( <mu=0>, <sigma=1> )
+**構文:** y = Random SEV( &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **説明:** 最小極値分布に従う(擬似)乱数を戻す。
 
@@ -1047,7 +1045,7 @@ Show( x, v );
 
 ### Random Seed State
 
-**構文:** Random Seed State( <seed state> )
+**構文:** Random Seed State( &lt;seed state&gt; )
 
 **説明:** BLOBオブジェクトの乱数シード値の状態を読み込むか、または設定する。
 
@@ -1079,11 +1077,7 @@ Random Shuffle( exA );
 
 ### Random Triangular
 
-**構文:** y = Random Triangular( a, b, c );
-
-y = Random Triangular( b, c );
-
-y = Random Triangular( b )
+**構文:** y = Random Triangular( a, b, c );y = Random Triangular( b, c );y = Random Triangular( b )
 
 **説明:** 下限a、モードb、上限cの三角分布に基づく(擬似)乱数を戻す。Random Triangular(b,c)は Random Triangular(0,b,c)と同じ。 Random Triangular(b)はRandom Triangular(0,b,1)と同じ。
 
@@ -1102,7 +1096,7 @@ Show( x, y );
 
 ### Random Uniform
 
-**構文:** y = Random Uniform( <min>, <max> )
+**構文:** y = Random Uniform( &lt;min&gt;, &lt;max&gt; )
 
 **説明:** (min,max)の区間の一様分布に従う(擬似)乱数を戻す。minとmaxの値は区間に含まれない。
 
@@ -1134,7 +1128,7 @@ Random Uniform( 1, 10 );
 
 ### Random Weibull
 
-**構文:** y = Random Weibull( beta, <alpha=1> )
+**構文:** y = Random Weibull( beta, &lt;alpha=1&gt; )
 
 **説明:** Weibull分布に従う(擬似)乱数を戻す。
 
@@ -1295,7 +1289,7 @@ dt << Distribution(
 
 ### Random t
 
-**構文:** y = Random t( df, <nonCentrality=0> )
+**構文:** y = Random t( df, &lt;nonCentrality=0&gt; )
 
 **説明:** t分布に従う乱数を戻す。
 
@@ -1316,7 +1310,7 @@ Show( x, v );
 
 ### Resample Freq
 
-**構文:** Resample Freq( <rate=1>, <column> )
+**構文:** Resample Freq( &lt;rate=1&gt;, &lt;column&gt; )
 
 **説明:** 復元抽出法(重複抽出法)に基づき、度数の列を生成する。ブートストラップ法を行う場合に便利。引数がない場合、関数は100%の再標本を生成する。引数rateは抽出率を指定する。引数columnが指定されている場合、選択された標本サイズは、rateに指定の列の和を掛け合わせたものとなる。負のrateは、小数点以下の値を含む度数が使用できることを意味する。
 

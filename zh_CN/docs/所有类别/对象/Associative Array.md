@@ -6,9 +6,7 @@
 
 ### Associative Array
 
-**语法:** y = Associative Array( {{key1, value1}, ...} );
-
-y = Associative Array( keys, values )
+**语法:** y = Associative Array( {{key1, value1}, ...} );y = Associative Array( keys, values )
 
 **说明:** 创建关联数组，也称为词典或哈希映射。在双参数形式下，键与值可以是列表、矩阵或数据表列。
 
@@ -25,7 +23,7 @@ ex << get contents;
 
 ### Contains
 
-**语法:** bool = AAobj << Contains( key | AAobj )
+**语法:** bool = AAobj &lt;&lt; Contains( key | AAobj )
 
 **说明:** 查询该键或一组键是否在关联数组中。另见“包含项”获取较简单的示例。
 
@@ -44,7 +42,7 @@ Local(
 
 ### Contains Item
 
-**语法:** bool = AAobj << Contains Item( key )
+**语法:** bool = AAobj &lt;&lt; Contains Item( key )
 
 **说明:** 查询该键是否在关联数组中。另见“包含”，该命令具有附加的功能。
 
@@ -59,7 +57,7 @@ Local( {rhymes = ["mouse" => "house", "car" => "star", "orange" => ""]},
 
 ### First
 
-**语法:** key = AAobj << first
+**语法:** key = AAobj &lt;&lt; first
 
 **说明:** 关联数组迭代器。
 
@@ -79,7 +77,7 @@ Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"], x, words = ""}
 
 ### Get Contents
 
-**语法:** list = AAObj << Get Contents
+**语法:** list = AAObj &lt;&lt; Get Contents
 
 **说明:** 以列表方式返回关联数组的内容。
 
@@ -92,7 +90,7 @@ Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"]}, aa << Get Con
 
 ### Get Default Value
 
-**语法:** value = AAobj << Get Default Value()
+**语法:** value = AAobj &lt;&lt; Get Default Value()
 
 **说明:** 返回关联数组将对未找到的键返回的值。
 
@@ -111,7 +109,7 @@ Local( {aa = [=> 99], v1, v2}, /* initial value used for non-existing key is 99 
 
 ### Get Keys
 
-**语法:** list = AAObj << Get Keys
+**语法:** list = AAObj &lt;&lt; Get Keys
 
 **说明:** 返回在关联数组中找到的键列表。
 
@@ -124,7 +122,7 @@ Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"]}, aa << Get Key
 
 ### Get Value
 
-**语法:** value = AAobj << Get Value( key )
+**语法:** value = AAobj &lt;&lt; Get Value( key )
 
 **说明:** 返回储存在关联数组中的键下的值。
 
@@ -139,7 +137,7 @@ Local( {prices = Associative Array( {{"pineapple", 1.25}, {"grape", .50}, {"oran
 
 ### Get Values
 
-**语法:** list = AAObj << Get Values
+**语法:** list = AAObj &lt;&lt; Get Values
 
 **说明:** 返回在关联数组中找到的值列表。
 
@@ -152,7 +150,7 @@ Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"]}, aa << Get Val
 
 ### Insert
 
-**语法:** AAobj1 << Insert( AAobj2 | key,  { value } )
+**语法:** AAobj1 &lt;&lt; Insert( AAobj2 | key, { value } )
 
 **说明:** 将一关联数组插入另一个关联数组或将值储存在该关联数组中的键下。请参见“插入项”获取较简单的示例。
 
@@ -168,7 +166,7 @@ Local( {decode = [".-" => "a", "-..." => "b"], others = ["..." => "s", "-.-." =>
 
 ### Insert Item
 
-**语法:** AAobj << Insert Item( key, value )
+**语法:** AAobj &lt;&lt; Insert Item( key, value )
 
 **说明:** 将值储存在关联数组中的键下。另见“插入”，该命令具有附加的功能。
 
@@ -184,7 +182,7 @@ Local( {decode = [".-" => "a", "-..." => "b"]},
 
 ### Intersect
 
-**语法:** AAobj1 << Intersect( AAobj2 )
+**语法:** AAobj1 &lt;&lt; Intersect( AAobj2 )
 
 **说明:** 将关联数组视为一个对象集合。集合中的对象的值必须为 1。默认值为必须为 0。当前集合由其与该消息中的集合的交叉点所替换。
 
@@ -231,7 +229,7 @@ dt << selectrows( desiredSelection << getkeys ); // males <= 12
 
 ### Next
 
-**语法:** key = AAobj << next( previous key )
+**语法:** key = AAobj &lt;&lt; next( previous key )
 
 **说明:** 关联数组迭代器。
 
@@ -251,7 +249,7 @@ Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"], x, words = ""}
 
 ### Remove
 
-**语法:** AAobj1 << Remove( AAobj2 | key )
+**语法:** AAobj1 &lt;&lt; Remove( AAobj2 | key )
 
 **说明:** 从关联数组中删除该键或一组键。另见“删除项”获取较简单的示例。
 
@@ -267,7 +265,7 @@ Local( {primes = [2 => 1, 3 => 1, 4 => 1, 5 => 1, 6 => 1, 7 => 1, 8 => 1, 9 => 1
 
 ### Remove Item
 
-**语法:** AAobj << Remove Item( key )
+**语法:** AAobj &lt;&lt; Remove Item( key )
 
 **说明:** 从关联数组中删除该键。另见“删除”，该命令具有附加的功能。
 
@@ -299,7 +297,7 @@ Local(
 
 ### Set Default Value
 
-**语法:** AAobj << Set Default Value( value )
+**语法:** AAobj &lt;&lt; Set Default Value( value )
 
 **说明:** 更改关联数组将对未找到的键返回的值。
 

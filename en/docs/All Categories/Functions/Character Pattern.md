@@ -2,8 +2,6 @@
 
 
 
-## Functions
-
 ### Pat Abort
 
 **Syntax:** Pat Abort()
@@ -224,7 +222,7 @@ result;
 
 ### Pat Look Ahead
 
-**Syntax:** Pat Look Ahead( pattern, <0|1> )
+**Syntax:** Pat Look Ahead( pattern, &lt;0|1&gt; )
 
 **Description:** A zero width pattern match after the current position. The second optional argument defaults to 0. 1 designates a negative match, or a non-match.
 
@@ -281,7 +279,7 @@ While( /* keep repeating the match until it won't match */
 
 ### Pat Look Behind
 
-**Syntax:** Pat Look Behind( pattern, <0|1> )
+**Syntax:** Pat Look Behind( pattern, &lt;0|1&gt; )
 
 **Description:** A zero width pattern match before the current position. The second optional argument defaults to 0. 1 designates a negative match, or a non-match.
 
@@ -337,7 +335,7 @@ While( /* keep repeating the match until it won't match */
 
 ### Pat Match
 
-**Syntax:** Pat Match( source, pattern, <replacement> )
+**Syntax:** Pat Match( source, pattern, &lt;replacement&gt; )
 
 **Description:** Executes the pattern match in the pattern variable against the string in the source variable; optional replacement text replaces the matched text.
 
@@ -447,7 +445,7 @@ result;
 
 ### Pat Repeat
 
-**Syntax:** Pat Repeat( pattern, <min=1>, <max=infinity>, <GREEDY or RELUCTANT=GREEDY> )
+**Syntax:** Pat Repeat( pattern, &lt;min=1&gt;, &lt;max=infinity&gt;, &lt;GREEDY or RELUCTANT=GREEDY&gt; )
 
 **Description:** Generates a pattern value that matches the supplied pattern between min and max times.
 
@@ -558,7 +556,7 @@ string;
 
 ### Regex Match
 
-**Syntax:** Regex Match( source, pattern, <replacement | NULL>, <MATCHCASE> )
+**Syntax:** Regex Match( source, pattern, &lt;replacement | NULL&gt;, &lt;MATCHCASE&gt; )
 
 **Description:** Executes a regular expression match and returns a list of the entire matched text and the matches for each back reference created by an open parenthesis. Optionally, the third argument specifies a replacement string for the entire match; the replacement string can use back references.
 

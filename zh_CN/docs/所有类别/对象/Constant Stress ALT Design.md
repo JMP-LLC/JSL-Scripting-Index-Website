@@ -48,7 +48,7 @@ d = Constant Stress ALT Design(
 
 ### Factor
 
-**语法:** obj << Factor
+**语法:** obj &lt;&lt; Factor
 
 **说明:** 添加具有指定属性的因子。
 
@@ -84,7 +84,7 @@ d = Constant Stress ALT Design(
 
 ### Factor Name
 
-**语法:** obj << Factor Name
+**语法:** obj &lt;&lt; Factor Name
 
 **说明:** 设置因子的名称。
 
@@ -120,7 +120,7 @@ d = Constant Stress ALT Design(
 
 ### Factor Transformation
 
-**语法:** obj << Factor Transformation( Arrhenius Celsius|Arrhenius Fahrenheit|Arrhenius Kelvin|Reciprocal|Log|Root|None )
+**语法:** obj &lt;&lt; Factor Transformation( Arrhenius Celsius|Arrhenius Fahrenheit|Arrhenius Kelvin|Reciprocal|Log|Root|None )
 
 **说明:** 为因子水平设置变换函数。
 
@@ -156,7 +156,7 @@ d = Constant Stress ALT Design(
 
 ### High Test Condition
 
-**语法:** obj << High Test Condition
+**语法:** obj &lt;&lt; High Test Condition
 
 **说明:** 设置因子的最高试验水平。
 
@@ -192,7 +192,7 @@ d = Constant Stress ALT Design(
 
 ### High Usage Condition
 
-**语法:** obj << High Usage Condition
+**语法:** obj &lt;&lt; High Usage Condition
 
 **说明:** 设置因子的使用条件的最高水平。该值可以与最低使用条件相同。
 
@@ -228,7 +228,7 @@ d = Constant Stress ALT Design(
 
 ### Low Test Condition
 
-**语法:** obj << Low Test Condition
+**语法:** obj &lt;&lt; Low Test Condition
 
 **说明:** 设置因子的最低试验水平。
 
@@ -264,7 +264,7 @@ d = Constant Stress ALT Design(
 
 ### Low Usage Condition
 
-**语法:** obj << Low Usage Condition
+**语法:** obj &lt;&lt; Low Usage Condition
 
 **说明:** 设置因子的使用条件的最低水平。该值可以与最高使用条件相同。
 
@@ -300,7 +300,7 @@ d = Constant Stress ALT Design(
 
 ### Number of Levels
 
-**语法:** obj << Number of Levels
+**语法:** obj &lt;&lt; Number of Levels
 
 **说明:** 设置因子的水平数。主要用于平衡设计。
 
@@ -336,7 +336,7 @@ d = Constant Stress ALT Design(
 
 ### Save Script to Script Window
 
-**语法:** obj << Save Script to Script Window
+**语法:** obj &lt;&lt; Save Script to Script Window
 
 **说明:** 创建可重新生成该设计的脚本。
 

@@ -24,7 +24,7 @@ feed = Open Datafeed(
 
 ### Close
 
-**Sintaxis:** obj << Close
+**Sintaxis:** obj &lt;&lt; Close
 
 **Descripción:** (Solo Windows) Cierra el objeto de fuentes de datos y su ventana.
 
@@ -42,7 +42,7 @@ feed << Close;
 
 ### Connect
 
-**Sintaxis:** obj << Connect( Port(  "com1"|"com2"|"lpt1"... ), Parity( even|odd|none ), Baud rate( 4800|9600 ), Data bits( 8|7 ), <Stop bits( 0|1|2 )>, <DTR_DSR( 0|1 )>, <RTS_CTS( 0|1 )>, <XON_XOFF( 1|0 )> )
+**Sintaxis:** obj &lt;&lt; Connect( Port( "com1"|"com2"|"lpt1"... ), Parity( even|odd|none ), Baud rate( 4800|9600 ), Data bits( 8|7 ), &lt;Stop bits( 0|1|2 )&gt;, &lt;DTR_DSR( 0|1 )&gt;, &lt;RTS_CTS( 0|1 )&gt;, &lt;XON_XOFF( 1|0 )&gt; )
 
 **Descripción:** (Solo Windows) Configura los ajustes de puerto para la conexión con el dispositivo.
 
@@ -58,7 +58,7 @@ feed = Open Datafeed(
 
 ### Disconnect
 
-**Sintaxis:** obj << Disconnect
+**Sintaxis:** obj &lt;&lt; Disconnect
 
 **Descripción:** (Solo Windows) Desconecta el dispositivo de la cola de fuentes de datos pero deja el objeto de fuentes de datos activo.
 
@@ -75,7 +75,7 @@ feed << Disconnect;
 
 ### EOL
 
-**Sintaxis:** obj << EOL( "CR"|"LF"|"CRLF" )
+**Sintaxis:** obj &lt;&lt; EOL( "CR"|"LF"|"CRLF" )
 
 **Descripción:** (Solo Windows) Establece el valor de fin de línea utilizado como separador al analizar las líneas de datos entrantes. El valor también se utiliza como terminador en las líneas de datos salientes. CR = carácter ASCII 13 (retorno de carro). LF = carácter ASCII 10 (avance de línea). CRLF utilizará CR y LF de forma secuencial.
 
@@ -101,7 +101,7 @@ For( exi = 0, exi < 5, exi++,
 
 ### Get Container
 
-**Sintaxis:** obj << Get Container
+**Sintaxis:** obj &lt;&lt; Get Container
 
 **Descripción:** Devuelve una referencia al cuadro contenedor que incluye el contenido del objeto.
 
@@ -119,7 +119,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Line
 
-**Sintaxis:** line = obj << Get Line
+**Sintaxis:** line = obj &lt;&lt; Get Line
 
 **Descripción:** (Solo Windows) Devuelve y quita una línea de la cola de fuentes de datos.
 
@@ -138,7 +138,7 @@ exfeed = Open Datafeed(
 
 ### Get Lines
 
-**Sintaxis:** list = obj << Get Lines
+**Sintaxis:** list = obj &lt;&lt; Get Lines
 
 **Descripción:** (Solo Windows) Quita todas las líneas de la cola de fuentes de datos y las devuelve en forma de lista.
 
@@ -162,7 +162,7 @@ For( exi = 0, exi < 5, exi++,
 
 ### Print Queue
 
-**Sintaxis:** obj << Print Queue
+**Sintaxis:** obj &lt;&lt; Print Queue
 
 **Descripción:** (Solo Windows) Imprime la cola interna de mensajes en la ventana de registro.
 
@@ -179,7 +179,7 @@ exfeed << print queue;/* or red triangle menu item */;
 
 ### Queue Line
 
-**Sintaxis:** obj << Queue Line( string )
+**Sintaxis:** obj &lt;&lt; Queue Line( string )
 
 **Descripción:** (Solo Windows) Envía una línea al final de la cola de fuentes de datos.
 
@@ -203,7 +203,7 @@ For( exi = 0, exi < 5, exi++,
 
 ### Restart
 
-**Sintaxis:** obj << Restart
+**Sintaxis:** obj &lt;&lt; Restart
 
 **Descripción:** (Solo Windows) Reinicia el procesamiento de las líneas de la cola.
 
@@ -222,7 +222,7 @@ feed << Restart;
 
 ### Set Script
 
-**Sintaxis:** obj << Set Script( script )
+**Sintaxis:** obj &lt;&lt; Set Script( script )
 
 **Descripción:** (Solo Windows) Asigna el script que se ejecuta cada vez que se recibe una línea de datos.
 
@@ -238,7 +238,7 @@ feed = Open Datafeed(
 
 ### Stop
 
-**Sintaxis:** obj << Stop
+**Sintaxis:** obj &lt;&lt; Stop
 
 **Descripción:** (Solo Windows) Detiene el procesamiento de las líneas de la cola.
 
@@ -255,7 +255,7 @@ feed << Stop;
 
 ### Write
 
-**Sintaxis:** obj << Write( string )
+**Sintaxis:** obj &lt;&lt; Write( string )
 
 **Descripción:** (Solo Windows) Envía una cadena al dispositivo de fuentes de datos.
 
@@ -278,7 +278,7 @@ exfeed << Write( "Ready" );
 
 ### Write Line
 
-**Sintaxis:** obj << Write Line( string )
+**Sintaxis:** obj &lt;&lt; Write Line( string )
 
 **Descripción:** (Solo Windows) Envía la cadena al dispositivo de fuentes de datos. Si se ha establecido EOL para la fuente de datos, las cadenas las termina el valor EOL especificado. Si no se ha establecido EOL, la línea se termina con CRLF.
 
@@ -301,7 +301,7 @@ exfeed << Write Line( "Ready" );
 
 ### Write Lines
 
-**Sintaxis:** obj << Write Lines( list )
+**Sintaxis:** obj &lt;&lt; Write Lines( list )
 
 **Descripción:** (Solo Windows) Envía una lista de cadenas al dispositivo de fuentes de datos. Si se ha establecido EOL para la fuente de datos, cada cadena la separa el valor EOL. Si no se ha establecido EOL, la línea se separa con CRLF.
 

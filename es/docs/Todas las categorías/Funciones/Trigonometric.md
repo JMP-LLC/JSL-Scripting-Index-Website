@@ -2,11 +2,9 @@
 
 
 
-## Funciones
-
 ### ATan
 
-**Sintaxis:** y = ArcTangent( x1, <x2=1> )
+**Sintaxis:** y = ArcTangent( x1, &lt;x2=1&gt; )
 
 **Descripción:** Devuelve el arcotangente trigonométrico de x1/x2, donde el resultado está en el intervalo [-Pi()/2, Pi()/2].
 
@@ -111,7 +109,7 @@ ArcSine( 0.5 );
 
 ### ArcTan
 
-**Sintaxis:** y = ArcTangent( x1, <x2=1> )
+**Sintaxis:** y = ArcTangent( x1, &lt;x2=1&gt; )
 
 **Descripción:** Devuelve el arcotangente trigonométrico de x1/x2, donde el resultado está en el intervalo [-Pi()/2, Pi()/2].
 
@@ -141,7 +139,7 @@ ArcTanH( 0.5 );
 
 ### ArcTangent
 
-**Sintaxis:** y = ArcTangent( x1, <x2=1> )
+**Sintaxis:** y = ArcTangent( x1, &lt;x2=1&gt; )
 
 **Descripción:** Devuelve el arcotangente trigonométrico de x1/x2, donde el resultado está en el intervalo [-Pi()/2, Pi()/2].
 

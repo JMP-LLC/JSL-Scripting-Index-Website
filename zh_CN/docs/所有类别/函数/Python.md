@@ -2,8 +2,6 @@
 
 
 
-## 函数
-
 ### Python Connect
 
 **语法:** PythonConnection = Python Connect ()
@@ -51,7 +49,7 @@ conn << Create JPIP CMD();
 
 ### Python Execute
 
-**语法:** Python Execute( { list of Inputs }, { list of Outputs }, statements < , echo( 1 | 0 ) > )
+**语法:** Python Execute( { list of Inputs }, { list of Outputs }, statements &lt; , echo( 1 | 0 ) &gt; )
 
 **说明:** 发送输入列表、执行语句并返回输出列表。可选 echo() 参数默认值为 True。echo 参数控制将 Python 源回显到日志。逻辑 True (1) 允许对源回显，而 0 禁止回显到日志。
 
@@ -322,7 +320,7 @@ Python Submit( "print(pi)" );
 
 ### Python Send
 
-**语法:** Python Send( name, <Python Name( name ) | "as_name" > )
+**语法:** Python Send( name, &lt;Python Name( name ) | "as_name" &gt; )
 
 **说明:** Sends data to Python, where the name argument can represent any of the following JMP data types ( numeric | string | matrix | list | data table | data table column | date ).
 
@@ -369,7 +367,7 @@ Python Submit( "print(date)" );
 
 ### Python Send File
 
-**语法:** Python Send File( filename, <Python Name( name )> )
+**语法:** Python Send File( filename, &lt;Python Name( name )&gt; )
 
 **说明:** 将数据文件发送至 Python，其中 filename 参数是一个字符串，用于指定将要发送至 Python 的文件的路径名。
 
@@ -388,7 +386,7 @@ Python Submit( "print(Baseball)" );
 
 ### Python Submit
 
-**语法:** Python Submit( statements < , echo( 1 | 0 ) > )
+**语法:** Python Submit( statements &lt; , echo( 1 | 0 ) &gt; )
 
 **说明:** 将语句提交至 Python。语句可以采用字符串值或字符串值列表的形式。可选 echo() 参数默认值为 1。echo 参数控制将 Python 源回显到日志。逻辑 True (1) 允许对源回显，而 0 禁止回显到日志。
 

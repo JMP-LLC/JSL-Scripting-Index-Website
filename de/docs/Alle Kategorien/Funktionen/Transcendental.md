@@ -2,8 +2,6 @@
 
 
 
-## Funktionen
-
 ### Arrhenius
 
 **Syntax:** y = Arrhenius( tempC )
@@ -126,7 +124,7 @@ Digamma( 5 );
 
 ### Exp
 
-**Syntax:** y = Exp( <x=1> )
+**Syntax:** y = Exp( &lt;x=1&gt; )
 
 **Beschreibung:** Gibt e hoch x zurück. Das Argument kann eine Zahl, Matrix oder Liste von Zahlen sein.
 
@@ -156,7 +154,7 @@ Show( ExpM1( 1.1e-18 ), Exp( 1.1e-18 ) - 1 );
 
 ### FFT
 
-**Syntax:** ret = FFT( L, <<inverse( 0 ), <<multivariate( 0 ), <<scale( 1.0 ) )
+**Syntax:** ret = FFT( L, &lt;&lt;inverse( 0 ), &lt;&lt;multivariate( 0 ), &lt;&lt;scale( 1.0 ) )
 
 **Beschreibung:** Führt eine Fast Fourier Transformation (FFT) auf dem Argument L durch, eine erforderliche Liste bestehend aus Real- und Imaginärteilen der Daten in Form einer Matrix. Wenn L aus nur einer Matrix besteht, wird die Matrix als Realteil betrachtet. Wenn L aus zwei Matrizen besteht, ist die erste Matrix der Realteil und die zweite ist der Imaginärteil. Die zwei Matrizen müssen dieselben Dimensionen und mehr als eine Zeile haben. Es gibt drei optionale Argumente. Das Argument inverse legt fest, ob eine inverse FFT durchgeführt werden soll. Das Argument multivariate legt fest, ob eine räumliche oder multivariate FFT durchgeführt werden soll. Das Argument scale legt die Konstante fest, mit der die Rückgabewerte multipliziert werden sollen. Der Rückgabewert ist eine Liste aus zwei Matrizen mit den gleichen Dimensionen wie das erste eingegebene Argument.
 
@@ -242,7 +240,7 @@ Factorial( 5 );
 
 ### Fit Transform To Normal
 
-**Syntax:** result = Fit Transform To Normal( Distribution(name), Y(vector), <Freq(vector)> )
+**Syntax:** result = Fit Transform To Normal( Distribution(name), Y(vector), &lt;Freq(vector)&gt; )
 
 **Beschreibung:** Passt eine Normaltransformation an einen Datenvektor an. Dies umfasst die Verteilungen Johnson Sl, Johnson Sb, Johnson Su und GLog. Die Funktion gibt eine Liste zurück mit Parameterschätzwerten, Kovarianzmatrix, Log-Likelihood, AIC und einer Konvergenzmeldung.
 
@@ -268,7 +266,7 @@ Show( results );
 
 ### Gamma
 
-**Syntax:** y = Gamma( x, <limit> )
+**Syntax:** y = Gamma( x, &lt;limit&gt; )
 
 **Beschreibung:** Gibt die Gamma-Funktion von x zurück, definiert als Integral von z^(x-1)*exp(-z) dz, von 0 bis ∞. Wenn limit angegeben ist, wird der Wert der unvollständigen Gamma-Funktion mit dieser Integrationsgrenze berechnet.
 
@@ -313,7 +311,7 @@ Ln( Exp( 2 ) );
 
 ### Log
 
-**Syntax:** y = Log( x, <b> )
+**Syntax:** y = Log( x, &lt;b&gt; )
 
 **Beschreibung:** Gibt den Logarithmus zur Basis b von x oder den natürlichen Logarithmus von x zurück, wenn b nicht angegeben ist.
 
@@ -433,7 +431,7 @@ N Choose K( 5, 3 );
 
 ### Power
 
-**Syntax:** z = x ^ y; z = Power( x, <y=2> )
+**Syntax:** z = x ^ y; z = Power( x, &lt;y=2&gt; )
 
 **Beschreibung:** Gibt x hoch y zurück. Wenn x negativ ist, muss y eine ganze Zahl sein.
 
@@ -448,7 +446,7 @@ Power( 2, 5 );
 
 ### Root
 
-**Syntax:** y = Root( x, <n=2> )
+**Syntax:** y = Root( x, &lt;n=2&gt; )
 
 **Beschreibung:** Gibt die n-te Wurzel von x zurück.
 
@@ -553,7 +551,7 @@ Scheffe Cubic( [1, -1, 1, -1, 1], [-1, -1, 1, 1, -1] );
 
 ### SlInv
 
-**Syntax:** x = SlInv( z, gamma, delta, theta, <sigma=1> )
+**Syntax:** x = SlInv( z, gamma, delta, theta, &lt;sigma=1&gt; )
 
 **Beschreibung:** Transformiert eine standardnormalverteilte Variable in eine Johnson-SL-verteilte Variable.
 
@@ -568,7 +566,7 @@ SlInv( 1.96, 1.5, 2, 1 );
 
 ### SlTrans
 
-**Syntax:** z = SlTrans( x, gamma, delta, theta, <sigma=1> )
+**Syntax:** z = SlTrans( x, gamma, delta, theta, &lt;sigma=1&gt; )
 
 **Beschreibung:** Transformiert eine Johnson-SL-verteilte Variable in eine standardnormalverteilte Variable.
 

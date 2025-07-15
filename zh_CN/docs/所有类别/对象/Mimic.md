@@ -40,7 +40,7 @@ mc << Mouse Click( Offset( TopLeft( outline ), [25 15] ) );
 
 ### Clear Marks
 
-**语法:** obj << Clear Marks()
+**语法:** obj &lt;&lt; Clear Marks()
 
 **说明:** Removes all all marks added by <<Mark.
 
@@ -64,7 +64,7 @@ mc << Clear Marks;
 
 ### Eval
 
-**语法:** obj << Eval(mimiclang)
+**语法:** obj &lt;&lt; Eval(mimiclang)
 
 **说明:** Evaluates a mimiclang expression and returns the result.
 
@@ -83,7 +83,7 @@ Show( mc << Eval( Bounds( fbox ) ), mc << Eval( TopLeft( fbox ) ) );
 
 ### Mark
 
-**语法:** obj << Mark(mimiclang)
+**语法:** obj &lt;&lt; Mark(mimiclang)
 
 **说明:** Marks points and rectangles on the report. Does not respond to scrolling, resizing, or content movement well at this time. The rectangle grid is on 20 units.
 
@@ -107,7 +107,7 @@ mc << Clear Marks;
 
 ### Mouse Brush
 
-**语法:** obj << Mouse Brush(rect, <1|2|3|4>)
+**语法:** obj &lt;&lt; Mouse Brush(rect, &lt;1|2|3|4&gt;)
 
 **说明:** Drag across the given rectangle. Mainly useful in graphs. This is a convenience wrapper for Mouse Drag that allows using a rectangle directly rather than two points. By default, it drags starting at the top left (1). You can use the second argument to change this to top right (2), bottom right (3), or bottom left (4).
 
@@ -126,7 +126,7 @@ mc << Mouse Brush( FrameCoords( box[Frame Box( 1 )], [60 100, 65 150] ) );
 
 ### Mouse Circle Move
 
-**语法:** obj << Mouse Circle Move(geo)
+**语法:** obj &lt;&lt; Mouse Circle Move(geo)
 
 **说明:** Move the mouse quickly in a small (several pixel) circle around given point.
 
@@ -146,7 +146,7 @@ mc << Mouse Circle Move( Offset( Top Left( prob col ), [30 25] ) );
 
 ### Mouse Click
 
-**语法:** obj << Mouse Click(geo)
+**语法:** obj &lt;&lt; Mouse Click(geo)
 
 **说明:** Left click on given geometry.
 
@@ -171,7 +171,7 @@ mc << Close Window;
 
 ### Mouse Double Click
 
-**语法:** obj << Mouse Double Click(geo)
+**语法:** obj &lt;&lt; Mouse Double Click(geo)
 
 **说明:** Double left click on given geometry.
 
@@ -190,7 +190,7 @@ mc << Mouse Double Click( box[Axis Box( 1 )] );
 
 ### Mouse Drag
 
-**语法:** obj << Mouse Drag(geo src, geo dest)
+**语法:** obj &lt;&lt; Mouse Drag(geo src, geo dest)
 
 **说明:** Left click geo src, drag to geo dest, and release.
 
@@ -212,7 +212,7 @@ mc << Mouse Drag( Offset( TopLeft( collist ), [20 45] ), xlabel );
 
 ### Mouse Move
 
-**语法:** obj << Mouse Move(geo)
+**语法:** obj &lt;&lt; Mouse Move(geo)
 
 **说明:** Moves the mouse to the given point.
 
@@ -231,7 +231,7 @@ mc << Mouse Move( Offset( TopLeft( Report( obj )[FrameBox( 1 )] ), [80 160] ) );
 
 ### Mouse Right Click
 
-**语法:** obj << Mouse Right Click(geo)
+**语法:** obj &lt;&lt; Mouse Right Click(geo)
 
 **说明:** Right click on given geometry.
 
@@ -249,7 +249,7 @@ mc << Mouse Right Click( box[Frame Box( 1 )] );
 
 ### Typing
 
-**语法:** obj << Typing("some string")
+**语法:** obj &lt;&lt; Typing("some string")
 
 **说明:** Simulate typing the given string on the keyboard.
 
@@ -272,7 +272,7 @@ mc << Mouse Click( win );
 
 ### Typing Special
 
-**语法:** obj << Typing Special("enum key string")
+**语法:** obj &lt;&lt; Typing Special("enum key string")
 
 **说明:** Simulate typing the given special key on the keyboard.
 
@@ -292,7 +292,7 @@ Wait( 1 ) << Typing Special( "Enter" );
 
 ### Wait
 
-**语法:** obj << Wait(<n>)
+**语法:** obj &lt;&lt; Wait(&lt;n&gt;)
 
 **说明:** Equivalent to Wait(<n>). For convenience.
 
@@ -300,7 +300,7 @@ Wait( 1 ) << Typing Special( "Enter" );
 
 ### With Modifier
 
-**语法:** obj << With Modifier({"Shift"|"Control"|"Command"|"Alt"|"Option"|"Control", ...}, msg)
+**语法:** obj &lt;&lt; With Modifier({"Shift"|"Control"|"Command"|"Alt"|"Option"|"Control", ...}, msg)
 
 **说明:** Push one or more modifier keys, run another Mimic message, then release the keys.
 

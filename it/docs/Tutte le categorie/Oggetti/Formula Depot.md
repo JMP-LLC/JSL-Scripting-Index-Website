@@ -30,7 +30,7 @@ fd2 = Formula Depot[1];
 
 ### Action
 
-**Sintassi:** obj << Action
+**Sintassi:** obj &lt;&lt; Action
 
 **Descrizione:** Trapdoor generica all&apos;interno di una piattaforma per inserire espressioni da valutare. Imposta temporaneamente i contesti del riquadro di visualizzazione e della tabella di dati per la piattaforma.
 
@@ -48,7 +48,7 @@ dt << Bivariate(
 
 ### Add Formula from Column
 
-**Sintassi:** Predittore = obj << Add Formula from Column( Table(name|reference), Columns(name|index|reference, ...), <Expand Intermediate Formulas(number)> )
+**Sintassi:** Predittore = obj &lt;&lt; Add Formula from Column( Table(name|reference), Columns(name|index|reference, ...), &lt;Expand Intermediate Formulas(number)&gt; )
 
 **Descrizione:** Aggiunge una colonna della formula di previsione esistente dalla tabella specificata al depot delle formule
 
@@ -67,7 +67,7 @@ mp << Generate Python Code;
 
 ### Apply Preset
 
-**Sintassi:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintassi:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descrizione:** Applica all’oggetto una preimpostazione precedentemente creata, aggiornando le opzioni e le personalizzazioni in base alle impostazioni salvate.
 
@@ -114,7 +114,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Copy Formulas as Functions
 
-**Sintassi:** obj << Copy Formulas as Functions( <Formulas(name|index|reference, ...)> )
+**Sintassi:** obj &lt;&lt; Copy Formulas as Functions( &lt;Formulas(name|index|reference, ...)&gt; )
 
 **Descrizione:** Copia negli Appunti i modelli specificati come un&apos;istruzione scalare Funzione().
 
@@ -137,7 +137,7 @@ Show( text );
 
 ### Copy Formulas as Transforms
 
-**Sintassi:** obj << Copy Formulas as Transforms( <Table(name|reference)>, <Formulas(name|index|reference, ...)> )
+**Sintassi:** obj &lt;&lt; Copy Formulas as Transforms( &lt;Table(name|reference)&gt;, &lt;Formulas(name|index|reference, ...)&gt; )
 
 **Descrizione:** Copia negli Appunti i modelli specificati entro un&apos;istruzione Trasforma colonna().
 
@@ -161,7 +161,7 @@ Show( text );
 
 ### Copy Script
 
-**Sintassi:** obj << Copy Script
+**Sintassi:** obj &lt;&lt; Copy Script
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo inserisce negli Appunti.
 
@@ -184,7 +184,7 @@ obj << Copy Script;
 
 ### Copy Scripts
 
-**Sintassi:** obj << Copy Scripts( <Formulas(name|index|reference, ...)> )
+**Sintassi:** obj &lt;&lt; Copy Scripts( &lt;Formulas(name|index|reference, ...)&gt; )
 
 **Descrizione:** Copia negli Appunti gli script per le formule specificate memorizzate nel depot delle formule.
 
@@ -205,7 +205,7 @@ Show( text );
 
 ### Generate C Code
 
-**Sintassi:** obj << Generate C Code( <Formulas(name|index|reference, ...)>, <No Editor> )
+**Sintassi:** obj &lt;&lt; Generate C Code( &lt;Formulas(name|index|reference, ...)&gt;, &lt;No Editor&gt; )
 
 **Descrizione:** Genera codice C per i modelli specificati memorizzati nel depot delle formule. L&apos;output va in una finestra dell&apos;editor o in una variabile della stringa se è specificato l&apos;argomento &apos;Nessun editor&apos;.
 
@@ -229,7 +229,7 @@ fd << Generate C Code( Formulas( predictor ) );
 
 ### Generate JavaScript Code
 
-**Sintassi:** obj << Generate JavaScript Code( <Formulas(name|index|reference, ...)>, <No Editor> )
+**Sintassi:** obj &lt;&lt; Generate JavaScript Code( &lt;Formulas(name|index|reference, ...)&gt;, &lt;No Editor&gt; )
 
 **Descrizione:** Genera codice JavaScript per i modelli specificati memorizzati nel depot delle formule. L&apos;output va in una finestra dell&apos;editor o in una variabile della stringa se è specificato l&apos;argomento &apos;Nessun editor&apos;.
 
@@ -253,7 +253,7 @@ fd << Generate JavaScript Code( Formulas( predictor ) );
 
 ### Generate Python Code
 
-**Sintassi:** obj << Generate Python Code( <Formulas(name|index|reference, ...)>, <No Editor> )
+**Sintassi:** obj &lt;&lt; Generate Python Code( &lt;Formulas(name|index|reference, ...)&gt;, &lt;No Editor&gt; )
 
 **Descrizione:** Genera codice Python per i modelli specificati memorizzati nel depot delle formule. L&apos;output va in una finestra dell&apos;editor o in una variabile della stringa se è specificato l&apos;argomento &apos;Nessun editor&apos;.
 
@@ -277,7 +277,7 @@ fd << Generate Python Code( Formulas( predictor ) );
 
 ### Generate SAS Code
 
-**Sintassi:** obj << Generate SAS Code( <Formulas(name|index|reference, ...)>, <No Editor> )
+**Sintassi:** obj &lt;&lt; Generate SAS Code( &lt;Formulas(name|index|reference, ...)&gt;, &lt;No Editor&gt; )
 
 **Descrizione:** Genera codice SAS (DS2) per i modelli specificati memorizzati nel depot delle formule. L&apos;output va in una finestra dell&apos;editor o in una variabile della stringa se è specificato l&apos;argomento &apos;Nessun editor&apos;.
 
@@ -301,7 +301,7 @@ fd << Generate SAS Code( Formulas( predictor ) );
 
 ### Generate SQL Code
 
-**Sintassi:** obj << Generate SQL Code( <Formulas(name|index|reference, ...)>, <No Editor>, <QUOTE_STYLE> )
+**Sintassi:** obj &lt;&lt; Generate SQL Code( &lt;Formulas(name|index|reference, ...)&gt;, &lt;No Editor&gt;, &lt;QUOTE_STYLE&gt; )
 
 **Descrizione:** Genera codice SQL (definizioni di colonne idonee per l&apos;uso in un&apos;istruzione SQL Select) per i modelli specificati memorizzati nel depot delle formule. L&apos;output è indirizzato in una finestra dell&apos;editor o in una variabile stringa se è specificato l&apos;argomento &apos;Nessun editor&apos;. QUOTE_STYLE è una stringa che denota uno dei database SQL supportati da JMP (MySQL, Impala, Hive, ecc.) o un tipo SQL fra apici ("Sottolineato", "Apice rovesciato", "Parentesi" o "Doppio apice").
 
@@ -328,7 +328,7 @@ fd << Generate SQL Code( Formulas( predictor ), "MySQL" );
 
 ### Get By Levels
 
-**Sintassi:** obj << Get By Levels
+**Sintassi:** obj &lt;&lt; Get By Levels
 
 **Descrizione:** Restituisce un array associativo che mappa le colonne del gruppo di By ai rispettivi valori.
 
@@ -345,7 +345,7 @@ biv << Get By Levels;
 
 ### Get Container
 
-**Sintassi:** obj << Get Container
+**Sintassi:** obj &lt;&lt; Get Container
 
 **Descrizione:** Restituisce un riferimento al riquadro contenitore che racchiude il contenuto dell&apos;oggetto.
 
@@ -400,7 +400,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Sintassi:** obj << Get Data Table
+**Sintassi:** obj &lt;&lt; Get Data Table
 
 **Descrizione:** Restituisce un riferimento alla tabella di dati.
 
@@ -424,7 +424,7 @@ Show( N Rows( t ) );
 
 ### Get Script
 
-**Sintassi:** obj << Get Script
+**Sintassi:** obj &lt;&lt; Get Script
 
 **Descrizione:** Crea uno script (JSL) per generare questa analisi e la restituisce come espressione.
 
@@ -448,7 +448,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Sintassi:** obj << Get Script With Data Table
+**Sintassi:** obj &lt;&lt; Get Script With Data Table
 
 **Descrizione:** Crea uno script (JSL) per generare questa analisi facendo specifico riferimento a questa tabella di dati e la restituisce come espressione.
 
@@ -472,7 +472,7 @@ Show( t );
 
 ### Get Timing
 
-**Sintassi:** obj << Get Timing
+**Sintassi:** obj &lt;&lt; Get Timing
 
 **Descrizione:** Determina il tempo di avvio della piattaforma.
 
@@ -496,7 +496,7 @@ Show( t );
 
 ### Get Web Support
 
-**Sintassi:** obj << Get Web Support
+**Sintassi:** obj &lt;&lt; Get Web Support
 
 **Descrizione:** Restituisce un numero indicante il livello di supporto HTML interattivo per l&apos;oggetto visualizzato. 1 significa che alcuni o tutti gli elementi sono supportati. 0 significa nessun supporto.
 
@@ -512,7 +512,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Sintassi:** obj << Get Where Expr
+**Sintassi:** obj &lt;&lt; Get Where Expr
 
 **Descrizione:** Restituisce l&apos;espressione Where per il sottoinsieme di dati, se la piattaforma è stata avviata con By() o Where(). Altrimenti, restituisce Vuoto()
 
@@ -551,7 +551,7 @@ dt << Bivariate(
 
 ### Model Comparison
 
-**Sintassi:** obj << Model Comparison( <Table(name|reference)>, <Formulas(name|index|reference, ...)> )
+**Sintassi:** obj &lt;&lt; Model Comparison( &lt;Table(name|reference)&gt;, &lt;Formulas(name|index|reference, ...)&gt; )
 
 **Descrizione:** Confronta i modelli specificati memorizzati nel depot delle formule utilizzando l&apos;utilità di confronto dei modelli, sulla base dei contenuti della tabella specificata.
 
@@ -618,7 +618,7 @@ preset = obj << New Preset();
 
 ### Profiler
 
-**Sintassi:** obj << Profiler( <Table(name|reference)>, <Formulas(name|index|reference, ...)> )
+**Sintassi:** obj &lt;&lt; Profiler( &lt;Table(name|reference)&gt;, &lt;Formulas(name|index|reference, ...)&gt; )
 
 **Descrizione:** Profila i modelli specificati memorizzati nel depot delle formule utilizzando l&apos;utilità Profiler, sulla base dei contenuti della tabella specificata.
 
@@ -644,7 +644,7 @@ fd << Profiler( Formulas( nl_mp, nn_mp ) );
 
 ### Remove Model Comparison
 
-**Sintassi:** obj << Remove Model Comparison
+**Sintassi:** obj &lt;&lt; Remove Model Comparison
 
 **Descrizione:** Rimuove tutti i report di confronto di modelli dal depot delle formule corrente.
 
@@ -663,7 +663,7 @@ fd << Remove Model Comparison();
 
 ### Remove Profiler
 
-**Sintassi:** obj << Remove Profiler
+**Sintassi:** obj &lt;&lt; Remove Profiler
 
 **Descrizione:** Rimuove tutti i profiler dal depot delle formule corrente.
 
@@ -682,7 +682,7 @@ fd << Remove Profiler();
 
 ### Rename Formula Depot
 
-**Sintassi:** obj << Rename Formula Depot( text )
+**Sintassi:** obj &lt;&lt; Rename Formula Depot( text )
 
 ```jsl
 
@@ -712,9 +712,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Sintassi:** obj << Report;
-
-Report( obj )
+**Sintassi:** obj &lt;&lt; Report;Report( obj )
 
 **Descrizione:** Restituisce un riferimento all&apos;oggetto del report.
 
@@ -739,7 +737,7 @@ Show( t );
 
 ### Run Scripts
 
-**Sintassi:** obj << Run Scripts( <Table(name|reference)>, <Formulas(name|index|reference, ...)> )
+**Sintassi:** obj &lt;&lt; Run Scripts( &lt;Table(name|reference)&gt;, &lt;Formulas(name|index|reference, ...)&gt; )
 
 **Descrizione:** Salva i modelli specificati nella tabella di dati JMP corrente o specificata come una o più colonne con formule.
 
@@ -768,7 +766,7 @@ fd2 << Run Scripts( Table( dt2 ), Formulas( 1 ) );
 
 ### Save Script for All Objects
 
-**Sintassi:** obj << Save Script for All Objects
+**Sintassi:** obj &lt;&lt; Save Script for All Objects
 
 **Descrizione:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -791,7 +789,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Sintassi:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintassi:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descrizione:** Salva uno script per tutti gli oggetti del report nella tabella di dati corrente. Questa opzione è utile quando sono presenti più report nella finestra. Lo script prende il nome dalla prima piattaforma, a meno che non si specifichi il nome dello script tra apici.
 
@@ -843,7 +841,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Sintassi:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintassi:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo salva come una proprietà di tabella nella tabella di dati.
 
@@ -866,7 +864,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Sintassi:** obj << Save Script to Journal
+**Sintassi:** obj &lt;&lt; Save Script to Journal
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e aggiunge un pulsante con lo script al journal.
 
@@ -889,7 +887,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Sintassi:** obj << Save Script to Report
+**Sintassi:** obj &lt;&lt; Save Script to Report
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo mostra nel report. Utile per avere una copia stampata di quanto è stato fatto.
 
@@ -912,7 +910,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Sintassi:** obj << Save Script to Script Window
+**Sintassi:** obj &lt;&lt; Save Script to Script Window
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo aggiunge alla finestra di testo dello script corrente.
 
@@ -1000,7 +998,7 @@ dt << Distribution(
 
 ### Show Scripts
 
-**Sintassi:** obj << Show Scripts( <Formulas(name|index|reference, ...)> )
+**Sintassi:** obj &lt;&lt; Show Scripts( &lt;Formulas(name|index|reference, ...)&gt; )
 
 **Descrizione:** Apre una nuova finestra Formula (o la aggiunge a una finestra Formula aperta) che contiene script per le formule specificate memorizzate nel depot delle formule.
 
@@ -1018,7 +1016,7 @@ fd << Show Scripts( Formulas( 1 ) );
 
 ### Title
 
-**Sintassi:** obj << Title( "new title" )
+**Sintassi:** obj &lt;&lt; Title( "new title" )
 
 **Descrizione:** Imposta il titolo della piattaforma.
 
@@ -1041,7 +1039,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Sintassi:** obj << Top Report
+**Sintassi:** obj &lt;&lt; Top Report
 
 **Descrizione:** Restituisce un riferimento al nodo principale nel report.
 
@@ -1066,7 +1064,7 @@ Show( t );
 
 ### View Web XML
 
-**Sintassi:** obj << View Web XML
+**Sintassi:** obj &lt;&lt; View Web XML
 
 **Descrizione:** Restituisce il codice XML utilizzato per creare il report HTML interattivo.
 

@@ -24,7 +24,7 @@ seg = (frame << Find Seg( Lines Seg( 1 ) ));
 
 ### Child
 
-**Syntax:** seg2 = obj << Child
+**Syntax:** seg2 = obj &lt;&lt; Child
 
 **Description:** Returns the first child of the display seg.
 
@@ -41,7 +41,7 @@ seg << Child; // not many segs support children
 
 ### Class Name
 
-**Syntax:** classname = obj << Class Name
+**Syntax:** classname = obj &lt;&lt; Class Name
 
 **Description:** Returns the name of the display class for the display seg.
 
@@ -58,7 +58,7 @@ seg << Class Name;
 
 ### Clip Shape
 
-**Syntax:** seg << Clip Shape(Boundaries(Shape File, [ID(string)]) | Path([string] | [matrix]) | Empty())
+**Syntax:** seg &lt;&lt; Clip Shape(Boundaries(Shape File, [ID(string)]) | Path([string] | [matrix]) | Empty())
 
 **Description:** Clips the geometry by the given shape. The shape can be specified using a shape file or a path. An optional ID can be specified with a shape file to select a single shape from the file, otherwise the union of all shapes is used as the clipping region. A clipping path can be specified with an N x 3 matrix or with a text representation. A path matrix has three columns for x, y, and flags for each point in the path. The flag values are 0 for control, 1 for move, 2 for line segment, 3 for cubic Bézier segment, and are negative if the point also closes the path. Path text supports SVG syntax.
 
@@ -86,7 +86,7 @@ cs << Clip Shape( Boundaries( "US States" ) );
 
 ### Delete
 
-**Syntax:** obj << Delete
+**Syntax:** obj &lt;&lt; Delete
 
 **Description:** Delete the display seg.
 
@@ -103,11 +103,11 @@ seg << Delete;
 
 ### First Value
 
-**Syntax:** obj << First Value( state=0|1 )
+**Syntax:** obj &lt;&lt; First Value( state=0|1 )
 
 ### Frame
 
-**Syntax:** FrameBox = obj << Frame
+**Syntax:** FrameBox = obj &lt;&lt; Frame
 
 **Description:** Returns the frame box that the display seg is in.
 
@@ -124,7 +124,7 @@ seg << Frame;
 
 ### Get Clip Shape
 
-**Syntax:** obj << Get Clip Shape
+**Syntax:** obj &lt;&lt; Get Clip Shape
 
 **Description:** Returns the current clipping shape
 
@@ -153,7 +153,7 @@ cs << Get Clip Shape();
 
 ### Get Connected
 
-**Syntax:** 0|1 = obj << Get Connected
+**Syntax:** 0|1 = obj &lt;&lt; Get Connected
 
 **Description:** Returns the connection state of all line segments in the display seg.
 
@@ -170,7 +170,7 @@ seg << Get Connected;
 
 ### Get Description
 
-**Syntax:** description = obj << Get Description
+**Syntax:** description = obj &lt;&lt; Get Description
 
 **Description:** Gets the description for the display seg.
 
@@ -187,7 +187,7 @@ seg << get description();
 
 ### Get Line
 
-**Syntax:** [x1 y1 x2 y2] = obj << Get Line( index )
+**Syntax:** [x1 y1 x2 y2] = obj &lt;&lt; Get Line( index )
 
 **Description:** Returns the X and Y coordinates of the specified line.
 
@@ -204,7 +204,7 @@ seg << Get Line( 2 );
 
 ### Get Line Color
 
-**Syntax:** color = obj << Get Line Color
+**Syntax:** color = obj &lt;&lt; Get Line Color
 
 **Description:** Returns the color of the lines.
 
@@ -221,7 +221,7 @@ seg << Get Line Color;
 
 ### Get Line Count
 
-**Syntax:** Number = obj << Get Line Count
+**Syntax:** Number = obj &lt;&lt; Get Line Count
 
 **Description:** Returns the number of lines in the display seg.
 
@@ -238,7 +238,7 @@ seg << Get Line Count;
 
 ### Get Line Style
 
-**Syntax:** pen style = obj << Get Line Style
+**Syntax:** pen style = obj &lt;&lt; Get Line Style
 
 **Description:** Returns the style of the lines.
 
@@ -255,7 +255,7 @@ seg << Get Line Style;
 
 ### Get Line Width
 
-**Syntax:** number = obj << Get Line Width
+**Syntax:** number = obj &lt;&lt; Get Line Width
 
 **Description:** Returns the width of the lines.
 
@@ -272,7 +272,7 @@ seg << Get Line Width;
 
 ### Get Lines
 
-**Syntax:** [x1 y1 x2 y2, ...] = obj << Get Lines
+**Syntax:** [x1 y1 x2 y2, ...] = obj &lt;&lt; Get Lines
 
 **Description:** Returns the X and Y coordinate values for all lines.
 
@@ -289,11 +289,11 @@ seg << Get Lines;
 
 ### Last Value
 
-**Syntax:** obj << Last Value( state=0|1 )
+**Syntax:** obj &lt;&lt; Last Value( state=0|1 )
 
 ### Line Color
 
-**Syntax:** obj << Line Color( color )
+**Syntax:** obj &lt;&lt; Line Color( color )
 
 **Description:** Set the color for all lines in the display seg.
 
@@ -310,7 +310,7 @@ seg << Set Line Color( "Green" );
 
 ### Line Style
 
-**Syntax:** obj << Line Style( pen style )
+**Syntax:** obj &lt;&lt; Line Style( pen style )
 
 **Description:** Sets the style of the lines. Options are Solid, Dotted, Dashed, DashDot, and DashDotDot.
 
@@ -327,7 +327,7 @@ seg << Set Line Style( "Dotted" );
 
 ### Line Width
 
-**Syntax:** obj << Line Width( "1"|"2"|"3"|"4"|"5"|"6"|"Other..." )
+**Syntax:** obj &lt;&lt; Line Width( "1"|"2"|"3"|"4"|"5"|"6"|"Other..." )
 
 **Description:** Sets the width of the lines.
 
@@ -344,19 +344,19 @@ seg << Set Line Width( 3 );
 
 ### Max Value
 
-**Syntax:** obj << Max Value( state=0|1 )
+**Syntax:** obj &lt;&lt; Max Value( state=0|1 )
 
 ### Min Value
 
-**Syntax:** obj << Min Value( state=0|1 )
+**Syntax:** obj &lt;&lt; Min Value( state=0|1 )
 
 ### Name
 
-**Syntax:** obj << Name( state=0|1 )
+**Syntax:** obj &lt;&lt; Name( state=0|1 )
 
 ### Parent
 
-**Syntax:** seg2 = obj << Parent
+**Syntax:** seg2 = obj &lt;&lt; Parent
 
 **Description:** Returns the parent of the display seg.
 
@@ -373,7 +373,7 @@ seg << Parent;
 
 ### Set Connected
 
-**Syntax:** obj << Set Connected( state=0|1 )
+**Syntax:** obj &lt;&lt; Set Connected( state=0|1 )
 
 **Description:** Sets the connection state for all line segments in the display seg.
 
@@ -390,7 +390,7 @@ seg << Set Connected( 1 );
 
 ### Set Description
 
-**Syntax:** obj << Set Description( description )
+**Syntax:** obj &lt;&lt; Set Description( description )
 
 **Description:** Sets the description for the display seg.
 
@@ -407,7 +407,7 @@ seg << set description( "my seg" );
 
 ### Set Line Color
 
-**Syntax:** obj << Set Line Color( color )
+**Syntax:** obj &lt;&lt; Set Line Color( color )
 
 **Description:** Set the color for all lines in the display seg.
 
@@ -424,7 +424,7 @@ seg << Set Line Color( "Green" );
 
 ### Set Line Style
 
-**Syntax:** obj << Set Line Style( pen style )
+**Syntax:** obj &lt;&lt; Set Line Style( pen style )
 
 **Description:** Sets the style of the lines. Options are Solid, Dotted, Dashed, DashDot, and DashDotDot.
 
@@ -441,7 +441,7 @@ seg << Set Line Style( "Dotted" );
 
 ### Set Line Width
 
-**Syntax:** obj << Set Line Width( "1"|"2"|"3"|"4"|"5"|"6"|"Other..." )
+**Syntax:** obj &lt;&lt; Set Line Width( "1"|"2"|"3"|"4"|"5"|"6"|"Other..." )
 
 **Description:** Sets the width of the lines.
 
@@ -458,7 +458,7 @@ seg << Set Line Width( 3 );
 
 ### Sib
 
-**Syntax:** seg2 = obj << Sib
+**Syntax:** seg2 = obj &lt;&lt; Sib
 
 **Description:** Returns the sibling of the display seg.
 
@@ -475,7 +475,7 @@ seg << Sib;
 
 ### Sib Append
 
-**Syntax:** obj << Sib Append( seg2 )
+**Syntax:** obj &lt;&lt; Sib Append( seg2 )
 
 **Description:** Adds a display seg immediately after the display seg.
 
@@ -513,7 +513,7 @@ mapSeg << Sib Append( Line Seg( xval, yval, <<line color( "Green" ), <<line widt
 
 ### Sib Prepend
 
-**Syntax:** obj << Sib Prepend( seg2 )
+**Syntax:** obj &lt;&lt; Sib Prepend( seg2 )
 
 **Description:** Adds a display seg immediately before the display seg.
 
@@ -545,9 +545,7 @@ seg << Sib Prepend( Line Seg( xval, yval, <<line color( "Green" ), <<line width(
 
 ### Enabled
 
-**Syntax:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**Syntax:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Description:** An object that is not enabled will not respond to keyboard or mouse input. This property is inherited by child objects, so a container object that is disabled will cause all descendent objects to be disabled.
 
@@ -579,9 +577,7 @@ New Window( "enabled",
 
 ### Get Enabled
 
-**Syntax:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**Syntax:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Description:** An object that is not enabled will not respond to keyboard or mouse input. This property is inherited by child objects, so a container object that is disabled will cause all descendent objects to be disabled.
 
@@ -613,7 +609,7 @@ New Window( "enabled",
 
 ### Get Namespace
 
-**Syntax:** obj << Get Namespace
+**Syntax:** obj &lt;&lt; Get Namespace
 
 **Description:** Returns the namespace associated with this display object.
 
@@ -631,7 +627,7 @@ Show( ns:x, x );
 
 ### Get Properties
 
-**Syntax:** obj << Get Properties
+**Syntax:** obj &lt;&lt; Get Properties
 
 **Description:** Returns an associative array that contains the display box&apos;s properties and their values.
 
@@ -645,7 +641,7 @@ bb << Get Properties;
 
 ### Get Property
 
-**Syntax:** obj << Get Property( "property" )
+**Syntax:** obj &lt;&lt; Get Property( "property" )
 
 **Description:** Returns the current setting for the named property.
 
@@ -659,7 +655,7 @@ bb << Get Property( "Enabled" );
 
 ### Get Property List
 
-**Syntax:** obj << Get Property List
+**Syntax:** obj &lt;&lt; Get Property List
 
 **Description:** Returns a list of properties the display box has.
 
@@ -673,7 +669,7 @@ bb << Get Property List;
 
 ### Set Property
 
-**Syntax:** obj << Set Property( "property", value )
+**Syntax:** obj &lt;&lt; Set Property( "property", value )
 
 **Description:** Sets the value for the named property for the display box.
 

@@ -6,7 +6,7 @@
 
 ### Get Description
 
-**Sintaxis:** string = jmplivespace << Get Description()
+**Sintaxis:** string = jmplivespace &lt;&lt; Get Description()
 
 **Descripción:** Obtiene la descripción del espacio de JMP Live
 
@@ -27,7 +27,7 @@ Write( "Description: ", space << Get Description );
 
 ### Get Key
 
-**Sintaxis:** string = jmplivespace << Get Key()
+**Sintaxis:** string = jmplivespace &lt;&lt; Get Key()
 
 **Descripción:** Obtiene la clave del espacio del espacio de JMP Live
 
@@ -48,7 +48,7 @@ Write( "Key: ", space << Get Key );
 
 ### Get Name
 
-**Sintaxis:** string = jmplivespace << Get Name()
+**Sintaxis:** string = jmplivespace &lt;&lt; Get Name()
 
 **Descripción:** Obtiene el nombre del espacio de JMP Live
 
@@ -69,7 +69,7 @@ Write( "Name: ", space << Get Name );
 
 ### Get Type
 
-**Sintaxis:** string = jmplivespace << Get Type()
+**Sintaxis:** string = jmplivespace &lt;&lt; Get Type()
 
 **Descripción:** Obtiene el tipo de espacio de JMP Live (personal o normal)
 

@@ -6,7 +6,7 @@
 
 ### Action
 
-**構文:** obj << Action
+**構文:** obj &lt;&lt; Action
 
 **説明:** 評価する式を挿入するための、プラットフォーム内の汎用トラップドア。プラットフォームに一時的にディスプレイボックスおよびデータテーブルのコンテキストを設定する。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**構文:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**構文:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **説明:** 作成されたプリセットをオブジェクトに適用する。保存された設定に合わせてオプションとカスタマイズが更新される。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**構文:** obj << Automatic Recalc( state=0|1 )
+**構文:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **説明:** データの除外や変更があった場合に分析を自動的にやり直す。Automatic Recalcオプションがオンになっている場合で、データの除外や変更が再計算の前に確実に適用されるようにするには、Wait(0)コマンドを使用すること。
 
@@ -87,7 +87,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**構文:** obj << Broadcast(message)
+**構文:** obj &lt;&lt; Broadcast(message)
 
 **説明:** メッセージをプラットフォームに一括適用する。個々のオブジェクトから戻される結果がデータテーブルである場合は、可能な限り連結する。その最終的な形式は、Table BoxのSave Combined Tableオプションの結果と同じになるか、またはソース列を使用したConcanateオプションの結果と同じになる。それ以外の場合、結果はリストの形で戻される。
 
@@ -107,7 +107,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**構文:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**構文:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **説明:** プラットフォームの変数を変更するための設定パネルを追加する。
 
@@ -125,7 +125,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**構文:** obj << Copy ByGroup Script
+**構文:** obj &lt;&lt; Copy ByGroup Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -145,7 +145,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**構文:** obj << Copy Script
+**構文:** obj &lt;&lt; Copy Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -160,7 +160,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**構文:** obj << Data Table Window
+**構文:** obj &lt;&lt; Data Table Window
 
 **説明:** この分析に使用したデータテーブルのウィンドウを手前に表示する。
 
@@ -175,7 +175,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**構文:** obj << Get By Levels
+**構文:** obj &lt;&lt; Get By Levels
 
 **説明:** By列が指定されている場合、列名をキー、データ値を値とした連想配列を戻す。
 
@@ -192,7 +192,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**構文:** obj << Get ByGroup Script
+**構文:** obj &lt;&lt; Get ByGroup Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -213,7 +213,7 @@ Show( t );
 
 ### Get Container
 
-**構文:** obj << Get Container
+**構文:** obj &lt;&lt; Get Container
 
 **説明:** オブジェクトのコンテンツを含んだコンテナボックスの参照を戻す。
 
@@ -260,7 +260,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**構文:** obj << Get Data Table
+**構文:** obj &lt;&lt; Get Data Table
 
 **説明:** データテーブルへの参照を戻す。
 
@@ -276,7 +276,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**構文:** obj << Get Group Platform
+**構文:** obj &lt;&lt; Get Group Platform
 
 **説明:** 該当のプラットフォームがグループに属している場合に、Group Platformオブジェクトを戻す。それ以外の場合はEmpty()を戻す。
 
@@ -293,7 +293,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**構文:** obj << Get Script
+**構文:** obj &lt;&lt; Get Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -309,7 +309,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**構文:** obj << Get Script With Data Table
+**構文:** obj &lt;&lt; Get Script With Data Table
 
 **説明:** この分析を再現するスクリプト(JSL)をデータテーブルへの参照も含めて生成し、それを式として戻す。
 
@@ -325,7 +325,7 @@ Show( t );
 
 ### Get Timing
 
-**構文:** obj << Get Timing
+**構文:** obj &lt;&lt; Get Timing
 
 **説明:** プラットフォームの起動にかかった時間を取得する。
 
@@ -341,7 +341,7 @@ Show( t );
 
 ### Get Web Support
 
-**構文:** obj << Get Web Support
+**構文:** obj &lt;&lt; Get Web Support
 
 **説明:** ディスプレイオブジェクトにおけるインタラクティブHTMLサポートのレベルを数値で戻す。1は、一部または全部の要素がサポートされていることを示し、0は、サポートされないことを示す。
 
@@ -357,7 +357,7 @@ Show( s );
 
 ### Get Where Expr
 
-**構文:** obj << Get Where Expr
+**構文:** obj &lt;&lt; Get Where Expr
 
 **説明:** プラットフォームがBy()またはWhere()を使って起動された場合に、データをサブセットするためのWhere式を戻す。By()やWhere()が使われていない場合はEmpty()を戻す。
 
@@ -394,7 +394,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**構文:** obj << Local Data Filter
+**構文:** obj &lt;&lt; Local Data Filter
 
 **説明:** このプラットフォームに対してのみ有効なフィルタで、データを特定のグループまたは範囲にフィルタリングする。
 
@@ -450,7 +450,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**構文:** obj << Paste Local Data Filter
+**構文:** obj &lt;&lt; Paste Local Data Filter
 
 **説明:** クリップボードにあるローカルデータフィルタを現在のレポートに適用する。
 
@@ -471,7 +471,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**構文:** obj << Redo Analysis
+**構文:** obj &lt;&lt; Redo Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -486,7 +486,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**構文:** obj << Redo ByGroup Analysis
+**構文:** obj &lt;&lt; Redo ByGroup Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -506,7 +506,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**構文:** obj << Relaunch Analysis
+**構文:** obj &lt;&lt; Relaunch Analysis
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -521,7 +521,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**構文:** obj << Relaunch ByGroup
+**構文:** obj &lt;&lt; Relaunch ByGroup
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -541,7 +541,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**構文:** obj << Remove Column Switcher
+**構文:** obj &lt;&lt; Remove Column Switcher
 
 **説明:** プラットフォームに最後に追加された列スイッチャーを削除する。
 
@@ -561,7 +561,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**構文:** obj << Remove Local Data Filter
+**構文:** obj &lt;&lt; Remove Local Data Filter
 
 **説明:** すでに作成されているローカルデータフィルタを削除し、プラットフォームはデータテーブル内のすべてのデータを使用した状態に戻る。
 
@@ -600,9 +600,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**構文:** obj << Report;
-
-Report( obj )
+**構文:** obj &lt;&lt; Report;Report( obj )
 
 **説明:** レポートオブジェクトへの参照を戻す。
 
@@ -619,7 +617,7 @@ Show( t );
 
 ### Report View
 
-**構文:** obj << Report View( "完全"|"要約" )
+**構文:** obj &lt;&lt; Report View( "完全"|"要約" )
 
 **説明:** レポートビューは、プラットフォームレポートの詳細を表示するかどうかを決定する。Fullはすべての詳細を表示し、Summaryはプラットフォームにより限定されたものだけを表示する。 動作をカスタマイズするため、各ディスプレイボックスは<<Set Summary Behaviorメッセージをサポートする。
 
@@ -634,7 +632,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**構文:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** 分析を再現するためのJSLスクリプトを作成し、データテーブルにテーブルプロパティとして保存する。スクリプトの名前を指定できる。Append Suffixオプションは、スクリプト名に数字の接尾辞を追加する。これにより、同名のスクリプトが存在していても区別できる。Promptオプションは、ユーザにスクリプト名の指定を促す。Replaceオプションは、同名の既存のスクリプトを置き換える。
 
@@ -654,7 +652,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**構文:** obj << Save ByGroup Script to Journal
+**構文:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -674,7 +672,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**構文:** obj << Save ByGroup Script to Script Window
+**構文:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -694,7 +692,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**構文:** obj << Save Script for All Objects
+**構文:** obj &lt;&lt; Save Script for All Objects
 
 **説明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -709,7 +707,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**構文:** obj << Save Script for All Objects To Data Table( <name> )
+**構文:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **説明:** すべてのレポートオブジェクトを再現するスクリプトを現在のデータテーブルに保存する。このオプションは、ウィンドウ内にレポートが複数ある場合に便利。作成されるスクリプトの名前は、引用符で囲んで指定しない限り、1つ目のプラットフォーム名となる。
 
@@ -747,7 +745,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**構文:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** この分析を再現するJSLスクリプトを生成し、データテーブルのテーブルプロパティとして保存する。
 
@@ -762,7 +760,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**構文:** obj << Save Script to Journal
+**構文:** obj &lt;&lt; Save Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -777,7 +775,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**構文:** obj << Save Script to Report
+**構文:** obj &lt;&lt; Save Script to Report
 
 **説明:** この分析を再現するJSLスクリプトを生成し、レポートウィンドウに表示する。分析手順の記録を結果と一緒に残せる。
 
@@ -792,7 +790,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**構文:** obj << Save Script to Script Window
+**構文:** obj &lt;&lt; Save Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -872,7 +870,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**構文:** obj << Sync to Data Table Changes
+**構文:** obj &lt;&lt; Sync to Data Table Changes
 
 **説明:** 除外やデータの変更が行われた場合に同期する。
 
@@ -889,7 +887,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**構文:** obj << Title( "new title" )
+**構文:** obj &lt;&lt; Title( "new title" )
 
 **説明:** プラットフォームのタイトルを設定する。
 
@@ -904,7 +902,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**構文:** obj << Top Report
+**構文:** obj &lt;&lt; Top Report
 
 **説明:** レポート内のルートノードへの参照を戻す。
 
@@ -921,7 +919,7 @@ Show( t );
 
 ### Transform Column
 
-**構文:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**構文:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **説明:** オブジェクトのローカルコンテキスト(通常はプラットフォーム)内に変換列を作成する。この変換列は、それを作成したプラットフォームの中のみで使用可能。
 
@@ -940,7 +938,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**構文:** obj << View Web XML
+**構文:** obj &lt;&lt; View Web XML
 
 **説明:** インタラクティブHTMLレポートの作成に使うXMLコードを戻す。
 
@@ -976,7 +974,7 @@ New Window( "Bivariate Equation",
 
 ### By
 
-**構文:** obj << By( column(s) )
+**構文:** obj &lt;&lt; By( column(s) )
 
 ```jsl
 
@@ -993,7 +991,7 @@ obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ), By( 
 
 ### Freq
 
-**構文:** obj << Freq( column )
+**構文:** obj &lt;&lt; Freq( column )
 
 ```jsl
 
@@ -1010,7 +1008,7 @@ obj = dt << Categorical(
 
 ### Grouping Category
 
-**構文:** obj << Grouping Category( column(s) )
+**構文:** obj &lt;&lt; Grouping Category( column(s) )
 
 ```jsl
 
@@ -1022,7 +1020,7 @@ obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
 
 ### ID
 
-**構文:** obj << ID( column )
+**構文:** obj &lt;&lt; ID( column )
 
 ```jsl
 
@@ -1034,7 +1032,7 @@ obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
 
 ### Sample Size
 
-**構文:** obj << Sample Size( column )
+**構文:** obj &lt;&lt; Sample Size( column )
 
 ```jsl
 
@@ -1046,7 +1044,7 @@ obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
 
 ### X
 
-**構文:** obj << X( column(s) )
+**構文:** obj &lt;&lt; X( column(s) )
 
 ```jsl
 
@@ -1076,7 +1074,7 @@ obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
 
 ### Agreement Statistic
 
-**構文:** obj << Agreement Statistic( state=0|1 )
+**構文:** obj &lt;&lt; Agreement Statistic( state=0|1 )
 
 **説明:** 判定者の間にどの程度の一致性が見られるか、また、不一致性は対称か、などを調べる。[判定の一致性]を選択した場合でのみのみ使用可能。 デフォルトではオン。
 
@@ -1110,7 +1108,7 @@ obj = dt << Categorical( Aligned Responses( :First Survey, :Second Survey ), Fre
 
 ### Arrange in Rows
 
-**構文:** obj << Arrange in Rows( number )
+**構文:** obj &lt;&lt; Arrange in Rows( number )
 
 **説明:** レポートの配置を変更する。1行において横に並べるレポートの数を指定する。
 
@@ -1132,7 +1130,7 @@ obj << Arrange in Rows( 1 );
 
 ### Binomial
 
-**構文:** obj << Binomial( state=0|1 )
+**構文:** obj &lt;&lt; Binomial( state=0|1 )
 
 **説明:** 各カテゴリが二項分布に従うと仮定して、カテゴリが生じる割合の等質性に対するカイ2乗検定を行う。 注: 多重応答にのみ使用できます。
 
@@ -1147,7 +1145,7 @@ obj << Homogeneity Test( 1 );
 
 ### Cell Chisq
 
-**構文:** obj << Cell Chisq( state=0|1 )
+**構文:** obj &lt;&lt; Cell Chisq( state=0|1 )
 
 **説明:** 表の各セルにおいて、等質性に対するカイ2乗検定のp値の表示/非表示を切り替える。度数が期待度数より大きいか小さいかによって、p値の色や塗りつぶしが決まる。
 
@@ -1162,7 +1160,7 @@ obj << Cell Chisq( 1 );
 
 ### Cell Chisq FDR
 
-**構文:** obj << Cell Chisq FDR( state=0|1 )
+**構文:** obj &lt;&lt; Cell Chisq FDR( state=0|1 )
 
 **説明:** 表の各セルにおいて、等質性に対するカイ2乗検定のFDR調整p値の表示/非表示を切り替える。度数が期待度数より大きいか小さいかによって、FDR調整p値の色や塗りつぶしが決まる。
 
@@ -1179,7 +1177,7 @@ obj << Cell Chisq( 1 );
 
 ### ChiSquare Test Choices
 
-**構文:** obj << ChiSquare Test Choices( "尤度比とPearson"|"尤度比のみ"|"Pearsonのみ" )
+**構文:** obj &lt;&lt; ChiSquare Test Choices( "尤度比とPearson"|"尤度比のみ"|"Pearsonのみ" )
 
 **説明:** 等質性を調べる検定として尤度比カイ2乗とPearonカイ2乗のうち、どちらを表示するかを指定する。単一応答の場合のみ使用可能。
 
@@ -1195,7 +1193,7 @@ obj << Test Response Homogeneity( 1 );
 
 ### Compare Each Cell
 
-**構文:** obj << Compare Each Cell( state=0|1 )
+**構文:** obj &lt;&lt; Compare Each Cell( state=0|1 )
 
 **説明:** グループ変数の水準間で、応答の各水準をその他すべての水準の組み合わせと比較する。
 
@@ -1210,7 +1208,7 @@ obj << Compare Each Cell( 1 );
 
 ### Compare Each Cell FDR
 
-**構文:** obj << Compare Each Cell FDR( state=0|1 )
+**構文:** obj &lt;&lt; Compare Each Cell FDR( state=0|1 )
 
 **説明:** グループ変数の水準間で、応答の各水準をその他すべての水準の組み合わせと比較する。その際に、多重調整を調整した偽発見率(FDR)を求める。
 
@@ -1227,7 +1225,7 @@ obj << Compare Each Cell FDR( 1 );
 
 ### Compare Each Sample
 
-**構文:** obj << Compare Each Sample( state=0|1 )
+**構文:** obj &lt;&lt; Compare Each Sample( state=0|1 )
 
 **説明:** 応答をグループ変数の水準間で比較する。
 
@@ -1242,7 +1240,7 @@ obj << Compare Each Sample( 1 );
 
 ### Compare Each Sample FDR
 
-**構文:** obj << Compare Each Sample FDR( state=0|1 )
+**構文:** obj &lt;&lt; Compare Each Sample FDR( state=0|1 )
 
 **説明:** 応答をグループ変数の水準間で比較する。その際に、多重調整を調整した偽発見率(FDR)を求める。
 
@@ -1259,7 +1257,7 @@ obj << Compare Each Sample FDR( 1 );
 
 ### Conditional Association
 
-**構文:** obj << Conditional Association( state=0|1 )
+**構文:** obj &lt;&lt; Conditional Association( state=0|1 )
 
 **説明:** 条件付き確率を示した表の表示/非表示を切り替える。この表では、行側に示された応答の水準がある下で、列側に示された応答の水準が出現する確率が示されている。[多重応答]、[多重応答 区切り文字]、[多重応答 ID別]で[ID内で一意な値をカウント]を選択した場合でのみ使用可能。
 
@@ -1299,7 +1297,7 @@ obj = dt << Categorical(
 
 ### Confidence Limits Format
 
-**構文:** obj << Confidence Limits Format( format, <options> )
+**構文:** obj &lt;&lt; Confidence Limits Format( format, &lt;options&gt; )
 
 **説明:** 表中のシェア割合とケース率の信頼区間に対する表示形式を指定する。デフォルトの値は、"パーセント", 6, 2。
 
@@ -1322,7 +1320,7 @@ obj << Confidence Limits Format( "Percent", 6, 0 );
 
 ### Contents Summary
 
-**構文:** obj << Contents Summary( state=0|1 )
+**構文:** obj &lt;&lt; Contents Summary( state=0|1 )
 
 **説明:** すべての検定とp値を1つのレポートにまとめる。
 
@@ -1351,7 +1349,7 @@ Categorical( X( :Trial 1 ), Count Missing Responses( 1 ), Responses( :Trial 4 ) 
 
 ### Count Test
 
-**構文:** obj << Count Test( state=0|1 )
+**構文:** obj &lt;&lt; Count Test( state=0|1 )
 
 **説明:** Poisson回帰を使って比率の等質性に対するカイ2乗検定を行う。 注: 多重応答にのみ使用できます。
 
@@ -1366,7 +1364,7 @@ obj << Count Test( 1 );
 
 ### Crosstab
 
-**構文:** obj << Crosstab( state=0|1 )
+**構文:** obj &lt;&lt; Crosstab( state=0|1 )
 
 **説明:** レポートにおいて、度数のクロス表を作成する。この表は、応答の水準が列、グループ変数の水準が行となっている。 デフォルトではオン。
 
@@ -1382,7 +1380,7 @@ obj << Crosstab( 1 );
 
 ### Crosstab Transposed
 
-**構文:** obj << Crosstab Transposed( state=0|1 )
+**構文:** obj &lt;&lt; Crosstab Transposed( state=0|1 )
 
 **説明:** レポートにおいて、度数のクロス表を作成する。この表は、応答の水準が行、グループ変数の水準が列となっている。
 
@@ -1397,7 +1395,7 @@ obj << Crosstab Transposed( 1 );
 
 ### Exclude Nonresponses
 
-**構文:** obj << Exclude Nonresponses( state=0|1 )
+**構文:** obj &lt;&lt; Exclude Nonresponses( state=0|1 )
 
 **説明:** 多重応答のカテゴリを比較する度数検定や等質性検定において、無応答（無回答）になっているデータを除外する。空白のセルと欠測値のセルが無応答として扱われる。何も選択されていない状態も除外せずに考慮することを推奨する。
 
@@ -1419,7 +1417,7 @@ obj << Exclude Nonresponses( 1 );
 
 ### FDR Adjusted PValues
 
-**構文:** obj << FDR Adjusted PValues( state=0|1 )
+**構文:** obj &lt;&lt; FDR Adjusted PValues( state=0|1 )
 
 **説明:** が有意になる可FDR 調整済みp値(Benjamini and Hochberg, 1995)を用いる。「FDR」とは、偽発見率（False Discovery Rate）の略である。p値が多数あるために全体のおける第1種の過誤率が大きくなることが危惧される状況で使われている。
 
@@ -1440,7 +1438,7 @@ obj << FDR Adjusted PValues( 1 );
 
 ### Filter
 
-**構文:** obj << Filter( state=0|1 )
+**構文:** obj &lt;&lt; Filter( state=0|1 )
 
 **説明:** ローカルデータフィルタを呼び出す。特定のグループや範囲によって、データをフィルタリングする。
 
@@ -1464,7 +1462,7 @@ obj << Filter( 0 );
 
 ### Force Crosstab Shading
 
-**構文:** obj << Force Crosstab Shading( state=0|1 )
+**構文:** obj &lt;&lt; Force Crosstab Shading( state=0|1 )
 
 **説明:** 環境設定で濃淡の表示がオフになっている場合でも、濃淡を付けて、クロス表を表示する。 デフォルトではオン。
 
@@ -1481,7 +1479,7 @@ obj << Force Crosstab Shading( 1 );
 
 ### Force Labels Horizontal
 
-**構文:** obj << Force Labels Horizontal( state=0|1 )
+**構文:** obj &lt;&lt; Force Labels Horizontal( state=0|1 )
 
 **説明:** クロス表に、テキストの長さに関係なく、ラベルを横方向に表示する。ラベルのテキストは、縦方向にせず、水平方向に表示して複数行で折り返す。
 
@@ -1499,13 +1497,13 @@ obj << Force Labels Horizontal( 1 );
 
 ### Format Elements
 
-**構文:** obj << Format Elements
+**構文:** obj &lt;&lt; Format Elements
 
 **説明:** レポートの各要素に対する表示形式を指定するためのウィンドウを開く。
 
 ### Frequencies
 
-**構文:** obj << Frequencies( state=0|1 )
+**構文:** obj &lt;&lt; Frequencies( state=0|1 )
 
 **説明:** レポートにおいて、度数表の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1525,7 +1523,7 @@ obj << Frequencies( 1 );
 
 ### Frequencies Format
 
-**構文:** obj << Frequencies Format( format, <options> )
+**構文:** obj &lt;&lt; Frequencies Format( format, &lt;options&gt; )
 
 **説明:** 表中の度数値に対する表示形式を指定する。デフォルト値は、"固定小数点", 7, 0。
 
@@ -1541,7 +1539,7 @@ obj << Frequencies Format( "Fixed Dec", 7, 2 );
 
 ### Frequency Chart
 
-**構文:** obj << Frequency Chart( state=0|1 )
+**構文:** obj &lt;&lt; Frequency Chart( state=0|1 )
 
 **説明:** レポートにおいて、「度数チャート」の表示/非表示を切り替える。
 
@@ -1574,7 +1572,7 @@ obj = dt << Categorical(
 
 ### Hide Nonsignificant
 
-**構文:** obj << Hide Nonsignificant( state=0|1 )
+**構文:** obj &lt;&lt; Hide Nonsignificant( state=0|1 )
 
 **説明:** 統計的有意でないレポートを非表示にする。
 
@@ -1598,13 +1596,13 @@ obj << Hide Nonsignificant( 1 );
 
 ### Highlight Cells
 
-**構文:** obj << Highlight Cells
+**構文:** obj &lt;&lt; Highlight Cells
 
 **説明:** 指定の条件に沿ったセルを強調表示する。
 
 ### Homogeneity Test
 
-**構文:** obj << Homogeneity Test( state=0|1 )
+**構文:** obj &lt;&lt; Homogeneity Test( state=0|1 )
 
 **説明:** 各カテゴリが二項分布に従うと仮定して、カテゴリが生じる割合の等質性に対するカイ2乗検定を行う。 注: 多重応答にのみ使用できます。
 
@@ -1680,7 +1678,7 @@ obj = dt << Categorical(
 
 ### Mean Confidence Interval
 
-**構文:** obj << Mean Confidence Interval( state=0|1 )
+**構文:** obj &lt;&lt; Mean Confidence Interval( state=0|1 )
 
 **説明:** 平均に対する信頼区間の表示/非表示を切り替える。
 
@@ -1697,7 +1695,7 @@ obj << Mean Confidence Interval( 1 );
 
 ### Mean Score
 
-**構文:** obj << Mean Score( state=0|1 )
+**構文:** obj &lt;&lt; Mean Score( state=0|1 )
 
 **説明:** クロス表にスコアの平均を表示する。生の数値データ、または、値スコアに基づいて、平均を計算する。
 
@@ -1712,7 +1710,7 @@ obj << Mean Score( 1 );
 
 ### Mean Score Comparisons
 
-**構文:** obj << Mean Score Comparisons( state=0|1 )
+**構文:** obj &lt;&lt; Mean Score Comparisons( state=0|1 )
 
 **説明:** グループ変数のカテゴリ間で、平均スコアを比較する。
 
@@ -1727,7 +1725,7 @@ obj << Mean Score Comparisons( 1 );
 
 ### Mean Score Comparisons FDR
 
-**構文:** obj << Mean Score Comparisons FDR( state=0|1 )
+**構文:** obj &lt;&lt; Mean Score Comparisons FDR( state=0|1 )
 
 **説明:** グループ変数のカテゴリ間で、平均スコアを比較する。
 
@@ -1744,7 +1742,7 @@ obj << Mean Score Comparisons FDR( 1 );
 
 ### Mean Score Comparisons as Suffix
 
-**構文:** obj << Mean Score Comparisons as Suffix( state=0|1 )
+**構文:** obj &lt;&lt; Mean Score Comparisons as Suffix( state=0|1 )
 
 **説明:** グループ変数のカテゴリ間で、平均スコアを比較する。
 
@@ -1759,7 +1757,7 @@ obj << Mean Score Comparisons Suffixed( 1 );
 
 ### Mean Std Error
 
-**構文:** obj << Mean Std Error( state=0|1 )
+**構文:** obj &lt;&lt; Mean Std Error( state=0|1 )
 
 **説明:** 平均に対する標準誤差の表示/非表示を切り替える。
 
@@ -1776,7 +1774,7 @@ obj << Mean Std Error( 1 );
 
 ### Means Format
 
-**構文:** obj << Means Format( format, <options> )
+**構文:** obj &lt;&lt; Means Format( format, &lt;options&gt; )
 
 **説明:** 表内での平均スコアに対する表示形式を指定する。デフォルト値は"Fixed"(固定), 6, 2。
 
@@ -1865,7 +1863,7 @@ obj = dt << Categorical(
 
 ### Order by Significance
 
-**構文:** obj << Order by Significance( state=0|1 )
+**構文:** obj &lt;&lt; Order by Significance( state=0|1 )
 
 **説明:** 統計的有意性が高いレポートが先頭になるように、レポートを並べ替える。
 
@@ -1889,7 +1887,7 @@ obj << Order by Significance( 1 );
 
 ### Poisson
 
-**構文:** obj << Poisson( state=0|1 )
+**構文:** obj &lt;&lt; Poisson( state=0|1 )
 
 **説明:** Poisson回帰を使って比率の等質性に対するカイ2乗検定を行う。 注: 多重応答にのみ使用できます。
 
@@ -1904,7 +1902,7 @@ obj << Count Test( 1 );
 
 ### Rate Confidence Interval
 
-**構文:** obj << Rate Confidence Interval( state=0|1 )
+**構文:** obj &lt;&lt; Rate Confidence Interval( state=0|1 )
 
 **説明:** ケースの率に対する信頼区間の表示/非表示を切り替える。信頼区間は、Poisson線形モデルの標準誤差を使って計算した正規近似の信頼区間。
 
@@ -1919,7 +1917,7 @@ obj << Rate Confidence Interval( 1 );
 
 ### Rate Per Case
 
-**構文:** obj << Rate Per Case( state=0|1 )
+**構文:** obj &lt;&lt; Rate Per Case( state=0|1 )
 
 **説明:** レポートにおいて、「ケースあたりの比率」の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1942,7 +1940,7 @@ obj << Rate Per Case( 1 );
 
 ### Rate per Case Responding
 
-**構文:** obj << Rate per Case Responding( state=0|1 )
+**構文:** obj &lt;&lt; Rate per Case Responding( state=0|1 )
 
 **説明:** レポートにおいて、1ケースあたりの比率の表示/非表示を切り替える。ただし、この時、欠測値は除外して計算する。
 
@@ -1977,7 +1975,7 @@ obj = dt << Categorical( Rater Agreement( :First Survey, :Second Survey ), Freq(
 
 ### Relative Risk
 
-**構文:** obj << Relative Risk( state=0|1, {}, {level of interest} )
+**構文:** obj &lt;&lt; Relative Risk( state=0|1, {}, {level of interest} )
 
 **説明:** 応答の水準ごとに、2水準のグループ変数の相対リスクを表示する。グループ変数が2水準で、応答が2水準または多重応答、かつIDオプション[ID内で一意な値をカウント]オプションが選択されている場合にだけ使用可能。
 
@@ -2034,7 +2032,7 @@ obj = dt << Categorical(
 
 ### Response Levels
 
-**構文:** obj << Response Levels( state=0|1 )
+**構文:** obj &lt;&lt; Response Levels( state=0|1 )
 
 **説明:** 応答水準の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2065,7 +2063,7 @@ obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
 
 ### Save Contingency Table
 
-**構文:** obj << Save Contingency Table
+**構文:** obj &lt;&lt; Save Contingency Table
 
 **説明:** クロス表の値を新しいデータテーブルに保存する。このデータテーブルでは元の列名が使用される。
 
@@ -2082,13 +2080,13 @@ obj << Save Contingency Table;
 
 ### Save DocX File
 
-**構文:** obj << Save DocX File
+**構文:** obj &lt;&lt; Save DocX File
 
 **説明:** Undocumented and Experimental Feature
 
 ### Save Excel File
 
-**構文:** obj << Save Excel File
+**構文:** obj &lt;&lt; Save Excel File
 
 **説明:** Excelファイルに、表を保存する。
 
@@ -2106,7 +2104,7 @@ obj << Save Excel File(
 
 ### Save Frequencies
 
-**構文:** obj << Save Frequencies
+**構文:** obj &lt;&lt; Save Frequencies
 
 **説明:** 度数を新しいテーブルに保存する。
 
@@ -2121,7 +2119,7 @@ obj << Save Frequencies;
 
 ### Save Mean Scores
 
-**構文:** obj << Save Mean Scores
+**構文:** obj &lt;&lt; Save Mean Scores
 
 **説明:** 各標本グループのスコア平均を、新しいデータテーブルに保存する。
 
@@ -2136,7 +2134,7 @@ obj << Save Mean Scores;
 
 ### Save Rate Per Case
 
-**構文:** obj << Save Rate Per Case
+**構文:** obj &lt;&lt; Save Rate Per Case
 
 **説明:** ケースあたりの比率を新しいテーブルに保存する。
 
@@ -2158,7 +2156,7 @@ obj << Save Rate Per Case;
 
 ### Save Share of Responses
 
-**構文:** obj << Save Share of Responses
+**構文:** obj &lt;&lt; Save Share of Responses
 
 **説明:** 応答のシェアを新しいテーブルに保存する。
 
@@ -2173,7 +2171,7 @@ obj << Save Share of Responses;
 
 ### Save Stacked Table
 
-**構文:** obj << Save Stacked Table
+**構文:** obj &lt;&lt; Save Stacked Table
 
 **説明:** クロス表の値を新しいデータテーブルに保存する。このデータテーブルでは一般的な列名が使用される。
 
@@ -2190,7 +2188,7 @@ obj << Save Stacked Table;
 
 ### Save Test Homogeneity
 
-**構文:** obj << Save Test Homogeneity
+**構文:** obj &lt;&lt; Save Test Homogeneity
 
 **説明:** 等質性の検定を新しいテーブルに保存する。
 
@@ -2205,7 +2203,7 @@ obj << Save Test Homogeneity;
 
 ### Save Test Rates
 
-**構文:** obj << Save Test Rates
+**構文:** obj &lt;&lt; Save Test Rates
 
 **説明:** [多重応答の検定]オプションの結果を、新しいデータテーブルに保存する。
 
@@ -2227,7 +2225,7 @@ obj << Save Test Rates;
 
 ### Save Transposed Frequencies
 
-**構文:** obj << Save Transposed Frequencies
+**構文:** obj &lt;&lt; Save Transposed Frequencies
 
 **説明:** 転置した度数を新しいテーブルに保存する。
 
@@ -2242,7 +2240,7 @@ obj << Save Transposed Frequencies;
 
 ### Save Transposed Rate Per Case
 
-**構文:** obj << Save Transposed Rate Per Case
+**構文:** obj &lt;&lt; Save Transposed Rate Per Case
 
 **説明:** 転置したケースあたりの比率を新しいテーブルに保存する。
 
@@ -2264,7 +2262,7 @@ obj << Save Transposed Rate Per Case;
 
 ### Save Transposed Share of Responses
 
-**構文:** obj << Save Transposed Share of Responses
+**構文:** obj &lt;&lt; Save Transposed Share of Responses
 
 **説明:** 転置した応答のシェアを新しいテーブルに保存する。
 
@@ -2279,7 +2277,7 @@ obj << Save Transposed Share of Responses;
 
 ### Save tTests and pValues
 
-**構文:** obj << Save tTests and pValues
+**構文:** obj &lt;&lt; Save tTests and pValues
 
 **説明:** 「平均の比較」のt検定とp値を、新しいデータテーブルに保存する。
 
@@ -2294,7 +2292,7 @@ obj << Save ttests and pvalues;
 
 ### Share Chart
 
-**構文:** obj << Share Chart( state=0|1 )
+**構文:** obj &lt;&lt; Share Chart( state=0|1 )
 
 **説明:** レポートにおいて、「シェアチャート」の表示/非表示を切り替える。
 
@@ -2314,7 +2312,7 @@ obj << Share Chart( 1 );
 
 ### Share Confidence Interval
 
-**構文:** obj << Share Confidence Interval( state=0|1 )
+**構文:** obj &lt;&lt; Share Confidence Interval( state=0|1 )
 
 **説明:** シェアの割合に対する信頼区間の表示/非表示を切り替える。この信頼区間は、Wilsonのスコア法を使って計算される。
 
@@ -2329,7 +2327,7 @@ obj << Share Confidence Interval( 1 );
 
 ### Share Of Responses
 
-**構文:** obj << Share Of Responses( state=0|1 )
+**構文:** obj &lt;&lt; Share Of Responses( state=0|1 )
 
 **説明:** レポートにおいて、「応答のシェア」の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2349,7 +2347,7 @@ obj << Share of Responses( 1 );
 
 ### Shares and Rates Format
 
-**構文:** obj << Shares and Rates Format( format, <options> )
+**構文:** obj &lt;&lt; Shares and Rates Format( format, &lt;options&gt; )
 
 **説明:** 表中のシェア割合とケース率に対する表示形式を指定する。デフォルトの値は、”パーセント", 6, 1。
 
@@ -2389,7 +2387,7 @@ obj << Shorten Labels( 1 );
 
 ### Show Columns Used in Report
 
-**構文:** obj << Show Columns Used in Report( state=0|1 )
+**構文:** obj &lt;&lt; Show Columns Used in Report( state=0|1 )
 
 **説明:** レ「レポートで使用された列」の表示/非表示を切り替える。「SPSS名」・「SAS名」・「SPSSラベル」・「SASラベル」列プロパティを持つ列がある場合、それら列名やラベル名が「レポートで使用された列」に表示される。
 
@@ -2405,13 +2403,13 @@ obj << Show Columns Used in Report( 1 );
 
 ### Show Highlight Legend
 
-**構文:** obj << Show Highlight Legend( state=0|1 )
+**構文:** obj &lt;&lt; Show Highlight Legend( state=0|1 )
 
 **説明:** デフォルトではオン。
 
 ### Show Supercategories
 
-**構文:** obj << Show Supercategories( state=0|1 )
+**構文:** obj &lt;&lt; Show Supercategories( state=0|1 )
 
 **説明:** 「上位カテゴリ」の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2437,7 +2435,7 @@ obj << Show Supercategories( 1 );
 
 ### Show Warnings
 
-**構文:** obj << Show Warnings( state=0|1 )
+**構文:** obj &lt;&lt; Show Warnings( state=0|1 )
 
 **説明:** カイ2乗検定の標本サイズが小さい場合に警告を表示する。
 
@@ -2456,7 +2454,7 @@ obj << Show Warnings( 1 );
 
 ### Std Dev Format
 
-**構文:** obj << Std Dev Format( format, <options> )
+**構文:** obj &lt;&lt; Std Dev Format( format, &lt;options&gt; )
 
 **説明:** 表内での標準偏差スコアに対する表示形式を指定する。デフォルト値は"Fixed"(固定), 6, 2。
 
@@ -2475,7 +2473,7 @@ obj << Std Dev Format( "Fixed", 6, 4 );
 
 ### Std Dev Score
 
-**構文:** obj << Std Dev Score( state=0|1 )
+**構文:** obj &lt;&lt; Std Dev Score( state=0|1 )
 
 **説明:** クロス表に標準偏差を表示する。生の数値データ、または、値スコアに基づいて、標準偏差を計算する。
 
@@ -2490,7 +2488,7 @@ obj << Std Dev Score( 1 );
 
 ### Structured
 
-**構文:** obj = Categorical(...Structured( Column * nestedColumn ... + rightColumn, sideColumn + lowerColumns...  )...)
+**構文:** obj = Categorical(...Structured( Column * nestedColumn ... + rightColumn, sideColumn + lowerColumns... )...)
 
 **説明:** 2つ以上の変数で構成されたクロス表を作成する。
 
@@ -2506,7 +2504,7 @@ obj = dt << Categorical(
 
 ### Supercategories
 
-**構文:** obj << Supercategories( column, ({Group (name, {level1, level2, ... levelN})}) )
+**構文:** obj &lt;&lt; Supercategories( column, ({Group (name, {level1, level2, ... levelN})}) )
 
 **説明:** 「上位カテゴリ」を用いて、応答のカテゴリを集計する。
 
@@ -2529,7 +2527,7 @@ obj = dt << Categorical(
 
 ### Test Response Homogeneity
 
-**構文:** obj << Test Response Homogeneity( state=0|1 )
+**構文:** obj &lt;&lt; Test Response Homogeneity( state=0|1 )
 
 **説明:** 応答列の等質性を調べるため、尤度比カイ2乗検定とPearsonカイ2乗検定の両方を実行する。単一応答の場合のみ使用可能。
 
@@ -2544,7 +2542,7 @@ obj << Test Response Homogeneity( 1 );
 
 ### Total Cases
 
-**構文:** obj << Total Cases( state=0|1 )
+**構文:** obj &lt;&lt; Total Cases( state=0|1 )
 
 **説明:** 多重応答(複数回答)の集計において、クロス表に合計ケース数を表示する。 デフォルトではオン。
 
@@ -2566,7 +2564,7 @@ obj << Total Cases( 1 );
 
 ### Total Cases Responding
 
-**構文:** obj << Total Cases Responding( state=0|1 )
+**構文:** obj &lt;&lt; Total Cases Responding( state=0|1 )
 
 **説明:** 多重応答(複数回答)の集計において、クロス表に少なくとも1回応答したケースの総数を表示する。 デフォルトではオン。
 
@@ -2588,7 +2586,7 @@ obj << Total Cases Responding( 1 );
 
 ### Total Responses
 
-**構文:** obj << Total Responses( state=0|1 )
+**構文:** obj &lt;&lt; Total Responses( state=0|1 )
 
 **説明:** クロス表に応答の合計数を表示する。 デフォルトではオン。
 
@@ -2605,13 +2603,13 @@ obj << Total Responses( 1 );
 
 ### Totals First
 
-**構文:** obj << Totals First( state=0|1 )
+**構文:** obj &lt;&lt; Totals First( state=0|1 )
 
 **説明:** 応答の合計を、クロス表の上部または左側に表示する。ただし、複数の表で共通して合計がある場合のみ。
 
 ### Transition Report
 
-**構文:** obj << Transition Report( state=0|1 )
+**構文:** obj &lt;&lt; Transition Report( state=0|1 )
 
 **説明:** 時間経過に伴うカテゴリの変化を示したレポートの表示/非表示を切り替える。[反復測定]を選択した場合でのみ使用可能。 デフォルトではオン。
 
@@ -2626,7 +2624,7 @@ obj << Transition Report( 1 );
 
 ### Transposed Freq Chart
 
-**構文:** obj << Transposed Freq Chart( state=0|1 )
+**構文:** obj &lt;&lt; Transposed Freq Chart( state=0|1 )
 
 **説明:** レポートにおいて、転置した度数チャートの表示/非表示を切り替える。このチャートは、応答の水準が列、グループ変数の水準が行となっている表である。
 

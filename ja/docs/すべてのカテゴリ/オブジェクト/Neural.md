@@ -6,7 +6,7 @@
 
 ### Action
 
-**構文:** obj << Action
+**構文:** obj &lt;&lt; Action
 
 **説明:** 評価する式を挿入するための、プラットフォーム内の汎用トラップドア。プラットフォームに一時的にディスプレイボックスおよびデータテーブルのコンテキストを設定する。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**構文:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**構文:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **説明:** 作成されたプリセットをオブジェクトに適用する。保存された設定に合わせてオプションとカスタマイズが更新される。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Broadcast
 
-**構文:** obj << Broadcast(message)
+**構文:** obj &lt;&lt; Broadcast(message)
 
 **説明:** メッセージをプラットフォームに一括適用する。個々のオブジェクトから戻される結果がデータテーブルである場合は、可能な限り連結する。その最終的な形式は、Table BoxのSave Combined Tableオプションの結果と同じになるか、またはソース列を使用したConcanateオプションの結果と同じになる。それ以外の場合、結果はリストの形で戻される。
 
@@ -91,7 +91,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**構文:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**構文:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **説明:** プラットフォームの変数を変更するための設定パネルを追加する。
 
@@ -109,7 +109,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**構文:** obj << Copy ByGroup Script
+**構文:** obj &lt;&lt; Copy ByGroup Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -134,7 +134,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**構文:** obj << Copy Script
+**構文:** obj &lt;&lt; Copy Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -153,7 +153,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**構文:** obj << Data Table Window
+**構文:** obj &lt;&lt; Data Table Window
 
 **説明:** この分析に使用したデータテーブルのウィンドウを手前に表示する。
 
@@ -172,7 +172,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**構文:** obj << Get By Levels
+**構文:** obj &lt;&lt; Get By Levels
 
 **説明:** By列が指定されている場合、列名をキー、データ値を値とした連想配列を戻す。
 
@@ -189,7 +189,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**構文:** obj << Get ByGroup Script
+**構文:** obj &lt;&lt; Get ByGroup Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -215,7 +215,7 @@ Show( t );
 
 ### Get Container
 
-**構文:** obj << Get Container
+**構文:** obj &lt;&lt; Get Container
 
 **説明:** オブジェクトのコンテンツを含んだコンテナボックスの参照を戻す。
 
@@ -266,7 +266,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**構文:** obj << Get Data Table
+**構文:** obj &lt;&lt; Get Data Table
 
 **説明:** データテーブルへの参照を戻す。
 
@@ -286,7 +286,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**構文:** obj << Get Group Platform
+**構文:** obj &lt;&lt; Get Group Platform
 
 **説明:** 該当のプラットフォームがグループに属している場合に、Group Platformオブジェクトを戻す。それ以外の場合はEmpty()を戻す。
 
@@ -303,7 +303,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**構文:** obj << Get Script
+**構文:** obj &lt;&lt; Get Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -323,7 +323,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**構文:** obj << Get Script With Data Table
+**構文:** obj &lt;&lt; Get Script With Data Table
 
 **説明:** この分析を再現するスクリプト(JSL)をデータテーブルへの参照も含めて生成し、それを式として戻す。
 
@@ -343,7 +343,7 @@ Show( t );
 
 ### Get Timing
 
-**構文:** obj << Get Timing
+**構文:** obj &lt;&lt; Get Timing
 
 **説明:** プラットフォームの起動にかかった時間を取得する。
 
@@ -363,7 +363,7 @@ Show( t );
 
 ### Get Web Support
 
-**構文:** obj << Get Web Support
+**構文:** obj &lt;&lt; Get Web Support
 
 **説明:** ディスプレイオブジェクトにおけるインタラクティブHTMLサポートのレベルを数値で戻す。1は、一部または全部の要素がサポートされていることを示し、0は、サポートされないことを示す。
 
@@ -379,7 +379,7 @@ Show( s );
 
 ### Get Where Expr
 
-**構文:** obj << Get Where Expr
+**構文:** obj &lt;&lt; Get Where Expr
 
 **説明:** プラットフォームがBy()またはWhere()を使って起動された場合に、データをサブセットするためのWhere式を戻す。By()やWhere()が使われていない場合はEmpty()を戻す。
 
@@ -416,7 +416,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**構文:** obj << Local Data Filter
+**構文:** obj &lt;&lt; Local Data Filter
 
 **説明:** このプラットフォームに対してのみ有効なフィルタで、データを特定のグループまたは範囲にフィルタリングする。
 
@@ -472,7 +472,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**構文:** obj << Paste Local Data Filter
+**構文:** obj &lt;&lt; Paste Local Data Filter
 
 **説明:** クリップボードにあるローカルデータフィルタを現在のレポートに適用する。
 
@@ -493,7 +493,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**構文:** obj << Redo Analysis
+**構文:** obj &lt;&lt; Redo Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -512,7 +512,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**構文:** obj << Redo ByGroup Analysis
+**構文:** obj &lt;&lt; Redo ByGroup Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -537,7 +537,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**構文:** obj << Relaunch Analysis
+**構文:** obj &lt;&lt; Relaunch Analysis
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -556,7 +556,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**構文:** obj << Relaunch ByGroup
+**構文:** obj &lt;&lt; Relaunch ByGroup
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -581,7 +581,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**構文:** obj << Remove Column Switcher
+**構文:** obj &lt;&lt; Remove Column Switcher
 
 **説明:** プラットフォームに最後に追加された列スイッチャーを削除する。
 
@@ -601,7 +601,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**構文:** obj << Remove Local Data Filter
+**構文:** obj &lt;&lt; Remove Local Data Filter
 
 **説明:** すでに作成されているローカルデータフィルタを削除し、プラットフォームはデータテーブル内のすべてのデータを使用した状態に戻る。
 
@@ -640,9 +640,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**構文:** obj << Report;
-
-Report( obj )
+**構文:** obj &lt;&lt; Report;Report( obj )
 
 **説明:** レポートオブジェクトへの参照を戻す。
 
@@ -663,7 +661,7 @@ Show( t );
 
 ### Report View
 
-**構文:** obj << Report View( "完全"|"要約" )
+**構文:** obj &lt;&lt; Report View( "完全"|"要約" )
 
 **説明:** レポートビューは、プラットフォームレポートの詳細を表示するかどうかを決定する。Fullはすべての詳細を表示し、Summaryはプラットフォームにより限定されたものだけを表示する。 動作をカスタマイズするため、各ディスプレイボックスは<<Set Summary Behaviorメッセージをサポートする。
 
@@ -682,7 +680,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**構文:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** 分析を再現するためのJSLスクリプトを作成し、データテーブルにテーブルプロパティとして保存する。スクリプトの名前を指定できる。Append Suffixオプションは、スクリプト名に数字の接尾辞を追加する。これにより、同名のスクリプトが存在していても区別できる。Promptオプションは、ユーザにスクリプト名の指定を促す。Replaceオプションは、同名の既存のスクリプトを置き換える。
 
@@ -707,7 +705,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**構文:** obj << Save ByGroup Script to Journal
+**構文:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -732,7 +730,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**構文:** obj << Save ByGroup Script to Script Window
+**構文:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -757,7 +755,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**構文:** obj << Save Script for All Objects
+**構文:** obj &lt;&lt; Save Script for All Objects
 
 **説明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -776,7 +774,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**構文:** obj << Save Script for All Objects To Data Table( <name> )
+**構文:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **説明:** すべてのレポートオブジェクトを再現するスクリプトを現在のデータテーブルに保存する。このオプションは、ウィンドウ内にレポートが複数ある場合に便利。作成されるスクリプトの名前は、引用符で囲んで指定しない限り、1つ目のプラットフォーム名となる。
 
@@ -824,7 +822,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**構文:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** この分析を再現するJSLスクリプトを生成し、データテーブルのテーブルプロパティとして保存する。
 
@@ -843,7 +841,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**構文:** obj << Save Script to Journal
+**構文:** obj &lt;&lt; Save Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -862,7 +860,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**構文:** obj << Save Script to Report
+**構文:** obj &lt;&lt; Save Script to Report
 
 **説明:** この分析を再現するJSLスクリプトを生成し、レポートウィンドウに表示する。分析手順の記録を結果と一緒に残せる。
 
@@ -881,7 +879,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**構文:** obj << Save Script to Script Window
+**構文:** obj &lt;&lt; Save Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -965,7 +963,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**構文:** obj << Sync to Data Table Changes
+**構文:** obj &lt;&lt; Sync to Data Table Changes
 
 **説明:** 除外やデータの変更が行われた場合に同期する。
 
@@ -982,7 +980,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**構文:** obj << Title( "new title" )
+**構文:** obj &lt;&lt; Title( "new title" )
 
 **説明:** プラットフォームのタイトルを設定する。
 
@@ -1001,7 +999,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**構文:** obj << Top Report
+**構文:** obj &lt;&lt; Top Report
 
 **説明:** レポート内のルートノードへの参照を戻す。
 
@@ -1022,7 +1020,7 @@ Show( t );
 
 ### Transform Column
 
-**構文:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**構文:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **説明:** オブジェクトのローカルコンテキスト(通常はプラットフォーム)内に変換列を作成する。この変換列は、それを作成したプラットフォームの中のみで使用可能。
 
@@ -1041,7 +1039,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**構文:** obj << View Web XML
+**構文:** obj &lt;&lt; View Web XML
 
 **説明:** インタラクティブHTMLレポートの作成に使うXMLコードを戻す。
 
@@ -1077,7 +1075,7 @@ New Window( "Bivariate Equation",
 
 ### By
 
-**構文:** obj = Neural(...<By( column(s) )>...)
+**構文:** obj = Neural(...&lt;By( column(s) )&gt;...)
 
 **説明:** 指定された列の各水準に対して、個別に分析を実行する。
 
@@ -1119,7 +1117,7 @@ obj = dt << Neural(
 
 ### Freq
 
-**構文:** obj = Neural(...<Freq( column )>...)
+**構文:** obj = Neural(...&lt;Freq( column )&gt;...)
 
 **説明:** 分析の際に各行の度数として用いる値の列を指定する。
 
@@ -1157,7 +1155,7 @@ obj = dt << Neural(
 
 ### Validation
 
-**構文:** obj = Neural(...<Validation( column )>...)
+**構文:** obj = Neural(...&lt;Validation( column )&gt;...)
 
 **説明:** 検証セットを定義する数値列を指定する。異なる値が3つ以下の列でなければならない。
 
@@ -1214,7 +1212,7 @@ obj = dt << Neural(
 
 ### Neural
 
-**構文:** Neural( Y( column ), X( columns ), <Validation( column )> )
+**構文:** Neural( Y( column ), X( columns ), &lt;Validation( column )&gt; )
 
 **説明:** 入力変数の関数を使用して柔軟なモデルをあてはめ、1つまたは複数の応答変数を予測する。柔軟なフレームワークには、隠れ層や、複数のS字型関数の組み合わせが含まれる。
 
@@ -1234,7 +1232,7 @@ obj = dt << Neural(
 
 ### Fit
 
-**構文:** obj << Fit( NTanH|NLinear|NTanH2|NLinear2|NGaussian|NGaussian2( number ) )
+**構文:** obj &lt;&lt; Fit( NTanH|NLinear|NTanH2|NLinear2|NGaussian|NGaussian2( number ) )
 
 **説明:** ニューラルネットワークの隠れ層を指定し、データにあてはめる。複数層の指定、および、TanH以外の活性化関数はJMP Proでのみ使用可能。複数層と活性化関数を指定するには、引数をカンマで区切って入力する。
 
@@ -1252,7 +1250,7 @@ obj << Fit( NTanH( 4 ) );
 
 ### Go
 
-**構文:** obj << Go
+**構文:** obj &lt;&lt; Go
 
 **説明:** ニューラルネットモデルのあてはめを開始する。
 
@@ -1294,7 +1292,7 @@ obj = dt << Neural( Y( :weight ), X( :height, :age ), Informative Missing( 1 ), 
 
 ### Learning Rate
 
-**構文:** obj << Learning Rate( fraction )
+**構文:** obj &lt;&lt; Learning Rate( fraction )
 
 **説明:** ブースティングの学習率を指定する。1に近い値を指定すると、最終的なモデルに速く収束するが、過剰適合(オーバーフィット)になる傾向が高まる。 このオプションはJMP Proでのみ使用可能。
 
@@ -1334,7 +1332,7 @@ obj << Go;
 
 ### N Boost
 
-**構文:** obj << N Boost( number )
+**構文:** obj &lt;&lt; N Boost( number )
 
 **説明:** ブースティングに使用する最大モデル数を指定する。 このオプションはJMP Proでのみ使用可能。
 
@@ -1354,7 +1352,7 @@ obj << SendToReport( Dispatch( {}, "Model Launch", OutlineBox, {Close( 0 )} ) );
 
 ### Penalty Method
 
-**構文:** obj << Penalty Method( "2乗"|"絶対"|"重み減衰"|"ペナルティなし" )
+**構文:** obj &lt;&lt; Penalty Method( "2乗"|"絶対"|"重み減衰"|"ペナルティなし" )
 
 **説明:** ニューラルネットワークにおいて、尤度に対してペナルティ(罰則)を課す際のペナルティ手法を指定する。ペナルティパラメータにより、データに対する過剰適合(オーバーフィット)が軽減する。ほとんどのX変数がモデルの予測に寄与すると推測される場合は、[2乗]が有効。X変数の数が多く、X変数の少数だけが予測に寄与すると考えられる場合は、[絶対]および[重み減衰]が有効。
 
@@ -1374,7 +1372,7 @@ obj << SendToReport( Dispatch( {}, "Model Launch", OutlineBox, {Close( 0 )} ) );
 
 ### Robust Fit
 
-**構文:** obj << Robust Fit( state=0|1 )
+**構文:** obj &lt;&lt; Robust Fit( state=0|1 )
 
 **説明:** 最小2乗法ではなく最小絶対偏差を使用してモデルの学習を行う。このオプションは、応答値における外れ値の影響を最小化したい場合に有効。このオプションは、JMP Proで連続尺度の応答変数を使用している場合のみ利用可能。
 
@@ -1414,7 +1412,7 @@ obj << Go;
 
 ### Transform Covariates
 
-**構文:** obj << Transform Covariates( state=0|1 )
+**構文:** obj &lt;&lt; Transform Covariates( state=0|1 )
 
 **説明:** Johnson Su分布とJohnson Sb分布のいずれかを使って、すべての連続変数を正規分布に近づくように変換する。連続変数の変換は、外れ値や極端に歪んだ分布による影響を小さくするのに役立つ。 このオプションはJMP Proでのみ使用可能。
 
@@ -1434,7 +1432,7 @@ obj << SendToReport( Dispatch( {}, "Model Launch", OutlineBox, {Close( 0 )} ) );
 
 ### Validation Method
 
-**構文:** obj = Neural(...Validation Method( "Excluded Rows Holdback"|"Holdback", <fraction = 0.3333>|"KFold", <number = 5> )...);
+**構文:** obj = Neural(...Validation Method( "Excluded Rows Holdback"|"Holdback", &lt;fraction = 0.3333&gt;|"KFold", &lt;number = 5&gt; )...);
 
 **説明:** モデル検証に使用する手法を指定する。
 
@@ -1457,7 +1455,7 @@ obj = dt << Neural(
 
 #### Categorical Profiler
 
-**構文:** obj << (fit[number] << Categorical Profiler( state=0|1 ))
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Categorical Profiler( state=0|1 ))
 
 **説明:** カテゴリカルな予測プロファイルの表示/非表示を切り替える。このプロファイルでは、カテゴリカルな応答すべてが1行に表示される。
 
@@ -1477,7 +1475,7 @@ obj << (Fit[1] << Categorical Profiler( 1 ));
 
 #### Contour Profiler
 
-**構文:** obj << (fit[number] << Contour Profiler( state=0|1 ))
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Contour Profiler( state=0|1 ))
 
 **説明:** 等高線プロファイルの表示/非表示を切り替える。等高線プロファイルは、2因子ずつに対して、応答変数の予測値を等高線で描いたグラフである。モデルに連続尺度の因子が2つ以上含まれている場合のみ利用可能。
 
@@ -1497,7 +1495,7 @@ obj << (Fit[1] << Contour Profiler( 1 ));
 
 #### Decision Threshold
 
-**構文:** obj << fit([number] << Decision Threshold( state = 0|1, Set Probability Threshold( number ) ))
+**構文:** obj &lt;&lt; fit([number] &lt;&lt; Decision Threshold( state = 0|1, Set Probability Threshold( number ) ))
 
 **説明:** 各モデルの予測確率の分布や、予測値と実測値の表の表示/非表示を切り替える。確率の閾値を変更すると、分類の結果にどのように影響するかが確認できる。
 
@@ -1522,7 +1520,7 @@ obj << (Fit[1] << Decision Threshold( 1, Set Probability Threshold( .7 ) ));
 
 #### Diagram
 
-**構文:** obj << (fit[number] << Diagram( state=0|1 ))
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Diagram( state=0|1 ))
 
 **説明:** 隠れ層の構造を示すダイヤグラムの表示/非表示を切り替える。
 
@@ -1542,7 +1540,7 @@ obj << (Fit[1] << Diagram( 1 ));
 
 #### Get Average Absolute Error Test
 
-**構文:** obj << (fit[number] << Get Average Absolute Error Test)
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Get Average Absolute Error Test)
 
 **説明:** テストセットの平均絶対偏差統計量を戻す。 このオプションはJMP Proで検証セットを使用している場合のみ利用可能。
 
@@ -1567,7 +1565,7 @@ Show( ae );
 
 #### Get Average Absolute Error Training
 
-**構文:** obj << (fit[number] << Get Average Absolute Error Training)
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Get Average Absolute Error Training)
 
 **説明:** 学習セットの平均絶対偏差統計量を戻す。
 
@@ -1588,7 +1586,7 @@ Show( ae );
 
 #### Get Average Absolute Error Validation
 
-**構文:** obj << (fit[number] << Get Average Absolute Error Validation)
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Get Average Absolute Error Validation)
 
 **説明:** 検証セットの平均絶対偏差統計量を戻す。 このオプションは検証セットを使用している場合のみ利用可能。
 
@@ -1609,7 +1607,7 @@ Show( ae );
 
 #### Get Average Log Error Test
 
-**構文:** obj << (fit[number] << Get Average Log Error Test)
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Get Average Log Error Test)
 
 **説明:** テストデータの-log(p)の平均を戻す。pは応答の実測値が生じる確率の予測値。 このオプションはJMP Proで検証セットを使用している場合のみ利用可能。
 
@@ -1634,7 +1632,7 @@ Show( avg );
 
 #### Get Average Log Error Training
 
-**構文:** obj << (fit[number] << Get Average Log Error Training)
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Get Average Log Error Training)
 
 **説明:** 学習データの-log(p)の平均を戻す。pは応答の実測値が生じる確率の予測値。
 
@@ -1655,7 +1653,7 @@ Show( avg );
 
 #### Get Average Log Error Validation
 
-**構文:** obj << (fit[number] << Get Average Log Error Validation)
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Get Average Log Error Validation)
 
 **説明:** 検証データの-log(p)の平均を戻す。pは応答の実測値が生じる確率の予測値。 このオプションは検証セットを使用している場合のみ利用可能。
 
@@ -1676,7 +1674,7 @@ Show( avg );
 
 #### Get Confusion Matrix Test
 
-**構文:** obj << (fit[number] << Get Confusion Matrix Test)
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Get Confusion Matrix Test)
 
 **説明:** テストセットの混同行列を戻す。 このオプションはJMP Proで検証セットを使用している場合のみ利用可能。
 
@@ -1701,7 +1699,7 @@ Show( cm );
 
 #### Get Confusion Matrix Training
 
-**構文:** obj << (fit[number] << Get Confusion Matrix Training)
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Get Confusion Matrix Training)
 
 **説明:** 学習セットの混同行列を戻す。
 
@@ -1722,7 +1720,7 @@ Show( cm );
 
 #### Get Confusion Matrix Validation
 
-**構文:** obj << (fit[number] << Get Confusion Matrix Validation)
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Get Confusion Matrix Validation)
 
 **説明:** 検証セットの混同行列を戻す。 このオプションは検証セットを使用している場合のみ利用可能。
 
@@ -1743,7 +1741,7 @@ Show( cm );
 
 #### Get Confusion Rates Test
 
-**構文:** obj << (fit[number] << Get Confusion Rates Test)
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Get Confusion Rates Test)
 
 **説明:** テストセットの混同率を戻す。 このオプションはJMP Proで検証セットを使用している場合のみ利用可能。
 
@@ -1768,7 +1766,7 @@ Show( cr );
 
 #### Get Confusion Rates Training
 
-**構文:** obj << (fit[number] << Get Confusion Rates Training)
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Get Confusion Rates Training)
 
 **説明:** 学習セットの混同率を戻す。
 
@@ -1789,7 +1787,7 @@ Show( cr );
 
 #### Get Confusion Rates Validation
 
-**構文:** obj << (fit[number] << Get Confusion Rates Validation)
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Get Confusion Rates Validation)
 
 **説明:** 検証セットの混同率を戻す。 このオプションは検証セットを使用している場合のみ利用可能。
 
@@ -1810,7 +1808,7 @@ Show( cr );
 
 #### Get Gen RSquare Test
 
-**構文:** obj << (fit[number] << Get Gen RSquare Test)
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Get Gen RSquare Test)
 
 **説明:** テストセットの一般化R2乗統計量を戻す。 このオプションはJMP Proで検証セットを使用している場合のみ利用可能。
 
@@ -1835,7 +1833,7 @@ Show( rt );
 
 #### Get Gen RSquare Training
 
-**構文:** obj << (fit[number] << Get Gen RSquare Training)
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Get Gen RSquare Training)
 
 **説明:** 学習セットの一般化R2乗統計量を戻す。
 
@@ -1856,7 +1854,7 @@ Show( rt );
 
 #### Get Gen RSquare Validation
 
-**構文:** obj << (fit[number] << Get Gen RSquare Validation)
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Get Gen RSquare Validation)
 
 **説明:** 検証セットの一般化R2乗統計量を戻す。 このオプションは検証セットを使用している場合のみ利用可能。
 
@@ -1877,7 +1875,7 @@ Show( rt );
 
 #### Get MM SAS DATA Step
 
-**構文:** text = obj << (fit[number] << Get MM SAS Data Step)
+**構文:** text = obj &lt;&lt; (fit[number] &lt;&lt; Get MM SAS Data Step)
 
 **説明:** SAS Model Managerに登録できるSASコードを作成する。
 
@@ -1897,7 +1895,7 @@ code = obj << (Fit[1] << Get MM SAS Data Step);
 
 #### Get Measures
 
-**構文:** obj << (fit[number] << Get Measures)
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Get Measures)
 
 **説明:** あてはめたモデルの適合度指標を戻す。
 
@@ -1918,7 +1916,7 @@ obj << (Fit[1] << Get Measures);
 
 #### Get Misclassification Rate Test
 
-**構文:** obj << (fit[number] << Get Misclassification Rate Test)
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Get Misclassification Rate Test)
 
 **説明:** テストセットの誤分類率を戻す。 このオプションはJMP Proで検証セットを使用している場合のみ利用可能。
 
@@ -1943,7 +1941,7 @@ Show( mr );
 
 #### Get Misclassification Rate Training
 
-**構文:** obj << (fit[number] << Get Misclassification Rate Training)
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Get Misclassification Rate Training)
 
 **説明:** 学習セットの誤分類率を戻す。
 
@@ -1964,7 +1962,7 @@ Show( mrt );
 
 #### Get Misclassification Rate Validation
 
-**構文:** obj << (fit[number] << Get Misclassification Rate Validation)
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Get Misclassification Rate Validation)
 
 **説明:** 検証セットの誤分類率を戻す。 このオプションは検証セットを使用している場合のみ利用可能。
 
@@ -1985,7 +1983,7 @@ Show( mrt );
 
 #### Get NBoost
 
-**構文:** obj << (fit[number] << Get NBoost)
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Get NBoost)
 
 **説明:** ブースティングに使用されたモデルの数を戻す。
 
@@ -2006,7 +2004,7 @@ Show( n );
 
 #### Get Precision Recall Area Test
 
-**構文:** obj << (fit[number] << Get Precision Recall Area Test)
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Get Precision Recall Area Test)
 
 **説明:** テストセットのPR曲線下面積を戻す。この曲線下面積を計算するには、PR曲線が表示されていなければならない。 このオプションはJMP Proで検証セットを使用している場合のみ利用可能。
 
@@ -2032,7 +2030,7 @@ Show( ra );
 
 #### Get Precision Recall Area Training
 
-**構文:** obj << (fit[number] << Get Precision Recall Area Training)
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Get Precision Recall Area Training)
 
 **説明:** 学習セットのPR曲線下面積を戻す。この曲線下面積を計算するには、PR曲線が表示されていなければならない。
 
@@ -2054,7 +2052,7 @@ Show( ra );
 
 #### Get Precision Recall Area Validation
 
-**構文:** obj << (fit[number] << Get Precision Recall Area Validation)
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Get Precision Recall Area Validation)
 
 **説明:** 検証セットのPR曲線下面積を戻す。この曲線下面積を計算するには、PR曲線が表示されていなければならない。 このオプションは検証セットを使用している場合のみ利用可能。
 
@@ -2076,7 +2074,7 @@ Show( ra );
 
 #### Get Prediction Formula
 
-**構文:** obj << (fit[number] << Get Prediction Formula)
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Get Prediction Formula)
 
 **説明:** 予測式の列を作成するスクリプトを戻す。
 
@@ -2096,7 +2094,7 @@ obj << (Fit[1] << Get Prediction Formula);
 
 #### Get RMS Error Test
 
-**構文:** obj << (fit[number] << Get RMS Error Test)
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Get RMS Error Test)
 
 **説明:** テストデータのRMSE(平均平方誤差の平方根)を戻す。 このオプションはJMP Proで検証セットを使用している場合のみ利用可能。
 
@@ -2121,7 +2119,7 @@ Show( re );
 
 #### Get RMS Error Training
 
-**構文:** obj << (fit[number] << Get RMS Error Training)
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Get RMS Error Training)
 
 **説明:** 学習データのRMSE(平均平方誤差の平方根)を戻す。
 
@@ -2142,7 +2140,7 @@ Show( re );
 
 #### Get RMS Error Validation
 
-**構文:** obj << (fit[number] << Get RMS Error Validation)
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Get RMS Error Validation)
 
 **説明:** 検証データのRMSE(平均平方誤差の平方根)を戻す。 このオプションは検証セットを使用している場合のみ利用可能。
 
@@ -2163,7 +2161,7 @@ Show( re );
 
 #### Get ROC Area Test
 
-**構文:** obj << (fit[number] << Get ROC Area Test)
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Get ROC Area Test)
 
 **説明:** テストデータのAUC(area under the curve)を戻す。このAUCは、受診者動作曲線(ROC曲線)における曲線の下の面積。AUCを計算するには、ROC曲線が表示されている必要がある。 このオプションはJMP Proで検証セットを使用している場合のみ利用可能。
 
@@ -2189,7 +2187,7 @@ Show( ra );
 
 #### Get ROC Area Training
 
-**構文:** obj << (fit[number] << Get ROC Area Training)
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Get ROC Area Training)
 
 **説明:** 学習データのAUCを戻す。AUC (Area Under Cuvve)は、受診者動作曲線(ROC曲線)の下の面積。AUCを計算するには、ROC曲線が表示されている必要がある。
 
@@ -2211,7 +2209,7 @@ Show( ra );
 
 #### Get ROC Area Validation
 
-**構文:** obj << (fit[number] << Get ROC Area Validation)
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Get ROC Area Validation)
 
 **説明:** 検証データのAUCを戻す。AUC (Area Under Cuvve)は、受診者動作曲線(ROC曲線)の下の面積。AUCを計算するには、ROC曲線が表示されている必要がある。 このオプションは検証セットを使用している場合のみ利用可能。
 
@@ -2233,7 +2231,7 @@ Show( ra );
 
 #### Get RSquare Test
 
-**構文:** obj << (fit[number] << Get RSquare Test)
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Get RSquare Test)
 
 **説明:** テストセットのエントロピーR2乗統計量を戻す。 このオプションはJMP Proで検証セットを使用している場合のみ利用可能。
 
@@ -2258,7 +2256,7 @@ Show( rt );
 
 #### Get RSquare Training
 
-**構文:** obj << (fit[number] << Get RSquare Training)
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Get RSquare Training)
 
 **説明:** 学習セットのエントロピーR2乗統計量を戻す。
 
@@ -2280,7 +2278,7 @@ Show( rt );
 
 #### Get RSquare Validation
 
-**構文:** obj << (fit[number] << Get RSquare Validation)
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Get RSquare Validation)
 
 **説明:** 検証セットのエントロピーR2乗統計量を戻す。 このオプションは検証セットを使用している場合のみ利用可能。
 
@@ -2302,7 +2300,7 @@ Show( rt );
 
 #### Get SAS DATA Step
 
-**構文:** text = obj << (fit[number] << Get SAS Data Step)
+**構文:** text = obj &lt;&lt; (fit[number] &lt;&lt; Get SAS Data Step)
 
 **説明:** 新しいデータセットにスコアを付けるためのSASコードを作成する。
 
@@ -2322,7 +2320,7 @@ code = obj << (Fit[1] << Get SAS Data Step);
 
 #### Get Seconds
 
-**構文:** obj << (fit[number] << Get Seconds)
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Get Seconds)
 
 **説明:** 分析にかかる時間(秒)を戻す。
 
@@ -2343,7 +2341,7 @@ Show( s );
 
 #### Lift Curve
 
-**構文:** obj << (fit[number] << Lift Curve( state=0|1 ))
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Lift Curve( state=0|1 ))
 
 **説明:** リフトチャートの表示/非表示を切り替える。リフトチャートは、観測値の割合に対してリフトをプロットしたもので、モデルの予測能力を別の観点から見ることができる。検証列を指定した場合は、学習セット・検証セット・テストセットのそれぞれに対してプロットが表示される。
 
@@ -2363,7 +2361,7 @@ obj << (Fit[1] << Lift Curve( 1 ));
 
 #### Make SAS DATA Step
 
-**構文:** obj << (fit[number] << Make SAS Data Step)
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Make SAS Data Step)
 
 **説明:** 新しいデータセットにスコアを付けるためのSASコードを作成する。
 
@@ -2383,7 +2381,7 @@ obj << (Fit[1] << Make SAS Data Step);
 
 #### Plot Actual by Predicted
 
-**構文:** obj << (fit[number] << Plot Actual by Predicted( state=0|1 ))
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Plot Actual by Predicted( state=0|1 ))
 
 **説明:** 縦軸に実測値、横軸に予測値を表示したプロットの表示/非表示を切り替える。このオプションは、連続尺度の応答でのみ利用できる。検証を用いた場合は、学習セット・検証セット・テストセットのそれぞれに対してプロットが表示される。
 
@@ -2403,7 +2401,7 @@ obj << (Fit[1] << Plot Actual By Predicted( 1 ));
 
 #### Plot Residual by Predicted
 
-**構文:** obj << (fit[number] << Plot Residual by Predicted( state= 0|1 ))
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Plot Residual by Predicted( state= 0|1 ))
 
 **説明:** 縦軸に残差、横軸に予測値を表示したプロットの表示/非表示を切り替える。このオプションは、連続尺度の応答でのみ利用できる。検証を用いた場合は、学習セット・検証セット・テストセットのそれぞれに対してプロットが表示される。
 
@@ -2423,7 +2421,7 @@ obj << (Fit[1] << Plot Residual By Predicted( 1 ));
 
 #### Precision Recall Curve
 
-**構文:** obj << (fit[number] << Precision Recall Curve( state=0|1 ))
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Precision Recall Curve( state=0|1 ))
 
 **説明:** 応答変数の水準ごとに描かれるPR曲線の表示/非表示を切り替える。PR曲線は、さまざまな閾値における適合率と再現率をプロットしたもの。検証列を指定した場合は、学習セット・検証セット・テストセットのそれぞれに対してプロットが表示される。
 
@@ -2443,7 +2441,7 @@ obj << (Fit[1] << Precision Recall Curve( 1 ));
 
 #### Profiler
 
-**構文:** obj << (fit[number] << Profiler( state=0|1 ))
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Profiler( state=0|1 ))
 
 **説明:** 予測プロファイルの表示/非表示を切り替える。予測プロファイルは、1因子ずつスライスしながら予測式を図示したものである。予測プロファイルでは、最適化を行える。
 
@@ -2463,7 +2461,7 @@ obj << (Fit[1] << Profiler( 1 ));
 
 #### Publish Prediction Formula
 
-**構文:** obj << (fit[number] << Publish Prediction Formula)
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Publish Prediction Formula)
 
 **説明:** 予測式を作成し、列の計算式として「計算式デポ」プラットフォームに計算式列のスクリプトとして保存する。
 
@@ -2483,7 +2481,7 @@ obj << (Fit[1] << Publish Prediction Formula);
 
 #### ROC Curve
 
-**構文:** obj << (fit[number] << ROC Curve( state=0|1 ))
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; ROC Curve( state=0|1 ))
 
 **説明:** 応答変数の各水準に対し、ROC曲線(受診者動作特性曲線)の表示/非表示を切り替える。ROC曲線は、「感度」と「1-特異度」をプロットした曲線。検証列を指定した場合は、学習セット・検証セット・テストセットのそれぞれに対してプロットが表示される。
 
@@ -2503,7 +2501,7 @@ obj << (Fit[1] << ROC Curve( 1 ));
 
 #### Remove Fit
 
-**構文:** obj << (fit[number] << Remove Fit)
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Remove Fit)
 
 **説明:** モデルのレポート全体を削除する。
 
@@ -2524,7 +2522,7 @@ obj << (Fit[1] << Remove Fit);
 
 #### Save Fast Formulas
 
-**構文:** obj << (fit[number] << Save Fast Formulas)
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Save Fast Formulas)
 
 **説明:** 隠れ層ノードの計算式が組み込まれた応答の予測式をデータテーブルに保存する。このオプションで作成された計算式は、高速だが、プロファイルでは使用できない。新しい計算式列として、この列はデータテーブルに保存される。
 
@@ -2544,7 +2542,7 @@ obj << (Fit[1] << Save Fast Formulas);
 
 #### Save Formulas
 
-**構文:** obj << (fit[number] << Save Formulas)
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Save Formulas)
 
 **説明:** 応答の予測式と隠れ層ノードの計算式を個別にデータテーブルに保存する。新しい計算式列として、これらの列はデータテーブルに保存される。
 
@@ -2564,7 +2562,7 @@ obj << (Fit[1] << Save Formulas);
 
 #### Save Profile Formulas
 
-**構文:** obj << (fit[number] << Save Profile Formulas)
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Save Profile Formulas)
 
 **説明:** 隠れ層ノードの計算式が組み込まれた応答の予測式をデータテーブルに保存する。このオプションで作成された計算式は、プロファイルで使用できる。新しい計算式列として、この列はデータテーブルに保存される。
 
@@ -2584,7 +2582,7 @@ obj << (Fit[1] << Save Profile Formulas);
 
 #### Save Transformed Covariates
 
-**構文:** obj << (fit[number] << Save Transformed Covariates)
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Save Transformed Covariates)
 
 **説明:** 共変量の変換に使用した計算式をデータテーブルに保存する。このオプションは、JMP Proでプラットフォームの起動時に[説明変数を変換]オプションを指定した場合のみ利用可能。新しい計算式列として、これらの列はデータテーブルに保存される。
 
@@ -2605,7 +2603,7 @@ obj << (Fit[1] << Save Transformed Covariates);
 
 #### Save Validation
 
-**構文:** obj << (fit[number] << Save Validation)
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Save Validation)
 
 **説明:** 学習セットと検証セットにどの行が使用されたかを示す列をデータテーブルに保存する。新しい列として、この列はデータテーブルに保存される。
 
@@ -2625,7 +2623,7 @@ obj << (Fit[1] << Save Validation);
 
 #### Show Estimates
 
-**構文:** obj << (fit[number] << Show Estimates( state=0|1 ))
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Show Estimates( state=0|1 ))
 
 **説明:** パラメータ推定値の表示/非表示を切り替える。
 
@@ -2645,7 +2643,7 @@ obj << (Fit[1] << Show Estimates( 1 ));
 
 #### Surface Profiler
 
-**構文:** obj << (fit[number] << Surface Profiler( state=0|1 ))
+**構文:** obj &lt;&lt; (fit[number] &lt;&lt; Surface Profiler( state=0|1 ))
 
 **説明:** 3次元曲面プロットの表示/非表示を切り替える。このオプションは、モデルに2つ以上のX変数がある場合のみ利用可能。
 

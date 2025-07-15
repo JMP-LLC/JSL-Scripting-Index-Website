@@ -24,7 +24,7 @@ obj = dt << Principal Components(
 
 ### By
 
-**Syntax:** obj = Principal Components(...<By( column(s) )>...)
+**Syntax:** obj = Principal Components(...&lt;By( column(s) )&gt;...)
 
 **Description:** Performs a separate analysis for each level of the specified column.
 
@@ -46,7 +46,7 @@ obj = dt << Principal Components(
 
 ### Freq
 
-**Syntax:** obj = Principal Components(...<Freq( column )>...)
+**Syntax:** obj = Principal Components(...&lt;Freq( column )&gt;...)
 
 **Description:** Specifies a column whose values assign a frequency to each row for the analysis.
 
@@ -64,7 +64,7 @@ obj = dt << Principal Components(
 
 ### Supplementary Variable
 
-**Syntax:** obj << Supplementary Variable( column(s) )
+**Syntax:** obj &lt;&lt; Supplementary Variable( column(s) )
 
 **Description:** Specifies one or more supplementary variables. Supplementary variables are not used in any of the calculations in the platform and including them does not affect the results. These variables can improve data interpretation or be used in future analyses.
 
@@ -82,7 +82,7 @@ obj = dt << Principal Components(
 
 ### Weight
 
-**Syntax:** obj = Principal Components(...<Weight( column )>...)
+**Syntax:** obj = Principal Components(...&lt;Weight( column )&gt;...)
 
 **Description:** Specifies a column whose values assign a weight to each row for the analysis.
 
@@ -100,7 +100,7 @@ obj = dt << Principal Components(
 
 ### Y
 
-**Syntax:** obj = Principal Components(...<Y( column(s) )>...)
+**Syntax:** obj = Principal Components(...&lt;Y( column(s) )&gt;...)
 
 **Description:** Specifies the variables to analyze for components.
 
@@ -116,7 +116,7 @@ obj = dt << Principal Components(
 
 ### Z
 
-**Syntax:** obj << Z( column(s) )
+**Syntax:** obj &lt;&lt; Z( column(s) )
 
 **Description:** Specifies one or more supplementary variables. Supplementary variables are not used in any of the calculations in the platform and including them does not affect the results. These variables can improve data interpretation or be used in future analyses.
 
@@ -136,7 +136,7 @@ obj = dt << Principal Components(
 
 ### 3D Score Plot
 
-**Syntax:** obj << 3D Score Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; 3D Score Plot( state=0|1 )
 
 **Description:** Shows or hides a 3-D scatterplot of the principal components as rays in a three-dimensional space.
 
@@ -154,7 +154,7 @@ obj << "3D Score Plot"n( 1 );
 
 ### Arrow Lines
 
-**Syntax:** obj << Arrow Lines( state=0|1 )
+**Syntax:** obj &lt;&lt; Arrow Lines( state=0|1 )
 
 **Description:** Shows or hides the arrow lines in the graph.
 
@@ -172,7 +172,7 @@ obj << Arrow Lines( 0 );
 
 ### Bartlett Test
 
-**Syntax:** obj << Bartlett Test( state=0|1 )
+**Syntax:** obj &lt;&lt; Bartlett Test( state=0|1 )
 
 **Description:** Shows or hides a report of the results of the homogeneity test for each of the principal components.
 
@@ -190,7 +190,7 @@ obj << Bartlett Test( 1 );
 
 ### Biplot
 
-**Syntax:** obj << Biplot( number )
+**Syntax:** obj &lt;&lt; Biplot( number )
 
 **Description:** Shows or hides a plot that overlays the score plot and the loading plot for the specified number of components.
 
@@ -208,7 +208,7 @@ obj << Biplot( 2 );
 
 ### Cluster Components
 
-**Syntax:** obj << Cluster Components( state=0|1 )
+**Syntax:** obj &lt;&lt; Cluster Components( state=0|1 )
 
 **Description:** Shows or hides the Standardized Components report, which contains the eigenvectors of the first principal component within each cluster. On by default.
 
@@ -223,7 +223,7 @@ obj << Cluster Variables( Cluster Components( 1 ) );
 
 ### Cluster Members
 
-**Syntax:** obj << Cluster Members( state=0|1 )
+**Syntax:** obj &lt;&lt; Cluster Members( state=0|1 )
 
 **Description:** Shows or hides a report of the variables in each cluster. On by default.
 
@@ -238,7 +238,7 @@ obj << Cluster Variables( Cluster Members( 1 ) );
 
 ### Cluster Summary
 
-**Syntax:** obj << Cluster Summary( state=0|1 )
+**Syntax:** obj &lt;&lt; Cluster Summary( state=0|1 )
 
 **Description:** Shows or hides a report that summarizes the results of variable clustering. On by default.
 
@@ -253,7 +253,7 @@ obj << Cluster Variables( Cluster Summary( 1 ) );
 
 ### Cluster Variables
 
-**Syntax:** obj << Cluster Variables( state=0|1 )
+**Syntax:** obj &lt;&lt; Cluster Variables( state=0|1 )
 
 **Description:** Clusters variables into similar groups.
 
@@ -271,7 +271,7 @@ obj << Cluster Variables( 1 );
 
 ### Color Map on Correlations
 
-**Syntax:** obj << Color Map on Correlations( state=0|1 )
+**Syntax:** obj &lt;&lt; Color Map on Correlations( state=0|1 )
 
 **Description:** Shows or hides a color map of the correlations between variables, where the variables are arranged so that members of the same cluster are adjacent in the plot. On by default.
 
@@ -286,7 +286,7 @@ obj << Cluster Variables( Color Map On Correlations( 1 ) );
 
 ### Coordinate Matrix
 
-**Syntax:** obj << Coordinate Matrix( state=0|1 )
+**Syntax:** obj &lt;&lt; Coordinate Matrix( state=0|1 )
 
 **Description:** Shows or hides a table that contains the component coordinates. This option is available only when there is a categorical variable in the analysis.
 
@@ -304,7 +304,7 @@ obj << Coordinate  Matrix( 1 );
 
 ### Correlations
 
-**Syntax:** obj << Correlations( state=0|1 )
+**Syntax:** obj &lt;&lt; Correlations( state=0|1 )
 
 **Description:** Shows or hides a matrix of correlation coefficients that summarize the strength of the linear relationships between each pair of Y variables.
 
@@ -322,7 +322,7 @@ obj << Correlations( 1 );
 
 ### Covariance Matrix
 
-**Syntax:** obj << Covariance Matrix( state=0|1 )
+**Syntax:** obj &lt;&lt; Covariance Matrix( state=0|1 )
 
 **Description:** Shows or hides a matrix of covariances for each pair of Y variables.
 
@@ -340,7 +340,7 @@ obj << Covariance Matrix( 1 );
 
 ### Eigenvalues
 
-**Syntax:** obj << Eigenvalues( state=0|1 )
+**Syntax:** obj &lt;&lt; Eigenvalues( state=0|1 )
 
 **Description:** Shows or hides the sorted eigenvalues, their percent of variation, and the cumulative percent of variation.
 
@@ -358,7 +358,7 @@ obj << Eigenvalues( 1 );
 
 ### Eigenvectors
 
-**Syntax:** obj << Eigenvectors( state=0|1 )
+**Syntax:** obj &lt;&lt; Eigenvectors( state=0|1 )
 
 **Description:** Shows or hides a report of the eigenvectors for each of the principal components.
 
@@ -400,7 +400,7 @@ obj = dt << Principal Components(
 
 ### Factor Analysis
 
-**Syntax:** obj << Factor Analysis( ML|PC, ONE|SMC, n Rotated, Varimax| Biquartimax| Equamax| Factorparsimax| Orthomax| Parsimax| Quartimax| Biquartimin| Covarimin| Obbiquartimax| Obequamax| Obfactorparsimax| Obequamax| Obfactorparsimax| Oblimin| Obparsimax| Obquartimax| Obvarimax| Quartimin| UnRotated| Promax )
+**Syntax:** obj &lt;&lt; Factor Analysis( ML|PC, ONE|SMC, n Rotated, Varimax| Biquartimax| Equamax| Factorparsimax| Orthomax| Parsimax| Quartimax| Biquartimin| Covarimin| Obbiquartimax| Obequamax| Obfactorparsimax| Obequamax| Obfactorparsimax| Oblimin| Obparsimax| Obquartimax| Obvarimax| Quartimin| UnRotated| Promax )
 
 **Description:** Shows or hides a report of the factor rotation pattern for the principal components.
 
@@ -418,7 +418,7 @@ obj << Factor Analysis( "ML", "SMC", 2, "Varimax" );
 
 ### Formatted Loading Matrix
 
-**Syntax:** obj << Formatted Loading Matrix( state=0|1 )
+**Syntax:** obj &lt;&lt; Formatted Loading Matrix( state=0|1 )
 
 **Description:** Shows or hides a report that contains the formatted component loadings.
 
@@ -436,7 +436,7 @@ obj << Formatted Loading Matrix( 1 );
 
 ### Impute Missing Data
 
-**Syntax:** obj << Impute Missing Data
+**Syntax:** obj &lt;&lt; Impute Missing Data
 
 **Description:** Imputes missing values for all the Y variables and creates a new data table containing both the existing values and newly imputed missing data values.
 
@@ -451,7 +451,7 @@ obj << Impute Missing Data( 1 );
 
 ### Launch Fit Model
 
-**Syntax:** obj << Launch Fit Model
+**Syntax:** obj &lt;&lt; Launch Fit Model
 
 **Description:** Launches Fit Model with the Most Representative variables as predictors. Select Save Cluster Components first if you want to use these as predictors.
 
@@ -466,7 +466,7 @@ obj << Cluster Variables( Launch Fit Model );
 
 ### Loading Matrix
 
-**Syntax:** obj << Loading Matrix( number )
+**Syntax:** obj &lt;&lt; Loading Matrix( number )
 
 **Description:** Show or hides a table that contains the component loadings.
 
@@ -484,7 +484,7 @@ obj << Loading Matrix( 1 );
 
 ### Loading Plot
 
-**Syntax:** obj << Loading Plot( number )
+**Syntax:** obj &lt;&lt; Loading Plot( number )
 
 **Description:** Shows or hides a matrix of plots that are two-dimensional representations of factor loadings.
 
@@ -522,7 +522,7 @@ obj = dt << Principal Components(
 
 ### Model Driven Multivariate Control Chart
 
-**Syntax:** obj << Model Driven Multivariate Control Chart
+**Syntax:** obj &lt;&lt; Model Driven Multivariate Control Chart
 
 **Description:** Launches Model Driven Multivariate Control Chart for specified number of Components
 
@@ -559,7 +559,7 @@ obj = dt << Principal Components(
 
 ### Outlier Analysis
 
-**Syntax:** obj << Outlier Analysis( state=0|1 )
+**Syntax:** obj &lt;&lt; Outlier Analysis( state=0|1 )
 
 **Description:** Shows or hides the Outlier Analysis report, which enables you to detect outliers in the data through T² and contribution statistics.
 
@@ -578,7 +578,7 @@ obj = dt << Principal Components(
 
 ### Partial Contribution of Variables
 
-**Syntax:** obj << Partial Contribution of Variables( number )
+**Syntax:** obj &lt;&lt; Partial Contribution of Variables( number )
 
 **Description:** Shows or hides a table that contains the partial contributions of variables and a plot of the partial contributions for the first three principal components.
 
@@ -598,7 +598,7 @@ obj << Partial Contribution of Variables(
 
 ### Profiler for Predicteds
 
-**Syntax:** obj << Profiler for Predicteds
+**Syntax:** obj &lt;&lt; Profiler for Predicteds
 
 **Description:** Launches a profiler for the predictions using the specified number of components.
 
@@ -616,7 +616,7 @@ obj << Profiler for Predicteds( 2 );
 
 ### Publish Components Formulas
 
-**Syntax:** obj << Publish Components Formulas( number )
+**Syntax:** obj &lt;&lt; Publish Components Formulas( number )
 
 **Description:** Creates a specified number of principal component formulas and saves them as formula column scripts in the Formula Depot platform. If a Formula Depot report is not open, this option creates a Formula Depot report.
 
@@ -634,7 +634,7 @@ obj << Publish Components Formulas( 3 );
 
 ### Publish Normalized DModX Formula
 
-**Syntax:** obj << Publish Normalized DModX Formula( number )
+**Syntax:** obj &lt;&lt; Publish Normalized DModX Formula( number )
 
 **Description:** Saves the normalized DModX formula based on a specified number of principal components as a formula column script in the Formula Depot platform. If a Formula Depot report is not open, this option creates a Formula Depot report.
 
@@ -652,7 +652,7 @@ obj << Publish Normalized DModX Formula( 3 );
 
 ### Save Cluster Components
 
-**Syntax:** obj << Save Cluster Components
+**Syntax:** obj &lt;&lt; Save Cluster Components
 
 **Description:** Saves the cluster (first principal) component for each cluster to the data table.
 
@@ -667,7 +667,7 @@ obj << Cluster Variables( Save Cluster Components );
 
 ### Save Imputed Formula
 
-**Syntax:** obj << Save Imputed Formula
+**Syntax:** obj &lt;&lt; Save Imputed Formula
 
 **Description:** Imputes values where the Y column values are missing. Creates and saves a new column with an imputation formula to the original data table.
 
@@ -682,7 +682,7 @@ obj << Save Imputed Formula( 1 );
 
 ### Save Individual Partial Contributions
 
-**Syntax:** obj << Save Individual Partial Contributions( number )
+**Syntax:** obj &lt;&lt; Save Individual Partial Contributions( number )
 
 **Description:** Saves individual partial contributions to new columns in the data table.
 
@@ -697,7 +697,7 @@ obj << Save Individual Partial Contributions( 3 );
 
 ### Save Individual Squared Cosines
 
-**Syntax:** obj << Save Individual Squared Cosines( number )
+**Syntax:** obj &lt;&lt; Save Individual Squared Cosines( number )
 
 **Description:** Saves individual squared cosines to new columns in the data table.
 
@@ -712,7 +712,7 @@ obj << Save Individual Squared Cosines( 3 );
 
 ### Save Low Rank Principal Components
 
-**Syntax:** obj << Save Low Rank Principal Components( number )
+**Syntax:** obj &lt;&lt; Save Low Rank Principal Components( number )
 
 **Description:** Saves the principal component scores from the low-rank data, cleaned of outliers and noise. This option applies only to the Robust PCA estimation method.
 
@@ -732,7 +732,7 @@ obj << Save Low Rank Principal Components( 3 );
 
 ### Save Normalized DModX
 
-**Syntax:** obj << Save Normalized DModX( number )
+**Syntax:** obj &lt;&lt; Save Normalized DModX( number )
 
 **Description:** Saves the normalized DModX values to a new column in the data table.
 
@@ -747,7 +747,7 @@ obj << Save Normalized DMODX( 3 );
 
 ### Save Predicteds
 
-**Syntax:** obj << Save Predicteds( number )
+**Syntax:** obj &lt;&lt; Save Predicteds( number )
 
 **Description:** Saves the predicted variables with a specified number of principal components to new columns in the data table.
 
@@ -762,7 +762,7 @@ obj << Save Predicteds( 3 );
 
 ### Save Predicteds as Component Formulas
 
-**Syntax:** obj << Save Predicteds as Component Formulas
+**Syntax:** obj &lt;&lt; Save Predicteds as Component Formulas
 
 **Description:** Saves the component formulas for a specified number of principal components to new columns in the data table.
 
@@ -780,7 +780,7 @@ obj << Save Predicteds As Component Formulas( 3 );
 
 ### Save Principal Component Script
 
-**Syntax:** obj << Save Principal Component Script( number )
+**Syntax:** obj &lt;&lt; Save Principal Component Script( number )
 
 **Description:** Saves a script to the script window that when run will create new columns in the data table for the given number of principal components.
 
@@ -798,7 +798,7 @@ obj << save principal Component script( 3 );
 
 ### Save Principal Component Values
 
-**Syntax:** obj << Save Principal Component Values( number )
+**Syntax:** obj &lt;&lt; Save Principal Component Values( number )
 
 **Description:** Saves the given number of principal components to new non-formula columns in the data table, including from imputed cells.
 
@@ -816,7 +816,7 @@ obj << Save Principal Component Values( 3 );
 
 ### Save Principal Components
 
-**Syntax:** obj << Save Principal Components( number )
+**Syntax:** obj &lt;&lt; Save Principal Components( number )
 
 **Description:** Saves the given number of principal components to new formula columns in the data table.
 
@@ -834,7 +834,7 @@ obj << Save Principal Components( 3 );
 
 ### Save Principal Components with Imputation
 
-**Syntax:** obj << Save Principal Components with Imputation( number )
+**Syntax:** obj &lt;&lt; Save Principal Components with Imputation( number )
 
 **Description:** Saves the given number of principal components computed using imputation on missing values to new columns in the data table.
 
@@ -852,7 +852,7 @@ obj << Save Principal Components with Imputation( 3 );
 
 ### Save Rotated Components
 
-**Syntax:** obj << Save Rotated Components
+**Syntax:** obj &lt;&lt; Save Rotated Components
 
 **Description:** Saves the rotated components to new columns in the data table.
 
@@ -871,7 +871,7 @@ obj << Save Rotated Components;
 
 ### Save Rotated Components with Imputation
 
-**Syntax:** obj << Save Rotated Components with Imputation
+**Syntax:** obj &lt;&lt; Save Rotated Components with Imputation
 
 **Description:** Saves the rotated components computed using imputation on missing values to new columns in the data table. Note: This option is only available after the Factor Rotation has been run.
 
@@ -890,7 +890,7 @@ obj << Save Rotated Components with Imputation;
 
 ### Scatterplot Matrix
 
-**Syntax:** obj << Scatterplot Matrix( number )
+**Syntax:** obj &lt;&lt; Scatterplot Matrix( number )
 
 **Description:** Shows or hides a matrix of score and loading plots for a specified number of principal components.
 
@@ -908,7 +908,7 @@ obj << Scatterplot Matrix( 4 );
 
 ### Score Ellipse Coverage
 
-**Syntax:** obj << Score Ellipse Coverage( "0.90"|"0.95"|"0.99"|"1-sigma"|"2-sigma"|"3-sigma"|"Other…" )
+**Syntax:** obj &lt;&lt; Score Ellipse Coverage( "0.90"|"0.95"|"0.99"|"1-sigma"|"2-sigma"|"3-sigma"|"Other…" )
 
 **Description:** Changes the alpha level for the confidence ellipses on the score plot for each pair of principal components.
 
@@ -926,7 +926,7 @@ obj << Score Ellipse Coverage( 0.9 );
 
 ### Score Ellipses
 
-**Syntax:** obj << Score Ellipses( state=0|1 )
+**Syntax:** obj &lt;&lt; Score Ellipses( state=0|1 )
 
 **Description:** Shows or hides confidence ellipses on the score plot for each pair of principal components.
 
@@ -944,7 +944,7 @@ obj << Score Ellipses( 1 );
 
 ### Score Plot
 
-**Syntax:** obj << Score Plot( number )
+**Syntax:** obj &lt;&lt; Score Plot( number )
 
 **Description:** Shows or hides a matrix of scatterplots that contain the scores for each pair of the specified number of principal components.
 
@@ -962,7 +962,7 @@ obj << Score Plot( 2 );
 
 ### Score Plot with Imputation
 
-**Syntax:** obj << Score Plot with Imputation( number of principal components )
+**Syntax:** obj &lt;&lt; Score Plot with Imputation( number of principal components )
 
 **Description:** Shows or hides a matrix of scatterplots that contain the scores for each pair of the specified number of principal components, using imputation for missing values.
 
@@ -980,7 +980,7 @@ obj << Score Plot with Imputation( 2 );
 
 ### Scree Plot
 
-**Syntax:** obj << Scree Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; Scree Plot( state=0|1 )
 
 **Description:** Shows or hides a line plot of the eigenvalues for each component.
 
@@ -998,7 +998,7 @@ obj << Scree Plot( 1 );
 
 ### Select component
 
-**Syntax:** obj << Select component( <specify dimension to plot> )
+**Syntax:** obj &lt;&lt; Select component( &lt;specify dimension to plot&gt; )
 
 **Description:** Selects the dimensions that are used as axes in the summary plots.
 
@@ -1016,7 +1016,7 @@ obj << Select Component( 1, 3 );
 
 ### Show Supplementary Variable
 
-**Syntax:** obj << Show Supplementary Variable( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Supplementary Variable( state=0|1 )
 
 **Description:** Shows or hides the arrow lines for supplementary variables in the graph.
 
@@ -1035,7 +1035,7 @@ obj << Show Supplementary Variable( 0 );
 
 ### Squared Cosines of Variables
 
-**Syntax:** obj << Squared Cosines of Variables( number )
+**Syntax:** obj &lt;&lt; Squared Cosines of Variables( number )
 
 **Description:** Shows or hides a table that contains the squared cosines of variables.
 
@@ -1073,7 +1073,7 @@ obj = dt << Principal Components(
 
 ### Summary Plots
 
-**Syntax:** obj << Summary Plots( state=0|1 )
+**Syntax:** obj &lt;&lt; Summary Plots( state=0|1 )
 
 **Description:** Shows or hides an outline node that contains a plot of the eigenvalues, a score plot, and a loading plot. On by default.
 

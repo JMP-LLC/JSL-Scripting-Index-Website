@@ -37,7 +37,7 @@ obj = dt << Response Screening( X( :Process ), Y( Eval( 8 :: 108 ) ) );
 
 ### By
 
-**Syntax:** obj = Response Screening(...<By( column(s) )>...)
+**Syntax:** obj = Response Screening(...&lt;By( column(s) )&gt;...)
 
 **Description:** Performs a separate analysis for each level of the specified column.
 
@@ -60,7 +60,7 @@ obj = dt << Response Screening(
 
 ### Freq
 
-**Syntax:** obj = Response Screening(...<Freq( column )>...)
+**Syntax:** obj = Response Screening(...&lt;Freq( column )&gt;...)
 
 **Description:** Specifies a column whose values assign a frequency to each row for the analysis.
 
@@ -79,7 +79,7 @@ obj = dt << Response Screening(
 
 ### Grouping
 
-**Syntax:** obj = Response Screening(...<Grouping( column(s) )>...)
+**Syntax:** obj = Response Screening(...&lt;Grouping( column(s) )&gt;...)
 
 **Description:** Specifies categorical columns as grouping variables. The rows assigned to each level of the specified column are analyzed separately.
 
@@ -114,7 +114,7 @@ obj = dt << Response Screening(
 
 ### Subgroup
 
-**Syntax:** obj = Response Screening(...<Subgroup( column(s) )>...)
+**Syntax:** obj = Response Screening(...&lt;Subgroup( column(s) )&gt;...)
 
 **Description:** Specifies one or more subgroup variables. When a subgroup variable is defined, additional fits are performed for each category of the subgroup variable.
 
@@ -132,7 +132,7 @@ obj = dt << Response Screening(
 
 ### Weight
 
-**Syntax:** obj = Response Screening(...<Weight( column )>...)
+**Syntax:** obj = Response Screening(...&lt;Weight( column )&gt;...)
 
 **Description:** Specifies a column whose values assign a weight to each row for the analysis.
 
@@ -293,7 +293,7 @@ dt << Response Screening(
 
 ### Fit Selected Items
 
-**Syntax:** obj << Fit Selected Items
+**Syntax:** obj &lt;&lt; Fit Selected Items
 
 **Description:** Adds Fit Y by X reports to the Response Screening report. The added reports correspond to selected points in the plots or selected rows in the Result Table.
 
@@ -369,19 +369,19 @@ dt << Response Screening( Y( :age ), X( :height, :weight ), Force Y Continuous( 
 
 ### Get Crosstab RTF
 
-**Syntax:** obj << Get Crosstab RTF( state=0|1 )
+**Syntax:** obj &lt;&lt; Get Crosstab RTF( state=0|1 )
 
 **Description:** Get an RTF source for a crosstab table.
 
 ### Get Crosstab Script
 
-**Syntax:** obj << Get Crosstab Script( state=0|1 )
+**Syntax:** obj &lt;&lt; Get Crosstab Script( state=0|1 )
 
 **Description:** Get a JSL display script for a crosstab table.
 
 ### Get PValues
 
-**Syntax:** obj << Get PValues
+**Syntax:** obj &lt;&lt; Get PValues
 
 **Description:** Returns a reference to the PValues table.
 
@@ -568,7 +568,7 @@ dt << Response Screening( X( :clean ), Grouping( :failure ), Y( :N ), Poisson Y(
 
 ### Practical Difference Portion
 
-**Syntax:** obj << Practical Difference Portion( number=0.10 )
+**Syntax:** obj &lt;&lt; Practical Difference Portion( number=0.10 )
 
 **Description:** Specifies the fraction of the specification range that represents a difference that you consider practically meaningful. "0.10" by default.
 
@@ -587,7 +587,7 @@ dt << Response Screening(
 
 ### Practical Differences and Equivalences
 
-**Syntax:** obj << Practical Differences and Equivalences( Practical Portion(fraction) | Specific Difference(number) )
+**Syntax:** obj &lt;&lt; Practical Differences and Equivalences( Practical Portion(fraction) | Specific Difference(number) )
 
 **Description:** Given a difference to detect, tests if the actual difference is significantly greater than or significantly less than that difference to detect in absolute value.
 
@@ -640,7 +640,7 @@ dt << Response Screening( X( :Process ), Y( Eval( 8 :: 88 ) ), Robust( 1 ) );
 
 ### Save 2 by M
 
-**Syntax:** obj << Name( "Save 2 by M table" )
+**Syntax:** obj &lt;&lt; Name( "Save 2 by M table" )
 
 **Description:** Saves the information in the 2 by M Results report, as well as other test statistics, to a new data table.
 
@@ -676,7 +676,7 @@ obj << "Save 2 by M Table"n;
 
 ### Save Compare Means
 
-**Syntax:** obj << Save Compare Means
+**Syntax:** obj &lt;&lt; Save Compare Means
 
 **Description:** Creates a data table that contains the results from testing all pairwise comparisons across the levels of the categorical variable.
 
@@ -694,7 +694,7 @@ dt << Response Screening(
 
 ### Save Means
 
-**Syntax:** obj << Save Means
+**Syntax:** obj &lt;&lt; Save Means
 
 **Description:** Creates a data table that contains the counts, means, and standard deviations for each level of the categorical variable.
 
@@ -708,7 +708,7 @@ dt << Response Screening( X( :Process ), Y( Column Group( "Responses" ) ), Save 
 
 ### Save Means Differences
 
-**Syntax:** obj << Save Means Differences
+**Syntax:** obj &lt;&lt; Save Means Differences
 
 **Description:** Creates a data table that contains the results from testing all pairwise comparisons across the levels of the categorical variable.
 
@@ -726,7 +726,7 @@ dt << Response Screening(
 
 ### Save Outlier Indicator
 
-**Syntax:** obj << Save Outlier Indicator
+**Syntax:** obj &lt;&lt; Save Outlier Indicator
 
 **Description:** Saves a group of indicator columns to the original data table to indicate outliers.
 
@@ -744,7 +744,7 @@ dt << Response Screening(
 
 ### Save PValues
 
-**Syntax:** obj << Save PValues
+**Syntax:** obj &lt;&lt; Save PValues
 
 **Description:** Creates a data table that contains the information in the Result Table.
 
@@ -758,7 +758,7 @@ dt << Response Screening( X( :Process ), Y( Column Group( "Responses" ) ), Save 
 
 ### Save Std Residuals
 
-**Syntax:** obj << Save Std Residuals
+**Syntax:** obj &lt;&lt; Save Std Residuals
 
 **Description:** For each fit, adds a column to the original data table that contains the residuals divided by their estimated standard deviation.
 
@@ -776,7 +776,7 @@ dt << Response Screening(
 
 ### Select Columns
 
-**Syntax:** obj << Select Columns( condition )
+**Syntax:** obj &lt;&lt; Select Columns( condition )
 
 **Description:** Selects columns in the original data table that correspond to selected rows in the Result Table.
 
@@ -792,7 +792,7 @@ obj << Select Columns;
 
 ### Select Where
 
-**Syntax:** obj << Select Where
+**Syntax:** obj &lt;&lt; Select Where
 
 **Description:** Selects items in the report table that correspond to a particular condition.
 
@@ -807,13 +807,13 @@ obj << Select Where( FDR Logworth > 200 );
 
 ### Show Crosstab Report
 
-**Syntax:** obj << Show Crosstab Report( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Crosstab Report( state=0|1 )
 
 **Description:** Experimental Hidden Feature: Show the details for each X and Y combination in a crosstab cell
 
 ### Show Means Differences
 
-**Syntax:** obj << Show Means Differences
+**Syntax:** obj &lt;&lt; Show Means Differences
 
 **Description:** Shows the Logworth by Difference plot and the Means Differences report in the Response Screening report window. This option assumes that the Y variables are on a common scale.
 
@@ -837,7 +837,7 @@ Response Screening(
 
 ### Show Plots
 
-**Syntax:** obj << Show Plots( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Plots( state=0|1 )
 
 **Description:** Shows or hides the plots in the report window. On by default.
 
@@ -852,7 +852,7 @@ obj << Show Result Tables( 0 );
 
 ### Show Report Tables
 
-**Syntax:** obj << Show Report Tables( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Report Tables( state=0|1 )
 
 **Description:** Shows or hides the result tables in the report window. On by default.
 
@@ -867,7 +867,7 @@ obj << Show Result Tables( 0 );
 
 ### Show Slopes
 
-**Syntax:** obj << Show Slopes
+**Syntax:** obj &lt;&lt; Show Slopes
 
 **Description:** Shows the Logworth by Slope plot in the Response Screening report window. This option assumes that the Y variables are on a common scale and the X variables are on a common scale.
 
@@ -887,7 +887,7 @@ Response Screening(
 
 ### Specific Difference to Detect
 
-**Syntax:** obj << Specific Difference to Detect( number )
+**Syntax:** obj &lt;&lt; Specific Difference to Detect( number )
 
 **Description:** Specifies a difference to detect rather than a portion of a specification range or sigma. This option assumes that all Y variables are on the same scale.
 
@@ -925,7 +925,7 @@ dt << Response Screening(
 
 ### Tabbed Report Layout
 
-**Syntax:** obj << Tabbed Report Layout( state=0|1 )
+**Syntax:** obj &lt;&lt; Tabbed Report Layout( state=0|1 )
 
 **Description:** On by default.
 
@@ -973,7 +973,7 @@ Response Screening(
 
 ### Action
 
-**Syntax:** obj << Action
+**Syntax:** obj &lt;&lt; Action
 
 **Description:** All-purpose trapdoor within a platform to insert expressions to evaluate. Temporarily sets the DisplayBox and DataTable contexts to the Platform.
 
@@ -991,7 +991,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Syntax:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntax:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Description:** Apply a previously created preset to the object, updating the options and customizations to match the saved settings.
 
@@ -1036,7 +1036,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Automatic Recalc
 
-**Syntax:** obj << Automatic Recalc( state=0|1 )
+**Syntax:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Description:** Redoes the analysis automatically for exclude and data changes. If the Automatic Recalc option is turned on, you should consider using Wait(0) commands to ensure that the exclude and data changes take effect before the recalculation.
 
@@ -1055,7 +1055,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**Syntax:** obj << Broadcast(message)
+**Syntax:** obj &lt;&lt; Broadcast(message)
 
 **Description:** Broadcasts a message to a platform. If return results from individual objects are tables, they are concatenated if possible, and the final format is identical to either the result from the Save Combined Table option in a Table Box or the result from the Concatenate option using a Source column. Other than those, results are stored in a list and returned.
 
@@ -1073,7 +1073,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**Syntax:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Syntax:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Description:** Adds a control panel for changing the platform&apos;s variables
 
@@ -1091,7 +1091,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**Syntax:** obj << Copy ByGroup Script
+**Syntax:** obj &lt;&lt; Copy ByGroup Script
 
 **Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
 
@@ -1115,7 +1115,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Syntax:** obj << Copy Script
+**Syntax:** obj &lt;&lt; Copy Script
 
 **Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
 
@@ -1133,7 +1133,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Syntax:** obj << Data Table Window
+**Syntax:** obj &lt;&lt; Data Table Window
 
 **Description:** Move the data table window for this analysis to the front.
 
@@ -1151,7 +1151,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Syntax:** obj << Get By Levels
+**Syntax:** obj &lt;&lt; Get By Levels
 
 **Description:** Returns an associative array mapping the by group columns to their values.
 
@@ -1166,7 +1166,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Syntax:** obj << Get ByGroup Script
+**Syntax:** obj &lt;&lt; Get ByGroup Script
 
 **Description:** Creates a script (JSL) to produce this analysis and returns it as an expression.
 
@@ -1191,7 +1191,7 @@ Show( t );
 
 ### Get Container
 
-**Syntax:** obj << Get Container
+**Syntax:** obj &lt;&lt; Get Container
 
 **Description:** Returns a reference to the container box that holds the content for the object.
 
@@ -1241,7 +1241,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Syntax:** obj << Get Data Table
+**Syntax:** obj &lt;&lt; Get Data Table
 
 **Description:** Returns a reference to the data table.
 
@@ -1260,7 +1260,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**Syntax:** obj << Get Group Platform
+**Syntax:** obj &lt;&lt; Get Group Platform
 
 **Description:** Return the Group Platform object if this platform is part of a Group. Otherwise, returns Empty().
 
@@ -1277,7 +1277,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**Syntax:** obj << Get Script
+**Syntax:** obj &lt;&lt; Get Script
 
 **Description:** Creates a script (JSL) to produce this analysis and returns it as an expression.
 
@@ -1296,7 +1296,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Syntax:** obj << Get Script With Data Table
+**Syntax:** obj &lt;&lt; Get Script With Data Table
 
 **Description:** Creates a script(JSL) to produce this analysis specifically referencing this data table and returns it as an expression.
 
@@ -1315,7 +1315,7 @@ Show( t );
 
 ### Get Timing
 
-**Syntax:** obj << Get Timing
+**Syntax:** obj &lt;&lt; Get Timing
 
 **Description:** Times the platform launch.
 
@@ -1334,7 +1334,7 @@ Show( t );
 
 ### Get Web Support
 
-**Syntax:** obj << Get Web Support
+**Syntax:** obj &lt;&lt; Get Web Support
 
 **Description:** Return a number indicating the level of Interactive HTML support for the display object. 1 means some or all elements are supported. 0 means no support.
 
@@ -1350,7 +1350,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Syntax:** obj << Get Where Expr
+**Syntax:** obj &lt;&lt; Get Where Expr
 
 **Description:** Returns the Where expression for the data subset, if the platform was launched with By() or Where(). Otherwise, returns Empty()
 
@@ -1385,7 +1385,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Syntax:** obj << Local Data Filter
+**Syntax:** obj &lt;&lt; Local Data Filter
 
 **Description:** To filter data to specific groups or ranges, but local to this platform
 
@@ -1437,7 +1437,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Syntax:** obj << Paste Local Data Filter
+**Syntax:** obj &lt;&lt; Paste Local Data Filter
 
 **Description:** Apply the local data filter from the clipboard to the current report.
 
@@ -1458,7 +1458,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**Syntax:** obj << Redo Analysis
+**Syntax:** obj &lt;&lt; Redo Analysis
 
 **Description:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
 
@@ -1476,7 +1476,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**Syntax:** obj << Redo ByGroup Analysis
+**Syntax:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Description:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
 
@@ -1500,7 +1500,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**Syntax:** obj << Relaunch Analysis
+**Syntax:** obj &lt;&lt; Relaunch Analysis
 
 **Description:** Opens the platform launch window and recalls the settings that were used to create the report.
 
@@ -1518,7 +1518,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**Syntax:** obj << Relaunch ByGroup
+**Syntax:** obj &lt;&lt; Relaunch ByGroup
 
 **Description:** Opens the platform launch window and recalls the settings that were used to create the report.
 
@@ -1542,7 +1542,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**Syntax:** obj << Remove Column Switcher
+**Syntax:** obj &lt;&lt; Remove Column Switcher
 
 **Description:** Removes the most recent Column Switcher that has been added to the platform.
 
@@ -1562,7 +1562,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Syntax:** obj << Remove Local Data Filter
+**Syntax:** obj &lt;&lt; Remove Local Data Filter
 
 **Description:** If a local data filter has been created, this removes it and restores the platform to use all the data in the data table directly
 
@@ -1599,9 +1599,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Syntax:** obj << Report;
-
-Report( obj )
+**Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Description:** Returns a reference to the report object.
 
@@ -1621,7 +1619,7 @@ Show( t );
 
 ### Report View
 
-**Syntax:** obj << Report View( "Full"|"Summary" )
+**Syntax:** obj &lt;&lt; Report View( "Full"|"Summary" )
 
 **Description:** The report view determines the level of detail visible in a platform report. Full shows all of the detail, while Summary shows only select content, dependent on the platform. For customized behavior, display boxes support a <<Set Summary Behavior message.
 
@@ -1639,7 +1637,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**Syntax:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description:** Creates a JSL script to produce this analysis, and save it as a table property in the data table. You can specify a name for the script. The Append Suffix option appends a numeric suffix to the script name, which differentiates the script from an existing script with the same name. The Prompt option prompts the user to specify a script name. The Replace option replaces an existing script with the same name.
 
@@ -1663,7 +1661,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Syntax:** obj << Save ByGroup Script to Journal
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
 
@@ -1687,7 +1685,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Syntax:** obj << Save ByGroup Script to Script Window
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
 
@@ -1711,7 +1709,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**Syntax:** obj << Save Script for All Objects
+**Syntax:** obj &lt;&lt; Save Script for All Objects
 
 **Description:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -1729,7 +1727,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Syntax:** obj << Save Script for All Objects To Data Table( <name> )
+**Syntax:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Description:** Saves a script for all report objects to the current data table. This option is useful when you have multiple reports in the window. The script is named after the first platform unless you specify the script name in quotes.
 
@@ -1775,7 +1773,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Syntax:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description:** Create a JSL script to produce this analysis, and save it as a table property in the data table.
 
@@ -1793,7 +1791,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Syntax:** obj << Save Script to Journal
+**Syntax:** obj &lt;&lt; Save Script to Journal
 
 **Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
 
@@ -1811,7 +1809,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Syntax:** obj << Save Script to Report
+**Syntax:** obj &lt;&lt; Save Script to Report
 
 **Description:** Create a JSL script to produce this analysis, and show it in the report itself. Useful to preserve a printed record of what was done.
 
@@ -1829,7 +1827,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Syntax:** obj << Save Script to Script Window
+**Syntax:** obj &lt;&lt; Save Script to Script Window
 
 **Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
 
@@ -1912,7 +1910,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Syntax:** obj << Sync to Data Table Changes
+**Syntax:** obj &lt;&lt; Sync to Data Table Changes
 
 **Description:** Sync with the exclude and data changes that have been made.
 
@@ -1929,7 +1927,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Syntax:** obj << Title( "new title" )
+**Syntax:** obj &lt;&lt; Title( "new title" )
 
 **Description:** Sets the title of the platform.
 
@@ -1947,7 +1945,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Syntax:** obj << Top Report
+**Syntax:** obj &lt;&lt; Top Report
 
 **Description:** Returns a reference to the root node in the report.
 
@@ -1967,7 +1965,7 @@ Show( t );
 
 ### Transform Column
 
-**Syntax:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Syntax:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Description:** Create a transform column in the local context of an object, usually a platform. The transform column is active only for the lifetime of the platform.
 
@@ -1984,7 +1982,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**Syntax:** obj << View Web XML
+**Syntax:** obj &lt;&lt; View Web XML
 
 **Description:** Returns the XML code that is used to create the interactive HTML report.
 

@@ -6,7 +6,7 @@
 
 ### Action
 
-**構文:** obj << Action
+**構文:** obj &lt;&lt; Action
 
 **説明:** 評価する式を挿入するための、プラットフォーム内の汎用トラップドア。プラットフォームに一時的にディスプレイボックスおよびデータテーブルのコンテキストを設定する。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**構文:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**構文:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **説明:** 作成されたプリセットをオブジェクトに適用する。保存された設定に合わせてオプションとカスタマイズが更新される。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Broadcast
 
-**構文:** obj << Broadcast(message)
+**構文:** obj &lt;&lt; Broadcast(message)
 
 **説明:** メッセージをプラットフォームに一括適用する。個々のオブジェクトから戻される結果がデータテーブルである場合は、可能な限り連結する。その最終的な形式は、Table BoxのSave Combined Tableオプションの結果と同じになるか、またはソース列を使用したConcanateオプションの結果と同じになる。それ以外の場合、結果はリストの形で戻される。
 
@@ -91,7 +91,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**構文:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**構文:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **説明:** プラットフォームの変数を変更するための設定パネルを追加する。
 
@@ -109,7 +109,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**構文:** obj << Copy ByGroup Script
+**構文:** obj &lt;&lt; Copy ByGroup Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -129,7 +129,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**構文:** obj << Copy Script
+**構文:** obj &lt;&lt; Copy Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -144,7 +144,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**構文:** obj << Data Table Window
+**構文:** obj &lt;&lt; Data Table Window
 
 **説明:** この分析に使用したデータテーブルのウィンドウを手前に表示する。
 
@@ -159,7 +159,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**構文:** obj << Get By Levels
+**構文:** obj &lt;&lt; Get By Levels
 
 **説明:** By列が指定されている場合、列名をキー、データ値を値とした連想配列を戻す。
 
@@ -176,7 +176,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**構文:** obj << Get ByGroup Script
+**構文:** obj &lt;&lt; Get ByGroup Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -197,7 +197,7 @@ Show( t );
 
 ### Get Container
 
-**構文:** obj << Get Container
+**構文:** obj &lt;&lt; Get Container
 
 **説明:** オブジェクトのコンテンツを含んだコンテナボックスの参照を戻す。
 
@@ -244,7 +244,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**構文:** obj << Get Data Table
+**構文:** obj &lt;&lt; Get Data Table
 
 **説明:** データテーブルへの参照を戻す。
 
@@ -260,7 +260,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**構文:** obj << Get Group Platform
+**構文:** obj &lt;&lt; Get Group Platform
 
 **説明:** 該当のプラットフォームがグループに属している場合に、Group Platformオブジェクトを戻す。それ以外の場合はEmpty()を戻す。
 
@@ -277,7 +277,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**構文:** obj << Get Script
+**構文:** obj &lt;&lt; Get Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -293,7 +293,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**構文:** obj << Get Script With Data Table
+**構文:** obj &lt;&lt; Get Script With Data Table
 
 **説明:** この分析を再現するスクリプト(JSL)をデータテーブルへの参照も含めて生成し、それを式として戻す。
 
@@ -309,7 +309,7 @@ Show( t );
 
 ### Get Timing
 
-**構文:** obj << Get Timing
+**構文:** obj &lt;&lt; Get Timing
 
 **説明:** プラットフォームの起動にかかった時間を取得する。
 
@@ -325,7 +325,7 @@ Show( t );
 
 ### Get Web Support
 
-**構文:** obj << Get Web Support
+**構文:** obj &lt;&lt; Get Web Support
 
 **説明:** ディスプレイオブジェクトにおけるインタラクティブHTMLサポートのレベルを数値で戻す。1は、一部または全部の要素がサポートされていることを示し、0は、サポートされないことを示す。
 
@@ -341,7 +341,7 @@ Show( s );
 
 ### Get Where Expr
 
-**構文:** obj << Get Where Expr
+**構文:** obj &lt;&lt; Get Where Expr
 
 **説明:** プラットフォームがBy()またはWhere()を使って起動された場合に、データをサブセットするためのWhere式を戻す。By()やWhere()が使われていない場合はEmpty()を戻す。
 
@@ -378,7 +378,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**構文:** obj << Local Data Filter
+**構文:** obj &lt;&lt; Local Data Filter
 
 **説明:** このプラットフォームに対してのみ有効なフィルタで、データを特定のグループまたは範囲にフィルタリングする。
 
@@ -434,7 +434,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**構文:** obj << Paste Local Data Filter
+**構文:** obj &lt;&lt; Paste Local Data Filter
 
 **説明:** クリップボードにあるローカルデータフィルタを現在のレポートに適用する。
 
@@ -455,7 +455,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**構文:** obj << Redo Analysis
+**構文:** obj &lt;&lt; Redo Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -470,7 +470,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**構文:** obj << Redo ByGroup Analysis
+**構文:** obj &lt;&lt; Redo ByGroup Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -490,7 +490,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**構文:** obj << Relaunch Analysis
+**構文:** obj &lt;&lt; Relaunch Analysis
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -505,7 +505,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**構文:** obj << Relaunch ByGroup
+**構文:** obj &lt;&lt; Relaunch ByGroup
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -525,7 +525,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**構文:** obj << Remove Column Switcher
+**構文:** obj &lt;&lt; Remove Column Switcher
 
 **説明:** プラットフォームに最後に追加された列スイッチャーを削除する。
 
@@ -545,7 +545,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**構文:** obj << Remove Local Data Filter
+**構文:** obj &lt;&lt; Remove Local Data Filter
 
 **説明:** すでに作成されているローカルデータフィルタを削除し、プラットフォームはデータテーブル内のすべてのデータを使用した状態に戻る。
 
@@ -584,9 +584,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**構文:** obj << Report;
-
-Report( obj )
+**構文:** obj &lt;&lt; Report;Report( obj )
 
 **説明:** レポートオブジェクトへの参照を戻す。
 
@@ -603,7 +601,7 @@ Show( t );
 
 ### Report View
 
-**構文:** obj << Report View( "完全"|"要約" )
+**構文:** obj &lt;&lt; Report View( "完全"|"要約" )
 
 **説明:** レポートビューは、プラットフォームレポートの詳細を表示するかどうかを決定する。Fullはすべての詳細を表示し、Summaryはプラットフォームにより限定されたものだけを表示する。 動作をカスタマイズするため、各ディスプレイボックスは<<Set Summary Behaviorメッセージをサポートする。
 
@@ -618,7 +616,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**構文:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** 分析を再現するためのJSLスクリプトを作成し、データテーブルにテーブルプロパティとして保存する。スクリプトの名前を指定できる。Append Suffixオプションは、スクリプト名に数字の接尾辞を追加する。これにより、同名のスクリプトが存在していても区別できる。Promptオプションは、ユーザにスクリプト名の指定を促す。Replaceオプションは、同名の既存のスクリプトを置き換える。
 
@@ -638,7 +636,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**構文:** obj << Save ByGroup Script to Journal
+**構文:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -658,7 +656,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**構文:** obj << Save ByGroup Script to Script Window
+**構文:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -678,7 +676,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**構文:** obj << Save Script for All Objects
+**構文:** obj &lt;&lt; Save Script for All Objects
 
 **説明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -693,7 +691,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**構文:** obj << Save Script for All Objects To Data Table( <name> )
+**構文:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **説明:** すべてのレポートオブジェクトを再現するスクリプトを現在のデータテーブルに保存する。このオプションは、ウィンドウ内にレポートが複数ある場合に便利。作成されるスクリプトの名前は、引用符で囲んで指定しない限り、1つ目のプラットフォーム名となる。
 
@@ -731,7 +729,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**構文:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** この分析を再現するJSLスクリプトを生成し、データテーブルのテーブルプロパティとして保存する。
 
@@ -746,7 +744,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**構文:** obj << Save Script to Journal
+**構文:** obj &lt;&lt; Save Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -761,7 +759,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**構文:** obj << Save Script to Report
+**構文:** obj &lt;&lt; Save Script to Report
 
 **説明:** この分析を再現するJSLスクリプトを生成し、レポートウィンドウに表示する。分析手順の記録を結果と一緒に残せる。
 
@@ -776,7 +774,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**構文:** obj << Save Script to Script Window
+**構文:** obj &lt;&lt; Save Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -856,7 +854,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**構文:** obj << Sync to Data Table Changes
+**構文:** obj &lt;&lt; Sync to Data Table Changes
 
 **説明:** 除外やデータの変更が行われた場合に同期する。
 
@@ -873,7 +871,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**構文:** obj << Title( "new title" )
+**構文:** obj &lt;&lt; Title( "new title" )
 
 **説明:** プラットフォームのタイトルを設定する。
 
@@ -888,7 +886,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**構文:** obj << Top Report
+**構文:** obj &lt;&lt; Top Report
 
 **説明:** レポート内のルートノードへの参照を戻す。
 
@@ -905,7 +903,7 @@ Show( t );
 
 ### Transform Column
 
-**構文:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**構文:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **説明:** オブジェクトのローカルコンテキスト(通常はプラットフォーム)内に変換列を作成する。この変換列は、それを作成したプラットフォームの中のみで使用可能。
 
@@ -924,7 +922,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**構文:** obj << View Web XML
+**構文:** obj &lt;&lt; View Web XML
 
 **説明:** インタラクティブHTMLレポートの作成に使うXMLコードを戻す。
 
@@ -960,7 +958,7 @@ New Window( "Bivariate Equation",
 
 ### By
 
-**構文:** obj = Nonlinear(...<By( column(s) )>...)
+**構文:** obj = Nonlinear(...&lt;By( column(s) )&gt;...)
 
 **説明:** 指定された列の各水準に対して、個別に分析を実行する。
 
@@ -979,7 +977,7 @@ obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish(), By( _bycol ) );
 
 ### Freq
 
-**構文:** obj = Nonlinear(...<Freq( column )>...)
+**構文:** obj = Nonlinear(...&lt;Freq( column )&gt;...)
 
 **説明:** 分析の際に各行の度数として用いる値の列を指定する。
 
@@ -994,7 +992,7 @@ obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish(), Freq( _freqcol )
 
 ### Group
 
-**構文:** obj = Nonlinear(...<Group( column )>...)
+**構文:** obj = Nonlinear(...&lt;Group( column )&gt;...)
 
 **説明:** グループ変数を指定する。グループ変数の水準ごとに別のパラメータを持つモデルがあてはめられる。
 
@@ -1016,7 +1014,7 @@ obj = dt << Nonlinear(
 
 ### Loss
 
-**構文:** obj = Nonlinear(...<Loss( column )>...)
+**構文:** obj = Nonlinear(...&lt;Loss( column )&gt;...)
 
 **説明:** 損失関数の計算式の列を指定する。
 
@@ -1036,7 +1034,7 @@ obj = dt << Nonlinear(
 
 ### Predictor Formula
 
-**構文:** obj = Nonlinear(...<Predictor Formula( column )>...)
+**構文:** obj = Nonlinear(...&lt;Predictor Formula( column )&gt;...)
 
 **説明:** X変数の列、または、パラメータを含むモデルの計算式の列を指定する。
 
@@ -1050,7 +1048,7 @@ obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );
 
 ### Response
 
-**構文:** obj = Nonlinear(...<Response( column )>...)
+**構文:** obj = Nonlinear(...&lt;Response( column )&gt;...)
 
 **説明:** 応答変数を指定する。
 
@@ -1064,7 +1062,7 @@ obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );
 
 ### Weight
 
-**構文:** obj = Nonlinear(...<Weight( column )>...)
+**構文:** obj = Nonlinear(...&lt;Weight( column )&gt;...)
 
 **説明:** 分析の際に各行の重みとして用いる値の列を指定する。
 
@@ -1079,7 +1077,7 @@ obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish(), Weight( _weightc
 
 ### X
 
-**構文:** obj = Nonlinear(...<X( column )>...)
+**構文:** obj = Nonlinear(...&lt;X( column )&gt;...)
 
 **説明:** X変数の列、または、パラメータを含むモデルの計算式の列を指定する。
 
@@ -1093,7 +1091,7 @@ obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );
 
 ### Y
 
-**構文:** obj = Nonlinear(...<Y( column )>...)
+**構文:** obj = Nonlinear(...&lt;Y( column )&gt;...)
 
 **説明:** 応答変数を指定する。
 
@@ -1125,7 +1123,7 @@ obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );
 
 ### Accept Current Estimates
 
-**構文:** obj << Accept Current Estimates
+**構文:** obj &lt;&lt; Accept Current Estimates
 
 **説明:** 推定のための反復計算が収束しなかった場合でも現在の推定値を使用して解のレポートを作成する。
 
@@ -1141,7 +1139,7 @@ obj << Accept Current Estimates;
 
 ### CL Alpha
 
-**構文:** obj << CL Alpha( number=.05 )
+**構文:** obj &lt;&lt; CL Alpha( number=.05 )
 
 **説明:** パラメータ推定値に対する信頼区間の有意水準を指定する。 デフォルトの値は".05"。
 
@@ -1157,7 +1155,7 @@ obj << Confidence Limits;
 
 ### CL Limit
 
-**構文:** obj << CL Limit( number=.00001 )
+**構文:** obj &lt;&lt; CL Limit( number=.00001 )
 
 **説明:** パラメータ推定値に対して信頼区間を計算する際に使用する収束基準を指定する。 デフォルトの値は".00001"。
 
@@ -1173,7 +1171,7 @@ obj << Confidence Limits;
 
 ### Confidence Limits
 
-**構文:** obj << Confidence Limits
+**構文:** obj &lt;&lt; Confidence Limits
 
 **説明:** すべてのパラメータ推定値に対して信頼区間を計算する。
 
@@ -1188,7 +1186,7 @@ obj << Confidence Limits;
 
 ### Contour Profiler
 
-**構文:** obj << Contour Profiler( state=0|1 )
+**構文:** obj &lt;&lt; Contour Profiler( state=0|1 )
 
 **説明:** 等高線プロファイルの表示/非表示を切り替える。等高線プロファイルは、応答変数の予測値を2因子ずつに対して描いたグラフである。
 
@@ -1204,7 +1202,7 @@ obj << Contour Profiler( 1 );
 
 ### Custom Estimate
 
-**構文:** obj << Custom Estimate( expression )
+**構文:** obj &lt;&lt; Custom Estimate( expression )
 
 **説明:** パラメータに対してユーザ定義の関数を指定し、その関数値を推定する。関数値とその標準誤差は、現在のパラメータ推定値を使って計算される。
 
@@ -1219,7 +1217,7 @@ obj << Custom Estimate( B0 + A + D );
 
 ### Custom Estimation Profiler
 
-**構文:** obj << Custom Estimation Profiler( Custom Estimation( {initial values}, expression ), <Transformation( "Log"|"Logit"|"None" ), Profiler( script )> )
+**構文:** obj &lt;&lt; Custom Estimation Profiler( Custom Estimation( {initial values}, expression ), &lt;Transformation( "Log"|"Logit"|"None" ), Profiler( script )&gt; )
 
 **説明:** 分析者によって指定された式のプロファイルを表示する。パラメータと少なくとも1つの因子を含む式を指定する。デフォルトでは、[変換]オプションが[なし]に設定されている。
 
@@ -1257,7 +1255,7 @@ obj = dt << Nonlinear(
 
 ### Custom Inverse Prediction
 
-**構文:** obj << Custom Inverse Prediction( Response( l1, l2, ... ), <Term Value( column( number ) )> )
+**構文:** obj &lt;&lt; Custom Inverse Prediction( Response( l1, l2, ... ), &lt;Term Value( column( number ) )&gt; )
 
 **説明:** 指定された各応答値に対してX値を推定する。Xの推定値に対する標準誤差と信頼限界も計算される。
 
@@ -1273,7 +1271,7 @@ obj << Custom Inverse Prediction( Response( 100, 150, 200 ) );
 
 ### Delta
 
-**構文:** obj << Delta( number=5.0e-6 )
+**構文:** obj &lt;&lt; Delta( number=5.0e-6 )
 
 **説明:** [数値微分のみ]オプションで使用されるデルタの値を指定する。 デフォルトの値は"5.0e-6"。
 
@@ -1290,7 +1288,7 @@ obj << Finish;
 
 ### Expand Intermediate Formulas
 
-**構文:** obj << Expand Intermediate Formulas( state=0|1 )
+**構文:** obj &lt;&lt; Expand Intermediate Formulas( state=0|1 )
 
 **説明:** 推定値を求めたり、計算式を保存したりする際に、展開した中間式を使用する。モデルの計算式において、別の計算式を含んだ列が参照されている場合に、その元の列を参照する。
 
@@ -1309,7 +1307,7 @@ obj = dt << Nonlinear(
 
 ### Finish
 
-**構文:** obj << Finish
+**構文:** obj &lt;&lt; Finish
 
 **説明:** 非線形回帰の反復計算を開始し、計算が収束または終了した時点で次のコマンドに移る。スクリプトでは、GoオプションではなくFinishオプションを使用することを推奨する。
 
@@ -1325,7 +1323,7 @@ obj << Profiler;
 
 ### Get CI
 
-**構文:** obj << Get CI
+**構文:** obj &lt;&lt; Get CI
 
 **説明:** パラメータ推定値の標準誤差を戻す。注: [信頼区間]オプションは、[信頼区間の取得]オプションを指定する前に選択しなければならない。
 
@@ -1342,7 +1340,7 @@ Show( G );
 
 ### Get Corr
 
-**構文:** obj << Get Corr
+**構文:** obj &lt;&lt; Get Corr
 
 **説明:** 推定値の相関を戻す。
 
@@ -1358,7 +1356,7 @@ Show( G );
 
 ### Get Cov
 
-**構文:** obj << Get Cov
+**構文:** obj &lt;&lt; Get Cov
 
 **説明:** 推定値の共分散を戻す。
 
@@ -1376,7 +1374,7 @@ Show( G );
 
 ### Get Estimates
 
-**構文:** obj << Get Estimates
+**構文:** obj &lt;&lt; Get Estimates
 
 **説明:** パラメータ推定値を戻す。
 
@@ -1392,7 +1390,7 @@ Show( G );
 
 ### Get Parameter Names
 
-**構文:** obj << Get Parameter Names
+**構文:** obj &lt;&lt; Get Parameter Names
 
 **説明:** パラメータ名を戻す。
 
@@ -1408,7 +1406,7 @@ Show( G );
 
 ### Get SSE
 
-**構文:** obj << Get SSE
+**構文:** obj &lt;&lt; Get SSE
 
 **説明:** 誤差平方和(SSE)を戻す。
 
@@ -1424,7 +1422,7 @@ Show( G );
 
 ### Get Std Errors
 
-**構文:** obj << Get Std Errors
+**構文:** obj &lt;&lt; Get Std Errors
 
 **説明:** パラメータ推定値の標準誤差を戻す。
 
@@ -1440,7 +1438,7 @@ Show( G );
 
 ### Go
 
-**構文:** obj << Go
+**構文:** obj &lt;&lt; Go
 
 **説明:** 非線形回帰の解を求めるための処理をバックグランドで行う。スクリプトでは、GoオプションではなくFinishオプションを使用することを推奨する。
 
@@ -1455,7 +1453,7 @@ obj << Go;
 
 ### Gradient Limit
 
-**構文:** obj << Gradient Limit( number=1e-6 )
+**構文:** obj &lt;&lt; Gradient Limit( number=1e-6 )
 
 **説明:** 勾配基準に基づく収束基準を指定する。 デフォルトの値は"1e-6"。
 
@@ -1471,7 +1469,7 @@ obj << Finish;
 
 ### Iteration Limit
 
-**構文:** obj << Iteration Limit( number=60 )
+**構文:** obj &lt;&lt; Iteration Limit( number=60 )
 
 **説明:** 反復の最大回数を指定する。 デフォルトの値は"60"。
 
@@ -1487,7 +1485,7 @@ obj << Finish;
 
 ### Iteration Log
 
-**構文:** obj << Iteration Log( state=0|1 )
+**構文:** obj &lt;&lt; Iteration Log( state=0|1 )
 
 **説明:** 「反復履歴」の表を表示／非表示する。このオプションが選択されると、それ以降の反復について反復計算の情報が表に記録される。
 
@@ -1505,7 +1503,7 @@ Report( obj )["Iterations"] << Close( 0 );
 
 ### Lock Parameter
 
-**構文:** obj << Lock Parameter( Name, ... )
+**構文:** obj &lt;&lt; Lock Parameter( Name, ... )
 
 **説明:** 特定のパラメータを指定された値にロックし、反復計算が行われている間も変化しないように固定する。
 
@@ -1522,7 +1520,7 @@ obj << Finish;
 
 ### Loss is Neg LogLikelihood
 
-**構文:** obj << Loss is Neg LogLikelihood( state=0|1 )
+**構文:** obj &lt;&lt; Loss is Neg LogLikelihood( state=0|1 )
 
 **説明:** 指定された損失計算式が、誤差平方和ではなく、負の対数尤度であるみなす。そして、信頼区間や検定の計算に、F統計量ではなくカイ2乗統計量を使用する。
 
@@ -1542,7 +1540,7 @@ obj << Finish;
 
 ### Newton
 
-**構文:** obj << Newton
+**構文:** obj &lt;&lt; Newton
 
 **説明:** 最適化法としてGaus-Newton法 (通常の最小2乗法の場合)またはNewton-Raphson法 (損失関数を含むモデルの場合)を指定する。
 
@@ -1558,7 +1556,7 @@ obj << Finish;
 
 ### Numeric Chain Deriv Delta
 
-**構文:** obj << Numeric Chain Deriv Delta( =1e-5 )
+**構文:** obj &lt;&lt; Numeric Chain Deriv Delta( =1e-5 )
 
 **説明:** 数値微分におけるデルタを指定する。反復計算の内部計算において、解析的な微分が行えない場合には、数値微分が使われる。その数値微分のデルタを指定する。 デフォルトの値は"1e-5"。
 
@@ -1566,7 +1564,7 @@ obj << Finish;
 
 ### Numeric Derivatives Only
 
-**構文:** obj << Numeric Derivatives Only( state=0|1 )
+**構文:** obj &lt;&lt; Numeric Derivatives Only( state=0|1 )
 
 **説明:** 推定のための最適化における反復計算で、解析的な微分を行わず、数値微分のみが使用されるよう指定する。
 
@@ -1582,7 +1580,7 @@ obj << Finish;
 
 ### Obj Change Limit
 
-**構文:** obj << Obj Change Limit( number=1e-15 )
+**構文:** obj &lt;&lt; Obj Change Limit( number=1e-15 )
 
 **説明:** 目的関数の変化量に基づく収束基準を指定する。 デフォルトの値は"1e-15"。
 
@@ -1598,7 +1596,7 @@ obj << Finish;
 
 ### Parameter Bounds
 
-**構文:** obj << Parameter Bounds( <parameter name( lower, upper )> )
+**構文:** obj &lt;&lt; Parameter Bounds( &lt;parameter name( lower, upper )&gt; )
 
 **説明:** 指定のパラメータに下限と上限を設定する。
 
@@ -1614,7 +1612,7 @@ obj << Finish;
 
 ### Parameter Contour Profiler
 
-**構文:** obj << Parameter Contour Profiler( state=0|1 )
+**構文:** obj &lt;&lt; Parameter Contour Profiler( state=0|1 )
 
 **説明:** パラメータに対するSSEまたは損失を描いた等高線プロファイルの表示/非表示を切り替える。
 
@@ -1630,7 +1628,7 @@ obj << Parameter Contour Profiler( 1 );
 
 ### Parameter Profiler
 
-**構文:** obj << Parameter Profiler( state=0|1 )
+**構文:** obj &lt;&lt; Parameter Profiler( state=0|1 )
 
 **説明:** パラメータに対するSSEまたは損失を描いた予測プロファイルの表示/非表示を切り替える。
 
@@ -1646,7 +1644,7 @@ obj << Parameter Profiler( 1 );
 
 ### Parameter Surface Profiler
 
-**構文:** obj << Parameter Surface Profiler( state=0|1 )
+**構文:** obj &lt;&lt; Parameter Surface Profiler( state=0|1 )
 
 **説明:** パラメータに対するSSEまたは損失を描いた3次元曲面プロットの表示/非表示を切り替える。このオプションは、モデルに2つ以上のパラメータが含まれている場合のみ利用可能。
 
@@ -1662,7 +1660,7 @@ obj << Parameter Surface Profiler( 1 );
 
 ### Plot
 
-**構文:** obj << Plot( state=0|1 )
+**構文:** obj &lt;&lt; Plot( state=0|1 )
 
 **説明:** 予測式が1つのX変数の関数である場合、X変数に対する予測式をプロットしたグラフの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1679,7 +1677,7 @@ obj << Finish;
 
 ### Profile Likelihood
 
-**構文:** obj << Profile Likelihood( state=0|1 )
+**構文:** obj &lt;&lt; Profile Likelihood( state=0|1 )
 
 **説明:** 相対尤度関数を描いたプロットの表示/非表示を切り替える。相対尤度関数では、1つのパラメータの値全体における最大値が1になるように尺度化されている。該当のパラメータの各値において、他のすべてのパラメータは損失関数が最小になるように最適化されている。このオプションは、「非線形回帰」プラットフォームを起動し、2つ以上のパラメータを含む損失関数がある場合にのみ利用可能。
 
@@ -1713,7 +1711,7 @@ obj << Profile Likelihood( 1 );
 
 ### Profile Likelihood Contour
 
-**構文:** obj << Profile Likelihood Contour( state=0|1 )
+**構文:** obj &lt;&lt; Profile Likelihood Contour( state=0|1 )
 
 **説明:** 2つのパラメータにおける相対プロファイル尤度関数の等高線プロットの表示/非表示を切り替える。該当の2つのパラメータの値の各組み合わせにおいて、他のすべてのパラメータは損失関数が最小なるように最適化されている。このオプションは、「非線形回帰」プラットフォームが起動され、損失関数に3つ以上のパラメータが含まれている場合にのみ利用可能。
 
@@ -1751,7 +1749,7 @@ obj << Profile Likelihood Contour( 1 );
 
 ### Profiler
 
-**構文:** obj << Profiler( state=0|1 )
+**構文:** obj &lt;&lt; Profiler( state=0|1 )
 
 **説明:** 予測プロファイルの表示/非表示を切り替える。予測プロファイルは、1因子ずつスライスしながら予測式を図示したものである。予測プロファイルでは、最適化を行える。
 
@@ -1766,7 +1764,7 @@ obj << Profiler( 1 );
 
 ### QuasiNewton BFGS
 
-**構文:** obj << QuasiNewton BFGS
+**構文:** obj &lt;&lt; QuasiNewton BFGS
 
 **説明:** 最適化法として準Newton BFGSを指定する。この手法は、パラメータの数が多い場合に最適。
 
@@ -1782,7 +1780,7 @@ obj << Finish;
 
 ### QuasiNewton SR1
 
-**構文:** obj << QuasiNewton SR1
+**構文:** obj &lt;&lt; QuasiNewton SR1
 
 **説明:** 最適化法として準Newton SR1を指定する。この手法は、反復のたびに微分が再計算するのを避けている。
 
@@ -1798,7 +1796,7 @@ obj << Finish;
 
 ### Relative Gradient
 
-**構文:** obj << Relative Gradient( number=1e-6 )
+**構文:** obj &lt;&lt; Relative Gradient( number=1e-6 )
 
 **説明:** 相対的な勾配基準に基づく収束基準を指定する。 デフォルトの値は"1e-6"。
 
@@ -1814,7 +1812,7 @@ obj << Finish;
 
 ### Remember Solution
 
-**構文:** obj << Remember Solution( name )
+**構文:** obj &lt;&lt; Remember Solution( name )
 
 **説明:** 「記録したモデル」レポートを作成する。このレポートには、現在のパラメータ推定値と要約統計量が表示される。複数のモデルの結果を記録して比較することができる。
 
@@ -1829,7 +1827,7 @@ obj << Remember Solution( "New Model" );
 
 ### Reset
 
-**構文:** obj << Reset
+**構文:** obj &lt;&lt; Reset
 
 **説明:** 収束基準の値をリセットする。この機能は、反復計算の終了後に、別の初期値を使ってモデルの再計算を行いたい場合に用いる。
 
@@ -1847,7 +1845,7 @@ obj << Reset;
 
 ### Revert To Original Parameters
 
-**構文:** obj << Revert To Original Parameters
+**構文:** obj &lt;&lt; Revert To Original Parameters
 
 **説明:** 設定パネルに表示されたパラメータの値を元の値にリセットする。
 
@@ -1863,7 +1861,7 @@ obj << Revert to Original Parameters;
 
 ### SSE Grid
 
-**構文:** obj << SSE Grid
+**構文:** obj &lt;&lt; SSE Grid
 
 **説明:** 解の周りにグリッドを作成し、そのグリッドの各値での誤差平方和を計算する。
 
@@ -1878,7 +1876,7 @@ obj << SSE Grid;
 
 ### Save Estimates
 
-**構文:** obj << Save Estimates
+**構文:** obj &lt;&lt; Save Estimates
 
 **説明:** 現在のパラメータ推定値を計算式列に保存する。
 
@@ -1894,7 +1892,7 @@ obj << Save Estimates;
 
 ### Save Estimates To Table
 
-**構文:** obj << Save Estimates To Table
+**構文:** obj &lt;&lt; Save Estimates To Table
 
 **説明:** パラメータ推定値を含んだ新しいデータテーブルを作成する。
 
@@ -1911,7 +1909,7 @@ obj << Save Estimates To Table;
 
 ### Save Indiv Confid Limit Formula
 
-**構文:** obj << Save Indiv Confid Limit Formula
+**構文:** obj &lt;&lt; Save Indiv Confid Limit Formula
 
 **説明:** 個々の測定値の予測に対して信頼区間を計算する式をデータテーブルに保存する。これは、与えられたX値に対する個々の応答値に対する信頼区間。新しい計算式列として、これらの列はデータテーブルに保存される。
 
@@ -1926,7 +1924,7 @@ obj << Save Indiv Confid Limit Formula;
 
 ### Save Indiv Confid Limits
 
-**構文:** obj << Save Indiv Confid Limits
+**構文:** obj &lt;&lt; Save Indiv Confid Limits
 
 **説明:** 個々の値に対する漸近的な信頼限界をデータテーブルに保存する。これは、与えられたX値における個々の応答値の信頼区間。新しい計算式列として、これらの列はデータテーブルに保存される。
 
@@ -1941,7 +1939,7 @@ obj << Save Indiv Confid Limits;
 
 ### Save Inverse Prediction Formula
 
-**構文:** obj << Save Inverse Prediction Formula
+**構文:** obj &lt;&lt; Save Inverse Prediction Formula
 
 **説明:** モデルの逆推定、逆推定の標準誤差、および個々の逆推定値の標準誤差の計算式をデータテーブルに保存する。新しい計算式列として、これらの列はデータテーブルに保存される。
 
@@ -1956,7 +1954,7 @@ obj << Save Inverse Prediction Formula;
 
 ### Save Pred Confid Limit Formula
 
-**構文:** obj << Save Pred Confid Limit Formula
+**構文:** obj &lt;&lt; Save Pred Confid Limit Formula
 
 **説明:** モデルによる予測値に対する信頼区間の計算式をデータテーブルに保存する。これは、与えられたX値における平均応答値に対する信頼区間。新しい計算式列として、これらの列はデータテーブルに保存される。
 
@@ -1971,7 +1969,7 @@ obj << Save Pred Confid Limit Formula;
 
 ### Save Pred Confid Limits
 
-**構文:** obj << Save Pred Confid Limits
+**構文:** obj &lt;&lt; Save Pred Confid Limits
 
 **説明:** 予測値に対する漸近的な信頼限界をデータテーブルに保存する。これは、与えられたX値における平均応答値の信頼区間。新しい計算式列として、これらの列はデータテーブルに保存される。
 
@@ -1986,7 +1984,7 @@ obj << Save Pred Confid Limits;
 
 ### Save Prediction Formula
 
-**構文:** obj << Save Prediction Formula
+**構文:** obj &lt;&lt; Save Prediction Formula
 
 **説明:** 現在のパラメータ推定値を含む予測式の列をデータテーブルに保存する。新しい計算式列として、この列はデータテーブルに保存される。
 
@@ -2001,7 +1999,7 @@ obj << Save Prediction Formula;
 
 ### Save Residual Formula
 
-**構文:** obj << Save Residual Formula
+**構文:** obj &lt;&lt; Save Residual Formula
 
 **説明:** 残差の計算式をデータテーブルに保存する。新しい計算式列として、この列はデータテーブルに保存される。
 
@@ -2016,7 +2014,7 @@ obj << Save Residual Formula;
 
 ### Save Specific Solving Formula
 
-**構文:** obj << Save Specific Solving Formula( <column to solve for, {name1=expr1, ...}, Save Formula for Std Error Mean, Save Formula for Std Error Individual> )
+**構文:** obj &lt;&lt; Save Specific Solving Formula( &lt;column to solve for, {name1=expr1, ...}, Save Formula for Std Error Mean, Save Formula for Std Error Individual&gt; )
 
 **説明:** 応答変数とデータ内のその他のX値または定数がわかっている場合に、Xの値と標準誤差を求める式をデータテーブルに保存する。新しい計算式列として、これらの列はデータテーブルに保存される。
 
@@ -2055,7 +2053,7 @@ obj << Save Specific Solving Formula( :pop, Save Formula for Std Error Individua
 
 ### Save Std Error of Individual
 
-**構文:** obj << Save Std Error of Individual
+**構文:** obj &lt;&lt; Save Std Error of Individual
 
 **説明:** 個々の値の予測の標準誤差を求める計算式をデータテーブルに保存する。これは、与えられたX値に対して予測した個々の応答値の標準誤差。新しい計算式列として、この列はデータテーブルに保存される。
 
@@ -2070,7 +2068,7 @@ obj << Save Std Error of Individual;
 
 ### Save Std Error of Predicted
 
-**構文:** obj << Save Std Error of Predicted
+**構文:** obj &lt;&lt; Save Std Error of Predicted
 
 **説明:** モデルによる予測の標準誤差を求める計算式をデータテーブルに保存する。これは、与えられたX値に対して予測した平均応答値の標準誤差。新しい計算式列として、この列はデータテーブルに保存される。
 
@@ -2085,7 +2083,7 @@ obj << Save Std Error of Predicted;
 
 ### Second Deriv Method
 
-**構文:** obj << Second Deriv Method( state=0|1 )
+**構文:** obj &lt;&lt; Second Deriv Method( state=0|1 )
 
 **説明:** 推定のための最適化における反復計算で、2次微分が使用されるよう指定する。
 
@@ -2099,7 +2097,7 @@ obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Second Deriv Method( 1 ), 
 
 ### Set Parameter
 
-**構文:** obj << Set Parameter( name=expr, ... )
+**構文:** obj &lt;&lt; Set Parameter( name=expr, ... )
 
 **説明:** モデルを推定する前に、1つまたは複数のパラメータ値を設定する。この機能は、パラメータを特定の値に固定する場合、および、反復計算の開始値を設定する場合に用いる。
 
@@ -2116,7 +2114,7 @@ obj << Finish;
 
 ### Show Derivatives
 
-**構文:** obj << Show Derivatives
+**構文:** obj &lt;&lt; Show Derivatives
 
 **説明:** 非線形回帰式を微分した式(導関数)をログに表示する。
 
@@ -2131,7 +2129,7 @@ obj << Show Derivatives;
 
 ### Show Prediction Expression
 
-**構文:** obj << Show Prediction Expression( state=0|1 )
+**構文:** obj &lt;&lt; Show Prediction Expression( state=0|1 )
 
 **説明:** レポートにおいて予測モデルまたは損失関数の表示/非表示を切り替える。
 
@@ -2150,7 +2148,7 @@ obj = dt << Nonlinear(
 
 ### Step
 
-**構文:** obj << Step
+**構文:** obj &lt;&lt; Step
 
 **説明:** 非線形回帰の反復計算において、計算を1ステップ進める。
 
@@ -2167,7 +2165,7 @@ obj << Step;
 
 ### Stop
 
-**構文:** obj << Stop
+**構文:** obj &lt;&lt; Stop
 
 **説明:** 非線形回帰の反復計算を中断し、現在の反復ステップで停止する。
 
@@ -2183,7 +2181,7 @@ obj << Stop;
 
 ### Surface Profiler
 
-**構文:** obj << Surface Profiler( state=0|1 )
+**構文:** obj &lt;&lt; Surface Profiler( state=0|1 )
 
 **説明:** 3次元曲面プロットの表示/非表示を切り替える。このオプションは、モデルに2つ以上のX変数がある場合のみ利用可能。
 
@@ -2199,7 +2197,7 @@ obj << Surface Profiler( 1 );
 
 ### Unlock Parameter
 
-**構文:** obj << Unlock Parameter( Name, ... )
+**構文:** obj &lt;&lt; Unlock Parameter( Name, ... )
 
 **説明:** 指定されたパラメータのロックを解除する。ロックされている因子に対してこのオプションを使用すると、パラメータの固定が解除され、反復計算においてそのパラメータの推定値が求められるようになる。
 
@@ -2219,7 +2217,7 @@ obj << Finish;
 
 ### Unthreaded
 
-**構文:** obj << Unthreaded( state=0|1 )
+**構文:** obj &lt;&lt; Unthreaded( state=0|1 )
 
 **説明:** 推定のための反復計算を現在の1つのメインスレッドだけで実行する。
 

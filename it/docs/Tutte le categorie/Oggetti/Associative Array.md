@@ -6,9 +6,7 @@
 
 ### Associative Array
 
-**Sintassi:** y = Associative Array( {{key1, value1}, ...} );
-
-y = Associative Array( keys, values )
+**Sintassi:** y = Associative Array( {{key1, value1}, ...} );y = Associative Array( keys, values )
 
 **Descrizione:** Crea un array associativo, noto anche come dizionario o mappa hash. Nel form a due argomenti, chiavi e valori devono essere un elenco, una matrice o una colonna di una tabella di dati.
 
@@ -25,7 +23,7 @@ ex << get contents;
 
 ### Contains
 
-**Sintassi:** bool = AAobj << Contains( key | AAobj )
+**Sintassi:** bool = AAobj &lt;&lt; Contains( key | AAobj )
 
 **Descrizione:** Richiede se la chiave o insieme di chiavi è nell&apos;array associativo. Vedere anche Contiene elemento per un esempio più semplice.
 
@@ -44,7 +42,7 @@ Local(
 
 ### Contains Item
 
-**Sintassi:** bool = AAobj << Contains Item( key )
+**Sintassi:** bool = AAobj &lt;&lt; Contains Item( key )
 
 **Descrizione:** Richiede se la chiave è nell&apos;array associativo. Vedere anche Contiene che dispone di ulteriori funzionalità.
 
@@ -59,7 +57,7 @@ Local( {rhymes = ["mouse" => "house", "car" => "star", "orange" => ""]},
 
 ### First
 
-**Sintassi:** key = AAobj << first
+**Sintassi:** key = AAobj &lt;&lt; first
 
 **Descrizione:** Iteratore per array associativo.
 
@@ -79,7 +77,7 @@ Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"], x, words = ""}
 
 ### Get Contents
 
-**Sintassi:** list = AAObj << Get Contents
+**Sintassi:** list = AAObj &lt;&lt; Get Contents
 
 **Descrizione:** Restituisce il contenuto dell&apos;array associativo in un elenco.
 
@@ -92,7 +90,7 @@ Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"]}, aa << Get Con
 
 ### Get Default Value
 
-**Sintassi:** value = AAobj << Get Default Value()
+**Sintassi:** value = AAobj &lt;&lt; Get Default Value()
 
 **Descrizione:** Restituisce il valore che l&apos;array associativo restituirà per le chiavi non trovate.
 
@@ -111,7 +109,7 @@ Local( {aa = [=> 99], v1, v2}, /* initial value used for non-existing key is 99 
 
 ### Get Keys
 
-**Sintassi:** list = AAObj << Get Keys
+**Sintassi:** list = AAObj &lt;&lt; Get Keys
 
 **Descrizione:** Restituisce un elenco di chiavi trovate nell&apos;array associativo.
 
@@ -124,7 +122,7 @@ Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"]}, aa << Get Key
 
 ### Get Value
 
-**Sintassi:** value = AAobj << Get Value( key )
+**Sintassi:** value = AAobj &lt;&lt; Get Value( key )
 
 **Descrizione:** Restituisce il valore memorizzato sotto la chiave nell&apos;array associativo.
 
@@ -139,7 +137,7 @@ Local( {prices = Associative Array( {{"pineapple", 1.25}, {"grape", .50}, {"oran
 
 ### Get Values
 
-**Sintassi:** list = AAObj << Get Values
+**Sintassi:** list = AAObj &lt;&lt; Get Values
 
 **Descrizione:** Restituisce un elenco di valori trovati nell&apos;array associativo.
 
@@ -152,7 +150,7 @@ Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"]}, aa << Get Val
 
 ### Insert
 
-**Sintassi:** AAobj1 << Insert( AAobj2 | key,  { value } )
+**Sintassi:** AAobj1 &lt;&lt; Insert( AAobj2 | key, { value } )
 
 **Descrizione:** Inserisce un array associativo in un altro array associativo o memorizza il valore sotto la chiave nell&apos;array associativo. Vedere Inserisci elemento per un esempio più semplice.
 
@@ -168,7 +166,7 @@ Local( {decode = [".-" => "a", "-..." => "b"], others = ["..." => "s", "-.-." =>
 
 ### Insert Item
 
-**Sintassi:** AAobj << Insert Item( key, value )
+**Sintassi:** AAobj &lt;&lt; Insert Item( key, value )
 
 **Descrizione:** Memorizza il valore sotto la chiave nell&apos;array associativo. Vedere anche Inserisci che dispone di ulteriori funzionalità.
 
@@ -184,7 +182,7 @@ Local( {decode = [".-" => "a", "-..." => "b"]},
 
 ### Intersect
 
-**Sintassi:** AAobj1 << Intersect( AAobj2 )
+**Sintassi:** AAobj1 &lt;&lt; Intersect( AAobj2 )
 
 **Descrizione:** Tratta un array associativo come un insieme di oggetti. I valori devono essere 1 per gli oggetti dell&apos;insieme. Il valore predefinito deve essere 0. L&apos;insieme corrente è sostituito dalla sua intersezione con l&apos;insieme nel messaggio.
 
@@ -231,7 +229,7 @@ dt << selectrows( desiredSelection << getkeys ); // males <= 12
 
 ### Next
 
-**Sintassi:** key = AAobj << next( previous key )
+**Sintassi:** key = AAobj &lt;&lt; next( previous key )
 
 **Descrizione:** Iteratore per array associativo.
 
@@ -251,7 +249,7 @@ Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"], x, words = ""}
 
 ### Remove
 
-**Sintassi:** AAobj1 << Remove( AAobj2 | key )
+**Sintassi:** AAobj1 &lt;&lt; Remove( AAobj2 | key )
 
 **Descrizione:** Rimuove la chiave o l&apos;insieme di chiavi dall&apos;array associativo. Vedere anche Rimuovi elemento per un esempio più semplice.
 
@@ -267,7 +265,7 @@ Local( {primes = [2 => 1, 3 => 1, 4 => 1, 5 => 1, 6 => 1, 7 => 1, 8 => 1, 9 => 1
 
 ### Remove Item
 
-**Sintassi:** AAobj << Remove Item( key )
+**Sintassi:** AAobj &lt;&lt; Remove Item( key )
 
 **Descrizione:** Rimuove la chiave dall&apos;array associativo. Vedere anche Rimuovi che dispone di ulteriori funzionalità.
 
@@ -299,7 +297,7 @@ Local(
 
 ### Set Default Value
 
-**Sintassi:** AAobj << Set Default Value( value )
+**Sintassi:** AAobj &lt;&lt; Set Default Value( value )
 
 **Descrizione:** Modifica il valore che l&apos;array associativo restituirà per le chiavi non trovate.
 

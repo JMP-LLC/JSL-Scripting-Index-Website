@@ -6,7 +6,7 @@
 
 ### As Scriptable
 
-**Syntaxe :** jmplivereportlist = jmplivelist << As Scriptable()
+**Syntaxe :** jmplivereportlist = jmplivelist &lt;&lt; As Scriptable()
 
 **Description :** Renvoie une liste scriptable d&apos;objets Dossier JMP Live, Rapport JMP Live ou Post JMP Live selon l&apos;opération de recherche réalisée pour produire la Liste de résultats JMP Live.
 
@@ -60,7 +60,7 @@ If( jmpliveresult << Succeeded,
 
 ### Get Current Page Number
 
-**Syntaxe :** value = jmplivelist << Get Current Page Number()
+**Syntaxe :** value = jmplivelist &lt;&lt; Get Current Page Number()
 
 **Description :** Obtenez le numéro de page actuel des éléments dans la liste.
 
@@ -182,7 +182,7 @@ While( count > 0,
 
 ### Get Number Of Items
 
-**Syntaxe :** value = jmplivelist << Get Number Of Items()
+**Syntaxe :** value = jmplivelist &lt;&lt; Get Number Of Items()
 
 **Description :** Obtenez le nombre d&apos;éléments de cet ensemble de résultats.
 
@@ -276,7 +276,7 @@ If( jmpliveresult << Succeeded,
 
 ### Get Page
 
-**Syntaxe :** reportlist = jmplivelist << Get Page(value)
+**Syntaxe :** reportlist = jmplivelist &lt;&lt; Get Page(value)
 
 **Description :** Récupère la page spécifique du Dossier JMP Live, du Rapport JMP Live ou du Post JMP Live dans l&apos;ensemble de la liste de résultats d&apos;une opération de recherche.
 
@@ -398,7 +398,7 @@ While( count > 0,
 
 ### Next
 
-**Syntaxe :** reportlist = jmplivelist << Next()
+**Syntaxe :** reportlist = jmplivelist &lt;&lt; Next()
 
 **Description :** Renvoie la page suivante de résultats dans une opération de recherche. Cette liste peut contenir des Dossiers JMP Live, des Rapports JMP Live ou des Posts JMP Live en fonction de l&apos;opération de recherche.
 
@@ -520,7 +520,7 @@ While( count > 0,
 
 ### Previous
 
-**Syntaxe :** reportlist = jmplivelist << Previous()
+**Syntaxe :** reportlist = jmplivelist &lt;&lt; Previous()
 
 **Description :** Renvoie la page précédente de résultats dans une opération de recherche. Cette liste peut contenir des Dossiers JMP Live, des Rapports JMP Live ou des Posts JMP Live en fonction de l&apos;opération de recherche.
 

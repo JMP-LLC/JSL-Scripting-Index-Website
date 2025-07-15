@@ -6,7 +6,7 @@
 
 ### Append
 
-**Syntax:** obj << Append
+**Syntax:** obj &lt;&lt; Append
 
 **Beschreibung:** Hängt einen Baumknoten an die untergeordneten Elemente dieses Knotens an.
 
@@ -44,7 +44,7 @@ root1 << Append( c7 );
 
 ### First Child
 
-**Syntax:** node = obj << First Child
+**Syntax:** node = obj &lt;&lt; First Child
 
 **Beschreibung:** Gibt den ersten untergeordneten Knoten zurück oder Leer, wenn der Knoten keine untergeordneten Elemente hat.
 
@@ -81,7 +81,7 @@ Print( (root1 << Firs tChild) << GetLabel );
 
 ### Get Child
 
-**Syntax:** obj << Get Child( index )
+**Syntax:** obj &lt;&lt; Get Child( index )
 
 **Beschreibung:** Untergeordneten Knoten am angegebenen Index abrufen.
 
@@ -118,7 +118,7 @@ Print( (root2 << Get Child( 2 )) << Get Label );
 
 ### Get Child Count
 
-**Syntax:** obj << Get Child Count
+**Syntax:** obj &lt;&lt; Get Child Count
 
 **Beschreibung:** Anzahl der untergeordneten Knoten abrufen.
 
@@ -155,7 +155,7 @@ root2 << Get Child Count;
 
 ### Get Data
 
-**Syntax:** data = obj << Get Data
+**Syntax:** data = obj &lt;&lt; Get Data
 
 **Beschreibung:** Diesem Knoten zugewiesene Anwenderdaten abrufen. Ruft den beim Festlegen von Daten festgelegten Wert bzw. das festgelegte Objekt ab. Weitere Informationen finden Sie unter Set Data.
 
@@ -203,7 +203,7 @@ tree << SetNodeSelectScript(
 
 ### Get Dimmed
 
-**Syntax:** dimmed = obj << Get Dimmed
+**Syntax:** dimmed = obj &lt;&lt; Get Dimmed
 
 **Beschreibung:** Option abrufen, den Text für diesen Knoten zu dimmen.
 
@@ -242,7 +242,7 @@ root3 << Get Dimmed;
 
 ### Get Expanded Icon
 
-**Syntax:** obj << Get Expanded Icon
+**Syntax:** obj &lt;&lt; Get Expanded Icon
 
 **Beschreibung:** Ruft das Symbol für einen erweiterten Baumknoten ab. Leer wird zurückgegeben, wenn kein Symbol angegeben ist.
 
@@ -281,7 +281,7 @@ root1 << Get Expanded Icon;
 
 ### Get Font Style
 
-**Syntax:** style = obj << Get Font Style
+**Syntax:** style = obj &lt;&lt; Get Font Style
 
 **Beschreibung:** Schriftstil für diesen Knoten abrufen.
 
@@ -320,7 +320,7 @@ root3 << Get Font Style;
 
 ### Get Icon
 
-**Syntax:** obj << Get Icon
+**Syntax:** obj &lt;&lt; Get Icon
 
 **Beschreibung:** Ruft das Symbol für einen Baumknoten ab. Leer wird zurückgegeben, wenn kein Symbol angegeben ist.
 
@@ -358,7 +358,7 @@ root1 << Get Icon;
 
 ### Get Label
 
-**Syntax:** label = obj << Get Label
+**Syntax:** label = obj &lt;&lt; Get Label
 
 **Beschreibung:** Beschriftung für diesen Knoten abrufen.
 
@@ -395,7 +395,7 @@ root3 << Get Label;
 
 ### Get Tip
 
-**Syntax:** tip = obj << Get Tip
+**Syntax:** tip = obj &lt;&lt; Get Tip
 
 **Beschreibung:** Tooltip-Text für diesen Knoten abrufen.
 
@@ -434,7 +434,7 @@ c6 << Get Tip;
 
 ### Index Of
 
-**Syntax:** index = obj << Index Of( node )
+**Syntax:** index = obj &lt;&lt; Index Of( node )
 
 **Beschreibung:** Index des angegebenen untergeordneten Knotens abrufen. Gibt 0 zurück, wenn der Index nicht gefunden wird.
 
@@ -471,7 +471,7 @@ root2 << Index Of( root3 );
 
 ### Insert
 
-**Syntax:** obj << Insert( node, index )
+**Syntax:** obj &lt;&lt; Insert( node, index )
 
 **Beschreibung:** Knoten am angegebenen Index einfügen.
 
@@ -509,7 +509,7 @@ root3 << Insert( c7, 2 );
 
 ### Is Leaf
 
-**Syntax:** isLeaf = obj << Is Leaf
+**Syntax:** isLeaf = obj &lt;&lt; Is Leaf
 
 **Beschreibung:** Ist dieser Knoten ein Blattknoten im Baum?
 
@@ -546,7 +546,7 @@ root3 << Is Leaf;
 
 ### Last Child
 
-**Syntax:** node = obj << Last Child
+**Syntax:** node = obj &lt;&lt; Last Child
 
 **Beschreibung:** Gibt den letzten untergeordneten Knoten zurück oder Leer, wenn der Knoten keine untergeordneten Elemente hat.
 
@@ -583,7 +583,7 @@ Print( (root1 << Last Child) << GetLabel );
 
 ### Parent
 
-**Syntax:** node = obj << Parent
+**Syntax:** node = obj &lt;&lt; Parent
 
 **Beschreibung:** Gibt den übergeordneten Knoten zurück oder Leer, wenn dieser Knoten keinen übergeordnetes Knoten hat.
 
@@ -620,7 +620,7 @@ Print( (c4 << Parent) << GetLabel );
 
 ### Prepend
 
-**Syntax:** obj << Prepend( node )
+**Syntax:** obj &lt;&lt; Prepend( node )
 
 **Beschreibung:** Stellt den untergeordneten Elementen dieses Knotens einen Baumknoten voran.
 
@@ -658,7 +658,7 @@ root1 << Prepend( c7 );
 
 ### Prev Sib
 
-**Syntax:** node = obj << Prev Sib
+**Syntax:** node = obj &lt;&lt; Prev Sib
 
 **Beschreibung:** Gibt das vorherige Geschwisterelement dieses Knotens in den untergeordneten Elementen des übergeordneten Knotens zurück oder Leer, wenn dies das erste untergeordnete Element ist.
 
@@ -695,7 +695,7 @@ Print( (c4 << Prev Sib) << Get Label );
 
 ### Remove
 
-**Syntax:** obj << Remove
+**Syntax:** obj &lt;&lt; Remove
 
 **Beschreibung:** Diesen Knoten und alle untergeordneten Elemente aus dem Baum entfernen.
 
@@ -733,7 +733,7 @@ root3 << Remove;
 
 ### Remove All Children
 
-**Syntax:** obj << Remove All Children
+**Syntax:** obj &lt;&lt; Remove All Children
 
 **Beschreibung:** Alle untergeordneten Knoten entfernen.
 
@@ -771,7 +771,7 @@ root2 << Remove All Children;
 
 ### Remove Child
 
-**Syntax:** obj << Remove Child( node )
+**Syntax:** obj &lt;&lt; Remove Child( node )
 
 **Beschreibung:** Entfernt den angegebenen untergeordneten Knoten.
 
@@ -809,7 +809,7 @@ root3 << Remove Child( c6 );
 
 ### Set Data
 
-**Syntax:** obj << Set Data( data )
+**Syntax:** obj &lt;&lt; Set Data( data )
 
 **Beschreibung:** Anwenderdaten für diesen Knoten festlegen.
 
@@ -857,7 +857,7 @@ tree << SetNodeSelectScript(
 
 ### Set Dimmed
 
-**Syntax:** obj << Set Dimmed( state=0|1 )
+**Syntax:** obj &lt;&lt; Set Dimmed( state=0|1 )
 
 **Beschreibung:** Option festlegen, den Text für diesen Knoten zu dimmen.
 
@@ -897,7 +897,7 @@ c6 << Set Dimmed( 1 );
 
 ### Set Expanded Icon
 
-**Syntax:** obj << Set Expanded Icon( icon | path, <boolean> )
+**Syntax:** obj &lt;&lt; Set Expanded Icon( icon | path, &lt;boolean&gt; )
 
 **Beschreibung:** Legt den Symbolnamen fest, der bei Erweiterung des Knotens verwendet werden soll. Optionaler Parameter gibt an, ob das zum Pfad zugehörige Symbol geladen werden soll (nur Windows).
 
@@ -937,7 +937,7 @@ root2 << Set Expanded Icon( "$SAMPLE_IMAGES/pi.gif", true );
 
 ### Set Font Style
 
-**Syntax:** obj << Set Font Style( "Plain" | "Bold" )
+**Syntax:** obj &lt;&lt; Set Font Style( "Plain" | "Bold" )
 
 **Beschreibung:** Schriftstil für diesen Knoten festlegen.
 
@@ -977,7 +977,7 @@ c6 << Set Font Style( "Bold" );
 
 ### Set Icon
 
-**Syntax:** obj << Set Icon( icon | path, <boolean> )
+**Syntax:** obj &lt;&lt; Set Icon( icon | path, &lt;boolean&gt; )
 
 **Beschreibung:** Knotensymbol festlegen. Optionaler Parameter gibt an, ob das zum Pfad zugehörige Symbol geladen werden soll (nur Windows).
 
@@ -1016,7 +1016,7 @@ root3 << Set Icon( "$SAMPLE_IMAGES/pi.gif", true );
 
 ### Set Label
 
-**Syntax:** obj << Set Label( label )
+**Syntax:** obj &lt;&lt; Set Label( label )
 
 **Beschreibung:** Beschriftung für diesen Knoten festlegen.
 
@@ -1054,7 +1054,7 @@ c6 << Set Label( "Last Child" );
 
 ### Set Tip
 
-**Syntax:** obj << Set Tip( tip )
+**Syntax:** obj &lt;&lt; Set Tip( tip )
 
 **Beschreibung:** Tooltip-Text für diesen Knoten festlegen.
 
@@ -1092,7 +1092,7 @@ c6 << Set Tip( "This is the tool tip for the last child" );
 
 ### Sib
 
-**Syntax:** node = obj << Sib
+**Syntax:** node = obj &lt;&lt; Sib
 
 **Beschreibung:** Gibt das nächste Geschwisterelement dieses Knotens in den untergeordneten Elementen des übergeordneten Knotens zurück oder Leer, wenn dies das letzte untergeordnete Element ist.
 
@@ -1129,7 +1129,7 @@ Print( (c4 << Sib) << Get Label );
 
 ### Top Parent
 
-**Syntax:** node = obj << Top Parent
+**Syntax:** node = obj &lt;&lt; Top Parent
 
 **Beschreibung:** Gibt das Basiselement des Baums mit diesem Knoten zurück oder Leer, wenn dieser Knoten keinen übergeordneten Knoten hat.
 
@@ -1168,7 +1168,7 @@ Print( (c6 << Top Parent) << GetLabel );
 
 ### Tree Node
 
-**Syntax:** node = Tree Node( <label> )
+**Syntax:** node = Tree Node( &lt;label&gt; )
 
 **Beschreibung:** Knoten für die Anzeige in einem Baumanzeigefeld erstellen.
 

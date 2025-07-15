@@ -6,7 +6,7 @@
 
 ### Contract
 
-**Syntax:** obj << Forecast( Contract( length, unit ) )
+**Syntax:** obj &lt;&lt; Forecast( Contract( length, unit ) )
 
 **Beschreibung:** Gibt die Länge und Zeiteinheit für den Vertrag an, die für die Vorhersage künftiger Risiken verwendet wird.
 
@@ -74,7 +74,7 @@ obj << Forecast(
 
 ### Distribution
 
-**Syntax:** obj << Forecast( Distribution( name ) )
+**Syntax:** obj &lt;&lt; Forecast( Distribution( name ) )
 
 **Beschreibung:** Gibt die Verteilung an, die für die Vorhersage künftiger Risiken verwendet wird.
 
@@ -142,9 +142,7 @@ obj << Forecast(
 
 ### Forecast Options
 
-**Syntax:** obj << Forecast Options( forecast message(), ... );
-
-(obj << Forecast Options) << forecast message()
+**Syntax:** obj &lt;&lt; Forecast Options( forecast message(), ... );(obj &lt;&lt; Forecast Options) &lt;&lt; forecast message()
 
 **Beschreibung:** Sendet Meldungen an das skriptfähige Objekt des Vorhersageberichts. Sie können eine oder mehrere Optionen im Menü über das rote Dreieck des Vorhersageberichts angeben. Wenn keine Argumente vorhanden sind, gibt diese Option eine JSL-Referenz auf das skriptfähige Objekt des Vorhersageberichts zurück. Wenn Argumente vorhanden sind, gibt diese Option eine JSL-Referenz auf das Plattformobjekt zurück. Weitere Informationen finden Sie bei den Einträgen unter Vorhersageoptionen.
 
@@ -172,7 +170,7 @@ obj = dt << Run Script( "Reliability Forecast" );
 
 ### Forecast To
 
-**Syntax:** obj << Forecast( Forecast To( time ) )
+**Syntax:** obj &lt;&lt; Forecast( Forecast To( time ) )
 
 **Beschreibung:** Gibt die letzte Zeit an, zu der künftiges Risiko vorhergesagt wird.
 
@@ -240,7 +238,7 @@ obj << Forecast(
 
 ### Forecast Type
 
-**Syntax:** obj << Forecast( Forecast Type( type ) )
+**Syntax:** obj &lt;&lt; Forecast( Forecast Type( type ) )
 
 **Beschreibung:** Gibt die Art der Quantität an, die für die Vorhersage künftiger Risiken verwendet wird. Das Argument type kann inkrementell oder kumuliert sein.
 
@@ -308,7 +306,7 @@ obj << Forecast(
 
 ### Future Risk Set
 
-**Syntax:** obj << Forecast( Future Risk Set( count vector, time vector ) )
+**Syntax:** obj &lt;&lt; Forecast( Future Risk Set( count vector, time vector ) )
 
 **Beschreibung:** Gibt den künftigen Risikosatz an, der für die Vorhersage künftiger Risiken verwendet wird. Die Argumente sind ein Vektor von Produktionszahlen und ein Vektor für künftige Zeiten.
 
@@ -376,7 +374,7 @@ obj << Forecast(
 
 ### Get Results
 
-**Syntax:** obj << Get Results
+**Syntax:** obj &lt;&lt; Get Results
 
 **Beschreibung:** Gibt eine benannte Liste zurück, die Vorhersageergebnisse enthält.
 
@@ -391,7 +389,7 @@ result = obj << Get Results;
 
 ### Group
 
-**Syntax:** obj << Forecast( Group( group ), ... )
+**Syntax:** obj &lt;&lt; Forecast( Group( group ), ... )
 
 **Beschreibung:** Identifiziert die Gruppe, an die alle Meldungen in der gleichen Vorhersageklausel gesendet werden sollen.
 
@@ -597,7 +595,7 @@ obj = dt << Reliability Forecast(
 
 ### Interval Type
 
-**Syntax:** obj << Forecast( Interval Type( type ) )
+**Syntax:** obj &lt;&lt; Forecast( Interval Type( type ) )
 
 **Beschreibung:** Gibt den Typ des Intervalls an, der für die Vorhersage des Fehlers um das zukünftige Risiko verwendet wird. Das Intervall type kann Kein Intervall, ein Plugin-Intervall oder ein Vorhersageintervall sein.
 
@@ -665,7 +663,7 @@ obj << Forecast(
 
 ### Risk Set
 
-**Syntax:** obj << Forecast( Risk Set( count vector ) )
+**Syntax:** obj &lt;&lt; Forecast( Risk Set( count vector ) )
 
 **Beschreibung:** Gibt den Satz vorhandener Risiken an, der für die Vorhersage künftiger Risiken verwendet wird.
 
@@ -733,7 +731,7 @@ obj << Forecast(
 
 ### Save Data in Time to Event Format
 
-**Syntax:** obj << Save Data in Time to Event Format
+**Syntax:** obj &lt;&lt; Save Data in Time to Event Format
 
 **Beschreibung:** Speichert Daten im Nevada- oder Datumsformat in einer neuen Datentabelle im Zeit-bis-Ereignis-Format.
 
@@ -748,7 +746,7 @@ obj << Save Data in Time to Event Format;
 
 ### Save Forecast Data Table
 
-**Syntax:** obj << Save Forecast Data Table
+**Syntax:** obj &lt;&lt; Save Forecast Data Table
 
 **Beschreibung:** Speichert die kumulierte und inkrementelle Anzahl von Rückgaben in einer neuen Datentabelle, zusammen mit den Variablen, die Sie im Startfenster ausgewählt haben. Bei gruppierten Analysen enthalten Tabellennamen die Gruppen-ID und das Wort „aggregiert“. Vorhandene Rückgaben werden auch in die aggregierten Datentabellen aufgenommen.
 
@@ -763,7 +761,7 @@ dt results = obj << Save Forecast Data Table;
 
 ### Set Interval Level
 
-**Syntax:** obj << Forecast( Set Interval Level( value ) )
+**Syntax:** obj &lt;&lt; Forecast( Set Interval Level( value ) )
 
 **Beschreibung:** Gibt das Konfidenzniveau für das Intervall an, das für die Vorhersage des Fehlers um das zukünftige Risiko verwendet wird.
 
@@ -831,7 +829,7 @@ obj << Forecast(
 
 ### Show Graph Filter
 
-**Syntax:** obj << Show Graph Filter( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Graph Filter( state=0|1 )
 
 **Beschreibung:** Zeigt den Graphenfilter an oder blendet ihn aus, so dass Sie auswählen können, welche Produktionsperioden in den Graphen der beobachteten Daten angezeigt werden sollen. Balken für nicht ausgewählte Zeiträume werden ausgeblendet. Wählen Sie die Perioden ab, um den Graphen in seinem ursprünglichen Zustand anzuzeigen. Diese Option ist bei Zeit-bis-Ereignis-Daten nicht verfügbar.
 
@@ -846,7 +844,7 @@ obj << Show Graph Filter( 1 );
 
 ### Show Legend
 
-**Syntax:** obj << Show Legend( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Legend( state=0|1 )
 
 **Beschreibung:** Zeigt eine Legende für den Bericht der beobachteten Daten an oder blendet sie aus. Diese Option ist bei Zeit-bis-Ereignis-Daten nicht verfügbar.
 
@@ -863,7 +861,7 @@ obj << Show Legend( 1 );
 
 ### Action
 
-**Syntax:** obj << Action
+**Syntax:** obj &lt;&lt; Action
 
 **Beschreibung:** Allzwecköffnung innerhalb einer Plattform zum Einfügen von auszuwertenden Ausdrücken. Setzt die Kontexte für Anzeigefeld und Datentabelle kurzzeitig auf die Plattform.
 
@@ -881,7 +879,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Syntax:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntax:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Beschreibung:** Wendet eine zuvor erstellte Voreinstellung auf das Objekt an und aktualisiert die Optionen und Anpassungen entsprechend den gespeicherten Einstellungen.
 
@@ -928,7 +926,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**Syntax:** obj << Automatic Recalc( state=0|1 )
+**Syntax:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Beschreibung:** Wiederholt die Analyse bei Ausschluss und Datenänderungen automatisch. Wenn die Option „Automatic Recalc“ eingeschaltet ist, sollten Sie in Betracht ziehen, Wait(0)-Befehle zu verwenden, um sicherzustellen, dass die Ausschlüsse und Datenänderungen vor der Neuberechnung wirksam werden.
 
@@ -981,7 +979,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Column Switcher
 
-**Syntax:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Syntax:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Beschreibung:** Fügt ein Bedienfeld zum Ändern der Variablen der Plattform hinzu
 
@@ -999,7 +997,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy Script
 
-**Syntax:** obj << Copy Script
+**Syntax:** obj &lt;&lt; Copy Script
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und legt es in der Zwischenablage ab.
 
@@ -1051,7 +1049,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Syntax:** obj << Data Table Window
+**Syntax:** obj &lt;&lt; Data Table Window
 
 **Beschreibung:** Zeigt das Fenster mit der Datentabelle für diese Analyse im Vordergrund an.
 
@@ -1103,7 +1101,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Syntax:** obj << Get By Levels
+**Syntax:** obj &lt;&lt; Get By Levels
 
 **Beschreibung:** Gibt ein assoziatives Array zurück, das die Nach-Gruppenspalten ihren Werten zuordnet.
 
@@ -1120,7 +1118,7 @@ biv << Get By Levels;
 
 ### Get Container
 
-**Syntax:** obj << Get Container
+**Syntax:** obj &lt;&lt; Get Container
 
 **Beschreibung:** Gibt einen Verweis auf das Containerfeld zurück, das den Inhalt des Objekts enthält.
 
@@ -1204,7 +1202,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Syntax:** obj << Get Data Table
+**Syntax:** obj &lt;&lt; Get Data Table
 
 **Beschreibung:** Gibt eine Referenz auf die Datentabelle zurück.
 
@@ -1257,7 +1255,7 @@ Show( N Rows( t ) );
 
 ### Get Script
 
-**Syntax:** obj << Get Script
+**Syntax:** obj &lt;&lt; Get Script
 
 **Beschreibung:** Erstellt ein Skript (JSL) zum Erzeugen dieser Analyse und gibt es als Ausdruck zurück.
 
@@ -1310,7 +1308,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Syntax:** obj << Get Script With Data Table
+**Syntax:** obj &lt;&lt; Get Script With Data Table
 
 **Beschreibung:** Erstellt ein Skript (JSL) zum Erzeugen dieser Analyse und referenziert dabei spezifisch diese Datentabelle und gibt das Skript als Ausdruck zurück.
 
@@ -1363,7 +1361,7 @@ Show( t );
 
 ### Get Timing
 
-**Syntax:** obj << Get Timing
+**Syntax:** obj &lt;&lt; Get Timing
 
 **Beschreibung:** Steuert den Start der Plattform zeitlich.
 
@@ -1416,7 +1414,7 @@ Show( t );
 
 ### Get Web Support
 
-**Syntax:** obj << Get Web Support
+**Syntax:** obj &lt;&lt; Get Web Support
 
 **Beschreibung:** Gibt eine Zahl zurück, die angibt, ob für das Anzeigeobjekt interaktive HTML unterstützt wird. 1 bedeutet einige oder alle Elemente werden unterstützt. 0 bedeutet keine Unterstützung.
 
@@ -1432,7 +1430,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Syntax:** obj << Get Where Expr
+**Syntax:** obj &lt;&lt; Get Where Expr
 
 **Beschreibung:** Gibt den Ausdruck Where für die Teilmenge der Daten zurück, wenn die Plattform mit By() oder Where() gestartet wurde. Andernfalls wird Empty() zurückgegeben.
 
@@ -1469,7 +1467,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Syntax:** obj << Local Data Filter
+**Syntax:** obj &lt;&lt; Local Data Filter
 
 **Beschreibung:** Filtert Daten für bestimmte Gruppen oder Bereiche, aber nur lokal in dieser Plattform.
 
@@ -1525,7 +1523,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Syntax:** obj << Paste Local Data Filter
+**Syntax:** obj &lt;&lt; Paste Local Data Filter
 
 **Beschreibung:** Lokalen Datenfilter aus der Zwischenablage auf den aktuellen Bericht anwenden.
 
@@ -1546,7 +1544,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**Syntax:** obj << Redo Analysis
+**Syntax:** obj &lt;&lt; Redo Analysis
 
 **Beschreibung:** Führt die gleiche Analyse in einem neuen Fenster aus. Die Analyse ist unterschiedlich, wenn sich die Daten verändert haben.
 
@@ -1598,7 +1596,7 @@ obj << Redo Analysis;
 
 ### Relaunch Analysis
 
-**Syntax:** obj << Relaunch Analysis
+**Syntax:** obj &lt;&lt; Relaunch Analysis
 
 **Beschreibung:** Öffnet das Plattform-Startfenster und ruft die Einstellungen ab, die zum Erstellen des Berichts verwendet wurden.
 
@@ -1650,7 +1648,7 @@ obj << Relaunch Analysis;
 
 ### Remove Column Switcher
 
-**Syntax:** obj << Remove Column Switcher
+**Syntax:** obj &lt;&lt; Remove Column Switcher
 
 **Beschreibung:** Entfernt den letzten Spaltenwechsler, der der Plattform hinzugefügt wurde.
 
@@ -1670,7 +1668,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Syntax:** obj << Remove Local Data Filter
+**Syntax:** obj &lt;&lt; Remove Local Data Filter
 
 **Beschreibung:** Wenn ein lokaler Filter verwendet wurde, wird dieser entfernt und die Plattform verwendet wieder direkt alle Daten aus der Datentabelle
 
@@ -1709,9 +1707,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Syntax:** obj << Report;
-
-Report( obj )
+**Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Beschreibung:** Gibt eine Referenz auf das Berichtsobjekt zurück.
 
@@ -1765,7 +1761,7 @@ Show( t );
 
 ### Report View
 
-**Syntax:** obj << Report View( "Vollständig"|"Übersicht" )
+**Syntax:** obj &lt;&lt; Report View( "Vollständig"|"Übersicht" )
 
 **Beschreibung:** Die Berichtsanzeige legt das Detailniveau für einen Plattformbericht fest. Full zeigt alle Details an, während Summary abhängig von der Plattform nur ausgewählte Inhalte anzeigt. Für benutzerdefiniertes Verhalten unterstützen Anzeigefelder eine Meldung <<Set Summary Behavior.
 
@@ -1817,7 +1813,7 @@ obj << Report View( "Summary" );
 
 ### Save Script for All Objects
 
-**Syntax:** obj << Save Script for All Objects
+**Syntax:** obj &lt;&lt; Save Script for All Objects
 
 **Beschreibung:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -1869,7 +1865,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Syntax:** obj << Save Script for All Objects To Data Table( <name> )
+**Syntax:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Beschreibung:** Speichert ein Skript für alle Berichtsobjekte in der aktuellen Datentabelle. Diese Option ist nützlich, wenn Sie mehrere Berichte im Fenster haben. Das Skript wird nach der ersten Plattform benannt, sofern Sie keine Skriptnamen in Anführungszeichen angeben.
 
@@ -1981,7 +1977,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Syntax:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und speichert es als Tabelleneigenschaft in der Datentabelle.
 
@@ -2033,7 +2029,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Syntax:** obj << Save Script to Journal
+**Syntax:** obj &lt;&lt; Save Script to Journal
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und fügt eine Schaltfläche mit diesem Skript zum Journal hinzu.
 
@@ -2085,7 +2081,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Syntax:** obj << Save Script to Report
+**Syntax:** obj &lt;&lt; Save Script to Report
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und zeigt es im Bericht selbst an. Nützlich zum Anlegen eines gedruckten Nachweises der durchgeführten Aktivitäten.
 
@@ -2137,7 +2133,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Syntax:** obj << Save Script to Script Window
+**Syntax:** obj &lt;&lt; Save Script to Script Window
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und hängt es an das Textfenster mit dem aktuellen Skript an.
 
@@ -2254,7 +2250,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Syntax:** obj << Sync to Data Table Changes
+**Syntax:** obj &lt;&lt; Sync to Data Table Changes
 
 **Beschreibung:** Mit Ausgeschlossenen und vorgenommenen Datenänderungen synchronisieren.
 
@@ -2271,7 +2267,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Syntax:** obj << Title( "new title" )
+**Syntax:** obj &lt;&lt; Title( "new title" )
 
 **Beschreibung:** Legt den Titel für die Plattform fest.
 
@@ -2323,7 +2319,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Syntax:** obj << Top Report
+**Syntax:** obj &lt;&lt; Top Report
 
 **Beschreibung:** Gibt eine Referenz auf den Stammknoten im Bericht zurück.
 
@@ -2377,7 +2373,7 @@ Show( t );
 
 ### View Web XML
 
-**Syntax:** obj << View Web XML
+**Syntax:** obj &lt;&lt; View Web XML
 
 **Beschreibung:** Gibt den XML-Code zurück, der zum Erstellen des interaktiven HTML-Berichts verwendet wird.
 
@@ -2547,7 +2543,7 @@ obj = dt << Reliability Forecast(
 
 #### Animation
 
-**Syntax:** obj << Animation( state=0|1 )
+**Syntax:** obj &lt;&lt; Animation( state=0|1 )
 
 **Beschreibung:** Steuert das Blinken der Hotspots in den Vorhersagegraphen. Standardmäßig ein.
 
@@ -2573,7 +2569,7 @@ option << Use Approximate Distribution( 1 );
 
 #### Forecasting Interval Type
 
-**Syntax:** obj << Forecasting Interval Type( type )
+**Syntax:** obj &lt;&lt; Forecasting Interval Type( type )
 
 **Beschreibung:** Gibt den Typ des Intervalls an, der für die Vorhersage des Fehlers um das zukünftige Risiko verwendet wird. Das Intervall type kann ein Plugin-Intervall oder ein Vorhersageintervall sein.
 
@@ -2599,7 +2595,7 @@ option << Use Approximate Distribution( 1 );
 
 #### Import Future Risk Set
 
-**Syntax:** obj << Import Future Risk Set
+**Syntax:** obj &lt;&lt; Import Future Risk Set
 
 **Beschreibung:** Ermöglicht Ihnen, künftige Produktionsdaten aus einer anderen offenen Datentabelle zu importieren. Die neuen Vorhersagen erscheinen dann im zukünftigen Risikographen. Die importierte Datentabelle muss eine Spalte für Zeitstempel und für Produktionsmengen haben.
 
@@ -2618,7 +2614,7 @@ option << Import Future Risk Set;
 
 #### Interactive Configuration of Risk Sets
 
-**Syntax:** obj << Interactive Configuration of Risk Sets( state=0|1 )
+**Syntax:** obj &lt;&lt; Interactive Configuration of Risk Sets( state=0|1 )
 
 **Beschreibung:** Legt fest, ob Sie Hotspots in den Graphen ziehen können.
 
@@ -2644,7 +2640,7 @@ option << Use Approximate Distribution( 1 );
 
 #### Monte Carlo Sample Size
 
-**Syntax:** obj << Monte Carlo Sample Size( number )
+**Syntax:** obj &lt;&lt; Monte Carlo Sample Size( number )
 
 **Beschreibung:** Gibt die Stichprobengröße der Simulation an, die zum Generieren der Vorhersageintervalle verwendet wird.
 
@@ -2670,7 +2666,7 @@ option << Use Approximate Distribution( 1 );
 
 #### Random Seed
 
-**Syntax:** obj << Random Seed( number )
+**Syntax:** obj &lt;&lt; Random Seed( number )
 
 **Beschreibung:** Gibt einen zufälligen Startwert an, der verwendet werden kann, um die simulierten Vorhersageintervalle zu reproduzieren.
 
@@ -2696,7 +2692,7 @@ option << Use Approximate Distribution( 1 );
 
 #### Save Forecast Data Table
 
-**Syntax:** obj << Save Forecast Data Table
+**Syntax:** obj &lt;&lt; Save Forecast Data Table
 
 **Beschreibung:** Speichert die kumulierte und inkrementelle Anzahl von Rückgaben in einer neuen Datentabelle, zusammen mit den Variablen, die Sie im Startfenster ausgewählt haben. Bei gruppierten Analysen enthalten Tabellennamen die Gruppen-ID und das Wort „aggregiert“. Vorhandene Rückgaben werden auch in die aggregierten Datentabellen aufgenommen.
 
@@ -2712,7 +2708,7 @@ option << Save Forecast Data Table;
 
 #### Set Failure Cost
 
-**Syntax:** obj << Set Failure Cost( number )
+**Syntax:** obj &lt;&lt; Set Failure Cost( number )
 
 **Beschreibung:** Gibt die Kosten für jeden Ausfall an.
 
@@ -2738,7 +2734,7 @@ option << Use Approximate Distribution( 1 );
 
 #### Show Interval
 
-**Syntax:** obj << Show Interval( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Interval( state=0|1 )
 
 **Beschreibung:** Blendet 95%-Konfidenzgrenzen im Graphen ein oder aus.
 
@@ -2764,7 +2760,7 @@ option << Use Approximate Distribution( 1 );
 
 #### Spreadsheet Configuration of Risk Sets
 
-**Syntax:** obj << Spreadsheet Configuration of Risk Sets( state=0|1 )
+**Syntax:** obj &lt;&lt; Spreadsheet Configuration of Risk Sets( state=0|1 )
 
 **Beschreibung:** Zeigt einen Bericht an oder blendet ihn aus, in den Sie spezifische Produktionsmengen und Zeitstempel eingeben können, statt sie den interaktiven Graphen hinzuzufügen.
 
@@ -2790,7 +2786,7 @@ option << Use Approximate Distribution( 1 );
 
 #### Use Approximate Distribution
 
-**Syntax:** obj << Use Approximate Distribution( state=0|1 )
+**Syntax:** obj &lt;&lt; Use Approximate Distribution( state=0|1 )
 
 **Beschreibung:** Gibt an, dass die Vorhersageintervalle mithilfe einer Poisson-Verteilung generiert werden, um die Anzahl von Ausfällen in jedem Intervall zu approximieren. Wenn diese Option nicht ausgewählt ist, verwenden die Vorhersageintervalle eine multinomiale Verteilung, um die Anzahl von Ausfällen in jedem Intervall zu simulieren.
 
@@ -2816,7 +2812,7 @@ option << Use Approximate Distribution( 1 );
 
 #### Use Contract Length
 
-**Syntax:** obj << Use Contract Length( state=0|1 )
+**Syntax:** obj &lt;&lt; Use Contract Length( state=0|1 )
 
 **Beschreibung:** Legt fest, ob die angegebene Vertragsdauer in der Vorhersage berücksichtigt wird.
 
@@ -2842,7 +2838,7 @@ option << Use Approximate Distribution( 1 );
 
 #### Use Failure Cost
 
-**Syntax:** obj << Use Failure Cost( state=0|1 )
+**Syntax:** obj &lt;&lt; Use Failure Cost( state=0|1 )
 
 **Beschreibung:** Zeigt statt der Ausfallhäufigkeiten im zukünftigen Risikographen Ausfallkosten an.
 
@@ -2940,27 +2936,27 @@ obj = dt1 << Reliability Forecast(
 
 #### Failure Count
 
-**Syntax:** obj << Failure Count( column )
+**Syntax:** obj &lt;&lt; Failure Count( column )
 
 #### Failure Time
 
-**Syntax:** obj << Failure Time( column(s) )
+**Syntax:** obj &lt;&lt; Failure Time( column(s) )
 
 #### Group ID
 
-**Syntax:** obj << Group ID( column )
+**Syntax:** obj &lt;&lt; Group ID( column )
 
 #### Left Censor
 
-**Syntax:** obj << Left Censor( column )
+**Syntax:** obj &lt;&lt; Left Censor( column )
 
 #### Production Count
 
-**Syntax:** obj << Production Count( column )
+**Syntax:** obj &lt;&lt; Production Count( column )
 
 #### Timestamp
 
-**Syntax:** obj << Timestamp( column )
+**Syntax:** obj &lt;&lt; Timestamp( column )
 
 ## Reliability Forecast for Nevada Format
 
@@ -2968,9 +2964,7 @@ obj = dt1 << Reliability Forecast(
 
 #### Interval Censored Failure
 
-**Syntax:** obj = Reliability Forecast(...Input Format( Nevada ), Interval Censored Failure( state=0|1 )...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Reliability Forecast(...Input Format( Nevada ), Interval Censored Failure( state=0|1 )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Gibt an, dass die zurückgegebenen Größen als intervallzensierte Beobachtungen behandelt werden. Das Intervall liegt zwischen der zuletzt aufgezeichneten Zeit und dem Zeitpunkt, zu dem der Ausfall beobachtet wurde. Standardmäßig ein.
 
@@ -3074,19 +3068,19 @@ obj = dt << Reliability Forecast(
 
 #### Failure Count
 
-**Syntax:** obj << Failure Count( column(s) )
+**Syntax:** obj &lt;&lt; Failure Count( column(s) )
 
 #### Group ID
 
-**Syntax:** obj << Group ID( column )
+**Syntax:** obj &lt;&lt; Group ID( column )
 
 #### Production Count
 
-**Syntax:** obj << Production Count( column )
+**Syntax:** obj &lt;&lt; Production Count( column )
 
 #### Timestamp
 
-**Syntax:** obj << Timestamp( column )
+**Syntax:** obj &lt;&lt; Timestamp( column )
 
 ## Reliability Forecast for Time to Event Format
 
@@ -3190,17 +3184,17 @@ obj = dt << Reliability Forecast(
 
 #### Censor
 
-**Syntax:** obj << Censor( column )
+**Syntax:** obj &lt;&lt; Censor( column )
 
 #### Freq
 
-**Syntax:** obj << Freq( column )
+**Syntax:** obj &lt;&lt; Freq( column )
 
 #### Group ID
 
-**Syntax:** obj << Group ID( column )
+**Syntax:** obj &lt;&lt; Group ID( column )
 
 #### Time to Event
 
-**Syntax:** obj << Time to Event( column(s) )
+**Syntax:** obj &lt;&lt; Time to Event( column(s) )
 

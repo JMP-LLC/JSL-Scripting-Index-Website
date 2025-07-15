@@ -6,7 +6,7 @@
 
 ### Close Outline
 
-**Syntaxe :** obj << Close Outline( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Close Outline( state=0|1 )
 
 **Description :** Ouvre ou ferme la zone de structure du sélecteur de colonnes
 
@@ -23,7 +23,7 @@ ColumnSwitcherObject << Close Outline( 1 );
 
 ### Get Current
 
-**Syntaxe :** obj << Get Current
+**Syntaxe :** obj &lt;&lt; Get Current
 
 **Description :** obtenir le nom de la variable active
 
@@ -41,7 +41,7 @@ ColumnSwitcherObject << Get Current/*country*/ ;
 
 ### Get Layout
 
-**Syntaxe :** obj << Get Layout
+**Syntaxe :** obj &lt;&lt; Get Layout
 
 **Description :** Obtient la mise en page de plusieurs sélecteurs de colonnes. Vertical(0) ou horizontal(1).
 
@@ -72,7 +72,7 @@ If( cs2 << Get Layout() == 1,
 
 ### Get List
 
-**Syntaxe :** obj << Get List
+**Syntaxe :** obj &lt;&lt; Get List
 
 **Description :** obtenir la liste des variables disponibles
 
@@ -89,7 +89,7 @@ ColumnSwitcherObject << Get List/*{"sex","country","marital status"}*/ ;
 
 ### Get Original
 
-**Syntaxe :** obj << Get Original
+**Syntaxe :** obj &lt;&lt; Get Original
 
 **Description :** obtenir le nom de la variable d&apos;origine
 
@@ -107,7 +107,7 @@ ColumnSwitcherObject << Get Original/*marital status*/ ;
 
 ### Get Speed
 
-**Syntaxe :** obj << Get Speed
+**Syntaxe :** obj &lt;&lt; Get Speed
 
 **Description :** fpm = obj<<getSpeed /* in Frames Per Minute */;
 
@@ -124,7 +124,7 @@ FPM = ColumnSwitcherObject << Get Speed;
 
 ### Link Platform
 
-**Syntaxe :** obj << Link Platform( platform )
+**Syntaxe :** obj &lt;&lt; Link Platform( platform )
 
 **Description :** Lie une plate-forme à ce sélecteur de colonnes.
 
@@ -149,7 +149,7 @@ columnSwitcher << Link Platform( gb );
 
 ### Make Column Switch Handler
 
-**Syntaxe :** handler = cs << Make Column Switch Handler( function(pre), function(post) )
+**Syntaxe :** handler = cs &lt;&lt; Make Column Switch Handler( function(pre), function(post) )
 
 **Description :** Crée un gestionnaire pour les sélecteurs de colonnes avec des fonctions de rappel appelées avant et après le remplacement de la colonne. Les fonctions de rappel reçoivent la colonne précédente, la colonne suivante et le sélecteur de colonnes. La fonction spécifiée avant le remplacement renvoie une valeur différente de zéro pour autoriser le remplacement. La valeur 0 empêche le remplacement. La fonction appelée après le remplacement ne renvoie aucune valeur.
 
@@ -193,7 +193,7 @@ columnSwitcher << Run;
 
 ### Next
 
-**Syntaxe :** obj << Next
+**Syntaxe :** obj &lt;&lt; Next
 
 **Description :** Remplacer la sélection du sélecteur de colonne par le choix disponible suivant.
 
@@ -210,7 +210,7 @@ ColumnSwitcherObject << Next;
 
 ### Pause
 
-**Syntaxe :** obj << Pause
+**Syntaxe :** obj &lt;&lt; Pause
 
 **Description :** mettre l&apos;animation en pause
 
@@ -229,7 +229,7 @@ ColumnSwitcherObject << Pause;
 
 ### Previous
 
-**Syntaxe :** obj << Previous
+**Syntaxe :** obj &lt;&lt; Previous
 
 **Description :** Remplacer la sélection du sélecteur de colonne par le choix disponible précédent.
 
@@ -246,7 +246,7 @@ ColumnSwitcherObject << Previous;
 
 ### Remove Column Switcher
 
-**Syntaxe :** obj << Remove Column Switcher
+**Syntaxe :** obj &lt;&lt; Remove Column Switcher
 
 **Description :** Supprimer ce sélecteur de colonne
 
@@ -265,7 +265,7 @@ ColumnSwitcherObject << Remove Column Switcher;
 
 ### Retain Axis Settings
 
-**Syntaxe :** obj << Retain Axis Settings( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Retain Axis Settings( state=0|1 )
 
 **Description :** Certains graphiques stockent les personnalisations d&apos;axe en fonction du nom de la colonne. Par défaut, ces personnalisations sont supprimées lors du basculement des colonnes. Si cette option est activée, la colonne est mise à jour au moment du basculement, de manière à ce que les personnalisations s&apos;appliquent au nouveau graphique.
 
@@ -297,7 +297,7 @@ Graph Builder(
 
 ### Run
 
-**Syntaxe :** obj << Run
+**Syntaxe :** obj &lt;&lt; Run
 
 **Description :** lancer l&apos;animation
 
@@ -314,7 +314,7 @@ ColumnSwitcherObject << Run;
 
 ### Script
 
-**Syntaxe :** obj << Script( script )
+**Syntaxe :** obj &lt;&lt; Script( script )
 
 **Description :** Définir un script exécuté lors du remplacement de la colonne
 
@@ -339,7 +339,7 @@ Wait( 5/*seconds, while it animates*/ );
 
 ### Set Current
 
-**Syntaxe :** obj << Set Current( string )
+**Syntaxe :** obj &lt;&lt; Set Current( string )
 
 **Description :** définir la variable active
 
@@ -356,7 +356,7 @@ ColumnSwitcherObject << Set Current( "country" );
 
 ### Set Layout
 
-**Syntaxe :** obj << Set Layout( 0 = Vertical | 1 = Horizontal )
+**Syntaxe :** obj &lt;&lt; Set Layout( 0 = Vertical | 1 = Horizontal )
 
 **Description :** Définit la mise en page de plusieurs sélecteurs de colonnes à vertical(0) ou horizontal(1).
 
@@ -380,7 +380,7 @@ cs1 << Set Layout( 1 );
 
 ### Set N Lines
 
-**Syntaxe :** obj << Set N Lines( number )
+**Syntaxe :** obj &lt;&lt; Set N Lines( number )
 
 **Description :** Définir le nombre de lignes dans la liste des noms de colonne
 
@@ -397,7 +397,7 @@ ColumnSwitcherObject << Set N Lines( 20 );
 
 ### Set Script
 
-**Syntaxe :** obj << Set Script( script )
+**Syntaxe :** obj &lt;&lt; Set Script( script )
 
 **Description :** Définir un script exécuté lors du remplacement de la colonne
 
@@ -422,7 +422,7 @@ Wait( 5/*seconds, while it animates*/ );
 
 ### Set Size
 
-**Syntaxe :** obj << Set Size( number )
+**Syntaxe :** obj &lt;&lt; Set Size( number )
 
 **Description :** Définir la largeur en pixels de la liste des noms de colonne
 
@@ -439,7 +439,7 @@ ColumnSwitcherObject << Set Size( 300 );
 
 ### Set Speed
 
-**Syntaxe :** obj << Set Speed( number )
+**Syntaxe :** obj &lt;&lt; Set Speed( number )
 
 **Description :** obj<<setSpeed(60) /* in Frames Per Minute */;
 
@@ -457,7 +457,7 @@ Run;
 
 ### Title
 
-**Syntaxe :** obj << Title( string )
+**Syntaxe :** obj &lt;&lt; Title( string )
 
 **Description :** Définit le titre de la zone de structure du sélecteur de colonnes
 

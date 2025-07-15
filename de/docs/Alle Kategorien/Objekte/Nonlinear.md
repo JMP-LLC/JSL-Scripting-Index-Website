@@ -6,7 +6,7 @@
 
 ### Accept Current Estimates
 
-**Syntax:** obj << Accept Current Estimates
+**Syntax:** obj &lt;&lt; Accept Current Estimates
 
 **Beschreibung:** Erzeugt den Lösungsbericht unter Verwendung der aktuellen Schätzwerte, auch wenn die Schätzwerte nicht konvergierten.
 
@@ -22,7 +22,7 @@ obj << Accept Current Estimates;
 
 ### CL Alpha
 
-**Syntax:** obj << CL Alpha( number=.05 )
+**Syntax:** obj &lt;&lt; CL Alpha( number=.05 )
 
 **Beschreibung:** Gibt das Alpha-Niveau für die Konfidenzgrenzen für die Parameterschätzer an. Standardmäßig „.05“.
 
@@ -38,7 +38,7 @@ obj << Confidence Limits;
 
 ### CL Limit
 
-**Syntax:** obj << CL Limit( number=.00001 )
+**Syntax:** obj &lt;&lt; CL Limit( number=.00001 )
 
 **Beschreibung:** Gibt das Konvergenzkriterium an, das zur Berechnung der Konfidenzgrenzen für die Parameterschätzer verwendet wird. Standardmäßig „.00001“.
 
@@ -54,7 +54,7 @@ obj << Confidence Limits;
 
 ### Confidence Limits
 
-**Syntax:** obj << Confidence Limits
+**Syntax:** obj &lt;&lt; Confidence Limits
 
 **Beschreibung:** Berechnet Konfidenzintervalle für alle Parameterschätzungen.
 
@@ -69,7 +69,7 @@ obj << Confidence Limits;
 
 ### Contour Profiler
 
-**Syntax:** obj << Contour Profiler( state=0|1 )
+**Syntax:** obj &lt;&lt; Contour Profiler( state=0|1 )
 
 **Beschreibung:** Blendet die Konturanalyse ein oder aus, die die Konturen der Zielgröße als Grafik für zwei Faktoren gleichzeitig zeigt.
 
@@ -85,7 +85,7 @@ obj << Contour Profiler( 1 );
 
 ### Custom Estimate
 
-**Syntax:** obj << Custom Estimate( expression )
+**Syntax:** obj &lt;&lt; Custom Estimate( expression )
 
 **Beschreibung:** Schätzt eine benutzerdefinierte Funktion der Parameter. Der Ausdruck und der Standardfehler des Ausdrucks werden anhand der aktuellen Parameterschätzer berechnet.
 
@@ -100,7 +100,7 @@ obj << Custom Estimate( B0 + A + D );
 
 ### Custom Estimation Profiler
 
-**Syntax:** obj << Custom Estimation Profiler( Custom Estimation( {initial values}, expression ), <Transformation( "Log"|"Logit"|"None" ), Profiler( script )> )
+**Syntax:** obj &lt;&lt; Custom Estimation Profiler( Custom Estimation( {initial values}, expression ), &lt;Transformation( "Log"|"Logit"|"None" ), Profiler( script )&gt; )
 
 **Beschreibung:** Ermöglicht Ihnen, ein Profildiagramm für einen benutzerdefinierten Ausdruck zu erstellen. Geben Sie einen Ausdruck ein, der Parameter und mindestens einen Faktor umfasst. Standardmäßig ist für „Transformation“ die Option „Keine“ festgelegt.
 
@@ -138,7 +138,7 @@ obj = dt << Nonlinear(
 
 ### Custom Inverse Prediction
 
-**Syntax:** obj << Custom Inverse Prediction( Response( l1, l2, ... ), <Term Value( column( number ) )> )
+**Syntax:** obj &lt;&lt; Custom Inverse Prediction( Response( l1, l2, ... ), &lt;Term Value( column( number ) )&gt; )
 
 **Beschreibung:** Schätzt einen X-Wert für jeden angegebenen Zielgrößenwert. Standardfehler und Konfidenzgrenzen für die geschätzten X-Werte werden ebenfalls berechnet.
 
@@ -154,7 +154,7 @@ obj << Custom Inverse Prediction( Response( 100, 150, 200 ) );
 
 ### Delta
 
-**Syntax:** obj << Delta( number=5.0e-6 )
+**Syntax:** obj &lt;&lt; Delta( number=5.0e-6 )
 
 **Beschreibung:** Gibt den Deltawert an, der in der Option „Nur numerische Ableitungen“ verwendet wird. Standardmäßig „5.0e-6“.
 
@@ -171,7 +171,7 @@ obj << Finish;
 
 ### Expand Intermediate Formulas
 
-**Syntax:** obj << Expand Intermediate Formulas( state=0|1 )
+**Syntax:** obj &lt;&lt; Expand Intermediate Formulas( state=0|1 )
 
 **Beschreibung:** Verwendet erweiterte Zwischenformeln bei der Berechnung und in den gespeicherten Formeln. Dies betrifft Formeln in der Ausgabe, wenn das Modell auf einer Spalte mit einer Formel beruht, weil auf die in der Formel verwendeten ursprünglichen Spalten zugegriffen wird.
 
@@ -190,7 +190,7 @@ obj = dt << Nonlinear(
 
 ### Finish
 
-**Syntax:** obj << Finish
+**Syntax:** obj &lt;&lt; Finish
 
 **Beschreibung:** Beginnt den Anpassungsprozess und geht erst zum nächsten Befehl weiter, wenn die Lösung konvergiert hat oder beendet ist. In Skripten wird die Option „Finish“ anstelle der Option „Go“ empfohlen.
 
@@ -206,7 +206,7 @@ obj << Profiler;
 
 ### Get CI
 
-**Syntax:** obj << Get CI
+**Syntax:** obj &lt;&lt; Get CI
 
 **Beschreibung:** Gibt die Konfidenzintervalle für die Parameterschätzer zurück. Hinweis: Die Option „Confidence Intervals“ muss ausgewählt werden, bevor die Option „KI abrufen“ angegeben wird.
 
@@ -223,7 +223,7 @@ Show( G );
 
 ### Get Corr
 
-**Syntax:** obj << Get Corr
+**Syntax:** obj &lt;&lt; Get Corr
 
 **Beschreibung:** Gibt die Korrelation der Schätzwerte zurück.
 
@@ -239,7 +239,7 @@ Show( G );
 
 ### Get Cov
 
-**Syntax:** obj << Get Cov
+**Syntax:** obj &lt;&lt; Get Cov
 
 **Beschreibung:** Gibt die Kovarianz der Schätzwerte zurück.
 
@@ -257,7 +257,7 @@ Show( G );
 
 ### Get Estimates
 
-**Syntax:** obj << Get Estimates
+**Syntax:** obj &lt;&lt; Get Estimates
 
 **Beschreibung:** Gibt die Parameterschätzer zurück.
 
@@ -273,7 +273,7 @@ Show( G );
 
 ### Get Parameter Names
 
-**Syntax:** obj << Get Parameter Names
+**Syntax:** obj &lt;&lt; Get Parameter Names
 
 **Beschreibung:** Gibt die Parameternamen zurück.
 
@@ -289,7 +289,7 @@ Show( G );
 
 ### Get SSE
 
-**Syntax:** obj << Get SSE
+**Syntax:** obj &lt;&lt; Get SSE
 
 **Beschreibung:** Gibt die Summe der quadrierten Abweichungen (SSE) zurück.
 
@@ -305,7 +305,7 @@ Show( G );
 
 ### Get Std Errors
 
-**Syntax:** obj << Get Std Errors
+**Syntax:** obj &lt;&lt; Get Std Errors
 
 **Beschreibung:** Gibt die Standardfehler der Parameterschätzer zurück.
 
@@ -321,7 +321,7 @@ Show( G );
 
 ### Go
 
-**Syntax:** obj << Go
+**Syntax:** obj &lt;&lt; Go
 
 **Beschreibung:** Beginnt die Iteration im Hintergrund, um die nichtlineare Lösung zu finden. In Skripten wird die Option „Finish“ anstelle der Option „Go“ empfohlen.
 
@@ -336,7 +336,7 @@ obj << Go;
 
 ### Gradient Limit
 
-**Syntax:** obj << Gradient Limit( number=1e-6 )
+**Syntax:** obj &lt;&lt; Gradient Limit( number=1e-6 )
 
 **Beschreibung:** Gibt den Iterationsgrenzwert für das Kriterium des Gradienten an. Standardmäßig „1e-6“.
 
@@ -352,7 +352,7 @@ obj << Finish;
 
 ### Iteration Limit
 
-**Syntax:** obj << Iteration Limit( number=60 )
+**Syntax:** obj &lt;&lt; Iteration Limit( number=60 )
 
 **Beschreibung:** Legt die maximale Anzahl der Iterationen fest. Standardmäßig „60“.
 
@@ -368,7 +368,7 @@ obj << Finish;
 
 ### Iteration Log
 
-**Syntax:** obj << Iteration Log( state=0|1 )
+**Syntax:** obj &lt;&lt; Iteration Log( state=0|1 )
 
 **Beschreibung:** Zeigt die Tabelle der Iterationen an oder blendet sie aus. Wenn diese Option ausgewählt ist, zeichnet die Plattform nachfolgende Iterationen in der Tabelle auf.
 
@@ -386,7 +386,7 @@ Report( obj )["Iterations"] << Close( 0 );
 
 ### Lock Parameter
 
-**Syntax:** obj << Lock Parameter( Name, ... )
+**Syntax:** obj &lt;&lt; Lock Parameter( Name, ... )
 
 **Beschreibung:** Sperrt einzelne Parameter auf einem angegebenen Wert, so dass sie während des Iterationsprozesses konstant bleiben.
 
@@ -403,7 +403,7 @@ obj << Finish;
 
 ### Loss is Neg LogLikelihood
 
-**Syntax:** obj << Loss is Neg LogLikelihood( state=0|1 )
+**Syntax:** obj &lt;&lt; Loss is Neg LogLikelihood( state=0|1 )
 
 **Beschreibung:** Geht davon aus, dass die Summe der angegebenen Verlustformel die negative Log-Likelihood ist und verwendet bei der Analyse Chi-Quadrat-Kenngrößen anstelle von F-Werten.
 
@@ -423,7 +423,7 @@ obj << Finish;
 
 ### Newton
 
-**Syntax:** obj << Newton
+**Syntax:** obj &lt;&lt; Newton
 
 **Beschreibung:** Gibt entweder Gauß-Newton (für reguläre kleinste Quadrate) oder Newton-Raphson (für Modelle, die Verlustfunktionen enthalten) als die Optimierungsmethode an.
 
@@ -439,7 +439,7 @@ obj << Finish;
 
 ### Numeric Chain Deriv Delta
 
-**Syntax:** obj << Numeric Chain Deriv Delta( =1e-5 )
+**Syntax:** obj &lt;&lt; Numeric Chain Deriv Delta( =1e-5 )
 
 **Beschreibung:** Gibt den Delta-Parameter an, der bei der Annäherung an die Ableitung einer nichtlinearen Formel verwendet wird, die keine integrierte Ableitung hat. Standardmäßig „1e-5“.
 
@@ -447,7 +447,7 @@ obj << Finish;
 
 ### Numeric Derivatives Only
 
-**Syntax:** obj << Numeric Derivatives Only( state=0|1 )
+**Syntax:** obj &lt;&lt; Numeric Derivatives Only( state=0|1 )
 
 **Beschreibung:** Gibt an, dass nur numerische Ableitungen in der Anpassungsmethode verwendet werden.
 
@@ -463,7 +463,7 @@ obj << Finish;
 
 ### Obj Change Limit
 
-**Syntax:** obj << Obj Change Limit( number=1e-15 )
+**Syntax:** obj &lt;&lt; Obj Change Limit( number=1e-15 )
 
 **Beschreibung:** Gibt den Iterationsgrenzwert für das Kriterium der Zielfunktionsänderung an. Standardmäßig „1e-15“.
 
@@ -479,7 +479,7 @@ obj << Finish;
 
 ### Parameter Bounds
 
-**Syntax:** obj << Parameter Bounds( <parameter name( lower, upper )> )
+**Syntax:** obj &lt;&lt; Parameter Bounds( &lt;parameter name( lower, upper )&gt; )
 
 **Beschreibung:** Legt Schranken für die angegebenen Parameter fest.
 
@@ -495,7 +495,7 @@ obj << Finish;
 
 ### Parameter Contour Profiler
 
-**Syntax:** obj << Parameter Contour Profiler( state=0|1 )
+**Syntax:** obj &lt;&lt; Parameter Contour Profiler( state=0|1 )
 
 **Beschreibung:** Blendet eine Konturanalyse ein oder aus, das die SSE oder den Verlust als Funktion der Parameter darstellt.
 
@@ -511,7 +511,7 @@ obj << Parameter Contour Profiler( 1 );
 
 ### Parameter Profiler
 
-**Syntax:** obj << Parameter Profiler( state=0|1 )
+**Syntax:** obj &lt;&lt; Parameter Profiler( state=0|1 )
 
 **Beschreibung:** Blendet eine Vorhersageanalyse ein oder aus, das die SSE oder den Verlust als Funktion der Parameter darstellt.
 
@@ -527,7 +527,7 @@ obj << Parameter Profiler( 1 );
 
 ### Parameter Surface Profiler
 
-**Syntax:** obj << Parameter Surface Profiler( state=0|1 )
+**Syntax:** obj &lt;&lt; Parameter Surface Profiler( state=0|1 )
 
 **Beschreibung:** Blendet ein dreidimensionales Wirkungsflächendiagramm ein oder aus, das die SSE oder den Verlust als Funktion der Parameter darstellt. Diese Option ist nur für Modelle verfügbar, die zwei oder mehr Parameter enthalten.
 
@@ -543,7 +543,7 @@ obj << Parameter Surface Profiler( 1 );
 
 ### Plot
 
-**Syntax:** obj << Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; Plot( state=0|1 )
 
 **Beschreibung:** Blendet einen Graphen ein oder aus, in dem die Vorhersageformel als Funktion von genau einer anderen Variablen dargestellt wird. Standardmäßig ein.
 
@@ -560,7 +560,7 @@ obj << Finish;
 
 ### Profile Likelihood
 
-**Syntax:** obj << Profile Likelihood( state=0|1 )
+**Syntax:** obj &lt;&lt; Profile Likelihood( state=0|1 )
 
 **Beschreibung:** Blendet ein Diagramm der relativen Likelihood-Funktion ein oder aus, das so skaliert ist, dass es einen Maximalwert von 1 hat, über Werte eines einzelnen Parameters hinweg, während alle anderen Parameter so optimiert werden, dass die Verlustfunktion minimiert wird. Diese Option ist nur verfügbar, wenn die nichtlineare Plattform mit einer Verlustfunktion aufgerufen wird, die zwei oder mehr Parameter enthält.
 
@@ -594,7 +594,7 @@ obj << Profile Likelihood( 1 );
 
 ### Profile Likelihood Contour
 
-**Syntax:** obj << Profile Likelihood Contour( state=0|1 )
+**Syntax:** obj &lt;&lt; Profile Likelihood Contour( state=0|1 )
 
 **Beschreibung:** Zeigt oder verbirgt die Likelihood-Konfidenzkonturen für die relative Likelihood-Funktion über zwei Parameter, während alle anderen Parameter optimiert werden, um die Verlustfunktion zu minimieren. Diese Option ist nur verfügbar, wenn die nichtlineare Plattform mit einer Verlustfunktion gestartet wird, die drei oder mehr Parameter enthält.
 
@@ -632,7 +632,7 @@ obj << Profile Likelihood Contour( 1 );
 
 ### Profiler
 
-**Syntax:** obj << Profiler( state=0|1 )
+**Syntax:** obj &lt;&lt; Profiler( state=0|1 )
 
 **Beschreibung:** Blendet die Vorhersageanalyse ein oder aus, die dazu dient, die Vorhersagegleichung grafisch durch Schichtenbildung Faktor für Faktor zu untersuchen. Die Vorhersageanalyse enthält Funktionen für die Optimierung.
 
@@ -647,7 +647,7 @@ obj << Profiler( 1 );
 
 ### QuasiNewton BFGS
 
-**Syntax:** obj << QuasiNewton BFGS
+**Syntax:** obj &lt;&lt; QuasiNewton BFGS
 
 **Beschreibung:** Gibt Quasi-Newton BFGS als die Optimierungsmethode an. Diese Methode ist am besten für großen Parameterzahlen geeignet.
 
@@ -663,7 +663,7 @@ obj << Finish;
 
 ### QuasiNewton SR1
 
-**Syntax:** obj << QuasiNewton SR1
+**Syntax:** obj &lt;&lt; QuasiNewton SR1
 
 **Beschreibung:** Gibt Quasi-Newton SR1 als die Optimierungsmethode an. Diese Methode vermeidet die Neuberechnung der Ableitungen bei jeder Iteration.
 
@@ -679,7 +679,7 @@ obj << Finish;
 
 ### Relative Gradient
 
-**Syntax:** obj << Relative Gradient( number=1e-6 )
+**Syntax:** obj &lt;&lt; Relative Gradient( number=1e-6 )
 
 **Beschreibung:** Gibt den Iterationsgrenzwert für das Kriterium des relativen Gradienten an. Standardmäßig „1e-6“.
 
@@ -695,7 +695,7 @@ obj << Finish;
 
 ### Remember Solution
 
-**Syntax:** obj << Remember Solution( name )
+**Syntax:** obj &lt;&lt; Remember Solution( name )
 
 **Beschreibung:** Erstellt einen Bericht mit der Bezeichnung „Gemerkte Modelle“, der die aktuellen Parameterschätzer und statistischen Kenngrößen enthält. Die Ergebnisse mehrerer Modelle können gespeichert und verglichen werden.
 
@@ -710,7 +710,7 @@ obj << Remember Solution( "New Model" );
 
 ### Reset
 
-**Syntax:** obj << Reset
+**Syntax:** obj &lt;&lt; Reset
 
 **Beschreibung:** Setzt das Konvergenzkriterium nach der Lösung zurück. Diese Option ist nützlich, wenn Sie versuchen, das Modell mit unterschiedlichen Startwerten neu zu berechnen.
 
@@ -728,7 +728,7 @@ obj << Reset;
 
 ### Revert To Original Parameters
 
-**Syntax:** obj << Revert To Original Parameters
+**Syntax:** obj &lt;&lt; Revert To Original Parameters
 
 **Beschreibung:** Setzt die aktuellen Werte der Parameter im Bedienfeld auf die ursprünglichen Werte zurück.
 
@@ -744,7 +744,7 @@ obj << Revert to Original Parameters;
 
 ### SSE Grid
 
-**Syntax:** obj << SSE Grid
+**Syntax:** obj &lt;&lt; SSE Grid
 
 **Beschreibung:** Erstellt ein Raster von Werten um die Lösungsschätzwerte und berechnet die Summe der quadrierten Abweichungen für jeden Wert.
 
@@ -759,7 +759,7 @@ obj << SSE Grid;
 
 ### Save Estimates
 
-**Syntax:** obj << Save Estimates
+**Syntax:** obj &lt;&lt; Save Estimates
 
 **Beschreibung:** Speichert die aktuellen Parameterschätzungen in den Parameterwerten in der Formelspalte.
 
@@ -775,7 +775,7 @@ obj << Save Estimates;
 
 ### Save Estimates To Table
 
-**Syntax:** obj << Save Estimates To Table
+**Syntax:** obj &lt;&lt; Save Estimates To Table
 
 **Beschreibung:** Erstellt eine neue Datentabelle mit den Parameterschätzungen.
 
@@ -792,7 +792,7 @@ obj << Save Estimates To Table;
 
 ### Save Indiv Confid Limit Formula
 
-**Syntax:** obj << Save Indiv Confid Limit Formula
+**Syntax:** obj &lt;&lt; Save Indiv Confid Limit Formula
 
 **Beschreibung:** Speichert neue Formelspalten in der Datentabelle. Die neuen Spalten enthalten die Formeln zur Berechnung des Konfidenzintervalls für eine einzelne Vorhersage. Dies ist ein Konfidenzintervall eines einzelnen Zielgrößenwerts für einen vorgegebenen X-Wert.
 
@@ -807,7 +807,7 @@ obj << Save Indiv Confid Limit Formula;
 
 ### Save Indiv Confid Limits
 
-**Syntax:** obj << Save Indiv Confid Limits
+**Syntax:** obj &lt;&lt; Save Indiv Confid Limits
 
 **Beschreibung:** Speichert neue Spalten in der Datentabelle. Die neuen Spalten enthalten die asymptotischen Konfidenzgrenzen für eine Einzelwertvorhersage. Dies ist das Konfidenzintervall eines einzelnen Zielgrößenwerts bei einem vorgegebenen X-Wert.
 
@@ -822,7 +822,7 @@ obj << Save Indiv Confid Limits;
 
 ### Save Inverse Prediction Formula
 
-**Syntax:** obj << Save Inverse Prediction Formula
+**Syntax:** obj &lt;&lt; Save Inverse Prediction Formula
 
 **Beschreibung:** Speichert neue Formelspalten in der Datentabelle. Die neuen Spalten enthalten die Formeln für die inverse Vorhersage des Modells, den Standardfehler einer inversen Vorhersage und den Standardfehler einer einzelnen inversen Vorhersage.
 
@@ -837,7 +837,7 @@ obj << Save Inverse Prediction Formula;
 
 ### Save Pred Confid Limit Formula
 
-**Syntax:** obj << Save Pred Confid Limit Formula
+**Syntax:** obj &lt;&lt; Save Pred Confid Limit Formula
 
 **Beschreibung:** Speichert neue Formelspalten in der Datentabelle. Die neuen Spalten enthalten die Formeln zur Berechnung des Konfidenzintervalls für eine Modellvorhersage. Dies ist ein Konfidenzintervall für den mittleren Zielgrößenwert bei einem vorgegebenen X-Wert.
 
@@ -852,7 +852,7 @@ obj << Save Pred Confid Limit Formula;
 
 ### Save Pred Confid Limits
 
-**Syntax:** obj << Save Pred Confid Limits
+**Syntax:** obj &lt;&lt; Save Pred Confid Limits
 
 **Beschreibung:** Speichert neue Spalten in der Datentabelle. Die neuen Spalten enthalten die asymptotischen Konfidenzgrenzen für die Modellvorhersage. Dies ist das Konfidenzintervall für den durchschnittlichen Zielgrößenwert bei einem vorgegebenen X-Wert.
 
@@ -867,7 +867,7 @@ obj << Save Pred Confid Limits;
 
 ### Save Prediction Formula
 
-**Syntax:** obj << Save Prediction Formula
+**Syntax:** obj &lt;&lt; Save Prediction Formula
 
 **Beschreibung:** Speichert eine neue Formelspalte in der Datentabelle. Die neue Spalte enthält die Vorhersageformel, die die aktuellen Parameterschätzungen verwendet.
 
@@ -882,7 +882,7 @@ obj << Save Prediction Formula;
 
 ### Save Residual Formula
 
-**Syntax:** obj << Save Residual Formula
+**Syntax:** obj &lt;&lt; Save Residual Formula
 
 **Beschreibung:** Speichert eine neue Formelspalte in der Datentabelle. Die neue Spalte enthält die Formel zum Berechnen der Residuen.
 
@@ -897,7 +897,7 @@ obj << Save Residual Formula;
 
 ### Save Specific Solving Formula
 
-**Syntax:** obj << Save Specific Solving Formula( <column to solve for, {name1=expr1, ...}, Save Formula for Std Error Mean, Save Formula for Std Error Individual> )
+**Syntax:** obj &lt;&lt; Save Specific Solving Formula( &lt;column to solve for, {name1=expr1, ...}, Save Formula for Std Error Mean, Save Formula for Std Error Individual&gt; )
 
 **Beschreibung:** Speichert neue Formelspalten in der Datentabelle. Die neuen Spalten enthalten Formeln für die Vorhersage und den Standardfehler für die Auswertung einer X-Variablen bei vorgegebener Zielgrößenvariable und entweder anderen X-Werten in den Daten oder einer Konstante.
 
@@ -936,7 +936,7 @@ obj << Save Specific Solving Formula( :pop, Save Formula for Std Error Individua
 
 ### Save Std Error of Individual
 
-**Syntax:** obj << Save Std Error of Individual
+**Syntax:** obj &lt;&lt; Save Std Error of Individual
 
 **Beschreibung:** Speichert eine neue Formelspalte in der Datentabelle. Die neue Spalte enthält die Formel des Standardfehlers für die Vorhersage eines Einzelwerts. Dies ist der Standardfehler für die Vorhersage der Zielgröße eines Einzelwerts für einen vorgegebenen X-Wert.
 
@@ -951,7 +951,7 @@ obj << Save Std Error of Individual;
 
 ### Save Std Error of Predicted
 
-**Syntax:** obj << Save Std Error of Predicted
+**Syntax:** obj &lt;&lt; Save Std Error of Predicted
 
 **Beschreibung:** Speichert eine neue Formelspalte in der Datentabelle. Die neue Spalte enthält die Formel des Standardfehlers für eine Modellvorhersage. Dies ist der Standardfehler für die Vorhersage des mittleren Zielgrößenwerts für einen vorgegebenen X-Wert.
 
@@ -966,7 +966,7 @@ obj << Save Std Error of Predicted;
 
 ### Second Deriv Method
 
-**Syntax:** obj << Second Deriv Method( state=0|1 )
+**Syntax:** obj &lt;&lt; Second Deriv Method( state=0|1 )
 
 **Beschreibung:** Gibt an, dass die Anpassungsmethode zweite Ableitungen verwendet.
 
@@ -980,7 +980,7 @@ obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Second Deriv Method( 1 ), 
 
 ### Set Parameter
 
-**Syntax:** obj << Set Parameter( name=expr, ... )
+**Syntax:** obj &lt;&lt; Set Parameter( name=expr, ... )
 
 **Beschreibung:** Legt einen oder mehrere Parameterwerte vor der Anpassung des Modells fest. Dies ist nützlich zum Fixieren eines Parameters auf einen bestimmten Wert und zur Eingabe von Startwerten.
 
@@ -997,7 +997,7 @@ obj << Finish;
 
 ### Show Derivatives
 
-**Syntax:** obj << Show Derivatives
+**Syntax:** obj &lt;&lt; Show Derivatives
 
 **Beschreibung:** Zeigt die Ableitungen der nichtlinearen Formel im Protokoll an.
 
@@ -1012,7 +1012,7 @@ obj << Show Derivatives;
 
 ### Show Prediction Expression
 
-**Syntax:** obj << Show Prediction Expression( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Prediction Expression( state=0|1 )
 
 **Beschreibung:** Blendet das Vorhersagemodell oder die Verlustfunktion im Bericht ein oder aus.
 
@@ -1031,7 +1031,7 @@ obj = dt << Nonlinear(
 
 ### Step
 
-**Syntax:** obj << Step
+**Syntax:** obj &lt;&lt; Step
 
 **Beschreibung:** Führt einen Iterationsschritt zur Berechnung des nichtlinearen Modells durch.
 
@@ -1048,7 +1048,7 @@ obj << Step;
 
 ### Stop
 
-**Syntax:** obj << Stop
+**Syntax:** obj &lt;&lt; Stop
 
 **Beschreibung:** Unterbricht den nichtlinearen Prozess der Modellanpassung und stoppt ihn bei der aktuellen Iteration.
 
@@ -1064,7 +1064,7 @@ obj << Stop;
 
 ### Surface Profiler
 
-**Syntax:** obj << Surface Profiler( state=0|1 )
+**Syntax:** obj &lt;&lt; Surface Profiler( state=0|1 )
 
 **Beschreibung:** Blendet ein dreidimensionales Wirkungsflächendiagramm ein oder aus. Diese Option ist nur für Modelle mit zwei oder mehr X-Variablen verfügbar.
 
@@ -1080,7 +1080,7 @@ obj << Surface Profiler( 1 );
 
 ### Unlock Parameter
 
-**Syntax:** obj << Unlock Parameter( Name, ... )
+**Syntax:** obj &lt;&lt; Unlock Parameter( Name, ... )
 
 **Beschreibung:** Entsperrt die angegebenen Parameter. Verwenden Sie diese Option für zuvor gesperrte Faktoren, damit sie sich während des Iterationsprozesses ändern können.
 
@@ -1100,7 +1100,7 @@ obj << Finish;
 
 ### Unthreaded
 
-**Syntax:** obj << Unthreaded( state=0|1 )
+**Syntax:** obj &lt;&lt; Unthreaded( state=0|1 )
 
 **Beschreibung:** Führt die Iterationen im Hauptrechen-Thread aus.
 
@@ -1118,7 +1118,7 @@ obj << Finish;
 
 ### Action
 
-**Syntax:** obj << Action
+**Syntax:** obj &lt;&lt; Action
 
 **Beschreibung:** Allzwecköffnung innerhalb einer Plattform zum Einfügen von auszuwertenden Ausdrücken. Setzt die Kontexte für Anzeigefeld und Datentabelle kurzzeitig auf die Plattform.
 
@@ -1136,7 +1136,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Syntax:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntax:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Beschreibung:** Wendet eine zuvor erstellte Voreinstellung auf das Objekt an und aktualisiert die Optionen und Anpassungen entsprechend den gespeicherten Einstellungen.
 
@@ -1183,7 +1183,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Broadcast
 
-**Syntax:** obj << Broadcast(message)
+**Syntax:** obj &lt;&lt; Broadcast(message)
 
 **Beschreibung:** Sendet eine Meldung an eine Plattform. Wenn es sich bei den zurückgegebenen Ergebnissen von einzelnen Objekten um Tabellen handelt, werden sie, wenn möglich, verkettet. Das endgültige Format ist entweder identisch mit dem Ergebnis der Option „Kombinierte Tabelle speichern“ in einem Tabellenfeld oder mit dem Ergebnis der Option „Verketten“ mithilfe einer Quellspalte. Ansonsten werden die Ergebnisse in einer Liste gespeichert und zurückgegeben.
 
@@ -1203,7 +1203,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**Syntax:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Syntax:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Beschreibung:** Fügt ein Bedienfeld zum Ändern der Variablen der Plattform hinzu
 
@@ -1221,7 +1221,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**Syntax:** obj << Copy ByGroup Script
+**Syntax:** obj &lt;&lt; Copy ByGroup Script
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und legt es in der Zwischenablage ab.
 
@@ -1241,7 +1241,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Syntax:** obj << Copy Script
+**Syntax:** obj &lt;&lt; Copy Script
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und legt es in der Zwischenablage ab.
 
@@ -1256,7 +1256,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Syntax:** obj << Data Table Window
+**Syntax:** obj &lt;&lt; Data Table Window
 
 **Beschreibung:** Zeigt das Fenster mit der Datentabelle für diese Analyse im Vordergrund an.
 
@@ -1271,7 +1271,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Syntax:** obj << Get By Levels
+**Syntax:** obj &lt;&lt; Get By Levels
 
 **Beschreibung:** Gibt ein assoziatives Array zurück, das die Nach-Gruppenspalten ihren Werten zuordnet.
 
@@ -1288,7 +1288,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Syntax:** obj << Get ByGroup Script
+**Syntax:** obj &lt;&lt; Get ByGroup Script
 
 **Beschreibung:** Erstellt ein Skript (JSL) zum Erzeugen dieser Analyse und gibt es als Ausdruck zurück.
 
@@ -1309,7 +1309,7 @@ Show( t );
 
 ### Get Container
 
-**Syntax:** obj << Get Container
+**Syntax:** obj &lt;&lt; Get Container
 
 **Beschreibung:** Gibt einen Verweis auf das Containerfeld zurück, das den Inhalt des Objekts enthält.
 
@@ -1356,7 +1356,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Syntax:** obj << Get Data Table
+**Syntax:** obj &lt;&lt; Get Data Table
 
 **Beschreibung:** Gibt eine Referenz auf die Datentabelle zurück.
 
@@ -1372,7 +1372,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**Syntax:** obj << Get Group Platform
+**Syntax:** obj &lt;&lt; Get Group Platform
 
 **Beschreibung:** Plattformobjekt der Gruppe zurückgeben, wenn diese Plattform Teil einer Gruppe ist. Andernfalls wird Empty() zurückgegeben.
 
@@ -1389,7 +1389,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**Syntax:** obj << Get Script
+**Syntax:** obj &lt;&lt; Get Script
 
 **Beschreibung:** Erstellt ein Skript (JSL) zum Erzeugen dieser Analyse und gibt es als Ausdruck zurück.
 
@@ -1405,7 +1405,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Syntax:** obj << Get Script With Data Table
+**Syntax:** obj &lt;&lt; Get Script With Data Table
 
 **Beschreibung:** Erstellt ein Skript (JSL) zum Erzeugen dieser Analyse und referenziert dabei spezifisch diese Datentabelle und gibt das Skript als Ausdruck zurück.
 
@@ -1421,7 +1421,7 @@ Show( t );
 
 ### Get Timing
 
-**Syntax:** obj << Get Timing
+**Syntax:** obj &lt;&lt; Get Timing
 
 **Beschreibung:** Steuert den Start der Plattform zeitlich.
 
@@ -1437,7 +1437,7 @@ Show( t );
 
 ### Get Web Support
 
-**Syntax:** obj << Get Web Support
+**Syntax:** obj &lt;&lt; Get Web Support
 
 **Beschreibung:** Gibt eine Zahl zurück, die angibt, ob für das Anzeigeobjekt interaktive HTML unterstützt wird. 1 bedeutet einige oder alle Elemente werden unterstützt. 0 bedeutet keine Unterstützung.
 
@@ -1453,7 +1453,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Syntax:** obj << Get Where Expr
+**Syntax:** obj &lt;&lt; Get Where Expr
 
 **Beschreibung:** Gibt den Ausdruck Where für die Teilmenge der Daten zurück, wenn die Plattform mit By() oder Where() gestartet wurde. Andernfalls wird Empty() zurückgegeben.
 
@@ -1490,7 +1490,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Syntax:** obj << Local Data Filter
+**Syntax:** obj &lt;&lt; Local Data Filter
 
 **Beschreibung:** Filtert Daten für bestimmte Gruppen oder Bereiche, aber nur lokal in dieser Plattform.
 
@@ -1546,7 +1546,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Syntax:** obj << Paste Local Data Filter
+**Syntax:** obj &lt;&lt; Paste Local Data Filter
 
 **Beschreibung:** Lokalen Datenfilter aus der Zwischenablage auf den aktuellen Bericht anwenden.
 
@@ -1567,7 +1567,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**Syntax:** obj << Redo Analysis
+**Syntax:** obj &lt;&lt; Redo Analysis
 
 **Beschreibung:** Führt die gleiche Analyse in einem neuen Fenster aus. Die Analyse ist unterschiedlich, wenn sich die Daten verändert haben.
 
@@ -1582,7 +1582,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**Syntax:** obj << Redo ByGroup Analysis
+**Syntax:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Beschreibung:** Führt die gleiche Analyse in einem neuen Fenster aus. Die Analyse ist unterschiedlich, wenn sich die Daten verändert haben.
 
@@ -1602,7 +1602,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**Syntax:** obj << Relaunch Analysis
+**Syntax:** obj &lt;&lt; Relaunch Analysis
 
 **Beschreibung:** Öffnet das Plattform-Startfenster und ruft die Einstellungen ab, die zum Erstellen des Berichts verwendet wurden.
 
@@ -1617,7 +1617,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**Syntax:** obj << Relaunch ByGroup
+**Syntax:** obj &lt;&lt; Relaunch ByGroup
 
 **Beschreibung:** Öffnet das Plattform-Startfenster und ruft die Einstellungen ab, die zum Erstellen des Berichts verwendet wurden.
 
@@ -1637,7 +1637,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**Syntax:** obj << Remove Column Switcher
+**Syntax:** obj &lt;&lt; Remove Column Switcher
 
 **Beschreibung:** Entfernt den letzten Spaltenwechsler, der der Plattform hinzugefügt wurde.
 
@@ -1657,7 +1657,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Syntax:** obj << Remove Local Data Filter
+**Syntax:** obj &lt;&lt; Remove Local Data Filter
 
 **Beschreibung:** Wenn ein lokaler Filter verwendet wurde, wird dieser entfernt und die Plattform verwendet wieder direkt alle Daten aus der Datentabelle
 
@@ -1696,9 +1696,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Syntax:** obj << Report;
-
-Report( obj )
+**Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Beschreibung:** Gibt eine Referenz auf das Berichtsobjekt zurück.
 
@@ -1715,7 +1713,7 @@ Show( t );
 
 ### Report View
 
-**Syntax:** obj << Report View( "Vollständig"|"Übersicht" )
+**Syntax:** obj &lt;&lt; Report View( "Vollständig"|"Übersicht" )
 
 **Beschreibung:** Die Berichtsanzeige legt das Detailniveau für einen Plattformbericht fest. Full zeigt alle Details an, während Summary abhängig von der Plattform nur ausgewählte Inhalte anzeigt. Für benutzerdefiniertes Verhalten unterstützen Anzeigefelder eine Meldung <<Set Summary Behavior.
 
@@ -1730,7 +1728,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**Syntax:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und speichert sie als Tabelleneigenschaft in der Datentabelle. Sie können einen Namen für das Skript angeben. Die Option Append Suffix hängt ein numerisches Suffix an den Skriptnamen an, das das Skript von einem vorhandenen Skript mit dem gleichen Namen unterscheidet. Die Option Prompt fordert den Benutzer auf, einen Skriptnamen anzugeben. Die Option Replace ersetzt ein vorhandenes Skript mit dem gleichen Namen.
 
@@ -1750,7 +1748,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Syntax:** obj << Save ByGroup Script to Journal
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und fügt eine Schaltfläche mit diesem Skript zum Journal hinzu.
 
@@ -1770,7 +1768,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Syntax:** obj << Save ByGroup Script to Script Window
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und hängt es an das Textfenster mit dem aktuellen Skript an.
 
@@ -1790,7 +1788,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**Syntax:** obj << Save Script for All Objects
+**Syntax:** obj &lt;&lt; Save Script for All Objects
 
 **Beschreibung:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -1805,7 +1803,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Syntax:** obj << Save Script for All Objects To Data Table( <name> )
+**Syntax:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Beschreibung:** Speichert ein Skript für alle Berichtsobjekte in der aktuellen Datentabelle. Diese Option ist nützlich, wenn Sie mehrere Berichte im Fenster haben. Das Skript wird nach der ersten Plattform benannt, sofern Sie keine Skriptnamen in Anführungszeichen angeben.
 
@@ -1843,7 +1841,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Syntax:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und speichert es als Tabelleneigenschaft in der Datentabelle.
 
@@ -1858,7 +1856,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Syntax:** obj << Save Script to Journal
+**Syntax:** obj &lt;&lt; Save Script to Journal
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und fügt eine Schaltfläche mit diesem Skript zum Journal hinzu.
 
@@ -1873,7 +1871,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Syntax:** obj << Save Script to Report
+**Syntax:** obj &lt;&lt; Save Script to Report
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und zeigt es im Bericht selbst an. Nützlich zum Anlegen eines gedruckten Nachweises der durchgeführten Aktivitäten.
 
@@ -1888,7 +1886,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Syntax:** obj << Save Script to Script Window
+**Syntax:** obj &lt;&lt; Save Script to Script Window
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und hängt es an das Textfenster mit dem aktuellen Skript an.
 
@@ -1968,7 +1966,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Syntax:** obj << Sync to Data Table Changes
+**Syntax:** obj &lt;&lt; Sync to Data Table Changes
 
 **Beschreibung:** Mit Ausgeschlossenen und vorgenommenen Datenänderungen synchronisieren.
 
@@ -1985,7 +1983,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Syntax:** obj << Title( "new title" )
+**Syntax:** obj &lt;&lt; Title( "new title" )
 
 **Beschreibung:** Legt den Titel für die Plattform fest.
 
@@ -2000,7 +1998,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Syntax:** obj << Top Report
+**Syntax:** obj &lt;&lt; Top Report
 
 **Beschreibung:** Gibt eine Referenz auf den Stammknoten im Bericht zurück.
 
@@ -2017,7 +2015,7 @@ Show( t );
 
 ### Transform Column
 
-**Syntax:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Syntax:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Beschreibung:** Transformationsspalte im lokalen Kontext eines Objekts erstellen, üblicherweise als Plattform. Die Transformationsspalte ist nur für die Lebensdauer der Plattform aktiv.
 
@@ -2038,7 +2036,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**Syntax:** obj << View Web XML
+**Syntax:** obj &lt;&lt; View Web XML
 
 **Beschreibung:** Gibt den XML-Code zurück, der zum Erstellen des interaktiven HTML-Berichts verwendet wird.
 
@@ -2053,9 +2051,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**Syntax:** obj = Nonlinear(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Nonlinear(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Typ des Fensters festlegen, das für den Bericht erstellt werden soll. Standardmäßig wird ein Berichtsfenster vom Typ Visible erstellt. Ein Fenster vom Typ Invisible wird auf dem Bildschirm nicht angezeigt, kann jedoch von Funktionen wie Window() erkannt werden. Ein Fenster vom Typ Private reagiert auf die meisten Fenstermeldungen, kann jedoch nicht erkannt werden und muss über das Berichtsobjekt adressiert werden.
 
@@ -2076,9 +2072,7 @@ New Window( "Bivariate Equation",
 
 ### By
 
-**Syntax:** obj = Nonlinear(...<By( column(s) )>...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Nonlinear(...&lt;By( column(s) )&gt;...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Führt eine separate Analyse für jede Stufe der angegebenen Spalte durch.
 
@@ -2097,9 +2091,7 @@ obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish(), By( _bycol ) );
 
 ### Freq
 
-**Syntax:** obj = Nonlinear(...<Freq( column )>...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Nonlinear(...&lt;Freq( column )&gt;...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Gibt eine Spalte an, deren Werte jeder Zeile eine Häufigkeit für die Analyse zuweisen.
 
@@ -2114,9 +2106,7 @@ obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish(), Freq( _freqcol )
 
 ### Group
 
-**Syntax:** obj = Nonlinear(...<Group( column )>...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Nonlinear(...&lt;Group( column )&gt;...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Gibt eine Gruppierungsvariable an. Das angepasste Modell hat separate Parameter für jede Stufe der Gruppierungsvariablen.
 
@@ -2138,9 +2128,7 @@ obj = dt << Nonlinear(
 
 ### Loss
 
-**Syntax:** obj = Nonlinear(...<Loss( column )>...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Nonlinear(...&lt;Loss( column )&gt;...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Gibt eine Formelspalte an, die eine Verlustfunktion enthält.
 
@@ -2160,9 +2148,7 @@ obj = dt << Nonlinear(
 
 ### Predictor Formula
 
-**Syntax:** obj = Nonlinear(...<Predictor Formula( column )>...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Nonlinear(...&lt;Predictor Formula( column )&gt;...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Gibt eine Spalte an, die entweder die X-Variable oder eine Modellformel mit Parametern enthält.
 
@@ -2176,9 +2162,7 @@ obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );
 
 ### Response
 
-**Syntax:** obj = Nonlinear(...<Response( column )>...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Nonlinear(...&lt;Response( column )&gt;...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Gibt die Zielgrößenvariable an.
 
@@ -2192,9 +2176,7 @@ obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );
 
 ### Weight
 
-**Syntax:** obj = Nonlinear(...<Weight( column )>...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Nonlinear(...&lt;Weight( column )&gt;...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Gibt eine Spalte an, deren Werte jeder Zeile eine Gewichtung für die Analyse zuweisen.
 
@@ -2209,9 +2191,7 @@ obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish(), Weight( _weightc
 
 ### X
 
-**Syntax:** obj = Nonlinear(...<X( column )>...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Nonlinear(...&lt;X( column )&gt;...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Gibt eine Spalte an, die entweder die X-Variable oder eine Modellformel mit Parametern enthält.
 
@@ -2225,9 +2205,7 @@ obj = dt << Nonlinear( Y( :pop ), X( :"X-formula"n ), Finish() );
 
 ### Y
 
-**Syntax:** obj = Nonlinear(...<Y( column )>...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Nonlinear(...&lt;Y( column )&gt;...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Gibt die Zielgrößenvariable an.
 

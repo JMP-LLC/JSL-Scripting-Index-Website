@@ -2,8 +2,6 @@
 
 
 
-## Funktionen
-
 ### Add
 
 **Syntax:** y = x0 + x1; y = Add( x0, x1, ... )
@@ -57,7 +55,7 @@ Hex(/* make it printable */ Blob MD5(/* get the hash */
 
 ### Blob Peek
 
-**Syntax:** blobResult = Blob Peek( blob, offset, <length> )
+**Syntax:** blobResult = Blob Peek( blob, offset, &lt;length&gt; )
 
 **Beschreibung:** Erzeugt aus einem Unterbereich von Bytes des angegebenen Blobs ein neues Blob. Das Argument offset ist nullbasiert, also befindet sich das erste Byte an Offset 0.
 
@@ -87,7 +85,7 @@ Build Information();
 
 ### Caption
 
-**Syntax:** y = Caption( <{h, v}>, text | remove, <Delayed( seconds )>, <Font(font)>, <Font Size(size)>, <Text Color(color)>, <Back Color(color)>, <Spoken(bool)> )
+**Syntax:** y = Caption( &lt;{h, v}&gt;, text | remove, &lt;Delayed( seconds )&gt;, &lt;Font(font)&gt;, &lt;Font Size(size)&gt;, &lt;Text Color(color)&gt;, &lt;Back Color(color)&gt;, &lt;Spoken(bool)&gt; )
 
 **Beschreibung:** Zeigt ein Textfenster an der von {h, v} angegebenen Stelle und mit dem vom Argument text angegebenen Text an. Das Argument Delayed( seconds ) legt die Wartezeit vor jeder Texteinblendung fest.
 
@@ -123,7 +121,7 @@ Caption(
 
 ### Clipboard Capture
 
-**Syntax:** clp = Clipboard Capture( box << Copy )
+**Syntax:** clp = Clipboard Capture( box &lt;&lt; Copy )
 
 **Beschreibung:** If the JSL within this function would have normally copied something to the OS Clipboard, it is instead copied to a Clipboard object and returned.
 
@@ -143,7 +141,7 @@ Show( clp << Get Flavor Data( "Text", <<Text ) );
 
 ### Current Journal
 
-**Syntax:** y = Current Journal( <Project(title|index|box|window)> )
+**Syntax:** y = Current Journal( &lt;Project(title|index|box|window)&gt; )
 
 **Beschreibung:** Gibt eine Referenz auf das aktuelle Journal im aktuellen Projekt zurück (oder auf kein Projekt, wenn das Skript nicht in einem Projekt ausgeführt wird).
 
@@ -305,7 +303,7 @@ Disable Proxy Settings( 1 );
 
 ### Divide
 
-**Syntax:** y = x0 / x1; y = Divide( x0, <x1>, ... )
+**Syntax:** y = x0 / x1; y = Divide( x0, &lt;x1&gt;, ... )
 
 **Beschreibung:** Dividiert durch alle nachfolgenden Argumente vom ersten Argument ab. Argumente können Zahlen, Matrizen oder Listen mit Zahlen sein. Bei Aufruf mit nur einem Argument ist das Ergebnis reziprok.
 
@@ -447,11 +445,7 @@ Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
 
 ### Format Pattern
 
-**Syntax:** s = Format( x, "Format Pattern", pattern, <width>, <dec>)
-
-x = In Format( s, "Format Pattern", pattern, < <<Use Locale(b=1)> )
-
-obj = Format("Format Pattern", pattern, <width>, <dec>)
+**Syntax:** s = Format( x, "Format Pattern", pattern, &lt;width&gt;, &lt;dec&gt;)x = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )obj = Format("Format Pattern", pattern, &lt;width&gt;, &lt;dec&gt;)
 
 **Beschreibung:** Formatmuster sind Zeichenketten, die ein Datum/Uhrzeit-Format definieren, etwa „<JJJJ></><MM></><TT> <hh><:><mm><:><ss><ampm>“. Die Teile des Musters in spitzen Klammern werden Felddeskriptoren genannt. Die Felddeskriptoren stellen einen Wert dar (wie „<JJJJ>“, ein Jahr mit vier Stellen) oder einen anderen Datum/Uhrzeit-Text (wie "</>", ein vom Gebietsschema abhängiges Trennzeichen für das Datum). Ein Formatmuster ermöglicht es Ihnen, Formate zu erstellen, die in JMP nicht bereitgestellt werden. Diese Formate können zum Formatieren und Eingeben von Daten verwendet werden.
 
@@ -622,7 +616,7 @@ Get Clipboard();
 
 ### Get Expr Location
 
-**Syntax:** Get Expr Location(<expression>, [{"TokenStartLine"|"TokenStartCol"|"TokenStart"|"TokenLength"|"TreeStart"|"TreeEnd"|"TreeLength"}+]
+**Syntax:** Get Expr Location(&lt;expression&gt;, [{"TokenStartLine"|"TokenStartCol"|"TokenStart"|"TokenLength"|"TreeStart"|"TreeEnd"|"TreeLength"}+]
 
 **Beschreibung:** Ruft die Positionen des obersten Tokens in einem geparsten Ausdruck ab. Der Standardaufruf gibt {die Quelldatei, TokenStartLine, TokenStartCol, TokenLength} zurück.
 
@@ -726,7 +720,7 @@ Show( aa );
 
 ### Get Platform Preference
 
-**Syntax:** Get Platform Preferences( < platformName < ( optionName, ... ) > ... > )
+**Syntax:** Get Platform Preferences( &lt; platformName &lt; ( optionName, ... ) &gt; ... &gt; )
 
 **Beschreibung:** Ruft Plattformvoreinstellungen wie angegeben ab.
 
@@ -741,7 +735,7 @@ Get Platform Preferences( Bivariate( Fit Line ), DOE );
 
 ### Get Platform Preferences
 
-**Syntax:** Get Platform Preferences( < platformName < ( optionName, ... ) > ... > )
+**Syntax:** Get Platform Preferences( &lt; platformName &lt; ( optionName, ... ) &gt; ... &gt; )
 
 **Beschreibung:** Ruft Plattformvoreinstellungen wie angegeben ab.
 
@@ -756,7 +750,7 @@ Get Platform Preferences( Bivariate( Fit Line ), DOE );
 
 ### Get Policies
 
-**Syntax:** Get Policies( <Machine|User|Both> )
+**Syntax:** Get Policies( &lt;Machine|User|Both&gt; )
 
 **Beschreibung:** Gibt ein assoziatives Array mit den Namen und Werten der aktuellen Richtlinien zurück.
 
@@ -1146,7 +1140,7 @@ New Window( "editor", Script Box( x ) );
 
 ### Load DLL
 
-**Syntax:** dll = Load DLL( file path | Base Name( file path without extension ), < AutoDeclare( bool | Quiet | Verbose) | Quiet | Verbose )> )
+**Syntax:** dll = Load DLL( file path | Base Name( file path without extension ), &lt; AutoDeclare( bool | Quiet | Verbose) | Quiet | Verbose )&gt; )
 
 **Beschreibung:** Lädt eine DLL, auf die der angegebene Pfad zeigt.
 
@@ -1183,7 +1177,7 @@ If( Host is( "Windows" ),
 
 ### Log Table Messages
 
-**Syntax:** Log Table Messages( <On|Off>, <Enable(subject, ...)>, <Disable(subject, ...)>, <Include(msgname, ...)>, <Exclude(msgname, )>
+**Syntax:** Log Table Messages( &lt;On|Off&gt;, &lt;Enable(subject, ...)&gt;, &lt;Disable(subject, ...)&gt;, &lt;Include(msgname, ...)&gt;, &lt;Exclude(msgname, )&gt;
 
 **Beschreibung:** Control logging of data table messages (such as DtMsgClose). By default logging is off, but all subjects are enabled. (If you turn logging on, you do not need to enable the subjects you&apos;re interested in.) Only a subset of all messages are logged. Not available in retail builds.
 
@@ -1246,7 +1240,7 @@ Log Table Messages( Disable( "Table" ) );
 
 ### Mail
 
-**Syntax:** Mail( "address", "subject", "message", <"attachment filepath"> | { "attachment filepath", ...} )
+**Syntax:** Mail( "address", "subject", "message", &lt;"attachment filepath"&gt; | { "attachment filepath", ...} )
 
 **Beschreibung:** Erstellt eine ausgehende E-Mail wie angegeben, wenn das Betriebssystem dies zulässt. Nicht alle Optionen funktionieren bei allen Betriebssystemversionen. In der Hilfe finden Sie Details dazu.
 
@@ -1261,7 +1255,7 @@ Mail( "test@example.com", "revelation", "JMP is great.", "$SAMPLE_DATA/Big Class
 
 ### Main Menu
 
-**Syntax:** menu = Main Menu( command, <window name> )
+**Syntax:** menu = Main Menu( command, &lt;window name&gt; )
 
 **Beschreibung:** Führt den angegebenen Hauptmenübefehl aus.
 
@@ -1372,7 +1366,7 @@ Print( tax * Name( "taxable income(2011)" ) );
 
 ### New Clipboard
 
-**Syntax:** clp = New Clipboard( <<<Get From OS> )
+**Syntax:** clp = New Clipboard( &lt;&lt;&lt;Get From OS&gt; )
 
 **Beschreibung:** Creates a new Clipboard, either empty or with access to the OS clipboard.
 
@@ -1390,7 +1384,7 @@ New Window( "Img", clp << Get Flavor Data( "Graphic" ) )
 
 ### New HTTP Request
 
-**Syntax:** obj = New HTTP Request(URL(...), Method(...), <Form(<Fields(...)>, <Files(...)>)> | <File(...)> | <Blob(...)> | <JSON(...)>, <QueryString(...)>, <Headers(...)>, <Username(...)>, <Password(...)>)
+**Syntax:** obj = New HTTP Request(URL(...), Method(...), &lt;Form(&lt;Fields(...)&gt;, &lt;Files(...)&gt;)&gt; | &lt;File(...)&gt; | &lt;Blob(...)&gt; | &lt;JSON(...)&gt;, &lt;QueryString(...)&gt;, &lt;Headers(...)&gt;, &lt;Username(...)&gt;, &lt;Password(...)&gt;)
 
 **Beschreibung:** Erstellt einen Request zum Senden an einen Webservice.
 
@@ -1809,7 +1803,7 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ### Polytope Uniform Random
 
-**Syntax:** points = Polytope Uniform Random( numSamples, A, b, L, U, neq, nle, nge, <nwarm=200>, <nstride=25> )
+**Syntax:** points = Polytope Uniform Random( numSamples, A, b, L, U, neq, nle, nge, &lt;nwarm=200&gt;, &lt;nstride=25&gt; )
 
 **Beschreibung:** Generiert gleichverteilte Punkte in einem konvexen Polytop. Das Argument numSamples gibt die Anzahl der zu erzeugenden zufälligen Punkte an. Das Argument A ist die Matrix der Nebenbedingungskoeffizienten. Das Argument B sind die rechten Seiten der Nebenbedingungen. Die Argumente L und U sind die untere und obere Schranke für die Variablen. Die Argumente neq, mle und nge ist die Anzahl der Gleichheitsnebenbedingungen, die Anzahl von Ungleichungen „kleiner als oder gleich“ und die Anzahl von Ungleichungen „größer als oder gleich“. Das Argument nwarm ist die Anzahl von Anfangswiederholungen, bevor Punkte in die Ausgabematrix geschrieben werden. Das Argument nstride ist die Anzahl der Wiederholungen zwischen jedem Punkt, der in die Ausgabematrix geschrieben wird. Beachten Sie, dass für die Nebenbedingungen zuerst die Gleichungen, danach die Ungleichungen „kleiner als oder gleich“ und zuletzt die Ungleichungen „größer als oder gleich“ aufgeführt werden müssen.
 
@@ -1905,7 +1899,7 @@ Preferences( Graph marker size( "Large" ) );
 
 ### Register Addin
 
-**Syntax:** Register Addin( uniqueId, homeFolder, <displayName(name)>, <MinJMPVersion(version)>, <MaxJMPVersion(version)>, <LoadsAtStartup(autoLoad)>, <LoadNow(load)> )
+**Syntax:** Register Addin( uniqueId, homeFolder, &lt;displayName(name)&gt;, &lt;MinJMPVersion(version)&gt;, &lt;MaxJMPVersion(version)&gt;, &lt;LoadsAtStartup(autoLoad)&gt;, &lt;LoadNow(load)&gt; )
 
 **Beschreibung:** Registriert ein Add-in.
 
@@ -1990,19 +1984,7 @@ Show( Rummage( Window( dt ), "graph builder", Algorithm( "Basic" ) )[1 :: 3] << 
 
 ### Run Program
 
-**Syntax:** obj = Run Program(
-
-    Executable( "path/etc.exe" ),
-
-  < Options( {"/a", "/b etc" } ) >,
-
-  < Parameter( optParm ) >,
-
-  < Read Function( Function( {this, optParm}, etc ) | "text" | "blob" ) >,
-
-  < Write Function( Function( {this, optParm}, etc ) ) >
-
-)
+**Syntax:** obj = Run Program( Executable( "path/etc.exe" ), &lt; Options( {"/a", "/b etc" } ) &gt;, &lt; Parameter( optParm ) &gt;, &lt; Read Function( Function( {this, optParm}, etc ) | "text" | "blob" ) &gt;, &lt; Write Function( Function( {this, optParm}, etc ) ) &gt;)
 
 **Beschreibung:** Ein externes Programm mit stdin und stdout steuern.
 
@@ -2127,7 +2109,7 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ### Set Policy
 
-**Syntax:** Set Policy("PolicyName", <Empty()|#|"value"> )
+**Syntax:** Set Policy("PolicyName", &lt;Empty()|#|"value"&gt; )
 
 **JMP Version hinzugefügt:** 18
 
@@ -2163,7 +2145,7 @@ Preferences( Graph marker size( "Large" ) );
 
 ### Set Toolbar Visibility
 
-**Syntax:** rc = Set Toolbar Visibility( "toolbar-name" | Default | All, <window-class-name | All>, <True | False> )
+**Syntax:** rc = Set Toolbar Visibility( "toolbar-name" | Default | All, &lt;window-class-name | All&gt;, &lt;True | False&gt; )
 
 **Beschreibung:** Legt die Sichtbarkeit einer vorgegebenen Symbolleiste für eine vorgegebene Klasse von Fenstern fest. toolbar-name ist der interne Name der Symbolleiste. Wird Default als Symbolleistenname weitergegeben, wird die angegebene Fensterklasse mit dem Standardsatz von Symbolleisten für diese Klasse von Fenstern wiederhergestellt. Beispiele für window-class-name sind Datentabelle, Skript, Bericht und Journal. Wenn window-class-name All ist, dann ist die Sichtbarkeit für die angegebene Symbolleiste für alle Klassen von Fenstern festgelegt.
 
@@ -2243,7 +2225,7 @@ Show Addins Dialog();
 
 ### Show Commands
 
-**Syntax:** Show Commands( <keyword=Builtins> )
+**Syntax:** Show Commands( &lt;keyword=Builtins&gt; )
 
 **Beschreibung:** Erstellt eine oder mehrere Datentabellen, die Informationen über verschiedene JSL-Komponenten enthalten. Das Argument keyword legt den Inhalt der Ausgabetabelle fest. Geben Sie vordefinierte Objekte (Standardwerte) für integrierte Operatoren und Funktionen an. Geben Sie skriptfähige Objekte für alle skriptfähigen Befehle dieser Objekte an. Geben Sie Übersetzungen für Englisch und lokalisierte Versionen der skriptfähigen Befehle an. Geben Sie Anzeigefelder für skriptfähige Befehle in Zusammenhang mit Anzeigefeldern und Anzeigesegmenten an. Geben Sie skriptfähige Namen für die Namen der skriptfähigen Objekte an. Geben Sie Plattformnamen für Namen von Plattformen an.
 
@@ -2305,7 +2287,7 @@ Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
 
 ### Socket
 
-**Syntax:** socketHandle = Socket( <STREAM | DGRAM> )
+**Syntax:** socketHandle = Socket( &lt;STREAM | DGRAM&gt; )
 
 **Beschreibung:** Erstellt eine Socketvariable, die mit Sockets auf diesem oder anderen vernetzten Computern kommunizieren kann. Das Standardargument ist STREAM. Probieren Sie es mit der Website Ihrer Firma aus.
 
@@ -2350,7 +2332,7 @@ If( rc[2] == "ok",
 
 ### Speak
 
-**Syntax:** Speak( text, <Wait( sync )> )
+**Syntax:** Speak( text, &lt;Wait( sync )&gt; )
 
 **Beschreibung:** Spricht den Text, sofern dies vom Betriebssystem unterstützt wird. Das optionale Argument Wait(true) verzögert die Skriptausführung, bis das Sprechen beendet ist.
 
@@ -2422,7 +2404,7 @@ Unregister Addin( "com.mycompany.myaddin" );
 
 ### Web
 
-**Syntax:** Web( string, <JMP Window> )
+**Syntax:** Web( string, &lt;JMP Window&gt; )
 
 **Beschreibung:** Öffnet die URL oder Datei, die im Standard-Webbrowser in string gespeichert ist. Das optionale zweite Argument gibt an, dass die HTML in einem JMP-Browserfenster geöffnet wird.
 
@@ -2467,7 +2449,7 @@ New Table( "Example",
 
 ### With Clipboard
 
-**Syntax:** two = With Clipboard( clp, box << Paste; 1 + 1 )
+**Syntax:** two = With Clipboard( clp, box &lt;&lt; Paste; 1 + 1 )
 
 **Beschreibung:** If the JSL within this function would have normally pasted something from the OS Clipboard, it is instead pasted from the provided Clipboard object.
 

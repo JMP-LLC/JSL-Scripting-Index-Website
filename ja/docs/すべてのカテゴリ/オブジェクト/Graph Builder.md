@@ -6,7 +6,7 @@
 
 ### Action
 
-**構文:** obj << Action
+**構文:** obj &lt;&lt; Action
 
 **説明:** 評価する式を挿入するための、プラットフォーム内の汎用トラップドア。プラットフォームに一時的にディスプレイボックスおよびデータテーブルのコンテキストを設定する。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**構文:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**構文:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **説明:** 作成されたプリセットをオブジェクトに適用する。保存された設定に合わせてオプションとカスタマイズが更新される。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**構文:** obj << Automatic Recalc( state=0|1 )
+**構文:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **説明:** データの除外や変更があった場合に分析を自動的にやり直す。Automatic Recalcオプションがオンになっている場合で、データの除外や変更が再計算の前に確実に適用されるようにするには、Wait(0)コマンドを使用すること。
 
@@ -90,7 +90,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**構文:** obj << Broadcast(message)
+**構文:** obj &lt;&lt; Broadcast(message)
 
 **説明:** メッセージをプラットフォームに一括適用する。個々のオブジェクトから戻される結果がデータテーブルである場合は、可能な限り連結する。その最終的な形式は、Table BoxのSave Combined Tableオプションの結果と同じになるか、またはソース列を使用したConcanateオプションの結果と同じになる。それ以外の場合、結果はリストの形で戻される。
 
@@ -110,7 +110,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**構文:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**構文:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **説明:** プラットフォームの変数を変更するための設定パネルを追加する。
 
@@ -128,7 +128,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**構文:** obj << Copy ByGroup Script
+**構文:** obj &lt;&lt; Copy ByGroup Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -152,7 +152,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**構文:** obj << Copy Script
+**構文:** obj &lt;&lt; Copy Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -170,7 +170,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**構文:** obj << Data Table Window
+**構文:** obj &lt;&lt; Data Table Window
 
 **説明:** この分析に使用したデータテーブルのウィンドウを手前に表示する。
 
@@ -188,7 +188,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**構文:** obj << Get By Levels
+**構文:** obj &lt;&lt; Get By Levels
 
 **説明:** By列が指定されている場合、列名をキー、データ値を値とした連想配列を戻す。
 
@@ -205,7 +205,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**構文:** obj << Get ByGroup Script
+**構文:** obj &lt;&lt; Get ByGroup Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -230,7 +230,7 @@ Show( t );
 
 ### Get Container
 
-**構文:** obj << Get Container
+**構文:** obj &lt;&lt; Get Container
 
 **説明:** オブジェクトのコンテンツを含んだコンテナボックスの参照を戻す。
 
@@ -280,7 +280,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**構文:** obj << Get Data Table
+**構文:** obj &lt;&lt; Get Data Table
 
 **説明:** データテーブルへの参照を戻す。
 
@@ -299,7 +299,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**構文:** obj << Get Group Platform
+**構文:** obj &lt;&lt; Get Group Platform
 
 **説明:** 該当のプラットフォームがグループに属している場合に、Group Platformオブジェクトを戻す。それ以外の場合はEmpty()を戻す。
 
@@ -316,7 +316,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**構文:** obj << Get Script
+**構文:** obj &lt;&lt; Get Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -335,7 +335,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**構文:** obj << Get Script With Data Table
+**構文:** obj &lt;&lt; Get Script With Data Table
 
 **説明:** この分析を再現するスクリプト(JSL)をデータテーブルへの参照も含めて生成し、それを式として戻す。
 
@@ -354,7 +354,7 @@ Show( t );
 
 ### Get Timing
 
-**構文:** obj << Get Timing
+**構文:** obj &lt;&lt; Get Timing
 
 **説明:** プラットフォームの起動にかかった時間を取得する。
 
@@ -373,7 +373,7 @@ Show( t );
 
 ### Get Web Support
 
-**構文:** obj << Get Web Support
+**構文:** obj &lt;&lt; Get Web Support
 
 **説明:** ディスプレイオブジェクトにおけるインタラクティブHTMLサポートのレベルを数値で戻す。1は、一部または全部の要素がサポートされていることを示し、0は、サポートされないことを示す。
 
@@ -389,7 +389,7 @@ Show( s );
 
 ### Get Where Expr
 
-**構文:** obj << Get Where Expr
+**構文:** obj &lt;&lt; Get Where Expr
 
 **説明:** プラットフォームがBy()またはWhere()を使って起動された場合に、データをサブセットするためのWhere式を戻す。By()やWhere()が使われていない場合はEmpty()を戻す。
 
@@ -426,7 +426,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**構文:** obj << Local Data Filter
+**構文:** obj &lt;&lt; Local Data Filter
 
 **説明:** このプラットフォームに対してのみ有効なフィルタで、データを特定のグループまたは範囲にフィルタリングする。
 
@@ -482,7 +482,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**構文:** obj << Paste Local Data Filter
+**構文:** obj &lt;&lt; Paste Local Data Filter
 
 **説明:** クリップボードにあるローカルデータフィルタを現在のレポートに適用する。
 
@@ -503,7 +503,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**構文:** obj << Redo Analysis
+**構文:** obj &lt;&lt; Redo Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -521,7 +521,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**構文:** obj << Redo ByGroup Analysis
+**構文:** obj &lt;&lt; Redo ByGroup Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -545,7 +545,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**構文:** obj << Relaunch Analysis
+**構文:** obj &lt;&lt; Relaunch Analysis
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -563,7 +563,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**構文:** obj << Relaunch ByGroup
+**構文:** obj &lt;&lt; Relaunch ByGroup
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -587,7 +587,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**構文:** obj << Remove Column Switcher
+**構文:** obj &lt;&lt; Remove Column Switcher
 
 **説明:** プラットフォームに最後に追加された列スイッチャーを削除する。
 
@@ -607,7 +607,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**構文:** obj << Remove Local Data Filter
+**構文:** obj &lt;&lt; Remove Local Data Filter
 
 **説明:** すでに作成されているローカルデータフィルタを削除し、プラットフォームはデータテーブル内のすべてのデータを使用した状態に戻る。
 
@@ -646,9 +646,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**構文:** obj << Report;
-
-Report( obj )
+**構文:** obj &lt;&lt; Report;Report( obj )
 
 **説明:** レポートオブジェクトへの参照を戻す。
 
@@ -668,7 +666,7 @@ Show( t );
 
 ### Report View
 
-**構文:** obj << Report View( "完全"|"要約" )
+**構文:** obj &lt;&lt; Report View( "完全"|"要約" )
 
 **説明:** レポートビューは、プラットフォームレポートの詳細を表示するかどうかを決定する。Fullはすべての詳細を表示し、Summaryはプラットフォームにより限定されたものだけを表示する。 動作をカスタマイズするため、各ディスプレイボックスは<<Set Summary Behaviorメッセージをサポートする。
 
@@ -686,7 +684,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**構文:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** 分析を再現するためのJSLスクリプトを作成し、データテーブルにテーブルプロパティとして保存する。スクリプトの名前を指定できる。Append Suffixオプションは、スクリプト名に数字の接尾辞を追加する。これにより、同名のスクリプトが存在していても区別できる。Promptオプションは、ユーザにスクリプト名の指定を促す。Replaceオプションは、同名の既存のスクリプトを置き換える。
 
@@ -710,7 +708,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**構文:** obj << Save ByGroup Script to Journal
+**構文:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -734,7 +732,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**構文:** obj << Save ByGroup Script to Script Window
+**構文:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -758,7 +756,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**構文:** obj << Save Script for All Objects
+**構文:** obj &lt;&lt; Save Script for All Objects
 
 **説明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -776,7 +774,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**構文:** obj << Save Script for All Objects To Data Table( <name> )
+**構文:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **説明:** すべてのレポートオブジェクトを再現するスクリプトを現在のデータテーブルに保存する。このオプションは、ウィンドウ内にレポートが複数ある場合に便利。作成されるスクリプトの名前は、引用符で囲んで指定しない限り、1つ目のプラットフォーム名となる。
 
@@ -822,7 +820,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**構文:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** この分析を再現するJSLスクリプトを生成し、データテーブルのテーブルプロパティとして保存する。
 
@@ -840,7 +838,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**構文:** obj << Save Script to Journal
+**構文:** obj &lt;&lt; Save Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -858,7 +856,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**構文:** obj << Save Script to Report
+**構文:** obj &lt;&lt; Save Script to Report
 
 **説明:** この分析を再現するJSLスクリプトを生成し、レポートウィンドウに表示する。分析手順の記録を結果と一緒に残せる。
 
@@ -876,7 +874,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**構文:** obj << Save Script to Script Window
+**構文:** obj &lt;&lt; Save Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -959,7 +957,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**構文:** obj << Sync to Data Table Changes
+**構文:** obj &lt;&lt; Sync to Data Table Changes
 
 **説明:** 除外やデータの変更が行われた場合に同期する。
 
@@ -976,7 +974,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**構文:** obj << Title( "new title" )
+**構文:** obj &lt;&lt; Title( "new title" )
 
 **説明:** プラットフォームのタイトルを設定する。
 
@@ -994,7 +992,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**構文:** obj << Top Report
+**構文:** obj &lt;&lt; Top Report
 
 **説明:** レポート内のルートノードへの参照を戻す。
 
@@ -1014,7 +1012,7 @@ Show( t );
 
 ### Transform Column
 
-**構文:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**構文:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **説明:** オブジェクトのローカルコンテキスト(通常はプラットフォーム)内に変換列を作成する。この変換列は、それを作成したプラットフォームの中のみで使用可能。
 
@@ -1033,7 +1031,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**構文:** obj << View Web XML
+**構文:** obj &lt;&lt; View Web XML
 
 **説明:** インタラクティブHTMLレポートの作成に使うXMLコードを戻す。
 
@@ -1069,7 +1067,7 @@ New Window( "Bivariate Equation",
 
 ### Graph Builder
 
-**構文:** Graph Builder( Variables( X(column ), Y( column ), <Group X( column )>, <Group Y( column )>, <Shape( column )>, <Color( column )>, <Overlay( column )>, <Freq( column )> ), <Elements(...)> ) )
+**構文:** Graph Builder( Variables( X(column ), Y( column ), &lt;Group X( column )&gt;, &lt;Group Y( column )&gt;, &lt;Shape( column )&gt;, &lt;Color( column )&gt;, &lt;Overlay( column )&gt;, &lt;Freq( column )&gt; ), &lt;Elements(...)&gt; ) )
 
 **説明:** データをインタラクティブに探索するためのグラフィカルインターフェースを提供する。グラフのゾーンに列をドラッグしてさまざまなグラフを作成できる。グラフの種類には、散布図、等高線図、棒グラフ、面グラフ、箱ひげ図、ヒストグラム、ヒートマップ、円グラフ、ツリーマップ、モザイク図、地図などがある。
 
@@ -1088,7 +1086,7 @@ gb = Graph Builder(
 
 ### Add Element
 
-**構文:** obj << Add Element( xposition, yposition, {Type(element name), X(i=1), Y(i=1), options...} )
+**構文:** obj &lt;&lt; Add Element( xposition, yposition, {Type(element name), X(i=1), Y(i=1), options...} )
 
 **説明:** 指定されたXおよびYポジションに新しいグラフ要素を追加する。要素の指定には要素名、使用するデータの役割、およびオプションの値が含まれる。
 
@@ -1107,7 +1105,7 @@ gb << Add Element( 1, 1, {Type( "Line Of Fit" ), X, Y, Degree( "Quadratic" )} );
 
 ### Add Variable
 
-**構文:** obj << Add Variable( {column, Role(role), Position(p=1), Inner Position(i=1)}, < <<Method("insert"|"merge"|"replace")> )
+**構文:** obj &lt;&lt; Add Variable( {column, Role(role), Position(p=1), Inner Position(i=1)}, &lt; &lt;&lt;Method("insert"|"merge"|"replace")&gt; )
 
 **説明:** 現在のグラフビルダーの設定に、RoleとPositionを指定した新しい変数を追加する。
 
@@ -1126,7 +1124,7 @@ gb << Add Variable( {:age, Role( "Wrap" )} );
 
 ### Auto Stretching
 
-**構文:** obj << Auto Stretching( state=0|1 )
+**構文:** obj &lt;&lt; Auto Stretching( state=0|1 )
 
 **説明:** ウィンドウのサイズに合わせて、グラフを自動的に伸縮させる。 デフォルトではオン。
 
@@ -1144,7 +1142,7 @@ gb << Auto Stretching( 0 );
 
 ### Back Color
 
-**構文:** obj << Back Color( color )
+**構文:** obj &lt;&lt; Back Color( color )
 
 **説明:** グラフの周りの背景の色を設定する。
 
@@ -1162,7 +1160,7 @@ gb << Back Color( "Yellow" );
 
 ### Categorical Color Theme
 
-**構文:** obj << Categorical Color Theme
+**構文:** obj &lt;&lt; Categorical Color Theme
 
 **説明:** カテゴリに使用するカラーテーマを設定する。
 
@@ -1180,7 +1178,7 @@ gb << Categorical Color Theme( "Pastel" );
 
 ### Continuous Color Theme
 
-**構文:** obj << Continuous Color Theme
+**構文:** obj &lt;&lt; Continuous Color Theme
 
 **説明:** グラデーションに使用するカラーテーマを設定する。
 
@@ -1198,7 +1196,7 @@ gb << Continuous Color Theme( "White to Black" );
 
 ### Done
 
-**構文:** obj << Done
+**構文:** obj &lt;&lt; Done
 
 **説明:** 設定パネルを非表示にして標本抽出を中止する。
 
@@ -1235,7 +1233,7 @@ gb = dt << Graph Builder(
 
 ### Error Bar Offset
 
-**構文:** obj << Error Bar Offset
+**構文:** obj &lt;&lt; Error Bar Offset
 
 **説明:** 誤差バーのオフセットを設定するためのダイアログを開く。
 
@@ -1256,7 +1254,7 @@ gb << Error Bar Offset( 0.01 );
 
 ### Extend Axis to Zero
 
-**構文:** obj << Extend Axis to Zero( multiplier=1 )
+**構文:** obj &lt;&lt; Extend Axis to Zero( multiplier=1 )
 
 **説明:** 軸スケールを広げてゼロが含まれるようにするための乗数。 デフォルトの値は"1"。
 
@@ -1276,7 +1274,7 @@ gb = dt << Graph Builder(
 
 ### Extend Dual Axes to Zero
 
-**構文:** obj << Extend Dual Axes to Zero( multiplier=2 )
+**構文:** obj &lt;&lt; Extend Dual Axes to Zero( multiplier=2 )
 
 **説明:** 左右両方に軸がある場合に、軸スケールを広げてゼロが含まれるようにするための乗数。 デフォルトの値は"2"。
 
@@ -1297,7 +1295,7 @@ gb = dt << Graph Builder(
 
 ### Extend Parallel Y Axes to Zero
 
-**構文:** obj << Extend Parallel Y Axes to Zero( multiplier=3 )
+**構文:** obj &lt;&lt; Extend Parallel Y Axes to Zero( multiplier=3 )
 
 **説明:** [複数のY軸]モードにおいて、軸スケールを広げてゼロが含まれるようにするための乗数。 デフォルトの値は"3"。
 
@@ -1320,7 +1318,7 @@ gb = dt << Graph Builder(
 
 ### Fit to Window
 
-**構文:** obj << Fit to Window( "自動"|"オン"|"オフ"|"縦横比を保持" )
+**構文:** obj &lt;&lt; Fit to Window( "自動"|"オン"|"オフ"|"縦横比を保持" )
 
 **説明:** レポートの自動伸縮の動作を設定する。
 
@@ -1338,7 +1336,7 @@ gb << Fit to Window( "Off" );
 
 ### Get Element
 
-**構文:** obj << Get Element( xposition, yposition, i )
+**構文:** obj &lt;&lt; Get Element( xposition, yposition, i )
 
 **説明:** 指定したXおよびYポジションのグラフ要素の指定情報を戻す。
 
@@ -1356,7 +1354,7 @@ gb << Get Element( 1, 1, 1 );
 
 ### Get Elements
 
-**構文:** obj << Get Elements( xposition, yposition )
+**構文:** obj &lt;&lt; Get Elements( xposition, yposition )
 
 **説明:** 指定したXおよびYポジションの要素の指定情報をリストで戻す。
 
@@ -1374,7 +1372,7 @@ gb << Get Elements( 1, 1 );
 
 ### Get Legend Display
 
-**構文:** obj << Get Legend Display
+**構文:** obj &lt;&lt; Get Legend Display
 
 **説明:** グラフの凡例ディスプレイボックスを戻す。このディスプレイボックスに対して照会や変更が行える。
 
@@ -1397,7 +1395,7 @@ item << Set Visible( 0 );
 
 ### Get Legend Server
 
-**構文:** obj << Get Legend Server
+**構文:** obj &lt;&lt; Get Legend Server
 
 **説明:** 凡例のディスプレイボックスや対応するグラフ内のディスプレイセグメントによって使用される情報を保持したオブジェクトを戻す。
 
@@ -1420,7 +1418,7 @@ Show( items );
 
 ### Get N Elements
 
-**構文:** obj << Get N Elements( xposition, yposition )
+**構文:** obj &lt;&lt; Get N Elements( xposition, yposition )
 
 **説明:** 指定したXおよびYポジションのグラフ要素の数を戻す。
 
@@ -1456,7 +1454,7 @@ gb << Get N Positions( "X" );
 
 ### Get N Variables
 
-**構文:** n = obj << Get N Variables
+**構文:** n = obj &lt;&lt; Get N Variables
 
 **説明:** 使用されている変数の数を戻す。
 
@@ -1474,7 +1472,7 @@ gb << Get N Variables();
 
 ### Get Variable
 
-**構文:** obj << Get Variable( index )
+**構文:** obj &lt;&lt; Get Variable( index )
 
 **説明:** 変数の設定情報を戻す。
 
@@ -1492,7 +1490,7 @@ gb << Get Variable( 1 );
 
 ### Get Variables
 
-**構文:** list = obj << Get Variables
+**構文:** list = obj &lt;&lt; Get Variables
 
 **説明:** 使用されている変数の指定情報をリストで戻す。
 
@@ -1510,7 +1508,7 @@ gb << Get Variables();
 
 ### Graph Spacing
 
-**構文:** obj << Graph Spacing( gap=1 )
+**構文:** obj &lt;&lt; Graph Spacing( gap=1 )
 
 **説明:** グラフパネル間のスペース幅を設定する。 デフォルトの値は"1"。
 
@@ -1529,7 +1527,7 @@ gb << Graph Spacing( 3 );
 
 ### Grid Color
 
-**構文:** obj << Grid Color( color )
+**構文:** obj &lt;&lt; Grid Color( color )
 
 **説明:** グラフのグリッド線の色を設定する。
 
@@ -1548,7 +1546,7 @@ gb << Grid Color( "Red" );
 
 ### Grid Transparency
 
-**構文:** obj << Grid Transparency( fraction=1 )
+**構文:** obj &lt;&lt; Grid Transparency( fraction=1 )
 
 **説明:** グリッド線の透明度を設定する。 デフォルトの値は"1"。
 
@@ -1567,7 +1565,7 @@ gb << Grid Transparency( 0.2 );
 
 ### Include Missing Categories
 
-**構文:** obj << Include Missing Categories( state=0|1 )
+**構文:** obj &lt;&lt; Include Missing Categories( state=0|1 )
 
 **説明:** 欠測値を、カテゴリカル変数の1つの水準として処理する。
 
@@ -1587,7 +1585,7 @@ gb << Include Missing Categories( 1 );
 
 ### Launch Analysis
 
-**構文:** obj << Launch Analysis
+**構文:** obj &lt;&lt; Launch Analysis
 
 **説明:** 現在の変数を使用して分析を起動する。
 
@@ -1605,7 +1603,7 @@ gb << Launch Analysis;
 
 ### Legend Floating Offset
 
-**構文:** obj << Legend Floating Offset
+**構文:** obj &lt;&lt; Legend Floating Offset
 
 **説明:** 凡例の位置が[フローティング]に設定されているときの凡例のオフセットをピクセル数で設定する。
 
@@ -1625,7 +1623,7 @@ gb << Legend Position( "Inside Floating" );
 
 ### Legend Position
 
-**構文:** obj << Legend Position( "右"|"下"|"左内側"|"右内側"|"左下内側"|"右下内側"|"内側フローティング" )
+**構文:** obj &lt;&lt; Legend Position( "右"|"下"|"左内側"|"右内側"|"左下内側"|"右下内側"|"内側フローティング" )
 
 **説明:** 凡例の位置を設定する。
 
@@ -1643,7 +1641,7 @@ gb << Legend Position( "Bottom" );
 
 ### Legend Settings
 
-**構文:** obj << Legend Settings
+**構文:** obj &lt;&lt; Legend Settings
 
 **説明:** 凡例のプロパティを変更するためのダイアログを開く。
 
@@ -1662,7 +1660,7 @@ gb << Legend Settings();
 
 ### Level Fill Color
 
-**構文:** obj << Level Fill Color( color )
+**構文:** obj &lt;&lt; Level Fill Color( color )
 
 **説明:** グラフの水準名の背景色を設定する。
 
@@ -1680,7 +1678,7 @@ gb << Level Fill Color( {103, 214, 214} );
 
 ### Level Frame Color
 
-**構文:** obj << Level Frame Color( color )
+**構文:** obj &lt;&lt; Level Frame Color( color )
 
 **説明:** グラフの水準名の枠の色を設定する。
 
@@ -1698,7 +1696,7 @@ gb << Level Frame Color( "Blue" );
 
 ### Level Spacing Color
 
-**構文:** obj << Level Spacing Color( color )
+**構文:** obj &lt;&lt; Level Spacing Color( color )
 
 **説明:** 水準ラベル間のスペースの色を設定する。
 
@@ -1716,7 +1714,7 @@ gb << Level Spacing Color( "Blue" );
 
 ### Level Spacing Transparency
 
-**構文:** obj << Level Spacing Transparency( fraction=1 )
+**構文:** obj &lt;&lt; Level Spacing Transparency( fraction=1 )
 
 **説明:** 水準ラベル間のスペースの透明度を設定する。 デフォルトの値は"1"。
 
@@ -1734,7 +1732,7 @@ gb << Level Spacing Transparency( .2 );
 
 ### Level Text Color
 
-**構文:** obj << Level Text Color( color )
+**構文:** obj &lt;&lt; Level Text Color( color )
 
 **説明:** グラフの水準名のテキストの色を設定する。
 
@@ -1752,7 +1750,7 @@ gb << Level Text Color( "Red" );
 
 ### Level Transparency
 
-**構文:** obj << Level Transparency( fraction=1 )
+**構文:** obj &lt;&lt; Level Transparency( fraction=1 )
 
 **説明:** グラフの水準名の背景の透明度を設定する。 デフォルトの値は"1"。
 
@@ -1770,7 +1768,7 @@ gb << Level Transparency( .2 );
 
 ### Level Underline
 
-**構文:** obj << Level Underline( state=0|1 )
+**構文:** obj &lt;&lt; Level Underline( state=0|1 )
 
 **説明:** グラフの水準名に下線を引く、または下線を外す。
 
@@ -1789,7 +1787,7 @@ gb << Level Underline( 1 );
 
 ### Lighten large fills
 
-**構文:** obj << Lighten large fills( state=0|1 )
+**構文:** obj &lt;&lt; Lighten large fills( state=0|1 )
 
 **説明:** 円グラフ、ツリーマップ、モザイク図で広く塗りつぶされる領域の色を自動的に薄くする。 デフォルトではオン。
 
@@ -1809,7 +1807,7 @@ gb << Lighten large fills( 1 );
 
 ### Link Page Axes
 
-**構文:** obj << Link Page Axes( "なし"|"Xのみ"|"Yのみ"|"XとY" )
+**構文:** obj &lt;&lt; Link Page Axes( "なし"|"Xのみ"|"Yのみ"|"XとY" )
 
 **説明:** ページグループの各水準でリンクする軸を指定する。
 
@@ -1828,7 +1826,7 @@ gb << Link Page Axes( "Y Only" );
 
 ### Lock Scales
 
-**構文:** obj << Lock Scales( state=0|1 )
+**構文:** obj &lt;&lt; Lock Scales( state=0|1 )
 
 **説明:** 軸およびグラデーションの範囲を固定して、データやフィルターの変更に対応して軸やグラデーションが変化しないようにする。
 
@@ -1846,7 +1844,7 @@ gb << Lock Scales( 1 );
 
 ### Make into Data Table
 
-**構文:** obj << Make into Data Table
+**構文:** obj &lt;&lt; Make into Data Table
 
 **説明:** グラフの画像を含んだ新しいデータテーブルを作成する。
 
@@ -1864,7 +1862,7 @@ gb << Make into Data Table;
 
 ### Order Statistic
 
-**構文:** obj << Order Statistic( "N"|"平均"|"中央値(メディアン)"|"最頻値"|"幾何平均"|"最小値"|"最大値"|"範囲"|"合計"|"累積和"|"累積%"|"全体に対する%"|"各因子水準内での%"|"全応答と全体での%"|"標準偏差"|"分散"|"標準誤差"|"変動係数"|"四分位範囲"|"中央絶対偏差"|"第1四分位点"|"第3四分位点"="平均" )
+**構文:** obj &lt;&lt; Order Statistic( "N"|"平均"|"中央値(メディアン)"|"最頻値"|"幾何平均"|"最小値"|"最大値"|"範囲"|"合計"|"累積和"|"累積%"|"全体に対する%"|"各因子水準内での%"|"全応答と全体での%"|"標準偏差"|"分散"|"標準誤差"|"変動係数"|"四分位範囲"|"中央絶対偏差"|"第1四分位点"|"第3四分位点"="平均" )
 
 **説明:** グラフ内の変数に対する順序付けをするための要約統計量を指定し、デフォルトの順序を設定する。 デフォルトの値は"平均"。
 
@@ -1882,7 +1880,7 @@ gb = dt << Graph Builder(
 
 ### Overlay Auto Line Styles Limit
 
-**構文:** obj << Overlay Auto Line Styles Limit( count=6 )
+**構文:** obj &lt;&lt; Overlay Auto Line Styles Limit( count=6 )
 
 **説明:** 色分けの変数があり、[重ね合わせの表現方法]が[自動]となっている場合に、線種を分ける重ね合わせ水準の数を制限する。 デフォルトの値は"6"。
 
@@ -1902,7 +1900,7 @@ gb = dt << Graph Builder(
 
 ### Overlay Auto Marker Styles Limit
 
-**構文:** obj << Overlay Auto Marker Styles Limit( count=62 )
+**構文:** obj &lt;&lt; Overlay Auto Marker Styles Limit( count=62 )
 
 **説明:** 色分けの変数があり、[重ね合わせの表現方法]が[自動]となっている場合に、マーカースタイルを分ける重ね合わせ水準の数を制限する。 デフォルトの値は"62"。
 
@@ -1922,7 +1920,7 @@ gb = dt << Graph Builder(
 
 ### Page Count Limit
 
-**構文:** obj << Page Count Limit( count=200 )
+**構文:** obj &lt;&lt; Page Count Limit( count=200 )
 
 **説明:** ページ変数を基に作成されるページの最大数を設定する。パフォーマンスの低下を防ぐことができる。 デフォルトの値は"200"。
 
@@ -1942,7 +1940,7 @@ gb << Page Count Limit( 5 );
 
 ### Page Gap Size
 
-**構文:** obj << Page Gap Size( gap=25 )
+**構文:** obj &lt;&lt; Page Gap Size( gap=25 )
 
 **説明:** ページグループ間のスペース幅を設定する。 デフォルトの値は"25"。
 
@@ -1960,7 +1958,7 @@ gb << Page Gap Size( 3 );
 
 ### Page Level Fill Color
 
-**構文:** obj << Page Level Fill Color( color )
+**構文:** obj &lt;&lt; Page Level Fill Color( color )
 
 **説明:** グラフの水準名の背景色を設定する。
 
@@ -1978,7 +1976,7 @@ gb << Page Level Fill Color( {103, 214, 214} );
 
 ### Page Level Frame Color
 
-**構文:** obj << Page Level Frame Color( color )
+**構文:** obj &lt;&lt; Page Level Frame Color( color )
 
 **説明:** グラフの水準名の枠の色を設定する。
 
@@ -1996,7 +1994,7 @@ gb << Page Level Frame Color( "Blue" );
 
 ### Page Level Text Color
 
-**構文:** obj << Page Level Text Color( color )
+**構文:** obj &lt;&lt; Page Level Text Color( color )
 
 **説明:** グラフの水準名のテキストの色を設定する。
 
@@ -2014,7 +2012,7 @@ gb << Page Level Text Color( "Red" );
 
 ### Page Level Transparency
 
-**構文:** obj << Page Level Transparency( fraction=1 )
+**構文:** obj &lt;&lt; Page Level Transparency( fraction=1 )
 
 **説明:** グラフの水準名の背景の透明度を設定する。 デフォルトの値は"1"。
 
@@ -2032,7 +2030,7 @@ gb << Page Level Transparency( .2 );
 
 ### Page Level Underline
 
-**構文:** obj << Page Level Underline( state=0|1 )
+**構文:** obj &lt;&lt; Page Level Underline( state=0|1 )
 
 **説明:** グラフの水準名に下線を引く、または下線を外す。
 
@@ -2051,7 +2049,7 @@ gb << Page Level Underline( 1 );
 
 ### Parallel Axis Merging
 
-**構文:** obj << Parallel Axis Merging( "常に"|"類似性 低"|"類似性 中"|"類似性 高"|"しない" )
+**構文:** obj &lt;&lt; Parallel Axis Merging( "常に"|"類似性 低"|"類似性 中"|"類似性 高"|"しない" )
 
 **説明:** 「スケールの組み合わせ」で、どのようなときに「パラレル 個別」ではなく「パラレル マージ」を自動選択するかを指定する。
 
@@ -2069,7 +2067,7 @@ gb << Parallel Axis Merging( "Never" );
 
 ### Parallel Y Axes
 
-**構文:** obj << Parallel Y Axes( state=0|1 )
+**構文:** obj &lt;&lt; Parallel Y Axes( state=0|1 )
 
 **説明:** すべてのY軸を同じグラフに表示する。パラレルプロット似ているが、X変数をサポートする点が異なる。
 
@@ -2088,7 +2086,7 @@ gb << Parallel Y Axes( 1 );
 
 ### Random Seed
 
-**構文:** obj << Random Seed( number )
+**構文:** obj &lt;&lt; Random Seed( number )
 
 **説明:** 点をランダムにずらす場合のシード値を設定する。
 
@@ -2130,7 +2128,7 @@ Graph Builder(
 
 ### Remove Element
 
-**構文:** obj << Remove Element( xposition, yposition, i )
+**構文:** obj &lt;&lt; Remove Element( xposition, yposition, i )
 
 **説明:** 指定したXおよびYポジションのグラフ要素を削除する。
 
@@ -2149,7 +2147,7 @@ gb << Remove Element( 1, 1, 2 );
 
 ### Remove Variable
 
-**構文:** obj << Remove Variable( index | {column, Role(role), Position(p=1), Inner Position(i=1)} )
+**構文:** obj &lt;&lt; Remove Variable( index | {column, Role(role), Position(p=1), Inner Position(i=1)} )
 
 **説明:** グラフビルダーのモデルから、番号、または列名、役割、位置で指定された変数を削除する。
 
@@ -2170,7 +2168,7 @@ gb << Remove Variable( 3 );
 
 ### Replicate Linked Page Axes
 
-**構文:** obj << Replicate Linked Page Axes( state=0|1 )
+**構文:** obj &lt;&lt; Replicate Linked Page Axes( state=0|1 )
 
 **説明:** グリッド内でリンクされているページの軸を、グラフごとに1つ1つ表示するか、グラフの行または列ごとにまとめて表示するかを指定する。
 
@@ -2190,7 +2188,7 @@ gb << Replicate Linked Page Axes( 1 );
 
 ### Sampling
 
-**構文:** obj << Sampling( number )
+**構文:** obj &lt;&lt; Sampling( number )
 
 **説明:** 指定された抽出率またはサイズを使用して、ランダムにデータのサブセットを選択する。データが大きく、グラフを試しに作成してみる場合に有用。
 
@@ -2208,7 +2206,7 @@ gb << Sampling( 20 );
 
 ### Set Alpha Level
 
-**構文:** obj << Set Alpha Level( 0.10|0.05|0.01|Other... )
+**構文:** obj &lt;&lt; Set Alpha Level( 0.10|0.05|0.01|Other... )
 
 **説明:** 信頼曲線の有意水準を変更する。
 
@@ -2226,7 +2224,7 @@ gb << Set Alpha Level( 0.10 );
 
 ### Set α Level
 
-**構文:** obj << Set α Level( 0.10|0.05|0.01|Other... )
+**構文:** obj &lt;&lt; Set α Level( 0.10|0.05|0.01|Other... )
 
 **説明:** 信頼曲線の有意水準を変更する。
 
@@ -2244,7 +2242,7 @@ gb << Set Alpha Level( 0.10 );
 
 ### Show Control Panel
 
-**構文:** obj << Show Control Panel( state=0|1 )
+**構文:** obj &lt;&lt; Show Control Panel( state=0|1 )
 
 **説明:** 設定パネルの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2262,7 +2260,7 @@ gb << Show Control Panel( 1 );
 
 ### Show Excluded Rows
 
-**構文:** obj << Show Excluded Rows( state=0|1 )
+**構文:** obj &lt;&lt; Show Excluded Rows( state=0|1 )
 
 **説明:** プロット上で除外された行の表示/非表示を切り替える。このオプションを選択すると、除外された行は管理限界外の数には含まれるが、数値計算からは除外される。
 
@@ -2282,7 +2280,7 @@ gb << Show Excluded Rows( 1 );
 
 ### Show Footer
 
-**構文:** obj << Show Footer( state=0|1 )
+**構文:** obj &lt;&lt; Show Footer( state=0|1 )
 
 **説明:** フッタテキストの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2300,7 +2298,7 @@ gb << Show Footer( 0 );
 
 ### Show Legend
 
-**構文:** obj << Show Legend( state=0|1 )
+**構文:** obj &lt;&lt; Show Legend( state=0|1 )
 
 **説明:** グラフの右側にある凡例の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2318,7 +2316,7 @@ gb << Show Legend( 1 );
 
 ### Show Subtitle
 
-**構文:** obj << Show Subtitle( state=0|1 )
+**構文:** obj &lt;&lt; Show Subtitle( state=0|1 )
 
 **説明:** グラフのサブタイトルを表示または非表示にする。
 
@@ -2338,7 +2336,7 @@ gb << Show Subtitle( 1 );
 
 ### Show Title
 
-**構文:** obj << Show Title( state=0|1 )
+**構文:** obj &lt;&lt; Show Title( state=0|1 )
 
 **説明:** グラフのタイトルを表示または非表示にする。 デフォルトではオン。
 
@@ -2358,7 +2356,7 @@ gb << Show Title( 0 );
 
 ### Show X Axis
 
-**構文:** obj << Show X Axis( state=0|1 )
+**構文:** obj &lt;&lt; Show X Axis( state=0|1 )
 
 **説明:** X軸の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2378,7 +2376,7 @@ gb << Show X Axis( 0 );
 
 ### Show X Axis Title
 
-**構文:** obj << Show X Axis Title( state=0|1 )
+**構文:** obj &lt;&lt; Show X Axis Title( state=0|1 )
 
 **説明:** X軸のタイトルの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2398,7 +2396,7 @@ gb << Show X Axis Title( 0 );
 
 ### Show Y Axis
 
-**構文:** obj << Show Y Axis( state=0|1 )
+**構文:** obj &lt;&lt; Show Y Axis( state=0|1 )
 
 **説明:** Y軸の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2418,7 +2416,7 @@ gb << Show Y Axis( 0 );
 
 ### Show Y Axis Title
 
-**構文:** obj << Show Y Axis Title( state=0|1 )
+**構文:** obj &lt;&lt; Show Y Axis Title( state=0|1 )
 
 **説明:** Y軸のタイトルの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2438,7 +2436,7 @@ gb << Show Y Axis Title( 0 );
 
 ### Size
 
-**構文:** obj << Size( width, height )
+**構文:** obj &lt;&lt; Size( width, height )
 
 **説明:** グラフのサイズを設定する。
 
@@ -2456,7 +2454,7 @@ gb << Size( 808, 586 );
 
 ### Spacing Borders
 
-**構文:** obj << Spacing Borders( 0|1=0 )
+**構文:** obj &lt;&lt; Spacing Borders( 0|1=0 )
 
 **説明:** グラフパネルの境界線を設定する。 デフォルトの値は"0"。
 
@@ -2474,7 +2472,7 @@ gb << Spacing Borders( 1 );
 
 ### Subtitle Alignment
 
-**構文:** obj << Subtitle Alignment( "左寄せ"|"中央寄せ"|"右寄せ"|"自動" )
+**構文:** obj &lt;&lt; Subtitle Alignment( "左寄せ"|"中央寄せ"|"右寄せ"|"自動" )
 
 **説明:** グラフのサブタイトルの配置を設定する。
 
@@ -2494,7 +2492,7 @@ gb << Subtitle Alignment( "Left" );
 
 ### Subtitle Span
 
-**構文:** obj << Subtitle Span( "全体"|"グラフのコンテンツ" )
+**構文:** obj &lt;&lt; Subtitle Span( "全体"|"グラフのコンテンツ" )
 
 **説明:** グラフのサブタイトルの幅を設定する。
 
@@ -2532,7 +2530,7 @@ gb = dt << Graph Builder(
 
 ### Title Alignment
 
-**構文:** obj << Title Alignment( "左寄せ"|"中央寄せ"|"右寄せ" )
+**構文:** obj &lt;&lt; Title Alignment( "左寄せ"|"中央寄せ"|"右寄せ" )
 
 **説明:** グラフのタイトルの配置を設定する。
 
@@ -2552,7 +2550,7 @@ gb << Title Alignment( "Left" );
 
 ### Title Fill Color
 
-**構文:** obj << Title Fill Color( color )
+**構文:** obj &lt;&lt; Title Fill Color( color )
 
 **説明:** グラフのタイトルの背景色を設定する。
 
@@ -2570,7 +2568,7 @@ gb << Title Fill Color( "Cyan" );
 
 ### Title Frame Color
 
-**構文:** obj << Title Frame Color( color )
+**構文:** obj &lt;&lt; Title Frame Color( color )
 
 **説明:** グラフのタイトルの枠の色を設定する。
 
@@ -2588,7 +2586,7 @@ gb << Title Frame Color( "Blue" );
 
 ### Title Span
 
-**構文:** obj << Title Span( "全体"|"グラフのコンテンツ" )
+**構文:** obj &lt;&lt; Title Span( "全体"|"グラフのコンテンツ" )
 
 **説明:** グラフのタイトルの幅を設定する。
 
@@ -2608,7 +2606,7 @@ gb << Title Span( "Graph" );
 
 ### Title Text Color
 
-**構文:** obj << Title Text Color( color )
+**構文:** obj &lt;&lt; Title Text Color( color )
 
 **説明:** グラフのタイトルの文字の色を設定する。
 
@@ -2626,7 +2624,7 @@ gb << Title Text Color( "Red" );
 
 ### Title Transparency
 
-**構文:** obj << Title Transparency( fraction=1 )
+**構文:** obj &lt;&lt; Title Transparency( fraction=1 )
 
 **説明:** グラフのタイトルの背景の透明度を設定する。 デフォルトの値は"1"。
 
@@ -2644,7 +2642,7 @@ gb << Title Transparency( .2 );
 
 ### Title Underline
 
-**構文:** obj << Title Underline( state=0|1 )
+**構文:** obj &lt;&lt; Title Underline( state=0|1 )
 
 **説明:** グラフのタイトルに下線を引く、または下線を外す。
 
@@ -2663,7 +2661,7 @@ gb << Title Underline( 1 );
 
 ### Update Element
 
-**構文:** obj << Update Element( xposition, yposition, i, {options} )
+**構文:** obj &lt;&lt; Update Element( xposition, yposition, i, {options} )
 
 **説明:** 既存の要素のプロパティを変更する。
 
@@ -2682,7 +2680,7 @@ gb << Update Element( 1, 1, 1, {Summary Statistic( "Mean" ), Error Bars( "Range"
 
 ### Use row colors for levels
 
-**構文:** obj << Use row colors for levels( state=0|1 )
+**構文:** obj &lt;&lt; Use row colors for levels( state=0|1 )
 
 **説明:** 水準ごとに異なる色が割り当てられている場合、それらを凡例の水準の色に使用する。 デフォルトではオン。
 
@@ -2702,7 +2700,7 @@ gb << Use row colors for levels( 1 );
 
 ### Variables
 
-**構文:** Variables( X(column ), Y( column ), <Group X( column )>, <Group Y( column )>, <Shape( column )>, <Color( column )>, <Overlay( column )>, <Freq( column )> )
+**構文:** Variables( X(column ), Y( column ), &lt;Group X( column )&gt;, &lt;Group Y( column )&gt;, &lt;Shape( column )&gt;, &lt;Color( column )&gt;, &lt;Overlay( column )&gt;, &lt;Freq( column )&gt; )
 
 **説明:** グラフに使用する変数を定義する。
 
@@ -2716,7 +2714,7 @@ gb = dt << Graph Builder( Variables( Color( :SAT Verbal ), Shape( :State ) ) );
 
 ### X Group Edge
 
-**構文:** obj << X Group Edge( "上"|"下" )
+**構文:** obj &lt;&lt; X Group Edge( "上"|"下" )
 
 **説明:** Xグループのラベルを最上部または最下部に移動する。デフォルトは"Top"。
 
@@ -2735,7 +2733,7 @@ gb << X Group Edge( "Bottom" );
 
 ### Y Group Edge
 
-**構文:** obj << Y Group Edge( "左"|"右" )
+**構文:** obj &lt;&lt; Y Group Edge( "左"|"右" )
 
 **説明:** Yグループのラベルを左または右に移動する。デフォルトの値は"Right"。
 
@@ -2754,7 +2752,7 @@ gb << Y Group Edge( "Left" );
 
 ### Y Group Level Orientation
 
-**構文:** obj << Y Group Level Orientation( "横"|"縦" )
+**構文:** obj &lt;&lt; Y Group Level Orientation( "横"|"縦" )
 
 **説明:** Yのグループ水準ラベルのテキストが横書きか縦書き(回転済み)かを指定する。
 
@@ -2773,7 +2771,7 @@ gb << Y Group Level Orientation( "Horizontal" );
 
 ### Y Group Title Orientation
 
-**構文:** obj << Y Group Title Orientation( "横"|"縦" )
+**構文:** obj &lt;&lt; Y Group Title Orientation( "横"|"縦" )
 
 **説明:** グループYのタイトルラベルのテキストが横書きか縦書き(回転された状態)かを指定する。
 
@@ -2796,7 +2794,7 @@ gb << Y Group Title Orientation( "Horizontal" );
 
 #### Area
 
-**構文:** obj << Area
+**構文:** obj &lt;&lt; Area
 
 **説明:** 面: 応答をカテゴリごとに要約して表示する。
 
@@ -2810,7 +2808,7 @@ Graph Builder( Variables( X( :age ), Y( :weight ) ), Elements( Area( X, Y ) ) );
 
 #### Bar
 
-**構文:** obj << Bar
+**構文:** obj &lt;&lt; Bar
 
 **説明:** 棒: 応答をカテゴリごとに要約して表示する。
 
@@ -2824,7 +2822,7 @@ Graph Builder( Variables( X( :age ), Y( :weight ) ), Elements( Bar( X, Y ) ) );
 
 #### Box Plot
 
-**構文:** obj << Box Plot
+**構文:** obj &lt;&lt; Box Plot
 
 **説明:** 箱ひげ図: 変数の分布を四分位点と外れ値に要約して表現する。
 
@@ -2838,7 +2836,7 @@ Graph Builder( Variables( X( :age ), Y( :weight ) ), Elements( Box Plot( X, Y ) 
 
 #### Caption Box
 
-**構文:** obj << Caption Box
+**構文:** obj &lt;&lt; Caption Box
 
 **説明:** キャプションボックス: データの要約統計量の値を表示する。
 
@@ -2855,7 +2853,7 @@ Graph Builder(
 
 #### Contour
 
-**構文:** obj << Contour
+**構文:** obj &lt;&lt; Contour
 
 **説明:** 等高線: データの密度(または色分け変数の値の等高線)を表示する。Xがカテゴリカル変数の場合はバイオリンプロットを作成する。
 
@@ -2869,7 +2867,7 @@ Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Contour( X, Y 
 
 #### Ellipse
 
-**構文:** obj << Ellipse
+**構文:** obj &lt;&lt; Ellipse
 
 **説明:** 楕円: 二変量正規楕円を表示する。
 
@@ -2883,7 +2881,7 @@ Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Ellipse( X, Y 
 
 #### Formula
 
-**構文:** obj << Formula
+**構文:** obj &lt;&lt; Formula
 
 **説明:** 計算式: 列の計算式で定義された関数を表示する。
 
@@ -2900,7 +2898,7 @@ Graph Builder(
 
 #### Heatmap
 
-**構文:** obj << Heatmap
+**構文:** obj &lt;&lt; Heatmap
 
 **説明:** ヒートマップ: X変数とY変数のカテゴリの度数を色を使って表示する。
 
@@ -2914,7 +2912,7 @@ Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Heatmap( X, Y 
 
 #### Histogram
 
-**構文:** obj << Histogram
+**構文:** obj &lt;&lt; Histogram
 
 **説明:** ヒストグラム: 値の範囲ごとの棒で変数の分布を表示する。
 
@@ -2928,7 +2926,7 @@ Graph Builder( Variables( X( :weight ) ), Elements( Histogram( X ) ) );
 
 #### Line
 
-**構文:** obj << Line
+**構文:** obj &lt;&lt; Line
 
 **説明:** 折れ線: 応答をカテゴリごとに要約して表示する。
 
@@ -2942,7 +2940,7 @@ Graph Builder( Variables( X( :age ), Y( :weight ) ), Elements( Line( X, Y ) ) );
 
 #### Line Of Fit
 
-**構文:** obj << Line Of Fit
+**構文:** obj &lt;&lt; Line Of Fit
 
 **説明:** 回帰直線: 連続尺度のXとYに対し、回帰直線と信頼区間を表示する。カテゴリカルなXの場合は平均をあてはめる。
 
@@ -2956,7 +2954,7 @@ Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Line of Fit( X
 
 #### Map Shapes
 
-**構文:** obj << Map Shapes
+**構文:** obj &lt;&lt; Map Shapes
 
 **説明:** 地図シェープ: 地図のシェープ変数で定義された領域を、別の変数で色分けして表示する。
 
@@ -2970,7 +2968,7 @@ Graph Builder( Variables( Color( :SAT Verbal ), Shape( :State ) ), Elements( Map
 
 #### Mosaic
 
-**構文:** obj << Mosaic
+**構文:** obj &lt;&lt; Mosaic
 
 **説明:** モザイク: X変数とY変数の度数をサイズで表したグラフを表示する。
 
@@ -2984,7 +2982,7 @@ Graph Builder( Variables( X( :age ), Y( :sex ) ), Elements( Mosaic( X, Y ) ) );
 
 #### Parallel
 
-**構文:** obj << Parallel
+**構文:** obj &lt;&lt; Parallel
 
 **説明:** パラレル: 多数の変数を、行ごとに線でつないで表示する。
 
@@ -3001,7 +2999,7 @@ Graph Builder(
 
 #### Pie
 
-**構文:** obj << Pie
+**構文:** obj &lt;&lt; Pie
 
 **説明:** 円: 全体に占める割合を表示する。
 
@@ -3015,7 +3013,7 @@ Graph Builder( Variables( X( :age ) ), Elements( Pie( X ) ) );
 
 #### Points
 
-**構文:** obj << Points
+**構文:** obj &lt;&lt; Points
 
 **説明:** 点: データ値の散布図を表示する。
 
@@ -3029,7 +3027,7 @@ Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y )
 
 #### Smoother
 
-**構文:** obj << Smoother
+**構文:** obj &lt;&lt; Smoother
 
 **説明:** 平滑線: データに沿った滑らかな曲線を表示する。連続量のX変数とY変数の関係を調べる場合に最適。
 
@@ -3043,7 +3041,7 @@ Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Smoother( X, Y
 
 #### Treemap
 
-**構文:** obj << Treemap
+**構文:** obj &lt;&lt; Treemap
 
 **説明:** ツリーマップ: カテゴリごとに応答を要約して表示する。カテゴリが多数のときに適している。
 

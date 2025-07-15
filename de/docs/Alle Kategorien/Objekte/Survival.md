@@ -6,9 +6,7 @@
 
 ### Censor Code
 
-**Syntax:** obj = Survival(...Censor Code( value=1 )...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Survival(...Censor Code( value=1 )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Identifiziert den Wert in der Zensorspalte, der rechts zensierte Beobachtungen angibt. Standardmäßig „1“.
 
@@ -22,7 +20,7 @@ obj = dt << Survival( Y( :Time ), Censor( :Censor ), Censor Code( 0 ) );
 
 ### Competing Causes
 
-**Syntax:** obj << Competing Causes( column )
+**Syntax:** obj &lt;&lt; Competing Causes( column )
 
 **Beschreibung:** Führt eine Schätzung des Weibull-Modells durch und verwendet die angegebenen Ursachen, um auf ein Ausfallereignis hinzuweisen, und andere Ursachen, um auf zensierte Beobachtungen hinzuweisen. Die angepasste Verteilung wird als gestrichelte Linie im Lebensdauerdiagramm angezeigt.
 
@@ -37,7 +35,7 @@ obj << Competing Causes( :Failure Cause );
 
 ### Connect Quantile Points
 
-**Syntax:** obj << Connect Quantile Points( state=0|1 )
+**Syntax:** obj &lt;&lt; Connect Quantile Points( state=0|1 )
 
 **Beschreibung:** Zeigt die Linien im Exponential-, Weibull- und Lognormal-Diagramm an oder blendet sie aus. Standardmäßig ein.
 
@@ -54,7 +52,7 @@ obj << Connect Quantile Points( 0 );
 
 ### Estimate Survival Probability
 
-**Syntax:** obj << Estimate Survival Probability( [time1, time2, ...], Alpha( level ) )
+**Syntax:** obj &lt;&lt; Estimate Survival Probability( [time1, time2, ...], Alpha( level ) )
 
 **Beschreibung:** Schätzt Überlebenswahrscheinlichkeiten und Konfidenzintervalle für die angegebenen Zeitwerte mithilfe der angepassten Verteilungen.
 
@@ -70,7 +68,7 @@ obj << Estimate Survival Probability( [100, 200, 300], Alpha( 0.001 ) );
 
 ### Estimate Time Quantile
 
-**Syntax:** obj << Estimate Time Quantile( [p1, p2, ...], Alpha( level ) )
+**Syntax:** obj &lt;&lt; Estimate Time Quantile( [p1, p2, ...], Alpha( level ) )
 
 **Beschreibung:** Schätzt ein Zeitquantil und Konfidenzintervalle für jede angegebene Überlebenswahrscheinlichkeit mithilfe der angepassten Verteilungen.
 
@@ -86,7 +84,7 @@ obj << Estimate Time Quantile( [0.5, 0.9, 0.95], Alpha( 0.01 ) );
 
 ### Exponential Fit
 
-**Syntax:** obj << Exponential Fit( state=0|1 )
+**Syntax:** obj &lt;&lt; Exponential Fit( state=0|1 )
 
 **Beschreibung:** Zeigt die Tabelle der Schätzwerte der Exponentialparameter an oder blendet sie aus. Diese Option fügt der exponentiellen kumulierten Verteilungsfunktion im Exponentialdiagramm auch eine lineare Anpassung hinzu.
 
@@ -103,7 +101,7 @@ obj << Exponential Fit( 1 );
 
 ### Exponential Plot
 
-**Syntax:** obj << Exponential Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; Exponential Plot( state=0|1 )
 
 **Beschreibung:** Zeigt das Exponentialdiagramm an oder blendet es aus, das die kumulierte exponentielle Ausfallwahrscheinlichkeit nach Zeit für jede Gruppe anzeigt. Linien, die empirisch annähernd linear sind, weisen darauf hin, dass die Verwendung eines exponentiellen Modells für die weitere Analyse angemessen ist.
 
@@ -118,7 +116,7 @@ obj << Exponential Plot( 1 );
 
 ### Failure Plot
 
-**Syntax:** obj << Failure Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; Failure Plot( state=0|1 )
 
 **Beschreibung:** Zeigt das Ausfalldiagramm an oder blendet es aus, das überlagerte Ausfallkurven (Anteil des Ausfalls über die Zeit) für jede Gruppe enthält. Bei einem Ausfalldiagramm wird die vertikale Achse umgedreht, um die Anzahl der Ausfälle statt der Anzahl der Überlebenden anzuzeigen. Dies ist nützlich bei der Zuverlässigkeitsanalyse.
 
@@ -133,7 +131,7 @@ obj << Failure Plot( 1 );
 
 ### Fitted Distribution Plots
 
-**Syntax:** obj << Fitted Distribution Plots( state=0|1 )
+**Syntax:** obj &lt;&lt; Fitted Distribution Plots( state=0|1 )
 
 **Beschreibung:** Zeigt einen Satz Diagramme für jede angepasste Verteilung an oder blendet sie aus. Der Diagrammsatz umfasst die angepasste Lebensdauerfunktion, die angepasste Dichtefunktion und die angepasste Ausfallratenfunktion. Wenn Sie keine Anpassung durchgeführt haben, wird kein Diagramm angezeigt.
 
@@ -149,7 +147,7 @@ obj << Fitted Distribution Plots( 1 );
 
 ### Fitted Failure CI
 
-**Syntax:** obj << Fitted Failure CI( state=0|1 )
+**Syntax:** obj &lt;&lt; Fitted Failure CI( state=0|1 )
 
 **Beschreibung:** Zeigt die Konfidenzintervalle für jede Gruppe im Ausfalldiagramm an oder blendet sie aus. Für jede der angepassten Verteilungen wird ein Satz Intervalle gezeichnet.
 
@@ -165,7 +163,7 @@ obj << Fitted Failure CI( 1 );
 
 ### Fitted Quantile
 
-**Syntax:** obj << Fitted Quantile( state=0|1 )
+**Syntax:** obj &lt;&lt; Fitted Quantile( state=0|1 )
 
 **Beschreibung:** Blendet geradlinige Anpassungen für jede Gruppe im Exponentialdiagramm, im Weibull-Diagramm und im Lognormal-Diagramm ein oder aus.
 
@@ -183,7 +181,7 @@ obj << Fitted Quantile( 0 );
 
 ### Fitted Quantile CI Lines
 
-**Syntax:** obj << Fitted Quantile CI Lines( state=0|1 )
+**Syntax:** obj &lt;&lt; Fitted Quantile CI Lines( state=0|1 )
 
 **Beschreibung:** Zeigt die 95%-Konfidenzbänder für jede Gruppe im Exponential-, Weibull- und Lognormal-Diagramm an oder blendet sie aus.
 
@@ -200,7 +198,7 @@ obj << Fitted Quantile CI Lines( 1 );
 
 ### Fitted Quantile CI Shaded
 
-**Syntax:** obj << Fitted Quantile CI Shaded( state=0|1 )
+**Syntax:** obj &lt;&lt; Fitted Quantile CI Shaded( state=0|1 )
 
 **Beschreibung:** Zeigt schattierte Bereiche für die 95%-Konfidenzbänder für jede Gruppe im Exponential-, Weibull- und LogNormal-Diagramm an oder blendet sie aus.
 
@@ -217,7 +215,7 @@ obj << Fitted Quantile CI Shaded( 1 );
 
 ### Fitted Survival CI
 
-**Syntax:** obj << Fitted Survival CI( state=0|1 )
+**Syntax:** obj &lt;&lt; Fitted Survival CI( state=0|1 )
 
 **Beschreibung:** Zeigt die Konfidenzintervalle für jede Gruppe im Lebensdauerdiagramm an oder blendet sie aus. Für jede der angepassten Verteilungen wird ein Satz Intervalle gezeichnet.
 
@@ -233,7 +231,7 @@ obj << Fitted Survival CI( 1 );
 
 ### LogNormal Fit
 
-**Syntax:** obj << LogNormal Fit( state=0|1 )
+**Syntax:** obj &lt;&lt; LogNormal Fit( state=0|1 )
 
 **Beschreibung:** Zeigt die Tabelle mit den Schätzwerten der Lognormal-Parameter an oder blendet sie aus. Diese Option fügt der lognormalen kumulierten Verteilungsfunktion im Lognormal-Diagramm auch eine lineare Anpassung hinzu.
 
@@ -250,7 +248,7 @@ obj << LogNormal Fit( 1 );
 
 ### LogNormal Plot
 
-**Syntax:** obj << LogNormal Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; LogNormal Plot( state=0|1 )
 
 **Beschreibung:** Blendet das Lognormal-Diagramm ein oder aus, das die kumulierte lognormale Ausfallwahrscheinlichkeit nach log(Zeit) für jede Gruppe anzeigt. Linien, die empirisch annähernd linear sind, weisen darauf hin, dass die Verwendung eines Lognormal-Modells für die weitere Analyse angemessen ist.
 
@@ -265,7 +263,7 @@ obj << LogNormal Plot( 1 );
 
 ### Midstep Quantile Points
 
-**Syntax:** obj << Midstep Quantile Points( state=0|1 )
+**Syntax:** obj &lt;&lt; Midstep Quantile Points( state=0|1 )
 
 **Beschreibung:** Gibt an, dass die modifizierten Kaplan-Meier-Zeichenpositionen im Exponentialdiagramm, im Weibull-Diagramm und im Lognormal-Diagramm verwendet werden. Diese Zeichenpositionen sind äquivalent dazu, statt den Positionen am unteren Ende des Schritts Positionen aus der Schrittmitte der Kaplan-Meier-Kurve zu nehmen. Standardmäßig ein.
 
@@ -282,9 +280,7 @@ obj << Midstep Quantile Points( 0 );
 
 ### Plot Failure Instead of Survival
 
-**Syntax:** obj = Survival(...Plot Failure instead of Surivival( state=0|1 )...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Survival(...Plot Failure instead of Surivival( state=0|1 )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Zeigt ein Ausfallwahrscheinlichkeitsdiagramm an statt des umgekehrten Diagramms (ein Überlebenswahrscheinlichkeitsdiagramm).
 
@@ -303,7 +299,7 @@ obj = dt << Survival(
 
 ### Save Estimates
 
-**Syntax:** obj << Save Estimates
+**Syntax:** obj &lt;&lt; Save Estimates
 
 **Beschreibung:** Erstellt eine neue Datentabelle, die Schätzwerte für Lebensdauer und Ausfall, Konfidenzintervalle und andere Verteilungskenngrößen für jede Gruppe enthält.
 
@@ -318,7 +314,7 @@ obj << Save Estimates;
 
 ### Show Combined
 
-**Syntax:** obj << Show Combined( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Combined( state=0|1 )
 
 **Beschreibung:** Zeigt die kombinierten Kaplan-Meier-Lebensdauerfunktionen im Lebensdauerdiagramm und im Ausfalldiagramm an oder blendet sie aus.
 
@@ -335,7 +331,7 @@ obj << Show Combined( 1 );
 
 ### Show Confid Interval
 
-**Syntax:** obj << Show Confid Interval( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Confid Interval( state=0|1 )
 
 **Beschreibung:** Zeigt die punktweisen 95%-Konfidenzbänder für die Kaplan-Meier-Lebensdauerfunktionen im Lebensdauerdiagramm und im Ausfalldiagramm an oder blendet sie aus. Diese Option zeigt auch Konfidenzbänder für die kombinierten Lebensdauerfunktionen an, wenn die Option „Show Combined“ ausgewählt ist.
 
@@ -354,7 +350,7 @@ obj << Show Combined( 1 );
 
 ### Show Kaplan Meier
 
-**Syntax:** obj << Show Kaplan Meier( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Kaplan Meier( state=0|1 )
 
 **Beschreibung:** Zeigt die Kaplan-Meier-Lebensdauerfunktionen für jede Gruppe im Lebensdauerdiagramm und im Ausfalldiagramm an oder blendet sie aus. Standardmäßig ein.
 
@@ -375,7 +371,7 @@ obj << Show Kaplan Meier( 1 );
 
 ### Show Points
 
-**Syntax:** obj << Show Points( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Points( state=0|1 )
 
 **Beschreibung:** Zeigt die Punkte im Lebensdauerdiagramm und im Ausfalldiagramm an oder blendet sie aus. Ausfälle werden am unteren Rand der Schritte angezeigt, und zensierte Beobachtungen werden durch Punkte oberhalb der Schritte angezeigt.
 
@@ -392,7 +388,7 @@ obj << Show Points( 1 );
 
 ### Show Shaded Pointwise CI
 
-**Syntax:** obj << Show Shaded Pointwise CI( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Shaded Pointwise CI( state=0|1 )
 
 **Beschreibung:** Zeigt schattierte Bereiche für die punktweisen 95%-Konfidenzbänder der Kaplan-Meier-Lebensdauerfunktionen im Lebensdauerdiagramm und im Ausfalldiagramm an oder blendet sie aus. Diese Option zeigt auch schattierte Konfidenzbereiche für die kombinierten Lebensdauerfunktionen an, wenn die Option „Show Combined“ ausgewählt ist.
 
@@ -407,7 +403,7 @@ obj << Show Shaded Pointwise CI( 1 );
 
 ### Show Shaded Simultaneous CI
 
-**Syntax:** obj << Show Shaded Simultaneous CI( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Shaded Simultaneous CI( state=0|1 )
 
 **Beschreibung:** Zeigt schattierte Bereiche für die simultanen 95%-Konfidenzbänder der Kaplan-Meier-Lebensdauerfunktionen im Lebensdauerdiagramm und im Ausfalldiagramm an oder blendet sie aus. Diese Option zeigt auch Konfidenzbänder für die kombinierten Lebensdauerfunktionen an, wenn die Option „Show Combined“ ausgewählt ist.
 
@@ -422,7 +418,7 @@ obj << Show Shaded Simultaneous CI( 1 );
 
 ### Show Simultaneous CI
 
-**Syntax:** obj << Show Simultaneous CI( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Simultaneous CI( state=0|1 )
 
 **Beschreibung:** Zeigt die simultanen 95%-Konfidenzbänder für die Kaplan-Meier-Lebensdauerfunktionen im Lebensdauerdiagramm und im Ausfalldiagramm an oder blendet sie aus. Diese Option zeigt auch Konfidenzbänder für die kombinierten Lebensdauerfunktionen an, wenn die Option „Show Combined“ ausgewählt ist.
 
@@ -437,7 +433,7 @@ obj << Show Simultaneous CI( 1 );
 
 ### Survival Plot
 
-**Syntax:** obj << Survival Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; Survival Plot( state=0|1 )
 
 **Beschreibung:** Zeigt das Lebensdauerdiagramm an oder blendet es aus, das überlagerte Lebensdauerkurven für jede Gruppe enthält. Standardmäßig ein.
 
@@ -454,7 +450,7 @@ obj << Survival Plot( 1 );
 
 ### Weibull Fit
 
-**Syntax:** obj << Weibull Fit( state=0|1 )
+**Syntax:** obj &lt;&lt; Weibull Fit( state=0|1 )
 
 **Beschreibung:** Zeigt die Tabelle der Schätzwerte der Extremwertparameter und die Tabelle der Weibull-Parameterschätzer an oder blendet sie aus. Diese Option fügt der kumulierten Weibull-Verteilungsfunktion im Weibull-Diagramm auch eine lineare Anpassung hinzu.
 
@@ -471,7 +467,7 @@ obj << Weibull Fit( 1 );
 
 ### Weibull Plot
 
-**Syntax:** obj << Weibull Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; Weibull Plot( state=0|1 )
 
 **Beschreibung:** Zeigt das Weibull-Diagramm an oder blendet es aus, das die kumulierte Weibull-Ausfallwahrscheinlichkeit nach Log(Zeit) für jede Gruppe anzeigt. Linien, die empirisch annähernd linear sind, weisen darauf hin, dass es angemessen ist, ein Weibull-Modell für die weitere Analyse zu verwenden.
 
@@ -488,7 +484,7 @@ obj << Weibull Plot( 1 );
 
 ### Action
 
-**Syntax:** obj << Action
+**Syntax:** obj &lt;&lt; Action
 
 **Beschreibung:** Allzwecköffnung innerhalb einer Plattform zum Einfügen von auszuwertenden Ausdrücken. Setzt die Kontexte für Anzeigefeld und Datentabelle kurzzeitig auf die Plattform.
 
@@ -506,7 +502,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Syntax:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntax:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Beschreibung:** Wendet eine zuvor erstellte Voreinstellung auf das Objekt an und aktualisiert die Optionen und Anpassungen entsprechend den gespeicherten Einstellungen.
 
@@ -553,7 +549,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**Syntax:** obj << Automatic Recalc( state=0|1 )
+**Syntax:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Beschreibung:** Wiederholt die Analyse bei Ausschluss und Datenänderungen automatisch. Wenn die Option „Automatic Recalc“ eingeschaltet ist, sollten Sie in Betracht ziehen, Wait(0)-Befehle zu verwenden, um sicherzustellen, dass die Ausschlüsse und Datenänderungen vor der Neuberechnung wirksam werden.
 
@@ -569,7 +565,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**Syntax:** obj << Broadcast(message)
+**Syntax:** obj &lt;&lt; Broadcast(message)
 
 **Beschreibung:** Sendet eine Meldung an eine Plattform. Wenn es sich bei den zurückgegebenen Ergebnissen von einzelnen Objekten um Tabellen handelt, werden sie, wenn möglich, verkettet. Das endgültige Format ist entweder identisch mit dem Ergebnis der Option „Kombinierte Tabelle speichern“ in einem Tabellenfeld oder mit dem Ergebnis der Option „Verketten“ mithilfe einer Quellspalte. Ansonsten werden die Ergebnisse in einer Liste gespeichert und zurückgegeben.
 
@@ -589,7 +585,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**Syntax:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Syntax:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Beschreibung:** Fügt ein Bedienfeld zum Ändern der Variablen der Plattform hinzu
 
@@ -607,7 +603,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**Syntax:** obj << Copy ByGroup Script
+**Syntax:** obj &lt;&lt; Copy ByGroup Script
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und legt es in der Zwischenablage ab.
 
@@ -627,7 +623,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Syntax:** obj << Copy Script
+**Syntax:** obj &lt;&lt; Copy Script
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und legt es in der Zwischenablage ab.
 
@@ -642,7 +638,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Syntax:** obj << Data Table Window
+**Syntax:** obj &lt;&lt; Data Table Window
 
 **Beschreibung:** Zeigt das Fenster mit der Datentabelle für diese Analyse im Vordergrund an.
 
@@ -657,7 +653,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Syntax:** obj << Get By Levels
+**Syntax:** obj &lt;&lt; Get By Levels
 
 **Beschreibung:** Gibt ein assoziatives Array zurück, das die Nach-Gruppenspalten ihren Werten zuordnet.
 
@@ -674,7 +670,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Syntax:** obj << Get ByGroup Script
+**Syntax:** obj &lt;&lt; Get ByGroup Script
 
 **Beschreibung:** Erstellt ein Skript (JSL) zum Erzeugen dieser Analyse und gibt es als Ausdruck zurück.
 
@@ -695,7 +691,7 @@ Show( t );
 
 ### Get Container
 
-**Syntax:** obj << Get Container
+**Syntax:** obj &lt;&lt; Get Container
 
 **Beschreibung:** Gibt einen Verweis auf das Containerfeld zurück, das den Inhalt des Objekts enthält.
 
@@ -742,7 +738,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Syntax:** obj << Get Data Table
+**Syntax:** obj &lt;&lt; Get Data Table
 
 **Beschreibung:** Gibt eine Referenz auf die Datentabelle zurück.
 
@@ -758,7 +754,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**Syntax:** obj << Get Group Platform
+**Syntax:** obj &lt;&lt; Get Group Platform
 
 **Beschreibung:** Plattformobjekt der Gruppe zurückgeben, wenn diese Plattform Teil einer Gruppe ist. Andernfalls wird Empty() zurückgegeben.
 
@@ -775,7 +771,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**Syntax:** obj << Get Script
+**Syntax:** obj &lt;&lt; Get Script
 
 **Beschreibung:** Erstellt ein Skript (JSL) zum Erzeugen dieser Analyse und gibt es als Ausdruck zurück.
 
@@ -791,7 +787,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Syntax:** obj << Get Script With Data Table
+**Syntax:** obj &lt;&lt; Get Script With Data Table
 
 **Beschreibung:** Erstellt ein Skript (JSL) zum Erzeugen dieser Analyse und referenziert dabei spezifisch diese Datentabelle und gibt das Skript als Ausdruck zurück.
 
@@ -807,7 +803,7 @@ Show( t );
 
 ### Get Timing
 
-**Syntax:** obj << Get Timing
+**Syntax:** obj &lt;&lt; Get Timing
 
 **Beschreibung:** Steuert den Start der Plattform zeitlich.
 
@@ -823,7 +819,7 @@ Show( t );
 
 ### Get Web Support
 
-**Syntax:** obj << Get Web Support
+**Syntax:** obj &lt;&lt; Get Web Support
 
 **Beschreibung:** Gibt eine Zahl zurück, die angibt, ob für das Anzeigeobjekt interaktive HTML unterstützt wird. 1 bedeutet einige oder alle Elemente werden unterstützt. 0 bedeutet keine Unterstützung.
 
@@ -839,7 +835,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Syntax:** obj << Get Where Expr
+**Syntax:** obj &lt;&lt; Get Where Expr
 
 **Beschreibung:** Gibt den Ausdruck Where für die Teilmenge der Daten zurück, wenn die Plattform mit By() oder Where() gestartet wurde. Andernfalls wird Empty() zurückgegeben.
 
@@ -876,7 +872,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Syntax:** obj << Local Data Filter
+**Syntax:** obj &lt;&lt; Local Data Filter
 
 **Beschreibung:** Filtert Daten für bestimmte Gruppen oder Bereiche, aber nur lokal in dieser Plattform.
 
@@ -932,7 +928,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Syntax:** obj << Paste Local Data Filter
+**Syntax:** obj &lt;&lt; Paste Local Data Filter
 
 **Beschreibung:** Lokalen Datenfilter aus der Zwischenablage auf den aktuellen Bericht anwenden.
 
@@ -953,7 +949,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**Syntax:** obj << Redo Analysis
+**Syntax:** obj &lt;&lt; Redo Analysis
 
 **Beschreibung:** Führt die gleiche Analyse in einem neuen Fenster aus. Die Analyse ist unterschiedlich, wenn sich die Daten verändert haben.
 
@@ -968,7 +964,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**Syntax:** obj << Redo ByGroup Analysis
+**Syntax:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Beschreibung:** Führt die gleiche Analyse in einem neuen Fenster aus. Die Analyse ist unterschiedlich, wenn sich die Daten verändert haben.
 
@@ -988,7 +984,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**Syntax:** obj << Relaunch Analysis
+**Syntax:** obj &lt;&lt; Relaunch Analysis
 
 **Beschreibung:** Öffnet das Plattform-Startfenster und ruft die Einstellungen ab, die zum Erstellen des Berichts verwendet wurden.
 
@@ -1003,7 +999,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**Syntax:** obj << Relaunch ByGroup
+**Syntax:** obj &lt;&lt; Relaunch ByGroup
 
 **Beschreibung:** Öffnet das Plattform-Startfenster und ruft die Einstellungen ab, die zum Erstellen des Berichts verwendet wurden.
 
@@ -1023,7 +1019,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**Syntax:** obj << Remove Column Switcher
+**Syntax:** obj &lt;&lt; Remove Column Switcher
 
 **Beschreibung:** Entfernt den letzten Spaltenwechsler, der der Plattform hinzugefügt wurde.
 
@@ -1043,7 +1039,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Syntax:** obj << Remove Local Data Filter
+**Syntax:** obj &lt;&lt; Remove Local Data Filter
 
 **Beschreibung:** Wenn ein lokaler Filter verwendet wurde, wird dieser entfernt und die Plattform verwendet wieder direkt alle Daten aus der Datentabelle
 
@@ -1082,9 +1078,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Syntax:** obj << Report;
-
-Report( obj )
+**Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Beschreibung:** Gibt eine Referenz auf das Berichtsobjekt zurück.
 
@@ -1101,7 +1095,7 @@ Show( t );
 
 ### Report View
 
-**Syntax:** obj << Report View( "Vollständig"|"Übersicht" )
+**Syntax:** obj &lt;&lt; Report View( "Vollständig"|"Übersicht" )
 
 **Beschreibung:** Die Berichtsanzeige legt das Detailniveau für einen Plattformbericht fest. Full zeigt alle Details an, während Summary abhängig von der Plattform nur ausgewählte Inhalte anzeigt. Für benutzerdefiniertes Verhalten unterstützen Anzeigefelder eine Meldung <<Set Summary Behavior.
 
@@ -1116,7 +1110,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**Syntax:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und speichert sie als Tabelleneigenschaft in der Datentabelle. Sie können einen Namen für das Skript angeben. Die Option Append Suffix hängt ein numerisches Suffix an den Skriptnamen an, das das Skript von einem vorhandenen Skript mit dem gleichen Namen unterscheidet. Die Option Prompt fordert den Benutzer auf, einen Skriptnamen anzugeben. Die Option Replace ersetzt ein vorhandenes Skript mit dem gleichen Namen.
 
@@ -1136,7 +1130,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Syntax:** obj << Save ByGroup Script to Journal
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und fügt eine Schaltfläche mit diesem Skript zum Journal hinzu.
 
@@ -1156,7 +1150,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Syntax:** obj << Save ByGroup Script to Script Window
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und hängt es an das Textfenster mit dem aktuellen Skript an.
 
@@ -1176,7 +1170,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**Syntax:** obj << Save Script for All Objects
+**Syntax:** obj &lt;&lt; Save Script for All Objects
 
 **Beschreibung:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -1191,7 +1185,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Syntax:** obj << Save Script for All Objects To Data Table( <name> )
+**Syntax:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Beschreibung:** Speichert ein Skript für alle Berichtsobjekte in der aktuellen Datentabelle. Diese Option ist nützlich, wenn Sie mehrere Berichte im Fenster haben. Das Skript wird nach der ersten Plattform benannt, sofern Sie keine Skriptnamen in Anführungszeichen angeben.
 
@@ -1229,7 +1223,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Syntax:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und speichert es als Tabelleneigenschaft in der Datentabelle.
 
@@ -1244,7 +1238,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Syntax:** obj << Save Script to Journal
+**Syntax:** obj &lt;&lt; Save Script to Journal
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und fügt eine Schaltfläche mit diesem Skript zum Journal hinzu.
 
@@ -1259,7 +1253,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Syntax:** obj << Save Script to Report
+**Syntax:** obj &lt;&lt; Save Script to Report
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und zeigt es im Bericht selbst an. Nützlich zum Anlegen eines gedruckten Nachweises der durchgeführten Aktivitäten.
 
@@ -1274,7 +1268,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Syntax:** obj << Save Script to Script Window
+**Syntax:** obj &lt;&lt; Save Script to Script Window
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und hängt es an das Textfenster mit dem aktuellen Skript an.
 
@@ -1354,7 +1348,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Syntax:** obj << Sync to Data Table Changes
+**Syntax:** obj &lt;&lt; Sync to Data Table Changes
 
 **Beschreibung:** Mit Ausgeschlossenen und vorgenommenen Datenänderungen synchronisieren.
 
@@ -1371,7 +1365,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Syntax:** obj << Title( "new title" )
+**Syntax:** obj &lt;&lt; Title( "new title" )
 
 **Beschreibung:** Legt den Titel für die Plattform fest.
 
@@ -1386,7 +1380,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Syntax:** obj << Top Report
+**Syntax:** obj &lt;&lt; Top Report
 
 **Beschreibung:** Gibt eine Referenz auf den Stammknoten im Bericht zurück.
 
@@ -1403,7 +1397,7 @@ Show( t );
 
 ### Transform Column
 
-**Syntax:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Syntax:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Beschreibung:** Transformationsspalte im lokalen Kontext eines Objekts erstellen, üblicherweise als Plattform. Die Transformationsspalte ist nur für die Lebensdauer der Plattform aktiv.
 
@@ -1424,7 +1418,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**Syntax:** obj << View Web XML
+**Syntax:** obj &lt;&lt; View Web XML
 
 **Beschreibung:** Gibt den XML-Code zurück, der zum Erstellen des interaktiven HTML-Berichts verwendet wird.
 
@@ -1439,9 +1433,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**Syntax:** obj = Survival(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Survival(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Typ des Fensters festlegen, das für den Bericht erstellt werden soll. Standardmäßig wird ein Berichtsfenster vom Typ Visible erstellt. Ein Fenster vom Typ Invisible wird auf dem Bildschirm nicht angezeigt, kann jedoch von Funktionen wie Window() erkannt werden. Ein Fenster vom Typ Private reagiert auf die meisten Fenstermeldungen, kann jedoch nicht erkannt werden und muss über das Berichtsobjekt adressiert werden.
 
@@ -1462,7 +1454,7 @@ New Window( "Bivariate Equation",
 
 ### By
 
-**Syntax:** obj << By( column(s) )
+**Syntax:** obj &lt;&lt; By( column(s) )
 
 ```jsl
 
@@ -1479,7 +1471,7 @@ obj = dt << Survival( Y( :days ), Censor( :Censor ), Grouping( :Group ), By( _by
 
 ### Censor
 
-**Syntax:** obj << Censor( column )
+**Syntax:** obj &lt;&lt; Censor( column )
 
 ```jsl
 
@@ -1491,7 +1483,7 @@ obj = dt << Survival( Y( :days ), Censor( :Censor ), Grouping( :Group ) );
 
 ### Freq
 
-**Syntax:** obj << Freq( column )
+**Syntax:** obj &lt;&lt; Freq( column )
 
 ```jsl
 
@@ -1504,7 +1496,7 @@ obj = dt << Survival( Y( :days ), Censor( :Censor ), Grouping( :Group ), Freq( _
 
 ### Grouping
 
-**Syntax:** obj << Grouping( column )
+**Syntax:** obj &lt;&lt; Grouping( column )
 
 ```jsl
 
@@ -1516,7 +1508,7 @@ obj = dt << Survival( Y( :days ), Censor( :Censor ), Grouping( :Group ) );
 
 ### Time to Event
 
-**Syntax:** obj << Time to Event( column(s) )
+**Syntax:** obj &lt;&lt; Time to Event( column(s) )
 
 ```jsl
 
@@ -1528,7 +1520,7 @@ obj = dt << Survival( Y( :days ), Censor( :Censor ), Grouping( :Group ) );
 
 ### Y
 
-**Syntax:** obj << Y( column(s) )
+**Syntax:** obj &lt;&lt; Y( column(s) )
 
 ```jsl
 
@@ -1542,7 +1534,7 @@ obj = dt << Survival( Y( :days ), Censor( :Censor ), Grouping( :Group ) );
 
 ### Survival
 
-**Syntax:** Survival( Y( columns ), Censor( column ), <Grouping( column )> )
+**Syntax:** Survival( Y( columns ), Censor( column ), &lt;Grouping( column )&gt; )
 
 **Beschreibung:** Berechnet die Schätzwerte von Lebensdauerfunktionen mittels Product-Limit (Kaplan-Meier) für eine oder mehr Gruppen.
 
@@ -1560,7 +1552,7 @@ obj = dt << Survival( Y( :days ), Censor( :Censor ), Grouping( :Group ) );
 
 #### Hazard Plot
 
-**Syntax:** obj << Hazard Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; Hazard Plot( state=0|1 )
 
 **Beschreibung:** Zeigt ein Diagramm der Ausfallratenfunktionen für die Daten basierend auf der Analyse der konkurrierenden Ursachen an oder blendet es aus.
 
@@ -1576,7 +1568,7 @@ obj << Hazard Plot( 1 );
 
 #### Omit Causes
 
-**Syntax:** obj << Omit Causes( cause1, <cause2>, ... )
+**Syntax:** obj &lt;&lt; Omit Causes( cause1, &lt;cause2&gt;, ... )
 
 **Beschreibung:** Ermöglicht Ihnen, spezifische Ursachenwerte aus der Analyse zu entfernen. Die Lebensdauerschätzer werden automatisch neu berechnet. Diese Option kann verwendet werden, um die Alternative zu veranschaulichen, bei der spezifische Ursachen nicht mehr riskant sind.
 
@@ -1592,7 +1584,7 @@ obj << Omit Causes( "accident" );
 
 #### Save Cause Coordinates
 
-**Syntax:** obj << Save Cause Coordinates
+**Syntax:** obj &lt;&lt; Save Cause Coordinates
 
 **Beschreibung:** Speichert eine neue Spalte in der ursprünglichen Datentabelle. Die neue Spalte wird berechnet als log(-log(Surv)). Dieser Wert wird häufig gegen die Zeitvariable für die verschiedenen Werte einer Gruppierungsvariablen gezeichnet, etwa für den Code für die Art des Ausfalls.
 
@@ -1608,7 +1600,7 @@ obj << Save Cause Coordinates;
 
 #### Simulate
 
-**Syntax:** obj << Simulate( number )
+**Syntax:** obj &lt;&lt; Simulate( number )
 
 **Beschreibung:** Erstellt eine neue Datentabelle, die simulierte Zeit- und Ursacheninformationen enthält. Die angepasste Weibull-Verteilung dient der Simulation neuer Daten.
 
@@ -1624,7 +1616,7 @@ obj << Simulate( 1000 );
 
 #### Weibull Lines
 
-**Syntax:** obj << Weibull Lines( state=0|1 )
+**Syntax:** obj &lt;&lt; Weibull Lines( state=0|1 )
 
 **Beschreibung:** Zeigt Weibull-Linien im Lebensdauerdiagramm an oder blendet sie aus.
 

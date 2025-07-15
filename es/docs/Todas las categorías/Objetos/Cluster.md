@@ -6,43 +6,39 @@
 
 ### Attribute ID
 
-**Sintaxis:** obj = Y(...<Attribute ID( column(s) )>...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Y(...&lt;Attribute ID( column(s) )&gt;...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Para los datos apilados, identifica atributos, que serían columnas (variables) si los datos no estuvieran apilados.
 
 ### Columns
 
-**Sintaxis:** obj << Columns( column(s) )
+**Sintaxis:** obj &lt;&lt; Columns( column(s) )
 
 ### Freq
 
-**Sintaxis:** obj << Freq( column )
+**Sintaxis:** obj &lt;&lt; Freq( column )
 
 ### Label
 
-**Sintaxis:** obj << Label( column )
+**Sintaxis:** obj &lt;&lt; Label( column )
 
 ### Object ID
 
-**Sintaxis:** obj = Y(...<Object ID( column(s) )>...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Y(...&lt;Object ID( column(s) )&gt;...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Para los datos apilados, identifica individuos para el conglomerado. De lo contrario, se utiliza para agregar filas de datos en cada uno.
 
 ### Ordering
 
-**Sintaxis:** obj << Ordering( column )
+**Sintaxis:** obj &lt;&lt; Ordering( column )
 
 ### Weight
 
-**Sintaxis:** obj << Weight( column )
+**Sintaxis:** obj &lt;&lt; Weight( column )
 
 ### Y
 
-**Sintaxis:** obj << Y( column(s) )
+**Sintaxis:** obj &lt;&lt; Y( column(s) )
 
 ## Hierarchical Cluster
 
@@ -50,7 +46,7 @@
 
 #### By
 
-**Sintaxis:** obj << By( column(s) )
+**Sintaxis:** obj &lt;&lt; By( column(s) )
 
 ```jsl
 
@@ -89,9 +85,7 @@ obj = dt << Hierarchical Cluster( Y( :birth, :death ), Label( :country ) );
 
 #### Add Spatial Measures
 
-**Sintaxis:** obj = Hierarchical Cluster(...Add Spatial Measures( state=0|1 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Hierarchical Cluster(...Add Spatial Measures( state=0|1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Le permite seleccionar y ponderar los componentes espaciales para ayudar en la conglomeración de patrones de defectos. Solo está disponible si la estructura de los datos especificados es Los datos están apilados.
 
@@ -121,7 +115,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Cluster Criterion
 
-**Sintaxis:** obj << Cluster Criterion( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Cluster Criterion( state=0|1 )
 
 **Descripción:** Muestra u oculta el Criterio de conglomeración cúbica (CCC) para todo el rango de número de conglomerados. El CCC se utiliza para estimar el número de conglomerados, donde los valores más altos se traducen en un mejor ajuste.
 
@@ -139,7 +133,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Cluster Summary
 
-**Sintaxis:** obj << Cluster Summary( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Cluster Summary( state=0|1 )
 
 **Descripción:** Muestra u oculta los estadísticos de resumen para cada uno de los números de conglomerados especificados.
 
@@ -157,7 +151,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Clustering History
 
-**Sintaxis:** obj << Clustering History( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Clustering History( state=0|1 )
 
 **Descripción:** Muestra u oculta el historial de aglomeración según el orden de las uniones. La tabla contiene distancias y se ordena de la más cercana a la más lejana. Opción activada de forma predeterminada.
 
@@ -176,7 +170,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Color Clusters
 
-**Sintaxis:** obj << Color Clusters( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Color Clusters( state=0|1 )
 
 **Descripción:** Colorea las filas y las etiquetas del dendrograma en función de la pertenencia al conglomerado. Los colores se actualizan cuando cambia el número de conglomerados.
 
@@ -195,7 +189,7 @@ obj << Color Clusters( 1 );
 
 #### Color Map
 
-**Sintaxis:** obj << Color Map
+**Sintaxis:** obj &lt;&lt; Color Map
 
 **Descripción:** Muestra u oculta un mapa de color junto al dendrograma.
 
@@ -216,11 +210,11 @@ obj << Color Map( Blue to Gray to Red );
 
 #### Column Cluster Criterion
 
-**Sintaxis:** obj << Column Cluster Criterion( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Column Cluster Criterion( state=0|1 )
 
 #### Column Dendrogram Position
 
-**Sintaxis:** obj << Column Dendrogram Position( "Debajo"|"Encima" )
+**Sintaxis:** obj &lt;&lt; Column Dendrogram Position( "Debajo"|"Encima" )
 
 **Descripción:** Mueve la posición del dendrograma para las columnas cuando se utiliza una conglomeración de dos vías.
 
@@ -242,7 +236,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Column Label Position
 
-**Sintaxis:** obj << Column Label Position( "Debajo"|"Encima" )
+**Sintaxis:** obj &lt;&lt; Column Label Position( "Debajo"|"Encima" )
 
 **Descripción:** Mueve la posición de las etiquetas en el dendrograma para las columnas cuando se utiliza una conglomeración de dos vías.
 
@@ -265,7 +259,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Constellation Plot
 
-**Sintaxis:** obj << Constellation Plot( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Constellation Plot( state=0|1 )
 
 **Descripción:** Muestra u oculta una forma alternativa de presentar la información en el dendrograma de conglomeración jerárquica. Cada observación (fila) está representada por un extremo y cada unión de conglomerados está representada por un nuevo punto. Las líneas trazadas representan la pertenencia a los conglomerados.
 
@@ -284,7 +278,7 @@ obj << Constellation Plot( 1 );
 
 #### Dendrogram Scale
 
-**Sintaxis:** obj << Dendrogram Scale( "Escala de distancia"|"Espaciado uniforme"|"Espaciado geométrico" )
+**Sintaxis:** obj &lt;&lt; Dendrogram Scale( "Escala de distancia"|"Espaciado uniforme"|"Espaciado geométrico" )
 
 **Descripción:** Especifica la escala para el dendrograma. El Espaciado uniforme hace que el espaciado sea el mismo en las distintas ramas del dendrograma. El Espaciado geométrico aumenta el espaciado a medida que se va subiendo por el árbol del dendrograma. La Escala de distancia utiliza el espaciado entre ramas proporcional a las distancias.
 
@@ -303,13 +297,13 @@ obj << Dendrogram Scale( Geometric Spacing );
 
 #### Dendrogram Width
 
-**Sintaxis:** obj << Dendrogram Width( number=min(max(256,n*3),500) )
+**Sintaxis:** obj &lt;&lt; Dendrogram Width( number=min(max(256,n*3),500) )
 
 **Descripción:** Especifica la anchura del marco del dendrograma para la conglomeración de filas. "min(max(256,n*3),500)" de forma predeterminada.
 
 #### Distance Graph
 
-**Sintaxis:** obj << Distance Graph( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Distance Graph( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico que muestra la distancia superada en cada unión de conglomerados. Opción activada de forma predeterminada.
 
@@ -330,7 +324,7 @@ obj << Distance Graph( 1 );
 
 #### Get Clusters
 
-**Sintaxis:** obj << Get Clusters
+**Sintaxis:** obj &lt;&lt; Get Clusters
 
 **Descripción:** Devuelve un vector de asignaciones de conglomerados para cada fila.
 
@@ -350,7 +344,7 @@ Show( c );
 
 #### Get Column Display Order
 
-**Sintaxis:** obj << Get Column Display Order
+**Sintaxis:** obj &lt;&lt; Get Column Display Order
 
 **Descripción:** Devuelve un vector de la posición de visualización para cada columna de conglomeración de dos vías.
 
@@ -371,7 +365,7 @@ rowOrder = obj << Get Column Display Order;
 
 #### Get Column Names
 
-**Sintaxis:** obj << Get Column Names
+**Sintaxis:** obj &lt;&lt; Get Column Names
 
 **Descripción:** Devuelve los nombres de columnas en orden de conglomerados tras la conglomeración de dos vías.
 
@@ -387,7 +381,7 @@ Show( c );
 
 #### Get Display Order
 
-**Sintaxis:** obj << Get Display Order
+**Sintaxis:** obj &lt;&lt; Get Display Order
 
 **Descripción:** Devuelve un vector de la posición de visualización para cada fila del conglomerado, con valores faltantes para las filas que no se muestran.
 
@@ -407,7 +401,7 @@ rowOrder = obj << Get Display Order;
 
 #### Get Distance Matrix
 
-**Sintaxis:** obj << Get Distance Matrix
+**Sintaxis:** obj &lt;&lt; Get Distance Matrix
 
 **Descripción:** Devuelve la matriz de distancias utilizada para conglomeraciones jerárquicas.
 
@@ -429,9 +423,7 @@ Show( m );
 
 #### Hybrid Cycles
 
-**Sintaxis:** obj = Hierarchical Cluster(...Hybrid Cycles( number=30 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Hierarchical Cluster(...Hybrid Cycles( number=30 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el número mínimo de ciclos de combinación de vecinos cercanos que se realizan antes de cambiar a la rutina de conglomeración jerárquica. "30" de forma predeterminada.
 
@@ -452,9 +444,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Hybrid Goal
 
-**Sintaxis:** obj = Hierarchical Cluster(...Hybrid Goal( number=400 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Hierarchical Cluster(...Hybrid Goal( number=400 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el número máximo de conglomerados permitidos antes de cambiar a la rutina de conglomeración jerárquica. Cuando se inicia la rutina de conglomeración jerárquica, el número de conglomerados debe ser menor o igual que el objetivo híbrido. "400" de forma predeterminada.
 
@@ -475,9 +465,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Hybrid Initial K
 
-**Sintaxis:** obj = Hierarchical Cluster(...Hybrid Initial K( number=10 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Hierarchical Cluster(...Hybrid Initial K( number=10 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el número inicial de vecinos utilizados en los ciclos de combinación de vecinos cercanos. El número de vecinos puede aumentar o disminuir en función de cuántos vecinos cercanos únicos se encuentren en el ciclo anterior. "10" de forma predeterminada.
 
@@ -498,9 +486,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Hybrid Log Details
 
-**Sintaxis:** obj = Hierarchical Cluster(...Hybrid Log Details( state=0|1 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Hierarchical Cluster(...Hybrid Log Details( state=0|1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica si se muestran la condición y los tiempos de cada estado del método Ward híbrido en el registro.
 
@@ -521,9 +507,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Hybrid RandomPCA Dim
 
-**Sintaxis:** obj = Hierarchical Cluster(...Hybrid RandomPCA Dim( number=0 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Hierarchical Cluster(...Hybrid RandomPCA Dim( number=0 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el número de dimensiones que se utilizarán en la técnica de reducción de la dimensión de PCA aleatorizado. Esta técnica se utiliza cuando el valor de Dim. de PCA aleatoria híbrida es cualquier valor mayor que cero y proporciona mejoras de velocidad adicionales. "0" de forma predeterminada.
 
@@ -544,7 +528,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Late Join Outliers
 
-**Sintaxis:** obj << Late Join Outliers( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Late Join Outliers( state=0|1 )
 
 **Descripción:** Muestra u oculta un informe sobre los elementos que se conglomeraron muy tarde en la aglomeración.
 
@@ -564,7 +548,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Legend
 
-**Sintaxis:** obj << Legend( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Legend( state=0|1 )
 
 **Descripción:** Muestra u oculta una leyenda para el mapa de color a la derecha del dendrograma.
 
@@ -584,7 +568,7 @@ obj << Legend( 1 );
 
 #### Mark Clusters
 
-**Sintaxis:** obj << Mark Clusters( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Mark Clusters( state=0|1 )
 
 **Descripción:** Asigna marcadores a las filas de la tabla de datos que corresponden al conglomerado al que pertenece la fila. Los marcadores se actualizan si cambia el número de conglomerados. Si anula la selección de esta opción, los marcadores dejan de actualizarse en función del número de conglomerados.
 
@@ -603,9 +587,7 @@ obj << Mark Clusters;
 
 #### Method
 
-**Sintaxis:** Method( "Average"|"Centroid"|"Ward"|"Single"|"Complete"|"Fast Ward"|"Hybrid Ward" )
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** Method( "Average"|"Centroid"|"Ward"|"Single"|"Complete"|"Fast Ward"|"Hybrid Ward" )&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el método de distancia utilizado para formar los conglomerados.
 
@@ -624,9 +606,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Missing value imputation
 
-**Sintaxis:** obj = Hierarchical Cluster(...Missing value imputation( state=0|1 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Hierarchical Cluster(...Missing value imputation( state=0|1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Imputa los valores faltantes mediante la imputación SVD multivariante o normal multivariante.
 
@@ -647,7 +627,7 @@ obj = dt << Hierarchical Cluster(
 
 #### More Color Map Columns
 
-**Sintaxis:** obj << More Color Map Columns( column )
+**Sintaxis:** obj &lt;&lt; More Color Map Columns( column )
 
 **Descripción:** Añade otro mapa de color basado en la columna especificada.
 
@@ -665,7 +645,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Number of Clusters
 
-**Sintaxis:** obj << Number of Clusters( number )
+**Sintaxis:** obj &lt;&lt; Number of Clusters( number )
 
 **Descripción:** Permite introducir el número de conglomerados y el lugar donde cortar el árbol para definir los grupos de conglomerados. Existe un icono de arrastre en forma de rombo que también puede cambiar el número de conglomerados.
 
@@ -683,7 +663,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Number of Column Clusters
 
-**Sintaxis:** obj << Number of Column Clusters( number )
+**Sintaxis:** obj &lt;&lt; Number of Column Clusters( number )
 
 **Descripción:** Especifica el número de conglomerados de columna antes de guardar. Solo está disponible para la conglomeración de dos vías.
 
@@ -691,7 +671,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Parallel Coord Plots
 
-**Sintaxis:** obj << Parallel Coord Plots
+**Sintaxis:** obj &lt;&lt; Parallel Coord Plots
 
 **Descripción:** Crea un gráfico de coordenadas paralelas para cada conglomerado, todos dentro de una ventana independiente.
 
@@ -713,7 +693,7 @@ obj << Parallel Coord Plots;
 
 #### Pivot on Selected Cluster
 
-**Sintaxis:** obj << Pivot on Selected Cluster
+**Sintaxis:** obj &lt;&lt; Pivot on Selected Cluster
 
 **Descripción:** Invierte el orden de los dos subconglomerados del conglomerado actualmente seleccionado.
 
@@ -730,7 +710,7 @@ obj << Pivot on Selected Cluster;
 
 #### Release Zoom
 
-**Sintaxis:** obj << Release Zoom
+**Sintaxis:** obj &lt;&lt; Release Zoom
 
 **Descripción:** Anula el zoom en el dendrograma para las filas seleccionadas.
 
@@ -754,7 +734,7 @@ obj << Release Zoom;
 
 #### Row Dendrogram Position
 
-**Sintaxis:** obj << Row Dendrogram Position( "Izquierda"|"Derecha" )
+**Sintaxis:** obj &lt;&lt; Row Dendrogram Position( "Izquierda"|"Derecha" )
 
 **Descripción:** Mueve la posición del dendrograma para las filas.
 
@@ -775,7 +755,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Row Label Position
 
-**Sintaxis:** obj << Row Label Position( "Izquierda"|"Derecha" )
+**Sintaxis:** obj &lt;&lt; Row Label Position( "Izquierda"|"Derecha" )
 
 **Descripción:** Mueve la posición de las etiquetas en el dendrograma para las filas.
 
@@ -796,7 +776,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Row More Position
 
-**Sintaxis:** obj << Row More Position( "Izquierda"|"Derecha" )
+**Sintaxis:** obj &lt;&lt; Row More Position( "Izquierda"|"Derecha" )
 
 **Descripción:** Mueve la posición del mapa de color añadido con el comando Más columnas del mapa de color.
 
@@ -815,7 +795,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Save Cluster Hierarchy
 
-**Sintaxis:** obj << Save Cluster Hierarchy
+**Sintaxis:** obj &lt;&lt; Save Cluster Hierarchy
 
 **Descripción:** Crea una tabla de datos que contiene información útil para la reconstrucción del dendrograma.
 
@@ -834,7 +814,7 @@ obj << Save Cluster Hierarchy;
 
 #### Save Cluster History
 
-**Sintaxis:** obj << Save Cluster History
+**Sintaxis:** obj &lt;&lt; Save Cluster History
 
 **Descripción:** Guarda la tabla que aparece en el informe Historial de conglomeración como una nueva tabla de datos.
 
@@ -852,7 +832,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Save Cluster Means
 
-**Sintaxis:** obj << Save Cluster Means
+**Sintaxis:** obj &lt;&lt; Save Cluster Means
 
 **Descripción:** Guarda una tabla de medias de conglomerados para el número dado de conglomerados.
 
@@ -870,7 +850,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Save Cluster Tree
 
-**Sintaxis:** obj << Save Cluster Tree
+**Sintaxis:** obj &lt;&lt; Save Cluster Tree
 
 **Descripción:** Crea una tabla de datos que contiene los nodos del árbol de conglomerados.
 
@@ -889,7 +869,7 @@ obj << Save Cluster Tree;
 
 #### Save Clusters
 
-**Sintaxis:** obj << Save Clusters
+**Sintaxis:** obj &lt;&lt; Save Clusters
 
 **Descripción:** Crea una columna de tabla de datos que contiene los números de conglomerados.
 
@@ -908,7 +888,7 @@ obj << Save Clusters;
 
 #### Save Column Clusters
 
-**Sintaxis:** obj << Save Column Clusters
+**Sintaxis:** obj &lt;&lt; Save Column Clusters
 
 **Descripción:** Guarda una nueva tabla de datos que contiene información sobre la membresía de los conglomerados para las columnas. Solo está disponible para la conglomeración de dos vías.
 
@@ -916,7 +896,7 @@ obj << Save Clusters;
 
 #### Save Constellation Coordinates
 
-**Sintaxis:** obj << Save Constellation Coordinates
+**Sintaxis:** obj &lt;&lt; Save Constellation Coordinates
 
 **Descripción:** Guarda las coordenadas del gráfico de constelación en una nueva columna de la tabla de datos.
 
@@ -936,7 +916,7 @@ obj << Save Constellation Coordinates( 1 );
 
 #### Save Display Order
 
-**Sintaxis:** obj << Save Display Order
+**Sintaxis:** obj &lt;&lt; Save Display Order
 
 **Descripción:** Crea una columna de tabla de datos que contiene el orden en el que aparece la fila en el dendrograma.
 
@@ -955,7 +935,7 @@ obj << Save Display Order;
 
 #### Save Distance Matrix
 
-**Sintaxis:** obj << Save Distance Matrix
+**Sintaxis:** obj &lt;&lt; Save Distance Matrix
 
 **Descripción:** Crea una tabla de datos que contiene las distancias entre observaciones.
 
@@ -973,7 +953,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Save Formula for Closest Cluster
 
-**Sintaxis:** obj << Save Formula for Closest Cluster
+**Sintaxis:** obj &lt;&lt; Save Formula for Closest Cluster
 
 **Descripción:** Guarda una columna de fórmula en la tabla de datos que determina el número de conglomerados de la media de conglomerados más cercana.
 
@@ -992,7 +972,7 @@ obj << Save Formula for Closest Cluster;
 
 #### Scatterplot Matrix
 
-**Sintaxis:** obj << Scatterplot Matrix
+**Sintaxis:** obj &lt;&lt; Scatterplot Matrix
 
 **Descripción:** Crea una matriz de gráfico de dispersión en una nueva ventana con elipses de confianza basadas en el número actual de conglomerados.
 
@@ -1010,13 +990,13 @@ obj = dt << Hierarchical Cluster(
 
 #### Set Random Seed
 
-**Sintaxis:** obj << Set Random Seed( number )
+**Sintaxis:** obj &lt;&lt; Set Random Seed( number )
 
 **Descripción:** Especifica una semilla aleatoria para reproducir los resultados de inicios futuros de la plataforma.
 
 #### Show Dendrogram
 
-**Sintaxis:** obj << Show Dendrogram( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Show Dendrogram( state=0|1 )
 
 **Descripción:** Le permite desactivar el dendrograma si solo desea ver el mapa de color. Opción activada de forma predeterminada.
 
@@ -1038,7 +1018,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Show NCluster Handle
 
-**Sintaxis:** obj << Show NCluster Handle( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Show NCluster Handle( state=0|1 )
 
 **Descripción:** Muestra u oculta el controlador con forma de rombo que se utiliza para escoger el número de conglomerados en el dendrograma. Opción activada de forma predeterminada.
 
@@ -1058,15 +1038,13 @@ obj = dt << Hierarchical Cluster(
 
 #### Standardize
 
-**Sintaxis:** obj << Standardize( "No estandarizado"|"Columnas"|"Filas"|"Columnas y filas" )
+**Sintaxis:** obj &lt;&lt; Standardize( "No estandarizado"|"Columnas"|"Filas"|"Columnas y filas" )
 
 **Descripción:** Alias de "Estandarizar por", que especifica cómo estandarizar los valores antes de la conglomeración.
 
 #### Standardize By
 
-**Sintaxis:** obj = Hierarchical Cluster(...Standardize By( "No estandarizado"|"Columnas"|"Filas"|"Columnas y filas" )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Hierarchical Cluster(...Standardize By( "No estandarizado"|"Columnas"|"Filas"|"Columnas y filas" )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica cómo estandarizar los valores antes de la conglomeración. Puede estandarizar por columnas, filas, columnas y filas, o no hacerlo.
 
@@ -1088,23 +1066,19 @@ obj = dt << Hierarchical Cluster(
 
 #### Standardize Data
 
-**Sintaxis:** obj << Standardize Data( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Standardize Data( state=0|1 )
 
 **Descripción:** El nombre de opción antiguo es aún compatible, pero se ha reemplazado por "Estandarizar por".
 
 #### Standardize Robustly
 
-**Sintaxis:** obj = Hierarchical Cluster(...Standardize Robustly( state=0|1 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Hierarchical Cluster(...Standardize Robustly( state=0|1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Utiliza estimaciones robustas de la	media y la desviación estándar para estandarizar los datos.
 
 #### Two Way Clustering
 
-**Sintaxis:** obj = Hierarchical Cluster(...Two Way Clustering...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Hierarchical Cluster(...Two Way Clustering...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Conglomeración conjunta por columnas y filas. Las columnas deben medirse en la misma escala.
 
@@ -1126,15 +1100,13 @@ obj << Two Way Clustering;
 
 #### Use Saved Cluster Table
 
-**Sintaxis:** obj = Hierarchical Cluster(...Use Saved Cluster Table( state=0|1 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Hierarchical Cluster(...Use Saved Cluster Table( state=0|1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Utiliza una tabla del historial de conglomeración independiente para especificar la conglomeración.
 
 #### Zoom to Selected Rows
 
-**Sintaxis:** obj << Zoom to Selected Rows
+**Sintaxis:** obj &lt;&lt; Zoom to Selected Rows
 
 **Descripción:** Aplica zoom en el dendrograma para las filas seleccionadas.
 
@@ -1179,7 +1151,7 @@ Show( rows );
 
 #### Distance between rows
 
-**Sintaxis:** distance = KDTable << Distance between rows( row1, row2 )
+**Sintaxis:** distance = KDTable &lt;&lt; Distance between rows( row1, row2 )
 
 **Descripción:** Devuelve la distancia entre dos filas. La distancia se aplica a las filas eliminadas, así como a las insertadas.
 
@@ -1195,7 +1167,7 @@ Show( distance );
 
 #### Insert rows
 
-**Sintaxis:** n = KDTable << Insert rows( number|[ vector ] )
+**Sintaxis:** n = KDTable &lt;&lt; Insert rows( number|[ vector ] )
 
 **Descripción:** Le permite volver a insertar filas en las búsquedas de tablas. Los índices de las filas no cambian si se insertan o eliminan filas y solo se pueden eliminar y luego (volver a) insertar las filas originales. Devuelve el número de filas insertadas. Se ignorarán las filas que ya se hubieran insertado.
 
@@ -1217,7 +1189,7 @@ Show( rows );
 
 #### K nearest rows
 
-**Sintaxis:** {rows, dist} = KDTable << K nearest rows( stop, <position> )
+**Sintaxis:** {rows, dist} = KDTable &lt;&lt; K nearest rows( stop, &lt;position&gt; )
 
 **Descripción:** Devuelve las n filas más cercanas y las distancias a un punto o fila (si se especifica la posición) o a todas las filas (si se omite la posición), deteniendo la búsqueda cuando se exceda el límite de distancia. La detención puede ser n o {n,limit}. La posición opcional es un punto en forma de matriz (1xK), donde K es el número de dimensiones o el número de una fila. Si no se especifica la posición, se devuelven las n filas más cercanas a cada fila en una matriz (filas x n).
 
@@ -1233,7 +1205,7 @@ Show( rows );
 
 #### Remove rows
 
-**Sintaxis:** n = KDTable << Remove rows( number|[ vector ] )
+**Sintaxis:** n = KDTable &lt;&lt; Remove rows( number|[ vector ] )
 
 **Descripción:** Elimina filas de las búsquedas de tablas. Los índices de las filas no cambian si se insertan o eliminan filas y solo se pueden eliminar y luego (volver a) insertar las filas originales. El índice de la fila eliminada se puede utilizar como punto de inicio para las K filas más cercanas. Devuelve el número de filas eliminadas. Se ignorarán las filas que ya se hubieran eliminado.
 

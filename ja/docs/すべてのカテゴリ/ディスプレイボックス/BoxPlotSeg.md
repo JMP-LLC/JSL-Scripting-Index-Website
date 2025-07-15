@@ -6,9 +6,7 @@
 
 ### Enabled
 
-**構文:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**構文:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **説明:** 有効にされていないオブジェクトはキーボードまたはマウスによる入力に反応しない。このプロパティは子オブジェクトにも継承されるため、コンテナオブジェクトが無効になっていると、その下位のオブジェクトがすべて無効になる。
 
@@ -40,9 +38,7 @@ New Window( "enabled",
 
 ### Get Enabled
 
-**構文:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**構文:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **説明:** 有効にされていないオブジェクトはキーボードまたはマウスによる入力に反応しない。このプロパティは子オブジェクトにも継承されるため、コンテナオブジェクトが無効になっていると、その下位のオブジェクトがすべて無効になる。
 
@@ -74,7 +70,7 @@ New Window( "enabled",
 
 ### Get Namespace
 
-**構文:** obj << Get Namespace
+**構文:** obj &lt;&lt; Get Namespace
 
 **説明:** この表示オブジェクトの名前空間を戻す。
 
@@ -92,7 +88,7 @@ Show( ns:x, x );
 
 ### Get Properties
 
-**構文:** obj << Get Properties
+**構文:** obj &lt;&lt; Get Properties
 
 **説明:** ディスプレイボックスのプロパティとその値を含む連想配列を戻す。
 
@@ -106,7 +102,7 @@ bb << Get Properties;
 
 ### Get Property
 
-**構文:** obj << Get Property( "property" )
+**構文:** obj &lt;&lt; Get Property( "property" )
 
 **説明:** propertyで指定したプロパティの現在の設定を戻す。
 
@@ -120,7 +116,7 @@ bb << Get Property( "Enabled" );
 
 ### Get Property List
 
-**構文:** obj << Get Property List
+**構文:** obj &lt;&lt; Get Property List
 
 **説明:** ディスプレイボックスの持つプロパティのリストを戻す。
 
@@ -134,7 +130,7 @@ bb << Get Property List;
 
 ### Set Property
 
-**構文:** obj << Set Property( "property", value )
+**構文:** obj &lt;&lt; Set Property( "property", value )
 
 **説明:** ディスプレイボックスの、propertyで指定した名前のプロパティに値を設定する。
 
@@ -150,7 +146,7 @@ bb << Set Property( "Enabled", 0 );
 
 ### Box Plot Seg
 
-**構文:** b = Box Plot Seg(<data>, <frequency>, <weight>, <vertical=0|1>)
+**構文:** b = Box Plot Seg(&lt;data&gt;, &lt;frequency&gt;, &lt;weight&gt;, &lt;vertical=0|1&gt;)
 
 **説明:** 指定されたデータの箱ひげ図を描くディスプレイセグメントを戻す。
 
@@ -173,7 +169,7 @@ seg = (g[FrameBox( 1 )] << Find Seg( "Box Plot Seg" ));
 
 ### Box Style
 
-**構文:** obj << Box Style( "通常"|"塗りつぶし"|"線" )
+**構文:** obj &lt;&lt; Box Style( "通常"|"塗りつぶし"|"線" )
 
 ```jsl
 
@@ -193,7 +189,7 @@ seg << Set Box Style( "Solid" );
 
 ### Box Type
 
-**構文:** obj << Box Type( "分位点"|"外れ値" )
+**構文:** obj &lt;&lt; Box Type( "分位点"|"外れ値" )
 
 ```jsl
 
@@ -213,7 +209,7 @@ seg << Set Box Type( "Outlier" );
 
 ### Child
 
-**構文:** seg2 = obj << Child
+**構文:** seg2 = obj &lt;&lt; Child
 
 **説明:** ディスプレイセグメントの最初の子を戻す。
 
@@ -235,7 +231,7 @@ seg << Child; // not many segs support children
 
 ### Class Name
 
-**構文:** classname = obj << Class Name
+**構文:** classname = obj &lt;&lt; Class Name
 
 **説明:** ディスプレイボックスのクラス名を戻す。
 
@@ -257,7 +253,7 @@ seg << Class Name;
 
 ### Clip Shape
 
-**構文:** seg << Clip Shape(Boundaries(Shape File, [ID(string)]) | Path([string] | [matrix]) | Empty())
+**構文:** seg &lt;&lt; Clip Shape(Boundaries(Shape File, [ID(string)]) | Path([string] | [matrix]) | Empty())
 
 **説明:** 指定された地図シェープをもとに図やグラフをクリッピングする。クリッピングする領域は、シェープファイルやパスによって指定できる。シェープファイルを使用する場合は、IDをオプション指定してファイルの中から1つの領域を選択することもできる。IDを指定しなかった場合は、すべての領域を結合したものがクリッピング領域として使われる。Nx3行列やテキスト表記を使ってクリッピングするパスを指定することもできる。パスの行列は、X座標、Y座標、フラグの3列で構成される。フラグは0がコントロール点、1が移動、2が線分、3が3次ベジエ曲線で、パスを閉じる点の場合は負の値を指定する。一方、パスをテキスト表記するときにはSVG構文を使用する。
 
@@ -287,11 +283,11 @@ cs << Clip Shape( Boundaries( "US States" ) );
 
 ### Color Theme
 
-**構文:** obj << Color Theme
+**構文:** obj &lt;&lt; Color Theme
 
 ### Confidence Diamond
 
-**構文:** obj << Confidence Diamond( state=0|1 )
+**構文:** obj &lt;&lt; Confidence Diamond( state=0|1 )
 
 ```jsl
 
@@ -311,7 +307,7 @@ seg << Set Confidence Diamond( 0 );
 
 ### Delete
 
-**構文:** obj << Delete
+**構文:** obj &lt;&lt; Delete
 
 **説明:** ディスプレイセグメントを削除する。
 
@@ -333,7 +329,7 @@ seg << Delete;
 
 ### Density Gradient
 
-**構文:** obj << Density Gradient( "白へフェードアウト"|"グレーへフェードアウト"|"フルカラー"="白へフェードアウト" )
+**構文:** obj &lt;&lt; Density Gradient( "白へフェードアウト"|"グレーへフェードアウト"|"フルカラー"="白へフェードアウト" )
 
 **説明:** 密度グラデーションの色付けの動作を設定する。 デフォルトの値は"白へフェードアウト"。
 
@@ -357,7 +353,7 @@ seg << Density Gradient( "Fade to Gray" );
 
 ### Error Bar Cap
 
-**構文:** obj << Error Bar Cap( "なし"|"極小"|"小"|"中"|"大" )
+**構文:** obj &lt;&lt; Error Bar Cap( "なし"|"極小"|"小"|"中"|"大" )
 
 **説明:** 誤差バーの終端に描くキャップの種類を指定する。
 
@@ -380,7 +376,7 @@ seg << Set Error Bar Cap( "Large" );
 
 ### Error Bar Cap Shape
 
-**構文:** obj << Error Bar Cap Shape( begin, end )
+**構文:** obj &lt;&lt; Error Bar Cap Shape( begin, end )
 
 **説明:** 誤差バーに表示するキャップの形状を指定する。1つの引数で棒の両端の形状を設定するか、2つの引数で始端と終端を別々に設定する。デフォルトの形状は"Line"。"Arrow"を指定すると、外側を向いた矢印が描かれ、"None"を指定するとキャップが省略される。
 
@@ -403,7 +399,7 @@ seg << Set Error Bar Cap Shape( "Line", "Arrow" );
 
 ### Fences
 
-**構文:** obj << Fences( state=0|1 )
+**構文:** obj &lt;&lt; Fences( state=0|1 )
 
 ```jsl
 
@@ -423,7 +419,7 @@ seg << Set Fences( 0 );
 
 ### Fill
 
-**構文:** obj << Fill( state = 0|1 )
+**構文:** obj &lt;&lt; Fill( state = 0|1 )
 
 **JMP追加されたバージョン:** 15
 
@@ -445,7 +441,7 @@ seg << Set Fill( 0 );
 
 ### Fill Color
 
-**構文:** obj << Fill Color( color )
+**構文:** obj &lt;&lt; Fill Color( color )
 
 ```jsl
 
@@ -465,13 +461,13 @@ seg << Set Fill Color( "Green" );
 
 ### First Value
 
-**構文:** obj << First Value( state=0|1 )
+**構文:** obj &lt;&lt; First Value( state=0|1 )
 
 **JMP追加されたバージョン:** 16
 
 ### Frame
 
-**構文:** FrameBox = obj << Frame
+**構文:** FrameBox = obj &lt;&lt; Frame
 
 **説明:** ディスプレイセグメントがあるフレームボックスを戻す。
 
@@ -493,7 +489,7 @@ seg << Frame;
 
 ### Get Box Style
 
-**構文:** obj << Get Box Style
+**構文:** obj &lt;&lt; Get Box Style
 
 ```jsl
 
@@ -513,7 +509,7 @@ seg << Get Box Style();
 
 ### Get Box Type
 
-**構文:** obj << Get Box Type
+**構文:** obj &lt;&lt; Get Box Type
 
 ```jsl
 
@@ -533,7 +529,7 @@ seg << Get Box Type();
 
 ### Get Clip Shape
 
-**構文:** obj << Get Clip Shape
+**構文:** obj &lt;&lt; Get Clip Shape
 
 **説明:** 現在、クリッピングしている領域を戻す。
 
@@ -564,7 +560,7 @@ cs << Get Clip Shape();
 
 ### Get Confidence Diamond
 
-**構文:** obj << Get Confidence Diamond
+**構文:** obj &lt;&lt; Get Confidence Diamond
 
 ```jsl
 
@@ -584,7 +580,7 @@ seg << Get Confidence Diamond();
 
 ### Get Density Gradient
 
-**構文:** obj << Get Density Gradient
+**構文:** obj &lt;&lt; Get Density Gradient
 
 **説明:** 密度グラデーションの色付けの動作を取得する。
 
@@ -608,7 +604,7 @@ seg << Get Density Gradient;
 
 ### Get Description
 
-**構文:** description = obj << Get Description
+**構文:** description = obj &lt;&lt; Get Description
 
 **説明:** ディスプレイセグメントの名前を取得する。
 
@@ -630,7 +626,7 @@ seg << get description();
 
 ### Get Error Bar Cap
 
-**構文:** obj << Get Error Bar Cap
+**構文:** obj &lt;&lt; Get Error Bar Cap
 
 **説明:** 現在、誤差バーのキャップにどの種類が使われているかを戻す。
 
@@ -653,7 +649,7 @@ seg << Get Error Bar Cap();
 
 ### Get Error Bar Cap Shape
 
-**構文:** { begin, end } = obj << Get Error Bar Cap Shape
+**構文:** { begin, end } = obj &lt;&lt; Get Error Bar Cap Shape
 
 **説明:** 誤差バーのキャップの形状を戻す。
 
@@ -676,7 +672,7 @@ seg << Get Error Bar Cap Shape();
 
 ### Get Fences
 
-**構文:** obj << Get Fences
+**構文:** obj &lt;&lt; Get Fences
 
 ```jsl
 
@@ -696,7 +692,7 @@ seg << Get Fences();
 
 ### Get Fill
 
-**構文:** obj << Get Fill
+**構文:** obj &lt;&lt; Get Fill
 
 **JMP追加されたバージョン:** 15
 
@@ -718,7 +714,7 @@ seg << Get Fill;
 
 ### Get Fill Color
 
-**構文:** obj << Get Fill Color
+**構文:** obj &lt;&lt; Get Fill Color
 
 ```jsl
 
@@ -738,7 +734,7 @@ seg << Get Fill Color();
 
 ### Get Fill Pattern
 
-**構文:** obj << Get Fill Pattern
+**構文:** obj &lt;&lt; Get Fill Pattern
 
 ```jsl
 
@@ -758,7 +754,7 @@ seg << Get Fill Pattern;
 
 ### Get Gradient
 
-**構文:** obj << Get Gradient
+**構文:** obj &lt;&lt; Get Gradient
 
 **説明:** 色のグラデーションを取得する。
 
@@ -780,7 +776,7 @@ seg << Get Gradient;
 
 ### Get Gradient Color Theme
 
-**構文:** obj << Get Gradient Color Theme
+**構文:** obj &lt;&lt; Get Gradient Color Theme
 
 **説明:** グラデーションのカラーテーマを取得する。
 
@@ -804,7 +800,7 @@ seg << Get Gradient Color Theme;
 
 ### Get Gradient Discrete Colors
 
-**構文:** obj << Get Gradient Discrete Colors
+**構文:** obj &lt;&lt; Get Gradient Discrete Colors
 
 **説明:** グラデーションの各水準を均一の色にするか、色の境目を滑らかに変化させるかを取得する。
 
@@ -828,7 +824,7 @@ seg << Get Gradient Discrete Colors;
 
 ### Get Gradient Fill
 
-**構文:** obj << Get Gradient Fill
+**構文:** obj &lt;&lt; Get Gradient Fill
 
 **説明:** グラデーションのスケールの範囲外にある値について、色付けの方法を取得する。
 
@@ -847,7 +843,7 @@ seg << Get Gradient Fill;
 
 ### Get Gradient Label Count
 
-**構文:** obj << Get Gradient Label Count
+**構文:** obj &lt;&lt; Get Gradient Label Count
 
 **説明:** グラデーションの凡例に表示されるラベルの数を取得する。
 
@@ -871,7 +867,7 @@ seg << Get Gradient Label Count;
 
 ### Get Gradient Label Levels
 
-**構文:** [value1,value1, ... value N] = obj << Get Gradient Label Levels
+**構文:** [value1,value1, ... value N] = obj &lt;&lt; Get Gradient Label Levels
 
 **説明:** グラデーションのスケールのラベルに使用される値のセットを取得する。
 
@@ -906,7 +902,7 @@ seg << Get Gradient Scale Values;
 
 ### Get Gradient Legend Horizontal
 
-**構文:** obj << Get Gradient Legend Horizontal
+**構文:** obj &lt;&lt; Get Gradient Legend Horizontal
 
 **説明:** グラデーションの凡例を横方向に表示するかどうかを取得する。
 
@@ -930,7 +926,7 @@ seg << Get Gradient Legend Horizontal;
 
 ### Get Gradient Legend Label Format
 
-**構文:** obj << Get Gradient Legend Label Format
+**構文:** obj &lt;&lt; Get Gradient Legend Label Format
 
 **説明:** グラデーションの凡例ラベルの表示形式を取得する。
 
@@ -954,7 +950,7 @@ seg << Get Gradient Legend Label Format;
 
 ### Get Gradient Legend Label Width
 
-**構文:** obj << Get Gradient Legend Label Width
+**構文:** obj &lt;&lt; Get Gradient Legend Label Width
 
 **説明:** グラデーションの凡例ラベルの最大文字数を取得する。
 
@@ -978,7 +974,7 @@ seg << Get Gradient Legend Label Width;
 
 ### Get Gradient Legend Show Labels
 
-**構文:** obj << Get Gradient Legend Show Labels
+**構文:** obj &lt;&lt; Get Gradient Legend Show Labels
 
 **説明:** グラデーションの凡例に水準ラベルを表示するかどうかを取得する。
 
@@ -1002,7 +998,7 @@ seg << Get Gradient Legend Show Labels;
 
 ### Get Gradient Level Count
 
-**構文:** obj << Get Gradient Level Count
+**構文:** obj &lt;&lt; Get Gradient Level Count
 
 **説明:** グラデーションの水準数を取得する。
 
@@ -1026,7 +1022,7 @@ seg << Get Gradient Levels;
 
 ### Get Gradient Lightness Range
 
-**構文:** obj << Get Gradient Lightness Range
+**構文:** obj &lt;&lt; Get Gradient Lightness Range
 
 **説明:** グラデーションの水準の色について、明度の最小値と最大値を取得する。欠測値は、カラーテーマの元の値が使用されることを示す。
 
@@ -1050,7 +1046,7 @@ seg << Get Gradient Lightness Range;
 
 ### Get Gradient Range
 
-**構文:** obj << Get Gradient Range
+**構文:** obj &lt;&lt; Get Gradient Range
 
 **説明:** カスタムではないグラデーションのスケールの範囲を取得する。
 
@@ -1069,7 +1065,7 @@ seg << Get Gradient Range;
 
 ### Get Gradient Reverse Color Order
 
-**構文:** obj << Get Gradient Reverse Color Order
+**構文:** obj &lt;&lt; Get Gradient Reverse Color Order
 
 **説明:** グラデーションの色の順序が逆かどうかを取得する。
 
@@ -1093,7 +1089,7 @@ seg << Get Gradient Reverse Color Order;
 
 ### Get Gradient Reverse Label Order
 
-**構文:** obj << Get Gradient Reverse Label Order
+**構文:** obj &lt;&lt; Get Gradient Reverse Label Order
 
 **説明:** グラデーション内のラベルの順序が逆かどうかを取得する。
 
@@ -1117,7 +1113,7 @@ seg << Get Gradient Reverse Label Order;
 
 ### Get Gradient Scale
 
-**構文:** obj << Get Gradient Scale
+**構文:** obj &lt;&lt; Get Gradient Scale
 
 **説明:** グラデーションのスケールの種類を取得する。
 
@@ -1136,7 +1132,7 @@ seg << Get Gradient Scale;
 
 ### Get Gradient Scale Values
 
-**構文:** [value1,value1, ... value N] = obj << Get Gradient Scale Values
+**構文:** [value1,value1, ... value N] = obj &lt;&lt; Get Gradient Scale Values
 
 **説明:** グラデーションのスケールのラベルに使用される値のセットを取得する。
 
@@ -1171,7 +1167,7 @@ seg << Get Gradient Scale Values;
 
 ### Get Gradient Show Missing
 
-**構文:** obj << Get Gradient Show Missing
+**構文:** obj &lt;&lt; Get Gradient Show Missing
 
 **説明:** 凡例に欠測値を表示するかどうかを取得する。
 
@@ -1195,7 +1191,7 @@ seg << Get Gradient Show Missing;
 
 ### Get Gradient Transparency
 
-**構文:** obj << Get Gradient Transparency
+**構文:** obj &lt;&lt; Get Gradient Transparency
 
 **説明:** グラデーションの透明度を取得する。
 
@@ -1219,7 +1215,7 @@ seg << Get Gradient Transparency;
 
 ### Get Interval Draw Directions
 
-**構文:** obj << Get Interval Draw Directions
+**構文:** obj &lt;&lt; Get Interval Draw Directions
 
 **説明:** 区間を描画する方向を取得する。
 
@@ -1258,7 +1254,7 @@ seg << Get Interval Draw Directions;
 
 ### Get Line Color
 
-**構文:** color = obj << Get Line Color
+**構文:** color = obj &lt;&lt; Get Line Color
 
 **説明:** 線の色を戻す。
 
@@ -1280,7 +1276,7 @@ seg << Get Line Color;
 
 ### Get Line Style
 
-**構文:** pen style = obj << Get Line Style
+**構文:** pen style = obj &lt;&lt; Get Line Style
 
 **説明:** 線種を戻す。
 
@@ -1304,7 +1300,7 @@ seg << Get Line Style;
 
 ### Get Line Width
 
-**構文:** number = obj << Get Line Width
+**構文:** number = obj &lt;&lt; Get Line Width
 
 **説明:** 線の幅を戻す。
 
@@ -1328,7 +1324,7 @@ seg << Get Line Width;
 
 ### Get Marker
 
-**構文:** marker = obj << Get Marker
+**構文:** marker = obj &lt;&lt; Get Marker
 
 **説明:** マーカーの種類を戻す。
 
@@ -1352,7 +1348,7 @@ seg << Get Marker;
 
 ### Get Marker Size
 
-**構文:** size = obj << Get Marker Size
+**構文:** size = obj &lt;&lt; Get Marker Size
 
 **説明:** マーカーのサイズを戻す。
 
@@ -1376,7 +1372,7 @@ seg << Get Marker Size;
 
 ### Get Median Line Style
 
-**構文:** obj << Get Median Line Style
+**構文:** obj &lt;&lt; Get Median Line Style
 
 ```jsl
 
@@ -1396,7 +1392,7 @@ seg << Get Median Line Style();
 
 ### Get Moment
 
-**構文:** obj << Get Moment( "Mean"|"Std Dev"|"Std Err Mean"|"Upper Mean"|"Lower Mean"|"N"|"Sum Wgt"|"Sum"|"Variance"|"Skewness"|"Kurtosis"|"CV"|"N Missing"|"N Zero"|"N Unique"|"Uncorrected SS"|"Corrected SS"|"Autocorrelation"|"Minimum"|"Maximum"|"Median"|"Mode"|"Trimmed Mean"|"Geometric Mean"|"Range"|"Interquartile Range"|"Median Absolute Deviation"|"Proportion Zero"|"Proportion Nonzero"|"K*Std Dev"|"K*Std Dev Above Mean"|"K*Std Dev Below Mean"|"Robust Mean"|"Robust Standard Deviation"|"N Modes"|"Mode Count" )
+**構文:** obj &lt;&lt; Get Moment( "Mean"|"Std Dev"|"Std Err Mean"|"Upper Mean"|"Lower Mean"|"N"|"Sum Wgt"|"Sum"|"Variance"|"Skewness"|"Kurtosis"|"CV"|"N Missing"|"N Zero"|"N Unique"|"Uncorrected SS"|"Corrected SS"|"Autocorrelation"|"Minimum"|"Maximum"|"Median"|"Mode"|"Trimmed Mean"|"Geometric Mean"|"Range"|"Interquartile Range"|"Median Absolute Deviation"|"Proportion Zero"|"Proportion Nonzero"|"K*Std Dev"|"K*Std Dev Above Mean"|"K*Std Dev Below Mean"|"Robust Mean"|"Robust Standard Deviation"|"N Modes"|"Mode Count" )
 
 ```jsl
 
@@ -1416,7 +1412,7 @@ seg << Get Moment( "Std Dev" );
 
 ### Get Notched
 
-**構文:** obj << Get Notched
+**構文:** obj &lt;&lt; Get Notched
 
 **JMP追加されたバージョン:** 16
 
@@ -1438,7 +1434,7 @@ seg << Get Notched();
 
 ### Get Quantiles
 
-**構文:** Matrix = obj << Get Quantiles( number )
+**構文:** Matrix = obj &lt;&lt; Get Quantiles( number )
 
 **説明:** 計算された分位点を行列として戻す。行列の第1列は累積確率、第2列は分位点の値。
 
@@ -1460,7 +1456,7 @@ seg << Get Quantiles;
 
 ### Get Shortest Half Bracket
 
-**構文:** obj << Get Shortest Half Bracket
+**構文:** obj &lt;&lt; Get Shortest Half Bracket
 
 ```jsl
 
@@ -1480,7 +1476,7 @@ seg << Get Shortest Half Bracket();
 
 ### Get Shortest Half Color
 
-**構文:** obj << Get Shortest Half Color
+**構文:** obj &lt;&lt; Get Shortest Half Color
 
 ```jsl
 
@@ -1500,7 +1496,7 @@ seg << Get Shortest Half Color();
 
 ### Get Transparency
 
-**構文:** obj << Get Transparency
+**構文:** obj &lt;&lt; Get Transparency
 
 **説明:** 透明度を表す0(透明)～1(不透明)の数値を戻す。
 
@@ -1522,9 +1518,7 @@ seg << Get Transparency;
 
 ### Gradient
 
-**構文:** obj << { <Color Theme(theme)>, <Min Lightness(0-1)>, <Max Lightness(0-1)>, <Contour Levels(num)>, <Reverse Gradient(0|1)>, <Density Gradient("Fade To White"|"Fade To Gray"|"Full Color")>, <Gradient Transparency("None"|"Linear")> }
-
-obj << { <Color Theme(theme)>, <Min Lightness(0-1)>, <Max Lightness(0-1)>, <N Labels(num)>, <Show Missing Color("On"|"Off"|"Auto")>, <Scale Type("Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom")>, <Scale Values([v1, v2, …])>, <Range Type("Default"|"Exact Data Range"|"Middle 90%")>, <Fill("Between"|"Above"|"Below"|"Above Below")>, <Reverse Gradient(0|1)>, <Reverse Labels(0|1)>, <Discrete Color(0|1)> }, <Label Format(labelFormat)>, <Width(num)>, <Horizontal(0|1)>, <Show Labels(0|1)>
+**構文:** obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;Contour Levels(num)&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Density Gradient("Fade To White"|"Fade To Gray"|"Full Color")&gt;, &lt;Gradient Transparency("None"|"Linear")&gt; }obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;N Labels(num)&gt;, &lt;Show Missing Color("On"|"Off"|"Auto")&gt;, &lt;Scale Type("Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom")&gt;, &lt;Scale Values([v1, v2, …])&gt;, &lt;Range Type("Default"|"Exact Data Range"|"Middle 90%")&gt;, &lt;Fill("Between"|"Above"|"Below"|"Above Below")&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Reverse Labels(0|1)&gt;, &lt;Discrete Color(0|1)&gt; }, &lt;Label Format(labelFormat)&gt;, &lt;Width(num)&gt;, &lt;Horizontal(0|1)&gt;, &lt;Show Labels(0|1)&gt;
 
 **説明:** 色のグラデーションを設定する。
 
@@ -1546,7 +1540,7 @@ seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
 
 ### Gradient Color Theme
 
-**構文:** obj << Gradient Color Theme
+**構文:** obj &lt;&lt; Gradient Color Theme
 
 **説明:** グラデーションのカラーテーマを設定する。
 
@@ -1570,7 +1564,7 @@ seg << Set Gradient Color Theme( "Viridis" );
 
 ### Gradient Discrete Colors
 
-**構文:** obj << Gradient Discrete Colors
+**構文:** obj &lt;&lt; Gradient Discrete Colors
 
 **説明:** グラデーションの各水準を均一の色にするか、色の境目を滑らかに変化させるかを設定する。
 
@@ -1589,7 +1583,7 @@ seg << Set Gradient Discrete Colors( 1 );
 
 ### Gradient Fill
 
-**構文:** obj << Gradient Fill( "間"|"上"|"下"|"上下"="上下" )
+**構文:** obj &lt;&lt; Gradient Fill( "間"|"上"|"下"|"上下"="上下" )
 
 **説明:** グラデーションのスケールの範囲外にある値について、色付けの方法を設定する。 デフォルトの値は"上下"。
 
@@ -1609,7 +1603,7 @@ seg << Set Gradient Fill( "Between" );
 
 ### Gradient Label Count
 
-**構文:** obj << Gradient Label Count
+**構文:** obj &lt;&lt; Gradient Label Count
 
 **説明:** グラデーションの凡例に表示するラベルの数を設定する。これは、等高線の水準数に1を足した値。
 
@@ -1633,7 +1627,7 @@ seg << Set Gradient Label Count( 8 );
 
 ### Gradient Label Levels
 
-**構文:** obj << Gradient Label Levels( [value1,value1, ... value N] )
+**構文:** obj &lt;&lt; Gradient Label Levels( [value1,value1, ... value N] )
 
 **説明:** グラデーションのスケールに使用する値のセットを設定する。
 
@@ -1652,7 +1646,7 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ### Gradient Legend Horizontal
 
-**構文:** obj << Gradient Legend Horizontal
+**構文:** obj &lt;&lt; Gradient Legend Horizontal
 
 **説明:** グラデーションの凡例を横方向に表示するかどうかを設定する。
 
@@ -1676,7 +1670,7 @@ seg << Set Gradient Legend Horizontal( 1 );
 
 ### Gradient Legend Label Format
 
-**構文:** obj << Gradient Legend Label Format
+**構文:** obj &lt;&lt; Gradient Legend Label Format
 
 **説明:** グラデーションの凡例ラベルの表示形式を設定する。
 
@@ -1700,7 +1694,7 @@ seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
 
 ### Gradient Legend Label Width
 
-**構文:** obj << Gradient Legend Label Width
+**構文:** obj &lt;&lt; Gradient Legend Label Width
 
 **説明:** グラデーションの凡例ラベルの最大長さ(文字数)を設定する。
 
@@ -1724,7 +1718,7 @@ seg << Set Gradient Legend Label Width( 4 );
 
 ### Gradient Legend Show Labels
 
-**構文:** obj << Gradient Legend Show Labels
+**構文:** obj &lt;&lt; Gradient Legend Show Labels
 
 **説明:** グラデーションの凡例に水準ラベルを表示するかどうかを設定する。
 
@@ -1748,7 +1742,7 @@ seg << Set Gradient Legend Show Labels( 0 );
 
 ### Gradient Level Count
 
-**構文:** obj << Gradient Level Count
+**構文:** obj &lt;&lt; Gradient Level Count
 
 **説明:** グラデーションの水準数を設定する。これは、ラベルの数から1を引いた値。
 
@@ -1772,7 +1766,7 @@ seg << Set Gradient Levels( 7 );
 
 ### Gradient Lightness Range
 
-**構文:** obj << Gradient Lightness Range
+**構文:** obj &lt;&lt; Gradient Lightness Range
 
 **説明:** グラデーションの水準の色について、明度の最小値と最大値を設定する。この範囲をカバーするような色が使われる。欠測値は変化なしとして扱われる。
 
@@ -1834,7 +1828,7 @@ seg << Set Gradient Lightness Range( ., 0.75 );
 
 ### Gradient Range
 
-**構文:** obj << Gradient Range( "デフォルト"|"正確なデータ範囲"|"中央部 90%"="デフォルト" )
+**構文:** obj &lt;&lt; Gradient Range( "デフォルト"|"正確なデータ範囲"|"中央部 90%"="デフォルト" )
 
 **説明:** カスタムではないグラデーションのスケールの範囲を設定する。 デフォルトの値は"デフォルト"。
 
@@ -1853,7 +1847,7 @@ seg << Set Gradient Range( "Exact Data Range" );
 
 ### Gradient Reverse Color Order
 
-**構文:** obj << Gradient Reverse Color Order
+**構文:** obj &lt;&lt; Gradient Reverse Color Order
 
 **説明:** グラデーションの色の順序を逆にする。
 
@@ -1877,7 +1871,7 @@ seg << Set Gradient Reverse Color Order( 1 );
 
 ### Gradient Reverse Label Order
 
-**構文:** obj << Gradient Reverse Label Order
+**構文:** obj &lt;&lt; Gradient Reverse Label Order
 
 **説明:** グラデーションのラベルの順序を逆にする。
 
@@ -1901,7 +1895,7 @@ seg << Set Gradient Reverse Label Order( 1 );
 
 ### Gradient Scale
 
-**構文:** obj << Gradient Scale( "線形"|"分位点"|"標準偏差"|"対数"|"対数オフセット"|"カスタム"="線形" )
+**構文:** obj &lt;&lt; Gradient Scale( "線形"|"分位点"|"標準偏差"|"対数"|"対数オフセット"|"カスタム"="線形" )
 
 **説明:** グラデーションのスケールの種類を設定する。 デフォルトの値は"線形"。
 
@@ -1920,7 +1914,7 @@ seg << Set Gradient Scale( "Quantile" );
 
 ### Gradient Scale Values
 
-**構文:** obj << Gradient Scale Values( [value1,value1, ... value N] )
+**構文:** obj &lt;&lt; Gradient Scale Values( [value1,value1, ... value N] )
 
 **説明:** グラデーションのスケールに使用する値のセットを設定する。
 
@@ -1939,7 +1933,7 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ### Gradient Show Missing
 
-**構文:** obj << Gradient Show Missing( "自動"|"オン"|"オフ"="自動" )
+**構文:** obj &lt;&lt; Gradient Show Missing( "自動"|"オン"|"オフ"="自動" )
 
 **説明:** 凡例に欠測値を表示するかどうかを設定する。 デフォルトの値は"自動"。
 
@@ -1961,7 +1955,7 @@ seg << Set Gradient Show Missing( "Off" );
 
 ### Gradient Transparency
 
-**構文:** obj << Gradient Transparency( "なし"|"線形"="線形" )
+**構文:** obj &lt;&lt; Gradient Transparency( "なし"|"線形"="線形" )
 
 **説明:** グラデーションの透明度を設定する。 デフォルトの値は"線形"。
 
@@ -1985,13 +1979,13 @@ seg << Gradient Transparency( "None" );
 
 ### Last Value
 
-**構文:** obj << Last Value( state=0|1 )
+**構文:** obj &lt;&lt; Last Value( state=0|1 )
 
 **JMP追加されたバージョン:** 16
 
 ### Line Color
 
-**構文:** obj << Line Color( color )
+**構文:** obj &lt;&lt; Line Color( color )
 
 **説明:** ディスプレイセグメント内のすべての線の色を設定する。
 
@@ -2013,7 +2007,7 @@ seg << Set Line Color( "Green" );
 
 ### Line Style
 
-**構文:** obj << Line Style( pen style )
+**構文:** obj &lt;&lt; Line Style( pen style )
 
 **説明:** 線種を設定する。オプションはSolid(実線)、Dotted(点線)、Dashed(破線)、DashDot(一点鎖線)、DashDotDot(二点鎖線)。
 
@@ -2037,7 +2031,7 @@ seg << Set Line Style( "Dotted" );
 
 ### Line Width
 
-**構文:** obj << Line Width( "1"|"2"|"3"|"4"|"5"|"6"|"その他..." )
+**構文:** obj &lt;&lt; Line Width( "1"|"2"|"3"|"4"|"5"|"6"|"その他..." )
 
 **説明:** 線の幅を設定する。
 
@@ -2061,7 +2055,7 @@ seg << Set Line Width( 3 );
 
 ### Marker
 
-**構文:** obj << Marker( marker )
+**構文:** obj &lt;&lt; Marker( marker )
 
 **説明:** すべてのマーカーの種類を設定する。
 
@@ -2085,7 +2079,7 @@ seg << Set Marker( "Square" );
 
 ### Marker Size
 
-**構文:** obj << Marker Size( size )
+**構文:** obj &lt;&lt; Marker Size( size )
 
 **説明:** マーカーのサイズを設定する。サイズのオプションはDot(ドット)、Small(小)、Medium(中)、Large(大)、XL、XXL、XXXL。
 
@@ -2110,13 +2104,13 @@ seg << Set Marker Size( "XL" );
 
 ### Max Value
 
-**構文:** obj << Max Value( state=0|1 )
+**構文:** obj &lt;&lt; Max Value( state=0|1 )
 
 **JMP追加されたバージョン:** 16
 
 ### Median Line Style
 
-**構文:** obj << Median Line Style( pen style )
+**構文:** obj &lt;&lt; Median Line Style( pen style )
 
 ```jsl
 
@@ -2136,19 +2130,19 @@ seg << Set Median Line Style( "Dotted" );
 
 ### Min Value
 
-**構文:** obj << Min Value( state=0|1 )
+**構文:** obj &lt;&lt; Min Value( state=0|1 )
 
 **JMP追加されたバージョン:** 16
 
 ### Name
 
-**構文:** obj << Name( state=0|1 )
+**構文:** obj &lt;&lt; Name( state=0|1 )
 
 **JMP追加されたバージョン:** 16
 
 ### Notched
 
-**構文:** obj << Notched( state=0|1 )
+**構文:** obj &lt;&lt; Notched( state=0|1 )
 
 **JMP追加されたバージョン:** 16
 
@@ -2170,7 +2164,7 @@ seg << Set Notched( 1 );
 
 ### Parent
 
-**構文:** seg2 = obj << Parent
+**構文:** seg2 = obj &lt;&lt; Parent
 
 **説明:** ディスプレイセグメントの親を戻す。
 
@@ -2192,7 +2186,7 @@ seg << Parent;
 
 ### Set Box Style
 
-**構文:** obj << Set Box Style( "通常"|"塗りつぶし"|"線" )
+**構文:** obj &lt;&lt; Set Box Style( "通常"|"塗りつぶし"|"線" )
 
 ```jsl
 
@@ -2212,7 +2206,7 @@ seg << Set Box Style( "Solid" );
 
 ### Set Box Type
 
-**構文:** obj << Set Box Type( "分位点"|"外れ値" )
+**構文:** obj &lt;&lt; Set Box Type( "分位点"|"外れ値" )
 
 ```jsl
 
@@ -2232,7 +2226,7 @@ seg << Set Box Type( "Outlier" );
 
 ### Set Confidence Diamond
 
-**構文:** obj << Set Confidence Diamond( state=0|1 )
+**構文:** obj &lt;&lt; Set Confidence Diamond( state=0|1 )
 
 ```jsl
 
@@ -2252,7 +2246,7 @@ seg << Set Confidence Diamond( 0 );
 
 ### Set Description
 
-**構文:** obj << Set Description( description )
+**構文:** obj &lt;&lt; Set Description( description )
 
 **説明:** ディスプレイセグメントの名前を設定する。
 
@@ -2274,7 +2268,7 @@ seg << set description( "my seg" );
 
 ### Set Error Bar Cap
 
-**構文:** obj << Set Error Bar Cap( "なし"|"極小"|"小"|"中"|"大" )
+**構文:** obj &lt;&lt; Set Error Bar Cap( "なし"|"極小"|"小"|"中"|"大" )
 
 **説明:** 誤差バーの終端に描くキャップの種類を指定する。
 
@@ -2297,7 +2291,7 @@ seg << Set Error Bar Cap( "Large" );
 
 ### Set Error Bar Cap Shape
 
-**構文:** obj << Set Error Bar Cap Shape( begin, end )
+**構文:** obj &lt;&lt; Set Error Bar Cap Shape( begin, end )
 
 **説明:** 誤差バーに表示するキャップの形状を指定する。1つの引数で棒の両端の形状を設定するか、2つの引数で始端と終端を別々に設定する。デフォルトの形状は"Line"。"Arrow"を指定すると、外側を向いた矢印が描かれ、"None"を指定するとキャップが省略される。
 
@@ -2320,7 +2314,7 @@ seg << Set Error Bar Cap Shape( "Line", "Arrow" );
 
 ### Set Fences
 
-**構文:** obj << Set Fences( state=0|1 )
+**構文:** obj &lt;&lt; Set Fences( state=0|1 )
 
 ```jsl
 
@@ -2340,7 +2334,7 @@ seg << Set Fences( 0 );
 
 ### Set Fill
 
-**構文:** obj << Set Fill( state = 0|1 )
+**構文:** obj &lt;&lt; Set Fill( state = 0|1 )
 
 **JMP追加されたバージョン:** 15
 
@@ -2362,7 +2356,7 @@ seg << Set Fill( 0 );
 
 ### Set Fill Color
 
-**構文:** obj << Set Fill Color( color )
+**構文:** obj &lt;&lt; Set Fill Color( color )
 
 ```jsl
 
@@ -2382,7 +2376,7 @@ seg << Set Fill Color( "Green" );
 
 ### Set Fill Pattern
 
-**構文:** obj << Set Fill Pattern
+**構文:** obj &lt;&lt; Set Fill Pattern
 
 ```jsl
 
@@ -2402,9 +2396,7 @@ seg << Set Fill Pattern( "h wave medium" );
 
 ### Set Gradient
 
-**構文:** obj << { <Color Theme(theme)>, <Min Lightness(0-1)>, <Max Lightness(0-1)>, <Contour Levels(num)>, <Reverse Gradient(0|1)>, <Density Gradient("Fade To White"|"Fade To Gray"|"Full Color")>, <Gradient Transparency("None"|"Linear")> }
-
-obj << { <Color Theme(theme)>, <Min Lightness(0-1)>, <Max Lightness(0-1)>, <N Labels(num)>, <Show Missing Color("On"|"Off"|"Auto")>, <Scale Type("Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom")>, <Scale Values([v1, v2, …])>, <Range Type("Default"|"Exact Data Range"|"Middle 90%")>, <Fill("Between"|"Above"|"Below"|"Above Below")>, <Reverse Gradient(0|1)>, <Reverse Labels(0|1)>, <Discrete Color(0|1)> }, <Label Format(labelFormat)>, <Width(num)>, <Horizontal(0|1)>, <Show Labels(0|1)>
+**構文:** obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;Contour Levels(num)&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Density Gradient("Fade To White"|"Fade To Gray"|"Full Color")&gt;, &lt;Gradient Transparency("None"|"Linear")&gt; }obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;N Labels(num)&gt;, &lt;Show Missing Color("On"|"Off"|"Auto")&gt;, &lt;Scale Type("Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom")&gt;, &lt;Scale Values([v1, v2, …])&gt;, &lt;Range Type("Default"|"Exact Data Range"|"Middle 90%")&gt;, &lt;Fill("Between"|"Above"|"Below"|"Above Below")&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Reverse Labels(0|1)&gt;, &lt;Discrete Color(0|1)&gt; }, &lt;Label Format(labelFormat)&gt;, &lt;Width(num)&gt;, &lt;Horizontal(0|1)&gt;, &lt;Show Labels(0|1)&gt;
 
 **説明:** 色のグラデーションを設定する。
 
@@ -2426,7 +2418,7 @@ seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
 
 ### Set Gradient Color Theme
 
-**構文:** obj << Set Gradient Color Theme
+**構文:** obj &lt;&lt; Set Gradient Color Theme
 
 **説明:** グラデーションのカラーテーマを設定する。
 
@@ -2450,7 +2442,7 @@ seg << Set Gradient Color Theme( "Viridis" );
 
 ### Set Gradient Custom Scale
 
-**構文:** obj << Set Gradient Custom Scale
+**構文:** obj &lt;&lt; Set Gradient Custom Scale
 
 **説明:** 指定した値のリストにより、グラデーションにカスタムスケールを設定する。
 
@@ -2474,7 +2466,7 @@ seg << Set Gradient Custom Scale( {0.0, 5.0, 10.0, 20.0} );
 
 ### Set Gradient Discrete Colors
 
-**構文:** obj << Set Gradient Discrete Colors
+**構文:** obj &lt;&lt; Set Gradient Discrete Colors
 
 **説明:** グラデーションの各水準を均一の色にするか、色の境目を滑らかに変化させるかを設定する。
 
@@ -2493,7 +2485,7 @@ seg << Set Gradient Discrete Colors( 1 );
 
 ### Set Gradient Fill
 
-**構文:** obj << Set Gradient Fill( "間"|"上"|"下"|"上下"="上下" )
+**構文:** obj &lt;&lt; Set Gradient Fill( "間"|"上"|"下"|"上下"="上下" )
 
 **説明:** グラデーションのスケールの範囲外にある値について、色付けの方法を設定する。 デフォルトの値は"上下"。
 
@@ -2513,7 +2505,7 @@ seg << Set Gradient Fill( "Between" );
 
 ### Set Gradient Label Count
 
-**構文:** obj << Set Gradient Label Count
+**構文:** obj &lt;&lt; Set Gradient Label Count
 
 **説明:** グラデーションの凡例に表示するラベルの数を設定する。これは、等高線の水準数に1を足した値。
 
@@ -2537,7 +2529,7 @@ seg << Set Gradient Label Count( 8 );
 
 ### Set Gradient Label Levels
 
-**構文:** obj << Set Gradient Label Levels( [value1,value1, ... value N] )
+**構文:** obj &lt;&lt; Set Gradient Label Levels( [value1,value1, ... value N] )
 
 **説明:** グラデーションのスケールに使用する値のセットを設定する。
 
@@ -2556,7 +2548,7 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ### Set Gradient Legend Horizontal
 
-**構文:** obj << Set Gradient Legend Horizontal
+**構文:** obj &lt;&lt; Set Gradient Legend Horizontal
 
 **説明:** グラデーションの凡例を横方向に表示するかどうかを設定する。
 
@@ -2580,7 +2572,7 @@ seg << Set Gradient Legend Horizontal( 1 );
 
 ### Set Gradient Legend Label Format
 
-**構文:** obj << Set Gradient Legend Label Format
+**構文:** obj &lt;&lt; Set Gradient Legend Label Format
 
 **説明:** グラデーションの凡例ラベルの表示形式を設定する。
 
@@ -2604,7 +2596,7 @@ seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
 
 ### Set Gradient Legend Label Width
 
-**構文:** obj << Set Gradient Legend Label Width
+**構文:** obj &lt;&lt; Set Gradient Legend Label Width
 
 **説明:** グラデーションの凡例ラベルの最大長さ(文字数)を設定する。
 
@@ -2628,7 +2620,7 @@ seg << Set Gradient Legend Label Width( 4 );
 
 ### Set Gradient Legend Show Labels
 
-**構文:** obj << Set Gradient Legend Show Labels
+**構文:** obj &lt;&lt; Set Gradient Legend Show Labels
 
 **説明:** グラデーションの凡例に水準ラベルを表示するかどうかを設定する。
 
@@ -2652,7 +2644,7 @@ seg << Set Gradient Legend Show Labels( 0 );
 
 ### Set Gradient Level Count
 
-**構文:** obj << Set Gradient Level Count
+**構文:** obj &lt;&lt; Set Gradient Level Count
 
 **説明:** グラデーションの水準数を設定する。これは、ラベルの数から1を引いた値。
 
@@ -2676,7 +2668,7 @@ seg << Set Gradient Levels( 7 );
 
 ### Set Gradient Lightness Range
 
-**構文:** obj << Set Gradient Lightness Range
+**構文:** obj &lt;&lt; Set Gradient Lightness Range
 
 **説明:** グラデーションの水準の色について、明度の最小値と最大値を設定する。この範囲をカバーするような色が使われる。欠測値は変化なしとして扱われる。
 
@@ -2738,7 +2730,7 @@ seg << Set Gradient Lightness Range( ., 0.75 );
 
 ### Set Gradient Range
 
-**構文:** obj << Set Gradient Range( "デフォルト"|"正確なデータ範囲"|"中央部 90%"="デフォルト" )
+**構文:** obj &lt;&lt; Set Gradient Range( "デフォルト"|"正確なデータ範囲"|"中央部 90%"="デフォルト" )
 
 **説明:** カスタムではないグラデーションのスケールの範囲を設定する。 デフォルトの値は"デフォルト"。
 
@@ -2757,7 +2749,7 @@ seg << Set Gradient Range( "Exact Data Range" );
 
 ### Set Gradient Reverse Color Order
 
-**構文:** obj << Set Gradient Reverse Color Order
+**構文:** obj &lt;&lt; Set Gradient Reverse Color Order
 
 **説明:** グラデーションの色の順序を逆にする。
 
@@ -2781,7 +2773,7 @@ seg << Set Gradient Reverse Color Order( 1 );
 
 ### Set Gradient Reverse Label Order
 
-**構文:** obj << Set Gradient Reverse Label Order
+**構文:** obj &lt;&lt; Set Gradient Reverse Label Order
 
 **説明:** グラデーションのラベルの順序を逆にする。
 
@@ -2805,7 +2797,7 @@ seg << Set Gradient Reverse Label Order( 1 );
 
 ### Set Gradient Scale
 
-**構文:** obj << Set Gradient Scale( "線形"|"分位点"|"標準偏差"|"対数"|"対数オフセット"|"カスタム"="線形" )
+**構文:** obj &lt;&lt; Set Gradient Scale( "線形"|"分位点"|"標準偏差"|"対数"|"対数オフセット"|"カスタム"="線形" )
 
 **説明:** グラデーションのスケールの種類を設定する。 デフォルトの値は"線形"。
 
@@ -2824,7 +2816,7 @@ seg << Set Gradient Scale( "Quantile" );
 
 ### Set Gradient Scale Values
 
-**構文:** obj << Set Gradient Scale Values( [value1,value1, ... value N] )
+**構文:** obj &lt;&lt; Set Gradient Scale Values( [value1,value1, ... value N] )
 
 **説明:** グラデーションのスケールに使用する値のセットを設定する。
 
@@ -2843,7 +2835,7 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ### Set Gradient Show Missing
 
-**構文:** obj << Set Gradient Show Missing( "自動"|"オン"|"オフ"="自動" )
+**構文:** obj &lt;&lt; Set Gradient Show Missing( "自動"|"オン"|"オフ"="自動" )
 
 **説明:** 凡例に欠測値を表示するかどうかを設定する。 デフォルトの値は"自動"。
 
@@ -2865,7 +2857,7 @@ seg << Set Gradient Show Missing( "Off" );
 
 ### Set Interval Draw Directions
 
-**構文:** obj << Set Interval Draw Directions( Both|Upper|Lower|None )
+**構文:** obj &lt;&lt; Set Interval Draw Directions( Both|Upper|Lower|None )
 
 **説明:** 区間を描画する方向を設定する。
 
@@ -2904,7 +2896,7 @@ seg << Set Interval Draw Directions( "Lower" );
 
 ### Set Line Color
 
-**構文:** obj << Set Line Color( color )
+**構文:** obj &lt;&lt; Set Line Color( color )
 
 **説明:** ディスプレイセグメント内のすべての線の色を設定する。
 
@@ -2926,7 +2918,7 @@ seg << Set Line Color( "Green" );
 
 ### Set Line Style
 
-**構文:** obj << Set Line Style( pen style )
+**構文:** obj &lt;&lt; Set Line Style( pen style )
 
 **説明:** 線種を設定する。オプションはSolid(実線)、Dotted(点線)、Dashed(破線)、DashDot(一点鎖線)、DashDotDot(二点鎖線)。
 
@@ -2950,7 +2942,7 @@ seg << Set Line Style( "Dotted" );
 
 ### Set Line Width
 
-**構文:** obj << Set Line Width( "1"|"2"|"3"|"4"|"5"|"6"|"その他..." )
+**構文:** obj &lt;&lt; Set Line Width( "1"|"2"|"3"|"4"|"5"|"6"|"その他..." )
 
 **説明:** 線の幅を設定する。
 
@@ -2974,7 +2966,7 @@ seg << Set Line Width( 3 );
 
 ### Set Marker
 
-**構文:** obj << Set Marker( marker )
+**構文:** obj &lt;&lt; Set Marker( marker )
 
 **説明:** すべてのマーカーの種類を設定する。
 
@@ -2998,7 +2990,7 @@ seg << Set Marker( "Square" );
 
 ### Set Marker Size
 
-**構文:** obj << Set Marker Size( size )
+**構文:** obj &lt;&lt; Set Marker Size( size )
 
 **説明:** マーカーのサイズを設定する。サイズのオプションはDot(ドット)、Small(小)、Medium(中)、Large(大)、XL、XXL、XXXL。
 
@@ -3023,7 +3015,7 @@ seg << Set Marker Size( "XL" );
 
 ### Set Median Line Style
 
-**構文:** obj << Set Median Line Style( pen style )
+**構文:** obj &lt;&lt; Set Median Line Style( pen style )
 
 ```jsl
 
@@ -3043,7 +3035,7 @@ seg << Set Median Line Style( "Dotted" );
 
 ### Set Notched
 
-**構文:** obj << Set Notched( state=0|1 )
+**構文:** obj &lt;&lt; Set Notched( state=0|1 )
 
 **JMP追加されたバージョン:** 16
 
@@ -3065,7 +3057,7 @@ seg << Set Notched( 1 );
 
 ### Set Shortest Half Bracket
 
-**構文:** obj << Set Shortest Half Bracket( state = 0|1 )
+**構文:** obj &lt;&lt; Set Shortest Half Bracket( state = 0|1 )
 
 ```jsl
 
@@ -3085,7 +3077,7 @@ seg << Set Shortest Half Bracket( 0 );
 
 ### Set Shortest Half Color
 
-**構文:** obj << Set Shortest Half Color( color )
+**構文:** obj &lt;&lt; Set Shortest Half Color( color )
 
 ```jsl
 
@@ -3105,7 +3097,7 @@ seg << Set Shortest Half Color( "Green" );
 
 ### Set Transparency
 
-**構文:** obj << Set Transparency( number )
+**構文:** obj &lt;&lt; Set Transparency( number )
 
 ```jsl
 
@@ -3125,7 +3117,7 @@ seg << Set Transparency( .3 );
 
 ### Shortest Half Bracket
 
-**構文:** obj << Shortest Half Bracket( state = 0|1 )
+**構文:** obj &lt;&lt; Shortest Half Bracket( state = 0|1 )
 
 ```jsl
 
@@ -3145,7 +3137,7 @@ seg << Set Shortest Half Bracket( 0 );
 
 ### Shortest Half Color
 
-**構文:** obj << Shortest Half Color( color )
+**構文:** obj &lt;&lt; Shortest Half Color( color )
 
 ```jsl
 
@@ -3165,7 +3157,7 @@ seg << Set Shortest Half Color( "Green" );
 
 ### Sib
 
-**構文:** seg2 = obj << Sib
+**構文:** seg2 = obj &lt;&lt; Sib
 
 **説明:** ディスプレイセグメントの兄弟(同レベルのもの)を戻す。
 
@@ -3187,7 +3179,7 @@ seg << Sib;
 
 ### Sib Append
 
-**構文:** obj << Sib Append( seg2 )
+**構文:** obj &lt;&lt; Sib Append( seg2 )
 
 **説明:** ディスプレイセグメントのすぐ後にディスプレイセグメントを表示する。
 
@@ -3225,7 +3217,7 @@ mapSeg << Sib Append( Line Seg( xval, yval, <<line color( "Green" ), <<line widt
 
 ### Sib Prepend
 
-**構文:** obj << Sib Prepend( seg2 )
+**構文:** obj &lt;&lt; Sib Prepend( seg2 )
 
 **説明:** ディスプレイセグメントのすぐ前にディスプレイセグメントを表示する。
 
@@ -3260,7 +3252,7 @@ seg << Sib Prepend( Line Seg( xval, yval, <<line color( "Green" ), <<line width(
 
 ### Transparency
 
-**構文:** obj << Transparency( number )
+**構文:** obj &lt;&lt; Transparency( number )
 
 ```jsl
 

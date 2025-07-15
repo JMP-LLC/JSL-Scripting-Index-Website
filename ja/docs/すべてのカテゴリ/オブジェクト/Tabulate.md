@@ -6,7 +6,7 @@
 
 ### Action
 
-**構文:** obj << Action
+**構文:** obj &lt;&lt; Action
 
 **説明:** 評価する式を挿入するための、プラットフォーム内の汎用トラップドア。プラットフォームに一時的にディスプレイボックスおよびデータテーブルのコンテキストを設定する。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**構文:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**構文:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **説明:** 作成されたプリセットをオブジェクトに適用する。保存された設定に合わせてオプションとカスタマイズが更新される。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**構文:** obj << Automatic Recalc( state=0|1 )
+**構文:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **説明:** データの除外や変更があった場合に分析を自動的にやり直す。Automatic Recalcオプションがオンになっている場合で、データの除外や変更が再計算の前に確実に適用されるようにするには、Wait(0)コマンドを使用すること。
 
@@ -92,7 +92,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Column Switcher
 
-**構文:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**構文:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **説明:** プラットフォームの変数を変更するための設定パネルを追加する。
 
@@ -110,7 +110,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy Script
 
-**構文:** obj << Copy Script
+**構文:** obj &lt;&lt; Copy Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -130,7 +130,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**構文:** obj << Data Table Window
+**構文:** obj &lt;&lt; Data Table Window
 
 **説明:** この分析に使用したデータテーブルのウィンドウを手前に表示する。
 
@@ -150,7 +150,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**構文:** obj << Get By Levels
+**構文:** obj &lt;&lt; Get By Levels
 
 **説明:** By列が指定されている場合、列名をキー、データ値を値とした連想配列を戻す。
 
@@ -167,7 +167,7 @@ biv << Get By Levels;
 
 ### Get Container
 
-**構文:** obj << Get Container
+**構文:** obj &lt;&lt; Get Container
 
 **説明:** オブジェクトのコンテンツを含んだコンテナボックスの参照を戻す。
 
@@ -219,7 +219,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**構文:** obj << Get Data Table
+**構文:** obj &lt;&lt; Get Data Table
 
 **説明:** データテーブルへの参照を戻す。
 
@@ -240,7 +240,7 @@ Show( N Rows( t ) );
 
 ### Get Script
 
-**構文:** obj << Get Script
+**構文:** obj &lt;&lt; Get Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -261,7 +261,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**構文:** obj << Get Script With Data Table
+**構文:** obj &lt;&lt; Get Script With Data Table
 
 **説明:** この分析を再現するスクリプト(JSL)をデータテーブルへの参照も含めて生成し、それを式として戻す。
 
@@ -282,7 +282,7 @@ Show( t );
 
 ### Get Timing
 
-**構文:** obj << Get Timing
+**構文:** obj &lt;&lt; Get Timing
 
 **説明:** プラットフォームの起動にかかった時間を取得する。
 
@@ -303,7 +303,7 @@ Show( t );
 
 ### Get Web Support
 
-**構文:** obj << Get Web Support
+**構文:** obj &lt;&lt; Get Web Support
 
 **説明:** ディスプレイオブジェクトにおけるインタラクティブHTMLサポートのレベルを数値で戻す。1は、一部または全部の要素がサポートされていることを示し、0は、サポートされないことを示す。
 
@@ -319,7 +319,7 @@ Show( s );
 
 ### Get Where Expr
 
-**構文:** obj << Get Where Expr
+**構文:** obj &lt;&lt; Get Where Expr
 
 **説明:** プラットフォームがBy()またはWhere()を使って起動された場合に、データをサブセットするためのWhere式を戻す。By()やWhere()が使われていない場合はEmpty()を戻す。
 
@@ -356,7 +356,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**構文:** obj << Local Data Filter
+**構文:** obj &lt;&lt; Local Data Filter
 
 **説明:** このプラットフォームに対してのみ有効なフィルタで、データを特定のグループまたは範囲にフィルタリングする。
 
@@ -412,7 +412,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**構文:** obj << Paste Local Data Filter
+**構文:** obj &lt;&lt; Paste Local Data Filter
 
 **説明:** クリップボードにあるローカルデータフィルタを現在のレポートに適用する。
 
@@ -433,7 +433,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**構文:** obj << Redo Analysis
+**構文:** obj &lt;&lt; Redo Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -453,7 +453,7 @@ obj << Redo Analysis;
 
 ### Relaunch Analysis
 
-**構文:** obj << Relaunch Analysis
+**構文:** obj &lt;&lt; Relaunch Analysis
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -473,7 +473,7 @@ obj << Relaunch Analysis;
 
 ### Remove Column Switcher
 
-**構文:** obj << Remove Column Switcher
+**構文:** obj &lt;&lt; Remove Column Switcher
 
 **説明:** プラットフォームに最後に追加された列スイッチャーを削除する。
 
@@ -493,7 +493,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**構文:** obj << Remove Local Data Filter
+**構文:** obj &lt;&lt; Remove Local Data Filter
 
 **説明:** すでに作成されているローカルデータフィルタを削除し、プラットフォームはデータテーブル内のすべてのデータを使用した状態に戻る。
 
@@ -532,9 +532,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**構文:** obj << Report;
-
-Report( obj )
+**構文:** obj &lt;&lt; Report;Report( obj )
 
 **説明:** レポートオブジェクトへの参照を戻す。
 
@@ -556,7 +554,7 @@ Show( t );
 
 ### Report View
 
-**構文:** obj << Report View( "完全"|"要約" )
+**構文:** obj &lt;&lt; Report View( "完全"|"要約" )
 
 **説明:** レポートビューは、プラットフォームレポートの詳細を表示するかどうかを決定する。Fullはすべての詳細を表示し、Summaryはプラットフォームにより限定されたものだけを表示する。 動作をカスタマイズするため、各ディスプレイボックスは<<Set Summary Behaviorメッセージをサポートする。
 
@@ -576,7 +574,7 @@ obj << Report View( "Summary" );
 
 ### Save Script for All Objects
 
-**構文:** obj << Save Script for All Objects
+**構文:** obj &lt;&lt; Save Script for All Objects
 
 **説明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -596,7 +594,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**構文:** obj << Save Script for All Objects To Data Table( <name> )
+**構文:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **説明:** すべてのレポートオブジェクトを再現するスクリプトを現在のデータテーブルに保存する。このオプションは、ウィンドウ内にレポートが複数ある場合に便利。作成されるスクリプトの名前は、引用符で囲んで指定しない限り、1つ目のプラットフォーム名となる。
 
@@ -646,7 +644,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**構文:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** この分析を再現するJSLスクリプトを生成し、データテーブルのテーブルプロパティとして保存する。
 
@@ -666,7 +664,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**構文:** obj << Save Script to Journal
+**構文:** obj &lt;&lt; Save Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -686,7 +684,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**構文:** obj << Save Script to Report
+**構文:** obj &lt;&lt; Save Script to Report
 
 **説明:** この分析を再現するJSLスクリプトを生成し、レポートウィンドウに表示する。分析手順の記録を結果と一緒に残せる。
 
@@ -706,7 +704,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**構文:** obj << Save Script to Script Window
+**構文:** obj &lt;&lt; Save Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -791,7 +789,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**構文:** obj << Sync to Data Table Changes
+**構文:** obj &lt;&lt; Sync to Data Table Changes
 
 **説明:** 除外やデータの変更が行われた場合に同期する。
 
@@ -808,7 +806,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**構文:** obj << Title( "new title" )
+**構文:** obj &lt;&lt; Title( "new title" )
 
 **説明:** プラットフォームのタイトルを設定する。
 
@@ -828,7 +826,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**構文:** obj << Top Report
+**構文:** obj &lt;&lt; Top Report
 
 **説明:** レポート内のルートノードへの参照を戻す。
 
@@ -850,7 +848,7 @@ Show( t );
 
 ### View Web XML
 
-**構文:** obj << View Web XML
+**構文:** obj &lt;&lt; View Web XML
 
 **説明:** インタラクティブHTMLレポートの作成に使うXMLコードを戻す。
 
@@ -888,7 +886,7 @@ obj = dt << Tabulate(
 
 ### Add
 
-**構文:** add (<Column Table | Row Table>(table index), <before first | <before | after>(<analysis column | grouping column | statistic>(<operand name | index>))>, <analysis column | grouping column | statistic>(operand name)),
+**構文:** add (&lt;Column Table | Row Table&gt;(table index), &lt;before first | &lt;before | after&gt;(&lt;analysis column | grouping column | statistic&gt;(&lt;operand name | index&gt;))&gt;, &lt;analysis column | grouping column | statistic&gt;(operand name)),
 
 **説明:** Used with 表の変更 to add columns and statistics to an existing table. Also serves as an alias for 表の追加
 
@@ -939,7 +937,7 @@ obj << modify table( column table( 1 ), Add( Before First, Statistics( Range ) )
 
 ### Add Table
 
-**構文:** Add Table( <Column Table( )>, <Row Table( )> )
+**構文:** Add Table( &lt;Column Table( )&gt;, &lt;Row Table( )&gt; )
 
 **説明:** 既存の表に、新たな表を追加する。既存の表がない場合には、ウィンドウに表を追加する。
 
@@ -1029,7 +1027,7 @@ obj << modifytable( column table( 1 ), analysis columns( :CO ) );
 
 ### Change Item Label
 
-**構文:** obj << Change Item Label( Statistics( stat name, new string ) )
+**構文:** obj &lt;&lt; Change Item Label( Statistics( stat name, new string ) )
 
 **説明:** テキスト入力できる表のラベルを変更する。
 
@@ -1080,7 +1078,7 @@ obj << modify table( row table( 1 ), columns by categories( :Money ) );
 
 ### Delete
 
-**構文:** delete( <analysis columns | grouping columns | statistics>(operand name, operand name, ...))
+**構文:** delete( &lt;analysis columns | grouping columns | statistics&gt;(operand name, operand name, ...))
 
 **説明:** Used with 表の変更 to remove columns and statistics from an existing table.
 
@@ -1105,9 +1103,7 @@ obj << modify table( column table( 1 ), delete( analysis columns( :Assets ) ) );
 
 ### Display Column Width
 
-**構文:** obj << Display Column Width( Data Column( <Column Table(n)>, path ), <width> );
-
-obj << Display Column Width( Row Label( <Row Table(n)>, path ), <width> )
+**構文:** obj &lt;&lt; Display Column Width( Data Column( &lt;Column Table(n)&gt;, path ), &lt;width&gt; );obj &lt;&lt; Display Column Width( Row Label( &lt;Row Table(n)&gt;, path ), &lt;width&gt; )
 
 **説明:** 「表の作成」レポートの表における列の表示幅を設定する、または設定を戻す。Pathは、列のパスを示す一連の引用符付き列見出し。Widthは、列の幅をピクセルで表した値。Data Columnを使ってデータテーブルでの列名を指定するか、Row Labelを使って行ラベル領域での列名を指定する。レポートに複数の表がある場合は、Column Table(n)またはRow Table(n)を使って、どの表にpathが該当するかを指定する。widthを指定しなかった場合、このオプションは指定の列の現在の幅を戻す。
 
@@ -1197,7 +1193,7 @@ obj << Freq( :Count );
 
 ### Full Path Column Name
 
-**構文:** obj << Full Path Column Name( true | false )
+**構文:** obj &lt;&lt; Full Path Column Name( true | false )
 
 **説明:** これを設定した場合、出力テーブルの列名にはグループ化列名が含まれている必要があります。
 
@@ -1280,13 +1276,13 @@ obj << ID( :Division );
 
 ### Ignore duplicate responses
 
-**構文:** obj << Ignore duplicate responses( Grouping Columns( column ), true | false )
+**構文:** obj &lt;&lt; Ignore duplicate responses( Grouping Columns( column ), true | false )
 
 **JMP追加されたバージョン:** 19
 
 ### Ignore duplicates in multiple response columns
 
-**構文:** obj << Ignore duplicates in multiple response columns( state=0|1 )
+**構文:** obj &lt;&lt; Ignore duplicates in multiple response columns( state=0|1 )
 
 **説明:** Ignores duplicate responses in multiple response columns. Each repeated response is treated as a single occurrence.
 
@@ -1294,7 +1290,7 @@ obj << ID( :Division );
 
 ### Include missing for grouping columns
 
-**構文:** obj << Include missing for grouping columns( state=0|1 )
+**構文:** obj &lt;&lt; Include missing for grouping columns( state=0|1 )
 
 **説明:** 現在の表にあるすべてのグループ列に対して、欠測値の度数を含んだ列を追加する。
 
@@ -1311,7 +1307,7 @@ obj = dt << Tabulate(
 
 ### Make Into Data Table
 
-**構文:** obj << Make Into Data Table( <Invisible(bool) | Private(bool)>, <Output Table ( table name)>, <Full Path Column Name(bool)> )
+**構文:** obj &lt;&lt; Make Into Data Table( &lt;Invisible(bool) | Private(bool)&gt;, &lt;Output Table ( table name)&gt;, &lt;Full Path Column Name(bool)&gt; )
 
 **説明:** 「表の作成」で作成した表から、新しいデータテーブルを作成する。
 
@@ -1365,7 +1361,7 @@ obj << Make into Data Table( Full Path Column Name( 1 ) );
 
 ### Max scroll locked columns
 
-**構文:** obj << Max scroll locked columns( number=3 )
+**構文:** obj &lt;&lt; Max scroll locked columns( number=3 )
 
 **説明:** Set the maximum number of columns to be scroll locked. Either all or none of the row header columns will be locked. デフォルトではオン。
 
@@ -1388,11 +1384,11 @@ obj << Make Into Data Table;
 
 ### Missing sum is zero
 
-**構文:** obj << Missing sum is zero( state=0|1 )
+**構文:** obj &lt;&lt; Missing sum is zero( state=0|1 )
 
 ### Modify Table
 
-**構文:** obj << Modify Table( <Column Table | Row Table>(table index), ... )
+**構文:** obj &lt;&lt; Modify Table( &lt;Column Table | Row Table&gt;(table index), ... )
 
 **説明:** Modifies an existing table.
 
@@ -1439,7 +1435,7 @@ obj << modify table( column table( 1 ), delete( analysis columns( :Assets ) ) );
 
 ### Modify Table Option
 
-**構文:** obj << Modify Table Option
+**構文:** obj &lt;&lt; Modify Table Option
 
 **説明:** Used with 表の変更 to modify table options in an existing table.
 
@@ -1483,7 +1479,7 @@ obj << Modify Table(
 
 ### Move
 
-**構文:** move (<Column Table | Row Table>(table index), <analysis column | grouping column | statistic>(<operand name | index>)), <before first | <before | after>(<analysis column | grouping column | statistic>(<operand name | index>)>)
+**構文:** move (&lt;Column Table | Row Table&gt;(table index), &lt;analysis column | grouping column | statistic&gt;(&lt;operand name | index&gt;)), &lt;before first | &lt;before | after&gt;(&lt;analysis column | grouping column | statistic&gt;(&lt;operand name | index&gt;)&gt;)
 
 **説明:** Used with 表の変更 to move columns and statistics in an existing table.
 
@@ -1541,11 +1537,11 @@ obj << modify table(
 
 ### Order By Count
 
-**構文:** obj << Order By Count( Grouping Columns( column ), true | false )
+**構文:** obj &lt;&lt; Order By Count( Grouping Columns( column ), true | false )
 
 ### Order by count of grouping columns
 
-**構文:** obj << Order by count of grouping columns( state=0|1 )
+**構文:** obj &lt;&lt; Order by count of grouping columns( state=0|1 )
 
 **説明:** グループ変数の水準を表内で度数順に並べる。
 
@@ -1560,7 +1556,7 @@ obj << Order by Count of Grouping Columns( 1 );
 
 ### Pack
 
-**構文:** obj << Pack( <Analysis columns | Statistics>(operand name, ...), <Template> )
+**構文:** obj &lt;&lt; Pack( &lt;Analysis columns | Statistics&gt;(operand name, ...), &lt;Template&gt; )
 
 **説明:** テーブルの複数の統計量を1列にまとめる。Templateオプションで、項目の表示形式を指定する。
 
@@ -1633,7 +1629,7 @@ obj << page column( :sex( "F" ) );
 
 ### Plot Scale
 
-**構文:** obj << Plot Scale( min, max )
+**構文:** obj &lt;&lt; Plot Scale( min, max )
 
 **説明:** 棒グラフのスケールを設定する。
 
@@ -1655,7 +1651,7 @@ obj << Plot Scale( 0, 25 );
 
 ### Remove Column Label
 
-**構文:** obj << Remove Column Label( Grouping Columns( column ) )
+**構文:** obj &lt;&lt; Remove Column Label( Grouping Columns( column ) )
 
 **説明:** 表において指定の列のラベルを削除する。
 
@@ -1676,7 +1672,7 @@ obj << Remove Column Label( Grouping Columns( :Region ) );
 
 ### Restore Column Label
 
-**構文:** obj << Restore Column Label( Grouping Columns( column ) )
+**構文:** obj &lt;&lt; Restore Column Label( Grouping Columns( column ) )
 
 **説明:** 表において、一度削除した指定の列のラベルを復元する。
 
@@ -1698,7 +1694,7 @@ obj << Restore Column Label( Grouping Columns( :Region ) );
 
 ### Retype
 
-**構文:** Retype( <Analysis Columns | Grouping Columns>( operand name, ... ), <Analysis Column | Gropuing Column> )
+**構文:** Retype( &lt;Analysis Columns | Grouping Columns&gt;( operand name, ... ), &lt;Analysis Column | Gropuing Column&gt; )
 
 **説明:** Used with 表の変更 to convert between analysis columns and grouping columns in an existing table.
 
@@ -1721,7 +1717,7 @@ obj << Modify Table( Column Table( 1 ), Retype( Grouping Column( :age ) ), Analy
 
 ### Save grouping as tags in data table export
 
-**構文:** obj << Save grouping as tags in data table export( state=0|1 )
+**構文:** obj &lt;&lt; Save grouping as tags in data table export( state=0|1 )
 
 **説明:** Sets if the grouping levels should be included in the data table as column tags. デフォルトではオン。
 
@@ -1744,7 +1740,7 @@ obj << Make Into Data Table;
 
 ### Scroll lock row headers in data table export
 
-**構文:** obj << Scroll lock row headers in data table export( state=0|1 )
+**構文:** obj &lt;&lt; Scroll lock row headers in data table export( state=0|1 )
 
 **説明:** Sets if the columns containing the row headers should be scroll locked. デフォルトではオン。
 
@@ -1826,7 +1822,7 @@ Tabulate(
 
 ### Show Chart
 
-**構文:** obj << Show Chart( state=0|1 )
+**構文:** obj &lt;&lt; Show Chart( state=0|1 )
 
 **説明:** 作成された表において、棒グラフの表示/非表示を切り替える。
 
@@ -1846,11 +1842,11 @@ obj << Show Chart( 1 );
 
 ### Show Control
 
-**構文:** obj << Show Control( state=0|1 )
+**構文:** obj &lt;&lt; Show Control( state=0|1 )
 
 ### Show Control Panel
 
-**構文:** obj << Show Control Panel( state=0|1 )
+**構文:** obj &lt;&lt; Show Control Panel( state=0|1 )
 
 **説明:** 表の作成に用いる設定パネルの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1870,7 +1866,7 @@ obj << Show Control Panel( 1 );
 
 ### Show Shading
 
-**構文:** obj << Show Shading( state=0|1 )
+**構文:** obj &lt;&lt; Show Shading( state=0|1 )
 
 **説明:** 作成された表において、陰影付きと陰影なしで交互に行を表示する機能のオン/オフを切り替える。 デフォルトではオン。
 
@@ -1890,7 +1886,7 @@ obj << Show Shading( 1 );
 
 ### Show Table
 
-**構文:** obj << Show Table( state=0|1 )
+**構文:** obj &lt;&lt; Show Table( state=0|1 )
 
 **説明:** 作成された表の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1910,7 +1906,7 @@ obj << Show Table( 1 );
 
 ### Show Test Build Panel
 
-**構文:** obj << Show Test Build Panel( state=0|1 )
+**構文:** obj &lt;&lt; Show Test Build Panel( state=0|1 )
 
 **説明:** テスト集計の標本抽出を制御するパネルの表示/非表示を切り替える。
 
@@ -1930,7 +1926,7 @@ obj << Show Test Build Panel( 1 );
 
 ### Show Tooltip
 
-**構文:** obj << Show Tooltip( state=0|1 )
+**構文:** obj &lt;&lt; Show Tooltip( state=0|1 )
 
 **説明:** 表の作成において、ドロップゾーンやメニューの上にマウスポインタを置いたときにツールヒントを表示する機能のオン/オフを切り替える。
 
@@ -1998,7 +1994,7 @@ obj = dt << Tabulate(
 
 ### Test Build
 
-**構文:** obj << Test Build( Sample Size( number ) )
+**構文:** obj &lt;&lt; Test Build( Sample Size( number ) )
 
 **説明:** データサイズがnumberであるテスト集計の標本を使用したテーブルを表示する。
 
@@ -2018,7 +2014,7 @@ obj << Test Build( Sample Size( 100 ) );
 
 ### Test Data View
 
-**構文:** obj << Test Data View
+**構文:** obj &lt;&lt; Test Data View
 
 **説明:** テスト集計で使用した標本のデータテーブルを表示する。
 
@@ -2039,7 +2035,7 @@ obj << Test Data View;
 
 ### Undo
 
-**構文:** obj << Undo
+**構文:** obj &lt;&lt; Undo
 
 **説明:** 現在の表に対して行われた最後の操作を取り消す。
 
@@ -2061,7 +2057,7 @@ obj << undo;
 
 ### Uniform plot scale
 
-**構文:** obj << Uniform plot scale( state=0|1 )
+**構文:** obj &lt;&lt; Uniform plot scale( state=0|1 )
 
 **説明:** すべてのサブカテゴリに対して、棒グラフのスケールを同じにする。 デフォルトではオン。
 
@@ -2083,7 +2079,7 @@ obj << Uniform Plot Scale( 1 );
 
 ### Unpack
 
-**構文:** obj << Unpack( <Analysis columns | Statistics>(operand name, ...) )
+**構文:** obj &lt;&lt; Unpack( &lt;Analysis columns | Statistics&gt;(operand name, ...) )
 
 **説明:** Unpacks a packed set of columns.
 

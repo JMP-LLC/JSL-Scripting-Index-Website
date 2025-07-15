@@ -6,7 +6,7 @@
 
 ### Tree Node
 
-**構文:** node = Tree Node( <label> )
+**構文:** node = Tree Node( &lt;label&gt; )
 
 **説明:** ツリーボックスに表示するためのノードを作成する。
 
@@ -43,7 +43,7 @@ tree << Expand( root3 );
 
 ### Append
 
-**構文:** obj << Append
+**構文:** obj &lt;&lt; Append
 
 **説明:** このノードの子の後ろにツリーノードを追加する。
 
@@ -81,7 +81,7 @@ root1 << Append( c7 );
 
 ### First Child
 
-**構文:** node = obj << First Child
+**構文:** node = obj &lt;&lt; First Child
 
 **説明:** 最初の子ノードを戻す。ノードに子がない場合はEmpty()を戻す。
 
@@ -118,7 +118,7 @@ Print( (root1 << Firs tChild) << GetLabel );
 
 ### Get Child
 
-**構文:** obj << Get Child( index )
+**構文:** obj &lt;&lt; Get Child( index )
 
 **説明:** 指定された番号の子ノードを取得する。
 
@@ -155,7 +155,7 @@ Print( (root2 << Get Child( 2 )) << Get Label );
 
 ### Get Child Count
 
-**構文:** obj << Get Child Count
+**構文:** obj &lt;&lt; Get Child Count
 
 **説明:** 子ノードの数を取得する。
 
@@ -192,7 +192,7 @@ root2 << Get Child Count;
 
 ### Get Data
 
-**構文:** data = obj << Get Data
+**構文:** data = obj &lt;&lt; Get Data
 
 **説明:** このノードに関連付けられたユーザデータを取得する。Seｔ Dataで設定された値またはオブジェクトを取得する。 詳細はSet Dataを参照。
 
@@ -240,7 +240,7 @@ tree << SetNodeSelectScript(
 
 ### Get Dimmed
 
-**構文:** dimmed = obj << Get Dimmed
+**構文:** dimmed = obj &lt;&lt; Get Dimmed
 
 **説明:** ノードのテキストが淡色表示になっているかどうかの設定を取得する。
 
@@ -279,7 +279,7 @@ root3 << Get Dimmed;
 
 ### Get Expanded Icon
 
-**構文:** obj << Get Expanded Icon
+**構文:** obj &lt;&lt; Get Expanded Icon
 
 **説明:** ツリーノードが展開したときのアイコンを取得する。アイコンが指定されていない場合は、Empty()が戻される。
 
@@ -318,7 +318,7 @@ root1 << Get Expanded Icon;
 
 ### Get Font Style
 
-**構文:** style = obj << Get Font Style
+**構文:** style = obj &lt;&lt; Get Font Style
 
 **説明:** ノードのフォントスタイルを取得する。
 
@@ -357,7 +357,7 @@ root3 << Get Font Style;
 
 ### Get Icon
 
-**構文:** obj << Get Icon
+**構文:** obj &lt;&lt; Get Icon
 
 **説明:** ツリーノードのアイコンを取得する。アイコンが指定されていない場合は、Empty()が戻される。
 
@@ -395,7 +395,7 @@ root1 << Get Icon;
 
 ### Get Label
 
-**構文:** label = obj << Get Label
+**構文:** label = obj &lt;&lt; Get Label
 
 **説明:** このノードに表示されるラベルのテキストを取得する。
 
@@ -432,7 +432,7 @@ root3 << Get Label;
 
 ### Get Tip
 
-**構文:** tip = obj << Get Tip
+**構文:** tip = obj &lt;&lt; Get Tip
 
 **説明:** このノードに表示されるツールヒントのテキストを取得する。
 
@@ -471,7 +471,7 @@ c6 << Get Tip;
 
 ### Index Of
 
-**構文:** index = obj << Index Of( node )
+**構文:** index = obj &lt;&lt; Index Of( node )
 
 **説明:** 指定された子ノードの番号を取得する。見つからない場合は0を戻す。
 
@@ -508,7 +508,7 @@ root2 << Index Of( root3 );
 
 ### Insert
 
-**構文:** obj << Insert( node, index )
+**構文:** obj &lt;&lt; Insert( node, index )
 
 **説明:** 指定された番号にノードを挿入する。
 
@@ -546,7 +546,7 @@ root3 << Insert( c7, 2 );
 
 ### Is Leaf
 
-**構文:** isLeaf = obj << Is Leaf
+**構文:** isLeaf = obj &lt;&lt; Is Leaf
 
 **説明:** このノードがツリー内の葉ノードか否かを取得する。
 
@@ -583,7 +583,7 @@ root3 << Is Leaf;
 
 ### Last Child
 
-**構文:** node = obj << Last Child
+**構文:** node = obj &lt;&lt; Last Child
 
 **説明:** 最後の子ノードを戻す。ノードに子がない場合はEmpty()を戻す。
 
@@ -620,7 +620,7 @@ Print( (root1 << Last Child) << GetLabel );
 
 ### Parent
 
-**構文:** node = obj << Parent
+**構文:** node = obj &lt;&lt; Parent
 
 **説明:** このノードの親ノードを戻す。親ノードがない場合はEmpty()を戻す。
 
@@ -657,7 +657,7 @@ Print( (c4 << Parent) << GetLabel );
 
 ### Prepend
 
-**構文:** obj << Prepend( node )
+**構文:** obj &lt;&lt; Prepend( node )
 
 **説明:** このノードの子の前にツリーノードを追加する。
 
@@ -695,7 +695,7 @@ root1 << Prepend( c7 );
 
 ### Prev Sib
 
-**構文:** node = obj << Prev Sib
+**構文:** node = obj &lt;&lt; Prev Sib
 
 **説明:** このノードの親の子のうち、前の兄弟を戻す。このノードが最初の子である場合はEmpty()を戻す。
 
@@ -732,7 +732,7 @@ Print( (c4 << Prev Sib) << Get Label );
 
 ### Remove
 
-**構文:** obj << Remove
+**構文:** obj &lt;&lt; Remove
 
 **説明:** ツリーからこのノードとすべての子を削除する。
 
@@ -770,7 +770,7 @@ root3 << Remove;
 
 ### Remove All Children
 
-**構文:** obj << Remove All Children
+**構文:** obj &lt;&lt; Remove All Children
 
 **説明:** 子ノードをすべて削除する。
 
@@ -808,7 +808,7 @@ root2 << Remove All Children;
 
 ### Remove Child
 
-**構文:** obj << Remove Child( node )
+**構文:** obj &lt;&lt; Remove Child( node )
 
 **説明:** 指定した子ノードを削除する。
 
@@ -846,7 +846,7 @@ root3 << Remove Child( c6 );
 
 ### Set Data
 
-**構文:** obj << Set Data( data )
+**構文:** obj &lt;&lt; Set Data( data )
 
 **説明:** このノードのユーザデータを設定する。
 
@@ -894,7 +894,7 @@ tree << SetNodeSelectScript(
 
 ### Set Dimmed
 
-**構文:** obj << Set Dimmed( state=0|1 )
+**構文:** obj &lt;&lt; Set Dimmed( state=0|1 )
 
 **説明:** ノードのテキストを淡色表示にする。
 
@@ -934,7 +934,7 @@ c6 << Set Dimmed( 1 );
 
 ### Set Expanded Icon
 
-**構文:** obj << Set Expanded Icon( icon | path, <boolean> )
+**構文:** obj &lt;&lt; Set Expanded Icon( icon | path, &lt;boolean&gt; )
 
 **説明:** ノードを拡張するときに使うアイコン名を設定する。オプションのパラメータで、パスで示されたファイルの種類に関連付けられたアイコンを使用するかどうかを指定する(Windowsのみ)。
 
@@ -974,7 +974,7 @@ root2 << Set Expanded Icon( "$SAMPLE_IMAGES/pi.gif", true );
 
 ### Set Font Style
 
-**構文:** obj << Set Font Style( "Plain" | "Bold" )
+**構文:** obj &lt;&lt; Set Font Style( "Plain" | "Bold" )
 
 **説明:** このノードのフォントスタイルを設定する。
 
@@ -1014,7 +1014,7 @@ c6 << Set Font Style( "Bold" );
 
 ### Set Icon
 
-**構文:** obj << Set Icon( icon | path, <boolean> )
+**構文:** obj &lt;&lt; Set Icon( icon | path, &lt;boolean&gt; )
 
 **説明:** ノードのアイコンを設定する。オプションのパラメータで、パスで示されたファイルの種類に関連付けられたアイコンを使用するかどうかを指定する(Windowsのみ)。
 
@@ -1053,7 +1053,7 @@ root3 << Set Icon( "$SAMPLE_IMAGES/pi.gif", true );
 
 ### Set Label
 
-**構文:** obj << Set Label( label )
+**構文:** obj &lt;&lt; Set Label( label )
 
 **説明:** このノードに表示されるラベルのテキストを設定する。
 
@@ -1091,7 +1091,7 @@ c6 << Set Label( "Last Child" );
 
 ### Set Tip
 
-**構文:** obj << Set Tip( tip )
+**構文:** obj &lt;&lt; Set Tip( tip )
 
 **説明:** このノードに表示されるツールヒントのテキストを設定する。
 
@@ -1129,7 +1129,7 @@ c6 << Set Tip( "This is the tool tip for the last child" );
 
 ### Sib
 
-**構文:** node = obj << Sib
+**構文:** node = obj &lt;&lt; Sib
 
 **説明:** このノードの親の子のうち、次の兄弟を戻す。このノードが最後の子である場合はEmpty()を戻す。
 
@@ -1166,7 +1166,7 @@ Print( (c4 << Sib) << Get Label );
 
 ### Top Parent
 
-**構文:** node = obj << Top Parent
+**構文:** node = obj &lt;&lt; Top Parent
 
 **説明:** このノードを含むツリーのルートを戻す。親ノードがない場合はEmpty()を戻す。
 

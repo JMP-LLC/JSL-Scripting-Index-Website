@@ -2,11 +2,9 @@
 
 
 
-## 函数
-
 ### Constrained Maximize
 
-**语法:** Constrained Maximize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, <<LessThanEQ({mat_A, vec_b}), <<GreaterThanEQ({mat_A, vec_b}), <<EqualTo({mat_A, vec_b}), <<MaxIter( 250 ), <<tolerance( .00001 ), <<ShowDetails(True), <<StartingValues([x1, x2, ... ])), <<SetVariableLimit({lowerLimitVector,upperLimitVector})
+**语法:** Constrained Maximize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;LessThanEQ({mat_A, vec_b}), &lt;&lt;GreaterThanEQ({mat_A, vec_b}), &lt;&lt;EqualTo({mat_A, vec_b}), &lt;&lt;MaxIter( 250 ), &lt;&lt;tolerance( .00001 ), &lt;&lt;ShowDetails(True), &lt;&lt;StartingValues([x1, x2, ... ])), &lt;&lt;SetVariableLimit({lowerLimitVector,upperLimitVector})
 
 **说明:** 在列表 {x1, x2, ...} 中查找将带有可选线性约束的 expr 表达式最大化的函数参数的值。变量 x1、x2 等可以是标量或向量。必须在变量名称之后的括号中或使用可选参数 <<SetVariableLimits() 指定每个变量的下限和上限。Constrained Maximize 函数的可选参数支持您进行以下指定: 线性约束、最大迭代次数、所需容差、输出详细信息、起始值和优化变量的限值。（请参见示例 2。）线性约束使用 mat_A 系数矩阵和 vec_b 右侧向量指定。
 
@@ -61,7 +59,7 @@ Show( x, objVal, iters, gradient, hessian );
 
 ### Constrained Minimize
 
-**语法:** Constrained Minimize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, <<LessThanEQ({mat_A, vec_b}), <<GreaterThanEQ({mat_A, vec_b}), <<EqualTo({mat_A, vec_b}), <<MaxIter( 250 ), <<tolerance( .00001 ), <<ShowDetails(True), <<StartingValues([x1, x2, ... ])), <<SetVariableLimit({low,high})
+**语法:** Constrained Minimize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;LessThanEQ({mat_A, vec_b}), &lt;&lt;GreaterThanEQ({mat_A, vec_b}), &lt;&lt;EqualTo({mat_A, vec_b}), &lt;&lt;MaxIter( 250 ), &lt;&lt;tolerance( .00001 ), &lt;&lt;ShowDetails(True), &lt;&lt;StartingValues([x1, x2, ... ])), &lt;&lt;SetVariableLimit({low,high})
 
 **说明:** 在列表 {x1, x2, ...} 中查找将带有可选线性约束的 expr 表达式最小化的函数参数的值。变量 x1、x2 等可以是标量或向量。必须在变量名称之后的括号中或使用可选参数 <<SetVariableLimits() 指定每个变量的下限和上限。Constrained Minimize 函数的可选参数支持您进行以下指定: 线性约束、最大迭代次数、所需容差、输出详细信息、起始值和优化变量的限值。（请参见示例 2。）线性约束使用 mat_A 系数矩阵和 vec_b 右侧向量指定。
 
@@ -141,7 +139,7 @@ New Window( "Desirability",
 
 ### LPSolve
 
-**语法:** {x, z} = LPSolve( A, b, c, L, U, neq, nle, nge, <slackVars=0> )
+**语法:** {x, z} = LPSolve( A, b, c, L, U, neq, nle, nge, &lt;slackVars=0&gt; )
 
 **说明:** 最小化受限于给定约束的目标函数并返回两个项组成的列表。第一个列表项 x 包含决策变量（若 slackVars=1，还包含松弛变量）。第二个列表项 z 包含最优目标函数值（若存在）。前五个参数都是矩阵。A 参数是约束系数矩阵。b 参数是约束的右侧值列。c 参数是目标函数的成本系数向量。L 和 U 参数分别为变量的下限和上限。neq、nle 和 nge 参数分别是等式约束个数、小于等于约束的个数以及大于等于约束的个数。注意: 列出约束时必须先列出等式约束，然后列出小于等于约束，最后列出大于等于约束。
 
@@ -162,9 +160,7 @@ Show( x, z );
 
 ### Maximize
 
-**语法:** Maximize( expr, {x1, x2, ...} );
-
-Maximize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, <<MaxIter( 250 ), <<Tolerance( .00000001 ), <<details(both | returnDetails | displaySteps), <<gradient(), <<hessian(), method(NR | SR1), <<useNumericDeriv(True))
+**语法:** Maximize( expr, {x1, x2, ...} );Maximize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;MaxIter( 250 ), &lt;&lt;Tolerance( .00000001 ), &lt;&lt;details(both | returnDetails | displaySteps), &lt;&lt;gradient(), &lt;&lt;hessian(), method(NR | SR1), &lt;&lt;useNumericDeriv(True))
 
 **说明:** 在列表 {x1, x2, ...} 中查找可最大化 expr 表达式的函数参数的值。您可以为每个参数指定上限和下限，将限值用括号引起放在参数名后。若 expr 不是凹函数，则 Maximize 可能找到一个局部最大值而非全局最大值。若这是个问题，尝试使用多个起始值。另外，Maximize 对于具有连续二阶导数的函数效果最佳。Maximize 函数的其他参数允许您设置最大迭代数、收敛的容差，并查看有关优化的更多详细信息。点击“主题帮助”按钮获取有关可选参数的更多信息。
 
@@ -225,9 +221,7 @@ y = 0;
 
 ### Minimize
 
-**语法:** Minimize( expr, {x1, x2, ...} );
-
-Minimize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, <<MaxIter( 250 ), <<Tolerance( .00000001 ), <<details(both | returnDetails | displaySteps), <<gradient(), <<Hessian(), <<method(NR | SR1), <<useNumericDeriv(True))
+**语法:** Minimize( expr, {x1, x2, ...} );Minimize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;MaxIter( 250 ), &lt;&lt;Tolerance( .00000001 ), &lt;&lt;details(both | returnDetails | displaySteps), &lt;&lt;gradient(), &lt;&lt;Hessian(), &lt;&lt;method(NR | SR1), &lt;&lt;useNumericDeriv(True))
 
 **说明:** 在列表 {x1, x2, ...} 中查找可最小化 expr 表达式的函数参数的值。您可以为每个参数指定上限和下限，将限值用括号引起放在参数名后。若 expr 不是凸函数，则 Minimize 可能找到一个局部最小值而非全局最小值。若这是个问题，尝试使用多个起始值。另外，Minimize 对于具有连续二阶导数的函数效果最佳。Minimize 函数的其他参数允许您设置最大迭代数、收敛的容差，并查看有关优化的更多详细信息。点击“主题帮助”按钮获取有关可选参数的更多信息。
 

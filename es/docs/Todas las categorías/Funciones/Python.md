@@ -2,8 +2,6 @@
 
 
 
-## Funciones
-
 ### Python Connect
 
 **Sintaxis:** PythonConnection = Python Connect ()
@@ -51,7 +49,7 @@ conn << Create JPIP CMD();
 
 ### Python Execute
 
-**Sintaxis:** Python Execute( { list of Inputs }, { list of Outputs }, statements < , echo( 1 | 0 ) > )
+**Sintaxis:** Python Execute( { list of Inputs }, { list of Outputs }, statements &lt; , echo( 1 | 0 ) &gt; )
 
 **Descripción:** Envía una lista de entradas, ejecuta sentencias y devuelve una lista de salidas. El parámetro opcional echo() es True de forma predeterminada. El parámetro echo controla el eco de la fuente Python en el registro. El valor lógico verdadero (1) activa el eco de la fuente mientras que 0 suprime el eco en el registro.
 
@@ -322,7 +320,7 @@ Python Submit( "print(pi)" );
 
 ### Python Send
 
-**Sintaxis:** Python Send( name, <Python Name( name ) | "as_name" > )
+**Sintaxis:** Python Send( name, &lt;Python Name( name ) | "as_name" &gt; )
 
 **Descripción:** Sends data to Python, where the name argument can represent any of the following JMP data types ( numeric | string | matrix | list | data table | data table column | date ).
 
@@ -369,7 +367,7 @@ Python Submit( "print(dt)" );
 
 ### Python Send File
 
-**Sintaxis:** Python Send File( filename, <Python Name( name )> )
+**Sintaxis:** Python Send File( filename, &lt;Python Name( name )&gt; )
 
 **Descripción:** Envía un archivo de datos a Python. El argumento filename es una cadena de caracteres que especifica el nombre de la ruta del archivo que se debe enviar a Python.
 
@@ -388,7 +386,7 @@ Python Submit( "print(Baseball)" );
 
 ### Python Submit
 
-**Sintaxis:** Python Submit( statements < , echo( 1 | 0 ) > )
+**Sintaxis:** Python Submit( statements &lt; , echo( 1 | 0 ) &gt; )
 
 **Descripción:** Envía instrucciones a Python. Las instrucciones pueden adoptar la forma de un valor de cadena de caracteres o de una lista de valores de cadena de caracteres. El parámetro opcional echo() es 1 de forma predeterminada. El parámetro echo controla el eco de la fuente Python en el registro. El valor lógico verdadero (1) activa el eco de la fuente mientras que 0 suprime el eco en el registro.
 

@@ -6,7 +6,7 @@
 
 ### Block Periodic Writes
 
-**구문:** _jmp_telemetry_ << Block Periodic Writes( expr )
+**구문:** _jmp_telemetry_ &lt;&lt; Block Periodic Writes( expr )
 
 **설명:** Blocks periodic writes while evaluating the given expression. Telemetry is still accumulated, it just won&apos;t be written immediately.
 
@@ -14,7 +14,7 @@
 
 ### Bulk Add
 
-**구문:** _jmp_telemetry_ << Bulk Add( n, < Add Attributes(0|1) > )
+**구문:** _jmp_telemetry_ &lt;&lt; Bulk Add( n, &lt; Add Attributes(0|1) &gt; )
 
 **설명:** Adds n telemetry test items. Optionally adds attributes to the items.
 
@@ -22,7 +22,7 @@
 
 ### Clear
 
-**구문:** _jmp_telemetry_ << Clear
+**구문:** _jmp_telemetry_ &lt;&lt; Clear
 
 **설명:** Discards accumulated telemetry without sending.
 
@@ -30,7 +30,7 @@
 
 ### Create JMP Employee File
 
-**구문:** _jmp_telemetry_ << Create JMP Employee File( email )
+**구문:** _jmp_telemetry_ &lt;&lt; Create JMP Employee File( email )
 
 **설명:** Creates (or replaces) the jmp_employee_email.txt file that JMP uses to identify telemetry items as coming from JMP employees.
 
@@ -38,7 +38,7 @@
 
 ### Delete JMP Employee File
 
-**구문:** _jmp_telemetry_ << Delete JMP Employee File
+**구문:** _jmp_telemetry_ &lt;&lt; Delete JMP Employee File
 
 **설명:** Deletes the jmp_employee_email.txt file that JMP uses to identify telemetry items as coming from JMP employees.
 
@@ -46,7 +46,7 @@
 
 ### Get
 
-**구문:** _jmp_telemetry_ << Get
+**구문:** _jmp_telemetry_ &lt;&lt; Get
 
 **설명:** Returns accumulated telemetry as a list of associative arrays. This does not count as sending telemetry, so the telemetry items are retained.
 
@@ -54,7 +54,7 @@
 
 ### Get Aggregation ID
 
-**구문:** _jmp_telemetry_ << Get Aggregation ID
+**구문:** _jmp_telemetry_ &lt;&lt; Get Aggregation ID
 
 **설명:** Get the current user&apos;s aggregation id. Returns the empty string if telemetry recording is off.
 
@@ -62,7 +62,7 @@
 
 ### Get Enabled State
 
-**구문:** _jmp_telemetry_ << Get Enabled State
+**구문:** _jmp_telemetry_ &lt;&lt; Get Enabled State
 
 **설명:** Get the current enabled state: "Dormant", "Disabled", or "Enabled".
 
@@ -70,7 +70,7 @@
 
 ### Get Send Mode
 
-**구문:** _jmp_telemetry_ << Get Send Mode
+**구문:** _jmp_telemetry_ &lt;&lt; Get Send Mode
 
 **설명:** Returns the current send mode, as a string. Possible results include: "To Server", "To Directory", "To File", "To Null". For dev builds, the default is To Directory.
 
@@ -78,7 +78,7 @@
 
 ### Get Send Path
 
-**구문:** _jmp_telemetry_ << Get Send Path
+**구문:** _jmp_telemetry_ &lt;&lt; Get Send Path
 
 **설명:** If the current send mode is "To Directory" or "To File", returns the current send path. Otherwise returns the empty string.
 
@@ -86,7 +86,7 @@
 
 ### Get Session ID
 
-**구문:** _jmp_telemetry_ << Get Session ID
+**구문:** _jmp_telemetry_ &lt;&lt; Get Session ID
 
 **설명:** Get the current session id. Returns the empty string if telemetry recording is off.
 
@@ -94,7 +94,7 @@
 
 ### Is Echo To Log
 
-**구문:** _jmp_telemetry_ << Is Echo To Log
+**구문:** _jmp_telemetry_ &lt;&lt; Is Echo To Log
 
 **설명:** Get whether or not we&apos;re currently echoing items to the log.
 
@@ -102,7 +102,7 @@
 
 ### Is On
 
-**구문:** _jmp_telemetry_ << Is On
+**구문:** _jmp_telemetry_ &lt;&lt; Is On
 
 **설명:** Is telemetry recording on.
 
@@ -110,7 +110,7 @@
 
 ### Send
 
-**구문:** _jmp_telemetry_ << Send
+**구문:** _jmp_telemetry_ &lt;&lt; Send
 
 **설명:** Sends accumulated telemetry.
 
@@ -118,7 +118,7 @@
 
 ### Set Dormant
 
-**구문:** _jmp_telemetry_ << Set Dormant( 1|0 )
+**구문:** _jmp_telemetry_ &lt;&lt; Set Dormant( 1|0 )
 
 **설명:** Set or clear the dormant flag. Has no effect if built without TELEMETRY_HAS_DORMANT_STATE preprocessor flag set.
 
@@ -126,7 +126,7 @@
 
 ### Set Echo To Log
 
-**구문:** _jmp_telemetry_ << Set Echo To Log( 1|0 )
+**구문:** _jmp_telemetry_ &lt;&lt; Set Echo To Log( 1|0 )
 
 **설명:** Enables whether or not to echo telemetry output to the log.
 
@@ -134,7 +134,7 @@
 
 ### Set Send Mode
 
-**구문:** _jmp_telemetry_ << Set Send Mode( To File | To Directory | To Server | To Null, < Default | "path" > )
+**구문:** _jmp_telemetry_ &lt;&lt; Set Send Mode( To File | To Directory | To Server | To Null, &lt; Default | "path" &gt; )
 
 **설명:** Set the telemetry send mode. By default in dev builds telemetry is written to a directory. Include a path to change the path when setting the To File or To Directory send mode. Pass Default to reset the path to the default.
 
@@ -142,7 +142,7 @@
 
 ### Suppress
 
-**구문:** _jmp_telemetry_ << Suppress( expr )
+**구문:** _jmp_telemetry_ &lt;&lt; Suppress( expr )
 
 **설명:** Suppress collecting telemetry while evaluating the expression. This has no effect on telemetry accumulated before or after.
 

@@ -2,8 +2,6 @@
 
 
 
-## Funzioni
-
 ### Beta Binomial Distribution
 
 **Sintassi:** cumprob = Beta Binomial Distribution( k, p, n, delta )
@@ -382,7 +380,7 @@ New Window( "Example: Gamma Poisson Quantile",
 
 ### Hypergeometric Distribution
 
-**Sintassi:** cumprob = Hypergeometric Distribution( N, K, n, x, <r> )
+**Sintassi:** cumprob = Hypergeometric Distribution( N, K, n, x, &lt;r&gt; )
 
 **Descrizione:** Restituisce la probabilità che una variabile casuale con distribuzione ipergeometrica sia minore o uguale a x. N è la dimensione della popolazione, K è il numero di elementi nella categoria osservata, n è la dimensione campionaria, x è il conteggio della frequenza nella categoria osservata, r è l&apos;odds ratio facoltativo.
 
@@ -421,7 +419,7 @@ New Window( "Example: Hypergeometric Distribution",
 
 ### Hypergeometric Probability
 
-**Sintassi:** prob = Hypergeometric Probability( N, K, n, x, <r> )
+**Sintassi:** prob = Hypergeometric Probability( N, K, n, x, &lt;r&gt; )
 
 **Descrizione:** Restituisce la probabilità che una variabile casuale con distribuzione ipergeometrica sia uguale a x. N è la dimensione della popolazione, K è il numero di elementi nella categoria osservata, n è la dimensione campionaria, x è il conteggio della frequenza nella categoria osservata, r è l&apos;odds ratio facoltativo.
 

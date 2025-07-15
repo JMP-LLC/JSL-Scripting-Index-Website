@@ -6,7 +6,7 @@
 
 ### Action
 
-**语法:** obj << Action
+**语法:** obj &lt;&lt; Action
 
 **说明:** 平台内用于插入表达式以求值的所有用途的陷门。暂时将 DisplayBox 和 DataTable 上下文设置为平台。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**语法:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**语法:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **说明:** 将以前创建的预设应用到对象，从而更新选项和定制以匹配保存的设置。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**语法:** obj << Automatic Recalc( state=0|1 )
+**语法:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **说明:** 对排除和数据更改自动重新执行分析。若启用了“自动重新计算”选项，则应考虑使用 Wait(0) 命令来确保排除和数据更改在重新计算前生效。
 
@@ -92,7 +92,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**语法:** obj << Broadcast(message)
+**语法:** obj &lt;&lt; Broadcast(message)
 
 **说明:** 将消息广播到平台。若各个对象的返回结果是表，则它们会尽可能拼接，并且最终格式与表框中“保存合并表”选项的结果或使用“源”列的“拼接”选项的结果相同。除此之外，结果存储在列表中并返回。
 
@@ -112,7 +112,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**语法:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**语法:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **说明:** 添加用于更改平台变量的控制面板
 
@@ -130,7 +130,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**语法:** obj << Copy ByGroup Script
+**语法:** obj &lt;&lt; Copy ByGroup Script
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其置于剪贴板上。
 
@@ -156,7 +156,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**语法:** obj << Copy Script
+**语法:** obj &lt;&lt; Copy Script
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其置于剪贴板上。
 
@@ -176,7 +176,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**语法:** obj << Data Table Window
+**语法:** obj &lt;&lt; Data Table Window
 
 **说明:** 将该分析的数据表窗口移动到前面。
 
@@ -196,7 +196,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**语法:** obj << Get By Levels
+**语法:** obj &lt;&lt; Get By Levels
 
 **说明:** 返回将“依据”组列映射到其值的关联数组。
 
@@ -213,7 +213,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**语法:** obj << Get ByGroup Script
+**语法:** obj &lt;&lt; Get ByGroup Script
 
 **说明:** 创建生成该分析的脚本 (JSL)，并将其作为表达式返回。
 
@@ -240,7 +240,7 @@ Show( t );
 
 ### Get Container
 
-**语法:** obj << Get Container
+**语法:** obj &lt;&lt; Get Container
 
 **说明:** 返回对保留对象内容的容器框的引用。
 
@@ -292,7 +292,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**语法:** obj << Get Data Table
+**语法:** obj &lt;&lt; Get Data Table
 
 **说明:** 返回对该数据表的引用。
 
@@ -313,7 +313,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**语法:** obj << Get Group Platform
+**语法:** obj &lt;&lt; Get Group Platform
 
 **说明:** 若该平台是组的一部分，则返回组平台对象。否则返回 Empty()。
 
@@ -330,7 +330,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**语法:** obj << Get Script
+**语法:** obj &lt;&lt; Get Script
 
 **说明:** 创建生成该分析的脚本 (JSL)，并将其作为表达式返回。
 
@@ -351,7 +351,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**语法:** obj << Get Script With Data Table
+**语法:** obj &lt;&lt; Get Script With Data Table
 
 **说明:** 创建生成该分析的脚本 (JSL) 以专门引用该数据表，并将其作为表达式返回。
 
@@ -372,7 +372,7 @@ Show( t );
 
 ### Get Timing
 
-**语法:** obj << Get Timing
+**语法:** obj &lt;&lt; Get Timing
 
 **说明:** 平台启动过程计时。
 
@@ -393,7 +393,7 @@ Show( t );
 
 ### Get Web Support
 
-**语法:** obj << Get Web Support
+**语法:** obj &lt;&lt; Get Web Support
 
 **说明:** 返回一个数字，指示显示对象的交互式 HTML 支持的水平。1 表示支持部分或全部元素。0 表示不支持。
 
@@ -409,7 +409,7 @@ Show( s );
 
 ### Get Where Expr
 
-**语法:** obj << Get Where Expr
+**语法:** obj &lt;&lt; Get Where Expr
 
 **说明:** 若平台是使用 By() 或 Where() 启动的，则返回数据子集的 Where 表达式。否则返回 Empty()
 
@@ -446,7 +446,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**语法:** obj << Local Data Filter
+**语法:** obj &lt;&lt; Local Data Filter
 
 **说明:** 将数据过滤到特定的组或范围，但在该平台中是本地的
 
@@ -502,7 +502,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**语法:** obj << Paste Local Data Filter
+**语法:** obj &lt;&lt; Paste Local Data Filter
 
 **说明:** 将剪贴板中的本地数据过滤器应用于当前报表。
 
@@ -523,7 +523,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**语法:** obj << Redo Analysis
+**语法:** obj &lt;&lt; Redo Analysis
 
 **说明:** 在新窗口中重新运行相同的分析。若数据发生更改，分析也将不同。
 
@@ -543,7 +543,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**语法:** obj << Redo ByGroup Analysis
+**语法:** obj &lt;&lt; Redo ByGroup Analysis
 
 **说明:** 在新窗口中重新运行相同的分析。若数据发生更改，分析也将不同。
 
@@ -569,7 +569,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**语法:** obj << Relaunch Analysis
+**语法:** obj &lt;&lt; Relaunch Analysis
 
 **说明:** 打开平台启动窗口并重新调用曾用于创建报表的设置。
 
@@ -589,7 +589,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**语法:** obj << Relaunch ByGroup
+**语法:** obj &lt;&lt; Relaunch ByGroup
 
 **说明:** 打开平台启动窗口并重新调用曾用于创建报表的设置。
 
@@ -615,7 +615,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**语法:** obj << Remove Column Switcher
+**语法:** obj &lt;&lt; Remove Column Switcher
 
 **说明:** 删除已添加至平台的最近使用的“列切换器”。
 
@@ -635,7 +635,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**语法:** obj << Remove Local Data Filter
+**语法:** obj &lt;&lt; Remove Local Data Filter
 
 **说明:** 若已创建本地数据过滤器，这会将它删除并将平台恢复为直接使用数据表中的所有数据
 
@@ -674,9 +674,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**语法:** obj << Report;
-
-Report( obj )
+**语法:** obj &lt;&lt; Report;Report( obj )
 
 **说明:** 返回对该报表对象的引用。
 
@@ -698,7 +696,7 @@ Show( t );
 
 ### Report View
 
-**语法:** obj << Report View( "完全"|"汇总" )
+**语法:** obj &lt;&lt; Report View( "完全"|"汇总" )
 
 **说明:** 报表视图确定平台报表中可见的详细程度。Full 显示所有详细信息，而 Summary 仅显示根据平台确定的选定内容。对于定制行为，显示框支持 <<Set Summary Behavior 消息。
 
@@ -718,7 +716,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**语法:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**语法:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **说明:** 创建生成该分析的 JSL 脚本并将其保存为数据表中的表属性。您可以为脚本指定一个名称。Append Suffix 选项在脚本名称后追加一个数字后缀，用于将该脚本与现有的同名脚本区别出来。Prompt 选项提示用户指定脚本名称。Replace 选项会替换同名的现有脚本。
 
@@ -744,7 +742,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**语法:** obj << Save ByGroup Script to Journal
+**语法:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **说明:** 创建生成该分析的 JSL 脚本，并将一个按钮添加至包含该脚本的记录中。
 
@@ -770,7 +768,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**语法:** obj << Save ByGroup Script to Script Window
+**语法:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其追加至当前的脚本文本窗口中。
 
@@ -796,7 +794,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**语法:** obj << Save Script for All Objects
+**语法:** obj &lt;&lt; Save Script for All Objects
 
 **说明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -816,7 +814,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**语法:** obj << Save Script for All Objects To Data Table( <name> )
+**语法:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **说明:** 将所有报表对象的脚本保存至当前数据表。当您在该窗口中具有多个报表时，该选项很有用。除非您在引号中指定脚本名称，否则脚本将以第一个平台命名。
 
@@ -866,7 +864,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**语法:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**语法:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其作为表属性保存至数据表中。
 
@@ -886,7 +884,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**语法:** obj << Save Script to Journal
+**语法:** obj &lt;&lt; Save Script to Journal
 
 **说明:** 创建生成该分析的 JSL 脚本，并将一个按钮添加至包含该脚本的记录中。
 
@@ -906,7 +904,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**语法:** obj << Save Script to Report
+**语法:** obj &lt;&lt; Save Script to Report
 
 **说明:** 创建生成该分析的 JSL 脚本，并在报表中显示。有助于保留打印的已完成操作记录。
 
@@ -926,7 +924,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**语法:** obj << Save Script to Script Window
+**语法:** obj &lt;&lt; Save Script to Script Window
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其追加至当前的脚本文本窗口中。
 
@@ -1011,7 +1009,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**语法:** obj << Sync to Data Table Changes
+**语法:** obj &lt;&lt; Sync to Data Table Changes
 
 **说明:** 与已进行的排除和数据的更改同步。
 
@@ -1028,7 +1026,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**语法:** obj << Title( "new title" )
+**语法:** obj &lt;&lt; Title( "new title" )
 
 **说明:** 设置平台的标题。
 
@@ -1048,7 +1046,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**语法:** obj << Top Report
+**语法:** obj &lt;&lt; Top Report
 
 **说明:** 返回对报表中根节点的引用。
 
@@ -1070,7 +1068,7 @@ Show( t );
 
 ### Transform Column
 
-**语法:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**语法:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **说明:** 在对象（通常是平台）的本地上下文中创建变换列。变换列仅在平台的生命周期内是活动的。
 
@@ -1091,7 +1089,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**语法:** obj << View Web XML
+**语法:** obj &lt;&lt; View Web XML
 
 **说明:** 返回用于创建交互式 HTML 报表的 XML 代码。
 
@@ -1106,9 +1104,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**语法:** obj = Bubble Plot(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Bubble Plot(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 设置要为报表创建的窗口类型。默认情况下将创建 Visible 报表窗口。Invisible 窗口将不显示在屏幕上，但可被函数（例如 Window()）发现。Private 窗口会响应大多数窗口消息，但不可发现并且必须通过报表对象处理
 
@@ -1129,7 +1125,7 @@ New Window( "Bivariate Equation",
 
 ### Bubble Plot
 
-**语法:** Bubble Plot( X( column ), Y( column ), <Sizes( column )>, <Time( column )>, <ID( column )>, <Coloring( column ) )
+**语法:** Bubble Plot( X( column ), Y( column ), &lt;Sizes( column )&gt;, &lt;Time( column )&gt;, &lt;ID( column )&gt;, &lt;Coloring( column ) )
 
 **说明:** 生成可随时间变量变化播放动画的二维气泡散点图。可以使用其他变量来调整气泡的大小和设置气泡颜色。
 
@@ -1150,9 +1146,7 @@ obj = dt << Bubble Plot(
 
 ### By
 
-**语法:** obj = Bubble Plot(...<By( column(s) )>...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Bubble Plot(...&lt;By( column(s) )&gt;...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 生成多个报表，每个报表对应变量的每个水平。
 
@@ -1177,9 +1171,7 @@ obj = dt << Bubble Plot(
 
 ### Coloring
 
-**语法:** obj = Bubble Plot(...<Coloring( column )>...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Bubble Plot(...&lt;Coloring( column )&gt;...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 根据所选的变量对气泡着色。
 
@@ -1199,9 +1191,7 @@ obj = dt << Bubble Plot(
 
 ### Freq
 
-**语法:** obj = Bubble Plot(...<Freq( column )>...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Bubble Plot(...&lt;Freq( column )&gt;...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 计算气泡的位置、大小和颜色时为计算加权。
 
@@ -1234,9 +1224,7 @@ dtSummary << Bubble Plot(
 
 ### ID
 
-**语法:** obj = Bubble Plot(...<ID( column(s) )>...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Bubble Plot(...&lt;ID( column(s) )&gt;...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 标识应聚合并显示为单个气泡的行。
 
@@ -1255,9 +1243,7 @@ obj = dt << Bubble Plot(
 
 ### Sizes
 
-**语法:** obj = Bubble Plot(...<Sizes( column )>...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Bubble Plot(...&lt;Sizes( column )&gt;...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 用作气泡大小的列。若未指定，则气泡大小与观测数成比例。
 
@@ -1276,9 +1262,7 @@ obj = dt << Bubble Plot(
 
 ### Time
 
-**语法:** obj = Bubble Plot(...<Time( column )>...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Bubble Plot(...&lt;Time( column )&gt;...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 为每个唯一的时间段保持单独的坐标、大小和颜色。
 
@@ -1298,9 +1282,7 @@ obj = dt << Bubble Plot(
 
 ### X
 
-**语法:** obj = Bubble Plot(...X( column )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Bubble Plot(...X( column )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 用作图中气泡的 x 坐标的列。
 
@@ -1319,9 +1301,7 @@ obj = dt << Bubble Plot(
 
 ### Y
 
-**语法:** obj = Bubble Plot(...Y( column )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Bubble Plot(...Y( column )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 用作图中气泡的 y 坐标的列。
 
@@ -1342,7 +1322,7 @@ obj = dt << Bubble Plot(
 
 ### Auto Stretching
 
-**语法:** obj << Auto Stretching( "自动"|"开"|"关" )
+**语法:** obj &lt;&lt; Auto Stretching( "自动"|"开"|"关" )
 
 **说明:** 设置报表的自动拉伸行为。
 
@@ -1362,7 +1342,7 @@ obj << Auto Stretching( "Off" );
 
 ### Bubble Size
 
-**语法:** obj << Bubble Size( number )
+**语法:** obj &lt;&lt; Bubble Size( number )
 
 **说明:** 更改散点图中气泡的大小。
 
@@ -1382,7 +1362,7 @@ obj << Bubble Size( 50 );
 
 ### Color Levels
 
-**语法:** obj << Color Levels
+**语法:** obj &lt;&lt; Color Levels
 
 **说明:** 设置连续图例的水平。
 
@@ -1403,7 +1383,7 @@ obj << Color Levels( [100000 1000000 10000000] );
 
 ### Color Theme
 
-**语法:** obj << Color Theme
+**语法:** obj &lt;&lt; Color Theme
 
 **说明:** 设置气泡的颜色主题。
 
@@ -1425,7 +1405,7 @@ obj << Color Theme( "White to Red" );
 
 ### Color as Sum
 
-**语法:** obj << Color as Sum( state=0|1 )
+**语法:** obj &lt;&lt; Color as Sum( state=0|1 )
 
 **说明:** 使用“颜色”变量的总和而不是“颜色”变量的均值作为“颜色”角色。
 
@@ -1446,7 +1426,7 @@ obj << Color as Sum( 1 );
 
 ### Combine
 
-**语法:** obj << Combine( <id> )
+**语法:** obj &lt;&lt; Combine( &lt;id&gt; )
 
 **说明:** 将组中的选定气泡（或指定 ID）合并为更大的气泡。该选项仅在使用了两个 ID 变量时可用。
 
@@ -1470,7 +1450,7 @@ obj << Combine( "Europe" );
 
 ### Combine All
 
-**语法:** obj << Combine All
+**语法:** obj &lt;&lt; Combine All
 
 **说明:** 将组中的所有气泡合并为更大的气泡。该选项仅在使用了两个 ID 变量时可用。
 
@@ -1493,7 +1473,7 @@ obj << Combine All;
 
 ### Draw
 
-**语法:** obj << Draw( "填充"|"轮廓"|"填充且带轮廓" )
+**语法:** obj &lt;&lt; Draw( "填充"|"轮廓"|"填充且带轮廓" )
 
 **说明:** 设置气泡的显示模式。
 
@@ -1513,7 +1493,7 @@ obj << Draw( "Outlined" );
 
 ### Fit to Window
 
-**语法:** obj << Fit to Window( "自动"|"开"|"关" )
+**语法:** obj &lt;&lt; Fit to Window( "自动"|"开"|"关" )
 
 **说明:** 设置报表的自动拉伸行为。
 
@@ -1533,7 +1513,7 @@ obj << Fit to Window( "Off" );
 
 ### Get Custom Path
 
-**语法:** obj << Get Custom Path
+**语法:** obj &lt;&lt; Get Custom Path
 
 **说明:** 将气泡的自定义路径作为矩阵返回。路径矩阵包含三列，分别为 x、y 和标志，用于指定路径上的各点。标志值为 0 表示控制，为 1 表示移动，为 2 表示线段，为 3 表示三次 Bézier 线段，还可以为负值（若该点还起到闭合路径的作用）。
 
@@ -1555,7 +1535,7 @@ obj << Get Custom Path();
 
 ### Get Draw
 
-**语法:** obj << Get Draw
+**语法:** obj &lt;&lt; Get Draw
 
 **说明:** 返回气泡的显示模式。
 
@@ -1575,7 +1555,7 @@ obj << Get Draw();
 
 ### Get Label
 
-**语法:** obj << Get Label
+**语法:** obj &lt;&lt; Get Label
 
 **说明:** 返回绘制气泡标签的模式。
 
@@ -1595,7 +1575,7 @@ obj << Get Label();
 
 ### Get Shape
 
-**语法:** obj << Get Shape
+**语法:** obj &lt;&lt; Get Shape
 
 **说明:** 返回气泡的形状。
 
@@ -1616,7 +1596,7 @@ obj << Get Shape();
 
 ### Go
 
-**语法:** obj << Go
+**语法:** obj &lt;&lt; Go
 
 **说明:** 使用“时间”变量时初始化动画。
 
@@ -1638,7 +1618,7 @@ obj << Go;
 
 ### Label
 
-**语法:** obj << Label( "无"|"选定"|"全部" )
+**语法:** obj &lt;&lt; Label( "无"|"选定"|"全部" )
 
 **说明:** 设置绘制气泡标签的模式。
 
@@ -1658,7 +1638,7 @@ obj << Label( "All" );
 
 ### Label Offset
 
-**语法:** obj << Label Offset( {pt, x offset, y offset}, ... )
+**语法:** obj &lt;&lt; Label Offset( {pt, x offset, y offset}, ... )
 
 ```jsl
 
@@ -1678,7 +1658,7 @@ obj << Label Offset( {4, -75, -43}, {7, 80, -34} );
 
 ### Legend
 
-**语法:** obj << Legend( state=0|1 )
+**语法:** obj &lt;&lt; Legend( state=0|1 )
 
 **说明:** 当使用彩色列时显示颜色图例。 默认开启。
 
@@ -1700,7 +1680,7 @@ obj << Legend( 1 );
 
 ### Lock Scales
 
-**语法:** obj << Lock Scales( state=0|1 )
+**语法:** obj &lt;&lt; Lock Scales( state=0|1 )
 
 **说明:** 锁定轴、渐变和大小范围，以便在数据或过滤条件发生更改时它们不会随之更改。 默认开启。
 
@@ -1724,7 +1704,7 @@ dt << Data Filter(
 
 ### Orient Shapes
 
-**语法:** obj << Orient Shapes( state=0|1 )
+**语法:** obj &lt;&lt; Orient Shapes( state=0|1 )
 
 **说明:** 形状定向，使顶部指向移动方向。
 
@@ -1746,7 +1726,7 @@ obj << Orient Shapes( 1 );
 
 ### Prev
 
-**语法:** obj << Prev
+**语法:** obj &lt;&lt; Prev
 
 **说明:** 将“时间”变量在动画中向后移动一步。
 
@@ -1769,7 +1749,7 @@ obj << Prev;
 
 ### Revert Color Theme
 
-**语法:** obj << Revert Color Theme
+**语法:** obj &lt;&lt; Revert Color Theme
 
 **说明:** 恢复定制颜色主题，从列属性或首选项返回到默认的主题。
 
@@ -1793,7 +1773,7 @@ obj << Revert Color Theme();
 
 ### Selectable Across Gaps
 
-**语法:** obj << Selectable Across Gaps( state=0|1 )
+**语法:** obj &lt;&lt; Selectable Across Gaps( state=0|1 )
 
 **说明:** 允许在数据缺失时间期间选择气泡并保持气泡的选中状态。若未选中该选项，则在数据缺失时间期间不可选择气泡。
 
@@ -1817,7 +1797,7 @@ obj << Go;
 
 ### Set Custom Path
 
-**语法:** obj << Set Custom Path
+**语法:** obj &lt;&lt; Set Custom Path
 
 **说明:** 设置气泡的自定义路径。路径可通过 N x 3 矩阵或文本表达式指定。路径矩阵包含三列，分别为 x、y 和标志，用于指定路径上的各点。标志值为 0 表示控制，为 1 表示移动，为 2 表示线段，为 3 表示三次 Bézier 线段，还可以为负值（若该点还起到闭合路径的作用）。
 
@@ -1838,7 +1818,7 @@ obj << Set Shape( "Custom" );
 
 ### Set Shape
 
-**语法:** obj << Set Shape( "圆圈"|"三角"|"方形"|"菱形"|"箭头"|"定制" )
+**语法:** obj &lt;&lt; Set Shape( "圆圈"|"三角"|"方形"|"菱形"|"箭头"|"定制" )
 
 **说明:** 设置气泡的形状。
 
@@ -1858,7 +1838,7 @@ obj << Set Shape( "Triangle" );
 
 ### Show Roles
 
-**语法:** obj << Show Roles( state=0|1 )
+**语法:** obj &lt;&lt; Show Roles( state=0|1 )
 
 **说明:** 在报表顶部图例中显示每个角色所用的变量。
 
@@ -1880,7 +1860,7 @@ obj << Show Roles( 1 );
 
 ### Show Time Annotation
 
-**语法:** obj << Show Time Annotation( state=0|1 )
+**语法:** obj &lt;&lt; Show Time Annotation( state=0|1 )
 
 **说明:** 显示当前时间作为动画气泡图中的注解。 默认开启。
 
@@ -1905,7 +1885,7 @@ obj << Show Time Annotation( 0 );
 
 ### Size as Sum
 
-**语法:** obj << Size as Sum( state=0|1 )
+**语法:** obj &lt;&lt; Size as Sum( state=0|1 )
 
 **说明:** 使用“大小”变量的总和而不是“大小”变量的均值作为“大小”角色。 默认开启。
 
@@ -1925,7 +1905,7 @@ obj << Size as Sum( 1 );
 
 ### Speed
 
-**语法:** obj << Speed( number )
+**语法:** obj &lt;&lt; Speed( number )
 
 **说明:** 更改气泡随时间移动的速度。
 
@@ -1948,7 +1928,7 @@ obj << Go;
 
 ### Split
 
-**语法:** obj << Split( <id> )
+**语法:** obj &lt;&lt; Split( &lt;id&gt; )
 
 **说明:** 将选定的气泡（或指定 ID）拆分为其组成气泡。该选项仅在使用了两个 ID 变量时可用。
 
@@ -1973,7 +1953,7 @@ obj << Split( "Asia" );
 
 ### Split All
 
-**语法:** obj << Split All
+**语法:** obj &lt;&lt; Split All
 
 **说明:** 将所有气泡拆分为其组成部分。该选项仅在使用两个 ID 变量时可用。
 
@@ -1995,7 +1975,7 @@ obj << Split All;
 
 ### Step
 
-**语法:** obj << Step
+**语法:** obj &lt;&lt; Step
 
 **说明:** 将“时间”变量在动画中向前移动一步。
 
@@ -2017,7 +1997,7 @@ obj << Step;
 
 ### Stop
 
-**语法:** obj << Stop
+**语法:** obj &lt;&lt; Stop
 
 **说明:** 使用“时间”变量时停止动画。
 
@@ -2041,7 +2021,7 @@ obj << Stop;
 
 ### Time Index
 
-**语法:** obj << Time Index( number )
+**语法:** obj &lt;&lt; Time Index( number )
 
 **说明:** 设置散点图中“时间”变量的值。
 
@@ -2062,7 +2042,7 @@ obj << Time Index( 19 );
 
 ### Title Position
 
-**语法:** obj << Title Position( X,Y )
+**语法:** obj &lt;&lt; Title Position( X,Y )
 
 **说明:** 设置标题的位置。必须指定“时间”变量以查看该选项。
 
@@ -2083,7 +2063,7 @@ obj << Title Position( 0.8, 0.06 );
 
 ### Toggle Animation
 
-**语法:** obj << Toggle Animation
+**语法:** obj &lt;&lt; Toggle Animation
 
 **说明:** 切换当前动画状态
 
@@ -2107,7 +2087,7 @@ obj << Toggle Animation;
 
 ### Trail Bubbles
 
-**语法:** obj << Trail Bubbles( "无"|"选定"|"全部" )
+**语法:** obj &lt;&lt; Trail Bubbles( "无"|"选定"|"全部" )
 
 **说明:** 将气泡图过去的历史显示为半透明尾迹。要显示尾迹气泡，必须指定“时间”列，且必须先选择一个气泡。
 
@@ -2130,7 +2110,7 @@ obj << Go;
 
 ### Trail Lines
 
-**语法:** obj << Trail Lines( "无"|"选定"|"全部" )
+**语法:** obj &lt;&lt; Trail Lines( "无"|"选定"|"全部" )
 
 **说明:** 将气泡图过去的历史显示为连起来的线段。要显示尾迹气泡，必须指定“时间”列，且必须先选择一个气泡。
 
@@ -2153,7 +2133,7 @@ obj << Go;
 
 ### X as Sum
 
-**语法:** obj << X as Sum( state=0|1 )
+**语法:** obj &lt;&lt; X as Sum( state=0|1 )
 
 **说明:** 使用 X 变量的总和而不是 X 变量的均值作为 X 角色。
 
@@ -2173,7 +2153,7 @@ obj << X as Sum( 1 );
 
 ### Y as Sum
 
-**语法:** obj << Y as Sum( state=0|1 )
+**语法:** obj &lt;&lt; Y as Sum( state=0|1 )
 
 **说明:** 使用 Y 变量的总和而不是 Y 变量的均值作为 Y 角色。
 

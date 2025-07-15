@@ -2,8 +2,6 @@
 
 
 
-## Funciones
-
 ### Pat Abort
 
 **Sintaxis:** Pat Abort()
@@ -258,7 +256,7 @@ result;
 
 ### Pat Look Ahead
 
-**Sintaxis:** Pat Look Ahead( pattern, <0|1> )
+**Sintaxis:** Pat Look Ahead( pattern, &lt;0|1&gt; )
 
 **Descripción:** Una coincidencia de patrón de ancho cero después de la posición actual. El segundo argumento opcional tiene el valor predeterminado 0. 1 indica una coincidencia negativa o la ausencia de coincidencia.
 
@@ -311,7 +309,7 @@ While( /* keep repeating the match until it won't match */
 
 ### Pat Look Behind
 
-**Sintaxis:** Pat Look Behind( pattern, <0|1> )
+**Sintaxis:** Pat Look Behind( pattern, &lt;0|1&gt; )
 
 **Descripción:** Una coincidencia de patrón de ancho cero antes de la posición actual. El segundo argumento opcional tiene el valor predeterminado 0. 1 indica una coincidencia negativa o la ausencia de coincidencia.
 
@@ -364,7 +362,7 @@ While( /* keep repeating the match until it won't match */
 
 ### Pat Match
 
-**Sintaxis:** Pat Match( source, pattern, <replacement> )
+**Sintaxis:** Pat Match( source, pattern, &lt;replacement&gt; )
 
 **Descripción:** Busca la coincidencia de patrones en la variable pattern frente a la cadena de caracteres contenida en la variable source. El texto que haya coincidido se sustituye por el texto replacement opcional.
 
@@ -491,7 +489,7 @@ result;
 
 ### Pat Repeat
 
-**Sintaxis:** Pat Repeat( pattern, <min=1>, <max=infinity>, <GREEDY or RELUCTANT=GREEDY> )
+**Sintaxis:** Pat Repeat( pattern, &lt;min=1&gt;, &lt;max=infinity&gt;, &lt;GREEDY or RELUCTANT=GREEDY&gt; )
 
 **Descripción:** Genera un valor de patrón que coincide con el patrón indicado entre min y max veces.
 
@@ -614,7 +612,7 @@ string;
 
 ### Regex Match
 
-**Sintaxis:** Regex Match( source, pattern, <replacement | NULL>, <MATCHCASE> )
+**Sintaxis:** Regex Match( source, pattern, &lt;replacement | NULL&gt;, &lt;MATCHCASE&gt; )
 
 **Descripción:** Ejecuta una coincidencia de expresión regular y devuelve una lista de texto totalmente coincidente y las coincidencias de cada referencia inversa creada por un paréntesis abierto. Opcionalmente, el tercer argumento puede especificar una cadena de sustitución para toda la coincidencia; la cadena de sustitución puede utilizar referencias inversas.
 

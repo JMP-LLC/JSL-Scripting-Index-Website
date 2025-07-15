@@ -6,11 +6,7 @@
 
 ### New SQL Query
 
-**Sintaxis:** obj = New SQL Query( Connection( "ODBC:DSN=SampleDSN" ), Select( Column( "mycolumn", "t1" ) ), From( Table( "my_table", Schema( "my_schema" ), Alias( "t1" ) ) ) );
-
-
-
-obj = New SQL Query( Connection( "ODBC:DSN=SampleDSN;" ), Custom SQL( "SELECT c1, c2, c3 FROM my_table;" ) )
+**Sintaxis:** obj = New SQL Query( Connection( "ODBC:DSN=SampleDSN" ), Select( Column( "mycolumn", "t1" ) ), From( Table( "my_table", Schema( "my_schema" ), Alias( "t1" ) ) ) );obj = New SQL Query( Connection( "ODBC:DSN=SampleDSN;" ), Custom SQL( "SELECT c1, c2, c3 FROM my_table;" ) )
 
 **Descripción:** Crea un objeto de consulta SQL para la conexión, las columnas y la tabla especificadas, o para la consulta SQL personalizada especificada. Utilice el constructor de consultas para generar  scripts que creen consultas.
 
@@ -25,11 +21,9 @@ obj = New SQL Query(
 
 ```
 
-## Funciones
-
 ### As SQL Expr
 
-**Sintaxis:** y = As SQL Expr( x, <style> )
+**Sintaxis:** y = As SQL Expr( x, &lt;style&gt; )
 
 **Descripción:** Devuelve una cadena que contiene la expresión convertida a sintaxis SQL válida para su uso en una instrucción Select de SQL.
 
@@ -59,7 +53,7 @@ Close Database Connection( databaseConnectionHandle );
 
 ### Create Database Connection
 
-**Sintaxis:** dbc = Create Database Connection( dataSourceName|"Connect Dialog", <DriverPrompt(true|false)> )
+**Sintaxis:** dbc = Create Database Connection( dataSourceName|"Connect Dialog", &lt;DriverPrompt(true|false)&gt; )
 
 **Descripción:** Crea una conexión de base de datos y devuelve un identificador para la conexión. Si DriverPrompt es True, se le solicitará al usuario mediante la solicitud del controlador ODBC que facilite las credenciales si fuera necesario.
 
@@ -76,7 +70,7 @@ dbc = Create Database Connection(
 
 ### Execute SQL
 
-**Sintaxis:** dt = Execute SQL(databaseConnectionHandle|dataConnector,  "SELECT ..."|"SQLFILE=..."|tableName, <invisible(0|1)>, <outputTableName>, <Batch Submit(0|1)> )
+**Sintaxis:** dt = Execute SQL(databaseConnectionHandle|dataConnector, "SELECT ..."|"SQLFILE=..."|tableName, &lt;invisible(0|1)&gt;, &lt;outputTableName&gt;, &lt;Batch Submit(0|1)&gt; )
 
 **Descripción:** Ejecuta una instrucción SQL sobre una conexión de base de datos devuelta desde Crear conexión a base de datos o un conector de datos. Habilitar el envío por lotes permite recibir múltiples resultados de múltiples instrucciones SQL, lo que devuelve una lista con los resultados (solo controladores compatibles).
 
@@ -121,7 +115,7 @@ resultList = Execute SQL(
 
 ### New Data Connector
 
-**Sintaxis:** result = New Data Connector( Type( type ) | ID( id ) | File( path ) | Spec( string ) | Base( data connector ), < Option1( value1 ) >, ..., < OptionN( valueN ) > )
+**Sintaxis:** result = New Data Connector( Type( type ) | ID( id ) | File( path ) | Spec( string ) | Base( data connector ), &lt; Option1( value1 ) &gt;, ..., &lt; OptionN( valueN ) &gt; )
 
 **Descripción:** Crea un objeto de configuración del conector de datos.
 
@@ -164,11 +158,7 @@ New SQL Query( Connection( dc ) ) << Modify;
 
 ### New SQL Query
 
-**Sintaxis:** obj = New SQL Query( Connection( "ODBC:my_connection_string" ), Select( Column( "mycolumn", "t1" ) ), From( Table( "my_table", Schema( "my_schema" ), Alias( "t1" ) ) ) );
-
-
-
-		obj = New SQL Query( Connection( "ODBC:my_connection_string;" ), CustomSQL( "SELECT c1, c2, c3 FROM my_table;" ) )
+**Sintaxis:** obj = New SQL Query( Connection( "ODBC:my_connection_string" ), Select( Column( "mycolumn", "t1" ) ), From( Table( "my_table", Schema( "my_schema" ), Alias( "t1" ) ) ) ); obj = New SQL Query( Connection( "ODBC:my_connection_string;" ), CustomSQL( "SELECT c1, c2, c3 FROM my_table;" ) )
 
 **Descripción:** Crea un objeto de consulta SQL para la conexión, las columnas y la tabla especificadas, o para la consulta SQL personalizada especificada. Utilice el constructor de consultas para generar  scripts que creen consultas.
 
@@ -188,7 +178,7 @@ obj = New SQL Query(
 
 ### Open Database
 
-**Sintaxis:** dt = Open Database( dataSourceName|"Connect Dialog", "SELECT ..."|"SQLFILE=..."|tableName, <invisible | private>, <outputTableName> )
+**Sintaxis:** dt = Open Database( dataSourceName|"Connect Dialog", "SELECT ..."|"SQLFILE=..."|tableName, &lt;invisible | private&gt;, &lt;outputTableName&gt; )
 
 **Descripción:** Abre una base de datos mediante ODBC, ejecuta el SQL especificado y pone los datos en una tabla de datos con el nombre de tabla de salida indicado.
 
@@ -207,9 +197,7 @@ Open Database(
 
 ### Query
 
-**Sintaxis:** result = Query( < < dt1 | Table( dt1, alias1 ) >, ..., < dtN | Table( dtN, aliasN ) > >,
-
-     <Private|Invisible>, <Scalar>, sqlStatement )
+**Sintaxis:** result = Query( &lt; &lt; dt1 | Table( dt1, alias1 ) &gt;, ..., &lt; dtN | Table( dtN, aliasN ) &gt; &gt;, &lt;Private|Invisible&gt;, &lt;Scalar&gt;, sqlStatement )
 
 **Descripción:** Realiza una consulta SQL en las tablas de datos JMP. sqlStatement (la consulta SQL, una instrucción SELECT lo más probable) es necesario y debe ser el último argumento. Las tablas de datos JMP a las que hace referencia la instrucción SQL deben introducirse como argumentos en Query(), usando Table(dt, "alias") para crear un alias para la tabla que SQL puede usar si se desea. Se puede indicar Invisible o Privado para controlar la visibilidad de la tabla de datos resultante. Si la instrucción SQL devuelve un valor único, introduzca Escalar, lo que provocará que se devuelva el valor único en lugar de una tabla de datos.
 
@@ -251,7 +239,7 @@ retval = Query( Scalar, "SELECT SQRT(152399025);" );
 
 #### CustomSQL
 
-**Sintaxis:** obj << Custom SQL( sql )
+**Sintaxis:** obj &lt;&lt; Custom SQL( sql )
 
 **Descripción:** Cambia la consulta a una consulta SQL personalizada y establece la SQL.
 
@@ -268,7 +256,7 @@ obj << Custom SQL( "SELECT c4, c5, c6 FROM my_table;" );
 
 #### GenerateSQL
 
-**Sintaxis:** sql = obj << Generate SQL
+**Sintaxis:** sql = obj &lt;&lt; Generate SQL
 
 **Descripción:** Genera y devuelve la instrucción SQL para la consulta.
 
@@ -285,7 +273,7 @@ sql = obj << Generate SQL;
 
 #### Modify
 
-**Sintaxis:** obj << Modify
+**Sintaxis:** obj &lt;&lt; Modify
 
 **Descripción:** Abre la consulta en el Constructor de consultas.
 
@@ -298,7 +286,7 @@ query << Modify;
 
 #### PostQueryScript
 
-**Sintaxis:** obj << Post Query Script( script_as_text )
+**Sintaxis:** obj &lt;&lt; Post Query Script( script_as_text )
 
 **Descripción:** Establece el script JSL que se ejecutará después de cada corrida de consulta.
 
@@ -315,7 +303,7 @@ obj << Post Query Script( "show( queryResult << Get As Matrix );" );
 
 #### QueryName
 
-**Sintaxis:** obj << Query Name( <newName> )
+**Sintaxis:** obj &lt;&lt; Query Name( &lt;newName&gt; )
 
 **Descripción:** Obtiene o establece el nombre de la consulta. El nombre de la consulta se utilizará como nombre de la tabla de datos que se genera tras la corrida de la consulta.
 
@@ -334,7 +322,7 @@ Show( name );
 
 #### Run
 
-**Sintaxis:** result = obj << Run( <Private|Invisible>, <UpdateTable(table)>, <OnRunComplete(script)>, <OnRunCanceled(script)>, <OnError(script)> )
+**Sintaxis:** result = obj &lt;&lt; Run( &lt;Private|Invisible&gt;, &lt;UpdateTable(table)&gt;, &lt;OnRunComplete(script)&gt;, &lt;OnRunCanceled(script)&gt;, &lt;OnError(script)&gt; )
 
 **Descripción:** Ejecuta la consulta. La consulta se puede ejecutar en primer plano o en segundo plano, dependiendo de la preferencia del Constructor de consultas. Si se especifica UpdateTable, la consulta se ejecutará en primer plano. Si la consulta se ejecuta en primer plano, el valor devuelto de la corrida será la tabla de datos que se genere a partir de la consulta. Si la consulta se ejecuta en segundo plano o contiene un error, la corrida no devuelve ningún valor. Utilice los argumentos OnRunComplete, OnRunCanceled y OnError para ejecutar un script cuando la consulta finalice.
 
@@ -347,7 +335,7 @@ query << Run;
 
 #### Run Background
 
-**Sintaxis:** result = obj << Run Background( <OnRunComplete(script), <Private|Invisible>>, <OnRunCanceled(script)>, <OnError(script)> )
+**Sintaxis:** result = obj &lt;&lt; Run Background( &lt;OnRunComplete(script), &lt;Private|Invisible&gt;&gt;, &lt;OnRunCanceled(script)&gt;, &lt;OnError(script)&gt; )
 
 **Descripción:** Ejecuta la consulta en segundo plano. La tabla de datos que se genera a partir de la consulta se abrirá cuando la consulta finalice. Utilice los argumentos OnRunComplete, OnRunCanceled y OnError para ejecutar un script cuando la consulta finalice. Se puede especificar Privado solo si se especifica también un script OnRunComplete. Ejecutar en segundo plano no devuelve ningún valor.
 
@@ -369,7 +357,7 @@ query << Run Background( OnRunComplete( MyRunCompleteFunc ) );
 
 #### Run Foreground
 
-**Sintaxis:** result = obj << Run Foreground( <Private|Invisible>, <UpdateTable(table)>, <OnRunComplete(script)>, <OnRunCanceled(script)>, <OnError(script)> )
+**Sintaxis:** result = obj &lt;&lt; Run Foreground( &lt;Private|Invisible&gt;, &lt;UpdateTable(table)&gt;, &lt;OnRunComplete(script)&gt;, &lt;OnRunCanceled(script)&gt;, &lt;OnError(script)&gt; )
 
 **Descripción:** Ejecuta la consulta en primer plano. Si la consulta se completa correctamente o se cancela con un resultado parcial, Ejecutar en primer plano devuelve la tabla de datos que se genera a partir de la consulta. Si la consulta falla, Ejecutar en primer plano no devuelve un valor. Utilice los argumentos OnRunComplete, OnRunCanceled y OnError para ejecutar un script cuando la consulta finalice.
 
@@ -391,7 +379,7 @@ query << Run Foreground( OnRunComplete( MyRunCompleteFunc ) );
 
 #### Save
 
-**Sintaxis:** obj << Save
+**Sintaxis:** obj &lt;&lt; Save
 
 **Descripción:** Guardar la consulta en su archivo asociado. Se produce un error al guardar si la consulta aún no tiene ningún archivo asociado.
 
@@ -406,7 +394,7 @@ obj << Save;
 
 #### Save As
 
-**Sintaxis:** obj << Save As( path, <ReplaceExisting(0|1)> )
+**Sintaxis:** obj &lt;&lt; Save As( path, &lt;ReplaceExisting(0|1)&gt; )
 
 **Descripción:** Guarda la consulta en el archivo especificado. Si el archivo ya existe, se producirá un error al guardar a menos que Reemplazar existente sea True.
 

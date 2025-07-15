@@ -6,9 +6,7 @@
 
 ### Associative Array
 
-**Syntax:** y = Associative Array( {{key1, value1}, ...} );
-
-y = Associative Array( keys, values )
+**Syntax:** y = Associative Array( {{key1, value1}, ...} );y = Associative Array( keys, values )
 
 **Description:** Creates an associative array, which is also known as a dictionary or a hash map. In the two-argument form, keys and values can be a list, matrix, or data table column.
 
@@ -25,7 +23,7 @@ ex << get contents;
 
 ### Contains
 
-**Syntax:** bool = AAobj << Contains( key | AAobj )
+**Syntax:** bool = AAobj &lt;&lt; Contains( key | AAobj )
 
 **Description:** Inquire if the key or set of keys is in the associative array.  Also see Contains Item for a simpler example.
 
@@ -44,7 +42,7 @@ Local(
 
 ### Contains Item
 
-**Syntax:** bool = AAobj << Contains Item( key )
+**Syntax:** bool = AAobj &lt;&lt; Contains Item( key )
 
 **Description:** Inquire if the key is in the associative array.  Also see Contains, which has additional capability.
 
@@ -59,7 +57,7 @@ Local( {rhymes = ["mouse" => "house", "car" => "star", "orange" => ""]},
 
 ### First
 
-**Syntax:** key = AAobj << first
+**Syntax:** key = AAobj &lt;&lt; first
 
 **Description:** Iterator for Associative Array.
 
@@ -79,7 +77,7 @@ Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"], x, words = ""}
 
 ### Get Contents
 
-**Syntax:** list = AAObj << Get Contents
+**Syntax:** list = AAObj &lt;&lt; Get Contents
 
 **Description:** Returns the contents of the Associative Array as a list.
 
@@ -92,7 +90,7 @@ Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"]}, aa << Get Con
 
 ### Get Default Value
 
-**Syntax:** value = AAobj << Get Default Value()
+**Syntax:** value = AAobj &lt;&lt; Get Default Value()
 
 **Description:** Returns the value the Associative Array will return for keys that are not found.
 
@@ -111,7 +109,7 @@ Local( {aa = [=> 99], v1, v2}, /* initial value used for non-existing key is 99 
 
 ### Get Keys
 
-**Syntax:** list = AAObj << Get Keys
+**Syntax:** list = AAObj &lt;&lt; Get Keys
 
 **Description:** Returns a list of keys found in the Associative Array.
 
@@ -124,7 +122,7 @@ Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"]}, aa << Get Key
 
 ### Get Value
 
-**Syntax:** value = AAobj << Get Value( key )
+**Syntax:** value = AAobj &lt;&lt; Get Value( key )
 
 **Description:** Returns the value stored under the key in the associative array.
 
@@ -139,7 +137,7 @@ Local( {prices = Associative Array( {{"pineapple", 1.25}, {"grape", .50}, {"oran
 
 ### Get Values
 
-**Syntax:** list = AAObj << Get Values
+**Syntax:** list = AAObj &lt;&lt; Get Values
 
 **Description:** Returns a list of values found in the Associative Array.
 
@@ -152,7 +150,7 @@ Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"]}, aa << Get Val
 
 ### Insert
 
-**Syntax:** AAobj1 << Insert( AAobj2 | key,  { value } )
+**Syntax:** AAobj1 &lt;&lt; Insert( AAobj2 | key, { value } )
 
 **Description:** Inserts an associative array into another associative array or stores value under key in the associative array.  See Insert Item for a simpler example.
 
@@ -168,7 +166,7 @@ Local( {decode = [".-" => "a", "-..." => "b"], others = ["..." => "s", "-.-." =>
 
 ### Insert Item
 
-**Syntax:** AAobj << Insert Item( key, value )
+**Syntax:** AAobj &lt;&lt; Insert Item( key, value )
 
 **Description:** Stores value under key in the associative array.  Also see Insert, which has additional capability.
 
@@ -184,7 +182,7 @@ Local( {decode = [".-" => "a", "-..." => "b"]},
 
 ### Intersect
 
-**Syntax:** AAobj1 << Intersect( AAobj2 )
+**Syntax:** AAobj1 &lt;&lt; Intersect( AAobj2 )
 
 **Description:** Treats an associative array as a set of objects.  Values must be 1 for objects in the set.  Default value must be 0.  The current set is replaced by its intersection with the set in the message.
 
@@ -231,7 +229,7 @@ dt << selectrows( desiredSelection << getkeys ); // males <= 12
 
 ### Next
 
-**Syntax:** key = AAobj << next( previous key )
+**Syntax:** key = AAobj &lt;&lt; next( previous key )
 
 **Description:** Iterator for Associative Array.
 
@@ -251,7 +249,7 @@ Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"], x, words = ""}
 
 ### Remove
 
-**Syntax:** AAobj1 << Remove( AAobj2 | key )
+**Syntax:** AAobj1 &lt;&lt; Remove( AAobj2 | key )
 
 **Description:** Removes the set of keys or the key from the associative array.  Also see Remove Item for a simpler example.
 
@@ -267,7 +265,7 @@ Local( {primes = [2 => 1, 3 => 1, 4 => 1, 5 => 1, 6 => 1, 7 => 1, 8 => 1, 9 => 1
 
 ### Remove Item
 
-**Syntax:** AAobj << Remove Item( key )
+**Syntax:** AAobj &lt;&lt; Remove Item( key )
 
 **Description:** Removes the key from the associative array.  Also see Remove, which has additional capability.
 
@@ -299,7 +297,7 @@ Local(
 
 ### Set Default Value
 
-**Syntax:** AAobj << Set Default Value( value )
+**Syntax:** AAobj &lt;&lt; Set Default Value( value )
 
 **Description:** Changes the value the Associative array will return for keys that are not found.
 

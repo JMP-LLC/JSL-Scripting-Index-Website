@@ -3,10 +3,24 @@
  */
 $(document).ready(function() {
   // https://clipboardjs.com/
-  var selector_panel = document.querySelector('ul > li.toctree-l1:nth-child(3)');
+  var selector_panel = document.querySelector('ul > li.toctree-l1:nth-child(2)');
   selector_panel.classList.add("current");
   var selectors = document.querySelectorAll('pre code');
   var copyButton = '<div class="clipboard"><span class="btn-neutral btn-clipboard" title="Copy to clipboard">⧉</span></div>';
+
+  var lastDiv = document.querySelector('div[role="contentinfo"]');
+  var lastDivChild1 = lastDiv.nextSibling;
+  var lastDivChild2 = lastDivChild1.nextSibling;
+  var lastDivChild3 = lastDivChild2.nextSibling;
+  var lastDivChild4 = lastDivChild3.nextSibling;
+  var lastDivChild5 = lastDivChild4.nextSibling;
+  var lastDivChild6 = lastDivChild5.nextSibling;
+  lastDivChild1.remove();
+  lastDivChild2.remove();
+  lastDivChild3.remove();
+  lastDivChild4.remove();
+  lastDivChild5.remove();
+  lastDivChild6.remove();
   Array.prototype.forEach.call(selectors, function(selector){
     selector.insertAdjacentHTML('beforebegin', copyButton);
   });

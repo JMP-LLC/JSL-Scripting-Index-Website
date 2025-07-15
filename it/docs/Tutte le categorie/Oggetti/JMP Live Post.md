@@ -6,7 +6,7 @@
 
 ### Get Description
 
-**Sintassi:** string = jmplivepost << Get Description()
+**Sintassi:** string = jmplivepost &lt;&lt; Get Description()
 
 **Descrizione:** Carica la descrizione del report di JMP Live, della cartella di JMP Live o del post di JMP Live come stringa.
 
@@ -48,7 +48,7 @@ Write( "\!nDescription: ", report << Get Description );
 
 ### Get ID
 
-**Sintassi:** string = jmplivepost << Get ID()
+**Sintassi:** string = jmplivepost &lt;&lt; Get ID()
 
 **Descrizione:** Ottiene l’ID per questo report di JMP Live, questa cartella di JMP Live o questo post di JMP Live come stringa.
 
@@ -91,7 +91,7 @@ Write( "\!n\!nID: ", report << Get ID );
 
 ### Get Path
 
-**Sintassi:** string = jmplivepost << Get Path()
+**Sintassi:** string = jmplivepost &lt;&lt; Get Path()
 
 **Descrizione:** Ottiene il percorso di questo report, cartella, post di JMP Live come stringa.
 
@@ -134,7 +134,7 @@ Write( "\!n\!nPath: ", report << Get Path );
 
 ### Get Title
 
-**Sintassi:** string = jmplivepost << Get Title()
+**Sintassi:** string = jmplivepost &lt;&lt; Get Title()
 
 **Descrizione:** Carica il titolo del report di JMP Live, della cartella di JMP Live o del post di JMP Live come stringa.
 
@@ -177,7 +177,7 @@ Write( "\!nTitle: ", report << Get Title );
 
 ### Get Type
 
-**Sintassi:** string = jmplivepost << Get Type()
+**Sintassi:** string = jmplivepost &lt;&lt; Get Type()
 
 **Descrizione:** Ottiene il tipo specifico di post (cartella, dati o report)
 
@@ -221,7 +221,7 @@ Write( "\!nType: ", report << Get Type );
 
 ### Get URL
 
-**Sintassi:** string = jmplivepost << Get URL()
+**Sintassi:** string = jmplivepost &lt;&lt; Get URL()
 
 **Descrizione:** Ottiene l&apos;URL del report di JMP Live, della cartella di JMP Live o del post di JMP Live come stringa.
 
@@ -264,7 +264,7 @@ Write( "\!nURL: ", report << Get URL );
 
 ### Set Description
 
-**Sintassi:** success = jmplivepost << Set Description("string value")
+**Sintassi:** success = jmplivepost &lt;&lt; Set Description("string value")
 
 **Descrizione:** Data una stringa, imposta la descrizione del report di JMP Live, della cartella di JMP Live o del post di JMP Live.  Restituisce vero o falso, rispettivamente, per il successo o l&apos;insuccesso.
 
@@ -314,7 +314,7 @@ Write( "\!nDecription: ", report << Get Description );
 
 ### Set Title
 
-**Sintassi:** success = jmplivepost << Set Title("New Title")
+**Sintassi:** success = jmplivepost &lt;&lt; Set Title("New Title")
 
 **Descrizione:** Imposta il titolo del report di JMP Live, della cartella di JMP Live o del post di JMP Live. Restituisce vero o falso, rispettivamente, per il successo o l&apos;insuccesso.
 

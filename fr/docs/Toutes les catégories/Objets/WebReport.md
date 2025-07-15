@@ -6,7 +6,7 @@
 
 ### Add Image
 
-**Syntaxe :** obj << Add Image("path to image" | File("path to image"), <Title(...)>,<Description(...)>)
+**Syntaxe :** obj &lt;&lt; Add Image("path to image" | File("path to image"), &lt;Title(...)&gt;,&lt;Description(...)&gt;)
 
 **Description :** Ajoute une image à publier dans le rapport Internet. Les arguments facultatifs incluent le titre et la description.
 
@@ -26,7 +26,7 @@ webreport << Add Image(
 
 ### Add Report
 
-**Syntaxe :** obj << Add Report( jmpreport, <Title(...)>, <Description(...)>, <Publish Data(0|1)>, <Enable Warnings(0|1)>, <Optimization("Interactivity" | "Performance")> )
+**Syntaxe :** obj &lt;&lt; Add Report( jmpreport, &lt;Title(...)&gt;, &lt;Description(...)&gt;, &lt;Publish Data(0|1)&gt;, &lt;Enable Warnings(0|1)&gt;, &lt;Optimization("Interactivity" | "Performance")&gt; )
 
 **Description :** Ajoute un rapport à publier dans le rapport Internet. Les arguments facultatifs incluent le titre et la description.
 
@@ -48,7 +48,7 @@ webreport << Add Report( jmpreport );
 
 ### Add Reports
 
-**Syntaxe :** obj << Add Reports( reports )
+**Syntaxe :** obj &lt;&lt; Add Reports( reports )
 
 **Description :** Ajoute une liste des rapports JMP sur un rapport Internet à l&apos;aide des options par défaut.
 
@@ -82,7 +82,7 @@ If( N Items( windows ) > 0,
 
 ### Description
 
-**Syntaxe :** obj << Description(...)
+**Syntaxe :** obj &lt;&lt; Description(...)
 
 **Description :** Définit la description du rapport Internet.
 
@@ -118,7 +118,7 @@ If( !Is Empty( file ),
 
 ### Index
 
-**Syntaxe :** obj << Index( Title(...), <Description(...)>, <Timestamp(1 | 0)>, <Font(name, style)>, <Logo(image path)>, <CSS(css path)>, <Theme(Default | Orange | Blue | Red | Green | Black)>, <Style(LargeList | SmallList | Grid | Custom)> )
+**Syntaxe :** obj &lt;&lt; Index( Title(...), &lt;Description(...)&gt;, &lt;Timestamp(1 | 0)&gt;, &lt;Font(name, style)&gt;, &lt;Logo(image path)&gt;, &lt;CSS(css path)&gt;, &lt;Theme(Default | Orange | Blue | Red | Green | Black)&gt;, &lt;Style(LargeList | SmallList | Grid | Custom)&gt; )
 
 **Description :** Ajoute une page d&apos;index personnalisée sur le rapport Internet.
 
@@ -159,7 +159,7 @@ If( !Is Empty( file ),
 
 ### Reset
 
-**Syntaxe :** obj << Reset()
+**Syntaxe :** obj &lt;&lt; Reset()
 
 **Description :** Réinitialise le rapport Internet en fonction des nouvelles valeurs. Cela efface les désignations publiques, les emplacements de fichier et toute autre information mise en cache.
 
@@ -193,7 +193,7 @@ webreport << Add Report( jmpreport );
 
 ### Save
 
-**Syntaxe :** obj << Save ("directory path", <Replace(<0>|<1>)>, <Publish Data(<0>|<1>)>)
+**Syntaxe :** obj &lt;&lt; Save ("directory path", &lt;Replace(&lt;0&gt;|&lt;1&gt;)&gt;, &lt;Publish Data(&lt;0&gt;|&lt;1&gt;)&gt;)
 
 **Description :** Enregistre le rapport web dans le répertoire spécifié. Si l&apos;enregistrement est réussi, le nom de fichier de l&apos;emplacement du rapport publié est renvoyé. Un rapport web enregistré localement peut contenir des données d&apos;utilisateur intégrées. Si la valeur Publish Data est définie sur Faux, les rapports sont créés à partir d&apos;images statiques et n&apos;intègrent pas de données d&apos;utilisateur. La valeur par défaut est Vrai.
 
@@ -219,7 +219,7 @@ If( !Is Empty( file ),
 
 ### Title
 
-**Syntaxe :** obj << Title(...)
+**Syntaxe :** obj &lt;&lt; Title(...)
 
 **Description :** Définit le titre du rapport Internet.
 

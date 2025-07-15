@@ -6,7 +6,7 @@
 
 ### Close Outline
 
-**Sintaxis:** obj << Close Outline( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Close Outline( state=0|1 )
 
 **Descripción:** Abre o cierra el cuadro de esquema Cambiador de columnas
 
@@ -25,7 +25,7 @@ ColumnSwitcherObject << Close Outline( 1 );
 
 ### Get Current
 
-**Sintaxis:** obj << Get Current
+**Sintaxis:** obj &lt;&lt; Get Current
 
 **Descripción:** obtiene el nombre de la variable actual
 
@@ -45,7 +45,7 @@ ColumnSwitcherObject << Get Current/*country*/ ;
 
 ### Get Layout
 
-**Sintaxis:** obj << Get Layout
+**Sintaxis:** obj &lt;&lt; Get Layout
 
 **Descripción:** Establece la presentación de varios cambiadores de columnas. Vertical(0) u horizontal(1).
 
@@ -71,7 +71,7 @@ If( cs2 << Get Layout() == 1,
 
 ### Get List
 
-**Sintaxis:** obj << Get List
+**Sintaxis:** obj &lt;&lt; Get List
 
 **Descripción:** obtiene la lista de variables disponibles
 
@@ -90,7 +90,7 @@ ColumnSwitcherObject << Get List/*{"sex","country","marital status"}*/ ;
 
 ### Get Original
 
-**Sintaxis:** obj << Get Original
+**Sintaxis:** obj &lt;&lt; Get Original
 
 **Descripción:** obtiene el nombre de la variable original
 
@@ -110,7 +110,7 @@ ColumnSwitcherObject << Get Original/*marital status*/ ;
 
 ### Get Speed
 
-**Sintaxis:** obj << Get Speed
+**Sintaxis:** obj &lt;&lt; Get Speed
 
 **Descripción:** fpm = obj<<getSpeed /* in Frames Per Minute */;
 
@@ -129,7 +129,7 @@ FPM = ColumnSwitcherObject << Get Speed;
 
 ### Link Platform
 
-**Sintaxis:** obj << Link Platform( platform )
+**Sintaxis:** obj &lt;&lt; Link Platform( platform )
 
 **Descripción:** Vincula una plataforma a este cambiador de columnas.
 
@@ -154,7 +154,7 @@ columnSwitcher << Link Platform( gb );
 
 ### Make Column Switch Handler
 
-**Sintaxis:** handler = cs << Make Column Switch Handler( function(pre), function(post) )
+**Sintaxis:** handler = cs &lt;&lt; Make Column Switch Handler( function(pre), function(post) )
 
 **Descripción:** Crea un controlador para los cambios de columna con funciones de rellamada a las que se llama antes y después de que se cambie la columna. Las funciones de rellamada reciben la columna anterior, la columna siguiente y el cambiador de columnas. La función especificada para antes del cambio debe devolver un valor distinto de cero para permitir el cambio. Si devuelve 0, se impedirá el cambio. La función a la que se llama después del cambio no debería devolver ningún valor.
 
@@ -198,7 +198,7 @@ columnSwitcher << Run;
 
 ### Next
 
-**Sintaxis:** obj << Next
+**Sintaxis:** obj &lt;&lt; Next
 
 **Descripción:** Cambia la selección del cambiador de columna a la siguiente opción disponible
 
@@ -217,7 +217,7 @@ ColumnSwitcherObject << Next;
 
 ### Pause
 
-**Sintaxis:** obj << Pause
+**Sintaxis:** obj &lt;&lt; Pause
 
 **Descripción:** pausa la animación
 
@@ -238,7 +238,7 @@ ColumnSwitcherObject << Pause;
 
 ### Previous
 
-**Sintaxis:** obj << Previous
+**Sintaxis:** obj &lt;&lt; Previous
 
 **Descripción:** Cambia la selección del cambiador de columna a la anterior opción disponible
 
@@ -257,7 +257,7 @@ ColumnSwitcherObject << Previous;
 
 ### Remove Column Switcher
 
-**Sintaxis:** obj << Remove Column Switcher
+**Sintaxis:** obj &lt;&lt; Remove Column Switcher
 
 **Descripción:** Quita este cambiador de columna
 
@@ -278,7 +278,7 @@ ColumnSwitcherObject << Remove Column Switcher;
 
 ### Retain Axis Settings
 
-**Sintaxis:** obj << Retain Axis Settings( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Retain Axis Settings( state=0|1 )
 
 **Descripción:** Algunos gráficos almacenan las personalizaciones de los ejes en función del nombre de la columna. De forma predeterminada, estas personalizaciones se eliminan al cambiar de columna. Si se habilita esta opción, la columna se actualiza al cambiar para aplicar las personalizaciones al gráfico nuevo.
 
@@ -307,7 +307,7 @@ Graph Builder(
 
 ### Run
 
-**Sintaxis:** obj << Run
+**Sintaxis:** obj &lt;&lt; Run
 
 **Descripción:** inicia la animación
 
@@ -326,7 +326,7 @@ ColumnSwitcherObject << Run;
 
 ### Script
 
-**Sintaxis:** obj << Script( script )
+**Sintaxis:** obj &lt;&lt; Script( script )
 
 **Descripción:** Establece un script que se ejecuta cuando cambia la columna
 
@@ -351,7 +351,7 @@ Wait( 5/*seconds, while it animates*/ );
 
 ### Set Current
 
-**Sintaxis:** obj << Set Current( string )
+**Sintaxis:** obj &lt;&lt; Set Current( string )
 
 **Descripción:** establece la variable actual
 
@@ -370,7 +370,7 @@ ColumnSwitcherObject << Set Current( "country" );
 
 ### Set Layout
 
-**Sintaxis:** obj << Set Layout( 0 = Vertical | 1 = Horizontal )
+**Sintaxis:** obj &lt;&lt; Set Layout( 0 = Vertical | 1 = Horizontal )
 
 **Descripción:** Establece la presentación de varios cambiadores de columnas en vertical(0) u horizontal(1).
 
@@ -393,7 +393,7 @@ cs1 << Set Layout( 1 );
 
 ### Set N Lines
 
-**Sintaxis:** obj << Set N Lines( number )
+**Sintaxis:** obj &lt;&lt; Set N Lines( number )
 
 **Descripción:** Establece el número de líneas en el cuadro de lista de los nombres de columna
 
@@ -412,7 +412,7 @@ ColumnSwitcherObject << Set N Lines( 20 );
 
 ### Set Script
 
-**Sintaxis:** obj << Set Script( script )
+**Sintaxis:** obj &lt;&lt; Set Script( script )
 
 **Descripción:** Establece un script que se ejecuta cuando cambia la columna
 
@@ -437,7 +437,7 @@ Wait( 5/*seconds, while it animates*/ );
 
 ### Set Size
 
-**Sintaxis:** obj << Set Size( number )
+**Sintaxis:** obj &lt;&lt; Set Size( number )
 
 **Descripción:** Establece el ancho en píxeles del cuadro de lista de los nombres de columna
 
@@ -456,7 +456,7 @@ ColumnSwitcherObject << Set Size( 300 );
 
 ### Set Speed
 
-**Sintaxis:** obj << Set Speed( number )
+**Sintaxis:** obj &lt;&lt; Set Speed( number )
 
 **Descripción:** obj<<setSpeed(60) /* in Frames Per Minute */;
 
@@ -475,7 +475,7 @@ ColumnSwitcherObject << Set Speed( 60 );/*FPM*/ColumnSwitcherObject << Run;
 
 ### Title
 
-**Sintaxis:** obj << Title( string )
+**Sintaxis:** obj &lt;&lt; Title( string )
 
 **Descripción:** Establece el título del cuadro de esquema Cambiador de columnas
 

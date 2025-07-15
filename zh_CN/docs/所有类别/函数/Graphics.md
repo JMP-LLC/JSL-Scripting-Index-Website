@@ -2,8 +2,6 @@
 
 
 
-## 函数
-
 ### Add Color Theme
 
 **说明:** 创建一个新的自定义颜色主题，并将其注册到主题选择器。
@@ -73,7 +71,7 @@ New Window( "Example",
 
 ### Back Color
 
-**语法:** Back Color( <name|index|rgbList> )
+**语法:** Back Color( &lt;name|index|rgbList&gt; )
 
 **说明:** 为 Text() 函数中的清除模式设置背景颜色。
 
@@ -93,7 +91,7 @@ New Window( "Example",
 
 ### Blend Colors
 
-**语法:** color = Blend Colors( color1, color2, <percent2>, <colorSpace>, <hueDirection> )
+**语法:** color = Blend Colors( color1, color2, &lt;percent2&gt;, &lt;colorSpace&gt;, &lt;hueDirection&gt; )
 
 **说明:** 使用可配置的百分比和颜色空间混合两种颜色。
 
@@ -231,7 +229,7 @@ Show( Char To Path( "M10 10 L50 10 L30 50 Z M20 20 L40 20 L30 40 Z" ) );
 
 ### Circle
 
-**语法:** Circle( {x, y}, radius|PixelRadius( px ), ..., <"FILL"> )
+**语法:** Circle( {x, y}, radius|PixelRadius( px ), ..., &lt;"FILL"&gt; )
 
 **说明:** 以 {x, y} 为圆心绘制一个圆，半径可以指定为基于垂直轴的一个整数，或者像素数。基于像素的半径会形成一个大小不随垂直轴改变而发生变化的圆。可以按任意顺序重复参数以绘制多个圆。若使用 "FILL"，则必须在最后使用，它使用填充颜色填充圆，而不是使用画笔颜色绘制圆。
 
@@ -262,7 +260,7 @@ New Window( "Example",
 
 ### Color Difference
 
-**语法:** color = Color Difference( color1, color2, <difference metric>)
+**语法:** color = Color Difference( color1, color2, &lt;difference metric&gt;)
 
 **说明:** 返回指定色差值量度下两种颜色的差别。
 
@@ -363,7 +361,7 @@ Color To RGB( HLS Color( 30 / 360, 0.5, 1 ) );
 
 ### Contour
 
-**语法:** Contour( xVector, yVector, zGridMatrix, zContours, < <<zColor( color, option )>, < <<Fill|Fill Between|Fill Below|Fill Above>, < <<Transparency(vector)> )
+**语法:** Contour( xVector, yVector, zGridMatrix, zContours, &lt; &lt;&lt;zColor( color, option )&gt;, &lt; &lt;&lt;Fill|Fill Between|Fill Below|Fill Above&gt;, &lt; &lt;&lt;Transparency(vector)&gt; )
 
 **说明:** 在给定值网格的情况下绘制等高线。若指定的颜色少于等高线的数量，则“插值颜色”或“循环颜色”选项确定如何应用颜色。
 
@@ -427,7 +425,7 @@ New Window( "Example",
 
 ### Contour Function
 
-**语法:** Contour Function( zExpr, xName, yName, z|zMatrix, < <<XGrid( min, max, incr )>, < <<YGrid( min, max, incr )>, < <<ZColor( color, option )>, < <<ZLabeled>, < <<Filled>, < <<FillBetween>, < <<Ternary>, < <<Transparency( t )> )
+**语法:** Contour Function( zExpr, xName, yName, z|zMatrix, &lt; &lt;&lt;XGrid( min, max, incr )&gt;, &lt; &lt;&lt;YGrid( min, max, incr )&gt;, &lt; &lt;&lt;ZColor( color, option )&gt;, &lt; &lt;&lt;ZLabeled&gt;, &lt; &lt;&lt;Filled&gt;, &lt; &lt;&lt;FillBetween&gt;, &lt; &lt;&lt;Ternary&gt;, &lt; &lt;&lt;Transparency( t )&gt; )
 
 **说明:** 计算由 xName 和 yName 值确定的网格中的表达式，并绘制等高线。color 可以指定为数字、矩阵、RGB 值列表、颜色名称列表或颜色主题。透明度 t 可以指定为数字或矩阵。若指定了 Ternary 选项，则会剪切等高线以适应三元坐标系统。
 
@@ -475,7 +473,7 @@ New Window( "Example",
 
 ### Drag Line
 
-**语法:** Drag Line( xMatrixName, yMatrixName, <dragScript>, <MouseUpScript> )
+**语法:** Drag Line( xMatrixName, yMatrixName, &lt;dragScript&gt;, &lt;MouseUpScript&gt; )
 
 **说明:** 连接指定点绘制折线。但是与 Line 不同，这些点可以在屏幕中拖动，更新 (LValue) 矩阵参数中的值。
 
@@ -497,7 +495,7 @@ New Window( "Example",
 
 ### Drag Marker
 
-**语法:** Drag Marker( xMatrixName, yMatrixName, <dragScript>, <MouseUpScript> )
+**语法:** Drag Marker( xMatrixName, yMatrixName, &lt;dragScript&gt;, &lt;MouseUpScript&gt; )
 
 **说明:** 连接指定点绘制可移动标记。标记移动时，矩阵值随之更新。
 
@@ -519,7 +517,7 @@ New Window( "Example",
 
 ### Drag Polygon
 
-**语法:** Drag Polygon( xMatrixName, yMatrixName, <dragScript>, <MouseUpScript> )
+**语法:** Drag Polygon( xMatrixName, yMatrixName, &lt;dragScript&gt;, &lt;MouseUpScript&gt; )
 
 **说明:** 连接指定的点绘制填充的多边形。这些点可以在屏幕中拖动，并且更新 (LValue) 矩阵参数中的值。
 
@@ -541,7 +539,7 @@ New Window( "Example",
 
 ### Drag Rect
 
-**语法:** Drag Rect( xMatrixName, yMatrixName, <dragScript>, <MouseUpScript> )
+**语法:** Drag Rect( xMatrixName, yMatrixName, &lt;dragScript&gt;, &lt;MouseUpScript&gt; )
 
 **说明:** 连接指定的点绘制矩形。但是与 Rect 不同，这些角可以在屏幕中拖动，更新 (LValue) 矩阵参数中的值。
 
@@ -563,7 +561,7 @@ New Window( "Example",
 
 ### Drag Text
 
-**语法:** Drag Text( xMatrixName, yMatrixName, text, <dragScript>, <MouseUpScript> )
+**语法:** Drag Text( xMatrixName, yMatrixName, text, &lt;dragScript&gt;, &lt;MouseUpScript&gt; )
 
 **说明:** 连接指定点绘制文本。但是与 Text() 函数不同，这些点可以在屏幕中拖动，并更新 xMatrixName 和 yMatrixName 矩阵参数中的值。text 参数可以是字符串参数或字符串列表。
 
@@ -585,7 +583,7 @@ New Window( "Example",
 
 ### Fill Color
 
-**语法:** Fill Color( <name|index|rgbList> )
+**语法:** Fill Color( &lt;name|index|rgbList&gt; )
 
 **说明:** 设置用于绘制填充区域的颜色。
 
@@ -658,7 +656,7 @@ Get Color Theme Detail( "JMP Default" );
 
 ### Get Color Theme Names
 
-**语法:** {list of names} = Get Color Theme Names(<kind>)
+**语法:** {list of names} = Get Color Theme Names(&lt;kind&gt;)
 
 **说明:** 返回与可选参数 kind 匹配的颜色主题字符串的列表。kind 是以下项之一:“continuous”、“categorical”、“sequential”、“diverging”、“qualitative”或“chromatic”。
 
@@ -684,7 +682,7 @@ Get Color Theme Names( "sequential" );
 
 ### Gradient Function
 
-**语法:** Gradient Function( zExpr, xName, yName, zLimits, zColor( color list or matrix ), < <<XGrid( min, max, incr )>, < <<YGrid( min, max, incr )>, < <<Transparency( t )> )
+**语法:** Gradient Function( zExpr, xName, yName, zLimits, zColor( color list or matrix ), &lt; &lt;&lt;XGrid( min, max, incr )&gt;, &lt; &lt;&lt;YGrid( min, max, incr )&gt;, &lt; &lt;&lt;Transparency( t )&gt; )
 
 **说明:** 用两种颜色之间的渐变色来填充图形。zExpr 参数是 xName 和 yName 指定的变量组成的函数。向量 zLimits 指定 zExpr 值的范围。zColor 参数是一个向量或列表，它定义了用于混合以生成渐变色的两种颜色。Transparency 是应用于整个网格的单个值。
 
@@ -774,7 +772,7 @@ New Window( "Color Wheel",
 
 ### Handle
 
-**语法:** Handle( xPos, yPos, dragScript, <mouseUpScript> )
+**语法:** Handle( xPos, yPos, dragScript, &lt;mouseUpScript&gt; )
 
 **说明:** 在 xPos 和 yPos 指定的坐标处绘制方形标记，在标记处按下鼠标时，重复计算 dragScript 表达式。运行脚本前，将全局变量 x 和 y 设置为鼠标值，之后再将其恢复为原始值。释放鼠标按钮后即运行 mouseUpScript 表达式。
 
@@ -802,7 +800,7 @@ New Window( "Example",
 
 ### Heat Color
 
-**语法:** y = Heat Color( x ); y = Heat Color( x, < <<theme> )
+**语法:** y = Heat Color( x ); y = Heat Color( x, &lt; &lt;&lt;theme&gt; )
 
 **说明:** 返回与介于 0 与 1 之间的值对应的颜色。默认主题为“由蓝经灰到红”。此处支持所有方格图所支持的主题。支持矩阵参数。
 
@@ -855,7 +853,7 @@ New Window( "Example",
 
 ### In Polygon
 
-**语法:** b = In Polygon( x, y, xMatrix, <yMatrix> )
+**语法:** b = In Polygon( x, y, xMatrix, &lt;yMatrix&gt; )
 
 **说明:** 若点 (x,y) 位于由向量参数定义的多边形内，则返回 1；否则返回 0。
 
@@ -870,7 +868,7 @@ In Polygon( 11, 22, [10 20 30], [10 30 20] );
 
 ### Level Color
 
-**语法:** y = Level Color( i ); y = Level Color( i, n ); y = Level Color( i, n, <theme> ); y = Level Color( i, <theme> )
+**语法:** y = Level Color( i ); y = Level Color( i, n ); y = Level Color( i, n, &lt;theme&gt; ); y = Level Color( i, &lt;theme&gt; )
 
 **说明:** 返回类别颜色，其中 i 是类别水平，n 是类别数（可选），theme 是“列信息”对话框中“值颜色”组合框中的颜色主题。（“JMP 默认”是默认主题。）类别索引必须大于等于 1 且小于等于在调用中指定的或主题中定义的类别数。若第二个参数是字符，则它表示颜色主题而不指定 n。
 
@@ -892,7 +890,7 @@ New Window( "Color Bar",
 
 ### Line
 
-**语法:** Line( {x1, y1}, {x2, y2}, ..., < <<Value Space( 0|1 ) >, < <<Smooth( tension, domain, min response, max response ) > ); Line( xMatrix, yMatrix, < <<Value Space(0 | 1) >, < <<Smooth( tension, domain, min response, max response ) > )
+**语法:** Line( {x1, y1}, {x2, y2}, ..., &lt; &lt;&lt;Value Space( 0|1 ) &gt;, &lt; &lt;&lt;Smooth( tension, domain, min response, max response ) &gt; ); Line( xMatrix, yMatrix, &lt; &lt;&lt;Value Space(0 | 1) &gt;, &lt; &lt;&lt;Smooth( tension, domain, min response, max response ) &gt; )
 
 **说明:** 绘制一条线或多条连接线。默认情况下在端点之间采用线性方式绘制线条。若设置了“Value Space”选项，则按照所基于的轴刻度指定的投影绘制线条。若设置了“Smooth”选项，则连接是平滑的，受“tension”、“domain dimension”、“min response”和“max response”约束。
 
@@ -1047,7 +1045,7 @@ g << Set Y Axis(
 
 ### Marker
 
-**语法:** Marker( <rs>, {x1, y1}, {x2, y2}, ... ); Marker( <rs>, xMatrix, yMatrix )
+**语法:** Marker( &lt;rs&gt;, {x1, y1}, {x2, y2}, ... ); Marker( &lt;rs&gt;, xMatrix, yMatrix )
 
 **说明:** 在指定的坐标位置绘制标记。
 
@@ -1082,7 +1080,7 @@ New Window( "Example",
 
 ### Mousetrap
 
-**语法:** Mousetrap( dragScript, <mouseUpScript> )
+**语法:** Mousetrap( dragScript, &lt;mouseUpScript&gt; )
 
 **说明:** 当在图形中按下鼠标，并且鼠标未被其他图形对象操控时，将重复计算 dragScript 表达式。运行脚本之前，先将全局变量 x 和 y 设置为鼠标值，之后再将其恢复为原始值。释放鼠标按钮后随即运行 mouseUpScript 表达式。
 
@@ -1108,7 +1106,7 @@ New Window( "Example",
 
 ### New Heat Image
 
-**语法:** New Heat Image( Matrix, <Color Theme / gradient ( ... )>
+**语法:** New Heat Image( Matrix, &lt;Color Theme / gradient ( ... )&gt;
 
 **说明:** 根据矩阵和颜色主题或梯度创建热图图像
 
@@ -1156,7 +1154,7 @@ New Window( "small and big",
 
 ### Normal Contour
 
-**语法:** Normal Contour( prob, meanMatrix, stdMatrix, corrMatrix, <colorsMatrix>, <fill=0> )
+**语法:** Normal Contour( prob, meanMatrix, stdMatrix, corrMatrix, &lt;colorsMatrix&gt;, &lt;fill=0&gt; )
 
 **说明:** 绘制 k 个总体和两个变量的正态概率等高线。prob 参数可以是标量概率或概率矩阵。meanMatrix 和 stdsMatrix 参数是 k×2 矩阵，corrMatrix 参数是 k×1 向量。colorsMatrix 参数指定 k 条等高线的颜色；颜色必须指定为 JSL 颜色（JSL 颜色整数值或者 RGB Color() 或 HLS Color() 等 JSL 颜色函数的返回值）。fill 参数指定等高线填充颜色的透明度。
 
@@ -1184,7 +1182,7 @@ New Window( "Example",
 
 ### Oval
 
-**语法:** Oval( left, top, right, bottom, <fill=0> )
+**语法:** Oval( left, top, right, bottom, &lt;fill=0&gt; )
 
 **说明:** 在指定矩形中绘制椭圆，若 fill 不为 0，则填满。
 
@@ -1207,7 +1205,7 @@ New Window( "Example",
 
 ### Path
 
-**语法:** Path( pathMatrix|pathText, <fill=0> )
+**语法:** Path( pathMatrix|pathText, &lt;fill=0&gt; )
 
 **说明:** 若 fill 为 0，则沿指定路径绘线；若 fill 不为 0，则在指定路径内部填充颜色。可以使用 N x 3 矩阵或文本表示法来指定路径。路径矩阵包含三列（x、y 和标志），用于指定路径上的各点。标志值为 0 表示控制，为 1 表示移动，为 2 表示线段，为 3 表示三次 Bézier 线段，还可为负值（若该点还起到闭合路径的作用）。路径文本支持 SVG 语法。
 
@@ -1243,7 +1241,7 @@ Path To Char( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] );
 
 ### Pen Color
 
-**语法:** Pen Color( <name|index|rgbList> )
+**语法:** Pen Color( &lt;name|index|rgbList&gt; )
 
 **说明:** 设置用于绘制线条的颜色。
 
@@ -1263,7 +1261,7 @@ New Window( "Example",
 
 ### Pen Size
 
-**语法:** Pen Size( <x> )
+**语法:** Pen Size( &lt;x&gt; )
 
 **说明:** 设置用于绘制线条的画笔大小（以像素表示）。
 
@@ -1283,7 +1281,7 @@ New Window( "Example",
 
 ### Pick Color
 
-**语法:** color = Pick Color( <window title>, <name|index|rgbList> )
+**语法:** color = Pick Color( &lt;window title&gt;, &lt;name|index|rgbList&gt; )
 
 **说明:** 返回使用标准颜色选择器选择的颜色。
 
@@ -1306,7 +1304,7 @@ New Window( "Example",
 
 ### Pick Color Theme
 
-**语法:** theme = Pick Color Theme( <window title>, <Color Theme(name|specification)>, <Type("Continuous" | "Sequential" | "Bad to Good" | "Categorical")>)
+**语法:** theme = Pick Color Theme( &lt;window title&gt;, &lt;Color Theme(name|specification)&gt;, &lt;Type("Continuous" | "Sequential" | "Bad to Good" | "Categorical")&gt;)
 
 **说明:** 返回使用标准颜色主题选择器选择的颜色主题。可以显式指定初始主题或通过指定 Type 使用首选项中的主题。
 
@@ -1443,7 +1441,7 @@ New Window( "Example",
 
 ### Pixel Path
 
-**语法:** PixelPath( h, v, pathMatrix|pathText, <fill=0>, <scale=1.0>, <orient={0.0,1.0}> )
+**语法:** PixelPath( h, v, pathMatrix|pathText, &lt;fill=0&gt;, &lt;scale=1.0&gt;, &lt;orient={0.0,1.0}&gt; )
 
 **说明:** 若 fill 为 0，则沿指定像素路径绘线；若 fill 不为 0，则在指定路径内部填充颜色。可以使用 N x 3 矩阵或文本表示法来指定路径。路径矩阵包含三列（x、y 和标志），用于指定路径上的各点。标志值为 0 表示控制，为 1 表示移动，为 2 表示线段，为 3 表示三次 Bézier 线段，还可为负值（若该点还起到闭合路径的作用）。路径文本支持 SVG 语法。路径将根据可选参数以原点为中心调整尺度和转换，并且方向在轴空间中指定。
 
@@ -1484,7 +1482,7 @@ New Window( "Example",
 
 ### Pixel Text
 
-**语法:** Pixel Text( <properties>, {h, v}, text, ... )
+**语法:** Pixel Text( &lt;properties&gt;, {h, v}, text, ... )
 
 **说明:** 移动到 {h, v} 像素位置并绘制 text 参数指定的文本。已命名的属性参数包含 Center Justified、Right Justified、Top Align、Bottom Align、Erased、Boxed、Counterclockwise、Clockwise。可按任意顺序混合位置参数、已命名参数和字符串。
 
@@ -1514,7 +1512,7 @@ New Window( "Example",
 
 ### Polygon
 
-**语法:** Polygon( {x1, y1}, {x2, y2}, ..., <<fill(bool) ); Polygon( xMatrix, <yMatrix>, <<fill(bool) )
+**语法:** Polygon( {x1, y1}, {x2, y2}, ..., &lt;&lt;fill(bool) ); Polygon( xMatrix, &lt;yMatrix&gt;, &lt;&lt;fill(bool) )
 
 **说明:** 绘制各点指定的多边形。
 
@@ -1535,9 +1533,7 @@ New Window( "Example",
 
 ### Polygon Area
 
-**语法:** area = Polygon Area( {x1, y1}, {x2, y2}, ... );
-
-area = Polygon Area( xMatrix, yMatrix )
+**语法:** area = Polygon Area( {x1, y1}, {x2, y2}, ... );area = Polygon Area( xMatrix, yMatrix )
 
 **说明:** 计算指定多边形的面积。
 
@@ -1563,9 +1559,7 @@ area = Polygon Area( [10 20 30], [10 30 20] );
 
 ### Polygon Centroid
 
-**语法:** {cx, cy} = Polygon Centroid( {x1, y1}, {x2, y2}, ... );
-
-centroid = Polygon Centroid( xMatrix, yMatrix )
+**语法:** {cx, cy} = Polygon Centroid( {x1, y1}, {x2, y2}, ... );centroid = Polygon Centroid( xMatrix, yMatrix )
 
 **说明:** 计算指定多边形的重心。
 
@@ -1591,7 +1585,7 @@ centroid = Polygon Centroid( [10 20 30], [10 30 20] );
 
 ### Polygon Simplify
 
-**语法:** rows = Polygon Simplify( xMatrix|xyMatrix, <yMatrix>, <<<detail factor(f=200)>, <<<multiple(ids)>, <<<geodesic(bool)> )
+**语法:** rows = Polygon Simplify( xMatrix|xyMatrix, &lt;yMatrix&gt;, &lt;&lt;&lt;detail factor(f=200)&gt;, &lt;&lt;&lt;multiple(ids)&gt;, &lt;&lt;&lt;geodesic(bool)&gt; )
 
 **说明:** 从带有少量细节的多边形中删除点并返回其剩余点的索引。detail factor 与细节误差容差成反比。multiple(ids) 指示许多多边形应该一起简化，以便一致地处理公共边。ids 是每个点对应一行的矩阵。geodesic(1) 指示坐标是距离测量值的经纬度。
 
@@ -1708,7 +1702,7 @@ New Window( "RGB Color Example",
 
 ### Rect
 
-**语法:** Rect( left, top, right, bottom, <fill=0> ); Rect( {left, top}, {right, bottom} )
+**语法:** Rect( left, top, right, bottom, &lt;fill=0&gt; ); Rect( {left, top}, {right, bottom} )
 
 **说明:** 绘制矩形，若 fill 不等于 0，则填满。
 
@@ -1731,7 +1725,7 @@ New Window( "Example",
 
 ### Remove Color Theme
 
-**语法:** Remove Color Theme("Name"|{"Name", <flags>, {color, ...}, <{position, ...}>})
+**语法:** Remove Color Theme("Name"|{"Name", &lt;flags&gt;, {color, ...}, &lt;{position, ...}&gt;})
 
 **说明:** 按名称或按完整颜色主题对象，从全局列表中删除自定义颜色主题。
 
@@ -1746,9 +1740,7 @@ Remove Color Theme( "Yellow To Blue" );
 
 ### Text
 
-**语法:** Text( <properties>, {x, y}, text, ... )
-
-Text( {left, top, right, bottom}, text )
+**语法:** Text( &lt;properties&gt;, {x, y}, text, ... )Text( {left, top, right, bottom}, text )
 
 **说明:** 移动至 {x, y} 位置并绘制 text 参数指定的文本。命名属性参数包括 Center Justified、Right Justified、Erased、Boxed、Counterclockwise 和 Clockwise。位置参数、命名参数和字符串可以按任意顺序混合。您还可以使用四个 x, y 坐标描述在其中绘制文本的框。在这种情况下，不使用属性。
 
@@ -1784,7 +1776,7 @@ New Window( "Example",
 
 ### Text Color
 
-**语法:** Text Color( <name|index|rgbList> )
+**语法:** Text Color( &lt;name|index|rgbList&gt; )
 
 **说明:** 设置用于绘制文本的颜色。
 
@@ -1804,7 +1796,7 @@ New Window( "Example",
 
 ### Text Font
 
-**语法:** {nm, sz, st, an} = Text Font(fontName, <size>, <"bold italic underline strikeout">, <angle>
+**语法:** {nm, sz, st, an} = Text Font(fontName, &lt;size&gt;, &lt;"bold italic underline strikeout"&gt;, &lt;angle&gt;
 
 **说明:** 设置后续 Text() 绘制的字体。使用时不带参数来获取当前字体设置。角度为顺时针度数。
 
@@ -1891,7 +1883,7 @@ To Color Space( {0.941, 0.196, 0.274, "lRGB", 0.871, 0.032, 0.061}, "HLS" );
 
 ### Transparency
 
-**语法:** Transparency( <alpha> )
+**语法:** Transparency( &lt;alpha&gt; )
 
 **说明:** 设置在绘制命令中使用的透明度。Alpha 范围: 0（清晰）至 1（不透明，默认值）。某些操作系统可能不支持该项。
 
@@ -1957,7 +1949,7 @@ New Window( "Example",
 
 ### X Function
 
-**语法:** X Function( xExpr, yName, <properties> )
+**语法:** X Function( xExpr, yName, &lt;properties&gt; )
 
 **说明:** 变量 yName 沿着图中 Y 轴的范围变化时，在 X 方向绘制函数 xExpr。其他已命名的属性参数包含 Min(minimum X)、Max(maximum Y)、Fill(fill pattern, value to fill to)、Inc(upper bound of increment)。
 
@@ -2029,7 +2021,7 @@ New Window( "Example",
 
 ### X Scale
 
-**语法:** X Scale( <xMin>, <xMax> )
+**语法:** X Scale( &lt;xMin&gt;, &lt;xMax&gt; )
 
 **说明:** 设置图形框架的新尺度。
 
@@ -2091,7 +2083,7 @@ New Window( "Spiral",
 
 ### Y Function
 
-**语法:** Y Function( yExpr, xName, <properties> )
+**语法:** Y Function( yExpr, xName, &lt;properties&gt; )
 
 **说明:** 变量 xName 沿着图中 X 轴的范围变化时，在 Y 方向绘制函数 yExpr。其他已命名的属性参数包含 Min(minimum X)、Max(maximum X)、Fill(fill pattern, value to fill to)、Inc(upper bound of increment)。
 
@@ -2163,7 +2155,7 @@ New Window( "Example",
 
 ### Y Scale
 
-**语法:** Y Scale( <yMin>, <yMax> )
+**语法:** Y Scale( &lt;yMin&gt;, &lt;yMax&gt; )
 
 **说明:** 设置图形框架的新尺度。
 

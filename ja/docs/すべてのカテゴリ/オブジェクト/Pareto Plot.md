@@ -6,7 +6,7 @@
 
 ### Action
 
-**構文:** obj << Action
+**構文:** obj &lt;&lt; Action
 
 **説明:** 評価する式を挿入するための、プラットフォーム内の汎用トラップドア。プラットフォームに一時的にディスプレイボックスおよびデータテーブルのコンテキストを設定する。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**構文:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**構文:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **説明:** 作成されたプリセットをオブジェクトに適用する。保存された設定に合わせてオプションとカスタマイズが更新される。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**構文:** obj << Automatic Recalc( state=0|1 )
+**構文:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **説明:** データの除外や変更があった場合に分析を自動的にやり直す。Automatic Recalcオプションがオンになっている場合で、データの除外や変更が再計算の前に確実に適用されるようにするには、Wait(0)コマンドを使用すること。
 
@@ -88,7 +88,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**構文:** obj << Broadcast(message)
+**構文:** obj &lt;&lt; Broadcast(message)
 
 **説明:** メッセージをプラットフォームに一括適用する。個々のオブジェクトから戻される結果がデータテーブルである場合は、可能な限り連結する。その最終的な形式は、Table BoxのSave Combined Tableオプションの結果と同じになるか、またはソース列を使用したConcanateオプションの結果と同じになる。それ以外の場合、結果はリストの形で戻される。
 
@@ -108,7 +108,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**構文:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**構文:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **説明:** プラットフォームの変数を変更するための設定パネルを追加する。
 
@@ -126,7 +126,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**構文:** obj << Copy ByGroup Script
+**構文:** obj &lt;&lt; Copy ByGroup Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -153,7 +153,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**構文:** obj << Copy Script
+**構文:** obj &lt;&lt; Copy Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -169,7 +169,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**構文:** obj << Data Table Window
+**構文:** obj &lt;&lt; Data Table Window
 
 **説明:** この分析に使用したデータテーブルのウィンドウを手前に表示する。
 
@@ -185,7 +185,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**構文:** obj << Get By Levels
+**構文:** obj &lt;&lt; Get By Levels
 
 **説明:** By列が指定されている場合、列名をキー、データ値を値とした連想配列を戻す。
 
@@ -202,7 +202,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**構文:** obj << Get ByGroup Script
+**構文:** obj &lt;&lt; Get ByGroup Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -230,7 +230,7 @@ Show( t );
 
 ### Get Container
 
-**構文:** obj << Get Container
+**構文:** obj &lt;&lt; Get Container
 
 **説明:** オブジェクトのコンテンツを含んだコンテナボックスの参照を戻す。
 
@@ -278,7 +278,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**構文:** obj << Get Data Table
+**構文:** obj &lt;&lt; Get Data Table
 
 **説明:** データテーブルへの参照を戻す。
 
@@ -295,7 +295,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**構文:** obj << Get Group Platform
+**構文:** obj &lt;&lt; Get Group Platform
 
 **説明:** 該当のプラットフォームがグループに属している場合に、Group Platformオブジェクトを戻す。それ以外の場合はEmpty()を戻す。
 
@@ -312,7 +312,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**構文:** obj << Get Script
+**構文:** obj &lt;&lt; Get Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -329,7 +329,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**構文:** obj << Get Script With Data Table
+**構文:** obj &lt;&lt; Get Script With Data Table
 
 **説明:** この分析を再現するスクリプト(JSL)をデータテーブルへの参照も含めて生成し、それを式として戻す。
 
@@ -346,7 +346,7 @@ Show( t );
 
 ### Get Timing
 
-**構文:** obj << Get Timing
+**構文:** obj &lt;&lt; Get Timing
 
 **説明:** プラットフォームの起動にかかった時間を取得する。
 
@@ -363,7 +363,7 @@ Show( t );
 
 ### Get Web Support
 
-**構文:** obj << Get Web Support
+**構文:** obj &lt;&lt; Get Web Support
 
 **説明:** ディスプレイオブジェクトにおけるインタラクティブHTMLサポートのレベルを数値で戻す。1は、一部または全部の要素がサポートされていることを示し、0は、サポートされないことを示す。
 
@@ -379,7 +379,7 @@ Show( s );
 
 ### Get Where Expr
 
-**構文:** obj << Get Where Expr
+**構文:** obj &lt;&lt; Get Where Expr
 
 **説明:** プラットフォームがBy()またはWhere()を使って起動された場合に、データをサブセットするためのWhere式を戻す。By()やWhere()が使われていない場合はEmpty()を戻す。
 
@@ -416,7 +416,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**構文:** obj << Local Data Filter
+**構文:** obj &lt;&lt; Local Data Filter
 
 **説明:** このプラットフォームに対してのみ有効なフィルタで、データを特定のグループまたは範囲にフィルタリングする。
 
@@ -472,7 +472,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**構文:** obj << Paste Local Data Filter
+**構文:** obj &lt;&lt; Paste Local Data Filter
 
 **説明:** クリップボードにあるローカルデータフィルタを現在のレポートに適用する。
 
@@ -493,7 +493,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**構文:** obj << Redo Analysis
+**構文:** obj &lt;&lt; Redo Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -509,7 +509,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**構文:** obj << Redo ByGroup Analysis
+**構文:** obj &lt;&lt; Redo ByGroup Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -536,7 +536,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**構文:** obj << Relaunch Analysis
+**構文:** obj &lt;&lt; Relaunch Analysis
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -552,7 +552,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**構文:** obj << Relaunch ByGroup
+**構文:** obj &lt;&lt; Relaunch ByGroup
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -579,7 +579,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**構文:** obj << Remove Column Switcher
+**構文:** obj &lt;&lt; Remove Column Switcher
 
 **説明:** プラットフォームに最後に追加された列スイッチャーを削除する。
 
@@ -599,7 +599,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**構文:** obj << Remove Local Data Filter
+**構文:** obj &lt;&lt; Remove Local Data Filter
 
 **説明:** すでに作成されているローカルデータフィルタを削除し、プラットフォームはデータテーブル内のすべてのデータを使用した状態に戻る。
 
@@ -638,9 +638,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**構文:** obj << Report;
-
-Report( obj )
+**構文:** obj &lt;&lt; Report;Report( obj )
 
 **説明:** レポートオブジェクトへの参照を戻す。
 
@@ -658,7 +656,7 @@ Show( t );
 
 ### Report View
 
-**構文:** obj << Report View( "完全"|"要約" )
+**構文:** obj &lt;&lt; Report View( "完全"|"要約" )
 
 **説明:** レポートビューは、プラットフォームレポートの詳細を表示するかどうかを決定する。Fullはすべての詳細を表示し、Summaryはプラットフォームにより限定されたものだけを表示する。 動作をカスタマイズするため、各ディスプレイボックスは<<Set Summary Behaviorメッセージをサポートする。
 
@@ -674,7 +672,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**構文:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** 分析を再現するためのJSLスクリプトを作成し、データテーブルにテーブルプロパティとして保存する。スクリプトの名前を指定できる。Append Suffixオプションは、スクリプト名に数字の接尾辞を追加する。これにより、同名のスクリプトが存在していても区別できる。Promptオプションは、ユーザにスクリプト名の指定を促す。Replaceオプションは、同名の既存のスクリプトを置き換える。
 
@@ -701,7 +699,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**構文:** obj << Save ByGroup Script to Journal
+**構文:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -728,7 +726,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**構文:** obj << Save ByGroup Script to Script Window
+**構文:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -755,7 +753,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**構文:** obj << Save Script for All Objects
+**構文:** obj &lt;&lt; Save Script for All Objects
 
 **説明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -771,7 +769,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**構文:** obj << Save Script for All Objects To Data Table( <name> )
+**構文:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **説明:** すべてのレポートオブジェクトを再現するスクリプトを現在のデータテーブルに保存する。このオプションは、ウィンドウ内にレポートが複数ある場合に便利。作成されるスクリプトの名前は、引用符で囲んで指定しない限り、1つ目のプラットフォーム名となる。
 
@@ -823,7 +821,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**構文:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** この分析を再現するJSLスクリプトを生成し、データテーブルのテーブルプロパティとして保存する。
 
@@ -839,7 +837,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**構文:** obj << Save Script to Journal
+**構文:** obj &lt;&lt; Save Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -855,7 +853,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**構文:** obj << Save Script to Report
+**構文:** obj &lt;&lt; Save Script to Report
 
 **説明:** この分析を再現するJSLスクリプトを生成し、レポートウィンドウに表示する。分析手順の記録を結果と一緒に残せる。
 
@@ -871,7 +869,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**構文:** obj << Save Script to Script Window
+**構文:** obj &lt;&lt; Save Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -952,7 +950,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**構文:** obj << Sync to Data Table Changes
+**構文:** obj &lt;&lt; Sync to Data Table Changes
 
 **説明:** 除外やデータの変更が行われた場合に同期する。
 
@@ -969,7 +967,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**構文:** obj << Title( "new title" )
+**構文:** obj &lt;&lt; Title( "new title" )
 
 **説明:** プラットフォームのタイトルを設定する。
 
@@ -985,7 +983,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**構文:** obj << Top Report
+**構文:** obj &lt;&lt; Top Report
 
 **説明:** レポート内のルートノードへの参照を戻す。
 
@@ -1003,7 +1001,7 @@ Show( t );
 
 ### Transform Column
 
-**構文:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**構文:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **説明:** オブジェクトのローカルコンテキスト(通常はプラットフォーム)内に変換列を作成する。この変換列は、それを作成したプラットフォームの中のみで使用可能。
 
@@ -1022,7 +1020,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**構文:** obj << View Web XML
+**構文:** obj &lt;&lt; View Web XML
 
 **説明:** インタラクティブHTMLレポートの作成に使うXMLコードを戻す。
 
@@ -1058,7 +1056,7 @@ New Window( "Bivariate Equation",
 
 ### By
 
-**構文:** obj << By( column(s) )
+**構文:** obj &lt;&lt; By( column(s) )
 
 ```jsl
 
@@ -1082,7 +1080,7 @@ obj << Show Pareto Bars( 0 );
 
 ### Cause
 
-**構文:** obj << Cause( column )
+**構文:** obj &lt;&lt; Cause( column )
 
 ```jsl
 
@@ -1095,7 +1093,7 @@ obj << Show Pareto Bars( 0 );
 
 ### Freq
 
-**構文:** obj << Freq( column )
+**構文:** obj &lt;&lt; Freq( column )
 
 ```jsl
 
@@ -1115,7 +1113,7 @@ obj << Show Pareto Bars( 0 );
 
 ### Grouping
 
-**構文:** obj << Grouping( column(s) )
+**構文:** obj &lt;&lt; Grouping( column(s) )
 
 ```jsl
 
@@ -1128,7 +1126,7 @@ obj << Show Pareto Bars( 0 );
 
 ### Subcategory
 
-**構文:** obj << Subcategory( column )
+**構文:** obj &lt;&lt; Subcategory( column )
 
 **JMP追加されたバージョン:** 17
 
@@ -1143,7 +1141,7 @@ obj << Show Pareto Bars( 0 );
 
 ### Weight
 
-**構文:** obj << Weight( column )
+**構文:** obj &lt;&lt; Weight( column )
 
 ```jsl
 
@@ -1163,7 +1161,7 @@ obj << Show Pareto Bars( 0 );
 
 ### X
 
-**構文:** obj << X( column(s) )
+**構文:** obj &lt;&lt; X( column(s) )
 
 ```jsl
 
@@ -1176,7 +1174,7 @@ obj << Show Pareto Bars( 0 );
 
 ### Y
 
-**構文:** obj << Y( column )
+**構文:** obj &lt;&lt; Y( column )
 
 ```jsl
 
@@ -1191,7 +1189,7 @@ obj << Show Pareto Bars( 0 );
 
 ### Alias
 
-**構文:** obj << Alias( cause, alias )
+**構文:** obj &lt;&lt; Alias( cause, alias )
 
 **説明:** 原因に別の名前を設定する。
 
@@ -1207,7 +1205,7 @@ obj = dt << Pareto Plot( Cause( :failure ), Freq( :N ), Alias( "doping", "substi
 
 ### Bar Label Format
 
-**構文:** obj << Bar Label Format
+**構文:** obj &lt;&lt; Bar Label Format
 
 **説明:** パレート図の棒ラベルの表示形式を設定する。
 
@@ -1228,7 +1226,7 @@ obj = dt << Pareto Plot(
 
 ### Bar Style
 
-**構文:** obj << Bar Style( "棒グラフ"|"フロート" )
+**構文:** obj &lt;&lt; Bar Style( "棒グラフ"|"フロート" )
 
 **説明:** パレート図の棒の表示を制御する。
 
@@ -1245,7 +1243,7 @@ obj << Bar Style( Float );
 
 ### Cause Colors
 
-**構文:** obj << Cause Colors( { { causeName, color },  ...} )
+**構文:** obj &lt;&lt; Cause Colors( { { causeName, color }, ...} )
 
 **説明:** 指定の棒の色を変更する。
 
@@ -1297,7 +1295,7 @@ obj << Cause Colors( {{"miscellaneous", "Purple"}, {"silicon defect", "Red"}} );
 
 ### Cause Labels
 
-**構文:** obj << Cause Labels( { { causeName, 0|1 },  ...} )
+**構文:** obj &lt;&lt; Cause Labels( { { causeName, 0|1 }, ...} )
 
 **説明:** 指定の棒に対して、度数のラベルを表示する。
 
@@ -1343,7 +1341,7 @@ obj = dt << Pareto Plot(
 
 ### Cause Markers
 
-**構文:** obj << Cause Markers( { { causeName, marker },  ...} )
+**構文:** obj &lt;&lt; Cause Markers( { { causeName, marker }, ...} )
 
 **説明:** 累積パーセントを示す、指定の棒のマーカーを変更する。
 
@@ -1384,7 +1382,7 @@ obj << Cause Markers( {{"miscellaneous", "Square"}, {"silicon defect", "Diamond"
 
 ### Combine Causes
 
-**構文:** obj << Combine Causes( {cause1, cause2, ... } | << First(N) | << Last(N), <label> )
+**構文:** obj &lt;&lt; Combine Causes( {cause1, cause2, ... } | &lt;&lt; First(N) | &lt;&lt; Last(N), &lt;label&gt; )
 
 **説明:** 指定された原因を1つの原因に組み合わせる。原因は、名前のリストとして指定することも、FirstまたはLastメッセージで数を指定して送信することもできる。オプションで、組み合わされた原因のラベルを指定できる。
 
@@ -1430,7 +1428,7 @@ obj = dt << Pareto Plot(
 
 ### Cum Line Connect Style
 
-**構文:** obj << Cum Line Connect Style( "直線"|"曲線"|"ステップ " )
+**構文:** obj &lt;&lt; Cum Line Connect Style( "直線"|"曲線"|"ステップ " )
 
 **説明:** 累積パーセント曲線の連結スタイルを制御する。
 
@@ -1447,7 +1445,7 @@ obj << Cum Line Connect Style( "Step" );
 
 ### Cum Percent Curve Color
 
-**構文:** obj << Cum Percent Curve Color( color )
+**構文:** obj &lt;&lt; Cum Percent Curve Color( color )
 
 **説明:** グラフ上で累積パーセント曲線の色を変更する。
 
@@ -1462,7 +1460,7 @@ obj << Cum Percent Curve Color( "Red" );
 
 ### Cum Percent Label Format
 
-**構文:** obj << Cum Percent Label Format
+**構文:** obj &lt;&lt; Cum Percent Label Format
 
 **説明:** 累積パーセントマーカーの、ラベルの表示形式を設定する。
 
@@ -1483,7 +1481,7 @@ obj = dt << Pareto Plot(
 
 ### Get Causes
 
-**構文:** obj << Get Causes( <"First" | "Last" | "First %" | "Last %", number> )
+**構文:** obj &lt;&lt; Get Causes( &lt;"First" | "Last" | "First %" | "Last %", number&gt; )
 
 **説明:** パレート図から、現在の出現順序に基づく原因名のリストを戻す。オプションが指定されていない場合、すべての原因が戻される。それ以外の場合は、キーワードと数値の指定により、最初のN個、最後のN個、最初のNパーセント、最後のNパーセントのいずれかが戻される。
 
@@ -1540,7 +1538,7 @@ obj << Get Causes( "Last", 3 );
 
 ### Group Settings
 
-**構文:** obj << Group Settings( Column, <Levels In View( number )>, <Start Level( number ), <Show Title (0|1)>, <Title Color( color )>, <Levels Color( color )> )
+**構文:** obj &lt;&lt; Group Settings( Column, &lt;Levels In View( number )&gt;, &lt;Start Level( number ), &lt;Show Title (0|1)&gt;, &lt;Title Color( color )&gt;, &lt;Levels Color( color )&gt; )
 
 **説明:** グループ変数が指定されたパレート図の表示スタイルを制御する。
 
@@ -1567,7 +1565,7 @@ obj = dt << Pareto Plot(
 
 ### Label Cum Percent Points
 
-**構文:** obj << Label Cum Percent Points( state=0|1 )
+**構文:** obj &lt;&lt; Label Cum Percent Points( state=0|1 )
 
 **説明:** グラフ上で各棒の累積パーセントを示すラベルの表示/非表示を切り替える。
 
@@ -1582,7 +1580,7 @@ obj << Label Cum Percent Points( 1 );
 
 ### Legend Position
 
-**構文:** obj << Legend Position( ("Right" | "Bottom" | "Left" | "Top") )
+**構文:** obj &lt;&lt; Legend Position( ("Right" | "Bottom" | "Left" | "Top") )
 
 **説明:** 凡例の位置を設定する。
 
@@ -1599,7 +1597,7 @@ obj << Legend Position( "Bottom" );
 
 ### Legend Settings
 
-**構文:** obj << Legend Settings
+**構文:** obj &lt;&lt; Legend Settings
 
 **説明:** 凡例のプロパティを変更するためのダイアログを開く。
 
@@ -1615,7 +1613,7 @@ obj << Legend Settings();
 
 ### Move to First
 
-**構文:** obj << Move to First( {level1, level2, ...} | << First(N) | << Last(N) )
+**構文:** obj &lt;&lt; Move to First( {level1, level2, ...} | &lt;&lt; First(N) | &lt;&lt; Last(N) )
 
 **説明:** 指定された水準の棒を先頭に移動する。水準は、名前のリストとして指定することも、FirstまたはLastメッセージで数を指定して送信することもできる。
 
@@ -1630,7 +1628,7 @@ obj << Move to First( {"corrosion", "doping"} );
 
 ### Move to Last
 
-**構文:** obj << Move to Last( {level1, level2, ...} | << First(N) | << Last(N) )
+**構文:** obj &lt;&lt; Move to Last( {level1, level2, ...} | &lt;&lt; First(N) | &lt;&lt; Last(N) )
 
 **説明:** 指定された水準の棒を最後尾に移動する。水準は、名前のリストとして指定することも、FirstまたはLastメッセージで数を指定して送信することもできる。
 
@@ -1645,7 +1643,7 @@ obj << Move to Last( {"miscellaneous"} );
 
 ### N Legend
 
-**構文:** obj << N Legend( state=0|1 )
+**構文:** obj &lt;&lt; N Legend( state=0|1 )
 
 **説明:** 全体の標本サイズをプロットに表示する。
 
@@ -1660,7 +1658,7 @@ obj << N Legend( 1 );
 
 ### No Plot
 
-**構文:** obj << No Plot( state=0|1 )
+**構文:** obj &lt;&lt; No Plot( state=0|1 )
 
 **説明:** パレート図のアウトラインノードを閉じる。
 
@@ -1675,7 +1673,7 @@ obj << No Plot( 1 );
 
 ### Orientation
 
-**構文:** obj << Orientation( "縦"|"横" )
+**構文:** obj &lt;&lt; Orientation( "縦"|"横" )
 
 **説明:** パレート図の向きを制御する。
 
@@ -1692,7 +1690,7 @@ obj << Orientation( "Horizontal" );
 
 ### Pareto Line Connect Style
 
-**構文:** obj << Pareto Line Connect Style( "直線"|"曲線"|"ステップ " )
+**構文:** obj &lt;&lt; Pareto Line Connect Style( "直線"|"曲線"|"ステップ " )
 
 **説明:** パレート図の折れ線の連結スタイルを制御する。
 
@@ -1714,7 +1712,7 @@ obj << Pareto Line Connect Style( "Step" );
 
 ### Per Unit Rates
 
-**構文:** obj << Per Unit Rates( state=0|1 )
+**構文:** obj &lt;&lt; Per Unit Rates( state=0|1 )
 
 **説明:** グループ間で不適合率を比較する。標本サイズが指定されている場合は、ユニットあたり度数(DPU)と100万個あたりの度数(PPM)の各列がレポートに追加される。
 
@@ -1733,7 +1731,7 @@ obj << Per Unit Rates( 1 );
 
 ### Percent Scale
 
-**構文:** obj << Percent Scale( state=0|1 )
+**構文:** obj &lt;&lt; Percent Scale( state=0|1 )
 
 **説明:** 左縦軸をパーセント表示にする。
 
@@ -1748,7 +1746,7 @@ obj << Percent Scale( 1 );
 
 ### Pie Chart
 
-**構文:** obj << Pie Chart( state=0|1 )
+**構文:** obj &lt;&lt; Pie Chart( state=0|1 )
 
 **説明:** 棒グラフではなく、円グラフとして表示する。
 
@@ -1763,7 +1761,7 @@ obj << Pie Chart( 1 );
 
 ### Reorder Horizontal
 
-**構文:** obj << Reorder Horizontal( level1, level2, ... )
+**構文:** obj &lt;&lt; Reorder Horizontal( level1, level2, ... )
 
 **説明:** 複数のグループに分かれているパレート図を水平方向に並べ替える。
 
@@ -1779,7 +1777,7 @@ obj << Reorder Horizontal( "before", "after" );
 
 ### Reorder Vertical
 
-**構文:** obj << Reorder Vertical( level1, level2, ... )
+**構文:** obj &lt;&lt; Reorder Vertical( level1, level2, ... )
 
 **説明:** 複数のグループに分かれているパレート図を垂直方向に並べ替える。
 
@@ -1795,7 +1793,7 @@ obj << Reorder Vertical( "Process B", "Process A" );
 
 ### Separate Causes
 
-**構文:** obj << Separate Causes
+**構文:** obj &lt;&lt; Separate Causes
 
 **説明:** 組み合わせた原因を個別のバーに分割する。
 
@@ -1827,7 +1825,7 @@ obj << Separate Causes( "Other Causes" );
 
 ### Show Cum Percent Axis
 
-**構文:** obj << Show Cum Percent Axis( state=0|1 )
+**構文:** obj &lt;&lt; Show Cum Percent Axis( state=0|1 )
 
 **説明:** プロットの右側にある累積パーセント軸の表示/非表示を切り替える。注: X変数またはグループ変数がある場合は、一番右のプロットだけに適用される。 デフォルトではオン。
 
@@ -1842,7 +1840,7 @@ obj << Show Cum Percent Axis( 1 );
 
 ### Show Cum Percent Curve
 
-**構文:** obj << Show Cum Percent Curve( state=0|1 )
+**構文:** obj &lt;&lt; Show Cum Percent Curve( state=0|1 )
 
 **説明:** 累積パーセント曲線の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1857,7 +1855,7 @@ obj << Show Cum Percent Curve( 1 );
 
 ### Show Cum Percent Points
 
-**構文:** obj << Show Cum Percent Points( state=0|1 )
+**構文:** obj &lt;&lt; Show Cum Percent Points( state=0|1 )
 
 **説明:** グラフ上で累積パーセント点の表示/非表示を切り替える。
 
@@ -1872,7 +1870,7 @@ obj << Show Cum Percent Points( 1 );
 
 ### Show Error Bars
 
-**構文:** obj << Show Error Bars( state=0|1 )
+**構文:** obj &lt;&lt; Show Error Bars( state=0|1 )
 
 **説明:** パレート図の棒の、信頼区間の誤差バーの表示/非表示を切り替える。
 
@@ -1889,7 +1887,7 @@ obj << Show Error Bars( 1 );
 
 ### Show Pareto Bars
 
-**構文:** obj << Show Pareto Bars( state=0|1 )
+**構文:** obj &lt;&lt; Show Pareto Bars( state=0|1 )
 
 **説明:** 各原因の値を表す棒の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1906,7 +1904,7 @@ obj << Show Pareto Bars( 0 );
 
 ### Show Pareto Line
 
-**構文:** obj << Show Pareto Line( state=0|1 )
+**構文:** obj &lt;&lt; Show Pareto Line( state=0|1 )
 
 **説明:** 各原因の度数をつなぐ折れ線の表示/非表示を切り替える。
 
@@ -1923,7 +1921,7 @@ obj << Show Pareto Line( 1 );
 
 ### Show Pareto Markers
 
-**構文:** obj << Show Pareto Markers( state=0|1 )
+**構文:** obj &lt;&lt; Show Pareto Markers( state=0|1 )
 
 **説明:** 各原因の値の、マーカーの表示/非表示を切り替える。
 
@@ -1940,7 +1938,7 @@ obj << Show Pareto Markers( 1 );
 
 ### Subcategory Bar Style
 
-**構文:** obj << Subcategory Bar Style( "横に並べて表示"|"積み重ね"|"銃弾"|"入れ子"|"単一"|"垂線"|"フロート" )
+**構文:** obj &lt;&lt; Subcategory Bar Style( "横に並べて表示"|"積み重ね"|"銃弾"|"入れ子"|"単一"|"垂線"|"フロート" )
 
 **説明:** サブカテゴリがある場合の棒の表示方法。
 
@@ -1961,7 +1959,7 @@ obj = dt << Pareto Plot(
 
 ### Subset
 
-**構文:** obj << Subset
+**構文:** obj &lt;&lt; Subset
 
 **説明:** パレート図で選択されている項目からサブセットのデータテーブルを作成する。
 
@@ -1979,7 +1977,7 @@ obj << Subset;
 
 ### Swap Group Orientation
 
-**構文:** obj << Swap Group Orientation( state=0|1 )
+**構文:** obj &lt;&lt; Swap Group Orientation( state=0|1 )
 
 **説明:** グループの向きを横または縦に切り替える。グループが1つしかない場合は、表示の向きを変更する。
 
@@ -2011,7 +2009,7 @@ obj << Swap Group Orientation( true );
 
 ### Synchronize Y Axes
 
-**構文:** obj << Synchronize Y Axes( state=0|1 )
+**構文:** obj &lt;&lt; Synchronize Y Axes( state=0|1 )
 
 **説明:** 右のY軸をロックして、ズームとパンが左のY軸と同期するようにする。 デフォルトではオン。
 
@@ -2028,7 +2026,7 @@ obj << Synchronize Y Axes( 0 );
 
 ### Tables Match Plot
 
-**構文:** obj << Tables Match Plot( {<Per Unit Rates( 0|1 )>, <Test Rate Within Groups( 0|1 )>, <Test Rates Across Groups( 0|1 )>} )
+**構文:** obj &lt;&lt; Tables Match Plot( {&lt;Per Unit Rates( 0|1 )&gt;, &lt;Test Rate Within Groups( 0|1 )&gt;, &lt;Test Rates Across Groups( 0|1 )&gt;} )
 
 **説明:** 度数の分析テーブルに、パレート図に一致するよう組み合わせた原因の値を表示するか、組み合わせをしない元の原因を表示するかを制御する。値1を指定すると、組み合わせた原因の値が表示される。値0を指定すると、組み合わせをしていない値が表示される。コマンドですべてのテーブルを指定しなくてもよい。
 
@@ -2056,7 +2054,7 @@ obj << Tables Match Plot(
 
 ### Test Rate Within Groups
 
-**構文:** obj << Test Rate Within Groups( state=0|1 )
+**構文:** obj &lt;&lt; Test Rate Within Groups( state=0|1 )
 
 **説明:** グループ内で尤度比検定を行う。グループ内で原因の比率が等しいかどうかが検定される。
 
@@ -2071,7 +2069,7 @@ obj << Test Rate Within Groups( 1 );
 
 ### Test Rates Across Groups
 
-**構文:** obj << Test Rates Across Groups( state=0|1 )
+**構文:** obj &lt;&lt; Test Rates Across Groups( state=0|1 )
 
 **説明:** グループ間で尤度比検定を行う。グループ間で原因の比率が等しいかどうかが検定される。
 
@@ -2086,7 +2084,7 @@ obj << Test Rates Across Groups( 1 );
 
 ### Threshold of Combined Causes
 
-**構文:** obj << Threshold of Combined Causes
+**構文:** obj &lt;&lt; Threshold of Combined Causes
 
 **説明:** 閾値を下回った原因を組み合わせる。これは、プラットフォームの初回起動時に行われる。
 
@@ -2120,7 +2118,7 @@ obj = dt << Pareto Plot(
 
 ### Ungroup Plots
 
-**構文:** obj << Ungroup Plots( state=0|1 )
+**構文:** obj &lt;&lt; Ungroup Plots( state=0|1 )
 
 **説明:** 複数のグループに分かれているパレート図を分割する。
 

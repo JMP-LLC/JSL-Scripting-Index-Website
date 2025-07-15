@@ -2,11 +2,9 @@
 
 
 
-## Fonctions
-
 ### Abbrev Date
 
-**Syntaxe :** s = Abbrev Date( datetime, <format> )
+**Syntaxe :** s = Abbrev Date( datetime, &lt;format&gt; )
 
 **Description :** Renvoie une représentation locale abrégée d&apos;une valeur « date-heure » de JMP.
 
@@ -51,7 +49,7 @@ As Date( Date DMY( 15, 7, 2000 ) );
 
 ### Date Difference
 
-**Syntaxe :** delta = Date Difference( dt1, dt2, intervalName, <alignment="start"> )
+**Syntaxe :** delta = Date Difference( dt1, dt2, intervalName, &lt;alignment="start"&gt; )
 
 **Description :** Renvoie la différence en intervalles de deux valeurs date/heure. Les valeurs de intervalName prises en charge sont « Année », « Quartier », « Mois », « Semaine », « Jour », « Heure », « Minute », « Seconde » et « Numérique ». Un alignment de "Start" comprend des intervalles complets ou partiels, alors que "Actual" renvoie uniquement des intervalles complets. Un alignment de "Fractional" renvoie des différences fractionnelles, en utilisant les moyennes de durée des intervalles « Année », « Quartier » et « Mois ».
 
@@ -91,7 +89,7 @@ Date Difference(
 
 ### Date Increment
 
-**Syntaxe :** d = Date Increment( datetime, intervalName, <incr=1>, <alignment="start"> )
+**Syntaxe :** d = Date Increment( datetime, intervalName, &lt;incr=1&gt;, &lt;alignment="start"&gt; )
 
 **Description :** Renvoie une nouvelle valeur date-heure en ajoutant un nombre incr d&apos;intervalles. Les valeurs de intervalName prises en charge sont « Année », « Quartier », « Mois », « Semaine », « Jour », « Heure », « Minute », « Seconde » et « Numérique ». Un alignment de "Start" tronque à l&apos;intervalle le plus proche avant d&apos;ajouter l&apos;incrément, alors que "Actual" retient la date/heure d&apos;entrée complète. Un alignment de "Fractional" permet des valeurs incr fractionnelles, en utilisant les moyennes de durée des intervalles « Année », « Quartier » et « Mois ».
 
@@ -201,9 +199,7 @@ v = Days In Month( 2016, 2 );
 
 ### Format
 
-**Syntaxe :** s = Format( x, formatString, <options> )
-
-s = Format( x, "Format Pattern", pattern, <options> )
+**Syntaxe :** s = Format( x, formatString, &lt;options&gt; )s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
 
 **Description :** Renvoie le nombre au format spécifié. Les formats incluent les éléments de la boîte de dialogue Informations sur la colonne, tels que "Best" et "h:m:s". Voir la rubrique Aide pour découvrir d&apos;autres options, notamment les formats de p-value, de devise, de date et d&apos;heure, et géographiques.
 
@@ -251,9 +247,7 @@ Show( Format( 88.54, "Best" ), Format( 88.54, "Best", "Full Precision" ) );
 
 ### Format Date
 
-**Syntaxe :** s = Format( x, formatString, <options> )
-
-s = Format( x, "Format Pattern", pattern, <options> )
+**Syntaxe :** s = Format( x, formatString, &lt;options&gt; )s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
 
 **Description :** Renvoie le nombre au format spécifié. Les formats incluent les éléments de la boîte de dialogue Informations sur la colonne, tels que "Best" et "h:m:s". Voir la rubrique Aide pour découvrir d&apos;autres options, notamment les formats de p-value, de devise, de date et d&apos;heure, et géographiques.
 
@@ -311,7 +305,7 @@ Show( it );
 
 ### Hour
 
-**Syntaxe :** hr = Hour( datetime, <12> )
+**Syntaxe :** hr = Hour( datetime, &lt;12&gt; )
 
 **Description :** Renvoie l&apos;heure d&apos;une valeur « date-heure » de JMP, dans le mode 12 heures (12, 1 - 11) ou dans le mode 24 heures (0 - 23).
 
@@ -341,7 +335,7 @@ ISO Year( Today() );
 
 ### In Days
 
-**Syntaxe :** y = In Days( <x=1> )
+**Syntaxe :** y = In Days( &lt;x=1&gt; )
 
 **Description :** Convertit en secondes une valeur en jours.
 
@@ -356,7 +350,7 @@ In Days( 1.5 );
 
 ### In Hours
 
-**Syntaxe :** y = In Hours( <x=1> )
+**Syntaxe :** y = In Hours( &lt;x=1&gt; )
 
 **Description :** Convertit en secondes une valeur en heures.
 
@@ -371,7 +365,7 @@ In Hours( 0.5 );
 
 ### In Minutes
 
-**Syntaxe :** y = In Minutes( <x=1> )
+**Syntaxe :** y = In Minutes( &lt;x=1&gt; )
 
 **Description :** Convertit en secondes une valeur en minutes.
 
@@ -386,7 +380,7 @@ In Minutes( 1 );
 
 ### In Weeks
 
-**Syntaxe :** y = In Weeks( <x=1> )
+**Syntaxe :** y = In Weeks( &lt;x=1&gt; )
 
 **Description :** Convertit en secondes une valeur en semaines.
 
@@ -401,7 +395,7 @@ In Weeks( 1 );
 
 ### In Years
 
-**Syntaxe :** y = In Years( <x=1> )
+**Syntaxe :** y = In Years( &lt;x=1&gt; )
 
 **Description :** Convertit en secondes une valeur en années.
 
@@ -416,9 +410,7 @@ In Years( 1 );
 
 ### Informat
 
-**Syntaxe :** dt = In Format( s, formatString, < <<Use Locale(b=1)>, < <<Restrict > )
-
-dt = In Format( s, "Format Pattern", pattern, < <<Use Locale(b=1)> )
+**Syntaxe :** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; )dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
 
 **Description :** Analyse une chaîne d&apos;un format donné. Si le format correspond à un format de date et heure, la valeur est exprimée comme si elle était entre As Date() et renvoie la date au format jjmoiaaaa. L&apos;argument facultatif <<Restrict utilisé avec le « Meilleur » formatString permet uniquement la conversion aux formats entier, décimal et scientifique.
 
@@ -491,7 +483,7 @@ v = Is Leap Year( 2016 );
 
 ### Long Date
 
-**Syntaxe :** s = Long Date( datetime, <format> )
+**Syntaxe :** s = Long Date( datetime, &lt;format&gt; )
 
 **Description :** Renvoie une représentation locale longue d&apos;une valeur « date-heure » de JMP.
 
@@ -506,7 +498,7 @@ Long Date( Today() );
 
 ### MDYHMS
 
-**Syntaxe :** s = MDYHMS( datetime, <format> )
+**Syntaxe :** s = MDYHMS( datetime, &lt;format&gt; )
 
 **Description :** Renvoie une représentation d&apos;une valeur « date-heure » de JMP dans l&apos;ordre suivant : mois, jour, année, heure, minute, seconde.
 
@@ -566,9 +558,7 @@ Nth Day Of Week in the Month( Date MDY( 11, 28, 2019 ) );
 
 ### Parse Date
 
-**Syntaxe :** dt = In Format( s, formatString, < <<Use Locale(b=1)>, < <<Restrict > )
-
-dt = In Format( s, "Format Pattern", pattern, < <<Use Locale(b=1)> )
+**Syntaxe :** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; )dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
 
 **Description :** Analyse une chaîne d&apos;un format donné. Si le format correspond à un format de date et heure, la valeur est exprimée comme si elle était entre As Date() et renvoie la date au format jjmoiaaaa. L&apos;argument facultatif <<Restrict utilisé avec le « Meilleur » formatString permet uniquement la conversion aux formats entier, décimal et scientifique.
 
@@ -656,7 +646,7 @@ Second( Today() );
 
 ### Short Date
 
-**Syntaxe :** s = Short Date( datetime, <format> )
+**Syntaxe :** s = Short Date( datetime, &lt;format&gt; )
 
 **Description :** Renvoie une représentation locale (JJ/MM/AAAA) numérique d&apos;une valeur date-heure.
 
@@ -719,7 +709,7 @@ As Date( Today() );
 
 ### Week Of Year
 
-**Syntaxe :** d = Week Of Year( datetime, <rule=1> )
+**Syntaxe :** d = Week Of Year( datetime, &lt;rule=1&gt; )
 
 **Description :** Renvoie la semaine de l&apos;année d&apos;une valeur de la date-heure en utilisant l&apos;une des trois règles. Par défaut (règle 1), les semaines commencent le dimanche et le premier dimanche de l&apos;année se trouve dans la semaine no. 2. La semaine 1 est une semaine partielle ou vide (comme en 2006). La règle 2 établit que le premier dimanche se trouve dans la semaine 1, les jours précédents se trouvant dans la semaine 0. La règle 3 renvoie le numéro ISO de la semaine, selon lequel les semaines commencent le lundi et la semaine 1 est la première semaine de l&apos;année avec quatre jours dans cette année là. Avec les semaines ISO, il est possible que les premiers ou les derniers jours de l&apos;année appartiennent à une semaine de deux années voisines.
 

@@ -6,7 +6,7 @@
 
 ### Action
 
-**構文:** obj << Action
+**構文:** obj &lt;&lt; Action
 
 **説明:** 評価する式を挿入するための、プラットフォーム内の汎用トラップドア。プラットフォームに一時的にディスプレイボックスおよびデータテーブルのコンテキストを設定する。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**構文:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**構文:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **説明:** 作成されたプリセットをオブジェクトに適用する。保存された設定に合わせてオプションとカスタマイズが更新される。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**構文:** obj << Automatic Recalc( state=0|1 )
+**構文:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **説明:** データの除外や変更があった場合に分析を自動的にやり直す。Automatic Recalcオプションがオンになっている場合で、データの除外や変更が再計算の前に確実に適用されるようにするには、Wait(0)コマンドを使用すること。
 
@@ -87,7 +87,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**構文:** obj << Broadcast(message)
+**構文:** obj &lt;&lt; Broadcast(message)
 
 **説明:** メッセージをプラットフォームに一括適用する。個々のオブジェクトから戻される結果がデータテーブルである場合は、可能な限り連結する。その最終的な形式は、Table BoxのSave Combined Tableオプションの結果と同じになるか、またはソース列を使用したConcanateオプションの結果と同じになる。それ以外の場合、結果はリストの形で戻される。
 
@@ -107,7 +107,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**構文:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**構文:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **説明:** プラットフォームの変数を変更するための設定パネルを追加する。
 
@@ -125,7 +125,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**構文:** obj << Copy ByGroup Script
+**構文:** obj &lt;&lt; Copy ByGroup Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -148,7 +148,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**構文:** obj << Copy Script
+**構文:** obj &lt;&lt; Copy Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -163,7 +163,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**構文:** obj << Data Table Window
+**構文:** obj &lt;&lt; Data Table Window
 
 **説明:** この分析に使用したデータテーブルのウィンドウを手前に表示する。
 
@@ -178,7 +178,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**構文:** obj << Get By Levels
+**構文:** obj &lt;&lt; Get By Levels
 
 **説明:** By列が指定されている場合、列名をキー、データ値を値とした連想配列を戻す。
 
@@ -195,7 +195,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**構文:** obj << Get ByGroup Script
+**構文:** obj &lt;&lt; Get ByGroup Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -219,7 +219,7 @@ Show( t );
 
 ### Get Container
 
-**構文:** obj << Get Container
+**構文:** obj &lt;&lt; Get Container
 
 **説明:** オブジェクトのコンテンツを含んだコンテナボックスの参照を戻す。
 
@@ -266,7 +266,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**構文:** obj << Get Data Table
+**構文:** obj &lt;&lt; Get Data Table
 
 **説明:** データテーブルへの参照を戻す。
 
@@ -282,7 +282,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**構文:** obj << Get Group Platform
+**構文:** obj &lt;&lt; Get Group Platform
 
 **説明:** 該当のプラットフォームがグループに属している場合に、Group Platformオブジェクトを戻す。それ以外の場合はEmpty()を戻す。
 
@@ -299,7 +299,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**構文:** obj << Get Script
+**構文:** obj &lt;&lt; Get Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -315,7 +315,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**構文:** obj << Get Script With Data Table
+**構文:** obj &lt;&lt; Get Script With Data Table
 
 **説明:** この分析を再現するスクリプト(JSL)をデータテーブルへの参照も含めて生成し、それを式として戻す。
 
@@ -331,7 +331,7 @@ Show( t );
 
 ### Get Timing
 
-**構文:** obj << Get Timing
+**構文:** obj &lt;&lt; Get Timing
 
 **説明:** プラットフォームの起動にかかった時間を取得する。
 
@@ -347,7 +347,7 @@ Show( t );
 
 ### Get Web Support
 
-**構文:** obj << Get Web Support
+**構文:** obj &lt;&lt; Get Web Support
 
 **説明:** ディスプレイオブジェクトにおけるインタラクティブHTMLサポートのレベルを数値で戻す。1は、一部または全部の要素がサポートされていることを示し、0は、サポートされないことを示す。
 
@@ -363,7 +363,7 @@ Show( s );
 
 ### Get Where Expr
 
-**構文:** obj << Get Where Expr
+**構文:** obj &lt;&lt; Get Where Expr
 
 **説明:** プラットフォームがBy()またはWhere()を使って起動された場合に、データをサブセットするためのWhere式を戻す。By()やWhere()が使われていない場合はEmpty()を戻す。
 
@@ -400,7 +400,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**構文:** obj << Local Data Filter
+**構文:** obj &lt;&lt; Local Data Filter
 
 **説明:** このプラットフォームに対してのみ有効なフィルタで、データを特定のグループまたは範囲にフィルタリングする。
 
@@ -456,7 +456,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**構文:** obj << Paste Local Data Filter
+**構文:** obj &lt;&lt; Paste Local Data Filter
 
 **説明:** クリップボードにあるローカルデータフィルタを現在のレポートに適用する。
 
@@ -477,7 +477,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**構文:** obj << Redo Analysis
+**構文:** obj &lt;&lt; Redo Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -492,7 +492,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**構文:** obj << Redo ByGroup Analysis
+**構文:** obj &lt;&lt; Redo ByGroup Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -515,7 +515,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**構文:** obj << Relaunch Analysis
+**構文:** obj &lt;&lt; Relaunch Analysis
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -530,7 +530,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**構文:** obj << Relaunch ByGroup
+**構文:** obj &lt;&lt; Relaunch ByGroup
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -553,7 +553,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**構文:** obj << Remove Column Switcher
+**構文:** obj &lt;&lt; Remove Column Switcher
 
 **説明:** プラットフォームに最後に追加された列スイッチャーを削除する。
 
@@ -573,7 +573,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**構文:** obj << Remove Local Data Filter
+**構文:** obj &lt;&lt; Remove Local Data Filter
 
 **説明:** すでに作成されているローカルデータフィルタを削除し、プラットフォームはデータテーブル内のすべてのデータを使用した状態に戻る。
 
@@ -612,9 +612,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**構文:** obj << Report;
-
-Report( obj )
+**構文:** obj &lt;&lt; Report;Report( obj )
 
 **説明:** レポートオブジェクトへの参照を戻す。
 
@@ -631,7 +629,7 @@ Show( t );
 
 ### Report View
 
-**構文:** obj << Report View( "完全"|"要約" )
+**構文:** obj &lt;&lt; Report View( "完全"|"要約" )
 
 **説明:** レポートビューは、プラットフォームレポートの詳細を表示するかどうかを決定する。Fullはすべての詳細を表示し、Summaryはプラットフォームにより限定されたものだけを表示する。 動作をカスタマイズするため、各ディスプレイボックスは<<Set Summary Behaviorメッセージをサポートする。
 
@@ -646,7 +644,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**構文:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** 分析を再現するためのJSLスクリプトを作成し、データテーブルにテーブルプロパティとして保存する。スクリプトの名前を指定できる。Append Suffixオプションは、スクリプト名に数字の接尾辞を追加する。これにより、同名のスクリプトが存在していても区別できる。Promptオプションは、ユーザにスクリプト名の指定を促す。Replaceオプションは、同名の既存のスクリプトを置き換える。
 
@@ -669,7 +667,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**構文:** obj << Save ByGroup Script to Journal
+**構文:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -692,7 +690,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**構文:** obj << Save ByGroup Script to Script Window
+**構文:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -715,7 +713,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**構文:** obj << Save Script for All Objects
+**構文:** obj &lt;&lt; Save Script for All Objects
 
 **説明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -730,7 +728,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**構文:** obj << Save Script for All Objects To Data Table( <name> )
+**構文:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **説明:** すべてのレポートオブジェクトを再現するスクリプトを現在のデータテーブルに保存する。このオプションは、ウィンドウ内にレポートが複数ある場合に便利。作成されるスクリプトの名前は、引用符で囲んで指定しない限り、1つ目のプラットフォーム名となる。
 
@@ -774,7 +772,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**構文:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** この分析を再現するJSLスクリプトを生成し、データテーブルのテーブルプロパティとして保存する。
 
@@ -789,7 +787,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**構文:** obj << Save Script to Journal
+**構文:** obj &lt;&lt; Save Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -804,7 +802,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**構文:** obj << Save Script to Report
+**構文:** obj &lt;&lt; Save Script to Report
 
 **説明:** この分析を再現するJSLスクリプトを生成し、レポートウィンドウに表示する。分析手順の記録を結果と一緒に残せる。
 
@@ -819,7 +817,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**構文:** obj << Save Script to Script Window
+**構文:** obj &lt;&lt; Save Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -899,7 +897,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**構文:** obj << Sync to Data Table Changes
+**構文:** obj &lt;&lt; Sync to Data Table Changes
 
 **説明:** 除外やデータの変更が行われた場合に同期する。
 
@@ -916,7 +914,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**構文:** obj << Title( "new title" )
+**構文:** obj &lt;&lt; Title( "new title" )
 
 **説明:** プラットフォームのタイトルを設定する。
 
@@ -931,7 +929,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**構文:** obj << Top Report
+**構文:** obj &lt;&lt; Top Report
 
 **説明:** レポート内のルートノードへの参照を戻す。
 
@@ -948,7 +946,7 @@ Show( t );
 
 ### Transform Column
 
-**構文:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**構文:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **説明:** オブジェクトのローカルコンテキスト(通常はプラットフォーム)内に変換列を作成する。この変換列は、それを作成したプラットフォームの中のみで使用可能。
 
@@ -967,7 +965,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**構文:** obj << View Web XML
+**構文:** obj &lt;&lt; View Web XML
 
 **説明:** インタラクティブHTMLレポートの作成に使うXMLコードを戻す。
 
@@ -1003,7 +1001,7 @@ New Window( "Bivariate Equation",
 
 ### By
 
-**構文:** obj << By( column(s) )
+**構文:** obj &lt;&lt; By( column(s) )
 
 ```jsl
 
@@ -1023,7 +1021,7 @@ obj = Multivariate(
 
 ### Columns
 
-**構文:** obj << Columns( column(s) )
+**構文:** obj &lt;&lt; Columns( column(s) )
 
 ```jsl
 
@@ -1035,7 +1033,7 @@ obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :He
 
 ### Freq
 
-**構文:** obj << Freq( column )
+**構文:** obj &lt;&lt; Freq( column )
 
 ```jsl
 
@@ -1051,7 +1049,7 @@ obj = Multivariate(
 
 ### Weight
 
-**構文:** obj << Weight( column )
+**構文:** obj &lt;&lt; Weight( column )
 
 ```jsl
 
@@ -1067,7 +1065,7 @@ obj = Multivariate(
 
 ### Y
 
-**構文:** obj << Y( column(s) )
+**構文:** obj &lt;&lt; Y( column(s) )
 
 ```jsl
 
@@ -1097,7 +1095,7 @@ obj = Multivariate( Y( :Ether, :Chloroform, :Benzene, :Carbon Tetrachloride, :He
 
 ### CI of Correlation
 
-**構文:** obj << CI of Correlation( state=0|1 )
+**構文:** obj &lt;&lt; CI of Correlation( state=0|1 )
 
 **説明:** 相関係数およびそれらの信頼区間の表示/非表示を切り替える。
 
@@ -1112,7 +1110,7 @@ obj << CI of Correlation( 1 );
 
 ### Cluster the Correlations
 
-**構文:** obj << Cluster the Correlations( state=0|1 )
+**構文:** obj &lt;&lt; Cluster the Correlations( state=0|1 )
 
 **説明:** 相関が大きな変数どうしを近くに配置した「相関のカラーマップ」の表示/非表示を切り替える。このカラーマップは、-1の時に青色で、相関が1に近づくにつれて赤色になっていく。
 
@@ -1127,7 +1125,7 @@ obj << Cluster the Correlations( 1 );
 
 ### Color Map on Correlations
 
-**構文:** obj << Color Map on Correlations( state=0|1 )
+**構文:** obj &lt;&lt; Color Map on Correlations( state=0|1 )
 
 **説明:** 「相関のカラーマップ」の表示/非表示を切り替える。このカラーマップは、-1の時に青色で、相関が1に近づくにつれて赤色になっていく。
 
@@ -1142,7 +1140,7 @@ obj << Color Map on Correlations( 1 );
 
 ### Color Map on Hoeffding's D
 
-**構文:** obj << Color Map on Hoeffding&apos;s D( state=0|1 )
+**構文:** obj &lt;&lt; Color Map on Hoeffding&apos;s D( state=0|1 )
 
 **説明:** 「HoeffdingのD統計量のカラーマップ」の表示/非表示を切り替える。このカラーマップは、-1の時に青色で、相関が1に近づくにつれて赤色になっていく。HoeffdingのD統計量は、ノンパラメトリックな相関係数の1つである。
 
@@ -1159,7 +1157,7 @@ obj << Color Map on Hoeffding's D( 1 );
 
 ### Color Map on Kendall's Tau
 
-**構文:** obj << Color Map on Kendall&apos;s Tau( state=0|1 )
+**構文:** obj &lt;&lt; Color Map on Kendall&apos;s Tau( state=0|1 )
 
 **説明:** 「Kendallの順位相関係数(τ)のカラーマップ」の表示/非表示を切り替える。このカラーマップは、-1の時に青色で、相関が1に近づくにつれて赤色になっていく。Kendallの順位相関係数は、ノンパラメトリックな相関係数の1つである。
 
@@ -1176,7 +1174,7 @@ obj << Color Map on Kendall's Tau( 1 );
 
 ### Color Map on Kendall's τ
 
-**構文:** obj << Color Map on Kendall&apos;s τ( state=0|1 )
+**構文:** obj &lt;&lt; Color Map on Kendall&apos;s τ( state=0|1 )
 
 **説明:** 「Kendallの順位相関係数(τ)のカラーマップ」の表示/非表示を切り替える。このカラーマップは、-1の時に青色で、相関が1に近づくにつれて赤色になっていく。Kendallの順位相関係数は、ノンパラメトリックな相関係数の1つである。
 
@@ -1193,7 +1191,7 @@ obj << Color Map on Kendall's Tau( 1 );
 
 ### Color Map on Pairwise Correlations
 
-**構文:** obj << Color Map on Pairwise Correlations( state=0|1 )
+**構文:** obj &lt;&lt; Color Map on Pairwise Correlations( state=0|1 )
 
 **説明:** 「ペアごとの相関のカラーマップ」の表示/非表示を切り替える。このカラーマップは、-1の時に青色で、相関が1に近づくにつれて赤色になっていく。
 
@@ -1210,7 +1208,7 @@ obj << Color Map on Pairwise Correlations( 1 );
 
 ### Color Map on Spearman's Rho
 
-**構文:** obj << Color Map on Spearman&apos;s Rho( state=0|1 )
+**構文:** obj &lt;&lt; Color Map on Spearman&apos;s Rho( state=0|1 )
 
 **説明:** 「Spearmanの順位相関係数(ρ)のカラーマップ」の表示/非表示を切り替える。このカラーマップは、-1の時に青色で、相関が1に近づくにつれて赤色になっていく。Spearmanの順位相関係数は、ノンパラメトリックな相関係数の1つである。
 
@@ -1227,7 +1225,7 @@ obj << Color Map on Spearman's Rho( 1 );
 
 ### Color Map on Spearman's ρ
 
-**構文:** obj << Color Map on Spearman&apos;s ρ( state=0|1 )
+**構文:** obj &lt;&lt; Color Map on Spearman&apos;s ρ( state=0|1 )
 
 **説明:** 「Spearmanの順位相関係数(ρ)のカラーマップ」の表示/非表示を切り替える。このカラーマップは、-1の時に青色で、相関が1に近づくにつれて赤色になっていく。Spearmanの順位相関係数は、ノンパラメトリックな相関係数の1つである。
 
@@ -1244,7 +1242,7 @@ obj << Color Map on Spearman's Rho( 1 );
 
 ### Color Map on p-Values
 
-**構文:** obj << Color Map on p-Values( state=0|1 )
+**構文:** obj &lt;&lt; Color Map on p-Values( state=0|1 )
 
 **説明:** 「p値のカラーマップ」の表示/非表示を切り替える。このカラーマップは、p値が0の時に赤色で、0に近づくにつれて青色になっていく。
 
@@ -1259,7 +1257,7 @@ obj << "Color Map on p-Values"n( 1 );
 
 ### Correlation Probability
 
-**構文:** obj << Correlation Probability( state=0|1 )
+**構文:** obj &lt;&lt; Correlation Probability( state=0|1 )
 
 **説明:** 相関係数に対するp値の行列の表示/非表示を切り替える。このp値は、「変数間における真の相関はゼロである」という帰無仮説に対する検定のp値である。
 
@@ -1274,7 +1272,7 @@ obj << Correlation Probability( 1 );
 
 ### Correlations Multivariate
 
-**構文:** obj << Correlations Multivariate( state=0|1 )
+**構文:** obj &lt;&lt; Correlations Multivariate( state=0|1 )
 
 **説明:** 相関係数行列の表示/非表示を切り替える。相関係数は、Y変数の各ペアにおける線形関係の強さを示す指標である。 デフォルトではオン。
 
@@ -1289,7 +1287,7 @@ obj << Correlations Multivariate( 1 );
 
 ### Covariance Matrix
 
-**構文:** obj << Covariance Matrix( state=0|1 )
+**構文:** obj &lt;&lt; Covariance Matrix( state=0|1 )
 
 **説明:** 共分散行列の表示/非表示を切り替える。
 
@@ -1304,7 +1302,7 @@ obj << Covariance Matrix( 1 );
 
 ### Create SAS Job
 
-**構文:** obj << Create SAS Job
+**構文:** obj &lt;&lt; Create SAS Job
 
 **説明:** SASを使って同様の推定方法を実行するSAS PROC MIXEDコードを生成する。
 
@@ -1319,7 +1317,7 @@ obj << Create SAS Job();
 
 ### Cronbach's Alpha
 
-**構文:** obj << Cronbach&apos;s Alpha( state=0|1 )
+**構文:** obj &lt;&lt; Cronbach&apos;s Alpha( state=0|1 )
 
 **説明:** Cronbachのα係数の表示/非表示を切り替える。このCronbachのα係数には、すべての変数から計算されたα係数と、Y変数を1つずつ除外した場合のα係数がある。
 
@@ -1334,7 +1332,7 @@ obj << Cronbach's alpha( 1 );
 
 ### Cronbach's α
 
-**構文:** obj << Cronbach&apos;s α( state=0|1 )
+**構文:** obj &lt;&lt; Cronbach&apos;s α( state=0|1 )
 
 **説明:** Cronbachのα係数の表示/非表示を切り替える。このCronbachのα係数には、すべての変数から計算されたα係数と、Y変数を1つずつ除外した場合のα係数がある。
 
@@ -1349,7 +1347,7 @@ obj << Cronbach's alpha( 1 );
 
 ### Ellipsoid 3D Plot
 
-**構文:** obj << Ellipsoid 3D Plot( column1, column2, column3 )
+**構文:** obj &lt;&lt; Ellipsoid 3D Plot( column1, column2, column3 )
 
 **説明:** 三次元散布図の表示/非表示を切り替える。このグラフには、選択した3つのY変数がプロットされる。また、95%の確率楕円体も描かれる。
 
@@ -1364,7 +1362,7 @@ obj << Ellipsoid 3D Plot( :Ether, :Chloroform, :Benzene );
 
 ### Get Correlation Matrix
 
-**構文:** obj << Get Correlation Matrix
+**構文:** obj &lt;&lt; Get Correlation Matrix
 
 **説明:** 相関行列を戻す。
 
@@ -1380,7 +1378,7 @@ Show( corr );
 
 ### Get Inv Correlation Matrix
 
-**構文:** obj << Get Inv Correlation Matrix
+**構文:** obj &lt;&lt; Get Inv Correlation Matrix
 
 **説明:** 相関係数の逆行列を戻す。
 
@@ -1396,7 +1394,7 @@ Show( icorr );
 
 ### Hoeffding's D
 
-**構文:** obj << Hoeffding&apos;s D( state=0|1 )
+**構文:** obj &lt;&lt; Hoeffding&apos;s D( state=0|1 )
 
 **説明:** Y変数の各ペアに対するHoeffdingのD統計量の表示/非表示を切り替える。
 
@@ -1411,7 +1409,7 @@ obj << Hoeffding's D( 1 );
 
 ### Hotelling's T Square Test
 
-**構文:** obj << Hotelling&apos;s T Square Test
+**構文:** obj &lt;&lt; Hotelling&apos;s T Square Test
 
 **説明:** 多変量平均に対する1標本検定を実行する。帰無仮説における平均ベクトルを指定する。複数のY変数の多変量分布をもとに、指定された平均ベクトルを帰無仮説とした検定が行われる。
 
@@ -1426,7 +1424,7 @@ obj << Hotelling's T Square Test( 1, 0.7, 0.5, 0, -1 );
 
 ### Impute Missing Data
 
-**構文:** obj << Impute Missing Data
+**構文:** obj &lt;&lt; Impute Missing Data
 
 **説明:** すべてのY変数の欠測値を補完し、既存の値と新しく補完した欠測値を含む新しいデータテーブルを作成する。
 
@@ -1441,7 +1439,7 @@ obj << Impute Missing Data;
 
 ### Inverse Correlations
 
-**構文:** obj << Inverse Correlations( state=0|1 )
+**構文:** obj &lt;&lt; Inverse Correlations( state=0|1 )
 
 **説明:** 相関係数行列の逆行列の表示/非表示を切り替える。
 
@@ -1456,7 +1454,7 @@ obj << Inverse Correlations( 1 );
 
 ### Jackknife Distances
 
-**構文:** obj << Jackknife Distances( state = 0|1, <Save Jackknife Distances> )
+**構文:** obj &lt;&lt; Jackknife Distances( state = 0|1, &lt;Save Jackknife Distances&gt; )
 
 **説明:** 各行に対するジャックナイフ法による距離のグラフ、および外れ値の可能性のあるものを識別するための参照線の表示/非表示を切り替える。
 
@@ -1471,7 +1469,7 @@ obj << Jackknife Distances( 1 );
 
 ### Kendall's Tau
 
-**構文:** obj << Kendall&apos;s Tau( state=0|1 )
+**構文:** obj &lt;&lt; Kendall&apos;s Tau( state=0|1 )
 
 **説明:** Y変数の各ペアに対するKendallの順位相関係数(τ)の表示/非表示を切り替える。
 
@@ -1486,7 +1484,7 @@ obj << Kendall's Tau( 1 );
 
 ### Kendall's τ
 
-**構文:** obj << Kendall&apos;s τ( state=0|1 )
+**構文:** obj &lt;&lt; Kendall&apos;s τ( state=0|1 )
 
 **説明:** Y変数の各ペアに対するKendallの順位相関係数(τ)の表示/非表示を切り替える。
 
@@ -1501,7 +1499,7 @@ obj << Kendall's Tau( 1 );
 
 ### Mahalanobis Distances
 
-**構文:** obj << Mahalanobis Distances( state = 0|1, <Save Outlier Distances> )
+**構文:** obj &lt;&lt; Mahalanobis Distances( state = 0|1, &lt;Save Outlier Distances&gt; )
 
 **説明:** 各行に対するMahalanobisの距離のグラフ、および外れ値の可能性のあるものを識別するための参照線の表示/非表示を切り替える。
 
@@ -1530,7 +1528,7 @@ obj = Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), Matrix Format( "Lower Tr
 
 ### Multivariate Simple Statistics
 
-**構文:** obj << Multivariate Simple Statistics( state=0|1 )
+**構文:** obj &lt;&lt; Multivariate Simple Statistics( state=0|1 )
 
 **説明:** 「多変量の基本統計量」レポートの表示/非表示を切り替える。このレポートの統計量は、相関を推定する際に使われた推定方法に基づき算出される。
 
@@ -1545,7 +1543,7 @@ obj << Multivariate Simple Statistics( 1 );
 
 ### Pairwise Correlations
 
-**構文:** obj << Pairwise Correlations( state=0|1 )
+**構文:** obj &lt;&lt; Pairwise Correlations( state=0|1 )
 
 **説明:** ペアごとの相関係数を一覧表示したレポートの表示/非表示を切り替える。
 
@@ -1560,7 +1558,7 @@ obj << Pairwise Correlations( 1 );
 
 ### Parallel Coord Plot
 
-**構文:** obj << Parallel Coord Plot( state=0|1 )
+**構文:** obj &lt;&lt; Parallel Coord Plot( state=0|1 )
 
 **説明:** パラレルプロットの表示/非表示を切り替える。
 
@@ -1575,7 +1573,7 @@ obj << Parallel Coord Plot( 1 );
 
 ### Partial Correlation Diagram
 
-**構文:** obj << Partial Correlation Diagram( state=0|1 )
+**構文:** obj &lt;&lt; Partial Correlation Diagram( state=0|1 )
 
 **説明:** 偏相関図レポートの表示/非表示を切り替える。このオプションは、偏相関行列の大きさを視覚的に表現する。デフォルトの配置には固有値分解した結果が使われる。
 
@@ -1590,7 +1588,7 @@ obj << Partial Correlation Diagram( 1 );
 
 ### Partial Correlation Probability
 
-**構文:** obj << Partial Correlation Probability( state=0|1 )
+**構文:** obj &lt;&lt; Partial Correlation Probability( state=0|1 )
 
 **説明:** 偏相関係数に対するp値の行列の表示/非表示を切り替える。このp値は、「真の偏相関はゼロである」という帰無仮説に対する検定のp値である。
 
@@ -1607,7 +1605,7 @@ obj << Partial Correlation Probability( 1 );
 
 ### Partial Correlations
 
-**構文:** obj << Partial Correlations( state=0|1 )
+**構文:** obj &lt;&lt; Partial Correlations( state=0|1 )
 
 **説明:** 偏相関係数行列の表示/非表示を切り替える。
 
@@ -1622,7 +1620,7 @@ obj << Partial Correlations( 1 );
 
 ### Save Imputed Formula
 
-**構文:** obj << Save Imputed Formula
+**構文:** obj &lt;&lt; Save Imputed Formula
 
 **説明:** Y列の値が欠測しているところでは値を補完する。元のデータテーブルに新しい列を作成して、補完の計算式を保存する。
 
@@ -1637,7 +1635,7 @@ obj << Save Imputed Formula;
 
 ### Scatterplot Matrix
 
-**構文:** obj << Scatterplot Matrix( state=0|1 )
+**構文:** obj &lt;&lt; Scatterplot Matrix( state=0|1 )
 
 **説明:** 散布図行列の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1654,7 +1652,7 @@ obj = Multivariate(
 
 ### Set Alpha Level
 
-**構文:** obj << Set Alpha Level( "0.01"|"0.05"|"0.10"|"0.50"|"その他..."=0.05 )
+**構文:** obj &lt;&lt; Set Alpha Level( "0.01"|"0.05"|"0.10"|"0.50"|"その他..."=0.05 )
 
 **説明:** 各相関の信頼区間の有意水準を変更する。 デフォルトの値は"0.05"。
 
@@ -1670,7 +1668,7 @@ obj << CI of Correlation( 1 );
 
 ### Set α Level
 
-**構文:** obj << Set α Level( "0.01"|"0.05"|"0.10"|"0.50"|"その他..."=0.05 )
+**構文:** obj &lt;&lt; Set α Level( "0.01"|"0.05"|"0.10"|"0.50"|"その他..."=0.05 )
 
 **説明:** 各相関の信頼区間の有意水準を変更する。 デフォルトの値は"0.05"。
 
@@ -1686,7 +1684,7 @@ obj << CI of Correlation( 1 );
 
 ### Spearman's Rho
 
-**構文:** obj << Spearman&apos;s Rho( state=0|1 )
+**構文:** obj &lt;&lt; Spearman&apos;s Rho( state=0|1 )
 
 **説明:** Y変数の各ペアに対するSpearmanの順位相関係数(ρ)の表示/非表示を切り替える。
 
@@ -1701,7 +1699,7 @@ obj << Spearman's Rho( 1 );
 
 ### Spearman's ρ
 
-**構文:** obj << Spearman&apos;s ρ( state=0|1 )
+**構文:** obj &lt;&lt; Spearman&apos;s ρ( state=0|1 )
 
 **説明:** Y変数の各ペアに対するSpearmanの順位相関係数(ρ)の表示/非表示を切り替える。
 
@@ -1716,7 +1714,7 @@ obj << Spearman's Rho( 1 );
 
 ### Standardized Alpha
 
-**構文:** obj << Standardized Alpha( state=0|1 )
+**構文:** obj &lt;&lt; Standardized Alpha( state=0|1 )
 
 **説明:** C標準化した変数に対するCronbachのα係数の表示/非表示を切り替える。このCronbachのα係数には、すべての変数から計算されたα係数と、Y変数を1つずつ除外した場合のα係数がある。
 
@@ -1731,7 +1729,7 @@ obj << Standardized alpha( 1 );
 
 ### Standardized α
 
-**構文:** obj << Standardized α( state=0|1 )
+**構文:** obj &lt;&lt; Standardized α( state=0|1 )
 
 **説明:** C標準化した変数に対するCronbachのα係数の表示/非表示を切り替える。このCronbachのα係数には、すべての変数から計算されたα係数と、Y変数を1つずつ除外した場合のα係数がある。
 
@@ -1746,7 +1744,7 @@ obj << Standardized alpha( 1 );
 
 ### T Square
 
-**構文:** obj << T Square( state = 0|1, <Save T Square> )
+**構文:** obj &lt;&lt; T Square( state = 0|1, &lt;Save T Square&gt; )
 
 **説明:** 各行に対するT²値のグラフ、および外れ値の可能性のあるものを識別するための参照線の表示/非表示を切り替える。
 
@@ -1761,7 +1759,7 @@ obj << T Square( 1 );
 
 ### T²
 
-**構文:** obj << T²( state = 0|1, <Save T Square> )
+**構文:** obj &lt;&lt; T²( state = 0|1, &lt;Save T Square&gt; )
 
 **説明:** 各行に対するT²値のグラフ、および外れ値の可能性のあるものを識別するための参照線の表示/非表示を切り替える。
 
@@ -1776,7 +1774,7 @@ obj << T Square( 1 );
 
 ### Univariate Simple Statistics
 
-**構文:** obj << Univariate Simple Statistics( state=0|1 )
+**構文:** obj &lt;&lt; Univariate Simple Statistics( state=0|1 )
 
 **説明:** 単変量の枠組みで求めた基本統計量の表示/非表示を切り替える。この基本統計量は列ごとに算出され、他の列に欠測値があってもその影響を受けない。
 
@@ -1815,7 +1813,7 @@ obj = Multivariate( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), Variance Estimation( "ML
 
 #### 3D Score Plot
 
-**構文:** obj << 3D Score Plot( state=0|1 )
+**構文:** obj &lt;&lt; 3D Score Plot( state=0|1 )
 
 **説明:** 主成分スコア(もしくは因子スコア)をプロットした三次元散布図の表示/非表示を切り替える。このプロットには、バイプロット線も描かれる。
 
@@ -1830,7 +1828,7 @@ obj << Principal Components( "on Correlations", "3D Score Plot"n );
 
 #### Bartlett Test
 
-**構文:** obj << Bartlett Test( state=0|1 )
+**構文:** obj &lt;&lt; Bartlett Test( state=0|1 )
 
 **説明:** 各主成分に対する等質性検定に関するレポートの表示/非表示を切り替える。
 
@@ -1847,7 +1845,7 @@ obj << Principal Components( "on Correlations", Bartlett Test( 1 ) );
 
 #### Eigenvectors
 
-**構文:** obj << Eigenvectors( state=0|1 )
+**構文:** obj &lt;&lt; Eigenvectors( state=0|1 )
 
 **説明:** 固有ベクトルに関するレポートの表示/非表示を切り替える。
 
@@ -1862,7 +1860,7 @@ obj << Principal Components( "on Correlations", Eigenvectors( 1 ) );
 
 #### Factor Rotation
 
-**構文:** obj << Factor Rotation( <ML|PC>, 1|SMC, n Rotated, Varimax|Biquartimax| Equamax| Factorparsimax| Orthomax| Parsimax| Quartimax| Biquartimin| Covarimin| Obbiquartimax| Obequamax| Obfactorparsimax| Obequamax| Obfactorparsimax| Oblimin| Obparsimax| Obquartimax| Obvarimax| Quartimin| Promax )
+**構文:** obj &lt;&lt; Factor Rotation( &lt;ML|PC&gt;, 1|SMC, n Rotated, Varimax|Biquartimax| Equamax| Factorparsimax| Orthomax| Parsimax| Quartimax| Biquartimin| Covarimin| Obbiquartimax| Obequamax| Obfactorparsimax| Obequamax| Obfactorparsimax| Oblimin| Obparsimax| Obquartimax| Obvarimax| Quartimin| Promax )
 
 **説明:** 因子分析（もしくは主成分分析）を行い、得られた因子（もしくは主成分）を回転する。
 
@@ -1880,7 +1878,7 @@ obj << Principal Components(
 
 #### Loading Plot
 
-**構文:** obj << Loading Plot( number )
+**構文:** obj &lt;&lt; Loading Plot( number )
 
 **説明:** 因子負荷量を2次元で表現したプロットを行列形式で配置したレポートの表示/非表示を切り替える。
 
@@ -1895,7 +1893,7 @@ obj << Principal Components( "on Correlations", Loading Plot( 2 ) );
 
 #### Save Principal Components
 
-**構文:** obj << Save Principal Components( number )
+**構文:** obj &lt;&lt; Save Principal Components( number )
 
 **説明:** 指定の数の主成分を、データテーブルの新しい列に保存する。
 
@@ -1910,7 +1908,7 @@ obj << Principal Components( "on Correlations", Save Principal Components( 3 ) )
 
 #### Save Principal Components with Imputation
 
-**構文:** obj << Save Principal Components with Imputation( number )
+**構文:** obj &lt;&lt; Save Principal Components with Imputation( number )
 
 **説明:** 欠測値を補完して計算された主成分を、指定の数だけ、データテーブルの新しい列に保存する。
 
@@ -1928,7 +1926,7 @@ obj << Principal Components(
 
 #### Save Rotated Components
 
-**構文:** obj << Save Rotated Components
+**構文:** obj &lt;&lt; Save Rotated Components
 
 **説明:** 成分の回転を、データテーブルの新しい列に保存する。
 
@@ -1947,7 +1945,7 @@ obj << Principal Components(
 
 #### Save Rotated Components with Imputation
 
-**構文:** obj << Save Rotated Components with Imputation
+**構文:** obj &lt;&lt; Save Rotated Components with Imputation
 
 **説明:** 欠測値を補完して計算された回転後の成分を、データテーブルの新しい列に保存する。注:このオプションは［因子分析］が実行された後にのみ使用可能。
 
@@ -1966,7 +1964,7 @@ obj << Principal Components(
 
 #### Score Plot
 
-**構文:** obj << Score Plot( number )
+**構文:** obj &lt;&lt; Score Plot( number )
 
 **説明:** 指定された個数の主成分に対し、主成分スコアをプロットした散布図行列の表示/非表示を切り替える。
 
@@ -1981,7 +1979,7 @@ obj << Principal Components( "on Correlations", Score Plot( 2 ) );
 
 #### Score Plot with Imputation
 
-**構文:** obj << Score Plot with Imputation( number )
+**構文:** obj &lt;&lt; Score Plot with Imputation( number )
 
 **説明:** 指定された個数の主成分に対し、主成分スコアをプロットした散布図行列の表示/非表示を切り替える。この際、欠測値は補完される。
 
@@ -1996,7 +1994,7 @@ obj << Principal Components( "on Correlations", Score Plot with Imputation( 2 ) 
 
 #### Scree Plot
 
-**構文:** obj << Scree Plot( state=0|1 )
+**構文:** obj &lt;&lt; Scree Plot( state=0|1 )
 
 **説明:** 各成分の固有値を折れ線で描いたプロットの表示/非表示を切り替える。
 
@@ -2032,7 +2030,7 @@ obj = Multivariate(
 
 #### Ellipse Alpha
 
-**構文:** obj << Ellipse Alpha( "0.90"|"0.95"|"0.99"|"その他..." )
+**構文:** obj &lt;&lt; Ellipse Alpha( "0.90"|"0.95"|"0.99"|"その他..." )
 
 **説明:** 散布図行列上の確率楕円の信頼率を変更する。
 
@@ -2066,7 +2064,7 @@ obj = Multivariate(
 
 #### Ellipse α
 
-**構文:** obj << Ellipse α( "0.90"|"0.95"|"0.99"|"その他..." )
+**構文:** obj &lt;&lt; Ellipse α( "0.90"|"0.95"|"0.99"|"その他..." )
 
 **説明:** 散布図行列上の確率楕円の信頼率を変更する。
 
@@ -2083,7 +2081,7 @@ obj = Multivariate(
 
 #### Ellipses Coverage
 
-**構文:** obj << Ellipses Coverage( "0.90"|"0.95"|"0.99"|"その他..." )
+**構文:** obj &lt;&lt; Ellipses Coverage( "0.90"|"0.95"|"0.99"|"その他..." )
 
 **説明:** 散布図行列上の確率楕円の信頼率を変更する。
 
@@ -2100,7 +2098,7 @@ obj = Multivariate(
 
 #### Ellipses Transparency
 
-**構文:** obj << Ellipses Transparency( "0.20"|"0.40"|"0.60"|"その他..." )
+**構文:** obj &lt;&lt; Ellipses Transparency( "0.20"|"0.40"|"0.60"|"その他..." )
 
 **説明:** 散布図行列上の確率楕円の塗りの透明度を変更する。
 
@@ -2117,7 +2115,7 @@ obj = Multivariate(
 
 #### Fit Line
 
-**構文:** obj << Fit Line( state=0|1 )
+**構文:** obj &lt;&lt; Fit Line( state=0|1 )
 
 **説明:** 散布図行列において、回帰直線と信頼区間の表示/非表示を切り替える。
 

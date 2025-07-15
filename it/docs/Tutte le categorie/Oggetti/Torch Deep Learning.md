@@ -6,7 +6,7 @@
 
 ### Censor
 
-**Sintassi:** obj << Censor( column )
+**Sintassi:** obj &lt;&lt; Censor( column )
 
 **JMP Versione aggiunta:** 18
 
@@ -20,7 +20,7 @@ obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 ### Freq
 
-**Sintassi:** obj << Freq( column )
+**Sintassi:** obj &lt;&lt; Freq( column )
 
 **JMP Versione aggiunta:** 18
 
@@ -35,7 +35,7 @@ obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 ### Inputs
 
-**Sintassi:** obj << Inputs( column(s) )
+**Sintassi:** obj &lt;&lt; Inputs( column(s) )
 
 **JMP Versione aggiunta:** 18
 
@@ -49,7 +49,7 @@ obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 ### Responses
 
-**Sintassi:** obj << Responses( column(s) )
+**Sintassi:** obj &lt;&lt; Responses( column(s) )
 
 **JMP Versione aggiunta:** 18
 
@@ -63,7 +63,7 @@ obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 ### Subject
 
-**Sintassi:** obj << Subject( column )
+**Sintassi:** obj &lt;&lt; Subject( column )
 
 **JMP Versione aggiunta:** 18
 
@@ -77,7 +77,7 @@ obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 ### Validation
 
-**Sintassi:** obj << Validation( column(s) )
+**Sintassi:** obj &lt;&lt; Validation( column(s) )
 
 **JMP Versione aggiunta:** 18
 
@@ -91,7 +91,7 @@ obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 ### Weight
 
-**Sintassi:** obj << Weight( column )
+**Sintassi:** obj &lt;&lt; Weight( column )
 
 **JMP Versione aggiunta:** 18
 
@@ -106,7 +106,7 @@ obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 ### X
 
-**Sintassi:** obj << X( column(s) )
+**Sintassi:** obj &lt;&lt; X( column(s) )
 
 **JMP Versione aggiunta:** 18
 
@@ -120,7 +120,7 @@ obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 ### Y
 
-**Sintassi:** obj << Y( column(s) )
+**Sintassi:** obj &lt;&lt; Y( column(s) )
 
 **JMP Versione aggiunta:** 18
 
@@ -152,7 +152,7 @@ obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 ### Action
 
-**Sintassi:** obj << Action
+**Sintassi:** obj &lt;&lt; Action
 
 **Descrizione:** Trapdoor generica all&apos;interno di una piattaforma per inserire espressioni da valutare. Imposta temporaneamente i contesti del riquadro di visualizzazione e della tabella di dati per la piattaforma.
 
@@ -170,7 +170,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Sintassi:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintassi:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descrizione:** Applica all’oggetto una preimpostazione precedentemente creata, aggiornando le opzioni e le personalizzazioni in base alle impostazioni salvate.
 
@@ -217,7 +217,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Change Variables
 
-**Sintassi:** obj << Change Variables
+**Sintassi:** obj &lt;&lt; Change Variables
 
 **Descrizione:** Changes X, Y, and other variables for subsequent models.
 
@@ -225,7 +225,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Compare
 
-**Sintassi:** obj << Compare
+**Sintassi:** obj &lt;&lt; Compare
 
 **Descrizione:** Updates the Torch Deep Learning comparison metrics.
 
@@ -242,7 +242,7 @@ obj << Compare( AUC( 1 ) );
 
 ### Copy ByGroup Script
 
-**Sintassi:** obj << Copy ByGroup Script
+**Sintassi:** obj &lt;&lt; Copy ByGroup Script
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo inserisce negli Appunti.
 
@@ -262,7 +262,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Sintassi:** obj << Copy Script
+**Sintassi:** obj &lt;&lt; Copy Script
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo inserisce negli Appunti.
 
@@ -277,7 +277,7 @@ obj << Copy Script;
 
 ### Fit
 
-**Sintassi:** obj << Fit
+**Sintassi:** obj &lt;&lt; Fit
 
 **Descrizione:** Fits a Torch Deep Learning model. You can specify parameters and fitting specifications within this command.
 
@@ -293,7 +293,7 @@ obj = Torch Deep Learning( Y( :sex ), X( :picture ), Fit );
 
 ### Get By Levels
 
-**Sintassi:** obj << Get By Levels
+**Sintassi:** obj &lt;&lt; Get By Levels
 
 **Descrizione:** Restituisce un array associativo che mappa le colonne del gruppo di By ai rispettivi valori.
 
@@ -310,7 +310,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Sintassi:** obj << Get ByGroup Script
+**Sintassi:** obj &lt;&lt; Get ByGroup Script
 
 **Descrizione:** Crea uno script (JSL) per generare questa analisi e la restituisce come espressione.
 
@@ -331,7 +331,7 @@ Show( t );
 
 ### Get Container
 
-**Sintassi:** obj << Get Container
+**Sintassi:** obj &lt;&lt; Get Container
 
 **Descrizione:** Restituisce un riferimento al riquadro contenitore che racchiude il contenuto dell&apos;oggetto.
 
@@ -378,7 +378,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Sintassi:** obj << Get Data Table
+**Sintassi:** obj &lt;&lt; Get Data Table
 
 **Descrizione:** Restituisce un riferimento alla tabella di dati.
 
@@ -394,13 +394,13 @@ Show( N Rows( t ) );
 
 ### Get Measures
 
-**Sintassi:** obj << Get Measures
+**Sintassi:** obj &lt;&lt; Get Measures
 
 **JMP Versione aggiunta:** 18
 
 ### Get Script
 
-**Sintassi:** obj << Get Script
+**Sintassi:** obj &lt;&lt; Get Script
 
 **Descrizione:** Crea uno script (JSL) per generare questa analisi e la restituisce come espressione.
 
@@ -416,7 +416,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Sintassi:** obj << Get Script With Data Table
+**Sintassi:** obj &lt;&lt; Get Script With Data Table
 
 **Descrizione:** Crea uno script (JSL) per generare questa analisi facendo specifico riferimento a questa tabella di dati e la restituisce come espressione.
 
@@ -432,7 +432,7 @@ Show( t );
 
 ### Get Timing
 
-**Sintassi:** obj << Get Timing
+**Sintassi:** obj &lt;&lt; Get Timing
 
 **Descrizione:** Determina il tempo di avvio della piattaforma.
 
@@ -448,7 +448,7 @@ Show( t );
 
 ### Get Web Support
 
-**Sintassi:** obj << Get Web Support
+**Sintassi:** obj &lt;&lt; Get Web Support
 
 **Descrizione:** Restituisce un numero indicante il livello di supporto HTML interattivo per l&apos;oggetto visualizzato. 1 significa che alcuni o tutti gli elementi sono supportati. 0 significa nessun supporto.
 
@@ -464,7 +464,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Sintassi:** obj << Get Where Expr
+**Sintassi:** obj &lt;&lt; Get Where Expr
 
 **Descrizione:** Restituisce l&apos;espressione Where per il sottoinsieme di dati, se la piattaforma è stata avviata con By() o Where(). Altrimenti, restituisce Vuoto()
 
@@ -539,7 +539,7 @@ preset = obj << New Preset();
 
 ### Redo Analysis
 
-**Sintassi:** obj << Redo Analysis
+**Sintassi:** obj &lt;&lt; Redo Analysis
 
 **Descrizione:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
 
@@ -556,7 +556,7 @@ obj << Redo Analysis;
 
 ### Relaunch Analysis
 
-**Sintassi:** obj << Relaunch Analysis
+**Sintassi:** obj &lt;&lt; Relaunch Analysis
 
 **Descrizione:** Return to the launcher for this analysis.
 
@@ -590,9 +590,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Sintassi:** obj << Report;
-
-Report( obj )
+**Sintassi:** obj &lt;&lt; Report;Report( obj )
 
 **Descrizione:** Restituisce un riferimento all&apos;oggetto del report.
 
@@ -609,7 +607,7 @@ Show( t );
 
 ### Save ByGroup Script to Data Table
 
-**Sintassi:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintassi:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e salvarla come proprietà della tabella nella tabella di dati. È possibile specificare un nome per lo script. L&apos;opzione Append Suffix aggiunge un suffisso numerico al nome dello script, che differenzia lo script da uno script esistente con lo stesso nome. L&apos;opzione Prompt richiede all&apos;utente di specificare un nome di script. L&apos;opzione Replace sostituisce uno script esistente con lo stesso nome.
 
@@ -629,7 +627,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Sintassi:** obj << Save ByGroup Script to Journal
+**Sintassi:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e aggiunge un pulsante con lo script al journal.
 
@@ -649,7 +647,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Sintassi:** obj << Save ByGroup Script to Script Window
+**Sintassi:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo aggiunge alla finestra di testo dello script corrente.
 
@@ -669,7 +667,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**Sintassi:** obj << Save Script for All Objects
+**Sintassi:** obj &lt;&lt; Save Script for All Objects
 
 **Descrizione:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -684,7 +682,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Sintassi:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintassi:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descrizione:** Salva uno script per tutti gli oggetti del report nella tabella di dati corrente. Questa opzione è utile quando sono presenti più report nella finestra. Lo script prende il nome dalla prima piattaforma, a meno che non si specifichi il nome dello script tra apici.
 
@@ -722,7 +720,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Sintassi:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintassi:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo salva come una proprietà di tabella nella tabella di dati.
 
@@ -737,7 +735,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Sintassi:** obj << Save Script to Journal
+**Sintassi:** obj &lt;&lt; Save Script to Journal
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e aggiunge un pulsante con lo script al journal.
 
@@ -752,7 +750,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Sintassi:** obj << Save Script to Report
+**Sintassi:** obj &lt;&lt; Save Script to Report
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo mostra nel report. Utile per avere una copia stampata di quanto è stato fatto.
 
@@ -767,7 +765,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Sintassi:** obj << Save Script to Script Window
+**Sintassi:** obj &lt;&lt; Save Script to Script Window
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo aggiunge alla finestra di testo dello script corrente.
 
@@ -847,7 +845,7 @@ dt << Distribution(
 
 ### Set
 
-**Sintassi:** obj << Set
+**Sintassi:** obj &lt;&lt; Set
 
 **Descrizione:** Specifies parameters for a Torch Deep Learning model.
 
@@ -863,7 +861,7 @@ obj = Torch Deep Learning( Y( :sex ), X( :picture ), Set( Epochs( 5 ) ) );
 
 ### Show Details
 
-**Sintassi:** obj << Show Details( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Details( state=0|1 )
 
 **Descrizione:** Shows more details.
 
@@ -879,7 +877,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Show Details( 1 ) );
 
 ### Title
 
-**Sintassi:** obj << Title( "new title" )
+**Sintassi:** obj &lt;&lt; Title( "new title" )
 
 **Descrizione:** Imposta il titolo della piattaforma.
 
@@ -894,7 +892,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Sintassi:** obj << Top Report
+**Sintassi:** obj &lt;&lt; Top Report
 
 **Descrizione:** Restituisce un riferimento al nodo principale nel report.
 
@@ -911,7 +909,7 @@ Show( t );
 
 ### View Web XML
 
-**Sintassi:** obj << View Web XML
+**Sintassi:** obj &lt;&lt; View Web XML
 
 **Descrizione:** Restituisce il codice XML utilizzato per creare il report HTML interattivo.
 
@@ -936,7 +934,7 @@ xml = obj << View Web XML;
 
 #### AUC
 
-**Sintassi:** obj << AUC( state=0|1 )
+**Sintassi:** obj &lt;&lt; AUC( state=0|1 )
 
 **Descrizione:** Shows or hides the AUROC, which is the area under the receiver operating characteristic curve. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -944,7 +942,7 @@ xml = obj << View Web XML;
 
 #### Accuracy
 
-**Sintassi:** obj << Accuracy( state=0|1 )
+**Sintassi:** obj &lt;&lt; Accuracy( state=0|1 )
 
 **Descrizione:** Shows or hides the accuracy, which is the proportion of correct classifications. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -952,7 +950,7 @@ xml = obj << View Web XML;
 
 #### Censor
 
-**Sintassi:** obj << Censor( state=0|1 )
+**Sintassi:** obj &lt;&lt; Censor( state=0|1 )
 
 **Descrizione:** Shows or hides the Censor command Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -960,7 +958,7 @@ xml = obj << View Web XML;
 
 #### Concordance
 
-**Sintassi:** obj << Concordance( state=0|1 )
+**Sintassi:** obj &lt;&lt; Concordance( state=0|1 )
 
 **Descrizione:** Shows or hides the concordance, which is the Harrell C-Index and measures strength of sorting efficiency Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -968,7 +966,7 @@ xml = obj << View Web XML;
 
 #### Correlation
 
-**Sintassi:** obj << Correlation( state=0|1 )
+**Sintassi:** obj &lt;&lt; Correlation( state=0|1 )
 
 **Descrizione:** Shows or hides the Pearson correlation, which is a measure of the strength of the linear relationship. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -976,7 +974,7 @@ xml = obj << View Web XML;
 
 #### F1
 
-**Sintassi:** obj << F1( state=0|1 )
+**Sintassi:** obj &lt;&lt; F1( state=0|1 )
 
 **Descrizione:** Shows or hides the F1 Score, which is the harmonic average of precision and recall. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -984,7 +982,7 @@ xml = obj << View Web XML;
 
 #### Freq
 
-**Sintassi:** obj << Freq( state=0|1 )
+**Sintassi:** obj &lt;&lt; Freq( state=0|1 )
 
 **Descrizione:** Shows or hides the Freq column. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -992,7 +990,7 @@ xml = obj << View Web XML;
 
 #### H Measure
 
-**Sintassi:** obj << H Measure( state=0|1 )
+**Sintassi:** obj &lt;&lt; H Measure( state=0|1 )
 
 **Descrizione:** Shows or hides the H Measure, which measures proportion improvement over baseline. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1000,7 +998,7 @@ xml = obj << View Web XML;
 
 #### Hide All Models
 
-**Sintassi:** obj << Hide All Models
+**Sintassi:** obj &lt;&lt; Hide All Models
 
 **Descrizione:** Hides all models.
 
@@ -1008,7 +1006,7 @@ xml = obj << View Web XML;
 
 #### LogLoss
 
-**Sintassi:** obj << LogLoss( state=0|1 )
+**Sintassi:** obj &lt;&lt; LogLoss( state=0|1 )
 
 **Descrizione:** Shows or hides the logarithm of the likelihood-based loss function. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1016,7 +1014,7 @@ xml = obj << View Web XML;
 
 #### MAE
 
-**Sintassi:** obj << MAE( state=0|1 )
+**Sintassi:** obj &lt;&lt; MAE( state=0|1 )
 
 **Descrizione:** Shows or hides the MAE, which is the mean absolute error. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1024,7 +1022,7 @@ xml = obj << View Web XML;
 
 #### MCC
 
-**Sintassi:** obj << MCC( state=0|1 )
+**Sintassi:** obj &lt;&lt; MCC( state=0|1 )
 
 **Descrizione:** Shows or hides the Matthews correlation coefficient, which is the Pearson correlation for binary variables. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1032,7 +1030,7 @@ xml = obj << View Web XML;
 
 #### Misclass
 
-**Sintassi:** obj << Misclass( state=0|1 )
+**Sintassi:** obj &lt;&lt; Misclass( state=0|1 )
 
 **Descrizione:** Shows or hides the misclassification rate, which is the proportion of incorrect classifications. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1040,7 +1038,7 @@ xml = obj << View Web XML;
 
 #### Precision Recall AUC
 
-**Sintassi:** obj << Precision Recall AUC( state=0|1 )
+**Sintassi:** obj &lt;&lt; Precision Recall AUC( state=0|1 )
 
 **Descrizione:** Shows or hides the Precision Recall AUC, which is the area under the precision-recall curve. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1048,7 +1046,7 @@ xml = obj << View Web XML;
 
 #### Predictors
 
-**Sintassi:** obj << Predictors( state=0|1 )
+**Sintassi:** obj &lt;&lt; Predictors( state=0|1 )
 
 **Descrizione:** Shows or hides the Predictors column. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1056,7 +1054,7 @@ xml = obj << View Web XML;
 
 #### Profit
 
-**Sintassi:** obj << Profit( state=0|1 )
+**Sintassi:** obj &lt;&lt; Profit( state=0|1 )
 
 **Descrizione:** Shows or hides the expected profit. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1064,7 +1062,7 @@ xml = obj << View Web XML;
 
 #### RMSE
 
-**Sintassi:** obj << RMSE( state=0|1 )
+**Sintassi:** obj &lt;&lt; RMSE( state=0|1 )
 
 **Descrizione:** Shows or hides the RMSE, which is the root mean square error. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1072,7 +1070,7 @@ xml = obj << View Web XML;
 
 #### RSquare
 
-**Sintassi:** obj << RSquare( state=0|1 )
+**Sintassi:** obj &lt;&lt; RSquare( state=0|1 )
 
 **Descrizione:** Shows or hides RSquare value, which is the proportion of variability explained. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1080,7 +1078,7 @@ xml = obj << View Web XML;
 
 #### Remove Hidden Models
 
-**Sintassi:** obj << Remove Hidden Models
+**Sintassi:** obj &lt;&lt; Remove Hidden Models
 
 **Descrizione:** Removes all models for which the Show box is not checked.
 
@@ -1088,7 +1086,7 @@ xml = obj << View Web XML;
 
 #### Remove Shown Models
 
-**Sintassi:** obj << Remove Shown Models
+**Sintassi:** obj &lt;&lt; Remove Shown Models
 
 **Descrizione:** Removes all models for which the Show check box is checked and shows the remaining models.
 
@@ -1096,7 +1094,7 @@ xml = obj << View Web XML;
 
 #### Response
 
-**Sintassi:** obj << Response( state=0|1 )
+**Sintassi:** obj &lt;&lt; Response( state=0|1 )
 
 **Descrizione:** Shows or hides the Response column. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1104,7 +1102,7 @@ xml = obj << View Web XML;
 
 #### Show All Models
 
-**Sintassi:** obj << Show All Models
+**Sintassi:** obj &lt;&lt; Show All Models
 
 **Descrizione:** Shows all models.
 
@@ -1112,7 +1110,7 @@ xml = obj << View Web XML;
 
 #### Subject
 
-**Sintassi:** obj << Subject( state=0|1 )
+**Sintassi:** obj &lt;&lt; Subject( state=0|1 )
 
 **Descrizione:** Shows or hides the Subject column Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1120,7 +1118,7 @@ xml = obj << View Web XML;
 
 #### Training Metrics
 
-**Sintassi:** obj << Training Metrics( state=0|1 )
+**Sintassi:** obj &lt;&lt; Training Metrics( state=0|1 )
 
 **Descrizione:** Shows or hides all training metrics. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1128,7 +1126,7 @@ xml = obj << View Web XML;
 
 #### Validation
 
-**Sintassi:** obj << Validation( state=0|1 )
+**Sintassi:** obj &lt;&lt; Validation( state=0|1 )
 
 **Descrizione:** Shows or hides the Validation column. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1136,7 +1134,7 @@ xml = obj << View Web XML;
 
 #### Validation Metrics
 
-**Sintassi:** obj << Validation Metrics( state=0|1 )
+**Sintassi:** obj &lt;&lt; Validation Metrics( state=0|1 )
 
 **Descrizione:** Shows or hides all validation metrics. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1144,7 +1142,7 @@ xml = obj << View Web XML;
 
 #### Weight
 
-**Sintassi:** obj << Weight( state=0|1 )
+**Sintassi:** obj &lt;&lt; Weight( state=0|1 )
 
 **Descrizione:** Shows or hides the Weight column. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1156,7 +1154,7 @@ xml = obj << View Web XML;
 
 #### Actual by Predicted Plots
 
-**Sintassi:** obj << Actual by Predicted Plots( state=0|1 )
+**Sintassi:** obj &lt;&lt; Actual by Predicted Plots( state=0|1 )
 
 **Descrizione:** Shows or hides a plot using the training data with the predicted values on the X axis and actual values on the Y axis. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1164,7 +1162,7 @@ xml = obj << View Web XML;
 
 #### Confusion Matrices
 
-**Sintassi:** obj << ( fit[number] << Confusion Matrices( state=0|1 ) )
+**Sintassi:** obj &lt;&lt; ( fit[number] &lt;&lt; Confusion Matrices( state=0|1 ) )
 
 **Descrizione:** Shows or hides a crosstabulation matrix of actual and predicted levels. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1185,7 +1183,7 @@ obj << (fit[1] << Confusion Matrices( 1 ));
 
 #### Contour Profiler.
 
-**Sintassi:** obj << Contour Profiler.
+**Sintassi:** obj &lt;&lt; Contour Profiler.
 
 **Descrizione:** Shows or hides interactive graphs of cross-sections of the prediction function.
 
@@ -1193,7 +1191,7 @@ obj << (fit[1] << Confusion Matrices( 1 ));
 
 #### Decision Thresholds
 
-**Sintassi:** obj << Decision Thresholds( state=0|1 )
+**Sintassi:** obj &lt;&lt; Decision Thresholds( state=0|1 )
 
 **Descrizione:** Shows or hides decision threshold graphs and tables. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1201,7 +1199,7 @@ obj << (fit[1] << Confusion Matrices( 1 ));
 
 #### Fit Details
 
-**Sintassi:** obj << Fit Details( state=0|1 )
+**Sintassi:** obj &lt;&lt; Fit Details( state=0|1 )
 
 **Descrizione:** Shows or hides the statistics for the fitted model. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1209,7 +1207,7 @@ obj << (fit[1] << Confusion Matrices( 1 ));
 
 #### Lift Curves
 
-**Sintassi:** obj << Lift Curves( state=0|1 )
+**Sintassi:** obj &lt;&lt; Lift Curves( state=0|1 )
 
 **Descrizione:** Plots how much more saturated the top x-percent of predicted values are compared to the whole population.
 
@@ -1217,7 +1215,7 @@ obj << (fit[1] << Confusion Matrices( 1 ));
 
 #### Model Details
 
-**Sintassi:** obj << Model Details( state=0|1 )
+**Sintassi:** obj &lt;&lt; Model Details( state=0|1 )
 
 **Descrizione:** Shows or hides model details Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1225,7 +1223,7 @@ obj << (fit[1] << Confusion Matrices( 1 ));
 
 #### Precision Recall Curves
 
-**Sintassi:** obj << Precision Recall Curves( state=0|1 )
+**Sintassi:** obj &lt;&lt; Precision Recall Curves( state=0|1 )
 
 **Descrizione:** Plots the trade-off between precision and recall for different classification thresholds. It is preferred in scenarios where class imbalances exist.
 
@@ -1233,7 +1231,7 @@ obj << (fit[1] << Confusion Matrices( 1 ));
 
 #### Profiler
 
-**Sintassi:** obj << Profiler
+**Sintassi:** obj &lt;&lt; Profiler
 
 **Descrizione:** Shows or hides the Prediction Profiler.
 
@@ -1241,7 +1239,7 @@ obj << (fit[1] << Confusion Matrices( 1 ));
 
 #### ROC Curves
 
-**Sintassi:** obj << ROC Curves( state=0|1 )
+**Sintassi:** obj &lt;&lt; ROC Curves( state=0|1 )
 
 **Descrizione:** Plots the response-category sorting efficiency of the model predictions.
 
@@ -1249,7 +1247,7 @@ obj << (fit[1] << Confusion Matrices( 1 ));
 
 #### Surface Profiler
 
-**Sintassi:** obj << Surface Profiler
+**Sintassi:** obj &lt;&lt; Surface Profiler
 
 **Descrizione:** Shows or hides interactive graphs of cross-sections of the prediction function.
 
@@ -1271,7 +1269,7 @@ obj << (fit[1] << Confusion Matrices( 1 ));
 
 #### Activation
 
-**Sintassi:** obj << Activation( "CELU"|"ELU"|"GELU"|"Hardshrink"|"Hardtanh"|"LeakyReLU"|"LogSigmoid"|"Mish"|"PReLU"|"ReLU"|"ReLU6"|"RReLU"|"SELU"|"Sigmoid"|"SiLU"|"Softplus"|"Softshrink"|"Softsign"|"Tanh"|"Tanhshrink"|"None"="ReLU" )
+**Sintassi:** obj &lt;&lt; Activation( "CELU"|"ELU"|"GELU"|"Hardshrink"|"Hardtanh"|"LeakyReLU"|"LogSigmoid"|"Mish"|"PReLU"|"ReLU"|"ReLU6"|"RReLU"|"SELU"|"Sigmoid"|"SiLU"|"Softplus"|"Softshrink"|"Softsign"|"Tanh"|"Tanhshrink"|"None"="ReLU" )
 
 **Descrizione:** Specifies the activation function to use after each layer. "ReLU", per impostazione predefinita.
 
@@ -1287,7 +1285,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Activation( "ReLU" )
 
 #### Activations
 
-**Sintassi:** obj << Activations( text )
+**Sintassi:** obj &lt;&lt; Activations( text )
 
 **Descrizione:** Specifies a space-delimited list of activation functions to use in sequential layers.  This parameter overrides Activation when it is specified, and the last value carries forward.
 
@@ -1303,7 +1301,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Activations( "ReLU" 
 
 #### Anchor Scale
 
-**Sintassi:** obj << Anchor Scale( number=16 )
+**Sintassi:** obj &lt;&lt; Anchor Scale( number=16 )
 
 **Descrizione:** Specifies a multiplier applied to an internal range of anchor sizes.  Larger values tend to work better for larger boxes. "16", per impostazione predefinita.
 
@@ -1319,7 +1317,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Anchor Scale( "16" )
 
 #### Aspect Sigma
 
-**Sintassi:** obj << Aspect Sigma( number=0 )
+**Sintassi:** obj &lt;&lt; Aspect Sigma( number=0 )
 
 **Descrizione:** Standard deviation of Gaussian aspect ratio deformation "0", per impostazione predefinita.
 
@@ -1335,7 +1333,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Aspect Sigma( 0.0 ) ) );
 
 #### Attention Heads
 
-**Sintassi:** obj << Attention Heads( text=4 )
+**Sintassi:** obj &lt;&lt; Attention Heads( text=4 )
 
 **Descrizione:** For transformer models, specifies the number of attention heads as a space delimited list of positive integers, each of which must evenly divide its corresponding layer size. Last value carries forward if necessary. "4", per impostazione predefinita.
 
@@ -1351,7 +1349,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Attention Heads( 1 )
 
 #### Base Activation
 
-**Sintassi:** obj << Base Activation( "CELU"|"ELU"|"GELU"|"Hardshrink"|"Hardtanh"|"LeakyReLU"|"LogSigmoid"|"Mish"|"PReLU"|"ReLU"|"ReLU6"|"RReLU"|"SELU"|"Sigmoid"|"SiLU"|"Softplus"|"Softshrink"|"Softsign"|"Tanh"|"Tanhshrink"|"None"="GELU" )
+**Sintassi:** obj &lt;&lt; Base Activation( "CELU"|"ELU"|"GELU"|"Hardshrink"|"Hardtanh"|"LeakyReLU"|"LogSigmoid"|"Mish"|"PReLU"|"ReLU"|"ReLU6"|"RReLU"|"SELU"|"Sigmoid"|"SiLU"|"Softplus"|"Softshrink"|"Softsign"|"Tanh"|"Tanhshrink"|"None"="GELU" )
 
 **Descrizione:** Specifies the base activation function for Kolmogorov Arnold B Splines. "GELU", per impostazione predefinita.
 
@@ -1367,7 +1365,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Base Activation( "GE
 
 #### Basis Function
 
-**Sintassi:** obj << Basis Function( "Gaussian"|"Linear"|"Quadradic"|"InverseQuadradic"|"MultiQuadric"|"InverseMultiQuadric"|"Spline"|"Poisson1"|"Poisson2"|"Matern32"|"Matern52"="Gaussian" )
+**Sintassi:** obj &lt;&lt; Basis Function( "Gaussian"|"Linear"|"Quadradic"|"InverseQuadradic"|"MultiQuadric"|"InverseMultiQuadric"|"Spline"|"Poisson1"|"Poisson2"|"Matern32"|"Matern52"="Gaussian" )
 
 **Descrizione:** For Radial Basis Machine models, specify the basis function. "Gaussian", per impostazione predefinita.
 
@@ -1387,7 +1385,7 @@ Torch Deep Learning(
 
 #### Batch Size
 
-**Sintassi:** obj << Batch Size( number=128 )
+**Sintassi:** obj &lt;&lt; Batch Size( number=128 )
 
 **Descrizione:** Specifies the number of rows to randomly sample for each training batch and optimization update. Decrease it to save memory and update gradients more frequently; increase it to pass through the data faster and regularize the model more. "128", per impostazione predefinita.
 
@@ -1403,7 +1401,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Batch Size( 128 ) ) );
 
 #### Binary Loss
 
-**Sintassi:** obj << Binary Loss( "BCE"|"SM"="BCE" )
+**Sintassi:** obj &lt;&lt; Binary Loss( "BCE"|"SM"="BCE" )
 
 **Descrizione:** Specifies the loss function for binary responses. Choose from Binary Cross Entropy (BCE) or Soft Margin (SM). "BCE", per impostazione predefinita.
 
@@ -1419,7 +1417,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Binary Loss( "BCE" ) ) );
 
 #### Blur Max Sigma
 
-**Sintassi:** obj << Blur Max Sigma( number=0 )
+**Sintassi:** obj &lt;&lt; Blur Max Sigma( number=0 )
 
 **Descrizione:** Maximum standard deviation of Gaussian blur "0", per impostazione predefinita.
 
@@ -1435,7 +1433,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Blur Max Sigma( 1 ) ) );
 
 #### Class Loss Weight
 
-**Sintassi:** obj << Class Loss Weight( number=4.0 )
+**Sintassi:** obj &lt;&lt; Class Loss Weight( number=4.0 )
 
 **Descrizione:** Specifies the multiplier for class loss. "4.0", per impostazione predefinita.
 
@@ -1451,7 +1449,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Class Loss Weight( 4.0 ) ) )
 
 #### Confidence Threshold
 
-**Sintassi:** obj << Confidence Threshold( number=0.05 )
+**Sintassi:** obj &lt;&lt; Confidence Threshold( number=0.05 )
 
 **Descrizione:** Specifies the confidence score threshold for predicted boxes.  Boxes with probability score less than this threshold are dropped. "0.05", per impostazione predefinita.
 
@@ -1467,7 +1465,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Confidence Threshold
 
 #### Continuous Loss
 
-**Sintassi:** obj << Continuous Loss( "MSE"|"L1"|"SmoothL1"|"Huber"|"Poisson"|"Quantile"|"CoxPH"="MSE" )
+**Sintassi:** obj &lt;&lt; Continuous Loss( "MSE"|"L1"|"SmoothL1"|"Huber"|"Poisson"|"Quantile"|"CoxPH"="MSE" )
 
 **Descrizione:** Specifies the loss function for continuous responses. Choose from Mean Squared Error (MSE), Mean Absolute Error (L1), Smoothed L1 (with margin), Huber (with margin), or Poisson (for count responses). "MSE", per impostazione predefinita.
 
@@ -1483,7 +1481,7 @@ Torch Deep Learning( Y( :weight ), X( :picture ), Fit( Continuous Loss( "MSE" ) 
 
 #### Copy Parameters to Launch
 
-**Sintassi:** obj << Copy Parameters to Launch
+**Sintassi:** obj &lt;&lt; Copy Parameters to Launch
 
 **Descrizione:** Copies the parameter values from this model to the model launch section.
 
@@ -1491,7 +1489,7 @@ Torch Deep Learning( Y( :weight ), X( :picture ), Fit( Continuous Loss( "MSE" ) 
 
 #### Covariance Structure
 
-**Sintassi:** obj << Covariance Structure( "DotProduct"|"Gaussian"="DotProduct" )
+**Sintassi:** obj &lt;&lt; Covariance Structure( "DotProduct"|"Gaussian"="DotProduct" )
 
 **Descrizione:** For mixed models, specify the covariance structure. "DotProduct", per impostazione predefinita.
 
@@ -1511,7 +1509,7 @@ Torch Deep Learning(
 
 #### Data Threads
 
-**Sintassi:** obj << Data Threads( number=4 )
+**Sintassi:** obj &lt;&lt; Data Threads( number=4 )
 
 **Descrizione:** Specifies the number of threads to use to load data into memory. A number near half the number of actual cores is usually near optimal. "4", per impostazione predefinita.
 
@@ -1527,7 +1525,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Data Threads( 0 ) ) );
 
 #### Device
 
-**Sintassi:** obj << Device( "auto"|"cpu"|"cuda:0"|"cuda:1"|"cuda:2"|"cuda:3"="auto" )
+**Sintassi:** obj &lt;&lt; Device( "auto"|"cpu"|"cuda:0"|"cuda:1"|"cuda:2"|"cuda:3"="auto" )
 
 **Descrizione:** Specifies the computational device that Torch uses. "auto", per impostazione predefinita.
 
@@ -1543,7 +1541,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Device( "cpu" ) ) );
 
 #### Dilations
 
-**Sintassi:** obj << Dilations( text=1 )
+**Sintassi:** obj &lt;&lt; Dilations( text=1 )
 
 **Descrizione:** For custom convolutional models, specifies the dilations as a space-delimited list of positive integers. Last value carries forward if necessary. "1", per impostazione predefinita.
 
@@ -1559,7 +1557,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Dilations( "1" ) ) )
 
 #### Dropout Probs
 
-**Sintassi:** obj << Dropout Probs( text=0.0 )
+**Sintassi:** obj &lt;&lt; Dropout Probs( text=0.0 )
 
 **Descrizione:** Specifies the probabilities of dropout to use after each layer as a space-delimited list of decimals between 0 and 1. Last value carries forward if necessary. "0.0", per impostazione predefinita.
 
@@ -1575,7 +1573,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Dropout Probs( "0.1"
 
 #### Epochs
 
-**Sintassi:** obj << Epochs( number=20 )
+**Sintassi:** obj &lt;&lt; Epochs( number=20 )
 
 **Descrizione:** Specifies the number of iterations through the training data to optimize the loss function for each batch and train the model. "20", per impostazione predefinita.
 
@@ -1591,7 +1589,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Epochs( 100 ) ) );
 
 #### Factorization Machine Layers
 
-**Sintassi:** obj << Factorization Machine Layers( text=0 )
+**Sintassi:** obj &lt;&lt; Factorization Machine Layers( text=0 )
 
 **Descrizione:** Specify a space-separated list of 0s and 1s indicating if factorization machine interactions should be added to each linear layer.  Last value carries forward. "0", per impostazione predefinita.
 
@@ -1611,7 +1609,7 @@ Torch Deep Learning(
 
 #### Fit Ys Separately
 
-**Sintassi:** obj << Fit Ys Separately( state=0 )
+**Sintassi:** obj &lt;&lt; Fit Ys Separately( state=0 )
 
 **Descrizione:** Check to fit a distinct model for each Y variable, and uncheck to model them jointly. "0", per impostazione predefinita.
 
@@ -1627,7 +1625,7 @@ Torch Deep Learning( Y( :sex, :height ), X( :picture ), Fit( Model Ys Separately
 
 #### Fixed Effects
 
-**Sintassi:** obj << Fixed Effects( number=0 )
+**Sintassi:** obj &lt;&lt; Fixed Effects( number=0 )
 
 **Descrizione:** Specify the number of fixed effects, all of which must be at the beginning of the X variable list "0", per impostazione predefinita.
 
@@ -1643,7 +1641,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Fixed Effects( 0 ) )
 
 #### Folder
 
-**Sintassi:** obj << Folder( text )
+**Sintassi:** obj &lt;&lt; Folder( text )
 
 **Descrizione:** Select a folder in which to save modeling results. A subfolder for each model is created in this folder.
 
@@ -1659,7 +1657,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Folder( "" ) ) );
 
 #### Frozen Epochs
 
-**Sintassi:** obj << Frozen Epochs( number=0 )
+**Sintassi:** obj &lt;&lt; Frozen Epochs( number=0 )
 
 **Descrizione:** Specifies the number of epochs for which pretrained model bodies remain frozen.  After this number there is full training gradients for all parameters. "0", per impostazione predefinita.
 
@@ -1675,7 +1673,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Frozen Epochs( 3 ) ) );
 
 #### Generate Python Code
 
-**Sintassi:** obj << Generate Python Code
+**Sintassi:** obj &lt;&lt; Generate Python Code
 
 **Descrizione:** Creates Python code for model deployment.
 
@@ -1683,7 +1681,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Frozen Epochs( 3 ) ) );
 
 #### Grid Size
 
-**Sintassi:** obj << Grid Size( number=5 )
+**Sintassi:** obj &lt;&lt; Grid Size( number=5 )
 
 **Descrizione:** For Kolmogorov Arnold B Spline networks, specifies the number of points in the grid for the spline interpolation. "5", per impostazione predefinita.
 
@@ -1699,7 +1697,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Grid Size( 5 ) ) );
 
 #### HFlip Prob
 
-**Sintassi:** obj << HFlip Prob( number=0 )
+**Sintassi:** obj &lt;&lt; HFlip Prob( number=0 )
 
 **Descrizione:** Probability of horizontal flip "0", per impostazione predefinita.
 
@@ -1715,7 +1713,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( HFlip Prob( 0.3 ) ) );
 
 #### Highway Layers
 
-**Sintassi:** obj << Highway Layers( text=0 )
+**Sintassi:** obj &lt;&lt; Highway Layers( text=0 )
 
 **Descrizione:** Specify a space-separated list of nonnegative integers specifying the number of highway layers to insert in the network.  Last value carries forward. "0", per impostazione predefinita.
 
@@ -1731,7 +1729,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Highway Layers( "1" 
 
 #### Image Model
 
-**Sintassi:** obj << Image Model( ="LeNet5" )
+**Sintassi:** obj &lt;&lt; Image Model( ="LeNet5" )
 
 **Descrizione:** Specifies the image network architecture to use. Models are ordered by size. Smaller models train faster but may not perform as well as larger models. "LeNet5", per impostazione predefinita.
 
@@ -1747,7 +1745,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Image Model( "LeNet5" ) ) );
 
 #### Image Size
 
-**Sintassi:** obj << Image Size( number=28 )
+**Sintassi:** obj &lt;&lt; Image Size( number=28 )
 
 **Descrizione:** Specifies the size of image to use while training. Input images are transformed to this size square; larger images have higher resolution but slower training times. "28", per impostazione predefinita.
 
@@ -1763,7 +1761,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Image Size( 28 ) ) );
 
 #### Kernel Sizes
 
-**Sintassi:** obj << Kernel Sizes( text=3 )
+**Sintassi:** obj &lt;&lt; Kernel Sizes( text=3 )
 
 **Descrizione:** For custom convolutional models, specifies the kernel sizes as a space-delimited list of positive integers. Last value carries forward if necessary. "3", per impostazione predefinita.
 
@@ -1779,7 +1777,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Kernel Sizes( "3" ) 
 
 #### L1 Penalty
 
-**Sintassi:** obj << L1 Penalty( number=0.0 )
+**Sintassi:** obj &lt;&lt; L1 Penalty( number=0.0 )
 
 **Descrizione:** Specifies a multiplier for the sum of absolute values of weight parameters to be added to the loss and induce sparsity. "0.0", per impostazione predefinita.
 
@@ -1795,7 +1793,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( L1 Penalty( 0.0001 ) ) );
 
 #### Layer Sizes
 
-**Sintassi:** obj << Layer Sizes( text=16 )
+**Sintassi:** obj &lt;&lt; Layer Sizes( text=16 )
 
 **Descrizione:** Specifies output sizes of hidden layers as a space-delimited list of integers (actual sizes) or decimals (multipliers of the previous layer size). The final value is the embedding size. "16", per impostazione predefinita.
 
@@ -1811,7 +1809,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Layer Sizes( "16" ) 
 
 #### Learning Rate
 
-**Sintassi:** obj << Learning Rate( number=0.001 )
+**Sintassi:** obj &lt;&lt; Learning Rate( number=0.001 )
 
 **Descrizione:** Specifies the learning rate. Smaller learning rates tend to fit better but require more iterations to converge, whereas larger learning rates fit faster. "0.001", per impostazione predefinita.
 
@@ -1827,7 +1825,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Learning Rate( 0.001 ) ) );
 
 #### Margin
 
-**Sintassi:** obj << Margin( number=1.0 )
+**Sintassi:** obj &lt;&lt; Margin( number=1.0 )
 
 **Descrizione:** Specifies the margin used in margin-based loss functions. Larger values should produce larger embedding distances between nominal responses with different levels, but may adversely affect training. "1.0", per impostazione predefinita.
 
@@ -1843,7 +1841,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Margin( 1.0 ) ) );
 
 #### Max Boxes
 
-**Sintassi:** obj << Max Boxes( number=5 )
+**Sintassi:** obj &lt;&lt; Max Boxes( number=5 )
 
 **Descrizione:** Specifies the maximum number of predicted boxes per image. "5", per impostazione predefinita.
 
@@ -1859,7 +1857,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Max Boxes( 5 ) ) );
 
 #### Max Seq Length
 
-**Sintassi:** obj << Max Seq Length( number=512 )
+**Sintassi:** obj &lt;&lt; Max Seq Length( number=512 )
 
 **Descrizione:** For text models, specifies the maximum number of tokens to create for each text item. "512", per impostazione predefinita.
 
@@ -1879,7 +1877,7 @@ Torch Deep Learning(
 
 #### Mixup Portion
 
-**Sintassi:** obj << Mixup Portion( number=0.0 )
+**Sintassi:** obj &lt;&lt; Mixup Portion( number=0.0 )
 
 **Descrizione:** Specifies portion of mixup samples to add to each training batch. For example, if Batch Size is 128 and Mixup Portion is 0.5, then 64 mixup samples are added. "0.0", per impostazione predefinita.
 
@@ -1895,7 +1893,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Mixup Portion( 0.5 ) ) );
 
 #### NMS Threshold
 
-**Sintassi:** obj << NMS Threshold( number=0.5 )
+**Sintassi:** obj &lt;&lt; NMS Threshold( number=0.5 )
 
 **Descrizione:** Specifies the non-maximum suppression threshold for predicted boxes.  Overlapping boxes with IOU values above this threshold are dropped. "0.5", per impostazione predefinita.
 
@@ -1911,7 +1909,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( NMS Threshold( 0.5 )
 
 #### Noise Max Sigma
 
-**Sintassi:** obj << Noise Max Sigma( number=0 )
+**Sintassi:** obj &lt;&lt; Noise Max Sigma( number=0 )
 
 **Descrizione:** Maximum standard deviation of additive Gaussian noise "0", per impostazione predefinita.
 
@@ -1927,7 +1925,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Noise Max Sigma( 1 ) ) );
 
 #### Nominal Image Threshold
 
-**Sintassi:** obj << Nominal Image Threshold( number=10 )
+**Sintassi:** obj &lt;&lt; Nominal Image Threshold( number=10 )
 
 **Descrizione:** Specifies the cutoff for determining if images in a column are nominal or continuous.  If the number of unique pixel levels is <= this number, then the images are considered to be nominal. "10", per impostazione predefinita.
 
@@ -1943,7 +1941,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Nominal Image Threshold( 10 
 
 #### Nominal Loss
 
-**Sintassi:** obj << Nominal Loss( "NLL"="NLL" )
+**Sintassi:** obj &lt;&lt; Nominal Loss( "NLL"="NLL" )
 
 **Descrizione:** Specifies the loss function for nominal responses. Choose from Negative Loglikelihood (NLL). "NLL", per impostazione predefinita.
 
@@ -1959,7 +1957,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Nominal Loss( "NLL" ) ) );
 
 #### Norm
 
-**Sintassi:** obj << Norm( "None"|"Batch"|"Group"|"Instance"="Batch" )
+**Sintassi:** obj &lt;&lt; Norm( "None"|"Batch"|"Group"|"Instance"="Batch" )
 
 **Descrizione:** Specifies the type of normalization to apply to each MLP layer. "Batch", per impostazione predefinita.
 
@@ -1975,7 +1973,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Norm( "Batch" ) ) );
 
 #### Norm First
 
-**Sintassi:** obj << Norm First( "None"|"Batch"="Batch" )
+**Sintassi:** obj &lt;&lt; Norm First( "None"|"Batch"="Batch" )
 
 **Descrizione:** Specifies the type of normalization to apply to the input data to the tabular model. Batch norm effectively centers and scales each input. "Batch", per impostazione predefinita.
 
@@ -1991,7 +1989,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Norm First( "Batch" 
 
 #### Num Linear
 
-**Sintassi:** obj << Num Linear( number=1 )
+**Sintassi:** obj &lt;&lt; Num Linear( number=1 )
 
 **Descrizione:** For custom convolutional and message passing models, specifies the number of linear layers at the end of Layer Sizes. "1", per impostazione predefinita.
 
@@ -2007,7 +2005,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Num Linear( 1 ) ) );
 
 #### Optimizer
 
-**Sintassi:** obj << Optimizer( "Adam"|"AdamW"|"SGD"|"SGDAGC"="AdamW" )
+**Sintassi:** obj &lt;&lt; Optimizer( "Adam"|"AdamW"|"SGD"|"SGDAGC"="AdamW" )
 
 **Descrizione:** Specifies the optimization method. Choose between Adaptive moment estimation (Adam), Adam weight decay (AdamW), Stochastic Gradient Descent (SGD), or SGD with Adaptive Gradient Clipping (SGDAGC). "AdamW", per impostazione predefinita.
 
@@ -2023,7 +2021,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Optimizer( "AdamW" ) ) );
 
 #### Pitch Sigma
 
-**Sintassi:** obj << Pitch Sigma( number=0 )
+**Sintassi:** obj &lt;&lt; Pitch Sigma( number=0 )
 
 **Descrizione:** Standard deviation of Gaussian pitch "0", per impostazione predefinita.
 
@@ -2039,7 +2037,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Pitch Sigma( 5 ) ) );
 
 #### Pooling Layers
 
-**Sintassi:** obj << Pooling Layers( text=Max )
+**Sintassi:** obj &lt;&lt; Pooling Layers( text=Max )
 
 **Descrizione:** Specifies pooling layers as a space-delimited list of one of four keywords:  Max, Avg, Cat, or None. Last value carries forward if necessary. "Max", per impostazione predefinita.
 
@@ -2055,7 +2053,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Pooling Layers( "Max
 
 #### Pretrained Tabular
 
-**Sintassi:** obj << Pretrained Tabular( ="None" )
+**Sintassi:** obj &lt;&lt; Pretrained Tabular( ="None" )
 
 **Descrizione:** Specify a pretrained tabular model that is prepended to the Tabular Model. "None", per impostazione predefinita.
 
@@ -2071,7 +2069,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Pretrained Tabular( 
 
 #### Quantiles
 
-**Sintassi:** obj << Quantiles( text=0.9 )
+**Sintassi:** obj &lt;&lt; Quantiles( text=0.9 )
 
 **Descrizione:** Specify a space-delimited list of quantiles to use for Quantile loss. "0.9", per impostazione predefinita.
 
@@ -2087,7 +2085,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Quantiles( "0.9" ) )
 
 #### RPN NMS Threshold
 
-**Sintassi:** obj << RPN NMS Threshold( number=0.7 )
+**Sintassi:** obj &lt;&lt; RPN NMS Threshold( number=0.7 )
 
 **Descrizione:** Specifies the non-maximum suppression threshold for region proposals.  Overlapping boxes with IOU values above this threshold are dropped. "0.7", per impostazione predefinita.
 
@@ -2103,7 +2101,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( RPN NMS Threshold( 0
 
 #### Remove All But This Fit
 
-**Sintassi:** obj << ( fit[number] << Remove All But This Fit )
+**Sintassi:** obj &lt;&lt; ( fit[number] &lt;&lt; Remove All But This Fit )
 
 **Descrizione:** Removes the reports and plots for all models except this one.
 
@@ -2125,7 +2123,7 @@ obj << (Fit[1] << Remove All But This Fit);
 
 #### Remove Fit
 
-**Sintassi:** obj << ( fit[number] << Remove Fit )
+**Sintassi:** obj &lt;&lt; ( fit[number] &lt;&lt; Remove Fit )
 
 **Descrizione:** Removes the entire model report.
 
@@ -2147,7 +2145,7 @@ obj << (Fit[1] << Remove Fit);
 
 #### Restore From
 
-**Sintassi:** obj << Restore From( " "=" " )
+**Sintassi:** obj &lt;&lt; Restore From( " "=" " )
 
 **Descrizione:** Select a subfolder containing saved files from a previously fit model. Training for a new model will begin where this model finished. Model architectures and validation variables should match. Leave this field blank to train from scratch. " ", per impostazione predefinita.
 
@@ -2163,7 +2161,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Restore From( "" ) ) );
 
 #### Roll Sigma
 
-**Sintassi:** obj << Roll Sigma( number=0 )
+**Sintassi:** obj &lt;&lt; Roll Sigma( number=0 )
 
 **Descrizione:** Standard deviation of Gaussian roll "0", per impostazione predefinita.
 
@@ -2179,7 +2177,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Roll Sigma( 5 ) ) );
 
 #### Save CAMs
 
-**Sintassi:** obj << Save CAMs
+**Sintassi:** obj &lt;&lt; Save CAMs
 
 **Descrizione:** Save gradient-based class activation maps (CAMs) as a new column.
 
@@ -2187,7 +2185,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Roll Sigma( 5 ) ) );
 
 #### Save Embeddings
 
-**Sintassi:** obj << Save Embeddings
+**Sintassi:** obj &lt;&lt; Save Embeddings
 
 **Descrizione:** Saves model embeddings (from final hidden layer) as new columns in the data table
 
@@ -2195,7 +2193,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Roll Sigma( 5 ) ) );
 
 #### Save Model
 
-**Sintassi:** obj << Save Model
+**Sintassi:** obj &lt;&lt; Save Model
 
 **Descrizione:** Saves serialized modeling components to disk in a folder that you name.  You can then specify this folder in Restore From to begin training with this model.
 
@@ -2203,7 +2201,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Roll Sigma( 5 ) ) );
 
 #### Save Predicteds
 
-**Sintassi:** obj << Save Predicteds
+**Sintassi:** obj &lt;&lt; Save Predicteds
 
 **Descrizione:** Saves the predicted values in a new column in the data table.
 
@@ -2211,7 +2209,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Roll Sigma( 5 ) ) );
 
 #### Screening Method
 
-**Sintassi:** obj << Screening Method( "ResponseScreening"|"BootstrapForest"="ResponseScreening" )
+**Sintassi:** obj &lt;&lt; Screening Method( "ResponseScreening"|"BootstrapForest"="ResponseScreening" )
 
 **Descrizione:** Choose a method by which to screen Tabular Model predictors prior to fitting the model within each fold.  ResponseScreening is fast and BootstrapForest is more thorough. "ResponseScreening", per impostazione predefinita.
 
@@ -2231,7 +2229,7 @@ Torch Deep Learning(
 
 #### Screening Threshold
 
-**Sintassi:** obj << Screening Threshold( number=0 )
+**Sintassi:** obj &lt;&lt; Screening Threshold( number=0 )
 
 **Descrizione:** If >= 1, the number of Tabular Model predictors to select by screening.  If < 1, the predictors with cumulative portion less than the threshold. "0", per impostazione predefinita.
 
@@ -2247,7 +2245,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Screening Threshold(
 
 #### Seed
 
-**Sintassi:** obj << Seed( number=0 )
+**Sintassi:** obj &lt;&lt; Seed( number=0 )
 
 **Descrizione:** Specifies the seed for the random number generator.  Note results may not be fully reproducible with the same seed due to the stochastic nature of certain Torch calculations. "0", per impostazione predefinita.
 
@@ -2263,7 +2261,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Seed( 0 ) ) );
 
 #### Segmentation Model
 
-**Sintassi:** obj << Segmentation Model( "UNet"|"FPN"|"LinkNet"|"DeepLabV3"|"DeepLabV3Plus"|"PAN"|"PSPNet"="UNet" )
+**Sintassi:** obj &lt;&lt; Segmentation Model( "UNet"|"FPN"|"LinkNet"|"DeepLabV3"|"DeepLabV3Plus"|"PAN"|"PSPNet"="UNet" )
 
 **Descrizione:** Specifies the image segmentation model. "UNet", per impostazione predefinita.
 
@@ -2279,7 +2277,7 @@ Torch Deep Learning( Y( :Mask ), X( :Picture ), Sett( Segmentation Model( "VGG11
 
 #### Spline Order
 
-**Sintassi:** obj << Spline Order( number=3 )
+**Sintassi:** obj &lt;&lt; Spline Order( number=3 )
 
 **Descrizione:** For Kolmogorov Arnold B Spline networks, specifies the order of the spline used for interpolation. "3", per impostazione predefinita.
 
@@ -2295,7 +2293,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Spline Order( 3 ) ) 
 
 #### Strides
 
-**Sintassi:** obj << Strides( text=1 )
+**Sintassi:** obj &lt;&lt; Strides( text=1 )
 
 **Descrizione:** For custom convolutional models, specifies the strides as a space-delimited list of positive integers. Last value carries forward if necessary. "1", per impostazione predefinita.
 
@@ -2311,7 +2309,7 @@ Torch Deep Learning( Y( :sex ), X( :height, :weight ), Fit( Strides( "1" ) ) );
 
 #### Tabular Model
 
-**Sintassi:** obj << Tabular Model( "MultiLayerPerceptron"|"FTTransformer"|"KolmogorovArnoldBSpline"|"CustomConv1d"|"RadialBasisMachine"|"MixedModel"="MultiLayerPerceptron" )
+**Sintassi:** obj &lt;&lt; Tabular Model( "MultiLayerPerceptron"|"FTTransformer"|"KolmogorovArnoldBSpline"|"CustomConv1d"|"RadialBasisMachine"|"MixedModel"="MultiLayerPerceptron" )
 
 **Descrizione:** Specifies the tabular network architecture to use. Choose from Multilayer Perceptron (MLP), Feature Tokenized Transformer (FTTransformer), Kolmogorov Arnold Network (KolmogorovArnoldBSpline), or other options "MultiLayerPerceptron", per impostazione predefinita.
 
@@ -2331,7 +2329,7 @@ Torch Deep Learning(
 
 #### Text Model
 
-**Sintassi:** obj << Text Model( ="BertTiny" )
+**Sintassi:** obj &lt;&lt; Text Model( ="BertTiny" )
 
 **Descrizione:** Specifies the text network architecture to use. Models are ordered by size. Smaller models train faster but may not perform as well as larger models. "BertTiny", per impostazione predefinita.
 
@@ -2351,7 +2349,7 @@ Torch Deep Learning(
 
 #### Triplet Loss Weight
 
-**Sintassi:** obj << Triplet Loss Weight( number=0.0 )
+**Sintassi:** obj &lt;&lt; Triplet Loss Weight( number=0.0 )
 
 **Descrizione:** Specifies the multiplier alpha to use in the following compound loss function: alpha * triplet_loss + (1 - alpha) * loss_function. Must be between 0 and 1. "0.0", per impostazione predefinita.
 
@@ -2367,7 +2365,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Triplet Loss Weight( 0.5 ) )
 
 #### Use Data As Knots
 
-**Sintassi:** obj << Use Data As Knots( state=0 )
+**Sintassi:** obj &lt;&lt; Use Data As Knots( state=0 )
 
 **Descrizione:** For Radial Basis Machine models, check to use the training data as knots to form an interpolation-style model. "0", per impostazione predefinita.
 
@@ -2387,7 +2385,7 @@ Torch Deep Learning(
 
 #### VFlip Prob
 
-**Sintassi:** obj << VFlip Prob( number=0 )
+**Sintassi:** obj &lt;&lt; VFlip Prob( number=0 )
 
 **Descrizione:** Probability of vertical flip "0", per impostazione predefinita.
 
@@ -2403,7 +2401,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( VFlip Prob( 0.2 ) ) );
 
 #### Weight Decay
 
-**Sintassi:** obj << Weight Decay( number=0.0 )
+**Sintassi:** obj &lt;&lt; Weight Decay( number=0.0 )
 
 **Descrizione:** Specifies a penalty term multiplier of the L2 norm of the trainable parameters, which regularizes them in a way similar to ridge regression. "0.0", per impostazione predefinita.
 
@@ -2419,7 +2417,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Weight Decay( 0.0001 ) ) );
 
 #### Worker Count
 
-**Sintassi:** obj << Worker Count( number=4 )
+**Sintassi:** obj &lt;&lt; Worker Count( number=4 )
 
 **Descrizione:** Specifies the number of workers to use to load batches of data during training. A number near half the number of actual cores is usually near optimal. "4", per impostazione predefinita.
 
@@ -2435,7 +2433,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Worker Count( 0 ) ) );
 
 #### X Slide Sigma
 
-**Sintassi:** obj << X Slide Sigma( number=0 )
+**Sintassi:** obj &lt;&lt; X Slide Sigma( number=0 )
 
 **Descrizione:** Standard deviation of Gaussian random shift along the X axis "0", per impostazione predefinita.
 
@@ -2451,7 +2449,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( X Slide Sigma( 5 ) ) );
 
 #### Y Slide Sigma
 
-**Sintassi:** obj << Y Slide Sigma( number=0 )
+**Sintassi:** obj &lt;&lt; Y Slide Sigma( number=0 )
 
 **Descrizione:** Standard deviation of Gaussian random shift along the Y axis "0", per impostazione predefinita.
 
@@ -2467,7 +2465,7 @@ Torch Deep Learning( Y( :sex ), X( :picture ), Fit( Y Slide Sigma( 5 ) ) );
 
 #### Yaw Sigma
 
-**Sintassi:** obj << Yaw Sigma( number=0 )
+**Sintassi:** obj &lt;&lt; Yaw Sigma( number=0 )
 
 **Descrizione:** Standard deviation of Gaussian yaw "0", per impostazione predefinita.
 

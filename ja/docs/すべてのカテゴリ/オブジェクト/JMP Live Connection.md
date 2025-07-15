@@ -6,7 +6,7 @@
 
 ### Create Folder
 
-**構文:** liveresult = liveconnection << Create Folder(Title(folder_title), Parent Folder(id | path | JMP Live Folder), <Description(folder_description)>, <If Exists("use" | "fail" | "default")>)
+**構文:** liveresult = liveconnection &lt;&lt; Create Folder(Title(folder_title), Parent Folder(id | path | JMP Live Folder), &lt;Description(folder_description)&gt;, &lt;If Exists("use" | "fail" | "default")&gt;)
 
 **説明:** JMP Live上に新しいフォルダを作成する。戻されるJMP Live結果を使って、新しいフォルダのJMP Liveフォルダオブジェクトを取得することができる。TitleとParent Folderは、必須のパラメータ。Parent Folderは、ParentまたはFolderと略記することもできる。Descriptionはオプション。If Existsは、指定したフォルダがすでに存在する場合にどうするかをJMP Liveに指示する。"use"なら、ただ既存のフォルダを戻し、"fail"ならエラーをスローし、"default"なら、新しいフォルダを作成して"(2)"や"(3)"などを追加した一意の名前をつける。
 
@@ -86,7 +86,7 @@ Show( subFolder2 );
 
 ### Delete Data
 
-**構文:** jmpliveresult = liveconnection << Delete Data(id | path | JMP Live Data)
+**構文:** jmpliveresult = liveconnection &lt;&lt; Delete Data(id | path | JMP Live Data)
 
 **説明:** 指定したデータ投稿を削除する。アクションが正常に行われた(1)かそうでない(0)かを戻す。
 
@@ -136,7 +136,7 @@ If( result == 1,
 
 ### Delete Folder
 
-**構文:** jmpliveresult = liveconnection << Delete Folder(id | path | JMP Live Folder)
+**構文:** jmpliveresult = liveconnection &lt;&lt; Delete Folder(id | path | JMP Live Folder)
 
 **説明:** 指定したフォルダを削除する。アクションが成功したか(1)、失敗したか(0)を戻す。
 
@@ -186,7 +186,7 @@ If( result == 1,
 
 ### Delete Report
 
-**構文:** jmpliveresult = liveconnection << Delete Report(id | path | JMP Live Report)
+**構文:** jmpliveresult = liveconnection &lt;&lt; Delete Report(id | path | JMP Live Report)
 
 **説明:** 指定したレポートを削除する。アクションが成功したか(1)、失敗したか(0)を戻す。
 
@@ -236,7 +236,7 @@ If( result == 1,
 
 ### Find Folders
 
-**構文:** jmpliveresult = liveconnection << Find Folders(<Search(search_string)>, <Publisher(user_name)>, <PageSize(val)>)
+**構文:** jmpliveresult = liveconnection &lt;&lt; Find Folders(&lt;Search(search_string)&gt;, &lt;Publisher(user_name)&gt;, &lt;PageSize(val)&gt;)
 
 **説明:** 検索文字列、発行者、または発行者と文字列の両方でフォルダを検索する。JMP Live結果リストを戻す。このリストを使って、リスト内の個々のフォルダを参照できる。結果リストに含めたいフォルダの数は、PageSize値で指定できる。デフォルトのPageSize値は10。検索パラメータはすべてオプションで、何も指定しなかった場合、すべてのフォルダが戻される。
 
@@ -305,7 +305,7 @@ For( i = 1, i <= folderlist << Get Number Of Items, i += 1,
 
 ### Find Posts
 
-**構文:** jmpliveresult = liveconnection << Find Posts(<Search(search_string)>, <Publisher(user_name)>, <PageSize(val)>)
+**構文:** jmpliveresult = liveconnection &lt;&lt; Find Posts(&lt;Search(search_string)&gt;, &lt;Publisher(user_name)&gt;, &lt;PageSize(val)&gt;)
 
 **説明:** 検索文字列、発行者、または発行者と文字列の両方で投稿(フォルダ、レポート、データを含む全項目)を検索する。JMP Live結果リストを戻す。このリストを使って、リスト内の個々の投稿を参照できる。結果リストに含めたい投稿の数は、PageSize値で指定できる。デフォルトのPageSize値は10。検索パラメータはすべてオプションで、何も指定しなかった場合、すべての投稿が戻される。
 
@@ -387,7 +387,7 @@ For( i = 1, i <= postlist << Get Number Of Items, i += 1,
 
 ### Find Reports
 
-**構文:** jmpliveresult = liveconnection << Find Reports(<Search(search_string)>, <Publisher(user_name)>, <PageSize(val)>)
+**構文:** jmpliveresult = liveconnection &lt;&lt; Find Reports(&lt;Search(search_string)&gt;, &lt;Publisher(user_name)&gt;, &lt;PageSize(val)&gt;)
 
 **説明:** 検索文字列、発行者、または発行者と文字列の両方でレポートを検索する。JMP Live結果リストを戻す。このリストを使って、リスト内の個々のレポートを参照できる。結果リストに含めたいレポートの数は、PageSize値で指定できる。デフォルトのPageSize値は10。検索パラメータはすべてオプションで、何も指定しなかった場合、すべてのレポートが戻される。
 
@@ -469,7 +469,7 @@ For( i = 1, i <= reportlist << Get Number Of Items, i += 1,
 
 ### Find Spaces
 
-**構文:** jmpliveresult = liveconnection << Find Spaces(<Permissions( "Contribute" )>, <Search(search_string)>, <PageSize(val)>)
+**構文:** jmpliveresult = liveconnection &lt;&lt; Find Spaces(&lt;Permissions( "Contribute" )&gt;, &lt;Search(search_string)&gt;, &lt;PageSize(val)&gt;)
 
 **説明:** オプションの検索文字列とオプションのPermissionsパラメータでスペースを検索し、投稿を許可しているスペースだけに絞り込む。現在、権限の値としてサポートされているのは投稿の権限のみ。JMP Live結果リストを戻す。このリストを使って、リスト内の個々のスペースを参照できる。結果リストに含めたいスペース項目の数は、PageSize値で指定できる。Next()を使用すると、次ページのスペースを取得できる。
 
@@ -517,7 +517,7 @@ For( i = 1, i <= spaceList << Get Number Of Items, i += 1,
 
 ### Get Connection Name
 
-**構文:** string = liveconnection << Get Connection Name()
+**構文:** string = liveconnection &lt;&lt; Get Connection Name()
 
 **説明:** JMP Live接続の名前を文字列として取得する。
 
@@ -534,7 +534,7 @@ Write( "Connection Name: ", connectionname );
 
 ### Get Data
 
-**構文:** liveresult = liveconnection << Get Data(id | path)
+**構文:** liveresult = liveconnection &lt;&lt; Get Data(id | path)
 
 **説明:** データ投稿をJMP Live結果オブジェクトとして取得する。これを使ってその投稿のJMP Liveデータオブジェクトを取得することができる。
 
@@ -579,7 +579,7 @@ Write( "\!n\!nData post retrieved by path: ", dataPost );
 
 ### Get Folder
 
-**構文:** liveresult = liveconnection << Get Folder(id | path)
+**構文:** liveresult = liveconnection &lt;&lt; Get Folder(id | path)
 
 **説明:** フォルダオブジェクトをJMP Live結果オブジェクトとして取得する。これを使って新しいフォルダのJMP Liveフォルダオブジェクトを取得することができる。
 
@@ -612,7 +612,7 @@ Write( "\!n\!nPath of retrieved folder: ", retrieved << Get Path );
 
 ### Get HTTP Request
 
-**構文:** httprequest = liveconnection << Get HTTP Request()
+**構文:** httprequest = liveconnection &lt;&lt; Get HTTP Request()
 
 **説明:** JMP LiveのREST関数を呼び出すためのHTTP Requestインスタンスを戻す。
 
@@ -631,7 +631,7 @@ httprequest << Get Status Message();
 
 ### Get Post
 
-**構文:** liveresult = liveconnection << Get Post(id | path)
+**構文:** liveresult = liveconnection &lt;&lt; Get Post(id | path)
 
 **説明:** 投稿をJMP Live結果オブジェクトとして取得する。これを使ってその投稿のJMP Live投稿オブジェクトを取得することができる。
 
@@ -671,7 +671,7 @@ Write( "\!n\!nPost retrieved by path: ", postByPath );
 
 ### Get Report
 
-**構文:** liveresult = liveconnection << Get Report(id | path)
+**構文:** liveresult = liveconnection &lt;&lt; Get Report(id | path)
 
 **説明:** レポート投稿をJMP Live結果オブジェクトとして取得する。これを使ってその投稿のJMP Liveレポートオブジェクトを取得することができる。
 
@@ -717,7 +717,7 @@ Write( "\!n\!nReport post retrieved by path: ", reportPost );
 
 ### Get URL
 
-**構文:** string = liveconnection << Get URL()
+**構文:** string = liveconnection &lt;&lt; Get URL()
 
 **説明:** JMP LiveサイトのURLを取得する。
 
@@ -734,7 +734,7 @@ Write( "URL: ", url );
 
 ### Get Username
 
-**構文:** string = liveconnection << Get Username()
+**構文:** string = liveconnection &lt;&lt; Get Username()
 
 **説明:** JMP Liveオブジェクトのユーザ名を取得する。
 
@@ -751,7 +751,7 @@ Write( "Username: ", username );
 
 ### Is Logged In
 
-**構文:** value = liveconnection << Is Logged In()
+**構文:** value = liveconnection &lt;&lt; Is Logged In()
 
 **説明:** 認証されたセッションがサーバーに対して確立されているかどうかを調べる。アクションが成功したか（1）、または失敗したか（0）を戻す。
 
@@ -768,7 +768,7 @@ Write( "Logged In: ", isloggedin );
 
 ### Publish
 
-**構文:** liveresult = liveconnection << Publish(JMPLiveContent, Folder(id | path | JMP Live Folder), <Use Existing Data({{dt_or_name, data_id | data_path | JMP Live Data}})>)
+**構文:** liveresult = liveconnection &lt;&lt; Publish(JMPLiveContent, Folder(id | path | JMP Live Folder), &lt;Use Existing Data({{dt_or_name, data_id | data_path | JMP Live Data}})&gt;)
 
 **説明:** JMP Liveサイトにレポートまたは単独のデータを発行する。JMP Live結果リスト（JMP Live Result List）オブジェクトを戻す。コンテンツの発行先とするJMP Live上のフォルダを指定する必要がある。1つのPublishコマンドにレポートと単独のデータを混在させることはできない。レポートがすでにJMP Liveにあるデータを使用する場合は、オプションのUse Existing Dataパラメータを使用してそのデータを指定する。単独のデータを発行する場合、Use Existing Dataパラメータは無効。
 
@@ -955,7 +955,7 @@ For( i = 1, i <= postlist << Get Number Of Items, i += 1,
 
 ### Replace
 
-**構文:** liveresult = liveconnection << Replace(JMPLiveContent, Report(id | path | JMP Live Report), <Use Existing Data({{dt_or_name, data_id | data_path | JMP Live Data}})>, <Update Existing Data({{dt_or_name, data_id | data_path | JMP Live Data}})>, <Publish New Data({dt_or_name})> )
+**構文:** liveresult = liveconnection &lt;&lt; Replace(JMPLiveContent, Report(id | path | JMP Live Report), &lt;Use Existing Data({{dt_or_name, data_id | data_path | JMP Live Data}})&gt;, &lt;Update Existing Data({{dt_or_name, data_id | data_path | JMP Live Data}})&gt;, &lt;Publish New Data({dt_or_name})&gt; )
 
 **説明:** 既存のJMP Liveレポートを別のレポートで置き換える。レポートと共に提供されるデータを管理する方法を指定するためには、データオプションが必要。"Use Existing Data"は、指定されたデータに対してJMP Liveの既存のデータを使用するようサーバーに指示する。"Update Existing Data"は、サーバー上のデータをコマンドで指定されたデータに置き換えるようサーバーに指示する。"Publish New Data"は、新しいデータテーブルをサーバーに発行し、置き換えられるレポートでそのデータを使用するように指示する。"Publish New Data"はすべてのデータテーブルに対するデフォルトのデータオプションとなる。データオプションは任意の組み合わせを指定することが可能。JMP Live結果リストオブジェクトが戻される。
 
@@ -1069,7 +1069,7 @@ Write( "\!n\!nOpen this URL to see results: ", folderURL );
 
 ### Update Data
 
-**構文:** jmpliveresult = liveconnection << Update Data( Data(id | path | JMP Live Data), dataTable | path | JMPLiveContent )
+**構文:** jmpliveresult = liveconnection &lt;&lt; Update Data( Data(id | path | JMP Live Data), dataTable | path | JMPLiveContent )
 
 **説明:** データ投稿に使うデータテーブルまたは地図を、指定したコンテンツで更新する。Dataパラメータは、更新するJMP Live上のデータを指す。2番目のパラメータは更新に使用するコンテンツで、データテーブルオブジェクト、データテーブルへのパス、データテーブルまたは地図から作成したJMP Liveコンテンツオブジェクトを指定できる。
 

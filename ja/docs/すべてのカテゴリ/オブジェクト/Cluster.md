@@ -6,39 +6,39 @@
 
 ### Attribute ID
 
-**構文:** obj = Y(...<Attribute ID( column(s) )>...)
+**構文:** obj = Y(...&lt;Attribute ID( column(s) )&gt;...)
 
 **説明:** 積み重ねたデータの場合に、属性を含んでいる列を指定する。これは通常の矩形データにおける列(変数)に相当するもの。
 
 ### Columns
 
-**構文:** obj << Columns( column(s) )
+**構文:** obj &lt;&lt; Columns( column(s) )
 
 ### Freq
 
-**構文:** obj << Freq( column )
+**構文:** obj &lt;&lt; Freq( column )
 
 ### Label
 
-**構文:** obj << Label( column )
+**構文:** obj &lt;&lt; Label( column )
 
 ### Object ID
 
-**構文:** obj = Y(...<Object ID( column(s) )>...)
+**構文:** obj = Y(...&lt;Object ID( column(s) )&gt;...)
 
 **説明:** 積み重ねたデータの場合に、個々の対象を識別する列を指定する。それ以外の場合には、データ行の集計に使用する。
 
 ### Ordering
 
-**構文:** obj << Ordering( column )
+**構文:** obj &lt;&lt; Ordering( column )
 
 ### Weight
 
-**構文:** obj << Weight( column )
+**構文:** obj &lt;&lt; Weight( column )
 
 ### Y
 
-**構文:** obj << Y( column(s) )
+**構文:** obj &lt;&lt; Y( column(s) )
 
 ## Hierarchical Cluster
 
@@ -46,7 +46,7 @@
 
 #### By
 
-**構文:** obj << By( column(s) )
+**構文:** obj &lt;&lt; By( column(s) )
 
 ```jsl
 
@@ -111,7 +111,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Cluster Criterion
 
-**構文:** obj << Cluster Criterion( state=0|1 )
+**構文:** obj &lt;&lt; Cluster Criterion( state=0|1 )
 
 **説明:** 複数のクラスター数に対して、立方体クラスター規準(CCC)を求める。CCCは、クラスター数の選択に使われる指標である。CCCが大きいほど、データへの適合度が良いことを示している。
 
@@ -125,7 +125,7 @@ obj = dt << Hierarchical Cluster( Y( :birth, :death ), Label( :country ), Cluste
 
 #### Cluster Summary
 
-**構文:** obj << Cluster Summary( state=0|1 )
+**構文:** obj &lt;&lt; Cluster Summary( state=0|1 )
 
 **説明:** 指定された個数のクラスターに関して、各クラスターの要約統計量の表示/非表示を切り替える。
 
@@ -143,7 +143,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Clustering History
 
-**構文:** obj << Clustering History( state=0|1 )
+**構文:** obj &lt;&lt; Clustering History( state=0|1 )
 
 **説明:** 「クラスター分析の履歴」レポートの表示/非表示を切り替えます。この表には、距離が短く、先に結合していったクラスターから順に、結合した時の距離が示されています。 デフォルトではオン。
 
@@ -162,7 +162,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Color Clusters
 
-**構文:** obj << Color Clusters( state=0|1 )
+**構文:** obj &lt;&lt; Color Clusters( state=0|1 )
 
 **説明:** データ行や樹形図のラベルを、属するクラスターで色分けする。クラスターの数を変更した場合、それに合わせて色も更新される。
 
@@ -181,7 +181,7 @@ obj << Color Clusters( 1 );
 
 #### Color Map
 
-**構文:** obj << Color Map
+**構文:** obj &lt;&lt; Color Map
 
 **説明:** 樹形図の横に表示されるカラーマップの表示/非表示を切り替える。
 
@@ -202,11 +202,11 @@ obj << Color Map( Blue to Gray to Red );
 
 #### Column Cluster Criterion
 
-**構文:** obj << Column Cluster Criterion( state=0|1 )
+**構文:** obj &lt;&lt; Column Cluster Criterion( state=0|1 )
 
 #### Column Dendrogram Position
 
-**構文:** obj << Column Dendrogram Position( "下"|"上" )
+**構文:** obj &lt;&lt; Column Dendrogram Position( "下"|"上" )
 
 **説明:** 変数間クラスターを行った時に、樹形図の表示位置を変更する。
 
@@ -225,7 +225,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Column Label Position
 
-**構文:** obj << Column Label Position( "下"|"上" )
+**構文:** obj &lt;&lt; Column Label Position( "下"|"上" )
 
 **説明:** 変数間クラスターを行った時に、樹形図におけるラベルの表示位置を変更する。
 
@@ -245,7 +245,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Constellation Plot
 
-**構文:** obj << Constellation Plot( state=0|1 )
+**構文:** obj &lt;&lt; Constellation Plot( state=0|1 )
 
 **説明:** 階層型クラスター分析の樹形図を、別の形式で表示する。各データ行(各オブザベーション)が端点、クラスターの各結合が点として描かれる。線分は、属するクラスターを示す。
 
@@ -264,7 +264,7 @@ obj << Constellation Plot( 1 );
 
 #### Dendrogram Scale
 
-**構文:** obj << Dendrogram Scale( "距離スケール"|"等間隔"|"幾何級数" )
+**構文:** obj &lt;&lt; Dendrogram Scale( "距離スケール"|"等間隔"|"幾何級数" )
 
 **説明:** 樹形図のスケールを指定する。[等間隔]は樹形図の枝を等間隔に配置する。[幾何級数]は樹形図の根から葉の方向へ徐々に枝の間隔を広くする。[距離スケール]は樹形図の枝を距離に比例した間隔で配置する。
 
@@ -283,13 +283,13 @@ obj << Dendrogram Scale( Geometric Spacing );
 
 #### Dendrogram Width
 
-**構文:** obj << Dendrogram Width( number=min(max(256,n*3),500) )
+**構文:** obj &lt;&lt; Dendrogram Width( number=min(max(256,n*3),500) )
 
 **説明:** 行クラスターの樹形図におけるフレームの幅。 デフォルトの値は"min(max(256,n*3),500)"。
 
 #### Distance Graph
 
-**構文:** obj << Distance Graph( state=0|1 )
+**構文:** obj &lt;&lt; Distance Graph( state=0|1 )
 
 **説明:** クラスターの各結合に対して、その結合されたクラスター間の距離をプロットしたグラフの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -310,7 +310,7 @@ obj << Distance Graph( 1 );
 
 #### Get Clusters
 
-**構文:** obj << Get Clusters
+**構文:** obj &lt;&lt; Get Clusters
 
 **説明:** データの各行が属するクラスターの名前（クラスターの番号）を含んだベクトルを戻す。
 
@@ -330,7 +330,7 @@ Show( c );
 
 #### Get Column Display Order
 
-**構文:** obj << Get Column Display Order
+**構文:** obj &lt;&lt; Get Column Display Order
 
 **説明:** 変数間クラスターでの表示順序をベクトルで戻す。
 
@@ -348,7 +348,7 @@ rowOrder = obj << Get Column Display Order;
 
 #### Get Column Names
 
-**構文:** obj << Get Column Names
+**構文:** obj &lt;&lt; Get Column Names
 
 **説明:** 変数間クラスターでの表示順序に並べた列名を戻す。
 
@@ -364,7 +364,7 @@ Show( c );
 
 #### Get Display Order
 
-**構文:** obj << Get Display Order
+**構文:** obj &lt;&lt; Get Display Order
 
 **説明:** データの各行が表示される順序を含んだベクトルを戻す。表示されない行に対しては欠測値とする。
 
@@ -381,7 +381,7 @@ rowOrder = obj << Get Display Order;
 
 #### Get Distance Matrix
 
-**構文:** obj << Get Distance Matrix
+**構文:** obj &lt;&lt; Get Distance Matrix
 
 **説明:** 階層型クラスターに使用された距離行列を戻す。
 
@@ -490,7 +490,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Late Join Outliers
 
-**構文:** obj << Late Join Outliers( state=0|1 )
+**構文:** obj &lt;&lt; Late Join Outliers( state=0|1 )
 
 **説明:** 階層的クラスター分析においてどの行もしくは列が凝集の非常に最後のステップで結合されたかに関するレポートの表示/非表示を切り替える。
 
@@ -510,7 +510,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Legend
 
-**構文:** obj << Legend( state=0|1 )
+**構文:** obj &lt;&lt; Legend( state=0|1 )
 
 **説明:** 樹形図の横に表示されるカラーマップに対する凡例の表示/非表示を切り替える。
 
@@ -530,7 +530,7 @@ obj << Legend( 1 );
 
 #### Mark Clusters
 
-**構文:** obj << Mark Clusters( state=0|1 )
+**構文:** obj &lt;&lt; Mark Clusters( state=0|1 )
 
 **説明:** データテーブルの行に、その行が属するクラスターに対応したマーカーを割り当てる。クラスターの個数を変更するとマーカーも更新される。このオプションの選択を解除すると、クラスターの個数を変更してもマーカーが更新されなくなる。
 
@@ -589,7 +589,7 @@ obj = dt << Hierarchical Cluster(
 
 #### More Color Map Columns
 
-**構文:** obj << More Color Map Columns( column )
+**構文:** obj &lt;&lt; More Color Map Columns( column )
 
 **説明:** 指定された列をカラーマップに追加する。
 
@@ -607,7 +607,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Number of Clusters
 
-**構文:** obj << Number of Clusters( number )
+**構文:** obj &lt;&lt; Number of Clusters( number )
 
 **説明:** クラスター数を設定する。設定されたクラスター数の箇所で、樹形図が切られる。樹形図におけるひし形のアイコンをドラッグすることによっても、クラスター数は設定できる。
 
@@ -625,7 +625,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Number of Column Clusters
 
-**構文:** obj << Number of Column Clusters( number )
+**構文:** obj &lt;&lt; Number of Column Clusters( number )
 
 **説明:** データテーブルに保存する列クラスターの数を指定する。変数間クラスター分析(行および列の両方に対するクラスタリング)を行った場合のみ使用可能。
 
@@ -633,7 +633,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Parallel Coord Plots
 
-**構文:** obj << Parallel Coord Plots
+**構文:** obj &lt;&lt; Parallel Coord Plots
 
 **説明:** 各クラスターのパラレルプロットを作成し、別のウィンドウにまとめて表示する。
 
@@ -652,7 +652,7 @@ obj << Parallel Coord Plots;
 
 #### Pivot on Selected Cluster
 
-**構文:** obj << Pivot on Selected Cluster
+**構文:** obj &lt;&lt; Pivot on Selected Cluster
 
 **説明:** 現在選択されているクラスターの2つの下位クラスターの表示順序を入れ替える。
 
@@ -669,7 +669,7 @@ obj << Pivot on Selected Cluster;
 
 #### Release Zoom
 
-**構文:** obj << Release Zoom
+**構文:** obj &lt;&lt; Release Zoom
 
 **説明:** 選択した行を中心とした樹形図のズームを解除する。
 
@@ -690,7 +690,7 @@ obj << Release Zoom;
 
 #### Row Dendrogram Position
 
-**構文:** obj << Row Dendrogram Position( "左"|"右" )
+**構文:** obj &lt;&lt; Row Dendrogram Position( "左"|"右" )
 
 **説明:** 行に対する樹形図の位置を変える。
 
@@ -708,7 +708,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Row Label Position
 
-**構文:** obj << Row Label Position( "左"|"右" )
+**構文:** obj &lt;&lt; Row Label Position( "左"|"右" )
 
 **説明:** 行に対する樹形図のラベルの位置を変える。
 
@@ -726,7 +726,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Row More Position
 
-**構文:** obj << Row More Position( "左"|"右" )
+**構文:** obj &lt;&lt; Row More Position( "左"|"右" )
 
 **説明:** [More Color Map Columns](カラーマップに列の追加)コマンドで追加されたカラーマップの位置を変える。
 
@@ -745,7 +745,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Save Cluster Hierarchy
 
-**構文:** obj << Save Cluster Hierarchy
+**構文:** obj &lt;&lt; Save Cluster Hierarchy
 
 **説明:** 樹形図を再構築するのに役立つ情報を、新しいデータテーブルにまとめる。
 
@@ -764,7 +764,7 @@ obj << Save Cluster Hierarchy;
 
 #### Save Cluster History
 
-**構文:** obj << Save Cluster History
+**構文:** obj &lt;&lt; Save Cluster History
 
 **説明:** 「クラスター分析の履歴」レポートに表示される表を新しいデータテーブルに保存する。
 
@@ -782,7 +782,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Save Cluster Means
 
-**構文:** obj << Save Cluster Means
+**構文:** obj &lt;&lt; Save Cluster Means
 
 **説明:** 指定された個数のクラスターに関して、各クラスターの平均をデータテーブルに保存する。
 
@@ -800,7 +800,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Save Cluster Tree
 
-**構文:** obj << Save Cluster Tree
+**構文:** obj &lt;&lt; Save Cluster Tree
 
 **説明:** 樹形図のツリーにおける各ノードの情報を新しいデータテーブルにまとめる。
 
@@ -819,7 +819,7 @@ obj << Save Cluster Tree;
 
 #### Save Clusters
 
-**構文:** obj << Save Clusters
+**構文:** obj &lt;&lt; Save Clusters
 
 **説明:** データテーブルに、クラスターの名前(クラスターの番号)を含んだ列を保存する。
 
@@ -838,7 +838,7 @@ obj << Save Clusters;
 
 #### Save Column Clusters
 
-**構文:** obj << Save Column Clusters
+**構文:** obj &lt;&lt; Save Column Clusters
 
 **説明:** データテーブルに列クラスターの情報を保存する。変数間クラスター分析(行および列の両方に対するクラスタリング)を行った場合のみ使用可能。
 
@@ -846,7 +846,7 @@ obj << Save Clusters;
 
 #### Save Constellation Coordinates
 
-**構文:** obj << Save Constellation Coordinates
+**構文:** obj &lt;&lt; Save Constellation Coordinates
 
 **説明:** データテーブルに、星座樹形図の座標を含んだ列を保存する。
 
@@ -866,7 +866,7 @@ obj << Save Constellation Coordinates( 1 );
 
 #### Save Display Order
 
-**構文:** obj << Save Display Order
+**構文:** obj &lt;&lt; Save Display Order
 
 **説明:** データテーブルに、行がどの順序で樹形図に現れるかを示す列を作成する。
 
@@ -885,7 +885,7 @@ obj << Save Display Order;
 
 #### Save Distance Matrix
 
-**構文:** obj << Save Distance Matrix
+**構文:** obj &lt;&lt; Save Distance Matrix
 
 **説明:** データ行の間の距離を新しいデータテーブルにまとめる。
 
@@ -903,7 +903,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Save Formula for Closest Cluster
 
-**構文:** obj << Save Formula for Closest Cluster
+**構文:** obj &lt;&lt; Save Formula for Closest Cluster
 
 **説明:** データテーブルに、最も近いクラスター平均のクラスターの名前(クラスターの番号)を求める計算式の列を保存する。
 
@@ -922,7 +922,7 @@ obj << Save Formula for Closest Cluster;
 
 #### Scatterplot Matrix
 
-**構文:** obj << Scatterplot Matrix
+**構文:** obj &lt;&lt; Scatterplot Matrix
 
 **説明:** 新しいウィンドウに散布図行列を作成し、現在のクラスター数に基づく信頼限界楕円を表示する。
 
@@ -940,13 +940,13 @@ obj = dt << Hierarchical Cluster(
 
 #### Set Random Seed
 
-**構文:** obj << Set Random Seed( number )
+**構文:** obj &lt;&lt; Set Random Seed( number )
 
 **説明:** 乱数シード値を指定する。乱数シード値を指定することにより、今後プラットフォームを起動したときに同じ結果を再現できる。
 
 #### Show Dendrogram
 
-**構文:** obj << Show Dendrogram( state=0|1 )
+**構文:** obj &lt;&lt; Show Dendrogram( state=0|1 )
 
 **説明:** 樹形図をオフにする。このオプションにより、樹形図をオフにして、カラーマップだけを表示できる。 デフォルトではオン。
 
@@ -968,7 +968,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Show NCluster Handle
 
-**構文:** obj << Show NCluster Handle( state=0|1 )
+**構文:** obj &lt;&lt; Show NCluster Handle( state=0|1 )
 
 **説明:** ひし形ハンドルの表示/非表示を切り替える。このハンドルを動かすことで、樹形図においてクラスター数を変更できる。 デフォルトではオン。
 
@@ -988,7 +988,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Standardize
 
-**構文:** obj << Standardize( "非標準化"|"列"|"行"|"列と行の両方" )
+**構文:** obj &lt;&lt; Standardize( "非標準化"|"列"|"行"|"列と行の両方" )
 
 **説明:** 「標準化の対象」の別名。クラスター分析の前にデータを標準化する方向を指定する。
 
@@ -1013,7 +1013,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Standardize Data
 
-**構文:** obj << Standardize Data( state=0|1 )
+**構文:** obj &lt;&lt; Standardize Data( state=0|1 )
 
 **説明:** 古いオプション名はサポートされるが、「標準化の対象」（Standardize By）オプションに置き換えられる。
 
@@ -1050,7 +1050,7 @@ obj << Two Way Clustering;
 
 #### Zoom to Selected Rows
 
-**構文:** obj << Zoom to Selected Rows
+**構文:** obj &lt;&lt; Zoom to Selected Rows
 
 **説明:** 選択した行を中心に樹形図をズームする。
 
@@ -1092,7 +1092,7 @@ Show( rows );
 
 #### Distance between rows
 
-**構文:** distance = KDTable << Distance between rows( row1, row2 )
+**構文:** distance = KDTable &lt;&lt; Distance between rows( row1, row2 )
 
 **説明:** 2つの行の間の距離を戻す。距離は、削除された行や挿入された行に対しても計算される。
 
@@ -1108,7 +1108,7 @@ Show( distance );
 
 #### Insert rows
 
-**構文:** n = KDTable << Insert rows( number|[ vector ] )
+**構文:** n = KDTable &lt;&lt; Insert rows( number|[ vector ] )
 
 **説明:** 近傍点の検索に使われるように、一度削除された行を再度追加する。行に対する通し番号は、行を削除や追加しても変更されない。戻り値は、追加した行数。もし、行が既に追加されていたならば、追加したままにしておく。
 
@@ -1130,7 +1130,7 @@ Show( rows );
 
 #### K nearest rows
 
-**構文:** {rows, dist} = KDTable << K nearest rows( stop, <position> )
+**構文:** {rows, dist} = KDTable &lt;&lt; K nearest rows( stop, &lt;position&gt; )
 
 **説明:** 近い方からn番目までに位置する行および距離を戻す。positionが指定されている場合、その座標または行に近い点が戻される。positionが省略されている場合、すべての行に対する結果が戻される。指定された距離内でなければn個の点を見つける前に検索が中止される。stopには、nまたは{n,limit}を指定できる。オプションのpositionには、(1xK)行列(kは次数)または行番号を指定できる。positionを指定しなければ、各行に対して近い方からn個の行が(行x n)行列で戻される。
 
@@ -1146,7 +1146,7 @@ Show( rows );
 
 #### Remove rows
 
-**構文:** n = KDTable << Remove rows( number|[ vector ] )
+**構文:** n = KDTable &lt;&lt; Remove rows( number|[ vector ] )
 
 **説明:** 近傍点の検索に使われないように、指定された行を削除する。行に対する通し番号は、行を削除しても変更されない。近傍点を探すための基準点には、削除した点も指定することができる。削除した行数が戻される。もし、行が既に削除されていたならば、削除したままにしておく。
 

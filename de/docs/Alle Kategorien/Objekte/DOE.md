@@ -6,7 +6,7 @@
 
 ### A-Optimality Parameter Weights
 
-**Syntax:** obj << A-Optimality Parameter Weights
+**Syntax:** obj &lt;&lt; A-Optimality Parameter Weights
 
 **Beschreibung:** Legt die Gewichtungen für die Erstellung eines A-optimalen Designs fest.
 
@@ -29,7 +29,7 @@ DOE(
 
 ### ALT Factor Settings
 
-**Syntax:** obj << ALT Factor Settings
+**Syntax:** obj &lt;&lt; ALT Factor Settings
 
 **Beschreibung:** Ermöglicht für die vorgegebene Faktorzahl in einem Plan eines beschleunigten Lebensdauertests die Angabe von Faktorname, Anzahl Stufen, Faktortransformation, Nutzungsbedingungen und Testbedingungen.
 
@@ -52,7 +52,7 @@ DOE(
 
 ### ALT Plan Setup
 
-**Syntax:** obj << ALT Plan Setup( 1|2|3 )
+**Syntax:** obj &lt;&lt; ALT Plan Setup( 1|2|3 )
 
 **Beschreibung:** Gibt die Wahl des ersten Modells für einen Plan eines beschleunigten Lebensdauertests an.
 
@@ -75,7 +75,7 @@ DOE(
 
 ### Add Alias Term
 
-**Syntax:** obj << Add Alias Term
+**Syntax:** obj &lt;&lt; Add Alias Term
 
 **Beschreibung:** Fügt einen Alias-Term zur Liste der Alias-Terme hinzu. Geben Sie die Faktorzahl und Power für jeden Effekt in einer Liste an. Erstellen Sie Wechselwirkungen, indem Sie die Effekte durch Komma trennen.
 
@@ -94,7 +94,7 @@ d << Add Alias Term( {1, 2} );
 
 ### Add Constraint
 
-**Syntax:** obj << Add Constraint
+**Syntax:** obj &lt;&lt; Add Constraint
 
 **Beschreibung:** Fügt lineare Nebenbedingungen mittels einer Matrix hinzu. Jede Zeile stellt eine Nebenbedingung dar. Die letzte Spalte ist für Werte auf der rechten Seite der Ungleichungsnebenbedingungen gedacht. In JSL müssen die Ungleichungsnebenbedingungen kleiner oder gleich den Werten auf der rechten Seite sein.
 
@@ -114,7 +114,7 @@ DOE(
 
 ### Add Factor
 
-**Syntax:** obj << Add Factor( Continuous|Discrete Numeric|Blocking|Constant|Categorical|Mixture )
+**Syntax:** obj &lt;&lt; Add Factor( Continuous|Discrete Numeric|Blocking|Constant|Categorical|Mixture )
 
 **Beschreibung:** Fügt einen Faktor vom angegebenen Typ und optionale Argumente hinzu. Wenn nichts angegeben wird, fügt dieser Befehl einen stetiger Faktor hinzu.
 
@@ -132,7 +132,7 @@ d << Add Factor( Constant, 3, "X5" );
 
 ### Add Functional Response
 
-**Syntax:** obj << Add Functional Response
+**Syntax:** obj &lt;&lt; Add Functional Response
 
 **Beschreibung:** Fügt eine funktionale Zielgröße mit dem angegebenen Namen, der Anzahl von Messungen pro Einzelversuch und Werten hinzu.
 
@@ -154,7 +154,7 @@ DOE(
 
 ### Add Potential Term
 
-**Syntax:** obj << Add Potential Term
+**Syntax:** obj &lt;&lt; Add Potential Term
 
 **Beschreibung:** Fügt einen Term „Wenn möglich“ zur Liste der Modellterme hinzu. Geben Sie die Faktorzahl und Power für jeden Effekt in einer Liste an. Erstellen Sie Wechselwirkungen, indem Sie die Effekte durch Komma trennen.
 
@@ -173,7 +173,7 @@ d << Add Potential Term( {1, 2} );
 
 ### Add Response
 
-**Syntax:** obj << Add Response( goal, name, lower limit, upper limit, importance, lower detection limit, upper detection limit )
+**Syntax:** obj &lt;&lt; Add Response( goal, name, lower limit, upper limit, importance, lower detection limit, upper detection limit )
 
 **Beschreibung:** Fügt eine Zielgröße mit dem angegebenen Ziel, Name, unterer Grenze, oberer Grenze und Wichtigkeit hinzu.
 
@@ -197,7 +197,7 @@ DOE( Custom Design, Add Response( Match Target, "Y", ., ., 1, 10, 30 ) );
 
 ### Add Term
 
-**Syntax:** obj << Add Term
+**Syntax:** obj &lt;&lt; Add Term
 
 **Beschreibung:** Fügt einen „Erforderlichen“ Term zur Liste der Modellterme hinzu. Effekte werden durch {Faktorzahl, Power} angegeben. Wechselwirkungen können durch Trennen der Effekte mittels Komma erstellt werden.
 
@@ -216,7 +216,7 @@ d << Add Term( {1, 2} );
 
 ### Additional Designs
 
-**Syntax:** obj << Additional Designs
+**Syntax:** obj &lt;&lt; Additional Designs
 
 **Beschreibung:** Geben Sie bis zu neun zusätzliche Designs für den Vergleich mit dem Referenzdesign an.
 
@@ -259,7 +259,7 @@ DOE(
 
 ### Allow covariate rows to be repeated
 
-**Syntax:** obj << Allow covariate rows to be repeated( state=0|1 )
+**Syntax:** obj &lt;&lt; Allow covariate rows to be repeated( state=0|1 )
 
 **Beschreibung:** Gibt an, ob Kovariablenzeilen im Design wiederholt werden dürfen.
 
@@ -289,7 +289,7 @@ DOE(
 
 ### Augment Method
 
-**Syntax:** obj << Augment Method( Replicate|Centerpoints|Fold Over|Add Axial|Augment )
+**Syntax:** obj &lt;&lt; Augment Method( Replicate|Centerpoints|Fold Over|Add Axial|Augment )
 
 **Beschreibung:** Gibt den Typ der Erweiterungsmethode und dessen Parameter an.
 
@@ -352,7 +352,7 @@ d << Augment Method( Add Axial, 1, 2 );
 
 ### Blocks
 
-**Syntax:** obj << Blocks
+**Syntax:** obj &lt;&lt; Blocks
 
 **Beschreibung:** Gibt die Blockgröße für ein balanciertes unvollständiges Blockdesign (BIBD) an.
 
@@ -369,7 +369,7 @@ d << Make Design;
 
 ### Center Points
 
-**Syntax:** obj << Center Points
+**Syntax:** obj &lt;&lt; Center Points
 
 **Beschreibung:** Gibt die Anzahl der Mittelpunkte an.
 
@@ -410,7 +410,7 @@ DOE(
 
 ### Change Anticipated Coefficients
 
-**Syntax:** obj << Change Anticipated Coefficients
+**Syntax:** obj &lt;&lt; Change Anticipated Coefficients
 
 **Beschreibung:** Antizipierte Koeffizienten in Power-Analyse ändern.
 
@@ -425,7 +425,7 @@ d << Change Anticipated Coefficients( [1 2 3 4 2 2 2 3 3 3] );
 
 ### Change Factor Settings
 
-**Syntax:** obj << Change Factor Settings
+**Syntax:** obj &lt;&lt; Change Factor Settings
 
 **Beschreibung:** Gibt das Minimum, Maximum und den Namen des stetigen oder Mischungsfaktors an, den Sie im ersten Argument eingeschlossen haben. Äußerst nützlich bei Plattformen, die zunächst über vordefinierte Faktoren verfügen.
 
@@ -453,7 +453,7 @@ d << Change Factor Settings( 3, 0, 0.8, "C" );
 
 ### Check Inscribe
 
-**Syntax:** obj << Check Inscribe
+**Syntax:** obj &lt;&lt; Check Inscribe
 
 **Beschreibung:** Skaliert das Design neu, so dass sich die Achsenpunkte am unteren und oberen Ende des Bereichs befinden.
 
@@ -468,7 +468,7 @@ d << Check Inscribe;
 
 ### Choice Design Table Output
 
-**Syntax:** obj << Choice Design Table Output( "Separat"|"Kombiniert" )
+**Syntax:** obj &lt;&lt; Choice Design Table Output( "Separat"|"Kombiniert" )
 
 **Beschreibung:** Gibt an, wie eine Datentabelle für ein Choice-Design erstellt wird.
 
@@ -490,7 +490,7 @@ DOE(
 
 ### D Efficiency Weight
 
-**Syntax:** obj << D Efficiency Weight
+**Syntax:** obj &lt;&lt; D Efficiency Weight
 
 **Beschreibung:** Mit dieser Option steuern Sie die relative Gewichtung der D-Effizienz und der Reduktion von Aliasbildung. Geben Sie eine Zahl zwischen Null und Eins vor.
 
@@ -509,7 +509,7 @@ DOE(
 
 ### Design Search Time
 
-**Syntax:** obj << Design Search Time( number )
+**Syntax:** obj &lt;&lt; Design Search Time( number )
 
 **Beschreibung:** Gibt die Anzahl von Sekunden für die Suche nach einem Design an.
 
@@ -526,7 +526,7 @@ DOE(
 
 ### Disallowed Combinations
 
-**Syntax:** obj << Disallowed Combinations
+**Syntax:** obj &lt;&lt; Disallowed Combinations
 
 **Beschreibung:** Skript bereitstellen, das für alle Faktorkombinationen, die aus Ihrem Design ausgeschlossen werden sollen, den Wert „wahr“ zurückgibt.
 
@@ -546,7 +546,7 @@ DOE(
 
 ### Discrete Numeric Powers Set to Necessary
 
-**Syntax:** obj << Discrete Numeric Powers Set to Necessary( state=0|1 )
+**Syntax:** obj &lt;&lt; Discrete Numeric Powers Set to Necessary( state=0|1 )
 
 **Beschreibung:** Gibt an, ob Potenzen in diskret numerischen Faktoren erforderliche Modellterme sein sollen.
 
@@ -565,7 +565,7 @@ DOE(
 
 ### Distribution Choice
 
-**Syntax:** obj << Distribution Choice
+**Syntax:** obj &lt;&lt; Distribution Choice
 
 **Beschreibung:** Gibt die Verteilung für einen Plan eines beschleunigten Lebensdauertests an.
 
@@ -588,7 +588,7 @@ DOE(
 
 ### Enforce Use of Selected Covariate Rows
 
-**Syntax:** obj << Enforce Use of Selected Covariate Rows( state=0|1 )
+**Syntax:** obj &lt;&lt; Enforce Use of Selected Covariate Rows( state=0|1 )
 
 **Beschreibung:** Gibt an, ob alle ausgewählten Kovariablenzeilen in das Design eingeschlossen werden sollen.
 
@@ -618,7 +618,7 @@ DOE(
 
 ### FFF Optimality Criterion
 
-**Syntax:** obj << FFF Optimality Criterion( "MaxPro"|"Zentroid" )
+**Syntax:** obj &lt;&lt; FFF Optimality Criterion( "MaxPro"|"Zentroid" )
 
 **Beschreibung:** Gibt das im Design verwendete Kriterium an. Empfohlen wird der Standardwert.
 
@@ -656,7 +656,7 @@ DOE(
 
 ### Find Subset
 
-**Syntax:** obj << Find Subset
+**Syntax:** obj &lt;&lt; Find Subset
 
 **Beschreibung:** Findet die D-optimale Teilmenge eines Extreme-Vertices-Designs.
 
@@ -671,7 +671,7 @@ d << Find Subset( 10 );
 
 ### GOSSDDetails
 
-**Syntax:** obj << GOSSDDetails
+**Syntax:** obj &lt;&lt; GOSSDDetails
 
 **Beschreibung:** Gibt die aktuellen Faktoreinstellungen als Liste zurück.
 
@@ -687,7 +687,7 @@ Show( d << GOSSDDetails );
 
 ### GOSSDStructure
 
-**Syntax:** obj << GOSSDStructure
+**Syntax:** obj &lt;&lt; GOSSDStructure
 
 **Beschreibung:** Gibt die Struktur eines GOSSD an.
 
@@ -703,7 +703,7 @@ d << GOSSDStructure( 6, 8 );
 
 ### Get Alias Matrix
 
-**Syntax:** obj << Get Alias Matrix
+**Syntax:** obj &lt;&lt; Get Alias Matrix
 
 **Beschreibung:** Gibt die Alias-Matrix aus der Designauswertung zurück.
 
@@ -718,7 +718,7 @@ d << Get Alias Matrix;
 
 ### Get Design Diagnostics
 
-**Syntax:** obj << Get Design Diagnostics
+**Syntax:** obj &lt;&lt; Get Design Diagnostics
 
 **Beschreibung:** D-Effizienz, G-Effizienz, A-Effizienz und durchschnittliche Varianz der Vorhersage zurückgeben.
 
@@ -733,7 +733,7 @@ d << Get Design Diagnostics;
 
 ### Get Effect Power
 
-**Syntax:** obj << Get Effect Power
+**Syntax:** obj &lt;&lt; Get Effect Power
 
 **Beschreibung:** Vektor der Potenzen für Effektschätzer zurückgeben.
 
@@ -748,7 +748,7 @@ d << Get Effect Power;
 
 ### Get Estimation Efficiencies
 
-**Syntax:** obj << Get Estimation Efficiencies
+**Syntax:** obj &lt;&lt; Get Estimation Efficiencies
 
 **Beschreibung:** Gibt einen Vektor für die vergrößerte Breite jedes Parameterschätzwerts verglichen mit einem idealen Design zurück.
 
@@ -763,7 +763,7 @@ d << Get Estimation Efficiencies;
 
 ### Get MaxPro Values
 
-**Syntax:** obj << Get MaxPro Values
+**Syntax:** obj &lt;&lt; Get MaxPro Values
 
 **Beschreibung:** Gibt die MaxPro-Werte für ein schnell-flexibles Design zurück, einschließlich alle Unterdesigns basierend auf Stufen eines kategorialen Faktors.
 
@@ -785,7 +785,7 @@ d << Get MaxPro Values;
 
 ### Get Number of Random Starts
 
-**Syntax:** obj << Get Number of Random Starts
+**Syntax:** obj &lt;&lt; Get Number of Random Starts
 
 **Beschreibung:** Gibt die Anzahl zufälliger Starts bei der Design-Generierung zurück.
 
@@ -793,7 +793,7 @@ d << Get MaxPro Values;
 
 ### Get Power
 
-**Syntax:** obj << Get Power
+**Syntax:** obj &lt;&lt; Get Power
 
 **Beschreibung:** Vektor der Potenzen für Parameterschätzer zurückgeben.
 
@@ -808,7 +808,7 @@ d << Get Power;
 
 ### Get Prediction Variances
 
-**Syntax:** obj << Get Prediction Variances
+**Syntax:** obj &lt;&lt; Get Prediction Variances
 
 **Beschreibung:** Gibt den Vektor der Vorhersagevarianzen aus dem Diagramm „Vorhersagevarianz über Raumanteil“ zurück.
 
@@ -829,7 +829,7 @@ d << Get Prediction Variances;
 
 ### Get X Matrix
 
-**Syntax:** obj << Get X Matrix
+**Syntax:** obj &lt;&lt; Get X Matrix
 
 **Beschreibung:** Gibt die Designmatrix (auch X-Matrix genannt) zurück.
 
@@ -844,7 +844,7 @@ d << Get X Matrix;
 
 ### Group New Runs Into Separate Block
 
-**Syntax:** obj << Group New Runs Into Separate Block
+**Syntax:** obj &lt;&lt; Group New Runs Into Separate Block
 
 **Beschreibung:** Fügt einen Blockbildungsfaktor hinzu, der bei der Erweiterung von Designs neue Einzelversuche in eigenen Blöcken gruppiert.
 
@@ -859,7 +859,7 @@ d << Group New Runs Into Separate Block;
 
 ### Load Constraints
 
-**Syntax:** obj << Load Constraints
+**Syntax:** obj &lt;&lt; Load Constraints
 
 **Beschreibung:** Zuvor gespeicherte Tabelle mit Nebenbedingungen der Faktoren zur Verwendung in diesem Versuch laden.
 
@@ -879,7 +879,7 @@ d = DOE(
 
 ### Load Design
 
-**Syntax:** obj << Load Design
+**Syntax:** obj &lt;&lt; Load Design
 
 **Beschreibung:** Design laden
 
@@ -893,7 +893,7 @@ d << Load Design();
 
 ### Load Factors
 
-**Syntax:** obj << Load Factors
+**Syntax:** obj &lt;&lt; Load Factors
 
 **Beschreibung:** Zuvor gespeicherte Faktorentabelle zur Verwendung in diesem Versuch laden.
 
@@ -907,7 +907,7 @@ DOE( Custom Design, Load Factors );
 
 ### Load Responses
 
-**Syntax:** obj << Load Responses
+**Syntax:** obj &lt;&lt; Load Responses
 
 **Beschreibung:** Lädt eine zuvor gespeicherte Datentabelle mit Zielgrößen.
 
@@ -921,7 +921,7 @@ DOE( Custom Design, Load Responses );
 
 ### Local Design
 
-**Syntax:** obj << Local Design( state=0|1 )
+**Syntax:** obj &lt;&lt; Local Design( state=0|1 )
 
 **Beschreibung:** Gibt an, ob ein lokales Design für den Priormittelwert erstellt werden soll.
 
@@ -945,7 +945,7 @@ DOE(
 
 ### Make Design
 
-**Syntax:** obj << Make Design
+**Syntax:** obj &lt;&lt; Make Design
 
 **Beschreibung:** Erstellt das von Ihnen im Skript angegebene Design.
 
@@ -960,7 +960,7 @@ d << Make Design;
 
 ### Make Model
 
-**Syntax:** obj << Make Model( Linear|Interactions|RSM )
+**Syntax:** obj &lt;&lt; Make Model( Linear|Interactions|RSM )
 
 **Beschreibung:** Fügt Terme zur Liste der Modellterme für das angegebene Modell hinzu.
 
@@ -986,7 +986,7 @@ d << Make Model( Interactions );
 
 ### Make Strip Plot Design
 
-**Syntax:** obj << Make Strip Plot Design
+**Syntax:** obj &lt;&lt; Make Strip Plot Design
 
 **Beschreibung:** Gibt ein Strip-Plot-Design an, wenn schwer änderbare Faktoren unabhängig von sehr schwer änderbaren Faktoren variieren.
 
@@ -1006,7 +1006,7 @@ d << Make Strip Plot Design;
 
 ### Make Table
 
-**Syntax:** obj << Make Table
+**Syntax:** obj &lt;&lt; Make Table
 
 **Beschreibung:** Erstellt eine Datentabelle aus dem aktuellen Design.
 
@@ -1021,7 +1021,7 @@ d << Make Table;
 
 ### Make Test Plan
 
-**Syntax:** obj << Make Test Plan
+**Syntax:** obj &lt;&lt; Make Test Plan
 
 **Beschreibung:** Erstellt den Testplan für einen Plan eines beschleunigten Lebensdauertests.
 
@@ -1046,7 +1046,7 @@ DOE(
 
 ### MaxPro Categorical Weight
 
-**Syntax:** obj << MaxPro Categorical Weight
+**Syntax:** obj &lt;&lt; MaxPro Categorical Weight
 
 **Beschreibung:** Gibt die MaxPro-Gewichtung an. Werte größer als 1 erhöhen die Trennung von Punkten mit der gleichen kategorialen Stufe.
 
@@ -1067,7 +1067,7 @@ DOE(
 
 ### Mixture Design Type
 
-**Syntax:** obj << Mixture Design Type( Simplex Centroid|Simplex Lattice|ABCD|Extreme Vertices|Space Filling )
+**Syntax:** obj &lt;&lt; Mixture Design Type( Simplex Centroid|Simplex Lattice|ABCD|Extreme Vertices|Space Filling )
 
 **Beschreibung:** Gibt den Typ des Mischungsdesigns an. Sofern Sie den Parameter nicht als zweites Argument angeben, werden die Standardparameter verwendet.
 
@@ -1124,7 +1124,7 @@ d << Mixture Design Type( Space Filling, 25 );
 
 ### Mixture Sum
 
-**Syntax:** obj << Mixture Sum
+**Syntax:** obj &lt;&lt; Mixture Sum
 
 **Beschreibung:** Verwenden Sie diese Option, wenn Sie für die Summe aller Bestandteile einen anderen Wert als 1 angeben möchten. Die Mischungssumme ist die Summe der Mengen aller Bestandteile.
 
@@ -1144,7 +1144,7 @@ DOE(
 
 ### Nesting Structure
 
-**Syntax:** obj << Nesting Structure
+**Syntax:** obj &lt;&lt; Nesting Structure
 
 **Beschreibung:** Gibt die Schachtelungsstruktur des Designs an. Verwenden Sie eine geklammerte Liste, um auf Schachtelung hinzuweisen (das erste Element ist der Schachtelungsfaktor, das zweite Element ist eine geklammerte Liste geschachtelter Faktoren oder Strukturen). Verwenden Sie horizontale Verkettung (‚||‘), um auf gekreuzte Faktoren oder Strukturen hinzuweisen.
 
@@ -1163,7 +1163,7 @@ DOE(
 
 ### Number of Column Starts
 
-**Syntax:** obj << Number of Column Starts
+**Syntax:** obj &lt;&lt; Number of Column Starts
 
 **Beschreibung:** Gibt die Anzahl der Optimierungen zufälliger Spalten für jeden Faktor eines Haupteffekte-Screening-Designs an.
 
@@ -1185,7 +1185,7 @@ DOE(
 
 ### Number of Extra Runs
 
-**Syntax:** obj << Number of Extra Runs
+**Syntax:** obj &lt;&lt; Number of Extra Runs
 
 **Beschreibung:** Gibt die Anzahl der zusätzlichen Einzelversuche für ein definitives Screening-Design an.
 
@@ -1208,7 +1208,7 @@ DOE(
 
 ### Number of Starts
 
-**Syntax:** obj << Number of Starts
+**Syntax:** obj &lt;&lt; Number of Starts
 
 **Beschreibung:** Gibt die Anzahl der Neugenerierungen des Designs zur Optimierung des Gesamtdesigns an.
 
@@ -1228,7 +1228,7 @@ DOE(
 
 ### Optimality Criterion
 
-**Syntax:** obj << Optimality Criterion( "Empfohlen"|"D-optimales Design erzeugen"|"I-optimales Design erzeugen"|"A-optimales Design erzeugen"|"Alias-optimales Design erzeugen" )
+**Syntax:** obj &lt;&lt; Optimality Criterion( "Empfohlen"|"D-optimales Design erzeugen"|"I-optimales Design erzeugen"|"A-optimales Design erzeugen"|"Alias-optimales Design erzeugen" )
 
 **Beschreibung:** Gibt das im Design verwendete Kriterium an. Empfohlen wird der Standardwert.
 
@@ -1266,7 +1266,7 @@ DOE(
 
 ### Order Column
 
-**Syntax:** obj << Order Column
+**Syntax:** obj &lt;&lt; Order Column
 
 **Beschreibung:** Erfordert eine Reihenfolgespalte, wenn die Datentabelle erstellt wird.
 
@@ -1284,7 +1284,7 @@ d << OrderColumn( 1 );
 
 ### Prior Parameter Variance
 
-**Syntax:** obj << Prior Parameter Variance
+**Syntax:** obj &lt;&lt; Prior Parameter Variance
 
 **Beschreibung:** Verwenden Sie diese Option, um die Gewichtung für die Terme „Wenn möglich“ in einem Modell zu steuern. Höhere Werte bedeuten mehr Priorinformation und kleinere Varianz. Die Varianzen sind die reziproken Werte der eingegebenen Werte.
 
@@ -1306,7 +1306,7 @@ DOE(
 
 ### Prior Specification Choice
 
-**Syntax:** obj << Prior Specification Choice
+**Syntax:** obj &lt;&lt; Prior Specification Choice
 
 **Beschreibung:** Legt die Option zum Angeben von Priorparametern fest, wobei 1 „Achsenabschnitt angeben“ anzeigt und 2 „Quantil angeben“ anzeigt.
 
@@ -1330,7 +1330,7 @@ DOE(
 
 ### Reference Design
 
-**Syntax:** obj << Reference Design
+**Syntax:** obj &lt;&lt; Reference Design
 
 **Beschreibung:** Geben Sie das Referenzdesign für den Designvergleich an.
 
@@ -1373,7 +1373,7 @@ DOE(
 
 ### Remove Alias Term
 
-**Syntax:** obj << Remove Alias Term
+**Syntax:** obj &lt;&lt; Remove Alias Term
 
 **Beschreibung:** Entfernt einen Term aus der Liste der Alias-Terme. Geben Sie die Faktorzahl und Power für jeden Effekt in einer Liste an. Erstellen Sie Wechselwirkungen, indem Sie die Effekte durch Komma trennen.
 
@@ -1388,7 +1388,7 @@ d << Remove Alias Term( {1, 1}, {3, 1} );
 
 ### Remove All Alias Terms
 
-**Syntax:** obj << Remove All Alias Terms
+**Syntax:** obj &lt;&lt; Remove All Alias Terms
 
 **Beschreibung:** Entfernt alle Aliasterme aus der Liste der Aliasterme
 
@@ -1407,7 +1407,7 @@ d << Remove All Alias Terms;
 
 ### Remove Term
 
-**Syntax:** obj << Remove Term
+**Syntax:** obj &lt;&lt; Remove Term
 
 **Beschreibung:** Entfernt einen Term aus der Liste der Modellterme. Geben Sie die Faktorzahl und Power für jeden Effekt in einer Liste an. Erstellen Sie Wechselwirkungen, indem Sie die Effekte durch Komma trennen.
 
@@ -1423,7 +1423,7 @@ d << Remove Term( {3, 2} );
 
 ### Replicates
 
-**Syntax:** obj << Replicates
+**Syntax:** obj &lt;&lt; Replicates
 
 **Beschreibung:** Gibt die Anzahl der Versuchswiederholungen an. Bei MSA-Designs gibt ein zweites Argument die Wiederholungsstruktur an: 0=Vollständig randomisiert, 1=Batch wiederholen, 2=Schnell wiederholen.
 
@@ -1463,7 +1463,7 @@ d = DOE(
 
 ### Report
 
-**Syntax:** obj << Report
+**Syntax:** obj &lt;&lt; Report
 
 **Beschreibung:** Gibt eine Referenz auf das Berichtsobjekt zurück.
 
@@ -1479,7 +1479,7 @@ Show( t );
 
 ### Save Constraints
 
-**Syntax:** obj << Save Constraints
+**Syntax:** obj &lt;&lt; Save Constraints
 
 **Beschreibung:** Speichert die Faktornebenbedingungen des aktuellen Versuchs in einer JMP-Tabelle für die Verwendung in einem anderen Versuch.
 
@@ -1501,7 +1501,7 @@ DOE(
 
 ### Save Factors
 
-**Syntax:** obj << Save Factors
+**Syntax:** obj &lt;&lt; Save Factors
 
 **Beschreibung:** Gerade erstellte Faktoren in einer JMP-Tabelle speichern, um die Faktoren für weitere Versuche nutzen zu können.
 
@@ -1521,7 +1521,7 @@ DOE(
 
 ### Save Responses
 
-**Syntax:** obj << Save Responses
+**Syntax:** obj &lt;&lt; Save Responses
 
 **Beschreibung:** Speichert die von Ihnen erstellten Zielgrößen als JMP-Datentabelle. Sie können diese Zielgrößen in andere Versuche laden.
 
@@ -1541,13 +1541,13 @@ DOE(
 
 ### Save Script to Data Table
 
-**Syntax:** obj << Save Script to Data Table
+**Syntax:** obj &lt;&lt; Save Script to Data Table
 
 **Beschreibung:** Skript erstellen, das dieses Design reproduziert.
 
 ### Save Script to Script Window
 
-**Syntax:** obj << Save Script to Script Window
+**Syntax:** obj &lt;&lt; Save Script to Script Window
 
 **Beschreibung:** Skript erstellen, das dieses Design reproduziert.
 
@@ -1566,7 +1566,7 @@ DOE(
 
 ### Save X Matrix
 
-**Syntax:** obj << Save X Matrix( state=0|1 )
+**Syntax:** obj &lt;&lt; Save X Matrix( state=0|1 )
 
 **Beschreibung:** Speichert die Designmatrix (auch X-Matrix genannt) als Tabelleneigenschaft in der JMP-Datentabelle, die das Design enthält.
 
@@ -1586,7 +1586,7 @@ DOE(
 
 ### Screening Type
 
-**Syntax:** obj << Screening Type
+**Syntax:** obj &lt;&lt; Screening Type
 
 **Beschreibung:** Gibt ein Haupteffekte-Screening-Design an, das orthogonal oder näherungsweise orthogonal ist.
 
@@ -1607,7 +1607,7 @@ d << Make Design;
 
 ### Select Covariate Rows
 
-**Syntax:** obj << Select Covariate Rows
+**Syntax:** obj &lt;&lt; Select Covariate Rows
 
 **Beschreibung:** Gibt die Zeilen aus der Kovariablentabelle an, die für DOE ausgewählt werden sollen.
 
@@ -1637,7 +1637,7 @@ DOE(
 
 ### Set ALT Probability of Interest
 
-**Syntax:** obj << Set ALT Probability of Interest
+**Syntax:** obj &lt;&lt; Set ALT Probability of Interest
 
 **Beschreibung:** Legt die interessierende Wahrscheinlichkeit für einen Plan eines beschleunigten Lebensdauertests fest.
 
@@ -1660,7 +1660,7 @@ DOE(
 
 ### Set ALT Time Range
 
-**Syntax:** obj << Set ALT Time Range
+**Syntax:** obj &lt;&lt; Set ALT Time Range
 
 **Beschreibung:** Legt den betrachteten Zeitbereich für einen Plan eines beschleunigten Lebensdauertests fest.
 
@@ -1683,7 +1683,7 @@ DOE(
 
 ### Set Average Cluster Size
 
-**Syntax:** obj << Set Average Cluster Size
+**Syntax:** obj &lt;&lt; Set Average Cluster Size
 
 **Beschreibung:** Steuert die Anzahl von zufälligen Punkten für das Clustern eines schnell flexibel raumfüllenden Designs.
 
@@ -1702,7 +1702,7 @@ DOE(
 
 ### Set Axial Choice
 
-**Syntax:** obj << Set Axial Choice( 1|2|3|4 )
+**Syntax:** obj &lt;&lt; Set Axial Choice( 1|2|3|4 )
 
 **Beschreibung:** Gibt die Axialwerteinstellungen an. Verwenden Sie 1 für Rotierbar, 2 für Orthogonal, 3 für Auf Fläche und 4 für Benutzerdefiniert.
 
@@ -1716,7 +1716,7 @@ d << Set Axial Choice( 2 );
 
 ### Set Axial Value
 
-**Syntax:** obj << Set Axial Value
+**Syntax:** obj &lt;&lt; Set Axial Value
 
 **Beschreibung:** Gibt den benutzerdefinierten Axialwert an.
 
@@ -1730,7 +1730,7 @@ d << Set Axial Value( 2 );
 
 ### Set Candidate Runs
 
-**Syntax:** obj << Set Candidate Runs
+**Syntax:** obj &lt;&lt; Set Candidate Runs
 
 **Beschreibung:** Legt die Kandidatenversuche für einen Plan eines beschleunigten Lebensdauertests fest.
 
@@ -1754,7 +1754,7 @@ DOE(
 
 ### Set Delta For Power
 
-**Syntax:** obj << Set Delta For Power
+**Syntax:** obj &lt;&lt; Set Delta For Power
 
 **Beschreibung:** Gibt die Werte der antizipierten Koeffizienten in der Power-Analyse an. Antizipierte Koeffizienten sind die Hälfte des angegebenen Werts.
 
@@ -1773,7 +1773,7 @@ DOE(
 
 ### Set Expected Number of Respondents
 
-**Syntax:** obj << Set Expected Number of Respondents
+**Syntax:** obj &lt;&lt; Set Expected Number of Respondents
 
 **Beschreibung:** Legt die erwartete Anzahl von befragten Personen pro Umfrage fest.
 
@@ -1794,7 +1794,7 @@ DOE(
 
 ### Set Generators
 
-**Syntax:** obj << Set Generators
+**Syntax:** obj &lt;&lt; Set Generators
 
 **Beschreibung:** Gibt die Generatoren für ein Screening-Design an.
 
@@ -1810,7 +1810,7 @@ DOE(
 
 ### Set Inspection Times
 
-**Syntax:** obj << Set Inspection Times
+**Syntax:** obj &lt;&lt; Set Inspection Times
 
 **Beschreibung:** Legt die Inspektionszeiten für einen Plan eines beschleunigten Lebensdauertests fest.
 
@@ -1834,7 +1834,7 @@ DOE(
 
 ### Set Length of Test
 
-**Syntax:** obj << Set Length of Test
+**Syntax:** obj &lt;&lt; Set Length of Test
 
 **Beschreibung:** Legt die Dauer des Tests für einen Plan eines beschleunigten Lebensdauertests fest.
 
@@ -1857,7 +1857,7 @@ DOE(
 
 ### Set Level Values
 
-**Syntax:** obj << Set Level Values
+**Syntax:** obj &lt;&lt; Set Level Values
 
 **Beschreibung:** Legt die Stufenwerte für den/die beschleunigenden Faktor(en) in einem Plan eines beschleunigten Lebensdauertests fest.
 
@@ -1881,7 +1881,7 @@ DOE(
 
 ### Set Monitoring Choice
 
-**Syntax:** obj << Set Monitoring Choice
+**Syntax:** obj &lt;&lt; Set Monitoring Choice
 
 **Beschreibung:** Gibt die Art der Überwachung für einen Plan eines beschleunigten Lebensdauertests an.
 
@@ -1904,7 +1904,7 @@ DOE(
 
 ### Set N Subplots
 
-**Syntax:** obj << Set N Subplots
+**Syntax:** obj &lt;&lt; Set N Subplots
 
 **Beschreibung:** Gibt die Anzahl der Kleinteilstücke an, wenn es sowohl schwer zu ändernde Faktoren als auch sehr schwer zu ändernde Faktoren gibt.
 
@@ -1924,7 +1924,7 @@ d << Set N Subplots( 8 );
 
 ### Set N Whole Plots
 
-**Syntax:** obj << Set N Whole Plots
+**Syntax:** obj &lt;&lt; Set N Whole Plots
 
 **Beschreibung:** Gibt die Anzahl der Großteilstücke an, wenn es schwer änderbare Faktoren oder sehr schwer änderbare Faktoren gibt.
 
@@ -1942,7 +1942,7 @@ d << Set N Whole Plots( 6 );
 
 ### Set Number of Attributes
 
-**Syntax:** obj << Set Number of Attributes
+**Syntax:** obj &lt;&lt; Set Number of Attributes
 
 **Beschreibung:** Legt die Anzahl der Attribute fest, die sich in einem Choice-Satz ändern können.
 
@@ -1963,7 +1963,7 @@ DOE(
 
 ### Set Number of Choice Sets
 
-**Syntax:** obj << Set Number of Choice Sets
+**Syntax:** obj &lt;&lt; Set Number of Choice Sets
 
 **Beschreibung:** Legt die Anzahl der Choice-Sätze pro Umfrage fest.
 
@@ -1984,7 +1984,7 @@ DOE(
 
 ### Set Number of FDS points
 
-**Syntax:** obj << Set Number of FDS points
+**Syntax:** obj &lt;&lt; Set Number of FDS points
 
 **Beschreibung:** Legt die Anzahl von Punkten für die Erzeugung des Diagramms „Vorhersagevarianz über Raumanteil“ fest.
 
@@ -2004,7 +2004,7 @@ DOE(
 
 ### Set Number of Profiles
 
-**Syntax:** obj << Set Number of Profiles
+**Syntax:** obj &lt;&lt; Set Number of Profiles
 
 **Beschreibung:** Legt die Anzahl der Profile pro Choice-Satz fest.
 
@@ -2025,7 +2025,7 @@ DOE(
 
 ### Set Number of Surveys
 
-**Syntax:** obj << Set Number of Surveys
+**Syntax:** obj &lt;&lt; Set Number of Surveys
 
 **Beschreibung:** Legt die Anzahl der Umfragen für ein Choice-Design fest.
 
@@ -2046,7 +2046,7 @@ DOE(
 
 ### Set Number of Units
 
-**Syntax:** obj << Set Number of Units
+**Syntax:** obj &lt;&lt; Set Number of Units
 
 **Beschreibung:** Legt die Anzahl der Einheiten im Test für einen Plan eines beschleunigten Lebensdauertests fest.
 
@@ -2069,7 +2069,7 @@ DOE(
 
 ### Set Prior Correlation ALT
 
-**Syntax:** obj << Set Prior Correlation ALT
+**Syntax:** obj &lt;&lt; Set Prior Correlation ALT
 
 **Beschreibung:** Legt die A-priori-Korrelationen für einen Plan eines beschleunigten Lebensdauertests fest.
 
@@ -2094,7 +2094,7 @@ DOE(
 
 ### Set Prior Mean ALT
 
-**Syntax:** obj << Set Prior Mean ALT
+**Syntax:** obj &lt;&lt; Set Prior Mean ALT
 
 **Beschreibung:** Legt den Priormittelwert für einen Plan eines beschleunigten Lebensdauertests fest.
 
@@ -2117,7 +2117,7 @@ DOE(
 
 ### Set Prior Mean Choice
 
-**Syntax:** obj << Set Prior Mean Choice
+**Syntax:** obj &lt;&lt; Set Prior Mean Choice
 
 **Beschreibung:** Legt den Priormittelwert für ein Choice-Design fest.
 
@@ -2138,7 +2138,7 @@ DOE(
 
 ### Set Prior Quantile ALT
 
-**Syntax:** obj << Set Prior Quantile ALT
+**Syntax:** obj &lt;&lt; Set Prior Quantile ALT
 
 **Beschreibung:** Legt die Informationen zum Angeben des Priorachsenabschnitts basierend auf einem Quantil fest.
 
@@ -2162,7 +2162,7 @@ DOE(
 
 ### Set Prior Std Error ALT
 
-**Syntax:** obj << Set Prior Std Error ALT
+**Syntax:** obj &lt;&lt; Set Prior Std Error ALT
 
 **Beschreibung:** Legt den Priorstandardfehler für einen Plan eines beschleunigten Lebensdauertests fest.
 
@@ -2187,7 +2187,7 @@ DOE(
 
 ### Set Prior Variance ALT
 
-**Syntax:** obj << Set Prior Variance ALT
+**Syntax:** obj &lt;&lt; Set Prior Variance ALT
 
 **Beschreibung:** Legt die Priorvarianz für einen Plan eines beschleunigten Lebensdauertests fest.
 
@@ -2210,7 +2210,7 @@ DOE(
 
 ### Set Prior Variance Matrix
 
-**Syntax:** obj << Set Prior Variance Matrix
+**Syntax:** obj &lt;&lt; Set Prior Variance Matrix
 
 **Beschreibung:** Legt die Priorvarianzmatrix für ein Choice-Design fest.
 
@@ -2231,7 +2231,7 @@ DOE(
 
 ### Set RMSE
 
-**Syntax:** obj << Set RMSE
+**Syntax:** obj &lt;&lt; Set RMSE
 
 **Beschreibung:** Gibt die antizipierte Wurzel der mittleren quadratischen Abweichung (RMSE) in der Power-Analyse an.
 
@@ -2246,7 +2246,7 @@ d << Set RMSE( 1.5 );
 
 ### Set Random Seed
 
-**Syntax:** obj << Set Random Seed
+**Syntax:** obj &lt;&lt; Set Random Seed
 
 **Beschreibung:** Nützlich zum Unterrichten. Durch Einstellen des zufälligen Startwerts auf einen spezifischen Wert wird sichergestellt, dass alle Unterrichtsteilnehmer das gleiche Design haben.
 
@@ -2265,7 +2265,7 @@ DOE(
 
 ### Set Run Order
 
-**Syntax:** obj << Set Run Order
+**Syntax:** obj &lt;&lt; Set Run Order
 
 **Beschreibung:** Gibt an, wie die Reihenfolge der Einzelversuche festgelegt werden soll, wenn eine Datentabelle aus einem Design erzeugt wird.
 
@@ -2281,7 +2281,7 @@ d << Make Table;
 
 ### Set Runs Per Random Block
 
-**Syntax:** obj << Set Runs Per Random Block
+**Syntax:** obj &lt;&lt; Set Runs Per Random Block
 
 **Beschreibung:** Gibt die Größe von zufälligen Blöcken im Design an.
 
@@ -2300,7 +2300,7 @@ d << Set Runs Per Random Block( 4 );
 
 ### Set Sample Size
 
-**Syntax:** obj << Set Sample Size
+**Syntax:** obj &lt;&lt; Set Sample Size
 
 **Beschreibung:** Gibt die Stichprobengröße vor Erstellung des Designs an. Wenn die angegebene Zahl kleiner als der im Designer angezeigte Minimalwert ist, wird die Stichprobengröße auf den Minimalwert gesetzt.
 
@@ -2315,7 +2315,7 @@ d << Set Sample Size( 12 );
 
 ### Set Significance Level
 
-**Syntax:** obj << Set Significance Level
+**Syntax:** obj &lt;&lt; Set Significance Level
 
 **Beschreibung:** Signifikanzniveau in Power-Analyse ändern.
 
@@ -2330,7 +2330,7 @@ d << Set Significance Level( 0.10 );
 
 ### Set Strength
 
-**Syntax:** obj << Set Strength
+**Syntax:** obj &lt;&lt; Set Strength
 
 **Beschreibung:** Legt die Stärke für überdeckende Arrays fest
 
@@ -2350,7 +2350,7 @@ d << Make Table;
 
 ### Show Blocking Options
 
-**Syntax:** obj << Show Blocking Options
+**Syntax:** obj &lt;&lt; Show Blocking Options
 
 **Beschreibung:** Gibt die Blockbildungsauswahl und die Anzahl von Blöcken für ein definitives Screening-Design an. Durch Angabe des Werts 0 geben Sie keine Blöcke an.
 
@@ -2394,7 +2394,7 @@ DOE(
 
 ### Simulate Responses
 
-**Syntax:** obj << Simulate Responses( state=0|1 )
+**Syntax:** obj &lt;&lt; Simulate Responses( state=0|1 )
 
 **Beschreibung:** Daten für die Zielgrößen in der JMP-Designtabelle hinzufügen. Nützlich zum Unterrichten von DOE.
 
@@ -2414,7 +2414,7 @@ DOE(
 
 ### Solve for Power
 
-**Syntax:** obj << Solve for Power
+**Syntax:** obj &lt;&lt; Solve for Power
 
 **Beschreibung:** Legt die antizipierten Koeffizienten in der Power-Analyse fest, damit die Power nahe dem angegebenen Wert ist.
 
@@ -2435,7 +2435,7 @@ DOE(
 
 ### Space Filling Design Type
 
-**Syntax:** obj << Space Filling Design Type( Sphere Packing|Latin Hypercube|Uniform|Minimum Potential|Maximum Entropy|IMSE Optimal|Fast Flexible Filling )
+**Syntax:** obj &lt;&lt; Space Filling Design Type( Sphere Packing|Latin Hypercube|Uniform|Minimum Potential|Maximum Entropy|IMSE Optimal|Fast Flexible Filling )
 
 **Beschreibung:** Gibt den Typ des raumfüllenden Designs und die Anzahl der Einzelversuche an.
 
@@ -2492,7 +2492,7 @@ d << Make Design;
 
 ### Sphere Radius
 
-**Syntax:** obj << Sphere Radius
+**Syntax:** obj &lt;&lt; Sphere Radius
 
 **Beschreibung:** Sphärischen Designbereich angeben und dabei den Radius des Bereichs festlegen.
 
@@ -2511,7 +2511,7 @@ DOE(
 
 ### Split Plot Variance Ratio
 
-**Syntax:** obj << Split Plot Variance Ratio( Whole Plot Ratio | [Whole Plot Ratio, Subplot Ratio] )
+**Syntax:** obj &lt;&lt; Split Plot Variance Ratio( Whole Plot Ratio | [Whole Plot Ratio, Subplot Ratio] )
 
 **Beschreibung:** Geben Sie bei schwer änderbaren Faktoren das Verhältnis der Großteilstückfehlervarianz zum Fehler zwischen den einzelnen Ausführungen an. Geben Sie bei schwer und sehr schwer zu ändernden Faktoren das Verhältnis des Großteilstück- und Kleinteilstückfehlers zum Fehler zwischen den einzelnen Ausführungen an.
 
@@ -2550,7 +2550,7 @@ d << Make Design;
 
 ### Suppress Cotter Designs
 
-**Syntax:** obj << Suppress Cotter Designs( state=0|1 )
+**Syntax:** obj &lt;&lt; Suppress Cotter Designs( state=0|1 )
 
 **Beschreibung:** Zeigt Cotter-Designs in der Liste der Screening-Designs an oder blendet sie aus. Diese Option ist standardmäßig ausgewählt, weshalb Cotter-Designs zunächst nicht in der Liste der  Screening-Designs angezeigt werden. Standardmäßig ein.
 
@@ -2570,7 +2570,7 @@ DOE(
 
 ### Table of Correlations
 
-**Syntax:** obj << Table of Correlations
+**Syntax:** obj &lt;&lt; Table of Correlations
 
 **Beschreibung:** Eine Datentabelle mit der Tabelle der Korrelationen aus der Design-Diagnose erstellen.
 
@@ -2591,7 +2591,7 @@ DOE(
 
 ### Theta
 
-**Syntax:** obj << Theta
+**Syntax:** obj &lt;&lt; Theta
 
 **Beschreibung:** Gibt den Kovarianzparametervektor für raumfüllende Designs an.
 
@@ -2605,7 +2605,7 @@ d << Theta( [2, 3] );
 
 ### Treatments
 
-**Syntax:** obj << Treatments
+**Syntax:** obj &lt;&lt; Treatments
 
 **Beschreibung:** Gibt die Anzahl von Behandlungen für ein balanciertes unvollständiges Blockdesign (BIBD) an.
 
@@ -2622,7 +2622,7 @@ d << Make Design;
 
 ### Use Bayesian information
 
-**Syntax:** obj << Use Bayesian information( state=0|1 )
+**Syntax:** obj &lt;&lt; Use Bayesian information( state=0|1 )
 
 **Beschreibung:** Verwendet Priorinformation in der Bayesschen Einstellung für die Design-Diagnose.
 
@@ -2647,7 +2647,7 @@ DOE(
 
 ### Use Blue to Red color theme for color map
 
-**Syntax:** obj << Use Blue to Red color theme for color map( state=0|1 )
+**Syntax:** obj &lt;&lt; Use Blue to Red color theme for color map( state=0|1 )
 
 **Beschreibung:** Verwendet das Farbschema Blau nach Rot für die Farbmatrix bei Korrelationen.
 
@@ -2655,7 +2655,7 @@ DOE(
 
 ### Use Prior Uncertainty
 
-**Syntax:** obj << Use Prior Uncertainty( state=0|1 )
+**Syntax:** obj &lt;&lt; Use Prior Uncertainty( state=0|1 )
 
 **Beschreibung:** Gibt an, ob die A-priori-Unsicherheit zum Erzeugen des optimalen Designs verwendet werden soll.
 
@@ -2681,7 +2681,7 @@ DOE(
 
 ### Utility Neutral Design
 
-**Syntax:** obj << Utility Neutral Design( state=0|1 )
+**Syntax:** obj &lt;&lt; Utility Neutral Design( state=0|1 )
 
 **Beschreibung:** Gibt an, ob ein nutzenneutrales Choice-Design erstellt werden soll.
 
@@ -2704,19 +2704,19 @@ DOE(
 
 ### Factor
 
-**Syntax:** obj << Factor( column(s) )
+**Syntax:** obj &lt;&lt; Factor( column(s) )
 
 ### Response
 
-**Syntax:** obj << Response( column(s) )
+**Syntax:** obj &lt;&lt; Response( column(s) )
 
 ### X
 
-**Syntax:** obj << X( column(s) )
+**Syntax:** obj &lt;&lt; X( column(s) )
 
 ### Y
 
-**Syntax:** obj << Y( column(s) )
+**Syntax:** obj &lt;&lt; Y( column(s) )
 
 ## Zugehörige Konstruktoren
 

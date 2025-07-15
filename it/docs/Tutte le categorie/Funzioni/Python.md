@@ -2,8 +2,6 @@
 
 
 
-## Funzioni
-
 ### Python Connect
 
 **Sintassi:** PythonConnection = Python Connect ()
@@ -51,7 +49,7 @@ conn << Create JPIP CMD();
 
 ### Python Execute
 
-**Sintassi:** Python Execute( { list of Inputs }, { list of Outputs }, statements < , echo( 1 | 0 ) > )
+**Sintassi:** Python Execute( { list of Inputs }, { list of Outputs }, statements &lt; , echo( 1 | 0 ) &gt; )
 
 **Descrizione:** Invia un elenco di input, esegue le istruzioni e restituisce un elenco di output. Il parametro opzionale echo() è di default Vero. Il parametro echo controlla l&apos;eco del sorgente Python nel log. Il valore Vero logico (1) abilita l&apos;eco del sorgente, mentre 0 sopprime l&apos;eco nel log.
 
@@ -322,7 +320,7 @@ Python Submit( "print(pi)" );
 
 ### Python Send
 
-**Sintassi:** Python Send( name, <Python Name( name ) | "as_name" > )
+**Sintassi:** Python Send( name, &lt;Python Name( name ) | "as_name" &gt; )
 
 **Descrizione:** Sends data to Python, where the name argument can represent any of the following JMP data types ( numeric | string | matrix | list | data table | data table column | date ).
 
@@ -369,7 +367,7 @@ Python Submit( "print(dt)" );
 
 ### Python Send File
 
-**Sintassi:** Python Send File( filename, <Python Name( name )> )
+**Sintassi:** Python Send File( filename, &lt;Python Name( name )&gt; )
 
 **Descrizione:** Invia a Python un file di dati, in cui l&apos;argomento filename è una stringa che specifica il percorso del file da inviare a Python.
 
@@ -388,7 +386,7 @@ Python Submit( "print(Baseball)" );
 
 ### Python Submit
 
-**Sintassi:** Python Submit( statements < , echo( 1 | 0 ) > )
+**Sintassi:** Python Submit( statements &lt; , echo( 1 | 0 ) &gt; )
 
 **Descrizione:** Invia istruzioni a Python. Le istruzioni possono essere sotto forma di valore stringa o elenco di valori stringa. Il parametro opzionale echo() è pari a 1 di default. Il parametro echo controlla l&apos;eco del sorgente Python nel log. Il valore Vero logico (1) abilita l&apos;eco del sorgente, mentre 0 sopprime l&apos;eco nel log.
 

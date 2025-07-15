@@ -157,7 +157,7 @@ obj = dt << Reliability Forecast(
 
 ### Contract
 
-**Sintaxis:** obj << Forecast( Contract( length, unit ) )
+**Sintaxis:** obj &lt;&lt; Forecast( Contract( length, unit ) )
 
 **Descripción:** Especifica la longitud y la unidad de tiempo del contrato que se utiliza para pronosticar el riesgo futuro.
 
@@ -225,7 +225,7 @@ obj << Forecast(
 
 ### Distribution
 
-**Sintaxis:** obj << Forecast( Distribution( name ) )
+**Sintaxis:** obj &lt;&lt; Forecast( Distribution( name ) )
 
 **Descripción:** Especifica la distribución que se utiliza para pronosticar el riesgo futuro.
 
@@ -293,9 +293,7 @@ obj << Forecast(
 
 ### Forecast Options
 
-**Sintaxis:** obj << Forecast Options( forecast message(), ... );
-
-(obj << Forecast Options) << forecast message()
+**Sintaxis:** obj &lt;&lt; Forecast Options( forecast message(), ... );(obj &lt;&lt; Forecast Options) &lt;&lt; forecast message()
 
 **Descripción:** Envía mensajes al objeto que admite scripts del informe Pronóstico. Puede especificar una o más opciones en el menú con triángulo rojo del informe Pronóstico. Si no hay argumentos, esta opción devuelve una referencia JSL al objeto que admite scripts del informe Pronóstico. Si hay argumentos, esta opción devuelve una referencia JSL al objeto de plataforma. Consulte las entradas de las opciones de Pronóstico para obtener más información.
 
@@ -323,7 +321,7 @@ obj = dt << Run Script( "Reliability Forecast" );
 
 ### Forecast To
 
-**Sintaxis:** obj << Forecast( Forecast To( time ) )
+**Sintaxis:** obj &lt;&lt; Forecast( Forecast To( time ) )
 
 **Descripción:** Especifica el momento final en el que se pronostica el riesgo futuro.
 
@@ -391,7 +389,7 @@ obj << Forecast(
 
 ### Forecast Type
 
-**Sintaxis:** obj << Forecast( Forecast Type( type ) )
+**Sintaxis:** obj &lt;&lt; Forecast( Forecast Type( type ) )
 
 **Descripción:** Especifica el tipo de cantidad que se utiliza para pronosticar el riesgo futuro. El argumento type puede ser incremental o acumulativo.
 
@@ -459,7 +457,7 @@ obj << Forecast(
 
 ### Future Risk Set
 
-**Sintaxis:** obj << Forecast( Future Risk Set( count vector, time vector ) )
+**Sintaxis:** obj &lt;&lt; Forecast( Future Risk Set( count vector, time vector ) )
 
 **Descripción:** Especifica el conjunto de riesgos futuros que se utiliza para pronosticar el riesgo futuro. Los argumentos son un vector de conteos de producción y un vector de tiempos futuros.
 
@@ -527,7 +525,7 @@ obj << Forecast(
 
 ### Get Results
 
-**Sintaxis:** obj << Get Results
+**Sintaxis:** obj &lt;&lt; Get Results
 
 **Descripción:** Devuelve una lista con nombre que contiene los resultados del pronóstico.
 
@@ -542,7 +540,7 @@ result = obj << Get Results;
 
 ### Group
 
-**Sintaxis:** obj << Forecast( Group( group ), ... )
+**Sintaxis:** obj &lt;&lt; Forecast( Group( group ), ... )
 
 **Descripción:** Identifica el grupo al que deben enviarse todos los mensajes de la misma cláusula de pronóstico.
 
@@ -748,7 +746,7 @@ dt << Reliability Forecast(
 
 ### Interval Type
 
-**Sintaxis:** obj << Forecast( Interval Type( type ) )
+**Sintaxis:** obj &lt;&lt; Forecast( Interval Type( type ) )
 
 **Descripción:** Especifica el tipo de intervalo que se utiliza para pronosticar el error en torno al riesgo futuro. El intervalo type puede ser No hay ningún intervalo, Intervalo de plugin o Intervalo de predicción.
 
@@ -816,7 +814,7 @@ obj << Forecast(
 
 ### Risk Set
 
-**Sintaxis:** obj << Forecast( Risk Set( count vector ) )
+**Sintaxis:** obj &lt;&lt; Forecast( Risk Set( count vector ) )
 
 **Descripción:** Especifica el conjunto de riesgos existentes que se utiliza para pronosticar el riesgo futuro.
 
@@ -884,7 +882,7 @@ obj << Forecast(
 
 ### Save Data in Time to Event Format
 
-**Sintaxis:** obj << Save Data in Time to Event Format
+**Sintaxis:** obj &lt;&lt; Save Data in Time to Event Format
 
 **Descripción:** Guarda los datos con formato Nevada o Fechas en una tabla de datos nueva con formato Tiempo hasta suceso.
 
@@ -899,7 +897,7 @@ obj << Save Data in Time to Event Format;
 
 ### Save Forecast Data Table
 
-**Sintaxis:** obj << Save Forecast Data Table
+**Sintaxis:** obj &lt;&lt; Save Forecast Data Table
 
 **Descripción:** Guarda el número de devoluciones acumulativo e incremental en una tabla de datos nueva, junto con las variables que haya seleccionado en la ventana de inicio. Para los análisis agrupados, los nombres de tabla incluyen el ID de grupo y la palabra "Agregada". Las devoluciones existentes también se incluyen en las tablas de datos agregados.
 
@@ -914,7 +912,7 @@ dt results = obj << Save Forecast Data Table;
 
 ### Set Interval Level
 
-**Sintaxis:** obj << Forecast( Set Interval Level( value ) )
+**Sintaxis:** obj &lt;&lt; Forecast( Set Interval Level( value ) )
 
 **Descripción:** Especifica el nivel de confianza para el intervalo que se utiliza para pronosticar el error en torno al riesgo futuro.
 
@@ -982,7 +980,7 @@ obj << Forecast(
 
 ### Show Graph Filter
 
-**Sintaxis:** obj << Show Graph Filter( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Show Graph Filter( state=0|1 )
 
 **Descripción:** Muestra u oculta el filtro de gráficos para que pueda seleccionar qué periodos de producción se mostrarán en los gráficos de datos observados. Las barras se desvanecen para los periodos deseleccionados. Deseleccione los periodos para mostrar el gráfico en su estado original. Esta opción no está disponible para los datos de Tiempo hasta suceso.
 
@@ -997,7 +995,7 @@ obj << Show Graph Filter( 1 );
 
 ### Show Legend
 
-**Sintaxis:** obj << Show Legend( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Show Legend( state=0|1 )
 
 **Descripción:** Muestra u oculta una leyenda para el informe Datos observados. Esta opción no está disponible para los datos de Tiempo hasta suceso.
 
@@ -1014,7 +1012,7 @@ obj << Show Legend( 1 );
 
 ### Action
 
-**Sintaxis:** obj << Action
+**Sintaxis:** obj &lt;&lt; Action
 
 **Descripción:** Trampa multiuso dentro de una plataforma para insertar expresiones que se desean evaluar. Temporalmente establece los contextos de cuadros de visualización y tablas de datos en la plataforma.
 
@@ -1032,7 +1030,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descripción:** Aplica al objeto un preajuste creado previamente, actualizando las opciones y personalizaciones para que coincidan con la configuración guardada.
 
@@ -1079,7 +1077,7 @@ obj2 << Apply Preset( preset );
 
 ### Automatic Recalc
 
-**Sintaxis:** obj << Automatic Recalc( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Descripción:** Rehace automáticamente el análisis para modificaciones de datos y de exclusión. Si está activada la opción Recálculo automático, le recomendamos que utilice los comandos Wait(0) para asegurarse de que las modificaciones de datos y de exclusión surtan efecto antes del recálculo.
 
@@ -1132,7 +1130,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Column Switcher
 
-**Sintaxis:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Sintaxis:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Descripción:** Añade un panel de control para cambiar las variables de la plataforma
 
@@ -1150,7 +1148,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy Script
 
-**Sintaxis:** obj << Copy Script
+**Sintaxis:** obj &lt;&lt; Copy Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -1202,7 +1200,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Sintaxis:** obj << Data Table Window
+**Sintaxis:** obj &lt;&lt; Data Table Window
 
 **Descripción:** Mueve al frente la ventana de la tabla de datos que se utiliza en este análisis.
 
@@ -1254,7 +1252,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Sintaxis:** obj << Get By Levels
+**Sintaxis:** obj &lt;&lt; Get By Levels
 
 **Descripción:** Devuelve un arreglo asociativo que asigna las columnas Por grupo a sus valores.
 
@@ -1271,7 +1269,7 @@ biv << Get By Levels;
 
 ### Get Container
 
-**Sintaxis:** obj << Get Container
+**Sintaxis:** obj &lt;&lt; Get Container
 
 **Descripción:** Devuelve una referencia al cuadro contenedor que incluye el contenido del objeto.
 
@@ -1355,7 +1353,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Sintaxis:** obj << Get Data Table
+**Sintaxis:** obj &lt;&lt; Get Data Table
 
 **Descripción:** Devuelve una referencia a la tabla de datos.
 
@@ -1408,7 +1406,7 @@ Show( N Rows( t ) );
 
 ### Get Script
 
-**Sintaxis:** obj << Get Script
+**Sintaxis:** obj &lt;&lt; Get Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -1461,7 +1459,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Sintaxis:** obj << Get Script With Data Table
+**Sintaxis:** obj &lt;&lt; Get Script With Data Table
 
 **Descripción:** Crea un script (JSL) para generar este análisis haciendo referencia específica a esta tabla de datos y lo devuelve en forma de expresión.
 
@@ -1514,7 +1512,7 @@ Show( t );
 
 ### Get Timing
 
-**Sintaxis:** obj << Get Timing
+**Sintaxis:** obj &lt;&lt; Get Timing
 
 **Descripción:** Determina el tiempo de inicio de una plataforma.
 
@@ -1567,7 +1565,7 @@ Show( t );
 
 ### Get Web Support
 
-**Sintaxis:** obj << Get Web Support
+**Sintaxis:** obj &lt;&lt; Get Web Support
 
 **Descripción:** Devuelve un número que indica el nivel de compatibilidad del HTML interactivo para el objeto de visualización. 1 significa que algunos o todos los elementos son compatibles. 0 significa que no existe compatibilidad.
 
@@ -1583,7 +1581,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Sintaxis:** obj << Get Where Expr
+**Sintaxis:** obj &lt;&lt; Get Where Expr
 
 **Descripción:** Devuelve la expresión Where para el subconjunto de datos, si la plataforma se inició con By() o Where(). De lo contrario, devuelve Empty().
 
@@ -1620,7 +1618,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Sintaxis:** obj << Local Data Filter
+**Sintaxis:** obj &lt;&lt; Local Data Filter
 
 **Descripción:** Para filtrar los datos según grupos o rangos determinados, pero locales para esta plataforma.
 
@@ -1676,7 +1674,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Sintaxis:** obj << Paste Local Data Filter
+**Sintaxis:** obj &lt;&lt; Paste Local Data Filter
 
 **Descripción:** Se aplica el filtro de datos locales del portapapeles al informe actual.
 
@@ -1697,7 +1695,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**Sintaxis:** obj << Redo Analysis
+**Sintaxis:** obj &lt;&lt; Redo Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -1749,7 +1747,7 @@ obj << Redo Analysis;
 
 ### Relaunch Analysis
 
-**Sintaxis:** obj << Relaunch Analysis
+**Sintaxis:** obj &lt;&lt; Relaunch Analysis
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -1801,7 +1799,7 @@ obj << Relaunch Analysis;
 
 ### Remove Column Switcher
 
-**Sintaxis:** obj << Remove Column Switcher
+**Sintaxis:** obj &lt;&lt; Remove Column Switcher
 
 **Descripción:** Quita el Cambiador de columnas más reciente que se haya agregado a la plataforma.
 
@@ -1821,7 +1819,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Sintaxis:** obj << Remove Local Data Filter
+**Sintaxis:** obj &lt;&lt; Remove Local Data Filter
 
 **Descripción:** Si se ha creado un filtro de datos local, esto lo eliminará y restaurará la plataforma para usar todos los datos de la tabla de datos directamente.
 
@@ -1860,9 +1858,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Sintaxis:** obj << Report;
-
-Report( obj )
+**Sintaxis:** obj &lt;&lt; Report;Report( obj )
 
 **Descripción:** Devuelve una referencia al objeto informe.
 
@@ -1916,7 +1912,7 @@ Show( t );
 
 ### Report View
 
-**Sintaxis:** obj << Report View( "Completa"|"Resumen" )
+**Sintaxis:** obj &lt;&lt; Report View( "Completa"|"Resumen" )
 
 **Descripción:** La vista del informe determina el nivel de detalle visible en el informe de una plataforma. Full muestra todos los detalles, mientras que Summary solo muestra el contenido seleccionado, con independencia de la plataforma. Para el comportamiento personalizado, los cuadros de visualización admiten un mensaje <<Set Summary Behavior.
 
@@ -1968,7 +1964,7 @@ obj << Report View( "Summary" );
 
 ### Save Script for All Objects
 
-**Sintaxis:** obj << Save Script for All Objects
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects
 
 **Descripción:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -2020,7 +2016,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Sintaxis:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descripción:** Guarda un script para todos los objetos de informe en la tabla de datos actual. Esta opción es útil cuando tiene varios informes en la ventana. El script recibe el nombre de la primera plataforma a menos que especifique el nombre del script entre comillas.
 
@@ -2132,7 +2128,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Sintaxis:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis y lo guarda en forma de propiedad de tabla en la tabla de datos.
 
@@ -2184,7 +2180,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Sintaxis:** obj << Save Script to Journal
+**Sintaxis:** obj &lt;&lt; Save Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -2236,7 +2232,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Sintaxis:** obj << Save Script to Report
+**Sintaxis:** obj &lt;&lt; Save Script to Report
 
 **Descripción:** Crea un script JSL para generar este análisis y lo muestra en el propio informe. Resulta útil para conservar un registro impreso de lo que se ha hecho.
 
@@ -2288,7 +2284,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Sintaxis:** obj << Save Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -2405,7 +2401,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Sintaxis:** obj << Sync to Data Table Changes
+**Sintaxis:** obj &lt;&lt; Sync to Data Table Changes
 
 **Descripción:** Realiza una sincronización con las modificaciones de datos y de exclusión que se hayan realizado.
 
@@ -2422,7 +2418,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Sintaxis:** obj << Title( "new title" )
+**Sintaxis:** obj &lt;&lt; Title( "new title" )
 
 **Descripción:** Establece el título de la plataforma.
 
@@ -2474,7 +2470,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Sintaxis:** obj << Top Report
+**Sintaxis:** obj &lt;&lt; Top Report
 
 **Descripción:** Devuelve una referencia al nodo raíz del informe.
 
@@ -2528,7 +2524,7 @@ Show( t );
 
 ### View Web XML
 
-**Sintaxis:** obj << View Web XML
+**Sintaxis:** obj &lt;&lt; View Web XML
 
 **Descripción:** Devuelve el código XML que se utiliza para crear el informe HTML interactivo.
 
@@ -2547,7 +2543,7 @@ xml = obj << View Web XML;
 
 #### Animation
 
-**Sintaxis:** obj << Animation( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Animation( state=0|1 )
 
 **Descripción:** Controla el parpadeo de las zonas activas en los gráficos de pronóstico. Opción activada de forma predeterminada.
 
@@ -2573,7 +2569,7 @@ option << Use Approximate Distribution( 1 );
 
 #### Forecasting Interval Type
 
-**Sintaxis:** obj << Forecasting Interval Type( type )
+**Sintaxis:** obj &lt;&lt; Forecasting Interval Type( type )
 
 **Descripción:** Especifica el tipo de intervalo que se utiliza para pronosticar el error en torno al riesgo futuro. El intervalo type puede ser un intervalo de plugin o un intervalo de predicción.
 
@@ -2599,7 +2595,7 @@ option << Use Approximate Distribution( 1 );
 
 #### Import Future Risk Set
 
-**Sintaxis:** obj << Import Future Risk Set
+**Sintaxis:** obj &lt;&lt; Import Future Risk Set
 
 **Descripción:** Le permite importar datos de producción futuros desde otra tabla de datos abierta. A continuación, las predicciones nuevas aparecen en el gráfico de riesgo futuro. La tabla de datos importada debe tener una columna para las marcas de tiempo y para los conteos de producción.
 
@@ -2618,7 +2614,7 @@ option << Import Future Risk Set;
 
 #### Interactive Configuration of Risk Sets
 
-**Sintaxis:** obj << Interactive Configuration of Risk Sets( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Interactive Configuration of Risk Sets( state=0|1 )
 
 **Descripción:** Determina si se pueden arrastrar las zonas activas en los gráficos.
 
@@ -2644,7 +2640,7 @@ option << Use Approximate Distribution( 1 );
 
 #### Monte Carlo Sample Size
 
-**Sintaxis:** obj << Monte Carlo Sample Size( number )
+**Sintaxis:** obj &lt;&lt; Monte Carlo Sample Size( number )
 
 **Descripción:** Especifica el tamaño muestral de la simulación que se utiliza para generar los intervalos de predicción.
 
@@ -2670,7 +2666,7 @@ option << Use Approximate Distribution( 1 );
 
 #### Random Seed
 
-**Sintaxis:** obj << Random Seed( number )
+**Sintaxis:** obj &lt;&lt; Random Seed( number )
 
 **Descripción:** Especifica una semilla aleatoria que se puede utilizar para reproducir los intervalos de predicción simulados.
 
@@ -2696,7 +2692,7 @@ option << Use Approximate Distribution( 1 );
 
 #### Save Forecast Data Table
 
-**Sintaxis:** obj << Save Forecast Data Table
+**Sintaxis:** obj &lt;&lt; Save Forecast Data Table
 
 **Descripción:** Guarda el número de devoluciones acumulativo e incremental en una tabla de datos nueva, junto con las variables que haya seleccionado en la ventana de inicio. Para los análisis agrupados, los nombres de tabla incluyen el ID de grupo y la palabra "Agregada". Las devoluciones existentes también se incluyen en las tablas de datos agregados.
 
@@ -2712,7 +2708,7 @@ option << Save Forecast Data Table;
 
 #### Set Failure Cost
 
-**Sintaxis:** obj << Set Failure Cost( number )
+**Sintaxis:** obj &lt;&lt; Set Failure Cost( number )
 
 **Descripción:** Especifica el coste de cada error.
 
@@ -2738,7 +2734,7 @@ option << Use Approximate Distribution( 1 );
 
 #### Show Interval
 
-**Sintaxis:** obj << Show Interval( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Show Interval( state=0|1 )
 
 **Descripción:** Muestra u oculta los límites de confianza al 95 % en el gráfico.
 
@@ -2764,7 +2760,7 @@ option << Use Approximate Distribution( 1 );
 
 #### Spreadsheet Configuration of Risk Sets
 
-**Sintaxis:** obj << Spreadsheet Configuration of Risk Sets( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Spreadsheet Configuration of Risk Sets( state=0|1 )
 
 **Descripción:** Muestra u oculta un informe que le permite introducir conteos de producción específicos y marcas de tiempo en lugar de agregarlos a los gráficos interactivos.
 
@@ -2790,7 +2786,7 @@ option << Use Approximate Distribution( 1 );
 
 #### Use Approximate Distribution
 
-**Sintaxis:** obj << Use Approximate Distribution( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Use Approximate Distribution( state=0|1 )
 
 **Descripción:** Especifica que los intervalos de predicción se generan mediante una distribución de Poisson para aproximar el número de fallas en cada intervalo. Si no se selecciona esta opción, los intervalos de predicción utilizan una distribución multinomial para simular el número de fallas en cada intervalo.
 
@@ -2816,7 +2812,7 @@ option << Use Approximate Distribution( 1 );
 
 #### Use Contract Length
 
-**Sintaxis:** obj << Use Contract Length( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Use Contract Length( state=0|1 )
 
 **Descripción:** Determina si la longitud de contrato especificada se tiene en cuenta en el pronóstico.
 
@@ -2842,7 +2838,7 @@ option << Use Approximate Distribution( 1 );
 
 #### Use Failure Cost
 
-**Sintaxis:** obj << Use Failure Cost( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Use Failure Cost( state=0|1 )
 
 **Descripción:** Muestra el coste de fallas en lugar del conteo de fallas en el gráfico de riesgo futuro.
 
@@ -2872,27 +2868,27 @@ option << Use Approximate Distribution( 1 );
 
 #### Failure Count
 
-**Sintaxis:** obj << Failure Count( column )
+**Sintaxis:** obj &lt;&lt; Failure Count( column )
 
 #### Failure Time
 
-**Sintaxis:** obj << Failure Time( column(s) )
+**Sintaxis:** obj &lt;&lt; Failure Time( column(s) )
 
 #### Group ID
 
-**Sintaxis:** obj << Group ID( column )
+**Sintaxis:** obj &lt;&lt; Group ID( column )
 
 #### Left Censor
 
-**Sintaxis:** obj << Left Censor( column )
+**Sintaxis:** obj &lt;&lt; Left Censor( column )
 
 #### Production Count
 
-**Sintaxis:** obj << Production Count( column )
+**Sintaxis:** obj &lt;&lt; Production Count( column )
 
 #### Timestamp
 
-**Sintaxis:** obj << Timestamp( column )
+**Sintaxis:** obj &lt;&lt; Timestamp( column )
 
 ### Mensajes del elemento
 
@@ -2968,27 +2964,25 @@ obj = dt1 << Reliability Forecast(
 
 #### Failure Count
 
-**Sintaxis:** obj << Failure Count( column(s) )
+**Sintaxis:** obj &lt;&lt; Failure Count( column(s) )
 
 #### Group ID
 
-**Sintaxis:** obj << Group ID( column )
+**Sintaxis:** obj &lt;&lt; Group ID( column )
 
 #### Production Count
 
-**Sintaxis:** obj << Production Count( column )
+**Sintaxis:** obj &lt;&lt; Production Count( column )
 
 #### Timestamp
 
-**Sintaxis:** obj << Timestamp( column )
+**Sintaxis:** obj &lt;&lt; Timestamp( column )
 
 ### Mensajes del elemento
 
 #### Interval Censored Failure
 
-**Sintaxis:** obj = Reliability Forecast(...Input Format( Nevada ), Interval Censored Failure( state=0|1 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Reliability Forecast(...Input Format( Nevada ), Interval Censored Failure( state=0|1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica que las cantidades devueltas se tratarán como observaciones censuradas por intervalo. El intervalo se encuentra entre la última hora registrada y la hora en que se observó la falla. Opción activada de forma predeterminada.
 
@@ -3094,19 +3088,19 @@ obj = dt << Reliability Forecast(
 
 #### Censor
 
-**Sintaxis:** obj << Censor( column )
+**Sintaxis:** obj &lt;&lt; Censor( column )
 
 #### Freq
 
-**Sintaxis:** obj << Freq( column )
+**Sintaxis:** obj &lt;&lt; Freq( column )
 
 #### Group ID
 
-**Sintaxis:** obj << Group ID( column )
+**Sintaxis:** obj &lt;&lt; Group ID( column )
 
 #### Time to Event
 
-**Sintaxis:** obj << Time to Event( column(s) )
+**Sintaxis:** obj &lt;&lt; Time to Event( column(s) )
 
 ### Mensajes del elemento
 

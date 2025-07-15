@@ -6,7 +6,7 @@
 
 ### Create JPIP CMD
 
-**Syntax:** obj << Create JPIP CMD()
+**Syntax:** obj &lt;&lt; Create JPIP CMD()
 
 **Description:** Triggers the creation of a jpip command line wrapper script for Python&apos;s pip command. A directory picker dialog will ask where to save the generated script. This script then provides the full capabilities of pip, while correctly establishing the necessary environment variables for JMP&apos;s isolated Python environment.
 
@@ -32,13 +32,13 @@ Python Create JPIP CMD();
 
 ### Disconnect
 
-**Syntax:** obj << Disconnect
+**Syntax:** obj &lt;&lt; Disconnect
 
 **Description:** Note: This function is deprecated as of JMP 18 and has no effect.
 
 ### Execute
 
-**Syntax:** list = obj << Execute( { list of Inputs }, { list of Outputs }, statements < , echo( 1 | 0 ) > )
+**Syntax:** list = obj &lt;&lt; Execute( { list of Inputs }, { list of Outputs }, statements &lt; , echo( 1 | 0 ) &gt; )
 
 **Description:** Sends a list of inputs, executes statements and returns a list of outputs. Optional echo() parameter defaults to True. The echo parameter controls echoing the Python source to the log. Logical True (1) enables echo of source while 0 suppresses the echo to the log.
 
@@ -116,7 +116,7 @@ Show( v, m, ml, x1, x2, y1, y2, z1, z2 );
 
 ### Get
 
-**Syntax:** y = obj << Get( name )
+**Syntax:** y = obj &lt;&lt; Get( name )
 
 **Description:** Returns data from Python, where the name argument can represent any of the following Python data types ( numeric | string | matrix | list | dict | data table | data frame | datetime | numpy.datetime64 ).
 
@@ -170,7 +170,7 @@ Show( numpy_datetime );
 
 ### Get Version
 
-**Syntax:** version = obj << Get Version
+**Syntax:** version = obj &lt;&lt; Get Version
 
 **Description:** Returns the version number of Python used in the current connection.
 
@@ -185,7 +185,7 @@ Show( version );
 
 ### Install Packages
 
-**Syntax:** obj << Install Packages( packages )
+**Syntax:** obj &lt;&lt; Install Packages( packages )
 
 **Description:** This wraps the install of Python packages into the JMP site-packages directory. For operations beyond simple package installation, see Python Create JPIP CMD() to create a command line pip wrapper script in a directory chosen with Directory Pick(). Alternatively, to run the install from a JMP Python script window, look at jmputils.jpip under the Python category here in the Scripting Index.
 
@@ -222,7 +222,7 @@ Python Install Packages( {"numpy", "pandas"} );
 
 ### Is Connected
 
-**Syntax:** x = obj << Is Connected
+**Syntax:** x = obj &lt;&lt; Is Connected
 
 **Description:** Note: This function is deprecated as of JMP 18 and always returns 1.
 
@@ -237,7 +237,7 @@ Show( x );
 
 ### JMP Name To Python Name
 
-**Syntax:** Python Name = PythonConnection << JMP Name To Python Name( JMP name )
+**Syntax:** Python Name = PythonConnection &lt;&lt; JMP Name To Python Name( JMP name )
 
 **Description:** Maps a JMP variable name to a Python variable name using Python variable naming rules.
 
@@ -252,7 +252,7 @@ Show( Python Name );
 
 ### Reset
 
-**Syntax:** PythonConnection << Reset
+**Syntax:** PythonConnection &lt;&lt; Reset
 
 **Description:** Reset the shared Python environment.
 
@@ -271,7 +271,7 @@ PythonConnection << Submit( "print(pi)" );
 
 ### Send
 
-**Syntax:** y = obj << Send( name, <Python Name( name )> )
+**Syntax:** y = obj &lt;&lt; Send( name, &lt;Python Name( name )&gt; )
 
 **Description:** Sends data to Python, where the name argument can represent any of the following JMP data types ( numeric | string | matrix | list | data table | date ).
 
@@ -305,7 +305,7 @@ PythonConnection << Submit( "print(dt)" );
 
 ### Send File
 
-**Syntax:** y = obj << Send File( filename, <Python Name( name )> )
+**Syntax:** y = obj &lt;&lt; Send File( filename, &lt;Python Name( name )&gt; )
 
 **Description:** Sends a data file to Python, where the filename argument is a string specifying a pathname to the file to be sent to Python.
 
@@ -323,7 +323,7 @@ PythonConnection << Submit( "print(Baseball)" );
 
 ### Set
 
-**Syntax:** y = obj << Set( name, <Python Name( name )> )
+**Syntax:** y = obj &lt;&lt; Set( name, &lt;Python Name( name )&gt; )
 
 **Description:** Sends data to Python, where the name argument can represent any of the following JMP data types ( numeric | string | matrix | list | data table | date ).
 
@@ -357,7 +357,7 @@ PythonConnection << Submit( "print(dt)" );
 
 ### Submit
 
-**Syntax:** obj << Submit( statements < , echo( 1 | 0 ) > )
+**Syntax:** obj &lt;&lt; Submit( statements &lt; , echo( 1 | 0 ) &gt; )
 
 **Description:** Submits statements to Python. Statements can be in the form of a string value or list of string values. Optional echo() parameter defaults to True. The echo parameter controls echoing the Python source to the log. Logical True (1) enables echo of source while 0 suppresses the echo to the log.
 
@@ -379,7 +379,7 @@ Show( getStr, getNum );
 
 ### Submit File
 
-**Syntax:** obj << Submit File( path )
+**Syntax:** obj &lt;&lt; Submit File( path )
 
 **Description:** Submits statements to Python using a file specified by the path argument.
 

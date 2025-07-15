@@ -6,9 +6,7 @@
 
 ### AICc
 
-**Syntax:** obj << Model Name( AICc ); 
-
-scrobj << AICc
+**Syntax:** obj &lt;&lt; Model Name( AICc ); scrobj &lt;&lt; AICc
 
 **Beschreibung:** Gibt den AICc als Modellauswahlkriterium für B-Spline-, P-Spline- und Fourier-Basismodelle an.
 
@@ -29,7 +27,7 @@ obj = dt << Functional Data Explorer(
 
 ### Align 0 to 1
 
-**Syntax:** obj << Data Processing( Align 0 to 1 )
+**Syntax:** obj &lt;&lt; Data Processing( Align 0 to 1 )
 
 **Beschreibung:** Richtet die Ausgabefunktionen (Y) über den Bereich des Eingangs (X) so aus, der sie zwischen 0 und 1 liegen.
 
@@ -50,7 +48,7 @@ obj = dt << Functional Data Explorer(
 
 ### Align Maximum
 
-**Syntax:** obj << Data Processing( Align Maximum )
+**Syntax:** obj &lt;&lt; Data Processing( Align Maximum )
 
 **Beschreibung:** Richtet die Outputfunktionen (Y) mithilfe des beobachteten maximalen Inputwerts (X) aus.
 
@@ -71,7 +69,7 @@ obj = dt << Functional Data Explorer(
 
 ### Align Minimum
 
-**Syntax:** obj << Data Processing( Align Minimum )
+**Syntax:** obj &lt;&lt; Data Processing( Align Minimum )
 
 **Beschreibung:** Richtet die Outputfunktionen (Y) mithilfe des beobachteten minimalen Inputwerts (X) aus.
 
@@ -92,7 +90,7 @@ obj = dt << Functional Data Explorer(
 
 ### Align by Function
 
-**Syntax:** obj << Data Processing( Align by Function )
+**Syntax:** obj &lt;&lt; Data Processing( Align by Function )
 
 **Beschreibung:** Richtet die Ausgabefunktionen (Y) so aus, dass der Bereich jeder Funktion über dem Bereich des Input (X) liegt.
 
@@ -113,7 +111,7 @@ obj = dt << Functional Data Explorer(
 
 ### B Splines
 
-**Syntax:** obj << B Splines
+**Syntax:** obj &lt;&lt; B Splines
 
 **Beschreibung:** Passt ein B-Spline-Modell an die Daten an.
 
@@ -134,7 +132,7 @@ obj = dt << Functional Data Explorer(
 
 ### B Splines Model Controls
 
-**Syntax:** obj << B Splines Model Controls
+**Syntax:** obj &lt;&lt; B Splines Model Controls
 
 **Beschreibung:** Öffnet den Bereich mit den Bedienelementen für das Modell vor der Anpassung eines B-Spline-Modells. Sie können die Anzahl der Knoten und den Spline-Grad angeben.
 
@@ -155,9 +153,7 @@ obj = dt << Functional Data Explorer(
 
 ### BIC
 
-**Syntax:** obj << Model Name( BIC ); 
-
-scrobj << BIC
+**Syntax:** obj &lt;&lt; Model Name( BIC ); scrobj &lt;&lt; BIC
 
 **Beschreibung:** Gibt den BIC als Modellauswahlkriterium für B-Spline-, P-Spline- und Fourier-Basismodelle an.
 
@@ -178,7 +174,7 @@ obj = dt << Functional Data Explorer(
 
 ### Baseline Correction
 
-**Syntax:** obj << Data Processing( Baseline Correction( Model( Linear|Quadratic|Cubic|Fit Exponential 2P|Fit Exponential 3P ), Correction Region( ), Baseline Regions( vector ), Anchor Points( vector ) ) )
+**Syntax:** obj &lt;&lt; Data Processing( Baseline Correction( Model( Linear|Quadratic|Cubic|Fit Exponential 2P|Fit Exponential 3P ), Correction Region( ), Baseline Regions( vector ), Anchor Points( vector ) ) )
 
 **Beschreibung:** Passt ein Baseline-Modell an und entfernt es aus jeder Funktion. Sie können das Baseline-Modell, die Korrekturregion, Baseline-Regionen und die Ankerpunkte angeben.
 
@@ -216,7 +212,7 @@ obj = dt << Functional Data Explorer(
 
 ### Center
 
-**Syntax:** obj << Data Processing( Center )
+**Syntax:** obj &lt;&lt; Data Processing( Center )
 
 **Beschreibung:** Zentriert den Output
 
@@ -237,7 +233,7 @@ obj = dt << Functional Data Explorer(
 
 ### Direct Functional PCA
 
-**Syntax:** obj << Direct Functional PCA
+**Syntax:** obj &lt;&lt; Direct Functional PCA
 
 **Beschreibung:** Führt funktionale PCA direkt durch, ohne ein Basisfunktionsmodell anzupassen. Bei dieser Option müssen die Eingabedaten ein Raster mit gleichen Abständen haben.
 
@@ -259,7 +255,7 @@ obj = dt << Functional Data Explorer(
 
 ### Dynamic Time Warping
 
-**Syntax:** obj << Data Processing( Dynamic Time Warping( Reference( number ) ) )
+**Syntax:** obj &lt;&lt; Data Processing( Dynamic Time Warping( Reference( number ) ) )
 
 **Beschreibung:** Richtet die Ausgabefunktionen mittels dynamischer Zeitnormierung (DTW) aus. DTW ist eine Technik zum Ausrichten von Funktionen, die eine optimale Normierung findet, um zwei oder mehr Funktionen aneinander auszurichten.
 
@@ -280,7 +276,7 @@ obj = dt << Functional Data Explorer(
 
 ### Exp
 
-**Syntax:** obj << Data Processing( Exp )
+**Syntax:** obj &lt;&lt; Data Processing( Exp )
 
 **Beschreibung:** Transformiert die Daten durch Berechnen der Exponentialfunktion des Outputs.
 
@@ -301,7 +297,7 @@ obj = dt << Functional Data Explorer(
 
 ### Filter X
 
-**Syntax:** obj << Data Processing( Filter X( [lower, upper] ) )
+**Syntax:** obj &lt;&lt; Data Processing( Filter X( [lower, upper] ) )
 
 **Beschreibung:** Entfernt Eingabewerte (X), die außerhalb des angegebenen Intervalls liegen.
 
@@ -318,7 +314,7 @@ obj << Data Processing( Filter X( [5, 50] ) );
 
 ### Filter Y
 
-**Syntax:** obj << Data Processing( Filter Y( [lower, upper] ) )
+**Syntax:** obj &lt;&lt; Data Processing( Filter Y( [lower, upper] ) )
 
 **Beschreibung:** Entfernt Ausgabewerte (Y) außerhalb des angegebenen Intervalls.
 
@@ -335,7 +331,7 @@ obj << Data Processing( Filter Y( [., 100] ) );
 
 ### Fourier Basis
 
-**Syntax:** obj << Fourier Basis
+**Syntax:** obj &lt;&lt; Fourier Basis
 
 **Beschreibung:** Passt ein B-Spline-Modell mit Bestrafung an die Daten an.
 
@@ -356,7 +352,7 @@ obj = dt << Functional Data Explorer(
 
 ### Fourier Basis Model Controls
 
-**Syntax:** obj << Fourier Basis Model Controls
+**Syntax:** obj &lt;&lt; Fourier Basis Model Controls
 
 **Beschreibung:** Öffnet den Bereich mit den Bedienelementen für das Modell vor der Anpassung eines Fourier-Basismodells. Sie können die Anzahl von Fourier-Paaren und die Periode angeben.
 
@@ -377,9 +373,7 @@ obj = dt << Functional Data Explorer(
 
 ### GCV
 
-**Syntax:** obj << Model Name( GCV ); 
-
-scrobj << GCV
+**Syntax:** obj &lt;&lt; Model Name( GCV ); scrobj &lt;&lt; GCV
 
 **Beschreibung:** Gibt die verallgemeinerte Kreuzvalidierung (GCV) als Modellauswahlkriterium für B-Spline-, P-Spline- und Fourier-Basismodelle an.
 
@@ -400,7 +394,7 @@ obj = dt << Functional Data Explorer(
 
 ### Load Targets
 
-**Syntax:** obj << Data Processing( Load Targets( "level" ) )
+**Syntax:** obj &lt;&lt; Data Processing( Load Targets( "level" ) )
 
 **Beschreibung:** Gibt eine Zielfunktion an.
 
@@ -421,7 +415,7 @@ obj = dt << Functional Data Explorer(
 
 ### Log
 
-**Syntax:** obj << Data Processing( Log )
+**Syntax:** obj &lt;&lt; Data Processing( Log )
 
 **Beschreibung:** Transformiert die Daten durch Berechnen des natürlichen Logarithmus des Outputs.
 
@@ -442,7 +436,7 @@ obj = dt << Functional Data Explorer(
 
 ### Log X
 
-**Syntax:** obj << Data Processing( Log X )
+**Syntax:** obj &lt;&lt; Data Processing( Log X )
 
 **Beschreibung:** Transformiert die Daten durch Berechnen des natürlichen Logarithmus des Input.
 
@@ -463,7 +457,7 @@ obj = dt << Functional Data Explorer(
 
 ### Logit
 
-**Syntax:** obj << Data Processing( Logit )
+**Syntax:** obj &lt;&lt; Data Processing( Logit )
 
 **Beschreibung:** Transformiert die Daten durch Berechnen der Logit-Funktion des Outputs. Die Output-Werte müssen zwischen 0 und 1 liegen.
 
@@ -485,7 +479,7 @@ obj = dt << Functional Data Explorer(
 
 ### MSC
 
-**Syntax:** obj << Data Processing( MSC )
+**Syntax:** obj &lt;&lt; Data Processing( MSC )
 
 **Beschreibung:** Wendet die Methode der multiplikativen Streuungskorrektur auf die Daten an. Diese Methode passt eine einfache lineare Regression für jede einzelne Funktion (Niveau der ID-Variablen) an, wobei die Zielgröße die Outputwerte der Funktion und der Regressor die Outputwerte für die Mittelwertfunktion sind.
 
@@ -506,7 +500,7 @@ obj = dt << Functional Data Explorer(
 
 ### Multivariate Curve Resolution
 
-**Syntax:** obj << Multivariate Curve Resolution
+**Syntax:** obj &lt;&lt; Multivariate Curve Resolution
 
 **Beschreibung:** Führt multivariate Kurvenauflösung (MCR) durch. Bei dieser Option müssen die Eingabedaten ein Raster mit gleichen Abständen haben.
 
@@ -514,7 +508,7 @@ obj = dt << Functional Data Explorer(
 
 ### Negation
 
-**Syntax:** obj << Data Processing( Negation )
+**Syntax:** obj &lt;&lt; Data Processing( Negation )
 
 **Beschreibung:** Transformiert die Daten durch Multiplizieren des Outputs mit -1.
 
@@ -535,7 +529,7 @@ obj = dt << Functional Data Explorer(
 
 ### Nonnegative SVD
 
-**Syntax:** obj << Nonnegative SVD
+**Syntax:** obj &lt;&lt; Nonnegative SVD
 
 **Beschreibung:** Performs a nonnegative singular value decomposition (SVD) on the stacked matrix of functions. A nonnegative SVD constrains the matrix decomposition so that the scores and loadings are greater than or equal to zero.
 
@@ -543,7 +537,7 @@ obj = dt << Functional Data Explorer(
 
 ### P Splines
 
-**Syntax:** obj << P Splines
+**Syntax:** obj &lt;&lt; P Splines
 
 **Beschreibung:** Passt ein B-Spline-Modell mit Bestrafung an die Daten an.
 
@@ -564,7 +558,7 @@ obj = dt << Functional Data Explorer(
 
 ### P Splines Model Controls
 
-**Syntax:** obj << P Splines Model Controls
+**Syntax:** obj &lt;&lt; P Splines Model Controls
 
 **Beschreibung:** Öffnet den Bereich mit den Bedienelementen für das Modell vor der Anpassung eines P-Spline-Modells. Sie können die Anzahl der Knoten und den Spline-Grad angeben.
 
@@ -585,7 +579,7 @@ obj = dt << Functional Data Explorer(
 
 ### Peak Finding
 
-**Syntax:** obj << Peak Finding
+**Syntax:** obj &lt;&lt; Peak Finding
 
 **Beschreibung:** Findet und fasst Peaks entweder direkt oder mit einem angegebenen parametrischen Modell zusammen.
 
@@ -593,7 +587,7 @@ obj = dt << Functional Data Explorer(
 
 ### Penalized Nonnegative SVD
 
-**Syntax:** obj << Penalized Nonnegative SVD
+**Syntax:** obj &lt;&lt; Penalized Nonnegative SVD
 
 **Beschreibung:** Führt nicht-negative SWZ mit Bestrafung durch, um funktionale PCA zu konstruieren. Bei dieser Option müssen die Eingabedaten ein Raster mit gleichen Abständen haben.
 
@@ -601,7 +595,7 @@ obj = dt << Functional Data Explorer(
 
 ### Penalized SVD
 
-**Syntax:** obj << Penalized SVD
+**Syntax:** obj &lt;&lt; Penalized SVD
 
 **Beschreibung:** Führt SWZ mit Bestrafung durch, um funktionale PCA zu konstruieren. Bei dieser Option müssen die Eingabedaten ein Raster mit gleichen Abständen haben.
 
@@ -609,7 +603,7 @@ obj = dt << Functional Data Explorer(
 
 ### Plot Mean Function
 
-**Syntax:** obj << Plot Mean Function( state=0|1 )
+**Syntax:** obj &lt;&lt; Plot Mean Function( state=0|1 )
 
 **Beschreibung:** Zeigt das Diagramm der Mittelwertfunktion im Zusammenfassungsbericht an oder blendet es aus. Standardmäßig ein.
 
@@ -627,7 +621,7 @@ obj << Plot Mean Function( 0 );
 
 ### Plot Median Function
 
-**Syntax:** obj << Plot Median Function( state=0|1 )
+**Syntax:** obj &lt;&lt; Plot Median Function( state=0|1 )
 
 **Beschreibung:** Zeigt das Diagramm der Medianfunktion im Zusammenfassungsbericht an oder blendet es aus.
 
@@ -648,7 +642,7 @@ obj = dt << Functional Data Explorer(
 
 ### Plot Standard Deviation Function
 
-**Syntax:** obj << Plot Standard Deviation Function( state=0|1 )
+**Syntax:** obj &lt;&lt; Plot Standard Deviation Function( state=0|1 )
 
 **Beschreibung:** Zeigt das Diagramm der Standardabweichungsfunktion im Zusammenfassungsbericht an oder blendet es aus. Standardmäßig ein.
 
@@ -666,7 +660,7 @@ obj << Plot Standard Deviation Function( 0 );
 
 ### Range 0 to 1
 
-**Syntax:** obj << Data Processing( Range 0 to 1 )
+**Syntax:** obj &lt;&lt; Data Processing( Range 0 to 1 )
 
 **Beschreibung:** Skaliert den Output auf den Bereich von 0 bis 1.
 
@@ -687,11 +681,7 @@ obj = dt << Functional Data Explorer(
 
 ### Reduce
 
-**Syntax:** obj << Data Processing( Reduce( Grid( number ) ) ); 
-
-obj << Data Processing( Reduce( Bin( number ) ) ); 
-
-obj << Data Processing( Reduce( Thin( number ) ) )
+**Syntax:** obj &lt;&lt; Data Processing( Reduce( Grid( number ) ) ); obj &lt;&lt; Data Processing( Reduce( Bin( number ) ) ); obj &lt;&lt; Data Processing( Reduce( Thin( number ) ) )
 
 **Beschreibung:** Reduziert die Daten über den Input (X) mit einer aus einer Auswahl von Techniken.
 
@@ -708,13 +698,13 @@ obj << Data Processing( Reduce( Thin( 2 ) ) );
 
 ### Remove Last Step
 
-**Syntax:** obj << Remove Last Step
+**Syntax:** obj &lt;&lt; Remove Last Step
 
 **JMP Version hinzugefügt:** 14
 
 ### Remove Selected
 
-**Syntax:** obj << Data Processing( Remove Selected )
+**Syntax:** obj &lt;&lt; Data Processing( Remove Selected )
 
 **Beschreibung:** Entfernt die ausgewählten Werte.
 
@@ -733,7 +723,7 @@ obj << Data Processing( Remove Selected );
 
 ### Remove Unselected
 
-**Syntax:** obj << Data Processing( Remove Unselected )
+**Syntax:** obj &lt;&lt; Data Processing( Remove Unselected )
 
 **Beschreibung:** Entfernt die nicht ausgewählten Werte.
 
@@ -752,7 +742,7 @@ obj << Data Processing( Remove Unselected );
 
 ### Remove Value
 
-**Syntax:** obj << Data Processing( Remove Value( number ) )
+**Syntax:** obj &lt;&lt; Data Processing( Remove Value( number ) )
 
 **Beschreibung:** Entfernt Beobachtungen mit dem angegebenen Zielgrößenwert.
 
@@ -770,7 +760,7 @@ obj << Data Processing( Remove Value( 30 ) );
 
 ### Remove Zeros
 
-**Syntax:** obj << Data Processing( Remove Zeros )
+**Syntax:** obj &lt;&lt; Data Processing( Remove Zeros )
 
 **Beschreibung:** Entfernt Beobachtungen mit einem Zielgrößenwert von 0.
 
@@ -791,7 +781,7 @@ obj = dt << Functional Data Explorer(
 
 ### Row Alignment
 
-**Syntax:** obj << Data Processing( Row Alignment )
+**Syntax:** obj &lt;&lt; Data Processing( Row Alignment )
 
 **Beschreibung:** Ersetzt die Inputwerte mit der Zeilennummer.
 
@@ -812,7 +802,7 @@ obj = dt << Functional Data Explorer(
 
 ### SNV
 
-**Syntax:** obj << Data Processing( SNV )
+**Syntax:** obj &lt;&lt; Data Processing( SNV )
 
 **Beschreibung:** Wendet die Methode „Standard-Normalfunktion“ auf die Daten an. Diese Methode standardisiert den Output durch Zentrieren und Skalieren jeder einzelnen Funktion (Niveau der ID-Variablen), so dass sie einen Mittelwert von 0 und eine Standardabweichung von 1 hat.
 
@@ -833,7 +823,7 @@ obj = dt << Functional Data Explorer(
 
 ### Save Data
 
-**Syntax:** obj << Save Data
+**Syntax:** obj &lt;&lt; Save Data
 
 **Beschreibung:** Speichert die verarbeiteten Daten in einer separaten Datentabelle im gestapelten Format.
 
@@ -855,7 +845,7 @@ obj << Save Data;
 
 ### Save Summaries
 
-**Syntax:** obj << Save Summaries
+**Syntax:** obj &lt;&lt; Save Summaries
 
 **Beschreibung:** Speichert die statistischen Kenngrößen des Modells jeder Funktion (ID) für jede Zielgröße (Y).
 
@@ -877,7 +867,7 @@ obj << Save Summaries;
 
 ### Savitzky-Golay Filter
 
-**Syntax:** obj << Data Processing( "Savitzky-Golay Filter"n )
+**Syntax:** obj &lt;&lt; Data Processing( "Savitzky-Golay Filter"n )
 
 **Beschreibung:** Wendet den Savitzky-Golay-Filter auf jede Funktion an. Bei dieser Option müssen die Eingabedaten ein Raster mit gleichen Abständen haben.
 
@@ -898,7 +888,7 @@ obj = dt << Functional Data Explorer(
 
 ### Savitzky-Golay First Derivative
 
-**Syntax:** obj << Data Processing( "Savitzky-Golay First Derivative"n )
+**Syntax:** obj &lt;&lt; Data Processing( "Savitzky-Golay First Derivative"n )
 
 **Beschreibung:** Gibt die erste Ableitung vom Savitzky-Golay-Filter zurück. Bei dieser Option müssen die Eingabedaten ein Raster mit gleichen Abständen haben.
 
@@ -919,7 +909,7 @@ obj = dt << Functional Data Explorer(
 
 ### Savitzky-Golay Second Derivative
 
-**Syntax:** obj << Data Processing( "Savitzky-Golay Second Derivative"n )
+**Syntax:** obj &lt;&lt; Data Processing( "Savitzky-Golay Second Derivative"n )
 
 **Beschreibung:** Gibt die zweite Ableitung vom Savitzky-Golay-Filter zurück. Bei dieser Option müssen die Eingabedaten ein Raster mit gleichen Abständen haben.
 
@@ -940,7 +930,7 @@ obj = dt << Functional Data Explorer(
 
 ### Square
 
-**Syntax:** obj << Data Processing( Square )
+**Syntax:** obj &lt;&lt; Data Processing( Square )
 
 **Beschreibung:** Transformiert die Daten durch Berechnen des Quadrats des Outputs.
 
@@ -961,7 +951,7 @@ obj = dt << Functional Data Explorer(
 
 ### Square Root
 
-**Syntax:** obj << Data Processing( Square Root )
+**Syntax:** obj &lt;&lt; Data Processing( Square Root )
 
 **Beschreibung:** Transformiert die Daten durch Berechnen der Quadratwurzel des Outputs. Die Output-Werte dürfen nicht-negativ sein.
 
@@ -982,7 +972,7 @@ obj = dt << Functional Data Explorer(
 
 ### Standardize
 
-**Syntax:** obj << Data Processing( Standardize )
+**Syntax:** obj &lt;&lt; Data Processing( Standardize )
 
 **Beschreibung:** Standardisiert den Output durch Zentrieren und Skalieren.
 
@@ -1003,7 +993,7 @@ obj = dt << Functional Data Explorer(
 
 ### Unconstrained MCR
 
-**Syntax:** obj << Unconstrained MCR
+**Syntax:** obj &lt;&lt; Unconstrained MCR
 
 **Beschreibung:** Führt unbeschränkte multivariate Kurvenauflösung (MCR) durch. Bei dieser Option müssen die Eingabedaten ein Raster mit gleichen Abständen haben.
 
@@ -1011,7 +1001,7 @@ obj = dt << Functional Data Explorer(
 
 ### Wavelets
 
-**Syntax:** obj << Wavelets
+**Syntax:** obj &lt;&lt; Wavelets
 
 **Beschreibung:** Passt mehrere Wavelets-Modelle an die Daten an. Bei dieser Option müssen die Eingabedaten ein Raster mit gleichmäßigen Abständen haben. Wenn die Daten nicht gleiche Abstände haben, wird vor Beginn der Wavelet-Routine automatisch ein Raster erstellt.
 
@@ -1029,7 +1019,7 @@ obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME 
 
 ### Action
 
-**Syntax:** obj << Action
+**Syntax:** obj &lt;&lt; Action
 
 **Beschreibung:** Allzwecköffnung innerhalb einer Plattform zum Einfügen von auszuwertenden Ausdrücken. Setzt die Kontexte für Anzeigefeld und Datentabelle kurzzeitig auf die Plattform.
 
@@ -1047,7 +1037,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Syntax:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntax:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Beschreibung:** Wendet eine zuvor erstellte Voreinstellung auf das Objekt an und aktualisiert die Optionen und Anpassungen entsprechend den gespeicherten Einstellungen.
 
@@ -1094,7 +1084,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**Syntax:** obj << Automatic Recalc( state=0|1 )
+**Syntax:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Beschreibung:** Wiederholt die Analyse bei Ausschluss und Datenänderungen automatisch. Wenn die Option „Automatic Recalc“ eingeschaltet ist, sollten Sie in Betracht ziehen, Wait(0)-Befehle zu verwenden, um sicherzustellen, dass die Ausschlüsse und Datenänderungen vor der Neuberechnung wirksam werden.
 
@@ -1108,7 +1098,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Column Switcher
 
-**Syntax:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Syntax:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Beschreibung:** Fügt ein Bedienfeld zum Ändern der Variablen der Plattform hinzu
 
@@ -1126,7 +1116,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy Script
 
-**Syntax:** obj << Copy Script
+**Syntax:** obj &lt;&lt; Copy Script
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und legt es in der Zwischenablage ab.
 
@@ -1139,7 +1129,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Syntax:** obj << Data Table Window
+**Syntax:** obj &lt;&lt; Data Table Window
 
 **Beschreibung:** Zeigt das Fenster mit der Datentabelle für diese Analyse im Vordergrund an.
 
@@ -1152,7 +1142,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Syntax:** obj << Get By Levels
+**Syntax:** obj &lt;&lt; Get By Levels
 
 **Beschreibung:** Gibt ein assoziatives Array zurück, das die Nach-Gruppenspalten ihren Werten zuordnet.
 
@@ -1169,7 +1159,7 @@ biv << Get By Levels;
 
 ### Get Container
 
-**Syntax:** obj << Get Container
+**Syntax:** obj &lt;&lt; Get Container
 
 **Beschreibung:** Gibt einen Verweis auf das Containerfeld zurück, das den Inhalt des Objekts enthält.
 
@@ -1214,7 +1204,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Syntax:** obj << Get Data Table
+**Syntax:** obj &lt;&lt; Get Data Table
 
 **Beschreibung:** Gibt eine Referenz auf die Datentabelle zurück.
 
@@ -1228,7 +1218,7 @@ Show( N Rows( t ) );
 
 ### Get Script
 
-**Syntax:** obj << Get Script
+**Syntax:** obj &lt;&lt; Get Script
 
 **Beschreibung:** Erstellt ein Skript (JSL) zum Erzeugen dieser Analyse und gibt es als Ausdruck zurück.
 
@@ -1242,7 +1232,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Syntax:** obj << Get Script With Data Table
+**Syntax:** obj &lt;&lt; Get Script With Data Table
 
 **Beschreibung:** Erstellt ein Skript (JSL) zum Erzeugen dieser Analyse und referenziert dabei spezifisch diese Datentabelle und gibt das Skript als Ausdruck zurück.
 
@@ -1256,7 +1246,7 @@ Show( t );
 
 ### Get Timing
 
-**Syntax:** obj << Get Timing
+**Syntax:** obj &lt;&lt; Get Timing
 
 **Beschreibung:** Steuert den Start der Plattform zeitlich.
 
@@ -1270,7 +1260,7 @@ Show( t );
 
 ### Get Web Support
 
-**Syntax:** obj << Get Web Support
+**Syntax:** obj &lt;&lt; Get Web Support
 
 **Beschreibung:** Gibt eine Zahl zurück, die angibt, ob für das Anzeigeobjekt interaktive HTML unterstützt wird. 1 bedeutet einige oder alle Elemente werden unterstützt. 0 bedeutet keine Unterstützung.
 
@@ -1286,7 +1276,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Syntax:** obj << Get Where Expr
+**Syntax:** obj &lt;&lt; Get Where Expr
 
 **Beschreibung:** Gibt den Ausdruck Where für die Teilmenge der Daten zurück, wenn die Plattform mit By() oder Where() gestartet wurde. Andernfalls wird Empty() zurückgegeben.
 
@@ -1323,7 +1313,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Syntax:** obj << Local Data Filter
+**Syntax:** obj &lt;&lt; Local Data Filter
 
 **Beschreibung:** Filtert Daten für bestimmte Gruppen oder Bereiche, aber nur lokal in dieser Plattform.
 
@@ -1379,7 +1369,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Syntax:** obj << Paste Local Data Filter
+**Syntax:** obj &lt;&lt; Paste Local Data Filter
 
 **Beschreibung:** Lokalen Datenfilter aus der Zwischenablage auf den aktuellen Bericht anwenden.
 
@@ -1400,7 +1390,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**Syntax:** obj << Redo Analysis
+**Syntax:** obj &lt;&lt; Redo Analysis
 
 **Beschreibung:** Führt die gleiche Analyse in einem neuen Fenster aus. Die Analyse ist unterschiedlich, wenn sich die Daten verändert haben.
 
@@ -1413,7 +1403,7 @@ obj << Redo Analysis;
 
 ### Relaunch Analysis
 
-**Syntax:** obj << Relaunch Analysis
+**Syntax:** obj &lt;&lt; Relaunch Analysis
 
 **Beschreibung:** Öffnet das Plattform-Startfenster und ruft die Einstellungen ab, die zum Erstellen des Berichts verwendet wurden.
 
@@ -1426,7 +1416,7 @@ obj << Relaunch Analysis;
 
 ### Remove Column Switcher
 
-**Syntax:** obj << Remove Column Switcher
+**Syntax:** obj &lt;&lt; Remove Column Switcher
 
 **Beschreibung:** Entfernt den letzten Spaltenwechsler, der der Plattform hinzugefügt wurde.
 
@@ -1446,7 +1436,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Syntax:** obj << Remove Local Data Filter
+**Syntax:** obj &lt;&lt; Remove Local Data Filter
 
 **Beschreibung:** Wenn ein lokaler Filter verwendet wurde, wird dieser entfernt und die Plattform verwendet wieder direkt alle Daten aus der Datentabelle
 
@@ -1485,9 +1475,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Syntax:** obj << Report;
-
-Report( obj )
+**Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Beschreibung:** Gibt eine Referenz auf das Berichtsobjekt zurück.
 
@@ -1502,7 +1490,7 @@ Show( t );
 
 ### Report View
 
-**Syntax:** obj << Report View( "Vollständig"|"Übersicht" )
+**Syntax:** obj &lt;&lt; Report View( "Vollständig"|"Übersicht" )
 
 **Beschreibung:** Die Berichtsanzeige legt das Detailniveau für einen Plattformbericht fest. Full zeigt alle Details an, während Summary abhängig von der Plattform nur ausgewählte Inhalte anzeigt. Für benutzerdefiniertes Verhalten unterstützen Anzeigefelder eine Meldung <<Set Summary Behavior.
 
@@ -1515,7 +1503,7 @@ obj << Report View( "Summary" );
 
 ### Save Script for All Objects
 
-**Syntax:** obj << Save Script for All Objects
+**Syntax:** obj &lt;&lt; Save Script for All Objects
 
 **Beschreibung:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -1528,7 +1516,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Syntax:** obj << Save Script for All Objects To Data Table( <name> )
+**Syntax:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Beschreibung:** Speichert ein Skript für alle Berichtsobjekte in der aktuellen Datentabelle. Diese Option ist nützlich, wenn Sie mehrere Berichte im Fenster haben. Das Skript wird nach der ersten Plattform benannt, sofern Sie keine Skriptnamen in Anführungszeichen angeben.
 
@@ -1552,7 +1540,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Syntax:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und speichert es als Tabelleneigenschaft in der Datentabelle.
 
@@ -1565,7 +1553,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Syntax:** obj << Save Script to Journal
+**Syntax:** obj &lt;&lt; Save Script to Journal
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und fügt eine Schaltfläche mit diesem Skript zum Journal hinzu.
 
@@ -1578,7 +1566,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Syntax:** obj << Save Script to Report
+**Syntax:** obj &lt;&lt; Save Script to Report
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und zeigt es im Bericht selbst an. Nützlich zum Anlegen eines gedruckten Nachweises der durchgeführten Aktivitäten.
 
@@ -1591,7 +1579,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Syntax:** obj << Save Script to Script Window
+**Syntax:** obj &lt;&lt; Save Script to Script Window
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und hängt es an das Textfenster mit dem aktuellen Skript an.
 
@@ -1669,7 +1657,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Syntax:** obj << Sync to Data Table Changes
+**Syntax:** obj &lt;&lt; Sync to Data Table Changes
 
 **Beschreibung:** Mit Ausgeschlossenen und vorgenommenen Datenänderungen synchronisieren.
 
@@ -1686,7 +1674,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Syntax:** obj << Title( "new title" )
+**Syntax:** obj &lt;&lt; Title( "new title" )
 
 **Beschreibung:** Legt den Titel für die Plattform fest.
 
@@ -1699,7 +1687,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Syntax:** obj << Top Report
+**Syntax:** obj &lt;&lt; Top Report
 
 **Beschreibung:** Gibt eine Referenz auf den Stammknoten im Bericht zurück.
 
@@ -1714,7 +1702,7 @@ Show( t );
 
 ### View Web XML
 
-**Syntax:** obj << View Web XML
+**Syntax:** obj &lt;&lt; View Web XML
 
 **Beschreibung:** Gibt den XML-Code zurück, der zum Erstellen des interaktiven HTML-Berichts verwendet wird.
 
@@ -1731,9 +1719,7 @@ xml = obj << View Web XML;
 
 ### Functional Data Explorer Group
 
-**Syntax:** Functional Data Explorer Group( model1, model2, ... )
-
-Functional Data Explorer Group( model1; model2; ... )
+**Syntax:** Functional Data Explorer Group( model1, model2, ... )Functional Data Explorer Group( model1; model2; ... )
 
 **Beschreibung:** Gruppiert Modelle des funktionalen Datenexplorers für mehrere Y-Variablen im gestapelten Datenformat.
 

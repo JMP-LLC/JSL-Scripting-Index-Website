@@ -6,7 +6,7 @@
 
 ### Bounds
 
-**Sintassi:** obj << Bounds( left(value), right(value), top(value), bottom(value) )
+**Sintassi:** obj &lt;&lt; Bounds( left(value), right(value), top(value), bottom(value) )
 
 **Descrizione:** Imposta i limiti del segmento immagine in coordinate degli assi.
 
@@ -26,7 +26,7 @@ imgSeg << bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) );
 
 ### Contrast
 
-**Sintassi:** obj << filter("contrast")
+**Sintassi:** obj &lt;&lt; filter("contrast")
 
 **Descrizione:** Applica un contrasto all&apos;immagine nel segmento immagine. Un valore positivo rende l&apos;immagine più luminosa, un valore negativo rende l&apos;immagine più scura. Il range utile dei valori va da -10 a 10.
 
@@ -48,7 +48,7 @@ imgSeg << Filter( "contrast", 3 );
 
 ### Crop
 
-**Sintassi:** obj << Crop
+**Sintassi:** obj &lt;&lt; Crop
 
 **Descrizione:** Ritaglia il segmento immagine alle dimensioni specificate rimuovendo qualsiasi porzione dell&apos;immagine al di fuori dei limiti specificati. L&apos;ordine implicito è sinistra, alto, destra, basso. L&apos;immagine potrebbe pertanto risultare distorta in quanto non vengono conservate le proporzioni.
 
@@ -71,7 +71,7 @@ imgSeg << Crop( 10, 90, 90, 10 );
 
 ### Despeckle
 
-**Sintassi:** obj << filter("despeckle")
+**Sintassi:** obj &lt;&lt; filter("despeckle")
 
 **Descrizione:** Applica un filtro all&apos;immagine nel segmento immagine per rimuovere il rumore.
 
@@ -93,7 +93,7 @@ imgSeg << Filter( "despeckle" );
 
 ### Edge
 
-**Sintassi:** obj << filter("edge")
+**Sintassi:** obj &lt;&lt; filter("edge")
 
 **Descrizione:** Applica un filtro di rilevamento dei bordi all&apos;immagine nel segmento immagine. I bordi sono disegnati in nero mentre tutto il resto diventa bianco.
 
@@ -115,7 +115,7 @@ imgSeg << Filter( "edge" );
 
 ### Enhance
 
-**Sintassi:** obj << filter("enhance")
+**Sintassi:** obj &lt;&lt; filter("enhance")
 
 **Descrizione:** Applica un filtro di miglioramento all&apos;immagine nel segmento immagine rendendone più nitido l&apos;aspetto.
 
@@ -137,7 +137,7 @@ imgSeg << Filter( "enhance" );
 
 ### Fill Graph
 
-**Sintassi:** obj << Fill Graph
+**Sintassi:** obj &lt;&lt; Fill Graph
 
 **Descrizione:** Imposta i limiti pari all&apos;estensione degli assi, causando il riempimento del grafico da parte del segmento immagine. L&apos;immagine potrebbe pertanto risultare distorta in quanto non vengono conservate le proporzioni.
 
@@ -157,7 +157,7 @@ imgSeg << fill graph;
 
 ### Flip both
 
-**Sintassi:** obj << flip both
+**Sintassi:** obj &lt;&lt; flip both
 
 **Descrizione:** Capovolge l&apos;immagine nel segmento immagine sia in senso verticale che orizzontale.
 
@@ -179,7 +179,7 @@ imgSeg << flip both;
 
 ### Flip horizontal
 
-**Sintassi:** obj << flip horizontal
+**Sintassi:** obj &lt;&lt; flip horizontal
 
 **Descrizione:** Capovolge l&apos;immagine nel segmento immagine in senso orizzontale.
 
@@ -201,7 +201,7 @@ imgSeg << flip horizontal;
 
 ### Flip vertical
 
-**Sintassi:** obj << flip vertical
+**Sintassi:** obj &lt;&lt; flip vertical
 
 **Descrizione:** Capovolge l&apos;immagine nel segmento immagine in senso verticale.
 
@@ -223,7 +223,7 @@ imgSeg << flip vertical;
 
 ### Gamma
 
-**Sintassi:** obj << filter("gamma")
+**Sintassi:** obj &lt;&lt; filter("gamma")
 
 **Descrizione:** Regola la gamma nell&apos;immagine nel segmento immagine. Il  range utile va da 0 a 10. Un valore da 0 a 1 diminuisce la gamma. Un valore maggiore di 1 aumenta la gamma.
 
@@ -245,7 +245,7 @@ imgSeg << Filter( "gamma", 1.5 );
 
 ### Gaussian Blur
 
-**Sintassi:** obj << filter("gaussian blur", radius, sigma)
+**Sintassi:** obj &lt;&lt; filter("gaussian blur", radius, sigma)
 
 **Descrizione:** Applica una sfocatura all&apos;immagine nel segmento immagine. Il range utile per il raggio va da 0 a 5.
 
@@ -267,7 +267,7 @@ imgSeg << Filter( "gaussian blur", 0.0, 1.0 );
 
 ### Get Bounds
 
-**Sintassi:** {left, right, top, bottom} = obj << Get Bounds
+**Sintassi:** {left, right, top, bottom} = obj &lt;&lt; Get Bounds
 
 **Descrizione:** Restituisce i limiti del segmento immagine in coordinate degli assi nell&apos;ordine sinistra, destra, alto e basso.
 
@@ -289,7 +289,7 @@ imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
 
 ### Get Size
 
-**Sintassi:** {width, height} = obj << Get Size
+**Sintassi:** {width, height} = obj &lt;&lt; Get Size
 
 **Descrizione:** Restituisce le dimensioni del segmento immagine in coordinate dei pixel quali larghezza e altezza.
 
@@ -311,7 +311,7 @@ imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
 
 ### Lock
 
-**Sintassi:** obj << Lock( state=0|1 )
+**Sintassi:** obj &lt;&lt; Lock( state=0|1 )
 
 **Descrizione:** Blocca l&apos;immagine nel segmento immagine in posizione evitando che venga spostata, ridimensionata o ruotata interattivamente.
 
@@ -333,7 +333,7 @@ imgSeg << lock( 1 );
 
 ### Median
 
-**Sintassi:** obj << filter("median")
+**Sintassi:** obj &lt;&lt; filter("median")
 
 **Descrizione:** Applica un filtro mediano all&apos;immagine nel segmento immagine. Questa operazione sostituisce ogni valore di pixel con il valore mediano dei pixel circostanti.
 
@@ -355,7 +355,7 @@ imgSeg << Filter( "median" );
 
 ### Move
 
-**Sintassi:** obj << Move( xcenter, ycenter )
+**Sintassi:** obj &lt;&lt; Move( xcenter, ycenter )
 
 **Descrizione:** Sposta il centro dell&apos;immagine alla posizione x,y specificata, dove xcentro e ycentro sono espressi in coordinate dell&apos;asse.
 
@@ -373,7 +373,7 @@ imgSeg << Move( 75, 75 );
 
 ### Negate
 
-**Sintassi:** obj << filter("negate")
+**Sintassi:** obj &lt;&lt; filter("negate")
 
 **Descrizione:** Applica un filtro all&apos;immagine nel segmento immagine che inverte i colori. Rosso, verde e blu diventano ciano, giallo e magenta, il bianco diventa nero, ecc.
 
@@ -395,7 +395,7 @@ imgSeg << Filter( "negate" );
 
 ### Normalize
 
-**Sintassi:** obj << filter("normalize")
+**Sintassi:** obj &lt;&lt; filter("normalize")
 
 **Descrizione:** Applica un filtro di normalizzazione all&apos;immagine nel segmento immagine. Rileva il range dei valori dei pixel dell&apos;immagine e li estende al range di colori creando un contrasto di colori più ampio.
 
@@ -417,7 +417,7 @@ imgSeg << Filter( "normalize" );
 
 ### Open
 
-**Sintassi:** obj << Open( filename )
+**Sintassi:** obj &lt;&lt; Open( filename )
 
 **Descrizione:** Apre un file di immagine e aggiunge l&apos;immagine al segmento immagine.
 
@@ -436,7 +436,7 @@ imgBox << AddImage(
 
 ### Reduce Noise
 
-**Sintassi:** obj << filter("reduce noise", radius)
+**Sintassi:** obj &lt;&lt; filter("reduce noise", radius)
 
 **Descrizione:** Applica un filtro di riduzione del rumore all&apos;immagine nel segmento immagine. Calcola la media di un pixel rispetto ai vicini sulla base del raggio. Il range utile va da 0 a 5.
 
@@ -458,7 +458,7 @@ imgSeg << Filter( "reduce noise", 2.0 );
 
 ### Remove
 
-**Sintassi:** obj << Remove
+**Sintassi:** obj &lt;&lt; Remove
 
 **Descrizione:** Rimuove il segmento immagine dal riquadro di visualizzazione.
 
@@ -481,7 +481,7 @@ imgSeg << remove;
 
 ### Rotate
 
-**Sintassi:** obj << Rotate( degrees )
+**Sintassi:** obj &lt;&lt; Rotate( degrees )
 
 **Descrizione:** Ruota il segmento immagine in senso orario del numero di gradi specificato.
 
@@ -503,7 +503,7 @@ imgSeg << rotate( 45 );
 
 ### SetSize
 
-**Sintassi:** obj << SetSize( {width, height} )
+**Sintassi:** obj &lt;&lt; SetSize( {width, height} )
 
 **Descrizione:** Imposta le dimensioni del segmento immagine in coordinate dei pixel quali larghezza e altezza.
 
@@ -526,7 +526,7 @@ imgSeg << setSize( {300, 500} );
 
 ### Sharpen
 
-**Sintassi:** obj << filter("sharpen")
+**Sintassi:** obj &lt;&lt; filter("sharpen")
 
 **Descrizione:** Applica un filtro di nitidezza all&apos;immagine nel segmento immagine rendendone più nitido l&apos;aspetto.
 
@@ -548,7 +548,7 @@ imgSeg << Filter( "sharpen" );
 
 ### Specify Size
 
-**Sintassi:** obj << Specify Size
+**Sintassi:** obj &lt;&lt; Specify Size
 
 **Descrizione:** Imposta i limiti del segmento immagine. Simile a Imposta limiti ad eccezione dell&apos;ordine implicito che qui è sinistra, alto, destra, basso. L&apos;immagine potrebbe pertanto risultare distorta in quanto non vengono conservate le proporzioni.
 
@@ -568,7 +568,7 @@ imgSeg << Specify Size( 0, 100, 100, 0 );
 
 ### Transparency
 
-**Sintassi:** obj << Transparency( transparency )
+**Sintassi:** obj &lt;&lt; Transparency( transparency )
 
 **Descrizione:** Imposta la trasparenza per il segmento immagine dove 0.0 è completamente trasparente e 1.0 è completamente opaco.
 

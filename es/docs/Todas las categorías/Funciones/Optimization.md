@@ -2,11 +2,9 @@
 
 
 
-## Funciones
-
 ### Constrained Maximize
 
-**Sintaxis:** Constrained Maximize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, <<LessThanEQ({mat_A, vec_b}), <<GreaterThanEQ({mat_A, vec_b}), <<EqualTo({mat_A, vec_b}), <<MaxIter( 250 ), <<tolerance( .00001 ), <<ShowDetails(True), <<StartingValues([x1, x2, ... ])), <<SetVariableLimit({lowerLimitVector,upperLimitVector})
+**Sintaxis:** Constrained Maximize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;LessThanEQ({mat_A, vec_b}), &lt;&lt;GreaterThanEQ({mat_A, vec_b}), &lt;&lt;EqualTo({mat_A, vec_b}), &lt;&lt;MaxIter( 250 ), &lt;&lt;tolerance( .00001 ), &lt;&lt;ShowDetails(True), &lt;&lt;StartingValues([x1, x2, ... ])), &lt;&lt;SetVariableLimit({lowerLimitVector,upperLimitVector})
 
 **Descripción:** Busca valores para los argumentos de la función, especificados en la lista {x1, x2, ...}, que maximizan la expresión expr con restricciones lineales opcionales. Las variables, x1, x2, etc. pueden ser escalares o vectores. Deben especificarse límites inferior y superior para cada variable entre paréntesis siguiendo el nombre de la variable o con el parámetro opcional <<SetVariableLimits(). Los argumentos opcionales para la función Constrained Maximize le permiten especificar lo siguiente: restricciones lineales, número máximo de iteraciones, tolerancia deseada, detalles de salida, valores de inicio y límites para las variables de optimización. (Consulte el ejemplo 2.) Las restricciones lineales se especifican con la matriz de coeficientes mat_A y el vector de la parte derecha vec_b.
 
@@ -61,7 +59,7 @@ Show( x, objVal, iters, gradient, hessian );
 
 ### Constrained Minimize
 
-**Sintaxis:** Constrained Minimize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, <<LessThanEQ({mat_A, vec_b}), <<GreaterThanEQ({mat_A, vec_b}), <<EqualTo({mat_A, vec_b}), <<MaxIter( 250 ), <<tolerance( .00001 ), <<ShowDetails(True), <<StartingValues([x1, x2, ... ])), <<SetVariableLimit({low,high})
+**Sintaxis:** Constrained Minimize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;LessThanEQ({mat_A, vec_b}), &lt;&lt;GreaterThanEQ({mat_A, vec_b}), &lt;&lt;EqualTo({mat_A, vec_b}), &lt;&lt;MaxIter( 250 ), &lt;&lt;tolerance( .00001 ), &lt;&lt;ShowDetails(True), &lt;&lt;StartingValues([x1, x2, ... ])), &lt;&lt;SetVariableLimit({low,high})
 
 **Descripción:** Busca valores para los argumentos de la función, especificados en la lista {x1, x2, ...}, que minimizan la expresión expr con restricciones lineales opcionales. Las variables, x1, x2, etc. pueden ser escalares o vectores. Deben especificarse límites inferior y superior para cada variable entre paréntesis siguiendo el nombre de la variable o con el parámetro opcional <<SetVariableLimits(). Los argumentos opcionales para la función Constrained Minimize le permiten especificar lo siguiente: restricciones lineales, número máximo de iteraciones, tolerancia deseada, detalles de salida, valores de inicio y límites para las variables de optimización. (Consulte el ejemplo 2.) Las restricciones lineales se especifican con la matriz de coeficientes mat_A y el vector de la parte derecha vec_b.
 
@@ -141,7 +139,7 @@ New Window( "Desirability",
 
 ### LPSolve
 
-**Sintaxis:** {x, z} = LPSolve( A, b, c, L, U, neq, nle, nge, <slackVars=0> )
+**Sintaxis:** {x, z} = LPSolve( A, b, c, L, U, neq, nle, nge, &lt;slackVars=0&gt; )
 
 **Descripción:** Minimiza la función objetivo sujeta a las restricciones especificadas y devuelve una lista de dos elementos. El primer elemento de la lista, x, contiene las variables de decisión (y valores de variables de holgura si slackVars=1). El segundo elemento de la lista, z, contiene el valor óptimo de la función objetivo (si es que existe). Los primeros cinco argumentos son matrices. El argumento A es la matriz de coeficientes de restricción. El argumento b es la columna de los valores de la derecha de las restricciones. El argumento c es el vector de los coeficientes de coste de la función objetivo. Los argumentos L y U son los límites inferior y superior de las variables, respectivamente. Los argumentos neq, nle y nge son el número de restricciones de igualdad, de restricciones de tipo menor o igual que y de restricciones de tipo mayor o igual que, respectivamente. Nótese que las restricciones se deben listar indicando las de igualdad en primer lugar, seguidas de las de tipo menor o igual que y, finalmente, las de tipo mayor o igual que.
 
@@ -162,9 +160,7 @@ Show( x, z );
 
 ### Maximize
 
-**Sintaxis:** Maximize( expr, {x1, x2, ...} );
-
-Maximize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, <<MaxIter( 250 ), <<Tolerance( .00000001 ), <<details(both | returnDetails | displaySteps), <<gradient(), <<hessian(), method(NR | SR1), <<useNumericDeriv(True))
+**Sintaxis:** Maximize( expr, {x1, x2, ...} );Maximize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;MaxIter( 250 ), &lt;&lt;Tolerance( .00000001 ), &lt;&lt;details(both | returnDetails | displaySteps), &lt;&lt;gradient(), &lt;&lt;hessian(), method(NR | SR1), &lt;&lt;useNumericDeriv(True))
 
 **Descripción:** Busca valores para los argumentos de la función, especificados en la lista {x1, x2, ...}, que maximizan la expresión expr. Puede especificar los límites inferior y superior para cada argumento entre paréntesis después del nombre del argumento. Si expr no es una función cóncava, es posible que Maximize encuentre un máximo local en lugar de un máximo global. Si esto supone un problema, pruebe a utilizar varios valores iniciales. Además, Maximize funciona mejor con las funciones que tienen una segunda derivada continua. Los argumentos adicionales para la función Maximize le permiten establecer el número máximo de iteraciones y la tolerancia de la convergencia, así como ver más detalles acerca de la optimización. Haga clic en el botón Tema de ayuda para obtener más información acerca de los argumentos opcionales.
 
@@ -225,9 +221,7 @@ y = 0;
 
 ### Minimize
 
-**Sintaxis:** Minimize( expr, {x1, x2, ...} );
-
-Minimize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, <<MaxIter( 250 ), <<Tolerance( .00000001 ), <<details(both | returnDetails | displaySteps), <<gradient(), <<Hessian(), <<method(NR | SR1), <<useNumericDeriv(True))
+**Sintaxis:** Minimize( expr, {x1, x2, ...} );Minimize( expr, {x1( low1, up1 ), x2( low2, up2 ), ...}, &lt;&lt;MaxIter( 250 ), &lt;&lt;Tolerance( .00000001 ), &lt;&lt;details(both | returnDetails | displaySteps), &lt;&lt;gradient(), &lt;&lt;Hessian(), &lt;&lt;method(NR | SR1), &lt;&lt;useNumericDeriv(True))
 
 **Descripción:** Busca valores para los argumentos de la función, especificados en la lista {x1, x2, ...}, que minimizan la expresión expr. Puede especificar los límites inferior y superior para cada argumento entre paréntesis después del nombre del argumento. Si expr no es una función convexa, es posible que Minimize encuentre un mínimo local en lugar de un mínimo global. Si esto supone un problema, pruebe a utilizar varios valores iniciales. Además, Minimize funciona mejor con las funciones que tienen una segunda derivada continua. Los argumentos adicionales para la función Minimize le permiten establecer el número máximo de iteraciones y la tolerancia de la convergencia, así como ver más detalles acerca de la optimización. Haga clic en el botón Tema de ayuda para obtener más información acerca de los argumentos opcionales.
 

@@ -6,7 +6,7 @@
 
 ### Append Seg
 
-**Syntax:** obj << Append Seg( display seg )
+**Syntax:** obj &lt;&lt; Append Seg( display seg )
 
 **Beschreibung:** Fügt ein Anzeigesegment in das Rahmenfeld ein.
 
@@ -22,11 +22,11 @@ New Window( "Example",
 
 ### Background Map
 
-**Syntax:** obj << Background Map
+**Syntax:** obj &lt;&lt; Background Map
 
 ### Bottom
 
-**Syntax:** obj << Bottom( number )
+**Syntax:** obj &lt;&lt; Bottom( number )
 
 ### FrameSize
 
@@ -106,111 +106,111 @@ New Window( "Example",
 
 ### Get Background Color
 
-**Syntax:** obj << Get Background Color( color )
+**Syntax:** obj &lt;&lt; Get Background Color( color )
 
 ### Get Background Fill
 
-**Syntax:** obj << Get Background Fill( state=0|1 )
+**Syntax:** obj &lt;&lt; Get Background Fill( state=0|1 )
 
 ### Get Bottom
 
-**Syntax:** obj << Get Bottom
+**Syntax:** obj &lt;&lt; Get Bottom
 
 ### Get Graphics Script
 
-**Syntax:** obj << Get Graphics Script
+**Syntax:** obj &lt;&lt; Get Graphics Script
 
 ### Get Height
 
-**Syntax:** obj << Get Height
+**Syntax:** obj &lt;&lt; Get Height
 
 ### Get Left
 
-**Syntax:** obj << Get Left
+**Syntax:** obj &lt;&lt; Get Left
 
 ### Get Right
 
-**Syntax:** obj << Get Right
+**Syntax:** obj &lt;&lt; Get Right
 
 ### Get Sides
 
-**Syntax:** obj << Get Sides
+**Syntax:** obj &lt;&lt; Get Sides
 
 ### Get Top
 
-**Syntax:** obj << Get Top
+**Syntax:** obj &lt;&lt; Get Top
 
 ### Get Width
 
-**Syntax:** obj << Get Width
+**Syntax:** obj &lt;&lt; Get Width
 
 ### Get X Axis
 
-**Syntax:** obj << Get X Axis
+**Syntax:** obj &lt;&lt; Get X Axis
 
 ### Get X Name
 
-**Syntax:** obj << Get X Name
+**Syntax:** obj &lt;&lt; Get X Name
 
 ### Get Y Axis
 
-**Syntax:** obj << Get Y Axis
+**Syntax:** obj &lt;&lt; Get Y Axis
 
 ### Get Y Name
 
-**Syntax:** obj << Get Y Name
+**Syntax:** obj &lt;&lt; Get Y Name
 
 ### Left
 
-**Syntax:** obj << Left( number )
+**Syntax:** obj &lt;&lt; Left( number )
 
 ### Right
 
-**Syntax:** obj << Right( number )
+**Syntax:** obj &lt;&lt; Right( number )
 
 ### Set Background Color
 
-**Syntax:** obj << Set Background Color( color )
+**Syntax:** obj &lt;&lt; Set Background Color( color )
 
 ### Set Background Fill
 
-**Syntax:** obj << Set Background Fill( state=0|1 )
+**Syntax:** obj &lt;&lt; Set Background Fill( state=0|1 )
 
 ### Set Graphics Script
 
-**Syntax:** obj << Set Graphics Script
+**Syntax:** obj &lt;&lt; Set Graphics Script
 
 ### Set Height
 
-**Syntax:** obj << Set Height
+**Syntax:** obj &lt;&lt; Set Height
 
 ### Set Width
 
-**Syntax:** obj << Set Width
+**Syntax:** obj &lt;&lt; Set Width
 
 ### Set X Axis
 
-**Syntax:** obj << Set X Axis
+**Syntax:** obj &lt;&lt; Set X Axis
 
 ### Set X Name
 
-**Syntax:** obj << Set X Name
+**Syntax:** obj &lt;&lt; Set X Name
 
 ### Set Y Axis
 
-**Syntax:** obj << Set Y Axis
+**Syntax:** obj &lt;&lt; Set Y Axis
 
 ### Set Y Name
 
-**Syntax:** obj << Set Y Name
+**Syntax:** obj &lt;&lt; Set Y Name
 
 ### Sides
 
-**Syntax:** obj << Sides( number )
+**Syntax:** obj &lt;&lt; Sides( number )
 
 ### Suppress Axes
 
-**Syntax:** obj << Suppress Axes
+**Syntax:** obj &lt;&lt; Suppress Axes
 
 **Beschreibung:** Blendet die Achsen des Graphenfelds aus.
 
@@ -252,7 +252,7 @@ obj = New Window( "Example",
 
 ### Top
 
-**Syntax:** obj << Top( number )
+**Syntax:** obj &lt;&lt; Top( number )
 
 ### X Scale
 
@@ -402,7 +402,7 @@ obj = New Window( "Example",
 
 ### Custom Graph
 
-**Syntax:** New Window(Window title, <Editable|Dialog>, Graph Box( named arguments, ..., script segment
+**Syntax:** New Window(Window title, &lt;Editable|Dialog&gt;, Graph Box( named arguments, ..., script segment
 
 **Beschreibung:** Erstellt einen Graphen anhand eines benutzerdefinierten Skripts.
 

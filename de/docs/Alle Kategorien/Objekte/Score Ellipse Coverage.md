@@ -6,13 +6,13 @@
 
 ### Remove Fit
 
-**Syntax:** obj << Remove Fit
+**Syntax:** obj &lt;&lt; Remove Fit
 
 **JMP Version hinzugefügt:** 15
 
 ### Shaded Contour
 
-**Syntax:** obj << Shaded Contour( state=0|1 )
+**Syntax:** obj &lt;&lt; Shaded Contour( state=0|1 )
 
 **Beschreibung:** Zeigt die schattierte Kontur an oder blendet sie aus.
 

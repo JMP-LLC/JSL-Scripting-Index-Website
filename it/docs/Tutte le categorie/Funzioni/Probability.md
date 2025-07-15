@@ -2,11 +2,9 @@
 
 
 
-## Funzioni
-
 ### Beta Density
 
-**Sintassi:** y = Beta Density( q, alpha, beta, <theta=0>, <sigma=1> )
+**Sintassi:** y = Beta Density( q, alpha, beta, &lt;theta=0&gt;, &lt;sigma=1&gt; )
 
 **Descrizione:** Restituisce la densità in q per una distribuzione beta, dove q è nell&apos;intervallo da theta a theta + sigma, alpha e beta sono parametri della forma, theta e sigma sono rispettivamente parametri della soglia e del range.
 
@@ -34,7 +32,7 @@ New Window( "Example: Beta Density",
 
 ### Beta Distribution
 
-**Sintassi:** p = Beta Distribution( q, alpha, beta, <theta=0>, <sigma=1> )
+**Sintassi:** p = Beta Distribution( q, alpha, beta, &lt;theta=0&gt;, &lt;sigma=1&gt; )
 
 **Descrizione:** Restituisce la probabilità che una variabile casuale con distribuzione beta sia minore di q, dove alpha e beta sono parametri della forma etheta e sigma sono rispettivamente parametri della soglia e del range.
 
@@ -62,7 +60,7 @@ New Window( "Example: Beta Distribution",
 
 ### Beta Quantile
 
-**Sintassi:** q = Beta Quantile( p, alpha, beta, <theta=0>, <sigma=1> )
+**Sintassi:** q = Beta Quantile( p, alpha, beta, &lt;theta=0&gt;, &lt;sigma=1&gt; )
 
 **Descrizione:** Restituisce il quantile da una distribuzione beta, il valore per cui la probabilità che un valore casuale sia inferiore è pari a p, dove alpha e beta sono parametri della forma e theta e sigma sono rispettivamente parametri della soglia e del range.
 
@@ -77,7 +75,7 @@ Beta Quantile( 0.95, 2, 5 );
 
 ### Cauchy Density
 
-**Sintassi:** y = Cauchy Density( q, <center>, <scale> )
+**Sintassi:** y = Cauchy Density( q, &lt;center&gt;, &lt;scale&gt; )
 
 **Descrizione:** Restituisce la densità a q di una distribuzione di Cauchy con centro mu e scala sigma.
 
@@ -100,7 +98,7 @@ New Window( "Example: Cauchy Density",
 
 ### Cauchy Distribution
 
-**Sintassi:** p = Cauchy Distribution( q, <center>, <scale> )
+**Sintassi:** p = Cauchy Distribution( q, &lt;center&gt;, &lt;scale&gt; )
 
 **Descrizione:** Restituisce la probabilità che una variabile casuale distribuita di Cauchy sia inferiore a q.
 
@@ -123,7 +121,7 @@ New Window( "Example: Cauchy Distribution",
 
 ### Cauchy Quantile
 
-**Sintassi:** q = Cauchy Quantile( p, <center>, <scale> )
+**Sintassi:** q = Cauchy Quantile( p, &lt;center&gt;, &lt;scale&gt; )
 
 **Descrizione:** Restituisce il quantile da una distribuzione di Cauchy, il valore per cui la probabilità che un valore casuale sia inferiore è pari a p.
 
@@ -146,7 +144,7 @@ New Window( "Example: Cauchy Quantile",
 
 ### ChiSquare Density
 
-**Sintassi:** p = ChiSquare Density( q, df, <nonCentrality=0> )
+**Sintassi:** p = ChiSquare Density( q, df, &lt;nonCentrality=0&gt; )
 
 **Descrizione:** Restituisce la densità in q di una distribuzione del chi-quadrato con gradi di libertà df.
 
@@ -172,7 +170,7 @@ New Window( "Example: ChiSquare Density",
 
 ### ChiSquare Distribution
 
-**Sintassi:** p = ChiSquare Distribution( q, df, <nonCentrality=0> )
+**Sintassi:** p = ChiSquare Distribution( q, df, &lt;nonCentrality=0&gt; )
 
 **Descrizione:** Restituisce la probabilità che una variabile casuale con distribuzione del chi-quadrato sia minore di q.
 
@@ -198,7 +196,7 @@ New Window( "Example: ChiSquare Distribution",
 
 ### ChiSquare Log CDistribution
 
-**Sintassi:** y = ChiSquare Log CDistribution( x, df, <nonCentrality=0> )
+**Sintassi:** y = ChiSquare Log CDistribution( x, df, &lt;nonCentrality=0&gt; )
 
 **Descrizione:** Restituisce il logaritmo della distribuzione del 1 - chi-quadrato.
 
@@ -224,7 +222,7 @@ New Window( "Example: ChiSquare Log CDistribution",
 
 ### ChiSquare Log Density
 
-**Sintassi:** y = ChiSquare Log Density( x, df, <nonCentrality=0> )
+**Sintassi:** y = ChiSquare Log Density( x, df, &lt;nonCentrality=0&gt; )
 
 **Descrizione:** Restituisce il logaritmo della densità di probabilità del chi-quadrato.
 
@@ -250,7 +248,7 @@ New Window( "Example: ChiSquare Log Density",
 
 ### ChiSquare Log Distribution
 
-**Sintassi:** y = ChiSquare Log Distribution( x, df, <nonCentrality=0> )
+**Sintassi:** y = ChiSquare Log Distribution( x, df, &lt;nonCentrality=0&gt; )
 
 **Descrizione:** Restituisce il logaritmo della distribuzione del chi-quadrato.
 
@@ -300,7 +298,7 @@ ChiSquare Noncentrality( 3, 2, ChiSquare Distribution( 3, 2, 0.5 ) );
 
 ### ChiSquare Quantile
 
-**Sintassi:** q = ChiSquare Quantile( p, df, <nonCentrality=0> )
+**Sintassi:** q = ChiSquare Quantile( p, df, &lt;nonCentrality=0&gt; )
 
 **Descrizione:** Restituisce il quantile da una distribuzione del chi-quadrato, il valore per cui la probabilità che un valore casuale sia inferiore è pari a p.
 
@@ -315,7 +313,7 @@ ChiSquare Quantile( 0.15, 5 );
 
 ### Dunnett P value
 
-**Sintassi:** p = Dunnett P value( q, nTrt, dfe, <lambdaVec = .> )
+**Sintassi:** p = Dunnett P value( q, nTrt, dfe, &lt;lambdaVec = .&gt; )
 
 **Descrizione:** Restituisce il p-value del test dei confronti multipli di Dunnett, dove q è la statistica di test, nTrt è il numero di trattamenti confrontati con il gruppo di controllo, dfe sono i gradi di libertà dell&apos;errore (basati sul campione totale dello studio) e lambdaVec facoltativo è un vettore di parametri, per impostazione predefinita impostati su 1/sqrt(2).
 
@@ -330,7 +328,7 @@ Dunnett P value( 1.67623, 3, 11 );
 
 ### Dunnett Quantile
 
-**Sintassi:** q = Dunnett Quantile( 1-alpha, nTrt, dfe, <lambdaVec = .> )
+**Sintassi:** q = Dunnett Quantile( 1-alpha, nTrt, dfe, &lt;lambdaVec = .&gt; )
 
 **Descrizione:** Restituisce il quantile richiesto per il test dei confronti multipli di Dunnett, dove 1-alpha è il livello di confidenza, nTrt è il numero di trattamenti confrontati con il gruppo di controllo, dfe sono i gradi di libertà dell&apos;errore (basati sul campione totale dello studio) e lambdaVec facoltativo è un vettore di parametri, per impostazione predefinita impostati su 1/sqrt(2).
 
@@ -414,7 +412,7 @@ New Window( "Example: ExGaussian Quantile",
 
 ### Exp Density
 
-**Sintassi:** y = Exp Density( x, <theta=1> )
+**Sintassi:** y = Exp Density( x, &lt;theta=1&gt; )
 
 **Descrizione:** Restituisce la densità a x di una distribuzione esponenziale con parametro theta.
 
@@ -437,7 +435,7 @@ New Window( "Example: Exp Density",
 
 ### Exp Distribution
 
-**Sintassi:** p = Exp Distribution( x, <theta=1> )
+**Sintassi:** p = Exp Distribution( x, &lt;theta=1&gt; )
 
 **Descrizione:** Restituisce la probabilità che una variabile casuale distribuita esponenzialmente sia inferiore a x.
 
@@ -460,7 +458,7 @@ New Window( "Example: Exp Distribution",
 
 ### Exp Quantile
 
-**Sintassi:** q = Exp Quantile( p, <theta=1> )
+**Sintassi:** q = Exp Quantile( p, &lt;theta=1&gt; )
 
 **Descrizione:** Restituisce il quantile da una distribuzione esponenziale, il valore per cui la probabilità che un valore casuale sia inferiore è pari a p.
 
@@ -482,7 +480,7 @@ New Window( "Example: Exp Quantile",
 
 ### Exponential Density
 
-**Sintassi:** y = Exponential Density( x, <theta=1> )
+**Sintassi:** y = Exponential Density( x, &lt;theta=1&gt; )
 
 **Descrizione:** Restituisce la densità a x di una distribuzione esponenziale con parametro theta.
 
@@ -505,7 +503,7 @@ New Window( "Example: Exponential Density",
 
 ### Exponential Distribution
 
-**Sintassi:** p = Exponential Distribution( x, <theta=1> )
+**Sintassi:** p = Exponential Distribution( x, &lt;theta=1&gt; )
 
 **Descrizione:** Restituisce la probabilità che una variabile casuale distribuita esponenzialmente sia inferiore a x.
 
@@ -528,7 +526,7 @@ New Window( "Example: Exponential Distribution",
 
 ### Exponential Quantile
 
-**Sintassi:** q = Exponential Quantile( p, <theta=1> )
+**Sintassi:** q = Exponential Quantile( p, &lt;theta=1&gt; )
 
 **Descrizione:** Restituisce il quantile da una distribuzione esponenziale, il valore per cui la probabilità che un valore casuale sia inferiore è pari a p.
 
@@ -550,7 +548,7 @@ New Window( "Example: Exponential Quantile",
 
 ### F Density
 
-**Sintassi:** y = F Density( q, dfnum, dfden, <nonCentrality=0> )
+**Sintassi:** y = F Density( q, dfnum, dfden, &lt;nonCentrality=0&gt; )
 
 **Descrizione:** Restituisce la densità in q di una distribuzione F con gradi di libertà dfne dfd.
 
@@ -578,7 +576,7 @@ New Window( "Example: F Density",
 
 ### F Distribution
 
-**Sintassi:** y = F Distribution( q, dfnum, dfden, <nonCentrality=0> )
+**Sintassi:** y = F Distribution( q, dfnum, dfden, &lt;nonCentrality=0&gt; )
 
 **Descrizione:** Restituisce la probabilità che una variabile casuale distribuita F sia inferiore a q.
 
@@ -606,7 +604,7 @@ New Window( "Example: F Distribution",
 
 ### F Log CDistribution
 
-**Sintassi:** y = F Log CDistribution( x, dfnum, dfden, <nonCentrality=0> )
+**Sintassi:** y = F Log CDistribution( x, dfnum, dfden, &lt;nonCentrality=0&gt; )
 
 **Descrizione:** Restituisce il logaritmo della distribuzione 1 - F.
 
@@ -634,7 +632,7 @@ New Window( "Example: F Log CDistribution",
 
 ### F Log Density
 
-**Sintassi:** y = F Log Density( x, dfnum, dfden, <nonCentrality=0> )
+**Sintassi:** y = F Log Density( x, dfnum, dfden, &lt;nonCentrality=0&gt; )
 
 **Descrizione:** Restituisce il logaritmo della densità di probabilità F.
 
@@ -662,7 +660,7 @@ New Window( "Example: F Log Density",
 
 ### F Log Distribution
 
-**Sintassi:** y = F Log Distribution( x, dfnum, dfden, <nonCentrality=0> )
+**Sintassi:** y = F Log Distribution( x, dfnum, dfden, &lt;nonCentrality=0&gt; )
 
 **Descrizione:** Restituisce il logaritmo della distribuzione F.
 
@@ -745,7 +743,7 @@ New Window( "Example: F Power (alpha=.05,dfh=5,dfm=5)",
 
 ### F Quantile
 
-**Sintassi:** q = F Quantile( p, dfnum, dfden, <nonCentrality=0> )
+**Sintassi:** q = F Quantile( p, dfnum, dfden, &lt;nonCentrality=0&gt; )
 
 **Descrizione:** Restituisce il quantile da una distribuzione F, il valore per cui la probabilità che un valore casuale sia inferiore è pari a p.
 
@@ -1008,7 +1006,7 @@ New Window( "Example: GLog Quantile",
 
 ### Gamma Density
 
-**Sintassi:** y = Gamma Density( q, <alpha=1>, <scale=1>, <threshold=0> )
+**Sintassi:** y = Gamma Density( q, &lt;alpha=1&gt;, &lt;scale=1&gt;, &lt;threshold=0&gt; )
 
 **Descrizione:** Restituisce la densità in q di una distribuzione di probabilità gamma, dove l&apos;argomento del parametro della forma alpha deve essere positivo.
 
@@ -1037,7 +1035,7 @@ New Window( "Example: Gamma Density",
 
 ### Gamma Distribution
 
-**Sintassi:** p = Gamma Distribution( q, <alpha=1>, <scale=1>, <threshold=0> )
+**Sintassi:** p = Gamma Distribution( q, &lt;alpha=1&gt;, &lt;scale=1&gt;, &lt;threshold=0&gt; )
 
 **Descrizione:** Restituisce la probabilità che una variabile casuale con distribuzione gamma sia inferiore a q, dove l&apos;argomento del parametro della forma alpha deve essere positivo. IGamma() è un nome di alias della Gamma Distribution(). La funzione Gamma Distribution() è equivalente a Gamma(alpha,q)/Gamma(alpha).
 
@@ -1066,7 +1064,7 @@ New Window( "Example: Gamma Distribution",
 
 ### Gamma Log CDistribution
 
-**Sintassi:** p = Gamma Log CDistribution( x, <alpha=1>, <scale=1>, <threshold=0> )
+**Sintassi:** p = Gamma Log CDistribution( x, &lt;alpha=1&gt;, &lt;scale=1&gt;, &lt;threshold=0&gt; )
 
 **Descrizione:** Restituisce il logaritmo di 1 – Distribuzione gamma.
 
@@ -1095,7 +1093,7 @@ New Window( "Example: Gamma Log CDistribution",
 
 ### Gamma Log Density
 
-**Sintassi:** y = Gamma Log Density( x, <alpha=1>, <scale=1>, <threshold=0> )
+**Sintassi:** y = Gamma Log Density( x, &lt;alpha=1&gt;, &lt;scale=1&gt;, &lt;threshold=0&gt; )
 
 **Descrizione:** Restituisce il logaritmo della funzione di densità della probabilità gamma.
 
@@ -1124,7 +1122,7 @@ New Window( "Example: Gamma Log Density",
 
 ### Gamma Log Distribution
 
-**Sintassi:** p = Gamma Log Distribution( x, <alpha=1>, <scale=1>, <threshold=0> )
+**Sintassi:** p = Gamma Log Distribution( x, &lt;alpha=1&gt;, &lt;scale=1&gt;, &lt;threshold=0&gt; )
 
 **Descrizione:** Restituisce il logaritmo della distribuzione gamma.
 
@@ -1153,7 +1151,7 @@ New Window( "Example: Gamma Log Distribution",
 
 ### Gamma Quantile
 
-**Sintassi:** q = Gamma Quantile( p, <alpha=1>, <scale=1>, <threshold=0> )
+**Sintassi:** q = Gamma Quantile( p, &lt;alpha=1&gt;, &lt;scale=1&gt;, &lt;threshold=0&gt; )
 
 **Descrizione:** Restituisce il quantile da una distribuzione gamma, il valore per cui la probabilità che un valore casuale sia inferiore è pari a p.
 
@@ -1278,7 +1276,7 @@ New Window( "Example: GenGamma Quantile",
 
 ### IGamma
 
-**Sintassi:** p = Gamma Distribution( q, <alpha=1>, <scale=1>, <threshold=0> )
+**Sintassi:** p = Gamma Distribution( q, &lt;alpha=1&gt;, &lt;scale=1&gt;, &lt;threshold=0&gt; )
 
 **Descrizione:** Restituisce la probabilità che una variabile casuale con distribuzione gamma sia inferiore a q, dove l&apos;argomento del parametro della forma alpha deve essere positivo. IGamma() è un nome di alias della Gamma Distribution(). La funzione Gamma Distribution() è equivalente a Gamma(alpha,q)/Gamma(alpha).
 
@@ -1406,7 +1404,7 @@ Johnson Sb Quantile( 0.5, 0.5, 1, 1, 1 );
 
 ### Johnson Sl Density
 
-**Sintassi:** y = Johnson Sl Density( q, gamma, delta, theta, <sigma=1> )
+**Sintassi:** y = Johnson Sl Density( q, gamma, delta, theta, &lt;sigma=1&gt; )
 
 **Descrizione:** Restituisce la densità a q di una distribuzione Johnson Sl, dove q è nell&apos;intervallo a theta +∞, delta>0 e gamma tra -∞ e +∞ sono parametri di forma, sigmauguale a +1 o -1 è un parametro di scala, e theta tra -∞ e +∞ è un parametro di soglia. Nota: quando sigma = 1, thetaè il limite inferiore sulla distribuzione, e quando sigma=-1, thetaè il limite superiore. Inoltre, positivo implica sigma spostamento positivo, e negativo implica spostamento negativo sigma.
 
@@ -1451,7 +1449,7 @@ New Window( "Example: Johnson Sl Density",
 
 ### Johnson Sl Distribution
 
-**Sintassi:** p = Johnson Sl Distribution( q, gamma, delta, theta, <sigma=1> )
+**Sintassi:** p = Johnson Sl Distribution( q, gamma, delta, theta, &lt;sigma=1&gt; )
 
 **Descrizione:** Restituisce la probabilità che una variabile casuale distribuita Sl di Johnson sia inferiore a q. (Nota: vedere la funzione Johnson Sl Density() per le descrizioni dei parametri.)
 
@@ -1496,7 +1494,7 @@ New Window( "Example: Johnson Sl Distribution",
 
 ### Johnson Sl Quantile
 
-**Sintassi:** q = Johnson Sl Quantile( p, gamma, delta, theta, <sigma=1> )
+**Sintassi:** q = Johnson Sl Quantile( p, gamma, delta, theta, &lt;sigma=1&gt; )
 
 **Descrizione:** Restituisce il quantile da una distribuzione Sl di Johnson, il valore per cui la probabilità che un valore casuale sia inferiore è pari a p. (Nota: p è il primo parametro. Vedere la funzione Johnson Sl Density() per le descrizioni dei parametri.)
 
@@ -2104,7 +2102,7 @@ New Window( "Example: Lognormal Quantile",
 
 ### Normal Biv Distribution
 
-**Sintassi:** y = Normal Biv Distribution( x, y, r, <mu1=0>, <s1=1>, <mu2=0>, <s2=1> )
+**Sintassi:** y = Normal Biv Distribution( x, y, r, &lt;mu1=0&gt;, &lt;s1=1&gt;, &lt;mu2=0&gt;, &lt;s2=1&gt; )
 
 **Descrizione:** Calcola la probabilità che un&apos;osservazione (X, Y) sia inferiore o uguale a (x, y) con coefficiente di correlazione r dove X è distribuita normalmente ai margini con media mu1 e deviazione standard s1 e Y è distribuita normalmente ai margini con media mu2 e deviazione standard s2. Se mu1, s1, mu2 e s2 non sono dati, la funzione ipotizza la distribuzione bivariata normale standard con mu1=0, s1=1, mu2=0 e s2=1.
 
@@ -2119,7 +2117,7 @@ Normal Biv Distribution( -2, -2, .5, 1, 1.5, -1, 2 );
 
 ### Normal Density
 
-**Sintassi:** y = Normal Density( q, <mu=0>, <sigma=1> )
+**Sintassi:** y = Normal Density( q, &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **Descrizione:** Restituisce la densità in q di una distribuzione normale con media mu e deviazione standard sigma.
 
@@ -2142,7 +2140,7 @@ New Window( "Example: Normal Density",
 
 ### Normal Distribution
 
-**Sintassi:** p = Normal Distribution( q, <mu=0>, <sigma=1> )
+**Sintassi:** p = Normal Distribution( q, &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **Descrizione:** Restituisce la probabilità che una variabile casuale distribuita normalmente sia inferiore a q.
 
@@ -2165,7 +2163,7 @@ New Window( "Example: Normal Distribution",
 
 ### Normal Log CDistribution
 
-**Sintassi:** y = Normal Log CDistribution( x, <mean=0>, <std dev=1> )
+**Sintassi:** y = Normal Log CDistribution( x, &lt;mean=0&gt;, &lt;std dev=1&gt; )
 
 **Descrizione:** Restituisce il logaritmo della distribuzione 1 - normale a x con media mu e deviazione standard sigma.
 
@@ -2188,7 +2186,7 @@ New Window( "Example: Normal Log CDistribution",
 
 ### Normal Log Density
 
-**Sintassi:** y = Normal Log Density( x, <mu=0>, <sigma=1>)
+**Sintassi:** y = Normal Log Density( x, &lt;mu=0&gt;, &lt;sigma=1&gt;)
 
 **Descrizione:** Restituisce il logaritmo della densità di probabilità normale a x con media mu e deviazione standard sigma.
 
@@ -2211,7 +2209,7 @@ New Window( "Example: Normal Log Density",
 
 ### Normal Log Distribution
 
-**Sintassi:** y = Normal Log Distribution( x, <mean=0>, <std dev=1> )
+**Sintassi:** y = Normal Log Distribution( x, &lt;mean=0&gt;, &lt;std dev=1&gt; )
 
 **Descrizione:** Restituisce il logaritmo della distribuzione normale a x con media mu e deviazione standard sigma.
 
@@ -2374,7 +2372,7 @@ New Window( "Example: Normal Mixture Quantile",
 
 ### Normal Quantile
 
-**Sintassi:** q = Normal Quantile( p, <mu=0>, <sigma=1> ); q = Probit( p )
+**Sintassi:** q = Normal Quantile( p, &lt;mu=0&gt;, &lt;sigma=1&gt; ); q = Probit( p )
 
 **Descrizione:** Restituisce il quantile da una distribuzione normale, il valore per cui la probabilità che un valore casuale sia inferiore è pari a p.
 
@@ -2389,7 +2387,7 @@ Normal Quantile( 0.9 );
 
 ### Probit
 
-**Sintassi:** q = Normal Quantile( p, <mu=0>, <sigma=1> ); q = Probit( p )
+**Sintassi:** q = Normal Quantile( p, &lt;mu=0&gt;, &lt;sigma=1&gt; ); q = Probit( p )
 
 **Descrizione:** Restituisce il quantile da una distribuzione normale, il valore per cui la probabilità che un valore casuale sia inferiore è pari a p.
 
@@ -2626,7 +2624,7 @@ Show( result1, result2 );
 
 ### Students t Density
 
-**Sintassi:** p = t Density( q, df, <nonCentrality=0> )
+**Sintassi:** p = t Density( q, df, &lt;nonCentrality=0&gt; )
 
 **Descrizione:** Restituisce la funzione di densità t di Student.
 
@@ -2661,7 +2659,7 @@ New Window( "Example: Students t Density",
 
 ### Students t Distribution
 
-**Sintassi:** p = t Distribution( q, df, <nonCentrality=0> )
+**Sintassi:** p = t Distribution( q, df, &lt;nonCentrality=0&gt; )
 
 **Descrizione:** Restituisce la probabilità che una variabile casuale con distribuzione t di Student sia minore di q.
 
@@ -2687,7 +2685,7 @@ New Window( "Example: Students t Distribution",
 
 ### Students t Quantile
 
-**Sintassi:** q = t Quantile( p, df, <nonCentrality=0> )
+**Sintassi:** q = t Quantile( p, df, &lt;nonCentrality=0&gt; )
 
 **Descrizione:** Restituisce il quantile da una distribuzione t di Student, il valore per cui la probabilità che un valore casuale sia inferiore è pari a p.
 
@@ -2772,7 +2770,7 @@ New Window( "Example: Tukey HSD Quantile",
 
 ### Weibull Density
 
-**Sintassi:** y = Weibull Density( x, shape, <scale=1>, <threshold=0> )
+**Sintassi:** y = Weibull Density( x, shape, &lt;scale=1&gt;, &lt;threshold=0&gt; )
 
 **Descrizione:** Restituisce la densità a x di una distribuzione della probabilità di Weibull con parametro shape e parametro facoltativo scale.
 
@@ -2798,7 +2796,7 @@ New Window( "Example: Weibull Density",
 
 ### Weibull Distribution
 
-**Sintassi:** p = Weibull Distribution( x, shape, <scale=1>, <threshold=0> )
+**Sintassi:** p = Weibull Distribution( x, shape, &lt;scale=1&gt;, &lt;threshold=0&gt; )
 
 **Descrizione:** Restituisce la probabilità che una variabile casuale con distribuzione di Weibull (con parametro shape e parametro facoltativo scale) sia minore di x.
 
@@ -2824,7 +2822,7 @@ New Window( "Example: Weibull Distribution",
 
 ### Weibull Quantile
 
-**Sintassi:** q = Weibull Quantile( p, beta, <alpha=1>, <threshold=0> )
+**Sintassi:** q = Weibull Quantile( p, beta, &lt;alpha=1&gt;, &lt;threshold=0&gt; )
 
 **Descrizione:** Restituisce il quantile da una distribuzione di Weibull, il valore per cui la probabilità che un valore casuale sia inferiore è pari a p, dove beta e alpha sono rispettivamente parametri della forma e della scala.
 
@@ -2860,7 +2858,7 @@ New Window( "Example: Weibull Quantile",
 
 ### t Density
 
-**Sintassi:** p = t Density( q, df, <nonCentrality=0> )
+**Sintassi:** p = t Density( q, df, &lt;nonCentrality=0&gt; )
 
 **Descrizione:** Restituisce la funzione di densità t di Student.
 
@@ -2895,7 +2893,7 @@ New Window( "Example: Students t Density",
 
 ### t Distribution
 
-**Sintassi:** p = t Distribution( q, df, <nonCentrality=0> )
+**Sintassi:** p = t Distribution( q, df, &lt;nonCentrality=0&gt; )
 
 **Descrizione:** Restituisce la probabilità che una variabile casuale con distribuzione t di Student sia minore di q.
 
@@ -2921,7 +2919,7 @@ New Window( "Example: Students t Distribution",
 
 ### t Log CDistribution
 
-**Sintassi:** y = t Log CDistribution( x, df, <nc> )
+**Sintassi:** y = t Log CDistribution( x, df, &lt;nc&gt; )
 
 **Descrizione:** Restituisce il logaritmo della distribuzione 1 - t.
 
@@ -2947,7 +2945,7 @@ New Window( "Example: Students t Log CDistribution",
 
 ### t Log Density
 
-**Sintassi:** y = t Log Density( x, df, <nc> )
+**Sintassi:** y = t Log Density( x, df, &lt;nc&gt; )
 
 **Descrizione:** Restituisce il logaritmo della densità di probabilità t.
 
@@ -2973,7 +2971,7 @@ New Window( "Example: Students t Log Density",
 
 ### t Log Distribution
 
-**Sintassi:** y = t Log Distribution( x, df, <nc> )
+**Sintassi:** y = t Log Distribution( x, df, &lt;nc&gt; )
 
 **Descrizione:** Restituisce il logaritmo della distribuzione t.
 
@@ -3023,7 +3021,7 @@ t Distribution( 3, 2, t Noncentrality( 3, 2, 0.5 ) );
 
 ### t Quantile
 
-**Sintassi:** q = t Quantile( p, df, <nonCentrality=0> )
+**Sintassi:** q = t Quantile( p, df, &lt;nonCentrality=0&gt; )
 
 **Descrizione:** Restituisce il quantile da una distribuzione t di Student, il valore per cui la probabilità che un valore casuale sia inferiore è pari a p.
 

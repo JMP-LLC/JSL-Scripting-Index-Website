@@ -2,8 +2,6 @@
 
 
 
-## Functions
-
 ### Add Custom Functions
 
 **Syntax:** Add Custom Functions({f1, f2, ...} | f)
@@ -36,13 +34,7 @@ Show( b );
 
 ### As Column
 
-**Syntax:** y = :name;
-
-y = dataTable:name;
-
-y = As Column( name );
-
-y = As Column( dataTable, name )
+**Syntax:** y = :name;y = dataTable:name;y = As Column( name );y = As Column( dataTable, name )
 
 **Description:** Accesses the specified column in the specified or current data table. An error is thrown if no such column or data table is found.
 
@@ -198,9 +190,7 @@ As Scoped( Here, z );
 
 ### Associative Array
 
-**Syntax:** y = Associative Array( {{key1, value1}, ...} );
-
-y = Associative Array( keys, values )
+**Syntax:** y = Associative Array( {{key1, value1}, ...} );y = Associative Array( keys, values )
 
 **Description:** Creates an associative array, which is also known as a dictionary or a hash map. In the two-argument form, keys and values can be a list, matrix, or data table column.
 
@@ -215,7 +205,7 @@ ex << get contents;
 
 ### Choose Closest
 
-**Syntax:** Choose Closest(source string, {canonical strings...}, <Ignore Case(ignore=1|0)>, <Ignore Nonprintable(ignore=1|0)>, <Ignore Whitespace(ignore=1|0)>, <Max Edit Count(count)>, <Max Edit Ratio([0..1])>, <Min String Length(<count=3>)>, <Replace Unmatched(replace=0|1)>, <Unmatched Value(<value="">)>)
+**Syntax:** Choose Closest(source string, {canonical strings...}, &lt;Ignore Case(ignore=1|0)&gt;, &lt;Ignore Nonprintable(ignore=1|0)&gt;, &lt;Ignore Whitespace(ignore=1|0)&gt;, &lt;Max Edit Count(count)&gt;, &lt;Max Edit Ratio([0..1])&gt;, &lt;Min String Length(&lt;count=3&gt;)&gt;, &lt;Replace Unmatched(replace=0|1)&gt;, &lt;Unmatched Value(&lt;value=""&gt;)&gt;)
 
 **Description:** Pick the closest string within the given rules and return it. 
 
@@ -335,7 +325,7 @@ Delete Classes( "complex" );
 
 ### Clear Globals
 
-**Syntax:** Clear Globals( < varname, ... > )
+**Syntax:** Clear Globals( &lt; varname, ... &gt; )
 
 **Description:** Clears the values of all currently defined global symbols.
 
@@ -361,7 +351,7 @@ Clear Log();
 
 ### Clear Symbols
 
-**Syntax:** Clear Symbols( < varname, ... > )
+**Syntax:** Clear Symbols( &lt; varname, ... &gt; )
 
 **Description:** Clears the values of all currently defined symbols.
 
@@ -388,7 +378,7 @@ Show( Is Log Open() );
 
 ### Define Class
 
-**Syntax:** Define Class("class name", <Base Class{ "base class name", ... }>, <Show( All( boolean ) | ( Members( boolean ) | Methods( boolean ) | Functions( boolean ) )+ )>, { method* | member* | function* } )
+**Syntax:** Define Class("class name", &lt;Base Class{ "base class name", ... }&gt;, &lt;Show( All( boolean ) | ( Members( boolean ) | Methods( boolean ) | Functions( boolean ) )+ )&gt;, { method* | member* | function* } )
 
 **Description:** Define a New Class
 
@@ -440,7 +430,7 @@ Delete Classes( complex );
 
 ### Delete Classes
 
-**Syntax:** Delete Classes( <Force( boolean )>, <class reference, ...> )
+**Syntax:** Delete Classes( &lt;Force( boolean )&gt;, &lt;class reference, ...&gt; )
 
 **Description:** Deletes all class definitions or one or more specific class definitions.
 
@@ -470,7 +460,7 @@ Show Classes();
 
 ### Delete Globals
 
-**Syntax:** Delete Globals( < varname, ... > )
+**Syntax:** Delete Globals( &lt; varname, ... &gt; )
 
 **Description:** Deletes all the currently defined global symbols and their values.
 
@@ -483,7 +473,7 @@ Delete Globals();
 
 ### Delete Namespaces
 
-**Syntax:** Delete Namespaces( <Force( boolean )>, <namespace reference, ...> )
+**Syntax:** Delete Namespaces( &lt;Force( boolean )&gt;, &lt;namespace reference, ...&gt; )
 
 **Description:** Deletes all namespaces or one or more specific namespaces.
 
@@ -511,7 +501,7 @@ Show Namespaces();
 
 ### Delete Symbols
 
-**Syntax:** Delete Symbols( < varname, ... > )
+**Syntax:** Delete Symbols( &lt; varname, ... &gt; )
 
 **Description:** Deletes all the currently defined symbols and their values.
 
@@ -537,7 +527,7 @@ Eval( Expr( 1 + 2 ) );
 
 ### Eval Insert
 
-**Syntax:** y = Eval Insert( string, <startChar="^">, <endChar=startChar> )
+**Syntax:** y = Eval Insert( string, &lt;startChar="^"&gt;, &lt;endChar=startChar&gt; )
 
 **Description:** Looks for substrings enclosed by the startChar/endChar pair and replaces them with the evaluated expression within.
 
@@ -550,7 +540,7 @@ Eval Insert( "Today is ^As Date( Today())^" );
 
 ### Eval Insert Into
 
-**Syntax:** Eval Insert Into( l_string, <startChar="^">, <endChar=startChar> )
+**Syntax:** Eval Insert Into( l_string, &lt;startChar="^"&gt;, &lt;endChar=startChar&gt; )
 
 **Description:** Looks for substrings enclosed by the startChar/endChar pair and replaces them with the evaluated expression within, replacing l_string.
 
@@ -591,7 +581,7 @@ Eval List( {x, y} );
 
 ### Exit
 
-**Syntax:** Quit(<"No Save">); Exit(<"No Save">)
+**Syntax:** Quit(&lt;"No Save"&gt;); Exit(&lt;"No Save"&gt;)
 
 **Description:** Exits JMP.
 
@@ -623,7 +613,7 @@ First( 11, 22 );
 
 ### Function
 
-**Syntax:** y = Function( {arg1=val1, ...}, <{local1=val1, ...}>, expr )
+**Syntax:** y = Function( {arg1=val1, ...}, &lt;{local1=val1, ...}&gt;, expr )
 
 **Description:** Defines a function with the specified arguments, default values, and optional local variables. Arguments with default values are optional on invocation of the function. If Return() is used within the function&apos;s script, the expression within is returned.
 
@@ -669,7 +659,7 @@ posorneg( -5.5 );
 
 ### Get Class Names
 
-**Syntax:** Get Class Names( < <class reference>, ... > )
+**Syntax:** Get Class Names( &lt; &lt;class reference&gt;, ... &gt; )
 
 **Description:** Returns a list of names of all currently defined classes.
 
@@ -696,7 +686,7 @@ Delete Classes( "aa", "bb" );
 
 ### Get Classes
 
-**Syntax:** Get Classes( < <class reference>, ... > )
+**Syntax:** Get Classes( &lt; &lt;class reference&gt;, ... &gt; )
 
 **Description:** Returns a list of references to all currently defined classes
 
@@ -724,7 +714,7 @@ Delete Classes( "aa", "bb" );
 
 ### Get Custom Functions
 
-**Syntax:** Get Custom Functions(<{function 1 full name, function 2 full name, ...} | function full name>)
+**Syntax:** Get Custom Functions(&lt;{function 1 full name, function 2 full name, ...} | function full name&gt;)
 
 **Description:** Get a list of custom functions
 
@@ -778,7 +768,7 @@ Get Locale Setting( "Decimal Separator" );
 
 ### Get Log
 
-**Syntax:** list = Get Log( <N> )
+**Syntax:** list = Get Log( &lt;N&gt; )
 
 **Description:** Returns a list of lines from the log. If no argument is specified, all the lines from the log are returned. If the numeric argument N is positive, the first N lines from the log are returned. If N is negative, the last N lines from the log are returned. If N is zero, no lines are returned.
 
@@ -793,7 +783,7 @@ tailcontents = Get Log( -5 );
 
 ### Get Namespace Names
 
-**Syntax:** Get Namespace Names( < <namespace reference>, ... > )
+**Syntax:** Get Namespace Names( &lt; &lt;namespace reference&gt;, ... &gt; )
 
 **Description:** Returns a list of names of all currently defined namespaces.
 
@@ -821,7 +811,7 @@ nsbb << Delete;
 
 ### Get Namespaces
 
-**Syntax:** Get Namespaces( < <namespace reference>, ... > )
+**Syntax:** Get Namespaces( &lt; &lt;namespace reference&gt;, ... &gt; )
 
 **Description:** Returns a list of references to all currently defined namespaces
 
@@ -850,7 +840,7 @@ nsbb << Delete;
 
 ### Get Punctuation Characters
 
-**Syntax:** Get Punctuation Characters(<Exclude Chars(chars) | Include Chars(chars)>)
+**Syntax:** Get Punctuation Characters(&lt;Exclude Chars(chars) | Include Chars(chars)&gt;)
 
 **Description:** Returns a string containing the punctuation characters that are typically used for delimiting words. These include ,:;.?!\/#@&~()[]<>"*`%$+=^|{} and some common Unicode punctuation.
 
@@ -923,7 +913,7 @@ Get Whitespace Characters();
 
 ### Include
 
-**Syntax:** y = Include( filepath, < <<Parse Only>, < <<New Context>, < <<Names Default to Here> )
+**Syntax:** y = Include( filepath, &lt; &lt;&lt;Parse Only&gt;, &lt; &lt;&lt;New Context&gt;, &lt; &lt;&lt;Names Default to Here&gt; )
 
 **Description:** Executes the JSL in the specified file. If Parse Only is specified, the script is parsed rather than executed. If New Context is specified, the included JSL is executed in its own unique namespace. If both the parent and included scripts use the global namespace, then specify both New Context and Names Default to Here to avoid name collisions.
 
@@ -1132,7 +1122,7 @@ Names Default To Here( 1 );
 
 ### Map Value
 
-**Syntax:** Map Value(string | number, {key1, value1...|{key1...},{value1...}}, <Unmatched(value)>)
+**Syntax:** Map Value(string | number, {key1, value1...|{key1...},{value1...}}, &lt;Unmatched(value)&gt;)
 
 **Description:** Evaluate the initial value and return the mapped result or a default.
 
@@ -1429,7 +1419,7 @@ Add Custom Functions(
 
 ### New Namespace
 
-**Syntax:** ns = New Namespace( <name>, <list of expressions> )
+**Syntax:** ns = New Namespace( &lt;name&gt;, &lt;list of expressions&gt; )
 
 **Description:** Create a new namespace with the name specified by the name argument or with an anonymous name if name is not specified.
 
@@ -1521,7 +1511,7 @@ Delete Classes( "complex" );
 
 ### Open Log
 
-**Syntax:** Open Log( <bring window to top> )
+**Syntax:** Open Log( &lt;bring window to top&gt; )
 
 **Description:** Open the log window
 
@@ -1587,7 +1577,7 @@ Print( 355 / 113, Pi() );
 
 ### Quit
 
-**Syntax:** Quit(<"No Save">); Exit(<"No Save">)
+**Syntax:** Quit(&lt;"No Save"&gt;); Exit(&lt;"No Save"&gt;)
 
 **Description:** Exits JMP.
 
@@ -1606,7 +1596,7 @@ If(
 
 ### Recode
 
-**Syntax:** recode(string|number|list, {<transform>, ...}, <Multiple Response (Separator(sepChar))>, <By Word(Delimiters(<chars>)>)
+**Syntax:** recode(string|number|list, {&lt;transform&gt;, ...}, &lt;Multiple Response (Separator(sepChar))&gt;, &lt;By Word(Delimiters(&lt;chars&gt;)&gt;)
 
 **Description:** Apply the listed transformations to the input value(s) and return the result. The Multiple Response and By Word options split supplied character data into smaller input values. Once the input values are determined, the transformations are applied to those values separately.
 
@@ -1675,7 +1665,7 @@ Remove Custom Functions( {"custom:Add", "custom:Sub"} );
 
 ### Save Log
 
-**Syntax:** f = Save Log( <path> )
+**Syntax:** f = Save Log( &lt;path&gt; )
 
 **Description:** Writes the contents of the log to the specified file location. If the write is successful, this function returns the name of the created file.
 
@@ -1690,7 +1680,7 @@ Substr( exlogText, 1, 30 );
 
 ### Send
 
-**Syntax:** r = obj << msg( args ); r = obj << msg; r = Send( obj, msg )
+**Syntax:** r = obj &lt;&lt; msg( args ); r = obj &lt;&lt; msg; r = Send( obj, msg )
 
 **Description:** Sends a message (in the form of an expression) to an object.
 
@@ -1704,7 +1694,7 @@ Bivariate( Y( :weight ), X( :height ) ) << Fit Line;
 
 ### Set Environment Variable
 
-**Syntax:** value = Set Environment Variable( string, < string> )
+**Syntax:** value = Set Environment Variable( string, &lt; string&gt; )
 
 **Description:** Sets the value of the specified environment variable in the operating system. If the second argument is either missing or is an empty string then the environment variable is deleted.
 
@@ -1734,7 +1724,7 @@ Show( 355 / 113, Pi() );
 
 ### Show Classes
 
-**Syntax:** Show Classes( < <class name | class reference>, ... > )
+**Syntax:** Show Classes( &lt; &lt;class name | class reference&gt;, ... &gt; )
 
 **Description:** Show the contents of all user-defined classes.
 
@@ -1797,7 +1787,7 @@ Show Globals();
 
 ### Show Namespaces
 
-**Syntax:** Show Namespaces( < <namespace reference>, ... > )
+**Syntax:** Show Namespaces( &lt; &lt;namespace reference&gt;, ... &gt; )
 
 **Description:** Show the contents of all user defined namespaces, both named and anonymous.
 
@@ -1878,7 +1868,7 @@ ex;
 
 ### Throw
 
-**Syntax:** Throw(<message>, <Boolean>)
+**Syntax:** Throw(&lt;message&gt;, &lt;Boolean&gt;)
 
 **Description:** Diverts execution to the enclosing Try(). Otherwise, script execution is stopped. If message begins with an exclamation point, the error will be fatal and cannot be caught by Try(). The second argument is an optional boolean for including a traceback.
 
@@ -1913,7 +1903,7 @@ Try( If( Random Uniform() < 0.5, 1, Throw() ), "thrown" );
 
 ### Try
 
-**Syntax:** y = Try( expr, <catchExpr> )
+**Syntax:** y = Try( expr, &lt;catchExpr&gt; )
 
 **Description:** Evaluates and returns the expr argument, unless the evaluation causes a Throw() or internal exception. In that case, the evaluation of catchExpr is returned. If you use exception_msg as the catchExpr, a list containing more information about the error is returned.
 
@@ -1998,7 +1988,7 @@ Try( exalpha = 0.06, Show( "invalid - exalpha is locked" ) );
 
 ### Wait
 
-**Syntax:** Wait( <x> )
+**Syntax:** Wait( &lt;x&gt; )
 
 **Description:** Waits for x seconds before proceeding with execution. The default value for x is 3 seconds. If x is 0 or greater, JMP will complete any operating system events (e.g. screen drawing) as well as any pending callbacks (e.g. formula evaluation) in addition to the wait. If x is less than 0, only the screen drawing and pending OS events are confirmed to be completed before proceeding.
 
@@ -2053,7 +2043,7 @@ w << close Window();
 
 ### Where
 
-**Syntax:** Where( <dt>, clause )
+**Syntax:** Where( &lt;dt&gt;, clause )
 
 **Description:** Returns indices (usually row numbers) matching the given where clause. The optional dt changes the Current Data Table during the evaluation. These clauses are often written by JMP using the Data Filter. This will often by faster than using Loc, <<Get Rows Where or <<Select Where. The behavior is undefined if the clause modifies the sequences or any symbols during evaluation.
 

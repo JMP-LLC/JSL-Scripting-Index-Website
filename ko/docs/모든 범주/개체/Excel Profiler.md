@@ -6,7 +6,7 @@
 
 ### Action
 
-**구문:** obj << Action
+**구문:** obj &lt;&lt; Action
 
 **설명:** 실행할 표현식을 삽입하기 위한 플랫폼 내의 다목적 트랩도어. 임시로 표시 상자 및 데이터 테이블 유형을 플랫폼에 설정합니다.
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**구문:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**구문:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **설명:** 이전에 생성된 사전 설정을 개체에 적용하여 옵션과 사용자 정의를 저장된 설정과 일치하도록 업데이트합니다.
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Column Switcher
 
-**구문:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**구문:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **설명:** 플랫폼 변수를 변경하기 위한 제어판을 추가합니다.
 
@@ -86,7 +86,7 @@ ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country,
 
 ### Copy Script
 
-**구문:** obj << Copy Script
+**구문:** obj &lt;&lt; Copy Script
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 클립보드에 넣습니다.
 
@@ -100,7 +100,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**구문:** obj << Data Table Window
+**구문:** obj &lt;&lt; Data Table Window
 
 **설명:** 이 분석에 대한 데이터 테이블 창을 앞으로 가져옵니다.
 
@@ -114,7 +114,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**구문:** obj << Get By Levels
+**구문:** obj &lt;&lt; Get By Levels
 
 **설명:** 기준 그룹 열을 값에 매핑하는 연관 배열을 반환합니다.
 
@@ -131,7 +131,7 @@ biv << Get By Levels;
 
 ### Get Container
 
-**구문:** obj << Get Container
+**구문:** obj &lt;&lt; Get Container
 
 **설명:** 개체의 콘텐츠를 담고 있는 컨테이너 상자에 대한 참조를 반환합니다.
 
@@ -177,7 +177,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**구문:** obj << Get Data Table
+**구문:** obj &lt;&lt; Get Data Table
 
 **설명:** 데이터 테이블에 대한 참조를 반환합니다.
 
@@ -192,7 +192,7 @@ Show( N Rows( t ) );
 
 ### Get Script
 
-**구문:** obj << Get Script
+**구문:** obj &lt;&lt; Get Script
 
 **설명:** 이 분석을 수행하기 위한 스크립트(JSL)를 생성하고 표현식으로 반환합니다.
 
@@ -207,7 +207,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**구문:** obj << Get Script With Data Table
+**구문:** obj &lt;&lt; Get Script With Data Table
 
 **설명:** 이 데이터 테이블을 참조하는 분석을 수행하기 위한 스크립트(JSL)를 생성하고 표현식으로 반환합니다.
 
@@ -222,7 +222,7 @@ Show( t );
 
 ### Get Timing
 
-**구문:** obj << Get Timing
+**구문:** obj &lt;&lt; Get Timing
 
 **설명:** 플랫폼 시작 시간을 설정합니다.
 
@@ -237,7 +237,7 @@ Show( t );
 
 ### Get Web Support
 
-**구문:** obj << Get Web Support
+**구문:** obj &lt;&lt; Get Web Support
 
 **설명:** 표시 개체에 대한 대화식 HTML 지원 수준을 나타내는 숫자를 반환합니다. 1은 일부 또는 모든 요소가 지원됨을 의미하고 0은 지원되지 않음을 의미합니다.
 
@@ -253,7 +253,7 @@ Show( s );
 
 ### Get Where Expr
 
-**구문:** obj << Get Where Expr
+**구문:** obj &lt;&lt; Get Where Expr
 
 **설명:** By() 또는 Where()를 사용하여 플랫폼이 시작된 경우 데이터 부분집합에 대한 Where 표현식을 반환하고, 그렇지 않은 경우 Empty()를 반환합니다.
 
@@ -326,7 +326,7 @@ preset = obj << New Preset();
 
 ### Redo Analysis
 
-**구문:** obj << Redo Analysis
+**구문:** obj &lt;&lt; Redo Analysis
 
 **설명:** 동일한 분석을 새 창에서 다시 실행합니다. 데이터가 변경된 경우에는 분석결과가 달라집니다.
 
@@ -340,7 +340,7 @@ obj << Redo Analysis;
 
 ### Relaunch Analysis
 
-**구문:** obj << Relaunch Analysis
+**구문:** obj &lt;&lt; Relaunch Analysis
 
 **설명:** 플랫폼 시작 창을 열고 보고서를 생성하는 데 사용된 설정을 불러옵니다.
 
@@ -354,7 +354,7 @@ obj << Relaunch Analysis;
 
 ### Remove Column Switcher
 
-**구문:** obj << Remove Column Switcher
+**구문:** obj &lt;&lt; Remove Column Switcher
 
 **설명:** 플랫폼에 추가된 가장 최근 열 전환기를 제거합니다.
 
@@ -388,9 +388,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**구문:** obj << Report;
-
-Report( obj )
+**구문:** obj &lt;&lt; Report;Report( obj )
 
 **설명:** 보고서 개체에 대한 참조를 반환합니다.
 
@@ -406,7 +404,7 @@ Show( t );
 
 ### Report View
 
-**구문:** obj << Report View( "전체"|"요약" )
+**구문:** obj &lt;&lt; Report View( "전체"|"요약" )
 
 **설명:** 보고서 보기는 플랫폼 보고서에 표시되는 상세 수준을 결정합니다. Full은 모든 상세 정보를 표시하고 Summary는 플랫폼에 따라 선택된 콘텐츠만 표시합니다. 사용자 정의된 동작의 경우 표시 상자는 <<Set Summary Behavior 메시지를 지원합니다.
 
@@ -420,7 +418,7 @@ obj << Report View( "Summary" );
 
 ### Save Script for All Objects
 
-**구문:** obj << Save Script for All Objects
+**구문:** obj &lt;&lt; Save Script for All Objects
 
 **설명:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -434,7 +432,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**구문:** obj << Save Script for All Objects To Data Table( <name> )
+**구문:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **설명:** 모든 보고서 개체에 대한 스크립트를 현재 데이터 테이블에 저장합니다. 이 옵션은 창에 여러 보고서가 있을 때 유용합니다. 스크립트 이름을 따옴표로 묶어 지정하는 경우 외에는 첫 번째 플랫폼 이름을 따라 스크립트 이름이 지정됩니다.
 
@@ -460,7 +458,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**구문:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**구문:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 데이터 테이블에 테이블 특성으로 저장합니다.
 
@@ -474,7 +472,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**구문:** obj << Save Script to Journal
+**구문:** obj &lt;&lt; Save Script to Journal
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 이 스크립트가 포함된 저널에 버튼을 추가합니다.
 
@@ -488,7 +486,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**구문:** obj << Save Script to Report
+**구문:** obj &lt;&lt; Save Script to Report
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 보고서 자체에 표시합니다. 수행된 작업에 대한 인쇄된 기록을 유지하려는 경우에 유용합니다.
 
@@ -502,7 +500,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**구문:** obj << Save Script to Script Window
+**구문:** obj &lt;&lt; Save Script to Script Window
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 현재 스크립트 텍스트 창에 추가합니다.
 
@@ -577,7 +575,7 @@ dt << Distribution(
 
 ### Title
 
-**구문:** obj << Title( "new title" )
+**구문:** obj &lt;&lt; Title( "new title" )
 
 **설명:** 플랫폼의 제목을 설정합니다.
 
@@ -591,7 +589,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**구문:** obj << Top Report
+**구문:** obj &lt;&lt; Top Report
 
 **설명:** 보고서의 루트 노드에 대한 참조를 반환합니다.
 
@@ -607,7 +605,7 @@ Show( t );
 
 ### View Web XML
 
-**구문:** obj << View Web XML
+**구문:** obj &lt;&lt; View Web XML
 
 **설명:** 대화식 HTML 보고서를 생성하는 데 사용된 XML 코드를 반환합니다.
 
@@ -624,7 +622,7 @@ xml = obj << View Web XML;
 
 ### Excel Profiler
 
-**구문:** Excel Profiler(  Workbook( filename ), <Model( string )> ) )
+**구문:** Excel Profiler( Workbook( filename ), &lt;Model( string )&gt; ) )
 
 **설명:** 프로파일러를 사용하여 분석하기 위해 Excel 데이터를 JMP로 전송하는 메커니즘을 제공합니다.
 
@@ -639,9 +637,7 @@ obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
 
 ### Noise Factors
 
-**구문:** obj = Excel Profiler(...<Noise Factors( column(s) )>...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Excel Profiler(...&lt;Noise Factors( column(s) )&gt;...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 계산식 열의 성분 열이어야 하는 잡음 요인을 지정합니다. 잡음 요인은 이러한 요인에서 전달되는 변동에 대한 강건성 또는 평탄성을 연구하는 데 사용됩니다. 결과 프로파일러에는 잡음 요인에 대한 계산식의 도함수가 포함됩니다.
 
@@ -696,9 +692,7 @@ obj = dt << Mixture Profiler( Y( :Pred Formula Y ), Noise Factors( :p1 ) );
 
 ### Prediction Formula
 
-**구문:** obj = Excel Profiler(...Prediction Formula( column(s) )...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Excel Profiler(...Prediction Formula( column(s) )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 계산식을 포함하는 반응 열을 지정합니다.
 
@@ -711,9 +705,7 @@ obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
 
 ### Y
 
-**구문:** obj = Excel Profiler(...Y( column(s) )...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Excel Profiler(...Y( column(s) )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 계산식을 포함하는 반응 열을 지정합니다.
 
@@ -728,7 +720,7 @@ obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ) );
 
 ### Formulas for OPTMODEL
 
-**구문:** obj << Formulas for OPTMODEL
+**구문:** obj &lt;&lt; Formulas for OPTMODEL
 
 **설명:** 모형의 예측 계산식을 PROC OPTMODEL에 대한 SAS 문으로 새 파일에 저장합니다.
 
@@ -742,7 +734,7 @@ obj << Formulas for OPTMODEL;
 
 ### Model
 
-**구문:** obj << Model( string )
+**구문:** obj &lt;&lt; Model( string )
 
 **설명:** 통합 문서 내에서 실행할 모형을 식별합니다. 모형이 지정되지 않았으며 통합 문서에 모형이 하나뿐인 경우에는 Excel 프로파일러가 해당 모형을 실행합니다.
 
@@ -755,7 +747,7 @@ obj = Excel Profiler( Workbook( "$SAMPLE_IMPORT_DATA/Demand.xlsx" ), Model( "Dem
 
 ### Prediction Profiler
 
-**구문:** obj << Prediction Profiler( state=0|1 )
+**구문:** obj &lt;&lt; Prediction Profiler( state=0|1 )
 
 **설명:** 예측 프로파일러를 표시하거나 숨깁니다.
 
@@ -769,7 +761,7 @@ obj << Prediction Profiler( 1 );
 
 ### Save Expanded Formulas
 
-**구문:** obj << Save Expanded Formulas
+**구문:** obj &lt;&lt; Save Expanded Formulas
 
 **설명:** 새 계산식 열을 데이터 테이블에 저장합니다. 새 열에는 계산식 내에서 기본 변수를 확인하기 위해 Y 변수로 사용된 해석된 계산식 참조가 포함됩니다. 이 기능은 시작 창에서 중간 계산식 확장 옵션을 선택하거나, 프로파일러 스크립트에서 Expand 메시지를 지정한 후에만 사용할 수 있습니다.
 
@@ -784,7 +776,7 @@ obj << Save Expanded Formulas;
 
 ### Show Formulas
 
-**구문:** obj << Show Formulas
+**구문:** obj &lt;&lt; Show Formulas
 
 **설명:** 프로파일링되는 모든 계산식에 대한 JSL이 포함된 스크립트 창을 엽니다.
 
@@ -798,7 +790,7 @@ obj << Show Formulas;
 
 ### Workbook
 
-**구문:** obj << Workbook( text )
+**구문:** obj &lt;&lt; Workbook( text )
 
 **설명:** 프로파일러에 사용할 모형이 포함된 Excel 스프레드시트를 지정합니다.
 

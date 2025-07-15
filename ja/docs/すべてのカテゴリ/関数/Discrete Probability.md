@@ -2,8 +2,6 @@
 
 
 
-## 関数
-
 ### Beta Binomial Distribution
 
 **構文:** cumprob = Beta Binomial Distribution( k, p, n, delta )
@@ -382,7 +380,7 @@ New Window( "Example: Gamma Poisson Quantile",
 
 ### Hypergeometric Distribution
 
-**構文:** cumprob = Hypergeometric Distribution( N, K, n, x, <r> )
+**構文:** cumprob = Hypergeometric Distribution( N, K, n, x, &lt;r&gt; )
 
 **説明:** 超幾何分布の累積分布関数。超幾何分布に従う確率変数がx以下になる確率を戻す。Nは母集団の個数。Kは対象カテゴリに属する個数。nは標本の個数。xは標本内における対象カテゴリに属する個数。rはオッズ比(オプション指定)。
 
@@ -421,7 +419,7 @@ New Window( "Example: Hypergeometric Distribution",
 
 ### Hypergeometric Probability
 
-**構文:** prob = Hypergeometric Probability( N, K, n, x, <r> )
+**構文:** prob = Hypergeometric Probability( N, K, n, x, &lt;r&gt; )
 
 **説明:** 超幾何分布の確率関数。超幾何分布に従う確率変数がxと等しくなる確率を戻す。Nは母集団の個数。Kは対象カテゴリに属する個数。nは標本の個数。xは標本内における対象カテゴリに属する個数。rはオッズ比(オプション指定)。
 

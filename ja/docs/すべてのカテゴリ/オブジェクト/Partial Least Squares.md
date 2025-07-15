@@ -6,7 +6,7 @@
 
 ### Action
 
-**構文:** obj << Action
+**構文:** obj &lt;&lt; Action
 
 **説明:** 評価する式を挿入するための、プラットフォーム内の汎用トラップドア。プラットフォームに一時的にディスプレイボックスおよびデータテーブルのコンテキストを設定する。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**構文:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**構文:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **説明:** 作成されたプリセットをオブジェクトに適用する。保存された設定に合わせてオプションとカスタマイズが更新される。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Broadcast
 
-**構文:** obj << Broadcast(message)
+**構文:** obj &lt;&lt; Broadcast(message)
 
 **説明:** メッセージをプラットフォームに一括適用する。個々のオブジェクトから戻される結果がデータテーブルである場合は、可能な限り連結する。その最終的な形式は、Table BoxのSave Combined Tableオプションの結果と同じになるか、またはソース列を使用したConcanateオプションの結果と同じになる。それ以外の場合、結果はリストの形で戻される。
 
@@ -91,7 +91,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**構文:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**構文:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **説明:** プラットフォームの変数を変更するための設定パネルを追加する。
 
@@ -109,7 +109,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**構文:** obj << Copy ByGroup Script
+**構文:** obj &lt;&lt; Copy ByGroup Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -134,7 +134,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**構文:** obj << Copy Script
+**構文:** obj &lt;&lt; Copy Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -153,7 +153,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**構文:** obj << Data Table Window
+**構文:** obj &lt;&lt; Data Table Window
 
 **説明:** この分析に使用したデータテーブルのウィンドウを手前に表示する。
 
@@ -172,7 +172,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**構文:** obj << Get By Levels
+**構文:** obj &lt;&lt; Get By Levels
 
 **説明:** By列が指定されている場合、列名をキー、データ値を値とした連想配列を戻す。
 
@@ -189,7 +189,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**構文:** obj << Get ByGroup Script
+**構文:** obj &lt;&lt; Get ByGroup Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -215,7 +215,7 @@ Show( t );
 
 ### Get Container
 
-**構文:** obj << Get Container
+**構文:** obj &lt;&lt; Get Container
 
 **説明:** オブジェクトのコンテンツを含んだコンテナボックスの参照を戻す。
 
@@ -266,7 +266,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**構文:** obj << Get Data Table
+**構文:** obj &lt;&lt; Get Data Table
 
 **説明:** データテーブルへの参照を戻す。
 
@@ -286,7 +286,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**構文:** obj << Get Group Platform
+**構文:** obj &lt;&lt; Get Group Platform
 
 **説明:** 該当のプラットフォームがグループに属している場合に、Group Platformオブジェクトを戻す。それ以外の場合はEmpty()を戻す。
 
@@ -303,7 +303,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**構文:** obj << Get Script
+**構文:** obj &lt;&lt; Get Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -323,7 +323,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**構文:** obj << Get Script With Data Table
+**構文:** obj &lt;&lt; Get Script With Data Table
 
 **説明:** この分析を再現するスクリプト(JSL)をデータテーブルへの参照も含めて生成し、それを式として戻す。
 
@@ -343,7 +343,7 @@ Show( t );
 
 ### Get Timing
 
-**構文:** obj << Get Timing
+**構文:** obj &lt;&lt; Get Timing
 
 **説明:** プラットフォームの起動にかかった時間を取得する。
 
@@ -363,7 +363,7 @@ Show( t );
 
 ### Get Web Support
 
-**構文:** obj << Get Web Support
+**構文:** obj &lt;&lt; Get Web Support
 
 **説明:** ディスプレイオブジェクトにおけるインタラクティブHTMLサポートのレベルを数値で戻す。1は、一部または全部の要素がサポートされていることを示し、0は、サポートされないことを示す。
 
@@ -379,7 +379,7 @@ Show( s );
 
 ### Get Where Expr
 
-**構文:** obj << Get Where Expr
+**構文:** obj &lt;&lt; Get Where Expr
 
 **説明:** プラットフォームがBy()またはWhere()を使って起動された場合に、データをサブセットするためのWhere式を戻す。By()やWhere()が使われていない場合はEmpty()を戻す。
 
@@ -416,7 +416,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**構文:** obj << Local Data Filter
+**構文:** obj &lt;&lt; Local Data Filter
 
 **説明:** このプラットフォームに対してのみ有効なフィルタで、データを特定のグループまたは範囲にフィルタリングする。
 
@@ -472,7 +472,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**構文:** obj << Paste Local Data Filter
+**構文:** obj &lt;&lt; Paste Local Data Filter
 
 **説明:** クリップボードにあるローカルデータフィルタを現在のレポートに適用する。
 
@@ -493,7 +493,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**構文:** obj << Redo Analysis
+**構文:** obj &lt;&lt; Redo Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -512,7 +512,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**構文:** obj << Redo ByGroup Analysis
+**構文:** obj &lt;&lt; Redo ByGroup Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -537,7 +537,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**構文:** obj << Relaunch Analysis
+**構文:** obj &lt;&lt; Relaunch Analysis
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -556,7 +556,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**構文:** obj << Relaunch ByGroup
+**構文:** obj &lt;&lt; Relaunch ByGroup
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -581,7 +581,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**構文:** obj << Remove Column Switcher
+**構文:** obj &lt;&lt; Remove Column Switcher
 
 **説明:** プラットフォームに最後に追加された列スイッチャーを削除する。
 
@@ -601,7 +601,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**構文:** obj << Remove Local Data Filter
+**構文:** obj &lt;&lt; Remove Local Data Filter
 
 **説明:** すでに作成されているローカルデータフィルタを削除し、プラットフォームはデータテーブル内のすべてのデータを使用した状態に戻る。
 
@@ -640,9 +640,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**構文:** obj << Report;
-
-Report( obj )
+**構文:** obj &lt;&lt; Report;Report( obj )
 
 **説明:** レポートオブジェクトへの参照を戻す。
 
@@ -663,7 +661,7 @@ Show( t );
 
 ### Report View
 
-**構文:** obj << Report View( "完全"|"要約" )
+**構文:** obj &lt;&lt; Report View( "完全"|"要約" )
 
 **説明:** レポートビューは、プラットフォームレポートの詳細を表示するかどうかを決定する。Fullはすべての詳細を表示し、Summaryはプラットフォームにより限定されたものだけを表示する。 動作をカスタマイズするため、各ディスプレイボックスは<<Set Summary Behaviorメッセージをサポートする。
 
@@ -682,7 +680,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**構文:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** 分析を再現するためのJSLスクリプトを作成し、データテーブルにテーブルプロパティとして保存する。スクリプトの名前を指定できる。Append Suffixオプションは、スクリプト名に数字の接尾辞を追加する。これにより、同名のスクリプトが存在していても区別できる。Promptオプションは、ユーザにスクリプト名の指定を促す。Replaceオプションは、同名の既存のスクリプトを置き換える。
 
@@ -707,7 +705,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**構文:** obj << Save ByGroup Script to Journal
+**構文:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -732,7 +730,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**構文:** obj << Save ByGroup Script to Script Window
+**構文:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -757,7 +755,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**構文:** obj << Save Script for All Objects
+**構文:** obj &lt;&lt; Save Script for All Objects
 
 **説明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -776,7 +774,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**構文:** obj << Save Script for All Objects To Data Table( <name> )
+**構文:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **説明:** すべてのレポートオブジェクトを再現するスクリプトを現在のデータテーブルに保存する。このオプションは、ウィンドウ内にレポートが複数ある場合に便利。作成されるスクリプトの名前は、引用符で囲んで指定しない限り、1つ目のプラットフォーム名となる。
 
@@ -824,7 +822,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**構文:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** この分析を再現するJSLスクリプトを生成し、データテーブルのテーブルプロパティとして保存する。
 
@@ -843,7 +841,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**構文:** obj << Save Script to Journal
+**構文:** obj &lt;&lt; Save Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -862,7 +860,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**構文:** obj << Save Script to Report
+**構文:** obj &lt;&lt; Save Script to Report
 
 **説明:** この分析を再現するJSLスクリプトを生成し、レポートウィンドウに表示する。分析手順の記録を結果と一緒に残せる。
 
@@ -881,7 +879,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**構文:** obj << Save Script to Script Window
+**構文:** obj &lt;&lt; Save Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -965,7 +963,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**構文:** obj << Sync to Data Table Changes
+**構文:** obj &lt;&lt; Sync to Data Table Changes
 
 **説明:** 除外やデータの変更が行われた場合に同期する。
 
@@ -982,7 +980,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**構文:** obj << Title( "new title" )
+**構文:** obj &lt;&lt; Title( "new title" )
 
 **説明:** プラットフォームのタイトルを設定する。
 
@@ -1001,7 +999,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**構文:** obj << Top Report
+**構文:** obj &lt;&lt; Top Report
 
 **説明:** レポート内のルートノードへの参照を戻す。
 
@@ -1022,7 +1020,7 @@ Show( t );
 
 ### Transform Column
 
-**構文:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**構文:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **説明:** オブジェクトのローカルコンテキスト(通常はプラットフォーム)内に変換列を作成する。この変換列は、それを作成したプラットフォームの中のみで使用可能。
 
@@ -1041,7 +1039,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**構文:** obj << View Web XML
+**構文:** obj &lt;&lt; View Web XML
 
 **説明:** インタラクティブHTMLレポートの作成に使うXMLコードを戻す。
 
@@ -1077,7 +1075,7 @@ New Window( "Bivariate Equation",
 
 ### By
 
-**構文:** obj << By( column(s) )
+**構文:** obj &lt;&lt; By( column(s) )
 
 ```jsl
 
@@ -1099,7 +1097,7 @@ obj = dt << Partial Least Squares(
 
 ### Factor
 
-**構文:** obj << Factor( column(s) )
+**構文:** obj &lt;&lt; Factor( column(s) )
 
 ```jsl
 
@@ -1115,7 +1113,7 @@ obj = dt << Partial Least Squares(
 
 ### Freq
 
-**構文:** obj << Freq( column )
+**構文:** obj &lt;&lt; Freq( column )
 
 ```jsl
 
@@ -1133,7 +1131,7 @@ obj = dt << Partial Least Squares(
 
 ### Response
 
-**構文:** obj << Response( column(s) )
+**構文:** obj &lt;&lt; Response( column(s) )
 
 ```jsl
 
@@ -1149,7 +1147,7 @@ obj = dt << Partial Least Squares(
 
 ### Validation
 
-**構文:** obj << Validation( column )
+**構文:** obj &lt;&lt; Validation( column )
 
 ```jsl
 
@@ -1165,7 +1163,7 @@ obj = dt << Partial Least Squares(
 
 ### X
 
-**構文:** obj << X( column(s) )
+**構文:** obj &lt;&lt; X( column(s) )
 
 ```jsl
 
@@ -1181,7 +1179,7 @@ obj = dt << Partial Least Squares(
 
 ### Y
 
-**構文:** obj << Y( column(s) )
+**構文:** obj &lt;&lt; Y( column(s) )
 
 ```jsl
 
@@ -1261,7 +1259,7 @@ obj = dt << Partial Least Squares(
 
 ### Fit
 
-**構文:** obj << Fit( SVD( Fast|Classical ), Method( NIPALS|SIMPLS ), Number of Factors( number ) )
+**構文:** obj &lt;&lt; Fit( SVD( Fast|Classical ), Method( NIPALS|SIMPLS ), Number of Factors( number ) )
 
 **説明:** PLSモデルをあてはめる。その際、手法や因子数を指定することができる。
 
@@ -1283,7 +1281,7 @@ obj = dt << Partial Least Squares(
 
 ### Go
 
-**構文:** obj << Go
+**構文:** obj &lt;&lt; Go
 
 **説明:** 「PLS回帰」プラットフォームを起動する。
 
@@ -1346,7 +1344,7 @@ obj = Partial Least Squares(
 
 ### Initial Number of Factors
 
-**構文:** obj << Partial Least Squares( Validation Method(...Initial Number of Factors( number )...) )
+**構文:** obj &lt;&lt; Partial Least Squares( Validation Method(...Initial Number of Factors( number )...) )
 
 **説明:** 交差検証法における因子数の下限を指定する。
 
@@ -1413,7 +1411,7 @@ obj = dt << Partial Least Squares(
 
 ### Model Dialog
 
-**構文:** obj << Model Dialog
+**構文:** obj &lt;&lt; Model Dialog
 
 **説明:** ［モデルのあてはめ］起動ウィンドウを開く。この起動ダイアログで手法として［PLS回帰］手法を選択することで、PLS回帰モデルをあてはめることができる。
 
@@ -1432,7 +1430,7 @@ obj << Model Dialog;
 
 ### SVD
 
-**構文:** obj << SVD( Fast|Classical )
+**構文:** obj &lt;&lt; SVD( Fast|Classical )
 
 **説明:** PLS回帰モデルを推定するのに使われる特異値分解の数値アルゴリズムを、［高速］または［古典的］に設定する。［高速］オプションはLanczos法を用い、［古典的］オプションはGolub-Kahan法と用いる。
 
@@ -1480,7 +1478,7 @@ obj = dt << Partial Least Squares(
 
 ### Set Random Seed
 
-**構文:** obj << Set Random Seed( number )
+**構文:** obj &lt;&lt; Set Random Seed( number )
 
 **説明:** PLS回帰モデルの検証法における乱数シード値を設定する。
 
@@ -1503,7 +1501,7 @@ obj = dt << Partial Least Squares(
 
 ### Validation Method
 
-**構文:** obj << Validation Method( KFold( number )|Holdback( fraction )|"Leave-One-Out"|None, Initial Number of Factors( number )  )
+**構文:** obj &lt;&lt; Validation Method( KFold( number )|Holdback( fraction )|"Leave-One-Out"|None, Initial Number of Factors( number ) )
 
 **説明:** モデル検証に使用する手法を設定する。
 
@@ -1529,7 +1527,7 @@ obj = dt << Partial Least Squares(
 
 #### Coefficient Plots
 
-**構文:** obj << (Fit[number] << Coefficient Plots( state=0|1 ))
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Coefficient Plots( state=0|1 ))
 
 **説明:** X変数に対してモデル係数をプロットしたグラフの表示／非表示を切り替える。中心化および尺度化されたデータに対する係数のプロットと、元のデータに対する係数のプロットがある。
 
@@ -1551,7 +1549,7 @@ obj << (Fit[1] << Coefficient Plots( 1 ));
 
 #### Correlation Loading Plot
 
-**構文:** obj << (Fit[number] << Correlation Loading Plot( state=0|1 ))
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Correlation Loading Plot( state=0|1 ))
 
 **説明:** X負荷量とY負荷量を重ねて描いた散布図の表示／非表示を切り替える。指定された因子の数が2より多い場合、散布図行列が作成される。
 
@@ -1593,7 +1591,7 @@ obj << (Fit[1] << Correlation Loading Plot( 4 ));
 
 #### Diagnostics Plots
 
-**構文:** obj << (Fit[number] << Diagnostics Plots( state=0|1 ))
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Diagnostics Plots( state=0|1 ))
 
 **説明:** 診断プロットの表示/非表示を切り替える。
 
@@ -1615,7 +1613,7 @@ obj << (Fit[1] << Diagnostics Plots( 1 ));
 
 #### Distance Plots
 
-**構文:** obj << (Fit[number] << Distance Plots( state=0|1 ))
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Distance Plots( state=0|1 ))
 
 **説明:** 距離プロットの表示／非表示を切り替える。各観測点からXモデルまでの距離のプロット、各観測点からYモデルまでの距離のプロット、XとYの両方のモデルまでの距離の散布図がある。
 
@@ -1637,7 +1635,7 @@ obj << (Fit[1] << Distance Plots( 1 ));
 
 #### Fit Line
 
-**構文:** obj << (Fit[number] << Fit Line( state=0|1 ))
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Fit Line( state=0|1 ))
 
 **説明:** X-Yスコアプロットにおいて、あてはめ線の表示／非表示を切り替える。 デフォルトではオン。
 
@@ -1660,7 +1658,7 @@ obj << (Fit[1] << Fit Line( 0 ));
 
 #### Get Measures
 
-**構文:** obj << (Fit[number] << Get Measures)
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Get Measures)
 
 **説明:** あてはめたモデルの適合度指標を戻す。
 
@@ -1684,7 +1682,7 @@ obj << (Fit[1] << Get Measures);
 
 #### Loading Plots
 
-**構文:** obj << (Fit[number] << Loading Plots( state=0|1 ))
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Loading Plots( state=0|1 ))
 
 **説明:** X負荷量とY負荷量のプロットの表示／非表示を切り替える。X変数とY変数に別々のプロットがある。
 
@@ -1706,7 +1704,7 @@ obj << (Fit[1] << Loading Plots( 1 ));
 
 #### Loading Scatterplot Matrices
 
-**構文:** obj << (Fit[number] << Loading Scatterplot Matrices( state=0|1 ))
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Loading Scatterplot Matrices( state=0|1 ))
 
 **説明:** X負荷量とY負荷量の散布図行列の表示／非表示を切り替える。X変数とY変数に別々の散布図行列がある。
 
@@ -1728,7 +1726,7 @@ obj << (Fit[1] << Loading Scatterplot Matrices( 1 ));
 
 #### Make Model Using VIP
 
-**構文:** obj << (Fit[number] << Make Model Using VIP)
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Make Model Using VIP)
 
 **説明:** 「モデルのあてはめ」の起動ウィンドウを開く。その際、現在の応答変数がYに指定された閾値を超えるVIPをもつ変数がXに指定される。
 
@@ -1750,7 +1748,7 @@ obj << (Fit[1] << Make Model Using VIP);
 
 #### Model Driven Multivariate Control Chart for Saved X Scores
 
-**構文:** obj << (Fit[number] << Model Driven Multivariate Control Chart for Saved X Scores)
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Model Driven Multivariate Control Chart for Saved X Scores)
 
 **説明:** 各Xスコアの計算式を保存し、「モデルに基づく多変量管理図」の起動ウィンドウを起動する。
 
@@ -1774,7 +1772,7 @@ obj << (Fit[1] << Model Driven Multivariate Control Chart for Saved X Scores);
 
 #### Percent Variation Plots
 
-**構文:** obj << (Fit[number] << Percent Variation Plots( state=0|1 ))
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Percent Variation Plots( state=0|1 ))
 
 **説明:** 「Xの説明される変動(%)」および「Yの説明される変動(%)」のプロットの表示／非表示を切り替える。
 
@@ -1796,7 +1794,7 @@ obj << (Fit[1] << Percent variation plots( 1 ));
 
 #### Profiler
 
-**構文:** obj << (Fit[number] << Profiler( state=0|1 ))
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Profiler( state=0|1 ))
 
 **説明:** 各Y変数に対するプロファイルの表示／非表示を切り替える。
 
@@ -1818,7 +1816,7 @@ obj << (Fit[1] << Profiler( 1 ));
 
 #### Profiler for Predicteds
 
-**構文:** obj << (Fit[number] << Model Driven Multivariate Control Chart for Saved X Scores)
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Model Driven Multivariate Control Chart for Saved X Scores)
 
 **説明:** 各Yの計算式をXスコアの関数として保存し、「プロファイル」の起動ウィンドウを開く。
 
@@ -1842,7 +1840,7 @@ obj << (Fit[1] << Profiler for Predicteds);
 
 #### Publish Prediction Formula
 
-**構文:** obj << (Fit[number] << Publish Prediction Formula)
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Publish Prediction Formula)
 
 **説明:** 予測式を作成するスクリプトを「計算式デポ」プラットフォームに発行する。
 
@@ -1864,7 +1862,7 @@ obj << (Fit[1] << Publish Prediction Formula);
 
 #### Publish Score Formula
 
-**構文:** obj << (Fit[number] << Publish Score Formula)
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Publish Score Formula)
 
 **説明:** XスコアおよびYスコアの計算式を作成するスクリプトを「計算式デポ」プラットフォームに発行する。
 
@@ -1886,7 +1884,7 @@ obj << (Fit[1] << Publish Score Formula);
 
 #### Remove Fit
 
-**構文:** obj << (Fit[number] << Remove Fit)
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Remove Fit)
 
 **説明:** レポートから、該当のモデルをあてはめた結果のレポートを削除する。
 
@@ -1909,7 +1907,7 @@ obj << (Fit[1] << Remove Fit);
 
 #### Save Distance
 
-**構文:** obj << (Fit[number] << Save Distance)
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Save Distance)
 
 **説明:** 元のデータテーブルに列を新規作成する。Xモデルまでの距離（DModX）とYモデルまでの距離（DModY）の列が作成される。
 
@@ -1931,7 +1929,7 @@ obj << (Fit[1] << Save Distance);
 
 #### Save Distance as X Score Formula
 
-**構文:** obj << (Fit[number] << Save Distance as X Score Formula)
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Save Distance as X Score Formula)
 
 **説明:** 計算式を含む列を、元のデータテーブルに新規作成する。Xモデルまでの距離（DModX）とYモデルまでの距離（DModY）の列が作成される。これらの計算式は、Xスコアの関数である。
 
@@ -1955,7 +1953,7 @@ obj << (Fit[1] << Save Distance as X Score Formula);
 
 #### Save Imputation
 
-**構文:** obj << (Fit[number] << Save Imputation)
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Save Imputation)
 
 **説明:** 新しいデータテーブルを作成する。X変数とY変数における欠測値を補完したデータテーブルが作成される。
 
@@ -1978,7 +1976,7 @@ obj << (Fit[1] << Save Imputation);
 
 #### Save Indiv Confidence Limit Formula
 
-**構文:** obj << (Fit[number] << Save Indiv Confidence Limit Formula)
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Save Indiv Confidence Limit Formula)
 
 **説明:** 計算式を含む列を、元のデータテーブルに新規作成する計算式を含む列を、元のデータテーブルに新規作成する。Y変数ごとに、予測値に対する信頼区間の上限と下限が求められる。この計算式は、Xスコアの関数となっている。有意水準のデフォルトは0.05であり、95%信頼区間が求められる
 
@@ -2000,7 +1998,7 @@ obj << (Fit[1] << Save Indiv Confidence Limit Formula);
 
 #### Save Loadings
 
-**構文:** obj << (Fit[number] << Save Loadings)
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Save Loadings)
 
 **説明:** 2つの新しいデータテーブルを作成する。X変数の負荷量を含むデータテーブルと、Y変数の因子負荷を含むデータテーブルが作成される。
 
@@ -2022,7 +2020,7 @@ obj << (Fit[1] << Save Loadings);
 
 #### Save Mean Confidence Limit Formula
 
-**構文:** obj << (Fit[number] << Save Mean Confidence Limit Formula( <alpha=0.05> ))
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Save Mean Confidence Limit Formula( &lt;alpha=0.05&gt; ))
 
 **説明:** 計算式を含む列を、元のデータテーブルに新規作成する。Y変数ごとに、予測値に対する信頼区間の上限と下限が求められる。この計算式は、Xスコアの関数となっている。有意水準のデフォルトは0.05であり、95%信頼区間が求められる。
 
@@ -2044,7 +2042,7 @@ obj << (Fit[1] << Save Mean Confidence Limit Formula);
 
 #### Save Percent Variation Explained For X Effects
 
-**構文:** obj << (Fit[number] << Save Percent Variation Explained For X Effects)
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Save Percent Variation Explained For X Effects)
 
 **説明:** 新しいデータテーブルを作成する。X変数ごとに、抽出された各因子で説明される変動の割合を含む。
 
@@ -2066,7 +2064,7 @@ obj << (Fit[1] << Save Percent Variation Explained For X Effects);
 
 #### Save Percent Variation Explained For Y Responses
 
-**構文:** obj << (Fit[number] << Save Percent Variation Explained For Y Responses)
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Save Percent Variation Explained For Y Responses)
 
 **説明:** 新しいデータテーブルを作成する。Y変数ごとに、抽出された各因子で説明される変動の割合を含む。
 
@@ -2088,7 +2086,7 @@ obj << (Fit[1] << Save Percent Variation Explained For Y Responses);
 
 #### Save Prediction As X Score Formula
 
-**構文:** obj << (Fit[number] << Save Prediction as X Score Formula)
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Save Prediction as X Score Formula)
 
 **説明:** 計算式を含む列を、元のデータテーブルに新規作成する。Xスコアの計算式を含む列と、Y変数ごとに予測式を含む列が作成される。Yの予測式は、Xスコアの関数となっている。
 
@@ -2110,7 +2108,7 @@ obj << (Fit[1] << Save Prediction as X Score Formula);
 
 #### Save Prediction Formula
 
-**構文:** obj << (Fit[number] << Save Prediction Formula)
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Save Prediction Formula)
 
 **説明:** 計算式を含む列を、元のデータテーブルに新規作成する。Y変数ごとに、予測式を含む列が作成される。この予測式は、X変数の関数となっている。
 
@@ -2132,7 +2130,7 @@ obj << (Fit[1] << Save Prediction Formula);
 
 #### Save Score Formula
 
-**構文:** obj << (Fit[number] << Save Score Formula)
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Save Score Formula)
 
 **説明:** 計算式を含む列を、元のデータテーブルに新規作成する。因子ごとに、Xスコア計算式とYスコア計算式を含む列が作成される。Xスコア計算式はX変数の関数であり、Yスコア計算式はXスコア計算式の関数である。
 
@@ -2154,7 +2152,7 @@ obj << (Fit[1] << Save Score Formula);
 
 #### Save Scores
 
-**構文:** obj << (Fit[number] << Save Scores)
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Save Scores)
 
 **説明:** 新しいデータテーブルを作成する。抽出された因子ごとに、Xスコアを含む列とYスコアを含む列が作成される。
 
@@ -2176,7 +2174,7 @@ obj << (Fit[1] << Save Scores);
 
 #### Save Standard Errors of Prediction Formula
 
-**構文:** obj << (Fit[number] << Save Standard Errors of Prediction Formula)
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Save Standard Errors of Prediction Formula)
 
 **説明:** 計算式を含む列を、元のデータテーブルに新規作成する。Y変数ごとに、予測値の標準誤差を求める計算式が作成される。この計算式は、X変数の関数となっている。
 
@@ -2198,7 +2196,7 @@ obj << (Fit[1] << Save Standard Errors of Prediction Formula);
 
 #### Save Standardized Loadings
 
-**構文:** obj << (Fit[number] << Save Standardized Loadings)
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Save Standardized Loadings)
 
 **説明:** 2つの新しいデータテーブルを作成する。X変数の標準化負荷量を含むデータテーブルと、Y変数の標準化負荷量を含むデータテーブルが作成される。
 
@@ -2220,7 +2218,7 @@ obj << (Fit[1] << Save Standardized Loadings);
 
 #### Save Standardized Scores
 
-**構文:** obj << (Fit[number] << Save Standardized Scores)
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Save Standardized Scores)
 
 **説明:** 新しいデータテーブルを作成する。新しい列には、因子ごとに、X標準化スコアおよびY標準化スコアが含まれる。
 
@@ -2242,7 +2240,7 @@ obj << (Fit[1] << Save Standardized Scores);
 
 #### Save T Square
 
-**構文:** obj << (Fit[number] << Save T Square)
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Save T Square)
 
 **説明:** 計算式を含む列を、元のデータテーブルに新規作成する。T2乗の計算式を含む列が作成される。この計算式は、X変数の関数である。
 
@@ -2264,7 +2262,7 @@ obj << (Fit[1] << Save T Square);
 
 #### Save T Square as X Score Formula
 
-**構文:** obj << (Fit[number] << Save T Square as X Score Formula)
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Save T Square as X Score Formula)
 
 **説明:** 計算式を含む列を、元のデータテーブルに新規作成する。T2乗の計算式を含む列が作成される。この計算式は、Xスコアの関数である。
 
@@ -2288,7 +2286,7 @@ obj << (Fit[1] << Save T Square as X Score Formula);
 
 #### Save Validation
 
-**構文:** obj << (Fit[number] << Save Validation)
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Save Validation)
 
 **説明:** 元のデータテーブルに列を新規作成する。この列には、データの各行が検証でどのように使用されたかを示す通し番号が含まれる。
 
@@ -2310,7 +2308,7 @@ obj << (Fit[1] << Save Validation);
 
 #### Save X Predicted Values
 
-**構文:** obj << (Fit[number] << Save X Predicted Values)
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Save X Predicted Values)
 
 **説明:** 元のデータテーブルに列を新規作成する。X変数ごとに、YのX値を含む列が存在する。
 
@@ -2332,7 +2330,7 @@ obj << (Fit[1] << Save X Predicted Values);
 
 #### Save X Prediction as X Score Formula
 
-**構文:** obj << (Fit[number] << Save X Prediction as X Score Formula)
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Save X Prediction as X Score Formula)
 
 **説明:** 計算式を含む列を、元のデータテーブルに新規作成する。Xスコアの計算式を含む列が作成される。
 
@@ -2356,7 +2354,7 @@ obj << (Fit[1] << Save X Prediction as X Score Formula);
 
 #### Save X Residuals
 
-**構文:** obj << (Fit[number] << Save X Residuals)
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Save X Residuals)
 
 **説明:** 元のデータテーブルに列を新規作成する。X変数ごとに、Xの残差を含む列が作成される。
 
@@ -2378,11 +2376,11 @@ obj << (Fit[1] << Save X Residuals);
 
 #### Save X Score Formula
 
-**構文:** obj << Save X Score Formula
+**構文:** obj &lt;&lt; Save X Score Formula
 
 #### Save X Weights
 
-**構文:** obj << (Fit[number] << Save X Weights)
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Save X Weights)
 
 **説明:** 新しいデータテーブルを作成する。因子ごとに、X変数に対する重みを含む列が作成される。
 
@@ -2404,7 +2402,7 @@ obj << (Fit[1] << Save X Weights);
 
 #### Save Y Predicted Values
 
-**構文:** obj << (Fit[number] << Save Y Predicted Values)
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Save Y Predicted Values)
 
 **説明:** 元のデータテーブルに列を新規作成する。Y変数ごとに、Yの予測値を含む列が作成される。
 
@@ -2426,7 +2424,7 @@ obj << (Fit[1] << Save Y Predicted Values);
 
 #### Save Y Residuals
 
-**構文:** obj << (Fit[number] << Save Y Residuals)
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Save Y Residuals)
 
 **説明:** 元のデータテーブルに列を新規作成する。Y変数ごとに、Yの残差を含む列が作成される。
 
@@ -2448,7 +2446,7 @@ obj << (Fit[1] << Save Y Residuals);
 
 #### Score Scatterplot Matrices
 
-**構文:** obj << (Fit[number] << Score Scatterplot Matrices( state=0|1 ))
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Score Scatterplot Matrices( state=0|1 ))
 
 **説明:** Xスコアの散布図行列とYスコアの散布図行列の表示／非表示を切り替える。
 
@@ -2470,7 +2468,7 @@ obj << (Fit[1] << Score Scatterplot Matrices( 1 ));
 
 #### Set VIP Threshold
 
-**構文:** obj << (Fit[number] << Set VIP Threshold( number=0.8 ))
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Set VIP Threshold( number=0.8 ))
 
 **説明:** 変数重要度の表とプロット、「変数重要度 vs 係数」プロットにおける閾値を設定する。 デフォルトの値は"0.8"。
 
@@ -2494,7 +2492,7 @@ obj << (Fit[1] << Set VIP Threshold( 0.5 ));
 
 #### Show Confidence Band
 
-**構文:** obj << (Fit[number] << Show Confidence Band( state=0|1 ))
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Show Confidence Band( state=0|1 ))
 
 **説明:** X-Yスコアプロットにおいて、あてはめ線の95%信頼区間の表示／非表示を切り替える。
 
@@ -2516,7 +2514,7 @@ obj << (Fit[1] << Show Confidence Band( 1 ));
 
 #### Spectral Profiler
 
-**構文:** obj << (Fit[number] << Spectral Profiler( state=0|1 ))
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Spectral Profiler( state=0|1 ))
 
 **説明:** すべてのY変数がプロットの最初のセルに表示される単一のプロファイルの表示／非表示を切り替える。
 
@@ -2538,7 +2536,7 @@ obj << (Fit[1] << Spectral Profiler( 1 ));
 
 #### T Square Plot
 
-**構文:** obj << (Fit[number] << T Square Plot( state=0|1 ))
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; T Square Plot( state=0|1 ))
 
 **説明:** T2乗プロットの表示／非表示を切り替える。T2乗プロットには、管理限界も描かれる。
 
@@ -2560,7 +2558,7 @@ obj << (Fit[1] << T Square Plot( 1 ));
 
 #### VIP vs Coefficients Plots
 
-**構文:** obj << (Fit[number] << VIP vs Coefficients Plots( state=0|1 ))
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; VIP vs Coefficients Plots( state=0|1 ))
 
 **説明:** モデル係数に対して変数重要度をプロットしたグラフの表示／非表示を切り替える。
 
@@ -2582,7 +2580,7 @@ obj << (Fit[1] << VIP vs Coefficients Plots( 1 ));
 
 #### Variable Importance Plot
 
-**構文:** obj << (Fit[number] << Variable Importance Plot( state=0|1 ))
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Variable Importance Plot( state=0|1 ))
 
 **説明:** 変数重要度プロットの表示／非表示を切り替える。変数重要度は、各変数のモデルへの寄与度を表す指標である。
 

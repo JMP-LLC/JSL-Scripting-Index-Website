@@ -6,13 +6,13 @@
 
 ### Remove Fit
 
-**Syntaxe :** obj << Remove Fit
+**Syntaxe :** obj &lt;&lt; Remove Fit
 
 **JMP Version ajoutée :** 15
 
 ### Shaded Contour
 
-**Syntaxe :** obj << Shaded Contour( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Shaded Contour( state=0|1 )
 
 **Description :** Affiche ou masque les isoréponses ombrées.
 

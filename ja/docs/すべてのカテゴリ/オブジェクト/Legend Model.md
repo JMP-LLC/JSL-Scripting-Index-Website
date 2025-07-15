@@ -6,7 +6,7 @@
 
 ### Get Fill Color
 
-**構文:** obj << Get Fill Color
+**構文:** obj &lt;&lt; Get Fill Color
 
 **説明:** グラフ内のディスプレイセグメントにリンクされた凡例モデル項目の、塗りつぶしの色を戻す。
 
@@ -29,7 +29,7 @@ Show( item << Get Fill Color );
 
 ### Get Gradient Settings
 
-**構文:** obj << Get Gradient Settings
+**構文:** obj &lt;&lt; Get Gradient Settings
 
 **説明:** グラフ内のディスプレイセグメントにリンクされた凡例モデル項目の、グラデーションの設定のリストを戻す。
 
@@ -52,7 +52,7 @@ Print( item << Get Gradient Settings );
 
 ### Get Label
 
-**構文:** obj << Get Label
+**構文:** obj &lt;&lt; Get Label
 
 **説明:** 凡例モデル項目のラベルを戻す。
 
@@ -75,7 +75,7 @@ Print( item << Get Label );
 
 ### Get Marker Size Settings
 
-**構文:** obj << Get Marker Size Settings
+**構文:** obj &lt;&lt; Get Marker Size Settings
 
 **説明:** グラフ内のディスプレイセグメントにリンクされた凡例モデル項目の、マーカーサイズの設定のリストを戻す。
 
@@ -98,7 +98,7 @@ Print( item << Get Marker Size Settings );
 
 ### Get Pen Settings
 
-**構文:** obj << Get Pen Settings
+**構文:** obj &lt;&lt; Get Pen Settings
 
 **説明:** グラフ内のディスプレイセグメントにリンクされた凡例モデル項目の、ペンの設定のリストを戻す。
 
@@ -121,7 +121,7 @@ Print( item << Get Pen Settings );
 
 ### Get Type
 
-**構文:** obj << Get Type
+**構文:** obj &lt;&lt; Get Type
 
 **説明:** 凡例モデル項目の種類を戻す。種類には次のものがある: "None"、" Marker"、" H Line"、" V Line"、" Step"、" Bar"、" V Box Plot"、" H Interval"、" V Interval", " H Bar Box Plot"、" V Bar Box Plot "、" OHLC Plot"、" H Box Plot"、" Gradient"、" Density Gradient"、" Fill and Line"、" Marker Size"、" Line Size"、" Gradient Line"、" Gradient Contour"、" Mark Color"、" Marker Size Categorical"、" Cell Size"。
 
@@ -144,7 +144,7 @@ Print( item << Get Type );
 
 ### Set Label
 
-**構文:** obj << Set Label( text )
+**構文:** obj &lt;&lt; Set Label( text )
 
 **説明:** グラフ内のディスプレイセグメントにリンクされた凡例モデル項目のラベルを設定する。
 
@@ -167,7 +167,7 @@ For Each( {item, index}, items[1], item << Set Label( "Item " || Char( index ) )
 
 ### Set Properties
 
-**構文:** obj << Set Properties
+**構文:** obj &lt;&lt; Set Properties
 
 **説明:** グラフ内のディスプレイセグメントにリンクされた凡例モデル項目の任意の表示プロパティを設定する。
 

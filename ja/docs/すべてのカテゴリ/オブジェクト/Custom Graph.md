@@ -6,7 +6,7 @@
 
 ### Custom Graph
 
-**構文:** New Window(Window title, <Editable|Dialog>, Graph Box( named arguments, ..., script segment
+**構文:** New Window(Window title, &lt;Editable|Dialog&gt;, Graph Box( named arguments, ..., script segment
 
 **説明:** カスタムスクリプトを使用してグラフを作成する。
 
@@ -34,7 +34,7 @@ obj = New Window( "Example",
 
 ### Append Seg
 
-**構文:** obj << Append Seg( display seg )
+**構文:** obj &lt;&lt; Append Seg( display seg )
 
 **説明:** フレームボックスにディスプレイセグメントを追加する。
 
@@ -50,11 +50,11 @@ New Window( "Example",
 
 ### Background Map
 
-**構文:** obj << Background Map
+**構文:** obj &lt;&lt; Background Map
 
 ### Bottom
 
-**構文:** obj << Bottom( number )
+**構文:** obj &lt;&lt; Bottom( number )
 
 ### FrameSize
 
@@ -134,111 +134,111 @@ New Window( "Example",
 
 ### Get Background Color
 
-**構文:** obj << Get Background Color( color )
+**構文:** obj &lt;&lt; Get Background Color( color )
 
 ### Get Background Fill
 
-**構文:** obj << Get Background Fill( state=0|1 )
+**構文:** obj &lt;&lt; Get Background Fill( state=0|1 )
 
 ### Get Bottom
 
-**構文:** obj << Get Bottom
+**構文:** obj &lt;&lt; Get Bottom
 
 ### Get Graphics Script
 
-**構文:** obj << Get Graphics Script
+**構文:** obj &lt;&lt; Get Graphics Script
 
 ### Get Height
 
-**構文:** obj << Get Height
+**構文:** obj &lt;&lt; Get Height
 
 ### Get Left
 
-**構文:** obj << Get Left
+**構文:** obj &lt;&lt; Get Left
 
 ### Get Right
 
-**構文:** obj << Get Right
+**構文:** obj &lt;&lt; Get Right
 
 ### Get Sides
 
-**構文:** obj << Get Sides
+**構文:** obj &lt;&lt; Get Sides
 
 ### Get Top
 
-**構文:** obj << Get Top
+**構文:** obj &lt;&lt; Get Top
 
 ### Get Width
 
-**構文:** obj << Get Width
+**構文:** obj &lt;&lt; Get Width
 
 ### Get X Axis
 
-**構文:** obj << Get X Axis
+**構文:** obj &lt;&lt; Get X Axis
 
 ### Get X Name
 
-**構文:** obj << Get X Name
+**構文:** obj &lt;&lt; Get X Name
 
 ### Get Y Axis
 
-**構文:** obj << Get Y Axis
+**構文:** obj &lt;&lt; Get Y Axis
 
 ### Get Y Name
 
-**構文:** obj << Get Y Name
+**構文:** obj &lt;&lt; Get Y Name
 
 ### Left
 
-**構文:** obj << Left( number )
+**構文:** obj &lt;&lt; Left( number )
 
 ### Right
 
-**構文:** obj << Right( number )
+**構文:** obj &lt;&lt; Right( number )
 
 ### Set Background Color
 
-**構文:** obj << Set Background Color( color )
+**構文:** obj &lt;&lt; Set Background Color( color )
 
 ### Set Background Fill
 
-**構文:** obj << Set Background Fill( state=0|1 )
+**構文:** obj &lt;&lt; Set Background Fill( state=0|1 )
 
 ### Set Graphics Script
 
-**構文:** obj << Set Graphics Script
+**構文:** obj &lt;&lt; Set Graphics Script
 
 ### Set Height
 
-**構文:** obj << Set Height
+**構文:** obj &lt;&lt; Set Height
 
 ### Set Width
 
-**構文:** obj << Set Width
+**構文:** obj &lt;&lt; Set Width
 
 ### Set X Axis
 
-**構文:** obj << Set X Axis
+**構文:** obj &lt;&lt; Set X Axis
 
 ### Set X Name
 
-**構文:** obj << Set X Name
+**構文:** obj &lt;&lt; Set X Name
 
 ### Set Y Axis
 
-**構文:** obj << Set Y Axis
+**構文:** obj &lt;&lt; Set Y Axis
 
 ### Set Y Name
 
-**構文:** obj << Set Y Name
+**構文:** obj &lt;&lt; Set Y Name
 
 ### Sides
 
-**構文:** obj << Sides( number )
+**構文:** obj &lt;&lt; Sides( number )
 
 ### Suppress Axes
 
-**構文:** obj << Suppress Axes
+**構文:** obj &lt;&lt; Suppress Axes
 
 **説明:** グラフボックスの軸を非表示にする。
 
@@ -280,7 +280,7 @@ obj = New Window( "Example",
 
 ### Top
 
-**構文:** obj << Top( number )
+**構文:** obj &lt;&lt; Top( number )
 
 ### X Scale
 

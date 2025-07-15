@@ -6,7 +6,7 @@
 
 ### Action
 
-**構文:** obj << Action
+**構文:** obj &lt;&lt; Action
 
 **説明:** 評価する式を挿入するための、プラットフォーム内の汎用トラップドア。プラットフォームに一時的にディスプレイボックスおよびデータテーブルのコンテキストを設定する。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**構文:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**構文:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **説明:** 作成されたプリセットをオブジェクトに適用する。保存された設定に合わせてオプションとカスタマイズが更新される。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**構文:** obj << Automatic Recalc( state=0|1 )
+**構文:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **説明:** データの除外や変更があった場合に分析を自動的にやり直す。Automatic Recalcオプションがオンになっている場合で、データの除外や変更が再計算の前に確実に適用されるようにするには、Wait(0)コマンドを使用すること。
 
@@ -88,7 +88,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**構文:** obj << Broadcast(message)
+**構文:** obj &lt;&lt; Broadcast(message)
 
 **説明:** メッセージをプラットフォームに一括適用する。個々のオブジェクトから戻される結果がデータテーブルである場合は、可能な限り連結する。その最終的な形式は、Table BoxのSave Combined Tableオプションの結果と同じになるか、またはソース列を使用したConcanateオプションの結果と同じになる。それ以外の場合、結果はリストの形で戻される。
 
@@ -108,7 +108,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**構文:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**構文:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **説明:** プラットフォームの変数を変更するための設定パネルを追加する。
 
@@ -126,7 +126,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**構文:** obj << Copy ByGroup Script
+**構文:** obj &lt;&lt; Copy ByGroup Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -146,7 +146,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**構文:** obj << Copy Script
+**構文:** obj &lt;&lt; Copy Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -162,7 +162,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**構文:** obj << Data Table Window
+**構文:** obj &lt;&lt; Data Table Window
 
 **説明:** この分析に使用したデータテーブルのウィンドウを手前に表示する。
 
@@ -178,7 +178,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**構文:** obj << Get By Levels
+**構文:** obj &lt;&lt; Get By Levels
 
 **説明:** By列が指定されている場合、列名をキー、データ値を値とした連想配列を戻す。
 
@@ -195,7 +195,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**構文:** obj << Get ByGroup Script
+**構文:** obj &lt;&lt; Get ByGroup Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -216,7 +216,7 @@ Show( t );
 
 ### Get Container
 
-**構文:** obj << Get Container
+**構文:** obj &lt;&lt; Get Container
 
 **説明:** オブジェクトのコンテンツを含んだコンテナボックスの参照を戻す。
 
@@ -264,7 +264,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**構文:** obj << Get Data Table
+**構文:** obj &lt;&lt; Get Data Table
 
 **説明:** データテーブルへの参照を戻す。
 
@@ -281,7 +281,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**構文:** obj << Get Group Platform
+**構文:** obj &lt;&lt; Get Group Platform
 
 **説明:** 該当のプラットフォームがグループに属している場合に、Group Platformオブジェクトを戻す。それ以外の場合はEmpty()を戻す。
 
@@ -298,7 +298,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**構文:** obj << Get Script
+**構文:** obj &lt;&lt; Get Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -315,7 +315,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**構文:** obj << Get Script With Data Table
+**構文:** obj &lt;&lt; Get Script With Data Table
 
 **説明:** この分析を再現するスクリプト(JSL)をデータテーブルへの参照も含めて生成し、それを式として戻す。
 
@@ -332,7 +332,7 @@ Show( t );
 
 ### Get Timing
 
-**構文:** obj << Get Timing
+**構文:** obj &lt;&lt; Get Timing
 
 **説明:** プラットフォームの起動にかかった時間を取得する。
 
@@ -349,7 +349,7 @@ Show( t );
 
 ### Get Web Support
 
-**構文:** obj << Get Web Support
+**構文:** obj &lt;&lt; Get Web Support
 
 **説明:** ディスプレイオブジェクトにおけるインタラクティブHTMLサポートのレベルを数値で戻す。1は、一部または全部の要素がサポートされていることを示し、0は、サポートされないことを示す。
 
@@ -365,7 +365,7 @@ Show( s );
 
 ### Get Where Expr
 
-**構文:** obj << Get Where Expr
+**構文:** obj &lt;&lt; Get Where Expr
 
 **説明:** プラットフォームがBy()またはWhere()を使って起動された場合に、データをサブセットするためのWhere式を戻す。By()やWhere()が使われていない場合はEmpty()を戻す。
 
@@ -402,7 +402,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**構文:** obj << Local Data Filter
+**構文:** obj &lt;&lt; Local Data Filter
 
 **説明:** このプラットフォームに対してのみ有効なフィルタで、データを特定のグループまたは範囲にフィルタリングする。
 
@@ -458,7 +458,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**構文:** obj << Paste Local Data Filter
+**構文:** obj &lt;&lt; Paste Local Data Filter
 
 **説明:** クリップボードにあるローカルデータフィルタを現在のレポートに適用する。
 
@@ -479,7 +479,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**構文:** obj << Redo Analysis
+**構文:** obj &lt;&lt; Redo Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -495,7 +495,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**構文:** obj << Redo ByGroup Analysis
+**構文:** obj &lt;&lt; Redo ByGroup Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -515,7 +515,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**構文:** obj << Relaunch Analysis
+**構文:** obj &lt;&lt; Relaunch Analysis
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -531,7 +531,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**構文:** obj << Relaunch ByGroup
+**構文:** obj &lt;&lt; Relaunch ByGroup
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -551,7 +551,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**構文:** obj << Remove Column Switcher
+**構文:** obj &lt;&lt; Remove Column Switcher
 
 **説明:** プラットフォームに最後に追加された列スイッチャーを削除する。
 
@@ -571,7 +571,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**構文:** obj << Remove Local Data Filter
+**構文:** obj &lt;&lt; Remove Local Data Filter
 
 **説明:** すでに作成されているローカルデータフィルタを削除し、プラットフォームはデータテーブル内のすべてのデータを使用した状態に戻る。
 
@@ -610,9 +610,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**構文:** obj << Report;
-
-Report( obj )
+**構文:** obj &lt;&lt; Report;Report( obj )
 
 **説明:** レポートオブジェクトへの参照を戻す。
 
@@ -630,7 +628,7 @@ Show( t );
 
 ### Report View
 
-**構文:** obj << Report View( "完全"|"要約" )
+**構文:** obj &lt;&lt; Report View( "完全"|"要約" )
 
 **説明:** レポートビューは、プラットフォームレポートの詳細を表示するかどうかを決定する。Fullはすべての詳細を表示し、Summaryはプラットフォームにより限定されたものだけを表示する。 動作をカスタマイズするため、各ディスプレイボックスは<<Set Summary Behaviorメッセージをサポートする。
 
@@ -646,7 +644,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**構文:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** 分析を再現するためのJSLスクリプトを作成し、データテーブルにテーブルプロパティとして保存する。スクリプトの名前を指定できる。Append Suffixオプションは、スクリプト名に数字の接尾辞を追加する。これにより、同名のスクリプトが存在していても区別できる。Promptオプションは、ユーザにスクリプト名の指定を促す。Replaceオプションは、同名の既存のスクリプトを置き換える。
 
@@ -666,7 +664,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**構文:** obj << Save ByGroup Script to Journal
+**構文:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -686,7 +684,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**構文:** obj << Save ByGroup Script to Script Window
+**構文:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -706,7 +704,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**構文:** obj << Save Script for All Objects
+**構文:** obj &lt;&lt; Save Script for All Objects
 
 **説明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -722,7 +720,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**構文:** obj << Save Script for All Objects To Data Table( <name> )
+**構文:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **説明:** すべてのレポートオブジェクトを再現するスクリプトを現在のデータテーブルに保存する。このオプションは、ウィンドウ内にレポートが複数ある場合に便利。作成されるスクリプトの名前は、引用符で囲んで指定しない限り、1つ目のプラットフォーム名となる。
 
@@ -760,7 +758,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**構文:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** この分析を再現するJSLスクリプトを生成し、データテーブルのテーブルプロパティとして保存する。
 
@@ -776,7 +774,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**構文:** obj << Save Script to Journal
+**構文:** obj &lt;&lt; Save Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -792,7 +790,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**構文:** obj << Save Script to Report
+**構文:** obj &lt;&lt; Save Script to Report
 
 **説明:** この分析を再現するJSLスクリプトを生成し、レポートウィンドウに表示する。分析手順の記録を結果と一緒に残せる。
 
@@ -808,7 +806,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**構文:** obj << Save Script to Script Window
+**構文:** obj &lt;&lt; Save Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -889,7 +887,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**構文:** obj << Sync to Data Table Changes
+**構文:** obj &lt;&lt; Sync to Data Table Changes
 
 **説明:** 除外やデータの変更が行われた場合に同期する。
 
@@ -906,7 +904,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**構文:** obj << Title( "new title" )
+**構文:** obj &lt;&lt; Title( "new title" )
 
 **説明:** プラットフォームのタイトルを設定する。
 
@@ -922,7 +920,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**構文:** obj << Top Report
+**構文:** obj &lt;&lt; Top Report
 
 **説明:** レポート内のルートノードへの参照を戻す。
 
@@ -940,7 +938,7 @@ Show( t );
 
 ### Transform Column
 
-**構文:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**構文:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **説明:** オブジェクトのローカルコンテキスト(通常はプラットフォーム)内に変換列を作成する。この変換列は、それを作成したプラットフォームの中のみで使用可能。
 
@@ -959,7 +957,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**構文:** obj << View Web XML
+**構文:** obj &lt;&lt; View Web XML
 
 **説明:** インタラクティブHTMLレポートの作成に使うXMLコードを戻す。
 
@@ -995,7 +993,7 @@ New Window( "Bivariate Equation",
 
 ### By
 
-**構文:** obj << By( column(s) )
+**構文:** obj &lt;&lt; By( column(s) )
 
 **説明:** 指定された列の水準ごとに、個別に分析を実行する。各結果を別々のデータテーブルや別々のレポートにまとめる。
 
@@ -1012,7 +1010,7 @@ dt << Marker Admixture( Marker( Column Group( "Markers" ) ), By( :Sex ), Fit );
 
 ### Label
 
-**構文:** obj << Label( column )
+**構文:** obj &lt;&lt; Label( column )
 
 **説明:** 各サンプルに対するラベルを含む列を指定する。
 
@@ -1029,7 +1027,7 @@ dt << Marker Admixture( Marker( Column Group( "Markers" ) ), Label( :Sex ), Fit 
 
 ### Marker
 
-**構文:** obj << Marker( column(s) )
+**構文:** obj &lt;&lt; Marker( column(s) )
 
 **説明:** 遺伝子マーカーを含む列を指定する。
 
@@ -1051,7 +1049,7 @@ dt << Marker Admixture(
 
 ### Sample ID
 
-**構文:** obj << Sample ID( column )
+**構文:** obj &lt;&lt; Sample ID( column )
 
 **説明:** 各サンプルに対する一意の識別子を含む列を指定する。
 
@@ -1130,7 +1128,7 @@ dt << Marker Admixture(
 
 ### Compare
 
-**構文:** obj << Compare
+**構文:** obj &lt;&lt; Compare
 
 **説明:** 「マーカーの遺伝的混合」における比較の指標を更新する。
 
@@ -1153,7 +1151,7 @@ obj << Compare( LogLikehood( 0 ) );
 
 ### Fit
 
-**構文:** obj << Fit
+**構文:** obj &lt;&lt; Fit
 
 **説明:** マーカーに対する遺伝的混合モデル(marker admixture model)をあてはめる。このコマンドにおいて、パラメータや推定の設定を指定できる。
 
@@ -1179,13 +1177,13 @@ dt << Marker Admixture(
 
 ### Get Measures
 
-**構文:** obj << Get Measures
+**構文:** obj &lt;&lt; Get Measures
 
 **JMP追加されたバージョン:** 19
 
 ### Set
 
-**構文:** obj << Set
+**構文:** obj &lt;&lt; Set
 
 **説明:** マーカー遺伝的混合モデルのパラメータを指定する。
 
@@ -1221,7 +1219,7 @@ dt << Marker Admixture(
 
 #### Hide All Models
 
-**構文:** obj << Hide All Models
+**構文:** obj &lt;&lt; Hide All Models
 
 **説明:** すべてのモデルを非表示にする。
 
@@ -1229,7 +1227,7 @@ dt << Marker Admixture(
 
 #### Iterations
 
-**構文:** obj << Iterations( state=0|1 )
+**構文:** obj &lt;&lt; Iterations( state=0|1 )
 
 **説明:** 因数分解アルゴリズムが停止した時点での反復回数の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1237,7 +1235,7 @@ dt << Marker Admixture(
 
 #### Log Likelihood
 
-**構文:** obj << Log Likelihood( state=0|1 )
+**構文:** obj &lt;&lt; Log Likelihood( state=0|1 )
 
 **説明:** 負の対数尤度の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1245,7 +1243,7 @@ dt << Marker Admixture(
 
 #### Number of Ancestral Populations
 
-**構文:** obj << Number of Ancestral Populations( state=0|1 )
+**構文:** obj &lt;&lt; Number of Ancestral Populations( state=0|1 )
 
 **説明:** 祖先集団の数の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1253,7 +1251,7 @@ dt << Marker Admixture(
 
 #### Predictors
 
-**構文:** obj << Predictors( state=0|1 )
+**構文:** obj &lt;&lt; Predictors( state=0|1 )
 
 **説明:** 説明変数の列数を示した列の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1261,7 +1259,7 @@ dt << Marker Admixture(
 
 #### Remove Hidden Models
 
-**構文:** obj << Remove Hidden Models
+**構文:** obj &lt;&lt; Remove Hidden Models
 
 **説明:** [表示]にチェックが入っていないすべてのモデルを削除する。
 
@@ -1269,7 +1267,7 @@ dt << Marker Admixture(
 
 #### Remove Shown Models
 
-**構文:** obj << Remove Shown Models
+**構文:** obj &lt;&lt; Remove Shown Models
 
 **説明:** 「表示」チェックボックスにチェックが入っているすべてのモデルを削除し、残ったモデルを表示する。
 
@@ -1277,7 +1275,7 @@ dt << Marker Admixture(
 
 #### Show All Models
 
-**構文:** obj << Show All Models
+**構文:** obj &lt;&lt; Show All Models
 
 **説明:** すべてのモデルを表示する。
 
@@ -1285,7 +1283,7 @@ dt << Marker Admixture(
 
 #### Tolerance
 
-**構文:** obj << Tolerance( state=0|1 )
+**構文:** obj &lt;&lt; Tolerance( state=0|1 )
 
 **説明:** 因数分解アルゴリズムが停止した時点での収束基準の値(推定された個々の遺伝的混合のRMSE)の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1303,7 +1301,7 @@ dt << Marker Admixture(
 
 #### Cluster Individuals
 
-**構文:** obj << Cluster Individuals( state=0|1 )
+**構文:** obj &lt;&lt; Cluster Individuals( state=0|1 )
 
 **説明:** 祖先集団のどれに属するかを表す遺伝的混合確率に基づいて、個体をクラスター分析する。
 
@@ -1338,7 +1336,7 @@ obj = dt << Marker Admixture(
 
 #### Cluster Markers
 
-**構文:** obj << Cluster Markers( state=0|1 )
+**構文:** obj &lt;&lt; Cluster Markers( state=0|1 )
 
 **説明:** 各祖先集団内での参照アレル割合に基づいて、マーカーをクラスター分析する。
 
@@ -1357,7 +1355,7 @@ obj << (Fit[1] << Cluster Markers( 1 ));
 
 #### Copy Parameters to Launch
 
-**構文:** obj << Copy Parameters to Launch
+**構文:** obj &lt;&lt; Copy Parameters to Launch
 
 **説明:** 現在のモデルで使われたハイパーパラメータを、[モデルの設定]にコピーする。
 
@@ -1493,7 +1491,7 @@ dt << Marker Admixture(
 
 #### Parallel Plot for Individuals
 
-**構文:** obj << Parallel Plot for Individuals( state=0|1 )
+**構文:** obj &lt;&lt; Parallel Plot for Individuals( state=0|1 )
 
 **説明:** 祖先集団の遺伝的混合確率に基づいて、全個体の重ね合わせプロットを作成する。
 
@@ -1512,7 +1510,7 @@ obj << (Fit[1] << Parallel Plot for Individuals( 1 ));
 
 #### Parallel Plot for Markers
 
-**構文:** obj << Parallel Plot for Markers( state=0|1 )
+**構文:** obj &lt;&lt; Parallel Plot for Markers( state=0|1 )
 
 **説明:** 各祖先集団における参照アレルの割合に基づいて、全マーカーの重ね合わせプロットを作成する。
 
@@ -1531,7 +1529,7 @@ obj << (Fit[1] << Parallel Plot for Markers( 1 ));
 
 #### Remove All But This Fit
 
-**構文:** obj << ( Fit[number] << Remove All But This Fit( state=0|1 ) )
+**構文:** obj &lt;&lt; ( Fit[number] &lt;&lt; Remove All But This Fit( state=0|1 ) )
 
 **説明:** 該当のモデルを除くすべてのモデルのレポートおよびグラフを削除する。
 
@@ -1555,7 +1553,7 @@ obj << (Fit[2] << Remove All But This Fit( 1 ));
 
 #### Remove Fit
 
-**構文:** obj << ( Fit[number] << Remove Fit( state=0|1 ) )
+**構文:** obj &lt;&lt; ( Fit[number] &lt;&lt; Remove Fit( state=0|1 ) )
 
 **説明:** モデルのレポート全体を削除する。
 
@@ -1581,7 +1579,7 @@ obj << (Fit[1] << Remove Fit( 1 ));
 
 #### Save F Table
 
-**構文:** obj << Save F Table
+**構文:** obj &lt;&lt; Save F Table
 
 **説明:** P行列とQ行列の積をデータテーブルに保存する。
 
@@ -1600,7 +1598,7 @@ obj << (Fit[1] << Save F Table());
 
 #### Save P Table
 
-**構文:** obj << Save P Table
+**構文:** obj &lt;&lt; Save P Table
 
 **説明:** P行列をデータテーブルに保存する。P行列は、特定の祖先集団における各遺伝子マーカーの割合を要素としてもつ。
 
@@ -1619,7 +1617,7 @@ obj << (Fit[1] << Save P Table());
 
 #### Save Q Table
 
-**構文:** obj << Save Q Table
+**構文:** obj &lt;&lt; Save Q Table
 
 **説明:** Q行列をデータテーブルに保存する。Q行列は、遺伝的混合確率を要素としてもつ。遺伝的混合確率とは、特定の祖先集団のいずれかに各個体が所属する確率である。
 

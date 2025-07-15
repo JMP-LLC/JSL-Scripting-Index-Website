@@ -6,7 +6,7 @@
 
 ### Graph Builder
 
-**Syntaxe :** Graph Builder( Variables( X(column ), Y( column ), <Group X( column )>, <Group Y( column )>, <Shape( column )>, <Color( column )>, <Overlay( column )>, <Freq( column )> ), <Elements(...)> ) )
+**Syntaxe :** Graph Builder( Variables( X(column ), Y( column ), &lt;Group X( column )&gt;, &lt;Group Y( column )&gt;, &lt;Shape( column )&gt;, &lt;Color( column )&gt;, &lt;Overlay( column )&gt;, &lt;Freq( column )&gt; ), &lt;Elements(...)&gt; ) )
 
 **Description :** Fournit une interface graphique interactive qui vous permet d&apos;explorer vos données. Vous pouvez faire glisser les colonnes dans des zones de graphiques pour créer différents graphiques. Par exemple, nuages de points, graphiques d&apos;isoréponses, diagrammes en barres, graphiques de surface, boîtes à moustaches, histogrammes, cartes thermiques, diagrammes en secteurs, Tree Maps, graphiques en mosaïque, et cartes.
 
@@ -25,7 +25,7 @@ gb = Graph Builder(
 
 ### Add Element
 
-**Syntaxe :** obj << Add Element( xposition, yposition, {Type(element name), X(i=1), Y(i=1), options...} )
+**Syntaxe :** obj &lt;&lt; Add Element( xposition, yposition, {Type(element name), X(i=1), Y(i=1), options...} )
 
 **Description :** Ajoute un nouvel élément graphique aux positions données de X et Y. La spécification de l&apos;élément comprend le nom de l&apos;élément, les rôles des données qu&apos;il utilise et les valeurs de ses options.
 
@@ -44,7 +44,7 @@ gb << Add Element( 1, 1, {Type( "Line Of Fit" ), X, Y, Degree( "Quadratic" )} );
 
 ### Add Variable
 
-**Syntaxe :** obj << Add Variable( {column, Role(role), Position(p=1), Inner Position(i=1)}, < <<Method("insert"|"merge"|"replace")> )
+**Syntaxe :** obj &lt;&lt; Add Variable( {column, Role(role), Position(p=1), Inner Position(i=1)}, &lt; &lt;&lt;Method("insert"|"merge"|"replace")&gt; )
 
 **Description :** Ajoute une nouvelle variable au modèle du Constructeur de graphiques, avec un rôle et une position donnés.
 
@@ -63,7 +63,7 @@ gb << Add Variable( {:age, Role( "Wrap" )} );
 
 ### Auto Stretching
 
-**Syntaxe :** obj << Auto Stretching( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Auto Stretching( state=0|1 )
 
 **Description :** Active ou désactive l’ajustement automatique du graphique à la fenêtre qui le contient. Actif par défaut.
 
@@ -81,7 +81,7 @@ gb << Auto Stretching( 0 );
 
 ### Back Color
 
-**Syntaxe :** obj << Back Color( color )
+**Syntaxe :** obj &lt;&lt; Back Color( color )
 
 **Description :** Définit la couleur de l’arrière-plan autour du graphique.
 
@@ -99,7 +99,7 @@ gb << Back Color( "Yellow" );
 
 ### Categorical Color Theme
 
-**Syntaxe :** obj << Categorical Color Theme
+**Syntaxe :** obj &lt;&lt; Categorical Color Theme
 
 **Description :** Définit le thème de couleur utilisé pour les variables catégorielles.
 
@@ -117,7 +117,7 @@ gb << Categorical Color Theme( "Pastel" );
 
 ### Continuous Color Theme
 
-**Syntaxe :** obj << Continuous Color Theme
+**Syntaxe :** obj &lt;&lt; Continuous Color Theme
 
 **Description :** Définit le thème de couleur utilisé pour les gradients.
 
@@ -135,7 +135,7 @@ gb << Continuous Color Theme( "White to Black" );
 
 ### Done
 
-**Syntaxe :** obj << Done
+**Syntaxe :** obj &lt;&lt; Done
 
 **Description :** Masque le panneau de contrôle et désactive tout échantillonnage par ligne.
 
@@ -155,9 +155,7 @@ gb << Done;
 
 ### Elements
 
-**Syntaxe :** Elements( Points( X, Y )| Box plot( X, Y, Jitter( state=0|1 ), Outliers( state=0|1 ), Box Style( "Outlier"|"Quantile" ) )|Line( X, Y, Row Order( number ), Summary Statistic( ) )| Histogram( X, Y)| Bar( X, Y, Bar Style(), Summary Statistic() )| Contour(X, Y)| Smoother(X, Y)|Map Shapes(Summary Statistic() ))
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** Elements( Points( X, Y )| Box plot( X, Y, Jitter( state=0|1 ), Outliers( state=0|1 ), Box Style( "Outlier"|"Quantile" ) )|Line( X, Y, Row Order( number ), Summary Statistic( ) )| Histogram( X, Y)| Bar( X, Y, Bar Style(), Summary Statistic() )| Contour(X, Y)| Smoother(X, Y)|Map Shapes(Summary Statistic() ))&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Identifie les éléments de la visualisation.
 
@@ -174,7 +172,7 @@ gb = dt << Graph Builder(
 
 ### Error Bar Offset
 
-**Syntaxe :** obj << Error Bar Offset
+**Syntaxe :** obj &lt;&lt; Error Bar Offset
 
 **Description :** Ouvre une boîte de dialogue permettant de définir l&apos;offset pour les barres d&apos;erreur.
 
@@ -195,7 +193,7 @@ gb << Error Bar Offset( 0.01 );
 
 ### Extend Axis to Zero
 
-**Syntaxe :** obj << Extend Axis to Zero( multiplier=1 )
+**Syntaxe :** obj &lt;&lt; Extend Axis to Zero( multiplier=1 )
 
 **Description :** Multiplicateur correspondant à la quantité à laquelle une échelle d&apos;axe doit être étendue pour inclure zéro. "1" par défaut.
 
@@ -215,7 +213,7 @@ gb = dt << Graph Builder(
 
 ### Extend Dual Axes to Zero
 
-**Syntaxe :** obj << Extend Dual Axes to Zero( multiplier=2 )
+**Syntaxe :** obj &lt;&lt; Extend Dual Axes to Zero( multiplier=2 )
 
 **Description :** Multiplicateur correspondant à la quantité à laquelle une échelle d&apos;axe doit être étendue pour inclure zéro dans le cas où les axes gauche et droit sont tous deux présents. "2" par défaut.
 
@@ -240,7 +238,7 @@ gb = dt << Graph Builder(
 
 ### Extend Parallel Y Axes to Zero
 
-**Syntaxe :** obj << Extend Parallel Y Axes to Zero( multiplier=3 )
+**Syntaxe :** obj &lt;&lt; Extend Parallel Y Axes to Zero( multiplier=3 )
 
 **Description :** Multiplicateur correspondant à la quantité à laquelle une échelle d&apos;axe doit être étendue pour inclure zéro dans le mode Axes Y parallèles. "3" par défaut.
 
@@ -263,7 +261,7 @@ gb = dt << Graph Builder(
 
 ### Fit to Window
 
-**Syntaxe :** obj << Fit to Window( "Auto"|"Activé"|"Désactivé(e)"|"Conserver l&apos;aspect ratio" )
+**Syntaxe :** obj &lt;&lt; Fit to Window( "Auto"|"Activé"|"Désactivé(e)"|"Conserver l&apos;aspect ratio" )
 
 **Description :** Définit le mode d&apos;ajustement automatique du rapport.
 
@@ -281,7 +279,7 @@ gb << Fit to Window( "Off" );
 
 ### Get Element
 
-**Syntaxe :** obj << Get Element( xposition, yposition, i )
+**Syntaxe :** obj &lt;&lt; Get Element( xposition, yposition, i )
 
 **Description :** Renvoie les spécifications d&apos;un élément graphique en fonction des positions de x et y données.
 
@@ -299,7 +297,7 @@ gb << Get Element( 1, 1, 1 );
 
 ### Get Elements
 
-**Syntaxe :** obj << Get Elements( xposition, yposition )
+**Syntaxe :** obj &lt;&lt; Get Elements( xposition, yposition )
 
 **Description :** Renvoie une liste de spécifications d&apos;un élément en fonction des positions de x et y données.
 
@@ -317,7 +315,7 @@ gb << Get Elements( 1, 1 );
 
 ### Get Legend Display
 
-**Syntaxe :** obj << Get Legend Display
+**Syntaxe :** obj &lt;&lt; Get Legend Display
 
 **Description :** Renvoie la boîte d’affichage de la légende pour le graphique qui peut faire l&apos;objet d&apos;une requête ou être modifié.
 
@@ -340,7 +338,7 @@ item << Set Visible( 0 );
 
 ### Get Legend Server
 
-**Syntaxe :** obj << Get Legend Server
+**Syntaxe :** obj &lt;&lt; Get Legend Server
 
 **Description :** Renvoie un objet contenant des informations utilisées par l&apos;affichage de la légende et les segs d&apos;affichage correspondant dans le graphique.
 
@@ -363,7 +361,7 @@ Show( items );
 
 ### Get N Elements
 
-**Syntaxe :** obj << Get N Elements( xposition, yposition )
+**Syntaxe :** obj &lt;&lt; Get N Elements( xposition, yposition )
 
 **Description :** Renvoie le nombre d&apos;éléments graphiques en fonction des positions de x et y données.
 
@@ -399,7 +397,7 @@ gb << Get N Positions( "X" );
 
 ### Get N Variables
 
-**Syntaxe :** n = obj << Get N Variables
+**Syntaxe :** n = obj &lt;&lt; Get N Variables
 
 **Description :** Renvoie le nombre de variables utilisées.
 
@@ -417,7 +415,7 @@ gb << Get N Variables();
 
 ### Get Variable
 
-**Syntaxe :** obj << Get Variable( index )
+**Syntaxe :** obj &lt;&lt; Get Variable( index )
 
 **Description :** Renvoie la spécification d&apos;une variable.
 
@@ -435,7 +433,7 @@ gb << Get Variable( 1 );
 
 ### Get Variables
 
-**Syntaxe :** list = obj << Get Variables
+**Syntaxe :** list = obj &lt;&lt; Get Variables
 
 **Description :** Renvoie une liste des listes de spécifications de variables en fonction des variables utilisées.
 
@@ -453,7 +451,7 @@ gb << Get Variables();
 
 ### Graph Spacing
 
-**Syntaxe :** obj << Graph Spacing( gap=1 )
+**Syntaxe :** obj &lt;&lt; Graph Spacing( gap=1 )
 
 **Description :** Définit la largeur de l&apos;espace entre les panneaux du graphique. "1" par défaut.
 
@@ -472,7 +470,7 @@ gb << Graph Spacing( 3 );
 
 ### Grid Color
 
-**Syntaxe :** obj << Grid Color( color )
+**Syntaxe :** obj &lt;&lt; Grid Color( color )
 
 **Description :** Définit la couleur du quadrillage sur le graphique.
 
@@ -491,7 +489,7 @@ gb << Grid Color( "Red" );
 
 ### Grid Transparency
 
-**Syntaxe :** obj << Grid Transparency( fraction=1 )
+**Syntaxe :** obj &lt;&lt; Grid Transparency( fraction=1 )
 
 **Description :** Définit la transparence du quadrillage. "1" par défaut.
 
@@ -510,7 +508,7 @@ gb << Grid Transparency( 0.2 );
 
 ### Include Missing Categories
 
-**Syntaxe :** obj << Include Missing Categories( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Include Missing Categories( state=0|1 )
 
 **Description :** Traite les valeurs manquantes en tant que niveau séparé pour les variables catégorielles.
 
@@ -530,7 +528,7 @@ gb << Include Missing Categories( 1 );
 
 ### Launch Analysis
 
-**Syntaxe :** obj << Launch Analysis
+**Syntaxe :** obj &lt;&lt; Launch Analysis
 
 **Description :** Lance une analyse avec les variables actuelles.
 
@@ -548,7 +546,7 @@ gb << Launch Analysis;
 
 ### Legend Floating Offset
 
-**Syntaxe :** obj << Legend Floating Offset
+**Syntaxe :** obj &lt;&lt; Legend Floating Offset
 
 **Description :** Définir l&apos;offset de la légende en pixels lorsque la position de la légende est définie sur « Floating »
 
@@ -568,7 +566,7 @@ gb << Legend Position( "Inside Floating" );
 
 ### Legend Position
 
-**Syntaxe :** obj << Legend Position( "Droite"|"Bas"|"Intérieur gauche"|"Intérieur droit"|"À l&apos;intérieur, en bas à gauche"|"À l&apos;intérieur, en bas à droite"|"À l&apos;intérieur, flottante" )
+**Syntaxe :** obj &lt;&lt; Legend Position( "Droite"|"Bas"|"Intérieur gauche"|"Intérieur droit"|"À l&apos;intérieur, en bas à gauche"|"À l&apos;intérieur, en bas à droite"|"À l&apos;intérieur, flottante" )
 
 **Description :** Définit la position de la légende.
 
@@ -586,7 +584,7 @@ gb << Legend Position( "Bottom" );
 
 ### Legend Settings
 
-**Syntaxe :** obj << Legend Settings
+**Syntaxe :** obj &lt;&lt; Legend Settings
 
 **Description :** Ouvre une boîte de dialogue permettant de modifier les propriétés de la légende.
 
@@ -605,7 +603,7 @@ gb << Legend Settings();
 
 ### Level Fill Color
 
-**Syntaxe :** obj << Level Fill Color( color )
+**Syntaxe :** obj &lt;&lt; Level Fill Color( color )
 
 **Description :** Définit la couleur des noms de niveau sur le graphique.
 
@@ -623,7 +621,7 @@ gb << Level Fill Color( {103, 214, 214} );
 
 ### Level Frame Color
 
-**Syntaxe :** obj << Level Frame Color( color )
+**Syntaxe :** obj &lt;&lt; Level Frame Color( color )
 
 **Description :** Définit la couleur du trait entourant les noms de niveau sur le graphique.
 
@@ -641,7 +639,7 @@ gb << Level Frame Color( "Blue" );
 
 ### Level Spacing Color
 
-**Syntaxe :** obj << Level Spacing Color( color )
+**Syntaxe :** obj &lt;&lt; Level Spacing Color( color )
 
 **Description :** Définit la couleur de l&apos;espacement entre les étiquettes de niveau.
 
@@ -659,7 +657,7 @@ gb << Level Spacing Color( "Blue" );
 
 ### Level Spacing Transparency
 
-**Syntaxe :** obj << Level Spacing Transparency( fraction=1 )
+**Syntaxe :** obj &lt;&lt; Level Spacing Transparency( fraction=1 )
 
 **Description :** Définit la transparence de l&apos;espacement entre les étiquettes de niveau. "1" par défaut.
 
@@ -677,7 +675,7 @@ gb << Level Spacing Transparency( .2 );
 
 ### Level Text Color
 
-**Syntaxe :** obj << Level Text Color( color )
+**Syntaxe :** obj &lt;&lt; Level Text Color( color )
 
 **Description :** Définit la couleur du texte des noms de niveau sur le graphique.
 
@@ -695,7 +693,7 @@ gb << Level Text Color( "Red" );
 
 ### Level Transparency
 
-**Syntaxe :** obj << Level Transparency( fraction=1 )
+**Syntaxe :** obj &lt;&lt; Level Transparency( fraction=1 )
 
 **Description :** Définit la transparence du cadre de nom de niveau sur le graphique. "1" par défaut.
 
@@ -713,7 +711,7 @@ gb << Level Transparency( .2 );
 
 ### Level Underline
 
-**Syntaxe :** obj << Level Underline( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Level Underline( state=0|1 )
 
 **Description :** Souligne les noms de niveau ou supprime le soulignement sur le graphique.
 
@@ -732,7 +730,7 @@ gb << Level Underline( 1 );
 
 ### Lighten large fills
 
-**Syntaxe :** obj << Lighten large fills( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Lighten large fills( state=0|1 )
 
 **Description :** Éclaircir automatiquement les couleurs des éléments des diagrammes en secteurs, des Tree Maps et des graphiques en mosaïque avec de grandes surfaces de remplissage. Actif par défaut.
 
@@ -752,7 +750,7 @@ gb << Lighten large fills( 1 );
 
 ### Link Page Axes
 
-**Syntaxe :** obj << Link Page Axes( "Aucun(e)"|"X uniquement"|"Y uniquement"|"X et Y" )
+**Syntaxe :** obj &lt;&lt; Link Page Axes( "Aucun(e)"|"X uniquement"|"Y uniquement"|"X et Y" )
 
 **Description :** Définit les axes qui sont liés sur les niveaux des groupes de page.
 
@@ -771,7 +769,7 @@ gb << Link Page Axes( "Y Only" );
 
 ### Lock Scales
 
-**Syntaxe :** obj << Lock Scales( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Lock Scales( state=0|1 )
 
 **Description :** Verrouille les étendues des axes et des gradients pour que celles-ci ne changent pas suite à des modifications de données ou de filtrage.
 
@@ -789,7 +787,7 @@ gb << Lock Scales( 1 );
 
 ### Make into Data Table
 
-**Syntaxe :** obj << Make into Data Table
+**Syntaxe :** obj &lt;&lt; Make into Data Table
 
 **Description :** Crée une nouvelle table de données contenant des images de graphiques.
 
@@ -807,7 +805,7 @@ gb << Make into Data Table;
 
 ### Order Statistic
 
-**Syntaxe :** obj << Order Statistic( "Nombre d&apos;observations"|"Moyenne"|"Médiane"|"Mode"|"Moyenne géométrique"|"Minimum "|"Maximum"|"Étendue"|"Somme"|"Somme cumulée"|"Pourcentage cumulé"|"% du total"|"% du facteur"|"% du total général"|"Écart-type"|"Variance"|"Erreur standard"|"Coefficient de variation"|"Intervalle interquartile"|"Écart absolu médian"|"Premier quartile"|"Troisième quartile"="Moyenne" )
+**Syntaxe :** obj &lt;&lt; Order Statistic( "Nombre d&apos;observations"|"Moyenne"|"Médiane"|"Mode"|"Moyenne géométrique"|"Minimum "|"Maximum"|"Étendue"|"Somme"|"Somme cumulée"|"Pourcentage cumulé"|"% du total"|"% du facteur"|"% du total général"|"Écart-type"|"Variance"|"Erreur standard"|"Coefficient de variation"|"Intervalle interquartile"|"Écart absolu médian"|"Premier quartile"|"Troisième quartile"="Moyenne" )
 
 **Description :** Définit l’ordre par défaut en fonction de la statistique de résumé utilisée lors de l’application du message Trier par sur une variable du graphique. "Moyenne" par défaut.
 
@@ -828,7 +826,7 @@ gb = dt << Graph Builder(
 
 ### Overlay Auto Line Styles Limit
 
-**Syntaxe :** obj << Overlay Auto Line Styles Limit( count=6 )
+**Syntaxe :** obj &lt;&lt; Overlay Auto Line Styles Limit( count=6 )
 
 **Description :** Limite le nombre de niveaux de superposition où le codage de superposition utilise les styles de lignes pour son paramètre de réglage automatique en présence d&apos;une variable de couleur. "6" par défaut.
 
@@ -848,7 +846,7 @@ gb = dt << Graph Builder(
 
 ### Overlay Auto Marker Styles Limit
 
-**Syntaxe :** obj << Overlay Auto Marker Styles Limit( count=62 )
+**Syntaxe :** obj &lt;&lt; Overlay Auto Marker Styles Limit( count=62 )
 
 **Description :** Limite le nombre de niveaux de superposition où le codage de superposition utilise les styles de marqueurs pour son paramètre de réglage automatique en présence d&apos;une variable de couleur. "62" par défaut.
 
@@ -868,7 +866,7 @@ gb = dt << Graph Builder(
 
 ### Page Count Limit
 
-**Syntaxe :** obj << Page Count Limit( count=200 )
+**Syntaxe :** obj &lt;&lt; Page Count Limit( count=200 )
 
 **Description :** Définit le nombre maximum de pages créées pour la variable de page de sorte à éviter une dégradation accidentelle de la performance. "200" par défaut.
 
@@ -888,7 +886,7 @@ gb << Page Count Limit( 5 );
 
 ### Page Gap Size
 
-**Syntaxe :** obj << Page Gap Size( gap=25 )
+**Syntaxe :** obj &lt;&lt; Page Gap Size( gap=25 )
 
 **Description :** Définit la largeur de l&apos;espace entre groupes de pages. "25" par défaut.
 
@@ -906,7 +904,7 @@ gb << Page Gap Size( 3 );
 
 ### Page Level Fill Color
 
-**Syntaxe :** obj << Page Level Fill Color( color )
+**Syntaxe :** obj &lt;&lt; Page Level Fill Color( color )
 
 **Description :** Définit la couleur des noms de niveau sur le graphique.
 
@@ -924,7 +922,7 @@ gb << Page Level Fill Color( {103, 214, 214} );
 
 ### Page Level Frame Color
 
-**Syntaxe :** obj << Page Level Frame Color( color )
+**Syntaxe :** obj &lt;&lt; Page Level Frame Color( color )
 
 **Description :** Définit la couleur du trait entourant les noms de niveau sur le graphique.
 
@@ -942,7 +940,7 @@ gb << Page Level Frame Color( "Blue" );
 
 ### Page Level Text Color
 
-**Syntaxe :** obj << Page Level Text Color( color )
+**Syntaxe :** obj &lt;&lt; Page Level Text Color( color )
 
 **Description :** Définit la couleur du texte des noms de niveau sur le graphique.
 
@@ -960,7 +958,7 @@ gb << Page Level Text Color( "Red" );
 
 ### Page Level Transparency
 
-**Syntaxe :** obj << Page Level Transparency( fraction=1 )
+**Syntaxe :** obj &lt;&lt; Page Level Transparency( fraction=1 )
 
 **Description :** Définit la transparence du cadre de nom de niveau sur le graphique. "1" par défaut.
 
@@ -978,7 +976,7 @@ gb << Page Level Transparency( .2 );
 
 ### Page Level Underline
 
-**Syntaxe :** obj << Page Level Underline( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Page Level Underline( state=0|1 )
 
 **Description :** Souligne les noms de niveau ou supprime le soulignement sur le graphique.
 
@@ -997,7 +995,7 @@ gb << Page Level Underline( 1 );
 
 ### Parallel Axis Merging
 
-**Syntaxe :** obj << Parallel Axis Merging( "Toujours"|"Similitude faible"|"Similitude moyenne"|"Similitude élevée"|"Jamais" )
+**Syntaxe :** obj &lt;&lt; Parallel Axis Merging( "Toujours"|"Similitude faible"|"Similitude moyenne"|"Similitude élevée"|"Jamais" )
 
 **Description :** Détermine quand le paramètre automatique Combiner les échelles doit choisir Parallèle fusionné à la place de Parallèle indépendant.
 
@@ -1015,7 +1013,7 @@ gb << Parallel Axis Merging( "Never" );
 
 ### Parallel Y Axes
 
-**Syntaxe :** obj << Parallel Y Axes( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Parallel Y Axes( state=0|1 )
 
 **Description :** Tous les axes Y partagent le même graphique. Semblable aux coordonnées parallèles, mais prend en charge une variable X.
 
@@ -1034,7 +1032,7 @@ gb << Parallel Y Axes( 1 );
 
 ### Random Seed
 
-**Syntaxe :** obj << Random Seed( number )
+**Syntaxe :** obj &lt;&lt; Random Seed( number )
 
 **Description :** Définit une graine spécifique pour le jitter aléatoire.
 
@@ -1076,7 +1074,7 @@ Graph Builder(
 
 ### Remove Element
 
-**Syntaxe :** obj << Remove Element( xposition, yposition, i )
+**Syntaxe :** obj &lt;&lt; Remove Element( xposition, yposition, i )
 
 **Description :** Supprime un élément graphique aux positions de X et Y données.
 
@@ -1095,7 +1093,7 @@ gb << Remove Element( 1, 1, 2 );
 
 ### Remove Variable
 
-**Syntaxe :** obj << Remove Variable( index | {column, Role(role), Position(p=1), Inner Position(i=1)} )
+**Syntaxe :** obj &lt;&lt; Remove Variable( index | {column, Role(role), Position(p=1), Inner Position(i=1)} )
 
 **Description :** Supprime une variable du modèle du Constructeur de graphiques, spécifiée soit par l&apos;indice soit par un nom de colonne, un rôle ou une position donnés.
 
@@ -1116,7 +1114,7 @@ gb << Remove Variable( 3 );
 
 ### Replicate Linked Page Axes
 
-**Syntaxe :** obj << Replicate Linked Page Axes( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Replicate Linked Page Axes( state=0|1 )
 
 **Description :** Détermine si les axes de pages liés dans une grille sont affichées une fois pour chaque graphique ou une fois pour chaque ligne ou colonne de graphiques.
 
@@ -1136,7 +1134,7 @@ gb << Replicate Linked Page Axes( 1 );
 
 ### Sampling
 
-**Syntaxe :** obj << Sampling( number )
+**Syntaxe :** obj &lt;&lt; Sampling( number )
 
 **Description :** Sélectionne aléatoirement un sous-ensemble des données en utilisant un dénombrement ou une proportion spécifiée. Cela est utile pour une quantité de données importantes et lorsque le graphique continue de changer.
 
@@ -1154,7 +1152,7 @@ gb << Sampling( 20 );
 
 ### Set Alpha Level
 
-**Syntaxe :** obj << Set Alpha Level( 0.10|0.05|0.01|Other... )
+**Syntaxe :** obj &lt;&lt; Set Alpha Level( 0.10|0.05|0.01|Other... )
 
 **Description :** Change le niveau alpha utilisé pour les courbes de confiance.
 
@@ -1172,7 +1170,7 @@ gb << Set Alpha Level( 0.10 );
 
 ### Set α Level
 
-**Syntaxe :** obj << Set α Level( 0.10|0.05|0.01|Other... )
+**Syntaxe :** obj &lt;&lt; Set α Level( 0.10|0.05|0.01|Other... )
 
 **Description :** Change le niveau alpha utilisé pour les courbes de confiance.
 
@@ -1190,7 +1188,7 @@ gb << Set Alpha Level( 0.10 );
 
 ### Show Control Panel
 
-**Syntaxe :** obj << Show Control Panel( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Show Control Panel( state=0|1 )
 
 **Description :** Affiche ou masque le panneau de configuration. Actif par défaut.
 
@@ -1208,7 +1206,7 @@ gb << Show Control Panel( 1 );
 
 ### Show Excluded Rows
 
-**Syntaxe :** obj << Show Excluded Rows( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Show Excluded Rows( state=0|1 )
 
 **Description :** Affiche ou masque les lignes exclues sur les graphiques. Lorsque cette option est sélectionnée, les lignes exclues sont incluses dans le dénombrement des points hors contrôle, mais exclues des calculs numériques.
 
@@ -1228,7 +1226,7 @@ gb << Show Excluded Rows( 1 );
 
 ### Show Footer
 
-**Syntaxe :** obj << Show Footer( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Show Footer( state=0|1 )
 
 **Description :** Affiche ou masque le texte de pied de page. Actif par défaut.
 
@@ -1246,7 +1244,7 @@ gb << Show Footer( 0 );
 
 ### Show Legend
 
-**Syntaxe :** obj << Show Legend( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Show Legend( state=0|1 )
 
 **Description :** Affiche ou masque la légende à droite du graphique. Actif par défaut.
 
@@ -1264,7 +1262,7 @@ gb << Show Legend( 1 );
 
 ### Show Subtitle
 
-**Syntaxe :** obj << Show Subtitle( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Show Subtitle( state=0|1 )
 
 **Description :** Affiche ou masque le sous-titre du graphique.
 
@@ -1284,7 +1282,7 @@ gb << Show Subtitle( 1 );
 
 ### Show Title
 
-**Syntaxe :** obj << Show Title( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Show Title( state=0|1 )
 
 **Description :** Affiche ou masque le titre du graphique. Actif par défaut.
 
@@ -1304,7 +1302,7 @@ gb << Show Title( 0 );
 
 ### Show X Axis
 
-**Syntaxe :** obj << Show X Axis( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Show X Axis( state=0|1 )
 
 **Description :** Affiche ou masque l&apos;axe X. Actif par défaut.
 
@@ -1324,7 +1322,7 @@ gb << Show X Axis( 0 );
 
 ### Show X Axis Title
 
-**Syntaxe :** obj << Show X Axis Title( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Show X Axis Title( state=0|1 )
 
 **Description :** Affiche ou masque le titre de l&apos;axe X. Actif par défaut.
 
@@ -1344,7 +1342,7 @@ gb << Show X Axis Title( 0 );
 
 ### Show Y Axis
 
-**Syntaxe :** obj << Show Y Axis( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Show Y Axis( state=0|1 )
 
 **Description :** Affiche ou masque l&apos;axe Y. Actif par défaut.
 
@@ -1364,7 +1362,7 @@ gb << Show Y Axis( 0 );
 
 ### Show Y Axis Title
 
-**Syntaxe :** obj << Show Y Axis Title( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Show Y Axis Title( state=0|1 )
 
 **Description :** Affiche ou masque le titre de l&apos;axe Y. Actif par défaut.
 
@@ -1384,7 +1382,7 @@ gb << Show Y Axis Title( 0 );
 
 ### Size
 
-**Syntaxe :** obj << Size( width, height )
+**Syntaxe :** obj &lt;&lt; Size( width, height )
 
 **Description :** Définit la taille du graphique.
 
@@ -1402,7 +1400,7 @@ gb << Size( 808, 586 );
 
 ### Spacing Borders
 
-**Syntaxe :** obj << Spacing Borders( 0|1=0 )
+**Syntaxe :** obj &lt;&lt; Spacing Borders( 0|1=0 )
 
 **Description :** Définit les bordures des panneaux internes du graphique. "0" par défaut.
 
@@ -1420,7 +1418,7 @@ gb << Spacing Borders( 1 );
 
 ### Subtitle Alignment
 
-**Syntaxe :** obj << Subtitle Alignment( "Gauche"|"Centre"|"Droite"|"Auto" )
+**Syntaxe :** obj &lt;&lt; Subtitle Alignment( "Gauche"|"Centre"|"Droite"|"Auto" )
 
 **Description :** Définit l&apos;alignement du sous-titre du graphique.
 
@@ -1440,7 +1438,7 @@ gb << Subtitle Alignment( "Left" );
 
 ### Subtitle Span
 
-**Syntaxe :** obj << Subtitle Span( "Complet"|"Contenu du graphique" )
+**Syntaxe :** obj &lt;&lt; Subtitle Span( "Complet"|"Contenu du graphique" )
 
 **Description :** Définit l&apos;étendue du sous-titre du graphique.
 
@@ -1478,7 +1476,7 @@ gb = dt << Graph Builder(
 
 ### Title Alignment
 
-**Syntaxe :** obj << Title Alignment( "Gauche"|"Centre"|"Droite" )
+**Syntaxe :** obj &lt;&lt; Title Alignment( "Gauche"|"Centre"|"Droite" )
 
 **Description :** Définit l&apos;alignement du titre du graphique.
 
@@ -1498,7 +1496,7 @@ gb << Title Alignment( "Left" );
 
 ### Title Fill Color
 
-**Syntaxe :** obj << Title Fill Color( color )
+**Syntaxe :** obj &lt;&lt; Title Fill Color( color )
 
 **Description :** Définit la couleur du remplissage de l’arrière-plan du titre sur le graphique.
 
@@ -1516,7 +1514,7 @@ gb << Title Fill Color( "Cyan" );
 
 ### Title Frame Color
 
-**Syntaxe :** obj << Title Frame Color( color )
+**Syntaxe :** obj &lt;&lt; Title Frame Color( color )
 
 **Description :** Définit la couleur de trait du cadre de titre sur le graphique.
 
@@ -1534,7 +1532,7 @@ gb << Title Frame Color( "Blue" );
 
 ### Title Span
 
-**Syntaxe :** obj << Title Span( "Complet"|"Contenu du graphique" )
+**Syntaxe :** obj &lt;&lt; Title Span( "Complet"|"Contenu du graphique" )
 
 **Description :** Définit l&apos;étendue du titre du graphique.
 
@@ -1554,7 +1552,7 @@ gb << Title Span( "Graph" );
 
 ### Title Text Color
 
-**Syntaxe :** obj << Title Text Color( color )
+**Syntaxe :** obj &lt;&lt; Title Text Color( color )
 
 **Description :** Définit la couleur du texte du titre sur le graphique.
 
@@ -1572,7 +1570,7 @@ gb << Title Text Color( "Red" );
 
 ### Title Transparency
 
-**Syntaxe :** obj << Title Transparency( fraction=1 )
+**Syntaxe :** obj &lt;&lt; Title Transparency( fraction=1 )
 
 **Description :** Définit la transparence du cadre de titre sur le graphique. "1" par défaut.
 
@@ -1590,7 +1588,7 @@ gb << Title Transparency( .2 );
 
 ### Title Underline
 
-**Syntaxe :** obj << Title Underline( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Title Underline( state=0|1 )
 
 **Description :** Souligne le titre ou supprime le soulignement sur le graphique.
 
@@ -1609,7 +1607,7 @@ gb << Title Underline( 1 );
 
 ### Update Element
 
-**Syntaxe :** obj << Update Element( xposition, yposition, i, {options} )
+**Syntaxe :** obj &lt;&lt; Update Element( xposition, yposition, i, {options} )
 
 **Description :** Modifie les propriétés d&apos;un élément existant.
 
@@ -1628,7 +1626,7 @@ gb << Update Element( 1, 1, 1, {Summary Statistic( "Mean" ), Error Bars( "Range"
 
 ### Use row colors for levels
 
-**Syntaxe :** obj << Use row colors for levels( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Use row colors for levels( state=0|1 )
 
 **Description :** Initialiser les niveaux de légende avec des couleurs de ligne lorsque chaque niveau a une couleur unique. Actif par défaut.
 
@@ -1648,9 +1646,7 @@ gb << Use row colors for levels( 1 );
 
 ### Variables
 
-**Syntaxe :** Variables( X(column ), Y( column ), <Group X( column )>, <Group Y( column )>, <Shape( column )>, <Color( column )>, <Overlay( column )>, <Freq( column )> )
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** Variables( X(column ), Y( column ), &lt;Group X( column )&gt;, &lt;Group Y( column )&gt;, &lt;Shape( column )&gt;, &lt;Color( column )&gt;, &lt;Overlay( column )&gt;, &lt;Freq( column )&gt; )&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Définit les variables utilisées dans la visualisation.
 
@@ -1664,7 +1660,7 @@ gb = dt << Graph Builder( Variables( Color( :SAT Verbal ), Shape( :State ) ) );
 
 ### X Group Edge
 
-**Syntaxe :** obj << X Group Edge( "Haut"|"Bas" )
+**Syntaxe :** obj &lt;&lt; X Group Edge( "Haut"|"Bas" )
 
 **Description :** Déplace l’axe du groupe X vers le haut ou vers le bas. « Haut » est le choix par défaut.
 
@@ -1683,7 +1679,7 @@ gb << X Group Edge( "Bottom" );
 
 ### Y Group Edge
 
-**Syntaxe :** obj << Y Group Edge( "Gauche"|"Droite" )
+**Syntaxe :** obj &lt;&lt; Y Group Edge( "Gauche"|"Droite" )
 
 **Description :** Déplace l’axe du groupe Y vers la gauche ou vers la droite. « Droite » est le choix par défaut.
 
@@ -1702,7 +1698,7 @@ gb << Y Group Edge( "Left" );
 
 ### Y Group Level Orientation
 
-**Syntaxe :** obj << Y Group Level Orientation( "Horizontal"|"Vertical" )
+**Syntaxe :** obj &lt;&lt; Y Group Level Orientation( "Horizontal"|"Vertical" )
 
 **Description :** Détermine si le texte de l&apos;étiquette de niveau du groupe Y est horizontal ou vertical (pivoté).
 
@@ -1721,7 +1717,7 @@ gb << Y Group Level Orientation( "Horizontal" );
 
 ### Y Group Title Orientation
 
-**Syntaxe :** obj << Y Group Title Orientation( "Horizontal"|"Vertical" )
+**Syntaxe :** obj &lt;&lt; Y Group Title Orientation( "Horizontal"|"Vertical" )
 
 **Description :** Détermine si le texte de l&apos;étiquette de titre du groupe Y est horizontal ou vertical (pivoté).
 
@@ -1742,7 +1738,7 @@ gb << Y Group Title Orientation( "Horizontal" );
 
 ### Action
 
-**Syntaxe :** obj << Action
+**Syntaxe :** obj &lt;&lt; Action
 
 **Description :** Trappe tout usage dans une plate-forme pour y insérer les expressions à calculer. Définit provisoirement les contextes des boîtes d’affichage et des tables de données dans la plate-forme.
 
@@ -1760,7 +1756,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Syntaxe :** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntaxe :** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Description :** Appliquez une préconfiguration créée précédemment à l&apos;objet, ce qui met à jour les options et les personnalisations pour correspondre aux paramètres enregistrés.
 
@@ -1807,7 +1803,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**Syntaxe :** obj << Automatic Recalc( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Description :** Refait l&apos;analyse automatiquement pour l&apos;exclusion et les modifications de données. Si l&apos;option Nouveau calcul automatique est activée, envisagez d&apos;utiliser les commandes Wait(0) pour vous assurer que l&apos;exclusion et les modifications de données sont prises en compte avant le recalcul.
 
@@ -1826,7 +1822,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**Syntaxe :** obj << Broadcast(message)
+**Syntaxe :** obj &lt;&lt; Broadcast(message)
 
 **Description :** Diffuse un message sur une plate-forme. Si les résultats de renvoi des objets individuels sont des tables, elles sont concaténées si possible, et le format final est identique au résultat de l&apos;option Enregistrer la table de données combinée dans une boîte de tableau ou au résultat de l&apos;option Concaténer avec une colonne Source. Sinon, les résultats sont stockés dans une liste et renvoyés.
 
@@ -1846,7 +1842,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**Syntaxe :** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Syntaxe :** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Description :** Ajoute un panneau de contrôle pour changer les variables de la plate-forme.
 
@@ -1864,7 +1860,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**Syntaxe :** obj << Copy ByGroup Script
+**Syntaxe :** obj &lt;&lt; Copy ByGroup Script
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis le place dans le presse-papiers.
 
@@ -1888,7 +1884,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Syntaxe :** obj << Copy Script
+**Syntaxe :** obj &lt;&lt; Copy Script
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis le place dans le presse-papiers.
 
@@ -1906,7 +1902,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Syntaxe :** obj << Data Table Window
+**Syntaxe :** obj &lt;&lt; Data Table Window
 
 **Description :** Déplace en premier plan la fenêtre de la table de données utilisée dans cette analyse.
 
@@ -1924,7 +1920,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Syntaxe :** obj << Get By Levels
+**Syntaxe :** obj &lt;&lt; Get By Levels
 
 **Description :** Renvoie un tableau associatif de mappage des colonnes par groupe à leurs valeurs.
 
@@ -1941,7 +1937,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Syntaxe :** obj << Get ByGroup Script
+**Syntaxe :** obj &lt;&lt; Get ByGroup Script
 
 **Description :** Crée un script (JSL) pour produire cette analyse et la renvoyer sous forme d’une expression.
 
@@ -1966,7 +1962,7 @@ Show( t );
 
 ### Get Container
 
-**Syntaxe :** obj << Get Container
+**Syntaxe :** obj &lt;&lt; Get Container
 
 **Description :** Renvoie une référence à la zone conteneur où se trouve le contenu de l&apos;objet.
 
@@ -2018,7 +2014,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Syntaxe :** obj << Get Data Table
+**Syntaxe :** obj &lt;&lt; Get Data Table
 
 **Description :** Renvoie une référence à la table de données.
 
@@ -2037,7 +2033,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**Syntaxe :** obj << Get Group Platform
+**Syntaxe :** obj &lt;&lt; Get Group Platform
 
 **Description :** Renvoie l&apos;objet de Plate-forme de groupe si cette plate-forme fait partie d&apos;un groupe. Sinon, renvoie Empty().
 
@@ -2054,7 +2050,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**Syntaxe :** obj << Get Script
+**Syntaxe :** obj &lt;&lt; Get Script
 
 **Description :** Crée un script (JSL) pour produire cette analyse et la renvoyer sous forme d’une expression.
 
@@ -2073,7 +2069,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Syntaxe :** obj << Get Script With Data Table
+**Syntaxe :** obj &lt;&lt; Get Script With Data Table
 
 **Description :** Crée un script (JSL) pour produire cette analyse faisant spécifiquement référence à cette table de données et la renvoyer sous forme d’une expression.
 
@@ -2092,7 +2088,7 @@ Show( t );
 
 ### Get Timing
 
-**Syntaxe :** obj << Get Timing
+**Syntaxe :** obj &lt;&lt; Get Timing
 
 **Description :** Détermine une heure de lancement de la plate-forme.
 
@@ -2111,7 +2107,7 @@ Show( t );
 
 ### Get Web Support
 
-**Syntaxe :** obj << Get Web Support
+**Syntaxe :** obj &lt;&lt; Get Web Support
 
 **Description :** Renvoyer un nombre indiquant le niveau de support HTML interactif pour l&apos;objet d&apos;affichage. 1 signifie que tout ou partie des éléments sont pris en charge. 0 signifie qu&apos;il n&apos;y a aucun support.
 
@@ -2127,7 +2123,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Syntaxe :** obj << Get Where Expr
+**Syntaxe :** obj &lt;&lt; Get Where Expr
 
 **Description :** Renvoie l&apos;expression Where pour le sous-ensemble de données, si la plate-forme a été lancée avec By() ou Where(). Sinon, renvoie la Empty()
 
@@ -2168,7 +2164,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Syntaxe :** obj << Local Data Filter
+**Syntaxe :** obj &lt;&lt; Local Data Filter
 
 **Description :** Permet de filtrer les données locales, dans la plate-forme concernée, par groupes ou étendues spécifiques
 
@@ -2224,7 +2220,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Syntaxe :** obj << Paste Local Data Filter
+**Syntaxe :** obj &lt;&lt; Paste Local Data Filter
 
 **Description :** Appliquer le filtre des données locales du presse-papiers au rapport actif.
 
@@ -2245,7 +2241,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**Syntaxe :** obj << Redo Analysis
+**Syntaxe :** obj &lt;&lt; Redo Analysis
 
 **Description :** Exécute à nouveau cette même analyse dans une nouvelle fenêtre. L&apos;analyse sera différente si les données ont été modifiées.
 
@@ -2263,7 +2259,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**Syntaxe :** obj << Redo ByGroup Analysis
+**Syntaxe :** obj &lt;&lt; Redo ByGroup Analysis
 
 **Description :** Exécute à nouveau cette même analyse dans une nouvelle fenêtre. L&apos;analyse sera différente si les données ont été modifiées.
 
@@ -2287,7 +2283,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**Syntaxe :** obj << Relaunch Analysis
+**Syntaxe :** obj &lt;&lt; Relaunch Analysis
 
 **Description :** Ouvre la fenêtre de lancement de la plate-forme et rappelle les paramètres utilisés pour créer le rapport.
 
@@ -2305,7 +2301,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**Syntaxe :** obj << Relaunch ByGroup
+**Syntaxe :** obj &lt;&lt; Relaunch ByGroup
 
 **Description :** Ouvre la fenêtre de lancement de la plate-forme et rappelle les paramètres utilisés pour créer le rapport.
 
@@ -2329,7 +2325,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**Syntaxe :** obj << Remove Column Switcher
+**Syntaxe :** obj &lt;&lt; Remove Column Switcher
 
 **Description :** Supprime le sélecteur de colonne le plus récent ajouté à la plate-forme.
 
@@ -2349,7 +2345,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Syntaxe :** obj << Remove Local Data Filter
+**Syntaxe :** obj &lt;&lt; Remove Local Data Filter
 
 **Description :** Permet de supprimer un filtre de données locales créé précédemment et rétablit toutes les valeurs des données directement dans la table de données utilisée dans la plate-forme.
 
@@ -2388,9 +2384,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Syntaxe :** obj << Report;
-
-Report( obj )
+**Syntaxe :** obj &lt;&lt; Report;Report( obj )
 
 **Description :** Renvoie une référence à l’objet rapport.
 
@@ -2410,7 +2404,7 @@ Show( t );
 
 ### Report View
 
-**Syntaxe :** obj << Report View( "Complet"|"Résumé" )
+**Syntaxe :** obj &lt;&lt; Report View( "Complet"|"Résumé" )
 
 **Description :** L&apos;affichage du rapport détermine le niveau de détail visible dans un rapport de plate-forme. Full affiche tous les détails, alors que Summary affiche uniquement le contenu sélectionné, selon la plate-forme. Pour un comportement personnalisé, les boîtes d&apos;affichage prennent en charge un message <<Set Summary Behavior.
 
@@ -2428,7 +2422,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**Syntaxe :** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntaxe :** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;enregistre sous forme de propriété de table dans la table de données. Vous pouvez spécifier un nom pour le script. L&apos;option Append Suffix ajoute un suffixe numérique au nom du script, ce qui différentie le script d&apos;un script existant portant le même nom. L&apos;option Prompt invite l&apos;utilisateur à spécifier un nom de script. L&apos;option Replace remplace un script existant avec le même nom.
 
@@ -2452,7 +2446,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Syntaxe :** obj << Save ByGroup Script to Journal
+**Syntaxe :** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis ajoute un bouton dans le journal qui contient ce script.
 
@@ -2476,7 +2470,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Syntaxe :** obj << Save ByGroup Script to Script Window
+**Syntaxe :** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;ajoute à la fenêtre de script active.
 
@@ -2500,7 +2494,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**Syntaxe :** obj << Save Script for All Objects
+**Syntaxe :** obj &lt;&lt; Save Script for All Objects
 
 **Description :** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -2518,7 +2512,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Syntaxe :** obj << Save Script for All Objects To Data Table( <name> )
+**Syntaxe :** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Description :** Enregistre un script pour tous les objets de rapport dans la table de données active. Cette option est utile lorsque vous avez plusieurs rapports dans la fenêtre. Le script est nommé d&apos;après la première plate-forme, sauf si vous spécifiez le nom du script entre guillemets.
 
@@ -2564,7 +2558,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Syntaxe :** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntaxe :** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;enregistre sous forme de propriété de tableau dans la table de données.
 
@@ -2582,7 +2576,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Syntaxe :** obj << Save Script to Journal
+**Syntaxe :** obj &lt;&lt; Save Script to Journal
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis ajoute un bouton dans le journal qui contient ce script.
 
@@ -2600,7 +2594,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Syntaxe :** obj << Save Script to Report
+**Syntaxe :** obj &lt;&lt; Save Script to Report
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;affiche dans le rapport lui-même. Utile pour conserver une trace écrite de ce qui a été effectué.
 
@@ -2618,7 +2612,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Syntaxe :** obj << Save Script to Script Window
+**Syntaxe :** obj &lt;&lt; Save Script to Script Window
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;ajoute à la fenêtre de script active.
 
@@ -2706,7 +2700,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Syntaxe :** obj << Sync to Data Table Changes
+**Syntaxe :** obj &lt;&lt; Sync to Data Table Changes
 
 **Description :** Sync avec l&apos;exclusion et les modifications apportées aux données.
 
@@ -2723,7 +2717,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Syntaxe :** obj << Title( "new title" )
+**Syntaxe :** obj &lt;&lt; Title( "new title" )
 
 **Description :** Définit le titre de la plate-forme.
 
@@ -2741,7 +2735,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Syntaxe :** obj << Top Report
+**Syntaxe :** obj &lt;&lt; Top Report
 
 **Description :** Renvoie une référence au nœud racine dans le rapport.
 
@@ -2761,7 +2755,7 @@ Show( t );
 
 ### Transform Column
 
-**Syntaxe :** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Syntaxe :** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Description :** Créez une colonne de transformation dans le contexte local d&apos;un objet, généralement une plate-forme. La colonne de transformation est active uniquement pendant la durée de vie de la plateforme.
 
@@ -2782,7 +2776,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**Syntaxe :** obj << View Web XML
+**Syntaxe :** obj &lt;&lt; View Web XML
 
 **Description :** Renvoie le code XML utilisé pour créer le rapport au format HTML interactif.
 
@@ -2797,9 +2791,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**Syntaxe :** obj = Graph Builder(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Graph Builder(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Définir le type de fenêtre à créer pour le rapport. Par défaut, une fenêtre de rapport Visible sera créée. Une fenêtre Invisible ne s&apos;affichera pas à l&apos;écran, mais sera visible par les fonctions comme Window(). Une fenêtre Private répond à la plupart des messages de fenêtre mais n&apos;est pas visible et doit être adressée au moyen de l&apos;objet rapport
 
@@ -2829,7 +2821,7 @@ New Window( "Bivariate Equation",
 
 #### Area
 
-**Syntaxe :** obj << Area
+**Syntaxe :** obj &lt;&lt; Area
 
 **Description :** Zone: Affiche une réponse résumée par catégories.
 
@@ -2843,7 +2835,7 @@ Graph Builder( Variables( X( :age ), Y( :weight ) ), Elements( Area( X, Y ) ) );
 
 #### Bar
 
-**Syntaxe :** obj << Bar
+**Syntaxe :** obj &lt;&lt; Bar
 
 **Description :** Barre: Affiche une réponse résumée par catégories.
 
@@ -2857,7 +2849,7 @@ Graph Builder( Variables( X( :age ), Y( :weight ) ), Elements( Bar( X, Y ) ) );
 
 #### Box Plot
 
-**Syntaxe :** obj << Box Plot
+**Syntaxe :** obj &lt;&lt; Box Plot
 
 **Description :** Boîte à moustaches: Affiche une vue compacte d’une distribution de variable avec les quartiles et les valeurs aberrantes.
 
@@ -2871,7 +2863,7 @@ Graph Builder( Variables( X( :age ), Y( :weight ) ), Elements( Box Plot( X, Y ) 
 
 #### Caption Box
 
-**Syntaxe :** obj << Caption Box
+**Syntaxe :** obj &lt;&lt; Caption Box
 
 **Description :** Cartouche: Affiche une valeur de statistiques de résumé pour les données.
 
@@ -2888,7 +2880,7 @@ Graph Builder(
 
 #### Contour
 
-**Syntaxe :** obj << Contour
+**Syntaxe :** obj &lt;&lt; Contour
 
 **Description :** Contour: Affiche les régions de densité des données (ou les courbes d&apos;isoréponses avec une variable de couleur). Produit des graphiques en violon lorsque X est une variable catégorielle.
 
@@ -2902,7 +2894,7 @@ Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Contour( X, Y 
 
 #### Ellipse
 
-**Syntaxe :** obj << Ellipse
+**Syntaxe :** obj &lt;&lt; Ellipse
 
 **Description :** Ellipse: Affiche une ellipse de densité normale bivariée.
 
@@ -2916,7 +2908,7 @@ Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Ellipse( X, Y 
 
 #### Formula
 
-**Syntaxe :** obj << Formula
+**Syntaxe :** obj &lt;&lt; Formula
 
 **Description :** Formule: Affiche une fonction définie par une formule de colonne.
 
@@ -2936,7 +2928,7 @@ Graph Builder(
 
 #### Heatmap
 
-**Syntaxe :** obj << Heatmap
+**Syntaxe :** obj &lt;&lt; Heatmap
 
 **Description :** Carte thermique: Affiche les dénombrements des catégories de X et Y, en utilisant la couleur.
 
@@ -2950,7 +2942,7 @@ Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Heatmap( X, Y 
 
 #### Histogram
 
-**Syntaxe :** obj << Histogram
+**Syntaxe :** obj &lt;&lt; Histogram
 
 **Description :** Histogramme: Affiche une distribution de variable en utilisant des conteneurs.
 
@@ -2964,7 +2956,7 @@ Graph Builder( Variables( X( :weight ) ), Elements( Histogram( X ) ) );
 
 #### Line
 
-**Syntaxe :** obj << Line
+**Syntaxe :** obj &lt;&lt; Line
 
 **Description :** Ligne: Affiche une réponse résumée par catégories.
 
@@ -2978,7 +2970,7 @@ Graph Builder( Variables( X( :age ), Y( :weight ) ), Elements( Line( X, Y ) ) );
 
 #### Line Of Fit
 
-**Syntaxe :** obj << Line Of Fit
+**Syntaxe :** obj &lt;&lt; Line Of Fit
 
 **Description :** Droite d&apos;ajustement: Affiche une régression linéaire avec intervalles de confiance pour X et Y continus. Ajuste les moyennes pour X catégoriel.
 
@@ -2995,7 +2987,7 @@ Graph Builder(
 
 #### Map Shapes
 
-**Syntaxe :** obj << Map Shapes
+**Syntaxe :** obj &lt;&lt; Map Shapes
 
 **Description :** Formes de cartes: Affiche les zones définies par une variable de forme de la carte, généralement une variable de couleur.
 
@@ -3012,7 +3004,7 @@ Graph Builder(
 
 #### Mosaic
 
-**Syntaxe :** obj << Mosaic
+**Syntaxe :** obj &lt;&lt; Mosaic
 
 **Description :** Mosaïque: Affiche les dénombrements des catégories de X et Y, en utilisant la taille.
 
@@ -3026,7 +3018,7 @@ Graph Builder( Variables( X( :age ), Y( :sex ) ), Elements( Mosaic( X, Y ) ) );
 
 #### Parallel
 
-**Syntaxe :** obj << Parallel
+**Syntaxe :** obj &lt;&lt; Parallel
 
 **Description :** Parallèle: Affiche plusieurs variables le long des axes parallèles avec une droite connectée pour chaque ligne.
 
@@ -3043,7 +3035,7 @@ Graph Builder(
 
 #### Pie
 
-**Syntaxe :** obj << Pie
+**Syntaxe :** obj &lt;&lt; Pie
 
 **Description :** Secteurs: Affiche les portions d’un tout.
 
@@ -3057,7 +3049,7 @@ Graph Builder( Variables( X( :age ) ), Elements( Pie( X ) ) );
 
 #### Points
 
-**Syntaxe :** obj << Points
+**Syntaxe :** obj &lt;&lt; Points
 
 **Description :** Points: Affiche un nuage de points des valeurs de données.
 
@@ -3071,7 +3063,7 @@ Graph Builder( Variables( X( :height ), Y( :weight ) ), Elements( Points( X, Y )
 
 #### Smoother
 
-**Syntaxe :** obj << Smoother
+**Syntaxe :** obj &lt;&lt; Smoother
 
 **Description :** Lissage: Affiche une courbe lissée passant par les données. Idéal quand la relation entre des valeurs continues de X et Y est inconnue.
 
@@ -3088,7 +3080,7 @@ Graph Builder(
 
 #### Treemap
 
-**Syntaxe :** obj << Treemap
+**Syntaxe :** obj &lt;&lt; Treemap
 
 **Description :** Treemap: Affiche une réponse sommée par plusieurs catégories.
 

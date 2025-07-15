@@ -2,8 +2,6 @@
 
 
 
-## 関数
-
 ### As List
 
 **構文:** y = As List( matrix )
@@ -21,7 +19,7 @@ As List( [11 22 33, 44 55 66] );
 
 ### Concat Items
 
-**構文:** string = Concat Items( {list of strings}, <separatorString> )
+**構文:** string = Concat Items( {list of strings}, &lt;separatorString&gt; )
 
 **説明:** 文字列のリストを1つの長い文字列に結合する。文字列間は区切り文字(指定されていない場合は空白)で区切られる。
 
@@ -64,7 +62,7 @@ Eval List( {x, y} );
 
 ### Insert
 
-**構文:** z = Insert( x, y, <i> )
+**構文:** z = Insert( x, y, &lt;i&gt; )
 
 **説明:** リストxのi番目の位置にyを挿入した結果を戻す。引数iがない場合、yは末尾に追加される。
 
@@ -80,7 +78,7 @@ z = Insert( z, 99, 2 );
 
 ### Insert Into
 
-**構文:** Insert Into( x, y, <i> )
+**構文:** Insert Into( x, y, &lt;i&gt; )
 
 **説明:** リスト、連想配列、またはディスプレイボックスxにyを挿入する。リストとディスプレイボックスの場合は、iで位置を指定できる。位置が指定されない場合は項目が末尾に追加される。引数xは変数でなければならない。
 
@@ -136,7 +134,7 @@ Is List( {1, 2, 3} );
 
 ### Items
 
-**構文:** wl = Items(<[first last]>, s, <delim>, <Include Boundary Delimiters(0|1)>)
+**構文:** wl = Items(&lt;[first last]&gt;, s, &lt;delim&gt;, &lt;Include Boundary Delimiters(0|1)&gt;)
 
 **説明:** 引数delimのいずれかの1文字で区切られた文字列（空の文字列も含む）のリストを戻す。delimを指定しない場合は、区切り文字としてスペースが使用される。delimが空の文字列の場合、各文字がそれぞれ個別の項目とみなされる。
 
@@ -279,7 +277,7 @@ N Items( hlist );
 
 ### Remove
 
-**構文:** y = Remove( x, <i>, <n=1> ); y = Remove( x, {list} )
+**構文:** y = Remove( x, &lt;i&gt;, &lt;n=1&gt; ); y = Remove( x, {list} )
 
 **説明:** リストxのi番目からn個の項目を削除した結果を戻す。または、引数listで指定された項目のリストを削除した結果を戻す。
 
@@ -294,7 +292,7 @@ Remove( {11, 22, 33, 44, 55}, 3, 2 );
 
 ### Remove From
 
-**構文:** Remove From( x, <i>, <n=1> )
+**構文:** Remove From( x, &lt;i&gt;, &lt;n=1&gt; )
 
 **説明:** リスト、連想配列、またはディスプレイボックスxの項目を削除する。連想配列の場合は、キー値iで指定された項目を削除する。リストとディスプレイボックスの場合は、位置iの項目から削除を開始する。リストでnが指定されている場合、複数の項目を一度に削除する。引数xは変数でなければならない。
 
@@ -458,7 +456,7 @@ Show( Set Unique( :sports ) );
 
 ### Shift
 
-**構文:** y = Shift( x, <n=1> )
+**構文:** y = Shift( x, &lt;n=1&gt; )
 
 **説明:** リストxの最初のn個の項目を末尾に移動した結果を戻す。nが負の場合は、最後のn個の項目を冒頭に移動する。
 
@@ -473,7 +471,7 @@ Shift( {11, 22, 33, 44, 55}, 2 );
 
 ### Shift Into
 
-**構文:** Shift Into( x, <n=1> )
+**構文:** Shift Into( x, &lt;n=1&gt; )
 
 **説明:** リストまたはディスプレイボックスxの最初のn個の項目を末尾に移動する。nが負の場合は、最後のn個の項目を冒頭に移動する。引数xは変数でなければならない。
 
@@ -537,9 +535,7 @@ ex;
 
 ### Substitute
 
-**構文:** y = Substitute( x, patternExpr1, replacementExpr1, ... )
-
-y = Substitute( x, patternString1, replacementString1, ..., < <<IGNORECASE > )
+**構文:** y = Substitute( x, patternExpr1, replacementExpr1, ... )y = Substitute( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
 
 **説明:** xで指定された文字列、リスト、式において、patternExprに指定されている部分をreplacementExprに置換した結果を戻す。オプションの<<IGNORECASE引数は、xが文字列の場合に大文字と小文字を区別しないマッチングを可能にする。
 
@@ -604,9 +600,7 @@ Substitute( "Apple,APPLE,apple", "apple", "orange", <<IGNORECASE );
 
 ### Substitute Into
 
-**構文:** Substitute Into( x, patternExpr1, replacementExpr1, ... )
-
-Substitute Into( x, patternString1, replacementString1, ..., < <<IGNORECASE > )
+**構文:** Substitute Into( x, patternExpr1, replacementExpr1, ... )Substitute Into( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
 
 **説明:** x で指定された文字列、リスト、式において、patternExprに指定されている部分をreplacementExprに置換する。x引数は、変数でなければならない。オプションの<<IGNORECASE引数は、xが文字列の場合に大文字と小文字を区別しないマッチングを可能にする。
 
@@ -658,7 +652,7 @@ Show( s );
 
 ### Words
 
-**構文:** wl = Words( <[first last]>, s, <delim>)
+**構文:** wl = Words( &lt;[first last]&gt;, s, &lt;delim&gt;)
 
 **説明:** 引数delimのいずれかの文字で区切られた部分文字列のリストを戻す。delimを指定しない場合は、スペースが使用される。delimが空の文字列の場合、各文字がそれぞれ個別の語とみなされる。
 

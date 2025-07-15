@@ -28,7 +28,7 @@ Multiple File Import(
 
 ### Create Window
 
-**Sintassi:** obj << Create Window
+**Sintassi:** obj &lt;&lt; Create Window
 
 **Descrizione:** Visualizza una finestra con le impostazioni correnti.
 
@@ -46,7 +46,7 @@ mfi << create window();
 
 ### Get Add File Date Column
 
-**Sintassi:** obj << Get Add File Date Column
+**Sintassi:** obj &lt;&lt; Get Add File Date Column
 
 **Descrizione:** Restituisce 1 se la tabella importata ha una colonna per il nome del file da cui è stata importata la riga.
 
@@ -64,7 +64,7 @@ mfi << Get Add File Date Column();
 
 ### Get Add File Name Column
 
-**Sintassi:** obj << Get Add File Name Column
+**Sintassi:** obj &lt;&lt; Get Add File Name Column
 
 **Descrizione:** Restituisce 1 se la tabella importata ha una colonna per il nome del file da cui è stata importata la riga.
 
@@ -82,7 +82,7 @@ mfi << Get Add File Name Column();
 
 ### Get Add File Size Column
 
-**Sintassi:** obj << Get Add File Size Column
+**Sintassi:** obj &lt;&lt; Get Add File Size Column
 
 **Descrizione:** Restituisce 1 se la tabella importata avrà una colonna per la dimensione del file da cui è stata importata la riga.
 
@@ -100,7 +100,7 @@ mfi << Get Add File Size Column();
 
 ### Get CSV Allow Numeric
 
-**Sintassi:** obj << Get CSV Allow Numeric
+**Sintassi:** obj &lt;&lt; Get CSV Allow Numeric
 
 **Descrizione:** Restituisce 1 se le colonne numeriche saranno create da dati numerici apparenti.
 
@@ -117,7 +117,7 @@ mfi << Get CSV Allow Numeric;
 
 ### Get CSV EOF Comma
 
-**Sintassi:** obj << Get CSV EOF Comma
+**Sintassi:** obj &lt;&lt; Get CSV EOF Comma
 
 **Descrizione:** Impostare a 1 per usare una virgola per separare i campi che verranno utilizzati per creare colonne diverse.
 
@@ -134,7 +134,7 @@ mfi << Get CSV EOF Comma();
 
 ### Get CSV EOF Other
 
-**Sintassi:** obj << Get CSV EOF Other
+**Sintassi:** obj &lt;&lt; Get CSV EOF Other
 
 **Descrizione:** Impostare al valore di separazione dei campi che verranno utilizzati per creare colonne diverse.
 
@@ -151,7 +151,7 @@ mfi << Get CSV EOF Other();
 
 ### Get CSV EOF Space
 
-**Sintassi:** obj << Get CSV EOF Space
+**Sintassi:** obj &lt;&lt; Get CSV EOF Space
 
 **Descrizione:** Impostare a 1 per usare uno spazio per separare i campi che verranno utilizzati per creare colonne diverse.
 
@@ -168,7 +168,7 @@ mfi << Get CSV EOF Space();
 
 ### Get CSV EOF Spaces
 
-**Sintassi:** obj << Get CSV EOF Spaces
+**Sintassi:** obj &lt;&lt; Get CSV EOF Spaces
 
 **Descrizione:** Impostare a 1 per usare uno spazio per separare i campi che verranno utilizzati per creare colonne diverse.
 
@@ -185,7 +185,7 @@ mfi << Get CSV EOF Spaces();
 
 ### Get CSV EOF Tab
 
-**Sintassi:** obj << Get CSV EOF Tab
+**Sintassi:** obj &lt;&lt; Get CSV EOF Tab
 
 **Descrizione:** Impostare a 1 per usare una tabulazione per separare i campi che verranno utilizzati per creare colonne diverse.
 
@@ -202,7 +202,7 @@ mfi << Get CSV EOF TAb();
 
 ### Get CSV EOL CR
 
-**Sintassi:** obj << Get CSV EOL CR
+**Sintassi:** obj &lt;&lt; Get CSV EOL CR
 
 **Descrizione:** Restituisce 1 se si usa CR come valore di separazione delle linee che verranno utilizzate per creare righe diverse.
 
@@ -219,7 +219,7 @@ mfi << Get CSV EOL CR();
 
 ### Get CSV EOL CRLF
 
-**Sintassi:** obj << Get CSV EOL CRLF
+**Sintassi:** obj &lt;&lt; Get CSV EOL CRLF
 
 **Descrizione:** Restituisce 1 se si usa CRLF come valore di separazione delle linee che verranno utilizzate per creare righe diverse.
 
@@ -236,7 +236,7 @@ mfi << Get CSV EOL CRLF();
 
 ### Get CSV EOL LF
 
-**Sintassi:** obj << Get CSV EOL LF
+**Sintassi:** obj &lt;&lt; Get CSV EOL LF
 
 **Descrizione:** Restituisce 1 se si usa LF come valore di separazione delle linee che verranno utilizzate per creare righe diverse.
 
@@ -253,7 +253,7 @@ mfi << Get CSV EOL LF();
 
 ### Get CSV EOL Other
 
-**Sintassi:** obj << Get CSV EOL Other
+**Sintassi:** obj &lt;&lt; Get CSV EOL Other
 
 **Descrizione:** Ottiene il valore personalizzato che separa le linee nel file di input. Questo valore consente di creare righe nell&apos;output.
 
@@ -270,7 +270,7 @@ mfi << Get CSV EOF Other();
 
 ### Get CSV EOL Semicolon
 
-**Sintassi:** obj << Get CSV EOL Semicolon
+**Sintassi:** obj &lt;&lt; Get CSV EOL Semicolon
 
 **Descrizione:** Restituisce 1 se il punto e virgola rappresenta le linee tra le righe.
 
@@ -287,7 +287,7 @@ mfi << Get CSV EOL Semicolon();
 
 ### Get CSV Escape
 
-**Sintassi:** obj << Get CSV Escape
+**Sintassi:** obj &lt;&lt; Get CSV Escape
 
 **Descrizione:** Ottiene un carattere che consente di evitare caratteri speciali come fine campo, fine riga o delimitatore di virgolette.
 
@@ -304,7 +304,7 @@ mfi << Get CSV Escape();
 
 ### Get CSV First Data Line
 
-**Sintassi:** obj << Get CSV First Data Line
+**Sintassi:** obj &lt;&lt; Get CSV First Data Line
 
 **Descrizione:** Il numero di riga nel file di importazione che contiene la prima riga di dati.
 
@@ -321,7 +321,7 @@ mfi << Get CSV First Data Line();
 
 ### Get CSV First Header Line
 
-**Sintassi:** obj << Get CSV First Header Line
+**Sintassi:** obj &lt;&lt; Get CSV First Header Line
 
 **Descrizione:** Ottiene la prima riga nel file di importazione le cui intestazioni verranno utilizzate per creare i nomi delle colonne.
 
@@ -340,7 +340,7 @@ mfi << Get CSV First Header Line();
 
 ### Get CSV Has Headers
 
-**Sintassi:** obj << Get CSV Has Headers
+**Sintassi:** obj &lt;&lt; Get CSV Has Headers
 
 **Descrizione:** Restituisce 1 se durante l&apos;importazione si utilizzeranno le impostazioni di intestazione.
 
@@ -357,7 +357,7 @@ mfi << Get CSV Has Headers;
 
 ### Get CSV Number Of Header Lines
 
-**Sintassi:** obj << Get CSV Number Of Header Lines
+**Sintassi:** obj &lt;&lt; Get CSV Number Of Header Lines
 
 **Descrizione:** Ottiene il numero di righe delle intestazioni che verranno utilizzate per i nomi delle colonne.
 
@@ -376,7 +376,7 @@ mfi << Get CSV Number Of Header Lines();
 
 ### Get CSV Quote
 
-**Sintassi:** obj << Get CSV Quote
+**Sintassi:** obj &lt;&lt; Get CSV Quote
 
 **Descrizione:** Ottiene il valore che separa le stringhe tra virgolette.
 
@@ -393,7 +393,7 @@ mfi << Get CSV Quote();
 
 ### Get Charset
 
-**Sintassi:** obj << Get Charset
+**Sintassi:** obj &lt;&lt; Get Charset
 
 **Descrizione:** Restituisce il set di caratteri che verrà utilizzato per l&apos;importazione dei dati.
 
@@ -410,7 +410,7 @@ mfi << Get Charset();
 
 ### Get Date Count
 
-**Sintassi:** obj << Get Date Count
+**Sintassi:** obj &lt;&lt; Get Date Count
 
 **Descrizione:** Restituisce il numero di file che rientrano nel range del filtro delle date se questo è abilitato, in caso contrario restituisce il numero totale di file.
 
@@ -430,7 +430,7 @@ mfi << Get Date Count();
 
 ### Get Date Enable
 
-**Sintassi:** obj << Get Date Enable
+**Sintassi:** obj &lt;&lt; Get Date Enable
 
 **Descrizione:** Restituisce 1 se il filtro delle date è abilitato.
 
@@ -447,7 +447,7 @@ mfi << Get Date Enable();
 
 ### Get Date Filter
 
-**Sintassi:** obj << Get Date Filter
+**Sintassi:** obj &lt;&lt; Get Date Filter
 
 **Descrizione:** Restituisce il filtro delle date corrente.
 
@@ -466,7 +466,7 @@ mfi << Get Date Filter();
 
 ### Get Excel Add Sheet Name Column
 
-**Sintassi:** obj << Get Excel Add Sheet Name Column
+**Sintassi:** obj &lt;&lt; Get Excel Add Sheet Name Column
 
 **Descrizione:** Restituisce 1 se alla tabella importata verrà aggiunta una colonna che ha il nome del foglio di calcolo da cui provengono i dati.
 
@@ -483,7 +483,7 @@ mfi << Get Excel Add Sheet Name Column;
 
 ### Get Excel Best Guess
 
-**Sintassi:** obj << Get Excel Best Guess
+**Sintassi:** obj &lt;&lt; Get Excel Best Guess
 
 **Descrizione:** Restituisce 1 se i dati e le intestazioni di colonna saranno individuati dinamicamente. Restituisce 0 se le altre impostazioni di Excel saranno utilizzate durante l&apos;importazione di dati Excel.
 
@@ -500,7 +500,7 @@ mfi << Get Excel Best Guess;
 
 ### Get Excel Column Headers As Hierarchies
 
-**Sintassi:** obj << Get Excel Column Headers As Hierarchies
+**Sintassi:** obj &lt;&lt; Get Excel Column Headers As Hierarchies
 
 **Descrizione:** Restituisce 1 se le celle del foglio di calcolo che si trovano nelle righe di intestazione che si estendono su più celle orizzontalmente saranno trattate come gerarchie.
 
@@ -517,7 +517,7 @@ mfi << Get Excel Column Headers as Hierarchies;
 
 ### Get Excel Column Name Separator
 
-**Sintassi:** obj << Get Excel Column Name Separator
+**Sintassi:** obj &lt;&lt; Get Excel Column Name Separator
 
 **Descrizione:** Ottiene la stringa da utilizzare quando si concatenano più celle in nomi di intestazioni di colonna.
 
@@ -534,7 +534,7 @@ mfi << Get Excel Column Name Separator;
 
 ### Get Excel First Data Column
 
-**Sintassi:** obj << Get Excel First Data Column
+**Sintassi:** obj &lt;&lt; Get Excel First Data Column
 
 **Descrizione:** Restituisce la prima colonna non vuota del foglio di calcolo da importare come dati.
 
@@ -551,7 +551,7 @@ mfi << Get Excel First Data Column;
 
 ### Get Excel First Data Line
 
-**Sintassi:** obj << Get Excel First Data Line
+**Sintassi:** obj &lt;&lt; Get Excel First Data Line
 
 **Descrizione:** Restituisce la prima riga non vuota del foglio di calcolo da importare come dati.
 
@@ -568,7 +568,7 @@ mfi << Get Excel First Data Line;
 
 ### Get Excel First Header Line
 
-**Sintassi:** obj << Get Excel First Header Line
+**Sintassi:** obj &lt;&lt; Get Excel First Header Line
 
 **Descrizione:** Restituisce la prima riga non vuota del foglio di calcolo da importare come intestazione di colonna.
 
@@ -585,7 +585,7 @@ mfi << Get Excel First Header Line;
 
 ### Get Excel Has Headers
 
-**Sintassi:** obj << Get Excel Has Headers
+**Sintassi:** obj &lt;&lt; Get Excel Has Headers
 
 **Descrizione:** Restituisce 1 se le intestazioni saranno importate dai fogli di lavoro e 0 in caso contrario.
 
@@ -602,7 +602,7 @@ mfi << Get Excel Has Headers;
 
 ### Get Excel Import Color Cells
 
-**Sintassi:** obj << Get Excel Import Color Cells
+**Sintassi:** obj &lt;&lt; Get Excel Import Color Cells
 
 **Descrizione:** Restituisce 1 se verrà importato il colore di sfondo delle celle di dati del foglio di calcolo.
 
@@ -619,7 +619,7 @@ mfi << Get Excel Import Color Cells;
 
 ### Get Excel Last Data Column
 
-**Sintassi:** obj << Get Excel Last Data Column
+**Sintassi:** obj &lt;&lt; Get Excel Last Data Column
 
 **Descrizione:** Restituisce l&apos;ultima colonna nell&apos;area dei dati del foglio di calcolo da importare. Se viene restituito un valore mancante, l&apos;ultima colonna sarà individuata dinamicamente.
 
@@ -636,7 +636,7 @@ mfi << Get Excel Last Data Column;
 
 ### Get Excel Last Data Row
 
-**Sintassi:** obj << Get Excel Last Data Row
+**Sintassi:** obj &lt;&lt; Get Excel Last Data Row
 
 **Descrizione:** Restituisce l&apos;ultima riga nell&apos;area dei dati del foglio di calcolo da importare. Se viene restituito un valore mancante, l&apos;ultima riga sarà individuata dinamicamente.
 
@@ -653,7 +653,7 @@ mfi << Get Excel Last Data Row;
 
 ### Get Excel Limit Column Type Detection
 
-**Sintassi:** obj << Get Excel Limit Column Type Detection
+**Sintassi:** obj &lt;&lt; Get Excel Limit Column Type Detection
 
 **Descrizione:** Restituisce 0 se tutte le celle del foglio di calcolo in ciascuna colonna saranno selezionate quando viene rilevato il tipo di dati della colonna e 1 se sarà selezionato solo un sottoinsieme. La limitazione del rilevamento può migliorare le performance con fogli di calcolo di grandi dimensioni.
 
@@ -670,7 +670,7 @@ mfi << Get Excel Limit Column Type Detection;
 
 ### Get Excel Multiple Series Stack
 
-**Sintassi:** obj << Get Excel Multiple Series Stack
+**Sintassi:** obj &lt;&lt; Get Excel Multiple Series Stack
 
 **Descrizione:** Restituisce 1 se le colonne estese saranno impilate se "Imposta intestazioni di colonna Excel come gerarchie" è impostato a 1.
 
@@ -687,7 +687,7 @@ mfi << Get Excel Multiple Series Stack;
 
 ### Get Excel Number of Header Lines
 
-**Sintassi:** obj << Get Excel Number of Header Lines
+**Sintassi:** obj &lt;&lt; Get Excel Number of Header Lines
 
 **Descrizione:** Restituisce il numero di righe nel foglio di calcolo che saranno importate come intestazioni delle colonne.
 
@@ -704,7 +704,7 @@ mfi << Get Excel Number of Header Lines;
 
 ### Get Excel Replicate Data In Spanned Rows
 
-**Sintassi:** obj << Get Excel Replicate Data In Spanned Rows
+**Sintassi:** obj &lt;&lt; Get Excel Replicate Data In Spanned Rows
 
 **Descrizione:** Per righe di intestazione multiple unite verticalmente, imposta a 1 per ripetere il valore.
 
@@ -721,7 +721,7 @@ mfi << Get Excel Replicate Data In Spanned Rows;
 
 ### Get Excel Replicate Headers In Spanned Rows
 
-**Sintassi:** obj << Get Excel Replicate Headers In Spanned Rows
+**Sintassi:** obj &lt;&lt; Get Excel Replicate Headers In Spanned Rows
 
 **Descrizione:** Restituisce 1 se le celle di intestazione del foglio di calcolo unite avranno valori di cella duplicati quando si crea il nome della colonna della tabella JMP.
 
@@ -738,7 +738,7 @@ mfi << Get Excel Replicate Headers In Spanned Rows;
 
 ### Get Excel Suppress Empty Columns
 
-**Sintassi:** obj << Get Excel Suppress Empty Columns
+**Sintassi:** obj &lt;&lt; Get Excel Suppress Empty Columns
 
 **Descrizione:** Imposta a 1 per impedire l&apos;importazione di colonne vuote.
 
@@ -755,7 +755,7 @@ mfi << Get Excel Suppress Empty Columns;
 
 ### Get Excel Suppress Hidden Columns
 
-**Sintassi:** obj << Get Excel Suppress Hidden Columns
+**Sintassi:** obj &lt;&lt; Get Excel Suppress Hidden Columns
 
 **Descrizione:** Restituisce 1 se le colonne nascoste non saranno importate.
 
@@ -772,7 +772,7 @@ mfi << Get Excel Suppress Hidden Columns;
 
 ### Get Excel Suppress Hidden Rows
 
-**Sintassi:** obj << Get Excel Suppress Hidden Rows
+**Sintassi:** obj &lt;&lt; Get Excel Suppress Hidden Rows
 
 **Descrizione:** Restituisce 1 se le righe nascoste non verranno importate.
 
@@ -789,7 +789,7 @@ mfi << Get Excel Suppress Hidden Rows;
 
 ### Get Excel Worksheet Filter
 
-**Sintassi:** obj << Get Excel Worksheet Filter
+**Sintassi:** obj &lt;&lt; Get Excel Worksheet Filter
 
 **JMP Versione aggiunta:** 18
 
@@ -804,7 +804,7 @@ mfi << Get Excel Worksheet Filter;
 
 ### Get File List
 
-**Sintassi:** obj << Get File List
+**Sintassi:** obj &lt;&lt; Get File List
 
 **JMP Versione aggiunta:** 18
 
@@ -816,7 +816,7 @@ Names Default To Here( 1 );
 
 ### Get Folder
 
-**Sintassi:** obj << Get Folder
+**Sintassi:** obj &lt;&lt; Get Folder
 
 **Descrizione:** Restituisce il nome della cartella.
 
@@ -834,7 +834,7 @@ mfi << Get Folder;
 
 ### Get Folder Count
 
-**Sintassi:** obj << Get Folder Count
+**Sintassi:** obj &lt;&lt; Get Folder Count
 
 **Descrizione:** Restituisce il numero di file nella cartella.
 
@@ -852,7 +852,7 @@ mfi << Get Folder Count;
 
 ### Get Import Callback
 
-**Sintassi:** obj << Get Import Callback
+**Sintassi:** obj &lt;&lt; Get Import Callback
 
 **JMP Versione aggiunta:** 15
 
@@ -881,7 +881,7 @@ mfi << Get Import Callback();
 
 ### Get Import Mode
 
-**Sintassi:** obj << Get Import Mode
+**Sintassi:** obj &lt;&lt; Get Import Mode
 
 **JMP Versione aggiunta:** 14
 
@@ -897,7 +897,7 @@ mfi << Get Import Mode();
 
 ### Get JSON Guess
 
-**Sintassi:** obj << Get JSON Guess
+**Sintassi:** obj &lt;&lt; Get JSON Guess
 
 **Descrizione:** Restituisce il metodo integrato di importazione dei dati JSON per creare tabelle di dati.
 
@@ -914,7 +914,7 @@ mfi << Get JSON Guess();
 
 ### Get JSON Method
 
-**Sintassi:** obj << Get JSON Method
+**Sintassi:** obj &lt;&lt; Get JSON Method
 
 **Descrizione:** Restituire il metodo al momento utilizzato per l&apos;importazione dei dati JSON.
 
@@ -931,7 +931,7 @@ mfi << Get JSON Method();
 
 ### Get JSON Settings
 
-**Sintassi:** obj << Get JSON Settings
+**Sintassi:** obj &lt;&lt; Get JSON Settings
 
 **Descrizione:** Restituisce il JSL personalizzato che importa dati JSON.
 
@@ -948,7 +948,7 @@ mfi << Get JSON Settings();
 
 ### Get Name Count
 
-**Sintassi:** obj << Get Name Count
+**Sintassi:** obj &lt;&lt; Get Name Count
 
 **Descrizione:** Restituisce il numero di file che corrisponde al filtro dei nomi corrente se è impostata l&apos;opzione Attiva imposta nomi o il numero totale di file in caso contrario.
 
@@ -965,7 +965,7 @@ mfi << Get Name Count();
 
 ### Get Name Enable
 
-**Sintassi:** obj << Get Name Enable
+**Sintassi:** obj &lt;&lt; Get Name Enable
 
 **Descrizione:** Restituisce 1 se il filtro dei nomi corrente verrà applicato per filtrare i file da includere.
 
@@ -983,7 +983,7 @@ mfi << Get Name Enable();
 
 ### Get Name Filter
 
-**Sintassi:** obj << Get Name Filter
+**Sintassi:** obj &lt;&lt; Get Name Filter
 
 **Descrizione:** Restituisce il filtro dei nomi corrente.
 
@@ -1002,7 +1002,7 @@ mfi << Get Name Filter();
 
 ### Get PDF Method
 
-**Sintassi:** obj << Get PDF Method
+**Sintassi:** obj &lt;&lt; Get PDF Method
 
 **Descrizione:** Restituisce il metodo utilizzato correntemente per l&apos;importazione dei dati PDF.
 
@@ -1019,7 +1019,7 @@ mfi << Get PDF Method();
 
 ### Get PDF Settings
 
-**Sintassi:** obj << Get PDF Settings
+**Sintassi:** obj &lt;&lt; Get PDF Settings
 
 **Descrizione:** Restituisce il JSL personalizzato che importa i dati PDF.
 
@@ -1036,7 +1036,7 @@ mfi << Get PDF Settings();
 
 ### Get Script
 
-**Sintassi:** obj << Get Script
+**Sintassi:** obj &lt;&lt; Get Script
 
 **Descrizione:** Creare uno script dalle impostazioni correnti.
 
@@ -1053,7 +1053,7 @@ mfi << Get Script();
 
 ### Get Show Hidden
 
-**Sintassi:** obj << Get Show Hidden
+**Sintassi:** obj &lt;&lt; Get Show Hidden
 
 **Descrizione:** Indica se i file nascosti sono inclusi
 
@@ -1071,7 +1071,7 @@ mfi << Get Show Hidden();
 
 ### Get Size Count
 
-**Sintassi:** obj << Get Size Count
+**Sintassi:** obj &lt;&lt; Get Size Count
 
 **Descrizione:** Restituisce il numero di file che corrisponde al filtro delle dimensioni corrente se è impostata l&apos;opzione Attiva imposta dimensioni o il numero totale di file in caso contrario.
 
@@ -1093,7 +1093,7 @@ Print( mfi << Get Size Count() );
 
 ### Get Size Enable
 
-**Sintassi:** 0|1 = obj << Get Size Enable
+**Sintassi:** 0|1 = obj &lt;&lt; Get Size Enable
 
 **Descrizione:** Restituisce 1 se il filtro delle dimensioni è abilitato.
 
@@ -1112,7 +1112,7 @@ mfi << Get Size Enable();
 
 ### Get Size Filter
 
-**Sintassi:** obj << Get Size Filter
+**Sintassi:** obj &lt;&lt; Get Size Filter
 
 **Descrizione:** Restituisce un elenco il cui primo elemento è la più piccola dimensione di file inclusa e il cui secondo numero è la più grande dimensione di file inclusa.
 
@@ -1130,7 +1130,7 @@ mfi << Get Size Filter();
 
 ### Get Stack Mode
 
-**Sintassi:** obj << Get Stack Mode
+**Sintassi:** obj &lt;&lt; Get Stack Mode
 
 **Descrizione:** Restituisce "Impila simili" se durante l&apos;importazione i file di input simili saranno combinati in un&apos;unica tabella o "Tabella per file" se i file di input saranno combinati in due o più tabelle.
 
@@ -1147,7 +1147,7 @@ mfi << Get Stack Mode();
 
 ### Get Subfolders
 
-**Sintassi:** obj << Get Subfolders
+**Sintassi:** obj &lt;&lt; Get Subfolders
 
 **Descrizione:** Restituisce 1 se i file nelle sottocartelle sono inclusi.
 
@@ -1165,7 +1165,7 @@ mfi << Get Subfolders();
 
 ### Get Use File List
 
-**Sintassi:** obj << Get Use File List
+**Sintassi:** obj &lt;&lt; Get Use File List
 
 **JMP Versione aggiunta:** 18
 
@@ -1177,7 +1177,7 @@ Names Default To Here( 1 );
 
 ### Get XML Guess
 
-**Sintassi:** obj << Get XML Guess
+**Sintassi:** obj &lt;&lt; Get XML Guess
 
 **Descrizione:** Restituisce il metodo integrato di importazione dei dati XML per creare tabelle di dati.
 
@@ -1194,7 +1194,7 @@ mfi << Get XML Guess();
 
 ### Get XML Method
 
-**Sintassi:** obj << Get XML Method
+**Sintassi:** obj &lt;&lt; Get XML Method
 
 **Descrizione:** Restituire il metodo al momento utilizzato per l&apos;importazione dei dati XML.
 
@@ -1211,7 +1211,7 @@ mfi << Get XML Method();
 
 ### Get XML Settings
 
-**Sintassi:** obj << Get XML Settings
+**Sintassi:** obj &lt;&lt; Get XML Settings
 
 **Descrizione:** Restituisce un jsl personalizzato per l&apos;importazione dei dati xml.
 
@@ -1228,7 +1228,7 @@ mfi << Get XML Settings();
 
 ### Import Data
 
-**Sintassi:** list of data tables = obj << Import Data
+**Sintassi:** list of data tables = obj &lt;&lt; Import Data
 
 **Descrizione:** Importa i dati in base alle impostazioni correnti e restituisce un elenco di tabelle di dati.
 
@@ -1248,7 +1248,7 @@ tables = mfi << Import Data();
 
 ### Set Add File Date Column
 
-**Sintassi:** obj << Set Add File Date Column
+**Sintassi:** obj &lt;&lt; Set Add File Date Column
 
 **Descrizione:** Impostare la creazione di una colonna con la dimensione del file da cui è stata importata la riga.
 
@@ -1265,7 +1265,7 @@ mfi << Set Add File Date Column( 1 );
 
 ### Set Add File Name Column
 
-**Sintassi:** obj << Set Add File Name Column
+**Sintassi:** obj &lt;&lt; Set Add File Name Column
 
 **Descrizione:** Impostare la creazione di una colonna con il nome del file da cui è stata importata la riga.
 
@@ -1282,7 +1282,7 @@ mfi << Set Add File Name Column( 1 );
 
 ### Set Add File Size Column
 
-**Sintassi:** obj << Set Add File Size Column
+**Sintassi:** obj &lt;&lt; Set Add File Size Column
 
 **Descrizione:** Impostare la creazione di una colonna con la dimensione del file da cui è stata importata la riga.
 
@@ -1299,7 +1299,7 @@ mfi << Set Add File Size Column( 1 );
 
 ### Set CSV Allow Numeric
 
-**Sintassi:** obj << Set CSV Allow Numeric
+**Sintassi:** obj &lt;&lt; Set CSV Allow Numeric
 
 **Descrizione:** Impostare a 1 per consentire la creazione di colonne numeriche da dati numerici apparenti o a 0 per creare colonne tutte alfanumeriche.
 
@@ -1316,7 +1316,7 @@ mfi << Set CSV Allow Numeric( 1 );
 
 ### Set CSV EOF Comma
 
-**Sintassi:** obj << Set CSV EOF Comma
+**Sintassi:** obj &lt;&lt; Set CSV EOF Comma
 
 **Descrizione:** Impostare a 1 per usare una virgola per separare i campi che verranno utilizzati per creare colonne diverse.
 
@@ -1333,7 +1333,7 @@ mfi << Set CSV EOF Comma( 1 );
 
 ### Set CSV EOF Other
 
-**Sintassi:** obj << Set CSV EOF Other
+**Sintassi:** obj &lt;&lt; Set CSV EOF Other
 
 **Descrizione:** Impostare al valore di separazione dei campi che verranno utilizzati per creare colonne diverse.
 
@@ -1350,7 +1350,7 @@ mfi << Set CSV EOF Other( "\" );
 
 ### Set CSV EOF Space
 
-**Sintassi:** obj << Set CSV EOF Space
+**Sintassi:** obj &lt;&lt; Set CSV EOF Space
 
 **Descrizione:** Impostare a 1 per usare uno spazio per separare i campi che verranno utilizzati per creare colonne diverse.
 
@@ -1367,7 +1367,7 @@ mfi << Set CSV EOF Space( 1 );
 
 ### Set CSV EOF Spaces
 
-**Sintassi:** obj << Set CSV EOF Spaces
+**Sintassi:** obj &lt;&lt; Set CSV EOF Spaces
 
 **Descrizione:** Impostare a 1 per usare uno spazio per separare i campi che verranno utilizzati per creare colonne diverse.
 
@@ -1384,7 +1384,7 @@ mfi << Set CSV EOF Spaces( 1 );
 
 ### Set CSV EOF Tab
 
-**Sintassi:** obj << Set CSV EOF Tab
+**Sintassi:** obj &lt;&lt; Set CSV EOF Tab
 
 **Descrizione:** Impostare a 1 per usare una tabulazione per separare i campi che verranno utilizzati per creare colonne diverse.
 
@@ -1401,7 +1401,7 @@ mfi << Set CSV EOF Tab( 1 );
 
 ### Set CSV EOL CR
 
-**Sintassi:** obj << Set CSV EOL CR
+**Sintassi:** obj &lt;&lt; Set CSV EOL CR
 
 **Descrizione:** Impostare a 1 per usare CR come valore di separazione delle linee che verranno utilizzate per creare righe diverse.
 
@@ -1418,7 +1418,7 @@ mfi << Set CSV EOL CR( 1 );
 
 ### Set CSV EOL CRLF
 
-**Sintassi:** obj << Set CSV EOL CRLF
+**Sintassi:** obj &lt;&lt; Set CSV EOL CRLF
 
 **Descrizione:** Impostare a 1 per usare CRLF come valore di separazione delle linee che verranno utilizzate per creare righe diverse.
 
@@ -1435,7 +1435,7 @@ mfi << Set CSV EOL CRLF( 1 );
 
 ### Set CSV EOL LF
 
-**Sintassi:** obj << Set CSV EOL LF
+**Sintassi:** obj &lt;&lt; Set CSV EOL LF
 
 **Descrizione:** Impostare a 1 per usare LF come valore di separazione delle linee che verranno utilizzate per creare righe diverse.
 
@@ -1452,7 +1452,7 @@ mfi << Set CSV EOL LF( 1 );
 
 ### Set CSV EOL Other
 
-**Sintassi:** obj << Set CSV EOL Other
+**Sintassi:** obj &lt;&lt; Set CSV EOL Other
 
 **Descrizione:** Imposta il valore personalizzato che separa le linee nel file di input. Questo valore consente di creare righe nell&apos;output.
 
@@ -1469,7 +1469,7 @@ mfi << Set CSV EOF Other( "\" );
 
 ### Set CSV EOL Semicolon
 
-**Sintassi:** obj << Set CSV EOL Semicolon
+**Sintassi:** obj &lt;&lt; Set CSV EOL Semicolon
 
 **Descrizione:** Impostare a 1 per usare il punto e virgola per rappresentare le linee tra le righe.
 
@@ -1486,7 +1486,7 @@ mfi << Set CSV EOL Semicolon( 1 );
 
 ### Set CSV Escape
 
-**Sintassi:** obj << Set CSV Escape
+**Sintassi:** obj &lt;&lt; Set CSV Escape
 
 **Descrizione:** Imposta un carattere che consente di evitare i caratteri speciali come fine campo, fine riga o delimitatore di virgolette.
 
@@ -1503,7 +1503,7 @@ mfi << Set CSV Escape( "\" );
 
 ### Set CSV First Data Line
 
-**Sintassi:** obj << Set CSV First Data Line
+**Sintassi:** obj &lt;&lt; Set CSV First Data Line
 
 **Descrizione:** Il numero di riga nel file di importazione che contiene la prima riga di dati.
 
@@ -1520,7 +1520,7 @@ mfi << Set CSV First Data Line( 4 );
 
 ### Set CSV First Header Line
 
-**Sintassi:** obj << Set CSV First Header Line
+**Sintassi:** obj &lt;&lt; Set CSV First Header Line
 
 **Descrizione:** Imposta la prima riga nel file di importazione le cui intestazioni verranno utilizzate per creare i nomi delle colonne.
 
@@ -1538,7 +1538,7 @@ mfi << Set CSV First Header Line( 2 );
 
 ### Set CSV Has Headers
 
-**Sintassi:** obj << Set CSV Has Headers
+**Sintassi:** obj &lt;&lt; Set CSV Has Headers
 
 **Descrizione:** Impostare a 1 per usare "CSV Prima riga intestazione" e "CSV Numero di righe di intestazione".
 
@@ -1555,7 +1555,7 @@ mfi << Set CSV Has Headers( 1 );
 
 ### Set CSV Number Of Header Lines
 
-**Sintassi:** obj << Set CSV Number Of Header Lines
+**Sintassi:** obj &lt;&lt; Set CSV Number Of Header Lines
 
 **Descrizione:** Imposta il numero di righe delle intestazioni che verranno utilizzate per i nomi delle colonne.
 
@@ -1573,7 +1573,7 @@ mfi << Set CSV Number Of Header Lines( 2 );
 
 ### Set CSV Quote
 
-**Sintassi:** obj << Set CSV Quote
+**Sintassi:** obj &lt;&lt; Set CSV Quote
 
 **Descrizione:** Imposta il valore che separa le stringhe tra virgolette.
 
@@ -1590,7 +1590,7 @@ mfi << Set CSV Quote( "'" );
 
 ### Set Charset
 
-**Sintassi:** obj << Set Charset
+**Sintassi:** obj &lt;&lt; Set Charset
 
 **Descrizione:** Imposta il set di caratteri che deve essere utilizzato durante l&apos;importazione dei dati.
 
@@ -1607,7 +1607,7 @@ mfi << Set Charset( "Best Guess" );
 
 ### Set Date Enable
 
-**Sintassi:** obj << Set Date Enable
+**Sintassi:** obj &lt;&lt; Set Date Enable
 
 **Descrizione:** Abilita il filtro di data e ora. Il valore predefinito è Disattivato, che indica che il filtro delle date verrà ignorato anche se è stato impostato.
 
@@ -1625,7 +1625,7 @@ mfi << Set Date Enable( 1 );
 
 ### Set Date Filter
 
-**Sintassi:** obj << Set Date Filter( {start of date time range, end of date time range} )
+**Sintassi:** obj &lt;&lt; Set Date Filter( {start of date time range, end of date time range} )
 
 **Descrizione:** Filtra i file inclusi in base al range di data e ora.
 
@@ -1643,7 +1643,7 @@ mfi << Set Date Enable( 1 );
 
 ### Set Excel Add Sheet Name Column
 
-**Sintassi:** obj << Set Excel Add Sheet Name Column
+**Sintassi:** obj &lt;&lt; Set Excel Add Sheet Name Column
 
 **Descrizione:** Se l&apos;opzione è impostata a 1 verrà aggiunta una colonna alla tabella importata che avrà il nome del foglio di calcolo da cui provengono i dati.
 
@@ -1660,7 +1660,7 @@ mfi << Set Excel Add Sheet Name Column( 1 );
 
 ### Set Excel Best Guess
 
-**Sintassi:** obj << Set Excel Best Guess
+**Sintassi:** obj &lt;&lt; Set Excel Best Guess
 
 **Descrizione:** Trova dinamicamente i dati in ciascun foglio di calcolo ed effettua un&apos;ipotesi migliore per i nomi delle colonne. Se questa opzione è impostata, non vengono utilizzati altri parametri di Excel a eccezione di "Imposta colonna Excel Aggiungi nome foglio".
 
@@ -1677,7 +1677,7 @@ mfi << Set Excel Best Guess( 1 );
 
 ### Set Excel Column Headers As Hierarchies
 
-**Sintassi:** obj << Set Excel Column Headers As Hierarchies
+**Sintassi:** obj &lt;&lt; Set Excel Column Headers As Hierarchies
 
 **Descrizione:** Imposta a 1 per trattare più righe di intestazione di colonna come gerarchie. In questo modo le informazioni vengono riorganizzate in celle estese nelle intestazioni e i dati vengono inseriti nelle righe della tabella generata.
 
@@ -1703,7 +1703,7 @@ Multiple File Import(
 
 ### Set Excel Column Name Separator
 
-**Sintassi:** obj << Set Excel Column Name Separator
+**Sintassi:** obj &lt;&lt; Set Excel Column Name Separator
 
 **Descrizione:** Imposta una stringa da usare come separatore quando si concatenano più celle in nomi di intestazioni di colonna.
 
@@ -1720,7 +1720,7 @@ mfi << Set Excel Column Name Separator( "+" );
 
 ### Set Excel First Data Column
 
-**Sintassi:** obj << Set Excel First Data Column
+**Sintassi:** obj &lt;&lt; Set Excel First Data Column
 
 **Descrizione:** Imposta il numero della prima colonna non vuota del foglio di calcolo che verrà importata come dati.
 
@@ -1737,7 +1737,7 @@ mfi << Set Excel First Data Column( 1 );
 
 ### Set Excel First Data Line
 
-**Sintassi:** obj << Set Excel First Data Line
+**Sintassi:** obj &lt;&lt; Set Excel First Data Line
 
 **Descrizione:** Imposta il numero della prima riga non vuota del foglio di calcolo che verrà importata come dati.
 
@@ -1754,7 +1754,7 @@ mfi << Set Excel First Data Line( 1 );
 
 ### Set Excel First Header Line
 
-**Sintassi:** obj << Set Excel First Header Line
+**Sintassi:** obj &lt;&lt; Set Excel First Header Line
 
 **Descrizione:** Imposta il numero della prima riga non vuota nel foglio di calcolo che verrà utilizzato per definire le intestazioni delle colonne.
 
@@ -1771,7 +1771,7 @@ mfi << Set Excel First Header Line( 1 );
 
 ### Set Excel Has Headers
 
-**Sintassi:** obj << Set Excel Has Headers
+**Sintassi:** obj &lt;&lt; Set Excel Has Headers
 
 **Descrizione:** Se questa opzione è impostata, per definire le intestazioni delle colonne durante l&apos;importazione saranno utilizzati "Imposta prima riga di intestazione in Excel" e "Imposta numero di righe di intestazione in Excel".
 
@@ -1788,7 +1788,7 @@ mfi << Set Excel Has Headers( 1 );
 
 ### Set Excel Import Color Cells
 
-**Sintassi:** obj << Set Excel Import Color Cells
+**Sintassi:** obj &lt;&lt; Set Excel Import Color Cells
 
 **Descrizione:** Se l&apos;opzione è impostata a 1, saranno importati i colori di sfondo delle celle di dati.
 
@@ -1805,7 +1805,7 @@ mfi << Set Excel Import Color Cells( 1 );
 
 ### Set Excel Last Data Column
 
-**Sintassi:** obj << Set Excel Last Data Column
+**Sintassi:** obj &lt;&lt; Set Excel Last Data Column
 
 **Descrizione:** Imposta l&apos;ultima colonna nell&apos;area dei dati del foglio di calcolo da importare. L&apos;area dei dati inizia dopo tutte le colonne vuote.
 
@@ -1822,7 +1822,7 @@ mfi << Set Excel Last Data Column( 2 );
 
 ### Set Excel Last Data Row
 
-**Sintassi:** obj << Set Excel Last Data Row
+**Sintassi:** obj &lt;&lt; Set Excel Last Data Row
 
 **Descrizione:** Imposta l&apos;ultima riga nell&apos;area dei dati del foglio di calcolo da importare. L&apos;area dei dati inizia dopo tutte le righe vuote.
 
@@ -1839,7 +1839,7 @@ mfi << Set Excel Last Data Row( 1 );
 
 ### Set Excel Limit Column Type Detection
 
-**Sintassi:** obj << Set Excel Limit Column Type Detection
+**Sintassi:** obj &lt;&lt; Set Excel Limit Column Type Detection
 
 **Descrizione:** Imposta a 1 per selezionare solo alcune righe in una colonna quando si rileva automaticamente il tipo di dati di una colonna. Un valore pari a 1 è più veloce, ma potrebbe selezionare il tipo di dati errato nei casi in cui il tipo di dati differisce tra i valori nella parte inferiore e superiore della colonna.
 
@@ -1856,7 +1856,7 @@ mfi << Set Excel Limit Column Type Detection( 1 );
 
 ### Set Excel Multiple Series Stack
 
-**Sintassi:** obj << Set Excel Multiple Series Stack
+**Sintassi:** obj &lt;&lt; Set Excel Multiple Series Stack
 
 **Descrizione:** Se l&apos;opzione è impostata a 1 e "Imposta intestazioni di colonna Excel come gerarchie" è impostata a 1, le colonne estese saranno impilate.
 
@@ -1884,7 +1884,7 @@ Multiple File Import(
 
 ### Set Excel Number of Header Lines
 
-**Sintassi:** obj << Set Excel Number of Header Lines
+**Sintassi:** obj &lt;&lt; Set Excel Number of Header Lines
 
 **Descrizione:** Imposta il numero di righe del foglio di calcolo da importare come intestazioni delle colonne.
 
@@ -1901,7 +1901,7 @@ mfi << Set Excel Number of Header Lines( 1 );
 
 ### Set Excel Replicate Data In Spanned Rows
 
-**Sintassi:** obj << Set Excel Replicate Data In Spanned Rows
+**Sintassi:** obj &lt;&lt; Set Excel Replicate Data In Spanned Rows
 
 **Descrizione:** Quando si crea l&apos;intestazione di colonna, se impostata a 1, dove sono presenti più righe di intestazione e una cella si estende su tali righe senza estendere le celle orizzontalmente, il valore all&apos;inizio dell&apos;area unita viene ripetuto.
 
@@ -1918,7 +1918,7 @@ mfi << Set Excel Replicate Data In Spanned Rows( 1 );
 
 ### Set Excel Replicate Headers In Spanned Rows
 
-**Sintassi:** obj << Set Excel Replicate Headers In Spanned Rows
+**Sintassi:** obj &lt;&lt; Set Excel Replicate Headers In Spanned Rows
 
 **Descrizione:** Se questa opzione è impostata a 1 e sono presenti più righe di intestazione e una cella si estende su quelle righe senza estendere le celle orizzontalmente, il valore all&apos;inizio dell&apos;area unita sarà ripetuto quando si crea l&apos;intestazione di colonna.
 
@@ -1935,7 +1935,7 @@ mfi << Set Excel Replicate Headers In Spanned Rows( 1 );
 
 ### Set Excel Suppress Empty Columns
 
-**Sintassi:** obj << Set Excel Suppress Empty Columns
+**Sintassi:** obj &lt;&lt; Set Excel Suppress Empty Columns
 
 **Descrizione:** Imposta a 1 per impedire l&apos;importazione di colonne vuote.
 
@@ -1952,7 +1952,7 @@ mfi << Set Excel Suppress Empty Columns( 1 );
 
 ### Set Excel Suppress Hidden Columns
 
-**Sintassi:** obj << Set Excel Suppress Hidden Columns
+**Sintassi:** obj &lt;&lt; Set Excel Suppress Hidden Columns
 
 **Descrizione:** Imposta a 1 per impedire l&apos;importazione di colonne nascoste.
 
@@ -1969,7 +1969,7 @@ mfi << Set Excel Suppress Hidden Columns( 1 );
 
 ### Set Excel Suppress Hidden Rows
 
-**Sintassi:** obj << Set Excel Suppress Hidden Rows
+**Sintassi:** obj &lt;&lt; Set Excel Suppress Hidden Rows
 
 **Descrizione:** Imposta a 1 per impedire l&apos;importazione di righe nascoste.
 
@@ -1986,7 +1986,7 @@ mfi << Set Excel Suppress Hidden Rows( 1 );
 
 ### Set Excel Worksheet Filter
 
-**Sintassi:** obj << Set Excel Worksheet Filter
+**Sintassi:** obj &lt;&lt; Set Excel Worksheet Filter
 
 **Descrizione:** Vengono importati solo i fogli di lavoro che corrispondono al filtro.
 
@@ -2003,7 +2003,7 @@ mfi << Set Excel Worksheet Filter( "data*;sheet?" );
 
 ### Set File List
 
-**Sintassi:** obj << Set File List
+**Sintassi:** obj &lt;&lt; Set File List
 
 **JMP Versione aggiunta:** 18
 
@@ -2015,7 +2015,7 @@ Names Default To Here( 1 );
 
 ### Set Folder
 
-**Sintassi:** obj << Set Folder
+**Sintassi:** obj &lt;&lt; Set Folder
 
 **Descrizione:** Scegliere una cartella diversa.
 
@@ -2032,7 +2032,7 @@ mfi << Set Folder( "$Desktop" );
 
 ### Set Import Callback
 
-**Sintassi:** obj << Set Import Callback
+**Sintassi:** obj &lt;&lt; Set Import Callback
 
 **Descrizione:** Specifica una funzione di callback personalizzata che viene eseguita come fase finale del processo di importazione. La funzione Importazione di più file () passa alla funzione di callback l&apos;oggetto Importazione di più file e un elenco di tabelle di dati aperte.
 
@@ -2065,7 +2065,7 @@ mfi << Import Data;
 
 ### Set Import Mode
 
-**Sintassi:** obj << Set Import Mode
+**Sintassi:** obj &lt;&lt; Set Import Mode
 
 **Descrizione:** Impostare a "Riga per file" per creare una riga per ciascun file, "Riga per linea" per creare una riga per ogni linea in ciascun file o "CSVData" per usare l&apos;opzione Impostazioni per l&apos;importazione.
 
@@ -2082,7 +2082,7 @@ mfi << Set Import Mode( "Row Per Line" );
 
 ### Set JSON Guess
 
-**Sintassi:** obj << Set JSON Guess( "Tall"|"Wide"|"Huge"|"Pandas" )
+**Sintassi:** obj &lt;&lt; Set JSON Guess( "Tall"|"Wide"|"Huge"|"Pandas" )
 
 **Descrizione:** Imposta un&apos;ipotesi JSON che ha la migliore corrispondenza con i dati JSON importati.
 
@@ -2100,7 +2100,7 @@ mfi << Set JSON Guess( "Tall" );
 
 ### Set JSON Method
 
-**Sintassi:** obj << Set JSON Method
+**Sintassi:** obj &lt;&lt; Set JSON Method
 
 **Descrizione:** Impostare a "Ipotesi" per usare un&apos;ipotesi integrata o a "Impostazioni JSON" per fornire un jsl personalizzato.
 
@@ -2118,7 +2118,7 @@ mfi << Set JSON Guess( "Tall" );
 
 ### Set JSON Settings
 
-**Sintassi:** obj << Set JSON Settings
+**Sintassi:** obj &lt;&lt; Set JSON Settings
 
 **Descrizione:** Specifica il JSL personalizzato che importa dati JSON.
 
@@ -2188,7 +2188,7 @@ Multiple File Import(
 
 ### Set Name Enable
 
-**Sintassi:** obj << Set Name Enable
+**Sintassi:** obj &lt;&lt; Set Name Enable
 
 **Descrizione:** Stabilisce se applicare il filtro dei nomi corrente. Il valore predefinito è 0, che indica che il filtro dei nomi verrà ignorato anche se è stato impostato.
 
@@ -2205,7 +2205,7 @@ mfi << Set Name Enable( 1 );
 
 ### Set Name Filter
 
-**Sintassi:** obj << Set Name Filter
+**Sintassi:** obj &lt;&lt; Set Name Filter
 
 **Descrizione:** Abilita i file inclusi in modo che siano disposti in un elenco di filtri separato da punti e virgola che può includere caratteri jolly. I nomi dei file che contengono punti e virgola o | devono essere importati con un carattere jolly come ? o *.
 
@@ -2222,7 +2222,7 @@ mfi << Set Name Filter( "*.csv;*.txt" );
 
 ### Set PDF Method
 
-**Sintassi:** obj << Set PDF Method
+**Sintassi:** obj &lt;&lt; Set PDF Method
 
 **Descrizione:** Imposta a "Ipotesi" per usare un&apos;ipotesi integrata o a "Impostazioni PDF" per fornire un jsl personalizzato.
 
@@ -2239,7 +2239,7 @@ mfi << Set PDF Method( "Guess" );
 
 ### Set PDF Settings
 
-**Sintassi:** obj << Set PDF Settings
+**Sintassi:** obj &lt;&lt; Set PDF Settings
 
 **Descrizione:** Specifica il JSL personalizzato che importa i dati PDF.
 
@@ -2266,7 +2266,7 @@ Multiple File Import(
 
 ### Set Show Hidden
 
-**Sintassi:** obj << Set Show Hidden
+**Sintassi:** obj &lt;&lt; Set Show Hidden
 
 **Descrizione:** Stabilisce se includere i file normalmente nascosti da Windows. L&apos;impostazione predefinita prevede di non includere i file nascosti.
 
@@ -2283,7 +2283,7 @@ mfi << Set Show Hidden( 1 );
 
 ### Set Size Enable
 
-**Sintassi:** obj << Set Size Enable
+**Sintassi:** obj &lt;&lt; Set Size Enable
 
 **Descrizione:** Stabilisce se applicare il filtro delle dimensioni corrente. Il valore predefinito è Disattivato, che indica che il filtro delle dimensioni verrà ignorato anche se è stato impostato.
 
@@ -2301,7 +2301,7 @@ mfi << Set Size Filter( {0, 1000} );
 
 ### Set Size Filter
 
-**Sintassi:** obj << Set Size Filter( {smallest size to include, largest size to include} )
+**Sintassi:** obj &lt;&lt; Set Size Filter( {smallest size to include, largest size to include} )
 
 **Descrizione:** Filtra i file inclusi in base alle dimensioni dei file.
 
@@ -2319,7 +2319,7 @@ mfi << Set Size Filter( {0, 1000} );
 
 ### Set Stack Mode
 
-**Sintassi:** obj << Set Stack Mode( "Stack Similar" | "Table Per File )
+**Sintassi:** obj &lt;&lt; Set Stack Mode( "Stack Similar" | "Table Per File )
 
 **Descrizione:** Combina i file simili che vengono importati in un&apos;unica tabella o crea una tabella per ciascun file.
 
@@ -2336,7 +2336,7 @@ mfi << Set Stack Mode( "Stack Similar" );
 
 ### Set Subfolders
 
-**Sintassi:** obj << Set Subfolders
+**Sintassi:** obj &lt;&lt; Set Subfolders
 
 **Descrizione:** Stabilisce se includere i file nelle sottocartelle. L&apos;impostazione predefinita prevede di non includerli.
 
@@ -2353,7 +2353,7 @@ mfi << Set Subfolders( 1 );
 
 ### Set Use File List
 
-**Sintassi:** obj << Set Use File List
+**Sintassi:** obj &lt;&lt; Set Use File List
 
 **JMP Versione aggiunta:** 18
 
@@ -2365,7 +2365,7 @@ Names Default To Here( 1 );
 
 ### Set XML Guess
 
-**Sintassi:** obj << Set XML Guess( "Tall"|"Wide"|"Huge" )
+**Sintassi:** obj &lt;&lt; Set XML Guess( "Tall"|"Wide"|"Huge" )
 
 **Descrizione:** Specifica un&apos;ipotesi XML che ha la migliore corrispondenza con i dati XML importati.
 
@@ -2383,7 +2383,7 @@ mfi << Set XML Guess( "Tall" );
 
 ### Set XML Method
 
-**Sintassi:** obj << Set XML Method
+**Sintassi:** obj &lt;&lt; Set XML Method
 
 **Descrizione:** Specificare "Ipotesi" affinché JMP possa decidere se i dati sono verticali, ampi o molto grandi. Specificare "Impostazioni XML" per fornire un JSL personalizzato.
 
@@ -2401,7 +2401,7 @@ mfi << Set XML Guess( "Tall" );
 
 ### Set XML Settings
 
-**Sintassi:** obj << Set XML Settings
+**Sintassi:** obj &lt;&lt; Set XML Settings
 
 **Descrizione:** Specifica un JSL personalizzato che importa dati XML.
 

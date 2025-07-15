@@ -6,9 +6,7 @@
 
 ### Enabled
 
-**구문:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**구문:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **설명:** 활성화되지 않은 개체는 키보드 또는 마우스 입력에 응답하지 않습니다. 이 특성은 하위 개체에 상속되므로 컨테이너 개체가 비활성화되면 모든 하위 개체가 비활성화됩니다.
 
@@ -36,9 +34,7 @@ New Window( "enabled",
 
 ### Get Enabled
 
-**구문:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**구문:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **설명:** 활성화되지 않은 개체는 키보드 또는 마우스 입력에 응답하지 않습니다. 이 특성은 하위 개체에 상속되므로 컨테이너 개체가 비활성화되면 모든 하위 개체가 비활성화됩니다.
 
@@ -66,7 +62,7 @@ New Window( "enabled",
 
 ### Get Namespace
 
-**구문:** obj << Get Namespace
+**구문:** obj &lt;&lt; Get Namespace
 
 **설명:** 이 표시 개체와 연결된 네임스페이스를 반환합니다.
 
@@ -84,7 +80,7 @@ Show( ns:x, x );
 
 ### Get Properties
 
-**구문:** obj << Get Properties
+**구문:** obj &lt;&lt; Get Properties
 
 **설명:** 표시 상자의 특성 및 해당 값이 포함된 연관 배열을 반환합니다.
 
@@ -98,7 +94,7 @@ bb << Get Properties;
 
 ### Get Property
 
-**구문:** obj << Get Property( "property" )
+**구문:** obj &lt;&lt; Get Property( "property" )
 
 **설명:** property의 현재 설정을 반환합니다.
 
@@ -112,7 +108,7 @@ bb << Get Property( "Enabled" );
 
 ### Get Property List
 
-**구문:** obj << Get Property List
+**구문:** obj &lt;&lt; Get Property List
 
 **설명:** 표시 상자의 특성 목록을 반환합니다.
 
@@ -126,7 +122,7 @@ bb << Get Property List;
 
 ### Set Property
 
-**구문:** obj << Set Property( "property", value )
+**구문:** obj &lt;&lt; Set Property( "property", value )
 
 **설명:** 표시 상자에 대한 property의 값을 설정합니다.
 
@@ -142,7 +138,7 @@ bb << Set Property( "Enabled", 0 );
 
 ### If Seg
 
-**구문:** seg = If Seg(<state=0|1>)
+**구문:** seg = If Seg(&lt;state=0|1&gt;)
 
 **설명:** 표시 세그먼트 하위를 표시하거나 숨기는 세그먼트를 생성합니다.
 
@@ -160,7 +156,7 @@ seg = (frame << Find Seg( If Seg( 1 ) ));
 
 ### Append
 
-**구문:** obj << Append( seg2 )
+**구문:** obj &lt;&lt; Append( seg2 )
 
 **설명:** 이 세그먼트를 현재 세그먼트의 마지막 하위로 추가합니다.
 
@@ -177,7 +173,7 @@ seg << Append( Lines Seg( [5 50 95 50] ) );
 
 ### Child
 
-**구문:** seg2 = obj << Child
+**구문:** seg2 = obj &lt;&lt; Child
 
 **설명:** 표시 세그먼트의 첫 번째 하위를 반환합니다.
 
@@ -194,7 +190,7 @@ seg << Child; // not many segs support children
 
 ### Class Name
 
-**구문:** classname = obj << Class Name
+**구문:** classname = obj &lt;&lt; Class Name
 
 **설명:** 표시 세그먼트에 대한 표시 클래스의 이름을 반환합니다.
 
@@ -211,7 +207,7 @@ seg << Class Name;
 
 ### Clip Shape
 
-**구문:** seg << Clip Shape(Boundaries(Shape File, [ID(string)]) | Path([string] | [matrix]) | Empty())
+**구문:** seg &lt;&lt; Clip Shape(Boundaries(Shape File, [ID(string)]) | Path([string] | [matrix]) | Empty())
 
 **설명:** 지정한 셰이프로 형상을 자릅니다. 셰이프 파일 또는 경로를 사용하여 셰이프를 지정할 수 있습니다. 셰이프 파일과 함께 선택적 ID를 지정하여 파일에서 단일 셰이프를 선택할 수 있습니다. 그렇지 않은 경우 모든 셰이프를 합친 부분이 자르기 영역으로 사용됩니다. 경로 행렬에는 경로의 각 점에 대한 x, y 및 플래그에 해당하는 세 개의 열이 있습니다. 플래그 값은 제어의 경우 0, 이동의 경우 1, 선분의 경우 2, 3차 Bézier 세그먼트의 경우 3이며 점이 경로를 닫는 경우에는 음수입니다. 경로 텍스트는 SVG 구문을 지원합니다.
 
@@ -240,7 +236,7 @@ cs << Clip Shape( Boundaries( "US States" ) );
 
 ### Delete
 
-**구문:** obj << Delete
+**구문:** obj &lt;&lt; Delete
 
 **설명:** 표시 세그먼트를 삭제합니다.
 
@@ -257,7 +253,7 @@ seg << Delete;
 
 ### Frame
 
-**구문:** FrameBox = obj << Frame
+**구문:** FrameBox = obj &lt;&lt; Frame
 
 **설명:** 표시 세그먼트가 있는 프레임 상자를 반환합니다.
 
@@ -274,7 +270,7 @@ seg << Frame;
 
 ### Get
 
-**구문:** 0|1 = obj << Get
+**구문:** 0|1 = obj &lt;&lt; Get
 
 **설명:** IfSeg의 상태를 반환합니다.
 
@@ -293,7 +289,7 @@ seg << get;
 
 ### Get Clip Shape
 
-**구문:** obj << Get Clip Shape
+**구문:** obj &lt;&lt; Get Clip Shape
 
 **설명:** 현재 자르기 셰이프를 반환합니다.
 
@@ -323,7 +319,7 @@ cs << Get Clip Shape();
 
 ### Get Description
 
-**구문:** description = obj << Get Description
+**구문:** description = obj &lt;&lt; Get Description
 
 **설명:** 표시 세그먼트에 대한 설명을 가져옵니다.
 
@@ -340,7 +336,7 @@ seg << get description();
 
 ### Parent
 
-**구문:** seg2 = obj << Parent
+**구문:** seg2 = obj &lt;&lt; Parent
 
 **설명:** 표시 세그먼트의 상위를 반환합니다.
 
@@ -357,7 +353,7 @@ seg << Parent;
 
 ### Set
 
-**구문:** obj << Set( state=0|1 )
+**구문:** obj &lt;&lt; Set( state=0|1 )
 
 **설명:** IfSeg 내에 표시 세그먼트를 표시하거나 숨깁니다.
 
@@ -379,7 +375,7 @@ seg << set( 1 );
 
 ### Set Description
 
-**구문:** obj << Set Description( description )
+**구문:** obj &lt;&lt; Set Description( description )
 
 **설명:** 표시 세그먼트에 대한 설명을 설정합니다.
 
@@ -396,7 +392,7 @@ seg << set description( "my seg" );
 
 ### Sib
 
-**구문:** seg2 = obj << Sib
+**구문:** seg2 = obj &lt;&lt; Sib
 
 **설명:** 표시 세그먼트의 형제 항을 반환합니다.
 
@@ -413,7 +409,7 @@ seg << Sib;
 
 ### Sib Append
 
-**구문:** obj << Sib Append( seg2 )
+**구문:** obj &lt;&lt; Sib Append( seg2 )
 
 **설명:** 표시 세그먼트 바로 뒤에 표시 세그먼트를 추가합니다.
 
@@ -451,7 +447,7 @@ mapSeg << Sib Append( Line Seg( xval, yval, <<line color( "Green" ), <<line widt
 
 ### Sib Prepend
 
-**구문:** obj << Sib Prepend( seg2 )
+**구문:** obj &lt;&lt; Sib Prepend( seg2 )
 
 **설명:** 표시 세그먼트 바로 앞에 표시 세그먼트를 추가합니다.
 

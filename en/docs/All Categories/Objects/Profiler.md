@@ -6,7 +6,7 @@
 
 ### Profiler
 
-**Syntax:** Profiler( Y( column1, <column2>, ..., <PredSE column1, PredSE column2>, ... ), <Expand> )
+**Syntax:** Profiler( Y( column1, &lt;column2&gt;, ..., &lt;PredSE column1, PredSE column2&gt;, ... ), &lt;Expand&gt; )
 
 **Description:** Produces an interactive graph that enables you to explore how a predicted response changes as you change factor settings. For each factor, the profiler shows prediction traces that are based on saved predictions formulas and linear constraints and illustrate how the response changes with respect to that factor. The Expand argument corresponds to the Expand Intermediate Formulas option in the launch window.
 
@@ -67,7 +67,7 @@ dt << Profiler( Y( :Yield ), Profiler( 1, Desirability Functions( 1 ), ), Expand
 
 ### Noise Factors
 
-**Syntax:** obj = Profiler(...<Noise Factors( column(s) )>...)
+**Syntax:** obj = Profiler(...&lt;Noise Factors( column(s) )&gt;...)
 
 **Description:** Specifies noise factors, which must be columns that are ingredients to the formula columns. Noise factors are used to study robustness (or flatness) with respect to transmitted variation from these factors. The resulting profiler includes derivatives of the formulas with respect to the noise factors.
 
@@ -173,7 +173,7 @@ obj = dt << Profiler(
 
 ### Adapt Y Axis
 
-**Syntax:** obj << Adapt Y Axis( state=0|1 )
+**Syntax:** obj &lt;&lt; Adapt Y Axis( state=0|1 )
 
 **Description:** Rescales the vertical axis if the response is outside the axis range, so that the range of the response is included.
 
@@ -196,7 +196,7 @@ obj << Adapt Y Axis;
 
 ### Add Shapley graph scripts to data table
 
-**Syntax:** obj << Add Shapley graph scripts to data table( state=0|1 )
+**Syntax:** obj &lt;&lt; Add Shapley graph scripts to data table( state=0|1 )
 
 **Description:** Adds JSL Graph Builder bar chart scripts of the Shapley values by rows for each response in the model.
 
@@ -227,7 +227,7 @@ obj << (Fit[1] << Profiler(
 
 ### Animation
 
-**Syntax:** obj << Animation( <Tour Type( "Sequential"|("Single Factor",factorname)|"Random"|"Data Sequential"|"Data Random" )>, <Speed(ticks)>, <Go>, <Stop> )
+**Syntax:** obj &lt;&lt; Animation( &lt;Tour Type( "Sequential"|("Single Factor",factorname)|"Random"|"Data Sequential"|"Data Random" )&gt;, &lt;Speed(ticks)&gt;, &lt;Go&gt;, &lt;Stop&gt; )
 
 **Description:** Starts or stops the animation of the profiler. You can also specify how the animation cycles through factor combinations.
 
@@ -250,7 +250,7 @@ obj << Animation( "Stop" );
 
 ### Append Settings to Table
 
-**Syntax:** obj << Append Settings to Table
+**Syntax:** obj &lt;&lt; Append Settings to Table
 
 **Description:** Saves the settings of the current profiler as a new row at the end of the data table.
 
@@ -271,7 +271,7 @@ obj << Append Settings to Table;
 
 ### Arrange in Rows
 
-**Syntax:** obj << Arrange in Rows( number )
+**Syntax:** obj &lt;&lt; Arrange in Rows( number )
 
 **Description:** Specifies the number of plots that appear in a row.
 
@@ -293,7 +293,7 @@ obj << Arrange in Rows( 2 );
 
 ### Broadcast Factor Settings
 
-**Syntax:** obj << Broadcast Factor Settings
+**Syntax:** obj &lt;&lt; Broadcast Factor Settings
 
 **Description:** Sends the factor settings for the current profiler to all other profilers. This option does not link the profilers.
 
@@ -321,7 +321,7 @@ obj << Broadcast Factor Settings;
 
 ### Colorize
 
-**Syntax:** obj << Colorize( matrix )
+**Syntax:** obj &lt;&lt; Colorize( matrix )
 
 **Description:** Specifies a matrix of proportions between 0 for uncolored and 1 for dark red. The rows and columns of the matrix correspond to the Y and X variables in the Profiler.
 
@@ -341,7 +341,7 @@ obj << Colorize( [.0 .4 .5, .1 .2 .3, .4 .5 .3, .5 .1 .1] );
 
 ### Colorize Profiler
 
-**Syntax:** subobj << Colorize Profiler
+**Syntax:** subobj &lt;&lt; Colorize Profiler
 
 **Description:** Colors cells in the profiler by Total Effect importance indices using a red to white intensity scale.
 
@@ -366,7 +366,7 @@ subobj << Colorize Profiler;
 
 ### Combinations
 
-**Syntax:** obj << Combinations( "Mixed"|"Two-Way"|"Many-Way" )
+**Syntax:** obj &lt;&lt; Combinations( "Mixed"|"Two-Way"|"Many-Way" )
 
 **Description:** Specifies the types of interactions that are shown as overlaid interaction curves in the profiler.
 
@@ -388,7 +388,7 @@ obj << Combinations( "Many-Way" );
 
 ### Compute Shapley values for all rows
 
-**Syntax:** obj << Compute Shapley values for all rows( state=0|1 )
+**Syntax:** obj &lt;&lt; Compute Shapley values for all rows( state=0|1 )
 
 **Description:** Computes the Shapley values for all rows in the data table, excluded and not excluded.
 
@@ -421,7 +421,7 @@ obj << (Fit[1] << Profiler(
 
 ### Conditional Predictions
 
-**Syntax:** obj << Conditional Predictions( state=0|1 )
+**Syntax:** obj &lt;&lt; Conditional Predictions( state=0|1 )
 
 **Description:** Includes random effects when formulating the predicted value and profiles. This option is available only in the Fit Mixed personality of the Fit Model platform when random effects are included in the model.
 
@@ -436,7 +436,7 @@ obj1 << Profiler( Conditional Predictions( 1 ) );
 
 ### Confidence Intervals
 
-**Syntax:** obj << Confidence Intervals( state=0|1 )
+**Syntax:** obj &lt;&lt; Confidence Intervals( state=0|1 )
 
 **Description:** Shows or hides 95% confidence intervals for the simulated means on the curves of the profiler graph. Available only if a Std Error formula is specified in the launch window.
 
@@ -460,7 +460,7 @@ obj << Confidence Intervals( 0 );
 
 ### Contour Profiler
 
-**Syntax:** obj << Contour Profiler( state=0|1 )
+**Syntax:** obj &lt;&lt; Contour Profiler( state=0|1 )
 
 **Description:** Shows or hides the Contour Profiler.
 
@@ -481,7 +481,7 @@ obj << Contour Profiler( 1 );
 
 ### Converge Limit
 
-**Syntax:** obj << Converge Limit( number )
+**Syntax:** obj &lt;&lt; Converge Limit( number )
 
 **Description:** Specifies the criterion for convergence for the optimization algorithm. If the convergence criterion is less than this value for two consecutive iterations, the algorithm stops.
 
@@ -503,7 +503,7 @@ obj << Optimize;
 
 ### Copy Settings Script
 
-**Syntax:** obj << Copy Settings Script
+**Syntax:** obj &lt;&lt; Copy Settings Script
 
 **Description:** Copies the current factor settings to the clipboard. The settings can then be pasted into another profiler.
 
@@ -532,7 +532,7 @@ obj2 << Paste Settings Script;
 
 ### Custom Profiler
 
-**Syntax:** obj << Custom Profiler( state=0|1 )
+**Syntax:** obj &lt;&lt; Custom Profiler( state=0|1 )
 
 **Description:** Shows or hides the Custom Profiler.
 
@@ -553,7 +553,7 @@ obj << Custom Profiler( 1 );
 
 ### Data Points
 
-**Syntax:** obj << Data Points( state=0|1 )
+**Syntax:** obj &lt;&lt; Data Points( state=0|1 )
 
 **Description:** Shows or hides the individual data points in the Prediction Profiler plot. The data points fade according to how far away they are from the plane of each profiler.
 
@@ -573,7 +573,7 @@ obj << Data Points( 1 );
 
 ### Default N Grid Points
 
-**Syntax:** obj << Default N Grid Points( number )
+**Syntax:** obj &lt;&lt; Default N Grid Points( number )
 
 **Description:** Sets the number of levels for each continuous factor.
 
@@ -593,11 +593,11 @@ obj << Default N Grid Points( 5 );
 
 ### Default N Levels
 
-**Syntax:** obj << Default N Levels( number )
+**Syntax:** obj &lt;&lt; Default N Levels( number )
 
 ### Dependent Resampled Inputs
 
-**Syntax:** obj << Dependent Resampled Inputs( state=0|1 )
+**Syntax:** obj &lt;&lt; Dependent Resampled Inputs( state=0|1 )
 
 **Description:** Calculates the indices that are used in the Assess Variable Importance option by resampling the data table assuming that the inputs are dependent.
 
@@ -618,11 +618,11 @@ obj << Dependent Resampled Inputs( 1 );
 
 ### Design Space
 
-**Syntax:** obj << Design Space( state=0|1 )
+**Syntax:** obj &lt;&lt; Design Space( state=0|1 )
 
 ### Design Space Profiler
 
-**Syntax:** obj << Design Space Profiler( state=0|1 )
+**Syntax:** obj &lt;&lt; Design Space Profiler( state=0|1 )
 
 **Description:** Launches the Design Space Profiler, which helps map specification limits on the Y variables to specification limits on the X variables.
 
@@ -669,7 +669,7 @@ Profiler(
 
 ### Desirability Functions
 
-**Syntax:** obj << Desirability Functions( state=0|1 )
+**Syntax:** obj &lt;&lt; Desirability Functions( state=0|1 )
 
 **Description:** Shows or hides the desirability functions, which are useful when optimizing across several responses.
 
@@ -689,7 +689,7 @@ obj << Desirability Functions( 1 );
 
 ### Edit Constraints
 
-**Syntax:** obj << Edit Constraints
+**Syntax:** obj &lt;&lt; Edit Constraints
 
 **Description:** Adds, changes, or deletes linear constraints.
 
@@ -709,7 +709,7 @@ obj << Edit Constraints;
 
 ### Extrapolation Control Option
 
-**Syntax:** obj << Extrapolation Control Option( "Off"|"On"|"Warning On" )
+**Syntax:** obj &lt;&lt; Extrapolation Control Option( "Off"|"On"|"Warning On" )
 
 **Description:** Specifies if extrapolation control is turned on or off, or if only extrapolation control warnings are turned on.
 
@@ -730,7 +730,7 @@ obj << Profiler( Extrapolation Control Option( "On" ) );
 
 ### Extrapolation Details
 
-**Syntax:** obj << Extrapolation Details( state=0|1 )
+**Syntax:** obj &lt;&lt; Extrapolation Details( state=0|1 )
 
 **Description:** Shows or hides the extrapolation control details that give the extrapolation metric of the current point and the extrapolation threshold.
 
@@ -751,11 +751,11 @@ obj << Profiler( Extrapolation Control Option( "On" ), Extrapolation Details( 1 
 
 ### Extrapolation Type Option
 
-**Syntax:** obj << Extrapolation Type Option( "Regularized T2"|"K Nearest Neighbors" )
+**Syntax:** obj &lt;&lt; Extrapolation Type Option( "Regularized T2"|"K Nearest Neighbors" )
 
 ### Formulas for OPTMODEL
 
-**Syntax:** obj << Formulas for OPTMODEL
+**Syntax:** obj &lt;&lt; Formulas for OPTMODEL
 
 **Description:** Saves the prediction formulas from the model in a new file as SAS statements for PROC OPTMODEL.
 
@@ -776,7 +776,7 @@ obj << Formulas for OPTMODEL;
 
 ### Get Constraints
 
-**Syntax:** obj << Get Constraints
+**Syntax:** obj &lt;&lt; Get Constraints
 
 **Description:** Returns a list of factor constraints.
 
@@ -794,7 +794,7 @@ obj << Get Constraints;
 
 ### Get Desirability
 
-**Syntax:** obj << Get Desirability
+**Syntax:** obj &lt;&lt; Get Desirability
 
 **Description:** Returns the current desirability settings.
 
@@ -816,7 +816,7 @@ Show( d );
 
 ### Get Factor Settings
 
-**Syntax:** obj << Get Factor Settings
+**Syntax:** obj &lt;&lt; Get Factor Settings
 
 **Description:** Returns the current factor settings as a list.
 
@@ -837,7 +837,7 @@ obj << Get Factor Settings;
 
 ### Get Factor Settings Script
 
-**Syntax:** obj << Get Factor Settings Script
+**Syntax:** obj &lt;&lt; Get Factor Settings Script
 
 **Description:** Returns the current factor settings as an expression that can be used in a script.
 
@@ -858,7 +858,7 @@ obj << Get Factor Settings Script;
 
 ### Get Main Indices
 
-**Syntax:** obj << Get Main Indices
+**Syntax:** obj &lt;&lt; Get Main Indices
 
 **Description:** Saves the main indices from the Assess Variable Importance analysis to a new file as SAS statements for PROC OPTMODEL.
 
@@ -880,7 +880,7 @@ obj << Get Main Indices;
 
 ### Get Simulator
 
-**Syntax:** obj << Get Simulator
+**Syntax:** obj &lt;&lt; Get Simulator
 
 **Description:** Returns a reference to the Simulator.
 
@@ -914,7 +914,7 @@ obj2 << Simulation Experiment;
 
 ### Get Total Indices
 
-**Syntax:** obj << Get Total Indices
+**Syntax:** obj &lt;&lt; Get Total Indices
 
 **Description:** Saves the total indices from the Assess Variable Importance analysis to a new file as SAS statements for PROC OPTMODEL.
 
@@ -936,7 +936,7 @@ obj << Get Total Indices;
 
 ### Graph Spacing
 
-**Syntax:** obj << Graph Spacing( number )
+**Syntax:** obj &lt;&lt; Graph Spacing( number )
 
 **Description:** Sets the amount of horizontal space between graph panels.
 
@@ -958,7 +958,7 @@ obj << Graph Spacing( 20 );
 
 ### Hide Desirability Row
 
-**Syntax:** obj << Hide Desirability Row( state=0|1 )
+**Syntax:** obj &lt;&lt; Hide Desirability Row( state=0|1 )
 
 **Description:** Hides or unhides the row of desirability profiles.
 
@@ -981,7 +981,7 @@ obj << Hide Desirability Row( 1 );
 
 ### Hide Y Variables
 
-**Syntax:** obj << Hide Y Variables( Y columns )
+**Syntax:** obj &lt;&lt; Hide Y Variables( Y columns )
 
 **Description:** Specifies the response variables that you would like to show or hide in the profiler.
 
@@ -1002,7 +1002,7 @@ obj << Hide Y Variables( :Pred Formula MODULUS );
 
 ### Independent Resampled Inputs
 
-**Syntax:** obj << Independent Resampled Inputs( state=0|1 )
+**Syntax:** obj &lt;&lt; Independent Resampled Inputs( state=0|1 )
 
 **Description:** Calculates the indices that are used in the Assess Variable Importance option by resampling the data table assuming that the inputs are independent.
 
@@ -1023,7 +1023,7 @@ obj << Independent Resampled Inputs( 1 );
 
 ### Independent Uniform Inputs
 
-**Syntax:** obj << Independent Uniform Inputs( state=0|1 )
+**Syntax:** obj &lt;&lt; Independent Uniform Inputs( state=0|1 )
 
 **Description:** Calculates the indices that are used in the Assess Variable Importance option by resampling the data table assuming that the inputs have independent uniform distributions.
 
@@ -1044,7 +1044,7 @@ obj << Independent Uniform Inputs( 1 );
 
 ### Interaction Profiler
 
-**Syntax:** obj << Interaction Profiler( state=0|1 )
+**Syntax:** obj &lt;&lt; Interaction Profiler( state=0|1 )
 
 **Description:** Shows or hides an interaction profiler for each response.
 
@@ -1064,7 +1064,7 @@ obj << Interaction Profiler( 1 );
 
 ### Linearly Constrained Inputs
 
-**Syntax:** obj << Linearly Constrained Inputs( state=0|1 )
+**Syntax:** obj &lt;&lt; Linearly Constrained Inputs( state=0|1 )
 
 **Description:** Calculates the indices that are used in the Assess Variable Importance option by resampling the data table over a uniform distribution defined by the linear constraints.
 
@@ -1086,7 +1086,7 @@ obj << Linearly Constrained Inputs( 1 );
 
 ### Link Profilers
 
-**Syntax:** obj << Link Profilers( state=0|1 )
+**Syntax:** obj &lt;&lt; Link Profilers( state=0|1 )
 
 **Description:** Links all the profilers in a single report together, so that a change in a factor in one profiler causes that factor to change to that value in all other profilers.
 
@@ -1111,7 +1111,7 @@ obj << Term Value( :Silica( 1.78 ), :Sulfur( 2.34 ) );
 
 ### Load Constraints from Table
 
-**Syntax:** obj << Load Constraints from Table
+**Syntax:** obj &lt;&lt; Load Constraints from Table
 
 **Description:** Loads linear constraints from a data table.
 
@@ -1141,7 +1141,7 @@ obj << Profile at Boundary( "Stop at Boundaries" );
 
 ### Log Iterations
 
-**Syntax:** obj << Log Iterations( state=0|1 )
+**Syntax:** obj &lt;&lt; Log Iterations( state=0|1 )
 
 **Description:** Creates a new data table that contains iterations of the optimization algorithm.
 
@@ -1163,7 +1163,7 @@ obj << Optimize;
 
 ### Max Cycles
 
-**Syntax:** obj << Max Cycles( number )
+**Syntax:** obj &lt;&lt; Max Cycles( number )
 
 **Description:** Specifies the maximum number of cycles within each trip in the optimization algorithm.
 
@@ -1185,7 +1185,7 @@ obj << Optimize;
 
 ### MaxIter
 
-**Syntax:** obj << MaxIter( number )
+**Syntax:** obj &lt;&lt; MaxIter( number )
 
 **Description:** Specifies the maximum number of iterations within each trip in the optimization algorithm.
 
@@ -1207,7 +1207,7 @@ obj << Optimize;
 
 ### Maximize Desirability
 
-**Syntax:** obj << Maximize Desirability
+**Syntax:** obj &lt;&lt; Maximize Desirability
 
 **Description:** Sets the current factor values to maximize the desirability functions.
 
@@ -1229,7 +1229,7 @@ obj << Maximize Desirability;
 
 ### Maximize and Remember
 
-**Syntax:** obj << Maximize and Remember
+**Syntax:** obj &lt;&lt; Maximize and Remember
 
 **Description:** Maximizes the desirability functions and remembers the associated settings.
 
@@ -1250,7 +1250,7 @@ obj << Maximize and Remember;
 
 ### Maximize for Each Grid Point
 
-**Syntax:** obj << Maximize for Each Grid Point
+**Syntax:** obj &lt;&lt; Maximize for Each Grid Point
 
 **Description:** Maximizes the desirability functions for each grid point, holding one or more factors constant. This option requires locking at least one factor.
 
@@ -1272,7 +1272,7 @@ obj << Maximize For Each Grid Point;
 
 ### Maximum Number of Curves
 
-**Syntax:** obj << Maximum Number of Curves( number=500 )
+**Syntax:** obj &lt;&lt; Maximum Number of Curves( number=500 )
 
 **Description:** Specifies the maximum number of curves to show when the Overlaid Interactions option is selected. If the total possible number of curves is greater than the specified maximum number of curves, an arbitrary sample is drawn. "500" by default.
 
@@ -1294,11 +1294,11 @@ obj << Maximum Number of Curves( 100 );
 
 ### Optimization Control Panel
 
-**Syntax:** obj << Optimization Control Panel( state=0|1 )
+**Syntax:** obj &lt;&lt; Optimization Control Panel( state=0|1 )
 
 ### Output Grid Table
 
-**Syntax:** obj << Output Grid Table
+**Syntax:** obj &lt;&lt; Output Grid Table
 
 **Description:** Creates a new data table that contains columns for the factors that contain grid values, columns for each of the responses with computed values at each grid point, and the desirability computation at each grid point.
 
@@ -1318,7 +1318,7 @@ obj << Output Grid Table;
 
 ### Output Random Table
 
-**Syntax:** obj << Output Random Table( number of runs,<Add Random Noise> )
+**Syntax:** obj &lt;&lt; Output Random Table( number of runs,&lt;Add Random Noise&gt; )
 
 **Description:** Creates a new data table of random factor settings and predicted values over those factor settings for the specified number of runs. There is also an option to add random noise to the responses.
 
@@ -1338,7 +1338,7 @@ obj << Output Random Table( 1000 );
 
 ### Overlaid Interactions
 
-**Syntax:** obj << Overlaid Interactions( state=0|1 )
+**Syntax:** obj &lt;&lt; Overlaid Interactions( state=0|1 )
 
 **Description:** Shows or hides faded curves in the Prediction Profiler plots. The faded curves represent the profilers for different types of interactions among the ranges of the factors.
 
@@ -1358,7 +1358,7 @@ obj << Overlaid Interactions( 1 );
 
 ### Paste Settings Script
 
-**Syntax:** obj << Paste Settings Script
+**Syntax:** obj &lt;&lt; Paste Settings Script
 
 **Description:** Pastes the profiler settings from the clipboard to a profiler in another report.
 
@@ -1387,7 +1387,7 @@ obj2 << Paste Settings Script;
 
 ### Predict for Another Table
 
-**Syntax:** obj << Predict for Another Table( <data table> )
+**Syntax:** obj &lt;&lt; Predict for Another Table( &lt;data table&gt; )
 
 **Description:** Adds prediction columns to a specified data table, using the factors in that table. This option is available only for continuous responses.
 
@@ -1413,7 +1413,7 @@ obj << Predict For Another Table( dt2 );
 
 ### Prediction Intervals
 
-**Syntax:** obj << Prediction Intervals( state=0|1 )
+**Syntax:** obj &lt;&lt; Prediction Intervals( state=0|1 )
 
 **Description:** Shows or hides the 95% prediction intervals that include both the variation in estimating the model and the variation in the residual error.
 
@@ -1444,7 +1444,7 @@ dt << Fit Model(
 
 ### Prediction Profiler
 
-**Syntax:** obj << Prediction Profiler( state=0|1 )
+**Syntax:** obj &lt;&lt; Prediction Profiler( state=0|1 )
 
 **Description:** Shows or hides the Prediction Profiler.
 
@@ -1465,7 +1465,7 @@ obj << Prediction Profiler( 1 );
 
 ### Profile at Boundary
 
-**Syntax:** obj << Profile at Boundary( "Turn at Boundaries"|"Stop at Boundaries" )
+**Syntax:** obj &lt;&lt; Profile at Boundary( "Turn at Boundaries"|"Stop at Boundaries" )
 
 **Description:** Identifies the boundary handling method for factors that have constraints. This option is available only for prediction models containing mixture variables, when there is a linear constraint, or when the Alter Linear Constraints option is specified.
 
@@ -1488,7 +1488,7 @@ obj2 << Profile at Boundary( "Stop at Boundaries" );
 
 ### Prop of Error Bars
 
-**Syntax:** obj << Prop of Error Bars( state=0|1 )
+**Syntax:** obj &lt;&lt; Prop of Error Bars( state=0|1 )
 
 **Description:** Shows or hides error bars on the profiler graph. This option is available only when the column contains a Sigma column property.
 
@@ -1505,7 +1505,7 @@ obj << Prop of Error Bars( 1 );
 
 ### Remember Settings
 
-**Syntax:** obj << Remember Settings
+**Syntax:** obj &lt;&lt; Remember Settings
 
 **Description:** Adds an outline node to the report with the values of the factor settings.
 
@@ -1526,7 +1526,7 @@ obj << Remember Settings;
 
 ### Remove Profiler
 
-**Syntax:** scobj << Remove Profiler
+**Syntax:** scobj &lt;&lt; Remove Profiler
 
 **Description:** Removes the profiler from the platform report. This option is available only in a limited number of platforms.
 
@@ -1550,7 +1550,7 @@ scobj << Remove Profiler;
 
 ### Reorder X Variables
 
-**Syntax:** obj << Reorder X Variables( columns )
+**Syntax:** obj &lt;&lt; Reorder X Variables( columns )
 
 **Description:** Reorders the model main effects in the profiler.
 
@@ -1571,7 +1571,7 @@ obj << Reorder X Variables( :SULFUR, :SILANE, :SILICA );
 
 ### Reorder Y Variables
 
-**Syntax:** obj << Reorder Y Variables( columns )
+**Syntax:** obj &lt;&lt; Reorder Y Variables( columns )
 
 **Description:** Reorders the response variables.
 
@@ -1594,7 +1594,7 @@ obj << Reorder Y Variables(
 
 ### Reorder factors by main effect importance
 
-**Syntax:** subobj << Reorder factors by main effect importance
+**Syntax:** subobj &lt;&lt; Reorder factors by main effect importance
 
 **Description:** Reorders the cells in the Prediction Profiler in accordance with the importance indices for the main effects.
 
@@ -1619,7 +1619,7 @@ subobj << Reorder factors by main effect importance;
 
 ### Reorder factors by total importance
 
-**Syntax:** subobj << Reorder factors by total importance
+**Syntax:** subobj &lt;&lt; Reorder factors by total importance
 
 **Description:** Reorders the cells in the Prediction Profiler in accordance with the total importance indices for the factors.
 
@@ -1645,17 +1645,17 @@ subobj << Reorder factors by total importance;
 
 ### Reset
 
-**Syntax:** obj << Reset
+**Syntax:** obj &lt;&lt; Reset
 
 **Description:** Resets the desirability functions.
 
 ### Reset Factor Grid
 
-**Syntax:** obj << Reset Factor Grid
+**Syntax:** obj &lt;&lt; Reset Factor Grid
 
 ### Reset Factors
 
-**Syntax:** obj << Reset Factors
+**Syntax:** obj &lt;&lt; Reset Factors
 
 **Description:** Opens a window for changing the factor grid.
 
@@ -1675,7 +1675,7 @@ obj << Reset Factor Grid;
 
 ### Response Limits
 
-**Syntax:** Pred Y << Response Limits( {Lower( value, fraction ), Middle( value, fraction ), Upper( value, fraction ), Goal( Minimize|Maximize|Target ), Importance( number )} )
+**Syntax:** Pred Y &lt;&lt; Response Limits( {Lower( value, fraction ), Middle( value, fraction ), Upper( value, fraction ), Goal( Minimize|Maximize|Target ), Importance( number )} )
 
 **Description:** Sets the desirability function settings for an individual response as well as the associated desirability values.
 
@@ -1699,7 +1699,7 @@ obj << Desirability Functions( 1 );
 
 ### Samples per Factor
 
-**Syntax:** obj << Samples per Factor( number=6 )
+**Syntax:** obj &lt;&lt; Samples per Factor( number=6 )
 
 **Description:** Specifies the number of sample values taken for each continuous factor for two-way interactions. This value is reduced for many-way interactions and is conditional on the maximum number of curves. "6" by default.
 
@@ -1721,7 +1721,7 @@ obj << Samples per Factor( 10 );
 
 ### Save Bagged Predictions
 
-**Syntax:** obj << Save Bagged Predictions( nsample, Random Seed(number), Fractional Weights(0|1), Save Prediction Formulas(0|1) )
+**Syntax:** obj &lt;&lt; Save Bagged Predictions( nsample, Random Seed(number), Fractional Weights(0|1), Save Prediction Formulas(0|1) )
 
 **Description:** Uses bootstrap aggregating (bagging) to make predictions and saves the bagged prediction means and standard errors to the data table.
 
@@ -1741,7 +1741,7 @@ obj << Profiler( Save Bagged Predictions( 10 ) );
 
 ### Save Constraints to Script
 
-**Syntax:** obj << Save Constraints to Script
+**Syntax:** obj &lt;&lt; Save Constraints to Script
 
 **Description:** Saves existing linear constraints to a table script called Constraint.
 
@@ -1770,7 +1770,7 @@ obj << Save Constraints to Script;
 
 ### Save Constraints to Table
 
-**Syntax:** obj << Save Constraints to Table
+**Syntax:** obj &lt;&lt; Save Constraints to Table
 
 **Description:** Saves existing linear constraints to a new data table.
 
@@ -1794,7 +1794,7 @@ obj << Save Constraints to Table;
 
 ### Save Desirabilities
 
-**Syntax:** obj << Save Desirabilities
+**Syntax:** obj &lt;&lt; Save Desirabilities
 
 **Description:** Saves the three desirability function settings for each response, as well as the associated desirability values, as a Response Limits column property in the data table.
 
@@ -1815,7 +1815,7 @@ obj << Save Desirabilities;
 
 ### Save Desirability Formula
 
-**Syntax:** obj << Save Desirability Formula
+**Syntax:** obj &lt;&lt; Save Desirability Formula
 
 **Description:** Saves a new formula column in the data table. The new column contains a formula for the combined desirability across the responses.
 
@@ -1836,7 +1836,7 @@ obj << Save Desirability Formula;
 
 ### Save Expanded Formulas
 
-**Syntax:** obj << Save Expanded Formulas
+**Syntax:** obj &lt;&lt; Save Expanded Formulas
 
 **Description:** Saves a new formula column to the data table. The new column contains resolved formula references within the formulas used as Y variables to see the underlying variables. This is available only after the Expand Intermediate Formulas option is selected in the launch window or the Expand message is specified in the Profiler script.
 
@@ -1851,7 +1851,7 @@ obj << Save Expanded Formulas;
 
 ### Save Shapley Values
 
-**Syntax:** obj << Save Shapley Values
+**Syntax:** obj &lt;&lt; Save Shapley Values
 
 **Description:** Calculates Shapley values for each row in the data table that is not excluded.
 
@@ -1878,7 +1878,7 @@ obj << (Fit[1] << Profiler( 1, Save Shapley Values ));
 
 ### Sensitivity Indicator
 
-**Syntax:** obj << Sensitivity Indicator( state=0|1 )
+**Syntax:** obj &lt;&lt; Sensitivity Indicator( state=0|1 )
 
 **Description:** Shows or hides a purple triangle that can help quickly spot sensitive cells in large profiles. The triangle&apos;s height and direction correspond to the value of the partial derivative of the profile function at its current value.
 
@@ -1898,7 +1898,7 @@ obj << Sensitivity Indicator( 1 );
 
 ### Set Desirabilities
 
-**Syntax:** obj << Set Desirabilities
+**Syntax:** obj &lt;&lt; Set Desirabilities
 
 **Description:** Opens the Response Goal window where you can set specific desirability values.
 
@@ -1919,7 +1919,7 @@ obj << Set Desirabilities;
 
 ### Set Script
 
-**Syntax:** obj << Set Script( Function( {arguments}, <{locals}>, expr ) )
+**Syntax:** obj &lt;&lt; Set Script( Function( {arguments}, &lt;{locals}&gt;, expr ) )
 
 **Description:** Sets a script that is run each time a factor changes.
 
@@ -1942,7 +1942,7 @@ obj << Term Value( :Silica( 1 ) );
 
 ### Set Threshold Criterion
 
-**Syntax:** obj << Set Threshold Criterion( Extrapolation Control Criterion( "Num Model Terms / Num Observations " | "Maximum Leverage" ), <multiplier> )
+**Syntax:** obj &lt;&lt; Set Threshold Criterion( Extrapolation Control Criterion( "Num Model Terms / Num Observations " | "Maximum Leverage" ), &lt;multiplier&gt; )
 
 **Description:** Can be used to specify the general extrapolation threshold multiplier. Alternatively, you can use this function to open a window that enables you to adjust the extrapolation threshold multiplier.
 
@@ -1970,7 +1970,7 @@ obj << (Fit[1] << Profiler(
 
 ### Set to Data in Row
 
-**Syntax:** obj << Set to Data in Row( row number )
+**Syntax:** obj &lt;&lt; Set to Data in Row( row number )
 
 **Description:** Assigns the values of a data table row to the X variables in the profiler.
 
@@ -1992,7 +1992,7 @@ obj << Set to Data in Row( 4 );
 
 ### Shapley Background Data Choice
 
-**Syntax:** obj << Shapley Background Data Choice( "Percent training data set"|"Number of rows of training data set" )
+**Syntax:** obj &lt;&lt; Shapley Background Data Choice( "Percent training data set"|"Number of rows of training data set" )
 
 **Description:** Specifies the background data in the Shapley computations as either a percentage of the training data or a number of rows of the training data.
 
@@ -2024,7 +2024,7 @@ obj << (Fit[1] << Profiler(
 
 ### Shapley Number of Permutations
 
-**Syntax:** obj << Shapley Number of Permutations( number=10 )
+**Syntax:** obj &lt;&lt; Shapley Number of Permutations( number=10 )
 
 **Description:** Sets the number of permutations to be used for calculating the Shapley values. "10" by default.
 
@@ -2051,7 +2051,7 @@ obj << (Fit[1] << Profiler( 1, Shapley Number of Permutations( 15 ), Save Shaple
 
 ### Shapley Number of Rows of Training Data
 
-**Syntax:** obj << Shapley Number of Rows of Training Data( number=100 )
+**Syntax:** obj &lt;&lt; Shapley Number of Rows of Training Data( number=100 )
 
 **Description:** Sets the number of rows of the training data that was used to fit the model for use as the background data in the Shapley computations. "100" by default.
 
@@ -2083,7 +2083,7 @@ obj << (Fit[1] << Profiler(
 
 ### Shapley Percent Training Data
 
-**Syntax:** obj << Shapley Percent Training Data( number=100 )
+**Syntax:** obj &lt;&lt; Shapley Percent Training Data( number=100 )
 
 **Description:** Sets the percentage of the training data that was used to fit the model for use as the background data in the Shapley computations. "100" by default.
 
@@ -2115,7 +2115,7 @@ obj << (Fit[1] << Profiler(
 
 ### Shapley Set Random Seed
 
-**Syntax:** obj << Shapley Set Random Seed( number )
+**Syntax:** obj &lt;&lt; Shapley Set Random Seed( number )
 
 **Description:** Sets a random seed for calculating the Shapley values.
 
@@ -2142,7 +2142,7 @@ obj << (Fit[1] << Profiler( 1, Shapley Set Random Seed( 12345 ), Save Shapley Va
 
 ### Show Creator
 
-**Syntax:** obj << Show Creator( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Creator( state=0|1 )
 
 **Description:** Shows or hides the name of the platform that created the formula in the response column. The platform name appears on the vertical axis. Available only if the response column contains a Creator named argument in the Predicting column property.
 
@@ -2173,7 +2173,7 @@ Profiler( Y( predForm ), Show Creator( 1 ) );
 
 ### Show Formulas
 
-**Syntax:** obj << Show Formulas
+**Syntax:** obj &lt;&lt; Show Formulas
 
 **Description:** Opens a script window that contains JSL for all formulas that are being profiled.
 
@@ -2194,7 +2194,7 @@ obj << Show Formulas;
 
 ### Simulator
 
-**Syntax:** obj << Simulator( state=0|1 )
+**Syntax:** obj &lt;&lt; Simulator( state=0|1 )
 
 **Description:** Shows or hides the Simulator.
 
@@ -2215,7 +2215,7 @@ obj << Simulator( 1 );
 
 ### Spanning Range
 
-**Syntax:** obj << Spanning Range( "Inner Axis Range"|"Full Axis Range"|"One Standard Deviation"|"Two Standard Deviations"|"Data Range" )
+**Syntax:** obj &lt;&lt; Spanning Range( "Inner Axis Range"|"Full Axis Range"|"One Standard Deviation"|"Two Standard Deviations"|"Data Range" )
 
 **Description:** Specifies how the sampling range of each continuous factor is determined. The sampling range for each factor defines the lowest and highest values for which the interaction curves are created.
 
@@ -2237,7 +2237,7 @@ obj << Spanning Range( "Two Standard Deviations" );
 
 ### Surface Profiler
 
-**Syntax:** obj << Surface Profiler( state=0|1 )
+**Syntax:** obj &lt;&lt; Surface Profiler( state=0|1 )
 
 **Description:** Shows or hides the Surface Profiler.
 
@@ -2258,7 +2258,7 @@ obj << Surface Profiler( 1 );
 
 ### Term Value
 
-**Syntax:** obj << Term Value( factor( current value, <Lock( 0|1 )>, <Min( number )>, <Max( number)> ) )
+**Syntax:** obj &lt;&lt; Term Value( factor( current value, &lt;Lock( 0|1 )&gt;, &lt;Min( number )&gt;, &lt;Max( number)&gt; ) )
 
 **Description:** Specifies settings for individual factors, including the current value, lock status, and range.
 
@@ -2280,7 +2280,7 @@ obj << Term Value( SILANE( 60, Lock( 1 ) ) );
 
 ### Trips
 
-**Syntax:** obj << Trips( number )
+**Syntax:** obj &lt;&lt; Trips( number )
 
 **Description:** Specifies the number of random starts in the optimization algorithm. Each trip restarts the algorithm at a different starting point.
 
@@ -2302,7 +2302,7 @@ obj << Optimize;
 
 ### Unthreaded
 
-**Syntax:** obj << Unthreaded( state=0|1 )
+**Syntax:** obj &lt;&lt; Unthreaded( state=0|1 )
 
 **Description:** To suppress any multithreading in evaluating the profile traces, the contour grid, and the optimizer trips.
 
@@ -2326,7 +2326,7 @@ obj << Maximize Desirability;
 
 ### Action
 
-**Syntax:** obj << Action
+**Syntax:** obj &lt;&lt; Action
 
 **Description:** All-purpose trapdoor within a platform to insert expressions to evaluate. Temporarily sets the DisplayBox and DataTable contexts to the Platform.
 
@@ -2344,7 +2344,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Syntax:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntax:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Description:** Apply a previously created preset to the object, updating the options and customizations to match the saved settings.
 
@@ -2389,7 +2389,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Column Switcher
 
-**Syntax:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Syntax:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Description:** Adds a control panel for changing the platform&apos;s variables
 
@@ -2407,7 +2407,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy Script
 
-**Syntax:** obj << Copy Script
+**Syntax:** obj &lt;&lt; Copy Script
 
 **Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
 
@@ -2428,7 +2428,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Syntax:** obj << Data Table Window
+**Syntax:** obj &lt;&lt; Data Table Window
 
 **Description:** Move the data table window for this analysis to the front.
 
@@ -2449,7 +2449,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Syntax:** obj << Get By Levels
+**Syntax:** obj &lt;&lt; Get By Levels
 
 **Description:** Returns an associative array mapping the by group columns to their values.
 
@@ -2464,7 +2464,7 @@ biv << Get By Levels;
 
 ### Get Container
 
-**Syntax:** obj << Get Container
+**Syntax:** obj &lt;&lt; Get Container
 
 **Description:** Returns a reference to the container box that holds the content for the object.
 
@@ -2517,7 +2517,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Syntax:** obj << Get Data Table
+**Syntax:** obj &lt;&lt; Get Data Table
 
 **Description:** Returns a reference to the data table.
 
@@ -2539,7 +2539,7 @@ Show( N Rows( t ) );
 
 ### Get Script
 
-**Syntax:** obj << Get Script
+**Syntax:** obj &lt;&lt; Get Script
 
 **Description:** Creates a script (JSL) to produce this analysis and returns it as an expression.
 
@@ -2561,7 +2561,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Syntax:** obj << Get Script With Data Table
+**Syntax:** obj &lt;&lt; Get Script With Data Table
 
 **Description:** Creates a script(JSL) to produce this analysis specifically referencing this data table and returns it as an expression.
 
@@ -2583,7 +2583,7 @@ Show( t );
 
 ### Get Timing
 
-**Syntax:** obj << Get Timing
+**Syntax:** obj &lt;&lt; Get Timing
 
 **Description:** Times the platform launch.
 
@@ -2605,7 +2605,7 @@ Show( t );
 
 ### Get Web Support
 
-**Syntax:** obj << Get Web Support
+**Syntax:** obj &lt;&lt; Get Web Support
 
 **Description:** Return a number indicating the level of Interactive HTML support for the display object. 1 means some or all elements are supported. 0 means no support.
 
@@ -2621,7 +2621,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Syntax:** obj << Get Where Expr
+**Syntax:** obj &lt;&lt; Get Where Expr
 
 **Description:** Returns the Where expression for the data subset, if the platform was launched with By() or Where(). Otherwise, returns Empty()
 
@@ -2656,7 +2656,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Syntax:** obj << Local Data Filter
+**Syntax:** obj &lt;&lt; Local Data Filter
 
 **Description:** To filter data to specific groups or ranges, but local to this platform
 
@@ -2708,7 +2708,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Syntax:** obj << Paste Local Data Filter
+**Syntax:** obj &lt;&lt; Paste Local Data Filter
 
 **Description:** Apply the local data filter from the clipboard to the current report.
 
@@ -2729,7 +2729,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**Syntax:** obj << Redo Analysis
+**Syntax:** obj &lt;&lt; Redo Analysis
 
 **Description:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
 
@@ -2750,7 +2750,7 @@ obj << Redo Analysis;
 
 ### Relaunch Analysis
 
-**Syntax:** obj << Relaunch Analysis
+**Syntax:** obj &lt;&lt; Relaunch Analysis
 
 **Description:** Opens the platform launch window and recalls the settings that were used to create the report.
 
@@ -2771,7 +2771,7 @@ obj << Relaunch Analysis;
 
 ### Remove Column Switcher
 
-**Syntax:** obj << Remove Column Switcher
+**Syntax:** obj &lt;&lt; Remove Column Switcher
 
 **Description:** Removes the most recent Column Switcher that has been added to the platform.
 
@@ -2791,7 +2791,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Syntax:** obj << Remove Local Data Filter
+**Syntax:** obj &lt;&lt; Remove Local Data Filter
 
 **Description:** If a local data filter has been created, this removes it and restores the platform to use all the data in the data table directly
 
@@ -2828,9 +2828,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Syntax:** obj << Report;
-
-Report( obj )
+**Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Description:** Returns a reference to the report object.
 
@@ -2853,7 +2851,7 @@ Show( t );
 
 ### Report View
 
-**Syntax:** obj << Report View( "Full"|"Summary" )
+**Syntax:** obj &lt;&lt; Report View( "Full"|"Summary" )
 
 **Description:** The report view determines the level of detail visible in a platform report. Full shows all of the detail, while Summary shows only select content, dependent on the platform. For customized behavior, display boxes support a <<Set Summary Behavior message.
 
@@ -2874,7 +2872,7 @@ obj << Report View( "Summary" );
 
 ### Save Script for All Objects
 
-**Syntax:** obj << Save Script for All Objects
+**Syntax:** obj &lt;&lt; Save Script for All Objects
 
 **Description:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -2895,7 +2893,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Syntax:** obj << Save Script for All Objects To Data Table( <name> )
+**Syntax:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Description:** Saves a script for all report objects to the current data table. This option is useful when you have multiple reports in the window. The script is named after the first platform unless you specify the script name in quotes.
 
@@ -2947,7 +2945,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Syntax:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description:** Create a JSL script to produce this analysis, and save it as a table property in the data table.
 
@@ -2968,7 +2966,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Syntax:** obj << Save Script to Journal
+**Syntax:** obj &lt;&lt; Save Script to Journal
 
 **Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
 
@@ -2989,7 +2987,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Syntax:** obj << Save Script to Report
+**Syntax:** obj &lt;&lt; Save Script to Report
 
 **Description:** Create a JSL script to produce this analysis, and show it in the report itself. Useful to preserve a printed record of what was done.
 
@@ -3010,7 +3008,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Syntax:** obj << Save Script to Script Window
+**Syntax:** obj &lt;&lt; Save Script to Script Window
 
 **Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
 
@@ -3096,7 +3094,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Syntax:** obj << Sync to Data Table Changes
+**Syntax:** obj &lt;&lt; Sync to Data Table Changes
 
 **Description:** Sync with the exclude and data changes that have been made.
 
@@ -3113,7 +3111,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Syntax:** obj << Title( "new title" )
+**Syntax:** obj &lt;&lt; Title( "new title" )
 
 **Description:** Sets the title of the platform.
 
@@ -3134,7 +3132,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Syntax:** obj << Top Report
+**Syntax:** obj &lt;&lt; Top Report
 
 **Description:** Returns a reference to the root node in the report.
 
@@ -3157,7 +3155,7 @@ Show( t );
 
 ### View Web XML
 
-**Syntax:** obj << View Web XML
+**Syntax:** obj &lt;&lt; View Web XML
 
 **Description:** Returns the XML code that is used to create the interactive HTML report.
 
@@ -3205,7 +3203,7 @@ obj2 = obj << Design Space Profiler( 1 );
 
 #### Connect Hide Mode
 
-**Syntax:** obj << Connect Hide Mode( state=0|1 )
+**Syntax:** obj &lt;&lt; Connect Hide Mode( state=0|1 )
 
 **Description:** For the connected table, instead of selecting points that fall within the limits, this option hides points that fall outside of the limits.
 
@@ -3236,7 +3234,7 @@ obj2 << Set Limits( Ethanol( 1.9, 10 ), Methanol( 4.5, 10 ), Time( 1.2, 2 ) );
 
 #### Connect to Table
 
-**Syntax:** obj << Connect to Table( data table )
+**Syntax:** obj &lt;&lt; Connect to Table( data table )
 
 **Description:** Connects the Design Space Profiler report to the specified data table. The rows that contain factors that are within the current lower and upper limits are selected in the connected table.
 
@@ -3267,7 +3265,7 @@ obj2 << Set Limits( Ethanol( 1.9, 10 ), Methanol( 4.5, 10 ), Time( 1.2, 2 ) );
 
 #### Get Midpoints from Profiler
 
-**Syntax:** obj << Get Midpoints from Profiler( fraction )
+**Syntax:** obj &lt;&lt; Get Midpoints from Profiler( fraction )
 
 **Description:** Obtains the current factor settings from the Prediction Profiler and sets the midpoints for each factor in the Design Space Profiler to those values. Limits are constructed around each midpoint value using a specified fraction of the factor range.
 
@@ -3295,7 +3293,7 @@ obj2 << Get Midpoints from Profiler( 0.5 );
 
 #### Lock
 
-**Syntax:** obj << Lock( Lock(colume name(lock_value),...) )
+**Syntax:** obj &lt;&lt; Lock( Lock(colume name(lock_value),...) )
 
 **Description:** Locks the continuous factor at the specified value. This lock is temporary.
 
@@ -3323,7 +3321,7 @@ obj2 << Lock( Ethanol( 5 ) );
 
 #### Make and Connect Random Table
 
-**Syntax:** obj << Make and Connect Random Table( number, <Add Random Noise( state=0|1 )>, <Embed Factor Space Scatterplots>, <Embed Response Space Scatterplots> )
+**Syntax:** obj &lt;&lt; Make and Connect Random Table( number, &lt;Add Random Noise( state=0|1 )&gt;, &lt;Embed Factor Space Scatterplots&gt;, &lt;Embed Response Space Scatterplots&gt; )
 
 **Description:** Creates a new data table that contains uniformly distributed factor settings and their corresponding simulated responses. There are options to specify how the responses are simulated and whether to embed response and factor scatterplots in the report. The selection of rows in the data table is connected to the profilers in the report.
 
@@ -3357,15 +3355,15 @@ obj2 << Set Limits( Ethanol( 1.9, 10 ), Methanol( 4.5, 10 ), Time( 1.2, 2 ) );
 
 #### Move Corner Inward
 
-**Syntax:** obj << Move Corner Inward
+**Syntax:** obj &lt;&lt; Move Corner Inward
 
 #### Move Corner Outward
 
-**Syntax:** obj << Move Corner Outward
+**Syntax:** obj &lt;&lt; Move Corner Outward
 
 #### Move Inward
 
-**Syntax:** obj << Move Inward( <number=1> )
+**Syntax:** obj &lt;&lt; Move Inward( &lt;number=1&gt; )
 
 **Description:** Finds the specification limit with the steepest upward path and moves that specification limit inward. Use the optional number argument to specify how many times this process is performed.
 
@@ -3395,7 +3393,7 @@ obj2 << Move Outward;
 
 #### Move Outward
 
-**Syntax:** obj << Move Outward( <number=1> )
+**Syntax:** obj &lt;&lt; Move Outward( &lt;number=1&gt; )
 
 **Description:** Finds the specification limit with the least steep downward path and moves that specification limit outward. Use the optional number argument to specify how many times this process is performed.
 
@@ -3426,7 +3424,7 @@ obj2 << Move Outward;
 
 #### Reset Factor Space
 
-**Syntax:** obj << Reset Factor Space( factor1( lower, upper ), factor2( lower, upper ), ... )
+**Syntax:** obj &lt;&lt; Reset Factor Space( factor1( lower, upper ), factor2( lower, upper ), ... )
 
 **Description:** Changes the factor space to narrow, widen, or shift the range of one or more factors. If the intervals of the limits are too narrow, this can result in a small limits volume and create inaccurate simulation-based estimates.
 
@@ -3461,11 +3459,11 @@ obj2 << Reset Factor Space(
 
 #### Save Simulation Table
 
-**Syntax:** obj << Save Simulation Table( state=0|1 )
+**Syntax:** obj &lt;&lt; Save Simulation Table( state=0|1 )
 
 #### Save X Spec Limits
 
-**Syntax:** obj << Save X Spec Limits
+**Syntax:** obj &lt;&lt; Save X Spec Limits
 
 **Description:** Saves the current X specification limits as column properties.
 
@@ -3494,7 +3492,7 @@ obj2 << Save X Spec Limits;
 
 #### Send Limits to Profiler as Constraints
 
-**Syntax:** obj << Send Limits to Profiler as Constraints
+**Syntax:** obj &lt;&lt; Send Limits to Profiler as Constraints
 
 **Description:** Sends the current X limits to the Profiler as bound constraints.
 
@@ -3523,7 +3521,7 @@ obj2 << Send Limits to Profiler as Constraints;
 
 #### Send Limits to Simulator
 
-**Syntax:** obj << Send Limits to Simulator( "Uniform" | "Normal with limits at 2 sigma" | "Normal with limits at 3 sigma" | "Normal weighted with limits at 2 sigma" | "Normal weighted with limits at 3 sigma" )
+**Syntax:** obj &lt;&lt; Send Limits to Simulator( "Uniform" | "Normal with limits at 2 sigma" | "Normal with limits at 3 sigma" | "Normal weighted with limits at 2 sigma" | "Normal weighted with limits at 3 sigma" )
 
 **Description:** Sends the current X limits to the Simulator as parameters to a specified distribution. Also sends the Error StdDev values for each response as the standard deviation for added random noise.
 
@@ -3552,7 +3550,7 @@ obj2 << Send Limits to Simulator( "Normal with Limits at 3 Sigma" );
 
 #### Send Midpoints to Profiler
 
-**Syntax:** obj << Send Midpoints to Profiler
+**Syntax:** obj &lt;&lt; Send Midpoints to Profiler
 
 **Description:** Sends the midpoints for the current X limits to the Profiler.
 
@@ -3581,7 +3579,7 @@ obj2 << Send Midpoints to Profiler;
 
 #### Set Limits
 
-**Syntax:** obj << Set Limits( Set Limits(colume name(lower limit,upper limit),...) )
+**Syntax:** obj &lt;&lt; Set Limits( Set Limits(colume name(lower limit,upper limit),...) )
 
 **Description:** Sets the factor limits using a script.
 
@@ -3609,7 +3607,7 @@ obj2 << Set Limits( Ethanol( 1.9, 10 ), Methanol( 4.5, 10 ), Time( 1.2, 2 ) );
 
 #### Show Corners
 
-**Syntax:** obj << Show Corners( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Corners( state=0|1 )
 
 **Description:** Shows or hides the Corners report. This report contains a table of the in-specification probabilities at the extremes of the factor space. The probabilities are calculated using a normal distribution centered at the predicted values and cut at the specification limits.
 
@@ -3637,7 +3635,7 @@ obj2 << Show Corners;
 
 #### Show Current Profiler Values
 
-**Syntax:** obj << Show Current Profiler Values( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Current Profiler Values( state=0|1 )
 
 **Description:** Shows the current value from the profiler as a vertical gray sparse-dotted line.
 
@@ -3665,7 +3663,7 @@ obj2 << Show Current Profiler Values( 1 );
 
 #### Show Impact Ratios
 
-**Syntax:** obj << Show Impact Ratios( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Impact Ratios( state=0|1 )
 
 **Description:** Shows or hides the impact ratios. These ratios show how sensitive changes in each factor, from midpoint to each limit, affect how far the predictions are from their specification limits.
 
@@ -3693,7 +3691,7 @@ obj2 << Show Impact Ratios;
 
 #### Show Portion for Each Response
 
-**Syntax:** obj << Show Portion for Each Response( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Portion for Each Response( state=0|1 )
 
 **Description:** Adds a column that contains the in-specification portion for each response at the current X limits.
 
@@ -3736,7 +3734,7 @@ obj2 << Set Limits( Methanol( 5, 10 ), Propanol( 0, 5 ) );
 
 #### Simulator
 
-**Syntax:** obj << Simulator( state=0|1, <Factors( column << Random( )|Fixed( constant )| Expression( )| Multivariate( ) )>, <Responses( column << No Noise| Add Random Noise| Add Random Weighted Noise| Add Multivariate Noise ) )>
+**Syntax:** obj &lt;&lt; Simulator( state=0|1, &lt;Factors( column &lt;&lt; Random( )|Fixed( constant )| Expression( )| Multivariate( ) )&gt;, &lt;Responses( column &lt;&lt; No Noise| Add Random Noise| Add Random Weighted Noise| Add Multivariate Noise ) )&gt;
 
 **Description:** Launches the Simulator.
 
@@ -3768,7 +3766,7 @@ obj << Simulator(
 
 #### Automatic Histogram Update
 
-**Syntax:** simuobj << Automatic Historgram Update( state=0|1 )
+**Syntax:** simuobj &lt;&lt; Automatic Historgram Update( state=0|1 )
 
 **Description:** Updates the histogram with new simulated values when the distributions of the factors change.
 
@@ -3835,7 +3833,7 @@ obj << Term Value( SILANE( 60, Lock( 1 ) ) );
 
 #### Defect Parametric Profile
 
-**Syntax:** simobj << Defect Parametric Profile( state=0|1 )
+**Syntax:** simobj &lt;&lt; Defect Parametric Profile( state=0|1 )
 
 **Description:** Graphs the mean defect rate by distributional parameters. This option is available only after the Defect Profiler is selected.
 
@@ -3905,7 +3903,7 @@ obj = Profiler(
 
 #### Defect Profiler
 
-**Syntax:** simobj << Defect Profiler( state=0|1 )
+**Syntax:** simobj &lt;&lt; Defect Profiler( state=0|1 )
 
 **Description:** Shows the defect rate as an isolated function of each factor. This option is available only if specification limits are defined.
 
@@ -3972,7 +3970,7 @@ obj = Profiler(
 
 #### N Runs
 
-**Syntax:** obj << Simulator( N Runs(number=1000) )
+**Syntax:** obj &lt;&lt; Simulator( N Runs(number=1000) )
 
 **Description:** Sets the number of runs for the simulation. "10000" by default.
 
@@ -4004,7 +4002,7 @@ obj << Simulator( N Runs( 2500 ), Simulate );
 
 #### Resimulate
 
-**Syntax:** simobj << Resimulate
+**Syntax:** simobj &lt;&lt; Resimulate
 
 **Description:** Reruns the simulation. This option is useful after any changes to the distributions of the factors have been made.
 
@@ -4035,7 +4033,7 @@ simobj << Resimulate;
 
 #### Set Random Seed
 
-**Syntax:** obj << Simulator( Set Random Seed( number ) )
+**Syntax:** obj &lt;&lt; Simulator( Set Random Seed( number ) )
 
 **Description:** Sets the random seed to a specific value assuring that all subsequent runs using the same seed are reproducible.
 
@@ -4067,7 +4065,7 @@ obj << Simulator( Set Random Seed( 1234 ), Simulate );
 
 #### Simulate to table
 
-**Syntax:** simobj << Simulate To Table(N Runs(n),factorName<<Sequence Location(low,high,nSteps),factorName2<<Sequence Spread(low,high,nSteps),factorName3<<Not Sequenced)
+**Syntax:** simobj &lt;&lt; Simulate To Table(N Runs(n),factorName&lt;&lt;Sequence Location(low,high,nSteps),factorName2&lt;&lt;Sequence Spread(low,high,nSteps),factorName3&lt;&lt;Not Sequenced)
 
 **Description:** Creates a table of simulation results, sequenced across different means or spreads.
 
@@ -4132,7 +4130,7 @@ obj << Simulator(
 
 #### Simulation Experiment
 
-**Syntax:** simobj << Simulation Experiment( NRun(number of experimental runs=128), Portion(factor space portion=1),NSim(number of simulations per experimental run=10000),<Run>,<Selected Factors(factor1,..)> )
+**Syntax:** simobj &lt;&lt; Simulation Experiment( NRun(number of experimental runs=128), Portion(factor space portion=1),NSim(number of simulations per experimental run=10000),&lt;Run&gt;,&lt;Selected Factors(factor1,..)&gt; )
 
 **Description:** Runs a designed simulation experiment based on the locations of the factor distributions within the model.
 
@@ -4193,7 +4191,7 @@ obj << Simulator( Simulation Experiment( NRun( 128 ), NSim( 20000 ), Portion( 1.
 
 #### X Correlations
 
-**Syntax:** obj << Simulator( X Correlations( state=0|1, {factor1, factor2, ..., factorN}, [NxN correlations] ) )
+**Syntax:** obj &lt;&lt; Simulator( X Correlations( state=0|1, {factor1, factor2, ..., factorN}, [NxN correlations] ) )
 
 **Description:** Sets the correlations on the X factors when the simulation setting for the factors is set to Multivariate.
 
@@ -4226,7 +4224,7 @@ obj << Simulator(
 
 #### Y Correlations
 
-**Syntax:** obj << Simulator( Y Correlations( state=0|1, {response1, response2, ..., responseN}, [NxN correlations] ) )
+**Syntax:** obj &lt;&lt; Simulator( Y Correlations( state=0|1, {response1, response2, ..., responseN}, [NxN correlations] ) )
 
 **Description:** Sets the correlations on the Y responses when multivariate noise is added to the responses.
 

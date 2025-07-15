@@ -6,17 +6,17 @@
 
 ### Export Candidate Set to Data Table
 
-**구문:** obj << Export Candidate Set to Data Table
+**구문:** obj &lt;&lt; Export Candidate Set to Data Table
 
 ### Select Runs
 
-**구문:** obj << Select Runs( number )
+**구문:** obj &lt;&lt; Select Runs( number )
 
 ### Select Table Columns
 
-**구문:** obj << Select Table Columns
+**구문:** obj &lt;&lt; Select Table Columns
 
 ### Show Table Columns
 
-**구문:** obj << Show Table Columns( state=0|1 )
+**구문:** obj &lt;&lt; Show Table Columns( state=0|1 )
 

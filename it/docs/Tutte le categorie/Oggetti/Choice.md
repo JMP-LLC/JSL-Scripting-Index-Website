@@ -6,9 +6,7 @@
 
 ### Choice Set ID
 
-**Sintassi:** Choice( Choice Set ID( column ), ... )
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** Choice( Choice Set ID( column ), ... )&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Una colonna che identifica l&apos;insieme di scelte che è stato presentato al soggetto per una specifica determinazione di preferenza nella situazione di una tabella di dati.
 
@@ -32,9 +30,7 @@ obj = Choice(
 
 ### Profile Effects
 
-**Sintassi:** obj = Choice(...<Profile Effects( column )>...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Choice(...&lt;Profile Effects( column )&gt;...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Una o più colonne che contengono i valori degli effetti o dei fattori nella tabella di dati del profilo.
 
@@ -57,9 +53,7 @@ obj = dt << Choice(
 
 ### Profile Grouping
 
-**Sintassi:** Choice( Profile Grouping( column(s) ), ... )
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** Choice( Profile Grouping( column(s) ), ... )&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Una colonna che, se utilizzata con la colonna ID profilo, designa in modo univoco ogni insieme di scelte.
 
@@ -82,9 +76,7 @@ obj = dt << Choice(
 
 ### Profile ID
 
-**Sintassi:** Choice( Profile ID( column ), ... )
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** Choice( Profile ID( column ), ... )&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Una colonna che contiene l&apos;ID nella tabella di dati del profilo.
 
@@ -107,9 +99,7 @@ obj = dt << Choice(
 
 ### Response Freq
 
-**Sintassi:** Choice( Response Freq( column ), ... )
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** Choice( Response Freq( column ), ... )&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica una colonna i cui valori assegnano una frequenza a ogni riga per l&apos;analisi.
 
@@ -132,9 +122,7 @@ obj = dt << Choice(
 
 ### Response Grouping
 
-**Sintassi:** Choice( Response Grouping( column(s) ), ... )
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** Choice( Response Grouping( column(s) ), ... )&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Una colonna che, se utilizzata con la colonna ID profilo scelto, designa in modo univoco ogni insieme di scelte.
 
@@ -166,9 +154,7 @@ Choice(
 
 ### Response Profile ID Choices
 
-**Sintassi:** Choice( Response Profile ID Choice( columns ), ... )
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** Choice( Response Profile ID Choice( columns ), ... )&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Almeno due colonne che contengono le possibili scelte disponibili come risposte.
 
@@ -223,9 +209,7 @@ obj = Choice(
 
 ### Response Profile ID Chosen
 
-**Sintassi:** Choice( Response Profile ID Chosen( column ), ... )
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** Choice( Response Profile ID Chosen( column ), ... )&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Una colonna che contiene l&apos;ID del profilo che rappresenta il profilo selezionato del soggetto.
 
@@ -253,9 +237,7 @@ obj = Choice(
 
 ### Response Subject ID
 
-**Sintassi:** Choice( Response Subject ID( column ), ... )
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** Choice( Response Subject ID( column ), ... )&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Una colonna che identifica il partecipante allo studio nella tabella di dati di risposta.
 
@@ -310,9 +292,7 @@ obj = Choice(
 
 ### Response Weight
 
-**Sintassi:** Choice( Response Weight( column ), ... )
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** Choice( Response Weight( column ), ... )&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica una colonna i cui valori assegnano un peso a ogni riga per l&apos;analisi.
 
@@ -335,9 +315,7 @@ obj = dt << Choice(
 
 ### Subject Effects
 
-**Sintassi:** obj = Choice(...<Subject Effects( column )>...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Choice(...&lt;Subject Effects( column )&gt;...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Una o più colonne che contengono i valori degli effetti o dei fattori nella tabella di dati del soggetto.
 
@@ -392,9 +370,7 @@ obj = Choice(
 
 ### Subject ID
 
-**Sintassi:** Choice( Subject ID( column ), ... )
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** Choice( Subject ID( column ), ... )&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Una colonna che identifica il partecipante allo studio nella tabella di dati del soggetto o nella situazione di una tabella di dati.
 
@@ -414,9 +390,7 @@ obj = Choice(
 
 ### Subject Subject ID
 
-**Sintassi:** Choice( Subject Subject ID( column ), ... )
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** Choice( Subject Subject ID( column ), ... )&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Una colonna che identifica il partecipante allo studio nella tabella di dati del soggetto.
 
@@ -473,7 +447,7 @@ obj = Choice(
 
 ### Choice
 
-**Sintassi:** Choice( Profile DataTable( data table ), Profile ID( column ), Profile Effects( column(s) ), <Response Data Table( data table )>, <Subject Data Table( data table )>, <Response Profile ID Chosen( column )>, <Response Subject ID( column)>, <Response Grouping( column(s) )>, <Response Profile ID Choices( column(s) )>, <Profile Grouping( column(s) )>, <Subject Subject ID( column )>, <Subject Effects( column(s) )> )
+**Sintassi:** Choice( Profile DataTable( data table ), Profile ID( column ), Profile Effects( column(s) ), &lt;Response Data Table( data table )&gt;, &lt;Subject Data Table( data table )&gt;, &lt;Response Profile ID Chosen( column )&gt;, &lt;Response Subject ID( column)&gt;, &lt;Response Grouping( column(s) )&gt;, &lt;Response Profile ID Choices( column(s) )&gt;, &lt;Profile Grouping( column(s) )&gt;, &lt;Subject Subject ID( column )&gt;, &lt;Subject Effects( column(s) )&gt; )
 
 **Descrizione:** Modellizza i dati da un esperimento di scelta che studia le preferenze dei clienti. Stima la probabilità che una specifica configurazione sia preferita usando una forma di regressione logistica condizionale.
 
@@ -516,7 +490,7 @@ obj = Choice(
 
 ### Action
 
-**Sintassi:** obj << Action
+**Sintassi:** obj &lt;&lt; Action
 
 **Descrizione:** Trapdoor generica all&apos;interno di una piattaforma per inserire espressioni da valutare. Imposta temporaneamente i contesti del riquadro di visualizzazione e della tabella di dati per la piattaforma.
 
@@ -534,7 +508,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Sintassi:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintassi:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descrizione:** Applica all’oggetto una preimpostazione precedentemente creata, aggiornando le opzioni e le personalizzazioni in base alle impostazioni salvate.
 
@@ -581,7 +555,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Broadcast
 
-**Sintassi:** obj << Broadcast(message)
+**Sintassi:** obj &lt;&lt; Broadcast(message)
 
 **Descrizione:** Diffonde un messaggio a una piattaforma. Se i risultati di restituzione dei singoli oggetti sono tabelle, esse sono concatenate se possibile e il formato finale è identico al risultato dell&apos;opzione Salva tabella combinata in un riquadro della tabella o il risultato dell&apos;opzione Concatena utilizzando una colonna di origine. Oltre a quelli, i risultati sono memorizzati in un elenco e restituiti.
 
@@ -601,7 +575,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**Sintassi:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Sintassi:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Descrizione:** Aggiunge un pannello di controllo per modificare le variabili della piattaforma
 
@@ -619,7 +593,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Comparisons
 
-**Sintassi:** obj << Comparisons( {term1(value1a),term2(value2a),...},{term1(value1b),term2(value2b),...} )
+**Sintassi:** obj &lt;&lt; Comparisons( {term1(value1a),term2(value2a),...},{term1(value1b),term2(value2b),...} )
 
 **Descrizione:** Esegue confronti tra specifici profili di scelta alternativi. Consente di specificare i fattori e i valori che si desidera confrontare.
 
@@ -646,7 +620,7 @@ obj << Comparisons(
 
 ### Confidence Intervals
 
-**Sintassi:** obj << Confidence Intervals( state=0|1, <alpha> )
+**Sintassi:** obj &lt;&lt; Confidence Intervals( state=0|1, &lt;alpha&gt; )
 
 **Descrizione:** Mostra o nasconde intervalli di confidenza (1-alfa)% per ogni parametro nel report Stime dei parametri.
 
@@ -671,7 +645,7 @@ obj << Confidence Intervals( 1, 0.01 );
 
 ### Confidence Limits
 
-**Sintassi:** obj << Confidence Limits( state=0|1, <alpha> )
+**Sintassi:** obj &lt;&lt; Confidence Limits( state=0|1, &lt;alpha&gt; )
 
 **Descrizione:** Mostra o nasconde i limiti di confidenza per ogni parametro nel report Stime dei parametri bayesiani. I limiti sono costruiti sulla base dei quantili 2,5 e 97,5 della distribuzione a posteriori.
 
@@ -679,15 +653,13 @@ obj << Confidence Intervals( 1, 0.01 );
 
 ### Convergence Criterion
 
-**Sintassi:** obj = Choice(...Convergence Criterion( number )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Choice(...Convergence Criterion( number )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Imposta il criterio accettabile di convergenza nella stima dei parametri.
 
 ### Copy ByGroup Script
 
-**Sintassi:** obj << Copy ByGroup Script
+**Sintassi:** obj &lt;&lt; Copy ByGroup Script
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo inserisce negli Appunti.
 
@@ -722,7 +694,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Sintassi:** obj << Copy Script
+**Sintassi:** obj &lt;&lt; Copy Script
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo inserisce negli Appunti.
 
@@ -746,7 +718,7 @@ obj << Copy Script;
 
 ### Correlation of Estimates
 
-**Sintassi:** obj << Correlation of Estimates( state=0|1 )
+**Sintassi:** obj &lt;&lt; Correlation of Estimates( state=0|1 )
 
 **Descrizione:** Mostra o nasconde la matrice di correlazione per le stime dei parametri.
 
@@ -771,7 +743,7 @@ obj << Correlation of Estimates( 1 );
 
 ### Data Table Window
 
-**Sintassi:** obj << Data Table Window
+**Sintassi:** obj &lt;&lt; Data Table Window
 
 **Descrizione:** Sposta in primo piano la finestra della tabella di dati per questa analisi.
 
@@ -795,7 +767,7 @@ obj << Data Table Window;
 
 ### Effect Marginals
 
-**Sintassi:** obj << Effect Marginals( state=0|1 )
+**Sintassi:** obj &lt;&lt; Effect Marginals( state=0|1 )
 
 **Descrizione:** Mostra o nasconde le probabilità marginali e le utilità marginali per ogni effetto principale del modello. La probabilità marginale è la probabilità che un individuo selezioni l&apos;attributo A rispetto a B con tutti gli altri attributi impostati ai loro livelli medi o predefiniti.
 
@@ -820,9 +792,7 @@ obj << Effect Marginals( 1 );
 
 ### Firth Bias-Adjusted Estimates
 
-**Sintassi:** obj = Choice(...Firth Bias-Adjusted Estimates( state=0|1 )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Choice(...Firth Bias-Adjusted Estimates( state=0|1 )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Calcola stime di massima verosimiglianza (MLE) con correzione della distorsione che generano stime e test migliori rispetto alle MLE senza correzione della distorsione. Queste stime migliorano anche i problemi di separazione che tendono a verificarsi nei modelli logistici. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -870,7 +840,7 @@ obj = Choice(
 
 ### Get By Levels
 
-**Sintassi:** obj << Get By Levels
+**Sintassi:** obj &lt;&lt; Get By Levels
 
 **Descrizione:** Restituisce un array associativo che mappa le colonne del gruppo di By ai rispettivi valori.
 
@@ -887,7 +857,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Sintassi:** obj << Get ByGroup Script
+**Sintassi:** obj &lt;&lt; Get ByGroup Script
 
 **Descrizione:** Crea uno script (JSL) per generare questa analisi e la restituisce come espressione.
 
@@ -923,7 +893,7 @@ Show( t );
 
 ### Get Container
 
-**Sintassi:** obj << Get Container
+**Sintassi:** obj &lt;&lt; Get Container
 
 **Descrizione:** Restituisce un riferimento al riquadro contenitore che racchiude il contenuto dell&apos;oggetto.
 
@@ -979,7 +949,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Sintassi:** obj << Get Data Table
+**Sintassi:** obj &lt;&lt; Get Data Table
 
 **Descrizione:** Restituisce un riferimento alla tabella di dati.
 
@@ -1004,7 +974,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**Sintassi:** obj << Get Group Platform
+**Sintassi:** obj &lt;&lt; Get Group Platform
 
 **Descrizione:** Restituisce l&apos;oggetto Raggruppa piattaforma se la piattaforma fa parte di un gruppo. In caso contrario, restituisce Vuoto().
 
@@ -1021,7 +991,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**Sintassi:** obj << Get Script
+**Sintassi:** obj &lt;&lt; Get Script
 
 **Descrizione:** Crea uno script (JSL) per generare questa analisi e la restituisce come espressione.
 
@@ -1046,7 +1016,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Sintassi:** obj << Get Script With Data Table
+**Sintassi:** obj &lt;&lt; Get Script With Data Table
 
 **Descrizione:** Crea uno script (JSL) per generare questa analisi facendo specifico riferimento a questa tabella di dati e la restituisce come espressione.
 
@@ -1071,7 +1041,7 @@ Show( t );
 
 ### Get Timing
 
-**Sintassi:** obj << Get Timing
+**Sintassi:** obj &lt;&lt; Get Timing
 
 **Descrizione:** Determina il tempo di avvio della piattaforma.
 
@@ -1096,7 +1066,7 @@ Show( t );
 
 ### Get Web Support
 
-**Sintassi:** obj << Get Web Support
+**Sintassi:** obj &lt;&lt; Get Web Support
 
 **Descrizione:** Restituisce un numero indicante il livello di supporto HTML interattivo per l&apos;oggetto visualizzato. 1 significa che alcuni o tutti gli elementi sono supportati. 0 significa nessun supporto.
 
@@ -1112,7 +1082,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Sintassi:** obj << Get Where Expr
+**Sintassi:** obj &lt;&lt; Get Where Expr
 
 **Descrizione:** Restituisce l&apos;espressione Where per il sottoinsieme di dati, se la piattaforma è stata avviata con By() o Where(). Altrimenti, restituisce Vuoto()
 
@@ -1130,9 +1100,7 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ### Hierarchical Bayes
 
-**Sintassi:** obj = Choice(...Hierarchical Bayes( state=0|1 )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Choice(...Hierarchical Bayes( state=0|1 )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Utilizza un approccio bayesiano per stimare i parametri specifici del soggetto.
 
@@ -1157,7 +1125,7 @@ dt << Bivariate(
 
 ### Joint Factor Tests
 
-**Sintassi:** obj << Joint Factor Tests( state=0|1 )
+**Sintassi:** obj &lt;&lt; Joint Factor Tests( state=0|1 )
 
 **Descrizione:** Verifica ciascun fattore nel modello costruendo un test del rapporto di verosimiglianza per tutti gli effetti che implicano quel fattore. Per questa opzione è richiesta la tabella di dati del soggetto quando nel modello non è presente un&apos;interazione.
 
@@ -1186,7 +1154,7 @@ obj << Joint Factor Tests( 1 );
 
 ### Likelihood Ratio Tests
 
-**Sintassi:** obj << Likelihood Ratio Tests( state=0|1 )
+**Sintassi:** obj &lt;&lt; Likelihood Ratio Tests( state=0|1 )
 
 **Descrizione:** Esegue test del rapporto di verosimiglianza per ciascun effetto nel modello. Per impostazione predefinita, l&apos;opzione è attivata per i modelli che convergono in meno di cinque secondi.
 
@@ -1211,7 +1179,7 @@ obj << Likelihood Ratio Tests( 1 );
 
 ### Local Data Filter
 
-**Sintassi:** obj << Local Data Filter
+**Sintassi:** obj &lt;&lt; Local Data Filter
 
 **Descrizione:** Filtra dati in specifici gruppi o range, ma localmente in questa piattaforma
 
@@ -1233,7 +1201,7 @@ dt << Distribution(
 
 ### Model Dialog
 
-**Sintassi:** obj << Model Dialog
+**Sintassi:** obj &lt;&lt; Model Dialog
 
 **Descrizione:** Apre la finestra di dialogo Modello.
 
@@ -1257,7 +1225,7 @@ obj << Model Dialog;
 
 ### Multiple Choice Profiler
 
-**Sintassi:** obj << Multiple Choice Profiler( state=0|1, N Choices( number ) )
+**Sintassi:** obj &lt;&lt; Multiple Choice Profiler( state=0|1, N Choices( number ) )
 
 **Descrizione:** Mostra o nasconde un numero specifico di profiler di previsione. Ciò consente di confrontare le probabilità di previsione tra insiemi alternativi di scelte.
 
@@ -1318,19 +1286,15 @@ preset = obj << New Preset();
 
 ### Number of Bayesian Iterations
 
-**Sintassi:** obj = Choice(...Number of Bayesian Iterations( number )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Choice(...Number of Bayesian Iterations( number )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 ### Number of Burn In Iterations
 
-**Sintassi:** obj << Number of Burn In Iterations( number )
+**Sintassi:** obj &lt;&lt; Number of Burn In Iterations( number )
 
 ### One Table
 
-**Sintassi:** obj = Choice(...One Table...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Choice(...One Table...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica che i dati sono in formato impilato in un&apos;unica tabella di dati.
 
@@ -1353,7 +1317,7 @@ obj = dt << Choice(
 
 ### Paste Local Data Filter
 
-**Sintassi:** obj << Paste Local Data Filter
+**Sintassi:** obj &lt;&lt; Paste Local Data Filter
 
 **Descrizione:** Applicare il filtro sui dati locali dagli Appunti al report corrente.
 
@@ -1374,7 +1338,7 @@ dist2 << Paste Local Data Filter;
 
 ### Probability Profiler
 
-**Sintassi:** obj << Probability Profiler( state=0|1 )
+**Sintassi:** obj &lt;&lt; Probability Profiler( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un profiler di previsione della probabilità della scelta corrente rispetto a un insieme di riferimento.
 
@@ -1399,9 +1363,7 @@ obj << Probability Profiler( 1 );
 
 ### Profile DataTable
 
-**Sintassi:** Choice( Profile Data Table( table ), ... )
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** Choice( Profile Data Table( table ), ... )&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Identifica la tabella di dati del profilo.
 
@@ -1448,7 +1410,7 @@ obj = Choice(
 
 ### Redo Analysis
 
-**Sintassi:** obj << Redo Analysis
+**Sintassi:** obj &lt;&lt; Redo Analysis
 
 **Descrizione:** Ripete questa stessa analisi in una nuova finestra. L&apos;analisi sarà differente se i dati sono stati modificati.
 
@@ -1472,7 +1434,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**Sintassi:** obj << Redo ByGroup Analysis
+**Sintassi:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Descrizione:** Ripete questa stessa analisi in una nuova finestra. L&apos;analisi sarà differente se i dati sono stati modificati.
 
@@ -1507,7 +1469,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**Sintassi:** obj << Relaunch Analysis
+**Sintassi:** obj &lt;&lt; Relaunch Analysis
 
 **Descrizione:** Apre la finestra di avvio della piattaforma e richiama le impostazioni utilizzate per creare il report.
 
@@ -1531,7 +1493,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**Sintassi:** obj << Relaunch ByGroup
+**Sintassi:** obj &lt;&lt; Relaunch ByGroup
 
 **Descrizione:** Apre la finestra di avvio della piattaforma e richiama le impostazioni utilizzate per creare il report.
 
@@ -1566,7 +1528,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**Sintassi:** obj << Remove Column Switcher
+**Sintassi:** obj &lt;&lt; Remove Column Switcher
 
 **Descrizione:** Rimuove l&apos;ultimo Scambia colonne che è stato aggiunto alla piattaforma.
 
@@ -1586,7 +1548,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Sintassi:** obj << Remove Local Data Filter
+**Sintassi:** obj &lt;&lt; Remove Local Data Filter
 
 **Descrizione:** Se è stato creato un filtro di dati locali viene rimosso per ripristinare la piattaforma e utilizzare direttamente tutti i dati nella tabella di dati
 
@@ -1608,9 +1570,7 @@ dist << remove local data filter;
 
 ### Remove Subject Effects
 
-**Sintassi:** obj = Choice(...Remove Subject Effects...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Choice(...Remove Subject Effects...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 ### Render Preset
 
@@ -1631,9 +1591,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Sintassi:** obj << Report;
-
-Report( obj )
+**Sintassi:** obj &lt;&lt; Report;Report( obj )
 
 **Descrizione:** Restituisce un riferimento all&apos;oggetto del report.
 
@@ -1659,7 +1617,7 @@ Show( t );
 
 ### Report View
 
-**Sintassi:** obj << Report View( "Completo"|"Riepilogo" )
+**Sintassi:** obj &lt;&lt; Report View( "Completo"|"Riepilogo" )
 
 **Descrizione:** La visualizzazione Report determina il livello di dettaglio visibile in un report della piattaforma. Full mostra tutti i dettagli mentre Summary mostra solo contenuti selezionati, in base alla piattaforma. Per un comportamento personalizzato, i riquadri di visualizzazione supportano un messaggio <<Set Summary Behavior.
 
@@ -1683,9 +1641,7 @@ obj << Report View( "Summary" );
 
 ### Respondents Are Allowed to Choose None
 
-**Sintassi:** Choice( Respondents Are Allowed to Choose None( state=0|1 ), ... )
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** Choice( Respondents Are Allowed to Choose None( state=0|1 ), ... )&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica che deve essere incluso nel modello un Indicatore nessuna scelta per le righe di risposta che contengono valori mancanti.
 
@@ -1708,9 +1664,7 @@ obj = Choice(
 
 ### Response Data Table
 
-**Sintassi:** Choice( Response Data Table( table ), ... )
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** Choice( Response Data Table( table ), ... )&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Identifica la tabella di dati di risposta.
 
@@ -1757,11 +1711,11 @@ obj = Choice(
 
 ### Save Bayes Chain
 
-**Sintassi:** obj << Save Bayes Chain
+**Sintassi:** obj &lt;&lt; Save Bayes Chain
 
 ### Save ByGroup Script to Data Table
 
-**Sintassi:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintassi:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e salvarla come proprietà della tabella nella tabella di dati. È possibile specificare un nome per lo script. L&apos;opzione Append Suffix aggiunge un suffisso numerico al nome dello script, che differenzia lo script da uno script esistente con lo stesso nome. L&apos;opzione Prompt richiede all&apos;utente di specificare un nome di script. L&apos;opzione Replace sostituisce uno script esistente con lo stesso nome.
 
@@ -1796,7 +1750,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Sintassi:** obj << Save ByGroup Script to Journal
+**Sintassi:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e aggiunge un pulsante con lo script al journal.
 
@@ -1831,7 +1785,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Sintassi:** obj << Save ByGroup Script to Script Window
+**Sintassi:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo aggiunge alla finestra di testo dello script corrente.
 
@@ -1866,7 +1820,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Gradients by Subject
 
-**Sintassi:** obj << Save Gradients by Subject
+**Sintassi:** obj &lt;&lt; Save Gradients by Subject
 
 **Descrizione:** Crea una nuova tabella con una riga per ciascun oggetto che contiene i passaggi medi su ciascun parametro.
 
@@ -1890,7 +1844,7 @@ obj << Save Gradients by Subject;
 
 ### Save Script for All Objects
 
-**Sintassi:** obj << Save Script for All Objects
+**Sintassi:** obj &lt;&lt; Save Script for All Objects
 
 **Descrizione:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -1914,7 +1868,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Sintassi:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintassi:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descrizione:** Salva uno script per tutti gli oggetti del report nella tabella di dati corrente. Questa opzione è utile quando sono presenti più report nella finestra. Lo script prende il nome dalla prima piattaforma, a meno che non si specifichi il nome dello script tra apici.
 
@@ -1982,7 +1936,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Sintassi:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintassi:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo salva come una proprietà di tabella nella tabella di dati.
 
@@ -2006,7 +1960,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Sintassi:** obj << Save Script to Journal
+**Sintassi:** obj &lt;&lt; Save Script to Journal
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e aggiunge un pulsante con lo script al journal.
 
@@ -2030,7 +1984,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Sintassi:** obj << Save Script to Report
+**Sintassi:** obj &lt;&lt; Save Script to Report
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo mostra nel report. Utile per avere una copia stampata di quanto è stato fatto.
 
@@ -2054,7 +2008,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Sintassi:** obj << Save Script to Script Window
+**Sintassi:** obj &lt;&lt; Save Script to Script Window
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo aggiunge alla finestra di testo dello script corrente.
 
@@ -2078,11 +2032,11 @@ obj << Save Script to Script Window;
 
 ### Save Subject Estimates
 
-**Sintassi:** obj << Save Subject Estimates
+**Sintassi:** obj &lt;&lt; Save Subject Estimates
 
 ### Save Utility Formula
 
-**Sintassi:** obj << Save Utility Formula
+**Sintassi:** obj &lt;&lt; Save Utility Formula
 
 **Descrizione:** Crea una nuova colonna nella tabella di dati del profilo con una formula per il modello lineare che viene stimato.
 
@@ -2172,7 +2126,7 @@ dt << Distribution(
 
 ### Show MLE Parameter Estimates
 
-**Sintassi:** obj << Show MLE Parameter Estimates( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show MLE Parameter Estimates( state=0|1 )
 
 **Descrizione:** Mostra stime della massima verosimiglianza con stime dei parametri di Bayes.
 
@@ -2197,9 +2151,7 @@ obj << Show MLE Parameter Estimates( 1 );
 
 ### Subject DataTable
 
-**Sintassi:** Choice( Subject Data Table( table ), ... )
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** Choice( Subject Data Table( table ), ... )&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Identifica la tabella di dati del soggetto.
 
@@ -2254,7 +2206,7 @@ obj = Choice(
 
 ### Sync to Data Table Changes
 
-**Sintassi:** obj << Sync to Data Table Changes
+**Sintassi:** obj &lt;&lt; Sync to Data Table Changes
 
 **Descrizione:** Sincronizza con l&apos;esclusione e le modifiche ai dati effettuate.
 
@@ -2271,7 +2223,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Sintassi:** obj << Title( "new title" )
+**Sintassi:** obj &lt;&lt; Title( "new title" )
 
 **Descrizione:** Imposta il titolo della piattaforma.
 
@@ -2295,7 +2247,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Sintassi:** obj << Top Report
+**Sintassi:** obj &lt;&lt; Top Report
 
 **Descrizione:** Restituisce un riferimento al nodo principale nel report.
 
@@ -2321,7 +2273,7 @@ Show( t );
 
 ### Transform Column
 
-**Sintassi:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Sintassi:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Descrizione:** Crea una colonna di trasformazione nel contesto locale di un oggetto, di solito una piattaforma. La colonna di trasformazione è attiva solo per la durata della piattaforma.
 
@@ -2342,11 +2294,11 @@ dt << Distribution(
 
 ### Use Adaptive Bayes
 
-**Sintassi:** obj << Use Adaptive Bayes( state=0|1 )
+**Sintassi:** obj &lt;&lt; Use Adaptive Bayes( state=0|1 )
 
 ### Utility Profiler
 
-**Sintassi:** obj << Utility Profiler( state=0|1 )
+**Sintassi:** obj &lt;&lt; Utility Profiler( state=0|1 )
 
 **Descrizione:** Mostra o nasconde l&apos;utilità prevista per diverse impostazioni dei fattori. L&apos;utilità è il valore previsto dal modello lineare.
 
@@ -2371,7 +2323,7 @@ obj << Utility Profiler( 1 );
 
 ### View Web XML
 
-**Sintassi:** obj << View Web XML
+**Sintassi:** obj &lt;&lt; View Web XML
 
 **Descrizione:** Restituisce il codice XML utilizzato per creare il report HTML interattivo.
 
@@ -2386,7 +2338,7 @@ xml = obj << View Web XML;
 
 ### Willingness to Pay
 
-**Sintassi:** obj << Willingness to Pay
+**Sintassi:** obj &lt;&lt; Willingness to Pay
 
 **Descrizione:** Richiede che il modello includa una colonna continua dei prezzi. Calcola l&apos;aumento (diminuzione) massimo del prezzo che un cliente è disposto a pagare per una nuova funzione rispetto al costo della funzione di base. Il risultato è calcolato utilizzando le impostazioni di riferimento per ogni impostazione in background.
 
@@ -2418,9 +2370,7 @@ Choice(
 
 ### Window View
 
-**Sintassi:** obj = Choice(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Choice(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Impostare il tipo di finestra da creare per il report. Per impostazione predefinita verrà creata una finestra di report Visible. Una finestra Invisible non comparirà sullo schermo, ma è individuabile da funzioni come Window(). Una finestra Private risponde alla maggior parte dei messaggi della finestra, ma non è individuabile e deve essere indirizzata attraverso l&apos;oggetto report
 

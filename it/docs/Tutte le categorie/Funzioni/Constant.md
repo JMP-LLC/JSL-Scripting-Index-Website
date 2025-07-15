@@ -2,8 +2,6 @@
 
 
 
-## Funzioni
-
 ### Pi
 
 **Sintassi:** y = Pi()

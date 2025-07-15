@@ -6,7 +6,7 @@
 
 ### Action
 
-**语法:** obj << Action
+**语法:** obj &lt;&lt; Action
 
 **说明:** 平台内用于插入表达式以求值的所有用途的陷门。暂时将 DisplayBox 和 DataTable 上下文设置为平台。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**语法:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**语法:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **说明:** 将以前创建的预设应用到对象，从而更新选项和定制以匹配保存的设置。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**语法:** obj << Automatic Recalc( state=0|1 )
+**语法:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **说明:** 对排除和数据更改自动重新执行分析。若启用了“自动重新计算”选项，则应考虑使用 Wait(0) 命令来确保排除和数据更改在重新计算前生效。
 
@@ -88,7 +88,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Column Switcher
 
-**语法:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**语法:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **说明:** 添加用于更改平台变量的控制面板
 
@@ -106,7 +106,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy Script
 
-**语法:** obj << Copy Script
+**语法:** obj &lt;&lt; Copy Script
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其置于剪贴板上。
 
@@ -122,7 +122,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**语法:** obj << Data Table Window
+**语法:** obj &lt;&lt; Data Table Window
 
 **说明:** 将该分析的数据表窗口移动到前面。
 
@@ -138,7 +138,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**语法:** obj << Get By Levels
+**语法:** obj &lt;&lt; Get By Levels
 
 **说明:** 返回将“依据”组列映射到其值的关联数组。
 
@@ -155,7 +155,7 @@ biv << Get By Levels;
 
 ### Get Container
 
-**语法:** obj << Get Container
+**语法:** obj &lt;&lt; Get Container
 
 **说明:** 返回对保留对象内容的容器框的引用。
 
@@ -203,7 +203,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**语法:** obj << Get Data Table
+**语法:** obj &lt;&lt; Get Data Table
 
 **说明:** 返回对该数据表的引用。
 
@@ -220,7 +220,7 @@ Show( N Rows( t ) );
 
 ### Get Script
 
-**语法:** obj << Get Script
+**语法:** obj &lt;&lt; Get Script
 
 **说明:** 创建生成该分析的脚本 (JSL)，并将其作为表达式返回。
 
@@ -237,7 +237,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**语法:** obj << Get Script With Data Table
+**语法:** obj &lt;&lt; Get Script With Data Table
 
 **说明:** 创建生成该分析的脚本 (JSL) 以专门引用该数据表，并将其作为表达式返回。
 
@@ -254,7 +254,7 @@ Show( t );
 
 ### Get Timing
 
-**语法:** obj << Get Timing
+**语法:** obj &lt;&lt; Get Timing
 
 **说明:** 平台启动过程计时。
 
@@ -271,7 +271,7 @@ Show( t );
 
 ### Get Web Support
 
-**语法:** obj << Get Web Support
+**语法:** obj &lt;&lt; Get Web Support
 
 **说明:** 返回一个数字，指示显示对象的交互式 HTML 支持的水平。1 表示支持部分或全部元素。0 表示不支持。
 
@@ -287,7 +287,7 @@ Show( s );
 
 ### Get Where Expr
 
-**语法:** obj << Get Where Expr
+**语法:** obj &lt;&lt; Get Where Expr
 
 **说明:** 若平台是使用 By() 或 Where() 启动的，则返回数据子集的 Where 表达式。否则返回 Empty()
 
@@ -324,7 +324,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**语法:** obj << Local Data Filter
+**语法:** obj &lt;&lt; Local Data Filter
 
 **说明:** 将数据过滤到特定的组或范围，但在该平台中是本地的
 
@@ -380,7 +380,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**语法:** obj << Paste Local Data Filter
+**语法:** obj &lt;&lt; Paste Local Data Filter
 
 **说明:** 将剪贴板中的本地数据过滤器应用于当前报表。
 
@@ -401,7 +401,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**语法:** obj << Redo Analysis
+**语法:** obj &lt;&lt; Redo Analysis
 
 **说明:** 在新窗口中重新运行相同的分析。若数据发生更改，分析也将不同。
 
@@ -417,7 +417,7 @@ obj << Redo Analysis;
 
 ### Relaunch Analysis
 
-**语法:** obj << Relaunch Analysis
+**语法:** obj &lt;&lt; Relaunch Analysis
 
 **说明:** 打开平台启动窗口并重新调用曾用于创建报表的设置。
 
@@ -433,7 +433,7 @@ obj << Relaunch Analysis;
 
 ### Remove Column Switcher
 
-**语法:** obj << Remove Column Switcher
+**语法:** obj &lt;&lt; Remove Column Switcher
 
 **说明:** 删除已添加至平台的最近使用的“列切换器”。
 
@@ -453,7 +453,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**语法:** obj << Remove Local Data Filter
+**语法:** obj &lt;&lt; Remove Local Data Filter
 
 **说明:** 若已创建本地数据过滤器，这会将它删除并将平台恢复为直接使用数据表中的所有数据
 
@@ -492,9 +492,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**语法:** obj << Report;
-
-Report( obj )
+**语法:** obj &lt;&lt; Report;Report( obj )
 
 **说明:** 返回对该报表对象的引用。
 
@@ -512,7 +510,7 @@ Show( t );
 
 ### Report View
 
-**语法:** obj << Report View( "完全"|"汇总" )
+**语法:** obj &lt;&lt; Report View( "完全"|"汇总" )
 
 **说明:** 报表视图确定平台报表中可见的详细程度。Full 显示所有详细信息，而 Summary 仅显示根据平台确定的选定内容。对于定制行为，显示框支持 <<Set Summary Behavior 消息。
 
@@ -528,7 +526,7 @@ obj << Report View( "Summary" );
 
 ### Save Script for All Objects
 
-**语法:** obj << Save Script for All Objects
+**语法:** obj &lt;&lt; Save Script for All Objects
 
 **说明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -544,7 +542,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**语法:** obj << Save Script for All Objects To Data Table( <name> )
+**语法:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **说明:** 将所有报表对象的脚本保存至当前数据表。当您在该窗口中具有多个报表时，该选项很有用。除非您在引号中指定脚本名称，否则脚本将以第一个平台命名。
 
@@ -592,7 +590,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**语法:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**语法:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其作为表属性保存至数据表中。
 
@@ -608,7 +606,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**语法:** obj << Save Script to Journal
+**语法:** obj &lt;&lt; Save Script to Journal
 
 **说明:** 创建生成该分析的 JSL 脚本，并将一个按钮添加至包含该脚本的记录中。
 
@@ -624,7 +622,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**语法:** obj << Save Script to Report
+**语法:** obj &lt;&lt; Save Script to Report
 
 **说明:** 创建生成该分析的 JSL 脚本，并在报表中显示。有助于保留打印的已完成操作记录。
 
@@ -640,7 +638,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**语法:** obj << Save Script to Script Window
+**语法:** obj &lt;&lt; Save Script to Script Window
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其追加至当前的脚本文本窗口中。
 
@@ -721,7 +719,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**语法:** obj << Sync to Data Table Changes
+**语法:** obj &lt;&lt; Sync to Data Table Changes
 
 **说明:** 与已进行的排除和数据的更改同步。
 
@@ -738,7 +736,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**语法:** obj << Title( "new title" )
+**语法:** obj &lt;&lt; Title( "new title" )
 
 **说明:** 设置平台的标题。
 
@@ -754,7 +752,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**语法:** obj << Top Report
+**语法:** obj &lt;&lt; Top Report
 
 **说明:** 返回对报表中根节点的引用。
 
@@ -772,7 +770,7 @@ Show( t );
 
 ### View Web XML
 
-**语法:** obj << View Web XML
+**语法:** obj &lt;&lt; View Web XML
 
 **说明:** 返回用于创建交互式 HTML 报表的 XML 代码。
 
@@ -789,19 +787,7 @@ xml = obj << View Web XML;
 
 ### Reliability Growth
 
-**语法:** obj = Reliability Growth( Input Format( Time to Event ), Time to Event( column, <column> ), <Event Count( column )>, <Phase( column )> );
-
-
-
-obj = Reliability Growth( Input Format( Dates ), Timestamp( column, <column> ), <Event Count( column )>, <Phase( column )> );
-
-
-
-obj = Reliability Growth( Input Format( Concurrent Systems ), Time to Event( column, column, ... ), System ID( column ), <Phase( column )> )
-
-
-
-obj = Reliability Growth( Input Format( Parallel Systems ), Time to Event( column, column, ... ), <Event Count( column )>, System ID( column ), <Phase( column )> )
+**语法:** obj = Reliability Growth( Input Format( Time to Event ), Time to Event( column, &lt;column&gt; ), &lt;Event Count( column )&gt;, &lt;Phase( column )&gt; );obj = Reliability Growth( Input Format( Dates ), Timestamp( column, &lt;column&gt; ), &lt;Event Count( column )&gt;, &lt;Phase( column )&gt; );obj = Reliability Growth( Input Format( Concurrent Systems ), Time to Event( column, column, ... ), System ID( column ), &lt;Phase( column )&gt; )obj = Reliability Growth( Input Format( Parallel Systems ), Time to Event( column, column, ... ), &lt;Event Count( column )&gt;, System ID( column ), &lt;Phase( column )&gt; )
 
 **说明:** 随着单个可修复系统不断接受系统设计的改进而对系统可靠性的变化建模。 该平台接受多种输入格式。请参见每种格式获取规格详细信息。
 
@@ -867,7 +853,7 @@ obj = dt << Reliability Growth(
 
 ### Crow AMSAA
 
-**语法:** obj << Crow AMSAA
+**语法:** obj &lt;&lt; Crow AMSAA
 
 **说明:** 拟合 Crow-AMSAA 模型。 默认开启。
 
@@ -882,7 +868,7 @@ obj << Crow AMSAA;
 
 ### Crow AMSAA with Modified MLE
 
-**语法:** obj << Crow AMSAA with Modified MLE
+**语法:** obj &lt;&lt; Crow AMSAA with Modified MLE
 
 **说明:** 拟合带 beta 偏倚校正的 Crow-AMSAA 模型。 默认开启。
 
@@ -897,7 +883,7 @@ obj << Crow AMSAA with Modified MLE;
 
 ### Distinct Phase Weibull NHPP
 
-**语法:** obj << Distinct Phase Weibull NHPP
+**语法:** obj &lt;&lt; Distinct Phase Weibull NHPP
 
 **说明:** 拟合“独特阶段 Weibull NHPP”模型，其中多阶段研究中的每个系统在每个阶段中都遵循相同的 Crow-AMSAA 模型。该模型为每个阶段都包含一个 beta 参数和一个 lambda 参数。 默认开启。
 
@@ -918,7 +904,7 @@ obj << Distinct Phase Weibull NHPP;
 
 ### Distinct System Weibull NHPP
 
-**语法:** obj << Distinct System Weibull NHPP
+**语法:** obj &lt;&lt; Distinct System Weibull NHPP
 
 **说明:** 拟合“独特系统 Weibull NHPP”模型，其中研究中的每个系统都遵循具有不同参数的单独 Crow-AMSAA 模型。 默认开启。
 
@@ -938,7 +924,7 @@ obj << Distinct System Weibull NHPP;
 
 ### Distinct Weibull NHPP
 
-**语法:** obj << Distinct Weibull NHPP
+**语法:** obj &lt;&lt; Distinct Weibull NHPP
 
 **说明:** 拟合“独特 Weibull NHPP”模型，其中多阶段研究中的每个系统在每个阶段中都遵循单独的 Crow-AMSAA 模型。该模型为研究中的每个系统和阶段的组合都包含一个 beta 参数和一个 lambda 参数。 默认开启。
 
@@ -959,7 +945,7 @@ obj << Distinct Weibull NHPP;
 
 ### Fixed Parameter Crow AMSAA
 
-**语法:** obj << Fixed Parameter Crow AMSAA( <lambda ( number )>, <beta ( number )> )
+**语法:** obj &lt;&lt; Fixed Parameter Crow AMSAA( &lt;lambda ( number )&gt;, &lt;beta ( number )&gt; )
 
 **说明:** 拟合“固定参数 Crow-AMSAA”模型。 默认开启。
 
@@ -974,7 +960,7 @@ obj << Fixed Parameter Crow AMSAA( lambda( .02 ) );
 
 ### Get Results
 
-**语法:** obj << Get Results
+**语法:** obj &lt;&lt; Get Results
 
 **说明:** 返回包含模型估计结果的命名列表。
 
@@ -990,7 +976,7 @@ Show( obj << Get Results );
 
 ### Identical System Weibull NHPP
 
-**语法:** obj << Identical System Weibull NHPP
+**语法:** obj &lt;&lt; Identical System Weibull NHPP
 
 **说明:** 拟合“相同系统 Weibull NHPP”模型，其中研究中的每个系统都遵循一个 Crow-AMSAA 模型。假定系统之间的差异是由于相同模型的各个实现的随机性造成的。 默认开启。
 
@@ -1010,7 +996,7 @@ obj << Identical System Weibull NHPP;
 
 ### Piecewise Weibull NHPP
 
-**语法:** obj << Piecewise Weibull NHPP
+**语法:** obj &lt;&lt; Piecewise Weibull NHPP
 
 **说明:** 拟合“分段 Weibull NHPP”模型。 默认开启。
 
@@ -1030,7 +1016,7 @@ obj << Piecewise Weibull NHPP;
 
 ### Piecewise Weibull NHPP Change Point Detection
 
-**语法:** obj << Piecewise Weibull NHPP Change Point Detection
+**语法:** obj &lt;&lt; Piecewise Weibull NHPP Change Point Detection
 
 **说明:** 估计数据中的变点并拟合“分段 Weibull NHPP”模型。指定“阶段”变量时该选项不可用。 默认开启。
 
@@ -1049,7 +1035,7 @@ obj << Piecewise Weibull NHPP Change Point Detection;
 
 ### Piecewise Weibull NHPP with Different Intercepts
 
-**语法:** obj << Piecewise Weibull NHPP with Different Intercepts
+**语法:** obj &lt;&lt; Piecewise Weibull NHPP with Different Intercepts
 
 **说明:** 拟合具有不同截距的“分段 Weibull NHPP”模型，其中多阶段研究中的每个系统都遵循单独的分段 Weibull NHPP 模型。该模型为每个阶段包含一个 beta 参数，为每个系统包含一个 lambda 参数。 默认开启。
 
@@ -1070,7 +1056,7 @@ obj << Piecewise Weibull NHPP with Different Intercepts;
 
 ### Reinitialized Weibull NHPP
 
-**语法:** obj << Reinitialized Weibull NHPP
+**语法:** obj &lt;&lt; Reinitialized Weibull NHPP
 
 **说明:** 拟合“重新初始化 Weibull NHPP”模型。 默认开启。
 
@@ -1094,7 +1080,7 @@ obj << Reinitialized Weibull NHPP;
 
 #### Achieved MTBF
 
-**语法:** scrobj << Achieved MTBF( state=0|1 )
+**语法:** scrobj &lt;&lt; Achieved MTBF( state=0|1 )
 
 **说明:** 显示或隐藏“可达 MTBF”报表。使用可选的 alpha 参数指定 alpha。
 
@@ -1111,7 +1097,7 @@ report << Achieved MTBF( .01 );
 
 #### Goodness of Fit
 
-**语法:** scrobj << Goodness of Fit( state=0|1 )
+**语法:** scrobj &lt;&lt; Goodness of Fit( state=0|1 )
 
 **说明:** 显示或隐藏“拟合优度”报表，该报表包含对数据服从 Crow-AMSAA 模型的原假设的检验。
 
@@ -1128,7 +1114,7 @@ report << Goodness of Fit( 1 );
 
 #### Show Cumulative Events Plot
 
-**语法:** scrobj << Show Cumulative Events Plot( state=0|1 )
+**语法:** scrobj &lt;&lt; Show Cumulative Events Plot( state=0|1 )
 
 **说明:** 显示或隐藏“累积事件”图。
 
@@ -1145,7 +1131,7 @@ report << Show Cumulative Events Plot( 1 );
 
 #### Show Intensity Plot
 
-**语法:** scrobj << Show Intensity Plot( state=0|1 )
+**语法:** scrobj &lt;&lt; Show Intensity Plot( state=0|1 )
 
 **说明:** 显示或隐藏“强度”图。
 
@@ -1162,7 +1148,7 @@ report << Show Intensity Plot( 1 );
 
 #### Show MTBF Plot
 
-**语法:** scrobj << Show MTBF Plot( state=0|1 )
+**语法:** scrobj &lt;&lt; Show MTBF Plot( state=0|1 )
 
 **说明:** 显示或隐藏平均失效间隔时间 (MTBF) 图。 默认开启。
 
@@ -1179,7 +1165,7 @@ report << Show MTBF Plot( 0 );
 
 #### Show Profilers
 
-**语法:** scrobj << Show Profilers( state=0|1 )
+**语法:** scrobj &lt;&lt; Show Profilers( state=0|1 )
 
 **说明:** 显示或隐藏平均失效间隔时间 (MTBF)、失效强度和累积事件的刻画器。
 
@@ -1200,9 +1186,7 @@ report << Show Profilers( 1 );
 
 #### Cumulative Events Plot
 
-**语法:** obj << Cumulative Events Plot( ... );
-
-scrobj = obj << Cumulative Events Plot
+**语法:** obj &lt;&lt; Cumulative Events Plot( ... );scrobj = obj &lt;&lt; Cumulative Events Plot
 
 **说明:** 支持您在“累积事件”图中显示或隐藏模型。若指定时不带参数，该选项将可脚本化的引用返回给图。
 
@@ -1221,11 +1205,7 @@ plot << Crow AMSAA( 0 );
 
 #### Crow AMSAA
 
-**语法:** obj << Cumulative Events Plot( Crow AMSAA( state=0|1 ) );
-
-obj << Mean Time Between Failures Plot( Crow AMSAA( state=0|1 ) );
-
-scrobj << Crow AMSAA( state=0|1 ) )
+**语法:** obj &lt;&lt; Cumulative Events Plot( Crow AMSAA( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Crow AMSAA( state=0|1 ) );scrobj &lt;&lt; Crow AMSAA( state=0|1 ) )
 
 **说明:** 在“累积事件”或“平均失效间隔时间”图中显示或隐藏 Crow-AMSAA 模型。 默认开启。
 
@@ -1263,11 +1243,7 @@ mtbf << Crow AMSAA( 0 );
 
 #### Crow AMSAA with Modified MLE
 
-**语法:** obj << Cumulative Events Plot( Crow AMSAA with Modified MLE( state=0|1 ) );
-
-obj << Mean Time Between Failures Plot( Crow AMSAA with Modified MLE( state=0|1 ) );
-
-scrobj << Crow AMSAA with Modified MLE( state=0|1 ) )
+**语法:** obj &lt;&lt; Cumulative Events Plot( Crow AMSAA with Modified MLE( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Crow AMSAA with Modified MLE( state=0|1 ) );scrobj &lt;&lt; Crow AMSAA with Modified MLE( state=0|1 ) )
 
 **说明:** 在“累积事件”或“平均失效间隔时间”图中显示或隐藏带 beta 偏倚校正的 Crow-AMSAA 模型。 默认开启。
 
@@ -1305,11 +1281,7 @@ mtbf << Crow AMSAA with Modified MLE( 0 );
 
 #### Fixed Parameter Crow AMSAA
 
-**语法:** obj << Cumulative Events Plot( Fixed Parameter Crow AMSAA( state=0|1 ) );
-
-obj << Mean Time Between Failures Plot( Fixed Parameter Crow AMSAA( state=0|1 ) );
-
-scrobj << Fixed Parameter Crow AMSAA( state=0|1 ) )
+**语法:** obj &lt;&lt; Cumulative Events Plot( Fixed Parameter Crow AMSAA( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Fixed Parameter Crow AMSAA( state=0|1 ) );scrobj &lt;&lt; Fixed Parameter Crow AMSAA( state=0|1 ) )
 
 **说明:** 在“累积事件”或“平均失效间隔时间”图中显示或隐藏“固定参数 Crow-AMSAA”模型。 默认开启。
 
@@ -1347,11 +1319,7 @@ mtbf << Fixed Parameter Crow AMSAA( 0 );
 
 #### Piecewise Weibull NHPP
 
-**语法:** obj << Cumulative Events Plot( Piecewise Weibull NHPP( state=0|1 ) );
-
-obj << Mean Time Between Failures Plot( Piecewise Weibull NHPP( state=0|1 ) );
-
-scrobj << Piecewise Weibull NHPP( state=0|1 ) )
+**语法:** obj &lt;&lt; Cumulative Events Plot( Piecewise Weibull NHPP( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Piecewise Weibull NHPP( state=0|1 ) );scrobj &lt;&lt; Piecewise Weibull NHPP( state=0|1 ) )
 
 **说明:** 在“累积事件”或“平均失效间隔时间”图中显示或隐藏“分段 Weibull NHPP”模型。 默认开启。
 
@@ -1399,11 +1367,7 @@ mtbf << Piecewise Weibull NHPP( 0 );
 
 #### Piecewise Weibull NHPP Change Point Detection
 
-**语法:** obj << Cumulative Events Plot( Piecewise Weibull NHPP Change Point Detection( state=0|1 ) );
-
-obj << Mean Time Between Failures Plot( Piecewise Weibull NHPP Change Point Detection( state=0|1 ) );
-
-scrobj << Piecewise Weibull NHPP Change Point Detection( state=0|1 ) )
+**语法:** obj &lt;&lt; Cumulative Events Plot( Piecewise Weibull NHPP Change Point Detection( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Piecewise Weibull NHPP Change Point Detection( state=0|1 ) );scrobj &lt;&lt; Piecewise Weibull NHPP Change Point Detection( state=0|1 ) )
 
 **说明:** 在“累积事件”或“平均失效间隔时间”图中显示或隐藏“重新初始化 Weibull NHPP”模型。 默认开启。
 
@@ -1449,11 +1413,7 @@ mtbf << Piecewise Weibull NHPP Change Point Detection( 0 );
 
 #### Reinitialized Weibull NHPP
 
-**语法:** obj << Cumulative Events Plot( Reinitialized Weibull NHPP( state=0|1 ) );
-
-obj << Mean Time Between Failures Plot( Reinitialized Weibull NHPP( state=0|1 ) );
-
-scrobj << Reinitialized Weibull NHPP( state=0|1 ) )
+**语法:** obj &lt;&lt; Cumulative Events Plot( Reinitialized Weibull NHPP( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Reinitialized Weibull NHPP( state=0|1 ) );scrobj &lt;&lt; Reinitialized Weibull NHPP( state=0|1 ) )
 
 **说明:** 在“累积事件”或“平均失效间隔时间”图中显示或隐藏“重新初始化 Weibull NHPP”模型。 默认开启。
 
@@ -1505,7 +1465,7 @@ mtbf << Reinitialized Weibull NHPP( 0 );
 
 #### Show Cumulative Events Plot
 
-**语法:** scrobj << Show Cumulative Events Plot( state=0|1 )
+**语法:** scrobj &lt;&lt; Show Cumulative Events Plot( state=0|1 )
 
 **说明:** 显示或隐藏“累积事件”图。
 
@@ -1522,7 +1482,7 @@ report << Show Cumulative Events Plot( 1 );
 
 #### Show Intensity Plot
 
-**语法:** scrobj << Show Intensity Plot( state=0|1 )
+**语法:** scrobj &lt;&lt; Show Intensity Plot( state=0|1 )
 
 **说明:** 显示或隐藏“强度”图。
 
@@ -1539,7 +1499,7 @@ report << Show Intensity Plot( 1 );
 
 #### Show MTBF Plot
 
-**语法:** scrobj << Show MTBF Plot( state=0|1 )
+**语法:** scrobj &lt;&lt; Show MTBF Plot( state=0|1 )
 
 **说明:** 显示或隐藏平均失效间隔时间 (MTBF) 图。 默认开启。
 
@@ -1556,7 +1516,7 @@ report << Show MTBF Plot( 0 );
 
 #### Show Profilers
 
-**语法:** scrobj << Show Profilers( state=0|1 )
+**语法:** scrobj &lt;&lt; Show Profilers( state=0|1 )
 
 **说明:** 显示或隐藏平均失效间隔时间 (MTBF)、失效强度和累积事件的刻画器。
 
@@ -1573,7 +1533,7 @@ report << Show Profilers( 1 );
 
 #### beta
 
-**语法:** obj << Fixed Parameter Crow AMSAA( beta( number ) )
+**语法:** obj &lt;&lt; Fixed Parameter Crow AMSAA( beta( number ) )
 
 **说明:** 指定固定 beta 参数的值。若参数是缺失值，则参数不固定。
 
@@ -1590,7 +1550,7 @@ Report( obj )["Crow-AMSAA"] << Close( 1 );
 
 #### lambda
 
-**语法:** obj << Fixed Parameter Crow AMSAA( lambda( number ) )
+**语法:** obj &lt;&lt; Fixed Parameter Crow AMSAA( lambda( number ) )
 
 **说明:** 指定固定 lambda 参数的值。若参数是缺失值，则参数不固定。
 
@@ -1611,9 +1571,7 @@ Report( obj )["Crow-AMSAA"] << Close( 1 );
 
 #### Mean Time Between Failures Plot
 
-**语法:** obj << Mean Time Between Failures Plot( ... );
-
-scrobj = obj << Mean Time Between Failures Plot
+**语法:** obj &lt;&lt; Mean Time Between Failures Plot( ... );scrobj = obj &lt;&lt; Mean Time Between Failures Plot
 
 **说明:** 支持您在“平均失效间隔时间”图中显示或隐藏模型。若指定时不带参数，该选项将可脚本化的引用返回给图。
 
@@ -1633,11 +1591,7 @@ plot << Crow AMSAA( 0 );
 
 #### Crow AMSAA
 
-**语法:** obj << Cumulative Events Plot( Crow AMSAA( state=0|1 ) );
-
-obj << Mean Time Between Failures Plot( Crow AMSAA( state=0|1 ) );
-
-scrobj << Crow AMSAA( state=0|1 ) )
+**语法:** obj &lt;&lt; Cumulative Events Plot( Crow AMSAA( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Crow AMSAA( state=0|1 ) );scrobj &lt;&lt; Crow AMSAA( state=0|1 ) )
 
 **说明:** 在“累积事件”或“平均失效间隔时间”图中显示或隐藏 Crow-AMSAA 模型。 默认开启。
 
@@ -1675,11 +1629,7 @@ mtbf << Crow AMSAA( 0 );
 
 #### Crow AMSAA with Modified MLE
 
-**语法:** obj << Cumulative Events Plot( Crow AMSAA with Modified MLE( state=0|1 ) );
-
-obj << Mean Time Between Failures Plot( Crow AMSAA with Modified MLE( state=0|1 ) );
-
-scrobj << Crow AMSAA with Modified MLE( state=0|1 ) )
+**语法:** obj &lt;&lt; Cumulative Events Plot( Crow AMSAA with Modified MLE( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Crow AMSAA with Modified MLE( state=0|1 ) );scrobj &lt;&lt; Crow AMSAA with Modified MLE( state=0|1 ) )
 
 **说明:** 在“累积事件”或“平均失效间隔时间”图中显示或隐藏带 beta 偏倚校正的 Crow-AMSAA 模型。 默认开启。
 
@@ -1717,9 +1667,7 @@ mtbf << Crow AMSAA with Modified MLE( 0 );
 
 #### Customize Average MTBF
 
-**语法:** obj << Mean Time Between Failures( Options( Sample MTBF Type( "Customized Average MTBF" ), Customize Average MTBF( vector ) ) );
-
-scrobj << Options( Sample MTBF Type( "Customized Average MTBF" ), Customize Average MTBF( vector ) )
+**语法:** obj &lt;&lt; Mean Time Between Failures( Options( Sample MTBF Type( "Customized Average MTBF" ), Customize Average MTBF( vector ) ) );scrobj &lt;&lt; Options( Sample MTBF Type( "Customized Average MTBF" ), Customize Average MTBF( vector ) )
 
 **说明:** 指定一组用于计算平均失效间隔时间 (MTBF) 的不相交区间。
 
@@ -1758,11 +1706,7 @@ plot << Options(
 
 #### Fixed Parameter Crow AMSAA
 
-**语法:** obj << Cumulative Events Plot( Fixed Parameter Crow AMSAA( state=0|1 ) );
-
-obj << Mean Time Between Failures Plot( Fixed Parameter Crow AMSAA( state=0|1 ) );
-
-scrobj << Fixed Parameter Crow AMSAA( state=0|1 ) )
+**语法:** obj &lt;&lt; Cumulative Events Plot( Fixed Parameter Crow AMSAA( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Fixed Parameter Crow AMSAA( state=0|1 ) );scrobj &lt;&lt; Fixed Parameter Crow AMSAA( state=0|1 ) )
 
 **说明:** 在“累积事件”或“平均失效间隔时间”图中显示或隐藏“固定参数 Crow-AMSAA”模型。 默认开启。
 
@@ -1800,9 +1744,7 @@ mtbf << Fixed Parameter Crow AMSAA( 0 );
 
 #### Interval Size
 
-**语法:** obj << Mean Time Between Failures( Options( Sample MTBF Type( "Equal Interval Average MTBF" ), Interval Size( number ) ) );
-
-scrobj << Options( Sample MTBF Type( "Equal Interval Average MTBF" ), Interval Size( number ) )
+**语法:** obj &lt;&lt; Mean Time Between Failures( Options( Sample MTBF Type( "Equal Interval Average MTBF" ), Interval Size( number ) ) );scrobj &lt;&lt; Options( Sample MTBF Type( "Equal Interval Average MTBF" ), Interval Size( number ) )
 
 **说明:** 指定用于计算平均失效间隔时间 (MTBF) 的区间大小。
 
@@ -1835,9 +1777,7 @@ plot << Options( Sample MTBF Type( "Equal Interval Average MTBF" ), Interval Siz
 
 #### Options
 
-**语法:** obj << Mean Time Between Failures( Options( ... ) );
-
-scrobj << Options( ... )
+**语法:** obj &lt;&lt; Mean Time Between Failures( Options( ... ) );scrobj &lt;&lt; Options( ... )
 
 **说明:** 支持您配置“平均失效间隔时间”图。
 
@@ -1880,11 +1820,7 @@ mtbf << Options( Sample MTBF Type( "Equal Interval Average MTBF" ) );
 
 #### Piecewise Weibull NHPP
 
-**语法:** obj << Cumulative Events Plot( Piecewise Weibull NHPP( state=0|1 ) );
-
-obj << Mean Time Between Failures Plot( Piecewise Weibull NHPP( state=0|1 ) );
-
-scrobj << Piecewise Weibull NHPP( state=0|1 ) )
+**语法:** obj &lt;&lt; Cumulative Events Plot( Piecewise Weibull NHPP( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Piecewise Weibull NHPP( state=0|1 ) );scrobj &lt;&lt; Piecewise Weibull NHPP( state=0|1 ) )
 
 **说明:** 在“累积事件”或“平均失效间隔时间”图中显示或隐藏“分段 Weibull NHPP”模型。 默认开启。
 
@@ -1932,11 +1868,7 @@ mtbf << Piecewise Weibull NHPP( 0 );
 
 #### Piecewise Weibull NHPP Change Point Detection
 
-**语法:** obj << Cumulative Events Plot( Piecewise Weibull NHPP Change Point Detection( state=0|1 ) );
-
-obj << Mean Time Between Failures Plot( Piecewise Weibull NHPP Change Point Detection( state=0|1 ) );
-
-scrobj << Piecewise Weibull NHPP Change Point Detection( state=0|1 ) )
+**语法:** obj &lt;&lt; Cumulative Events Plot( Piecewise Weibull NHPP Change Point Detection( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Piecewise Weibull NHPP Change Point Detection( state=0|1 ) );scrobj &lt;&lt; Piecewise Weibull NHPP Change Point Detection( state=0|1 ) )
 
 **说明:** 在“累积事件”或“平均失效间隔时间”图中显示或隐藏“重新初始化 Weibull NHPP”模型。 默认开启。
 
@@ -1982,11 +1914,7 @@ mtbf << Piecewise Weibull NHPP Change Point Detection( 0 );
 
 #### Reinitialized Weibull NHPP
 
-**语法:** obj << Cumulative Events Plot( Reinitialized Weibull NHPP( state=0|1 ) );
-
-obj << Mean Time Between Failures Plot( Reinitialized Weibull NHPP( state=0|1 ) );
-
-scrobj << Reinitialized Weibull NHPP( state=0|1 ) )
+**语法:** obj &lt;&lt; Cumulative Events Plot( Reinitialized Weibull NHPP( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Reinitialized Weibull NHPP( state=0|1 ) );scrobj &lt;&lt; Reinitialized Weibull NHPP( state=0|1 ) )
 
 **说明:** 在“累积事件”或“平均失效间隔时间”图中显示或隐藏“重新初始化 Weibull NHPP”模型。 默认开启。
 
@@ -2034,9 +1962,7 @@ mtbf << Reinitialized Weibull NHPP( 0 );
 
 #### Sample MTBF Type
 
-**语法:** obj << Mean Time Between Failures( Options( Sample MTBF Type( "Equal Interval Average MTBF"|"Customized Average MTBF" ) ) );
-
-scrobj << Options( Sample MTBF Type( "Equal Interval Average MTBF"|"Customized Average MTBF" ) )
+**语法:** obj &lt;&lt; Mean Time Between Failures( Options( Sample MTBF Type( "Equal Interval Average MTBF"|"Customized Average MTBF" ) ) );scrobj &lt;&lt; Options( Sample MTBF Type( "Equal Interval Average MTBF"|"Customized Average MTBF" ) )
 
 **说明:** 指定“平均失效间隔时间”图的计算方法。
 
@@ -2083,7 +2009,7 @@ mtbf << Options( Sample MTBF Type( "Equal Interval Average MTBF" ) );
 
 #### Show Cumulative Events Plot
 
-**语法:** scrobj << Show Cumulative Events Plot( state=0|1 )
+**语法:** scrobj &lt;&lt; Show Cumulative Events Plot( state=0|1 )
 
 **说明:** 显示或隐藏“累积事件”图。
 
@@ -2100,7 +2026,7 @@ report << Show Cumulative Events Plot( 1 );
 
 #### Show Intensity Plot
 
-**语法:** scrobj << Show Intensity Plot( state=0|1 )
+**语法:** scrobj &lt;&lt; Show Intensity Plot( state=0|1 )
 
 **说明:** 显示或隐藏“强度”图。
 
@@ -2117,7 +2043,7 @@ report << Show Intensity Plot( 1 );
 
 #### Show MTBF Plot
 
-**语法:** scrobj << Show MTBF Plot( state=0|1 )
+**语法:** scrobj &lt;&lt; Show MTBF Plot( state=0|1 )
 
 **说明:** 显示或隐藏平均失效间隔时间 (MTBF) 图。 默认开启。
 
@@ -2134,7 +2060,7 @@ report << Show MTBF Plot( 0 );
 
 #### Show Profilers
 
-**语法:** scrobj << Show Profilers( state=0|1 )
+**语法:** scrobj &lt;&lt; Show Profilers( state=0|1 )
 
 **说明:** 显示或隐藏平均失效间隔时间 (MTBF)、失效强度和累积事件的刻画器。
 

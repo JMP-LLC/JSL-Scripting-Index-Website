@@ -2,11 +2,9 @@
 
 
 
-## Funzioni
-
 ### Alignment Cell Box
 
-**Sintassi:** y = Alignment Cell Box( row, col, nRow, nCol, <Sides(left+2*top+4*right+8*bottom=15)> <RowSpan(nRow matrix)> <ColSpan(nCol matrix)>, matrix or list of strings )
+**Sintassi:** y = Alignment Cell Box( row, col, nRow, nCol, &lt;Sides(left+2*top+4*right+8*bottom=15)&gt; &lt;RowSpan(nRow matrix)&gt; &lt;ColSpan(nCol matrix)&gt;, matrix or list of strings )
 
 **Descrizione:** Restituisce un riferimento in un riquadro di visualizzazione che contiene il contenuto della riga (o della colonna) contenuto all&apos;interno di un riquadro della griglia di allineamento.
 
@@ -130,7 +128,7 @@ ashape = Alpha Shape( triang );
 
 ### Border Box
 
-**Sintassi:** y = Border Box( <Left( pix )>, <Right( pix )>, <Top( pix )>, <Bottom( pix )>, <Sides( 0 )>, displayBoxArg )
+**Sintassi:** y = Border Box( &lt;Left( pix )&gt;, &lt;Right( pix )&gt;, &lt;Top( pix )&gt;, &lt;Bottom( pix )&gt;, &lt;Sides( 0 )&gt;, displayBoxArg )
 
 **Descrizione:** Restituisce un riquadro di visualizzazione per aggiungere spazio intorno al riquadro di visualizzazione dell&apos;argomento.
 
@@ -152,7 +150,7 @@ New Window( "Example",
 
 ### Box Plot Seg
 
-**Sintassi:** b = Box Plot Seg(<data>, <frequency>, <weight>, <vertical=0|1>)
+**Sintassi:** b = Box Plot Seg(&lt;data&gt;, &lt;frequency&gt;, &lt;weight&gt;, &lt;vertical=0|1&gt;)
 
 **Descrizione:** Restituisce un segmento di visualizzazione che rappresenta un box plot basato sui valori x e y passati.
 
@@ -171,7 +169,7 @@ seg = (g[FrameBox( 1 )] << Find Seg( "Box Plot Seg" ));
 
 ### Busy Light
 
-**Sintassi:** y = Busy Light( < <<Automatic(0|1)>, <Size(x, y)>, < <<Disable> )
+**Sintassi:** y = Busy Light( &lt; &lt;&lt;Automatic(0|1)&gt;, &lt;Size(x, y)&gt;, &lt; &lt;&lt;Disable&gt; )
 
 **Descrizione:** Crea un&apos;immagine in rotazione per indicare un processo in corso.
 
@@ -216,7 +214,7 @@ New Window( "Calendar Box Example", Calendar Box() );
 
 ### Check Box
 
-**Sintassi:** y = Check Box( {item, ...}, <script> )
+**Sintassi:** y = Check Box( {item, ...}, &lt;script&gt; )
 
 **Descrizione:** Restituisce un riquadro di visualizzazione per mostrare una o più caselle di controllo.
 
@@ -281,7 +279,7 @@ dt = New Window( "Example",
 
 ### Col List Box
 
-**Sintassi:** y = Col List Box( <Data Table( name )>, <all>|<character|numeric>, <width( pix )>, <grouped>, <maxSelected( n )>, <nlines( n )>, <MaxItems( n )>, <MinItems( n )>, <onChange( expr )>, < <<Modeling Type({"Any","Continuous","Nominal","Ordinal","Multiple Response","Unstructured Text","Vector","None","Row State"}) >, < << Set Data Type(Any|Numeric|Character)>, <script> )
+**Sintassi:** y = Col List Box( &lt;Data Table( name )&gt;, &lt;all&gt;|&lt;character|numeric&gt;, &lt;width( pix )&gt;, &lt;grouped&gt;, &lt;maxSelected( n )&gt;, &lt;nlines( n )&gt;, &lt;MaxItems( n )&gt;, &lt;MinItems( n )&gt;, &lt;onChange( expr )&gt;, &lt; &lt;&lt;Modeling Type({"Any","Continuous","Nominal","Ordinal","Multiple Response","Unstructured Text","Vector","None","Row State"}) &gt;, &lt; &lt;&lt; Set Data Type(Any|Numeric|Character)&gt;, &lt;script&gt; )
 
 **Descrizione:** Restituisce un riquadro di visualizzazione per mostrare una casella di riepilogo per la selezione delle colonne di una tabella di dati. Usare il messaggio <<Modeling Type per consentire tipi di modellizzazione speciali o per limitare i tipi consentiti. Il valore predefinito "Any" consentirà qualsiasi colonna con un tipo di modellizzazione classico ("Continuous", "Nominal", "Ordinal").
 
@@ -351,7 +349,7 @@ New Window( "test",
 
 ### Column Dialog
 
-**Sintassi:** y = Column Dialog( <var = ColList("Label", <Min Col(min)>, <Max Col(max)>, <Width(w)>, <Data Type("Numeric"|"Character"|"Any")>, <Modeling Type({<"Continuous">, <"Nominal">, <"Ordinal">, <"None">, <"Multiple Response">, <"Unstructured Text">, <"Vector">})> )>, <var=EditText("string")>, <var=EditNumber(num)>, <var=Check Box( "Text", 0|1)>, <var=RadioButtons( "a", "b" )>, <var=Combo Box("choice1", ...)>, <HList(box, ...)>, <VList(box, ...)>, <LineUp(ncol, box, ...)>, <Text Box("string")>, <Window Title("title")>, <Window Icon("icon string")>, <Dialog Description("description")>, <Recall(script)>, <Help Script(script)>)
+**Sintassi:** y = Column Dialog( &lt;var = ColList("Label", &lt;Min Col(min)&gt;, &lt;Max Col(max)&gt;, &lt;Width(w)&gt;, &lt;Data Type("Numeric"|"Character"|"Any")&gt;, &lt;Modeling Type({&lt;"Continuous"&gt;, &lt;"Nominal"&gt;, &lt;"Ordinal"&gt;, &lt;"None"&gt;, &lt;"Multiple Response"&gt;, &lt;"Unstructured Text"&gt;, &lt;"Vector"&gt;})&gt; )&gt;, &lt;var=EditText("string")&gt;, &lt;var=EditNumber(num)&gt;, &lt;var=Check Box( "Text", 0|1)&gt;, &lt;var=RadioButtons( "a", "b" )&gt;, &lt;var=Combo Box("choice1", ...)&gt;, &lt;HList(box, ...)&gt;, &lt;VList(box, ...)&gt;, &lt;LineUp(ncol, box, ...)&gt;, &lt;Text Box("string")&gt;, &lt;Window Title("title")&gt;, &lt;Window Icon("icon string")&gt;, &lt;Dialog Description("description")&gt;, &lt;Recall(script)&gt;, &lt;Help Script(script)&gt;)
 
 **Descrizione:** Propone all&apos;utente una finestra modale con campi per selezionare le colonne di una tabella di dati. La specifica può comprendere diversi tipi di riquadri di input oltre a riquadri contenitori per organizzare la finestra.
 
@@ -389,7 +387,7 @@ Column Dialog(
 
 ### Combo Box
 
-**Sintassi:** y = Combo Box( {item <( tipstr )>, ...}, <script> )
+**Sintassi:** y = Combo Box( {item &lt;( tipstr )&gt;, ...}, &lt;script&gt; )
 
 **Descrizione:** Restituisce un riquadro di visualizzazione per mostrare una casella combinata con un menu di scelta rapida. Ogni elemento della casella combinata può avere una descrizione comando opzionale che è specificata come stringa all&apos;interno di parentesi di seguito alla stringa di testo dell&apos;elemento.
 
@@ -427,7 +425,7 @@ New Window( "Example",
 
 ### Contour Seg
 
-**Sintassi:** me = Contour Seg( Triangulation, [ levels ], < zColor([colors], <Cycle Colors|Interpolate Colors>) >, < Transparency([] | t) >
+**Sintassi:** me = Contour Seg( Triangulation, [ levels ], &lt; zColor([colors], &lt;Cycle Colors|Interpolate Colors&gt;) &gt;, &lt; Transparency([] | t) &gt;
 
 **Descrizione:** Restituisce un segmento di visualizzazione che rappresenta i profili isometrici di una triangolazione. É possibile specificare colori facoltativi per ciascun livello come matrice o elenco. La trasparenza può essere specificata come numero o matrice.
 
@@ -456,7 +454,7 @@ New Window( "Contour Seg Example",
 
 ### Current Report
 
-**Sintassi:** y = Current Report( <Project(title|index|box|window)> )
+**Sintassi:** y = Current Report( &lt;Project(title|index|box|window)&gt; )
 
 **Descrizione:** Restituisce un riferimento a un riquadro di visualizzazione nel report corrente del progetto corrente (oppure nessun progetto se non si sta eseguendo lo script in un progetto).
 
@@ -475,7 +473,7 @@ Current Report();
 
 ### Current Window
 
-**Sintassi:** y = Current Window( <Project(title|index|box|window)> )
+**Sintassi:** y = Current Window( &lt;Project(title|index|box|window)&gt; )
 
 **Descrizione:** Restituisce un riferimento alla finestra corrente nel progetto corrente (oppure nessun progetto se non si sta eseguendo lo script in un progetto).
 
@@ -578,7 +576,7 @@ New Window( "Selection Filter",
 
 ### Data Grid Box
 
-**Sintassi:** y = Data Grid Box(  )
+**Sintassi:** y = Data Grid Box( )
 
 **Descrizione:** Restituisce un riquadro di visualizzazione che può contenere una tabella di dati.
 
@@ -750,7 +748,7 @@ New Window( "Example",
 
 ### Expr As Picture
 
-**Sintassi:** y = Expr As Picture( expr( ... ), <width in pixels>, <Max Matrix Size( dim )> )
+**Sintassi:** y = Expr As Picture( expr( ... ), &lt;width in pixels&gt;, &lt;Max Matrix Size( dim )&gt; )
 
 **Descrizione:** Restituisce un&apos;immagine contenente l&apos;espressione specificata come immagine della formula. La larghezza predefinita è 600 pixel e la dimensione massima predefinita della matrice è 100.
 
@@ -772,7 +770,7 @@ New Window( "Example",
 
 ### Filter Col Selector
 
-**Sintassi:** y = Filter Col Selector(<Data Table(name)>, <width(pixels)>, <nlines(n)>, <script>, <onchange(expr)>)
+**Sintassi:** y = Filter Col Selector(&lt;Data Table(name)&gt;, &lt;width(pixels)&gt;, &lt;nlines(n)&gt;, &lt;script&gt;, &lt;onchange(expr)&gt;)
 
 **Descrizione:** Restituisce un riquadro di visualizzazione che contiene un elenco di elementi. Il controllo consente il filtro sulle colonne.
 
@@ -838,7 +836,7 @@ Print( Get Project List() << Get Window Title() );
 
 ### Get Window
 
-**Sintassi:** window = Get Window( <Project(title|index|box|window)>, <Type(string)>, title|index|box )
+**Sintassi:** window = Get Window( &lt;Project(title|index|box|window)&gt;, &lt;Type(string)&gt;, title|index|box )
 
 **Descrizione:** Restituisce un riferimento una specifica finestra aperta per titolo, indice o riquadro.
 
@@ -880,7 +878,7 @@ window = Get Window( Project( project ), "Big Class" );
 
 ### Get Window List
 
-**Sintassi:** windowList = Get Window List( <Project(title|index|box|window)>, <Type(string)> )
+**Sintassi:** windowList = Get Window List( &lt;Project(title|index|box|window)&gt;, &lt;Type(string)&gt; )
 
 **Descrizione:** Restituisce un elenco di tutte le finestre aperte.
 
@@ -1026,7 +1024,7 @@ New Window( "Example",
 
 ### H Center Box
 
-**Sintassi:** y = H Center Box( <childbox> )
+**Sintassi:** y = H Center Box( &lt;childbox&gt; )
 
 **Descrizione:** Restituisce un riquadro di visualizzazione con l&apos;argomento del riquadro di visualizzazione childbox centrato nello spazio orizzontale definito dalle dimensioni massime dell&apos;oggetto figlio e di tutti gli altri oggetti di pari livello del riquadro centrale.
 
@@ -1053,7 +1051,7 @@ New Window( "test",
 
 ### H List Box
 
-**Sintassi:** y = H List Box( <Align( center|bottom )>, displayBox, ... )
+**Sintassi:** y = H List Box( &lt;Align( center|bottom )&gt;, displayBox, ... )
 
 **Descrizione:** Restituisce un riquadro di visualizzazione che dispone i riquadri di visualizzazione forniti dagli argomenti in un layout orizzontale. Il messaggio <<Sospendi stabilisce il foglio che deve contenere i report che saranno stralciati. L&apos;argomento opzionale Align consente l&apos;allineamento bottom o center dei contenuti all&apos;interno del riquadro di visualizzazione.
 
@@ -1070,7 +1068,7 @@ New Window( "Example",
 
 ### H Scroll Box
 
-**Sintassi:** y = H Scroll Box( <Size( x )>, displayBox )
+**Sintassi:** y = H Scroll Box( &lt;Size( x )&gt;, displayBox )
 
 **Descrizione:** Restituisce un riquadro di visualizzazione che posiziona un riquadro figlio più grande mediante una barra di scorrimento orizzontale.
 
@@ -1099,7 +1097,7 @@ New Window( "Example",
 
 ### H Sheet Box
 
-**Sintassi:** y = H Sheet Box( <<Hold( rpt ), displayBox, ... )
+**Sintassi:** y = H Sheet Box( &lt;&lt;Hold( rpt ), displayBox, ... )
 
 **Descrizione:** Restituisce un riquadro di visualizzazione che dispone i riquadri di visualizzazione forniti dagli argomenti in un layout orizzontale. Il messaggio <<Sospendi stabilisce il foglio che deve contenere i report che saranno stralciati. L&apos;argomento opzionale Align consente l&apos;allineamento right o center dei contenuti all&apos;interno del riquadro di visualizzazione.
 
@@ -1149,7 +1147,7 @@ New Window( "Example",
 
 ### H Splitter Box
 
-**Sintassi:** y = H Splitter Box( <Size(x,y)>, displayBox, ... )
+**Sintassi:** y = H Splitter Box( &lt;Size(x,y)&gt;, displayBox, ... )
 
 **Descrizione:** Restituisce un riquadro di visualizzazione che può organizzare altri riquadri in direzione orizzontale o verticale con controllo interattivo delle dimensioni. Le dimensioni dell&apos;elemento figlio sono specificate come proporzione della larghezza o dell&apos;altezza del Splitter Box. L&apos;argomento facoltativo Size è utilizzato solo per il riquadro di suddivisione più in alto; i riquadri di livello inferiore sono dimensionati come qualsiasi altro riquadro figlio.
 
@@ -1204,7 +1202,7 @@ New Window( "Example",
 
 ### Hist Seg
 
-**Sintassi:** b = Hist Seg([data], <[freq data]>,<[weight data]>, <vertical=0|1>, <Row States()>)
+**Sintassi:** b = Hist Seg([data], &lt;[freq data]&gt;,&lt;[weight data]&gt;, &lt;vertical=0|1&gt;, &lt;Row States()&gt;)
 
 **Descrizione:** Restituisce un segmento cronologico
 
@@ -1289,7 +1287,7 @@ frenchBox << Set( 1 );
 
 ### If Seg
 
-**Sintassi:** seg = If Seg(<state=0|1>)
+**Sintassi:** seg = If Seg(&lt;state=0|1&gt;)
 
 **Descrizione:** Restituisce un segmento di visualizzazione che mostra o nasconde gli elementi figlio del segmento.
 
@@ -1356,7 +1354,7 @@ New Window( "Distribution of Height",
 
 ### Line Seg
 
-**Sintassi:** ls = Line Seg(x values, y values, <Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) >, < Sizes( s ) > )>)
+**Sintassi:** ls = Line Seg(x values, y values, &lt;Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) &gt;, &lt; Sizes( s ) &gt; )&gt;)
 
 **Descrizione:** Restituisce un segmento di visualizzazione con linee che collegano tutti i valori x e y.
 
@@ -1425,7 +1423,7 @@ seg = (frame << Find Seg( "Lines Seg" ));
 
 ### Lineup Box
 
-**Sintassi:** y = Lineup Box( <NCol( nc )>, <Spacing( pixels, <vspace> )>, displayBoxArgs, ... )
+**Sintassi:** y = Lineup Box( &lt;NCol( nc )&gt;, &lt;Spacing( pixels, &lt;vspace&gt; )&gt;, displayBoxArgs, ... )
 
 **Descrizione:** Restituisce un riquadro di visualizzazione per mostrare un allineamento di caselle nelle colonne nc. L&apos;argomento facoltativo Spacing specifica lo spazio orizzontale e verticale intorno ai riquadri di visualizzazione. Se si utilizza l&apos;argomento vspace, vspace è lo spazio verticale e pixels è lo spazio orizzontale.
 
@@ -1447,7 +1445,7 @@ New Window( "Example",
 
 ### Lineup Ruler Box
 
-**Sintassi:** y = Lineup Box( <Widths( {width1, width2, ...} )>, displayBoxArgs, ... )
+**Sintassi:** y = Lineup Box( &lt;Widths( {width1, width2, ...} )&gt;, displayBoxArgs, ... )
 
 **Descrizione:** Restituisce un riquadro di visualizzazione che imposta le larghezze delle colonne dei riquadri di allineamento che contiene.
 
@@ -1485,7 +1483,7 @@ New Window( "Lineup Ruler",
 
 ### List Box
 
-**Sintassi:** y = List Box( {item, ...}, <width( pixels )>, <maxSelected( 9999 )>, <nlines( 12 )>, <script> )
+**Sintassi:** y = List Box( {item, ...}, &lt;width( pixels )&gt;, &lt;maxSelected( 9999 )&gt;, &lt;nlines( 12 )&gt;, &lt;script&gt; )
 
 **Descrizione:** Restituisce un riquadro di visualizzazione per mostrare una casella di riepilogo con elementi da selezionare. Se item è un elenco a due elementi contenente il nome dell&apos;elemento e una stringa che specifica un tipo di modellizzazione o criterio di ordinamento, quale "Ordinal" o "Ascending", nella casella di riepilogo verrà visualizzata accanto a quell&apos;elemento l&apos;icona corrispondente.
 
@@ -1518,7 +1516,7 @@ New Window( "Example",
 
 ### Marker Seg
 
-**Sintassi:** me = Marker Seg( x, y, < Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) >, < Sizes( s ) > )
+**Sintassi:** me = Marker Seg( x, y, &lt; Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) &gt;, &lt; Sizes( s ) &gt; )
 
 **Descrizione:** Restituisce un segmento di visualizzazione con indicatori per tutti i valori x e y.
 
@@ -1638,7 +1636,7 @@ New Window( "Marker Seg Example",
 
 ### Matrix Box
 
-**Sintassi:** y = Matrix Box( matrix, < <<Column Names( "c1", "c2", ... )>, < <<Row Names( "r1", "r2", ... )> )
+**Sintassi:** y = Matrix Box( matrix, &lt; &lt;&lt;Column Names( "c1", "c2", ... )&gt;, &lt; &lt;&lt;Row Names( "r1", "r2", ... )&gt; )
 
 **Descrizione:** Restituisce un riquadro di visualizzazione per mostrare una matrice di numeri.
 
@@ -1705,7 +1703,7 @@ New Window( "Example",
 
 ### Move to Project
 
-**Sintassi:** Move to Project(<Source(project)>, <Destination(project)>, <Windows({list of windows to move})>)
+**Sintassi:** Move to Project(&lt;Source(project)&gt;, &lt;Destination(project)&gt;, &lt;Windows({list of windows to move})&gt;)
 
 **Descrizione:** Sposta una o più finestre in un progetto, fuori da un progetto o tra progetti. È necessario specificare solo origine o destinazione; l&apos;altra punterà per impostazione predefinita al progetto corrente. (Usare solo Origine per spostare finestre nel progetto corrente e solo Destinazione per spostare finestre al di fuori di esso.) Una finestra della tabella di dati sarà spostata con tutti i relativi report dipendenti, sebbene solo una debba essere specificata nell&apos;argomento Finestra. Se omesso, l&apos;argomento Finestra punta per impostazione predefinita a tutte le finestre aperte nel progetto di origine.
 
@@ -1738,17 +1736,7 @@ project << Close Window();
 
 ### New Image
 
-**Sintassi:** img = New Image()
-
-img = New Image( width, height )
-
-img = New Image( pathname )
-
-img = New Image( picture )
-
-img = New Image( matrix of JSL color pixels ) 
-
-img = New Image( rgb|r|g|rgba, {i, i, i} )
+**Sintassi:** img = New Image()img = New Image( width, height )img = New Image( pathname )img = New Image( picture )img = New Image( matrix of JSL color pixels ) img = New Image( rgb|r|g|rgba, {i, i, i} )
 
 **Descrizione:** Restituisce una nuova immagine che potrà quindi essere modificata mediante comandi JSL. Se viene specificato un percorso a un file di immagine esistente, il file deve essere in formato .JPG, .PNG, .GIF, .BMP o .TIF.
 
@@ -1794,7 +1782,7 @@ New Window( "image", image3 );
 
 ### New Project
 
-**Sintassi:** project = new Project( <project messages> )
+**Sintassi:** project = new Project( &lt;project messages&gt; )
 
 **Descrizione:** Crea una nuova finestra di progetto vuota. Per creare un progetto in un passaggio è possibile includere uno o più messaggi di progetto come argomenti.
 
@@ -1882,7 +1870,7 @@ project = New Project(
 
 ### New Window
 
-**Sintassi:** w = New Window( title, < <<Type("Report" | "Dialog" | "Modal Dialog" | "Journal" | "Launcher" | "Script")>, < << Return Result>, < << On Open(expr | function | method)>, < << On Close(expr | function | method)>, < <<On Validate(expr | function | method)>, < <<Show Menu(0 | 1)>, < <<Show Toolbars(0 | 1)>, < <<Suppress AutoHide(0 | 1)>, < <<Window View("Visible" | "Invisible")>, < <<Language("C" | "JavaScript" | "JSL" | "JSON" | "Python" | "R" | "SAS"  | "SQL" | "Text" | "XML")>, < <<Size(x, y)>, displayBox | script)
+**Sintassi:** w = New Window( title, &lt; &lt;&lt;Type("Report" | "Dialog" | "Modal Dialog" | "Journal" | "Launcher" | "Script")&gt;, &lt; &lt;&lt; Return Result&gt;, &lt; &lt;&lt; On Open(expr | function | method)&gt;, &lt; &lt;&lt; On Close(expr | function | method)&gt;, &lt; &lt;&lt;On Validate(expr | function | method)&gt;, &lt; &lt;&lt;Show Menu(0 | 1)&gt;, &lt; &lt;&lt;Show Toolbars(0 | 1)&gt;, &lt; &lt;&lt;Suppress AutoHide(0 | 1)&gt;, &lt; &lt;&lt;Window View("Visible" | "Invisible")&gt;, &lt; &lt;&lt;Language("C" | "JavaScript" | "JSL" | "JSON" | "Python" | "R" | "SAS" | "SQL" | "Text" | "XML")&gt;, &lt; &lt;&lt;Size(x, y)&gt;, displayBox | script)
 
 **Descrizione:** Crea una finestra contenente il riquadro di visualizzazione o lo script specificato. Di default, viene creata una finestra di report, a meno che non sia specificata l&apos;opzione Type. Una finestra di Type("Modal Dialog") interrompe l&apos;esecuzione fino a quando la finestra di dialogo non riceve una risposta. On Open, On Validate e Return Result sono disponibili solo per le finestre modali. On Open() valuta la propria espressione, funzione o metodo di classe quando viene creata la finestra. Se On Close() restituisce false, la finestra non si chiude. On Validate() esegue la propria espressione, funzione o metodo di classe quando si fa clic sul pulsante OK. Se l&apos;espressione restituisce true, la finestra viene chiusa. In caso contrario, la finestra rimane aperta. Return Result cambia il valore di ritorno della finestra alla chiusura, in modo che corrisponda a quello della funzione Dialog() deprecata. Per tipi di finestre che supportano le barre degli strumenti, usare Show Toolbars per specificare le modifiche rispetto al comportamento di default. Le opzioni Show Menu e Suppress AutoHide sono solo per Windows. L&apos;opzione Window View("Invisible") può essere utilizzata per qualsiasi finestra diversa da Modal Dialog. Una finestra di Type("Script") crea un documento JSL a meno che non sia specificata l&apos;opzione <<Language.
 
@@ -2073,7 +2061,7 @@ New Window( "Example",
 
 ### Number Edit Box
 
-**Sintassi:** y = Number Edit Box( initValue, <width> )
+**Sintassi:** y = Number Edit Box( initValue, &lt;width&gt; )
 
 **Descrizione:** Restituisce una finestra di modifica che accetta solo input numerici. Specificare l&apos;argomento facoltativo width per impostare la larghezza della finestra in caratteri.
 
@@ -2089,7 +2077,7 @@ x = neb << get;
 
 ### Outline Box
 
-**Sintassi:** y = Outline Box( title, <command script pairs list>, displayBox, ... )
+**Sintassi:** y = Outline Box( title, &lt;command script pairs list&gt;, displayBox, ... )
 
 **Descrizione:** Crea un riquadro nel report e restituisce il riferimento al riquadro di visualizzazione. Per comprendere un menu nel riquadro, specificare command script pairs list, un elenco che specifica i comandi di menu e gli script associati.
 
@@ -2189,7 +2177,7 @@ New Window( "Example", Picture Box( pict ) );
 
 ### Pie Seg
 
-**Sintassi:** ps = Pie Seg(<{ xorigin, yorigin }>, <radius>, <style("pie", "ring", "coxcomb")>, values)
+**Sintassi:** ps = Pie Seg(&lt;{ xorigin, yorigin }&gt;, &lt;radius&gt;, &lt;style("pie", "ring", "coxcomb")&gt;, values)
 
 **Descrizione:** Crea un segmento della torta nella origin specificata, con il radius specificato, basato su valori specificati in formato matrice.
 
@@ -2302,7 +2290,7 @@ New Window( "Example",
 
 ### Radio Box
 
-**Sintassi:** y = Radio Box( {item, ...}, <script> )
+**Sintassi:** y = Radio Box( {item, ...}, &lt;script&gt; )
 
 **Descrizione:** Restituisce un riquadro di visualizzazione per mostrare una serie di pulsanti di opzione.
 
@@ -2415,7 +2403,7 @@ exScene << update;
 
 ### Script Box
 
-**Sintassi:** y = Script Box( <s>, <"C" | "JavaScript" | "JSL" | "JSON" | "Python" | "R" | "SAS" | "SQL" | "Text" | "XML">, <width>, <height> )
+**Sintassi:** y = Script Box( &lt;s&gt;, &lt;"C" | "JavaScript" | "JSL" | "JSON" | "Python" | "R" | "SAS" | "SQL" | "Text" | "XML"&gt;, &lt;width&gt;, &lt;height&gt; )
 
 **Descrizione:** Restituisce un riquadro di visualizzazione per modificare uno script. Di default, l&apos;editor ha evidenziazione della sintassi e comportamento JSL.
 
@@ -2445,7 +2433,7 @@ New Window( "This is a python script box", Script );
 
 ### Scroll Box
 
-**Sintassi:** y = Scroll Box( <Size( x, y )>, displayBox )
+**Sintassi:** y = Scroll Box( &lt;Size( x, y )&gt;, displayBox )
 
 **Descrizione:** Restituisce un riquadro di visualizzazione che posiziona un riquadro figlio più grande mediante le barre di scorrimento.
 
@@ -2496,7 +2484,7 @@ Clear Global Window Handler();
 
 ### Shape Seg
 
-**Sintassi:** me = Shape Seg( {Path(<path>), ...}, < Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) > )
+**Sintassi:** me = Shape Seg( {Path(&lt;path&gt;), ...}, &lt; Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) &gt; )
 
 **Descrizione:** Restituisce un segmento di visualizzazione con una raccolta di forme. Ciascuna forma disegna un tratto lungo il percorso specificato se il riempimento è 0, oppure dipinge l&apos;interno del percorso specificato se il riempimento non è 0. Il percorso può essere specificato con una matrice N x 3 o con una rappresentazione testuale. Una matrice del percorso ha tre colonne per x, y e flag per ciascun punto del percorso. I valori dei flag sono 0 per controllo, 1 per spostamento, 2 per segmento di linea, 3 per segmento cubico di Bézier e sono negativi se il punto chiude il percorso. Il testo del percorso supporta la sintassi SVG.
 
@@ -2568,7 +2556,7 @@ New Window( "Example",
 
 ### Slider Box
 
-**Sintassi:** box = Slider Box(minValue, maxValue, variable, script, <set width(n)>, <rescale slider(minValue, maxValue)>)
+**Sintassi:** box = Slider Box(minValue, maxValue, variable, script, &lt;set width(n)&gt;, &lt;rescale slider(minValue, maxValue)&gt;)
 
 **Descrizione:** Restituisce un riquadro di visualizzazione che mostra un controllo a scorrimento che varia da minValue a maxValue. Dal momento che la posizione del cursore cambia, il suo valore viene inserito in variable e viene eseguito lo script.
 
@@ -2594,7 +2582,7 @@ New Window( "Example",
 
 ### Spacer Box
 
-**Sintassi:** y = Spacer Box( <Size( x, y )>, <Color( c )>)
+**Sintassi:** y = Spacer Box( &lt;Size( x, y )&gt;, &lt;Color( c )&gt;)
 
 **Descrizione:** Restituisce un riquadro di visualizzazione che può essere utilizzato per mantenere lo spazio tra altri riquadri o riempire una cella in un Lineup Box. Gli argomenti Size sono specificati in pixel e l&apos;argomento Color è un qualsiasi colore JSL valido.
 
@@ -2617,7 +2605,7 @@ New Window( "Example",
 
 ### Spin Box
 
-**Sintassi:** y = Spin Box( <script> )
+**Sintassi:** y = Spin Box( &lt;script&gt; )
 
 **Descrizione:** Restituisce un riquadro di visualizzazione che presenta controlli su/giù. L&apos;argomento script viene chiamato con un argomento che indica la direzione della freccia su cui si fa clic (negativo è giù, positivo è su). Una grandezza pari a 1 indica un unico clic, mentre valori più grandi possono essere utilizzati per indicare un&apos;azione ripetuta.
 
@@ -2704,7 +2692,7 @@ New Window( "Example",
 
 ### Tab Page Box
 
-**Sintassi:** y = Tab Page Box( <Title("string")>, <Tip(0|1)>,  <Closeable(0|1)>, <Icon("string")>, <Moveable(0|1)>, contents)
+**Sintassi:** y = Tab Page Box( &lt;Title("string")&gt;, &lt;Tip(0|1)&gt;, &lt;Closeable(0|1)&gt;, &lt;Icon("string")&gt;, &lt;Moveable(0|1)&gt;, contents)
 
 **Descrizione:** Restituisce un riquadro di visualizzazione che può essere usato in un Tab Box o come contenitore standalone con titolo. Le opzioni riconosciute includono Title(stringa) per specificare un titolo, Tip per specificare una descrizione comandi, Closeable(0|1) per specificare se la pagina può essere chiusa, Icon(stringa) per specificare l&apos;icona e Moveable(0|1) per specificare se la pagina può essere spostata.
 
@@ -2747,7 +2735,7 @@ New Window( "Example",
 
 ### Text Box
 
-**Sintassi:** y = Text Box( text, <<Justify Text( strPos ), <<Set Wrap( width ) )
+**Sintassi:** y = Text Box( text, &lt;&lt;Justify Text( strPos ), &lt;&lt;Set Wrap( width ) )
 
 **Descrizione:** Crea un riquadro di visualizzazione che contiene il testo nell&apos;argomento della stringa text. Gli argomenti facoltativi sono disponibili per controllare la giustificazione del testo o per impostare la larghezza del testo con a capo automatico. L&apos;argomento di Justify Text deve essere una stringa contenente left, right o center.
 
@@ -2786,7 +2774,7 @@ New Window( "Justification Example",
 
 ### Text Edit Box
 
-**Sintassi:** y = Text Edit Box( text, <<Password Style( bool ), <<Set Script( script ), <<Set Width( value ) )
+**Sintassi:** y = Text Edit Box( text, &lt;&lt;Password Style( bool ), &lt;&lt;Set Script( script ), &lt;&lt;Set Width( value ) )
 
 **Descrizione:** Crea un campo modificabile che contiene il text della stringa tra apici e restituisce il riferimento al riquadro di visualizzazione. Gli argomenti facoltativi sono disponibili per controllare la visualizzazione del testo, per aggiungere uno script alla casella di testo e per impostare la larghezza in pixel della casella di testo. Specificando Set Width(-1) si forza un ridimensionamento rispetto al contenuto. Si noti che è possibile aggiungere uno script alla casella di testo, aggiungendolo come argomento facoltativo o inviando il messaggio Set Script.
 
@@ -2846,7 +2834,7 @@ If(
 
 ### Tree Box
 
-**Sintassi:** tree = Tree Box( <{rootnodes}>, <Size( x, y )>, <Multiselect( 0|1 )> )
+**Sintassi:** tree = Tree Box( &lt;{rootnodes}&gt;, &lt;Size( x, y )&gt;, &lt;Multiselect( 0|1 )&gt; )
 
 **Descrizione:** Costruisce una finestra di visualizzazione per mostrare informazioni gerarchiche.
 
@@ -2874,7 +2862,7 @@ New Window( "TreeBox", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
 
 ### Tree Node
 
-**Sintassi:** node = Tree Node( <label> )
+**Sintassi:** node = Tree Node( &lt;label&gt; )
 
 **Descrizione:** Costruisce un nodo dell&apos;albero destinato a essere visualizzato in un riquadro dell&apos;albero.
 
@@ -2902,7 +2890,7 @@ New Window( "TreeBox Nodes", tree = Tree Box( {root1, root2}, Size( 300, 200 ) )
 
 ### Triangulation
 
-**Sintassi:** triangulation = Triangulation( X(Column1, Column2), < Y(Column) > )
+**Sintassi:** triangulation = Triangulation( X(Column1, Column2), &lt; Y(Column) &gt; )
 
 **Descrizione:** Restituisce un oggetto contenente la triangolazione di Delaunay del set di punti specificato. La Y facoltativa Y sarà mediata per i punti duplicati e tutti i punti dell&apos;output saranno univoci.
 
@@ -2953,7 +2941,7 @@ New Window( "unlineup",
 
 ### V Center Box
 
-**Sintassi:** y = V Center Box( <childbox> )
+**Sintassi:** y = V Center Box( &lt;childbox&gt; )
 
 **Descrizione:** Restituisce un riquadro di visualizzazione con l&apos;argomento del riquadro di visualizzazione childbox centrato nello spazio verticale definito dalle dimensioni massime dell&apos;oggetto figlio e di tutti gli altri oggetti di pari livello del riquadro centrale.
 
@@ -2980,7 +2968,7 @@ New Window( "test",
 
 ### V List Box
 
-**Sintassi:** y = V List Box( <Align( center|right )>, displayBox, ... )
+**Sintassi:** y = V List Box( &lt;Align( center|right )&gt;, displayBox, ... )
 
 **Descrizione:** Restituisce un riquadro di visualizzazione che dispone i riquadri di visualizzazione forniti dagli argomenti in un layout verticale. Il messaggio <<Sospendi stabilisce il foglio che deve contenere i report che saranno stralciati. L&apos;argomento opzionale Align consente l&apos;allineamento right o center dei contenuti all&apos;interno del riquadro di visualizzazione.
 
@@ -2997,7 +2985,7 @@ New Window( "Example",
 
 ### V Scroll Box
 
-**Sintassi:** y = V Scroll Box( <Size( y )>, displayBox )
+**Sintassi:** y = V Scroll Box( &lt;Size( y )&gt;, displayBox )
 
 **Descrizione:** Restituisce un riquadro di visualizzazione che posiziona un riquadro figlio più grande mediante una barra di scorrimento verticale.
 
@@ -3028,7 +3016,7 @@ New Window( "Example",
 
 ### V Sheet Box
 
-**Sintassi:** y = V Sheet Box( <<Hold( rpt ), displayBox, ... )
+**Sintassi:** y = V Sheet Box( &lt;&lt;Hold( rpt ), displayBox, ... )
 
 **Descrizione:** Restituisce un riquadro di visualizzazione che dispone i riquadri di visualizzazione forniti dagli argomenti in un layout verticale. Il messaggio <<Sospendi stabilisce il foglio che deve contenere i report che saranno stralciati. L&apos;argomento opzionale Align consente l&apos;allineamento right o center dei contenuti all&apos;interno del riquadro di visualizzazione.
 
@@ -3078,7 +3066,7 @@ New Window( "Example",
 
 ### V Splitter Box
 
-**Sintassi:** y = V Splitter Box( <Size(x,y)>, displayBox, ... )
+**Sintassi:** y = V Splitter Box( &lt;Size(x,y)&gt;, displayBox, ... )
 
 **Descrizione:** Restituisce un riquadro di visualizzazione che può organizzare altri riquadri in direzione verticale con controllo interattivo delle dimensioni. Le dimensioni dell&apos;elemento figlio sono specificate come proporzione della larghezza o dell&apos;altezza del Splitter Box. L&apos;argomento facoltativo Size è utilizzato solo per il riquadro di suddivisione più in alto; i riquadri di livello inferiore sono dimensionati come qualsiasi altro riquadro figlio.
 
@@ -3128,7 +3116,7 @@ wb << Set Max Size( 10000, 10000 );
 
 ### Window
 
-**Sintassi:** y = Window( <string|int> )
+**Sintassi:** y = Window( &lt;string|int&gt; )
 
 **Descrizione:** Questa funzione è obsoleta ed è conservata solo per la compatibilità all&apos;indietro con script esistenti. Per nuovi script, usare Ottieni finestra() o Ottieni elenco finestre().
 

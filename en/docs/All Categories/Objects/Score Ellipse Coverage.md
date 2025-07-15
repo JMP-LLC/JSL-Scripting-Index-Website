@@ -6,11 +6,11 @@
 
 ### Remove Fit
 
-**Syntax:** obj << Remove Fit
+**Syntax:** obj &lt;&lt; Remove Fit
 
 ### Shaded Contour
 
-**Syntax:** obj << Shaded Contour( state=0|1 )
+**Syntax:** obj &lt;&lt; Shaded Contour( state=0|1 )
 
 **Description:** Shows or hides the shaded contour.
 

@@ -6,7 +6,7 @@
 
 ### Action
 
-**構文:** obj << Action
+**構文:** obj &lt;&lt; Action
 
 **説明:** 評価する式を挿入するための、プラットフォーム内の汎用トラップドア。プラットフォームに一時的にディスプレイボックスおよびデータテーブルのコンテキストを設定する。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Automatic Recalc
 
-**構文:** obj << Automatic Recalc( state=0|1 )
+**構文:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **説明:** データの除外や変更があった場合に分析を自動的にやり直す。Automatic Recalcオプションがオンになっている場合で、データの除外や変更が再計算の前に確実に適用されるようにするには、Wait(0)コマンドを使用すること。
 
@@ -40,7 +40,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**構文:** obj << Broadcast(message)
+**構文:** obj &lt;&lt; Broadcast(message)
 
 **説明:** メッセージをプラットフォームに一括適用する。個々のオブジェクトから戻される結果がデータテーブルである場合は、可能な限り連結する。その最終的な形式は、Table BoxのSave Combined Tableオプションの結果と同じになるか、またはソース列を使用したConcanateオプションの結果と同じになる。それ以外の場合、結果はリストの形で戻される。
 
@@ -60,7 +60,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**構文:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**構文:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **説明:** プラットフォームの変数を変更するための設定パネルを追加する。
 
@@ -78,7 +78,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**構文:** obj << Copy ByGroup Script
+**構文:** obj &lt;&lt; Copy ByGroup Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -98,7 +98,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**構文:** obj << Copy Script
+**構文:** obj &lt;&lt; Copy Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -113,7 +113,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**構文:** obj << Data Table Window
+**構文:** obj &lt;&lt; Data Table Window
 
 **説明:** この分析に使用したデータテーブルのウィンドウを手前に表示する。
 
@@ -128,7 +128,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**構文:** obj << Get By Levels
+**構文:** obj &lt;&lt; Get By Levels
 
 **説明:** By列が指定されている場合、列名をキー、データ値を値とした連想配列を戻す。
 
@@ -145,7 +145,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**構文:** obj << Get ByGroup Script
+**構文:** obj &lt;&lt; Get ByGroup Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -166,7 +166,7 @@ Show( t );
 
 ### Get Container
 
-**構文:** obj << Get Container
+**構文:** obj &lt;&lt; Get Container
 
 **説明:** オブジェクトのコンテンツを含んだコンテナボックスの参照を戻す。
 
@@ -213,7 +213,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**構文:** obj << Get Data Table
+**構文:** obj &lt;&lt; Get Data Table
 
 **説明:** データテーブルへの参照を戻す。
 
@@ -229,7 +229,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**構文:** obj << Get Group Platform
+**構文:** obj &lt;&lt; Get Group Platform
 
 **説明:** 該当のプラットフォームがグループに属している場合に、Group Platformオブジェクトを戻す。それ以外の場合はEmpty()を戻す。
 
@@ -246,7 +246,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**構文:** obj << Get Script
+**構文:** obj &lt;&lt; Get Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -262,7 +262,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**構文:** obj << Get Script With Data Table
+**構文:** obj &lt;&lt; Get Script With Data Table
 
 **説明:** この分析を再現するスクリプト(JSL)をデータテーブルへの参照も含めて生成し、それを式として戻す。
 
@@ -278,7 +278,7 @@ Show( t );
 
 ### Get Timing
 
-**構文:** obj << Get Timing
+**構文:** obj &lt;&lt; Get Timing
 
 **説明:** プラットフォームの起動にかかった時間を取得する。
 
@@ -294,7 +294,7 @@ Show( t );
 
 ### Get Web Support
 
-**構文:** obj << Get Web Support
+**構文:** obj &lt;&lt; Get Web Support
 
 **説明:** ディスプレイオブジェクトにおけるインタラクティブHTMLサポートのレベルを数値で戻す。1は、一部または全部の要素がサポートされていることを示し、0は、サポートされないことを示す。
 
@@ -310,7 +310,7 @@ Show( s );
 
 ### Get Where Expr
 
-**構文:** obj << Get Where Expr
+**構文:** obj &lt;&lt; Get Where Expr
 
 **説明:** プラットフォームがBy()またはWhere()を使って起動された場合に、データをサブセットするためのWhere式を戻す。By()やWhere()が使われていない場合はEmpty()を戻す。
 
@@ -347,7 +347,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**構文:** obj << Local Data Filter
+**構文:** obj &lt;&lt; Local Data Filter
 
 **説明:** このプラットフォームに対してのみ有効なフィルタで、データを特定のグループまたは範囲にフィルタリングする。
 
@@ -367,7 +367,7 @@ dt << Distribution(
 
 ### Paste Local Data Filter
 
-**構文:** obj << Paste Local Data Filter
+**構文:** obj &lt;&lt; Paste Local Data Filter
 
 **説明:** クリップボードにあるローカルデータフィルタを現在のレポートに適用する。
 
@@ -388,7 +388,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**構文:** obj << Redo Analysis
+**構文:** obj &lt;&lt; Redo Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -403,7 +403,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**構文:** obj << Redo ByGroup Analysis
+**構文:** obj &lt;&lt; Redo ByGroup Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -423,7 +423,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**構文:** obj << Relaunch Analysis
+**構文:** obj &lt;&lt; Relaunch Analysis
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -438,7 +438,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**構文:** obj << Relaunch ByGroup
+**構文:** obj &lt;&lt; Relaunch ByGroup
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -458,7 +458,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**構文:** obj << Remove Column Switcher
+**構文:** obj &lt;&lt; Remove Column Switcher
 
 **説明:** プラットフォームに最後に追加された列スイッチャーを削除する。
 
@@ -478,7 +478,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**構文:** obj << Remove Local Data Filter
+**構文:** obj &lt;&lt; Remove Local Data Filter
 
 **説明:** すでに作成されているローカルデータフィルタを削除し、プラットフォームはデータテーブル内のすべてのデータを使用した状態に戻る。
 
@@ -500,9 +500,7 @@ dist << remove local data filter;
 
 ### Report
 
-**構文:** obj << Report;
-
-Report( obj )
+**構文:** obj &lt;&lt; Report;Report( obj )
 
 **説明:** レポートオブジェクトへの参照を戻す。
 
@@ -519,7 +517,7 @@ Show( t );
 
 ### Report View
 
-**構文:** obj << Report View( "完全"|"要約" )
+**構文:** obj &lt;&lt; Report View( "完全"|"要約" )
 
 **説明:** レポートビューは、プラットフォームレポートの詳細を表示するかどうかを決定する。Fullはすべての詳細を表示し、Summaryはプラットフォームにより限定されたものだけを表示する。 動作をカスタマイズするため、各ディスプレイボックスは<<Set Summary Behaviorメッセージをサポートする。
 
@@ -534,7 +532,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**構文:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** 分析を再現するためのJSLスクリプトを作成し、データテーブルにテーブルプロパティとして保存する。スクリプトの名前を指定できる。Append Suffixオプションは、スクリプト名に数字の接尾辞を追加する。これにより、同名のスクリプトが存在していても区別できる。Promptオプションは、ユーザにスクリプト名の指定を促す。Replaceオプションは、同名の既存のスクリプトを置き換える。
 
@@ -554,7 +552,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**構文:** obj << Save ByGroup Script to Journal
+**構文:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -574,7 +572,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**構文:** obj << Save ByGroup Script to Script Window
+**構文:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -594,7 +592,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**構文:** obj << Save Script for All Objects
+**構文:** obj &lt;&lt; Save Script for All Objects
 
 **説明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -609,7 +607,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**構文:** obj << Save Script for All Objects To Data Table( <name> )
+**構文:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **説明:** すべてのレポートオブジェクトを再現するスクリプトを現在のデータテーブルに保存する。このオプションは、ウィンドウ内にレポートが複数ある場合に便利。作成されるスクリプトの名前は、引用符で囲んで指定しない限り、1つ目のプラットフォーム名となる。
 
@@ -647,7 +645,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**構文:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** この分析を再現するJSLスクリプトを生成し、データテーブルのテーブルプロパティとして保存する。
 
@@ -662,7 +660,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**構文:** obj << Save Script to Journal
+**構文:** obj &lt;&lt; Save Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -677,7 +675,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**構文:** obj << Save Script to Report
+**構文:** obj &lt;&lt; Save Script to Report
 
 **説明:** この分析を再現するJSLスクリプトを生成し、レポートウィンドウに表示する。分析手順の記録を結果と一緒に残せる。
 
@@ -692,7 +690,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**構文:** obj << Save Script to Script Window
+**構文:** obj &lt;&lt; Save Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -772,7 +770,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**構文:** obj << Sync to Data Table Changes
+**構文:** obj &lt;&lt; Sync to Data Table Changes
 
 **説明:** 除外やデータの変更が行われた場合に同期する。
 
@@ -789,7 +787,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**構文:** obj << Title( "new title" )
+**構文:** obj &lt;&lt; Title( "new title" )
 
 **説明:** プラットフォームのタイトルを設定する。
 
@@ -804,7 +802,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**構文:** obj << Top Report
+**構文:** obj &lt;&lt; Top Report
 
 **説明:** レポート内のルートノードへの参照を戻す。
 
@@ -821,7 +819,7 @@ Show( t );
 
 ### Transform Column
 
-**構文:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**構文:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **説明:** オブジェクトのローカルコンテキスト(通常はプラットフォーム)内に変換列を作成する。この変換列は、それを作成したプラットフォームの中のみで使用可能。
 
@@ -840,7 +838,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**構文:** obj << View Web XML
+**構文:** obj &lt;&lt; View Web XML
 
 **説明:** インタラクティブHTMLレポートの作成に使うXMLコードを戻す。
 
@@ -876,7 +874,7 @@ New Window( "Bivariate Equation",
 
 ### By
 
-**構文:** obj = Distribution(...<By( column(s) )>...)
+**構文:** obj = Distribution(...&lt;By( column(s) )&gt;...)
 
 **説明:** 指定された列の各水準に対して、個別に分析を実行する。
 
@@ -895,7 +893,7 @@ obj = dt << Distribution( Column( :Age, :Weight ), By( _bycol ) );
 
 ### Column
 
-**構文:** obj = Distribution(...<Column( column(s) )>...)
+**構文:** obj = Distribution(...&lt;Column( column(s) )&gt;...)
 
 ```jsl
 
@@ -933,7 +931,7 @@ obj = dt << Distribution( Y( :Age, :Weight ) );
 
 ### Freq
 
-**構文:** obj = Distribution(...<Freq( column )>...)
+**構文:** obj = Distribution(...&lt;Freq( column )&gt;...)
 
 **説明:** 分析の際に各行の度数として用いる値の列を指定する。
 
@@ -948,7 +946,7 @@ obj = dt << Distribution( Column( :Age, :Weight ), Freq( _freqcol ) );
 
 ### Weight
 
-**構文:** obj = Distribution(...<Weight( column )>...)
+**構文:** obj = Distribution(...&lt;Weight( column )&gt;...)
 
 **説明:** 分析の際に各行の重みとして用いる値の列を指定する。
 
@@ -1023,7 +1021,7 @@ Distribution( colref );
 
 ### Apply Preset
 
-**構文:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**構文:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **説明:** 作成されたプリセットをオブジェクトに適用する。保存された設定に合わせてオプションとカスタマイズが更新される。
 
@@ -1067,7 +1065,7 @@ obj[1] << Apply Preset( "Sample Presets", "Check Normality" );
 
 ### Arrange in Rows
 
-**構文:** obj << Arrange in Rows( number )
+**構文:** obj &lt;&lt; Arrange in Rows( number )
 
 **説明:** レポートを複数行に表示する。オプションには、1行あたりに表示するレポートの数を指定する。
 
@@ -1082,7 +1080,7 @@ obj << ArrangeInRows( 3 );
 
 ### Axes on Left
 
-**構文:** obj << Axes on Left( state=0|1 )
+**構文:** obj &lt;&lt; Axes on Left( state=0|1 )
 
 **説明:** 軸をグラフの左側に移動する。横方向に表示されるヒスログラムの度数、確率、密度、および、横方向に表示される正規分位点プロットにこのオプションは影響する。
 
@@ -1097,7 +1095,7 @@ obj << Axes on Left( 1 );
 
 ### CDF Plot
 
-**構文:** obj << CDF Plot( state=0|1 )
+**構文:** obj &lt;&lt; CDF Plot( state=0|1 )
 
 **説明:** 経験累積分布関数のプロットの表示/非表示を切り替える。
 
@@ -1112,7 +1110,7 @@ obj << CDF Plot( 1 );
 
 ### Capability Analysis
 
-**構文:** obj << Capability Analysis( LSL( number ), Target( number ), USL( number ) )
+**構文:** obj &lt;&lt; Capability Analysis( LSL( number ), Target( number ), USL( number ) )
 
 **説明:** 工程能力分析を実行する。工程能力指数を求めるために、下側仕様限界（LSL）、目標値、上側仕様限界（USL）指定する必要がある。
 
@@ -1127,7 +1125,7 @@ obj << Capability Analysis( LSL( 16 ), USL( 24 ), Target( 20 ) );
 
 ### Confidence Interval
 
-**構文:** obj << Confidence Interval( number, <Upper | Lower>, <Sigma( number )> )
+**構文:** obj &lt;&lt; Confidence Interval( number, &lt;Upper | Lower&gt;, &lt;Sigma( number )&gt; )
 
 **説明:** 平均と標準偏差について、信頼区間を計算する。母標準偏差(シグマ)を指定した場合、それを母標準偏差として平均の信頼区間は計算される。
 
@@ -1146,7 +1144,7 @@ obj << Confidence Interval( 0.95, Sigma( 4 ) );
 
 ### Count Axis
 
-**構文:** obj << Count Axis( state=0|1 )
+**構文:** obj &lt;&lt; Count Axis( state=0|1 )
 
 **説明:** ヒストグラムの度数軸の表示/非表示を切り替える。
 
@@ -1161,7 +1159,7 @@ obj << Count Axis( 1 );
 
 ### Custom Quantiles
 
-**構文:** obj << Custom Quantiles( fraction, [quantile1, quantile2, ... quantileN] )
+**構文:** obj &lt;&lt; Custom Quantiles( fraction, [quantile1, quantile2, ... quantileN] )
 
 **説明:** 指定された割合の分位点を計算する。順位、および、平滑化された経験尤度によって分位点を計算する。指定された信頼水準の信頼区間も計算する。
 
@@ -1176,7 +1174,7 @@ obj << Custom Quantiles( 0.975, [0.075, 0.1, 0.125, 0.975, 0.99] );
 
 ### Customize Summary Statistics
 
-**構文:** obj << Customize Summary Statistics(statistic1( state=0|1 ), statistic2( state=0|1 ), ..., statisticN( state=0|1 ), <Set Trimmed Mean Percent(number)>, <Set Alpha Level(number)>)
+**構文:** obj &lt;&lt; Customize Summary Statistics(statistic1( state=0|1 ), statistic2( state=0|1 ), ..., statisticN( state=0|1 ), &lt;Set Trimmed Mean Percent(number)&gt;, &lt;Set Alpha Level(number)&gt;)
 
 **説明:** 「要約統計量」レポートに表示される要約統計量をカスタマイズする。
 
@@ -1191,7 +1189,7 @@ obj << Customize Summary Statistics( N( 0 ), Variance( 1 ), Skewness( 1 ) );
 
 ### Density Axis
 
-**構文:** obj << Density Axis( state=0|1 )
+**構文:** obj &lt;&lt; Density Axis( state=0|1 )
 
 **説明:** ヒストグラムで密度曲線のための密度軸の表示/非表示を切り替える。
 
@@ -1206,7 +1204,7 @@ obj << Density Axis( 1 );
 
 ### Fit All
 
-**構文:** obj << Fit All
+**構文:** obj &lt;&lt; Fit All
 
 **説明:** JMPで用意されている分布のうち、現在のデータにあてはめることができるすべての確率分布をあてはめ、それらを比較する。
 
@@ -1223,7 +1221,7 @@ obj << Fit All;
 
 ### Fit Beta
 
-**構文:** obj << Fit Beta
+**構文:** obj &lt;&lt; Fit Beta
 
 **説明:** 2パラメータのベータ分布をデータにあてはめる。データの値はすべて、0より大きく1未満でなければならない。
 
@@ -1240,7 +1238,7 @@ obj << Fit Beta;
 
 ### Fit Beta Binomial
 
-**構文:** obj << Fit Beta Binomial( Sample Size( n | column ) )
+**構文:** obj &lt;&lt; Fit Beta Binomial( Sample Size( n | column ) )
 
 **説明:** ベータ二項分布をデータにあてはめる。一定の標本サイズ、または標本サイズを含む列を指定する必要がある。ベータ二項分布は二項分布を、より柔軟にした確率分布である。
 
@@ -1270,7 +1268,7 @@ obj << Fit Beta Binomial( Sample Size( :Box Size ) );
 
 ### Fit Binomial
 
-**構文:** obj << Fit Binomial( Sample size( n | column ) )
+**構文:** obj &lt;&lt; Fit Binomial( Sample size( n | column ) )
 
 **説明:** 二項分布をデータにあてはめる。一定の標本サイズ、または標本サイズを含む列を指定する必要がある。二項分布は、n回の独立した試行における成功回数を表す。
 
@@ -1287,7 +1285,7 @@ obj << Fit Binomial( Sample Size( :Box Size ) );
 
 ### Fit Cauchy
 
-**構文:** obj << Fit Cauchy
+**構文:** obj &lt;&lt; Fit Cauchy
 
 **説明:** Cauchy分布をデータにあてはめる。Cauchy分布は、外れ値に対してロバスト(頑健)である。Cauchy分布は、自由度1のt分布である。
 
@@ -1309,7 +1307,7 @@ Distribution( Column( :X ), Fit Normal, Fit Cauchy );
 
 ### Fit ExGaussian
 
-**構文:** obj << Fit ExGaussian
+**構文:** obj &lt;&lt; Fit ExGaussian
 
 **説明:** exGauss分布(指数修正Gauss分布)をデータにあてはめる。
 
@@ -1339,7 +1337,7 @@ obj << Fit Exponential;
 
 ### Fit Exponential
 
-**構文:** obj << Fit Exponential
+**構文:** obj &lt;&lt; Fit Exponential
 
 **説明:** 指数分布をデータにあてはめる。データは、すべて非負の値でなければいけない。
 
@@ -1356,7 +1354,7 @@ obj << Fit Exponential;
 
 ### Fit Gamma
 
-**構文:** obj << Fit Gamma
+**構文:** obj &lt;&lt; Fit Gamma
 
 **説明:** 2パラメータのガンマ分布を正のデータにあてはめる。
 
@@ -1373,9 +1371,7 @@ obj << Fit Gamma;
 
 ### Fit Handle
 
-**構文:** obj << (Fit Handle[number] << {option}); 
-
- obj << (Fit Handle["Distribution Name"] << {option})
+**構文:** obj &lt;&lt; (Fit Handle[number] &lt;&lt; {option}); obj &lt;&lt; (Fit Handle["Distribution Name"] &lt;&lt; {option})
 
 **説明:** あてはめられた分布へのハンドルの配列。これにより、あてはめられた分布にコマンドを送ることができる。
 
@@ -1393,7 +1389,7 @@ obj << (Fit Handle["Lognormal"] << QQ Plot( 1 ));
 
 ### Fit Johnson
 
-**構文:** obj << Fit Johnson
+**構文:** obj &lt;&lt; Fit Johnson
 
 **説明:** Johnson分布をデータにあてはめる。分位数に基づいて、3種類のJohnson分布（Su、Sb、Sl）のうち最も適切なものが選択される。
 
@@ -1423,7 +1419,7 @@ obj << Fit Johnson;
 
 ### Fit Largest Extreme Value
 
-**構文:** obj << Fit Largest Extreme Value
+**構文:** obj &lt;&lt; Fit Largest Extreme Value
 
 **説明:** 最大極値分布をデータにあてはめる。
 
@@ -1440,7 +1436,7 @@ obj << Fit Largest Extreme Value;
 
 ### Fit Lognormal
 
-**構文:** obj << Fit Lognormal
+**構文:** obj &lt;&lt; Fit Lognormal
 
 **説明:** 対数正規分布をデータにあてはめる。データは、すべて正の値でなければいけない。
 
@@ -1457,7 +1453,7 @@ obj << Fit Lognormal;
 
 ### Fit Negative Binomial
 
-**構文:** obj << Fit Negative Binomial
+**構文:** obj &lt;&lt; Fit Negative Binomial
 
 **説明:** 負の二項分布をデータにあてはめる。負の二項分布は、ガンマPoisson分布と等価な確率分布である。
 
@@ -1474,7 +1470,7 @@ obj << Fit Negative Binomial;
 
 ### Fit Normal
 
-**構文:** obj << Fit Normal
+**構文:** obj &lt;&lt; Fit Normal
 
 **説明:** 正規分布をデータにあてはめる。
 
@@ -1491,7 +1487,7 @@ obj << Fit Normal;
 
 ### Fit Normal 2 Mixture
 
-**構文:** obj << Fit Normal 2 Mixture
+**構文:** obj &lt;&lt; Fit Normal 2 Mixture
 
 **説明:** 二重正規混合分布をデータにあてはめる。二重正規混合分布は、特に、二峰性のデータに適している。
 
@@ -1508,7 +1504,7 @@ obj << Fit Normal 2 Mixture;
 
 ### Fit Normal 3 Mixture
 
-**構文:** obj << Fit Normal 3 Mixture
+**構文:** obj &lt;&lt; Fit Normal 3 Mixture
 
 **説明:** 三重正規混合分布をデータにあてはめる。二重正規混合分布は、特に、多峰性のデータに適している。
 
@@ -1525,7 +1521,7 @@ obj << Fit Normal 3 Mixture;
 
 ### Fit Poisson
 
-**構文:** obj << Fit Poisson
+**構文:** obj &lt;&lt; Fit Poisson
 
 **説明:** Poisson分布をあてはめる。Poisson分布は、度数データに対してよく利用される。Poisson分布は、平均と分散が等しい。
 
@@ -1542,7 +1538,7 @@ obj << Fit Poisson;
 
 ### Fit SHASH
 
-**構文:** obj << Fit Shash
+**構文:** obj &lt;&lt; Fit Shash
 
 **説明:** sinh-arcsinh分布（SHASH分布）をデータにあてはめる。
 
@@ -1559,7 +1555,7 @@ obj << Fit Shash;
 
 ### Fit Smallest Extreme Value
 
-**構文:** obj << Fit Smallest Extreme Value
+**構文:** obj &lt;&lt; Fit Smallest Extreme Value
 
 **説明:** 最小極値分布をデータにあてはめる。
 
@@ -1576,7 +1572,7 @@ obj << Fit Smallest Extreme Value;
 
 ### Fit Smooth Curve
 
-**構文:** obj << Fit Smooth Curve( <Bandwidth( number )> )
+**構文:** obj &lt;&lt; Fit Smooth Curve( &lt;Bandwidth( number )&gt; )
 
 **説明:** ノンパラメトリックな密度推定に基づき、データに滑らかな密度曲線をあてはめる。帯域幅(バンド幅)を指定することで、滑らかさを設定できる。
 
@@ -1606,7 +1602,7 @@ obj << Fit Smooth Curve( Bandwidth( 0.02 ) );
 
 ### Fit Student's t
 
-**構文:** obj << Fit Student&apos;s t
+**構文:** obj &lt;&lt; Fit Student&apos;s t
 
 **説明:** Studentのt分布をデータにあてはめる。t分布は、正規分布とCauchy分布の間に位置する確率分布である。t分布も、Cauchy分布と同様、外れ値に対してロバスト(頑健)である。
 
@@ -1628,7 +1624,7 @@ Distribution( Column( :X ), Fit Normal, Fit Student's t );
 
 ### Fit Weibull
 
-**構文:** obj << Fit Weibull
+**構文:** obj &lt;&lt; Fit Weibull
 
 **説明:** 2パラメータのWeibull分布をデータにあてはめる。データは、すべて正の値でなければいけない。
 
@@ -1645,7 +1641,7 @@ obj << Fit Weibull;
 
 ### Fit ZI Beta Binomial
 
-**構文:** obj << Fit ZI Beta Binomial( Sample Size( n | column ) )
+**構文:** obj &lt;&lt; Fit ZI Beta Binomial( Sample Size( n | column ) )
 
 **説明:** ゼロ強調ベータ二項分布をあてはめる。一定の標本サイズ、または標本サイズを含む列を指定する必要がある。この分布は、ゼロの観測数がベータ二項分布よりも多くなるような場合に、独立した試行をn回行ったときの成功回数をモデル化したもの。
 
@@ -1662,7 +1658,7 @@ obj << Fit ZI Beta Binomial( Sample Size( :Box Size ) );
 
 ### Fit ZI Binomial
 
-**構文:** obj << Fit ZI Binomial( Sample Size( n | column ) )
+**構文:** obj &lt;&lt; Fit ZI Binomial( Sample Size( n | column ) )
 
 **説明:** ゼロ強調二項分布をあてはめる。一定の標本サイズ、または標本サイズを含む列を指定する必要がある。この分布は、ゼロの観測数が二項分布で想定される個数よりも多くなるような場合に、独立した試行をn回行ったときの成功回数をモデル化したもの。
 
@@ -1679,7 +1675,7 @@ obj << Fit ZI Binomial( Sample Size( :Box Size ) );
 
 ### Fit ZI Negative Binomial
 
-**構文:** obj << Fit ZI Negative Binomial
+**構文:** obj &lt;&lt; Fit ZI Negative Binomial
 
 **説明:** ゼロ強調負の二項分布分布(ゼロ過剰 負の二項分布分布)をデータにあてはめる。データにゼロの値が含まれている場合にのみ利用可能。
 
@@ -1695,7 +1691,7 @@ dt << Distribution( Column( :satell ), Fit ZI Negative Binomial );
 
 ### Fit ZI Poisson
 
-**構文:** obj << Fit ZI Poisson
+**構文:** obj &lt;&lt; Fit ZI Poisson
 
 **説明:** ゼロ強調Poisson分布(ゼロ過剰Poisson分布)をデータにあてはめる。データにゼロの値が含まれている場合にのみ利用可能。
 
@@ -1711,7 +1707,7 @@ dt << Distribution( Column( :satell ), Fit ZI Poisson );
 
 ### Fit ZI SHASH
 
-**構文:** obj << Fit ZI SHASH
+**構文:** obj &lt;&lt; Fit ZI SHASH
 
 **説明:** ゼロ強調のSHASH分布(観測値が0において確率質量をもつSHASH分布)をデータにあてはめる。
 
@@ -1733,7 +1729,7 @@ Distribution( Column( :X ), Fit ZI SHASH, Fit SHASH );
 
 ### Frequencies
 
-**構文:** obj << Frequencies( state=0|1 )
+**構文:** obj &lt;&lt; Frequencies( state=0|1 )
 
 **説明:** 度数と割合のレポートの表示/非表示を切り替える。このレポートには、水準ごとに、度数と割合が表示されている。 デフォルトではオン。
 
@@ -1763,7 +1759,7 @@ obj << Frequencies( 0 );
 
 ### Histogram
 
-**構文:** obj << Histogram( state=0|1 )
+**構文:** obj &lt;&lt; Histogram( state=0|1 )
 
 **説明:** ヒストグラムの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1779,7 +1775,7 @@ obj << Histogram( 0 );
 
 ### Histogram Color
 
-**構文:** obj << Histogram Color( color )
+**構文:** obj &lt;&lt; Histogram Color( color )
 
 **説明:** ヒストグラムの棒の色を変更する。
 
@@ -1794,7 +1790,7 @@ obj << Histogram Color( "Red" );
 
 ### Horizontal Layout
 
-**構文:** obj << Horizontal Layout( state=0|1 )
+**構文:** obj &lt;&lt; Horizontal Layout( state=0|1 )
 
 **説明:** ヒストグラムとレポートの向きを横方向に変更する。
 
@@ -1809,7 +1805,7 @@ obj << Horizontal Layout( 1 );
 
 ### Mosaic Plot
 
-**構文:** obj << Mosaic Plot( state=0|1 )
+**構文:** obj &lt;&lt; Mosaic Plot( state=0|1 )
 
 **説明:** 名義尺度または順序尺度の変数に対して、モザイク図の表示/非表示を切り替える。モザイク図は、各長方形がそのグループの度数に比例している、縦に積み重ねた棒グラフである。
 
@@ -1868,7 +1864,7 @@ preset = obj[1] << New Preset();
 
 ### Normal Quantile Plot
 
-**構文:** obj << Normal Quantile Plot( state=0|1 )
+**構文:** obj &lt;&lt; Normal Quantile Plot( state=0|1 )
 
 **説明:** 正規分位点プロットの表示/非表示を切り替える。正規分位点プロットは、データがどれぐらい正規分布に従っているかどうかを視覚的に見ることができる。
 
@@ -1883,7 +1879,7 @@ obj << Normal Quantile Plot( 1 );
 
 ### Order By
 
-**構文:** obj << Order By( "Default"|"Count Descending"|"Count Ascending" )
+**構文:** obj &lt;&lt; Order By( "Default"|"Count Descending"|"Count Ascending" )
 
 **説明:** ヒストグラム、モザイク図、度数レポートを、度数の昇順または降順で並べる。また、デフォルトの順序に戻すことも可能。
 
@@ -1898,7 +1894,7 @@ obj << Order By( "Count Descending" );
 
 ### Outlier Box Plot
 
-**構文:** obj << Outlier Box Plot( state=0|1 )
+**構文:** obj &lt;&lt; Outlier Box Plot( state=0|1 )
 
 **説明:** 箱ひげ図の表示/非表示を切り替える。箱ひげ図は、データの分布を見たり、外れ値を探したりするのに有用。 デフォルトではオン。
 
@@ -1914,7 +1910,7 @@ obj << Outlier Box Plot( 0 );
 
 ### Outlier Box Plot Row Cutoff
 
-**構文:** obj << Outlier Box Plot Row Cutoff( number )
+**構文:** obj &lt;&lt; Outlier Box Plot Row Cutoff( number )
 
 **説明:** 外れ値の箱ひげ図をデフォルトで表示する最大行数を設定する。 デフォルトの値は"100000"。
 
@@ -1929,7 +1925,7 @@ obj << Outlier Box Plot Row Cutoff( 10000 );
 
 ### PpK Capability Labeling
 
-**構文:** obj << PpK Capability Labeling( state=0|1 )
+**構文:** obj &lt;&lt; PpK Capability Labeling( state=0|1 )
 
 **説明:** 「工程能力」のレポートにおいて、全体工程能力指数のラベルのCpをPpに変える。 デフォルトではオン。
 
@@ -1945,7 +1941,7 @@ obj << Process Capability( LSL( 5 ), Target( 40 ), USL( 75 ) );
 
 ### Prediction Interval
 
-**構文:** obj << Prediction Interval( Alpha, N Samples, <Lower | Upper> )
+**構文:** obj &lt;&lt; Prediction Interval( Alpha, N Samples, &lt;Lower | Upper&gt; )
 
 **説明:** 予測区間を求める。予測区間とは、将来の1つの観測値が含まれる区間、もしくは、将来のn個の観測値が含まれる区間である。両側予測区間がデフォルトだが、片側予測区間も計算できる。
 
@@ -1960,7 +1956,7 @@ obj << Prediction Interval( 0.95, 20 );
 
 ### Prob Axis
 
-**構文:** obj << Prob Axis( state=0|1 )
+**構文:** obj &lt;&lt; Prob Axis( state=0|1 )
 
 **説明:** ヒストグラムで割合(確率)の軸の表示/非表示を切り替える。
 
@@ -1975,7 +1971,7 @@ obj << Prob Axis( 1 );
 
 ### Process Capability
 
-**構文:** obj << Process Capability( LSL( number ), Target( number ), USL( number ) )
+**構文:** obj &lt;&lt; Process Capability( LSL( number ), Target( number ), USL( number ) )
 
 **説明:** 工程能力分析を行う。工程能力指数を計算するために、下側仕様限界（LSL）、目標値、上側仕様限界（USL）を指定する必要がある。工程能力分析のレポートには、ヒストグラム、要約の詳細、能力指数、不適合の割合が含まれる。
 
@@ -1992,7 +1988,7 @@ obj << Process Capability( LSL( 5 ), Target( 40 ), USL( 75 ) );
 
 ### Quantile Box Plot
 
-**構文:** obj << Quantile Box Plot( state=0|1 )
+**構文:** obj &lt;&lt; Quantile Box Plot( state=0|1 )
 
 **説明:** 「分位点の箱ひげ図」の表示/非表示を切り替える。「分位点の箱ひげ図」は、0%、0.5%、2.5%、10%、25%、50%、75%、90%、97.5%、99%、100%の分位点が示されている箱ひげ図である。
 
@@ -2008,7 +2004,7 @@ obj << Quantile Box Plot( 1 );
 
 ### Quantiles
 
-**構文:** obj << Quantiles( state=0|1 )
+**構文:** obj &lt;&lt; Quantiles( state=0|1 )
 
 **説明:** 「分位点」レポートの表示/非表示を切り替える。デフォルトでは、分位点として、0%、0.5%、2.5%、10%、25%、50%、75%、90%、97.5%、99.5%、100%が表示される。求めたい分位点の累積確率を指定することも可能。 デフォルトではオン。
 
@@ -2048,7 +2044,7 @@ obj[1] << Render Preset(
 
 ### Save
 
-**構文:** obj << Save( "水準番号"|"水準中間点"|"順位"|"平均順位"|"確率スコア"|"正規分位点"|"標準化"|"中心化"|"ロバスト 標準化"|"ロバスト 中心化"|"仕様限界"|"スクリプトをログに保存" )
+**構文:** obj &lt;&lt; Save( "水準番号"|"水準中間点"|"順位"|"平均順位"|"確率スコア"|"正規分位点"|"標準化"|"中心化"|"ロバスト 標準化"|"ロバスト 中心化"|"仕様限界"|"スクリプトをログに保存" )
 
 **説明:** 行に対する統計量をデータテーブルの新しい列に保存する。オプションには、保存したい統計量の名前を指定する。また、現在のレポートを生成するスクリプトを、ログウィンドウに出力するオプションもある。
 
@@ -2063,7 +2059,7 @@ obj << Save( "Ranks" );
 
 ### Separate Bars
 
-**構文:** obj << Separate Bars( state=0|1 )
+**構文:** obj &lt;&lt; Separate Bars( state=0|1 )
 
 **説明:** ヒストグラムの棒と棒の間を離す。このオプションはカテゴリカル変数の場合のみ利用可能。
 
@@ -2091,7 +2087,7 @@ obj << Separate Bars( 1 );
 
 ### Set Bin Width
 
-**構文:** obj << Set Bin Width( number )
+**構文:** obj &lt;&lt; Set Bin Width( number )
 
 **説明:** ヒストグラムにおいて、棒の幅を設定する。このオプションは連続変数にのみ使用可能。
 
@@ -2106,7 +2102,7 @@ obj << Set Bin Width( 5 );
 
 ### Set Quantile Increment
 
-**構文:** obj << Set Quantile Increment( fraction | "revert to default quantiles" )
+**構文:** obj &lt;&lt; Set Quantile Increment( fraction | "revert to default quantiles" )
 
 **説明:** 「分位点」レポートで使用される累積確率を、指定された間隔に設定したり、またはデフォルト値に戻したりする。
 
@@ -2123,7 +2119,7 @@ obj << Set Quantile Increment( "revert to default quantiles" );
 
 ### Shadowgram
 
-**構文:** obj << Shadowgram( state=0|1 )
+**構文:** obj &lt;&lt; Shadowgram( state=0|1 )
 
 **説明:** シャドウグラムの表示/非表示を切り替える。このオプションをオンにすると、ヒストグラムの代わりにシャドウグラムが描かれる。シャドウグラムとは、異なる棒の幅のヒストグラムを重ね合わせたもの。このオプションは連続変数にのみ使用可能。
 
@@ -2138,7 +2134,7 @@ obj << Shadowgram( 1 );
 
 ### Show Counts
 
-**構文:** obj << Show Counts( state=0|1 )
+**構文:** obj &lt;&lt; Show Counts( state=0|1 )
 
 **説明:** ヒストグラムにおいて、棒の度数の表示/非表示を切り替える。これは、ヒストグラムの各棒で表される集合の度数を示す。
 
@@ -2153,7 +2149,7 @@ obj << Show Counts( 1 );
 
 ### Show Percents
 
-**構文:** obj << Show Percents( state=0|1 )
+**構文:** obj &lt;&lt; Show Percents( state=0|1 )
 
 **説明:** ヒストグラムにおいて、棒の割合の表示/非表示を切り替える。これは、ヒストグラムの各棒で表される集合の全体に対する割合を示す。
 
@@ -2168,7 +2164,7 @@ obj << Show Percents( 1 );
 
 ### Stack
 
-**構文:** obj << Stack( state=0|1 )
+**構文:** obj &lt;&lt; Stack( state=0|1 )
 
 **説明:** ヒストグラムとレポートの向きを横方向に変更し、個々のレポートを縦に積み重ねる。
 
@@ -2183,7 +2179,7 @@ obj << Stack( 1 );
 
 ### Std Error Bars
 
-**構文:** obj << Std Error Bars( state=0|1 )
+**構文:** obj &lt;&lt; Std Error Bars( state=0|1 )
 
 **説明:** ヒストグラムの各棒について、標準誤差バーの表示/非表示を切り替える。
 
@@ -2198,7 +2194,7 @@ obj << Std Error Bars( 1 );
 
 ### Stem and Leaf
 
-**構文:** obj << Stem and Leaf( state=0|1 )
+**構文:** obj &lt;&lt; Stem and Leaf( state=0|1 )
 
 **説明:** 幹葉プロットの表示/非表示を切り替える。
 
@@ -2213,7 +2209,7 @@ obj << Stem and Leaf( 1 );
 
 ### Summary Statistics
 
-**構文:** obj << Summary Statistics( state=0|1 )
+**構文:** obj &lt;&lt; Summary Statistics( state=0|1 )
 
 **説明:** 「要約統計量」レポートの表示/非表示を切り替える。このレポートには、平均や標準偏差など、連続変数に対する要約統計量が表示される。 デフォルトではオン。
 
@@ -2229,7 +2225,7 @@ obj << Summary Statistics( 0 );
 
 ### Test Equivalence
 
-**構文:** obj << Test Equivalence( Target( number ), Practical Difference( number ), <Confidence( fraction )> )
+**構文:** obj &lt;&lt; Test Equivalence( Target( number ), Practical Difference( number ), &lt;Confidence( fraction )&gt; )
 
 **説明:** 平均に対する同等性検定を行う。平均に対する同等性検定とは、母平均が指定されたマージン内に収まっているかの検定である。同等性検定は、2つの片側検定（Two One-Sided Test: TOSt）の方式に基づいて行われる。
 
@@ -2244,7 +2240,7 @@ obj << Test Equivalence( Target( 62 ), Practical Difference( 1 ), Confidence( 0.
 
 ### Test Mean
 
-**構文:** obj << Test Mean( number, <Sigma( number )>, < Wilcoxon Signed Rank( 0|1 ) >, <PValue Animation>, <Power Animation> )
+**構文:** obj &lt;&lt; Test Mean( number, &lt;Sigma( number )&gt;, &lt; Wilcoxon Signed Rank( 0|1 ) &gt;, &lt;PValue Animation&gt;, &lt;Power Animation&gt; )
 
 **説明:** 平均に対する1標本検定を実行する。母標準偏差（シグマ）に値を指定すると、z検定が実行される。母標準偏差を指定しなかった場合は、標本の標準偏差を使用してt検定を実行する。また、ノンパラメトリックなWilcoxon符号付き順位検定を追加で実行するオプションもある。
 
@@ -2263,7 +2259,7 @@ obj << Test Mean( 60, Wilcoxon Signed Rank( 1 ) );
 
 ### Test Probabilities
 
-**構文:** obj << Test Probabilities( Test( Hypothesized|Greater than|Less than ), Fix( Hypothesized|Omitted ), p1, <f>, p2, <f>, p3, <f>, etc. )
+**構文:** obj &lt;&lt; Test Probabilities( Test( Hypothesized|Greater than|Less than ), Fix( Hypothesized|Omitted ), p1, &lt;f&gt;, p2, &lt;f&gt;, p3, &lt;f&gt;, etc. )
 
 **説明:** カテゴリカルな変数の母割合に関して、指定された割合（p1、p2、p3など）を帰無仮説とした検定を行う。カテゴリカルな変数が2水準の場合には、Testオプションにて、カイ2乗適合度検定を行うか、片側の二項検定を行うかを指定できる。3水準以上の場合にはFixオプションにて、数値を指定しない仮説値をどのように設定するかを指定する。fはオプションの引数で、その前に指定されている水準を固定しているものとして計算を行う。
 
@@ -2310,7 +2306,7 @@ obj << Test Probabilities(
 
 ### Test Std Dev
 
-**構文:** obj << Test Std Dev( number )
+**構文:** obj &lt;&lt; Test Std Dev( number )
 
 **説明:** 標準偏差に対するカイ2乗検定を実行する。帰無仮説の値を指定する必要がある。
 
@@ -2325,7 +2321,7 @@ obj << Test Std Dev( 3 );
 
 ### Tolerance Interval
 
-**構文:** obj << Tolerance Interval( Alpha(number), Proportion(number), <Lower | Upper>, <Normal|Lognormal|Gamma|Exponential|Weibull|Smallest Extreme Value|Largest Extreme Value|Nonparametric> )
+**構文:** obj &lt;&lt; Tolerance Interval( Alpha(number), Proportion(number), &lt;Lower | Upper&gt;, &lt;Normal|Lognormal|Gamma|Exponential|Weibull|Smallest Extreme Value|Largest Extreme Value|Nonparametric&gt; )
 
 **説明:** 許容区間を求める。許容区間とは、指定された割合の観測値が含まれる区間である。通常は正規分布が仮定されるが、非正規分布を指定することもできる。指定できる分布には、対数正規分布・ガンマ分布・指数分布・Weibull分布、最小極値分布・最大極値分布があり、また、特定の確率分布を仮定しないノンパラメトリックな方法がある。また、片側区間を計算するオプションもある。
 
@@ -2343,7 +2339,7 @@ obj << Tolerance Interval( Alpha( 0.95 ), Proportion( 0.8 ), Lower, Nonparametri
 
 ### Uniform Scaling
 
-**構文:** obj << Uniform Scaling( state=0|1 )
+**構文:** obj &lt;&lt; Uniform Scaling( state=0|1 )
 
 **説明:** すべてのヒストグラムの軸のスケールを同じにする。ヒストグラムの軸の最小値、最大値、目盛り間隔を同じものにする。そうすることで、異なる変数のデータの分布を比較しやすくなる。
 
@@ -2358,7 +2354,7 @@ obj << Uniform Scaling( 1 );
 
 ### Vertical
 
-**構文:** obj << Vertical( state=0|1 )
+**構文:** obj &lt;&lt; Vertical( state=0|1 )
 
 **説明:** ヒストグラム、箱ひげ図、分位点プロットの向きを縦方向に変更する。 デフォルトではオン。
 
@@ -2377,7 +2373,7 @@ obj << Vertical( 0 );
 
 #### Capability Animation
 
-**構文:** obj << Capability Animation
+**構文:** obj &lt;&lt; Capability Animation
 
 **説明:** 工程能力分析のアニメーションを別ウィンドウで開く。このアニメーションは、現在の統計量と仕様限界を元に、工程能力指標を描いたものである。
 
@@ -2392,7 +2388,7 @@ obj << Capability Analysis( LSL( 16 ), USL( 24 ), Target( 20 ), Capability Anima
 
 #### Z Bench
 
-**構文:** obj << Z Bench( state=0|1 )
+**構文:** obj &lt;&lt; Z Bench( state=0|1 )
 
 **説明:** Z統計量の表示/非表示を切り替える。Z統計量は、平均からの仕様限界までの距離を、標準偏差を単位として表した指標。Z統計量は、AIAGで説明されている。
 
@@ -2411,7 +2407,7 @@ obj << Capability Analysis( LSL( 16 ), USL( 24 ), Target( 20 ), Z Bench( 1 ) );
 
 #### Column
 
-**構文:** obj = Quantiles(...<Column( column(s) )>...)
+**構文:** obj = Quantiles(...&lt;Column( column(s) )&gt;...)
 
 ```jsl
 
@@ -2427,7 +2423,7 @@ obj << Quantiles( 0 );
 
 #### Apply Preset
 
-**構文:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**構文:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **説明:** 作成されたプリセットをオブジェクトに適用する。保存された設定に合わせてオプションとカスタマイズが更新される。
 
@@ -2471,7 +2467,7 @@ obj[1] << Apply Preset( "Sample Presets", "Check Normality" );
 
 #### Axes on Left
 
-**構文:** obj << Axes on Left( state=0|1 )
+**構文:** obj &lt;&lt; Axes on Left( state=0|1 )
 
 **説明:** 軸をグラフの左側に移動する。横方向に表示されるヒスログラムの度数、確率、密度、および、横方向に表示される正規分位点プロットにこのオプションは影響する。
 
@@ -2486,7 +2482,7 @@ obj << Axes on Left( 1 );
 
 #### CDF Plot
 
-**構文:** obj << CDF Plot( state=0|1 )
+**構文:** obj &lt;&lt; CDF Plot( state=0|1 )
 
 **説明:** 経験累積分布関数のプロットの表示/非表示を切り替える。
 
@@ -2501,7 +2497,7 @@ obj << CDF Plot( 1 );
 
 #### Capability Analysis
 
-**構文:** obj << Capability Analysis( LSL( number ), Target( number ), USL( number ) )
+**構文:** obj &lt;&lt; Capability Analysis( LSL( number ), Target( number ), USL( number ) )
 
 **説明:** 工程能力分析を実行する。工程能力指数を求めるために、下側仕様限界（LSL）、目標値、上側仕様限界（USL）指定する必要がある。
 
@@ -2516,7 +2512,7 @@ obj << Capability Analysis( LSL( 16 ), USL( 24 ), Target( 20 ) );
 
 #### Confidence Interval
 
-**構文:** obj << Confidence Interval( number, <Upper | Lower>, <Sigma( number )> )
+**構文:** obj &lt;&lt; Confidence Interval( number, &lt;Upper | Lower&gt;, &lt;Sigma( number )&gt; )
 
 **説明:** 平均と標準偏差について、信頼区間を計算する。母標準偏差(シグマ)を指定した場合、それを母標準偏差として平均の信頼区間は計算される。
 
@@ -2535,7 +2531,7 @@ obj << Confidence Interval( 0.95, Sigma( 4 ) );
 
 #### Count Axis
 
-**構文:** obj << Count Axis( state=0|1 )
+**構文:** obj &lt;&lt; Count Axis( state=0|1 )
 
 **説明:** ヒストグラムの度数軸の表示/非表示を切り替える。
 
@@ -2550,7 +2546,7 @@ obj << Count Axis( 1 );
 
 #### Custom Quantiles
 
-**構文:** obj << Custom Quantiles( fraction, [quantile1, quantile2, ... quantileN] )
+**構文:** obj &lt;&lt; Custom Quantiles( fraction, [quantile1, quantile2, ... quantileN] )
 
 **説明:** 指定された割合の分位点を計算する。順位、および、平滑化された経験尤度によって分位点を計算する。指定された信頼水準の信頼区間も計算する。
 
@@ -2565,7 +2561,7 @@ obj << Custom Quantiles( 0.975, [0.075, 0.1, 0.125, 0.975, 0.99] );
 
 #### Customize Summary Statistics
 
-**構文:** obj << Customize Summary Statistics(statistic1( state=0|1 ), statistic2( state=0|1 ), ..., statisticN( state=0|1 ), <Set Trimmed Mean Percent(number)>, <Set Alpha Level(number)>)
+**構文:** obj &lt;&lt; Customize Summary Statistics(statistic1( state=0|1 ), statistic2( state=0|1 ), ..., statisticN( state=0|1 ), &lt;Set Trimmed Mean Percent(number)&gt;, &lt;Set Alpha Level(number)&gt;)
 
 **説明:** 「要約統計量」レポートに表示される要約統計量をカスタマイズする。
 
@@ -2580,7 +2576,7 @@ obj << Customize Summary Statistics( N( 0 ), Variance( 1 ), Skewness( 1 ) );
 
 #### Density Axis
 
-**構文:** obj << Density Axis( state=0|1 )
+**構文:** obj &lt;&lt; Density Axis( state=0|1 )
 
 **説明:** ヒストグラムで密度曲線のための密度軸の表示/非表示を切り替える。
 
@@ -2595,7 +2591,7 @@ obj << Density Axis( 1 );
 
 #### Fit All
 
-**構文:** obj << Fit All
+**構文:** obj &lt;&lt; Fit All
 
 **説明:** JMPで用意されている分布のうち、現在のデータにあてはめることができるすべての確率分布をあてはめ、それらを比較する。
 
@@ -2612,7 +2608,7 @@ obj << Fit All;
 
 #### Fit Beta
 
-**構文:** obj << Fit Beta
+**構文:** obj &lt;&lt; Fit Beta
 
 **説明:** 2パラメータのベータ分布をデータにあてはめる。データの値はすべて、0より大きく1未満でなければならない。
 
@@ -2629,7 +2625,7 @@ obj << Fit Beta;
 
 #### Fit Beta Binomial
 
-**構文:** obj << Fit Beta Binomial( Sample Size( n | column ) )
+**構文:** obj &lt;&lt; Fit Beta Binomial( Sample Size( n | column ) )
 
 **説明:** ベータ二項分布をデータにあてはめる。一定の標本サイズ、または標本サイズを含む列を指定する必要がある。ベータ二項分布は二項分布を、より柔軟にした確率分布である。
 
@@ -2659,7 +2655,7 @@ obj << Fit Beta Binomial( Sample Size( :Box Size ) );
 
 #### Fit Binomial
 
-**構文:** obj << Fit Binomial( Sample size( n | column ) )
+**構文:** obj &lt;&lt; Fit Binomial( Sample size( n | column ) )
 
 **説明:** 二項分布をデータにあてはめる。一定の標本サイズ、または標本サイズを含む列を指定する必要がある。二項分布は、n回の独立した試行における成功回数を表す。
 
@@ -2676,7 +2672,7 @@ obj << Fit Binomial( Sample Size( :Box Size ) );
 
 #### Fit Cauchy
 
-**構文:** obj << Fit Cauchy
+**構文:** obj &lt;&lt; Fit Cauchy
 
 **説明:** Cauchy分布をデータにあてはめる。Cauchy分布は、外れ値に対してロバスト(頑健)である。Cauchy分布は、自由度1のt分布である。
 
@@ -2698,7 +2694,7 @@ Distribution( Column( :X ), Fit Normal, Fit Cauchy );
 
 #### Fit ExGaussian
 
-**構文:** obj << Fit ExGaussian
+**構文:** obj &lt;&lt; Fit ExGaussian
 
 **説明:** exGauss分布(指数修正Gauss分布)をデータにあてはめる。
 
@@ -2728,7 +2724,7 @@ obj << Fit Exponential;
 
 #### Fit Exponential
 
-**構文:** obj << Fit Exponential
+**構文:** obj &lt;&lt; Fit Exponential
 
 **説明:** 指数分布をデータにあてはめる。データは、すべて非負の値でなければいけない。
 
@@ -2745,7 +2741,7 @@ obj << Fit Exponential;
 
 #### Fit Gamma
 
-**構文:** obj << Fit Gamma
+**構文:** obj &lt;&lt; Fit Gamma
 
 **説明:** 2パラメータのガンマ分布を正のデータにあてはめる。
 
@@ -2762,9 +2758,7 @@ obj << Fit Gamma;
 
 #### Fit Handle
 
-**構文:** obj << (Fit Handle[number] << {option}); 
-
- obj << (Fit Handle["Distribution Name"] << {option})
+**構文:** obj &lt;&lt; (Fit Handle[number] &lt;&lt; {option}); obj &lt;&lt; (Fit Handle["Distribution Name"] &lt;&lt; {option})
 
 **説明:** あてはめられた分布へのハンドルの配列。これにより、あてはめられた分布にコマンドを送ることができる。
 
@@ -2782,7 +2776,7 @@ obj << (Fit Handle["Lognormal"] << QQ Plot( 1 ));
 
 #### Fit Johnson
 
-**構文:** obj << Fit Johnson
+**構文:** obj &lt;&lt; Fit Johnson
 
 **説明:** Johnson分布をデータにあてはめる。分位数に基づいて、3種類のJohnson分布（Su、Sb、Sl）のうち最も適切なものが選択される。
 
@@ -2812,7 +2806,7 @@ obj << Fit Johnson;
 
 #### Fit Largest Extreme Value
 
-**構文:** obj << Fit Largest Extreme Value
+**構文:** obj &lt;&lt; Fit Largest Extreme Value
 
 **説明:** 最大極値分布をデータにあてはめる。
 
@@ -2829,7 +2823,7 @@ obj << Fit Largest Extreme Value;
 
 #### Fit Lognormal
 
-**構文:** obj << Fit Lognormal
+**構文:** obj &lt;&lt; Fit Lognormal
 
 **説明:** 対数正規分布をデータにあてはめる。データは、すべて正の値でなければいけない。
 
@@ -2846,7 +2840,7 @@ obj << Fit Lognormal;
 
 #### Fit Negative Binomial
 
-**構文:** obj << Fit Negative Binomial
+**構文:** obj &lt;&lt; Fit Negative Binomial
 
 **説明:** 負の二項分布をデータにあてはめる。負の二項分布は、ガンマPoisson分布と等価な確率分布である。
 
@@ -2863,7 +2857,7 @@ obj << Fit Negative Binomial;
 
 #### Fit Normal
 
-**構文:** obj << Fit Normal
+**構文:** obj &lt;&lt; Fit Normal
 
 **説明:** 正規分布をデータにあてはめる。
 
@@ -2880,7 +2874,7 @@ obj << Fit Normal;
 
 #### Fit Normal 2 Mixture
 
-**構文:** obj << Fit Normal 2 Mixture
+**構文:** obj &lt;&lt; Fit Normal 2 Mixture
 
 **説明:** 二重正規混合分布をデータにあてはめる。二重正規混合分布は、特に、二峰性のデータに適している。
 
@@ -2897,7 +2891,7 @@ obj << Fit Normal 2 Mixture;
 
 #### Fit Normal 3 Mixture
 
-**構文:** obj << Fit Normal 3 Mixture
+**構文:** obj &lt;&lt; Fit Normal 3 Mixture
 
 **説明:** 三重正規混合分布をデータにあてはめる。二重正規混合分布は、特に、多峰性のデータに適している。
 
@@ -2914,7 +2908,7 @@ obj << Fit Normal 3 Mixture;
 
 #### Fit Poisson
 
-**構文:** obj << Fit Poisson
+**構文:** obj &lt;&lt; Fit Poisson
 
 **説明:** Poisson分布をあてはめる。Poisson分布は、度数データに対してよく利用される。Poisson分布は、平均と分散が等しい。
 
@@ -2931,7 +2925,7 @@ obj << Fit Poisson;
 
 #### Fit SHASH
 
-**構文:** obj << Fit Shash
+**構文:** obj &lt;&lt; Fit Shash
 
 **説明:** sinh-arcsinh分布（SHASH分布）をデータにあてはめる。
 
@@ -2948,7 +2942,7 @@ obj << Fit Shash;
 
 #### Fit Smallest Extreme Value
 
-**構文:** obj << Fit Smallest Extreme Value
+**構文:** obj &lt;&lt; Fit Smallest Extreme Value
 
 **説明:** 最小極値分布をデータにあてはめる。
 
@@ -2965,7 +2959,7 @@ obj << Fit Smallest Extreme Value;
 
 #### Fit Smooth Curve
 
-**構文:** obj << Fit Smooth Curve( <Bandwidth( number )> )
+**構文:** obj &lt;&lt; Fit Smooth Curve( &lt;Bandwidth( number )&gt; )
 
 **説明:** ノンパラメトリックな密度推定に基づき、データに滑らかな密度曲線をあてはめる。帯域幅(バンド幅)を指定することで、滑らかさを設定できる。
 
@@ -2995,7 +2989,7 @@ obj << Fit Smooth Curve( Bandwidth( 0.02 ) );
 
 #### Fit Student's t
 
-**構文:** obj << Fit Student&apos;s t
+**構文:** obj &lt;&lt; Fit Student&apos;s t
 
 **説明:** Studentのt分布をデータにあてはめる。t分布は、正規分布とCauchy分布の間に位置する確率分布である。t分布も、Cauchy分布と同様、外れ値に対してロバスト(頑健)である。
 
@@ -3017,7 +3011,7 @@ Distribution( Column( :X ), Fit Normal, Fit Student's t );
 
 #### Fit Weibull
 
-**構文:** obj << Fit Weibull
+**構文:** obj &lt;&lt; Fit Weibull
 
 **説明:** 2パラメータのWeibull分布をデータにあてはめる。データは、すべて正の値でなければいけない。
 
@@ -3034,7 +3028,7 @@ obj << Fit Weibull;
 
 #### Fit ZI Beta Binomial
 
-**構文:** obj << Fit ZI Beta Binomial( Sample Size( n | column ) )
+**構文:** obj &lt;&lt; Fit ZI Beta Binomial( Sample Size( n | column ) )
 
 **説明:** ゼロ強調ベータ二項分布をあてはめる。一定の標本サイズ、または標本サイズを含む列を指定する必要がある。この分布は、ゼロの観測数がベータ二項分布よりも多くなるような場合に、独立した試行をn回行ったときの成功回数をモデル化したもの。
 
@@ -3051,7 +3045,7 @@ obj << Fit ZI Beta Binomial( Sample Size( :Box Size ) );
 
 #### Fit ZI Binomial
 
-**構文:** obj << Fit ZI Binomial( Sample Size( n | column ) )
+**構文:** obj &lt;&lt; Fit ZI Binomial( Sample Size( n | column ) )
 
 **説明:** ゼロ強調二項分布をあてはめる。一定の標本サイズ、または標本サイズを含む列を指定する必要がある。この分布は、ゼロの観測数が二項分布で想定される個数よりも多くなるような場合に、独立した試行をn回行ったときの成功回数をモデル化したもの。
 
@@ -3068,7 +3062,7 @@ obj << Fit ZI Binomial( Sample Size( :Box Size ) );
 
 #### Fit ZI Negative Binomial
 
-**構文:** obj << Fit ZI Negative Binomial
+**構文:** obj &lt;&lt; Fit ZI Negative Binomial
 
 **説明:** ゼロ強調負の二項分布分布(ゼロ過剰 負の二項分布分布)をデータにあてはめる。データにゼロの値が含まれている場合にのみ利用可能。
 
@@ -3084,7 +3078,7 @@ dt << Distribution( Column( :satell ), Fit ZI Negative Binomial );
 
 #### Fit ZI Poisson
 
-**構文:** obj << Fit ZI Poisson
+**構文:** obj &lt;&lt; Fit ZI Poisson
 
 **説明:** ゼロ強調Poisson分布(ゼロ過剰Poisson分布)をデータにあてはめる。データにゼロの値が含まれている場合にのみ利用可能。
 
@@ -3100,7 +3094,7 @@ dt << Distribution( Column( :satell ), Fit ZI Poisson );
 
 #### Fit ZI SHASH
 
-**構文:** obj << Fit ZI SHASH
+**構文:** obj &lt;&lt; Fit ZI SHASH
 
 **説明:** ゼロ強調のSHASH分布(観測値が0において確率質量をもつSHASH分布)をデータにあてはめる。
 
@@ -3122,7 +3116,7 @@ Distribution( Column( :X ), Fit ZI SHASH, Fit SHASH );
 
 #### Histogram
 
-**構文:** obj << Histogram( state=0|1 )
+**構文:** obj &lt;&lt; Histogram( state=0|1 )
 
 **説明:** ヒストグラムの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -3138,7 +3132,7 @@ obj << Histogram( 0 );
 
 #### Histogram Color
 
-**構文:** obj << Histogram Color( color )
+**構文:** obj &lt;&lt; Histogram Color( color )
 
 **説明:** ヒストグラムの棒の色を変更する。
 
@@ -3153,7 +3147,7 @@ obj << Histogram Color( "Red" );
 
 #### Horizontal Layout
 
-**構文:** obj << Horizontal Layout( state=0|1 )
+**構文:** obj &lt;&lt; Horizontal Layout( state=0|1 )
 
 **説明:** ヒストグラムとレポートの向きを横方向に変更する。
 
@@ -3212,7 +3206,7 @@ preset = obj[1] << New Preset();
 
 #### Normal Quantile Plot
 
-**構文:** obj << Normal Quantile Plot( state=0|1 )
+**構文:** obj &lt;&lt; Normal Quantile Plot( state=0|1 )
 
 **説明:** 正規分位点プロットの表示/非表示を切り替える。正規分位点プロットは、データがどれぐらい正規分布に従っているかどうかを視覚的に見ることができる。
 
@@ -3227,7 +3221,7 @@ obj << Normal Quantile Plot( 1 );
 
 #### Outlier Box Plot
 
-**構文:** obj << Outlier Box Plot( state=0|1 )
+**構文:** obj &lt;&lt; Outlier Box Plot( state=0|1 )
 
 **説明:** 箱ひげ図の表示/非表示を切り替える。箱ひげ図は、データの分布を見たり、外れ値を探したりするのに有用。 デフォルトではオン。
 
@@ -3243,7 +3237,7 @@ obj << Outlier Box Plot( 0 );
 
 #### Outlier Box Plot Row Cutoff
 
-**構文:** obj << Outlier Box Plot Row Cutoff( number )
+**構文:** obj &lt;&lt; Outlier Box Plot Row Cutoff( number )
 
 **説明:** 外れ値の箱ひげ図をデフォルトで表示する最大行数を設定する。 デフォルトの値は"100000"。
 
@@ -3258,7 +3252,7 @@ obj << Outlier Box Plot Row Cutoff( 10000 );
 
 #### PpK Capability Labeling
 
-**構文:** obj << PpK Capability Labeling( state=0|1 )
+**構文:** obj &lt;&lt; PpK Capability Labeling( state=0|1 )
 
 **説明:** 「工程能力」のレポートにおいて、全体工程能力指数のラベルのCpをPpに変える。 デフォルトではオン。
 
@@ -3274,7 +3268,7 @@ obj << Process Capability( LSL( 5 ), Target( 40 ), USL( 75 ) );
 
 #### Prediction Interval
 
-**構文:** obj << Prediction Interval( Alpha, N Samples, <Lower | Upper> )
+**構文:** obj &lt;&lt; Prediction Interval( Alpha, N Samples, &lt;Lower | Upper&gt; )
 
 **説明:** 予測区間を求める。予測区間とは、将来の1つの観測値が含まれる区間、もしくは、将来のn個の観測値が含まれる区間である。両側予測区間がデフォルトだが、片側予測区間も計算できる。
 
@@ -3289,7 +3283,7 @@ obj << Prediction Interval( 0.95, 20 );
 
 #### Prob Axis
 
-**構文:** obj << Prob Axis( state=0|1 )
+**構文:** obj &lt;&lt; Prob Axis( state=0|1 )
 
 **説明:** ヒストグラムで割合(確率)の軸の表示/非表示を切り替える。
 
@@ -3304,7 +3298,7 @@ obj << Prob Axis( 1 );
 
 #### Process Capability
 
-**構文:** obj << Process Capability( LSL( number ), Target( number ), USL( number ) )
+**構文:** obj &lt;&lt; Process Capability( LSL( number ), Target( number ), USL( number ) )
 
 **説明:** 工程能力分析を行う。工程能力指数を計算するために、下側仕様限界（LSL）、目標値、上側仕様限界（USL）を指定する必要がある。工程能力分析のレポートには、ヒストグラム、要約の詳細、能力指数、不適合の割合が含まれる。
 
@@ -3321,7 +3315,7 @@ obj << Process Capability( LSL( 5 ), Target( 40 ), USL( 75 ) );
 
 #### Quantile Box Plot
 
-**構文:** obj << Quantile Box Plot( state=0|1 )
+**構文:** obj &lt;&lt; Quantile Box Plot( state=0|1 )
 
 **説明:** 「分位点の箱ひげ図」の表示/非表示を切り替える。「分位点の箱ひげ図」は、0%、0.5%、2.5%、10%、25%、50%、75%、90%、97.5%、99%、100%の分位点が示されている箱ひげ図である。
 
@@ -3337,7 +3331,7 @@ obj << Quantile Box Plot( 1 );
 
 #### Quantiles
 
-**構文:** obj << Quantiles( state=0|1 )
+**構文:** obj &lt;&lt; Quantiles( state=0|1 )
 
 **説明:** 「分位点」レポートの表示/非表示を切り替える。デフォルトでは、分位点として、0%、0.5%、2.5%、10%、25%、50%、75%、90%、97.5%、99.5%、100%が表示される。求めたい分位点の累積確率を指定することも可能。 デフォルトではオン。
 
@@ -3377,7 +3371,7 @@ obj[1] << Render Preset(
 
 #### Save
 
-**構文:** obj << Save( "水準番号"|"水準中間点"|"順位"|"平均順位"|"確率スコア"|"正規分位点"|"標準化"|"中心化"|"ロバスト 標準化"|"ロバスト 中心化"|"仕様限界"|"スクリプトをログに保存" )
+**構文:** obj &lt;&lt; Save( "水準番号"|"水準中間点"|"順位"|"平均順位"|"確率スコア"|"正規分位点"|"標準化"|"中心化"|"ロバスト 標準化"|"ロバスト 中心化"|"仕様限界"|"スクリプトをログに保存" )
 
 **説明:** 行に対する統計量をデータテーブルの新しい列に保存する。オプションには、保存したい統計量の名前を指定する。また、現在のレポートを生成するスクリプトを、ログウィンドウに出力するオプションもある。
 
@@ -3392,7 +3386,7 @@ obj << Save( "Ranks" );
 
 #### Set Bin Width
 
-**構文:** obj << Set Bin Width( number )
+**構文:** obj &lt;&lt; Set Bin Width( number )
 
 **説明:** ヒストグラムにおいて、棒の幅を設定する。このオプションは連続変数にのみ使用可能。
 
@@ -3407,7 +3401,7 @@ obj << Set Bin Width( 5 );
 
 #### Set Quantile Increment
 
-**構文:** obj << Set Quantile Increment( fraction | "revert to default quantiles" )
+**構文:** obj &lt;&lt; Set Quantile Increment( fraction | "revert to default quantiles" )
 
 **説明:** 「分位点」レポートで使用される累積確率を、指定された間隔に設定したり、またはデフォルト値に戻したりする。
 
@@ -3424,7 +3418,7 @@ obj << Set Quantile Increment( "revert to default quantiles" );
 
 #### Shadowgram
 
-**構文:** obj << Shadowgram( state=0|1 )
+**構文:** obj &lt;&lt; Shadowgram( state=0|1 )
 
 **説明:** シャドウグラムの表示/非表示を切り替える。このオプションをオンにすると、ヒストグラムの代わりにシャドウグラムが描かれる。シャドウグラムとは、異なる棒の幅のヒストグラムを重ね合わせたもの。このオプションは連続変数にのみ使用可能。
 
@@ -3439,7 +3433,7 @@ obj << Shadowgram( 1 );
 
 #### Show Counts
 
-**構文:** obj << Show Counts( state=0|1 )
+**構文:** obj &lt;&lt; Show Counts( state=0|1 )
 
 **説明:** ヒストグラムにおいて、棒の度数の表示/非表示を切り替える。これは、ヒストグラムの各棒で表される集合の度数を示す。
 
@@ -3454,7 +3448,7 @@ obj << Show Counts( 1 );
 
 #### Show Percents
 
-**構文:** obj << Show Percents( state=0|1 )
+**構文:** obj &lt;&lt; Show Percents( state=0|1 )
 
 **説明:** ヒストグラムにおいて、棒の割合の表示/非表示を切り替える。これは、ヒストグラムの各棒で表される集合の全体に対する割合を示す。
 
@@ -3469,7 +3463,7 @@ obj << Show Percents( 1 );
 
 #### Std Error Bars
 
-**構文:** obj << Std Error Bars( state=0|1 )
+**構文:** obj &lt;&lt; Std Error Bars( state=0|1 )
 
 **説明:** ヒストグラムの各棒について、標準誤差バーの表示/非表示を切り替える。
 
@@ -3484,7 +3478,7 @@ obj << Std Error Bars( 1 );
 
 #### Stem and Leaf
 
-**構文:** obj << Stem and Leaf( state=0|1 )
+**構文:** obj &lt;&lt; Stem and Leaf( state=0|1 )
 
 **説明:** 幹葉プロットの表示/非表示を切り替える。
 
@@ -3499,7 +3493,7 @@ obj << Stem and Leaf( 1 );
 
 #### Summary Statistics
 
-**構文:** obj << Summary Statistics( state=0|1 )
+**構文:** obj &lt;&lt; Summary Statistics( state=0|1 )
 
 **説明:** 「要約統計量」レポートの表示/非表示を切り替える。このレポートには、平均や標準偏差など、連続変数に対する要約統計量が表示される。 デフォルトではオン。
 
@@ -3515,7 +3509,7 @@ obj << Summary Statistics( 0 );
 
 #### Test Equivalence
 
-**構文:** obj << Test Equivalence( Target( number ), Practical Difference( number ), <Confidence( fraction )> )
+**構文:** obj &lt;&lt; Test Equivalence( Target( number ), Practical Difference( number ), &lt;Confidence( fraction )&gt; )
 
 **説明:** 平均に対する同等性検定を行う。平均に対する同等性検定とは、母平均が指定されたマージン内に収まっているかの検定である。同等性検定は、2つの片側検定（Two One-Sided Test: TOSt）の方式に基づいて行われる。
 
@@ -3530,7 +3524,7 @@ obj << Test Equivalence( Target( 62 ), Practical Difference( 1 ), Confidence( 0.
 
 #### Test Mean
 
-**構文:** obj << Test Mean( number, <Sigma( number )>, < Wilcoxon Signed Rank( 0|1 ) >, <PValue Animation>, <Power Animation> )
+**構文:** obj &lt;&lt; Test Mean( number, &lt;Sigma( number )&gt;, &lt; Wilcoxon Signed Rank( 0|1 ) &gt;, &lt;PValue Animation&gt;, &lt;Power Animation&gt; )
 
 **説明:** 平均に対する1標本検定を実行する。母標準偏差（シグマ）に値を指定すると、z検定が実行される。母標準偏差を指定しなかった場合は、標本の標準偏差を使用してt検定を実行する。また、ノンパラメトリックなWilcoxon符号付き順位検定を追加で実行するオプションもある。
 
@@ -3549,7 +3543,7 @@ obj << Test Mean( 60, Wilcoxon Signed Rank( 1 ) );
 
 #### Test Std Dev
 
-**構文:** obj << Test Std Dev( number )
+**構文:** obj &lt;&lt; Test Std Dev( number )
 
 **説明:** 標準偏差に対するカイ2乗検定を実行する。帰無仮説の値を指定する必要がある。
 
@@ -3564,7 +3558,7 @@ obj << Test Std Dev( 3 );
 
 #### Tolerance Interval
 
-**構文:** obj << Tolerance Interval( Alpha(number), Proportion(number), <Lower | Upper>, <Normal|Lognormal|Gamma|Exponential|Weibull|Smallest Extreme Value|Largest Extreme Value|Nonparametric> )
+**構文:** obj &lt;&lt; Tolerance Interval( Alpha(number), Proportion(number), &lt;Lower | Upper&gt;, &lt;Normal|Lognormal|Gamma|Exponential|Weibull|Smallest Extreme Value|Largest Extreme Value|Nonparametric&gt; )
 
 **説明:** 許容区間を求める。許容区間とは、指定された割合の観測値が含まれる区間である。通常は正規分布が仮定されるが、非正規分布を指定することもできる。指定できる分布には、対数正規分布・ガンマ分布・指数分布・Weibull分布、最小極値分布・最大極値分布があり、また、特定の確率分布を仮定しないノンパラメトリックな方法がある。また、片側区間を計算するオプションもある。
 
@@ -3582,7 +3576,7 @@ obj << Tolerance Interval( Alpha( 0.95 ), Proportion( 0.8 ), Lower, Nonparametri
 
 #### Vertical
 
-**構文:** obj << Vertical( state=0|1 )
+**構文:** obj &lt;&lt; Vertical( state=0|1 )
 
 **説明:** ヒストグラム、箱ひげ図、分位点プロットの向きを縦方向に変更する。 デフォルトではオン。
 
@@ -3601,9 +3595,7 @@ obj << Vertical( 0 );
 
 #### Density Curve
 
-**構文:** obj << Fit Distribution Name( Density Curve( state=0|1 ) ); 
-
-obj << ( Fit Handle[number] << Density Curve( state=0|1 ))
+**構文:** obj &lt;&lt; Fit Distribution Name( Density Curve( state=0|1 ) ); obj &lt;&lt; ( Fit Handle[number] &lt;&lt; Density Curve( state=0|1 ))
 
 **説明:** ヒストグラムの密度曲線の表示/非表示を切り替える。あてはめられた確率分布の密度曲線がヒストグラム上に描かれる。 デフォルトではオン。
 
@@ -3620,9 +3612,7 @@ obj << Fit Lognormal( Density Curve( 0 ) );
 
 #### Distribution Profiler
 
-**構文:** obj << Fit Distribution Name( Distribution Profiler( state=0|1 ) ); 
-
-obj << ( Fit Handle[number] << Distribution Profiler( state=0|1 ) )
+**構文:** obj &lt;&lt; Fit Distribution Name( Distribution Profiler( state=0|1 ) ); obj &lt;&lt; ( Fit Handle[number] &lt;&lt; Distribution Profiler( state=0|1 ) )
 
 **説明:** あてはめた分布に関して、累積分布関数の予測プロファイルの表示/非表示を切り替える。
 
@@ -3639,9 +3629,7 @@ obj << Fit Lognormal( Distribution Profiler( 1 ) );
 
 #### Fitted CDF
 
-**構文:** obj << Fit Distribution Name( Fitted CDF( vector ));
-
- obj << ( Fit Handle[number] << Fitted CDF( vector ))
+**構文:** obj &lt;&lt; Fit Distribution Name( Fitted CDF( vector )); obj &lt;&lt; ( Fit Handle[number] &lt;&lt; Fitted CDF( vector ))
 
 **説明:** あてはめた分布の下側累積確率の表示/非表示を切り替える。
 
@@ -3658,9 +3646,7 @@ obj << Fit Lognormal( Fitted CDF( [5 8 11] ) );
 
 #### Fitted Quantiles
 
-**構文:** obj << Fit Distribution Name( Fitted Quantiles( vector ));
-
- obj << ( Fit Handle[number] << Fitted Quantiles( vector ))
+**構文:** obj &lt;&lt; Fit Distribution Name( Fitted Quantiles( vector )); obj &lt;&lt; ( Fit Handle[number] &lt;&lt; Fitted Quantiles( vector ))
 
 **説明:** あてはめた分布の分位点の表示/非表示を切り替える。オプションには、求めたい分位点の累積確率を指定する。
 
@@ -3677,9 +3663,7 @@ obj << Fit Lognormal( Fitted Quantiles( [.9 .95 .99] ) );
 
 #### Fix Parameters
 
-**構文:** obj << Fit Distribution Name( Fix Parameters( vector ));
-
- obj << ( Fit Handle[number] << Fix Parameters( vector ))
+**構文:** obj &lt;&lt; Fit Distribution Name( Fix Parameters( vector )); obj &lt;&lt; ( Fit Handle[number] &lt;&lt; Fix Parameters( vector ))
 
 **説明:** 指定されたパラメータを定数として固定して、残りのパラメータを再推定する。
 
@@ -3696,9 +3680,7 @@ obj << Fit Normal( Fix Parameters( [. 2.8] ) );
 
 #### Goodness of Fit
 
-**構文:** obj << Fit Distribution Name( Goodness of Fit( state=0|1 )); 
-
-obj << ( Fit Handle[number] << Goodness of Fit( state=0|1 ))
+**構文:** obj &lt;&lt; Fit Distribution Name( Goodness of Fit( state=0|1 )); obj &lt;&lt; ( Fit Handle[number] &lt;&lt; Goodness of Fit( state=0|1 ))
 
 **説明:** 適合度検定の表示/非表示を切り替える。この適合度検定は、あてはめられた確率分布のデータに対する適合度を検定するものである。
 
@@ -3715,9 +3697,7 @@ obj << Fit Lognormal( Goodness of Fit( 1 ) );
 
 #### PP Plot
 
-**構文:** obj << Fit Distribution Name( PP Plot( state=0|1 ) ); 
-
- obj << (Fit Handle[ number ] << PP Plot( state=0|1 ) )
+**構文:** obj &lt;&lt; Fit Distribution Name( PP Plot( state=0|1 ) ); obj &lt;&lt; (Fit Handle[ number ] &lt;&lt; PP Plot( state=0|1 ) )
 
 **説明:** 確率プロット(PPプロット)の表示/非表示を切り替える。確率プロットは、経験累積分布関数とあてはめ分布の累積分布関数との関係を示したグラフである。
 
@@ -3734,9 +3714,7 @@ obj << Fit Gamma( PP Plot( 1 ) );
 
 #### Process Capability
 
-**構文:** obj << Fit Distribution Name( Process Capability( LSL( number ), Target( number ), USL( number ))); 
-
- obj << (Fit Handle[number] << ( Process Capability( LSL( number ), Target( number ), USL( number ))))
+**構文:** obj &lt;&lt; Fit Distribution Name( Process Capability( LSL( number ), Target( number ), USL( number ))); obj &lt;&lt; (Fit Handle[number] &lt;&lt; ( Process Capability( LSL( number ), Target( number ), USL( number ))))
 
 **説明:** 工程能力分析を行う。工程能力指数を計算するために、下側仕様限界（LSL）、目標値、上側仕様限界（USL）を指定する必要がある。工程能力分析のレポートには、ヒストグラム、要約の詳細、能力指数、不適合の割合が含まれる。
 
@@ -3753,9 +3731,7 @@ obj << Fit Lognormal( Process Capability( LSL( .03 ), Target( .15 ), USL( .27 ) 
 
 #### QQ Plot
 
-**構文:** obj << Fit Distribution Name( QQ Plot( state=0|1 ) ); 
-
-obj << ( Fit Handle[number] << QQ Plot( state=0|1 ) )
+**構文:** obj &lt;&lt; Fit Distribution Name( QQ Plot( state=0|1 ) ); obj &lt;&lt; ( Fit Handle[number] &lt;&lt; QQ Plot( state=0|1 ) )
 
 **説明:** あてはめ分布の分位点プロット(QQプロット)の表示/非表示を切り替える。
 
@@ -3772,9 +3748,7 @@ obj << Fit Gamma( QQ Plot( 1 ) );
 
 #### Quantile Profiler
 
-**構文:** obj << Fit Distribution Name( Quantile Profiler( state=0|1 ) ); 
-
-obj << ( Fit Handle[number] << Quantile Profiler( state=0|1 ) )
+**構文:** obj &lt;&lt; Fit Distribution Name( Quantile Profiler( state=0|1 ) ); obj &lt;&lt; ( Fit Handle[number] &lt;&lt; Quantile Profiler( state=0|1 ) )
 
 **説明:** あてはめた分布に関して、分位点関数の予測プロファイルの表示/非表示を切り替える。
 
@@ -3791,7 +3765,7 @@ obj << Fit Lognormal( Quantile Profiler( 1 ) );
 
 #### Remove Fit
 
-**構文:** obj << (Fit Handle[number] << Remove Fit )
+**構文:** obj &lt;&lt; (Fit Handle[number] &lt;&lt; Remove Fit )
 
 **説明:** 指定された分布のあてはめとJSLオブジェクトを削除する。
 
@@ -3811,9 +3785,7 @@ obj << (Fit Handle[1] << Remove Fit);
 
 #### Save Density Formula
 
-**構文:** obj << Fit Distribution Name( Save Density Formula ) ; 
-
-obj << ( Fit Handle[number] << Save Density Formula )
+**構文:** obj &lt;&lt; Fit Distribution Name( Save Density Formula ) ; obj &lt;&lt; ( Fit Handle[number] &lt;&lt; Save Density Formula )
 
 **説明:** あてはめた分布の密度関数の列をデータテーブルに保存する。
 
@@ -3830,9 +3802,7 @@ obj << Fit Lognormal( Save Density Formula );
 
 #### Save Distribution Formula
 
-**構文:** obj << Fit Distribution Name( Save Distribution Formula ) ; 
-
-obj << ( Fit Handle[number] << Save Distribution Formula )
+**構文:** obj &lt;&lt; Fit Distribution Name( Save Distribution Formula ) ; obj &lt;&lt; ( Fit Handle[number] &lt;&lt; Save Distribution Formula )
 
 **説明:** あてはめた分布の累積分布関数の列をデータテーブルに保存する。
 
@@ -3849,9 +3819,7 @@ obj << Fit Lognormal( Save Distribution Formula );
 
 #### Save Simulation Formula
 
-**構文:** obj << Fit Distribution Name( Save Simulation Formula ) ; 
-
-obj << ( Fit Handle[number] << Save Simulation Formula )
+**構文:** obj &lt;&lt; Fit Distribution Name( Save Simulation Formula ) ; obj &lt;&lt; ( Fit Handle[number] &lt;&lt; Save Simulation Formula )
 
 **説明:** あてはめた分布の乱数を生成する計算式の列をデータテーブルに保存する。
 
@@ -3868,9 +3836,7 @@ obj << Fit Lognormal( Save Simulation Formula );
 
 #### Save Transformed
 
-**構文:** obj << Fit Distribution Name( Save Transformed ); 
-
-obj << ( Fit Handle[number] << Save Transformed )
+**構文:** obj &lt;&lt; Fit Distribution Name( Save Transformed ); obj &lt;&lt; ( Fit Handle[number] &lt;&lt; Save Transformed )
 
 **説明:** SHASH分布の変換式の列をデータテーブルに保存する。この変換は、元のデータを正規分布に近付けるための変換である。
 
@@ -3891,7 +3857,7 @@ obj << Fit Shash( Save Transformed );
 
 #### Color Out of Spec Values
 
-**構文:** obj << Color Out of Spec Values
+**構文:** obj &lt;&lt; Color Out of Spec Values
 
 **説明:** データテーブルにおいて、仕様限界外となっている値のセルに色を付ける。下側仕様限界(LSL)より小さい値のセルは赤で、上側仕様限界(USL)より大きい値のセルは青で色付けされる。
 
@@ -3913,7 +3879,7 @@ obj << Process Capability(
 
 #### Save Distribution as a Column Property
 
-**構文:** obj << Process Capability( Save Distribution as a Column Property )
+**構文:** obj &lt;&lt; Process Capability( Save Distribution as a Column Property )
 
 **説明:** 工程能力で使われている確率分布の種類を、元のデータテーブルの列の「工程能力分布」列プロパティに保存する。
 
@@ -3934,7 +3900,7 @@ obj << Process Capability(
 
 #### Save In Spec Indicator Formula
 
-**構文:** obj << Save In Spec Indicator Formula
+**構文:** obj &lt;&lt; Save In Spec Indicator Formula
 
 **説明:** 行が仕様限界内にあるかどうかを示す値を求める計算式の列をデータテーブルに保存する。。
 
@@ -3954,7 +3920,7 @@ obj << Process Capability(
 
 #### Save Spec Limits and Distribution to Column Properties without Report
 
-**構文:** obj << Fit Distribution Name( Process Capability(Save Spec Limits and Distribution to Column Properties without Report))
+**構文:** obj &lt;&lt; Fit Distribution Name( Process Capability(Save Spec Limits and Distribution to Column Properties without Report))
 
 **説明:** 工程能力レポートは表示しないで、あてはめた確率分布から求められた仕様限界と、その確率分布を元のデータテーブルの列に列プロパティとして保存する。
 
@@ -3976,9 +3942,7 @@ obj << Fit Lognormal(
 
 #### Save Spec Limits as a Column Property
 
-**構文:** obj << Fit Distribution Name( Process Capability( Save Spec Limits as a Column Property )); 
-
- obj << Process Capability( Save Spec Limits as a Column Property )
+**構文:** obj &lt;&lt; Fit Distribution Name( Process Capability( Save Spec Limits as a Column Property )); obj &lt;&lt; Process Capability( Save Spec Limits as a Column Property )
 
 **説明:** 元のデータテーブルの列に、列プロパティとして仕様限界を保存する。
 
@@ -4020,9 +3984,7 @@ obj << Process Capability(
 
 #### Set Probabilities for Quantile Spec Limits
 
-**構文:** obj << Fit Distribution Name( Process Capability(Set Probabilties for Quantile Spec Limits( LSL Prob(p1), Target Prob(p2), USL Prob(p3)))); 
-
- obj << Process Capability(Set Probabilties for Quantile Spec Limits( LSL Prob(p1), Target Prob(p2), USL Prob(p3)))
+**構文:** obj &lt;&lt; Fit Distribution Name( Process Capability(Set Probabilties for Quantile Spec Limits( LSL Prob(p1), Target Prob(p2), USL Prob(p3)))); obj &lt;&lt; Process Capability(Set Probabilties for Quantile Spec Limits( LSL Prob(p1), Target Prob(p2), USL Prob(p3)))
 
 **説明:** 仕様限界の計算に用いる、あてはめた分布の分位点の累積確率を設定する。
 
@@ -4047,9 +4009,7 @@ obj << Fit Lognormal(
 
 #### Set Sigma Multiplier for Quantile Spec Limits
 
-**構文:** obj << Fit Distribution Name( Process Capability(Set Sigma Multiplier for Quantile Spec Limits(K, <sided=1|2>))); 
-
- obj << Process Capability(Set Sigma Multiplier for Quantile Spec Limits(K, <sided=1|2>))
+**構文:** obj &lt;&lt; Fit Distribution Name( Process Capability(Set Sigma Multiplier for Quantile Spec Limits(K, &lt;sided=1|2&gt;))); obj &lt;&lt; Process Capability(Set Sigma Multiplier for Quantile Spec Limits(K, &lt;sided=1|2&gt;))
 
 **説明:** 仕様限界の計算に用いる、シグマ乗数のKを設定する。オプションのsided引数には、LSLのみの場合は 1、USLのみの場合は2に相当する。
 
@@ -4072,7 +4032,7 @@ obj << Fit Lognormal(
 
 #### Customize Summary Statistics
 
-**構文:** obj << Customize Summary Statistics(statistic1( state=0|1 ), statistic2( state=0|1 ), ..., statisticN( state=0|1 ), <Set Trimmed Mean Percent(number)>, <Set Alpha Level(number)>)
+**構文:** obj &lt;&lt; Customize Summary Statistics(statistic1( state=0|1 ), statistic2( state=0|1 ), ..., statisticN( state=0|1 ), &lt;Set Trimmed Mean Percent(number)&gt;, &lt;Set Alpha Level(number)&gt;)
 
 **説明:** 「要約統計量」レポートに表示される要約統計量をカスタマイズする。
 
@@ -4087,7 +4047,7 @@ obj << Customize Summary Statistics( N( 0 ), Variance( 1 ), Skewness( 1 ) );
 
 #### Show All Modes
 
-**構文:** obj << Customize Summary Statistics( Show all Modes( state=0|1 ))
+**構文:** obj &lt;&lt; Customize Summary Statistics( Show all Modes( state=0|1 ))
 
 **説明:** 「要約統計量」レポートにおいて、すべての最頻値の表示/非表示を切り替える。
 
@@ -4106,7 +4066,7 @@ obj << Customize Summary Statistics( Mode( 1 ), Show All Modes( 1 ) );
 
 #### Apply Preset
 
-**構文:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**構文:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **説明:** 作成されたプリセットをオブジェクトに適用する。保存された設定に合わせてオプションとカスタマイズが更新される。
 
@@ -4150,7 +4110,7 @@ obj[1] << Apply Preset( "Sample Presets", "Check Normality" );
 
 #### Axes on Left
 
-**構文:** obj << Axes on Left( state=0|1 )
+**構文:** obj &lt;&lt; Axes on Left( state=0|1 )
 
 **説明:** 軸をグラフの左側に移動する。横方向に表示されるヒスログラムの度数、確率、密度、および、横方向に表示される正規分位点プロットにこのオプションは影響する。
 
@@ -4186,7 +4146,7 @@ obj << Axes on Left( 1 );
 
 #### Confidence Interval
 
-**構文:** obj << Confidence Interval( "0.90"|"0.95"|"0.99"|"その他..." )
+**構文:** obj &lt;&lt; Confidence Interval( "0.90"|"0.95"|"0.99"|"その他..." )
 
 **説明:** 割合のスコア信頼区間を計算する。
 
@@ -4201,7 +4161,7 @@ obj << Confidence Interval( 0.95 );
 
 #### Count Axis
 
-**構文:** obj << Count Axis( state=0|1 )
+**構文:** obj &lt;&lt; Count Axis( state=0|1 )
 
 **説明:** ヒストグラムの度数軸の表示/非表示を切り替える。
 
@@ -4229,7 +4189,7 @@ obj << Count Axis( 1 );
 
 #### Density Axis
 
-**構文:** obj << Density Axis( state=0|1 )
+**構文:** obj &lt;&lt; Density Axis( state=0|1 )
 
 **説明:** ヒストグラムで密度曲線のための密度軸の表示/非表示を切り替える。
 
@@ -4244,7 +4204,7 @@ obj << Density Axis( 1 );
 
 #### Frequencies
 
-**構文:** obj << Frequencies( state=0|1 )
+**構文:** obj &lt;&lt; Frequencies( state=0|1 )
 
 **説明:** 度数と割合のレポートの表示/非表示を切り替える。このレポートには、水準ごとに、度数と割合が表示されている。 デフォルトではオン。
 
@@ -4274,7 +4234,7 @@ obj << Frequencies( 0 );
 
 #### Histogram
 
-**構文:** obj << Histogram( state=0|1 )
+**構文:** obj &lt;&lt; Histogram( state=0|1 )
 
 **説明:** ヒストグラムの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -4304,7 +4264,7 @@ obj << Histogram( 0 );
 
 #### Histogram Color
 
-**構文:** obj << Histogram Color( color )
+**構文:** obj &lt;&lt; Histogram Color( color )
 
 **説明:** ヒストグラムの棒の色を変更する。
 
@@ -4332,7 +4292,7 @@ obj << Histogram Color( "Blue" );
 
 #### Horizontal Layout
 
-**構文:** obj << Horizontal Layout( state=0|1 )
+**構文:** obj &lt;&lt; Horizontal Layout( state=0|1 )
 
 **説明:** ヒストグラムとレポートの向きを横方向に変更する。
 
@@ -4360,7 +4320,7 @@ obj << Horizontal Layout( 1 );
 
 #### Mosaic Plot
 
-**構文:** obj << Mosaic Plot( state=0|1 )
+**構文:** obj &lt;&lt; Mosaic Plot( state=0|1 )
 
 **説明:** 名義尺度または順序尺度の変数に対して、モザイク図の表示/非表示を切り替える。モザイク図は、各長方形がそのグループの度数に比例している、縦に積み重ねた棒グラフである。
 
@@ -4419,7 +4379,7 @@ preset = obj[1] << New Preset();
 
 #### Order By
 
-**構文:** obj << Order By( "Default"|"Count Descending"|"Count Ascending" )
+**構文:** obj &lt;&lt; Order By( "Default"|"Count Descending"|"Count Ascending" )
 
 **説明:** ヒストグラム、モザイク図、度数レポートを、度数の昇順または降順で並べる。また、デフォルトの順序に戻すことも可能。
 
@@ -4434,7 +4394,7 @@ obj << Order By( "Count Descending" );
 
 #### Prob Axis
 
-**構文:** obj << Prob Axis( state=0|1 )
+**構文:** obj &lt;&lt; Prob Axis( state=0|1 )
 
 **説明:** ヒストグラムで割合(確率)の軸の表示/非表示を切り替える。
 
@@ -4486,7 +4446,7 @@ obj[1] << Render Preset(
 
 #### Save
 
-**構文:** obj << Save( "水準番号"|"値の順序"|"スクリプトをログに保存" )
+**構文:** obj &lt;&lt; Save( "水準番号"|"値の順序"|"スクリプトをログに保存" )
 
 **説明:** 水準番号をデータテーブルの新しい列に保存、またはスクリプトをログに保存する。
 
@@ -4501,7 +4461,7 @@ obj << Save( "Level Numbers" );
 
 #### Separate Bars
 
-**構文:** obj << Separate Bars( state=0|1 )
+**構文:** obj &lt;&lt; Separate Bars( state=0|1 )
 
 **説明:** ヒストグラムの棒と棒の間を離す。このオプションはカテゴリカル変数の場合のみ利用可能。
 
@@ -4529,7 +4489,7 @@ obj << Separate Bars( 1 );
 
 #### Show Counts
 
-**構文:** obj << Show Counts( state=0|1 )
+**構文:** obj &lt;&lt; Show Counts( state=0|1 )
 
 **説明:** ヒストグラムにおいて、棒の度数の表示/非表示を切り替える。これは、ヒストグラムの各棒で表される集合の度数を示す。
 
@@ -4557,7 +4517,7 @@ obj << Show Counts( 1 );
 
 #### Show Percents
 
-**構文:** obj << Show Percents( state=0|1 )
+**構文:** obj &lt;&lt; Show Percents( state=0|1 )
 
 **説明:** ヒストグラムにおいて、棒の割合の表示/非表示を切り替える。これは、ヒストグラムの各棒で表される集合の全体に対する割合を示す。
 
@@ -4585,7 +4545,7 @@ obj << Show Percents( 1 );
 
 #### Std Error Bars
 
-**構文:** obj << Std Error Bars( state=0|1 )
+**構文:** obj &lt;&lt; Std Error Bars( state=0|1 )
 
 **説明:** ヒストグラムの各棒について、標準誤差バーの表示/非表示を切り替える。
 
@@ -4600,7 +4560,7 @@ obj << Std Error Bars( 1 );
 
 #### Test Probabilities
 
-**構文:** obj << Test Probabilities( Test( Hypothesized|Greater than|Less than ), Fix( Hypothesized|Omitted ), p1, <f>, p2, <f>, p3, <f>, etc. )
+**構文:** obj &lt;&lt; Test Probabilities( Test( Hypothesized|Greater than|Less than ), Fix( Hypothesized|Omitted ), p1, &lt;f&gt;, p2, &lt;f&gt;, p3, &lt;f&gt;, etc. )
 
 **説明:** カテゴリカルな変数の母割合に関して、指定された割合（p1、p2、p3など）を帰無仮説とした検定を行う。カテゴリカルな変数が2水準の場合には、Testオプションにて、カイ2乗適合度検定を行うか、片側の二項検定を行うかを指定できる。3水準以上の場合にはFixオプションにて、数値を指定しない仮説値をどのように設定するかを指定する。fはオプションの引数で、その前に指定されている水準を固定しているものとして計算を行う。
 
@@ -4647,7 +4607,7 @@ obj << Test Probabilities(
 
 #### Vertical
 
-**構文:** obj << Vertical( state=0|1 )
+**構文:** obj &lt;&lt; Vertical( state=0|1 )
 
 **説明:** ヒストグラム、箱ひげ図、分位点プロットの向きを縦方向に変更する。 デフォルトではオン。
 
@@ -4679,7 +4639,7 @@ obj << Vertical( 0 );
 
 #### Apply Preset
 
-**構文:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**構文:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **説明:** 作成されたプリセットをオブジェクトに適用する。保存された設定に合わせてオプションとカスタマイズが更新される。
 
@@ -4723,7 +4683,7 @@ obj[1] << Apply Preset( "Sample Presets", "Check Normality" );
 
 #### Axes on Left
 
-**構文:** obj << Axes on Left( state=0|1 )
+**構文:** obj &lt;&lt; Axes on Left( state=0|1 )
 
 **説明:** 軸をグラフの左側に移動する。横方向に表示されるヒスログラムの度数、確率、密度、および、横方向に表示される正規分位点プロットにこのオプションは影響する。
 
@@ -4759,7 +4719,7 @@ obj << Axes on Left( 1 );
 
 #### Confidence Interval
 
-**構文:** obj << Confidence Interval( "0.90"|"0.95"|"0.99"|"その他..." )
+**構文:** obj &lt;&lt; Confidence Interval( "0.90"|"0.95"|"0.99"|"その他..." )
 
 **説明:** 割合のスコア信頼区間を計算する。
 
@@ -4774,7 +4734,7 @@ obj << Confidence Interval( 0.95 );
 
 #### Count Axis
 
-**構文:** obj << Count Axis( state=0|1 )
+**構文:** obj &lt;&lt; Count Axis( state=0|1 )
 
 **説明:** ヒストグラムの度数軸の表示/非表示を切り替える。
 
@@ -4802,7 +4762,7 @@ obj << Count Axis( 1 );
 
 #### Density Axis
 
-**構文:** obj << Density Axis( state=0|1 )
+**構文:** obj &lt;&lt; Density Axis( state=0|1 )
 
 **説明:** ヒストグラムで密度曲線のための密度軸の表示/非表示を切り替える。
 
@@ -4817,7 +4777,7 @@ obj << Density Axis( 1 );
 
 #### Frequencies
 
-**構文:** obj << Frequencies( state=0|1 )
+**構文:** obj &lt;&lt; Frequencies( state=0|1 )
 
 **説明:** 度数と割合のレポートの表示/非表示を切り替える。このレポートには、水準ごとに、度数と割合が表示されている。 デフォルトではオン。
 
@@ -4847,7 +4807,7 @@ obj << Frequencies( 0 );
 
 #### Histogram
 
-**構文:** obj << Histogram( state=0|1 )
+**構文:** obj &lt;&lt; Histogram( state=0|1 )
 
 **説明:** ヒストグラムの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -4877,7 +4837,7 @@ obj << Histogram( 0 );
 
 #### Histogram Color
 
-**構文:** obj << Histogram Color( color )
+**構文:** obj &lt;&lt; Histogram Color( color )
 
 **説明:** ヒストグラムの棒の色を変更する。
 
@@ -4905,7 +4865,7 @@ obj << Histogram Color( "Blue" );
 
 #### Horizontal Layout
 
-**構文:** obj << Horizontal Layout( state=0|1 )
+**構文:** obj &lt;&lt; Horizontal Layout( state=0|1 )
 
 **説明:** ヒストグラムとレポートの向きを横方向に変更する。
 
@@ -4933,7 +4893,7 @@ obj << Horizontal Layout( 1 );
 
 #### Mosaic Plot
 
-**構文:** obj << Mosaic Plot( state=0|1 )
+**構文:** obj &lt;&lt; Mosaic Plot( state=0|1 )
 
 **説明:** 名義尺度または順序尺度の変数に対して、モザイク図の表示/非表示を切り替える。モザイク図は、各長方形がそのグループの度数に比例している、縦に積み重ねた棒グラフである。
 
@@ -4992,7 +4952,7 @@ preset = obj[1] << New Preset();
 
 #### Order By
 
-**構文:** obj << Order By( "Default"|"Count Descending"|"Count Ascending" )
+**構文:** obj &lt;&lt; Order By( "Default"|"Count Descending"|"Count Ascending" )
 
 **説明:** ヒストグラム、モザイク図、度数レポートを、度数の昇順または降順で並べる。また、デフォルトの順序に戻すことも可能。
 
@@ -5007,7 +4967,7 @@ obj << Order By( "Count Descending" );
 
 #### Prob Axis
 
-**構文:** obj << Prob Axis( state=0|1 )
+**構文:** obj &lt;&lt; Prob Axis( state=0|1 )
 
 **説明:** ヒストグラムで割合(確率)の軸の表示/非表示を切り替える。
 
@@ -5059,7 +5019,7 @@ obj[1] << Render Preset(
 
 #### Save
 
-**構文:** obj << Save( "水準番号"|"値の順序"|"スクリプトをログに保存" )
+**構文:** obj &lt;&lt; Save( "水準番号"|"値の順序"|"スクリプトをログに保存" )
 
 **説明:** 水準番号をデータテーブルの新しい列に保存、またはスクリプトをログに保存する。
 
@@ -5074,7 +5034,7 @@ obj << Save( "Level Numbers" );
 
 #### Separate Bars
 
-**構文:** obj << Separate Bars( state=0|1 )
+**構文:** obj &lt;&lt; Separate Bars( state=0|1 )
 
 **説明:** ヒストグラムの棒と棒の間を離す。このオプションはカテゴリカル変数の場合のみ利用可能。
 
@@ -5102,7 +5062,7 @@ obj << Separate Bars( 1 );
 
 #### Show Counts
 
-**構文:** obj << Show Counts( state=0|1 )
+**構文:** obj &lt;&lt; Show Counts( state=0|1 )
 
 **説明:** ヒストグラムにおいて、棒の度数の表示/非表示を切り替える。これは、ヒストグラムの各棒で表される集合の度数を示す。
 
@@ -5130,7 +5090,7 @@ obj << Show Counts( 1 );
 
 #### Show Percents
 
-**構文:** obj << Show Percents( state=0|1 )
+**構文:** obj &lt;&lt; Show Percents( state=0|1 )
 
 **説明:** ヒストグラムにおいて、棒の割合の表示/非表示を切り替える。これは、ヒストグラムの各棒で表される集合の全体に対する割合を示す。
 
@@ -5158,7 +5118,7 @@ obj << Show Percents( 1 );
 
 #### Std Error Bars
 
-**構文:** obj << Std Error Bars( state=0|1 )
+**構文:** obj &lt;&lt; Std Error Bars( state=0|1 )
 
 **説明:** ヒストグラムの各棒について、標準誤差バーの表示/非表示を切り替える。
 
@@ -5173,7 +5133,7 @@ obj << Std Error Bars( 1 );
 
 #### Test Probabilities
 
-**構文:** obj << Test Probabilities( Test( Hypothesized|Greater than|Less than ), Fix( Hypothesized|Omitted ), p1, <f>, p2, <f>, p3, <f>, etc. )
+**構文:** obj &lt;&lt; Test Probabilities( Test( Hypothesized|Greater than|Less than ), Fix( Hypothesized|Omitted ), p1, &lt;f&gt;, p2, &lt;f&gt;, p3, &lt;f&gt;, etc. )
 
 **説明:** カテゴリカルな変数の母割合に関して、指定された割合（p1、p2、p3など）を帰無仮説とした検定を行う。カテゴリカルな変数が2水準の場合には、Testオプションにて、カイ2乗適合度検定を行うか、片側の二項検定を行うかを指定できる。3水準以上の場合にはFixオプションにて、数値を指定しない仮説値をどのように設定するかを指定する。fはオプションの引数で、その前に指定されている水準を固定しているものとして計算を行う。
 
@@ -5220,7 +5180,7 @@ obj << Test Probabilities(
 
 #### Vertical
 
-**構文:** obj << Vertical( state=0|1 )
+**構文:** obj &lt;&lt; Vertical( state=0|1 )
 
 **説明:** ヒストグラム、箱ひげ図、分位点プロットの向きを縦方向に変更する。 デフォルトではオン。
 
@@ -5252,7 +5212,7 @@ obj << Vertical( 0 );
 
 #### PValue animation
 
-**構文:** obj << Test Mean( PValue Animation )
+**構文:** obj &lt;&lt; Test Mean( PValue Animation )
 
 **説明:** 平均の変化に応じてp値がどのように変化するかをアニメーションで表示する別ウィンドウを開く。
 
@@ -5267,7 +5227,7 @@ obj << Test Mean( 60, PValue Animation );
 
 #### Power animation
 
-**構文:** obj << Test Mean( Power Animation )
+**構文:** obj &lt;&lt; Test Mean( Power Animation )
 
 **説明:** 検出力のアニメーションを別ウィンドウで開く。このアニメーションは、平均の変化に応じて検出力がどのように変化するかを描いたものである。片側検定か両側検定かの指定も行える。
 
@@ -5286,7 +5246,7 @@ obj << Test Mean( 60, Power Animation );
 
 #### Save Distribution as a Column Property
 
-**構文:** obj << Tolerance Interval( Save Distribution as a Column Property )
+**構文:** obj &lt;&lt; Tolerance Interval( Save Distribution as a Column Property )
 
 **説明:** 許容区間で仮定されている確率分布の種類を、元のデータテーブルの列の「許容区間分布」列プロパティに保存する。
 
@@ -5306,7 +5266,7 @@ obj << Tolerance Interval(
 
 #### Save to Spec Limits Column Property
 
-**構文:** obj << Save to Spec Limits Column Property( Alpha(number), Proportion(number), <Lower | Upper>, <Nonparametric>, <Save to Spec Limits Column Property> )
+**構文:** obj &lt;&lt; Save to Spec Limits Column Property( Alpha(number), Proportion(number), &lt;Lower | Upper&gt;, &lt;Nonparametric&gt;, &lt;Save to Spec Limits Column Property&gt; )
 
 **説明:** 許容区間を、データテーブルの「仕様限界」列プロパティに保存する。
 

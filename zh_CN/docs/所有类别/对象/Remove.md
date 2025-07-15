@@ -6,7 +6,7 @@
 
 ### Remove
 
-**语法:** obj << Remove
+**语法:** obj &lt;&lt; Remove
 
 **JMP添加的版本:** 18
 

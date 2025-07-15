@@ -6,7 +6,7 @@
 
 ### Action
 
-**구문:** obj << Action
+**구문:** obj &lt;&lt; Action
 
 **설명:** 실행할 표현식을 삽입하기 위한 플랫폼 내의 다목적 트랩도어. 임시로 표시 상자 및 데이터 테이블 유형을 플랫폼에 설정합니다.
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**구문:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**구문:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **설명:** 이전에 생성된 사전 설정을 개체에 적용하여 옵션과 사용자 정의를 저장된 설정과 일치하도록 업데이트합니다.
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Automatic Recalc
 
-**구문:** obj << Automatic Recalc( state=0|1 )
+**구문:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **설명:** 제외 항목 및 데이터 변경이 있을 때 분석을 자동으로 다시 실행합니다. 자동 재계산 옵션이 설정된 경우 재계산하기 전에 제외 항목 및 데이터 변경이 적용되게 하려면 Wait(0) 명령을 사용하는 것이 좋습니다.
 
@@ -87,7 +87,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**구문:** obj << Broadcast(message)
+**구문:** obj &lt;&lt; Broadcast(message)
 
 **설명:** 플랫폼에 메시지를 브로드캐스트합니다. 개별 개체의 반환 결과가 테이블인 경우 가능하면 테이블이 연결되고 최종 형식은 테이블 상자의 &apos;결합 테이블 저장&apos; 옵션 결과 또는 소스 열을 사용한 &apos;연결&apos; 옵션 결과와 동일합니다. 그 외의 경우에는 결과가 목록에 저장되어 반환됩니다.
 
@@ -104,7 +104,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**구문:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**구문:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **설명:** 플랫폼 변수를 변경하기 위한 제어판을 추가합니다.
 
@@ -119,7 +119,7 @@ ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country,
 
 ### Copy ByGroup Script
 
-**구문:** obj << Copy ByGroup Script
+**구문:** obj &lt;&lt; Copy ByGroup Script
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 클립보드에 넣습니다.
 
@@ -139,7 +139,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**구문:** obj << Copy Script
+**구문:** obj &lt;&lt; Copy Script
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 클립보드에 넣습니다.
 
@@ -154,7 +154,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**구문:** obj << Data Table Window
+**구문:** obj &lt;&lt; Data Table Window
 
 **설명:** 이 분석에 대한 데이터 테이블 창을 앞으로 가져옵니다.
 
@@ -169,7 +169,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**구문:** obj << Get By Levels
+**구문:** obj &lt;&lt; Get By Levels
 
 **설명:** 기준 그룹 열을 값에 매핑하는 연관 배열을 반환합니다.
 
@@ -186,7 +186,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**구문:** obj << Get ByGroup Script
+**구문:** obj &lt;&lt; Get ByGroup Script
 
 **설명:** 이 분석을 수행하기 위한 스크립트(JSL)를 생성하고 표현식으로 반환합니다.
 
@@ -207,7 +207,7 @@ Show( t );
 
 ### Get Container
 
-**구문:** obj << Get Container
+**구문:** obj &lt;&lt; Get Container
 
 **설명:** 개체의 콘텐츠를 담고 있는 컨테이너 상자에 대한 참조를 반환합니다.
 
@@ -254,7 +254,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**구문:** obj << Get Data Table
+**구문:** obj &lt;&lt; Get Data Table
 
 **설명:** 데이터 테이블에 대한 참조를 반환합니다.
 
@@ -270,7 +270,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**구문:** obj << Get Group Platform
+**구문:** obj &lt;&lt; Get Group Platform
 
 **설명:** 이 플랫폼이 그룹의 일부인 경우 그룹 플랫폼 개체를 반환하고, 그렇지 않은 경우 Empty()를 반환합니다.
 
@@ -287,7 +287,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**구문:** obj << Get Script
+**구문:** obj &lt;&lt; Get Script
 
 **설명:** 이 분석을 수행하기 위한 스크립트(JSL)를 생성하고 표현식으로 반환합니다.
 
@@ -303,7 +303,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**구문:** obj << Get Script With Data Table
+**구문:** obj &lt;&lt; Get Script With Data Table
 
 **설명:** 이 데이터 테이블을 참조하는 분석을 수행하기 위한 스크립트(JSL)를 생성하고 표현식으로 반환합니다.
 
@@ -319,7 +319,7 @@ Show( t );
 
 ### Get Timing
 
-**구문:** obj << Get Timing
+**구문:** obj &lt;&lt; Get Timing
 
 **설명:** 플랫폼 시작 시간을 설정합니다.
 
@@ -335,7 +335,7 @@ Show( t );
 
 ### Get Web Support
 
-**구문:** obj << Get Web Support
+**구문:** obj &lt;&lt; Get Web Support
 
 **설명:** 표시 개체에 대한 대화식 HTML 지원 수준을 나타내는 숫자를 반환합니다. 1은 일부 또는 모든 요소가 지원됨을 의미하고 0은 지원되지 않음을 의미합니다.
 
@@ -351,7 +351,7 @@ Show( s );
 
 ### Get Where Expr
 
-**구문:** obj << Get Where Expr
+**구문:** obj &lt;&lt; Get Where Expr
 
 **설명:** By() 또는 Where()를 사용하여 플랫폼이 시작된 경우 데이터 부분집합에 대한 Where 표현식을 반환하고, 그렇지 않은 경우 Empty()를 반환합니다.
 
@@ -388,7 +388,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**구문:** obj << Local Data Filter
+**구문:** obj &lt;&lt; Local Data Filter
 
 **설명:** 데이터를 특정 그룹 또는 범위로 필터링합니다. 이 플랫폼에서만 사용 가능합니다.
 
@@ -444,7 +444,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**구문:** obj << Paste Local Data Filter
+**구문:** obj &lt;&lt; Paste Local Data Filter
 
 **설명:** 클립보드의 로컬 데이터 필터를 현재 보고서에 적용합니다.
 
@@ -463,7 +463,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**구문:** obj << Redo Analysis
+**구문:** obj &lt;&lt; Redo Analysis
 
 **설명:** 동일한 분석을 새 창에서 다시 실행합니다. 데이터가 변경된 경우에는 분석결과가 달라집니다.
 
@@ -478,7 +478,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**구문:** obj << Redo ByGroup Analysis
+**구문:** obj &lt;&lt; Redo ByGroup Analysis
 
 **설명:** 동일한 분석을 새 창에서 다시 실행합니다. 데이터가 변경된 경우에는 분석결과가 달라집니다.
 
@@ -498,7 +498,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**구문:** obj << Relaunch Analysis
+**구문:** obj &lt;&lt; Relaunch Analysis
 
 **설명:** 플랫폼 시작 창을 열고 보고서를 생성하는 데 사용된 설정을 불러옵니다.
 
@@ -513,7 +513,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**구문:** obj << Relaunch ByGroup
+**구문:** obj &lt;&lt; Relaunch ByGroup
 
 **설명:** 플랫폼 시작 창을 열고 보고서를 생성하는 데 사용된 설정을 불러옵니다.
 
@@ -533,7 +533,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**구문:** obj << Remove Column Switcher
+**구문:** obj &lt;&lt; Remove Column Switcher
 
 **설명:** 플랫폼에 추가된 가장 최근 열 전환기를 제거합니다.
 
@@ -550,7 +550,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**구문:** obj << Remove Local Data Filter
+**구문:** obj &lt;&lt; Remove Local Data Filter
 
 **설명:** 로컬 데이터 필터가 생성된 경우 로컬 데이터 필터를 제거하고 데이터 테이블의 모든 데이터를 직접 사용하도록 플랫폼을 복원합니다.
 
@@ -589,9 +589,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**구문:** obj << Report;
-
-Report( obj )
+**구문:** obj &lt;&lt; Report;Report( obj )
 
 **설명:** 보고서 개체에 대한 참조를 반환합니다.
 
@@ -608,7 +606,7 @@ Show( t );
 
 ### Report View
 
-**구문:** obj << Report View( "전체"|"요약" )
+**구문:** obj &lt;&lt; Report View( "전체"|"요약" )
 
 **설명:** 보고서 보기는 플랫폼 보고서에 표시되는 상세 수준을 결정합니다. Full은 모든 상세 정보를 표시하고 Summary는 플랫폼에 따라 선택된 콘텐츠만 표시합니다. 사용자 정의된 동작의 경우 표시 상자는 <<Set Summary Behavior 메시지를 지원합니다.
 
@@ -623,7 +621,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**구문:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**구문:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 데이터 테이블에 테이블 특성으로 저장합니다. 스크립트 이름을 지정할 수 있습니다. Append Suffix 옵션은 스크립트 이름에 숫자 접미사를 추가하여 이름이 같은 기존 스크립트와 구분합니다. Prompt 옵션은 사용자에게 스크립트 이름을 지정하라는 메시지를 표시합니다. Replace 옵션은 이름이 같은 기존 스크립트를 바꿉니다.
 
@@ -643,7 +641,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**구문:** obj << Save ByGroup Script to Journal
+**구문:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 이 스크립트가 포함된 저널에 버튼을 추가합니다.
 
@@ -663,7 +661,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**구문:** obj << Save ByGroup Script to Script Window
+**구문:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 현재 스크립트 텍스트 창에 추가합니다.
 
@@ -683,7 +681,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**구문:** obj << Save Script for All Objects
+**구문:** obj &lt;&lt; Save Script for All Objects
 
 **설명:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -698,7 +696,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**구문:** obj << Save Script for All Objects To Data Table( <name> )
+**구문:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **설명:** 모든 보고서 개체에 대한 스크립트를 현재 데이터 테이블에 저장합니다. 이 옵션은 창에 여러 보고서가 있을 때 유용합니다. 스크립트 이름을 따옴표로 묶어 지정하는 경우 외에는 첫 번째 플랫폼 이름을 따라 스크립트 이름이 지정됩니다.
 
@@ -736,7 +734,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**구문:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**구문:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 데이터 테이블에 테이블 특성으로 저장합니다.
 
@@ -751,7 +749,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**구문:** obj << Save Script to Journal
+**구문:** obj &lt;&lt; Save Script to Journal
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 이 스크립트가 포함된 저널에 버튼을 추가합니다.
 
@@ -766,7 +764,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**구문:** obj << Save Script to Report
+**구문:** obj &lt;&lt; Save Script to Report
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 보고서 자체에 표시합니다. 수행된 작업에 대한 인쇄된 기록을 유지하려는 경우에 유용합니다.
 
@@ -781,7 +779,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**구문:** obj << Save Script to Script Window
+**구문:** obj &lt;&lt; Save Script to Script Window
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 현재 스크립트 텍스트 창에 추가합니다.
 
@@ -857,7 +855,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**구문:** obj << Sync to Data Table Changes
+**구문:** obj &lt;&lt; Sync to Data Table Changes
 
 **설명:** 제외 항목 및 데이터 변경 사항과 동기화합니다.
 
@@ -874,7 +872,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**구문:** obj << Title( "new title" )
+**구문:** obj &lt;&lt; Title( "new title" )
 
 **설명:** 플랫폼의 제목을 설정합니다.
 
@@ -889,7 +887,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**구문:** obj << Top Report
+**구문:** obj &lt;&lt; Top Report
 
 **설명:** 보고서의 루트 노드에 대한 참조를 반환합니다.
 
@@ -906,7 +904,7 @@ Show( t );
 
 ### Transform Column
 
-**구문:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**구문:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **설명:** 개체의 로컬 컨텍스트(대개 플랫폼)에서 변환 열을 생성합니다. 변환 열은 플랫폼의 수명 동안에만 활성화됩니다.
 
@@ -927,7 +925,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**구문:** obj << View Web XML
+**구문:** obj &lt;&lt; View Web XML
 
 **설명:** 대화식 HTML 보고서를 생성하는 데 사용된 XML 코드를 반환합니다.
 
@@ -942,9 +940,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**구문:** obj = Categorical(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Categorical(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 보고서에 대해 생성할 창 유형을 설정합니다. 기본적으로 Visible 보고서 창이 생성됩니다. Invisible 창은 화면에 나타나지 않지만 Window()와 같은 함수로 검색할 수 있습니다. Private 창은 대부분의 창 메시지에 응답하지만 검색할 수 없으며 보고서 개체를 통해 처리해야 합니다.
 
@@ -981,7 +977,7 @@ obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
 
 ### By
 
-**구문:** obj << By( column(s) )
+**구문:** obj &lt;&lt; By( column(s) )
 
 ```jsl
 
@@ -998,7 +994,7 @@ obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ), By( 
 
 ### Freq
 
-**구문:** obj << Freq( column )
+**구문:** obj &lt;&lt; Freq( column )
 
 ```jsl
 
@@ -1011,7 +1007,7 @@ obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ), Freq
 
 ### Grouping Category
 
-**구문:** obj << Grouping Category( column(s) )
+**구문:** obj &lt;&lt; Grouping Category( column(s) )
 
 ```jsl
 
@@ -1023,7 +1019,7 @@ obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
 
 ### ID
 
-**구문:** obj << ID( column )
+**구문:** obj &lt;&lt; ID( column )
 
 ```jsl
 
@@ -1035,7 +1031,7 @@ obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
 
 ### Sample Size
 
-**구문:** obj << Sample Size( column )
+**구문:** obj &lt;&lt; Sample Size( column )
 
 ```jsl
 
@@ -1047,7 +1043,7 @@ obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
 
 ### X
 
-**구문:** obj << X( column(s) )
+**구문:** obj &lt;&lt; X( column(s) )
 
 ```jsl
 
@@ -1061,7 +1057,7 @@ obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
 
 ### Agreement Statistic
 
-**구문:** obj << Agreement Statistic( state=0|1 )
+**구문:** obj &lt;&lt; Agreement Statistic( state=0|1 )
 
 **설명:** 평가자 간의 합치 정도와 합치성 결여의 대칭 여부를 검정합니다. 평가자 합치도 반응에만 사용할 수 있습니다. 기본적으로 설정되어 있습니다.
 
@@ -1081,9 +1077,7 @@ obj << Agreement Statistic( 1 );
 
 ### Aligned Responses
 
-**구문:** obj = Categorical(...Aligned Responses( columns )...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Categorical(...Aligned Responses( columns )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 응답 수준이 동일한 여러 열의 데이터를 단일 보고서에 요약합니다.
 
@@ -1097,7 +1091,7 @@ obj = dt << Categorical( Aligned Responses( :First Survey, :Second Survey ), Fre
 
 ### Arrange in Rows
 
-**구문:** obj << Arrange in Rows( number )
+**구문:** obj &lt;&lt; Arrange in Rows( number )
 
 **설명:** 페이지가 가로로 표시되도록 보고서를 배열합니다. 각 행에 표시할 보고서 수를 지정하십시오.
 
@@ -1119,7 +1113,7 @@ obj << Arrange in Rows( 1 );
 
 ### Binomial
 
-**구문:** obj << Binomial( state=0|1 )
+**구문:** obj &lt;&lt; Binomial( state=0|1 )
 
 **설명:** 각 범주에 대해 이항 분포를 가정하고 응답 수준의 독립성에 대한 카이제곱 검정을 수행합니다. 참고: 다중 응답에만 사용할 수 있습니다.
 
@@ -1134,7 +1128,7 @@ obj << Homogeneity Test( 1 );
 
 ### Cell Chisq
 
-**구문:** obj << Cell Chisq( state=0|1 )
+**구문:** obj &lt;&lt; Cell Chisq( state=0|1 )
 
 **설명:** 독립성 카이제곱 검정을 위해 테이블에서 각 셀의 p 값을 표시하거나 숨깁니다. p 값은 개수가 기대 개수보다 큰지 아니면 작은지에 따라 색상과 음영이 지정됩니다.
 
@@ -1149,7 +1143,7 @@ obj << Cell Chisq( 1 );
 
 ### Cell Chisq FDR
 
-**구문:** obj << Cell Chisq FDR( state=0|1 )
+**구문:** obj &lt;&lt; Cell Chisq FDR( state=0|1 )
 
 **설명:** 독립성 카이제곱 검정을 위해 테이블에서 각 셀의 FDR(False Discovery Rate) 수정 p 값을 표시하거나 숨깁니다. FDR 수정 p 값은 개수가 기대 개수보다 큰지 아니면 작은지에 따라 색상과 음영이 지정됩니다.
 
@@ -1166,7 +1160,7 @@ obj << Cell Chisq( 1 );
 
 ### ChiSquare Test Choices
 
-**구문:** obj << ChiSquare Test Choices( "LR과 Pearson 둘 다"|"LR만"|"Pearson만" )
+**구문:** obj &lt;&lt; ChiSquare Test Choices( "LR과 Pearson 둘 다"|"LR만"|"Pearson만" )
 
 **설명:** 동질성 검정에 표시되는 검정(가능도비 카이제곱, Pearson 카이제곱 또는 둘 다)을 지정합니다. 단일 응답에만 사용할 수 있습니다.
 
@@ -1182,7 +1176,7 @@ obj << Test Response Homogeneity( 1 );
 
 ### Compare Each Cell
 
-**구문:** obj << Compare Each Cell( state=0|1 )
+**구문:** obj &lt;&lt; Compare Each Cell( state=0|1 )
 
 **설명:** 그룹화 변수의 수준 간에 각 응답 수준을 다른 모든 수준 조합과 비교합니다.
 
@@ -1197,7 +1191,7 @@ obj << Compare Each Cell( 1 );
 
 ### Compare Each Cell FDR
 
-**구문:** obj << Compare Each Cell FDR( state=0|1 )
+**구문:** obj &lt;&lt; Compare Each Cell FDR( state=0|1 )
 
 **설명:** FDR(False Discovery Rate) 수정을 사용하여 그룹화 변수의 수준 간에 각 응답 수준을 다른 모든 수준 조합과 비교합니다.
 
@@ -1214,7 +1208,7 @@ obj << Compare Each Cell FDR( 1 );
 
 ### Compare Each Sample
 
-**구문:** obj << Compare Each Sample( state=0|1 )
+**구문:** obj &lt;&lt; Compare Each Sample( state=0|1 )
 
 **설명:** 그룹화 변수의 수준 간 응답을 비교합니다.
 
@@ -1229,7 +1223,7 @@ obj << Compare Each Sample( 1 );
 
 ### Compare Each Sample FDR
 
-**구문:** obj << Compare Each Sample FDR( state=0|1 )
+**구문:** obj &lt;&lt; Compare Each Sample FDR( state=0|1 )
 
 **설명:** FDR(False Discovery Rate) 수정을 사용하여 그룹화 변수의 수준 간 응답을 비교합니다.
 
@@ -1246,7 +1240,7 @@ obj << Compare Each Sample FDR( 1 );
 
 ### Conditional Association
 
-**구문:** obj << Conditional Association( state=0|1 )
+**구문:** obj &lt;&lt; Conditional Association( state=0|1 )
 
 **설명:** 행에 동일한 응답이 있는 경우 열에 응답이 포함되는 비율을 표시하거나 숨깁니다. 다중 응답, 다중 구분, ID별 다중 응답 모형(ID 내 고유 발생 선택됨)에만 사용할 수 있습니다.
 
@@ -1267,9 +1261,7 @@ obj = dt << Categorical(
 
 ### Confidence Interval Coverage
 
-**구문:** obj = Categorical(...Confidence Interval Coverage( number=0.95 )...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Categorical(...Confidence Interval Coverage( number=0.95 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 응답 비율 및 점유율에 대한 신뢰 구간의 범위를 설정합니다. 범위는 (1-α)와 같습니다. 기본값은 "0.95"입니다.
 
@@ -1288,7 +1280,7 @@ obj = dt << Categorical(
 
 ### Confidence Limits Format
 
-**구문:** obj << Confidence Limits Format( format, <options> )
+**구문:** obj &lt;&lt; Confidence Limits Format( format, &lt;options&gt; )
 
 **설명:** 테이블의 점유율 및 비율에 대한 신뢰 한계 형식을 지정합니다. 기본값은 "백분율", 6, 2입니다.
 
@@ -1311,7 +1303,7 @@ obj << Confidence Limits Format( "Percent", 6, 0 );
 
 ### Contents Summary
 
-**구문:** obj << Contents Summary( state=0|1 )
+**구문:** obj &lt;&lt; Contents Summary( state=0|1 )
 
 **설명:** 모든 검정과 p 값을 하나의 보고서로 모읍니다.
 
@@ -1326,9 +1318,7 @@ obj << Contents Summary( 1 );
 
 ### Count Missing Responses
 
-**구문:** obj = Categorical(...Count Missing Responses( state=0|1 )...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Categorical(...Count Missing Responses( state=0|1 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 결측값을 응답 범주로 포함합니다.
 
@@ -1342,7 +1332,7 @@ Categorical( X( :Trial 1 ), Count Missing Responses( 1 ), Responses( :Trial 4 ) 
 
 ### Count Test
 
-**구문:** obj << Count Test( state=0|1 )
+**구문:** obj &lt;&lt; Count Test( state=0|1 )
 
 **설명:** Poisson 회귀를 사용하여 비율의 독립성에 대한 카이제곱 검정을 수행합니다. 참고: 다중 응답에만 사용할 수 있습니다.
 
@@ -1357,7 +1347,7 @@ obj << Count Test( 1 );
 
 ### Crosstab
 
-**구문:** obj << Crosstab( state=0|1 )
+**구문:** obj &lt;&lt; Crosstab( state=0|1 )
 
 **설명:** 열을 정의하는 응답 수준과 행을 정의하는 그룹화 변수 수준을 사용하여 개수 교차표를 생성합니다. 기본적으로 설정되어 있습니다.
 
@@ -1373,7 +1363,7 @@ obj << Crosstab( 1 );
 
 ### Crosstab Transposed
 
-**구문:** obj << Crosstab Transposed( state=0|1 )
+**구문:** obj &lt;&lt; Crosstab Transposed( state=0|1 )
 
 **설명:** 행을 정의하는 응답 수준과 열을 정의하는 그룹화 변수 수준을 사용하여 개수 교차표를 생성합니다.
 
@@ -1388,7 +1378,7 @@ obj << Crosstab Transposed( 1 );
 
 ### Exclude Nonresponses
 
-**구문:** obj << Exclude Nonresponses( state=0|1 )
+**구문:** obj &lt;&lt; Exclude Nonresponses( state=0|1 )
 
 **설명:** 다중 응답 범주를 비교할 때 개수 및 동질성 검정에 대해 무응답을 제외합니다. 빈 셀 또는 결측 셀이 무응답으로 간주됩니다. 이러한 셀에는 별도의 범주를 사용하지 않는 것이 좋습니다.
 
@@ -1410,7 +1400,7 @@ obj << Exclude Nonresponses( 1 );
 
 ### FDR Adjusted PValues
 
-**구문:** obj << FDR Adjusted PValues( state=0|1 )
+**구문:** obj &lt;&lt; FDR Adjusted PValues( state=0|1 )
 
 **설명:** FDR(False Discovery Rate) 수정 p 값(Benjamini and Hochberg, 1995)은 p 값이 많고 일부 검정이 의도치 않게 유의성을 쉽게 선언할 때 사용됩니다.
 
@@ -1431,7 +1421,7 @@ obj << FDR Adjusted PValues( 1 );
 
 ### Filter
 
-**구문:** obj << Filter( state=0|1 )
+**구문:** obj &lt;&lt; Filter( state=0|1 )
 
 **설명:** 데이터를 로컬에서 특정 그룹 또는 범위로 필터링합니다.
 
@@ -1455,7 +1445,7 @@ obj << Filter( 0 );
 
 ### Force Crosstab Shading
 
-**구문:** obj << Force Crosstab Shading( state=0|1 )
+**구문:** obj &lt;&lt; Force Crosstab Shading( state=0|1 )
 
 **설명:** 음영 표시하지 않도록 전역 환경 설정에 지정되어 있더라도 교차표 보고서에 음영을 사용합니다. 기본적으로 설정되어 있습니다.
 
@@ -1472,7 +1462,7 @@ obj << Force Crosstab Shading( 1 );
 
 ### Force Labels Horizontal
 
-**구문:** obj << Force Labels Horizontal( state=0|1 )
+**구문:** obj &lt;&lt; Force Labels Horizontal( state=0|1 )
 
 **설명:** 텍스트 길이에 관계없이 교차표 테이블에 가로 라벨을 사용합니다. 라벨 텍스트가 회전하지 않고 줄바꿈됩니다.
 
@@ -1490,13 +1480,13 @@ obj << Force Labels Horizontal( 1 );
 
 ### Format Elements
 
-**구문:** obj << Format Elements
+**구문:** obj &lt;&lt; Format Elements
 
 **설명:** 보고서의 다양한 요소에 대한 형식을 지정할 수 있는 창을 엽니다.
 
 ### Frequencies
 
-**구문:** obj << Frequencies( state=0|1 )
+**구문:** obj &lt;&lt; Frequencies( state=0|1 )
 
 **설명:** 보고서에 빈도 테이블을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -1512,7 +1502,7 @@ obj << Frequencies( 1 );
 
 ### Frequencies Format
 
-**구문:** obj << Frequencies Format( format, <options> )
+**구문:** obj &lt;&lt; Frequencies Format( format, &lt;options&gt; )
 
 **설명:** 테이블의 빈도 값 형식을 지정합니다. 기본값은 "고정 소수점", 7, 0입니다.
 
@@ -1528,7 +1518,7 @@ obj << Frequencies Format( "Fixed Dec", 7, 2 );
 
 ### Frequency Chart
 
-**구문:** obj << Frequency Chart( state=0|1 )
+**구문:** obj &lt;&lt; Frequency Chart( state=0|1 )
 
 **설명:** 보고서에 빈도 차트를 표시하거나 숨깁니다.
 
@@ -1543,9 +1533,7 @@ obj << Frequency Chart( 1 );
 
 ### Grouping Option
 
-**구문:** obj = Categorical(...Grouping Option( "조합"|"개별"|"둘 다" )...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Categorical(...Grouping Option( "조합"|"개별"|"둘 다" )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** X 변수에 대한 그룹화 방법을 설정합니다.
 
@@ -1563,7 +1551,7 @@ obj = dt << Categorical(
 
 ### Hide Nonsignificant
 
-**구문:** obj << Hide Nonsignificant( state=0|1 )
+**구문:** obj &lt;&lt; Hide Nonsignificant( state=0|1 )
 
 **설명:** 유의하지 않은 보고서는 표시하지 않습니다.
 
@@ -1587,13 +1575,13 @@ obj << Hide Nonsignificant( 1 );
 
 ### Highlight Cells
 
-**구문:** obj << Highlight Cells
+**구문:** obj &lt;&lt; Highlight Cells
 
 **설명:** 지정된 조건을 충족하는 셀을 강조 표시합니다.
 
 ### Homogeneity Test
 
-**구문:** obj << Homogeneity Test( state=0|1 )
+**구문:** obj &lt;&lt; Homogeneity Test( state=0|1 )
 
 **설명:** 각 범주에 대해 이항 분포를 가정하고 응답 수준의 독립성에 대한 카이제곱 검정을 수행합니다. 참고: 다중 응답에만 사용할 수 있습니다.
 
@@ -1632,9 +1620,7 @@ obj = Categorical(
 
 ### Include Responses Not in Data
 
-**구문:** obj = Categorical(...Include Responses Not in Data( state=0|1 )...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Categorical(...Include Responses Not in Data( state=0|1 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 데이터에 없더라도 값 라벨이 있는 응답 범주를 표시합니다.
 
@@ -1653,9 +1639,7 @@ obj << Include Responses Not in Data( 1 );
 
 ### Indicator Group
 
-**구문:** obj = Categorical(...Indicator Group( columns )...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Categorical(...Indicator Group( columns )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 응답이 여러 표시자 열에 있는 경우 다중 응답 변수의 데이터를 요약합니다.
 
@@ -1674,7 +1658,7 @@ obj = dt << Categorical(
 
 ### Mean Confidence Interval
 
-**구문:** obj << Mean Confidence Interval( state=0|1 )
+**구문:** obj &lt;&lt; Mean Confidence Interval( state=0|1 )
 
 **설명:** 평균의 신뢰 구간을 표시하거나 숨깁니다.
 
@@ -1691,7 +1675,7 @@ obj << Mean Confidence Interval( 1 );
 
 ### Mean Score
 
-**구문:** obj << Mean Score( state=0|1 )
+**구문:** obj &lt;&lt; Mean Score( state=0|1 )
 
 **설명:** 교차표 테이블에 원시 숫자 코드 또는 값 스코어를 기반으로 평균 스코어를 표시합니다.
 
@@ -1706,7 +1690,7 @@ obj << Mean Score( 1 );
 
 ### Mean Score Comparisons
 
-**구문:** obj << Mean Score Comparisons( state=0|1 )
+**구문:** obj &lt;&lt; Mean Score Comparisons( state=0|1 )
 
 **설명:** 그룹화 범주 간 평균 스코어를 비교합니다.
 
@@ -1721,7 +1705,7 @@ obj << Mean Score Comparisons( 1 );
 
 ### Mean Score Comparisons FDR
 
-**구문:** obj << Mean Score Comparisons FDR( state=0|1 )
+**구문:** obj &lt;&lt; Mean Score Comparisons FDR( state=0|1 )
 
 **설명:** 그룹화 범주 간 평균 스코어를 비교합니다.
 
@@ -1738,7 +1722,7 @@ obj << Mean Score Comparisons FDR( 1 );
 
 ### Mean Score Comparisons as Suffix
 
-**구문:** obj << Mean Score Comparisons as Suffix( state=0|1 )
+**구문:** obj &lt;&lt; Mean Score Comparisons as Suffix( state=0|1 )
 
 **설명:** 그룹화 범주 간 평균 스코어를 비교합니다.
 
@@ -1753,7 +1737,7 @@ obj << Mean Score Comparisons Suffixed( 1 );
 
 ### Mean Std Error
 
-**구문:** obj << Mean Std Error( state=0|1 )
+**구문:** obj &lt;&lt; Mean Std Error( state=0|1 )
 
 **설명:** 평균의 표준 오차를 표시하거나 숨깁니다.
 
@@ -1770,7 +1754,7 @@ obj << Mean Std Error( 1 );
 
 ### Means Format
 
-**구문:** obj << Means Format( format, <options> )
+**구문:** obj &lt;&lt; Means Format( format, &lt;options&gt; )
 
 **설명:** 테이블의 평균 스코어 형식을 지정합니다. 기본값은 "고정 소수점", 6, 2입니다.
 
@@ -1789,9 +1773,7 @@ obj << Means Format( "Fixed", 6, 4 );
 
 ### Multiple Delimited
 
-**구문:** obj = Categorical(...Multiple Delimited( column )...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Categorical(...Multiple Delimited( column )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 응답이 단일 열에 있고 각 응답이 쉼표, 세미콜론 또는 탭으로 구분되는 다중 응답 변수의 데이터를 요약합니다.
 
@@ -1805,9 +1787,7 @@ obj = dt << Categorical( Multiple Delimited( :failureS ), ID( :ID ), X( :clean, 
 
 ### Multiple Response
 
-**구문:** obj = Categorical(...Multiple Response( columns )...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Categorical(...Multiple Response( columns )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 가능성 있는 각 응답이 고유의 개별 열에 기록된 경우 다중 응답 변수의 데이터를 요약합니다.
 
@@ -1825,9 +1805,7 @@ obj = dt << Categorical(
 
 ### Multiple Response by ID
 
-**구문:** obj = Categorical(...Multiple Response by ID( column )...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Categorical(...Multiple Response by ID( column )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 단일 응답 열과 개체 ID를 포함하는 두 번째 열이 있는 경우 다중 응답 변수의 데이터를 요약합니다.
 
@@ -1847,9 +1825,7 @@ obj = dt << Categorical(
 
 ### Order Response Levels High to Low
 
-**구문:** obj = Categorical(...Order Response Levels High to Low( state=0|1 )...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Categorical(...Order Response Levels High to Low( state=0|1 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 가장 큰 값이 있는 범주가 맨 위에 오도록 보고서를 재정렬합니다.
 
@@ -1867,7 +1843,7 @@ obj = dt << Categorical(
 
 ### Order by Significance
 
-**구문:** obj << Order by Significance( state=0|1 )
+**구문:** obj &lt;&lt; Order by Significance( state=0|1 )
 
 **설명:** 유의성이 가장 높은 보고서가 맨 위에 표시되도록 보고서를 재정렬합니다.
 
@@ -1891,7 +1867,7 @@ obj << Order by Significance( 1 );
 
 ### Poisson
 
-**구문:** obj << Poisson( state=0|1 )
+**구문:** obj &lt;&lt; Poisson( state=0|1 )
 
 **설명:** Poisson 회귀를 사용하여 비율의 독립성에 대한 카이제곱 검정을 수행합니다. 참고: 다중 응답에만 사용할 수 있습니다.
 
@@ -1906,7 +1882,7 @@ obj << Count Test( 1 );
 
 ### Rate Confidence Interval
 
-**구문:** obj << Rate Confidence Interval( state=0|1 )
+**구문:** obj &lt;&lt; Rate Confidence Interval( state=0|1 )
 
 **설명:** 비율 확률의 신뢰 구간을 표시하거나 숨깁니다. 신뢰 구간은 Poisson 선형 모형의 표준 오차를 사용하는 정규 구간입니다.
 
@@ -1921,7 +1897,7 @@ obj << Rate Confidence Interval( 1 );
 
 ### Rate Per Case
 
-**구문:** obj << Rate Per Case( state=0|1 )
+**구문:** obj &lt;&lt; Rate Per Case( state=0|1 )
 
 **설명:** 보고서에 사례별 비율 테이블을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -1944,7 +1920,7 @@ obj << Rate Per Case( 1 );
 
 ### Rate per Case Responding
 
-**구문:** obj << Rate per Case Responding( state=0|1 )
+**구문:** obj &lt;&lt; Rate per Case Responding( state=0|1 )
 
 **설명:** 사례별 응답률을 표시하거나 숨깁니다(결측값 제외).
 
@@ -1965,9 +1941,7 @@ obj << Rate Per Case Responding( 1 );
 
 ### Rater Agreement
 
-**구문:** obj = Categorical(...Rater Agreement( columns )...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Categorical(...Rater Agreement( columns )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 각 열이 서로 다른 사람(평가자)이 제공한 동일한 질문 또는 항목에 대한 평가인 경우 여러 열의 데이터를 요약합니다.
 
@@ -1981,7 +1955,7 @@ obj = dt << Categorical( Rater Agreement( :First Survey, :Second Survey ), Freq(
 
 ### Relative Risk
 
-**구문:** obj << Relative Risk( state=0|1, {}, {level of interest} )
+**구문:** obj &lt;&lt; Relative Risk( state=0|1, {}, {level of interest} )
 
 **설명:** 각 응답 수준에 대한 2수준 그룹화 변수의 상대 위험도를 표시하거나 숨깁니다. 그룹화 변수의 수준이 두 개인 경우, 응답이 다중 응답이거나 수준이 두 개인 경우, &apos;ID 내 고유 발생&apos; 옵션을 선택한 경우에 사용할 수 있습니다.
 
@@ -2002,9 +1976,7 @@ obj << Relative Risk( 1, {}, {"after"} );
 
 ### Repeated Measures
 
-**구문:** obj = Categorical(...Repeated Measures( columns )...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Categorical(...Repeated Measures( columns )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 각 열에 여러 시점의 동일한 질문에 대한 응답이 포함된 경우 여러 열의 데이터를 요약합니다.
 
@@ -2018,9 +1990,7 @@ obj = dt << Categorical( Repeated Measures( :First Survey, :Second Survey ), Fre
 
 ### Response Frequencies
 
-**구문:** obj = Categorical(...Response Frequencies( columns )...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Categorical(...Response Frequencies( columns )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 가능성 있는 각 응답의 빈도가 고유의 열에 기록된 경우 다중 응답 변수를 요약합니다.
 
@@ -2040,7 +2010,7 @@ obj = dt << Categorical(
 
 ### Response Levels
 
-**구문:** obj << Response Levels( state=0|1 )
+**구문:** obj &lt;&lt; Response Levels( state=0|1 )
 
 **설명:** 각 응답에 대한 데이터 수준을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2057,9 +2027,7 @@ obj << Response Levels( 1 );
 
 ### Responses
 
-**구문:** obj = Categorical(...Responses( column )...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Categorical(...Responses( column )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 단일 열의 응답을 요약합니다. 여러 열이 선택된 경우에는 범주형 보고서에 각 개별 열에 대한 별도의 보고서가 포함됩니다.
 
@@ -2073,7 +2041,7 @@ obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
 
 ### Save Contingency Table
 
-**구문:** obj << Save Contingency Table
+**구문:** obj &lt;&lt; Save Contingency Table
 
 **설명:** 교차표 테이블의 값을 새 데이터 테이블에 저장합니다. 새 테이블은 원래 열 이름을 사용합니다.
 
@@ -2090,13 +2058,13 @@ obj << Save Contingency Table;
 
 ### Save DocX File
 
-**구문:** obj << Save DocX File
+**구문:** obj &lt;&lt; Save DocX File
 
 **설명:** Undocumented and Experimental Feature
 
 ### Save Excel File
 
-**구문:** obj << Save Excel File
+**구문:** obj &lt;&lt; Save Excel File
 
 **설명:** 테이블을 Excel 스프레드시트에 저장합니다.
 
@@ -2111,7 +2079,7 @@ obj << Save Excel File( "$DOCUMENTS\ExcelCarSize.xlsx", Separate Rows for Each C
 
 ### Save Frequencies
 
-**구문:** obj << Save Frequencies
+**구문:** obj &lt;&lt; Save Frequencies
 
 **설명:** 빈도를 새 테이블에 저장합니다.
 
@@ -2126,7 +2094,7 @@ obj << Save Frequencies;
 
 ### Save Mean Scores
 
-**구문:** obj << Save Mean Scores
+**구문:** obj &lt;&lt; Save Mean Scores
 
 **설명:** 각 표본 그룹에 대한 평균 스코어를 새 테이블에 저장합니다.
 
@@ -2141,7 +2109,7 @@ obj << Save Mean Scores;
 
 ### Save Rate Per Case
 
-**구문:** obj << Save Rate Per Case
+**구문:** obj &lt;&lt; Save Rate Per Case
 
 **설명:** 사례별 비율을 새 테이블에 저장합니다.
 
@@ -2163,7 +2131,7 @@ obj << Save Rate Per Case;
 
 ### Save Share of Responses
 
-**구문:** obj << Save Share of Responses
+**구문:** obj &lt;&lt; Save Share of Responses
 
 **설명:** 응답 점유율을 새 테이블에 저장합니다.
 
@@ -2178,7 +2146,7 @@ obj << Save Share of Responses;
 
 ### Save Stacked Table
 
-**구문:** obj << Save Stacked Table
+**구문:** obj &lt;&lt; Save Stacked Table
 
 **설명:** 교차표 테이블의 값을 새 데이터 테이블에 저장합니다. 새 테이블은 일반 열 이름을 사용합니다.
 
@@ -2195,7 +2163,7 @@ obj << Save Stacked Table;
 
 ### Save Test Homogeneity
 
-**구문:** obj << Save Test Homogeneity
+**구문:** obj &lt;&lt; Save Test Homogeneity
 
 **설명:** 동질성 검정 결과를 새 테이블에 저장합니다.
 
@@ -2210,7 +2178,7 @@ obj << Save Test Homogeneity;
 
 ### Save Test Rates
 
-**구문:** obj << Save Test Rates
+**구문:** obj &lt;&lt; Save Test Rates
 
 **설명:** &apos;다중 응답 검정&apos; 옵션의 결과를 새 데이터 테이블에 저장합니다.
 
@@ -2232,7 +2200,7 @@ obj << Save Test Rates;
 
 ### Save Transposed Frequencies
 
-**구문:** obj << Save Transposed Frequencies
+**구문:** obj &lt;&lt; Save Transposed Frequencies
 
 **설명:** 전치된 빈도를 새 테이블에 저장합니다.
 
@@ -2247,7 +2215,7 @@ obj << Save Transposed Frequencies;
 
 ### Save Transposed Rate Per Case
 
-**구문:** obj << Save Transposed Rate Per Case
+**구문:** obj &lt;&lt; Save Transposed Rate Per Case
 
 **설명:** 변환된 사례별 비율을 새 테이블에 저장합니다.
 
@@ -2269,7 +2237,7 @@ obj << Save Transposed Rate Per Case;
 
 ### Save Transposed Share of Responses
 
-**구문:** obj << Save Transposed Share of Responses
+**구문:** obj &lt;&lt; Save Transposed Share of Responses
 
 **설명:** 전치된 응답 점유율을 새 테이블에 저장합니다.
 
@@ -2284,7 +2252,7 @@ obj << Save Transposed Share of Responses;
 
 ### Save tTests and pValues
 
-**구문:** obj << Save tTests and pValues
+**구문:** obj &lt;&lt; Save tTests and pValues
 
 **설명:** 평균 비교 검정의 p 값과 t-검정을 새 데이터 테이블에 저장합니다.
 
@@ -2299,7 +2267,7 @@ obj << Save ttests and pvalues;
 
 ### Share Chart
 
-**구문:** obj << Share Chart( state=0|1 )
+**구문:** obj &lt;&lt; Share Chart( state=0|1 )
 
 **설명:** 보고서에 점유율 차트를 표시하거나 숨깁니다.
 
@@ -2315,7 +2283,7 @@ obj << Share Chart( 1 );
 
 ### Share Confidence Interval
 
-**구문:** obj << Share Confidence Interval( state=0|1 )
+**구문:** obj &lt;&lt; Share Confidence Interval( state=0|1 )
 
 **설명:** 응답 점유율 확률의 신뢰 구간을 표시하거나 숨깁니다. 신뢰 구간은 Wilson 스코어 검정 방법을 사용하여 생성됩니다.
 
@@ -2330,7 +2298,7 @@ obj << Share Confidence Interval( 1 );
 
 ### Share Of Responses
 
-**구문:** obj << Share Of Responses( state=0|1 )
+**구문:** obj &lt;&lt; Share Of Responses( state=0|1 )
 
 **설명:** 보고서에 응답 점유율 테이블을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2346,7 +2314,7 @@ obj << Share of Responses( 1 );
 
 ### Shares and Rates Format
 
-**구문:** obj << Shares and Rates Format( format, <options> )
+**구문:** obj &lt;&lt; Shares and Rates Format( format, &lt;options&gt; )
 
 **설명:** 테이블의 점유율, 비율 및 응답률 값 형식을 지정합니다. 기본값은 "백분율", 6, 1입니다.
 
@@ -2364,9 +2332,7 @@ obj << Shares and Rates Format( "Percent", 7, 2 );
 
 ### Shorten Labels
 
-**구문:** obj = Categorical(...Shorten Labels( state=0|1 )...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Categorical(...Shorten Labels( state=0|1 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 공통 접두사 및 접미사를 제거하여 라벨 길이를 짧게 만듭니다.
 
@@ -2388,7 +2354,7 @@ obj << Shorten Labels( 1 );
 
 ### Show Columns Used in Report
 
-**구문:** obj << Show Columns Used in Report( state=0|1 )
+**구문:** obj &lt;&lt; Show Columns Used in Report( state=0|1 )
 
 **설명:** 보고서에 사용된 열 정보를 표시하거나 숨깁니다. 이 옵션은 SPSS 이름/SAS 이름 또는 SPSS 라벨/SAS 라벨 열 특성을 가진 열에만 영향을 줍니다.
 
@@ -2404,13 +2370,13 @@ obj << Show Columns Used in Report( 1 );
 
 ### Show Highlight Legend
 
-**구문:** obj << Show Highlight Legend( state=0|1 )
+**구문:** obj &lt;&lt; Show Highlight Legend( state=0|1 )
 
 **설명:** 기본적으로 설정되어 있습니다.
 
 ### Show Supercategories
 
-**구문:** obj << Show Supercategories( state=0|1 )
+**구문:** obj &lt;&lt; Show Supercategories( state=0|1 )
 
 **설명:** 상위 범주를 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2434,7 +2400,7 @@ obj << Show Supercategories( 1 );
 
 ### Show Warnings
 
-**구문:** obj << Show Warnings( state=0|1 )
+**구문:** obj &lt;&lt; Show Warnings( state=0|1 )
 
 **설명:** 작은 표본 크기와 관련된 카이제곱 검정에 대한 경고를 표시합니다.
 
@@ -2453,7 +2419,7 @@ obj << Show Warnings( 1 );
 
 ### Std Dev Format
 
-**구문:** obj << Std Dev Format( format, <options> )
+**구문:** obj &lt;&lt; Std Dev Format( format, &lt;options&gt; )
 
 **설명:** 테이블의 표준편차 스코어 형식을 지정합니다. 기본값은 "고정 소수점", 6, 2입니다.
 
@@ -2472,7 +2438,7 @@ obj << Std Dev Format( "Fixed", 6, 4 );
 
 ### Std Dev Score
 
-**구문:** obj << Std Dev Score( state=0|1 )
+**구문:** obj &lt;&lt; Std Dev Score( state=0|1 )
 
 **설명:** 교차표 테이블에 원시 숫자 코드 또는 값 스코어를 기반으로 표준편차 스코어를 표시합니다.
 
@@ -2487,9 +2453,7 @@ obj << Std Dev Score( 1 );
 
 ### Structured
 
-**구문:** obj = Categorical(...Structured( Column * nestedColumn ... + rightColumn, sideColumn + lowerColumns...  )...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Categorical(...Structured( Column * nestedColumn ... + rightColumn, sideColumn + lowerColumns... )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 둘 이상의 변수에 대한 정형 교차표를 생성합니다.
 
@@ -2505,7 +2469,7 @@ obj = dt << Categorical(
 
 ### Supercategories
 
-**구문:** obj << Supercategories( column, ({Group (name, {level1, level2, ... levelN})}) )
+**구문:** obj &lt;&lt; Supercategories( column, ({Group (name, {level1, level2, ... levelN})}) )
 
 **설명:** 반응 범주를 로컬로 집계하도록 상위 범주를 지정합니다.
 
@@ -2526,7 +2490,7 @@ obj = dt << Categorical(
 
 ### Test Response Homogeneity
 
-**구문:** obj << Test Response Homogeneity( state=0|1 )
+**구문:** obj &lt;&lt; Test Response Homogeneity( state=0|1 )
 
 **설명:** 가능도비 검정과 Pearson 카이제곱 검정을 모두 사용하여 응답 열의 동질성을 검정합니다. 단일 응답에만 사용할 수 있습니다.
 
@@ -2541,7 +2505,7 @@ obj << Test Response Homogeneity( 1 );
 
 ### Total Cases
 
-**구문:** obj << Total Cases( state=0|1 )
+**구문:** obj &lt;&lt; Total Cases( state=0|1 )
 
 **설명:** 다중 응답 변수의 경우 교차표 테이블에 총 사례 수를 표시합니다. 기본적으로 설정되어 있습니다.
 
@@ -2561,7 +2525,7 @@ obj << Total Cases( 1 );
 
 ### Total Cases Responding
 
-**구문:** obj << Total Cases Responding( state=0|1 )
+**구문:** obj &lt;&lt; Total Cases Responding( state=0|1 )
 
 **설명:** 다중 응답 변수의 경우 교차표 테이블에 한 번 이상 응답한 총 사례 수를 표시합니다. 기본적으로 설정되어 있습니다.
 
@@ -2581,7 +2545,7 @@ obj << Total Cases Responding( 1 );
 
 ### Total Responses
 
-**구문:** obj << Total Responses( state=0|1 )
+**구문:** obj &lt;&lt; Total Responses( state=0|1 )
 
 **설명:** 교차표 테이블에 총 응답 수를 표시합니다. 기본적으로 설정되어 있습니다.
 
@@ -2598,13 +2562,13 @@ obj << Total Responses( 1 );
 
 ### Totals First
 
-**구문:** obj << Totals First( state=0|1 )
+**구문:** obj &lt;&lt; Totals First( state=0|1 )
 
 **설명:** 교차표의 왼쪽 상단 근처에 총 응답 수를 표시합니다. 단, 여러 테이블의 각 열에서 총계가 동일해야 합니다.
 
 ### Transition Report
 
-**구문:** obj << Transition Report( state=0|1 )
+**구문:** obj &lt;&lt; Transition Report( state=0|1 )
 
 **설명:** 시간에 따라 범주가 어떻게 변경되는지 보여 주는 보고서를 표시하거나 숨깁니다. 반복 측정 모형에만 사용할 수 있습니다. 기본적으로 설정되어 있습니다.
 
@@ -2619,7 +2583,7 @@ obj << Transition Report( 1 );
 
 ### Transposed Freq Chart
 
-**구문:** obj << Transposed Freq Chart( state=0|1 )
+**구문:** obj &lt;&lt; Transposed Freq Chart( state=0|1 )
 
 **설명:** 각 응답 수준에 대한 열과 여러 표본 수준에 대한 행을 포함하는 전치된 빈도 차트를 표시하거나 숨깁니다.
 
@@ -2634,9 +2598,7 @@ obj << Transposed Freq Chart( 1 );
 
 ### Unique Occurrences within ID
 
-**구문:** obj = Categorical(...Unique Occurrences within ID( state=0|1 )...)
-
-<b>실행기 항목: 예</b>
+**구문:** obj = Categorical(...Unique Occurrences within ID( state=0|1 )...)&lt;b&gt;실행기 항목: 예&lt;/b&gt;
 
 **설명:** 동일한 ID를 가진 행에 대해 다중 응답을 정렬합니다.
 

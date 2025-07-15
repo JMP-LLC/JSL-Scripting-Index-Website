@@ -6,7 +6,7 @@
 
 ### Blink
 
-**構文:** obj << Blink
+**構文:** obj &lt;&lt; Blink
 
 **説明:** データ編集ボックスに表示されている行を点滅させる。
 
@@ -32,7 +32,7 @@ dataedit << Blink;
 
 ### Find
 
-**構文:** obj << Find( search term )
+**構文:** obj &lt;&lt; Find( search term )
 
 **説明:** 入力された用語で検索された行を表示する。
 
@@ -58,7 +58,7 @@ dataedit << Find( Contains( :State, "North Carolina" ) );
 
 ### Go to row
 
-**構文:** obj << Go to row( row )
+**構文:** obj &lt;&lt; Go to row( row )
 
 **説明:** 指定された行をデータ編集ボックスに表示する。
 
@@ -84,7 +84,7 @@ dataedit << Go To Row( 23 );
 
 ### New Row
 
-**構文:** obj << New Row
+**構文:** obj &lt;&lt; New Row
 
 **説明:** データテーブル内に新しい行を作成し、その行をデータ編集ボックスに表示する。
 
@@ -110,7 +110,7 @@ dataedit << New Row;
 
 ### Next
 
-**構文:** obj << Next
+**構文:** obj &lt;&lt; Next
 
 **説明:** 次の選択行をデータ編集ボックスに表示する。
 
@@ -136,7 +136,7 @@ dataedit << Next;
 
 ### Next Selected
 
-**構文:** obj << Next Selected
+**構文:** obj &lt;&lt; Next Selected
 
 **説明:** 選択された行のうち、次の選択行をデータ編集ボックスに表示する。
 
@@ -163,7 +163,7 @@ dataedit << Next Selected;
 
 ### Prev
 
-**構文:** obj << Prev
+**構文:** obj &lt;&lt; Prev
 
 **説明:** 前の選択行をデータ編集ボックスに表示する。
 
@@ -190,7 +190,7 @@ dataedit << Prev;
 
 ### Prev Selected
 
-**構文:** obj << Prev Selected
+**構文:** obj &lt;&lt; Prev Selected
 
 **説明:** 選択された行のうち、前の選択行をデータ編集ボックスに表示する。
 
@@ -217,7 +217,7 @@ dataedit << Prev Selected;
 
 ### Save
 
-**構文:** obj << Save
+**構文:** obj &lt;&lt; Save
 
 **説明:** データ編集ボックス内の行の値をデータテーブルに保存する。
 

@@ -6,7 +6,7 @@
 
 ### Load DLL
 
-**Sintassi:** dll = Load DLL( file path | Base Name( file path without extension ), < AutoDeclare( bool | Quiet | Verbose) | Quiet | Verbose )> )
+**Sintassi:** dll = Load DLL( file path | Base Name( file path without extension ), &lt; AutoDeclare( bool | Quiet | Verbose) | Quiet | Verbose )&gt; )
 
 **Descrizione:** Carica una DLL verso la quale conduce il percorso specificato.
 
@@ -27,7 +27,7 @@ If( Host is( "Windows" ),
 
 ### Call DLL
 
-**Sintassi:** obj << Call DLL( function name, signature, args )
+**Sintassi:** obj &lt;&lt; Call DLL( function name, signature, args )
 
 **Descrizione:** Chiama una funzione specificata all&apos;interno della DLL, con firma e argomenti specifici.
 
@@ -46,7 +46,7 @@ If( Host is( "Windows" ),
 
 ### Declare Function
 
-**Sintassi:** obj << Declare Function( name, Convention( STDCALL| CDECL| Pascal ), Alias( string ), Arg( Int8| UInt8| Int16| UInt16| Int32| UInt32| Int64| UInt64| Float| Double| AnsiString| UnicodeString| Struct| IntPtr| UIntPtr| ObjPtr, string ), Returns( type ); )
+**Sintassi:** obj &lt;&lt; Declare Function( name, Convention( STDCALL| CDECL| Pascal ), Alias( string ), Arg( Int8| UInt8| Int16| UInt16| Int32| UInt32| Int64| UInt64| Float| Double| AnsiString| UnicodeString| Struct| IntPtr| UIntPtr| ObjPtr, string ), Returns( type ); )
 
 **Descrizione:** Dichiara il tipo restituito e i tipi di parametri di una funzione definita nella DLL, in modo che sia possibile richiamarla da JSL.
 
@@ -73,7 +73,7 @@ If( Host is( "Windows" ),
 
 ### Get Declaration JSL
 
-**Sintassi:** obj << Get Declaration JSL
+**Sintassi:** obj &lt;&lt; Get Declaration JSL
 
 **Descrizione:** Recupera la dichiarazione JSL dalla DLL e la visualizza nel log. Questo messaggio si applica solo alle DLL che contengono la funzione _JMP_Declarations().
 
@@ -87,7 +87,7 @@ dll = Load DLL( /*DLL with JSL keyword*/ );
 
 ### Show Functions
 
-**Sintassi:** obj << Show Functions
+**Sintassi:** obj &lt;&lt; Show Functions
 
 **Descrizione:** Invia l&apos;elenco di funzioni dichiarate al log
 
@@ -113,7 +113,7 @@ If( Host is( "Windows" ),
 
 ### Unload DLL
 
-**Sintassi:** obj << Unload DLL
+**Sintassi:** obj &lt;&lt; Unload DLL
 
 **Descrizione:** Scarica la DLL.
 

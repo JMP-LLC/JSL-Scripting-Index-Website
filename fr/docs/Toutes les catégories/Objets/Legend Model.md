@@ -6,7 +6,7 @@
 
 ### Get Fill Color
 
-**Syntaxe :** obj << Get Fill Color
+**Syntaxe :** obj &lt;&lt; Get Fill Color
 
 **Description :** Renvoie la couleur de remplissage de l&apos;élément de modèle de légende qui est lié à un seg d&apos;affichage dans le graphe.
 
@@ -29,7 +29,7 @@ Show( item << Get Fill Color );
 
 ### Get Gradient Settings
 
-**Syntaxe :** obj << Get Gradient Settings
+**Syntaxe :** obj &lt;&lt; Get Gradient Settings
 
 **Description :** Renvoie une liste des paramètres de gradient pour l&apos;élément de modèle de légende qui est lié à un seg d&apos;affichage dans le graphe.
 
@@ -52,7 +52,7 @@ Print( item << Get Gradient Settings );
 
 ### Get Label
 
-**Syntaxe :** obj << Get Label
+**Syntaxe :** obj &lt;&lt; Get Label
 
 **Description :** Renvoie l&apos;étiquette de l&apos;élément de modèle de légende.
 
@@ -75,7 +75,7 @@ Print( item << Get Label );
 
 ### Get Marker Size Settings
 
-**Syntaxe :** obj << Get Marker Size Settings
+**Syntaxe :** obj &lt;&lt; Get Marker Size Settings
 
 **Description :** Renvoie une liste des paramètres de taille du marqueur pour l&apos;élément de modèle de légende qui est lié à un seg d&apos;affichage dans le graphe.
 
@@ -98,7 +98,7 @@ Print( item << Get Marker Size Settings );
 
 ### Get Pen Settings
 
-**Syntaxe :** obj << Get Pen Settings
+**Syntaxe :** obj &lt;&lt; Get Pen Settings
 
 **Description :** Renvoie une liste des paramètres du stylo pour l&apos;élément de modèle de légende qui est lié à un seg d&apos;affichage dans le graphe.
 
@@ -121,7 +121,7 @@ Print( item << Get Pen Settings );
 
 ### Get Type
 
-**Syntaxe :** obj << Get Type
+**Syntaxe :** obj &lt;&lt; Get Type
 
 **Description :** Renvoie le type de l&apos;élément de modèle de légende. Les types sont : « None », « Marker », « H Line », « V Line », « Step », « Bar », « V Box Plot », « H Interval », « V Interval », « H Bar Box Plot », « V Bar Box Plot », « OHLC Plot », « H Box Plot », « Gradient », « Density Gradient », « Fill and Line », « Marker Size », « Line Size », « Gradient Line », « Gradient Contour », « Mark Color », « Marker Size Categorical » et « Cell Size ».
 
@@ -144,7 +144,7 @@ Print( item << Get Type );
 
 ### Set Label
 
-**Syntaxe :** obj << Set Label( text )
+**Syntaxe :** obj &lt;&lt; Set Label( text )
 
 **Description :** Définit l&apos;étiquette pour l&apos;élément de modèle de légende qui est lié à un seg d&apos;affichage dans le graphe.
 
@@ -167,7 +167,7 @@ For Each( {item, index}, items[1], item << Set Label( "Item " || Char( index ) )
 
 ### Set Properties
 
-**Syntaxe :** obj << Set Properties
+**Syntaxe :** obj &lt;&lt; Set Properties
 
 **Description :** Définissez des propriétés d&apos;affichage arbitraires pour l&apos;élément de modèle de légende qui est lié à un seg d&apos;affichage dans le graphe.
 

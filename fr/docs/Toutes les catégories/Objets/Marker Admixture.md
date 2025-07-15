@@ -6,7 +6,7 @@
 
 ### By
 
-**Syntaxe :** obj << By( column(s) )
+**Syntaxe :** obj &lt;&lt; By( column(s) )
 
 **Description :** Pour chaque niveau de la colonne spécifiée, analyse et présente les résultats dans des tables et des rapports distincts.
 
@@ -23,7 +23,7 @@ dt << Marker Admixture( Marker( Column Group( "Markers" ) ), By( :Sex ), Fit );
 
 ### Label
 
-**Syntaxe :** obj << Label( column )
+**Syntaxe :** obj &lt;&lt; Label( column )
 
 **Description :** Spécifie une colonne qui contient une étiquette pour chaque échantillon.
 
@@ -40,7 +40,7 @@ dt << Marker Admixture( Marker( Column Group( "Markers" ) ), Label( :Sex ), Fit 
 
 ### Marker
 
-**Syntaxe :** obj << Marker( column(s) )
+**Syntaxe :** obj &lt;&lt; Marker( column(s) )
 
 **Description :** Spécifie les colonnes qui contiennent des marqueurs génétiques.
 
@@ -62,7 +62,7 @@ dt << Marker Admixture(
 
 ### Sample ID
 
-**Syntaxe :** obj << Sample ID( column )
+**Syntaxe :** obj &lt;&lt; Sample ID( column )
 
 **Description :** Spécifie une colonne qui contient un identifiant unique pour chaque échantillon.
 
@@ -141,7 +141,7 @@ dt << Marker Admixture(
 
 ### Compare
 
-**Syntaxe :** obj << Compare
+**Syntaxe :** obj &lt;&lt; Compare
 
 **Description :** Met à jour les métriques de comparaison du mélange de marqueurs.
 
@@ -170,7 +170,7 @@ obj << Compare( LogLikehood( 0 ) );
 
 ### Fit
 
-**Syntaxe :** obj << Fit
+**Syntaxe :** obj &lt;&lt; Fit
 
 **Description :** Ajuste un modèle de mélange de marqueurs. Vous pouvez spécifier les paramètres et les spécifications d&apos;ajustement dans la commande.
 
@@ -196,13 +196,13 @@ dt << Marker Admixture(
 
 ### Get Measures
 
-**Syntaxe :** obj << Get Measures
+**Syntaxe :** obj &lt;&lt; Get Measures
 
 **JMP Version ajoutée :** 19
 
 ### Set
 
-**Syntaxe :** obj << Set
+**Syntaxe :** obj &lt;&lt; Set
 
 **Description :** Spécifie les paramètres pour un modèle de mélange de marqueurs.
 
@@ -230,7 +230,7 @@ dt << Marker Admixture(
 
 ### Action
 
-**Syntaxe :** obj << Action
+**Syntaxe :** obj &lt;&lt; Action
 
 **Description :** Trappe tout usage dans une plate-forme pour y insérer les expressions à calculer. Définit provisoirement les contextes des boîtes d’affichage et des tables de données dans la plate-forme.
 
@@ -248,7 +248,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Syntaxe :** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntaxe :** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Description :** Appliquez une préconfiguration créée précédemment à l&apos;objet, ce qui met à jour les options et les personnalisations pour correspondre aux paramètres enregistrés.
 
@@ -295,7 +295,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**Syntaxe :** obj << Automatic Recalc( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Description :** Refait l&apos;analyse automatiquement pour l&apos;exclusion et les modifications de données. Si l&apos;option Nouveau calcul automatique est activée, envisagez d&apos;utiliser les commandes Wait(0) pour vous assurer que l&apos;exclusion et les modifications de données sont prises en compte avant le recalcul.
 
@@ -312,7 +312,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**Syntaxe :** obj << Broadcast(message)
+**Syntaxe :** obj &lt;&lt; Broadcast(message)
 
 **Description :** Diffuse un message sur une plate-forme. Si les résultats de renvoi des objets individuels sont des tables, elles sont concaténées si possible, et le format final est identique au résultat de l&apos;option Enregistrer la table de données combinée dans une boîte de tableau ou au résultat de l&apos;option Concaténer avec une colonne Source. Sinon, les résultats sont stockés dans une liste et renvoyés.
 
@@ -332,7 +332,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**Syntaxe :** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Syntaxe :** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Description :** Ajoute un panneau de contrôle pour changer les variables de la plate-forme.
 
@@ -350,7 +350,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**Syntaxe :** obj << Copy ByGroup Script
+**Syntaxe :** obj &lt;&lt; Copy ByGroup Script
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis le place dans le presse-papiers.
 
@@ -375,7 +375,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Syntaxe :** obj << Copy Script
+**Syntaxe :** obj &lt;&lt; Copy Script
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis le place dans le presse-papiers.
 
@@ -391,7 +391,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Syntaxe :** obj << Data Table Window
+**Syntaxe :** obj &lt;&lt; Data Table Window
 
 **Description :** Déplace en premier plan la fenêtre de la table de données utilisée dans cette analyse.
 
@@ -407,7 +407,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Syntaxe :** obj << Get By Levels
+**Syntaxe :** obj &lt;&lt; Get By Levels
 
 **Description :** Renvoie un tableau associatif de mappage des colonnes par groupe à leurs valeurs.
 
@@ -424,7 +424,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Syntaxe :** obj << Get ByGroup Script
+**Syntaxe :** obj &lt;&lt; Get ByGroup Script
 
 **Description :** Crée un script (JSL) pour produire cette analyse et la renvoyer sous forme d’une expression.
 
@@ -450,7 +450,7 @@ Show( t );
 
 ### Get Container
 
-**Syntaxe :** obj << Get Container
+**Syntaxe :** obj &lt;&lt; Get Container
 
 **Description :** Renvoie une référence à la zone conteneur où se trouve le contenu de l&apos;objet.
 
@@ -500,7 +500,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Syntaxe :** obj << Get Data Table
+**Syntaxe :** obj &lt;&lt; Get Data Table
 
 **Description :** Renvoie une référence à la table de données.
 
@@ -517,7 +517,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**Syntaxe :** obj << Get Group Platform
+**Syntaxe :** obj &lt;&lt; Get Group Platform
 
 **Description :** Renvoie l&apos;objet de Plate-forme de groupe si cette plate-forme fait partie d&apos;un groupe. Sinon, renvoie Empty().
 
@@ -534,7 +534,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**Syntaxe :** obj << Get Script
+**Syntaxe :** obj &lt;&lt; Get Script
 
 **Description :** Crée un script (JSL) pour produire cette analyse et la renvoyer sous forme d’une expression.
 
@@ -551,7 +551,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Syntaxe :** obj << Get Script With Data Table
+**Syntaxe :** obj &lt;&lt; Get Script With Data Table
 
 **Description :** Crée un script (JSL) pour produire cette analyse faisant spécifiquement référence à cette table de données et la renvoyer sous forme d’une expression.
 
@@ -568,7 +568,7 @@ Show( t );
 
 ### Get Timing
 
-**Syntaxe :** obj << Get Timing
+**Syntaxe :** obj &lt;&lt; Get Timing
 
 **Description :** Détermine une heure de lancement de la plate-forme.
 
@@ -585,7 +585,7 @@ Show( t );
 
 ### Get Web Support
 
-**Syntaxe :** obj << Get Web Support
+**Syntaxe :** obj &lt;&lt; Get Web Support
 
 **Description :** Renvoyer un nombre indiquant le niveau de support HTML interactif pour l&apos;objet d&apos;affichage. 1 signifie que tout ou partie des éléments sont pris en charge. 0 signifie qu&apos;il n&apos;y a aucun support.
 
@@ -601,7 +601,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Syntaxe :** obj << Get Where Expr
+**Syntaxe :** obj &lt;&lt; Get Where Expr
 
 **Description :** Renvoie l&apos;expression Where pour le sous-ensemble de données, si la plate-forme a été lancée avec By() ou Where(). Sinon, renvoie la Empty()
 
@@ -642,7 +642,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Syntaxe :** obj << Local Data Filter
+**Syntaxe :** obj &lt;&lt; Local Data Filter
 
 **Description :** Permet de filtrer les données locales, dans la plate-forme concernée, par groupes ou étendues spécifiques
 
@@ -698,7 +698,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Syntaxe :** obj << Paste Local Data Filter
+**Syntaxe :** obj &lt;&lt; Paste Local Data Filter
 
 **Description :** Appliquer le filtre des données locales du presse-papiers au rapport actif.
 
@@ -719,7 +719,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**Syntaxe :** obj << Redo Analysis
+**Syntaxe :** obj &lt;&lt; Redo Analysis
 
 **Description :** Exécute à nouveau cette même analyse dans une nouvelle fenêtre. L&apos;analyse sera différente si les données ont été modifiées.
 
@@ -735,7 +735,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**Syntaxe :** obj << Redo ByGroup Analysis
+**Syntaxe :** obj &lt;&lt; Redo ByGroup Analysis
 
 **Description :** Exécute à nouveau cette même analyse dans une nouvelle fenêtre. L&apos;analyse sera différente si les données ont été modifiées.
 
@@ -760,7 +760,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**Syntaxe :** obj << Relaunch Analysis
+**Syntaxe :** obj &lt;&lt; Relaunch Analysis
 
 **Description :** Ouvre la fenêtre de lancement de la plate-forme et rappelle les paramètres utilisés pour créer le rapport.
 
@@ -776,7 +776,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**Syntaxe :** obj << Relaunch ByGroup
+**Syntaxe :** obj &lt;&lt; Relaunch ByGroup
 
 **Description :** Ouvre la fenêtre de lancement de la plate-forme et rappelle les paramètres utilisés pour créer le rapport.
 
@@ -801,7 +801,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**Syntaxe :** obj << Remove Column Switcher
+**Syntaxe :** obj &lt;&lt; Remove Column Switcher
 
 **Description :** Supprime le sélecteur de colonne le plus récent ajouté à la plate-forme.
 
@@ -821,7 +821,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Syntaxe :** obj << Remove Local Data Filter
+**Syntaxe :** obj &lt;&lt; Remove Local Data Filter
 
 **Description :** Permet de supprimer un filtre de données locales créé précédemment et rétablit toutes les valeurs des données directement dans la table de données utilisée dans la plate-forme.
 
@@ -860,9 +860,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Syntaxe :** obj << Report;
-
-Report( obj )
+**Syntaxe :** obj &lt;&lt; Report;Report( obj )
 
 **Description :** Renvoie une référence à l’objet rapport.
 
@@ -880,7 +878,7 @@ Show( t );
 
 ### Report View
 
-**Syntaxe :** obj << Report View( "Complet"|"Résumé" )
+**Syntaxe :** obj &lt;&lt; Report View( "Complet"|"Résumé" )
 
 **Description :** L&apos;affichage du rapport détermine le niveau de détail visible dans un rapport de plate-forme. Full affiche tous les détails, alors que Summary affiche uniquement le contenu sélectionné, selon la plate-forme. Pour un comportement personnalisé, les boîtes d&apos;affichage prennent en charge un message <<Set Summary Behavior.
 
@@ -896,7 +894,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**Syntaxe :** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntaxe :** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;enregistre sous forme de propriété de table dans la table de données. Vous pouvez spécifier un nom pour le script. L&apos;option Append Suffix ajoute un suffixe numérique au nom du script, ce qui différentie le script d&apos;un script existant portant le même nom. L&apos;option Prompt invite l&apos;utilisateur à spécifier un nom de script. L&apos;option Replace remplace un script existant avec le même nom.
 
@@ -921,7 +919,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Syntaxe :** obj << Save ByGroup Script to Journal
+**Syntaxe :** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis ajoute un bouton dans le journal qui contient ce script.
 
@@ -946,7 +944,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Syntaxe :** obj << Save ByGroup Script to Script Window
+**Syntaxe :** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;ajoute à la fenêtre de script active.
 
@@ -971,7 +969,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**Syntaxe :** obj << Save Script for All Objects
+**Syntaxe :** obj &lt;&lt; Save Script for All Objects
 
 **Description :** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -987,7 +985,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Syntaxe :** obj << Save Script for All Objects To Data Table( <name> )
+**Syntaxe :** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Description :** Enregistre un script pour tous les objets de rapport dans la table de données active. Cette option est utile lorsque vous avez plusieurs rapports dans la fenêtre. Le script est nommé d&apos;après la première plate-forme, sauf si vous spécifiez le nom du script entre guillemets.
 
@@ -1035,7 +1033,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Syntaxe :** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntaxe :** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;enregistre sous forme de propriété de tableau dans la table de données.
 
@@ -1051,7 +1049,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Syntaxe :** obj << Save Script to Journal
+**Syntaxe :** obj &lt;&lt; Save Script to Journal
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis ajoute un bouton dans le journal qui contient ce script.
 
@@ -1067,7 +1065,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Syntaxe :** obj << Save Script to Report
+**Syntaxe :** obj &lt;&lt; Save Script to Report
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;affiche dans le rapport lui-même. Utile pour conserver une trace écrite de ce qui a été effectué.
 
@@ -1083,7 +1081,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Syntaxe :** obj << Save Script to Script Window
+**Syntaxe :** obj &lt;&lt; Save Script to Script Window
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;ajoute à la fenêtre de script active.
 
@@ -1169,7 +1167,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Syntaxe :** obj << Sync to Data Table Changes
+**Syntaxe :** obj &lt;&lt; Sync to Data Table Changes
 
 **Description :** Sync avec l&apos;exclusion et les modifications apportées aux données.
 
@@ -1186,7 +1184,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Syntaxe :** obj << Title( "new title" )
+**Syntaxe :** obj &lt;&lt; Title( "new title" )
 
 **Description :** Définit le titre de la plate-forme.
 
@@ -1202,7 +1200,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Syntaxe :** obj << Top Report
+**Syntaxe :** obj &lt;&lt; Top Report
 
 **Description :** Renvoie une référence au nœud racine dans le rapport.
 
@@ -1220,7 +1218,7 @@ Show( t );
 
 ### Transform Column
 
-**Syntaxe :** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Syntaxe :** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Description :** Créez une colonne de transformation dans le contexte local d&apos;un objet, généralement une plate-forme. La colonne de transformation est active uniquement pendant la durée de vie de la plateforme.
 
@@ -1241,7 +1239,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**Syntaxe :** obj << View Web XML
+**Syntaxe :** obj &lt;&lt; View Web XML
 
 **Description :** Renvoie le code XML utilisé pour créer le rapport au format HTML interactif.
 
@@ -1256,9 +1254,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**Syntaxe :** obj = Marker Admixture(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Marker Admixture(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Définir le type de fenêtre à créer pour le rapport. Par défaut, une fenêtre de rapport Visible sera créée. Une fenêtre Invisible ne s&apos;affichera pas à l&apos;écran, mais sera visible par les fonctions comme Window(). Une fenêtre Private répond à la plupart des messages de fenêtre mais n&apos;est pas visible et doit être adressée au moyen de l&apos;objet rapport
 
@@ -1294,7 +1290,7 @@ New Window( "Bivariate Equation",
 
 #### Hide All Models
 
-**Syntaxe :** obj << Hide All Models
+**Syntaxe :** obj &lt;&lt; Hide All Models
 
 **Description :** Masque tous les modèles.
 
@@ -1302,7 +1298,7 @@ New Window( "Bivariate Equation",
 
 #### Iterations
 
-**Syntaxe :** obj << Iterations( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Iterations( state=0|1 )
 
 **Description :** Affiche ou masque le nombre d&apos;itérations au moment où l&apos;algorithme de factorisation s&apos;est arrêté. Actif par défaut.
 
@@ -1310,7 +1306,7 @@ New Window( "Bivariate Equation",
 
 #### Log Likelihood
 
-**Syntaxe :** obj << Log Likelihood( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Log Likelihood( state=0|1 )
 
 **Description :** Affiche ou masque le logarithme négatif de la fonction basée sur la vraisemblance. Actif par défaut.
 
@@ -1318,7 +1314,7 @@ New Window( "Bivariate Equation",
 
 #### Number of Ancestral Populations
 
-**Syntaxe :** obj << Number of Ancestral Populations( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Number of Ancestral Populations( state=0|1 )
 
 **Description :** Affiche ou masque le nombre de populations ancestrales. Actif par défaut.
 
@@ -1326,7 +1322,7 @@ New Window( "Bivariate Equation",
 
 #### Predictors
 
-**Syntaxe :** obj << Predictors( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Predictors( state=0|1 )
 
 **Description :** Affiche ou masque la colonne Régresseurs. Actif par défaut.
 
@@ -1334,7 +1330,7 @@ New Window( "Bivariate Equation",
 
 #### Remove Hidden Models
 
-**Syntaxe :** obj << Remove Hidden Models
+**Syntaxe :** obj &lt;&lt; Remove Hidden Models
 
 **Description :** Supprime tous les modèles dont la case Afficher est décochée.
 
@@ -1342,7 +1338,7 @@ New Window( "Bivariate Equation",
 
 #### Remove Shown Models
 
-**Syntaxe :** obj << Remove Shown Models
+**Syntaxe :** obj &lt;&lt; Remove Shown Models
 
 **Description :** Supprime tous les modèles pour lesquels la case Afficher est cochée et affiche les modèles restants.
 
@@ -1350,7 +1346,7 @@ New Window( "Bivariate Equation",
 
 #### Show All Models
 
-**Syntaxe :** obj << Show All Models
+**Syntaxe :** obj &lt;&lt; Show All Models
 
 **Description :** Affiche tous les modèles.
 
@@ -1358,7 +1354,7 @@ New Window( "Bivariate Equation",
 
 #### Tolerance
 
-**Syntaxe :** obj << Tolerance( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Tolerance( state=0|1 )
 
 **Description :** Affiche ou masque la valeur de tolérance (RMSE du mélange d&apos;individus estimé) au moment où l&apos;algorithme de factorisation s&apos;est arrêté. Actif par défaut.
 
@@ -1376,7 +1372,7 @@ New Window( "Bivariate Equation",
 
 #### Cluster Individuals
 
-**Syntaxe :** obj << Cluster Individuals( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Cluster Individuals( state=0|1 )
 
 **Description :** Regroupe les individus en cluster en fonction de leurs probabilités de mélange de population ancestrale estimées.
 
@@ -1411,7 +1407,7 @@ obj = dt << Marker Admixture(
 
 #### Cluster Markers
 
-**Syntaxe :** obj << Cluster Markers( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Cluster Markers( state=0|1 )
 
 **Description :** Regroupe les marqueurs en fonction des fréquences de leur allèle de référence estimées sur chaque population ancestrale.
 
@@ -1430,7 +1426,7 @@ obj << (Fit[1] << Cluster Markers( 1 ));
 
 #### Copy Parameters to Launch
 
-**Syntaxe :** obj << Copy Parameters to Launch
+**Syntaxe :** obj &lt;&lt; Copy Parameters to Launch
 
 **Description :** Copie les paramètres de ce modèle dans la section de lancement de modèle.
 
@@ -1449,9 +1445,7 @@ obj << (Fit[1] << Copy Parameters to Launch());
 
 #### Estimation Method
 
-**Syntaxe :** obj = Marker Admixture Fit(...Estimation Method( "Point de stabilité"|"Paramètre fixé"="Point de stabilité" )...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Marker Admixture Fit(...Estimation Method( "Point de stabilité"|"Paramètre fixé"="Point de stabilité" )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Spécifie la méthode d&apos;estimation du nombre de populations ancestrales. "Point de stabilité" par défaut.
 
@@ -1475,9 +1469,7 @@ dt << Marker Admixture(
 
 #### Imputation Value
 
-**Syntaxe :** obj = Marker Admixture Fit(...Imputation Value( number=0 )...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Marker Admixture Fit(...Imputation Value( number=0 )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Spécifie un nombre entier allant de zéro à la ploïdie pour le remplacement des scores de marqueur manquants. "0" par défaut.
 
@@ -1499,9 +1491,7 @@ dt << Marker Admixture(
 
 #### Missing Marker Imputation Method
 
-**Syntaxe :** obj = Marker Admixture Fit(...Missing Marker Imputation Method( "HWE désactivé"|"HWE activé"|"Aléatoire"|"Spécifiée"="HWE désactivé" )...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Marker Admixture Fit(...Missing Marker Imputation Method( "HWE désactivé"|"HWE activé"|"Aléatoire"|"Spécifiée"="HWE désactivé" )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Spécifie un des quatre types de méthodes d&apos;imputation des marqueurs manquants. "HWE désactivé" par défaut.
 
@@ -1523,9 +1513,7 @@ dt << Marker Admixture(
 
 #### Number of Ancestral Populations
 
-**Syntaxe :** obj = Marker Admixture Fit(...Number of Ancestral Populations( number=2 )...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Marker Admixture Fit(...Number of Ancestral Populations( number=2 )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Spécifie le nombre de populations ancestrales. "2" par défaut.
 
@@ -1547,9 +1535,7 @@ dt << Marker Admixture(
 
 #### Order Populations Method
 
-**Syntaxe :** obj = Marker Admixture Fit(...Order Populations Method( "Mélange moyen"|"Variance expliquée"="Mélange moyen" )...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Marker Admixture Fit(...Order Populations Method( "Mélange moyen"|"Variance expliquée"="Mélange moyen" )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Spécifie la méthode de tri des colonnes de la matrice P (m x d, où m est le nombre de marqueurs génétiques et d est le nombre de populations ancestrales) et des lignes de la matrice Q (d x n, où n est le nombre d&apos;échantillons). "Mélange moyen" par défaut.
 
@@ -1576,7 +1562,7 @@ dt << Marker Admixture(
 
 #### Parallel Plot for Individuals
 
-**Syntaxe :** obj << Parallel Plot for Individuals( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Parallel Plot for Individuals( state=0|1 )
 
 **Description :** Crée un graphique de superposition de tous les individus en fonction de leurs probabilités de mélange de population ancestrale.
 
@@ -1595,7 +1581,7 @@ obj << (Fit[1] << Parallel Plot for Individuals( 1 ));
 
 #### Parallel Plot for Markers
 
-**Syntaxe :** obj << Parallel Plot for Markers( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Parallel Plot for Markers( state=0|1 )
 
 **Description :** Crée un graphique de superposition de tous les marqueurs en fonction des fréquences de leur allèle de référence estimées sur chaque population ancestrale.
 
@@ -1614,7 +1600,7 @@ obj << (Fit[1] << Parallel Plot for Markers( 1 ));
 
 #### Remove All But This Fit
 
-**Syntaxe :** obj << ( Fit[number] << Remove All But This Fit( state=0|1 ) )
+**Syntaxe :** obj &lt;&lt; ( Fit[number] &lt;&lt; Remove All But This Fit( state=0|1 ) )
 
 **Description :** Supprime les rapports et graphiques de tous les modèles, sauf le présent modèle.
 
@@ -1644,7 +1630,7 @@ obj << (Fit[2] << Remove All But This Fit( 1 ));
 
 #### Remove Fit
 
-**Syntaxe :** obj << ( Fit[number] << Remove Fit( state=0|1 ) )
+**Syntaxe :** obj &lt;&lt; ( Fit[number] &lt;&lt; Remove Fit( state=0|1 ) )
 
 **Description :** Supprime le rapport du modèle tout entier.
 
@@ -1670,7 +1656,7 @@ obj << (Fit[1] << Remove Fit( 1 ));
 
 #### Save F Table
 
-**Syntaxe :** obj << Save F Table
+**Syntaxe :** obj &lt;&lt; Save F Table
 
 **Description :** Enregistre le produit de matrices P fois Q dans une table de données.
 
@@ -1689,7 +1675,7 @@ obj << (Fit[1] << Save F Table());
 
 #### Save P Table
 
-**Syntaxe :** obj << Save P Table
+**Syntaxe :** obj &lt;&lt; Save P Table
 
 **Description :** Enregistre la fréquence estimée de l&apos;allèle de référence (P) pour chaque marqueur génétique dans une table de données.
 
@@ -1708,7 +1694,7 @@ obj << (Fit[1] << Save P Table());
 
 #### Save Q Table
 
-**Syntaxe :** obj << Save Q Table
+**Syntaxe :** obj &lt;&lt; Save Q Table
 
 **Description :** Enregistre les probabilités de mélange estimées (Q) des populations ancestrales pour chaque échantillon dans une table de données.
 
@@ -1727,9 +1713,7 @@ obj << (Fit[1] << Save Q Table());
 
 #### Set Random Seed
 
-**Syntaxe :** obj = Marker Admixture Fit(...Set Random Seed( number=0 )...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Marker Admixture Fit(...Set Random Seed( number=0 )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Définit une valeur spécifique pour la graine aléatoire en assurant ainsi que toutes les exécutions successives utilisant la même graine aléatoire sont reproductibles. "0" par défaut.
 
@@ -1751,9 +1735,7 @@ dt << Marker Admixture(
 
 #### Unthreaded
 
-**Syntaxe :** obj = Marker Admixture Fit(...Unthreaded( state=0 )...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Marker Admixture Fit(...Unthreaded( state=0 )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Utiliser uniquement le Thread principal pour les calculs "0" par défaut.
 

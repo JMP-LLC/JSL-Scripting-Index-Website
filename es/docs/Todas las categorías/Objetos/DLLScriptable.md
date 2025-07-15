@@ -6,7 +6,7 @@
 
 ### Load DLL
 
-**Sintaxis:** dll = Load DLL( file path | Base Name( file path without extension ), < AutoDeclare( bool | Quiet | Verbose) | Quiet | Verbose )> )
+**Sintaxis:** dll = Load DLL( file path | Base Name( file path without extension ), &lt; AutoDeclare( bool | Quiet | Verbose) | Quiet | Verbose )&gt; )
 
 **Descripción:** Carga una DLL situada en la ruta especificada.
 
@@ -27,7 +27,7 @@ If( Host is( "Windows" ),
 
 ### Call DLL
 
-**Sintaxis:** obj << Call DLL( function name, signature, args )
+**Sintaxis:** obj &lt;&lt; Call DLL( function name, signature, args )
 
 **Descripción:** Llama una función especificada dentro de la DLL, con una firma y argumentos dados.
 
@@ -46,7 +46,7 @@ If( Host is( "Windows" ),
 
 ### Declare Function
 
-**Sintaxis:** obj << Declare Function( name, Convention( STDCALL| CDECL| Pascal ), Alias( string ), Arg( Int8| UInt8| Int16| UInt16| Int32| UInt32| Int64| UInt64| Float| Double| AnsiString| UnicodeString| Struct| IntPtr| UIntPtr| ObjPtr, string ), Returns( type ); )
+**Sintaxis:** obj &lt;&lt; Declare Function( name, Convention( STDCALL| CDECL| Pascal ), Alias( string ), Arg( Int8| UInt8| Int16| UInt16| Int32| UInt32| Int64| UInt64| Float| Double| AnsiString| UnicodeString| Struct| IntPtr| UIntPtr| ObjPtr, string ), Returns( type ); )
 
 **Descripción:** Declara el tipo de retorno y los tipos de parámetros de una función definida en la DLL de manera que pueda llamarse con éxito desde JSL.
 
@@ -73,7 +73,7 @@ If( Host is( "Windows" ),
 
 ### Get Declaration JSL
 
-**Sintaxis:** obj << Get Declaration JSL
+**Sintaxis:** obj &lt;&lt; Get Declaration JSL
 
 **Descripción:** Recupera la declaración JSL de la DLL y la muestra en el registro. Este mensaje sólo afecta a aquellas DLL que contengan la función, _JMP_Declarations().
 
@@ -87,7 +87,7 @@ dll = Load DLL( /*DLL with JSL keyword*/ );
 
 ### Show Functions
 
-**Sintaxis:** obj << Show Functions
+**Sintaxis:** obj &lt;&lt; Show Functions
 
 **Descripción:** Redirige la lista de funciones declaradas hacia el registro.
 
@@ -113,7 +113,7 @@ If( Host is( "Windows" ),
 
 ### Unload DLL
 
-**Sintaxis:** obj << Unload DLL
+**Sintaxis:** obj &lt;&lt; Unload DLL
 
 **Descripción:** Descarga la DLL.
 

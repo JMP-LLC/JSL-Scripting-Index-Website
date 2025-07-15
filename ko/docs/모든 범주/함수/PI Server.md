@@ -2,13 +2,9 @@
 
 
 
-## 함수
-
 ### New PI Client
 
-**구문:** New Pi Client(URL(base URL), <Authentication Method("None"|"Basic"|"NTLM"|"Kerberos")>,
-
-                   <Username(userid)>,<Password(password)>)
+**구문:** New Pi Client(URL(base URL), &lt;Authentication Method("None"|"Basic"|"NTLM"|"Kerberos")&gt;, &lt;Username(userid)&gt;,&lt;Password(password)&gt;)
 
 **설명:** PI 서버에서 데이터를 가져오는 데 사용할 수 있는 새 PI 클라이언트 인스턴스를 생성합니다.
 
@@ -86,13 +82,7 @@ importer << Run;
 
 ### Importer
 
-**구문:** Importer(AF Path(Asset Framework path), <Series(string)>, <Start Time(PI time string)>,
-
-			   <End Time(PI time string)>, <UTC(boolean)>, <Boundary Type(string)>, <Max Count(integer)>,
-
-			   <Filter(string)>, <Retrieve Attribute Status(boolean)>, <Intervals(integer)>,  <Sync Time(PI time string)>, <Sync Time Boundary Type(string)>,
-
-			   <Interval(duration in PI AFTimeSpan format)>, <Timeout(integer)>)
+**구문:** Importer(AF Path(Asset Framework path), &lt;Series(string)&gt;, &lt;Start Time(PI time string)&gt;, &lt;End Time(PI time string)&gt;, &lt;UTC(boolean)&gt;, &lt;Boundary Type(string)&gt;, &lt;Max Count(integer)&gt;, &lt;Filter(string)&gt;, &lt;Retrieve Attribute Status(boolean)&gt;, &lt;Intervals(integer)&gt;, &lt;Sync Time(PI time string)&gt;, &lt;Sync Time Boundary Type(string)&gt;, &lt;Interval(duration in PI AFTimeSpan format)&gt;, &lt;Timeout(integer)&gt;)
 
 **설명:** 원시 가져오기 인스턴스를 새로 생성합니다.
 

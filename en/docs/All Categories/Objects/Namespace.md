@@ -6,7 +6,7 @@
 
 ### New Namespace
 
-**Syntax:** ns = New Namespace( <name>, <list of expressions> )
+**Syntax:** ns = New Namespace( &lt;name&gt;, &lt;list of expressions&gt; )
 
 **Description:** Creates a namespace where all functions and variables created are defined only within the specified name.
 
@@ -28,7 +28,7 @@ Add Class:append = Function( {a, b},
 
 ### Contains
 
-**Syntax:** obj << Contains( string )
+**Syntax:** obj &lt;&lt; Contains( string )
 
 **Description:** Returns a 1 if the namespace contains the specified string expression, or a 0 otherwise.
 
@@ -49,7 +49,7 @@ result = nsref << Contains( "nObs" );
 
 ### Delete Namespace
 
-**Syntax:** nsref << Delete Namespace( < Force( boolean ) > )
+**Syntax:** nsref &lt;&lt; Delete Namespace( &lt; Force( boolean ) &gt; )
 
 **Description:** Deletes this namespace.
 
@@ -71,7 +71,7 @@ Show( nsref );
 
 ### First
 
-**Syntax:** obj << First
+**Syntax:** obj &lt;&lt; First
 
 **Description:** Returns the string expression for the first item in this namespace.
 
@@ -92,7 +92,7 @@ result = nsref << First;
 
 ### Get Contents
 
-**Syntax:** obj << Get Contents
+**Syntax:** obj &lt;&lt; Get Contents
 
 **Description:** Returns a list of items within this namespace, where each element is a two item list containing a key and its associated value.
 
@@ -113,7 +113,7 @@ result = nsref << Get Contents;
 
 ### Get Keys
 
-**Syntax:** obj << Get Keys
+**Syntax:** obj &lt;&lt; Get Keys
 
 **Description:** Returns a list of keys within this namespace, where a key is string representation of an individual item contained in the namespace.
 
@@ -134,7 +134,7 @@ result = nsref << Get Keys;
 
 ### Get Name
 
-**Syntax:** obj << Get Name
+**Syntax:** obj &lt;&lt; Get Name
 
 **Description:** Returns the name of this namespace.
 
@@ -155,7 +155,7 @@ space name = nsref << Get Name;
 
 ### Get Value
 
-**Syntax:** obj << Get Value( string )
+**Syntax:** obj &lt;&lt; Get Value( string )
 
 **Description:** Returns the value of the specified item within this namespace. The "string" is the key to the item.
 
@@ -176,7 +176,7 @@ result = nsref << Get Value( "nObs" );
 
 ### Get Values
 
-**Syntax:** obj << Get Values
+**Syntax:** obj &lt;&lt; Get Values
 
 **Description:** Returns a list of values corresponding to each item within this namespace.
 
@@ -197,7 +197,7 @@ result = nsref << Get Values;
 
 ### Insert
 
-**Syntax:** obj << Insert( string, value )
+**Syntax:** obj &lt;&lt; Insert( string, value )
 
 **Description:** Inserts a string expression, with the specified value into this namespace.
 
@@ -219,7 +219,7 @@ Show( nsref );
 
 ### Lock Namespace
 
-**Syntax:** obj << Lock Namespace( <string, | {string, ...}>* )
+**Syntax:** obj &lt;&lt; Lock Namespace( &lt;string, | {string, ...}&gt;* )
 
 **Description:** Locks all variables or specified named variables in this namespace and prevents variables from being added, changed, or removed.
 
@@ -241,7 +241,7 @@ Try( Add Class:nObs = 40, "Add Class is locked." );
 
 ### N Items
 
-**Syntax:** obj << N Items
+**Syntax:** obj &lt;&lt; N Items
 
 **Description:** Returns the number of items contains in this namespace.
 
@@ -262,7 +262,7 @@ n = nsref << N Items;
 
 ### Next
 
-**Syntax:** obj << Next( string )
+**Syntax:** obj &lt;&lt; Next( string )
 
 **Description:** Returns the string expression for the next item following the key specified in this namespace.
 
@@ -283,7 +283,7 @@ result = nsref << Next( "addition" );
 
 ### Remove
 
-**Syntax:** obj << Remove( <string | {string, ...}>* )
+**Syntax:** obj &lt;&lt; Remove( &lt;string | {string, ...}&gt;* )
 
 **Description:** Removes the specified string expression from the namespace.
 
@@ -305,7 +305,7 @@ Show( nsref );
 
 ### Show Contents
 
-**Syntax:** obj << Show Contents
+**Syntax:** obj &lt;&lt; Show Contents
 
 **Description:** Shows the contents of a namespace in the JMP log.
 
@@ -326,7 +326,7 @@ result = nsref << Show Contents;
 
 ### Unlock Namespace
 
-**Syntax:** obj << Unlock Namespace( <string | {string, ...}>* )
+**Syntax:** obj &lt;&lt; Unlock Namespace( &lt;string | {string, ...}&gt;* )
 
 **Description:** Unlocks a previously locked namespace with all variables locked in this namespace and prevented variables from being added, changed, or removed.
 

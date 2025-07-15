@@ -8,7 +8,7 @@
 
 #### Actual
 
-**Syntax:** obj << Actual( state=0|1 )
+**Syntax:** obj &lt;&lt; Actual( state=0|1 )
 
 **Description:** Selects the Actual data column for saving with the Save Columns command. On by default.
 
@@ -23,7 +23,7 @@ obj << Arima( 1, 0, 0, Actual( 1 ), Save Columns );
 
 #### Autocorrelations
 
-**Syntax:** obj << Autocorrelations( state=0|1 )
+**Syntax:** obj &lt;&lt; Autocorrelations( state=0|1 )
 
 **Description:** Displays or hides the autocorrelations plot. On by default.
 
@@ -46,11 +46,11 @@ obj = Time Series(
 
 #### Confidence Intervals
 
-**Syntax:** obj << Confidence Intervals( number )
+**Syntax:** obj &lt;&lt; Confidence Intervals( number )
 
 #### Create SAS Job
 
-**Syntax:** obj << Create SAS Job
+**Syntax:** obj &lt;&lt; Create SAS Job
 
 **Description:** Creates a SAS Job to launch SAS and run the analysis in PROC ARIMA.
 
@@ -66,13 +66,13 @@ obj2 << Create SAS Job;
 
 #### Innovations
 
-**Syntax:** obj << Innovations( state=0|1 )
+**Syntax:** obj &lt;&lt; Innovations( state=0|1 )
 
 **Description:** On by default.
 
 #### Lower Confidence Limit
 
-**Syntax:** obj << Lower Confidence Limit( state=0|1 )
+**Syntax:** obj &lt;&lt; Lower Confidence Limit( state=0|1 )
 
 **Description:** Selects the Lower 95% Confidence Limit values column for saving with the Save Columns command. On by default.
 
@@ -87,7 +87,7 @@ obj << Arima( 1, 0, 0, Lower Confidence Limit( 1 ), Save Columns );
 
 #### No Constrain
 
-**Syntax:** obj << No Constrain( state=0|1 )
+**Syntax:** obj &lt;&lt; No Constrain( state=0|1 )
 
 **Description:** Lifts the constraint on the autoregressive parameters to always remain within the stable region and the moving average parameters within the invertible region when launching an ARIMA model.
 
@@ -102,7 +102,7 @@ obj << Arima( 1, 1, 0, No Constrain( 1 ) );
 
 #### No Intercept
 
-**Syntax:** obj << No Intercept( state=0|1 )
+**Syntax:** obj &lt;&lt; No Intercept( state=0|1 )
 
 **Description:** Sets the intercept to zero when launching an ARIMA model.
 
@@ -117,7 +117,7 @@ obj << Arima( 1, 1, 0, No Intercept( 1 ) );
 
 #### Partial Autocorrelations
 
-**Syntax:** obj << Partial Autocorrelations( state=0|1 )
+**Syntax:** obj &lt;&lt; Partial Autocorrelations( state=0|1 )
 
 **Description:** Displays or hides the partial autocorrelations plot. On by default.
 
@@ -140,7 +140,7 @@ obj = Time Series(
 
 #### Plot
 
-**Syntax:** obj << Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; Plot( state=0|1 )
 
 **Description:** Displays or hides the residual statistics plot. On by default.
 
@@ -163,7 +163,7 @@ obj = Time Series(
 
 #### Predicted
 
-**Syntax:** obj << Predicted( state=0|1 )
+**Syntax:** obj &lt;&lt; Predicted( state=0|1 )
 
 **Description:** Selects the Predicted values data column for saving with the Save Columns command. On by default.
 
@@ -178,7 +178,7 @@ obj << Arima( 1, 0, 0, Predicted( 1 ), Save Columns );
 
 #### Prediction Interval
 
-**Syntax:** obj << Prediction Interval( level )
+**Syntax:** obj &lt;&lt; Prediction Interval( level )
 
 **Description:** Sets the size of the confidence interval about the prediction for the ARIMA model. The default size is 0.95.
 
@@ -193,11 +193,11 @@ obj << Arima( 1, 1, 0, Forecasting Interval( 0.99 ) );
 
 #### Remove Fit
 
-**Syntax:** obj << Remove Fit
+**Syntax:** obj &lt;&lt; Remove Fit
 
 #### Residuals
 
-**Syntax:** obj << Residuals( state=0|1 )
+**Syntax:** obj &lt;&lt; Residuals( state=0|1 )
 
 **Description:** Selects the Residuals values data column for saving with the Save Columns command. On by default.
 
@@ -212,7 +212,7 @@ obj << Arima( 1, 0, 0, Residuals( 1 ), Save Columns );
 
 #### Save Columns
 
-**Syntax:** obj << Save Columns
+**Syntax:** obj &lt;&lt; Save Columns
 
 **Description:** Creates a new data table containing the actual and predicted values together with standard errors, residuals and 95% prediction intervals about the response. This option is available for all ARIMA, Smoothing, and Transfer Function models.
 
@@ -228,7 +228,7 @@ obj2 << Save Columns;
 
 #### Save Prediction Formula
 
-**Syntax:** obj << Save Prediction Formula
+**Syntax:** obj &lt;&lt; Save Prediction Formula
 
 **Description:** Saves the Prediction Formula to a new column in the data table. This option is available for all ARIMA and Smoothing models.
 
@@ -244,7 +244,7 @@ obj2 << Save Prediction Formula;
 
 #### Show Confidence Interval
 
-**Syntax:** obj << Show Confidence Interval( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Confidence Interval( state=0|1 )
 
 **Description:** Shows or hides prediction intervals on the Time Series Forecast Plot. This option is available for all ARIMA and Smoothing models. On by default.
 
@@ -260,7 +260,7 @@ obj2 << Show Confidence Interval( 0 );
 
 #### Show Points
 
-**Syntax:** obj << Show Points( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Points( state=0|1 )
 
 **Description:** Shows or hides points on the Time Series Forecast Plot. This option is available for all ARIMA and Smoothing models. On by default.
 
@@ -277,7 +277,7 @@ obj << Arima( 1, 0, 0, Show Points( 1 ) );
 
 #### Show Prediction Interval
 
-**Syntax:** obj << Show Prediction Interval( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Prediction Interval( state=0|1 )
 
 **Description:** Shows or hides prediction intervals on the Time Series Forecast Plot. This option is available for all ARIMA and Smoothing models. On by default.
 
@@ -293,7 +293,7 @@ obj2 << Show Prediction Interval( 0 );
 
 #### Std Error of Predicted
 
-**Syntax:** obj << Std Error of Predicted( state=0|1 )
+**Syntax:** obj &lt;&lt; Std Error of Predicted( state=0|1 )
 
 **Description:** Selects the Standard Error of Predicted values data column for saving with the Save Columns command. On by default.
 
@@ -308,7 +308,7 @@ obj << Arima( 1, 0, 0, Std Error of Predicted( 1 ), Save Columns );
 
 #### Time
 
-**Syntax:** obj << Time( state=0|1 )
+**Syntax:** obj &lt;&lt; Time( state=0|1 )
 
 **Description:** Selects the Time data column for saving with the Save Columns command. On by default.
 
@@ -323,7 +323,7 @@ obj << Arima( 1, 0, 0, Time( 0 ), Save Columns );
 
 #### Upper Confidence Limit
 
-**Syntax:** obj << Upper Confidence Limit( state=0|1 )
+**Syntax:** obj &lt;&lt; Upper Confidence Limit( state=0|1 )
 
 **Description:** Selects the Upper 95% Confidence Limit values column for saving with the Save Columns command. On by default.
 
@@ -338,7 +338,7 @@ obj << Arima( 1, 0, 0, Upper Confidence Limit( 1 ), Save Columns );
 
 #### Variogram
 
-**Syntax:** obj << Variogram( state=0|1 )
+**Syntax:** obj &lt;&lt; Variogram( state=0|1 )
 
 **Description:** Displays or hides the Variogram.
 
@@ -379,7 +379,7 @@ obj = dt << Time Series( Y( :steel shipments ) );
 
 ### By
 
-**Syntax:** obj << By( column(s) )
+**Syntax:** obj &lt;&lt; By( column(s) )
 
 ```jsl
 
@@ -396,7 +396,7 @@ obj = dt << Time Series( Y( :steel shipments ), By( _bycol ) );
 
 ### Input List
 
-**Syntax:** obj << Input List( column(s) )
+**Syntax:** obj &lt;&lt; Input List( column(s) )
 
 ```jsl
 
@@ -408,7 +408,7 @@ obj = dt << Time Series( Y( :steel shipments ) );
 
 ### Time ID
 
-**Syntax:** obj << Time ID( column )
+**Syntax:** obj &lt;&lt; Time ID( column )
 
 ```jsl
 
@@ -420,7 +420,7 @@ obj = dt << Time Series( Y( :steel shipments ) );
 
 ### X
 
-**Syntax:** obj << X( column )
+**Syntax:** obj &lt;&lt; X( column )
 
 ```jsl
 
@@ -432,7 +432,7 @@ obj = dt << Time Series( Y( :steel shipments ) );
 
 ### Y
 
-**Syntax:** obj << Y( column(s) )
+**Syntax:** obj &lt;&lt; Y( column(s) )
 
 ```jsl
 
@@ -446,7 +446,7 @@ obj = dt << Time Series( Y( :steel shipments ) );
 
 ### AR Coefficients
 
-**Syntax:** obj << AR Coefficients( state=0|1 )
+**Syntax:** obj &lt;&lt; AR Coefficients( state=0|1 )
 
 **Description:** Displays or hides the autocorrelation coefficient plot.
 
@@ -461,7 +461,7 @@ obj << AR Coefficients( 1 );
 
 ### ARIMA
 
-**Syntax:** obj << ARIMA( p, d, q, <No Intercept( 0|1 )>, <No Constrain( 0|1 )>, <Confidence Intervals( level )> )
+**Syntax:** obj &lt;&lt; ARIMA( p, d, q, &lt;No Intercept( 0|1 )&gt;, &lt;No Constrain( 0|1 )&gt;, &lt;Confidence Intervals( level )&gt; )
 
 **Description:** Fits an ARIMA model. Set order p,d, and q for an ARIMA(p,d,q) model. Set level for values other than 0.95.
 
@@ -477,7 +477,7 @@ obj << arima( 1, 0, 0, No Intercept( 1 ), No Constrain( 1 ), Confidence Interval
 
 ### ARIMA Model Group
 
-**Syntax:** obj << ARIMA Model Group( AR(p0,p1),Diff(d0,d1),MA(q0,q1),Seasonal AR(P0,P1),Seasonal Diff(D0,D1),Seasonal MA(Q0,Q1),Seasonal Period(S0,S1),Confidence Intervals(C),Intercept(1),Constrain fit(1) )
+**Syntax:** obj &lt;&lt; ARIMA Model Group( AR(p0,p1),Diff(d0,d1),MA(q0,q1),Seasonal AR(P0,P1),Seasonal Diff(D0,D1),Seasonal MA(Q0,Q1),Seasonal Period(S0,S1),Confidence Intervals(C),Intercept(1),Constrain fit(1) )
 
 **Description:** Fit a set of ARIMA models whose orders are in specified ranges.
 
@@ -492,7 +492,7 @@ obj << ARIMA Model Group( AR( 0, 2 ), MA( 0, 2 ) );
 
 ### Autocorrelation
 
-**Syntax:** obj << Autocorrelation( state=0|1 )
+**Syntax:** obj &lt;&lt; Autocorrelation( state=0|1 )
 
 **Description:** Displays or hides the autocorrelation plot. On by default.
 
@@ -521,13 +521,13 @@ obj = dt << Time Series( Y( :Steel Shipments ), Autocorrelation Lags( 10 ) );
 
 ### Combine and Save Forecasts from Models
 
-**Syntax:** obj << Combine and Save Forecasts from Models
+**Syntax:** obj &lt;&lt; Combine and Save Forecasts from Models
 
 **Description:** Creates a new data table with the combined results from all model fits in the report.
 
 ### Connecting Lines
 
-**Syntax:** obj << Connecting Lines( state=0|1 )
+**Syntax:** obj &lt;&lt; Connecting Lines( state=0|1 )
 
 **Description:** Displays or hides connected lines in the basic time series plot. On by default.
 
@@ -542,7 +542,7 @@ obj << Connecting Lines( 1 );
 
 ### Cross Correlation
 
-**Syntax:** obj << Cross Correlation( state=0|1 )
+**Syntax:** obj &lt;&lt; Cross Correlation( state=0|1 )
 
 **Description:** Displays or hides the cross correlation plot.
 
@@ -557,7 +557,7 @@ obj << Cross Correlation( 1 );
 
 ### Damped-Trend Linear Exponential Smoothing
 
-**Syntax:** obj << Damped-Trend Linear Exponential Smoothing( Zero to One|Unconstrained|Stable Invertible|Custom( (Damping|Level)( Unconstrained| Bounded( lower, upper )| Fixed( value ) )), <Confidence Intervals(level)> )
+**Syntax:** obj &lt;&lt; Damped-Trend Linear Exponential Smoothing( Zero to One|Unconstrained|Stable Invertible|Custom( (Damping|Level)( Unconstrained| Bounded( lower, upper )| Fixed( value ) )), &lt;Confidence Intervals(level)&gt; )
 
 **Description:** Fits a damped trend smoothing model.
 
@@ -574,7 +574,7 @@ Time Series(
 
 ### Difference
 
-**Syntax:** obj << Difference( d, <D>, <S> )
+**Syntax:** obj &lt;&lt; Difference( d, &lt;D&gt;, &lt;S&gt; )
 
 **Description:** Computes the differenced series and produces graphs of the autocorrelations and partial autocorrelations of the differenced series. The differenced series is given by  (1-B)^d * (1-B^S)^D * y_t , where y_t is the time series, B is the backshift operator defined by B * y_t = y_(t-1), d is the nonseasonal differencing order, D is the seasonal differencing order, and S is the number of observations per period.
 
@@ -590,7 +590,7 @@ obj << Difference( 1, 1, 12 );
 
 ### Double Exponential Smoothing
 
-**Syntax:** obj << Double Exponential Smoothing( Zero to One|Unconstrained|Stable Invertible|Custom( Level( Unconstrained| Bounded( lower, upper )| Fixed( value ) )), <Confidence Intervals(level)> )
+**Syntax:** obj &lt;&lt; Double Exponential Smoothing( Zero to One|Unconstrained|Stable Invertible|Custom( Level( Unconstrained| Bounded( lower, upper )| Fixed( value ) )), &lt;Confidence Intervals(level)&gt; )
 
 **Description:** Invoke fitting a double exponential smoothing model.
 
@@ -612,7 +612,7 @@ Time Series(
 
 ### Fit Recommended ETS
 
-**Syntax:** obj << Fit Recommended ETS( Period( m ),Constrained( "Yes"|"No" ) )
+**Syntax:** obj &lt;&lt; Fit Recommended ETS( Period( m ),Constrained( "Yes"|"No" ) )
 
 **Description:** Fits all recommended state space smoothing models.
 
@@ -658,7 +658,7 @@ obj << Number of Forecast Periods( 100 );
 
 ### Generate Simulation
 
-**Syntax:** obj << Generate Simulation( id, seed, length, n )
+**Syntax:** obj &lt;&lt; Generate Simulation( id, seed, length, n )
 
 **Description:** Generates a data table of multiple future trajectories of a fitted model. Returns the table reference.
 
@@ -674,7 +674,7 @@ dt = obj << Generate Simulation( 1, 11111, 100, 5 );
 
 ### Get Model Specs
 
-**Syntax:** obj << Get Model Specs
+**Syntax:** obj &lt;&lt; Get Model Specs
 
 **Description:** Returns a named list of model results, each of which is named by model specification. Included in the output are estimates and standard errors. Available for ARIMA, Seasonal ARIMA, all smoothing models and Transfer Function Models.
 
@@ -691,7 +691,7 @@ Show( l );
 
 ### Get Models
 
-**Syntax:** obj << Get Models
+**Syntax:** obj &lt;&lt; Get Models
 
 **Description:** Returns a named list of model results, each of which is named by model descriptions. Included in the output are estimates and standard errors. Available for ARIMA, Seasonal ARIMA, all smoothing models and Transfer Function Models.
 
@@ -708,7 +708,7 @@ Show( l );
 
 ### Hide All Reports
 
-**Syntax:** obj << Hide All Reports
+**Syntax:** obj &lt;&lt; Hide All Reports
 
 **Description:** Hides all of the models that are listed in the Model Comparison table from the report window.
 
@@ -724,7 +724,7 @@ obj << Hide All Model Reports;
 
 ### Input Series
 
-**Syntax:** obj << Input Series( Column, <ARIMA( )>| <Prewhitening( )> ... )
+**Syntax:** obj &lt;&lt; Input Series( Column, &lt;ARIMA( )&gt;| &lt;Prewhitening( )&gt; ... )
 
 **Description:** Groups messages sent to the input series. Note: requires an Input List variable be specified.
 
@@ -739,7 +739,7 @@ obj << Input Series( :Input Gas Rate, ARIMA( 1, 0, 0 ) );
 
 ### Keep Best Models
 
-**Syntax:** obj << Keep Best Models( "AIC"|"SBC" )
+**Syntax:** obj &lt;&lt; Keep Best Models( "AIC"|"SBC" )
 
 **Description:** Retains the best models among individual model classes and removes the remaining models.
 
@@ -776,7 +776,7 @@ obj << Number of Forecast Periods( 100 );
 
 ### Linear Exponential Smoothing
 
-**Syntax:** obj << Linear Exponential Smoothing( Zero to One|Unconstrained|Stable Invertible|Custom( (Trend|Level)( Unconstrained| Bounded( lower, upper )| Fixed( value ) )), <Confidence Intervals(level)> )
+**Syntax:** obj &lt;&lt; Linear Exponential Smoothing( Zero to One|Unconstrained|Stable Invertible|Custom( (Trend|Level)( Unconstrained| Bounded( lower, upper )| Fixed( value ) )), &lt;Confidence Intervals(level)&gt; )
 
 **Description:** Fits a linear exponential smoothing model.
 
@@ -800,7 +800,7 @@ Time Series(
 
 ### Maximum Iterations
 
-**Syntax:** obj << Maximum Iterations( maxIter=250 )
+**Syntax:** obj &lt;&lt; Maximum Iterations( maxIter=250 )
 
 **Description:** Reset the maximum number of iterations for future optimizations used in ARIMA model fitting. "250" by default.
 
@@ -816,7 +816,7 @@ obj << ARIMA( 1, 0, 0 );
 
 ### Mean Line
 
-**Syntax:** obj << Mean Line( state=0|1 )
+**Syntax:** obj &lt;&lt; Mean Line( state=0|1 )
 
 **Description:** Displays or hides the mean line in the basic time series plot. On by default.
 
@@ -831,13 +831,13 @@ obj << Mean Line( 1 );
 
 ### Model Comparison Report
 
-**Syntax:** obj << Model Comparison Report
+**Syntax:** obj &lt;&lt; Model Comparison Report
 
 **Description:** Configures the Model Comparison report settings.
 
 ### Number of Forecast Periods
 
-**Syntax:** obj << Number of Forecast Periods( number )
+**Syntax:** obj &lt;&lt; Number of Forecast Periods( number )
 
 **Description:** Resets the number of forecast periods and updates the forecasting report.
 
@@ -853,7 +853,7 @@ obj << Number of Forecast Periods( 100 );
 
 ### Partial Autocorrelation
 
-**Syntax:** obj << Partial Autocorrelation( state=0|1 )
+**Syntax:** obj &lt;&lt; Partial Autocorrelation( state=0|1 )
 
 **Description:** Displays or hides the partial autocorrelation plot. On by default.
 
@@ -868,7 +868,7 @@ obj << Partial Autocorrelation( 1 );
 
 ### Prewhitening
 
-**Syntax:** obj << Prewhitening( Order(p, d, q), Seasonal(P, D, Q, S) )
+**Syntax:** obj &lt;&lt; Prewhitening( Order(p, d, q), Seasonal(P, D, Q, S) )
 
 **Description:** Sets the prewhitening order.
 
@@ -889,7 +889,7 @@ obj = dt << Time Series(
 
 ### Remove All Simulation
 
-**Syntax:** obj << Remove All Simulation
+**Syntax:** obj &lt;&lt; Remove All Simulation
 
 **Description:** Removes all simulated future trajectories.
 
@@ -908,7 +908,7 @@ obj << Remove All Simulation;
 
 ### Remove Cycle
 
-**Syntax:** obj << Remove Cycle( Units per Cycle( number ), Has Constant( 0|1 ) )
+**Syntax:** obj &lt;&lt; Remove Cycle( Units per Cycle( number ), Has Constant( 0|1 ) )
 
 **Description:** Estimates the cyclic component using a cosine function and then removes it from the data.
 
@@ -923,11 +923,11 @@ obj << Remove Cycle( Units per Cycle( 12 ), Has Constant( 1 ) );
 
 ### Remove Fit
 
-**Syntax:** obj << Remove Fit
+**Syntax:** obj &lt;&lt; Remove Fit
 
 ### Remove Linear Trend
 
-**Syntax:** obj << Remove Linear Trend
+**Syntax:** obj &lt;&lt; Remove Linear Trend
 
 **Description:** Estimates the linear trend and then removes it from the data.
 
@@ -942,7 +942,7 @@ obj << Remove Linear Trend;
 
 ### Remove Model Simulation
 
-**Syntax:** obj << Remove Model Simulation( id )
+**Syntax:** obj &lt;&lt; Remove Model Simulation( id )
 
 **Description:** Removes simulated future trajectories of a fitted model.
 
@@ -961,7 +961,7 @@ obj << Remove Model Simulation( 1 );
 
 ### Save Spectral Density
 
-**Syntax:** obj << Save Spectral Density
+**Syntax:** obj &lt;&lt; Save Spectral Density
 
 **Description:** Save spectral density to a table.
 
@@ -976,7 +976,7 @@ obj << Save Spectral Density;
 
 ### Seasonal ARIMA
 
-**Syntax:** obj << Seasonal ARIMA( p, d, q, P, D, Q, S, <No Intercept( 0|1 )>, <No Constrain( 0|1 )>, <Confidence Intervals( level )> )
+**Syntax:** obj &lt;&lt; Seasonal ARIMA( p, d, q, P, D, Q, S, &lt;No Intercept( 0|1 )&gt;, &lt;No Constrain( 0|1 )&gt;, &lt;Confidence Intervals( level )&gt; )
 
 **Description:** Fits a seasonal ARIMA model. Set order p,d,q,P,D,Q,and S for an ARIMA(p,d,q)(P,D,Q)S model.
 
@@ -1003,7 +1003,7 @@ obj << seasonal arima(
 
 ### Seasonal Exponential Smoothing
 
-**Syntax:** obj << Seasonal Exponential Smoothing( Zero to One|Unconstrained|Custom( (Level| Seasonal)( Unconstrained| Bounded( lower, upper )| Fixed( value ) )), <Confidence Intervals(level)> )
+**Syntax:** obj &lt;&lt; Seasonal Exponential Smoothing( Zero to One|Unconstrained|Custom( (Level| Seasonal)( Unconstrained| Bounded( lower, upper )| Fixed( value ) )), &lt;Confidence Intervals(level)&gt; )
 
 **Description:** Fits a seasonal exponential smoothing model.
 
@@ -1023,7 +1023,7 @@ Time Series(
 
 ### Set Seed
 
-**Syntax:** obj << Set Seed( seed )
+**Syntax:** obj &lt;&lt; Set Seed( seed )
 
 **Description:** Sets random seed.
 
@@ -1042,15 +1042,15 @@ obj << Simulate Once( 1 );
 
 ### Show Box-Cox Transformation Plot
 
-**Syntax:** obj << Show Box-Cox Transformation Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Box-Cox Transformation Plot( state=0|1 )
 
 ### Show Lag Plot
 
-**Syntax:** obj << Show Lag Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Lag Plot( state=0|1 )
 
 ### Show Points
 
-**Syntax:** obj << Show Points( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Points( state=0|1 )
 
 **Description:** Displays or hides points in the basic time series plot. On by default.
 
@@ -1065,7 +1065,7 @@ obj << Show Points( 1 );
 
 ### Simple Exponential Smoothing
 
-**Syntax:** obj << Simple Exponential Smoothing( Zero to One|Unconstrained|Stable Invertible|Custom( Level( Unconstrained| Bounded( lower, upper )| Fixed( value ) )), <Confidence Intervals(level)> )
+**Syntax:** obj &lt;&lt; Simple Exponential Smoothing( Zero to One|Unconstrained|Stable Invertible|Custom( Level( Unconstrained| Bounded( lower, upper )| Fixed( value ) )), &lt;Confidence Intervals(level)&gt; )
 
 **Description:** Fits a simple exponential smoothing model.
 
@@ -1087,7 +1087,7 @@ Time Series(
 
 ### Simple Moving Average
 
-**Syntax:** obj << Simple Moving Average
+**Syntax:** obj &lt;&lt; Simple Moving Average
 
 **Description:** Invoke a simple moving average specification dialog and fit a model, if there are no additional arguments. Pass arguments to the simple moving average model scriptable. Return value is the simple moving average model scriptable handle. See Simple Moving Average scriptable for arguments details.
 
@@ -1103,11 +1103,11 @@ sma << Add Model( 10 );
 
 ### Simple Moving Average Centering Method
 
-**Syntax:** obj << Simple Moving Average Centering Method( "No Centering"|"Centered"|"Centered and Double Smoothed for Even Number of Terms" )
+**Syntax:** obj &lt;&lt; Simple Moving Average Centering Method( "No Centering"|"Centered"|"Centered and Double Smoothed for Even Number of Terms" )
 
 ### Simulate More
 
-**Syntax:** obj << Simulate More( id, n )
+**Syntax:** obj &lt;&lt; Simulate More( id, n )
 
 **Description:** Simulates multiple future trajectories of a fitted model.
 
@@ -1125,7 +1125,7 @@ obj << Simulate More( 2, 3 );
 
 ### Simulate Once
 
-**Syntax:** obj << Simulate Once( id )
+**Syntax:** obj &lt;&lt; Simulate Once( id )
 
 **Description:** Simulates one future trajectory of a fitted model.
 
@@ -1143,7 +1143,7 @@ obj << Simulate Once( 2 );
 
 ### Spectral Density
 
-**Syntax:** obj << Spectral Density( state=0|1 )
+**Syntax:** obj &lt;&lt; Spectral Density( state=0|1 )
 
 **Description:** Displays or hides the spectral density graphs.
 
@@ -1158,7 +1158,7 @@ obj << Spectral Density( 1 );
 
 ### State Space Smoothing
 
-**Syntax:** obj << State Space Smoothing( Error Type( "Additive"|"Multiplicative" ),Trend Type( "None"|"Additive"|"Multiplicative" ),Seasonal Type( "None"|"Additive"|"Multiplicative" ),Damped( "Yes"|"No" ),Period( m ),Constrained( "Yes"|"No" ) )
+**Syntax:** obj &lt;&lt; State Space Smoothing( Error Type( "Additive"|"Multiplicative" ),Trend Type( "None"|"Additive"|"Multiplicative" ),Seasonal Type( "None"|"Additive"|"Multiplicative" ),Damped( "Yes"|"No" ),Period( m ),Constrained( "Yes"|"No" ) )
 
 **Description:** Fits a state space smoothing model.
 
@@ -1180,7 +1180,7 @@ obj << State Space Smoothing(
 
 ### Time Series Graph
 
-**Syntax:** obj << Time Series Graph( state=0|1 )
+**Syntax:** obj &lt;&lt; Time Series Graph( state=0|1 )
 
 **Description:** Turn on or off the basic time series plot. On by default.
 
@@ -1195,7 +1195,7 @@ obj << Time Series Graph( 1 );
 
 ### Transfer Function
 
-**Syntax:** obj << Transfer Function( Order(p, d, q), Seasonal(P, D, Q, S), input1(Order(p, d, q), Seasonal(P, D, Q, S), Lag(lag)), <input2(Order(p, d, q), Seasonal(P, D, Q, S), Lag(lag))>, ..., <No Intercept(flag1)>, <No Constrain(flag2)>, <Alternative Parameterization( flag3 )>, <Confidence Intervals( level )>, <Number of Forecast Periods( nAhead )> )
+**Syntax:** obj &lt;&lt; Transfer Function( Order(p, d, q), Seasonal(P, D, Q, S), input1(Order(p, d, q), Seasonal(P, D, Q, S), Lag(lag)), &lt;input2(Order(p, d, q), Seasonal(P, D, Q, S), Lag(lag))&gt;, ..., &lt;No Intercept(flag1)&gt;, &lt;No Constrain(flag2)&gt;, &lt;Alternative Parameterization( flag3 )&gt;, &lt;Confidence Intervals( level )&gt;, &lt;Number of Forecast Periods( nAhead )&gt; )
 
 **Description:** Fits a Transfer Function model.
 
@@ -1239,7 +1239,7 @@ obj << Number of Forecast Periods( 100 );
 
 ### Variogram
 
-**Syntax:** obj << Variogram( state=0|1 )
+**Syntax:** obj &lt;&lt; Variogram( state=0|1 )
 
 **Description:** Displays or hides the variogram plot in the Time Series Basic Diagnostics report.
 
@@ -1254,7 +1254,7 @@ obj << Variogram( 1 );
 
 ### Winters Method
 
-**Syntax:** obj << Winters Method( Zero to One|Unconstrained|Custom( (Level|Seasonal|Trend)( Unconstrained| Seasonal| Bounded( lower, upper )| Fixed( value ) )), <Confidence Intervals(level)> )
+**Syntax:** obj &lt;&lt; Winters Method( Zero to One|Unconstrained|Custom( (Level|Seasonal|Trend)( Unconstrained| Seasonal| Bounded( lower, upper )| Fixed( value ) )), &lt;Confidence Intervals(level)&gt; )
 
 **Description:** Fits a smoothing model using Winter&apos;s method.
 
@@ -1278,7 +1278,7 @@ Time Series(
 
 ### X11
 
-**Syntax:** obj << X11( Additive|Multiplicative )
+**Syntax:** obj &lt;&lt; X11( Additive|Multiplicative )
 
 **Description:** Removes trend and seasonal effects using  the X-11 method developed by the US Bureau of the Census.
 
@@ -1295,7 +1295,7 @@ obj << X11( Additive );
 
 ### Action
 
-**Syntax:** obj << Action
+**Syntax:** obj &lt;&lt; Action
 
 **Description:** All-purpose trapdoor within a platform to insert expressions to evaluate. Temporarily sets the DisplayBox and DataTable contexts to the Platform.
 
@@ -1313,7 +1313,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Syntax:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntax:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Description:** Apply a previously created preset to the object, updating the options and customizations to match the saved settings.
 
@@ -1358,7 +1358,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Automatic Recalc
 
-**Syntax:** obj << Automatic Recalc( state=0|1 )
+**Syntax:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Description:** Redoes the analysis automatically for exclude and data changes. If the Automatic Recalc option is turned on, you should consider using Wait(0) commands to ensure that the exclude and data changes take effect before the recalculation.
 
@@ -1374,7 +1374,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**Syntax:** obj << Broadcast(message)
+**Syntax:** obj &lt;&lt; Broadcast(message)
 
 **Description:** Broadcasts a message to a platform. If return results from individual objects are tables, they are concatenated if possible, and the final format is identical to either the result from the Save Combined Table option in a Table Box or the result from the Concatenate option using a Source column. Other than those, results are stored in a list and returned.
 
@@ -1392,7 +1392,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**Syntax:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Syntax:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Description:** Adds a control panel for changing the platform&apos;s variables
 
@@ -1410,7 +1410,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**Syntax:** obj << Copy ByGroup Script
+**Syntax:** obj &lt;&lt; Copy ByGroup Script
 
 **Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
 
@@ -1430,7 +1430,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Syntax:** obj << Copy Script
+**Syntax:** obj &lt;&lt; Copy Script
 
 **Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
 
@@ -1445,7 +1445,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Syntax:** obj << Data Table Window
+**Syntax:** obj &lt;&lt; Data Table Window
 
 **Description:** Move the data table window for this analysis to the front.
 
@@ -1460,7 +1460,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Syntax:** obj << Get By Levels
+**Syntax:** obj &lt;&lt; Get By Levels
 
 **Description:** Returns an associative array mapping the by group columns to their values.
 
@@ -1475,7 +1475,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Syntax:** obj << Get ByGroup Script
+**Syntax:** obj &lt;&lt; Get ByGroup Script
 
 **Description:** Creates a script (JSL) to produce this analysis and returns it as an expression.
 
@@ -1496,7 +1496,7 @@ Show( t );
 
 ### Get Container
 
-**Syntax:** obj << Get Container
+**Syntax:** obj &lt;&lt; Get Container
 
 **Description:** Returns a reference to the container box that holds the content for the object.
 
@@ -1543,7 +1543,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Syntax:** obj << Get Data Table
+**Syntax:** obj &lt;&lt; Get Data Table
 
 **Description:** Returns a reference to the data table.
 
@@ -1559,7 +1559,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**Syntax:** obj << Get Group Platform
+**Syntax:** obj &lt;&lt; Get Group Platform
 
 **Description:** Return the Group Platform object if this platform is part of a Group. Otherwise, returns Empty().
 
@@ -1576,7 +1576,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**Syntax:** obj << Get Script
+**Syntax:** obj &lt;&lt; Get Script
 
 **Description:** Creates a script (JSL) to produce this analysis and returns it as an expression.
 
@@ -1592,7 +1592,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Syntax:** obj << Get Script With Data Table
+**Syntax:** obj &lt;&lt; Get Script With Data Table
 
 **Description:** Creates a script(JSL) to produce this analysis specifically referencing this data table and returns it as an expression.
 
@@ -1608,7 +1608,7 @@ Show( t );
 
 ### Get Timing
 
-**Syntax:** obj << Get Timing
+**Syntax:** obj &lt;&lt; Get Timing
 
 **Description:** Times the platform launch.
 
@@ -1624,7 +1624,7 @@ Show( t );
 
 ### Get Web Support
 
-**Syntax:** obj << Get Web Support
+**Syntax:** obj &lt;&lt; Get Web Support
 
 **Description:** Return a number indicating the level of Interactive HTML support for the display object. 1 means some or all elements are supported. 0 means no support.
 
@@ -1640,7 +1640,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Syntax:** obj << Get Where Expr
+**Syntax:** obj &lt;&lt; Get Where Expr
 
 **Description:** Returns the Where expression for the data subset, if the platform was launched with By() or Where(). Otherwise, returns Empty()
 
@@ -1675,7 +1675,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Syntax:** obj << Local Data Filter
+**Syntax:** obj &lt;&lt; Local Data Filter
 
 **Description:** To filter data to specific groups or ranges, but local to this platform
 
@@ -1727,7 +1727,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Syntax:** obj << Paste Local Data Filter
+**Syntax:** obj &lt;&lt; Paste Local Data Filter
 
 **Description:** Apply the local data filter from the clipboard to the current report.
 
@@ -1748,7 +1748,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**Syntax:** obj << Redo Analysis
+**Syntax:** obj &lt;&lt; Redo Analysis
 
 **Description:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
 
@@ -1763,7 +1763,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**Syntax:** obj << Redo ByGroup Analysis
+**Syntax:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Description:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
 
@@ -1783,7 +1783,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**Syntax:** obj << Relaunch Analysis
+**Syntax:** obj &lt;&lt; Relaunch Analysis
 
 **Description:** Opens the platform launch window and recalls the settings that were used to create the report.
 
@@ -1798,7 +1798,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**Syntax:** obj << Relaunch ByGroup
+**Syntax:** obj &lt;&lt; Relaunch ByGroup
 
 **Description:** Opens the platform launch window and recalls the settings that were used to create the report.
 
@@ -1818,7 +1818,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**Syntax:** obj << Remove Column Switcher
+**Syntax:** obj &lt;&lt; Remove Column Switcher
 
 **Description:** Removes the most recent Column Switcher that has been added to the platform.
 
@@ -1838,7 +1838,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Syntax:** obj << Remove Local Data Filter
+**Syntax:** obj &lt;&lt; Remove Local Data Filter
 
 **Description:** If a local data filter has been created, this removes it and restores the platform to use all the data in the data table directly
 
@@ -1875,9 +1875,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Syntax:** obj << Report;
-
-Report( obj )
+**Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Description:** Returns a reference to the report object.
 
@@ -1894,7 +1892,7 @@ Show( t );
 
 ### Report View
 
-**Syntax:** obj << Report View( "Full"|"Summary" )
+**Syntax:** obj &lt;&lt; Report View( "Full"|"Summary" )
 
 **Description:** The report view determines the level of detail visible in a platform report. Full shows all of the detail, while Summary shows only select content, dependent on the platform. For customized behavior, display boxes support a <<Set Summary Behavior message.
 
@@ -1909,7 +1907,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**Syntax:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description:** Creates a JSL script to produce this analysis, and save it as a table property in the data table. You can specify a name for the script. The Append Suffix option appends a numeric suffix to the script name, which differentiates the script from an existing script with the same name. The Prompt option prompts the user to specify a script name. The Replace option replaces an existing script with the same name.
 
@@ -1929,7 +1927,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Syntax:** obj << Save ByGroup Script to Journal
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
 
@@ -1949,7 +1947,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Syntax:** obj << Save ByGroup Script to Script Window
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
 
@@ -1969,7 +1967,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**Syntax:** obj << Save Script for All Objects
+**Syntax:** obj &lt;&lt; Save Script for All Objects
 
 **Description:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -1984,7 +1982,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Syntax:** obj << Save Script for All Objects To Data Table( <name> )
+**Syntax:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Description:** Saves a script for all report objects to the current data table. This option is useful when you have multiple reports in the window. The script is named after the first platform unless you specify the script name in quotes.
 
@@ -2022,7 +2020,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Syntax:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description:** Create a JSL script to produce this analysis, and save it as a table property in the data table.
 
@@ -2037,7 +2035,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Syntax:** obj << Save Script to Journal
+**Syntax:** obj &lt;&lt; Save Script to Journal
 
 **Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
 
@@ -2052,7 +2050,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Syntax:** obj << Save Script to Report
+**Syntax:** obj &lt;&lt; Save Script to Report
 
 **Description:** Create a JSL script to produce this analysis, and show it in the report itself. Useful to preserve a printed record of what was done.
 
@@ -2067,7 +2065,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Syntax:** obj << Save Script to Script Window
+**Syntax:** obj &lt;&lt; Save Script to Script Window
 
 **Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
 
@@ -2147,7 +2145,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Syntax:** obj << Sync to Data Table Changes
+**Syntax:** obj &lt;&lt; Sync to Data Table Changes
 
 **Description:** Sync with the exclude and data changes that have been made.
 
@@ -2164,7 +2162,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Syntax:** obj << Title( "new title" )
+**Syntax:** obj &lt;&lt; Title( "new title" )
 
 **Description:** Sets the title of the platform.
 
@@ -2179,7 +2177,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Syntax:** obj << Top Report
+**Syntax:** obj &lt;&lt; Top Report
 
 **Description:** Returns a reference to the root node in the report.
 
@@ -2196,7 +2194,7 @@ Show( t );
 
 ### Transform Column
 
-**Syntax:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Syntax:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Description:** Create a transform column in the local context of an object, usually a platform. The transform column is active only for the lifetime of the platform.
 
@@ -2213,7 +2211,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**Syntax:** obj << View Web XML
+**Syntax:** obj &lt;&lt; View Web XML
 
 **Description:** Returns the XML code that is used to create the interactive HTML report.
 
@@ -2251,7 +2249,7 @@ New Window( "Bivariate Equation",
 
 #### Actual
 
-**Syntax:** obj << Actual( state=0|1 )
+**Syntax:** obj &lt;&lt; Actual( state=0|1 )
 
 **Description:** Selects the Actual data column for saving with the Save Columns command. On by default.
 
@@ -2266,7 +2264,7 @@ obj << Arima( 1, 0, 0, Actual( 1 ), Save Columns );
 
 #### Autocorrelations
 
-**Syntax:** obj << Autocorrelations( state=0|1 )
+**Syntax:** obj &lt;&lt; Autocorrelations( state=0|1 )
 
 **Description:** Displays or hides the autocorrelations plot. On by default.
 
@@ -2289,11 +2287,11 @@ obj = Time Series(
 
 #### Confidence Intervals
 
-**Syntax:** obj << Confidence Intervals( number )
+**Syntax:** obj &lt;&lt; Confidence Intervals( number )
 
 #### Create SAS Job
 
-**Syntax:** obj << Create SAS Job
+**Syntax:** obj &lt;&lt; Create SAS Job
 
 **Description:** Creates a SAS Job to launch SAS and run the analysis in PROC ARIMA.
 
@@ -2309,13 +2307,13 @@ obj2 << Create SAS Job;
 
 #### Innovations
 
-**Syntax:** obj << Innovations( state=0|1 )
+**Syntax:** obj &lt;&lt; Innovations( state=0|1 )
 
 **Description:** On by default.
 
 #### Lower Confidence Limit
 
-**Syntax:** obj << Lower Confidence Limit( state=0|1 )
+**Syntax:** obj &lt;&lt; Lower Confidence Limit( state=0|1 )
 
 **Description:** Selects the Lower 95% Confidence Limit values column for saving with the Save Columns command. On by default.
 
@@ -2330,7 +2328,7 @@ obj << Arima( 1, 0, 0, Lower Confidence Limit( 1 ), Save Columns );
 
 #### No Constrain
 
-**Syntax:** obj << No Constrain( state=0|1 )
+**Syntax:** obj &lt;&lt; No Constrain( state=0|1 )
 
 **Description:** Lifts the constraint on the autoregressive parameters to always remain within the stable region and the moving average parameters within the invertible region when launching an ARIMA model.
 
@@ -2345,7 +2343,7 @@ obj << Arima( 1, 1, 0, No Constrain( 1 ) );
 
 #### No Intercept
 
-**Syntax:** obj << No Intercept( state=0|1 )
+**Syntax:** obj &lt;&lt; No Intercept( state=0|1 )
 
 **Description:** Sets the intercept to zero when launching an ARIMA model.
 
@@ -2360,7 +2358,7 @@ obj << Arima( 1, 1, 0, No Intercept( 1 ) );
 
 #### Partial Autocorrelations
 
-**Syntax:** obj << Partial Autocorrelations( state=0|1 )
+**Syntax:** obj &lt;&lt; Partial Autocorrelations( state=0|1 )
 
 **Description:** Displays or hides the partial autocorrelations plot. On by default.
 
@@ -2383,7 +2381,7 @@ obj = Time Series(
 
 #### Plot
 
-**Syntax:** obj << Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; Plot( state=0|1 )
 
 **Description:** Displays or hides the residual statistics plot. On by default.
 
@@ -2406,7 +2404,7 @@ obj = Time Series(
 
 #### Predicted
 
-**Syntax:** obj << Predicted( state=0|1 )
+**Syntax:** obj &lt;&lt; Predicted( state=0|1 )
 
 **Description:** Selects the Predicted values data column for saving with the Save Columns command. On by default.
 
@@ -2421,7 +2419,7 @@ obj << Arima( 1, 0, 0, Predicted( 1 ), Save Columns );
 
 #### Prediction Interval
 
-**Syntax:** obj << Prediction Interval( level )
+**Syntax:** obj &lt;&lt; Prediction Interval( level )
 
 **Description:** Sets the size of the confidence interval about the prediction for the ARIMA model. The default size is 0.95.
 
@@ -2436,11 +2434,11 @@ obj << Arima( 1, 1, 0, Forecasting Interval( 0.99 ) );
 
 #### Remove Fit
 
-**Syntax:** obj << Remove Fit
+**Syntax:** obj &lt;&lt; Remove Fit
 
 #### Residuals
 
-**Syntax:** obj << Residuals( state=0|1 )
+**Syntax:** obj &lt;&lt; Residuals( state=0|1 )
 
 **Description:** Selects the Residuals values data column for saving with the Save Columns command. On by default.
 
@@ -2455,7 +2453,7 @@ obj << Arima( 1, 0, 0, Residuals( 1 ), Save Columns );
 
 #### Save Columns
 
-**Syntax:** obj << Save Columns
+**Syntax:** obj &lt;&lt; Save Columns
 
 **Description:** Creates a new data table containing the actual and predicted values together with standard errors, residuals and 95% prediction intervals about the response. This option is available for all ARIMA, Smoothing, and Transfer Function models.
 
@@ -2471,7 +2469,7 @@ obj2 << Save Columns;
 
 #### Save Prediction Formula
 
-**Syntax:** obj << Save Prediction Formula
+**Syntax:** obj &lt;&lt; Save Prediction Formula
 
 **Description:** Saves the Prediction Formula to a new column in the data table. This option is available for all ARIMA and Smoothing models.
 
@@ -2487,7 +2485,7 @@ obj2 << Save Prediction Formula;
 
 #### Show Confidence Interval
 
-**Syntax:** obj << Show Confidence Interval( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Confidence Interval( state=0|1 )
 
 **Description:** Shows or hides prediction intervals on the Time Series Forecast Plot. This option is available for all ARIMA and Smoothing models. On by default.
 
@@ -2503,7 +2501,7 @@ obj2 << Show Confidence Interval( 0 );
 
 #### Show Points
 
-**Syntax:** obj << Show Points( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Points( state=0|1 )
 
 **Description:** Shows or hides points on the Time Series Forecast Plot. This option is available for all ARIMA and Smoothing models. On by default.
 
@@ -2520,7 +2518,7 @@ obj << Arima( 1, 0, 0, Show Points( 1 ) );
 
 #### Show Prediction Interval
 
-**Syntax:** obj << Show Prediction Interval( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Prediction Interval( state=0|1 )
 
 **Description:** Shows or hides prediction intervals on the Time Series Forecast Plot. This option is available for all ARIMA and Smoothing models. On by default.
 
@@ -2536,7 +2534,7 @@ obj2 << Show Prediction Interval( 0 );
 
 #### Std Error of Predicted
 
-**Syntax:** obj << Std Error of Predicted( state=0|1 )
+**Syntax:** obj &lt;&lt; Std Error of Predicted( state=0|1 )
 
 **Description:** Selects the Standard Error of Predicted values data column for saving with the Save Columns command. On by default.
 
@@ -2551,7 +2549,7 @@ obj << Arima( 1, 0, 0, Std Error of Predicted( 1 ), Save Columns );
 
 #### Time
 
-**Syntax:** obj << Time( state=0|1 )
+**Syntax:** obj &lt;&lt; Time( state=0|1 )
 
 **Description:** Selects the Time data column for saving with the Save Columns command. On by default.
 
@@ -2566,7 +2564,7 @@ obj << Arima( 1, 0, 0, Time( 0 ), Save Columns );
 
 #### Upper Confidence Limit
 
-**Syntax:** obj << Upper Confidence Limit( state=0|1 )
+**Syntax:** obj &lt;&lt; Upper Confidence Limit( state=0|1 )
 
 **Description:** Selects the Upper 95% Confidence Limit values column for saving with the Save Columns command. On by default.
 
@@ -2581,7 +2579,7 @@ obj << Arima( 1, 0, 0, Upper Confidence Limit( 1 ), Save Columns );
 
 #### Variogram
 
-**Syntax:** obj << Variogram( state=0|1 )
+**Syntax:** obj &lt;&lt; Variogram( state=0|1 )
 
 **Description:** Displays or hides the Variogram.
 
@@ -2608,7 +2606,7 @@ obj = Time Series(
 
 #### Autocorrelation
 
-**Syntax:** obj << Autocorrelation( state=0|1 )
+**Syntax:** obj &lt;&lt; Autocorrelation( state=0|1 )
 
 **Description:** Displays or hides the Autocorrelation in the Difference report. On by default.
 
@@ -2623,7 +2621,7 @@ obj << Difference( 1, 0, 0, Autocorrelation( 1 ) );
 
 #### Connecting Lines
 
-**Syntax:** obj << Connecting Lines( state=0|1 )
+**Syntax:** obj &lt;&lt; Connecting Lines( state=0|1 )
 
 **Description:** Displays or hides the lines connecting the points on the Difference Graph. On by default.
 
@@ -2638,7 +2636,7 @@ obj << Difference( 1, 0, 0, Connecting Lines( 1 ) );
 
 #### Difference Graph
 
-**Syntax:** obj << Difference Graph( state=0|1 )
+**Syntax:** obj &lt;&lt; Difference Graph( state=0|1 )
 
 **Description:** Displays or hides the Difference Graph. On by default.
 
@@ -2653,7 +2651,7 @@ obj << Difference( 1, 0, 0, Difference Graph( 1 ) );
 
 #### Mean Line
 
-**Syntax:** obj << Mean Line( state=0|1 )
+**Syntax:** obj &lt;&lt; Mean Line( state=0|1 )
 
 **Description:** Displays or hides the mean line on the Difference Graph.
 
@@ -2668,7 +2666,7 @@ obj << Difference( 1, 0, 0, Mean Line( 1 ) );
 
 #### Partial Autocorrelation
 
-**Syntax:** obj << Partial Autocorrelation( state=0|1 )
+**Syntax:** obj &lt;&lt; Partial Autocorrelation( state=0|1 )
 
 **Description:** Displays or hides the Partial Autocorrelation in the Difference report. On by default.
 
@@ -2683,11 +2681,11 @@ obj << Difference( 1, 0, 0, Partial Autocorrelation( 1 ) );
 
 #### Remove Fit
 
-**Syntax:** obj << Remove Fit
+**Syntax:** obj &lt;&lt; Remove Fit
 
 #### Save
 
-**Syntax:** obj << Save
+**Syntax:** obj &lt;&lt; Save
 
 **Description:** Saves the Difference values in a new column in the data table.
 
@@ -2702,7 +2700,7 @@ obj << Difference( 1, 0, 0, Save );
 
 #### Show Points
 
-**Syntax:** obj << Show Points( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Points( state=0|1 )
 
 **Description:** Displays or hides the points on the Difference Graph. On by default.
 
@@ -2717,7 +2715,7 @@ obj << Difference( 1, 0, 0, Show Points( 1 ) );
 
 #### Variogram
 
-**Syntax:** obj << Variogram( state=0|1 )
+**Syntax:** obj &lt;&lt; Variogram( state=0|1 )
 
 **Description:** Displays or hides the Variogram in the Difference report.
 
@@ -2736,7 +2734,7 @@ obj << Difference( 1, 0, 0, Variogram( 1 ) );
 
 #### Actual
 
-**Syntax:** obj << Actual( state=0|1 )
+**Syntax:** obj &lt;&lt; Actual( state=0|1 )
 
 **Description:** Selects the Actual data column for saving with the Save Columns command. On by default.
 
@@ -2751,7 +2749,7 @@ obj << Arima( 1, 0, 0, Actual( 1 ), Save Columns );
 
 #### Autocorrelations
 
-**Syntax:** obj << Autocorrelations( state=0|1 )
+**Syntax:** obj &lt;&lt; Autocorrelations( state=0|1 )
 
 **Description:** Displays or hides the autocorrelations plot. On by default.
 
@@ -2774,11 +2772,11 @@ obj = Time Series(
 
 #### Confidence Intervals
 
-**Syntax:** obj << Confidence Intervals( number )
+**Syntax:** obj &lt;&lt; Confidence Intervals( number )
 
 #### Create SAS Job
 
-**Syntax:** obj << Create SAS Job
+**Syntax:** obj &lt;&lt; Create SAS Job
 
 **Description:** Creates a SAS Job to launch SAS and run the analysis in PROC ARIMA.
 
@@ -2794,13 +2792,13 @@ obj2 << Create SAS Job;
 
 #### Innovations
 
-**Syntax:** obj << Innovations( state=0|1 )
+**Syntax:** obj &lt;&lt; Innovations( state=0|1 )
 
 **Description:** On by default.
 
 #### Lower Confidence Limit
 
-**Syntax:** obj << Lower Confidence Limit( state=0|1 )
+**Syntax:** obj &lt;&lt; Lower Confidence Limit( state=0|1 )
 
 **Description:** Selects the Lower 95% Confidence Limit values column for saving with the Save Columns command. On by default.
 
@@ -2815,7 +2813,7 @@ obj << Arima( 1, 0, 0, Lower Confidence Limit( 1 ), Save Columns );
 
 #### No Constrain
 
-**Syntax:** obj << No Constrain( state=0|1 )
+**Syntax:** obj &lt;&lt; No Constrain( state=0|1 )
 
 **Description:** Lifts the constraint on the autoregressive parameters to always remain within the stable region and the moving average parameters within the invertible region when launching an ARIMA model.
 
@@ -2830,7 +2828,7 @@ obj << Arima( 1, 1, 0, No Constrain( 1 ) );
 
 #### No Intercept
 
-**Syntax:** obj << No Intercept( state=0|1 )
+**Syntax:** obj &lt;&lt; No Intercept( state=0|1 )
 
 **Description:** Sets the intercept to zero when launching an ARIMA model.
 
@@ -2845,7 +2843,7 @@ obj << Arima( 1, 1, 0, No Intercept( 1 ) );
 
 #### Partial Autocorrelations
 
-**Syntax:** obj << Partial Autocorrelations( state=0|1 )
+**Syntax:** obj &lt;&lt; Partial Autocorrelations( state=0|1 )
 
 **Description:** Displays or hides the partial autocorrelations plot. On by default.
 
@@ -2868,7 +2866,7 @@ obj = Time Series(
 
 #### Plot
 
-**Syntax:** obj << Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; Plot( state=0|1 )
 
 **Description:** Displays or hides the residual statistics plot. On by default.
 
@@ -2891,7 +2889,7 @@ obj = Time Series(
 
 #### Predicted
 
-**Syntax:** obj << Predicted( state=0|1 )
+**Syntax:** obj &lt;&lt; Predicted( state=0|1 )
 
 **Description:** Selects the Predicted values data column for saving with the Save Columns command. On by default.
 
@@ -2906,7 +2904,7 @@ obj << Arima( 1, 0, 0, Predicted( 1 ), Save Columns );
 
 #### Prediction Interval
 
-**Syntax:** obj << Prediction Interval( level )
+**Syntax:** obj &lt;&lt; Prediction Interval( level )
 
 **Description:** Sets the size of the confidence interval about the prediction for the ARIMA model. The default size is 0.95.
 
@@ -2921,11 +2919,11 @@ obj << Arima( 1, 1, 0, Forecasting Interval( 0.99 ) );
 
 #### Remove Fit
 
-**Syntax:** obj << Remove Fit
+**Syntax:** obj &lt;&lt; Remove Fit
 
 #### Residuals
 
-**Syntax:** obj << Residuals( state=0|1 )
+**Syntax:** obj &lt;&lt; Residuals( state=0|1 )
 
 **Description:** Selects the Residuals values data column for saving with the Save Columns command. On by default.
 
@@ -2940,7 +2938,7 @@ obj << Arima( 1, 0, 0, Residuals( 1 ), Save Columns );
 
 #### Save Columns
 
-**Syntax:** obj << Save Columns
+**Syntax:** obj &lt;&lt; Save Columns
 
 **Description:** Creates a new data table containing the actual and predicted values together with standard errors, residuals and 95% prediction intervals about the response. This option is available for all ARIMA, Smoothing, and Transfer Function models.
 
@@ -2956,7 +2954,7 @@ obj2 << Save Columns;
 
 #### Save Prediction Formula
 
-**Syntax:** obj << Save Prediction Formula
+**Syntax:** obj &lt;&lt; Save Prediction Formula
 
 **Description:** Saves the Prediction Formula to a new column in the data table. This option is available for all ARIMA and Smoothing models.
 
@@ -2972,7 +2970,7 @@ obj2 << Save Prediction Formula;
 
 #### Show Confidence Interval
 
-**Syntax:** obj << Show Confidence Interval( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Confidence Interval( state=0|1 )
 
 **Description:** Shows or hides prediction intervals on the Time Series Forecast Plot. This option is available for all ARIMA and Smoothing models. On by default.
 
@@ -2988,7 +2986,7 @@ obj2 << Show Confidence Interval( 0 );
 
 #### Show Points
 
-**Syntax:** obj << Show Points( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Points( state=0|1 )
 
 **Description:** Shows or hides points on the Time Series Forecast Plot. This option is available for all ARIMA and Smoothing models. On by default.
 
@@ -3005,7 +3003,7 @@ obj << Arima( 1, 0, 0, Show Points( 1 ) );
 
 #### Show Prediction Interval
 
-**Syntax:** obj << Show Prediction Interval( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Prediction Interval( state=0|1 )
 
 **Description:** Shows or hides prediction intervals on the Time Series Forecast Plot. This option is available for all ARIMA and Smoothing models. On by default.
 
@@ -3021,7 +3019,7 @@ obj2 << Show Prediction Interval( 0 );
 
 #### Std Error of Predicted
 
-**Syntax:** obj << Std Error of Predicted( state=0|1 )
+**Syntax:** obj &lt;&lt; Std Error of Predicted( state=0|1 )
 
 **Description:** Selects the Standard Error of Predicted values data column for saving with the Save Columns command. On by default.
 
@@ -3036,7 +3034,7 @@ obj << Arima( 1, 0, 0, Std Error of Predicted( 1 ), Save Columns );
 
 #### Time
 
-**Syntax:** obj << Time( state=0|1 )
+**Syntax:** obj &lt;&lt; Time( state=0|1 )
 
 **Description:** Selects the Time data column for saving with the Save Columns command. On by default.
 
@@ -3051,7 +3049,7 @@ obj << Arima( 1, 0, 0, Time( 0 ), Save Columns );
 
 #### Upper Confidence Limit
 
-**Syntax:** obj << Upper Confidence Limit( state=0|1 )
+**Syntax:** obj &lt;&lt; Upper Confidence Limit( state=0|1 )
 
 **Description:** Selects the Upper 95% Confidence Limit values column for saving with the Save Columns command. On by default.
 
@@ -3066,7 +3064,7 @@ obj << Arima( 1, 0, 0, Upper Confidence Limit( 1 ), Save Columns );
 
 #### Variogram
 
-**Syntax:** obj << Variogram( state=0|1 )
+**Syntax:** obj &lt;&lt; Variogram( state=0|1 )
 
 **Description:** Displays or hides the Variogram.
 
@@ -3093,7 +3091,7 @@ obj = Time Series(
 
 #### Actual
 
-**Syntax:** obj << Actual( state=0|1 )
+**Syntax:** obj &lt;&lt; Actual( state=0|1 )
 
 **Description:** Selects the Actual data column for saving with the Save Columns command. On by default.
 
@@ -3108,7 +3106,7 @@ obj << Arima( 1, 0, 0, Actual( 1 ), Save Columns );
 
 #### Autocorrelations
 
-**Syntax:** obj << Autocorrelations( state=0|1 )
+**Syntax:** obj &lt;&lt; Autocorrelations( state=0|1 )
 
 **Description:** Displays or hides the autocorrelations plot. On by default.
 
@@ -3131,11 +3129,11 @@ obj = Time Series(
 
 #### Confidence Intervals
 
-**Syntax:** obj << Confidence Intervals( number )
+**Syntax:** obj &lt;&lt; Confidence Intervals( number )
 
 #### Create SAS Job
 
-**Syntax:** obj << Create SAS Job
+**Syntax:** obj &lt;&lt; Create SAS Job
 
 **Description:** Creates a SAS Job to launch SAS and run the analysis in PROC ARIMA.
 
@@ -3151,13 +3149,13 @@ obj2 << Create SAS Job;
 
 #### Innovations
 
-**Syntax:** obj << Innovations( state=0|1 )
+**Syntax:** obj &lt;&lt; Innovations( state=0|1 )
 
 **Description:** On by default.
 
 #### Lower Confidence Limit
 
-**Syntax:** obj << Lower Confidence Limit( state=0|1 )
+**Syntax:** obj &lt;&lt; Lower Confidence Limit( state=0|1 )
 
 **Description:** Selects the Lower 95% Confidence Limit values column for saving with the Save Columns command. On by default.
 
@@ -3172,7 +3170,7 @@ obj << Arima( 1, 0, 0, Lower Confidence Limit( 1 ), Save Columns );
 
 #### No Constrain
 
-**Syntax:** obj << No Constrain( state=0|1 )
+**Syntax:** obj &lt;&lt; No Constrain( state=0|1 )
 
 **Description:** Lifts the constraint on the autoregressive parameters to always remain within the stable region and the moving average parameters within the invertible region when launching an ARIMA model.
 
@@ -3187,7 +3185,7 @@ obj << Arima( 1, 1, 0, No Constrain( 1 ) );
 
 #### No Intercept
 
-**Syntax:** obj << No Intercept( state=0|1 )
+**Syntax:** obj &lt;&lt; No Intercept( state=0|1 )
 
 **Description:** Sets the intercept to zero when launching an ARIMA model.
 
@@ -3202,7 +3200,7 @@ obj << Arima( 1, 1, 0, No Intercept( 1 ) );
 
 #### Partial Autocorrelations
 
-**Syntax:** obj << Partial Autocorrelations( state=0|1 )
+**Syntax:** obj &lt;&lt; Partial Autocorrelations( state=0|1 )
 
 **Description:** Displays or hides the partial autocorrelations plot. On by default.
 
@@ -3225,7 +3223,7 @@ obj = Time Series(
 
 #### Plot
 
-**Syntax:** obj << Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; Plot( state=0|1 )
 
 **Description:** Displays or hides the residual statistics plot. On by default.
 
@@ -3248,7 +3246,7 @@ obj = Time Series(
 
 #### Predicted
 
-**Syntax:** obj << Predicted( state=0|1 )
+**Syntax:** obj &lt;&lt; Predicted( state=0|1 )
 
 **Description:** Selects the Predicted values data column for saving with the Save Columns command. On by default.
 
@@ -3263,7 +3261,7 @@ obj << Arima( 1, 0, 0, Predicted( 1 ), Save Columns );
 
 #### Prediction Interval
 
-**Syntax:** obj << Prediction Interval( level )
+**Syntax:** obj &lt;&lt; Prediction Interval( level )
 
 **Description:** Sets the size of the confidence interval about the prediction for the ARIMA model. The default size is 0.95.
 
@@ -3278,11 +3276,11 @@ obj << Arima( 1, 1, 0, Forecasting Interval( 0.99 ) );
 
 #### Remove Fit
 
-**Syntax:** obj << Remove Fit
+**Syntax:** obj &lt;&lt; Remove Fit
 
 #### Residuals
 
-**Syntax:** obj << Residuals( state=0|1 )
+**Syntax:** obj &lt;&lt; Residuals( state=0|1 )
 
 **Description:** Selects the Residuals values data column for saving with the Save Columns command. On by default.
 
@@ -3297,7 +3295,7 @@ obj << Arima( 1, 0, 0, Residuals( 1 ), Save Columns );
 
 #### Save Columns
 
-**Syntax:** obj << Save Columns
+**Syntax:** obj &lt;&lt; Save Columns
 
 **Description:** Creates a new data table containing the actual and predicted values together with standard errors, residuals and 95% prediction intervals about the response. This option is available for all ARIMA, Smoothing, and Transfer Function models.
 
@@ -3313,7 +3311,7 @@ obj2 << Save Columns;
 
 #### Save Prediction Formula
 
-**Syntax:** obj << Save Prediction Formula
+**Syntax:** obj &lt;&lt; Save Prediction Formula
 
 **Description:** Saves the Prediction Formula to a new column in the data table. This option is available for all ARIMA and Smoothing models.
 
@@ -3329,7 +3327,7 @@ obj2 << Save Prediction Formula;
 
 #### Show Confidence Interval
 
-**Syntax:** obj << Show Confidence Interval( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Confidence Interval( state=0|1 )
 
 **Description:** Shows or hides prediction intervals on the Time Series Forecast Plot. This option is available for all ARIMA and Smoothing models. On by default.
 
@@ -3345,7 +3343,7 @@ obj2 << Show Confidence Interval( 0 );
 
 #### Show Points
 
-**Syntax:** obj << Show Points( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Points( state=0|1 )
 
 **Description:** Shows or hides points on the Time Series Forecast Plot. This option is available for all ARIMA and Smoothing models. On by default.
 
@@ -3362,7 +3360,7 @@ obj << Arima( 1, 0, 0, Show Points( 1 ) );
 
 #### Show Prediction Interval
 
-**Syntax:** obj << Show Prediction Interval( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Prediction Interval( state=0|1 )
 
 **Description:** Shows or hides prediction intervals on the Time Series Forecast Plot. This option is available for all ARIMA and Smoothing models. On by default.
 
@@ -3378,7 +3376,7 @@ obj2 << Show Prediction Interval( 0 );
 
 #### Std Error of Predicted
 
-**Syntax:** obj << Std Error of Predicted( state=0|1 )
+**Syntax:** obj &lt;&lt; Std Error of Predicted( state=0|1 )
 
 **Description:** Selects the Standard Error of Predicted values data column for saving with the Save Columns command. On by default.
 
@@ -3393,7 +3391,7 @@ obj << Arima( 1, 0, 0, Std Error of Predicted( 1 ), Save Columns );
 
 #### Time
 
-**Syntax:** obj << Time( state=0|1 )
+**Syntax:** obj &lt;&lt; Time( state=0|1 )
 
 **Description:** Selects the Time data column for saving with the Save Columns command. On by default.
 
@@ -3408,7 +3406,7 @@ obj << Arima( 1, 0, 0, Time( 0 ), Save Columns );
 
 #### Upper Confidence Limit
 
-**Syntax:** obj << Upper Confidence Limit( state=0|1 )
+**Syntax:** obj &lt;&lt; Upper Confidence Limit( state=0|1 )
 
 **Description:** Selects the Upper 95% Confidence Limit values column for saving with the Save Columns command. On by default.
 
@@ -3423,7 +3421,7 @@ obj << Arima( 1, 0, 0, Upper Confidence Limit( 1 ), Save Columns );
 
 #### Variogram
 
-**Syntax:** obj << Variogram( state=0|1 )
+**Syntax:** obj &lt;&lt; Variogram( state=0|1 )
 
 **Description:** Displays or hides the Variogram.
 
@@ -3450,7 +3448,7 @@ obj = Time Series(
 
 #### Actual
 
-**Syntax:** obj << Actual( state=0|1 )
+**Syntax:** obj &lt;&lt; Actual( state=0|1 )
 
 **Description:** Selects the Actual data column for saving with the Save Columns command. On by default.
 
@@ -3465,7 +3463,7 @@ obj << Arima( 1, 0, 0, Actual( 1 ), Save Columns );
 
 #### Autocorrelations
 
-**Syntax:** obj << Autocorrelations( state=0|1 )
+**Syntax:** obj &lt;&lt; Autocorrelations( state=0|1 )
 
 **Description:** Displays or hides the autocorrelations plot. On by default.
 
@@ -3488,11 +3486,11 @@ obj = Time Series(
 
 #### Confidence Intervals
 
-**Syntax:** obj << Confidence Intervals( number )
+**Syntax:** obj &lt;&lt; Confidence Intervals( number )
 
 #### Create SAS Job
 
-**Syntax:** obj << Create SAS Job
+**Syntax:** obj &lt;&lt; Create SAS Job
 
 **Description:** Creates a SAS Job to launch SAS and run the analysis in PROC ARIMA.
 
@@ -3508,13 +3506,13 @@ obj2 << Create SAS Job;
 
 #### Innovations
 
-**Syntax:** obj << Innovations( state=0|1 )
+**Syntax:** obj &lt;&lt; Innovations( state=0|1 )
 
 **Description:** On by default.
 
 #### Lower Confidence Limit
 
-**Syntax:** obj << Lower Confidence Limit( state=0|1 )
+**Syntax:** obj &lt;&lt; Lower Confidence Limit( state=0|1 )
 
 **Description:** Selects the Lower 95% Confidence Limit values column for saving with the Save Columns command. On by default.
 
@@ -3529,7 +3527,7 @@ obj << Arima( 1, 0, 0, Lower Confidence Limit( 1 ), Save Columns );
 
 #### No Constrain
 
-**Syntax:** obj << No Constrain( state=0|1 )
+**Syntax:** obj &lt;&lt; No Constrain( state=0|1 )
 
 **Description:** Lifts the constraint on the autoregressive parameters to always remain within the stable region and the moving average parameters within the invertible region when launching an ARIMA model.
 
@@ -3544,7 +3542,7 @@ obj << Arima( 1, 1, 0, No Constrain( 1 ) );
 
 #### No Intercept
 
-**Syntax:** obj << No Intercept( state=0|1 )
+**Syntax:** obj &lt;&lt; No Intercept( state=0|1 )
 
 **Description:** Sets the intercept to zero when launching an ARIMA model.
 
@@ -3559,7 +3557,7 @@ obj << Arima( 1, 1, 0, No Intercept( 1 ) );
 
 #### Partial Autocorrelations
 
-**Syntax:** obj << Partial Autocorrelations( state=0|1 )
+**Syntax:** obj &lt;&lt; Partial Autocorrelations( state=0|1 )
 
 **Description:** Displays or hides the partial autocorrelations plot. On by default.
 
@@ -3582,7 +3580,7 @@ obj = Time Series(
 
 #### Plot
 
-**Syntax:** obj << Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; Plot( state=0|1 )
 
 **Description:** Displays or hides the residual statistics plot. On by default.
 
@@ -3605,7 +3603,7 @@ obj = Time Series(
 
 #### Predicted
 
-**Syntax:** obj << Predicted( state=0|1 )
+**Syntax:** obj &lt;&lt; Predicted( state=0|1 )
 
 **Description:** Selects the Predicted values data column for saving with the Save Columns command. On by default.
 
@@ -3620,7 +3618,7 @@ obj << Arima( 1, 0, 0, Predicted( 1 ), Save Columns );
 
 #### Prediction Interval
 
-**Syntax:** obj << Prediction Interval( level )
+**Syntax:** obj &lt;&lt; Prediction Interval( level )
 
 **Description:** Sets the size of the confidence interval about the prediction for the ARIMA model. The default size is 0.95.
 
@@ -3635,11 +3633,11 @@ obj << Arima( 1, 1, 0, Forecasting Interval( 0.99 ) );
 
 #### Remove Fit
 
-**Syntax:** obj << Remove Fit
+**Syntax:** obj &lt;&lt; Remove Fit
 
 #### Residuals
 
-**Syntax:** obj << Residuals( state=0|1 )
+**Syntax:** obj &lt;&lt; Residuals( state=0|1 )
 
 **Description:** Selects the Residuals values data column for saving with the Save Columns command. On by default.
 
@@ -3654,7 +3652,7 @@ obj << Arima( 1, 0, 0, Residuals( 1 ), Save Columns );
 
 #### Save Columns
 
-**Syntax:** obj << Save Columns
+**Syntax:** obj &lt;&lt; Save Columns
 
 **Description:** Creates a new data table containing the actual and predicted values together with standard errors, residuals and 95% prediction intervals about the response. This option is available for all ARIMA, Smoothing, and Transfer Function models.
 
@@ -3670,7 +3668,7 @@ obj2 << Save Columns;
 
 #### Save Prediction Formula
 
-**Syntax:** obj << Save Prediction Formula
+**Syntax:** obj &lt;&lt; Save Prediction Formula
 
 **Description:** Saves the Prediction Formula to a new column in the data table. This option is available for all ARIMA and Smoothing models.
 
@@ -3686,7 +3684,7 @@ obj2 << Save Prediction Formula;
 
 #### Show Confidence Interval
 
-**Syntax:** obj << Show Confidence Interval( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Confidence Interval( state=0|1 )
 
 **Description:** Shows or hides prediction intervals on the Time Series Forecast Plot. This option is available for all ARIMA and Smoothing models. On by default.
 
@@ -3702,7 +3700,7 @@ obj2 << Show Confidence Interval( 0 );
 
 #### Show Points
 
-**Syntax:** obj << Show Points( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Points( state=0|1 )
 
 **Description:** Shows or hides points on the Time Series Forecast Plot. This option is available for all ARIMA and Smoothing models. On by default.
 
@@ -3719,7 +3717,7 @@ obj << Arima( 1, 0, 0, Show Points( 1 ) );
 
 #### Show Prediction Interval
 
-**Syntax:** obj << Show Prediction Interval( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Prediction Interval( state=0|1 )
 
 **Description:** Shows or hides prediction intervals on the Time Series Forecast Plot. This option is available for all ARIMA and Smoothing models. On by default.
 
@@ -3735,7 +3733,7 @@ obj2 << Show Prediction Interval( 0 );
 
 #### Std Error of Predicted
 
-**Syntax:** obj << Std Error of Predicted( state=0|1 )
+**Syntax:** obj &lt;&lt; Std Error of Predicted( state=0|1 )
 
 **Description:** Selects the Standard Error of Predicted values data column for saving with the Save Columns command. On by default.
 
@@ -3750,7 +3748,7 @@ obj << Arima( 1, 0, 0, Std Error of Predicted( 1 ), Save Columns );
 
 #### Time
 
-**Syntax:** obj << Time( state=0|1 )
+**Syntax:** obj &lt;&lt; Time( state=0|1 )
 
 **Description:** Selects the Time data column for saving with the Save Columns command. On by default.
 
@@ -3765,7 +3763,7 @@ obj << Arima( 1, 0, 0, Time( 0 ), Save Columns );
 
 #### Upper Confidence Limit
 
-**Syntax:** obj << Upper Confidence Limit( state=0|1 )
+**Syntax:** obj &lt;&lt; Upper Confidence Limit( state=0|1 )
 
 **Description:** Selects the Upper 95% Confidence Limit values column for saving with the Save Columns command. On by default.
 
@@ -3780,7 +3778,7 @@ obj << Arima( 1, 0, 0, Upper Confidence Limit( 1 ), Save Columns );
 
 #### Variogram
 
-**Syntax:** obj << Variogram( state=0|1 )
+**Syntax:** obj &lt;&lt; Variogram( state=0|1 )
 
 **Description:** Displays or hides the Variogram.
 
@@ -3807,7 +3805,7 @@ obj = Time Series(
 
 #### Actual
 
-**Syntax:** obj << Actual( state=0|1 )
+**Syntax:** obj &lt;&lt; Actual( state=0|1 )
 
 **Description:** Selects the Actual data column for saving with the Save Columns command. On by default.
 
@@ -3822,7 +3820,7 @@ obj << Arima( 1, 0, 0, Actual( 1 ), Save Columns );
 
 #### Autocorrelations
 
-**Syntax:** obj << Autocorrelations( state=0|1 )
+**Syntax:** obj &lt;&lt; Autocorrelations( state=0|1 )
 
 **Description:** Displays or hides the autocorrelations plot. On by default.
 
@@ -3845,11 +3843,11 @@ obj = Time Series(
 
 #### Confidence Intervals
 
-**Syntax:** obj << Confidence Intervals( number )
+**Syntax:** obj &lt;&lt; Confidence Intervals( number )
 
 #### Create SAS Job
 
-**Syntax:** obj << Create SAS Job
+**Syntax:** obj &lt;&lt; Create SAS Job
 
 **Description:** Creates a SAS Job to launch SAS and run the analysis in PROC ARIMA.
 
@@ -3865,13 +3863,13 @@ obj2 << Create SAS Job;
 
 #### Innovations
 
-**Syntax:** obj << Innovations( state=0|1 )
+**Syntax:** obj &lt;&lt; Innovations( state=0|1 )
 
 **Description:** On by default.
 
 #### Lower Confidence Limit
 
-**Syntax:** obj << Lower Confidence Limit( state=0|1 )
+**Syntax:** obj &lt;&lt; Lower Confidence Limit( state=0|1 )
 
 **Description:** Selects the Lower 95% Confidence Limit values column for saving with the Save Columns command. On by default.
 
@@ -3886,7 +3884,7 @@ obj << Arima( 1, 0, 0, Lower Confidence Limit( 1 ), Save Columns );
 
 #### No Constrain
 
-**Syntax:** obj << No Constrain( state=0|1 )
+**Syntax:** obj &lt;&lt; No Constrain( state=0|1 )
 
 **Description:** Lifts the constraint on the autoregressive parameters to always remain within the stable region and the moving average parameters within the invertible region when launching an ARIMA model.
 
@@ -3901,7 +3899,7 @@ obj << Arima( 1, 1, 0, No Constrain( 1 ) );
 
 #### No Intercept
 
-**Syntax:** obj << No Intercept( state=0|1 )
+**Syntax:** obj &lt;&lt; No Intercept( state=0|1 )
 
 **Description:** Sets the intercept to zero when launching an ARIMA model.
 
@@ -3916,7 +3914,7 @@ obj << Arima( 1, 1, 0, No Intercept( 1 ) );
 
 #### Partial Autocorrelations
 
-**Syntax:** obj << Partial Autocorrelations( state=0|1 )
+**Syntax:** obj &lt;&lt; Partial Autocorrelations( state=0|1 )
 
 **Description:** Displays or hides the partial autocorrelations plot. On by default.
 
@@ -3939,7 +3937,7 @@ obj = Time Series(
 
 #### Plot
 
-**Syntax:** obj << Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; Plot( state=0|1 )
 
 **Description:** Displays or hides the residual statistics plot. On by default.
 
@@ -3962,7 +3960,7 @@ obj = Time Series(
 
 #### Predicted
 
-**Syntax:** obj << Predicted( state=0|1 )
+**Syntax:** obj &lt;&lt; Predicted( state=0|1 )
 
 **Description:** Selects the Predicted values data column for saving with the Save Columns command. On by default.
 
@@ -3977,7 +3975,7 @@ obj << Arima( 1, 0, 0, Predicted( 1 ), Save Columns );
 
 #### Prediction Interval
 
-**Syntax:** obj << Prediction Interval( level )
+**Syntax:** obj &lt;&lt; Prediction Interval( level )
 
 **Description:** Sets the size of the confidence interval about the prediction for the ARIMA model. The default size is 0.95.
 
@@ -3992,11 +3990,11 @@ obj << Arima( 1, 1, 0, Forecasting Interval( 0.99 ) );
 
 #### Remove Fit
 
-**Syntax:** obj << Remove Fit
+**Syntax:** obj &lt;&lt; Remove Fit
 
 #### Residuals
 
-**Syntax:** obj << Residuals( state=0|1 )
+**Syntax:** obj &lt;&lt; Residuals( state=0|1 )
 
 **Description:** Selects the Residuals values data column for saving with the Save Columns command. On by default.
 
@@ -4011,7 +4009,7 @@ obj << Arima( 1, 0, 0, Residuals( 1 ), Save Columns );
 
 #### Save Columns
 
-**Syntax:** obj << Save Columns
+**Syntax:** obj &lt;&lt; Save Columns
 
 **Description:** Creates a new data table containing the actual and predicted values together with standard errors, residuals and 95% prediction intervals about the response. This option is available for all ARIMA, Smoothing, and Transfer Function models.
 
@@ -4027,7 +4025,7 @@ obj2 << Save Columns;
 
 #### Save Prediction Formula
 
-**Syntax:** obj << Save Prediction Formula
+**Syntax:** obj &lt;&lt; Save Prediction Formula
 
 **Description:** Saves the Prediction Formula to a new column in the data table. This option is available for all ARIMA and Smoothing models.
 
@@ -4043,7 +4041,7 @@ obj2 << Save Prediction Formula;
 
 #### Show Confidence Interval
 
-**Syntax:** obj << Show Confidence Interval( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Confidence Interval( state=0|1 )
 
 **Description:** Shows or hides prediction intervals on the Time Series Forecast Plot. This option is available for all ARIMA and Smoothing models. On by default.
 
@@ -4059,7 +4057,7 @@ obj2 << Show Confidence Interval( 0 );
 
 #### Show Points
 
-**Syntax:** obj << Show Points( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Points( state=0|1 )
 
 **Description:** Shows or hides points on the Time Series Forecast Plot. This option is available for all ARIMA and Smoothing models. On by default.
 
@@ -4076,7 +4074,7 @@ obj << Arima( 1, 0, 0, Show Points( 1 ) );
 
 #### Show Prediction Interval
 
-**Syntax:** obj << Show Prediction Interval( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Prediction Interval( state=0|1 )
 
 **Description:** Shows or hides prediction intervals on the Time Series Forecast Plot. This option is available for all ARIMA and Smoothing models. On by default.
 
@@ -4092,7 +4090,7 @@ obj2 << Show Prediction Interval( 0 );
 
 #### Std Error of Predicted
 
-**Syntax:** obj << Std Error of Predicted( state=0|1 )
+**Syntax:** obj &lt;&lt; Std Error of Predicted( state=0|1 )
 
 **Description:** Selects the Standard Error of Predicted values data column for saving with the Save Columns command. On by default.
 
@@ -4107,7 +4105,7 @@ obj << Arima( 1, 0, 0, Std Error of Predicted( 1 ), Save Columns );
 
 #### Time
 
-**Syntax:** obj << Time( state=0|1 )
+**Syntax:** obj &lt;&lt; Time( state=0|1 )
 
 **Description:** Selects the Time data column for saving with the Save Columns command. On by default.
 
@@ -4122,7 +4120,7 @@ obj << Arima( 1, 0, 0, Time( 0 ), Save Columns );
 
 #### Upper Confidence Limit
 
-**Syntax:** obj << Upper Confidence Limit( state=0|1 )
+**Syntax:** obj &lt;&lt; Upper Confidence Limit( state=0|1 )
 
 **Description:** Selects the Upper 95% Confidence Limit values column for saving with the Save Columns command. On by default.
 
@@ -4137,7 +4135,7 @@ obj << Arima( 1, 0, 0, Upper Confidence Limit( 1 ), Save Columns );
 
 #### Variogram
 
-**Syntax:** obj << Variogram( state=0|1 )
+**Syntax:** obj &lt;&lt; Variogram( state=0|1 )
 
 **Description:** Displays or hides the Variogram.
 
@@ -4164,7 +4162,7 @@ obj = Time Series(
 
 #### Actual
 
-**Syntax:** obj << Actual( state=0|1 )
+**Syntax:** obj &lt;&lt; Actual( state=0|1 )
 
 **Description:** Selects the Actual data column for saving with the Save Columns command. On by default.
 
@@ -4179,7 +4177,7 @@ obj << Arima( 1, 0, 0, Actual( 1 ), Save Columns );
 
 #### Autocorrelations
 
-**Syntax:** obj << Autocorrelations( state=0|1 )
+**Syntax:** obj &lt;&lt; Autocorrelations( state=0|1 )
 
 **Description:** Displays or hides the autocorrelations plot. On by default.
 
@@ -4202,11 +4200,11 @@ obj = Time Series(
 
 #### Confidence Intervals
 
-**Syntax:** obj << Confidence Intervals( number )
+**Syntax:** obj &lt;&lt; Confidence Intervals( number )
 
 #### Create SAS Job
 
-**Syntax:** obj << Create SAS Job
+**Syntax:** obj &lt;&lt; Create SAS Job
 
 **Description:** Creates a SAS Job to launch SAS and run the analysis in PROC ARIMA.
 
@@ -4222,13 +4220,13 @@ obj2 << Create SAS Job;
 
 #### Innovations
 
-**Syntax:** obj << Innovations( state=0|1 )
+**Syntax:** obj &lt;&lt; Innovations( state=0|1 )
 
 **Description:** On by default.
 
 #### Lower Confidence Limit
 
-**Syntax:** obj << Lower Confidence Limit( state=0|1 )
+**Syntax:** obj &lt;&lt; Lower Confidence Limit( state=0|1 )
 
 **Description:** Selects the Lower 95% Confidence Limit values column for saving with the Save Columns command. On by default.
 
@@ -4243,7 +4241,7 @@ obj << Arima( 1, 0, 0, Lower Confidence Limit( 1 ), Save Columns );
 
 #### No Constrain
 
-**Syntax:** obj << No Constrain( state=0|1 )
+**Syntax:** obj &lt;&lt; No Constrain( state=0|1 )
 
 **Description:** Lifts the constraint on the autoregressive parameters to always remain within the stable region and the moving average parameters within the invertible region when launching an ARIMA model.
 
@@ -4258,7 +4256,7 @@ obj << Arima( 1, 1, 0, No Constrain( 1 ) );
 
 #### No Intercept
 
-**Syntax:** obj << No Intercept( state=0|1 )
+**Syntax:** obj &lt;&lt; No Intercept( state=0|1 )
 
 **Description:** Sets the intercept to zero when launching an ARIMA model.
 
@@ -4273,7 +4271,7 @@ obj << Arima( 1, 1, 0, No Intercept( 1 ) );
 
 #### Partial Autocorrelations
 
-**Syntax:** obj << Partial Autocorrelations( state=0|1 )
+**Syntax:** obj &lt;&lt; Partial Autocorrelations( state=0|1 )
 
 **Description:** Displays or hides the partial autocorrelations plot. On by default.
 
@@ -4296,7 +4294,7 @@ obj = Time Series(
 
 #### Plot
 
-**Syntax:** obj << Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; Plot( state=0|1 )
 
 **Description:** Displays or hides the residual statistics plot. On by default.
 
@@ -4319,7 +4317,7 @@ obj = Time Series(
 
 #### Predicted
 
-**Syntax:** obj << Predicted( state=0|1 )
+**Syntax:** obj &lt;&lt; Predicted( state=0|1 )
 
 **Description:** Selects the Predicted values data column for saving with the Save Columns command. On by default.
 
@@ -4334,7 +4332,7 @@ obj << Arima( 1, 0, 0, Predicted( 1 ), Save Columns );
 
 #### Prediction Interval
 
-**Syntax:** obj << Prediction Interval( level )
+**Syntax:** obj &lt;&lt; Prediction Interval( level )
 
 **Description:** Sets the size of the confidence interval about the prediction for the ARIMA model. The default size is 0.95.
 
@@ -4349,11 +4347,11 @@ obj << Arima( 1, 1, 0, Forecasting Interval( 0.99 ) );
 
 #### Remove Fit
 
-**Syntax:** obj << Remove Fit
+**Syntax:** obj &lt;&lt; Remove Fit
 
 #### Residuals
 
-**Syntax:** obj << Residuals( state=0|1 )
+**Syntax:** obj &lt;&lt; Residuals( state=0|1 )
 
 **Description:** Selects the Residuals values data column for saving with the Save Columns command. On by default.
 
@@ -4368,7 +4366,7 @@ obj << Arima( 1, 0, 0, Residuals( 1 ), Save Columns );
 
 #### Save Columns
 
-**Syntax:** obj << Save Columns
+**Syntax:** obj &lt;&lt; Save Columns
 
 **Description:** Creates a new data table containing the actual and predicted values together with standard errors, residuals and 95% prediction intervals about the response. This option is available for all ARIMA, Smoothing, and Transfer Function models.
 
@@ -4384,7 +4382,7 @@ obj2 << Save Columns;
 
 #### Save Prediction Formula
 
-**Syntax:** obj << Save Prediction Formula
+**Syntax:** obj &lt;&lt; Save Prediction Formula
 
 **Description:** Saves the Prediction Formula to a new column in the data table. This option is available for all ARIMA and Smoothing models.
 
@@ -4400,7 +4398,7 @@ obj2 << Save Prediction Formula;
 
 #### Show Confidence Interval
 
-**Syntax:** obj << Show Confidence Interval( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Confidence Interval( state=0|1 )
 
 **Description:** Shows or hides prediction intervals on the Time Series Forecast Plot. This option is available for all ARIMA and Smoothing models. On by default.
 
@@ -4416,7 +4414,7 @@ obj2 << Show Confidence Interval( 0 );
 
 #### Show Points
 
-**Syntax:** obj << Show Points( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Points( state=0|1 )
 
 **Description:** Shows or hides points on the Time Series Forecast Plot. This option is available for all ARIMA and Smoothing models. On by default.
 
@@ -4433,7 +4431,7 @@ obj << Arima( 1, 0, 0, Show Points( 1 ) );
 
 #### Show Prediction Interval
 
-**Syntax:** obj << Show Prediction Interval( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Prediction Interval( state=0|1 )
 
 **Description:** Shows or hides prediction intervals on the Time Series Forecast Plot. This option is available for all ARIMA and Smoothing models. On by default.
 
@@ -4449,7 +4447,7 @@ obj2 << Show Prediction Interval( 0 );
 
 #### Std Error of Predicted
 
-**Syntax:** obj << Std Error of Predicted( state=0|1 )
+**Syntax:** obj &lt;&lt; Std Error of Predicted( state=0|1 )
 
 **Description:** Selects the Standard Error of Predicted values data column for saving with the Save Columns command. On by default.
 
@@ -4464,7 +4462,7 @@ obj << Arima( 1, 0, 0, Std Error of Predicted( 1 ), Save Columns );
 
 #### Time
 
-**Syntax:** obj << Time( state=0|1 )
+**Syntax:** obj &lt;&lt; Time( state=0|1 )
 
 **Description:** Selects the Time data column for saving with the Save Columns command. On by default.
 
@@ -4479,7 +4477,7 @@ obj << Arima( 1, 0, 0, Time( 0 ), Save Columns );
 
 #### Upper Confidence Limit
 
-**Syntax:** obj << Upper Confidence Limit( state=0|1 )
+**Syntax:** obj &lt;&lt; Upper Confidence Limit( state=0|1 )
 
 **Description:** Selects the Upper 95% Confidence Limit values column for saving with the Save Columns command. On by default.
 
@@ -4494,7 +4492,7 @@ obj << Arima( 1, 0, 0, Upper Confidence Limit( 1 ), Save Columns );
 
 #### Variogram
 
-**Syntax:** obj << Variogram( state=0|1 )
+**Syntax:** obj &lt;&lt; Variogram( state=0|1 )
 
 **Description:** Displays or hides the Variogram.
 
@@ -4521,7 +4519,7 @@ obj = Time Series(
 
 #### Add Model
 
-**Syntax:** obj << Add Model( Window Width, <Centered> )
+**Syntax:** obj &lt;&lt; Add Model( Window Width, &lt;Centered&gt; )
 
 **Description:** Add a simple moving average model. Model is identified by moving window width. The optional argument indicates whether the average is centered.
 
@@ -4537,7 +4535,7 @@ sma << Add Model( 15, Centered );
 
 #### Connecting Lines
 
-**Syntax:** obj << Connecting Lines( <1|0> )
+**Syntax:** obj &lt;&lt; Connecting Lines( &lt;1|0&gt; )
 
 **Description:** Graph option for displaying connected lines.
 
@@ -4552,7 +4550,7 @@ sma = obj << Simple Moving Average( Connecting Lines );
 
 #### Get Results
 
-**Syntax:** obj << Get Results
+**Syntax:** obj &lt;&lt; Get Results
 
 **Description:** Return all simple moving average models as a JSL object.
 
@@ -4567,7 +4565,7 @@ resultobj = obj << Simple Moving Average( Get Result );
 
 #### Remove Model
 
-**Syntax:** obj << Remove Model( Window Width, <Centered> )
+**Syntax:** obj &lt;&lt; Remove Model( Window Width, &lt;Centered&gt; )
 
 **Description:** Remove a simple moving average model. Model is identified by moving window width.
 
@@ -4582,11 +4580,11 @@ obj << Simple Moving Average( Remove Model( 5 ) );
 
 #### Remove Report
 
-**Syntax:** obj << Remove Report
+**Syntax:** obj &lt;&lt; Remove Report
 
 #### Save to Data Table
 
-**Syntax:** obj << Save to Data Table
+**Syntax:** obj &lt;&lt; Save to Data Table
 
 **Description:** Save all simple moving average models to a data table, and return the data table handle
 
@@ -4601,7 +4599,7 @@ resultdt = obj << Simple Moving Average( Save to Data Table );
 
 #### Show Points
 
-**Syntax:** obj << Show Points( <1|0> )
+**Syntax:** obj &lt;&lt; Show Points( &lt;1|0&gt; )
 
 **Description:** Graph option for displaying points.
 
@@ -4620,7 +4618,7 @@ sma = obj << Simple Moving Average( Show Points( 0 ) );
 
 #### Alternative Parameterization
 
-**Syntax:** obj << Alternative Parameterization( state=0|1 )
+**Syntax:** obj &lt;&lt; Alternative Parameterization( state=0|1 )
 
 **Description:** Specifies whether the general regression coefficient is factored out of the numerator polynomials.
 
@@ -4645,7 +4643,7 @@ obj << Transfer Function(
 
 #### Autocorrelations
 
-**Syntax:** obj << Autocorrelations( state=0|1 )
+**Syntax:** obj &lt;&lt; Autocorrelations( state=0|1 )
 
 **Description:** Displays or hides the autocorrelations plot. On by default.
 
@@ -4666,11 +4664,11 @@ obj << Transfer Function(
 
 #### Compute Objective
 
-**Syntax:** obj << Compute Objective
+**Syntax:** obj &lt;&lt; Compute Objective
 
 #### Create SAS Job
 
-**Syntax:** obj << Create SAS Job
+**Syntax:** obj &lt;&lt; Create SAS Job
 
 **Description:** Creates a SAS Job to launch SAS and run the analysis in PROC ARIMA.
 
@@ -4690,11 +4688,11 @@ obj << Transfer Function(
 
 #### Import New Inputs
 
-**Syntax:** obj << Import New Inputs
+**Syntax:** obj &lt;&lt; Import New Inputs
 
 #### Maximum Iterations
 
-**Syntax:** obj << Maximum Iterations( number )
+**Syntax:** obj &lt;&lt; Maximum Iterations( number )
 
 **Description:** Specifies the maximum number of iterations.
 
@@ -4719,7 +4717,7 @@ obj << Transfer Function(
 
 #### No Constrain
 
-**Syntax:** obj << No Constrain( state=0|1 )
+**Syntax:** obj &lt;&lt; No Constrain( state=0|1 )
 
 **Description:** Removes the constraints on the AR and MA coefficients.
 
@@ -4744,7 +4742,7 @@ obj << Transfer Function(
 
 #### No Intercept
 
-**Syntax:** obj << No Intercept( state=0|1 )
+**Syntax:** obj &lt;&lt; No Intercept( state=0|1 )
 
 **Description:** Sets the Intercept to zero.
 
@@ -4769,7 +4767,7 @@ obj << Transfer Function(
 
 #### Number of Forecast Periods
 
-**Syntax:** obj << Number of Forecast Periods( number )
+**Syntax:** obj &lt;&lt; Number of Forecast Periods( number )
 
 **Description:** Specifies the number of periods for forecasting.
 
@@ -4794,7 +4792,7 @@ obj << Transfer Function(
 
 #### Partial Autocorrelations
 
-**Syntax:** obj << Partial Autocorrelations( state=0|1 )
+**Syntax:** obj &lt;&lt; Partial Autocorrelations( state=0|1 )
 
 **Description:** Displays or hides the partial autocorrelations plot. On by default.
 
@@ -4815,7 +4813,7 @@ obj << Transfer Function(
 
 #### Plot
 
-**Syntax:** obj << Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; Plot( state=0|1 )
 
 **Description:** Displays or hides the residual statistics plot. On by default.
 
@@ -4836,7 +4834,7 @@ obj << Transfer Function(
 
 #### Prediction Interval
 
-**Syntax:** obj << Prediction Interval( number )
+**Syntax:** obj &lt;&lt; Prediction Interval( number )
 
 **Description:** Sets the level of the confidence intervals displayed.
 
@@ -4861,11 +4859,11 @@ obj << Transfer Function(
 
 #### Remove Fit
 
-**Syntax:** obj << Remove Fit
+**Syntax:** obj &lt;&lt; Remove Fit
 
 #### Save Columns
 
-**Syntax:** obj << Save Columns
+**Syntax:** obj &lt;&lt; Save Columns
 
 **Description:** Creates a new data table containing the actual and predicted values together with standard errors, residuals and 95% prediction intervals about the response. This option is available for all ARIMA, Smoothing, and Transfer Function models.
 
@@ -4885,7 +4883,7 @@ obj << Transfer Function(
 
 #### Variogram
 
-**Syntax:** obj << Variogram( state=0|1 )
+**Syntax:** obj &lt;&lt; Variogram( state=0|1 )
 
 **Description:** Displays or hides the Variogram.
 
@@ -4910,7 +4908,7 @@ obj << Transfer Function(
 
 #### Actual
 
-**Syntax:** obj << Actual( state=0|1 )
+**Syntax:** obj &lt;&lt; Actual( state=0|1 )
 
 **Description:** Selects the Actual data column for saving with the Save Columns command. On by default.
 
@@ -4925,7 +4923,7 @@ obj << Arima( 1, 0, 0, Actual( 1 ), Save Columns );
 
 #### Autocorrelations
 
-**Syntax:** obj << Autocorrelations( state=0|1 )
+**Syntax:** obj &lt;&lt; Autocorrelations( state=0|1 )
 
 **Description:** Displays or hides the autocorrelations plot. On by default.
 
@@ -4948,11 +4946,11 @@ obj = Time Series(
 
 #### Confidence Intervals
 
-**Syntax:** obj << Confidence Intervals( number )
+**Syntax:** obj &lt;&lt; Confidence Intervals( number )
 
 #### Create SAS Job
 
-**Syntax:** obj << Create SAS Job
+**Syntax:** obj &lt;&lt; Create SAS Job
 
 **Description:** Creates a SAS Job to launch SAS and run the analysis in PROC ARIMA.
 
@@ -4968,13 +4966,13 @@ obj2 << Create SAS Job;
 
 #### Innovations
 
-**Syntax:** obj << Innovations( state=0|1 )
+**Syntax:** obj &lt;&lt; Innovations( state=0|1 )
 
 **Description:** On by default.
 
 #### Lower Confidence Limit
 
-**Syntax:** obj << Lower Confidence Limit( state=0|1 )
+**Syntax:** obj &lt;&lt; Lower Confidence Limit( state=0|1 )
 
 **Description:** Selects the Lower 95% Confidence Limit values column for saving with the Save Columns command. On by default.
 
@@ -4989,7 +4987,7 @@ obj << Arima( 1, 0, 0, Lower Confidence Limit( 1 ), Save Columns );
 
 #### No Constrain
 
-**Syntax:** obj << No Constrain( state=0|1 )
+**Syntax:** obj &lt;&lt; No Constrain( state=0|1 )
 
 **Description:** Lifts the constraint on the autoregressive parameters to always remain within the stable region and the moving average parameters within the invertible region when launching an ARIMA model.
 
@@ -5004,7 +5002,7 @@ obj << Arima( 1, 1, 0, No Constrain( 1 ) );
 
 #### No Intercept
 
-**Syntax:** obj << No Intercept( state=0|1 )
+**Syntax:** obj &lt;&lt; No Intercept( state=0|1 )
 
 **Description:** Sets the intercept to zero when launching an ARIMA model.
 
@@ -5019,7 +5017,7 @@ obj << Arima( 1, 1, 0, No Intercept( 1 ) );
 
 #### Partial Autocorrelations
 
-**Syntax:** obj << Partial Autocorrelations( state=0|1 )
+**Syntax:** obj &lt;&lt; Partial Autocorrelations( state=0|1 )
 
 **Description:** Displays or hides the partial autocorrelations plot. On by default.
 
@@ -5042,7 +5040,7 @@ obj = Time Series(
 
 #### Plot
 
-**Syntax:** obj << Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; Plot( state=0|1 )
 
 **Description:** Displays or hides the residual statistics plot. On by default.
 
@@ -5065,7 +5063,7 @@ obj = Time Series(
 
 #### Predicted
 
-**Syntax:** obj << Predicted( state=0|1 )
+**Syntax:** obj &lt;&lt; Predicted( state=0|1 )
 
 **Description:** Selects the Predicted values data column for saving with the Save Columns command. On by default.
 
@@ -5080,7 +5078,7 @@ obj << Arima( 1, 0, 0, Predicted( 1 ), Save Columns );
 
 #### Prediction Interval
 
-**Syntax:** obj << Prediction Interval( level )
+**Syntax:** obj &lt;&lt; Prediction Interval( level )
 
 **Description:** Sets the size of the confidence interval about the prediction for the ARIMA model. The default size is 0.95.
 
@@ -5095,11 +5093,11 @@ obj << Arima( 1, 1, 0, Forecasting Interval( 0.99 ) );
 
 #### Remove Fit
 
-**Syntax:** obj << Remove Fit
+**Syntax:** obj &lt;&lt; Remove Fit
 
 #### Residuals
 
-**Syntax:** obj << Residuals( state=0|1 )
+**Syntax:** obj &lt;&lt; Residuals( state=0|1 )
 
 **Description:** Selects the Residuals values data column for saving with the Save Columns command. On by default.
 
@@ -5114,7 +5112,7 @@ obj << Arima( 1, 0, 0, Residuals( 1 ), Save Columns );
 
 #### Save Columns
 
-**Syntax:** obj << Save Columns
+**Syntax:** obj &lt;&lt; Save Columns
 
 **Description:** Creates a new data table containing the actual and predicted values together with standard errors, residuals and 95% prediction intervals about the response. This option is available for all ARIMA, Smoothing, and Transfer Function models.
 
@@ -5130,7 +5128,7 @@ obj2 << Save Columns;
 
 #### Save Prediction Formula
 
-**Syntax:** obj << Save Prediction Formula
+**Syntax:** obj &lt;&lt; Save Prediction Formula
 
 **Description:** Saves the Prediction Formula to a new column in the data table. This option is available for all ARIMA and Smoothing models.
 
@@ -5146,7 +5144,7 @@ obj2 << Save Prediction Formula;
 
 #### Show Confidence Interval
 
-**Syntax:** obj << Show Confidence Interval( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Confidence Interval( state=0|1 )
 
 **Description:** Shows or hides prediction intervals on the Time Series Forecast Plot. This option is available for all ARIMA and Smoothing models. On by default.
 
@@ -5162,7 +5160,7 @@ obj2 << Show Confidence Interval( 0 );
 
 #### Show Points
 
-**Syntax:** obj << Show Points( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Points( state=0|1 )
 
 **Description:** Shows or hides points on the Time Series Forecast Plot. This option is available for all ARIMA and Smoothing models. On by default.
 
@@ -5179,7 +5177,7 @@ obj << Arima( 1, 0, 0, Show Points( 1 ) );
 
 #### Show Prediction Interval
 
-**Syntax:** obj << Show Prediction Interval( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Prediction Interval( state=0|1 )
 
 **Description:** Shows or hides prediction intervals on the Time Series Forecast Plot. This option is available for all ARIMA and Smoothing models. On by default.
 
@@ -5195,7 +5193,7 @@ obj2 << Show Prediction Interval( 0 );
 
 #### Std Error of Predicted
 
-**Syntax:** obj << Std Error of Predicted( state=0|1 )
+**Syntax:** obj &lt;&lt; Std Error of Predicted( state=0|1 )
 
 **Description:** Selects the Standard Error of Predicted values data column for saving with the Save Columns command. On by default.
 
@@ -5210,7 +5208,7 @@ obj << Arima( 1, 0, 0, Std Error of Predicted( 1 ), Save Columns );
 
 #### Time
 
-**Syntax:** obj << Time( state=0|1 )
+**Syntax:** obj &lt;&lt; Time( state=0|1 )
 
 **Description:** Selects the Time data column for saving with the Save Columns command. On by default.
 
@@ -5225,7 +5223,7 @@ obj << Arima( 1, 0, 0, Time( 0 ), Save Columns );
 
 #### Upper Confidence Limit
 
-**Syntax:** obj << Upper Confidence Limit( state=0|1 )
+**Syntax:** obj &lt;&lt; Upper Confidence Limit( state=0|1 )
 
 **Description:** Selects the Upper 95% Confidence Limit values column for saving with the Save Columns command. On by default.
 
@@ -5240,7 +5238,7 @@ obj << Arima( 1, 0, 0, Upper Confidence Limit( 1 ), Save Columns );
 
 #### Variogram
 
-**Syntax:** obj << Variogram( state=0|1 )
+**Syntax:** obj &lt;&lt; Variogram( state=0|1 )
 
 **Description:** Displays or hides the Variogram.
 

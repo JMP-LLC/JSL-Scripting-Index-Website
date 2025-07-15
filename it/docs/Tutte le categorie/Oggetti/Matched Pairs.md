@@ -6,7 +6,7 @@
 
 ### By
 
-**Sintassi:** obj << By( column(s) )
+**Sintassi:** obj &lt;&lt; By( column(s) )
 
 ```jsl
 
@@ -23,7 +23,7 @@ obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ), By( _bycol ) );
 
 ### Freq
 
-**Sintassi:** obj << Freq( column )
+**Sintassi:** obj &lt;&lt; Freq( column )
 
 ```jsl
 
@@ -36,7 +36,7 @@ obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ), Freq( _freqcol ) );
 
 ### Grouping
 
-**Sintassi:** obj << Grouping( column )
+**Sintassi:** obj &lt;&lt; Grouping( column )
 
 ```jsl
 
@@ -48,7 +48,7 @@ obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 
 ### Paired Response
 
-**Sintassi:** obj << Paired Response( column(s) )
+**Sintassi:** obj &lt;&lt; Paired Response( column(s) )
 
 ```jsl
 
@@ -60,7 +60,7 @@ obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 
 ### Weight
 
-**Sintassi:** obj << Weight( column )
+**Sintassi:** obj &lt;&lt; Weight( column )
 
 ```jsl
 
@@ -73,7 +73,7 @@ obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ), Weight( _weightcol )
 
 ### X
 
-**Sintassi:** obj << X( column )
+**Sintassi:** obj &lt;&lt; X( column )
 
 ```jsl
 
@@ -85,7 +85,7 @@ obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 
 ### Y
 
-**Sintassi:** obj << Y( column(s) )
+**Sintassi:** obj &lt;&lt; Y( column(s) )
 
 ```jsl
 
@@ -115,7 +115,7 @@ obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 
 ### Action
 
-**Sintassi:** obj << Action
+**Sintassi:** obj &lt;&lt; Action
 
 **Descrizione:** Trapdoor generica all&apos;interno di una piattaforma per inserire espressioni da valutare. Imposta temporaneamente i contesti del riquadro di visualizzazione e della tabella di dati per la piattaforma.
 
@@ -133,7 +133,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Sintassi:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintassi:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descrizione:** Applica all’oggetto una preimpostazione precedentemente creata, aggiornando le opzioni e le personalizzazioni in base alle impostazioni salvate.
 
@@ -180,7 +180,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Automatic Recalc
 
-**Sintassi:** obj << Automatic Recalc( state=0|1 )
+**Sintassi:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Descrizione:** Ripete l&apos;analisi automaticamente per l&apos;esclusione e le modifiche ai dati. Se l&apos;opzione Ricalcolo automatico è attivata, si consiglia di usare i comandi Attendi(0) per garantire che le modifiche di esclusione e di dati abbiano effetto prima del ricalcolo.
 
@@ -196,7 +196,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Bland Altman Analysis
 
-**Sintassi:** obj << Bland Altman Analysis( state=0|1 )
+**Sintassi:** obj &lt;&lt; Bland Altman Analysis( state=0|1 )
 
 **Descrizione:** Mostra o nasconde l&apos;analisi di Bland-Altman. Questa analisi è una tecnica di confronto di metodi utilizzata per confrontare due misurazioni della stessa variabile.
 
@@ -211,7 +211,7 @@ obj << Bland Altman Analysis( 1 );
 
 ### Bland Altman Percent Analysis
 
-**Sintassi:** obj << Bland Altman Percent Analysis( state=0|1 )
+**Sintassi:** obj &lt;&lt; Bland Altman Percent Analysis( state=0|1 )
 
 **Descrizione:** Mostra o nasconde l&apos;analisi percentuale Bland-Altman.
 
@@ -228,7 +228,7 @@ obj << Bland Altman Percent Analysis( 1 );
 
 ### Broadcast
 
-**Sintassi:** obj << Broadcast(message)
+**Sintassi:** obj &lt;&lt; Broadcast(message)
 
 **Descrizione:** Diffonde un messaggio a una piattaforma. Se i risultati di restituzione dei singoli oggetti sono tabelle, esse sono concatenate se possibile e il formato finale è identico al risultato dell&apos;opzione Salva tabella combinata in un riquadro della tabella o il risultato dell&apos;opzione Concatena utilizzando una colonna di origine. Oltre a quelli, i risultati sono memorizzati in un elenco e restituiti.
 
@@ -248,7 +248,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**Sintassi:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Sintassi:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Descrizione:** Aggiunge un pannello di controllo per modificare le variabili della piattaforma
 
@@ -266,7 +266,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**Sintassi:** obj << Copy ByGroup Script
+**Sintassi:** obj &lt;&lt; Copy ByGroup Script
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo inserisce negli Appunti.
 
@@ -286,7 +286,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Sintassi:** obj << Copy Script
+**Sintassi:** obj &lt;&lt; Copy Script
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo inserisce negli Appunti.
 
@@ -301,7 +301,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Sintassi:** obj << Data Table Window
+**Sintassi:** obj &lt;&lt; Data Table Window
 
 **Descrizione:** Sposta in primo piano la finestra della tabella di dati per questa analisi.
 
@@ -316,7 +316,7 @@ obj << Data Table Window;
 
 ### Dif Statistics
 
-**Sintassi:** obj << Dif Statistics( state=0|1 )
+**Sintassi:** obj &lt;&lt; Dif Statistics( state=0|1 )
 
 **Descrizione:** Mostra o nasconde le statistiche sulle differenze. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -333,13 +333,13 @@ obj << Dif Statistics( 1 );
 
 ### Equivalence Tests
 
-**Sintassi:** obj << Equivalence Tests
+**Sintassi:** obj &lt;&lt; Equivalence Tests
 
 **JMP Versione aggiunta:** 18
 
 ### Get By Levels
 
-**Sintassi:** obj << Get By Levels
+**Sintassi:** obj &lt;&lt; Get By Levels
 
 **Descrizione:** Restituisce un array associativo che mappa le colonne del gruppo di By ai rispettivi valori.
 
@@ -356,7 +356,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Sintassi:** obj << Get ByGroup Script
+**Sintassi:** obj &lt;&lt; Get ByGroup Script
 
 **Descrizione:** Crea uno script (JSL) per generare questa analisi e la restituisce come espressione.
 
@@ -377,7 +377,7 @@ Show( t );
 
 ### Get Container
 
-**Sintassi:** obj << Get Container
+**Sintassi:** obj &lt;&lt; Get Container
 
 **Descrizione:** Restituisce un riferimento al riquadro contenitore che racchiude il contenuto dell&apos;oggetto.
 
@@ -424,7 +424,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Sintassi:** obj << Get Data Table
+**Sintassi:** obj &lt;&lt; Get Data Table
 
 **Descrizione:** Restituisce un riferimento alla tabella di dati.
 
@@ -440,7 +440,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**Sintassi:** obj << Get Group Platform
+**Sintassi:** obj &lt;&lt; Get Group Platform
 
 **Descrizione:** Restituisce l&apos;oggetto Raggruppa piattaforma se la piattaforma fa parte di un gruppo. In caso contrario, restituisce Vuoto().
 
@@ -457,7 +457,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**Sintassi:** obj << Get Script
+**Sintassi:** obj &lt;&lt; Get Script
 
 **Descrizione:** Crea uno script (JSL) per generare questa analisi e la restituisce come espressione.
 
@@ -473,7 +473,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Sintassi:** obj << Get Script With Data Table
+**Sintassi:** obj &lt;&lt; Get Script With Data Table
 
 **Descrizione:** Crea uno script (JSL) per generare questa analisi facendo specifico riferimento a questa tabella di dati e la restituisce come espressione.
 
@@ -489,7 +489,7 @@ Show( t );
 
 ### Get Timing
 
-**Sintassi:** obj << Get Timing
+**Sintassi:** obj &lt;&lt; Get Timing
 
 **Descrizione:** Determina il tempo di avvio della piattaforma.
 
@@ -505,7 +505,7 @@ Show( t );
 
 ### Get Web Support
 
-**Sintassi:** obj << Get Web Support
+**Sintassi:** obj &lt;&lt; Get Web Support
 
 **Descrizione:** Restituisce un numero indicante il livello di supporto HTML interattivo per l&apos;oggetto visualizzato. 1 significa che alcuni o tutti gli elementi sono supportati. 0 significa nessun supporto.
 
@@ -521,7 +521,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Sintassi:** obj << Get Where Expr
+**Sintassi:** obj &lt;&lt; Get Where Expr
 
 **Descrizione:** Restituisce l&apos;espressione Where per il sottoinsieme di dati, se la piattaforma è stata avviata con By() o Where(). Altrimenti, restituisce Vuoto()
 
@@ -558,7 +558,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Sintassi:** obj << Local Data Filter
+**Sintassi:** obj &lt;&lt; Local Data Filter
 
 **Descrizione:** Filtra dati in specifici gruppi o range, ma localmente in questa piattaforma
 
@@ -616,7 +616,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Sintassi:** obj << Paste Local Data Filter
+**Sintassi:** obj &lt;&lt; Paste Local Data Filter
 
 **Descrizione:** Applicare il filtro sui dati locali dagli Appunti al report corrente.
 
@@ -637,7 +637,7 @@ dist2 << Paste Local Data Filter;
 
 ### Percent Dif Statistics
 
-**Sintassi:** obj << Percent Dif Statistics( state=0|1 )
+**Sintassi:** obj &lt;&lt; Percent Dif Statistics( state=0|1 )
 
 **Descrizione:** Mostra o nasconde le statistiche sulle differenze percentuali.
 
@@ -654,7 +654,7 @@ obj << Percent Dif Statistics( 1 );
 
 ### Plot Dif By Mean
 
-**Sintassi:** obj << Plot Dif By Mean( state=0|1 )
+**Sintassi:** obj &lt;&lt; Plot Dif By Mean( state=0|1 )
 
 **Descrizione:** Mostra/Nasconde il grafico delle differenze appaiate rispetto alle medie appaiate. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -669,7 +669,7 @@ obj << Plot Dif by Mean( 1 );
 
 ### Plot Dif By Row
 
-**Sintassi:** obj << Plot Dif By Row( state=0|1 )
+**Sintassi:** obj &lt;&lt; Plot Dif By Row( state=0|1 )
 
 **Descrizione:** Mostra/Nasconde il grafico delle differenze appaiate rispetto al numero di riga.
 
@@ -684,7 +684,7 @@ obj << Plot Dif by Row( 1 );
 
 ### Plot Percent Dif by Mean
 
-**Sintassi:** obj << Plot Percent Dif by Mean( state=0|1 )
+**Sintassi:** obj &lt;&lt; Plot Percent Dif by Mean( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un diagramma della differenza percentuale in base alla media.
 
@@ -701,7 +701,7 @@ obj << Plot Percent Dif by Mean( 1 );
 
 ### Plot Percent Dif by Row
 
-**Sintassi:** obj << Plot Percent Dif by Row( state=0|1 )
+**Sintassi:** obj &lt;&lt; Plot Percent Dif by Row( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un diagramma della differenza percentuale in base alla riga.
 
@@ -718,7 +718,7 @@ obj << Plot Percent Dif by Row( 1 );
 
 ### Redo Analysis
 
-**Sintassi:** obj << Redo Analysis
+**Sintassi:** obj &lt;&lt; Redo Analysis
 
 **Descrizione:** Ripete questa stessa analisi in una nuova finestra. L&apos;analisi sarà differente se i dati sono stati modificati.
 
@@ -733,7 +733,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**Sintassi:** obj << Redo ByGroup Analysis
+**Sintassi:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Descrizione:** Ripete questa stessa analisi in una nuova finestra. L&apos;analisi sarà differente se i dati sono stati modificati.
 
@@ -753,7 +753,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Reference Frame
 
-**Sintassi:** obj << Reference Frame( state=0|1 )
+**Sintassi:** obj &lt;&lt; Reference Frame( state=0|1 )
 
 **Descrizione:** Mostra/Nasconde il frame di riferimento sul grafico che rappresenta la differenza rispetto alla media. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -768,7 +768,7 @@ obj << Reference Frame( 1 );
 
 ### Relaunch Analysis
 
-**Sintassi:** obj << Relaunch Analysis
+**Sintassi:** obj &lt;&lt; Relaunch Analysis
 
 **Descrizione:** Apre la finestra di avvio della piattaforma e richiama le impostazioni utilizzate per creare il report.
 
@@ -783,7 +783,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**Sintassi:** obj << Relaunch ByGroup
+**Sintassi:** obj &lt;&lt; Relaunch ByGroup
 
 **Descrizione:** Apre la finestra di avvio della piattaforma e richiama le impostazioni utilizzate per creare il report.
 
@@ -803,7 +803,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**Sintassi:** obj << Remove Column Switcher
+**Sintassi:** obj &lt;&lt; Remove Column Switcher
 
 **Descrizione:** Rimuove l&apos;ultimo Scambia colonne che è stato aggiunto alla piattaforma.
 
@@ -823,7 +823,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Sintassi:** obj << Remove Local Data Filter
+**Sintassi:** obj &lt;&lt; Remove Local Data Filter
 
 **Descrizione:** Se è stato creato un filtro di dati locali viene rimosso per ripristinare la piattaforma e utilizzare direttamente tutti i dati nella tabella di dati
 
@@ -862,9 +862,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Sintassi:** obj << Report;
-
-Report( obj )
+**Sintassi:** obj &lt;&lt; Report;Report( obj )
 
 **Descrizione:** Restituisce un riferimento all&apos;oggetto del report.
 
@@ -881,7 +879,7 @@ Show( t );
 
 ### Report View
 
-**Sintassi:** obj << Report View( "Completo"|"Riepilogo" )
+**Sintassi:** obj &lt;&lt; Report View( "Completo"|"Riepilogo" )
 
 **Descrizione:** La visualizzazione Report determina il livello di dettaglio visibile in un report della piattaforma. Full mostra tutti i dettagli mentre Summary mostra solo contenuti selezionati, in base alla piattaforma. Per un comportamento personalizzato, i riquadri di visualizzazione supportano un messaggio <<Set Summary Behavior.
 
@@ -896,7 +894,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**Sintassi:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintassi:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e salvarla come proprietà della tabella nella tabella di dati. È possibile specificare un nome per lo script. L&apos;opzione Append Suffix aggiunge un suffisso numerico al nome dello script, che differenzia lo script da uno script esistente con lo stesso nome. L&apos;opzione Prompt richiede all&apos;utente di specificare un nome di script. L&apos;opzione Replace sostituisce uno script esistente con lo stesso nome.
 
@@ -916,7 +914,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Sintassi:** obj << Save ByGroup Script to Journal
+**Sintassi:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e aggiunge un pulsante con lo script al journal.
 
@@ -936,7 +934,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Sintassi:** obj << Save ByGroup Script to Script Window
+**Sintassi:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo aggiunge alla finestra di testo dello script corrente.
 
@@ -956,7 +954,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**Sintassi:** obj << Save Script for All Objects
+**Sintassi:** obj &lt;&lt; Save Script for All Objects
 
 **Descrizione:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -971,7 +969,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Sintassi:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintassi:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descrizione:** Salva uno script per tutti gli oggetti del report nella tabella di dati corrente. Questa opzione è utile quando sono presenti più report nella finestra. Lo script prende il nome dalla prima piattaforma, a meno che non si specifichi il nome dello script tra apici.
 
@@ -1009,7 +1007,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Sintassi:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintassi:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo salva come una proprietà di tabella nella tabella di dati.
 
@@ -1024,7 +1022,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Sintassi:** obj << Save Script to Journal
+**Sintassi:** obj &lt;&lt; Save Script to Journal
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e aggiunge un pulsante con lo script al journal.
 
@@ -1039,7 +1037,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Sintassi:** obj << Save Script to Report
+**Sintassi:** obj &lt;&lt; Save Script to Report
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo mostra nel report. Utile per avere una copia stampata di quanto è stato fatto.
 
@@ -1054,7 +1052,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Sintassi:** obj << Save Script to Script Window
+**Sintassi:** obj &lt;&lt; Save Script to Script Window
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo aggiunge alla finestra di testo dello script corrente.
 
@@ -1134,7 +1132,7 @@ dt << Distribution(
 
 ### Set Alpha Level
 
-**Sintassi:** obj << Set Alpha Level( "0.01"|"0.05"|"0.10"|"0.50"|"Altro…" )
+**Sintassi:** obj &lt;&lt; Set Alpha Level( "0.01"|"0.05"|"0.10"|"0.50"|"Altro…" )
 
 **Descrizione:** Cambia il livello alfa utilizzato nelle analisi. Influisce sugli intervalli di confidenza sia nel report, sia nel grafico.
 
@@ -1149,7 +1147,7 @@ obj << Set Alpha Level( 0.1 );
 
 ### Set α Level
 
-**Sintassi:** obj << Set α Level( "0.01"|"0.05"|"0.10"|"0.50"|"Altro…" )
+**Sintassi:** obj &lt;&lt; Set α Level( "0.01"|"0.05"|"0.10"|"0.50"|"Altro…" )
 
 **Descrizione:** Cambia il livello alfa utilizzato nelle analisi. Influisce sugli intervalli di confidenza sia nel report, sia nel grafico.
 
@@ -1164,7 +1162,7 @@ obj << Set Alpha Level( 0.1 );
 
 ### Sign Test
 
-**Sintassi:** obj << Sign Test( state=0|1 )
+**Sintassi:** obj &lt;&lt; Sign Test( state=0|1 )
 
 **Descrizione:** Mostra/Nasconde il test con segno. È una versione non parametrica dei test t appaiati.
 
@@ -1179,7 +1177,7 @@ obj << Sign Test( 1 );
 
 ### Sync to Data Table Changes
 
-**Sintassi:** obj << Sync to Data Table Changes
+**Sintassi:** obj &lt;&lt; Sync to Data Table Changes
 
 **Descrizione:** Sincronizza con l&apos;esclusione e le modifiche ai dati effettuate.
 
@@ -1196,7 +1194,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Sintassi:** obj << Title( "new title" )
+**Sintassi:** obj &lt;&lt; Title( "new title" )
 
 **Descrizione:** Imposta il titolo della piattaforma.
 
@@ -1211,7 +1209,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Sintassi:** obj << Top Report
+**Sintassi:** obj &lt;&lt; Top Report
 
 **Descrizione:** Restituisce un riferimento al nodo principale nel report.
 
@@ -1228,7 +1226,7 @@ Show( t );
 
 ### Transform Column
 
-**Sintassi:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Sintassi:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Descrizione:** Crea una colonna di trasformazione nel contesto locale di un oggetto, di solito una piattaforma. La colonna di trasformazione è attiva solo per la durata della piattaforma.
 
@@ -1249,7 +1247,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**Sintassi:** obj << View Web XML
+**Sintassi:** obj &lt;&lt; View Web XML
 
 **Descrizione:** Restituisce il codice XML utilizzato per creare il report HTML interattivo.
 
@@ -1264,7 +1262,7 @@ xml = obj << View Web XML;
 
 ### Wilcoxon Signed Rank
 
-**Sintassi:** obj << Wilcoxon Signed Rank( state=0|1 )
+**Sintassi:** obj &lt;&lt; Wilcoxon Signed Rank( state=0|1 )
 
 **Descrizione:** Mostra/Nasconde il test dei ranghi con segno di Wilcoxon. È una versione non parametrica dei test t appaiati.
 
@@ -1279,9 +1277,7 @@ obj << Wilcoxon Signed Rank( 1 );
 
 ### Window View
 
-**Sintassi:** obj = Matched Pairs(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Matched Pairs(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Impostare il tipo di finestra da creare per il report. Per impostazione predefinita verrà creata una finestra di report Visible. Una finestra Invisible non comparirà sullo schermo, ma è individuabile da funzioni come Window(). Una finestra Private risponde alla maggior parte dei messaggi della finestra, ma non è individuabile e deve essere indirizzata attraverso l&apos;oggetto report
 

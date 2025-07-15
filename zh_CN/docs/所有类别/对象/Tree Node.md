@@ -6,7 +6,7 @@
 
 ### Tree Node
 
-**语法:** node = Tree Node( <label> )
+**语法:** node = Tree Node( &lt;label&gt; )
 
 **说明:** 创建在“树形框”中显示的节点。
 
@@ -43,7 +43,7 @@ tree << Expand( root3 );
 
 ### Append
 
-**语法:** obj << Append
+**语法:** obj &lt;&lt; Append
 
 **说明:** 向该节点的子节点追加树节点。
 
@@ -81,7 +81,7 @@ root1 << Append( c7 );
 
 ### First Child
 
-**语法:** node = obj << First Child
+**语法:** node = obj &lt;&lt; First Child
 
 **说明:** 返回第一个子节点或返回空（若节点没有子级）。
 
@@ -118,7 +118,7 @@ Print( (root1 << Firs tChild) << GetLabel );
 
 ### Get Child
 
-**语法:** obj << Get Child( index )
+**语法:** obj &lt;&lt; Get Child( index )
 
 **说明:** 获取指定索引处的子节点。
 
@@ -155,7 +155,7 @@ Print( (root2 << Get Child( 2 )) << Get Label );
 
 ### Get Child Count
 
-**语法:** obj << Get Child Count
+**语法:** obj &lt;&lt; Get Child Count
 
 **说明:** 获取子节点数。
 
@@ -192,7 +192,7 @@ root2 << Get Child Count;
 
 ### Get Data
 
-**语法:** data = obj << Get Data
+**语法:** data = obj &lt;&lt; Get Data
 
 **说明:** 获取与该节点关联的用户数据。检索使用“设置数据”设置的值或对象。请参见“设置数据”获取详细信息。
 
@@ -240,7 +240,7 @@ tree << SetNodeSelectScript(
 
 ### Get Dimmed
 
-**语法:** dimmed = obj << Get Dimmed
+**语法:** dimmed = obj &lt;&lt; Get Dimmed
 
 **说明:** 获取使该节点的文本变暗的选项。
 
@@ -279,7 +279,7 @@ root3 << Get Dimmed;
 
 ### Get Expanded Icon
 
-**语法:** obj << Get Expanded Icon
+**语法:** obj &lt;&lt; Get Expanded Icon
 
 **说明:** 获取树节点展开图标。若未指定图标，则返回空。
 
@@ -318,7 +318,7 @@ root1 << Get Expanded Icon;
 
 ### Get Font Style
 
-**语法:** style = obj << Get Font Style
+**语法:** style = obj &lt;&lt; Get Font Style
 
 **说明:** 获取该节点的字体样式。
 
@@ -357,7 +357,7 @@ root3 << Get Font Style;
 
 ### Get Icon
 
-**语法:** obj << Get Icon
+**语法:** obj &lt;&lt; Get Icon
 
 **说明:** 获取树节点图标。若未指定图标，则返回空。
 
@@ -395,7 +395,7 @@ root1 << Get Icon;
 
 ### Get Label
 
-**语法:** label = obj << Get Label
+**语法:** label = obj &lt;&lt; Get Label
 
 **说明:** 获取该节点的标签文本
 
@@ -432,7 +432,7 @@ root3 << Get Label;
 
 ### Get Tip
 
-**语法:** tip = obj << Get Tip
+**语法:** tip = obj &lt;&lt; Get Tip
 
 **说明:** 获取该节点的工具提示文本。
 
@@ -471,7 +471,7 @@ c6 << Get Tip;
 
 ### Index Of
 
-**语法:** index = obj << Index Of( node )
+**语法:** index = obj &lt;&lt; Index Of( node )
 
 **说明:** 获取指定子节点的索引。若未找到，则返回 0。
 
@@ -508,7 +508,7 @@ root2 << Index Of( root3 );
 
 ### Insert
 
-**语法:** obj << Insert( node, index )
+**语法:** obj &lt;&lt; Insert( node, index )
 
 **说明:** 在指定索引处插入节点。
 
@@ -546,7 +546,7 @@ root3 << Insert( c7, 2 );
 
 ### Is Leaf
 
-**语法:** isLeaf = obj << Is Leaf
+**语法:** isLeaf = obj &lt;&lt; Is Leaf
 
 **说明:** 该节点是否为树中的叶节点？
 
@@ -583,7 +583,7 @@ root3 << Is Leaf;
 
 ### Last Child
 
-**语法:** node = obj << Last Child
+**语法:** node = obj &lt;&lt; Last Child
 
 **说明:** 返回最后一个子节点或返回空（若节点没有子级）。
 
@@ -620,7 +620,7 @@ Print( (root1 << Last Child) << GetLabel );
 
 ### Parent
 
-**语法:** node = obj << Parent
+**语法:** node = obj &lt;&lt; Parent
 
 **说明:** 返回父节点或空（若该节点没有父节点）。
 
@@ -657,7 +657,7 @@ Print( (c4 << Parent) << GetLabel );
 
 ### Prepend
 
-**语法:** obj << Prepend( node )
+**语法:** obj &lt;&lt; Prepend( node )
 
 **说明:** 在该节点的子节点前预置树节点。
 
@@ -695,7 +695,7 @@ root1 << Prepend( c7 );
 
 ### Prev Sib
 
-**语法:** node = obj << Prev Sib
+**语法:** node = obj &lt;&lt; Prev Sib
 
 **说明:** 返回与该节点平级的前一项，或返回空（若该节点为第一项）。
 
@@ -732,7 +732,7 @@ Print( (c4 << Prev Sib) << Get Label );
 
 ### Remove
 
-**语法:** obj << Remove
+**语法:** obj &lt;&lt; Remove
 
 **说明:** 从树中删除该节点及其所有子级。
 
@@ -770,7 +770,7 @@ root3 << Remove;
 
 ### Remove All Children
 
-**语法:** obj << Remove All Children
+**语法:** obj &lt;&lt; Remove All Children
 
 **说明:** 删除所有子节点。
 
@@ -808,7 +808,7 @@ root2 << Remove All Children;
 
 ### Remove Child
 
-**语法:** obj << Remove Child( node )
+**语法:** obj &lt;&lt; Remove Child( node )
 
 **说明:** 删除指定的子节点。
 
@@ -846,7 +846,7 @@ root3 << Remove Child( c6 );
 
 ### Set Data
 
-**语法:** obj << Set Data( data )
+**语法:** obj &lt;&lt; Set Data( data )
 
 **说明:** 设置该节点的用户数据。分配您想稍后从节点检索的任何值或对象。常见用法是在树框中双击回调。
 
@@ -894,7 +894,7 @@ tree << SetNodeSelectScript(
 
 ### Set Dimmed
 
-**语法:** obj << Set Dimmed( state=0|1 )
+**语法:** obj &lt;&lt; Set Dimmed( state=0|1 )
 
 **说明:** 设置使该节点的文本变暗的选项。
 
@@ -934,7 +934,7 @@ c6 << Set Dimmed( 1 );
 
 ### Set Expanded Icon
 
-**语法:** obj << Set Expanded Icon( icon | path, <boolean> )
+**语法:** obj &lt;&lt; Set Expanded Icon( icon | path, &lt;boolean&gt; )
 
 **说明:** 若该节点展开，设置要使用的图标名称。可选参数指示是否加载与路径关联的图标（仅限 Windows）。
 
@@ -974,7 +974,7 @@ root2 << Set Expanded Icon( "$SAMPLE_IMAGES/pi.gif", true );
 
 ### Set Font Style
 
-**语法:** obj << Set Font Style( "Plain" | "Bold" )
+**语法:** obj &lt;&lt; Set Font Style( "Plain" | "Bold" )
 
 **说明:** 设置该节点的字体样式。
 
@@ -1014,7 +1014,7 @@ c6 << Set Font Style( "Bold" );
 
 ### Set Icon
 
-**语法:** obj << Set Icon( icon | path, <boolean> )
+**语法:** obj &lt;&lt; Set Icon( icon | path, &lt;boolean&gt; )
 
 **说明:** 设置节点图标。可选参数指示是否加载与路径关联的图标（仅限 Windows）。
 
@@ -1053,7 +1053,7 @@ root3 << Set Icon( "$SAMPLE_IMAGES/pi.gif", true );
 
 ### Set Label
 
-**语法:** obj << Set Label( label )
+**语法:** obj &lt;&lt; Set Label( label )
 
 **说明:** 设置该节点的标签文本
 
@@ -1091,7 +1091,7 @@ c6 << Set Label( "Last Child" );
 
 ### Set Tip
 
-**语法:** obj << Set Tip( tip )
+**语法:** obj &lt;&lt; Set Tip( tip )
 
 **说明:** 获取为该节点显示的工具提示文本。
 
@@ -1129,7 +1129,7 @@ c6 << Set Tip( "This is the tool tip for the last child" );
 
 ### Sib
 
-**语法:** node = obj << Sib
+**语法:** node = obj &lt;&lt; Sib
 
 **说明:** 返回与该节点平级的后一项，或返回空（若该节点为最后一项）。
 
@@ -1166,7 +1166,7 @@ Print( (c4 << Sib) << Get Label );
 
 ### Top Parent
 
-**语法:** node = obj << Top Parent
+**语法:** node = obj &lt;&lt; Top Parent
 
 **说明:** 返回包含该节点的树根或返回空（若该节点没有父节点）。
 

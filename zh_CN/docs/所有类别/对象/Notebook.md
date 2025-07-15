@@ -22,7 +22,7 @@ nb = Notebook();
 
 ### Enable Inline Logging
 
-**语法:** obj << Enable Inline Logging( 0|1 )
+**语法:** obj &lt;&lt; Enable Inline Logging( 0|1 )
 
 **说明:** 在笔记本块中启用/禁用记录输出。
 
@@ -39,7 +39,7 @@ nb << Enable Inline Logging( 0 );
 
 ### Export to a Workflow
 
-**语法:** obj << Export to a Workflow( <Create(wfb name)>|<AddTo(wfb name)> )
+**语法:** obj &lt;&lt; Export to a Workflow( &lt;Create(wfb name)&gt;|&lt;AddTo(wfb name)&gt; )
 
 **说明:** 将笔记本的块导出到工作流。
 
@@ -60,7 +60,7 @@ nb << Export to a Workflow;
 
 ### Get Window
 
-**语法:** obj << Get Window
+**语法:** obj &lt;&lt; Get Window
 
 **说明:** 返回该笔记本的窗口。
 
@@ -77,7 +77,7 @@ nb << Get Window;
 
 ### Import .ipynb File
 
-**语法:** obj << Import .ipynb File( file path )
+**语法:** obj &lt;&lt; Import .ipynb File( file path )
 
 **说明:** 将提供的 .ipynb 文件作为块加载到笔记本中。
 
@@ -94,7 +94,7 @@ nb << Import .ipynb File( NOTEBOOKPATH );
 
 ### Run All Scripts
 
-**语法:** obj << Run All Scripts
+**语法:** obj &lt;&lt; Run All Scripts
 
 **说明:** 运行完整笔记本。
 
@@ -116,7 +116,7 @@ nb << Run All Scripts;
 
 ### Show Embedded Log
 
-**语法:** obj << Show Embedded Log( 0|1 )
+**语法:** obj &lt;&lt; Show Embedded Log( 0|1 )
 
 **说明:** 在笔记本中启用/禁用嵌入式日志。
 
@@ -133,7 +133,7 @@ nb << Show Embedded Log( 1 );
 
 ### Title
 
-**语法:** obj << Title( title )
+**语法:** obj &lt;&lt; Title( title )
 
 **说明:** 设置该笔记本的标题。
 
@@ -170,7 +170,7 @@ block = nb << Add New Block( "JSL", "Open (\!"$SAMPLE_DATA/Big Class.jmp\!")" );
 
 #### Block Name
 
-**语法:** obj << Block Name( name )
+**语法:** obj &lt;&lt; Block Name( name )
 
 **说明:** 设置/获取该块的标题。
 
@@ -188,7 +188,7 @@ block << Block Name( "Test Block Name" );
 
 #### Duplicate Block
 
-**语法:** obj << Duplicate Block
+**语法:** obj &lt;&lt; Duplicate Block
 
 **说明:** 复制该块并将添加新块作为其平级项。
 
@@ -206,7 +206,7 @@ block << Duplicate Block;
 
 #### Get Content
 
-**语法:** obj << Get Content
+**语法:** obj &lt;&lt; Get Content
 
 **说明:** 获取该块的内容。
 
@@ -224,7 +224,7 @@ Show( block << Get Content );
 
 #### Get Output
 
-**语法:** obj << Get Output
+**语法:** obj &lt;&lt; Get Output
 
 **说明:** 获取该块的显示树输出。
 
@@ -247,7 +247,7 @@ block2 << Get Output;
 
 #### Import .ipynb File
 
-**语法:** obj << Import .ipynb File( file path )
+**语法:** obj &lt;&lt; Import .ipynb File( file path )
 
 **说明:** 将提供的 .ipynb 文件作为块加载并添加到该部分中。
 
@@ -263,7 +263,7 @@ section << Import .ipynb File( NOTEBOOKPATH );
 
 #### Line Count
 
-**语法:** obj << Line Count( number )
+**语法:** obj &lt;&lt; Line Count( number )
 
 **说明:** 设置启用滚动之前该块中显示的最大行数。设置为零以启用自动调整大小。
 
@@ -281,7 +281,7 @@ block << Line Count( 1 );
 
 #### Move Block Down
 
-**语法:** obj << Move Block Down
+**语法:** obj &lt;&lt; Move Block Down
 
 **说明:** 将该块在列表中下移一个位置。
 
@@ -302,7 +302,7 @@ block << Move Block Down;
 
 #### Move Block Up
 
-**语法:** obj << Move Block Up
+**语法:** obj &lt;&lt; Move Block Up
 
 **说明:** 将该块在列表中上移一个位置。
 
@@ -323,7 +323,7 @@ block2 << Move Block Up;
 
 #### Popout Results
 
-**语法:** obj << Popout Results
+**语法:** obj &lt;&lt; Popout Results
 
 **说明:** 将该块的当前输出发送到新窗口。
 
@@ -346,7 +346,7 @@ block2 << Popout Results;
 
 #### Remove Block
 
-**语法:** obj << Remove Block
+**语法:** obj &lt;&lt; Remove Block
 
 **说明:** 从该块的父级中删除该块。
 
@@ -364,7 +364,7 @@ block << Remove Block;
 
 #### Remove Section
 
-**语法:** obj << Remove Section
+**语法:** obj &lt;&lt; Remove Section
 
 **说明:** 从该部分的父级中删除该部分。
 
@@ -380,7 +380,7 @@ section << Remove Section;
 
 #### Run Script
 
-**语法:** obj << Run Script
+**语法:** obj &lt;&lt; Run Script
 
 **说明:** 执行当前块的内容。
 
@@ -399,7 +399,7 @@ block << Run Script;
 
 #### Run Section
 
-**语法:** obj << Run Section
+**语法:** obj &lt;&lt; Run Section
 
 **说明:** 按顺序运行该部分的子级。
 
@@ -417,7 +417,7 @@ section << Run Section;
 
 #### Set Content
 
-**语法:** obj << Set Content( content )
+**语法:** obj &lt;&lt; Set Content( content )
 
 **说明:** 设置该块的内容。
 

@@ -2,11 +2,9 @@
 
 
 
-## Funktionen
-
 ### Alignment Cell Box
 
-**Syntax:** y = Alignment Cell Box( row, col, nRow, nCol, <Sides(left+2*top+4*right+8*bottom=15)> <RowSpan(nRow matrix)> <ColSpan(nCol matrix)>, matrix or list of strings )
+**Syntax:** y = Alignment Cell Box( row, col, nRow, nCol, &lt;Sides(left+2*top+4*right+8*bottom=15)&gt; &lt;RowSpan(nRow matrix)&gt; &lt;ColSpan(nCol matrix)&gt;, matrix or list of strings )
 
 **Beschreibung:** Gibt einen Verweis auf ein Anzeigefeld zurück, das den Zeileninhalt (oder Spalteninhalt) enthält, der sich innerhalb eines Ausrichtungsrasterfelds befindet.
 
@@ -130,7 +128,7 @@ ashape = Alpha Shape( triang );
 
 ### Border Box
 
-**Syntax:** y = Border Box( <Left( pix )>, <Right( pix )>, <Top( pix )>, <Bottom( pix )>, <Sides( 0 )>, displayBoxArg )
+**Syntax:** y = Border Box( &lt;Left( pix )&gt;, &lt;Right( pix )&gt;, &lt;Top( pix )&gt;, &lt;Bottom( pix )&gt;, &lt;Sides( 0 )&gt;, displayBoxArg )
 
 **Beschreibung:** Erzeugt ein Anzeigefeld, das Platz um das Anzeigefeld für das Argument herum hinzufügt.
 
@@ -152,7 +150,7 @@ New Window( "Example",
 
 ### Box Plot Seg
 
-**Syntax:** b = Box Plot Seg(<data>, <frequency>, <weight>, <vertical=0|1>)
+**Syntax:** b = Box Plot Seg(&lt;data&gt;, &lt;frequency&gt;, &lt;weight&gt;, &lt;vertical=0|1&gt;)
 
 **Beschreibung:** Gibt ein Anzeigesegment zurück, das einen auf den übergebenen X- und Y-Werten basierenden Box-Plot darstellt.
 
@@ -171,7 +169,7 @@ seg = (g[FrameBox( 1 )] << Find Seg( "Box Plot Seg" ));
 
 ### Busy Light
 
-**Syntax:** y = Busy Light( < <<Automatic(0|1)>, <Size(x, y)>, < <<Disable> )
+**Syntax:** y = Busy Light( &lt; &lt;&lt;Automatic(0|1)&gt;, &lt;Size(x, y)&gt;, &lt; &lt;&lt;Disable&gt; )
 
 **Beschreibung:** Erstellt ein sich drehendes Bild, das anzeigt, dass ein Prozess arbeitet.
 
@@ -216,7 +214,7 @@ New Window( "Calendar Box Example", Calendar Box() );
 
 ### Check Box
 
-**Syntax:** y = Check Box( {item, ...}, <script> )
+**Syntax:** y = Check Box( {item, ...}, &lt;script&gt; )
 
 **Beschreibung:** Erzeugt ein Anzeigefeld für die Anzeige eines oder mehrerer Kontrollkästchen.
 
@@ -281,7 +279,7 @@ dt = New Window( "Example",
 
 ### Col List Box
 
-**Syntax:** y = Col List Box( <Data Table( name )>, <all>|<character|numeric>, <width( pix )>, <grouped>, <maxSelected( n )>, <nlines( n )>, <MaxItems( n )>, <MinItems( n )>, <onChange( expr )>, < <<Modeling Type({"Any","Continuous","Nominal","Ordinal","Multiple Response","Unstructured Text","Vector","None","Row State"}) >, < << Set Data Type(Any|Numeric|Character)>, <script> )
+**Syntax:** y = Col List Box( &lt;Data Table( name )&gt;, &lt;all&gt;|&lt;character|numeric&gt;, &lt;width( pix )&gt;, &lt;grouped&gt;, &lt;maxSelected( n )&gt;, &lt;nlines( n )&gt;, &lt;MaxItems( n )&gt;, &lt;MinItems( n )&gt;, &lt;onChange( expr )&gt;, &lt; &lt;&lt;Modeling Type({"Any","Continuous","Nominal","Ordinal","Multiple Response","Unstructured Text","Vector","None","Row State"}) &gt;, &lt; &lt;&lt; Set Data Type(Any|Numeric|Character)&gt;, &lt;script&gt; )
 
 **Beschreibung:** Gibt ein Anzeigefeld für die Anzeige eines Listenfelds zur Auswahl von Datentabellenspalten zurück. Verwenden Sie die Meldung <<Modeling Type, um spezielle Modellierungstypen zuzulassen oder um die zulässigen Typen einzuschränken. Der Standardwert von "Any" erlaubt jede Spalte mit einem klassischen Modellierungstyp ("Continuous", "Nominal", "Ordinal").
 
@@ -351,7 +349,7 @@ New Window( "test",
 
 ### Column Dialog
 
-**Syntax:** y = Column Dialog( <var = ColList("Label", <Min Col(min)>, <Max Col(max)>, <Width(w)>, <Data Type("Numeric"|"Character"|"Any")>, <Modeling Type({<"Continuous">, <"Nominal">, <"Ordinal">, <"None">, <"Multiple Response">, <"Unstructured Text">, <"Vector">})> )>, <var=EditText("string")>, <var=EditNumber(num)>, <var=Check Box( "Text", 0|1)>, <var=RadioButtons( "a", "b" )>, <var=Combo Box("choice1", ...)>, <HList(box, ...)>, <VList(box, ...)>, <LineUp(ncol, box, ...)>, <Text Box("string")>, <Window Title("title")>, <Window Icon("icon string")>, <Dialog Description("description")>, <Recall(script)>, <Help Script(script)>)
+**Syntax:** y = Column Dialog( &lt;var = ColList("Label", &lt;Min Col(min)&gt;, &lt;Max Col(max)&gt;, &lt;Width(w)&gt;, &lt;Data Type("Numeric"|"Character"|"Any")&gt;, &lt;Modeling Type({&lt;"Continuous"&gt;, &lt;"Nominal"&gt;, &lt;"Ordinal"&gt;, &lt;"None"&gt;, &lt;"Multiple Response"&gt;, &lt;"Unstructured Text"&gt;, &lt;"Vector"&gt;})&gt; )&gt;, &lt;var=EditText("string")&gt;, &lt;var=EditNumber(num)&gt;, &lt;var=Check Box( "Text", 0|1)&gt;, &lt;var=RadioButtons( "a", "b" )&gt;, &lt;var=Combo Box("choice1", ...)&gt;, &lt;HList(box, ...)&gt;, &lt;VList(box, ...)&gt;, &lt;LineUp(ncol, box, ...)&gt;, &lt;Text Box("string")&gt;, &lt;Window Title("title")&gt;, &lt;Window Icon("icon string")&gt;, &lt;Dialog Description("description")&gt;, &lt;Recall(script)&gt;, &lt;Help Script(script)&gt;)
 
 **Beschreibung:** Fordert den Benutzer in einem modalen Fenster mit Feldern auf, Spalten einer Datentabelle auszuwählen. Die Spezifikation kann verschiedene Arten von Eingabefeldern sowie Containerfelder zur Organisation des Fensters umfassen.
 
@@ -389,7 +387,7 @@ Column Dialog(
 
 ### Combo Box
 
-**Syntax:** y = Combo Box( {item <( tipstr )>, ...}, <script> )
+**Syntax:** y = Combo Box( {item &lt;( tipstr )&gt;, ...}, &lt;script&gt; )
 
 **Beschreibung:** Erzeugt ein Anzeigefeld für die Anzeige eines Kombinationsfelds mit einem Popup-Menü. Jedes Element in dem Kombinationsfeld kann einen optionalen Tooltipp haben, der als Zeichenkette in Klammern auf die Zeichenkette des Elements folgend angegeben wird.
 
@@ -427,7 +425,7 @@ New Window( "Example",
 
 ### Contour Seg
 
-**Syntax:** me = Contour Seg( Triangulation, [ levels ], < zColor([colors], <Cycle Colors|Interpolate Colors>) >, < Transparency([] | t) >
+**Syntax:** me = Contour Seg( Triangulation, [ levels ], &lt; zColor([colors], &lt;Cycle Colors|Interpolate Colors&gt;) &gt;, &lt; Transparency([] | t) &gt;
 
 **Beschreibung:** Gibt ein Anzeigesegment zurück, das die Konturen einer Triangulierung darstellt. Für jede Stufe können optionale Farben als Matrix oder Liste angegeben werden. Die Transparenz kann als Zahl oder Matrix angegeben werden.
 
@@ -456,7 +454,7 @@ New Window( "Contour Seg Example",
 
 ### Current Report
 
-**Syntax:** y = Current Report( <Project(title|index|box|window)> )
+**Syntax:** y = Current Report( &lt;Project(title|index|box|window)&gt; )
 
 **Beschreibung:** Gibt eine Anzeigefeldreferenz auf den aktuellen Bericht im aktuellen Projekt zurück (oder auf kein Projekt, wenn das Skript nicht in einem Projekt ausgeführt wird).
 
@@ -475,7 +473,7 @@ Current Report();
 
 ### Current Window
 
-**Syntax:** y = Current Window( <Project(title|index|box|window)> )
+**Syntax:** y = Current Window( &lt;Project(title|index|box|window)&gt; )
 
 **Beschreibung:** Gibt eine Referenz auf das aktuelle Fenster im aktuellen Projekt zurück (oder auf kein Projekt, wenn das Skript nicht in einem Projekt ausgeführt wird).
 
@@ -578,7 +576,7 @@ New Window( "Selection Filter",
 
 ### Data Grid Box
 
-**Syntax:** y = Data Grid Box(  )
+**Syntax:** y = Data Grid Box( )
 
 **Beschreibung:** Gibt ein Anzeigefeld zurück, das eine Datentabelle enthalten kann.
 
@@ -750,7 +748,7 @@ New Window( "Example",
 
 ### Expr As Picture
 
-**Syntax:** y = Expr As Picture( expr( ... ), <width in pixels>, <Max Matrix Size( dim )> )
+**Syntax:** y = Expr As Picture( expr( ... ), &lt;width in pixels&gt;, &lt;Max Matrix Size( dim )&gt; )
 
 **Beschreibung:** Gibt ein Bild zurück, das den angegebenen Ausdruck als Formelabbildung enthält. Die Standardbreite ist 600 Pixel und die maximale Standardmatrixgröße ist 100.
 
@@ -772,7 +770,7 @@ New Window( "Example",
 
 ### Filter Col Selector
 
-**Syntax:** y = Filter Col Selector(<Data Table(name)>, <width(pixels)>, <nlines(n)>, <script>, <onchange(expr)>)
+**Syntax:** y = Filter Col Selector(&lt;Data Table(name)&gt;, &lt;width(pixels)&gt;, &lt;nlines(n)&gt;, &lt;script&gt;, &lt;onchange(expr)&gt;)
 
 **Beschreibung:** Gibt ein Anzeigefeld mit einer Liste von Elementen zurück. Das Bedienelement gestattet den Spaltenfilter.
 
@@ -838,7 +836,7 @@ Print( Get Project List() << Get Window Title() );
 
 ### Get Window
 
-**Syntax:** window = Get Window( <Project(title|index|box|window)>, <Type(string)>, title|index|box )
+**Syntax:** window = Get Window( &lt;Project(title|index|box|window)&gt;, &lt;Type(string)&gt;, title|index|box )
 
 **Beschreibung:** Gibt eine Referenz auf ein spezifisches geöffnetes Fenster nach Titel, Index oder Feld zurück.
 
@@ -880,7 +878,7 @@ window = Get Window( Project( project ), "Big Class" );
 
 ### Get Window List
 
-**Syntax:** windowList = Get Window List( <Project(title|index|box|window)>, <Type(string)> )
+**Syntax:** windowList = Get Window List( &lt;Project(title|index|box|window)&gt;, &lt;Type(string)&gt; )
 
 **Beschreibung:** Gibt eine Liste aller geöffneten Fenster zurück.
 
@@ -1026,7 +1024,7 @@ New Window( "Example",
 
 ### H Center Box
 
-**Syntax:** y = H Center Box( <childbox> )
+**Syntax:** y = H Center Box( &lt;childbox&gt; )
 
 **Beschreibung:** Gibt ein Anzeigefeld zurück mit dem Argument des untergeordneten Anzeigefelds childbox zentriert in dem horizontalen Raum, der von der maximalen Größe dieses untergeordneten Felds und allen anderen gleichgestellten Feldern des zentralen Felds definiert wird.
 
@@ -1053,7 +1051,7 @@ New Window( "test",
 
 ### H List Box
 
-**Syntax:** y = H List Box( <Align( center|bottom )>, displayBox, ... )
+**Syntax:** y = H List Box( &lt;Align( center|bottom )&gt;, displayBox, ... )
 
 **Beschreibung:** Erzeugt ein Anzeigefeld, das die Anzeigefelder der Argumente in einem horizontalen Layout anordnet. Die Meldung „<<Halten“ teilt dem Blatt mit, dass ihm die Berichte gehören müssen, aus denen Auszüge erstellt werden. Das optionale Argument Align ermöglicht die Ausrichtung bottom oder center des Inhalts im Anzeigefeld.
 
@@ -1070,7 +1068,7 @@ New Window( "Example",
 
 ### H Scroll Box
 
-**Syntax:** y = H Scroll Box( <Size( x )>, displayBox )
+**Syntax:** y = H Scroll Box( &lt;Size( x )&gt;, displayBox )
 
 **Beschreibung:** Gibt ein Anzeigefeld zurück, das ein größeres untergeordnetes Feld mittels horizontaler Bildlaufleiste positioniert.
 
@@ -1099,7 +1097,7 @@ New Window( "Example",
 
 ### H Sheet Box
 
-**Syntax:** y = H Sheet Box( <<Hold( rpt ), displayBox, ... )
+**Syntax:** y = H Sheet Box( &lt;&lt;Hold( rpt ), displayBox, ... )
 
 **Beschreibung:** Erzeugt ein Anzeigefeld, das die Anzeigefelder der Argumente in einem horizontalen Layout anordnet. Die Meldung „<<Halten“ teilt dem Blatt mit, dass ihm die Berichte gehören müssen, aus denen Auszüge erstellt werden. Das optionale Argument Align ermöglicht die Ausrichtung right oder center des Inhalts im Anzeigefeld.
 
@@ -1149,7 +1147,7 @@ New Window( "Example",
 
 ### H Splitter Box
 
-**Syntax:** y = H Splitter Box( <Size(x,y)>, displayBox, ... )
+**Syntax:** y = H Splitter Box( &lt;Size(x,y)&gt;, displayBox, ... )
 
 **Beschreibung:** Gibt ein Anzeigefeld zurück, das andere Anzeigefelder mit interaktiver Steuerung der Größen horizontal anordnet. Die Größen untergeordneter Elemente werden als Anteil der Breite oder Höhe des Splitter Box angegeben. Das optionale Argument Size wird nur für das oberste Fensterbereichsfeld verwendet; Felder auf unteren Ebenen erhalten die gleiche Größe wie alle anderen untergeordneten Felder.
 
@@ -1204,7 +1202,7 @@ New Window( "Example",
 
 ### Hist Seg
 
-**Syntax:** b = Hist Seg([data], <[freq data]>,<[weight data]>, <vertical=0|1>, <Row States()>)
+**Syntax:** b = Hist Seg([data], &lt;[freq data]&gt;,&lt;[weight data]&gt;, &lt;vertical=0|1&gt;, &lt;Row States()&gt;)
 
 **Beschreibung:** Gibt ein Histogrammsegment zurück
 
@@ -1289,7 +1287,7 @@ frenchBox << Set( 1 );
 
 ### If Seg
 
-**Syntax:** seg = If Seg(<state=0|1>)
+**Syntax:** seg = If Seg(&lt;state=0|1&gt;)
 
 **Beschreibung:** Gibt ein Anzeigesegment zurück, das untergeordnete Anzeigesegmente ein- oder ausblendet.
 
@@ -1356,7 +1354,7 @@ New Window( "Distribution of Height",
 
 ### Line Seg
 
-**Syntax:** ls = Line Seg(x values, y values, <Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) >, < Sizes( s ) > )>)
+**Syntax:** ls = Line Seg(x values, y values, &lt;Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) &gt;, &lt; Sizes( s ) &gt; )&gt;)
 
 **Beschreibung:** Gibt ein Anzeigesegment mit Verbindungslinien zwischen allen X- und Y-Werten zurück.
 
@@ -1425,7 +1423,7 @@ seg = (frame << Find Seg( "Lines Seg" ));
 
 ### Lineup Box
 
-**Syntax:** y = Lineup Box( <NCol( nc )>, <Spacing( pixels, <vspace> )>, displayBoxArgs, ... )
+**Syntax:** y = Lineup Box( &lt;NCol( nc )&gt;, &lt;Spacing( pixels, &lt;vspace&gt; )&gt;, displayBoxArgs, ... )
 
 **Beschreibung:** Erzeugt ein Anzeigefeld für die Anzeige von in Spalten ausgerichteten Feldern nc. Das optionale Argument Spacing gibt den horizontalen und vertikalen Abstand um die Anzeigefelder herum an. Wird das Argument vspace verwendet, ist vspace der vertikale Abstand und pixels ist der horizontale Abstand.
 
@@ -1447,7 +1445,7 @@ New Window( "Example",
 
 ### Lineup Ruler Box
 
-**Syntax:** y = Lineup Box( <Widths( {width1, width2, ...} )>, displayBoxArgs, ... )
+**Syntax:** y = Lineup Box( &lt;Widths( {width1, width2, ...} )&gt;, displayBoxArgs, ... )
 
 **Beschreibung:** Gibt ein Anzeigefeld zurück, das die Spaltenbreiten der darin enthaltenen Ausrichtungsfelder festlegt.
 
@@ -1485,7 +1483,7 @@ New Window( "Lineup Ruler",
 
 ### List Box
 
-**Syntax:** y = List Box( {item, ...}, <width( pixels )>, <maxSelected( 9999 )>, <nlines( 12 )>, <script> )
+**Syntax:** y = List Box( {item, ...}, &lt;width( pixels )&gt;, &lt;maxSelected( 9999 )&gt;, &lt;nlines( 12 )&gt;, &lt;script&gt; )
 
 **Beschreibung:** Erzeugt ein Anzeigefeld für die Anzeige eines Listenfelds mit Auswahlelementen. Wenn item selbst eine Liste mit zwei Elementen ist, die den Elementnamen und eine Zeichenkette enthält, die einen Modellierungstyp oder eine Sortierreihenfolge angibt, z. B. "Ordinal" oder "Ascending", wird das entsprechende Symbol neben dem jeweiligen Element im Listenfeld angezeigt.
 
@@ -1518,7 +1516,7 @@ New Window( "Example",
 
 ### Marker Seg
 
-**Syntax:** me = Marker Seg( x, y, < Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) >, < Sizes( s ) > )
+**Syntax:** me = Marker Seg( x, y, &lt; Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) &gt;, &lt; Sizes( s ) &gt; )
 
 **Beschreibung:** Gibt ein Anzeigesegment mit Symbolen für alle X- und Y-Werte zurück.
 
@@ -1638,7 +1636,7 @@ New Window( "Marker Seg Example",
 
 ### Matrix Box
 
-**Syntax:** y = Matrix Box( matrix, < <<Column Names( "c1", "c2", ... )>, < <<Row Names( "r1", "r2", ... )> )
+**Syntax:** y = Matrix Box( matrix, &lt; &lt;&lt;Column Names( "c1", "c2", ... )&gt;, &lt; &lt;&lt;Row Names( "r1", "r2", ... )&gt; )
 
 **Beschreibung:** Erzeugt ein Anzeigefeld für die Anzeige einer Zahlenmatrix.
 
@@ -1705,7 +1703,7 @@ New Window( "Example",
 
 ### Move to Project
 
-**Syntax:** Move to Project(<Source(project)>, <Destination(project)>, <Windows({list of windows to move})>)
+**Syntax:** Move to Project(&lt;Source(project)&gt;, &lt;Destination(project)&gt;, &lt;Windows({list of windows to move})&gt;)
 
 **Beschreibung:** Verschiebt ein oder mehrere Fenster in ein Projekt hinein, aus einem Projekt heraus oder von einem Projekt in ein anderes. Es darf entweder nur die Quelle oder nur das Ziel angegeben werden, die jeweils andere Angabe ist standardmäßig das aktuelle Projekt. (Geben Sie nur die Quelle an, um Fenster in das aktuelle Projekt zu verschieben, geben Sie nur das Ziel an, um Fenster aus dem aktuellen Projekt heraus zu verschieben.) Ein Datentabellenfenster wird zusammen mit den abhängigen Berichten verschoben, auch wenn nur ein Fenster im Argument angegeben zu werden braucht. Wird das Fensterargument weggelassen, sind standardmäßig alle geöffneten Fenster im Quellprojekt betroffen.
 
@@ -1738,17 +1736,7 @@ project << Close Window();
 
 ### New Image
 
-**Syntax:** img = New Image()
-
-img = New Image( width, height )
-
-img = New Image( pathname )
-
-img = New Image( picture )
-
-img = New Image( matrix of JSL color pixels ) 
-
-img = New Image( rgb|r|g|rgba, {i, i, i} )
+**Syntax:** img = New Image()img = New Image( width, height )img = New Image( pathname )img = New Image( picture )img = New Image( matrix of JSL color pixels ) img = New Image( rgb|r|g|rgba, {i, i, i} )
 
 **Beschreibung:** Gibt ein neues Bild zurück, das dann über JSL-Befehle bearbeitet werden kann. Wenn ein Pfad zu einer vorhandenen Bilddatei angegeben ist, muss es sich um eine Datei vom Typ .JPG, .PNG, .GIF, .BMP oder .TIF handeln.
 
@@ -1794,7 +1782,7 @@ New Window( "image", image3 );
 
 ### New Project
 
-**Syntax:** project = new Project( <project messages> )
+**Syntax:** project = new Project( &lt;project messages&gt; )
 
 **Beschreibung:** Erstellt ein neues leeres Projektfenster. Eine oder mehrere Projektmeldungen können als Argumente eingeschlossen werden, um ein Projekt in einem Schritt zu erstellen.
 
@@ -1882,7 +1870,7 @@ project = New Project(
 
 ### New Window
 
-**Syntax:** w = New Window( title, < <<Type("Report" | "Dialog" | "Modal Dialog" | "Journal" | "Launcher" | "Script")>, < << Return Result>, < << On Open(expr | function | method)>, < << On Close(expr | function | method)>, < <<On Validate(expr | function | method)>, < <<Show Menu(0 | 1)>, < <<Show Toolbars(0 | 1)>, < <<Suppress AutoHide(0 | 1)>, < <<Window View("Visible" | "Invisible")>, < <<Language("C" | "JavaScript" | "JSL" | "JSON" | "Python" | "R" | "SAS"  | "SQL" | "Text" | "XML")>, < <<Size(x, y)>, displayBox | script)
+**Syntax:** w = New Window( title, &lt; &lt;&lt;Type("Report" | "Dialog" | "Modal Dialog" | "Journal" | "Launcher" | "Script")&gt;, &lt; &lt;&lt; Return Result&gt;, &lt; &lt;&lt; On Open(expr | function | method)&gt;, &lt; &lt;&lt; On Close(expr | function | method)&gt;, &lt; &lt;&lt;On Validate(expr | function | method)&gt;, &lt; &lt;&lt;Show Menu(0 | 1)&gt;, &lt; &lt;&lt;Show Toolbars(0 | 1)&gt;, &lt; &lt;&lt;Suppress AutoHide(0 | 1)&gt;, &lt; &lt;&lt;Window View("Visible" | "Invisible")&gt;, &lt; &lt;&lt;Language("C" | "JavaScript" | "JSL" | "JSON" | "Python" | "R" | "SAS" | "SQL" | "Text" | "XML")&gt;, &lt; &lt;&lt;Size(x, y)&gt;, displayBox | script)
 
 **Beschreibung:** Erstellt ein Fenster mit dem angegebenen Anzeigefeld oder Skript. Standardmäßig wird ein Berichtsfenster erstellt, es sei denn, die Option Type ist angegeben. Im Fenster von Type("Modal Dialog") wird die Ausführung angehalten, bis im Dialogfeld eine Reaktion erfolgt. On Open, On Validate und Return Result sind nur bei modalen Fenstern verfügbar. On Open() wertet den zugehörigen Ausdruck, die Funktion oder Klassenmethode aus, wenn das Fenster erstellt wird. Wenn On Close() falsch zurückgibt, wird das Fenster am Schließen gehindert. On Validate() führt seinen Ausdruck, die Funktion oder Klassenmethode aus, wenn auf die Schaltfläche „OK“ geklickt wird. Wenn der Ausdruck wahr zurückgibt, wird das Fenster geschlossen. Ansonsten bleibt das Fenster geöffnet. Return Result ändert den Rückgabewert des Fensters beim Schließen so, dass es dem der veralteten Funktion Dialog() entspricht. Bei Fenstertypen, die Symbolleisten unterstützen, verwenden Sie Show Toolbars, um Änderungen am Standardverhalten anzugeben. Die Optionen Show Menu und Suppress AutoHide sind nur für Windows verfügbar. Die Option Window View("Invisible") kann für jedes Fenster außer Modal Dialog verwendet werden. Ein Fenster mit Type("Script") erstellt ein JSL-Dokument, es sei denn, die Option <<Language ist angegeben.
 
@@ -2073,7 +2061,7 @@ New Window( "Example",
 
 ### Number Edit Box
 
-**Syntax:** y = Number Edit Box( initValue, <width> )
+**Syntax:** y = Number Edit Box( initValue, &lt;width&gt; )
 
 **Beschreibung:** Gibt ein Bearbeitungsfeld zurück, das nur numerische Eingaben annimmt. Geben Sie das optionale Argument width an, um die Breite des Felds in Zeichen festzulegen.
 
@@ -2089,7 +2077,7 @@ x = neb << get;
 
 ### Outline Box
 
-**Syntax:** y = Outline Box( title, <command script pairs list>, displayBox, ... )
+**Syntax:** y = Outline Box( title, &lt;command script pairs list&gt;, displayBox, ... )
 
 **Beschreibung:** Erstellt ein Gliederungselement im Bericht und gibt die Referenz auf das Anzeigefeld zurück. Um ein Menü in den Gliederungsknoten aufzunehmen, geben Sie die command script pairs list an. Hierbei handelt es sich um eine Liste, die Menübefehle und zugehörige Skripte aufführt.
 
@@ -2189,7 +2177,7 @@ New Window( "Example", Picture Box( pict ) );
 
 ### Pie Seg
 
-**Syntax:** ps = Pie Seg(<{ xorigin, yorigin }>, <radius>, <style("pie", "ring", "coxcomb")>, values)
+**Syntax:** ps = Pie Seg(&lt;{ xorigin, yorigin }&gt;, &lt;radius&gt;, &lt;style("pie", "ring", "coxcomb")&gt;, values)
 
 **Beschreibung:** Erstellt ein Tortensegment am angegebenen origin, mit dem angegebenen radius, basierend auf im Matrixformat angegebenen Werten.
 
@@ -2302,7 +2290,7 @@ New Window( "Example",
 
 ### Radio Box
 
-**Syntax:** y = Radio Box( {item, ...}, <script> )
+**Syntax:** y = Radio Box( {item, ...}, &lt;script&gt; )
 
 **Beschreibung:** Erzeugt ein Anzeigefeld für die Anzeige mehrerer runder Optionsfelder.
 
@@ -2415,7 +2403,7 @@ exScene << update;
 
 ### Script Box
 
-**Syntax:** y = Script Box( <s>, <"C" | "JavaScript" | "JSL" | "JSON" | "Python" | "R" | "SAS" | "SQL" | "Text" | "XML">, <width>, <height> )
+**Syntax:** y = Script Box( &lt;s&gt;, &lt;"C" | "JavaScript" | "JSL" | "JSON" | "Python" | "R" | "SAS" | "SQL" | "Text" | "XML"&gt;, &lt;width&gt;, &lt;height&gt; )
 
 **Beschreibung:** Gibt ein Anzeigefeld für die Bearbeitung eines Skripts zurück. Standardmäßig verfügt der Editor über JSL-Syntaxhervorhebung und -Verhalten.
 
@@ -2445,7 +2433,7 @@ New Window( "This is a python script box", Script );
 
 ### Scroll Box
 
-**Syntax:** y = Scroll Box( <Size( x, y )>, displayBox )
+**Syntax:** y = Scroll Box( &lt;Size( x, y )&gt;, displayBox )
 
 **Beschreibung:** Gibt ein Anzeigefeld zurück, das ein größeres untergeordnetes Feld mittels Bildlaufleisten positioniert.
 
@@ -2496,7 +2484,7 @@ Clear Global Window Handler();
 
 ### Shape Seg
 
-**Syntax:** me = Shape Seg( {Path(<path>), ...}, < Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) > )
+**Syntax:** me = Shape Seg( {Path(&lt;path&gt;), ...}, &lt; Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) &gt; )
 
 **Beschreibung:** Gibt ein Anzeigesegment mit einer Sammlung von Formen zurück. Jede Form zeichnet eine Linie entlang des angegebenen Pfads, wenn „Füllen“ gleich 0 ist, oder färbt das Innere des angegebenen Pfads, wenn „Füllen“ ungleich 0 ist. Der Pfad kann mit einer Nx3-Matrix oder in der Form einer Textdarstellung angegeben werden. Eine Pfadmatrix hat drei Spalten für x, y und Flags für jeden Punkt im Pfad. Die Flag-Werte sind 0 für Steuerpunkt, 1 für Verschieben, 2 für Liniensegment, 3 für kubisches Bézier-Segment und sie sind negativ, wenn der Punkt den Pfad auch schließt. Der Pfadtext unterstützt die SVG-Syntax.
 
@@ -2568,7 +2556,7 @@ New Window( "Example",
 
 ### Slider Box
 
-**Syntax:** box = Slider Box(minValue, maxValue, variable, script, <set width(n)>, <rescale slider(minValue, maxValue)>)
+**Syntax:** box = Slider Box(minValue, maxValue, variable, script, &lt;set width(n)&gt;, &lt;rescale slider(minValue, maxValue)&gt;)
 
 **Beschreibung:** Gibt ein Anzeigefeld zurück, das einen Schieberegler mit einem Bereich von minValue bis maxValue anzeigt. Wird die Position des Schiebereglers verändert, wird der zugehörige Wert in variable abgelegt und das Skript ausgeführt.
 
@@ -2594,7 +2582,7 @@ New Window( "Example",
 
 ### Spacer Box
 
-**Syntax:** y = Spacer Box( <Size( x, y )>, <Color( c )>)
+**Syntax:** y = Spacer Box( &lt;Size( x, y )&gt;, &lt;Color( c )&gt;)
 
 **Beschreibung:** Gibt ein Anzeigefeld zurück, das verwendet werden kann, um Platz zwischen anderen Anzeigefeldern zu schaffen oder um eine Zelle in einem Lineup Box zu füllen. Die Argumente Size werden in Pixel angegeben, und das Argument Color ist eine beliebige gültige JSL-Farbe.
 
@@ -2617,7 +2605,7 @@ New Window( "Example",
 
 ### Spin Box
 
-**Syntax:** y = Spin Box( <script> )
+**Syntax:** y = Spin Box( &lt;script&gt; )
 
 **Beschreibung:** Gibt ein Anzeigefeld zurück, um eine Schaltfläche mit Bedienelementen für Aufwärts/Abwärts anzuzeigen. Das Argument script wird mit einem Argument aufgerufen, das die Richtung des angeklickten Pfeils angibt (negativ ist abwärts, positiv ist aufwärts). Die Größe 1 kennzeichnet einen einzelnen Klick, während größere Werte verwendet werden können, um eine wiederholte Aktion kenntlich zu machen.
 
@@ -2704,7 +2692,7 @@ New Window( "Example",
 
 ### Tab Page Box
 
-**Syntax:** y = Tab Page Box( <Title("string")>, <Tip(0|1)>,  <Closeable(0|1)>, <Icon("string")>, <Moveable(0|1)>, contents)
+**Syntax:** y = Tab Page Box( &lt;Title("string")&gt;, &lt;Tip(0|1)&gt;, &lt;Closeable(0|1)&gt;, &lt;Icon("string")&gt;, &lt;Moveable(0|1)&gt;, contents)
 
 **Beschreibung:** Gibt ein Anzeigefeld zurück, das in einem Tab Box oder als unabhängiger Container mit Titel verwendet werden kann. Erkannte Optionen sind: Title(Zeichenkette), um einen Titel anzugeben, Tip (Zeichenkette), um einen Tooltipp anzugeben, Closeable(0|1), um anzugeben, ob die Seite geschlossen werden kann, Icon(Zeichenkette), um das Symbol anzugeben, und Moveable(0|1), um anzugeben, ob die Seite verschoben werden kann.
 
@@ -2747,7 +2735,7 @@ New Window( "Example",
 
 ### Text Box
 
-**Syntax:** y = Text Box( text, <<Justify Text( strPos ), <<Set Wrap( width ) )
+**Syntax:** y = Text Box( text, &lt;&lt;Justify Text( strPos ), &lt;&lt;Set Wrap( width ) )
 
 **Beschreibung:** Erstellt ein Anzeigefeld, das den Text des Zeichenkettenarguments text enthält. Die optionalen Argumente sind verfügbar, um die Textausrichtung zu steuern oder um die Breite für den Textumbruch festzulegen. Das Argument für Justify Text muss eine Zeichenkette sein, die left, right oder center angibt.
 
@@ -2786,7 +2774,7 @@ New Window( "Justification Example",
 
 ### Text Edit Box
 
-**Syntax:** y = Text Edit Box( text, <<Password Style( bool ), <<Set Script( script ), <<Set Width( value ) )
+**Syntax:** y = Text Edit Box( text, &lt;&lt;Password Style( bool ), &lt;&lt;Set Script( script ), &lt;&lt;Set Width( value ) )
 
 **Beschreibung:** Erzeugt ein editierbares Feld, das den in Anführungszeichen angegebenen Text text enthält, und gibt die Referenz auf das Anzeigefeld zurück. Die optionalen Argumente sind verfügbar, um die Textanzeige zu steuern, um ein Skript an das Textfeld anzuhängen und um die Breite des Textfelds in Pixel festzulegen. Durch Angabe von Set Width(-1) wird die Größenanpassung an den Inhalt erzwungen. Beachten Sie, dass Sie ein Skript an das Textbearbeitungsfeld anhängen können, indem Sie das Skript als optionales Argument hinzufügen oder indem Sie die Meldung Set Script senden.
 
@@ -2846,7 +2834,7 @@ If(
 
 ### Tree Box
 
-**Syntax:** tree = Tree Box( <{rootnodes}>, <Size( x, y )>, <Multiselect( 0|1 )> )
+**Syntax:** tree = Tree Box( &lt;{rootnodes}&gt;, &lt;Size( x, y )&gt;, &lt;Multiselect( 0|1 )&gt; )
 
 **Beschreibung:** Erzeugt ein Anzeigefeld für die Anzeige hierarchischer Informationen.
 
@@ -2874,7 +2862,7 @@ New Window( "TreeBox", tree = Tree Box( {root1, root2}, Size( 300, 200 ) ) );
 
 ### Tree Node
 
-**Syntax:** node = Tree Node( <label> )
+**Syntax:** node = Tree Node( &lt;label&gt; )
 
 **Beschreibung:** Erzeugt einen Baumknoten für die Anzeige in einem Feld im Baum.
 
@@ -2902,7 +2890,7 @@ New Window( "TreeBox Nodes", tree = Tree Box( {root1, root2}, Size( 300, 200 ) )
 
 ### Triangulation
 
-**Syntax:** triangulation = Triangulation( X(Column1, Column2), < Y(Column) > )
+**Syntax:** triangulation = Triangulation( X(Column1, Column2), &lt; Y(Column) &gt; )
 
 **Beschreibung:** Gibt ein Objekt mit der Delaunay-Triangulierung des vorgegebenen Punktesatzes zurück. Die optionale Y-Variable wird für doppelte Punkte gemittelt, und alle Punkte in der Ausgabe sind eindeutig.
 
@@ -2953,7 +2941,7 @@ New Window( "unlineup",
 
 ### V Center Box
 
-**Syntax:** y = V Center Box( <childbox> )
+**Syntax:** y = V Center Box( &lt;childbox&gt; )
 
 **Beschreibung:** Gibt ein Anzeigefeld zurück mit dem Argument des untergeordneten Anzeigefelds childbox zentriert in dem vertikalen Raum, der von der maximalen Größe dieses untergeordneten Felds und allen anderen gleichgestellten Feldern des zentralen Felds definiert wird.
 
@@ -2980,7 +2968,7 @@ New Window( "test",
 
 ### V List Box
 
-**Syntax:** y = V List Box( <Align( center|right )>, displayBox, ... )
+**Syntax:** y = V List Box( &lt;Align( center|right )&gt;, displayBox, ... )
 
 **Beschreibung:** Erzeugt ein Anzeigefeld, das die Anzeigefelder der Argumente in einem vertikalen Layout anordnet. Die Meldung „<<Halten“ teilt dem Blatt mit, dass ihm die Berichte gehören müssen, aus denen Auszüge erstellt werden. Das optionale Argument Align ermöglicht die Ausrichtung right oder center des Inhalts im Anzeigefeld.
 
@@ -2997,7 +2985,7 @@ New Window( "Example",
 
 ### V Scroll Box
 
-**Syntax:** y = V Scroll Box( <Size( y )>, displayBox )
+**Syntax:** y = V Scroll Box( &lt;Size( y )&gt;, displayBox )
 
 **Beschreibung:** Gibt ein Anzeigefeld zurück, das ein größeres untergeordnetes Feld mittels vertikaler Bildlaufleiste positioniert.
 
@@ -3028,7 +3016,7 @@ New Window( "Example",
 
 ### V Sheet Box
 
-**Syntax:** y = V Sheet Box( <<Hold( rpt ), displayBox, ... )
+**Syntax:** y = V Sheet Box( &lt;&lt;Hold( rpt ), displayBox, ... )
 
 **Beschreibung:** Erzeugt ein Anzeigefeld, das die Anzeigefelder der Argumente in einem vertikalen Layout anordnet. Die Meldung „<<Halten“ teilt dem Blatt mit, dass ihm die Berichte gehören müssen, aus denen Auszüge erstellt werden. Das optionale Argument Align ermöglicht die Ausrichtung right oder center des Inhalts im Anzeigefeld.
 
@@ -3078,7 +3066,7 @@ New Window( "Example",
 
 ### V Splitter Box
 
-**Syntax:** y = V Splitter Box( <Size(x,y)>, displayBox, ... )
+**Syntax:** y = V Splitter Box( &lt;Size(x,y)&gt;, displayBox, ... )
 
 **Beschreibung:** Gibt ein Anzeigefeld zurück, das andere Anzeigefelder mit interaktiver Steuerung der Größen vertikal anordnet. Die Größen untergeordneter Elemente werden als Anteil der Breite oder Höhe des Splitter Box angegeben. Das optionale Argument Size wird nur für das oberste Fensterbereichsfeld verwendet; Felder auf unteren Ebenen erhalten die gleiche Größe wie alle anderen untergeordneten Felder.
 
@@ -3128,7 +3116,7 @@ wb << Set Max Size( 10000, 10000 );
 
 ### Window
 
-**Syntax:** y = Window( <string|int> )
+**Syntax:** y = Window( &lt;string|int&gt; )
 
 **Beschreibung:** Diese Funktion ist veraltet und wird nur für die Rückwärtskompatibilität mit vorhandenen Skripten beibehalten. Verwenden Sie bei neuen Skripten Fenster abrufen() oder Fensterliste abrufen().
 

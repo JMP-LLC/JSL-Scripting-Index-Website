@@ -6,7 +6,7 @@
 
 ### Clear Schedule
 
-**Syntax:** obj << Clear Schedule
+**Syntax:** obj &lt;&lt; Clear Schedule
 
 **Beschreibung:** Löscht alle aktuell geplanten Ereignisse im Planer.
 
@@ -24,7 +24,7 @@ s << Clear Schedule;
 
 ### Close
 
-**Syntax:** obj << Close
+**Syntax:** obj &lt;&lt; Close
 
 **Beschreibung:** Schließt den Planer.
 
@@ -43,7 +43,7 @@ s << Close;
 
 ### Get Container
 
-**Syntax:** obj << Get Container
+**Syntax:** obj &lt;&lt; Get Container
 
 **Beschreibung:** Gibt einen Verweis auf das Containerfeld zurück, das den Inhalt des Objekts enthält.
 
@@ -62,7 +62,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Restart
 
-**Syntax:** obj << Restart
+**Syntax:** obj &lt;&lt; Restart
 
 **Beschreibung:** Startet den Planer neu, nachdem er gestoppt wurde und die aktuell geplanten Ereignisse nicht mehr ausgeführt wurden.
 
@@ -82,7 +82,7 @@ s << Restart;
 
 ### Show Schedule
 
-**Syntax:** obj << Show Schedule
+**Syntax:** obj &lt;&lt; Show Schedule
 
 **Beschreibung:** Zeigt das nächste aktuell geplante Ereignis an.
 
@@ -100,7 +100,7 @@ s << Show Schedule;
 
 ### Stop
 
-**Syntax:** obj << Stop
+**Syntax:** obj &lt;&lt; Stop
 
 **Beschreibung:** Stoppt den Planer, so dass die aktuell geplanten Ereignisse nicht ausgeführt werden.
 

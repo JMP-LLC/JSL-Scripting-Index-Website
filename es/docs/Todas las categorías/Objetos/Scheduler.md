@@ -25,7 +25,7 @@ s = Schedule(
 
 ### Clear Schedule
 
-**Sintaxis:** obj << Clear Schedule
+**Sintaxis:** obj &lt;&lt; Clear Schedule
 
 **Descripción:** Borra todos los eventos programados actualmente en el programador.
 
@@ -43,7 +43,7 @@ s << Clear Schedule;
 
 ### Close
 
-**Sintaxis:** obj << Close
+**Sintaxis:** obj &lt;&lt; Close
 
 **Descripción:** Cierra el programador.
 
@@ -62,7 +62,7 @@ s << Close;
 
 ### Get Container
 
-**Sintaxis:** obj << Get Container
+**Sintaxis:** obj &lt;&lt; Get Container
 
 **Descripción:** Devuelve una referencia al cuadro contenedor que incluye el contenido del objeto.
 
@@ -81,7 +81,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Restart
 
-**Sintaxis:** obj << Restart
+**Sintaxis:** obj &lt;&lt; Restart
 
 **Descripción:** Reinicia el programador después de haber detenido la corrida de todos los eventos programados actualmente.
 
@@ -101,7 +101,7 @@ s << Restart;
 
 ### Show Schedule
 
-**Sintaxis:** obj << Show Schedule
+**Sintaxis:** obj &lt;&lt; Show Schedule
 
 **Descripción:** Muestra el siguiente suceso actualmente programado.
 
@@ -119,7 +119,7 @@ s << Show Schedule;
 
 ### Stop
 
-**Sintaxis:** obj << Stop
+**Sintaxis:** obj &lt;&lt; Stop
 
 **Descripción:** Detiene el programador para que no ejecute todos los eventos programados actualmente.
 

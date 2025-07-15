@@ -6,7 +6,7 @@
 
 ### EWMA Control Chart
 
-**Syntax:** EWMA Control Chart( Y( column ), <Subgroup( column )>, <By( column )>, <Center Data( 1 )> )
+**Syntax:** EWMA Control Chart( Y( column ), &lt;Subgroup( column )&gt;, &lt;By( column )&gt;, &lt;Center Data( 1 )&gt; )
 
 **Description:** Creates a chart that plots the exponentially weighted moving averages and a chart that plots either the individual observations or the subgroup means. An EWMA chart is also known as a feedback control chart.
 
@@ -22,7 +22,7 @@ obj = dt << EWMA Control Chart( Y( :Gap ) );
 
 ### By
 
-**Syntax:** obj = EWMA Control Chart(...<By( column(s) )>...)
+**Syntax:** obj = EWMA Control Chart(...&lt;By( column(s) )&gt;...)
 
 **Description:** Specifies the By column during launch.
 
@@ -41,7 +41,7 @@ obj = dt << EWMA Control Chart( Y( :Gap ), By( _bycol ) );
 
 ### Subgroup
 
-**Syntax:** obj = EWMA Control Chart(...<Subgroup( column )>...)
+**Syntax:** obj = EWMA Control Chart(...&lt;Subgroup( column )&gt;...)
 
 **Description:** Specifies the Subgroup column during launch.
 
@@ -114,7 +114,7 @@ obj = dt << EWMA Control Chart( Y( :Gap ), Lambda( 0.2 ), Center Data( 1 ) );
 
 ### Connect Thru Missing
 
-**Syntax:** obj << Connect Thru Missing( state=0|1 )
+**Syntax:** obj &lt;&lt; Connect Thru Missing( state=0|1 )
 
 **Description:** Connects points when some samples have missing values or excluded rows.
 
@@ -130,7 +130,7 @@ obj << Connect Thru Missing( 1 );
 
 ### Constant Limits
 
-**Syntax:** obj << Constant Limits( state=0|1 )
+**Syntax:** obj &lt;&lt; Constant Limits( state=0|1 )
 
 **Description:** Uses an asymptotic expression to form constant EWMA limits.
 
@@ -146,7 +146,7 @@ obj << Constant Limits( 1 );
 
 ### Control Panel
 
-**Syntax:** obj << Control Panel( state=0|1 )
+**Syntax:** obj &lt;&lt; Control Panel( state=0|1 )
 
 **Description:** Shows or hides a report that contains the current values of the parameters and enables you to change them. On by default.
 
@@ -161,7 +161,7 @@ obj << Control Panel( 0 );
 
 ### Get Limits
 
-**Syntax:** obj << Get Limits( filename )
+**Syntax:** obj &lt;&lt; Get Limits( filename )
 
 **Description:** Imports control limits from a selected data table and replaces calculated limits on the chart.
 
@@ -184,7 +184,7 @@ obj << Get Limits( dtLimits );
 
 ### K Sigma
 
-**Syntax:** obj << K Sigma( K value=3 )
+**Syntax:** obj &lt;&lt; K Sigma( K value=3 )
 
 **Description:** Sets the K value to be multiplied by sigma to form the control limits about the average. "3" by default.
 
@@ -200,7 +200,7 @@ obj << K Sigma( 4 );
 
 ### Lambda
 
-**Syntax:** obj << Lambda( number=0.2 )
+**Syntax:** obj &lt;&lt; Lambda( number=0.2 )
 
 **Description:** Specifies the smoothing constant for weighting prior samples. "0.2" by default.
 
@@ -215,7 +215,7 @@ obj << Lambda( 0.5 );
 
 ### Lambda Slider
 
-**Syntax:** obj << Lambda Slider( state=0|1 )
+**Syntax:** obj &lt;&lt; Lambda Slider( state=0|1 )
 
 **Description:** Shows or hides the lambda slider on the control panel.
 
@@ -230,7 +230,7 @@ obj << Lambda Slider( 1 );
 
 ### Overlay Charts
 
-**Syntax:** obj << Overlay Charts( state=0|1 )
+**Syntax:** obj &lt;&lt; Overlay Charts( state=0|1 )
 
 **Description:** Overlays individual points, or XBar points if the data are summarized, on the EWMA chart.
 
@@ -245,7 +245,7 @@ obj << Overlay Charts( 1 );
 
 ### Parameters Report
 
-**Syntax:** obj << Parameters Report( state=0|1 )
+**Syntax:** obj &lt;&lt; Parameters Report( state=0|1 )
 
 **Description:** Shows or hides the parameters report.
 
@@ -260,7 +260,7 @@ obj << Parameters Report( 1 );
 
 ### Reset to Defaults
 
-**Syntax:** obj << Reset to Defaults
+**Syntax:** obj &lt;&lt; Reset to Defaults
 
 **Description:** Resets all parameters back to the default values.
 
@@ -277,7 +277,7 @@ obj << Reset to Defaults();
 
 ### Restart EWMA after Empty Subgroup
 
-**Syntax:** obj << Restart EWMA after Empty Subgroup( state=0|1 )
+**Syntax:** obj &lt;&lt; Restart EWMA after Empty Subgroup( state=0|1 )
 
 **Description:** Restarts calculation of the EWMA statistic after each missing or excluded subgroup.
 
@@ -295,7 +295,7 @@ obj << Restart EWMA after empty subgroup( 1 );
 
 ### Save Limits
 
-**Syntax:** obj << Save Limits( "in Column"|"in New Table" )
+**Syntax:** obj &lt;&lt; Save Limits( "in Column"|"in New Table" )
 
 **Description:** Saves chart parameters to either a column property or a new data table.
 
@@ -319,7 +319,7 @@ obj << Save Limits( "in New Table" );
 
 ### Save Sigma
 
-**Syntax:** obj << Save Sigma
+**Syntax:** obj &lt;&lt; Save Sigma
 
 **Description:** Saves the sigma used in the control chart as a column property in the data table.
 
@@ -334,7 +334,7 @@ obj << Save Sigma;
 
 ### Save Summaries
 
-**Syntax:** obj << Save Summaries
+**Syntax:** obj &lt;&lt; Save Summaries
 
 **Description:** Creates a new table that contains summary statistics and limits for each subgroup.
 
@@ -349,7 +349,7 @@ obj << Save Summaries;
 
 ### Show ARL
 
-**Syntax:** obj << Show ARL( state=0|1 )
+**Syntax:** obj &lt;&lt; Show ARL( state=0|1 )
 
 **Description:** Shows or hides a report with the Average Run Length computed from the associated EWMA and X charts.
 
@@ -364,7 +364,7 @@ obj << Show ARL( 1 );
 
 ### Show Center Line
 
-**Syntax:** obj << Show Center Line( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Center Line( state=0|1 )
 
 **Description:** Shows or hides the center line on the graph. On by default.
 
@@ -394,7 +394,7 @@ obj = dt << EWMA Control Chart( Y( :Gap ), Subgroup( :Sample ), Show Excluded Re
 
 ### Show Limits
 
-**Syntax:** obj << Show Limits( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Limits( state=0|1 )
 
 **Description:** Shows or hides the limits. On by default.
 
@@ -409,7 +409,7 @@ obj << Show Limits( 0 );
 
 ### Show Residuals Chart
 
-**Syntax:** obj << Show Residuals Chart( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Residuals Chart( state=0|1 )
 
 **Description:** Shows or hides a chart of residuals.
 
@@ -424,7 +424,7 @@ obj << Show Residuals Chart( 0 );
 
 ### Show Shift Lines
 
-**Syntax:** obj << Show Shift Lines( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Shift Lines( state=0|1 )
 
 **Description:** Shows or hides vertical lines that designate shifts in the chart. Shift lines are drawn at the start of a shift. Available only when there is a shift detected in the data. On by default.
 
@@ -440,7 +440,7 @@ obj << Show Shift Lines( 0 );
 
 ### Show X Chart
 
-**Syntax:** obj << Show X Chart( state=0|1 )
+**Syntax:** obj &lt;&lt; Show X Chart( state=0|1 )
 
 **Description:** Shows or hides the Location chart below the EWMA chart. On by default.
 
@@ -455,7 +455,7 @@ obj << Show X Chart( 0 );
 
 ### Show X Limits on Overlay Charts
 
-**Syntax:** obj << Show X Limits on Overlay Charts( state=0|1 )
+**Syntax:** obj &lt;&lt; Show X Limits on Overlay Charts( state=0|1 )
 
 **Description:** Overlays limits from the location chart on the EWMA chart when the Overlay Charts option is selected.
 
@@ -473,7 +473,7 @@ obj = dt << EWMA Control Chart(
 
 ### Sigma
 
-**Syntax:** obj << Sigma( number )
+**Syntax:** obj &lt;&lt; Sigma( number )
 
 **Description:** Specifies the known value of the standard deviation. By default, this parameter is set to the average moving range of the Y column. If there is a Subgroup variable, the Sigma parameter is set to the average of the moving ranges of the subgroup means.
 
@@ -488,7 +488,7 @@ obj << Sigma( 2 );
 
 ### Target
 
-**Syntax:** obj << Target( number )
+**Syntax:** obj &lt;&lt; Target( number )
 
 **Description:** Specifies the known value of the mean. This is the value of the center line in the chart. By default, this parameter is set to the Target value in the Spec Limits column property for the Y column. If the Y column does not have a Target value in the Spec Limits column property, this parameter is set to the overall average of the Y column.
 
@@ -503,7 +503,7 @@ obj << Target( 14.65 );
 
 ### Test Beyond Limits
 
-**Syntax:** obj << Test Beyond Limits( state=0|1 )
+**Syntax:** obj &lt;&lt; Test Beyond Limits( state=0|1 )
 
 **Description:** Shows or hides a red circle around any point that is above the upper limit or below the lower limit in the EWMA and X charts.
 
@@ -518,7 +518,7 @@ obj << Test Beyond Limits( 1 );
 
 ### Use Overall Mean for Target
 
-**Syntax:** obj << Use Overall Mean for Target( state=0|1 )
+**Syntax:** obj &lt;&lt; Use Overall Mean for Target( state=0|1 )
 
 **Description:** Sets the Target at the overall mean. Note: Applicable only when the Target is set using a Spec Limits column property for Target.
 
@@ -536,7 +536,7 @@ obj << Use Overall Mean for Target();
 
 ### Action
 
-**Syntax:** obj << Action
+**Syntax:** obj &lt;&lt; Action
 
 **Description:** All-purpose trapdoor within a platform to insert expressions to evaluate. Temporarily sets the DisplayBox and DataTable contexts to the Platform.
 
@@ -554,7 +554,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Syntax:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntax:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Description:** Apply a previously created preset to the object, updating the options and customizations to match the saved settings.
 
@@ -599,7 +599,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Automatic Recalc
 
-**Syntax:** obj << Automatic Recalc( state=0|1 )
+**Syntax:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Description:** Redoes the analysis automatically for exclude and data changes. If the Automatic Recalc option is turned on, you should consider using Wait(0) commands to ensure that the exclude and data changes take effect before the recalculation.
 
@@ -615,7 +615,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**Syntax:** obj << Broadcast(message)
+**Syntax:** obj &lt;&lt; Broadcast(message)
 
 **Description:** Broadcasts a message to a platform. If return results from individual objects are tables, they are concatenated if possible, and the final format is identical to either the result from the Save Combined Table option in a Table Box or the result from the Concatenate option using a Source column. Other than those, results are stored in a list and returned.
 
@@ -633,7 +633,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Copy ByGroup Script
 
-**Syntax:** obj << Copy ByGroup Script
+**Syntax:** obj &lt;&lt; Copy ByGroup Script
 
 **Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
 
@@ -653,7 +653,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Syntax:** obj << Copy Script
+**Syntax:** obj &lt;&lt; Copy Script
 
 **Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
 
@@ -668,7 +668,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Syntax:** obj << Data Table Window
+**Syntax:** obj &lt;&lt; Data Table Window
 
 **Description:** Move the data table window for this analysis to the front.
 
@@ -683,7 +683,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Syntax:** obj << Get By Levels
+**Syntax:** obj &lt;&lt; Get By Levels
 
 **Description:** Returns an associative array mapping the by group columns to their values.
 
@@ -698,7 +698,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Syntax:** obj << Get ByGroup Script
+**Syntax:** obj &lt;&lt; Get ByGroup Script
 
 **Description:** Creates a script (JSL) to produce this analysis and returns it as an expression.
 
@@ -719,7 +719,7 @@ Show( t );
 
 ### Get Container
 
-**Syntax:** obj << Get Container
+**Syntax:** obj &lt;&lt; Get Container
 
 **Description:** Returns a reference to the container box that holds the content for the object.
 
@@ -766,7 +766,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Syntax:** obj << Get Data Table
+**Syntax:** obj &lt;&lt; Get Data Table
 
 **Description:** Returns a reference to the data table.
 
@@ -782,7 +782,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**Syntax:** obj << Get Group Platform
+**Syntax:** obj &lt;&lt; Get Group Platform
 
 **Description:** Return the Group Platform object if this platform is part of a Group. Otherwise, returns Empty().
 
@@ -799,7 +799,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**Syntax:** obj << Get Script
+**Syntax:** obj &lt;&lt; Get Script
 
 **Description:** Creates a script (JSL) to produce this analysis and returns it as an expression.
 
@@ -815,7 +815,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Syntax:** obj << Get Script With Data Table
+**Syntax:** obj &lt;&lt; Get Script With Data Table
 
 **Description:** Creates a script(JSL) to produce this analysis specifically referencing this data table and returns it as an expression.
 
@@ -831,7 +831,7 @@ Show( t );
 
 ### Get Timing
 
-**Syntax:** obj << Get Timing
+**Syntax:** obj &lt;&lt; Get Timing
 
 **Description:** Times the platform launch.
 
@@ -847,7 +847,7 @@ Show( t );
 
 ### Get Web Support
 
-**Syntax:** obj << Get Web Support
+**Syntax:** obj &lt;&lt; Get Web Support
 
 **Description:** Return a number indicating the level of Interactive HTML support for the display object. 1 means some or all elements are supported. 0 means no support.
 
@@ -863,7 +863,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Syntax:** obj << Get Where Expr
+**Syntax:** obj &lt;&lt; Get Where Expr
 
 **Description:** Returns the Where expression for the data subset, if the platform was launched with By() or Where(). Otherwise, returns Empty()
 
@@ -930,7 +930,7 @@ preset = obj << New Preset();
 
 ### Redo Analysis
 
-**Syntax:** obj << Redo Analysis
+**Syntax:** obj &lt;&lt; Redo Analysis
 
 **Description:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
 
@@ -945,7 +945,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**Syntax:** obj << Redo ByGroup Analysis
+**Syntax:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Description:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
 
@@ -965,7 +965,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**Syntax:** obj << Relaunch Analysis
+**Syntax:** obj &lt;&lt; Relaunch Analysis
 
 **Description:** Opens the platform launch window and recalls the settings that were used to create the report.
 
@@ -980,7 +980,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**Syntax:** obj << Relaunch ByGroup
+**Syntax:** obj &lt;&lt; Relaunch ByGroup
 
 **Description:** Opens the platform launch window and recalls the settings that were used to create the report.
 
@@ -1015,9 +1015,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Syntax:** obj << Report;
-
-Report( obj )
+**Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Description:** Returns a reference to the report object.
 
@@ -1034,7 +1032,7 @@ Show( t );
 
 ### Report View
 
-**Syntax:** obj << Report View( "Full"|"Summary" )
+**Syntax:** obj &lt;&lt; Report View( "Full"|"Summary" )
 
 **Description:** The report view determines the level of detail visible in a platform report. Full shows all of the detail, while Summary shows only select content, dependent on the platform. For customized behavior, display boxes support a <<Set Summary Behavior message.
 
@@ -1049,7 +1047,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**Syntax:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description:** Creates a JSL script to produce this analysis, and save it as a table property in the data table. You can specify a name for the script. The Append Suffix option appends a numeric suffix to the script name, which differentiates the script from an existing script with the same name. The Prompt option prompts the user to specify a script name. The Replace option replaces an existing script with the same name.
 
@@ -1069,7 +1067,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Syntax:** obj << Save ByGroup Script to Journal
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
 
@@ -1089,7 +1087,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Syntax:** obj << Save ByGroup Script to Script Window
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
 
@@ -1109,7 +1107,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**Syntax:** obj << Save Script for All Objects
+**Syntax:** obj &lt;&lt; Save Script for All Objects
 
 **Description:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -1124,7 +1122,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Syntax:** obj << Save Script for All Objects To Data Table( <name> )
+**Syntax:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Description:** Saves a script for all report objects to the current data table. This option is useful when you have multiple reports in the window. The script is named after the first platform unless you specify the script name in quotes.
 
@@ -1162,7 +1160,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Syntax:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description:** Create a JSL script to produce this analysis, and save it as a table property in the data table.
 
@@ -1177,7 +1175,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Syntax:** obj << Save Script to Journal
+**Syntax:** obj &lt;&lt; Save Script to Journal
 
 **Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
 
@@ -1192,7 +1190,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Syntax:** obj << Save Script to Report
+**Syntax:** obj &lt;&lt; Save Script to Report
 
 **Description:** Create a JSL script to produce this analysis, and show it in the report itself. Useful to preserve a printed record of what was done.
 
@@ -1207,7 +1205,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Syntax:** obj << Save Script to Script Window
+**Syntax:** obj &lt;&lt; Save Script to Script Window
 
 **Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
 
@@ -1287,7 +1285,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Syntax:** obj << Sync to Data Table Changes
+**Syntax:** obj &lt;&lt; Sync to Data Table Changes
 
 **Description:** Sync with the exclude and data changes that have been made.
 
@@ -1304,7 +1302,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Syntax:** obj << Title( "new title" )
+**Syntax:** obj &lt;&lt; Title( "new title" )
 
 **Description:** Sets the title of the platform.
 
@@ -1319,7 +1317,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Syntax:** obj << Top Report
+**Syntax:** obj &lt;&lt; Top Report
 
 **Description:** Returns a reference to the root node in the report.
 
@@ -1336,7 +1334,7 @@ Show( t );
 
 ### Transform Column
 
-**Syntax:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Syntax:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Description:** Create a transform column in the local context of an object, usually a platform. The transform column is active only for the lifetime of the platform.
 
@@ -1353,7 +1351,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**Syntax:** obj << View Web XML
+**Syntax:** obj &lt;&lt; View Web XML
 
 **Description:** Returns the XML code that is used to create the interactive HTML report.
 

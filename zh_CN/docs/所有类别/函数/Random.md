@@ -2,11 +2,9 @@
 
 
 
-## 函数
-
 ### Col Shuffle
 
-**语法:** y = Col Shuffle(<byVar, <Excluded( Row State() )>, ...>)
+**语法:** y = Col Shuffle(&lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;)
 
 **说明:** 返回介于 1 和当前数据表的行数之间的随机整数。在列公式中使用时，Col Shuffle() 创建行号的随机顺序，每个行号仅出现一次。该顺序在内部缓存，因此可高效进行多重计算。
 
@@ -49,7 +47,7 @@ dt << New Column( "Col Shuffle for each Sex grouped by Excluded",
 
 ### Make KFold Formula
 
-**语法:** y = Make KFold Formula( folds, Y Columns( cols ), <<Stratification Columns( cols ), <<Grouping Columns( cols ) )
+**语法:** y = Make KFold Formula( folds, Y Columns( cols ), &lt;&lt;Stratification Columns( cols ), &lt;&lt;Grouping Columns( cols ) )
 
 **说明:** 在列公式中使用时生成具有 folds 水平的验证列。该 JSL 函数主要用在“生成验证列”平台来生成公式列。
 
@@ -87,7 +85,7 @@ dt << New Column( "Stratified KFold",
 
 ### Make Validation Formula
 
-**语法:** y = Make Validation Formula( rates, <<Stratification Columns( cols ), <<Grouping Columns( cols ), <<Cutpoint Column ( col ), <<Cutpoint Batch ID( col ), <<Determine cutpoints using( "Proportions"|"Numbers of Rows"|"Fixed Time or Date"|"Elapsed Time" ), <<Assign Extra Rows( "To Training"|"To Validation"|"To Test" ) )
+**语法:** y = Make Validation Formula( rates, &lt;&lt;Stratification Columns( cols ), &lt;&lt;Grouping Columns( cols ), &lt;&lt;Cutpoint Column ( col ), &lt;&lt;Cutpoint Batch ID( col ), &lt;&lt;Determine cutpoints using( "Proportions"|"Numbers of Rows"|"Fixed Time or Date"|"Elapsed Time" ), &lt;&lt;Assign Extra Rows( "To Training"|"To Validation"|"To Test" ) )
 
 **说明:** 在列公式中使用时生成两水平或三水平的验证列。rates 参数是一个 3 x 1 矩阵，它分别包含训练率、验证率和测试率。该 JSL 函数主要用在“生成验证列”平台来生成公式列。
 
@@ -147,7 +145,7 @@ dt << New Column( "Validation",
 
 ### Random Beta
 
-**语法:** y = Random Beta( alpha, beta, <theta=0>, <sigma=1> )
+**语法:** y = Random Beta( alpha, beta, &lt;theta=0&gt;, &lt;sigma=1&gt; )
 
 **说明:** 返回一个 beta 分布随机数。
 
@@ -168,7 +166,7 @@ Show( x, v );
 
 ### Random Beta Binomial
 
-**语法:** y = Random Beta Binomial( n, p, <delta=0> )
+**语法:** y = Random Beta Binomial( n, p, &lt;delta=0&gt; )
 
 **说明:** 对于概率为 p 且相关性为 delta 的 n 次试验，返回一个 beta 二项分布随机数。
 
@@ -289,7 +287,7 @@ Show( x, v );
 
 ### Random ChiSquare
 
-**语法:** y = Random ChiSquare( df, <nonCentrality=0> )
+**语法:** y = Random ChiSquare( df, &lt;nonCentrality=0&gt; )
 
 **说明:** 返回卡方分布随机数。
 
@@ -352,7 +350,7 @@ Show( x, v );
 
 ### Random F
 
-**语法:** y = Random F( dfnum, dfden, <nonCentrality=0> )
+**语法:** y = Random F( dfnum, dfden, &lt;nonCentrality=0&gt; )
 
 **说明:** 返回 F 分布随机数。
 
@@ -373,7 +371,7 @@ Show( x, v );
 
 ### Random Frechet
 
-**语法:** y = Random Frechet( <mu=0>, <sigma=1> )
+**语法:** y = Random Frechet( &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **说明:** 返回 Fréchet 分布随机数。
 
@@ -415,7 +413,7 @@ Show( x, v );
 
 ### Random Gamma
 
-**语法:** y = Random Gamma( alpha, <scale=1> )
+**语法:** y = Random Gamma( alpha, &lt;scale=1&gt; )
 
 **说明:** 返回一个 gamma 分布随机数。
 
@@ -436,7 +434,7 @@ Show( x, v );
 
 ### Random Gamma Poisson
 
-**语法:** y = Random Gamma Poisson( lambda, <sigma=1> )
+**语法:** y = Random Gamma Poisson( lambda, &lt;sigma=1&gt; )
 
 **说明:** 返回一个 gamma Poisson 分布（参数为 lambda 和 sigma）随机数。
 
@@ -457,7 +455,7 @@ Show( x, v );
 
 ### Random GenGamma
 
-**语法:** y = Random GenGamma( <mu=0>, <sigma=1>, <lambda=0> )
+**语法:** y = Random GenGamma( &lt;mu=0&gt;, &lt;sigma=1&gt;, &lt;lambda=0&gt; )
 
 **说明:** 从一个扩展的广义 Gamma 分布（参数为 mu、sigma 和 lambda）返回一个随机数。
 
@@ -586,7 +584,7 @@ Show( x, v );
 
 ### Random Johnson Sl
 
-**语法:** y = Random Johnson Sl( gamma, delta, theta, <sigma=1> )
+**语法:** y = Random Johnson Sl( gamma, delta, theta, &lt;sigma=1&gt; )
 
 **说明:** 返回一个 Johnson Sl 分布随机数。
 
@@ -628,7 +626,7 @@ Show( x, v );
 
 ### Random LEV
 
-**语法:** y = Random LEV( <mu=0>, <sigma=1> )
+**语法:** y = Random LEV( &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **说明:** 返回最大极值分布随机数。
 
@@ -649,7 +647,7 @@ Show( x, v );
 
 ### Random LogGenGamma
 
-**语法:** y = Random LogGenGamma( <mu=0>, <sigma=1>, <lambda=0> )
+**语法:** y = Random LogGenGamma( &lt;mu=0&gt;, &lt;sigma=1&gt;, &lt;lambda=0&gt; )
 
 **说明:** 从一个对数广义 Gamma 分布（参数为 mu、sigma 和 lambda）返回一个随机数。
 
@@ -670,7 +668,7 @@ Show( x, v );
 
 ### Random Logistic
 
-**语法:** y = Random Logistic( <mu=0>, <sigma=1> )
+**语法:** y = Random Logistic( &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **说明:** 返回 Logistic 分布随机数。
 
@@ -691,7 +689,7 @@ Show( x, v );
 
 ### Random Loglogistic
 
-**语法:** y = Random Loglogistic( <mu=0>, <sigma=1> )
+**语法:** y = Random Loglogistic( &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **说明:** 返回对数 Logistic 分布随机数。
 
@@ -712,7 +710,7 @@ Show( x, v );
 
 ### Random Lognormal
 
-**语法:** y = Random Lognormal( <mu=0>, <sigma=1> )
+**语法:** y = Random Lognormal( &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **说明:** 从位置参数为 mu、尺度参数为 sigma 的对数正态分布返回随机数。
 
@@ -765,7 +763,7 @@ New Window( "Example: Random Lognormal and Empirical Distribution",
 
 ### Random Multivariate Normal
 
-**语法:** y = Random Multivariate Normal( mean, covar, <nrows=1>)
+**语法:** y = Random Multivariate Normal( mean, covar, &lt;nrows=1&gt;)
 
 **说明:** 从具有均值向量 mean 和（正半定）协方差矩阵 covar 的多元正态分布返回随机 nrows×p 矩阵，其中 p 定义为 covar 的行数。
 
@@ -828,7 +826,7 @@ New Window( "Example: Neg Binomial Probability",
 
 ### Random Normal
 
-**语法:** y = Random Normal( <mu=0>, <sigma=1> )
+**语法:** y = Random Normal( &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **说明:** 返回一个均值为 mu、标准差为 sigma 的正态分布随机数。
 
@@ -987,7 +985,7 @@ Random Normal();
 
 ### Random SEV
 
-**语法:** y = Random SEV( <mu=0>, <sigma=1> )
+**语法:** y = Random SEV( &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **说明:** 返回最小极值分布随机数。
 
@@ -1047,7 +1045,7 @@ Show( x, v );
 
 ### Random Seed State
 
-**语法:** Random Seed State( <seed state> )
+**语法:** Random Seed State( &lt;seed state&gt; )
 
 **说明:** 检索或恢复随机种子状态或将之检索或恢复为 Blob 对象。
 
@@ -1079,11 +1077,7 @@ Random Shuffle( exA );
 
 ### Random Triangular
 
-**语法:** y = Random Triangular( a, b, c );
-
-y = Random Triangular( b, c );
-
-y = Random Triangular( b )
+**语法:** y = Random Triangular( a, b, c );y = Random Triangular( b, c );y = Random Triangular( b )
 
 **说明:** 从三角形分布（下限为“a”，模式为“b”，上限为“c”）返回一个随机数。“Random Triangular(b,c)”等同于“Random Triangular(0,b,c)”。“Random Triangular(b)”等同于“Random Triangular(0,b,1)”。
 
@@ -1102,7 +1096,7 @@ Show( x, y );
 
 ### Random Uniform
 
-**语法:** y = Random Uniform( <min>, <max> )
+**语法:** y = Random Uniform( &lt;min&gt;, &lt;max&gt; )
 
 **说明:** 返回一个介于 min 和 max 之间的均匀分布随机数（min 和 max 除外）。
 
@@ -1134,7 +1128,7 @@ Random Uniform( 1, 10 );
 
 ### Random Weibull
 
-**语法:** y = Random Weibull( beta, <alpha=1> )
+**语法:** y = Random Weibull( beta, &lt;alpha=1&gt; )
 
 **说明:** 返回一个 Weibull 分布随机数。
 
@@ -1295,7 +1289,7 @@ dt << Distribution(
 
 ### Random t
 
-**语法:** y = Random t( df, <nonCentrality=0> )
+**语法:** y = Random t( df, &lt;nonCentrality=0&gt; )
 
 **说明:** 返回 t 分布随机数。
 
@@ -1316,7 +1310,7 @@ Show( x, v );
 
 ### Resample Freq
 
-**语法:** Resample Freq( <rate=1>, <column> )
+**语法:** Resample Freq( &lt;rate=1&gt;, &lt;column&gt; )
 
 **说明:** 生成放回抽样的频数统计，它对于 Bootstrap 样本很有用。没有参数的情况下，该函数生成一个 100% 再抽样。rate 参数指定再抽样率。若指定了 column 参数，则所选样本大小为 rate 乘以指定列的总和。rate 为负表示允许小数频数。
 

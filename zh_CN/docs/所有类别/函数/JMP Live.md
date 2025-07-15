@@ -2,11 +2,9 @@
 
 
 
-## 函数
-
 ### New JMP Live
 
-**语法:** New JMP Live(Connection("Connection Name"), <Prompt("No" | "If Needed")>)
+**语法:** New JMP Live(Connection("Connection Name"), &lt;Prompt("No" | "If Needed")&gt;)
 
 **说明:** 使用存储的连接信息启动与 JMP Live 的连接。连接是可选的，默认为“连接管理器”中指定为默认的连接。若提供，它会按名称查找连接。prompt 是可选的，默认值为“No”。prompt 的有效值为“Yes”、“No”和“If Needed”。值“Yes”总是提示输入登录凭证。值“No”从不提示输入登录凭证，但可能导致身份验证失败。值“If Needed”仅在当前存储的凭证无效时才提示输入凭证。返回一个 JMP Live 连接对象。
 
@@ -41,7 +39,7 @@ jmplive = New JMP Live( Connection( "MyJMPLive" ), Prompt( If Needed ) );
 
 ### New JMP Live Content
 
-**语法:** obj = New JMP Live Content(jmpreport|Image(path_to_image)|Data(jmpdatatable)|Map(jmpmap), <Title(...)>, <Description(...)>, <Publish Data(0|1)>, <Enable Warnings(0|1)>, <Optimization("Interactivity" | "Performance")>
+**语法:** obj = New JMP Live Content(jmpreport|Image(path_to_image)|Data(jmpdatatable)|Map(jmpmap), &lt;Title(...)&gt;, &lt;Description(...)&gt;, &lt;Publish Data(0|1)&gt;, &lt;Enable Warnings(0|1)&gt;, &lt;Optimization("Interactivity" | "Performance")&gt;
 
 **说明:** 创建用于在 JMP Live 中发布的交互式内容。
 

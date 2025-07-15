@@ -6,7 +6,7 @@
 
 ### Get Description
 
-**语法:**  metadata << Get Description()
+**语法:** metadata &lt;&lt; Get Description()
 
 **说明:** 获取数据连接器说明
 
@@ -22,7 +22,7 @@ description = metadata << Get Description();
 
 ### Get Driver
 
-**语法:**  metadata << Get Driver()
+**语法:** metadata &lt;&lt; Get Driver()
 
 **说明:** 获取数据连接器驱动程序（若存在）。
 
@@ -38,7 +38,7 @@ type = metadata << Get Driver();
 
 ### Get Name
 
-**语法:**  metadata << Get Name()
+**语法:** metadata &lt;&lt; Get Name()
 
 **说明:** 获取数据连接器名称
 
@@ -54,7 +54,7 @@ name = metadata << Get Name();
 
 ### Get Path
 
-**语法:** metadaata << Get Path()
+**语法:** metadaata &lt;&lt; Get Path()
 
 **说明:** 获取数据连接器路径
 
@@ -70,7 +70,7 @@ path = metadata << Get Path();
 
 ### Get Type
 
-**语法:**  metadata << Get Type()
+**语法:** metadata &lt;&lt; Get Type()
 
 **说明:** 获取数据连接器类型
 
@@ -86,7 +86,7 @@ type = metadata << Get Type();
 
 ### Set Description
 
-**语法:**  metadata << Set Description(description)
+**语法:** metadata &lt;&lt; Set Description(description)
 
 **说明:** 设置数据连接器说明
 
@@ -102,7 +102,7 @@ metadata << Set Description( "My frequently used SQL Server connection." );
 
 ### Set Name
 
-**语法:**  metadata << Set Name( name )
+**语法:** metadata &lt;&lt; Set Name( name )
 
 **说明:** 设置数据连接器名称
 

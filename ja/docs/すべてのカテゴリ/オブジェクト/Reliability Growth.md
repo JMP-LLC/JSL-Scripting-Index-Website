@@ -6,7 +6,7 @@
 
 ### Action
 
-**構文:** obj << Action
+**構文:** obj &lt;&lt; Action
 
 **説明:** 評価する式を挿入するための、プラットフォーム内の汎用トラップドア。プラットフォームに一時的にディスプレイボックスおよびデータテーブルのコンテキストを設定する。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**構文:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**構文:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **説明:** 作成されたプリセットをオブジェクトに適用する。保存された設定に合わせてオプションとカスタマイズが更新される。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**構文:** obj << Automatic Recalc( state=0|1 )
+**構文:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **説明:** データの除外や変更があった場合に分析を自動的にやり直す。Automatic Recalcオプションがオンになっている場合で、データの除外や変更が再計算の前に確実に適用されるようにするには、Wait(0)コマンドを使用すること。
 
@@ -88,7 +88,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Column Switcher
 
-**構文:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**構文:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **説明:** プラットフォームの変数を変更するための設定パネルを追加する。
 
@@ -106,7 +106,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy Script
 
-**構文:** obj << Copy Script
+**構文:** obj &lt;&lt; Copy Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -122,7 +122,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**構文:** obj << Data Table Window
+**構文:** obj &lt;&lt; Data Table Window
 
 **説明:** この分析に使用したデータテーブルのウィンドウを手前に表示する。
 
@@ -138,7 +138,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**構文:** obj << Get By Levels
+**構文:** obj &lt;&lt; Get By Levels
 
 **説明:** By列が指定されている場合、列名をキー、データ値を値とした連想配列を戻す。
 
@@ -155,7 +155,7 @@ biv << Get By Levels;
 
 ### Get Container
 
-**構文:** obj << Get Container
+**構文:** obj &lt;&lt; Get Container
 
 **説明:** オブジェクトのコンテンツを含んだコンテナボックスの参照を戻す。
 
@@ -203,7 +203,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**構文:** obj << Get Data Table
+**構文:** obj &lt;&lt; Get Data Table
 
 **説明:** データテーブルへの参照を戻す。
 
@@ -220,7 +220,7 @@ Show( N Rows( t ) );
 
 ### Get Script
 
-**構文:** obj << Get Script
+**構文:** obj &lt;&lt; Get Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -237,7 +237,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**構文:** obj << Get Script With Data Table
+**構文:** obj &lt;&lt; Get Script With Data Table
 
 **説明:** この分析を再現するスクリプト(JSL)をデータテーブルへの参照も含めて生成し、それを式として戻す。
 
@@ -254,7 +254,7 @@ Show( t );
 
 ### Get Timing
 
-**構文:** obj << Get Timing
+**構文:** obj &lt;&lt; Get Timing
 
 **説明:** プラットフォームの起動にかかった時間を取得する。
 
@@ -271,7 +271,7 @@ Show( t );
 
 ### Get Web Support
 
-**構文:** obj << Get Web Support
+**構文:** obj &lt;&lt; Get Web Support
 
 **説明:** ディスプレイオブジェクトにおけるインタラクティブHTMLサポートのレベルを数値で戻す。1は、一部または全部の要素がサポートされていることを示し、0は、サポートされないことを示す。
 
@@ -287,7 +287,7 @@ Show( s );
 
 ### Get Where Expr
 
-**構文:** obj << Get Where Expr
+**構文:** obj &lt;&lt; Get Where Expr
 
 **説明:** プラットフォームがBy()またはWhere()を使って起動された場合に、データをサブセットするためのWhere式を戻す。By()やWhere()が使われていない場合はEmpty()を戻す。
 
@@ -324,7 +324,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**構文:** obj << Local Data Filter
+**構文:** obj &lt;&lt; Local Data Filter
 
 **説明:** このプラットフォームに対してのみ有効なフィルタで、データを特定のグループまたは範囲にフィルタリングする。
 
@@ -380,7 +380,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**構文:** obj << Paste Local Data Filter
+**構文:** obj &lt;&lt; Paste Local Data Filter
 
 **説明:** クリップボードにあるローカルデータフィルタを現在のレポートに適用する。
 
@@ -401,7 +401,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**構文:** obj << Redo Analysis
+**構文:** obj &lt;&lt; Redo Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -417,7 +417,7 @@ obj << Redo Analysis;
 
 ### Relaunch Analysis
 
-**構文:** obj << Relaunch Analysis
+**構文:** obj &lt;&lt; Relaunch Analysis
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -433,7 +433,7 @@ obj << Relaunch Analysis;
 
 ### Remove Column Switcher
 
-**構文:** obj << Remove Column Switcher
+**構文:** obj &lt;&lt; Remove Column Switcher
 
 **説明:** プラットフォームに最後に追加された列スイッチャーを削除する。
 
@@ -453,7 +453,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**構文:** obj << Remove Local Data Filter
+**構文:** obj &lt;&lt; Remove Local Data Filter
 
 **説明:** すでに作成されているローカルデータフィルタを削除し、プラットフォームはデータテーブル内のすべてのデータを使用した状態に戻る。
 
@@ -492,9 +492,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**構文:** obj << Report;
-
-Report( obj )
+**構文:** obj &lt;&lt; Report;Report( obj )
 
 **説明:** レポートオブジェクトへの参照を戻す。
 
@@ -512,7 +510,7 @@ Show( t );
 
 ### Report View
 
-**構文:** obj << Report View( "完全"|"要約" )
+**構文:** obj &lt;&lt; Report View( "完全"|"要約" )
 
 **説明:** レポートビューは、プラットフォームレポートの詳細を表示するかどうかを決定する。Fullはすべての詳細を表示し、Summaryはプラットフォームにより限定されたものだけを表示する。 動作をカスタマイズするため、各ディスプレイボックスは<<Set Summary Behaviorメッセージをサポートする。
 
@@ -528,7 +526,7 @@ obj << Report View( "Summary" );
 
 ### Save Script for All Objects
 
-**構文:** obj << Save Script for All Objects
+**構文:** obj &lt;&lt; Save Script for All Objects
 
 **説明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -544,7 +542,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**構文:** obj << Save Script for All Objects To Data Table( <name> )
+**構文:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **説明:** すべてのレポートオブジェクトを再現するスクリプトを現在のデータテーブルに保存する。このオプションは、ウィンドウ内にレポートが複数ある場合に便利。作成されるスクリプトの名前は、引用符で囲んで指定しない限り、1つ目のプラットフォーム名となる。
 
@@ -592,7 +590,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**構文:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** この分析を再現するJSLスクリプトを生成し、データテーブルのテーブルプロパティとして保存する。
 
@@ -608,7 +606,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**構文:** obj << Save Script to Journal
+**構文:** obj &lt;&lt; Save Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -624,7 +622,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**構文:** obj << Save Script to Report
+**構文:** obj &lt;&lt; Save Script to Report
 
 **説明:** この分析を再現するJSLスクリプトを生成し、レポートウィンドウに表示する。分析手順の記録を結果と一緒に残せる。
 
@@ -640,7 +638,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**構文:** obj << Save Script to Script Window
+**構文:** obj &lt;&lt; Save Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -721,7 +719,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**構文:** obj << Sync to Data Table Changes
+**構文:** obj &lt;&lt; Sync to Data Table Changes
 
 **説明:** 除外やデータの変更が行われた場合に同期する。
 
@@ -738,7 +736,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**構文:** obj << Title( "new title" )
+**構文:** obj &lt;&lt; Title( "new title" )
 
 **説明:** プラットフォームのタイトルを設定する。
 
@@ -754,7 +752,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**構文:** obj << Top Report
+**構文:** obj &lt;&lt; Top Report
 
 **説明:** レポート内のルートノードへの参照を戻す。
 
@@ -772,7 +770,7 @@ Show( t );
 
 ### View Web XML
 
-**構文:** obj << View Web XML
+**構文:** obj &lt;&lt; View Web XML
 
 **説明:** インタラクティブHTMLレポートの作成に使うXMLコードを戻す。
 
@@ -789,19 +787,7 @@ xml = obj << View Web XML;
 
 ### Reliability Growth
 
-**構文:** obj = Reliability Growth( Input Format( Time to Event ), Time to Event( column, <column> ), <Event Count( column )>, <Phase( column )> );
-
-
-
-obj = Reliability Growth( Input Format( Dates ), Timestamp( column, <column> ), <Event Count( column )>, <Phase( column )> );
-
-
-
-obj = Reliability Growth( Input Format( Concurrent Systems ), Time to Event( column, column, ... ), System ID( column ), <Phase( column )> )
-
-
-
-obj = Reliability Growth( Input Format( Parallel Systems ), Time to Event( column, column, ... ), <Event Count( column )>, System ID( column ), <Phase( column )> )
+**構文:** obj = Reliability Growth( Input Format( Time to Event ), Time to Event( column, &lt;column&gt; ), &lt;Event Count( column )&gt;, &lt;Phase( column )&gt; );obj = Reliability Growth( Input Format( Dates ), Timestamp( column, &lt;column&gt; ), &lt;Event Count( column )&gt;, &lt;Phase( column )&gt; );obj = Reliability Growth( Input Format( Concurrent Systems ), Time to Event( column, column, ... ), System ID( column ), &lt;Phase( column )&gt; )obj = Reliability Growth( Input Format( Parallel Systems ), Time to Event( column, column, ... ), &lt;Event Count( column )&gt;, System ID( column ), &lt;Phase( column )&gt; )
 
 **説明:** 設計に改善が組み込まれている修復可能なシステムにおいて、時間の経過に伴う信頼性の変化をモデル化する。 このプラットフォームでは複数の入力形式を使用できる。指定の詳細は各形式を参照。
 
@@ -867,7 +853,7 @@ obj = dt << Reliability Growth(
 
 ### Crow AMSAA
 
-**構文:** obj << Crow AMSAA
+**構文:** obj &lt;&lt; Crow AMSAA
 
 **説明:** Crow-AMSAAモデルをあてはめる。 デフォルトではオン。
 
@@ -882,7 +868,7 @@ obj << Crow AMSAA;
 
 ### Crow AMSAA with Modified MLE
 
-**構文:** obj << Crow AMSAA with Modified MLE
+**構文:** obj &lt;&lt; Crow AMSAA with Modified MLE
 
 **説明:** ベータ(beta, β)の推定値をバイアスに対して修正したCrow-AMSAAモデルをあてはめる。 デフォルトではオン。
 
@@ -897,7 +883,7 @@ obj << Crow AMSAA with Modified MLE;
 
 ### Distinct Phase Weibull NHPP
 
-**構文:** obj << Distinct Phase Weibull NHPP
+**構文:** obj &lt;&lt; Distinct Phase Weibull NHPP
 
 **説明:** フェーズ別Weibull-NHPPモデルをあてはめる。このモデルでは、すべてのシステムが各フェーズ内では同じCrow-AMSAAモデルに従うと仮定される。このモデルでは、フェーズごとにβパラメータとλパラメータが異なると仮定される。ただし、これらのパラメータは全システムでは同じとしている。 デフォルトではオン。
 
@@ -918,7 +904,7 @@ obj << Distinct Phase Weibull NHPP;
 
 ### Distinct System Weibull NHPP
 
-**構文:** obj << Distinct System Weibull NHPP
+**構文:** obj &lt;&lt; Distinct System Weibull NHPP
 
 **説明:** システム別Weibull-NHPPモデルをあてはめる。このモデルでは、各システムが、異なるパラメータを持つCrow-AMSAAモデルに従うと仮定される。 デフォルトではオン。
 
@@ -938,7 +924,7 @@ obj << Distinct System Weibull NHPP;
 
 ### Distinct Weibull NHPP
 
-**構文:** obj << Distinct Weibull NHPP
+**構文:** obj &lt;&lt; Distinct Weibull NHPP
 
 **説明:** 個別Weibull-NHPPモデルをあてはめる。このモデルでは、各システムが各フェーズで別々のCrow-AMSAAモデルに従うと仮定される。このモデルでは、システムとフェーズの組み合わせごとに、それぞれ1つのβパラメータと1つのλパラメータを含む。 デフォルトではオン。
 
@@ -959,7 +945,7 @@ obj << Distinct Weibull NHPP;
 
 ### Fixed Parameter Crow AMSAA
 
-**構文:** obj << Fixed Parameter Crow AMSAA( <lambda ( number )>, <beta ( number )> )
+**構文:** obj &lt;&lt; Fixed Parameter Crow AMSAA( &lt;lambda ( number )&gt;, &lt;beta ( number )&gt; )
 
 **説明:** パラメータ指定のCrow-AMSAAモデルをあてはめる。 デフォルトではオン。
 
@@ -974,7 +960,7 @@ obj << Fixed Parameter Crow AMSAA( lambda( .02 ) );
 
 ### Get Results
 
-**構文:** obj << Get Results
+**構文:** obj &lt;&lt; Get Results
 
 **説明:** モデル推定の結果を含む名前付きリストを戻す。
 
@@ -990,7 +976,7 @@ Show( obj << Get Results );
 
 ### Identical System Weibull NHPP
 
-**構文:** obj << Identical System Weibull NHPP
+**構文:** obj &lt;&lt; Identical System Weibull NHPP
 
 **説明:** 同一システムWeibull-NHPPモデルをあてはめる。このモデルでは、各システムが、1つの同じCrow-AMSAAモデルに従うと仮定される。つまり、システム間の観測された違いは、ランダム性に起因すると考える。 デフォルトではオン。
 
@@ -1010,7 +996,7 @@ obj << Identical System Weibull NHPP;
 
 ### Piecewise Weibull NHPP
 
-**構文:** obj << Piecewise Weibull NHPP
+**構文:** obj &lt;&lt; Piecewise Weibull NHPP
 
 **説明:** 区分Weibull-NHPPモデルをあてはめる。 デフォルトではオン。
 
@@ -1030,7 +1016,7 @@ obj << Piecewise Weibull NHPP;
 
 ### Piecewise Weibull NHPP Change Point Detection
 
-**構文:** obj << Piecewise Weibull NHPP Change Point Detection
+**構文:** obj &lt;&lt; Piecewise Weibull NHPP Change Point Detection
 
 **説明:** データにおける変化点を推定し、区分Weibull-NHPPモデルをあてはめる。このオプションは、フェーズ変数が指定されている場合には使用できない。 デフォルトではオン。
 
@@ -1049,7 +1035,7 @@ obj << Piecewise Weibull NHPP Change Point Detection;
 
 ### Piecewise Weibull NHPP with Different Intercepts
 
-**構文:** obj << Piecewise Weibull NHPP with Different Intercepts
+**構文:** obj &lt;&lt; Piecewise Weibull NHPP with Different Intercepts
 
 **説明:** システムごとに異なる切片をもつ区分Weibull-NHPPモデルをあてはめる。このモデルでは、各システムは、複数のフェーズで同じ区分Weibull-NHPPモデルに従う。ただし、このシステムごとの区分Weibull-NHPPモデルは、フェーズごとにβパラメータが異なり、全フェーズでλパラメータが同じと仮定されている。 デフォルトではオン。
 
@@ -1070,7 +1056,7 @@ obj << Piecewise Weibull NHPP with Different Intercepts;
 
 ### Reinitialized Weibull NHPP
 
-**構文:** obj << Reinitialized Weibull NHPP
+**構文:** obj &lt;&lt; Reinitialized Weibull NHPP
 
 **説明:** 再初期化Weibull-NHPPモデルをあてはめる。 デフォルトではオン。
 
@@ -1094,7 +1080,7 @@ obj << Reinitialized Weibull NHPP;
 
 #### Achieved MTBF
 
-**構文:** scrobj << Achieved MTBF( state=0|1 )
+**構文:** scrobj &lt;&lt; Achieved MTBF( state=0|1 )
 
 **説明:** 「最終時点の平均故障間隔」レポートの表示/非表示を切り替える。有意水準(α)を指定するには、オプションのalpha引数を使う。
 
@@ -1111,7 +1097,7 @@ report << Achieved MTBF( .01 );
 
 #### Goodness of Fit
 
-**構文:** scrobj << Goodness of Fit( state=0|1 )
+**構文:** scrobj &lt;&lt; Goodness of Fit( state=0|1 )
 
 **説明:** 「適合度」レポートの表示/非表示を切り替える。このレポートには、「データがCrow-AMSAAモデルに従っている」という帰無仮説に対する検定が表示される。
 
@@ -1128,7 +1114,7 @@ report << Goodness of Fit( 1 );
 
 #### Show Cumulative Events Plot
 
-**構文:** scrobj << Show Cumulative Events Plot( state=0|1 )
+**構文:** scrobj &lt;&lt; Show Cumulative Events Plot( state=0|1 )
 
 **説明:** 「累積イベント数」プロットの表示/非表示を切り替える。
 
@@ -1145,7 +1131,7 @@ report << Show Cumulative Events Plot( 1 );
 
 #### Show Intensity Plot
 
-**構文:** scrobj << Show Intensity Plot( state=0|1 )
+**構文:** scrobj &lt;&lt; Show Intensity Plot( state=0|1 )
 
 **説明:** 強度プロットの表示/非表示を切り替える。
 
@@ -1162,7 +1148,7 @@ report << Show Intensity Plot( 1 );
 
 #### Show MTBF Plot
 
-**構文:** scrobj << Show MTBF Plot( state=0|1 )
+**構文:** scrobj &lt;&lt; Show MTBF Plot( state=0|1 )
 
 **説明:** 平均故障間隔プロットの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1179,7 +1165,7 @@ report << Show MTBF Plot( 0 );
 
 #### Show Profilers
 
-**構文:** scrobj << Show Profilers( state=0|1 )
+**構文:** scrobj &lt;&lt; Show Profilers( state=0|1 )
 
 **説明:** 平均故障間隔、故障強度、累積イベント数に対するプロファイルの表示/非表示を切り替える。
 
@@ -1200,9 +1186,7 @@ report << Show Profilers( 1 );
 
 #### Cumulative Events Plot
 
-**構文:** obj << Cumulative Events Plot( ... );
-
-scrobj = obj << Cumulative Events Plot
+**構文:** obj &lt;&lt; Cumulative Events Plot( ... );scrobj = obj &lt;&lt; Cumulative Events Plot
 
 **説明:** 「累積イベント数」グラフ上でモデルの表示/非表示の切り替えを可能にする。引数なしで指定した場合、プロットへのスクリプト可能な参照を戻す。
 
@@ -1221,11 +1205,7 @@ plot << Crow AMSAA( 0 );
 
 #### Crow AMSAA
 
-**構文:** obj << Cumulative Events Plot( Crow AMSAA( state=0|1 ) );
-
-obj << Mean Time Between Failures Plot( Crow AMSAA( state=0|1 ) );
-
-scrobj << Crow AMSAA( state=0|1 ) )
+**構文:** obj &lt;&lt; Cumulative Events Plot( Crow AMSAA( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Crow AMSAA( state=0|1 ) );scrobj &lt;&lt; Crow AMSAA( state=0|1 ) )
 
 **説明:** 「累積イベント数」または「平均故障間隔」プロットにおいて、Crow-AMSAAモデルの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1263,11 +1243,7 @@ mtbf << Crow AMSAA( 0 );
 
 #### Crow AMSAA with Modified MLE
 
-**構文:** obj << Cumulative Events Plot( Crow AMSAA with Modified MLE( state=0|1 ) );
-
-obj << Mean Time Between Failures Plot( Crow AMSAA with Modified MLE( state=0|1 ) );
-
-scrobj << Crow AMSAA with Modified MLE( state=0|1 ) )
+**構文:** obj &lt;&lt; Cumulative Events Plot( Crow AMSAA with Modified MLE( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Crow AMSAA with Modified MLE( state=0|1 ) );scrobj &lt;&lt; Crow AMSAA with Modified MLE( state=0|1 ) )
 
 **説明:** 「累積イベント数」または「平均故障間隔」プロットにおいて、修正Crow-AMSAAモデルの表示/非表示を切り替える。このモデルは、Crow-AMSAAモデルにおいて、ベータ(beta, β)の推定値をバイアスに対して修正したものである。 デフォルトではオン。
 
@@ -1305,11 +1281,7 @@ mtbf << Crow AMSAA with Modified MLE( 0 );
 
 #### Fixed Parameter Crow AMSAA
 
-**構文:** obj << Cumulative Events Plot( Fixed Parameter Crow AMSAA( state=0|1 ) );
-
-obj << Mean Time Between Failures Plot( Fixed Parameter Crow AMSAA( state=0|1 ) );
-
-scrobj << Fixed Parameter Crow AMSAA( state=0|1 ) )
+**構文:** obj &lt;&lt; Cumulative Events Plot( Fixed Parameter Crow AMSAA( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Fixed Parameter Crow AMSAA( state=0|1 ) );scrobj &lt;&lt; Fixed Parameter Crow AMSAA( state=0|1 ) )
 
 **説明:** 「累積イベント数」または「平均故障間隔」プロットにおいて、パラメータ指定のCrow-AMSAAモデルの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1347,11 +1319,7 @@ mtbf << Fixed Parameter Crow AMSAA( 0 );
 
 #### Piecewise Weibull NHPP
 
-**構文:** obj << Cumulative Events Plot( Piecewise Weibull NHPP( state=0|1 ) );
-
-obj << Mean Time Between Failures Plot( Piecewise Weibull NHPP( state=0|1 ) );
-
-scrobj << Piecewise Weibull NHPP( state=0|1 ) )
+**構文:** obj &lt;&lt; Cumulative Events Plot( Piecewise Weibull NHPP( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Piecewise Weibull NHPP( state=0|1 ) );scrobj &lt;&lt; Piecewise Weibull NHPP( state=0|1 ) )
 
 **説明:** 「累積イベント数」または「平均故障間隔」プロットにおいて、区分Weibull-NHPPモデルの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1399,11 +1367,7 @@ mtbf << Piecewise Weibull NHPP( 0 );
 
 #### Piecewise Weibull NHPP Change Point Detection
 
-**構文:** obj << Cumulative Events Plot( Piecewise Weibull NHPP Change Point Detection( state=0|1 ) );
-
-obj << Mean Time Between Failures Plot( Piecewise Weibull NHPP Change Point Detection( state=0|1 ) );
-
-scrobj << Piecewise Weibull NHPP Change Point Detection( state=0|1 ) )
+**構文:** obj &lt;&lt; Cumulative Events Plot( Piecewise Weibull NHPP Change Point Detection( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Piecewise Weibull NHPP Change Point Detection( state=0|1 ) );scrobj &lt;&lt; Piecewise Weibull NHPP Change Point Detection( state=0|1 ) )
 
 **説明:** 「累積イベント数」または「平均故障間隔」プロットにおいて、再初期化Weibull-NHPPモデルの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1449,11 +1413,7 @@ mtbf << Piecewise Weibull NHPP Change Point Detection( 0 );
 
 #### Reinitialized Weibull NHPP
 
-**構文:** obj << Cumulative Events Plot( Reinitialized Weibull NHPP( state=0|1 ) );
-
-obj << Mean Time Between Failures Plot( Reinitialized Weibull NHPP( state=0|1 ) );
-
-scrobj << Reinitialized Weibull NHPP( state=0|1 ) )
+**構文:** obj &lt;&lt; Cumulative Events Plot( Reinitialized Weibull NHPP( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Reinitialized Weibull NHPP( state=0|1 ) );scrobj &lt;&lt; Reinitialized Weibull NHPP( state=0|1 ) )
 
 **説明:** 「累積イベント数」または「平均故障間隔」プロットにおいて、再初期化Weibull-NHPPモデルの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1505,7 +1465,7 @@ mtbf << Reinitialized Weibull NHPP( 0 );
 
 #### Show Cumulative Events Plot
 
-**構文:** scrobj << Show Cumulative Events Plot( state=0|1 )
+**構文:** scrobj &lt;&lt; Show Cumulative Events Plot( state=0|1 )
 
 **説明:** 「累積イベント数」プロットの表示/非表示を切り替える。
 
@@ -1522,7 +1482,7 @@ report << Show Cumulative Events Plot( 1 );
 
 #### Show Intensity Plot
 
-**構文:** scrobj << Show Intensity Plot( state=0|1 )
+**構文:** scrobj &lt;&lt; Show Intensity Plot( state=0|1 )
 
 **説明:** 強度プロットの表示/非表示を切り替える。
 
@@ -1539,7 +1499,7 @@ report << Show Intensity Plot( 1 );
 
 #### Show MTBF Plot
 
-**構文:** scrobj << Show MTBF Plot( state=0|1 )
+**構文:** scrobj &lt;&lt; Show MTBF Plot( state=0|1 )
 
 **説明:** 平均故障間隔プロットの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1556,7 +1516,7 @@ report << Show MTBF Plot( 0 );
 
 #### Show Profilers
 
-**構文:** scrobj << Show Profilers( state=0|1 )
+**構文:** scrobj &lt;&lt; Show Profilers( state=0|1 )
 
 **説明:** 平均故障間隔、故障強度、累積イベント数に対するプロファイルの表示/非表示を切り替える。
 
@@ -1573,7 +1533,7 @@ report << Show Profilers( 1 );
 
 #### beta
 
-**構文:** obj << Fixed Parameter Crow AMSAA( beta( number ) )
+**構文:** obj &lt;&lt; Fixed Parameter Crow AMSAA( beta( number ) )
 
 **説明:** ベータ(beta, β)パラメータの固定値を指定する。引数が欠測値の場合、パラメータは固定されない。
 
@@ -1590,7 +1550,7 @@ Report( obj )["Crow-AMSAA"] << Close( 1 );
 
 #### lambda
 
-**構文:** obj << Fixed Parameter Crow AMSAA( lambda( number ) )
+**構文:** obj &lt;&lt; Fixed Parameter Crow AMSAA( lambda( number ) )
 
 **説明:** ラムダ(lambda, λ)パラメータの固定値を指定する。引数が欠測値の場合、パラメータは固定されない。
 
@@ -1611,9 +1571,7 @@ Report( obj )["Crow-AMSAA"] << Close( 1 );
 
 #### Mean Time Between Failures Plot
 
-**構文:** obj << Mean Time Between Failures Plot( ... );
-
-scrobj = obj << Mean Time Between Failures Plot
+**構文:** obj &lt;&lt; Mean Time Between Failures Plot( ... );scrobj = obj &lt;&lt; Mean Time Between Failures Plot
 
 **説明:** 「平均故障間隔」プロット上でモデルの表示/非表示の切り替えを可能にする。引数なしで指定した場合、プロットへのスクリプト可能な参照を戻す。
 
@@ -1633,11 +1591,7 @@ plot << Crow AMSAA( 0 );
 
 #### Crow AMSAA
 
-**構文:** obj << Cumulative Events Plot( Crow AMSAA( state=0|1 ) );
-
-obj << Mean Time Between Failures Plot( Crow AMSAA( state=0|1 ) );
-
-scrobj << Crow AMSAA( state=0|1 ) )
+**構文:** obj &lt;&lt; Cumulative Events Plot( Crow AMSAA( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Crow AMSAA( state=0|1 ) );scrobj &lt;&lt; Crow AMSAA( state=0|1 ) )
 
 **説明:** 「累積イベント数」または「平均故障間隔」プロットにおいて、Crow-AMSAAモデルの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1675,11 +1629,7 @@ mtbf << Crow AMSAA( 0 );
 
 #### Crow AMSAA with Modified MLE
 
-**構文:** obj << Cumulative Events Plot( Crow AMSAA with Modified MLE( state=0|1 ) );
-
-obj << Mean Time Between Failures Plot( Crow AMSAA with Modified MLE( state=0|1 ) );
-
-scrobj << Crow AMSAA with Modified MLE( state=0|1 ) )
+**構文:** obj &lt;&lt; Cumulative Events Plot( Crow AMSAA with Modified MLE( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Crow AMSAA with Modified MLE( state=0|1 ) );scrobj &lt;&lt; Crow AMSAA with Modified MLE( state=0|1 ) )
 
 **説明:** 「累積イベント数」または「平均故障間隔」プロットにおいて、修正Crow-AMSAAモデルの表示/非表示を切り替える。このモデルは、Crow-AMSAAモデルにおいて、ベータ(beta, β)の推定値をバイアスに対して修正したものである。 デフォルトではオン。
 
@@ -1717,9 +1667,7 @@ mtbf << Crow AMSAA with Modified MLE( 0 );
 
 #### Customize Average MTBF
 
-**構文:** obj << Mean Time Between Failures( Options( Sample MTBF Type( "Customized Average MTBF" ), Customize Average MTBF( vector ) ) );
-
-scrobj << Options( Sample MTBF Type( "Customized Average MTBF" ), Customize Average MTBF( vector ) )
+**構文:** obj &lt;&lt; Mean Time Between Failures( Options( Sample MTBF Type( "Customized Average MTBF" ), Customize Average MTBF( vector ) ) );scrobj &lt;&lt; Options( Sample MTBF Type( "Customized Average MTBF" ), Customize Average MTBF( vector ) )
 
 **説明:** 平均故障間隔の計算に使う互いに素な区間の集合を指定する。
 
@@ -1758,11 +1706,7 @@ plot << Options(
 
 #### Fixed Parameter Crow AMSAA
 
-**構文:** obj << Cumulative Events Plot( Fixed Parameter Crow AMSAA( state=0|1 ) );
-
-obj << Mean Time Between Failures Plot( Fixed Parameter Crow AMSAA( state=0|1 ) );
-
-scrobj << Fixed Parameter Crow AMSAA( state=0|1 ) )
+**構文:** obj &lt;&lt; Cumulative Events Plot( Fixed Parameter Crow AMSAA( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Fixed Parameter Crow AMSAA( state=0|1 ) );scrobj &lt;&lt; Fixed Parameter Crow AMSAA( state=0|1 ) )
 
 **説明:** 「累積イベント数」または「平均故障間隔」プロットにおいて、パラメータ指定のCrow-AMSAAモデルの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1800,9 +1744,7 @@ mtbf << Fixed Parameter Crow AMSAA( 0 );
 
 #### Interval Size
 
-**構文:** obj << Mean Time Between Failures( Options( Sample MTBF Type( "Equal Interval Average MTBF" ), Interval Size( number ) ) );
-
-scrobj << Options( Sample MTBF Type( "Equal Interval Average MTBF" ), Interval Size( number ) )
+**構文:** obj &lt;&lt; Mean Time Between Failures( Options( Sample MTBF Type( "Equal Interval Average MTBF" ), Interval Size( number ) ) );scrobj &lt;&lt; Options( Sample MTBF Type( "Equal Interval Average MTBF" ), Interval Size( number ) )
 
 **説明:** 平均故障間隔の計算に使う区間のサイズを指定する。
 
@@ -1835,9 +1777,7 @@ plot << Options( Sample MTBF Type( "Equal Interval Average MTBF" ), Interval Siz
 
 #### Options
 
-**構文:** obj << Mean Time Between Failures( Options( ... ) );
-
-scrobj << Options( ... )
+**構文:** obj &lt;&lt; Mean Time Between Failures( Options( ... ) );scrobj &lt;&lt; Options( ... )
 
 **説明:** 「平均故障間隔」プロットを設定できる。
 
@@ -1880,11 +1820,7 @@ mtbf << Options( Sample MTBF Type( "Equal Interval Average MTBF" ) );
 
 #### Piecewise Weibull NHPP
 
-**構文:** obj << Cumulative Events Plot( Piecewise Weibull NHPP( state=0|1 ) );
-
-obj << Mean Time Between Failures Plot( Piecewise Weibull NHPP( state=0|1 ) );
-
-scrobj << Piecewise Weibull NHPP( state=0|1 ) )
+**構文:** obj &lt;&lt; Cumulative Events Plot( Piecewise Weibull NHPP( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Piecewise Weibull NHPP( state=0|1 ) );scrobj &lt;&lt; Piecewise Weibull NHPP( state=0|1 ) )
 
 **説明:** 「累積イベント数」または「平均故障間隔」プロットにおいて、区分Weibull-NHPPモデルの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1932,11 +1868,7 @@ mtbf << Piecewise Weibull NHPP( 0 );
 
 #### Piecewise Weibull NHPP Change Point Detection
 
-**構文:** obj << Cumulative Events Plot( Piecewise Weibull NHPP Change Point Detection( state=0|1 ) );
-
-obj << Mean Time Between Failures Plot( Piecewise Weibull NHPP Change Point Detection( state=0|1 ) );
-
-scrobj << Piecewise Weibull NHPP Change Point Detection( state=0|1 ) )
+**構文:** obj &lt;&lt; Cumulative Events Plot( Piecewise Weibull NHPP Change Point Detection( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Piecewise Weibull NHPP Change Point Detection( state=0|1 ) );scrobj &lt;&lt; Piecewise Weibull NHPP Change Point Detection( state=0|1 ) )
 
 **説明:** 「累積イベント数」または「平均故障間隔」プロットにおいて、再初期化Weibull-NHPPモデルの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1982,11 +1914,7 @@ mtbf << Piecewise Weibull NHPP Change Point Detection( 0 );
 
 #### Reinitialized Weibull NHPP
 
-**構文:** obj << Cumulative Events Plot( Reinitialized Weibull NHPP( state=0|1 ) );
-
-obj << Mean Time Between Failures Plot( Reinitialized Weibull NHPP( state=0|1 ) );
-
-scrobj << Reinitialized Weibull NHPP( state=0|1 ) )
+**構文:** obj &lt;&lt; Cumulative Events Plot( Reinitialized Weibull NHPP( state=0|1 ) );obj &lt;&lt; Mean Time Between Failures Plot( Reinitialized Weibull NHPP( state=0|1 ) );scrobj &lt;&lt; Reinitialized Weibull NHPP( state=0|1 ) )
 
 **説明:** 「累積イベント数」または「平均故障間隔」プロットにおいて、再初期化Weibull-NHPPモデルの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2034,9 +1962,7 @@ mtbf << Reinitialized Weibull NHPP( 0 );
 
 #### Sample MTBF Type
 
-**構文:** obj << Mean Time Between Failures( Options( Sample MTBF Type( "Equal Interval Average MTBF"|"Customized Average MTBF" ) ) );
-
-scrobj << Options( Sample MTBF Type( "Equal Interval Average MTBF"|"Customized Average MTBF" ) )
+**構文:** obj &lt;&lt; Mean Time Between Failures( Options( Sample MTBF Type( "Equal Interval Average MTBF"|"Customized Average MTBF" ) ) );scrobj &lt;&lt; Options( Sample MTBF Type( "Equal Interval Average MTBF"|"Customized Average MTBF" ) )
 
 **説明:** 「平均故障間隔」プロットの計算方法を指定する。
 
@@ -2083,7 +2009,7 @@ mtbf << Options( Sample MTBF Type( "Equal Interval Average MTBF" ) );
 
 #### Show Cumulative Events Plot
 
-**構文:** scrobj << Show Cumulative Events Plot( state=0|1 )
+**構文:** scrobj &lt;&lt; Show Cumulative Events Plot( state=0|1 )
 
 **説明:** 「累積イベント数」プロットの表示/非表示を切り替える。
 
@@ -2100,7 +2026,7 @@ report << Show Cumulative Events Plot( 1 );
 
 #### Show Intensity Plot
 
-**構文:** scrobj << Show Intensity Plot( state=0|1 )
+**構文:** scrobj &lt;&lt; Show Intensity Plot( state=0|1 )
 
 **説明:** 強度プロットの表示/非表示を切り替える。
 
@@ -2117,7 +2043,7 @@ report << Show Intensity Plot( 1 );
 
 #### Show MTBF Plot
 
-**構文:** scrobj << Show MTBF Plot( state=0|1 )
+**構文:** scrobj &lt;&lt; Show MTBF Plot( state=0|1 )
 
 **説明:** 平均故障間隔プロットの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2134,7 +2060,7 @@ report << Show MTBF Plot( 0 );
 
 #### Show Profilers
 
-**構文:** scrobj << Show Profilers( state=0|1 )
+**構文:** scrobj &lt;&lt; Show Profilers( state=0|1 )
 
 **説明:** 平均故障間隔、故障強度、累積イベント数に対するプロファイルの表示/非表示を切り替える。
 

@@ -8,7 +8,7 @@
 
 #### Fit Causal Treatment
 
-**Sintaxis:** Fit Model( Y( columns ), <Effects( columns )>, Treatment( column ), Personality( "Causal Treatment" ) )
+**Sintaxis:** Fit Model( Y( columns ), &lt;Effects( columns )&gt;, Treatment( column ), Personality( "Causal Treatment" ) )
 
 **Descripción:** Ajusta modelos para un tratamiento causal en los que se realizan ajustes para la probabilidad de un tratamiento.
 
@@ -31,11 +31,11 @@ obj = dt << Fit Model(
 
 #### Model Dialog
 
-**Sintaxis:** obj << Model Dialog
+**Sintaxis:** obj &lt;&lt; Model Dialog
 
 #### Show Tips and Interpretations
 
-**Sintaxis:** obj << Show Tips and Interpretations( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Show Tips and Interpretations( state=0|1 )
 
 **JMP Versión agregada:** 19
 
@@ -43,7 +43,7 @@ obj = dt << Fit Model(
 
 #### Action
 
-**Sintaxis:** obj << Action
+**Sintaxis:** obj &lt;&lt; Action
 
 **Descripción:** Trampa multiuso dentro de una plataforma para insertar expresiones que se desean evaluar. Temporalmente establece los contextos de cuadros de visualización y tablas de datos en la plataforma.
 
@@ -61,7 +61,7 @@ dt << Bivariate(
 
 #### Apply Preset
 
-**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descripción:** Aplica al objeto un preajuste creado previamente, actualizando las opciones y personalizaciones para que coincidan con la configuración guardada.
 
@@ -108,7 +108,7 @@ obj2 << Apply Preset( preset );
 
 #### Automatic Recalc
 
-**Sintaxis:** obj << Automatic Recalc( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Descripción:** Rehace automáticamente el análisis para modificaciones de datos y de exclusión. Si está activada la opción Recálculo automático, le recomendamos que utilice los comandos Wait(0) para asegurarse de que las modificaciones de datos y de exclusión surtan efecto antes del recálculo.
 
@@ -131,7 +131,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 #### Broadcast
 
-**Sintaxis:** obj << Broadcast(message)
+**Sintaxis:** obj &lt;&lt; Broadcast(message)
 
 **Descripción:** Difunde un mensaje a una plataforma. Si los resultados devueltos de objetos individuales son tablas, se concatenan si es posible y el formato final es idéntico al resultado de la opción Guardar tabla combinada en un cuadro de tabla o al resultado de la opción Concatenar mediante una columna de origen. Los demás resultados se almacenan en una lista y se devuelven.
 
@@ -151,7 +151,7 @@ objs[1] << Broadcast( Save Summaries );
 
 #### Column Switcher
 
-**Sintaxis:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Sintaxis:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Descripción:** Añade un panel de control para cambiar las variables de la plataforma
 
@@ -169,7 +169,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 #### Copy ByGroup Script
 
-**Sintaxis:** obj << Copy ByGroup Script
+**Sintaxis:** obj &lt;&lt; Copy ByGroup Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -197,7 +197,7 @@ obj[1] << Copy ByGroup Script;
 
 #### Copy Script
 
-**Sintaxis:** obj << Copy Script
+**Sintaxis:** obj &lt;&lt; Copy Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -219,7 +219,7 @@ obj << Copy Script;
 
 #### Data Table Window
 
-**Sintaxis:** obj << Data Table Window
+**Sintaxis:** obj &lt;&lt; Data Table Window
 
 **Descripción:** Mueve al frente la ventana de la tabla de datos que se utiliza en este análisis.
 
@@ -241,7 +241,7 @@ obj << Data Table Window;
 
 #### Get By Levels
 
-**Sintaxis:** obj << Get By Levels
+**Sintaxis:** obj &lt;&lt; Get By Levels
 
 **Descripción:** Devuelve un arreglo asociativo que asigna las columnas Por grupo a sus valores.
 
@@ -258,7 +258,7 @@ biv << Get By Levels;
 
 #### Get ByGroup Script
 
-**Sintaxis:** obj << Get ByGroup Script
+**Sintaxis:** obj &lt;&lt; Get ByGroup Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -287,7 +287,7 @@ Show( t );
 
 #### Get Container
 
-**Sintaxis:** obj << Get Container
+**Sintaxis:** obj &lt;&lt; Get Container
 
 **Descripción:** Devuelve una referencia al cuadro contenedor que incluye el contenido del objeto.
 
@@ -341,7 +341,7 @@ New Window( "platform boxes",
 
 #### Get Data Table
 
-**Sintaxis:** obj << Get Data Table
+**Sintaxis:** obj &lt;&lt; Get Data Table
 
 **Descripción:** Devuelve una referencia a la tabla de datos.
 
@@ -364,7 +364,7 @@ Show( N Rows( t ) );
 
 #### Get Group Platform
 
-**Sintaxis:** obj << Get Group Platform
+**Sintaxis:** obj &lt;&lt; Get Group Platform
 
 **Descripción:** Devuelve el objeto Plataforma grupal si esta plataforma forma parte de un grupo. De lo contrario, devuelve Empty().
 
@@ -381,7 +381,7 @@ group << Layout( "Arrange in Tabs" );
 
 #### Get Script
 
-**Sintaxis:** obj << Get Script
+**Sintaxis:** obj &lt;&lt; Get Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -404,7 +404,7 @@ Show( t );
 
 #### Get Script With Data Table
 
-**Sintaxis:** obj << Get Script With Data Table
+**Sintaxis:** obj &lt;&lt; Get Script With Data Table
 
 **Descripción:** Crea un script (JSL) para generar este análisis haciendo referencia específica a esta tabla de datos y lo devuelve en forma de expresión.
 
@@ -427,7 +427,7 @@ Show( t );
 
 #### Get Timing
 
-**Sintaxis:** obj << Get Timing
+**Sintaxis:** obj &lt;&lt; Get Timing
 
 **Descripción:** Determina el tiempo de inicio de una plataforma.
 
@@ -450,7 +450,7 @@ Show( t );
 
 #### Get Web Support
 
-**Sintaxis:** obj << Get Web Support
+**Sintaxis:** obj &lt;&lt; Get Web Support
 
 **Descripción:** Devuelve un número que indica el nivel de compatibilidad del HTML interactivo para el objeto de visualización. 1 significa que algunos o todos los elementos son compatibles. 0 significa que no existe compatibilidad.
 
@@ -466,7 +466,7 @@ Show( s );
 
 #### Get Where Expr
 
-**Sintaxis:** obj << Get Where Expr
+**Sintaxis:** obj &lt;&lt; Get Where Expr
 
 **Descripción:** Devuelve la expresión Where para el subconjunto de datos, si la plataforma se inició con By() o Where(). De lo contrario, devuelve Empty().
 
@@ -503,7 +503,7 @@ dt << Bivariate(
 
 #### Local Data Filter
 
-**Sintaxis:** obj << Local Data Filter
+**Sintaxis:** obj &lt;&lt; Local Data Filter
 
 **Descripción:** Para filtrar los datos según grupos o rangos determinados, pero locales para esta plataforma.
 
@@ -559,7 +559,7 @@ preset = obj << New Preset();
 
 #### Paste Local Data Filter
 
-**Sintaxis:** obj << Paste Local Data Filter
+**Sintaxis:** obj &lt;&lt; Paste Local Data Filter
 
 **Descripción:** Se aplica el filtro de datos locales del portapapeles al informe actual.
 
@@ -580,7 +580,7 @@ dist2 << Paste Local Data Filter;
 
 #### Redo Analysis
 
-**Sintaxis:** obj << Redo Analysis
+**Sintaxis:** obj &lt;&lt; Redo Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -602,7 +602,7 @@ obj << Redo Analysis;
 
 #### Redo ByGroup Analysis
 
-**Sintaxis:** obj << Redo ByGroup Analysis
+**Sintaxis:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -630,7 +630,7 @@ obj[1] << Redo ByGroup Analysis;
 
 #### Relaunch Analysis
 
-**Sintaxis:** obj << Relaunch Analysis
+**Sintaxis:** obj &lt;&lt; Relaunch Analysis
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -652,7 +652,7 @@ obj << Relaunch Analysis;
 
 #### Relaunch ByGroup
 
-**Sintaxis:** obj << Relaunch ByGroup
+**Sintaxis:** obj &lt;&lt; Relaunch ByGroup
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -680,7 +680,7 @@ obj[1] << Relaunch ByGroup;
 
 #### Remove Column Switcher
 
-**Sintaxis:** obj << Remove Column Switcher
+**Sintaxis:** obj &lt;&lt; Remove Column Switcher
 
 **Descripción:** Quita el Cambiador de columnas más reciente que se haya agregado a la plataforma.
 
@@ -700,7 +700,7 @@ obj << Remove Column Switcher;
 
 #### Remove Local Data Filter
 
-**Sintaxis:** obj << Remove Local Data Filter
+**Sintaxis:** obj &lt;&lt; Remove Local Data Filter
 
 **Descripción:** Si se ha creado un filtro de datos local, esto lo eliminará y restaurará la plataforma para usar todos los datos de la tabla de datos directamente.
 
@@ -739,9 +739,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 #### Report
 
-**Sintaxis:** obj << Report;
-
-Report( obj )
+**Sintaxis:** obj &lt;&lt; Report;Report( obj )
 
 **Descripción:** Devuelve una referencia al objeto informe.
 
@@ -765,7 +763,7 @@ Show( t );
 
 #### Report View
 
-**Sintaxis:** obj << Report View( "Completa"|"Resumen" )
+**Sintaxis:** obj &lt;&lt; Report View( "Completa"|"Resumen" )
 
 **Descripción:** La vista del informe determina el nivel de detalle visible en el informe de una plataforma. Full muestra todos los detalles, mientras que Summary solo muestra el contenido seleccionado, con independencia de la plataforma. Para el comportamiento personalizado, los cuadros de visualización admiten un mensaje <<Set Summary Behavior.
 
@@ -787,7 +785,7 @@ obj << Report View( "Summary" );
 
 #### Save ByGroup Script to Data Table
 
-**Sintaxis:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis, y lo guarda como propiedad de tabla en la tabla de datos. Puede especificar un nombre para el script. La opción Append Suffix añade un sufijo numérico al nombre del script, que diferencia el script de un script existente que tenga el mismo nombre. La opción Prompt solicita al usuario que especifique un nombre de script. La opción Replace reemplaza un script existente que tenga el mismo nombre.
 
@@ -815,7 +813,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 #### Save ByGroup Script to Journal
 
-**Sintaxis:** obj << Save ByGroup Script to Journal
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -843,7 +841,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 #### Save ByGroup Script to Script Window
 
-**Sintaxis:** obj << Save ByGroup Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -871,7 +869,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 #### Save Script for All Objects
 
-**Sintaxis:** obj << Save Script for All Objects
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects
 
 **Descripción:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -893,7 +891,7 @@ obj << Save Script for All Objects;
 
 #### Save Script for All Objects To Data Table
 
-**Sintaxis:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descripción:** Guarda un script para todos los objetos de informe en la tabla de datos actual. Esta opción es útil cuando tiene varios informes en la ventana. El script recibe el nombre de la primera plataforma a menos que especifique el nombre del script entre comillas.
 
@@ -947,7 +945,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 #### Save Script to Data Table
 
-**Sintaxis:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis y lo guarda en forma de propiedad de tabla en la tabla de datos.
 
@@ -969,7 +967,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 #### Save Script to Journal
 
-**Sintaxis:** obj << Save Script to Journal
+**Sintaxis:** obj &lt;&lt; Save Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -991,7 +989,7 @@ obj << Save Script to Journal;
 
 #### Save Script to Report
 
-**Sintaxis:** obj << Save Script to Report
+**Sintaxis:** obj &lt;&lt; Save Script to Report
 
 **Descripción:** Crea un script JSL para generar este análisis y lo muestra en el propio informe. Resulta útil para conservar un registro impreso de lo que se ha hecho.
 
@@ -1013,7 +1011,7 @@ obj << Save Script to Report;
 
 #### Save Script to Script Window
 
-**Sintaxis:** obj << Save Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -1100,7 +1098,7 @@ dt << Distribution(
 
 #### Sync to Data Table Changes
 
-**Sintaxis:** obj << Sync to Data Table Changes
+**Sintaxis:** obj &lt;&lt; Sync to Data Table Changes
 
 **Descripción:** Realiza una sincronización con las modificaciones de datos y de exclusión que se hayan realizado.
 
@@ -1117,7 +1115,7 @@ dist << Sync To Data Table Changes;
 
 #### Title
 
-**Sintaxis:** obj << Title( "new title" )
+**Sintaxis:** obj &lt;&lt; Title( "new title" )
 
 **Descripción:** Establece el título de la plataforma.
 
@@ -1139,7 +1137,7 @@ obj << Title( "My Platform" );
 
 #### Top Report
 
-**Sintaxis:** obj << Top Report
+**Sintaxis:** obj &lt;&lt; Top Report
 
 **Descripción:** Devuelve una referencia al nodo raíz del informe.
 
@@ -1163,7 +1161,7 @@ Show( t );
 
 #### Transform Column
 
-**Sintaxis:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Sintaxis:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Descripción:** Crea una columna de transformación en el contexto local de un objeto (una plataforma por lo general). La columna de transformación solo está activa mientras esté en uso la plataforma.
 
@@ -1184,7 +1182,7 @@ dt << Distribution(
 
 #### View Web XML
 
-**Sintaxis:** obj << View Web XML
+**Sintaxis:** obj &lt;&lt; View Web XML
 
 **Descripción:** Devuelve el código XML que se utiliza para crear el informe HTML interactivo.
 
@@ -1199,9 +1197,7 @@ xml = obj << View Web XML;
 
 #### Window View
 
-**Sintaxis:** obj = Fit Causal Treatment(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Causal Treatment(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Establece el tipo de ventana que se creará para el informe. De forma predeterminada, se creará una ventana de informe Visible. Una ventana Invisible no aparecerá en pantalla, pero se puede detectar mediante funciones como Window(). Una ventana Private responde a la mayoría de los mensajes de ventana pero no es detectable y se debe abordar a través del objeto de informe.
 
@@ -1248,7 +1244,7 @@ obj = dt << Fit Model(
 
 #### Contour Profiler
 
-**Sintaxis:** obj << Contour Profiler( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Contour Profiler( state=0|1 )
 
 **Descripción:** Muestra u oculta el perfilador de contorno, que representa gráficamente los contornos de las respuestas de dos factores a la vez.
 
@@ -1271,7 +1267,7 @@ obj << Contour Profiler( 1 );
 
 #### Contrast
 
-**Sintaxis:** obj << (effect name << Contrast( [l1 l2 l3 ...] ))
+**Sintaxis:** obj &lt;&lt; (effect name &lt;&lt; Contrast( [l1 l2 l3 ...] ))
 
 **Descripción:** Ejecuta una prueba F personalizada para los contrastes estadísticos de los niveles de tratamiento para un efecto en el modelo. Especifique cada contraste como un vector de filas. Nota: Especifique el nombre del efecto como una cadena de caracteres.
 
@@ -1296,7 +1292,7 @@ obj << ("color" << Contrast( [1 0 -0.5 -0.5] ));
 
 #### Correlation of Estimates
 
-**Sintaxis:** obj << Correlation of Estimates( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Correlation of Estimates( state=0|1 )
 
 **Descripción:** Muestra u oculta la matriz de correlaciones entre las estimaciones de los parámetros para el ajuste especificado.
 
@@ -1319,7 +1315,7 @@ obj << Correlation of Estimates( 1 );
 
 #### Covariance of Estimates
 
-**Sintaxis:** obj << Covariance of Estimates( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Covariance of Estimates( state=0|1 )
 
 **Descripción:** Muestra u oculta la matriz de covarianzas entre las estimaciones de los parámetros para el ajuste especificado.
 
@@ -1342,7 +1338,7 @@ obj << Covariance of Estimates( 1 );
 
 #### Custom Test
 
-**Sintaxis:** obj << Custom Test( [ l1 l2 l3 ... ], <Label( name )> )
+**Sintaxis:** obj &lt;&lt; Custom Test( [ l1 l2 l3 ... ], &lt;Label( name )&gt; )
 
 **Descripción:** Ejecuta una prueba F personalizada que contrasta los distintos efectos del modelo.
 
@@ -1367,7 +1363,7 @@ obj << Custom Test( [0 .5 0 0 0 0 0 .5 -1], Label( "Test 1" ) );
 
 #### Deviance Residuals
 
-**Sintaxis:** obj << Deviance Residuals
+**Sintaxis:** obj &lt;&lt; Deviance Residuals
 
 **Descripción:** Guarda una nueva columna en la tabla de datos. La nueva columna contiene los residuos de la devianza.
 
@@ -1390,7 +1386,7 @@ obj << Deviance Residuals;
 
 #### Deviance Residuals by Predicted
 
-**Sintaxis:** obj << Deviance Residuals by Predicted( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Deviance Residuals by Predicted( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico de residuos de la devianza en el eje vertical y los valores de respuesta predichos en el eje horizontal.
 
@@ -1413,7 +1409,7 @@ obj << Deviance Residuals by Predicted( 1 );
 
 #### Effect Summary
 
-**Sintaxis:** obj << Effect Summary( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Effect Summary( state=0|1 )
 
 **Descripción:** Muestra u oculta el informe Resumen de efectos, que permite actualizar interactivamente los efectos del modelo. Opción activada de forma predeterminada.
 
@@ -1441,7 +1437,7 @@ Report( obj )["Effect Summary"] << Close( 0 );
 
 #### FDR
 
-**Sintaxis:** obj << FDR( state=0|1 )
+**Sintaxis:** obj &lt;&lt; FDR( state=0|1 )
 
 **Descripción:** Especifica si se ajustan o no los valores de log utilidad y sus valores p correspondientes de la tabla Resumen de efectos utilizando la tasa de falsos descubrimientos (FDR).
 
@@ -1467,9 +1463,7 @@ Report( obj )["Effect Summary"] << Close( 0 );
 
 #### Firth Bias-Adjusted Estimates
 
-**Sintaxis:** obj = Fit Model(...Personality( "Generalized Linear Model" ), "Firth Bias-Adjusted Estimates"n( state=0|1 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Personality( "Generalized Linear Model" ), "Firth Bias-Adjusted Estimates"n( state=0|1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica que se utiliza el método ajustado por sesgo de Firth para ajustar el modelo. Solo está disponible para la personalidad Modelo lineal generalizado.
 
@@ -1492,9 +1486,7 @@ obj = dt << Fit Model(
 
 #### GLM Distribution
 
-**Sintaxis:** obj = Fit Model(...Personality( "Generalized Linear Model" ), GLM Distribution( distribution name )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Personality( "Generalized Linear Model" ), GLM Distribution( distribution name )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica una distribución de probabilidad para la variable de respuesta. Disponible solo para la personalidad Modelo lineal generalizado.
 
@@ -1516,7 +1508,7 @@ obj = dt << Fit Model(
 
 #### Inverse Prediction
 
-**Sintaxis:** obj << Inverse Prediction( Response( p1, p2, ... ), Term Value( effect1( value ), effect2( value ), ... ) )
+**Sintaxis:** obj &lt;&lt; Inverse Prediction( Response( p1, p2, ... ), Term Value( effect1( value ), effect2( value ), ... ) )
 
 **Descripción:** Genera un valor X predicho y un intervalo de confianza basado en los valores especificados de Y y todos los demás factores.
 
@@ -1550,7 +1542,7 @@ obj << Inverse Prediction(
 
 #### Linear Predictor Plot
 
-**Sintaxis:** obj << Linear Predictor Plot( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Linear Predictor Plot( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico de respuestas transformadas por la función de enlace inversa en el eje vertical y el predictor continuo en el eje horizontal. Solo está disponible cuando hay un predictor continuo y no más de un predictor categórico.
 
@@ -1572,9 +1564,7 @@ obj << Linear Predictor Plot( 1 );
 
 #### Link Function
 
-**Sintaxis:** obj = Fit Model(...Personality( "Generalized Linear Model" ), Link Function( link type )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Personality( "Generalized Linear Model" ), Link Function( link type )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica la función de enlace para el modelo. Solo está disponible para la personalidad Modelo lineal generalizado.
 
@@ -1596,7 +1586,7 @@ obj = dt << Fit Model(
 
 #### Mean Confidence Interval
 
-**Sintaxis:** obj << Mean Confidence Interval
+**Sintaxis:** obj &lt;&lt; Mean Confidence Interval
 
 **Descripción:** Guarda nuevas columnas en la tabla de datos. Las nuevas columnas contienen los límites de confianza al 95 % para la ecuación de predicción del modelo.
 
@@ -1619,7 +1609,7 @@ obj << Mean Confidence Interval;
 
 #### Model Dialog
 
-**Sintaxis:** obj << Model Dialog
+**Sintaxis:** obj &lt;&lt; Model Dialog
 
 **Descripción:** Muestra la ventana de inicio Ajuste del modelo completada para el análisis actual.
 
@@ -1642,9 +1632,7 @@ obj << Model Dialog;
 
 #### Overdispersion Tests and Intervals
 
-**Sintaxis:** obj = Fit Model(...Personality( "Generalized Linear Model" ), Overdispersion Tests and Intervals( state=0|1 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Personality( "Generalized Linear Model" ), Overdispersion Tests and Intervals( state=0|1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica que debe incluirse un parámetro de sobredispersión en el modelo. Solo está disponible para la personalidad Modelo lineal generalizado.
 
@@ -1667,7 +1655,7 @@ obj = dt << Fit Model(
 
 #### Pearson Residuals
 
-**Sintaxis:** obj << Pearson Residuals
+**Sintaxis:** obj &lt;&lt; Pearson Residuals
 
 **Descripción:** Guarda una nueva columna en la tabla de datos. La nueva columna contiene los residuos de Pearson.
 
@@ -1690,7 +1678,7 @@ obj << Pearson Residuals;
 
 #### Pearson Residuals by Predicted
 
-**Sintaxis:** obj << Pearson Residuals by Predicted( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Pearson Residuals by Predicted( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico de los residuos de Pearson en el eje vertical y los valores de respuesta predichos en el eje horizontal.
 
@@ -1713,9 +1701,7 @@ obj << Pearson Residuals by Predicted( 1 );
 
 #### Power Link Parameter
 
-**Sintaxis:** obj = Fit Model(...Personality( "Generalized Linear Model" ), Power Link Parameter( value=1 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Personality( "Generalized Linear Model" ), Power Link Parameter( value=1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el parámetro para la función de enlace de la potencia. Solo está disponible cuando se especifica Potencia como función de enlace en la personalidad Modelo lineal generalizado. "1" de forma predeterminada.
 
@@ -1739,7 +1725,7 @@ obj = dt << Fit Model(
 
 #### Predicted Values
 
-**Sintaxis:** obj << Predicted Values
+**Sintaxis:** obj &lt;&lt; Predicted Values
 
 **Descripción:** Guarda una nueva columna en la tabla de datos. La nueva columna contiene los valores predichos por el modelo.
 
@@ -1762,7 +1748,7 @@ obj << Predicted Values;
 
 #### Prediction Formula
 
-**Sintaxis:** obj << Prediction Formula
+**Sintaxis:** obj &lt;&lt; Prediction Formula
 
 **Descripción:** Guarda una nueva columna de fórmulas en la tabla de datos. La nueva columna contiene una fórmula para los valores predichos de la media, calculados por el modelo especificado.
 
@@ -1785,7 +1771,7 @@ obj << Prediction Formula;
 
 #### Profiler
 
-**Sintaxis:** obj << Profiler( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Profiler( state=0|1 )
 
 **Descripción:** Muestra u oculta el perfilador de predicción, que se utiliza para explorar gráficamente la ecuación de predicción seccionándola factor por factor. El perfilador de predicción contiene funciones de optimización.
 
@@ -1808,7 +1794,7 @@ obj << Profiler( 1 );
 
 #### Regression Plot
 
-**Sintaxis:** obj << Regression Plot( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Regression Plot( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico de la respuesta en el eje vertical y el predictor continuo en el eje horizontal. Solo está disponible cuando hay un predictor continuo y no más de un predictor categórico. Opción activada de forma predeterminada.
 
@@ -1831,7 +1817,7 @@ obj << Regression Plot( 1 );
 
 #### Save Indiv Confid Limits
 
-**Sintaxis:** obj << Save Indiv Confid Limits
+**Sintaxis:** obj &lt;&lt; Save Indiv Confid Limits
 
 **Descripción:** Guarda nuevas columnas en la tabla de datos. Las nuevas columnas contienen los límites de confianza al 95 % para un valor individual proporcionado para el modelo.
 
@@ -1854,7 +1840,7 @@ obj << Save Indiv Confid Limits;
 
 #### Studentized Deviance Residuals
 
-**Sintaxis:** obj << Studentized Deviance Residuals
+**Sintaxis:** obj &lt;&lt; Studentized Deviance Residuals
 
 **Descripción:** Guarda una nueva columna en la tabla de datos. La nueva columna contiene los residuos de la devianza estudentizados.
 
@@ -1877,7 +1863,7 @@ obj << Studentized Deviance Residuals;
 
 #### Studentized Deviance Residuals by Predicted
 
-**Sintaxis:** obj << Studentized Deviance Residuals by Predicted( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Studentized Deviance Residuals by Predicted( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico de residuos de la devianza estudentizados en el eje vertical y los valores de respuesta predichos en el eje horizontal. Opción activada de forma predeterminada.
 
@@ -1901,7 +1887,7 @@ obj << Studentized Deviance Residuals by Predicted( 1 );
 
 #### Studentized Pearson Residuals
 
-**Sintaxis:** obj << Studentized Pearson Residuals
+**Sintaxis:** obj &lt;&lt; Studentized Pearson Residuals
 
 **Descripción:** Guarda una nueva columna en la tabla de datos. La nueva columna contiene los residuos de Pearson estudentizados.
 
@@ -1924,7 +1910,7 @@ obj << Studentized Pearson Residuals;
 
 #### Studentized Pearson Residuals by Predicted
 
-**Sintaxis:** obj << Studentized Pearson Residuals by Predicted( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Studentized Pearson Residuals by Predicted( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico de los residuos de Pearson estudentizados en el eje vertical y los valores de respuesta predichos en el eje horizontal.
 
@@ -1947,7 +1933,7 @@ obj << Studentized Pearson Residuals by Predicted( 1 );
 
 #### Surface Profiler
 
-**Sintaxis:** obj << Surface Profiler( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Surface Profiler( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico de superficie interactivo para la respuesta.
 
@@ -1972,7 +1958,7 @@ obj << Surface Profiler( 1 );
 
 #### Action
 
-**Sintaxis:** obj << Action
+**Sintaxis:** obj &lt;&lt; Action
 
 **Descripción:** Trampa multiuso dentro de una plataforma para insertar expresiones que se desean evaluar. Temporalmente establece los contextos de cuadros de visualización y tablas de datos en la plataforma.
 
@@ -1990,7 +1976,7 @@ dt << Bivariate(
 
 #### Apply Preset
 
-**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descripción:** Aplica al objeto un preajuste creado previamente, actualizando las opciones y personalizaciones para que coincidan con la configuración guardada.
 
@@ -2037,7 +2023,7 @@ obj2 << Apply Preset( preset );
 
 #### Broadcast
 
-**Sintaxis:** obj << Broadcast(message)
+**Sintaxis:** obj &lt;&lt; Broadcast(message)
 
 **Descripción:** Difunde un mensaje a una plataforma. Si los resultados devueltos de objetos individuales son tablas, se concatenan si es posible y el formato final es idéntico al resultado de la opción Guardar tabla combinada en un cuadro de tabla o al resultado de la opción Concatenar mediante una columna de origen. Los demás resultados se almacenan en una lista y se devuelven.
 
@@ -2057,7 +2043,7 @@ objs[1] << Broadcast( Save Summaries );
 
 #### Column Switcher
 
-**Sintaxis:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Sintaxis:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Descripción:** Añade un panel de control para cambiar las variables de la plataforma
 
@@ -2075,7 +2061,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 #### Copy ByGroup Script
 
-**Sintaxis:** obj << Copy ByGroup Script
+**Sintaxis:** obj &lt;&lt; Copy ByGroup Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -2104,7 +2090,7 @@ obj[1] << Copy ByGroup Script;
 
 #### Copy Script
 
-**Sintaxis:** obj << Copy Script
+**Sintaxis:** obj &lt;&lt; Copy Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -2127,7 +2113,7 @@ obj << Copy Script;
 
 #### Data Table Window
 
-**Sintaxis:** obj << Data Table Window
+**Sintaxis:** obj &lt;&lt; Data Table Window
 
 **Descripción:** Mueve al frente la ventana de la tabla de datos que se utiliza en este análisis.
 
@@ -2150,7 +2136,7 @@ obj << Data Table Window;
 
 #### Get By Levels
 
-**Sintaxis:** obj << Get By Levels
+**Sintaxis:** obj &lt;&lt; Get By Levels
 
 **Descripción:** Devuelve un arreglo asociativo que asigna las columnas Por grupo a sus valores.
 
@@ -2167,7 +2153,7 @@ biv << Get By Levels;
 
 #### Get ByGroup Script
 
-**Sintaxis:** obj << Get ByGroup Script
+**Sintaxis:** obj &lt;&lt; Get ByGroup Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -2197,7 +2183,7 @@ Show( t );
 
 #### Get Container
 
-**Sintaxis:** obj << Get Container
+**Sintaxis:** obj &lt;&lt; Get Container
 
 **Descripción:** Devuelve una referencia al cuadro contenedor que incluye el contenido del objeto.
 
@@ -2252,7 +2238,7 @@ New Window( "platform boxes",
 
 #### Get Data Table
 
-**Sintaxis:** obj << Get Data Table
+**Sintaxis:** obj &lt;&lt; Get Data Table
 
 **Descripción:** Devuelve una referencia a la tabla de datos.
 
@@ -2276,7 +2262,7 @@ Show( N Rows( t ) );
 
 #### Get Group Platform
 
-**Sintaxis:** obj << Get Group Platform
+**Sintaxis:** obj &lt;&lt; Get Group Platform
 
 **Descripción:** Devuelve el objeto Plataforma grupal si esta plataforma forma parte de un grupo. De lo contrario, devuelve Empty().
 
@@ -2293,7 +2279,7 @@ group << Layout( "Arrange in Tabs" );
 
 #### Get Script
 
-**Sintaxis:** obj << Get Script
+**Sintaxis:** obj &lt;&lt; Get Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -2317,7 +2303,7 @@ Show( t );
 
 #### Get Script With Data Table
 
-**Sintaxis:** obj << Get Script With Data Table
+**Sintaxis:** obj &lt;&lt; Get Script With Data Table
 
 **Descripción:** Crea un script (JSL) para generar este análisis haciendo referencia específica a esta tabla de datos y lo devuelve en forma de expresión.
 
@@ -2341,7 +2327,7 @@ Show( t );
 
 #### Get Timing
 
-**Sintaxis:** obj << Get Timing
+**Sintaxis:** obj &lt;&lt; Get Timing
 
 **Descripción:** Determina el tiempo de inicio de una plataforma.
 
@@ -2365,7 +2351,7 @@ Show( t );
 
 #### Get Web Support
 
-**Sintaxis:** obj << Get Web Support
+**Sintaxis:** obj &lt;&lt; Get Web Support
 
 **Descripción:** Devuelve un número que indica el nivel de compatibilidad del HTML interactivo para el objeto de visualización. 1 significa que algunos o todos los elementos son compatibles. 0 significa que no existe compatibilidad.
 
@@ -2381,7 +2367,7 @@ Show( s );
 
 #### Get Where Expr
 
-**Sintaxis:** obj << Get Where Expr
+**Sintaxis:** obj &lt;&lt; Get Where Expr
 
 **Descripción:** Devuelve la expresión Where para el subconjunto de datos, si la plataforma se inició con By() o Where(). De lo contrario, devuelve Empty().
 
@@ -2418,7 +2404,7 @@ dt << Bivariate(
 
 #### Local Data Filter
 
-**Sintaxis:** obj << Local Data Filter
+**Sintaxis:** obj &lt;&lt; Local Data Filter
 
 **Descripción:** Para filtrar los datos según grupos o rangos determinados, pero locales para esta plataforma.
 
@@ -2474,7 +2460,7 @@ preset = obj << New Preset();
 
 #### Paste Local Data Filter
 
-**Sintaxis:** obj << Paste Local Data Filter
+**Sintaxis:** obj &lt;&lt; Paste Local Data Filter
 
 **Descripción:** Se aplica el filtro de datos locales del portapapeles al informe actual.
 
@@ -2495,7 +2481,7 @@ dist2 << Paste Local Data Filter;
 
 #### Redo Analysis
 
-**Sintaxis:** obj << Redo Analysis
+**Sintaxis:** obj &lt;&lt; Redo Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -2518,7 +2504,7 @@ obj << Redo Analysis;
 
 #### Redo ByGroup Analysis
 
-**Sintaxis:** obj << Redo ByGroup Analysis
+**Sintaxis:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -2547,7 +2533,7 @@ obj[1] << Redo ByGroup Analysis;
 
 #### Relaunch Analysis
 
-**Sintaxis:** obj << Relaunch Analysis
+**Sintaxis:** obj &lt;&lt; Relaunch Analysis
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -2570,7 +2556,7 @@ obj << Relaunch Analysis;
 
 #### Relaunch ByGroup
 
-**Sintaxis:** obj << Relaunch ByGroup
+**Sintaxis:** obj &lt;&lt; Relaunch ByGroup
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -2599,7 +2585,7 @@ obj[1] << Relaunch ByGroup;
 
 #### Remove Column Switcher
 
-**Sintaxis:** obj << Remove Column Switcher
+**Sintaxis:** obj &lt;&lt; Remove Column Switcher
 
 **Descripción:** Quita el Cambiador de columnas más reciente que se haya agregado a la plataforma.
 
@@ -2619,7 +2605,7 @@ obj << Remove Column Switcher;
 
 #### Remove Local Data Filter
 
-**Sintaxis:** obj << Remove Local Data Filter
+**Sintaxis:** obj &lt;&lt; Remove Local Data Filter
 
 **Descripción:** Si se ha creado un filtro de datos local, esto lo eliminará y restaurará la plataforma para usar todos los datos de la tabla de datos directamente.
 
@@ -2658,9 +2644,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 #### Report
 
-**Sintaxis:** obj << Report;
-
-Report( obj )
+**Sintaxis:** obj &lt;&lt; Report;Report( obj )
 
 **Descripción:** Devuelve una referencia al objeto informe.
 
@@ -2685,7 +2669,7 @@ Show( t );
 
 #### Report View
 
-**Sintaxis:** obj << Report View( "Completa"|"Resumen" )
+**Sintaxis:** obj &lt;&lt; Report View( "Completa"|"Resumen" )
 
 **Descripción:** La vista del informe determina el nivel de detalle visible en el informe de una plataforma. Full muestra todos los detalles, mientras que Summary solo muestra el contenido seleccionado, con independencia de la plataforma. Para el comportamiento personalizado, los cuadros de visualización admiten un mensaje <<Set Summary Behavior.
 
@@ -2708,7 +2692,7 @@ obj << Report View( "Summary" );
 
 #### Save ByGroup Script to Data Table
 
-**Sintaxis:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis, y lo guarda como propiedad de tabla en la tabla de datos. Puede especificar un nombre para el script. La opción Append Suffix añade un sufijo numérico al nombre del script, que diferencia el script de un script existente que tenga el mismo nombre. La opción Prompt solicita al usuario que especifique un nombre de script. La opción Replace reemplaza un script existente que tenga el mismo nombre.
 
@@ -2737,7 +2721,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 #### Save ByGroup Script to Journal
 
-**Sintaxis:** obj << Save ByGroup Script to Journal
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -2766,7 +2750,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 #### Save ByGroup Script to Script Window
 
-**Sintaxis:** obj << Save ByGroup Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -2795,7 +2779,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 #### Save Script for All Objects
 
-**Sintaxis:** obj << Save Script for All Objects
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects
 
 **Descripción:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -2818,7 +2802,7 @@ obj << Save Script for All Objects;
 
 #### Save Script for All Objects To Data Table
 
-**Sintaxis:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descripción:** Guarda un script para todos los objetos de informe en la tabla de datos actual. Esta opción es útil cuando tiene varios informes en la ventana. El script recibe el nombre de la primera plataforma a menos que especifique el nombre del script entre comillas.
 
@@ -2874,7 +2858,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 #### Save Script to Data Table
 
-**Sintaxis:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis y lo guarda en forma de propiedad de tabla en la tabla de datos.
 
@@ -2897,7 +2881,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 #### Save Script to Journal
 
-**Sintaxis:** obj << Save Script to Journal
+**Sintaxis:** obj &lt;&lt; Save Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -2920,7 +2904,7 @@ obj << Save Script to Journal;
 
 #### Save Script to Report
 
-**Sintaxis:** obj << Save Script to Report
+**Sintaxis:** obj &lt;&lt; Save Script to Report
 
 **Descripción:** Crea un script JSL para generar este análisis y lo muestra en el propio informe. Resulta útil para conservar un registro impreso de lo que se ha hecho.
 
@@ -2943,7 +2927,7 @@ obj << Save Script to Report;
 
 #### Save Script to Script Window
 
-**Sintaxis:** obj << Save Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -3031,7 +3015,7 @@ dt << Distribution(
 
 #### Sync to Data Table Changes
 
-**Sintaxis:** obj << Sync to Data Table Changes
+**Sintaxis:** obj &lt;&lt; Sync to Data Table Changes
 
 **Descripción:** Realiza una sincronización con las modificaciones de datos y de exclusión que se hayan realizado.
 
@@ -3048,7 +3032,7 @@ dist << Sync To Data Table Changes;
 
 #### Title
 
-**Sintaxis:** obj << Title( "new title" )
+**Sintaxis:** obj &lt;&lt; Title( "new title" )
 
 **Descripción:** Establece el título de la plataforma.
 
@@ -3071,7 +3055,7 @@ obj << Title( "My Platform" );
 
 #### Top Report
 
-**Sintaxis:** obj << Top Report
+**Sintaxis:** obj &lt;&lt; Top Report
 
 **Descripción:** Devuelve una referencia al nodo raíz del informe.
 
@@ -3096,7 +3080,7 @@ Show( t );
 
 #### Transform Column
 
-**Sintaxis:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Sintaxis:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Descripción:** Crea una columna de transformación en el contexto local de un objeto (una plataforma por lo general). La columna de transformación solo está activa mientras esté en uso la plataforma.
 
@@ -3117,7 +3101,7 @@ dt << Distribution(
 
 #### View Web XML
 
-**Sintaxis:** obj << View Web XML
+**Sintaxis:** obj &lt;&lt; View Web XML
 
 **Descripción:** Devuelve el código XML que se utiliza para crear el informe HTML interactivo.
 
@@ -3132,9 +3116,7 @@ xml = obj << View Web XML;
 
 #### Window View
 
-**Sintaxis:** obj = Generalized Linear Model(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Generalized Linear Model(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Establece el tipo de ventana que se creará para el informe. De forma predeterminada, se creará una ventana de informe Visible. Una ventana Invisible no aparecerá en pantalla, pero se puede detectar mediante funciones como Window(). Una ventana Private responde a la mayoría de los mensajes de ventana pero no es detectable y se debe abordar a través del objeto de informe.
 
@@ -3157,7 +3139,7 @@ New Window( "Bivariate Equation",
 
 #### Point Options
 
-**Sintaxis:** scrobj << Point Options( "Show Needles"|"Show Connected Points"|"Show Only Points" )
+**Sintaxis:** scrobj &lt;&lt; Point Options( "Show Needles"|"Show Connected Points"|"Show Only Points" )
 
 **Descripción:** Especifica el estilo de dibujo de los puntos del gráfico. Puede escoger entre agujas verticales, puntos conectados y solo puntos. De forma predeterminada, el gráfico se dibuja con las agujas que conectan los puntos con la línea horizontal que se traza en la media.
 
@@ -3186,7 +3168,7 @@ scrobj << Point Options( "Show Connected Points" );
 
 #### Show Center Line
 
-**Sintaxis:** scrobj << Show Center Line( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Show Center Line( state=0|1 )
 
 **Descripción:** Muestra u oculta la línea central (media general) en el Gráfico de las diferencias de control. Opción activada de forma predeterminada.
 
@@ -3215,7 +3197,7 @@ scrobj << Show Center Line( 1 );
 
 #### Show Decision Limit Shading
 
-**Sintaxis:** scrobj << Show Decision Limit Shading( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Show Decision Limit Shading( state=0|1 )
 
 **Descripción:** Muestra u oculta el sombreado de límites de decisión en el Gráfico de las diferencias de control. Opción activada de forma predeterminada.
 
@@ -3244,7 +3226,7 @@ scrobj << Show Decision Limit Shading( 1 );
 
 #### Show Decision Limits
 
-**Sintaxis:** scrobj << Show Decision Limits( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Show Decision Limits( state=0|1 )
 
 **Descripción:** Muestra u oculta las líneas de límites de decisión en el Gráfico de las diferencias de control. Opción activada de forma predeterminada.
 
@@ -3273,7 +3255,7 @@ scrobj << Show Decision Limits( 1 );
 
 #### Show Summary Report
 
-**Sintaxis:** scrobj << Show Summary Report( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Show Summary Report( state=0|1 )
 
 **Descripción:** Muestra u oculta un informe que contiene las medias grupales y los límites de decisión.
 
@@ -3306,9 +3288,7 @@ scrobj << Show Summary Report( 1 );
 
 #### LSMeans Contrast
 
-**Sintaxis:** scrobj << LSMeans Contrast( [ l1, l2, l3, ... ] );
-
-obj << ( effect << {LSMeans Contrast( [ l1, l2, l3, ... ] )} )
+**Sintaxis:** scrobj &lt;&lt; LSMeans Contrast( [ l1, l2, l3, ... ] );obj &lt;&lt; ( effect &lt;&lt; {LSMeans Contrast( [ l1, l2, l3, ... ] )} )
 
 **Descripción:** Ejecuta una prueba F personalizada para los contrastes estadísticos de diferentes niveles de un efecto.
 
@@ -3330,9 +3310,7 @@ obj << (:Drug << {LSMeans Contrast( [1 0 -1] )});
 
 #### LSMeans Dunnett
 
-**Sintaxis:** scrobj << LSMeans Dunnett( state=0|1|<alpha>, Control Level( level ), <comparison options> );
-
-obj << ( effect << {LSMeans Dunnett( state=0|1|<alpha>, Control Level( level ), <comparison options> )} )
+**Sintaxis:** scrobj &lt;&lt; LSMeans Dunnett( state=0|1|&lt;alpha&gt;, Control Level( level ), &lt;comparison options&gt; );obj &lt;&lt; ( effect &lt;&lt; {LSMeans Dunnett( state=0|1|&lt;alpha&gt;, Control Level( level ), &lt;comparison options&gt; )} )
 
 **Descripción:** Muestra u oculta las pruebas y los intervalos de confianza para las comparaciones por pares frente al nivel de control especificado.
 
@@ -3372,9 +3350,7 @@ obj << (:Drug << {LSMeans Dunnett( .01, Control Level( "a" ) )});
 
 #### LSMeans Plot
 
-**Sintaxis:** scrobj << LSMeans Plot;
-
-obj << ( effect << {LSMeans Plot} )
+**Sintaxis:** scrobj &lt;&lt; LSMeans Plot;obj &lt;&lt; ( effect &lt;&lt; {LSMeans Plot} )
 
 **Descripción:** Muestra gráficos de medias de mínimos cuadrados para efectos nominales y ordinales. Si el efecto es una interacción, esta opción muestra la ventana Opciones del gráfico de medias de mínimos cuadrados.
 
@@ -3396,9 +3372,7 @@ obj << (:Drug << {LSMeans Plot});
 
 #### LSMeans Student's t
 
-**Sintaxis:** scrobj << Student&apos;s t( state=0|1|<alpha>, <comparison options> );
-
-obj << ( effect << {Student&apos;s t( state=0|1|<alpha>, <comparison options> )} )
+**Sintaxis:** scrobj &lt;&lt; Student&apos;s t( state=0|1|&lt;alpha&gt;, &lt;comparison options&gt; );obj &lt;&lt; ( effect &lt;&lt; {Student&apos;s t( state=0|1|&lt;alpha&gt;, &lt;comparison options&gt; )} )
 
 **Descripción:** Muestra u oculta pruebas e intervalos de confianza para comparaciones por pares de medias de mínimos cuadrados utilizando pruebas t de Student.
 
@@ -3419,9 +3393,7 @@ obj << (:Drug << {LSMeans Student's t( 1 )});
 
 #### LSMeans Table
 
-**Sintaxis:** scrobj << LSMeans Table( state=0|1 );
-
-obj << ( effect << {LSMeans Table( state=0|1 )} )
+**Sintaxis:** scrobj &lt;&lt; LSMeans Table( state=0|1 );obj &lt;&lt; ( effect &lt;&lt; {LSMeans Table( state=0|1 )} )
 
 **Descripción:** Muestra u oculta una tabla de los estadísticos que se comparan cuando se comprueban los efectos. Esta opción no está disponible para los efectos continuos. Opción activada de forma predeterminada.
 
@@ -3443,9 +3415,7 @@ obj << (:Drug << {LSMeans Table( 1 )});
 
 #### LSMeans Tukey HSD
 
-**Sintaxis:** scrobj << LSMeans Tukey HSD( state=0|1|<alpha>, <comparison options> );
-
-obj << ( effect << {LSMeans Tukey HSD( state=0|1|<alpha>, <comparison options> )} )
+**Sintaxis:** scrobj &lt;&lt; LSMeans Tukey HSD( state=0|1|&lt;alpha&gt;, &lt;comparison options&gt; );obj &lt;&lt; ( effect &lt;&lt; {LSMeans Tukey HSD( state=0|1|&lt;alpha&gt;, &lt;comparison options&gt; )} )
 
 **Descripción:** Muestra u oculta pruebas e intervalos de confianza para comparaciones por pares de medias de mínimos cuadrados utilizando la prueba de Tukey-Kramer de diferencias honestamente significativas (HSD).
 
@@ -3466,9 +3436,7 @@ obj << (:Drug << {LSMeans Tukey HSD( 1 )});
 
 #### Power Analysis
 
-**Sintaxis:** scrobj << Power Analysis( Alpha(from, to, by), Sigma(from, to, by), Delta(from, to, by), Number(from, to, by), objective, <Power Plot>, <Done>);
-
-obj << ( effect << {Power Analysis( Alpha(from, to, by), Sigma(from, to, by), Delta(from, to, by), Number(from, to, by), objective, <Power Plot>, <Done>)} )
+**Sintaxis:** scrobj &lt;&lt; Power Analysis( Alpha(from, to, by), Sigma(from, to, by), Delta(from, to, by), Number(from, to, by), objective, &lt;Power Plot&gt;, &lt;Done&gt;);obj &lt;&lt; ( effect &lt;&lt; {Power Analysis( Alpha(from, to, by), Sigma(from, to, by), Delta(from, to, by), Number(from, to, by), objective, &lt;Power Plot&gt;, &lt;Done&gt;)} )
 
 **Descripción:** Muestra el informe Detalles de potencia, que permite analizar la potencia de la prueba del efecto.
 
@@ -3498,9 +3466,7 @@ obj << (:Drug << {Power Analysis(
 
 #### Test Slices
 
-**Sintaxis:** scrobj << Test Slices( state=0|1 );
-
-obj << ( response << { effect1 * effect2 << {Test Slices( state=0|1 )} } )
+**Sintaxis:** scrobj &lt;&lt; Test Slices( state=0|1 );obj &lt;&lt; ( response &lt;&lt; { effect1 * effect2 &lt;&lt; {Test Slices( state=0|1 )} } )
 
 **Descripción:** Ejecuta una prueba F personalizada para cada nivel de ambos factores en un término de interacción. Esta opción solo está disponible para las interacciones que implican efectos nominales y ordinales.
 
@@ -3526,7 +3492,7 @@ obj << (:height << {:age * :sex << {Test Slices( 1 )}});
 
 #### Connecting Letters Report
 
-**Sintaxis:** scrobj << Connecting Letters Report( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Connecting Letters Report( state=0|1 )
 
 **Descripción:** Muestra u oculta las comparaciones significativas y no significativas con letras de conexión. Los niveles que no están conectados por la misma letra son significativamente diferentes. Los niveles conectados por la misma letra no presentan diferencias significativas. Opción activada de forma predeterminada.
 
@@ -3549,7 +3515,7 @@ scrobj << Connecting Letters Report( 1 );
 
 #### Control Differences Chart
 
-**Sintaxis:** scrobj << Control Differences Chart( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Control Differences Chart( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico que contiene un punto por cada nivel del efecto distinto del de control. Cada punto muestra la diferencia entre la media de mínimos cuadrados de ese nivel y la media de mínimos cuadrados del nivel de control. Se representan los límites de decisión superior (UDL) y los límites de decisión inferior (LDL).
 
@@ -3578,7 +3544,7 @@ scrobj << Control Differences Chart( 1 );
 
 #### Control Differences Report
 
-**Sintaxis:** scrobj << Control Differences Report( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Control Differences Report( state=0|1 )
 
 **Descripción:** Muestra u oculta una tabla que contiene una fila por cada nivel del efecto distinto del de control. Cada fila contiene el nivel comparado con el nivel de control, la diferencia estimada, el error estándar de la diferencia, un intervalo de confianza y el valor p de la comparación. Opción activada de forma predeterminada.
 
@@ -3607,7 +3573,7 @@ scrobj << Control Differences Report( 1 );
 
 #### Crosstab Report
 
-**Sintaxis:** scrobj << Crosstab Report( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Crosstab Report( state=0|1 )
 
 **Descripción:** Muestra u oculta un informe de tabla cruzada que contiene la diferencia de cada combinación de media de mínimos cuadrados, el error estándar de la diferencia y los límites de confianza de la diferencia. Opción activada de forma predeterminada.
 
@@ -3630,7 +3596,7 @@ scrobj << Crosstab Report( 1 );
 
 #### Detailed Comparisons
 
-**Sintaxis:** scrobj << Detailed Comparisons( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Detailed Comparisons( state=0|1 )
 
 **Descripción:** Muestra u oculta un informe detallado para cada combinación de medias de mínimos cuadrados. El informe también contiene un gráfico que muestra la significación de cada comparación.
 
@@ -3653,7 +3619,7 @@ scrobj << Detailed Comparisons( 1 );
 
 #### Equivalence Test
 
-**Sintaxis:** scrobj << Equivalence Test( difference )
+**Sintaxis:** scrobj &lt;&lt; Equivalence Test( difference )
 
 **Descripción:** Prueba que las medias no difieran más de una diferencia especificada con la que se consideran prácticamente equivalentes. Se trata de lo opuesto a la prueba de significación habitual.
 
@@ -3676,7 +3642,7 @@ scrobj << Equivalence Test( 1.5 );
 
 #### Ordered Differences Report
 
-**Sintaxis:** scrobj << Ordered Differences Report( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Ordered Differences Report( state=0|1 )
 
 **Descripción:** Muestra u oculta un informe que ordena las diferencias para cada nivel de medias de mínimos cuadrados de mayor a menor. El informe también contiene los errores estándar de las diferencias, los límites de confianza y los valores p.
 
@@ -3699,7 +3665,7 @@ scrobj << Ordered Differences Report( 1 );
 
 #### Save Connecting Letters Table
 
-**Sintaxis:** scrobj << Save Connecting Letters Table
+**Sintaxis:** scrobj &lt;&lt; Save Connecting Letters Table
 
 **Descripción:** Crea una tabla de datos con columnas que contienen los niveles del efecto, las letras de conexión, las medias de mínimos cuadrados, sus errores estándar y los intervalos de confianza.
 
@@ -3726,7 +3692,7 @@ scrobj << Save Connecting Letters Table;
 
 #### Forest Plot
 
-**Sintaxis:** scrobj << Forest Plot( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Forest Plot( state=0|1 )
 
 **Descripción:** Muestra u oculta el gráfico de bosque Pruebas de equivalencia. Opción activada de forma predeterminada.
 
@@ -3751,7 +3717,7 @@ scrobj << Forest Plot( 1 );
 
 #### Remove
 
-**Sintaxis:** scrobj << Remove
+**Sintaxis:** scrobj &lt;&lt; Remove
 
 **Descripción:** Quita todo el informe Pruebas de equivalencia.
 
@@ -3776,7 +3742,7 @@ scrobj << Remove;
 
 #### Scatterplot
 
-**Sintaxis:** scrobj << Scatterplot( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Scatterplot( state=0|1 )
 
 **Descripción:** Muestra u oculta el gráfico de dispersión de las pruebas de equivalencia. Opción activada de forma predeterminada.
 
@@ -3801,7 +3767,7 @@ scrobj << Scatterplot( 1 );
 
 #### Test Report
 
-**Sintaxis:** scrobj << Test Report( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Test Report( state=0|1 )
 
 **Descripción:** Muestra u oculta el informe Pruebas de equivalencia, que contiene los resultados del método dos pruebas unilaterales (TOST) que se utiliza para comprobar si existe una diferencia práctica entre las medias. Opción activada de forma predeterminada.
 
@@ -3832,7 +3798,7 @@ scrobj << Test Report( 1 );
 
 #### Show Reference Lines
 
-**Sintaxis:** scrobj << Show Reference Lines( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Show Reference Lines( state=0|1 )
 
 **Descripción:** Muestra u oculta las líneas de cuadrícula de referencia para los puntos del gráfico de dispersión.
 
@@ -3863,7 +3829,7 @@ scrobj << Show Reference Lines( 1 );
 
 #### All Pairwise Comparisons Scatterplot
 
-**Sintaxis:** scrobj << All Pairwise Comparisons Scatterplot( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; All Pairwise Comparisons Scatterplot( state=0|1 )
 
 **Descripción:** Muestra u oculta el gráfico de dispersión Todas las comparaciones por pares. Opción activada de forma predeterminada.
 
@@ -3891,7 +3857,7 @@ scrobj << All Pairwise Comparisons Scatterplot( 1 );
 
 #### All Pairwise Differences
 
-**Sintaxis:** scrobj << All Pairwise Differences( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; All Pairwise Differences( state=0|1 )
 
 **Descripción:** Muestra u oculta el informe Todas las diferencias por pares. Opción activada de forma predeterminada.
 
@@ -3916,7 +3882,7 @@ scrobj << All Pairwise Differences( 1 );
 
 #### All Pairwise Differences Connecting Letters
 
-**Sintaxis:** scrobj << All Pairwise Differences Connecting Letters( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; All Pairwise Differences Connecting Letters( state=0|1 )
 
 **Descripción:** Muestra u oculta el informe Letras de conexión de todas las diferencias por pares.
 
@@ -3943,7 +3909,7 @@ obj << Multiple Comparisons(
 
 #### Save All Pairwise Differences Connecting Letters Table
 
-**Sintaxis:** scrobj << Save All Pairwise Differences Connecting Letters Table
+**Sintaxis:** scrobj &lt;&lt; Save All Pairwise Differences Connecting Letters Table
 
 **Descripción:** Crea una tabla de datos con columnas que contienen los niveles del efecto, las letras de conexión, las medias de mínimos cuadrados, sus errores estándar y los intervalos de confianza.
 
@@ -3977,7 +3943,7 @@ scrobj << Save All Pairwise Differences Connecting Letters Table;
 
 #### Calculate Adjusted P-Values
 
-**Sintaxis:** scrobj << "Calculate Adjusted P-Values"n( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; "Calculate Adjusted P-Values"n( state=0|1 )
 
 **Descripción:** Muestra u oculta una columna de valores p en el informe Diferencias con el control.
 
@@ -4005,7 +3971,7 @@ scrobj << "Calculate Adjusted P-Values"n( 1 );
 
 #### Comparisons with Control Decision Chart
 
-**Sintaxis:** scrobj << Comparisons with Control Decision Chart( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Comparisons with Control Decision Chart( state=0|1 )
 
 **Descripción:** Muestra u oculta el gráfico de decisión de las comparaciones con control. Opción activada de forma predeterminada.
 
@@ -4037,7 +4003,7 @@ scrobj << Comparisons with Control Decision Chart( 1 );
 
 #### Differences from Control
 
-**Sintaxis:** scrobj << Differences from Control( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Differences from Control( state=0|1 )
 
 **Descripción:** Muestra u oculta el informe Diferencias con el control. Opción activada de forma predeterminada.
 
@@ -4069,7 +4035,7 @@ scrobj << Differences from Control( 1 );
 
 #### Calculate Adjusted P-Values
 
-**Sintaxis:** scrobj << "Calculate Adjusted P-Values"n( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; "Calculate Adjusted P-Values"n( state=0|1 )
 
 **Descripción:** Muestra u oculta una columna de valores p en el informe Diferencias con respecto a las medias globales.
 
@@ -4094,7 +4060,7 @@ scrobj << "Calculate Adjusted P-Values"n( 1 );
 
 #### Comparisons with Overall Average Decision Chart
 
-**Sintaxis:** scrobj << Comparisons with Overall Average Decision Chart( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Comparisons with Overall Average Decision Chart( state=0|1 )
 
 **Descripción:** Muestra u oculta el gráfico de decisión de las comparaciones con media global. Opción activada de forma predeterminada.
 
@@ -4125,7 +4091,7 @@ scrobj << Comparisons with Overall Average Decision Chart( 1 );
 
 #### Differences from Overall Average
 
-**Sintaxis:** scrobj << Differences from Overall Average( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Differences from Overall Average( state=0|1 )
 
 **Descripción:** Muestra u oculta el informe Diferencias con respecto a la media global. Opción activada de forma predeterminada.
 
@@ -4157,7 +4123,7 @@ scrobj << Differences from Overall Average( 1 );
 
 #### Remove
 
-**Sintaxis:** scrobj << Remove
+**Sintaxis:** scrobj &lt;&lt; Remove
 
 **Descripción:** Quita el gráfico de las medias de mínimos cuadrados del informe.
 
@@ -4187,7 +4153,7 @@ scrobj << Remove;
 
 #### Show Confidence Limits
 
-**Sintaxis:** scrobj << Show Confidence Limits( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Show Confidence Limits( state=0|1 )
 
 **Descripción:** Muestra u oculta los límites de confianza de cada estimación en el gráfico. Opción activada de forma predeterminada.
 
@@ -4217,7 +4183,7 @@ scrobj << Show Confidence Limits( 1 );
 
 #### Show Connected Points
 
-**Sintaxis:** scrobj << Show Connected Points( state=0|1 )
+**Sintaxis:** scrobj &lt;&lt; Show Connected Points( state=0|1 )
 
 **Descripción:** Muestra u oculta una o más líneas que conectan las medias de mínimos cuadrados de cada nivel en el gráfico. Opción activada de forma predeterminada.
 
@@ -4251,9 +4217,7 @@ scrobj << Show Connected Points( 1 );
 
 #### Comparisons with Control
 
-**Sintaxis:** scrobj << Comparisons with Control( state=0|1, Control Level( level ), <options> );
-
-obj << Multiple Comparisons( Effect( effect ), Comparisons with Control( state=0|1, Control Level( level ), <options> ) )
+**Sintaxis:** scrobj &lt;&lt; Comparisons with Control( state=0|1, Control Level( level ), &lt;options&gt; );obj &lt;&lt; Multiple Comparisons( Effect( effect ), Comparisons with Control( state=0|1, Control Level( level ), &lt;options&gt; ) )
 
 **Descripción:** Muestra u oculta una prueba de comparaciones múltiples que compara la media de mínimos cuadrados de cada efecto con la media de mínimos cuadrados de un nivel de control. También se conoce como prueba de Dunnett.
 
@@ -4278,9 +4242,7 @@ obj << Multiple Comparisons(
 
 #### Comparisons with Overall Average
 
-**Sintaxis:** scrobj << Comparisons with Overall Average( state=0|1, <options> );
-
-obj << Multiple Comparisons( Effect( effect ), Comparisons with Overall Average( state=0|1, <options> ) )
+**Sintaxis:** scrobj &lt;&lt; Comparisons with Overall Average( state=0|1, &lt;options&gt; );obj &lt;&lt; Multiple Comparisons( Effect( effect ), Comparisons with Overall Average( state=0|1, &lt;options&gt; ) )
 
 **Descripción:** Muestra u oculta una prueba de comparaciones múltiples que compara la media de mínimos cuadrados de cada efecto con la media general de mínimos cuadrados. También se conoce como prueba de análisis de medias.
 
@@ -4302,9 +4264,7 @@ obj << Multiple Comparisons( Effect( :Drug ), Comparisons with Overall Average( 
 
 #### Equivalence Tests
 
-**Sintaxis:** scrobj << Equivalence Tests( number );
-
-obj << Multiple Comparisons( Effect( effect ), Equivalence Tests( number ) )
+**Sintaxis:** scrobj &lt;&lt; Equivalence Tests( number );obj &lt;&lt; Multiple Comparisons( Effect( effect ), Equivalence Tests( number ) )
 
 **Descripción:** Muestra u oculta una prueba de comparaciones múltiples de todas las comparaciones de medias de mínimos cuadrados por pares con respecto a una diferencia especificada que se considera prácticamente equivalente.
 
@@ -4326,9 +4286,7 @@ obj << Multiple Comparisons( Effect( :Drug ), Equivalence Tests( 5 ) );
 
 #### Least Squares Means Plot
 
-**Sintaxis:** scrobj << Least Squares Means Plot;
-
-obj << Multiple Comparisons( Effect( effect ), Least Squares Means Plot )
+**Sintaxis:** scrobj &lt;&lt; Least Squares Means Plot;obj &lt;&lt; Multiple Comparisons( Effect( effect ), Least Squares Means Plot )
 
 **Descripción:** Muestra un gráfico de las medias de mínimos cuadrados con barras de error estándar.
 
@@ -4352,7 +4310,7 @@ obj << Multiple Comparisons( Effect( :Drug ), Least Squares Means Plot );
 
 #### Remove
 
-**Sintaxis:** scrobj << Remove
+**Sintaxis:** scrobj &lt;&lt; Remove
 
 **Descripción:** Quita todo el informe Comparaciones múltiples.
 
@@ -4377,9 +4335,7 @@ scrobj << Remove;
 
 #### Slice F Test
 
-**Sintaxis:** scrobj << Slice F Test( state=0|1 );
-
-obj << Multiple Comparisons( Sliced Effect Estimates( Sliced Effect( effect1 * effect2 ), Slice Term List( effect_level ) ), Slice F Test( state=0|1 ) )
+**Sintaxis:** scrobj &lt;&lt; Slice F Test( state=0|1 );obj &lt;&lt; Multiple Comparisons( Sliced Effect Estimates( Sliced Effect( effect1 * effect2 ), Slice Term List( effect_level ) ), Slice F Test( state=0|1 ) )
 
 **Descripción:** Muestra u oculta la prueba F para el efecto segmentado. Opción activada de forma predeterminada.
 
@@ -4412,9 +4368,7 @@ scrobj << Slice F Test( 1 );
 
 #### Student's t
 
-**Sintaxis:** scrobj << Student&apos;s t( state=0|1, <options> );
-
-obj << Multiple Comparisons( Effect( effect ), Student&apos;s t( state=0|1, <options> ) )
+**Sintaxis:** scrobj &lt;&lt; Student&apos;s t( state=0|1, &lt;options&gt; );obj &lt;&lt; Multiple Comparisons( Effect( effect ), Student&apos;s t( state=0|1, &lt;options&gt; ) )
 
 **Descripción:** Muestra u oculta una prueba de comparaciones múltiples de todas las comparaciones de medias de mínimos cuadrados por pares utilizando la prueba t de Student.
 
@@ -4439,9 +4393,7 @@ obj << Multiple Comparisons(
 
 #### Tukey HSD
 
-**Sintaxis:** scrobj << Tukey HSD( state=0|1, <options> );
-
-obj << Multiple Comparisons( Effect( effect ), Tukey HSD( state=0|1, <options> ) )
+**Sintaxis:** scrobj &lt;&lt; Tukey HSD( state=0|1, &lt;options&gt; );obj &lt;&lt; Multiple Comparisons( Effect( effect ), Tukey HSD( state=0|1, &lt;options&gt; ) )
 
 **Descripción:** Muestra u oculta una prueba de comparaciones múltiples de todas las comparaciones de medias de mínimos cuadrados por pares utilizando la prueba de diferencias honestamente significativas (HSD) de Tukey-Kramer.
 
@@ -4470,9 +4422,7 @@ obj << Multiple Comparisons(
 
 #### Convergence Limit
 
-**Sintaxis:** obj = Fit Model(...Convergence Limit( number=0.00000001 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Convergence Limit( number=0.00000001 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el límite de convergencia para el ajuste del modelo. Si su modelo no converge fácilmente, puede que sea necesario aumentar el límite de convergencia. De forma predeterminada, el límite de convergencia es 0,00000001.
 
@@ -4493,9 +4443,7 @@ obj = dt << Fit Model(
 
 #### Maximum Iterations
 
-**Sintaxis:** obj = Fit Model(...Maximum Iterations( number=100 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Maximum Iterations( number=100 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el número máximo de iteraciones que se utilizan en el ajuste del modelo. De forma predeterminada, el número máximo de iteraciones es 100.
 
@@ -4516,9 +4464,7 @@ obj = dt << Fit Model(
 
 #### Method
 
-**Sintaxis:** obj = Fit Model(...Personality( "Standard Least Squares" ), Method( "EMS" | "REML" )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Personality( "Standard Least Squares" ), Method( "EMS" | "REML" )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el método que se utiliza para ajustar los modelos mixtos en la personalidad de tipo mínimos cuadrados estándar.
 
@@ -4540,9 +4486,7 @@ obj = dt << Fit Model(
 
 #### NoBounds
 
-**Sintaxis:** obj = Fit Model(...Personality( "Standard Least Squares" ), NoBounds( state=0|1 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Personality( "Standard Least Squares" ), NoBounds( state=0|1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Elimina los límites de las estimaciones de varianza. Cuando esta opción está desactivada, se establece el límite inferior de las estimaciones de varianza con el valor cero. Solo está disponible para la personalidad de tipo mínimos cuadrados estándar. Opción activada de forma predeterminada.
 
@@ -4589,7 +4533,7 @@ obj = dt << Fit Model(
 
 #### AICc
 
-**Sintaxis:** obj << AICc( state=0|1 )
+**Sintaxis:** obj &lt;&lt; AICc( state=0|1 )
 
 **Descripción:** Muestra u oculta los valores corregidos del Criterio de información de Akaike (AICc) y del Criterio de información de Bayes (BIC) en el informe Resumen del ajuste.
 
@@ -4611,7 +4555,7 @@ obj << AICc( 1 );
 
 #### Analysis of Variance
 
-**Sintaxis:** obj << Analysis of Variance( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Analysis of Variance( state=0|1 )
 
 **Descripción:** Muestra u oculta un informe que contiene estadísticos para comparar el modelo ajustado con un modelo de media simple.
 
@@ -4633,7 +4577,7 @@ obj << Analysis of Variance( 1 );
 
 #### Apply Preset
 
-**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descripción:** Aplica al objeto un preajuste creado previamente, actualizando las opciones y personalizaciones para que coincidan con la configuración guardada.
 
@@ -4670,7 +4614,7 @@ obj2 << (:Oxy << Apply Preset( preset ));
 
 #### Bayes Plot
 
-**Sintaxis:** obj << Bayes Plot( K( number ), Priors( p1, p2, p3, ... ), Go  )
+**Sintaxis:** obj &lt;&lt; Bayes Plot( K( number ), Priors( p1, p2, p3, ... ), Go )
 
 **Descripción:** Muestra u oculta un gráfico que calcula las probabilidades posteriores de todos los términos del modelo utilizando un enfoque bayesiano.
 
@@ -4692,7 +4636,7 @@ obj << Bayes Plot( K( 10 ), Priors( 0.2, 0.2, 0.2, 0.2, 0.2 ), Go );
 
 #### Box Cox Y Transformation
 
-**Sintaxis:** obj << Box Cox Y Transformation( state=0|1, <Save Best Transformation( state=0|1 )>, <Save Specific Transformation( number )>, <Table of Estimates( state=0|1 )> )
+**Sintaxis:** obj &lt;&lt; Box Cox Y Transformation( state=0|1, &lt;Save Best Transformation( state=0|1 )&gt;, &lt;Save Specific Transformation( number )&gt;, &lt;Table of Estimates( state=0|1 )&gt; )
 
 **Descripción:** Muestra u oculta el informe Transformaciones de Box-Cox, que muestra cómo cambiaría el ajuste si se reajusta el modelo con una transformación de potencia (Box-Cox) en la respuesta.
 
@@ -4714,7 +4658,7 @@ obj << Box Cox Y Transformation( 1, Save Best Transformation( 1 ) );
 
 #### Compare Slopes
 
-**Sintaxis:** obj << Compare Slopes( Effect( effect ), <options> )
+**Sintaxis:** obj &lt;&lt; Compare Slopes( Effect( effect ), &lt;options&gt; )
 
 **Descripción:** Genera un informe de análisis de medias (ANOM) que compara las pendientes de interacción con la pendiente media de un modelo de análisis de covarianza (ANCOVA). Esta opción solo está disponible cuando hay un efecto nominal, un efecto continuo y su efecto de interacción para los efectos fijos.
 
@@ -4741,7 +4685,7 @@ obj << Compare Slopes(
 
 #### Conditional Indiv CI
 
-**Sintaxis:** obj << Conditional Indiv CI( <alpha=0.05> )
+**Sintaxis:** obj &lt;&lt; Conditional Indiv CI( &lt;alpha=0.05&gt; )
 
 **Descripción:** Guarda una nueva columna en la tabla de datos. La columna nueva contiene el intervalo de confianza del valor individual de la predicción condicional. Los intervalos de confianza incluyen estimaciones de efectos aleatorios para modelos con efectos aleatorios. Esta opción solo está disponible para los métodos de análisis REML. Hold down the shift key to enter alpha level or suffix.
 
@@ -4761,7 +4705,7 @@ obj << Conditional Indiv CI( 0.001 );
 
 #### Conditional Mean CI
 
-**Sintaxis:** obj << Conditional Mean CI( <alpha=0.05> )
+**Sintaxis:** obj &lt;&lt; Conditional Mean CI( &lt;alpha=0.05&gt; )
 
 **Descripción:** Guarda una nueva columna en la tabla de datos. La columna nueva contiene el intervalo de confianza del valor esperado de la predicción condicional. Los intervalos de confianza incluyen estimaciones de efectos aleatorios para modelos con efectos aleatorios. Esta opción solo está disponible para los métodos de análisis REML. Hold down the shift key to enter alpha level or suffix.
 
@@ -4781,7 +4725,7 @@ obj << Conditional Mean CI( 0.01 );
 
 #### Conditional Pred Formula
 
-**Sintaxis:** obj << Conditional Pred Formula
+**Sintaxis:** obj &lt;&lt; Conditional Pred Formula
 
 **Descripción:** Guarda una nueva columna de fórmulas en la tabla de datos. La columna nueva contiene una fórmula que incluye estimaciones de efectos aleatorios para modelos con efectos aleatorios. Esta opción solo está disponible para los métodos de análisis REML. Hold down the shift key to enter suffix.
 
@@ -4801,7 +4745,7 @@ obj << Conditional Pred Formula;
 
 #### Conditional Pred Values
 
-**Sintaxis:** obj << Conditional Pred Values
+**Sintaxis:** obj &lt;&lt; Conditional Pred Values
 
 **Descripción:** Guarda una nueva columna en la tabla de datos. La columna nueva contiene los valores predichos condicionales que se calculan utilizando los mejores predictores lineales insesgados (BLUP) para los coeficientes de efectos aleatorios. Esta opción solo está disponible para los métodos de análisis REML. Hold down the shift key to enter suffix.
 
@@ -4821,7 +4765,7 @@ obj << Conditional Pred Values;
 
 #### Conditional Residuals
 
-**Sintaxis:** obj << Conditional Residuals
+**Sintaxis:** obj &lt;&lt; Conditional Residuals
 
 **Descripción:** Guarda una nueva columna en la tabla de datos. La columna nueva contiene los residuos de la predicción condicional. Los valores residuales incluyen estimaciones de efectos aleatorios para modelos con efectos aleatorios. Esta opción solo está disponible para los métodos de análisis REML. Hold down the shift key to enter suffix.
 
@@ -4841,7 +4785,7 @@ obj << Conditional Residuals;
 
 #### Contour Profiler
 
-**Sintaxis:** obj << Contour Profiler( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Contour Profiler( state=0|1 )
 
 **Descripción:** Muestra u oculta el perfilador de contorno, que representa gráficamente los contornos de las respuestas de dos factores a la vez. Solo está disponible cuando el modelo contiene más de un factor continuo.
 
@@ -4865,7 +4809,7 @@ obj << Contour Profiler( 1 );
 
 #### Cook's D Influence
 
-**Sintaxis:** obj << Cook&apos;s D Influence
+**Sintaxis:** obj &lt;&lt; Cook&apos;s D Influence
 
 **Descripción:** Guarda una nueva columna en la tabla de datos. La columna nueva contiene una medida de la influencia de cada observación en la estimación del modelo. Hold down the shift key to enter suffix.
 
@@ -4886,7 +4830,7 @@ obj << Cook's D Influence;
 
 #### Correlation of Estimates
 
-**Sintaxis:** obj << Correlation of Estimates( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Correlation of Estimates( state=0|1 )
 
 **Descripción:** Muestra u oculta la matriz de correlaciones entre las estimaciones de los parámetros para el ajuste especificado.
 
@@ -4908,7 +4852,7 @@ obj << Correlation of Estimates( 1 );
 
 #### Cox Mixtures
 
-**Sintaxis:** obj << Cox Mixtures( p1(percentile), p2(percentile), p3(percentile) )
+**Sintaxis:** obj &lt;&lt; Cox Mixtures( p1(percentile), p2(percentile), p3(percentile) )
 
 **Descripción:** Muestra u oculta las estimaciones de los parámetros para el modelo de mezcla de Cox basado en los valores de mezcla de referencia especificados. Esta opción solo está disponible cuando el modelo contiene efectos de mezcla.
 
@@ -4933,7 +4877,7 @@ obj << Cox Mixtures( p1( 0.6615 ), p2( 0.126 ), p3( 0.2125 ) );
 
 #### Cube Plots
 
-**Sintaxis:** obj << Cube Plots( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Cube Plots( state=0|1 )
 
 **Descripción:** Muestra u oculta los valores predichos para los extremos de los rangos de factores dispuestos en uno o más cubos.
 
@@ -4955,7 +4899,7 @@ obj << Cube Plots( 1 );
 
 #### Custom Test
 
-**Sintaxis:** obj << Custom Test( [l1, l2, l3, ... ], <Label( text )> )
+**Sintaxis:** obj &lt;&lt; Custom Test( [l1, l2, l3, ... ], &lt;Label( text )&gt; )
 
 **Descripción:** Ejecuta una prueba F personalizada que contrasta los distintos efectos del modelo.
 
@@ -4977,7 +4921,7 @@ obj << Custom Test( [0 0 2 1], Label( "Comparison of intercepts for drug a vs. d
 
 #### Durbin Watson Test
 
-**Sintaxis:** obj << Durbin Watson Test( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Durbin Watson Test( state=0|1 )
 
 **Descripción:** Muestra u oculta el informe Durbin-Watson, que contiene un estadístico para comprobar si los residuos tienen autocorrelación de primer orden. El informe también muestra la autocorrelación de los residuos y la probabilidad exacta asociada al estadístico. Esta opción solo es adecuada para datos de series de tiempo y asume que las observaciones están en orden cronológico.
 
@@ -4999,7 +4943,7 @@ obj << Durbin Watson Test( 1 );
 
 #### Effect Details
 
-**Sintaxis:** obj << Effect Details( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Effect Details( state=0|1 )
 
 **Descripción:** Muestra u oculta informes detallados de cada efecto del modelo, incluida la tabla de medias de mínimos cuadrados para cada efecto categórico. Puede obtener información adicional si envía mensajes a los efectos del modelo. Consulte el objeto Ajuste del efecto, situado en Ajuste del modelo para tener más información. Opción activada de forma predeterminada.
 
@@ -5021,7 +4965,7 @@ obj << Effect Details( 1 );
 
 #### Effect Leverage Pairs
 
-**Sintaxis:** obj << Effect Leverage Pairs
+**Sintaxis:** obj &lt;&lt; Effect Leverage Pairs
 
 **Descripción:** Guarda nuevas columnas en la tabla de datos. Las columnas nuevas contienen los valores X e Y que se representan en los gráficos de apalancamiento de los efectos. El valor Y es el residuo parcial. El valor X es el encogimiento del regresor en los gráficos de apalancamiento de los efectos. Hold down the shift key to enter suffix.
 
@@ -5042,7 +4986,7 @@ obj << Effect Leverage Pairs;
 
 #### Effect Summary
 
-**Sintaxis:** obj << Effect Summary( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Effect Summary( state=0|1 )
 
 **Descripción:** Muestra u oculta el informe Resumen de efectos, que permite actualizar interactivamente los efectos del modelo. Opción activada de forma predeterminada.
 
@@ -5067,7 +5011,7 @@ Report( obj )["Effect Summary"] << Close( 0 );
 
 #### Effect Tests
 
-**Sintaxis:** obj << Effect Tests( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Effect Tests( state=0|1 )
 
 **Descripción:** Muestra u oculta un informe que contiene pruebas para los efectos fijos del modelo. Opción activada de forma predeterminada.
 
@@ -5089,7 +5033,7 @@ obj << Effect Tests( 1 );
 
 #### Error Specification
 
-**Sintaxis:** obj << Error Specification( "Estimación predeterminada"|"Error puro"|"Especificados" )
+**Sintaxis:** obj &lt;&lt; Error Specification( "Estimación predeterminada"|"Error puro"|"Especificados" )
 
 **Descripción:** Especifica la varianza del error y los grados de libertad del error que se utilizan para los errores estándar y las pruebas en el informe Ajuste por mínimos cuadrados. Esta opción solo está disponible cuando el modelo no contiene efectos aleatorios.
 
@@ -5113,7 +5057,7 @@ obj << Error Specification( "Pure Error" );
 
 #### Expanded  Estimates
 
-**Sintaxis:** obj << Expanded  Estimates( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Expanded Estimates( state=0|1 )
 
 **Descripción:** Muestra u oculta las estimaciones de los parámetros para todos los niveles de un efecto nominal del modelo. En el caso de un efecto nominal con k niveles, la tabla Estimaciones de los parámetros contiene coeficientes para los k-1 parámetros, y Estimaciones ampliadas muestra los coeficientes del efecto para todos los k niveles. Esta opción solo está disponible cuando al menos uno de los efectos no es continuo.
 
@@ -5135,7 +5079,7 @@ obj << Expanded Estimates( 1 );
 
 #### Externally Studentized Residuals
 
-**Sintaxis:** obj << Externally Studentized Residuals
+**Sintaxis:** obj &lt;&lt; Externally Studentized Residuals
 
 **Descripción:** Guarda una nueva columna en la tabla de datos. La columna nueva contiene los residuos estudentizados externamente. Son los residuos divididos entre las estimaciones del error estándar que excluyen la fila actual. Hold down the shift key to enter suffix.
 
@@ -5158,7 +5102,7 @@ obj << Externally Studentized Residuals;
 
 #### FDR
 
-**Sintaxis:** obj << FDR( state=0|1 )
+**Sintaxis:** obj &lt;&lt; FDR( state=0|1 )
 
 **Descripción:** Especifica si se ajustan o no los valores de log utilidad y sus valores p correspondientes de la tabla Resumen de efectos utilizando la tasa de falsos descubrimientos (FDR).
 
@@ -5181,7 +5125,7 @@ Report( obj )["Effect Summary"] << Close( 0 );
 
 #### Get Conditional Formula
 
-**Sintaxis:** obj << Get Conditional Formula
+**Sintaxis:** obj &lt;&lt; Get Conditional Formula
 
 **Descripción:** Devuelve una fórmula de predicción que incluye estimaciones de efectos aleatorios.
 
@@ -5201,7 +5145,7 @@ code = obj << Get Conditional Formula;
 
 #### Get Effect Names
 
-**Sintaxis:** obj << Get Effect Names
+**Sintaxis:** obj &lt;&lt; Get Effect Names
 
 **Descripción:** Devuelve los nombres de los efectos.
 
@@ -5223,7 +5167,7 @@ Show( G );
 
 #### Get Effect PValues
 
-**Sintaxis:** obj << Get Effect PValues
+**Sintaxis:** obj &lt;&lt; Get Effect PValues
 
 **Descripción:** Devuelve los valores p de los efectos.
 
@@ -5245,7 +5189,7 @@ Show( G );
 
 #### Get Estimates
 
-**Sintaxis:** obj << Get Estimates
+**Sintaxis:** obj &lt;&lt; Get Estimates
 
 **Descripción:** Devuelve las estimaciones.
 
@@ -5267,7 +5211,7 @@ Show( G );
 
 #### Get Indiv Confid Limit Formula
 
-**Sintaxis:** obj << Get Indiv Confid Limit Formula
+**Sintaxis:** obj &lt;&lt; Get Indiv Confid Limit Formula
 
 **Descripción:** Devuelve una fórmula para los límites de confianza individuales.
 
@@ -5287,7 +5231,7 @@ code = obj << Get Indiv Confid Limit Formula;
 
 #### Get MM SAS DATA Step
 
-**Sintaxis:** obj << Get MM SAS DATA Step
+**Sintaxis:** obj &lt;&lt; Get MM SAS DATA Step
 
 **Descripción:** Crea un código SAS que puede registrar en el Gestor de modelos SAS.
 
@@ -5307,7 +5251,7 @@ code = obj << Get MM SAS Data Step;
 
 #### Get Mean Confid Limit Formula
 
-**Sintaxis:** obj << Get Mean Confid Limit Formula
+**Sintaxis:** obj &lt;&lt; Get Mean Confid Limit Formula
 
 **Descripción:** Devuelve una fórmula para los límites de confianza de la media.
 
@@ -5327,7 +5271,7 @@ code = obj << Get Mean Confid Limit Formula;
 
 #### Get Measures
 
-**Sintaxis:** obj << Get Measures
+**Sintaxis:** obj &lt;&lt; Get Measures
 
 **Descripción:** Devuelve medidas de ajuste de resumen del modelo.
 
@@ -5349,7 +5293,7 @@ obj << Get Measures;
 
 #### Get Parameter Names
 
-**Sintaxis:** obj << Get Parameter Names
+**Sintaxis:** obj &lt;&lt; Get Parameter Names
 
 **Descripción:** Devuelve los nombres de los parámetros.
 
@@ -5371,7 +5315,7 @@ Show( G );
 
 #### Get Parameterized Formula
 
-**Sintaxis:** obj << Get Parameterized Formula
+**Sintaxis:** obj &lt;&lt; Get Parameterized Formula
 
 **Descripción:** Devuelve una fórmula de predicción que utiliza parámetros en lugar de constantes.
 
@@ -5391,7 +5335,7 @@ code = obj << Get Parameterized Formula;
 
 #### Get Prediction Formula
 
-**Sintaxis:** obj << Get Prediction Formula
+**Sintaxis:** obj &lt;&lt; Get Prediction Formula
 
 **Descripción:** Construye un script para crear una columna de fórmula de predicción y la devuelve.
 
@@ -5411,7 +5355,7 @@ code = obj << Get Prediction Formula;
 
 #### Get Random Effect Names
 
-**Sintaxis:** obj << Get Random Effect Names
+**Sintaxis:** obj &lt;&lt; Get Random Effect Names
 
 **Descripción:** Devuelve los nombres de los efectos aleatorios. Disponible para métodos de análisis de REML.
 
@@ -5432,7 +5376,7 @@ Show( G );
 
 #### Get SAS DATA Step
 
-**Sintaxis:** obj << Get SAS DATA Step
+**Sintaxis:** obj &lt;&lt; Get SAS DATA Step
 
 **Descripción:** Crea un código SAS que puede utilizar para asignar una puntuación un nuevo conjunto de datos.
 
@@ -5452,7 +5396,7 @@ code = obj << Get SAS Data Step;
 
 #### Get SQL prediction expression
 
-**Sintaxis:** obj << Get SQL prediction expression
+**Sintaxis:** obj &lt;&lt; Get SQL prediction expression
 
 **Descripción:** Crea una expresión SQL que se puede pegar en una instrucción SQL Select para predecir una respuesta.
 
@@ -5472,7 +5416,7 @@ code = obj << Get SQL prediction expression;
 
 #### Get Standard Error Formula
 
-**Sintaxis:** obj << Get Standard Error Formula
+**Sintaxis:** obj &lt;&lt; Get Standard Error Formula
 
 **Descripción:** Devuelve una fórmula para el error estándar.
 
@@ -5492,7 +5436,7 @@ code = obj << Get Standard Error Formula;
 
 #### Get Std Errors
 
-**Sintaxis:** obj << Get Std Errors
+**Sintaxis:** obj &lt;&lt; Get Std Errors
 
 **Descripción:** Devuelve los errores estándar.
 
@@ -5514,7 +5458,7 @@ Show( G );
 
 #### Get Variance Components
 
-**Sintaxis:** obj << Get Variance Components
+**Sintaxis:** obj &lt;&lt; Get Variance Components
 
 **Descripción:** Devuelve los componentes de varianza. Disponible para métodos de análisis de REML.
 
@@ -5535,7 +5479,7 @@ Show( G );
 
 #### Get X Matrix
 
-**Sintaxis:** obj << Get X Matrix
+**Sintaxis:** obj &lt;&lt; Get X Matrix
 
 **Descripción:** Devuelve la matriz de diseño.
 
@@ -5557,7 +5501,7 @@ Show( G );
 
 #### Get XPX Inverse
 
-**Sintaxis:** obj << Get XPX Inverse
+**Sintaxis:** obj &lt;&lt; Get XPX Inverse
 
 **Descripción:** Devuelve la matriz inversa X&apos;X.
 
@@ -5579,7 +5523,7 @@ Show( G );
 
 #### Get Y Matrix
 
-**Sintaxis:** obj << Get Y Matrix
+**Sintaxis:** obj &lt;&lt; Get Y Matrix
 
 **Descripción:** Devuelve la matriz Y.
 
@@ -5601,7 +5545,7 @@ Show( G );
 
 #### Hats
 
-**Sintaxis:** obj << Hats
+**Sintaxis:** obj &lt;&lt; Hats
 
 **Descripción:** Guarda una nueva columna en la tabla de datos. La columna nueva contiene los valores diagonales de la matriz xInv(x`x)x`. Estos valores también se denominan valores hat o de apalancamiento. Hold down the shift key to enter suffix.
 
@@ -5622,7 +5566,7 @@ obj << Hats;
 
 #### Indicator Parameterization Estimates
 
-**Sintaxis:** obj << Indicator Parameterization Estimates( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Indicator Parameterization Estimates( state=0|1 )
 
 **Descripción:** Muestra u oculta el informe Parametrización de la función indicadora, que contiene estimaciones de parámetros con los efectos nominales en el modelo parametrizado utilizando las funciones indicadoras clásicas. Esta opción solo está disponible cuando hay columnas nominales y una constante del modelo entre los efectos del modelo.
 
@@ -5644,7 +5588,7 @@ obj << Indicator Parameterization Estimates( 1 );
 
 #### Indiv Confidence Interval
 
-**Sintaxis:** obj << Indiv Confidence Interval( <alpha=0.05> )
+**Sintaxis:** obj &lt;&lt; Indiv Confidence Interval( &lt;alpha=0.05&gt; )
 
 **Descripción:** Guarda nuevas columnas en la tabla de datos. Las columnas nuevas contienen los límites del intervalo de confianza para una realización individual de la respuesta. Engloba la variación tanto en la respuesta como en su estimación. Hold down the shift key to enter alpha level or suffix.
 
@@ -5665,7 +5609,7 @@ obj << Indiv Confidence Interval( .001 );
 
 #### Indiv Confidence Limit Formula
 
-**Sintaxis:** obj << Indiv Confidence Limit Formula( <alpha=0.05> )
+**Sintaxis:** obj &lt;&lt; Indiv Confidence Limit Formula( &lt;alpha=0.05&gt; )
 
 **Descripción:** Guarda las columnas de la nueva fórmula en la tabla de datos original. Hay columnas para los límites de confianza inferior y superior de una predicción individual que son funciones de los regresores. El nivel predeterminado para alfa es 0,05, que genera límites de confianza al 95%.
 
@@ -5687,7 +5631,7 @@ Show( ref );
 
 #### Interaction Plots
 
-**Sintaxis:** obj << Interaction Plots( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Interaction Plots( state=0|1 )
 
 **Descripción:** Muestra u oculta una matriz de gráficos de interacción. Esta opción solo está disponible cuando hay efectos de interacción en el modelo.
 
@@ -5710,7 +5654,7 @@ obj << Interaction Plots( 1 );
 
 #### Inverse Prediction
 
-**Sintaxis:** obj << Inverse Prediction( Response( p1, p2, ... ), Term Value( effect1( value ), effect2( value ), ... ) )
+**Sintaxis:** obj &lt;&lt; Inverse Prediction( Response( p1, p2, ... ), Term Value( effect1( value ), effect2( value ), ... ) )
 
 **Descripción:** Genera un valor X predicho y un intervalo de confianza basado en los valores especificados de Y y todos los demás factores.
 
@@ -5732,7 +5676,7 @@ obj << Inverse Prediction( Response( 40, 45, 50, 55 ), Term Value( RunTime( . ) 
 
 #### Joint Factor Tests
 
-**Sintaxis:** obj << Joint Factor Tests( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Joint Factor Tests( state=0|1 )
 
 **Descripción:** Muestra u oculta una prueba conjunta para cada efecto principal del modelo. La prueba conjunta es para todos los parámetros que impliquen ese efecto principal. Esta opción solo está disponible cuando el modelo contiene interacciones.
 
@@ -5756,7 +5700,7 @@ obj << Joint Factor Tests( 1 );
 
 #### Lack of Fit
 
-**Sintaxis:** obj << Lack of Fit( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Lack of Fit( state=0|1 )
 
 **Descripción:** Muestra u oculta una prueba que evalúa si el modelo tiene los efectos adecuados. Opción activada de forma predeterminada.
 
@@ -5778,7 +5722,7 @@ obj << Lack Of Fit( 1 );
 
 #### Mean Confidence Interval
 
-**Sintaxis:** obj << Mean Confidence Interval( <alpha=0.05> )
+**Sintaxis:** obj &lt;&lt; Mean Confidence Interval( &lt;alpha=0.05&gt; )
 
 **Descripción:** Guarda nuevas columnas en la tabla de datos. Las columnas nuevas contienen los límites del intervalo de confianza para el valor esperado. Engloba la variación en la estimación, pero no en la respuesta. Hold down the shift key to enter alpha level or suffix.
 
@@ -5799,7 +5743,7 @@ obj << Mean Confidence Interval( .01 );
 
 #### Mean Confidence Limit Formula
 
-**Sintaxis:** obj << Mean Confidence Limit Formula( <alpha=0.05> )
+**Sintaxis:** obj &lt;&lt; Mean Confidence Limit Formula( &lt;alpha=0.05&gt; )
 
 **Descripción:** Guarda las columnas de la nueva fórmula en la tabla de datos original. Hay columnas para los límites de confianza inferior y superior de la respuesta media que son funciones de los regresores. El nivel predeterminado para alfa es 0,05, que genera límites de confianza al 95%.
 
@@ -5821,7 +5765,7 @@ Show( r );
 
 #### Mixture Profiler
 
-**Sintaxis:** obj << Mixture Profiler( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Mixture Profiler( state=0|1 )
 
 **Descripción:** Muestra u oculta un perfilador de mezclas que muestra los contornos de la respuesta en un gráfico ternario. Esta opción solo está disponible si el atributo Efecto de mezcla se aplica a tres o más factores del modelo o la propiedad Mezcla se aplica a tres o más columnas de factores.
 
@@ -5846,7 +5790,7 @@ obj << Mixture Profiler( 1 );
 
 #### Model Dialog
 
-**Sintaxis:** obj << Model Dialog
+**Sintaxis:** obj &lt;&lt; Model Dialog
 
 **Descripción:** Muestra la ventana de inicio Ajuste del modelo completada para el análisis actual.
 
@@ -5866,7 +5810,7 @@ obj << Model Dialog;
 
 #### Multiple Comparisons
 
-**Sintaxis:** obj << Multiple Comparisons( Effect(...)|Estimate List(...)|Sliced Effect Estimates(...), <options> )
+**Sintaxis:** obj &lt;&lt; Multiple Comparisons( Effect(...)|Estimate List(...)|Sliced Effect Estimates(...), &lt;options&gt; )
 
 **Descripción:** Genera estimaciones de las medias de mínimos cuadrados o estimaciones definidas por el usuario. El informe Comparaciones múltiples permite realizar comparaciones con la media global, comparaciones con un control o comparaciones por pares.
 
@@ -5913,7 +5857,7 @@ preset = obj << (:y << New Preset);
 
 #### Normal Plot
 
-**Sintaxis:** obj << Normal Plot( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Normal Plot( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico que identifica las estimaciones de los parámetros que se desvían de la normalidad. Esto ayuda a determinar qué efectos están activos.
 
@@ -5935,7 +5879,7 @@ obj << Normal Plot( 1 );
 
 #### Parameter Estimates
 
-**Sintaxis:** obj << Parameter Estimates( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Parameter Estimates( state=0|1 )
 
 **Descripción:** Muestra u oculta un informe que contiene las estimaciones de los parámetros y las pruebas t para la hipótesis de que cada parámetro es igual a cero.
 
@@ -5957,7 +5901,7 @@ obj << Parameter Estimates( 1 );
 
 #### Parameter Power
 
-**Sintaxis:** obj << Parameter Power( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Parameter Power( state=0|1 )
 
 **Descripción:** Agrega o elimina columnas del informe Estimaciones de los parámetros. Estas columnas contienen la potencia y otros detalles relacionados con las pruebas de hipótesis correspondientes.
 
@@ -5979,7 +5923,7 @@ obj << Parameter Power( 1 );
 
 #### Parameterized Formula
 
-**Sintaxis:** obj << Parameterized Formula
+**Sintaxis:** obj &lt;&lt; Parameterized Formula
 
 **Descripción:** Guarda una nueva columna de fórmulas en la tabla de datos. La columna nueva contiene una fórmula de predicción que utiliza parámetros de tabla en lugar de constantes.
 
@@ -6000,7 +5944,7 @@ obj << Parameterized Formula;
 
 #### Pareto Plot
 
-**Sintaxis:** obj << Pareto Plot( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Pareto Plot( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico de los valores absolutos de las estimaciones de los parámetros ortogonalizados y estandarizados. Este gráfico muestra su composición relativa a la suma de los valores absolutos.
 
@@ -6022,7 +5966,7 @@ obj << Pareto Plot( 1 );
 
 #### Plot Actual by Predicted
 
-**Sintaxis:** obj << Plot Actual by Predicted( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Plot Actual by Predicted( state=0|1 )
 
 **Descripción:** Muestra u oculta el gráfico Observados frente a predichos, que representa los valores observados de la respuesta frente a los valores predichos de la respuesta.
 
@@ -6044,7 +5988,7 @@ obj << Plot Actual by Predicted( 1 );
 
 #### Plot Effect Leverage
 
-**Sintaxis:** obj << Plot Effect Leverage( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Plot Effect Leverage( state=0|1 )
 
 **Descripción:** Muestra u oculta el informe Gráfico de apalancamiento para cada efecto del modelo. El gráfico muestra cómo influyen las observaciones en la prueba de ese efecto y ofrece información sobre la multicolinealidad.
 
@@ -6065,7 +6009,7 @@ obj << Plot Effect Leverage( 1 );
 
 #### Plot Regression
 
-**Sintaxis:** obj << Plot Regression( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Plot Regression( state=0|1 )
 
 **Descripción:** Muestra u oculta el informe Gráfico de regresión, que contiene un gráfico de dispersión de los datos y líneas de regresión para cada nivel del efecto categórico. Esta opción solo está disponible si hay exactamente un efecto continuo y no más de un efecto categórico en el modelo. Si se cumplen estas condiciones, se proporciona el informe Gráfico de regresión de forma predeterminada. Opción activada de forma predeterminada.
 
@@ -6087,7 +6031,7 @@ obj << Plot Regression( 1 );
 
 #### Plot Residual by Normal Quantiles
 
-**Sintaxis:** obj << Plot Residual by Normal Quantiles( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Plot Residual by Normal Quantiles( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico con los residuos en el eje vertical y los cuantiles normales de los residuos en el eje horizontal. Esta opción no está disponible cuando el método es REML.
 
@@ -6111,7 +6055,7 @@ obj << Plot Residual by Normal Quantiles( 1 );
 
 #### Plot Residual by Predicted
 
-**Sintaxis:** obj << Plot Residual by Predicted( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Plot Residual by Predicted( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico con los residuos en el eje vertical y los valores predichos de la respuesta en el eje horizontal. Esta opción solo está disponible para respuestas continuas.
 
@@ -6133,7 +6077,7 @@ obj << Plot Residual by Predicted( 1 );
 
 #### Plot Residual by Row
 
-**Sintaxis:** obj << Plot Residual by Row( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Plot Residual by Row( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico con los residuos en el eje vertical y el número de fila en el eje horizontal.
 
@@ -6155,7 +6099,7 @@ obj << Plot Residual by Row( 1 );
 
 #### Plot Studentized Residuals
 
-**Sintaxis:** obj << Plot Studentized Residuals( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Plot Studentized Residuals( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico con los residuos estudentizados en el eje vertical y el número de fila en el eje horizontal. Cada punto del gráfico se calcula utilizando una estimación de su desviación estándar obtenida con la observación actual eliminada.
 
@@ -6177,7 +6121,7 @@ obj << Plot Studentized Residuals( 1 );
 
 #### Predicted Values
 
-**Sintaxis:** obj << Predicted Values
+**Sintaxis:** obj &lt;&lt; Predicted Values
 
 **Descripción:** Guarda una nueva columna en la tabla de datos. La columna nueva contiene los valores predichos para el modelo ajustado. Hold down the shift key to enter suffix.
 
@@ -6198,7 +6142,7 @@ obj << Predicted Values;
 
 #### Prediction Formula
 
-**Sintaxis:** obj << Prediction Formula
+**Sintaxis:** obj &lt;&lt; Prediction Formula
 
 **Descripción:** Guarda una columna de fórmulas nueva en la tabla de datos. La columna nueva contiene la fórmula de predicción para el modelo ajustado. Hold down the shift key to enter suffix.
 
@@ -6219,7 +6163,7 @@ obj << Prediction Formula;
 
 #### Prediction and Interval Formulas
 
-**Sintaxis:** obj << Prediction and Interval Formulas( <alpha=0.05> )
+**Sintaxis:** obj &lt;&lt; Prediction and Interval Formulas( &lt;alpha=0.05&gt; )
 
 **Descripción:** Guarda las columnas nuevas en la tabla de datos. Las columnas contienen fórmulas para las predicciones, límites de confianza y límites de predicción. Las columnas de límites que se crean con esta opción contienen propiedades que utiliza el Perfilador de predicción. Hold down the shift key to enter alpha level or suffix.
 
@@ -6250,7 +6194,7 @@ dt << Profiler(
 
 #### Press
 
-**Sintaxis:** obj << Press( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Press( state=0|1 )
 
 **Descripción:** Muestra u oculta el estadístico de la suma de cuadrados del error de predicción (Press) y su raíz del error cuadrático medio (RMSE). El estadístico Press es útil cuando se comparan varios modelos. Se favorecen los modelos con estadísticos Press más bajos.
 
@@ -6272,7 +6216,7 @@ obj << Press( 1 );
 
 #### Profiler
 
-**Sintaxis:** obj << Profiler( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Profiler( state=0|1 )
 
 **Descripción:** Muestra u oculta el perfilador de predicción, que se utiliza para explorar gráficamente la ecuación de predicción seccionándola factor por factor. El perfilador de predicción contiene funciones de optimización.
 
@@ -6294,7 +6238,7 @@ obj << Profiler( 1 );
 
 #### Publish Conditional Formula
 
-**Sintaxis:** obj << Publish Conditional Formula
+**Sintaxis:** obj &lt;&lt; Publish Conditional Formula
 
 **Descripción:** Crea una fórmula de predicción que incluye estimaciones de efectos aleatorios y la publica como script de columna de fórmula en la plataforma Almacén de fórmulas.
 
@@ -6314,7 +6258,7 @@ code = obj << Publish Conditional Formula;
 
 #### Publish Indiv Confid Limit Formula
 
-**Sintaxis:** obj << Publish Indiv Confid Limit Formula
+**Sintaxis:** obj &lt;&lt; Publish Indiv Confid Limit Formula
 
 **Descripción:** Crea fórmulas para los límites de confianza individuales y las publica como scripts de columna de fórmula en la plataforma Almacén de fórmulas.
 
@@ -6334,7 +6278,7 @@ code = obj << Publish Indiv Confid Limit Formula;
 
 #### Publish Mean Confid Limit Formula
 
-**Sintaxis:** obj << Publish Mean Confid Limit Formula
+**Sintaxis:** obj &lt;&lt; Publish Mean Confid Limit Formula
 
 **Descripción:** Crea fórmulas para los límites de confianza de la media y las publica como scripts de columna de fórmula en la plataforma Almacén de fórmulas.
 
@@ -6354,7 +6298,7 @@ code = obj << Publish Mean Confid Limit Formula;
 
 #### Publish Parameterized Formula
 
-**Sintaxis:** obj << Publish Parameterized Formula
+**Sintaxis:** obj &lt;&lt; Publish Parameterized Formula
 
 **Descripción:** Crea una fórmula de predicción que utiliza parámetros en lugar de constantes y la publica como script de columna de fórmula en la plataforma Almacén de fórmulas.
 
@@ -6374,7 +6318,7 @@ code = obj << Publish Parameterized Formula;
 
 #### Publish Prediction Formula
 
-**Sintaxis:** obj << Publish Prediction Formula
+**Sintaxis:** obj &lt;&lt; Publish Prediction Formula
 
 **Descripción:** Crea una fórmula de predicción y la publica como script de columna de fórmula en la plataforma Almacén de fórmulas.
 
@@ -6394,7 +6338,7 @@ code = obj << Publish Prediction Formula;
 
 #### Publish Standard Error Formula
 
-**Sintaxis:** obj << Publish Standard Error Formula
+**Sintaxis:** obj &lt;&lt; Publish Standard Error Formula
 
 **Descripción:** Crea una fórmula de error estándar y la publica como script de columna de fórmula en la plataforma Almacén de fórmulas.
 
@@ -6414,7 +6358,7 @@ code = obj << Publish Standard Error Formula;
 
 #### Residuals
 
-**Sintaxis:** obj << Residuals
+**Sintaxis:** obj &lt;&lt; Residuals
 
 **Descripción:** Guarda una nueva columna en la tabla de datos. La columna nueva contiene los valores residuales para el modelo ajustado. Hold down the shift key to enter suffix.
 
@@ -6435,7 +6379,7 @@ obj << Residuals;
 
 #### Save Coding Table
 
-**Sintaxis:** obj << Save Coding Table
+**Sintaxis:** obj &lt;&lt; Save Coding Table
 
 **Descripción:** Crea una tabla de datos nueva que contiene la codificación JMP para todos los parámetros del modelo. La última columna muestra los valores de la variable de respuesta.
 
@@ -6456,7 +6400,7 @@ obj << Save Coding Table;
 
 #### Scaled Estimates
 
-**Sintaxis:** obj << Scaled Estimates( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Scaled Estimates( state=0|1 )
 
 **Descripción:** Muestra u oculta las estimaciones de los parámetros correspondientes a los factores que se escalan para que tengan una media de cero y un rango de dos.
 
@@ -6480,7 +6424,7 @@ obj << Scaled Estimates( 1 );
 
 #### Sequential Tests
 
-**Sintaxis:** obj << Sequential Tests( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Sequential Tests( state=0|1 )
 
 **Descripción:** Muestra u oculta el informe Pruebas secuenciales (tipo 1), que contiene las sumas de cuadrados a medida que se añaden efectos al modelo secuencialmente.
 
@@ -6502,7 +6446,7 @@ obj << Sequential Tests( 1 );
 
 #### Show All Confidence Intervals
 
-**Sintaxis:** obj << Show All Confidence Intervals( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Show All Confidence Intervals( state=0|1 )
 
 **Descripción:** Muestra u oculta intervalos de confianza para las estimaciones de los parámetros y las estimaciones de las medias de mínimos cuadrados.
 
@@ -6524,7 +6468,7 @@ obj << Show All Confidence Intervals( 1 );
 
 #### Show Prediction Expression
 
-**Sintaxis:** obj << Show Prediction Expression( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Show Prediction Expression( state=0|1 )
 
 **Descripción:** Muestra u oculta el informe Expresión de predicción, que contiene la ecuación para el modelo estimado.
 
@@ -6546,7 +6490,7 @@ obj << Show Prediction Expression( 1 );
 
 #### Show Sqrt Variance Component
 
-**Sintaxis:** obj << Show Sqrt Variance Component( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Show Sqrt Variance Component( state=0|1 )
 
 **Descripción:** Muestra u oculta la columna Componente de varianza de sqrt en el informe Estimaciones de componentes de varianza por REML.
 
@@ -6567,7 +6511,7 @@ obj << Show Sqrt Variance Component( 1 );
 
 #### Show VIF
 
-**Sintaxis:** obj << Show VIF( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Show VIF( state=0|1 )
 
 **Descripción:** Muestra u oculta los valores del factor de inflación de la varianza (VIF) en el informe Estimaciones de los parámetros.
 
@@ -6589,7 +6533,7 @@ obj << Show VIF( 1 );
 
 #### Sorted Estimates
 
-**Sintaxis:** obj << Sorted Estimates( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Sorted Estimates( state=0|1 )
 
 **Descripción:** Muestra u oculta el informe Estimaciones de los parámetros ordenados, que puede ser útil en situaciones de cribado. Este informe contiene las estimaciones de los parámetros ordenados por el valor absoluto de la razón t de cada estimación.
 
@@ -6611,7 +6555,7 @@ obj << Sorted Estimates( 1 );
 
 #### Std Error of Individual
 
-**Sintaxis:** obj << Std Error of Individual
+**Sintaxis:** obj &lt;&lt; Std Error of Individual
 
 **Descripción:** Guarda una nueva columna en la tabla de datos. La columna nueva contiene el error estándar de un valor predicho individual. Se utiliza para calcular el intervalo de confianza individual. Hold down the shift key to enter suffix.
 
@@ -6632,7 +6576,7 @@ obj << Std Error of Individual;
 
 #### Std Error of Predicted
 
-**Sintaxis:** obj << Std Error of Predicted
+**Sintaxis:** obj &lt;&lt; Std Error of Predicted
 
 **Descripción:** Guarda una nueva columna en la tabla de datos. La columna nueva contiene el error estándar de los valores predichos. Se utiliza para calcular el intervalo de confianza de la media. Hold down the shift key to enter suffix.
 
@@ -6653,7 +6597,7 @@ obj << Std Error of Predicted;
 
 #### Std Error of Residual
 
-**Sintaxis:** obj << Std Error of Residual
+**Sintaxis:** obj &lt;&lt; Std Error of Residual
 
 **Descripción:** Guarda una nueva columna en la tabla de datos. La columna nueva contiene el error estándar de los valores residuales. Se utiliza para calcular los residuos estudentizados. Hold down the shift key to enter suffix.
 
@@ -6674,7 +6618,7 @@ obj << Std Error of Residual;
 
 #### StdErr Pred Formula
 
-**Sintaxis:** obj << StdErr Pred Formula
+**Sintaxis:** obj &lt;&lt; StdErr Pred Formula
 
 **Descripción:** Guarda una nueva columna de fórmulas en la tabla de datos. La columna nueva contiene la fórmula del error estándar de los valores predichos como función de los regresores. Hold down the shift key to enter suffix.
 
@@ -6695,7 +6639,7 @@ obj << StdErr Pred Formula;
 
 #### Studentized Residuals
 
-**Sintaxis:** obj << Studentized Residuals
+**Sintaxis:** obj &lt;&lt; Studentized Residuals
 
 **Descripción:** Guarda una nueva columna en la tabla de datos. La columna nueva contiene el residuo estudentizado, que es el residuo dividido por su error estándar. Hold down the shift key to enter suffix.
 
@@ -6716,7 +6660,7 @@ obj << Studentized Residuals;
 
 #### Summary of Fit
 
-**Sintaxis:** obj << Summary of Fit( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Summary of Fit( state=0|1 )
 
 **Descripción:** Muestra u oculta un informe que contiene un resumen de los estadísticos de ajuste del modelo.
 
@@ -6738,7 +6682,7 @@ obj << Summary of Fit( 1 );
 
 #### Surface Profiler
 
-**Sintaxis:** obj << Surface Profiler( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Surface Profiler( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico de superficie tridimensional de la superficie de respuesta.
 
@@ -6762,7 +6706,7 @@ obj << Surface Profiler( 1 );
 
 #### Action
 
-**Sintaxis:** obj << Action
+**Sintaxis:** obj &lt;&lt; Action
 
 **Descripción:** Trampa multiuso dentro de una plataforma para insertar expresiones que se desean evaluar. Temporalmente establece los contextos de cuadros de visualización y tablas de datos en la plataforma.
 
@@ -6780,7 +6724,7 @@ dt << Bivariate(
 
 #### Automatic Recalc
 
-**Sintaxis:** obj << Automatic Recalc( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Descripción:** Rehace automáticamente el análisis para modificaciones de datos y de exclusión. Si está activada la opción Recálculo automático, le recomendamos que utilice los comandos Wait(0) para asegurarse de que las modificaciones de datos y de exclusión surtan efecto antes del recálculo.
 
@@ -6801,7 +6745,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 #### Broadcast
 
-**Sintaxis:** obj << Broadcast(message)
+**Sintaxis:** obj &lt;&lt; Broadcast(message)
 
 **Descripción:** Difunde un mensaje a una plataforma. Si los resultados devueltos de objetos individuales son tablas, se concatenan si es posible y el formato final es idéntico al resultado de la opción Guardar tabla combinada en un cuadro de tabla o al resultado de la opción Concatenar mediante una columna de origen. Los demás resultados se almacenan en una lista y se devuelven.
 
@@ -6821,7 +6765,7 @@ objs[1] << Broadcast( Save Summaries );
 
 #### Column Switcher
 
-**Sintaxis:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Sintaxis:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Descripción:** Añade un panel de control para cambiar las variables de la plataforma
 
@@ -6839,7 +6783,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 #### Copy ByGroup Script
 
-**Sintaxis:** obj << Copy ByGroup Script
+**Sintaxis:** obj &lt;&lt; Copy ByGroup Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -6865,7 +6809,7 @@ obj[1] << Copy ByGroup Script;
 
 #### Copy Script
 
-**Sintaxis:** obj << Copy Script
+**Sintaxis:** obj &lt;&lt; Copy Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -6885,7 +6829,7 @@ obj << Copy Script;
 
 #### Data Table Window
 
-**Sintaxis:** obj << Data Table Window
+**Sintaxis:** obj &lt;&lt; Data Table Window
 
 **Descripción:** Mueve al frente la ventana de la tabla de datos que se utiliza en este análisis.
 
@@ -6905,7 +6849,7 @@ obj << Data Table Window;
 
 #### Get By Levels
 
-**Sintaxis:** obj << Get By Levels
+**Sintaxis:** obj &lt;&lt; Get By Levels
 
 **Descripción:** Devuelve un arreglo asociativo que asigna las columnas Por grupo a sus valores.
 
@@ -6922,7 +6866,7 @@ biv << Get By Levels;
 
 #### Get ByGroup Script
 
-**Sintaxis:** obj << Get ByGroup Script
+**Sintaxis:** obj &lt;&lt; Get ByGroup Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -6949,7 +6893,7 @@ Show( t );
 
 #### Get Container
 
-**Sintaxis:** obj << Get Container
+**Sintaxis:** obj &lt;&lt; Get Container
 
 **Descripción:** Devuelve una referencia al cuadro contenedor que incluye el contenido del objeto.
 
@@ -7001,7 +6945,7 @@ New Window( "platform boxes",
 
 #### Get Data Table
 
-**Sintaxis:** obj << Get Data Table
+**Sintaxis:** obj &lt;&lt; Get Data Table
 
 **Descripción:** Devuelve una referencia a la tabla de datos.
 
@@ -7022,7 +6966,7 @@ Show( N Rows( t ) );
 
 #### Get Group Platform
 
-**Sintaxis:** obj << Get Group Platform
+**Sintaxis:** obj &lt;&lt; Get Group Platform
 
 **Descripción:** Devuelve el objeto Plataforma grupal si esta plataforma forma parte de un grupo. De lo contrario, devuelve Empty().
 
@@ -7039,7 +6983,7 @@ group << Layout( "Arrange in Tabs" );
 
 #### Get Script
 
-**Sintaxis:** obj << Get Script
+**Sintaxis:** obj &lt;&lt; Get Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -7060,7 +7004,7 @@ Show( t );
 
 #### Get Script With Data Table
 
-**Sintaxis:** obj << Get Script With Data Table
+**Sintaxis:** obj &lt;&lt; Get Script With Data Table
 
 **Descripción:** Crea un script (JSL) para generar este análisis haciendo referencia específica a esta tabla de datos y lo devuelve en forma de expresión.
 
@@ -7081,7 +7025,7 @@ Show( t );
 
 #### Get Timing
 
-**Sintaxis:** obj << Get Timing
+**Sintaxis:** obj &lt;&lt; Get Timing
 
 **Descripción:** Determina el tiempo de inicio de una plataforma.
 
@@ -7102,7 +7046,7 @@ Show( t );
 
 #### Get Web Support
 
-**Sintaxis:** obj << Get Web Support
+**Sintaxis:** obj &lt;&lt; Get Web Support
 
 **Descripción:** Devuelve un número que indica el nivel de compatibilidad del HTML interactivo para el objeto de visualización. 1 significa que algunos o todos los elementos son compatibles. 0 significa que no existe compatibilidad.
 
@@ -7118,7 +7062,7 @@ Show( s );
 
 #### Get Where Expr
 
-**Sintaxis:** obj << Get Where Expr
+**Sintaxis:** obj &lt;&lt; Get Where Expr
 
 **Descripción:** Devuelve la expresión Where para el subconjunto de datos, si la plataforma se inició con By() o Where(). De lo contrario, devuelve Empty().
 
@@ -7155,7 +7099,7 @@ dt << Bivariate(
 
 #### Local Data Filter
 
-**Sintaxis:** obj << Local Data Filter
+**Sintaxis:** obj &lt;&lt; Local Data Filter
 
 **Descripción:** Para filtrar los datos según grupos o rangos determinados, pero locales para esta plataforma.
 
@@ -7194,7 +7138,7 @@ obj << Apply Preset( preset );
 
 #### Paste Local Data Filter
 
-**Sintaxis:** obj << Paste Local Data Filter
+**Sintaxis:** obj &lt;&lt; Paste Local Data Filter
 
 **Descripción:** Se aplica el filtro de datos locales del portapapeles al informe actual.
 
@@ -7215,7 +7159,7 @@ dist2 << Paste Local Data Filter;
 
 #### Redo Analysis
 
-**Sintaxis:** obj << Redo Analysis
+**Sintaxis:** obj &lt;&lt; Redo Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -7235,7 +7179,7 @@ obj << Redo Analysis;
 
 #### Redo ByGroup Analysis
 
-**Sintaxis:** obj << Redo ByGroup Analysis
+**Sintaxis:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -7261,7 +7205,7 @@ obj[1] << Redo ByGroup Analysis;
 
 #### Relaunch Analysis
 
-**Sintaxis:** obj << Relaunch Analysis
+**Sintaxis:** obj &lt;&lt; Relaunch Analysis
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -7281,7 +7225,7 @@ obj << Relaunch Analysis;
 
 #### Relaunch ByGroup
 
-**Sintaxis:** obj << Relaunch ByGroup
+**Sintaxis:** obj &lt;&lt; Relaunch ByGroup
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -7307,7 +7251,7 @@ obj[1] << Relaunch ByGroup;
 
 #### Remove Column Switcher
 
-**Sintaxis:** obj << Remove Column Switcher
+**Sintaxis:** obj &lt;&lt; Remove Column Switcher
 
 **Descripción:** Quita el Cambiador de columnas más reciente que se haya agregado a la plataforma.
 
@@ -7327,7 +7271,7 @@ obj << Remove Column Switcher;
 
 #### Remove Local Data Filter
 
-**Sintaxis:** obj << Remove Local Data Filter
+**Sintaxis:** obj &lt;&lt; Remove Local Data Filter
 
 **Descripción:** Si se ha creado un filtro de datos local, esto lo eliminará y restaurará la plataforma para usar todos los datos de la tabla de datos directamente.
 
@@ -7366,9 +7310,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 #### Report
 
-**Sintaxis:** obj << Report;
-
-Report( obj )
+**Sintaxis:** obj &lt;&lt; Report;Report( obj )
 
 **Descripción:** Devuelve una referencia al objeto informe.
 
@@ -7390,7 +7332,7 @@ Show( t );
 
 #### Report View
 
-**Sintaxis:** obj << Report View( "Completa"|"Resumen" )
+**Sintaxis:** obj &lt;&lt; Report View( "Completa"|"Resumen" )
 
 **Descripción:** La vista del informe determina el nivel de detalle visible en el informe de una plataforma. Full muestra todos los detalles, mientras que Summary solo muestra el contenido seleccionado, con independencia de la plataforma. Para el comportamiento personalizado, los cuadros de visualización admiten un mensaje <<Set Summary Behavior.
 
@@ -7410,7 +7352,7 @@ obj << Report View( "Summary" );
 
 #### Save ByGroup Script to Data Table
 
-**Sintaxis:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis, y lo guarda como propiedad de tabla en la tabla de datos. Puede especificar un nombre para el script. La opción Append Suffix añade un sufijo numérico al nombre del script, que diferencia el script de un script existente que tenga el mismo nombre. La opción Prompt solicita al usuario que especifique un nombre de script. La opción Replace reemplaza un script existente que tenga el mismo nombre.
 
@@ -7436,7 +7378,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 #### Save ByGroup Script to Journal
 
-**Sintaxis:** obj << Save ByGroup Script to Journal
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -7462,7 +7404,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 #### Save ByGroup Script to Script Window
 
-**Sintaxis:** obj << Save ByGroup Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -7488,7 +7430,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 #### Save Script for All Objects
 
-**Sintaxis:** obj << Save Script for All Objects
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects
 
 **Descripción:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -7508,7 +7450,7 @@ obj << Save Script for All Objects;
 
 #### Save Script for All Objects To Data Table
 
-**Sintaxis:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descripción:** Guarda un script para todos los objetos de informe en la tabla de datos actual. Esta opción es útil cuando tiene varios informes en la ventana. El script recibe el nombre de la primera plataforma a menos que especifique el nombre del script entre comillas.
 
@@ -7558,7 +7500,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 #### Save Script to Data Table
 
-**Sintaxis:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis y lo guarda en forma de propiedad de tabla en la tabla de datos.
 
@@ -7578,7 +7520,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 #### Save Script to Journal
 
-**Sintaxis:** obj << Save Script to Journal
+**Sintaxis:** obj &lt;&lt; Save Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -7598,7 +7540,7 @@ obj << Save Script to Journal;
 
 #### Save Script to Report
 
-**Sintaxis:** obj << Save Script to Report
+**Sintaxis:** obj &lt;&lt; Save Script to Report
 
 **Descripción:** Crea un script JSL para generar este análisis y lo muestra en el propio informe. Resulta útil para conservar un registro impreso de lo que se ha hecho.
 
@@ -7618,7 +7560,7 @@ obj << Save Script to Report;
 
 #### Save Script to Script Window
 
-**Sintaxis:** obj << Save Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -7703,7 +7645,7 @@ dt << Distribution(
 
 #### Sync to Data Table Changes
 
-**Sintaxis:** obj << Sync to Data Table Changes
+**Sintaxis:** obj &lt;&lt; Sync to Data Table Changes
 
 **Descripción:** Realiza una sincronización con las modificaciones de datos y de exclusión que se hayan realizado.
 
@@ -7720,7 +7662,7 @@ dist << Sync To Data Table Changes;
 
 #### Title
 
-**Sintaxis:** obj << Title( "new title" )
+**Sintaxis:** obj &lt;&lt; Title( "new title" )
 
 **Descripción:** Establece el título de la plataforma.
 
@@ -7740,7 +7682,7 @@ obj << Title( "My Platform" );
 
 #### Top Report
 
-**Sintaxis:** obj << Top Report
+**Sintaxis:** obj &lt;&lt; Top Report
 
 **Descripción:** Devuelve una referencia al nodo raíz del informe.
 
@@ -7762,7 +7704,7 @@ Show( t );
 
 #### Transform Column
 
-**Sintaxis:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Sintaxis:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Descripción:** Crea una columna de transformación en el contexto local de un objeto (una plataforma por lo general). La columna de transformación solo está activa mientras esté en uso la plataforma.
 
@@ -7783,7 +7725,7 @@ dt << Distribution(
 
 #### View Web XML
 
-**Sintaxis:** obj << View Web XML
+**Sintaxis:** obj &lt;&lt; View Web XML
 
 **Descripción:** Devuelve el código XML que se utiliza para crear el informe HTML interactivo.
 
@@ -7798,9 +7740,7 @@ xml = obj << View Web XML;
 
 #### Window View
 
-**Sintaxis:** obj = Individual Response Fit(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Individual Response Fit(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Establece el tipo de ventana que se creará para el informe. De forma predeterminada, se creará una ventana de informe Visible. Una ventana Invisible no aparecerá en pantalla, pero se puede detectar mediante funciones como Window(). Una ventana Private responde a la mayoría de los mensajes de ventana pero no es detectable y se debe abordar a través del objeto de informe.
 
@@ -7844,7 +7784,7 @@ obj = dt << Fit Model(
 
 #### AICc
 
-**Sintaxis:** obj << AICc( state=0|1 )
+**Sintaxis:** obj &lt;&lt; AICc( state=0|1 )
 
 **Descripción:** Muestra u oculta los valores corregidos del Criterio de información de Akaike (AICc) y del Criterio de información de Bayes (BIC) en el informe Resumen del ajuste.
 
@@ -7866,7 +7806,7 @@ obj << AICc( 1 );
 
 #### Analysis of Variance
 
-**Sintaxis:** obj << Analysis of Variance( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Analysis of Variance( state=0|1 )
 
 **Descripción:** Muestra u oculta un informe que contiene estadísticos para comparar el modelo ajustado con un modelo de media simple.
 
@@ -7888,7 +7828,7 @@ obj << Analysis of Variance( 1 );
 
 #### Apply Preset
 
-**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descripción:** Aplica al objeto un preajuste creado previamente, actualizando las opciones y personalizaciones para que coincidan con la configuración guardada.
 
@@ -7925,7 +7865,7 @@ obj2 << (:Oxy << Apply Preset( preset ));
 
 #### Bayes Plot
 
-**Sintaxis:** obj << Bayes Plot( K( number ), Priors( p1, p2, p3, ... ), Go  )
+**Sintaxis:** obj &lt;&lt; Bayes Plot( K( number ), Priors( p1, p2, p3, ... ), Go )
 
 **Descripción:** Muestra u oculta un gráfico que calcula las probabilidades posteriores de todos los términos del modelo utilizando un enfoque bayesiano.
 
@@ -7947,7 +7887,7 @@ obj << Bayes Plot( K( 10 ), Priors( 0.2, 0.2, 0.2, 0.2, 0.2 ), Go );
 
 #### Box Cox Y Transformation
 
-**Sintaxis:** obj << Box Cox Y Transformation( state=0|1, <Save Best Transformation( state=0|1 )>, <Save Specific Transformation( number )>, <Table of Estimates( state=0|1 )> )
+**Sintaxis:** obj &lt;&lt; Box Cox Y Transformation( state=0|1, &lt;Save Best Transformation( state=0|1 )&gt;, &lt;Save Specific Transformation( number )&gt;, &lt;Table of Estimates( state=0|1 )&gt; )
 
 **Descripción:** Muestra u oculta el informe Transformaciones de Box-Cox, que muestra cómo cambiaría el ajuste si se reajusta el modelo con una transformación de potencia (Box-Cox) en la respuesta.
 
@@ -7969,7 +7909,7 @@ obj << Box Cox Y Transformation( 1, Save Best Transformation( 1 ) );
 
 #### Compare Slopes
 
-**Sintaxis:** obj << Compare Slopes( Effect( effect ), <options> )
+**Sintaxis:** obj &lt;&lt; Compare Slopes( Effect( effect ), &lt;options&gt; )
 
 **Descripción:** Genera un informe de análisis de medias (ANOM) que compara las pendientes de interacción con la pendiente media de un modelo de análisis de covarianza (ANCOVA). Esta opción solo está disponible cuando hay un efecto nominal, un efecto continuo y su efecto de interacción para los efectos fijos.
 
@@ -7996,7 +7936,7 @@ obj << Compare Slopes(
 
 #### Conditional Indiv CI
 
-**Sintaxis:** obj << Conditional Indiv CI( <alpha=0.05> )
+**Sintaxis:** obj &lt;&lt; Conditional Indiv CI( &lt;alpha=0.05&gt; )
 
 **Descripción:** Guarda una nueva columna en la tabla de datos. La columna nueva contiene el intervalo de confianza del valor individual de la predicción condicional. Los intervalos de confianza incluyen estimaciones de efectos aleatorios para modelos con efectos aleatorios. Esta opción solo está disponible para los métodos de análisis REML. Hold down the shift key to enter alpha level or suffix.
 
@@ -8016,7 +7956,7 @@ obj << Conditional Indiv CI( 0.001 );
 
 #### Conditional Mean CI
 
-**Sintaxis:** obj << Conditional Mean CI( <alpha=0.05> )
+**Sintaxis:** obj &lt;&lt; Conditional Mean CI( &lt;alpha=0.05&gt; )
 
 **Descripción:** Guarda una nueva columna en la tabla de datos. La columna nueva contiene el intervalo de confianza del valor esperado de la predicción condicional. Los intervalos de confianza incluyen estimaciones de efectos aleatorios para modelos con efectos aleatorios. Esta opción solo está disponible para los métodos de análisis REML. Hold down the shift key to enter alpha level or suffix.
 
@@ -8036,7 +7976,7 @@ obj << Conditional Mean CI( 0.01 );
 
 #### Conditional Pred Formula
 
-**Sintaxis:** obj << Conditional Pred Formula
+**Sintaxis:** obj &lt;&lt; Conditional Pred Formula
 
 **Descripción:** Guarda una nueva columna de fórmulas en la tabla de datos. La columna nueva contiene una fórmula que incluye estimaciones de efectos aleatorios para modelos con efectos aleatorios. Esta opción solo está disponible para los métodos de análisis REML. Hold down the shift key to enter suffix.
 
@@ -8056,7 +7996,7 @@ obj << Conditional Pred Formula;
 
 #### Conditional Pred Values
 
-**Sintaxis:** obj << Conditional Pred Values
+**Sintaxis:** obj &lt;&lt; Conditional Pred Values
 
 **Descripción:** Guarda una nueva columna en la tabla de datos. La columna nueva contiene los valores predichos condicionales que se calculan utilizando los mejores predictores lineales insesgados (BLUP) para los coeficientes de efectos aleatorios. Esta opción solo está disponible para los métodos de análisis REML. Hold down the shift key to enter suffix.
 
@@ -8076,7 +8016,7 @@ obj << Conditional Pred Values;
 
 #### Conditional Residuals
 
-**Sintaxis:** obj << Conditional Residuals
+**Sintaxis:** obj &lt;&lt; Conditional Residuals
 
 **Descripción:** Guarda una nueva columna en la tabla de datos. La columna nueva contiene los residuos de la predicción condicional. Los valores residuales incluyen estimaciones de efectos aleatorios para modelos con efectos aleatorios. Esta opción solo está disponible para los métodos de análisis REML. Hold down the shift key to enter suffix.
 
@@ -8096,7 +8036,7 @@ obj << Conditional Residuals;
 
 #### Contour Profiler
 
-**Sintaxis:** obj << Contour Profiler( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Contour Profiler( state=0|1 )
 
 **Descripción:** Muestra u oculta el perfilador de contorno, que representa gráficamente los contornos de las respuestas de dos factores a la vez. Solo está disponible cuando el modelo contiene más de un factor continuo.
 
@@ -8120,7 +8060,7 @@ obj << Contour Profiler( 1 );
 
 #### Cook's D Influence
 
-**Sintaxis:** obj << Cook&apos;s D Influence
+**Sintaxis:** obj &lt;&lt; Cook&apos;s D Influence
 
 **Descripción:** Guarda una nueva columna en la tabla de datos. La columna nueva contiene una medida de la influencia de cada observación en la estimación del modelo. Hold down the shift key to enter suffix.
 
@@ -8141,7 +8081,7 @@ obj << Cook's D Influence;
 
 #### Correlation of Estimates
 
-**Sintaxis:** obj << Correlation of Estimates( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Correlation of Estimates( state=0|1 )
 
 **Descripción:** Muestra u oculta la matriz de correlaciones entre las estimaciones de los parámetros para el ajuste especificado.
 
@@ -8163,7 +8103,7 @@ obj << Correlation of Estimates( 1 );
 
 #### Cox Mixtures
 
-**Sintaxis:** obj << Cox Mixtures( p1(percentile), p2(percentile), p3(percentile) )
+**Sintaxis:** obj &lt;&lt; Cox Mixtures( p1(percentile), p2(percentile), p3(percentile) )
 
 **Descripción:** Muestra u oculta las estimaciones de los parámetros para el modelo de mezcla de Cox basado en los valores de mezcla de referencia especificados. Esta opción solo está disponible cuando el modelo contiene efectos de mezcla.
 
@@ -8188,7 +8128,7 @@ obj << Cox Mixtures( p1( 0.6615 ), p2( 0.126 ), p3( 0.2125 ) );
 
 #### Cube Plots
 
-**Sintaxis:** obj << Cube Plots( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Cube Plots( state=0|1 )
 
 **Descripción:** Muestra u oculta los valores predichos para los extremos de los rangos de factores dispuestos en uno o más cubos.
 
@@ -8210,7 +8150,7 @@ obj << Cube Plots( 1 );
 
 #### Custom Test
 
-**Sintaxis:** obj << Custom Test( [l1, l2, l3, ... ], <Label( text )> )
+**Sintaxis:** obj &lt;&lt; Custom Test( [l1, l2, l3, ... ], &lt;Label( text )&gt; )
 
 **Descripción:** Ejecuta una prueba F personalizada que contrasta los distintos efectos del modelo.
 
@@ -8232,7 +8172,7 @@ obj << Custom Test( [0 0 2 1], Label( "Comparison of intercepts for drug a vs. d
 
 #### Durbin Watson Test
 
-**Sintaxis:** obj << Durbin Watson Test( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Durbin Watson Test( state=0|1 )
 
 **Descripción:** Muestra u oculta el informe Durbin-Watson, que contiene un estadístico para comprobar si los residuos tienen autocorrelación de primer orden. El informe también muestra la autocorrelación de los residuos y la probabilidad exacta asociada al estadístico. Esta opción solo es adecuada para datos de series de tiempo y asume que las observaciones están en orden cronológico.
 
@@ -8254,7 +8194,7 @@ obj << Durbin Watson Test( 1 );
 
 #### Effect Details
 
-**Sintaxis:** obj << Effect Details( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Effect Details( state=0|1 )
 
 **Descripción:** Muestra u oculta informes detallados de cada efecto del modelo, incluida la tabla de medias de mínimos cuadrados para cada efecto categórico. Puede obtener información adicional si envía mensajes a los efectos del modelo. Consulte el objeto Ajuste del efecto, situado en Ajuste del modelo para tener más información. Opción activada de forma predeterminada.
 
@@ -8276,7 +8216,7 @@ obj << Effect Details( 1 );
 
 #### Effect Leverage Pairs
 
-**Sintaxis:** obj << Effect Leverage Pairs
+**Sintaxis:** obj &lt;&lt; Effect Leverage Pairs
 
 **Descripción:** Guarda nuevas columnas en la tabla de datos. Las columnas nuevas contienen los valores X e Y que se representan en los gráficos de apalancamiento de los efectos. El valor Y es el residuo parcial. El valor X es el encogimiento del regresor en los gráficos de apalancamiento de los efectos. Hold down the shift key to enter suffix.
 
@@ -8297,7 +8237,7 @@ obj << Effect Leverage Pairs;
 
 #### Effect Summary
 
-**Sintaxis:** obj << Effect Summary( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Effect Summary( state=0|1 )
 
 **Descripción:** Muestra u oculta el informe Resumen de efectos, que permite actualizar interactivamente los efectos del modelo. Opción activada de forma predeterminada.
 
@@ -8322,7 +8262,7 @@ Report( obj )["Effect Summary"] << Close( 0 );
 
 #### Effect Tests
 
-**Sintaxis:** obj << Effect Tests( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Effect Tests( state=0|1 )
 
 **Descripción:** Muestra u oculta un informe que contiene pruebas para los efectos fijos del modelo. Opción activada de forma predeterminada.
 
@@ -8344,7 +8284,7 @@ obj << Effect Tests( 1 );
 
 #### Error Specification
 
-**Sintaxis:** obj << Error Specification( "Estimación predeterminada"|"Error puro"|"Especificados" )
+**Sintaxis:** obj &lt;&lt; Error Specification( "Estimación predeterminada"|"Error puro"|"Especificados" )
 
 **Descripción:** Especifica la varianza del error y los grados de libertad del error que se utilizan para los errores estándar y las pruebas en el informe Ajuste por mínimos cuadrados. Esta opción solo está disponible cuando el modelo no contiene efectos aleatorios.
 
@@ -8368,7 +8308,7 @@ obj << Error Specification( "Pure Error" );
 
 #### Expanded  Estimates
 
-**Sintaxis:** obj << Expanded  Estimates( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Expanded Estimates( state=0|1 )
 
 **Descripción:** Muestra u oculta las estimaciones de los parámetros para todos los niveles de un efecto nominal del modelo. En el caso de un efecto nominal con k niveles, la tabla Estimaciones de los parámetros contiene coeficientes para los k-1 parámetros, y Estimaciones ampliadas muestra los coeficientes del efecto para todos los k niveles. Esta opción solo está disponible cuando al menos uno de los efectos no es continuo.
 
@@ -8390,7 +8330,7 @@ obj << Expanded Estimates( 1 );
 
 #### Externally Studentized Residuals
 
-**Sintaxis:** obj << Externally Studentized Residuals
+**Sintaxis:** obj &lt;&lt; Externally Studentized Residuals
 
 **Descripción:** Guarda una nueva columna en la tabla de datos. La columna nueva contiene los residuos estudentizados externamente. Son los residuos divididos entre las estimaciones del error estándar que excluyen la fila actual. Hold down the shift key to enter suffix.
 
@@ -8413,7 +8353,7 @@ obj << Externally Studentized Residuals;
 
 #### FDR
 
-**Sintaxis:** obj << FDR( state=0|1 )
+**Sintaxis:** obj &lt;&lt; FDR( state=0|1 )
 
 **Descripción:** Especifica si se ajustan o no los valores de log utilidad y sus valores p correspondientes de la tabla Resumen de efectos utilizando la tasa de falsos descubrimientos (FDR).
 
@@ -8436,7 +8376,7 @@ Report( obj )["Effect Summary"] << Close( 0 );
 
 #### Get Conditional Formula
 
-**Sintaxis:** obj << Get Conditional Formula
+**Sintaxis:** obj &lt;&lt; Get Conditional Formula
 
 **Descripción:** Devuelve una fórmula de predicción que incluye estimaciones de efectos aleatorios.
 
@@ -8456,7 +8396,7 @@ code = obj << Get Conditional Formula;
 
 #### Get Effect Names
 
-**Sintaxis:** obj << Get Effect Names
+**Sintaxis:** obj &lt;&lt; Get Effect Names
 
 **Descripción:** Devuelve los nombres de los efectos.
 
@@ -8478,7 +8418,7 @@ Show( G );
 
 #### Get Effect PValues
 
-**Sintaxis:** obj << Get Effect PValues
+**Sintaxis:** obj &lt;&lt; Get Effect PValues
 
 **Descripción:** Devuelve los valores p de los efectos.
 
@@ -8500,7 +8440,7 @@ Show( G );
 
 #### Get Estimates
 
-**Sintaxis:** obj << Get Estimates
+**Sintaxis:** obj &lt;&lt; Get Estimates
 
 **Descripción:** Devuelve las estimaciones.
 
@@ -8522,7 +8462,7 @@ Show( G );
 
 #### Get Indiv Confid Limit Formula
 
-**Sintaxis:** obj << Get Indiv Confid Limit Formula
+**Sintaxis:** obj &lt;&lt; Get Indiv Confid Limit Formula
 
 **Descripción:** Devuelve una fórmula para los límites de confianza individuales.
 
@@ -8542,7 +8482,7 @@ code = obj << Get Indiv Confid Limit Formula;
 
 #### Get MM SAS DATA Step
 
-**Sintaxis:** obj << Get MM SAS DATA Step
+**Sintaxis:** obj &lt;&lt; Get MM SAS DATA Step
 
 **Descripción:** Crea un código SAS que puede registrar en el Gestor de modelos SAS.
 
@@ -8562,7 +8502,7 @@ code = obj << Get MM SAS Data Step;
 
 #### Get Mean Confid Limit Formula
 
-**Sintaxis:** obj << Get Mean Confid Limit Formula
+**Sintaxis:** obj &lt;&lt; Get Mean Confid Limit Formula
 
 **Descripción:** Devuelve una fórmula para los límites de confianza de la media.
 
@@ -8582,7 +8522,7 @@ code = obj << Get Mean Confid Limit Formula;
 
 #### Get Measures
 
-**Sintaxis:** obj << Get Measures
+**Sintaxis:** obj &lt;&lt; Get Measures
 
 **Descripción:** Devuelve medidas de ajuste de resumen del modelo.
 
@@ -8604,7 +8544,7 @@ obj << Get Measures;
 
 #### Get Parameter Names
 
-**Sintaxis:** obj << Get Parameter Names
+**Sintaxis:** obj &lt;&lt; Get Parameter Names
 
 **Descripción:** Devuelve los nombres de los parámetros.
 
@@ -8626,7 +8566,7 @@ Show( G );
 
 #### Get Parameterized Formula
 
-**Sintaxis:** obj << Get Parameterized Formula
+**Sintaxis:** obj &lt;&lt; Get Parameterized Formula
 
 **Descripción:** Devuelve una fórmula de predicción que utiliza parámetros en lugar de constantes.
 
@@ -8646,7 +8586,7 @@ code = obj << Get Parameterized Formula;
 
 #### Get Prediction Formula
 
-**Sintaxis:** obj << Get Prediction Formula
+**Sintaxis:** obj &lt;&lt; Get Prediction Formula
 
 **Descripción:** Construye un script para crear una columna de fórmula de predicción y la devuelve.
 
@@ -8666,7 +8606,7 @@ code = obj << Get Prediction Formula;
 
 #### Get Random Effect Names
 
-**Sintaxis:** obj << Get Random Effect Names
+**Sintaxis:** obj &lt;&lt; Get Random Effect Names
 
 **Descripción:** Devuelve los nombres de los efectos aleatorios. Disponible para métodos de análisis de REML.
 
@@ -8687,7 +8627,7 @@ Show( G );
 
 #### Get SAS DATA Step
 
-**Sintaxis:** obj << Get SAS DATA Step
+**Sintaxis:** obj &lt;&lt; Get SAS DATA Step
 
 **Descripción:** Crea un código SAS que puede utilizar para asignar una puntuación un nuevo conjunto de datos.
 
@@ -8707,7 +8647,7 @@ code = obj << Get SAS Data Step;
 
 #### Get SQL prediction expression
 
-**Sintaxis:** obj << Get SQL prediction expression
+**Sintaxis:** obj &lt;&lt; Get SQL prediction expression
 
 **Descripción:** Crea una expresión SQL que se puede pegar en una instrucción SQL Select para predecir una respuesta.
 
@@ -8727,7 +8667,7 @@ code = obj << Get SQL prediction expression;
 
 #### Get Standard Error Formula
 
-**Sintaxis:** obj << Get Standard Error Formula
+**Sintaxis:** obj &lt;&lt; Get Standard Error Formula
 
 **Descripción:** Devuelve una fórmula para el error estándar.
 
@@ -8747,7 +8687,7 @@ code = obj << Get Standard Error Formula;
 
 #### Get Std Errors
 
-**Sintaxis:** obj << Get Std Errors
+**Sintaxis:** obj &lt;&lt; Get Std Errors
 
 **Descripción:** Devuelve los errores estándar.
 
@@ -8769,7 +8709,7 @@ Show( G );
 
 #### Get Variance Components
 
-**Sintaxis:** obj << Get Variance Components
+**Sintaxis:** obj &lt;&lt; Get Variance Components
 
 **Descripción:** Devuelve los componentes de varianza. Disponible para métodos de análisis de REML.
 
@@ -8790,7 +8730,7 @@ Show( G );
 
 #### Get X Matrix
 
-**Sintaxis:** obj << Get X Matrix
+**Sintaxis:** obj &lt;&lt; Get X Matrix
 
 **Descripción:** Devuelve la matriz de diseño.
 
@@ -8812,7 +8752,7 @@ Show( G );
 
 #### Get XPX Inverse
 
-**Sintaxis:** obj << Get XPX Inverse
+**Sintaxis:** obj &lt;&lt; Get XPX Inverse
 
 **Descripción:** Devuelve la matriz inversa X&apos;X.
 
@@ -8834,7 +8774,7 @@ Show( G );
 
 #### Get Y Matrix
 
-**Sintaxis:** obj << Get Y Matrix
+**Sintaxis:** obj &lt;&lt; Get Y Matrix
 
 **Descripción:** Devuelve la matriz Y.
 
@@ -8856,7 +8796,7 @@ Show( G );
 
 #### Hats
 
-**Sintaxis:** obj << Hats
+**Sintaxis:** obj &lt;&lt; Hats
 
 **Descripción:** Guarda una nueva columna en la tabla de datos. La columna nueva contiene los valores diagonales de la matriz xInv(x`x)x`. Estos valores también se denominan valores hat o de apalancamiento. Hold down the shift key to enter suffix.
 
@@ -8877,7 +8817,7 @@ obj << Hats;
 
 #### Indicator Parameterization Estimates
 
-**Sintaxis:** obj << Indicator Parameterization Estimates( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Indicator Parameterization Estimates( state=0|1 )
 
 **Descripción:** Muestra u oculta el informe Parametrización de la función indicadora, que contiene estimaciones de parámetros con los efectos nominales en el modelo parametrizado utilizando las funciones indicadoras clásicas. Esta opción solo está disponible cuando hay columnas nominales y una constante del modelo entre los efectos del modelo.
 
@@ -8899,7 +8839,7 @@ obj << Indicator Parameterization Estimates( 1 );
 
 #### Indiv Confidence Interval
 
-**Sintaxis:** obj << Indiv Confidence Interval( <alpha=0.05> )
+**Sintaxis:** obj &lt;&lt; Indiv Confidence Interval( &lt;alpha=0.05&gt; )
 
 **Descripción:** Guarda nuevas columnas en la tabla de datos. Las columnas nuevas contienen los límites del intervalo de confianza para una realización individual de la respuesta. Engloba la variación tanto en la respuesta como en su estimación. Hold down the shift key to enter alpha level or suffix.
 
@@ -8920,7 +8860,7 @@ obj << Indiv Confidence Interval( .001 );
 
 #### Indiv Confidence Limit Formula
 
-**Sintaxis:** obj << Indiv Confidence Limit Formula( <alpha=0.05> )
+**Sintaxis:** obj &lt;&lt; Indiv Confidence Limit Formula( &lt;alpha=0.05&gt; )
 
 **Descripción:** Guarda las columnas de la nueva fórmula en la tabla de datos original. Hay columnas para los límites de confianza inferior y superior de una predicción individual que son funciones de los regresores. El nivel predeterminado para alfa es 0,05, que genera límites de confianza al 95%.
 
@@ -8942,7 +8882,7 @@ Show( ref );
 
 #### Interaction Plots
 
-**Sintaxis:** obj << Interaction Plots( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Interaction Plots( state=0|1 )
 
 **Descripción:** Muestra u oculta una matriz de gráficos de interacción. Esta opción solo está disponible cuando hay efectos de interacción en el modelo.
 
@@ -8965,7 +8905,7 @@ obj << Interaction Plots( 1 );
 
 #### Inverse Prediction
 
-**Sintaxis:** obj << Inverse Prediction( Response( p1, p2, ... ), Term Value( effect1( value ), effect2( value ), ... ) )
+**Sintaxis:** obj &lt;&lt; Inverse Prediction( Response( p1, p2, ... ), Term Value( effect1( value ), effect2( value ), ... ) )
 
 **Descripción:** Genera un valor X predicho y un intervalo de confianza basado en los valores especificados de Y y todos los demás factores.
 
@@ -8987,7 +8927,7 @@ obj << Inverse Prediction( Response( 40, 45, 50, 55 ), Term Value( RunTime( . ) 
 
 #### Joint Factor Tests
 
-**Sintaxis:** obj << Joint Factor Tests( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Joint Factor Tests( state=0|1 )
 
 **Descripción:** Muestra u oculta una prueba conjunta para cada efecto principal del modelo. La prueba conjunta es para todos los parámetros que impliquen ese efecto principal. Esta opción solo está disponible cuando el modelo contiene interacciones.
 
@@ -9011,7 +8951,7 @@ obj << Joint Factor Tests( 1 );
 
 #### Lack of Fit
 
-**Sintaxis:** obj << Lack of Fit( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Lack of Fit( state=0|1 )
 
 **Descripción:** Muestra u oculta una prueba que evalúa si el modelo tiene los efectos adecuados. Opción activada de forma predeterminada.
 
@@ -9033,7 +8973,7 @@ obj << Lack Of Fit( 1 );
 
 #### Mean Confidence Interval
 
-**Sintaxis:** obj << Mean Confidence Interval( <alpha=0.05> )
+**Sintaxis:** obj &lt;&lt; Mean Confidence Interval( &lt;alpha=0.05&gt; )
 
 **Descripción:** Guarda nuevas columnas en la tabla de datos. Las columnas nuevas contienen los límites del intervalo de confianza para el valor esperado. Engloba la variación en la estimación, pero no en la respuesta. Hold down the shift key to enter alpha level or suffix.
 
@@ -9054,7 +8994,7 @@ obj << Mean Confidence Interval( .01 );
 
 #### Mean Confidence Limit Formula
 
-**Sintaxis:** obj << Mean Confidence Limit Formula( <alpha=0.05> )
+**Sintaxis:** obj &lt;&lt; Mean Confidence Limit Formula( &lt;alpha=0.05&gt; )
 
 **Descripción:** Guarda las columnas de la nueva fórmula en la tabla de datos original. Hay columnas para los límites de confianza inferior y superior de la respuesta media que son funciones de los regresores. El nivel predeterminado para alfa es 0,05, que genera límites de confianza al 95%.
 
@@ -9076,7 +9016,7 @@ Show( r );
 
 #### Mixture Profiler
 
-**Sintaxis:** obj << Mixture Profiler( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Mixture Profiler( state=0|1 )
 
 **Descripción:** Muestra u oculta un perfilador de mezclas que muestra los contornos de la respuesta en un gráfico ternario. Esta opción solo está disponible si el atributo Efecto de mezcla se aplica a tres o más factores del modelo o la propiedad Mezcla se aplica a tres o más columnas de factores.
 
@@ -9101,7 +9041,7 @@ obj << Mixture Profiler( 1 );
 
 #### Model Dialog
 
-**Sintaxis:** obj << Model Dialog
+**Sintaxis:** obj &lt;&lt; Model Dialog
 
 **Descripción:** Muestra la ventana de inicio Ajuste del modelo completada para el análisis actual.
 
@@ -9121,7 +9061,7 @@ obj << Model Dialog;
 
 #### Multiple Comparisons
 
-**Sintaxis:** obj << Multiple Comparisons( Effect(...)|Estimate List(...)|Sliced Effect Estimates(...), <options> )
+**Sintaxis:** obj &lt;&lt; Multiple Comparisons( Effect(...)|Estimate List(...)|Sliced Effect Estimates(...), &lt;options&gt; )
 
 **Descripción:** Genera estimaciones de las medias de mínimos cuadrados o estimaciones definidas por el usuario. El informe Comparaciones múltiples permite realizar comparaciones con la media global, comparaciones con un control o comparaciones por pares.
 
@@ -9168,7 +9108,7 @@ preset = obj << (:y << New Preset);
 
 #### Normal Plot
 
-**Sintaxis:** obj << Normal Plot( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Normal Plot( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico que identifica las estimaciones de los parámetros que se desvían de la normalidad. Esto ayuda a determinar qué efectos están activos.
 
@@ -9190,7 +9130,7 @@ obj << Normal Plot( 1 );
 
 #### Parameter Estimates
 
-**Sintaxis:** obj << Parameter Estimates( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Parameter Estimates( state=0|1 )
 
 **Descripción:** Muestra u oculta un informe que contiene las estimaciones de los parámetros y las pruebas t para la hipótesis de que cada parámetro es igual a cero.
 
@@ -9212,7 +9152,7 @@ obj << Parameter Estimates( 1 );
 
 #### Parameter Power
 
-**Sintaxis:** obj << Parameter Power( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Parameter Power( state=0|1 )
 
 **Descripción:** Agrega o elimina columnas del informe Estimaciones de los parámetros. Estas columnas contienen la potencia y otros detalles relacionados con las pruebas de hipótesis correspondientes.
 
@@ -9234,7 +9174,7 @@ obj << Parameter Power( 1 );
 
 #### Parameterized Formula
 
-**Sintaxis:** obj << Parameterized Formula
+**Sintaxis:** obj &lt;&lt; Parameterized Formula
 
 **Descripción:** Guarda una nueva columna de fórmulas en la tabla de datos. La columna nueva contiene una fórmula de predicción que utiliza parámetros de tabla en lugar de constantes.
 
@@ -9255,7 +9195,7 @@ obj << Parameterized Formula;
 
 #### Pareto Plot
 
-**Sintaxis:** obj << Pareto Plot( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Pareto Plot( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico de los valores absolutos de las estimaciones de los parámetros ortogonalizados y estandarizados. Este gráfico muestra su composición relativa a la suma de los valores absolutos.
 
@@ -9277,7 +9217,7 @@ obj << Pareto Plot( 1 );
 
 #### Plot Actual by Predicted
 
-**Sintaxis:** obj << Plot Actual by Predicted( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Plot Actual by Predicted( state=0|1 )
 
 **Descripción:** Muestra u oculta el gráfico Observados frente a predichos, que representa los valores observados de la respuesta frente a los valores predichos de la respuesta.
 
@@ -9299,7 +9239,7 @@ obj << Plot Actual by Predicted( 1 );
 
 #### Plot Effect Leverage
 
-**Sintaxis:** obj << Plot Effect Leverage( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Plot Effect Leverage( state=0|1 )
 
 **Descripción:** Muestra u oculta el informe Gráfico de apalancamiento para cada efecto del modelo. El gráfico muestra cómo influyen las observaciones en la prueba de ese efecto y ofrece información sobre la multicolinealidad.
 
@@ -9320,7 +9260,7 @@ obj << Plot Effect Leverage( 1 );
 
 #### Plot Regression
 
-**Sintaxis:** obj << Plot Regression( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Plot Regression( state=0|1 )
 
 **Descripción:** Muestra u oculta el informe Gráfico de regresión, que contiene un gráfico de dispersión de los datos y líneas de regresión para cada nivel del efecto categórico. Esta opción solo está disponible si hay exactamente un efecto continuo y no más de un efecto categórico en el modelo. Si se cumplen estas condiciones, se proporciona el informe Gráfico de regresión de forma predeterminada. Opción activada de forma predeterminada.
 
@@ -9342,7 +9282,7 @@ obj << Plot Regression( 1 );
 
 #### Plot Residual by Normal Quantiles
 
-**Sintaxis:** obj << Plot Residual by Normal Quantiles( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Plot Residual by Normal Quantiles( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico con los residuos en el eje vertical y los cuantiles normales de los residuos en el eje horizontal. Esta opción no está disponible cuando el método es REML.
 
@@ -9366,7 +9306,7 @@ obj << Plot Residual by Normal Quantiles( 1 );
 
 #### Plot Residual by Predicted
 
-**Sintaxis:** obj << Plot Residual by Predicted( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Plot Residual by Predicted( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico con los residuos en el eje vertical y los valores predichos de la respuesta en el eje horizontal. Esta opción solo está disponible para respuestas continuas.
 
@@ -9388,7 +9328,7 @@ obj << Plot Residual by Predicted( 1 );
 
 #### Plot Residual by Row
 
-**Sintaxis:** obj << Plot Residual by Row( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Plot Residual by Row( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico con los residuos en el eje vertical y el número de fila en el eje horizontal.
 
@@ -9410,7 +9350,7 @@ obj << Plot Residual by Row( 1 );
 
 #### Plot Studentized Residuals
 
-**Sintaxis:** obj << Plot Studentized Residuals( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Plot Studentized Residuals( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico con los residuos estudentizados en el eje vertical y el número de fila en el eje horizontal. Cada punto del gráfico se calcula utilizando una estimación de su desviación estándar obtenida con la observación actual eliminada.
 
@@ -9432,7 +9372,7 @@ obj << Plot Studentized Residuals( 1 );
 
 #### Predicted Values
 
-**Sintaxis:** obj << Predicted Values
+**Sintaxis:** obj &lt;&lt; Predicted Values
 
 **Descripción:** Guarda una nueva columna en la tabla de datos. La columna nueva contiene los valores predichos para el modelo ajustado. Hold down the shift key to enter suffix.
 
@@ -9453,7 +9393,7 @@ obj << Predicted Values;
 
 #### Prediction Formula
 
-**Sintaxis:** obj << Prediction Formula
+**Sintaxis:** obj &lt;&lt; Prediction Formula
 
 **Descripción:** Guarda una columna de fórmulas nueva en la tabla de datos. La columna nueva contiene la fórmula de predicción para el modelo ajustado. Hold down the shift key to enter suffix.
 
@@ -9474,7 +9414,7 @@ obj << Prediction Formula;
 
 #### Prediction and Interval Formulas
 
-**Sintaxis:** obj << Prediction and Interval Formulas( <alpha=0.05> )
+**Sintaxis:** obj &lt;&lt; Prediction and Interval Formulas( &lt;alpha=0.05&gt; )
 
 **Descripción:** Guarda las columnas nuevas en la tabla de datos. Las columnas contienen fórmulas para las predicciones, límites de confianza y límites de predicción. Las columnas de límites que se crean con esta opción contienen propiedades que utiliza el Perfilador de predicción. Hold down the shift key to enter alpha level or suffix.
 
@@ -9505,7 +9445,7 @@ dt << Profiler(
 
 #### Press
 
-**Sintaxis:** obj << Press( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Press( state=0|1 )
 
 **Descripción:** Muestra u oculta el estadístico de la suma de cuadrados del error de predicción (Press) y su raíz del error cuadrático medio (RMSE). El estadístico Press es útil cuando se comparan varios modelos. Se favorecen los modelos con estadísticos Press más bajos.
 
@@ -9527,7 +9467,7 @@ obj << Press( 1 );
 
 #### Profiler
 
-**Sintaxis:** obj << Profiler( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Profiler( state=0|1 )
 
 **Descripción:** Muestra u oculta el perfilador de predicción, que se utiliza para explorar gráficamente la ecuación de predicción seccionándola factor por factor. El perfilador de predicción contiene funciones de optimización.
 
@@ -9549,7 +9489,7 @@ obj << Profiler( 1 );
 
 #### Publish Conditional Formula
 
-**Sintaxis:** obj << Publish Conditional Formula
+**Sintaxis:** obj &lt;&lt; Publish Conditional Formula
 
 **Descripción:** Crea una fórmula de predicción que incluye estimaciones de efectos aleatorios y la publica como script de columna de fórmula en la plataforma Almacén de fórmulas.
 
@@ -9569,7 +9509,7 @@ code = obj << Publish Conditional Formula;
 
 #### Publish Indiv Confid Limit Formula
 
-**Sintaxis:** obj << Publish Indiv Confid Limit Formula
+**Sintaxis:** obj &lt;&lt; Publish Indiv Confid Limit Formula
 
 **Descripción:** Crea fórmulas para los límites de confianza individuales y las publica como scripts de columna de fórmula en la plataforma Almacén de fórmulas.
 
@@ -9589,7 +9529,7 @@ code = obj << Publish Indiv Confid Limit Formula;
 
 #### Publish Mean Confid Limit Formula
 
-**Sintaxis:** obj << Publish Mean Confid Limit Formula
+**Sintaxis:** obj &lt;&lt; Publish Mean Confid Limit Formula
 
 **Descripción:** Crea fórmulas para los límites de confianza de la media y las publica como scripts de columna de fórmula en la plataforma Almacén de fórmulas.
 
@@ -9609,7 +9549,7 @@ code = obj << Publish Mean Confid Limit Formula;
 
 #### Publish Parameterized Formula
 
-**Sintaxis:** obj << Publish Parameterized Formula
+**Sintaxis:** obj &lt;&lt; Publish Parameterized Formula
 
 **Descripción:** Crea una fórmula de predicción que utiliza parámetros en lugar de constantes y la publica como script de columna de fórmula en la plataforma Almacén de fórmulas.
 
@@ -9629,7 +9569,7 @@ code = obj << Publish Parameterized Formula;
 
 #### Publish Prediction Formula
 
-**Sintaxis:** obj << Publish Prediction Formula
+**Sintaxis:** obj &lt;&lt; Publish Prediction Formula
 
 **Descripción:** Crea una fórmula de predicción y la publica como script de columna de fórmula en la plataforma Almacén de fórmulas.
 
@@ -9649,7 +9589,7 @@ code = obj << Publish Prediction Formula;
 
 #### Publish Standard Error Formula
 
-**Sintaxis:** obj << Publish Standard Error Formula
+**Sintaxis:** obj &lt;&lt; Publish Standard Error Formula
 
 **Descripción:** Crea una fórmula de error estándar y la publica como script de columna de fórmula en la plataforma Almacén de fórmulas.
 
@@ -9669,7 +9609,7 @@ code = obj << Publish Standard Error Formula;
 
 #### Residuals
 
-**Sintaxis:** obj << Residuals
+**Sintaxis:** obj &lt;&lt; Residuals
 
 **Descripción:** Guarda una nueva columna en la tabla de datos. La columna nueva contiene los valores residuales para el modelo ajustado. Hold down the shift key to enter suffix.
 
@@ -9690,7 +9630,7 @@ obj << Residuals;
 
 #### Save Coding Table
 
-**Sintaxis:** obj << Save Coding Table
+**Sintaxis:** obj &lt;&lt; Save Coding Table
 
 **Descripción:** Crea una tabla de datos nueva que contiene la codificación JMP para todos los parámetros del modelo. La última columna muestra los valores de la variable de respuesta.
 
@@ -9711,7 +9651,7 @@ obj << Save Coding Table;
 
 #### Scaled Estimates
 
-**Sintaxis:** obj << Scaled Estimates( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Scaled Estimates( state=0|1 )
 
 **Descripción:** Muestra u oculta las estimaciones de los parámetros correspondientes a los factores que se escalan para que tengan una media de cero y un rango de dos.
 
@@ -9735,7 +9675,7 @@ obj << Scaled Estimates( 1 );
 
 #### Sequential Tests
 
-**Sintaxis:** obj << Sequential Tests( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Sequential Tests( state=0|1 )
 
 **Descripción:** Muestra u oculta el informe Pruebas secuenciales (tipo 1), que contiene las sumas de cuadrados a medida que se añaden efectos al modelo secuencialmente.
 
@@ -9757,7 +9697,7 @@ obj << Sequential Tests( 1 );
 
 #### Show All Confidence Intervals
 
-**Sintaxis:** obj << Show All Confidence Intervals( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Show All Confidence Intervals( state=0|1 )
 
 **Descripción:** Muestra u oculta intervalos de confianza para las estimaciones de los parámetros y las estimaciones de las medias de mínimos cuadrados.
 
@@ -9779,7 +9719,7 @@ obj << Show All Confidence Intervals( 1 );
 
 #### Show Prediction Expression
 
-**Sintaxis:** obj << Show Prediction Expression( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Show Prediction Expression( state=0|1 )
 
 **Descripción:** Muestra u oculta el informe Expresión de predicción, que contiene la ecuación para el modelo estimado.
 
@@ -9801,7 +9741,7 @@ obj << Show Prediction Expression( 1 );
 
 #### Show Sqrt Variance Component
 
-**Sintaxis:** obj << Show Sqrt Variance Component( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Show Sqrt Variance Component( state=0|1 )
 
 **Descripción:** Muestra u oculta la columna Componente de varianza de sqrt en el informe Estimaciones de componentes de varianza por REML.
 
@@ -9822,7 +9762,7 @@ obj << Show Sqrt Variance Component( 1 );
 
 #### Show VIF
 
-**Sintaxis:** obj << Show VIF( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Show VIF( state=0|1 )
 
 **Descripción:** Muestra u oculta los valores del factor de inflación de la varianza (VIF) en el informe Estimaciones de los parámetros.
 
@@ -9844,7 +9784,7 @@ obj << Show VIF( 1 );
 
 #### Sorted Estimates
 
-**Sintaxis:** obj << Sorted Estimates( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Sorted Estimates( state=0|1 )
 
 **Descripción:** Muestra u oculta el informe Estimaciones de los parámetros ordenados, que puede ser útil en situaciones de cribado. Este informe contiene las estimaciones de los parámetros ordenados por el valor absoluto de la razón t de cada estimación.
 
@@ -9866,7 +9806,7 @@ obj << Sorted Estimates( 1 );
 
 #### Std Error of Individual
 
-**Sintaxis:** obj << Std Error of Individual
+**Sintaxis:** obj &lt;&lt; Std Error of Individual
 
 **Descripción:** Guarda una nueva columna en la tabla de datos. La columna nueva contiene el error estándar de un valor predicho individual. Se utiliza para calcular el intervalo de confianza individual. Hold down the shift key to enter suffix.
 
@@ -9887,7 +9827,7 @@ obj << Std Error of Individual;
 
 #### Std Error of Predicted
 
-**Sintaxis:** obj << Std Error of Predicted
+**Sintaxis:** obj &lt;&lt; Std Error of Predicted
 
 **Descripción:** Guarda una nueva columna en la tabla de datos. La columna nueva contiene el error estándar de los valores predichos. Se utiliza para calcular el intervalo de confianza de la media. Hold down the shift key to enter suffix.
 
@@ -9908,7 +9848,7 @@ obj << Std Error of Predicted;
 
 #### Std Error of Residual
 
-**Sintaxis:** obj << Std Error of Residual
+**Sintaxis:** obj &lt;&lt; Std Error of Residual
 
 **Descripción:** Guarda una nueva columna en la tabla de datos. La columna nueva contiene el error estándar de los valores residuales. Se utiliza para calcular los residuos estudentizados. Hold down the shift key to enter suffix.
 
@@ -9929,7 +9869,7 @@ obj << Std Error of Residual;
 
 #### StdErr Pred Formula
 
-**Sintaxis:** obj << StdErr Pred Formula
+**Sintaxis:** obj &lt;&lt; StdErr Pred Formula
 
 **Descripción:** Guarda una nueva columna de fórmulas en la tabla de datos. La columna nueva contiene la fórmula del error estándar de los valores predichos como función de los regresores. Hold down the shift key to enter suffix.
 
@@ -9950,7 +9890,7 @@ obj << StdErr Pred Formula;
 
 #### Studentized Residuals
 
-**Sintaxis:** obj << Studentized Residuals
+**Sintaxis:** obj &lt;&lt; Studentized Residuals
 
 **Descripción:** Guarda una nueva columna en la tabla de datos. La columna nueva contiene el residuo estudentizado, que es el residuo dividido por su error estándar. Hold down the shift key to enter suffix.
 
@@ -9971,7 +9911,7 @@ obj << Studentized Residuals;
 
 #### Summary of Fit
 
-**Sintaxis:** obj << Summary of Fit( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Summary of Fit( state=0|1 )
 
 **Descripción:** Muestra u oculta un informe que contiene un resumen de los estadísticos de ajuste del modelo.
 
@@ -9993,7 +9933,7 @@ obj << Summary of Fit( 1 );
 
 #### Surface Profiler
 
-**Sintaxis:** obj << Surface Profiler( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Surface Profiler( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico de superficie tridimensional de la superficie de respuesta.
 
@@ -10017,7 +9957,7 @@ obj << Surface Profiler( 1 );
 
 #### Action
 
-**Sintaxis:** obj << Action
+**Sintaxis:** obj &lt;&lt; Action
 
 **Descripción:** Trampa multiuso dentro de una plataforma para insertar expresiones que se desean evaluar. Temporalmente establece los contextos de cuadros de visualización y tablas de datos en la plataforma.
 
@@ -10035,7 +9975,7 @@ dt << Bivariate(
 
 #### Automatic Recalc
 
-**Sintaxis:** obj << Automatic Recalc( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Descripción:** Rehace automáticamente el análisis para modificaciones de datos y de exclusión. Si está activada la opción Recálculo automático, le recomendamos que utilice los comandos Wait(0) para asegurarse de que las modificaciones de datos y de exclusión surtan efecto antes del recálculo.
 
@@ -10056,7 +9996,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 #### Broadcast
 
-**Sintaxis:** obj << Broadcast(message)
+**Sintaxis:** obj &lt;&lt; Broadcast(message)
 
 **Descripción:** Difunde un mensaje a una plataforma. Si los resultados devueltos de objetos individuales son tablas, se concatenan si es posible y el formato final es idéntico al resultado de la opción Guardar tabla combinada en un cuadro de tabla o al resultado de la opción Concatenar mediante una columna de origen. Los demás resultados se almacenan en una lista y se devuelven.
 
@@ -10076,7 +10016,7 @@ objs[1] << Broadcast( Save Summaries );
 
 #### Column Switcher
 
-**Sintaxis:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Sintaxis:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Descripción:** Añade un panel de control para cambiar las variables de la plataforma
 
@@ -10094,7 +10034,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 #### Copy ByGroup Script
 
-**Sintaxis:** obj << Copy ByGroup Script
+**Sintaxis:** obj &lt;&lt; Copy ByGroup Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -10120,7 +10060,7 @@ obj[1] << Copy ByGroup Script;
 
 #### Copy Script
 
-**Sintaxis:** obj << Copy Script
+**Sintaxis:** obj &lt;&lt; Copy Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -10140,7 +10080,7 @@ obj << Copy Script;
 
 #### Data Table Window
 
-**Sintaxis:** obj << Data Table Window
+**Sintaxis:** obj &lt;&lt; Data Table Window
 
 **Descripción:** Mueve al frente la ventana de la tabla de datos que se utiliza en este análisis.
 
@@ -10160,7 +10100,7 @@ obj << Data Table Window;
 
 #### Get By Levels
 
-**Sintaxis:** obj << Get By Levels
+**Sintaxis:** obj &lt;&lt; Get By Levels
 
 **Descripción:** Devuelve un arreglo asociativo que asigna las columnas Por grupo a sus valores.
 
@@ -10177,7 +10117,7 @@ biv << Get By Levels;
 
 #### Get ByGroup Script
 
-**Sintaxis:** obj << Get ByGroup Script
+**Sintaxis:** obj &lt;&lt; Get ByGroup Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -10204,7 +10144,7 @@ Show( t );
 
 #### Get Container
 
-**Sintaxis:** obj << Get Container
+**Sintaxis:** obj &lt;&lt; Get Container
 
 **Descripción:** Devuelve una referencia al cuadro contenedor que incluye el contenido del objeto.
 
@@ -10256,7 +10196,7 @@ New Window( "platform boxes",
 
 #### Get Data Table
 
-**Sintaxis:** obj << Get Data Table
+**Sintaxis:** obj &lt;&lt; Get Data Table
 
 **Descripción:** Devuelve una referencia a la tabla de datos.
 
@@ -10277,7 +10217,7 @@ Show( N Rows( t ) );
 
 #### Get Group Platform
 
-**Sintaxis:** obj << Get Group Platform
+**Sintaxis:** obj &lt;&lt; Get Group Platform
 
 **Descripción:** Devuelve el objeto Plataforma grupal si esta plataforma forma parte de un grupo. De lo contrario, devuelve Empty().
 
@@ -10294,7 +10234,7 @@ group << Layout( "Arrange in Tabs" );
 
 #### Get Script
 
-**Sintaxis:** obj << Get Script
+**Sintaxis:** obj &lt;&lt; Get Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -10315,7 +10255,7 @@ Show( t );
 
 #### Get Script With Data Table
 
-**Sintaxis:** obj << Get Script With Data Table
+**Sintaxis:** obj &lt;&lt; Get Script With Data Table
 
 **Descripción:** Crea un script (JSL) para generar este análisis haciendo referencia específica a esta tabla de datos y lo devuelve en forma de expresión.
 
@@ -10336,7 +10276,7 @@ Show( t );
 
 #### Get Timing
 
-**Sintaxis:** obj << Get Timing
+**Sintaxis:** obj &lt;&lt; Get Timing
 
 **Descripción:** Determina el tiempo de inicio de una plataforma.
 
@@ -10357,7 +10297,7 @@ Show( t );
 
 #### Get Web Support
 
-**Sintaxis:** obj << Get Web Support
+**Sintaxis:** obj &lt;&lt; Get Web Support
 
 **Descripción:** Devuelve un número que indica el nivel de compatibilidad del HTML interactivo para el objeto de visualización. 1 significa que algunos o todos los elementos son compatibles. 0 significa que no existe compatibilidad.
 
@@ -10373,7 +10313,7 @@ Show( s );
 
 #### Get Where Expr
 
-**Sintaxis:** obj << Get Where Expr
+**Sintaxis:** obj &lt;&lt; Get Where Expr
 
 **Descripción:** Devuelve la expresión Where para el subconjunto de datos, si la plataforma se inició con By() o Where(). De lo contrario, devuelve Empty().
 
@@ -10410,7 +10350,7 @@ dt << Bivariate(
 
 #### Local Data Filter
 
-**Sintaxis:** obj << Local Data Filter
+**Sintaxis:** obj &lt;&lt; Local Data Filter
 
 **Descripción:** Para filtrar los datos según grupos o rangos determinados, pero locales para esta plataforma.
 
@@ -10449,7 +10389,7 @@ obj << Apply Preset( preset );
 
 #### Paste Local Data Filter
 
-**Sintaxis:** obj << Paste Local Data Filter
+**Sintaxis:** obj &lt;&lt; Paste Local Data Filter
 
 **Descripción:** Se aplica el filtro de datos locales del portapapeles al informe actual.
 
@@ -10470,7 +10410,7 @@ dist2 << Paste Local Data Filter;
 
 #### Redo Analysis
 
-**Sintaxis:** obj << Redo Analysis
+**Sintaxis:** obj &lt;&lt; Redo Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -10490,7 +10430,7 @@ obj << Redo Analysis;
 
 #### Redo ByGroup Analysis
 
-**Sintaxis:** obj << Redo ByGroup Analysis
+**Sintaxis:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -10516,7 +10456,7 @@ obj[1] << Redo ByGroup Analysis;
 
 #### Relaunch Analysis
 
-**Sintaxis:** obj << Relaunch Analysis
+**Sintaxis:** obj &lt;&lt; Relaunch Analysis
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -10536,7 +10476,7 @@ obj << Relaunch Analysis;
 
 #### Relaunch ByGroup
 
-**Sintaxis:** obj << Relaunch ByGroup
+**Sintaxis:** obj &lt;&lt; Relaunch ByGroup
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -10562,7 +10502,7 @@ obj[1] << Relaunch ByGroup;
 
 #### Remove Column Switcher
 
-**Sintaxis:** obj << Remove Column Switcher
+**Sintaxis:** obj &lt;&lt; Remove Column Switcher
 
 **Descripción:** Quita el Cambiador de columnas más reciente que se haya agregado a la plataforma.
 
@@ -10582,7 +10522,7 @@ obj << Remove Column Switcher;
 
 #### Remove Local Data Filter
 
-**Sintaxis:** obj << Remove Local Data Filter
+**Sintaxis:** obj &lt;&lt; Remove Local Data Filter
 
 **Descripción:** Si se ha creado un filtro de datos local, esto lo eliminará y restaurará la plataforma para usar todos los datos de la tabla de datos directamente.
 
@@ -10621,9 +10561,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 #### Report
 
-**Sintaxis:** obj << Report;
-
-Report( obj )
+**Sintaxis:** obj &lt;&lt; Report;Report( obj )
 
 **Descripción:** Devuelve una referencia al objeto informe.
 
@@ -10645,7 +10583,7 @@ Show( t );
 
 #### Report View
 
-**Sintaxis:** obj << Report View( "Completa"|"Resumen" )
+**Sintaxis:** obj &lt;&lt; Report View( "Completa"|"Resumen" )
 
 **Descripción:** La vista del informe determina el nivel de detalle visible en el informe de una plataforma. Full muestra todos los detalles, mientras que Summary solo muestra el contenido seleccionado, con independencia de la plataforma. Para el comportamiento personalizado, los cuadros de visualización admiten un mensaje <<Set Summary Behavior.
 
@@ -10665,7 +10603,7 @@ obj << Report View( "Summary" );
 
 #### Save ByGroup Script to Data Table
 
-**Sintaxis:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis, y lo guarda como propiedad de tabla en la tabla de datos. Puede especificar un nombre para el script. La opción Append Suffix añade un sufijo numérico al nombre del script, que diferencia el script de un script existente que tenga el mismo nombre. La opción Prompt solicita al usuario que especifique un nombre de script. La opción Replace reemplaza un script existente que tenga el mismo nombre.
 
@@ -10691,7 +10629,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 #### Save ByGroup Script to Journal
 
-**Sintaxis:** obj << Save ByGroup Script to Journal
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -10717,7 +10655,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 #### Save ByGroup Script to Script Window
 
-**Sintaxis:** obj << Save ByGroup Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -10743,7 +10681,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 #### Save Script for All Objects
 
-**Sintaxis:** obj << Save Script for All Objects
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects
 
 **Descripción:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -10763,7 +10701,7 @@ obj << Save Script for All Objects;
 
 #### Save Script for All Objects To Data Table
 
-**Sintaxis:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descripción:** Guarda un script para todos los objetos de informe en la tabla de datos actual. Esta opción es útil cuando tiene varios informes en la ventana. El script recibe el nombre de la primera plataforma a menos que especifique el nombre del script entre comillas.
 
@@ -10813,7 +10751,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 #### Save Script to Data Table
 
-**Sintaxis:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis y lo guarda en forma de propiedad de tabla en la tabla de datos.
 
@@ -10833,7 +10771,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 #### Save Script to Journal
 
-**Sintaxis:** obj << Save Script to Journal
+**Sintaxis:** obj &lt;&lt; Save Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -10853,7 +10791,7 @@ obj << Save Script to Journal;
 
 #### Save Script to Report
 
-**Sintaxis:** obj << Save Script to Report
+**Sintaxis:** obj &lt;&lt; Save Script to Report
 
 **Descripción:** Crea un script JSL para generar este análisis y lo muestra en el propio informe. Resulta útil para conservar un registro impreso de lo que se ha hecho.
 
@@ -10873,7 +10811,7 @@ obj << Save Script to Report;
 
 #### Save Script to Script Window
 
-**Sintaxis:** obj << Save Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -10958,7 +10896,7 @@ dt << Distribution(
 
 #### Sync to Data Table Changes
 
-**Sintaxis:** obj << Sync to Data Table Changes
+**Sintaxis:** obj &lt;&lt; Sync to Data Table Changes
 
 **Descripción:** Realiza una sincronización con las modificaciones de datos y de exclusión que se hayan realizado.
 
@@ -10975,7 +10913,7 @@ dist << Sync To Data Table Changes;
 
 #### Title
 
-**Sintaxis:** obj << Title( "new title" )
+**Sintaxis:** obj &lt;&lt; Title( "new title" )
 
 **Descripción:** Establece el título de la plataforma.
 
@@ -10995,7 +10933,7 @@ obj << Title( "My Platform" );
 
 #### Top Report
 
-**Sintaxis:** obj << Top Report
+**Sintaxis:** obj &lt;&lt; Top Report
 
 **Descripción:** Devuelve una referencia al nodo raíz del informe.
 
@@ -11017,7 +10955,7 @@ Show( t );
 
 #### Transform Column
 
-**Sintaxis:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Sintaxis:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Descripción:** Crea una columna de transformación en el contexto local de un objeto (una plataforma por lo general). La columna de transformación solo está activa mientras esté en uso la plataforma.
 
@@ -11038,7 +10976,7 @@ dt << Distribution(
 
 #### View Web XML
 
-**Sintaxis:** obj << View Web XML
+**Sintaxis:** obj &lt;&lt; View Web XML
 
 **Descripción:** Devuelve el código XML que se utiliza para crear el informe HTML interactivo.
 
@@ -11053,9 +10991,7 @@ xml = obj << View Web XML;
 
 #### Window View
 
-**Sintaxis:** obj = Least Squares Personality(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Least Squares Personality(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Establece el tipo de ventana que se creará para el informe. De forma predeterminada, se creará una ventana de informe Visible. Una ventana Invisible no aparecerá en pantalla, pero se puede detectar mediante funciones como Window(). Una ventana Private responde a la mayoría de los mensajes de ventana pero no es detectable y se debe abordar a través del objeto de informe.
 
@@ -11078,7 +11014,7 @@ New Window( "Bivariate Equation",
 
 #### Apply Preset
 
-**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descripción:** Aplica al objeto un preajuste creado previamente, actualizando las opciones y personalizaciones para que coincidan con la configuración guardada.
 
@@ -11104,7 +11040,7 @@ obj << (2 << Apply Preset( preset ));
 
 #### Contour Profiler
 
-**Sintaxis:** obj << Contour Profiler( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Contour Profiler( state=0|1 )
 
 **Descripción:** Muestra u oculta el perfilador de contorno, que representa gráficamente los contornos de las respuestas de dos factores a la vez.
 
@@ -11125,7 +11061,7 @@ obj << Contour Profiler( 1 );
 
 #### Indiv Confidence Interval
 
-**Sintaxis:** obj << Indiv Confidence Interval
+**Sintaxis:** obj &lt;&lt; Indiv Confidence Interval
 
 **Descripción:** Guarda nuevas columnas en la tabla de datos. Las columnas nuevas contienen límites de confianza para valores de respuesta individuales.
 
@@ -11145,7 +11081,7 @@ obj << Indiv Confidence Interval;
 
 #### Mean Confidence Interval
 
-**Sintaxis:** obj << Mean Confidence Interval
+**Sintaxis:** obj &lt;&lt; Mean Confidence Interval
 
 **Descripción:** Guarda nuevas columnas en la tabla de datos. Las columnas nuevas contienen los límites de un intervalo de confianza para la media de predicción.
 
@@ -11165,7 +11101,7 @@ obj << Mean Confidence Interval;
 
 #### Model Dialog
 
-**Sintaxis:** obj << Model Dialog
+**Sintaxis:** obj &lt;&lt; Model Dialog
 
 **Descripción:** Muestra la ventana de inicio Ajuste del modelo completada para el análisis actual.
 
@@ -11210,7 +11146,7 @@ preset = obj << (1 << New Preset);
 
 #### Plot Actual by Predicted
 
-**Sintaxis:** obj << Plot Actual by Predicted( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Plot Actual by Predicted( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico de diagnóstico con los valores reales en el eje vertical y los valores predichos en el eje horizontal. Opción activada de forma predeterminada.
 
@@ -11231,7 +11167,7 @@ obj << Plot Actual by Predicted( 1 );
 
 #### Plot Studentized Residual by Predicted
 
-**Sintaxis:** obj << Plot Studentized Residual by Predicted( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Plot Studentized Residual by Predicted( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico de diagnóstico con los residuos estudentizados en el eje vertical y los valores predichos en el eje horizontal.
 
@@ -11251,7 +11187,7 @@ obj << Plot Studentized Residual by Predicted( 1 );
 
 #### Plot Studentized Residual by Row
 
-**Sintaxis:** obj << Plot Studentized Residual by Row( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Plot Studentized Residual by Row( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico de diagnóstico con los residuos estudentizados en el eje vertical y el número de fila en el eje horizontal.
 
@@ -11271,7 +11207,7 @@ obj << Plot Studentized Residual by Row( 1 );
 
 #### Prediction Formula
 
-**Sintaxis:** obj << Prediction Formula
+**Sintaxis:** obj &lt;&lt; Prediction Formula
 
 **Descripción:** Guarda una nueva columna de fórmulas en la tabla de datos. La nueva columna contiene los valores predichos de la media, calculados por el modelo especificado.
 
@@ -11291,7 +11227,7 @@ obj << Prediction Formula;
 
 #### Profiler
 
-**Sintaxis:** obj << Profiler( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Profiler( state=0|1 )
 
 **Descripción:** Muestra u oculta el perfilador de predicción, que se utiliza para explorar gráficamente la ecuación de predicción seccionándola factor por factor. El perfilador de predicción contiene funciones de optimización.
 
@@ -11312,7 +11248,7 @@ obj << Profiler( 1 );
 
 #### Residuals
 
-**Sintaxis:** obj << Residuals
+**Sintaxis:** obj &lt;&lt; Residuals
 
 **Descripción:** Guarda una nueva columna en la tabla de datos. La columna nueva contiene los residuos, que son los valores de respuesta observados menos los valores predichos.
 
@@ -11332,7 +11268,7 @@ obj << Residuals;
 
 #### Std Dev Formula
 
-**Sintaxis:** obj << Std Dev Formula
+**Sintaxis:** obj &lt;&lt; Std Dev Formula
 
 **Descripción:** Guarda una nueva columna de fórmulas en la tabla de datos. La nueva columna contiene los valores predichos de la desviación estándar, calculados por el modelo especificado.
 
@@ -11352,7 +11288,7 @@ obj << Std Dev Formula;
 
 #### Std Error of Individual
 
-**Sintaxis:** obj << Std Error of Individual
+**Sintaxis:** obj &lt;&lt; Std Error of Individual
 
 **Descripción:** Guarda una nueva columna en la tabla de datos. La columna nueva contiene los errores estándar de los valores predichos individuales.
 
@@ -11372,7 +11308,7 @@ obj << Std Error of Individual;
 
 #### Std Error of Predicted
 
-**Sintaxis:** obj << Std Error of Predicted
+**Sintaxis:** obj &lt;&lt; Std Error of Predicted
 
 **Descripción:** Guarda una nueva columna en la tabla de datos. La columna nueva contiene los errores estándar de los valores predichos.
 
@@ -11392,7 +11328,7 @@ obj << Std Error of Predicted;
 
 #### Studentized Residuals
 
-**Sintaxis:** obj << Studentized Residuals
+**Sintaxis:** obj &lt;&lt; Studentized Residuals
 
 **Descripción:** Guarda una nueva columna en la tabla de datos. Los valores de la columna nueva son los residuos divididos por su error estándar.
 
@@ -11412,7 +11348,7 @@ obj << Studentized Residuals;
 
 #### Surface Profiler
 
-**Sintaxis:** obj << Surface Profiler( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Surface Profiler( state=0|1 )
 
 **Descripción:** Muestra u oculta los gráficos de superficie interactivos para la respuesta y la desviación estándar de la respuesta.
 
@@ -11433,7 +11369,7 @@ obj << Surface Profiler( 1 );
 
 #### Variance Formula
 
-**Sintaxis:** obj << Variance Formula
+**Sintaxis:** obj &lt;&lt; Variance Formula
 
 **Descripción:** Guarda una nueva columna de fórmulas en la tabla de datos. La nueva columna contiene los valores predichos de la varianza, calculados por el modelo especificado.
 
@@ -11455,7 +11391,7 @@ obj << Variance Formula;
 
 #### Action
 
-**Sintaxis:** obj << Action
+**Sintaxis:** obj &lt;&lt; Action
 
 **Descripción:** Trampa multiuso dentro de una plataforma para insertar expresiones que se desean evaluar. Temporalmente establece los contextos de cuadros de visualización y tablas de datos en la plataforma.
 
@@ -11473,7 +11409,7 @@ dt << Bivariate(
 
 #### Automatic Recalc
 
-**Sintaxis:** obj << Automatic Recalc( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Descripción:** Rehace automáticamente el análisis para modificaciones de datos y de exclusión. Si está activada la opción Recálculo automático, le recomendamos que utilice los comandos Wait(0) para asegurarse de que las modificaciones de datos y de exclusión surtan efecto antes del recálculo.
 
@@ -11495,7 +11431,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 #### Broadcast
 
-**Sintaxis:** obj << Broadcast(message)
+**Sintaxis:** obj &lt;&lt; Broadcast(message)
 
 **Descripción:** Difunde un mensaje a una plataforma. Si los resultados devueltos de objetos individuales son tablas, se concatenan si es posible y el formato final es idéntico al resultado de la opción Guardar tabla combinada en un cuadro de tabla o al resultado de la opción Concatenar mediante una columna de origen. Los demás resultados se almacenan en una lista y se devuelven.
 
@@ -11515,7 +11451,7 @@ objs[1] << Broadcast( Save Summaries );
 
 #### Column Switcher
 
-**Sintaxis:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Sintaxis:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Descripción:** Añade un panel de control para cambiar las variables de la plataforma
 
@@ -11533,7 +11469,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 #### Copy ByGroup Script
 
-**Sintaxis:** obj << Copy ByGroup Script
+**Sintaxis:** obj &lt;&lt; Copy ByGroup Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -11560,7 +11496,7 @@ obj[1] << Copy ByGroup Script;
 
 #### Copy Script
 
-**Sintaxis:** obj << Copy Script
+**Sintaxis:** obj &lt;&lt; Copy Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -11581,7 +11517,7 @@ obj << Copy Script;
 
 #### Data Table Window
 
-**Sintaxis:** obj << Data Table Window
+**Sintaxis:** obj &lt;&lt; Data Table Window
 
 **Descripción:** Mueve al frente la ventana de la tabla de datos que se utiliza en este análisis.
 
@@ -11602,7 +11538,7 @@ obj << Data Table Window;
 
 #### Get By Levels
 
-**Sintaxis:** obj << Get By Levels
+**Sintaxis:** obj &lt;&lt; Get By Levels
 
 **Descripción:** Devuelve un arreglo asociativo que asigna las columnas Por grupo a sus valores.
 
@@ -11619,7 +11555,7 @@ biv << Get By Levels;
 
 #### Get ByGroup Script
 
-**Sintaxis:** obj << Get ByGroup Script
+**Sintaxis:** obj &lt;&lt; Get ByGroup Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -11647,7 +11583,7 @@ Show( t );
 
 #### Get Container
 
-**Sintaxis:** obj << Get Container
+**Sintaxis:** obj &lt;&lt; Get Container
 
 **Descripción:** Devuelve una referencia al cuadro contenedor que incluye el contenido del objeto.
 
@@ -11700,7 +11636,7 @@ New Window( "platform boxes",
 
 #### Get Data Table
 
-**Sintaxis:** obj << Get Data Table
+**Sintaxis:** obj &lt;&lt; Get Data Table
 
 **Descripción:** Devuelve una referencia a la tabla de datos.
 
@@ -11722,7 +11658,7 @@ Show( N Rows( t ) );
 
 #### Get Group Platform
 
-**Sintaxis:** obj << Get Group Platform
+**Sintaxis:** obj &lt;&lt; Get Group Platform
 
 **Descripción:** Devuelve el objeto Plataforma grupal si esta plataforma forma parte de un grupo. De lo contrario, devuelve Empty().
 
@@ -11739,7 +11675,7 @@ group << Layout( "Arrange in Tabs" );
 
 #### Get Script
 
-**Sintaxis:** obj << Get Script
+**Sintaxis:** obj &lt;&lt; Get Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -11761,7 +11697,7 @@ Show( t );
 
 #### Get Script With Data Table
 
-**Sintaxis:** obj << Get Script With Data Table
+**Sintaxis:** obj &lt;&lt; Get Script With Data Table
 
 **Descripción:** Crea un script (JSL) para generar este análisis haciendo referencia específica a esta tabla de datos y lo devuelve en forma de expresión.
 
@@ -11783,7 +11719,7 @@ Show( t );
 
 #### Get Timing
 
-**Sintaxis:** obj << Get Timing
+**Sintaxis:** obj &lt;&lt; Get Timing
 
 **Descripción:** Determina el tiempo de inicio de una plataforma.
 
@@ -11805,7 +11741,7 @@ Show( t );
 
 #### Get Web Support
 
-**Sintaxis:** obj << Get Web Support
+**Sintaxis:** obj &lt;&lt; Get Web Support
 
 **Descripción:** Devuelve un número que indica el nivel de compatibilidad del HTML interactivo para el objeto de visualización. 1 significa que algunos o todos los elementos son compatibles. 0 significa que no existe compatibilidad.
 
@@ -11821,7 +11757,7 @@ Show( s );
 
 #### Get Where Expr
 
-**Sintaxis:** obj << Get Where Expr
+**Sintaxis:** obj &lt;&lt; Get Where Expr
 
 **Descripción:** Devuelve la expresión Where para el subconjunto de datos, si la plataforma se inició con By() o Where(). De lo contrario, devuelve Empty().
 
@@ -11858,7 +11794,7 @@ dt << Bivariate(
 
 #### Local Data Filter
 
-**Sintaxis:** obj << Local Data Filter
+**Sintaxis:** obj &lt;&lt; Local Data Filter
 
 **Descripción:** Para filtrar los datos según grupos o rangos determinados, pero locales para esta plataforma.
 
@@ -11897,7 +11833,7 @@ obj << Apply Preset( preset );
 
 #### Paste Local Data Filter
 
-**Sintaxis:** obj << Paste Local Data Filter
+**Sintaxis:** obj &lt;&lt; Paste Local Data Filter
 
 **Descripción:** Se aplica el filtro de datos locales del portapapeles al informe actual.
 
@@ -11918,7 +11854,7 @@ dist2 << Paste Local Data Filter;
 
 #### Redo Analysis
 
-**Sintaxis:** obj << Redo Analysis
+**Sintaxis:** obj &lt;&lt; Redo Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -11939,7 +11875,7 @@ obj << Redo Analysis;
 
 #### Redo ByGroup Analysis
 
-**Sintaxis:** obj << Redo ByGroup Analysis
+**Sintaxis:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -11966,7 +11902,7 @@ obj[1] << Redo ByGroup Analysis;
 
 #### Relaunch Analysis
 
-**Sintaxis:** obj << Relaunch Analysis
+**Sintaxis:** obj &lt;&lt; Relaunch Analysis
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -11987,7 +11923,7 @@ obj << Relaunch Analysis;
 
 #### Relaunch ByGroup
 
-**Sintaxis:** obj << Relaunch ByGroup
+**Sintaxis:** obj &lt;&lt; Relaunch ByGroup
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -12014,7 +11950,7 @@ obj[1] << Relaunch ByGroup;
 
 #### Remove Column Switcher
 
-**Sintaxis:** obj << Remove Column Switcher
+**Sintaxis:** obj &lt;&lt; Remove Column Switcher
 
 **Descripción:** Quita el Cambiador de columnas más reciente que se haya agregado a la plataforma.
 
@@ -12034,7 +11970,7 @@ obj << Remove Column Switcher;
 
 #### Remove Local Data Filter
 
-**Sintaxis:** obj << Remove Local Data Filter
+**Sintaxis:** obj &lt;&lt; Remove Local Data Filter
 
 **Descripción:** Si se ha creado un filtro de datos local, esto lo eliminará y restaurará la plataforma para usar todos los datos de la tabla de datos directamente.
 
@@ -12073,9 +12009,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 #### Report
 
-**Sintaxis:** obj << Report;
-
-Report( obj )
+**Sintaxis:** obj &lt;&lt; Report;Report( obj )
 
 **Descripción:** Devuelve una referencia al objeto informe.
 
@@ -12098,7 +12032,7 @@ Show( t );
 
 #### Report View
 
-**Sintaxis:** obj << Report View( "Completa"|"Resumen" )
+**Sintaxis:** obj &lt;&lt; Report View( "Completa"|"Resumen" )
 
 **Descripción:** La vista del informe determina el nivel de detalle visible en el informe de una plataforma. Full muestra todos los detalles, mientras que Summary solo muestra el contenido seleccionado, con independencia de la plataforma. Para el comportamiento personalizado, los cuadros de visualización admiten un mensaje <<Set Summary Behavior.
 
@@ -12119,7 +12053,7 @@ obj << Report View( "Summary" );
 
 #### Save ByGroup Script to Data Table
 
-**Sintaxis:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis, y lo guarda como propiedad de tabla en la tabla de datos. Puede especificar un nombre para el script. La opción Append Suffix añade un sufijo numérico al nombre del script, que diferencia el script de un script existente que tenga el mismo nombre. La opción Prompt solicita al usuario que especifique un nombre de script. La opción Replace reemplaza un script existente que tenga el mismo nombre.
 
@@ -12146,7 +12080,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 #### Save ByGroup Script to Journal
 
-**Sintaxis:** obj << Save ByGroup Script to Journal
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -12173,7 +12107,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 #### Save ByGroup Script to Script Window
 
-**Sintaxis:** obj << Save ByGroup Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -12200,7 +12134,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 #### Save Script for All Objects
 
-**Sintaxis:** obj << Save Script for All Objects
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects
 
 **Descripción:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -12221,7 +12155,7 @@ obj << Save Script for All Objects;
 
 #### Save Script for All Objects To Data Table
 
-**Sintaxis:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descripción:** Guarda un script para todos los objetos de informe en la tabla de datos actual. Esta opción es útil cuando tiene varios informes en la ventana. El script recibe el nombre de la primera plataforma a menos que especifique el nombre del script entre comillas.
 
@@ -12273,7 +12207,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 #### Save Script to Data Table
 
-**Sintaxis:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis y lo guarda en forma de propiedad de tabla en la tabla de datos.
 
@@ -12294,7 +12228,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 #### Save Script to Journal
 
-**Sintaxis:** obj << Save Script to Journal
+**Sintaxis:** obj &lt;&lt; Save Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -12315,7 +12249,7 @@ obj << Save Script to Journal;
 
 #### Save Script to Report
 
-**Sintaxis:** obj << Save Script to Report
+**Sintaxis:** obj &lt;&lt; Save Script to Report
 
 **Descripción:** Crea un script JSL para generar este análisis y lo muestra en el propio informe. Resulta útil para conservar un registro impreso de lo que se ha hecho.
 
@@ -12336,7 +12270,7 @@ obj << Save Script to Report;
 
 #### Save Script to Script Window
 
-**Sintaxis:** obj << Save Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -12422,7 +12356,7 @@ dt << Distribution(
 
 #### Sync to Data Table Changes
 
-**Sintaxis:** obj << Sync to Data Table Changes
+**Sintaxis:** obj &lt;&lt; Sync to Data Table Changes
 
 **Descripción:** Realiza una sincronización con las modificaciones de datos y de exclusión que se hayan realizado.
 
@@ -12439,7 +12373,7 @@ dist << Sync To Data Table Changes;
 
 #### Title
 
-**Sintaxis:** obj << Title( "new title" )
+**Sintaxis:** obj &lt;&lt; Title( "new title" )
 
 **Descripción:** Establece el título de la plataforma.
 
@@ -12460,7 +12394,7 @@ obj << Title( "My Platform" );
 
 #### Top Report
 
-**Sintaxis:** obj << Top Report
+**Sintaxis:** obj &lt;&lt; Top Report
 
 **Descripción:** Devuelve una referencia al nodo raíz del informe.
 
@@ -12483,7 +12417,7 @@ Show( t );
 
 #### Transform Column
 
-**Sintaxis:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Sintaxis:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Descripción:** Crea una columna de transformación en el contexto local de un objeto (una plataforma por lo general). La columna de transformación solo está activa mientras esté en uso la plataforma.
 
@@ -12504,7 +12438,7 @@ dt << Distribution(
 
 #### View Web XML
 
-**Sintaxis:** obj << View Web XML
+**Sintaxis:** obj &lt;&lt; View Web XML
 
 **Descripción:** Devuelve el código XML que se utiliza para crear el informe HTML interactivo.
 
@@ -12519,9 +12453,7 @@ xml = obj << View Web XML;
 
 #### Window View
 
-**Sintaxis:** obj = Prediction Formula(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Prediction Formula(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Establece el tipo de ventana que se creará para el informe. De forma predeterminada, se creará una ventana de informe Visible. Una ventana Invisible no aparecerá en pantalla, pero se puede detectar mediante funciones como Window(). Una ventana Private responde a la mayoría de los mensajes de ventana pero no es detectable y se debe abordar a través del objeto de informe.
 
@@ -12565,7 +12497,7 @@ obj = dt << Fit Model(
 
 #### Contour Profiler
 
-**Sintaxis:** obj << Contour Profiler( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Contour Profiler( state=0|1 )
 
 **Descripción:** Muestra u oculta el perfilador de contorno, que representa gráficamente los contornos de las respuestas de dos factores a la vez.
 
@@ -12586,7 +12518,7 @@ obj << Contour Profiler( 1 );
 
 #### Model Dialog
 
-**Sintaxis:** obj << Model Dialog
+**Sintaxis:** obj &lt;&lt; Model Dialog
 
 **Descripción:** Muestra la ventana de inicio Ajuste del modelo completada para el análisis actual.
 
@@ -12606,7 +12538,7 @@ obj << Model Dialog;
 
 #### Profiler
 
-**Sintaxis:** obj << Profiler( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Profiler( state=0|1 )
 
 **Descripción:** Muestra u oculta el perfilador de predicción, que se utiliza para explorar gráficamente la ecuación de predicción seccionándola factor por factor. El perfilador de predicción contiene funciones de optimización.
 
@@ -12627,7 +12559,7 @@ obj << Profiler( 1 );
 
 #### Surface Profiler
 
-**Sintaxis:** obj << Surface Profiler( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Surface Profiler( state=0|1 )
 
 **Descripción:** Muestra u oculta los gráficos de superficie interactivos para la respuesta y la desviación estándar de la respuesta.
 
@@ -12650,7 +12582,7 @@ obj << Surface Profiler( 1 );
 
 #### Action
 
-**Sintaxis:** obj << Action
+**Sintaxis:** obj &lt;&lt; Action
 
 **Descripción:** Trampa multiuso dentro de una plataforma para insertar expresiones que se desean evaluar. Temporalmente establece los contextos de cuadros de visualización y tablas de datos en la plataforma.
 
@@ -12668,7 +12600,7 @@ dt << Bivariate(
 
 #### Apply Preset
 
-**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descripción:** Aplica al objeto un preajuste creado previamente, actualizando las opciones y personalizaciones para que coincidan con la configuración guardada.
 
@@ -12715,7 +12647,7 @@ obj2 << Apply Preset( preset );
 
 #### Column Switcher
 
-**Sintaxis:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Sintaxis:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Descripción:** Añade un panel de control para cambiar las variables de la plataforma
 
@@ -12733,7 +12665,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 #### Copy Script
 
-**Sintaxis:** obj << Copy Script
+**Sintaxis:** obj &lt;&lt; Copy Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -12753,7 +12685,7 @@ obj << Copy Script;
 
 #### Data Table Window
 
-**Sintaxis:** obj << Data Table Window
+**Sintaxis:** obj &lt;&lt; Data Table Window
 
 **Descripción:** Mueve al frente la ventana de la tabla de datos que se utiliza en este análisis.
 
@@ -12773,7 +12705,7 @@ obj << Data Table Window;
 
 #### Get By Levels
 
-**Sintaxis:** obj << Get By Levels
+**Sintaxis:** obj &lt;&lt; Get By Levels
 
 **Descripción:** Devuelve un arreglo asociativo que asigna las columnas Por grupo a sus valores.
 
@@ -12790,7 +12722,7 @@ biv << Get By Levels;
 
 #### Get Container
 
-**Sintaxis:** obj << Get Container
+**Sintaxis:** obj &lt;&lt; Get Container
 
 **Descripción:** Devuelve una referencia al cuadro contenedor que incluye el contenido del objeto.
 
@@ -12842,7 +12774,7 @@ New Window( "platform boxes",
 
 #### Get Data Table
 
-**Sintaxis:** obj << Get Data Table
+**Sintaxis:** obj &lt;&lt; Get Data Table
 
 **Descripción:** Devuelve una referencia a la tabla de datos.
 
@@ -12863,7 +12795,7 @@ Show( N Rows( t ) );
 
 #### Get Script
 
-**Sintaxis:** obj << Get Script
+**Sintaxis:** obj &lt;&lt; Get Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -12884,7 +12816,7 @@ Show( t );
 
 #### Get Script With Data Table
 
-**Sintaxis:** obj << Get Script With Data Table
+**Sintaxis:** obj &lt;&lt; Get Script With Data Table
 
 **Descripción:** Crea un script (JSL) para generar este análisis haciendo referencia específica a esta tabla de datos y lo devuelve en forma de expresión.
 
@@ -12905,7 +12837,7 @@ Show( t );
 
 #### Get Timing
 
-**Sintaxis:** obj << Get Timing
+**Sintaxis:** obj &lt;&lt; Get Timing
 
 **Descripción:** Determina el tiempo de inicio de una plataforma.
 
@@ -12926,7 +12858,7 @@ Show( t );
 
 #### Get Web Support
 
-**Sintaxis:** obj << Get Web Support
+**Sintaxis:** obj &lt;&lt; Get Web Support
 
 **Descripción:** Devuelve un número que indica el nivel de compatibilidad del HTML interactivo para el objeto de visualización. 1 significa que algunos o todos los elementos son compatibles. 0 significa que no existe compatibilidad.
 
@@ -12942,7 +12874,7 @@ Show( s );
 
 #### Get Where Expr
 
-**Sintaxis:** obj << Get Where Expr
+**Sintaxis:** obj &lt;&lt; Get Where Expr
 
 **Descripción:** Devuelve la expresión Where para el subconjunto de datos, si la plataforma se inició con By() o Where(). De lo contrario, devuelve Empty().
 
@@ -12979,7 +12911,7 @@ dt << Bivariate(
 
 #### Local Data Filter
 
-**Sintaxis:** obj << Local Data Filter
+**Sintaxis:** obj &lt;&lt; Local Data Filter
 
 **Descripción:** Para filtrar los datos según grupos o rangos determinados, pero locales para esta plataforma.
 
@@ -13035,7 +12967,7 @@ preset = obj << New Preset();
 
 #### Paste Local Data Filter
 
-**Sintaxis:** obj << Paste Local Data Filter
+**Sintaxis:** obj &lt;&lt; Paste Local Data Filter
 
 **Descripción:** Se aplica el filtro de datos locales del portapapeles al informe actual.
 
@@ -13056,7 +12988,7 @@ dist2 << Paste Local Data Filter;
 
 #### Redo Analysis
 
-**Sintaxis:** obj << Redo Analysis
+**Sintaxis:** obj &lt;&lt; Redo Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -13076,7 +13008,7 @@ obj << Redo Analysis;
 
 #### Relaunch Analysis
 
-**Sintaxis:** obj << Relaunch Analysis
+**Sintaxis:** obj &lt;&lt; Relaunch Analysis
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -13096,7 +13028,7 @@ obj << Relaunch Analysis;
 
 #### Remove Column Switcher
 
-**Sintaxis:** obj << Remove Column Switcher
+**Sintaxis:** obj &lt;&lt; Remove Column Switcher
 
 **Descripción:** Quita el Cambiador de columnas más reciente que se haya agregado a la plataforma.
 
@@ -13116,7 +13048,7 @@ obj << Remove Column Switcher;
 
 #### Remove Local Data Filter
 
-**Sintaxis:** obj << Remove Local Data Filter
+**Sintaxis:** obj &lt;&lt; Remove Local Data Filter
 
 **Descripción:** Si se ha creado un filtro de datos local, esto lo eliminará y restaurará la plataforma para usar todos los datos de la tabla de datos directamente.
 
@@ -13155,9 +13087,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 #### Report
 
-**Sintaxis:** obj << Report;
-
-Report( obj )
+**Sintaxis:** obj &lt;&lt; Report;Report( obj )
 
 **Descripción:** Devuelve una referencia al objeto informe.
 
@@ -13179,7 +13109,7 @@ Show( t );
 
 #### Report View
 
-**Sintaxis:** obj << Report View( "Completa"|"Resumen" )
+**Sintaxis:** obj &lt;&lt; Report View( "Completa"|"Resumen" )
 
 **Descripción:** La vista del informe determina el nivel de detalle visible en el informe de una plataforma. Full muestra todos los detalles, mientras que Summary solo muestra el contenido seleccionado, con independencia de la plataforma. Para el comportamiento personalizado, los cuadros de visualización admiten un mensaje <<Set Summary Behavior.
 
@@ -13199,7 +13129,7 @@ obj << Report View( "Summary" );
 
 #### Save Script for All Objects
 
-**Sintaxis:** obj << Save Script for All Objects
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects
 
 **Descripción:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -13219,7 +13149,7 @@ obj << Save Script for All Objects;
 
 #### Save Script for All Objects To Data Table
 
-**Sintaxis:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descripción:** Guarda un script para todos los objetos de informe en la tabla de datos actual. Esta opción es útil cuando tiene varios informes en la ventana. El script recibe el nombre de la primera plataforma a menos que especifique el nombre del script entre comillas.
 
@@ -13269,7 +13199,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 #### Save Script to Data Table
 
-**Sintaxis:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis y lo guarda en forma de propiedad de tabla en la tabla de datos.
 
@@ -13289,7 +13219,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 #### Save Script to Journal
 
-**Sintaxis:** obj << Save Script to Journal
+**Sintaxis:** obj &lt;&lt; Save Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -13309,7 +13239,7 @@ obj << Save Script to Journal;
 
 #### Save Script to Report
 
-**Sintaxis:** obj << Save Script to Report
+**Sintaxis:** obj &lt;&lt; Save Script to Report
 
 **Descripción:** Crea un script JSL para generar este análisis y lo muestra en el propio informe. Resulta útil para conservar un registro impreso de lo que se ha hecho.
 
@@ -13329,7 +13259,7 @@ obj << Save Script to Report;
 
 #### Save Script to Script Window
 
-**Sintaxis:** obj << Save Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -13414,7 +13344,7 @@ dt << Distribution(
 
 #### Sync to Data Table Changes
 
-**Sintaxis:** obj << Sync to Data Table Changes
+**Sintaxis:** obj &lt;&lt; Sync to Data Table Changes
 
 **Descripción:** Realiza una sincronización con las modificaciones de datos y de exclusión que se hayan realizado.
 
@@ -13431,7 +13361,7 @@ dist << Sync To Data Table Changes;
 
 #### Title
 
-**Sintaxis:** obj << Title( "new title" )
+**Sintaxis:** obj &lt;&lt; Title( "new title" )
 
 **Descripción:** Establece el título de la plataforma.
 
@@ -13451,7 +13381,7 @@ obj << Title( "My Platform" );
 
 #### Top Report
 
-**Sintaxis:** obj << Top Report
+**Sintaxis:** obj &lt;&lt; Top Report
 
 **Descripción:** Devuelve una referencia al nodo raíz del informe.
 
@@ -13473,7 +13403,7 @@ Show( t );
 
 #### View Web XML
 
-**Sintaxis:** obj << View Web XML
+**Sintaxis:** obj &lt;&lt; View Web XML
 
 **Descripción:** Devuelve el código XML que se utiliza para crear el informe HTML interactivo.
 
@@ -13492,7 +13422,7 @@ xml = obj << View Web XML;
 
 #### Centroid Plot
 
-**Sintaxis:** obj << (Response[i] << (Effect[j] << Centroid Plot( state=0|1 )))
+**Sintaxis:** obj &lt;&lt; (Response[i] &lt;&lt; (Effect[j] &lt;&lt; Centroid Plot( state=0|1 )))
 
 **Descripción:** Muestra u oculta una tabla de valores centroides y un gráfico de centroides (medias de mínimos cuadrados multivariantes) en las dos primeras variables canónicas formadas a partir del espacio de prueba. Nota: El término de la constante del modelo se especifica como Efecto[0].
 
@@ -13513,7 +13443,7 @@ obj << (Response[1] << (Effect[1] << Centroid Plot( 1 )));
 
 #### Contrast
 
-**Sintaxis:** obj << (Response[i] << (Effect[j] << Contrast( [ l1 l2 l3 ... ] )))
+**Sintaxis:** obj &lt;&lt; (Response[i] &lt;&lt; (Effect[j] &lt;&lt; Contrast( [ l1 l2 l3 ... ] )))
 
 **Descripción:** Ejecuta una prueba F personalizada para los contrastes estadísticos de los niveles de tratamiento para un efecto en el modelo. Especifique los contrastes como argumento vectorial. Nota: El término de la constante del modelo se especifica como Efecto[0].
 
@@ -13534,7 +13464,7 @@ obj << (Response[1] << (Effect[3] << Contrast( [0.5 0.5 -0.5 -0.5] )));
 
 #### Save Canonical Scores
 
-**Sintaxis:** obj << (Response[i] << (Effect[j] << Save Cannonical Scores
+**Sintaxis:** obj &lt;&lt; (Response[i] &lt;&lt; (Effect[j] &lt;&lt; Save Cannonical Scores
 
 **Descripción:** Guarda nuevas columnas en la tabla de datos. Las columnas nuevas contienen las puntuaciones canónicas del efecto especificado. Nota: El término de la constante del modelo se especifica como Efecto[0].
 
@@ -13555,7 +13485,7 @@ obj << (Response[1] << (Effect[1] << Save Canonical Scores));
 
 #### Test Details
 
-**Sintaxis:** obj << (Response[i] << (Effect[j] << Test Details( state=0|1 )))
+**Sintaxis:** obj &lt;&lt; (Response[i] &lt;&lt; (Effect[j] &lt;&lt; Test Details( state=0|1 )))
 
 **Descripción:** Muestra u oculta detalles canónicos sobre la prueba para el efecto especificado. Nota: El término de la constante del modelo se especifica como Efecto[0].
 
@@ -13580,7 +13510,7 @@ obj << (Response[1] << (Effect[1] << Test Details( 1 )));
 
 #### Custom Test
 
-**Sintaxis:** obj << (Response[i] << Custom Test( [ l1 l2 l3 ... ], <Label( name )> ))
+**Sintaxis:** obj &lt;&lt; (Response[i] &lt;&lt; Custom Test( [ l1 l2 l3 ... ], &lt;Label( name )&gt; ))
 
 **Descripción:** Ejecuta una prueba F personalizada que contrasta los distintos efectos del modelo.
 
@@ -13601,7 +13531,7 @@ obj << (Response[2] << Custom Test( [0 1 0 -1 0], Label( "Test 1" ) ));
 
 #### Effect
 
-**Sintaxis:** obj << (Response[i] << (Effect[j] << effect options))
+**Sintaxis:** obj &lt;&lt; (Response[i] &lt;&lt; (Effect[j] &lt;&lt; effect options))
 
 **Descripción:** Le permite enviar mensajes a un efecto específico dentro de una respuesta concreta en la ventana de informe. Para obtener más información sobre los mensajes que se pueden enviar a un efecto, seleccione Objetos > Ajuste del modelo > Ajuste por Manova > Efecto en el Índice de scripts. Nota: El término de la constante del modelo se especifica como Efecto[0].
 
@@ -13646,7 +13576,7 @@ obj = dt << Fit Model(
 
 #### Model Dialog
 
-**Sintaxis:** obj << Model Dialog
+**Sintaxis:** obj &lt;&lt; Model Dialog
 
 **Descripción:** Muestra la ventana de inicio Ajuste del modelo completada para el análisis actual.
 
@@ -13666,7 +13596,7 @@ obj << Model Dialog;
 
 #### Response Function
 
-**Sintaxis:** obj << Response Function( matrix type, <Univariate Tests Also> )
+**Sintaxis:** obj &lt;&lt; Response Function( matrix type, &lt;Univariate Tests Also&gt; )
 
 **Descripción:** Especifica el tipo de matriz para la función de respuesta. Esta matriz es la matriz M, cuyas columnas definen un conjunto de variables de transformación para el análisis multivariante. El argumento opcional Pruebas univariantes también especifica que el informe incluya pruebas de medidas repetidas univariantes ajustadas y no ajustadas y pruebas multivariantes.
 
@@ -13705,7 +13635,7 @@ obj << Response Function( "Contrast", Univariate Tests Also );
 
 #### Save Discrim
 
-**Sintaxis:** obj << Save Discrim
+**Sintaxis:** obj &lt;&lt; Save Discrim
 
 **Descripción:** Guarda nuevas columnas en la tabla de datos. Las columnas nuevas contienen las distancias de Mahalanobis, la probabilidad de la pertenencia en cada nivel del efecto y el nivel predicho con la probabilidad más alta. Esta opción solo está disponible cuando hay un efecto categórico presente en el modelo.
 
@@ -13725,7 +13655,7 @@ obj << Save Discrim;
 
 #### Save Predicted
 
-**Sintaxis:** obj << Save Predicted
+**Sintaxis:** obj &lt;&lt; Save Predicted
 
 **Descripción:** Guarda nuevas columnas en la tabla de datos. Las columnas nuevas contienen los valores predichos para cada respuesta del modelo.
 
@@ -13745,7 +13675,7 @@ obj << Save Predicted;
 
 #### Save Residuals
 
-**Sintaxis:** obj << Save Residuals
+**Sintaxis:** obj &lt;&lt; Save Residuals
 
 **Descripción:** Guarda nuevas columnas en la tabla de datos. Las columnas nuevas contienen los residuos para cada respuesta del modelo.
 
@@ -13767,7 +13697,7 @@ obj << Save Residuals;
 
 #### Action
 
-**Sintaxis:** obj << Action
+**Sintaxis:** obj &lt;&lt; Action
 
 **Descripción:** Trampa multiuso dentro de una plataforma para insertar expresiones que se desean evaluar. Temporalmente establece los contextos de cuadros de visualización y tablas de datos en la plataforma.
 
@@ -13785,7 +13715,7 @@ dt << Bivariate(
 
 #### Apply Preset
 
-**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descripción:** Aplica al objeto un preajuste creado previamente, actualizando las opciones y personalizaciones para que coincidan con la configuración guardada.
 
@@ -13832,7 +13762,7 @@ obj2 << Apply Preset( preset );
 
 #### Automatic Recalc
 
-**Sintaxis:** obj << Automatic Recalc( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Descripción:** Rehace automáticamente el análisis para modificaciones de datos y de exclusión. Si está activada la opción Recálculo automático, le recomendamos que utilice los comandos Wait(0) para asegurarse de que las modificaciones de datos y de exclusión surtan efecto antes del recálculo.
 
@@ -13853,7 +13783,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 #### Broadcast
 
-**Sintaxis:** obj << Broadcast(message)
+**Sintaxis:** obj &lt;&lt; Broadcast(message)
 
 **Descripción:** Difunde un mensaje a una plataforma. Si los resultados devueltos de objetos individuales son tablas, se concatenan si es posible y el formato final es idéntico al resultado de la opción Guardar tabla combinada en un cuadro de tabla o al resultado de la opción Concatenar mediante una columna de origen. Los demás resultados se almacenan en una lista y se devuelven.
 
@@ -13873,7 +13803,7 @@ objs[1] << Broadcast( Save Summaries );
 
 #### Column Switcher
 
-**Sintaxis:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Sintaxis:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Descripción:** Añade un panel de control para cambiar las variables de la plataforma
 
@@ -13891,7 +13821,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 #### Copy ByGroup Script
 
-**Sintaxis:** obj << Copy ByGroup Script
+**Sintaxis:** obj &lt;&lt; Copy ByGroup Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -13917,7 +13847,7 @@ obj[1] << Copy ByGroup Script;
 
 #### Copy Script
 
-**Sintaxis:** obj << Copy Script
+**Sintaxis:** obj &lt;&lt; Copy Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -13937,7 +13867,7 @@ obj << Copy Script;
 
 #### Data Table Window
 
-**Sintaxis:** obj << Data Table Window
+**Sintaxis:** obj &lt;&lt; Data Table Window
 
 **Descripción:** Mueve al frente la ventana de la tabla de datos que se utiliza en este análisis.
 
@@ -13957,7 +13887,7 @@ obj << Data Table Window;
 
 #### Get By Levels
 
-**Sintaxis:** obj << Get By Levels
+**Sintaxis:** obj &lt;&lt; Get By Levels
 
 **Descripción:** Devuelve un arreglo asociativo que asigna las columnas Por grupo a sus valores.
 
@@ -13974,7 +13904,7 @@ biv << Get By Levels;
 
 #### Get ByGroup Script
 
-**Sintaxis:** obj << Get ByGroup Script
+**Sintaxis:** obj &lt;&lt; Get ByGroup Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -14001,7 +13931,7 @@ Show( t );
 
 #### Get Container
 
-**Sintaxis:** obj << Get Container
+**Sintaxis:** obj &lt;&lt; Get Container
 
 **Descripción:** Devuelve una referencia al cuadro contenedor que incluye el contenido del objeto.
 
@@ -14053,7 +13983,7 @@ New Window( "platform boxes",
 
 #### Get Data Table
 
-**Sintaxis:** obj << Get Data Table
+**Sintaxis:** obj &lt;&lt; Get Data Table
 
 **Descripción:** Devuelve una referencia a la tabla de datos.
 
@@ -14074,7 +14004,7 @@ Show( N Rows( t ) );
 
 #### Get Group Platform
 
-**Sintaxis:** obj << Get Group Platform
+**Sintaxis:** obj &lt;&lt; Get Group Platform
 
 **Descripción:** Devuelve el objeto Plataforma grupal si esta plataforma forma parte de un grupo. De lo contrario, devuelve Empty().
 
@@ -14091,7 +14021,7 @@ group << Layout( "Arrange in Tabs" );
 
 #### Get Script
 
-**Sintaxis:** obj << Get Script
+**Sintaxis:** obj &lt;&lt; Get Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -14112,7 +14042,7 @@ Show( t );
 
 #### Get Script With Data Table
 
-**Sintaxis:** obj << Get Script With Data Table
+**Sintaxis:** obj &lt;&lt; Get Script With Data Table
 
 **Descripción:** Crea un script (JSL) para generar este análisis haciendo referencia específica a esta tabla de datos y lo devuelve en forma de expresión.
 
@@ -14133,7 +14063,7 @@ Show( t );
 
 #### Get Timing
 
-**Sintaxis:** obj << Get Timing
+**Sintaxis:** obj &lt;&lt; Get Timing
 
 **Descripción:** Determina el tiempo de inicio de una plataforma.
 
@@ -14154,7 +14084,7 @@ Show( t );
 
 #### Get Web Support
 
-**Sintaxis:** obj << Get Web Support
+**Sintaxis:** obj &lt;&lt; Get Web Support
 
 **Descripción:** Devuelve un número que indica el nivel de compatibilidad del HTML interactivo para el objeto de visualización. 1 significa que algunos o todos los elementos son compatibles. 0 significa que no existe compatibilidad.
 
@@ -14170,7 +14100,7 @@ Show( s );
 
 #### Get Where Expr
 
-**Sintaxis:** obj << Get Where Expr
+**Sintaxis:** obj &lt;&lt; Get Where Expr
 
 **Descripción:** Devuelve la expresión Where para el subconjunto de datos, si la plataforma se inició con By() o Where(). De lo contrario, devuelve Empty().
 
@@ -14207,7 +14137,7 @@ dt << Bivariate(
 
 #### Local Data Filter
 
-**Sintaxis:** obj << Local Data Filter
+**Sintaxis:** obj &lt;&lt; Local Data Filter
 
 **Descripción:** Para filtrar los datos según grupos o rangos determinados, pero locales para esta plataforma.
 
@@ -14263,7 +14193,7 @@ preset = obj << New Preset();
 
 #### Paste Local Data Filter
 
-**Sintaxis:** obj << Paste Local Data Filter
+**Sintaxis:** obj &lt;&lt; Paste Local Data Filter
 
 **Descripción:** Se aplica el filtro de datos locales del portapapeles al informe actual.
 
@@ -14284,7 +14214,7 @@ dist2 << Paste Local Data Filter;
 
 #### Redo Analysis
 
-**Sintaxis:** obj << Redo Analysis
+**Sintaxis:** obj &lt;&lt; Redo Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -14304,7 +14234,7 @@ obj << Redo Analysis;
 
 #### Redo ByGroup Analysis
 
-**Sintaxis:** obj << Redo ByGroup Analysis
+**Sintaxis:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -14330,7 +14260,7 @@ obj[1] << Redo ByGroup Analysis;
 
 #### Relaunch Analysis
 
-**Sintaxis:** obj << Relaunch Analysis
+**Sintaxis:** obj &lt;&lt; Relaunch Analysis
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -14350,7 +14280,7 @@ obj << Relaunch Analysis;
 
 #### Relaunch ByGroup
 
-**Sintaxis:** obj << Relaunch ByGroup
+**Sintaxis:** obj &lt;&lt; Relaunch ByGroup
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -14376,7 +14306,7 @@ obj[1] << Relaunch ByGroup;
 
 #### Remove Column Switcher
 
-**Sintaxis:** obj << Remove Column Switcher
+**Sintaxis:** obj &lt;&lt; Remove Column Switcher
 
 **Descripción:** Quita el Cambiador de columnas más reciente que se haya agregado a la plataforma.
 
@@ -14396,7 +14326,7 @@ obj << Remove Column Switcher;
 
 #### Remove Local Data Filter
 
-**Sintaxis:** obj << Remove Local Data Filter
+**Sintaxis:** obj &lt;&lt; Remove Local Data Filter
 
 **Descripción:** Si se ha creado un filtro de datos local, esto lo eliminará y restaurará la plataforma para usar todos los datos de la tabla de datos directamente.
 
@@ -14435,9 +14365,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 #### Report
 
-**Sintaxis:** obj << Report;
-
-Report( obj )
+**Sintaxis:** obj &lt;&lt; Report;Report( obj )
 
 **Descripción:** Devuelve una referencia al objeto informe.
 
@@ -14459,7 +14387,7 @@ Show( t );
 
 #### Report View
 
-**Sintaxis:** obj << Report View( "Completa"|"Resumen" )
+**Sintaxis:** obj &lt;&lt; Report View( "Completa"|"Resumen" )
 
 **Descripción:** La vista del informe determina el nivel de detalle visible en el informe de una plataforma. Full muestra todos los detalles, mientras que Summary solo muestra el contenido seleccionado, con independencia de la plataforma. Para el comportamiento personalizado, los cuadros de visualización admiten un mensaje <<Set Summary Behavior.
 
@@ -14479,7 +14407,7 @@ obj << Report View( "Summary" );
 
 #### Save ByGroup Script to Data Table
 
-**Sintaxis:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis, y lo guarda como propiedad de tabla en la tabla de datos. Puede especificar un nombre para el script. La opción Append Suffix añade un sufijo numérico al nombre del script, que diferencia el script de un script existente que tenga el mismo nombre. La opción Prompt solicita al usuario que especifique un nombre de script. La opción Replace reemplaza un script existente que tenga el mismo nombre.
 
@@ -14505,7 +14433,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 #### Save ByGroup Script to Journal
 
-**Sintaxis:** obj << Save ByGroup Script to Journal
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -14531,7 +14459,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 #### Save ByGroup Script to Script Window
 
-**Sintaxis:** obj << Save ByGroup Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -14557,7 +14485,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 #### Save Script for All Objects
 
-**Sintaxis:** obj << Save Script for All Objects
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects
 
 **Descripción:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -14577,7 +14505,7 @@ obj << Save Script for All Objects;
 
 #### Save Script for All Objects To Data Table
 
-**Sintaxis:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descripción:** Guarda un script para todos los objetos de informe en la tabla de datos actual. Esta opción es útil cuando tiene varios informes en la ventana. El script recibe el nombre de la primera plataforma a menos que especifique el nombre del script entre comillas.
 
@@ -14627,7 +14555,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 #### Save Script to Data Table
 
-**Sintaxis:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis y lo guarda en forma de propiedad de tabla en la tabla de datos.
 
@@ -14647,7 +14575,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 #### Save Script to Journal
 
-**Sintaxis:** obj << Save Script to Journal
+**Sintaxis:** obj &lt;&lt; Save Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -14667,7 +14595,7 @@ obj << Save Script to Journal;
 
 #### Save Script to Report
 
-**Sintaxis:** obj << Save Script to Report
+**Sintaxis:** obj &lt;&lt; Save Script to Report
 
 **Descripción:** Crea un script JSL para generar este análisis y lo muestra en el propio informe. Resulta útil para conservar un registro impreso de lo que se ha hecho.
 
@@ -14687,7 +14615,7 @@ obj << Save Script to Report;
 
 #### Save Script to Script Window
 
-**Sintaxis:** obj << Save Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -14772,7 +14700,7 @@ dt << Distribution(
 
 #### Sync to Data Table Changes
 
-**Sintaxis:** obj << Sync to Data Table Changes
+**Sintaxis:** obj &lt;&lt; Sync to Data Table Changes
 
 **Descripción:** Realiza una sincronización con las modificaciones de datos y de exclusión que se hayan realizado.
 
@@ -14789,7 +14717,7 @@ dist << Sync To Data Table Changes;
 
 #### Title
 
-**Sintaxis:** obj << Title( "new title" )
+**Sintaxis:** obj &lt;&lt; Title( "new title" )
 
 **Descripción:** Establece el título de la plataforma.
 
@@ -14809,7 +14737,7 @@ obj << Title( "My Platform" );
 
 #### Top Report
 
-**Sintaxis:** obj << Top Report
+**Sintaxis:** obj &lt;&lt; Top Report
 
 **Descripción:** Devuelve una referencia al nodo raíz del informe.
 
@@ -14831,7 +14759,7 @@ Show( t );
 
 #### Transform Column
 
-**Sintaxis:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Sintaxis:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Descripción:** Crea una columna de transformación en el contexto local de un objeto (una plataforma por lo general). La columna de transformación solo está activa mientras esté en uso la plataforma.
 
@@ -14852,7 +14780,7 @@ dt << Distribution(
 
 #### View Web XML
 
-**Sintaxis:** obj << View Web XML
+**Sintaxis:** obj &lt;&lt; View Web XML
 
 **Descripción:** Devuelve el código XML que se utiliza para crear el informe HTML interactivo.
 
@@ -14867,9 +14795,7 @@ xml = obj << View Web XML;
 
 #### Window View
 
-**Sintaxis:** obj = Fit Manova(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Manova(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Establece el tipo de ventana que se creará para el informe. De forma predeterminada, se creará una ventana de informe Visible. Una ventana Invisible no aparecerá en pantalla, pero se puede detectar mediante funciones como Window(). Una ventana Private responde a la mayoría de los mensajes de ventana pero no es detectable y se debe abordar a través del objeto de informe.
 
@@ -14917,7 +14843,7 @@ obj = dt << Fit Model(
 
 #### Actual by Conditional Predicted Plot
 
-**Sintaxis:** obj << Actual by Conditional Predicted Plot( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Actual by Conditional Predicted Plot( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico de los valores reales frente a los valores predichos por el modelo, mientras se tienen en cuenta los efectos aleatorios. Esta opción solo está disponible cuando el modelo contiene al menos un efecto aleatorio. Opción activada de forma predeterminada.
 
@@ -14942,7 +14868,7 @@ obj << Actual by Conditional Predicted Plot( 1 );
 
 #### Actual by Predicted Plot
 
-**Sintaxis:** obj << Actual by Predicted Plot( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Actual by Predicted Plot( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico de los valores reales frente a los valores predichos por el modelo, sin tener en cuenta los efectos aleatorios. Esta opción solo está disponible cuando el modelo contiene al menos un efecto fijo. Opción activada de forma predeterminada.
 
@@ -14967,7 +14893,7 @@ obj << Actual by Predicted Plot( 1 );
 
 #### Between-Within Degrees of Freedom
 
-**Sintaxis:** obj << Between-Within Degrees of Freedom( state=0|1)
+**Sintaxis:** obj &lt;&lt; Between-Within Degrees of Freedom( state=0|1)
 
 **Descripción:** Replaces the standard errors with unadjusted estimates and degrees of freedom to between-within based throughout the report. To use between-within degrees of freedom in a multiple comparisons report, you must select this option prior to adding a multiple comparisons report.
 
@@ -14994,7 +14920,7 @@ obj << "Between-Within Degrees of Freedom"n( 1 );
 
 #### Compare Slopes
 
-**Sintaxis:** obj << Compare Slopes( Effect( effect ), <options> )
+**Sintaxis:** obj &lt;&lt; Compare Slopes( Effect( effect ), &lt;options&gt; )
 
 **Descripción:** Muestra u oculta un informe que permite comparar las pendientes de cada nivel del efecto de interacción en un modelo de análisis de covarianza (ANCOVA). Esta opción solo está disponible cuando hay un término nominal, un término continuo y su efecto de interacción para los efectos fijos.
 
@@ -15022,7 +14948,7 @@ obj << Compare Slopes(
 
 #### Conditional Contour Profiler
 
-**Sintaxis:** obj << Conditional Contour Profiler( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Conditional Contour Profiler( state=0|1 )
 
 **Descripción:** Muestra u oculta un perfilador de contorno de la respuesta condicional gráficamente para dos factores a la vez. Esta opción solo está disponible cuando el modelo contiene al menos dos efectos continuos y al menos un efecto aleatorio.
 
@@ -15050,7 +14976,7 @@ obj << Conditional Contour Profiler( 1 );
 
 #### Conditional Mean CI
 
-**Sintaxis:** obj << Conditional Mean CI
+**Sintaxis:** obj &lt;&lt; Conditional Mean CI
 
 **Descripción:** Guarda dos nuevas columnas en la tabla de datos. Las nuevas columnas contienen los límites de confianza inferior y superior para el valor esperado de la predicción condicional. Los intervalos de confianza incluyen estimaciones de efectos aleatorios para los modelos que contienen efectos aleatorios. Esta opción solo está disponible cuando el modelo contiene al menos un efecto aleatorio.
 
@@ -15073,7 +14999,7 @@ obj << Conditional Mean CI;
 
 #### Conditional Mixture Profiler
 
-**Sintaxis:** obj << Conditional Mixture Profiler( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Conditional Mixture Profiler( state=0|1 )
 
 **Descripción:** Muestra u oculta un perfilador de mezclas que muestra los contornos de la respuesta condicional en un gráfico ternario. Esta opción solo está disponible cuando el modelo contiene al menos un efecto aleatorio y si el atributo Efecto de mezcla se aplica a tres o más factores del modelo o la propiedad Mezcla se aplica a tres o más columnas de factores.
 
@@ -15101,7 +15027,7 @@ obj << Conditional Mixture Profiler( 1 );
 
 #### Conditional Prediction Formula
 
-**Sintaxis:** obj << Conditional Prediction Formula
+**Sintaxis:** obj &lt;&lt; Conditional Prediction Formula
 
 **Descripción:** Guarda una nueva columna de fórmulas en la tabla de datos. La columna nueva contiene la fórmula de predicción de la media condicional. Esta opción solo está disponible cuando el modelo contiene al menos un efecto aleatorio.
 
@@ -15125,7 +15051,7 @@ obj << Conditional Prediction Formula;
 
 #### Conditional Predictions
 
-**Sintaxis:** obj << Conditional Predictions
+**Sintaxis:** obj &lt;&lt; Conditional Predictions
 
 **Descripción:** Guarda una nueva columna en la tabla de datos. La columna nueva contiene los valores predichos para la media condicional. Esta opción solo está disponible cuando el modelo contiene al menos un efecto aleatorio.
 
@@ -15149,7 +15075,7 @@ obj << Conditional Predictions;
 
 #### Conditional Profiler
 
-**Sintaxis:** obj << Conditional Profiler( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Conditional Profiler( state=0|1 )
 
 **Descripción:** Muestra u oculta el perfilador de predicción, que se utiliza para explorar gráficamente la ecuación de predicción condicional seccionándola factor por factor. El perfilador de predicción contiene funciones de optimización. Esta opción solo está disponible cuando el modelo contiene al menos un efecto aleatorio.
 
@@ -15171,7 +15097,7 @@ obj << Conditional Profiler( 1 );
 
 #### Conditional Residual Plots
 
-**Sintaxis:** obj << Conditional Residual Plots( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Conditional Residual Plots( state=0|1 )
 
 **Descripción:** Muestra u oculta los gráficos de residuos que evalúan el ajuste del modelo, mientras se tienen en cuenta los efectos aleatorios. Esta opción solo está disponible cuando el modelo contiene al menos un efecto aleatorio.
 
@@ -15196,7 +15122,7 @@ obj << Conditional Residual Plots( 1 );
 
 #### Conditional Residuals
 
-**Sintaxis:** obj << Conditional Residuals
+**Sintaxis:** obj &lt;&lt; Conditional Residuals
 
 **Descripción:** Guarda una nueva columna de fórmulas en la tabla de datos. La columna nueva contiene una fórmula para los residuos condicionales, expresada en forma de los valores de respuesta observados menos la fórmula de predicción.
 
@@ -15220,7 +15146,7 @@ obj << Conditional Residuals;
 
 #### Conditional Surface Profiler
 
-**Sintaxis:** obj << Conditional Surface Profiler( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Conditional Surface Profiler( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico de superficie tridimensional de la respuesta condicional. Esta opción solo está disponible cuando el modelo contiene al menos dos efectos y al menos un efecto aleatorio.
 
@@ -15242,7 +15168,7 @@ obj << Conditional Surface Profiler( 1 );
 
 #### Containment Degrees of Freedom
 
-**Sintaxis:** obj << Containment Degrees of Freedom( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Containment Degrees of Freedom( state=0|1 )
 
 **Descripción:** Replaces the standard errors with unadjusted estimates and degrees of freedom to containment-based throughout the report. To use containment degrees of freedom in a multiple comparisons report, you must select this option prior to adding a multiple comparisons report.
 
@@ -15269,7 +15195,7 @@ obj << Containment Degrees of Freedom( 1 );
 
 #### Contour Profiler
 
-**Sintaxis:** obj << Contour Profiler( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Contour Profiler( state=0|1 )
 
 **Descripción:** Muestra u oculta un perfilador de contorno de la respuesta marginal gráficamente para dos factores a la vez. Esta opción solo está disponible cuando el modelo contiene al menos dos efectos fijos continuos.
 
@@ -15297,7 +15223,7 @@ obj << Contour Profiler( 1 );
 
 #### Correlation of Fixed Effects
 
-**Sintaxis:** obj << Correlation of Fixed Effects( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Correlation of Fixed Effects( state=0|1 )
 
 **Descripción:** Muestra u oculta la matriz de correlación de los efectos fijos del modelo.
 
@@ -15325,7 +15251,7 @@ obj << Correlation of Fixed Effects( 1 );
 
 #### Covariance of All Parameters
 
-**Sintaxis:** obj << Covariance of All Parameters( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Covariance of All Parameters( state=0|1 )
 
 **Descripción:** Muestra u oculta la matriz de covarianza de todos los efectos del modelo.
 
@@ -15353,7 +15279,7 @@ obj << Covariance of All Parameters( 1 );
 
 #### Covariance of Covariance Parameters
 
-**Sintaxis:** obj << Covariance of Covariance Parameters( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Covariance of Covariance Parameters( state=0|1 )
 
 **Descripción:** Muestra u oculta la matriz de covarianza de los efectos aleatorios del modelo.
 
@@ -15381,7 +15307,7 @@ obj << Covariance of Covariance Parameters( 1 );
 
 #### Covariance of Fixed Effects
 
-**Sintaxis:** obj << Covariance of Fixed Effects( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Covariance of Fixed Effects( state=0|1 )
 
 **Descripción:** Muestra u oculta la matriz de covarianza de los efectos fijos del modelo.
 
@@ -15409,9 +15335,7 @@ obj << Covariance of Fixed Effects( 1 );
 
 #### Dispose Reports
 
-**Sintaxis:** obj = Fit Model(...Dispose Reports( state=0|1 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Dispose Reports( state=0|1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica que no se muestra ningún informe de modelo individual y que se han eliminado de la memoria tras el ajuste. Cuando hay muchos miles de respuestas, esta opción reduce el tiempo de cálculo y ahorra espacio en la memoria. Utilícela con la opción Resultados en tablas de datos para recopilar los resultados de los modelos ajustados.
 
@@ -15433,7 +15357,7 @@ obj = dt << Fit Model(
 
 #### Empirical Standard Errors
 
-**Sintaxis:** obj << Empirical Standard Errors( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Empirical Standard Errors( state=0|1 )
 
 **Descripción:** Reemplaza los errores estándar por estimaciones de tipo sándwich en todo el informe. Para utilizar estimaciones de tipo sándwich en un informe de comparaciones múltiples, es necesario seleccionar esta opción antes de agregar un informe de comparaciones múltiples.
 
@@ -15480,7 +15404,7 @@ obj << Multiple Comparisons(
 
 #### Fit Statistics
 
-**Sintaxis:** obj << Fit Statistics( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Fit Statistics( state=0|1 )
 
 **Descripción:** Muestra u oculta un informe para los estadísticos de ajuste del modelo. Opción activada de forma predeterminada.
 
@@ -15505,7 +15429,7 @@ obj << Fit Statistics( 1 );
 
 #### Fixed Effects Parameter Estimates
 
-**Sintaxis:** obj << Fixed Effects Parameter Estimates( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Fixed Effects Parameter Estimates( state=0|1 )
 
 **Descripción:** Muestra u oculta una tabla de estimaciones de parámetros de efectos fijos. Opción activada de forma predeterminada.
 
@@ -15530,7 +15454,7 @@ obj << Fixed Effects Parameter Estimates( 1 );
 
 #### Fixed Effects Tests
 
-**Sintaxis:** obj << Fixed Effects Tests( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Fixed Effects Tests( state=0|1 )
 
 **Descripción:** Muestra u oculta las pruebas de efectos fijos. Esta opción solo está disponible cuando el modelo contiene al menos un efecto fijo. Opción activada de forma predeterminada.
 
@@ -15555,7 +15479,7 @@ obj << Fixed Effects Tests( 1 );
 
 #### Homogeneity of Variance Test
 
-**Sintaxis:** obj << Homogeneity of Variance Test( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Homogeneity of Variance Test( state=0|1 )
 
 **Descripción:** Calcula una prueba de homogeneidad de varianza a través de la variable de agrupación especificada.
 
@@ -15579,7 +15503,7 @@ obj << Homogeneity of Variance Test( 1 );
 
 #### Indiv Confidence Interval
 
-**Sintaxis:** obj << Indiv Confidence Interval
+**Sintaxis:** obj &lt;&lt; Indiv Confidence Interval
 
 **Descripción:** Guarda dos nuevas columnas en la tabla de datos. Las columnas nuevas contienen límites de confianza para valores de respuesta individuales.
 
@@ -15602,7 +15526,7 @@ obj << Indiv Confidence Interval;
 
 #### Inverse Prediction
 
-**Sintaxis:** obj << Inverse Prediction( Response( p1, p2, ... ), Term Value( effect1( value ), effect2( value ), ... ) )
+**Sintaxis:** obj &lt;&lt; Inverse Prediction( Response( p1, p2, ... ), Term Value( effect1( value ), effect2( value ), ... ) )
 
 **Descripción:** Genera un valor X predicho y un intervalo de confianza basado en los valores especificados de Y y todos los demás factores.
 
@@ -15627,7 +15551,7 @@ obj << Inverse Prediction( Response( 75 ), Term Value( Moisture( . ), Variety( A
 
 #### Linear Combination of Variance Components
 
-**Sintaxis:** obj << Linear Combination of Variance Components( [l1, l2, l3, ... ], <Label( text )> )
+**Sintaxis:** obj &lt;&lt; Linear Combination of Variance Components( [l1, l2, l3, ... ], &lt;Label( text )&gt; )
 
 **Descripción:** Muestra un informe que permite calcular intervalos de confianza para combinaciones lineales de componentes de varianza. Esta opción solo está disponible cuando hay efectos en el lado G.
 
@@ -15653,7 +15577,7 @@ obj = dt << Fit Model(
 
 #### Mean Confidence Interval
 
-**Sintaxis:** obj << Mean Confidence Interval
+**Sintaxis:** obj &lt;&lt; Mean Confidence Interval
 
 **Descripción:** Guarda dos nuevas columnas en la tabla de datos. Las columnas nuevas contienen los límites de confianza inferior y superior de la respuesta media.
 
@@ -15676,7 +15600,7 @@ obj << Mean Confidence Interval;
 
 #### Mixture Profiler
 
-**Sintaxis:** obj << Mixture Profiler( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Mixture Profiler( state=0|1 )
 
 **Descripción:** Muestra u oculta un perfilador de mezclas que muestra los contornos de la respuesta marginal en un gráfico ternario. Esta opción solo está disponible si el atributo Efecto de mezcla se aplica a tres o más factores del modelo o la propiedad Mezcla se aplica a tres o más columnas de factores.
 
@@ -15704,7 +15628,7 @@ obj << Mixture Profiler( 1 );
 
 #### Model Dialog
 
-**Sintaxis:** obj << Model Dialog
+**Sintaxis:** obj &lt;&lt; Model Dialog
 
 **Descripción:** Muestra la ventana de inicio Ajuste del modelo completada para el análisis actual.
 
@@ -15725,7 +15649,7 @@ obj << Model Dialog;
 
 #### Multiple Comparisons
 
-**Sintaxis:** obj << Multiple Comparisons( Effect( effect ), <options> )
+**Sintaxis:** obj &lt;&lt; Multiple Comparisons( Effect( effect ), &lt;options&gt; )
 
 **Descripción:** Genera estimaciones de las medias de mínimos cuadrados o estimaciones definidas por el usuario. Estas estimaciones permiten al usuario realizar comparaciones con la media global, comparaciones con un control o comparaciones por pares. Esta opción solo está disponible cuando el modelo contiene al menos un efecto fijo.
 
@@ -15753,7 +15677,7 @@ obj << Multiple Comparisons(
 
 #### Prediction Formula
 
-**Sintaxis:** obj << Prediction Formula
+**Sintaxis:** obj &lt;&lt; Prediction Formula
 
 **Descripción:** Guarda una nueva columna de fórmulas en la tabla de datos. La columna nueva contiene la fórmula de predicción de la media marginal.
 
@@ -15777,7 +15701,7 @@ obj << Prediction Formula;
 
 #### Prediction and Interval Formulas
 
-**Sintaxis:** obj << Prediction and Interval Formulas
+**Sintaxis:** obj &lt;&lt; Prediction and Interval Formulas
 
 **Descripción:** Guarda las columnas nuevas en la tabla de datos. Las columnas contienen fórmulas para las predicciones y los límites de confianza. Las columnas de límites que se crean con esta opción contienen propiedades que utiliza el Perfilador de predicción.
 
@@ -15803,7 +15727,7 @@ Profiler( Y( :Pred Formula Yield 2 ) );
 
 #### Predictions
 
-**Sintaxis:** obj << Predictions
+**Sintaxis:** obj &lt;&lt; Predictions
 
 **Descripción:** Guarda una nueva columna en la tabla de datos. La columna nueva contiene los valores predichos para la media marginal.
 
@@ -15827,7 +15751,7 @@ obj << Predictions;
 
 #### Profiler
 
-**Sintaxis:** obj << Profiler( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Profiler( state=0|1 )
 
 **Descripción:** Muestra u oculta el perfilador de predicción, que se utiliza para explorar gráficamente la ecuación de predicción marginal seccionándola factor por factor. El perfilador de predicción contiene funciones de optimización. Esta opción solo está disponible cuando el modelo contiene al menos un efecto fijo.
 
@@ -15849,7 +15773,7 @@ obj << Profiler( 1 );
 
 #### Random Coefficients
 
-**Sintaxis:** obj << Random Coefficients( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Random Coefficients( state=0|1 )
 
 **Descripción:** Muestra u oculta un informe de las estimaciones de los coeficientes aleatorios. Esta opción solo está disponible cuando el modelo contiene al menos un efecto aleatorio. Opción activada de forma predeterminada.
 
@@ -15874,7 +15798,7 @@ obj << Random Coefficients( 1 );
 
 #### Random Effects Covariance Parameter Estimates
 
-**Sintaxis:** obj << Random Effects Covariance Parameter Estimates( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Random Effects Covariance Parameter Estimates( state=0|1 )
 
 **Descripción:** Muestra u oculta una tabla de estimaciones de parámetros de covarianza de efectos aleatorios. Esta opción solo está disponible cuando el modelo contiene al menos un efecto aleatorio. Opción activada de forma predeterminada.
 
@@ -15899,7 +15823,7 @@ obj << Random Effects Covariance Parameter Estimates( 1 );
 
 #### Random Effects Predictions
 
-**Sintaxis:** obj << Random Effects Predictions( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Random Effects Predictions( state=0|1 )
 
 **Descripción:** Muestra u oculta una tabla de predicciones de efectos aleatorios. Esta opción solo está disponible cuando el modelo contiene al menos un efecto aleatorio.
 
@@ -15924,7 +15848,7 @@ obj << Random Effects Predictions( 1 );
 
 #### Repeated Effects Covariance Parameter Estimates
 
-**Sintaxis:** obj << Repeated Effects Covariance Parameter Estimates( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Repeated Effects Covariance Parameter Estimates( state=0|1 )
 
 **Descripción:** Muestra u oculta una tabla de estimaciones de parámetros de covarianza de efectos repetidos. Esta opción solo está disponible cuando el modelo contiene al menos un efecto repetido. Opción activada de forma predeterminada.
 
@@ -15951,7 +15875,7 @@ obj << Repeated Effects Covariance Parameter Estimates( 1 );
 
 #### Repeated Measures Covariance Diagnostics
 
-**Sintaxis:** obj << Repeated Measures Covariance Diagnostics( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Repeated Measures Covariance Diagnostics( state=0|1 )
 
 **Descripción:** Muestra u oculta un informe que contiene herramientas de diagnóstico para ayudar a determinar las estructuras de covarianza candidatas para el análisis de medidas repetidas. Esta opción solo está disponible para los modelos que especifiquen una estructura de covarianza repetida no estructurada.
 
@@ -15978,7 +15902,7 @@ obj << Repeated Measures Covariance Diagnostics( 1 );
 
 #### Residual Plots
 
-**Sintaxis:** obj << Residual Plots( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Residual Plots( state=0|1 )
 
 **Descripción:** Muestra u oculta los gráficos de residuos que evalúan el ajuste del modelo, sin tener en cuenta los efectos aleatorios. Esta opción solo está disponible cuando el modelo contiene al menos un efecto fijo.
 
@@ -16003,7 +15927,7 @@ obj << Residual Plots( 1 );
 
 #### Residuals
 
-**Sintaxis:** obj << Residuals
+**Sintaxis:** obj &lt;&lt; Residuals
 
 **Descripción:** Guarda una nueva columna en la tabla de datos. La columna nueva contiene los residuos, que son los valores de respuesta observados menos los valores predichos de la media marginal.
 
@@ -16027,9 +15951,7 @@ obj << Residuals;
 
 #### Results in Data Tables
 
-**Sintaxis:** obj = Fit Model(...Results in Data Tables( state=0|1 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Results in Data Tables( state=0|1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Guarda los resultados del modelo individual de muchas respuestas en tablas de datos. El contenido y el número de tablas de datos de salida dependen del modelo que se esté ajustando.
 
@@ -16050,7 +15972,7 @@ obj = dt << Fit Model(
 
 #### Save Simulation Formula
 
-**Sintaxis:** obj << Save Simulation Formula
+**Sintaxis:** obj &lt;&lt; Save Simulation Formula
 
 **Descripción:** Guarda una nueva columna de fórmulas en la tabla de datos. La columna nueva se puede utilizar para crear valores de respuesta aleatorios a partir del modelo ajustado. Puede utilizar la columna de fórmulas con la función Simular de JMP Pro. Esta opción no está disponible si se utiliza una variable Por. Utilice tablas de datos de subconjuntos si necesita fórmulas de simulación por grupos.
 
@@ -16076,7 +15998,7 @@ obj << Save Simulation Formula;
 
 #### Sequential Tests
 
-**Sintaxis:** obj << Sequential Tests( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Sequential Tests( state=0|1 )
 
 **Descripción:** Muestra u oculta el informe Pruebas secuenciales (tipo 1) que contiene las sumas de cuadrados a medida que se añaden efectos al modelo secuencialmente. Esta opción solo está disponible cuando el modelo contiene al menos un efecto fijo.
 
@@ -16103,7 +16025,7 @@ obj << Sequential Tests( 1 );
 
 #### Show Sqrt Variance Component
 
-**Sintaxis:** obj << Show Sqrt Variance Component( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Show Sqrt Variance Component( state=0|1 )
 
 **Descripción:** Muestra u oculta la columna Componente de varianza de sqrt en el informe Estimaciones de componentes de varianza por REML.
 
@@ -16125,7 +16047,7 @@ obj << Show Sqrt Variance Component( 1 );
 
 #### Show VIF
 
-**Sintaxis:** obj << Show VIF( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Show VIF( state=0|1 )
 
 **Descripción:** Muestra u oculta los valores del factor de inflación de la varianza (VIF) en la pestaña Codificación de los efectos del informe Estimaciones de los parámetros de efectos fijos.
 
@@ -16147,7 +16069,7 @@ obj << Show VIF( 1 );
 
 #### Stability Analysis
 
-**Sintaxis:** obj << Stability Analysis
+**Sintaxis:** obj &lt;&lt; Stability Analysis
 
 ```jsl
 
@@ -16167,7 +16089,7 @@ obj << Stability Analysis( Quantile( 0.1 ), Lower Spec Limit( 99 ) );
 
 #### Standard Error of Conditional Predicted
 
-**Sintaxis:** obj << Standard Error of Conditional Predicted
+**Sintaxis:** obj &lt;&lt; Standard Error of Conditional Predicted
 
 **Descripción:** Guarda una columna nueva en la tabla de datos. La columna nueva contiene los errores estándar de las predicciones condicionales de la media. Esta opción solo está disponible cuando el modelo contiene al menos un efecto aleatorio.
 
@@ -16191,7 +16113,7 @@ obj << Standard Error of Conditional Predicted;
 
 #### Standard Error of Predicted
 
-**Sintaxis:** obj << Standard Error of Predicted
+**Sintaxis:** obj &lt;&lt; Standard Error of Predicted
 
 **Descripción:** Guarda una nueva columna en la tabla de datos. La columna nueva contiene los errores estándar de las predicciones marginales de la media.
 
@@ -16215,9 +16137,7 @@ obj << Standard Error of Predicted;
 
 #### Suppress Reports
 
-**Sintaxis:** obj = Fit Model(...Suppress Reports( state=0|1 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Suppress Reports( state=0|1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica que se han ocultado los informes de modelos individuales. Cuando hay miles de respuestas, esta opción reduce el tiempo de cálculo. Los objetos de ajuste y algunos elementos de menú siguen estando disponibles. Utilice la opción Resultados en tablas de datos para recopilar los resultados de los informes de modelos.
 
@@ -16239,7 +16159,7 @@ obj = dt << Fit Model(
 
 #### Surface Profiler
 
-**Sintaxis:** obj << Surface Profiler( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Surface Profiler( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico de superficie tridimensional de la respuesta marginal. Esta opción solo está disponible cuando el modelo contiene al menos dos efectos.
 
@@ -16261,7 +16181,7 @@ obj << Surface Profiler( 1 );
 
 #### Variogram
 
-**Sintaxis:** obj << Variogram( <X( columns )>, <Model 1, Model 2, ...> )
+**Sintaxis:** obj &lt;&lt; Variogram( &lt;X( columns )&gt;, &lt;Model 1, Model 2, ...&gt; )
 
 **Descripción:** Muestra u oculta un gráfico de variograma que muestra el cambio en la covarianza a medida que aumenta la distancia entre las observaciones. Cuando se selecciona la estructura Residual, se pueden seleccionar las columnas que se utilizarán como coordenadas temporales o espaciales.
 
@@ -16285,7 +16205,7 @@ obj << Variogram( X( :month ), Exponential, Exponential with Nugget );
 
 #### Action
 
-**Sintaxis:** obj << Action
+**Sintaxis:** obj &lt;&lt; Action
 
 **Descripción:** Trampa multiuso dentro de una plataforma para insertar expresiones que se desean evaluar. Temporalmente establece los contextos de cuadros de visualización y tablas de datos en la plataforma.
 
@@ -16303,7 +16223,7 @@ dt << Bivariate(
 
 #### Apply Preset
 
-**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descripción:** Aplica al objeto un preajuste creado previamente, actualizando las opciones y personalizaciones para que coincidan con la configuración guardada.
 
@@ -16350,7 +16270,7 @@ obj2 << Apply Preset( preset );
 
 #### Broadcast
 
-**Sintaxis:** obj << Broadcast(message)
+**Sintaxis:** obj &lt;&lt; Broadcast(message)
 
 **Descripción:** Difunde un mensaje a una plataforma. Si los resultados devueltos de objetos individuales son tablas, se concatenan si es posible y el formato final es idéntico al resultado de la opción Guardar tabla combinada en un cuadro de tabla o al resultado de la opción Concatenar mediante una columna de origen. Los demás resultados se almacenan en una lista y se devuelven.
 
@@ -16370,7 +16290,7 @@ objs[1] << Broadcast( Save Summaries );
 
 #### Column Switcher
 
-**Sintaxis:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Sintaxis:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Descripción:** Añade un panel de control para cambiar las variables de la plataforma
 
@@ -16388,7 +16308,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 #### Copy ByGroup Script
 
-**Sintaxis:** obj << Copy ByGroup Script
+**Sintaxis:** obj &lt;&lt; Copy ByGroup Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -16418,7 +16338,7 @@ obj[1] << Copy ByGroup Script;
 
 #### Copy Script
 
-**Sintaxis:** obj << Copy Script
+**Sintaxis:** obj &lt;&lt; Copy Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -16442,7 +16362,7 @@ obj << Copy Script;
 
 #### Data Table Window
 
-**Sintaxis:** obj << Data Table Window
+**Sintaxis:** obj &lt;&lt; Data Table Window
 
 **Descripción:** Mueve al frente la ventana de la tabla de datos que se utiliza en este análisis.
 
@@ -16466,7 +16386,7 @@ obj << Data Table Window;
 
 #### Get By Levels
 
-**Sintaxis:** obj << Get By Levels
+**Sintaxis:** obj &lt;&lt; Get By Levels
 
 **Descripción:** Devuelve un arreglo asociativo que asigna las columnas Por grupo a sus valores.
 
@@ -16483,7 +16403,7 @@ biv << Get By Levels;
 
 #### Get ByGroup Script
 
-**Sintaxis:** obj << Get ByGroup Script
+**Sintaxis:** obj &lt;&lt; Get ByGroup Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -16514,7 +16434,7 @@ Show( t );
 
 #### Get Container
 
-**Sintaxis:** obj << Get Container
+**Sintaxis:** obj &lt;&lt; Get Container
 
 **Descripción:** Devuelve una referencia al cuadro contenedor que incluye el contenido del objeto.
 
@@ -16570,7 +16490,7 @@ New Window( "platform boxes",
 
 #### Get Data Table
 
-**Sintaxis:** obj << Get Data Table
+**Sintaxis:** obj &lt;&lt; Get Data Table
 
 **Descripción:** Devuelve una referencia a la tabla de datos.
 
@@ -16595,7 +16515,7 @@ Show( N Rows( t ) );
 
 #### Get Group Platform
 
-**Sintaxis:** obj << Get Group Platform
+**Sintaxis:** obj &lt;&lt; Get Group Platform
 
 **Descripción:** Devuelve el objeto Plataforma grupal si esta plataforma forma parte de un grupo. De lo contrario, devuelve Empty().
 
@@ -16612,7 +16532,7 @@ group << Layout( "Arrange in Tabs" );
 
 #### Get Script
 
-**Sintaxis:** obj << Get Script
+**Sintaxis:** obj &lt;&lt; Get Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -16637,7 +16557,7 @@ Show( t );
 
 #### Get Script With Data Table
 
-**Sintaxis:** obj << Get Script With Data Table
+**Sintaxis:** obj &lt;&lt; Get Script With Data Table
 
 **Descripción:** Crea un script (JSL) para generar este análisis haciendo referencia específica a esta tabla de datos y lo devuelve en forma de expresión.
 
@@ -16662,7 +16582,7 @@ Show( t );
 
 #### Get Timing
 
-**Sintaxis:** obj << Get Timing
+**Sintaxis:** obj &lt;&lt; Get Timing
 
 **Descripción:** Determina el tiempo de inicio de una plataforma.
 
@@ -16687,7 +16607,7 @@ Show( t );
 
 #### Get Web Support
 
-**Sintaxis:** obj << Get Web Support
+**Sintaxis:** obj &lt;&lt; Get Web Support
 
 **Descripción:** Devuelve un número que indica el nivel de compatibilidad del HTML interactivo para el objeto de visualización. 1 significa que algunos o todos los elementos son compatibles. 0 significa que no existe compatibilidad.
 
@@ -16703,7 +16623,7 @@ Show( s );
 
 #### Get Where Expr
 
-**Sintaxis:** obj << Get Where Expr
+**Sintaxis:** obj &lt;&lt; Get Where Expr
 
 **Descripción:** Devuelve la expresión Where para el subconjunto de datos, si la plataforma se inició con By() o Where(). De lo contrario, devuelve Empty().
 
@@ -16740,7 +16660,7 @@ dt << Bivariate(
 
 #### Local Data Filter
 
-**Sintaxis:** obj << Local Data Filter
+**Sintaxis:** obj &lt;&lt; Local Data Filter
 
 **Descripción:** Para filtrar los datos según grupos o rangos determinados, pero locales para esta plataforma.
 
@@ -16796,7 +16716,7 @@ preset = obj << New Preset();
 
 #### Paste Local Data Filter
 
-**Sintaxis:** obj << Paste Local Data Filter
+**Sintaxis:** obj &lt;&lt; Paste Local Data Filter
 
 **Descripción:** Se aplica el filtro de datos locales del portapapeles al informe actual.
 
@@ -16817,7 +16737,7 @@ dist2 << Paste Local Data Filter;
 
 #### Redo Analysis
 
-**Sintaxis:** obj << Redo Analysis
+**Sintaxis:** obj &lt;&lt; Redo Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -16841,7 +16761,7 @@ obj << Redo Analysis;
 
 #### Redo ByGroup Analysis
 
-**Sintaxis:** obj << Redo ByGroup Analysis
+**Sintaxis:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -16871,7 +16791,7 @@ obj[1] << Redo ByGroup Analysis;
 
 #### Relaunch Analysis
 
-**Sintaxis:** obj << Relaunch Analysis
+**Sintaxis:** obj &lt;&lt; Relaunch Analysis
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -16895,7 +16815,7 @@ obj << Relaunch Analysis;
 
 #### Relaunch ByGroup
 
-**Sintaxis:** obj << Relaunch ByGroup
+**Sintaxis:** obj &lt;&lt; Relaunch ByGroup
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -16925,7 +16845,7 @@ obj[1] << Relaunch ByGroup;
 
 #### Remove Column Switcher
 
-**Sintaxis:** obj << Remove Column Switcher
+**Sintaxis:** obj &lt;&lt; Remove Column Switcher
 
 **Descripción:** Quita el Cambiador de columnas más reciente que se haya agregado a la plataforma.
 
@@ -16945,7 +16865,7 @@ obj << Remove Column Switcher;
 
 #### Remove Local Data Filter
 
-**Sintaxis:** obj << Remove Local Data Filter
+**Sintaxis:** obj &lt;&lt; Remove Local Data Filter
 
 **Descripción:** Si se ha creado un filtro de datos local, esto lo eliminará y restaurará la plataforma para usar todos los datos de la tabla de datos directamente.
 
@@ -16984,9 +16904,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 #### Report
 
-**Sintaxis:** obj << Report;
-
-Report( obj )
+**Sintaxis:** obj &lt;&lt; Report;Report( obj )
 
 **Descripción:** Devuelve una referencia al objeto informe.
 
@@ -17012,7 +16930,7 @@ Show( t );
 
 #### Report View
 
-**Sintaxis:** obj << Report View( "Completa"|"Resumen" )
+**Sintaxis:** obj &lt;&lt; Report View( "Completa"|"Resumen" )
 
 **Descripción:** La vista del informe determina el nivel de detalle visible en el informe de una plataforma. Full muestra todos los detalles, mientras que Summary solo muestra el contenido seleccionado, con independencia de la plataforma. Para el comportamiento personalizado, los cuadros de visualización admiten un mensaje <<Set Summary Behavior.
 
@@ -17036,7 +16954,7 @@ obj << Report View( "Summary" );
 
 #### Save ByGroup Script to Data Table
 
-**Sintaxis:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis, y lo guarda como propiedad de tabla en la tabla de datos. Puede especificar un nombre para el script. La opción Append Suffix añade un sufijo numérico al nombre del script, que diferencia el script de un script existente que tenga el mismo nombre. La opción Prompt solicita al usuario que especifique un nombre de script. La opción Replace reemplaza un script existente que tenga el mismo nombre.
 
@@ -17066,7 +16984,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 #### Save ByGroup Script to Journal
 
-**Sintaxis:** obj << Save ByGroup Script to Journal
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -17096,7 +17014,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 #### Save ByGroup Script to Script Window
 
-**Sintaxis:** obj << Save ByGroup Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -17126,7 +17044,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 #### Save Script for All Objects
 
-**Sintaxis:** obj << Save Script for All Objects
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects
 
 **Descripción:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -17150,7 +17068,7 @@ obj << Save Script for All Objects;
 
 #### Save Script for All Objects To Data Table
 
-**Sintaxis:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descripción:** Guarda un script para todos los objetos de informe en la tabla de datos actual. Esta opción es útil cuando tiene varios informes en la ventana. El script recibe el nombre de la primera plataforma a menos que especifique el nombre del script entre comillas.
 
@@ -17208,7 +17126,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 #### Save Script to Data Table
 
-**Sintaxis:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis y lo guarda en forma de propiedad de tabla en la tabla de datos.
 
@@ -17232,7 +17150,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 #### Save Script to Journal
 
-**Sintaxis:** obj << Save Script to Journal
+**Sintaxis:** obj &lt;&lt; Save Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -17256,7 +17174,7 @@ obj << Save Script to Journal;
 
 #### Save Script to Report
 
-**Sintaxis:** obj << Save Script to Report
+**Sintaxis:** obj &lt;&lt; Save Script to Report
 
 **Descripción:** Crea un script JSL para generar este análisis y lo muestra en el propio informe. Resulta útil para conservar un registro impreso de lo que se ha hecho.
 
@@ -17280,7 +17198,7 @@ obj << Save Script to Report;
 
 #### Save Script to Script Window
 
-**Sintaxis:** obj << Save Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -17369,7 +17287,7 @@ dt << Distribution(
 
 #### Sync to Data Table Changes
 
-**Sintaxis:** obj << Sync to Data Table Changes
+**Sintaxis:** obj &lt;&lt; Sync to Data Table Changes
 
 **Descripción:** Realiza una sincronización con las modificaciones de datos y de exclusión que se hayan realizado.
 
@@ -17386,7 +17304,7 @@ dist << Sync To Data Table Changes;
 
 #### Title
 
-**Sintaxis:** obj << Title( "new title" )
+**Sintaxis:** obj &lt;&lt; Title( "new title" )
 
 **Descripción:** Establece el título de la plataforma.
 
@@ -17410,7 +17328,7 @@ obj << Title( "My Platform" );
 
 #### Top Report
 
-**Sintaxis:** obj << Top Report
+**Sintaxis:** obj &lt;&lt; Top Report
 
 **Descripción:** Devuelve una referencia al nodo raíz del informe.
 
@@ -17436,7 +17354,7 @@ Show( t );
 
 #### Transform Column
 
-**Sintaxis:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Sintaxis:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Descripción:** Crea una columna de transformación en el contexto local de un objeto (una plataforma por lo general). La columna de transformación solo está activa mientras esté en uso la plataforma.
 
@@ -17457,7 +17375,7 @@ dt << Distribution(
 
 #### View Web XML
 
-**Sintaxis:** obj << View Web XML
+**Sintaxis:** obj &lt;&lt; View Web XML
 
 **Descripción:** Devuelve el código XML que se utiliza para crear el informe HTML interactivo.
 
@@ -17472,9 +17390,7 @@ xml = obj << View Web XML;
 
 #### Window View
 
-**Sintaxis:** obj = Fit Mixed(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Mixed(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Establece el tipo de ventana que se creará para el informe. De forma predeterminada, se creará una ventana de informe Visible. Una ventana Invisible no aparecerá en pantalla, pero se puede detectar mediante funciones como Window(). Una ventana Private responde a la mayoría de los mensajes de ventana pero no es detectable y se debe abordar a través del objeto de informe.
 
@@ -17519,7 +17435,7 @@ obj = dt << Fit Model(
 
 #### Confidence Intervals
 
-**Sintaxis:** obj << Confidence Intervals( <state=0|1> | <fraction> )
+**Sintaxis:** obj &lt;&lt; Confidence Intervals( &lt;state=0|1&gt; | &lt;fraction&gt; )
 
 **Descripción:** Muestra u oculta los intervalos de confianza (1 - fracción) % de la verosimilitud del perfil para los parámetros del modelo. El argumento de fracción anula el nivel de alfa establecido al iniciar la plataforma.
 
@@ -17542,7 +17458,7 @@ obj << Confidence Intervals( 0 );
 
 #### Confusion Matrix
 
-**Sintaxis:** obj << Confusion Matrix( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Confusion Matrix( state=0|1 )
 
 **Descripción:** Muestra u oculta una matriz de tabulación cruzada de las respuestas observadas y predichas.
 
@@ -17564,7 +17480,7 @@ obj << Confusion Matrix( 1 );
 
 #### Contour Profiler
 
-**Sintaxis:** obj << Contour Profiler( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Contour Profiler( state=0|1 )
 
 **Descripción:** Muestra u oculta el perfilador de contorno, que representa gráficamente los contornos de las respuestas de dos factores a la vez. Solo está disponible cuando el modelo contiene más de un factor continuo.
 
@@ -17590,7 +17506,7 @@ obj << Contour Profiler( 1 );
 
 #### Decision Threshold
 
-**Sintaxis:** obj << Decision Threshold( state = 0|1, Set Probability Threshold( number=0.5 ) )
+**Sintaxis:** obj &lt;&lt; Decision Threshold( state = 0|1, Set Probability Threshold( number=0.5 ) )
 
 **Descripción:** Muestra u oculta la distribución de probabilidades ajustadas y tablas observadas frente a predichas para cada modelo. Puede cambiar el umbral de probabilidad para explorar cómo afectan los distintos umbrales a los resultados de clasificación.
 
@@ -17614,9 +17530,7 @@ obj << Decision Threshold( 1, Set Probability Threshold( 0.33 ) );
 
 #### Dispose Reports
 
-**Sintaxis:** obj = Fit Model(...Dispose Reports( state=0|1 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Dispose Reports( state=0|1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica que no se muestra ningún informe de modelo individual y que se han eliminado de la memoria tras el ajuste. Cuando hay muchos miles de respuestas, esta opción reduce el tiempo de cálculo y ahorra espacio en la memoria. Utilícela con la opción Resultados en tablas de datos para recopilar los resultados de los modelos ajustados.
 
@@ -17641,7 +17555,7 @@ obj = dt << Fit Model(
 
 #### Effect Summary
 
-**Sintaxis:** obj << Effect Summary( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Effect Summary( state=0|1 )
 
 **Descripción:** Muestra u oculta el informe Resumen de efectos, que permite actualizar interactivamente los efectos del modelo. Opción activada de forma predeterminada.
 
@@ -17667,7 +17581,7 @@ Report( obj )["Effect Summary"] << Close( 0 );
 
 #### FDR
 
-**Sintaxis:** obj << FDR( state=0|1 )
+**Sintaxis:** obj &lt;&lt; FDR( state=0|1 )
 
 **Descripción:** Especifica si se ajustan o no los valores de log utilidad y sus valores p correspondientes de la tabla Resumen de efectos utilizando la tasa de falsos descubrimientos (FDR).
 
@@ -17691,7 +17605,7 @@ Report( obj )["Effect Summary"] << Close( 0 );
 
 #### Get Confusion Matrix Test
 
-**Sintaxis:** obj << Get Confusion Matrix Test
+**Sintaxis:** obj &lt;&lt; Get Confusion Matrix Test
 
 **Descripción:** Devuelve la matriz de confusión para el conjunto de prueba.
 
@@ -17715,7 +17629,7 @@ obj << Get Confusion Matrix Test;
 
 #### Get Confusion Matrix Training
 
-**Sintaxis:** obj << Get Confusion Matrix Training
+**Sintaxis:** obj &lt;&lt; Get Confusion Matrix Training
 
 **Descripción:** Devuelve la matriz de confusión para el conjunto de entrenamiento.
 
@@ -17736,7 +17650,7 @@ obj << Get Confusion Matrix Training;
 
 #### Get Confusion Matrix Validation
 
-**Sintaxis:** obj << Get Confusion Matrix Validation
+**Sintaxis:** obj &lt;&lt; Get Confusion Matrix Validation
 
 **Descripción:** Devuelve la matriz de confusión para el conjunto de validación.
 
@@ -17757,7 +17671,7 @@ obj << Get Confusion Matrix Validation;
 
 #### Get Confusion Rates Test
 
-**Sintaxis:** obj << Get Confusion Rates Test
+**Sintaxis:** obj &lt;&lt; Get Confusion Rates Test
 
 **Descripción:** Devuelve las tasas de confusión para el conjunto de prueba.
 
@@ -17781,7 +17695,7 @@ obj << Get Confusion Rates Test;
 
 #### Get Confusion Rates Training
 
-**Sintaxis:** obj << Get Confusion Rates Training
+**Sintaxis:** obj &lt;&lt; Get Confusion Rates Training
 
 **Descripción:** Devuelve las tasas de confusión para el conjunto de entrenamiento.
 
@@ -17802,7 +17716,7 @@ obj << Get Confusion Rates Training;
 
 #### Get Confusion Rates Validation
 
-**Sintaxis:** obj << Get Confusion Rates Validation
+**Sintaxis:** obj &lt;&lt; Get Confusion Rates Validation
 
 **Descripción:** Devuelve las tasas de confusión para el conjunto de validación.
 
@@ -17823,7 +17737,7 @@ obj << Get Confusion Rates Validation;
 
 #### Get MM SAS DATA Step
 
-**Sintaxis:** obj << Get MM SAS DATA Step
+**Sintaxis:** obj &lt;&lt; Get MM SAS DATA Step
 
 **Descripción:** Crea un código SAS que puede registrar en el Gestor de modelos SAS.
 
@@ -17844,7 +17758,7 @@ code = obj << Get MM SAS Data Step;
 
 #### Get Measures
 
-**Sintaxis:** obj << Get Measures
+**Sintaxis:** obj &lt;&lt; Get Measures
 
 **Descripción:** Devuelve medidas de ajuste de resumen del modelo.
 
@@ -17867,7 +17781,7 @@ obj << Get Measures;
 
 #### Get Probability Formulas
 
-**Sintaxis:** obj << Get Probability Formulas
+**Sintaxis:** obj &lt;&lt; Get Probability Formulas
 
 **Descripción:** Devuelve un script para crear fórmulas de probabilidad.
 
@@ -17888,7 +17802,7 @@ obj << Get Probability Formulas;
 
 #### Get SAS DATA Step
 
-**Sintaxis:** obj << Get SAS DATA Step
+**Sintaxis:** obj &lt;&lt; Get SAS DATA Step
 
 **Descripción:** Crea un código SAS que puede utilizar para asignar una puntuación un nuevo conjunto de datos.
 
@@ -17909,7 +17823,7 @@ code = obj << Get SAS Data Step;
 
 #### Indicator Parameterization Estimates
 
-**Sintaxis:** obj << Indicator Parameterization Estimates( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Indicator Parameterization Estimates( state=0|1 )
 
 **Descripción:** Muestra u oculta el informe Parametrización de la función indicadora. Este informe contiene estimaciones de parámetros para el modelo en el que las columnas nominales se codifican utilizando la parametrización de indicadores (SAS GLM) y se tratan como continuas.
 
@@ -17931,7 +17845,7 @@ obj << Indicator Parameterization Estimates( 1 );
 
 #### Inverse Prediction
 
-**Sintaxis:** obj << Inverse Prediction( Response( p1, p2, ... ), Term Value( effect1( value ), effect2( value ), ... ) )
+**Sintaxis:** obj &lt;&lt; Inverse Prediction( Response( p1, p2, ... ), Term Value( effect1( value ), effect2( value ), ... ) )
 
 **Descripción:** Genera un valor X predicho y un intervalo de confianza basado en los valores especificados de Y y todos los demás factores.
 
@@ -17953,7 +17867,7 @@ obj << Inverse Prediction( Response( 0.5, 0.75, 0.9 ) );
 
 #### Lift Curve
 
-**Sintaxis:** obj << Lift Curve( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Lift Curve( state=0|1 )
 
 **Descripción:** Muestra u oculta el gráfico Curva Lift. Una curva lift representa la elevación frente a la porción de las observaciones y proporciona otra visión de la capacidad de predicción de un modelo. Si ha utilizado la validación, se muestra un gráfico para cada uno de los conjuntos, de entrenamiento, validación y prueba.
 
@@ -17974,7 +17888,7 @@ obj << Lift Curve( 1 );
 
 #### Likelihood Ratio Tests
 
-**Sintaxis:** obj << Likelihood Ratio Tests( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Likelihood Ratio Tests( state=0|1 )
 
 **Descripción:** Muestra u oculta las pruebas de la razón de verosimilitud para cada efecto. Cada prueba compara la log-verosimilitud del modelo ajustado con la log-verosimilitud del modelo que quita un efecto.
 
@@ -17995,7 +17909,7 @@ obj << Likelihood Ratio Test( 1 );
 
 #### Line Color
 
-**Sintaxis:** obj << Line Color( color )
+**Sintaxis:** obj &lt;&lt; Line Color( color )
 
 **Descripción:** Le permite seleccionar el color de las curvas del gráfico.
 
@@ -18017,7 +17931,7 @@ obj << Line Color( "Magenta" );
 
 #### Logistic Plot
 
-**Sintaxis:** obj << Logistic Plot( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Logistic Plot( state=0|1 )
 
 **Descripción:** Muestra u oculta el informe Gráfico logístico. Solo está disponible si el modelo consta de un único efecto continuo. Opción activada de forma predeterminada.
 
@@ -18040,7 +17954,7 @@ obj << Logistic Plot( 1 );
 
 #### Model Dialog
 
-**Sintaxis:** obj << Model Dialog
+**Sintaxis:** obj &lt;&lt; Model Dialog
 
 **Descripción:** Muestra la ventana de inicio Ajuste del modelo completada para el análisis actual.
 
@@ -18061,7 +17975,7 @@ obj << Model Dialog;
 
 #### Odds Ratios
 
-**Sintaxis:** obj << Odds Ratios( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Odds Ratios( state=0|1 )
 
 **Descripción:** Muestra u oculta un informe de razones de posibilidades que contiene Razones de posibilidades unitarias y Razones de posibilidades por rango. No está disponible para respuestas nominales con más de dos niveles.
 
@@ -18083,7 +17997,7 @@ obj << Odds Ratios( 1 );
 
 #### Positive Level
 
-**Sintaxis:** obj << Positive Level
+**Sintaxis:** obj &lt;&lt; Positive Level
 
 **Descripción:** Establece el nivel identificado como positivo para su uso en las curvas ROC.
 
@@ -18105,7 +18019,7 @@ obj << ROC Curve( 1 );
 
 #### Precision Recall Curve
 
-**Sintaxis:** obj << Precision Recall Curve( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Precision Recall Curve( state=0|1 )
 
 **Descripción:** Muestra u oculta el gráfico Curva de Precisión-Recuperación, que contiene una curva para cada nivel de la variable de respuesta. Una curva de precisión-recuperación representa los valores de precisión frente a los valores de recuperación a distintos umbrales. Si ha utilizado la validación, se muestra un gráfico para cada conjunto de entrenamiento, validación y prueba.
 
@@ -18128,7 +18042,7 @@ obj << Precision Recall Curve( 1 );
 
 #### Profiler
 
-**Sintaxis:** obj << Profiler( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Profiler( state=0|1 )
 
 **Descripción:** Muestra u oculta el Perfilador de predicción, que muestra los valores ajustados para una probabilidad de respuesta especificada a medida que se cambian los valores de los factores del modelo.
 
@@ -18150,7 +18064,7 @@ obj << Profiler( 1 );
 
 #### Publish Probability Formulas
 
-**Sintaxis:** obj << Publish Probability Formulas
+**Sintaxis:** obj &lt;&lt; Publish Probability Formulas
 
 **Descripción:** Construye fórmulas de probabilidad y las publica como un script de columna de fórmula en el almacén de fórmulas.
 
@@ -18171,7 +18085,7 @@ obj << Publish Probability Formulas;
 
 #### ROC Curve
 
-**Sintaxis:** obj << ROC Curve( state=0|1 )
+**Sintaxis:** obj &lt;&lt; ROC Curve( state=0|1 )
 
 **Descripción:** Muestra u oculta la curva Característica operativa del receptor (ROC) de cada nivel de la variable de respuesta. La curva ROC es un gráfico de sensibilidad frente a (1 - especificidad). Si ha utilizado la validación, se muestra un gráfico para cada conjunto de entrenamiento, validación y prueba.
 
@@ -18194,9 +18108,7 @@ obj << ROC Curve( 1 );
 
 #### Results in Data Tables
 
-**Sintaxis:** obj = Fit Model(...Results in Data Tables( state=0|1 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Results in Data Tables( state=0|1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Guarda los resultados del modelo individual de muchas respuestas en tablas de datos. El contenido y el número de tablas de datos de salida dependen del modelo que se esté ajustando.
 
@@ -18220,7 +18132,7 @@ obj = dt << Fit Model(
 
 #### Save Probability Formula
 
-**Sintaxis:** obj << Save Probability Formula
+**Sintaxis:** obj &lt;&lt; Save Probability Formula
 
 **Descripción:** Guarda nuevas columnas en la tabla de datos. Las columnas nuevas contienen fórmulas para combinaciones lineales de los niveles de respuesta, fórmulas de predicción para los niveles de respuesta y una fórmula de predicción que da la respuesta más probable.
 
@@ -18241,7 +18153,7 @@ obj << Save Probability Formula;
 
 #### Show Points
 
-**Sintaxis:** obj << Show Points( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Show Points( state=0|1 )
 
 **Descripción:** Muestra u oculta los puntos del gráfico logístico. Opción activada de forma predeterminada.
 
@@ -18263,7 +18175,7 @@ obj << Show Points( 0 );
 
 #### Show Rate Curve
 
-**Sintaxis:** obj << Show Rate Curve( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Show Rate Curve( state=0|1 )
 
 **Descripción:** Muestra u oculta la curva de tasa en el gráfico logístico. La curva de tasa solo es útil si tiene varios puntos para cada valor de la variable X.
 
@@ -18285,7 +18197,7 @@ obj << Show Rate Curve( 1 );
 
 #### Specify Profit Matrix
 
-**Sintaxis:** obj << Specify Profit Matrix( matrix, level1, level2, ... )
+**Sintaxis:** obj &lt;&lt; Specify Profit Matrix( matrix, level1, level2, ... )
 
 **Descripción:** Le permite especificar los beneficios o costes asociados a decisiones de clasificación correctas o incorrectas.
 
@@ -18308,9 +18220,7 @@ obj << Specify Profit Matrix( [0 -1, -1 0, . .], "High", "Low", "Undecided" );
 
 #### Suppress Reports
 
-**Sintaxis:** obj = Fit Model(...Suppress Reports( state=0|1 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Suppress Reports( state=0|1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica que se han ocultado los informes de modelos individuales. Cuando hay miles de respuestas, esta opción reduce el tiempo de cálculo. Los objetos de ajuste y algunos elementos de menú siguen estando disponibles. Utilice la opción Resultados en tablas de datos para recopilar los resultados de los informes de modelos.
 
@@ -18335,7 +18245,7 @@ obj = dt << Fit Model(
 
 #### Wald Tests
 
-**Sintaxis:** obj << Wald Tests( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Wald Tests( state=0|1 )
 
 **Descripción:** Muestra u oculta los estadísticos de la prueba de ji cuadrado y los valores p de las pruebas de Wald que determina si cada parámetro es cero.
 
@@ -18358,7 +18268,7 @@ obj << Wald Tests( 1 );
 
 #### Action
 
-**Sintaxis:** obj << Action
+**Sintaxis:** obj &lt;&lt; Action
 
 **Descripción:** Trampa multiuso dentro de una plataforma para insertar expresiones que se desean evaluar. Temporalmente establece los contextos de cuadros de visualización y tablas de datos en la plataforma.
 
@@ -18376,7 +18286,7 @@ dt << Bivariate(
 
 #### Apply Preset
 
-**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descripción:** Aplica al objeto un preajuste creado previamente, actualizando las opciones y personalizaciones para que coincidan con la configuración guardada.
 
@@ -18423,7 +18333,7 @@ obj2 << Apply Preset( preset );
 
 #### Automatic Recalc
 
-**Sintaxis:** obj << Automatic Recalc( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Descripción:** Rehace automáticamente el análisis para modificaciones de datos y de exclusión. Si está activada la opción Recálculo automático, le recomendamos que utilice los comandos Wait(0) para asegurarse de que las modificaciones de datos y de exclusión surtan efecto antes del recálculo.
 
@@ -18445,7 +18355,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 #### Broadcast
 
-**Sintaxis:** obj << Broadcast(message)
+**Sintaxis:** obj &lt;&lt; Broadcast(message)
 
 **Descripción:** Difunde un mensaje a una plataforma. Si los resultados devueltos de objetos individuales son tablas, se concatenan si es posible y el formato final es idéntico al resultado de la opción Guardar tabla combinada en un cuadro de tabla o al resultado de la opción Concatenar mediante una columna de origen. Los demás resultados se almacenan en una lista y se devuelven.
 
@@ -18465,7 +18375,7 @@ objs[1] << Broadcast( Save Summaries );
 
 #### Column Switcher
 
-**Sintaxis:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Sintaxis:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Descripción:** Añade un panel de control para cambiar las variables de la plataforma
 
@@ -18483,7 +18393,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 #### Copy ByGroup Script
 
-**Sintaxis:** obj << Copy ByGroup Script
+**Sintaxis:** obj &lt;&lt; Copy ByGroup Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -18510,7 +18420,7 @@ obj[1] << Copy ByGroup Script;
 
 #### Copy Script
 
-**Sintaxis:** obj << Copy Script
+**Sintaxis:** obj &lt;&lt; Copy Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -18531,7 +18441,7 @@ obj << Copy Script;
 
 #### Data Table Window
 
-**Sintaxis:** obj << Data Table Window
+**Sintaxis:** obj &lt;&lt; Data Table Window
 
 **Descripción:** Mueve al frente la ventana de la tabla de datos que se utiliza en este análisis.
 
@@ -18552,7 +18462,7 @@ obj << Data Table Window;
 
 #### Get By Levels
 
-**Sintaxis:** obj << Get By Levels
+**Sintaxis:** obj &lt;&lt; Get By Levels
 
 **Descripción:** Devuelve un arreglo asociativo que asigna las columnas Por grupo a sus valores.
 
@@ -18569,7 +18479,7 @@ biv << Get By Levels;
 
 #### Get ByGroup Script
 
-**Sintaxis:** obj << Get ByGroup Script
+**Sintaxis:** obj &lt;&lt; Get ByGroup Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -18597,7 +18507,7 @@ Show( t );
 
 #### Get Container
 
-**Sintaxis:** obj << Get Container
+**Sintaxis:** obj &lt;&lt; Get Container
 
 **Descripción:** Devuelve una referencia al cuadro contenedor que incluye el contenido del objeto.
 
@@ -18650,7 +18560,7 @@ New Window( "platform boxes",
 
 #### Get Data Table
 
-**Sintaxis:** obj << Get Data Table
+**Sintaxis:** obj &lt;&lt; Get Data Table
 
 **Descripción:** Devuelve una referencia a la tabla de datos.
 
@@ -18672,7 +18582,7 @@ Show( N Rows( t ) );
 
 #### Get Group Platform
 
-**Sintaxis:** obj << Get Group Platform
+**Sintaxis:** obj &lt;&lt; Get Group Platform
 
 **Descripción:** Devuelve el objeto Plataforma grupal si esta plataforma forma parte de un grupo. De lo contrario, devuelve Empty().
 
@@ -18689,7 +18599,7 @@ group << Layout( "Arrange in Tabs" );
 
 #### Get Script
 
-**Sintaxis:** obj << Get Script
+**Sintaxis:** obj &lt;&lt; Get Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -18711,7 +18621,7 @@ Show( t );
 
 #### Get Script With Data Table
 
-**Sintaxis:** obj << Get Script With Data Table
+**Sintaxis:** obj &lt;&lt; Get Script With Data Table
 
 **Descripción:** Crea un script (JSL) para generar este análisis haciendo referencia específica a esta tabla de datos y lo devuelve en forma de expresión.
 
@@ -18733,7 +18643,7 @@ Show( t );
 
 #### Get Timing
 
-**Sintaxis:** obj << Get Timing
+**Sintaxis:** obj &lt;&lt; Get Timing
 
 **Descripción:** Determina el tiempo de inicio de una plataforma.
 
@@ -18755,7 +18665,7 @@ Show( t );
 
 #### Get Web Support
 
-**Sintaxis:** obj << Get Web Support
+**Sintaxis:** obj &lt;&lt; Get Web Support
 
 **Descripción:** Devuelve un número que indica el nivel de compatibilidad del HTML interactivo para el objeto de visualización. 1 significa que algunos o todos los elementos son compatibles. 0 significa que no existe compatibilidad.
 
@@ -18771,7 +18681,7 @@ Show( s );
 
 #### Get Where Expr
 
-**Sintaxis:** obj << Get Where Expr
+**Sintaxis:** obj &lt;&lt; Get Where Expr
 
 **Descripción:** Devuelve la expresión Where para el subconjunto de datos, si la plataforma se inició con By() o Where(). De lo contrario, devuelve Empty().
 
@@ -18808,7 +18718,7 @@ dt << Bivariate(
 
 #### Local Data Filter
 
-**Sintaxis:** obj << Local Data Filter
+**Sintaxis:** obj &lt;&lt; Local Data Filter
 
 **Descripción:** Para filtrar los datos según grupos o rangos determinados, pero locales para esta plataforma.
 
@@ -18864,7 +18774,7 @@ preset = obj << New Preset();
 
 #### Paste Local Data Filter
 
-**Sintaxis:** obj << Paste Local Data Filter
+**Sintaxis:** obj &lt;&lt; Paste Local Data Filter
 
 **Descripción:** Se aplica el filtro de datos locales del portapapeles al informe actual.
 
@@ -18885,7 +18795,7 @@ dist2 << Paste Local Data Filter;
 
 #### Redo Analysis
 
-**Sintaxis:** obj << Redo Analysis
+**Sintaxis:** obj &lt;&lt; Redo Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -18906,7 +18816,7 @@ obj << Redo Analysis;
 
 #### Redo ByGroup Analysis
 
-**Sintaxis:** obj << Redo ByGroup Analysis
+**Sintaxis:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -18933,7 +18843,7 @@ obj[1] << Redo ByGroup Analysis;
 
 #### Relaunch Analysis
 
-**Sintaxis:** obj << Relaunch Analysis
+**Sintaxis:** obj &lt;&lt; Relaunch Analysis
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -18954,7 +18864,7 @@ obj << Relaunch Analysis;
 
 #### Relaunch ByGroup
 
-**Sintaxis:** obj << Relaunch ByGroup
+**Sintaxis:** obj &lt;&lt; Relaunch ByGroup
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -18981,7 +18891,7 @@ obj[1] << Relaunch ByGroup;
 
 #### Remove Column Switcher
 
-**Sintaxis:** obj << Remove Column Switcher
+**Sintaxis:** obj &lt;&lt; Remove Column Switcher
 
 **Descripción:** Quita el Cambiador de columnas más reciente que se haya agregado a la plataforma.
 
@@ -19001,7 +18911,7 @@ obj << Remove Column Switcher;
 
 #### Remove Local Data Filter
 
-**Sintaxis:** obj << Remove Local Data Filter
+**Sintaxis:** obj &lt;&lt; Remove Local Data Filter
 
 **Descripción:** Si se ha creado un filtro de datos local, esto lo eliminará y restaurará la plataforma para usar todos los datos de la tabla de datos directamente.
 
@@ -19040,9 +18950,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 #### Report
 
-**Sintaxis:** obj << Report;
-
-Report( obj )
+**Sintaxis:** obj &lt;&lt; Report;Report( obj )
 
 **Descripción:** Devuelve una referencia al objeto informe.
 
@@ -19065,7 +18973,7 @@ Show( t );
 
 #### Report View
 
-**Sintaxis:** obj << Report View( "Completa"|"Resumen" )
+**Sintaxis:** obj &lt;&lt; Report View( "Completa"|"Resumen" )
 
 **Descripción:** La vista del informe determina el nivel de detalle visible en el informe de una plataforma. Full muestra todos los detalles, mientras que Summary solo muestra el contenido seleccionado, con independencia de la plataforma. Para el comportamiento personalizado, los cuadros de visualización admiten un mensaje <<Set Summary Behavior.
 
@@ -19086,7 +18994,7 @@ obj << Report View( "Summary" );
 
 #### Save ByGroup Script to Data Table
 
-**Sintaxis:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis, y lo guarda como propiedad de tabla en la tabla de datos. Puede especificar un nombre para el script. La opción Append Suffix añade un sufijo numérico al nombre del script, que diferencia el script de un script existente que tenga el mismo nombre. La opción Prompt solicita al usuario que especifique un nombre de script. La opción Replace reemplaza un script existente que tenga el mismo nombre.
 
@@ -19113,7 +19021,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 #### Save ByGroup Script to Journal
 
-**Sintaxis:** obj << Save ByGroup Script to Journal
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -19140,7 +19048,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 #### Save ByGroup Script to Script Window
 
-**Sintaxis:** obj << Save ByGroup Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -19167,7 +19075,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 #### Save Script for All Objects
 
-**Sintaxis:** obj << Save Script for All Objects
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects
 
 **Descripción:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -19188,7 +19096,7 @@ obj << Save Script for All Objects;
 
 #### Save Script for All Objects To Data Table
 
-**Sintaxis:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descripción:** Guarda un script para todos los objetos de informe en la tabla de datos actual. Esta opción es útil cuando tiene varios informes en la ventana. El script recibe el nombre de la primera plataforma a menos que especifique el nombre del script entre comillas.
 
@@ -19240,7 +19148,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 #### Save Script to Data Table
 
-**Sintaxis:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis y lo guarda en forma de propiedad de tabla en la tabla de datos.
 
@@ -19261,7 +19169,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 #### Save Script to Journal
 
-**Sintaxis:** obj << Save Script to Journal
+**Sintaxis:** obj &lt;&lt; Save Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -19282,7 +19190,7 @@ obj << Save Script to Journal;
 
 #### Save Script to Report
 
-**Sintaxis:** obj << Save Script to Report
+**Sintaxis:** obj &lt;&lt; Save Script to Report
 
 **Descripción:** Crea un script JSL para generar este análisis y lo muestra en el propio informe. Resulta útil para conservar un registro impreso de lo que se ha hecho.
 
@@ -19303,7 +19211,7 @@ obj << Save Script to Report;
 
 #### Save Script to Script Window
 
-**Sintaxis:** obj << Save Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -19389,7 +19297,7 @@ dt << Distribution(
 
 #### Sync to Data Table Changes
 
-**Sintaxis:** obj << Sync to Data Table Changes
+**Sintaxis:** obj &lt;&lt; Sync to Data Table Changes
 
 **Descripción:** Realiza una sincronización con las modificaciones de datos y de exclusión que se hayan realizado.
 
@@ -19406,7 +19314,7 @@ dist << Sync To Data Table Changes;
 
 #### Title
 
-**Sintaxis:** obj << Title( "new title" )
+**Sintaxis:** obj &lt;&lt; Title( "new title" )
 
 **Descripción:** Establece el título de la plataforma.
 
@@ -19427,7 +19335,7 @@ obj << Title( "My Platform" );
 
 #### Top Report
 
-**Sintaxis:** obj << Top Report
+**Sintaxis:** obj &lt;&lt; Top Report
 
 **Descripción:** Devuelve una referencia al nodo raíz del informe.
 
@@ -19450,7 +19358,7 @@ Show( t );
 
 #### Transform Column
 
-**Sintaxis:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Sintaxis:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Descripción:** Crea una columna de transformación en el contexto local de un objeto (una plataforma por lo general). La columna de transformación solo está activa mientras esté en uso la plataforma.
 
@@ -19471,7 +19379,7 @@ dt << Distribution(
 
 #### View Web XML
 
-**Sintaxis:** obj << View Web XML
+**Sintaxis:** obj &lt;&lt; View Web XML
 
 **Descripción:** Devuelve el código XML que se utiliza para crear el informe HTML interactivo.
 
@@ -19486,9 +19394,7 @@ xml = obj << View Web XML;
 
 #### Window View
 
-**Sintaxis:** obj = Fit Nominal Logistic(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Nominal Logistic(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Establece el tipo de ventana que se creará para el informe. De forma predeterminada, se creará una ventana de informe Visible. Una ventana Invisible no aparecerá en pantalla, pero se puede detectar mediante funciones como Window(). Una ventana Private responde a la mayoría de los mensajes de ventana pero no es detectable y se debe abordar a través del objeto de informe.
 
@@ -19511,7 +19417,7 @@ New Window( "Bivariate Equation",
 
 #### By
 
-**Sintaxis:** obj << By( column(s) )
+**Sintaxis:** obj &lt;&lt; By( column(s) )
 
 ```jsl
 
@@ -19557,7 +19463,7 @@ obj = dt << Fit Model(
 
 #### Confidence Intervals
 
-**Sintaxis:** obj << Confidence Intervals( <state=0|1> | <fraction> )
+**Sintaxis:** obj &lt;&lt; Confidence Intervals( &lt;state=0|1&gt; | &lt;fraction&gt; )
 
 **Descripción:** Muestra u oculta los intervalos de confianza (1 - fracción) % de la verosimilitud del perfil para los parámetros del modelo. El argumento de fracción anula el nivel de alfa establecido al iniciar la plataforma.
 
@@ -19579,7 +19485,7 @@ obj << Confidence Intervals( 0 );
 
 #### Confusion Matrix
 
-**Sintaxis:** obj << Confusion Matrix( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Confusion Matrix( state=0|1 )
 
 **Descripción:** Muestra u oculta una matriz de tabulación cruzada de las respuestas observadas y predichas.
 
@@ -19600,7 +19506,7 @@ obj << Confusion Matrix( 1 );
 
 #### Contour Profiler
 
-**Sintaxis:** obj << Contour Profiler( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Contour Profiler( state=0|1 )
 
 **Descripción:** Muestra u oculta el perfilador de contorno, que representa gráficamente los contornos de las respuestas de dos factores a la vez. Solo está disponible cuando el modelo contiene más de un factor continuo.
 
@@ -19626,9 +19532,7 @@ obj << Contour Profiler( 1 );
 
 #### Dispose Reports
 
-**Sintaxis:** obj = Fit Model(...Dispose Reports( state=0|1 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Dispose Reports( state=0|1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica que no se muestra ningún informe de modelo individual y que se han eliminado de la memoria tras el ajuste. Cuando hay muchos miles de respuestas, esta opción reduce el tiempo de cálculo y ahorra espacio en la memoria. Utilícela con la opción Resultados en tablas de datos para recopilar los resultados de los modelos ajustados.
 
@@ -19649,7 +19553,7 @@ obj = dt << Fit Model(
 
 #### Effect Summary
 
-**Sintaxis:** obj << Effect Summary( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Effect Summary( state=0|1 )
 
 **Descripción:** Muestra u oculta el informe Resumen de efectos, que permite actualizar interactivamente los efectos del modelo. Opción activada de forma predeterminada.
 
@@ -19674,7 +19578,7 @@ Report( obj )["Effect Summary"] << Close( 0 );
 
 #### FDR
 
-**Sintaxis:** obj << FDR( state=0|1 )
+**Sintaxis:** obj &lt;&lt; FDR( state=0|1 )
 
 **Descripción:** Especifica si se ajustan o no los valores de log utilidad y sus valores p correspondientes de la tabla Resumen de efectos utilizando la tasa de falsos descubrimientos (FDR).
 
@@ -19697,7 +19601,7 @@ Report( obj )["Effect Summary"] << Close( 0 );
 
 #### Get Confusion Matrix Test
 
-**Sintaxis:** obj << Get Confusion Matrix Test
+**Sintaxis:** obj &lt;&lt; Get Confusion Matrix Test
 
 **Descripción:** Devuelve la matriz de confusión para el conjunto de prueba.
 
@@ -19719,7 +19623,7 @@ obj << Get Confusion Matrix Test;
 
 #### Get Confusion Matrix Training
 
-**Sintaxis:** obj << Get Confusion Matrix Training
+**Sintaxis:** obj &lt;&lt; Get Confusion Matrix Training
 
 **Descripción:** Devuelve la matriz de confusión para el conjunto de entrenamiento.
 
@@ -19740,7 +19644,7 @@ obj << Get Confusion Matrix Training;
 
 #### Get Confusion Matrix Validation
 
-**Sintaxis:** obj << Get Confusion Matrix Validation
+**Sintaxis:** obj &lt;&lt; Get Confusion Matrix Validation
 
 **Descripción:** Devuelve la matriz de confusión para el conjunto de validación.
 
@@ -19761,7 +19665,7 @@ obj << Get Confusion Matrix Validation;
 
 #### Get Confusion Rates Test
 
-**Sintaxis:** obj << Get Confusion Rates Test
+**Sintaxis:** obj &lt;&lt; Get Confusion Rates Test
 
 **Descripción:** Devuelve las tasas de confusión para el conjunto de prueba.
 
@@ -19783,7 +19687,7 @@ obj << Get Confusion Rates Test;
 
 #### Get Confusion Rates Training
 
-**Sintaxis:** obj << Get Confusion Rates Training
+**Sintaxis:** obj &lt;&lt; Get Confusion Rates Training
 
 **Descripción:** Devuelve las tasas de confusión para el conjunto de entrenamiento.
 
@@ -19804,7 +19708,7 @@ obj << Get Confusion Rates Training;
 
 #### Get Confusion Rates Validation
 
-**Sintaxis:** obj << Get Confusion Rates Validation
+**Sintaxis:** obj &lt;&lt; Get Confusion Rates Validation
 
 **Descripción:** Devuelve las tasas de confusión para el conjunto de validación.
 
@@ -19825,7 +19729,7 @@ obj << Get Confusion Rates Validation;
 
 #### Get MM SAS DATA Step
 
-**Sintaxis:** obj << Get MM SAS DATA Step
+**Sintaxis:** obj &lt;&lt; Get MM SAS DATA Step
 
 **Descripción:** Crea un código SAS que puede registrar en el Gestor de modelos SAS.
 
@@ -19845,7 +19749,7 @@ code = obj << Get MM SAS Data Step;
 
 #### Get Measures
 
-**Sintaxis:** obj << Get Measures
+**Sintaxis:** obj &lt;&lt; Get Measures
 
 **Descripción:** Devuelve medidas de ajuste de resumen del modelo.
 
@@ -19867,7 +19771,7 @@ obj << Get Measures;
 
 #### Get Probability Formulas
 
-**Sintaxis:** obj << Get Probability Formulas
+**Sintaxis:** obj &lt;&lt; Get Probability Formulas
 
 **Descripción:** Devuelve un script para crear fórmulas de probabilidad.
 
@@ -19887,7 +19791,7 @@ obj << Get Probability Formulas;
 
 #### Get SAS DATA Step
 
-**Sintaxis:** obj << Get SAS DATA Step
+**Sintaxis:** obj &lt;&lt; Get SAS DATA Step
 
 **Descripción:** Crea un código SAS que puede utilizar para asignar una puntuación un nuevo conjunto de datos.
 
@@ -19907,7 +19811,7 @@ code = obj << Get SAS Data Step;
 
 #### Lift Curve
 
-**Sintaxis:** obj << Lift Curve( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Lift Curve( state=0|1 )
 
 **Descripción:** Muestra u oculta el gráfico Curva Lift. Una curva lift representa la elevación frente a la porción de las observaciones y proporciona otra visión de la capacidad de predicción de un modelo. Si ha utilizado la validación, se muestra un gráfico para cada uno de los conjuntos, de entrenamiento, validación y prueba.
 
@@ -19928,7 +19832,7 @@ obj << Lift Curve( 1 );
 
 #### Likelihood Ratio Tests
 
-**Sintaxis:** obj << Likelihood Ratio Tests( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Likelihood Ratio Tests( state=0|1 )
 
 **Descripción:** Muestra u oculta las pruebas de la razón de verosimilitud para cada efecto. Cada prueba compara la log-verosimilitud del modelo ajustado con la log-verosimilitud del modelo que quita un efecto.
 
@@ -19948,7 +19852,7 @@ obj << Likelihood Ratio Tests( 1 );
 
 #### Logistic Plot
 
-**Sintaxis:** obj << Logistic Plot( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Logistic Plot( state=0|1 )
 
 **Descripción:** Muestra u oculta el informe Gráfico logístico. Solo está disponible si el modelo consta de un único efecto continuo. Opción activada de forma predeterminada.
 
@@ -19970,7 +19874,7 @@ obj << Logistic Plot( 1 );
 
 #### Model Dialog
 
-**Sintaxis:** obj << Model Dialog
+**Sintaxis:** obj &lt;&lt; Model Dialog
 
 **Descripción:** Muestra la ventana de inicio Ajuste del modelo completada para el análisis actual.
 
@@ -19990,7 +19894,7 @@ obj << Model Dialog;
 
 #### Odds Ratios
 
-**Sintaxis:** obj << Odds Ratios( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Odds Ratios( state=0|1 )
 
 **Descripción:** Muestra u oculta un informe de razones de posibilidades que contiene Razones de posibilidades unitarias y Razones de posibilidades por rango.
 
@@ -20011,7 +19915,7 @@ obj << Odds Ratios( 1 );
 
 #### Precision Recall Curve
 
-**Sintaxis:** obj << Precision Recall Curve( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Precision Recall Curve( state=0|1 )
 
 **Descripción:** Muestra u oculta el gráfico Curva de Precisión-Recuperación, que contiene una curva para cada nivel de la variable de respuesta. Una curva de precisión-recuperación representa los valores de precisión frente a los valores de recuperación a distintos umbrales. Si ha utilizado la validación, se muestra un gráfico para cada conjunto de entrenamiento, validación y prueba.
 
@@ -20031,7 +19935,7 @@ obj << Precision Recall Curve( 1 );
 
 #### Profiler
 
-**Sintaxis:** obj << Profiler( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Profiler( state=0|1 )
 
 **Descripción:** Muestra u oculta el Perfilador de predicción, que muestra los valores ajustados para una probabilidad de respuesta especificada a medida que se cambian los valores de los factores del modelo.
 
@@ -20052,7 +19956,7 @@ obj << Profiler( 1 );
 
 #### Publish Probability Formulas
 
-**Sintaxis:** obj << Publish Probability Formulas
+**Sintaxis:** obj &lt;&lt; Publish Probability Formulas
 
 **Descripción:** Construye fórmulas de probabilidad y las publica como un script de columna de fórmula en el almacén de fórmulas.
 
@@ -20072,7 +19976,7 @@ obj << Publish Probability Formulas;
 
 #### ROC Curve
 
-**Sintaxis:** obj << ROC Curve( state=0|1 )
+**Sintaxis:** obj &lt;&lt; ROC Curve( state=0|1 )
 
 **Descripción:** Muestra u oculta la curva Característica operativa del receptor (ROC) de cada nivel de la variable de respuesta. La curva ROC es un gráfico de sensibilidad frente a (1 - especificidad). Si ha utilizado la validación, se muestra un gráfico para cada conjunto de entrenamiento, validación y prueba.
 
@@ -20092,9 +19996,7 @@ obj << ROC Curve( 1 );
 
 #### Results in Data Tables
 
-**Sintaxis:** obj = Fit Model(...Results in Data Tables( state=0|1 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Results in Data Tables( state=0|1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Guarda los resultados del modelo individual de muchas respuestas en tablas de datos. El contenido y el número de tablas de datos de salida dependen del modelo que se esté ajustando.
 
@@ -20114,7 +20016,7 @@ obj = dt << Fit Model(
 
 #### Save Expected Value
 
-**Sintaxis:** obj << Save Expected Value
+**Sintaxis:** obj &lt;&lt; Save Expected Value
 
 **Descripción:** Guarda una nueva columna en la tabla de datos. La columna nueva contiene la combinación lineal de los valores de respuesta con las probabilidades de respuesta ajustadas para cada fila y da el valor esperado.
 
@@ -20135,7 +20037,7 @@ obj << Save Expected Value;
 
 #### Save Probability Formula
 
-**Sintaxis:** obj << Save Probability Formula
+**Sintaxis:** obj &lt;&lt; Save Probability Formula
 
 **Descripción:** Guarda nuevas columnas en la tabla de datos. Las columnas nuevas contienen fórmulas para combinaciones lineales de los niveles de respuesta, fórmulas de predicción para los niveles de respuesta y una fórmula de predicción que da la respuesta más probable.
 
@@ -20155,7 +20057,7 @@ obj << Save Probability Formula;
 
 #### Save Quantiles
 
-**Sintaxis:** obj << Save Quantiles
+**Sintaxis:** obj &lt;&lt; Save Quantiles
 
 **Descripción:** Guarda columnas nuevas en la tabla de datos. Las columnas nuevas se denominan OrdQ.05, OrdQ.50 y OrdQ.95, y contienen valores que se ajustan a los cuantiles de las probabilidades correspondientes.
 
@@ -20176,9 +20078,7 @@ obj << Save Quantiles;
 
 #### Suppress Reports
 
-**Sintaxis:** obj = Fit Model(...Suppress Reports( state=0|1 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Suppress Reports( state=0|1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica que se han ocultado los informes de modelos individuales. Cuando hay miles de respuestas, esta opción reduce el tiempo de cálculo. Los objetos de ajuste y algunos elementos de menú siguen estando disponibles. Utilice la opción Resultados en tablas de datos para recopilar los resultados de los informes de modelos.
 
@@ -20199,7 +20099,7 @@ obj = dt << Fit Model(
 
 #### Wald Tests
 
-**Sintaxis:** obj << Wald Tests( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Wald Tests( state=0|1 )
 
 **Descripción:** Muestra u oculta los estadísticos de la prueba de ji cuadrado y los valores p de las pruebas de Wald que determina si cada parámetro es cero.
 
@@ -20221,7 +20121,7 @@ obj << Wald Tests( 1 );
 
 #### Action
 
-**Sintaxis:** obj << Action
+**Sintaxis:** obj &lt;&lt; Action
 
 **Descripción:** Trampa multiuso dentro de una plataforma para insertar expresiones que se desean evaluar. Temporalmente establece los contextos de cuadros de visualización y tablas de datos en la plataforma.
 
@@ -20239,7 +20139,7 @@ dt << Bivariate(
 
 #### Apply Preset
 
-**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descripción:** Aplica al objeto un preajuste creado previamente, actualizando las opciones y personalizaciones para que coincidan con la configuración guardada.
 
@@ -20286,7 +20186,7 @@ obj2 << Apply Preset( preset );
 
 #### Automatic Recalc
 
-**Sintaxis:** obj << Automatic Recalc( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Descripción:** Rehace automáticamente el análisis para modificaciones de datos y de exclusión. Si está activada la opción Recálculo automático, le recomendamos que utilice los comandos Wait(0) para asegurarse de que las modificaciones de datos y de exclusión surtan efecto antes del recálculo.
 
@@ -20307,7 +20207,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 #### Broadcast
 
-**Sintaxis:** obj << Broadcast(message)
+**Sintaxis:** obj &lt;&lt; Broadcast(message)
 
 **Descripción:** Difunde un mensaje a una plataforma. Si los resultados devueltos de objetos individuales son tablas, se concatenan si es posible y el formato final es idéntico al resultado de la opción Guardar tabla combinada en un cuadro de tabla o al resultado de la opción Concatenar mediante una columna de origen. Los demás resultados se almacenan en una lista y se devuelven.
 
@@ -20327,7 +20227,7 @@ objs[1] << Broadcast( Save Summaries );
 
 #### Column Switcher
 
-**Sintaxis:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Sintaxis:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Descripción:** Añade un panel de control para cambiar las variables de la plataforma
 
@@ -20345,7 +20245,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 #### Copy ByGroup Script
 
-**Sintaxis:** obj << Copy ByGroup Script
+**Sintaxis:** obj &lt;&lt; Copy ByGroup Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -20371,7 +20271,7 @@ obj[1] << Copy ByGroup Script;
 
 #### Copy Script
 
-**Sintaxis:** obj << Copy Script
+**Sintaxis:** obj &lt;&lt; Copy Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -20391,7 +20291,7 @@ obj << Copy Script;
 
 #### Data Table Window
 
-**Sintaxis:** obj << Data Table Window
+**Sintaxis:** obj &lt;&lt; Data Table Window
 
 **Descripción:** Mueve al frente la ventana de la tabla de datos que se utiliza en este análisis.
 
@@ -20411,7 +20311,7 @@ obj << Data Table Window;
 
 #### Get By Levels
 
-**Sintaxis:** obj << Get By Levels
+**Sintaxis:** obj &lt;&lt; Get By Levels
 
 **Descripción:** Devuelve un arreglo asociativo que asigna las columnas Por grupo a sus valores.
 
@@ -20428,7 +20328,7 @@ biv << Get By Levels;
 
 #### Get ByGroup Script
 
-**Sintaxis:** obj << Get ByGroup Script
+**Sintaxis:** obj &lt;&lt; Get ByGroup Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -20455,7 +20355,7 @@ Show( t );
 
 #### Get Container
 
-**Sintaxis:** obj << Get Container
+**Sintaxis:** obj &lt;&lt; Get Container
 
 **Descripción:** Devuelve una referencia al cuadro contenedor que incluye el contenido del objeto.
 
@@ -20507,7 +20407,7 @@ New Window( "platform boxes",
 
 #### Get Data Table
 
-**Sintaxis:** obj << Get Data Table
+**Sintaxis:** obj &lt;&lt; Get Data Table
 
 **Descripción:** Devuelve una referencia a la tabla de datos.
 
@@ -20528,7 +20428,7 @@ Show( N Rows( t ) );
 
 #### Get Group Platform
 
-**Sintaxis:** obj << Get Group Platform
+**Sintaxis:** obj &lt;&lt; Get Group Platform
 
 **Descripción:** Devuelve el objeto Plataforma grupal si esta plataforma forma parte de un grupo. De lo contrario, devuelve Empty().
 
@@ -20545,7 +20445,7 @@ group << Layout( "Arrange in Tabs" );
 
 #### Get Script
 
-**Sintaxis:** obj << Get Script
+**Sintaxis:** obj &lt;&lt; Get Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -20566,7 +20466,7 @@ Show( t );
 
 #### Get Script With Data Table
 
-**Sintaxis:** obj << Get Script With Data Table
+**Sintaxis:** obj &lt;&lt; Get Script With Data Table
 
 **Descripción:** Crea un script (JSL) para generar este análisis haciendo referencia específica a esta tabla de datos y lo devuelve en forma de expresión.
 
@@ -20587,7 +20487,7 @@ Show( t );
 
 #### Get Timing
 
-**Sintaxis:** obj << Get Timing
+**Sintaxis:** obj &lt;&lt; Get Timing
 
 **Descripción:** Determina el tiempo de inicio de una plataforma.
 
@@ -20608,7 +20508,7 @@ Show( t );
 
 #### Get Web Support
 
-**Sintaxis:** obj << Get Web Support
+**Sintaxis:** obj &lt;&lt; Get Web Support
 
 **Descripción:** Devuelve un número que indica el nivel de compatibilidad del HTML interactivo para el objeto de visualización. 1 significa que algunos o todos los elementos son compatibles. 0 significa que no existe compatibilidad.
 
@@ -20624,7 +20524,7 @@ Show( s );
 
 #### Get Where Expr
 
-**Sintaxis:** obj << Get Where Expr
+**Sintaxis:** obj &lt;&lt; Get Where Expr
 
 **Descripción:** Devuelve la expresión Where para el subconjunto de datos, si la plataforma se inició con By() o Where(). De lo contrario, devuelve Empty().
 
@@ -20661,7 +20561,7 @@ dt << Bivariate(
 
 #### Local Data Filter
 
-**Sintaxis:** obj << Local Data Filter
+**Sintaxis:** obj &lt;&lt; Local Data Filter
 
 **Descripción:** Para filtrar los datos según grupos o rangos determinados, pero locales para esta plataforma.
 
@@ -20717,7 +20617,7 @@ preset = obj << New Preset();
 
 #### Paste Local Data Filter
 
-**Sintaxis:** obj << Paste Local Data Filter
+**Sintaxis:** obj &lt;&lt; Paste Local Data Filter
 
 **Descripción:** Se aplica el filtro de datos locales del portapapeles al informe actual.
 
@@ -20738,7 +20638,7 @@ dist2 << Paste Local Data Filter;
 
 #### Redo Analysis
 
-**Sintaxis:** obj << Redo Analysis
+**Sintaxis:** obj &lt;&lt; Redo Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -20758,7 +20658,7 @@ obj << Redo Analysis;
 
 #### Redo ByGroup Analysis
 
-**Sintaxis:** obj << Redo ByGroup Analysis
+**Sintaxis:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -20784,7 +20684,7 @@ obj[1] << Redo ByGroup Analysis;
 
 #### Relaunch Analysis
 
-**Sintaxis:** obj << Relaunch Analysis
+**Sintaxis:** obj &lt;&lt; Relaunch Analysis
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -20804,7 +20704,7 @@ obj << Relaunch Analysis;
 
 #### Relaunch ByGroup
 
-**Sintaxis:** obj << Relaunch ByGroup
+**Sintaxis:** obj &lt;&lt; Relaunch ByGroup
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -20830,7 +20730,7 @@ obj[1] << Relaunch ByGroup;
 
 #### Remove Column Switcher
 
-**Sintaxis:** obj << Remove Column Switcher
+**Sintaxis:** obj &lt;&lt; Remove Column Switcher
 
 **Descripción:** Quita el Cambiador de columnas más reciente que se haya agregado a la plataforma.
 
@@ -20850,7 +20750,7 @@ obj << Remove Column Switcher;
 
 #### Remove Local Data Filter
 
-**Sintaxis:** obj << Remove Local Data Filter
+**Sintaxis:** obj &lt;&lt; Remove Local Data Filter
 
 **Descripción:** Si se ha creado un filtro de datos local, esto lo eliminará y restaurará la plataforma para usar todos los datos de la tabla de datos directamente.
 
@@ -20889,9 +20789,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 #### Report
 
-**Sintaxis:** obj << Report;
-
-Report( obj )
+**Sintaxis:** obj &lt;&lt; Report;Report( obj )
 
 **Descripción:** Devuelve una referencia al objeto informe.
 
@@ -20913,7 +20811,7 @@ Show( t );
 
 #### Report View
 
-**Sintaxis:** obj << Report View( "Completa"|"Resumen" )
+**Sintaxis:** obj &lt;&lt; Report View( "Completa"|"Resumen" )
 
 **Descripción:** La vista del informe determina el nivel de detalle visible en el informe de una plataforma. Full muestra todos los detalles, mientras que Summary solo muestra el contenido seleccionado, con independencia de la plataforma. Para el comportamiento personalizado, los cuadros de visualización admiten un mensaje <<Set Summary Behavior.
 
@@ -20933,7 +20831,7 @@ obj << Report View( "Summary" );
 
 #### Save ByGroup Script to Data Table
 
-**Sintaxis:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis, y lo guarda como propiedad de tabla en la tabla de datos. Puede especificar un nombre para el script. La opción Append Suffix añade un sufijo numérico al nombre del script, que diferencia el script de un script existente que tenga el mismo nombre. La opción Prompt solicita al usuario que especifique un nombre de script. La opción Replace reemplaza un script existente que tenga el mismo nombre.
 
@@ -20959,7 +20857,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 #### Save ByGroup Script to Journal
 
-**Sintaxis:** obj << Save ByGroup Script to Journal
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -20985,7 +20883,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 #### Save ByGroup Script to Script Window
 
-**Sintaxis:** obj << Save ByGroup Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -21011,7 +20909,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 #### Save Script for All Objects
 
-**Sintaxis:** obj << Save Script for All Objects
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects
 
 **Descripción:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -21031,7 +20929,7 @@ obj << Save Script for All Objects;
 
 #### Save Script for All Objects To Data Table
 
-**Sintaxis:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descripción:** Guarda un script para todos los objetos de informe en la tabla de datos actual. Esta opción es útil cuando tiene varios informes en la ventana. El script recibe el nombre de la primera plataforma a menos que especifique el nombre del script entre comillas.
 
@@ -21081,7 +20979,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 #### Save Script to Data Table
 
-**Sintaxis:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis y lo guarda en forma de propiedad de tabla en la tabla de datos.
 
@@ -21101,7 +20999,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 #### Save Script to Journal
 
-**Sintaxis:** obj << Save Script to Journal
+**Sintaxis:** obj &lt;&lt; Save Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -21121,7 +21019,7 @@ obj << Save Script to Journal;
 
 #### Save Script to Report
 
-**Sintaxis:** obj << Save Script to Report
+**Sintaxis:** obj &lt;&lt; Save Script to Report
 
 **Descripción:** Crea un script JSL para generar este análisis y lo muestra en el propio informe. Resulta útil para conservar un registro impreso de lo que se ha hecho.
 
@@ -21141,7 +21039,7 @@ obj << Save Script to Report;
 
 #### Save Script to Script Window
 
-**Sintaxis:** obj << Save Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -21226,7 +21124,7 @@ dt << Distribution(
 
 #### Sync to Data Table Changes
 
-**Sintaxis:** obj << Sync to Data Table Changes
+**Sintaxis:** obj &lt;&lt; Sync to Data Table Changes
 
 **Descripción:** Realiza una sincronización con las modificaciones de datos y de exclusión que se hayan realizado.
 
@@ -21243,7 +21141,7 @@ dist << Sync To Data Table Changes;
 
 #### Title
 
-**Sintaxis:** obj << Title( "new title" )
+**Sintaxis:** obj &lt;&lt; Title( "new title" )
 
 **Descripción:** Establece el título de la plataforma.
 
@@ -21263,7 +21161,7 @@ obj << Title( "My Platform" );
 
 #### Top Report
 
-**Sintaxis:** obj << Top Report
+**Sintaxis:** obj &lt;&lt; Top Report
 
 **Descripción:** Devuelve una referencia al nodo raíz del informe.
 
@@ -21285,7 +21183,7 @@ Show( t );
 
 #### Transform Column
 
-**Sintaxis:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Sintaxis:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Descripción:** Crea una columna de transformación en el contexto local de un objeto (una plataforma por lo general). La columna de transformación solo está activa mientras esté en uso la plataforma.
 
@@ -21306,7 +21204,7 @@ dt << Distribution(
 
 #### View Web XML
 
-**Sintaxis:** obj << View Web XML
+**Sintaxis:** obj &lt;&lt; View Web XML
 
 **Descripción:** Devuelve el código XML que se utiliza para crear el informe HTML interactivo.
 
@@ -21321,9 +21219,7 @@ xml = obj << View Web XML;
 
 #### Window View
 
-**Sintaxis:** obj = Fit Ordinal Logistic(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Ordinal Logistic(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Establece el tipo de ventana que se creará para el informe. De forma predeterminada, se creará una ventana de informe Visible. Una ventana Invisible no aparecerá en pantalla, pero se puede detectar mediante funciones como Window(). Una ventana Private responde a la mayoría de los mensajes de ventana pero no es detectable y se debe abordar a través del objeto de informe.
 
@@ -21369,7 +21265,7 @@ obj = dt << Fit Model(
 
 #### Correlation of Estimates
 
-**Sintaxis:** obj << Correlation of Estimates( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Correlation of Estimates( state=0|1 )
 
 **Descripción:** Muestra u oculta la matriz de correlaciones entre las estimaciones de los parámetros para el ajuste especificado.
 
@@ -21391,7 +21287,7 @@ obj << Correlation of Estimates( 1 );
 
 #### Covariance of Estimates
 
-**Sintaxis:** obj << Covariance of Estimates( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Covariance of Estimates( state=0|1 )
 
 **Descripción:** Muestra u oculta la matriz de covarianzas entre las estimaciones de los parámetros para el ajuste especificado.
 
@@ -21413,9 +21309,7 @@ obj << Covariance of Estimates( 1 );
 
 #### Distribution
 
-**Sintaxis:** obj = Fit Model(...Distribution("Weibull"|"Lognormal"|"Exponential"|"Frechet"|"Loglogistic"|"All Distributions"|"SEV"|"Normal"|"LEV"|"Logistic"...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Distribution("Weibull"|"Lognormal"|"Exponential"|"Frechet"|"Loglogistic"|"All Distributions"|"SEV"|"Normal"|"LEV"|"Logistic"...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica la distribución que se utilizará en el modelado de la respuesta Tiempo hasta suceso. La opción "Todas las distribuciones" ajusta todas las distribuciones disponibles.
 
@@ -21455,7 +21349,7 @@ obj = dt << Fit Model(
 
 #### Distribution Plot by Level Combinations
 
-**Sintaxis:** obj << Distribution Plot by Level Combinations( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Distribution Plot by Level Combinations( state=0|1 )
 
 **Descripción:** Muestra u oculta un informe que compara tres modelos anidados en función de los niveles de la variable X. Este informe contiene tres gráficos de probabilidad para evaluar el ajuste del modelo. Los gráficos muestran líneas diferentes para cada combinación de los niveles X.
 
@@ -21478,7 +21372,7 @@ dt << Fit Model(
 
 #### Distribution Profiler
 
-**Sintaxis:** obj << Distribution Profiler( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Distribution Profiler( state=0|1 )
 
 **Descripción:** Muestra u oculta un perfilador de la función de distribución acumulativa de los predictores y la respuesta. La respuesta se muestra en la celda situada más a la derecha.
 
@@ -21500,7 +21394,7 @@ obj << Distribution Profiler( 1 );
 
 #### Effect Summary
 
-**Sintaxis:** obj << Effect Summary( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Effect Summary( state=0|1 )
 
 **Descripción:** Muestra u oculta el informe Resumen de efectos, que permite actualizar interactivamente los efectos del modelo. Opción activada de forma predeterminada.
 
@@ -21527,7 +21421,7 @@ Report( obj )["Effect Summary"] << Close( 0 );
 
 #### Estimate Quantile
 
-**Sintaxis:** obj << Estimate Quantile( x1 = [number, ...], x2 = [number, ...], [p1, p2, ...], Alpha( fraction ) )
+**Sintaxis:** obj &lt;&lt; Estimate Quantile( x1 = [number, ...], x2 = [number, ...], [p1, p2, ...], Alpha( fraction ) )
 
 **Descripción:** Estima los cuantiles para valores de efecto y probabilidades especificados. Utilice un vector para especificar más de un valor para un efecto o más de un valor de probabilidad.
 
@@ -21556,7 +21450,7 @@ obj << Estimate Quantile(
 
 #### Estimate Survival Probability
 
-**Sintaxis:** obj << Estimate Survival Probability( x1 = [number, ...], x2 = [number, ...], [time1, time2, ...], Alpha( fraction ) )
+**Sintaxis:** obj &lt;&lt; Estimate Survival Probability( x1 = [number, ...], x2 = [number, ...], [time1, time2, ...], Alpha( fraction ) )
 
 **Descripción:** Estima las probabilidades de falla y supervivencia para valores de efecto y valores de tiempo especificados. Utilice un vector para especificar más de un valor para un efecto o más de un valor temporal.
 
@@ -21583,7 +21477,7 @@ obj << Estimate Survival Probability(
 
 #### FDR
 
-**Sintaxis:** obj << FDR( state=0|1 )
+**Sintaxis:** obj &lt;&lt; FDR( state=0|1 )
 
 **Descripción:** Especifica si se ajustan o no los valores de log utilidad y sus valores p correspondientes de la tabla Resumen de efectos utilizando la tasa de falsos descubrimientos (FDR).
 
@@ -21608,7 +21502,7 @@ Report( obj )["Effect Summary"] << Close( 0 );
 
 #### Get Effect Names
 
-**Sintaxis:** obj << Get Effect Names
+**Sintaxis:** obj &lt;&lt; Get Effect Names
 
 **Descripción:** Devuelve los nombres de los efectos utilizados en el modelo.
 
@@ -21631,7 +21525,7 @@ Show( n );
 
 #### Get Effect PValues
 
-**Sintaxis:** obj << Get Effect PValues
+**Sintaxis:** obj &lt;&lt; Get Effect PValues
 
 **Descripción:** Devuelve los valores p de cada efecto del modelo.
 
@@ -21654,7 +21548,7 @@ Show( p );
 
 #### Get Estimates
 
-**Sintaxis:** obj << Get Estimates
+**Sintaxis:** obj &lt;&lt; Get Estimates
 
 **Descripción:** Devuelve las estimaciones de los parámetros del modelo.
 
@@ -21677,7 +21571,7 @@ Show( e );
 
 #### Get Parameter Names
 
-**Sintaxis:** obj << Get Parameter Names
+**Sintaxis:** obj &lt;&lt; Get Parameter Names
 
 **Descripción:** Devuelve los nombres de los parámetros utilizados en el modelo.
 
@@ -21700,7 +21594,7 @@ Show( n );
 
 #### Get Std Errors
 
-**Sintaxis:** obj << Get Std Errors
+**Sintaxis:** obj &lt;&lt; Get Std Errors
 
 **Descripción:** Devuelve los errores estándar de las estimaciones de los parámetros del modelo.
 
@@ -21723,7 +21617,7 @@ Show( std );
 
 #### Hazard Profiler
 
-**Sintaxis:** obj << Hazard Profiler( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Hazard Profiler( state=0|1 )
 
 **Descripción:** Muestra u oculta un perfilador que muestra la tasa de riesgo como función de los predictores y la respuesta. La respuesta se muestra en la celda situada más a la derecha.
 
@@ -21745,7 +21639,7 @@ obj << Hazard Profiler( 1 );
 
 #### Likelihood Confidence Intervals
 
-**Sintaxis:** obj << Likelihood Confidence Intervals( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Likelihood Confidence Intervals( state=0|1 )
 
 **Descripción:** Especifica el tipo de intervalos de confianza que se muestran en la tabla Estimaciones de los parámetros. Cuando se selecciona esta opción, aparece un intervalo de confianza de verosimilitud del perfil. de lo contrario, aparece un intervalo de Wald. Esta opción está activada de forma predeterminada cuando el tiempo de cálculo de los intervalos de confianza de la verosimilitud del perfil no es grande.
 
@@ -21767,7 +21661,7 @@ obj << Likelihood Confidence Intervals( 1 );
 
 #### Likelihood Ratio Tests
 
-**Sintaxis:** obj << Likelihood Ratio Tests( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Likelihood Ratio Tests( state=0|1 )
 
 **Descripción:** Muestra u oculta las pruebas de la razón de verosimilitud para cada efecto. Cada prueba compara la log-verosimilitud del modelo ajustado con la log-verosimilitud del modelo que quita un efecto. Opción activada de forma predeterminada.
 
@@ -21789,7 +21683,7 @@ obj << Likelihood Ratio Tests( 1 );
 
 #### Model Dialog
 
-**Sintaxis:** obj << Model Dialog
+**Sintaxis:** obj &lt;&lt; Model Dialog
 
 **Descripción:** Muestra la ventana de inicio Ajuste del modelo completada para el análisis actual.
 
@@ -21811,7 +21705,7 @@ obj << Model Dialog;
 
 #### Publish Probability Formula
 
-**Sintaxis:** obj << Publish Probability Formula
+**Sintaxis:** obj &lt;&lt; Publish Probability Formula
 
 **Descripción:** Crea una fórmula de probabilidad y la publica como script de columna de fórmula en la plataforma Almacén de fórmulas.
 
@@ -21835,7 +21729,7 @@ obj << Publish Probability Formula;
 
 #### Publish Quantile Formula
 
-**Sintaxis:** obj << Publish Quantile Formula( probability )
+**Sintaxis:** obj &lt;&lt; Publish Quantile Formula( probability )
 
 **Descripción:** Crea una fórmula de cuantil y la publica como script de columna de fórmula en la plataforma Almacén de fórmulas.
 
@@ -21859,7 +21753,7 @@ obj << Publish Quantile Formula( 0.1 );
 
 #### Quantile Profiler
 
-**Sintaxis:** obj << Quantile Profiler( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Quantile Profiler( state=0|1 )
 
 **Descripción:** Muestra u oculta un perfilador que muestra la respuesta predicha en función de los predictores y el cuantil de la función de distribución acumulativa. El cuantil se denomina Probabilidad de falla y se muestra en la celda situada más a la derecha.
 
@@ -21881,7 +21775,7 @@ obj << Quantile Profiler( 1 );
 
 #### Residual Probability Plot
 
-**Sintaxis:** obj << Residual Probability Plot( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Residual Probability Plot( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico de probabilidad de los residuos estandarizados con intervalos de confianza.
 
@@ -21905,7 +21799,7 @@ obj << Residual Probability Plot( 1 );
 
 #### Response versus Fitted Median
 
-**Sintaxis:** obj << Response versus Fitted Median( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Response versus Fitted Median( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico de las respuestas en el eje vertical y la mediana ajustada en el eje horizontal.
 
@@ -21929,7 +21823,7 @@ obj << Response versus Fitted Median( 1 );
 
 #### Save Probability Formula
 
-**Sintaxis:** obj << Save Probability Formula
+**Sintaxis:** obj &lt;&lt; Save Probability Formula
 
 **Descripción:** Guarda una nueva columna de fórmulas en la tabla de datos. La columna nueva contiene una fórmula para la probabilidad de falla estimada.
 
@@ -21951,7 +21845,7 @@ obj << Save Probability Formula;
 
 #### Save Quantile Formula
 
-**Sintaxis:** obj << Save Quantile Formula( probability )
+**Sintaxis:** obj &lt;&lt; Save Quantile Formula( probability )
 
 **Descripción:** Guarda una nueva columna de fórmulas en la tabla de datos. La columna nueva contiene una fórmula para el cuantil estimado del valor de probabilidad especificado.
 
@@ -21973,7 +21867,7 @@ obj << Save Quantile Formula( 0.8 );
 
 #### Save Residuals
 
-**Sintaxis:** obj << Save Residuals
+**Sintaxis:** obj &lt;&lt; Save Residuals
 
 **Descripción:** Guarda una o dos columnas nuevas en la tabla de datos. El número de columnas de residuos coincide con el número de columnas de Tiempo hasta suceso en el modelo.
 
@@ -21995,7 +21889,7 @@ obj << Save Residuals;
 
 #### Standardized Residuals versus Fitted Median
 
-**Sintaxis:** obj << Standardized Residuals versus Fitted Median( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Standardized Residuals versus Fitted Median( state=0|1 )
 
 **Descripción:** Muestra u oculta un gráfico de los residuos estandarizados en el eje vertical y la mediana ajustada en el eje horizontal.
 
@@ -22019,7 +21913,7 @@ obj << Standardized Residuals versus Fitted Median( 1 );
 
 #### Survival Profiler
 
-**Sintaxis:** obj << Survival Profiler( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Survival Profiler( state=0|1 )
 
 **Descripción:** Muestra u oculta un perfilador de la función de supervivencia de los predictores y la respuesta. La respuesta se muestra en la celda situada más a la derecha.
 
@@ -22041,7 +21935,7 @@ obj << Survival Profiler( 1 );
 
 #### Wald Tests
 
-**Sintaxis:** obj << Wald Tests( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Wald Tests( state=0|1 )
 
 **Descripción:** Muestra u oculta los estadísticos de la prueba de ji cuadrado y los valores p de las pruebas de Wald que determina si cada parámetro es cero.
 
@@ -22067,7 +21961,7 @@ obj << Wald Tests( 1 );
 
 #### Action
 
-**Sintaxis:** obj << Action
+**Sintaxis:** obj &lt;&lt; Action
 
 **Descripción:** Trampa multiuso dentro de una plataforma para insertar expresiones que se desean evaluar. Temporalmente establece los contextos de cuadros de visualización y tablas de datos en la plataforma.
 
@@ -22085,7 +21979,7 @@ dt << Bivariate(
 
 #### Apply Preset
 
-**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descripción:** Aplica al objeto un preajuste creado previamente, actualizando las opciones y personalizaciones para que coincidan con la configuración guardada.
 
@@ -22132,7 +22026,7 @@ obj2 << Apply Preset( preset );
 
 #### Automatic Recalc
 
-**Sintaxis:** obj << Automatic Recalc( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Descripción:** Rehace automáticamente el análisis para modificaciones de datos y de exclusión. Si está activada la opción Recálculo automático, le recomendamos que utilice los comandos Wait(0) para asegurarse de que las modificaciones de datos y de exclusión surtan efecto antes del recálculo.
 
@@ -22155,7 +22049,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 #### Broadcast
 
-**Sintaxis:** obj << Broadcast(message)
+**Sintaxis:** obj &lt;&lt; Broadcast(message)
 
 **Descripción:** Difunde un mensaje a una plataforma. Si los resultados devueltos de objetos individuales son tablas, se concatenan si es posible y el formato final es idéntico al resultado de la opción Guardar tabla combinada en un cuadro de tabla o al resultado de la opción Concatenar mediante una columna de origen. Los demás resultados se almacenan en una lista y se devuelven.
 
@@ -22175,7 +22069,7 @@ objs[1] << Broadcast( Save Summaries );
 
 #### Column Switcher
 
-**Sintaxis:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Sintaxis:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Descripción:** Añade un panel de control para cambiar las variables de la plataforma
 
@@ -22193,7 +22087,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 #### Copy ByGroup Script
 
-**Sintaxis:** obj << Copy ByGroup Script
+**Sintaxis:** obj &lt;&lt; Copy ByGroup Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -22221,7 +22115,7 @@ obj[1] << Copy ByGroup Script;
 
 #### Copy Script
 
-**Sintaxis:** obj << Copy Script
+**Sintaxis:** obj &lt;&lt; Copy Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -22243,7 +22137,7 @@ obj << Copy Script;
 
 #### Data Table Window
 
-**Sintaxis:** obj << Data Table Window
+**Sintaxis:** obj &lt;&lt; Data Table Window
 
 **Descripción:** Mueve al frente la ventana de la tabla de datos que se utiliza en este análisis.
 
@@ -22265,7 +22159,7 @@ obj << Data Table Window;
 
 #### Get By Levels
 
-**Sintaxis:** obj << Get By Levels
+**Sintaxis:** obj &lt;&lt; Get By Levels
 
 **Descripción:** Devuelve un arreglo asociativo que asigna las columnas Por grupo a sus valores.
 
@@ -22282,7 +22176,7 @@ biv << Get By Levels;
 
 #### Get ByGroup Script
 
-**Sintaxis:** obj << Get ByGroup Script
+**Sintaxis:** obj &lt;&lt; Get ByGroup Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -22311,7 +22205,7 @@ Show( t );
 
 #### Get Container
 
-**Sintaxis:** obj << Get Container
+**Sintaxis:** obj &lt;&lt; Get Container
 
 **Descripción:** Devuelve una referencia al cuadro contenedor que incluye el contenido del objeto.
 
@@ -22365,7 +22259,7 @@ New Window( "platform boxes",
 
 #### Get Data Table
 
-**Sintaxis:** obj << Get Data Table
+**Sintaxis:** obj &lt;&lt; Get Data Table
 
 **Descripción:** Devuelve una referencia a la tabla de datos.
 
@@ -22388,7 +22282,7 @@ Show( N Rows( t ) );
 
 #### Get Group Platform
 
-**Sintaxis:** obj << Get Group Platform
+**Sintaxis:** obj &lt;&lt; Get Group Platform
 
 **Descripción:** Devuelve el objeto Plataforma grupal si esta plataforma forma parte de un grupo. De lo contrario, devuelve Empty().
 
@@ -22405,7 +22299,7 @@ group << Layout( "Arrange in Tabs" );
 
 #### Get Script
 
-**Sintaxis:** obj << Get Script
+**Sintaxis:** obj &lt;&lt; Get Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -22428,7 +22322,7 @@ Show( t );
 
 #### Get Script With Data Table
 
-**Sintaxis:** obj << Get Script With Data Table
+**Sintaxis:** obj &lt;&lt; Get Script With Data Table
 
 **Descripción:** Crea un script (JSL) para generar este análisis haciendo referencia específica a esta tabla de datos y lo devuelve en forma de expresión.
 
@@ -22451,7 +22345,7 @@ Show( t );
 
 #### Get Timing
 
-**Sintaxis:** obj << Get Timing
+**Sintaxis:** obj &lt;&lt; Get Timing
 
 **Descripción:** Determina el tiempo de inicio de una plataforma.
 
@@ -22474,7 +22368,7 @@ Show( t );
 
 #### Get Web Support
 
-**Sintaxis:** obj << Get Web Support
+**Sintaxis:** obj &lt;&lt; Get Web Support
 
 **Descripción:** Devuelve un número que indica el nivel de compatibilidad del HTML interactivo para el objeto de visualización. 1 significa que algunos o todos los elementos son compatibles. 0 significa que no existe compatibilidad.
 
@@ -22490,7 +22384,7 @@ Show( s );
 
 #### Get Where Expr
 
-**Sintaxis:** obj << Get Where Expr
+**Sintaxis:** obj &lt;&lt; Get Where Expr
 
 **Descripción:** Devuelve la expresión Where para el subconjunto de datos, si la plataforma se inició con By() o Where(). De lo contrario, devuelve Empty().
 
@@ -22527,7 +22421,7 @@ dt << Bivariate(
 
 #### Local Data Filter
 
-**Sintaxis:** obj << Local Data Filter
+**Sintaxis:** obj &lt;&lt; Local Data Filter
 
 **Descripción:** Para filtrar los datos según grupos o rangos determinados, pero locales para esta plataforma.
 
@@ -22583,7 +22477,7 @@ preset = obj << New Preset();
 
 #### Paste Local Data Filter
 
-**Sintaxis:** obj << Paste Local Data Filter
+**Sintaxis:** obj &lt;&lt; Paste Local Data Filter
 
 **Descripción:** Se aplica el filtro de datos locales del portapapeles al informe actual.
 
@@ -22604,7 +22498,7 @@ dist2 << Paste Local Data Filter;
 
 #### Redo Analysis
 
-**Sintaxis:** obj << Redo Analysis
+**Sintaxis:** obj &lt;&lt; Redo Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -22626,7 +22520,7 @@ obj << Redo Analysis;
 
 #### Redo ByGroup Analysis
 
-**Sintaxis:** obj << Redo ByGroup Analysis
+**Sintaxis:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -22654,7 +22548,7 @@ obj[1] << Redo ByGroup Analysis;
 
 #### Relaunch Analysis
 
-**Sintaxis:** obj << Relaunch Analysis
+**Sintaxis:** obj &lt;&lt; Relaunch Analysis
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -22676,7 +22570,7 @@ obj << Relaunch Analysis;
 
 #### Relaunch ByGroup
 
-**Sintaxis:** obj << Relaunch ByGroup
+**Sintaxis:** obj &lt;&lt; Relaunch ByGroup
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -22704,7 +22598,7 @@ obj[1] << Relaunch ByGroup;
 
 #### Remove Column Switcher
 
-**Sintaxis:** obj << Remove Column Switcher
+**Sintaxis:** obj &lt;&lt; Remove Column Switcher
 
 **Descripción:** Quita el Cambiador de columnas más reciente que se haya agregado a la plataforma.
 
@@ -22724,7 +22618,7 @@ obj << Remove Column Switcher;
 
 #### Remove Local Data Filter
 
-**Sintaxis:** obj << Remove Local Data Filter
+**Sintaxis:** obj &lt;&lt; Remove Local Data Filter
 
 **Descripción:** Si se ha creado un filtro de datos local, esto lo eliminará y restaurará la plataforma para usar todos los datos de la tabla de datos directamente.
 
@@ -22763,9 +22657,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 #### Report
 
-**Sintaxis:** obj << Report;
-
-Report( obj )
+**Sintaxis:** obj &lt;&lt; Report;Report( obj )
 
 **Descripción:** Devuelve una referencia al objeto informe.
 
@@ -22789,7 +22681,7 @@ Show( t );
 
 #### Report View
 
-**Sintaxis:** obj << Report View( "Completa"|"Resumen" )
+**Sintaxis:** obj &lt;&lt; Report View( "Completa"|"Resumen" )
 
 **Descripción:** La vista del informe determina el nivel de detalle visible en el informe de una plataforma. Full muestra todos los detalles, mientras que Summary solo muestra el contenido seleccionado, con independencia de la plataforma. Para el comportamiento personalizado, los cuadros de visualización admiten un mensaje <<Set Summary Behavior.
 
@@ -22811,7 +22703,7 @@ obj << Report View( "Summary" );
 
 #### Save ByGroup Script to Data Table
 
-**Sintaxis:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis, y lo guarda como propiedad de tabla en la tabla de datos. Puede especificar un nombre para el script. La opción Append Suffix añade un sufijo numérico al nombre del script, que diferencia el script de un script existente que tenga el mismo nombre. La opción Prompt solicita al usuario que especifique un nombre de script. La opción Replace reemplaza un script existente que tenga el mismo nombre.
 
@@ -22839,7 +22731,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 #### Save ByGroup Script to Journal
 
-**Sintaxis:** obj << Save ByGroup Script to Journal
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -22867,7 +22759,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 #### Save ByGroup Script to Script Window
 
-**Sintaxis:** obj << Save ByGroup Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -22895,7 +22787,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 #### Save Script for All Objects
 
-**Sintaxis:** obj << Save Script for All Objects
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects
 
 **Descripción:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -22917,7 +22809,7 @@ obj << Save Script for All Objects;
 
 #### Save Script for All Objects To Data Table
 
-**Sintaxis:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descripción:** Guarda un script para todos los objetos de informe en la tabla de datos actual. Esta opción es útil cuando tiene varios informes en la ventana. El script recibe el nombre de la primera plataforma a menos que especifique el nombre del script entre comillas.
 
@@ -22971,7 +22863,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 #### Save Script to Data Table
 
-**Sintaxis:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis y lo guarda en forma de propiedad de tabla en la tabla de datos.
 
@@ -22993,7 +22885,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 #### Save Script to Journal
 
-**Sintaxis:** obj << Save Script to Journal
+**Sintaxis:** obj &lt;&lt; Save Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -23015,7 +22907,7 @@ obj << Save Script to Journal;
 
 #### Save Script to Report
 
-**Sintaxis:** obj << Save Script to Report
+**Sintaxis:** obj &lt;&lt; Save Script to Report
 
 **Descripción:** Crea un script JSL para generar este análisis y lo muestra en el propio informe. Resulta útil para conservar un registro impreso de lo que se ha hecho.
 
@@ -23037,7 +22929,7 @@ obj << Save Script to Report;
 
 #### Save Script to Script Window
 
-**Sintaxis:** obj << Save Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -23124,7 +23016,7 @@ dt << Distribution(
 
 #### Sync to Data Table Changes
 
-**Sintaxis:** obj << Sync to Data Table Changes
+**Sintaxis:** obj &lt;&lt; Sync to Data Table Changes
 
 **Descripción:** Realiza una sincronización con las modificaciones de datos y de exclusión que se hayan realizado.
 
@@ -23141,7 +23033,7 @@ dist << Sync To Data Table Changes;
 
 #### Title
 
-**Sintaxis:** obj << Title( "new title" )
+**Sintaxis:** obj &lt;&lt; Title( "new title" )
 
 **Descripción:** Establece el título de la plataforma.
 
@@ -23163,7 +23055,7 @@ obj << Title( "My Platform" );
 
 #### Top Report
 
-**Sintaxis:** obj << Top Report
+**Sintaxis:** obj &lt;&lt; Top Report
 
 **Descripción:** Devuelve una referencia al nodo raíz del informe.
 
@@ -23187,7 +23079,7 @@ Show( t );
 
 #### Transform Column
 
-**Sintaxis:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Sintaxis:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Descripción:** Crea una columna de transformación en el contexto local de un objeto (una plataforma por lo general). La columna de transformación solo está activa mientras esté en uso la plataforma.
 
@@ -23208,7 +23100,7 @@ dt << Distribution(
 
 #### View Web XML
 
-**Sintaxis:** obj << View Web XML
+**Sintaxis:** obj &lt;&lt; View Web XML
 
 **Descripción:** Devuelve el código XML que se utiliza para crear el informe HTML interactivo.
 
@@ -23223,9 +23115,7 @@ xml = obj << View Web XML;
 
 #### Window View
 
-**Sintaxis:** obj = Fit Parametric Survival(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Parametric Survival(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Establece el tipo de ventana que se creará para el informe. De forma predeterminada, se creará una ventana de informe Visible. Una ventana Invisible no aparecerá en pantalla, pero se puede detectar mediante funciones como Window(). Una ventana Private responde a la mayoría de los mensajes de ventana pero no es detectable y se debe abordar a través del objeto de informe.
 
@@ -23248,7 +23138,7 @@ New Window( "Bivariate Equation",
 
 #### By
 
-**Sintaxis:** obj << By( column(s) )
+**Sintaxis:** obj &lt;&lt; By( column(s) )
 
 ```jsl
 
@@ -23296,7 +23186,7 @@ obj = dt << Fit Model(
 
 #### Effect Summary
 
-**Sintaxis:** obj << Effect Summary( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Effect Summary( state=0|1 )
 
 **Descripción:** Muestra u oculta el informe Resumen de efectos, que permite actualizar interactivamente los efectos del modelo. Opción activada de forma predeterminada.
 
@@ -23322,7 +23212,7 @@ Report( obj )["Effect Summary"] << Close( 0 );
 
 #### FDR
 
-**Sintaxis:** obj << FDR( state=0|1 )
+**Sintaxis:** obj &lt;&lt; FDR( state=0|1 )
 
 **Descripción:** Especifica si se ajustan o no los valores de log utilidad y sus valores p correspondientes de la tabla Resumen de efectos utilizando la tasa de falsos descubrimientos (FDR).
 
@@ -23346,7 +23236,7 @@ Report( obj )["Effect Summary"] << Close( 0 );
 
 #### Hazard Ratios
 
-**Sintaxis:** obj << Hazard Ratios( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Hazard Ratios( state=0|1 )
 
 **Descripción:** Muestra u oculta las razones de peligro de los efectos.
 
@@ -23367,7 +23257,7 @@ obj << Hazard Ratios( 1 );
 
 #### Likelihood Confidence Intervals
 
-**Sintaxis:** obj << Likelihood Confidence Intervals( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Likelihood Confidence Intervals( state=0|1 )
 
 **Descripción:** Especifica el tipo de intervalos de confianza que se muestran en la tabla Estimaciones de los parámetros. Cuando se selecciona esta opción, aparece un intervalo de confianza de verosimilitud del perfil. de lo contrario, aparece un intervalo de Wald. Esta opción está activada de forma predeterminada cuando el tiempo de cálculo de los intervalos de confianza de la verosimilitud del perfil no es grande.
 
@@ -23388,7 +23278,7 @@ obj << Likelihood Confidence Intervals( 1 );
 
 #### Likelihood Ratio Tests
 
-**Sintaxis:** obj << Likelihood Ratio Tests( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Likelihood Ratio Tests( state=0|1 )
 
 **Descripción:** Muestra u oculta las pruebas de la razón de verosimilitud para cada efecto. Cada prueba compara la log-verosimilitud del modelo ajustado con la log-verosimilitud del modelo que quita un efecto.
 
@@ -23409,7 +23299,7 @@ obj << Likelihood Ratio Tests( 1 );
 
 #### Model Dialog
 
-**Sintaxis:** obj << Model Dialog
+**Sintaxis:** obj &lt;&lt; Model Dialog
 
 **Descripción:** Muestra la ventana de inicio Ajuste del modelo completada para el análisis actual.
 
@@ -23430,7 +23320,7 @@ obj << Model Dialog;
 
 #### Wald Tests
 
-**Sintaxis:** obj << Wald Tests( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Wald Tests( state=0|1 )
 
 **Descripción:** Muestra u oculta los estadísticos de la prueba de ji cuadrado y los valores p de las pruebas de Wald que determina si cada parámetro es cero. Opción activada de forma predeterminada.
 
@@ -23455,7 +23345,7 @@ obj << Wald Tests( 1 );
 
 #### Action
 
-**Sintaxis:** obj << Action
+**Sintaxis:** obj &lt;&lt; Action
 
 **Descripción:** Trampa multiuso dentro de una plataforma para insertar expresiones que se desean evaluar. Temporalmente establece los contextos de cuadros de visualización y tablas de datos en la plataforma.
 
@@ -23473,7 +23363,7 @@ dt << Bivariate(
 
 #### Apply Preset
 
-**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descripción:** Aplica al objeto un preajuste creado previamente, actualizando las opciones y personalizaciones para que coincidan con la configuración guardada.
 
@@ -23520,7 +23410,7 @@ obj2 << Apply Preset( preset );
 
 #### Broadcast
 
-**Sintaxis:** obj << Broadcast(message)
+**Sintaxis:** obj &lt;&lt; Broadcast(message)
 
 **Descripción:** Difunde un mensaje a una plataforma. Si los resultados devueltos de objetos individuales son tablas, se concatenan si es posible y el formato final es idéntico al resultado de la opción Guardar tabla combinada en un cuadro de tabla o al resultado de la opción Concatenar mediante una columna de origen. Los demás resultados se almacenan en una lista y se devuelven.
 
@@ -23540,7 +23430,7 @@ objs[1] << Broadcast( Save Summaries );
 
 #### Column Switcher
 
-**Sintaxis:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Sintaxis:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Descripción:** Añade un panel de control para cambiar las variables de la plataforma
 
@@ -23558,7 +23448,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 #### Copy ByGroup Script
 
-**Sintaxis:** obj << Copy ByGroup Script
+**Sintaxis:** obj &lt;&lt; Copy ByGroup Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -23585,7 +23475,7 @@ obj[1] << Copy ByGroup Script;
 
 #### Copy Script
 
-**Sintaxis:** obj << Copy Script
+**Sintaxis:** obj &lt;&lt; Copy Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -23606,7 +23496,7 @@ obj << Copy Script;
 
 #### Data Table Window
 
-**Sintaxis:** obj << Data Table Window
+**Sintaxis:** obj &lt;&lt; Data Table Window
 
 **Descripción:** Mueve al frente la ventana de la tabla de datos que se utiliza en este análisis.
 
@@ -23627,7 +23517,7 @@ obj << Data Table Window;
 
 #### Get By Levels
 
-**Sintaxis:** obj << Get By Levels
+**Sintaxis:** obj &lt;&lt; Get By Levels
 
 **Descripción:** Devuelve un arreglo asociativo que asigna las columnas Por grupo a sus valores.
 
@@ -23644,7 +23534,7 @@ biv << Get By Levels;
 
 #### Get ByGroup Script
 
-**Sintaxis:** obj << Get ByGroup Script
+**Sintaxis:** obj &lt;&lt; Get ByGroup Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -23672,7 +23562,7 @@ Show( t );
 
 #### Get Container
 
-**Sintaxis:** obj << Get Container
+**Sintaxis:** obj &lt;&lt; Get Container
 
 **Descripción:** Devuelve una referencia al cuadro contenedor que incluye el contenido del objeto.
 
@@ -23725,7 +23615,7 @@ New Window( "platform boxes",
 
 #### Get Data Table
 
-**Sintaxis:** obj << Get Data Table
+**Sintaxis:** obj &lt;&lt; Get Data Table
 
 **Descripción:** Devuelve una referencia a la tabla de datos.
 
@@ -23747,7 +23637,7 @@ Show( N Rows( t ) );
 
 #### Get Group Platform
 
-**Sintaxis:** obj << Get Group Platform
+**Sintaxis:** obj &lt;&lt; Get Group Platform
 
 **Descripción:** Devuelve el objeto Plataforma grupal si esta plataforma forma parte de un grupo. De lo contrario, devuelve Empty().
 
@@ -23764,7 +23654,7 @@ group << Layout( "Arrange in Tabs" );
 
 #### Get Script
 
-**Sintaxis:** obj << Get Script
+**Sintaxis:** obj &lt;&lt; Get Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -23786,7 +23676,7 @@ Show( t );
 
 #### Get Script With Data Table
 
-**Sintaxis:** obj << Get Script With Data Table
+**Sintaxis:** obj &lt;&lt; Get Script With Data Table
 
 **Descripción:** Crea un script (JSL) para generar este análisis haciendo referencia específica a esta tabla de datos y lo devuelve en forma de expresión.
 
@@ -23808,7 +23698,7 @@ Show( t );
 
 #### Get Timing
 
-**Sintaxis:** obj << Get Timing
+**Sintaxis:** obj &lt;&lt; Get Timing
 
 **Descripción:** Determina el tiempo de inicio de una plataforma.
 
@@ -23830,7 +23720,7 @@ Show( t );
 
 #### Get Web Support
 
-**Sintaxis:** obj << Get Web Support
+**Sintaxis:** obj &lt;&lt; Get Web Support
 
 **Descripción:** Devuelve un número que indica el nivel de compatibilidad del HTML interactivo para el objeto de visualización. 1 significa que algunos o todos los elementos son compatibles. 0 significa que no existe compatibilidad.
 
@@ -23846,7 +23736,7 @@ Show( s );
 
 #### Get Where Expr
 
-**Sintaxis:** obj << Get Where Expr
+**Sintaxis:** obj &lt;&lt; Get Where Expr
 
 **Descripción:** Devuelve la expresión Where para el subconjunto de datos, si la plataforma se inició con By() o Where(). De lo contrario, devuelve Empty().
 
@@ -23883,7 +23773,7 @@ dt << Bivariate(
 
 #### Local Data Filter
 
-**Sintaxis:** obj << Local Data Filter
+**Sintaxis:** obj &lt;&lt; Local Data Filter
 
 **Descripción:** Para filtrar los datos según grupos o rangos determinados, pero locales para esta plataforma.
 
@@ -23939,7 +23829,7 @@ preset = obj << New Preset();
 
 #### Paste Local Data Filter
 
-**Sintaxis:** obj << Paste Local Data Filter
+**Sintaxis:** obj &lt;&lt; Paste Local Data Filter
 
 **Descripción:** Se aplica el filtro de datos locales del portapapeles al informe actual.
 
@@ -23960,7 +23850,7 @@ dist2 << Paste Local Data Filter;
 
 #### Redo Analysis
 
-**Sintaxis:** obj << Redo Analysis
+**Sintaxis:** obj &lt;&lt; Redo Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -23981,7 +23871,7 @@ obj << Redo Analysis;
 
 #### Redo ByGroup Analysis
 
-**Sintaxis:** obj << Redo ByGroup Analysis
+**Sintaxis:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -24008,7 +23898,7 @@ obj[1] << Redo ByGroup Analysis;
 
 #### Relaunch Analysis
 
-**Sintaxis:** obj << Relaunch Analysis
+**Sintaxis:** obj &lt;&lt; Relaunch Analysis
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -24029,7 +23919,7 @@ obj << Relaunch Analysis;
 
 #### Relaunch ByGroup
 
-**Sintaxis:** obj << Relaunch ByGroup
+**Sintaxis:** obj &lt;&lt; Relaunch ByGroup
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -24056,7 +23946,7 @@ obj[1] << Relaunch ByGroup;
 
 #### Remove Column Switcher
 
-**Sintaxis:** obj << Remove Column Switcher
+**Sintaxis:** obj &lt;&lt; Remove Column Switcher
 
 **Descripción:** Quita el Cambiador de columnas más reciente que se haya agregado a la plataforma.
 
@@ -24076,7 +23966,7 @@ obj << Remove Column Switcher;
 
 #### Remove Local Data Filter
 
-**Sintaxis:** obj << Remove Local Data Filter
+**Sintaxis:** obj &lt;&lt; Remove Local Data Filter
 
 **Descripción:** Si se ha creado un filtro de datos local, esto lo eliminará y restaurará la plataforma para usar todos los datos de la tabla de datos directamente.
 
@@ -24115,9 +24005,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 #### Report
 
-**Sintaxis:** obj << Report;
-
-Report( obj )
+**Sintaxis:** obj &lt;&lt; Report;Report( obj )
 
 **Descripción:** Devuelve una referencia al objeto informe.
 
@@ -24140,7 +24028,7 @@ Show( t );
 
 #### Report View
 
-**Sintaxis:** obj << Report View( "Completa"|"Resumen" )
+**Sintaxis:** obj &lt;&lt; Report View( "Completa"|"Resumen" )
 
 **Descripción:** La vista del informe determina el nivel de detalle visible en el informe de una plataforma. Full muestra todos los detalles, mientras que Summary solo muestra el contenido seleccionado, con independencia de la plataforma. Para el comportamiento personalizado, los cuadros de visualización admiten un mensaje <<Set Summary Behavior.
 
@@ -24161,7 +24049,7 @@ obj << Report View( "Summary" );
 
 #### Save ByGroup Script to Data Table
 
-**Sintaxis:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis, y lo guarda como propiedad de tabla en la tabla de datos. Puede especificar un nombre para el script. La opción Append Suffix añade un sufijo numérico al nombre del script, que diferencia el script de un script existente que tenga el mismo nombre. La opción Prompt solicita al usuario que especifique un nombre de script. La opción Replace reemplaza un script existente que tenga el mismo nombre.
 
@@ -24188,7 +24076,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 #### Save ByGroup Script to Journal
 
-**Sintaxis:** obj << Save ByGroup Script to Journal
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -24215,7 +24103,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 #### Save ByGroup Script to Script Window
 
-**Sintaxis:** obj << Save ByGroup Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -24242,7 +24130,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 #### Save Script for All Objects
 
-**Sintaxis:** obj << Save Script for All Objects
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects
 
 **Descripción:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -24263,7 +24151,7 @@ obj << Save Script for All Objects;
 
 #### Save Script for All Objects To Data Table
 
-**Sintaxis:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descripción:** Guarda un script para todos los objetos de informe en la tabla de datos actual. Esta opción es útil cuando tiene varios informes en la ventana. El script recibe el nombre de la primera plataforma a menos que especifique el nombre del script entre comillas.
 
@@ -24315,7 +24203,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 #### Save Script to Data Table
 
-**Sintaxis:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis y lo guarda en forma de propiedad de tabla en la tabla de datos.
 
@@ -24336,7 +24224,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 #### Save Script to Journal
 
-**Sintaxis:** obj << Save Script to Journal
+**Sintaxis:** obj &lt;&lt; Save Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -24357,7 +24245,7 @@ obj << Save Script to Journal;
 
 #### Save Script to Report
 
-**Sintaxis:** obj << Save Script to Report
+**Sintaxis:** obj &lt;&lt; Save Script to Report
 
 **Descripción:** Crea un script JSL para generar este análisis y lo muestra en el propio informe. Resulta útil para conservar un registro impreso de lo que se ha hecho.
 
@@ -24378,7 +24266,7 @@ obj << Save Script to Report;
 
 #### Save Script to Script Window
 
-**Sintaxis:** obj << Save Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -24464,7 +24352,7 @@ dt << Distribution(
 
 #### Sync to Data Table Changes
 
-**Sintaxis:** obj << Sync to Data Table Changes
+**Sintaxis:** obj &lt;&lt; Sync to Data Table Changes
 
 **Descripción:** Realiza una sincronización con las modificaciones de datos y de exclusión que se hayan realizado.
 
@@ -24481,7 +24369,7 @@ dist << Sync To Data Table Changes;
 
 #### Title
 
-**Sintaxis:** obj << Title( "new title" )
+**Sintaxis:** obj &lt;&lt; Title( "new title" )
 
 **Descripción:** Establece el título de la plataforma.
 
@@ -24502,7 +24390,7 @@ obj << Title( "My Platform" );
 
 #### Top Report
 
-**Sintaxis:** obj << Top Report
+**Sintaxis:** obj &lt;&lt; Top Report
 
 **Descripción:** Devuelve una referencia al nodo raíz del informe.
 
@@ -24525,7 +24413,7 @@ Show( t );
 
 #### Transform Column
 
-**Sintaxis:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Sintaxis:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Descripción:** Crea una columna de transformación en el contexto local de un objeto (una plataforma por lo general). La columna de transformación solo está activa mientras esté en uso la plataforma.
 
@@ -24546,7 +24434,7 @@ dt << Distribution(
 
 #### View Web XML
 
-**Sintaxis:** obj << View Web XML
+**Sintaxis:** obj &lt;&lt; View Web XML
 
 **Descripción:** Devuelve el código XML que se utiliza para crear el informe HTML interactivo.
 
@@ -24561,9 +24449,7 @@ xml = obj << View Web XML;
 
 #### Window View
 
-**Sintaxis:** obj = Fit Proportional Hazards(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Proportional Hazards(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Establece el tipo de ventana que se creará para el informe. De forma predeterminada, se creará una ventana de informe Visible. Una ventana Invisible no aparecerá en pantalla, pero se puede detectar mediante funciones como Window(). Una ventana Private responde a la mayoría de los mensajes de ventana pero no es detectable y se debe abordar a través del objeto de informe.
 
@@ -24607,7 +24493,7 @@ obj = dt << Fit Model(
 
 #### Effect Plots
 
-**Sintaxis:** obj << Effect Plots( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Effect Plots( state=0|1 )
 
 **Descripción:** Muestra u oculta el gráfico Valor p de FDR para efectos y el gráfico Log Utilidad de FDR en función del tamaño del efecto. Opción activada de forma predeterminada.
 
@@ -24630,7 +24516,7 @@ obj << Effect Plots( 1 );
 
 #### Effect Tests
 
-**Sintaxis:** obj << Effect Tests( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Effect Tests( state=0|1 )
 
 **Descripción:** Muestra u oculta la tabla Prueba del efecto. Opción activada de forma predeterminada.
 
@@ -24697,7 +24583,7 @@ obj = dt << Fit Model(
 
 #### Least Squares Means
 
-**Sintaxis:** obj << Least Squares Means( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Least Squares Means( state=0|1 )
 
 **Descripción:** Calcula todas las medias de mínimos cuadrados (marginales).
 
@@ -24721,7 +24607,7 @@ obj << Least Squares Means( 1 );
 
 #### Model Dialog
 
-**Sintaxis:** obj << Model Dialog
+**Sintaxis:** obj &lt;&lt; Model Dialog
 
 **Descripción:** Muestra la ventana de inicio Ajuste del modelo completada para el análisis actual.
 
@@ -24741,7 +24627,7 @@ obj << Model Dialog;
 
 #### Overall Plots
 
-**Sintaxis:** obj << Overall Plots( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Overall Plots( state=0|1 )
 
 **Descripción:** Muestra u oculta el gráfico Valor p de FDR global y el gráfico Log Utilidad de FDR en función de R cuadrado.
 
@@ -24763,7 +24649,7 @@ obj << Overall Plots( 1 );
 
 #### Overall Report
 
-**Sintaxis:** obj << Overall Report( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Overall Report( state=0|1 )
 
 **Descripción:** Muestra u oculta la tabla Ajuste general.
 
@@ -24786,7 +24672,7 @@ obj << Overall Report( 1 );
 
 #### Save BLUPs
 
-**Sintaxis:** obj << Save BLUPs
+**Sintaxis:** obj &lt;&lt; Save BLUPs
 
 **Descripción:** Crea una tabla de datos nueva que contiene los mejores predictores lineales insesgados (BLUP) para los efectos aleatorios del modelo.
 
@@ -24808,7 +24694,7 @@ obj << Save BLUPs;
 
 #### Save Conditional Predicted Values
 
-**Sintaxis:** obj << Save Conditional Predicted Values
+**Sintaxis:** obj &lt;&lt; Save Conditional Predicted Values
 
 **Descripción:** Guarda una nueva columna para cada respuesta en la tabla de datos. La columna nueva contiene los valores predichos condicionales que se calculan utilizando los mejores predictores lineales insesgados (BLUP) para los coeficientes de efectos aleatorios.
 
@@ -24830,7 +24716,7 @@ obj << Save Conditional Predicted Values;
 
 #### Save Conditional Prediction Formula
 
-**Sintaxis:** obj << Save Conditional Prediction Formula
+**Sintaxis:** obj &lt;&lt; Save Conditional Prediction Formula
 
 **Descripción:** Guarda una nueva columna de fórmulas para cada respuesta en la tabla de datos. La columna nueva contiene una fórmula que incluye estimaciones de efectos aleatorios para modelos con efectos aleatorios. Esta opción solo está disponible para los métodos de análisis REML.
 
@@ -24852,7 +24738,7 @@ obj << Save Conditional Prediction Formula;
 
 #### Save Effect Tests
 
-**Sintaxis:** obj << Save Effect Tests
+**Sintaxis:** obj &lt;&lt; Save Effect Tests
 
 **Descripción:** Crea una nueva tabla de datos que contiene una fila para cada prueba de efecto.
 
@@ -24872,7 +24758,7 @@ obj << Save Effect Tests;
 
 #### Save Estimates
 
-**Sintaxis:** obj << Save Estimates
+**Sintaxis:** obj &lt;&lt; Save Estimates
 
 **Descripción:** Crea una nueva tabla de datos que contiene una fila para cada variable de respuesta y una columna por cada término del modelo.
 
@@ -24892,7 +24778,7 @@ obj << Save Estimates;
 
 #### Save LSMeans Differences
 
-**Sintaxis:** obj << Save LSMeans Differences
+**Sintaxis:** obj &lt;&lt; Save LSMeans Differences
 
 **Descripción:** Crea una nueva tabla de datos que contiene todas las diferencias de medias de mínimos cuadrados segmentadas.
 
@@ -24913,7 +24799,7 @@ obj << Save LSMeans Differences;
 
 #### Save Least Squares Means
 
-**Sintaxis:** obj << Save Least Squares Means
+**Sintaxis:** obj &lt;&lt; Save Least Squares Means
 
 **Descripción:** Crea una nueva tabla de datos que contiene todas las medias de mínimos cuadrados.
 
@@ -24933,7 +24819,7 @@ obj << Save Least Squares Means;
 
 #### Save Overall Fit
 
-**Sintaxis:** obj << Save Overall Fit
+**Sintaxis:** obj &lt;&lt; Save Overall Fit
 
 **Descripción:** Crea una nueva tabla de datos que contiene una fila por variable de respuesta. Para cada Y, las columnas de la tabla resumen la información sobre el ajuste del modelo.
 
@@ -24953,7 +24839,7 @@ obj << Save Overall Fit;
 
 #### Save Predicted Values
 
-**Sintaxis:** obj << Save Predicted Values
+**Sintaxis:** obj &lt;&lt; Save Predicted Values
 
 **Descripción:** Guarda una nueva columna para cada respuesta en la tabla de datos. Cada columna contiene los valores predichos para la respuesta correspondiente.
 
@@ -24972,7 +24858,7 @@ obj = dt << Fit Model(
 
 #### Save Prediction Formula
 
-**Sintaxis:** obj << Save Prediction Formula
+**Sintaxis:** obj &lt;&lt; Save Prediction Formula
 
 **Descripción:** Guarda una nueva columna de fórmulas para cada respuesta en la tabla de datos. Cada columna contiene una ecuación de predicción para la respuesta correspondiente.
 
@@ -24991,7 +24877,7 @@ obj = dt << Fit Model(
 
 #### Select Effects Where
 
-**Sintaxis:** obj << Select Effects Where( condition )
+**Sintaxis:** obj &lt;&lt; Select Effects Where( condition )
 
 **Descripción:** Abre la ventana Seleccionar dónde, que le permite seleccionar filas en la tabla Pruebas del efecto que coincidan con la condición específica indicada en la ventana Seleccionar dónde.
 
@@ -25013,7 +24899,7 @@ obj << Select Effects Where( FDR Logworth > 4 );
 
 #### Select Responses for Selected Effects
 
-**Sintaxis:** obj << Select Responses for Selected Effects
+**Sintaxis:** obj &lt;&lt; Select Responses for Selected Effects
 
 **Descripción:** Selecciona columnas de respuesta en la tabla original que se correspondan con los efectos seleccionados.
 
@@ -25034,7 +24920,7 @@ obj << Select Responses for Selected Effects;
 
 #### Sliced LSMeans Differences
 
-**Sintaxis:** obj << Sliced LSMeans Differences( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Sliced LSMeans Differences( state=0|1 )
 
 **Descripción:** Calcula pruebas comparando todas las medias de mínimos cuadrados de efectos principales y segmentos de interacciones de 2 y 3 factores.
 
@@ -25082,7 +24968,7 @@ obj = dt << Fit Model(
 
 #### Action
 
-**Sintaxis:** obj << Action
+**Sintaxis:** obj &lt;&lt; Action
 
 **Descripción:** Trampa multiuso dentro de una plataforma para insertar expresiones que se desean evaluar. Temporalmente establece los contextos de cuadros de visualización y tablas de datos en la plataforma.
 
@@ -25100,7 +24986,7 @@ dt << Bivariate(
 
 #### Apply Preset
 
-**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descripción:** Aplica al objeto un preajuste creado previamente, actualizando las opciones y personalizaciones para que coincidan con la configuración guardada.
 
@@ -25147,7 +25033,7 @@ obj2 << Apply Preset( preset );
 
 #### Automatic Recalc
 
-**Sintaxis:** obj << Automatic Recalc( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Descripción:** Rehace automáticamente el análisis para modificaciones de datos y de exclusión. Si está activada la opción Recálculo automático, le recomendamos que utilice los comandos Wait(0) para asegurarse de que las modificaciones de datos y de exclusión surtan efecto antes del recálculo.
 
@@ -25168,7 +25054,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 #### Broadcast
 
-**Sintaxis:** obj << Broadcast(message)
+**Sintaxis:** obj &lt;&lt; Broadcast(message)
 
 **Descripción:** Difunde un mensaje a una plataforma. Si los resultados devueltos de objetos individuales son tablas, se concatenan si es posible y el formato final es idéntico al resultado de la opción Guardar tabla combinada en un cuadro de tabla o al resultado de la opción Concatenar mediante una columna de origen. Los demás resultados se almacenan en una lista y se devuelven.
 
@@ -25188,7 +25074,7 @@ objs[1] << Broadcast( Save Summaries );
 
 #### Column Switcher
 
-**Sintaxis:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Sintaxis:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Descripción:** Añade un panel de control para cambiar las variables de la plataforma
 
@@ -25206,7 +25092,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 #### Copy ByGroup Script
 
-**Sintaxis:** obj << Copy ByGroup Script
+**Sintaxis:** obj &lt;&lt; Copy ByGroup Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -25232,7 +25118,7 @@ obj[1] << Copy ByGroup Script;
 
 #### Copy Script
 
-**Sintaxis:** obj << Copy Script
+**Sintaxis:** obj &lt;&lt; Copy Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -25252,7 +25138,7 @@ obj << Copy Script;
 
 #### Data Table Window
 
-**Sintaxis:** obj << Data Table Window
+**Sintaxis:** obj &lt;&lt; Data Table Window
 
 **Descripción:** Mueve al frente la ventana de la tabla de datos que se utiliza en este análisis.
 
@@ -25272,7 +25158,7 @@ obj << Data Table Window;
 
 #### Get By Levels
 
-**Sintaxis:** obj << Get By Levels
+**Sintaxis:** obj &lt;&lt; Get By Levels
 
 **Descripción:** Devuelve un arreglo asociativo que asigna las columnas Por grupo a sus valores.
 
@@ -25289,7 +25175,7 @@ biv << Get By Levels;
 
 #### Get ByGroup Script
 
-**Sintaxis:** obj << Get ByGroup Script
+**Sintaxis:** obj &lt;&lt; Get ByGroup Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -25316,7 +25202,7 @@ Show( t );
 
 #### Get Container
 
-**Sintaxis:** obj << Get Container
+**Sintaxis:** obj &lt;&lt; Get Container
 
 **Descripción:** Devuelve una referencia al cuadro contenedor que incluye el contenido del objeto.
 
@@ -25368,7 +25254,7 @@ New Window( "platform boxes",
 
 #### Get Data Table
 
-**Sintaxis:** obj << Get Data Table
+**Sintaxis:** obj &lt;&lt; Get Data Table
 
 **Descripción:** Devuelve una referencia a la tabla de datos.
 
@@ -25389,7 +25275,7 @@ Show( N Rows( t ) );
 
 #### Get Group Platform
 
-**Sintaxis:** obj << Get Group Platform
+**Sintaxis:** obj &lt;&lt; Get Group Platform
 
 **Descripción:** Devuelve el objeto Plataforma grupal si esta plataforma forma parte de un grupo. De lo contrario, devuelve Empty().
 
@@ -25406,7 +25292,7 @@ group << Layout( "Arrange in Tabs" );
 
 #### Get Script
 
-**Sintaxis:** obj << Get Script
+**Sintaxis:** obj &lt;&lt; Get Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -25427,7 +25313,7 @@ Show( t );
 
 #### Get Script With Data Table
 
-**Sintaxis:** obj << Get Script With Data Table
+**Sintaxis:** obj &lt;&lt; Get Script With Data Table
 
 **Descripción:** Crea un script (JSL) para generar este análisis haciendo referencia específica a esta tabla de datos y lo devuelve en forma de expresión.
 
@@ -25448,7 +25334,7 @@ Show( t );
 
 #### Get Timing
 
-**Sintaxis:** obj << Get Timing
+**Sintaxis:** obj &lt;&lt; Get Timing
 
 **Descripción:** Determina el tiempo de inicio de una plataforma.
 
@@ -25469,7 +25355,7 @@ Show( t );
 
 #### Get Web Support
 
-**Sintaxis:** obj << Get Web Support
+**Sintaxis:** obj &lt;&lt; Get Web Support
 
 **Descripción:** Devuelve un número que indica el nivel de compatibilidad del HTML interactivo para el objeto de visualización. 1 significa que algunos o todos los elementos son compatibles. 0 significa que no existe compatibilidad.
 
@@ -25485,7 +25371,7 @@ Show( s );
 
 #### Get Where Expr
 
-**Sintaxis:** obj << Get Where Expr
+**Sintaxis:** obj &lt;&lt; Get Where Expr
 
 **Descripción:** Devuelve la expresión Where para el subconjunto de datos, si la plataforma se inició con By() o Where(). De lo contrario, devuelve Empty().
 
@@ -25522,7 +25408,7 @@ dt << Bivariate(
 
 #### Local Data Filter
 
-**Sintaxis:** obj << Local Data Filter
+**Sintaxis:** obj &lt;&lt; Local Data Filter
 
 **Descripción:** Para filtrar los datos según grupos o rangos determinados, pero locales para esta plataforma.
 
@@ -25578,7 +25464,7 @@ preset = obj << New Preset();
 
 #### Paste Local Data Filter
 
-**Sintaxis:** obj << Paste Local Data Filter
+**Sintaxis:** obj &lt;&lt; Paste Local Data Filter
 
 **Descripción:** Se aplica el filtro de datos locales del portapapeles al informe actual.
 
@@ -25599,7 +25485,7 @@ dist2 << Paste Local Data Filter;
 
 #### Redo Analysis
 
-**Sintaxis:** obj << Redo Analysis
+**Sintaxis:** obj &lt;&lt; Redo Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -25619,7 +25505,7 @@ obj << Redo Analysis;
 
 #### Redo ByGroup Analysis
 
-**Sintaxis:** obj << Redo ByGroup Analysis
+**Sintaxis:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -25645,7 +25531,7 @@ obj[1] << Redo ByGroup Analysis;
 
 #### Relaunch Analysis
 
-**Sintaxis:** obj << Relaunch Analysis
+**Sintaxis:** obj &lt;&lt; Relaunch Analysis
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -25665,7 +25551,7 @@ obj << Relaunch Analysis;
 
 #### Relaunch ByGroup
 
-**Sintaxis:** obj << Relaunch ByGroup
+**Sintaxis:** obj &lt;&lt; Relaunch ByGroup
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -25691,7 +25577,7 @@ obj[1] << Relaunch ByGroup;
 
 #### Remove Column Switcher
 
-**Sintaxis:** obj << Remove Column Switcher
+**Sintaxis:** obj &lt;&lt; Remove Column Switcher
 
 **Descripción:** Quita el Cambiador de columnas más reciente que se haya agregado a la plataforma.
 
@@ -25711,7 +25597,7 @@ obj << Remove Column Switcher;
 
 #### Remove Local Data Filter
 
-**Sintaxis:** obj << Remove Local Data Filter
+**Sintaxis:** obj &lt;&lt; Remove Local Data Filter
 
 **Descripción:** Si se ha creado un filtro de datos local, esto lo eliminará y restaurará la plataforma para usar todos los datos de la tabla de datos directamente.
 
@@ -25750,9 +25636,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 #### Report
 
-**Sintaxis:** obj << Report;
-
-Report( obj )
+**Sintaxis:** obj &lt;&lt; Report;Report( obj )
 
 **Descripción:** Devuelve una referencia al objeto informe.
 
@@ -25774,7 +25658,7 @@ Show( t );
 
 #### Report View
 
-**Sintaxis:** obj << Report View( "Completa"|"Resumen" )
+**Sintaxis:** obj &lt;&lt; Report View( "Completa"|"Resumen" )
 
 **Descripción:** La vista del informe determina el nivel de detalle visible en el informe de una plataforma. Full muestra todos los detalles, mientras que Summary solo muestra el contenido seleccionado, con independencia de la plataforma. Para el comportamiento personalizado, los cuadros de visualización admiten un mensaje <<Set Summary Behavior.
 
@@ -25794,7 +25678,7 @@ obj << Report View( "Summary" );
 
 #### Save ByGroup Script to Data Table
 
-**Sintaxis:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis, y lo guarda como propiedad de tabla en la tabla de datos. Puede especificar un nombre para el script. La opción Append Suffix añade un sufijo numérico al nombre del script, que diferencia el script de un script existente que tenga el mismo nombre. La opción Prompt solicita al usuario que especifique un nombre de script. La opción Replace reemplaza un script existente que tenga el mismo nombre.
 
@@ -25820,7 +25704,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 #### Save ByGroup Script to Journal
 
-**Sintaxis:** obj << Save ByGroup Script to Journal
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -25846,7 +25730,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 #### Save ByGroup Script to Script Window
 
-**Sintaxis:** obj << Save ByGroup Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -25872,7 +25756,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 #### Save Script for All Objects
 
-**Sintaxis:** obj << Save Script for All Objects
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects
 
 **Descripción:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -25892,7 +25776,7 @@ obj << Save Script for All Objects;
 
 #### Save Script for All Objects To Data Table
 
-**Sintaxis:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descripción:** Guarda un script para todos los objetos de informe en la tabla de datos actual. Esta opción es útil cuando tiene varios informes en la ventana. El script recibe el nombre de la primera plataforma a menos que especifique el nombre del script entre comillas.
 
@@ -25942,7 +25826,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 #### Save Script to Data Table
 
-**Sintaxis:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis y lo guarda en forma de propiedad de tabla en la tabla de datos.
 
@@ -25962,7 +25846,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 #### Save Script to Journal
 
-**Sintaxis:** obj << Save Script to Journal
+**Sintaxis:** obj &lt;&lt; Save Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -25982,7 +25866,7 @@ obj << Save Script to Journal;
 
 #### Save Script to Report
 
-**Sintaxis:** obj << Save Script to Report
+**Sintaxis:** obj &lt;&lt; Save Script to Report
 
 **Descripción:** Crea un script JSL para generar este análisis y lo muestra en el propio informe. Resulta útil para conservar un registro impreso de lo que se ha hecho.
 
@@ -26002,7 +25886,7 @@ obj << Save Script to Report;
 
 #### Save Script to Script Window
 
-**Sintaxis:** obj << Save Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -26087,7 +25971,7 @@ dt << Distribution(
 
 #### Sync to Data Table Changes
 
-**Sintaxis:** obj << Sync to Data Table Changes
+**Sintaxis:** obj &lt;&lt; Sync to Data Table Changes
 
 **Descripción:** Realiza una sincronización con las modificaciones de datos y de exclusión que se hayan realizado.
 
@@ -26104,7 +25988,7 @@ dist << Sync To Data Table Changes;
 
 #### Title
 
-**Sintaxis:** obj << Title( "new title" )
+**Sintaxis:** obj &lt;&lt; Title( "new title" )
 
 **Descripción:** Establece el título de la plataforma.
 
@@ -26124,7 +26008,7 @@ obj << Title( "My Platform" );
 
 #### Top Report
 
-**Sintaxis:** obj << Top Report
+**Sintaxis:** obj &lt;&lt; Top Report
 
 **Descripción:** Devuelve una referencia al nodo raíz del informe.
 
@@ -26146,7 +26030,7 @@ Show( t );
 
 #### Transform Column
 
-**Sintaxis:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Sintaxis:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Descripción:** Crea una columna de transformación en el contexto local de un objeto (una plataforma por lo general). La columna de transformación solo está activa mientras esté en uso la plataforma.
 
@@ -26167,7 +26051,7 @@ dt << Distribution(
 
 #### View Web XML
 
-**Sintaxis:** obj << View Web XML
+**Sintaxis:** obj &lt;&lt; View Web XML
 
 **Descripción:** Devuelve el código XML que se utiliza para crear el informe HTML interactivo.
 
@@ -26182,9 +26066,7 @@ xml = obj << View Web XML;
 
 #### Window View
 
-**Sintaxis:** obj = Fit Response Screening(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Response Screening(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Establece el tipo de ventana que se creará para el informe. De forma predeterminada, se creará una ventana de informe Visible. Una ventana Invisible no aparecerá en pantalla, pero se puede detectar mediante funciones como Window(). Una ventana Private responde a la mayoría de los mensajes de ventana pero no es detectable y se debe abordar a través del objeto de informe.
 
@@ -26207,7 +26089,7 @@ New Window( "Bivariate Equation",
 
 #### By
 
-**Sintaxis:** obj << By( column(s) )
+**Sintaxis:** obj &lt;&lt; By( column(s) )
 
 ```jsl
 
@@ -26255,7 +26137,7 @@ obj << Finish;
 
 #### All Possible Models
 
-**Sintaxis:** obj << All Possible Models( max_terms, max_models, <Heredity Restriction( state=0|1 )> )
+**Sintaxis:** obj &lt;&lt; All Possible Models( max_terms, max_models, &lt;Heredity Restriction( state=0|1 )&gt; )
 
 **Descripción:** Ajusta todos los modelos posibles hasta los límites especificados y muestra los mejores modelos para cada número de términos. Especifica el número máximo de términos que ajustar en cualquier modelo. Especifica el número máximo de resultados del modelo que mostrar para cada número de términos del modelo. Puede restringir los modelos que aparecen a aquellos que cumplan una fuerte herencia de efectos. La opción Todos los modelos posibles solo está disponible para respuestas continuas.
 
@@ -26277,7 +26159,7 @@ obj << All Possible Models( 5, 10 );
 
 #### Backward Step
 
-**Sintaxis:** obj << Backward Step
+**Sintaxis:** obj &lt;&lt; Backward Step
 
 **Descripción:** Quita el término con el valor p más alto. Si se selecciona la regla de detención Umbral del valor p, ese término no debe ser significativo al nivel especificado por la opción Prob. que dejar.
 
@@ -26299,7 +26181,7 @@ obj << Backward Step;
 
 #### Clear History
 
-**Sintaxis:** obj << Clear History
+**Sintaxis:** obj &lt;&lt; Clear History
 
 **Descripción:** Borra y restablece el historial de pasos.
 
@@ -26321,7 +26203,7 @@ obj << Clear History;
 
 #### Direction
 
-**Sintaxis:** obj << Direction( "Adelante"|"Atrás"|"Mixto" )
+**Sintaxis:** obj &lt;&lt; Direction( "Adelante"|"Atrás"|"Mixto" )
 
 **Descripción:** Especifica la dirección que se utiliza para recorrer paso a paso el proceso de selección de términos. La dirección puede ser hacia adelante, hacia atrás o una combinación de ambas. La opción de dirección mixta requiere que esté seleccionada la regla de detención Umbral del valor p.
 
@@ -26343,7 +26225,7 @@ obj << Finish;
 
 #### Enter
 
-**Sintaxis:** obj << Enter( term )
+**Sintaxis:** obj &lt;&lt; Enter( term )
 
 **Descripción:** Introduce un término en el modelo. Esta opción no afecta a los términos protegidos.
 
@@ -26363,7 +26245,7 @@ obj << Enter( :Runtime );
 
 #### Enter All
 
-**Sintaxis:** obj << Enter All
+**Sintaxis:** obj &lt;&lt; Enter All
 
 **Descripción:** Introduce todos los términos en el modelo, si es posible.
 
@@ -26383,7 +26265,7 @@ obj << Enter All;
 
 #### Export Model With Validation
 
-**Sintaxis:** obj << Export Model With Validation( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Export Model With Validation( state=0|1 )
 
 **Descripción:** Agrega la columna Validación a la ventana Especificación del modelo cuando selecciona la opción Crear modelo. Esta opción también ejecuta el modelo con la columna Validación cuando selecciona la opción Ejecutar modelo. Esta opción solo está disponible cuando ha especificado una columna de validación. Opción activada de forma predeterminada.
 
@@ -26408,7 +26290,7 @@ obj << Make Model;
 
 #### Finish
 
-**Sintaxis:** obj << Finish
+**Sintaxis:** obj &lt;&lt; Finish
 
 **Descripción:** Finaliza inmediatamente el proceso de selección de términos. En los scripts, se recomienda la opción Finalizar en lugar de la opción Ir.
 
@@ -26428,7 +26310,7 @@ obj << Finish;
 
 #### Forward Step
 
-**Sintaxis:** obj << Forward Step
+**Sintaxis:** obj &lt;&lt; Forward Step
 
 **Descripción:** Introduce el término con el valor p más bajo. Si se selecciona la regla de detención Umbral del valor p, ese término debe ser significativo al nivel especificado por la opción Prob. que introducir.
 
@@ -26449,7 +26331,7 @@ obj << Forward Step;
 
 #### Get Measures
 
-**Sintaxis:** obj << Get Measures
+**Sintaxis:** obj &lt;&lt; Get Measures
 
 **Descripción:** Devuelve medidas de ajuste de resumen del modelo.
 
@@ -26472,7 +26354,7 @@ obj << Get Measures;
 
 #### Get Prospectives
 
-**Sintaxis:** obj << Get Prospectives
+**Sintaxis:** obj &lt;&lt; Get Prospectives
 
 **Descripción:** Devuelve una matriz asociativa que contiene estimaciones e intervalos de confianza. Para los términos que están en el modelo, los valores son los obtenidos del modelo actual. Para los términos que no están en el modelo actual, los valores son las estimaciones y los intervalos de confianza de un modelo que incluya el término correspondiente.
 
@@ -26498,7 +26380,7 @@ Show(
 
 #### Go
 
-**Sintaxis:** obj << Go
+**Sintaxis:** obj &lt;&lt; Go
 
 **Descripción:** Inicia una tarea en segundo plano para el proceso de selección de términos. En los scripts, se recomienda la opción Finalizar en lugar de la opción Ir.
 
@@ -26518,7 +26400,7 @@ obj << Go;
 
 #### K-Fold Crossvalidation
 
-**Sintaxis:** obj << "K-Fold Crossvalidation"n( <k> )
+**Sintaxis:** obj &lt;&lt; "K-Fold Crossvalidation"n( &lt;k&gt; )
 
 **Descripción:** Realiza una validación cruzada de k veces en el proceso de selección de variables. Cuando se selecciona, esta opción habilita la regla de detención R cuadrado máx. de k veces en el panel de control. La validación cruzada de K veces en la plataforma Paso a paso divide la muestra en k subconjuntos y utiliza los subconjuntos como conjunto de validación. La opción Validación cruzada de K veces solo está disponible para respuestas continuas.
 
@@ -26539,7 +26421,7 @@ obj << Finish;
 
 #### Lock
 
-**Sintaxis:** obj << Lock( term )
+**Sintaxis:** obj &lt;&lt; Lock( term )
 
 **Descripción:** Protege un término dentro o fuera del modelo. No se puede introducir en el modelo un término protegido que no se encuentre dentro de él, y no se puede quitar del modelo un término protegido que se encuentre dentro de él.
 
@@ -26560,7 +26442,7 @@ obj << Lock( :Runtime );
 
 #### Make Model
 
-**Sintaxis:** obj << Make Model
+**Sintaxis:** obj &lt;&lt; Make Model
 
 **Descripción:** Abre una ventana de inicio Ajuste del modelo para el modelo especificado en la tabla Estimaciones actuales. En los casos en los que haya términos nominales u ordinales, la opción Crear modelo crea columnas de transformación temporales que contienen los términos necesarios para el modelo.
 
@@ -26581,7 +26463,7 @@ obj << Make Model;
 
 #### Model Averaging
 
-**Sintaxis:** obj << Model Averaging( max_terms, AICc_cutoff )
+**Sintaxis:** obj &lt;&lt; Model Averaging( max_terms, AICc_cutoff )
 
 **Descripción:** Le permite promediar los ajustes para un número de modelos, en lugar de seleccionar un único mejor modelo.
 
@@ -26603,7 +26485,7 @@ obj << Model Averaging( 5, .90 );
 
 #### Model Dialog
 
-**Sintaxis:** obj << Model Dialog
+**Sintaxis:** obj &lt;&lt; Model Dialog
 
 **Descripción:** Muestra la ventana de inicio Ajuste del modelo completada para el análisis actual.
 
@@ -26625,7 +26507,7 @@ obj << Model Dialog;
 
 #### Plot Criterion History
 
-**Sintaxis:** obj << Plot Criterion History( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Plot Criterion History( state=0|1 )
 
 **Descripción:** Crea un gráfico de AICc y BIC frente al número de parámetros.
 
@@ -26648,7 +26530,7 @@ obj << Plot Criterion History( 1 );
 
 #### Plot RSquare History
 
-**Sintaxis:** obj << Plot RSquare History( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Plot RSquare History( state=0|1 )
 
 **Descripción:** Crea un gráfico de R cuadrado de entrenamiento y validación frente al número de parámetros. Esta opción solo está disponible para modelos de respuesta continua que tengan datos de validación.
 
@@ -26670,7 +26552,7 @@ obj << Plot RSquare History( 1 );
 
 #### Prob to Enter
 
-**Sintaxis:** obj << Prob to Enter( number )
+**Sintaxis:** obj &lt;&lt; Prob to Enter( number )
 
 **Descripción:** Especifica el valor p máximo que debe tener un efecto para introducirlo en el modelo durante un paso hacia delante.
 
@@ -26692,7 +26574,7 @@ obj << Finish;
 
 #### Prob to Leave
 
-**Sintaxis:** obj << Prob to Leave( number )
+**Sintaxis:** obj &lt;&lt; Prob to Leave( number )
 
 **Descripción:** Especifica el valor p mínimo que debe tener un efecto para quitarlo del modelo durante un paso hacia atrás.
 
@@ -26716,7 +26598,7 @@ obj << Finish;
 
 #### Remove
 
-**Sintaxis:** obj << Remove( term )
+**Sintaxis:** obj &lt;&lt; Remove( term )
 
 **Descripción:** Quita un término del modelo. Esta opción no afecta a los términos protegidos.
 
@@ -26737,7 +26619,7 @@ obj << Remove( :RunPulse );
 
 #### Remove All
 
-**Sintaxis:** obj << Remove All
+**Sintaxis:** obj &lt;&lt; Remove All
 
 **Descripción:** Quita todos los términos del modelo.
 
@@ -26759,7 +26641,7 @@ obj << Remove All;
 
 #### Rules
 
-**Sintaxis:** obj << Rules( "Combinar"|"Restringir"|"Sin reglas"|"Efectos completos"|"Efectos completos respecto a la herencia" )
+**Sintaxis:** obj &lt;&lt; Rules( "Combinar"|"Restringir"|"Sin reglas"|"Efectos completos"|"Efectos completos respecto a la herencia" )
 
 **Descripción:** Especifica las reglas que se aplican cuando hay una jerarquía de términos en el modelo. Esta opción solo aparece si su modelo contiene términos jerárquicos.
 
@@ -26786,7 +26668,7 @@ obj << Finish;
 
 #### Run Model
 
-**Sintaxis:** obj << Run Model
+**Sintaxis:** obj &lt;&lt; Run Model
 
 **Descripción:** Abre un informe de mínimos cuadrados estándar para el modelo especificado en la tabla Estimaciones actuales. En los casos en los que haya términos nominales u ordinales, la opción Ejecutar modelo crea columnas de transformación temporales que contienen los términos necesarios para el modelo.
 
@@ -26807,7 +26689,7 @@ obj << Run Model;
 
 #### Step
 
-**Sintaxis:** obj << Step
+**Sintaxis:** obj &lt;&lt; Step
 
 **Descripción:** Da el paso siguiente en el proceso de selección de términos. La opción Paso introduce términos uno por uno hacia delante o los elimina uno por uno hacia atrás.
 
@@ -26828,7 +26710,7 @@ obj << Step;
 
 #### Stop
 
-**Sintaxis:** obj << Stop
+**Sintaxis:** obj &lt;&lt; Stop
 
 **Descripción:** Detiene el proceso de selección automática iniciado por las opciones Ir o Finalizar.
 
@@ -26849,7 +26731,7 @@ obj << Stop;
 
 #### Stopping Rule
 
-**Sintaxis:** obj << Stopping Rule( "Umbral del valor p"|"AICc mínimo"|"BIC mínimo"|"R cuadrado máx. de validación"|"R cuadrado máx. de k veces" )
+**Sintaxis:** obj &lt;&lt; Stopping Rule( "Umbral del valor p"|"AICc mínimo"|"BIC mínimo"|"R cuadrado máx. de validación"|"R cuadrado máx. de k veces" )
 
 **Descripción:** Especifica la regla que se utiliza para detener el proceso de selección de términos cuando se especifican las opciones Ir o Finalizar.
 
@@ -26873,7 +26755,7 @@ obj << Finish;
 
 #### Unlock
 
-**Sintaxis:** obj << Unlock( term )
+**Sintaxis:** obj &lt;&lt; Unlock( term )
 
 **Descripción:** Desprotege un término previamente protegido en el modelo.
 
@@ -26898,7 +26780,7 @@ obj << Unlock( :Runtime );
 
 #### Action
 
-**Sintaxis:** obj << Action
+**Sintaxis:** obj &lt;&lt; Action
 
 **Descripción:** Trampa multiuso dentro de una plataforma para insertar expresiones que se desean evaluar. Temporalmente establece los contextos de cuadros de visualización y tablas de datos en la plataforma.
 
@@ -26916,7 +26798,7 @@ dt << Bivariate(
 
 #### Apply Preset
 
-**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descripción:** Aplica al objeto un preajuste creado previamente, actualizando las opciones y personalizaciones para que coincidan con la configuración guardada.
 
@@ -26963,7 +26845,7 @@ obj2 << Apply Preset( preset );
 
 #### Automatic Recalc
 
-**Sintaxis:** obj << Automatic Recalc( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Descripción:** Rehace automáticamente el análisis para modificaciones de datos y de exclusión. Si está activada la opción Recálculo automático, le recomendamos que utilice los comandos Wait(0) para asegurarse de que las modificaciones de datos y de exclusión surtan efecto antes del recálculo.
 
@@ -26985,7 +26867,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 #### Broadcast
 
-**Sintaxis:** obj << Broadcast(message)
+**Sintaxis:** obj &lt;&lt; Broadcast(message)
 
 **Descripción:** Difunde un mensaje a una plataforma. Si los resultados devueltos de objetos individuales son tablas, se concatenan si es posible y el formato final es idéntico al resultado de la opción Guardar tabla combinada en un cuadro de tabla o al resultado de la opción Concatenar mediante una columna de origen. Los demás resultados se almacenan en una lista y se devuelven.
 
@@ -27005,7 +26887,7 @@ objs[1] << Broadcast( Save Summaries );
 
 #### Column Switcher
 
-**Sintaxis:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Sintaxis:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Descripción:** Añade un panel de control para cambiar las variables de la plataforma
 
@@ -27023,7 +26905,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 #### Copy ByGroup Script
 
-**Sintaxis:** obj << Copy ByGroup Script
+**Sintaxis:** obj &lt;&lt; Copy ByGroup Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -27050,7 +26932,7 @@ obj[1] << Copy ByGroup Script;
 
 #### Copy Script
 
-**Sintaxis:** obj << Copy Script
+**Sintaxis:** obj &lt;&lt; Copy Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -27071,7 +26953,7 @@ obj << Copy Script;
 
 #### Data Table Window
 
-**Sintaxis:** obj << Data Table Window
+**Sintaxis:** obj &lt;&lt; Data Table Window
 
 **Descripción:** Mueve al frente la ventana de la tabla de datos que se utiliza en este análisis.
 
@@ -27092,7 +26974,7 @@ obj << Data Table Window;
 
 #### Get By Levels
 
-**Sintaxis:** obj << Get By Levels
+**Sintaxis:** obj &lt;&lt; Get By Levels
 
 **Descripción:** Devuelve un arreglo asociativo que asigna las columnas Por grupo a sus valores.
 
@@ -27109,7 +26991,7 @@ biv << Get By Levels;
 
 #### Get ByGroup Script
 
-**Sintaxis:** obj << Get ByGroup Script
+**Sintaxis:** obj &lt;&lt; Get ByGroup Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -27137,7 +27019,7 @@ Show( t );
 
 #### Get Container
 
-**Sintaxis:** obj << Get Container
+**Sintaxis:** obj &lt;&lt; Get Container
 
 **Descripción:** Devuelve una referencia al cuadro contenedor que incluye el contenido del objeto.
 
@@ -27190,7 +27072,7 @@ New Window( "platform boxes",
 
 #### Get Data Table
 
-**Sintaxis:** obj << Get Data Table
+**Sintaxis:** obj &lt;&lt; Get Data Table
 
 **Descripción:** Devuelve una referencia a la tabla de datos.
 
@@ -27212,7 +27094,7 @@ Show( N Rows( t ) );
 
 #### Get Group Platform
 
-**Sintaxis:** obj << Get Group Platform
+**Sintaxis:** obj &lt;&lt; Get Group Platform
 
 **Descripción:** Devuelve el objeto Plataforma grupal si esta plataforma forma parte de un grupo. De lo contrario, devuelve Empty().
 
@@ -27229,7 +27111,7 @@ group << Layout( "Arrange in Tabs" );
 
 #### Get Script
 
-**Sintaxis:** obj << Get Script
+**Sintaxis:** obj &lt;&lt; Get Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -27251,7 +27133,7 @@ Show( t );
 
 #### Get Script With Data Table
 
-**Sintaxis:** obj << Get Script With Data Table
+**Sintaxis:** obj &lt;&lt; Get Script With Data Table
 
 **Descripción:** Crea un script (JSL) para generar este análisis haciendo referencia específica a esta tabla de datos y lo devuelve en forma de expresión.
 
@@ -27273,7 +27155,7 @@ Show( t );
 
 #### Get Timing
 
-**Sintaxis:** obj << Get Timing
+**Sintaxis:** obj &lt;&lt; Get Timing
 
 **Descripción:** Determina el tiempo de inicio de una plataforma.
 
@@ -27295,7 +27177,7 @@ Show( t );
 
 #### Get Web Support
 
-**Sintaxis:** obj << Get Web Support
+**Sintaxis:** obj &lt;&lt; Get Web Support
 
 **Descripción:** Devuelve un número que indica el nivel de compatibilidad del HTML interactivo para el objeto de visualización. 1 significa que algunos o todos los elementos son compatibles. 0 significa que no existe compatibilidad.
 
@@ -27311,7 +27193,7 @@ Show( s );
 
 #### Get Where Expr
 
-**Sintaxis:** obj << Get Where Expr
+**Sintaxis:** obj &lt;&lt; Get Where Expr
 
 **Descripción:** Devuelve la expresión Where para el subconjunto de datos, si la plataforma se inició con By() o Where(). De lo contrario, devuelve Empty().
 
@@ -27348,7 +27230,7 @@ dt << Bivariate(
 
 #### Local Data Filter
 
-**Sintaxis:** obj << Local Data Filter
+**Sintaxis:** obj &lt;&lt; Local Data Filter
 
 **Descripción:** Para filtrar los datos según grupos o rangos determinados, pero locales para esta plataforma.
 
@@ -27404,7 +27286,7 @@ preset = obj << New Preset();
 
 #### Paste Local Data Filter
 
-**Sintaxis:** obj << Paste Local Data Filter
+**Sintaxis:** obj &lt;&lt; Paste Local Data Filter
 
 **Descripción:** Se aplica el filtro de datos locales del portapapeles al informe actual.
 
@@ -27425,7 +27307,7 @@ dist2 << Paste Local Data Filter;
 
 #### Redo Analysis
 
-**Sintaxis:** obj << Redo Analysis
+**Sintaxis:** obj &lt;&lt; Redo Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -27446,7 +27328,7 @@ obj << Redo Analysis;
 
 #### Redo ByGroup Analysis
 
-**Sintaxis:** obj << Redo ByGroup Analysis
+**Sintaxis:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -27473,7 +27355,7 @@ obj[1] << Redo ByGroup Analysis;
 
 #### Relaunch Analysis
 
-**Sintaxis:** obj << Relaunch Analysis
+**Sintaxis:** obj &lt;&lt; Relaunch Analysis
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -27494,7 +27376,7 @@ obj << Relaunch Analysis;
 
 #### Relaunch ByGroup
 
-**Sintaxis:** obj << Relaunch ByGroup
+**Sintaxis:** obj &lt;&lt; Relaunch ByGroup
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -27521,7 +27403,7 @@ obj[1] << Relaunch ByGroup;
 
 #### Remove Column Switcher
 
-**Sintaxis:** obj << Remove Column Switcher
+**Sintaxis:** obj &lt;&lt; Remove Column Switcher
 
 **Descripción:** Quita el Cambiador de columnas más reciente que se haya agregado a la plataforma.
 
@@ -27541,7 +27423,7 @@ obj << Remove Column Switcher;
 
 #### Remove Local Data Filter
 
-**Sintaxis:** obj << Remove Local Data Filter
+**Sintaxis:** obj &lt;&lt; Remove Local Data Filter
 
 **Descripción:** Si se ha creado un filtro de datos local, esto lo eliminará y restaurará la plataforma para usar todos los datos de la tabla de datos directamente.
 
@@ -27580,9 +27462,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 #### Report
 
-**Sintaxis:** obj << Report;
-
-Report( obj )
+**Sintaxis:** obj &lt;&lt; Report;Report( obj )
 
 **Descripción:** Devuelve una referencia al objeto informe.
 
@@ -27605,7 +27485,7 @@ Show( t );
 
 #### Report View
 
-**Sintaxis:** obj << Report View( "Completa"|"Resumen" )
+**Sintaxis:** obj &lt;&lt; Report View( "Completa"|"Resumen" )
 
 **Descripción:** La vista del informe determina el nivel de detalle visible en el informe de una plataforma. Full muestra todos los detalles, mientras que Summary solo muestra el contenido seleccionado, con independencia de la plataforma. Para el comportamiento personalizado, los cuadros de visualización admiten un mensaje <<Set Summary Behavior.
 
@@ -27626,7 +27506,7 @@ obj << Report View( "Summary" );
 
 #### Save ByGroup Script to Data Table
 
-**Sintaxis:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis, y lo guarda como propiedad de tabla en la tabla de datos. Puede especificar un nombre para el script. La opción Append Suffix añade un sufijo numérico al nombre del script, que diferencia el script de un script existente que tenga el mismo nombre. La opción Prompt solicita al usuario que especifique un nombre de script. La opción Replace reemplaza un script existente que tenga el mismo nombre.
 
@@ -27653,7 +27533,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 #### Save ByGroup Script to Journal
 
-**Sintaxis:** obj << Save ByGroup Script to Journal
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -27680,7 +27560,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 #### Save ByGroup Script to Script Window
 
-**Sintaxis:** obj << Save ByGroup Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -27707,7 +27587,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 #### Save Script for All Objects
 
-**Sintaxis:** obj << Save Script for All Objects
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects
 
 **Descripción:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -27728,7 +27608,7 @@ obj << Save Script for All Objects;
 
 #### Save Script for All Objects To Data Table
 
-**Sintaxis:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descripción:** Guarda un script para todos los objetos de informe en la tabla de datos actual. Esta opción es útil cuando tiene varios informes en la ventana. El script recibe el nombre de la primera plataforma a menos que especifique el nombre del script entre comillas.
 
@@ -27780,7 +27660,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 #### Save Script to Data Table
 
-**Sintaxis:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis y lo guarda en forma de propiedad de tabla en la tabla de datos.
 
@@ -27801,7 +27681,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 #### Save Script to Journal
 
-**Sintaxis:** obj << Save Script to Journal
+**Sintaxis:** obj &lt;&lt; Save Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -27822,7 +27702,7 @@ obj << Save Script to Journal;
 
 #### Save Script to Report
 
-**Sintaxis:** obj << Save Script to Report
+**Sintaxis:** obj &lt;&lt; Save Script to Report
 
 **Descripción:** Crea un script JSL para generar este análisis y lo muestra en el propio informe. Resulta útil para conservar un registro impreso de lo que se ha hecho.
 
@@ -27843,7 +27723,7 @@ obj << Save Script to Report;
 
 #### Save Script to Script Window
 
-**Sintaxis:** obj << Save Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -27929,7 +27809,7 @@ dt << Distribution(
 
 #### Sync to Data Table Changes
 
-**Sintaxis:** obj << Sync to Data Table Changes
+**Sintaxis:** obj &lt;&lt; Sync to Data Table Changes
 
 **Descripción:** Realiza una sincronización con las modificaciones de datos y de exclusión que se hayan realizado.
 
@@ -27946,7 +27826,7 @@ dist << Sync To Data Table Changes;
 
 #### Title
 
-**Sintaxis:** obj << Title( "new title" )
+**Sintaxis:** obj &lt;&lt; Title( "new title" )
 
 **Descripción:** Establece el título de la plataforma.
 
@@ -27967,7 +27847,7 @@ obj << Title( "My Platform" );
 
 #### Top Report
 
-**Sintaxis:** obj << Top Report
+**Sintaxis:** obj &lt;&lt; Top Report
 
 **Descripción:** Devuelve una referencia al nodo raíz del informe.
 
@@ -27990,7 +27870,7 @@ Show( t );
 
 #### Transform Column
 
-**Sintaxis:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Sintaxis:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Descripción:** Crea una columna de transformación en el contexto local de un objeto (una plataforma por lo general). La columna de transformación solo está activa mientras esté en uso la plataforma.
 
@@ -28011,7 +27891,7 @@ dt << Distribution(
 
 #### View Web XML
 
-**Sintaxis:** obj << View Web XML
+**Sintaxis:** obj &lt;&lt; View Web XML
 
 **Descripción:** Devuelve el código XML que se utiliza para crear el informe HTML interactivo.
 
@@ -28026,9 +27906,7 @@ xml = obj << View Web XML;
 
 #### Window View
 
-**Sintaxis:** obj = Stepwise Personality(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Stepwise Personality(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Establece el tipo de ventana que se creará para el informe. De forma predeterminada, se creará una ventana de informe Visible. Una ventana Invisible no aparecerá en pantalla, pero se puede detectar mediante funciones como Window(). Una ventana Private responde a la mayoría de los mensajes de ventana pero no es detectable y se debe abordar a través del objeto de informe.
 
@@ -28051,7 +27929,7 @@ New Window( "Bivariate Equation",
 
 #### By
 
-**Sintaxis:** obj << By( column(s) )
+**Sintaxis:** obj &lt;&lt; By( column(s) )
 
 ```jsl
 
@@ -28101,7 +27979,7 @@ obj = dt << Fit Model(
 
 #### Get Random Effect Names
 
-**Sintaxis:** obj << Get Random Effect Names
+**Sintaxis:** obj &lt;&lt; Get Random Effect Names
 
 **Descripción:** Devuelve los nombres de los efectos aleatorios. Disponible para métodos de análisis de REML.
 
@@ -28126,7 +28004,7 @@ Show( vn );
 
 #### Get Variance Components
 
-**Sintaxis:** obj << Get Variance Components
+**Sintaxis:** obj &lt;&lt; Get Variance Components
 
 **Descripción:** Devuelve los componentes de varianza generados por Ajuste del modelo para un modelo especificado.
 
@@ -28151,7 +28029,7 @@ Show( vc );
 
 #### Action
 
-**Sintaxis:** obj << Action
+**Sintaxis:** obj &lt;&lt; Action
 
 **Descripción:** Trampa multiuso dentro de una plataforma para insertar expresiones que se desean evaluar. Temporalmente establece los contextos de cuadros de visualización y tablas de datos en la plataforma.
 
@@ -28169,7 +28047,7 @@ dt << Bivariate(
 
 #### Apply Preset
 
-**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descripción:** Aplica al objeto un preajuste creado previamente, actualizando las opciones y personalizaciones para que coincidan con la configuración guardada.
 
@@ -28216,7 +28094,7 @@ obj2 << Apply Preset( preset );
 
 #### Broadcast
 
-**Sintaxis:** obj << Broadcast(message)
+**Sintaxis:** obj &lt;&lt; Broadcast(message)
 
 **Descripción:** Difunde un mensaje a una plataforma. Si los resultados devueltos de objetos individuales son tablas, se concatenan si es posible y el formato final es idéntico al resultado de la opción Guardar tabla combinada en un cuadro de tabla o al resultado de la opción Concatenar mediante una columna de origen. Los demás resultados se almacenan en una lista y se devuelven.
 
@@ -28236,7 +28114,7 @@ objs[1] << Broadcast( Save Summaries );
 
 #### Column Switcher
 
-**Sintaxis:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Sintaxis:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Descripción:** Añade un panel de control para cambiar las variables de la plataforma
 
@@ -28254,7 +28132,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 #### Copy ByGroup Script
 
-**Sintaxis:** obj << Copy ByGroup Script
+**Sintaxis:** obj &lt;&lt; Copy ByGroup Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -28282,7 +28160,7 @@ obj[1] << Copy ByGroup Script;
 
 #### Copy Script
 
-**Sintaxis:** obj << Copy Script
+**Sintaxis:** obj &lt;&lt; Copy Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -28304,7 +28182,7 @@ obj << Copy Script;
 
 #### Data Table Window
 
-**Sintaxis:** obj << Data Table Window
+**Sintaxis:** obj &lt;&lt; Data Table Window
 
 **Descripción:** Mueve al frente la ventana de la tabla de datos que se utiliza en este análisis.
 
@@ -28326,7 +28204,7 @@ obj << Data Table Window;
 
 #### Get By Levels
 
-**Sintaxis:** obj << Get By Levels
+**Sintaxis:** obj &lt;&lt; Get By Levels
 
 **Descripción:** Devuelve un arreglo asociativo que asigna las columnas Por grupo a sus valores.
 
@@ -28343,7 +28221,7 @@ biv << Get By Levels;
 
 #### Get ByGroup Script
 
-**Sintaxis:** obj << Get ByGroup Script
+**Sintaxis:** obj &lt;&lt; Get ByGroup Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -28372,7 +28250,7 @@ Show( t );
 
 #### Get Container
 
-**Sintaxis:** obj << Get Container
+**Sintaxis:** obj &lt;&lt; Get Container
 
 **Descripción:** Devuelve una referencia al cuadro contenedor que incluye el contenido del objeto.
 
@@ -28426,7 +28304,7 @@ New Window( "platform boxes",
 
 #### Get Data Table
 
-**Sintaxis:** obj << Get Data Table
+**Sintaxis:** obj &lt;&lt; Get Data Table
 
 **Descripción:** Devuelve una referencia a la tabla de datos.
 
@@ -28449,7 +28327,7 @@ Show( N Rows( t ) );
 
 #### Get Group Platform
 
-**Sintaxis:** obj << Get Group Platform
+**Sintaxis:** obj &lt;&lt; Get Group Platform
 
 **Descripción:** Devuelve el objeto Plataforma grupal si esta plataforma forma parte de un grupo. De lo contrario, devuelve Empty().
 
@@ -28466,7 +28344,7 @@ group << Layout( "Arrange in Tabs" );
 
 #### Get Script
 
-**Sintaxis:** obj << Get Script
+**Sintaxis:** obj &lt;&lt; Get Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -28489,7 +28367,7 @@ Show( t );
 
 #### Get Script With Data Table
 
-**Sintaxis:** obj << Get Script With Data Table
+**Sintaxis:** obj &lt;&lt; Get Script With Data Table
 
 **Descripción:** Crea un script (JSL) para generar este análisis haciendo referencia específica a esta tabla de datos y lo devuelve en forma de expresión.
 
@@ -28512,7 +28390,7 @@ Show( t );
 
 #### Get Timing
 
-**Sintaxis:** obj << Get Timing
+**Sintaxis:** obj &lt;&lt; Get Timing
 
 **Descripción:** Determina el tiempo de inicio de una plataforma.
 
@@ -28535,7 +28413,7 @@ Show( t );
 
 #### Get Web Support
 
-**Sintaxis:** obj << Get Web Support
+**Sintaxis:** obj &lt;&lt; Get Web Support
 
 **Descripción:** Devuelve un número que indica el nivel de compatibilidad del HTML interactivo para el objeto de visualización. 1 significa que algunos o todos los elementos son compatibles. 0 significa que no existe compatibilidad.
 
@@ -28551,7 +28429,7 @@ Show( s );
 
 #### Get Where Expr
 
-**Sintaxis:** obj << Get Where Expr
+**Sintaxis:** obj &lt;&lt; Get Where Expr
 
 **Descripción:** Devuelve la expresión Where para el subconjunto de datos, si la plataforma se inició con By() o Where(). De lo contrario, devuelve Empty().
 
@@ -28588,7 +28466,7 @@ dt << Bivariate(
 
 #### Local Data Filter
 
-**Sintaxis:** obj << Local Data Filter
+**Sintaxis:** obj &lt;&lt; Local Data Filter
 
 **Descripción:** Para filtrar los datos según grupos o rangos determinados, pero locales para esta plataforma.
 
@@ -28644,7 +28522,7 @@ preset = obj << New Preset();
 
 #### Paste Local Data Filter
 
-**Sintaxis:** obj << Paste Local Data Filter
+**Sintaxis:** obj &lt;&lt; Paste Local Data Filter
 
 **Descripción:** Se aplica el filtro de datos locales del portapapeles al informe actual.
 
@@ -28665,7 +28543,7 @@ dist2 << Paste Local Data Filter;
 
 #### Redo Analysis
 
-**Sintaxis:** obj << Redo Analysis
+**Sintaxis:** obj &lt;&lt; Redo Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -28687,7 +28565,7 @@ obj << Redo Analysis;
 
 #### Redo ByGroup Analysis
 
-**Sintaxis:** obj << Redo ByGroup Analysis
+**Sintaxis:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -28715,7 +28593,7 @@ obj[1] << Redo ByGroup Analysis;
 
 #### Relaunch Analysis
 
-**Sintaxis:** obj << Relaunch Analysis
+**Sintaxis:** obj &lt;&lt; Relaunch Analysis
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -28737,7 +28615,7 @@ obj << Relaunch Analysis;
 
 #### Relaunch ByGroup
 
-**Sintaxis:** obj << Relaunch ByGroup
+**Sintaxis:** obj &lt;&lt; Relaunch ByGroup
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -28765,7 +28643,7 @@ obj[1] << Relaunch ByGroup;
 
 #### Remove Column Switcher
 
-**Sintaxis:** obj << Remove Column Switcher
+**Sintaxis:** obj &lt;&lt; Remove Column Switcher
 
 **Descripción:** Quita el Cambiador de columnas más reciente que se haya agregado a la plataforma.
 
@@ -28785,7 +28663,7 @@ obj << Remove Column Switcher;
 
 #### Remove Local Data Filter
 
-**Sintaxis:** obj << Remove Local Data Filter
+**Sintaxis:** obj &lt;&lt; Remove Local Data Filter
 
 **Descripción:** Si se ha creado un filtro de datos local, esto lo eliminará y restaurará la plataforma para usar todos los datos de la tabla de datos directamente.
 
@@ -28824,9 +28702,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 #### Report
 
-**Sintaxis:** obj << Report;
-
-Report( obj )
+**Sintaxis:** obj &lt;&lt; Report;Report( obj )
 
 **Descripción:** Devuelve una referencia al objeto informe.
 
@@ -28850,7 +28726,7 @@ Show( t );
 
 #### Report View
 
-**Sintaxis:** obj << Report View( "Completa"|"Resumen" )
+**Sintaxis:** obj &lt;&lt; Report View( "Completa"|"Resumen" )
 
 **Descripción:** La vista del informe determina el nivel de detalle visible en el informe de una plataforma. Full muestra todos los detalles, mientras que Summary solo muestra el contenido seleccionado, con independencia de la plataforma. Para el comportamiento personalizado, los cuadros de visualización admiten un mensaje <<Set Summary Behavior.
 
@@ -28872,7 +28748,7 @@ obj << Report View( "Summary" );
 
 #### Save ByGroup Script to Data Table
 
-**Sintaxis:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis, y lo guarda como propiedad de tabla en la tabla de datos. Puede especificar un nombre para el script. La opción Append Suffix añade un sufijo numérico al nombre del script, que diferencia el script de un script existente que tenga el mismo nombre. La opción Prompt solicita al usuario que especifique un nombre de script. La opción Replace reemplaza un script existente que tenga el mismo nombre.
 
@@ -28900,7 +28776,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 #### Save ByGroup Script to Journal
 
-**Sintaxis:** obj << Save ByGroup Script to Journal
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -28928,7 +28804,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 #### Save ByGroup Script to Script Window
 
-**Sintaxis:** obj << Save ByGroup Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -28956,7 +28832,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 #### Save Script for All Objects
 
-**Sintaxis:** obj << Save Script for All Objects
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects
 
 **Descripción:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -28978,7 +28854,7 @@ obj << Save Script for All Objects;
 
 #### Save Script for All Objects To Data Table
 
-**Sintaxis:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descripción:** Guarda un script para todos los objetos de informe en la tabla de datos actual. Esta opción es útil cuando tiene varios informes en la ventana. El script recibe el nombre de la primera plataforma a menos que especifique el nombre del script entre comillas.
 
@@ -29032,7 +28908,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 #### Save Script to Data Table
 
-**Sintaxis:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis y lo guarda en forma de propiedad de tabla en la tabla de datos.
 
@@ -29054,7 +28930,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 #### Save Script to Journal
 
-**Sintaxis:** obj << Save Script to Journal
+**Sintaxis:** obj &lt;&lt; Save Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -29076,7 +28952,7 @@ obj << Save Script to Journal;
 
 #### Save Script to Report
 
-**Sintaxis:** obj << Save Script to Report
+**Sintaxis:** obj &lt;&lt; Save Script to Report
 
 **Descripción:** Crea un script JSL para generar este análisis y lo muestra en el propio informe. Resulta útil para conservar un registro impreso de lo que se ha hecho.
 
@@ -29098,7 +28974,7 @@ obj << Save Script to Report;
 
 #### Save Script to Script Window
 
-**Sintaxis:** obj << Save Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -29185,7 +29061,7 @@ dt << Distribution(
 
 #### Sync to Data Table Changes
 
-**Sintaxis:** obj << Sync to Data Table Changes
+**Sintaxis:** obj &lt;&lt; Sync to Data Table Changes
 
 **Descripción:** Realiza una sincronización con las modificaciones de datos y de exclusión que se hayan realizado.
 
@@ -29202,7 +29078,7 @@ dist << Sync To Data Table Changes;
 
 #### Title
 
-**Sintaxis:** obj << Title( "new title" )
+**Sintaxis:** obj &lt;&lt; Title( "new title" )
 
 **Descripción:** Establece el título de la plataforma.
 
@@ -29224,7 +29100,7 @@ obj << Title( "My Platform" );
 
 #### Top Report
 
-**Sintaxis:** obj << Top Report
+**Sintaxis:** obj &lt;&lt; Top Report
 
 **Descripción:** Devuelve una referencia al nodo raíz del informe.
 
@@ -29248,7 +29124,7 @@ Show( t );
 
 #### Transform Column
 
-**Sintaxis:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Sintaxis:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Descripción:** Crea una columna de transformación en el contexto local de un objeto (una plataforma por lo general). La columna de transformación solo está activa mientras esté en uso la plataforma.
 
@@ -29269,7 +29145,7 @@ dt << Distribution(
 
 #### View Web XML
 
-**Sintaxis:** obj << View Web XML
+**Sintaxis:** obj &lt;&lt; View Web XML
 
 **Descripción:** Devuelve el código XML que se utiliza para crear el informe HTML interactivo.
 
@@ -29284,9 +29160,7 @@ xml = obj << View Web XML;
 
 #### Window View
 
-**Sintaxis:** obj = Estimate Only Variance Components(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Estimate Only Variance Components(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Establece el tipo de ventana que se creará para el informe. De forma predeterminada, se creará una ventana de informe Visible. Una ventana Invisible no aparecerá en pantalla, pero se puede detectar mediante funciones como Window(). Una ventana Private responde a la mayoría de los mensajes de ventana pero no es detectable y se debe abordar a través del objeto de informe.
 
@@ -29309,7 +29183,7 @@ New Window( "Bivariate Equation",
 
 #### Between-Within Degrees of Freedom
 
-**Sintaxis:** obj << (fit[number] << Between-Within Degrees of Freedom( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Between-Within Degrees of Freedom( state=0|1 ))
 
 **Descripción:** Replaces the standard errors with unadjusted estimates and degrees of freedom to between-within based throughout the report. To use between-within degrees of freedom in a multiple comparisons report, you must select this option prior to adding a multiple comparisons report.
 
@@ -29337,7 +29211,7 @@ fm << (Fit[1] << "Between-Within Degrees of Freedom"n( 1 ));
 
 #### Conditional Contour Profiler
 
-**Sintaxis:** obj << (fit[number] << Conditional Contour Profiler( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Conditional Contour Profiler( state=0|1 ))
 
 **Descripción:** Muestra u oculta un perfilador de contorno de la respuesta condicional gráficamente para dos factores a la vez. Esta opción solo está disponible cuando el modelo contiene al menos dos efectos continuos y al menos un efecto aleatorio.
 
@@ -29368,7 +29242,7 @@ fm << (Fit[1] << Conditional Contour Profiler( 1 ));
 
 #### Conditional Diagnostic Bundle
 
-**Sintaxis:** obj << (fit[number] << Conditional Diagnostic Bundle( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Conditional Diagnostic Bundle( state=0|1 ))
 
 **Descripción:** Muestra u oculta un grupo de gráficos de diagnóstico útiles para decidir sobre la eficacia del modelo de regresión para ajustar los datos observados. Esta opción no está disponible si se ha seleccionado la distribución binomial o si no hay efectos aleatorios en el modelo.
 
@@ -29392,7 +29266,7 @@ fm << (fit[1] << Conditional Diagnostic Bundle( 1 ));
 
 #### Conditional Mean CI
 
-**Sintaxis:** obj << (fit[number] << Conditional Mean CI)
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Conditional Mean CI)
 
 **Descripción:** Guarda dos nuevas columnas en la tabla de datos. Las nuevas columnas contienen los límites de confianza inferior y superior para el valor esperado de la predicción condicional. Los intervalos de confianza incluyen estimaciones de efectos aleatorios para los modelos que contienen efectos aleatorios. Esta opción solo está disponible cuando el modelo contiene al menos un efecto aleatorio.
 
@@ -29415,7 +29289,7 @@ fm << (Fit[1] << Conditional Mean CI);
 
 #### Conditional Mixture Profiler
 
-**Sintaxis:** obj << (fit[number] << Conditional Mixture Profiler( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Conditional Mixture Profiler( state=0|1 ))
 
 **Descripción:** Muestra u oculta un perfilador de mezclas que muestra los contornos de la respuesta condicional en un gráfico ternario. Esta opción solo está disponible cuando el modelo contiene al menos un efecto aleatorio y si el atributo Efecto de mezcla se aplica a tres o más factores del modelo o la propiedad Mezcla se aplica a tres o más columnas de factores.
 
@@ -29446,7 +29320,7 @@ fm << (Fit[1] << Conditional Mixture Profiler( 1 ));
 
 #### Conditional Prediction Formula
 
-**Sintaxis:** obj << (fit[number] << Conditional Prediction Formula)
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Conditional Prediction Formula)
 
 **Descripción:** Guarda una nueva columna de fórmulas en la tabla de datos. La columna nueva contiene la fórmula de predicción de la media condicional. Esta opción solo está disponible cuando el modelo contiene al menos un efecto aleatorio.
 
@@ -29469,7 +29343,7 @@ fm << (Fit[1] << Conditional Prediction Formula);
 
 #### Conditional Profiler
 
-**Sintaxis:** obj << (fit[number] << Conditional Profiler( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Conditional Profiler( state=0|1 ))
 
 **Descripción:** Muestra u oculta el perfilador de predicción, que se utiliza para explorar gráficamente la ecuación de predicción condicional seccionándola factor por factor. El perfilador de predicción contiene funciones de optimización. Esta opción solo está disponible cuando el modelo contiene al menos un efecto aleatorio.
 
@@ -29492,7 +29366,7 @@ fm << (Fit[1] << Conditional Profiler( 1 ));
 
 #### Conditional Surface Profiler
 
-**Sintaxis:** obj << (fit[number] << Conditional Surface Profiler( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Conditional Surface Profiler( state=0|1 ))
 
 **Descripción:** Muestra u oculta un gráfico de superficie tridimensional de la respuesta condicional. Esta opción solo está disponible cuando el modelo contiene al menos dos efectos y al menos un efecto aleatorio.
 
@@ -29515,7 +29389,7 @@ fm << (Fit[1] << Conditional Surface Profiler( 1 ));
 
 #### Containment Degrees of Freedom
 
-**Sintaxis:** obj << (fit[number] << Containment Degrees of Freedom( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Containment Degrees of Freedom( state=0|1 ))
 
 **Descripción:** Replaces the standard errors with unadjusted estimates and degrees of freedom to containment-based throughout the report. To use containment degrees of freedom in a multiple comparisons report, you must select this option prior to adding a multiple comparisons report.
 
@@ -29541,7 +29415,7 @@ fm << (Fit[1] << Containment Degrees of Freedom( 1 ));
 
 #### Contour Profiler
 
-**Sintaxis:** obj << (fit[number] << Contour Profiler( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Contour Profiler( state=0|1 ))
 
 **Descripción:** Muestra u oculta un perfilador de contorno de la respuesta marginal gráficamente para dos factores a la vez. Esta opción solo está disponible cuando el modelo contiene al menos dos efectos fijos continuos.
 
@@ -29572,7 +29446,7 @@ fm << (Fit[1] << Contour Profiler( 1 ));
 
 #### Correlation of Fixed Effects
 
-**Sintaxis:** obj << (fit[number] << Correlation of Fixed Effects( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Correlation of Fixed Effects( state=0|1 ))
 
 **Descripción:** Muestra u oculta la matriz de correlación de los efectos fijos del modelo.
 
@@ -29596,7 +29470,7 @@ fm << (Fit[1] << Correlation of Fixed Effects( 1 ));
 
 #### Covariance of All Parameters
 
-**Sintaxis:** obj << (fit[number] << Covariance of All Parameters( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Covariance of All Parameters( state=0|1 ))
 
 **Descripción:** Muestra u oculta la matriz de covarianza de todos los efectos del modelo.
 
@@ -29620,7 +29494,7 @@ fm << (Fit[1] << Covariance of All Parameters( 1 ));
 
 #### Covariance of Covariance Parameters
 
-**Sintaxis:** obj << (fit[number] << Covariance of Covariance Parameters( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Covariance of Covariance Parameters( state=0|1 ))
 
 **Descripción:** Muestra u oculta la matriz de covarianza de los efectos aleatorios del modelo.
 
@@ -29644,7 +29518,7 @@ fm << (Fit[1] << Covariance of Covariance Parameters( 1 ));
 
 #### Covariance of Fixed Effects
 
-**Sintaxis:** obj << (fit[number] << Covariance of Fixed Effects( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Covariance of Fixed Effects( state=0|1 ))
 
 **Descripción:** Muestra u oculta la matriz de covarianza de los efectos fijos del modelo.
 
@@ -29668,7 +29542,7 @@ fm << (Fit[1] << Covariance of Fixed Effects( 1 ));
 
 #### Diagnostic Bundle
 
-**Sintaxis:** obj << (fit[number] << Diagnostic Bundle( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Diagnostic Bundle( state=0|1 ))
 
 **Descripción:** Muestra u oculta un grupo de gráficos de diagnóstico que son útiles para decidir la eficacia del modelo de regresión para ajustar los datos observados. Esta opción no está disponible si se selecciona la distribución binomial o si hay efectos aleatorios en el modelo.
 
@@ -29691,7 +29565,7 @@ fm << (fit[1] << Diagnostic Bundle( 1 ));
 
 #### Empirical Standard Errors
 
-**Sintaxis:** obj << (fit[number] << Empirical Standard Errors( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Empirical Standard Errors( state=0|1 ))
 
 **Descripción:** Reemplaza los errores estándar por estimaciones de tipo sándwich en todo el informe. Para utilizar estimaciones de tipo sándwich en un informe de comparaciones múltiples, es necesario seleccionar esta opción antes de agregar un informe de comparaciones múltiples.
 
@@ -29717,7 +29591,7 @@ fm << (Fit[1] << Empirical Standard Errors( 1 ));
 
 #### Fit Statistics
 
-**Sintaxis:** obj << (fit[number] << Fit Statistics( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Fit Statistics( state=0|1 ))
 
 **Descripción:** Muestra u oculta los informes Estadísticos de ajuste y Resumen del modelo que incluyen información sobre la especificación y estadísticos de bondad de ajuste para el modelo. Opción activada de forma predeterminada.
 
@@ -29741,7 +29615,7 @@ fm << (Fit[1] << Fit Statistics( 1 ));
 
 #### Fixed Effects Parameter Estimates
 
-**Sintaxis:** obj << (fit[number] << Fixed Effects Parameter Estimates( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Fixed Effects Parameter Estimates( state=0|1 ))
 
 **Descripción:** Muestra u oculta una tabla de estimaciones de parámetros de efectos fijos. Opción activada de forma predeterminada.
 
@@ -29765,7 +29639,7 @@ fm << (Fit[1] << Fixed Effects Parameter Estimates( 1 ));
 
 #### Fixed Effects Tests
 
-**Sintaxis:** obj << (fit[number] << Fixed Effects Tests( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Fixed Effects Tests( state=0|1 ))
 
 **Descripción:** Muestra u oculta las pruebas de efectos fijos. Esta opción solo está disponible cuando el modelo contiene al menos un efecto fijo. Opción activada de forma predeterminada.
 
@@ -29789,7 +29663,7 @@ fm << (Fit[1] << Fixed Effects Tests( 1 ));
 
 #### Mean Confidence Interval
 
-**Sintaxis:** obj << (fit[number] << Mean Confidence Interval)
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Mean Confidence Interval)
 
 **Descripción:** Guarda dos nuevas columnas en la tabla de datos. Las columnas nuevas contienen los límites de confianza inferior y superior de la respuesta media.
 
@@ -29812,7 +29686,7 @@ fm << (Fit[1] << Mean Confidence Interval);
 
 #### Mixture Profiler
 
-**Sintaxis:** obj << (fit[number] << Mixture Profiler( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Mixture Profiler( state=0|1 ))
 
 **Descripción:** Muestra u oculta un perfilador de mezclas que muestra los contornos de la respuesta marginal en un gráfico ternario. Esta opción solo está disponible si el atributo Efecto de mezcla se aplica a tres o más factores del modelo o la propiedad Mezcla se aplica a tres o más columnas de factores.
 
@@ -29843,7 +29717,7 @@ fm << (Fit[1] << Mixture Profiler( 1 ));
 
 #### Multiple Comparisons
 
-**Sintaxis:** obj << (fit[number] << Multiple Comparisons( Effect( effect ), <options> ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Multiple Comparisons( Effect( effect ), &lt;options&gt; ))
 
 **Descripción:** Genera estimaciones de las medias de mínimos cuadrados o estimaciones definidas por el usuario. Estas estimaciones permiten al usuario realizar comparaciones con la media global, comparaciones con un control o comparaciones por pares. Esta opción solo está disponible cuando el modelo contiene al menos un efecto fijo.
 
@@ -29872,13 +29746,13 @@ fm << (fit[1] << Multiple Comparisons(
 
 #### Odds Ratios
 
-**Sintaxis:** obj << (fit[number] << Odds Ratios( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Odds Ratios( state=0|1 ))
 
 **Descripción:** Muestra u oculta un informe que contiene razones de posibilidades para predictores categóricos, y razones de posibilidades unitarias y razones de posibilidades de rango para predictores continuos.
 
 #### Prediction Formula
 
-**Sintaxis:** obj << (fit[number] << Prediction Formula)
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Prediction Formula)
 
 **Descripción:** Guarda una nueva columna de fórmulas en la tabla de datos. La columna nueva contiene la fórmula de predicción de la media marginal.
 
@@ -29901,7 +29775,7 @@ fm << (Fit[1] << Prediction Formula);
 
 #### Prediction and Interval Formulas
 
-**Sintaxis:** obj << (fit[number] << Prediction and Interval Formulas)
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Prediction and Interval Formulas)
 
 **Descripción:** Guarda las columnas nuevas en la tabla de datos. Las columnas contienen fórmulas para las predicciones y los límites de confianza. Las columnas de límites que se crean con esta opción contienen propiedades que utiliza el Perfilador de predicción.
 
@@ -29924,7 +29798,7 @@ fm << (Fit[1] << Prediction and Interval Formulas);
 
 #### Profiler
 
-**Sintaxis:** obj << (fit[number] << Profiler( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Profiler( state=0|1 ))
 
 **Descripción:** Muestra u oculta el perfilador de predicción, que se utiliza para explorar gráficamente la ecuación de predicción marginal seccionándola factor por factor. El perfilador de predicción contiene funciones de optimización. Esta opción solo está disponible cuando el modelo contiene al menos un efecto fijo.
 
@@ -29947,7 +29821,7 @@ fm << (Fit[1] << Profiler( 1 ));
 
 #### Random Coefficients
 
-**Sintaxis:** obj << (fit[number] << Random Coefficients( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Random Coefficients( state=0|1 ))
 
 **Descripción:** Muestra u oculta un informe de las estimaciones de los coeficientes aleatorios. Esta opción solo está disponible cuando el modelo contiene al menos un efecto aleatorio. Opción activada de forma predeterminada.
 
@@ -29972,7 +29846,7 @@ Report( fm )["Random Coefficients"] << Close( 0 );
 
 #### Random Effects Covariance Parameter Estimates
 
-**Sintaxis:** obj << (fit[number] << Random Effects Covariance Parameter Estimates( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Random Effects Covariance Parameter Estimates( state=0|1 ))
 
 **Descripción:** Muestra u oculta una tabla de estimaciones de parámetros de covarianza de efectos aleatorios. Esta opción solo está disponible cuando el modelo contiene al menos un efecto aleatorio. Opción activada de forma predeterminada.
 
@@ -29996,7 +29870,7 @@ fm << (Fit[1] << Random Effects Covariance Parameter Estimates( 1 ));
 
 #### Random Effects Predictions
 
-**Sintaxis:** obj << (fit[number] << Random Effects Predictions( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Random Effects Predictions( state=0|1 ))
 
 **Descripción:** Muestra u oculta una tabla de predicciones de efectos aleatorios. Esta opción solo está disponible cuando el modelo contiene al menos un efecto aleatorio.
 
@@ -30020,7 +29894,7 @@ fm << (Fit[1] << Random Effects Predictions( 1 ));
 
 #### Save Conditional Residual Formula
 
-**Sintaxis:** obj << (fit[number] << Save Conditional Residual Formula )
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Save Conditional Residual Formula )
 
 **Descripción:** Guarda una nueva columna de fórmulas en la tabla de datos. La columna nueva contiene una fórmula para los residuos condicionales, expresada en la forma Y menos la fórmula de predicción. Esta opción no está disponible si se ha seleccionado la distribución binomial o si hay efectos aleatorios en el modelo.
 
@@ -30043,7 +29917,7 @@ fm << (fit[1] << Save Conditional Residual Formula);
 
 #### Save Residual Formula
 
-**Sintaxis:** obj << (fit[number] << Save Residual Formula )
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Save Residual Formula )
 
 **Descripción:** Guarda una nueva columna de fórmulas en la tabla de datos. La columna nueva contiene una fórmula para los residuos marginales, expresada en la forma Y menos la fórmula de predicción. Esta opción no está disponible si se ha seleccionado la distribución binomial.
 
@@ -30066,7 +29940,7 @@ fm << (fit[1] << Save Residual Formula);
 
 #### Save Simulation Formula
 
-**Sintaxis:** obj << (fit[number] << Save Simulation Formula)
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Save Simulation Formula)
 
 **Descripción:** Guarda una nueva columna de fórmulas en la tabla de datos. La columna nueva se puede utilizar para crear valores de respuesta aleatorios a partir del modelo ajustado. Puede utilizar la columna de fórmulas con la función Simular de JMP Pro. Esta opción no está disponible si se utiliza una variable Por. Utilice tablas de datos de subconjuntos si necesita fórmulas de simulación por grupos.
 
@@ -30089,7 +29963,7 @@ fm << (Fit[1] << Save Simulation Formula);
 
 #### Sequential Tests
 
-**Sintaxis:** obj << (fit[number] << Sequential Tests( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Sequential Tests( state=0|1 ))
 
 **Descripción:** Muestra u oculta el informe Pruebas secuenciales (tipo 1) que contiene las sumas de cuadrados a medida que se añaden efectos al modelo secuencialmente. Esta opción solo está disponible cuando el modelo contiene al menos un efecto fijo.
 
@@ -30115,7 +29989,7 @@ fm << (Fit[1] << Sequential Tests( 1 ));
 
 #### Standard Error of Conditional Predicted
 
-**Sintaxis:** obj << (fit[number] << Standard Error of Conditional Predicted)
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Standard Error of Conditional Predicted)
 
 **Descripción:** Guarda una columna nueva en la tabla de datos. La columna nueva contiene los errores estándar de las predicciones condicionales de la media. Esta opción solo está disponible cuando el modelo contiene al menos un efecto aleatorio.
 
@@ -30138,7 +30012,7 @@ fm << (Fit[1] << Standard Error of Conditional Predicted);
 
 #### Standard Error of Predicted
 
-**Sintaxis:** obj << (fit[number] << Standard Error of Predicted)
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Standard Error of Predicted)
 
 **Descripción:** Guarda una nueva columna en la tabla de datos. La columna nueva contiene los errores estándar de las predicciones marginales de la media.
 
@@ -30161,7 +30035,7 @@ fm << (Fit[1] << Standard Error of Predicted);
 
 #### Surface Profiler
 
-**Sintaxis:** obj << (fit[number] << Surface Profiler( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Surface Profiler( state=0|1 ))
 
 **Descripción:** Muestra u oculta un gráfico de superficie tridimensional de la respuesta marginal. Esta opción solo está disponible cuando el modelo contiene al menos dos efectos.
 
@@ -30188,7 +30062,7 @@ fm << (Fit[1] << Surface Profiler( 1 ));
 
 #### By
 
-**Sintaxis:** obj << By( column(s) )
+**Sintaxis:** obj &lt;&lt; By( column(s) )
 
 ```jsl
 
@@ -30240,11 +30114,7 @@ fm = dt << Fit Model(
 
 #### Fit
 
-**Sintaxis:** Fit Model(...Run( Fit( options ) )...);
-
-obj << Fit( options );
-
-obj << (Fit[number] << option)
+**Sintaxis:** Fit Model(...Run( Fit( options ) )...);obj &lt;&lt; Fit( options );obj &lt;&lt; (Fit[number] &lt;&lt; option)
 
 **Descripción:** Permite enviar mensajes a la plataforma. Esta opción se puede utilizar en un script de inicio del modelo o para generar un asidero para un modelo específico en el informe.
 
@@ -30267,7 +30137,7 @@ fm << (Fit[1] << Fit Statistics( 1 ));
 
 #### Model Dialog
 
-**Sintaxis:** obj << Model Dialog
+**Sintaxis:** obj &lt;&lt; Model Dialog
 
 **Descripción:** Muestra la ventana de inicio Ajuste del modelo completada para el análisis actual.
 
@@ -30291,7 +30161,7 @@ fm << Model Dialog;
 
 #### Action
 
-**Sintaxis:** obj << Action
+**Sintaxis:** obj &lt;&lt; Action
 
 **Descripción:** Trampa multiuso dentro de una plataforma para insertar expresiones que se desean evaluar. Temporalmente establece los contextos de cuadros de visualización y tablas de datos en la plataforma.
 
@@ -30309,7 +30179,7 @@ dt << Bivariate(
 
 #### Apply Preset
 
-**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descripción:** Aplica al objeto un preajuste creado previamente, actualizando las opciones y personalizaciones para que coincidan con la configuración guardada.
 
@@ -30356,7 +30226,7 @@ obj2 << Apply Preset( preset );
 
 #### Broadcast
 
-**Sintaxis:** obj << Broadcast(message)
+**Sintaxis:** obj &lt;&lt; Broadcast(message)
 
 **Descripción:** Difunde un mensaje a una plataforma. Si los resultados devueltos de objetos individuales son tablas, se concatenan si es posible y el formato final es idéntico al resultado de la opción Guardar tabla combinada en un cuadro de tabla o al resultado de la opción Concatenar mediante una columna de origen. Los demás resultados se almacenan en una lista y se devuelven.
 
@@ -30376,7 +30246,7 @@ objs[1] << Broadcast( Save Summaries );
 
 #### Column Switcher
 
-**Sintaxis:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Sintaxis:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Descripción:** Añade un panel de control para cambiar las variables de la plataforma
 
@@ -30394,7 +30264,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 #### Copy ByGroup Script
 
-**Sintaxis:** obj << Copy ByGroup Script
+**Sintaxis:** obj &lt;&lt; Copy ByGroup Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -30423,7 +30293,7 @@ obj[1] << Copy ByGroup Script;
 
 #### Copy Script
 
-**Sintaxis:** obj << Copy Script
+**Sintaxis:** obj &lt;&lt; Copy Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -30446,7 +30316,7 @@ obj << Copy Script;
 
 #### Data Table Window
 
-**Sintaxis:** obj << Data Table Window
+**Sintaxis:** obj &lt;&lt; Data Table Window
 
 **Descripción:** Mueve al frente la ventana de la tabla de datos que se utiliza en este análisis.
 
@@ -30469,7 +30339,7 @@ obj << Data Table Window;
 
 #### Get By Levels
 
-**Sintaxis:** obj << Get By Levels
+**Sintaxis:** obj &lt;&lt; Get By Levels
 
 **Descripción:** Devuelve un arreglo asociativo que asigna las columnas Por grupo a sus valores.
 
@@ -30486,7 +30356,7 @@ biv << Get By Levels;
 
 #### Get ByGroup Script
 
-**Sintaxis:** obj << Get ByGroup Script
+**Sintaxis:** obj &lt;&lt; Get ByGroup Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -30516,7 +30386,7 @@ Show( t );
 
 #### Get Container
 
-**Sintaxis:** obj << Get Container
+**Sintaxis:** obj &lt;&lt; Get Container
 
 **Descripción:** Devuelve una referencia al cuadro contenedor que incluye el contenido del objeto.
 
@@ -30571,7 +30441,7 @@ New Window( "platform boxes",
 
 #### Get Data Table
 
-**Sintaxis:** obj << Get Data Table
+**Sintaxis:** obj &lt;&lt; Get Data Table
 
 **Descripción:** Devuelve una referencia a la tabla de datos.
 
@@ -30595,7 +30465,7 @@ Show( N Rows( t ) );
 
 #### Get Group Platform
 
-**Sintaxis:** obj << Get Group Platform
+**Sintaxis:** obj &lt;&lt; Get Group Platform
 
 **Descripción:** Devuelve el objeto Plataforma grupal si esta plataforma forma parte de un grupo. De lo contrario, devuelve Empty().
 
@@ -30612,7 +30482,7 @@ group << Layout( "Arrange in Tabs" );
 
 #### Get Script
 
-**Sintaxis:** obj << Get Script
+**Sintaxis:** obj &lt;&lt; Get Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -30636,7 +30506,7 @@ Show( t );
 
 #### Get Script With Data Table
 
-**Sintaxis:** obj << Get Script With Data Table
+**Sintaxis:** obj &lt;&lt; Get Script With Data Table
 
 **Descripción:** Crea un script (JSL) para generar este análisis haciendo referencia específica a esta tabla de datos y lo devuelve en forma de expresión.
 
@@ -30660,7 +30530,7 @@ Show( t );
 
 #### Get Timing
 
-**Sintaxis:** obj << Get Timing
+**Sintaxis:** obj &lt;&lt; Get Timing
 
 **Descripción:** Determina el tiempo de inicio de una plataforma.
 
@@ -30684,7 +30554,7 @@ Show( t );
 
 #### Get Web Support
 
-**Sintaxis:** obj << Get Web Support
+**Sintaxis:** obj &lt;&lt; Get Web Support
 
 **Descripción:** Devuelve un número que indica el nivel de compatibilidad del HTML interactivo para el objeto de visualización. 1 significa que algunos o todos los elementos son compatibles. 0 significa que no existe compatibilidad.
 
@@ -30700,7 +30570,7 @@ Show( s );
 
 #### Get Where Expr
 
-**Sintaxis:** obj << Get Where Expr
+**Sintaxis:** obj &lt;&lt; Get Where Expr
 
 **Descripción:** Devuelve la expresión Where para el subconjunto de datos, si la plataforma se inició con By() o Where(). De lo contrario, devuelve Empty().
 
@@ -30737,7 +30607,7 @@ dt << Bivariate(
 
 #### Local Data Filter
 
-**Sintaxis:** obj << Local Data Filter
+**Sintaxis:** obj &lt;&lt; Local Data Filter
 
 **Descripción:** Para filtrar los datos según grupos o rangos determinados, pero locales para esta plataforma.
 
@@ -30793,7 +30663,7 @@ preset = obj << New Preset();
 
 #### Paste Local Data Filter
 
-**Sintaxis:** obj << Paste Local Data Filter
+**Sintaxis:** obj &lt;&lt; Paste Local Data Filter
 
 **Descripción:** Se aplica el filtro de datos locales del portapapeles al informe actual.
 
@@ -30814,7 +30684,7 @@ dist2 << Paste Local Data Filter;
 
 #### Redo Analysis
 
-**Sintaxis:** obj << Redo Analysis
+**Sintaxis:** obj &lt;&lt; Redo Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -30837,7 +30707,7 @@ obj << Redo Analysis;
 
 #### Redo ByGroup Analysis
 
-**Sintaxis:** obj << Redo ByGroup Analysis
+**Sintaxis:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -30866,7 +30736,7 @@ obj[1] << Redo ByGroup Analysis;
 
 #### Relaunch Analysis
 
-**Sintaxis:** obj << Relaunch Analysis
+**Sintaxis:** obj &lt;&lt; Relaunch Analysis
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -30889,7 +30759,7 @@ obj << Relaunch Analysis;
 
 #### Relaunch ByGroup
 
-**Sintaxis:** obj << Relaunch ByGroup
+**Sintaxis:** obj &lt;&lt; Relaunch ByGroup
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -30918,7 +30788,7 @@ obj[1] << Relaunch ByGroup;
 
 #### Remove Column Switcher
 
-**Sintaxis:** obj << Remove Column Switcher
+**Sintaxis:** obj &lt;&lt; Remove Column Switcher
 
 **Descripción:** Quita el Cambiador de columnas más reciente que se haya agregado a la plataforma.
 
@@ -30938,7 +30808,7 @@ obj << Remove Column Switcher;
 
 #### Remove Local Data Filter
 
-**Sintaxis:** obj << Remove Local Data Filter
+**Sintaxis:** obj &lt;&lt; Remove Local Data Filter
 
 **Descripción:** Si se ha creado un filtro de datos local, esto lo eliminará y restaurará la plataforma para usar todos los datos de la tabla de datos directamente.
 
@@ -30977,9 +30847,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 #### Report
 
-**Sintaxis:** obj << Report;
-
-Report( obj )
+**Sintaxis:** obj &lt;&lt; Report;Report( obj )
 
 **Descripción:** Devuelve una referencia al objeto informe.
 
@@ -31004,7 +30872,7 @@ Show( t );
 
 #### Report View
 
-**Sintaxis:** obj << Report View( "Completa"|"Resumen" )
+**Sintaxis:** obj &lt;&lt; Report View( "Completa"|"Resumen" )
 
 **Descripción:** La vista del informe determina el nivel de detalle visible en el informe de una plataforma. Full muestra todos los detalles, mientras que Summary solo muestra el contenido seleccionado, con independencia de la plataforma. Para el comportamiento personalizado, los cuadros de visualización admiten un mensaje <<Set Summary Behavior.
 
@@ -31027,7 +30895,7 @@ obj << Report View( "Summary" );
 
 #### Save ByGroup Script to Data Table
 
-**Sintaxis:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis, y lo guarda como propiedad de tabla en la tabla de datos. Puede especificar un nombre para el script. La opción Append Suffix añade un sufijo numérico al nombre del script, que diferencia el script de un script existente que tenga el mismo nombre. La opción Prompt solicita al usuario que especifique un nombre de script. La opción Replace reemplaza un script existente que tenga el mismo nombre.
 
@@ -31056,7 +30924,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 #### Save ByGroup Script to Journal
 
-**Sintaxis:** obj << Save ByGroup Script to Journal
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -31085,7 +30953,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 #### Save ByGroup Script to Script Window
 
-**Sintaxis:** obj << Save ByGroup Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -31114,7 +30982,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 #### Save Script for All Objects
 
-**Sintaxis:** obj << Save Script for All Objects
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects
 
 **Descripción:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -31137,7 +31005,7 @@ obj << Save Script for All Objects;
 
 #### Save Script for All Objects To Data Table
 
-**Sintaxis:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descripción:** Guarda un script para todos los objetos de informe en la tabla de datos actual. Esta opción es útil cuando tiene varios informes en la ventana. El script recibe el nombre de la primera plataforma a menos que especifique el nombre del script entre comillas.
 
@@ -31193,7 +31061,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 #### Save Script to Data Table
 
-**Sintaxis:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis y lo guarda en forma de propiedad de tabla en la tabla de datos.
 
@@ -31216,7 +31084,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 #### Save Script to Journal
 
-**Sintaxis:** obj << Save Script to Journal
+**Sintaxis:** obj &lt;&lt; Save Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -31239,7 +31107,7 @@ obj << Save Script to Journal;
 
 #### Save Script to Report
 
-**Sintaxis:** obj << Save Script to Report
+**Sintaxis:** obj &lt;&lt; Save Script to Report
 
 **Descripción:** Crea un script JSL para generar este análisis y lo muestra en el propio informe. Resulta útil para conservar un registro impreso de lo que se ha hecho.
 
@@ -31262,7 +31130,7 @@ obj << Save Script to Report;
 
 #### Save Script to Script Window
 
-**Sintaxis:** obj << Save Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -31350,7 +31218,7 @@ dt << Distribution(
 
 #### Sync to Data Table Changes
 
-**Sintaxis:** obj << Sync to Data Table Changes
+**Sintaxis:** obj &lt;&lt; Sync to Data Table Changes
 
 **Descripción:** Realiza una sincronización con las modificaciones de datos y de exclusión que se hayan realizado.
 
@@ -31367,7 +31235,7 @@ dist << Sync To Data Table Changes;
 
 #### Title
 
-**Sintaxis:** obj << Title( "new title" )
+**Sintaxis:** obj &lt;&lt; Title( "new title" )
 
 **Descripción:** Establece el título de la plataforma.
 
@@ -31390,7 +31258,7 @@ obj << Title( "My Platform" );
 
 #### Top Report
 
-**Sintaxis:** obj << Top Report
+**Sintaxis:** obj &lt;&lt; Top Report
 
 **Descripción:** Devuelve una referencia al nodo raíz del informe.
 
@@ -31415,7 +31283,7 @@ Show( t );
 
 #### Transform Column
 
-**Sintaxis:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Sintaxis:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Descripción:** Crea una columna de transformación en el contexto local de un objeto (una plataforma por lo general). La columna de transformación solo está activa mientras esté en uso la plataforma.
 
@@ -31436,7 +31304,7 @@ dt << Distribution(
 
 #### View Web XML
 
-**Sintaxis:** obj << View Web XML
+**Sintaxis:** obj &lt;&lt; View Web XML
 
 **Descripción:** Devuelve el código XML que se utiliza para crear el informe HTML interactivo.
 
@@ -31451,9 +31319,7 @@ xml = obj << View Web XML;
 
 #### Window View
 
-**Sintaxis:** obj = Fit GLMM Platform(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit GLMM Platform(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Establece el tipo de ventana que se creará para el informe. De forma predeterminada, se creará una ventana de informe Visible. Una ventana Invisible no aparecerá en pantalla, pero se puede detectar mediante funciones como Window(). Una ventana Private responde a la mayoría de los mensajes de ventana pero no es detectable y se debe abordar a través del objeto de informe.
 
@@ -31476,7 +31342,7 @@ New Window( "Bivariate Equation",
 
 #### Active Parameter Estimates
 
-**Sintaxis:** obj << (fit[number] << Active Parameter Estimates( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Active Parameter Estimates( state=0|1 ))
 
 **Descripción:** Muestra u oculta una tabla de estimaciones de los parámetros activos, o distintos de cero, para el modelo seleccionado actualmente. Esta opción no está disponible para los modelos de máxima verosimilitud o regresión Ridge.
 
@@ -31504,7 +31370,7 @@ fm << (fit[1] << Active Parameter Estimates( 1 ));
 
 #### Confusion Matrix
 
-**Sintaxis:** obj << (fit[number] << Confusion Matrix( <probability=0.5> ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Confusion Matrix( &lt;probability=0.5&gt; ))
 
 **Descripción:** Genera una matriz de tabulación cruzada de las respuestas observadas y predichas. Utilice el argumento opcional para especificar una probabilidad de umbral distinta de 0,5. Esta opción solo está disponible cuando la distribución especificada es binomial, multinomial o logística ordinal. "0.5" de forma predeterminada.
 
@@ -31531,7 +31397,7 @@ obj = dt << Fit Model(
 
 #### Cook's D Influence
 
-**Sintaxis:** obj << (fit[number] << Cook&apos;s D Influence)
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Cook&apos;s D Influence)
 
 **Descripción:** Guarda una columna nueva en la tabla de datos original. La columna nueva contiene los valores para el estadístico de influencia de la distancia de Cook. Esta opción solo está disponible si la distribución especificada es normal y el método de estimación especificado es Mínimos cuadrados estándar.
 
@@ -31554,7 +31420,7 @@ fm << (fit[1] << Cook's D Influence);
 
 #### Correlation of Estimates
 
-**Sintaxis:** obj << (fit[number] << Correlation of Estimates( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Correlation of Estimates( state=0|1 ))
 
 **Descripción:** Muestra u oculta la matriz de correlaciones entre las estimaciones de los parámetros para el ajuste especificado.
 
@@ -31581,7 +31447,7 @@ fm << (fit[1] << Correlation of Estimates);
 
 #### Covariance of Estimates
 
-**Sintaxis:** obj << (fit[number] << Covariance Of Estimates( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Covariance Of Estimates( state=0|1 ))
 
 **Descripción:** Muestra u oculta la matriz de covarianzas entre las estimaciones de los parámetros para el ajuste especificado.
 
@@ -31608,7 +31474,7 @@ fm << (fit[1] << Covariance of Estimates);
 
 #### Custom Test
 
-**Sintaxis:** obj << (fit[number] << Custom Test( [l1, l2, l3, ... ], <Label( text )> ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Custom Test( [l1, l2, l3, ... ], &lt;Label( text )&gt; ))
 
 **Descripción:** Muestra u oculta un informe de prueba personalizada que le permite verificar una hipótesis personalizada. Si el modelo tiene una ruta de solución, los resultados de la prueba personalizada se actualizan a medida que actualiza la solución.
 
@@ -31631,7 +31497,7 @@ fm << (fit[1] << Custom Test( [0 0 0 1 -1 0], Label() ));
 
 #### Decision Threshold
 
-**Sintaxis:** obj << (fit[number] << Decision Threshold( state=0|1, Set Probability Threshold( number=0.5 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Decision Threshold( state=0|1, Set Probability Threshold( number=0.5 ))
 
 **Descripción:** Muestra u oculta los informes de umbrales de decisión para los conjuntos de entrenamiento, validación y pruebas, si se especifica. Cada informe contiene un gráfico de la distribución de probabilidades ajustadas para cada modelo, matrices de confusión para cada modelo y gráficos de clasificación para comparar los ajustes del modelo. Esta opción solo está disponible para respuestas categóricas binarias.
 
@@ -31665,7 +31531,7 @@ fm << (fit[1] << Decision Threshold( 1 ));
 
 #### Diagnostic Bundle
 
-**Sintaxis:** obj << (fit[number] << Diagnostic Bundle( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Diagnostic Bundle( state=0|1 ))
 
 **Descripción:** Muestra u oculta un grupo de gráficos de diagnóstico que son útiles para decidir en qué medida se ajusta un modelo de regresión a los datos observados. Hay disponible un conjunto de gráficos para el conjunto de entrenamiento y para los conjuntos de validación y pruebas si los utiliza. No está disponible cuando la distribución especificada es binomial, multinomial, logística ordinal o riesgos proporcionales de Cox.
 
@@ -31688,7 +31554,7 @@ fm << (fit[1] << Diagnostic Bundle( 1 ));
 
 #### Distribution Profiler
 
-**Sintaxis:** obj << (fit[number] << Distribution Profiler( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Distribution Profiler( state=0|1 ))
 
 **Descripción:** Muestra u oculta un perfilador de la función de distribución acumulativa de los predictores y la respuesta. La respuesta se muestra en la celda situada más a la derecha. Esta opción no está disponible cuando la distribución especificada es binomial o regresión por cuantil.
 
@@ -31717,7 +31583,7 @@ Fit Model(
 
 #### Effect Tests
 
-**Sintaxis:** obj << (fit[number] << Effect Tests( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Effect Tests( state=0|1 ))
 
 **Descripción:** Muestra u oculta las pruebas para cada efecto. Cada prueba de efecto verifica la hipótesis nula de que todos los parámetros asociados con ese efecto son cero. Opción activada de forma predeterminada.
 
@@ -31745,7 +31611,7 @@ fm << (fit[1] << Effect Tests( 0 ));
 
 #### Get Prediction Formula
 
-**Sintaxis:** obj << (fit[number] << Get Prediction Formula)
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Get Prediction Formula)
 
 **Descripción:** Construye un script para crear una columna de fórmula de predicción y la devuelve.
 
@@ -31772,7 +31638,7 @@ fm << (fit[1] << Get Prediction Formula);
 
 #### Hats
 
-**Sintaxis:** obj << (fit[number] << Hats)
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Hats)
 
 **Descripción:** Guarda una columna nueva en la tabla de datos original. La columna nueva contiene los elementos diagonales de la matriz hat, que a veces se denominan valores hat. Esta opción solo está disponible si la distribución especificada es normal y el método de estimación especificado es mínimos cuadrados estándar.
 
@@ -31795,7 +31661,7 @@ fm << (fit[1] << Hats);
 
 #### Hazard Profiler
 
-**Sintaxis:** obj << (fit[number] << Hazard Profiler( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Hazard Profiler( state=0|1 ))
 
 **Descripción:** Muestra u oculta un perfilador que muestra la tasa de riesgo como función de los predictores y la respuesta. La respuesta se muestra en la celda situada más a la derecha. Esta opción solo está disponible cuando la distribución especificada es normal, exponencial, Weibull, log-normal o riesgos proporcionales de Cox.
 
@@ -31824,7 +31690,7 @@ Fit Model(
 
 #### Hazard Ratios
 
-**Sintaxis:** obj << (fit[number] << Hazard Ratios( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Hazard Ratios( state=0|1 ))
 
 **Descripción:** Muestra u oculta un informe que contiene razones de riesgo para predictores categóricos, y razones de riesgo unitarias y razones de riesgo de rango para predictores continuos. Una razón de riesgo es la razón de la tasa de riesgo para dos sucesos. Esta opción solo está disponible cuando la distribución especificada es Riesgos proporcionales de Cox.
 
@@ -31853,7 +31719,7 @@ Fit Model(
 
 #### Hide Inactive Paths
 
-**Sintaxis:** obj << (fit[number] << Hide Inactive Paths( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Hide Inactive Paths( state=0|1 ))
 
 **Descripción:** Ajusta la transparencia de las trayectorias inactivas en el gráfico Estimaciones de los parámetros de la trayectoria de solución de modo que las trayectorias que no estén activas actualmente aparezcan atenuadas.
 
@@ -31880,7 +31746,7 @@ fm << (fit[1] << Hide Inactive Paths);
 
 #### Incidence Rate Ratios
 
-**Sintaxis:** obj << (fit[number] << Incidence Rate Ratios( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Incidence Rate Ratios( state=0|1 ))
 
 **Descripción:** Muestra u oculta un informe que contiene razones de tasas de incidencia para los predictores categóricos, y razones de tasas de incidencia unitarias y razones de tasas de incidencia por rango para los predictores continuos. Esta opción solo está disponible cuando la distribución especificada es Poisson o binomial negativa y el modelo contiene una constante.
 
@@ -31906,7 +31772,7 @@ Fit Model(
 
 #### Inverse Prediction
 
-**Sintaxis:** obj << (fit[number] << Inverse Prediction( Response( p1, p2, ... ), Term Value( effect1( value ), effect2( value ), ... ) ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Inverse Prediction( Response( p1, p2, ... ), Term Value( effect1( value ), effect2( value ), ... ) ))
 
 **Descripción:** Genera un valor predicho de X y un intervalo de confianza basado en los valores especificados de Y y todos los demás factores. Esta opción no está disponible para modelos que contengan un predictor que tenga el tipo de modelización Vector.
 
@@ -31947,7 +31813,7 @@ fm << (fit[1] << Inverse Prediction(
 
 #### Lift Curve
 
-**Sintaxis:** obj << (fit[number] << Lift Curve( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Lift Curve( state=0|1 ))
 
 **Descripción:** Muestra u oculta la curva lift del modelo. Si ha utilizado la validación, se muestra una curva lift para cada uno de los conjuntos de entrenamiento, validación y pruebas. Esta opción solo está disponible cuando la distribución especificada es binomial, multinomial o logística ordinal.
 
@@ -31981,7 +31847,7 @@ fm << (fit[1] << Lift Curve( 1 ));
 
 #### Mean Confidence Interval
 
-**Sintaxis:** obj << (fit[number] << Mean Confidence Interval)
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Mean Confidence Interval)
 
 **Descripción:** Guarda dos columnas de fórmulas nuevas en la tabla de datos original. Las columnas nuevas contienen los límites de confianza inferior y superior al 95 % para la respuesta media.
 
@@ -32009,7 +31875,7 @@ fm << (fit[1] << Mean Confidence Interval);
 
 #### Model Summary
 
-**Sintaxis:** obj << (fit[number] << Model Summary( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Model Summary( state=0|1 ))
 
 **Descripción:** Muestra u oculta el informe Resumen del modelo que incluye información sobre la especificación y los estadísticos de bondad de ajuste para el modelo. Esta opción también muestra el informe Detalles de la estimación para los modelos aplicables. Opción activada de forma predeterminada.
 
@@ -32037,7 +31903,7 @@ fm << (fit[1] << Model Summary( 0 ));
 
 #### Multiple Comparisons
 
-**Sintaxis:** obj << (fit[number] << Multiple Comparisons( Effect( effect ), <options> ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Multiple Comparisons( Effect( effect ), &lt;options&gt; ))
 
 **Descripción:** Genera estimaciones de las medias de mínimos cuadrados o estimaciones definidas por el usuario. Estas estimaciones permiten al usuario realizar comparaciones con la media global, comparaciones con un control o comparaciones por pares. Esta opción no está disponible para modelos que contengan un predictor que tenga el tipo de modelización Vector o para modelos que no contengan ningún predictor categórico.
 
@@ -32074,7 +31940,7 @@ fm = dt << Fit Model(
 
 #### Normal Quantile Plot
 
-**Sintaxis:** obj << (fit[number] << Normal Quantile Plot( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Normal Quantile Plot( state=0|1 ))
 
 **Descripción:** Muestra u oculta un gráfico de cuantiles normales en el eje vertical y residuos estandarizados en el eje horizontal. Si ha utilizado la validación, se muestra un gráfico para cada uno de los conjuntos de entrenamiento, validación y pruebas. Esta opción solo está disponible cuando la distribución especificada es normal y no hay censura.
 
@@ -32097,7 +31963,7 @@ fm << (fit[1] << Normal Quantile Plot);
 
 #### Odds Ratios
 
-**Sintaxis:** obj << (fit[number] << Odds Ratios( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Odds Ratios( state=0|1 ))
 
 **Descripción:** Muestra u oculta un informe que contiene razones de posibilidades para predictores categóricos, y razones de posibilidades unitarias y razones de posibilidades de rango para predictores continuos. Esta opción solo está disponible cuando la distribución especificada es binomial y el modelo contiene una constante. Esta opción no está disponible para modelos que contengan un predictor que tenga el tipo de modelización Vector.
 
@@ -32124,7 +31990,7 @@ obj = dt << Fit Model(
 
 #### Parameter Estimates for Centered and Scaled Predictors
 
-**Sintaxis:** obj << (fit[number] << Parameter Estimates for Centered and Scaled Predictors( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Parameter Estimates for Centered and Scaled Predictors( state=0|1 ))
 
 **Descripción:** Muestra u oculta una tabla de estimaciones de parámetros centradas y escaladas.
 
@@ -32152,7 +32018,7 @@ fm << (fit[1] << Parameter Estimates for Centered and Scaled Predictors( 1 ));
 
 #### Parameter Estimates for Original Predictors
 
-**Sintaxis:** obj << (fit[number] << Parameter Estimates for Original Predictors( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Parameter Estimates for Original Predictors( state=0|1 ))
 
 **Descripción:** Muestra u oculta una tabla de estimaciones de los parámetros en la escala original de los datos. Opción activada de forma predeterminada.
 
@@ -32180,7 +32046,7 @@ fm << (fit[1] << Parameter Estimates for Original Predictors( 0 ));
 
 #### Plot Actual by Predicted
 
-**Sintaxis:** obj << (fit[number] << Plot Actual By Predicted( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Plot Actual By Predicted( state=0|1 ))
 
 **Descripción:** Muestra u oculta un gráfico para el conjunto de entrenamiento con los valores observados en el eje vertical y los valores predichos en el eje horizontal. Si ha utilizado la validación, se muestra un gráfico para cada uno de los conjuntos de entrenamiento, validación y pruebas. Esta opción no está disponible cuando la distribución especificada es binomial, multinomial, logística ordinal o riesgos proporcionales de Cox.
 
@@ -32202,7 +32068,7 @@ fm << (fit[1] << Plot Actual by Predicted( 1 ));
 
 #### Plot Baseline Survival and Hazard
 
-**Sintaxis:** obj << (fit[number] << Plot Baseline Survival and Hazard( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Plot Baseline Survival and Hazard( state=0|1 ))
 
 **Descripción:** Muestra u oculta los gráficos de supervivencia y riesgo de referencia, que representan las funciones de supervivencia y riesgo para la función de riesgos proporcionales de referencia frente a la variable de respuesta. Debajo de los gráficos, hay una tabla que contiene los valores representados. Esta opción solo está disponible cuando la distribución especificada es Riesgos proporcionales de Cox.
 
@@ -32231,7 +32097,7 @@ Fit Model(
 
 #### Plot Residual by Predicted
 
-**Sintaxis:** obj << (fit[number] << Plot Residual By Predicted( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Plot Residual By Predicted( state=0|1 ))
 
 **Descripción:** Muestra u oculta un gráfico para el conjunto de entrenamiento con valores residuales en el eje vertical y valores predichos en el eje horizontal. Si ha utilizado la validación, se muestra un gráfico para cada uno de los conjuntos de entrenamiento, validación y pruebas. Esta opción no está disponible cuando la distribución especificada es binomial, multinomial, logística ordinal o riesgos proporcionales de Cox.
 
@@ -32253,7 +32119,7 @@ fm << (fit[1] << Plot Residual by Predicted( 1 ));
 
 #### Plot Residual by Predictor
 
-**Sintaxis:** obj << (fit[number] << Plot Actual By Predictor( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Plot Actual By Predictor( state=0|1 ))
 
 **Descripción:** Muestra u oculta un gráfico de los valores residuales en el eje vertical y los valores del predictor en el eje horizontal. Si ha utilizado la validación, se muestra un gráfico para cada uno de los conjuntos de entrenamiento, validación y pruebas. Esta opción no está disponible cuando la distribución especificada es binomial, multinomial, logística ordinal o riesgos proporcionales de Cox. Esta opción no está disponible para modelos que contengan un predictor que tenga el tipo de modelización Vector.
 
@@ -32275,7 +32141,7 @@ fm << (fit[1] << Plot Residual by Predictor( 1 ));
 
 #### Precision Recall Curve
 
-**Sintaxis:** obj << (fit[number] << Precision Recall Curve( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Precision Recall Curve( state=0|1 ))
 
 **Descripción:** Muestra u oculta el gráfico Curva de Precisión-Recuperación. Una curva de precisión-recuperación representa los valores de precisión frente a los valores de recuperación a distintos umbrales. Si ha utilizado la validación, se muestra un gráfico para cada conjunto de entrenamiento, validación y prueba.
 
@@ -32309,7 +32175,7 @@ fm << (fit[1] << Precision Recall Curve( 1 ));
 
 #### Profiler
 
-**Sintaxis:** obj << (fit[number] << Profiler( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Profiler( state=0|1 ))
 
 **Descripción:** Muestra u oculta el perfilador de predicción. Los predictores que tienen estimaciones de los parámetros de cero y que no están implicados en ningún término de interacción con coeficientes distintos de cero no aparecen en el perfilador.
 
@@ -32338,7 +32204,7 @@ Fit Model(
 
 #### Publish Prediction Formula
 
-**Sintaxis:** obj << (fit[number] << Publish Prediction Formula)
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Publish Prediction Formula)
 
 **Descripción:** Crea una fórmula de predicción y la publica como script de columna de fórmula en la plataforma Almacén de fórmulas.
 
@@ -32365,7 +32231,7 @@ fm << (fit[1] << Publish Prediction Formula);
 
 #### Quantile Profiler
 
-**Sintaxis:** obj << (fit[number] << Quantile Profiler( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Quantile Profiler( state=0|1 ))
 
 **Descripción:** Muestra u oculta un perfilador que muestra la respuesta predicha como función de los predictores y el cuantil de la función de distribución acumulativa. El cuantil se denomina Probabilidad y se muestra en la celda situada más a la derecha. Esta opción no está disponible cuando la distribución especificada es binomial o regresión por cuantil.
 
@@ -32394,7 +32260,7 @@ Fit Model(
 
 #### ROC Curve
 
-**Sintaxis:** obj << (fit[number] << ROC Curve( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; ROC Curve( state=0|1 ))
 
 **Descripción:** Muestra u oculta la curva Característica operativa del receptor (ROC). Si ha utilizado la validación, se muestra una curva ROC para cada uno de los conjuntos de entrenamiento, validación y pruebas. Esta opción solo está disponible cuando la distribución especificada es binomial, multinomial o logística ordinal.
 
@@ -32428,7 +32294,7 @@ fm << (fit[1] << ROC Curve( 1 ));
 
 #### Relaunch Active Main Effects and Full Factorial
 
-**Sintaxis:** obj << (fit[number] << Relaunch Active Main Effects and Full Factorial)
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Relaunch Active Main Effects and Full Factorial)
 
 **Descripción:** Abre una ventana de inicio Ajuste del modelo en la que la lista Construir efectos del modelo contiene un conjunto de términos basado en los términos que tienen estimaciones de los parámetros distintas de cero. Estos términos son los efectos activos. Todas las demás especificaciones de la ventana de inicio son las que se utilizan en el análisis original. La lista Construir efectos del modelo se rellena con un factorial completo construido con los efectos activos.
 
@@ -32457,7 +32323,7 @@ fm << (fit[1] << Relaunch Active Main Effects and Full Factorial);
 
 #### Relaunch Active Main Effects and Response Surface Model
 
-**Sintaxis:** obj << (fit[number] << Relaunch Active Main Effects and Response Surface Model)
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Relaunch Active Main Effects and Response Surface Model)
 
 **Descripción:** Abre una ventana de inicio Ajuste del modelo en la que la lista Construir efectos del modelo contiene un conjunto de términos basado en los términos que tienen estimaciones de los parámetros distintas de cero. Estos términos son los efectos activos. Todas las demás especificaciones de la ventana de inicio son las que se utilizan en el análisis original. La lista Construir efectos del modelo se rellena con un modelo de superficie de respuesta construido con los efectos activos.
 
@@ -32486,7 +32352,7 @@ fm << (fit[1] << Relaunch Active Main Effects and Response Surface Model);
 
 #### Relaunch Active Main Effects and Second Degree Factorial
 
-**Sintaxis:** obj << (fit[number] << Relaunch Active Main Effects and Second Degree Factorial)
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Relaunch Active Main Effects and Second Degree Factorial)
 
 **Descripción:** Abre una ventana de inicio Ajuste del modelo en la que la lista Construir efectos del modelo contiene un conjunto de términos basado en los términos que tienen estimaciones de los parámetros distintas de cero. Estos términos son los efectos activos. Todas las demás especificaciones de la ventana de inicio son las que se utilizan en el análisis original. La lista Construir efectos del modelo se rellena con un factorial de segundo grado construido con los efectos activos.
 
@@ -32515,7 +32381,7 @@ fm << (fit[1] << Relaunch Active Main Effects and Second Degree Factorial);
 
 #### Relaunch Active Main Effects and Second Degree Polynomial
 
-**Sintaxis:** obj << (fit[number] << Relaunch Active Main Effects and Second Degree Polynomial)
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Relaunch Active Main Effects and Second Degree Polynomial)
 
 **Descripción:** Abre una ventana de inicio Ajuste del modelo en la que la lista Construir efectos del modelo contiene un conjunto de términos basado en los términos que tienen estimaciones de los parámetros distintas de cero. Estos términos son los efectos activos. Todas las demás especificaciones de la ventana de inicio son las que se utilizan en el análisis original. La lista Construir efectos del modelo se rellena con un polinomio de segundo grado construido con los efectos activos.
 
@@ -32544,7 +32410,7 @@ fm << (fit[1] << Relaunch Active Main Effects and Second Degree Polynomial);
 
 #### Relaunch Active Main Effects and Third Degree Factorial
 
-**Sintaxis:** obj << (fit[number] << Relaunch Active Main Effects and Third Degree Factorial)
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Relaunch Active Main Effects and Third Degree Factorial)
 
 **Descripción:** Abre una ventana de inicio Ajuste del modelo en la que la lista Construir efectos del modelo contiene un conjunto de términos basado en los términos que tienen estimaciones de los parámetros distintas de cero. Estos términos son los efectos activos. Todas las demás especificaciones de la ventana de inicio son las que se utilizan en el análisis original. La lista Construir efectos del modelo se rellena con un factorial de tercer grado construido con los efectos activos.
 
@@ -32573,7 +32439,7 @@ fm << (fit[1] << Relaunch Active Main Effects and Third Degree Factorial);
 
 #### Relaunch Active Main Effects and Third Degree Polynomial
 
-**Sintaxis:** obj << (fit[number] << Relaunch Active Main Effects and Third Degree Polynomial)
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Relaunch Active Main Effects and Third Degree Polynomial)
 
 **Descripción:** Abre una ventana de inicio Ajuste del modelo en la que la lista Construir efectos del modelo contiene un conjunto de términos basado en los términos que tienen estimaciones de los parámetros distintas de cero. Estos términos son los efectos activos. Todas las demás especificaciones de la ventana de inicio son las que se utilizan en el análisis original. La lista Construir efectos del modelo se rellena con un polinomio de tercer grado construido con los efectos activos.
 
@@ -32602,7 +32468,7 @@ fm << (fit[1] << Relaunch Active Main Effects and Third Degree Polynomial);
 
 #### Relaunch with Active Effects
 
-**Sintaxis:** obj << (fit[number] << Relaunch with Active Effects)
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Relaunch with Active Effects)
 
 **Descripción:** Abre una ventana de inicio Ajuste del modelo en la que la lista Construir efectos del modelo contiene un conjunto de términos basado en los términos que tienen estimaciones de los parámetros distintas de cero. Estos términos son los efectos activos. Todas las demás especificaciones de la ventana de inicio son las que se utilizan en el análisis original. La lista Construir efectos del modelo solo se rellena con los efectos activos.
 
@@ -32629,7 +32495,7 @@ fm << (fit[1] << Relaunch with Active Effects);
 
 #### Remove Fit
 
-**Sintaxis:** obj << (fit[number] << Remove Fit)
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Remove Fit)
 
 **Descripción:** Quita el ajuste especificado del informe.
 
@@ -32656,7 +32522,7 @@ fm << (fit[1] << Remove Fit);
 
 #### Reset Solution
 
-**Sintaxis:** obj << (fit[number] << Reset Solution)
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Reset Solution)
 
 **Descripción:** Restablece el modelo de la trayectoria de solución al modelo original.
 
@@ -32683,7 +32549,7 @@ fm << (Fit[1] << Reset Solution);
 
 #### Save Cox Snell Residual Formula
 
-**Sintaxis:** obj << (fit[number] << Save Cox Snell Residual Formula)
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Save Cox Snell Residual Formula)
 
 **Descripción:** Guarda una columna de fórmulas nueva en la tabla de datos original. La columna nueva contiene una fórmula para los residuos de Cox-Snell.
 
@@ -32708,7 +32574,7 @@ fm << (fit[1] << Save Cox Snell Residual Formula);
 
 #### Save Distribution Formula
 
-**Sintaxis:** obj << (fit[number] << Save Distribution Formula)
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Save Distribution Formula)
 
 **Descripción:** Guarda una columna de fórmulas nueva en la tabla de datos original. La columna nueva contiene una fórmula para la función de distribución acumulativa.
 
@@ -32731,7 +32597,7 @@ fm << (Fit[1] << Save Distribution Formula);
 
 #### Save Functional Prediction Formulas
 
-**Sintaxis:** obj << (fit[number] << Save Functional Prediction Formulas)
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Save Functional Prediction Formulas)
 
 **Descripción:** Guarda las columnas nuevas en la tabla de datos original. Se agrega una columna nueva para cada respuesta del componente principal FDE. Cada columna nueva contiene una fórmula de predicción para cada componente principal funcional. Se añade una columna final que contiene una fórmula de predicción del modelo que es una combinación lineal de las fórmulas de predicción y las columnas de funciones propias de la plataforma Explorador de datos funcionales. Esta opción solo está disponible cuando las columnas de respuesta contienen la propiedad de columna Núm. de FPC FDE.
 
@@ -32771,7 +32637,7 @@ Save Functional Prediction Formulas;
 
 #### Save Linear Predictor
 
-**Sintaxis:** obj << (fit[number] << Save Linear Predictor)
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Save Linear Predictor)
 
 **Descripción:** Guarda una columna de fórmulas nueva en la tabla de datos original. La columna nueva contiene una fórmula para el producto de la matriz de diseño y el vector de estimaciones de los parámetros.
 
@@ -32798,7 +32664,7 @@ fm << (fit[1] << Save Linear Predictor);
 
 #### Save Martingale Residual Formula
 
-**Sintaxis:** obj << (fit[number] << Save Martingale Residual Formula)
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Save Martingale Residual Formula)
 
 **Descripción:** Guarda una columna de fórmulas nueva en la tabla de datos original. La columna nueva contiene una fórmula para los residuos de Martingale.
 
@@ -32823,7 +32689,7 @@ fm << (fit[1] << Save Martingale Residual Formula);
 
 #### Save Prediction Formula
 
-**Sintaxis:** obj << (fit[number] << Save Prediction Formula)
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Save Prediction Formula)
 
 **Descripción:** Guarda una columna de fórmulas nueva en la tabla de datos original. La columna nueva contiene la fórmula de predicción, expresada en términos de los valores de datos observados (no estandarizados). La fórmula de predicción no contiene los términos puestos a cero.
 
@@ -32850,7 +32716,7 @@ fm << (fit[1] << Save Prediction Formula);
 
 #### Save Resample Formulas
 
-**Sintaxis:** obj << (fit[number] << Save Resample Formulas)
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Save Resample Formulas)
 
 **Descripción:** Guarda varias columnas de fórmulas en la tabla de datos original. Un grupo de columnas denominado Muestras de SVEM contiene una columna de fórmulas por modelo individual. Estas columnas se guardan como columnas ocultas. La siguiente columna es una fórmula de predicción para el modelo de conjunto autovalidado. La siguiente columna contiene la fórmula del error estándar para el modelo de conjunto autovalidado. La columna final contiene la predicción de la mediana del modelo de conjunto autovalidado para cada fila.
 
@@ -32872,7 +32738,7 @@ fm << (fit[1] << Save Resample Formulas);
 
 #### Save Residual Formula
 
-**Sintaxis:** obj << (fit[number] << Save Residual Formula)
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Save Residual Formula)
 
 **Descripción:** Guarda una columna de fórmulas nueva en la tabla de datos original. La columna nueva contiene una fórmula para los residuos, expresada en la forma Y menos la fórmula de predicción. La fórmula residual no contiene términos puestos a cero.
 
@@ -32899,7 +32765,7 @@ fm << (fit[1] << Save Residual Formula);
 
 #### Save Simulation Formula
 
-**Sintaxis:** obj << (fit[number] << Save Simulation Formula)
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Save Simulation Formula)
 
 **Descripción:** Guarda una columna de fórmulas nueva en la tabla de datos original. La columna nueva contiene una fórmula que genera valores simulados utilizando los parámetros estimados para el modelo que ajuste. Esta columna se puede utilizar en la utilidad Simular como columna que activar.
 
@@ -32920,7 +32786,7 @@ fm << (fit[1] << Save Simulation Formula);
 
 #### Save Survival Formula
 
-**Sintaxis:** obj << (fit[number] << Save Survival Formula)
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Save Survival Formula)
 
 **Descripción:** Guarda una columna de fórmulas nueva en la tabla de datos original. La columna nueva contiene una fórmula para la probabilidad de supervivencia en el momento observado. La función de supervivencia es igual a 1 menos la función de distribución acumulativa.
 
@@ -32945,7 +32811,7 @@ fm << (fit[1] << Save Survival Formula);
 
 #### Save Validation Column
 
-**Sintaxis:** obj << (fit[number] << Save Validation Column)
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Save Validation Column)
 
 **Descripción:** Guarda una columna nueva en la tabla de datos original. La columna nueva describe la asignación de filas a plegamientos. Para KFold, la columna muestra el plegamiento al que se asignó la fila. Para Retención, cada fila se identifica como perteneciente al conjunto de entrenamiento o validación. Para dejar uno fuera, el valor de la fila indica el orden en el que se omite.
 
@@ -32966,7 +32832,7 @@ fm << (fit[1] << Save Validation Column);
 
 #### Save Variance Formula
 
-**Sintaxis:** obj << (fit[number] << Save Variance Formula)
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Save Variance Formula)
 
 **Descripción:** Guarda una columna de fórmulas nueva en la tabla de datos original. La columna nueva contiene una fórmula para la varianza de la predicción.
 
@@ -32990,7 +32856,7 @@ fm << (fit[1] << Save Variance Formula);
 
 #### Select Nonzero Terms
 
-**Sintaxis:** obj << (fit[number] << Select Nonzero Terms)
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Select Nonzero Terms)
 
 **Descripción:** Resalta los términos con coeficientes distintos de cero en el informe. También selecciona todas las columnas asociadas en la tabla de datos. Esta opción no está disponible cuando el método de estimación especificado es regresión Ridge.
 
@@ -33017,7 +32883,7 @@ fm << (fit[1] << Select Nonzero Terms);
 
 #### Select Zeroed Terms
 
-**Sintaxis:** obj << (fit[number] << Select Zeroed Terms)
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Select Zeroed Terms)
 
 **Descripción:** Resalta los términos con coeficientes cero en el informe. También selecciona todas las columnas asociadas en la tabla de datos. Esta opción no está disponible cuando el método de estimación especificado es regresión Ridge.
 
@@ -33044,7 +32910,7 @@ fm << (fit[1] << Select Zeroed Terms);
 
 #### Set Solution ID
 
-**Sintaxis:** obj << (fit[number] << Set Solution ID( number ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Set Solution ID( number ))
 
 **Descripción:** Cambia el modelo especificado a un modelo distinto en la trayectoria de solución.
 
@@ -33067,7 +32933,7 @@ fm << (Fit[1] << Set Solution ID( 122 ));
 
 #### Show Prediction Expression
 
-**Sintaxis:** obj << (fit[number] << Show Prediction Expression( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Show Prediction Expression( state=0|1 ))
 
 **Descripción:** Muestra u oculta el informe Expresión de predicción que contiene la ecuación para el modelo estimado.
 
@@ -33094,7 +32960,7 @@ fm << (fit[1] << Show Prediction Expression);
 
 #### Show Solution Path Summary
 
-**Sintaxis:** obj << (fit[number] << Show Solution Path Summary( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Show Solution Path Summary( state=0|1 ))
 
 **Descripción:** Muestra u oculta un informe que contiene una tabla de estadísticos de ajuste para los puntos de los gráficos Trayectoria de solución y Trayectoria de validación en los que cambia el conjunto activo. Los estadísticos disponibles dependen del método de estimación. Esta opción no está disponible para los modelos de máxima verosimilitud o regresión Ridge.
 
@@ -33124,7 +32990,7 @@ fm << (fit[1] << Show Solution Path Summary( 1 ));
 
 #### Solution Path
 
-**Sintaxis:** obj << (fit[number] << Solution Path( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Solution Path( state=0|1 ))
 
 **Descripción:** Muestra u oculta los gráficos de la trayectoria de solución y la trayectoria de validación. Esta opción no está disponible para los modelos de máxima verosimilitud. Opción activada de forma predeterminada.
 
@@ -33152,7 +33018,7 @@ fm << (fit[1] << Solution Path( 0 ));
 
 #### Std Error of Predicted
 
-**Sintaxis:** obj << (fit[number] << Std Error of Predicted)
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Std Error of Predicted)
 
 **Descripción:** Guarda una columna nueva en la tabla de datos original. La columna nueva contiene los errores estándar de la respuesta media predicha.
 
@@ -33180,7 +33046,7 @@ fm << (fit[1] << Std Error of Predicted);
 
 #### Std Error of Predicted Formula
 
-**Sintaxis:** obj << (fit[number] << Std Error of Predicted Formula)
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Std Error of Predicted Formula)
 
 **Descripción:** Guarda una columna de fórmulas nueva en la tabla de datos original. La columna nueva contiene una fórmula para los errores estándar de la respuesta media predicha.
 
@@ -33205,7 +33071,7 @@ fm << (fit[1] << Std Error of Predicted Formula);
 
 #### Step Backward
 
-**Sintaxis:** obj << (fit[number] << Step Backward)
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Step Backward)
 
 **Descripción:** Va al siguiente modelo más pequeño en la trayectoria de solución.
 
@@ -33232,7 +33098,7 @@ fm << (Fit[1] << Step Backward);
 
 #### Step Forward
 
-**Sintaxis:** obj << (fit[number] << Step Forward)
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Step Forward)
 
 **Descripción:** Va al siguiente modelo mayor en la trayectoria de solución.
 
@@ -33259,7 +33125,7 @@ fm << (Fit[1] << Step Forward);
 
 #### Survival Profiler
 
-**Sintaxis:** obj << (fit[number] << Survival Profiler( state=0|1 ))
+**Sintaxis:** obj &lt;&lt; (fit[number] &lt;&lt; Survival Profiler( state=0|1 ))
 
 **Descripción:** Muestra u oculta un perfilador que muestra la función de supervivencia como función de los predictores y la respuesta. La respuesta se muestra en la celda situada más a la derecha. Esta opción solo está disponible cuando la distribución especificada es normal, exponencial, Weibull, log-normal o riesgos proporcionales de Cox.
 
@@ -33286,7 +33152,7 @@ fm << (fit[1] << Survival Profiler( 1 ));
 
 #### By
 
-**Sintaxis:** obj << By( column(s) )
+**Sintaxis:** obj &lt;&lt; By( column(s) )
 
 ```jsl
 
@@ -33346,7 +33212,7 @@ obj = dt << Fit Model(
 
 #### Fit
 
-**Sintaxis:** obj << Fit( Estimation Method( Emethod( estim_options ) ), Validation Method( Vmethod( valid_options ) ), <Early Stopping>, <Enforce Heredity>, <Force( vector )> )
+**Sintaxis:** obj &lt;&lt; Fit( Estimation Method( Emethod( estim_options ) ), Validation Method( Vmethod( valid_options ) ), &lt;Early Stopping&gt;, &lt;Enforce Heredity&gt;, &lt;Force( vector )&gt; )
 
 **Descripción:** Especifica el Método de estimación y las opciones, el Método de validación y las opciones, así como otras opciones de ajuste para su modelo. Las opciones de estimación disponibles varían en función del método de estimación especificado. Las opciones de validación están disponibles para los métodos KFold y Retención. Las demás opciones de ajuste controlan la detención temprana, reforzando la herencia de términos y forzando términos en el modelo.
 
@@ -33373,7 +33239,7 @@ fm = dt << Fit Model(
 
 #### Get X Matrix
 
-**Sintaxis:** obj << Get X Matrix
+**Sintaxis:** obj &lt;&lt; Get X Matrix
 
 **Descripción:** Devuelve la matriz de diseño (también denominada matriz X).
 
@@ -33400,7 +33266,7 @@ As Table( fm << Get X Matrix );
 
 #### Model Dialog
 
-**Sintaxis:** obj << Model Dialog
+**Sintaxis:** obj &lt;&lt; Model Dialog
 
 **Descripción:** Muestra la ventana de inicio Ajuste del modelo completada para el análisis actual.
 
@@ -33427,7 +33293,7 @@ obj << Model Dialog;
 
 #### Save Coding Table
 
-**Sintaxis:** obj << Save Coding Table
+**Sintaxis:** obj &lt;&lt; Save Coding Table
 
 **Descripción:** Crea una tabla de datos nueva que contiene la codificación JMP para todos los parámetros del modelo. La última columna muestra los valores de la variable de respuesta.
 
@@ -33475,7 +33341,7 @@ Fit Model(
 
 #### Action
 
-**Sintaxis:** obj << Action
+**Sintaxis:** obj &lt;&lt; Action
 
 **Descripción:** Trampa multiuso dentro de una plataforma para insertar expresiones que se desean evaluar. Temporalmente establece los contextos de cuadros de visualización y tablas de datos en la plataforma.
 
@@ -33493,7 +33359,7 @@ dt << Bivariate(
 
 #### Apply Preset
 
-**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descripción:** Aplica al objeto un preajuste creado previamente, actualizando las opciones y personalizaciones para que coincidan con la configuración guardada.
 
@@ -33540,7 +33406,7 @@ obj2 << Apply Preset( preset );
 
 #### Automatic Recalc
 
-**Sintaxis:** obj << Automatic Recalc( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Descripción:** Rehace automáticamente el análisis para modificaciones de datos y de exclusión. Si está activada la opción Recálculo automático, le recomendamos que utilice los comandos Wait(0) para asegurarse de que las modificaciones de datos y de exclusión surtan efecto antes del recálculo.
 
@@ -33568,7 +33434,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 #### Broadcast
 
-**Sintaxis:** obj << Broadcast(message)
+**Sintaxis:** obj &lt;&lt; Broadcast(message)
 
 **Descripción:** Difunde un mensaje a una plataforma. Si los resultados devueltos de objetos individuales son tablas, se concatenan si es posible y el formato final es idéntico al resultado de la opción Guardar tabla combinada en un cuadro de tabla o al resultado de la opción Concatenar mediante una columna de origen. Los demás resultados se almacenan en una lista y se devuelven.
 
@@ -33588,7 +33454,7 @@ objs[1] << Broadcast( Save Summaries );
 
 #### Column Switcher
 
-**Sintaxis:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Sintaxis:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Descripción:** Añade un panel de control para cambiar las variables de la plataforma
 
@@ -33606,7 +33472,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 #### Copy ByGroup Script
 
-**Sintaxis:** obj << Copy ByGroup Script
+**Sintaxis:** obj &lt;&lt; Copy ByGroup Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -33639,7 +33505,7 @@ obj[1] << Copy ByGroup Script;
 
 #### Copy Script
 
-**Sintaxis:** obj << Copy Script
+**Sintaxis:** obj &lt;&lt; Copy Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -33666,7 +33532,7 @@ obj << Copy Script;
 
 #### Data Table Window
 
-**Sintaxis:** obj << Data Table Window
+**Sintaxis:** obj &lt;&lt; Data Table Window
 
 **Descripción:** Mueve al frente la ventana de la tabla de datos que se utiliza en este análisis.
 
@@ -33693,7 +33559,7 @@ obj << Data Table Window;
 
 #### Get By Levels
 
-**Sintaxis:** obj << Get By Levels
+**Sintaxis:** obj &lt;&lt; Get By Levels
 
 **Descripción:** Devuelve un arreglo asociativo que asigna las columnas Por grupo a sus valores.
 
@@ -33710,7 +33576,7 @@ biv << Get By Levels;
 
 #### Get ByGroup Script
 
-**Sintaxis:** obj << Get ByGroup Script
+**Sintaxis:** obj &lt;&lt; Get ByGroup Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -33744,7 +33610,7 @@ Show( t );
 
 #### Get Container
 
-**Sintaxis:** obj << Get Container
+**Sintaxis:** obj &lt;&lt; Get Container
 
 **Descripción:** Devuelve una referencia al cuadro contenedor que incluye el contenido del objeto.
 
@@ -33803,7 +33669,7 @@ New Window( "platform boxes",
 
 #### Get Data Table
 
-**Sintaxis:** obj << Get Data Table
+**Sintaxis:** obj &lt;&lt; Get Data Table
 
 **Descripción:** Devuelve una referencia a la tabla de datos.
 
@@ -33831,7 +33697,7 @@ Show( N Rows( t ) );
 
 #### Get Group Platform
 
-**Sintaxis:** obj << Get Group Platform
+**Sintaxis:** obj &lt;&lt; Get Group Platform
 
 **Descripción:** Devuelve el objeto Plataforma grupal si esta plataforma forma parte de un grupo. De lo contrario, devuelve Empty().
 
@@ -33848,7 +33714,7 @@ group << Layout( "Arrange in Tabs" );
 
 #### Get Script
 
-**Sintaxis:** obj << Get Script
+**Sintaxis:** obj &lt;&lt; Get Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -33876,7 +33742,7 @@ Show( t );
 
 #### Get Script With Data Table
 
-**Sintaxis:** obj << Get Script With Data Table
+**Sintaxis:** obj &lt;&lt; Get Script With Data Table
 
 **Descripción:** Crea un script (JSL) para generar este análisis haciendo referencia específica a esta tabla de datos y lo devuelve en forma de expresión.
 
@@ -33904,7 +33770,7 @@ Show( t );
 
 #### Get Timing
 
-**Sintaxis:** obj << Get Timing
+**Sintaxis:** obj &lt;&lt; Get Timing
 
 **Descripción:** Determina el tiempo de inicio de una plataforma.
 
@@ -33932,7 +33798,7 @@ Show( t );
 
 #### Get Web Support
 
-**Sintaxis:** obj << Get Web Support
+**Sintaxis:** obj &lt;&lt; Get Web Support
 
 **Descripción:** Devuelve un número que indica el nivel de compatibilidad del HTML interactivo para el objeto de visualización. 1 significa que algunos o todos los elementos son compatibles. 0 significa que no existe compatibilidad.
 
@@ -33948,7 +33814,7 @@ Show( s );
 
 #### Get Where Expr
 
-**Sintaxis:** obj << Get Where Expr
+**Sintaxis:** obj &lt;&lt; Get Where Expr
 
 **Descripción:** Devuelve la expresión Where para el subconjunto de datos, si la plataforma se inició con By() o Where(). De lo contrario, devuelve Empty().
 
@@ -33985,7 +33851,7 @@ dt << Bivariate(
 
 #### Local Data Filter
 
-**Sintaxis:** obj << Local Data Filter
+**Sintaxis:** obj &lt;&lt; Local Data Filter
 
 **Descripción:** Para filtrar los datos según grupos o rangos determinados, pero locales para esta plataforma.
 
@@ -34041,7 +33907,7 @@ preset = obj << New Preset();
 
 #### Paste Local Data Filter
 
-**Sintaxis:** obj << Paste Local Data Filter
+**Sintaxis:** obj &lt;&lt; Paste Local Data Filter
 
 **Descripción:** Se aplica el filtro de datos locales del portapapeles al informe actual.
 
@@ -34062,7 +33928,7 @@ dist2 << Paste Local Data Filter;
 
 #### Redo Analysis
 
-**Sintaxis:** obj << Redo Analysis
+**Sintaxis:** obj &lt;&lt; Redo Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -34089,7 +33955,7 @@ obj << Redo Analysis;
 
 #### Redo ByGroup Analysis
 
-**Sintaxis:** obj << Redo ByGroup Analysis
+**Sintaxis:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -34122,7 +33988,7 @@ obj[1] << Redo ByGroup Analysis;
 
 #### Relaunch Analysis
 
-**Sintaxis:** obj << Relaunch Analysis
+**Sintaxis:** obj &lt;&lt; Relaunch Analysis
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -34149,7 +34015,7 @@ obj << Relaunch Analysis;
 
 #### Relaunch ByGroup
 
-**Sintaxis:** obj << Relaunch ByGroup
+**Sintaxis:** obj &lt;&lt; Relaunch ByGroup
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -34182,7 +34048,7 @@ obj[1] << Relaunch ByGroup;
 
 #### Remove Column Switcher
 
-**Sintaxis:** obj << Remove Column Switcher
+**Sintaxis:** obj &lt;&lt; Remove Column Switcher
 
 **Descripción:** Quita el Cambiador de columnas más reciente que se haya agregado a la plataforma.
 
@@ -34202,7 +34068,7 @@ obj << Remove Column Switcher;
 
 #### Remove Local Data Filter
 
-**Sintaxis:** obj << Remove Local Data Filter
+**Sintaxis:** obj &lt;&lt; Remove Local Data Filter
 
 **Descripción:** Si se ha creado un filtro de datos local, esto lo eliminará y restaurará la plataforma para usar todos los datos de la tabla de datos directamente.
 
@@ -34241,9 +34107,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 #### Report
 
-**Sintaxis:** obj << Report;
-
-Report( obj )
+**Sintaxis:** obj &lt;&lt; Report;Report( obj )
 
 **Descripción:** Devuelve una referencia al objeto informe.
 
@@ -34272,7 +34136,7 @@ Show( t );
 
 #### Report View
 
-**Sintaxis:** obj << Report View( "Completa"|"Resumen" )
+**Sintaxis:** obj &lt;&lt; Report View( "Completa"|"Resumen" )
 
 **Descripción:** La vista del informe determina el nivel de detalle visible en el informe de una plataforma. Full muestra todos los detalles, mientras que Summary solo muestra el contenido seleccionado, con independencia de la plataforma. Para el comportamiento personalizado, los cuadros de visualización admiten un mensaje <<Set Summary Behavior.
 
@@ -34299,7 +34163,7 @@ obj << Report View( "Summary" );
 
 #### Save ByGroup Script to Data Table
 
-**Sintaxis:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis, y lo guarda como propiedad de tabla en la tabla de datos. Puede especificar un nombre para el script. La opción Append Suffix añade un sufijo numérico al nombre del script, que diferencia el script de un script existente que tenga el mismo nombre. La opción Prompt solicita al usuario que especifique un nombre de script. La opción Replace reemplaza un script existente que tenga el mismo nombre.
 
@@ -34332,7 +34196,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 #### Save ByGroup Script to Journal
 
-**Sintaxis:** obj << Save ByGroup Script to Journal
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -34365,7 +34229,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 #### Save ByGroup Script to Script Window
 
-**Sintaxis:** obj << Save ByGroup Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -34398,7 +34262,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 #### Save Script for All Objects
 
-**Sintaxis:** obj << Save Script for All Objects
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects
 
 **Descripción:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -34425,7 +34289,7 @@ obj << Save Script for All Objects;
 
 #### Save Script for All Objects To Data Table
 
-**Sintaxis:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descripción:** Guarda un script para todos los objetos de informe en la tabla de datos actual. Esta opción es útil cuando tiene varios informes en la ventana. El script recibe el nombre de la primera plataforma a menos que especifique el nombre del script entre comillas.
 
@@ -34489,7 +34353,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 #### Save Script to Data Table
 
-**Sintaxis:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis y lo guarda en forma de propiedad de tabla en la tabla de datos.
 
@@ -34516,7 +34380,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 #### Save Script to Journal
 
-**Sintaxis:** obj << Save Script to Journal
+**Sintaxis:** obj &lt;&lt; Save Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -34543,7 +34407,7 @@ obj << Save Script to Journal;
 
 #### Save Script to Report
 
-**Sintaxis:** obj << Save Script to Report
+**Sintaxis:** obj &lt;&lt; Save Script to Report
 
 **Descripción:** Crea un script JSL para generar este análisis y lo muestra en el propio informe. Resulta útil para conservar un registro impreso de lo que se ha hecho.
 
@@ -34570,7 +34434,7 @@ obj << Save Script to Report;
 
 #### Save Script to Script Window
 
-**Sintaxis:** obj << Save Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -34662,7 +34526,7 @@ dt << Distribution(
 
 #### Sync to Data Table Changes
 
-**Sintaxis:** obj << Sync to Data Table Changes
+**Sintaxis:** obj &lt;&lt; Sync to Data Table Changes
 
 **Descripción:** Realiza una sincronización con las modificaciones de datos y de exclusión que se hayan realizado.
 
@@ -34679,7 +34543,7 @@ dist << Sync To Data Table Changes;
 
 #### Title
 
-**Sintaxis:** obj << Title( "new title" )
+**Sintaxis:** obj &lt;&lt; Title( "new title" )
 
 **Descripción:** Establece el título de la plataforma.
 
@@ -34706,7 +34570,7 @@ obj << Title( "My Platform" );
 
 #### Top Report
 
-**Sintaxis:** obj << Top Report
+**Sintaxis:** obj &lt;&lt; Top Report
 
 **Descripción:** Devuelve una referencia al nodo raíz del informe.
 
@@ -34735,7 +34599,7 @@ Show( t );
 
 #### Transform Column
 
-**Sintaxis:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Sintaxis:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Descripción:** Crea una columna de transformación en el contexto local de un objeto (una plataforma por lo general). La columna de transformación solo está activa mientras esté en uso la plataforma.
 
@@ -34756,7 +34620,7 @@ dt << Distribution(
 
 #### View Web XML
 
-**Sintaxis:** obj << View Web XML
+**Sintaxis:** obj &lt;&lt; View Web XML
 
 **Descripción:** Devuelve el código XML que se utiliza para crear el informe HTML interactivo.
 
@@ -34771,9 +34635,7 @@ xml = obj << View Web XML;
 
 #### Window View
 
-**Sintaxis:** obj = Fit Generalized(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Generalized(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Establece el tipo de ventana que se creará para el informe. De forma predeterminada, se creará una ventana de informe Visible. Una ventana Invisible no aparecerá en pantalla, pero se puede detectar mediante funciones como Window(). Una ventana Private responde a la mayoría de los mensajes de ventana pero no es detectable y se debe abordar a través del objeto de informe.
 
@@ -34796,9 +34658,7 @@ New Window( "Bivariate Equation",
 
 #### ID
 
-**Sintaxis:** obj = Run(...<ID( column )>...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Run(...&lt;ID( column )&gt;...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Columna que identifica la matriz de relaciones genéticas.
 
@@ -34818,9 +34678,7 @@ obj << Run;
 
 #### Subgroup
 
-**Sintaxis:** obj = Fit Model(...Personality( "Response Screening" ), Subgroup( column(s) )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Personality( "Response Screening" ), Subgroup( column(s) )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica una o más variables de subgrupo. Cuando se define una variable de subgrupo, se realizan ajustes adicionales para cada categoría de la variable de subgrupo.
 
@@ -34841,9 +34699,7 @@ obj = dt << Fit Model(
 
 #### Switch
 
-**Sintaxis:** obj = Fit Model(...Switch( column(s) )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Switch( column(s) )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica las columnas que se pueden cambiar, de una en una, en el modelo.
 
@@ -34865,9 +34721,7 @@ obj << Run;
 
 #### Cauchy Fit
 
-**Sintaxis:** obj = Fit Model(...Personality( "Response Screening" ), Cauchy Fit( state=0|1 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Personality( "Response Screening" ), Cauchy Fit( state=0|1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Asume que los errores tienen una distribución de Cauchy. Una distribución de Cauchy tiene colas más gruesas que la distribución normal, lo que se traduce en un énfasis reducido en los valores atípicos. Solo está disponible para la personalidad Cribado de respuestas. Este mensaje corresponde a la opción Ajuste muy robusto en la ventana de inicio Ajuste del modelo.
 
@@ -34887,9 +34741,7 @@ dt << Fit Model(
 
 #### Censor Code
 
-**Sintaxis:** obj = Fit Model(...Censor Code( string )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Censor Code( string )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Identifica el valor de la columna Censura que indica las observaciones censuradas a la derecha.
 
@@ -34910,9 +34762,7 @@ dt << Fit Model(
 
 #### Center Polynomials
 
-**Sintaxis:** obj = Fit Model(...Center Polynomials( state=0|1 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Center Polynomials( state=0|1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Centra los efectos de los modelos polinomiales. Opción activada de forma predeterminada.
 
@@ -34932,9 +34782,7 @@ obj = dt << Fit Model(
 
 #### Centering
 
-**Sintaxis:** obj = Fit Model(...Personality( "Partial Least Squares" ), Centering( state=0|1 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Personality( "Partial Least Squares" ), Centering( state=0|1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Centra todas las variables de respuesta y efectos del modelo restando la media de cada columna. Solo está disponible para la personalidad Mínimos cuadrados parciales. Opción activada de forma predeterminada.
 
@@ -34955,9 +34803,7 @@ dt << Fit Model(
 
 #### Choose High Target
 
-**Sintaxis:** obj = Fit Model(...Personality( "Nominal Logistic" ), Choose High Target( state=0|1 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Personality( "Nominal Logistic" ), Choose High Target( state=0|1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica que el valor mayor de una respuesta nominal binaria se utiliza como respuesta objetivo. Solo está disponible para una columna de respuestas binarias en la personalidad Logística nominal. Este mensaje corresponde a la opción Nivel objetivo de la ventana de inicio Ajuste del modelo.
 
@@ -34978,9 +34824,7 @@ dt << Fit Model(
 
 #### Convergence Limit
 
-**Sintaxis:** obj = Fit Model(...Convergence Limit( number=0.00000001 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Convergence Limit( number=0.00000001 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el límite de convergencia para el ajuste del modelo. Si su modelo no converge fácilmente, puede que sea necesario aumentar el límite de convergencia. De forma predeterminada, el límite de convergencia es 0,00000001.
 
@@ -35001,7 +34845,7 @@ obj = dt << Fit Model(
 
 #### Create SAS Job
 
-**Sintaxis:** obj << Create SAS Job
+**Sintaxis:** obj &lt;&lt; Create SAS Job
 
 **Descripción:** Guarda el código de SAS para la especificación del modelo actual en una ventana de programa de SAS.
 
@@ -35045,11 +34889,7 @@ obj = dt << Fit Model(
 
 #### Effects
 
-**Sintaxis:** obj = Run(...Effects( col, col, ... )...);
-
-obj = Run(...Effects( macro( col, col, ... ) )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Run(...Effects( col, col, ... )...);obj = Run(...Effects( macro( col, col, ... ) )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Asigna términos explicativos a la función Efectos. Puede especificar los efectos uno a uno o utilizando las macros disponibles en la ventana de inicio de Ajuste del modelo. Encontrará algunos ejemplos a continuación.
 
@@ -35176,9 +35016,7 @@ dialog = dt << Fit Model(
 
 #### Emphasis
 
-**Sintaxis:** obj = Fit Model(...Personality( "Standard Least Squares" ), Emphasis( "Effect Leverage" | "Effect Screening" | "Minimal Report" )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Personality( "Standard Least Squares" ), Emphasis( "Effect Leverage" | "Effect Screening" | "Minimal Report" )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica los tipos de gráficos y estadísticos que aparecen en el informe predeterminado para la personalidad de tipo Mínimos cuadrados estándar.
 
@@ -35223,9 +35061,7 @@ obj = dt << Fit Model(
 
 #### Estimate Only Variance Components
 
-**Sintaxis:** obj = Fit Model(...Personality( "Standard Least Squares" ), Estimate Only Variance Components( state=0|1 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Personality( "Standard Least Squares" ), Estimate Only Variance Components( state=0|1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Ejecuta un análisis REML utilizando el modelo especificado y muestra un informe que contiene únicamente los componentes de varianza del modelo. Solo está disponible para la personalidad de tipo Mínimos cuadrados estándar.
 
@@ -35246,9 +35082,7 @@ obj = dt << Fit Model(
 
 #### Firth Bias-Adjusted Estimates
 
-**Sintaxis:** obj = Fit Model(...Personality( "Generalized Linear Model" ), "Firth Bias-Adjusted Estimates"n( state=0|1 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Personality( "Generalized Linear Model" ), "Firth Bias-Adjusted Estimates"n( state=0|1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica que se utiliza el método ajustado por sesgo de Firth para ajustar el modelo. Solo está disponible para la personalidad Modelo lineal generalizado.
 
@@ -35291,9 +35125,7 @@ obj = dt << Fit Model(
 
 #### GLM Distribution
 
-**Sintaxis:** obj = Fit Model(...Personality( "Generalized Linear Model" ), GLM Distribution( distribution name )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Personality( "Generalized Linear Model" ), GLM Distribution( distribution name )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica una distribución de probabilidad para la variable de respuesta. Disponible solo para la personalidad Modelo lineal generalizado.
 
@@ -35315,9 +35147,7 @@ obj = dt << Fit Model(
 
 #### Generalized Distribution
 
-**Sintaxis:** obj = Fit Model(...Personality( "Generalized Regression" ), Generalized Distribution( distribution name )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Personality( "Generalized Regression" ), Generalized Distribution( distribution name )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica la distribución de la probabilidad de respuesta. Solo está disponible para la personalidad Regresión generalizada.
 
@@ -35343,9 +35173,7 @@ dt << Fit Model(
 
 #### Imputation Method
 
-**Sintaxis:** obj = Fit Model(...Personality( "Partial Least Squares" ), Imputation Method( "Mean" | "EM" )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Personality( "Partial Least Squares" ), Imputation Method( "Mean" | "EM" )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el método para la imputación. De forma predeterminada, se utiliza el método Media. Solo está disponible para la personalidad Mínimos cuadrados parciales.
 
@@ -35372,9 +35200,7 @@ dt << Fit Model(
 
 #### Impute Missing Data
 
-**Sintaxis:** obj = Fit Model(...Personality( "Partial Least Squares" ), Impute Missing Data( state=0|1 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Personality( "Partial Least Squares" ), Impute Missing Data( state=0|1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Sustituye los valores de datos faltantes en las columnas Y o X con valores no faltantes utilizando el método de imputación especificado. Solo está disponible para la personalidad Mínimos cuadrados parciales.
 
@@ -35400,9 +35226,7 @@ dt << Fit Model(
 
 #### Informative Missing
 
-**Sintaxis:** obj = Fit Model(...Informative Missing( state=0|1 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Informative Missing( state=0|1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Habilita la codificación e imputación de valores faltantes. Cuando no se selecciona esta opción, se ignoran las filas con valores faltantes.
 
@@ -35431,7 +35255,7 @@ dt << Fit Model(
 
 #### Keep dialog open
 
-**Sintaxis:** obj << Keep dialog open( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Keep dialog open( state=0|1 )
 
 **Descripción:** Especifica si la ventana de inicio de Ajuste del modelo permanece abierta o se cierra después de ejecutar el modelo especificado.
 
@@ -35451,9 +35275,7 @@ dt << Fit Model(
 
 #### Link Function
 
-**Sintaxis:** obj = Fit Model(...Personality( "Generalized Linear Model" ), Link Function( link type )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Personality( "Generalized Linear Model" ), Link Function( link type )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica la función de enlace para el modelo. Solo está disponible para la personalidad Modelo lineal generalizado.
 
@@ -35475,9 +35297,7 @@ obj = dt << Fit Model(
 
 #### Max Iterations
 
-**Sintaxis:** obj = Fit Model(...Personality( "Partial Least Squares" ), Max Iterations( number=1 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Personality( "Partial Least Squares" ), Max Iterations( number=1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el número máximo de iteraciones que debe utilizar el algoritmo. El algoritmo finaliza si la diferencia máxima entre las estimaciones actuales y anteriores de los valores faltantes están delimitadas por 10^-8. Solo está disponible para la personalidad Mínimos cuadrados parciales.
 
@@ -35505,9 +35325,7 @@ dt << Fit Model(
 
 #### Maximum Iterations
 
-**Sintaxis:** obj = Fit Model(...Maximum Iterations( number=100 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Maximum Iterations( number=100 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el número máximo de iteraciones que se utilizan en el ajuste del modelo. De forma predeterminada, el número máximo de iteraciones es 100.
 
@@ -35528,9 +35346,7 @@ obj = dt << Fit Model(
 
 #### Method
 
-**Sintaxis:** obj = Fit Model(...Personality( "Standard Least Squares" ), Method( "EMS" | "REML" )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Personality( "Standard Least Squares" ), Method( "EMS" | "REML" )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el método que se utiliza para ajustar los modelos mixtos en la personalidad de tipo mínimos cuadrados estándar.
 
@@ -35552,9 +35368,7 @@ obj = dt << Fit Model(
 
 #### No Intercept
 
-**Sintaxis:** obj = Fit Model(...No Intercept( state=0|1 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...No Intercept( state=0|1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Establece la constante a cero para el modelo.
 
@@ -35574,9 +35388,7 @@ obj = dt << Fit Model(
 
 #### NoBounds
 
-**Sintaxis:** obj = Fit Model(...Personality( "Standard Least Squares" ), NoBounds( state=0|1 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Personality( "Standard Least Squares" ), NoBounds( state=0|1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Elimina los límites de las estimaciones de varianza. Cuando esta opción está desactivada, se establece el límite inferior de las estimaciones de varianza con el valor cero. Solo está disponible para la personalidad de tipo mínimos cuadrados estándar. Opción activada de forma predeterminada.
 
@@ -35622,9 +35434,7 @@ dt << Fit Model(
 
 #### Overdispersion Tests and Intervals
 
-**Sintaxis:** obj = Fit Model(...Personality( "Generalized Linear Model" ), Overdispersion Tests and Intervals( state=0|1 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Personality( "Generalized Linear Model" ), Overdispersion Tests and Intervals( state=0|1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica que debe incluirse un parámetro de sobredispersión en el modelo. Solo está disponible para la personalidad Modelo lineal generalizado.
 
@@ -35647,9 +35457,7 @@ obj = dt << Fit Model(
 
 #### Personality
 
-**Sintaxis:** obj = Fit Model(...Personality( "Standard Least Sqaures" | "Stepwise" | "Generalized Regression" | "Mixed Model" | "Generalized Linear Mixed Model" | "Manova" | "Loglinear Variance" | "Nominal Logistic" | "Ordinal Logistic" | "Proportional Hazard" | "Parametric Survival" | "Generalized Linear Model" | "Partial Least Squares" | "Response Screening" )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Personality( "Standard Least Sqaures" | "Stepwise" | "Generalized Regression" | "Mixed Model" | "Generalized Linear Mixed Model" | "Manova" | "Loglinear Variance" | "Nominal Logistic" | "Ordinal Logistic" | "Proportional Hazard" | "Parametric Survival" | "Generalized Linear Model" | "Partial Least Squares" | "Response Screening" )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el tipo de análisis que se utiliza para el ajuste del modelo.
 
@@ -35668,9 +35476,7 @@ obj << Run Model;
 
 #### Power Link Parameter
 
-**Sintaxis:** obj = Fit Model(...Personality( "Generalized Linear Model" ), Power Link Parameter( value=1 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Personality( "Generalized Linear Model" ), Power Link Parameter( value=1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el parámetro para la función de enlace de la potencia. Solo está disponible cuando se especifica Potencia como función de enlace en la personalidad Modelo lineal generalizado. "1" de forma predeterminada.
 
@@ -35745,9 +35551,7 @@ obj = dt << Fit Model(
 
 #### Robust Fit
 
-**Sintaxis:** obj = Fit Model(...Personality( "Response Screening" ), Robust Fit( state=0|1 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Personality( "Response Screening" ), Robust Fit( state=0|1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Utiliza la estimación (de Huber) robusta para reducir el peso de los valores atípicos. Si no hay valores atípicos, estas estimaciones son cercanas a las estimaciones por mínimos cuadrados. Solo está disponible para la personalidad Cribado de respuestas. Este mensaje corresponde a la opción Ajuste robusto de la ventana de inicio Ajuste del modelo.
 
@@ -35767,9 +35571,7 @@ dt << Fit Model(
 
 #### Run
 
-**Sintaxis:** obj = Fit Model(...Run( <options> )...);
-
-obj << Run( <options> )
+**Sintaxis:** obj = Fit Model(...Run( &lt;options&gt; )...);obj &lt;&lt; Run( &lt;options&gt; )
 
 **Descripción:** Ejecuta el modelo especificado en la ventana de inicio de Ajuste del modelo y, a continuación, cierra esa ventana.
 
@@ -35806,7 +35608,7 @@ obj << Run;
 
 #### Run Model
 
-**Sintaxis:** obj << Run Model
+**Sintaxis:** obj &lt;&lt; Run Model
 
 **Descripción:** Ejecuta el modelo especificado en la ventana de inicio de Ajuste del modelo y mantiene abierta esa ventana.
 
@@ -35825,7 +35627,7 @@ obj << Run Model;
 
 #### Save to Data Table
 
-**Sintaxis:** obj << Save to Data Table
+**Sintaxis:** obj &lt;&lt; Save to Data Table
 
 **Descripción:** Guarda el modelo como JSL en la tabla de datos actual.
 
@@ -35844,7 +35646,7 @@ obj << Save to DataTable;
 
 #### Save to Script Window
 
-**Sintaxis:** obj << Save to Script Window
+**Sintaxis:** obj &lt;&lt; Save to Script Window
 
 **Descripción:** Guarda el modelo como JSL en la ventana de scripts.
 
@@ -35863,9 +35665,7 @@ obj << Save to Script Window;
 
 #### Scaling
 
-**Sintaxis:** obj = Fit Model(...Personality( "Partial Least Squares" ), Scaling( state=0|1 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Personality( "Partial Least Squares" ), Scaling( state=0|1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Escala todas las variables de respuesta y efectos del modelo dividiendo cada columna por su desviación estándar. Solo está disponible para la personalidad Mínimos cuadrados parciales. Opción activada de forma predeterminada.
 
@@ -35886,9 +35686,7 @@ dt << Fit Model(
 
 #### Set Alpha Level
 
-**Sintaxis:** obj = Fit Model(...Set Alpha Level( state=0|1 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Set Alpha Level( state=0|1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el nivel alfa para los intervalos de confianza en los informes del modelo.
 
@@ -35909,9 +35707,7 @@ obj = dt << Fit Model(
 
 #### Standardize X
 
-**Sintaxis:** obj = Fit Model(...Personality( "Partial Least Squares" ), Standardize X( state=0|1 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Personality( "Partial Least Squares" ), Standardize X( state=0|1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Centra y escala todas las columnas que se utilizan en la construcción de efectos del modelo. Si no se selecciona esta opción, los efectos de orden superior se construyen con las columnas de la tabla de datos original. A continuación, se centra o escala cada efecto de orden superior, en función de las opciones de centrado y escalado seleccionadas. Tenga en cuenta que Estandarizar X no centra ni escala variables Y. Solo está disponible para la personalidad Mínimos cuadrados parciales. Opción activada de forma predeterminada.
 
@@ -35955,9 +35751,7 @@ obj = dt << Fit Model(
 
 #### Suppress Coding
 
-**Sintaxis:** obj = Fit Model(...Suppress Coding( state=0|1 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Suppress Coding( state=0|1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Suprime cualquier propiedad de la columna Codificación para que las estimaciones hagan referencia a la escala original. La propiedad de columna Codificación le permite comparar más fácilmente las estimaciones y contribuye a que las pruebas de efectos de orden inferior tengan sentido. No se recomienda usar la opción Suprimir codificación a menos que la necesite.
 
@@ -36002,9 +35796,7 @@ obj = dt << Fit Model(
 
 #### Suppress Warning for Missing Effects
 
-**Sintaxis:** obj = Fit Model(...Suppress Warning for Missing Effects( state=0|1 )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Fit Model(...Suppress Warning for Missing Effects( state=0|1 )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Suprime las alertas de advertencia de que los efectos de orden inferior implícitos en los efectos de orden superior no están en el modelo. Esta opción es útil cuando se experimenta con muchos modelos de subconjuntos.
 

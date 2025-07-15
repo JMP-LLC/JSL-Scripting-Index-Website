@@ -2,8 +2,6 @@
 
 
 
-## 関数
-
 ### Add
 
 **構文:** y = x0 + x1; y = Add( x0, x1, ... )
@@ -57,7 +55,7 @@ Hex(/* make it printable */ Blob MD5(/* get the hash */
 
 ### Blob Peek
 
-**構文:** blobResult = Blob Peek( blob, offset, <length> )
+**構文:** blobResult = Blob Peek( blob, offset, &lt;length&gt; )
 
 **説明:** 与えられたBLOBの一部の範囲のバイトから新しいBLOBを作成する。offsetは0を基準としており、最初のバイトのオフセットは0。
 
@@ -87,7 +85,7 @@ Build Information();
 
 ### Caption
 
-**構文:** y = Caption( <{h, v}>, text | remove, <Delayed( seconds )>, <Font(font)>, <Font Size(size)>, <Text Color(color)>, <Back Color(color)>, <Spoken(bool)> )
+**構文:** y = Caption( &lt;{h, v}&gt;, text | remove, &lt;Delayed( seconds )&gt;, &lt;Font(font)&gt;, &lt;Font Size(size)&gt;, &lt;Text Color(color)&gt;, &lt;Back Color(color)&gt;, &lt;Spoken(bool)&gt; )
 
 **説明:** 引数textで指定されたテキストを含んだキャプションウィンドウを{h, v}で指定された位置に表示する。引数Delayed( seconds )は、各キャプションを表示するまでの時間(秒)。
 
@@ -123,7 +121,7 @@ Caption(
 
 ### Clipboard Capture
 
-**構文:** clp = Clipboard Capture( box << Copy )
+**構文:** clp = Clipboard Capture( box &lt;&lt; Copy )
 
 **説明:** If the JSL within this function would have normally copied something to the OS Clipboard, it is instead copied to a Clipboard object and returned.
 
@@ -143,7 +141,7 @@ Show( clp << Get Flavor Data( "Text", <<Text ) );
 
 ### Current Journal
 
-**構文:** y = Current Journal( <Project(title|index|box|window)> )
+**構文:** y = Current Journal( &lt;Project(title|index|box|window)&gt; )
 
 **説明:** 現在のプロジェクトにある現在のジャーナルへの参照を戻す。(スクリプトがプロジェクト内で実行されていない場合はプロジェクトはなし。)
 
@@ -305,7 +303,7 @@ Disable Proxy Settings( 1 );
 
 ### Divide
 
-**構文:** y = x0 / x1; y = Divide( x0, <x1>, ... )
+**構文:** y = x0 / x1; y = Divide( x0, &lt;x1&gt;, ... )
 
 **説明:** 後続のすべての引数で最初の引数を割る。引数には、数値、行列、数値のリストを指定できる。引数が1つのみの場合、結果は逆数となる。
 
@@ -447,11 +445,7 @@ Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
 
 ### Format Pattern
 
-**構文:** s = Format( x, "Format Pattern", pattern, <width>, <dec>)
-
-x = In Format( s, "Format Pattern", pattern, < <<Use Locale(b=1)> )
-
-obj = Format("Format Pattern", pattern, <width>, <dec>)
+**構文:** s = Format( x, "Format Pattern", pattern, &lt;width&gt;, &lt;dec&gt;)x = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )obj = Format("Format Pattern", pattern, &lt;width&gt;, &lt;dec&gt;)
 
 **説明:** Format Patternsは、日付時間形式を定義する"<YYYY></><MM></><DD> <hh><:><mm><:><ss><ampm>"のような文字列。山括弧に囲まれた部分をフィールド記述子という。フィールド記述子は、値(たとえば、4桁の年を表す"<YYYY>")または他の日付時間テキスト(たとえば、ロケール固有の日付区切り文字、"</>")を示す。形式パターンを使うと、JMPに用意されていない形式を作成できる。これらの形式は、データの書式設定とデータの入力の両方に使用できる。
 
@@ -589,7 +583,7 @@ Get Clipboard();
 
 ### Get Expr Location
 
-**構文:** Get Expr Location(<expression>, [{"TokenStartLine"|"TokenStartCol"|"TokenStart"|"TokenLength"|"TreeStart"|"TreeEnd"|"TreeLength"}+]
+**構文:** Get Expr Location(&lt;expression&gt;, [{"TokenStartLine"|"TokenStartCol"|"TokenStart"|"TokenLength"|"TreeStart"|"TreeEnd"|"TreeLength"}+]
 
 **説明:** 解析された式における最上位トークンの位置を取得する。デフォルトの呼び出しは{ソースファイル, TokenStartLine, TokenStartCol, TokenLength}を戻す。
 
@@ -693,7 +687,7 @@ Show( aa );
 
 ### Get Platform Preference
 
-**構文:** Get Platform Preferences( < platformName < ( optionName, ... ) > ... > )
+**構文:** Get Platform Preferences( &lt; platformName &lt; ( optionName, ... ) &gt; ... &gt; )
 
 **説明:** 指定されたプラットフォームの環境設定を取得する。
 
@@ -708,7 +702,7 @@ Get Platform Preferences( Bivariate( Fit Line ), DOE );
 
 ### Get Platform Preferences
 
-**構文:** Get Platform Preferences( < platformName < ( optionName, ... ) > ... > )
+**構文:** Get Platform Preferences( &lt; platformName &lt; ( optionName, ... ) &gt; ... &gt; )
 
 **説明:** 指定されたプラットフォームの環境設定を取得する。
 
@@ -723,7 +717,7 @@ Get Platform Preferences( Bivariate( Fit Line ), DOE );
 
 ### Get Policies
 
-**構文:** Get Policies( <Machine|User|Both> )
+**構文:** Get Policies( &lt;Machine|User|Both&gt; )
 
 **説明:** 現在のポリシーの名前と値を含んだ連想配列を戻す。
 
@@ -1113,7 +1107,7 @@ New Window( "editor", Script Box( x ) );
 
 ### Load DLL
 
-**構文:** dll = Load DLL( file path | Base Name( file path without extension ), < AutoDeclare( bool | Quiet | Verbose) | Quiet | Verbose )> )
+**構文:** dll = Load DLL( file path | Base Name( file path without extension ), &lt; AutoDeclare( bool | Quiet | Verbose) | Quiet | Verbose )&gt; )
 
 **説明:** 指定のパスによって示されたDLLをロードする。
 
@@ -1150,7 +1144,7 @@ If( Host is( "Windows" ),
 
 ### Log Table Messages
 
-**構文:** Log Table Messages( <On|Off>, <Enable(subject, ...)>, <Disable(subject, ...)>, <Include(msgname, ...)>, <Exclude(msgname, )>
+**構文:** Log Table Messages( &lt;On|Off&gt;, &lt;Enable(subject, ...)&gt;, &lt;Disable(subject, ...)&gt;, &lt;Include(msgname, ...)&gt;, &lt;Exclude(msgname, )&gt;
 
 **説明:** Control logging of data table messages (such as DtMsgClose). By default logging is off, but all subjects are enabled. (If you turn logging on, you do not need to enable the subjects you&apos;re interested in.) Only a subset of all messages are logged. Not available in retail builds.
 
@@ -1213,7 +1207,7 @@ Log Table Messages( Disable( "Table" ) );
 
 ### Mail
 
-**構文:** Mail( "address", "subject", "message", <"attachment filepath"> | { "attachment filepath", ...} )
+**構文:** Mail( "address", "subject", "message", &lt;"attachment filepath"&gt; | { "attachment filepath", ...} )
 
 **説明:** オペレーティングシステムで許可されている場合、指定に従って送信用メールメッセージを作成する。オペレーティングシステムのバージョンによっては、一部のオプションが機能しない可能性がある。詳しくはヘルプを参照。
 
@@ -1228,7 +1222,7 @@ Mail( "test@example.com", "revelation", "JMP is great.", "$SAMPLE_DATA/Big Class
 
 ### Main Menu
 
-**構文:** menu = Main Menu( command, <window name> )
+**構文:** menu = Main Menu( command, &lt;window name&gt; )
 
 **説明:** 指定したメインメニューのコマンドを実行する。
 
@@ -1339,7 +1333,7 @@ Print( tax * Name( "taxable income(2011)" ) );
 
 ### New Clipboard
 
-**構文:** clp = New Clipboard( <<<Get From OS> )
+**構文:** clp = New Clipboard( &lt;&lt;&lt;Get From OS&gt; )
 
 **説明:** Creates a new Clipboard, either empty or with access to the OS clipboard.
 
@@ -1357,7 +1351,7 @@ New Window( "Img", clp << Get Flavor Data( "Graphic" ) )
 
 ### New HTTP Request
 
-**構文:** obj = New HTTP Request(URL(...), Method(...), <Form(<Fields(...)>, <Files(...)>)> | <File(...)> | <Blob(...)> | <JSON(...)>, <QueryString(...)>, <Headers(...)>, <Username(...)>, <Password(...)>)
+**構文:** obj = New HTTP Request(URL(...), Method(...), &lt;Form(&lt;Fields(...)&gt;, &lt;Files(...)&gt;)&gt; | &lt;File(...)&gt; | &lt;Blob(...)&gt; | &lt;JSON(...)&gt;, &lt;QueryString(...)&gt;, &lt;Headers(...)&gt;, &lt;Username(...)&gt;, &lt;Password(...)&gt;)
 
 **説明:** Webサービスに送るリクエストを作成する。
 
@@ -1776,7 +1770,7 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ### Polytope Uniform Random
 
-**構文:** points = Polytope Uniform Random( numSamples, A, b, L, U, neq, nle, nge, <nwarm=200>, <nstride=25> )
+**構文:** points = Polytope Uniform Random( numSamples, A, b, L, U, neq, nle, nge, &lt;nwarm=200&gt;, &lt;nstride=25&gt; )
 
 **説明:** 凸多面体上に一様乱数の点を生成する。引数numSamplesは生成される乱数の個数。引数Aは制約式の係数を表す行列。引数Bは制約式の右辺値。引数LおよびUは、それぞれ変数の下限および上限。引数neqは等号制約式の数。引数mleは「以下」を示す不等号制約式の数。引数ngeは「以上」を示す不等号制約式の数。引数nwarmは点を結果に出力する前のウォームアップの反復回数。引数nstrideは結果に出力する際の間隔(出力する点と点の間の反復回数)。制約は、等号制約、「以下」を示す不等号制約、「以上」を示す不等号制約の順に指定すること。
 
@@ -1872,7 +1866,7 @@ Preferences( Graph marker size( "Large" ) );
 
 ### Register Addin
 
-**構文:** Register Addin( uniqueId, homeFolder, <displayName(name)>, <MinJMPVersion(version)>, <MaxJMPVersion(version)>, <LoadsAtStartup(autoLoad)>, <LoadNow(load)> )
+**構文:** Register Addin( uniqueId, homeFolder, &lt;displayName(name)&gt;, &lt;MinJMPVersion(version)&gt;, &lt;MaxJMPVersion(version)&gt;, &lt;LoadsAtStartup(autoLoad)&gt;, &lt;LoadNow(load)&gt; )
 
 **説明:** アドインを登録する。
 
@@ -1957,19 +1951,7 @@ Show( Rummage( Window( dt ), "graph builder", Algorithm( "Basic" ) )[1 :: 3] << 
 
 ### Run Program
 
-**構文:** obj = Run Program(
-
-    Executable( "path/etc.exe" ),
-
-  < Options( {"/a", "/b etc" } ) >,
-
-  < Parameter( optParm ) >,
-
-  < Read Function( Function( {this, optParm}, etc ) | "text" | "blob" ) >,
-
-  < Write Function( Function( {this, optParm}, etc ) ) >
-
-)
+**構文:** obj = Run Program( Executable( "path/etc.exe" ), &lt; Options( {"/a", "/b etc" } ) &gt;, &lt; Parameter( optParm ) &gt;, &lt; Read Function( Function( {this, optParm}, etc ) | "text" | "blob" ) &gt;, &lt; Write Function( Function( {this, optParm}, etc ) ) &gt;)
 
 **説明:** 標準入力(stdin)と標準出力(stdout)を使って外部プログラムを実行する。
 
@@ -2094,7 +2076,7 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ### Set Policy
 
-**構文:** Set Policy("PolicyName", <Empty()|#|"value"> )
+**構文:** Set Policy("PolicyName", &lt;Empty()|#|"value"&gt; )
 
 **JMP追加されたバージョン:** 18
 
@@ -2130,7 +2112,7 @@ Preferences( Graph marker size( "Large" ) );
 
 ### Set Toolbar Visibility
 
-**構文:** rc = Set Toolbar Visibility( "toolbar-name" | Default | All, <window-class-name | All>, <True | False> )
+**構文:** rc = Set Toolbar Visibility( "toolbar-name" | Default | All, &lt;window-class-name | All&gt;, &lt;True | False&gt; )
 
 **説明:** 指定したウィンドウクラスの特定のツールバーに対し、表示させるか否かを設定する。toolbar-nameは、ツールバーの内部名。ツールバー名としてDefaultを指定した場合、ウィンドウクラスに対し、そのウィンドウクラスに設定されているデフォルトのツールバーが復元される。ウィンドウクラス名は、Data Table、Script、Report、Journalなど。window-class-nameをAllとした場合、指定したツールバーがすべてのウィンドウクラスで表示される。
 
@@ -2210,7 +2192,7 @@ Show Addins Dialog();
 
 ### Show Commands
 
-**構文:** Show Commands( <keyword=Builtins> )
+**構文:** Show Commands( &lt;keyword=Builtins&gt; )
 
 **説明:** JSLで用意されている関数やメッセージに関する情報を含むデータテーブルを作成する。keyword引数は、データテーブルに出力する内容を決定する。ビルトインの演算子および関数を一覧するデータテーブルを作成したい場合には、Builtins(デフォルト)を指定する。オブジェクトに対するスクリプト可能コマンドを一覧するデータテーブルを作成したい場合には、Scriptablesを指定する。オブジェクトに対するスクリプト可能コマンドの英語版およびローカライズ版を一覧するデータテーブルを作成したい場合には、Translationsを指定する。ディスプレイボックスやディスプレイセグメントに関連するスクリプト可能コマンドを一覧するデータテーブルを作成するには、Display Boxesを指定する。スクリプト可能オブジェクトの名前を一覧するデータテーブルを作成したい場合には、Scriptable Namesを指定する。プラットフォームの名前を一覧するデータテーブルを作成したい場合には、Platform Namesを指定する。
 
@@ -2272,7 +2254,7 @@ Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
 
 ### Socket
 
-**構文:** socketHandle = Socket( <STREAM | DGRAM> )
+**構文:** socketHandle = Socket( &lt;STREAM | DGRAM&gt; )
 
 **説明:** このコンピュータまたはネットワーク上の別のコンピュータとソケット通信するためのソケット変数を作成する。デフォルトの引数はSTREAM。各自のWebサイトで試してみてください。
 
@@ -2317,7 +2299,7 @@ If( rc[2] == "ok",
 
 ### Speak
 
-**構文:** Speak( text, <Wait( sync )> )
+**構文:** Speak( text, &lt;Wait( sync )&gt; )
 
 **説明:** オペレーティングシステムがサポートしていれば、テキストを音声で読み上げる。引数Wait(true)は音声が終了するまでの遅延時間。
 
@@ -2389,7 +2371,7 @@ Unregister Addin( "com.mycompany.myaddin" );
 
 ### Web
 
-**構文:** Web( string, <JMP Window> )
+**構文:** Web( string, &lt;JMP Window&gt; )
 
 **説明:**  stringで指定されたURLまたはファイルをデフォルトのWebブラウザで開く。オプションの2つ目の引数を指定すると、JMPの中のブラウザウィンドウでページが開く。
 
@@ -2434,7 +2416,7 @@ Web( "http://www.jmp.com/" );
 
 ### With Clipboard
 
-**構文:** two = With Clipboard( clp, box << Paste; 1 + 1 )
+**構文:** two = With Clipboard( clp, box &lt;&lt; Paste; 1 + 1 )
 
 **説明:** If the JSL within this function would have normally pasted something from the OS Clipboard, it is instead pasted from the provided Clipboard object.
 

@@ -6,7 +6,7 @@
 
 ### Action
 
-**语法:** obj << Action
+**语法:** obj &lt;&lt; Action
 
 **说明:** 平台内用于插入表达式以求值的所有用途的陷门。暂时将 DisplayBox 和 DataTable 上下文设置为平台。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**语法:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**语法:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **说明:** 将以前创建的预设应用到对象，从而更新选项和定制以匹配保存的设置。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**语法:** obj << Automatic Recalc( state=0|1 )
+**语法:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **说明:** 对排除和数据更改自动重新执行分析。若启用了“自动重新计算”选项，则应考虑使用 Wait(0) 命令来确保排除和数据更改在重新计算前生效。
 
@@ -104,7 +104,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**语法:** obj << Broadcast(message)
+**语法:** obj &lt;&lt; Broadcast(message)
 
 **说明:** 将消息广播到平台。若各个对象的返回结果是表，则它们会尽可能拼接，并且最终格式与表框中“保存合并表”选项的结果或使用“源”列的“拼接”选项的结果相同。除此之外，结果存储在列表中并返回。
 
@@ -124,7 +124,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**语法:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**语法:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **说明:** 添加用于更改平台变量的控制面板
 
@@ -142,7 +142,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**语法:** obj << Copy ByGroup Script
+**语法:** obj &lt;&lt; Copy ByGroup Script
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其置于剪贴板上。
 
@@ -180,7 +180,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**语法:** obj << Copy Script
+**语法:** obj &lt;&lt; Copy Script
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其置于剪贴板上。
 
@@ -212,7 +212,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**语法:** obj << Data Table Window
+**语法:** obj &lt;&lt; Data Table Window
 
 **说明:** 将该分析的数据表窗口移动到前面。
 
@@ -244,7 +244,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**语法:** obj << Get By Levels
+**语法:** obj &lt;&lt; Get By Levels
 
 **说明:** 返回将“依据”组列映射到其值的关联数组。
 
@@ -261,7 +261,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**语法:** obj << Get ByGroup Script
+**语法:** obj &lt;&lt; Get ByGroup Script
 
 **说明:** 创建生成该分析的脚本 (JSL)，并将其作为表达式返回。
 
@@ -300,7 +300,7 @@ Show( t );
 
 ### Get Container
 
-**语法:** obj << Get Container
+**语法:** obj &lt;&lt; Get Container
 
 **说明:** 返回对保留对象内容的容器框的引用。
 
@@ -364,7 +364,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**语法:** obj << Get Data Table
+**语法:** obj &lt;&lt; Get Data Table
 
 **说明:** 返回对该数据表的引用。
 
@@ -397,7 +397,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**语法:** obj << Get Group Platform
+**语法:** obj &lt;&lt; Get Group Platform
 
 **说明:** 若该平台是组的一部分，则返回组平台对象。否则返回 Empty()。
 
@@ -414,7 +414,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**语法:** obj << Get Script
+**语法:** obj &lt;&lt; Get Script
 
 **说明:** 创建生成该分析的脚本 (JSL)，并将其作为表达式返回。
 
@@ -447,7 +447,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**语法:** obj << Get Script With Data Table
+**语法:** obj &lt;&lt; Get Script With Data Table
 
 **说明:** 创建生成该分析的脚本 (JSL) 以专门引用该数据表，并将其作为表达式返回。
 
@@ -480,7 +480,7 @@ Show( t );
 
 ### Get Timing
 
-**语法:** obj << Get Timing
+**语法:** obj &lt;&lt; Get Timing
 
 **说明:** 平台启动过程计时。
 
@@ -513,7 +513,7 @@ Show( t );
 
 ### Get Web Support
 
-**语法:** obj << Get Web Support
+**语法:** obj &lt;&lt; Get Web Support
 
 **说明:** 返回一个数字，指示显示对象的交互式 HTML 支持的水平。1 表示支持部分或全部元素。0 表示不支持。
 
@@ -529,7 +529,7 @@ Show( s );
 
 ### Get Where Expr
 
-**语法:** obj << Get Where Expr
+**语法:** obj &lt;&lt; Get Where Expr
 
 **说明:** 若平台是使用 By() 或 Where() 启动的，则返回数据子集的 Where 表达式。否则返回 Empty()
 
@@ -566,7 +566,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**语法:** obj << Local Data Filter
+**语法:** obj &lt;&lt; Local Data Filter
 
 **说明:** 将数据过滤到特定的组或范围，但在该平台中是本地的
 
@@ -622,7 +622,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**语法:** obj << Paste Local Data Filter
+**语法:** obj &lt;&lt; Paste Local Data Filter
 
 **说明:** 将剪贴板中的本地数据过滤器应用于当前报表。
 
@@ -643,7 +643,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**语法:** obj << Redo Analysis
+**语法:** obj &lt;&lt; Redo Analysis
 
 **说明:** 在新窗口中重新运行相同的分析。若数据发生更改，分析也将不同。
 
@@ -675,7 +675,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**语法:** obj << Redo ByGroup Analysis
+**语法:** obj &lt;&lt; Redo ByGroup Analysis
 
 **说明:** 在新窗口中重新运行相同的分析。若数据发生更改，分析也将不同。
 
@@ -713,7 +713,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**语法:** obj << Relaunch Analysis
+**语法:** obj &lt;&lt; Relaunch Analysis
 
 **说明:** 打开平台启动窗口并重新调用曾用于创建报表的设置。
 
@@ -745,7 +745,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**语法:** obj << Relaunch ByGroup
+**语法:** obj &lt;&lt; Relaunch ByGroup
 
 **说明:** 打开平台启动窗口并重新调用曾用于创建报表的设置。
 
@@ -783,7 +783,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**语法:** obj << Remove Column Switcher
+**语法:** obj &lt;&lt; Remove Column Switcher
 
 **说明:** 删除已添加至平台的最近使用的“列切换器”。
 
@@ -803,7 +803,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**语法:** obj << Remove Local Data Filter
+**语法:** obj &lt;&lt; Remove Local Data Filter
 
 **说明:** 若已创建本地数据过滤器，这会将它删除并将平台恢复为直接使用数据表中的所有数据
 
@@ -842,9 +842,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**语法:** obj << Report;
-
-Report( obj )
+**语法:** obj &lt;&lt; Report;Report( obj )
 
 **说明:** 返回对该报表对象的引用。
 
@@ -878,7 +876,7 @@ Show( t );
 
 ### Report View
 
-**语法:** obj << Report View( "完全"|"汇总" )
+**语法:** obj &lt;&lt; Report View( "完全"|"汇总" )
 
 **说明:** 报表视图确定平台报表中可见的详细程度。Full 显示所有详细信息，而 Summary 仅显示根据平台确定的选定内容。对于定制行为，显示框支持 <<Set Summary Behavior 消息。
 
@@ -910,7 +908,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**语法:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**语法:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **说明:** 创建生成该分析的 JSL 脚本并将其保存为数据表中的表属性。您可以为脚本指定一个名称。Append Suffix 选项在脚本名称后追加一个数字后缀，用于将该脚本与现有的同名脚本区别出来。Prompt 选项提示用户指定脚本名称。Replace 选项会替换同名的现有脚本。
 
@@ -948,7 +946,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**语法:** obj << Save ByGroup Script to Journal
+**语法:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **说明:** 创建生成该分析的 JSL 脚本，并将一个按钮添加至包含该脚本的记录中。
 
@@ -986,7 +984,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**语法:** obj << Save ByGroup Script to Script Window
+**语法:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其追加至当前的脚本文本窗口中。
 
@@ -1024,7 +1022,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**语法:** obj << Save Script for All Objects
+**语法:** obj &lt;&lt; Save Script for All Objects
 
 **说明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -1056,7 +1054,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**语法:** obj << Save Script for All Objects To Data Table( <name> )
+**语法:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **说明:** 将所有报表对象的脚本保存至当前数据表。当您在该窗口中具有多个报表时，该选项很有用。除非您在引号中指定脚本名称，否则脚本将以第一个平台命名。
 
@@ -1130,7 +1128,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**语法:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**语法:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其作为表属性保存至数据表中。
 
@@ -1162,7 +1160,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**语法:** obj << Save Script to Journal
+**语法:** obj &lt;&lt; Save Script to Journal
 
 **说明:** 创建生成该分析的 JSL 脚本，并将一个按钮添加至包含该脚本的记录中。
 
@@ -1194,7 +1192,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**语法:** obj << Save Script to Report
+**语法:** obj &lt;&lt; Save Script to Report
 
 **说明:** 创建生成该分析的 JSL 脚本，并在报表中显示。有助于保留打印的已完成操作记录。
 
@@ -1226,7 +1224,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**语法:** obj << Save Script to Script Window
+**语法:** obj &lt;&lt; Save Script to Script Window
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其追加至当前的脚本文本窗口中。
 
@@ -1323,7 +1321,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**语法:** obj << Sync to Data Table Changes
+**语法:** obj &lt;&lt; Sync to Data Table Changes
 
 **说明:** 与已进行的排除和数据的更改同步。
 
@@ -1340,7 +1338,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**语法:** obj << Title( "new title" )
+**语法:** obj &lt;&lt; Title( "new title" )
 
 **说明:** 设置平台的标题。
 
@@ -1372,7 +1370,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**语法:** obj << Top Report
+**语法:** obj &lt;&lt; Top Report
 
 **说明:** 返回对报表中根节点的引用。
 
@@ -1406,7 +1404,7 @@ Show( t );
 
 ### Transform Column
 
-**语法:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**语法:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **说明:** 在对象（通常是平台）的本地上下文中创建变换列。变换列仅在平台的生命周期内是活动的。
 
@@ -1427,7 +1425,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**语法:** obj << View Web XML
+**语法:** obj &lt;&lt; View Web XML
 
 **说明:** 返回用于创建交互式 HTML 报表的 XML 代码。
 
@@ -1442,9 +1440,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**语法:** obj = Structural Equation Models(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Structural Equation Models(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 设置要为报表创建的窗口类型。默认情况下将创建 Visible 报表窗口。Invisible 窗口将不显示在屏幕上，但可被函数（例如 Window()）发现。Private 窗口会响应大多数窗口消息，但不可发现并且必须通过报表对象处理
 
@@ -1500,7 +1496,7 @@ obj = dt << Structural Equation Models(
 
 ### Freq
 
-**语法:** obj << Freq( column )
+**语法:** obj &lt;&lt; Freq( column )
 
 ```jsl
 
@@ -1531,7 +1527,7 @@ obj = dt << Structural Equation Models(
 
 ### Groups
 
-**语法:** obj << Groups( column )
+**语法:** obj &lt;&lt; Groups( column )
 
 **说明:** 指定执行多组分析的分组变量。
 
@@ -1545,7 +1541,7 @@ dt << Structural Equation Models( Model Variables( 4 :: 7 ), Groups( :Sex ) );
 
 ### Mean
 
-**语法:** obj = Structural Equation Models(...<Mean( column )>...)
+**语法:** obj = Structural Equation Models(...&lt;Mean( column )&gt;...)
 
 **说明:** 指定相关性矩阵或协方差矩阵中每个外显变量的均值。
 
@@ -1574,7 +1570,7 @@ Data Table( "Correlation" ) << Structural Equation Models(
 
 ### Model Variables
 
-**语法:** obj << Model Variables( column(s) )
+**语法:** obj &lt;&lt; Model Variables( column(s) )
 
 **说明:** 指定要提交进行分析的变量。
 
@@ -1592,7 +1588,7 @@ obj = dt << Structural Equation Models(
 
 ### Std Dev
 
-**语法:** obj = Structural Equation Models(...<Std Dev( column )>...)
+**语法:** obj = Structural Equation Models(...&lt;Std Dev( column )&gt;...)
 
 **说明:** 指定相关性矩阵中每个外显变量的标准差。
 
@@ -1621,7 +1617,7 @@ Data Table( "Correlation" ) << Structural Equation Models(
 
 ### Weight
 
-**语法:** obj << Weight( column )
+**语法:** obj &lt;&lt; Weight( column )
 
 ```jsl
 
@@ -1654,7 +1650,7 @@ obj = dt << Structural Equation Models(
 
 ### Add Manifest Variables
 
-**语法:** obj << Add Manifest Variables
+**语法:** obj &lt;&lt; Add Manifest Variables
 
 **说明:** 使用现有的模型规格并包括新添加的显变量重新启动平台。
 
@@ -1671,7 +1667,7 @@ obj << Add Manifest Variables();
 
 ### Bootstrap Inference
 
-**语法:** obj << Bootstrap Inference
+**语法:** obj &lt;&lt; Bootstrap Inference
 
 **说明:** 在 SEM 报表的可用拟合模型中，为用户指定的估计值选择执行 Bootstrapping。
 
@@ -1688,7 +1684,7 @@ obj << Bootstrap Inference( Parameter Estimates( 1 ), Indirect Effects( 1 ) );
 
 ### Compare Selected Models
 
-**语法:** obj << Compare Selected Models
+**语法:** obj &lt;&lt; Compare Selected Models
 
 **说明:** 比较在“模型比较”表中选择的模型。
 
@@ -1705,7 +1701,7 @@ obj << Compare Selected Models( {"Orthogonal 3-Factor CFA", "3-Factor CFA"} );
 
 ### Copy Diagram Properties
 
-**语法:** obj << Copy Diagram Properties
+**语法:** obj &lt;&lt; Copy Diagram Properties
 
 **说明:** 将当前路径图属性复制到剪贴板。然后，您可以将属性粘贴到另一个 SEM 路径图中。
 
@@ -1725,7 +1721,7 @@ obj2 << Paste Diagram Properties();
 
 ### Copy Model Specification
 
-**语法:** obj << Copy Model Specification
+**语法:** obj &lt;&lt; Copy Model Specification
 
 **说明:** 将当前结构化方程模型规格复制到剪贴板。然后，您可以将模型规格粘贴到另一个 SEM 平台报表中。
 
@@ -1783,7 +1779,7 @@ obj = dt << Structural Equation Models(
 
 ### Fit
 
-**语法:** obj << Fit
+**语法:** obj &lt;&lt; Fit
 
 **说明:** 确定要拟合的结构化方程模型。
 
@@ -1835,7 +1831,7 @@ obj = dt << Structural Equation Models(
 
 ### Fit Unrestricted Model
 
-**语法:** obj << Fit Unrestricted Model( state=0|1 )
+**语法:** obj &lt;&lt; Fit Unrestricted Model( state=0|1 )
 
 **说明:** 禁止在启动平台时拟合不受限制（又称饱和）的模型。
 
@@ -1854,7 +1850,7 @@ obj = dt << Structural Equation Models(
 
 ### Full Information Multivariate Statistics
 
-**语法:** obj << Full Information Multivariate Statistics( state=0|1 )
+**语法:** obj &lt;&lt; Full Information Multivariate Statistics( state=0|1 )
 
 **说明:** 显示或隐藏多元简单统计量报表，其中使用全信息最大似然估计统计量，来解释缺失数据。
 
@@ -1873,7 +1869,7 @@ obj << Full Information Multivariate Statistics( 1 );
 
 ### Generate R Code
 
-**语法:** obj << Generate R Code
+**语法:** obj &lt;&lt; Generate R Code
 
 **说明:** 为当前指定的模型生成 R 代码。该代码写入脚本编辑器窗口。
 
@@ -1890,7 +1886,7 @@ obj << Generate R Code();
 
 ### Hide Model
 
-**语法:** obj << Hide Model
+**语法:** obj &lt;&lt; Hide Model
 
 **说明:** 根据模型比较表中的选择隐藏模型。
 
@@ -1919,7 +1915,7 @@ obj = dt << Structural Equation Models(
 
 ### Launch Explore Missing Values
 
-**语法:** obj << Launch Explore Missing Values
+**语法:** obj &lt;&lt; Launch Explore Missing Values
 
 **说明:** 启动“探索缺失值”平台。
 
@@ -1938,7 +1934,7 @@ obj << Launch Explore Missing Values( 1 );
 
 ### Launch Explore Outliers
 
-**语法:** obj << Launch Explore Outliers
+**语法:** obj &lt;&lt; Launch Explore Outliers
 
 **说明:** 启动“探索离群值”平台。
 
@@ -1957,7 +1953,7 @@ obj << Launch Explore Outliers( 1 );
 
 ### Model Specification
 
-**语法:** obj << Model Specification
+**语法:** obj &lt;&lt; Model Specification
 
 **说明:** 启用结构化方程模型的规格。
 
@@ -1980,7 +1976,7 @@ obj = dt << Structural Equation Models(
 
 ### Paste Diagram Properties
 
-**语法:** obj << Paste Diagram Properties
+**语法:** obj &lt;&lt; Paste Diagram Properties
 
 **说明:** 将剪贴板中的路径图属性粘贴到当前 SEM 路径图中。
 
@@ -2000,7 +1996,7 @@ obj2 << Paste Diagram Properties();
 
 ### Paste Model Specification
 
-**语法:** obj << Paste Model Specification
+**语法:** obj &lt;&lt; Paste Model Specification
 
 **说明:** 将剪贴板中的模型规格粘贴到当前的模型规格中。
 
@@ -2021,7 +2017,7 @@ obj2 << Paste Model Specification();
 
 ### Path Diagram Properties
 
-**语法:** obj << Path Diagram Properties
+**语法:** obj &lt;&lt; Path Diagram Properties
 
 **JMP添加的版本:** 15
 
@@ -2061,7 +2057,7 @@ obj = dt << Structural Equation Models(
 
 ### Remove Manifest Variables
 
-**语法:** obj << Remove Manifest Variables
+**语法:** obj &lt;&lt; Remove Manifest Variables
 
 **说明:** 使用现有的模型规格但不含删除的显变量重新启动平台。
 
@@ -2078,7 +2074,7 @@ obj << Remove Manifest Variables();
 
 ### Reset Independence Model
 
-**语法:** obj << Reset Independence Model
+**语法:** obj &lt;&lt; Reset Independence Model
 
 **说明:** 将用户指定的独立模型替换为默认独立模型。
 
@@ -2096,7 +2092,7 @@ obj << Reset Independence Model();
 
 ### Robust Inference
 
-**语法:** obj << Robust Inference( state=0|1 )
+**语法:** obj &lt;&lt; Robust Inference( state=0|1 )
 
 **说明:** 计算 ML 或 FIML 参数估计值的夹心标准误差以及稳健拟合统计量。该选项用于假定服从连续基本分布的非正态分布结果。
 
@@ -2113,7 +2109,7 @@ obj << Robust Inference( 1 );
 
 ### Set as Independence Model
 
-**语法:** obj << Set as Independence Model( number )
+**语法:** obj &lt;&lt; Set as Independence Model( number )
 
 **说明:** 将默认独立模型替换为用户指定的独立模型。
 
@@ -2151,7 +2147,7 @@ obj = dt << Structural Equation Models(
 
 ### Univariate Simple Statistics
 
-**语法:** obj << Univariate Simple Statistics( state=0|1 )
+**语法:** obj &lt;&lt; Univariate Simple Statistics( state=0|1 )
 
 **说明:** 显示或隐藏一元简单统计量报表，在为每一列计算统计量时不用考虑可能有缺失数据的其他列。
 
@@ -2174,7 +2170,7 @@ obj << Univariate Simple Statistics( 1 );
 
 #### All Modification Indices
 
-**语法:** obj << All Modification Indices( state=0|1 )
+**语法:** obj &lt;&lt; All Modification Indices( state=0|1 )
 
 **说明:** 显示或隐藏包含模型修改指标估计值的报表。这些值可用于确定可以向模型添加哪些参数以改进模型拟合。
 
@@ -2191,7 +2187,7 @@ obj << Modification Indices( 1 );
 
 #### Assess Measurement Model
 
-**语法:** obj << Assess Measurement Model( state=0|1 )
+**语法:** obj &lt;&lt; Assess Measurement Model( state=0|1 )
 
 **说明:** 显示或隐藏用于量化关于检验和测度的可靠性和有效性的各种统计量，包括指示符可靠性、系数 omega 和 H 以及构造有效性矩阵。
 
@@ -2208,7 +2204,7 @@ obj << Assess Measurement Model( 1 );
 
 #### Confidence Intervals
 
-**语法:** obj << Confidence Intervals( state=0|1 )
+**语法:** obj &lt;&lt; Confidence Intervals( state=0|1 )
 
 **说明:** 显示或隐藏全部参数估计值的 95% 置信区间。
 
@@ -2225,7 +2221,7 @@ obj << Confidence Intervals( 1 );
 
 #### Copy Diagram Properties
 
-**语法:** obj << Copy Diagram Properties
+**语法:** obj &lt;&lt; Copy Diagram Properties
 
 **说明:** 将当前路径图属性复制到剪贴板。然后，您可以将属性粘贴到另一个 SEM 路径图中。
 
@@ -2245,7 +2241,7 @@ obj2 << Paste Diagram Properties();
 
 #### Copy Model Specification
 
-**语法:** obj << Copy Model Specification
+**语法:** obj &lt;&lt; Copy Model Specification
 
 **说明:** 将当前结构化方程模型规格复制到剪贴板。然后，您可以将模型规格粘贴到另一个 SEM 平台报表中。
 
@@ -2264,7 +2260,7 @@ obj2 << Paste Model Specification();
 
 #### Correlation of Estimates
 
-**语法:** obj << Correlation of Estimates( state=0|1 )
+**语法:** obj &lt;&lt; Correlation of Estimates( state=0|1 )
 
 **说明:** 显示或隐藏包含模型参数估计值的相关性矩阵的报表。
 
@@ -2281,7 +2277,7 @@ obj << Correlation of Estimates( 1 );
 
 #### Correlation of Estimates Heat Map
 
-**语法:** obj << Correlation of Estimates Heat Map( state=0|1 )
+**语法:** obj &lt;&lt; Correlation of Estimates Heat Map( state=0|1 )
 
 **说明:** 显示或隐藏包含模型估计值中相关性热图的报表。
 
@@ -2298,7 +2294,7 @@ obj << Correlation of Estimates Heat Map( 1 );
 
 #### Covariance of Estimates
 
-**语法:** obj << Covariance of Estimates( state=0|1 )
+**语法:** obj &lt;&lt; Covariance of Estimates( state=0|1 )
 
 **说明:** 显示或隐藏包含模型参数估计值的协方差矩阵的报表。
 
@@ -2315,7 +2311,7 @@ obj << Covariance of Estimates( 1 );
 
 #### Covariance of Estimates Heat Map
 
-**语法:** obj << Covariance of Estimates Heat Map( state=0|1 )
+**语法:** obj &lt;&lt; Covariance of Estimates Heat Map( state=0|1 )
 
 **说明:** 显示或隐藏包含模型估计值中协方差热图的报表。
 
@@ -2332,7 +2328,7 @@ obj << Covariance of Estimates Heat Map( 1 );
 
 #### Covariances
 
-**语法:** obj << Covariances
+**语法:** obj &lt;&lt; Covariances
 
 **说明:** 在模型中添加变量间的协方差。
 
@@ -2353,7 +2349,7 @@ obj = dt << Structural Equation Models(
 
 #### Define Time Values
 
-**语法:** obj << Define Time Values
+**语法:** obj &lt;&lt; Define Time Values
 
 **说明:** 定义重复观测的测量场合。这些值用于指定纵向模型。
 
@@ -2393,7 +2389,7 @@ obj = dt << Structural Equation Models(
 
 #### Equation Details
 
-**语法:** obj << Equation Details( state=0|1 )
+**语法:** obj &lt;&lt; Equation Details( state=0|1 )
 
 **说明:** 显示或隐藏包含模型中每个方程详细信息的报表。
 
@@ -2425,7 +2421,7 @@ obj << Equation Details( 0 );
 
 #### Fit Indices
 
-**语法:** obj << Fit Indices( state=0|1 )
+**语法:** obj &lt;&lt; Fit Indices( state=0|1 )
 
 **说明:** 显示或隐藏包含模型拟合指数的报表。
 
@@ -2442,7 +2438,7 @@ obj << Fit Indices( 1 );
 
 #### Indirect Effects
 
-**语法:** obj << Indirect Effects( state=0|1 )
+**语法:** obj &lt;&lt; Indirect Effects( state=0|1 )
 
 **说明:** 显示或隐藏模型中的所有可用间接效应。
 
@@ -2457,7 +2453,7 @@ obj << Indirect Effects( 1 );
 
 #### Loadings
 
-**语法:** obj << Loadings
+**语法:** obj &lt;&lt; Loadings
 
 **说明:** 将载荷作为潜在变量添加到模型中。
 
@@ -2485,7 +2481,7 @@ obj = dt << Structural Equation Models(
 
 #### Means/Intercepts
 
-**语法:** obj << Means/Intercepts
+**语法:** obj &lt;&lt; Means/Intercepts
 
 **说明:** 将均值或截距作为变量添加到模型中。
 
@@ -2510,7 +2506,7 @@ obj = dt << Structural Equation Models(
 
 #### Model Implied Correlations
 
-**语法:** obj << Model Implied Correlations( state=0|1 )
+**语法:** obj &lt;&lt; Model Implied Correlations( state=0|1 )
 
 **说明:** 显示或隐藏包含模型所隐含相关性矩阵的报表。
 
@@ -2527,7 +2523,7 @@ obj << Model Implied Correlations( 1 );
 
 #### Model Implied Correlations Heat Map
 
-**语法:** obj << Model Implied Correlations Heat Map( state=0|1 )
+**语法:** obj &lt;&lt; Model Implied Correlations Heat Map( state=0|1 )
 
 **说明:** 显示或隐藏包含模型所隐含相关性热图的报表。
 
@@ -2544,7 +2540,7 @@ obj << Model Implied Correlations Heat Map( 1 );
 
 #### Model Implied Covariances
 
-**语法:** obj << Model Implied Covariances( state=0|1 )
+**语法:** obj &lt;&lt; Model Implied Covariances( state=0|1 )
 
 **说明:** 显示或隐藏包含模型所隐含协方差矩阵的报表。
 
@@ -2561,7 +2557,7 @@ obj << Model Implied Covariances( 1 );
 
 #### Model Implied Covariances Heat Map
 
-**语法:** obj << Model Implied Covariances Heat Map( state=0|1 )
+**语法:** obj &lt;&lt; Model Implied Covariances Heat Map( state=0|1 )
 
 **说明:** 显示或隐藏包含模型所隐含协方差热图的报表。
 
@@ -2578,7 +2574,7 @@ obj << Model Implied Covariances Heat Map( 1 );
 
 #### Model Implied Means
 
-**语法:** obj << Model Implied Means( state=0|1 )
+**语法:** obj &lt;&lt; Model Implied Means( state=0|1 )
 
 **说明:** 显示或隐藏包含模型所隐含每个变量均值的报表。
 
@@ -2595,7 +2591,7 @@ obj << Model Implied Means( 1 );
 
 #### Model Name
 
-**语法:** obj << Model Name
+**语法:** obj &lt;&lt; Model Name
 
 **说明:** 设置模型名称。
 
@@ -2618,7 +2614,7 @@ obj = dt << Structural Equation Models(
 
 #### Modification Indices
 
-**语法:** obj << Modification Indices( state=0|1 )
+**语法:** obj &lt;&lt; Modification Indices( state=0|1 )
 
 **说明:** 显示或隐藏包含模型修改指标估计值的报表。这些值可用于确定可以向模型添加哪些参数以改进模型拟合。
 
@@ -2635,7 +2631,7 @@ obj << Modification Indices( 1 );
 
 #### Modification Indices for Covariances
 
-**语法:** obj << Modification Indices for Covariances( state=0|1 )
+**语法:** obj &lt;&lt; Modification Indices for Covariances( state=0|1 )
 
 **说明:** 显示或隐藏包含模型修改指标估计值的报表。这些值可用于确定可以向模型添加哪些参数以改进模型拟合。
 
@@ -2652,7 +2648,7 @@ obj << Modification Indices for Covariances( 1 );
 
 #### Modification Indices for Loadings
 
-**语法:** obj << Modification Indices for Loadings( state=0|1 )
+**语法:** obj &lt;&lt; Modification Indices for Loadings( state=0|1 )
 
 **说明:** 显示或隐藏包含模型修改指标估计值的报表。这些值可用于确定可以向模型添加哪些参数以改进模型拟合。
 
@@ -2669,7 +2665,7 @@ obj << Modification Indices for Loadings( 1 );
 
 #### Modification Indices for Means
 
-**语法:** obj << Modification Indices for Means( state=0|1 )
+**语法:** obj &lt;&lt; Modification Indices for Means( state=0|1 )
 
 **说明:** 显示或隐藏包含模型修改指标估计值的报表。这些值可用于确定可以向模型添加哪些参数以改进模型拟合。
 
@@ -2712,7 +2708,7 @@ obj << Modification Indices for Means( 1 );
 
 #### Modification Indices for Regressions
 
-**语法:** obj << Modification Indices for Regressions( state=0|1 )
+**语法:** obj &lt;&lt; Modification Indices for Regressions( state=0|1 )
 
 **说明:** 显示或隐藏包含模型修改指标估计值的报表。这些值可用于确定可以向模型添加哪些参数以改进模型拟合。
 
@@ -2729,7 +2725,7 @@ obj << Modification Indices for Regressions( 1 );
 
 #### Modification Indices for Variances
 
-**语法:** obj << Modification Indices for Variances( state=0|1 )
+**语法:** obj &lt;&lt; Modification Indices for Variances( state=0|1 )
 
 **说明:** 显示或隐藏包含模型修改指标估计值的报表。这些值可用于确定可以向模型添加哪些参数以改进模型拟合。
 
@@ -2772,7 +2768,7 @@ obj << Modification Indices for Variances( 1 );
 
 #### New Latent
 
-**语法:** obj << New Latent
+**语法:** obj &lt;&lt; New Latent
 
 **说明:** 在模型中添加新的潜在变量。
 
@@ -2802,7 +2798,7 @@ obj = dt << Structural Equation Models(
 
 #### Normalized Residuals
 
-**语法:** obj << Normalized Residuals( state=0|1 )
+**语法:** obj &lt;&lt; Normalized Residuals( state=0|1 )
 
 **说明:** 显示或隐藏包含模型的标准化残差矩阵的报表。
 
@@ -2819,7 +2815,7 @@ obj << Normalized Residuals( 1 );
 
 #### Normalized Residuals Heat Map
 
-**语法:** obj << Normalized Residuals Heat Map( state=0|1 )
+**语法:** obj &lt;&lt; Normalized Residuals Heat Map( state=0|1 )
 
 **说明:** 显示或隐藏包含模型的标准化残差热图的报表。
 
@@ -2836,7 +2832,7 @@ obj << Normalized Residuals Heat Map( 1 );
 
 #### Parameter Estimates
 
-**语法:** obj << Parameter Estimates( state=0|1 )
+**语法:** obj &lt;&lt; Parameter Estimates( state=0|1 )
 
 **说明:** 显示或隐藏包含模型的非标准化参数估计值的报表。 默认开启。
 
@@ -2853,7 +2849,7 @@ obj << Parameter Estimates( 0 );
 
 #### Paste Diagram Properties
 
-**语法:** obj << Paste Diagram Properties
+**语法:** obj &lt;&lt; Paste Diagram Properties
 
 **说明:** 将剪贴板中的路径图属性粘贴到当前 SEM 路径图中。
 
@@ -2873,7 +2869,7 @@ obj2 << Paste Diagram Properties();
 
 #### Path Diagram Properties
 
-**语法:** obj << Path Diagram Properties
+**语法:** obj &lt;&lt; Path Diagram Properties
 
 **JMP添加的版本:** 15
 
@@ -2913,7 +2909,7 @@ obj = dt << Structural Equation Models(
 
 #### Predicted Values Plot
 
-**语法:** obj << Predicted Values Plot( state=0|1 )
+**语法:** obj &lt;&lt; Predicted Values Plot( state=0|1 )
 
 **说明:** 显示或隐藏模型中内生变量的预测值图。
 
@@ -2930,7 +2926,7 @@ obj << Predicted Values Plot( 1, 1 );
 
 #### Prediction Profiler
 
-**语法:** obj << Prediction Profiler
+**语法:** obj &lt;&lt; Prediction Profiler
 
 **说明:** 根据所选的预测变量和指定的模型，显示或隐藏所选结果的预测刻画器。
 
@@ -2952,7 +2948,7 @@ obj << Prediction Profiler(
 
 #### R Square for Endogenous Variables
 
-**语法:** obj << R Square for Endogenous Variables( state=0|1 )
+**语法:** obj &lt;&lt; R Square for Endogenous Variables( state=0|1 )
 
 **说明:** 显示或隐藏包含模型中所有内生变量的 R 方值的报表。
 
@@ -2969,7 +2965,7 @@ obj << R Square for Endogenous Variables( 1 );
 
 #### RAM Matrices
 
-**语法:** obj << RAM Matrices( state=0|1 )
+**语法:** obj &lt;&lt; RAM Matrices( state=0|1 )
 
 **说明:** 显示或隐藏包含网状动作模型 (RAM) 表示法所使用模型矩阵的报表。
 
@@ -2986,7 +2982,7 @@ obj << RAM Matrices( 1 );
 
 #### Recall in Model Specification
 
-**语法:** obj << Recall in Model Specification
+**语法:** obj &lt;&lt; Recall in Model Specification
 
 **说明:** 将“模型规格”报表中的模型设置为指定的模型。
 
@@ -3003,7 +2999,7 @@ obj << Recall in Model Specification( 1 );
 
 #### Regressions
 
-**语法:** obj << Regressions
+**语法:** obj &lt;&lt; Regressions
 
 **说明:** 将回归路径添加至模型。
 
@@ -3024,7 +3020,7 @@ obj = dt << Structural Equation Models(
 
 #### Remove Fit
 
-**语法:** obj << Remove Fit
+**语法:** obj &lt;&lt; Remove Fit
 
 **说明:** 从报表窗口删除指定的模型报表。
 
@@ -3041,7 +3037,7 @@ obj << Remove Fit( 1 );
 
 #### Residuals
 
-**语法:** obj << Residuals( state=0|1 )
+**语法:** obj &lt;&lt; Residuals( state=0|1 )
 
 **说明:** 显示或隐藏包含模型残差矩阵的报表。该矩阵为模型隐含协方差矩阵和样本协方差矩阵之间的差值。
 
@@ -3058,7 +3054,7 @@ obj << Residuals( 1 );
 
 #### Save Bartlett Factor Scores
 
-**语法:** obj << Save Bartlett Factor Scores
+**语法:** obj &lt;&lt; Save Bartlett Factor Scores
 
 **说明:** 将包含每个变量的因子得分的列保存至数据表中的列。因子得分在隐藏列中计算，也添加至数据表。 Bartlett 方法用于估计这些得分。
 
@@ -3073,7 +3069,7 @@ obj << Save Bartlett Factor Scores();
 
 #### Save Factor Scores
 
-**语法:** obj << Save Factor Scores
+**语法:** obj &lt;&lt; Save Factor Scores
 
 **说明:** 将包含每个变量的因子得分的列保存至数据表中的列。因子得分在隐藏列中计算，也添加至数据表。 回归方法用于估计这些得分。
 
@@ -3090,7 +3086,7 @@ obj << Save Factor Scores();
 
 #### Save Observational Residuals
 
-**语法:** obj << Save Observational Residuals
+**语法:** obj &lt;&lt; Save Observational Residuals
 
 **说明:** 将包含模型中观测结果残差值的列保存至数据表中。
 
@@ -3107,7 +3103,7 @@ obj << Save Observational Residuals();
 
 #### Save Prediction Formulas
 
-**语法:** obj << Save Prediction Formulas
+**语法:** obj &lt;&lt; Save Prediction Formulas
 
 **说明:** 将包含模型中观测结果预测值公式的列保存至数据表中。
 
@@ -3124,7 +3120,7 @@ obj << Save Prediction Formulas();
 
 #### Show Path Diagram
 
-**语法:** obj << Show Path Diagram( state=0|1 )
+**语法:** obj &lt;&lt; Show Path Diagram( state=0|1 )
 
 **说明:** 显示或隐藏 SEM 路径图。 默认开启。
 
@@ -3141,7 +3137,7 @@ obj << Show Path Diagram( 0 );
 
 #### Specific Indirect Effects
 
-**语法:** obj << Specific Indirect Effects
+**语法:** obj &lt;&lt; Specific Indirect Effects
 
 **说明:** 支持您指示要从模型估计的特定间接效应。
 
@@ -3158,7 +3154,7 @@ obj << Specific Indirect Effects( {"Ind60", "Dem65"} );
 
 #### Standardized Parameter Estimates
 
-**语法:** obj << Standardized Parameter Estimates( state=0|1 )
+**语法:** obj &lt;&lt; Standardized Parameter Estimates( state=0|1 )
 
 **说明:** 显示或隐藏包含模型的标准化参数估计值的报表。
 
@@ -3175,7 +3171,7 @@ obj << Standardized Parameter Estimates( 1 );
 
 #### Summary of Fit
 
-**语法:** obj << Summary of Fit( state=0|1 )
+**语法:** obj &lt;&lt; Summary of Fit( state=0|1 )
 
 **说明:** 显示或隐藏包含模型拟合详细信息的报表。 默认开启。
 
@@ -3192,7 +3188,7 @@ obj << Summary of Fit( 0 );
 
 #### Total Effects
 
-**语法:** obj << Total Effects( state=0|1 )
+**语法:** obj &lt;&lt; Total Effects( state=0|1 )
 
 **说明:** 显示或隐藏模型中的所有可用总效应。
 
@@ -3207,7 +3203,7 @@ obj << Total Effects( 1 );
 
 #### Variances
 
-**语法:** obj << Variances
+**语法:** obj &lt;&lt; Variances
 
 **说明:** 将方差作为变量添加到模型中。
 
@@ -3242,7 +3238,7 @@ obj = dt << Structural Equation Models(
 
 #### Constant Border Color
 
-**语法:** obj << Path Diagram Properties( Constant Border Color ( color ) );
+**语法:** obj &lt;&lt; Path Diagram Properties( Constant Border Color ( color ) );
 
 **说明:** 修改路径图中常数变量的边框颜色。
 
@@ -3259,7 +3255,7 @@ obj << Path Diagram Properties( Show Means( 1 ), Constant Border Color( "Blue" )
 
 #### Constant Fill Color
 
-**语法:** obj << Path Diagram Properties( Constant Fill Color ( color ) );
+**语法:** obj &lt;&lt; Path Diagram Properties( Constant Fill Color ( color ) );
 
 **说明:** 修改路径图中常数变量的填充颜色。
 
@@ -3276,7 +3272,7 @@ obj << Path Diagram Properties( Show Means( 1 ), Constant Fill Color( "Blue" ) )
 
 #### Constant Font
 
-**语法:** obj << Path Diagram Properties( Constant Font ( font ) );
+**语法:** obj &lt;&lt; Path Diagram Properties( Constant Font ( font ) );
 
 **说明:** 修改路径图中外显变量的字体。
 
@@ -3293,7 +3289,7 @@ obj << Path Diagram Properties( Show Means( 1 ), Constant Font( "Sitka Small" ) 
 
 #### Constant Height
 
-**语法:** obj << Path Diagram Properties( Constant Height ( number ) );
+**语法:** obj &lt;&lt; Path Diagram Properties( Constant Height ( number ) );
 
 **说明:** 修改路径图中常数变量的高度（像素）。
 
@@ -3310,7 +3306,7 @@ obj << Path Diagram Properties( Show Means( 1 ), Constant Height( 20 ) );
 
 #### Constant Shape
 
-**语法:** obj << Constant Shape
+**语法:** obj &lt;&lt; Constant Shape
 
 **说明:** 修改路径图中常数的默认外观，它用于表示变量的均值和截距。
 
@@ -3330,7 +3326,7 @@ obj << Path Diagram Properties(
 
 #### Constant Size Option
 
-**语法:** obj << Path Diagram Properties( Constant Size Option ( <Default | Scale To Text | Custom> ) );
+**语法:** obj &lt;&lt; Path Diagram Properties( Constant Size Option ( &lt;Default | Scale To Text | Custom&gt; ) );
 
 **说明:** 更改路径图中常数的大小模式。
 
@@ -3347,7 +3343,7 @@ obj << Path Diagram Properties( Constant Size Option( "Scale To Text" ) );
 
 #### Constant Text Color
 
-**语法:** obj << Path Diagram Properties( Constant Text Color ( color ) );
+**语法:** obj &lt;&lt; Path Diagram Properties( Constant Text Color ( color ) );
 
 **说明:** 修改路径图中常数变量的文本颜色。
 
@@ -3364,7 +3360,7 @@ obj << Path Diagram Properties( Show Means( 1 ), Constant Text Color( "Blue" ) )
 
 #### Constant Width
 
-**语法:** obj << Path Diagram Properties( Constant Width ( number ) );
+**语法:** obj &lt;&lt; Path Diagram Properties( Constant Width ( number ) );
 
 **说明:** 修改路径图中常数变量的宽度（像素）。
 
@@ -3381,7 +3377,7 @@ obj << Path Diagram Properties( Show Means( 1 ), Constant Width( 71 ) );
 
 #### Copy Diagram
 
-**语法:** obj << Copy Diagram
+**语法:** obj &lt;&lt; Copy Diagram
 
 **说明:** 将关系图窗口的图片保存到剪贴板。
 
@@ -3399,7 +3395,7 @@ rpt[Node Graph Box( 1 )] << Copy Diagram;
 
 #### Copy Diagram Properties
 
-**语法:** obj << Copy Diagram Properties
+**语法:** obj &lt;&lt; Copy Diagram Properties
 
 **说明:** 将特定于关系图的脚本设置的副本保存到剪贴板。然后可以将这些设置应用于其他关系图。
 
@@ -3423,7 +3419,7 @@ other_diagram << Paste Diagram Properties;
 
 #### Dashed Lines for Nonsignificant p-values
 
-**语法:** obj << Path Diagram Properties ("Dashed Lines for Nonsignificant p - values"n( 0 | 1 ) )
+**语法:** obj &lt;&lt; Path Diagram Properties ("Dashed Lines for Nonsignificant p - values"n( 0 | 1 ) )
 
 **说明:** 显示或隐藏表示具有不显著 p 值的路径的虚线。 默认开启。
 
@@ -3440,7 +3436,7 @@ obj << Path Diagram Properties( "Dashed Lines for Nonsignificant p - values"n( 0
 
 #### Diagram Size
 
-**语法:** obj << Path Diagram Properties( Diagram Size ( {x, y} ) )
+**语法:** obj &lt;&lt; Path Diagram Properties( Diagram Size ( {x, y} ) )
 
 **说明:** 更改路径图的大小。
 
@@ -3470,7 +3466,7 @@ obj << Path Diagram Properties(
 
 #### Enable Grid
 
-**语法:** obj << Path Diagram Properties ( Enable Grid( 0|1) )
+**语法:** obj &lt;&lt; Path Diagram Properties ( Enable Grid( 0|1) )
 
 **说明:** 在路径图中启用可视化网格。
 
@@ -3487,7 +3483,7 @@ obj << Path Diagram Properties( Enable Grid( 1 ) );
 
 #### Fill Nodes With R Squared
 
-**语法:** obj << Path Diagram Properties ( Fill Nodes With R Squared ( 0|1) )
+**语法:** obj &lt;&lt; Path Diagram Properties ( Fill Nodes With R Squared ( 0|1) )
 
 **说明:** 指定根据估计的决定系数部分填充拟合模型中的节点。 默认开启。
 
@@ -3504,7 +3500,7 @@ obj << Path Diagram Properties( Fill Nodes With R Squared( 1 ) );
 
 #### Latent Border Color
 
-**语法:** obj << Path Diagram Properties( Latent Border Color ( color ) );
+**语法:** obj &lt;&lt; Path Diagram Properties( Latent Border Color ( color ) );
 
 **说明:** 修改路径图中潜在变量的边框颜色。
 
@@ -3521,7 +3517,7 @@ obj << Path Diagram Properties( Latent Border Color( "Blue" ) );
 
 #### Latent Fill Color
 
-**语法:** obj << Path Diagram Properties( Latent Fill Color ( color ) );
+**语法:** obj &lt;&lt; Path Diagram Properties( Latent Fill Color ( color ) );
 
 **说明:** 修改路径图中潜在变量的填充颜色。
 
@@ -3538,7 +3534,7 @@ obj << Path Diagram Properties( Latent Fill Color( "Blue" ) );
 
 #### Latent Font
 
-**语法:** obj << Path Diagram Properties( Manifest Font ( font ) );
+**语法:** obj &lt;&lt; Path Diagram Properties( Manifest Font ( font ) );
 
 **说明:** 修改路径图中潜在变量的字体。
 
@@ -3555,7 +3551,7 @@ obj << Path Diagram Properties( Latent Font( "Sitka Small" ) );
 
 #### Latent Height
 
-**语法:** obj << Path Diagram Properties( Latent Height ( number ) );
+**语法:** obj &lt;&lt; Path Diagram Properties( Latent Height ( number ) );
 
 **说明:** 修改路径图中潜在变量的高度（像素）。
 
@@ -3572,7 +3568,7 @@ obj << Path Diagram Properties( Latent Height( 30 ) );
 
 #### Latent Shape
 
-**语法:** obj << Latent Shape
+**语法:** obj &lt;&lt; Latent Shape
 
 **说明:** 修改路径图中潜在变量的默认外观。
 
@@ -3591,7 +3587,7 @@ obj << Path Diagram Properties(
 
 #### Latent Size Option
 
-**语法:** obj << Path Diagram Properties( Latent Size Option ( <Default | Scale To Text | Custom> ) );
+**语法:** obj &lt;&lt; Path Diagram Properties( Latent Size Option ( &lt;Default | Scale To Text | Custom&gt; ) );
 
 **说明:** 更改路径图中潜在节点的大小模式。
 
@@ -3608,7 +3604,7 @@ obj << Path Diagram Properties( Latent Size Option( "Scale To Text" ) );
 
 #### Latent Text Color
 
-**语法:** obj << Path Diagram Properties( Latent Text Color ( color ) );
+**语法:** obj &lt;&lt; Path Diagram Properties( Latent Text Color ( color ) );
 
 **说明:** 修改路径图中潜在变量的文本颜色。
 
@@ -3625,7 +3621,7 @@ obj << Path Diagram Properties( Latent Text Color( "Blue" ) );
 
 #### Latent Width
 
-**语法:** obj << Path Diagram Properties( Latent Width ( number ) );
+**语法:** obj &lt;&lt; Path Diagram Properties( Latent Width ( number ) );
 
 **说明:** 修改路径图中潜在变量的宽度（像素）。
 
@@ -3642,7 +3638,7 @@ obj << Path Diagram Properties( Latent Width( 71 ) );
 
 #### Layout
 
-**语法:** obj << Path Diagram Properties ( Layout("Left To Right"|"Top To Bottom") )
+**语法:** obj &lt;&lt; Path Diagram Properties ( Layout("Left To Right"|"Top To Bottom") )
 
 **说明:** 设置路径图的初始布局。
 
@@ -3659,7 +3655,7 @@ obj << Path Diagram Properties( Layout( "Top To Bottom" ) );
 
 #### Lock Diagram
 
-**语法:** obj << Path Diagram Properties ( Lock Diagram( 0|1) )
+**语法:** obj &lt;&lt; Path Diagram Properties ( Lock Diagram( 0|1) )
 
 **说明:** 锁定路径图，这样对模型的修改不会导致布局的改变。
 
@@ -3676,7 +3672,7 @@ obj << Path Diagram Properties( Lock Diagram( 1 ) );
 
 #### Manifest Border Color
 
-**语法:** obj << Path Diagram Properties( Manifest Border Color ( color ) );
+**语法:** obj &lt;&lt; Path Diagram Properties( Manifest Border Color ( color ) );
 
 **说明:** 修改路径图中外显变量的边框颜色。
 
@@ -3693,7 +3689,7 @@ obj << Path Diagram Properties( Manifest Border Color( "Blue" ) );
 
 #### Manifest Fill Color
 
-**语法:** obj << Path Diagram Properties( Manifest Fill Color ( color ) );
+**语法:** obj &lt;&lt; Path Diagram Properties( Manifest Fill Color ( color ) );
 
 **说明:** 修改路径图中外显变量的填充颜色。
 
@@ -3710,7 +3706,7 @@ obj << Path Diagram Properties( Manifest Fill Color( "Blue" ) );
 
 #### Manifest Font
 
-**语法:** obj << Path Diagram Properties( Manifest Font ( font ) );
+**语法:** obj &lt;&lt; Path Diagram Properties( Manifest Font ( font ) );
 
 **说明:** 修改路径图中外显变量的字体。
 
@@ -3727,7 +3723,7 @@ obj << Path Diagram Properties( Manifest Font( "Sitka Small" ) );
 
 #### Manifest Height
 
-**语法:** obj << Path Diagram Properties( Manifest Height ( number ) );
+**语法:** obj &lt;&lt; Path Diagram Properties( Manifest Height ( number ) );
 
 **说明:** 修改路径图中外显变量的高度（像素）。
 
@@ -3744,7 +3740,7 @@ obj << Path Diagram Properties( Manifest Height( 30 ) );
 
 #### Manifest Shape
 
-**语法:** obj << Manifest Shape
+**语法:** obj &lt;&lt; Manifest Shape
 
 **说明:** 修改路径图中外显变量的默认外观。
 
@@ -3761,7 +3757,7 @@ obj << Path Diagram Properties( Manifest Shape( {Fill Color( "Green" )} ) );
 
 #### Manifest Size Option
 
-**语法:** obj << Path Diagram Properties( Manifest Size Option ( <Default | Scale To Text | Custom> ) );
+**语法:** obj &lt;&lt; Path Diagram Properties( Manifest Size Option ( &lt;Default | Scale To Text | Custom&gt; ) );
 
 **说明:** 更改路径图中显节点的大小模式。
 
@@ -3778,7 +3774,7 @@ obj << Path Diagram Properties( Manifest Size Option( "Scale To Text" ) );
 
 #### Manifest Text Color
 
-**语法:** obj << Path Diagram Properties( Manifest Text Color ( color ) );
+**语法:** obj &lt;&lt; Path Diagram Properties( Manifest Text Color ( color ) );
 
 **说明:** 修改路径图中外显变量的文本颜色。
 
@@ -3795,7 +3791,7 @@ obj << Path Diagram Properties( Manifest Text Color( "Blue" ) );
 
 #### Manifest Width
 
-**语法:** obj << Path Diagram Properties( Manifest Width ( number ) );
+**语法:** obj &lt;&lt; Path Diagram Properties( Manifest Width ( number ) );
 
 **说明:** 修改路径图中外显变量的宽度（像素）。
 
@@ -3812,7 +3808,7 @@ obj << Path Diagram Properties( Manifest Width( 67 ) );
 
 #### Paste Diagram Properties
 
-**语法:** obj << Paste Diagram Properties
+**语法:** obj &lt;&lt; Paste Diagram Properties
 
 **说明:** 从剪贴板粘贴特定于关系图的脚本设置的副本。
 
@@ -3836,7 +3832,7 @@ other_diagram << Paste Diagram Properties;
 
 #### Path Styles
 
-**语法:** obj << Path Styles
+**语法:** obj &lt;&lt; Path Styles
 
 **说明:** 修改路径图中路径的默认外观。
 
@@ -3853,7 +3849,7 @@ obj << Path Diagram Properties( Path Styles( {Color( "Green" )} ) );
 
 #### Path Thickness
 
-**语法:** obj << Path Diagram Properties (Path Thickness( "Fixed"|"Map to Stdz. Estimates" ) )
+**语法:** obj &lt;&lt; Path Diagram Properties (Path Thickness( "Fixed"|"Map to Stdz. Estimates" ) )
 
 **说明:** 在关系图中路径的粗细是保持在一个固定值还是与其标准化估计值的强度相关联两者之间切换。 默认为“Fixed”。
 
@@ -3870,7 +3866,7 @@ obj << Path Diagram Properties( Path Thickness( "Map to Stdz. Estimates" ) );
 
 #### Path Transparency
 
-**语法:** obj << Path Diagram Properties (Path Transparency( "Fixed"|"Map to Stdz. Estimates" ) )
+**语法:** obj &lt;&lt; Path Diagram Properties (Path Transparency( "Fixed"|"Map to Stdz. Estimates" ) )
 
 **说明:** 在关系图中路径的透明度是保持在一个固定值还是与其标准化估计值的强度相关联两者之间切换。
 
@@ -3887,7 +3883,7 @@ obj << Path Diagram Properties( Path Transparency( "Fixed" ) );
 
 #### Paths Alpha Level
 
-**语法:** obj << Path Diagram Properties( Paths Alpha Level ( number) );
+**语法:** obj &lt;&lt; Path Diagram Properties( Paths Alpha Level ( number) );
 
 **说明:** 修改在路径图中使用虚线的最小 p 值阈值。
 
@@ -3904,7 +3900,7 @@ obj << Path Diagram Properties( Paths Alpha Level( 0.01 ) );
 
 #### Paths Color
 
-**语法:** obj << Path Diagram Properties( Paths Color ( color) );
+**语法:** obj &lt;&lt; Path Diagram Properties( Paths Color ( color) );
 
 **说明:** 修改路径图中路径的颜色。
 
@@ -3921,7 +3917,7 @@ obj << Path Diagram Properties( Paths Color( "Green" ) );
 
 #### Paths Font
 
-**语法:** obj << Path Diagram Properties( Paths Font ( font ) );
+**语法:** obj &lt;&lt; Path Diagram Properties( Paths Font ( font ) );
 
 **说明:** 修改路径图中路径标签的字体。
 
@@ -3938,7 +3934,7 @@ obj << Path Diagram Properties( Paths Font( "Segoe Script", 12, "Bold" ) );
 
 #### Paths Opacity
 
-**语法:** obj << Path Diagram Properties( Paths Opacity ( number) );
+**语法:** obj &lt;&lt; Path Diagram Properties( Paths Opacity ( number) );
 
 **说明:** 修改路径图中路径的不透明度。
 
@@ -3955,7 +3951,7 @@ obj << Path Diagram Properties( Paths Opacity( 0.5 ), Path Transparency( "Fixed"
 
 #### Paths Thickness
 
-**语法:** obj << Path Diagram Properties( Paths Thickness ( number) );
+**语法:** obj &lt;&lt; Path Diagram Properties( Paths Thickness ( number) );
 
 **说明:** 修改路径图中路径的粗细。
 
@@ -3972,7 +3968,7 @@ obj << Path Diagram Properties( Paths Thickness( 2.7103 ) );
 
 #### Place Nodes
 
-**语法:** obj << Path Diagram Properties( Place Nodes ( { {name1, x1, y1}, {name2, x2, y2}, ...} ) )
+**语法:** obj &lt;&lt; Path Diagram Properties( Place Nodes ( { {name1, x1, y1}, {name2, x2, y2}, ...} ) )
 
 **说明:** 控制路径图中单个节点的放置。
 
@@ -4002,7 +3998,7 @@ obj << Path Diagram Properties(
 
 #### R2 Fill Color
 
-**语法:** obj << Path Diagram Properties ( R2 Fill Color ( Color ) )
+**语法:** obj &lt;&lt; Path Diagram Properties ( R2 Fill Color ( Color ) )
 
 **说明:** 指定表示变量的估计 R 方值的部分填充的颜色。
 
@@ -4019,7 +4015,7 @@ obj << Path Diagram Properties( R2 Fill Color( Cyan ) );
 
 #### Rotate Latent Groups
 
-**语法:** obj << Rotate Latent Groups
+**语法:** obj &lt;&lt; Rotate Latent Groups
 
 **说明:** 旋转关系图中所有潜在指示符的方向。若选择了任何潜在组，则该选项仅旋转所选潜在组的方向。
 
@@ -4038,7 +4034,7 @@ diagram << Rotate Latent Groups;
 
 #### Rotate Loops
 
-**语法:** obj << Path Diagram Properties( Rotate Loops ( { {name1, angle1}, {name2, angle2}, ...} ) )
+**语法:** obj &lt;&lt; Path Diagram Properties( Rotate Loops ( { {name1, angle1}, {name2, angle2}, ...} ) )
 
 **说明:** 控制路径图中方差循环的旋转。角度是沿顺时针方向用弧度来测量的。
 
@@ -4068,7 +4064,7 @@ obj << Path Diagram Properties(
 
 #### Show Constant Mean Square
 
-**语法:** obj << Show Constant Mean Square( state=0|1 )
+**语法:** obj &lt;&lt; Show Constant Mean Square( state=0|1 )
 
 **说明:** 在路径图中显示或隐藏与常数关联的边。
 
@@ -4085,7 +4081,7 @@ obj << Path Diagram Properties( Show Constant Mean Square( 1 ) );
 
 #### Show Covariances
 
-**语法:** obj << Show Covariances( state=0|1 )
+**语法:** obj &lt;&lt; Show Covariances( state=0|1 )
 
 **说明:** 在路径图中显示或隐藏表示协方差的双向箭头。 默认开启。
 
@@ -4102,7 +4098,7 @@ obj << Path Diagram Properties( Show Covariances( 0 ) );
 
 #### Show Equality Constraints
 
-**语法:** obj << Show Equality Constraints( state=0|1 )
+**语法:** obj &lt;&lt; Show Equality Constraints( state=0|1 )
 
 **说明:** 在路径图中的边上显示或隐藏等式约束（固定值或标签）。 默认开启。
 
@@ -4119,7 +4115,7 @@ obj << Path Diagram Properties( Show Equality Constraints( 0 ) );
 
 #### Show Estimates
 
-**语法:** obj << Show Estimates( "未标准化"|"标准化"|"无" )
+**语法:** obj &lt;&lt; Show Estimates( "未标准化"|"标准化"|"无" )
 
 **说明:** 在路径图中显示或隐藏非标准化参数估计值。
 
@@ -4136,7 +4132,7 @@ obj << Path Diagram Properties( Show Estimates( "None" ) );
 
 #### Show Loadings
 
-**语法:** obj << Show Loadings( state=0|1 )
+**语法:** obj &lt;&lt; Show Loadings( state=0|1 )
 
 **说明:** 显示或隐藏路径图中的潜在变量指示符。 默认开启。
 
@@ -4153,7 +4149,7 @@ obj << Path Diagram Properties( Show Loadings( 0 ) );
 
 #### Show Means/Intercepts
 
-**语法:** obj << Show Means/Intercepts( state=0|1 )
+**语法:** obj &lt;&lt; Show Means/Intercepts( state=0|1 )
 
 **说明:** 显示或隐藏 SEM 平台中的均值。
 
@@ -4170,7 +4166,7 @@ obj << Path Diagram Properties( Show Means( 1 ) );
 
 #### Show R Squared Values
 
-**语法:** obj << Show R Squared Values( state=0|1 )
+**语法:** obj &lt;&lt; Show R Squared Values( state=0|1 )
 
 **说明:** 在路径图中的节点内部显示或隐藏 R 方值。
 
@@ -4187,7 +4183,7 @@ obj << Path Diagram Properties( Show R Squared Values( 1 ) );
 
 #### Show Regressions
 
-**语法:** obj << Show Regressions( state=0|1 )
+**语法:** obj &lt;&lt; Show Regressions( state=0|1 )
 
 **说明:** 显示或隐藏 SEM 平台中的回归。 默认开启。
 
@@ -4204,7 +4200,7 @@ obj << Path Diagram Properties( Show Regressions( 0 ) );
 
 #### Show Variances
 
-**语法:** obj << Show Variances( state=0|1 )
+**语法:** obj &lt;&lt; Show Variances( state=0|1 )
 
 **说明:** 显示或隐藏表示路径图中的方差的双向箭头。 默认开启。
 
@@ -4225,7 +4221,7 @@ obj << Path Diagram Properties( Show Variances( 0 ) );
 
 #### Covariances
 
-**语法:** obj << Covariances
+**语法:** obj &lt;&lt; Covariances
 
 **说明:** 在模型中添加变量间的协方差。
 
@@ -4246,7 +4242,7 @@ obj = dt << Structural Equation Models(
 
 #### Define Time Values
 
-**语法:** obj << Define Time Values
+**语法:** obj &lt;&lt; Define Time Values
 
 **说明:** 定义重复观测的测量场合。这些值用于指定纵向模型。
 
@@ -4268,7 +4264,7 @@ obj = dt << Structural Equation Models(
 
 #### Loadings
 
-**语法:** obj << Loadings
+**语法:** obj &lt;&lt; Loadings
 
 **说明:** 将载荷作为潜在变量添加到模型中。
 
@@ -4322,7 +4318,7 @@ obj = dt << Structural Equation Models(
 
 #### Means/Intercepts
 
-**语法:** obj << Means/Intercepts
+**语法:** obj &lt;&lt; Means/Intercepts
 
 **说明:** 将均值或截距作为变量添加到模型中。
 
@@ -4347,7 +4343,7 @@ obj = dt << Structural Equation Models(
 
 #### Model Name
 
-**语法:** obj << Model Name
+**语法:** obj &lt;&lt; Model Name
 
 **说明:** 指定模型名称。
 
@@ -4370,7 +4366,7 @@ obj = dt << Structural Equation Models(
 
 #### Model Notes
 
-**语法:** obj << Model Notes
+**语法:** obj &lt;&lt; Model Notes
 
 **说明:** 指定模型注释。
 
@@ -4396,7 +4392,7 @@ obj = dt << Structural Equation Models(
 
 #### New Latent
 
-**语法:** obj << New Latent
+**语法:** obj &lt;&lt; New Latent
 
 **说明:** 在模型中添加新的潜在变量。
 
@@ -4426,7 +4422,7 @@ obj = dt << Structural Equation Models(
 
 #### Regressions
 
-**语法:** obj << Regressions
+**语法:** obj &lt;&lt; Regressions
 
 **说明:** 将回归路径添加至模型。
 
@@ -4447,7 +4443,7 @@ obj = dt << Structural Equation Models(
 
 #### Variances
 
-**语法:** obj << Variances
+**语法:** obj &lt;&lt; Variances
 
 **说明:** 将方差作为变量添加到模型中。
 

@@ -6,7 +6,7 @@
 
 ### By
 
-**Sintassi:** obj << By( column(s) )
+**Sintassi:** obj &lt;&lt; By( column(s) )
 
 ```jsl
 
@@ -23,7 +23,7 @@ obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ), By( _b
 
 ### Columns
 
-**Sintassi:** obj << Columns( column(s) )
+**Sintassi:** obj &lt;&lt; Columns( column(s) )
 
 ```jsl
 
@@ -35,7 +35,7 @@ obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 
 ### Label
 
-**Sintassi:** obj << Label( column )
+**Sintassi:** obj &lt;&lt; Label( column )
 
 **JMP Versione aggiunta:** 16
 
@@ -49,7 +49,7 @@ obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 
 ### Validation
 
-**Sintassi:** obj << Validation( column )
+**Sintassi:** obj &lt;&lt; Validation( column )
 
 **JMP Versione aggiunta:** 16
 
@@ -63,7 +63,7 @@ obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 
 ### Y
 
-**Sintassi:** obj << Y( column(s) )
+**Sintassi:** obj &lt;&lt; Y( column(s) )
 
 ```jsl
 
@@ -93,7 +93,7 @@ obj = dt << Explore Outliers( Y( Column Group( "Sensor Measurements" ) ) );
 
 ### Action
 
-**Sintassi:** obj << Action
+**Sintassi:** obj &lt;&lt; Action
 
 **Descrizione:** Trapdoor generica all&apos;interno di una piattaforma per inserire espressioni da valutare. Imposta temporaneamente i contesti del riquadro di visualizzazione e della tabella di dati per la piattaforma.
 
@@ -111,7 +111,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Sintassi:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintassi:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descrizione:** Applica all’oggetto una preimpostazione precedentemente creata, aggiornando le opzioni e le personalizzazioni in base alle impostazioni salvate.
 
@@ -158,7 +158,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Automatic Recalc
 
-**Sintassi:** obj << Automatic Recalc( state=0|1 )
+**Sintassi:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Descrizione:** Ripete l&apos;analisi automaticamente per l&apos;esclusione e le modifiche ai dati. Se l&apos;opzione Ricalcolo automatico è attivata, si consiglia di usare i comandi Attendi(0) per garantire che le modifiche di esclusione e di dati abbiano effetto prima del ricalcolo.
 
@@ -174,7 +174,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**Sintassi:** obj << Broadcast(message)
+**Sintassi:** obj &lt;&lt; Broadcast(message)
 
 **Descrizione:** Diffonde un messaggio a una piattaforma. Se i risultati di restituzione dei singoli oggetti sono tabelle, esse sono concatenate se possibile e il formato finale è identico al risultato dell&apos;opzione Salva tabella combinata in un riquadro della tabella o il risultato dell&apos;opzione Concatena utilizzando una colonna di origine. Oltre a quelli, i risultati sono memorizzati in un elenco e restituiti.
 
@@ -194,7 +194,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**Sintassi:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Sintassi:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Descrizione:** Aggiunge un pannello di controllo per modificare le variabili della piattaforma
 
@@ -212,7 +212,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**Sintassi:** obj << Copy ByGroup Script
+**Sintassi:** obj &lt;&lt; Copy ByGroup Script
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo inserisce negli Appunti.
 
@@ -232,7 +232,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Sintassi:** obj << Copy Script
+**Sintassi:** obj &lt;&lt; Copy Script
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo inserisce negli Appunti.
 
@@ -247,7 +247,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Sintassi:** obj << Data Table Window
+**Sintassi:** obj &lt;&lt; Data Table Window
 
 **Descrizione:** Sposta in primo piano la finestra della tabella di dati per questa analisi.
 
@@ -262,7 +262,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Sintassi:** obj << Get By Levels
+**Sintassi:** obj &lt;&lt; Get By Levels
 
 **Descrizione:** Restituisce un array associativo che mappa le colonne del gruppo di By ai rispettivi valori.
 
@@ -279,7 +279,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Sintassi:** obj << Get ByGroup Script
+**Sintassi:** obj &lt;&lt; Get ByGroup Script
 
 **Descrizione:** Crea uno script (JSL) per generare questa analisi e la restituisce come espressione.
 
@@ -300,7 +300,7 @@ Show( t );
 
 ### Get Container
 
-**Sintassi:** obj << Get Container
+**Sintassi:** obj &lt;&lt; Get Container
 
 **Descrizione:** Restituisce un riferimento al riquadro contenitore che racchiude il contenuto dell&apos;oggetto.
 
@@ -347,7 +347,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Sintassi:** obj << Get Data Table
+**Sintassi:** obj &lt;&lt; Get Data Table
 
 **Descrizione:** Restituisce un riferimento alla tabella di dati.
 
@@ -363,7 +363,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**Sintassi:** obj << Get Group Platform
+**Sintassi:** obj &lt;&lt; Get Group Platform
 
 **Descrizione:** Restituisce l&apos;oggetto Raggruppa piattaforma se la piattaforma fa parte di un gruppo. In caso contrario, restituisce Vuoto().
 
@@ -380,7 +380,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**Sintassi:** obj << Get Script
+**Sintassi:** obj &lt;&lt; Get Script
 
 **Descrizione:** Crea uno script (JSL) per generare questa analisi e la restituisce come espressione.
 
@@ -396,7 +396,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Sintassi:** obj << Get Script With Data Table
+**Sintassi:** obj &lt;&lt; Get Script With Data Table
 
 **Descrizione:** Crea uno script (JSL) per generare questa analisi facendo specifico riferimento a questa tabella di dati e la restituisce come espressione.
 
@@ -412,7 +412,7 @@ Show( t );
 
 ### Get Timing
 
-**Sintassi:** obj << Get Timing
+**Sintassi:** obj &lt;&lt; Get Timing
 
 **Descrizione:** Determina il tempo di avvio della piattaforma.
 
@@ -428,7 +428,7 @@ Show( t );
 
 ### Get Web Support
 
-**Sintassi:** obj << Get Web Support
+**Sintassi:** obj &lt;&lt; Get Web Support
 
 **Descrizione:** Restituisce un numero indicante il livello di supporto HTML interattivo per l&apos;oggetto visualizzato. 1 significa che alcuni o tutti gli elementi sono supportati. 0 significa nessun supporto.
 
@@ -444,7 +444,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Sintassi:** obj << Get Where Expr
+**Sintassi:** obj &lt;&lt; Get Where Expr
 
 **Descrizione:** Restituisce l&apos;espressione Where per il sottoinsieme di dati, se la piattaforma è stata avviata con By() o Where(). Altrimenti, restituisce Vuoto()
 
@@ -481,7 +481,7 @@ dt << Bivariate(
 
 ### K Nearest Neighbor Outliers
 
-**Sintassi:** obj << K Nearest Neighbor Outliers
+**Sintassi:** obj &lt;&lt; K Nearest Neighbor Outliers
 
 **Descrizione:** Per ogni punto, trova la distanza al suo K vicino più prossimo.
 
@@ -498,7 +498,7 @@ obj << k Nearest Neighbor Outliers( K( 5 ) );
 
 ### Local Data Filter
 
-**Sintassi:** obj << Local Data Filter
+**Sintassi:** obj &lt;&lt; Local Data Filter
 
 **Descrizione:** Filtra dati in specifici gruppi o range, ma localmente in questa piattaforma
 
@@ -520,7 +520,7 @@ dt << Distribution(
 
 ### Multivariate k Nearest Neighbor Outliers
 
-**Sintassi:** obj << Multivariate k Nearest Neighbor Outliers
+**Sintassi:** obj &lt;&lt; Multivariate k Nearest Neighbor Outliers
 
 **JMP Versione aggiunta:** 14
 
@@ -562,7 +562,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Sintassi:** obj << Paste Local Data Filter
+**Sintassi:** obj &lt;&lt; Paste Local Data Filter
 
 **Descrizione:** Applicare il filtro sui dati locali dagli Appunti al report corrente.
 
@@ -583,7 +583,7 @@ dist2 << Paste Local Data Filter;
 
 ### Quantile Range Outliers
 
-**Sintassi:** obj << Quantile Range Outliers
+**Sintassi:** obj &lt;&lt; Quantile Range Outliers
 
 **Descrizione:** Trova valori superiori a un multiplo della scala di un range interquantile oltre i quantili.
 
@@ -598,7 +598,7 @@ obj << Quantile Range Outliers;
 
 ### Redo Analysis
 
-**Sintassi:** obj << Redo Analysis
+**Sintassi:** obj &lt;&lt; Redo Analysis
 
 **Descrizione:** Ripete questa stessa analisi in una nuova finestra. L&apos;analisi sarà differente se i dati sono stati modificati.
 
@@ -613,7 +613,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**Sintassi:** obj << Redo ByGroup Analysis
+**Sintassi:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Descrizione:** Ripete questa stessa analisi in una nuova finestra. L&apos;analisi sarà differente se i dati sono stati modificati.
 
@@ -633,7 +633,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**Sintassi:** obj << Relaunch Analysis
+**Sintassi:** obj &lt;&lt; Relaunch Analysis
 
 **Descrizione:** Apre la finestra di avvio della piattaforma e richiama le impostazioni utilizzate per creare il report.
 
@@ -648,7 +648,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**Sintassi:** obj << Relaunch ByGroup
+**Sintassi:** obj &lt;&lt; Relaunch ByGroup
 
 **Descrizione:** Apre la finestra di avvio della piattaforma e richiama le impostazioni utilizzate per creare il report.
 
@@ -668,7 +668,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**Sintassi:** obj << Remove Column Switcher
+**Sintassi:** obj &lt;&lt; Remove Column Switcher
 
 **Descrizione:** Rimuove l&apos;ultimo Scambia colonne che è stato aggiunto alla piattaforma.
 
@@ -688,7 +688,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Sintassi:** obj << Remove Local Data Filter
+**Sintassi:** obj &lt;&lt; Remove Local Data Filter
 
 **Descrizione:** Se è stato creato un filtro di dati locali viene rimosso per ripristinare la piattaforma e utilizzare direttamente tutti i dati nella tabella di dati
 
@@ -727,9 +727,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Sintassi:** obj << Report;
-
-Report( obj )
+**Sintassi:** obj &lt;&lt; Report;Report( obj )
 
 **Descrizione:** Restituisce un riferimento all&apos;oggetto del report.
 
@@ -746,7 +744,7 @@ Show( t );
 
 ### Report View
 
-**Sintassi:** obj << Report View( "Completo"|"Riepilogo" )
+**Sintassi:** obj &lt;&lt; Report View( "Completo"|"Riepilogo" )
 
 **Descrizione:** La visualizzazione Report determina il livello di dettaglio visibile in un report della piattaforma. Full mostra tutti i dettagli mentre Summary mostra solo contenuti selezionati, in base alla piattaforma. Per un comportamento personalizzato, i riquadri di visualizzazione supportano un messaggio <<Set Summary Behavior.
 
@@ -761,7 +759,7 @@ obj << Report View( "Summary" );
 
 ### Robust Fit Outliers
 
-**Sintassi:** obj << Robust Fit Outliers
+**Sintassi:** obj &lt;&lt; Robust Fit Outliers
 
 **Descrizione:** Trova valori superiori a un multiplo della scala lontano dal centro utilizzando stime robuste del centro e della scala.
 
@@ -776,7 +774,7 @@ obj << Robust Fit Outliers;
 
 ### Robust PCA Outliers
 
-**Sintassi:** obj << Robust PCA Outliers
+**Sintassi:** obj &lt;&lt; Robust PCA Outliers
 
 **Descrizione:** Scompone in maniera robusta i dati in una matrice di rango basso e in una matrice sparsa di residui. Nei residui vengono rilevati gli outlier. Può anche imputare i valori mancanti.
 
@@ -793,7 +791,7 @@ obj << Robust PCA Outliers;
 
 ### Save ByGroup Script to Data Table
 
-**Sintassi:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintassi:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e salvarla come proprietà della tabella nella tabella di dati. È possibile specificare un nome per lo script. L&apos;opzione Append Suffix aggiunge un suffisso numerico al nome dello script, che differenzia lo script da uno script esistente con lo stesso nome. L&apos;opzione Prompt richiede all&apos;utente di specificare un nome di script. L&apos;opzione Replace sostituisce uno script esistente con lo stesso nome.
 
@@ -813,7 +811,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Sintassi:** obj << Save ByGroup Script to Journal
+**Sintassi:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e aggiunge un pulsante con lo script al journal.
 
@@ -833,7 +831,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Sintassi:** obj << Save ByGroup Script to Script Window
+**Sintassi:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo aggiunge alla finestra di testo dello script corrente.
 
@@ -853,7 +851,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**Sintassi:** obj << Save Script for All Objects
+**Sintassi:** obj &lt;&lt; Save Script for All Objects
 
 **Descrizione:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -868,7 +866,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Sintassi:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintassi:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descrizione:** Salva uno script per tutti gli oggetti del report nella tabella di dati corrente. Questa opzione è utile quando sono presenti più report nella finestra. Lo script prende il nome dalla prima piattaforma, a meno che non si specifichi il nome dello script tra apici.
 
@@ -906,7 +904,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Sintassi:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintassi:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo salva come una proprietà di tabella nella tabella di dati.
 
@@ -921,7 +919,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Sintassi:** obj << Save Script to Journal
+**Sintassi:** obj &lt;&lt; Save Script to Journal
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e aggiunge un pulsante con lo script al journal.
 
@@ -936,7 +934,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Sintassi:** obj << Save Script to Report
+**Sintassi:** obj &lt;&lt; Save Script to Report
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo mostra nel report. Utile per avere una copia stampata di quanto è stato fatto.
 
@@ -951,7 +949,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Sintassi:** obj << Save Script to Script Window
+**Sintassi:** obj &lt;&lt; Save Script to Script Window
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo aggiunge alla finestra di testo dello script corrente.
 
@@ -1031,7 +1029,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Sintassi:** obj << Sync to Data Table Changes
+**Sintassi:** obj &lt;&lt; Sync to Data Table Changes
 
 **Descrizione:** Sincronizza con l&apos;esclusione e le modifiche ai dati effettuate.
 
@@ -1048,7 +1046,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Sintassi:** obj << Title( "new title" )
+**Sintassi:** obj &lt;&lt; Title( "new title" )
 
 **Descrizione:** Imposta il titolo della piattaforma.
 
@@ -1063,7 +1061,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Sintassi:** obj << Top Report
+**Sintassi:** obj &lt;&lt; Top Report
 
 **Descrizione:** Restituisce un riferimento al nodo principale nel report.
 
@@ -1080,7 +1078,7 @@ Show( t );
 
 ### Transform Column
 
-**Sintassi:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Sintassi:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Descrizione:** Crea una colonna di trasformazione nel contesto locale di un oggetto, di solito una piattaforma. La colonna di trasformazione è attiva solo per la durata della piattaforma.
 
@@ -1101,7 +1099,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**Sintassi:** obj << View Web XML
+**Sintassi:** obj &lt;&lt; View Web XML
 
 **Descrizione:** Restituisce il codice XML utilizzato per creare il report HTML interattivo.
 
@@ -1116,9 +1114,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**Sintassi:** obj = Explore Outliers(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Explore Outliers(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Impostare il tipo di finestra da creare per il report. Per impostazione predefinita verrà creata una finestra di report Visible. Una finestra Invisible non comparirà sullo schermo, ma è individuabile da funzioni come Window(). Una finestra Private risponde alla maggior parte dei messaggi della finestra, ma non è individuabile e deve essere indirizzata attraverso l&apos;oggetto report
 
@@ -1141,19 +1137,19 @@ New Window( "Bivariate Equation",
 
 #### Close
 
-**Sintassi:** obj << Close
+**Sintassi:** obj &lt;&lt; Close
 
 **JMP Versione aggiunta:** 16
 
 #### Exclude Selected Rows
 
-**Sintassi:** obj << Exclude Selected Rows
+**Sintassi:** obj &lt;&lt; Exclude Selected Rows
 
 **JMP Versione aggiunta:** 16
 
 #### Impute Missing
 
-**Sintassi:** obj << Impute Missing( state=0 )
+**Sintassi:** obj &lt;&lt; Impute Missing( state=0 )
 
 **Descrizione:** Se mancano dei valori, viene utilizzata una PCA robusta per imputarli prima di analizzarli con K vicini più prossimi. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1161,7 +1157,7 @@ New Window( "Bivariate Equation",
 
 #### K
 
-**Sintassi:** obj << K( number=8 )
+**Sintassi:** obj &lt;&lt; K( number=8 )
 
 **Descrizione:** Il numero di righe di vicini prossimi da trovare per ogni riga della tabella. "8", per impostazione predefinita.
 
@@ -1169,7 +1165,7 @@ New Window( "Bivariate Equation",
 
 #### Save NN Distances
 
-**Sintassi:** obj << Save NN Distances
+**Sintassi:** obj &lt;&lt; Save NN Distances
 
 **Descrizione:** Salva nuove colonne nella tabella di dati contenente distanze al K vicino più prossimo.
 
@@ -1187,7 +1183,7 @@ obj << Save NN Distances;
 
 #### Scatterplot Matrix
 
-**Sintassi:** obj << Scatterplot Matrix
+**Sintassi:** obj &lt;&lt; Scatterplot Matrix
 
 **Descrizione:** Apre una finestra contenente una matrice del grafico a dispersione per tutte le colonne.
 
@@ -1207,13 +1203,13 @@ obj << Scatterplot Matrix;
 
 #### Close
 
-**Sintassi:** obj << Close
+**Sintassi:** obj &lt;&lt; Close
 
 **JMP Versione aggiunta:** 16
 
 #### Exclude Selected Rows
 
-**Sintassi:** obj << Exclude Selected Rows
+**Sintassi:** obj &lt;&lt; Exclude Selected Rows
 
 **JMP Versione aggiunta:** 16
 
@@ -1223,7 +1219,7 @@ obj << Scatterplot Matrix;
 
 #### Add Highest Nines to Missing Value Codes
 
-**Sintassi:** obj << Add Highest Nines to Missing Value Codes( ALL or column1, column2, ... )
+**Sintassi:** obj &lt;&lt; Add Highest Nines to Missing Value Codes( ALL or column1, column2, ... )
 
 **Descrizione:** Seleziona le colonne elencate come argomenti e trova i nove valori più alti in ciascuna colonna. Crea una proprietà Codici dei valori mancanti per tali valori in ogni colonna selezionata.
 
@@ -1243,7 +1239,7 @@ dt:PS_RPNBR << Get Column Properties;
 
 #### Add to Missing Value Codes
 
-**Sintassi:** obj << Add to Missing Value Codes( ALL or column1, column2, ... )
+**Sintassi:** obj &lt;&lt; Add to Missing Value Codes( ALL or column1, column2, ... )
 
 **Descrizione:** Seleziona le colonne elencate come argomenti e aggiunge la proprietà Codici di valori mancanti in tali colonne per gli outlier.
 
@@ -1261,7 +1257,7 @@ obj << Add to Missing Value Codes( :"Q-E"n, :"ZN-E"n );
 
 #### Change Highest Nines to Missing
 
-**Sintassi:** obj << Change Highest Nines to Missing( ALL or column1, column2, ... )
+**Sintassi:** obj &lt;&lt; Change Highest Nines to Missing( ALL or column1, column2, ... )
 
 **Descrizione:** Seleziona le colonne elencate come argomenti e trova i nove valori più alti in tali colonne. Cambia i nove valori più alti in mancanti. In tal modo la tabella di dati viene modificata.
 
@@ -1279,7 +1275,7 @@ obj << Change Highest Nines to Missing( :PS_RPNBR );
 
 #### Change to Missing
 
-**Sintassi:** obj << Change to Missing( ALL or column1, column2, ... )
+**Sintassi:** obj &lt;&lt; Change to Missing( ALL or column1, column2, ... )
 
 **Descrizione:** Seleziona le colonne elencate come argomenti. Nelle colonne selezionate, cambia i valori identificati come outlier in valori mancanti.
 
@@ -1298,7 +1294,7 @@ obj << Change to Missing( :"Q-E"n, :"ZN-E"n );
 
 #### Close
 
-**Sintassi:** obj << Close
+**Sintassi:** obj &lt;&lt; Close
 
 **Descrizione:** Rimuove una sezione dell&apos;analisi e riapre il riquadro dei comandi.
 
@@ -1318,7 +1314,7 @@ obj << Close;
 
 #### Color Cells
 
-**Sintassi:** obj << Color Cells( ALL or column1, column2, ... )
+**Sintassi:** obj &lt;&lt; Color Cells( ALL or column1, column2, ... )
 
 **Descrizione:** Seleziona le colonne elencate come argomenti. Nelle colonne selezionate, colora le celle che corrispondono agli outlier.
 
@@ -1336,7 +1332,7 @@ obj << Color Cells( :"Q-E"n, :"ZN-E"n );
 
 #### Color Rows
 
-**Sintassi:** obj << Color Rows( ALL or column1, column2, ... )
+**Sintassi:** obj &lt;&lt; Color Rows( ALL or column1, column2, ... )
 
 **Descrizione:** Seleziona le colonne elencate come argomenti. Nelle colonne selezionate, assegna lo stato della riga Colore alle righe che corrispondono agli outlier.
 
@@ -1344,7 +1340,7 @@ obj << Color Cells( :"Q-E"n, :"ZN-E"n );
 
 #### Exclude Rows
 
-**Sintassi:** obj << Exclude Rows( ALL or column1, column2, ... )
+**Sintassi:** obj &lt;&lt; Exclude Rows( ALL or column1, column2, ... )
 
 **Descrizione:** Seleziona le colonne elencate come argomenti. Nelle colonne selezionate, esclude le righe contenenti i valori identificati come outlier.
 
@@ -1362,7 +1358,7 @@ obj << Exclude Rows( :"Q-E"n, :"ZN-E"n );
 
 #### Formula Columns
 
-**Sintassi:** obj << Formula Columns( ALL or column1, column2, ... )
+**Sintassi:** obj &lt;&lt; Formula Columns( ALL or column1, column2, ... )
 
 **Descrizione:** Crea nuove colonne della formula dalle colonne selezionate cambiando gli outlier in mancanti.
 
@@ -1381,7 +1377,7 @@ obj << Formula Columns( Suffix( "Culled" ) );
 
 #### Formula Script
 
-**Sintassi:** obj << Formula Script( ALL or column1, column2, ... )
+**Sintassi:** obj &lt;&lt; Formula Script( ALL or column1, column2, ... )
 
 **Descrizione:** Crea uno script per creare nuove colonne della formula dalle colonne selezionate cambiando gli outlier in mancanti.
 
@@ -1400,7 +1396,7 @@ obj << Formula Script( Suffix( "Culled" ) );
 
 #### Get Quantile Outliers
 
-**Sintassi:** obj << Get Quantile Outliers
+**Sintassi:** obj &lt;&lt; Get Quantile Outliers
 
 **Descrizione:** Restituisce un elenco delle colonne che contengono outlier e un elenco di vettori che contengono valori di outlier in tali colonne.
 
@@ -1416,7 +1412,7 @@ obj << Get Quantile Outliers;
 
 #### Q
 
-**Sintassi:** obj << Q( number=3 )
+**Sintassi:** obj &lt;&lt; Q( number=3 )
 
 **Descrizione:** Definisce il fattore Q di scala multipla per la distanza interquantile. I valori grandi più di Q volte la distanza interquantile sono considerati outlier. Usa Analizza di nuovo per applicare il fattore. "3", per impostazione predefinita.
 
@@ -1433,7 +1429,7 @@ obj << Quantile Range Outliers( Q( 4 ) );
 
 #### Rescan
 
-**Sintassi:** obj << Rescan
+**Sintassi:** obj &lt;&lt; Rescan
 
 **Descrizione:** Usare dopo avere cambiato le impostazioni per ricalcolare i criteri e analizzare nuovamente i dati per ottenere outlier.
 
@@ -1452,7 +1448,7 @@ obj << Rescan;
 
 #### Restrict search to integers
 
-**Sintassi:** obj << Restrict search to integers( state=0|1 )
+**Sintassi:** obj &lt;&lt; Restrict search to integers( state=0|1 )
 
 **Descrizione:** Limita i valori di outlier soltanto a valori interi. Questa impostazione limita la ricerca di outlier in modo da trovare codici di valori mancanti e codici di errori specifici del settore. Disponibile per i metodi Outlier range dei quantili e Outlier della stima robusta. Opzione disattivata per impostazione predefinita.
 
@@ -1469,7 +1465,7 @@ obj = dt << Explore Outliers(
 
 #### Save Quantile Outlier Limits
 
-**Sintassi:** obj << Save Quantile Outlier Limits
+**Sintassi:** obj &lt;&lt; Save Quantile Outlier Limits
 
 **Descrizione:** Apre una tabella di dati contenente le informazioni sui report Outlier range dei quantili e una colonna di valori di outlier.
 
@@ -1485,7 +1481,7 @@ obj << Save Quantile Outlier Limits;
 
 #### Select Rows
 
-**Sintassi:** obj << Select Rows( ALL or column1, column2, ... )
+**Sintassi:** obj &lt;&lt; Select Rows( ALL or column1, column2, ... )
 
 **Descrizione:** Seleziona le colonne elencate come argomenti e seleziona le righe che hanno valori di outlier e in una qualsiasi di queste colonne.
 
@@ -1503,7 +1499,7 @@ obj << Select Rows( :"Q-E"n, :"ZN-E"n );
 
 #### Show only columns with outliers
 
-**Sintassi:** obj << Show only columns with outliers( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show only columns with outliers( state=0|1 )
 
 **Descrizione:** Limita l&apos;elenco delle colonne nel report a quelle che contengono outlier. Disponibile per i metodi Outlier range dei quantili e Outlier della stima robusta. Opzione disattivata per impostazione predefinita.
 
@@ -1520,7 +1516,7 @@ obj = dt << Explore Outliers(
 
 #### Tail Quantile
 
-**Sintassi:** obj << Tail Quantile( number=.10 )
+**Sintassi:** obj &lt;&lt; Tail Quantile( number=.10 )
 
 **Descrizione:** Imposta il valore del quantile per ogni coda. I quantili vengono usati per calcolare la distanza interquantile. Usare Analizza di nuovo per applicare l&apos;impostazione. ".10", per impostazione predefinita.
 
@@ -1541,7 +1537,7 @@ obj << Quantile Range Outliers( Tail Quantile( 0.2 ) );
 
 #### Add to Missing Value Codes
 
-**Sintassi:** obj << Add to Missing Value Codes( ALL or column1, column2, ... )
+**Sintassi:** obj &lt;&lt; Add to Missing Value Codes( ALL or column1, column2, ... )
 
 **Descrizione:** Seleziona le colonne elencate come argomenti e aggiunge la proprietà Codici di valori mancanti in tali colonne per gli outlier.
 
@@ -1559,7 +1555,7 @@ obj << Add to Missing Value Codes( :"Q-E"n, :"ZN-E"n );
 
 #### Cauchy
 
-**Sintassi:** obj << Cauchy( state=0|1 )
+**Sintassi:** obj &lt;&lt; Cauchy( state=0|1 )
 
 **Descrizione:** Utilizza una distribuzione di Cauchy per stimare il centro robusto e la scala dei valori. Il centro robusto e la scala vengono usati per determinare gli outlier.
 
@@ -1576,7 +1572,7 @@ obj << Rescan;
 
 #### Change to Missing
 
-**Sintassi:** obj << Change to Missing( ALL or column1, column2, ... )
+**Sintassi:** obj &lt;&lt; Change to Missing( ALL or column1, column2, ... )
 
 **Descrizione:** Seleziona le colonne elencate come argomenti. Nelle colonne selezionate, cambia i valori identificati come outlier in valori mancanti.
 
@@ -1595,7 +1591,7 @@ obj << Change to Missing( :"Q-E"n, :"ZN-E"n );
 
 #### Close
 
-**Sintassi:** obj << Close
+**Sintassi:** obj &lt;&lt; Close
 
 **Descrizione:** Rimuove una sezione dell&apos;analisi e riapre il riquadro dei comandi.
 
@@ -1614,7 +1610,7 @@ obj << Close;
 
 #### Color Cells
 
-**Sintassi:** obj << Color Cells( ALL or column1, column2, ... )
+**Sintassi:** obj &lt;&lt; Color Cells( ALL or column1, column2, ... )
 
 **Descrizione:** Seleziona le colonne elencate come argomenti. Nelle colonne selezionate, colora le celle che corrispondono agli outlier.
 
@@ -1632,7 +1628,7 @@ obj << Color Cells( :"Q-E"n, :"ZN-E"n );
 
 #### Color Rows
 
-**Sintassi:** obj << Color Rows( ALL or column1, column2, ... )
+**Sintassi:** obj &lt;&lt; Color Rows( ALL or column1, column2, ... )
 
 **Descrizione:** Seleziona le colonne elencate come argomenti. Nelle colonne selezionate, assegna lo stato della riga Colore alle righe che corrispondono agli outlier.
 
@@ -1651,7 +1647,7 @@ obj << Color Rows( :"Q-E"n, :"ZN-E"n );
 
 #### Exclude Rows
 
-**Sintassi:** obj << Exclude Rows( ALL or column1, column2, ... )
+**Sintassi:** obj &lt;&lt; Exclude Rows( ALL or column1, column2, ... )
 
 **Descrizione:** Seleziona le colonne elencate come argomenti. Nelle colonne selezionate, esclude le righe contenenti i valori identificati come outlier.
 
@@ -1669,7 +1665,7 @@ obj << Exclude Rows( :"Q-E"n, :"ZN-E"n );
 
 #### Formula Columns
 
-**Sintassi:** obj << Formula Columns( ALL or column1, column2, ... )
+**Sintassi:** obj &lt;&lt; Formula Columns( ALL or column1, column2, ... )
 
 **Descrizione:** Crea nuove colonne della formula dalle colonne selezionate cambiando gli outlier in mancanti.
 
@@ -1688,7 +1684,7 @@ obj << Formula Columns( Suffix( "Culled" ) );
 
 #### Formula Script
 
-**Sintassi:** obj << Formula Script( ALL or column1, column2, ... )
+**Sintassi:** obj &lt;&lt; Formula Script( ALL or column1, column2, ... )
 
 **Descrizione:** Crea uno script per creare nuove colonne della formula dalle colonne selezionate cambiando gli outlier in mancanti.
 
@@ -1707,7 +1703,7 @@ obj << Formula Script( Suffix( "Culled" ) );
 
 #### Huber
 
-**Sintassi:** obj << Huber( state=0|1 )
+**Sintassi:** obj &lt;&lt; Huber( state=0|1 )
 
 **Descrizione:** Utilizza una stima di Huber per stimare il centro robusto e la scala dei valori. Il centro robusto e la scala vengono usati per determinare gli outlier.
 
@@ -1724,7 +1720,7 @@ obj << Rescan;
 
 #### K Sigma
 
-**Sintassi:** obj << K Sigma( number=4 )
+**Sintassi:** obj &lt;&lt; K Sigma( number=4 )
 
 **Descrizione:** Definisce il valore K sigma per il quale gli outlier sono distanti dal centro robusto K volte. "4", per impostazione predefinita.
 
@@ -1743,7 +1739,7 @@ obj << Rescan;
 
 #### Quartile
 
-**Sintassi:** obj << Quartile( state=0|1 )
+**Sintassi:** obj &lt;&lt; Quartile( state=0|1 )
 
 **Descrizione:** Utilizza la mediana per stimare il centro robusto e il range interquartile diviso per 1,349 per stimare la scala robusta. Il centro robusto e la scala robusta vengono usati per determinare gli outlier.
 
@@ -1760,7 +1756,7 @@ obj << Rescan;
 
 #### Rescan
 
-**Sintassi:** obj << Rescan
+**Sintassi:** obj &lt;&lt; Rescan
 
 **Descrizione:** Usare dopo avere cambiato le impostazioni per ricalcolare i criteri e analizzare nuovamente i dati per ottenere outlier.
 
@@ -1779,7 +1775,7 @@ obj << Rescan;
 
 #### Save Robust Outlier Limits
 
-**Sintassi:** obj << Save Robust Outlier Limits
+**Sintassi:** obj &lt;&lt; Save Robust Outlier Limits
 
 **Descrizione:** Apre una nuova tabella di dati che contiene informazioni dal report Stime robuste e outlier.
 
@@ -1795,7 +1791,7 @@ obj << Save Robust Outlier Limits;
 
 #### Select Rows
 
-**Sintassi:** obj << Select Rows( ALL or column1, column2, ... )
+**Sintassi:** obj &lt;&lt; Select Rows( ALL or column1, column2, ... )
 
 **Descrizione:** Seleziona le colonne elencate come argomenti e seleziona le righe che hanno valori di outlier e in una qualsiasi di queste colonne.
 
@@ -1817,7 +1813,7 @@ obj << Select Rows( :"Q-E"n, :"ZN-E"n );
 
 #### Center
 
-**Sintassi:** obj << Center( state=1 )
+**Sintassi:** obj &lt;&lt; Center( state=1 )
 
 **Descrizione:** Specifica se centrare i dati rispetto alla mediana prima dell&apos;analisi. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1825,7 +1821,7 @@ obj << Select Rows( :"Q-E"n, :"ZN-E"n );
 
 #### Close
 
-**Sintassi:** obj << Close
+**Sintassi:** obj &lt;&lt; Close
 
 **Descrizione:** Rimuove l&apos;analisi RPCA dal report della piattaforma.
 
@@ -1833,7 +1829,7 @@ obj << Select Rows( :"Q-E"n, :"ZN-E"n );
 
 #### Lambda
 
-**Sintassi:** obj << Lambda( number )
+**Sintassi:** obj &lt;&lt; Lambda( number )
 
 **Descrizione:** Regolazione robusta di PCA con valori più bassi che la rendono più sensibile alla dichiarazione di outlier. Lambda predefinito=2/rquad(max(nRighe,nCol))
 
@@ -1841,7 +1837,7 @@ obj << Select Rows( :"Q-E"n, :"ZN-E"n );
 
 #### MaxIt
 
-**Sintassi:** obj << MaxIt( number )
+**Sintassi:** obj &lt;&lt; MaxIt( number )
 
 **Descrizione:** Il numero massimo di iterazioni SVD consentito prima di fallire la convergenza.
 
@@ -1849,7 +1845,7 @@ obj << Select Rows( :"Q-E"n, :"ZN-E"n );
 
 #### Outlier Threshold
 
-**Sintassi:** obj << Outlier Threshold( number=2 )
+**Sintassi:** obj &lt;&lt; Outlier Threshold( number=2 )
 
 **Descrizione:** Specifica che qualsiasi residuo scalato più grande, in valore assoluto, rispetto a questa soglia viene visualizzato come mostrato nel report degli outlier. "2", per impostazione predefinita.
 
@@ -1857,7 +1853,7 @@ obj << Select Rows( :"Q-E"n, :"ZN-E"n );
 
 #### Randomized SVD Dim
 
-**Sintassi:** obj << Randomized SVD Dim( state=0|1 )
+**Sintassi:** obj &lt;&lt; Randomized SVD Dim( state=0|1 )
 
 **Descrizione:** Specifica il numero di dimensioni nella SVD randomizzata a cui ridurre il problema ampio.
 
@@ -1865,7 +1861,7 @@ obj << Select Rows( :"Q-E"n, :"ZN-E"n );
 
 #### Save Cleaned
 
-**Sintassi:** obj << Save Cleaned( Trim(<threshold>),Impute(<threshold>),Make Missing(<threshold>),Color Impute(0|1)--if none specified it will prompt with dialog )
+**Sintassi:** obj &lt;&lt; Save Cleaned( Trim(&lt;threshold&gt;),Impute(&lt;threshold&gt;),Make Missing(&lt;threshold&gt;),Color Impute(0|1)--if none specified it will prompt with dialog )
 
 **Descrizione:** Crea una nuova serie di colonne che contengono valori mancanti imputati e outlier modificati. Taglia(arg) trova i residui scalati maggiori di arg e modifica i residui scalati nelle celle corrispondenti nel valore di arg con segno. Imputa(arg) trova i residui scalati maggiori di arg e modifica i residui scalati nelle celle corrispondenti nell&apos;approssimazione di rango basso. Crea mancanti(valore) trova qualsiasi residuo scalato maggiore di arg e modifica i residui scalati nelle celle corrispondenti in mancanti.
 
@@ -1885,7 +1881,7 @@ obj << Save Cleaned( Trim( 25 ), Impute( 50 ), Make Missing( 100 ) );
 
 #### Save Large Outliers
 
-**Sintassi:** obj << Save Large Outliers
+**Sintassi:** obj &lt;&lt; Save Large Outliers
 
 **Descrizione:** Crea una nuova tabella di dati che contiene gli outlier nel report.
 
@@ -1905,7 +1901,7 @@ obj << Save Large Outliers;
 
 #### Save Low Rank Approx
 
-**Sintassi:** obj << Save Low Rank Approx
+**Sintassi:** obj &lt;&lt; Save Low Rank Approx
 
 **Descrizione:** Crea una nuova serie di colonne che contengono l&apos;approssimazione di rango basso, che si ottiene dalla scomposizione ai valori singolari.
 
@@ -1925,7 +1921,7 @@ obj << Save Low Rank Approx;
 
 #### Save Residuals
 
-**Sintassi:** obj << Save Residuals
+**Sintassi:** obj &lt;&lt; Save Residuals
 
 **Descrizione:** Crea una nuova serie di colonne che contengono i residui, che sono le osservazioni meno l&apos;approssimazione di rango basso.
 
@@ -1945,7 +1941,7 @@ obj << Save Residuals;
 
 #### Save Scaled Residuals
 
-**Sintassi:** obj << Save Scaled Residuals
+**Sintassi:** obj &lt;&lt; Save Scaled Residuals
 
 **Descrizione:** Crea una nuova serie di colonne che contengono i residui scalati, che sono le osservazioni scalate meno l&apos;approssimazione di rango basso.
 
@@ -1965,7 +1961,7 @@ obj << Save Scaled Residuals;
 
 #### Scale
 
-**Sintassi:** obj << Scale( state=1 )
+**Sintassi:** obj &lt;&lt; Scale( state=1 )
 
 **Descrizione:** Specifica se scalare i dati con un range interquantile analogo alla deviazione standard prima dell&apos;analisi. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1973,7 +1969,7 @@ obj << Save Scaled Residuals;
 
 #### Tolerance
 
-**Sintassi:** obj << Tolerance( number )
+**Sintassi:** obj &lt;&lt; Tolerance( number )
 
 **Descrizione:** Specifica il criterio di convergenza, che determina quando interrompere l&apos;algoritmo. I valori predefiniti del criterio di convergenza sono impostati in base al numero di colonne specificato all&apos;avvio.
 
@@ -1981,7 +1977,7 @@ obj << Save Scaled Residuals;
 
 #### Use Randomized SVD
 
-**Sintassi:** obj << Use Randomized SVD( state=0|1 )
+**Sintassi:** obj &lt;&lt; Use Randomized SVD( state=0|1 )
 
 **Descrizione:** Riduce la dimensionalità usando la SVD randomizzata. Questo approccio può accelerare i calcoli per problemi molto ampi.
 

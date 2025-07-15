@@ -6,7 +6,7 @@
 
 ### Action
 
-**構文:** obj << Action
+**構文:** obj &lt;&lt; Action
 
 **説明:** 評価する式を挿入するための、プラットフォーム内の汎用トラップドア。プラットフォームに一時的にディスプレイボックスおよびデータテーブルのコンテキストを設定する。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**構文:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**構文:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **説明:** 作成されたプリセットをオブジェクトに適用する。保存された設定に合わせてオプションとカスタマイズが更新される。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**構文:** obj << Automatic Recalc( state=0|1 )
+**構文:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **説明:** データの除外や変更があった場合に分析を自動的にやり直す。Automatic Recalcオプションがオンになっている場合で、データの除外や変更が再計算の前に確実に適用されるようにするには、Wait(0)コマンドを使用すること。
 
@@ -101,7 +101,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**構文:** obj << Broadcast(message)
+**構文:** obj &lt;&lt; Broadcast(message)
 
 **説明:** メッセージをプラットフォームに一括適用する。個々のオブジェクトから戻される結果がデータテーブルである場合は、可能な限り連結する。その最終的な形式は、Table BoxのSave Combined Tableオプションの結果と同じになるか、またはソース列を使用したConcanateオプションの結果と同じになる。それ以外の場合、結果はリストの形で戻される。
 
@@ -121,7 +121,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**構文:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**構文:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **説明:** プラットフォームの変数を変更するための設定パネルを追加する。
 
@@ -139,7 +139,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**構文:** obj << Copy ByGroup Script
+**構文:** obj &lt;&lt; Copy ByGroup Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -174,7 +174,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**構文:** obj << Copy Script
+**構文:** obj &lt;&lt; Copy Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -203,7 +203,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**構文:** obj << Data Table Window
+**構文:** obj &lt;&lt; Data Table Window
 
 **説明:** この分析に使用したデータテーブルのウィンドウを手前に表示する。
 
@@ -232,7 +232,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**構文:** obj << Get By Levels
+**構文:** obj &lt;&lt; Get By Levels
 
 **説明:** By列が指定されている場合、列名をキー、データ値を値とした連想配列を戻す。
 
@@ -249,7 +249,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**構文:** obj << Get ByGroup Script
+**構文:** obj &lt;&lt; Get ByGroup Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -285,7 +285,7 @@ Show( t );
 
 ### Get Container
 
-**構文:** obj << Get Container
+**構文:** obj &lt;&lt; Get Container
 
 **説明:** オブジェクトのコンテンツを含んだコンテナボックスの参照を戻す。
 
@@ -346,7 +346,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**構文:** obj << Get Data Table
+**構文:** obj &lt;&lt; Get Data Table
 
 **説明:** データテーブルへの参照を戻す。
 
@@ -376,7 +376,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**構文:** obj << Get Group Platform
+**構文:** obj &lt;&lt; Get Group Platform
 
 **説明:** 該当のプラットフォームがグループに属している場合に、Group Platformオブジェクトを戻す。それ以外の場合はEmpty()を戻す。
 
@@ -393,7 +393,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**構文:** obj << Get Script
+**構文:** obj &lt;&lt; Get Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -423,7 +423,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**構文:** obj << Get Script With Data Table
+**構文:** obj &lt;&lt; Get Script With Data Table
 
 **説明:** この分析を再現するスクリプト(JSL)をデータテーブルへの参照も含めて生成し、それを式として戻す。
 
@@ -453,7 +453,7 @@ Show( t );
 
 ### Get Timing
 
-**構文:** obj << Get Timing
+**構文:** obj &lt;&lt; Get Timing
 
 **説明:** プラットフォームの起動にかかった時間を取得する。
 
@@ -483,7 +483,7 @@ Show( t );
 
 ### Get Web Support
 
-**構文:** obj << Get Web Support
+**構文:** obj &lt;&lt; Get Web Support
 
 **説明:** ディスプレイオブジェクトにおけるインタラクティブHTMLサポートのレベルを数値で戻す。1は、一部または全部の要素がサポートされていることを示し、0は、サポートされないことを示す。
 
@@ -499,7 +499,7 @@ Show( s );
 
 ### Get Where Expr
 
-**構文:** obj << Get Where Expr
+**構文:** obj &lt;&lt; Get Where Expr
 
 **説明:** プラットフォームがBy()またはWhere()を使って起動された場合に、データをサブセットするためのWhere式を戻す。By()やWhere()が使われていない場合はEmpty()を戻す。
 
@@ -536,7 +536,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**構文:** obj << Local Data Filter
+**構文:** obj &lt;&lt; Local Data Filter
 
 **説明:** このプラットフォームに対してのみ有効なフィルタで、データを特定のグループまたは範囲にフィルタリングする。
 
@@ -592,7 +592,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**構文:** obj << Paste Local Data Filter
+**構文:** obj &lt;&lt; Paste Local Data Filter
 
 **説明:** クリップボードにあるローカルデータフィルタを現在のレポートに適用する。
 
@@ -613,7 +613,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**構文:** obj << Redo Analysis
+**構文:** obj &lt;&lt; Redo Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -642,7 +642,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**構文:** obj << Redo ByGroup Analysis
+**構文:** obj &lt;&lt; Redo ByGroup Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -677,7 +677,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**構文:** obj << Relaunch Analysis
+**構文:** obj &lt;&lt; Relaunch Analysis
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -706,7 +706,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**構文:** obj << Relaunch ByGroup
+**構文:** obj &lt;&lt; Relaunch ByGroup
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -741,7 +741,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**構文:** obj << Remove Column Switcher
+**構文:** obj &lt;&lt; Remove Column Switcher
 
 **説明:** プラットフォームに最後に追加された列スイッチャーを削除する。
 
@@ -761,7 +761,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**構文:** obj << Remove Local Data Filter
+**構文:** obj &lt;&lt; Remove Local Data Filter
 
 **説明:** すでに作成されているローカルデータフィルタを削除し、プラットフォームはデータテーブル内のすべてのデータを使用した状態に戻る。
 
@@ -800,9 +800,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**構文:** obj << Report;
-
-Report( obj )
+**構文:** obj &lt;&lt; Report;Report( obj )
 
 **説明:** レポートオブジェクトへの参照を戻す。
 
@@ -833,7 +831,7 @@ Show( t );
 
 ### Report View
 
-**構文:** obj << Report View( "完全"|"要約" )
+**構文:** obj &lt;&lt; Report View( "完全"|"要約" )
 
 **説明:** レポートビューは、プラットフォームレポートの詳細を表示するかどうかを決定する。Fullはすべての詳細を表示し、Summaryはプラットフォームにより限定されたものだけを表示する。 動作をカスタマイズするため、各ディスプレイボックスは<<Set Summary Behaviorメッセージをサポートする。
 
@@ -862,7 +860,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**構文:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** 分析を再現するためのJSLスクリプトを作成し、データテーブルにテーブルプロパティとして保存する。スクリプトの名前を指定できる。Append Suffixオプションは、スクリプト名に数字の接尾辞を追加する。これにより、同名のスクリプトが存在していても区別できる。Promptオプションは、ユーザにスクリプト名の指定を促す。Replaceオプションは、同名の既存のスクリプトを置き換える。
 
@@ -897,7 +895,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**構文:** obj << Save ByGroup Script to Journal
+**構文:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -932,7 +930,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**構文:** obj << Save ByGroup Script to Script Window
+**構文:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -967,7 +965,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**構文:** obj << Save Script for All Objects
+**構文:** obj &lt;&lt; Save Script for All Objects
 
 **説明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -996,7 +994,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**構文:** obj << Save Script for All Objects To Data Table( <name> )
+**構文:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **説明:** すべてのレポートオブジェクトを再現するスクリプトを現在のデータテーブルに保存する。このオプションは、ウィンドウ内にレポートが複数ある場合に便利。作成されるスクリプトの名前は、引用符で囲んで指定しない限り、1つ目のプラットフォーム名となる。
 
@@ -1064,7 +1062,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**構文:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** この分析を再現するJSLスクリプトを生成し、データテーブルのテーブルプロパティとして保存する。
 
@@ -1093,7 +1091,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**構文:** obj << Save Script to Journal
+**構文:** obj &lt;&lt; Save Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -1122,7 +1120,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**構文:** obj << Save Script to Report
+**構文:** obj &lt;&lt; Save Script to Report
 
 **説明:** この分析を再現するJSLスクリプトを生成し、レポートウィンドウに表示する。分析手順の記録を結果と一緒に残せる。
 
@@ -1151,7 +1149,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**構文:** obj << Save Script to Script Window
+**構文:** obj &lt;&lt; Save Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -1245,7 +1243,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**構文:** obj << Sync to Data Table Changes
+**構文:** obj &lt;&lt; Sync to Data Table Changes
 
 **説明:** 除外やデータの変更が行われた場合に同期する。
 
@@ -1262,7 +1260,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**構文:** obj << Title( "new title" )
+**構文:** obj &lt;&lt; Title( "new title" )
 
 **説明:** プラットフォームのタイトルを設定する。
 
@@ -1291,7 +1289,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**構文:** obj << Top Report
+**構文:** obj &lt;&lt; Top Report
 
 **説明:** レポート内のルートノードへの参照を戻す。
 
@@ -1322,7 +1320,7 @@ Show( t );
 
 ### Transform Column
 
-**構文:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**構文:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **説明:** オブジェクトのローカルコンテキスト(通常はプラットフォーム)内に変換列を作成する。この変換列は、それを作成したプラットフォームの中のみで使用可能。
 
@@ -1341,7 +1339,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**構文:** obj << View Web XML
+**構文:** obj &lt;&lt; View Web XML
 
 **説明:** インタラクティブHTMLレポートの作成に使うXMLコードを戻す。
 
@@ -1377,7 +1375,7 @@ New Window( "Bivariate Equation",
 
 ### Censor
 
-**構文:** obj << Censor( column )
+**構文:** obj &lt;&lt; Censor( column )
 
 ```jsl
 
@@ -1395,7 +1393,7 @@ obj = dt << Degradation(
 
 ### Freq
 
-**構文:** obj << Freq( column )
+**構文:** obj &lt;&lt; Freq( column )
 
 ```jsl
 
@@ -1423,7 +1421,7 @@ obj = dt << Degradation(
 
 ### Label
 
-**構文:** obj << Label( column )
+**構文:** obj &lt;&lt; Label( column )
 
 ```jsl
 
@@ -1441,7 +1439,7 @@ obj = dt << Degradation(
 
 ### Response
 
-**構文:** obj << Response( column(s) )
+**構文:** obj &lt;&lt; Response( column(s) )
 
 ```jsl
 
@@ -1459,7 +1457,7 @@ obj = dt << Degradation(
 
 ### System ID
 
-**構文:** obj << System ID( column )
+**構文:** obj &lt;&lt; System ID( column )
 
 ```jsl
 
@@ -1477,7 +1475,7 @@ obj = dt << Degradation(
 
 ### Time
 
-**構文:** obj << Time( column )
+**構文:** obj &lt;&lt; Time( column )
 
 ```jsl
 
@@ -1495,7 +1493,7 @@ obj = dt << Degradation(
 
 ### X
 
-**構文:** obj << X( column(s) )
+**構文:** obj &lt;&lt; X( column(s) )
 
 ```jsl
 
@@ -1513,7 +1511,7 @@ obj = dt << Degradation(
 
 ### Y
 
-**構文:** obj << Y( column(s) )
+**構文:** obj &lt;&lt; Y( column(s) )
 
 ```jsl
 
@@ -1533,7 +1531,7 @@ obj = dt << Degradation(
 
 ### Degradation
 
-**構文:** Degradation( Y( column ), Time( column ), Application( "Repeated Measures Degradation"|"Destructive Degradation"|"Stability Test" ), <X( column )>, <Label( column )>, <Freq( column )>, <Censor( column )>, <Censor Code( value )>, <Upper Spec Limit( value )>, <Lower Spec Limit( value )>, <Censoring Time( value )> )
+**構文:** Degradation( Y( column ), Time( column ), Application( "Repeated Measures Degradation"|"Destructive Degradation"|"Stability Test" ), &lt;X( column )&gt;, &lt;Label( column )&gt;, &lt;Freq( column )&gt;, &lt;Censor( column )&gt;, &lt;Censor Code( value )&gt;, &lt;Upper Spec Limit( value )&gt;, &lt;Lower Spec Limit( value )&gt;, &lt;Censoring Time( value )&gt; )
 
 **説明:** 線形や非線形の曲線を使って劣化をモデル化する。分析オプションには、安定性分析、疑似故障データの生成などがある。
 
@@ -1584,7 +1582,7 @@ obj = dt << Degradation(
 
 ### Connect Data Markers
 
-**構文:** obj << Connect Data Markers( state=0|1 )
+**構文:** obj &lt;&lt; Connect Data Markers( state=0|1 )
 
 **説明:** 重ね合わせプロットにおいて、点をつなぐ折れ線の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1606,7 +1604,7 @@ obj << Connect Data Markers( 1 );
 
 ### Curve Interval Alpha
 
-**構文:** obj << Curve Interval Alpha( fraction )
+**構文:** obj &lt;&lt; Curve Interval Alpha( fraction )
 
 **説明:** 重ね合わせプロットの信頼区間曲線に使われる有意水準を指定する。
 
@@ -1628,7 +1626,7 @@ obj << Curve Interval Alpha( .01 );
 
 ### Generate Pseudo Failure Data
 
-**構文:** Generate Pseudo Failure Data(interval_censor, <alpha>)
+**構文:** Generate Pseudo Failure Data(interval_censor, &lt;alpha&gt;)
 
 **説明:** 各ユニットが仕様限界と交差する時間の予測値を、新しいデータテーブルに保存する。新しいデータテーブルには「寿命の一変量」または「寿命の二変量」のスクリプトが含まれ、このスクリプトを使って、疑似故障時間に分布をあてはめることができる。
 
@@ -1651,7 +1649,7 @@ dt1 = obj << Generate Pseudo Failure Data( 1, .05 );
 
 ### Generate Report for Current Model
 
-**構文:** obj << Generate Report for Current Model
+**構文:** obj &lt;&lt; Generate Report for Current Model
 
 **説明:** 現在のモデルの設定でレポートを作成する。「モデルの要約」レポートと、パラメータ推定値を含む「推定値」レポートが含まれる。
 
@@ -1672,7 +1670,7 @@ obj << Generate Report for Current Model;
 
 ### Get Inverse Prediction Results
 
-**構文:** obj << Get Inverse Prediction Results
+**構文:** obj &lt;&lt; Get Inverse Prediction Results
 
 **説明:** 逆推定プロットの結果を含む名前付きリストを戻す。
 
@@ -1693,7 +1691,7 @@ obj << Get Inverse Prediction Results;
 
 ### Get Prediction Results
 
-**構文:** obj << Get Prediction Results
+**構文:** obj &lt;&lt; Get Prediction Results
 
 **説明:** 予測プロットの結果を含む名前付きリストを戻す。
 
@@ -1714,7 +1712,7 @@ obj << Get Prediction Results;
 
 ### Get Residuals
 
-**構文:** obj << Get Residuals
+**構文:** obj &lt;&lt; Get Residuals
 
 **説明:** 残差プロットの結果を含む名前付きリストを戻す。
 
@@ -1734,7 +1732,7 @@ obj << Get Residuals;
 
 ### Get Results
 
-**構文:** obj << Get Results
+**構文:** obj &lt;&lt; Get Results
 
 **説明:** あてはめたすべてのモデルの結果を含む名前付きリストを戻す。
 
@@ -1755,7 +1753,7 @@ obj << Get Results;
 
 ### Inverse Prediction Alpha
 
-**構文:** obj << Inverse Prediction Alpha( fraction )
+**構文:** obj &lt;&lt; Inverse Prediction Alpha( fraction )
 
 **説明:** 逆推定プロットの区間に使用する有意水準を指定する。
 
@@ -1781,7 +1779,7 @@ obj << Inverse Prediction Alpha( .01 );
 
 ### Inverse Prediction Interval
 
-**構文:** obj << Inverse Prediction Interval( "区間なし"|"信頼区間"|"予測区間" )
+**構文:** obj &lt;&lt; Inverse Prediction Interval( "区間なし"|"信頼区間"|"予測区間" )
 
 **説明:** 逆推定プロットにおいて、疑似故障時間の信頼区間または予測区間の表示/非表示を切り替える。区間を有効にすると、[交差時間の保存]オプションで作成されるデータテーブルにもその区間が含まれる。
 
@@ -1806,7 +1804,7 @@ obj << Inverse Prediction Interval( "Prediction Interval" );
 
 ### Inverse Prediction Side
 
-**構文:** obj << Inverse Prediction Side( "両側"|"下片側"|"上片側" )
+**構文:** obj &lt;&lt; Inverse Prediction Side( "両側"|"下片側"|"上片側" )
 
 **説明:** 逆推定プロットに片側区間と両側区間のどちらを表示するかを指定する。
 
@@ -1832,7 +1830,7 @@ obj << Inverse Prediction Side( "Lower One Sided" );
 
 ### Longitudinal Prediction Alpha
 
-**構文:** obj << Longitudinal Prediction Alpha( fraction )
+**構文:** obj &lt;&lt; Longitudinal Prediction Alpha( fraction )
 
 **説明:** 予測プロットの区間に使用する有意水準を指定する。
 
@@ -1860,7 +1858,7 @@ obj << Longitudinal Prediction Alpha( .01 );
 
 ### Longitudinal Prediction Interval
 
-**構文:** obj << Longitudinal Prediction Interval( "区間なし"|"信頼区間"|"予測区間" )
+**構文:** obj &lt;&lt; Longitudinal Prediction Interval( "区間なし"|"信頼区間"|"予測区間" )
 
 **説明:** 予測プロットにおいて、応答の予測値に対する信頼区間または予測区間の表示/非表示を切り替える。区間を有効にすると、[予測の保存]オプションで作成されるデータテーブルにも区間が含まれる。
 
@@ -1887,7 +1885,7 @@ obj << Longitudinal Prediction Interval( "Prediction Interval" );
 
 ### Longitudinal Prediction Time
 
-**構文:** obj << Longitudinal Prediction Time( number )
+**構文:** obj &lt;&lt; Longitudinal Prediction Time( number )
 
 **説明:** 応答を予測したい時間値を指定する。
 
@@ -1914,7 +1912,7 @@ obj << Longitudinal Prediction Time( 3000 );
 
 ### No Tab List
 
-**構文:** obj << No Tab List( state=0|1 )
+**構文:** obj &lt;&lt; No Tab List( state=0|1 )
 
 **説明:** 残差プロット・逆推定・予測グラフの各タブを積み重ねて表示する。
 
@@ -1935,7 +1933,7 @@ obj << No Tab List( 1 );
 
 ### Nonlinear Path
 
-**構文:** obj << Nonlinear Path
+**構文:** obj &lt;&lt; Nonlinear Path
 
 **説明:** 劣化経路の種類を非線形経路に設定する。
 
@@ -1956,7 +1954,7 @@ obj << Nonlinear Path;
 
 ### Prediction Settings
 
-**構文:** obj << Prediction Settings
+**構文:** obj &lt;&lt; Prediction Settings
 
 **説明:** ウィンドウを開いて、モデルの予測に使う設定を変更するためのオプションを表示する。
 
@@ -1977,7 +1975,7 @@ obj << Prediction Settings;
 
 ### Residual Plot
 
-**構文:** obj << Residual Plot( <Jittering( state=0|1 )>, <Jittering Scale( number )>, <Separate Groups( state=0|1 )> )
+**構文:** obj &lt;&lt; Residual Plot( &lt;Jittering( state=0|1 )&gt;, &lt;Jittering Scale( number )&gt;, &lt;Separate Groups( state=0|1 )&gt; )
 
 **説明:** 残差プロットに関する様々なオプションを指定する。
 
@@ -2019,7 +2017,7 @@ obj << Residual Plot( Jittering( 1 ), Separate Groups( 1 ) );
 
 ### Save Crossing Time
 
-**構文:** obj << Save Crossing Time
+**構文:** obj &lt;&lt; Save Crossing Time
 
 **説明:** 現在のモデルの疑似故障時間を新しいデータテーブルに保存する。新しいデータテーブルには、「寿命の一変量」または「寿命の二変量」のスクリプトが含まれ、このスクリプトを使って疑似故障時間に確率分布をあてはめることができる。[逆推定 区間]のいずれかのオプションが有効になっている場合は、その区間もデータテーブルに含まれる。
 
@@ -2048,7 +2046,7 @@ obj << Save Crossing Time;
 
 ### Save Predictions
 
-**構文:** obj << Save Predictions
+**構文:** obj &lt;&lt; Save Predictions
 
 **説明:** 現在のモデルにおける応答の予測値を、新しいデータテーブルに保存する。このデータテーブルには、[縦軸予測 区間]オプションの設定に基づいた下限と上限の列も含まれる。
 
@@ -2078,7 +2076,7 @@ obj << Save Predictions;
 
 ### Save Residuals
 
-**構文:** obj << Save Residuals
+**構文:** obj &lt;&lt; Save Residuals
 
 **説明:** 現在のモデルの残差を新しいデータテーブルに保存する。
 
@@ -2107,7 +2105,7 @@ obj << Save Residuals;
 
 ### Set Baseline
 
-**構文:** obj << Set Baseline( number )
+**構文:** obj &lt;&lt; Set Baseline( number )
 
 **説明:** 非線形経路に対する説明変数の通常の使用条件を指定する。指定された基準値は重ね合わせプロットに黒い線で表示される。
 
@@ -2155,7 +2153,7 @@ obj << Set Baseline( 130 );
 
 ### Set Censoring Time
 
-**構文:** obj << Set Censoring Time( number )
+**構文:** obj &lt;&lt; Set Censoring Time( number )
 
 **説明:** 打ち切り時間を指定する。打ち切り時間は、重ね合わせプロットと逆推定プロットでは縦の点線で表示される。[逆推定 区間]で[区間なし]を選択した場合、打ち切り時間を超える観測値は、打ち切り時間から始まる横線で表示される。[逆推定 区間]オプションで[信頼区間]または[予測区間]を選択した場合、上限が打ち切り時間を超えた観測値の横線は、右側に無限に伸びる。打ち切り時間は、[交差時間の保存]および[疑似故障データの生成]オプションを使って作成されたデータテーブルに反映される。
 
@@ -2177,7 +2175,7 @@ obj << Set Censoring Time( 3800 );
 
 ### Set Lower Spec Limit
 
-**構文:** obj << Set Lower Spec Limit( number )
+**構文:** obj &lt;&lt; Set Lower Spec Limit( number )
 
 **説明:** 下側仕様限界を指定する。指定された下側仕様限界は、重ね合わせプロットにも表示される。
 
@@ -2200,7 +2198,7 @@ obj << Set Lower Spec Limit( -1.5 );
 
 ### Set Upper Spec Limit
 
-**構文:** obj << Set Upper Spec Limit( number )
+**構文:** obj &lt;&lt; Set Upper Spec Limit( number )
 
 **説明:** 上側仕様限界を指定する。指定された上側仕様限界は、重ね合わせプロットにも表示される。
 
@@ -2222,7 +2220,7 @@ obj << Set Upper Spec Limit( 6 );
 
 ### Show Curve Interval
 
-**構文:** obj << Show Curve Interval( "区間なし"|"信頼区間"|"予測区間" )
+**構文:** obj &lt;&lt; Show Curve Interval( "区間なし"|"信頼区間"|"予測区間" )
 
 **説明:** 重ね合わせプロットにおいて、あてはめ線の信頼区間または予測区間の表示/非表示を切り替える。
 
@@ -2243,7 +2241,7 @@ obj << Show Curve Interval( "Prediction Interval" );
 
 ### Show Fitted Lines
 
-**構文:** obj << Show Fitted Lines( state=0|1 )
+**構文:** obj &lt;&lt; Show Fitted Lines( state=0|1 )
 
 **説明:** 重ね合わせプロットにおいて、あてはめ線の表示/非表示を切り替える。
 
@@ -2265,7 +2263,7 @@ obj << Show Fitted Lines( 1 );
 
 ### Show Inverse Prediction Plot
 
-**構文:** obj << Show Inverse Prediction Plot( state=0|1 )
+**構文:** obj &lt;&lt; Show Inverse Prediction Plot( state=0|1 )
 
 **説明:** 逆推定プロットの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2290,7 +2288,7 @@ obj << Show Inverse Prediction Plot( 1 );
 
 ### Show Legend
 
-**構文:** obj << Show Legend( state=0|1 )
+**構文:** obj &lt;&lt; Show Legend( state=0|1 )
 
 **説明:** 重ね合わせプロットにおいて、マーカーの凡例の表示/非表示を切り替える。
 
@@ -2310,7 +2308,7 @@ obj << Show Legend( 1 );
 
 ### Show Residual Plot
 
-**構文:** obj << Show Residual Plot( state=0|1 )
+**構文:** obj &lt;&lt; Show Residual Plot( state=0|1 )
 
 **説明:** 残差プロットの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2332,7 +2330,7 @@ obj << Show Residual Plot( 1 );
 
 ### Show Spec Limits
 
-**構文:** obj << Show Spec Limits( state=0|1 )
+**構文:** obj &lt;&lt; Show Spec Limits( state=0|1 )
 
 **説明:** 重ね合わせプロットにおいて、仕様限界の表示/非表示を切り替える。
 
@@ -2354,7 +2352,7 @@ obj << Show Spec Limits( 0 );
 
 ### Simple Linear Path
 
-**構文:** obj << Simple Linear Path
+**構文:** obj &lt;&lt; Simple Linear Path
 
 **説明:** 劣化経路の種類を単純線形経路に設定する。
 
@@ -2376,7 +2374,7 @@ obj << Simple Linear Path;
 
 ### Specify and Fit Path
 
-**構文:** obj << Specify and Fit Path( Formula Name( string ), Formula( Model Type( string ), Parameter(...)|specification ), fitting command )
+**構文:** obj &lt;&lt; Specify and Fit Path( Formula Name( string ), Formula( Model Type( string ), Parameter(...)|specification ), fitting command )
 
 **説明:** スクリプトの中で直接、経路モデルを指定し、あてはめることができる。「劣化分析」プラットフォームが、ユーザによる操作なしで、自動的に初期値を特定してモデルをあてはめる。各モデルは、モデル名、モデルの定義、あてはめコマンドで指定される。Formula引数内のモデルの種類は、Custom Linear (カスタム線形)、Reaction Rate (反応速度)、Reaction Rate Type I (反応速度タイプI)、またはConstant Rate (一定速度)のいずれかでなければならない。カスタム線形モデルの場合は、「非線形回帰」プラットフォームでモデルを指定する場合と同様に、Parameter()関数を使って計算式を定義する。その他のモデルの場合、specificationの情報はモデルの種類によって異なる。詳しくは、例を参照。fitting commandは、Fit Modelでも、Fit by System IDでもかまわない。
 
@@ -2487,7 +2485,7 @@ obj << Generate Report for Current Model();
 
 ### Test Stability
 
-**構文:** obj << Test Stability
+**構文:** obj &lt;&lt; Test Stability
 
 **説明:** 安定性試験の分析を実行する。安定性試験の分析では、貯蔵寿命を推定する。
 
@@ -2507,7 +2505,7 @@ obj << Test Stability;
 
 ### Use Interpolation through Data
 
-**構文:** obj << Use Interpolation through Data( state=0|1 )
+**構文:** obj &lt;&lt; Use Interpolation through Data( state=0|1 )
 
 **説明:** あてはめたモデルではなく、線形補間によって点間を補間して、ユニットが仕様限界と交差する時点を予測する。動作は、ユニットに仕様限界を超える観測値があるかどうかによって異なる。仕様限界を超える観測値があるユニットに対しては、仕様限界を挟んでいる観測値間で線形補間を行い、逆推定値を求める。仕様限界を超える観測値がないユニットに対しては、逆推定値は打ち切りデータとみなされ、観測された時間の最大値が逆推定値として使われる。
 

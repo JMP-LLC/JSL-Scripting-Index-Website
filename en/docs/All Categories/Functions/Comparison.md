@@ -2,8 +2,6 @@
 
 
 
-## Functions
-
 ### Equal
 
 **Syntax:** z = x == y == ...; z = Equal( x, y, ... )
@@ -19,7 +17,7 @@ Names Default To Here( 1 );
 
 ### Greater
 
-**Syntax:** z = x > y > ... ; z = Greater( x, y, ... )
+**Syntax:** z = x &gt; y &gt; ... ; z = Greater( x, y, ... )
 
 **Description:** Returns 1 if each argument is greater than the next argument; returns 0 otherwise.
 
@@ -32,7 +30,7 @@ Names Default To Here( 1 );
 
 ### Greater or Equal
 
-**Syntax:** z = x >= y >= ... ; z = Greater or Equal( x, y, ... )
+**Syntax:** z = x &gt;= y &gt;= ... ; z = Greater or Equal( x, y, ... )
 
 **Description:** Returns 1 if each argument is greater than or equal to the next argument; returns 0 otherwise.
 
@@ -100,7 +98,7 @@ Is Same Color( To Color Space( "LUV", "red" ), "red" );
 
 ### Less
 
-**Syntax:** z = x < y < ... ; z = Less( x, y, ... )
+**Syntax:** z = x &lt; y &lt; ... ; z = Less( x, y, ... )
 
 **Description:** Returns 1 if each argument is less than the next argument; returns 0 otherwise.
 
@@ -113,7 +111,7 @@ Names Default To Here( 1 );
 
 ### Less LessEqual
 
-**Syntax:** z = x < y <= ... ; z = Less LessEqual( x, y, ... )
+**Syntax:** z = x &lt; y &lt;= ... ; z = Less LessEqual( x, y, ... )
 
 **Description:** Returns 1 if the first argument is less than the second argument and each argument except the first is less than or equal to the next argument; returns 0 otherwise.
 
@@ -126,7 +124,7 @@ Names Default To Here( 1 );
 
 ### Less or Equal
 
-**Syntax:** z = x <= y <= ... ; z = Less or Equal( x, y, ... )
+**Syntax:** z = x &lt;= y &lt;= ... ; z = Less or Equal( x, y, ... )
 
 **Description:** Returns 1 if each argument is less than or equal to the next argument; returns 0 otherwise.
 
@@ -139,7 +137,7 @@ Names Default To Here( 1 );
 
 ### LessEqual Less
 
-**Syntax:** z = x <= y < ... ; z = LessEqual Less( x, y, ... )
+**Syntax:** z = x &lt;= y &lt; ... ; z = LessEqual Less( x, y, ... )
 
 **Description:** Returns 1 if the first argument is less than or equal to the second argument and each argument except the first is less than the next argument; returns 0 otherwise.
 

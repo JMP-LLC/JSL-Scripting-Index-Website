@@ -2,8 +2,6 @@
 
 
 
-## 函数
-
 ### Pat Abort
 
 **语法:** Pat Abort()
@@ -250,7 +248,7 @@ result;
 
 ### Pat Look Ahead
 
-**语法:** Pat Look Ahead( pattern, <0|1> )
+**语法:** Pat Look Ahead( pattern, &lt;0|1&gt; )
 
 **说明:** 在当前位置之后的零宽度模式匹配。第二个可选参数默认值为 0。1 表明负匹配或不匹配。
 
@@ -309,7 +307,7 @@ While( /* keep repeating the match until it won't match */
 
 ### Pat Look Behind
 
-**语法:** Pat Look Behind( pattern, <0|1> )
+**语法:** Pat Look Behind( pattern, &lt;0|1&gt; )
 
 **说明:** 在当前位置之前的零宽度模式匹配。第二个可选参数默认值为 0。1 表明负匹配或不匹配。
 
@@ -367,7 +365,7 @@ While( /* keep repeating the match until it won't match */
 
 ### Pat Match
 
-**语法:** Pat Match( source, pattern, <replacement> )
+**语法:** Pat Match( source, pattern, &lt;replacement&gt; )
 
 **说明:** 根据 source 变量中的字符串，在 pattern 变量中执行模式匹配；可选 replacement 文本将替换匹配的文本。
 
@@ -491,7 +489,7 @@ result;
 
 ### Pat Repeat
 
-**语法:** Pat Repeat( pattern, <min=1>, <max=infinity>, <GREEDY or RELUCTANT=GREEDY> )
+**语法:** Pat Repeat( pattern, &lt;min=1&gt;, &lt;max=infinity&gt;, &lt;GREEDY or RELUCTANT=GREEDY&gt; )
 
 **说明:** 生成与所提供模式匹配次数在 min 和 max 之间的模式值。
 
@@ -614,7 +612,7 @@ string;
 
 ### Regex Match
 
-**语法:** Regex Match( source, pattern, <replacement | NULL>, <MATCHCASE> )
+**语法:** Regex Match( source, pattern, &lt;replacement | NULL&gt;, &lt;MATCHCASE&gt; )
 
 **说明:** 执行正则表达式匹配，并返回整个匹配文本以及由左圆括号创建的每个向后引用的匹配项的列表。可选的第三个参数指定整个匹配的替换字符串；替换字符串可以使用向后引用。
 

@@ -6,9 +6,7 @@
 
 ### Enabled
 
-**構文:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**構文:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **説明:** 有効にされていないオブジェクトはキーボードまたはマウスによる入力に反応しない。このプロパティは子オブジェクトにも継承されるため、コンテナオブジェクトが無効になっていると、その下位のオブジェクトがすべて無効になる。
 
@@ -40,9 +38,7 @@ New Window( "enabled",
 
 ### Get Enabled
 
-**構文:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**構文:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **説明:** 有効にされていないオブジェクトはキーボードまたはマウスによる入力に反応しない。このプロパティは子オブジェクトにも継承されるため、コンテナオブジェクトが無効になっていると、その下位のオブジェクトがすべて無効になる。
 
@@ -74,7 +70,7 @@ New Window( "enabled",
 
 ### Get Namespace
 
-**構文:** obj << Get Namespace
+**構文:** obj &lt;&lt; Get Namespace
 
 **説明:** この表示オブジェクトの名前空間を戻す。
 
@@ -92,7 +88,7 @@ Show( ns:x, x );
 
 ### Get Properties
 
-**構文:** obj << Get Properties
+**構文:** obj &lt;&lt; Get Properties
 
 **説明:** ディスプレイボックスのプロパティとその値を含む連想配列を戻す。
 
@@ -106,7 +102,7 @@ bb << Get Properties;
 
 ### Get Property
 
-**構文:** obj << Get Property( "property" )
+**構文:** obj &lt;&lt; Get Property( "property" )
 
 **説明:** propertyで指定したプロパティの現在の設定を戻す。
 
@@ -120,7 +116,7 @@ bb << Get Property( "Enabled" );
 
 ### Get Property List
 
-**構文:** obj << Get Property List
+**構文:** obj &lt;&lt; Get Property List
 
 **説明:** ディスプレイボックスの持つプロパティのリストを戻す。
 
@@ -134,7 +130,7 @@ bb << Get Property List;
 
 ### Set Property
 
-**構文:** obj << Set Property( "property", value )
+**構文:** obj &lt;&lt; Set Property( "property", value )
 
 **説明:** ディスプレイボックスの、propertyで指定した名前のプロパティに値を設定する。
 
@@ -150,7 +146,7 @@ bb << Set Property( "Enabled", 0 );
 
 ### Hist Seg
 
-**構文:** b = Hist Seg([data], <[freq data]>,<[weight data]>, <vertical=0|1>, <Row States()>)
+**構文:** b = Hist Seg([data], &lt;[freq data]&gt;,&lt;[weight data]&gt;, &lt;vertical=0|1&gt;, &lt;Row States()&gt;)
 
 **説明:** ヒストグラムセグメントを戻す。
 
@@ -176,7 +172,7 @@ seg = (frame << Find Seg( Hist Seg( 1 ) ));
 
 ### Child
 
-**構文:** seg2 = obj << Child
+**構文:** seg2 = obj &lt;&lt; Child
 
 **説明:** ディスプレイセグメントの最初の子を戻す。
 
@@ -201,7 +197,7 @@ seg << Child; // not many segs support children
 
 ### Class Name
 
-**構文:** classname = obj << Class Name
+**構文:** classname = obj &lt;&lt; Class Name
 
 **説明:** ディスプレイボックスのクラス名を戻す。
 
@@ -226,7 +222,7 @@ seg << Class Name;
 
 ### Clip Shape
 
-**構文:** seg << Clip Shape(Boundaries(Shape File, [ID(string)]) | Path([string] | [matrix]) | Empty())
+**構文:** seg &lt;&lt; Clip Shape(Boundaries(Shape File, [ID(string)]) | Path([string] | [matrix]) | Empty())
 
 **説明:** 指定された地図シェープをもとに図やグラフをクリッピングする。クリッピングする領域は、シェープファイルやパスによって指定できる。シェープファイルを使用する場合は、IDをオプション指定してファイルの中から1つの領域を選択することもできる。IDを指定しなかった場合は、すべての領域を結合したものがクリッピング領域として使われる。Nx3行列やテキスト表記を使ってクリッピングするパスを指定することもできる。パスの行列は、X座標、Y座標、フラグの3列で構成される。フラグは0がコントロール点、1が移動、2が線分、3が3次ベジエ曲線で、パスを閉じる点の場合は負の値を指定する。一方、パスをテキスト表記するときにはSVG構文を使用する。
 
@@ -256,7 +252,7 @@ cs << Clip Shape( Boundaries( "US States" ) );
 
 ### Delete
 
-**構文:** obj << Delete
+**構文:** obj &lt;&lt; Delete
 
 **説明:** ディスプレイセグメントを削除する。
 
@@ -281,7 +277,7 @@ seg << Delete;
 
 ### Frame
 
-**構文:** FrameBox = obj << Frame
+**構文:** FrameBox = obj &lt;&lt; Frame
 
 **説明:** ディスプレイセグメントがあるフレームボックスを戻す。
 
@@ -306,7 +302,7 @@ seg << Frame;
 
 ### Get Clip Shape
 
-**構文:** obj << Get Clip Shape
+**構文:** obj &lt;&lt; Get Clip Shape
 
 **説明:** 現在、クリッピングしている領域を戻す。
 
@@ -337,7 +333,7 @@ cs << Get Clip Shape();
 
 ### Get Description
 
-**構文:** description = obj << Get Description
+**構文:** description = obj &lt;&lt; Get Description
 
 **説明:** ディスプレイセグメントの名前を取得する。
 
@@ -362,7 +358,7 @@ seg << get description();
 
 ### Get Fill Pattern
 
-**構文:** obj << Get Fill Pattern
+**構文:** obj &lt;&lt; Get Fill Pattern
 
 ```jsl
 
@@ -385,7 +381,7 @@ seg << Get Fill Pattern;
 
 ### Get Line Color
 
-**構文:** color = obj << Get Line Color( color )
+**構文:** color = obj &lt;&lt; Get Line Color( color )
 
 **説明:** 棒の輪郭の色を取得する。
 
@@ -410,7 +406,7 @@ seg << Get Line Color;
 
 ### Get Line Style
 
-**構文:** linestyle = obj << Get Line Style( pen style )
+**構文:** linestyle = obj &lt;&lt; Get Line Style( pen style )
 
 **説明:** 棒の輪郭の線種を取得する。
 
@@ -435,7 +431,7 @@ seg << Get Line Style;
 
 ### Get Line Width
 
-**構文:** integer = obj << Get Line Width( number )
+**構文:** integer = obj &lt;&lt; Get Line Width( number )
 
 **説明:** 棒の輪郭の幅を取得する。
 
@@ -460,7 +456,7 @@ seg << Get Line Width;
 
 ### Get Transparency
 
-**構文:** 0.0 to 1.0 = obj << Get Transparency( number )
+**構文:** 0.0 to 1.0 = obj &lt;&lt; Get Transparency( number )
 
 **説明:** ヒストグラムセグメントの透明度を取得する。
 
@@ -485,7 +481,7 @@ seg << Get Transparency;
 
 ### Histogram Color
 
-**構文:** obj << Histogram Color( color )
+**構文:** obj &lt;&lt; Histogram Color( color )
 
 **説明:** ヒストグラムの棒の色を設定する。
 
@@ -510,7 +506,7 @@ seg << Histogram Color( "Red" );
 
 ### Line Color
 
-**構文:** obj << Line Color( color )
+**構文:** obj &lt;&lt; Line Color( color )
 
 **説明:** 棒の輪郭の色を設定する。
 
@@ -535,7 +531,7 @@ seg << Set Line Color( "Green" );
 
 ### Line Style
 
-**構文:** obj << Line Style( 線種 )
+**構文:** obj &lt;&lt; Line Style( 線種 )
 
 **説明:** 棒の輪郭の線種を設定する。
 
@@ -560,7 +556,7 @@ seg << Set Line Style( "dashed" );
 
 ### Line Width
 
-**構文:** obj << Line Width( integer )
+**構文:** obj &lt;&lt; Line Width( integer )
 
 **説明:** 棒の輪郭の幅を設定する。
 
@@ -585,7 +581,7 @@ seg << Set Line Width( 3 );
 
 ### Parent
 
-**構文:** seg2 = obj << Parent
+**構文:** seg2 = obj &lt;&lt; Parent
 
 **説明:** ディスプレイセグメントの親を戻す。
 
@@ -610,7 +606,7 @@ seg << Parent;
 
 ### Save Color Preference
 
-**構文:** obj << Save Color Preference
+**構文:** obj &lt;&lt; Save Color Preference
 
 **説明:** 現在の棒の色をヒストグラムのデフォルトに設定する。
 
@@ -635,7 +631,7 @@ seg << Save Color Preference;
 
 ### Set Description
 
-**構文:** obj << Set Description( description )
+**構文:** obj &lt;&lt; Set Description( description )
 
 **説明:** ディスプレイセグメントの名前を設定する。
 
@@ -660,7 +656,7 @@ seg << set description( "my seg" );
 
 ### Set Fill Pattern
 
-**構文:** obj << Set Fill Pattern
+**構文:** obj &lt;&lt; Set Fill Pattern
 
 ```jsl
 
@@ -683,7 +679,7 @@ seg << Set Fill Pattern( "h wave medium" );
 
 ### Set Line Color
 
-**構文:** obj << Set Line Color( color )
+**構文:** obj &lt;&lt; Set Line Color( color )
 
 **説明:** 棒の輪郭の色を設定する。
 
@@ -708,7 +704,7 @@ seg << Set Line Color( "Green" );
 
 ### Set Line Style
 
-**構文:** obj << Set Line Style( 線種 )
+**構文:** obj &lt;&lt; Set Line Style( 線種 )
 
 **説明:** 棒の輪郭の線種を設定する。
 
@@ -733,7 +729,7 @@ seg << Set Line Style( "dashed" );
 
 ### Set Line Width
 
-**構文:** obj << Set Line Width( integer )
+**構文:** obj &lt;&lt; Set Line Width( integer )
 
 **説明:** 棒の輪郭の幅を設定する。
 
@@ -758,7 +754,7 @@ seg << Set Line Width( 3 );
 
 ### Set Transparency
 
-**構文:** obj << Set Transparency( 0.0 to 1.0 )
+**構文:** obj &lt;&lt; Set Transparency( 0.0 to 1.0 )
 
 **説明:** ヒストグラムセグメントの透明度を設定する。
 
@@ -783,7 +779,7 @@ seg << Set Transparency( .5 );
 
 ### Sib
 
-**構文:** seg2 = obj << Sib
+**構文:** seg2 = obj &lt;&lt; Sib
 
 **説明:** ディスプレイセグメントの兄弟(同レベルのもの)を戻す。
 
@@ -808,7 +804,7 @@ seg << Sib;
 
 ### Sib Append
 
-**構文:** obj << Sib Append( seg2 )
+**構文:** obj &lt;&lt; Sib Append( seg2 )
 
 **説明:** ディスプレイセグメントのすぐ後にディスプレイセグメントを表示する。
 
@@ -846,7 +842,7 @@ mapSeg << Sib Append( Line Seg( xval, yval, <<line color( "Green" ), <<line widt
 
 ### Sib Prepend
 
-**構文:** obj << Sib Prepend( seg2 )
+**構文:** obj &lt;&lt; Sib Prepend( seg2 )
 
 **説明:** ディスプレイセグメントのすぐ前にディスプレイセグメントを表示する。
 
@@ -884,7 +880,7 @@ seg << Sib Prepend( Line Seg( xval, yval, <<line color( "Green" ), <<line width(
 
 ### Subset
 
-**構文:** obj << Subset
+**構文:** obj &lt;&lt; Subset
 
 **説明:** 現在の選択に基づいてサブセットのデータテーブルを作成する。
 
@@ -909,7 +905,7 @@ seg << Subset;
 
 ### Transparency
 
-**構文:** obj << Transparency( 0.0 to 1.0 )
+**構文:** obj &lt;&lt; Transparency( 0.0 to 1.0 )
 
 **説明:** ヒストグラムセグメントの透明度を設定する。
 

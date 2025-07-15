@@ -2,8 +2,6 @@
 
 
 
-## Funzioni
-
 ### Add Color Theme
 
 **Descrizione:** Crea un nuovo tema colori personalizzato e lo registra nel selettore temi.
@@ -73,7 +71,7 @@ New Window( "Example",
 
 ### Back Color
 
-**Sintassi:** Back Color( <name|index|rgbList> )
+**Sintassi:** Back Color( &lt;name|index|rgbList&gt; )
 
 **Descrizione:** Imposta il colore di sfondo per la modalità di cancellazione nella funzione Text().
 
@@ -93,7 +91,7 @@ New Window( "Example",
 
 ### Blend Colors
 
-**Sintassi:** color = Blend Colors( color1, color2, <percent2>, <colorSpace>, <hueDirection> )
+**Sintassi:** color = Blend Colors( color1, color2, &lt;percent2&gt;, &lt;colorSpace&gt;, &lt;hueDirection&gt; )
 
 **Descrizione:** Unisce due colori con una percentuale e uno spazio colore configurabili.
 
@@ -231,7 +229,7 @@ Show( Char To Path( "M10 10 L50 10 L30 50 Z M20 20 L40 20 L30 40 Z" ) );
 
 ### Circle
 
-**Sintassi:** Circle( {x, y}, radius|PixelRadius( px ), ..., <"FILL"> )
+**Sintassi:** Circle( {x, y}, radius|PixelRadius( px ), ..., &lt;"FILL"&gt; )
 
 **Descrizione:** Disegna una circonferenza con centro in {x, y}. Il raggio può essere specificato come un numero intero basato sull&apos;asse verticale o come un numero di pixel. Un raggio in pixel crea una circonferenza che non cambia dimensione al variare dell&apos;asse verticale. Si possono ripetere gli argomenti in qualsiasi ordine per disegnare più circonferenze. Se si vuole usare il comando "FILL", deve essere l&apos;ultimo; questo comando riempie le circonferenze con il colore prescelto invece di disegnarle nel colore della penna.
 
@@ -262,7 +260,7 @@ New Window( "Example",
 
 ### Color Difference
 
-**Sintassi:** color = Color Difference( color1, color2, <difference metric>)
+**Sintassi:** color = Color Difference( color1, color2, &lt;difference metric&gt;)
 
 **Descrizione:** Restituisce la differenza tra due colori in una metrica di differenza di colore specificata.
 
@@ -363,7 +361,7 @@ Color To RGB( HLS Color( 30 / 360, 0.5, 1 ) );
 
 ### Contour
 
-**Sintassi:** Contour( xVector, yVector, zGridMatrix, zContours, < <<zColor( color, option )>, < <<Fill|Fill Between|Fill Below|Fill Above>, < <<Transparency(vector)> )
+**Sintassi:** Contour( xVector, yVector, zGridMatrix, zContours, &lt; &lt;&lt;zColor( color, option )&gt;, &lt; &lt;&lt;Fill|Fill Between|Fill Below|Fill Above&gt;, &lt; &lt;&lt;Transparency(vector)&gt; )
 
 **Descrizione:** Disegna i profili isometrici data una griglia di valori. Se sono specificati meno colori rispetto ai profili isometrici, le opzioni "Interpola colori" o "Ciclo colori" determinano il modo in cui i colori saranno applicati.
 
@@ -427,7 +425,7 @@ New Window( "Example",
 
 ### Contour Function
 
-**Sintassi:** Contour Function( zExpr, xName, yName, z|zMatrix, < <<XGrid( min, max, incr )>, < <<YGrid( min, max, incr )>, < <<ZColor( color, option )>, < <<ZLabeled>, < <<Filled>, < <<FillBetween>, < <<Ternary>, < <<Transparency( t )> )
+**Sintassi:** Contour Function( zExpr, xName, yName, z|zMatrix, &lt; &lt;&lt;XGrid( min, max, incr )&gt;, &lt; &lt;&lt;YGrid( min, max, incr )&gt;, &lt; &lt;&lt;ZColor( color, option )&gt;, &lt; &lt;&lt;ZLabeled&gt;, &lt; &lt;&lt;Filled&gt;, &lt; &lt;&lt;FillBetween&gt;, &lt; &lt;&lt;Ternary&gt;, &lt; &lt;&lt;Transparency( t )&gt; )
 
 **Descrizione:** Valuta l&apos;espressione in una griglia di valori xName e yName e disegna le linee isometriche. color può essere specificato come numero, matrice, elenco di valori RGB, elenco di nomi di colori o tema colori.  La trasparenza t può essere specificata come numero o come matrice.  Se è specificata l&apos;opzione Ternary i profili isometrici sono ristretti a un sistema di coordinate ternario.
 
@@ -475,7 +473,7 @@ New Window( "Example",
 
 ### Drag Line
 
-**Sintassi:** Drag Line( xMatrixName, yMatrixName, <dragScript>, <MouseUpScript> )
+**Sintassi:** Drag Line( xMatrixName, yMatrixName, &lt;dragScript&gt;, &lt;MouseUpScript&gt; )
 
 **Descrizione:** Disegna una polilinea nei punti indicati. A differenza di Linea tuttavia, i punti possono essere trascinati sullo schermo, aggiornando i valori negli argomenti della matrice (Valore L).
 
@@ -497,7 +495,7 @@ New Window( "Example",
 
 ### Drag Marker
 
-**Sintassi:** Drag Marker( xMatrixName, yMatrixName, <dragScript>, <MouseUpScript> )
+**Sintassi:** Drag Marker( xMatrixName, yMatrixName, &lt;dragScript&gt;, &lt;MouseUpScript&gt; )
 
 **Descrizione:** Disegna indicatori mobili nei punti indicati. I valori della matrice sono aggiornati allo spostamento degli indicatori.
 
@@ -519,7 +517,7 @@ New Window( "Example",
 
 ### Drag Polygon
 
-**Sintassi:** Drag Polygon( xMatrixName, yMatrixName, <dragScript>, <MouseUpScript> )
+**Sintassi:** Drag Polygon( xMatrixName, yMatrixName, &lt;dragScript&gt;, &lt;MouseUpScript&gt; )
 
 **Descrizione:** Disegna un poligono pieno nei punti indicati. I punti possono essere trascinati sullo schermo, aggiornando i valori negli argomenti della matrice (Valore L).
 
@@ -541,7 +539,7 @@ New Window( "Example",
 
 ### Drag Rect
 
-**Sintassi:** Drag Rect( xMatrixName, yMatrixName, <dragScript>, <MouseUpScript> )
+**Sintassi:** Drag Rect( xMatrixName, yMatrixName, &lt;dragScript&gt;, &lt;MouseUpScript&gt; )
 
 **Descrizione:** Disegna un rettangolo nei punti indicati. A differenza di Rett tuttavia, questi angoli possono essere trascinati sullo schermo, aggiornando i valori negli argomenti della matrice (Valore L).
 
@@ -563,7 +561,7 @@ New Window( "Example",
 
 ### Drag Text
 
-**Sintassi:** Drag Text( xMatrixName, yMatrixName, text, <dragScript>, <MouseUpScript> )
+**Sintassi:** Drag Text( xMatrixName, yMatrixName, text, &lt;dragScript&gt;, &lt;MouseUpScript&gt; )
 
 **Descrizione:** Disegna il testo nei punti indicati. A differenza della funzione Text() tuttavia, i punti possono essere trascinati lungo lo schermo aggiornando i valori negli argomenti della matrice xMatrixName e yMatrixName. L&apos;argomento text può essere l&apos;argomento di una stringa o un elenco di stringhe.
 
@@ -585,7 +583,7 @@ New Window( "Example",
 
 ### Fill Color
 
-**Sintassi:** Fill Color( <name|index|rgbList> )
+**Sintassi:** Fill Color( &lt;name|index|rgbList&gt; )
 
 **Descrizione:** Imposta il colore per il disegno delle aree riempite.
 
@@ -658,7 +656,7 @@ Get Color Theme Detail( "JMP Default" );
 
 ### Get Color Theme Names
 
-**Sintassi:** {list of names} = Get Color Theme Names(<kind>)
+**Sintassi:** {list of names} = Get Color Theme Names(&lt;kind&gt;)
 
 **Descrizione:** Restituisce un elenco di stringhe di temi di colore che corrispondono al parametro opzionale kind. kind è uno dei seguenti: "continuo", "categorico", "sequenziale", "divergente", "qualitativo" o "cromatico".
 
@@ -684,7 +682,7 @@ Get Color Theme Names( "sequential" );
 
 ### Gradient Function
 
-**Sintassi:** Gradient Function( zExpr, xName, yName, zLimits, zColor( color list or matrix ), < <<XGrid( min, max, incr )>, < <<YGrid( min, max, incr )>, < <<Transparency( t )> )
+**Sintassi:** Gradient Function( zExpr, xName, yName, zLimits, zColor( color list or matrix ), &lt; &lt;&lt;XGrid( min, max, incr )&gt;, &lt; &lt;&lt;YGrid( min, max, incr )&gt;, &lt; &lt;&lt;Transparency( t )&gt; )
 
 **Descrizione:** Riempie il grafico con un gradiente tra due colori. L&apos;argomento zExpr è una funzione nei termini delle variabili specificate da xName e yName. Il vettore zLimits specifica il range di valori per zExpr. L&apos;argomento zColor è un vettore o un elenco che definisce i due colori da fondere insieme per creare il gradiente. La Transparency è un singolo valore applicato all&apos;intera griglia.
 
@@ -774,7 +772,7 @@ New Window( "Color Wheel",
 
 ### Handle
 
-**Sintassi:** Handle( xPos, yPos, dragScript, <mouseUpScript> )
+**Sintassi:** Handle( xPos, yPos, dragScript, &lt;mouseUpScript&gt; )
 
 **Descrizione:** Disegna un indicatore quadrato alle coordinate specificate da xPos e yPos e valuta ripetutamente dragScript quando si preme il mouse sull&apos;indicatore. Prima di eseguire lo script, le x e y globali sono impostate al valore del mouse e ripristinate poi ai valori originali. L&apos;espressione mouseUpScript viene eseguita dopo il rilascio del pulsante del mouse.
 
@@ -802,7 +800,7 @@ New Window( "Example",
 
 ### Heat Color
 
-**Sintassi:** y = Heat Color( x ); y = Heat Color( x, < <<theme> )
+**Sintassi:** y = Heat Color( x ); y = Heat Color( x, &lt; &lt;&lt;theme&gt; )
 
 **Descrizione:** Restituisce un colore corrispondente a un valore tra 0 e 1. Il tema predefinito è "Da blu a grigio a rosso". Tutti i temi supportati dal diagramma a celle sono supportati qui. Gli argomenti delle matrici sono supportati.
 
@@ -855,7 +853,7 @@ New Window( "Example",
 
 ### In Polygon
 
-**Sintassi:** b = In Polygon( x, y, xMatrix, <yMatrix> )
+**Sintassi:** b = In Polygon( x, y, xMatrix, &lt;yMatrix&gt; )
 
 **Descrizione:** Restituisce 1 se il punto (x,y) è nel poligono definito dagli argomenti dei vettori, in caso contrario restituisce 0.
 
@@ -870,7 +868,7 @@ In Polygon( 11, 22, [10 20 30], [10 30 20] );
 
 ### Level Color
 
-**Sintassi:** y = Level Color( i ); y = Level Color( i, n ); y = Level Color( i, n, <theme> ); y = Level Color( i, <theme> )
+**Sintassi:** y = Level Color( i ); y = Level Color( i, n ); y = Level Color( i, n, &lt;theme&gt; ); y = Level Color( i, &lt;theme&gt; )
 
 **Descrizione:** Restituisce un colore di categoria, dove i è il livello di categoria; n è il numero di categorie (opzionale);e theme sono i temi di colore nella casella campo Colore Valore della finestra di dialogo Info colonna. ("Predefinito JMP" è il tema predefinito.) L&apos;indice di categoria deve essere >= 1 e <= il numero di categorie specificato nella chiamata o definito dal tema. Se il secondo argomento è un carattere, si tratta del tema colore e non è specificaton.
 
@@ -892,7 +890,7 @@ New Window( "Color Bar",
 
 ### Line
 
-**Sintassi:** Line( {x1, y1}, {x2, y2}, ..., < <<Value Space( 0|1 ) >, < <<Smooth( tension, domain, min response, max response ) > ); Line( xMatrix, yMatrix, < <<Value Space(0 | 1) >, < <<Smooth( tension, domain, min response, max response ) > )
+**Sintassi:** Line( {x1, y1}, {x2, y2}, ..., &lt; &lt;&lt;Value Space( 0|1 ) &gt;, &lt; &lt;&lt;Smooth( tension, domain, min response, max response ) &gt; ); Line( xMatrix, yMatrix, &lt; &lt;&lt;Value Space(0 | 1) &gt;, &lt; &lt;&lt;Smooth( tension, domain, min response, max response ) &gt; )
 
 **Descrizione:** Disegna una linea o linee collegate. Nel caso di default, la linea è disegnata in modo lineare tra i punti finali. Se è impostata l&apos;opzione Value Space, la linea seguirà la proiezione specificata dalle scale degli assi sottostanti. Se è impostata l&apos;opzione Smooth, le connessioni sono sottoposte a smoothing, vincolate per tension, domain dimension, min response e max response.
 
@@ -1047,7 +1045,7 @@ g << Set Y Axis(
 
 ### Marker
 
-**Sintassi:** Marker( <rs>, {x1, y1}, {x2, y2}, ... ); Marker( <rs>, xMatrix, yMatrix )
+**Sintassi:** Marker( &lt;rs&gt;, {x1, y1}, {x2, y2}, ... ); Marker( &lt;rs&gt;, xMatrix, yMatrix )
 
 **Descrizione:** Disegna indicatori alle coordinate indicate.
 
@@ -1082,7 +1080,7 @@ New Window( "Example",
 
 ### Mousetrap
 
-**Sintassi:** Mousetrap( dragScript, <mouseUpScript> )
+**Sintassi:** Mousetrap( dragScript, &lt;mouseUpScript&gt; )
 
 **Descrizione:** Valuta iterativamente l&apos;espressione dragScript mentre si fa clic con il mouse all&apos;interno del grafico, senza che siano interessati altri oggetti nel grafico. Prima di eseguire lo script, le x e y globali sono impostate al valore del mouse e ripristinate poi ai valori originali. L&apos;espressione mouseUpScript viene eseguita dopo il rilascio del pulsante del mouse.
 
@@ -1108,7 +1106,7 @@ New Window( "Example",
 
 ### New Heat Image
 
-**Sintassi:** New Heat Image( Matrix, <Color Theme / gradient ( ... )>
+**Sintassi:** New Heat Image( Matrix, &lt;Color Theme / gradient ( ... )&gt;
 
 **Descrizione:** Crea un&apos;immagine heatmap basata su una matrice e un tema o un gradiente di colore.
 
@@ -1156,7 +1154,7 @@ New Window( "small and big",
 
 ### Normal Contour
 
-**Sintassi:** Normal Contour( prob, meanMatrix, stdMatrix, corrMatrix, <colorsMatrix>, <fill=0> )
+**Sintassi:** Normal Contour( prob, meanMatrix, stdMatrix, corrMatrix, &lt;colorsMatrix&gt;, &lt;fill=0&gt; )
 
 **Descrizione:** Disegna una o più curve di livello della probabilità normale per k popolazioni e due variabili. L&apos;argomento prob può essere una probabilità scalare o una matrice di probabilità. Gli argomenti meanMatrix e stdsMatrix sono matrici k per 2 e l&apos;argomento corrMatrix è un vettore k per 1. L&apos;argomento colorsMatrix specifica uno o più colori per le curve di livello k; i colori devono essere specificati come colori JSL (valori interi di colore JSL o valori ottenuti da funzioni di colore JSL, come RGB Color() o HLS Color()). L&apos;argomento fill specifica il livello di trasparenza del colore di riempimento.
 
@@ -1184,7 +1182,7 @@ New Window( "Example",
 
 ### Oval
 
-**Sintassi:** Oval( left, top, right, bottom, <fill=0> )
+**Sintassi:** Oval( left, top, right, bottom, &lt;fill=0&gt; )
 
 **Descrizione:** Disegna un ovale entro il rettangolo specificato, riempito se il riempimento è diverso da zero.
 
@@ -1207,7 +1205,7 @@ New Window( "Example",
 
 ### Path
 
-**Sintassi:** Path( pathMatrix|pathText, <fill=0> )
+**Sintassi:** Path( pathMatrix|pathText, &lt;fill=0&gt; )
 
 **Descrizione:** Disegna un tratto lungo il percorso dato se il riempimento è 0, oppure dipinge l&apos;interno del percorso dato se il riempimento non è 0. Il percorso può essere specificato con una matrice N x 3 o con una rappresentazione testuale. Una matrice del percorso ha tre colonne per x, y e flag per ciascun punto del percorso. I valori dei flag sono 0 per controllo, 1 per spostamento, 2 per segmento di linea, 3 per segmento cubico di Bézier e sono negativi se il punto chiude il percorso. Il testo del percorso supporta la sintassi SVG.
 
@@ -1243,7 +1241,7 @@ Path To Char( [10 10 1, 10 70 0, 70 70 0, 70 10 -3] );
 
 ### Pen Color
 
-**Sintassi:** Pen Color( <name|index|rgbList> )
+**Sintassi:** Pen Color( &lt;name|index|rgbList&gt; )
 
 **Descrizione:** Imposta il colore per il disegno delle linee.
 
@@ -1263,7 +1261,7 @@ New Window( "Example",
 
 ### Pen Size
 
-**Sintassi:** Pen Size( <x> )
+**Sintassi:** Pen Size( &lt;x&gt; )
 
 **Descrizione:** Imposta le dimensioni della penna in pixel per disegnare le linee.
 
@@ -1283,7 +1281,7 @@ New Window( "Example",
 
 ### Pick Color
 
-**Sintassi:** color = Pick Color( <window title>, <name|index|rgbList> )
+**Sintassi:** color = Pick Color( &lt;window title&gt;, &lt;name|index|rgbList&gt; )
 
 **Descrizione:** Restituisce un colore che è stato selezionato con il selettore colore standard.
 
@@ -1306,7 +1304,7 @@ New Window( "Example",
 
 ### Pick Color Theme
 
-**Sintassi:** theme = Pick Color Theme( <window title>, <Color Theme(name|specification)>, <Type("Continuous" | "Sequential" | "Bad to Good" | "Categorical")>)
+**Sintassi:** theme = Pick Color Theme( &lt;window title&gt;, &lt;Color Theme(name|specification)&gt;, &lt;Type("Continuous" | "Sequential" | "Bad to Good" | "Categorical")&gt;)
 
 **Descrizione:** Restituisce un tema di colore che è stato selezionato con il selezionatore standard di temi di colore. Il tema iniziale può essere specificato esplicitamente o specificando un Type per utilizzare i temi dalle preferenze.
 
@@ -1443,7 +1441,7 @@ New Window( "Example",
 
 ### Pixel Path
 
-**Sintassi:** PixelPath( h, v, pathMatrix|pathText, <fill=0>, <scale=1.0>, <orient={0.0,1.0}> )
+**Sintassi:** PixelPath( h, v, pathMatrix|pathText, &lt;fill=0&gt;, &lt;scale=1.0&gt;, &lt;orient={0.0,1.0}&gt; )
 
 **Descrizione:** Disegna un tratto lungo il percorso in pixel dato se il riempimento è 0, oppure dipinge l&apos;interno del percorso dato se il riempimento non è 0. Il percorso può essere specificato con una matrice N x 3 o con una rappresentazione testuale. Una matrice del percorso ha tre colonne per x, y e flag per ciascun punto del percorso. I valori dei flag sono 0 per controllo, 1 per spostamento, 2 per segmento di linea, 3 per segmento cubico di Bézier e sono negativi se il punto chiude il percorso. Il testo del percorso supporta la sintassi SVG.  Il percorso sarà ridimensionato e traslato attorno alla propria origine in base ai parametri facoltativi, con l&apos;orientamento specificato nello spazio dell&apos;asse.
 
@@ -1484,7 +1482,7 @@ New Window( "Example",
 
 ### Pixel Text
 
-**Sintassi:** Pixel Text( <properties>, {h, v}, text, ... )
+**Sintassi:** Pixel Text( &lt;properties&gt;, {h, v}, text, ... )
 
 **Descrizione:** Si sposta nella posizione pixel {h, v} e disegna il testo specificato dall&apos;argomento text. Argomenti delle proprietà con nome: Center Justified, Right Justified, Top Align, Bottom Align, Erased, Boxed, Counterclockwise, Clockwise. Argomenti di posizione, argomenti con nome e stringhe possono essere mescolati in qualsiasi ordine.
 
@@ -1514,7 +1512,7 @@ New Window( "Example",
 
 ### Polygon
 
-**Sintassi:** Polygon( {x1, y1}, {x2, y2}, ..., <<fill(bool) ); Polygon( xMatrix, <yMatrix>, <<fill(bool) )
+**Sintassi:** Polygon( {x1, y1}, {x2, y2}, ..., &lt;&lt;fill(bool) ); Polygon( xMatrix, &lt;yMatrix&gt;, &lt;&lt;fill(bool) )
 
 **Descrizione:** Disegna il poligono specificato dai punti.
 
@@ -1535,9 +1533,7 @@ New Window( "Example",
 
 ### Polygon Area
 
-**Sintassi:** area = Polygon Area( {x1, y1}, {x2, y2}, ... );
-
-area = Polygon Area( xMatrix, yMatrix )
+**Sintassi:** area = Polygon Area( {x1, y1}, {x2, y2}, ... );area = Polygon Area( xMatrix, yMatrix )
 
 **Descrizione:** Calcola l&apos;area del poligono specificato.
 
@@ -1563,9 +1559,7 @@ area = Polygon Area( [10 20 30], [10 30 20] );
 
 ### Polygon Centroid
 
-**Sintassi:** {cx, cy} = Polygon Centroid( {x1, y1}, {x2, y2}, ... );
-
-centroid = Polygon Centroid( xMatrix, yMatrix )
+**Sintassi:** {cx, cy} = Polygon Centroid( {x1, y1}, {x2, y2}, ... );centroid = Polygon Centroid( xMatrix, yMatrix )
 
 **Descrizione:** Calcola il centroide del poligono specificato.
 
@@ -1591,7 +1585,7 @@ centroid = Polygon Centroid( [10 20 30], [10 30 20] );
 
 ### Polygon Simplify
 
-**Sintassi:** rows = Polygon Simplify( xMatrix|xyMatrix, <yMatrix>, <<<detail factor(f=200)>, <<<multiple(ids)>, <<<geodesic(bool)> )
+**Sintassi:** rows = Polygon Simplify( xMatrix|xyMatrix, &lt;yMatrix&gt;, &lt;&lt;&lt;detail factor(f=200)&gt;, &lt;&lt;&lt;multiple(ids)&gt;, &lt;&lt;&lt;geodesic(bool)&gt; )
 
 **Descrizione:** Rimuove da un poligono i punti con un basso livello di dettaglio e restituisce gli indici dei punti rimanenti. detail factor è inversamente proporzionale alla tolleranza dell&apos;errore del dettaglio. multiple(ids) indica che molti poligoni devono essere semplificati insieme in modo che i lati comuni siano trattati in modo coerente. ids è una matrice con una riga per punto. geodesic(1) indica che le coordinate sono latitudine e longitudine per la misurazione della distanza.
 
@@ -1708,7 +1702,7 @@ New Window( "RGB Color Example",
 
 ### Rect
 
-**Sintassi:** Rect( left, top, right, bottom, <fill=0> ); Rect( {left, top}, {right, bottom} )
+**Sintassi:** Rect( left, top, right, bottom, &lt;fill=0&gt; ); Rect( {left, top}, {right, bottom} )
 
 **Descrizione:** Disegna un rettangolo, riempito se il riempimento è diverso da zero.
 
@@ -1731,7 +1725,7 @@ New Window( "Example",
 
 ### Remove Color Theme
 
-**Sintassi:** Remove Color Theme("Name"|{"Name", <flags>, {color, ...}, <{position, ...}>})
+**Sintassi:** Remove Color Theme("Name"|{"Name", &lt;flags&gt;, {color, ...}, &lt;{position, ...}&gt;})
 
 **Descrizione:** Rimuove un tema colori personalizzato dall&apos;elenco globale, o per nome o in base all&apos;oggetto tema colori completo.
 
@@ -1746,9 +1740,7 @@ Remove Color Theme( "Yellow To Blue" );
 
 ### Text
 
-**Sintassi:** Text( <properties>, {x, y}, text, ... )
-
-Text( {left, top, right, bottom}, text )
+**Sintassi:** Text( &lt;properties&gt;, {x, y}, text, ... )Text( {left, top, right, bottom}, text )
 
 **Descrizione:** Si sposta in posizione {x, y} e disegna il testo specificato dall&apos;argomento  text. Gli argomenti delle proprietà con nome possono essere Center Justified, Right Justified, Erased, Boxed, Counterclockwise, Clockwise. Argomenti di posizione, argomenti con nome e stringhe possono essere mescolati in qualsiasi ordine. È anche possibile usare quattro coordinate x, y per descrivere un riquadro entro cui disegnare il testo. In tal caso le proprietà non vengono usate.
 
@@ -1784,7 +1776,7 @@ New Window( "Example",
 
 ### Text Color
 
-**Sintassi:** Text Color( <name|index|rgbList> )
+**Sintassi:** Text Color( &lt;name|index|rgbList&gt; )
 
 **Descrizione:** Imposta il colore per il disegno del testo.
 
@@ -1804,7 +1796,7 @@ New Window( "Example",
 
 ### Text Font
 
-**Sintassi:** {nm, sz, st, an} = Text Font(fontName, <size>, <"bold italic underline strikeout">, <angle>
+**Sintassi:** {nm, sz, st, an} = Text Font(fontName, &lt;size&gt;, &lt;"bold italic underline strikeout"&gt;, &lt;angle&gt;
 
 **Descrizione:** Imposta il carattere per il successivo disegno di Text(). Usarlo senza alcun argomento per ottenere le impostazioni correnti del carattere. L&apos;angolo è in gradi in senso orario.
 
@@ -1891,7 +1883,7 @@ To Color Space( {0.941, 0.196, 0.274, "lRGB", 0.871, 0.032, 0.061}, "HLS" );
 
 ### Transparency
 
-**Sintassi:** Transparency( <alpha> )
+**Sintassi:** Transparency( &lt;alpha&gt; )
 
 **Descrizione:** Imposta la trasparenza utilizzata nei comandi di disegno. Alfa è situato in un range tra 0 (trasparente) e 1 (opaco, impostazione predefinita). Alcuni sistemi operativi non supportano questa funzione.
 
@@ -1957,7 +1949,7 @@ New Window( "Example",
 
 ### X Function
 
-**Sintassi:** X Function( xExpr, yName, <properties> )
+**Sintassi:** X Function( xExpr, yName, &lt;properties&gt; )
 
 **Descrizione:** Disegna la funzione xExpr nella dimensione X al variare della variabile yName nel range dell&apos;asse Y del grafico. Ulteriori argomenti delle proprietà con nome: Min(X minimo), Max(Y massimo), Fill(pattern di riempimento, valore da riempire), Inc(limite di incremento superiore).
 
@@ -2029,7 +2021,7 @@ New Window( "Example",
 
 ### X Scale
 
-**Sintassi:** X Scale( <xMin>, <xMax> )
+**Sintassi:** X Scale( &lt;xMin&gt;, &lt;xMax&gt; )
 
 **Descrizione:** Imposta una nuova scala per il frame dei grafici.
 
@@ -2091,7 +2083,7 @@ New Window( "Spiral",
 
 ### Y Function
 
-**Sintassi:** Y Function( yExpr, xName, <properties> )
+**Sintassi:** Y Function( yExpr, xName, &lt;properties&gt; )
 
 **Descrizione:** Disegna la funzione yExpr nella dimensione Y al variare della variabile xName nel range dell&apos;asse X del grafico. Ulteriori argomenti delle proprietà con nome: Min(X minimo), Max(X massimo), Fill(pattern di riempimento, valore da riempire), Inc(limite di incremento superiore).
 
@@ -2163,7 +2155,7 @@ New Window( "Example",
 
 ### Y Scale
 
-**Sintassi:** Y Scale( <yMin>, <yMax> )
+**Sintassi:** Y Scale( &lt;yMin&gt;, &lt;yMax&gt; )
 
 **Descrizione:** Imposta una nuova scala per il frame dei grafici.
 

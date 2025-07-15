@@ -85,7 +85,7 @@ obj << Split Best( 2 );
 
 #### By
 
-**Syntax:** obj << By( column(s) )
+**Syntax:** obj &lt;&lt; By( column(s) )
 
 ```jsl
 
@@ -116,7 +116,7 @@ obj << Split Best( 2 );
 
 #### Factor
 
-**Syntax:** obj << Factor( column(s) )
+**Syntax:** obj &lt;&lt; Factor( column(s) )
 
 ```jsl
 
@@ -135,7 +135,7 @@ obj << Split Best( 2 );
 
 #### Freq
 
-**Syntax:** obj << Freq( column )
+**Syntax:** obj &lt;&lt; Freq( column )
 
 ```jsl
 
@@ -162,7 +162,7 @@ obj << Split Best( 2 );
 
 #### Response
 
-**Syntax:** obj << Response( column(s) )
+**Syntax:** obj &lt;&lt; Response( column(s) )
 
 ```jsl
 
@@ -181,7 +181,7 @@ obj << Split Best( 2 );
 
 #### Validation
 
-**Syntax:** obj << Validation( column )
+**Syntax:** obj &lt;&lt; Validation( column )
 
 ```jsl
 
@@ -200,7 +200,7 @@ obj << Split Best( 2 );
 
 #### Weight
 
-**Syntax:** obj << Weight( column )
+**Syntax:** obj &lt;&lt; Weight( column )
 
 ```jsl
 
@@ -227,7 +227,7 @@ obj << Split Best( 2 );
 
 #### X
 
-**Syntax:** obj << X( column(s) )
+**Syntax:** obj &lt;&lt; X( column(s) )
 
 ```jsl
 
@@ -246,7 +246,7 @@ obj << Split Best( 2 );
 
 #### Y
 
-**Syntax:** obj << Y( column(s) )
+**Syntax:** obj &lt;&lt; Y( column(s) )
 
 ```jsl
 
@@ -267,7 +267,7 @@ obj << Split Best( 2 );
 
 #### Color Points
 
-**Syntax:** obj << Color Points
+**Syntax:** obj &lt;&lt; Color Points
 
 **Description:** Colors the points according to their classification.
 
@@ -289,7 +289,7 @@ obj << Color Points;
 
 #### Column Contributions
 
-**Syntax:** obj << Column Contributions( state=0|1 )
+**Syntax:** obj &lt;&lt; Column Contributions( state=0|1 )
 
 **Description:** Shows or hides a report with each input column and its corresponding contribution to the fit.
 
@@ -311,7 +311,7 @@ obj << Column Contributions( 1 );
 
 #### Decision Threshold
 
-**Syntax:** obj << Decision Threshold( state = 0|1, Set Probability Threshold( number ) )
+**Syntax:** obj &lt;&lt; Decision Threshold( state = 0|1, Set Probability Threshold( number ) )
 
 **Description:** Shows or hides the distribution of fitted probabilities and actual versus predicted tables for each model. You can change the probability threshold to explore how different thresholds affect the classification results.
 
@@ -331,7 +331,7 @@ obj << Decision Threshold( 1 );
 
 #### Get Average Absolute Error Test
 
-**Syntax:** obj << Get Average Absolute Error Test
+**Syntax:** obj &lt;&lt; Get Average Absolute Error Test
 
 **Description:** Returns the Mean Abs Dev statistic for the test set. Available only when using a validation set.
 
@@ -416,7 +416,7 @@ Show( aabs );
 
 #### Get Average Absolute Error Training
 
-**Syntax:** obj << Get Average Absolute Error Training
+**Syntax:** obj &lt;&lt; Get Average Absolute Error Training
 
 **Description:** Returns the Mean Abs Dev statistic for the training set.
 
@@ -487,7 +487,7 @@ Show( aabs );
 
 #### Get Average Absolute Error Validation
 
-**Syntax:** obj << Get Average Absolute Error Validation
+**Syntax:** obj &lt;&lt; Get Average Absolute Error Validation
 
 **Description:** Returns the Mean Abs Dev statistic for the validation set. Available only when using a validation set.
 
@@ -562,7 +562,7 @@ Show( aabs );
 
 #### Get Average Log Error Test
 
-**Syntax:** obj << Get Average Log Error Test
+**Syntax:** obj &lt;&lt; Get Average Log Error Test
 
 **Description:** Returns the average of -log(p), where p equals the probability of response attributed by the model that the response actually occurred, for the test set. Available only when using a validation set.
 
@@ -648,7 +648,7 @@ Show( avg );
 
 #### Get Average Log Error Training
 
-**Syntax:** obj << Get Average Log Error Training
+**Syntax:** obj &lt;&lt; Get Average Log Error Training
 
 **Description:** Returns the average of -log(p), where p equals the probability of response attributed by the model that the response actually occurred, for the training set.
 
@@ -719,7 +719,7 @@ Show( avg );
 
 #### Get Average Log Error Validation
 
-**Syntax:** obj << Get Average Log Error Validation
+**Syntax:** obj &lt;&lt; Get Average Log Error Validation
 
 **Description:** Returns the average of -log(p), where p equals the probability of response attributed by the model that the response actually occurred, for the validation set. Available only when using a validation set.
 
@@ -795,7 +795,7 @@ Show( avg );
 
 #### Get Confusion Matrix Test
 
-**Syntax:** obj << Get Confusion Matrix Test
+**Syntax:** obj &lt;&lt; Get Confusion Matrix Test
 
 **Description:** Returns the confusion matrix for the test set. Available only when using a validation set.
 
@@ -880,7 +880,7 @@ Show( cm );
 
 #### Get Confusion Matrix Training
 
-**Syntax:** obj << Get Confusion Matrix Training
+**Syntax:** obj &lt;&lt; Get Confusion Matrix Training
 
 **Description:** Returns the confusion matrix for the training set.
 
@@ -957,7 +957,7 @@ Show( cm );
 
 #### Get Confusion Matrix Validation
 
-**Syntax:** obj << Get Confusion Matrix Validation
+**Syntax:** obj &lt;&lt; Get Confusion Matrix Validation
 
 **Description:** Returns the confusion matrix for the validation set. Available only when using a validation set.
 
@@ -1035,7 +1035,7 @@ Show( cm );
 
 #### Get Confusion Rates Test
 
-**Syntax:** obj << Get Confusion Rates Test
+**Syntax:** obj &lt;&lt; Get Confusion Rates Test
 
 **Description:** Returns the confusion rates for the test set. Available only when using a validation set.
 
@@ -1120,7 +1120,7 @@ Show( cr );
 
 #### Get Confusion Rates Training
 
-**Syntax:** obj << Get Confusion Rates Training
+**Syntax:** obj &lt;&lt; Get Confusion Rates Training
 
 **Description:** Returns the confusion rates for the training set.
 
@@ -1197,7 +1197,7 @@ Show( cr );
 
 #### Get Confusion Rates Validation
 
-**Syntax:** obj << Get Confusion Rates Validation
+**Syntax:** obj &lt;&lt; Get Confusion Rates Validation
 
 **Description:** Returns the confusion rates for the validation set. Available only when using a validation set.
 
@@ -1275,7 +1275,7 @@ Show( cr );
 
 #### Get Gen RSquare Test
 
-**Syntax:** obj << Get Gen RSquare Test
+**Syntax:** obj &lt;&lt; Get Gen RSquare Test
 
 **Description:** Returns the generalized RSquare for the test set. Available only when using a validation set.
 
@@ -1360,7 +1360,7 @@ Show( r );
 
 #### Get Gen RSquare Training
 
-**Syntax:** obj << Get Gen RSquare Training
+**Syntax:** obj &lt;&lt; Get Gen RSquare Training
 
 **Description:** Returns the generalized RSquare for the training set.
 
@@ -1437,7 +1437,7 @@ Show( r );
 
 #### Get Gen RSquare Validation
 
-**Syntax:** obj << Get Gen RSquare Validation
+**Syntax:** obj &lt;&lt; Get Gen RSquare Validation
 
 **Description:** Returns the generalized RSquare for the validation set. Available only when using a validation set.
 
@@ -1515,7 +1515,7 @@ Show( r );
 
 #### Get MM SAS DATA Step
 
-**Syntax:** obj << Get MM SAS DATA Step
+**Syntax:** obj &lt;&lt; Get MM SAS DATA Step
 
 **Description:** Creates SAS code that you can register in the SAS Model Manager and returns it to the Log window.
 
@@ -1537,7 +1537,7 @@ code = obj << Get MM SAS Data Step;
 
 #### Get MM Tolerant SAS DATA Step
 
-**Syntax:** obj << Get MM Tolerant SAS DATA Step
+**Syntax:** obj &lt;&lt; Get MM Tolerant SAS DATA Step
 
 **Description:** Creates SAS code for data that includes missing values that you can register in the SAS Model Manager and returns it to the Log window.
 
@@ -1559,7 +1559,7 @@ code = obj << Get MM Tolerant SAS Data Step;
 
 #### Get Measures
 
-**Syntax:** obj << Get Measures
+**Syntax:** obj &lt;&lt; Get Measures
 
 **Description:** Returns summary measures of fit from the model.
 
@@ -1581,7 +1581,7 @@ obj << Get Measures;
 
 #### Get Microseconds
 
-**Syntax:** obj << Get Microseconds
+**Syntax:** obj &lt;&lt; Get Microseconds
 
 **Description:** Returns the number of microseconds used to complete the analysis.
 
@@ -1604,7 +1604,7 @@ Show( time );
 
 #### Get Misclassification Rate Test
 
-**Syntax:** obj << Get Misclassification Rate Test
+**Syntax:** obj &lt;&lt; Get Misclassification Rate Test
 
 **Description:** Returns the misclassification rate for the test set. Available only when using a validation set.
 
@@ -1689,7 +1689,7 @@ Show( rate );
 
 #### Get Misclassification Rate Training
 
-**Syntax:** obj << Get Misclassification Rate Training
+**Syntax:** obj &lt;&lt; Get Misclassification Rate Training
 
 **Description:** Returns the misclassification rate for the training set.
 
@@ -1761,7 +1761,7 @@ Show( rate );
 
 #### Get Misclassification Rate Validation
 
-**Syntax:** obj << Get Misclassification Rate Validation
+**Syntax:** obj &lt;&lt; Get Misclassification Rate Validation
 
 **Description:** Returns the misclassification rate for the validation set. Available only when using a validation set.
 
@@ -1840,7 +1840,7 @@ Show( rate );
 
 #### Get Precision Recall Area Test
 
-**Syntax:** obj << Get Precision Recall Area Test
+**Syntax:** obj &lt;&lt; Get Precision Recall Area Test
 
 **Description:** Returns the area under the precision-recall curve for the test set. The precision-recall curve must be displayed before the area is computed. Available only when using a validation set.
 
@@ -1904,7 +1904,7 @@ Show( area );
 
 #### Get Precision Recall Area Training
 
-**Syntax:** obj << Get Precision Recall Area Training
+**Syntax:** obj &lt;&lt; Get Precision Recall Area Training
 
 **Description:** Returns the area under the precision-recall curve for the training set. The precision-recall curve must be displayed before the area is computed.
 
@@ -1964,7 +1964,7 @@ Show( area );
 
 #### Get Precision Recall Area Validation
 
-**Syntax:** obj << Get Precision Recall Area Validation
+**Syntax:** obj &lt;&lt; Get Precision Recall Area Validation
 
 **Description:** Returns the area under the precision-recall curve for the validation set. The precision-recall curve must be displayed before the area is computed. Available only when using a validation set.
 
@@ -2025,7 +2025,7 @@ Show( area );
 
 #### Get Prediction Formula
 
-**Syntax:** obj << Get Prediction Formula
+**Syntax:** obj &lt;&lt; Get Prediction Formula
 
 **Description:** Constructs a script to create a prediction formula column and returns it.
 
@@ -2047,7 +2047,7 @@ obj << Get Prediction Formula;
 
 #### Get RMS Error Test
 
-**Syntax:** obj << Get RMS Error Test
+**Syntax:** obj &lt;&lt; Get RMS Error Test
 
 **Description:** Returns the square root of the mean square of the test errors. Available only when using a validation set.
 
@@ -2070,7 +2070,7 @@ Show( rms );
 
 #### Get RMS Error Training
 
-**Syntax:** obj << Get RMS Error Training
+**Syntax:** obj &lt;&lt; Get RMS Error Training
 
 **Description:** Returns the square root of the mean square of the training errors.
 
@@ -2093,7 +2093,7 @@ Show( rms );
 
 #### Get RMS Error Validation
 
-**Syntax:** obj << Get RMS Error Validation
+**Syntax:** obj &lt;&lt; Get RMS Error Validation
 
 **Description:** Returns the square root of the mean square of the validation errors. Available only when using a validation set.
 
@@ -2116,7 +2116,7 @@ Show( rms );
 
 #### Get ROC Area Test
 
-**Syntax:** obj << Get ROC Area Test
+**Syntax:** obj &lt;&lt; Get ROC Area Test
 
 **Description:** Returns the area under the Receiver Operator Characteristic (ROC) curve for the test data. The ROC curve needs to be displayed before the area is computed. Available only when using a validation set.
 
@@ -2180,7 +2180,7 @@ Show( area );
 
 #### Get ROC Area Training
 
-**Syntax:** obj << Get ROC Area Training
+**Syntax:** obj &lt;&lt; Get ROC Area Training
 
 **Description:** Returns the area under the Receiver Operator Characteristic (ROC) curve for the training data set. The ROC curve needs to be displayed before the area is computed.
 
@@ -2240,7 +2240,7 @@ Show( area );
 
 #### Get ROC Area Validation
 
-**Syntax:** obj << Get ROC Area Validation
+**Syntax:** obj &lt;&lt; Get ROC Area Validation
 
 **Description:** Returns the area under the Receiver Operator Characteristic (ROC) curve for the validation data set. The ROC curve needs to be displayed before the area is computed. Available only when using a validation set.
 
@@ -2301,7 +2301,7 @@ Show( area );
 
 #### Get RSquare Test
 
-**Syntax:** obj << Get RSquare Test
+**Syntax:** obj &lt;&lt; Get RSquare Test
 
 **Description:** Returns the RSquare for the test set. Available only when using a validation set.
 
@@ -2324,7 +2324,7 @@ Show( r );
 
 #### Get RSquare Training
 
-**Syntax:** obj << Get RSquare Training
+**Syntax:** obj &lt;&lt; Get RSquare Training
 
 **Description:** Returns the RSquare for the training set.
 
@@ -2347,7 +2347,7 @@ Show( r );
 
 #### Get RSquare Validation
 
-**Syntax:** obj << Get RSquare Validation
+**Syntax:** obj &lt;&lt; Get RSquare Validation
 
 **Description:** Returns the RSquare for the validation set. Available only when using a validation set.
 
@@ -2370,7 +2370,7 @@ Show( r );
 
 #### Get SAS DATA Step
 
-**Syntax:** obj << Get SAS DATA Step
+**Syntax:** obj &lt;&lt; Get SAS DATA Step
 
 **Description:** Creates a SAS DATA step to score the data and returns it to the Log window.
 
@@ -2392,7 +2392,7 @@ code = obj << Get SAS Data Step;
 
 #### Get Seconds
 
-**Syntax:** obj << Get Seconds
+**Syntax:** obj &lt;&lt; Get Seconds
 
 **Description:** Returns the number of seconds used to complete the analysis.
 
@@ -2415,7 +2415,7 @@ Show( time );
 
 #### Get Tolerant Prediction Formula
 
-**Syntax:** obj << Get Tolerant Prediction Formula
+**Syntax:** obj &lt;&lt; Get Tolerant Prediction Formula
 
 **Description:** Constructs a script to create a tolerant prediction formula column and returns it to the Log window.
 
@@ -2437,7 +2437,7 @@ obj << Get Tolerant Prediction Formula;
 
 #### Get Tolerant SAS DATA Step
 
-**Syntax:** obj << Get Tolerant SAS DATA Step
+**Syntax:** obj &lt;&lt; Get Tolerant SAS DATA Step
 
 **Description:** Creates a SAS DATA step to score data that includes missing values and returns it to the Log window. Missing values are randomly assigned to a tree branch.
 
@@ -2459,7 +2459,7 @@ code = obj << Get Tolerant SAS Data Step;
 
 #### Go
 
-**Syntax:** obj << Go
+**Syntax:** obj &lt;&lt; Go
 
 **Description:** Begins iterating after K Fold Crossvalidation has been selected. If using JMP Pro, Go begins iterating after Validation column is specified.
 
@@ -2583,7 +2583,7 @@ obj = dt << Partition(
 
 #### K Fold Crossvalidation
 
-**Syntax:** obj << K Fold Crossvalidation
+**Syntax:** obj &lt;&lt; K Fold Crossvalidation
 
 **Description:** This is a deprecated feature.
 
@@ -2602,7 +2602,7 @@ obj << K Fold Crossvalidation( 5 );
 
 #### Leaf Report
 
-**Syntax:** obj << Leaf Report( state=0|1 )
+**Syntax:** obj &lt;&lt; Leaf Report( state=0|1 )
 
 **Description:** Shows or hides a report with the mean and count (continuous response) or the response rate and count (categorical response) of the leaf nodes.
 
@@ -2625,7 +2625,7 @@ obj << Leaf Report( 1 );
 
 #### Lift Curve
 
-**Syntax:** obj << Lift Curve( state=0|1 )
+**Syntax:** obj &lt;&lt; Lift Curve( state=0|1 )
 
 **Description:** Shows or hides the Lift Curve plot. A lift curve plots the lift versus the portion of the observations and provides another view of the predictive ability of a model. If you used validation, a plot is shown for each of the training, validation, and test sets.
 
@@ -2642,7 +2642,7 @@ obj << Lift Curve( 1 );
 
 #### Lock Columns
 
-**Syntax:** obj << Lock Columns( state=0|1, columns )
+**Syntax:** obj &lt;&lt; Lock Columns( state=0|1, columns )
 
 **Description:** Locks out specified columns from being used for splits.
 
@@ -2684,7 +2684,7 @@ obj << Lock Columns( 1 );
 
 #### Make SAS DATA Step
 
-**Syntax:** obj << Make SAS DATA Step
+**Syntax:** obj &lt;&lt; Make SAS DATA Step
 
 **Description:** Creates a SAS DATA step to score the data and returns it to a script window.
 
@@ -2706,7 +2706,7 @@ obj << Make SAS Data Step;
 
 #### Make Tolerant SAS DATA Step
 
-**Syntax:** obj << Make Tolerant SAS DATA Step
+**Syntax:** obj &lt;&lt; Make Tolerant SAS DATA Step
 
 **Description:** Creates a SAS DATA step to score data that includes missing values and returns it to a script window. Missing values are randomly assigned to a tree branch.
 
@@ -2747,7 +2747,7 @@ obj << Split Best( 2 );
 
 #### Minimum Size Split
 
-**Syntax:** obj << Minimum Size Split( number )
+**Syntax:** obj &lt;&lt; Minimum Size Split( number )
 
 **Description:** Sets the minimum group size when deciding whether to split a group.
 
@@ -2873,7 +2873,7 @@ obj = dt << Uplift(
 
 #### Plot Actual by Predicted
 
-**Syntax:** obj << Plot Actual by Predicted( state=0|1 )
+**Syntax:** obj &lt;&lt; Plot Actual by Predicted( state=0|1 )
 
 **Description:** Shows or hides a plot using the training data with the predicted values on the X axis and actual values on the Y axis.
 
@@ -2892,7 +2892,7 @@ obj << Plot Actual By Predicted;
 
 #### Precision Recall Curve
 
-**Syntax:** obj << Precision Recall Curve( state=0|1 )
+**Syntax:** obj &lt;&lt; Precision Recall Curve( state=0|1 )
 
 **Description:** Shows or hides the Precision-Recall Curve plot that contains a curve for each level of the response variable. A precision-recall curve plots the precision values against the recall values at a variety of thresholds. If you used validation, a plot is shown for each of the training, validation, and test sets.
 
@@ -2909,7 +2909,7 @@ obj << Precision Recall Curve( 1 );
 
 #### Profiler
 
-**Syntax:** obj << Profiler( state=0|1 )
+**Syntax:** obj &lt;&lt; Profiler( state=0|1 )
 
 **Description:** Shows or hides the prediction profiler, which is used to graphically explore the prediction equation by slicing it one factor at a time. The prediction profiler contains features for optimization.
 
@@ -2931,7 +2931,7 @@ obj << Profiler( 1 );
 
 #### Prune Worst
 
-**Syntax:** obj << Prune Worst
+**Syntax:** obj &lt;&lt; Prune Worst
 
 **Description:** Removes the terminal split that has the least discrimination ability.
 
@@ -2955,7 +2955,7 @@ obj << Prune Worst;
 
 #### Publish Prediction Formula
 
-**Syntax:** obj << Publish Prediction Formula
+**Syntax:** obj &lt;&lt; Publish Prediction Formula
 
 **Description:** Creates prediction formulas and saves them as formula column scripts in the Formula Depot platform.
 
@@ -2977,7 +2977,7 @@ obj << Publish Prediction Formula;
 
 #### Publish Tolerant Prediction Formula
 
-**Syntax:** obj << Publish Tolerant Prediction Formula
+**Syntax:** obj &lt;&lt; Publish Tolerant Prediction Formula
 
 **Description:** Builds a prediction formula that predicts even when there are missing values and publishes it as a formula column script in Formula Depot.
 
@@ -2999,7 +2999,7 @@ obj << Publish Tolerant Prediction Formula;
 
 #### ROC Curve
 
-**Syntax:** obj << ROC Curve( state=0|1 )
+**Syntax:** obj &lt;&lt; ROC Curve( state=0|1 )
 
 **Description:** Shows or hides the Receiver Operating Characteristic (ROC) curve for each level of the response variable. The ROC curve is a plot of sensitivity versus (1 - specificity). If you used validation, a plot is shown for each of the training, validation, and test sets.
 
@@ -3016,7 +3016,7 @@ obj << ROC Curve( 1 );
 
 #### Save Leaf Label Formula
 
-**Syntax:** obj << Save Leaf Label Formula
+**Syntax:** obj &lt;&lt; Save Leaf Label Formula
 
 **Description:** Saves the leaf label formula in a new column in the data table.
 
@@ -3038,7 +3038,7 @@ obj << Save Leaf Label Formula;
 
 #### Save Leaf Labels
 
-**Syntax:** obj << Save Leaf Labels
+**Syntax:** obj &lt;&lt; Save Leaf Labels
 
 **Description:** Saves the leaf labels in a new column in the data table.
 
@@ -3060,7 +3060,7 @@ obj << Save Leaf Labels;
 
 #### Save Leaf Number Formula
 
-**Syntax:** obj << Save Leaf Number Formula
+**Syntax:** obj &lt;&lt; Save Leaf Number Formula
 
 **Description:** Saves the leaf number formula in a new column in the data table.
 
@@ -3082,7 +3082,7 @@ obj << Save Leaf Number Formula;
 
 #### Save Leaf Numbers
 
-**Syntax:** obj << Save Leaf Numbers
+**Syntax:** obj &lt;&lt; Save Leaf Numbers
 
 **Description:** Saves the leaf numbers in a new column in the data table.
 
@@ -3104,7 +3104,7 @@ obj << Save Leaf Numbers;
 
 #### Save Predicteds
 
-**Syntax:** obj << Save Predicteds
+**Syntax:** obj &lt;&lt; Save Predicteds
 
 **Description:** Saves the predicted values in a new column in the data table.
 
@@ -3126,7 +3126,7 @@ obj << Save Predicteds;
 
 #### Save Prediction Formula
 
-**Syntax:** obj << Save Prediction Formula
+**Syntax:** obj &lt;&lt; Save Prediction Formula
 
 **Description:** Saves the prediction formula in a new column in the data table.
 
@@ -3148,7 +3148,7 @@ obj << Save Prediction Formula;
 
 #### Save Residuals
 
-**Syntax:** obj << Save Residuals
+**Syntax:** obj &lt;&lt; Save Residuals
 
 **Description:** Saves the residuals in a new column in the data table.
 
@@ -3170,7 +3170,7 @@ obj << Save Residuals;
 
 #### Save Tolerant Prediction Formula
 
-**Syntax:** obj << Save Tolerant Prediction Formula
+**Syntax:** obj &lt;&lt; Save Tolerant Prediction Formula
 
 **Description:** Save a formula that predicts even when there are missing values in a new column in the data table.
 
@@ -3192,7 +3192,7 @@ obj << Save Tolerant Prediction Formula;
 
 #### Set Random Seed
 
-**Syntax:** obj << Set Random Seed( number )
+**Syntax:** obj &lt;&lt; Set Random Seed( number )
 
 **Description:** Specifies a random seed to reproduce the results for future launches of the platform.
 
@@ -3259,7 +3259,7 @@ obj = dt << Uplift(
 
 #### Show Fit Details
 
-**Syntax:** obj << Show Fit Details( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Fit Details( state=0|1 )
 
 **Description:** Shows or hides a report with the definition of all the measures, the misclassification rates, and the confusion matrices.
 
@@ -3282,7 +3282,7 @@ obj << Show Fit Details( 1 );
 
 #### Show Graph
 
-**Syntax:** obj << Show Graph( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Graph( state=0|1 )
 
 **Description:** Shows or hides the partition graph. On by default.
 
@@ -3306,7 +3306,7 @@ obj << ShowGraph( 1 );
 
 #### Show Points
 
-**Syntax:** obj << Show Points( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Points( state=0|1 )
 
 **Description:** Shows the points (1 or on) or shows color panels (0 or off) in the partition graph. On by default.
 
@@ -3330,7 +3330,7 @@ obj << ShowPoints( 1 );
 
 #### Show Split Bar
 
-**Syntax:** obj << Show Split Bar( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Split Bar( state=0|1 )
 
 **Description:** Shows or hides the colored bars that indicate the split proportions in each leaf. On by default.
 
@@ -3354,7 +3354,7 @@ obj << Show Split Bar( 1 );
 
 #### Show Split Candidates
 
-**Syntax:** obj << Show Split Candidates( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Split Candidates( state=0|1 )
 
 **Description:** Shows or hides the Candidates report in the terminal splits. On by default.
 
@@ -3377,7 +3377,7 @@ obj << Show Split Candidates( 1 );
 
 #### Show Split Count
 
-**Syntax:** obj << Show Split Count( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Split Count( state=0|1 )
 
 **Description:** Shows or hides the response counts for each level in each tree node.
 
@@ -3401,7 +3401,7 @@ obj << Show Split Count( 1 );
 
 #### Show Split Prob
 
-**Syntax:** obj << Show Split Prob( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Split Prob( state=0|1 )
 
 **Description:** Shows or hides the response rates for each level in each tree node.
 
@@ -3425,7 +3425,7 @@ obj << Show Split Prob( 1 );
 
 #### Show Split Stats
 
-**Syntax:** obj << Show Split Stats( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Split Stats( state=0|1 )
 
 **Description:** Shows or hides the count and the split statistics. The statistics shown include the G² or the mean and standard deviation. On by default.
 
@@ -3449,7 +3449,7 @@ obj << Show Split Stats( 1 );
 
 #### Show Tree
 
-**Syntax:** obj << Show Tree( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Tree( state=0|1 )
 
 **Description:** Shows or hides the tree structure with the partition information. On by default.
 
@@ -3471,7 +3471,7 @@ obj << ShowTree( 1 );
 
 #### Small Tree View
 
-**Syntax:** obj << Small Tree View( state=0|1 )
+**Syntax:** obj &lt;&lt; Small Tree View( state=0|1 )
 
 **Description:** Shows or hides a smaller version of the partition tree to the right of the Partition Graph.
 
@@ -3493,7 +3493,7 @@ obj << Small Tree View( 1 );
 
 #### Sort Split Candidates
 
-**Syntax:** obj << Sort Split Candidates( state=0|1 )
+**Syntax:** obj &lt;&lt; Sort Split Candidates( state=0|1 )
 
 **Description:** Sorts the candidates by significance.
 
@@ -3517,7 +3517,7 @@ obj << Sort Split Candidates;
 
 #### Specify Profit Matrix
 
-**Syntax:** obj << Specify Profit Matrix
+**Syntax:** obj &lt;&lt; Specify Profit Matrix
 
 **Description:** Enables you to specify profits or costs associated with correct or incorrect classification decisions.
 
@@ -3556,7 +3556,7 @@ obj = dt << Uplift(
 
 #### Split Best
 
-**Syntax:** obj << Split Best( <number of splits> )
+**Syntax:** obj &lt;&lt; Split Best( &lt;number of splits&gt; )
 
 **Description:** Splits the tree at the optimal split point.
 
@@ -3592,7 +3592,7 @@ obj << Split Best( 2 );
 
 #### Split History
 
-**Syntax:** obj << Split History( state=0|1 )
+**Syntax:** obj &lt;&lt; Split History( state=0|1 )
 
 **Description:** Shows or hides a graph showing each split on the X axis and the corresponding R² value for the model on the Y axis.
 
@@ -3628,7 +3628,7 @@ obj << Split History;
 
 #### Tree 3D
 
-**Syntax:** obj << Tree 3D( state=0|1 )
+**Syntax:** obj &lt;&lt; Tree 3D( state=0|1 )
 
 **Description:** Shows or hides a 3D plot of the tree structure.
 
@@ -3785,7 +3785,7 @@ obj = dt << Uplift(
 
 #### Action
 
-**Syntax:** obj << Action
+**Syntax:** obj &lt;&lt; Action
 
 **Description:** All-purpose trapdoor within a platform to insert expressions to evaluate. Temporarily sets the DisplayBox and DataTable contexts to the Platform.
 
@@ -3803,7 +3803,7 @@ dt << Bivariate(
 
 #### Apply Preset
 
-**Syntax:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntax:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Description:** Apply a previously created preset to the object, updating the options and customizations to match the saved settings.
 
@@ -3848,7 +3848,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 #### Broadcast
 
-**Syntax:** obj << Broadcast(message)
+**Syntax:** obj &lt;&lt; Broadcast(message)
 
 **Description:** Broadcasts a message to a platform. If return results from individual objects are tables, they are concatenated if possible, and the final format is identical to either the result from the Save Combined Table option in a Table Box or the result from the Concatenate option using a Source column. Other than those, results are stored in a list and returned.
 
@@ -3866,7 +3866,7 @@ objs[1] << Broadcast( Save Summaries );
 
 #### Column Switcher
 
-**Syntax:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Syntax:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Description:** Adds a control panel for changing the platform&apos;s variables
 
@@ -3884,7 +3884,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 #### Copy ByGroup Script
 
-**Syntax:** obj << Copy ByGroup Script
+**Syntax:** obj &lt;&lt; Copy ByGroup Script
 
 **Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
 
@@ -3918,7 +3918,7 @@ obj[1] << Copy ByGroup Script;
 
 #### Copy Script
 
-**Syntax:** obj << Copy Script
+**Syntax:** obj &lt;&lt; Copy Script
 
 **Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
 
@@ -3940,7 +3940,7 @@ obj << Copy Script;
 
 #### Data Table Window
 
-**Syntax:** obj << Data Table Window
+**Syntax:** obj &lt;&lt; Data Table Window
 
 **Description:** Move the data table window for this analysis to the front.
 
@@ -3962,7 +3962,7 @@ obj << Data Table Window;
 
 #### Get By Levels
 
-**Syntax:** obj << Get By Levels
+**Syntax:** obj &lt;&lt; Get By Levels
 
 **Description:** Returns an associative array mapping the by group columns to their values.
 
@@ -3977,7 +3977,7 @@ biv << Get By Levels;
 
 #### Get ByGroup Script
 
-**Syntax:** obj << Get ByGroup Script
+**Syntax:** obj &lt;&lt; Get ByGroup Script
 
 **Description:** Creates a script (JSL) to produce this analysis and returns it as an expression.
 
@@ -4012,7 +4012,7 @@ Show( t );
 
 #### Get Container
 
-**Syntax:** obj << Get Container
+**Syntax:** obj &lt;&lt; Get Container
 
 **Description:** Returns a reference to the container box that holds the content for the object.
 
@@ -4066,7 +4066,7 @@ New Window( "platform boxes",
 
 #### Get Data Table
 
-**Syntax:** obj << Get Data Table
+**Syntax:** obj &lt;&lt; Get Data Table
 
 **Description:** Returns a reference to the data table.
 
@@ -4089,7 +4089,7 @@ Show( N Rows( t ) );
 
 #### Get Group Platform
 
-**Syntax:** obj << Get Group Platform
+**Syntax:** obj &lt;&lt; Get Group Platform
 
 **Description:** Return the Group Platform object if this platform is part of a Group. Otherwise, returns Empty().
 
@@ -4106,7 +4106,7 @@ group << Layout( "Arrange in Tabs" );
 
 #### Get Script
 
-**Syntax:** obj << Get Script
+**Syntax:** obj &lt;&lt; Get Script
 
 **Description:** Creates a script (JSL) to produce this analysis and returns it as an expression.
 
@@ -4129,7 +4129,7 @@ Show( t );
 
 #### Get Script With Data Table
 
-**Syntax:** obj << Get Script With Data Table
+**Syntax:** obj &lt;&lt; Get Script With Data Table
 
 **Description:** Creates a script(JSL) to produce this analysis specifically referencing this data table and returns it as an expression.
 
@@ -4152,7 +4152,7 @@ Show( t );
 
 #### Get Timing
 
-**Syntax:** obj << Get Timing
+**Syntax:** obj &lt;&lt; Get Timing
 
 **Description:** Times the platform launch.
 
@@ -4175,7 +4175,7 @@ Show( t );
 
 #### Get Web Support
 
-**Syntax:** obj << Get Web Support
+**Syntax:** obj &lt;&lt; Get Web Support
 
 **Description:** Return a number indicating the level of Interactive HTML support for the display object. 1 means some or all elements are supported. 0 means no support.
 
@@ -4191,7 +4191,7 @@ Show( s );
 
 #### Get Where Expr
 
-**Syntax:** obj << Get Where Expr
+**Syntax:** obj &lt;&lt; Get Where Expr
 
 **Description:** Returns the Where expression for the data subset, if the platform was launched with By() or Where(). Otherwise, returns Empty()
 
@@ -4226,7 +4226,7 @@ dt << Bivariate(
 
 #### Local Data Filter
 
-**Syntax:** obj << Local Data Filter
+**Syntax:** obj &lt;&lt; Local Data Filter
 
 **Description:** To filter data to specific groups or ranges, but local to this platform
 
@@ -4278,7 +4278,7 @@ preset = obj << New Preset();
 
 #### Paste Local Data Filter
 
-**Syntax:** obj << Paste Local Data Filter
+**Syntax:** obj &lt;&lt; Paste Local Data Filter
 
 **Description:** Apply the local data filter from the clipboard to the current report.
 
@@ -4299,7 +4299,7 @@ dist2 << Paste Local Data Filter;
 
 #### Redo Analysis
 
-**Syntax:** obj << Redo Analysis
+**Syntax:** obj &lt;&lt; Redo Analysis
 
 **Description:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
 
@@ -4321,7 +4321,7 @@ obj << Redo Analysis;
 
 #### Redo ByGroup Analysis
 
-**Syntax:** obj << Redo ByGroup Analysis
+**Syntax:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Description:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
 
@@ -4355,7 +4355,7 @@ obj[1] << Redo ByGroup Analysis;
 
 #### Relaunch Analysis
 
-**Syntax:** obj << Relaunch Analysis
+**Syntax:** obj &lt;&lt; Relaunch Analysis
 
 **Description:** Opens the platform launch window and recalls the settings that were used to create the report.
 
@@ -4377,7 +4377,7 @@ obj << Relaunch Analysis;
 
 #### Relaunch ByGroup
 
-**Syntax:** obj << Relaunch ByGroup
+**Syntax:** obj &lt;&lt; Relaunch ByGroup
 
 **Description:** Opens the platform launch window and recalls the settings that were used to create the report.
 
@@ -4411,7 +4411,7 @@ obj[1] << Relaunch ByGroup;
 
 #### Remove Column Switcher
 
-**Syntax:** obj << Remove Column Switcher
+**Syntax:** obj &lt;&lt; Remove Column Switcher
 
 **Description:** Removes the most recent Column Switcher that has been added to the platform.
 
@@ -4431,7 +4431,7 @@ obj << Remove Column Switcher;
 
 #### Remove Local Data Filter
 
-**Syntax:** obj << Remove Local Data Filter
+**Syntax:** obj &lt;&lt; Remove Local Data Filter
 
 **Description:** If a local data filter has been created, this removes it and restores the platform to use all the data in the data table directly
 
@@ -4468,9 +4468,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 #### Report
 
-**Syntax:** obj << Report;
-
-Report( obj )
+**Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Description:** Returns a reference to the report object.
 
@@ -4494,7 +4492,7 @@ Show( t );
 
 #### Report View
 
-**Syntax:** obj << Report View( "Full"|"Summary" )
+**Syntax:** obj &lt;&lt; Report View( "Full"|"Summary" )
 
 **Description:** The report view determines the level of detail visible in a platform report. Full shows all of the detail, while Summary shows only select content, dependent on the platform. For customized behavior, display boxes support a <<Set Summary Behavior message.
 
@@ -4516,7 +4514,7 @@ obj << Report View( "Summary" );
 
 #### Save ByGroup Script to Data Table
 
-**Syntax:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description:** Creates a JSL script to produce this analysis, and save it as a table property in the data table. You can specify a name for the script. The Append Suffix option appends a numeric suffix to the script name, which differentiates the script from an existing script with the same name. The Prompt option prompts the user to specify a script name. The Replace option replaces an existing script with the same name.
 
@@ -4550,7 +4548,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 #### Save ByGroup Script to Journal
 
-**Syntax:** obj << Save ByGroup Script to Journal
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
 
@@ -4584,7 +4582,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 #### Save ByGroup Script to Script Window
 
-**Syntax:** obj << Save ByGroup Script to Script Window
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
 
@@ -4618,7 +4616,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 #### Save Script for All Objects
 
-**Syntax:** obj << Save Script for All Objects
+**Syntax:** obj &lt;&lt; Save Script for All Objects
 
 **Description:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -4640,7 +4638,7 @@ obj << Save Script for All Objects;
 
 #### Save Script for All Objects To Data Table
 
-**Syntax:** obj << Save Script for All Objects To Data Table( <name> )
+**Syntax:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Description:** Saves a script for all report objects to the current data table. This option is useful when you have multiple reports in the window. The script is named after the first platform unless you specify the script name in quotes.
 
@@ -4706,7 +4704,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 #### Save Script to Data Table
 
-**Syntax:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description:** Create a JSL script to produce this analysis, and save it as a table property in the data table.
 
@@ -4728,7 +4726,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 #### Save Script to Journal
 
-**Syntax:** obj << Save Script to Journal
+**Syntax:** obj &lt;&lt; Save Script to Journal
 
 **Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
 
@@ -4750,7 +4748,7 @@ obj << Save Script to Journal;
 
 #### Save Script to Report
 
-**Syntax:** obj << Save Script to Report
+**Syntax:** obj &lt;&lt; Save Script to Report
 
 **Description:** Create a JSL script to produce this analysis, and show it in the report itself. Useful to preserve a printed record of what was done.
 
@@ -4772,7 +4770,7 @@ obj << Save Script to Report;
 
 #### Save Script to Script Window
 
-**Syntax:** obj << Save Script to Script Window
+**Syntax:** obj &lt;&lt; Save Script to Script Window
 
 **Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
 
@@ -4859,7 +4857,7 @@ dt << Distribution(
 
 #### Sync to Data Table Changes
 
-**Syntax:** obj << Sync to Data Table Changes
+**Syntax:** obj &lt;&lt; Sync to Data Table Changes
 
 **Description:** Sync with the exclude and data changes that have been made.
 
@@ -4876,7 +4874,7 @@ dist << Sync To Data Table Changes;
 
 #### Title
 
-**Syntax:** obj << Title( "new title" )
+**Syntax:** obj &lt;&lt; Title( "new title" )
 
 **Description:** Sets the title of the platform.
 
@@ -4898,7 +4896,7 @@ obj << Title( "My Platform" );
 
 #### Top Report
 
-**Syntax:** obj << Top Report
+**Syntax:** obj &lt;&lt; Top Report
 
 **Description:** Returns a reference to the root node in the report.
 
@@ -4922,7 +4920,7 @@ Show( t );
 
 #### Transform Column
 
-**Syntax:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Syntax:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Description:** Create a transform column in the local context of an object, usually a platform. The transform column is active only for the lifetime of the platform.
 
@@ -4939,7 +4937,7 @@ dt << Distribution(
 
 #### View Web XML
 
-**Syntax:** obj << View Web XML
+**Syntax:** obj &lt;&lt; View Web XML
 
 **Description:** Returns the XML code that is used to create the interactive HTML report.
 

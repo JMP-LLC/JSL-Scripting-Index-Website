@@ -34,7 +34,7 @@ obj = Model Comparison();
 
 ### Freq
 
-**Syntax:** obj << Freq( column )
+**Syntax:** obj &lt;&lt; Freq( column )
 
 ```jsl
 
@@ -61,7 +61,7 @@ obj = Model Comparison();
 
 ### Group
 
-**Syntax:** obj << Group( column(s) )
+**Syntax:** obj &lt;&lt; Group( column(s) )
 
 ```jsl
 
@@ -85,7 +85,7 @@ obj = Model Comparison();
 
 ### Predictors
 
-**Syntax:** obj << Predictors( column(s) )
+**Syntax:** obj &lt;&lt; Predictors( column(s) )
 
 ```jsl
 
@@ -109,7 +109,7 @@ obj = Model Comparison();
 
 ### Weight
 
-**Syntax:** obj << Weight( column )
+**Syntax:** obj &lt;&lt; Weight( column )
 
 ```jsl
 
@@ -136,7 +136,7 @@ obj = Model Comparison();
 
 ### Y
 
-**Syntax:** obj << Y( column(s) )
+**Syntax:** obj &lt;&lt; Y( column(s) )
 
 ```jsl
 
@@ -162,7 +162,7 @@ obj = Model Comparison();
 
 ### AUC Comparison
 
-**Syntax:** obj << AUC Comparison( state=0|1 )
+**Syntax:** obj &lt;&lt; AUC Comparison( state=0|1 )
 
 **Description:** Shows or hides a comparison of the area under the ROC curve (AUC) from each model.
 
@@ -190,7 +190,7 @@ Model Comparison( AUC Comparison( 1 ) );
 
 ### Confusion Matrix
 
-**Syntax:** obj << Confusion Matrix( state=0|1 )
+**Syntax:** obj &lt;&lt; Confusion Matrix( state=0|1 )
 
 **Description:** Shows or hides a crosstabulation matrix of actual and predicted responses.
 
@@ -218,7 +218,7 @@ Model Comparison( Confusion Matrix( 1 ) );
 
 ### Cum Gains Curve
 
-**Syntax:** obj << Cum Gains Curve( state=0|1 )
+**Syntax:** obj &lt;&lt; Cum Gains Curve( state=0|1 )
 
 **Description:** Shows or hides a plot of cumulative gains curves for each level of the response variable. A cumulative gains curve plots the proportion of a response level that is identified by the model against the proportion of all responses.
 
@@ -246,7 +246,7 @@ Model Comparison( Cum Gains Curve( 1 ) );
 
 ### Decision Threshold
 
-**Syntax:** obj << Decision Threshold( state = 0|1, Set Probability Threshold( number ) )
+**Syntax:** obj &lt;&lt; Decision Threshold( state = 0|1, Set Probability Threshold( number ) )
 
 **Description:** Shows or hides the distribution of fitted probabilities and actual versus predicted tables for each model. You can change the probability threshold to explore how different thresholds affect the classification results.
 
@@ -274,7 +274,7 @@ Model Comparison( Decision Threshold( 1 ) );
 
 ### Lift Curve
 
-**Syntax:** obj << Lift Curve( state=0|1 )
+**Syntax:** obj &lt;&lt; Lift Curve( state=0|1 )
 
 **Description:** Shows or hides lift curves for each level of the response variable. The curves for the different models are overlaid in the plots.
 
@@ -302,7 +302,7 @@ Model Comparison( Lift Curve( 1 ) );
 
 ### Model Averaging
 
-**Syntax:** obj << Model Averaging
+**Syntax:** obj &lt;&lt; Model Averaging
 
 **Description:** Saves a new prediction column of the average of the predicted probabilities across models. This prediction column often results in a model with better prediction capability than the individual models.
 
@@ -328,7 +328,7 @@ Model Comparison( Model Averaging );
 
 ### Plot Actual by Predicted
 
-**Syntax:** obj << Plot Actual by Predicted( state=0|1 )
+**Syntax:** obj &lt;&lt; Plot Actual by Predicted( state=0|1 )
 
 **Description:** Shows or hides a plot with the actual response values on the vertical axis and the predicted values on the horizontal axis. In good fits, points are near the diagonal. You can see which points are far from the diagonal, look for patterns, and visualize the test.
 
@@ -354,7 +354,7 @@ Model Comparison( Plot Actual by Predicted( 1 ) );
 
 ### Plot Residual by Row
 
-**Syntax:** obj << Plot Residual by Row( state=0|1 )
+**Syntax:** obj &lt;&lt; Plot Residual by Row( state=0|1 )
 
 **Description:** Shows or hides a plot with the residuals on the vertical axis and the row number on the horizontal axis.
 
@@ -380,7 +380,7 @@ Model Comparison( Plot Residual by Row( 1 ) );
 
 ### Precision Recall Curve
 
-**Syntax:** obj << Precision Recall Curve( state=0|1 )
+**Syntax:** obj &lt;&lt; Precision Recall Curve( state=0|1 )
 
 **Description:** Shows or hides Precision-Recall Curve plots for each level of the response variable. The curves for the different models are overlaid in the plots.
 
@@ -408,7 +408,7 @@ Model Comparison( Precision Recall Curve( 1 ) );
 
 ### Profiler
 
-**Syntax:** obj << Profiler( state=0|1 )
+**Syntax:** obj &lt;&lt; Profiler( state=0|1 )
 
 **Description:** Shows or hides the prediction profiler, which is used to graphically explore the prediction equation by slicing it one factor at a time. The prediction profiler contains features for optimization.
 
@@ -434,7 +434,7 @@ Model Comparison( Profiler( 1 ) );
 
 ### ROC Curve
 
-**Syntax:** obj << ROC Curve( state=0|1 )
+**Syntax:** obj &lt;&lt; ROC Curve( state=0|1 )
 
 **Description:** Shows or hides Receiver Operating Characteristic (ROC) curves for each level of the response variable. The curves for the different models are overlaid in the plots.
 
@@ -464,7 +464,7 @@ Model Comparison( ROC Curve( 1 ) );
 
 ### Action
 
-**Syntax:** obj << Action
+**Syntax:** obj &lt;&lt; Action
 
 **Description:** All-purpose trapdoor within a platform to insert expressions to evaluate. Temporarily sets the DisplayBox and DataTable contexts to the Platform.
 
@@ -482,7 +482,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Syntax:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntax:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Description:** Apply a previously created preset to the object, updating the options and customizations to match the saved settings.
 
@@ -527,7 +527,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Automatic Recalc
 
-**Syntax:** obj << Automatic Recalc( state=0|1 )
+**Syntax:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Description:** Redoes the analysis automatically for exclude and data changes. If the Automatic Recalc option is turned on, you should consider using Wait(0) commands to ensure that the exclude and data changes take effect before the recalculation.
 
@@ -555,7 +555,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Column Switcher
 
-**Syntax:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Syntax:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Description:** Adds a control panel for changing the platform&apos;s variables
 
@@ -573,7 +573,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy Script
 
-**Syntax:** obj << Copy Script
+**Syntax:** obj &lt;&lt; Copy Script
 
 **Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
 
@@ -600,7 +600,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Syntax:** obj << Data Table Window
+**Syntax:** obj &lt;&lt; Data Table Window
 
 **Description:** Move the data table window for this analysis to the front.
 
@@ -627,7 +627,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Syntax:** obj << Get By Levels
+**Syntax:** obj &lt;&lt; Get By Levels
 
 **Description:** Returns an associative array mapping the by group columns to their values.
 
@@ -642,7 +642,7 @@ biv << Get By Levels;
 
 ### Get Container
 
-**Syntax:** obj << Get Container
+**Syntax:** obj &lt;&lt; Get Container
 
 **Description:** Returns a reference to the container box that holds the content for the object.
 
@@ -701,7 +701,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Syntax:** obj << Get Data Table
+**Syntax:** obj &lt;&lt; Get Data Table
 
 **Description:** Returns a reference to the data table.
 
@@ -729,7 +729,7 @@ Show( N Rows( t ) );
 
 ### Get Script
 
-**Syntax:** obj << Get Script
+**Syntax:** obj &lt;&lt; Get Script
 
 **Description:** Creates a script (JSL) to produce this analysis and returns it as an expression.
 
@@ -757,7 +757,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Syntax:** obj << Get Script With Data Table
+**Syntax:** obj &lt;&lt; Get Script With Data Table
 
 **Description:** Creates a script(JSL) to produce this analysis specifically referencing this data table and returns it as an expression.
 
@@ -785,7 +785,7 @@ Show( t );
 
 ### Get Timing
 
-**Syntax:** obj << Get Timing
+**Syntax:** obj &lt;&lt; Get Timing
 
 **Description:** Times the platform launch.
 
@@ -813,7 +813,7 @@ Show( t );
 
 ### Get Web Support
 
-**Syntax:** obj << Get Web Support
+**Syntax:** obj &lt;&lt; Get Web Support
 
 **Description:** Return a number indicating the level of Interactive HTML support for the display object. 1 means some or all elements are supported. 0 means no support.
 
@@ -829,7 +829,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Syntax:** obj << Get Where Expr
+**Syntax:** obj &lt;&lt; Get Where Expr
 
 **Description:** Returns the Where expression for the data subset, if the platform was launched with By() or Where(). Otherwise, returns Empty()
 
@@ -864,7 +864,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Syntax:** obj << Local Data Filter
+**Syntax:** obj &lt;&lt; Local Data Filter
 
 **Description:** To filter data to specific groups or ranges, but local to this platform
 
@@ -916,7 +916,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Syntax:** obj << Paste Local Data Filter
+**Syntax:** obj &lt;&lt; Paste Local Data Filter
 
 **Description:** Apply the local data filter from the clipboard to the current report.
 
@@ -937,7 +937,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**Syntax:** obj << Redo Analysis
+**Syntax:** obj &lt;&lt; Redo Analysis
 
 **Description:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
 
@@ -964,7 +964,7 @@ obj << Redo Analysis;
 
 ### Relaunch Analysis
 
-**Syntax:** obj << Relaunch Analysis
+**Syntax:** obj &lt;&lt; Relaunch Analysis
 
 **Description:** Opens the platform launch window and recalls the settings that were used to create the report.
 
@@ -991,7 +991,7 @@ obj << Relaunch Analysis;
 
 ### Remove Column Switcher
 
-**Syntax:** obj << Remove Column Switcher
+**Syntax:** obj &lt;&lt; Remove Column Switcher
 
 **Description:** Removes the most recent Column Switcher that has been added to the platform.
 
@@ -1011,7 +1011,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Syntax:** obj << Remove Local Data Filter
+**Syntax:** obj &lt;&lt; Remove Local Data Filter
 
 **Description:** If a local data filter has been created, this removes it and restores the platform to use all the data in the data table directly
 
@@ -1048,9 +1048,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Syntax:** obj << Report;
-
-Report( obj )
+**Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Description:** Returns a reference to the report object.
 
@@ -1079,7 +1077,7 @@ Show( t );
 
 ### Report View
 
-**Syntax:** obj << Report View( "Full"|"Summary" )
+**Syntax:** obj &lt;&lt; Report View( "Full"|"Summary" )
 
 **Description:** The report view determines the level of detail visible in a platform report. Full shows all of the detail, while Summary shows only select content, dependent on the platform. For customized behavior, display boxes support a <<Set Summary Behavior message.
 
@@ -1106,7 +1104,7 @@ obj << Report View( "Summary" );
 
 ### Save Script for All Objects
 
-**Syntax:** obj << Save Script for All Objects
+**Syntax:** obj &lt;&lt; Save Script for All Objects
 
 **Description:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -1133,7 +1131,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Syntax:** obj << Save Script for All Objects To Data Table( <name> )
+**Syntax:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Description:** Saves a script for all report objects to the current data table. This option is useful when you have multiple reports in the window. The script is named after the first platform unless you specify the script name in quotes.
 
@@ -1199,7 +1197,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Syntax:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description:** Create a JSL script to produce this analysis, and save it as a table property in the data table.
 
@@ -1226,7 +1224,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Syntax:** obj << Save Script to Journal
+**Syntax:** obj &lt;&lt; Save Script to Journal
 
 **Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
 
@@ -1253,7 +1251,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Syntax:** obj << Save Script to Report
+**Syntax:** obj &lt;&lt; Save Script to Report
 
 **Description:** Create a JSL script to produce this analysis, and show it in the report itself. Useful to preserve a printed record of what was done.
 
@@ -1280,7 +1278,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Syntax:** obj << Save Script to Script Window
+**Syntax:** obj &lt;&lt; Save Script to Script Window
 
 **Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
 
@@ -1372,7 +1370,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Syntax:** obj << Sync to Data Table Changes
+**Syntax:** obj &lt;&lt; Sync to Data Table Changes
 
 **Description:** Sync with the exclude and data changes that have been made.
 
@@ -1389,7 +1387,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Syntax:** obj << Title( "new title" )
+**Syntax:** obj &lt;&lt; Title( "new title" )
 
 **Description:** Sets the title of the platform.
 
@@ -1416,7 +1414,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Syntax:** obj << Top Report
+**Syntax:** obj &lt;&lt; Top Report
 
 **Description:** Returns a reference to the root node in the report.
 
@@ -1445,7 +1443,7 @@ Show( t );
 
 ### View Web XML
 
-**Syntax:** obj << View Web XML
+**Syntax:** obj &lt;&lt; View Web XML
 
 **Description:** Returns the XML code that is used to create the interactive HTML report.
 

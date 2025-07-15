@@ -6,7 +6,7 @@
 
 ### Create Objects
 
-**Syntax:** obj << Create Objects
+**Syntax:** obj &lt;&lt; Create Objects
 
 **Description:** Create the objects of the module instance.  This can be called only within the script for a JMP App Module.
 
@@ -19,7 +19,7 @@ Names Default To Here( 1 );
 
 ### Get Box
 
-**Syntax:** obj << Get Box
+**Syntax:** obj &lt;&lt; Get Box
 
 **Description:** Get the display box for the module instance.
 
@@ -37,7 +37,7 @@ inst << Get Box;
 
 ### Get Namespace
 
-**Syntax:** obj << Get Namespace
+**Syntax:** obj &lt;&lt; Get Namespace
 
 **Description:** Get the namespace for the module instance.
 
@@ -51,7 +51,7 @@ app = JMP App();
 
 ### Get User Data
 
-**Syntax:** obj << Get User Data
+**Syntax:** obj &lt;&lt; Get User Data
 
 **Description:** Returns the user data associated with the module instance.
 
@@ -64,7 +64,7 @@ Names Default To Here( 1 );
 
 ### Set User Data
 
-**Syntax:** inst << Set User Data(expr)
+**Syntax:** inst &lt;&lt; Set User Data(expr)
 
 **Description:** Stores a JSL value in the JMP app module instance; the value could be a number, string, list, associative array, or other JSL type.
 

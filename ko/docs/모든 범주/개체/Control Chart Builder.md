@@ -6,7 +6,7 @@
 
 ### Action
 
-**구문:** obj << Action
+**구문:** obj &lt;&lt; Action
 
 **설명:** 실행할 표현식을 삽입하기 위한 플랫폼 내의 다목적 트랩도어. 임시로 표시 상자 및 데이터 테이블 유형을 플랫폼에 설정합니다.
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**구문:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**구문:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **설명:** 이전에 생성된 사전 설정을 개체에 적용하여 옵션과 사용자 정의를 저장된 설정과 일치하도록 업데이트합니다.
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Automatic Recalc
 
-**구문:** obj << Automatic Recalc( state=0|1 )
+**구문:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **설명:** 제외 항목 및 데이터 변경이 있을 때 분석을 자동으로 다시 실행합니다. 자동 재계산 옵션이 설정된 경우 재계산하기 전에 제외 항목 및 데이터 변경이 적용되게 하려면 Wait(0) 명령을 사용하는 것이 좋습니다.
 
@@ -88,7 +88,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Column Switcher
 
-**구문:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**구문:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **설명:** 플랫폼 변수를 변경하기 위한 제어판을 추가합니다.
 
@@ -103,7 +103,7 @@ ColumnSwitcherObject = obj << Column Switcher( :marital status, {:sex, :country,
 
 ### Copy Script
 
-**구문:** obj << Copy Script
+**구문:** obj &lt;&lt; Copy Script
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 클립보드에 넣습니다.
 
@@ -119,7 +119,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**구문:** obj << Data Table Window
+**구문:** obj &lt;&lt; Data Table Window
 
 **설명:** 이 분석에 대한 데이터 테이블 창을 앞으로 가져옵니다.
 
@@ -135,7 +135,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**구문:** obj << Get By Levels
+**구문:** obj &lt;&lt; Get By Levels
 
 **설명:** 기준 그룹 열을 값에 매핑하는 연관 배열을 반환합니다.
 
@@ -152,7 +152,7 @@ biv << Get By Levels;
 
 ### Get Container
 
-**구문:** obj << Get Container
+**구문:** obj &lt;&lt; Get Container
 
 **설명:** 개체의 콘텐츠를 담고 있는 컨테이너 상자에 대한 참조를 반환합니다.
 
@@ -200,7 +200,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**구문:** obj << Get Data Table
+**구문:** obj &lt;&lt; Get Data Table
 
 **설명:** 데이터 테이블에 대한 참조를 반환합니다.
 
@@ -217,7 +217,7 @@ Show( N Rows( t ) );
 
 ### Get Script
 
-**구문:** obj << Get Script
+**구문:** obj &lt;&lt; Get Script
 
 **설명:** 이 분석을 수행하기 위한 스크립트(JSL)를 생성하고 표현식으로 반환합니다.
 
@@ -234,7 +234,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**구문:** obj << Get Script With Data Table
+**구문:** obj &lt;&lt; Get Script With Data Table
 
 **설명:** 이 데이터 테이블을 참조하는 분석을 수행하기 위한 스크립트(JSL)를 생성하고 표현식으로 반환합니다.
 
@@ -251,7 +251,7 @@ Show( t );
 
 ### Get Timing
 
-**구문:** obj << Get Timing
+**구문:** obj &lt;&lt; Get Timing
 
 **설명:** 플랫폼 시작 시간을 설정합니다.
 
@@ -268,7 +268,7 @@ Show( t );
 
 ### Get Web Support
 
-**구문:** obj << Get Web Support
+**구문:** obj &lt;&lt; Get Web Support
 
 **설명:** 표시 개체에 대한 대화식 HTML 지원 수준을 나타내는 숫자를 반환합니다. 1은 일부 또는 모든 요소가 지원됨을 의미하고 0은 지원되지 않음을 의미합니다.
 
@@ -284,7 +284,7 @@ Show( s );
 
 ### Get Where Expr
 
-**구문:** obj << Get Where Expr
+**구문:** obj &lt;&lt; Get Where Expr
 
 **설명:** By() 또는 Where()를 사용하여 플랫폼이 시작된 경우 데이터 부분집합에 대한 Where 표현식을 반환하고, 그렇지 않은 경우 Empty()를 반환합니다.
 
@@ -321,7 +321,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**구문:** obj << Local Data Filter
+**구문:** obj &lt;&lt; Local Data Filter
 
 **설명:** 데이터를 특정 그룹 또는 범위로 필터링합니다. 이 플랫폼에서만 사용 가능합니다.
 
@@ -377,7 +377,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**구문:** obj << Paste Local Data Filter
+**구문:** obj &lt;&lt; Paste Local Data Filter
 
 **설명:** 클립보드의 로컬 데이터 필터를 현재 보고서에 적용합니다.
 
@@ -396,7 +396,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**구문:** obj << Redo Analysis
+**구문:** obj &lt;&lt; Redo Analysis
 
 **설명:** 동일한 분석을 새 창에서 다시 실행합니다. 데이터가 변경된 경우에는 분석결과가 달라집니다.
 
@@ -412,7 +412,7 @@ obj << Redo Analysis;
 
 ### Relaunch Analysis
 
-**구문:** obj << Relaunch Analysis
+**구문:** obj &lt;&lt; Relaunch Analysis
 
 **설명:** 플랫폼 시작 창을 열고 보고서를 생성하는 데 사용된 설정을 불러옵니다.
 
@@ -428,7 +428,7 @@ obj << Relaunch Analysis;
 
 ### Remove Column Switcher
 
-**구문:** obj << Remove Column Switcher
+**구문:** obj &lt;&lt; Remove Column Switcher
 
 **설명:** 플랫폼에 추가된 가장 최근 열 전환기를 제거합니다.
 
@@ -445,7 +445,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**구문:** obj << Remove Local Data Filter
+**구문:** obj &lt;&lt; Remove Local Data Filter
 
 **설명:** 로컬 데이터 필터가 생성된 경우 로컬 데이터 필터를 제거하고 데이터 테이블의 모든 데이터를 직접 사용하도록 플랫폼을 복원합니다.
 
@@ -484,9 +484,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**구문:** obj << Report;
-
-Report( obj )
+**구문:** obj &lt;&lt; Report;Report( obj )
 
 **설명:** 보고서 개체에 대한 참조를 반환합니다.
 
@@ -504,7 +502,7 @@ Show( t );
 
 ### Report View
 
-**구문:** obj << Report View( "전체"|"요약" )
+**구문:** obj &lt;&lt; Report View( "전체"|"요약" )
 
 **설명:** 보고서 보기는 플랫폼 보고서에 표시되는 상세 수준을 결정합니다. Full은 모든 상세 정보를 표시하고 Summary는 플랫폼에 따라 선택된 콘텐츠만 표시합니다. 사용자 정의된 동작의 경우 표시 상자는 <<Set Summary Behavior 메시지를 지원합니다.
 
@@ -520,7 +518,7 @@ obj << Report View( "Summary" );
 
 ### Save Script for All Objects
 
-**구문:** obj << Save Script for All Objects
+**구문:** obj &lt;&lt; Save Script for All Objects
 
 **설명:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -536,7 +534,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**구문:** obj << Save Script for All Objects To Data Table( <name> )
+**구문:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **설명:** 모든 보고서 개체에 대한 스크립트를 현재 데이터 테이블에 저장합니다. 이 옵션은 창에 여러 보고서가 있을 때 유용합니다. 스크립트 이름을 따옴표로 묶어 지정하는 경우 외에는 첫 번째 플랫폼 이름을 따라 스크립트 이름이 지정됩니다.
 
@@ -576,7 +574,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**구문:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**구문:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 데이터 테이블에 테이블 특성으로 저장합니다.
 
@@ -592,7 +590,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**구문:** obj << Save Script to Journal
+**구문:** obj &lt;&lt; Save Script to Journal
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 이 스크립트가 포함된 저널에 버튼을 추가합니다.
 
@@ -608,7 +606,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**구문:** obj << Save Script to Report
+**구문:** obj &lt;&lt; Save Script to Report
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 보고서 자체에 표시합니다. 수행된 작업에 대한 인쇄된 기록을 유지하려는 경우에 유용합니다.
 
@@ -624,7 +622,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**구문:** obj << Save Script to Script Window
+**구문:** obj &lt;&lt; Save Script to Script Window
 
 **설명:** 이 분석을 수행하기 위한 JSL 스크립트를 생성하고 현재 스크립트 텍스트 창에 추가합니다.
 
@@ -701,7 +699,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**구문:** obj << Sync to Data Table Changes
+**구문:** obj &lt;&lt; Sync to Data Table Changes
 
 **설명:** 제외 항목 및 데이터 변경 사항과 동기화합니다.
 
@@ -718,7 +716,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**구문:** obj << Title( "new title" )
+**구문:** obj &lt;&lt; Title( "new title" )
 
 **설명:** 플랫폼의 제목을 설정합니다.
 
@@ -734,7 +732,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**구문:** obj << Top Report
+**구문:** obj &lt;&lt; Top Report
 
 **설명:** 보고서의 루트 노드에 대한 참조를 반환합니다.
 
@@ -752,7 +750,7 @@ Show( t );
 
 ### View Web XML
 
-**구문:** obj << View Web XML
+**구문:** obj &lt;&lt; View Web XML
 
 **설명:** 대화식 HTML 보고서를 생성하는 데 사용된 XML 코드를 반환합니다.
 
@@ -769,7 +767,7 @@ xml = obj << View Web XML;
 
 ### Control Chart Builder
 
-**구문:** Control Chart Builder( Class( "Shewhart Variables"|"Shewhart Attribute"|"Short Run"|"Rare Event" ), Variables( variables ), <Chart( Position( number ), Points( Statistic( "statistic" ), <points options> ), Limits( Sigma( "sigma" ), <limits options> )> ) ) )
+**구문:** Control Chart Builder( Class( "Shewhart Variables"|"Shewhart Attribute"|"Short Run"|"Rare Event" ), Variables( variables ), &lt;Chart( Position( number ), Points( Statistic( "statistic" ), &lt;points options&gt; ), Limits( Sigma( "sigma" ), &lt;limits options&gt; )&gt; ) ) )
 
 **설명:** 공정이 안정적이고 예측 가능한지 여부를 판단하는 데 사용되는 관리도를 대화식으로 생성할 수 있습니다. 관리도 빌더 플랫폼을 사용하여 IMR, XBar, 단기 런, 런, P, NP, C, U, Laney P&apos;, Laney U&apos;, Levey-Jennings, 평균 IMR, 삼원 및 희귀 사건 차트와 같은 유형의 관리도를 생성할 수 있습니다.
 
@@ -1257,7 +1255,7 @@ obj = dt << Control Chart Builder(
 
 ### Add Limits
 
-**구문:** obj << Chart( Position( number ), Add Limits( {LCL( number ), Avg( number ), UCL( number )} ) )
+**구문:** obj &lt;&lt; Chart( Position( number ), Add Limits( {LCL( number ), Avg( number ), UCL( number )} ) )
 
 **설명:** 지정된 차트에 대한 일련의 한계를 추가합니다. 추가된 한계는 파선으로 나타납니다.
 
@@ -1274,7 +1272,7 @@ obj << Chart( Position( 1 ), Add Limits( {LCL( 17.5 ), Avg( 20.25 ), UCL( 23 )} 
 
 ### Add Spec Limits
 
-**구문:** obj << Chart( Position( number ), Add Spec Limits( {LSL( number ), Target( number ), USL( number )} ) )
+**구문:** obj &lt;&lt; Chart( Position( number ), Add Spec Limits( {LSL( number ), Target( number ), USL( number )} ) )
 
 **설명:** 각 Y 변수의 규격 한계를 설정합니다.
 
@@ -1291,7 +1289,7 @@ obj << Chart( Position( 1 ), Add Spec Limits( {LSL( 18 ), Target( 20.1 ), USL( 2
 
 ### Alarm Script
 
-**구문:** obj << Alarm Script( Write( "..." )|Speak( "..." )|Mail( address, subject,"..." ) )
+**구문:** obj &lt;&lt; Alarm Script( Write( "..." )|Speak( "..." )|Mail( address, subject,"..." ) )
 
 **설명:** 관리도의 점이 지정된 검정을 통과하지 못할 때마다 메시지를 보냅니다. 메시지를 로그로 전송하거나 음성으로 전달하거나 이메일로 보낼 수 있습니다.
 
@@ -1322,7 +1320,7 @@ obj << Alarm Script(
 
 ### Chart
 
-**구문:** obj << Chart( Position( number ), <Points( Statistic(),... )>, <Set Control Limits( { LCL(), UCL(), Avg() } )>, <Add Limits( { LCL(), UCL(), Avg() } )>, <Add Spec Limits( { LSL(), USL(), Target() } )>, <Limits( Sigma(), ... )>, <Warnings( Test number( state=0|1 ) )> )
+**구문:** obj &lt;&lt; Chart( Position( number ), &lt;Points( Statistic(),... )&gt;, &lt;Set Control Limits( { LCL(), UCL(), Avg() } )&gt;, &lt;Add Limits( { LCL(), UCL(), Avg() } )&gt;, &lt;Add Spec Limits( { LSL(), USL(), Target() } )&gt;, &lt;Limits( Sigma(), ... )&gt;, &lt;Warnings( Test number( state=0|1 ) )&gt; )
 
 **설명:** Position 인수로 지정된 차트에 대한 경고, 한계 및 점 속성을 설정합니다.
 
@@ -1346,7 +1344,7 @@ obj = dt << Control Chart Builder(
 
 ### Class
 
-**구문:** obj << Class( "Shewhart Variables"|"Shewhart Attribute"|"Short Run"|"Rare Event" )
+**구문:** obj &lt;&lt; Class( "Shewhart Variables"|"Shewhart Attribute"|"Short Run"|"Rare Event" )
 
 **설명:** 관리도에 표시하는 점 통계량과 시그마 통계량 조합을 지정합니다.
 
@@ -1366,7 +1364,7 @@ obj = dt << Control Chart Builder(
 
 ### Color By Product
 
-**구문:** obj << Color By Product( state=0|1 )
+**구문:** obj &lt;&lt; Color By Product( state=0|1 )
 
 **설명:** 표시된 점에 제품 변수의 수준에 따라 다른 색상을 적용합니다. 기본적으로 설정되어 있습니다.
 
@@ -1384,7 +1382,7 @@ obj << Color By Product( 1 );
 
 ### Connect Thru Missing
 
-**구문:** obj << Connect Thru Missing( state=0|1 )
+**구문:** obj &lt;&lt; Connect Thru Missing( state=0|1 )
 
 **설명:** 일부 표본에 결측값이나 제외된 행이 있을 때 점과 선을 연결할지 여부를 결정합니다.
 
@@ -1402,7 +1400,7 @@ obj << Connect Thru Missing( 1 );
 
 ### Customize Tests
 
-**구문:** obj << Customize Tests( Test 1 | Test 2 | Test 3 | Test 4 | Test 5 | Test 6 | Test 7 | Test 8 (n, label) )
+**구문:** obj &lt;&lt; Customize Tests( Test 1 | Test 2 | Test 3 | Test 4 | Test 5 | Test 6 | Test 7 | Test 8 (n, label) )
 
 **설명:** Western Electric 검정에 대한 시그마 기반 거리 모수를 선택하고, 라벨을 사용자 정의하고, 설정할 수 있습니다.
 
@@ -1422,7 +1420,7 @@ obj = dt << Control Chart Builder(
 
 ### Fit to Window
 
-**구문:** obj << Fit to Window( "자동"|"켜짐"|"해제"|"화면비율 유지"="해제" )
+**구문:** obj &lt;&lt; Fit to Window( "자동"|"켜짐"|"해제"|"화면비율 유지"="해제" )
 
 **설명:** 보고서 자동 늘이기 동작을 설정합니다. 기본값은 "해제"입니다.
 
@@ -1438,7 +1436,7 @@ obj << Fit to Window( "On" );
 
 ### Get Control Limits
 
-**구문:** obj << Get Control Limits( filename )
+**구문:** obj &lt;&lt; Get Control Limits( filename )
 
 **설명:** 선택된 데이터 테이블에서 관리 한계를 가져와 차트의 계산된 한계와 바꿉니다.
 
@@ -1460,7 +1458,7 @@ obj << Get Control Limits( "$SAMPLE_DATA/Quality Control/CoatingLimits.jmp" );
 
 ### Get Product Statistics
 
-**구문:** obj << Get Product Statistics( filename )
+**구문:** obj &lt;&lt; Get Product Statistics( filename )
 
 **설명:** 지정된 데이터 테이블에서 단기 런 제품 목표값과 시그마 값을 가져옵니다.
 
@@ -1478,7 +1476,7 @@ obj << Get Product Statistics( "$SAMPLE_DATA/Quality Control/CoatingProductInfo.
 
 ### Get Spec Limits
 
-**구문:** obj << Get Spec Limits( filename )
+**구문:** obj &lt;&lt; Get Spec Limits( filename )
 
 **설명:** 파일에서 규격 한계를 가져옵니다.
 
@@ -1495,7 +1493,7 @@ obj << Get Spec Limits( "$SAMPLE_DATA/CitySpecLimits.jmp" );
 
 ### Graph Borders
 
-**구문:** obj << Graph Borders( state=0|1 )
+**구문:** obj &lt;&lt; Graph Borders( state=0|1 )
 
 **설명:** 내부 그래프 패널 테두리를 표시하거나 숨깁니다.
 
@@ -1516,7 +1514,7 @@ obj << Graph Borders( 1 );
 
 ### Graph Spacing
 
-**구문:** obj << Graph Spacing( gap=2 )
+**구문:** obj &lt;&lt; Graph Spacing( gap=2 )
 
 **설명:** 그래프 패널 사이의 간격 크기를 지정합니다. 기본값은 "2"입니다.
 
@@ -1535,7 +1533,7 @@ obj << Graph Spacing( 5 );
 
 ### Graph Spacing Color
 
-**구문:** obj << Graph Spacing Color( color )
+**구문:** obj &lt;&lt; Graph Spacing Color( color )
 
 **설명:** 그래프 패널 사이의 간격 색상을 지정합니다.
 
@@ -1554,7 +1552,7 @@ obj << Graph Spacing Color( "Red" );
 
 ### Graph Spacing Transparency
 
-**구문:** obj << Graph Spacing Transparency( number )
+**구문:** obj &lt;&lt; Graph Spacing Transparency( number )
 
 **설명:** 그래프 패널 사이 간격의 투명도 수준을 지정합니다. 값은 0에서 1 사이여야 합니다.
 
@@ -1573,7 +1571,7 @@ obj << Graph Spacing Transparency( 0.3 );
 
 ### Include Missing Categories
 
-**구문:** obj << Include Missing Categories( state=0|1 )
+**구문:** obj &lt;&lt; Include Missing Categories( state=0|1 )
 
 **설명:** 데이터에 결측값이 포함된 경우 명목형 및 순서형 변수에 대한 추가 수준을 포함합니다. 기본적으로 설정되어 있습니다.
 
@@ -1592,7 +1590,7 @@ obj << Include Missing Categories( 0 );
 
 ### K Sigma
 
-**구문:** obj << K Sigma( value=3 )
+**구문:** obj &lt;&lt; K Sigma( value=3 )
 
 **설명:** 평균에 대한 관리 한계를 구성하기 위해 시그마를 곱할 K 값을 설정합니다. 기본값은 "3"입니다.
 
@@ -1610,7 +1608,7 @@ obj << K Sigma( 3 );
 
 ### Limits
 
-**구문:** obj << Chart( Position( number ), Limits( Sigma( "sigma" ), <Zones( state=0|1 )>, <Shade Zones( state=0|1 )>, <Set Control Limits( state=0|1 )>, <Show Upper Limit( state=0|1 )>, <Show Lower Limit( state=0|1 )>, <Show Center Line( state=0|1 )> ) )
+**구문:** obj &lt;&lt; Chart( Position( number ), Limits( Sigma( "sigma" ), &lt;Zones( state=0|1 )&gt;, &lt;Shade Zones( state=0|1 )&gt;, &lt;Set Control Limits( state=0|1 )&gt;, &lt;Show Upper Limit( state=0|1 )&gt;, &lt;Show Lower Limit( state=0|1 )&gt;, &lt;Show Center Line( state=0|1 )&gt; ) )
 
 **설명:** 차트의 한계 특성을 변경하기 위한 옵션을 제공합니다. 차트 유형에 따라 범위, 표준편차, 이동 범위, 중앙값 이동 범위, Levey-Jennings, Poisson, 이항, 음이항, Weibull, Laney P 프라임 또는 Laney U 프라임 값 중 하나를 sigma 인수로 할당할 수 있습니다.
 
@@ -1634,7 +1632,7 @@ obj << Chart(
 
 ### Limits Label Precision
 
-**구문:** obj << Limits Label Precision( number )
+**구문:** obj &lt;&lt; Limits Label Precision( number )
 
 **설명:** 데이터를 기준으로 한계에 표시되는 정밀도를 지정합니다.
 
@@ -1654,7 +1652,7 @@ obj << Limits Label Precision( 5 );
 
 ### OC Curve
 
-**구문:** obj << OC Curve
+**구문:** obj &lt;&lt; OC Curve
 
 **설명:** 관리도의 시그마 및 관리 한계를 사용하여 새 창에 연산자 특성 곡선을 표시합니다.
 
@@ -1670,7 +1668,7 @@ obj << OC Curve;
 
 ### Points
 
-**구문:** obj << Chart( Position( number ), Points( Statistic( "statistic" ), <Individual Points( state=0|1 )>, <Box Plots( state=0|1 )>, <Show Connect Line( state=0|1 )>, <Show Points( state=0|1 )> ) )
+**구문:** obj &lt;&lt; Chart( Position( number ), Points( Statistic( "statistic" ), &lt;Individual Points( state=0|1 )&gt;, &lt;Box Plots( state=0|1 )&gt;, &lt;Show Connect Line( state=0|1 )&gt;, &lt;Show Points( state=0|1 )&gt; ) )
 
 **설명:** 차트의 점 특성을 변경하기 위한 옵션을 제공합니다. 차트 유형에 따라 평균, 범위, 표준편차, 평균 이동 범위, 표준편차 이동 범위, 개별값, 이동 범위, 개수, 비율, 중심화, 표준화, 중심화 범위 또는 표준화 범위 값 중 하나를 statistic 인수에 할당할 수 있습니다.
 
@@ -1692,7 +1690,7 @@ obj << Chart( Position( 2 ), Points( Statistic( "Standard Deviation" ) ) );
 
 ### Product Statistics
 
-**구문:** obj << Product Statistics( ( column ) ( Product Level( l1 ( Target( number ), Sigma ( number ) ), <l2 ( Target( number ), Sigma ( number ) )) ), < (column ( Product Level( ... ) ) ) > )
+**구문:** obj &lt;&lt; Product Statistics( ( column ) ( Product Level( l1 ( Target( number ), Sigma ( number ) ), &lt;l2 ( Target( number ), Sigma ( number ) )) ), &lt; (column ( Product Level( ... ) ) ) &gt; )
 
 **설명:** 단기 런 제품 목표값과 시그마 값을 설정합니다.
 
@@ -1712,7 +1710,7 @@ obj << Product Statistics(
 
 ### Range Span
 
-**구문:** obj << Range Span( value=2 )
+**구문:** obj &lt;&lt; Range Span( value=2 )
 
 **설명:** 이동 범위 차트에 사용되는 범위 길이 옵션의 값을 설정합니다. 기본값은 "2"입니다.
 
@@ -1730,7 +1728,7 @@ obj << Range Span( 3 );
 
 ### Rerun All Tests
 
-**구문:** obj << Rerun All Tests
+**구문:** obj &lt;&lt; Rerun All Tests
 
 **설명:** 현재 선택된 모든 검정 및 연결된 경보 스크립트를 다시 실행합니다.
 
@@ -1764,7 +1762,7 @@ obj << Rerun All Tests;
 
 ### Save Control Limits
 
-**구문:** obj << Save Control Limits( "열에"|"새 테이블에"|"새 세로형 테이블에" )
+**구문:** obj &lt;&lt; Save Control Limits( "열에"|"새 테이블에"|"새 세로형 테이블에" )
 
 **설명:** 열 특성 또는 새 데이터 테이블에 관리 한계를 저장합니다.
 
@@ -1791,7 +1789,7 @@ obj << Save Control Limits( "in New Table" );
 
 ### Save Product Statistics
 
-**구문:** obj << Save Product Statistics
+**구문:** obj &lt;&lt; Save Product Statistics
 
 **설명:** 열을 새 데이터 테이블에 저장합니다. 새 데이터 테이블에는 부품/제품 변수의 각 수준에 대한 제품 통계량(목표값, 시그마)이 포함됩니다.
 
@@ -1809,7 +1807,7 @@ obj << Save Product Statistics;
 
 ### Save Spec Limits
 
-**구문:** obj << Save Spec Limits
+**구문:** obj &lt;&lt; Save Spec Limits
 
 **설명:** 규격 한계를 새 데이터 테이블에 저장합니다. 이 옵션은 규격 한계 열 특성을 사용하거나 JSL, 규격 한계 가져오기 또는 규격 한계 설정 옵션을 통해 규격 한계를 설정한 경우에만 사용할 수 있습니다.
 
@@ -1827,7 +1825,7 @@ obj << Save Spec Limits;
 
 ### Save Summaries
 
-**구문:** obj << Save Summaries
+**구문:** obj &lt;&lt; Save Summaries
 
 **설명:** 각 차트에 대한 새 데이터 테이블을 저장합니다. 데이터 테이블에는 각 표본을 나타내는 행과 표본 라벨, 표본 크기 및 제품 수준(제품/부품 변수가 지정된 경우)을 나타내는 열이 포함됩니다. 각 차트에는 표시된 개별 점, 차트 유형, UCL, 평균, LCL, 오류가 발생한 검정을 나타내는 열도 있습니다.
 
@@ -1845,7 +1843,7 @@ obj << Save Summaries;
 
 ### Set Control Limits
 
-**구문:** obj << Chart( Position( number ), Set Control Limits( {LCL( number ), Avg( number ), UCL( number )} ) )
+**구문:** obj &lt;&lt; Chart( Position( number ), Set Control Limits( {LCL( number ), Avg( number ), UCL( number )} ) )
 
 **설명:** 지정된 차트에 대한 관리 한계를 설정합니다.
 
@@ -1862,7 +1860,7 @@ obj << Chart( Position( 1 ), Set Control Limits( {LCL( 19 ), Avg( 20 ), UCL( 21 
 
 ### Set Last N Subgroups
 
-**구문:** obj << Set Last N Subgroups( number )
+**구문:** obj &lt;&lt; Set Last N Subgroups( number )
 
 **설명:** 그래프에 마지막 N개의 부분군만 표시하도록 가로 축을 변경합니다. 지정한 부분군 수에는 제외되거나 숨겨진 관측값이 포함되지 않습니다. 단계 변수에 수준이 두 개 이상 있는 경우 이 옵션을 사용할 수 없습니다.
 
@@ -1880,7 +1878,7 @@ obj << Set Last n Subgroups( 5 );
 
 ### Set Sigma
 
-**구문:** obj << Set Sigma( value )
+**구문:** obj &lt;&lt; Set Sigma( value )
 
 **설명:** 관리도에 사용되는 시그마 값을 설정합니다.
 
@@ -1899,7 +1897,7 @@ obj << Set Sigma( 1.8 );
 
 ### Set Subgroup Size
 
-**구문:** obj << Set Subgroup Size(  integer  )
+**구문:** obj &lt;&lt; Set Subgroup Size( integer )
 
 **설명:** 부분군당 행 수를 지정합니다.
 
@@ -1916,7 +1914,7 @@ obj << Set Subgroup Size( 4 );
 
 ### Show Alarm Report
 
-**구문:** obj << Show Alarm Report( state=0|1 )
+**구문:** obj &lt;&lt; Show Alarm Report( state=0|1 )
 
 **설명:** 경보 비율과 관리이탈 표본의 테이블을 표시하거나 숨깁니다.
 
@@ -1934,7 +1932,7 @@ obj << Show Alarm Report( 1 );
 
 ### Show Capability
 
-**구문:** obj << Show Capability( state=0|1 )
+**구문:** obj &lt;&lt; Show Capability( state=0|1 )
 
 **설명:** 공정 능력 분석 보고서를 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -1959,7 +1957,7 @@ obj << Show Capability( 0 );
 
 ### Show Center Line
 
-**구문:** obj << Chart( Position( number ),  Limits( Show Center Line( state=0|1 ) ) )
+**구문:** obj &lt;&lt; Chart( Position( number ), Limits( Show Center Line( state=0|1 ) ) )
 
 **설명:** 중심선을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -1976,7 +1974,7 @@ obj << Chart( Position( 1 ), Limits( Show Center Line( 0 ) ) );
 
 ### Show Control Panel
 
-**구문:** obj << Show Control Panel( state=0|1 )
+**구문:** obj &lt;&lt; Show Control Panel( state=0|1 )
 
 **설명:** 제어판을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -1995,7 +1993,7 @@ obj << Show Control Panel( 0 );
 
 ### Show Excluded Region
 
-**구문:** obj << Show Excluded Region( state=0|1 )
+**구문:** obj &lt;&lt; Show Excluded Region( state=0|1 )
 
 **설명:** 차트에서 표본이 제외된 영역을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2016,7 +2014,7 @@ obj << Show Excluded Region( 0 );
 
 ### Show Limit Labels
 
-**구문:** obj << Show Limit Labels( state=0|1 )
+**구문:** obj &lt;&lt; Show Limit Labels( state=0|1 )
 
 **설명:** 그래프에서 한계 라벨을 표시하거나 숨깁니다.
 
@@ -2034,7 +2032,7 @@ obj << Show Limit Labels( 1 );
 
 ### Show Limit Summaries
 
-**구문:** obj << Show Limit Summaries( state=0|1 )
+**구문:** obj &lt;&lt; Show Limit Summaries( state=0|1 )
 
 **설명:** 한계 요약 보고서를 표시하거나 숨깁니다. 이 보고서에는 관리 한계(LCL, UCL), 중심선(평균), 찍힌 점과 한계 및 차트의 표본 크기가 포함됩니다. 기본적으로 설정되어 있습니다.
 
@@ -2053,7 +2051,7 @@ obj << Show Limit Summaries( 0 );
 
 ### Show Lower Limit
 
-**구문:** obj << Chart( Position( number ),  Limits( Show Lower Limit( state=0|1 ) ) )
+**구문:** obj &lt;&lt; Chart( Position( number ), Limits( Show Lower Limit( state=0|1 ) ) )
 
 **설명:** 관리 하한을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2072,7 +2070,7 @@ obj = dt << Control Chart Builder(
 
 ### Show Product Separators
 
-**구문:** obj << Show Product Separators( state=0|1 )
+**구문:** obj &lt;&lt; Show Product Separators( state=0|1 )
 
 **설명:** 제품 변경을 나타내는 수직 파선을 그래프에 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2090,7 +2088,7 @@ obj << Show Product Separators( 0 );
 
 ### Show Sigma Report
 
-**구문:** obj << Show Sigma Report( state=0|1 )
+**구문:** obj &lt;&lt; Show Sigma Report( state=0|1 )
 
 **설명:** 전체 표준편차, 군내 표준편차, 안정성 지수 및 평균 테이블을 표시하거나 숨깁니다. 삼원 차트의 경우 군간 표준편차와 군간-군내 표준편차도 표시됩니다.
 
@@ -2108,7 +2106,7 @@ obj << Show Sigma Report( 1 );
 
 ### Show Two Shewhart or Short Run Charts
 
-**구문:** obj << Show Two Shewhart or Short Run Charts( state=0|1 )
+**구문:** obj &lt;&lt; Show Two Shewhart or Short Run Charts( state=0|1 )
 
 **설명:** 위치 차트와 산포 차트를 모두 표시합니다. 이 옵션의 값이 0이면 산포 차트가 표시되지 않습니다. 기본적으로 설정되어 있습니다.
 
@@ -2127,7 +2125,7 @@ obj = dt << Control Chart Builder(
 
 ### Show Upper Limit
 
-**구문:** obj << Chart( Position( number ),  Limits( Show Upper Limit( state=0|1 ) ) )
+**구문:** obj &lt;&lt; Chart( Position( number ), Limits( Show Upper Limit( state=0|1 ) ) )
 
 **설명:** 관리 상한을 표시하거나 숨깁니다. 기본적으로 설정되어 있습니다.
 
@@ -2146,7 +2144,7 @@ obj = dt << Control Chart Builder(
 
 ### Size
 
-**구문:** obj << Size( width, height )
+**구문:** obj &lt;&lt; Size( width, height )
 
 **설명:** 그래프 크기를 설정합니다.
 
@@ -2164,7 +2162,7 @@ obj << Size( 808, 586 );
 
 ### Sort by Subgroup
 
-**구문:** obj << Sort by Subgroup( state=0|1 )
+**구문:** obj &lt;&lt; Sort by Subgroup( state=0|1 )
 
 **설명:** 계산하기 전에 부분군 변수 또는 내포된 부분군 변수의 조합을 기준으로 공정 데이터를 정렬합니다. 이 옵션은 부분군 변수를 지정한 경우에만 사용할 수 있습니다.
 
@@ -2182,7 +2180,7 @@ obj << Sort by Subgroup( 1 );
 
 ### Test Excluded Subgroups
 
-**구문:** obj << Test Excluded Subgroups( state=0|1 )
+**구문:** obj &lt;&lt; Test Excluded Subgroups( state=0|1 )
 
 **설명:** 완전히 제외된 부분군을 검정 계산에 포함하거나 제외합니다. 이 옵션은 &apos;제외된 영역 표시&apos; 옵션을 선택한 경우에만 사용할 수 있습니다. 기본적으로 설정되어 있습니다.
 
@@ -2206,7 +2204,7 @@ dt << Select Rows( Index( 21, 24 ) ) << Exclude;
 
 ### Use Event Chooser
 
-**구문:** obj << Use Event Chooser( state=0|1 )
+**구문:** obj &lt;&lt; Use Event Chooser( state=0|1 )
 
 **설명:** 순서형 수치 데이터를 범주화하고 개별 수치 수준 모델링 선택을 제공합니다. &apos;사건 선택기 사용&apos; 옵션은 비연속형 수치 Y 변수가 포함된 계수형 차트에만 사용할 수 있습니다.
 
@@ -2241,7 +2239,7 @@ obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
 
 ### Variables
 
-**구문:** obj << Variables( Y( column ), <Subgroup( column)>, <Phase( column )>, <Part( column )> )
+**구문:** obj &lt;&lt; Variables( Y( column ), &lt;Subgroup( column)&gt;, &lt;Phase( column )&gt;, &lt;Part( column )&gt; )
 
 **설명:** 표시된 변수를 역할에 할당합니다.
 
@@ -2258,7 +2256,7 @@ obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
 
 ### n Trials
 
-**구문:** obj << n Trials( column | integer )
+**구문:** obj &lt;&lt; n Trials( column | integer )
 
 **설명:** 계수형 관리도에 사용할 로트 크기를 할당합니다.
 

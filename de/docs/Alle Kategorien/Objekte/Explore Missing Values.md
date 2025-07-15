@@ -6,7 +6,7 @@
 
 ### ADI Loading Matrix
 
-**Syntax:** obj << ADI Loading Matrix( state=0|1 )
+**Syntax:** obj &lt;&lt; ADI Loading Matrix( state=0|1 )
 
 **Beschreibung:** Blendet einen Bericht ein oder aus, der die Spalten anzeigt, die der Faktorladung jeder Komponente entsprechen.
 
@@ -27,7 +27,7 @@ obj << ADI Loading Matrix( 1 );
 
 ### Automated Data Imputation
 
-**Syntax:** obj << Automated Data Imputation
+**Syntax:** obj &lt;&lt; Automated Data Imputation
 
 **Beschreibung:** Setzt fehlende Werte unter Verwendung einer Matrixapproximationsmethode niederen Ranges ein. Bei dieser Methode wird automatisch die beste Dimension für die Approximation niederen Ranges basierend auf den Daten ausgewählt.
 
@@ -44,7 +44,7 @@ obj << Automated Data Imputation;
 
 ### Close
 
-**Syntax:** obj << Close
+**Syntax:** obj &lt;&lt; Close
 
 **Beschreibung:** Schließt den Bericht „Fehlende Spalten“.
 
@@ -63,7 +63,7 @@ obj << Close;
 
 ### Color Cells
 
-**Syntax:** obj << Color Cells( ALL or column1, column2, ... )
+**Syntax:** obj &lt;&lt; Color Cells( ALL or column1, column2, ... )
 
 **Beschreibung:** Stellt die Zellen in der Datentabelle farbig dar, die fehlende Werte für die Spalte(n) enthalten, die Sie im Bericht „Fehlende Spalten“ auswählen.
 
@@ -78,7 +78,7 @@ obj << Color cells( :OZONE );
 
 ### Color Rows
 
-**Syntax:** obj << Color Rows( ALL or column1, column2, ... )
+**Syntax:** obj &lt;&lt; Color Rows( ALL or column1, column2, ... )
 
 **Beschreibung:** Stellt die Zeilen in der Datentabelle farbig dar, die fehlende Werte für die Spalte(n) enthalten, die Sie im Bericht „Fehlende Spalten“ auswählen.
 
@@ -93,7 +93,7 @@ obj << Color rows( :OZONE );
 
 ### Exclude Rows
 
-**Syntax:** obj << Exclude Rows( ALL or column1, column2, ... )
+**Syntax:** obj &lt;&lt; Exclude Rows( ALL or column1, column2, ... )
 
 **Beschreibung:** Wendet die Zeileneigenschaft „Ausgeschlossen“ auf Zeilen in der Datentabelle an, die fehlende Werte für die Spalte(n) enthalten, die Sie im Bericht „Fehlende Spalten“ auswählen.
 
@@ -108,7 +108,7 @@ obj << Exclude rows( :OZONE );
 
 ### Get U V Sigma ADI Matrices
 
-**Syntax:** obj << Get U V Sigma ADI Matrices
+**Syntax:** obj &lt;&lt; Get U V Sigma ADI Matrices
 
 **Beschreibung:** Gibt die U-, V- und Sigma-Matrizen aus der Approximation niederen Ranges in der ADI-Methode zurück.
 
@@ -129,7 +129,7 @@ obj << Get U V Sigma ADI Matrices;
 
 ### Maximum Dimension
 
-**Syntax:** obj << Maximum Dimension( number )
+**Syntax:** obj &lt;&lt; Maximum Dimension( number )
 
 **Beschreibung:** Legt die maximale Dimension für die automatische Datenimputation fest.
 
@@ -149,7 +149,7 @@ obj = dt << Explore Missing Values(
 
 ### Maximum Iteration
 
-**Syntax:** obj << Maximum Iteration( number=10 )
+**Syntax:** obj &lt;&lt; Maximum Iteration( number=10 )
 
 **Beschreibung:** Legt die maximale Anzahl der Iterationen für die automatische Datenimputation fest. Standardmäßig „10“.
 
@@ -169,7 +169,7 @@ obj = dt << Explore Missing Values(
 
 ### Missing Value Clustering
 
-**Syntax:** obj << Missing Value Clustering
+**Syntax:** obj &lt;&lt; Missing Value Clustering
 
 **Beschreibung:** Bietet eine hierarchische Clusteranalyse der fehlenden Daten.
 
@@ -184,7 +184,7 @@ obj << Missing Value Clustering;
 
 ### Missing Value Report
 
-**Syntax:** obj << Missing Value Report
+**Syntax:** obj &lt;&lt; Missing Value Report
 
 **Beschreibung:** Öffnet den Bericht „Fehlende Spalten“, der die Namen jeder Spalte und die Anzahl fehlender Werte in der jeweiligen Spalte auflistet.
 
@@ -199,7 +199,7 @@ obj << Missing Value Report;
 
 ### Missing Value Snapshot
 
-**Syntax:** obj << Missing Value Snapshot
+**Syntax:** obj &lt;&lt; Missing Value Snapshot
 
 **Beschreibung:** Zeigt ein Zellendiagramm für die fehlenden Werte an. Eine schwarze Zelle deutet auf einen fehlenden Wert hin.
 
@@ -214,7 +214,7 @@ obj << Missing Value Snapshot;
 
 ### Multivariate Normal Imputation
 
-**Syntax:** obj << Multivariate Normal Imputation( Shrink Covariances( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Multivariate Normal Imputation( Shrink Covariances( state=0|1 ) )
 
 **Beschreibung:** Setzt fehlende Werte basierend auf der multivariaten Normalverteilung ein. Um die Schätzung der Kovarianzmatrix zu verbessern, verwenden Sie die Option Schrumpfungsschätzer.
 
@@ -229,7 +229,7 @@ obj << Multivariate Normal Imputation( Shrink Covariances( 1 ) );
 
 ### Multivariate RPCA Imputation
 
-**Syntax:** obj << Multivariate RPCA Imputation( Lambda( number ), Tolerance( number = 1e-7 ), MaxIt( number ) )
+**Syntax:** obj &lt;&lt; Multivariate RPCA Imputation( Lambda( number ), Tolerance( number = 1e-7 ), MaxIt( number ) )
 
 **Beschreibung:** Setzt fehlende Werte mithilfe robuster Hauptkomponenten ein, wobei fehlende Werte unter Verwendung der Matrixfaktorisierung niederen Ranges (SWZ), die gegenüber Ausreißern robust ist, ersetzt werden. Diese Methode ist bei sehr vielen Variablen nützlich. Der Standardwert für Lambda ist 2/Quadratwurzel(max(n, p)), wobei n die Anzahl Zeilen und p die Anzahl der Spalten ist. Wenn min(n, p) < 100, ist der Standardwert für die maximale Anzahl von Iterationen (MaxIt) 75. Wenn 100 <= min(n, p) < 1000, ist der Standardwert für MaxIt 100. Wenn min(n,p) >= 1000, ist der Standardwert für MaxIt 200. Wenn der Algorithmus nach der angegebenen Anzahl von Iterationen nicht konvergiert, wird die Lösung bei MaxIt akzeptiert und im Bericht angezeigt.
 
@@ -244,7 +244,7 @@ obj << Multivariate RPCA Imputation;
 
 ### Multivariate SVD Imputation
 
-**Syntax:** obj << Multivariate SVD Imputation( Number of Singular Vectors( number ), Maximum Iterations( number ), Show Iteration Log( state=0|1 ) )
+**Syntax:** obj &lt;&lt; Multivariate SVD Imputation( Number of Singular Vectors( number ), Maximum Iterations( number ), Show Iteration Log( state=0|1 ) )
 
 **Beschreibung:** Setzt fehlende Werte schnell bei vielen Daten ein. Dabei wird zur Vervollständigung der Matrix iterativ eine Niedrigrangapproximation durch SWZ durchgeführt.
 
@@ -264,7 +264,7 @@ obj << Multivariate SVD Imputation(
 
 ### Options for Saving Imputed Values
 
-**Syntax:** obj << Options for Saving Imputed Values(1|2|3)
+**Syntax:** obj &lt;&lt; Options for Saving Imputed Values(1|2|3)
 
 **Beschreibung:** Gibt die Methode an, mit der die eingesetzten Werte für die ADI-Methode gespeichert werden sollen. Mit 1 geben Sie die Option „Neue Datentabelle erstellen“ an, mit 2 geben Sie die Option „Scoring-Formel in aktueller Datentabelle speichern“ an, und mit 3 geben Sie die Option „Werte anstelle einsetzen“ an.
 
@@ -285,7 +285,7 @@ obj = dt << Explore Missing Values(
 
 ### Select Rows
 
-**Syntax:** obj << Select Rows( ALL or column1, column2, ... )
+**Syntax:** obj &lt;&lt; Select Rows( ALL or column1, column2, ... )
 
 **Beschreibung:** Wählt die Zeilen in der Datentabelle aus, die fehlende Werte für die Spalte(n) enthalten, die Sie im Bericht „Fehlende Spalten“ auswählen.
 
@@ -300,7 +300,7 @@ obj << Select rows( :OZONE );
 
 ### Set Random Seed
 
-**Syntax:** obj << Set Random Seed( number=0 )
+**Syntax:** obj &lt;&lt; Set Random Seed( number=0 )
 
 **Beschreibung:** Legt den zufälligen Startwert für die automatische Datenimputation fest. Standardmäßig „0“.
 
@@ -320,7 +320,7 @@ obj = dt << Explore Missing Values(
 
 ### Show only columns with missing
 
-**Syntax:** obj << Show only columns with missing( state=0|1 )
+**Syntax:** obj &lt;&lt; Show only columns with missing( state=0|1 )
 
 **Beschreibung:** Entfernt Spalten aus der Liste, die keine fehlenden Werte haben.
 
@@ -335,7 +335,7 @@ obj << Show Only Columns With Missing( 1 );
 
 ### Undo Imputation
 
-**Syntax:** obj << Undo Imputation
+**Syntax:** obj &lt;&lt; Undo Imputation
 
 **Beschreibung:** Ersetzt die zuletzt eingesetzten Daten mit fehlenden Werte.
 
@@ -354,7 +354,7 @@ obj << Undo Imputation;
 
 ### Validation Proportion
 
-**Syntax:** obj << Validation Proportion( number=0.3 )
+**Syntax:** obj &lt;&lt; Validation Proportion( number=0.3 )
 
 **Beschreibung:** Legt den Anteil von Zeilen fest, die als Validierungszeilen für die automatische Datenimputation verwendet werden sollen. Standardmäßig „0.3“.
 
@@ -376,7 +376,7 @@ obj = dt << Explore Missing Values(
 
 ### Action
 
-**Syntax:** obj << Action
+**Syntax:** obj &lt;&lt; Action
 
 **Beschreibung:** Allzwecköffnung innerhalb einer Plattform zum Einfügen von auszuwertenden Ausdrücken. Setzt die Kontexte für Anzeigefeld und Datentabelle kurzzeitig auf die Plattform.
 
@@ -394,7 +394,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Syntax:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntax:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Beschreibung:** Wendet eine zuvor erstellte Voreinstellung auf das Objekt an und aktualisiert die Optionen und Anpassungen entsprechend den gespeicherten Einstellungen.
 
@@ -441,7 +441,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**Syntax:** obj << Automatic Recalc( state=0|1 )
+**Syntax:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Beschreibung:** Wiederholt die Analyse bei Ausschluss und Datenänderungen automatisch. Wenn die Option „Automatic Recalc“ eingeschaltet ist, sollten Sie in Betracht ziehen, Wait(0)-Befehle zu verwenden, um sicherzustellen, dass die Ausschlüsse und Datenänderungen vor der Neuberechnung wirksam werden.
 
@@ -457,7 +457,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**Syntax:** obj << Broadcast(message)
+**Syntax:** obj &lt;&lt; Broadcast(message)
 
 **Beschreibung:** Sendet eine Meldung an eine Plattform. Wenn es sich bei den zurückgegebenen Ergebnissen von einzelnen Objekten um Tabellen handelt, werden sie, wenn möglich, verkettet. Das endgültige Format ist entweder identisch mit dem Ergebnis der Option „Kombinierte Tabelle speichern“ in einem Tabellenfeld oder mit dem Ergebnis der Option „Verketten“ mithilfe einer Quellspalte. Ansonsten werden die Ergebnisse in einer Liste gespeichert und zurückgegeben.
 
@@ -477,7 +477,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**Syntax:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Syntax:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Beschreibung:** Fügt ein Bedienfeld zum Ändern der Variablen der Plattform hinzu
 
@@ -495,7 +495,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**Syntax:** obj << Copy ByGroup Script
+**Syntax:** obj &lt;&lt; Copy ByGroup Script
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und legt es in der Zwischenablage ab.
 
@@ -515,7 +515,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Syntax:** obj << Copy Script
+**Syntax:** obj &lt;&lt; Copy Script
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und legt es in der Zwischenablage ab.
 
@@ -530,7 +530,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Syntax:** obj << Data Table Window
+**Syntax:** obj &lt;&lt; Data Table Window
 
 **Beschreibung:** Zeigt das Fenster mit der Datentabelle für diese Analyse im Vordergrund an.
 
@@ -545,7 +545,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Syntax:** obj << Get By Levels
+**Syntax:** obj &lt;&lt; Get By Levels
 
 **Beschreibung:** Gibt ein assoziatives Array zurück, das die Nach-Gruppenspalten ihren Werten zuordnet.
 
@@ -562,7 +562,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Syntax:** obj << Get ByGroup Script
+**Syntax:** obj &lt;&lt; Get ByGroup Script
 
 **Beschreibung:** Erstellt ein Skript (JSL) zum Erzeugen dieser Analyse und gibt es als Ausdruck zurück.
 
@@ -583,7 +583,7 @@ Show( t );
 
 ### Get Container
 
-**Syntax:** obj << Get Container
+**Syntax:** obj &lt;&lt; Get Container
 
 **Beschreibung:** Gibt einen Verweis auf das Containerfeld zurück, das den Inhalt des Objekts enthält.
 
@@ -630,7 +630,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Syntax:** obj << Get Data Table
+**Syntax:** obj &lt;&lt; Get Data Table
 
 **Beschreibung:** Gibt eine Referenz auf die Datentabelle zurück.
 
@@ -646,7 +646,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**Syntax:** obj << Get Group Platform
+**Syntax:** obj &lt;&lt; Get Group Platform
 
 **Beschreibung:** Plattformobjekt der Gruppe zurückgeben, wenn diese Plattform Teil einer Gruppe ist. Andernfalls wird Empty() zurückgegeben.
 
@@ -663,7 +663,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**Syntax:** obj << Get Script
+**Syntax:** obj &lt;&lt; Get Script
 
 **Beschreibung:** Erstellt ein Skript (JSL) zum Erzeugen dieser Analyse und gibt es als Ausdruck zurück.
 
@@ -679,7 +679,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Syntax:** obj << Get Script With Data Table
+**Syntax:** obj &lt;&lt; Get Script With Data Table
 
 **Beschreibung:** Erstellt ein Skript (JSL) zum Erzeugen dieser Analyse und referenziert dabei spezifisch diese Datentabelle und gibt das Skript als Ausdruck zurück.
 
@@ -695,7 +695,7 @@ Show( t );
 
 ### Get Timing
 
-**Syntax:** obj << Get Timing
+**Syntax:** obj &lt;&lt; Get Timing
 
 **Beschreibung:** Steuert den Start der Plattform zeitlich.
 
@@ -711,7 +711,7 @@ Show( t );
 
 ### Get Web Support
 
-**Syntax:** obj << Get Web Support
+**Syntax:** obj &lt;&lt; Get Web Support
 
 **Beschreibung:** Gibt eine Zahl zurück, die angibt, ob für das Anzeigeobjekt interaktive HTML unterstützt wird. 1 bedeutet einige oder alle Elemente werden unterstützt. 0 bedeutet keine Unterstützung.
 
@@ -727,7 +727,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Syntax:** obj << Get Where Expr
+**Syntax:** obj &lt;&lt; Get Where Expr
 
 **Beschreibung:** Gibt den Ausdruck Where für die Teilmenge der Daten zurück, wenn die Plattform mit By() oder Where() gestartet wurde. Andernfalls wird Empty() zurückgegeben.
 
@@ -764,7 +764,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Syntax:** obj << Local Data Filter
+**Syntax:** obj &lt;&lt; Local Data Filter
 
 **Beschreibung:** Filtert Daten für bestimmte Gruppen oder Bereiche, aber nur lokal in dieser Plattform.
 
@@ -820,7 +820,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Syntax:** obj << Paste Local Data Filter
+**Syntax:** obj &lt;&lt; Paste Local Data Filter
 
 **Beschreibung:** Lokalen Datenfilter aus der Zwischenablage auf den aktuellen Bericht anwenden.
 
@@ -841,7 +841,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**Syntax:** obj << Redo Analysis
+**Syntax:** obj &lt;&lt; Redo Analysis
 
 **Beschreibung:** Führt die gleiche Analyse in einem neuen Fenster aus. Die Analyse ist unterschiedlich, wenn sich die Daten verändert haben.
 
@@ -856,7 +856,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**Syntax:** obj << Redo ByGroup Analysis
+**Syntax:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Beschreibung:** Führt die gleiche Analyse in einem neuen Fenster aus. Die Analyse ist unterschiedlich, wenn sich die Daten verändert haben.
 
@@ -876,7 +876,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**Syntax:** obj << Relaunch Analysis
+**Syntax:** obj &lt;&lt; Relaunch Analysis
 
 **Beschreibung:** Öffnet das Plattform-Startfenster und ruft die Einstellungen ab, die zum Erstellen des Berichts verwendet wurden.
 
@@ -891,7 +891,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**Syntax:** obj << Relaunch ByGroup
+**Syntax:** obj &lt;&lt; Relaunch ByGroup
 
 **Beschreibung:** Öffnet das Plattform-Startfenster und ruft die Einstellungen ab, die zum Erstellen des Berichts verwendet wurden.
 
@@ -911,7 +911,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**Syntax:** obj << Remove Column Switcher
+**Syntax:** obj &lt;&lt; Remove Column Switcher
 
 **Beschreibung:** Entfernt den letzten Spaltenwechsler, der der Plattform hinzugefügt wurde.
 
@@ -931,7 +931,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Syntax:** obj << Remove Local Data Filter
+**Syntax:** obj &lt;&lt; Remove Local Data Filter
 
 **Beschreibung:** Wenn ein lokaler Filter verwendet wurde, wird dieser entfernt und die Plattform verwendet wieder direkt alle Daten aus der Datentabelle
 
@@ -970,9 +970,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Syntax:** obj << Report;
-
-Report( obj )
+**Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Beschreibung:** Gibt eine Referenz auf das Berichtsobjekt zurück.
 
@@ -989,7 +987,7 @@ Show( t );
 
 ### Report View
 
-**Syntax:** obj << Report View( "Vollständig"|"Übersicht" )
+**Syntax:** obj &lt;&lt; Report View( "Vollständig"|"Übersicht" )
 
 **Beschreibung:** Die Berichtsanzeige legt das Detailniveau für einen Plattformbericht fest. Full zeigt alle Details an, während Summary abhängig von der Plattform nur ausgewählte Inhalte anzeigt. Für benutzerdefiniertes Verhalten unterstützen Anzeigefelder eine Meldung <<Set Summary Behavior.
 
@@ -1004,7 +1002,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**Syntax:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und speichert sie als Tabelleneigenschaft in der Datentabelle. Sie können einen Namen für das Skript angeben. Die Option Append Suffix hängt ein numerisches Suffix an den Skriptnamen an, das das Skript von einem vorhandenen Skript mit dem gleichen Namen unterscheidet. Die Option Prompt fordert den Benutzer auf, einen Skriptnamen anzugeben. Die Option Replace ersetzt ein vorhandenes Skript mit dem gleichen Namen.
 
@@ -1024,7 +1022,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Syntax:** obj << Save ByGroup Script to Journal
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und fügt eine Schaltfläche mit diesem Skript zum Journal hinzu.
 
@@ -1044,7 +1042,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Syntax:** obj << Save ByGroup Script to Script Window
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und hängt es an das Textfenster mit dem aktuellen Skript an.
 
@@ -1064,7 +1062,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**Syntax:** obj << Save Script for All Objects
+**Syntax:** obj &lt;&lt; Save Script for All Objects
 
 **Beschreibung:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -1079,7 +1077,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Syntax:** obj << Save Script for All Objects To Data Table( <name> )
+**Syntax:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Beschreibung:** Speichert ein Skript für alle Berichtsobjekte in der aktuellen Datentabelle. Diese Option ist nützlich, wenn Sie mehrere Berichte im Fenster haben. Das Skript wird nach der ersten Plattform benannt, sofern Sie keine Skriptnamen in Anführungszeichen angeben.
 
@@ -1117,7 +1115,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Syntax:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und speichert es als Tabelleneigenschaft in der Datentabelle.
 
@@ -1132,7 +1130,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Syntax:** obj << Save Script to Journal
+**Syntax:** obj &lt;&lt; Save Script to Journal
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und fügt eine Schaltfläche mit diesem Skript zum Journal hinzu.
 
@@ -1147,7 +1145,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Syntax:** obj << Save Script to Report
+**Syntax:** obj &lt;&lt; Save Script to Report
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und zeigt es im Bericht selbst an. Nützlich zum Anlegen eines gedruckten Nachweises der durchgeführten Aktivitäten.
 
@@ -1162,7 +1160,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Syntax:** obj << Save Script to Script Window
+**Syntax:** obj &lt;&lt; Save Script to Script Window
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und hängt es an das Textfenster mit dem aktuellen Skript an.
 
@@ -1242,7 +1240,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Syntax:** obj << Sync to Data Table Changes
+**Syntax:** obj &lt;&lt; Sync to Data Table Changes
 
 **Beschreibung:** Mit Ausgeschlossenen und vorgenommenen Datenänderungen synchronisieren.
 
@@ -1259,7 +1257,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Syntax:** obj << Title( "new title" )
+**Syntax:** obj &lt;&lt; Title( "new title" )
 
 **Beschreibung:** Legt den Titel für die Plattform fest.
 
@@ -1274,7 +1272,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Syntax:** obj << Top Report
+**Syntax:** obj &lt;&lt; Top Report
 
 **Beschreibung:** Gibt eine Referenz auf den Stammknoten im Bericht zurück.
 
@@ -1291,7 +1289,7 @@ Show( t );
 
 ### Transform Column
 
-**Syntax:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Syntax:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Beschreibung:** Transformationsspalte im lokalen Kontext eines Objekts erstellen, üblicherweise als Plattform. Die Transformationsspalte ist nur für die Lebensdauer der Plattform aktiv.
 
@@ -1312,7 +1310,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**Syntax:** obj << View Web XML
+**Syntax:** obj &lt;&lt; View Web XML
 
 **Beschreibung:** Gibt den XML-Code zurück, der zum Erstellen des interaktiven HTML-Berichts verwendet wird.
 
@@ -1327,9 +1325,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**Syntax:** obj = Explore Missing Values(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Explore Missing Values(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Typ des Fensters festlegen, das für den Bericht erstellt werden soll. Standardmäßig wird ein Berichtsfenster vom Typ Visible erstellt. Ein Fenster vom Typ Invisible wird auf dem Bildschirm nicht angezeigt, kann jedoch von Funktionen wie Window() erkannt werden. Ein Fenster vom Typ Private reagiert auf die meisten Fenstermeldungen, kann jedoch nicht erkannt werden und muss über das Berichtsobjekt adressiert werden.
 
@@ -1350,7 +1346,7 @@ New Window( "Bivariate Equation",
 
 ### By
 
-**Syntax:** obj << By( column(s) )
+**Syntax:** obj &lt;&lt; By( column(s) )
 
 ```jsl
 
@@ -1367,7 +1363,7 @@ obj = dt << Explore Missing Values( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), By( _byc
 
 ### Columns
 
-**Syntax:** obj << Columns( column(s) )
+**Syntax:** obj &lt;&lt; Columns( column(s) )
 
 ```jsl
 
@@ -1379,7 +1375,7 @@ obj = dt << Explore Missing Values( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );
 
 ### Validation
 
-**Syntax:** obj << Validation( column )
+**Syntax:** obj &lt;&lt; Validation( column )
 
 ```jsl
 
@@ -1391,7 +1387,7 @@ obj = dt << Explore Missing Values( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );
 
 ### Y
 
-**Syntax:** obj << Y( column(s) )
+**Syntax:** obj &lt;&lt; Y( column(s) )
 
 ```jsl
 

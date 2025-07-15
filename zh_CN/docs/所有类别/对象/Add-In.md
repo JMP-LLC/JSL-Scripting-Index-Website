@@ -6,7 +6,7 @@
 
 ### Auto Load
 
-**语法:** addin << Auto Load( boolean )
+**语法:** addin &lt;&lt; Auto Load( boolean )
 
 **说明:** 设置在 JMP 启动过程中是否应自动加载插件。
 
@@ -23,7 +23,7 @@ If( !Is Missing( addin ),
 
 ### Display Name
 
-**语法:** name = addin << Display Name
+**语法:** name = addin &lt;&lt; Display Name
 
 **说明:** 返回插件的显示名称。
 
@@ -52,7 +52,7 @@ If( !Is Missing( addin ),
 
 ### Home Folder
 
-**语法:** folder = addin << Home Folder
+**语法:** folder = addin &lt;&lt; Home Folder
 
 **说明:** 返回插件的主文件夹。
 
@@ -81,7 +81,7 @@ If( !Is Missing( addin ),
 
 ### ID
 
-**语法:** id = addin << ID
+**语法:** id = addin &lt;&lt; ID
 
 **说明:** 返回插件的唯一 ID。
 
@@ -110,7 +110,7 @@ If( !Is Missing( addin ),
 
 ### Is Loaded
 
-**语法:** x = addin << Is Loaded
+**语法:** x = addin &lt;&lt; Is Loaded
 
 **说明:** 返回是否当前已加载插件。
 
@@ -139,7 +139,7 @@ If( !Is Missing( addin ),
 
 ### Load
 
-**语法:** addin << Load
+**语法:** addin &lt;&lt; Load
 
 **说明:** 加载插件。
 
@@ -156,7 +156,7 @@ If( !Is Missing( addin ),
 
 ### Unload
 
-**语法:** addin << Unload
+**语法:** addin &lt;&lt; Unload
 
 **说明:** 卸载插件。
 
@@ -173,7 +173,7 @@ If( !Is Missing( addin ),
 
 ### Version
 
-**语法:** ver = addin << Version
+**语法:** ver = addin &lt;&lt; Version
 
 **说明:** 返回插件的版本号。
 

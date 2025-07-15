@@ -6,7 +6,7 @@
 
 ### Combine Windows
 
-**Syntax:** obj << Combine Windows( {list of reports or data tables}, {...} )
+**Syntax:** obj &lt;&lt; Combine Windows( {list of reports or data tables}, {...} )
 
 **Beschreibung:** Verbinden Sie die vorgegebene Liste von Plattformberichten oder Datentabellen zu einem neuen Modul. Die Anwendung darf dabei nicht ausgeführt werden oder sich im Bearbeitungszustand befinden.
 
@@ -29,7 +29,7 @@ app << Run;
 
 ### Debug
 
-**Syntax:** obj << Debug
+**Syntax:** obj &lt;&lt; Debug
 
 **Beschreibung:** Anwendung im Debugger ausführen.
 
@@ -44,7 +44,7 @@ app << Debug;
 
 ### Edit
 
-**Syntax:** obj << Edit
+**Syntax:** obj &lt;&lt; Edit
 
 **Beschreibung:** Bearbeiten Sie die Anwendung oder das Dashboard in der Anwendungserstellung.
 
@@ -59,7 +59,7 @@ app << Edit;
 
 ### Get Modules
 
-**Syntax:** list = obj << Get Modules
+**Syntax:** list = obj &lt;&lt; Get Modules
 
 **Beschreibung:** Liste der in der Anwendung definierten Module abrufen.
 
@@ -75,7 +75,7 @@ app << Get Modules();
 
 ### Get Namespace
 
-**Syntax:** obj << Get Namespace
+**Syntax:** obj &lt;&lt; Get Namespace
 
 **Beschreibung:** Namensraum der Modulinstanz abrufen.
 
@@ -89,7 +89,7 @@ app = JMP App();
 
 ### Get Windows
 
-**Syntax:** obj << Get Windows
+**Syntax:** obj &lt;&lt; Get Windows
 
 **Beschreibung:** Gibt eine Liste offener Fenster zurück, die als Instanzen von Anwendungsmodulen erstellt wurden. Beachten Sie, dass andere Fenster, die von Anwendungsskripten mit Neues Fenster() oder anderen Funktionen erstellt wurden, nicht eingeschlossen werden.
 
@@ -125,7 +125,7 @@ app << Get Windows();
 
 ### Open File
 
-**Syntax:** obj << Open File( <path> )
+**Syntax:** obj &lt;&lt; Open File( &lt;path&gt; )
 
 **Beschreibung:** Anwendung aus der angegebenen Datei laden.
 
@@ -140,7 +140,7 @@ box = app << Edit Application;
 
 ### Relaunch Analysis
 
-**Syntax:** obj << Relaunch Analysis
+**Syntax:** obj &lt;&lt; Relaunch Analysis
 
 **Beschreibung:** Startet das Dashboard oder die Anwendung neu und erstellt dabei eine neue laufende Kopie der Anwendung.
 
@@ -156,7 +156,7 @@ app << Relaunch Analysis;
 
 ### Run
 
-**Syntax:** obj << Run
+**Syntax:** obj &lt;&lt; Run
 
 **Beschreibung:** Führen Sie die Anwendung oder das Dashboard aus.
 
@@ -171,7 +171,7 @@ app << Run;
 
 ### Save Script for All Objects
 
-**Syntax:** obj << Save Script for All Objects
+**Syntax:** obj &lt;&lt; Save Script for All Objects
 
 **Beschreibung:** Save a New Window() script
 
@@ -186,7 +186,7 @@ app << Save Script for All Objects;
 
 ### Save Script to Add-In
 
-**Syntax:** obj << Save Script to Add-In
+**Syntax:** obj &lt;&lt; Save Script to Add-In
 
 **Beschreibung:** Skript (JSL) zum Erzeugen dieser Analyse erstellen und es in die Add-in-Erstellung laden.
 
@@ -202,7 +202,7 @@ app << "Save Script to Add-In";
 
 ### Save Script to Data Table
 
-**Syntax:** app << Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** app &lt;&lt; Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und speichert es als Tabelleneigenschaft in der Datentabelle.
 
@@ -218,7 +218,7 @@ app << Save Script to Data Table;
 
 ### Save Script to Journal
 
-**Syntax:** obj << Save Script to Journal
+**Syntax:** obj &lt;&lt; Save Script to Journal
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und fügt eine Schaltfläche mit diesem Skript zum Journal hinzu.
 
@@ -234,7 +234,7 @@ app << Save Script to Journal;
 
 ### Save Script to Script Window
 
-**Syntax:** obj << Save Script to Script Window
+**Syntax:** obj &lt;&lt; Save Script to Script Window
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und hängt es an das Textfenster mit dem aktuellen Skript an.
 

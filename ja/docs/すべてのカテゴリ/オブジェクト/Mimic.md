@@ -40,7 +40,7 @@ mc << Mouse Click( Offset( TopLeft( outline ), [25 15] ) );
 
 ### Clear Marks
 
-**構文:** obj << Clear Marks()
+**構文:** obj &lt;&lt; Clear Marks()
 
 **説明:** Removes all all marks added by <<Mark.
 
@@ -64,7 +64,7 @@ mc << Clear Marks;
 
 ### Eval
 
-**構文:** obj << Eval(mimiclang)
+**構文:** obj &lt;&lt; Eval(mimiclang)
 
 **説明:** Evaluates a mimiclang expression and returns the result.
 
@@ -83,7 +83,7 @@ Show( mc << Eval( Bounds( fbox ) ), mc << Eval( TopLeft( fbox ) ) );
 
 ### Mark
 
-**構文:** obj << Mark(mimiclang)
+**構文:** obj &lt;&lt; Mark(mimiclang)
 
 **説明:** Marks points and rectangles on the report. Does not respond to scrolling, resizing, or content movement well at this time. The rectangle grid is on 20 units.
 
@@ -107,7 +107,7 @@ mc << Clear Marks;
 
 ### Mouse Brush
 
-**構文:** obj << Mouse Brush(rect, <1|2|3|4>)
+**構文:** obj &lt;&lt; Mouse Brush(rect, &lt;1|2|3|4&gt;)
 
 **説明:** Drag across the given rectangle. Mainly useful in graphs. This is a convenience wrapper for Mouse Drag that allows using a rectangle directly rather than two points. By default, it drags starting at the top left (1). You can use the second argument to change this to top right (2), bottom right (3), or bottom left (4).
 
@@ -126,7 +126,7 @@ mc << Mouse Brush( FrameCoords( box[Frame Box( 1 )], [60 100, 65 150] ) );
 
 ### Mouse Circle Move
 
-**構文:** obj << Mouse Circle Move(geo)
+**構文:** obj &lt;&lt; Mouse Circle Move(geo)
 
 **説明:** Move the mouse quickly in a small (several pixel) circle around given point.
 
@@ -146,7 +146,7 @@ mc << Mouse Circle Move( Offset( Top Left( prob col ), [30 25] ) );
 
 ### Mouse Click
 
-**構文:** obj << Mouse Click(geo)
+**構文:** obj &lt;&lt; Mouse Click(geo)
 
 **説明:** Left click on given geometry.
 
@@ -171,7 +171,7 @@ mc << Close Window;
 
 ### Mouse Double Click
 
-**構文:** obj << Mouse Double Click(geo)
+**構文:** obj &lt;&lt; Mouse Double Click(geo)
 
 **説明:** Double left click on given geometry.
 
@@ -190,7 +190,7 @@ mc << Mouse Double Click( box[Axis Box( 1 )] );
 
 ### Mouse Drag
 
-**構文:** obj << Mouse Drag(geo src, geo dest)
+**構文:** obj &lt;&lt; Mouse Drag(geo src, geo dest)
 
 **説明:** Left click geo src, drag to geo dest, and release.
 
@@ -212,7 +212,7 @@ mc << Mouse Drag( Offset( TopLeft( collist ), [20 45] ), xlabel );
 
 ### Mouse Move
 
-**構文:** obj << Mouse Move(geo)
+**構文:** obj &lt;&lt; Mouse Move(geo)
 
 **説明:** Moves the mouse to the given point.
 
@@ -231,7 +231,7 @@ mc << Mouse Move( Offset( TopLeft( Report( obj )[FrameBox( 1 )] ), [80 160] ) );
 
 ### Mouse Right Click
 
-**構文:** obj << Mouse Right Click(geo)
+**構文:** obj &lt;&lt; Mouse Right Click(geo)
 
 **説明:** Right click on given geometry.
 
@@ -249,7 +249,7 @@ mc << Mouse Right Click( box[Frame Box( 1 )] );
 
 ### Typing
 
-**構文:** obj << Typing("some string")
+**構文:** obj &lt;&lt; Typing("some string")
 
 **説明:** Simulate typing the given string on the keyboard.
 
@@ -272,7 +272,7 @@ mc << Mouse Click( win );
 
 ### Typing Special
 
-**構文:** obj << Typing Special("enum key string")
+**構文:** obj &lt;&lt; Typing Special("enum key string")
 
 **説明:** Simulate typing the given special key on the keyboard.
 
@@ -292,7 +292,7 @@ Wait( 1 ) << Typing Special( "Enter" );
 
 ### Wait
 
-**構文:** obj << Wait(<n>)
+**構文:** obj &lt;&lt; Wait(&lt;n&gt;)
 
 **説明:** Equivalent to Wait(<n>). For convenience.
 
@@ -300,7 +300,7 @@ Wait( 1 ) << Typing Special( "Enter" );
 
 ### With Modifier
 
-**構文:** obj << With Modifier({"Shift"|"Control"|"Command"|"Alt"|"Option"|"Control", ...}, msg)
+**構文:** obj &lt;&lt; With Modifier({"Shift"|"Control"|"Command"|"Alt"|"Option"|"Control", ...}, msg)
 
 **説明:** Push one or more modifier keys, run another Mimic message, then release the keys.
 

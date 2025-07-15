@@ -2,8 +2,6 @@
 
 
 
-## Functions
-
 ### As List
 
 **Syntax:** y = As List( matrix )
@@ -19,7 +17,7 @@ As List( [11 22 33, 44 55 66] );
 
 ### Concat Items
 
-**Syntax:** string = Concat Items( {list of strings}, <separatorString> )
+**Syntax:** string = Concat Items( {list of strings}, &lt;separatorString&gt; )
 
 **Description:** Joins a list of strings into one long string, separating each from next with the separator, a blank if unspecified.
 
@@ -58,7 +56,7 @@ Eval List( {x, y} );
 
 ### Insert
 
-**Syntax:** z = Insert( x, y, <i> )
+**Syntax:** z = Insert( x, y, &lt;i&gt; )
 
 **Description:** Returns a copy of list x with y inserted at the ith position or appended to the end if the optional i argument is not specified.
 
@@ -72,7 +70,7 @@ z = Insert( z, 99, 2 );
 
 ### Insert Into
 
-**Syntax:** Insert Into( x, y, <i> )
+**Syntax:** Insert Into( x, y, &lt;i&gt; )
 
 **Description:** Modifies list, associative array, or display box x with y inserted into the collection. Lists and display boxes support an optional i to specify the position, or the items will be appended if the position is not specified. Note that the x argument must be a variable.
 
@@ -124,7 +122,7 @@ Is List( {1, 2, 3} );
 
 ### Items
 
-**Syntax:** wl = Items(<[first last]>, s, <delim>, <Include Boundary Delimiters(0|1)>)
+**Syntax:** wl = Items(&lt;[first last]&gt;, s, &lt;delim&gt;, &lt;Include Boundary Delimiters(0|1)&gt;)
 
 **Description:** Returns a list of (possibly empty) sub-strings separated by exactly one of any of the characters specified in the delim argument. If delim is absent, the space character is used. If delim is the empty string, each character is treated as a separate item.
 
@@ -259,7 +257,7 @@ N Items( hlist );
 
 ### Remove
 
-**Syntax:** y = Remove( x, <i>, <n=1> ); y = Remove( x, {list} )
+**Syntax:** y = Remove( x, &lt;i&gt;, &lt;n=1&gt; ); y = Remove( x, {list} )
 
 **Description:** Returns a copy of list x, deleting n items starting with the ith item or deleting a list of items specified by the list argument.
 
@@ -272,7 +270,7 @@ Remove( {11, 22, 33, 44, 55}, 3, 2 );
 
 ### Remove From
 
-**Syntax:** Remove From( x, <i>, <n=1> )
+**Syntax:** Remove From( x, &lt;i&gt;, &lt;n=1&gt; )
 
 **Description:** Modifies list, associative array, or display box x by removing items. Associative arrays specify the item to be removed with a key value i. Lists and display boxes remove starting with the item in position i. A list will remove multiple items at once if the n option is specified. Note that the x argument must be a variable.
 
@@ -422,7 +420,7 @@ Show( Set Unique( :sports ) );
 
 ### Shift
 
-**Syntax:** y = Shift( x, <n=1> )
+**Syntax:** y = Shift( x, &lt;n=1&gt; )
 
 **Description:** Returns a copy of list x with the first n items moved to the end of the list, or, if n is negative, the last n items moved to the start.
 
@@ -435,7 +433,7 @@ Shift( {11, 22, 33, 44, 55}, 2 );
 
 ### Shift Into
 
-**Syntax:** Shift Into( x, <n=1> )
+**Syntax:** Shift Into( x, &lt;n=1&gt; )
 
 **Description:** Modifies list or display box x with the first n items moved to the end of the list, or, if n is negative, the last n items moved to the start. Note that the x argument must be a variable.
 
@@ -493,9 +491,7 @@ ex;
 
 ### Substitute
 
-**Syntax:** y = Substitute( x, patternExpr1, replacementExpr1, ... )
-
-y = Substitute( x, patternString1, replacementString1, ..., < <<IGNORECASE > )
+**Syntax:** y = Substitute( x, patternExpr1, replacementExpr1, ... )y = Substitute( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
 
 **Description:** Returns a copy of string, list or expression x, replacing instances of each pattern expression with the corresponding replacement expression. The optional <<IGNORECASE argument enables case-insensitive matching if x is a string.
 
@@ -558,9 +554,7 @@ Substitute( "Apple,APPLE,apple", "apple", "orange", <<IGNORECASE );
 
 ### Substitute Into
 
-**Syntax:** Substitute Into( x, patternExpr1, replacementExpr1, ... )
-
-Substitute Into( x, patternString1, replacementString1, ..., < <<IGNORECASE > )
+**Syntax:** Substitute Into( x, patternExpr1, replacementExpr1, ... )Substitute Into( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
 
 **Description:** Modifies string, list or expression x, replacing instances of each pattern expression with the corresponding replacement expression. Note that the x argument must be a variable. The optional <<IGNORECASE argument enables case-insensitive matching if x is a string.
 
@@ -610,7 +604,7 @@ Show( s );
 
 ### Words
 
-**Syntax:** wl = Words( <[first last]>, s, <delim>)
+**Syntax:** wl = Words( &lt;[first last]&gt;, s, &lt;delim&gt;)
 
 **Description:** Returns a list of sub-strings separated by any of the characters specified in the delim argument. If delim is absent, the space character is used. If delim is the empty string, each character is treated as a separate word.
 

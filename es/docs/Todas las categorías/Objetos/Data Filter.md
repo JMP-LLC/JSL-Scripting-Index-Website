@@ -6,7 +6,7 @@
 
 ### Add Filter Columns
 
-**Sintaxis:** obj << Add Filter Columns( Add Filter Columns( column ) )
+**Sintaxis:** obj &lt;&lt; Add Filter Columns( Add Filter Columns( column ) )
 
 **Descripción:** Agrega una o más columnas de filtro.
 
@@ -24,7 +24,7 @@ obj << Add Filter Columns( :State );
 
 ### Filter Column
 
-**Sintaxis:** obj << Filter Column( column(s) )
+**Sintaxis:** obj &lt;&lt; Filter Column( column(s) )
 
 **Descripción:** Agrega una columna de filtro.
 
@@ -43,7 +43,7 @@ obj << Filter Column( :State );
 
 ### Filter Columns
 
-**Sintaxis:** obj << Filter Columns( column(s) )
+**Sintaxis:** obj &lt;&lt; Filter Columns( column(s) )
 
 **Descripción:** Agrega una o más columnas de filtro.
 
@@ -61,7 +61,7 @@ obj << Filter Columns( :State, :OZONE );
 
 ### Filter Group
 
-**Sintaxis:** obj << Filter Group( column(s) )
+**Sintaxis:** obj &lt;&lt; Filter Group( column(s) )
 
 ```jsl
 
@@ -78,7 +78,7 @@ obj = dt << Data Filter(
 
 ### Data Filter
 
-**Sintaxis:** Data Filter( <local>, <invisible>, <Add Filter>, <Mode>, <Show Window(0 | 1)>, <no outline box(0 | 1)> )
+**Sintaxis:** Data Filter( &lt;local&gt;, &lt;invisible&gt;, &lt;Add Filter&gt;, &lt;Mode&gt;, &lt;Show Window(0 | 1)&gt;, &lt;no outline box(0 | 1)&gt; )
 
 **Descripción:** Crea o muestra un Filtro de datos, donde selecciona de forma interactiva subconjuntos complejos de datos. La opción Mode determina qué estados de fila se ven afectados por la selección del filtro. El comando Add Filter agregará un nuevo grupo de filtros con las cláusulas Columns y Where especificadas. Cuando haya varios grupos de filtros, el comportamiento combinado lo determina la opción Group By AND. Si se especifica la palabra clave Local, el filtro se puede incrustar en un informe para filtrar una o más plataformas sin que ello afecte a otros informes.
 
@@ -97,7 +97,7 @@ obj = dt << Data Filter(
 
 ### Add Favorites
 
-**Sintaxis:** obj << Add Favorites( name or string )
+**Sintaxis:** obj &lt;&lt; Add Favorites( name or string )
 
 **Descripción:** Asocia la selección actual del filtro con el nombre dado y lo guarda en la lista de favoritos.
 
@@ -138,7 +138,7 @@ Show( fav1 );
 
 ### Add Filter
 
-**Sintaxis:** obj << Add Filter( columns( column, ... ), <Where( clause )> )
+**Sintaxis:** obj &lt;&lt; Add Filter( columns( column, ... ), &lt;Where( clause )&gt; )
 
 **Descripción:** Agrega una o más columnas de filtro en un nuevo grupo OR.
 
@@ -158,7 +158,7 @@ obj << Add Filter(
 
 ### Animation
 
-**Sintaxis:** obj << Animation( <Animate Column( column )>, <Animate Rate( number )>, <Forward|Backward|Bounce> )
+**Sintaxis:** obj &lt;&lt; Animation( &lt;Animate Column( column )&gt;, &lt;Animate Rate( number )&gt;, &lt;Forward|Backward|Bounce&gt; )
 
 **Descripción:** Recorre los valores ordenados de la columna especificada seleccionando y anulando la selección de filas.
 
@@ -178,7 +178,7 @@ obj << Animation( Animate Column( :Region ), Bounce );
 
 ### Apply Favorites
 
-**Sintaxis:** obj << Apply Favorites( name or string )
+**Sintaxis:** obj &lt;&lt; Apply Favorites( name or string )
 
 **Descripción:** Aplica la selección del filtro, tal como está guardado en los favoritos con nombre, al filtro de datos.
 
@@ -206,7 +206,7 @@ df << apply favorites( "FemaleAverageHt" );
 
 ### Auto clear
 
-**Sintaxis:** obj << Auto clear( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Auto clear( state=0|1 )
 
 **Descripción:** Borra todas las filas seleccionadas actualmente antes de establecer una nueva selección al filtrar.
 
@@ -224,7 +224,7 @@ obj << (filter column( :sex ) << Where( :sex == "M" ));
 
 ### Clear
 
-**Sintaxis:** obj << Clear
+**Sintaxis:** obj &lt;&lt; Clear
 
 **Descripción:** Borra las filas seleccionadas actualmente.
 
@@ -241,7 +241,7 @@ obj << Clear;
 
 ### Clear Selection
 
-**Sintaxis:** obj << Clear Selection
+**Sintaxis:** obj &lt;&lt; Clear Selection
 
 **Descripción:** Borra la selección para este filtro de columna.
 
@@ -257,7 +257,7 @@ obj << (Filter Column( :Region ) << Clear Selection);
 
 ### Close
 
-**Sintaxis:** obj << Close
+**Sintaxis:** obj &lt;&lt; Close
 
 **Descripción:** Cierra el filtro de datos.
 
@@ -276,7 +276,7 @@ obj << Close;
 
 ### Conditional
 
-**Sintaxis:** obj << Conditional( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Conditional( state=0|1 )
 
 **Descripción:** La opción indica si los filtros de las columnas categóricas están ordenados de forma condicional. Al seleccionar una categoría, se limitarán las categorías del siguiente filtro de columna únicamente a aquellas incluidas en la categoría seleccionada.
 
@@ -293,7 +293,7 @@ obj << conditional( 1 );
 
 ### Copy Local Data Filter
 
-**Sintaxis:** obj << Copy Local Data Filter
+**Sintaxis:** obj &lt;&lt; Copy Local Data Filter
 
 **Descripción:** Copiar el script del filtro de datos locales en el portapapeles.
 
@@ -316,7 +316,7 @@ dist2 << Paste Local Data Filter;
 
 ### Copy Script
 
-**Sintaxis:** obj << Copy Script
+**Sintaxis:** obj &lt;&lt; Copy Script
 
 **Descripción:** Crea un script JSL para generar la ventana del filtro y lo sitúa en el portapapeles.
 
@@ -334,7 +334,7 @@ obj << Copy Script;
 
 ### Count Excluded Rows
 
-**Sintaxis:** obj << Count Excluded Rows( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Count Excluded Rows( state=0|1 )
 
 **Descripción:** Si no se selecciona esta opción, los recuentos y valores de la columna del filtro de datos no incluirán las filas con estados de filas excluidas en la tabla de datos.
 
@@ -399,7 +399,7 @@ New Window( "Hierarchical Data Filter",
 
 ### Data Table Window
 
-**Sintaxis:** obj << Data Table Window
+**Sintaxis:** obj &lt;&lt; Data Table Window
 
 **Descripción:** Muestra la tabla de datos utilizada para este cuadro de diálogo del filtro.
 
@@ -417,7 +417,7 @@ obj << Data Table Window;
 
 ### Delete
 
-**Sintaxis:** obj << Delete( {column(s)} )
+**Sintaxis:** obj &lt;&lt; Delete( {column(s)} )
 
 **Descripción:** Borra las columnas especificadas con los filtros existentes en el filtro de datos.
 
@@ -455,7 +455,7 @@ obj << (Filter Column( :State ) << delete);
 
 ### Delete All
 
-**Sintaxis:** obj << Delete All
+**Sintaxis:** obj &lt;&lt; Delete All
 
 **Descripción:** Borra todos los filtros existentes en el filtro de datos.
 
@@ -475,7 +475,7 @@ obj << Delete All;
 
 ### Display
 
-**Sintaxis:** obj << Display( column, <Invisible(0 | 1)>, <options> )
+**Sintaxis:** obj &lt;&lt; Display( column, &lt;Invisible(0 | 1)&gt;, &lt;options&gt; )
 
 **Descripción:** Cambia la forma en la que se muestran los niveles de columnas en el filtro. Las columnas categóricas admiten una opción de tipo de visualización de "Visualización de bloques", "Visualización de lista", "Visualización de una sola categoría", "Visualización de casilla de selección" o "Visualización de botón de radio". La opción NItems(n) establecerá el número de elementos visibles en una vista desplazable. Las columnas continuas admiten opciones de NBins(n) y Height(h).
 
@@ -494,7 +494,7 @@ obj << Display( :Region, N Items( 4 ) );
 
 ### Extend Where
 
-**Sintaxis:** obj << Extend Where
+**Sintaxis:** obj &lt;&lt; Extend Where
 
 **Descripción:** Amplia la selección de acuerdo al criterio indicado para este filtro de columna.
 
@@ -510,7 +510,7 @@ obj << (Filter Column( :Region ) << Extend Where( :Region = "W" ));
 
 ### Get Data Table
 
-**Sintaxis:** obj << Get Data Table
+**Sintaxis:** obj &lt;&lt; Get Data Table
 
 **Descripción:** Devuelve la tabla de datos asociada al filtro.
 
@@ -531,7 +531,7 @@ regionfilter = obj << Get Data Table();
 
 ### Get Filter Column
 
-**Sintaxis:** obj << Get Filter Column( column, <index> )
+**Sintaxis:** obj &lt;&lt; Get Filter Column( column, &lt;index&gt; )
 
 **Descripción:** Devuelve el objeto de columna de filtro para la columna nombrada. Si se utiliza varias veces la misma columna, el argumento index devolverá la repetición especificada
 
@@ -553,7 +553,7 @@ regionfilter << Invert Selection;
 
 ### Get Filtered Rows
 
-**Sintaxis:** obj << Get Filtered Rows
+**Sintaxis:** obj &lt;&lt; Get Filtered Rows
 
 **Descripción:** Devuelve una matriz de números de fila que cumplen las condiciones del filtro actual.
 
@@ -571,7 +571,7 @@ obj << Get Filtered Rows;
 
 ### Get Script
 
-**Sintaxis:** obj << Get Script
+**Sintaxis:** obj &lt;&lt; Get Script
 
 **Descripción:** Obtiene el script de filtro de datos como texto.
 
@@ -590,7 +590,7 @@ Show( txt );
 
 ### Get where clause
 
-**Sintaxis:** obj << Get where clause
+**Sintaxis:** obj &lt;&lt; Get where clause
 
 **Descripción:** Obtiene el texto de descripción de la selección del filtro.
 
@@ -607,13 +607,13 @@ txt = obj << get where clause;
 
 ### Grouped by AND
 
-**Sintaxis:** obj << Grouped by AND( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Grouped by AND( state=0|1 )
 
 **Descripción:** Los grupos de elementos de filtro se unen mediante AND
 
 ### Inverse
 
-**Sintaxis:** obj << Inverse( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Inverse( state=0|1 )
 
 **Descripción:** Invierte el estado de selección actual de las filas en la tabla de datos.
 
@@ -632,7 +632,7 @@ obj << Inverse( 1 );
 
 ### Invert Selection
 
-**Sintaxis:** obj << Invert Selection
+**Sintaxis:** obj &lt;&lt; Invert Selection
 
 **Descripción:** Invierte la selección para este filtro de columna.
 
@@ -648,7 +648,7 @@ obj << (Filter Column( :Region ) << invert selection);
 
 ### Make Filter Change Handler
 
-**Sintaxis:** rs = df << Make Filter Change Handler(function(a) );
+**Sintaxis:** rs = df &lt;&lt; Make Filter Change Handler(function(a) );
 
 **Descripción:** Crea un controlador de filtros de datos para controlar la notificación de que ha cambiado el filtro. Se devuelve el número de filas filtradas en el argumento para la función.
 
@@ -667,7 +667,7 @@ rs = filter << Make Filter Change Handler( f );
 
 ### Match
 
-**Sintaxis:** obj << Match( Filter Columns(:a, :b, :c, ...), where( conditions ) )
+**Sintaxis:** obj &lt;&lt; Match( Filter Columns(:a, :b, :c, ...), where( conditions ) )
 
 **Descripción:** Establece las condiciones de filtro para cada grupo.
 
@@ -687,7 +687,7 @@ obj << Match( Filter Columns( :BP 12M ), Where( :BP 12M > 181.9 & :BP 12M < 192.
 
 ### Mode
 
-**Sintaxis:** obj << Mode( Select|Show|Include (state = 0|1) )
+**Sintaxis:** obj &lt;&lt; Mode( Select|Show|Include (state = 0|1) )
 
 **Descripción:** Establece la acción o modo utilizados al seleccionar las filas mediante el filtro de datos.
 
@@ -703,7 +703,7 @@ obj << Add Filter( Columns( :Region ), Where( :Region == "N" ) );
 
 ### On Clear
 
-**Sintaxis:** obj << On Clear
+**Sintaxis:** obj &lt;&lt; On Clear
 
 **Descripción:** Establece un script o función que se ejecutará después de borrar el filtro.
 
@@ -722,7 +722,7 @@ df << Mode( Include( 1 ), Select( 0 ), Show( 0 ) );
 
 ### Remove Favorites
 
-**Sintaxis:** obj << Remove Favorites( name or string )
+**Sintaxis:** obj &lt;&lt; Remove Favorites( name or string )
 
 **Descripción:** Quita los favoritos con nombre de la lista de favoritos.
 
@@ -772,7 +772,7 @@ df << remove favorites();
 
 ### Report
 
-**Sintaxis:** obj << Report
+**Sintaxis:** obj &lt;&lt; Report
 
 **Descripción:** Devuelve una referencia al objeto informe.
 
@@ -798,7 +798,7 @@ Show( t );
 
 ### Save Script to Data Table
 
-**Sintaxis:** obj << Save Script to Data Table
+**Sintaxis:** obj &lt;&lt; Save Script to Data Table
 
 **Descripción:** Crea un script JSL para generar la ventana del filtro y lo guarda como propiedad de tabla en la tabla de datos.
 
@@ -816,7 +816,7 @@ obj << Save Script to Data Table;
 
 ### Save Script to Journal
 
-**Sintaxis:** obj << Save Script to Journal
+**Sintaxis:** obj &lt;&lt; Save Script to Journal
 
 **Descripción:** Crea un script JSL para generar la ventana del filtro y agrega un botón al diario que contiene dicho script.
 
@@ -834,7 +834,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Script Window
 
-**Sintaxis:** obj << Save Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save Script to Script Window
 
 **Descripción:** Crea un script JSL para generar la ventana de filtro y lo añade a la ventana de texto del script actual.
 
@@ -852,7 +852,7 @@ obj << Save Script to Script Window;
 
 ### Save Where Clause to Clipboard
 
-**Sintaxis:** obj << Save Where Clause to Clipboard
+**Sintaxis:** obj &lt;&lt; Save Where Clause to Clipboard
 
 **Descripción:** Crea la cláusula WHERE a partir de los criterios de filtro y la sitúa en el portapapeles.
 
@@ -868,7 +868,7 @@ obj << Save Where Clause To Clipboard;
 
 ### Save Where Clause to Data Table
 
-**Sintaxis:** obj << Save Where Clause to Data Table
+**Sintaxis:** obj &lt;&lt; Save Where Clause to Data Table
 
 **Descripción:** Crea una cláusula WHERE a partir de los criterios de filtro y la guarda como propiedad de tabla en la tabla de datos.
 
@@ -884,7 +884,7 @@ obj << Save Where Clause To Data Table;
 
 ### Save Where Clause to Formula Column
 
-**Sintaxis:** obj << Save Where Clause to Formula Column
+**Sintaxis:** obj &lt;&lt; Save Where Clause to Formula Column
 
 **Descripción:** Crea una columna indicadora que contiene una fórmula equivalente a los criterios de filtro. Las filas que reúnan los criterios del filtro tendrán un valor de 1, y todas las demás filas tendrán un valor de 0.
 
@@ -902,7 +902,7 @@ obj << Save Where Clause To Formula Column;
 
 ### Save Where Clause to Journal
 
-**Sintaxis:** obj << Save Where Clause to Journal
+**Sintaxis:** obj &lt;&lt; Save Where Clause to Journal
 
 **Descripción:** Crea la cláusula WHERE a partir de los criterios de filtro y la añade al diario.
 
@@ -918,7 +918,7 @@ obj << Save Where Clause To Journal;
 
 ### Save Where Clause to Row State Column
 
-**Sintaxis:** obj << Save Where Clause to Row State Column
+**Sintaxis:** obj &lt;&lt; Save Where Clause to Row State Column
 
 **Descripción:** Crea una columna de estado de fila que contiene una fórmula equivalente a los criterios de filtro.
 
@@ -934,7 +934,7 @@ obj << Save Where Clause To Row State Column;
 
 ### Save Where Clause to Script Window
 
-**Sintaxis:** obj << Save Where Clause to Script Window
+**Sintaxis:** obj &lt;&lt; Save Where Clause to Script Window
 
 **Descripción:** Crea una cláusula WHERE a partir de los criterios de filtro y la añade a la ventana de texto del script actual.
 
@@ -950,7 +950,7 @@ obj << Save Where Clause To Script Window;
 
 ### Save and restore current row states
 
-**Sintaxis:** obj << Save and restore current row states( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Save and restore current row states( state=0|1 )
 
 **Descripción:** Guarda los estados de fila actuales de la tabla de datos y luego restaura dichos estados al cerrar el filtro de datos.
 
@@ -969,7 +969,7 @@ obj << Close;
 
 ### Select Missing
 
-**Sintaxis:** obj << Select Missing( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Select Missing( state=0|1 )
 
 **Descripción:** Agrega a la selección las filas que faltan para este filtro de columna continuo.
 
@@ -985,7 +985,7 @@ obj << (Filter Column( :CO ) << Select Missing);
 
 ### Set Include
 
-**Sintaxis:** obj << Set Include( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Set Include( state=0|1 )
 
 **Descripción:** Selecciona o deselecciona el modo de inclusión.
 
@@ -1002,7 +1002,7 @@ obj << set Include( 0 );
 
 ### Set Select
 
-**Sintaxis:** obj << Set Select( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Set Select( state=0|1 )
 
 **Descripción:** Selecciona o deselecciona el modo de selección.
 
@@ -1019,7 +1019,7 @@ obj << set select( 0 );
 
 ### Set Show
 
-**Sintaxis:** obj << Set Show( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Set Show( state=0|1 )
 
 **Descripción:** Selecciona o deselecciona el modo de visualización.
 
@@ -1036,7 +1036,7 @@ obj << set Show( 0 );
 
 ### Show Controls
 
-**Sintaxis:** obj << Show Controls( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Show Controls( state=0|1 )
 
 **Descripción:** Muestra u oculta los controles para modificar las opciones del filtro de datos.
 
@@ -1057,13 +1057,13 @@ obj << Show Controls( 0 );
 
 ### Show Counts
 
-**Sintaxis:** obj << Show Counts( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Show Counts( state=0|1 )
 
 **JMP Versión agregada:** 16
 
 ### Show Histograms and Bars
 
-**Sintaxis:** obj << Show Histograms and Bars( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Show Histograms and Bars( state=0|1 )
 
 **Descripción:** Show Histograms and Bars for filter columns where available
 
@@ -1083,7 +1083,7 @@ obj << Show Histograms and Bars( 0 );
 
 ### Show Modes
 
-**Sintaxis:** obj << Show Modes( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Show Modes( state=0|1 )
 
 **Descripción:** Muestra u oculta los controles para cambiar el modo del filtro de datos, que controla el comportamiento de las acciones seleccionar/mostrar/incluir del filtro de datos.
 
@@ -1104,7 +1104,7 @@ obj << Show Modes( 0 );
 
 ### Show Subset
 
-**Sintaxis:** obj << Show Subset
+**Sintaxis:** obj &lt;&lt; Show Subset
 
 **Descripción:** Muestra los datos filtrados en una ventana de tabla de datos separada.
 
@@ -1120,7 +1120,7 @@ obj << Show Subset;
 
 ### Stretch Width
 
-**Sintaxis:** obj << Stretch Width( "Manual" | "Window" )
+**Sintaxis:** obj &lt;&lt; Stretch Width( "Manual" | "Window" )
 
 **Descripción:** Establece el comportamiento de estiramiento horizontal del filtro. De forma predeterminada, se puede modificar manualmente el ancho del filtro. Si se establece en "Ventana", el ancho aumenta o disminuye con el tamaño de la ventana.
 
@@ -1168,17 +1168,17 @@ New Window( "Shared Local Filter",
 
 ### Title
 
-**Sintaxis:** obj << Title
+**Sintaxis:** obj &lt;&lt; Title
 
 ### Unstructured Text
 
-**Sintaxis:** obj << Unstructured Text
+**Sintaxis:** obj &lt;&lt; Unstructured Text
 
 **JMP Versión agregada:** 16
 
 ### Use Floating Window
 
-**Sintaxis:** obj << Use Floating Window( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Use Floating Window( state=0|1 )
 
 **Descripción:** Alterna entre la opción de que el filtro de datos utilice una ventana flotante sobre la tabla de datos y ventanas asociadas y la opción de que utilice una ventana dispuesta con las demás ventanas como es habitual.
 
@@ -1193,7 +1193,7 @@ obj << Use Floating Window;
 
 ### Where
 
-**Sintaxis:** obj << Where
+**Sintaxis:** obj &lt;&lt; Where
 
 **Descripción:** Selecciona las filas de acuerdo al criterio indicado para este filtro de columna.
 
@@ -1209,7 +1209,7 @@ obj << (Filter Column( :Lead ) << Where( :Lead >= .4 & :Lead <= 1.4 ));
 
 ### columns
 
-**Sintaxis:** obj << columns( columns )
+**Sintaxis:** obj &lt;&lt; columns( columns )
 
 **Descripción:** Agrega columnas de filtro. Es un comando alternativo a agregar columnas de filtro.
 
@@ -1231,7 +1231,7 @@ obj << Columns( :Region, :SO2, :CO, :State );
 
 #### Blocks Display
 
-**Sintaxis:** obj << Blocks Display( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Blocks Display( state=0|1 )
 
 **Descripción:** Mostrar cada nivel como un bloque seleccionable.
 
@@ -1253,7 +1253,7 @@ regionobj << Blocks Display;
 
 #### Check Box Display
 
-**Sintaxis:** obj << Check Box Display( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Check Box Display( state=0|1 )
 
 **Descripción:** Mostrar cada nivel con una casilla de selección, junto con las barras y el conteo de frecuencia.
 
@@ -1275,13 +1275,13 @@ regionobj << Check Box Display;
 
 #### Clear Find
 
-**Sintaxis:** obj << Clear Find
+**Sintaxis:** obj &lt;&lt; Clear Find
 
 **JMP Versión agregada:** 15
 
 #### Clear Selection
 
-**Sintaxis:** obj << Clear Selection
+**Sintaxis:** obj &lt;&lt; Clear Selection
 
 **Descripción:** Borra cualquier selección en vigor para la columna seleccionada.
 
@@ -1302,13 +1302,13 @@ regionobj << Clear Selection;
 
 #### Continuous
 
-**Sintaxis:** obj << Continuous( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Continuous( state=0|1 )
 
 **JMP Versión agregada:** 16
 
 #### Delete
 
-**Sintaxis:** obj << Delete
+**Sintaxis:** obj &lt;&lt; Delete
 
 **Descripción:** Quita la variable del panel de control Filtro de datos.
 
@@ -1329,7 +1329,7 @@ regionobj << Delete;
 
 #### Extend Where
 
-**Sintaxis:** obj << Extend Where
+**Sintaxis:** obj &lt;&lt; Extend Where
 
 **Descripción:** Seleccione filas usando una expresión, añadiéndolas a la selección actual.
 
@@ -1350,7 +1350,7 @@ regionobj << Extend Where( :Region == {"MW"} );
 
 #### Find
 
-**Sintaxis:** obj << Find(Set Text("string"), <options>)
+**Sintaxis:** obj &lt;&lt; Find(Set Text("string"), &lt;options&gt;)
 
 **Descripción:** Proporciona un cuadro de texto donde puede introducir una cadena de búsqueda para la columna seleccionada.
 
@@ -1373,19 +1373,19 @@ regionobj << Find( Set Text( "w" ) );
 
 #### Get Selected Items
 
-**Sintaxis:** obj << Get Selected Items
+**Sintaxis:** obj &lt;&lt; Get Selected Items
 
 **JMP Versión agregada:** 15
 
 #### Get Visible Items
 
-**Sintaxis:** obj << Get Visible Items
+**Sintaxis:** obj &lt;&lt; Get Visible Items
 
 **JMP Versión agregada:** 19
 
 #### Invert Selection
 
-**Sintaxis:** obj << Invert Selection
+**Sintaxis:** obj &lt;&lt; Invert Selection
 
 **Descripción:** Deselecciona cualquier valor seleccionado, y selecciona todos los valores que no se hayan seleccionado previamente para la columna en cuestión.
 
@@ -1406,7 +1406,7 @@ regionobj << Invert Selection;
 
 #### List Display
 
-**Sintaxis:** obj << List Display( state=0|1 )
+**Sintaxis:** obj &lt;&lt; List Display( state=0|1 )
 
 **Descripción:** Mostrar cada nivel de una lista, junto con las barras y el conteo de frecuencia.
 
@@ -1428,19 +1428,19 @@ regionobj << List Display;
 
 #### Multiple Response
 
-**Sintaxis:** obj << Multiple Response( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Multiple Response( state=0|1 )
 
 **JMP Versión agregada:** 16
 
 #### Nominal/Ordinal
 
-**Sintaxis:** obj << Nominal/Ordinal( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Nominal/Ordinal( state=0|1 )
 
 **JMP Versión agregada:** 16
 
 #### Order By Count
 
-**Sintaxis:** obj << Order By Count( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Order By Count( state=0|1 )
 
 **Descripción:** Dispone los valores en orden decreciente según el conteo.
 
@@ -1463,7 +1463,7 @@ regionobj << Order by Count;
 
 #### Radio Box Display
 
-**Sintaxis:** obj << Radio Box Display( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Radio Box Display( state=0|1 )
 
 **Descripción:** Mostrar cada nivel con un botón de radio, junto con las barras y el conteo de frecuencia.
 
@@ -1487,7 +1487,7 @@ regionobj << Radio Box Display;
 
 #### Select Filter Item
 
-**Sintaxis:** obj << Select Filter Item
+**Sintaxis:** obj &lt;&lt; Select Filter Item
 
 **Descripción:** Seleccione el elemento de filtro especificado. El filtro seleccionado se utiliza como objeto de animación actual.
 
@@ -1508,7 +1508,7 @@ popobj << Select Filter Item;
 
 #### Single Category Display
 
-**Sintaxis:** obj << Single Category Display( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Single Category Display( state=0|1 )
 
 **Descripción:** Mostrar cada nivel y el conteo de frecuencia en un menú de cuadro combinado.
 
@@ -1530,13 +1530,13 @@ regionobj << Single Category Display;
 
 #### Unstructured Text
 
-**Sintaxis:** obj << Unstructured Text( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Unstructured Text( state=0|1 )
 
 **JMP Versión agregada:** 16
 
 #### Where
 
-**Sintaxis:** obj << Where
+**Sintaxis:** obj &lt;&lt; Where
 
 **Descripción:** Seleccione filas usando una expresión.
 
@@ -1561,7 +1561,7 @@ regionobj << Where( :Region == {"MW"} );
 
 #### Clear Selection
 
-**Sintaxis:** obj << Clear Selection
+**Sintaxis:** obj &lt;&lt; Clear Selection
 
 **Descripción:** Borra cualquier selección en vigor para la columna seleccionada.
 
@@ -1582,13 +1582,13 @@ regionobj << Clear Selection;
 
 #### Continuous
 
-**Sintaxis:** obj << Continuous( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Continuous( state=0|1 )
 
 **JMP Versión agregada:** 16
 
 #### Delete
 
-**Sintaxis:** obj << Delete
+**Sintaxis:** obj &lt;&lt; Delete
 
 **Descripción:** Quita la variable del panel de control Filtro de datos.
 
@@ -1609,7 +1609,7 @@ regionobj << Delete;
 
 #### Extend Where
 
-**Sintaxis:** obj << Extend Where
+**Sintaxis:** obj &lt;&lt; Extend Where
 
 **Descripción:** Seleccione filas usando una expresión, añadiéndolas a la selección actual.
 
@@ -1630,7 +1630,7 @@ regionobj << Extend Where( :Region == {"MW"} );
 
 #### Invert Selection
 
-**Sintaxis:** obj << Invert Selection
+**Sintaxis:** obj &lt;&lt; Invert Selection
 
 **Descripción:** Deselecciona cualquier valor seleccionado, y selecciona todos los valores que no se hayan seleccionado previamente para la columna en cuestión.
 
@@ -1651,19 +1651,19 @@ regionobj << Invert Selection;
 
 #### Multiple Response
 
-**Sintaxis:** obj << Multiple Response( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Multiple Response( state=0|1 )
 
 **JMP Versión agregada:** 16
 
 #### Nominal/Ordinal
 
-**Sintaxis:** obj << Nominal/Ordinal( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Nominal/Ordinal( state=0|1 )
 
 **JMP Versión agregada:** 16
 
 #### Reset Zoom
 
-**Sintaxis:** obj << Reset Zoom
+**Sintaxis:** obj &lt;&lt; Reset Zoom
 
 **Descripción:** Restablezca el mínimo y el máximo de la visualización del filtro a los valores predeterminados.
 
@@ -1697,7 +1697,7 @@ fc << Reset Zoom;
 
 #### Select Filter Item
 
-**Sintaxis:** obj << Select Filter Item
+**Sintaxis:** obj &lt;&lt; Select Filter Item
 
 **Descripción:** Seleccione el elemento de filtro especificado. El filtro seleccionado se utiliza como objeto de animación actual.
 
@@ -1718,7 +1718,7 @@ popobj << Select Filter Item;
 
 #### Select Missing
 
-**Sintaxis:** obj << Select Missing
+**Sintaxis:** obj &lt;&lt; Select Missing
 
 **Descripción:** Selecciona las filas que contengan valores faltantes.
 
@@ -1742,13 +1742,13 @@ ozoneobj << Select Missing;
 
 #### Unstructured Text
 
-**Sintaxis:** obj << Unstructured Text( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Unstructured Text( state=0|1 )
 
 **JMP Versión agregada:** 16
 
 #### Where
 
-**Sintaxis:** obj << Where
+**Sintaxis:** obj &lt;&lt; Where
 
 **Descripción:** Seleccione filas usando una expresión.
 
@@ -1769,7 +1769,7 @@ regionobj << Where( :Region == {"MW"} );
 
 #### Zoom to Selection
 
-**Sintaxis:** obj << Zoom to Selection
+**Sintaxis:** obj &lt;&lt; Zoom to Selection
 
 **Descripción:** Establezca el mínimo y el máximo de la visualización del filtro en función del intervalo seleccionado actualmente.
 
@@ -1806,7 +1806,7 @@ fc << Zoom to Selection;
 
 #### Blocks Display
 
-**Sintaxis:** obj << Blocks Display( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Blocks Display( state=0|1 )
 
 **Descripción:** Mostrar cada nivel como un bloque seleccionable.
 
@@ -1828,7 +1828,7 @@ regionobj << Blocks Display;
 
 #### Check Box Display
 
-**Sintaxis:** obj << Check Box Display( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Check Box Display( state=0|1 )
 
 **Descripción:** Mostrar cada nivel con una casilla de selección, junto con las barras y el conteo de frecuencia.
 
@@ -1850,13 +1850,13 @@ regionobj << Check Box Display;
 
 #### Clear Find
 
-**Sintaxis:** obj << Clear Find
+**Sintaxis:** obj &lt;&lt; Clear Find
 
 **JMP Versión agregada:** 15
 
 #### Clear Selection
 
-**Sintaxis:** obj << Clear Selection
+**Sintaxis:** obj &lt;&lt; Clear Selection
 
 **Descripción:** Borra cualquier selección en vigor para la columna seleccionada.
 
@@ -1877,13 +1877,13 @@ regionobj << Clear Selection;
 
 #### Continuous
 
-**Sintaxis:** obj << Continuous( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Continuous( state=0|1 )
 
 **JMP Versión agregada:** 16
 
 #### Delete
 
-**Sintaxis:** obj << Delete
+**Sintaxis:** obj &lt;&lt; Delete
 
 **Descripción:** Quita la variable del panel de control Filtro de datos.
 
@@ -1904,7 +1904,7 @@ regionobj << Delete;
 
 #### Extend Where
 
-**Sintaxis:** obj << Extend Where
+**Sintaxis:** obj &lt;&lt; Extend Where
 
 **Descripción:** Seleccione filas usando una expresión, añadiéndolas a la selección actual.
 
@@ -1925,7 +1925,7 @@ regionobj << Extend Where( :Region == {"MW"} );
 
 #### Find
 
-**Sintaxis:** obj << Find(Set Text("string"), <options>)
+**Sintaxis:** obj &lt;&lt; Find(Set Text("string"), &lt;options&gt;)
 
 **Descripción:** Proporciona un cuadro de texto donde puede introducir una cadena de búsqueda para la columna seleccionada.
 
@@ -1948,19 +1948,19 @@ regionobj << Find( Set Text( "w" ) );
 
 #### Get Selected Items
 
-**Sintaxis:** obj << Get Selected Items
+**Sintaxis:** obj &lt;&lt; Get Selected Items
 
 **JMP Versión agregada:** 15
 
 #### Get Visible Items
 
-**Sintaxis:** obj << Get Visible Items
+**Sintaxis:** obj &lt;&lt; Get Visible Items
 
 **JMP Versión agregada:** 19
 
 #### Invert Selection
 
-**Sintaxis:** obj << Invert Selection
+**Sintaxis:** obj &lt;&lt; Invert Selection
 
 **Descripción:** Deselecciona cualquier valor seleccionado, y selecciona todos los valores que no se hayan seleccionado previamente para la columna en cuestión.
 
@@ -1981,7 +1981,7 @@ regionobj << Invert Selection;
 
 #### List Display
 
-**Sintaxis:** obj << List Display( state=0|1 )
+**Sintaxis:** obj &lt;&lt; List Display( state=0|1 )
 
 **Descripción:** Mostrar cada nivel de una lista, junto con las barras y el conteo de frecuencia.
 
@@ -2003,7 +2003,7 @@ regionobj << List Display;
 
 #### Match All
 
-**Sintaxis:** obj << Match All
+**Sintaxis:** obj &lt;&lt; Match All
 
 **Descripción:** Selecciona las filas con valores que coincidan con todos los valores marcados.
 
@@ -2027,7 +2027,7 @@ sportsobj << Match All;
 
 #### Match Any
 
-**Sintaxis:** obj << Match Any
+**Sintaxis:** obj &lt;&lt; Match Any
 
 **Descripción:** Selecciona las filas con valores que coincidan con cualquiera de los valores marcados. Esta opción está seleccionada de forma predeterminada.
 
@@ -2051,7 +2051,7 @@ sportsobj << Match Any;
 
 #### Match At Least
 
-**Sintaxis:** dfitem << Match At Least(n);
+**Sintaxis:** dfitem &lt;&lt; Match At Least(n);
 
 **Descripción:** Selecciona las filas con valores que coincidan al menos con n de los valores marcados.
 
@@ -2075,7 +2075,7 @@ sportsobj << Match At Least( 1 );
 
 #### Match At Most
 
-**Sintaxis:** dfitem << Match At Most(n);
+**Sintaxis:** dfitem &lt;&lt; Match At Most(n);
 
 **Descripción:** Selecciona las filas con valores que coincidan con n como máximo de los valores marcados.
 
@@ -2099,7 +2099,7 @@ sportsobj << Match At Most( 1 );
 
 #### Match Between
 
-**Sintaxis:** dfitem << Match Between(n, m);
+**Sintaxis:** dfitem &lt;&lt; Match Between(n, m);
 
 **Descripción:** Selecciona las filas con valores que coincidan con entre n y m de los valores marcados.
 
@@ -2123,7 +2123,7 @@ sportsobj << Match Between( 1, 2 );
 
 #### Match Exactly
 
-**Sintaxis:** obj << Match Exactly
+**Sintaxis:** obj &lt;&lt; Match Exactly
 
 **Descripción:** Selecciona las filas con valores que coincidan exactamente con los valores marcados.
 
@@ -2147,7 +2147,7 @@ sportsobj << Match Exactly;
 
 #### Match None
 
-**Sintaxis:** obj << Match None
+**Sintaxis:** obj &lt;&lt; Match None
 
 **Descripción:** Selecciona las filas con valores que no coincidan con ninguno de los valores marcados.
 
@@ -2171,7 +2171,7 @@ sportsobj << Match None;
 
 #### Match Only
 
-**Sintaxis:** obj << Match Only
+**Sintaxis:** obj &lt;&lt; Match Only
 
 **Descripción:** Selecciona las filas con valores que coincidan únicamente con el valore marcado.
 
@@ -2195,19 +2195,19 @@ sportsobj << Match Only;
 
 #### Multiple Response
 
-**Sintaxis:** obj << Multiple Response( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Multiple Response( state=0|1 )
 
 **JMP Versión agregada:** 16
 
 #### Nominal/Ordinal
 
-**Sintaxis:** obj << Nominal/Ordinal( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Nominal/Ordinal( state=0|1 )
 
 **JMP Versión agregada:** 16
 
 #### Order By Count
 
-**Sintaxis:** obj << Order By Count( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Order By Count( state=0|1 )
 
 **Descripción:** Dispone los valores en orden decreciente según el conteo.
 
@@ -2230,7 +2230,7 @@ regionobj << Order by Count;
 
 #### Radio Box Display
 
-**Sintaxis:** obj << Radio Box Display( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Radio Box Display( state=0|1 )
 
 **Descripción:** Mostrar cada nivel con un botón de radio, junto con las barras y el conteo de frecuencia.
 
@@ -2254,7 +2254,7 @@ regionobj << Radio Box Display;
 
 #### Select Filter Item
 
-**Sintaxis:** obj << Select Filter Item
+**Sintaxis:** obj &lt;&lt; Select Filter Item
 
 **Descripción:** Seleccione el elemento de filtro especificado. El filtro seleccionado se utiliza como objeto de animación actual.
 
@@ -2275,7 +2275,7 @@ popobj << Select Filter Item;
 
 #### Single Category Display
 
-**Sintaxis:** obj << Single Category Display( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Single Category Display( state=0|1 )
 
 **Descripción:** Mostrar cada nivel y el conteo de frecuencia en un menú de cuadro combinado.
 
@@ -2297,13 +2297,13 @@ regionobj << Single Category Display;
 
 #### Unstructured Text
 
-**Sintaxis:** obj << Unstructured Text( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Unstructured Text( state=0|1 )
 
 **JMP Versión agregada:** 16
 
 #### Where
 
-**Sintaxis:** obj << Where
+**Sintaxis:** obj &lt;&lt; Where
 
 **Descripción:** Seleccione filas usando una expresión.
 
@@ -2328,7 +2328,7 @@ regionobj << Where( :Region == {"MW"} );
 
 #### Add Missing
 
-**Sintaxis:** obj << Add Missing
+**Sintaxis:** obj &lt;&lt; Add Missing
 
 **Descripción:** Agrega un valor faltante como opción seleccionable para los textos sin estructura.
 
@@ -2360,7 +2360,7 @@ illness_obj << Add Missing;
 
 #### Blocks Display
 
-**Sintaxis:** obj << Blocks Display( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Blocks Display( state=0|1 )
 
 **Descripción:** Mostrar cada nivel como un bloque seleccionable.
 
@@ -2382,7 +2382,7 @@ regionobj << Blocks Display;
 
 #### Check Box Display
 
-**Sintaxis:** obj << Check Box Display( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Check Box Display( state=0|1 )
 
 **Descripción:** Mostrar cada nivel con una casilla de selección, junto con las barras y el conteo de frecuencia.
 
@@ -2404,7 +2404,7 @@ regionobj << Check Box Display;
 
 #### Clear Filter Texts List
 
-**Sintaxis:** obj << Clear Filter Texts List
+**Sintaxis:** obj &lt;&lt; Clear Filter Texts List
 
 **Descripción:** Borra la lista de filtros para un elemento de filtro del texto sin estructura.
 
@@ -2436,7 +2436,7 @@ illness_obj << Clear Filter Texts List;
 
 #### Clear Selection
 
-**Sintaxis:** obj << Clear Selection
+**Sintaxis:** obj &lt;&lt; Clear Selection
 
 **Descripción:** Borra cualquier selección en vigor para la columna seleccionada.
 
@@ -2457,13 +2457,13 @@ regionobj << Clear Selection;
 
 #### Continuous
 
-**Sintaxis:** obj << Continuous( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Continuous( state=0|1 )
 
 **JMP Versión agregada:** 16
 
 #### Delete
 
-**Sintaxis:** obj << Delete
+**Sintaxis:** obj &lt;&lt; Delete
 
 **Descripción:** Quita la variable del panel de control Filtro de datos.
 
@@ -2484,7 +2484,7 @@ regionobj << Delete;
 
 #### Extend Where
 
-**Sintaxis:** obj << Extend Where
+**Sintaxis:** obj &lt;&lt; Extend Where
 
 **Descripción:** Seleccione filas usando una expresión, añadiéndolas a la selección actual.
 
@@ -2505,19 +2505,19 @@ regionobj << Extend Where( :Region == {"MW"} );
 
 #### Get Selected Items
 
-**Sintaxis:** obj << Get Selected Items
+**Sintaxis:** obj &lt;&lt; Get Selected Items
 
 **JMP Versión agregada:** 15
 
 #### Get Visible Items
 
-**Sintaxis:** obj << Get Visible Items
+**Sintaxis:** obj &lt;&lt; Get Visible Items
 
 **JMP Versión agregada:** 19
 
 #### Invert Selection
 
-**Sintaxis:** obj << Invert Selection
+**Sintaxis:** obj &lt;&lt; Invert Selection
 
 **Descripción:** Deselecciona cualquier valor seleccionado, y selecciona todos los valores que no se hayan seleccionado previamente para la columna en cuestión.
 
@@ -2538,7 +2538,7 @@ regionobj << Invert Selection;
 
 #### List Display
 
-**Sintaxis:** obj << List Display( state=0|1 )
+**Sintaxis:** obj &lt;&lt; List Display( state=0|1 )
 
 **Descripción:** Mostrar cada nivel de una lista, junto con las barras y el conteo de frecuencia.
 
@@ -2560,7 +2560,7 @@ regionobj << List Display;
 
 #### Match All
 
-**Sintaxis:** obj << Match All
+**Sintaxis:** obj &lt;&lt; Match All
 
 **Descripción:** Selecciona las filas con valores que coincidan con todos los valores marcados.
 
@@ -2584,7 +2584,7 @@ sportsobj << Match All;
 
 #### Match Any
 
-**Sintaxis:** obj << Match Any
+**Sintaxis:** obj &lt;&lt; Match Any
 
 **Descripción:** Selecciona las filas con valores que coincidan con cualquiera de los valores marcados. Esta opción está seleccionada de forma predeterminada.
 
@@ -2608,7 +2608,7 @@ sportsobj << Match Any;
 
 #### Match At Least
 
-**Sintaxis:** dfitem << Match At Least(n);
+**Sintaxis:** dfitem &lt;&lt; Match At Least(n);
 
 **Descripción:** Selecciona las filas con valores que coincidan al menos con n de los valores marcados.
 
@@ -2632,7 +2632,7 @@ sportsobj << Match At Least( 1 );
 
 #### Match At Most
 
-**Sintaxis:** dfitem << Match At Most(n);
+**Sintaxis:** dfitem &lt;&lt; Match At Most(n);
 
 **Descripción:** Selecciona las filas con valores que coincidan con n como máximo de los valores marcados.
 
@@ -2656,7 +2656,7 @@ sportsobj << Match At Most( 1 );
 
 #### Match Between
 
-**Sintaxis:** dfitem << Match Between(n, m);
+**Sintaxis:** dfitem &lt;&lt; Match Between(n, m);
 
 **Descripción:** Selecciona las filas con valores que coincidan con entre n y m de los valores marcados.
 
@@ -2680,7 +2680,7 @@ sportsobj << Match Between( 1, 2 );
 
 #### Match Exactly
 
-**Sintaxis:** obj << Match Exactly
+**Sintaxis:** obj &lt;&lt; Match Exactly
 
 **Descripción:** Selecciona las filas con valores que coincidan exactamente con los valores marcados.
 
@@ -2704,7 +2704,7 @@ sportsobj << Match Exactly;
 
 #### Match None
 
-**Sintaxis:** obj << Match None
+**Sintaxis:** obj &lt;&lt; Match None
 
 **Descripción:** Selecciona las filas con valores que no coincidan con ninguno de los valores marcados.
 
@@ -2728,7 +2728,7 @@ sportsobj << Match None;
 
 #### Match Only
 
-**Sintaxis:** obj << Match Only
+**Sintaxis:** obj &lt;&lt; Match Only
 
 **Descripción:** Selecciona las filas con valores que coincidan únicamente con el valore marcado.
 
@@ -2752,19 +2752,19 @@ sportsobj << Match Only;
 
 #### Multiple Response
 
-**Sintaxis:** obj << Multiple Response( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Multiple Response( state=0|1 )
 
 **JMP Versión agregada:** 16
 
 #### Nominal/Ordinal
 
-**Sintaxis:** obj << Nominal/Ordinal( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Nominal/Ordinal( state=0|1 )
 
 **JMP Versión agregada:** 16
 
 #### Order By Count
 
-**Sintaxis:** obj << Order By Count( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Order By Count( state=0|1 )
 
 **Descripción:** Dispone los valores en orden decreciente según el conteo.
 
@@ -2787,7 +2787,7 @@ regionobj << Order by Count;
 
 #### Radio Box Display
 
-**Sintaxis:** obj << Radio Box Display( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Radio Box Display( state=0|1 )
 
 **Descripción:** Mostrar cada nivel con un botón de radio, junto con las barras y el conteo de frecuencia.
 
@@ -2811,7 +2811,7 @@ regionobj << Radio Box Display;
 
 #### Select Filter Item
 
-**Sintaxis:** obj << Select Filter Item
+**Sintaxis:** obj &lt;&lt; Select Filter Item
 
 **Descripción:** Seleccione el elemento de filtro especificado. El filtro seleccionado se utiliza como objeto de animación actual.
 
@@ -2832,7 +2832,7 @@ popobj << Select Filter Item;
 
 #### Show Filter Text Edit Box
 
-**Sintaxis:** obj << Show Filter Text Edit Box( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Show Filter Text Edit Box( state=0|1 )
 
 **Descripción:** Muestra u oculta el cuadro de edición de texto para que defina las condiciones del filtro de texto.
 
@@ -2864,7 +2864,7 @@ illness_obj << Show Filter Text Edit Box( 0 );
 
 #### Single Category Display
 
-**Sintaxis:** obj << Single Category Display( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Single Category Display( state=0|1 )
 
 **Descripción:** Mostrar cada nivel y el conteo de frecuencia en un menú de cuadro combinado.
 
@@ -2886,13 +2886,13 @@ regionobj << Single Category Display;
 
 #### Unstructured Text
 
-**Sintaxis:** obj << Unstructured Text( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Unstructured Text( state=0|1 )
 
 **JMP Versión agregada:** 16
 
 #### Where
 
-**Sintaxis:** obj << Where
+**Sintaxis:** obj &lt;&lt; Where
 
 **Descripción:** Seleccione filas usando una expresión.
 

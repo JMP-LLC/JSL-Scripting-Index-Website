@@ -2,8 +2,6 @@
 
 
 
-## Functions
-
 ### Python Connect
 
 **Syntax:** PythonConnection = Python Connect ()
@@ -47,7 +45,7 @@ conn << Create JPIP CMD();
 
 ### Python Execute
 
-**Syntax:** Python Execute( { list of Inputs }, { list of Outputs }, statements < , echo( 1 | 0 ) > )
+**Syntax:** Python Execute( { list of Inputs }, { list of Outputs }, statements &lt; , echo( 1 | 0 ) &gt; )
 
 **Description:** Sends a list of inputs, executes statements and returns a list of outputs. Optional echo() parameter defaults to True. The echo parameter controls echoing the Python source to the log. Logical True (1) enables echo of source while 0 suppresses the echo to the log.
 
@@ -302,7 +300,7 @@ Python Submit( "print(pi)" );
 
 ### Python Send
 
-**Syntax:** Python Send( name, <Python Name( name ) | "as_name" > )
+**Syntax:** Python Send( name, &lt;Python Name( name ) | "as_name" &gt; )
 
 **Description:** Sends data to Python, where the name argument can represent any of the following JMP data types ( numeric | string | matrix | list | data table | data table column | date ).
 
@@ -347,7 +345,7 @@ Python Submit( "print(date)" );
 
 ### Python Send File
 
-**Syntax:** Python Send File( filename, <Python Name( name )> )
+**Syntax:** Python Send File( filename, &lt;Python Name( name )&gt; )
 
 **Description:** Sends a data file to Python, where the filename argument is a string specifying a pathname to the file to be sent to Python.
 
@@ -364,7 +362,7 @@ Python Submit( "print(Baseball)" );
 
 ### Python Submit
 
-**Syntax:** Python Submit( statements < , echo( 1 | 0 ) > )
+**Syntax:** Python Submit( statements &lt; , echo( 1 | 0 ) &gt; )
 
 **Description:** Submits statements to Python. Statements can be in the form of a string value or list of string values. Optional echo() parameter defaults to 1. The echo parameter controls echoing the Python source to the log. Logical True (1) enables echo of source while 0 suppresses the echo to the log.
 

@@ -6,9 +6,7 @@
 
 ### New Image
 
-**Syntaxe :** img = Open( filepath, jpg|png|gif|bmp|tif )
-
-New Image(<width, height>, <existing image> )
+**Syntaxe :** img = Open( filepath, jpg|png|gif|bmp|tif )New Image(&lt;width, height&gt;, &lt;existing image&gt; )
 
 **Description :** Un objet image, qui peut servir à ajouter une image à un cadre ou à une boîte d’affichage.
 
@@ -22,7 +20,7 @@ obj = New Window( "tile(40,40)", img );
 
 ### Open
 
-**Syntaxe :** Open( filePath, <data table options | Excel import options | text import options | SAS import options | HTML import options | esriShapeFile import options | PDF import options | other file options > )
+**Syntaxe :** Open( filePath, &lt;data table options | Excel import options | text import options | SAS import options | HTML import options | esriShapeFile import options | PDF import options | other file options &gt; )
 
 **Description :** Renvoie une référence vers une table de données, ou vers un autre fichier JMP ou objet créé à partir d&apos;un fichier. Si aucun chemin n&apos;est spécifié, la boîte de dialogue Ouvrir s&apos;affiche. Si un chemin vers un répertoire est spécifié, l&apos;explorateur de fichiers du système est ouvert et aucun objet n&apos;est renvoyé. Consultez la syntaxe de référence pour obtenir une description complète des options disponibles.
 
@@ -55,7 +53,7 @@ dt2 = Open(
 
 ### Add Frame
 
-**Syntaxe :** obj << Add Frame
+**Syntaxe :** obj &lt;&lt; Add Frame
 
 **Description :** Ajoute un nouveau cadre à une image animée. Le cadre ne contiendra rien jusqu&apos;à ce que Définir les pixels soit utilisé. Un argument de durée facultatif peut être spécifié, lequel indique la durée du cadre en millisecondes. Si l&apos;argument de durée est omis, la durée du cadre actif sera utillisée pour le cadre ajouté. S&apos;il n&apos;y a pas d&apos;autre cadre, une durée par défaut de 100 millisecondes est utilisée.
 
@@ -86,7 +84,7 @@ win << Close Window();
 
 ### Crop
 
-**Syntaxe :** obj << Crop( Left( number ), Right( number ), Top( number ), Bottom( number ) )
+**Syntaxe :** obj &lt;&lt; Crop( Left( number ), Right( number ), Top( number ), Bottom( number ) )
 
 **Description :** Modifies the image to be the sub-image at the specified pixel coordinates within the existing image.
 
@@ -103,7 +101,7 @@ obj2 = New Window( "Cropped", img );
 
 ### Filter
 
-**Syntaxe :** obj << Filter( despeckle|edge|enhance|median|negate|normalize|sharpen|contrast|gamma|reduce noise|gaussian blur|canny, <number> )
+**Syntaxe :** obj &lt;&lt; Filter( despeckle|edge|enhance|median|negate|normalize|sharpen|contrast|gamma|reduce noise|gaussian blur|canny, &lt;number&gt; )
 
 **Description :** Filtre l’image selon l’algorithme spécifié. Le filtrage permet d’éliminer le bruit dans l’image. Le contraste, le gamma et la réduction du bruit requièrent un paramètre (numérique) supplémentaire. Le flou gaussien en requiert deux : le rayon et sigma.
 
@@ -230,7 +228,7 @@ refilter();
 
 ### Flip Both
 
-**Syntaxe :** obj << Flip Both
+**Syntaxe :** obj &lt;&lt; Flip Both
 
 **Description :** Remet l’image à l’horizontale et à la verticale.
 
@@ -247,7 +245,7 @@ obj2 = New Window( "Diagonal Flip", img );
 
 ### Flip Horizontal
 
-**Syntaxe :** obj << Flip Horizontal
+**Syntaxe :** obj &lt;&lt; Flip Horizontal
 
 **Description :** Remet l’image à l’horizontale.
 
@@ -264,7 +262,7 @@ obj2 = New Window( "Horizontal Flip", img );
 
 ### Flip Vertical
 
-**Syntaxe :** obj << Flip Vertical
+**Syntaxe :** obj &lt;&lt; Flip Vertical
 
 **Description :** Retourne l’image vers le bas.
 
@@ -281,7 +279,7 @@ obj2 = New Window( "Vertical Flip", img );
 
 ### Get Current Frame
 
-**Syntaxe :** obj << Get Current Frame
+**Syntaxe :** obj &lt;&lt; Get Current Frame
 
 **Description :** Renvoit le numéro du cadre actif. Cette valeur sera égale à 0 pour la plupart des images ou, pour les fichiers GIF animés, comprise entre 0 et le nombre de cadres moins un. Les actions, telles que getPixels et setPixels, agiront sur le cadre actif.
 
@@ -295,7 +293,7 @@ num = img << Get Current Frame();
 
 ### Get EXIF
 
-**Syntaxe :** obj << Get EXIF
+**Syntaxe :** obj &lt;&lt; Get EXIF
 
 **Description :** Obtient les données EXIF qui sont enregistrées en interne avec l&apos;image. Un tableau avec les paires de clés/valeurs sera renvoyé.
 
@@ -317,7 +315,7 @@ While( !Is Empty( key ),
 
 ### Get Frame Durations
 
-**Syntaxe :** obj << Get Frame Durations
+**Syntaxe :** obj &lt;&lt; Get Frame Durations
 
 **Description :** Renvoie une matrice de durée de pause entre chaque cadre. Le temps est exprimé en millisecondes.
 
@@ -331,7 +329,7 @@ durs = img << Get Frame Durations();
 
 ### Get N Frames
 
-**Syntaxe :** obj << Get N Frames
+**Syntaxe :** obj &lt;&lt; Get N Frames
 
 **Description :** Renvoie le nombre de cadres dans l&apos;image. Pour la plupart des images, ce nombre est un. Pour les fichiers animés GIF, ce nombre pourrait être supérieur à un.
 
@@ -345,7 +343,7 @@ num = img << Get N Frames();
 
 ### Get N Loops
 
-**Syntaxe :** obj << Get N Loops
+**Syntaxe :** obj &lt;&lt; Get N Loops
 
 **Description :** Renvoie le nombre de fois qu&apos;une image animée doit répéter la boucle de sa séquence. Un zéro indique qu&apos;elle doit la répéter à l&apos;infini.
 
@@ -359,15 +357,11 @@ loops = img << Get N Loops();
 
 ### Get Path
 
-**Syntaxe :** obj << Get Path
+**Syntaxe :** obj &lt;&lt; Get Path
 
 ### Get Pixels
 
-**Syntaxe :** mat = img << Get Pixels();
-
-{r, g, b} = img << Get Pixels("rgb");
-
-{r, g, b, a} = img << Get Pixels("rgba")
+**Syntaxe :** mat = img &lt;&lt; Get Pixels();{r, g, b} = img &lt;&lt; Get Pixels("rgb");{r, g, b, a} = img &lt;&lt; Get Pixels("rgba")
 
 **Description :** Si aucun indicateur de couleur n&apos;est spécifié, une matrice des couleurs JSL représentant les valeurs des pixels est renvoyée. Un indicateur de couleur rgb renverra une liste de trois matrices, rouge, verte et bleue, respectivement. Spécifier rgba renverra le canal alpha (transparence) ainsi que le rouge, le vert et le bleu.
 
@@ -407,9 +401,7 @@ win = New Window( "tile(40,40)", img );
 
 ### GetSize
 
-**Syntaxe :** {w,h} = pic << Get Size 
-
-{w,h} = pic << Size
+**Syntaxe :** {w,h} = pic &lt;&lt; Get Size {w,h} = pic &lt;&lt; Size
 
 **Description :** Renvoie une liste contenant la largeur et la hauteur de l’image.
 
@@ -425,7 +417,7 @@ Show( s );
 
 ### Remove Frame
 
-**Syntaxe :** obj << Remove Frame
+**Syntaxe :** obj &lt;&lt; Remove Frame
 
 **Description :** Supprime un cadre d&apos;une image animée. L&apos;indice du cadre à supprimer est ignoré.
 
@@ -439,7 +431,7 @@ img << Remove Frame( 0 );
 
 ### Rotate
 
-**Syntaxe :** obj << Rotate( angle )
+**Syntaxe :** obj &lt;&lt; Rotate( angle )
 
 **Description :** Fait pivoter l’image de l’angle de rotation spécifié.
 
@@ -456,7 +448,7 @@ obj2 = New Window( "Rotated", img );
 
 ### Save Image
 
-**Syntaxe :** obj << Save Image( filePath, image type )
+**Syntaxe :** obj &lt;&lt; Save Image( filePath, image type )
 
 **Description :** Enregistre l&apos;image en respectant l&apos;emplacement et le nom de fichier spécifiés. Le deuxième paramètre indique quel type d&apos;image enregistrer, quelle que soit l&apos;extension utilisée dans le nom de fichier. Les types d&apos;image valides sont notamment les types PNG, JPG, GIF, TIFF, BMP, et PDF. Si aucun type d&apos;image n&apos;est spécifié, ou si le type d&apos;image n&apos;est pas compris, l&apos;image est enregistrée sous la forme d&apos;un fichier PNG.
 
@@ -471,7 +463,7 @@ img << Save Image( "$TEMP/Mediterranean.jpg", "jpg" );
 
 ### Scale
 
-**Syntaxe :** obj << Scale( scale | xscale, yscale )
+**Syntaxe :** obj &lt;&lt; Scale( scale | xscale, yscale )
 
 **Description :** Applique un facteur d&apos;échelle à la hauteur et à la largeur de l&apos;image, ou applique une échelle différente pour la largeur (xscale) et la hauteur (yscale).
 
@@ -501,13 +493,13 @@ obj2 = New Window( "Tile scaled by 2 vertically and by 0.5 horizontally", img );
 
 ### Set Blob
 
-**Syntaxe :** obj << Set Blob
+**Syntaxe :** obj &lt;&lt; Set Blob
 
 **Description :** Définit l’image à partir d’un blob.
 
 ### Set Current Frame
 
-**Syntaxe :** obj << Set Current Frame( frame )
+**Syntaxe :** obj &lt;&lt; Set Current Frame( frame )
 
 **Description :** Définit le numéro du cadre actif. Ce numéro sera égal à 0 pour la plupart des images ou, pour les fichiers GIF animés, compris entre 0 et le nombre de cadres moins un. Les actions, telles que getPixels et setPixels, agiront sur le cadre actif.
 
@@ -528,7 +520,7 @@ win << Close Window();
 
 ### Set Frame Duration
 
-**Syntaxe :** obj << Set Frame Duration( duration )
+**Syntaxe :** obj &lt;&lt; Set Frame Duration( duration )
 
 **Description :** Définit la durée du cadre actif dans une image animée. Le temps est spécifié en millisecondes.
 
@@ -543,7 +535,7 @@ durs = img << Get Frame Durations();
 
 ### Set N Loops
 
-**Syntaxe :** obj << Set N Loops( loops )
+**Syntaxe :** obj &lt;&lt; Set N Loops( loops )
 
 **Description :** Définit le nombre de fois où une image animée doit répéter la boucle de sa séquence. Un 0 indique qu&apos;elle doit la répéter à l&apos;infini.
 
@@ -558,9 +550,7 @@ loops = img << Get N Loops();
 
 ### Set Pixels
 
-**Syntaxe :** img << Set Pixels(jslmat);
-
-img << Set Pixels ("rgb", {r, g, b})
+**Syntaxe :** img &lt;&lt; Set Pixels(jslmat);img &lt;&lt; Set Pixels ("rgb", {r, g, b})
 
 **Description :** Définit la ou les matrices de pixels pour l&apos;image. Si une matrice est spécifiée sans indicateur de couleur, elle est traitée comme une matrice des couleurs JSL. Un indicateur de couleur peut être spécifié, comme rgb, pour indiquer que les matrices suivantes sont respectivement rouges, vertes et bleues. Dans ce cas, la taille de toutes les matrices spécifiées doit être la même.
 
@@ -596,7 +586,7 @@ win2 = New Window( "Gray Scale", img );
 
 ### SetSize
 
-**Syntaxe :** obj << SetSize( {width, height} )
+**Syntaxe :** obj &lt;&lt; SetSize( {width, height} )
 
 **Description :** Définit la taille de l’image en fonction de la hauteur et de la largeur spécifiées.
 
@@ -612,9 +602,7 @@ obj2 = New Window( "Larger tile(40,40)", img );
 
 ### Size
 
-**Syntaxe :** {w,h} = pic << Get Size 
-
-{w,h} = pic << Size
+**Syntaxe :** {w,h} = pic &lt;&lt; Get Size {w,h} = pic &lt;&lt; Size
 
 **Description :** Renvoie une liste contenant la largeur et la hauteur de l’image.
 
@@ -630,7 +618,7 @@ Show( s );
 
 ### Transparency
 
-**Syntaxe :** obj << Transparency( fraction )
+**Syntaxe :** obj &lt;&lt; Transparency( fraction )
 
 **Description :** Applique de la transparence sur une image. Les valeurs valides sont comprises entre 0.0 (transparent) et 1.0 (opaque)
 

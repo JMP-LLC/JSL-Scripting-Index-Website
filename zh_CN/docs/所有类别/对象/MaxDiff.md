@@ -6,7 +6,7 @@
 
 ### Action
 
-**语法:** obj << Action
+**语法:** obj &lt;&lt; Action
 
 **说明:** 平台内用于插入表达式以求值的所有用途的陷门。暂时将 DisplayBox 和 DataTable 上下文设置为平台。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**语法:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**语法:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **说明:** 将以前创建的预设应用到对象，从而更新选项和定制以匹配保存的设置。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**语法:** obj << Automatic Recalc( state=0|1 )
+**语法:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **说明:** 对排除和数据更改自动重新执行分析。若启用了“自动重新计算”选项，则应考虑使用 Wait(0) 命令来确保排除和数据更改在重新计算前生效。
 
@@ -96,7 +96,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**语法:** obj << Broadcast(message)
+**语法:** obj &lt;&lt; Broadcast(message)
 
 **说明:** 将消息广播到平台。若各个对象的返回结果是表，则它们会尽可能拼接，并且最终格式与表框中“保存合并表”选项的结果或使用“源”列的“拼接”选项的结果相同。除此之外，结果存储在列表中并返回。
 
@@ -116,7 +116,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**语法:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**语法:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **说明:** 添加用于更改平台变量的控制面板
 
@@ -134,7 +134,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**语法:** obj << Copy ByGroup Script
+**语法:** obj &lt;&lt; Copy ByGroup Script
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其置于剪贴板上。
 
@@ -164,7 +164,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**语法:** obj << Copy Script
+**语法:** obj &lt;&lt; Copy Script
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其置于剪贴板上。
 
@@ -188,7 +188,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**语法:** obj << Data Table Window
+**语法:** obj &lt;&lt; Data Table Window
 
 **说明:** 将该分析的数据表窗口移动到前面。
 
@@ -212,7 +212,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**语法:** obj << Get By Levels
+**语法:** obj &lt;&lt; Get By Levels
 
 **说明:** 返回将“依据”组列映射到其值的关联数组。
 
@@ -229,7 +229,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**语法:** obj << Get ByGroup Script
+**语法:** obj &lt;&lt; Get ByGroup Script
 
 **说明:** 创建生成该分析的脚本 (JSL)，并将其作为表达式返回。
 
@@ -260,7 +260,7 @@ Show( t );
 
 ### Get Container
 
-**语法:** obj << Get Container
+**语法:** obj &lt;&lt; Get Container
 
 **说明:** 返回对保留对象内容的容器框的引用。
 
@@ -316,7 +316,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**语法:** obj << Get Data Table
+**语法:** obj &lt;&lt; Get Data Table
 
 **说明:** 返回对该数据表的引用。
 
@@ -341,7 +341,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**语法:** obj << Get Group Platform
+**语法:** obj &lt;&lt; Get Group Platform
 
 **说明:** 若该平台是组的一部分，则返回组平台对象。否则返回 Empty()。
 
@@ -358,7 +358,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**语法:** obj << Get Script
+**语法:** obj &lt;&lt; Get Script
 
 **说明:** 创建生成该分析的脚本 (JSL)，并将其作为表达式返回。
 
@@ -383,7 +383,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**语法:** obj << Get Script With Data Table
+**语法:** obj &lt;&lt; Get Script With Data Table
 
 **说明:** 创建生成该分析的脚本 (JSL) 以专门引用该数据表，并将其作为表达式返回。
 
@@ -408,7 +408,7 @@ Show( t );
 
 ### Get Timing
 
-**语法:** obj << Get Timing
+**语法:** obj &lt;&lt; Get Timing
 
 **说明:** 平台启动过程计时。
 
@@ -433,7 +433,7 @@ Show( t );
 
 ### Get Web Support
 
-**语法:** obj << Get Web Support
+**语法:** obj &lt;&lt; Get Web Support
 
 **说明:** 返回一个数字，指示显示对象的交互式 HTML 支持的水平。1 表示支持部分或全部元素。0 表示不支持。
 
@@ -449,7 +449,7 @@ Show( s );
 
 ### Get Where Expr
 
-**语法:** obj << Get Where Expr
+**语法:** obj &lt;&lt; Get Where Expr
 
 **说明:** 若平台是使用 By() 或 Where() 启动的，则返回数据子集的 Where 表达式。否则返回 Empty()
 
@@ -486,7 +486,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**语法:** obj << Local Data Filter
+**语法:** obj &lt;&lt; Local Data Filter
 
 **说明:** 将数据过滤到特定的组或范围，但在该平台中是本地的
 
@@ -542,7 +542,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**语法:** obj << Paste Local Data Filter
+**语法:** obj &lt;&lt; Paste Local Data Filter
 
 **说明:** 将剪贴板中的本地数据过滤器应用于当前报表。
 
@@ -563,7 +563,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**语法:** obj << Redo Analysis
+**语法:** obj &lt;&lt; Redo Analysis
 
 **说明:** 在新窗口中重新运行相同的分析。若数据发生更改，分析也将不同。
 
@@ -587,7 +587,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**语法:** obj << Redo ByGroup Analysis
+**语法:** obj &lt;&lt; Redo ByGroup Analysis
 
 **说明:** 在新窗口中重新运行相同的分析。若数据发生更改，分析也将不同。
 
@@ -617,7 +617,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**语法:** obj << Relaunch Analysis
+**语法:** obj &lt;&lt; Relaunch Analysis
 
 **说明:** 打开平台启动窗口并重新调用曾用于创建报表的设置。
 
@@ -641,7 +641,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**语法:** obj << Relaunch ByGroup
+**语法:** obj &lt;&lt; Relaunch ByGroup
 
 **说明:** 打开平台启动窗口并重新调用曾用于创建报表的设置。
 
@@ -671,7 +671,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**语法:** obj << Remove Column Switcher
+**语法:** obj &lt;&lt; Remove Column Switcher
 
 **说明:** 删除已添加至平台的最近使用的“列切换器”。
 
@@ -691,7 +691,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**语法:** obj << Remove Local Data Filter
+**语法:** obj &lt;&lt; Remove Local Data Filter
 
 **说明:** 若已创建本地数据过滤器，这会将它删除并将平台恢复为直接使用数据表中的所有数据
 
@@ -730,9 +730,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**语法:** obj << Report;
-
-Report( obj )
+**语法:** obj &lt;&lt; Report;Report( obj )
 
 **说明:** 返回对该报表对象的引用。
 
@@ -758,7 +756,7 @@ Show( t );
 
 ### Report View
 
-**语法:** obj << Report View( "完全"|"汇总" )
+**语法:** obj &lt;&lt; Report View( "完全"|"汇总" )
 
 **说明:** 报表视图确定平台报表中可见的详细程度。Full 显示所有详细信息，而 Summary 仅显示根据平台确定的选定内容。对于定制行为，显示框支持 <<Set Summary Behavior 消息。
 
@@ -782,7 +780,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**语法:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**语法:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **说明:** 创建生成该分析的 JSL 脚本并将其保存为数据表中的表属性。您可以为脚本指定一个名称。Append Suffix 选项在脚本名称后追加一个数字后缀，用于将该脚本与现有的同名脚本区别出来。Prompt 选项提示用户指定脚本名称。Replace 选项会替换同名的现有脚本。
 
@@ -812,7 +810,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**语法:** obj << Save ByGroup Script to Journal
+**语法:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **说明:** 创建生成该分析的 JSL 脚本，并将一个按钮添加至包含该脚本的记录中。
 
@@ -842,7 +840,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**语法:** obj << Save ByGroup Script to Script Window
+**语法:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其追加至当前的脚本文本窗口中。
 
@@ -872,7 +870,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**语法:** obj << Save Script for All Objects
+**语法:** obj &lt;&lt; Save Script for All Objects
 
 **说明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -896,7 +894,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**语法:** obj << Save Script for All Objects To Data Table( <name> )
+**语法:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **说明:** 将所有报表对象的脚本保存至当前数据表。当您在该窗口中具有多个报表时，该选项很有用。除非您在引号中指定脚本名称，否则脚本将以第一个平台命名。
 
@@ -954,7 +952,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**语法:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**语法:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其作为表属性保存至数据表中。
 
@@ -978,7 +976,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**语法:** obj << Save Script to Journal
+**语法:** obj &lt;&lt; Save Script to Journal
 
 **说明:** 创建生成该分析的 JSL 脚本，并将一个按钮添加至包含该脚本的记录中。
 
@@ -1002,7 +1000,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**语法:** obj << Save Script to Report
+**语法:** obj &lt;&lt; Save Script to Report
 
 **说明:** 创建生成该分析的 JSL 脚本，并在报表中显示。有助于保留打印的已完成操作记录。
 
@@ -1026,7 +1024,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**语法:** obj << Save Script to Script Window
+**语法:** obj &lt;&lt; Save Script to Script Window
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其追加至当前的脚本文本窗口中。
 
@@ -1115,7 +1113,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**语法:** obj << Sync to Data Table Changes
+**语法:** obj &lt;&lt; Sync to Data Table Changes
 
 **说明:** 与已进行的排除和数据的更改同步。
 
@@ -1132,7 +1130,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**语法:** obj << Title( "new title" )
+**语法:** obj &lt;&lt; Title( "new title" )
 
 **说明:** 设置平台的标题。
 
@@ -1156,7 +1154,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**语法:** obj << Top Report
+**语法:** obj &lt;&lt; Top Report
 
 **说明:** 返回对报表中根节点的引用。
 
@@ -1182,7 +1180,7 @@ Show( t );
 
 ### Transform Column
 
-**语法:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**语法:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **说明:** 在对象（通常是平台）的本地上下文中创建变换列。变换列仅在平台的生命周期内是活动的。
 
@@ -1203,7 +1201,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**语法:** obj << View Web XML
+**语法:** obj &lt;&lt; View Web XML
 
 **说明:** 返回用于创建交互式 HTML 报表的 XML 代码。
 
@@ -1218,9 +1216,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**语法:** obj = MaxDiff(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = MaxDiff(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 设置要为报表创建的窗口类型。默认情况下将创建 Visible 报表窗口。Invisible 窗口将不显示在屏幕上，但可被函数（例如 Window()）发现。Private 窗口会响应大多数窗口消息，但不可发现并且必须通过报表对象处理
 
@@ -1241,7 +1237,7 @@ New Window( "Bivariate Equation",
 
 ### MaxDiff
 
-**语法:** MaxDiff( Profile DataTable( data table ), Profile ID( column ), Profile Effects( column(s) ), <Response Data Table( data table )>, <Subject Data Table( data table )>, <Response Profile ID Chosen( column )>, <Response Subject ID( column)>, <Response Grouping( column(s) )>, <Response Profile ID Choices( column(s) )>, <Profile Grouping( column(s) )>, <Subject Subject ID( column )>, <Subject Effects( column(s) )> )
+**语法:** MaxDiff( Profile DataTable( data table ), Profile ID( column ), Profile Effects( column(s) ), &lt;Response Data Table( data table )&gt;, &lt;Subject Data Table( data table )&gt;, &lt;Response Profile ID Chosen( column )&gt;, &lt;Response Subject ID( column)&gt;, &lt;Response Grouping( column(s) )&gt;, &lt;Response Profile ID Choices( column(s) )&gt;, &lt;Profile Grouping( column(s) )&gt;, &lt;Subject Subject ID( column )&gt;, &lt;Subject Effects( column(s) )&gt; )
 
 **说明:** 创建一个设计，找出客户最喜欢和最不喜欢的产品特性的组合。
 
@@ -1266,9 +1262,7 @@ obj = dt << MaxDiff(
 
 ### Choice Set ID
 
-**语法:** Choice( Choice Set ID( column ), ... )
-
-<b>启动窗口项: 是</b>
+**语法:** Choice( Choice Set ID( column ), ... )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 在一个数据表的情况下标识特定选择集的列，该选择集针对给定的偏好决定而提供给测试对象。
 
@@ -1292,9 +1286,7 @@ obj = Choice(
 
 ### Profile Effects
 
-**语法:** obj = MaxDiff(...<Profile Effects( column )>...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = MaxDiff(...&lt;Profile Effects( column )&gt;...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 在特征数据表中包含效应或因子值的一列或多列。
 
@@ -1317,9 +1309,7 @@ obj = dt << MaxDiff(
 
 ### Profile Grouping
 
-**语法:** Choice( Profile Grouping( column(s) ), ... )
-
-<b>启动窗口项: 是</b>
+**语法:** Choice( Profile Grouping( column(s) ), ... )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 与“特征 ID”列一起使用时，唯一指定每个选择集的列。
 
@@ -1342,9 +1332,7 @@ obj = dt << MaxDiff(
 
 ### Profile ID
 
-**语法:** Choice( Profile ID( column ), ... )
-
-<b>启动窗口项: 是</b>
+**语法:** Choice( Profile ID( column ), ... )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 在特征数据表中包含 ID 的列。
 
@@ -1367,9 +1355,7 @@ obj = dt << MaxDiff(
 
 ### Response Best Option
 
-**语法:** MaxDiff( Response Best Option( column ), ... )
-
-<b>启动窗口项: 是</b>
+**语法:** MaxDiff( Response Best Option( column ), ... )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 响应数据表中的一列，其中包含研究参与者指定为“最佳”的特征的“特征 ID”。
 
@@ -1398,9 +1384,7 @@ obj = MaxDiff(
 
 ### Response Freq
 
-**语法:** Choice( Response Freq( column ), ... )
-
-<b>启动窗口项: 是</b>
+**语法:** Choice( Response Freq( column ), ... )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定一列，其值为分析中的每一行都分配一个频数。
 
@@ -1423,9 +1407,7 @@ obj = dt << MaxDiff(
 
 ### Response Grouping
 
-**语法:** Choice( Response Grouping( column(s) ), ... )
-
-<b>启动窗口项: 是</b>
+**语法:** Choice( Response Grouping( column(s) ), ... )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 与“已选择的特征 ID”列一起使用时，唯一指定每个选择集的列。
 
@@ -1457,9 +1439,7 @@ Choice(
 
 ### Response Profile ID Choices
 
-**语法:** Choice( Response Profile ID Choice( columns ), ... )
-
-<b>启动窗口项: 是</b>
+**语法:** Choice( Response Profile ID Choice( columns ), ... )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 至少两列，它们包含可作为响应的可能选择。
 
@@ -1514,9 +1494,7 @@ obj = Choice(
 
 ### Response Subject ID
 
-**语法:** Choice( Response Subject ID( column ), ... )
-
-<b>启动窗口项: 是</b>
+**语法:** Choice( Response Subject ID( column ), ... )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 在响应数据表中标识研究参与者的列。
 
@@ -1571,9 +1549,7 @@ obj = Choice(
 
 ### Response Weight
 
-**语法:** Choice( Response Weight( column ), ... )
-
-<b>启动窗口项: 是</b>
+**语法:** Choice( Response Weight( column ), ... )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定一列，其值为分析中的每一行都分配一个权重。
 
@@ -1596,9 +1572,7 @@ obj = dt << MaxDiff(
 
 ### Response Worst Option
 
-**语法:** MaxDiff( Response Worst Option( column ), ... )
-
-<b>启动窗口项: 是</b>
+**语法:** MaxDiff( Response Worst Option( column ), ... )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 响应数据表中的一列，其中包含研究参与者指定为“最差”的特征的“特征 ID”。
 
@@ -1627,9 +1601,7 @@ obj = MaxDiff(
 
 ### Subject Effects
 
-**语法:** obj = MaxDiff(...<Subject Effects( column )>...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = MaxDiff(...&lt;Subject Effects( column )&gt;...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 在测试对象数据表中包含效应或因子值的一列或多列。
 
@@ -1684,9 +1656,7 @@ obj = Choice(
 
 ### Subject ID
 
-**语法:** Choice( Subject ID( column ), ... )
-
-<b>启动窗口项: 是</b>
+**语法:** Choice( Subject ID( column ), ... )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 在测试对象数据表或在一个数据表的情况下标识测试对象的列。
 
@@ -1706,9 +1676,7 @@ obj = Choice(
 
 ### Subject Subject ID
 
-**语法:** Choice( Subject Subject ID( column ), ... )
-
-<b>启动窗口项: 是</b>
+**语法:** Choice( Subject Subject ID( column ), ... )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 在测试对象数据表中标识研究参与者的列。
 
@@ -1765,7 +1733,7 @@ obj = Choice(
 
 ### All Levels Comparison Report
 
-**语法:** obj << All Levels Comparison Report( state=0|1 )
+**语法:** obj &lt;&lt; All Levels Comparison Report( state=0|1 )
 
 **说明:** 比较单个 MaxDiff 选择模型的所有水平。
 
@@ -1789,13 +1757,13 @@ obj << All Levels Comparison Report( 1 );
 
 ### Comparisons
 
-**语法:** obj << Comparisons( {term1(value1a),term2(value2a),...},{term1(value1b),term2(value2b),...} )
+**语法:** obj &lt;&lt; Comparisons( {term1(value1a),term2(value2a),...},{term1(value1b),term2(value2b),...} )
 
 **说明:** 执行两个特定备择选择特征之间的比较。使您能够指定您想要比较的因子和值。
 
 ### Confidence Intervals
 
-**语法:** obj << Confidence Intervals( state=0|1, <alpha> )
+**语法:** obj &lt;&lt; Confidence Intervals( state=0|1, &lt;alpha&gt; )
 
 **说明:** 显示或隐藏“参数估计值”报表中每个参数的 (1-alpha)% 置信区间。
 
@@ -1820,7 +1788,7 @@ obj << Confidence Intervals( 1, 0.01 );
 
 ### Confidence Limits
 
-**语法:** obj << Confidence Limits( state=0|1, <alpha> )
+**语法:** obj &lt;&lt; Confidence Limits( state=0|1, &lt;alpha&gt; )
 
 **说明:** 显示或隐藏“Bayes 参数估计值”报表中每个参数的置信限。限值是基于后验分布的 2.5 分位数和 97.5 分位数构造的。
 
@@ -1828,15 +1796,13 @@ obj << Confidence Intervals( 1, 0.01 );
 
 ### Convergence Criterion
 
-**语法:** obj = MaxDiff(...Convergence Criterion( number )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = MaxDiff(...Convergence Criterion( number )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 在估计参数时，设置可接受的收敛准则。
 
 ### Correlation of Estimates
 
-**语法:** obj << Correlation of Estimates( state=0|1 )
+**语法:** obj &lt;&lt; Correlation of Estimates( state=0|1 )
 
 **说明:** 显示或隐藏参数估计值的相关性矩阵。
 
@@ -1860,7 +1826,7 @@ obj << Correlation of Estimates( 1 );
 
 ### Effect Marginals
 
-**语法:** obj << Effect Marginals( state=0|1 )
+**语法:** obj &lt;&lt; Effect Marginals( state=0|1 )
 
 **说明:** 显示或隐藏模型中每个主效应的边缘概率和边缘效用。边缘概率是指在所有其他特性设置为其均值或默认水平下，相对于特性 B，试验个体选择 A 的概率。
 
@@ -1884,9 +1850,7 @@ obj << Effect Marginals( 1 );
 
 ### Firth Bias-Adjusted Estimates
 
-**语法:** obj = MaxDiff(...Firth Bias-Adjusted Estimates( state=0|1 )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = MaxDiff(...Firth Bias-Adjusted Estimates( state=0|1 )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 计算修正偏倚的最大似然估计值 (MLE)，以便生成比没有修正偏倚的 MLE 更准确的估计值和检验。这些估计值还可缓解 Logistic 模型中常见的分离问题。 默认开启。
 
@@ -1934,15 +1898,13 @@ obj = Choice(
 
 ### Hierarchical Bayes
 
-**语法:** obj = MaxDiff(...Hierarchical Bayes( state=0|1 )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = MaxDiff(...Hierarchical Bayes( state=0|1 )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 使用 Bayes 方法估计特定于测试对象的参数。
 
 ### Joint Factor Tests
 
-**语法:** obj << Joint Factor Tests( state=0|1 )
+**语法:** obj &lt;&lt; Joint Factor Tests( state=0|1 )
 
 **说明:** 针对涉及该因子的所有效应构造一个似然比检验，来检验模型中的每个因子。若模型中没有交互作用，则该选项需要测试对象数据表。
 
@@ -1966,7 +1928,7 @@ obj << Joint Factor Tests( 1 );
 
 ### Likelihood Ratio Tests
 
-**语法:** obj << Likelihood Ratio Tests( state=0|1 )
+**语法:** obj &lt;&lt; Likelihood Ratio Tests( state=0|1 )
 
 **说明:** 对模型中的每个效应执行似然比检验。默认情况下，对收敛时间短于五秒钟的模型启用。
 
@@ -1990,7 +1952,7 @@ obj << Likelihood Ratio Tests( 1 );
 
 ### Model Dialog
 
-**语法:** obj << Model Dialog
+**语法:** obj &lt;&lt; Model Dialog
 
 **说明:** 打开“模型对话框”窗口。
 
@@ -2014,19 +1976,15 @@ obj << Model Dialog;
 
 ### Number of Bayesian Iterations
 
-**语法:** obj = MaxDiff(...Number of Bayesian Iterations( number )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = MaxDiff(...Number of Bayesian Iterations( number )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 ### Number of Burn In Iterations
 
-**语法:** obj << Number of Burn In Iterations( number )
+**语法:** obj &lt;&lt; Number of Burn In Iterations( number )
 
 ### One Table
 
-**语法:** obj = MaxDiff(...One Table...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = MaxDiff(...One Table...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定数据在一个数据表中以堆叠格式存储。
 
@@ -2049,9 +2007,7 @@ obj = dt << MaxDiff(
 
 ### Profile DataTable
 
-**语法:** Choice( Profile Data Table( table ), ... )
-
-<b>启动窗口项: 是</b>
+**语法:** Choice( Profile Data Table( table ), ... )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 标识特征数据表。
 
@@ -2098,15 +2054,11 @@ obj = Choice(
 
 ### Remove Subject Effects
 
-**语法:** obj = MaxDiff(...Remove Subject Effects...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = MaxDiff(...Remove Subject Effects...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 ### Response Data Table
 
-**语法:** Choice( Response Data Table( table ), ... )
-
-<b>启动窗口项: 是</b>
+**语法:** Choice( Response Data Table( table ), ... )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 标识响应数据表。
 
@@ -2153,9 +2105,7 @@ obj = Choice(
 
 ### Response Value Indicates Best
 
-**语法:** MaxDiff( Response Value Indicates Best( value ), ... )
-
-<b>启动窗口项: 是</b>
+**语法:** MaxDiff( Response Value Indicates Best( value ), ... )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定代表该研究参与者指定为“最佳”的特征的“特征 ID”的值。
 
@@ -2178,9 +2128,7 @@ obj = dt << MaxDiff(
 
 ### Response Value Indicates Worst
 
-**语法:** MaxDiff( Response Value Indicates Worst( value ), ... )
-
-<b>启动窗口项: 是</b>
+**语法:** MaxDiff( Response Value Indicates Worst( value ), ... )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 指定代表该研究参与者指定为“最差”的特征的“特征 ID”的值。
 
@@ -2203,11 +2151,11 @@ obj = dt << MaxDiff(
 
 ### Save Bayes Chain
 
-**语法:** obj << Save Bayes Chain
+**语法:** obj &lt;&lt; Save Bayes Chain
 
 ### Save Gradients by Subject
 
-**语法:** obj << Save Gradients by Subject
+**语法:** obj &lt;&lt; Save Gradients by Subject
 
 **说明:** 创建新表，其中包含对象各参数的平均步长，每个对象对应一行。
 
@@ -2231,11 +2179,11 @@ obj << Save Gradients by Subject;
 
 ### Save Subject Estimates
 
-**语法:** obj << Save Subject Estimates
+**语法:** obj &lt;&lt; Save Subject Estimates
 
 ### Save Utility Formula
 
-**语法:** obj << Save Utility Formula
+**语法:** obj &lt;&lt; Save Utility Formula
 
 **说明:** 在特征数据表中创建新列，其中包含用于所评估线性模型的公式。
 
@@ -2259,7 +2207,7 @@ obj << Save Utility Formula;
 
 ### Show MLE Parameter Estimates
 
-**语法:** obj << Show MLE Parameter Estimates( state=0|1 )
+**语法:** obj &lt;&lt; Show MLE Parameter Estimates( state=0|1 )
 
 **说明:** 显示使用 Bayes 参数估计值的最大似然估计值。
 
@@ -2284,9 +2232,7 @@ obj << Show MLE Parameter Estimates( 1 );
 
 ### Subject DataTable
 
-**语法:** Choice( Subject Data Table( table ), ... )
-
-<b>启动窗口项: 是</b>
+**语法:** Choice( Subject Data Table( table ), ... )&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 标识测试对象数据表。
 
@@ -2341,5 +2287,5 @@ obj = Choice(
 
 ### Use Adaptive Bayes
 
-**语法:** obj << Use Adaptive Bayes( state=0|1 )
+**语法:** obj &lt;&lt; Use Adaptive Bayes( state=0|1 )
 

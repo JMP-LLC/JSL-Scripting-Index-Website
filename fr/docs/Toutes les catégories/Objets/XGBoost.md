@@ -6,7 +6,7 @@
 
 ### Censor
 
-**Syntaxe :** obj << Censor( column )
+**Syntaxe :** obj &lt;&lt; Censor( column )
 
 **JMP Version ajoutée :** 17
 
@@ -20,7 +20,7 @@ obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
 
 ### Factor
 
-**Syntaxe :** obj << Factor( column(s) )
+**Syntaxe :** obj &lt;&lt; Factor( column(s) )
 
 **JMP Version ajoutée :** 15
 
@@ -34,7 +34,7 @@ obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
 
 ### Freq
 
-**Syntaxe :** obj << Freq( column )
+**Syntaxe :** obj &lt;&lt; Freq( column )
 
 **JMP Version ajoutée :** 16
 
@@ -53,7 +53,7 @@ obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
 
 ### Response
 
-**Syntaxe :** obj << Response( column(s) )
+**Syntaxe :** obj &lt;&lt; Response( column(s) )
 
 **JMP Version ajoutée :** 15
 
@@ -67,7 +67,7 @@ obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
 
 ### Validation
 
-**Syntaxe :** obj << Validation( column(s) )
+**Syntaxe :** obj &lt;&lt; Validation( column(s) )
 
 **JMP Version ajoutée :** 15
 
@@ -81,7 +81,7 @@ obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
 
 ### Weight
 
-**Syntaxe :** obj << Weight( column )
+**Syntaxe :** obj &lt;&lt; Weight( column )
 
 **JMP Version ajoutée :** 15
 
@@ -96,7 +96,7 @@ obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
 
 ### X
 
-**Syntaxe :** obj << X( column(s) )
+**Syntaxe :** obj &lt;&lt; X( column(s) )
 
 **JMP Version ajoutée :** 15
 
@@ -110,7 +110,7 @@ obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
 
 ### Y
 
-**Syntaxe :** obj << Y( column(s) )
+**Syntaxe :** obj &lt;&lt; Y( column(s) )
 
 **JMP Version ajoutée :** 15
 
@@ -142,7 +142,7 @@ obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
 
 ### Change Variables
 
-**Syntaxe :** obj << Change Variables
+**Syntaxe :** obj &lt;&lt; Change Variables
 
 **Description :** Modifie X, Y et d&apos;autres variables pour les modèles consécutifs.
 
@@ -150,7 +150,7 @@ obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
 
 ### Compare
 
-**Syntaxe :** obj << Compare
+**Syntaxe :** obj &lt;&lt; Compare
 
 **Description :** Met à jour les métriques de comparaison XGBoost.
 
@@ -167,7 +167,7 @@ obj << Compare( Correlation( 1 ) );
 
 ### Fit
 
-**Syntaxe :** obj << Fit
+**Syntaxe :** obj &lt;&lt; Fit
 
 **Description :** Ajuste un modèle XGBoost. Vous pouvez spécifier les paramètres XGBoost et les spécifications d&apos;ajustement contenues.
 
@@ -183,13 +183,13 @@ obj = XGBoost( Y( :Weight ), X( :Height ), Fit );
 
 ### Get Measures
 
-**Syntaxe :** obj << Get Measures
+**Syntaxe :** obj &lt;&lt; Get Measures
 
 **JMP Version ajoutée :** 16
 
 ### Redo Analysis
 
-**Syntaxe :** obj << Redo Analysis
+**Syntaxe :** obj &lt;&lt; Redo Analysis
 
 **Description :** Exécute à nouveau cette même analyse dans une nouvelle fenêtre. L&apos;analyse sera différente si les données ont été modifiées.
 
@@ -206,7 +206,7 @@ obj << Redo Analysis;
 
 ### Relaunch Analysis
 
-**Syntaxe :** obj << Relaunch Analysis
+**Syntaxe :** obj &lt;&lt; Relaunch Analysis
 
 **Description :** Ouvre la fenêtre de lancement de la plate-forme et rappelle les paramètres utilisés pour créer le rapport.
 
@@ -223,7 +223,7 @@ obj << Relaunch Analysis;
 
 ### Show Details
 
-**Syntaxe :** obj << Show Details( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Show Details( state=0|1 )
 
 **Description :** Affiche plus de détails.
 
@@ -241,7 +241,7 @@ XGBoost( Y( :Weight ), X( :Height ), Show Details( 1 ) );
 
 ### Action
 
-**Syntaxe :** obj << Action
+**Syntaxe :** obj &lt;&lt; Action
 
 **Description :** Trappe tout usage dans une plate-forme pour y insérer les expressions à calculer. Définit provisoirement les contextes des boîtes d’affichage et des tables de données dans la plate-forme.
 
@@ -259,7 +259,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Syntaxe :** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntaxe :** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Description :** Appliquez une préconfiguration créée précédemment à l&apos;objet, ce qui met à jour les options et les personnalisations pour correspondre aux paramètres enregistrés.
 
@@ -306,7 +306,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Copy ByGroup Script
 
-**Syntaxe :** obj << Copy ByGroup Script
+**Syntaxe :** obj &lt;&lt; Copy ByGroup Script
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis le place dans le presse-papiers.
 
@@ -326,7 +326,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Syntaxe :** obj << Copy Script
+**Syntaxe :** obj &lt;&lt; Copy Script
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis le place dans le presse-papiers.
 
@@ -341,7 +341,7 @@ obj << Copy Script;
 
 ### Get By Levels
 
-**Syntaxe :** obj << Get By Levels
+**Syntaxe :** obj &lt;&lt; Get By Levels
 
 **Description :** Renvoie un tableau associatif de mappage des colonnes par groupe à leurs valeurs.
 
@@ -358,7 +358,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Syntaxe :** obj << Get ByGroup Script
+**Syntaxe :** obj &lt;&lt; Get ByGroup Script
 
 **Description :** Crée un script (JSL) pour produire cette analyse et la renvoyer sous forme d’une expression.
 
@@ -379,7 +379,7 @@ Show( t );
 
 ### Get Container
 
-**Syntaxe :** obj << Get Container
+**Syntaxe :** obj &lt;&lt; Get Container
 
 **Description :** Renvoie une référence à la zone conteneur où se trouve le contenu de l&apos;objet.
 
@@ -428,7 +428,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Syntaxe :** obj << Get Data Table
+**Syntaxe :** obj &lt;&lt; Get Data Table
 
 **Description :** Renvoie une référence à la table de données.
 
@@ -444,7 +444,7 @@ Show( N Rows( t ) );
 
 ### Get Script
 
-**Syntaxe :** obj << Get Script
+**Syntaxe :** obj &lt;&lt; Get Script
 
 **Description :** Crée un script (JSL) pour produire cette analyse et la renvoyer sous forme d’une expression.
 
@@ -460,7 +460,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Syntaxe :** obj << Get Script With Data Table
+**Syntaxe :** obj &lt;&lt; Get Script With Data Table
 
 **Description :** Crée un script (JSL) pour produire cette analyse faisant spécifiquement référence à cette table de données et la renvoyer sous forme d’une expression.
 
@@ -476,7 +476,7 @@ Show( t );
 
 ### Get Timing
 
-**Syntaxe :** obj << Get Timing
+**Syntaxe :** obj &lt;&lt; Get Timing
 
 **Description :** Détermine une heure de lancement de la plate-forme.
 
@@ -492,7 +492,7 @@ Show( t );
 
 ### Get Web Support
 
-**Syntaxe :** obj << Get Web Support
+**Syntaxe :** obj &lt;&lt; Get Web Support
 
 **Description :** Renvoyer un nombre indiquant le niveau de support HTML interactif pour l&apos;objet d&apos;affichage. 1 signifie que tout ou partie des éléments sont pris en charge. 0 signifie qu&apos;il n&apos;y a aucun support.
 
@@ -508,7 +508,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Syntaxe :** obj << Get Where Expr
+**Syntaxe :** obj &lt;&lt; Get Where Expr
 
 **Description :** Renvoie l&apos;expression Where pour le sous-ensemble de données, si la plate-forme a été lancée avec By() ou Where(). Sinon, renvoie la Empty()
 
@@ -602,9 +602,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Syntaxe :** obj << Report;
-
-Report( obj )
+**Syntaxe :** obj &lt;&lt; Report;Report( obj )
 
 **Description :** Renvoie une référence à l’objet rapport.
 
@@ -621,7 +619,7 @@ Show( t );
 
 ### Save ByGroup Script to Data Table
 
-**Syntaxe :** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntaxe :** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;enregistre sous forme de propriété de table dans la table de données. Vous pouvez spécifier un nom pour le script. L&apos;option Append Suffix ajoute un suffixe numérique au nom du script, ce qui différentie le script d&apos;un script existant portant le même nom. L&apos;option Prompt invite l&apos;utilisateur à spécifier un nom de script. L&apos;option Replace remplace un script existant avec le même nom.
 
@@ -641,7 +639,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Syntaxe :** obj << Save ByGroup Script to Journal
+**Syntaxe :** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis ajoute un bouton dans le journal qui contient ce script.
 
@@ -661,7 +659,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Syntaxe :** obj << Save ByGroup Script to Script Window
+**Syntaxe :** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;ajoute à la fenêtre de script active.
 
@@ -681,7 +679,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**Syntaxe :** obj << Save Script for All Objects
+**Syntaxe :** obj &lt;&lt; Save Script for All Objects
 
 **Description :** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -696,7 +694,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Syntaxe :** obj << Save Script for All Objects To Data Table( <name> )
+**Syntaxe :** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Description :** Enregistre un script pour tous les objets de rapport dans la table de données active. Cette option est utile lorsque vous avez plusieurs rapports dans la fenêtre. Le script est nommé d&apos;après la première plate-forme, sauf si vous spécifiez le nom du script entre guillemets.
 
@@ -734,7 +732,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Syntaxe :** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntaxe :** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;enregistre sous forme de propriété de tableau dans la table de données.
 
@@ -749,7 +747,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Syntaxe :** obj << Save Script to Journal
+**Syntaxe :** obj &lt;&lt; Save Script to Journal
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis ajoute un bouton dans le journal qui contient ce script.
 
@@ -764,7 +762,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Syntaxe :** obj << Save Script to Report
+**Syntaxe :** obj &lt;&lt; Save Script to Report
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;affiche dans le rapport lui-même. Utile pour conserver une trace écrite de ce qui a été effectué.
 
@@ -779,7 +777,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Syntaxe :** obj << Save Script to Script Window
+**Syntaxe :** obj &lt;&lt; Save Script to Script Window
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;ajoute à la fenêtre de script active.
 
@@ -864,7 +862,7 @@ dt << Distribution(
 
 ### Title
 
-**Syntaxe :** obj << Title( "new title" )
+**Syntaxe :** obj &lt;&lt; Title( "new title" )
 
 **Description :** Définit le titre de la plate-forme.
 
@@ -879,7 +877,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Syntaxe :** obj << Top Report
+**Syntaxe :** obj &lt;&lt; Top Report
 
 **Description :** Renvoie une référence au nœud racine dans le rapport.
 
@@ -896,7 +894,7 @@ Show( t );
 
 ### View Web XML
 
-**Syntaxe :** obj << View Web XML
+**Syntaxe :** obj &lt;&lt; View Web XML
 
 **Description :** Renvoie le code XML utilisé pour créer le rapport au format HTML interactif.
 
@@ -921,7 +919,7 @@ xml = obj << View Web XML;
 
 #### AUC
 
-**Syntaxe :** obj << AUC( state=0|1 )
+**Syntaxe :** obj &lt;&lt; AUC( state=0|1 )
 
 **Description :** Affiche ou masque l&apos;AUROC, qui est la zone au-dessous de la courbe ROC. Actif par défaut.
 
@@ -929,7 +927,7 @@ xml = obj << View Web XML;
 
 #### AUPRC
 
-**Syntaxe :** obj << AUPRC( state=0|1 )
+**Syntaxe :** obj &lt;&lt; AUPRC( state=0|1 )
 
 **Description :** Zone sous la courbe de précision rappel Actif par défaut.
 
@@ -937,7 +935,7 @@ xml = obj << View Web XML;
 
 #### Accuracy
 
-**Syntaxe :** obj << Accuracy( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Accuracy( state=0|1 )
 
 **Description :** Affiche ou masque la précision, qui est la proportion de classifications correctes. Actif par défaut.
 
@@ -945,7 +943,7 @@ xml = obj << View Web XML;
 
 #### Censor
 
-**Syntaxe :** obj << Censor( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Censor( state=0|1 )
 
 **Description :** Affiche ou masque la commande Censure Actif par défaut.
 
@@ -953,7 +951,7 @@ xml = obj << View Web XML;
 
 #### Concordance
 
-**Syntaxe :** obj << Concordance( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Concordance( state=0|1 )
 
 **Description :** Affiche ou masque la concordance, qui correspond au C-Index de Harrell et mesure la force de l&apos;efficacité de triage. Actif par défaut.
 
@@ -961,7 +959,7 @@ xml = obj << View Web XML;
 
 #### Correlation
 
-**Syntaxe :** obj << Correlation( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Correlation( state=0|1 )
 
 **Description :** Affiche ou masque la corrélation de Pearson, qui est une mesure de la force de la relation linéaire. Actif par défaut.
 
@@ -969,7 +967,7 @@ xml = obj << View Web XML;
 
 #### F1
 
-**Syntaxe :** obj << F1( state=0|1 )
+**Syntaxe :** obj &lt;&lt; F1( state=0|1 )
 
 **Description :** Affiche ou masque le score F1, qui est la moyenne harmonique de précision et de rappel. Actif par défaut.
 
@@ -977,7 +975,7 @@ xml = obj << View Web XML;
 
 #### Features
 
-**Syntaxe :** obj << Features( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Features( state=0|1 )
 
 **Description :** Affiche ou masque la colonne Fonctions. Actif par défaut.
 
@@ -985,7 +983,7 @@ xml = obj << View Web XML;
 
 #### Freq
 
-**Syntaxe :** obj << Freq( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Freq( state=0|1 )
 
 **Description :** Affiche ou masque la colonne Fréquence. Actif par défaut.
 
@@ -993,7 +991,7 @@ xml = obj << View Web XML;
 
 #### H Measure
 
-**Syntaxe :** obj << H Measure( state=0|1 )
+**Syntaxe :** obj &lt;&lt; H Measure( state=0|1 )
 
 **Description :** Affiche ou masque la mesure H, qui mesure l&apos;amélioration de la proportion par rapport à la référence. Actif par défaut.
 
@@ -1001,7 +999,7 @@ xml = obj << View Web XML;
 
 #### Hide All Models
 
-**Syntaxe :** obj << Hide All Models
+**Syntaxe :** obj &lt;&lt; Hide All Models
 
 **Description :** Masque tous les modèles.
 
@@ -1009,7 +1007,7 @@ xml = obj << View Web XML;
 
 #### LogLoss
 
-**Syntaxe :** obj << LogLoss( state=0|1 )
+**Syntaxe :** obj &lt;&lt; LogLoss( state=0|1 )
 
 **Description :** Affiche ou masque le logarithme de la fonction de perte basée sur la vraisemblance. Actif par défaut.
 
@@ -1017,7 +1015,7 @@ xml = obj << View Web XML;
 
 #### MAE
 
-**Syntaxe :** obj << MAE( state=0|1 )
+**Syntaxe :** obj &lt;&lt; MAE( state=0|1 )
 
 **Description :** Affiche ou masque le MAE, qui est l&apos;erreur moyenne absolue. Actif par défaut.
 
@@ -1025,7 +1023,7 @@ xml = obj << View Web XML;
 
 #### MCC
 
-**Syntaxe :** obj << MCC( state=0|1 )
+**Syntaxe :** obj &lt;&lt; MCC( state=0|1 )
 
 **Description :** Affiche ou masque le coefficient de corrélation de Matthews, qui correspond à la corrélation de Pearson pour les variables binaires. Actif par défaut.
 
@@ -1033,7 +1031,7 @@ xml = obj << View Web XML;
 
 #### Misclass
 
-**Syntaxe :** obj << Misclass( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Misclass( state=0|1 )
 
 **Description :** Affiche ou masque le taux de mauvaises classifications, qui est la proportion de classifications incorrectes. Actif par défaut.
 
@@ -1041,7 +1039,7 @@ xml = obj << View Web XML;
 
 #### Predictors
 
-**Syntaxe :** obj << Predictors( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Predictors( state=0|1 )
 
 **Description :** Affiche ou masque la colonne Régresseurs. Actif par défaut.
 
@@ -1049,7 +1047,7 @@ xml = obj << View Web XML;
 
 #### Profit
 
-**Syntaxe :** obj << Profit( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Profit( state=0|1 )
 
 **Description :** Affiche ou masque le profit attendu. Actif par défaut.
 
@@ -1057,7 +1055,7 @@ xml = obj << View Web XML;
 
 #### RMSE
 
-**Syntaxe :** obj << RMSE( state=0|1 )
+**Syntaxe :** obj &lt;&lt; RMSE( state=0|1 )
 
 **Description :** Affiche ou masque le RMSE, qui est la racine de l&apos;erreur quadratique moyenne. Actif par défaut.
 
@@ -1065,7 +1063,7 @@ xml = obj << View Web XML;
 
 #### RSquare
 
-**Syntaxe :** obj << RSquare( state=0|1 )
+**Syntaxe :** obj &lt;&lt; RSquare( state=0|1 )
 
 **Description :** Affiche ou masque la valeur du R carré, qui correspond à la proportion de variabilité expliquée. Actif par défaut.
 
@@ -1073,7 +1071,7 @@ xml = obj << View Web XML;
 
 #### Remove Hidden Models
 
-**Syntaxe :** obj << Remove Hidden Models
+**Syntaxe :** obj &lt;&lt; Remove Hidden Models
 
 **Description :** Supprime tous les modèles dont la case Afficher est décochée.
 
@@ -1081,7 +1079,7 @@ xml = obj << View Web XML;
 
 #### Remove Shown Models
 
-**Syntaxe :** obj << Remove Shown Models
+**Syntaxe :** obj &lt;&lt; Remove Shown Models
 
 **Description :** Supprime tous les modèles pour lesquels la case Afficher est cochée et affiche les modèles restants.
 
@@ -1089,7 +1087,7 @@ xml = obj << View Web XML;
 
 #### Response
 
-**Syntaxe :** obj << Response( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Response( state=0|1 )
 
 **Description :** Affiche ou masque la colonne Réponse. Actif par défaut.
 
@@ -1097,7 +1095,7 @@ xml = obj << View Web XML;
 
 #### Show All Models
 
-**Syntaxe :** obj << Show All Models
+**Syntaxe :** obj &lt;&lt; Show All Models
 
 **Description :** Affiche tous les modèles.
 
@@ -1105,7 +1103,7 @@ xml = obj << View Web XML;
 
 #### Training Metrics
 
-**Syntaxe :** obj << Training Metrics( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Training Metrics( state=0|1 )
 
 **Description :** Affiche ou masque toutes les métriques d&apos;apprentissage. Actif par défaut.
 
@@ -1113,7 +1111,7 @@ xml = obj << View Web XML;
 
 #### Validation
 
-**Syntaxe :** obj << Validation( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Validation( state=0|1 )
 
 **Description :** Affiche ou masque la colonne Validation. Actif par défaut.
 
@@ -1121,7 +1119,7 @@ xml = obj << View Web XML;
 
 #### Validation Metrics
 
-**Syntaxe :** obj << Validation Metrics( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Validation Metrics( state=0|1 )
 
 **Description :** Affiche ou masque toutes les métriques de validation. Actif par défaut.
 
@@ -1129,7 +1127,7 @@ xml = obj << View Web XML;
 
 #### Weight
 
-**Syntaxe :** obj << Weight( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Weight( state=0|1 )
 
 **Description :** Affiche ou masque la colonne Pondération. Actif par défaut.
 
@@ -1147,7 +1145,7 @@ xml = obj << View Web XML;
 
 #### Actual by Predicted Plots
 
-**Syntaxe :** obj << Actual by Predicted Plots( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Actual by Predicted Plots( state=0|1 )
 
 **Description :** Affiche ou masque un graphique à l’aide des données d’apprentissage, avec les valeurs prévues sur l’axe X et les valeurs effectives sur l’axe Y. Actif par défaut.
 
@@ -1155,7 +1153,7 @@ xml = obj << View Web XML;
 
 #### Autotune
 
-**Syntaxe :** obj << Autotune
+**Syntaxe :** obj &lt;&lt; Autotune
 
 **Description :** Crée un plan uniforme flexible rapide entre les paramètres min et max pour ajuster n modèles, où n est le nombre d&apos;essais.
 
@@ -1163,7 +1161,7 @@ xml = obj << View Web XML;
 
 #### Confusion Matrices
 
-**Syntaxe :** obj << ( fit[number] << Confusion Matrices( state=0|1 ) )
+**Syntaxe :** obj &lt;&lt; ( fit[number] &lt;&lt; Confusion Matrices( state=0|1 ) )
 
 **Description :** Affiche ou masque une matrice de tabulation croisée des niveaux réels et prévus. Actif par défaut.
 
@@ -1184,7 +1182,7 @@ obj << (fit[1] << Confusion Matrices( 1 ));
 
 #### Contour Profiler
 
-**Syntaxe :** obj << Contour Profiler
+**Syntaxe :** obj &lt;&lt; Contour Profiler
 
 **Description :** Affiche ou masque les graphiques interactifs des sections croisées de la fonction de prévision.
 
@@ -1192,7 +1190,7 @@ obj << (fit[1] << Confusion Matrices( 1 ));
 
 #### Copy Parameters to Launch
 
-**Syntaxe :** obj << Copy Parameters to Launch
+**Syntaxe :** obj &lt;&lt; Copy Parameters to Launch
 
 **Description :** Copie les paramètres de ce modèle dans la section de lancement de modèle.
 
@@ -1200,7 +1198,7 @@ obj << (fit[1] << Confusion Matrices( 1 ));
 
 #### Decision Thresholds
 
-**Syntaxe :** obj << Decision Thresholds( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Decision Thresholds( state=0|1 )
 
 **Description :** Affiche ou masque les tables et les graphiques de seuil de décision. Actif par défaut.
 
@@ -1208,7 +1206,7 @@ obj << (fit[1] << Confusion Matrices( 1 ));
 
 #### Fit Details
 
-**Syntaxe :** obj << Fit Details( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Fit Details( state=0|1 )
 
 **Description :** Affiche ou masque les statistiques pour le modèle ajusté. Actif par défaut.
 
@@ -1216,7 +1214,7 @@ obj << (fit[1] << Confusion Matrices( 1 ));
 
 #### Generate Python Code
 
-**Syntaxe :** obj << Generate Python Code
+**Syntaxe :** obj &lt;&lt; Generate Python Code
 
 **Description :** Crée le code Python pour l&apos;apprentissage et le calcul du score.
 
@@ -1224,7 +1222,7 @@ obj << (fit[1] << Confusion Matrices( 1 ));
 
 #### Importances
 
-**Syntaxe :** obj << Importances( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Importances( state=0|1 )
 
 **Description :** Affiche ou masque les statistiques d&apos;importance pour chaque régresseur. Actif par défaut.
 
@@ -1232,7 +1230,7 @@ obj << (fit[1] << Confusion Matrices( 1 ));
 
 #### Lift Curves
 
-**Syntaxe :** obj << Lift Curves( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Lift Curves( state=0|1 )
 
 **Description :** Affiche ou masque la courbe Lift. La courbe Lift représente le lift en fonction de la proportion des observations et propose une autre vision de la capacité prédictive d&apos;un modèle.
 
@@ -1240,7 +1238,7 @@ obj << (fit[1] << Confusion Matrices( 1 ));
 
 #### Number of Design Points
 
-**Syntaxe :** obj << Number of Design Points( number=10 )
+**Syntaxe :** obj &lt;&lt; Number of Design Points( number=10 )
 
 **Description :** Spécifie le nombre d&apos;essais du plan de tuning à réaliser. Si vous avez un problème important, conservez une valeur relativement faible. "10" par défaut.
 
@@ -1256,7 +1254,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( Number of Design Points( 10 ) ) );
 
 #### Number of Inner Folds
 
-**Syntaxe :** obj << Number of Inner Folds( number=2 )
+**Syntaxe :** obj &lt;&lt; Number of Inner Folds( number=2 )
 
 **Description :** Spécifie le nombre de blocs internes imbriqués durant le processus de réglage automatique. "2" par défaut.
 
@@ -1272,7 +1270,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( Number of Inner Folds( 2 ) ) );
 
 #### Objective
 
-**Syntaxe :** obj << Objective( "reg:squarederror"|"binary:logistic"|"binary:hinge"|"count:poisson"|"multi:softprob"|"rank:pairwise"|"rank:ndcg"|"rank:map"|"reg:gamma"|"reg:logistic"|"reg:pseudohubererror"|"reg:squaredlogerror"|"reg:tweedie"|"survival:cox"="reg:squarederror" )
+**Syntaxe :** obj &lt;&lt; Objective( "reg:squarederror"|"binary:logistic"|"binary:hinge"|"count:poisson"|"multi:softprob"|"rank:pairwise"|"rank:ndcg"|"rank:map"|"reg:gamma"|"reg:logistic"|"reg:pseudohubererror"|"reg:squaredlogerror"|"reg:tweedie"|"survival:cox"="reg:squarederror" )
 
 **Description :** Spécifie la fonction à optimiser pour l&apos;ajustement du modèle. La fonction doit être consistante avec le type de modèle de la réponse. "reg:squarederror" par défaut.
 
@@ -1288,7 +1286,7 @@ XGBoost( Y( :Weight ), X( :Height ), objective( "reg:squarederror" ) );
 
 #### Precision Recall Curves
 
-**Syntaxe :** obj << Precision Recall Curves( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Precision Recall Curves( state=0|1 )
 
 **Description :** Représente graphiquement le compromis entre la précision et le rappel pour différents seuils de classification. A privilégier dans les scénarios avec des déséquilibres de classe.
 
@@ -1296,7 +1294,7 @@ XGBoost( Y( :Weight ), X( :Height ), objective( "reg:squarederror" ) );
 
 #### Profiler
 
-**Syntaxe :** obj << Profiler
+**Syntaxe :** obj &lt;&lt; Profiler
 
 **Description :** Affiche ou masque le profileur de prévision, qui permet de donner pour chaque facteur la coupe de la surface de prévision. Le profileur de prévision est doté de fonctions d&apos;optimisation.
 
@@ -1304,7 +1302,7 @@ XGBoost( Y( :Weight ), X( :Height ), objective( "reg:squarederror" ) );
 
 #### Publish Prediction Formula
 
-**Syntaxe :** obj << Publish Prediction Formula
+**Syntaxe :** obj &lt;&lt; Publish Prediction Formula
 
 **Description :** Crée des formules de prédiction et les enregistre sous la forme de scripts de colonne de formule dans la plate-forme Dépôt des formules.
 
@@ -1312,7 +1310,7 @@ XGBoost( Y( :Weight ), X( :Height ), objective( "reg:squarederror" ) );
 
 #### ROC Curves
 
-**Syntaxe :** obj << ROC Curves( state=0|1 )
+**Syntaxe :** obj &lt;&lt; ROC Curves( state=0|1 )
 
 **Description :** Affiche ou masque la courbe ROC pour chaque niveau de la variable de réponse. La courbe ROC est un graphique de la sensibilité par rapport à (1 - spécificité).
 
@@ -1320,7 +1318,7 @@ XGBoost( Y( :Weight ), X( :Height ), objective( "reg:squarederror" ) );
 
 #### Remove All But This Fit
 
-**Syntaxe :** obj << ( fit[number] << Remove All But This Fit )
+**Syntaxe :** obj &lt;&lt; ( fit[number] &lt;&lt; Remove All But This Fit )
 
 **Description :** Supprime les rapports et graphiques de tous les modèles, sauf le présent modèle.
 
@@ -1342,7 +1340,7 @@ obj << (Fit[1] << Remove All But This Fit);
 
 #### Remove Fit
 
-**Syntaxe :** obj << ( fit[number] << Remove Fit )
+**Syntaxe :** obj &lt;&lt; ( fit[number] &lt;&lt; Remove Fit )
 
 **Description :** Supprime le rapport du modèle tout entier.
 
@@ -1364,7 +1362,7 @@ obj << (Fit[1] << Remove Fit);
 
 #### Save Predicteds
 
-**Syntaxe :** obj << Save Predicteds
+**Syntaxe :** obj &lt;&lt; Save Predicteds
 
 **Description :** Enregistre les valeurs prévues dans une nouvelle colonne de la table de données.
 
@@ -1372,7 +1370,7 @@ obj << (Fit[1] << Remove Fit);
 
 #### Save Prediction Formula
 
-**Syntaxe :** obj << Save Prediction Formula
+**Syntaxe :** obj &lt;&lt; Save Prediction Formula
 
 **Description :** Enregistre la formule de régression dans une nouvelle colonne de la table de données. Pour les grands modèles, les calculs peuvent être lents.
 
@@ -1380,7 +1378,7 @@ obj << (Fit[1] << Remove Fit);
 
 #### Save SHAPs
 
-**Syntaxe :** obj << Save SHAPs
+**Syntaxe :** obj &lt;&lt; Save SHAPs
 
 **Description :** Enregistre les valeurs de Shapley dans la table de données. Ces valeurs décomposent les prévisions en composants pour chaque régresseur.
 
@@ -1388,7 +1386,7 @@ obj << (Fit[1] << Remove Fit);
 
 #### Surface Profiler
 
-**Syntaxe :** obj << Surface Profiler
+**Syntaxe :** obj &lt;&lt; Surface Profiler
 
 **Description :** Affiche ou masque les graphiques interactifs des sections croisées de la fonction de prévision.
 
@@ -1396,7 +1394,7 @@ obj << (Fit[1] << Remove Fit);
 
 #### Tree Details
 
-**Syntaxe :** obj << Tree Details( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Tree Details( state=0|1 )
 
 **Description :** Affiche ou masque la décomposition de chaque division de l&apos;arbre.
 
@@ -1412,7 +1410,7 @@ obj << (Fit[1] << Remove Fit);
 
 #### alpha
 
-**Syntaxe :** obj << alpha( number=0.0 )
+**Syntaxe :** obj &lt;&lt; alpha( number=0.0 )
 
 **Description :** Spécifie la valeur du terme de régularisation L1 sur les pondérations. Une valeur plus élevée rend le modèle plus conservateur. Cette valeur doit être positive ou nulle. "0.0" par défaut.
 
@@ -1428,7 +1426,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( alpha( 0.0 ) ) );
 
 #### alpha_max
 
-**Syntaxe :** obj << alpha_max( number=0.5 )
+**Syntaxe :** obj &lt;&lt; alpha_max( number=0.5 )
 
 **Description :** Spécifie la valeur maximum du terme de régularisation L1 sur les pondérations. Une valeur plus élevée rend le modèle plus conservateur. Cette valeur doit être positive ou nulle. "0.5" par défaut.
 
@@ -1444,7 +1442,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( alpha_max( 2.0 ) ) );
 
 #### alpha_min
 
-**Syntaxe :** obj << alpha_min( number=0.0 )
+**Syntaxe :** obj &lt;&lt; alpha_min( number=0.0 )
 
 **Description :** Spécifie la valeur minimum du terme de régularisation L1 sur les pondérations. Une valeur plus élevée rend le modèle plus conservateur. Cette valeur doit être positive ou nulle. "0.0" par défaut.
 
@@ -1460,7 +1458,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( alpha_min( 0.0 ) ) );
 
 #### base_score
 
-**Syntaxe :** obj << base_score( number=0.5 )
+**Syntaxe :** obj &lt;&lt; base_score( number=0.5 )
 
 **Description :** Spécifie le score de prévision initial de toutes les instances, correspondant au biais global. La moyenne de y est généralement un bon choix. "0.5" par défaut.
 
@@ -1476,7 +1474,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( base_score( 0.5 ) ) );
 
 #### booster
 
-**Syntaxe :** obj << booster( "gbtree"|"gblinear"|"dart"="gbtree" )
+**Syntaxe :** obj &lt;&lt; booster( "gbtree"|"gblinear"|"dart"="gbtree" )
 
 **Description :** Spécifie le booster à utiliser. "gbtree" par défaut.
 
@@ -1492,7 +1490,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( booster( "gbtree" ) ) );
 
 #### colsample_bylevel
 
-**Syntaxe :** obj << colsample_bylevel( number=1.0 )
+**Syntaxe :** obj &lt;&lt; colsample_bylevel( number=1.0 )
 
 **Description :** Spécifie la proportion de colonnes à échantillonner pour chaque niveau. L&apos;échantillonnage est réalisé une fois pour chaque nouveau niveau de profondeur atteint dans un arbre. "1.0" par défaut.
 
@@ -1508,7 +1506,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( colsample_bylevel( 1.0 ) ) );
 
 #### colsample_bynode
 
-**Syntaxe :** obj << colsample_bynode( number=1.0 )
+**Syntaxe :** obj &lt;&lt; colsample_bynode( number=1.0 )
 
 **Description :** Spécifie la proportion de colonnes à échantillonner pour chaque nœud (division). L&apos;échantillonnage se produit une fois à chaque évaluation d&apos;une nouvelle division. "1.0" par défaut.
 
@@ -1524,7 +1522,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( colsample_bynode( 1.0 ) ) );
 
 #### colsample_bytree
 
-**Syntaxe :** obj << colsample_bytree( number=1.0 )
+**Syntaxe :** obj &lt;&lt; colsample_bytree( number=1.0 )
 
 **Description :** Spécifie la proportion de colonnes à échantillonner lors de la construction de chaque arbre. L&apos;échantillonnage est réalisé une fois pour chaque arbre. Cette valeur doit être comprise entre 0 et 1. "1.0" par défaut.
 
@@ -1540,7 +1538,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( colsample_bytree( 1.0 ) ) );
 
 #### colsample_bytree_max
 
-**Syntaxe :** obj << colsample_bytree_max( number=1.0 )
+**Syntaxe :** obj &lt;&lt; colsample_bytree_max( number=1.0 )
 
 **Description :** Spécifie la proportion maximum de colonnes à échantillonner lors de la construction de chaque arbre. L&apos;échantillonnage est réalisé une fois pour chaque arbre. Cette valeur doit être comprise entre 0 et 1. "1.0" par défaut.
 
@@ -1556,7 +1554,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( colsample_bytree_max( 1.0 ) ) );
 
 #### colsample_bytree_min
 
-**Syntaxe :** obj << colsample_bytree_min( number=0.5 )
+**Syntaxe :** obj &lt;&lt; colsample_bytree_min( number=0.5 )
 
 **Description :** Spécifie la proportion minimum de colonnes à échantillonner lors de la construction de chaque arbre. L&apos;échantillonnage est réalisé une fois pour chaque arbre. Cette valeur doit être comprise entre 0 et 1. "0.5" par défaut.
 
@@ -1572,7 +1570,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( colsample_bytree_min( 0.3 ) ) );
 
 #### eval_metric
 
-**Syntaxe :** obj << eval_metric( text )
+**Syntaxe :** obj &lt;&lt; eval_metric( text )
 
 **Description :** Spécifie la métrique affichée dans le graphique historique des itérations mais n&apos;affecte pas l&apos;ajustement de modèle réel. Laissez cette valeur vide pour la métrique par défaut correspondant à la fonction objectif, ou spécifiez l&apos;une des métriques suivantes : rmse, rmsle, mae, logloss, error, error@t, merror, auc, aucpr, ndcg, map, ndcg@n, map@n, ndcg-, map-, ndcg@n-, map@n-, poisson-nloglik, gamma-nloglik, cox-nloglik, gamma-deviance, tweedie-nloglik.
 
@@ -1588,7 +1586,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( eval_metric( rmse ) ) );
 
 #### feature_selector
 
-**Syntaxe :** obj << feature_selector( "cyclic"|"shuffle"|"greedy"|"thrifty"="cyclic" )
+**Syntaxe :** obj &lt;&lt; feature_selector( "cyclic"|"shuffle"|"greedy"|"thrifty"="cyclic" )
 
 **Description :** Spécifie la méthode de sélection de fonction et de classement pour le booster linéaire. "cyclic" par défaut.
 
@@ -1609,7 +1607,7 @@ XGBoost(
 
 #### gamma
 
-**Syntaxe :** obj << gamma( number=0.0 )
+**Syntaxe :** obj &lt;&lt; gamma( number=0.0 )
 
 **Description :** Spécifie la réduction de perte minimum requise pour créer une nouvelle partition sur un nœud de feuille de l&apos;arbre. "0.0" par défaut.
 
@@ -1625,7 +1623,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( Gamma( 0.0 ) ) );
 
 #### grow_policy
 
-**Syntaxe :** obj << grow_policy( "depthwise"|"lossguide"="depthwise" )
+**Syntaxe :** obj &lt;&lt; grow_policy( "depthwise"|"lossguide"="depthwise" )
 
 **Description :** Spécifie la méthode utilisée pour ajouter de nouveaux nœuds aux arbres. Actuellement, cette option s&apos;applique uniquement lorsque tree_method=hist. "depthwise" par défaut.
 
@@ -1641,7 +1639,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( grow_policy( "depthwise" ) ) );
 
 #### interaction_constraints
 
-**Syntaxe :** obj << interaction_constraints( text )
+**Syntaxe :** obj &lt;&lt; interaction_constraints( text )
 
 **Description :** Spécifie les contraintes d&apos;interaction des fonctions comme une liste imbriquée d&apos;indices de fonction entre crochets. Les fonctions groupées ensemble peuvent uniquement interagir entre elles.
 
@@ -1662,7 +1660,7 @@ XGBoost(
 
 #### iterations
 
-**Syntaxe :** obj << iterations( number=30 )
+**Syntaxe :** obj &lt;&lt; iterations( number=30 )
 
 **Description :** Spécifie le nombre d&apos;itérations boosting. "30" par défaut.
 
@@ -1678,7 +1676,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( iterations( 100 ) ) );
 
 #### iterations_max
 
-**Syntaxe :** obj << iterations_max( number=100 )
+**Syntaxe :** obj &lt;&lt; iterations_max( number=100 )
 
 **Description :** Spécifie le nombre maximum d&apos;itérations boosting. "100" par défaut.
 
@@ -1694,7 +1692,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( iterations_max( 300 ) ) );
 
 #### iterations_min
 
-**Syntaxe :** obj << iterations_min( number=20 )
+**Syntaxe :** obj &lt;&lt; iterations_min( number=20 )
 
 **Description :** Spécifie le nombre minimum d&apos;itérations boosting. "20" par défaut.
 
@@ -1710,7 +1708,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( iterations_min( 20 ) ) );
 
 #### lambda
 
-**Syntaxe :** obj << lambda( number=1.0 )
+**Syntaxe :** obj &lt;&lt; lambda( number=1.0 )
 
 **Description :** Spécifie la valeur du terme de régularisation L2 sur les pondérations. Une valeur plus élevée rend le modèle plus classique. Cette valeur doit être positive ou nulle. "1.0" par défaut.
 
@@ -1726,7 +1724,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( lambda( 1.0 ) ) );
 
 #### lambda_max
 
-**Syntaxe :** obj << lambda_max( number=2.0 )
+**Syntaxe :** obj &lt;&lt; lambda_max( number=2.0 )
 
 **Description :** Spécifie la valeur maximum du terme de régularisation L2 sur les pondérations. Une valeur plus élevée rend le modèle plus conservateur. Cette valeur doit être positive ou nulle. "2.0" par défaut.
 
@@ -1742,7 +1740,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( lambda_max( 2.0 ) ) );
 
 #### lambda_min
 
-**Syntaxe :** obj << lambda_min( number=0.0 )
+**Syntaxe :** obj &lt;&lt; lambda_min( number=0.0 )
 
 **Description :** Spécifie la valeur minimum du terme de régularisation L2 sur les pondérations. Une valeur plus élevée rend le modèle plus conservateur. Cette valeur doit être positive ou nulle. "0.0" par défaut.
 
@@ -1758,7 +1756,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( lambda_min( 0.0 ) ) );
 
 #### learning_rate
 
-**Syntaxe :** obj << learning_rate( number=0.3 )
+**Syntaxe :** obj &lt;&lt; learning_rate( number=0.3 )
 
 **Description :** Spécifie le taux d’apprentissage. Des taux d&apos;apprentissage inférieurs s&apos;ajustent mieux mais nécessitent davantage d&apos;itérations pour converger, tandis que des taux d’apprentissage supérieurs s&apos;ajustent plus rapidement. "0.3" par défaut.
 
@@ -1774,7 +1772,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( learning_rate( 0.3 ) ) );
 
 #### learning_rate_max
 
-**Syntaxe :** obj << learning_rate_max( number=0.4 )
+**Syntaxe :** obj &lt;&lt; learning_rate_max( number=0.4 )
 
 **Description :** Spécifie le taux d’apprentissage maximum. Des taux d&apos;apprentissage inférieurs s&apos;ajustent mieux mais nécessitent davantage d&apos;itérations pour converger, tandis que des taux d’apprentissage supérieurs s&apos;ajustent plus rapidement. "0.4" par défaut.
 
@@ -1790,7 +1788,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( learning_rate_max( 0.4 ) ) );
 
 #### learning_rate_min
 
-**Syntaxe :** obj << learning_rate_min( number=0.05 )
+**Syntaxe :** obj &lt;&lt; learning_rate_min( number=0.05 )
 
 **Description :** Spécifie le taux d’apprentissage minimum. Des taux d&apos;apprentissage inférieurs s&apos;ajustent mieux mais nécessitent davantage d&apos;itérations pour converger, tandis que des taux d’apprentissage supérieurs s&apos;ajustent plus rapidement. "0.05" par défaut.
 
@@ -1806,7 +1804,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( learning_rate_min( 0.05 ) ) );
 
 #### max_bin
 
-**Syntaxe :** obj << max_bin( number=256 )
+**Syntaxe :** obj &lt;&lt; max_bin( number=256 )
 
 **Description :** Spécifie le nombre maximum de bins discrets dans lesquels les fonctions continues seront regroupées. Cette option s&apos;applique uniquement pour tree_method=hist. "256" par défaut.
 
@@ -1822,7 +1820,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( max_bin( 256 ) ) );
 
 #### max_delta_step
 
-**Syntaxe :** obj << max_delta_step( number=0.0 )
+**Syntaxe :** obj &lt;&lt; max_delta_step( number=0.0 )
 
 **Description :** Spécifie l&apos;étape delta maximum que chaque sortie de feuille peut recevoir. "0.0" par défaut.
 
@@ -1838,7 +1836,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( max_delta_step( 0.0 ) ) );
 
 #### max_depth
 
-**Syntaxe :** obj << max_depth( number=6 )
+**Syntaxe :** obj &lt;&lt; max_depth( number=6 )
 
 **Description :** Spécifie la profondeur maximum de l&apos;arbre. Cette valeur doit être un nombre entier. La complexité augmente avec la profondeur. Les modèles avec un paramètre max_depth plus important présentent un risque accru de surajustement. "6" par défaut.
 
@@ -1854,7 +1852,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( max_depth( 6 ) ) );
 
 #### max_depth_max
 
-**Syntaxe :** obj << max_depth_max( number=8 )
+**Syntaxe :** obj &lt;&lt; max_depth_max( number=8 )
 
 **Description :** Spécifie la profondeur maximum du maximum de l&apos;arbre. Cette valeur doit être un nombre entier. La complexité augmente avec la profondeur. Les modèles avec des profondeurs de 2^depth ou plus présentent un risque accru de surajustement. "8" par défaut.
 
@@ -1870,7 +1868,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( max_depth_max( 9 ) ) );
 
 #### max_depth_min
 
-**Syntaxe :** obj << max_depth_min( number=1 )
+**Syntaxe :** obj &lt;&lt; max_depth_min( number=1 )
 
 **Description :** Spécifie la profondeur maximum du minimum de l&apos;arbre. Cette valeur doit être un nombre entier. La complexité augmente avec la profondeur. Les modèles avec des profondeurs de 2^depth ou plus présentent un risque accru de surajustement. "1" par défaut.
 
@@ -1886,7 +1884,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( max_depth_min( 3 ) ) );
 
 #### max_leaves
 
-**Syntaxe :** obj << max_leaves( number=0 )
+**Syntaxe :** obj &lt;&lt; max_leaves( number=0 )
 
 **Description :** Spécifie le nombre maximum de nœuds à ajouter. Cette option s&apos;applique uniquement pour grow_policy=lossguide. "0" par défaut.
 
@@ -1902,7 +1900,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( max_leaves( 0 ) ) );
 
 #### min_child_weight
 
-**Syntaxe :** obj << min_child_weight( number=1.0 )
+**Syntaxe :** obj &lt;&lt; min_child_weight( number=1.0 )
 
 **Description :** Spécifie la valeur minimum de la somme des pondérations d&apos;instance (hessienne) requise pour un enfant. Cette valeur correspond à la taille minimum de chaque feuille. "1.0" par défaut.
 
@@ -1918,7 +1916,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( min_child_weight( 1.0 ) ) );
 
 #### min_child_weight_max
 
-**Syntaxe :** obj << min_child_weight_max( number=3.0 )
+**Syntaxe :** obj &lt;&lt; min_child_weight_max( number=3.0 )
 
 **Description :** Spécifie la valeur maximum de la somme des pondérations d&apos;instance (hessienne) requise pour un enfant. Cette valeur correspond à la taille maximum de chaque feuille. "3.0" par défaut.
 
@@ -1934,7 +1932,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( min_child_weight_max( 10.0 ) ) );
 
 #### min_child_weight_min
 
-**Syntaxe :** obj << min_child_weight_min( number=1.0 )
+**Syntaxe :** obj &lt;&lt; min_child_weight_min( number=1.0 )
 
 **Description :** Spécifie la valeur minimum de la somme des pondérations d&apos;instance (hessienne) requise pour un enfant. Cette valeur correspond à la taille minimum de chaque feuille. "1.0" par défaut.
 
@@ -1950,7 +1948,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( min_child_weight_min( 1.0 ) ) );
 
 #### monotone_constraints
 
-**Syntaxe :** obj << monotone_constraints( text )
+**Syntaxe :** obj &lt;&lt; monotone_constraints( text )
 
 **Description :** Spécifie les contraintes de monotonie pour chaque fonction. Les contraintes doivent être spécifiées dans une liste de valeurs, séparées par des virgules, entre parenthèses, où -1 indique négative, 1 indique positive et 0 indique aucune contrainte.
 
@@ -1967,7 +1965,7 @@ XGBoost( Y( :Weight ), X( :Age, :Height ), Fit( monotone_constraints( "(1,1)" ) 
 
 #### normalize_type
 
-**Syntaxe :** obj << normalize_type( "tree"|"forest"="tree" )
+**Syntaxe :** obj &lt;&lt; normalize_type( "tree"|"forest"="tree" )
 
 **Description :** Spécifie le type d&apos;algorithme de normalisation pour le booster DART.  "tree" par défaut.
 
@@ -1988,7 +1986,7 @@ XGBoost(
 
 #### nthread
 
-**Syntaxe :** obj << nthread( number=0 )
+**Syntaxe :** obj &lt;&lt; nthread( number=0 )
 
 **Description :** Spécifie le nombre de threads parallèles utilisés pour exécuter XGBoost. Par défaut, tous les threads disponibles sont utilisés. "0" par défaut.
 
@@ -2004,7 +2002,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( nthread( 8 ) ) );
 
 #### num_parallel_tree
 
-**Syntaxe :** obj << num_parallel_tree( number=1 )
+**Syntaxe :** obj &lt;&lt; num_parallel_tree( number=1 )
 
 **Description :** Spécifie le nombre d&apos;arbres boostés à construire en parallèle. La moyenne des résultats est ensuite calculée. "1" par défaut.
 
@@ -2020,7 +2018,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( num_parallel_tree( 1 ) ) );
 
 #### one_drop
 
-**Syntaxe :** obj << one_drop( number=0 )
+**Syntaxe :** obj &lt;&lt; one_drop( number=0 )
 
 **Description :** Lorsque ce drapeau est activé dans le booster DART, au moins un arbre est supprimé à chaque suppression. "0" par défaut.
 
@@ -2036,7 +2034,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( booster( "dart" ), one_drop( 0 ) ) );
 
 #### predictor
 
-**Syntaxe :** obj << predictor( "auto"|"cpu_predictor"|"gpu_predictor"="auto" )
+**Syntaxe :** obj &lt;&lt; predictor( "auto"|"cpu_predictor"|"gpu_predictor"="auto" )
 
 **Description :** Spécifie le type d&apos;algorithme régresseur. "auto" par défaut.
 
@@ -2052,7 +2050,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( predictor( "cpu_predictor" ) ) );
 
 #### process_type
 
-**Syntaxe :** obj << process_type( "default"|"update"="default" )
+**Syntaxe :** obj &lt;&lt; process_type( "default"|"update"="default" )
 
 **Description :** Spécifie le type de processus de boosting à exécuter. "default" par défaut.
 
@@ -2068,7 +2066,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( process_type( "default" ) ) );
 
 #### rate_drop
 
-**Syntaxe :** obj << rate_drop( number=0.0 )
+**Syntaxe :** obj &lt;&lt; rate_drop( number=0.0 )
 
 **Description :** Spécifie le taux de suppression pour le booster DART. "0.0" par défaut.
 
@@ -2084,7 +2082,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( booster( "dart" ), rate_drop( 0.0 ) ) 
 
 #### refresh_leaf
 
-**Syntaxe :** obj << refresh_leaf( number=1 )
+**Syntaxe :** obj &lt;&lt; refresh_leaf( number=1 )
 
 **Description :** Spécifie le paramètre du module de mise à jour de rafraîchissement. Si défini sur 1, les feuilles et les nœuds sont mis à jour. Si défini sur 0, seuls les nœuds sont mis à jour. "1" par défaut.
 
@@ -2100,7 +2098,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( refresh_leaf( 1 ) ) );
 
 #### sample_type
 
-**Syntaxe :** obj << sample_type( "uniform"|"weighted"="uniform" )
+**Syntaxe :** obj &lt;&lt; sample_type( "uniform"|"weighted"="uniform" )
 
 **Description :** Spécifie le type d&apos;algorithme d&apos;échantillonnage pour le booster DART.  "uniform" par défaut.
 
@@ -2121,7 +2119,7 @@ XGBoost(
 
 #### scale_pos_weight
 
-**Syntaxe :** obj << scale_pos_weight( number=1.0 )
+**Syntaxe :** obj &lt;&lt; scale_pos_weight( number=1.0 )
 
 **Description :** Spécifie le solde de pondérations positives et négatives, qui sont utiles pour les classes non équilibrées. Une valeur typique à prendre en compte est la somme des instances négatives, divisée par la somme des instances positives. "1.0" par défaut.
 
@@ -2137,7 +2135,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( scale_posweight( 1.0 ) ) );
 
 #### seed
 
-**Syntaxe :** obj << seed( number=0 )
+**Syntaxe :** obj &lt;&lt; seed( number=0 )
 
 **Description :** Spécifie la graine pour le générateur de nombre aléatoire. Fixez cette valeur pour pouvoir reproduire les résultats. "0" par défaut.
 
@@ -2153,7 +2151,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( seed( 0 ) ) );
 
 #### sketch_eps
 
-**Syntaxe :** obj << sketch_eps( number=0.03 )
+**Syntaxe :** obj &lt;&lt; sketch_eps( number=0.03 )
 
 **Description :** Utilisée uniquement pour tree_method=approx, cette valeur représente environ (1 / sketch_eps) = nombre de bins. "0.03" par défaut.
 
@@ -2169,7 +2167,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( sketch_eps( 0.03 ) ) );
 
 #### skip_drop
 
-**Syntaxe :** obj << skip_drop( number=0.0 )
+**Syntaxe :** obj &lt;&lt; skip_drop( number=0.0 )
 
 **Description :** Spécifie la probabilité d&apos;ignorer la procédure de suppression durant l&apos;itération de boosting DART. "0.0" par défaut.
 
@@ -2185,7 +2183,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( booster( "dart" ), skip_drop( 0.0 ) ) 
 
 #### subsample
 
-**Syntaxe :** obj << subsample( number=1.0 )
+**Syntaxe :** obj &lt;&lt; subsample( number=1.0 )
 
 **Description :** Spécifie la proportion de lignes à échantillonner durant chaque itération. Cette valeur doit être comprise entre 0 et 1. Il s&apos;agit d&apos;un type d&apos;agrégation. "1.0" par défaut.
 
@@ -2201,7 +2199,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( subsample( 1.0 ) ) );
 
 #### subsample_max
 
-**Syntaxe :** obj << subsample_max( number=1.0 )
+**Syntaxe :** obj &lt;&lt; subsample_max( number=1.0 )
 
 **Description :** Spécifie la proportion maximum de lignes à échantillonner durant chaque itération. Cette valeur doit être comprise entre 0 et 1. Il s&apos;agit d&apos;un type d&apos;agrégation. "1.0" par défaut.
 
@@ -2217,7 +2215,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( subsample_max( 1.0 ) ) );
 
 #### subsample_min
 
-**Syntaxe :** obj << subsample_min( number=0.5 )
+**Syntaxe :** obj &lt;&lt; subsample_min( number=0.5 )
 
 **Description :** Spécifie la proportion minimum de lignes à échantillonner durant chaque itération. Cette valeur doit être comprise entre 0 et 1. Il s&apos;agit d&apos;un type d&apos;agrégation. "0.5" par défaut.
 
@@ -2233,7 +2231,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( subsample_min( 0.3 ) ) );
 
 #### top_k
 
-**Syntaxe :** obj << top_k( number=256 )
+**Syntaxe :** obj &lt;&lt; top_k( number=256 )
 
 **Description :** Spécifie le nombre de fonctions clés à sélectionner dans le sélecteur de fonction avide et économe. Cette option s&apos;applique uniquement pour le booster gblinear. "256" par défaut.
 
@@ -2249,7 +2247,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( booster( "gblinear" ), top_k( 0 ) ) );
 
 #### tree_method
 
-**Syntaxe :** obj << tree_method( "auto"|"exact"|"approx"|"hist"|"gpu_exact"|"gpu_hist"="auto" )
+**Syntaxe :** obj &lt;&lt; tree_method( "auto"|"exact"|"approx"|"hist"|"gpu_exact"|"gpu_hist"="auto" )
 
 **Description :** Spécifie l&apos;algorithme de construction de l&apos;arbre utilisé dans XGBoost. "auto" par défaut.
 
@@ -2265,7 +2263,7 @@ XGBoost( Y( :Weight ), X( :Height ), Fit( tree_method( "auto" ) ) );
 
 #### tweedie_variance_power
 
-**Syntaxe :** obj << tweedie_variance_power( number=1.5 )
+**Syntaxe :** obj &lt;&lt; tweedie_variance_power( number=1.5 )
 
 **Description :** Spécifie la puissance de la distribution Tweedie. Cette valeur doit être comprise entre 1 et 2. Cette option s&apos;applique uniquement pour objective=reg:tweedie. "1.5" par défaut.
 
@@ -2285,7 +2283,7 @@ XGBoost(
 
 #### updater
 
-**Syntaxe :** obj << updater( text )
+**Syntaxe :** obj &lt;&lt; updater( text )
 
 **Description :** Spécifie le module de mise à jour de l&apos;arbre à exécuter pour le booster gbtree. Spécifiez l&apos;un des modules suivants : grow_colmaker, distcol, grow_histmaker, grow_local_histmaker, grow_skmaker, sync, refresh, prune. For the gblinear booster, specify either shotgun or coord_descent.
 

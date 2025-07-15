@@ -6,7 +6,7 @@
 
 ### Get Fill Color
 
-**Syntax:** obj << Get Fill Color
+**Syntax:** obj &lt;&lt; Get Fill Color
 
 **Beschreibung:** Gibt die Füllfarbe des Legendenmodellelements zurück, das mit einem Anzeigesegment im Graphen verknüpft ist.
 
@@ -29,7 +29,7 @@ Show( item << Get Fill Color );
 
 ### Get Gradient Settings
 
-**Syntax:** obj << Get Gradient Settings
+**Syntax:** obj &lt;&lt; Get Gradient Settings
 
 **Beschreibung:** Gibt eine Liste der Gradienteneinstellungen für das Legendenmodellelement zurück, das mit einem Anzeigesegment im Graphen verknüpft ist.
 
@@ -52,7 +52,7 @@ Print( item << Get Gradient Settings );
 
 ### Get Label
 
-**Syntax:** obj << Get Label
+**Syntax:** obj &lt;&lt; Get Label
 
 **Beschreibung:** Gibt die Beschriftung des Legendenmodellelements zurück.
 
@@ -75,7 +75,7 @@ Print( item << Get Label );
 
 ### Get Marker Size Settings
 
-**Syntax:** obj << Get Marker Size Settings
+**Syntax:** obj &lt;&lt; Get Marker Size Settings
 
 **Beschreibung:** Gibt eine Liste der Symbolgrößeneinstellungen für das Legendenmodellelement zurück, das mit einem Anzeigesegment im Graphen verknüpft ist.
 
@@ -98,7 +98,7 @@ Print( item << Get Marker Size Settings );
 
 ### Get Pen Settings
 
-**Syntax:** obj << Get Pen Settings
+**Syntax:** obj &lt;&lt; Get Pen Settings
 
 **Beschreibung:** Gibt eine Liste der Stifteinstellungen für das Legendenmodellelement zurück, das mit einem Anzeigesegment im Graphen verknüpft ist.
 
@@ -121,7 +121,7 @@ Print( item << Get Pen Settings );
 
 ### Get Type
 
-**Syntax:** obj << Get Type
+**Syntax:** obj &lt;&lt; Get Type
 
 **Beschreibung:** Gibt den Typ des Legendenmodellelements zurück. Folgende Typen gibt es: „Keiner“, „Symbol“, „H-Linie“, „V-Linie“, „Schritt“, „Balken“, „V-Box-Plot“, „H-Intervall“, „V-Intervall“, „H-Balken Box-Plot“, „V-Balken Box-Plot“, „OHLC-Diagramm“, „H-Box-Plot“, „Gradient“ „Dichtegradient“, „Füllen und Linie“, „Symbolgröße“, „Liniengröße“, „Gradientenlinie“, „Gradientenkontur“, „Symbolfarbe“, „Symbolgröße kategorial“, „Zellengröße“.
 
@@ -144,7 +144,7 @@ Print( item << Get Type );
 
 ### Set Label
 
-**Syntax:** obj << Set Label( text )
+**Syntax:** obj &lt;&lt; Set Label( text )
 
 **Beschreibung:** Legt die Beschriftung für das Legendenmodellelement fest, das mit einem Anzeigesegment im Graphen verknüpft ist.
 
@@ -167,7 +167,7 @@ For Each( {item, index}, items[1], item << Set Label( "Item " || Char( index ) )
 
 ### Set Properties
 
-**Syntax:** obj << Set Properties
+**Syntax:** obj &lt;&lt; Set Properties
 
 **Beschreibung:** Beliebige Anzeigeeigenschaften für das Legendenmodellelement festlegen, das mit einem Anzeigesegment im Graphen verknüpft ist.
 

@@ -2,11 +2,9 @@
 
 
 
-## Functions
-
 ### Col Shuffle
 
-**Syntax:** y = Col Shuffle(<byVar, <Excluded( Row State() )>, ...>)
+**Syntax:** y = Col Shuffle(&lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;)
 
 **Description:** Returns a random integer between 1 and the number of rows of the current data table. When used in a column formula, Col Shuffle() creates a random ordering of row numbers with each row number appearing only once. The ordering is cached internally so that multiple evaluations are efficient.
 
@@ -47,7 +45,7 @@ dt << New Column( "Col Shuffle for each Sex grouped by Excluded",
 
 ### Make KFold Formula
 
-**Syntax:** y = Make KFold Formula( folds, Y Columns( cols ), <<Stratification Columns( cols ), <<Grouping Columns( cols ) )
+**Syntax:** y = Make KFold Formula( folds, Y Columns( cols ), &lt;&lt;Stratification Columns( cols ), &lt;&lt;Grouping Columns( cols ) )
 
 **Description:** Generates a validation column with folds levels when used in a column formula. This JSL function is primarily used by the Make Validation Column platform to generate formula columns.
 
@@ -83,7 +81,7 @@ dt << New Column( "Stratified KFold",
 
 ### Make Validation Formula
 
-**Syntax:** y = Make Validation Formula( rates, <<Stratification Columns( cols ), <<Grouping Columns( cols ), <<Cutpoint Column ( col ), <<Cutpoint Batch ID( col ), <<Determine cutpoints using( "Proportions"|"Numbers of Rows"|"Fixed Time or Date"|"Elapsed Time" ), <<Assign Extra Rows( "To Training"|"To Validation"|"To Test" ) )
+**Syntax:** y = Make Validation Formula( rates, &lt;&lt;Stratification Columns( cols ), &lt;&lt;Grouping Columns( cols ), &lt;&lt;Cutpoint Column ( col ), &lt;&lt;Cutpoint Batch ID( col ), &lt;&lt;Determine cutpoints using( "Proportions"|"Numbers of Rows"|"Fixed Time or Date"|"Elapsed Time" ), &lt;&lt;Assign Extra Rows( "To Training"|"To Validation"|"To Test" ) )
 
 **Description:** Generates a two-level or three-level validation column when used in a column formula. The rates argument is a 3 by 1 matrix that contains the training, validation, and test rates, respectively. This JSL function is primarily used by the Make Validation Column platform to generate formula columns.
 
@@ -141,7 +139,7 @@ dt << New Column( "Validation",
 
 ### Random Beta
 
-**Syntax:** y = Random Beta( alpha, beta, <theta=0>, <sigma=1> )
+**Syntax:** y = Random Beta( alpha, beta, &lt;theta=0&gt;, &lt;sigma=1&gt; )
 
 **Description:** Returns a random number from a beta distribution.
 
@@ -160,7 +158,7 @@ Show( x, v );
 
 ### Random Beta Binomial
 
-**Syntax:** y = Random Beta Binomial( n, p, <delta=0> )
+**Syntax:** y = Random Beta Binomial( n, p, &lt;delta=0&gt; )
 
 **Description:** Returns a random number from a beta binomial distribution for n trials with probability p and correlation delta.
 
@@ -273,7 +271,7 @@ Show( x, v );
 
 ### Random ChiSquare
 
-**Syntax:** y = Random ChiSquare( df, <nonCentrality=0> )
+**Syntax:** y = Random ChiSquare( df, &lt;nonCentrality=0&gt; )
 
 **Description:** Returns a random number from a Chi-Square distribution.
 
@@ -330,7 +328,7 @@ Show( x, v );
 
 ### Random F
 
-**Syntax:** y = Random F( dfnum, dfden, <nonCentrality=0> )
+**Syntax:** y = Random F( dfnum, dfden, &lt;nonCentrality=0&gt; )
 
 **Description:** Returns a random number from an F distribution.
 
@@ -349,7 +347,7 @@ Show( x, v );
 
 ### Random Frechet
 
-**Syntax:** y = Random Frechet( <mu=0>, <sigma=1> )
+**Syntax:** y = Random Frechet( &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **Description:** Returns a random number from a Fréchet distribution.
 
@@ -387,7 +385,7 @@ Show( x, v );
 
 ### Random Gamma
 
-**Syntax:** y = Random Gamma( alpha, <scale=1> )
+**Syntax:** y = Random Gamma( alpha, &lt;scale=1&gt; )
 
 **Description:** Returns a random number from a gamma distribution.
 
@@ -406,7 +404,7 @@ Show( x, v );
 
 ### Random Gamma Poisson
 
-**Syntax:** y = Random Gamma Poisson( lambda, <sigma=1> )
+**Syntax:** y = Random Gamma Poisson( lambda, &lt;sigma=1&gt; )
 
 **Description:** Returns a random number from a gamma Poisson distribution with parameters lambda and sigma.
 
@@ -425,7 +423,7 @@ Show( x, v );
 
 ### Random GenGamma
 
-**Syntax:** y = Random GenGamma( <mu=0>, <sigma=1>, <lambda=0> )
+**Syntax:** y = Random GenGamma( &lt;mu=0&gt;, &lt;sigma=1&gt;, &lt;lambda=0&gt; )
 
 **Description:** Returns a random number from an extended generalized gamma distribution with parameters mu, sigma, and lambda.
 
@@ -544,7 +542,7 @@ Show( x, v );
 
 ### Random Johnson Sl
 
-**Syntax:** y = Random Johnson Sl( gamma, delta, theta, <sigma=1> )
+**Syntax:** y = Random Johnson Sl( gamma, delta, theta, &lt;sigma=1&gt; )
 
 **Description:** Returns a random number from a Johnson Sl distribution.
 
@@ -582,7 +580,7 @@ Show( x, v );
 
 ### Random LEV
 
-**Syntax:** y = Random LEV( <mu=0>, <sigma=1> )
+**Syntax:** y = Random LEV( &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **Description:** Returns a random number from a LEV distribution.
 
@@ -601,7 +599,7 @@ Show( x, v );
 
 ### Random LogGenGamma
 
-**Syntax:** y = Random LogGenGamma( <mu=0>, <sigma=1>, <lambda=0> )
+**Syntax:** y = Random LogGenGamma( &lt;mu=0&gt;, &lt;sigma=1&gt;, &lt;lambda=0&gt; )
 
 **Description:** Returns a random number from a log generalized gamma distribution with parameters mu, sigma, and lambda.
 
@@ -620,7 +618,7 @@ Show( x, v );
 
 ### Random Logistic
 
-**Syntax:** y = Random Logistic( <mu=0>, <sigma=1> )
+**Syntax:** y = Random Logistic( &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **Description:** Returns a random number from a logistic distribution.
 
@@ -639,7 +637,7 @@ Show( x, v );
 
 ### Random Loglogistic
 
-**Syntax:** y = Random Loglogistic( <mu=0>, <sigma=1> )
+**Syntax:** y = Random Loglogistic( &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **Description:** Returns a random number from a loglogistic distribution.
 
@@ -658,7 +656,7 @@ Show( x, v );
 
 ### Random Lognormal
 
-**Syntax:** y = Random Lognormal( <mu=0>, <sigma=1> )
+**Syntax:** y = Random Lognormal( &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **Description:** Returns a random number from a lognormal distribution with location parameter mu and scale parameter sigma.
 
@@ -709,7 +707,7 @@ New Window( "Example: Random Lognormal and Empirical Distribution",
 
 ### Random Multivariate Normal
 
-**Syntax:** y = Random Multivariate Normal( mean, covar, <nrows=1>)
+**Syntax:** y = Random Multivariate Normal( mean, covar, &lt;nrows=1&gt;)
 
 **Description:** Returns a random nrows by p matrix from a multivariate normal distribution with mean vector mean and (positive semi-definite) covariance matrix covar, where p is defined as the number of rows of covar.
 
@@ -768,7 +766,7 @@ New Window( "Example: Neg Binomial Probability",
 
 ### Random Normal
 
-**Syntax:** y = Random Normal( <mu=0>, <sigma=1> )
+**Syntax:** y = Random Normal( &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **Description:** Returns a random number from a normal distribution with mean mu and standard deviation sigma.
 
@@ -919,7 +917,7 @@ Random Normal();
 
 ### Random SEV
 
-**Syntax:** y = Random SEV( <mu=0>, <sigma=1> )
+**Syntax:** y = Random SEV( &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **Description:** Returns a random number from a SEV distribution.
 
@@ -975,7 +973,7 @@ Show( result1, result2 );
 
 ### Random Seed State
 
-**Syntax:** Random Seed State( <seed state> )
+**Syntax:** Random Seed State( &lt;seed state&gt; )
 
 **Description:** Retrieves or restores the random seed state to or from a blob object.
 
@@ -1003,11 +1001,7 @@ Random Shuffle( exA );
 
 ### Random Triangular
 
-**Syntax:** y = Random Triangular( a, b, c );
-
-y = Random Triangular( b, c );
-
-y = Random Triangular( b )
+**Syntax:** y = Random Triangular( a, b, c );y = Random Triangular( b, c );y = Random Triangular( b )
 
 **Description:** Returns a random number from a triangular distribution with lower limit a, mode b, and upper limit c. Random Triangular(b,c) is equivalent to Random Triangular(0,b,c). Random Triangular(b) is equivalent to Random Triangular(0,b,1).
 
@@ -1024,7 +1018,7 @@ Show( x, y );
 
 ### Random Uniform
 
-**Syntax:** y = Random Uniform( <min>, <max> )
+**Syntax:** y = Random Uniform( &lt;min&gt;, &lt;max&gt; )
 
 **Description:** Returns a random number from a uniform distribution between min and max, exclusive.
 
@@ -1054,7 +1048,7 @@ Random Uniform( 1, 10 );
 
 ### Random Weibull
 
-**Syntax:** y = Random Weibull( beta, <alpha=1> )
+**Syntax:** y = Random Weibull( beta, &lt;alpha=1&gt; )
 
 **Description:** Returns a random number from a Weibull distribution.
 
@@ -1209,7 +1203,7 @@ dt << Distribution(
 
 ### Random t
 
-**Syntax:** y = Random t( df, <nonCentrality=0> )
+**Syntax:** y = Random t( df, &lt;nonCentrality=0&gt; )
 
 **Description:** Returns a random number from an t distribution.
 
@@ -1228,7 +1222,7 @@ Show( x, v );
 
 ### Resample Freq
 
-**Syntax:** Resample Freq( <rate=1>, <column> )
+**Syntax:** Resample Freq( &lt;rate=1&gt;, &lt;column&gt; )
 
 **Description:** Generates a frequency count for sampling with replacement, useful for bootstrap samples. With no arguments, the function generates a 100% resample. The rate argument specifies the rate of resampling. If the column argument is specified, the sample size chosen is rate multiplied by the sum of the specified column. A negative rate signals that fractional frequencies are allowed.
 

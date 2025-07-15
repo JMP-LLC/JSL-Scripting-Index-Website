@@ -6,7 +6,7 @@
 
 ### Marker Seg
 
-**Syntax:** me = Marker Seg( x, y, < Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) >, < Sizes( s ) > )
+**Syntax:** me = Marker Seg( x, y, &lt; Row States( dt | dt,[rows] | dt,{{rows}, ...} | {states} ) &gt;, &lt; Sizes( s ) &gt; )
 
 **Description:** Returns a display seg with markers for all of the X and Y values.
 
@@ -39,7 +39,7 @@ seg = (frame << Find Seg( Marker Seg( 1 ) ));
 
 ### Always Show Label
 
-**Syntax:** obj << Always Show Label( {pt, state=0|1}, ... )
+**Syntax:** obj &lt;&lt; Always Show Label( {pt, state=0|1}, ... )
 
 **Description:** Always show the marker label even if it being hidden by an overlapping label
 
@@ -59,7 +59,7 @@ seg << always show label( {0, 1}, {1, 1}, {2, 1}, {3, 1}, {4, 1}, {5, 1} );
 
 ### Child
 
-**Syntax:** seg2 = obj << Child
+**Syntax:** seg2 = obj &lt;&lt; Child
 
 **Description:** Returns the first child of the display seg.
 
@@ -91,7 +91,7 @@ seg << Child; // not many segs support children
 
 ### Class Name
 
-**Syntax:** classname = obj << Class Name
+**Syntax:** classname = obj &lt;&lt; Class Name
 
 **Description:** Returns the name of the display class for the display seg.
 
@@ -123,7 +123,7 @@ seg << Class Name;
 
 ### Clip Shape
 
-**Syntax:** seg << Clip Shape(Boundaries(Shape File, [ID(string)]) | Path([string] | [matrix]) | Empty())
+**Syntax:** seg &lt;&lt; Clip Shape(Boundaries(Shape File, [ID(string)]) | Path([string] | [matrix]) | Empty())
 
 **Description:** Clips the geometry by the given shape. The shape can be specified using a shape file or a path. An optional ID can be specified with a shape file to select a single shape from the file, otherwise the union of all shapes is used as the clipping region. A clipping path can be specified with an N x 3 matrix or with a text representation. A path matrix has three columns for x, y, and flags for each point in the path. The flag values are 0 for control, 1 for move, 2 for line segment, 3 for cubic Bézier segment, and are negative if the point also closes the path. Path text supports SVG syntax.
 
@@ -151,7 +151,7 @@ cs << Clip Shape( Boundaries( "US States" ) );
 
 ### Color
 
-**Syntax:** obj << Color( color )
+**Syntax:** obj &lt;&lt; Color( color )
 
 **Description:** Sets the color for all markers.
 
@@ -183,11 +183,11 @@ seg << Color( "Green" );
 
 ### Color Theme
 
-**Syntax:** obj << Color Theme
+**Syntax:** obj &lt;&lt; Color Theme
 
 ### Delete
 
-**Syntax:** obj << Delete
+**Syntax:** obj &lt;&lt; Delete
 
 **Description:** Delete the display seg.
 
@@ -219,7 +219,7 @@ seg << Delete;
 
 ### Density Gradient
 
-**Syntax:** obj << Density Gradient( "Fade to White"|"Fade To Gray"|"Full Color"="Fade to White" )
+**Syntax:** obj &lt;&lt; Density Gradient( "Fade to White"|"Fade To Gray"|"Full Color"="Fade to White" )
 
 **Description:** Sets the coloring behavior of density gradients. "Fade to White" by default.
 
@@ -251,7 +251,7 @@ seg << Density Gradient( "Fade to Gray" );
 
 ### Frame
 
-**Syntax:** FrameBox = obj << Frame
+**Syntax:** FrameBox = obj &lt;&lt; Frame
 
 **Description:** Returns the frame box that the display seg is in.
 
@@ -283,7 +283,7 @@ seg << Frame;
 
 ### Get Clip Shape
 
-**Syntax:** obj << Get Clip Shape
+**Syntax:** obj &lt;&lt; Get Clip Shape
 
 **Description:** Returns the current clipping shape
 
@@ -312,7 +312,7 @@ cs << Get Clip Shape();
 
 ### Get Color
 
-**Syntax:** color = obj << Get Color
+**Syntax:** color = obj &lt;&lt; Get Color
 
 **Description:** Returns the marker color.
 
@@ -344,7 +344,7 @@ seg << Get Color;
 
 ### Get Colors
 
-**Syntax:** list = obj << Get Colors
+**Syntax:** list = obj &lt;&lt; Get Colors
 
 **Description:** Returns a list of marker colors based on the row states for the markers.
 
@@ -376,7 +376,7 @@ seg << Get Colors;
 
 ### Get Density Gradient
 
-**Syntax:** obj << Get Density Gradient
+**Syntax:** obj &lt;&lt; Get Density Gradient
 
 **Description:** Gets the coloring behavior of density gradients.
 
@@ -408,7 +408,7 @@ seg << Get Density Gradient;
 
 ### Get Description
 
-**Syntax:** description = obj << Get Description
+**Syntax:** description = obj &lt;&lt; Get Description
 
 **Description:** Gets the description for the display seg.
 
@@ -440,13 +440,13 @@ seg << get description();
 
 ### Get Force Labels
 
-**Syntax:** obj << Get Force Labels( "No Labels"|"Label by Value"|"Label by Row"|"Label by Row and Value" )
+**Syntax:** obj &lt;&lt; Get Force Labels( "No Labels"|"Label by Value"|"Label by Row"|"Label by Row and Value" )
 
 **Description:** Label every marker regardless of the data table row state flags.
 
 ### Get Gradient
 
-**Syntax:** obj << Get Gradient
+**Syntax:** obj &lt;&lt; Get Gradient
 
 **Description:** Gets the coloring gradient.
 
@@ -478,7 +478,7 @@ seg << Get Gradient;
 
 ### Get Gradient Color Theme
 
-**Syntax:** obj << Get Gradient Color Theme
+**Syntax:** obj &lt;&lt; Get Gradient Color Theme
 
 **Description:** Gets the gradient&apos;s color theme.
 
@@ -510,7 +510,7 @@ seg << Get Gradient Color Theme;
 
 ### Get Gradient Discrete Colors
 
-**Syntax:** obj << Get Gradient Discrete Colors
+**Syntax:** obj &lt;&lt; Get Gradient Discrete Colors
 
 **Description:** Gets if each level in a gradient should be a single color or if colors should transition smoothly.
 
@@ -542,7 +542,7 @@ seg << Get Gradient Discrete Colors;
 
 ### Get Gradient Fill
 
-**Syntax:** obj << Get Gradient Fill
+**Syntax:** obj &lt;&lt; Get Gradient Fill
 
 **Description:** Gets the coloring behavior for values outside of the range of the gradient&apos;s scale.
 
@@ -559,7 +559,7 @@ seg << Get Gradient Fill;
 
 ### Get Gradient Label Count
 
-**Syntax:** obj << Get Gradient Label Count
+**Syntax:** obj &lt;&lt; Get Gradient Label Count
 
 **Description:** Gets the number of labels in a gradient&apos;s legend.
 
@@ -591,7 +591,7 @@ seg << Get Gradient Label Count;
 
 ### Get Gradient Label Levels
 
-**Syntax:** [value1,value1, ... value N] = obj << Get Gradient Label Levels
+**Syntax:** [value1,value1, ... value N] = obj &lt;&lt; Get Gradient Label Levels
 
 **Description:** Gets the set of values used for labels in the gradient&apos;s scale.
 
@@ -624,7 +624,7 @@ seg << Get Gradient Scale Values;
 
 ### Get Gradient Legend Horizontal
 
-**Syntax:** obj << Get Gradient Legend Horizontal
+**Syntax:** obj &lt;&lt; Get Gradient Legend Horizontal
 
 **Description:** Gets if the gradient&apos;s legend should be drawn horizontally.
 
@@ -656,7 +656,7 @@ seg << Get Gradient Legend Horizontal;
 
 ### Get Gradient Legend Label Format
 
-**Syntax:** obj << Get Gradient Legend Label Format
+**Syntax:** obj &lt;&lt; Get Gradient Legend Label Format
 
 **Description:** Gets the format for gradient legend labels
 
@@ -688,7 +688,7 @@ seg << Get Gradient Legend Label Format;
 
 ### Get Gradient Legend Label Width
 
-**Syntax:** obj << Get Gradient Legend Label Width
+**Syntax:** obj &lt;&lt; Get Gradient Legend Label Width
 
 **Description:** Gets the maximum character length of gradient legend labels.
 
@@ -720,7 +720,7 @@ seg << Get Gradient Legend Label Width;
 
 ### Get Gradient Legend Show Labels
 
-**Syntax:** obj << Get Gradient Legend Show Labels
+**Syntax:** obj &lt;&lt; Get Gradient Legend Show Labels
 
 **Description:** Gets if the level labels should be shown in the gradient&apos;s legend.
 
@@ -752,7 +752,7 @@ seg << Get Gradient Legend Show Labels;
 
 ### Get Gradient Level Count
 
-**Syntax:** obj << Get Gradient Level Count
+**Syntax:** obj &lt;&lt; Get Gradient Level Count
 
 **Description:** Gets the number of levels in a gradient.
 
@@ -784,7 +784,7 @@ seg << Get Gradient Levels;
 
 ### Get Gradient Lightness Range
 
-**Syntax:** obj << Get Gradient Lightness Range
+**Syntax:** obj &lt;&lt; Get Gradient Lightness Range
 
 **Description:** Gets the minimum and maximum lightness for level colors in a gradient. Missing values indicate that the color theme&apos;s original value is used.
 
@@ -816,7 +816,7 @@ seg << Get Gradient Lightness Range;
 
 ### Get Gradient Range
 
-**Syntax:** obj << Get Gradient Range
+**Syntax:** obj &lt;&lt; Get Gradient Range
 
 **Description:** Gets the range over which non-custom gradient scales are generated.
 
@@ -833,7 +833,7 @@ seg << Get Gradient Range;
 
 ### Get Gradient Reverse Color Order
 
-**Syntax:** obj << Get Gradient Reverse Color Order
+**Syntax:** obj &lt;&lt; Get Gradient Reverse Color Order
 
 **Description:** Gets if the order of colors in a gradient is reversed.
 
@@ -865,7 +865,7 @@ seg << Get Gradient Reverse Color Order;
 
 ### Get Gradient Reverse Label Order
 
-**Syntax:** obj << Get Gradient Reverse Label Order
+**Syntax:** obj &lt;&lt; Get Gradient Reverse Label Order
 
 **Description:** Gets if the order of labels in a gradient is reversed.
 
@@ -897,7 +897,7 @@ seg << Get Gradient Reverse Label Order;
 
 ### Get Gradient Scale
 
-**Syntax:** obj << Get Gradient Scale
+**Syntax:** obj &lt;&lt; Get Gradient Scale
 
 **Description:** Gets the gradient scale type.
 
@@ -914,7 +914,7 @@ seg << Get Gradient Scale;
 
 ### Get Gradient Scale Values
 
-**Syntax:** [value1,value1, ... value N] = obj << Get Gradient Scale Values
+**Syntax:** [value1,value1, ... value N] = obj &lt;&lt; Get Gradient Scale Values
 
 **Description:** Gets the set of values used for labels in the gradient&apos;s scale.
 
@@ -947,7 +947,7 @@ seg << Get Gradient Scale Values;
 
 ### Get Gradient Show Missing
 
-**Syntax:** obj << Get Gradient Show Missing
+**Syntax:** obj &lt;&lt; Get Gradient Show Missing
 
 **Description:** Gets when to show the legend entry for missing values.
 
@@ -979,7 +979,7 @@ seg << Get Gradient Show Missing;
 
 ### Get Gradient Transparency
 
-**Syntax:** obj << Get Gradient Transparency
+**Syntax:** obj &lt;&lt; Get Gradient Transparency
 
 **Description:** Gets the transparency behavior of gradients.
 
@@ -1011,7 +1011,7 @@ seg << Get Gradient Transparency;
 
 ### Get Hide Missing Color
 
-**Syntax:** true/false = obj << Get Hide Missing Color
+**Syntax:** true/false = obj &lt;&lt; Get Hide Missing Color
 
 ```jsl
 
@@ -1041,7 +1041,7 @@ seg << Get Hide Missing Color;
 
 ### Get Hide Missing Size
 
-**Syntax:** true/false = obj << Get Hide Missing Size
+**Syntax:** true/false = obj &lt;&lt; Get Hide Missing Size
 
 ```jsl
 
@@ -1071,7 +1071,7 @@ seg << Get Hide Missing Size;
 
 ### Get Jitter
 
-**Syntax:** {method, axis, limit, spacing, seed, side, overlap, grid offset, smoothing, max error, bandwidth} = obj << Get Jitter
+**Syntax:** {method, axis, limit, spacing, seed, side, overlap, grid offset, smoothing, max error, bandwidth} = obj &lt;&lt; Get Jitter
 
 **Description:** Returns settings used to offset marker positions for collision reduction. method is none|random uniform|random normal|centered|centered grid|positive grid. axis is X|Y|XY. limit is the width of the jitter, adjusted for the method. spacing is the percentage of the marker size using for jittering or 0 for auto-adjustment.
 
@@ -1089,7 +1089,7 @@ bandwidth} = seg << Get Jitter();
 
 ### Get Jitter Offsets
 
-**Syntax:** matrix = obj << Get Jitter Offsets
+**Syntax:** matrix = obj &lt;&lt; Get Jitter Offsets
 
 **Description:** Returns an N by 2 matrix of X and Y jitter offsets.
 
@@ -1114,19 +1114,19 @@ avg = Mean( jitter[0, 1] );
 
 ### Get Label Value Axis
 
-**Syntax:** obj << Get Label Value Axis( "X"|"Y" )
+**Syntax:** obj &lt;&lt; Get Label Value Axis( "X"|"Y" )
 
 **Description:** Whether forced labels show the X or Y value.
 
 ### Get Label Value Format
 
-**Syntax:** obj << Get Label Value Format
+**Syntax:** obj &lt;&lt; Get Label Value Format
 
 **Description:** How to format the X or Y value; Auto means use axis format.
 
 ### Get Marker
 
-**Syntax:** marker = obj << Get Marker
+**Syntax:** marker = obj &lt;&lt; Get Marker
 
 **Description:** Returns the marker style.
 
@@ -1158,7 +1158,7 @@ seg << Get Marker;
 
 ### Get Marker Draw Column
 
-**Syntax:** column = obj << Get Marker Draw Column
+**Syntax:** column = obj &lt;&lt; Get Marker Draw Column
 
 **Description:** Returns any custom marker drawing data table column.
 
@@ -1176,7 +1176,7 @@ ex = seg << Get Marker Draw Column();
 
 ### Get Marker Draw Expr
 
-**Syntax:** expr = obj << Get Marker Draw Expr
+**Syntax:** expr = obj &lt;&lt; Get Marker Draw Expr
 
 **Description:** Returns the custom marker drawing expression.
 
@@ -1194,7 +1194,7 @@ ex = seg << Get Marker Draw Expr();
 
 ### Get Marker Size
 
-**Syntax:** size = obj << Get Marker Size
+**Syntax:** size = obj &lt;&lt; Get Marker Size
 
 **Description:** Returns the marker size.
 
@@ -1226,7 +1226,7 @@ seg << Get Marker Size;
 
 ### Get Markers
 
-**Syntax:** list = obj << Get Markers
+**Syntax:** list = obj &lt;&lt; Get Markers
 
 **Description:** Returns a list of markers based on the row states.
 
@@ -1258,7 +1258,7 @@ seg << Get Markers;
 
 ### Get Overlay Color
 
-**Syntax:** color = obj << Get Overlay Color( marker index )
+**Syntax:** color = obj &lt;&lt; Get Overlay Color( marker index )
 
 ```jsl
 
@@ -1274,7 +1274,7 @@ seg << Get Overlay Color( 1 );
 
 ### Get Overlay Count
 
-**Syntax:** number = obj << Get Overlay Count
+**Syntax:** number = obj &lt;&lt; Get Overlay Count
 
 ```jsl
 
@@ -1290,7 +1290,7 @@ seg << Get Overlay Count;
 
 ### Get Overlay Marker
 
-**Syntax:** marker = obj << Get Overlay Marker( marker index )
+**Syntax:** marker = obj &lt;&lt; Get Overlay Marker( marker index )
 
 ```jsl
 
@@ -1306,7 +1306,7 @@ seg << Get Overlay Marker( 1 );
 
 ### Get Point
 
-**Syntax:** point = obj << Get Point( index )
+**Syntax:** point = obj &lt;&lt; Get Point( index )
 
 **Description:** Returns the X and Y coordinates of the specified point.
 
@@ -1338,7 +1338,7 @@ seg << Get Point( 2 );
 
 ### Get Point Count
 
-**Syntax:** Number = obj << Get Point Count
+**Syntax:** Number = obj &lt;&lt; Get Point Count
 
 **Description:** Returns the number of points in the display seg.
 
@@ -1370,7 +1370,7 @@ seg << Get Point Count;
 
 ### Get Row Numbers
 
-**Syntax:** matrix = obj << Get Row Numbers
+**Syntax:** matrix = obj &lt;&lt; Get Row Numbers
 
 **Description:** Returns a vector of marker row numbers.
 
@@ -1391,7 +1391,7 @@ seg << Get Row Numbers;
 
 ### Get Sizes
 
-**Syntax:** matrix = obj << Get Sizes
+**Syntax:** matrix = obj &lt;&lt; Get Sizes
 
 **Description:** Returns a vector of marker sizes.
 
@@ -1423,7 +1423,7 @@ seg << Get Sizes;
 
 ### Get Transparency
 
-**Syntax:** obj << Get Transparency
+**Syntax:** obj &lt;&lt; Get Transparency
 
 **Description:** Returns a numeric value representing transparency between 0 and 1.
 
@@ -1455,13 +1455,13 @@ seg << Get Transparency;
 
 ### Get Value Label Width
 
-**Syntax:** obj << Get Value Label Width( number )
+**Syntax:** obj &lt;&lt; Get Value Label Width( number )
 
 **Description:** Maximum width for a formatted label value.
 
 ### Get X Values
 
-**Syntax:** matrix = obj << Get X Values
+**Syntax:** matrix = obj &lt;&lt; Get X Values
 
 **Description:** Returns a list of X values.
 
@@ -1493,7 +1493,7 @@ seg << Get X Values;
 
 ### Get Y Values
 
-**Syntax:** matrix = obj << Get Y Values
+**Syntax:** matrix = obj &lt;&lt; Get Y Values
 
 **Description:** Returns a list of Y values.
 
@@ -1525,9 +1525,7 @@ seg << Get Y Values;
 
 ### Gradient
 
-**Syntax:** obj << { <Color Theme(theme)>, <Min Lightness(0-1)>, <Max Lightness(0-1)>, <Contour Levels(num)>, <Reverse Gradient(0|1)>, <Density Gradient("Fade To White"|"Fade To Gray"|"Full Color")>, <Gradient Transparency("None"|"Linear")> }
-
-obj << { <Color Theme(theme)>, <Min Lightness(0-1)>, <Max Lightness(0-1)>, <N Labels(num)>, <Show Missing Color("On"|"Off"|"Auto")>, <Scale Type("Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom")>, <Scale Values([v1, v2, …])>, <Range Type("Default"|"Exact Data Range"|"Middle 90%")>, <Fill("Between"|"Above"|"Below"|"Above Below")>, <Reverse Gradient(0|1)>, <Reverse Labels(0|1)>, <Discrete Color(0|1)> }, <Label Format(labelFormat)>, <Width(num)>, <Horizontal(0|1)>, <Show Labels(0|1)>
+**Syntax:** obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;Contour Levels(num)&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Density Gradient("Fade To White"|"Fade To Gray"|"Full Color")&gt;, &lt;Gradient Transparency("None"|"Linear")&gt; }obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;N Labels(num)&gt;, &lt;Show Missing Color("On"|"Off"|"Auto")&gt;, &lt;Scale Type("Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom")&gt;, &lt;Scale Values([v1, v2, …])&gt;, &lt;Range Type("Default"|"Exact Data Range"|"Middle 90%")&gt;, &lt;Fill("Between"|"Above"|"Below"|"Above Below")&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Reverse Labels(0|1)&gt;, &lt;Discrete Color(0|1)&gt; }, &lt;Label Format(labelFormat)&gt;, &lt;Width(num)&gt;, &lt;Horizontal(0|1)&gt;, &lt;Show Labels(0|1)&gt;
 
 **Description:** Sets the coloring gradient.
 
@@ -1559,7 +1557,7 @@ seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
 
 ### Gradient Color Theme
 
-**Syntax:** obj << Gradient Color Theme
+**Syntax:** obj &lt;&lt; Gradient Color Theme
 
 **Description:** Sets the gradient&apos;s color theme.
 
@@ -1591,7 +1589,7 @@ seg << Set Gradient Color Theme( "Viridis" );
 
 ### Gradient Discrete Colors
 
-**Syntax:** obj << Gradient Discrete Colors
+**Syntax:** obj &lt;&lt; Gradient Discrete Colors
 
 **Description:** Sets if each level in a gradient should be a single color or if colors should transition smoothly.
 
@@ -1608,7 +1606,7 @@ seg << Set Gradient Discrete Colors( 1 );
 
 ### Gradient Fill
 
-**Syntax:** obj << Gradient Fill( "Between"|"Above"|"Below"|"Above Below"="Above Below" )
+**Syntax:** obj &lt;&lt; Gradient Fill( "Between"|"Above"|"Below"|"Above Below"="Above Below" )
 
 **Description:** Sets the coloring behavior for values outside of the range of the gradient&apos;s scale. "Above Below" by default.
 
@@ -1626,7 +1624,7 @@ seg << Set Gradient Fill( "Between" );
 
 ### Gradient Label Count
 
-**Syntax:** obj << Gradient Label Count
+**Syntax:** obj &lt;&lt; Gradient Label Count
 
 **Description:** Sets the number of labels in a gradient&apos;s legend. This is one more than the number of contour levels.
 
@@ -1658,7 +1656,7 @@ seg << Set Gradient Label Count( 8 );
 
 ### Gradient Label Levels
 
-**Syntax:** obj << Gradient Label Levels( [value1,value1, ... value N] )
+**Syntax:** obj &lt;&lt; Gradient Label Levels( [value1,value1, ... value N] )
 
 **Description:** Sets a custom set of values for use in the gradient&apos;s scale.
 
@@ -1675,7 +1673,7 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ### Gradient Legend Horizontal
 
-**Syntax:** obj << Gradient Legend Horizontal
+**Syntax:** obj &lt;&lt; Gradient Legend Horizontal
 
 **Description:** Sets if the gradient&apos;s legend should be drawn horizontally.
 
@@ -1707,7 +1705,7 @@ seg << Set Gradient Legend Horizontal( 1 );
 
 ### Gradient Legend Label Format
 
-**Syntax:** obj << Gradient Legend Label Format
+**Syntax:** obj &lt;&lt; Gradient Legend Label Format
 
 **Description:** Sets the format for gradient legend labels
 
@@ -1739,7 +1737,7 @@ seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
 
 ### Gradient Legend Label Width
 
-**Syntax:** obj << Gradient Legend Label Width
+**Syntax:** obj &lt;&lt; Gradient Legend Label Width
 
 **Description:** Sets the maximum character length of gradient legend labels.
 
@@ -1771,7 +1769,7 @@ seg << Set Gradient Legend Label Width( 4 );
 
 ### Gradient Legend Show Labels
 
-**Syntax:** obj << Gradient Legend Show Labels
+**Syntax:** obj &lt;&lt; Gradient Legend Show Labels
 
 **Description:** Sets if the level labels should be shown in the gradient&apos;s legend.
 
@@ -1803,7 +1801,7 @@ seg << Set Gradient Legend Show Labels( 0 );
 
 ### Gradient Level Count
 
-**Syntax:** obj << Gradient Level Count
+**Syntax:** obj &lt;&lt; Gradient Level Count
 
 **Description:** Sets the number of levels in a gradient. This is one less than the number of labels.
 
@@ -1835,7 +1833,7 @@ seg << Set Gradient Levels( 7 );
 
 ### Gradient Lightness Range
 
-**Syntax:** obj << Gradient Lightness Range
+**Syntax:** obj &lt;&lt; Gradient Lightness Range
 
 **Description:** Sets the minimum and maximum lightness for level colors in a gradient. The colors will be scaled to cover this range. A missing value is treated as no change.
 
@@ -1925,7 +1923,7 @@ seg << Set Gradient Lightness Range( ., 0.75 );
 
 ### Gradient Range
 
-**Syntax:** obj << Gradient Range( "Default"|"Exact Data Range"|"Middle 90%"="Default" )
+**Syntax:** obj &lt;&lt; Gradient Range( "Default"|"Exact Data Range"|"Middle 90%"="Default" )
 
 **Description:** Sets the range over which non-custom gradient scales are generated. "Default" by default.
 
@@ -1942,7 +1940,7 @@ seg << Set Gradient Range( "Exact Data Range" );
 
 ### Gradient Reverse Color Order
 
-**Syntax:** obj << Gradient Reverse Color Order
+**Syntax:** obj &lt;&lt; Gradient Reverse Color Order
 
 **Description:** Reverses the order of the colors in a gradient.
 
@@ -1974,7 +1972,7 @@ seg << Set Gradient Reverse Color Order( 1 );
 
 ### Gradient Reverse Label Order
 
-**Syntax:** obj << Gradient Reverse Label Order
+**Syntax:** obj &lt;&lt; Gradient Reverse Label Order
 
 **Description:** Reverses the order of the labels in a gradient.
 
@@ -2006,7 +2004,7 @@ seg << Set Gradient Reverse Label Order( 1 );
 
 ### Gradient Scale
 
-**Syntax:** obj << Gradient Scale( "Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom"="Linear" )
+**Syntax:** obj &lt;&lt; Gradient Scale( "Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom"="Linear" )
 
 **Description:** Sets the gradient scale type. "Linear" by default.
 
@@ -2023,7 +2021,7 @@ seg << Set Gradient Scale( "Quantile" );
 
 ### Gradient Scale Values
 
-**Syntax:** obj << Gradient Scale Values( [value1,value1, ... value N] )
+**Syntax:** obj &lt;&lt; Gradient Scale Values( [value1,value1, ... value N] )
 
 **Description:** Sets a custom set of values for use in the gradient&apos;s scale.
 
@@ -2040,7 +2038,7 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ### Gradient Show Missing
 
-**Syntax:** obj << Gradient Show Missing( "Auto"|"On"|"Off"="Auto" )
+**Syntax:** obj &lt;&lt; Gradient Show Missing( "Auto"|"On"|"Off"="Auto" )
 
 **Description:** Sets when to show the legend entry for missing values. "Auto" by default.
 
@@ -2060,7 +2058,7 @@ seg << Set Gradient Show Missing( "Off" );
 
 ### Gradient Transparency
 
-**Syntax:** obj << Gradient Transparency( "None"|"Linear"="Linear" )
+**Syntax:** obj &lt;&lt; Gradient Transparency( "None"|"Linear"="Linear" )
 
 **Description:** Sets the transparency behavior of gradients. "Linear" by default.
 
@@ -2092,7 +2090,7 @@ seg << Gradient Transparency( "None" );
 
 ### Label Offset
 
-**Syntax:** obj << Label Offset( {pt, x offset, y offset}, ... )
+**Syntax:** obj &lt;&lt; Label Offset( {pt, x offset, y offset}, ... )
 
 **Description:** Positions row labels according to the given coordinates.
 
@@ -2111,7 +2109,7 @@ seg << label offset( {0, -20, -10}, {1, -20, -30} );
 
 ### Marker
 
-**Syntax:** obj << Marker( marker )
+**Syntax:** obj &lt;&lt; Marker( marker )
 
 **Description:** Sets the marker style for all markers.
 
@@ -2143,7 +2141,7 @@ seg << Set Marker( "Square" );
 
 ### Marker Size
 
-**Syntax:** obj << Marker Size
+**Syntax:** obj &lt;&lt; Marker Size
 
 **Description:** Sets the size for the markers. Size options are Dot, Small, Medium, Large, XL, XXL, and XXXL.
 
@@ -2177,7 +2175,7 @@ seg << Set Marker Size( "dot" );
 
 ### Parent
 
-**Syntax:** seg2 = obj << Parent
+**Syntax:** seg2 = obj &lt;&lt; Parent
 
 **Description:** Returns the parent of the display seg.
 
@@ -2209,7 +2207,7 @@ seg << Parent;
 
 ### Revert
 
-**Syntax:** obj << Revert
+**Syntax:** obj &lt;&lt; Revert
 
 **Description:** Changes the seg back to its original state.
 
@@ -2244,7 +2242,7 @@ seg << Revert;
 
 ### Set Color
 
-**Syntax:** obj << Set Color( color )
+**Syntax:** obj &lt;&lt; Set Color( color )
 
 **Description:** Sets the color for all markers.
 
@@ -2276,7 +2274,7 @@ seg << Color( "Green" );
 
 ### Set Description
 
-**Syntax:** obj << Set Description( description )
+**Syntax:** obj &lt;&lt; Set Description( description )
 
 **Description:** Sets the description for the display seg.
 
@@ -2308,7 +2306,7 @@ seg << set description( "my seg" );
 
 ### Set Force Labels
 
-**Syntax:** obj << Set Force Labels( "No Labels"|"Label by Value"|"Label by Row"|"Label by Row and Value" )
+**Syntax:** obj &lt;&lt; Set Force Labels( "No Labels"|"Label by Value"|"Label by Row"|"Label by Row and Value" )
 
 **Description:** Label every marker regardless of the data table row state flags.
 
@@ -2335,9 +2333,7 @@ Bivariate(
 
 ### Set Gradient
 
-**Syntax:** obj << { <Color Theme(theme)>, <Min Lightness(0-1)>, <Max Lightness(0-1)>, <Contour Levels(num)>, <Reverse Gradient(0|1)>, <Density Gradient("Fade To White"|"Fade To Gray"|"Full Color")>, <Gradient Transparency("None"|"Linear")> }
-
-obj << { <Color Theme(theme)>, <Min Lightness(0-1)>, <Max Lightness(0-1)>, <N Labels(num)>, <Show Missing Color("On"|"Off"|"Auto")>, <Scale Type("Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom")>, <Scale Values([v1, v2, …])>, <Range Type("Default"|"Exact Data Range"|"Middle 90%")>, <Fill("Between"|"Above"|"Below"|"Above Below")>, <Reverse Gradient(0|1)>, <Reverse Labels(0|1)>, <Discrete Color(0|1)> }, <Label Format(labelFormat)>, <Width(num)>, <Horizontal(0|1)>, <Show Labels(0|1)>
+**Syntax:** obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;Contour Levels(num)&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Density Gradient("Fade To White"|"Fade To Gray"|"Full Color")&gt;, &lt;Gradient Transparency("None"|"Linear")&gt; }obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;N Labels(num)&gt;, &lt;Show Missing Color("On"|"Off"|"Auto")&gt;, &lt;Scale Type("Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom")&gt;, &lt;Scale Values([v1, v2, …])&gt;, &lt;Range Type("Default"|"Exact Data Range"|"Middle 90%")&gt;, &lt;Fill("Between"|"Above"|"Below"|"Above Below")&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Reverse Labels(0|1)&gt;, &lt;Discrete Color(0|1)&gt; }, &lt;Label Format(labelFormat)&gt;, &lt;Width(num)&gt;, &lt;Horizontal(0|1)&gt;, &lt;Show Labels(0|1)&gt;
 
 **Description:** Sets the coloring gradient.
 
@@ -2369,7 +2365,7 @@ seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
 
 ### Set Gradient Color Theme
 
-**Syntax:** obj << Set Gradient Color Theme
+**Syntax:** obj &lt;&lt; Set Gradient Color Theme
 
 **Description:** Sets the gradient&apos;s color theme.
 
@@ -2401,7 +2397,7 @@ seg << Set Gradient Color Theme( "Viridis" );
 
 ### Set Gradient Custom Scale
 
-**Syntax:** obj << Set Gradient Custom Scale
+**Syntax:** obj &lt;&lt; Set Gradient Custom Scale
 
 **Description:** Sets the gradient to use a list of values for a custom scale.
 
@@ -2433,7 +2429,7 @@ seg << Set Gradient Custom Scale( {0.0, 5.0, 10.0, 20.0} );
 
 ### Set Gradient Discrete Colors
 
-**Syntax:** obj << Set Gradient Discrete Colors
+**Syntax:** obj &lt;&lt; Set Gradient Discrete Colors
 
 **Description:** Sets if each level in a gradient should be a single color or if colors should transition smoothly.
 
@@ -2450,7 +2446,7 @@ seg << Set Gradient Discrete Colors( 1 );
 
 ### Set Gradient Fill
 
-**Syntax:** obj << Set Gradient Fill( "Between"|"Above"|"Below"|"Above Below"="Above Below" )
+**Syntax:** obj &lt;&lt; Set Gradient Fill( "Between"|"Above"|"Below"|"Above Below"="Above Below" )
 
 **Description:** Sets the coloring behavior for values outside of the range of the gradient&apos;s scale. "Above Below" by default.
 
@@ -2468,7 +2464,7 @@ seg << Set Gradient Fill( "Between" );
 
 ### Set Gradient Label Count
 
-**Syntax:** obj << Set Gradient Label Count
+**Syntax:** obj &lt;&lt; Set Gradient Label Count
 
 **Description:** Sets the number of labels in a gradient&apos;s legend. This is one more than the number of contour levels.
 
@@ -2500,7 +2496,7 @@ seg << Set Gradient Label Count( 8 );
 
 ### Set Gradient Label Levels
 
-**Syntax:** obj << Set Gradient Label Levels( [value1,value1, ... value N] )
+**Syntax:** obj &lt;&lt; Set Gradient Label Levels( [value1,value1, ... value N] )
 
 **Description:** Sets a custom set of values for use in the gradient&apos;s scale.
 
@@ -2517,7 +2513,7 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ### Set Gradient Legend Horizontal
 
-**Syntax:** obj << Set Gradient Legend Horizontal
+**Syntax:** obj &lt;&lt; Set Gradient Legend Horizontal
 
 **Description:** Sets if the gradient&apos;s legend should be drawn horizontally.
 
@@ -2549,7 +2545,7 @@ seg << Set Gradient Legend Horizontal( 1 );
 
 ### Set Gradient Legend Label Format
 
-**Syntax:** obj << Set Gradient Legend Label Format
+**Syntax:** obj &lt;&lt; Set Gradient Legend Label Format
 
 **Description:** Sets the format for gradient legend labels
 
@@ -2581,7 +2577,7 @@ seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
 
 ### Set Gradient Legend Label Width
 
-**Syntax:** obj << Set Gradient Legend Label Width
+**Syntax:** obj &lt;&lt; Set Gradient Legend Label Width
 
 **Description:** Sets the maximum character length of gradient legend labels.
 
@@ -2613,7 +2609,7 @@ seg << Set Gradient Legend Label Width( 4 );
 
 ### Set Gradient Legend Show Labels
 
-**Syntax:** obj << Set Gradient Legend Show Labels
+**Syntax:** obj &lt;&lt; Set Gradient Legend Show Labels
 
 **Description:** Sets if the level labels should be shown in the gradient&apos;s legend.
 
@@ -2645,7 +2641,7 @@ seg << Set Gradient Legend Show Labels( 0 );
 
 ### Set Gradient Level Count
 
-**Syntax:** obj << Set Gradient Level Count
+**Syntax:** obj &lt;&lt; Set Gradient Level Count
 
 **Description:** Sets the number of levels in a gradient. This is one less than the number of labels.
 
@@ -2677,7 +2673,7 @@ seg << Set Gradient Levels( 7 );
 
 ### Set Gradient Lightness Range
 
-**Syntax:** obj << Set Gradient Lightness Range
+**Syntax:** obj &lt;&lt; Set Gradient Lightness Range
 
 **Description:** Sets the minimum and maximum lightness for level colors in a gradient. The colors will be scaled to cover this range. A missing value is treated as no change.
 
@@ -2767,7 +2763,7 @@ seg << Set Gradient Lightness Range( ., 0.75 );
 
 ### Set Gradient Range
 
-**Syntax:** obj << Set Gradient Range( "Default"|"Exact Data Range"|"Middle 90%"="Default" )
+**Syntax:** obj &lt;&lt; Set Gradient Range( "Default"|"Exact Data Range"|"Middle 90%"="Default" )
 
 **Description:** Sets the range over which non-custom gradient scales are generated. "Default" by default.
 
@@ -2784,7 +2780,7 @@ seg << Set Gradient Range( "Exact Data Range" );
 
 ### Set Gradient Reverse Color Order
 
-**Syntax:** obj << Set Gradient Reverse Color Order
+**Syntax:** obj &lt;&lt; Set Gradient Reverse Color Order
 
 **Description:** Reverses the order of the colors in a gradient.
 
@@ -2816,7 +2812,7 @@ seg << Set Gradient Reverse Color Order( 1 );
 
 ### Set Gradient Reverse Label Order
 
-**Syntax:** obj << Set Gradient Reverse Label Order
+**Syntax:** obj &lt;&lt; Set Gradient Reverse Label Order
 
 **Description:** Reverses the order of the labels in a gradient.
 
@@ -2848,7 +2844,7 @@ seg << Set Gradient Reverse Label Order( 1 );
 
 ### Set Gradient Scale
 
-**Syntax:** obj << Set Gradient Scale( "Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom"="Linear" )
+**Syntax:** obj &lt;&lt; Set Gradient Scale( "Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom"="Linear" )
 
 **Description:** Sets the gradient scale type. "Linear" by default.
 
@@ -2865,7 +2861,7 @@ seg << Set Gradient Scale( "Quantile" );
 
 ### Set Gradient Scale Values
 
-**Syntax:** obj << Set Gradient Scale Values( [value1,value1, ... value N] )
+**Syntax:** obj &lt;&lt; Set Gradient Scale Values( [value1,value1, ... value N] )
 
 **Description:** Sets a custom set of values for use in the gradient&apos;s scale.
 
@@ -2882,7 +2878,7 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ### Set Gradient Show Missing
 
-**Syntax:** obj << Set Gradient Show Missing( "Auto"|"On"|"Off"="Auto" )
+**Syntax:** obj &lt;&lt; Set Gradient Show Missing( "Auto"|"On"|"Off"="Auto" )
 
 **Description:** Sets when to show the legend entry for missing values. "Auto" by default.
 
@@ -2902,7 +2898,7 @@ seg << Set Gradient Show Missing( "Off" );
 
 ### Set Hide Missing Color
 
-**Syntax:** obj << Set Hide Missing Color( true/false )
+**Syntax:** obj &lt;&lt; Set Hide Missing Color( true/false )
 
 ```jsl
 
@@ -2932,7 +2928,7 @@ seg << Set Hide Missing Color( true );
 
 ### Set Hide Missing Size
 
-**Syntax:** obj << Set Hide Missing Size( true/false )
+**Syntax:** obj &lt;&lt; Set Hide Missing Size( true/false )
 
 ```jsl
 
@@ -2962,7 +2958,7 @@ seg << Set Hide Missing Size( true );
 
 ### Set Jitter
 
-**Syntax:** obj << Set Jitter( {method, axis, limit, spacing, seed, side, overlap, grid offset, smooth, max error, bandwidth} )
+**Syntax:** obj &lt;&lt; Set Jitter( {method, axis, limit, spacing, seed, side, overlap, grid offset, smooth, max error, bandwidth} )
 
 **Description:** Applies an offset to marker positions for collision reduction. method is none|random uniform|random normal|centered|centered grid|positive grid. axis is X|Y|XY. limit is the width of the jitter, adjusted for the method. spacing is the percentage of the marker size using for jittering or 0 for auto-adjustment.
 
@@ -2979,7 +2975,7 @@ seg << Set Jitter( {"Grid", "X", 1, 0, 0, "Centered"} );
 
 ### Set Label Value Axis
 
-**Syntax:** obj << Set Label Value Axis( "X"|"Y" )
+**Syntax:** obj &lt;&lt; Set Label Value Axis( "X"|"Y" )
 
 **Description:** Whether forced labels show the X or Y value.
 
@@ -3006,7 +3002,7 @@ Bivariate(
 
 ### Set Label Value Format
 
-**Syntax:** obj << Set Label Value Format
+**Syntax:** obj &lt;&lt; Set Label Value Format
 
 **Description:** How to format the X or Y value; Auto means use axis format.
 
@@ -3033,13 +3029,13 @@ Bivariate(
 
 ### Set Label Value Width
 
-**Syntax:** obj << Set Label Value Width( number )
+**Syntax:** obj &lt;&lt; Set Label Value Width( number )
 
 **Description:** Maximum width for a formatted label value.
 
 ### Set Marker
 
-**Syntax:** obj << Set Marker( marker )
+**Syntax:** obj &lt;&lt; Set Marker( marker )
 
 **Description:** Sets the marker style for all markers.
 
@@ -3071,7 +3067,7 @@ seg << Set Marker( "Square" );
 
 ### Set Marker Draw Column
 
-**Syntax:** obj << Set Marker Draw Column( column )
+**Syntax:** obj &lt;&lt; Set Marker Draw Column( column )
 
 **Description:** Sets a custom marker drawing data table column, which could be a picture, matrix of points, text, drawing code or a function.
 
@@ -3091,7 +3087,7 @@ seg << Set Marker Draw Column( :picture );
 
 ### Set Marker Draw Expr
 
-**Syntax:** obj << Set Marker Draw Expr( expr )
+**Syntax:** obj &lt;&lt; Set Marker Draw Expr( expr )
 
 **Description:** Sets a custom marker drawing expression, which could be a matrix of points, text, drawing code or a function.
 
@@ -3161,7 +3157,7 @@ seg << Set Marker Draw Expr( Expr( :sex || Char( :age ) ) );
 
 ### Set Marker Size
 
-**Syntax:** obj << Set Marker Size
+**Syntax:** obj &lt;&lt; Set Marker Size
 
 **Description:** Sets the size for the markers. Size options are Dot, Small, Medium, Large, XL, XXL, and XXXL.
 
@@ -3195,7 +3191,7 @@ seg << Set Marker Size( "dot" );
 
 ### Set Overlay Color
 
-**Syntax:** obj << Set Overlay Color( marker index, color )
+**Syntax:** obj &lt;&lt; Set Overlay Color( marker index, color )
 
 ```jsl
 
@@ -3211,7 +3207,7 @@ seg << Set Overlay Color( 1, "Green" );
 
 ### Set Overlay Marker
 
-**Syntax:** obj << Set Overlay Marker( marker index, marker )
+**Syntax:** obj &lt;&lt; Set Overlay Marker( marker index, marker )
 
 ```jsl
 
@@ -3227,7 +3223,7 @@ seg << Set Overlay Marker( 1, "Star" );
 
 ### Set Transparency
 
-**Syntax:** obj << Set Transparency( number )
+**Syntax:** obj &lt;&lt; Set Transparency( number )
 
 **Description:** Sets the marker transparency. The argument should be a numeric value between 0 and 1.
 
@@ -3259,7 +3255,7 @@ seg << Set Transparency( .3 );
 
 ### Sib
 
-**Syntax:** seg2 = obj << Sib
+**Syntax:** seg2 = obj &lt;&lt; Sib
 
 **Description:** Returns the sibling of the display seg.
 
@@ -3291,7 +3287,7 @@ seg << Sib;
 
 ### Sib Append
 
-**Syntax:** obj << Sib Append( seg2 )
+**Syntax:** obj &lt;&lt; Sib Append( seg2 )
 
 **Description:** Adds a display seg immediately after the display seg.
 
@@ -3329,7 +3325,7 @@ mapSeg << Sib Append( Line Seg( xval, yval, <<line color( "Green" ), <<line widt
 
 ### Sib Prepend
 
-**Syntax:** obj << Sib Prepend( seg2 )
+**Syntax:** obj &lt;&lt; Sib Prepend( seg2 )
 
 **Description:** Adds a display seg immediately before the display seg.
 
@@ -3374,7 +3370,7 @@ seg << Sib Prepend( Line Seg( xval, yval, <<line color( "Green" ), <<line width(
 
 ### Transparency
 
-**Syntax:** obj << Transparency( number )
+**Syntax:** obj &lt;&lt; Transparency( number )
 
 **Description:** Sets the marker transparency. The argument should be a numeric value between 0 and 1.
 
@@ -3408,9 +3404,7 @@ seg << Set Transparency( .3 );
 
 ### Enabled
 
-**Syntax:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**Syntax:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Description:** An object that is not enabled will not respond to keyboard or mouse input. This property is inherited by child objects, so a container object that is disabled will cause all descendent objects to be disabled.
 
@@ -3442,9 +3436,7 @@ New Window( "enabled",
 
 ### Get Enabled
 
-**Syntax:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**Syntax:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Description:** An object that is not enabled will not respond to keyboard or mouse input. This property is inherited by child objects, so a container object that is disabled will cause all descendent objects to be disabled.
 
@@ -3476,7 +3468,7 @@ New Window( "enabled",
 
 ### Get Namespace
 
-**Syntax:** obj << Get Namespace
+**Syntax:** obj &lt;&lt; Get Namespace
 
 **Description:** Returns the namespace associated with this display object.
 
@@ -3494,7 +3486,7 @@ Show( ns:x, x );
 
 ### Get Properties
 
-**Syntax:** obj << Get Properties
+**Syntax:** obj &lt;&lt; Get Properties
 
 **Description:** Returns an associative array that contains the display box&apos;s properties and their values.
 
@@ -3508,7 +3500,7 @@ bb << Get Properties;
 
 ### Get Property
 
-**Syntax:** obj << Get Property( "property" )
+**Syntax:** obj &lt;&lt; Get Property( "property" )
 
 **Description:** Returns the current setting for the named property.
 
@@ -3522,7 +3514,7 @@ bb << Get Property( "Enabled" );
 
 ### Get Property List
 
-**Syntax:** obj << Get Property List
+**Syntax:** obj &lt;&lt; Get Property List
 
 **Description:** Returns a list of properties the display box has.
 
@@ -3536,7 +3528,7 @@ bb << Get Property List;
 
 ### Set Property
 
-**Syntax:** obj << Set Property( "property", value )
+**Syntax:** obj &lt;&lt; Set Property( "property", value )
 
 **Description:** Sets the value for the named property for the display box.
 

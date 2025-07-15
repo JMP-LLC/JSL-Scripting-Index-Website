@@ -6,19 +6,19 @@
 
 ### Factor
 
-**Sintassi:** obj << Factor( column(s) )
+**Sintassi:** obj &lt;&lt; Factor( column(s) )
 
 ### Response
 
-**Sintassi:** obj << Response( column(s) )
+**Sintassi:** obj &lt;&lt; Response( column(s) )
 
 ### X
 
-**Sintassi:** obj << X( column(s) )
+**Sintassi:** obj &lt;&lt; X( column(s) )
 
 ### Y
 
-**Sintassi:** obj << Y( column(s) )
+**Sintassi:** obj &lt;&lt; Y( column(s) )
 
 ## Costruttori associati
 
@@ -30,7 +30,7 @@
 
 ### A-Optimality Parameter Weights
 
-**Sintassi:** obj << A-Optimality Parameter Weights
+**Sintassi:** obj &lt;&lt; A-Optimality Parameter Weights
 
 **Descrizione:** Imposta i pesi da usare per la creazione di un piano A-ottimale.
 
@@ -53,7 +53,7 @@ DOE(
 
 ### ALT Factor Settings
 
-**Sintassi:** obj << ALT Factor Settings
+**Sintassi:** obj &lt;&lt; ALT Factor Settings
 
 **Descrizione:** Per il numero di fattori dato in un piano di test accelerato di durata, consente di specificare nome del fattore, numero di livelli, trasformazione del fattore e condizioni di utilizzo e test.
 
@@ -76,7 +76,7 @@ DOE(
 
 ### ALT Plan Setup
 
-**Sintassi:** obj << ALT Plan Setup( 1|2|3 )
+**Sintassi:** obj &lt;&lt; ALT Plan Setup( 1|2|3 )
 
 **Descrizione:** Specifica la scelta iniziale del modello per un piano di test accelerato di durata.
 
@@ -99,7 +99,7 @@ DOE(
 
 ### Add Alias Term
 
-**Sintassi:** obj << Add Alias Term
+**Sintassi:** obj &lt;&lt; Add Alias Term
 
 **Descrizione:** Aggiunge un termine alias all&apos;elenco di termini alias. Specifica il numero e potenza del fattore per ciascun effetto in un elenco. Crea interazioni separando gli effetti con virgole.
 
@@ -118,7 +118,7 @@ d << Add Alias Term( {1, 2} );
 
 ### Add Constraint
 
-**Sintassi:** obj << Add Constraint
+**Sintassi:** obj &lt;&lt; Add Constraint
 
 **Descrizione:** Aggiunge vincoli lineari attraverso una matrice. Ogni riga rappresenta un vincolo. L’ultima colonna è per i valori sul lato destro dei vincoli di disuguaglianza. In JSL, i vincoli di disuguaglianza devono essere inferiori o uguali ai valori sulla destra.
 
@@ -138,7 +138,7 @@ DOE(
 
 ### Add Factor
 
-**Sintassi:** obj << Add Factor( Continuous|Discrete Numeric|Blocking|Constant|Categorical|Mixture )
+**Sintassi:** obj &lt;&lt; Add Factor( Continuous|Discrete Numeric|Blocking|Constant|Categorical|Mixture )
 
 **Descrizione:** Aggiunge un fattore del tipo specificato e argomenti facoltativi. Se non viene specificato nulla, questo comando aggiunge un fattore continuo.
 
@@ -156,7 +156,7 @@ d << Add Factor( Constant, 3, "X5" );
 
 ### Add Functional Response
 
-**Sintassi:** obj << Add Functional Response
+**Sintassi:** obj &lt;&lt; Add Functional Response
 
 **Descrizione:** Aggiunge una risposta funzionale con il nome, il numero di misurazioni per esecuzione e i valori specificati.
 
@@ -178,7 +178,7 @@ DOE(
 
 ### Add Potential Term
 
-**Sintassi:** obj << Add Potential Term
+**Sintassi:** obj &lt;&lt; Add Potential Term
 
 **Descrizione:** Aggiunge un termine Se possibile all&apos;elenco di termini del modello. Specifica il numero e potenza del fattore per ciascun effetto in un elenco. Crea interazioni separando gli effetti con virgole.
 
@@ -197,7 +197,7 @@ d << Add Potential Term( {1, 2} );
 
 ### Add Response
 
-**Sintassi:** obj << Add Response( goal, name, lower limit, upper limit, importance, lower detection limit, upper detection limit )
+**Sintassi:** obj &lt;&lt; Add Response( goal, name, lower limit, upper limit, importance, lower detection limit, upper detection limit )
 
 **Descrizione:** Aggiunge una risposta con l&apos;obiettivo, il nome, il limite inferiore, il limite superiore e l&apos;importanza specificati.
 
@@ -221,7 +221,7 @@ DOE( Custom Design, Add Response( Match Target, "Y", ., ., 1, 10, 30 ) );
 
 ### Add Term
 
-**Sintassi:** obj << Add Term
+**Sintassi:** obj &lt;&lt; Add Term
 
 **Descrizione:** Aggiunge un termine "Necessario" all&apos;elenco di termini del modello. Gli effetti sono specificati da {numero di fattori, potenza}. È possibile creare interazioni separando gli effetti con virgole.
 
@@ -240,7 +240,7 @@ d << Add Term( {1, 2} );
 
 ### Additional Designs
 
-**Sintassi:** obj << Additional Designs
+**Sintassi:** obj &lt;&lt; Additional Designs
 
 **Descrizione:** Specifica fino a nove piani supplementari da confrontare con il piano di riferimento.
 
@@ -283,7 +283,7 @@ DOE(
 
 ### Allow covariate rows to be repeated
 
-**Sintassi:** obj << Allow covariate rows to be repeated( state=0|1 )
+**Sintassi:** obj &lt;&lt; Allow covariate rows to be repeated( state=0|1 )
 
 **Descrizione:** Specifica se è consentito ripetere nel piano le righe covariate.
 
@@ -313,7 +313,7 @@ DOE(
 
 ### Augment Method
 
-**Sintassi:** obj << Augment Method( Replicate|Centerpoints|Fold Over|Add Axial|Augment )
+**Sintassi:** obj &lt;&lt; Augment Method( Replicate|Centerpoints|Fold Over|Add Axial|Augment )
 
 **Descrizione:** Specifica il tipo di metodo di allargamento e i rispettivi parametri.
 
@@ -376,7 +376,7 @@ d << Augment Method( Add Axial, 1, 2 );
 
 ### Blocks
 
-**Sintassi:** obj << Blocks
+**Sintassi:** obj &lt;&lt; Blocks
 
 **Descrizione:** Specifica la dimensione del blocco per un piano con blocco incompleto bilanciato (BIBD).
 
@@ -393,7 +393,7 @@ d << Make Design;
 
 ### Center Points
 
-**Sintassi:** obj << Center Points
+**Sintassi:** obj &lt;&lt; Center Points
 
 **Descrizione:** Specifica il numero di punti centrali.
 
@@ -434,7 +434,7 @@ DOE(
 
 ### Change Anticipated Coefficients
 
-**Sintassi:** obj << Change Anticipated Coefficients
+**Sintassi:** obj &lt;&lt; Change Anticipated Coefficients
 
 **Descrizione:** Cambia i coefficienti anticipati nell&apos;analisi di potenza.
 
@@ -449,7 +449,7 @@ d << Change Anticipated Coefficients( [1 2 3 4 2 2 2 3 3 3] );
 
 ### Change Factor Settings
 
-**Sintassi:** obj << Change Factor Settings
+**Sintassi:** obj &lt;&lt; Change Factor Settings
 
 **Descrizione:** Specifica il minimo, il massimo e il nome del fattore della miscela o continuo incluso nel primo argomento. Particolarmente utile per piattaforme con fattori inizialmente predefiniti.
 
@@ -477,7 +477,7 @@ d << Change Factor Settings( 3, 0, 0.8, "C" );
 
 ### Check Inscribe
 
-**Sintassi:** obj << Check Inscribe
+**Sintassi:** obj &lt;&lt; Check Inscribe
 
 **Descrizione:** Ridimensiona il piano in modo che i punti assiali siano alle estremità inferiore e superiore del range.
 
@@ -492,7 +492,7 @@ d << Check Inscribe;
 
 ### Choice Design Table Output
 
-**Sintassi:** obj << Choice Design Table Output( "Separa"|"Combinati" )
+**Sintassi:** obj &lt;&lt; Choice Design Table Output( "Separa"|"Combinati" )
 
 **Descrizione:** Specifica come creare una tabella di dati per un piano di scelta.
 
@@ -514,7 +514,7 @@ DOE(
 
 ### D Efficiency Weight
 
-**Sintassi:** obj << D Efficiency Weight
+**Sintassi:** obj &lt;&lt; D Efficiency Weight
 
 **Descrizione:** Utilizzare questa opzione per controllare l&apos;importanza relativa dell&apos;efficienza D nel ridurre la generazione di alias. Specificare un numero compreso tra zero e uno.
 
@@ -533,7 +533,7 @@ DOE(
 
 ### Design Search Time
 
-**Sintassi:** obj << Design Search Time( number )
+**Sintassi:** obj &lt;&lt; Design Search Time( number )
 
 **Descrizione:** Specifica il numero di secondi di ricerca di un piano.
 
@@ -550,7 +550,7 @@ DOE(
 
 ### Disallowed Combinations
 
-**Sintassi:** obj << Disallowed Combinations
+**Sintassi:** obj &lt;&lt; Disallowed Combinations
 
 **Descrizione:** Permette di creare uno script che restituisce il valore vero per tutte le combinazioni di fattori che devono essere escluse dal piano.
 
@@ -570,7 +570,7 @@ DOE(
 
 ### Discrete Numeric Powers Set to Necessary
 
-**Sintassi:** obj << Discrete Numeric Powers Set to Necessary( state=0|1 )
+**Sintassi:** obj &lt;&lt; Discrete Numeric Powers Set to Necessary( state=0|1 )
 
 **Descrizione:** Specifica se le potenze nei fattori numerici discreti devono essere termini del modello necessari.
 
@@ -589,7 +589,7 @@ DOE(
 
 ### Distribution Choice
 
-**Sintassi:** obj << Distribution Choice
+**Sintassi:** obj &lt;&lt; Distribution Choice
 
 **Descrizione:** Specifica la distribuzione per un piano di test accelerato di durata.
 
@@ -612,7 +612,7 @@ DOE(
 
 ### Enforce Use of Selected Covariate Rows
 
-**Sintassi:** obj << Enforce Use of Selected Covariate Rows( state=0|1 )
+**Sintassi:** obj &lt;&lt; Enforce Use of Selected Covariate Rows( state=0|1 )
 
 **Descrizione:** Specifica se tutte le righe covariate selezionate devono essere incluse nel piano.
 
@@ -642,7 +642,7 @@ DOE(
 
 ### FFF Optimality Criterion
 
-**Sintassi:** obj << FFF Optimality Criterion( "MaxPro"|"Centroide" )
+**Sintassi:** obj &lt;&lt; FFF Optimality Criterion( "MaxPro"|"Centroide" )
 
 **Descrizione:** Specifica il criterio utilizzato nel piano. Si consiglia il valore predefinito.
 
@@ -680,7 +680,7 @@ DOE(
 
 ### Find Subset
 
-**Sintassi:** obj << Find Subset
+**Sintassi:** obj &lt;&lt; Find Subset
 
 **Descrizione:** Trova il sottoinsieme D-ottimale di un piano a vertici estremi.
 
@@ -695,7 +695,7 @@ d << Find Subset( 10 );
 
 ### GOSSDDetails
 
-**Sintassi:** obj << GOSSDDetails
+**Sintassi:** obj &lt;&lt; GOSSDDetails
 
 **Descrizione:** Restituisce le impostazioni correnti dei fattori come elenco.
 
@@ -711,7 +711,7 @@ Show( d << GOSSDDetails );
 
 ### GOSSDStructure
 
-**Sintassi:** obj << GOSSDStructure
+**Sintassi:** obj &lt;&lt; GOSSDStructure
 
 **Descrizione:** Specifica la struttura di un GOSSD
 
@@ -727,7 +727,7 @@ d << GOSSDStructure( 6, 8 );
 
 ### Get Alias Matrix
 
-**Sintassi:** obj << Get Alias Matrix
+**Sintassi:** obj &lt;&lt; Get Alias Matrix
 
 **Descrizione:** Restituisce la matrice degli alias dalla valutazione del piano.
 
@@ -742,7 +742,7 @@ d << Get Alias Matrix;
 
 ### Get Design Diagnostics
 
-**Sintassi:** obj << Get Design Diagnostics
+**Sintassi:** obj &lt;&lt; Get Design Diagnostics
 
 **Descrizione:** Restituisce efficienza D, efficienza G, efficienza A e varianza media di previsione.
 
@@ -757,7 +757,7 @@ d << Get Design Diagnostics;
 
 ### Get Effect Power
 
-**Sintassi:** obj << Get Effect Power
+**Sintassi:** obj &lt;&lt; Get Effect Power
 
 **Descrizione:** Restituisce il vettore di potenze per stime degli effetti.
 
@@ -772,7 +772,7 @@ d << Get Effect Power;
 
 ### Get Estimation Efficiencies
 
-**Sintassi:** obj << Get Estimation Efficiencies
+**Sintassi:** obj &lt;&lt; Get Estimation Efficiencies
 
 **Descrizione:** Restituisce un vettore per la maggiore larghezza di ciascuna stima dei parametri rispetto a un piano ideale.
 
@@ -787,7 +787,7 @@ d << Get Estimation Efficiencies;
 
 ### Get MaxPro Values
 
-**Sintassi:** obj << Get MaxPro Values
+**Sintassi:** obj &lt;&lt; Get MaxPro Values
 
 **Descrizione:** Restituisce i valori MaxPro per un piano rapido-flessibile, compresi alcuni sottopiani basati sui livelli di un fattore categorico.
 
@@ -809,7 +809,7 @@ d << Get MaxPro Values;
 
 ### Get Number of Random Starts
 
-**Sintassi:** obj << Get Number of Random Starts
+**Sintassi:** obj &lt;&lt; Get Number of Random Starts
 
 **Descrizione:** Restituisce il numero di partenze casuali utilizzate nella generazione del piano.
 
@@ -817,7 +817,7 @@ d << Get MaxPro Values;
 
 ### Get Power
 
-**Sintassi:** obj << Get Power
+**Sintassi:** obj &lt;&lt; Get Power
 
 **Descrizione:** Restituisce il vettore di potenze per stime dei parametri.
 
@@ -832,7 +832,7 @@ d << Get Power;
 
 ### Get Prediction Variances
 
-**Sintassi:** obj << Get Prediction Variances
+**Sintassi:** obj &lt;&lt; Get Prediction Variances
 
 **Descrizione:** Restituisce le varianze del vettore di previsione dal diagramma della relazione tra frazione dello spazio sperimentale e varianza prevista.
 
@@ -853,7 +853,7 @@ d << Get Prediction Variances;
 
 ### Get X Matrix
 
-**Sintassi:** obj << Get X Matrix
+**Sintassi:** obj &lt;&lt; Get X Matrix
 
 **Descrizione:** Restituisce la matrice del piano (denominata anche matrice X).
 
@@ -868,7 +868,7 @@ d << Get X Matrix;
 
 ### Group New Runs Into Separate Block
 
-**Sintassi:** obj << Group New Runs Into Separate Block
+**Sintassi:** obj &lt;&lt; Group New Runs Into Separate Block
 
 **Descrizione:** Aggiunge un fattore di blocco che raggruppa nuove esecuzioni in blocchi separati quando si allarga un piano.
 
@@ -883,7 +883,7 @@ d << Group New Runs Into Separate Block;
 
 ### Load Constraints
 
-**Sintassi:** obj << Load Constraints
+**Sintassi:** obj &lt;&lt; Load Constraints
 
 **Descrizione:** Carica una tabella di vincoli di fattori salvata in precedenza, per utilizzarla nell&apos;esperimento in corso.
 
@@ -903,7 +903,7 @@ d = DOE(
 
 ### Load Design
 
-**Sintassi:** obj << Load Design
+**Sintassi:** obj &lt;&lt; Load Design
 
 **Descrizione:** Carica piano
 
@@ -917,7 +917,7 @@ d << Load Design();
 
 ### Load Factors
 
-**Sintassi:** obj << Load Factors
+**Sintassi:** obj &lt;&lt; Load Factors
 
 **Descrizione:** Carica una tabella di fattori salvata in precedenza, per utilizzarla nell&apos;esperimento in corso.
 
@@ -931,7 +931,7 @@ DOE( Custom Design, Load Factors );
 
 ### Load Responses
 
-**Sintassi:** obj << Load Responses
+**Sintassi:** obj &lt;&lt; Load Responses
 
 **Descrizione:** Carica una tabella di dati di risposte precedentemente salvata.
 
@@ -945,7 +945,7 @@ DOE( Custom Design, Load Responses );
 
 ### Local Design
 
-**Sintassi:** obj << Local Design( state=0|1 )
+**Sintassi:** obj &lt;&lt; Local Design( state=0|1 )
 
 **Descrizione:** Specifica se deve essere creato il piano locale per la media a priori.
 
@@ -969,7 +969,7 @@ DOE(
 
 ### Make Design
 
-**Sintassi:** obj << Make Design
+**Sintassi:** obj &lt;&lt; Make Design
 
 **Descrizione:** Crea il piano specificato nello script.
 
@@ -984,7 +984,7 @@ d << Make Design;
 
 ### Make Model
 
-**Sintassi:** obj << Make Model( Linear|Interactions|RSM )
+**Sintassi:** obj &lt;&lt; Make Model( Linear|Interactions|RSM )
 
 **Descrizione:** Aggiunge termini all&apos;elenco di termini del modello per il modello specificato.
 
@@ -1010,7 +1010,7 @@ d << Make Model( Interactions );
 
 ### Make Strip Plot Design
 
-**Sintassi:** obj << Make Strip Plot Design
+**Sintassi:** obj &lt;&lt; Make Strip Plot Design
 
 **Descrizione:** Specifica un piano strip plot quando i fattori difficili da modificare variano indipendentemente dai fattori molto difficili da modificare.
 
@@ -1030,7 +1030,7 @@ d << Make Strip Plot Design;
 
 ### Make Table
 
-**Sintassi:** obj << Make Table
+**Sintassi:** obj &lt;&lt; Make Table
 
 **Descrizione:** Crea una tabella di dati dal piano corrente.
 
@@ -1045,7 +1045,7 @@ d << Make Table;
 
 ### Make Test Plan
 
-**Sintassi:** obj << Make Test Plan
+**Sintassi:** obj &lt;&lt; Make Test Plan
 
 **Descrizione:** Crea il piano di test per un piano di test accelerato di durata.
 
@@ -1070,7 +1070,7 @@ DOE(
 
 ### MaxPro Categorical Weight
 
-**Sintassi:** obj << MaxPro Categorical Weight
+**Sintassi:** obj &lt;&lt; MaxPro Categorical Weight
 
 **Descrizione:** Specifica il peso MaxPro. I valori superiori a 1 aumentano la separazione dei punti che hanno lo stesso livello categorico.
 
@@ -1091,7 +1091,7 @@ DOE(
 
 ### Mixture Design Type
 
-**Sintassi:** obj << Mixture Design Type( Simplex Centroid|Simplex Lattice|ABCD|Extreme Vertices|Space Filling )
+**Sintassi:** obj &lt;&lt; Mixture Design Type( Simplex Centroid|Simplex Lattice|ABCD|Extreme Vertices|Space Filling )
 
 **Descrizione:** Specifica il tipo di piano della miscela. Vengono utilizzati i parametri predefiniti a meno che si specifichi il parametro come secondo argomento.
 
@@ -1148,7 +1148,7 @@ d << Mixture Design Type( Space Filling, 25 );
 
 ### Mixture Sum
 
-**Sintassi:** obj << Mixture Sum
+**Sintassi:** obj &lt;&lt; Mixture Sum
 
 **Descrizione:** Utilizzare questa opzione quando si desidera esprimere la somma di tutti gli ingredienti diversa da 1. Il totale della miscela è la somma di tutte le quantità degli ingredienti.
 
@@ -1168,7 +1168,7 @@ DOE(
 
 ### Nesting Structure
 
-**Sintassi:** obj << Nesting Structure
+**Sintassi:** obj &lt;&lt; Nesting Structure
 
 **Descrizione:** Specifica la struttura di nidificazione del piano. Usare un elenco con parentesi per indicare la nidificazione (il primo elemento è un fattore di nidificazione, il secondo elemento è un elenco con parentesi di fattori o strutture nidificati). Usare la concatenazione orizzontale (&apos;||&apos;) per indicare fattori o strutture incrociati.
 
@@ -1187,7 +1187,7 @@ DOE(
 
 ### Number of Column Starts
 
-**Sintassi:** obj << Number of Column Starts
+**Sintassi:** obj &lt;&lt; Number of Column Starts
 
 **Descrizione:** Specifica il numero di volte in cui le colonne casuali sono ottimizzate per ciascun fattore di un piano di screening degli effetti principali.
 
@@ -1209,7 +1209,7 @@ DOE(
 
 ### Number of Extra Runs
 
-**Sintassi:** obj << Number of Extra Runs
+**Sintassi:** obj &lt;&lt; Number of Extra Runs
 
 **Descrizione:** Specifica il numero di esecuzioni aggiuntive da includere in un piano di screening definitivo.
 
@@ -1232,7 +1232,7 @@ DOE(
 
 ### Number of Starts
 
-**Sintassi:** obj << Number of Starts
+**Sintassi:** obj &lt;&lt; Number of Starts
 
 **Descrizione:** Specifica il numero di volte in cui il piano viene rigenerato per ottimizzare il piano generale.
 
@@ -1252,7 +1252,7 @@ DOE(
 
 ### Optimality Criterion
 
-**Sintassi:** obj << Optimality Criterion( "Consigliato"|"Costruisci piano D-ottimale"|"Costruisci piano I-ottimale"|"Costruisci piano A-ottimale"|"Costruisci piano alias-ottimale" )
+**Sintassi:** obj &lt;&lt; Optimality Criterion( "Consigliato"|"Costruisci piano D-ottimale"|"Costruisci piano I-ottimale"|"Costruisci piano A-ottimale"|"Costruisci piano alias-ottimale" )
 
 **Descrizione:** Specifica il criterio utilizzato nel piano. Si consiglia il valore predefinito.
 
@@ -1290,7 +1290,7 @@ DOE(
 
 ### Order Column
 
-**Sintassi:** obj << Order Column
+**Sintassi:** obj &lt;&lt; Order Column
 
 **Descrizione:** Richiede una colonna Ordine quando viene creata la tabella di dati.
 
@@ -1308,7 +1308,7 @@ d << OrderColumn( 1 );
 
 ### Prior Parameter Variance
 
-**Sintassi:** obj << Prior Parameter Variance
+**Sintassi:** obj &lt;&lt; Prior Parameter Variance
 
 **Descrizione:** Utilizzare questa opzione per controllare il peso utilizzato per i termini Se possibile in un modello. I valori più elevati significano maggiori informazioni a priori e una varianza inferiore. Le varianze sono i reciproci dei valori inseriti.
 
@@ -1330,7 +1330,7 @@ DOE(
 
 ### Prior Specification Choice
 
-**Sintassi:** obj << Prior Specification Choice
+**Sintassi:** obj &lt;&lt; Prior Specification Choice
 
 **Descrizione:** Imposta l&apos;opzione per specificare i parametri a priori, dove 1 indica Specifica intercetta e 2 indica Specifica quantile.
 
@@ -1354,7 +1354,7 @@ DOE(
 
 ### Reference Design
 
-**Sintassi:** obj << Reference Design
+**Sintassi:** obj &lt;&lt; Reference Design
 
 **Descrizione:** Specifica il piano di riferimento per il confronto tra piani.
 
@@ -1397,7 +1397,7 @@ DOE(
 
 ### Remove Alias Term
 
-**Sintassi:** obj << Remove Alias Term
+**Sintassi:** obj &lt;&lt; Remove Alias Term
 
 **Descrizione:** Rimuove un termine dall&apos;elenco di termini alias. Specifica il numero e potenza dei fattori per ciascun effetto in un elenco. Crea interazioni separando gli effetti con virgole.
 
@@ -1412,7 +1412,7 @@ d << Remove Alias Term( {1, 1}, {3, 1} );
 
 ### Remove All Alias Terms
 
-**Sintassi:** obj << Remove All Alias Terms
+**Sintassi:** obj &lt;&lt; Remove All Alias Terms
 
 **Descrizione:** Rimuove tutti i termini alias dall&apos;elenco dei termini alias
 
@@ -1431,7 +1431,7 @@ d << Remove All Alias Terms;
 
 ### Remove Term
 
-**Sintassi:** obj << Remove Term
+**Sintassi:** obj &lt;&lt; Remove Term
 
 **Descrizione:** Rimuove un termine dall&apos;elenco di termini del modello. Specifica il numero e potenza dei fattori per ciascun effetto in un elenco. Crea interazioni separando gli effetti con virgole.
 
@@ -1447,7 +1447,7 @@ d << Remove Term( {3, 2} );
 
 ### Replicates
 
-**Sintassi:** obj << Replicates
+**Sintassi:** obj &lt;&lt; Replicates
 
 **Descrizione:** Specifica il numero di esecuzioni replicate. Per i piani MSA, un secondo argomento specifica la struttura della replica: 0=Completamente randomizzata, 1=Ripetizione batch, 2=Ripetizione veloce.
 
@@ -1487,7 +1487,7 @@ d = DOE(
 
 ### Report
 
-**Sintassi:** obj << Report
+**Sintassi:** obj &lt;&lt; Report
 
 **Descrizione:** Restituisce un riferimento all&apos;oggetto del report.
 
@@ -1503,7 +1503,7 @@ Show( t );
 
 ### Save Constraints
 
-**Sintassi:** obj << Save Constraints
+**Sintassi:** obj &lt;&lt; Save Constraints
 
 **Descrizione:** Salva i vincoli dei fattori dell&apos;esperimento corrente in una tabella JMP, in modo da poterli utilizzare per un altro esperimento
 
@@ -1525,7 +1525,7 @@ DOE(
 
 ### Save Factors
 
-**Sintassi:** obj << Save Factors
+**Sintassi:** obj &lt;&lt; Save Factors
 
 **Descrizione:** Salva i fattori appena creati in una tabella JMP, in modo da poterli utilizzare per un altro esperimento.
 
@@ -1545,7 +1545,7 @@ DOE(
 
 ### Save Responses
 
-**Sintassi:** obj << Save Responses
+**Sintassi:** obj &lt;&lt; Save Responses
 
 **Descrizione:** Salva le risposte create dall&apos;utente come tabella di dati JMP. È possibile caricare queste risposte in altri esperimenti.
 
@@ -1565,13 +1565,13 @@ DOE(
 
 ### Save Script to Data Table
 
-**Sintassi:** obj << Save Script to Data Table
+**Sintassi:** obj &lt;&lt; Save Script to Data Table
 
 **Descrizione:** Crea uno script che riprodurrà questo piano.
 
 ### Save Script to Script Window
 
-**Sintassi:** obj << Save Script to Script Window
+**Sintassi:** obj &lt;&lt; Save Script to Script Window
 
 **Descrizione:** Crea uno script che riprodurrà questo piano.
 
@@ -1590,7 +1590,7 @@ DOE(
 
 ### Save X Matrix
 
-**Sintassi:** obj << Save X Matrix( state=0|1 )
+**Sintassi:** obj &lt;&lt; Save X Matrix( state=0|1 )
 
 **Descrizione:** Salva la matrice del piano (denominata anche matrice X) come proprietà di una tabella nella tabella di dati di JMP che contiene il piano.
 
@@ -1610,7 +1610,7 @@ DOE(
 
 ### Screening Type
 
-**Sintassi:** obj << Screening Type
+**Sintassi:** obj &lt;&lt; Screening Type
 
 **Descrizione:** Specifica un piano di screening degli effetti principali che è ortogonale o quasi ortogonale.
 
@@ -1631,7 +1631,7 @@ d << Make Design;
 
 ### Select Covariate Rows
 
-**Sintassi:** obj << Select Covariate Rows
+**Sintassi:** obj &lt;&lt; Select Covariate Rows
 
 **Descrizione:** Specifica le righe della tabella covariata da selezionare in DOE.
 
@@ -1661,7 +1661,7 @@ DOE(
 
 ### Set ALT Probability of Interest
 
-**Sintassi:** obj << Set ALT Probability of Interest
+**Sintassi:** obj &lt;&lt; Set ALT Probability of Interest
 
 **Descrizione:** Imposta la probabilità osservata per un piano di test accelerato di durata.
 
@@ -1684,7 +1684,7 @@ DOE(
 
 ### Set ALT Time Range
 
-**Sintassi:** obj << Set ALT Time Range
+**Sintassi:** obj &lt;&lt; Set ALT Time Range
 
 **Descrizione:** Imposta il range di tempo osservato per un piano di test accelerato di durata.
 
@@ -1707,7 +1707,7 @@ DOE(
 
 ### Set Average Cluster Size
 
-**Sintassi:** obj << Set Average Cluster Size
+**Sintassi:** obj &lt;&lt; Set Average Cluster Size
 
 **Descrizione:** Controlla il numero dei punti casuali per la clusterizzazione di un piano a spazio pieno rapido e flessibile.
 
@@ -1726,7 +1726,7 @@ DOE(
 
 ### Set Axial Choice
 
-**Sintassi:** obj << Set Axial Choice( 1|2|3|4 )
+**Sintassi:** obj &lt;&lt; Set Axial Choice( 1|2|3|4 )
 
 **Descrizione:** Specifica le impostazioni del valore assiale. Utilizza 1 per Ruotabile, 2 per Ortogonale, 3 per Sulla faccia e 4 per Specificato dall&apos;utente.
 
@@ -1740,7 +1740,7 @@ d << Set Axial Choice( 2 );
 
 ### Set Axial Value
 
-**Sintassi:** obj << Set Axial Value
+**Sintassi:** obj &lt;&lt; Set Axial Value
 
 **Descrizione:** Specifica il valore assiale specificato dall&apos;utente.
 
@@ -1754,7 +1754,7 @@ d << Set Axial Value( 2 );
 
 ### Set Candidate Runs
 
-**Sintassi:** obj << Set Candidate Runs
+**Sintassi:** obj &lt;&lt; Set Candidate Runs
 
 **Descrizione:** Imposta le esecuzioni candidate per un piano di test accelerato di durata.
 
@@ -1778,7 +1778,7 @@ DOE(
 
 ### Set Delta For Power
 
-**Sintassi:** obj << Set Delta For Power
+**Sintassi:** obj &lt;&lt; Set Delta For Power
 
 **Descrizione:** Specifica i valori dei coefficienti previsti nell&apos;analisi di potenza. I coefficienti previsti saranno la metà del valore specificato.
 
@@ -1797,7 +1797,7 @@ DOE(
 
 ### Set Expected Number of Respondents
 
-**Sintassi:** obj << Set Expected Number of Respondents
+**Sintassi:** obj &lt;&lt; Set Expected Number of Respondents
 
 **Descrizione:** Imposta il numero previsto di rispondenti per indagine.
 
@@ -1818,7 +1818,7 @@ DOE(
 
 ### Set Generators
 
-**Sintassi:** obj << Set Generators
+**Sintassi:** obj &lt;&lt; Set Generators
 
 **Descrizione:** Specifica i generatori da usare in un piano di screening.
 
@@ -1834,7 +1834,7 @@ DOE(
 
 ### Set Inspection Times
 
-**Sintassi:** obj << Set Inspection Times
+**Sintassi:** obj &lt;&lt; Set Inspection Times
 
 **Descrizione:** Imposta i tempi di ispezione per un piano di test accelerato di durata.
 
@@ -1858,7 +1858,7 @@ DOE(
 
 ### Set Length of Test
 
-**Sintassi:** obj << Set Length of Test
+**Sintassi:** obj &lt;&lt; Set Length of Test
 
 **Descrizione:** Imposta la lunghezza del test per un piano di test accelerato di durata.
 
@@ -1881,7 +1881,7 @@ DOE(
 
 ### Set Level Values
 
-**Sintassi:** obj << Set Level Values
+**Sintassi:** obj &lt;&lt; Set Level Values
 
 **Descrizione:** Imposta i valori del livello per i(l) fattore(i) di accelerazione in un piano di test accelerato di durata.
 
@@ -1905,7 +1905,7 @@ DOE(
 
 ### Set Monitoring Choice
 
-**Sintassi:** obj << Set Monitoring Choice
+**Sintassi:** obj &lt;&lt; Set Monitoring Choice
 
 **Descrizione:** Specifica il tipo di monitoraggio di un piano di test accelerato di durata.
 
@@ -1928,7 +1928,7 @@ DOE(
 
 ### Set N Subplots
 
-**Sintassi:** obj << Set N Subplots
+**Sintassi:** obj &lt;&lt; Set N Subplots
 
 **Descrizione:** Specifica il numero di diagrammi secondari quando sono presenti sia fattori difficili sia molto difficili da modificare.
 
@@ -1948,7 +1948,7 @@ d << Set N Subplots( 8 );
 
 ### Set N Whole Plots
 
-**Sintassi:** obj << Set N Whole Plots
+**Sintassi:** obj &lt;&lt; Set N Whole Plots
 
 **Descrizione:** Specifica il numero di diagrammi completi quando sono presenti fattori difficili da modificare o molto difficili da modificare.
 
@@ -1966,7 +1966,7 @@ d << Set N Whole Plots( 6 );
 
 ### Set Number of Attributes
 
-**Sintassi:** obj << Set Number of Attributes
+**Sintassi:** obj &lt;&lt; Set Number of Attributes
 
 **Descrizione:** Imposta il numero di attributi che può cambiare in un set di scelte.
 
@@ -1987,7 +1987,7 @@ DOE(
 
 ### Set Number of Choice Sets
 
-**Sintassi:** obj << Set Number of Choice Sets
+**Sintassi:** obj &lt;&lt; Set Number of Choice Sets
 
 **Descrizione:** Imposta il numero di set di scelte per indagine.
 
@@ -2008,7 +2008,7 @@ DOE(
 
 ### Set Number of FDS points
 
-**Sintassi:** obj << Set Number of FDS points
+**Sintassi:** obj &lt;&lt; Set Number of FDS points
 
 **Descrizione:** Imposta il numero di punti usato per generare il diagramma della relazione tra frazione dello spazio sperimentale e varianza prevista.
 
@@ -2028,7 +2028,7 @@ DOE(
 
 ### Set Number of Profiles
 
-**Sintassi:** obj << Set Number of Profiles
+**Sintassi:** obj &lt;&lt; Set Number of Profiles
 
 **Descrizione:** Imposta il numero di profili per set di scelte.
 
@@ -2049,7 +2049,7 @@ DOE(
 
 ### Set Number of Surveys
 
-**Sintassi:** obj << Set Number of Surveys
+**Sintassi:** obj &lt;&lt; Set Number of Surveys
 
 **Descrizione:** Imposta il numero di indagini per un piano di scelta.
 
@@ -2070,7 +2070,7 @@ DOE(
 
 ### Set Number of Units
 
-**Sintassi:** obj << Set Number of Units
+**Sintassi:** obj &lt;&lt; Set Number of Units
 
 **Descrizione:** Imposta il numero di unità nell&apos;esperimento per un piano di test accelerato di durata.
 
@@ -2093,7 +2093,7 @@ DOE(
 
 ### Set Prior Correlation ALT
 
-**Sintassi:** obj << Set Prior Correlation ALT
+**Sintassi:** obj &lt;&lt; Set Prior Correlation ALT
 
 **Descrizione:** Imposta le correlazioni a priori per un piano di test di durata accelerato.
 
@@ -2118,7 +2118,7 @@ DOE(
 
 ### Set Prior Mean ALT
 
-**Sintassi:** obj << Set Prior Mean ALT
+**Sintassi:** obj &lt;&lt; Set Prior Mean ALT
 
 **Descrizione:** Imposta la media a priori per un piano di test accelerato di durata.
 
@@ -2141,7 +2141,7 @@ DOE(
 
 ### Set Prior Mean Choice
 
-**Sintassi:** obj << Set Prior Mean Choice
+**Sintassi:** obj &lt;&lt; Set Prior Mean Choice
 
 **Descrizione:** Imposta la media a priori per un piano di scelta.
 
@@ -2162,7 +2162,7 @@ DOE(
 
 ### Set Prior Quantile ALT
 
-**Sintassi:** obj << Set Prior Quantile ALT
+**Sintassi:** obj &lt;&lt; Set Prior Quantile ALT
 
 **Descrizione:** Imposta le informazioni per specificare l&apos;intercetta a priori basata su un quantile.
 
@@ -2186,7 +2186,7 @@ DOE(
 
 ### Set Prior Std Error ALT
 
-**Sintassi:** obj << Set Prior Std Error ALT
+**Sintassi:** obj &lt;&lt; Set Prior Std Error ALT
 
 **Descrizione:** Imposta l&apos;errore standard a priori per un piano di test di durata accelerato.
 
@@ -2211,7 +2211,7 @@ DOE(
 
 ### Set Prior Variance ALT
 
-**Sintassi:** obj << Set Prior Variance ALT
+**Sintassi:** obj &lt;&lt; Set Prior Variance ALT
 
 **Descrizione:** Imposta la varianza a priori per un piano di test accelerato di durata.
 
@@ -2234,7 +2234,7 @@ DOE(
 
 ### Set Prior Variance Matrix
 
-**Sintassi:** obj << Set Prior Variance Matrix
+**Sintassi:** obj &lt;&lt; Set Prior Variance Matrix
 
 **Descrizione:** Imposta la matrice di varianza a priori per un piano di scelta.
 
@@ -2255,7 +2255,7 @@ DOE(
 
 ### Set RMSE
 
-**Sintassi:** obj << Set RMSE
+**Sintassi:** obj &lt;&lt; Set RMSE
 
 **Descrizione:** Specifica lo scarto quadratico medio (RMSE) previsto nell&apos;analisi di potenza.
 
@@ -2270,7 +2270,7 @@ d << Set RMSE( 1.5 );
 
 ### Set Random Seed
 
-**Sintassi:** obj << Set Random Seed
+**Sintassi:** obj &lt;&lt; Set Random Seed
 
 **Descrizione:** Utile a fini didattici. Se si imposta il seme casuale su un valore specifico, tutti gli studenti avranno il medesimo piano.
 
@@ -2289,7 +2289,7 @@ DOE(
 
 ### Set Run Order
 
-**Sintassi:** obj << Set Run Order
+**Sintassi:** obj &lt;&lt; Set Run Order
 
 **Descrizione:** Specifica le modalità di impostazione dell&apos;ordine delle esecuzioni quando si crea una tabella di dati da un piano.
 
@@ -2305,7 +2305,7 @@ d << Make Table;
 
 ### Set Runs Per Random Block
 
-**Sintassi:** obj << Set Runs Per Random Block
+**Sintassi:** obj &lt;&lt; Set Runs Per Random Block
 
 **Descrizione:** Specifica la dimensione dei blocchi casuali nel piano.
 
@@ -2324,7 +2324,7 @@ d << Set Runs Per Random Block( 4 );
 
 ### Set Sample Size
 
-**Sintassi:** obj << Set Sample Size
+**Sintassi:** obj &lt;&lt; Set Sample Size
 
 **Descrizione:** Specifica la dimensione campionaria prima della creazione del piano. Se il numero specificato è inferiore al valore minimo mostrato nel designer, la dimensione campionaria è impostata al valore minimo.
 
@@ -2339,7 +2339,7 @@ d << Set Sample Size( 12 );
 
 ### Set Significance Level
 
-**Sintassi:** obj << Set Significance Level
+**Sintassi:** obj &lt;&lt; Set Significance Level
 
 **Descrizione:** Cambia il livello di significatività nell&apos;analisi di potenza.
 
@@ -2354,7 +2354,7 @@ d << Set Significance Level( 0.10 );
 
 ### Set Strength
 
-**Sintassi:** obj << Set Strength
+**Sintassi:** obj &lt;&lt; Set Strength
 
 **Descrizione:** Imposta la forza degli array di copertura
 
@@ -2374,7 +2374,7 @@ d << Make Table;
 
 ### Show Blocking Options
 
-**Sintassi:** obj << Show Blocking Options
+**Sintassi:** obj &lt;&lt; Show Blocking Options
 
 **Descrizione:** Specifica la scelta di creazione di blocchi e il numero di blocchi per un piano di screening definitivo. Un valore pari a 0 indica nessun blocco.
 
@@ -2418,7 +2418,7 @@ DOE(
 
 ### Simulate Responses
 
-**Sintassi:** obj << Simulate Responses( state=0|1 )
+**Sintassi:** obj &lt;&lt; Simulate Responses( state=0|1 )
 
 **Descrizione:** Aggiunge i dati delle risposte alla tabella dei piani JMP. Utile a fini didattici, per l&apos;insegnamento di DOE.
 
@@ -2438,7 +2438,7 @@ DOE(
 
 ### Solve for Power
 
-**Sintassi:** obj << Solve for Power
+**Sintassi:** obj &lt;&lt; Solve for Power
 
 **Descrizione:** Imposta i coefficienti anticipati nell&apos;analisi di potenza in modo che la potenza si avvicini al valore specificato.
 
@@ -2459,7 +2459,7 @@ DOE(
 
 ### Space Filling Design Type
 
-**Sintassi:** obj << Space Filling Design Type( Sphere Packing|Latin Hypercube|Uniform|Minimum Potential|Maximum Entropy|IMSE Optimal|Fast Flexible Filling )
+**Sintassi:** obj &lt;&lt; Space Filling Design Type( Sphere Packing|Latin Hypercube|Uniform|Minimum Potential|Maximum Entropy|IMSE Optimal|Fast Flexible Filling )
 
 **Descrizione:** Specifica il tipo di piano a spazio pieno e il numero di esecuzioni.
 
@@ -2516,7 +2516,7 @@ d << Make Design;
 
 ### Sphere Radius
 
-**Sintassi:** obj << Sphere Radius
+**Sintassi:** obj &lt;&lt; Sphere Radius
 
 **Descrizione:** Specifica una regione sferica del piano e permette di definirne il raggio.
 
@@ -2535,7 +2535,7 @@ DOE(
 
 ### Split Plot Variance Ratio
 
-**Sintassi:** obj << Split Plot Variance Ratio( Whole Plot Ratio | [Whole Plot Ratio, Subplot Ratio] )
+**Sintassi:** obj &lt;&lt; Split Plot Variance Ratio( Whole Plot Ratio | [Whole Plot Ratio, Subplot Ratio] )
 
 **Descrizione:** Per i fattori difficili da modificare, specifica il rapporto di varianza tra l&apos;errore del diagramma completo e l&apos;errore esecuzione per esecuzione. Per i fattori difficili e molto difficili da modificare, specifica il rapporto tra il diagramma completo e l&apos;errore del diagramma secondario e l&apos;errore esecuzione per esecuzione.
 
@@ -2574,7 +2574,7 @@ d << Make Design;
 
 ### Suppress Cotter Designs
 
-**Sintassi:** obj << Suppress Cotter Designs( state=0|1 )
+**Sintassi:** obj &lt;&lt; Suppress Cotter Designs( state=0|1 )
 
 **Descrizione:** Mostra/Nasconde piani di Cotter nell&apos;elenco di piani di screening. Questa opzione è selezionata per impostazione predefinita e significa che i piani di Cotter non sono inizialmente presenti nell&apos;elenco dei piani di screening. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -2594,7 +2594,7 @@ DOE(
 
 ### Table of Correlations
 
-**Sintassi:** obj << Table of Correlations
+**Sintassi:** obj &lt;&lt; Table of Correlations
 
 **Descrizione:** Crea una tabella di dati con la Tabella di correlazioni da Diagnostiche del piano.
 
@@ -2615,7 +2615,7 @@ DOE(
 
 ### Theta
 
-**Sintassi:** obj << Theta
+**Sintassi:** obj &lt;&lt; Theta
 
 **Descrizione:** Specifica il vettore del parametro di covarianza per piani a spazio pieno.
 
@@ -2629,7 +2629,7 @@ d << Theta( [2, 3] );
 
 ### Treatments
 
-**Sintassi:** obj << Treatments
+**Sintassi:** obj &lt;&lt; Treatments
 
 **Descrizione:** Specifica il numero di trattamenti per un piano con blocco incompleto bilanciato (BIBD).
 
@@ -2646,7 +2646,7 @@ d << Make Design;
 
 ### Use Bayesian information
 
-**Sintassi:** obj << Use Bayesian information( state=0|1 )
+**Sintassi:** obj &lt;&lt; Use Bayesian information( state=0|1 )
 
 **Descrizione:** Usa informazioni a priori nell&apos;impostazione bayesiana per le diagnostiche del piano.
 
@@ -2671,7 +2671,7 @@ DOE(
 
 ### Use Blue to Red color theme for color map
 
-**Sintassi:** obj << Use Blue to Red color theme for color map( state=0|1 )
+**Sintassi:** obj &lt;&lt; Use Blue to Red color theme for color map( state=0|1 )
 
 **Descrizione:** Utilizza il tema dei colori da blu a rosso per la mappa a colori sulle correlazioni.
 
@@ -2679,7 +2679,7 @@ DOE(
 
 ### Use Prior Uncertainty
 
-**Sintassi:** obj << Use Prior Uncertainty( state=0|1 )
+**Sintassi:** obj &lt;&lt; Use Prior Uncertainty( state=0|1 )
 
 **Descrizione:** Specifica se l&apos;incertezza a priori deve essere utilizzata per costruire il piano ottimale.
 
@@ -2705,7 +2705,7 @@ DOE(
 
 ### Utility Neutral Design
 
-**Sintassi:** obj << Utility Neutral Design( state=0|1 )
+**Sintassi:** obj &lt;&lt; Utility Neutral Design( state=0|1 )
 
 **Descrizione:** Specifica se deve essere creato il piano di scelta neutro delle utilità.
 

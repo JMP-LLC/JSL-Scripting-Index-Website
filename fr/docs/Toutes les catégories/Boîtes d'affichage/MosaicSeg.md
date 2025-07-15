@@ -6,7 +6,7 @@
 
 ### Add Graphics Script
 
-**Syntaxe :** obj << Add Graphics Script( <"Back" | "Front" | position>, <Description("name")>, <"Selected Layer">, <Scale IDs(XID, YID)>, script )
+**Syntaxe :** obj &lt;&lt; Add Graphics Script( &lt;"Back" | "Front" | position&gt;, &lt;Description("name")&gt;, &lt;"Selected Layer"&gt;, &lt;Scale IDs(XID, YID)&gt;, script )
 
 **Description :** Entrez un script qui dessinera dans ce cadre. Les éléments sélectionnés se trouvent toujours au-dessus des éléments non sélectionnés. Si vous spécifiez une couche sélectionnée, ce script est appelé lors du deuxième passage de dessin, lorsque les éléments sélectionnés sont dessinés.
 
@@ -84,7 +84,7 @@ Report( b )[Frame Box( 1 )] << Add Graphics Script(
 
 ### Add Image
 
-**Syntaxe :** obj << Add Image( image | open("image filename"), <bounds( left(value), top(value), bottom(value), right(value) ) | move(centerX, centerY)> )
+**Syntaxe :** obj &lt;&lt; Add Image( image | open("image filename"), &lt;bounds( left(value), top(value), bottom(value), right(value) ) | move(centerX, centerY)&gt; )
 
 **Description :** 
 
@@ -114,7 +114,7 @@ w = New Window( "View Image",
 
 ### Append Seg
 
-**Syntaxe :** obj << Append Seg( display seg )
+**Syntaxe :** obj &lt;&lt; Append Seg( display seg )
 
 **Description :** Ajoute un seg affiché au cadre
 
@@ -136,7 +136,7 @@ gb2 << append seg( Current Report()[FrameBox( 1 )] << find seg( Marker Seg( 1 ) 
 
 ### Background Map
 
-**Syntaxe :** obj << Background Map( <Images("None" | "Simple Earth" | "Detailed Earth" | "Nasa Server" | ("Web Map Service", url, layer) , <Transparency(0-1)> )> | <Boundaries("None" | Shape File)> )
+**Syntaxe :** obj &lt;&lt; Background Map( &lt;Images("None" | "Simple Earth" | "Detailed Earth" | "Nasa Server" | ("Web Map Service", url, layer) , &lt;Transparency(0-1)&gt; )&gt; | &lt;Boundaries("None" | Shape File)&gt; )
 
 **Description :** 
 
@@ -175,7 +175,7 @@ framebox << Background Map(
 
 ### Bottom
 
-**Syntaxe :** obj << Bottom( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Bottom( state=0|1 )
 
 **Description :** Affiche ou masque une bordure au bas du cadre.
 
@@ -192,13 +192,13 @@ framebox << Bottom( 0 );
 
 ### Cell Labeling
 
-**Syntaxe :** obj << Cell Labeling( "Aucune étiquette"|"Étiquette par nombre"|"Étiquette par pourcentage"|"Étiquette par valeur"|"Étiquette par ligne" )
+**Syntaxe :** obj &lt;&lt; Cell Labeling( "Aucune étiquette"|"Étiquette par nombre"|"Étiquette par pourcentage"|"Étiquette par valeur"|"Étiquette par ligne" )
 
 **JMP Version ajoutée :** 15
 
 ### Child Seg
 
-**Syntaxe :** obj << Child Seg
+**Syntaxe :** obj &lt;&lt; Child Seg
 
 **Description :** Renvoie le seg enfant affiché du cadre.
 
@@ -214,7 +214,7 @@ rbiv[Frame Box( 1 )] << Child Seg();
 
 ### Clip Shape
 
-**Syntaxe :** seg << Clip Shape(Boundaries(Shape File, [ID(string)]) | Path([string] | [matrix]) | Empty())
+**Syntaxe :** seg &lt;&lt; Clip Shape(Boundaries(Shape File, [ID(string)]) | Path([string] | [matrix]) | Empty())
 
 **Description :** Coupe la géométrie selon la forme donnée. La forme peut être spécifiée à l&apos;aide d&apos;un fichier de forme ou d&apos;un chemin. Afin de sélectionner une seule forme, un ID facultatif peut être spécifié au moyen d&apos;un fichier de forme, sinon l&apos;union de toutes les formes sera utilisée pour définir la région de détourage. Un chemin de détourage peut être spécifié par une matrice N x 3 ou par une représentation textuelle. Une matrice de chemin a trois colonnes pour x, y et les indicateurs pour chaque point du chemin. Les valeurs des indicateurs sont 0 pour le contrôle, 1 pour le déplacement, 2 pour le segment de ligne, 3 pour le segment cubique de Bézier et sont négatives si le point ferme aussi le chemin. Le texte de chemin autorise la syntaxe SVG.
 
@@ -244,11 +244,11 @@ cs << Clip Shape( Boundaries( "US States" ) );
 
 ### Color Theme
 
-**Syntaxe :** obj << Color Theme
+**Syntaxe :** obj &lt;&lt; Color Theme
 
 ### Copy Customizations
 
-**Syntaxe :** obj << Copy Customizations
+**Syntaxe :** obj &lt;&lt; Copy Customizations
 
 **Description :** Copie un script qui contient les personnalisations du graphique.
 
@@ -270,7 +270,7 @@ framebox2 << Paste Customizations;
 
 ### Copy Frame Contents
 
-**Syntaxe :** obj << Copy Frame Contents
+**Syntaxe :** obj &lt;&lt; Copy Frame Contents
 
 **Description :** Crée un texte de journal contenant les paramètres de ce cadre, puis le copie dans le presse-papiers.
 
@@ -292,7 +292,7 @@ framebox2 << Paste Frame Contents;
 
 ### Copy Frame Settings
 
-**Syntaxe :** obj << Copy Frame Settings
+**Syntaxe :** obj &lt;&lt; Copy Frame Settings
 
 **Description :** Crée un script contenant les paramètres de ce cadre, puis le copie dans le presse-papiers.
 
@@ -314,7 +314,7 @@ framebox2 << Paste Frame Settings;
 
 ### Copy Polygons
 
-**Syntaxe :** obj << Copy Polygons
+**Syntaxe :** obj &lt;&lt; Copy Polygons
 
 **Description :** Enregistre dans le presse-papier une copie des polygones situés sur le cadre.
 
@@ -335,7 +335,7 @@ framebox << Copy Polygons;
 
 ### Customize
 
-**Syntaxe :** obj << Customize
+**Syntaxe :** obj &lt;&lt; Customize
 
 **Description :** Modifie les propriétés du contenu du graphique.
 
@@ -352,7 +352,7 @@ framebox << Customize;
 
 ### Density Gradient
 
-**Syntaxe :** obj << Density Gradient( "Estomper vers le blanc"|"Estomper vers le gris"|"Couleur pleine"="Estomper vers le blanc" )
+**Syntaxe :** obj &lt;&lt; Density Gradient( "Estomper vers le blanc"|"Estomper vers le gris"|"Couleur pleine"="Estomper vers le blanc" )
 
 **Description :** Définit le comportement de couleur des gradients de densité. "Estomper vers le blanc" par défaut.
 
@@ -367,7 +367,7 @@ seg << Density Gradient( "Fade to Gray" );
 
 ### Dispatch Segs
 
-**Syntaxe :** obj << Dispatch Segs( command )
+**Syntaxe :** obj &lt;&lt; Dispatch Segs( command )
 
 **Description :** Envoie la commande à tous les éléments visuels (segs) de la boîte d&apos;affichage.
 
@@ -375,7 +375,7 @@ seg << Density Gradient( "Fade to Gray" );
 
 ### DispatchSeg
 
-**Syntaxe :** obj << DispatchSeg( command )
+**Syntaxe :** obj &lt;&lt; DispatchSeg( command )
 
 **Description :** Envoie la commande à la boîte d&apos;affichage.
 
@@ -404,7 +404,7 @@ Distribution(
 
 ### Edit Graphics Script
 
-**Syntaxe :** obj << Edit Graphics Script
+**Syntaxe :** obj &lt;&lt; Edit Graphics Script
 
 **Description :** Modifie les scripts déjà installés dans ce cadre.
 
@@ -426,7 +426,7 @@ framebox << Edit Graphics Script;
 
 ### Error Bar Cap
 
-**Syntaxe :** obj << Error Bar Cap( "Aucun(e)"|"Minuscule"|"Petit"|"Moyen"|"Grand" )
+**Syntaxe :** obj &lt;&lt; Error Bar Cap( "Aucun(e)"|"Minuscule"|"Petit"|"Moyen"|"Grand" )
 
 **Description :** Spécifie quel type de plafond mettre sur les barres d&apos;erreur.
 
@@ -449,7 +449,7 @@ seg << Set Error Bar Cap( "Large" );
 
 ### Error Bar Cap Shape
 
-**Syntaxe :** obj << Error Bar Cap Shape( begin, end )
+**Syntaxe :** obj &lt;&lt; Error Bar Cap Shape( begin, end )
 
 **Description :** Spécifie la forme de l&apos;extrémité à afficher sur les barres d&apos;erreur. Un seul argument définit la forme pour les deux extrémités de la barre, ou des arguments distincts peuvent être fournis pour le début et la fin. La forme par défaut est "Line". Une forme de "Arrow" dessine une flèche vers l&apos;extérieur et "None" omet l&apos;extrémité.
 
@@ -472,7 +472,7 @@ seg << Set Error Bar Cap Shape( "Line", "Arrow" );
 
 ### Fill Selection Mode
 
-**Syntaxe :** obj << Fill Selection Mode( "Mode préféré"|"Configuré sélectionné"|"Plus sombre sélectionné"|"Cercler les points sélectionnés"|"Même couleur pour les points sélectionnés"|"Atténuer les points non sélectionnés" )
+**Syntaxe :** obj &lt;&lt; Fill Selection Mode( "Mode préféré"|"Configuré sélectionné"|"Plus sombre sélectionné"|"Cercler les points sélectionnés"|"Même couleur pour les points sélectionnés"|"Atténuer les points non sélectionnés" )
 
 **Description :** Définit le style de sélection pour les zones à remplir.
 
@@ -492,7 +492,7 @@ framebox << Fill Selection Mode( "Selected Darker" );
 
 ### Find Seg
 
-**Syntaxe :** obj << Find Seg( display seg )
+**Syntaxe :** obj &lt;&lt; Find Seg( display seg )
 
 ```jsl
 
@@ -507,19 +507,19 @@ ms << delete;
 
 ### Find Segs
 
-**Syntaxe :** obj << Find Segs
+**Syntaxe :** obj &lt;&lt; Find Segs
 
 **JMP Version ajoutée :** 15
 
 ### First Value
 
-**Syntaxe :** obj << First Value( state=0|1 )
+**Syntaxe :** obj &lt;&lt; First Value( state=0|1 )
 
 **JMP Version ajoutée :** 16
 
 ### Frame Size
 
-**Syntaxe :** obj << Frame Size
+**Syntaxe :** obj &lt;&lt; Frame Size
 
 **Description :** Modifie la taille du cadre.
 
@@ -536,7 +536,7 @@ framebox << Frame Size( 300, 300 );
 
 ### Get Background Fill
 
-**Syntaxe :** obj << Get Background Fill
+**Syntaxe :** obj &lt;&lt; Get Background Fill
 
 **Description :** Renvoie l’état (0|1) de la couleur de remplissage du fond du graphique.
 
@@ -559,7 +559,7 @@ val1 = framebox << Get Background Fill;
 
 ### Get Clip Shape
 
-**Syntaxe :** obj << Get Clip Shape
+**Syntaxe :** obj &lt;&lt; Get Clip Shape
 
 **Description :** Renvoie la forme de détourage actuelle
 
@@ -590,7 +590,7 @@ cs << Get Clip Shape();
 
 ### Get Density Gradient
 
-**Syntaxe :** obj << Get Density Gradient
+**Syntaxe :** obj &lt;&lt; Get Density Gradient
 
 **Description :** Obtient le comportement de couleur des gradients de densité.
 
@@ -605,7 +605,7 @@ seg << Get Density Gradient;
 
 ### Get Error Bar Cap
 
-**Syntaxe :** obj << Get Error Bar Cap
+**Syntaxe :** obj &lt;&lt; Get Error Bar Cap
 
 **Description :** Renvoie le type de plafond de barre d&apos;erreur actuel.
 
@@ -628,7 +628,7 @@ seg << Get Error Bar Cap();
 
 ### Get Error Bar Cap Shape
 
-**Syntaxe :** { begin, end } = obj << Get Error Bar Cap Shape
+**Syntaxe :** { begin, end } = obj &lt;&lt; Get Error Bar Cap Shape
 
 **Description :** Renvoie la forme de l&apos;extrémité des barres d&apos;erreur.
 
@@ -651,7 +651,7 @@ seg << Get Error Bar Cap Shape();
 
 ### Get Fill Selection Mode
 
-**Syntaxe :** obj << Get Fill Selection Mode
+**Syntaxe :** obj &lt;&lt; Get Fill Selection Mode
 
 **Description :** Renvoie le style de sélection pour les zones à remplir.
 
@@ -672,7 +672,7 @@ framebox << Get Fill Selection Mode;
 
 ### Get Gradient
 
-**Syntaxe :** obj << Get Gradient
+**Syntaxe :** obj &lt;&lt; Get Gradient
 
 **Description :** Obtient le gradient de couleur.
 
@@ -685,7 +685,7 @@ seg << Get Gradient;
 
 ### Get Gradient Color Theme
 
-**Syntaxe :** obj << Get Gradient Color Theme
+**Syntaxe :** obj &lt;&lt; Get Gradient Color Theme
 
 **Description :** Obtient le thème de couleur du gradient.
 
@@ -700,7 +700,7 @@ seg << Get Gradient Color Theme;
 
 ### Get Gradient Discrete Colors
 
-**Syntaxe :** obj << Get Gradient Discrete Colors
+**Syntaxe :** obj &lt;&lt; Get Gradient Discrete Colors
 
 **Description :** Obtient si chaque niveau d&apos;un gradient doit être une seule couleur ou si les couleurs doivent effectuer une transition lisse.
 
@@ -715,7 +715,7 @@ seg << Get Gradient Discrete Colors;
 
 ### Get Gradient Fill
 
-**Syntaxe :** obj << Get Gradient Fill
+**Syntaxe :** obj &lt;&lt; Get Gradient Fill
 
 **Description :** Obtient le comportement de couleur des valeurs se trouvant en-dehors de l&apos;étendue de l&apos;échelle du gradient.
 
@@ -737,7 +737,7 @@ seg << Get Gradient Fill;
 
 ### Get Gradient Label Count
 
-**Syntaxe :** obj << Get Gradient Label Count
+**Syntaxe :** obj &lt;&lt; Get Gradient Label Count
 
 **Description :** Obtient le nombre d&apos;étiquettes dans une légende de gradient.
 
@@ -752,7 +752,7 @@ seg << Get Gradient Label Count;
 
 ### Get Gradient Label Levels
 
-**Syntaxe :** [value1,value1, ... value N] = obj << Get Gradient Label Levels
+**Syntaxe :** [value1,value1, ... value N] = obj &lt;&lt; Get Gradient Label Levels
 
 **Description :** Obtient le jeu de valeurs utilisées pour les étiquettes dans l&apos;échelle du gradient.
 
@@ -793,7 +793,7 @@ seg << Get Gradient Scale Values;
 
 ### Get Gradient Legend Horizontal
 
-**Syntaxe :** obj << Get Gradient Legend Horizontal
+**Syntaxe :** obj &lt;&lt; Get Gradient Legend Horizontal
 
 **Description :** Obtient si la légende du gradient doit être dessinée horizontalement.
 
@@ -808,7 +808,7 @@ seg << Get Gradient Legend Horizontal;
 
 ### Get Gradient Legend Label Format
 
-**Syntaxe :** obj << Get Gradient Legend Label Format
+**Syntaxe :** obj &lt;&lt; Get Gradient Legend Label Format
 
 **Description :** Obtient le format des étiquettes de la légende du gradient
 
@@ -823,7 +823,7 @@ seg << Get Gradient Legend Label Format;
 
 ### Get Gradient Legend Label Width
 
-**Syntaxe :** obj << Get Gradient Legend Label Width
+**Syntaxe :** obj &lt;&lt; Get Gradient Legend Label Width
 
 **Description :** Obtient la longueur de caractère maximum des étiquettes de légende du gradient.
 
@@ -838,7 +838,7 @@ seg << Get Gradient Legend Label Width;
 
 ### Get Gradient Legend Show Labels
 
-**Syntaxe :** obj << Get Gradient Legend Show Labels
+**Syntaxe :** obj &lt;&lt; Get Gradient Legend Show Labels
 
 **Description :** Obtient si les étiquettes de niveau doivent être affichées dans la légende du gradient.
 
@@ -853,7 +853,7 @@ seg << Get Gradient Legend Show Labels;
 
 ### Get Gradient Level Count
 
-**Syntaxe :** obj << Get Gradient Level Count
+**Syntaxe :** obj &lt;&lt; Get Gradient Level Count
 
 **Description :** Obtient le nombre de niveaux dans un gradient.
 
@@ -868,7 +868,7 @@ seg << Get Gradient Levels;
 
 ### Get Gradient Lightness Range
 
-**Syntaxe :** obj << Get Gradient Lightness Range
+**Syntaxe :** obj &lt;&lt; Get Gradient Lightness Range
 
 **Description :** Obtient la luminosité minimum et maximum des couleurs de niveau dans un gradient. Des valeurs manquantes indiquent que la valeur d&apos;origine du thème de couleurs est utilisée.
 
@@ -883,7 +883,7 @@ seg << Get Gradient Lightness Range;
 
 ### Get Gradient Range
 
-**Syntaxe :** obj << Get Gradient Range
+**Syntaxe :** obj &lt;&lt; Get Gradient Range
 
 **Description :** Obtient la plage sur laquelle les échelles de gradient non personnalisées sont générées.
 
@@ -905,7 +905,7 @@ seg << Get Gradient Range;
 
 ### Get Gradient Reverse Color Order
 
-**Syntaxe :** obj << Get Gradient Reverse Color Order
+**Syntaxe :** obj &lt;&lt; Get Gradient Reverse Color Order
 
 **Description :** Obtient si l&apos;ordre des couleurs dans un gradient est inversé.
 
@@ -920,7 +920,7 @@ seg << Get Gradient Reverse Color Order;
 
 ### Get Gradient Reverse Label Order
 
-**Syntaxe :** obj << Get Gradient Reverse Label Order
+**Syntaxe :** obj &lt;&lt; Get Gradient Reverse Label Order
 
 **Description :** Obtient si l&apos;ordre des étiquettes dans un gradient est inversé.
 
@@ -935,7 +935,7 @@ seg << Get Gradient Reverse Label Order;
 
 ### Get Gradient Scale
 
-**Syntaxe :** obj << Get Gradient Scale
+**Syntaxe :** obj &lt;&lt; Get Gradient Scale
 
 **Description :** Obtient le type d&apos;échelle des gradients.
 
@@ -957,7 +957,7 @@ seg << Get Gradient Scale;
 
 ### Get Gradient Scale Values
 
-**Syntaxe :** [value1,value1, ... value N] = obj << Get Gradient Scale Values
+**Syntaxe :** [value1,value1, ... value N] = obj &lt;&lt; Get Gradient Scale Values
 
 **Description :** Obtient le jeu de valeurs utilisées pour les étiquettes dans l&apos;échelle du gradient.
 
@@ -998,7 +998,7 @@ seg << Get Gradient Scale Values;
 
 ### Get Gradient Show Missing
 
-**Syntaxe :** obj << Get Gradient Show Missing
+**Syntaxe :** obj &lt;&lt; Get Gradient Show Missing
 
 **Description :** Obtient quand afficher l&apos;entrée de la légende pour les valeurs manquantes.
 
@@ -1013,7 +1013,7 @@ seg << Get Gradient Show Missing;
 
 ### Get Gradient Transparency
 
-**Syntaxe :** obj << Get Gradient Transparency
+**Syntaxe :** obj &lt;&lt; Get Gradient Transparency
 
 **Description :** Obtient le comportement de transparence des gradients.
 
@@ -1028,7 +1028,7 @@ seg << Get Gradient Transparency;
 
 ### Get Image
 
-**Syntaxe :** image = obj << Get Image
+**Syntaxe :** image = obj &lt;&lt; Get Image
 
 **Description :** Renvoie une référence à l’image de fond.
 
@@ -1058,7 +1058,7 @@ Print( fb << Get Image );
 
 ### Get Interval Draw Directions
 
-**Syntaxe :** obj << Get Interval Draw Directions
+**Syntaxe :** obj &lt;&lt; Get Interval Draw Directions
 
 **Description :** Obtient les directions dans lesquelles les intervalles doivent être dessinés.
 
@@ -1097,7 +1097,7 @@ seg << Get Interval Draw Directions;
 
 ### Get Line Color
 
-**Syntaxe :** color = obj << Get Line Color
+**Syntaxe :** color = obj &lt;&lt; Get Line Color
 
 **Description :** Renvoie la couleur des lignes.
 
@@ -1110,7 +1110,7 @@ seg << Get Line Color;
 
 ### Get Line Style
 
-**Syntaxe :** pen style = obj << Get Line Style
+**Syntaxe :** pen style = obj &lt;&lt; Get Line Style
 
 **Description :** Renvoie le style des lignes.
 
@@ -1125,7 +1125,7 @@ seg << Get Line Style;
 
 ### Get Line Width
 
-**Syntaxe :** number = obj << Get Line Width
+**Syntaxe :** number = obj &lt;&lt; Get Line Width
 
 **Description :** Renvoie l’épaisseur des lignes.
 
@@ -1140,7 +1140,7 @@ seg << Get Line Width;
 
 ### Get Marker
 
-**Syntaxe :** marker = obj << Get Marker
+**Syntaxe :** marker = obj &lt;&lt; Get Marker
 
 **Description :** Renvoie le style du marqueur.
 
@@ -1155,7 +1155,7 @@ seg << Get Marker;
 
 ### Get Marker Selection Mode
 
-**Syntaxe :** obj << Get Marker Selection Mode
+**Syntaxe :** obj &lt;&lt; Get Marker Selection Mode
 
 **Description :** Renvoie le style de sélection du marqueur.
 
@@ -1174,7 +1174,7 @@ framebox << Get Marker Selection Mode;
 
 ### Get Marker Size
 
-**Syntaxe :** size = obj << Get Marker Size
+**Syntaxe :** size = obj &lt;&lt; Get Marker Size
 
 **Description :** Renvoie la taille des marqueurs.
 
@@ -1189,7 +1189,7 @@ seg << Get Marker Size;
 
 ### Get Polygons
 
-**Syntaxe :** obj << Get Polygons
+**Syntaxe :** obj &lt;&lt; Get Polygons
 
 **Description :** Renvoie une liste des polygones situés sur le cadre.
 
@@ -1210,9 +1210,7 @@ Print( framebox << Get Polygons );
 
 ### Gradient
 
-**Syntaxe :** obj << { <Color Theme(theme)>, <Min Lightness(0-1)>, <Max Lightness(0-1)>, <Contour Levels(num)>, <Reverse Gradient(0|1)>, <Density Gradient("Fade To White"|"Fade To Gray"|"Full Color")>, <Gradient Transparency("None"|"Linear")> }
-
-obj << { <Color Theme(theme)>, <Min Lightness(0-1)>, <Max Lightness(0-1)>, <N Labels(num)>, <Show Missing Color("On"|"Off"|"Auto")>, <Scale Type("Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom")>, <Scale Values([v1, v2, …])>, <Range Type("Default"|"Exact Data Range"|"Middle 90%")>, <Fill("Between"|"Above"|"Below"|"Above Below")>, <Reverse Gradient(0|1)>, <Reverse Labels(0|1)>, <Discrete Color(0|1)> }, <Label Format(labelFormat)>, <Width(num)>, <Horizontal(0|1)>, <Show Labels(0|1)>
+**Syntaxe :** obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;Contour Levels(num)&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Density Gradient("Fade To White"|"Fade To Gray"|"Full Color")&gt;, &lt;Gradient Transparency("None"|"Linear")&gt; }obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;N Labels(num)&gt;, &lt;Show Missing Color("On"|"Off"|"Auto")&gt;, &lt;Scale Type("Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom")&gt;, &lt;Scale Values([v1, v2, …])&gt;, &lt;Range Type("Default"|"Exact Data Range"|"Middle 90%")&gt;, &lt;Fill("Between"|"Above"|"Below"|"Above Below")&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Reverse Labels(0|1)&gt;, &lt;Discrete Color(0|1)&gt; }, &lt;Label Format(labelFormat)&gt;, &lt;Width(num)&gt;, &lt;Horizontal(0|1)&gt;, &lt;Show Labels(0|1)&gt;
 
 **Description :** Définit le gradient de couleur.
 
@@ -1225,7 +1223,7 @@ seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
 
 ### Gradient Color Theme
 
-**Syntaxe :** obj << Gradient Color Theme
+**Syntaxe :** obj &lt;&lt; Gradient Color Theme
 
 **Description :** Définit le thème de couleur du gradient.
 
@@ -1240,7 +1238,7 @@ seg << Set Gradient Color Theme( "Viridis" );
 
 ### Gradient Discrete Colors
 
-**Syntaxe :** obj << Gradient Discrete Colors
+**Syntaxe :** obj &lt;&lt; Gradient Discrete Colors
 
 **Description :** Définit si chaque niveau d&apos;un gradient doit être une seule couleur ou si les couleurs doivent effectuer une transition lisse.
 
@@ -1262,7 +1260,7 @@ seg << Set Gradient Discrete Colors( 1 );
 
 ### Gradient Fill
 
-**Syntaxe :** obj << Gradient Fill( "Entre"|"Au-dessus"|"Au-dessous"|"Au-dessus au-dessous"="Au-dessus au-dessous" )
+**Syntaxe :** obj &lt;&lt; Gradient Fill( "Entre"|"Au-dessus"|"Au-dessous"|"Au-dessus au-dessous"="Au-dessus au-dessous" )
 
 **Description :** Définit le comportement de couleur des valeurs se trouvant en-dehors de l&apos;étendue de l&apos;échelle du gradient. "Au-dessus au-dessous" par défaut.
 
@@ -1285,7 +1283,7 @@ seg << Set Gradient Fill( "Between" );
 
 ### Gradient Label Count
 
-**Syntaxe :** obj << Gradient Label Count
+**Syntaxe :** obj &lt;&lt; Gradient Label Count
 
 **Description :** Définit le nombre d&apos;étiquettes dans une légende de gradient. Ce nombre est supérieur d&apos;une unité au nombre de niveaux d&apos;isoréponses.
 
@@ -1300,7 +1298,7 @@ seg << Set Gradient Label Count( 8 );
 
 ### Gradient Label Levels
 
-**Syntaxe :** obj << Gradient Label Levels( [value1,value1, ... value N] )
+**Syntaxe :** obj &lt;&lt; Gradient Label Levels( [value1,value1, ... value N] )
 
 **Description :** Définit un jeu personnalisé de valeurs à utiliser dans l&apos;échelle du gradient.
 
@@ -1322,7 +1320,7 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ### Gradient Legend Horizontal
 
-**Syntaxe :** obj << Gradient Legend Horizontal
+**Syntaxe :** obj &lt;&lt; Gradient Legend Horizontal
 
 **Description :** Définit si la légende du gradient doit être dessinée horizontalement.
 
@@ -1337,7 +1335,7 @@ seg << Set Gradient Legend Horizontal( 1 );
 
 ### Gradient Legend Label Format
 
-**Syntaxe :** obj << Gradient Legend Label Format
+**Syntaxe :** obj &lt;&lt; Gradient Legend Label Format
 
 **Description :** Définit le format des étiquettes de la légende du gradient
 
@@ -1352,7 +1350,7 @@ seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
 
 ### Gradient Legend Label Width
 
-**Syntaxe :** obj << Gradient Legend Label Width
+**Syntaxe :** obj &lt;&lt; Gradient Legend Label Width
 
 **Description :** Définit la longueur de caractère maximum des étiquettes de légende du gradient.
 
@@ -1367,7 +1365,7 @@ seg << Set Gradient Legend Label Width( 4 );
 
 ### Gradient Legend Show Labels
 
-**Syntaxe :** obj << Gradient Legend Show Labels
+**Syntaxe :** obj &lt;&lt; Gradient Legend Show Labels
 
 **Description :** Définit si les étiquettes de niveau doivent être affichées dans la légende du gradient.
 
@@ -1382,7 +1380,7 @@ seg << Set Gradient Legend Show Labels( 0 );
 
 ### Gradient Level Count
 
-**Syntaxe :** obj << Gradient Level Count
+**Syntaxe :** obj &lt;&lt; Gradient Level Count
 
 **Description :** Définit le nombre de niveaux dans un gradient. Ce nombre est inférieur d&apos;une unité au nombre d&apos;étiquettes.
 
@@ -1397,7 +1395,7 @@ seg << Set Gradient Levels( 7 );
 
 ### Gradient Lightness Range
 
-**Syntaxe :** obj << Gradient Lightness Range
+**Syntaxe :** obj &lt;&lt; Gradient Lightness Range
 
 **Description :** Définit la luminosité minimum et maximum des couleurs de niveau dans un gradient. Les couleurs seront réduites pour couvrir cette plage. Une valeur manquante est traitée comme sans aucune modification.
 
@@ -1432,7 +1430,7 @@ seg << Set Gradient Lightness Range( ., 0.75 );
 
 ### Gradient Range
 
-**Syntaxe :** obj << Gradient Range( "Par défaut"|"Étendue de données exacte"|"Milieu 90 %"="Par défaut" )
+**Syntaxe :** obj &lt;&lt; Gradient Range( "Par défaut"|"Étendue de données exacte"|"Milieu 90 %"="Par défaut" )
 
 **Description :** Définit la plage sur laquelle les échelles de gradient non personnalisées sont générées. "Par défaut" par défaut.
 
@@ -1454,7 +1452,7 @@ seg << Set Gradient Range( "Exact Data Range" );
 
 ### Gradient Reverse Color Order
 
-**Syntaxe :** obj << Gradient Reverse Color Order
+**Syntaxe :** obj &lt;&lt; Gradient Reverse Color Order
 
 **Description :** Inverse l&apos;ordre des couleurs dans un gradient.
 
@@ -1469,7 +1467,7 @@ seg << Set Gradient Reverse Color Order( 1 );
 
 ### Gradient Reverse Label Order
 
-**Syntaxe :** obj << Gradient Reverse Label Order
+**Syntaxe :** obj &lt;&lt; Gradient Reverse Label Order
 
 **Description :** Inverse l&apos;ordre des étiquettes dans un gradient.
 
@@ -1484,7 +1482,7 @@ seg << Set Gradient Reverse Label Order( 1 );
 
 ### Gradient Scale
 
-**Syntaxe :** obj << Gradient Scale( "Linéaire"|"Quantile"|"Écart-type"|"Logarithme"|"Offset du log"|"Personnaliser"="Linéaire" )
+**Syntaxe :** obj &lt;&lt; Gradient Scale( "Linéaire"|"Quantile"|"Écart-type"|"Logarithme"|"Offset du log"|"Personnaliser"="Linéaire" )
 
 **Description :** Définit le type d&apos;échelle des gradients. "Linéaire" par défaut.
 
@@ -1506,7 +1504,7 @@ seg << Set Gradient Scale( "Quantile" );
 
 ### Gradient Scale Values
 
-**Syntaxe :** obj << Gradient Scale Values( [value1,value1, ... value N] )
+**Syntaxe :** obj &lt;&lt; Gradient Scale Values( [value1,value1, ... value N] )
 
 **Description :** Définit un jeu personnalisé de valeurs à utiliser dans l&apos;échelle du gradient.
 
@@ -1528,7 +1526,7 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ### Gradient Show Missing
 
-**Syntaxe :** obj << Gradient Show Missing( "Auto"|"Activé(e)"|"Désactivé(e)"="Auto" )
+**Syntaxe :** obj &lt;&lt; Gradient Show Missing( "Auto"|"Activé(e)"|"Désactivé(e)"="Auto" )
 
 **Description :** Définit quand afficher l&apos;entrée de la légende pour les valeurs manquantes. "Auto" par défaut.
 
@@ -1550,7 +1548,7 @@ seg << Set Gradient Show Missing( "Off" );
 
 ### Gradient Transparency
 
-**Syntaxe :** obj << Gradient Transparency( "Aucun(e)"|"Linéaire"="Linéaire" )
+**Syntaxe :** obj &lt;&lt; Gradient Transparency( "Aucun(e)"|"Linéaire"="Linéaire" )
 
 **Description :** Définit le comportement de transparence des gradients. "Linéaire" par défaut.
 
@@ -1565,7 +1563,7 @@ seg << Gradient Transparency( "None" );
 
 ### Grid Line Order
 
-**Syntaxe :** obj << Grid Line Order( position )
+**Syntaxe :** obj &lt;&lt; Grid Line Order( position )
 
 **Description :** Dessiner le quadrillage devant ou derrière les autres objets du graphique.
 
@@ -1584,13 +1582,13 @@ framebox << Grid Line Order( 1 );
 
 ### Horizontal Gap
 
-**Syntaxe :** obj << Horizontal Gap( number )
+**Syntaxe :** obj &lt;&lt; Horizontal Gap( number )
 
 **JMP Version ajoutée :** 15
 
 ### Hover Label Editor
 
-**Syntaxe :** obj << Hover Label Editor
+**Syntaxe :** obj &lt;&lt; Hover Label Editor
 
 **Description :** Affiche la fenêtre de l&apos;éditeur d&apos;étiquette de survol.
 
@@ -1598,13 +1596,13 @@ framebox << Grid Line Order( 1 );
 
 ### Last Value
 
-**Syntaxe :** obj << Last Value( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Last Value( state=0|1 )
 
 **JMP Version ajoutée :** 16
 
 ### Left
 
-**Syntaxe :** obj << Left( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Left( state=0|1 )
 
 **Description :** Affiche ou masque une bordure à gauche du cadre.
 
@@ -1621,7 +1619,7 @@ framebox << Left( 0 );
 
 ### Line Color
 
-**Syntaxe :** obj << Line Color( color )
+**Syntaxe :** obj &lt;&lt; Line Color( color )
 
 **Description :** Définit la couleur de toutes les lignes présentes dans le seg d’affichage.
 
@@ -1634,7 +1632,7 @@ seg << Set Line Color( "Green" );
 
 ### Line Style
 
-**Syntaxe :** obj << Line Style( pen style )
+**Syntaxe :** obj &lt;&lt; Line Style( pen style )
 
 **Description :** Définit le style des lignes. Les options sont : Continu, Pointillé, Tiret, Tiret-point et Tiret-point-point.
 
@@ -1649,7 +1647,7 @@ seg << Set Line Style( "Dotted" );
 
 ### Line Width
 
-**Syntaxe :** obj << Line Width( "1"|"2"|"3"|"4"|"5"|"6"|"Autre…" )
+**Syntaxe :** obj &lt;&lt; Line Width( "1"|"2"|"3"|"4"|"5"|"6"|"Autre…" )
 
 **Description :** Définit l’épaisseur des lignes.
 
@@ -1664,7 +1662,7 @@ seg << Set Line Width( 3 );
 
 ### Line Width Scale
 
-**Syntaxe :** obj << Line Width Scale( 0|scale )
+**Syntaxe :** obj &lt;&lt; Line Width Scale( 0|scale )
 
 **Description :** Définit l’épaisseur de trait à la valeur saisie. La valeur 0 signifie que l’échelle des épaisseurs de trait est déterminée par l&apos;échelle des polices.
 
@@ -1681,13 +1679,13 @@ framebox << Line Width Scale( 2.0 );
 
 ### Make table of graphs like this
 
-**Syntaxe :** obj << Make table of graphs like this
+**Syntaxe :** obj &lt;&lt; Make table of graphs like this
 
 **Description :** crée une table de données de graphiques
 
 ### Marker
 
-**Syntaxe :** obj << Marker( marker )
+**Syntaxe :** obj &lt;&lt; Marker( marker )
 
 **Description :** Définit le style de tous les marqueurs.
 
@@ -1702,7 +1700,7 @@ seg << Set Marker( "Square" );
 
 ### Marker Drawing Mode
 
-**Syntaxe :** obj << Marker Drawing Mode( "Normal"|"Rapide"|"Cerclées" )
+**Syntaxe :** obj &lt;&lt; Marker Drawing Mode( "Normal"|"Rapide"|"Cerclées" )
 
 **Description :** Définit le style du marqueur.
 
@@ -1719,13 +1717,13 @@ framebox << Marker Drawing Mode( "outlined" );
 
 ### Marker Label Color Style
 
-**Syntaxe :** obj << Marker Label Color Style( "Mode préféré"|"Couleur des marqueurs"|"Couleur des marqueurs estompée"|"Couleur fixe" )
+**Syntaxe :** obj &lt;&lt; Marker Label Color Style( "Mode préféré"|"Couleur des marqueurs"|"Couleur des marqueurs estompée"|"Couleur fixe" )
 
 **Description :** Change la couleur des étiquettes de marqueur
 
 ### Marker Selection Mode
 
-**Syntaxe :** obj << Marker Selection Mode( "Mode préféré"|"Atténuer les points non sélectionnés"|"Agrandir les points sélectionnés"|"Auréoler les points sélectionnés"|"Cercler les points sélectionnés"|"Même couleur pour les points sélectionnés" )
+**Syntaxe :** obj &lt;&lt; Marker Selection Mode( "Mode préféré"|"Atténuer les points non sélectionnés"|"Agrandir les points sélectionnés"|"Auréoler les points sélectionnés"|"Cercler les points sélectionnés"|"Même couleur pour les points sélectionnés" )
 
 **Description :** Définit le style de sélection du marqueur.
 
@@ -1743,7 +1741,7 @@ framebox << Marker Selection Mode( "Selected Haloed" );
 
 ### Marker Size
 
-**Syntaxe :** obj << Marker Size( size )
+**Syntaxe :** obj &lt;&lt; Marker Size( size )
 
 **Description :** Définit la taille des marqueurs. Les options de taille sont : Point, Petit, Moyen, Grand, XL, XXL et XXXL.
 
@@ -1759,25 +1757,25 @@ seg << Set Marker Size( "XL" );
 
 ### Max Value
 
-**Syntaxe :** obj << Max Value( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Max Value( state=0|1 )
 
 **JMP Version ajoutée :** 16
 
 ### Min Value
 
-**Syntaxe :** obj << Min Value( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Min Value( state=0|1 )
 
 **JMP Version ajoutée :** 16
 
 ### Name
 
-**Syntaxe :** obj << Name( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Name( state=0|1 )
 
 **JMP Version ajoutée :** 16
 
 ### Name Selection in Column
 
-**Syntaxe :** obj << Name Selection in Column
+**Syntaxe :** obj &lt;&lt; Name Selection in Column
 
 **Description :** Étiquette les lignes sélectionnées et enregistre la valeur (étiquette) dans une colonne.
 
@@ -1797,7 +1795,7 @@ framebox << Name Selection in Column;
 
 ### Paste Background Image
 
-**Syntaxe :** obj << Paste Background Image
+**Syntaxe :** obj &lt;&lt; Paste Background Image
 
 **Description :** Coller dans le presse-papier l’image d’arrière-plan enregistrée dans la mémoire.
 
@@ -1830,7 +1828,7 @@ fb2 << Paste Background Image;
 
 ### Paste Customizations
 
-**Syntaxe :** obj << Paste Customizations
+**Syntaxe :** obj &lt;&lt; Paste Customizations
 
 **Description :** Colle un script qui contient des personnalisations de graphique.
 
@@ -1852,7 +1850,7 @@ framebox2 << Paste Customizations;
 
 ### Paste Frame Contents
 
-**Syntaxe :** obj << Paste Frame Contents
+**Syntaxe :** obj &lt;&lt; Paste Frame Contents
 
 **Description :** Analyse et colle dans ce cadre le texte du journal contenu dans le presse-papiers.
 
@@ -1874,7 +1872,7 @@ framebox2 << Paste Frame Contents;
 
 ### Paste Frame Settings
 
-**Syntaxe :** obj << Paste Frame Settings
+**Syntaxe :** obj &lt;&lt; Paste Frame Settings
 
 **Description :** Colle le contenu du presse-papiers dans ce cadre.
 
@@ -1896,7 +1894,7 @@ framebox2 << Paste Frame Settings;
 
 ### Paste Graphlet
 
-**Syntaxe :** obj << Paste Graphlet
+**Syntaxe :** obj &lt;&lt; Paste Graphlet
 
 **Description :** Ajoute une personnalisation Graphlet sur la base du contenu du presse-papiers.
 
@@ -1943,7 +1941,7 @@ gpin << Launch Graphlet;
 
 ### Reference Line Order
 
-**Syntaxe :** obj << Reference Line Order( position )
+**Syntaxe :** obj &lt;&lt; Reference Line Order( position )
 
 **Description :** Dessine les droites de référence devant ou derrière les autres objets du graphique.
 
@@ -1962,7 +1960,7 @@ framebox << Reference Line Order( 1 );
 
 ### Remove Graphics Script
 
-**Syntaxe :** obj << Remove Graphics Script( position )
+**Syntaxe :** obj &lt;&lt; Remove Graphics Script( position )
 
 **Description :** Supprime le script des graphiques lié au cadre à la position position donnée.
 
@@ -1990,7 +1988,7 @@ framebox << Remove Graphics Script( 2 );
 
 ### Reorder Segs
 
-**Syntaxe :** obj << Reorder Segs( List of integers representing the current segs in the new order. )
+**Syntaxe :** obj &lt;&lt; Reorder Segs( List of integers representing the current segs in the new order. )
 
 **Description :** Modifie l&apos;ordre des segs qui se trouvent dans un graphique.
 
@@ -2020,7 +2018,7 @@ For( blink = 1, blink < 4, blink++,
 
 ### Right
 
-**Syntaxe :** obj << Right( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Right( state=0|1 )
 
 **Description :** Affiche ou masque une bordure à droite du cadre.
 
@@ -2037,7 +2035,7 @@ framebox << Right( 0 );
 
 ### Right Y Axis
 
-**Syntaxe :** obj << Right Y Axis( < Min( min ) >, < Max( max ) >, < Inc( n ) >, ... )
+**Syntaxe :** obj &lt;&lt; Right Y Axis( &lt; Min( min ) &gt;, &lt; Max( max ) &gt;, &lt; Inc( n ) &gt;, ... )
 
 **Description :** Applique un ou plusieurs changements de l’axe Y de droite en un seul message. Ouvre la fenêtre des paramètres de l’axe Y de droite en cas d’absence d’arguments.
 
@@ -2094,7 +2092,7 @@ framebox << Right Y Axis(
 
 ### Row Colors
 
-**Syntaxe :** obj << Row Colors( couleur )
+**Syntaxe :** obj &lt;&lt; Row Colors( couleur )
 
 **Description :** Définit la couleur des lignes sélectionnées.
 
@@ -2112,7 +2110,7 @@ framebox << Row Colors( "Red" );
 
 ### Row Editor
 
-**Syntaxe :** obj << Row Editor
+**Syntaxe :** obj &lt;&lt; Row Editor
 
 **Description :** Active la fenêtre Éditeur de lignes, en débutant sur le premier point sélectionné.
 
@@ -2129,7 +2127,7 @@ framebox << Row Editor;
 
 ### Row Exclude
 
-**Syntaxe :** obj << Row Exclude
+**Syntaxe :** obj &lt;&lt; Row Exclude
 
 **Description :** Exclut (ou inclut) les lignes correspondantes dans la table de données.
 
@@ -2147,7 +2145,7 @@ framebox << Row Exclude( 1 );
 
 ### Row Hide
 
-**Syntaxe :** obj << Row Hide
+**Syntaxe :** obj &lt;&lt; Row Hide
 
 **Description :** Masque (ou affiche) les lignes correspondantes dans la table de données.
 
@@ -2165,7 +2163,7 @@ framebox << Row Hide( 1 );
 
 ### Row Hide and Exclude
 
-**Syntaxe :** obj << Row Hide and Exclude
+**Syntaxe :** obj &lt;&lt; Row Hide and Exclude
 
 **Description :** Masque et exclut (ou affiche ou annule l&apos;exclusion) les lignes correspondantes dans la table de données.
 
@@ -2183,7 +2181,7 @@ framebox << Row Hide and Exclude( 1 );
 
 ### Row Label
 
-**Syntaxe :** obj << Row Label
+**Syntaxe :** obj &lt;&lt; Row Label
 
 **Description :** Ajoute (ou élimine) les étiquettes sur les lignes correspondantes dans la table de données.
 
@@ -2201,7 +2199,7 @@ framebox << Row Label( 1 );
 
 ### Row Legend
 
-**Syntaxe :** obj << Row Legend( Color( 0|1), Marker( 0|1 ), <Color theme( string )>, <Marker theme( string )>, < Continuous scale(0|1)>, <Reverse scale(0|1)>, <Excluded Row( 0|1 ), <Make window with legend> )
+**Syntaxe :** obj &lt;&lt; Row Legend( Color( 0|1), Marker( 0|1 ), &lt;Color theme( string )&gt;, &lt;Marker theme( string )&gt;, &lt; Continuous scale(0|1)&gt;, &lt;Reverse scale(0|1)&gt;, &lt;Excluded Row( 0|1 ), &lt;Make window with legend&gt; )
 
 **Description :** Colorie les points en fonction des valeurs de la colonne sélectionnée et indique la correspondance couleur/valeur.
 
@@ -2218,7 +2216,7 @@ framebox << Row Legend( "age", color( 1 ), Marker( 1 ) );
 
 ### Row Markers
 
-**Syntaxe :** obj << Row Markers( marker )
+**Syntaxe :** obj &lt;&lt; Row Markers( marker )
 
 **Description :** Définit le marqueur des lignes sélectionnées.
 
@@ -2236,7 +2234,7 @@ framebox << Row Markers( 3 );
 
 ### Scale with Font
 
-**Syntaxe :** obj << Scale with Font
+**Syntaxe :** obj &lt;&lt; Scale with Font
 
 **Description :** Ajuste l&apos;échelle des épaisseurs de trait à l&apos;échelle des polices. Équivaut à <<Échelle des épaisseurs de trait(0).
 
@@ -2253,7 +2251,7 @@ framebox << Scale with Font;
 
 ### Seg Count
 
-**Syntaxe :** obj << Seg Count( <seg type> )
+**Syntaxe :** obj &lt;&lt; Seg Count( &lt;seg type&gt; )
 
 ```jsl
 
@@ -2267,7 +2265,7 @@ rbiv[Frame Box( 1 )] << Seg Count( MarkerSeg );
 
 ### Select Matching Cells
 
-**Syntaxe :** obj << Select Matching Cells
+**Syntaxe :** obj &lt;&lt; Select Matching Cells
 
 **Description :** Sélectionne des points dont les étiquettes sont semblables aux lignes sélectionnées.
 
@@ -2286,7 +2284,7 @@ framebox << Select Matching Cells;
 
 ### Select Similar
 
-**Syntaxe :** obj << Select Similar
+**Syntaxe :** obj &lt;&lt; Select Similar
 
 **Description :** Sélectionne les lignes dont les données sont semblables à celle de la colonne sélectionnée.
 
@@ -2305,7 +2303,7 @@ framebox << Select Similar;
 
 ### Set Background Fill
 
-**Syntaxe :** obj << Set Background Fill( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Set Background Fill( state=0|1 )
 
 **Description :** Active ou désactive le remplissage du fond du graphique avec la couleur de fond.
 
@@ -2327,13 +2325,13 @@ framebox << Set Background Fill( 0 );
 
 ### Set Colors
 
-**Syntaxe :** obj << Set Colors
+**Syntaxe :** obj &lt;&lt; Set Colors
 
 **JMP Version ajoutée :** 15
 
 ### Set Error Bar Cap
 
-**Syntaxe :** obj << Set Error Bar Cap( "Aucun(e)"|"Minuscule"|"Petit"|"Moyen"|"Grand" )
+**Syntaxe :** obj &lt;&lt; Set Error Bar Cap( "Aucun(e)"|"Minuscule"|"Petit"|"Moyen"|"Grand" )
 
 **Description :** Spécifie quel type de plafond mettre sur les barres d&apos;erreur.
 
@@ -2356,7 +2354,7 @@ seg << Set Error Bar Cap( "Large" );
 
 ### Set Error Bar Cap Shape
 
-**Syntaxe :** obj << Set Error Bar Cap Shape( begin, end )
+**Syntaxe :** obj &lt;&lt; Set Error Bar Cap Shape( begin, end )
 
 **Description :** Spécifie la forme de l&apos;extrémité à afficher sur les barres d&apos;erreur. Un seul argument définit la forme pour les deux extrémités de la barre, ou des arguments distincts peuvent être fournis pour le début et la fin. La forme par défaut est "Line". Une forme de "Arrow" dessine une flèche vers l&apos;extérieur et "None" omet l&apos;extrémité.
 
@@ -2379,9 +2377,7 @@ seg << Set Error Bar Cap Shape( "Line", "Arrow" );
 
 ### Set Gradient
 
-**Syntaxe :** obj << { <Color Theme(theme)>, <Min Lightness(0-1)>, <Max Lightness(0-1)>, <Contour Levels(num)>, <Reverse Gradient(0|1)>, <Density Gradient("Fade To White"|"Fade To Gray"|"Full Color")>, <Gradient Transparency("None"|"Linear")> }
-
-obj << { <Color Theme(theme)>, <Min Lightness(0-1)>, <Max Lightness(0-1)>, <N Labels(num)>, <Show Missing Color("On"|"Off"|"Auto")>, <Scale Type("Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom")>, <Scale Values([v1, v2, …])>, <Range Type("Default"|"Exact Data Range"|"Middle 90%")>, <Fill("Between"|"Above"|"Below"|"Above Below")>, <Reverse Gradient(0|1)>, <Reverse Labels(0|1)>, <Discrete Color(0|1)> }, <Label Format(labelFormat)>, <Width(num)>, <Horizontal(0|1)>, <Show Labels(0|1)>
+**Syntaxe :** obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;Contour Levels(num)&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Density Gradient("Fade To White"|"Fade To Gray"|"Full Color")&gt;, &lt;Gradient Transparency("None"|"Linear")&gt; }obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;N Labels(num)&gt;, &lt;Show Missing Color("On"|"Off"|"Auto")&gt;, &lt;Scale Type("Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom")&gt;, &lt;Scale Values([v1, v2, …])&gt;, &lt;Range Type("Default"|"Exact Data Range"|"Middle 90%")&gt;, &lt;Fill("Between"|"Above"|"Below"|"Above Below")&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Reverse Labels(0|1)&gt;, &lt;Discrete Color(0|1)&gt; }, &lt;Label Format(labelFormat)&gt;, &lt;Width(num)&gt;, &lt;Horizontal(0|1)&gt;, &lt;Show Labels(0|1)&gt;
 
 **Description :** Définit le gradient de couleur.
 
@@ -2394,7 +2390,7 @@ seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
 
 ### Set Gradient Color Theme
 
-**Syntaxe :** obj << Set Gradient Color Theme
+**Syntaxe :** obj &lt;&lt; Set Gradient Color Theme
 
 **Description :** Définit le thème de couleur du gradient.
 
@@ -2409,7 +2405,7 @@ seg << Set Gradient Color Theme( "Viridis" );
 
 ### Set Gradient Custom Scale
 
-**Syntaxe :** obj << Set Gradient Custom Scale
+**Syntaxe :** obj &lt;&lt; Set Gradient Custom Scale
 
 **Description :** Définit le gradient de sorte à utiliser une liste de valeurs pour une échelle personnalisée.
 
@@ -2424,7 +2420,7 @@ seg << Set Gradient Custom Scale( {0.0, 5.0, 10.0, 20.0} );
 
 ### Set Gradient Discrete Colors
 
-**Syntaxe :** obj << Set Gradient Discrete Colors
+**Syntaxe :** obj &lt;&lt; Set Gradient Discrete Colors
 
 **Description :** Définit si chaque niveau d&apos;un gradient doit être une seule couleur ou si les couleurs doivent effectuer une transition lisse.
 
@@ -2446,7 +2442,7 @@ seg << Set Gradient Discrete Colors( 1 );
 
 ### Set Gradient Fill
 
-**Syntaxe :** obj << Set Gradient Fill( "Entre"|"Au-dessus"|"Au-dessous"|"Au-dessus au-dessous"="Au-dessus au-dessous" )
+**Syntaxe :** obj &lt;&lt; Set Gradient Fill( "Entre"|"Au-dessus"|"Au-dessous"|"Au-dessus au-dessous"="Au-dessus au-dessous" )
 
 **Description :** Définit le comportement de couleur des valeurs se trouvant en-dehors de l&apos;étendue de l&apos;échelle du gradient. "Au-dessus au-dessous" par défaut.
 
@@ -2469,7 +2465,7 @@ seg << Set Gradient Fill( "Between" );
 
 ### Set Gradient Label Count
 
-**Syntaxe :** obj << Set Gradient Label Count
+**Syntaxe :** obj &lt;&lt; Set Gradient Label Count
 
 **Description :** Définit le nombre d&apos;étiquettes dans une légende de gradient. Ce nombre est supérieur d&apos;une unité au nombre de niveaux d&apos;isoréponses.
 
@@ -2484,7 +2480,7 @@ seg << Set Gradient Label Count( 8 );
 
 ### Set Gradient Label Levels
 
-**Syntaxe :** obj << Set Gradient Label Levels( [value1,value1, ... value N] )
+**Syntaxe :** obj &lt;&lt; Set Gradient Label Levels( [value1,value1, ... value N] )
 
 **Description :** Définit un jeu personnalisé de valeurs à utiliser dans l&apos;échelle du gradient.
 
@@ -2506,7 +2502,7 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ### Set Gradient Legend Horizontal
 
-**Syntaxe :** obj << Set Gradient Legend Horizontal
+**Syntaxe :** obj &lt;&lt; Set Gradient Legend Horizontal
 
 **Description :** Définit si la légende du gradient doit être dessinée horizontalement.
 
@@ -2521,7 +2517,7 @@ seg << Set Gradient Legend Horizontal( 1 );
 
 ### Set Gradient Legend Label Format
 
-**Syntaxe :** obj << Set Gradient Legend Label Format
+**Syntaxe :** obj &lt;&lt; Set Gradient Legend Label Format
 
 **Description :** Définit le format des étiquettes de la légende du gradient
 
@@ -2536,7 +2532,7 @@ seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
 
 ### Set Gradient Legend Label Width
 
-**Syntaxe :** obj << Set Gradient Legend Label Width
+**Syntaxe :** obj &lt;&lt; Set Gradient Legend Label Width
 
 **Description :** Définit la longueur de caractère maximum des étiquettes de légende du gradient.
 
@@ -2551,7 +2547,7 @@ seg << Set Gradient Legend Label Width( 4 );
 
 ### Set Gradient Legend Show Labels
 
-**Syntaxe :** obj << Set Gradient Legend Show Labels
+**Syntaxe :** obj &lt;&lt; Set Gradient Legend Show Labels
 
 **Description :** Définit si les étiquettes de niveau doivent être affichées dans la légende du gradient.
 
@@ -2566,7 +2562,7 @@ seg << Set Gradient Legend Show Labels( 0 );
 
 ### Set Gradient Level Count
 
-**Syntaxe :** obj << Set Gradient Level Count
+**Syntaxe :** obj &lt;&lt; Set Gradient Level Count
 
 **Description :** Définit le nombre de niveaux dans un gradient. Ce nombre est inférieur d&apos;une unité au nombre d&apos;étiquettes.
 
@@ -2581,7 +2577,7 @@ seg << Set Gradient Levels( 7 );
 
 ### Set Gradient Lightness Range
 
-**Syntaxe :** obj << Set Gradient Lightness Range
+**Syntaxe :** obj &lt;&lt; Set Gradient Lightness Range
 
 **Description :** Définit la luminosité minimum et maximum des couleurs de niveau dans un gradient. Les couleurs seront réduites pour couvrir cette plage. Une valeur manquante est traitée comme sans aucune modification.
 
@@ -2616,7 +2612,7 @@ seg << Set Gradient Lightness Range( ., 0.75 );
 
 ### Set Gradient Range
 
-**Syntaxe :** obj << Set Gradient Range( "Par défaut"|"Étendue de données exacte"|"Milieu 90 %"="Par défaut" )
+**Syntaxe :** obj &lt;&lt; Set Gradient Range( "Par défaut"|"Étendue de données exacte"|"Milieu 90 %"="Par défaut" )
 
 **Description :** Définit la plage sur laquelle les échelles de gradient non personnalisées sont générées. "Par défaut" par défaut.
 
@@ -2638,7 +2634,7 @@ seg << Set Gradient Range( "Exact Data Range" );
 
 ### Set Gradient Reverse Color Order
 
-**Syntaxe :** obj << Set Gradient Reverse Color Order
+**Syntaxe :** obj &lt;&lt; Set Gradient Reverse Color Order
 
 **Description :** Inverse l&apos;ordre des couleurs dans un gradient.
 
@@ -2653,7 +2649,7 @@ seg << Set Gradient Reverse Color Order( 1 );
 
 ### Set Gradient Reverse Label Order
 
-**Syntaxe :** obj << Set Gradient Reverse Label Order
+**Syntaxe :** obj &lt;&lt; Set Gradient Reverse Label Order
 
 **Description :** Inverse l&apos;ordre des étiquettes dans un gradient.
 
@@ -2668,7 +2664,7 @@ seg << Set Gradient Reverse Label Order( 1 );
 
 ### Set Gradient Scale
 
-**Syntaxe :** obj << Set Gradient Scale( "Linéaire"|"Quantile"|"Écart-type"|"Logarithme"|"Offset du log"|"Personnaliser"="Linéaire" )
+**Syntaxe :** obj &lt;&lt; Set Gradient Scale( "Linéaire"|"Quantile"|"Écart-type"|"Logarithme"|"Offset du log"|"Personnaliser"="Linéaire" )
 
 **Description :** Définit le type d&apos;échelle des gradients. "Linéaire" par défaut.
 
@@ -2690,7 +2686,7 @@ seg << Set Gradient Scale( "Quantile" );
 
 ### Set Gradient Scale Values
 
-**Syntaxe :** obj << Set Gradient Scale Values( [value1,value1, ... value N] )
+**Syntaxe :** obj &lt;&lt; Set Gradient Scale Values( [value1,value1, ... value N] )
 
 **Description :** Définit un jeu personnalisé de valeurs à utiliser dans l&apos;échelle du gradient.
 
@@ -2712,7 +2708,7 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ### Set Gradient Show Missing
 
-**Syntaxe :** obj << Set Gradient Show Missing( "Auto"|"Activé(e)"|"Désactivé(e)"="Auto" )
+**Syntaxe :** obj &lt;&lt; Set Gradient Show Missing( "Auto"|"Activé(e)"|"Désactivé(e)"="Auto" )
 
 **Description :** Définit quand afficher l&apos;entrée de la légende pour les valeurs manquantes. "Auto" par défaut.
 
@@ -2734,7 +2730,7 @@ seg << Set Gradient Show Missing( "Off" );
 
 ### Set Graphlet
 
-**Syntaxe :** obj << Set Graphlet
+**Syntaxe :** obj &lt;&lt; Set Graphlet
 
 **Description :** Définit la visualisation intégrée de l&apos;étiquette de survol pour ce graphique (graphlet).
 
@@ -2818,7 +2814,7 @@ gpin << Launch Graphlet;
 
 ### Set Gridlet
 
-**Syntaxe :** obj << Set Gridlet
+**Syntaxe :** obj &lt;&lt; Set Gridlet
 
 **Description :** Définit la grille de contenu de l&apos;étiquette de survol pour ce graphique (gridlet).
 
@@ -2973,7 +2969,7 @@ frame << Add Pin Annotation(
 
 ### Set Interval Draw Directions
 
-**Syntaxe :** obj << Set Interval Draw Directions( Both|Upper|Lower|None )
+**Syntaxe :** obj &lt;&lt; Set Interval Draw Directions( Both|Upper|Lower|None )
 
 **Description :** Définit les directions dans lesquelles les intervalles doivent être dessinés.
 
@@ -3012,7 +3008,7 @@ seg << Set Interval Draw Directions( "Lower" );
 
 ### Set Line Color
 
-**Syntaxe :** obj << Set Line Color( color )
+**Syntaxe :** obj &lt;&lt; Set Line Color( color )
 
 **Description :** Définit la couleur de toutes les lignes présentes dans le seg d’affichage.
 
@@ -3025,7 +3021,7 @@ seg << Set Line Color( "Green" );
 
 ### Set Line Style
 
-**Syntaxe :** obj << Set Line Style( pen style )
+**Syntaxe :** obj &lt;&lt; Set Line Style( pen style )
 
 **Description :** Définit le style des lignes. Les options sont : Continu, Pointillé, Tiret, Tiret-point et Tiret-point-point.
 
@@ -3040,7 +3036,7 @@ seg << Set Line Style( "Dotted" );
 
 ### Set Line Width
 
-**Syntaxe :** obj << Set Line Width( "1"|"2"|"3"|"4"|"5"|"6"|"Autre…" )
+**Syntaxe :** obj &lt;&lt; Set Line Width( "1"|"2"|"3"|"4"|"5"|"6"|"Autre…" )
 
 **Description :** Définit l’épaisseur des lignes.
 
@@ -3055,7 +3051,7 @@ seg << Set Line Width( 3 );
 
 ### Set Marker
 
-**Syntaxe :** obj << Set Marker( marker )
+**Syntaxe :** obj &lt;&lt; Set Marker( marker )
 
 **Description :** Définit le style de tous les marqueurs.
 
@@ -3070,7 +3066,7 @@ seg << Set Marker( "Square" );
 
 ### Set Marker Size
 
-**Syntaxe :** obj << Set Marker Size( size )
+**Syntaxe :** obj &lt;&lt; Set Marker Size( size )
 
 **Description :** Définit la taille des marqueurs. Les options de taille sont : Point, Petit, Moyen, Grand, XL, XXL et XXXL.
 
@@ -3086,7 +3082,7 @@ seg << Set Marker Size( "XL" );
 
 ### Set Textlet
 
-**Syntaxe :** obj << Set Textlet
+**Syntaxe :** obj &lt;&lt; Set Textlet
 
 **Description :** Définit le contenu Rich Text de l&apos;étiquette de survol pour ce graphique (textlet).
 
@@ -3131,7 +3127,7 @@ gpin = frame << Add Pin Annotation(
 
 ### Set Transparency
 
-**Syntaxe :** obj << Set Transparency( number )
+**Syntaxe :** obj &lt;&lt; Set Transparency( number )
 
 **Description :** Définit la transparence de la forme. L’argument doit être une valeur numérique comprise entre 0 et 1.
 
@@ -3146,7 +3142,7 @@ seg << Set Transparency( .3 );
 
 ### Size to Isometric
 
-**Syntaxe :** obj << Size to Isometric
+**Syntaxe :** obj &lt;&lt; Size to Isometric
 
 **Description :** Redimensionne le cadre de sorte que le nombre d&apos;unités réelles par pixel soit le même dans les directions X et Y.
 
@@ -3163,7 +3159,7 @@ framebox << Size To Isometric;
 
 ### Ternary X Title
 
-**Syntaxe :** obj << Ternary X Title( text )
+**Syntaxe :** obj &lt;&lt; Ternary X Title( text )
 
 **Description :** Définit le titre de l&apos;axe X pour un cadre ternaire.
 
@@ -3171,7 +3167,7 @@ framebox << Size To Isometric;
 
 ### Ternary Y Title
 
-**Syntaxe :** obj << Ternary Y Title( text )
+**Syntaxe :** obj &lt;&lt; Ternary Y Title( text )
 
 **Description :** Définit le titre de l&apos;axe Y pour un cadre ternaire.
 
@@ -3179,7 +3175,7 @@ framebox << Size To Isometric;
 
 ### Ternary Y1 Title
 
-**Syntaxe :** obj << Ternary Y1 Title( text )
+**Syntaxe :** obj &lt;&lt; Ternary Y1 Title( text )
 
 **Description :** Définit le titre de l&apos;axe Y1 pour un cadre ternaire.
 
@@ -3187,7 +3183,7 @@ framebox << Size To Isometric;
 
 ### Top
 
-**Syntaxe :** obj << Top( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Top( state=0|1 )
 
 **Description :** Affiche ou masque une bordure au haut du cadre.
 
@@ -3204,7 +3200,7 @@ framebox << Top( 0 );
 
 ### Transparency
 
-**Syntaxe :** obj << Transparency( number )
+**Syntaxe :** obj &lt;&lt; Transparency( number )
 
 **Description :** Définit la transparence de la forme. L’argument doit être une valeur numérique comprise entre 0 et 1.
 
@@ -3219,13 +3215,13 @@ seg << Set Transparency( .3 );
 
 ### Vertical Gap
 
-**Syntaxe :** obj << Vertical Gap( number )
+**Syntaxe :** obj &lt;&lt; Vertical Gap( number )
 
 **JMP Version ajoutée :** 15
 
 ### X Axis
 
-**Syntaxe :** obj << X Axis( < Min( min ) >, < Max( max ) >, < Inc( n ) >, ... )
+**Syntaxe :** obj &lt;&lt; X Axis( &lt; Min( min ) &gt;, &lt; Max( max ) &gt;, &lt; Inc( n ) &gt;, ... )
 
 **Description :** Applique un ou plusieurs changements de l’axe X en un seul message. Ouvre la fenêtre des paramètres de l’axe X en cas d’absence d’arguments.
 
@@ -3284,7 +3280,7 @@ framebox << X Axis(
 
 ### Y Axis
 
-**Syntaxe :** obj << Y Axis( < Min( min ) >, < Max( max ) >, < Inc( n ) >, ... )
+**Syntaxe :** obj &lt;&lt; Y Axis( &lt; Min( min ) &gt;, &lt; Max( max ) &gt;, &lt; Inc( n ) &gt;, ... )
 
 **Description :** Applique un ou plusieurs changements de l’axe Y en un seul message. Ouvre la fenêtre des paramètres de l’axe Y en cas d’absence d’arguments.
 
@@ -3345,7 +3341,7 @@ framebox << Y Axis(
 
 ### Add Line Annotation
 
-**Syntaxe :** obj << Add Line Annotation
+**Syntaxe :** obj &lt;&lt; Add Line Annotation
 
 **Description :** Ajoute une ligne au haut de la boîte d’affichage.
 
@@ -3362,7 +3358,7 @@ rbiv << Add Line Annotation( Line( 160, 235, 240, 235 ) );
 
 ### Add Pin Annotation
 
-**Syntaxe :** obj << Add Pin Annotation
+**Syntaxe :** obj &lt;&lt; Add Pin Annotation
 
 **Description :** Ajoute une annotation épinglée en haut de la boîte d’affichage. La plupart des attributs (comme Index Row, UniqueID et FoundPt) sont conçus pour une utilisation interne uniquement.
 
@@ -3395,7 +3391,7 @@ dt << Bivariate(
 
 ### Add Polygon Annotation
 
-**Syntaxe :** obj << Add Polygon Annotation
+**Syntaxe :** obj &lt;&lt; Add Polygon Annotation
 
 **Description :** Ajoute un polygone au haut de la boîte d’affichage.
 
@@ -3416,7 +3412,7 @@ rbiv << Add Polygon Annotation(
 
 ### Add Simple Shape Annotation
 
-**Syntaxe :** obj << Add Simple Shape Annotation
+**Syntaxe :** obj &lt;&lt; Add Simple Shape Annotation
 
 **Description :** Ajoute une forme simple au haut de la boîte d’affichage.
 
@@ -3434,7 +3430,7 @@ rbiv << Add Simple Shape Annotation( Rectangle( 70, 180, 95, 215 ) );
 
 ### Add Text Annotation
 
-**Syntaxe :** obj << Add Text Annotation
+**Syntaxe :** obj &lt;&lt; Add Text Annotation
 
 **Description :** Ajoute un texte au haut de la boîte d’affichage.
 
@@ -3454,7 +3450,7 @@ rbiv << Add Text Annotation(
 
 ### Append
 
-**Syntaxe :** obj << Append( db2 )
+**Syntaxe :** obj &lt;&lt; Append( db2 )
 
 **Description :** Ajoute db2 à l’arbre d’affichage après db.
 
@@ -3471,9 +3467,7 @@ rbiv << append( Text Box( "=== below ===" ) );
 
 ### Background Color
 
-**Syntaxe :** obj << Background Color( color );
-
-color = obj << Get Background Color
+**Syntaxe :** obj &lt;&lt; Background Color( color );color = obj &lt;&lt; Get Background Color
 
 **Description :** Si la couleur de fond est définie, la boîte est remplie de cette couleur avant de dessiner son contenu. Si la couleur de fond n&apos;est pas définie, le fond et le contenu des boîtes contenantes sont visibles l&apos;un au travers de l&apos;autre.
 
@@ -3495,9 +3489,7 @@ tb << Background Color( "Yellow" );
 
 ### Border
 
-**Syntaxe :** obj << Border( sides );
-
-sides = obj << Get Border
+**Syntaxe :** obj &lt;&lt; Border( sides );sides = obj &lt;&lt; Get Border
 
 **Description :** Les bordures sont des lignes pleines dessinées tout autour d&apos;une boîte d&apos;affichage. Si vous spécifiez une seule valeur, celle-ci sera appliquée à toutes les bordures. Si vous spécifiez deux valeurs, elles seront appliquées aux bordures horizontales et verticales.
 
@@ -3517,9 +3509,7 @@ tb << Border( 1 );
 
 ### Border Color
 
-**Syntaxe :** obj << Border Color( color );
-
-color = obj << Get Border Color
+**Syntaxe :** obj &lt;&lt; Border Color( color );color = obj &lt;&lt; Get Border Color
 
 **Description :** Couleur facultative pour remplacer la couleur par défaut des bordures de boîte.
 
@@ -3541,7 +3531,7 @@ tb << Border Color( "Light Red" );
 
 ### Bring Window To Front
 
-**Syntaxe :** obj << Bring Window To Front
+**Syntaxe :** obj &lt;&lt; Bring Window To Front
 
 **Description :** Amène la fenêtre en premier plan.
 
@@ -3557,7 +3547,7 @@ w << Bring Window To Front;
 
 ### Child
 
-**Syntaxe :** obj << Child
+**Syntaxe :** obj &lt;&lt; Child
 
 **Description :** Renvoie l’enfant de la boîte d’affichage.
 
@@ -3577,7 +3567,7 @@ Print( axisChild << Class Name() );
 
 ### Class Name
 
-**Syntaxe :** obj << Class Name
+**Syntaxe :** obj &lt;&lt; Class Name
 
 **Description :** Renvoie le nom de la classe d’affichage associée à la boîte d’affichage.
 
@@ -3595,7 +3585,7 @@ axisbox << Class Name();
 
 ### Clone Box
 
-**Syntaxe :** obj << Clone Box
+**Syntaxe :** obj &lt;&lt; Clone Box
 
 **Description :** Crée une nouvelle copie de la boîte d’affichage.
 
@@ -3614,7 +3604,7 @@ rbiv << append( clonedBox );
 
 ### Close Window
 
-**Syntaxe :** obj << Close Window( <"NoSave"> )
+**Syntaxe :** obj &lt;&lt; Close Window( &lt;"NoSave"&gt; )
 
 **Description :** Ferme la fenêtre.
 
@@ -3630,7 +3620,7 @@ w << Close Window;
 
 ### Copy Data
 
-**Syntaxe :** obj << Copy Data
+**Syntaxe :** obj &lt;&lt; Copy Data
 
 **Description :** copie les données séparées par des tabulations d&apos;une matrice ou d&apos;un tableau dans le presse-papiers.
 
@@ -3644,7 +3634,7 @@ mat << CopyData;
 
 ### Copy Graph
 
-**Syntaxe :** obj << Copy Graph
+**Syntaxe :** obj &lt;&lt; Copy Graph
 
 **Description :** Copie une image du graphique et des axes dans le presse-papier.
 
@@ -3662,7 +3652,7 @@ rbiv = biv << report;
 
 ### Copy Picture
 
-**Syntaxe :** obj << Copy Picture
+**Syntaxe :** obj &lt;&lt; Copy Picture
 
 **Description :** Place une image de la boîte d’affichage dans le presse-papier.
 
@@ -3679,7 +3669,7 @@ rbiv << Copy Picture();
 
 ### Delete Box
 
-**Syntaxe :** obj << Delete Box
+**Syntaxe :** obj &lt;&lt; Delete Box
 
 **Description :** Supprime la boîte d’affichage.
 
@@ -3697,7 +3687,7 @@ axisbox << Delete Box();
 
 ### Deselect
 
-**Syntaxe :** obj << Deselect
+**Syntaxe :** obj &lt;&lt; Deselect
 
 **Description :** Désélectionne cet objet à utiliser par les commandes du menu Édition.
 
@@ -3723,7 +3713,7 @@ refresh = Function( {},
 
 ### Dispatch
 
-**Syntaxe :** obj << Dispatch( {outline node, ...}, display element, display element type, command )
+**Syntaxe :** obj &lt;&lt; Dispatch( {outline node, ...}, display element, display element type, command )
 
 **Description :** Envoie la commande command vers une partie spécifique d’un arbre d’affichage.
 
@@ -3740,9 +3730,7 @@ rbiv << Dispatch( {}, "Bivar Plot", FrameBox, {Marker Size( 3 )} );
 
 ### Enabled
 
-**Syntaxe :** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**Syntaxe :** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Description :** Un objet qui n&apos;est pas activé ne répondra pas aux commandes du clavier ou de la souris. Cette propriété est héritée par les objets enfants, donc le fait de désactiver un objet de type conteneur entraînera la désactivation de tous les objets descendants.
 
@@ -3774,7 +3762,7 @@ New Window( "enabled",
 
 ### Find
 
-**Syntaxe :** obj << Find
+**Syntaxe :** obj &lt;&lt; Find
 
 **Description :** Renvoie une boîte d’affichage avec l’argument argument donné.
 
@@ -3792,7 +3780,7 @@ axisbox << Delete();
 
 ### Get Annotation
 
-**Syntaxe :** obj << Get Annotation
+**Syntaxe :** obj &lt;&lt; Get Annotation
 
 **Description :** Renvoie la première annotation ancrée à la boîte d&apos;affichage. Il est possible d&apos;accéder aux autres annotations en exécutant Sib() sur le résultat.
 
@@ -3814,9 +3802,7 @@ annotation << delete;
 
 ### Get Background Color
 
-**Syntaxe :** obj << Background Color( color );
-
-color = obj << Get Background Color
+**Syntaxe :** obj &lt;&lt; Background Color( color );color = obj &lt;&lt; Get Background Color
 
 **Description :** Si la couleur de fond est définie, la boîte est remplie de cette couleur avant de dessiner son contenu. Si la couleur de fond n&apos;est pas définie, le fond et le contenu des boîtes contenantes sont visibles l&apos;un au travers de l&apos;autre.
 
@@ -3838,9 +3824,7 @@ tb << Background Color( "Yellow" );
 
 ### Get Border
 
-**Syntaxe :** obj << Border( sides );
-
-sides = obj << Get Border
+**Syntaxe :** obj &lt;&lt; Border( sides );sides = obj &lt;&lt; Get Border
 
 **Description :** Les bordures sont des lignes pleines dessinées tout autour d&apos;une boîte d&apos;affichage. Si vous spécifiez une seule valeur, celle-ci sera appliquée à toutes les bordures. Si vous spécifiez deux valeurs, elles seront appliquées aux bordures horizontales et verticales.
 
@@ -3860,9 +3844,7 @@ tb << Border( 1 );
 
 ### Get Border Color
 
-**Syntaxe :** obj << Border Color( color );
-
-color = obj << Get Border Color
+**Syntaxe :** obj &lt;&lt; Border Color( color );color = obj &lt;&lt; Get Border Color
 
 **Description :** Couleur facultative pour remplacer la couleur par défaut des bordures de boîte.
 
@@ -3884,7 +3866,7 @@ tb << Border Color( "Light Red" );
 
 ### Get Content Size
 
-**Syntaxe :** obj << Get Content Size
+**Syntaxe :** obj &lt;&lt; Get Content Size
 
 **Description :** Renvoie la taille du contenu dans la fenêtre.
 
@@ -3900,7 +3882,7 @@ Show( c );
 
 ### Get Display Path
 
-**Syntaxe :** obj << Get Display Path( parent box, <receiver expr>, <Mode("XPath"|"Subscript")> )
+**Syntaxe :** obj &lt;&lt; Get Display Path( parent box, &lt;receiver expr&gt;, &lt;Mode("XPath"|"Subscript")&gt; )
 
 **Description :** Obtient une expression relativement robuste pour naviguer entre parent box et obj. Ce chemin n&apos;est pas garanti comme étant stable dans toutes les versions de JMP. Le receiver expr est intégré dans l&apos;expression de sortie s&apos;il est fourni. Sinon, l&apos;expression fournie pour parent box est utilisée à la place. Comme indiqué dans l&apos;exemple, ce message est principalement utile pour augmenter la robustesse d&apos;un chemin déjà disponible. Le mode XPath est défini par défaut.
 
@@ -3938,9 +3920,7 @@ subscript expr << Select;
 
 ### Get Enabled
 
-**Syntaxe :** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**Syntaxe :** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Description :** Un objet qui n&apos;est pas activé ne répondra pas aux commandes du clavier ou de la souris. Cette propriété est héritée par les objets enfants, donc le fait de désactiver un objet de type conteneur entraînera la désactivation de tous les objets descendants.
 
@@ -3972,7 +3952,7 @@ New Window( "enabled",
 
 ### Get HTML
 
-**Syntaxe :** obj << Get HTML( <format> )
+**Syntaxe :** obj &lt;&lt; Get HTML( &lt;format&gt; )
 
 **Description :** Renvoie une chaîne contenant le code source HTLM de la boîte d’affichage.
 
@@ -4002,7 +3982,7 @@ Web( "$TEMP/Oneway.html", JMPWindow );
 
 ### Get Height
 
-**Syntaxe :** width = obj << Get Height
+**Syntaxe :** width = obj &lt;&lt; Get Height
 
 **Description :** Renvoie la hauteur de la boîte d’affichage.
 
@@ -4020,9 +4000,7 @@ fb << Get Height;
 
 ### Get Horizontal Alignment
 
-**Syntaxe :** obj << Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );
-
-"Default"|"Left"|"Center"|"Right" = obj << Get Horizontal Alignment
+**Syntaxe :** obj &lt;&lt; Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );"Default"|"Left"|"Center"|"Right" = obj &lt;&lt; Get Horizontal Alignment
 
 **Description :** L&apos;alignement horizontal gère le positionnement de la boîte dans un contenant lorsque la boîte ne remplit pas tout l&apos;espace.
 
@@ -4042,7 +4020,7 @@ lb << Horizontal Alignment( "Right" );
 
 ### Get Journal
 
-**Syntaxe :** obj << Get Journal
+**Syntaxe :** obj &lt;&lt; Get Journal
 
 **Description :** Renvoie une chaîne contenant le code source du journal de la boîte d’affichage.
 
@@ -4059,9 +4037,7 @@ Print( rbiv << Get Journal );
 
 ### Get Margin
 
-**Syntaxe :** obj << Margin( sides );
-
-sides = obj << Get Margin
+**Syntaxe :** obj &lt;&lt; Margin( sides );sides = obj &lt;&lt; Get Margin
 
 **Description :** La marge ajoute un espace entre la bordure de la boîte et les boîtes adjacentes. Utilisez des arguments nommés ou fournissez une liste de valeurs. Si une seule valeur est spécifiée, elle sera appliquée à tous les côtés. Si deux valeurs sont spécifiées, elles seront appliquées aux marges horizontale et verticale.
 
@@ -4082,7 +4058,7 @@ tb << Margin( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ### Get Max Size
 
-**Syntaxe :** width,height = obj << Get Max Size
+**Syntaxe :** width,height = obj &lt;&lt; Get Max Size
 
 **Description :** Renvoie la taille maximale de la boîte d’affichage afin de permettre l’ajustement automatique de la boîte.
 
@@ -4100,7 +4076,7 @@ fb << Get Max Size;
 
 ### Get Min Size
 
-**Syntaxe :** width,height = obj << Get Min Size
+**Syntaxe :** width,height = obj &lt;&lt; Get Min Size
 
 **Description :** Renvoie la taille minimale de la boîte d’affichage afin de permettre l’ajustement automatique de la boîte.
 
@@ -4118,7 +4094,7 @@ fb << Get Min Size;
 
 ### Get Namespace
 
-**Syntaxe :** obj << Get Namespace
+**Syntaxe :** obj &lt;&lt; Get Namespace
 
 **Description :** Renvoie l&apos;espace de noms associé à cet objet d&apos;affichage.
 
@@ -4136,7 +4112,7 @@ Show( ns:x, x );
 
 ### Get On Close
 
-**Syntaxe :** obj << Get On Close
+**Syntaxe :** obj &lt;&lt; Get On Close
 
 **Description :** Renvoie le script ou la fonction qui sera exécuté(e) à la fermeture de la fenêtre.
 
@@ -4161,9 +4137,7 @@ Show( w << Get On Close );
 
 ### Get Padding
 
-**Syntaxe :** obj << Padding( sides );
-
-sides = obj << Get Padding
+**Syntaxe :** obj &lt;&lt; Padding( sides );sides = obj &lt;&lt; Get Padding
 
 **Description :** Le remplissage ajoute un espace entre le contenu et la bordure de la boîte. Utilisez des arguments nommés ou fournissez une liste de valeurs. Si une seule valeur est spécifiée, elle sera appliquée à tous les côtés. Si deux valeurs sont spécifiées, elles seront appliquées aux remplissages horizontal et vertical.
 
@@ -4184,7 +4158,7 @@ tb << Padding( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ### Get Page Setup
 
-**Syntaxe :** obj << Get Page Setup
+**Syntaxe :** obj &lt;&lt; Get Page Setup
 
 **Description :** Obtenir les informations de mise en page du pdf
 
@@ -4199,7 +4173,7 @@ w << get page setup();
 
 ### Get Picture
 
-**Syntaxe :** obj << Get Picture( <Scale(factor)>, <Type("Bitmap" | "Scalable")>, <View("Picture" | "Screen" | "Print"), <Appearance("Default" | "Current")>, <SubRect(Left(number), Top(number), Right(number), Bottom(number))> )
+**Syntaxe :** obj &lt;&lt; Get Picture( &lt;Scale(factor)&gt;, &lt;Type("Bitmap" | "Scalable")&gt;, &lt;View("Picture" | "Screen" | "Print"), &lt;Appearance("Default" | "Current")&gt;, &lt;SubRect(Left(number), Top(number), Right(number), Bottom(number))&gt; )
 
 **Description :** Capture db comme objet image. L&apos;argument facultatif Scale restituera l&apos;image à une résolution mise à l&apos;échelle. La mise à l&apos;échelle requiert que la boîte d&apos;affichage soit ajustable. L&apos;argument Type détermine si le résultat sera une image vectorielle pouvant être mise à l&apos;échelle ou un bitmap. Par défaut, une image pouvant être mise a l&apos;échelle est renvoyée, ce qui convient à l&apos;enregistrement aux formats vectoriels comme PDF. L&apos;option View change le comportement de certaines boîtes. L&apos;option par défaut "Picture" affiche le rapport comme il le serait à l&apos;exportation au format image, avec les zones déroulées complètement affichées. Le mode d&apos;affichage "Screen" affiche le rapport comme vu à l&apos;écran, et "Print" affiche le rapport comme à l&apos;impression, sans aucune fonction de configuration de page. L&apos;option SubRect capturera une portion de l&apos;image résultante plutôt que l&apos;image entière. L&apos;option Appearance peut changer des couleurs de sortie "Default" aux couleurs "Current" comme vu à l&apos;écran. Les options View, SubRect et Appearance sont uniquement prises en charge pour Type "Bitmap".
 
@@ -4257,7 +4231,7 @@ New Window( "Example", rbiv << Get Picture );
 
 ### Get Project
 
-**Syntaxe :** project = obj << Get Project()
+**Syntaxe :** project = obj &lt;&lt; Get Project()
 
 **Description :** Renvoie le projet parent de la fenêtre, ou Empty() si elle ne se trouve pas dans un projet.
 
@@ -4275,7 +4249,7 @@ Show( c );
 
 ### Get Properties
 
-**Syntaxe :** obj << Get Properties
+**Syntaxe :** obj &lt;&lt; Get Properties
 
 **Description :** Renvoie un tableau associatif qui contient les propriétés de la boîte d&apos;affichage et leurs valeurs.
 
@@ -4289,7 +4263,7 @@ bb << Get Properties;
 
 ### Get Property
 
-**Syntaxe :** obj << Get Property( "property" )
+**Syntaxe :** obj &lt;&lt; Get Property( "property" )
 
 **Description :** Renvoie le paramètre actuel pour la property nommée.
 
@@ -4303,7 +4277,7 @@ bb << Get Property( "Enabled" );
 
 ### Get Property List
 
-**Syntaxe :** obj << Get Property List
+**Syntaxe :** obj &lt;&lt; Get Property List
 
 **Description :** Renvoie la liste des propriétés de la boîte d&apos;affichage.
 
@@ -4317,7 +4291,7 @@ bb << Get Property List;
 
 ### Get RTF
 
-**Syntaxe :** obj << Get RTF( <format> )
+**Syntaxe :** obj &lt;&lt; Get RTF( &lt;format&gt; )
 
 **Description :** Renvoie une chaîne contenant le code source RTF de la boîte d’affichage.
 
@@ -4347,7 +4321,7 @@ Open( "$TEMP/Oneway.rtf" );
 
 ### Get Row States
 
-**Syntaxe :** rs = obj << Get Row States( <dt> )
+**Syntaxe :** rs = obj &lt;&lt; Get Row States( &lt;dt&gt; )
 
 **Description :** Renvoie un vecteur contenant l&apos;état de ligne de toutes les lignes de la table de données spécifiée ou active. Les états de ligne peuvent être issus de la table ou du contexte du filtre de la zone.
 
@@ -4439,7 +4413,7 @@ updatetext();
 
 ### Get Show Window
 
-**Syntaxe :** obj << Get Show Window
+**Syntaxe :** obj &lt;&lt; Get Show Window
 
 **Description :** Renvoie la visibilité de la fenêtre.
 
@@ -4457,7 +4431,7 @@ Print( w << Get Show Window() );
 
 ### Get Size
 
-**Syntaxe :** width,height = obj << Get Size
+**Syntaxe :** width,height = obj &lt;&lt; Get Size
 
 **Description :** Renvoie la taille de la boîte d’affichage.
 
@@ -4475,7 +4449,7 @@ Print( fb << Get Size );
 
 ### Get Stretch
 
-**Syntaxe :** x,y = obj << Get Stretch
+**Syntaxe :** x,y = obj &lt;&lt; Get Stretch
 
 **Description :** Renvoie les drapeaux d&apos;ajustement pour la boîte d&apos;affichage dans les directions horizontale et verticale.
 
@@ -4501,7 +4475,7 @@ spacer << Get Stretch();
 
 ### Get Text
 
-**Syntaxe :** obj << Get Text
+**Syntaxe :** obj &lt;&lt; Get Text
 
 **Description :** Renvoie une chaîne contenant le texte de la boîte d’affichage.
 
@@ -4516,9 +4490,7 @@ a << Set Text( win << Get Text );
 
 ### Get Text Color
 
-**Syntaxe :** obj << Text Color( color );
-
-color = obj << Get Text Color
+**Syntaxe :** obj &lt;&lt; Text Color( color );color = obj &lt;&lt; Get Text Color
 
 **Description :** Le texte sera écrit dans une couleur de texte si celle-ci a été préalablement définie. Dans le cas contraire, la boîte héritera la couleur de la boîte conteneur.
 
@@ -4540,15 +4512,11 @@ tb << Text Color( "Red" );
 
 ### Get UI Only
 
-**Syntaxe :** obj << UI Only( state=0|1 );
-
-state = obj << Get UI Only
+**Syntaxe :** obj &lt;&lt; UI Only( state=0|1 );state = obj &lt;&lt; Get UI Only
 
 ### Get User Resizable
 
-**Syntaxe :** obj << User Resizable;
-
-obj << Get User Resizable
+**Syntaxe :** obj &lt;&lt; User Resizable;obj &lt;&lt; Get User Resizable
 
 **Description :** Si la zone peut être redimensionnée par l&apos;utilisateur, le curseur situé près du bord inférieur droit changera pour permettre un redimensionnement à l&apos;aide d&apos;un glisser-déposer.
 
@@ -4585,9 +4553,7 @@ scroll << User Resizable( {0, 0} );
 
 ### Get Vertical Alignment
 
-**Syntaxe :** obj << Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );
-
-"Default"|"Top"|"Center"|"Bottom" = obj << Get Vertical Alignment
+**Syntaxe :** obj &lt;&lt; Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );"Default"|"Top"|"Center"|"Bottom" = obj &lt;&lt; Get Vertical Alignment
 
 **Description :** L&apos;alignement vertical gère le positionnement de la boîte dans un conteneur lorsque la boîte ne remplit pas tout l&apos;espace..
 
@@ -4609,9 +4575,7 @@ lb << Vertical Alignment( "Bottom" );
 
 ### Get Visibility
 
-**Syntaxe :** obj << Visibility( "Visible"|"Hidden"|"Collapse" );
-
-"Visible"|"Hidden"|"Collapse" = obj << Get Visibility
+**Syntaxe :** obj &lt;&lt; Visibility( "Visible"|"Hidden"|"Collapse" );"Visible"|"Hidden"|"Collapse" = obj &lt;&lt; Get Visibility
 
 **Description :** La visibilité détermine si une boîte est affichée et si elle occupe un espace. La valeur par défaut de la visibilité "Visible" indique que l&apos;objet sera affiché. Une boîte "Hidden" n&apos;est pas affichée mais elle occupe encore un espace, alors qu&apos;une boîte "Collapsed" n&apos;occupe pas d&apos;espace dans la mise en page.
 
@@ -4632,7 +4596,7 @@ Show( tb << Get Visibility );
 
 ### Get Web Support
 
-**Syntaxe :** obj << Get Web Support
+**Syntaxe :** obj &lt;&lt; Get Web Support
 
 **Description :** Renvoyer un nombre indiquant le niveau de support HTML interactif pour l&apos;objet d&apos;affichage. 1 signifie que tout ou partie des éléments sont pris en charge. 0 signifie qu&apos;il n&apos;y a aucun support.
 
@@ -4648,7 +4612,7 @@ Show( s );
 
 ### Get Width
 
-**Syntaxe :** width = obj << Get Width
+**Syntaxe :** width = obj &lt;&lt; Get Width
 
 **Description :** Renvoie la largeur de la boîte d’affichage.
 
@@ -4666,7 +4630,7 @@ fb << Get Width;
 
 ### Get Window Icon
 
-**Syntaxe :** obj << Get Window Icon
+**Syntaxe :** obj &lt;&lt; Get Window Icon
 
 **Description :** Renvoie l’icône de la fenêtre.
 
@@ -4682,7 +4646,7 @@ Show( t );
 
 ### Get Window Position
 
-**Syntaxe :** obj << Get Window Position
+**Syntaxe :** obj &lt;&lt; Get Window Position
 
 **Description :** Renvoie la position de la fenêtre.
 
@@ -4698,7 +4662,7 @@ Show( p );
 
 ### Get Window Size
 
-**Syntaxe :** obj << Get Window Size
+**Syntaxe :** obj &lt;&lt; Get Window Size
 
 **Description :** Renvoie la taille de la fenêtre.
 
@@ -4714,7 +4678,7 @@ Show( s );
 
 ### Get Window Title
 
-**Syntaxe :** obj << Get Window Title
+**Syntaxe :** obj &lt;&lt; Get Window Title
 
 **Description :** Renvoie le titre de la fenêtre.
 
@@ -4730,7 +4694,7 @@ Show( t );
 
 ### Get Window View
 
-**Syntaxe :** obj << Get Window View
+**Syntaxe :** obj &lt;&lt; Get Window View
 
 **Description :** Renvoie l&apos;affichage de fenêtre actuel. Les fenêtres peuvent être « Visibles », « Invisibles », ou « Privées ».
 
@@ -4745,7 +4709,7 @@ Print( w << Get Window View() );
 
 ### Get XML
 
-**Syntaxe :** obj << Get XML( <English(0|1)>, <NoData(0|1)> )
+**Syntaxe :** obj &lt;&lt; Get XML( &lt;English(0|1)&gt;, &lt;NoData(0|1)&gt; )
 
 **Description :** Récupère l&apos;arbre d&apos;affichage au format XML. Par défaut, les chaînes sont renvoyées dans la langue locale et le XML contient les valeurs des données dans des boîtes. Utilisez l&apos;option English pour renvoyer des chaînes anglaises, le cas échéant. Utilisez l&apos;option NoData pour omettre les valeurs des données dans les boîtes, qui peuvent être volumineuses pour certains arbres d&apos;affichage.
 
@@ -4760,7 +4724,7 @@ a << set text( win << get xml );
 
 ### GetOffset
 
-**Syntaxe :** x,y = obj << GetOffset
+**Syntaxe :** x,y = obj &lt;&lt; GetOffset
 
 **Description :** Renvoie l&apos;offset de cette boîte d&apos;affichage en relation avec la boîte parent. Vous pouvez avoir besoin d&apos;utiliser le message <<parent dans une boucle pour cumuler plusieurs offsets.
 
@@ -4805,9 +4769,7 @@ New Window( "example",
 
 ### Horizontal Alignment
 
-**Syntaxe :** obj << Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );
-
-"Default"|"Left"|"Center"|"Right" = obj << Get Horizontal Alignment
+**Syntaxe :** obj &lt;&lt; Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );"Default"|"Left"|"Center"|"Right" = obj &lt;&lt; Get Horizontal Alignment
 
 **Description :** L&apos;alignement horizontal gère le positionnement de la boîte dans un contenant lorsque la boîte ne remplit pas tout l&apos;espace.
 
@@ -4827,7 +4789,7 @@ lb << Horizontal Alignment( "Right" );
 
 ### Inval
 
-**Syntaxe :** obj << Inval
+**Syntaxe :** obj &lt;&lt; Inval
 
 **Description :** Invalider la boîte d&apos;affichage. La fenêtre sera actualisée lorsque le message <<Actualiser la fenêtre sera envoyé, ou lorsque le système d&apos;exploitation disposera de temps pour la mise à jour.
 
@@ -4869,7 +4831,7 @@ New Window( "Inval example",
 
 ### Is Dirty
 
-**Syntaxe :** obj << Is Dirty
+**Syntaxe :** obj &lt;&lt; Is Dirty
 
 **Description :** Obtient le statut de modification du document. 1 signifie que le document a été modifié et invitera l&apos;utilisateur à l&apos;enregistrer ; 0 signifie que le document n&apos;est pas modifié.
 
@@ -4888,7 +4850,7 @@ Show( ww << Is Dirty );
 
 ### Is Modal Dialog
 
-**Syntaxe :** obj << Is Modal Dialog
+**Syntaxe :** obj &lt;&lt; Is Modal Dialog
 
 **Description :** Renvoie vrai si la fenêtre est une boîte de dialogue modale. Utile uniquement si appelé à partir d&apos;un rappel de gestionnaire de fenêtre.
 
@@ -4907,7 +4869,7 @@ With Window Handler(
 
 ### Journal
 
-**Syntaxe :** obj << Journal
+**Syntaxe :** obj &lt;&lt; Journal
 
 **Description :** Crée un journal à partir de la boîte de dialogue.
 
@@ -4924,7 +4886,7 @@ rbiv << journal;
 
 ### Journal Window
 
-**Syntaxe :** obj << Journal Window
+**Syntaxe :** obj &lt;&lt; Journal Window
 
 **Description :** Ouvre une fenêtre de journal de la fenêtre.
 
@@ -4939,7 +4901,7 @@ w << Journal Window;
 
 ### Launch
 
-**Syntaxe :** obj << Launch
+**Syntaxe :** obj &lt;&lt; Launch
 
 **Description :** Calcule l’argument donné argument dans le contexte de la boîte d’affichage.
 
@@ -4961,7 +4923,7 @@ ob3 << launch( Bivariate( Y( :height ), X( :weight ) ) );
 
 ### Make RowState Handler
 
-**Syntaxe :** rs = obj << Make RowState Handler( <dt>, function(a) )
+**Syntaxe :** rs = obj &lt;&lt; Make RowState Handler( &lt;dt&gt;, function(a) )
 
 **Description :** Crée un gestionnaire d&apos;état de ligne pour la table de données spécifiée ou pour la table de données active. La fonction est appelée lorsque les états de ligne changent dans le contexte du filtre de la zone. L&apos;argument de la fonction contient les numéros de lignes modifiés, ou -1 si le filtre de l&apos;état de ligne a été modifié.
 
@@ -5053,9 +5015,7 @@ updatetext();
 
 ### Margin
 
-**Syntaxe :** obj << Margin( sides );
-
-sides = obj << Get Margin
+**Syntaxe :** obj &lt;&lt; Margin( sides );sides = obj &lt;&lt; Get Margin
 
 **Description :** La marge ajoute un espace entre la bordure de la boîte et les boîtes adjacentes. Utilisez des arguments nommés ou fournissez une liste de valeurs. Si une seule valeur est spécifiée, elle sera appliquée à tous les côtés. Si deux valeurs sont spécifiées, elles seront appliquées aux marges horizontale et verticale.
 
@@ -5076,7 +5036,7 @@ tb << Margin( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ### Maximize Window
 
-**Syntaxe :** obj << Maximize Window( <state=0|1> )
+**Syntaxe :** obj &lt;&lt; Maximize Window( &lt;state=0|1&gt; )
 
 **Description :** Agrandir la fenêtre. L&apos;argument par défaut est 1.
 
@@ -5094,7 +5054,7 @@ w << Maximize Window( 0 );
 
 ### Minimize Window
 
-**Syntaxe :** obj << Minimize Window( <state=0|1> )
+**Syntaxe :** obj &lt;&lt; Minimize Window( &lt;state=0|1&gt; )
 
 **Description :** Réduire la fenêtre. L&apos;argument par défaut est 1.
 
@@ -5112,7 +5072,7 @@ w << Minimize Window( 0 );
 
 ### Move Window
 
-**Syntaxe :** obj << Move Window( x,y )
+**Syntaxe :** obj &lt;&lt; Move Window( x,y )
 
 **Description :** Déplace la fenêtre à la position spécifiée.
 
@@ -5128,7 +5088,7 @@ w << Move Window( 500, 500 );
 
 ### Next
 
-**Syntaxe :** obj << Next
+**Syntaxe :** obj &lt;&lt; Next
 
 **Description :** Renvoie la boîte d’affichage immédiatement après celle-ci.
 
@@ -5146,7 +5106,7 @@ Print( next << Class Name() );
 
 ### On Close
 
-**Syntaxe :** obj << On Close( script )
+**Syntaxe :** obj &lt;&lt; On Close( script )
 
 **Description :** Définit l&apos;exécution d&apos;un script ou d&apos;une fonction à la fermeture d&apos;une fenêtre. Ce script renvoie 1 pour autoriser la fermeture, ou 0 pour empêcher la fermeture de la fenêtre.
 
@@ -5196,7 +5156,7 @@ w << On Close(
 
 ### Optimize Display
 
-**Syntaxe :** obj << Optimize Display
+**Syntaxe :** obj &lt;&lt; Optimize Display
 
 **Description :** Définit les largeurs de colonne et la fenêtre d&apos;une table de données pour une taille optimale.
 
@@ -5213,7 +5173,7 @@ dt << Optimize Display;
 
 ### Pad Window
 
-**Syntaxe :** obj << Pad Window( bool )
+**Syntaxe :** obj &lt;&lt; Pad Window( bool )
 
 **Description :** Ajoute ou supprime les marges de la fenêtre.
 
@@ -5230,9 +5190,7 @@ r << Pad Window( 0 );
 
 ### Padding
 
-**Syntaxe :** obj << Padding( sides );
-
-sides = obj << Get Padding
+**Syntaxe :** obj &lt;&lt; Padding( sides );sides = obj &lt;&lt; Get Padding
 
 **Description :** Le remplissage ajoute un espace entre le contenu et la bordure de la boîte. Utilisez des arguments nommés ou fournissez une liste de valeurs. Si une seule valeur est spécifiée, elle sera appliquée à tous les côtés. Si deux valeurs sont spécifiées, elles seront appliquées aux remplissages horizontal et vertical.
 
@@ -5253,7 +5211,7 @@ tb << Padding( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ### Page Break
 
-**Syntaxe :** obj << Page Break
+**Syntaxe :** obj &lt;&lt; Page Break
 
 **Description :** Insère un saut de page avant la boîte d’affichage.
 
@@ -5285,7 +5243,7 @@ ob3 << Page Break;
 
 ### Parent
 
-**Syntaxe :** obj << Parent
+**Syntaxe :** obj &lt;&lt; Parent
 
 **Description :** Renvoie le parent de la boîte d’affichage.
 
@@ -5304,7 +5262,7 @@ Print( axisParent << Class Name() );
 
 ### Prepend
 
-**Syntaxe :** obj << Prepend( db2 )
+**Syntaxe :** obj &lt;&lt; Prepend( db2 )
 
 **Description :** Ajoute db2 à l’arbre d’affichage avant db.
 
@@ -5321,7 +5279,7 @@ rbiv << prepend( Text Box( "=== above ===" ) );
 
 ### Prev Sib
 
-**Syntaxe :** obj << Prev Sib
+**Syntaxe :** obj &lt;&lt; Prev Sib
 
 **Description :** Renvoie le frère précédent de la boîte d’affichage.
 
@@ -5342,7 +5300,7 @@ Print( axisSibling << Class Name() );
 
 ### Print Window
 
-**Syntaxe :** obj << Print Window
+**Syntaxe :** obj &lt;&lt; Print Window
 
 **Description :** Imprime la fenêtre.
 
@@ -5357,7 +5315,7 @@ w << Print Window;
 
 ### Reshow
 
-**Syntaxe :** obj << Reshow
+**Syntaxe :** obj &lt;&lt; Reshow
 
 **Description :** Invalider la boîte d&apos;affichage et mettre à jour la fenêtre avec le nouveau contenu. Consulter les messages <<Inval et <<Actualiser la fenêtre si la synchronisation de la mise à jour requiert un contrôle plus poussé.
 
@@ -5386,7 +5344,7 @@ New Window( "Reshow example",
 
 ### Save Capture
 
-**Syntaxe :** obj << Save Capture( <"path">, <format>, <Add Sibling(n)> )
+**Syntaxe :** obj &lt;&lt; Save Capture( &lt;"path"&gt;, &lt;format&gt;, &lt;Add Sibling(n)&gt; )
 
 **Description :** Enregistre la capture d&apos;écran de la boîte d&apos;affichage au path spécifié. Si un path n&apos;est pas spécifié, la fenêtre Enregistrer sous s&apos;affiche.
 
@@ -5403,7 +5361,7 @@ rbiv << Save Capture( "$TEMP/jmp_example.png", "png" );
 
 ### Save HTML
 
-**Syntaxe :** obj << Save HTML( <pathname>, <format> )
+**Syntaxe :** obj &lt;&lt; Save HTML( &lt;pathname&gt;, &lt;format&gt; )
 
 **Description :** Enregistre le code source HTML et le dossier du graphique au format format spécifié.
 
@@ -5420,7 +5378,7 @@ rbiv << Save HTML( "$TEMP/jmp_example.html" );
 
 ### Save Interactive HTML
 
-**Syntaxe :** obj << Save Interactive HTML( <pathname>, <Boolean> )
+**Syntaxe :** obj &lt;&lt; Save Interactive HTML( &lt;pathname&gt;, &lt;Boolean&gt; )
 
 **Description :** Enregistre l&apos;HTML interactif avec les données dans un fichier. L&apos;argument Boolean indique que le rapport est statique.
 
@@ -5437,7 +5395,7 @@ rbiv << Save Interactive HTML( "$TEMP/jmp_example.html" );
 
 ### Save Journal
 
-**Syntaxe :** obj << Save Journal( <pathname> )
+**Syntaxe :** obj &lt;&lt; Save Journal( &lt;pathname&gt; )
 
 **Description :** Enregistre le code source du journal de la boîte d’affichage.
 
@@ -5454,7 +5412,7 @@ rbiv << Save Journal( "$TEMP/jmp_example.jrn" );
 
 ### Save MSWord
 
-**Syntaxe :** obj << Save MSWord( <pathname>, <format> )
+**Syntaxe :** obj &lt;&lt; Save MSWord( &lt;pathname&gt;, &lt;format&gt; )
 
 **Description :** Enregistre la boîte d’affichage en tant que document Microsoft Word. (Windows uniquement)
 
@@ -5471,7 +5429,7 @@ rbiv << Save MSWord( "$TEMP/jmp_example.doc" );
 
 ### Save PDF
 
-**Syntaxe :** obj << Save PDF( <pathname>, <Show Page Setup(0|1)>, <Portrait(0|1)> )
+**Syntaxe :** obj &lt;&lt; Save PDF( &lt;pathname&gt;, &lt;Show Page Setup(0|1)&gt;, &lt;Portrait(0|1)&gt; )
 
 **Description :** Enregistre un PDF de la boîte d’affichage.
 
@@ -5488,7 +5446,7 @@ rbiv << Save PDF( "$TEMP/jmp_example.pdf" );
 
 ### Save Picture
 
-**Syntaxe :** obj << Save Picture( <pathname>, <format>, <Scale(factor)>, <Type("Bitmap" | "Scalable")>, <View("Picture" | "Screen" | "Print"), <Appearance("Default" | "Current")>, <SubRect(Left(number), Top(number), Right(number), Bottom(number))> )
+**Syntaxe :** obj &lt;&lt; Save Picture( &lt;pathname&gt;, &lt;format&gt;, &lt;Scale(factor)&gt;, &lt;Type("Bitmap" | "Scalable")&gt;, &lt;View("Picture" | "Screen" | "Print"), &lt;Appearance("Default" | "Current")&gt;, &lt;SubRect(Left(number), Top(number), Right(number), Bottom(number))&gt; )
 
 **Description :** Enregistre une image de la boîte d&apos;affichage. Les formats pris en charge sont EMF (Windows), PICT (Macintosh), JPEG ou JPG, GIF et PNG. L&apos;argument facultatif Scale restituera l&apos;image à une résolution mise à l&apos;échelle. La mise à l&apos;échelle requiert que la boîte d&apos;affichage soit ajustable. L&apos;argument Type détermine si le résultat sera une image vectorielle pouvant être mise à l&apos;échelle ou un bitmap. Par défaut, une image pouvant être mise a l&apos;échelle est renvoyée, ce qui convient à l&apos;enregistrement aux formats vectoriels comme PDF. L&apos;option View change le comportement de certaines boîtes. L&apos;option par défaut "Picture" affiche le rapport comme il le serait à l&apos;exportation au format image, avec les zones déroulées complètement affichées. Le mode d&apos;affichage "Screen" affiche le rapport comme vu à l&apos;écran, et "Print" l&apos;affiche comme à l&apos;impression, sans aucune fonction de configuration de page. L&apos;option SubRect capturera une portion de l&apos;image résultante plutôt que l&apos;image entière. L&apos;option Appearance peut changer des couleurs de sortie "Default" aux couleurs "Current" comme vu à l&apos;écran. Les options View, SubRect et Appearance sont uniquement prises en charge pour Type "Bitmap".
 
@@ -5558,7 +5516,7 @@ rbiv << Save Picture( "$TEMP/jmp_example.png", "png" );
 
 ### Save Presentation
 
-**Syntaxe :** obj << Save Presentation( "filename.pptx", <Template("path\to\my_template.pptx")>, <Insert(Begin|End|#) | Replace(Begin|End|#) | Append>, <Outline Titles(None|Hide|TopLeft|TopRight|BottomLeft|BottomRight)>, <"EMF"|"PNG"|"JPG"|"Native"> )
+**Syntaxe :** obj &lt;&lt; Save Presentation( "filename.pptx", &lt;Template("path\to\my_template.pptx")&gt;, &lt;Insert(Begin|End|#) | Replace(Begin|End|#) | Append&gt;, &lt;Outline Titles(None|Hide|TopLeft|TopRight|BottomLeft|BottomRight)&gt;, &lt;"EMF"|"PNG"|"JPG"|"Native"&gt; )
 
 **Description :** Enregistre les tables de la boîte d&apos;affichage et les diapositives de graphiques dans une présentation qui peut être vue avec Microsoft PowerPoint ou un autre logiciel de présentation.
 
@@ -5575,7 +5533,7 @@ Open( "$TEMP/jmp_example.pptx" );
 
 ### Save RTF
 
-**Syntaxe :** obj << Save RTF( <pathname>, <format> )
+**Syntaxe :** obj &lt;&lt; Save RTF( &lt;pathname&gt;, &lt;format&gt; )
 
 **Description :** Enregistre le code source RTF avec le graphique au format format spécifié.
 
@@ -5592,7 +5550,7 @@ rbiv << Save RTF( "$TEMP/jmp_example.rtf", "png" );
 
 ### Save Text
 
-**Syntaxe :** obj << Save Text( <pathname>, <format> )
+**Syntaxe :** obj &lt;&lt; Save Text( &lt;pathname&gt;, &lt;format&gt; )
 
 **Description :** Enregistre un fichier contenant le texte de la boîte d’affichage.
 
@@ -5607,7 +5565,7 @@ a << save text( "$TEMP/jmp_example.txt" );
 
 ### Save Window Report
 
-**Syntaxe :** obj << Save Window Report( pathname, <embed data(0|1)> )
+**Syntaxe :** obj &lt;&lt; Save Window Report( pathname, &lt;embed data(0|1)&gt; )
 
 **Description :** Enregistre la fenêtre du rapport actuel dans un fichier de rapport JMP (.jrp).
 
@@ -5625,7 +5583,7 @@ d << Save Window Report( "$DOCUMENTS/test.jrp", embed data( 1 ) );
 
 ### Scroll Window
 
-**Syntaxe :** obj << Scroll Window( DisplayBox | <Relative(<v> | <h>,<v>)> | <Absolute(<v> | <h>,<v>) )
+**Syntaxe :** obj &lt;&lt; Scroll Window( DisplayBox | &lt;Relative(&lt;v&gt; | &lt;h&gt;,&lt;v&gt;)&gt; | &lt;Absolute(&lt;v&gt; | &lt;h&gt;,&lt;v&gt;) )
 
 **Description :** Ajustez la barre de défilement de la fenêtre de manière à afficher l&apos;objet DisplayBox donnée, ou à faire défiler un nombre relatif de pixels, ou à afficher un emplacement de pixel absolu. Pour remplacer un nombre de pixels, vous pouvez utiliser les mots-clés "Start" ou "End".
 
@@ -5700,7 +5658,7 @@ Wait( 1 );
 
 ### Select
 
-**Syntaxe :** obj << Select
+**Syntaxe :** obj &lt;&lt; Select
 
 **Description :** Sélectionne cet objet à utiliser par les commandes du menu Édition.
 
@@ -5715,7 +5673,7 @@ ex << Select;
 
 ### Set Content Size
 
-**Syntaxe :** obj << Set Content Size( x,y )
+**Syntaxe :** obj &lt;&lt; Set Content Size( x,y )
 
 **Description :** Définit la taille du contenu dans la fenêtre.
 
@@ -5741,7 +5699,7 @@ w << Set Content Size( 400, 300 );
 
 ### Set Dirty
 
-**Syntaxe :** obj << Set Dirty
+**Syntaxe :** obj &lt;&lt; Set Dirty
 
 **Description :** Définit le statut de modification du document. 0 n&apos;invitera pas à enregistrer ; 1 y invitera.
 
@@ -5760,7 +5718,7 @@ Show( ww << Is Dirty );
 
 ### Set Height
 
-**Syntaxe :** obj << Set Height( width )
+**Syntaxe :** obj &lt;&lt; Set Height( width )
 
 **Description :** Définit la hauteur de la boîte d’affichage.
 
@@ -5778,7 +5736,7 @@ fb << Set Height( 150 );
 
 ### Set Main Window
 
-**Syntaxe :** obj << Set Main Window
+**Syntaxe :** obj &lt;&lt; Set Main Window
 
 **Description :** Définit la fenêtre active en tant que fenêtre principale de JMP alors que la fenêtre principale précédente devient une fenêtre normale.
 
@@ -5793,7 +5751,7 @@ w << Set Main Window;
 
 ### Set Max Size
 
-**Syntaxe :** obj << Set Max Size( width,height )
+**Syntaxe :** obj &lt;&lt; Set Max Size( width,height )
 
 **Description :** Définit la taille maximale de cette boîte d’affichage afin de permettre l’ajustement automatique de la boîte.
 
@@ -5812,7 +5770,7 @@ fb << Get Max Size;
 
 ### Set Min Size
 
-**Syntaxe :** obj << Set Min Size( width,height )
+**Syntaxe :** obj &lt;&lt; Set Min Size( width,height )
 
 **Description :** Définit la taille minimale de cette boîte d’affichage afin de permettre l’ajustement automatique de la boîte.
 
@@ -5831,7 +5789,7 @@ fb << Get Min Size;
 
 ### Set Page Setup
 
-**Syntaxe :** obj << Set Page Setup( <margins(left, top, right, bottom)>, <scale(s)>, <portrait(0|1)>, <paper size(p)>, <Table of Contents(always, never, default)>  )
+**Syntaxe :** obj &lt;&lt; Set Page Setup( &lt;margins(left, top, right, bottom)&gt;, &lt;scale(s)&gt;, &lt;portrait(0|1)&gt;, &lt;paper size(p)&gt;, &lt;Table of Contents(always, never, default)&gt; )
 
 **Description :** Définit les informations de mise en page utilisées pour l&apos;impression ou l&apos;enregistrement en tant que PDF. Une table des matières peut éventuellement être générée à partir de boîtes de structure.
 
@@ -5853,7 +5811,7 @@ w << Save pdf( "$DOCUMENTS\test.pdf" );
 
 ### Set Print Footers
 
-**Syntaxe :** obj << Set Print Footers( left footer, center footer, right header )
+**Syntaxe :** obj &lt;&lt; Set Print Footers( left footer, center footer, right header )
 
 **Description :** Définit les pieds de page de gauche, du centre et de droite de la sortie imprimée
 
@@ -5872,7 +5830,7 @@ w << Print Window;
 
 ### Set Print Headers
 
-**Syntaxe :** obj << Set Print Headers( left header, center header, right header )
+**Syntaxe :** obj &lt;&lt; Set Print Headers( left header, center header, right header )
 
 **Description :** Définit les en-têtes de gauche, du centre et de droite de la sortie imprimée
 
@@ -5891,7 +5849,7 @@ w << Print Window;
 
 ### Set Property
 
-**Syntaxe :** obj << Set Property( "property", value )
+**Syntaxe :** obj &lt;&lt; Set Property( "property", value )
 
 **Description :** Définit la valeur pour la property nommée pour la boîte d&apos;affichage.
 
@@ -5905,7 +5863,7 @@ bb << Set Property( "Enabled", 0 );
 
 ### Set Report Title
 
-**Syntaxe :** obj << Set Report Title( "string" )
+**Syntaxe :** obj &lt;&lt; Set Report Title( "string" )
 
 **Description :** Modifie le titre du rapport.
 
@@ -5922,7 +5880,7 @@ rbiv << Set Report Title( "New Title" );
 
 ### Set Stretch
 
-**Syntaxe :** obj << Set Stretch( x,y )
+**Syntaxe :** obj &lt;&lt; Set Stretch( x,y )
 
 **Description :** Définit le comportement d&apos;ajustement horizontal et vertical de la boîte. Les boîtes ajustées avec Window seront redimensionnées lorsque la dimension de la fenêtre ou du séparateur est modifiée. Les boîtes ajustées pour Fill seront ajustées pour remplir l&apos;espace disponible dans leur conteneur. Les boîtes avec ajustement Off ne seront généralement pas ajustées. La plupart des boîtes sont réglées par défaut à Neutral, ce qui signifie que leur comportement sera déterminé en fonction de leurs boîtes enfant.
 
@@ -5974,7 +5932,7 @@ New Window( "Stretch",
 
 ### Set Summary Behavior
 
-**Syntaxe :** obj << Set Summary Behavior( "Default"|"Visible"|"Collapse" )
+**Syntaxe :** obj &lt;&lt; Set Summary Behavior( "Default"|"Visible"|"Collapse" )
 
 **Description :** Sets the behavior of the box when a report is viewed in Summary mode.
 
@@ -5993,7 +5951,7 @@ tb << Set Summary Behavior( "Visible" );
 
 ### Set Width
 
-**Syntaxe :** obj << Set Width( width )
+**Syntaxe :** obj &lt;&lt; Set Width( width )
 
 **Description :** Définit la largeur de la boîte d’affichage.
 
@@ -6011,7 +5969,7 @@ fb << Set Width( 400 );
 
 ### Set Window Icon
 
-**Syntaxe :** obj << Set Window Icon( icon name )
+**Syntaxe :** obj &lt;&lt; Set Window Icon( icon name )
 
 **Description :** Définit l’icône de la fenêtre.
 
@@ -6026,7 +5984,7 @@ w << Set Window Icon( "Scatter3D" );
 
 ### Set Window Size
 
-**Syntaxe :** obj << Set Window Size( x,y )
+**Syntaxe :** obj &lt;&lt; Set Window Size( x,y )
 
 **Description :** Définit la taille de la fenêtre.
 
@@ -6041,7 +5999,7 @@ w << Set Window Size( 800, 1200 );
 
 ### Set Window Title
 
-**Syntaxe :** obj << Set Window Title( "string" )
+**Syntaxe :** obj &lt;&lt; Set Window Title( "string" )
 
 **Description :** Modifie le titre de la fenêtre.
 
@@ -6058,7 +6016,7 @@ rbiv << Set Window Title( "New Title" );
 
 ### Show Properties
 
-**Syntaxe :** obj << Show Properties
+**Syntaxe :** obj &lt;&lt; Show Properties
 
 **Description :** Affiche un éditeur de propriétés des boîtes d&apos;affichage
 
@@ -6075,7 +6033,7 @@ rbiv << Show Properties();
 
 ### Show Tree Structure
 
-**Syntaxe :** obj << Show Tree Structure
+**Syntaxe :** obj &lt;&lt; Show Tree Structure
 
 **Description :** Affiche une structure hiérarchique de la boîte d’affichage et de ses nœuds.
 
@@ -6092,7 +6050,7 @@ rbiv << Show Tree Structure();
 
 ### Show Window
 
-**Syntaxe :** obj << Show Window( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Show Window( state=0|1 )
 
 **Description :** Affiche ou masque la fenêtre. Ceci s’avère utile pour les fenêtres provisoirement masquées. Actif par défaut.
 
@@ -6110,7 +6068,7 @@ w << Show Window( 1 );
 
 ### Sib
 
-**Syntaxe :** obj << Sib
+**Syntaxe :** obj &lt;&lt; Sib
 
 **Description :** Renvoie le frère de la boîte d’affichage.
 
@@ -6129,7 +6087,7 @@ Print( axisSibling << Class Name() );
 
 ### Sib Append
 
-**Syntaxe :** obj << Sib Append( Display box, Horizontal|Vertical )
+**Syntaxe :** obj &lt;&lt; Sib Append( Display box, Horizontal|Vertical )
 
 **Description :** Ajoute une boîte d’affichage immédiatement après celle-ci.
 
@@ -6151,7 +6109,7 @@ fb << sib append( Text Box( "=== below ===" ), "Vertical" );
 
 ### Sib Prepend
 
-**Syntaxe :** obj << Sib Prepend( Display box, Horizontal|Vertical )
+**Syntaxe :** obj &lt;&lt; Sib Prepend( Display box, Horizontal|Vertical )
 
 **Description :** Ajoute une boîte d’affichage immédiatement avant celle-ci.
 
@@ -6173,7 +6131,7 @@ fb << sib prepend( Text Box( "=== above ===" ), "Vertical" );
 
 ### Size Window
 
-**Syntaxe :** obj << Size Window( x,y )
+**Syntaxe :** obj &lt;&lt; Size Window( x,y )
 
 **Description :** Définit la taille de la fenêtre.
 
@@ -6188,9 +6146,7 @@ w << Size Window( 500, 500 );
 
 ### Text Color
 
-**Syntaxe :** obj << Text Color( color );
-
-color = obj << Get Text Color
+**Syntaxe :** obj &lt;&lt; Text Color( color );color = obj &lt;&lt; Get Text Color
 
 **Description :** Le texte sera écrit dans une couleur de texte si celle-ci a été préalablement définie. Dans le cas contraire, la boîte héritera la couleur de la boîte conteneur.
 
@@ -6212,7 +6168,7 @@ tb << Text Color( "Red" );
 
 ### Top Parent
 
-**Syntaxe :** obj << Top Parent
+**Syntaxe :** obj &lt;&lt; Top Parent
 
 **Description :** Renvoie le parent racine de la boîte d’affichage.
 
@@ -6230,13 +6186,11 @@ Print( rootParent << Class Name() );
 
 ### UI Only
 
-**Syntaxe :** obj << UI Only( state=0|1 );
-
-state = obj << Get UI Only
+**Syntaxe :** obj &lt;&lt; UI Only( state=0|1 );state = obj &lt;&lt; Get UI Only
 
 ### Update Window
 
-**Syntaxe :** obj << Update Window
+**Syntaxe :** obj &lt;&lt; Update Window
 
 **Description :** Mettre à jour la fenêtre contenant la boîte d&apos;affichage s&apos;il y a des régions invalidées. Le message <<Inval crée les régions invalidées.
 
@@ -6288,9 +6242,7 @@ New Window( "rect",
 
 ### User Resizable
 
-**Syntaxe :** obj << User Resizable;
-
-obj << Get User Resizable
+**Syntaxe :** obj &lt;&lt; User Resizable;obj &lt;&lt; Get User Resizable
 
 **Description :** Si la zone peut être redimensionnée par l&apos;utilisateur, le curseur situé près du bord inférieur droit changera pour permettre un redimensionnement à l&apos;aide d&apos;un glisser-déposer.
 
@@ -6327,9 +6279,7 @@ scroll << User Resizable( {0, 0} );
 
 ### Vertical Alignment
 
-**Syntaxe :** obj << Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );
-
-"Default"|"Top"|"Center"|"Bottom" = obj << Get Vertical Alignment
+**Syntaxe :** obj &lt;&lt; Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );"Default"|"Top"|"Center"|"Bottom" = obj &lt;&lt; Get Vertical Alignment
 
 **Description :** L&apos;alignement vertical gère le positionnement de la boîte dans un conteneur lorsque la boîte ne remplit pas tout l&apos;espace..
 
@@ -6351,9 +6301,7 @@ lb << Vertical Alignment( "Bottom" );
 
 ### Visibility
 
-**Syntaxe :** obj << Visibility( "Visible"|"Hidden"|"Collapse" );
-
-"Visible"|"Hidden"|"Collapse" = obj << Get Visibility
+**Syntaxe :** obj &lt;&lt; Visibility( "Visible"|"Hidden"|"Collapse" );"Visible"|"Hidden"|"Collapse" = obj &lt;&lt; Get Visibility
 
 **Description :** La visibilité détermine si une boîte est affichée et si elle occupe un espace. La valeur par défaut de la visibilité "Visible" indique que l&apos;objet sera affiché. Une boîte "Hidden" n&apos;est pas affichée mais elle occupe encore un espace, alors qu&apos;une boîte "Collapsed" n&apos;occupe pas d&apos;espace dans la mise en page.
 
@@ -6374,7 +6322,7 @@ Show( tb << Get Visibility );
 
 ### Window Class Name
 
-**Syntaxe :** obj << Window Class Name
+**Syntaxe :** obj &lt;&lt; Window Class Name
 
 **Description :** Renvoie le nom de la classe de fenêtre associée à la boîte d’affichage.
 
@@ -6392,7 +6340,7 @@ Show( rbiv << Window Class Name() );
 
 ### XPath
 
-**Syntaxe :** obj << XPath( XPath expression, <English(0|1)>, <NoData(0|1)> )
+**Syntaxe :** obj &lt;&lt; XPath( XPath expression, &lt;English(0|1)&gt;, &lt;NoData(0|1)&gt; )
 
 **Description :** Applique une expression Xpath à la représentation XML de l’arbre d’affichage et renvoie les résultats. Par défaut, les chaînes sont renvoyées dans la langue locale et le XML contient les valeurs des données dans des boîtes. Utilisez l&apos;option English pour renvoyer des chaînes anglaises, le cas échéant. Utilisez l&apos;option NoData pour omettre les valeurs des données dans les boîtes, ce qui peut être utile pour optimiser les performances des requêtes basées uniquement sur des attributs de boîte.
 
@@ -6472,7 +6420,7 @@ biv = dt << Run Script( "Bivariate" );
 
 ### Zoom Window
 
-**Syntaxe :** obj << Zoom Window
+**Syntaxe :** obj &lt;&lt; Zoom Window
 
 **Description :** Redimensionne la fenêtre de sorte qu&apos;elle soit suffisamment grande pour afficher tout son contenu.
 

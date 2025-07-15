@@ -6,7 +6,7 @@
 
 ### Socket
 
-**Syntaxe :** socketHandle = Socket( <STREAM | DGRAM> )
+**Syntaxe :** socketHandle = Socket( &lt;STREAM | DGRAM&gt; )
 
 **Description :** Crée une variable de socket qui peut communiquer avec les sockets de cet ordinateur ou d&apos;autres du réseau. L&apos;argument par défaut est STREAM. Essayez le site Internet de votre société.
 
@@ -51,7 +51,7 @@ If( rc[2] == "ok",
 
 ### Accept
 
-**Syntaxe :** obj << Accept
+**Syntaxe :** obj &lt;&lt; Accept
 
 **Description :** Accepter une connexion depuis un ordinateur distant sur un socket en mode Écoute
 
@@ -69,7 +69,7 @@ rc = skt << accept();
 
 ### Accept Fast
 
-**Syntaxe :** obj << Accept Fast
+**Syntaxe :** obj &lt;&lt; Accept Fast
 
 **Description :** Accepter une connexion depuis un ordinateur distant sur un socket en mode Écoute
 
@@ -92,7 +92,7 @@ rc = skt << AcceptFast();
 
 ### Bind
 
-**Syntaxe :** obj << Bind
+**Syntaxe :** obj &lt;&lt; Bind
 
 **Description :** Relier un socket à un port de votre ordinateur en préparation de l&apos;écoute des connexions.
 
@@ -108,7 +108,7 @@ rc = skt << bind( "localhost", "80" );
 
 ### Close
 
-**Syntaxe :** obj << Close
+**Syntaxe :** obj &lt;&lt; Close
 
 **Description :** Fermer un socket. Le socket doit être recréé avant de pouvoir être réutilisé. Les sockets connectés peuvent être fermés localement ou à distance. Les sockets en mode Écoute peuvent être fermés localement.
 
@@ -121,7 +121,7 @@ x = Socket();/* use the socket...*/ x << Close();
 
 ### Connect
 
-**Syntaxe :** obj << Connect
+**Syntaxe :** obj &lt;&lt; Connect
 
 **Description :** Connecter à un ordinateur distant.
 
@@ -181,7 +181,7 @@ Show( Length( blob ) );
 
 ### GetPeerName
 
-**Syntaxe :** obj << GetPeerName
+**Syntaxe :** obj &lt;&lt; GetPeerName
 
 **Description :** Obtenir le nom de l&apos;ordinateur distant.
 
@@ -197,7 +197,7 @@ Show( rc, tCall << getPeerName );
 
 ### GetSockName
 
-**Syntaxe :** obj << GetSockName
+**Syntaxe :** obj &lt;&lt; GetSockName
 
 **Description :** Obtenir le nom de l&apos;ordinateur local.
 
@@ -213,7 +213,7 @@ Show( rc, tCall << getSockName );
 
 ### Ioctl
 
-**Syntaxe :** obj << Ioctl
+**Syntaxe :** obj &lt;&lt; Ioctl
 
 **Description :** Basculer un socket en mode Absence de blocage ou déterminer le volume des données en attente de lecture.
 
@@ -231,7 +231,7 @@ len = skt << Ioctl( FIONREAD ); // how much data available
 
 ### Listen
 
-**Syntaxe :** obj << Listen
+**Syntaxe :** obj &lt;&lt; Listen
 
 **Description :** Met le socket en mode Écoute. Utiliser Accepter pour accepter une connexion depuis un ordinateur distant.
 
@@ -338,7 +338,7 @@ conskt << close; // nothing else to send to the browser
 
 ### Recv
 
-**Syntaxe :** obj << Recv
+**Syntaxe :** obj &lt;&lt; Recv
 
 **Description :** Recevez des données en provenance d&apos;un ordinateur distant. Spécifiez le nombre maximum d&apos;octets que vous souhaitez recevoir. Si le socket est en mode Blocage, la réception ne sera pas renvoyée tant qu&apos;il y aura des données ou que la connexion distante ne sera pas fermée. En mode Absence de blocage, il est possible qu&apos;il y ait zéro octet et qu&apos;un code de renvoi Would Block (Bloquerait) soit généré.
 
@@ -360,7 +360,7 @@ rc = skt << recv( 1000 ); // specifie the UPPER limit on the amount of data retu
 
 ### RecvFrom
 
-**Syntaxe :** obj << RecvFrom
+**Syntaxe :** obj &lt;&lt; RecvFrom
 
 **Description :** (Support DGram, évitez ce message si vous ne savez pas pourquoi vous en avez besoin.) Recevoir un DGram en provenance d&apos;un ordinateur distant.
 
@@ -426,7 +426,7 @@ Show( result );
 
 ### Send
 
-**Syntaxe :** obj << Send
+**Syntaxe :** obj &lt;&lt; Send
 
 **Description :** Envoyer des données vers un ordinateur distant.
 
@@ -443,7 +443,7 @@ rc = skt << Send( Char To Blob( "Hello World" ) );
 
 ### SendTo
 
-**Syntaxe :** obj << SendTo
+**Syntaxe :** obj &lt;&lt; SendTo
 
 **Description :** (Support DGram, évitez ce message si vous ne savez pas pourquoi vous en avez besoin.) Envoyer un DGram vers un ordinateur distant.
 

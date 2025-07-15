@@ -6,9 +6,7 @@
 
 ### New Image
 
-**構文:** img = Open( filepath, jpg|png|gif|bmp|tif )
-
-New Image(<width, height>, <existing image> )
+**構文:** img = Open( filepath, jpg|png|gif|bmp|tif )New Image(&lt;width, height&gt;, &lt;existing image&gt; )
 
 **説明:** フレームボックスまたはディスプレイボックスに画像を追加するためのピクチャオブジェクト。
 
@@ -22,7 +20,7 @@ obj = New Window( "tile(40,40)", img );
 
 ### Open
 
-**構文:** Open( filePath, <data table options | Excel import options | text import options | SAS import options | HTML import options | esriShapeFile import options | PDF import options | other file options > )
+**構文:** Open( filePath, &lt;data table options | Excel import options | text import options | SAS import options | HTML import options | esriShapeFile import options | PDF import options | other file options &gt; )
 
 **説明:** ファイルから作成されたデータテーブルやその他のJMPファイル、またはオブジェクトへの参照を戻す。パスが指定されていない場合、「データファイルを開く」ダイアログが表示される。フォルダのパスが指定されている場合、システムのファイルブラウザが開かれ、オブジェクトは戻されない。使用できるオプションについては、構文リファレンスを参照。
 
@@ -52,7 +50,7 @@ dt2 = Open( "$SAMPLE_DATA/Fitness.jmp", Select Columns( "Name", "Sex", "Age", "W
 
 ### Add Frame
 
-**構文:** obj << Add Frame
+**構文:** obj &lt;&lt; Add Frame
 
 **説明:** アニメーション画像に新しいフレームを追加する。[ピクセルの設定](Set Pixels)が使用されている場合を除いて、フレームには中身が含まれない。オプションの引数として、フレームの長さをミリ秒単位で指定できる。この引数を省略すると、追加のフレームの長さは現在のフレームの長さと同じになる。他のフレームがない場合は、デフォルトの長さである100ミリ秒が使用される。
 
@@ -83,7 +81,7 @@ win << Close Window();
 
 ### Crop
 
-**構文:** obj << Crop( Left( number ), Right( number ), Top( number ), Bottom( number ) )
+**構文:** obj &lt;&lt; Crop( Left( number ), Right( number ), Top( number ), Bottom( number ) )
 
 **説明:** Modifies the image to be the sub-image at the specified pixel coordinates within the existing image.
 
@@ -100,7 +98,7 @@ obj2 = New Window( "Cropped", img );
 
 ### Filter
 
-**構文:** obj << Filter( despeckle|edge|enhance|median|negate|normalize|sharpen|contrast|gamma|reduce noise|gaussian blur|canny, <number> )
+**構文:** obj &lt;&lt; Filter( despeckle|edge|enhance|median|negate|normalize|sharpen|contrast|gamma|reduce noise|gaussian blur|canny, &lt;number&gt; )
 
 **説明:** イメージを指定のアルゴリズムに基づいてフィルタリングする。フィルタリングはイメージのノイズを除去するのに効果的。コントラスト、ガンマ、ノイズの低減には、パラメータ(数値)がもう1つ必要。Gaussぼかしには、半径とシグマの2つのパラメータが必要。
 
@@ -225,7 +223,7 @@ refilter();
 
 ### Flip Both
 
-**構文:** obj << Flip Both
+**構文:** obj &lt;&lt; Flip Both
 
 **説明:** イメージの上下左右を逆さにする。
 
@@ -242,7 +240,7 @@ obj2 = New Window( "Diagonal Flip", img );
 
 ### Flip Horizontal
 
-**構文:** obj << Flip Horizontal
+**構文:** obj &lt;&lt; Flip Horizontal
 
 **説明:** イメージの左右を逆さにする。
 
@@ -259,7 +257,7 @@ obj2 = New Window( "Horizontal Flip", img );
 
 ### Flip Vertical
 
-**構文:** obj << Flip Vertical
+**構文:** obj &lt;&lt; Flip Vertical
 
 **説明:** イメージの上下を逆さにする。
 
@@ -276,7 +274,7 @@ obj2 = New Window( "Vertical Flip", img );
 
 ### Get Current Frame
 
-**構文:** obj << Get Current Frame
+**構文:** obj &lt;&lt; Get Current Frame
 
 **説明:** 現在のフレーム番号を戻す。ほとんどの場合、この値は0である。アニメーションのGIFファイルでは、0とフレーム数から1を引いた数の間の値になる。getPixelsやsetPixelsなどのアクションは、現在のフレームに対して行われる。
 
@@ -290,7 +288,7 @@ num = img << Get Current Frame();
 
 ### Get EXIF
 
-**構文:** obj << Get EXIF
+**構文:** obj &lt;&lt; Get EXIF
 
 **説明:** イメージに埋め込まれたEXIFデータを取得し、一連のキー/値のペアを戻す。
 
@@ -312,7 +310,7 @@ While( !Is Empty( key ),
 
 ### Get Frame Durations
 
-**構文:** obj << Get Frame Durations
+**構文:** obj &lt;&lt; Get Frame Durations
 
 **説明:** フレームとフレームとの間の停止時間を行列で戻す。時間の単位はミリ秒。
 
@@ -326,7 +324,7 @@ durs = img << Get Frame Durations();
 
 ### Get N Frames
 
-**構文:** obj << Get N Frames
+**構文:** obj &lt;&lt; Get N Frames
 
 **説明:** 画像のフレーム数を戻す。ほとんどの画像においてフレーム数は1。アニメーションGIFファイルではフレーム数が2枚以上になっている。
 
@@ -340,7 +338,7 @@ num = img << Get N Frames();
 
 ### Get N Loops
 
-**構文:** obj << Get N Loops
+**構文:** obj &lt;&lt; Get N Loops
 
 **説明:** アニメーション画像のループ回数を戻す。0は、無限にループすることを示す。
 
@@ -354,15 +352,11 @@ loops = img << Get N Loops();
 
 ### Get Path
 
-**構文:** obj << Get Path
+**構文:** obj &lt;&lt; Get Path
 
 ### Get Pixels
 
-**構文:** mat = img << Get Pixels();
-
-{r, g, b} = img << Get Pixels("rgb");
-
-{r, g, b, a} = img << Get Pixels("rgba")
+**構文:** mat = img &lt;&lt; Get Pixels();{r, g, b} = img &lt;&lt; Get Pixels("rgb");{r, g, b, a} = img &lt;&lt; Get Pixels("rgba")
 
 **説明:** カラーモデルを表す値が指定されなかった場合、ピクセル値を表すJSL色の行列を戻す。カラーモデルがrgbの場合、赤、緑、青の3つの行列のリストを戻す。rgbaの場合、アルファ(透明度)チャネルと赤、緑、青を戻す。
 
@@ -402,9 +396,7 @@ win = New Window( "tile(40,40)", img );
 
 ### GetSize
 
-**構文:** {w,h} = pic << Get Size 
-
-{w,h} = pic << Size
+**構文:** {w,h} = pic &lt;&lt; Get Size {w,h} = pic &lt;&lt; Size
 
 **説明:** イメージの幅と高さをリストとして戻す。
 
@@ -420,7 +412,7 @@ Show( s );
 
 ### Remove Frame
 
-**構文:** obj << Remove Frame
+**構文:** obj &lt;&lt; Remove Frame
 
 **説明:** アニメーション画像からフレームを削除する。削除されるフレームの番号を指定する。
 
@@ -434,7 +426,7 @@ img << Remove Frame( 0 );
 
 ### Rotate
 
-**構文:** obj << Rotate( angle )
+**構文:** obj &lt;&lt; Rotate( angle )
 
 **説明:** イメージを指定の角度だけ回転させる。
 
@@ -451,7 +443,7 @@ obj2 = New Window( "Rotated", img );
 
 ### Save Image
 
-**構文:** obj << Save Image( filePath, image type )
+**構文:** obj &lt;&lt; Save Image( filePath, image type )
 
 **説明:** イメージを指定の場所およびファイル名で保存する。第2パラメータには、保存するイメージのタイプを指定する。指定できるイメージのタイプには、PNG、JPG、GIS、TIFF、BMP、PDFがある。イメージのタイプを指定しなかった場合、または指定したイメージのタイプが有効なものでなかった場合は、PNGファイルとして保存される。
 
@@ -466,7 +458,7 @@ img << Save Image( "$TEMP/Mediterranean.jpg", "jpg" );
 
 ### Scale
 
-**構文:** obj << Scale( scale | xscale, yscale )
+**構文:** obj &lt;&lt; Scale( scale | xscale, yscale )
 
 **説明:** 画像の幅と高さに同じ倍率を掛けるか、幅(xscale)と高さ(yscale)の倍率を個別に設定する。
 
@@ -496,13 +488,13 @@ obj2 = New Window( "Tile scaled by 2 vertically and by 0.5 horizontally", img );
 
 ### Set Blob
 
-**構文:** obj << Set Blob
+**構文:** obj &lt;&lt; Set Blob
 
 **説明:**  BLOBから、イメージを設定する。
 
 ### Set Current Frame
 
-**構文:** obj << Set Current Frame( frame )
+**構文:** obj &lt;&lt; Set Current Frame( frame )
 
 **説明:** 現在のフレーム番号を設定する。この値はほとんどの画像で0。アニメーションのGIFファイルでは、0とフレーム数から1を引いた数の間の値になる。getPixelsやsetPixelsなどのアクションは、現在のフレームに対して行われる。
 
@@ -523,7 +515,7 @@ win << Close Window();
 
 ### Set Frame Duration
 
-**構文:** obj << Set Frame Duration( duration )
+**構文:** obj &lt;&lt; Set Frame Duration( duration )
 
 **説明:** アニメーション画像の現在のフレームの時間の長さを設定する。単位はミリ秒。
 
@@ -538,7 +530,7 @@ durs = img << Get Frame Durations();
 
 ### Set N Loops
 
-**構文:** obj << Set N Loops( loops )
+**構文:** obj &lt;&lt; Set N Loops( loops )
 
 **説明:** アニメーション画像のループ回数を戻す。0の値は、無限にループすることを示す。
 
@@ -553,9 +545,7 @@ loops = img << Get N Loops();
 
 ### Set Pixels
 
-**構文:** img << Set Pixels(jslmat);
-
-img << Set Pixels ("rgb", {r, g, b})
+**構文:** img &lt;&lt; Set Pixels(jslmat);img &lt;&lt; Set Pixels ("rgb", {r, g, b})
 
 **説明:** イメージのピクセル行列を設定する。1つの行列がカラーモデルなしで指定された場合は、JSLの色の行列として扱う。rgbなどのカラーモデルを指定し、次の引数に赤、緑、青の行列を指定することもできる。その場合、指定する行列のサイズはすべて同じでなければならない。
 
@@ -591,7 +581,7 @@ win2 = New Window( "Gray Scale", img );
 
 ### SetSize
 
-**構文:** obj << SetSize( {width, height} )
+**構文:** obj &lt;&lt; SetSize( {width, height} )
 
 **説明:** イメージサイズの幅と高さを設定する。
 
@@ -607,9 +597,7 @@ obj2 = New Window( "Larger tile(40,40)", img );
 
 ### Size
 
-**構文:** {w,h} = pic << Get Size 
-
-{w,h} = pic << Size
+**構文:** {w,h} = pic &lt;&lt; Get Size {w,h} = pic &lt;&lt; Size
 
 **説明:** イメージの幅と高さをリストとして戻す。
 
@@ -625,7 +613,7 @@ Show( s );
 
 ### Transparency
 
-**構文:** obj << Transparency( fraction )
+**構文:** obj &lt;&lt; Transparency( fraction )
 
 **説明:** イメージの透明度を指定する。有効な値は0.0(透明)から1.0(不透明)まで。
 

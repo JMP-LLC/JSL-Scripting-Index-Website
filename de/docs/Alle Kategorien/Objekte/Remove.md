@@ -6,7 +6,7 @@
 
 ### Remove
 
-**Syntax:** obj << Remove
+**Syntax:** obj &lt;&lt; Remove
 
 **JMP Version hinzugefügt:** 18
 

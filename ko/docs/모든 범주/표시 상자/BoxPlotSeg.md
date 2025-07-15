@@ -6,9 +6,7 @@
 
 ### Enabled
 
-**구문:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**구문:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **설명:** 활성화되지 않은 개체는 키보드 또는 마우스 입력에 응답하지 않습니다. 이 특성은 하위 개체에 상속되므로 컨테이너 개체가 비활성화되면 모든 하위 개체가 비활성화됩니다.
 
@@ -36,9 +34,7 @@ New Window( "enabled",
 
 ### Get Enabled
 
-**구문:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**구문:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **설명:** 활성화되지 않은 개체는 키보드 또는 마우스 입력에 응답하지 않습니다. 이 특성은 하위 개체에 상속되므로 컨테이너 개체가 비활성화되면 모든 하위 개체가 비활성화됩니다.
 
@@ -66,7 +62,7 @@ New Window( "enabled",
 
 ### Get Namespace
 
-**구문:** obj << Get Namespace
+**구문:** obj &lt;&lt; Get Namespace
 
 **설명:** 이 표시 개체와 연결된 네임스페이스를 반환합니다.
 
@@ -84,7 +80,7 @@ Show( ns:x, x );
 
 ### Get Properties
 
-**구문:** obj << Get Properties
+**구문:** obj &lt;&lt; Get Properties
 
 **설명:** 표시 상자의 특성 및 해당 값이 포함된 연관 배열을 반환합니다.
 
@@ -98,7 +94,7 @@ bb << Get Properties;
 
 ### Get Property
 
-**구문:** obj << Get Property( "property" )
+**구문:** obj &lt;&lt; Get Property( "property" )
 
 **설명:** property의 현재 설정을 반환합니다.
 
@@ -112,7 +108,7 @@ bb << Get Property( "Enabled" );
 
 ### Get Property List
 
-**구문:** obj << Get Property List
+**구문:** obj &lt;&lt; Get Property List
 
 **설명:** 표시 상자의 특성 목록을 반환합니다.
 
@@ -126,7 +122,7 @@ bb << Get Property List;
 
 ### Set Property
 
-**구문:** obj << Set Property( "property", value )
+**구문:** obj &lt;&lt; Set Property( "property", value )
 
 **설명:** 표시 상자에 대한 property의 값을 설정합니다.
 
@@ -142,7 +138,7 @@ bb << Set Property( "Enabled", 0 );
 
 ### Box Plot Seg
 
-**구문:** Box Plot Seg( <data>, <frequency>, <weight>, <vertical=0|1> )
+**구문:** Box Plot Seg( &lt;data&gt;, &lt;frequency&gt;, &lt;weight&gt;, &lt;vertical=0|1&gt; )
 
 **설명:** 전달된 x 및 y 값을 기반으로 한 상자 그림을 나타내는 표시 세그먼트를 반환합니다.
 
@@ -161,7 +157,7 @@ seg = (g[FrameBox( 1 )] << Find Seg( "Box Plot Seg" ));
 
 ### Box Style
 
-**구문:** obj << Box Style( "보통"|"채움"|"줄임" )
+**구문:** obj &lt;&lt; Box Style( "보통"|"채움"|"줄임" )
 
 ```jsl
 
@@ -177,7 +173,7 @@ seg << Set Box Style( "Solid" );
 
 ### Box Type
 
-**구문:** obj << Box Type( "분위수"|"이상치" )
+**구문:** obj &lt;&lt; Box Type( "분위수"|"이상치" )
 
 ```jsl
 
@@ -193,7 +189,7 @@ seg << Set Box Type( "Outlier" );
 
 ### Child
 
-**구문:** seg2 = obj << Child
+**구문:** seg2 = obj &lt;&lt; Child
 
 **설명:** 표시 세그먼트의 첫 번째 하위를 반환합니다.
 
@@ -211,7 +207,7 @@ seg << Child; // not many segs support children
 
 ### Class Name
 
-**구문:** classname = obj << Class Name
+**구문:** classname = obj &lt;&lt; Class Name
 
 **설명:** 표시 세그먼트에 대한 표시 클래스의 이름을 반환합니다.
 
@@ -229,7 +225,7 @@ seg << Class Name;
 
 ### Clip Shape
 
-**구문:** seg << Clip Shape(Boundaries(Shape File, [ID(string)]) | Path([string] | [matrix]) | Empty())
+**구문:** seg &lt;&lt; Clip Shape(Boundaries(Shape File, [ID(string)]) | Path([string] | [matrix]) | Empty())
 
 **설명:** 지정한 셰이프로 형상을 자릅니다. 셰이프 파일 또는 경로를 사용하여 셰이프를 지정할 수 있습니다. 셰이프 파일과 함께 선택적 ID를 지정하여 파일에서 단일 셰이프를 선택할 수 있습니다. 그렇지 않은 경우 모든 셰이프를 합친 부분이 자르기 영역으로 사용됩니다. 경로 행렬에는 경로의 각 점에 대한 x, y 및 플래그에 해당하는 세 개의 열이 있습니다. 플래그 값은 제어의 경우 0, 이동의 경우 1, 선분의 경우 2, 3차 Bézier 세그먼트의 경우 3이며 점이 경로를 닫는 경우에는 음수입니다. 경로 텍스트는 SVG 구문을 지원합니다.
 
@@ -258,11 +254,11 @@ cs << Clip Shape( Boundaries( "US States" ) );
 
 ### Color Theme
 
-**구문:** obj << Color Theme
+**구문:** obj &lt;&lt; Color Theme
 
 ### Confidence Diamond
 
-**구문:** obj << Confidence Diamond( state=0|1 )
+**구문:** obj &lt;&lt; Confidence Diamond( state=0|1 )
 
 ```jsl
 
@@ -278,7 +274,7 @@ seg << Set Confidence Diamond( 0 );
 
 ### Delete
 
-**구문:** obj << Delete
+**구문:** obj &lt;&lt; Delete
 
 **설명:** 표시 세그먼트를 삭제합니다.
 
@@ -296,7 +292,7 @@ seg << Delete;
 
 ### Density Gradient
 
-**구문:** obj << Density Gradient( "흰색까지 점점 흐리게"|"회색까지 점점 흐리게"|"전체 색상"="흰색까지 점점 흐리게" )
+**구문:** obj &lt;&lt; Density Gradient( "흰색까지 점점 흐리게"|"회색까지 점점 흐리게"|"전체 색상"="흰색까지 점점 흐리게" )
 
 **설명:** 밀도 그래디언트의 색상 지정 동작을 설정합니다. 기본값은 "흰색까지 점점 흐리게"입니다.
 
@@ -316,7 +312,7 @@ seg << Density Gradient( "Fade to Gray" );
 
 ### Error Bar Cap
 
-**구문:** obj << Error Bar Cap( "없음"|"작음"|"작게"|"중간"|"크게" )
+**구문:** obj &lt;&lt; Error Bar Cap( "없음"|"작음"|"작게"|"중간"|"크게" )
 
 **설명:** 오차 막대에 사용할 끝 단면의 유형을 지정합니다.
 
@@ -339,7 +335,7 @@ seg << Set Error Bar Cap( "Large" );
 
 ### Error Bar Cap Shape
 
-**구문:** obj << Error Bar Cap Shape( begin, end )
+**구문:** obj &lt;&lt; Error Bar Cap Shape( begin, end )
 
 **설명:** 오차 막대에 표시할 끝 단면의 셰이프를 지정합니다. 단일 인수로 막대 양쪽 끝의 셰이프를 설정하거나, 시작과 끝에 개별 인수를 제공할 수 있습니다. 기본 셰이프는 "Line"입니다. "Arrow" 셰이프는 바깥쪽을 가리키는 화살표를 그리고 "None"은 끝 단면을 생략합니다.
 
@@ -362,7 +358,7 @@ seg << Set Error Bar Cap Shape( "Line", "Arrow" );
 
 ### Fences
 
-**구문:** obj << Fences( state=0|1 )
+**구문:** obj &lt;&lt; Fences( state=0|1 )
 
 ```jsl
 
@@ -378,7 +374,7 @@ seg << Set Fences( 0 );
 
 ### Fill
 
-**구문:** obj << Fill( state = 0|1 )
+**구문:** obj &lt;&lt; Fill( state = 0|1 )
 
 **JMP추가된 버전:** 15
 
@@ -396,7 +392,7 @@ seg << Set Fill( 0 );
 
 ### Fill Color
 
-**구문:** obj << Fill Color( color )
+**구문:** obj &lt;&lt; Fill Color( color )
 
 ```jsl
 
@@ -412,13 +408,13 @@ seg << Set Fill Color( "Green" );
 
 ### First Value
 
-**구문:** obj << First Value( state=0|1 )
+**구문:** obj &lt;&lt; First Value( state=0|1 )
 
 **JMP추가된 버전:** 16
 
 ### Frame
 
-**구문:** FrameBox = obj << Frame
+**구문:** FrameBox = obj &lt;&lt; Frame
 
 **설명:** 표시 세그먼트가 있는 프레임 상자를 반환합니다.
 
@@ -436,7 +432,7 @@ seg << Frame;
 
 ### Get Box Style
 
-**구문:** obj << Get Box Style
+**구문:** obj &lt;&lt; Get Box Style
 
 ```jsl
 
@@ -452,7 +448,7 @@ seg << Get Box Style();
 
 ### Get Box Type
 
-**구문:** obj << Get Box Type
+**구문:** obj &lt;&lt; Get Box Type
 
 ```jsl
 
@@ -468,7 +464,7 @@ seg << Get Box Type();
 
 ### Get Clip Shape
 
-**구문:** obj << Get Clip Shape
+**구문:** obj &lt;&lt; Get Clip Shape
 
 **설명:** 현재 자르기 셰이프를 반환합니다.
 
@@ -498,7 +494,7 @@ cs << Get Clip Shape();
 
 ### Get Confidence Diamond
 
-**구문:** obj << Get Confidence Diamond
+**구문:** obj &lt;&lt; Get Confidence Diamond
 
 ```jsl
 
@@ -514,7 +510,7 @@ seg << Get Confidence Diamond();
 
 ### Get Density Gradient
 
-**구문:** obj << Get Density Gradient
+**구문:** obj &lt;&lt; Get Density Gradient
 
 **설명:** 밀도 그래디언트의 색상 지정 동작을 가져옵니다.
 
@@ -534,7 +530,7 @@ seg << Get Density Gradient;
 
 ### Get Description
 
-**구문:** description = obj << Get Description
+**구문:** description = obj &lt;&lt; Get Description
 
 **설명:** 표시 세그먼트에 대한 설명을 가져옵니다.
 
@@ -552,7 +548,7 @@ seg << get description();
 
 ### Get Error Bar Cap
 
-**구문:** obj << Get Error Bar Cap
+**구문:** obj &lt;&lt; Get Error Bar Cap
 
 **설명:** 오차 막대의 현재 끝 단면 종류를 반환합니다.
 
@@ -575,7 +571,7 @@ seg << Get Error Bar Cap();
 
 ### Get Error Bar Cap Shape
 
-**구문:** { begin, end } = obj << Get Error Bar Cap Shape
+**구문:** { begin, end } = obj &lt;&lt; Get Error Bar Cap Shape
 
 **설명:** 오차 막대의 끝 단면 셰이프를 반환합니다.
 
@@ -598,7 +594,7 @@ seg << Get Error Bar Cap Shape();
 
 ### Get Fences
 
-**구문:** obj << Get Fences
+**구문:** obj &lt;&lt; Get Fences
 
 ```jsl
 
@@ -614,7 +610,7 @@ seg << Get Fences();
 
 ### Get Fill
 
-**구문:** obj << Get Fill
+**구문:** obj &lt;&lt; Get Fill
 
 **JMP추가된 버전:** 15
 
@@ -632,7 +628,7 @@ seg << Get Fill;
 
 ### Get Fill Color
 
-**구문:** obj << Get Fill Color
+**구문:** obj &lt;&lt; Get Fill Color
 
 ```jsl
 
@@ -648,7 +644,7 @@ seg << Get Fill Color();
 
 ### Get Fill Pattern
 
-**구문:** obj << Get Fill Pattern
+**구문:** obj &lt;&lt; Get Fill Pattern
 
 ```jsl
 
@@ -664,7 +660,7 @@ seg << Get Fill Pattern;
 
 ### Get Gradient
 
-**구문:** obj << Get Gradient
+**구문:** obj &lt;&lt; Get Gradient
 
 **설명:** 색상 그래디언트를 가져옵니다.
 
@@ -682,7 +678,7 @@ seg << Get Gradient;
 
 ### Get Gradient Color Theme
 
-**구문:** obj << Get Gradient Color Theme
+**구문:** obj &lt;&lt; Get Gradient Color Theme
 
 **설명:** 그래디언트 색상 테마를 가져옵니다.
 
@@ -702,7 +698,7 @@ seg << Get Gradient Color Theme;
 
 ### Get Gradient Discrete Colors
 
-**구문:** obj << Get Gradient Discrete Colors
+**구문:** obj &lt;&lt; Get Gradient Discrete Colors
 
 **설명:** 그래디언트의 각 수준을 단일 색상으로 표시할지 아니면 색상을 부드럽게 전환할지를 가져옵니다.
 
@@ -722,7 +718,7 @@ seg << Get Gradient Discrete Colors;
 
 ### Get Gradient Fill
 
-**구문:** obj << Get Gradient Fill
+**구문:** obj &lt;&lt; Get Gradient Fill
 
 **설명:** 그래디언트 척도 범위를 벗어나는 값에 대한 색상 지정 동작을 가져옵니다.
 
@@ -741,7 +737,7 @@ seg << Get Gradient Fill;
 
 ### Get Gradient Label Count
 
-**구문:** obj << Get Gradient Label Count
+**구문:** obj &lt;&lt; Get Gradient Label Count
 
 **설명:** 그래디언트 범례의 라벨 수를 가져옵니다.
 
@@ -761,7 +757,7 @@ seg << Get Gradient Label Count;
 
 ### Get Gradient Label Levels
 
-**구문:** [value1,value1, ... value N] = obj << Get Gradient Label Levels
+**구문:** [value1,value1, ... value N] = obj &lt;&lt; Get Gradient Label Levels
 
 **설명:** 그래디언트 척도의 라벨에 사용되는 값 집합을 가져옵니다.
 
@@ -796,7 +792,7 @@ seg << Get Gradient Scale Values;
 
 ### Get Gradient Legend Horizontal
 
-**구문:** obj << Get Gradient Legend Horizontal
+**구문:** obj &lt;&lt; Get Gradient Legend Horizontal
 
 **설명:** 그래디언트 범례를 가로로 표시할지 여부를 가져옵니다.
 
@@ -816,7 +812,7 @@ seg << Get Gradient Legend Horizontal;
 
 ### Get Gradient Legend Label Format
 
-**구문:** obj << Get Gradient Legend Label Format
+**구문:** obj &lt;&lt; Get Gradient Legend Label Format
 
 **설명:** 그래디언트 범례 라벨의 형식을 가져옵니다.
 
@@ -836,7 +832,7 @@ seg << Get Gradient Legend Label Format;
 
 ### Get Gradient Legend Label Width
 
-**구문:** obj << Get Gradient Legend Label Width
+**구문:** obj &lt;&lt; Get Gradient Legend Label Width
 
 **설명:** 그래디언트 범례 라벨의 최대 문자 길이를 가져옵니다.
 
@@ -856,7 +852,7 @@ seg << Get Gradient Legend Label Width;
 
 ### Get Gradient Legend Show Labels
 
-**구문:** obj << Get Gradient Legend Show Labels
+**구문:** obj &lt;&lt; Get Gradient Legend Show Labels
 
 **설명:** 그래디언트 범례에 수준 라벨을 표시할지 여부를 가져옵니다.
 
@@ -876,7 +872,7 @@ seg << Get Gradient Legend Show Labels;
 
 ### Get Gradient Level Count
 
-**구문:** obj << Get Gradient Level Count
+**구문:** obj &lt;&lt; Get Gradient Level Count
 
 **설명:** 그래디언트의 수준 수를 가져옵니다.
 
@@ -896,7 +892,7 @@ seg << Get Gradient Levels;
 
 ### Get Gradient Lightness Range
 
-**구문:** obj << Get Gradient Lightness Range
+**구문:** obj &lt;&lt; Get Gradient Lightness Range
 
 **설명:** 그래디언트의 수준 색상에 대한 최소 및 최대 밝기를 가져옵니다. 결측값은 색상 테마의 원래 값이 사용되었음을 나타냅니다.
 
@@ -916,7 +912,7 @@ seg << Get Gradient Lightness Range;
 
 ### Get Gradient Range
 
-**구문:** obj << Get Gradient Range
+**구문:** obj &lt;&lt; Get Gradient Range
 
 **설명:** 비사용자 그래디언트 척도가 생성되는 범위를 가져옵니다.
 
@@ -935,7 +931,7 @@ seg << Get Gradient Range;
 
 ### Get Gradient Reverse Color Order
 
-**구문:** obj << Get Gradient Reverse Color Order
+**구문:** obj &lt;&lt; Get Gradient Reverse Color Order
 
 **설명:** 그래디언트의 색상 순서가 반전되었는지 여부를 가져옵니다.
 
@@ -955,7 +951,7 @@ seg << Get Gradient Reverse Color Order;
 
 ### Get Gradient Reverse Label Order
 
-**구문:** obj << Get Gradient Reverse Label Order
+**구문:** obj &lt;&lt; Get Gradient Reverse Label Order
 
 **설명:** 그래디언트의 라벨 순서가 반전되었는지 여부를 가져옵니다.
 
@@ -975,7 +971,7 @@ seg << Get Gradient Reverse Label Order;
 
 ### Get Gradient Scale
 
-**구문:** obj << Get Gradient Scale
+**구문:** obj &lt;&lt; Get Gradient Scale
 
 **설명:** 그래디언트 척도 유형을 가져옵니다.
 
@@ -994,7 +990,7 @@ seg << Get Gradient Scale;
 
 ### Get Gradient Scale Values
 
-**구문:** [value1,value1, ... value N] = obj << Get Gradient Scale Values
+**구문:** [value1,value1, ... value N] = obj &lt;&lt; Get Gradient Scale Values
 
 **설명:** 그래디언트 척도의 라벨에 사용되는 값 집합을 가져옵니다.
 
@@ -1029,7 +1025,7 @@ seg << Get Gradient Scale Values;
 
 ### Get Gradient Show Missing
 
-**구문:** obj << Get Gradient Show Missing
+**구문:** obj &lt;&lt; Get Gradient Show Missing
 
 **설명:** 결측값에 대한 범례 항목을 표시할 시기를 가져옵니다.
 
@@ -1049,7 +1045,7 @@ seg << Get Gradient Show Missing;
 
 ### Get Gradient Transparency
 
-**구문:** obj << Get Gradient Transparency
+**구문:** obj &lt;&lt; Get Gradient Transparency
 
 **설명:** 그래디언트의 투명도 동작을 가져옵니다.
 
@@ -1069,7 +1065,7 @@ seg << Get Gradient Transparency;
 
 ### Get Interval Draw Directions
 
-**구문:** obj << Get Interval Draw Directions
+**구문:** obj &lt;&lt; Get Interval Draw Directions
 
 **설명:** 구간을 그릴 방향을 가져옵니다.
 
@@ -1100,7 +1096,7 @@ seg << Get Interval Draw Directions;
 
 ### Get Line Color
 
-**구문:** color = obj << Get Line Color
+**구문:** color = obj &lt;&lt; Get Line Color
 
 **설명:** 선 색상을 반환합니다.
 
@@ -1118,7 +1114,7 @@ seg << Get Line Color;
 
 ### Get Line Style
 
-**구문:** pen style = obj << Get Line Style
+**구문:** pen style = obj &lt;&lt; Get Line Style
 
 **설명:** 선 스타일을 반환합니다.
 
@@ -1138,7 +1134,7 @@ seg << Get Line Style;
 
 ### Get Line Width
 
-**구문:** number = obj << Get Line Width
+**구문:** number = obj &lt;&lt; Get Line Width
 
 **설명:** 선 너비를 반환합니다.
 
@@ -1158,7 +1154,7 @@ seg << Get Line Width;
 
 ### Get Marker
 
-**구문:** marker = obj << Get Marker
+**구문:** marker = obj &lt;&lt; Get Marker
 
 **설명:** 표식 스타일을 반환합니다.
 
@@ -1178,7 +1174,7 @@ seg << Get Marker;
 
 ### Get Marker Size
 
-**구문:** size = obj << Get Marker Size
+**구문:** size = obj &lt;&lt; Get Marker Size
 
 **설명:** 표식 크기를 반환합니다.
 
@@ -1198,7 +1194,7 @@ seg << Get Marker Size;
 
 ### Get Median Line Style
 
-**구문:** obj << Get Median Line Style
+**구문:** obj &lt;&lt; Get Median Line Style
 
 ```jsl
 
@@ -1214,7 +1210,7 @@ seg << Get Median Line Style();
 
 ### Get Moment
 
-**구문:** obj << Get Moment( "Mean"|"Std Dev"|"Std Err Mean"|"Upper Mean"|"Lower Mean"|"N"|"Sum Wgt"|"Sum"|"Variance"|"Skewness"|"Kurtosis"|"CV"|"N Missing"|"N Zero"|"N Unique"|"Uncorrected SS"|"Corrected SS"|"Autocorrelation"|"Minimum"|"Maximum"|"Median"|"Mode"|"Trimmed Mean"|"Geometric Mean"|"Range"|"Interquartile Range"|"Median Absolute Deviation"|"Proportion Zero"|"Proportion Nonzero"|"K*Std Dev"|"K*Std Dev Above Mean"|"K*Std Dev Below Mean"|"Robust Mean"|"Robust Standard Deviation"|"N Modes"|"Mode Count" )
+**구문:** obj &lt;&lt; Get Moment( "Mean"|"Std Dev"|"Std Err Mean"|"Upper Mean"|"Lower Mean"|"N"|"Sum Wgt"|"Sum"|"Variance"|"Skewness"|"Kurtosis"|"CV"|"N Missing"|"N Zero"|"N Unique"|"Uncorrected SS"|"Corrected SS"|"Autocorrelation"|"Minimum"|"Maximum"|"Median"|"Mode"|"Trimmed Mean"|"Geometric Mean"|"Range"|"Interquartile Range"|"Median Absolute Deviation"|"Proportion Zero"|"Proportion Nonzero"|"K*Std Dev"|"K*Std Dev Above Mean"|"K*Std Dev Below Mean"|"Robust Mean"|"Robust Standard Deviation"|"N Modes"|"Mode Count" )
 
 ```jsl
 
@@ -1230,7 +1226,7 @@ seg << Get Moment( "Std Dev" );
 
 ### Get Notched
 
-**구문:** obj << Get Notched
+**구문:** obj &lt;&lt; Get Notched
 
 **JMP추가된 버전:** 16
 
@@ -1248,7 +1244,7 @@ seg << Get Notched();
 
 ### Get Quantiles
 
-**구문:** Matrix = obj << Get Quantiles( number )
+**구문:** Matrix = obj &lt;&lt; Get Quantiles( number )
 
 **설명:** 계산된 분위수를 나타내는 행렬을 반환합니다. 첫 번째 열에는 계산된 분위수가 나열되고 두 번째 열에는 해당 분위수에 대한 값이 포함됩니다.
 
@@ -1266,7 +1262,7 @@ seg << Get Quantiles;
 
 ### Get Shortest Half Bracket
 
-**구문:** obj << Get Shortest Half Bracket
+**구문:** obj &lt;&lt; Get Shortest Half Bracket
 
 ```jsl
 
@@ -1282,7 +1278,7 @@ seg << Get Shortest Half Bracket();
 
 ### Get Shortest Half Color
 
-**구문:** obj << Get Shortest Half Color
+**구문:** obj &lt;&lt; Get Shortest Half Color
 
 ```jsl
 
@@ -1298,7 +1294,7 @@ seg << Get Shortest Half Color();
 
 ### Get Transparency
 
-**구문:** obj << Get Transparency
+**구문:** obj &lt;&lt; Get Transparency
 
 **설명:** 투명도를 나타내는 0(투명) ~ 1(불투명) 범위의 숫자 값을 반환합니다.
 
@@ -1316,9 +1312,7 @@ seg << Get Transparency;
 
 ### Gradient
 
-**구문:** obj << { <Color Theme(theme)>, <Min Lightness(0-1)>, <Max Lightness(0-1)>, <Contour Levels(num)>, <Reverse Gradient(0|1)>, <Density Gradient("Fade To White"|"Fade To Gray"|"Full Color")>, <Gradient Transparency("None"|"Linear")> }
-
-obj << { <Color Theme(theme)>, <Min Lightness(0-1)>, <Max Lightness(0-1)>, <N Labels(num)>, <Show Missing Color("On"|"Off"|"Auto")>, <Scale Type("Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom")>, <Scale Values([v1, v2, …])>, <Range Type("Default"|"Exact Data Range"|"Middle 90%")>, <Fill("Between"|"Above"|"Below"|"Above Below")>, <Reverse Gradient(0|1)>, <Reverse Labels(0|1)>, <Discrete Color(0|1)> }, <Label Format(labelFormat)>, <Width(num)>, <Horizontal(0|1)>, <Show Labels(0|1)>
+**구문:** obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;Contour Levels(num)&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Density Gradient("Fade To White"|"Fade To Gray"|"Full Color")&gt;, &lt;Gradient Transparency("None"|"Linear")&gt; }obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;N Labels(num)&gt;, &lt;Show Missing Color("On"|"Off"|"Auto")&gt;, &lt;Scale Type("Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom")&gt;, &lt;Scale Values([v1, v2, …])&gt;, &lt;Range Type("Default"|"Exact Data Range"|"Middle 90%")&gt;, &lt;Fill("Between"|"Above"|"Below"|"Above Below")&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Reverse Labels(0|1)&gt;, &lt;Discrete Color(0|1)&gt; }, &lt;Label Format(labelFormat)&gt;, &lt;Width(num)&gt;, &lt;Horizontal(0|1)&gt;, &lt;Show Labels(0|1)&gt;
 
 **설명:** 색상 그래디언트를 설정합니다.
 
@@ -1336,7 +1330,7 @@ seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
 
 ### Gradient Color Theme
 
-**구문:** obj << Gradient Color Theme
+**구문:** obj &lt;&lt; Gradient Color Theme
 
 **설명:** 그래디언트 색상 테마를 설정합니다.
 
@@ -1356,7 +1350,7 @@ seg << Set Gradient Color Theme( "Viridis" );
 
 ### Gradient Discrete Colors
 
-**구문:** obj << Gradient Discrete Colors
+**구문:** obj &lt;&lt; Gradient Discrete Colors
 
 **설명:** 그래디언트의 각 수준을 단일 색상으로 표시할지 아니면 색상을 부드럽게 전환할지를 설정합니다.
 
@@ -1375,7 +1369,7 @@ seg << Set Gradient Discrete Colors( 1 );
 
 ### Gradient Fill
 
-**구문:** obj << Gradient Fill( "사이"|"위"|"아래"|"위/아래"="위/아래" )
+**구문:** obj &lt;&lt; Gradient Fill( "사이"|"위"|"아래"|"위/아래"="위/아래" )
 
 **설명:** 그래디언트 척도 범위를 벗어나는 값에 대한 색상 지정 동작을 설정합니다. 기본값은 "위/아래"입니다.
 
@@ -1395,7 +1389,7 @@ seg << Set Gradient Fill( "Between" );
 
 ### Gradient Label Count
 
-**구문:** obj << Gradient Label Count
+**구문:** obj &lt;&lt; Gradient Label Count
 
 **설명:** 그래디언트 범례의 라벨 수를 설정합니다. 이 값은 등고선 수준 수에 1을 더한 값입니다.
 
@@ -1415,7 +1409,7 @@ seg << Set Gradient Label Count( 8 );
 
 ### Gradient Label Levels
 
-**구문:** obj << Gradient Label Levels( [value1,value1, ... value N] )
+**구문:** obj &lt;&lt; Gradient Label Levels( [value1,value1, ... value N] )
 
 **설명:** 그래디언트 척도에 사용할 사용자 값 집합을 설정합니다.
 
@@ -1434,7 +1428,7 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ### Gradient Legend Horizontal
 
-**구문:** obj << Gradient Legend Horizontal
+**구문:** obj &lt;&lt; Gradient Legend Horizontal
 
 **설명:** 그래디언트 범례를 가로로 표시할지 여부를 설정합니다.
 
@@ -1454,7 +1448,7 @@ seg << Set Gradient Legend Horizontal( 1 );
 
 ### Gradient Legend Label Format
 
-**구문:** obj << Gradient Legend Label Format
+**구문:** obj &lt;&lt; Gradient Legend Label Format
 
 **설명:** 그래디언트 범례 라벨의 형식을 설정합니다.
 
@@ -1474,7 +1468,7 @@ seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
 
 ### Gradient Legend Label Width
 
-**구문:** obj << Gradient Legend Label Width
+**구문:** obj &lt;&lt; Gradient Legend Label Width
 
 **설명:** 그래디언트 범례 라벨의 최대 문자 길이를 설정합니다.
 
@@ -1494,7 +1488,7 @@ seg << Set Gradient Legend Label Width( 4 );
 
 ### Gradient Legend Show Labels
 
-**구문:** obj << Gradient Legend Show Labels
+**구문:** obj &lt;&lt; Gradient Legend Show Labels
 
 **설명:** 그래디언트 범례에 수준 라벨을 표시할지 여부를 설정합니다.
 
@@ -1514,7 +1508,7 @@ seg << Set Gradient Legend Show Labels( 0 );
 
 ### Gradient Level Count
 
-**구문:** obj << Gradient Level Count
+**구문:** obj &lt;&lt; Gradient Level Count
 
 **설명:** 그래디언트의 수준 수를 설정합니다. 이 값은 라벨 수에서 1을 뺀 값입니다.
 
@@ -1534,7 +1528,7 @@ seg << Set Gradient Levels( 7 );
 
 ### Gradient Lightness Range
 
-**구문:** obj << Gradient Lightness Range
+**구문:** obj &lt;&lt; Gradient Lightness Range
 
 **설명:** 그래디언트의 수준 색상에 대한 최소 및 최대 밝기를 설정합니다. 색상은 이 범위를 포함하도록 척도가 조정됩니다. 결측값은 변경 사항이 없는 것으로 처리됩니다.
 
@@ -1584,7 +1578,7 @@ seg << Set Gradient Lightness Range( ., 0.75 );
 
 ### Gradient Range
 
-**구문:** obj << Gradient Range( "기본값"|"정확 데이터 범위"|"가운데 90%"="기본값" )
+**구문:** obj &lt;&lt; Gradient Range( "기본값"|"정확 데이터 범위"|"가운데 90%"="기본값" )
 
 **설명:** 비사용자 그래디언트 척도가 생성되는 범위를 설정합니다. 기본값은 "기본값"입니다.
 
@@ -1603,7 +1597,7 @@ seg << Set Gradient Range( "Exact Data Range" );
 
 ### Gradient Reverse Color Order
 
-**구문:** obj << Gradient Reverse Color Order
+**구문:** obj &lt;&lt; Gradient Reverse Color Order
 
 **설명:** 그래디언트의 색상 순서를 역순으로 바꿉니다.
 
@@ -1623,7 +1617,7 @@ seg << Set Gradient Reverse Color Order( 1 );
 
 ### Gradient Reverse Label Order
 
-**구문:** obj << Gradient Reverse Label Order
+**구문:** obj &lt;&lt; Gradient Reverse Label Order
 
 **설명:** 그래디언트의 라벨 순서를 역순으로 바꿉니다.
 
@@ -1643,7 +1637,7 @@ seg << Set Gradient Reverse Label Order( 1 );
 
 ### Gradient Scale
 
-**구문:** obj << Gradient Scale( "선형"|"분위수"|"표준편차"|"로그"|"로그 오프셋"|"사용자 정의"="선형" )
+**구문:** obj &lt;&lt; Gradient Scale( "선형"|"분위수"|"표준편차"|"로그"|"로그 오프셋"|"사용자 정의"="선형" )
 
 **설명:** 그래디언트 척도 유형을 설정합니다. 기본값은 "선형"입니다.
 
@@ -1662,7 +1656,7 @@ seg << Set Gradient Scale( "Quantile" );
 
 ### Gradient Scale Values
 
-**구문:** obj << Gradient Scale Values( [value1,value1, ... value N] )
+**구문:** obj &lt;&lt; Gradient Scale Values( [value1,value1, ... value N] )
 
 **설명:** 그래디언트 척도에 사용할 사용자 값 집합을 설정합니다.
 
@@ -1681,7 +1675,7 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ### Gradient Show Missing
 
-**구문:** obj << Gradient Show Missing( "자동"|"켜기"|"끄기"="자동" )
+**구문:** obj &lt;&lt; Gradient Show Missing( "자동"|"켜기"|"끄기"="자동" )
 
 **설명:** 결측값에 대한 범례 항목을 표시할 시기를 설정합니다. 기본값은 "자동"입니다.
 
@@ -1700,7 +1694,7 @@ seg << Set Gradient Show Missing( "Off" );
 
 ### Gradient Transparency
 
-**구문:** obj << Gradient Transparency( "없음"|"선형"="선형" )
+**구문:** obj &lt;&lt; Gradient Transparency( "없음"|"선형"="선형" )
 
 **설명:** 그래디언트의 투명도 동작을 설정합니다. 기본값은 "선형"입니다.
 
@@ -1720,13 +1714,13 @@ seg << Gradient Transparency( "None" );
 
 ### Last Value
 
-**구문:** obj << Last Value( state=0|1 )
+**구문:** obj &lt;&lt; Last Value( state=0|1 )
 
 **JMP추가된 버전:** 16
 
 ### Line Color
 
-**구문:** obj << Line Color( color )
+**구문:** obj &lt;&lt; Line Color( color )
 
 **설명:** 표시 세그먼트에 있는 모든 선의 색상을 설정합니다.
 
@@ -1744,7 +1738,7 @@ seg << Set Line Color( "Green" );
 
 ### Line Style
 
-**구문:** obj << Line Style( pen style )
+**구문:** obj &lt;&lt; Line Style( pen style )
 
 **설명:** 선 스타일을 설정합니다. 옵션은 실선, 점선, 파선, 일점 쇄선 및 이점 쇄선입니다.
 
@@ -1764,7 +1758,7 @@ seg << Set Line Style( "Dotted" );
 
 ### Line Width
 
-**구문:** obj << Line Width( "1"|"2"|"3"|"4"|"5"|"6"|"기타..." )
+**구문:** obj &lt;&lt; Line Width( "1"|"2"|"3"|"4"|"5"|"6"|"기타..." )
 
 **설명:** 선 너비를 설정합니다.
 
@@ -1784,7 +1778,7 @@ seg << Set Line Width( 3 );
 
 ### Marker
 
-**구문:** obj << Marker( marker )
+**구문:** obj &lt;&lt; Marker( marker )
 
 **설명:** 모든 표식의 표식 스타일을 설정합니다.
 
@@ -1804,7 +1798,7 @@ seg << Set Marker( "Square" );
 
 ### Marker Size
 
-**구문:** obj << Marker Size( size )
+**구문:** obj &lt;&lt; Marker Size( size )
 
 **설명:** 표식 크기를 설정합니다. 크기 옵션은 점, 작음, 중간, 큼, XL, XXL 및 XXXL입니다.
 
@@ -1825,13 +1819,13 @@ seg << Set Marker Size( "XL" );
 
 ### Max Value
 
-**구문:** obj << Max Value( state=0|1 )
+**구문:** obj &lt;&lt; Max Value( state=0|1 )
 
 **JMP추가된 버전:** 16
 
 ### Median Line Style
 
-**구문:** obj << Median Line Style( pen style )
+**구문:** obj &lt;&lt; Median Line Style( pen style )
 
 ```jsl
 
@@ -1847,19 +1841,19 @@ seg << Set Median Line Style( "Dotted" );
 
 ### Min Value
 
-**구문:** obj << Min Value( state=0|1 )
+**구문:** obj &lt;&lt; Min Value( state=0|1 )
 
 **JMP추가된 버전:** 16
 
 ### Name
 
-**구문:** obj << Name( state=0|1 )
+**구문:** obj &lt;&lt; Name( state=0|1 )
 
 **JMP추가된 버전:** 16
 
 ### Notched
 
-**구문:** obj << Notched( state=0|1 )
+**구문:** obj &lt;&lt; Notched( state=0|1 )
 
 **JMP추가된 버전:** 16
 
@@ -1877,7 +1871,7 @@ seg << Set Notched( 1 );
 
 ### Parent
 
-**구문:** seg2 = obj << Parent
+**구문:** seg2 = obj &lt;&lt; Parent
 
 **설명:** 표시 세그먼트의 상위를 반환합니다.
 
@@ -1895,7 +1889,7 @@ seg << Parent;
 
 ### Set Box Style
 
-**구문:** obj << Set Box Style( "보통"|"채움"|"줄임" )
+**구문:** obj &lt;&lt; Set Box Style( "보통"|"채움"|"줄임" )
 
 ```jsl
 
@@ -1911,7 +1905,7 @@ seg << Set Box Style( "Solid" );
 
 ### Set Box Type
 
-**구문:** obj << Set Box Type( "분위수"|"이상치" )
+**구문:** obj &lt;&lt; Set Box Type( "분위수"|"이상치" )
 
 ```jsl
 
@@ -1927,7 +1921,7 @@ seg << Set Box Type( "Outlier" );
 
 ### Set Confidence Diamond
 
-**구문:** obj << Set Confidence Diamond( state=0|1 )
+**구문:** obj &lt;&lt; Set Confidence Diamond( state=0|1 )
 
 ```jsl
 
@@ -1943,7 +1937,7 @@ seg << Set Confidence Diamond( 0 );
 
 ### Set Description
 
-**구문:** obj << Set Description( description )
+**구문:** obj &lt;&lt; Set Description( description )
 
 **설명:** 표시 세그먼트에 대한 설명을 설정합니다.
 
@@ -1961,7 +1955,7 @@ seg << set description( "my seg" );
 
 ### Set Error Bar Cap
 
-**구문:** obj << Set Error Bar Cap( "없음"|"작음"|"작게"|"중간"|"크게" )
+**구문:** obj &lt;&lt; Set Error Bar Cap( "없음"|"작음"|"작게"|"중간"|"크게" )
 
 **설명:** 오차 막대에 사용할 끝 단면의 유형을 지정합니다.
 
@@ -1984,7 +1978,7 @@ seg << Set Error Bar Cap( "Large" );
 
 ### Set Error Bar Cap Shape
 
-**구문:** obj << Set Error Bar Cap Shape( begin, end )
+**구문:** obj &lt;&lt; Set Error Bar Cap Shape( begin, end )
 
 **설명:** 오차 막대에 표시할 끝 단면의 셰이프를 지정합니다. 단일 인수로 막대 양쪽 끝의 셰이프를 설정하거나, 시작과 끝에 개별 인수를 제공할 수 있습니다. 기본 셰이프는 "Line"입니다. "Arrow" 셰이프는 바깥쪽을 가리키는 화살표를 그리고 "None"은 끝 단면을 생략합니다.
 
@@ -2007,7 +2001,7 @@ seg << Set Error Bar Cap Shape( "Line", "Arrow" );
 
 ### Set Fences
 
-**구문:** obj << Set Fences( state=0|1 )
+**구문:** obj &lt;&lt; Set Fences( state=0|1 )
 
 ```jsl
 
@@ -2023,7 +2017,7 @@ seg << Set Fences( 0 );
 
 ### Set Fill
 
-**구문:** obj << Set Fill( state = 0|1 )
+**구문:** obj &lt;&lt; Set Fill( state = 0|1 )
 
 **JMP추가된 버전:** 15
 
@@ -2041,7 +2035,7 @@ seg << Set Fill( 0 );
 
 ### Set Fill Color
 
-**구문:** obj << Set Fill Color( color )
+**구문:** obj &lt;&lt; Set Fill Color( color )
 
 ```jsl
 
@@ -2057,7 +2051,7 @@ seg << Set Fill Color( "Green" );
 
 ### Set Fill Pattern
 
-**구문:** obj << Set Fill Pattern
+**구문:** obj &lt;&lt; Set Fill Pattern
 
 ```jsl
 
@@ -2073,9 +2067,7 @@ seg << Set Fill Pattern( "h wave medium" );
 
 ### Set Gradient
 
-**구문:** obj << { <Color Theme(theme)>, <Min Lightness(0-1)>, <Max Lightness(0-1)>, <Contour Levels(num)>, <Reverse Gradient(0|1)>, <Density Gradient("Fade To White"|"Fade To Gray"|"Full Color")>, <Gradient Transparency("None"|"Linear")> }
-
-obj << { <Color Theme(theme)>, <Min Lightness(0-1)>, <Max Lightness(0-1)>, <N Labels(num)>, <Show Missing Color("On"|"Off"|"Auto")>, <Scale Type("Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom")>, <Scale Values([v1, v2, …])>, <Range Type("Default"|"Exact Data Range"|"Middle 90%")>, <Fill("Between"|"Above"|"Below"|"Above Below")>, <Reverse Gradient(0|1)>, <Reverse Labels(0|1)>, <Discrete Color(0|1)> }, <Label Format(labelFormat)>, <Width(num)>, <Horizontal(0|1)>, <Show Labels(0|1)>
+**구문:** obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;Contour Levels(num)&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Density Gradient("Fade To White"|"Fade To Gray"|"Full Color")&gt;, &lt;Gradient Transparency("None"|"Linear")&gt; }obj &lt;&lt; { &lt;Color Theme(theme)&gt;, &lt;Min Lightness(0-1)&gt;, &lt;Max Lightness(0-1)&gt;, &lt;N Labels(num)&gt;, &lt;Show Missing Color("On"|"Off"|"Auto")&gt;, &lt;Scale Type("Linear"|"Quantile"|"Standard Deviation"|"Log"|"Log Offset"|"Custom")&gt;, &lt;Scale Values([v1, v2, …])&gt;, &lt;Range Type("Default"|"Exact Data Range"|"Middle 90%")&gt;, &lt;Fill("Between"|"Above"|"Below"|"Above Below")&gt;, &lt;Reverse Gradient(0|1)&gt;, &lt;Reverse Labels(0|1)&gt;, &lt;Discrete Color(0|1)&gt; }, &lt;Label Format(labelFormat)&gt;, &lt;Width(num)&gt;, &lt;Horizontal(0|1)&gt;, &lt;Show Labels(0|1)&gt;
 
 **설명:** 색상 그래디언트를 설정합니다.
 
@@ -2093,7 +2085,7 @@ seg << Set Gradient( {Color Theme( "Viridis" ), N Labels( 7 )} );
 
 ### Set Gradient Color Theme
 
-**구문:** obj << Set Gradient Color Theme
+**구문:** obj &lt;&lt; Set Gradient Color Theme
 
 **설명:** 그래디언트 색상 테마를 설정합니다.
 
@@ -2113,7 +2105,7 @@ seg << Set Gradient Color Theme( "Viridis" );
 
 ### Set Gradient Custom Scale
 
-**구문:** obj << Set Gradient Custom Scale
+**구문:** obj &lt;&lt; Set Gradient Custom Scale
 
 **설명:** 사용자 척도에 값 목록을 사용하도록 그래디언트를 설정합니다.
 
@@ -2133,7 +2125,7 @@ seg << Set Gradient Custom Scale( {0.0, 5.0, 10.0, 20.0} );
 
 ### Set Gradient Discrete Colors
 
-**구문:** obj << Set Gradient Discrete Colors
+**구문:** obj &lt;&lt; Set Gradient Discrete Colors
 
 **설명:** 그래디언트의 각 수준을 단일 색상으로 표시할지 아니면 색상을 부드럽게 전환할지를 설정합니다.
 
@@ -2152,7 +2144,7 @@ seg << Set Gradient Discrete Colors( 1 );
 
 ### Set Gradient Fill
 
-**구문:** obj << Set Gradient Fill( "사이"|"위"|"아래"|"위/아래"="위/아래" )
+**구문:** obj &lt;&lt; Set Gradient Fill( "사이"|"위"|"아래"|"위/아래"="위/아래" )
 
 **설명:** 그래디언트 척도 범위를 벗어나는 값에 대한 색상 지정 동작을 설정합니다. 기본값은 "위/아래"입니다.
 
@@ -2172,7 +2164,7 @@ seg << Set Gradient Fill( "Between" );
 
 ### Set Gradient Label Count
 
-**구문:** obj << Set Gradient Label Count
+**구문:** obj &lt;&lt; Set Gradient Label Count
 
 **설명:** 그래디언트 범례의 라벨 수를 설정합니다. 이 값은 등고선 수준 수에 1을 더한 값입니다.
 
@@ -2192,7 +2184,7 @@ seg << Set Gradient Label Count( 8 );
 
 ### Set Gradient Label Levels
 
-**구문:** obj << Set Gradient Label Levels( [value1,value1, ... value N] )
+**구문:** obj &lt;&lt; Set Gradient Label Levels( [value1,value1, ... value N] )
 
 **설명:** 그래디언트 척도에 사용할 사용자 값 집합을 설정합니다.
 
@@ -2211,7 +2203,7 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ### Set Gradient Legend Horizontal
 
-**구문:** obj << Set Gradient Legend Horizontal
+**구문:** obj &lt;&lt; Set Gradient Legend Horizontal
 
 **설명:** 그래디언트 범례를 가로로 표시할지 여부를 설정합니다.
 
@@ -2231,7 +2223,7 @@ seg << Set Gradient Legend Horizontal( 1 );
 
 ### Set Gradient Legend Label Format
 
-**구문:** obj << Set Gradient Legend Label Format
+**구문:** obj &lt;&lt; Set Gradient Legend Label Format
 
 **설명:** 그래디언트 범례 라벨의 형식을 설정합니다.
 
@@ -2251,7 +2243,7 @@ seg << Set Gradient Legend Label Format( "Fixed Dec", 6, 3 );
 
 ### Set Gradient Legend Label Width
 
-**구문:** obj << Set Gradient Legend Label Width
+**구문:** obj &lt;&lt; Set Gradient Legend Label Width
 
 **설명:** 그래디언트 범례 라벨의 최대 문자 길이를 설정합니다.
 
@@ -2271,7 +2263,7 @@ seg << Set Gradient Legend Label Width( 4 );
 
 ### Set Gradient Legend Show Labels
 
-**구문:** obj << Set Gradient Legend Show Labels
+**구문:** obj &lt;&lt; Set Gradient Legend Show Labels
 
 **설명:** 그래디언트 범례에 수준 라벨을 표시할지 여부를 설정합니다.
 
@@ -2291,7 +2283,7 @@ seg << Set Gradient Legend Show Labels( 0 );
 
 ### Set Gradient Level Count
 
-**구문:** obj << Set Gradient Level Count
+**구문:** obj &lt;&lt; Set Gradient Level Count
 
 **설명:** 그래디언트의 수준 수를 설정합니다. 이 값은 라벨 수에서 1을 뺀 값입니다.
 
@@ -2311,7 +2303,7 @@ seg << Set Gradient Levels( 7 );
 
 ### Set Gradient Lightness Range
 
-**구문:** obj << Set Gradient Lightness Range
+**구문:** obj &lt;&lt; Set Gradient Lightness Range
 
 **설명:** 그래디언트의 수준 색상에 대한 최소 및 최대 밝기를 설정합니다. 색상은 이 범위를 포함하도록 척도가 조정됩니다. 결측값은 변경 사항이 없는 것으로 처리됩니다.
 
@@ -2361,7 +2353,7 @@ seg << Set Gradient Lightness Range( ., 0.75 );
 
 ### Set Gradient Range
 
-**구문:** obj << Set Gradient Range( "기본값"|"정확 데이터 범위"|"가운데 90%"="기본값" )
+**구문:** obj &lt;&lt; Set Gradient Range( "기본값"|"정확 데이터 범위"|"가운데 90%"="기본값" )
 
 **설명:** 비사용자 그래디언트 척도가 생성되는 범위를 설정합니다. 기본값은 "기본값"입니다.
 
@@ -2380,7 +2372,7 @@ seg << Set Gradient Range( "Exact Data Range" );
 
 ### Set Gradient Reverse Color Order
 
-**구문:** obj << Set Gradient Reverse Color Order
+**구문:** obj &lt;&lt; Set Gradient Reverse Color Order
 
 **설명:** 그래디언트의 색상 순서를 역순으로 바꿉니다.
 
@@ -2400,7 +2392,7 @@ seg << Set Gradient Reverse Color Order( 1 );
 
 ### Set Gradient Reverse Label Order
 
-**구문:** obj << Set Gradient Reverse Label Order
+**구문:** obj &lt;&lt; Set Gradient Reverse Label Order
 
 **설명:** 그래디언트의 라벨 순서를 역순으로 바꿉니다.
 
@@ -2420,7 +2412,7 @@ seg << Set Gradient Reverse Label Order( 1 );
 
 ### Set Gradient Scale
 
-**구문:** obj << Set Gradient Scale( "선형"|"분위수"|"표준편차"|"로그"|"로그 오프셋"|"사용자 정의"="선형" )
+**구문:** obj &lt;&lt; Set Gradient Scale( "선형"|"분위수"|"표준편차"|"로그"|"로그 오프셋"|"사용자 정의"="선형" )
 
 **설명:** 그래디언트 척도 유형을 설정합니다. 기본값은 "선형"입니다.
 
@@ -2439,7 +2431,7 @@ seg << Set Gradient Scale( "Quantile" );
 
 ### Set Gradient Scale Values
 
-**구문:** obj << Set Gradient Scale Values( [value1,value1, ... value N] )
+**구문:** obj &lt;&lt; Set Gradient Scale Values( [value1,value1, ... value N] )
 
 **설명:** 그래디언트 척도에 사용할 사용자 값 집합을 설정합니다.
 
@@ -2458,7 +2450,7 @@ seg << Set Gradient Scale Values( [-10.0, 0.0, 10.0] );
 
 ### Set Gradient Show Missing
 
-**구문:** obj << Set Gradient Show Missing( "자동"|"켜기"|"끄기"="자동" )
+**구문:** obj &lt;&lt; Set Gradient Show Missing( "자동"|"켜기"|"끄기"="자동" )
 
 **설명:** 결측값에 대한 범례 항목을 표시할 시기를 설정합니다. 기본값은 "자동"입니다.
 
@@ -2477,7 +2469,7 @@ seg << Set Gradient Show Missing( "Off" );
 
 ### Set Interval Draw Directions
 
-**구문:** obj << Set Interval Draw Directions( Both|Upper|Lower|None )
+**구문:** obj &lt;&lt; Set Interval Draw Directions( Both|Upper|Lower|None )
 
 **설명:** 구간을 그릴 방향을 설정합니다.
 
@@ -2508,7 +2500,7 @@ seg << Set Interval Draw Directions( "Lower" );
 
 ### Set Line Color
 
-**구문:** obj << Set Line Color( color )
+**구문:** obj &lt;&lt; Set Line Color( color )
 
 **설명:** 표시 세그먼트에 있는 모든 선의 색상을 설정합니다.
 
@@ -2526,7 +2518,7 @@ seg << Set Line Color( "Green" );
 
 ### Set Line Style
 
-**구문:** obj << Set Line Style( pen style )
+**구문:** obj &lt;&lt; Set Line Style( pen style )
 
 **설명:** 선 스타일을 설정합니다. 옵션은 실선, 점선, 파선, 일점 쇄선 및 이점 쇄선입니다.
 
@@ -2546,7 +2538,7 @@ seg << Set Line Style( "Dotted" );
 
 ### Set Line Width
 
-**구문:** obj << Set Line Width( "1"|"2"|"3"|"4"|"5"|"6"|"기타..." )
+**구문:** obj &lt;&lt; Set Line Width( "1"|"2"|"3"|"4"|"5"|"6"|"기타..." )
 
 **설명:** 선 너비를 설정합니다.
 
@@ -2566,7 +2558,7 @@ seg << Set Line Width( 3 );
 
 ### Set Marker
 
-**구문:** obj << Set Marker( marker )
+**구문:** obj &lt;&lt; Set Marker( marker )
 
 **설명:** 모든 표식의 표식 스타일을 설정합니다.
 
@@ -2586,7 +2578,7 @@ seg << Set Marker( "Square" );
 
 ### Set Marker Size
 
-**구문:** obj << Set Marker Size( size )
+**구문:** obj &lt;&lt; Set Marker Size( size )
 
 **설명:** 표식 크기를 설정합니다. 크기 옵션은 점, 작음, 중간, 큼, XL, XXL 및 XXXL입니다.
 
@@ -2607,7 +2599,7 @@ seg << Set Marker Size( "XL" );
 
 ### Set Median Line Style
 
-**구문:** obj << Set Median Line Style( pen style )
+**구문:** obj &lt;&lt; Set Median Line Style( pen style )
 
 ```jsl
 
@@ -2623,7 +2615,7 @@ seg << Set Median Line Style( "Dotted" );
 
 ### Set Notched
 
-**구문:** obj << Set Notched( state=0|1 )
+**구문:** obj &lt;&lt; Set Notched( state=0|1 )
 
 **JMP추가된 버전:** 16
 
@@ -2641,7 +2633,7 @@ seg << Set Notched( 1 );
 
 ### Set Shortest Half Bracket
 
-**구문:** obj << Set Shortest Half Bracket( state = 0|1 )
+**구문:** obj &lt;&lt; Set Shortest Half Bracket( state = 0|1 )
 
 ```jsl
 
@@ -2657,7 +2649,7 @@ seg << Set Shortest Half Bracket( 0 );
 
 ### Set Shortest Half Color
 
-**구문:** obj << Set Shortest Half Color( color )
+**구문:** obj &lt;&lt; Set Shortest Half Color( color )
 
 ```jsl
 
@@ -2673,7 +2665,7 @@ seg << Set Shortest Half Color( "Green" );
 
 ### Set Transparency
 
-**구문:** obj << Set Transparency( number )
+**구문:** obj &lt;&lt; Set Transparency( number )
 
 ```jsl
 
@@ -2689,7 +2681,7 @@ seg << Set Transparency( .3 );
 
 ### Shortest Half Bracket
 
-**구문:** obj << Shortest Half Bracket( state = 0|1 )
+**구문:** obj &lt;&lt; Shortest Half Bracket( state = 0|1 )
 
 ```jsl
 
@@ -2705,7 +2697,7 @@ seg << Set Shortest Half Bracket( 0 );
 
 ### Shortest Half Color
 
-**구문:** obj << Shortest Half Color( color )
+**구문:** obj &lt;&lt; Shortest Half Color( color )
 
 ```jsl
 
@@ -2721,7 +2713,7 @@ seg << Set Shortest Half Color( "Green" );
 
 ### Sib
 
-**구문:** seg2 = obj << Sib
+**구문:** seg2 = obj &lt;&lt; Sib
 
 **설명:** 표시 세그먼트의 형제 항을 반환합니다.
 
@@ -2739,7 +2731,7 @@ seg << Sib;
 
 ### Sib Append
 
-**구문:** obj << Sib Append( seg2 )
+**구문:** obj &lt;&lt; Sib Append( seg2 )
 
 **설명:** 표시 세그먼트 바로 뒤에 표시 세그먼트를 추가합니다.
 
@@ -2777,7 +2769,7 @@ mapSeg << Sib Append( Line Seg( xval, yval, <<line color( "Green" ), <<line widt
 
 ### Sib Prepend
 
-**구문:** obj << Sib Prepend( seg2 )
+**구문:** obj &lt;&lt; Sib Prepend( seg2 )
 
 **설명:** 표시 세그먼트 바로 앞에 표시 세그먼트를 추가합니다.
 
@@ -2808,7 +2800,7 @@ seg << Sib Prepend( Line Seg( xval, yval, <<line color( "Green" ), <<line width(
 
 ### Transparency
 
-**구문:** obj << Transparency( number )
+**구문:** obj &lt;&lt; Transparency( number )
 
 ```jsl
 

@@ -1,17 +1,26 @@
-site_name: JMP SkriptIndex
+site_name: JMP® 스크립트 인덱스
 theme: 
   name: readthedocs
   highlightjs: true
   locale: ko
   hljs_languages:
-    - js
+    - python
   logo: img/JMPScriptingIndexLogo.svg
-site_url: https://jsl.jmp.com
-copyright: © 2025 JMP Statistical Discovery LLC. Alle Rechte vorbehalten.
+  collapse_navigation: false
+  navigation_depth: 6
+  include_homepage_in_sidebar: false
+site_url: https://jsl.jmp.com/ko
+site_description: The JMP® Scripting Index provides a brief description and the syntax for JSL functions, objects, python integration, and display boxes for the JMP® Software.
+copyright: © 2025 JMP Statistical Discovery LLC. All Rights Reserved.
 use_directory_urls: false
+extra_css:
+  - css/jmpstyle.css
+extra_javascript:
+  - js/syntaxhighlighting.js
+  - js/popper.min.js
+  - js/tippy.js
+  - js/extra.js
+  - js/clipboard.js
 plugins:
   - search:
       prebuild_index: true
-  
-
-

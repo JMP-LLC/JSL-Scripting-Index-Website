@@ -22,7 +22,7 @@ nb = Notebook();
 
 ### Enable Inline Logging
 
-**구문:** obj << Enable Inline Logging( 0|1 )
+**구문:** obj &lt;&lt; Enable Inline Logging( 0|1 )
 
 **설명:** 노트북 블록에서 출력 로깅을 활성화/비활성화합니다.
 
@@ -39,7 +39,7 @@ nb << Enable Inline Logging( 0 );
 
 ### Export to a Workflow
 
-**구문:** obj << Export to a Workflow( <Create(wfb name)>|<AddTo(wfb name)> )
+**구문:** obj &lt;&lt; Export to a Workflow( &lt;Create(wfb name)&gt;|&lt;AddTo(wfb name)&gt; )
 
 **설명:** 노트북의 블록을 워크플로우로 내보냅니다.
 
@@ -58,7 +58,7 @@ nb << Export to a Workflow;
 
 ### Get Window
 
-**구문:** obj << Get Window
+**구문:** obj &lt;&lt; Get Window
 
 **설명:** 이 노트북의 창을 반환합니다.
 
@@ -75,7 +75,7 @@ nb << Get Window;
 
 ### Import .ipynb File
 
-**구문:** obj << Import .ipynb File( file path )
+**구문:** obj &lt;&lt; Import .ipynb File( file path )
 
 **설명:** 제공된 .ipynb 파일을 노트북의 블록으로 로드합니다.
 
@@ -92,7 +92,7 @@ nb << Import .ipynb File( NOTEBOOKPATH );
 
 ### Run All Scripts
 
-**구문:** obj << Run All Scripts
+**구문:** obj &lt;&lt; Run All Scripts
 
 **설명:** 전체 노트북을 실행합니다.
 
@@ -112,7 +112,7 @@ nb << Run All Scripts;
 
 ### Show Embedded Log
 
-**구문:** obj << Show Embedded Log( 0|1 )
+**구문:** obj &lt;&lt; Show Embedded Log( 0|1 )
 
 **설명:** 노트북에 중첩된 로그를 활성화/비활성화합니다.
 
@@ -129,7 +129,7 @@ nb << Show Embedded Log( 1 );
 
 ### Title
 
-**구문:** obj << Title( title )
+**구문:** obj &lt;&lt; Title( title )
 
 **설명:** 이 노트북의 제목을 설정합니다.
 
@@ -166,7 +166,7 @@ block = nb << Add New Block( "JSL", "Open (\!"$SAMPLE_DATA/Big Class.jmp\!")" );
 
 #### Block Name
 
-**구문:** obj << Block Name( name )
+**구문:** obj &lt;&lt; Block Name( name )
 
 **설명:** 이 블록의 제목을 설정하거나 가져옵니다.
 
@@ -184,7 +184,7 @@ block << Block Name( "Test Block Name" );
 
 #### Duplicate Block
 
-**구문:** obj << Duplicate Block
+**구문:** obj &lt;&lt; Duplicate Block
 
 **설명:** 이 블록을 복제하고 새 블록을 형제 항목으로 추가합니다.
 
@@ -202,7 +202,7 @@ block << Duplicate Block;
 
 #### Get Content
 
-**구문:** obj << Get Content
+**구문:** obj &lt;&lt; Get Content
 
 **설명:** 블록의 콘텐츠를 가져옵니다.
 
@@ -220,7 +220,7 @@ Show( block << Get Content );
 
 #### Get Output
 
-**구문:** obj << Get Output
+**구문:** obj &lt;&lt; Get Output
 
 **설명:** 블록의 표시 트리 출력을 가져옵니다.
 
@@ -241,7 +241,7 @@ block2 << Get Output;
 
 #### Import .ipynb File
 
-**구문:** obj << Import .ipynb File( file path )
+**구문:** obj &lt;&lt; Import .ipynb File( file path )
 
 **설명:** 제공된 .ipynb 파일을 이 섹션에 추가된 블록으로 로드합니다.
 
@@ -257,7 +257,7 @@ section << Import .ipynb File( NOTEBOOKPATH );
 
 #### Line Count
 
-**구문:** obj << Line Count( number )
+**구문:** obj &lt;&lt; Line Count( number )
 
 **설명:** 스크롤을 활성화하기 전에 이 블록에 표시되는 최대 줄 수를 설정합니다. 자동 크기 조정을 사용하려면 0으로 설정합니다.
 
@@ -275,7 +275,7 @@ block << Line Count( 1 );
 
 #### Move Block Down
 
-**구문:** obj << Move Block Down
+**구문:** obj &lt;&lt; Move Block Down
 
 **설명:** 이 블록을 목록에서 한 단계 아래로 이동합니다.
 
@@ -294,7 +294,7 @@ block << Move Block Down;
 
 #### Move Block Up
 
-**구문:** obj << Move Block Up
+**구문:** obj &lt;&lt; Move Block Up
 
 **설명:** 이 블록을 목록에서 한 단계 위로 이동합니다.
 
@@ -313,7 +313,7 @@ block2 << Move Block Up;
 
 #### Popout Results
 
-**구문:** obj << Popout Results
+**구문:** obj &lt;&lt; Popout Results
 
 **설명:** 이 블록의 현재 출력을 새 창으로 보냅니다.
 
@@ -334,7 +334,7 @@ block2 << Popout Results;
 
 #### Remove Block
 
-**구문:** obj << Remove Block
+**구문:** obj &lt;&lt; Remove Block
 
 **설명:** 이 블록을 상위 항목에서 제거합니다.
 
@@ -352,7 +352,7 @@ block << Remove Block;
 
 #### Remove Section
 
-**구문:** obj << Remove Section
+**구문:** obj &lt;&lt; Remove Section
 
 **설명:** 이 섹션을 상위 항목에서 제거합니다.
 
@@ -368,7 +368,7 @@ section << Remove Section;
 
 #### Run Script
 
-**구문:** obj << Run Script
+**구문:** obj &lt;&lt; Run Script
 
 **설명:** 현재 블록의 콘텐츠를 실행합니다.
 
@@ -387,7 +387,7 @@ block << Run Script;
 
 #### Run Section
 
-**구문:** obj << Run Section
+**구문:** obj &lt;&lt; Run Section
 
 **설명:** 이 섹션의 하위 항목을 순서대로 실행합니다.
 
@@ -405,7 +405,7 @@ section << Run Section;
 
 #### Set Content
 
-**구문:** obj << Set Content( content )
+**구문:** obj &lt;&lt; Set Content( content )
 
 **설명:** 블록의 콘텐츠를 설정합니다.
 

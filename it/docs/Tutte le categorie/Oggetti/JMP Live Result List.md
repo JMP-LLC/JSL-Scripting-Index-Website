@@ -6,7 +6,7 @@
 
 ### As Scriptable
 
-**Sintassi:** jmplivereportlist = jmplivelist << As Scriptable()
+**Sintassi:** jmplivereportlist = jmplivelist &lt;&lt; As Scriptable()
 
 **Descrizione:** Restituisce un elenco che supporta script degli oggetti Cartella di JMP Live, Report di JMP Live o Post di JMP Live in base all&apos;operazione di ricerca che è stata eseguita per produrre l&apos;elenco dei risultati di JMP Live.
 
@@ -55,7 +55,7 @@ If( jmpliveresult << Succeeded,
 
 ### Get Current Page Number
 
-**Sintassi:** value = jmplivelist << Get Current Page Number()
+**Sintassi:** value = jmplivelist &lt;&lt; Get Current Page Number()
 
 **Descrizione:** Ottiene il numero di pagina corrente degli elementi all&apos;interno dell&apos;elenco.
 
@@ -165,7 +165,7 @@ While( count > 0,
 
 ### Get Number Of Items
 
-**Sintassi:** value = jmplivelist << Get Number Of Items()
+**Sintassi:** value = jmplivelist &lt;&lt; Get Number Of Items()
 
 **Descrizione:** Ottiene il numero di elementi in questo set di risultati.
 
@@ -250,7 +250,7 @@ If( jmpliveresult << Succeeded,
 
 ### Get Page
 
-**Sintassi:** reportlist = jmplivelist << Get Page(value)
+**Sintassi:** reportlist = jmplivelist &lt;&lt; Get Page(value)
 
 **Descrizione:** Ottiene la specifica pagina degli oggetti Cartella di JMP Live, Report di JMP Live o Post di JMP Live in tutto l&apos;elenco dei risultati di un&apos;operazione di ricerca.
 
@@ -360,7 +360,7 @@ While( count > 0,
 
 ### Next
 
-**Sintassi:** reportlist = jmplivelist << Next()
+**Sintassi:** reportlist = jmplivelist &lt;&lt; Next()
 
 **Descrizione:** Restituisce la pagina successiva dei risultati in un&apos;operazione di ricerca. Questo elenco può contenere cartelle di JMP Live, report di JMP Live o post di JMP Live in base all&apos;operazione di ricerca.
 
@@ -470,7 +470,7 @@ While( count > 0,
 
 ### Previous
 
-**Sintassi:** reportlist = jmplivelist << Previous()
+**Sintassi:** reportlist = jmplivelist &lt;&lt; Previous()
 
 **Descrizione:** Restituisce la pagina precedente dei risultati in un&apos;operazione di ricerca. Questo elenco può contenere cartelle di JMP Live, report di JMP Live o post di JMP Live in base all&apos;operazione di ricerca.
 

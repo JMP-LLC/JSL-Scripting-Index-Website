@@ -6,7 +6,7 @@
 
 ### Set Window Title
 
-**Sintaxis:** obj << Set Window Title
+**Sintaxis:** obj &lt;&lt; Set Window Title
 
 **Descripción:** Establece el título de la ventana.
 
@@ -23,7 +23,7 @@ w << Set Window Title( "New Title" );
 
 ### Bring Window To Front
 
-**Sintaxis:** obj << Bring Window To Front
+**Sintaxis:** obj &lt;&lt; Bring Window To Front
 
 **Descripción:** Lleva la ventana al frente.
 
@@ -39,7 +39,7 @@ w << Bring Window To Front;
 
 ### Close Window
 
-**Sintaxis:** obj << Close Window( <"NoSave"> )
+**Sintaxis:** obj &lt;&lt; Close Window( &lt;"NoSave"&gt; )
 
 **Descripción:** Cierra la ventana.
 
@@ -55,7 +55,7 @@ w << Close Window;
 
 ### Get Content Size
 
-**Sintaxis:** obj << Get Content Size
+**Sintaxis:** obj &lt;&lt; Get Content Size
 
 **Descripción:** Devuelve el tamaño del contenido de dentro de la ventana.
 
@@ -71,7 +71,7 @@ Show( c );
 
 ### Get On Close
 
-**Sintaxis:** obj << Get On Close
+**Sintaxis:** obj &lt;&lt; Get On Close
 
 **Descripción:** Devuelve el script o función que se ejecutará cuando se cierre la ventana.
 
@@ -96,7 +96,7 @@ Show( w << Get On Close );
 
 ### Get Page Setup
 
-**Sintaxis:** obj << Get Page Setup
+**Sintaxis:** obj &lt;&lt; Get Page Setup
 
 **Descripción:** Obtiene la información de configuración de página para PDF
 
@@ -111,7 +111,7 @@ w << get page setup();
 
 ### Get Project
 
-**Sintaxis:** project = obj << Get Project()
+**Sintaxis:** project = obj &lt;&lt; Get Project()
 
 **Descripción:** Devuelve el proyecto principal de la ventana, o Empty() si no está en un proyecto.
 
@@ -129,7 +129,7 @@ Show( c );
 
 ### Get Show Window
 
-**Sintaxis:** obj << Get Show Window
+**Sintaxis:** obj &lt;&lt; Get Show Window
 
 **Descripción:** Devuelve la visibilidad de la ventana.
 
@@ -147,7 +147,7 @@ Print( w << Get Show Window() );
 
 ### Get Web Support
 
-**Sintaxis:** obj << Get Web Support
+**Sintaxis:** obj &lt;&lt; Get Web Support
 
 **Descripción:** Devuelve un número que indica el nivel de compatibilidad del HTML interactivo para el objeto de visualización. 1 significa que algunos o todos los elementos son compatibles. 0 significa que no existe compatibilidad.
 
@@ -163,7 +163,7 @@ Show( s );
 
 ### Get Window Icon
 
-**Sintaxis:** obj << Get Window Icon
+**Sintaxis:** obj &lt;&lt; Get Window Icon
 
 **Descripción:** Devuelve el icono de la ventana.
 
@@ -179,7 +179,7 @@ Show( t );
 
 ### Get Window Position
 
-**Sintaxis:** obj << Get Window Position
+**Sintaxis:** obj &lt;&lt; Get Window Position
 
 **Descripción:** Devuelve la posición de la ventana.
 
@@ -195,7 +195,7 @@ Show( p );
 
 ### Get Window Size
 
-**Sintaxis:** obj << Get Window Size
+**Sintaxis:** obj &lt;&lt; Get Window Size
 
 **Descripción:** Devuelve el tamaño de la ventana.
 
@@ -211,7 +211,7 @@ Show( s );
 
 ### Get Window Title
 
-**Sintaxis:** obj << Get Window Title
+**Sintaxis:** obj &lt;&lt; Get Window Title
 
 **Descripción:** Devuelve el título de la ventana.
 
@@ -227,7 +227,7 @@ Show( t );
 
 ### Get Window View
 
-**Sintaxis:** obj << Get Window View
+**Sintaxis:** obj &lt;&lt; Get Window View
 
 **Descripción:** Devuelve la vista de la ventana actual. La ventana puede ser "Visible", "Invisible" o "Privado".
 
@@ -242,7 +242,7 @@ Print( w << Get Window View() );
 
 ### Is Modal Dialog
 
-**Sintaxis:** obj << Is Modal Dialog
+**Sintaxis:** obj &lt;&lt; Is Modal Dialog
 
 **Descripción:** Devuelve verdadero si la ventana es un cuadro de diálogo modal. Solo es útil cuando se llama desde una rellamada del controlador de ventanas.
 
@@ -261,7 +261,7 @@ With Window Handler(
 
 ### Maximize Window
 
-**Sintaxis:** obj << Maximize Window( <state=0|1> )
+**Sintaxis:** obj &lt;&lt; Maximize Window( &lt;state=0|1&gt; )
 
 **Descripción:** Maximiza la ventana. El argumento predeterminado es 1.
 
@@ -279,7 +279,7 @@ w << Maximize Window( 0 );
 
 ### Minimize Window
 
-**Sintaxis:** obj << Minimize Window( <state=0|1> )
+**Sintaxis:** obj &lt;&lt; Minimize Window( &lt;state=0|1&gt; )
 
 **Descripción:** Minimiza la ventana. El argumento predeterminado es 1.
 
@@ -297,7 +297,7 @@ w << Minimize Window( 0 );
 
 ### Move Window
 
-**Sintaxis:** obj << Move Window( x,y )
+**Sintaxis:** obj &lt;&lt; Move Window( x,y )
 
 **Descripción:** Desplaza la ventana a la posición especificada.
 
@@ -313,7 +313,7 @@ w << Move Window( 500, 500 );
 
 ### On Close
 
-**Sintaxis:** obj << On Close( script )
+**Sintaxis:** obj &lt;&lt; On Close( script )
 
 **Descripción:** Establece un script o función para que se ejecuten al cerrar la ventana. Este script debe devolver 1 para permitir el cierre o 0 para evitar que la ventana se cierre.
 
@@ -361,7 +361,7 @@ w << On Close(
 
 ### Optimize Display
 
-**Sintaxis:** obj << Optimize Display
+**Sintaxis:** obj &lt;&lt; Optimize Display
 
 **Descripción:** Establece la ventana y los anchos de columna de una tabla de datos en un tamaño óptimo.
 
@@ -378,7 +378,7 @@ dt << Optimize Display;
 
 ### Pad Window
 
-**Sintaxis:** obj << Pad Window( bool )
+**Sintaxis:** obj &lt;&lt; Pad Window( bool )
 
 **Descripción:** Activa o desactiva los márgenes de ventana.
 
@@ -395,7 +395,7 @@ r << Pad Window( 0 );
 
 ### Print Window
 
-**Sintaxis:** obj << Print Window
+**Sintaxis:** obj &lt;&lt; Print Window
 
 **Descripción:** Imprime la ventana.
 
@@ -410,7 +410,7 @@ w << Print Window;
 
 ### Save Window Report
 
-**Sintaxis:** obj << Save Window Report( pathname, <embed data(0|1)> )
+**Sintaxis:** obj &lt;&lt; Save Window Report( pathname, &lt;embed data(0|1)&gt; )
 
 **Descripción:** Guarda la ventana de informes actual en un archivo de informes JMP (.jrp).
 
@@ -428,7 +428,7 @@ d << Save Window Report( "$DOCUMENTS/test.jrp", embed data( 1 ) );
 
 ### Set Content Size
 
-**Sintaxis:** obj << Set Content Size( x,y )
+**Sintaxis:** obj &lt;&lt; Set Content Size( x,y )
 
 **Descripción:** Establece el tamaño del contenido de dentro de la ventana.
 
@@ -454,7 +454,7 @@ w << Set Content Size( 400, 300 );
 
 ### Set Main Window
 
-**Sintaxis:** obj << Set Main Window
+**Sintaxis:** obj &lt;&lt; Set Main Window
 
 **Descripción:** Establece la ventana como la ventana principal de JMP y la ventana principal anterior como una ventana normal
 
@@ -469,7 +469,7 @@ w << Set Main Window;
 
 ### Set Page Setup
 
-**Sintaxis:** obj << Set Page Setup( <margins(left, top, right, bottom)>, <scale(s)>, <portrait(0|1)>, <paper size(p)>, <Table of Contents(always, never, default)>  )
+**Sintaxis:** obj &lt;&lt; Set Page Setup( &lt;margins(left, top, right, bottom)&gt;, &lt;scale(s)&gt;, &lt;portrait(0|1)&gt;, &lt;paper size(p)&gt;, &lt;Table of Contents(always, never, default)&gt; )
 
 **Descripción:** Establece la información de configuración de página que se utiliza durante la impresión o al guardar como PDF. Opcionalmente, se puede generar un índice a partir de los cuadros de esquema.
 
@@ -491,7 +491,7 @@ w << Save pdf( "$DOCUMENTS\test.pdf" );
 
 ### Set Print Footers
 
-**Sintaxis:** obj << Set Print Footers( left footer, center footer, right header )
+**Sintaxis:** obj &lt;&lt; Set Print Footers( left footer, center footer, right header )
 
 **Descripción:** Establece los pies de página de la izquierda, el centro y la derecha para la salida impresa
 
@@ -510,7 +510,7 @@ w << Print Window;
 
 ### Set Print Headers
 
-**Sintaxis:** obj << Set Print Headers( left header, center header, right header )
+**Sintaxis:** obj &lt;&lt; Set Print Headers( left header, center header, right header )
 
 **Descripción:** Establece los encabezados de página de la izquierda, el centro y la derecha para la salida impresa
 
@@ -529,7 +529,7 @@ w << Print Window;
 
 ### Set Window Icon
 
-**Sintaxis:** obj << Set Window Icon( icon name )
+**Sintaxis:** obj &lt;&lt; Set Window Icon( icon name )
 
 **Descripción:** Establece el icono de la ventana.
 
@@ -544,7 +544,7 @@ w << Set Window Icon( "Scatter3D" );
 
 ### Set Window Size
 
-**Sintaxis:** obj << Set Window Size( x,y )
+**Sintaxis:** obj &lt;&lt; Set Window Size( x,y )
 
 **Descripción:** Establece el tamaño de la ventana.
 
@@ -559,7 +559,7 @@ w << Set Window Size( 800, 1200 );
 
 ### Show Window
 
-**Sintaxis:** obj << Show Window( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Show Window( state=0|1 )
 
 **Descripción:** Muestra u oculta la ventana. Esto es útil para ocultar temporalmente las ventanas. Opción activada de forma predeterminada.
 
@@ -577,7 +577,7 @@ w << Show Window( 1 );
 
 ### Size Window
 
-**Sintaxis:** obj << Size Window( x,y )
+**Sintaxis:** obj &lt;&lt; Size Window( x,y )
 
 **Descripción:** Establece el tamaño de la ventana.
 
@@ -592,7 +592,7 @@ w << Size Window( 500, 500 );
 
 ### Zoom Window
 
-**Sintaxis:** obj << Zoom Window
+**Sintaxis:** obj &lt;&lt; Zoom Window
 
 **Descripción:** Aumenta el tamaño de la ventana hasta que pueda mostrar todo su contenido.
 

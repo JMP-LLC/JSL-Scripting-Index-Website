@@ -2,11 +2,9 @@
 
 
 
-## 函数
-
 ### As Table
 
-**语法:** dt = As Table( matrix, <matrix2,...> < <<invisible/private>, < <<Column Names(name list) > )
+**语法:** dt = As Table( matrix, &lt;matrix2,...&gt; &lt; &lt;&lt;invisible/private&gt;, &lt; &lt;&lt;Column Names(name list) &gt; )
 
 **说明:** 将矩阵转换为数据表。invisible 选项用于将表设置为不显示状态。
 
@@ -21,7 +19,7 @@ As Table( [1 2 3, 4 5 6] );
 
 ### Col Stored Value
 
-**语法:** y = Col Stored Value( <dt>, xCol, <row=Row()> )
+**语法:** y = Col Stored Value( &lt;dt&gt;, xCol, &lt;row=Row()&gt; )
 
 **说明:** 返回尚未应用列属性的列值。若未指定行选项，则假定为当前行。
 
@@ -42,9 +40,7 @@ Show( y1, y2, y3, y4 );
 
 ### Column
 
-**语法:** y = Column( name|number );
-
-y = Column( dataTable, name|number, <"formatted"> )
+**语法:** y = Column( name|number );y = Column( dataTable, name|number, &lt;"formatted"&gt; )
 
 **说明:** 返回指定数据表列的引用。关键字“formatted”允许访问带格式的数据，例如值标签。
 
@@ -93,7 +89,7 @@ Column Name( 4 );
 
 ### Count
 
-**语法:** y = Count( start, end, s, <n=1> )
+**语法:** y = Count( start, end, s, &lt;n=1&gt; )
 
 **说明:** 构建一个分 s 步从 start 增长到 end 的数值序列，其中每个数字重复 n 次，然后返回序列的第 i 个值，其中 i 由 Row() 函数的值确定。Count() 函数依赖于 Row() 函数，一般用于列公式。
 
@@ -117,7 +113,7 @@ For Each Row(
 
 ### Current Data Table
 
-**语法:** dt = Current Data Table( <Project(title|index|box|window)> ); Current Data Table( dt )
+**语法:** dt = Current Data Table( &lt;Project(title|index|box|window)&gt; ); Current Data Table( dt )
 
 **说明:** 返回当前数据表；如已指定，则使指定数据表成为当前数据表。
 
@@ -154,7 +150,7 @@ Data Table( 1 );
 
 ### Dif
 
-**语法:** y = Dif( x, <n=1> )
+**语法:** y = Dif( x, &lt;n=1&gt; )
 
 **说明:** 返回 x - Lag( x, n )，也被称为“第一个差值”。Dif() 依赖于 Row()，主要用于列公式。
 
@@ -186,7 +182,7 @@ Dim( [11 22, 33 44, 55 66] );
 
 ### Get Data Table
 
-**语法:** dt = Get Data Table( <Project(title|index|box|window)>, name|index )
+**语法:** dt = Get Data Table( &lt;Project(title|index|box|window)&gt;, name|index )
 
 **说明:** 返回指定数据表的引用。
 
@@ -211,7 +207,7 @@ Get Data Table( 1 );
 
 ### Get Data Table List
 
-**语法:** tableList = Get Data Table List( <Project(title|index|box|window)> )
+**语法:** tableList = Get Data Table List( &lt;Project(title|index|box|window)&gt; )
 
 **说明:** 返回所有打开数据表的列表。
 
@@ -248,7 +244,7 @@ Get Data Table List( Project( project ) );
 
 ### Lag
 
-**语法:** y = Lag( <x>, <n=1> )
+**语法:** y = Lag( &lt;x&gt;, &lt;n=1&gt; )
 
 **说明:** 返回当前行设置为 Row() - n 的 x 参数的值。Lag() 依赖于 Row()，主要用于列公式。
 
@@ -329,7 +325,7 @@ d;
 
 ### New Column
 
-**语法:** dc = New Column( name, <"Numeric"|"Character"|"RowState"|"Expression">, <"Continuous"|"Ordinal"|"Nominal"|"Multiple Response"|"Unstructured Text"|"Vector"|"None">, <Width( n )|Format(format name, width, precision)>, <Like(:other column)>, <actions> )
+**语法:** dc = New Column( name, &lt;"Numeric"|"Character"|"RowState"|"Expression"&gt;, &lt;"Continuous"|"Ordinal"|"Nominal"|"Multiple Response"|"Unstructured Text"|"Vector"|"None"&gt;, &lt;Width( n )|Format(format name, width, precision)&gt;, &lt;Like(:other column)&gt;, &lt;actions&gt; )
 
 **说明:** 在当前数据表中创建一个新列。可选 actions 参数是数据列所支持的任何消息。
 
@@ -357,7 +353,7 @@ New Column( "example", "Numeric", "Continuous", Width( 5 ), <<Set Each Value( 10
 
 ### New Column by Text Matching
 
-**语法:** dc = New Column by Text Matching( Column(:name), Set Regex(), <Output Column Name("Name")>, <Use Result(0 | 1)> )
+**语法:** dc = New Column by Text Matching( Column(:name), Set Regex(), &lt;Output Column Name("Name")&gt;, &lt;Use Result(0 | 1)&gt; )
 
 **说明:** 通过对现有列执行正则表达式模式匹配来创建新列。
 
@@ -378,7 +374,7 @@ New Column by Text Matching(
 
 ### New Table
 
-**语法:** dt = New Table( name, <visibility("private"|"invisible"|"visible")>, <Enable Filter Views(bool)>, <actions> )
+**语法:** dt = New Table( name, &lt;visibility("private"|"invisible"|"visible")&gt;, &lt;Enable Filter Views(bool)&gt;, &lt;actions&gt; )
 
 **说明:** 创建新数据表。"Invisible" 在视图中隐藏数据表，但在“JMP 主窗口”中列出它。"Private" 完全隐藏表。"Visible" 是默认值，创建可见并在“JMP 主窗口”中列出的正常表。可选 actions 参数是数据表支持的任何消息。
 
@@ -429,7 +425,7 @@ Row() = 0;
 
 ### Sequence
 
-**语法:** y = Sequence( start, end, <incr=1>, <n=1> )
+**语法:** y = Sequence( start, end, &lt;incr=1&gt;, &lt;n=1&gt; )
 
 **说明:** 以 incr 为增量构建一个从 start 到 end 的数字序列，其中每个数字重复 n 次，然后返回该序列的第 Row() 项。由于它依赖于 Row()，Sequence() 函数主要用于列公式。要将序列创建为 JSL 矩阵，请参见 Index()。
 
@@ -445,7 +441,7 @@ Sequence( 1, 9, 2 );
 
 ### Subscribe to Data Table List
 
-**语法:** aSub = Subscribe to Data Table List( <subscriber name | "">, <OnOpen(fn) | OnClose(fn) | On Rename(fn)>)
+**语法:** aSub = Subscribe to Data Table List( &lt;subscriber name | ""&gt;, &lt;OnOpen(fn) | OnClose(fn) | On Rename(fn)&gt;)
 
 **说明:** 订阅当添加或关闭新数据表时要通知的数据表列表。
 
@@ -513,7 +509,7 @@ Names Default To Here( 1 );
 
 ### Suppress Formula Eval
 
-**语法:** Suppress Formula Eval( <suppress=1> )
+**语法:** Suppress Formula Eval( &lt;suppress=1&gt; )
 
 **说明:** 若参数并非为零，则禁止所有数据表中公式的计算。
 
@@ -528,7 +524,7 @@ Suppress Formula Eval( 1 );
 
 ### Unsubscribe to Data Table List
 
-**语法:** aSub = Unsubscribe to Data Table List(<subscriber name>, <"OnOpen" | "OnClose" | "OnRename" | "ALL">)
+**语法:** aSub = Unsubscribe to Data Table List(&lt;subscriber name&gt;, &lt;"OnOpen" | "OnClose" | "OnRename" | "ALL"&gt;)
 
 **说明:** 删除通过“订阅数据表列表”命令添加的数据表列表订阅。
 

@@ -6,7 +6,7 @@
 
 ### Create Folder
 
-**Syntax:** liveresult = liveconnection << Create Folder(Title(folder_title), Parent Folder(id | path | JMP Live Folder), <Description(folder_description)>, <If Exists("use" | "fail" | "default")>)
+**Syntax:** liveresult = liveconnection &lt;&lt; Create Folder(Title(folder_title), Parent Folder(id | path | JMP Live Folder), &lt;Description(folder_description)&gt;, &lt;If Exists("use" | "fail" | "default")&gt;)
 
 **Beschreibung:** Erstellt einen neuen Ordner in JMP Live. Gibt ein JMP Live-Ergebnis zurück, das verwendet werden kann, um das JMP Live-Ordnerobjekt für den neuen Ordner abzurufen. Title und Parent Folder sind erforderliche Parameter. Parent Folder kann zu Parent oder Folder abgekürzt werden. Beschreibung ist optional. „If Exists“ teilt JMP Live mit, was zu tun ist, wenn der angegebene Ordner bereits existiert: „use“ bedeutet, dass nur der vorhandene Ordner zurückgegeben wird, „fail“ bedeutet, dass ein Fehler ausgegeben wird, und „default“ bedeutet, dass ein neuer Ordner erstellt wird und sein Name durch Hinzufügen von „(2)“, „(3)“ usw. eindeutig gemacht wird.
 
@@ -86,7 +86,7 @@ Show( subFolder2 );
 
 ### Delete Data
 
-**Syntax:** jmpliveresult = liveconnection << Delete Data(id | path | JMP Live Data)
+**Syntax:** jmpliveresult = liveconnection &lt;&lt; Delete Data(id | path | JMP Live Data)
 
 **Beschreibung:** Löscht den angegebenen Datenbeitrag. Gibt zurück, ob die Aktion erfolgreich war (1) oder nicht (0).
 
@@ -136,7 +136,7 @@ If( result == 1,
 
 ### Delete Folder
 
-**Syntax:** jmpliveresult = liveconnection << Delete Folder(id | path | JMP Live Folder)
+**Syntax:** jmpliveresult = liveconnection &lt;&lt; Delete Folder(id | path | JMP Live Folder)
 
 **Beschreibung:** Löscht den angegebenen Ordner. Gibt zurück, ob die Aktion erfolgreich war (1) oder nicht (0).
 
@@ -186,7 +186,7 @@ If( result == 1,
 
 ### Delete Report
 
-**Syntax:** jmpliveresult = liveconnection << Delete Report(id | path | JMP Live Report)
+**Syntax:** jmpliveresult = liveconnection &lt;&lt; Delete Report(id | path | JMP Live Report)
 
 **Beschreibung:** Löscht den angegebenen Bericht. Gibt zurück, ob die Aktion erfolgreich war (1) oder nicht (0).
 
@@ -236,7 +236,7 @@ If( result == 1,
 
 ### Find Folders
 
-**Syntax:** jmpliveresult = liveconnection << Find Folders(<Search(search_string)>, <Publisher(user_name)>, <PageSize(val)>)
+**Syntax:** jmpliveresult = liveconnection &lt;&lt; Find Folders(&lt;Search(search_string)&gt;, &lt;Publisher(user_name)&gt;, &lt;PageSize(val)&gt;)
 
 **Beschreibung:** Findet Ordner nach Suchzeichenkette, Herausgeber oder beidem. Gibt eine JMP Live-Ergebnisliste zurück, die für den Verweis auf einzelne Ordner verwendet werden kann. Nachfolgende Next()-Aufrufe in dieser Liste geben weitere Ordner zurück. PageSize gibt an, wie viele Ordner zurückgegeben werden sollen, der Standardwert ist 10. Alle Suchparameter sind optional, und wenn keine angegeben werden, werden alle Ordner zurückgegeben.
 
@@ -305,7 +305,7 @@ For( i = 1, i <= folderlist << Get Number Of Items, i += 1,
 
 ### Find Posts
 
-**Syntax:** jmpliveresult = liveconnection << Find Posts(<Search(search_string)>, <Publisher(user_name)>, <PageSize(val)>)
+**Syntax:** jmpliveresult = liveconnection &lt;&lt; Find Posts(&lt;Search(search_string)&gt;, &lt;Publisher(user_name)&gt;, &lt;PageSize(val)&gt;)
 
 **Beschreibung:** Findet Beiträge (alle Elemente einschließlich Ordner, Berichte und Daten) nach Suchzeichenkette, Herausgeber oder beidem. Gibt eine JMP Live-Ergebnisliste zurück, die für den Verweis auf einzelne Beiträge verwendet werden kann. Nachfolgende Next()-Aufrufe in dieser Liste geben weitere Beiträge zurück. PageSize gibt an, wie viele Beiträge zurückgegeben werden sollen, der Standardwert ist 10. Alle Suchparameter sind optional, und wenn keine angegeben werden, werden alle Beiträge zurückgegeben.
 
@@ -387,7 +387,7 @@ For( i = 1, i <= postlist << Get Number Of Items, i += 1,
 
 ### Find Reports
 
-**Syntax:** jmpliveresult = liveconnection << Find Reports(<Search(search_string)>, <Publisher(user_name)>, <PageSize(val)>)
+**Syntax:** jmpliveresult = liveconnection &lt;&lt; Find Reports(&lt;Search(search_string)&gt;, &lt;Publisher(user_name)&gt;, &lt;PageSize(val)&gt;)
 
 **Beschreibung:** Findet Berichte nach Suchzeichenkette, Herausgeber oder beidem. Gibt eine JMP Live-Ergebnisliste zurück, die für den Verweis auf einzelne Berichte verwendet werden kann. Nachfolgende Next()-Aufrufe in dieser Liste geben weitere Berichte zurück. PageSize gibt an, wie viele Berichte zurückgegeben werden sollen, der Standardwert ist 10. Alle Suchparameter sind optional, und wenn keine angegeben werden, werden alle Berichte zurückgegeben.
 
@@ -469,7 +469,7 @@ For( i = 1, i <= reportlist << Get Number Of Items, i += 1,
 
 ### Find Spaces
 
-**Syntax:** jmpliveresult = liveconnection << Find Spaces(<Permissions( "Contribute" )>, <Search(search_string)>, <PageSize(val)>)
+**Syntax:** jmpliveresult = liveconnection &lt;&lt; Find Spaces(&lt;Permissions( "Contribute" )&gt;, &lt;Search(search_string)&gt;, &lt;PageSize(val)&gt;)
 
 **Beschreibung:** Findet Arbeitsbereiche anhand einer optionalen Suchzeichenkette und eines optionalen Berechtigungsparameters, um die Arbeitsbereiche weiter zu filtern und nur diejenigen zu finden, die Beiträge zulassen. Derzeit wird nur die Berechtigung „Beitragen“ unterstützt. Gibt eine JMP-Live-Ergebnisliste zurück, die verwendet werden kann, um einzelne Arbeitsbereiche innerhalb der Liste zu referenzieren. Es kann ein Seitenwert angegeben werden, der angibt, wie viele Arbeitsbereichselemente in der Ergebnisliste zurückgegeben werden sollen. Zusätzliche Next()-Aufrufe können auf diese Ergebnisliste angewandt werden, um weitere Arbeitsbereiche abzurufen.
 
@@ -517,7 +517,7 @@ For( i = 1, i <= spaceList << Get Number Of Items, i += 1,
 
 ### Get Connection Name
 
-**Syntax:** string = liveconnection << Get Connection Name()
+**Syntax:** string = liveconnection &lt;&lt; Get Connection Name()
 
 **Beschreibung:** Ruft den Namen der JMP Live-Verbindung als Zeichenkette ab.
 
@@ -534,7 +534,7 @@ Write( "Connection Name: ", connectionname );
 
 ### Get Data
 
-**Syntax:** liveresult = liveconnection << Get Data(id | path)
+**Syntax:** liveresult = liveconnection &lt;&lt; Get Data(id | path)
 
 **Beschreibung:** Ruft einen Datenbeitrag als JMP Live-Ergebnisobjekt ab, das verwendet werden kann, um das JMP Live-Datenobjekt für diesen Beitrag abzurufen.
 
@@ -579,7 +579,7 @@ Write( "\!n\!nData post retrieved by path: ", dataPost );
 
 ### Get Folder
 
-**Syntax:** liveresult = liveconnection << Get Folder(id | path)
+**Syntax:** liveresult = liveconnection &lt;&lt; Get Folder(id | path)
 
 **Beschreibung:** Ruft ein Ordnerobjekt als JMP Live-Ergebnisobjekt ab, das verwendet werden kann, um das JMP Live-Ordnerobjekt für den Ordner abzurufen.
 
@@ -612,7 +612,7 @@ Write( "\!n\!nPath of retrieved folder: ", retrieved << Get Path );
 
 ### Get HTTP Request
 
-**Syntax:** httprequest = liveconnection << Get HTTP Request()
+**Syntax:** httprequest = liveconnection &lt;&lt; Get HTTP Request()
 
 **Beschreibung:** Gibt eine HTTP-Request-Instanz aus, mit der JMP Live REST-Funktionen aufgerufen werden können.
 
@@ -631,7 +631,7 @@ httprequest << Get Status Message();
 
 ### Get Post
 
-**Syntax:** liveresult = liveconnection << Get Post(id | path)
+**Syntax:** liveresult = liveconnection &lt;&lt; Get Post(id | path)
 
 **Beschreibung:** Ruft einen Beitrag als JMP Live-Ergebnisobjekt ab, das verwendet werden kann, um das JMP Live-Beitragsobjekt für diesen Beitrag abzurufen.
 
@@ -671,7 +671,7 @@ Write( "\!n\!nPost retrieved by path: ", postByPath );
 
 ### Get Report
 
-**Syntax:** liveresult = liveconnection << Get Report(id | path)
+**Syntax:** liveresult = liveconnection &lt;&lt; Get Report(id | path)
 
 **Beschreibung:** Ruft einen Berichtsbeitrag als JMP Live-Ergebnisobjekt ab, das verwendet werden kann, um das JMP Live-Berichtsobjekt für diesen Beitrag abzurufen.
 
@@ -717,7 +717,7 @@ Write( "\!n\!nReport post retrieved by path: ", reportPost );
 
 ### Get URL
 
-**Syntax:** string = liveconnection << Get URL()
+**Syntax:** string = liveconnection &lt;&lt; Get URL()
 
 **Beschreibung:** Ruft die URL der JMP Live-Website ab, sofern verfügbar.
 
@@ -734,7 +734,7 @@ Write( "URL: ", url );
 
 ### Get Username
 
-**Syntax:** string = liveconnection << Get Username()
+**Syntax:** string = liveconnection &lt;&lt; Get Username()
 
 **Beschreibung:** Ruft den Benutzernamen vom JMP Live-Objekt ab, sofern verfügbar.
 
@@ -751,7 +751,7 @@ Write( "Username: ", username );
 
 ### Is Logged In
 
-**Syntax:** value = liveconnection << Is Logged In()
+**Syntax:** value = liveconnection &lt;&lt; Is Logged In()
 
 **Beschreibung:** Zeigt an, ob eine authentifizierte Sitzung auf dem Server eingerichtet wurde. Gibt zurück, ob die Aktion erfolgreich war (1) oder nicht (0).
 
@@ -768,7 +768,7 @@ Write( "Logged In: ", isloggedin );
 
 ### Publish
 
-**Syntax:** liveresult = liveconnection << Publish(JMPLiveContent, Folder(id | path | JMP Live Folder), <Use Existing Data({{dt_or_name, data_id | data_path | JMP Live Data}})>)
+**Syntax:** liveresult = liveconnection &lt;&lt; Publish(JMPLiveContent, Folder(id | path | JMP Live Folder), &lt;Use Existing Data({{dt_or_name, data_id | data_path | JMP Live Data}})&gt;)
 
 **Beschreibung:** Berichte oder eigenständige Daten in JMP Live veröffentlichen. Gibt ein JMP Live-Ergebnislistenobjekt zurück. Sie müssen den Ordner in JMP Live angeben, in dem der Inhalt veröffentlicht werden soll. Das Mischen von Berichten und eigenständigen Daten in einem einzigen Veröffentlichungsbefehl ist nicht zulässig. Wenn der Bericht beim Veröffentlichen von Berichten Daten verwenden soll, die bereits in JMP Live vorhanden sind, kann der optionale Parameter „Use Existing Data“ verwendet werden, um dies anzugeben. Der Parameter „Use Existing Data“ ist beim Veröffentlichen eigenständiger Daten nicht gültig.
 
@@ -955,7 +955,7 @@ For( i = 1, i <= postlist << Get Number Of Items, i += 1,
 
 ### Replace
 
-**Syntax:** liveresult = liveconnection << Replace(JMPLiveContent, Report(id | path | JMP Live Report), <Use Existing Data({{dt_or_name, data_id | data_path | JMP Live Data}})>, <Update Existing Data({{dt_or_name, data_id | data_path | JMP Live Data}})>, <Publish New Data({dt_or_name})> )
+**Syntax:** liveresult = liveconnection &lt;&lt; Replace(JMPLiveContent, Report(id | path | JMP Live Report), &lt;Use Existing Data({{dt_or_name, data_id | data_path | JMP Live Data}})&gt;, &lt;Update Existing Data({{dt_or_name, data_id | data_path | JMP Live Data}})&gt;, &lt;Publish New Data({dt_or_name})&gt; )
 
 **Beschreibung:** Ersetzt einen vorhandenen JMP Live-Bericht mit einem anderen Bericht. Die Datenoptionen sind erforderlich, um anzugeben, wie die im Bericht gelieferten Daten verwaltet werden sollen. „Use Existing Data“ weist den Server an, die vorhandenen Daten in JMP Live für die angegebenen Daten zu verwenden. „Update Existing Data“ weist den Server an, die Daten auf dem Server mit den im Befehl angegebenen Daten zu ersetzen. „Publish New Data“ weist den Server an, eine neue Datentabelle zu veröffentlichen und sie für den zu ersetzenden Bericht zu verwenden. „Neue Daten veröffentlichen“ ist die Standard-Datenoption für alle Datentabellen. Jede Kombination der Datenoptionen kann angegeben werden. Gibt eine JMP Live-Ergebnisliste zurück.
 
@@ -1069,7 +1069,7 @@ Write( "\!n\!nOpen this URL to see results: ", folderURL );
 
 ### Update Data
 
-**Syntax:** jmpliveresult = liveconnection << Update Data( Data(id | path | JMP Live Data), dataTable | path | JMPLiveContent )
+**Syntax:** jmpliveresult = liveconnection &lt;&lt; Update Data( Data(id | path | JMP Live Data), dataTable | path | JMPLiveContent )
 
 **Beschreibung:** Aktualisiert die Datentabelle oder Karte für einen Datenbeitrag mit den angegebenen Inhalten. Der Parameter Data identifiziert die in JMP Live zu aktualisierenden Daten. Der zweite Parameter ist der für die Aktualisierung zu verwendende Inhalt. Es kann ein Datentabellenobjekt, ein Pfad zu einer Datentabelle oder ein JMP Live Content-Objekt sein, das aus einer Datentabelle oder Karte erstellt wurde.
 

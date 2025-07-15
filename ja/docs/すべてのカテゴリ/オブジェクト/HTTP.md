@@ -8,7 +8,7 @@
 
 #### Authentication Method
 
-**構文:** obj << Authentication Method(method)
+**構文:** obj &lt;&lt; Authentication Method(method)
 
 **説明:** 認証メソッドを適用する。有効な値:
 
@@ -61,7 +61,7 @@ request << Authentication Method( "KERBEROS" );
 
 #### Blob
 
-**構文:** obj << Blob( binary data, <content-type> )
+**構文:** obj &lt;&lt; Blob( binary data, &lt;content-type&gt; )
 
 **説明:** リクエストのBLOB値を設定する。BLOB値は、リクエストの本体に使用される。リクエストのヘッダは、自動的に"Content-Type: application/octet-stream"に設定される。
 
@@ -84,7 +84,7 @@ data = request << Send;
 
 #### Bypass Proxy
 
-**構文:** obj << Bypass Proxy(localhost)
+**構文:** obj &lt;&lt; Bypass Proxy(localhost)
 
 **説明:** プロキシを使用しないホストのカンマ区切りのリスト。ワイルドカードとしては1つの「*」のみ使用できる。これはすべてのホストに一致するため、実質的にプロキシを無効にする。リスト内の名前は、該当するホスト名を含む含むドメイン、またはホスト名自体とマッチする。たとえば、local.comは、local.com、local.com:80、www.local.comにはマッチするが、www.notlocal.comにはマッチしない。
 
@@ -103,7 +103,7 @@ request << Bypass Proxy( "localhost" );
 
 #### Certificates
 
-**構文:** obj << Certificates(certificate file)
+**構文:** obj &lt;&lt; Certificates(certificate file)
 
 **説明:** 指定された証明書を使って検証を行う。ファイルには複数のCA証明書が含まれる場合がある。証明書はPEM形式でなければならない。
 
@@ -120,7 +120,7 @@ request << Certificates( "c:\certs\my_certificate.crt" );
 
 #### Cookie
 
-**構文:** obj << Cookie([[ key=> value ]]
+**構文:** obj &lt;&lt; Cookie([[ key=&gt; value ]]
 
 **説明:** リクエストにcookieを設定する。
 
@@ -141,7 +141,7 @@ data = request << Send;
 
 #### Cookie File
 
-**構文:** obj << Cookie File(<path>, <"replace" | "rename" | "append">)
+**構文:** obj &lt;&lt; Cookie File(&lt;path&gt;, &lt;"replace" | "rename" | "append"&gt;)
 
 **説明:** 別のCookieファイルを指定してください。
 
@@ -158,7 +158,7 @@ data = request << Cookie File( "$DESKTOP\..\cookie.txt" );
 
 #### Curlrc
 
-**構文:** obj << Curlrc(<true | false>)
+**構文:** obj &lt;&lt; Curlrc(&lt;true | false&gt;)
 
 **説明:** 標準の.curlファイルを使用する。
 
@@ -177,7 +177,7 @@ request << Curlrc( "true" );
 
 #### Curlrc File
 
-**構文:** obj << Curlrc File(<path>)
+**構文:** obj &lt;&lt; Curlrc File(&lt;path&gt;)
 
 **説明:** 代替の.curlrcファイルを使用する。
 
@@ -197,7 +197,7 @@ request << Curlrc( "true" );
 
 #### DNS Timeout
 
-**構文:** obj << DNS Timeout(seconds)
+**構文:** obj &lt;&lt; DNS Timeout(seconds)
 
 **説明:** 接続のDNSキャッシュのタイムアウトはデフォルトで60秒に設定されている。この値はDNSキャッシュに合わせて調整できる。0に設定するとキャッシュが無効になり、-1に設定するとエントリがメモリにキャッシュされる。
 
@@ -222,7 +222,7 @@ obj = New Window( "Mastering JMP", img );
 
 #### Decode64 Char
 
-**構文:** obj << Decode64 Char( value )
+**構文:** obj &lt;&lt; Decode64 Char( value )
 
 **説明:** Base 64エンコーディングで文字列をデコードする。
 
@@ -241,7 +241,7 @@ data = request << Decode64 Char(
 
 #### Download
 
-**構文:** obj << Download( path, <"replace" | "rename" | "append"> )
+**構文:** obj &lt;&lt; Download( path, &lt;"replace" | "rename" | "append"&gt; )
 
 **説明:** HTTPレスポンスをファイルにダウンロードする。Webサービスからファイルをダウンロードする場合に有用。replaceオプションは、既存のファイルを上書きする。renameオプションは、重複する名前が見つかった場合、通し番号を付けたファイル名を使用する（file、file(1)、file(2)...）。appendオプションは、既存のファイルに追加する。show progressを使用すると、ダウンロードをキャンセルすることも可能な、ダウンロードのプログレスバーが表示される。
 
@@ -266,7 +266,7 @@ If( !Is Empty( file ),
 
 #### Encode64 Char
 
-**構文:** obj << Encode64 Char( value )
+**構文:** obj &lt;&lt; Encode64 Char( value )
 
 **説明:** Base 64エンコーディングで文字列をエンコードする。
 
@@ -283,7 +283,7 @@ data = request << Encode64 Char( "Man is distinguished, not only by his reason, 
 
 #### File
 
-**構文:** obj << File ( path, <content-type> )
+**構文:** obj &lt;&lt; File ( path, &lt;content-type&gt; )
 
 **説明:** リクエストにFile値を設定する。Fileのコンテンツが文書の本体に使用される。リクエストにおけるコンテンツタイプを示すヘッダは、ファイル拡張子(ない場合はapplication/octet-stream)に基づいて自動的に適切なコンテンツに設定される。
 
@@ -305,7 +305,7 @@ data = request << Send;
 
 #### Form
 
-**構文:** obj << Form(Fields([[ key=> value ]], <URI Encode(1 | 0 | Safe(...))>), Files({ key1, {path1, path2, ..}, key2, {path3, path4} }))
+**構文:** obj &lt;&lt; Form(Fields([[ key=&gt; value ]], &lt;URI Encode(1 | 0 | Safe(...))&gt;), Files({ key1, {path1, path2, ..}, key2, {path3, path4} }))
 
 **説明:** リクエストのフォームデータ値を設定する。指定されたフォームは、文書の本体として使用される。フォームのデータには、フィールドやファイルを要素として含めることができる。
 
@@ -336,7 +336,7 @@ data = request << Send;
 
 #### Get Certificate Info
 
-**構文:** obj << Get Certificate Info
+**構文:** obj &lt;&lt; Get Certificate Info
 
 **説明:** 証明書の詳細を表示する。発行者、有効期限などの情報から証明書の信頼性を確認できる。
 
@@ -353,7 +353,7 @@ request << Get Certificate Info;
 
 #### Get Last URL
 
-**構文:** obj << Get Last URL
+**構文:** obj &lt;&lt; Get Last URL
 
 **説明:** リクエストで前回使用されたURLを取得する。リダイレクトされたURLを見つけるのに役立つ。
 
@@ -372,7 +372,7 @@ Write( Char( request << Get Last URL ) );
 
 #### Get MIME Type
 
-**構文:** mimetype = obj << Get MIME Type
+**構文:** mimetype = obj &lt;&lt; Get MIME Type
 
 **説明:** リクエストでSend(またはDownload)が行われた場合、これを使って、戻されたデータのMIMEタイプを取得できる。
 
@@ -391,7 +391,7 @@ Write( request << Get Mime Type() || "\!n" );
 
 #### Get Method
 
-**構文:** obj << Get Last Method
+**構文:** obj &lt;&lt; Get Last Method
 
 **説明:** リクエストで最後に使用されたHTTPメソッドを取得する。
 
@@ -415,7 +415,7 @@ Write( Char( request << Get Method ) || "\!n" );
 
 #### Get Response Headers
 
-**構文:** obj << Get Response Headers
+**構文:** obj &lt;&lt; Get Response Headers
 
 **説明:** リクエストが送信された後に戻される返答のヘッダを戻す。この戻り値は、キー/値のペアで構成される連想配列の形式となっている。HTTPヘッダの定義については、https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.htmlを参照のこと。なお、Date、Expires、Last-Modifiedキーは、JMPの日付形式に変換される。また、AgeおよびContent-Lengthキーは数字に変換される。その他の値は文字に変換される。
 
@@ -441,7 +441,7 @@ For( i = 1, i <= N Items( keys ), i++,
 
 #### Get Status
 
-**構文:** obj << Get Status
+**構文:** obj &lt;&lt; Get Status
 
 **説明:** Sendの後にリクエストのステータスを戻す。接続エラーがなければHTTPステータス、それ以外の場合は接続ステータスがステータスとなる。200～299は正常であることを示す。
 
@@ -462,7 +462,7 @@ If( request << Get Status == 200,
 
 #### Get Status Message
 
-**構文:** obj << Get Status Message
+**構文:** obj &lt;&lt; Get Status Message
 
 **説明:** Sendの後にリクエストのステータスメッセージを戻す。接続エラーがなければHTTPステータス、それ以外の場合は接続ステータスがステータスとなる。200～299は正常であることを示す。
 
@@ -481,7 +481,7 @@ Write( "\!n" || Char( request << Get Status Message ) || "\!n" );
 
 #### Get Status Msg
 
-**構文:** obj << Get Status Msg
+**構文:** obj &lt;&lt; Get Status Msg
 
 **説明:** Sendの後にリクエストのステータスメッセージを戻す。GetStatusMessageの別名。接続エラーがなければHTTPステータス、それ以外の場合は接続ステータスがステータスとなる。200～299は正常であることを示す。
 
@@ -500,7 +500,7 @@ Write( "\!n" || Char( request << Get Status Msg ) || "\!n" );
 
 #### Get Warning Headers
 
-**構文:** obj << Get Warning Headers
+**構文:** obj &lt;&lt; Get Warning Headers
 
 **説明:** リクエストのwarningヘッダの値(存在する場合)を取得する。
 
@@ -528,7 +528,7 @@ If( !Is Empty( warning_headers ),
 
 #### GetVersion
 
-**構文:** request << GetVersion
+**構文:** request &lt;&lt; GetVersion
 
 **説明:** JMPで現在使用されているcURLのバージョンを戻す。
 
@@ -543,7 +543,7 @@ Write( New HTTP Request() << GetVersion );
 
 #### Has Client Error
 
-**構文:** obj << Has Client Error
+**構文:** obj &lt;&lt; Has Client Error
 
 **説明:** HTTPのステータスが400～499の場合にtrue。
 
@@ -565,7 +565,7 @@ Write( msg );
 
 #### Has Error
 
-**構文:** obj << Has Error
+**構文:** obj &lt;&lt; Has Error
 
 **説明:** HTTPのステータスが400～599の場合にtrue。
 
@@ -587,7 +587,7 @@ Write( msg );
 
 #### Has Information
 
-**構文:** obj << Has Information
+**構文:** obj &lt;&lt; Has Information
 
 **説明:** HTTPのステータスが100～199の場合にtrue。
 
@@ -610,7 +610,7 @@ Write( msg );
 
 #### Has Redirection
 
-**構文:** obj << Has Redirection
+**構文:** obj &lt;&lt; Has Redirection
 
 **説明:** HTTPのステータスが300～399の場合にtrue。
 
@@ -633,7 +633,7 @@ Write( msg );
 
 #### Has Server Error
 
-**構文:** obj << Has Server Error
+**構文:** obj &lt;&lt; Has Server Error
 
 **説明:** HTTPのステータスが500～599の場合にtrue。
 
@@ -655,7 +655,7 @@ Write( msg );
 
 #### Has Warning
 
-**構文:** obj << Has Warning
+**構文:** obj &lt;&lt; Has Warning
 
 **説明:** HTTPステータスにwarningヘッダがある場合はtrue。
 
@@ -683,7 +683,7 @@ If( !request << Has Warning,
 
 #### Headers
 
-**構文:** obj << Headers({header 1}, {header 2} | [[ key=> value, key2=>value2 ]])
+**構文:** obj &lt;&lt; Headers({header 1}, {header 2} | [[ key=&gt; value, key2=&gt;value2 ]])
 
 **説明:** HTTPヘッダの定義については
 
@@ -712,7 +712,7 @@ Write( json || "\!n" );
 
 #### Insecure
 
-**構文:** obj << Insecure(<"true"> | <"false">) | <"prompt">
+**構文:** obj &lt;&lt; Insecure(&lt;"true"&gt; | &lt;"false"&gt;) | &lt;"prompt"&gt;
 
 **説明:** デフォルトではオンになっており、証明書の検証が行われる。trueに設定すると、証明書が検証されずにリクエストが実行される。promptに設定すると、ユーザは必要に応じて証明書を受け入れ、リクエストを実行できる。
 
@@ -737,7 +737,7 @@ obj = New Window( "Mastering JMP", img );
 
 #### Is Success
 
-**構文:** obj << Is Success
+**構文:** obj &lt;&lt; Is Success
 
 **説明:** HTTPのステータスが200～299の場合にtrue。
 
@@ -761,7 +761,7 @@ If( request << Is Success,
 
 #### Is Successful
 
-**構文:** obj << Is Successful
+**構文:** obj &lt;&lt; Is Successful
 
 **説明:** HTTPのステータスが200～299の場合にtrue。
 
@@ -791,7 +791,7 @@ If( request << Is Successful,
 
 #### Is Valid
 
-**構文:** obj << Is Valid
+**構文:** obj &lt;&lt; Is Valid
 
 **説明:** リクエストが有効かどうかを確認する
 
@@ -808,7 +808,7 @@ data = request << Is Valid();
 
 #### Is Verbose
 
-**構文:** obj << Is Verbose
+**構文:** obj &lt;&lt; Is Verbose
 
 **説明:** リクエストのログ出力のステータスを戻す。
 
@@ -825,7 +825,7 @@ data = request << Is Verbose();
 
 #### JSON
 
-**構文:** obj << JSON( json data )
+**構文:** obj &lt;&lt; JSON( json data )
 
 **説明:** リクエストのJSON文字列を設定する。指定されたJSON文字列は、リクエストの本体に使用される。リクエストのヘッダは、自動的に"Content-Type: application/json"に設定される。なお、As JSON Exprメソッドによって連想配列をJSON文字列に変換できる。
 
@@ -846,7 +846,7 @@ data = request << Send;
 
 #### Max Redirect
 
-**構文:** obj << Max Redirect(...)
+**構文:** obj &lt;&lt; Max Redirect(...)
 
 **説明:** リクエストでのリダイレクトの数を指定する。
 
@@ -868,7 +868,7 @@ data = request << Send;
 
 #### Method
 
-**構文:** obj << Method("Post" | "Get" | "Put" | "Patch"| "Delete")
+**構文:** obj &lt;&lt; Method("Post" | "Get" | "Put" | "Patch"| "Delete")
 
 **説明:** リクエストのメソッドを設定する。現在、Get、Post、Put、Patch、Delete、Headがサポートされている。
 
@@ -891,7 +891,7 @@ dt << Delete Rows();
 
 #### Netrc
 
-**構文:** obj << Netrc(<true | false>)
+**構文:** obj &lt;&lt; Netrc(&lt;true | false&gt;)
 
 **説明:** 接続する時に標準の.netrcファイルを使用する。
 
@@ -942,7 +942,7 @@ request << Netrc( "true" );
 
 #### Netrc File
 
-**構文:** obj << Netrc File(<path>)
+**構文:** obj &lt;&lt; Netrc File(&lt;path&gt;)
 
 **説明:** 接続する時に、標準ではない、代替の.netrcファイルを使用する。
 
@@ -992,7 +992,7 @@ request << Netrc( "true" );
 
 #### Password
 
-**構文:** obj << Password(passwd)
+**構文:** obj &lt;&lt; Password(passwd)
 
 **説明:** リクエストにおける基本的な認証に使うユーザ名を設定する。ユーザ名として指定された値は、パスワードとともにWebサービスに渡される。その際、ユーザ名とパスワードは、&apos;:&apos;で連結され、「name:password」という形式でWebサービスに渡される。なお、(Kerberos V5などで)エンコードされたユーザ名/パスワード値を使用することができる。
 
@@ -1015,7 +1015,7 @@ data = request << Send;
 
 #### Proxy Server
 
-**構文:** obj << Proxy Server(proxy_url)
+**構文:** obj &lt;&lt; Proxy Server(proxy_url)
 
 **説明:** プロキシURLは、proxy環境変数と同様、プロトコル接頭辞(http://)を含み、ユーザおよびパスワードを埋め込んで指定できる。
 
@@ -1033,7 +1033,7 @@ request << Proxy Server( url );
 
 #### Proxy User
 
-**構文:** obj << Proxy User(username:password)
+**構文:** obj &lt;&lt; Proxy User(username:password)
 
 **説明:** プロキシ文字列で指定されるユーザ名およびパスワードは、URLデコードされる。そのため、%40を使って@を指定したり、%3aを使ってコロンを指定したりできる。
 
@@ -1052,7 +1052,7 @@ request << Proxy User( "clark%20kent:superman" );
 
 #### Query String
 
-**構文:** obj << Query String([[ key=> value ]], <URI Encode(1|0|Safe(...))>)
+**構文:** obj &lt;&lt; Query String([[ key=&gt; value ]], &lt;URI Encode(1|0|Safe(...))&gt;)
 
 **説明:** リクエストのQuery String値を設定する。文字データのキー/値をもつ連想配列で指定する。なお、指定されたキー/値のペアは、Webサービスへの送信時にURLエンコード(エスケープ)される。
 
@@ -1073,7 +1073,7 @@ data = request << Send;
 
 #### Reset
 
-**構文:** obj << Reset(URL(...), Method(...), <Form(<Fields(...)>, <Files(...)>)> | <File(...)> | <Blob(...)> | <JSON(...)>, <QueryString(...)>, <Headers(...)>, <Username(...)>, <Password(...)>)
+**構文:** obj &lt;&lt; Reset(URL(...), Method(...), &lt;Form(&lt;Fields(...)&gt;, &lt;Files(...)&gt;)&gt; | &lt;File(...)&gt; | &lt;Blob(...)&gt; | &lt;JSON(...)&gt;, &lt;QueryString(...)&gt;, &lt;Headers(...)&gt;, &lt;Username(...)&gt;, &lt;Password(...)&gt;)
 
 **説明:** リクエストを新しい値にリセットする。
 
@@ -1092,7 +1092,7 @@ json2 = request << Send;
 
 #### Run
 
-**構文:** obj << Run
+**構文:** obj &lt;&lt; Run
 
 **説明:** リクエストを実行する。Sendの別名。Run will be either character data or binary BLOB. You can check the return with the Is String JSL関数からの戻り値。
 
@@ -1111,7 +1111,7 @@ Write( json || "\!n" );
 
 #### SSL Version
 
-**構文:** obj << SSL Version (version)
+**構文:** obj &lt;&lt; SSL Version (version)
 
 **説明:** "DEFAULT"  Use the default negotiated version (recommended).
 
@@ -1160,7 +1160,7 @@ request << SSL Version( "1+" );
 
 #### Secure
 
-**構文:** obj << Secure(<"true"> | <"false">) | <"prompt">
+**構文:** obj &lt;&lt; Secure(&lt;"true"&gt; | &lt;"false"&gt;) | &lt;"prompt"&gt;
 
 **説明:** デフォルトではオンになっており、証明書の検証が行われる。falseに設定すると、証明書が検証されずにリクエストが実行される。promptに設定すると、ユーザは必要に応じて証明書を受け入れ、リクエストを実行できる。
 
@@ -1185,7 +1185,7 @@ obj = New Window( "Mastering JMP", img );
 
 #### Send
 
-**構文:** obj << Send(<"text" | "blob">, <"show progress download" | "show progress upload" | "show progress both" | "show progress">)
+**構文:** obj &lt;&lt; Send(&lt;"text" | "blob"&gt;, &lt;"show progress download" | "show progress upload" | "show progress both" | "show progress"&gt;)
 
 **説明:** リクエストを送る。Sendの戻り値は、文字データまたはバイナリのBLOB。Is String JSL関数を使用して戻り値を確認できる。show progress downloadを使用すると、ダウンロードをキャンセルすることも可能な、ダウンロードのプログレスバーが表示される。show progress uploadを使用すると、アップロードをキャンセルすることも可能な、アップロードのプログレスバーが表示される。show progress bothを使用すると、データのアップロードとダウンロードのプログレスバーが表示される。show progressを使用すると、キャンセルも可能な、アップロードまたはダウンロード（またはその両方）のプログレスバーが表示される。フォームを投稿する場合、show progressでアップロードとダウンロードの進行状況が表示される。ファイルを投稿する場合、show progressでアップロードの進行状況が表示される。データを取得する場合、show progressでダウンロードの進行状況が表示される。
 
@@ -1204,7 +1204,7 @@ Write( json || "\!n" );
 
 #### Text
 
-**構文:** obj << Text( text data, <content-type>)
+**構文:** obj &lt;&lt; Text( text data, &lt;content-type&gt;)
 
 **説明:** リクエストのテキスト文字列を設定する。テキスト文字列は、リクエストのboty部分に使用される。リクエストのヘッダは、自動的に"Content-Type: text/plain"に設定される。
 
@@ -1225,7 +1225,7 @@ data = request << Send;
 
 #### Timeout
 
-**構文:** obj << Timeout(seconds)
+**構文:** obj &lt;&lt; Timeout(seconds)
 
 **説明:** リクエストアクションを完了する際のタイムアウト値はデフォルトで60秒。時間のかかるWebサービスアクションの場合は、値を調整できる。
 
@@ -1250,7 +1250,7 @@ obj = New Window( "Mastering JMP", img );
 
 #### URL
 
-**構文:** obj << URL(path)
+**構文:** obj &lt;&lt; URL(path)
 
 **説明:** リクエストを作成するときに(またはResetと共に使用するときに）パラメータとして指定できる。obj = HTTP Request(URL("http://google.com"));
 
@@ -1272,7 +1272,7 @@ s = New HTTP Request(
 
 #### Use Cookies
 
-**構文:** obj << Use Cookies(<true | false>))
+**構文:** obj &lt;&lt; Use Cookies(&lt;true | false&gt;))
 
 **説明:** セッションにcookieを使用するようリクエストを設定する。デフォルトの値はtrue。
 
@@ -1289,7 +1289,7 @@ data = request << Use Cookies( "false" );
 
 #### UserPwd
 
-**構文:** obj << UserPwd(clark kent:superman)
+**構文:** obj &lt;&lt; UserPwd(clark kent:superman)
 
 **説明:** 認証に使用するリクエストのユーザ名とパスワードのフィールドを設定する。形式は[user name]:[password]。ユーザ名とパスワードの文字列はURLデコードされないため、このオプションでコロンを含むユーザ名を送ることはできない。
 
@@ -1312,7 +1312,7 @@ data = request << Send;
 
 #### Username
 
-**構文:** obj << Username(name)
+**構文:** obj &lt;&lt; Username(name)
 
 **説明:** リクエストにおける基本的な認証に使うユーザ名を設定する。ユーザ名として指定された値は、パスワードとともにWebサービスに渡される。その際、ユーザ名とパスワードは、&apos;:&apos;で連結され、「name:password」という形式でWebサービスに渡される。
 
@@ -1336,7 +1336,7 @@ data = request << Send;
 
 #### Verbose
 
-**構文:** obj << Verbose(<"true"> | <"false">)
+**構文:** obj &lt;&lt; Verbose(&lt;"true"&gt; | &lt;"false"&gt;)
 
 **説明:** ログに詳細なエラーメッセージを書き込む。デフォルトはtrue。
 
@@ -1364,7 +1364,7 @@ Write( "\!n" || Char( request << Get Status Message ) || "\!n" );
 
 #### Verify SSL
 
-**構文:** obj << Verify SSL(<"true"> | <"false">)
+**構文:** obj &lt;&lt; Verify SSL(&lt;"true"&gt; | &lt;"false"&gt;)
 
 **説明:** 証明書の検証がオンになっている。falseに設定すると、証明書が検証されずにリクエストが実行される。
 
@@ -1389,7 +1389,7 @@ obj = New Window( "Mastering JMP", img );
 
 #### XML
 
-**構文:** obj << XML( xml data )
+**構文:** obj &lt;&lt; XML( xml data )
 
 **説明:** リクエストのXML文字列を設定する。XML文字列は、リクエストのbody部分に使用される。リクエストのヘッダは、自動的に"Content-Type: application/xml"に設定される。
 
@@ -1424,7 +1424,7 @@ data = request << Send;
 
 #### Add
 
-**構文:** obj << Add(request, <label>)
+**構文:** obj &lt;&lt; Add(request, &lt;label&gt;)
 
 **説明:** HTTP RequestをMultiHTTPRequestに追加する。オプションでラベルを使用できる。これはパラレルダウンロードを行う場合に有用。すべてのHTTP Requestは、使用される前に検証される。
 
@@ -1464,7 +1464,7 @@ For( i = 1, i <= N Items( http_requests ), i++,
 
 #### Download
 
-**構文:** obj << Download(<"show progress">, <"detailed">)
+**構文:** obj &lt;&lt; Download(&lt;"show progress"&gt;, &lt;"detailed"&gt;)
 
 **説明:** HTTPレスポンスのファイルへのダウンロードをパラレルに行う。1つ以上のWebサービスから、複数のファイルを一度にダウンロードする場合に有用。show progressを使用すると、ダウンロードをキャンセルすることも可能な、ダウンロードのプログレスバーが表示される。detailsを使うと、個別のダウンロードの進行状況が表示される。
 
@@ -1533,7 +1533,7 @@ promise << On Error( process_error );
 
 #### Get Requests
 
-**構文:** obj << Get Requests()
+**構文:** obj &lt;&lt; Get Requests()
 
 **JMP追加されたバージョン:** 17
 
@@ -1564,7 +1564,7 @@ http_requests = requests << Get Requests();
 
 #### Has Error
 
-**構文:** obj << Has Error
+**構文:** obj &lt;&lt; Has Error
 
 **説明:** 複数のリクエストにエラーがある場合は、Trueを戻す。複数のリクエストは、そのHTTPリクエストのいずれかにエラーがある場合にエラーとなる。
 
@@ -1596,7 +1596,7 @@ Show( requests << Has Error );
 
 #### Is Success
 
-**構文:** obj << Is Success
+**構文:** obj &lt;&lt; Is Success
 
 **説明:** 複数のリクエストに成功した場合は、Trueを戻す。複数のリクエストは、そのHTTPリクエストがすべて成功した場合に成功となる。
 
@@ -1620,7 +1620,7 @@ Show( requests << Is Successful );
 
 #### Is Successful
 
-**構文:** obj << Is Successful
+**構文:** obj &lt;&lt; Is Successful
 
 **説明:** 複数のリクエストに成功した場合は、Trueを戻す。複数のリクエストは、そのHTTPリクエストがすべて成功した場合に成功となる。
 
@@ -1644,7 +1644,7 @@ Show( requests << Is Successful );
 
 #### Is Valid
 
-**構文:** obj << Is Valid
+**構文:** obj &lt;&lt; Is Valid
 
 **説明:** 複数のリクエストが有効かどうかを確認する。複数のリクエストは、そのすべてのHTTPリクエストが有効である場合に有効となる。
 
@@ -1675,7 +1675,7 @@ Show( requests << Is Valid() );
 
 #### Reset
 
-**構文:** obj << Reset()
+**構文:** obj &lt;&lt; Reset()
 
 **説明:** 複数のリクエストをリセットする。このメッセージにより、すでに追加されているすべてのHTTPリクエストがリセットされる。
 
@@ -1710,7 +1710,7 @@ requests << Reset();
 
 #### Send
 
-**構文:** obj << Send(<"text" | "blob">, <"show progress download" | "show progress upload" | "show progress both" | "show progress">)
+**構文:** obj &lt;&lt; Send(&lt;"text" | "blob"&gt;, &lt;"show progress download" | "show progress upload" | "show progress both" | "show progress"&gt;)
 
 **説明:** Sendの戻り値は、文字データまたはバイナリのBLOB。Is String JSL関数を使用して戻り値を確認できる。show progress downloadを使用すると、ダウンロードをキャンセルすることも可能な、ダウンロードのプログレスバーが表示される。 show progress uploadを使用すると、アップロードをキャンセルすることも可能な、アップロードのプログレスバーが表示される。 show progress bothを使用すると、データのアップロードとダウンロードのプログレスバーが表示される。 show progressを使用すると、キャンセルも可能な、アップロードまたはダウンロード（またはその両方）のプログレスバーが表示される。フォームを投稿する場合、show progressでアップロードとダウンロードの進行状況が表示される。ファイルを投稿する場合、show progressでアップロードの進行状況が表示される。データを取得する場合、show progressでダウンロードの進行状況が表示される。
 
@@ -1881,7 +1881,7 @@ addSentimentColumns( dt2, "Name", 1, 1 );
 
 #### Authorization Fields
 
-**構文:** oauth2 << Authorization Fields(...)
+**構文:** oauth2 &lt;&lt; Authorization Fields(...)
 
 **説明:** Authorization fieldsは、OAuth2承認URLのクエリ文字列に使用するキーと値のペアの連想配列。
 
@@ -1908,7 +1908,7 @@ oauth2 << Authorization Fields( auth_fields );
 
 #### Authorization URL
 
-**構文:** oauth2 << Authorization URL(...)
+**構文:** oauth2 &lt;&lt; Authorization URL(...)
 
 **説明:** OAuth2承認URLを設定する。
 
@@ -1926,7 +1926,7 @@ oauth2 << Authorization URL( auth_url );
 
 #### Browser Type
 
-**構文:** oauth2 << Browser Type("Default" | "Embedded" | "External")
+**構文:** oauth2 &lt;&lt; Browser Type("Default" | "Embedded" | "External")
 
 **説明:** ［Default］オプションは、Googleで認証する場合を除き、OAuth2認証に組み込みブラウザを使用する。［Embedded］オプションは、Googleで認証する場合を除き、OAuth2認証に組み込みブラウザを使用する（現時点では［デフォルト］と同じ）。［External］オプションは、OAuth2認証に外部ブラウザを使用し、生成されるコード/URLをテキストエリアにコピーして認証を完了する。
 
@@ -1977,7 +1977,7 @@ data = request << Send;
 
 #### Client Id
 
-**構文:** oauth2 << Client Id(...)
+**構文:** oauth2 &lt;&lt; Client Id(...)
 
 **説明:** Webサービスの作成時に使用されたパブリックIDであるOAuth2クライアントIDを設定する。
 
@@ -1998,7 +1998,7 @@ oauth2 << Client Id( client_id );
 
 #### Client Secret
 
-**構文:** oauth2 << Client Secret(...)
+**構文:** oauth2 &lt;&lt; Client Secret(...)
 
 **説明:** Webサービスの作成時に作成されたOAuth2クライアントシークレットを設定する。
 
@@ -2019,7 +2019,7 @@ oauth2 << Client Secret( client_secret );
 
 #### Code Verifier
 
-**構文:** oauth2 << Code Verifier(<"cdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._~">
+**構文:** oauth2 &lt;&lt; Code Verifier(&lt;"cdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._~"&gt;
 
 **説明:** コード検証ツールは、クライアントが認可コードとアクセストークンをやりとりする際にそのアイデンティティの証明に使用する暗号学的にランダムな文字列。長さは最小で43文字、最大で128文字。
 
@@ -2036,7 +2036,7 @@ oauth2 << Code Verifier( "cdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123
 
 #### Get Access Token
 
-**構文:** oauth2 << Get Access Token()
+**構文:** oauth2 &lt;&lt; Get Access Token()
 
 **説明:** 現在のOAuth2アクセストークンを取得する。このとき、必要に応じて承認サーバーとの通信が開始される。
 
@@ -2082,7 +2082,7 @@ access_token = oauth2 << Get Access Token();
 
 #### Get Auth Response Error
 
-**構文:** oauth2 << Get Authentication Response Error()
+**構文:** oauth2 &lt;&lt; Get Authentication Response Error()
 
 **説明:** OAuth2レスポンスエラーを取得する。
 
@@ -2099,19 +2099,19 @@ error = oauth2 << Get Authentication Response Error();
 
 #### Get Auth Response Fields
 
-**構文:** obj << Get Auth Response Fields
+**構文:** obj &lt;&lt; Get Auth Response Fields
 
 **JMP追加されたバージョン:** 15
 
 #### Get Authentication Response Error
 
-**構文:** obj << Get Authentication Response Error
+**構文:** obj &lt;&lt; Get Authentication Response Error
 
 **JMP追加されたバージョン:** 18
 
 #### Get Authorization Header
 
-**構文:** oauth2 << Get Authorization Header
+**構文:** oauth2 &lt;&lt; Get Authorization Header
 
 **説明:** ヘッダを
 
@@ -2222,7 +2222,7 @@ If( !Is Empty( data ),
 
 #### Get Authorization Response Fields
 
-**構文:** oauth2 << Get Authorization Response Fields()
+**構文:** oauth2 &lt;&lt; Get Authorization Response Fields()
 
 **説明:** 承認サーバーから現在のOAuth2レスポンスの値を取得する。
 
@@ -2268,7 +2268,7 @@ auth_response = oauth2 << Get Authorization Response Fields();
 
 #### Get Code
 
-**構文:** oauth2 << Get Code()
+**構文:** oauth2 &lt;&lt; Get Code()
 
 **説明:** 現在のOAuth2コードを取得する。このとき、必要に応じて承認サーバーとの通信が開始される。
 
@@ -2314,7 +2314,7 @@ code = oauth2 << Get Code();
 
 #### Get Grant Type
 
-**構文:** oauth2 << Get Grant Type()
+**構文:** oauth2 &lt;&lt; Get Grant Type()
 
 **説明:** 現在のOAuth2グラントタイプを取得する。
 
@@ -2334,7 +2334,7 @@ Show( grant );
 
 #### Get Grant Types
 
-**構文:** oauth2 << Get Grant Types
+**構文:** oauth2 &lt;&lt; Get Grant Types
 
 **説明:** JMPでサポートされているOAuth2グラントタイプを取得する。
 
@@ -2355,7 +2355,7 @@ Show( grant_types );
 
 #### Get ID Token
 
-**構文:** oauth2 << Get ID Token()
+**構文:** oauth2 &lt;&lt; Get ID Token()
 
 **説明:** 現在のOAuth2 IDトークンを取得する。このとき、必要に応じて承認サーバーとの通信が開始される。
 
@@ -2401,7 +2401,7 @@ id_token = oauth2 << Get ID Token();
 
 #### Get Refresh Token
 
-**構文:** oauth2 << Get Refresh Token()
+**構文:** oauth2 &lt;&lt; Get Refresh Token()
 
 **説明:** 現在のOAuth2更新トークンを取得する。このとき、必要に応じて承認サーバーとの通信が開始される。
 
@@ -2447,7 +2447,7 @@ refresh_token = oauth2 << Get Refresh Token();
 
 #### Get Scope
 
-**構文:** oauth2 << Get Scope()
+**構文:** oauth2 &lt;&lt; Get Scope()
 
 **説明:** 現在のOAuth2スコープを取得する。
 
@@ -2493,7 +2493,7 @@ code = oauth2 << Get Scope();
 
 #### Get Window Title
 
-**構文:** oauth2 << Get Window Title
+**構文:** oauth2 &lt;&lt; Get Window Title
 
 **説明:** OAuth2のウィンドウタイトルを取得する。
 
@@ -2511,7 +2511,7 @@ title = oauth2 << Get Window Title;
 
 #### Grant Type
 
-**構文:** oauth2 << Grant Type("Authorization Code" | "Client Credentials" | "Refresh Token")
+**構文:** oauth2 &lt;&lt; Grant Type("Authorization Code" | "Client Credentials" | "Refresh Token")
 
 **説明:** 要求されるグラントタイプは、JMPとOAuth2承認プロバイダによってサポートされているものでなければなりません。
 
@@ -2530,13 +2530,13 @@ Show( grant );
 
 #### Has Auth Response  Error
 
-**構文:** obj << Has Auth Response  Error
+**構文:** obj &lt;&lt; Has Auth Response Error
 
 **JMP追加されたバージョン:** 18
 
 #### Has Authentication Response  Error
 
-**構文:** oauth2 << Has Authentication Response Error()
+**構文:** oauth2 &lt;&lt; Has Authentication Response Error()
 
 **説明:** OAuth2認証のレスポンスエラーをチェックする。
 
@@ -2555,7 +2555,7 @@ If( oauth2 << Has Authentication Response Error(),
 
 #### Is Expired
 
-**構文:** oauth2 << Is Expired()
+**構文:** oauth2 &lt;&lt; Is Expired()
 
 **説明:** 現在のOAuth2アクセストークンの有効期限が切れているかどうかを戻す。
 
@@ -2601,7 +2601,7 @@ expired = oauth2 << Is Expired();
 
 #### Login Hint
 
-**構文:** oauth2 << Login Hint(hint)
+**構文:** oauth2 &lt;&lt; Login Hint(hint)
 
 **説明:** login_hint値を設定する。login_hintは、エンドユーザーがログインするために（必要に応じて）使用する可能性があるログイン識別子に関する承認サーバーへの「ヒント」として、認証リクエストで使用されるオプションのパラメータ。
 
@@ -2618,7 +2618,7 @@ oauth2 << Login Hint( "jmp_user@jmp.com" );
 
 #### Password
 
-**構文:** oauth2 << Password(...)
+**構文:** oauth2 &lt;&lt; Password(...)
 
 **説明:** パスワードグラントタイプのOAuth2パスワードを設定する。
 
@@ -2632,7 +2632,7 @@ Names Default To Here( 1 );
 
 #### Redirect URL
 
-**構文:** oauth2 << Redirect URL(...)
+**構文:** oauth2 &lt;&lt; Redirect URL(...)
 
 **説明:** Webサービスの作成時に使用されたOAuth2リダイレクトURLを設定する。
 
@@ -2650,7 +2650,7 @@ oauth2 << Redirect URL( redirect_url );
 
 #### Scope
 
-**構文:** oauth2 << Scope(...)
+**構文:** oauth2 &lt;&lt; Scope(...)
 
 **説明:** アプリケーションによるアカウントへのアクセスを制限するOAuth2スコープを設定する。
 
@@ -2675,7 +2675,7 @@ oauth2 << Authorization Fields( auth_fields );
 
 #### Set Window Title
 
-**構文:** oauth2 << Set Window Title(title)
+**構文:** oauth2 &lt;&lt; Set Window Title(title)
 
 **説明:** OAuth2のウィンドウタイトルを設定する。
 
@@ -2692,7 +2692,7 @@ oauth2 << Set Window Title( "Authorization Window" );
 
 #### Token Fields
 
-**構文:** obj << Token Fields
+**構文:** obj &lt;&lt; Token Fields
 
 **説明:** OAuth2トークンURLのクエリ文字列に使用するキーと値のペアの連想配列。
 
@@ -2717,7 +2717,7 @@ oauth2 << Token Fields( token_fields );
 
 #### Token URL
 
-**構文:** oauth2 << Token URL(...)
+**構文:** oauth2 &lt;&lt; Token URL(...)
 
 **説明:** OAuth2トークンURLを設定する。
 
@@ -2735,7 +2735,7 @@ oauth2 << Token URL( token_url );
 
 #### Use Default Window Title
 
-**構文:** oauth2 << Use Default Window Title(1 | 0)
+**構文:** oauth2 &lt;&lt; Use Default Window Title(1 | 0)
 
 **説明:** OAuth2のウィンドウタイトルを取得する。
 
@@ -2753,7 +2753,7 @@ title = oauth2 << Get Window Title;
 
 #### Username
 
-**構文:** oauth2 << Username(...)
+**構文:** oauth2 &lt;&lt; Username(...)
 
 **説明:** パスワードグラントタイプのOAuth2ユーザ名を設定する。
 

@@ -6,13 +6,13 @@
 
 ### Remove Fit
 
-**構文:** obj << Remove Fit
+**構文:** obj &lt;&lt; Remove Fit
 
 **JMP追加されたバージョン:** 15
 
 ### Shaded Contour
 
-**構文:** obj << Shaded Contour( state=0|1 )
+**構文:** obj &lt;&lt; Shaded Contour( state=0|1 )
 
 **説明:** 塗られた楕円の表示/非表示を切り替える。
 

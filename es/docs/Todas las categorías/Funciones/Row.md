@@ -2,11 +2,9 @@
 
 
 
-## Funciones
-
 ### As Table
 
-**Sintaxis:** dt = As Table( matrix, <matrix2,...> < <<invisible/private>, < <<Column Names(name list) > )
+**Sintaxis:** dt = As Table( matrix, &lt;matrix2,...&gt; &lt; &lt;&lt;invisible/private&gt;, &lt; &lt;&lt;Column Names(name list) &gt; )
 
 **Descripción:** Convierte una matriz en una tabla de datos. La opción invisible se puede usar para evitar mostrar la tabla.
 
@@ -21,7 +19,7 @@ As Table( [1 2 3, 4 5 6] );
 
 ### Col Stored Value
 
-**Sintaxis:** y = Col Stored Value( <dt>, xCol, <row=Row()> )
+**Sintaxis:** y = Col Stored Value( &lt;dt&gt;, xCol, &lt;row=Row()&gt; )
 
 **Descripción:** Devuelve un valor de columna que no tiene propiedades de columna aplicadas. Si no se especifica la opción de fila, se asume la fila actual
 
@@ -42,9 +40,7 @@ Show( y1, y2, y3, y4 );
 
 ### Column
 
-**Sintaxis:** y = Column( name|number );
-
-y = Column( dataTable, name|number, <"formatted"> )
+**Sintaxis:** y = Column( name|number );y = Column( dataTable, name|number, &lt;"formatted"&gt; )
 
 **Descripción:** Devuelve una referencia a la columna de tabla de datos especificada. Las palabras clave "con formato" permiten acceder a los datos con formato, como la etiqueta de valor.
 
@@ -93,7 +89,7 @@ Column Name( 4 );
 
 ### Count
 
-**Sintaxis:** y = Count( start, end, s, <n=1> )
+**Sintaxis:** y = Count( start, end, s, &lt;n=1&gt; )
 
 **Descripción:** Devuelve el elemento i-ésimo de la secuencia de números del start al end en s pasos y repitiendo cada número n veces, donde i viene determinado por el valor de la función Row(). Puesto que depende de la función Row(), la función Count() se usar generalmente en fórmulas de columna.
 
@@ -117,7 +113,7 @@ For Each Row(
 
 ### Current Data Table
 
-**Sintaxis:** dt = Current Data Table( <Project(title|index|box|window)> ); Current Data Table( dt )
+**Sintaxis:** dt = Current Data Table( &lt;Project(title|index|box|window)&gt; ); Current Data Table( dt )
 
 **Descripción:** Devuelve la tabla de datos actual o convierte la tabla de datos especificada en la actual si se especifica una.
 
@@ -154,7 +150,7 @@ Data Table( 1 );
 
 ### Dif
 
-**Sintaxis:** y = Dif( x, <n=1> )
+**Sintaxis:** y = Dif( x, &lt;n=1&gt; )
 
 **Descripción:** Devuelve x - Lag( x, n ), también conocida como "primera diferencia". Puesto que depende de Row(), Dif(), resulta útil principalmente en fórmulas de columna.
 
@@ -186,7 +182,7 @@ Dim( [11 22, 33 44, 55 66] );
 
 ### Get Data Table
 
-**Sintaxis:** dt = Get Data Table( <Project(title|index|box|window)>, name|index )
+**Sintaxis:** dt = Get Data Table( &lt;Project(title|index|box|window)&gt;, name|index )
 
 **Descripción:** Devuelve una referencia a la tabla de datos especificada.
 
@@ -211,7 +207,7 @@ Get Data Table( 1 );
 
 ### Get Data Table List
 
-**Sintaxis:** tableList = Get Data Table List( <Project(title|index|box|window)> )
+**Sintaxis:** tableList = Get Data Table List( &lt;Project(title|index|box|window)&gt; )
 
 **Descripción:** Devuelve una lista de todas las tablas de datos abiertas.
 
@@ -248,7 +244,7 @@ Get Data Table List( Project( project ) );
 
 ### Lag
 
-**Sintaxis:** y = Lag( <x>, <n=1> )
+**Sintaxis:** y = Lag( &lt;x&gt;, &lt;n=1&gt; )
 
 **Descripción:** Devuelve el valor del argumento x con la fila actual con el valor Row() - n. Puesto que depende de Row(), Lag() resulta útil principalmente en fórmulas de columna.
 
@@ -329,7 +325,7 @@ d;
 
 ### New Column
 
-**Sintaxis:** dc = New Column( name, <"Numeric"|"Character"|"RowState"|"Expression">, <"Continuous"|"Ordinal"|"Nominal"|"Multiple Response"|"Unstructured Text"|"Vector"|"None">, <Width( n )|Format(format name, width, precision)>, <Like(:other column)>, <actions> )
+**Sintaxis:** dc = New Column( name, &lt;"Numeric"|"Character"|"RowState"|"Expression"&gt;, &lt;"Continuous"|"Ordinal"|"Nominal"|"Multiple Response"|"Unstructured Text"|"Vector"|"None"&gt;, &lt;Width( n )|Format(format name, width, precision)&gt;, &lt;Like(:other column)&gt;, &lt;actions&gt; )
 
 **Descripción:** Crea una columna nueva en la tabla de datos actual. Los argumentos opcionales actions son todos los mensajes compatibles con los objetos de columnas de datos.
 
@@ -357,7 +353,7 @@ New Column( "example", "Numeric", "Continuous", Width( 5 ), <<Set Each Value( 10
 
 ### New Column by Text Matching
 
-**Sintaxis:** dc = New Column by Text Matching( Column(:name), Set Regex(), <Output Column Name("Name")>, <Use Result(0 | 1)> )
+**Sintaxis:** dc = New Column by Text Matching( Column(:name), Set Regex(), &lt;Output Column Name("Name")&gt;, &lt;Use Result(0 | 1)&gt; )
 
 **Descripción:** Crea una nueva columna realizando una coincidencia de patrón de expresión regular en una columna existente.
 
@@ -378,7 +374,7 @@ New Column by Text Matching(
 
 ### New Table
 
-**Sintaxis:** dt = New Table( name, <visibility("private"|"invisible"|"visible")>, <Enable Filter Views(bool)>, <actions> )
+**Sintaxis:** dt = New Table( name, &lt;visibility("private"|"invisible"|"visible")&gt;, &lt;Enable Filter Views(bool)&gt;, &lt;actions&gt; )
 
 **Descripción:** Crea una nueva tabla de datos. "Invisible" oculta la tabla de datos de la vista pero la muestra en la Ventana principal de JMP. "Private" oculta la tabla por completo. "Visible" es la opción predeterminada y crea una tabla normal que está visible y aparece en la Ventana principal de JMP. Los argumentos actions opcionales son cualquier mensaje que sean compatibles con las tablas de datos.
 
@@ -429,7 +425,7 @@ Row() = 0;
 
 ### Sequence
 
-**Sintaxis:** y = Sequence( start, end, <incr=1>, <n=1> )
+**Sintaxis:** y = Sequence( start, end, &lt;incr=1&gt;, &lt;n=1&gt; )
 
 **Descripción:** Devuelve el Row()-ésimo elemento de la secuencia de números de start a end, incrementado por incr. Cada número de la secuencia se repite n veces. Dada su dependencia de Row(), la función Sequence() resulta útil fundamentalmente en las fórmulas de columna. Para crear secuencias como matrices JSL, consulte Index().
 
@@ -445,7 +441,7 @@ Sequence( 1, 9, 2 );
 
 ### Subscribe to Data Table List
 
-**Sintaxis:** aSub = Subscribe to Data Table List( <subscriber name | "">, <OnOpen(fn) | OnClose(fn) | On Rename(fn)>)
+**Sintaxis:** aSub = Subscribe to Data Table List( &lt;subscriber name | ""&gt;, &lt;OnOpen(fn) | OnClose(fn) | On Rename(fn)&gt;)
 
 **Descripción:** Se suscribe a la lista de tablas de datos para recibir una notificación al añadir o cerrar una nueva tabla de datos.
 
@@ -513,7 +509,7 @@ Names Default To Here( 1 );
 
 ### Suppress Formula Eval
 
-**Sintaxis:** Suppress Formula Eval( <suppress=1> )
+**Sintaxis:** Suppress Formula Eval( &lt;suppress=1&gt; )
 
 **Descripción:** Suprime la evaluación de las fórmulas en todas las tablas de datos si el argumento es distinto de cero.
 
@@ -528,7 +524,7 @@ Suppress Formula Eval( 1 );
 
 ### Unsubscribe to Data Table List
 
-**Sintaxis:** aSub = Unsubscribe to Data Table List(<subscriber name>, <"OnOpen" | "OnClose" | "OnRename" | "ALL">)
+**Sintaxis:** aSub = Unsubscribe to Data Table List(&lt;subscriber name&gt;, &lt;"OnOpen" | "OnClose" | "OnRename" | "ALL"&gt;)
 
 **Descripción:** Elimina una suscripción a la lista de tablas de datos añadida mediante el comando "suscribirse a la lista de tablas de datos".
 

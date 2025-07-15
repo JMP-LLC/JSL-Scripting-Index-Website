@@ -6,11 +6,7 @@
 
 ### Add Ellipsoid
 
-**Syntax:** obj << Add Ellipsoid( 4x4 matrix )
-
-obj << Add Ellipsoid(3x3 cov,3x1 means)
-
-obj << Add Ellipsoid(3x3 corr,3x1 means,3x1 std dev)
+**Syntax:** obj &lt;&lt; Add Ellipsoid( 4x4 matrix )obj &lt;&lt; Add Ellipsoid(3x3 cov,3x1 means)obj &lt;&lt; Add Ellipsoid(3x3 corr,3x1 means,3x1 std dev)
 
 **Beschreibung:** Zeichnet ein Ellipsoid im Diagramm.
 
@@ -33,7 +29,7 @@ obj << Frame3D(
 
 ### Add Markers
 
-**Syntax:** obj << Add Markers( [ nx1 X matrix ], [ nx1 Y matrix ], [ nx1 Z matrix ] )
+**Syntax:** obj &lt;&lt; Add Markers( [ nx1 X matrix ], [ nx1 Y matrix ], [ nx1 Z matrix ] )
 
 **Beschreibung:** Zeichnet n Symbole im Diagramm.
 
@@ -50,7 +46,7 @@ obj << Frame3D( Add Markers( [2 3 4], [5 6 7], [1 8 9] ) );
 
 ### Add Vector
 
-**Syntax:** obj << Add Vector( [ 3xn from matrix ], [ 3xn to matrix ], FromCap( CutOff|Sphere|Point|Feather ), ToCap( CutOff|Sphere|Point|Feather ), Facets( Triangle|Square|Round ), Shaft Color( color ), Shaft Thickness( number ), From Thickness( number ), To Thickness( number ), From Color( number ), To Color( number ) ) )
+**Syntax:** obj &lt;&lt; Add Vector( [ 3xn from matrix ], [ 3xn to matrix ], FromCap( CutOff|Sphere|Point|Feather ), ToCap( CutOff|Sphere|Point|Feather ), Facets( Triangle|Square|Round ), Shaft Color( color ), Shaft Thickness( number ), From Thickness( number ), To Thickness( number ), From Color( number ), To Color( number ) ) )
 
 **Beschreibung:** Zeichnet einen Vektor bzw. Pfeil im Diagramm.
 
@@ -67,7 +63,7 @@ obj << Frame3D( Add Vector( [4.5 2 1], [7.5 4 6], FromCap( "Feather" ), ToCap( "
 
 ### Get Axes
 
-**Syntax:** obj << Get Axes
+**Syntax:** obj &lt;&lt; Get Axes
 
 **Beschreibung:** Gibt den Zustand der Anzeige der Achsen des Diagramms zurück.
 
@@ -85,7 +81,7 @@ Show( s );
 
 ### Get Box
 
-**Syntax:** obj << Get Box
+**Syntax:** obj &lt;&lt; Get Box
 
 **Beschreibung:** Gibt den Zustand der Anzeige des Feldrahmens im Diagramm zurück.
 
@@ -103,7 +99,7 @@ Show( s );
 
 ### Get Grab Handles
 
-**Syntax:** obj << Get Grab Handles
+**Syntax:** obj &lt;&lt; Get Grab Handles
 
 **Beschreibung:** Gibt den Zustand der Anzeige der Ziehpunkte im Diagramm zurück.
 
@@ -121,7 +117,7 @@ Show( s );
 
 ### Get Graph Size
 
-**Syntax:** obj << Get Graph Size
+**Syntax:** obj &lt;&lt; Get Graph Size
 
 **Beschreibung:** Gibt die Größe des Graphen zurück.
 
@@ -139,7 +135,7 @@ Show( s );
 
 ### Get Grids
 
-**Syntax:** obj << Get Grids
+**Syntax:** obj &lt;&lt; Get Grids
 
 **Beschreibung:** Gibt den Zustand der Anzeige des Rasters im Diagramm zurück.
 
@@ -157,7 +153,7 @@ Show( s );
 
 ### Get Hide Lights Border
 
-**Syntax:** obj << Get Hide Lights Border
+**Syntax:** obj &lt;&lt; Get Hide Lights Border
 
 **Beschreibung:** Gibt den Zustand der Beleuchtungsränder des Diagramms zurück.
 
@@ -175,7 +171,7 @@ Show( state );
 
 ### Get Line Scale
 
-**Syntax:** obj << Get Line Scale
+**Syntax:** obj &lt;&lt; Get Line Scale
 
 **Beschreibung:** Gibt die Linienbreite des Diagramms zurück.
 
@@ -193,7 +189,7 @@ Show( w );
 
 ### Get Marker Quality
 
-**Syntax:** obj << Get Marker Quality
+**Syntax:** obj &lt;&lt; Get Marker Quality
 
 **Beschreibung:** Gibt die Symboleigenschaften wie Form und Schattierung für das Diagramm zurück.
 
@@ -211,7 +207,7 @@ Show( q );
 
 ### Get Marker Scale
 
-**Syntax:** obj << Get Marker Scale
+**Syntax:** obj &lt;&lt; Get Marker Scale
 
 **Beschreibung:** Gibt die Symbolgröße des Diagramms zurück.
 
@@ -229,7 +225,7 @@ Show( s );
 
 ### Get Marker Transparency
 
-**Syntax:** obj << Get Marker Transparency
+**Syntax:** obj &lt;&lt; Get Marker Transparency
 
 **Beschreibung:** Gibt die Symboltransparenz des Diagramms zurück.
 
@@ -247,7 +243,7 @@ Show( t );
 
 ### Get Rotation
 
-**Syntax:** obj << Get Rotation
+**Syntax:** obj &lt;&lt; Get Rotation
 
 **Beschreibung:** Gibt die aktuelle Drehung des Rahmens zurück.
 
@@ -265,7 +261,7 @@ Show( r );
 
 ### Get Text Scale
 
-**Syntax:** obj << Get Text Scale
+**Syntax:** obj &lt;&lt; Get Text Scale
 
 **Beschreibung:** Gibt die Textgröße des Diagramms zurück.
 
@@ -283,7 +279,7 @@ Show( s );
 
 ### Get View Ortho
 
-**Syntax:** obj << Get View Ortho
+**Syntax:** obj &lt;&lt; Get View Ortho
 
 **Beschreibung:** Gibt den Zustand der orthografischen Ansicht des Diagramms zurück.
 
@@ -301,7 +297,7 @@ Show( o );
 
 ### Get View Perspective
 
-**Syntax:** obj << Get View Perspective
+**Syntax:** obj &lt;&lt; Get View Perspective
 
 **Beschreibung:** Gibt die Perspektive für die Ansicht des Diagramms zurück.
 
@@ -319,7 +315,7 @@ Show( p );
 
 ### Get View Zoom
 
-**Syntax:** obj << Get View Zoom
+**Syntax:** obj &lt;&lt; Get View Zoom
 
 **Beschreibung:** Gibt den aktuellen Zoom des Diagramms zurück.
 
@@ -337,7 +333,7 @@ Show( z );
 
 ### Get Wall Color
 
-**Syntax:** obj << Get Wall Color
+**Syntax:** obj &lt;&lt; Get Wall Color
 
 **Beschreibung:** Gibt die Wandfarbe des Diagramms zurück.
 
@@ -355,7 +351,7 @@ Show( c );
 
 ### Get Walls
 
-**Syntax:** obj << Get Walls
+**Syntax:** obj &lt;&lt; Get Walls
 
 **Beschreibung:** Gibt den Zustand der Anzeige der Wände des Diagramms zurück.
 
@@ -373,7 +369,7 @@ Show( s );
 
 ### Get X Axis Color
 
-**Syntax:** obj << Get X Axis Color
+**Syntax:** obj &lt;&lt; Get X Axis Color
 
 **Beschreibung:** Gibt die Farbe der X-Achse des Diagramms zurück.
 
@@ -391,7 +387,7 @@ Show( c );
 
 ### Get X Axis Label
 
-**Syntax:** obj << Get X Axis Label
+**Syntax:** obj &lt;&lt; Get X Axis Label
 
 **Beschreibung:** Gibt die Beschriftung für die X-Achse des Diagramms zurück.
 
@@ -409,7 +405,7 @@ Show( label );
 
 ### Get Y Axis Color
 
-**Syntax:** obj << Get Y Axis Color
+**Syntax:** obj &lt;&lt; Get Y Axis Color
 
 **Beschreibung:** Gibt die Farbe der Y-Achse des Diagramms zurück.
 
@@ -427,7 +423,7 @@ Show( c );
 
 ### Get Y Axis Label
 
-**Syntax:** obj << Get Y Axis Label
+**Syntax:** obj &lt;&lt; Get Y Axis Label
 
 **Beschreibung:** Gibt die Beschriftung für die Y-Achse des Diagramms zurück.
 
@@ -445,7 +441,7 @@ Show( label );
 
 ### Get Z Axis Color
 
-**Syntax:** obj << Get Z Axis Color
+**Syntax:** obj &lt;&lt; Get Z Axis Color
 
 **Beschreibung:** Gibt die Farbe der Z-Achse des Diagramms zurück.
 
@@ -463,7 +459,7 @@ Show( c );
 
 ### Get Z Axis Label
 
-**Syntax:** obj << Get Z Axis Label
+**Syntax:** obj &lt;&lt; Get Z Axis Label
 
 **Beschreibung:** Gibt die Beschriftung für die Z-Achse des Diagramms zurück.
 
@@ -481,7 +477,7 @@ Show( label );
 
 ### Set Axes
 
-**Syntax:** obj << Set Axes( state=0|1 )
+**Syntax:** obj &lt;&lt; Set Axes( state=0|1 )
 
 **Beschreibung:** Zeigt die X-, Y- und Z-Achse des Diagramms an oder blendet sie aus. Standardmäßig ein.
 
@@ -498,7 +494,7 @@ obj << Frame3D( Set Axes( 1 ) );
 
 ### Set Box
 
-**Syntax:** obj << Set Box( state=0|1 )
+**Syntax:** obj &lt;&lt; Set Box( state=0|1 )
 
 **Beschreibung:** Zeigt den Feldrahmen im Diagramm an oder blendet ihn aus. Standardmäßig ein.
 
@@ -515,7 +511,7 @@ obj << Frame3D( Set Box( 1 ) );
 
 ### Set Graph Size
 
-**Syntax:** obj << Set Graph Size( x, y )
+**Syntax:** obj &lt;&lt; Set Graph Size( x, y )
 
 **Beschreibung:** Legt die Größe des Graphen fest.
 
@@ -532,7 +528,7 @@ obj << Frame3D( Set Graph Size( 700, 800 ) );
 
 ### Set Grids
 
-**Syntax:** obj << Set Grids( state=0|1 )
+**Syntax:** obj &lt;&lt; Set Grids( state=0|1 )
 
 **Beschreibung:** Zeigt das Raster im Diagramm an oder blendet es aus. Standardmäßig ein.
 
@@ -549,7 +545,7 @@ obj << Frame3D( Set Grids( 1 ) );
 
 ### Set Hide Lights Border
 
-**Syntax:** obj << Set Hide Lights Border( state=0|1 )
+**Syntax:** obj &lt;&lt; Set Hide Lights Border( state=0|1 )
 
 **Beschreibung:** Zeigt die Beleuchtungsränder des Diagramms an oder blendet sie aus. Standardmäßig ein.
 
@@ -566,7 +562,7 @@ obj << Frame3D( Set Hide Lights Border( 0 ) );
 
 ### Set Line Scale
 
-**Syntax:** obj << Set Line Scale( number )
+**Syntax:** obj &lt;&lt; Set Line Scale( number )
 
 **Beschreibung:** Legt die Linienbreite für das Raster im Diagramm fest.
 
@@ -583,7 +579,7 @@ obj << Frame3D( Set Line Scale( 6.5 ) );
 
 ### Set Marker Quality
 
-**Syntax:** obj << Set Marker Quality( number )
+**Syntax:** obj &lt;&lt; Set Marker Quality( number )
 
 **Beschreibung:** Legt die Symboleigenschaften wie Form und Schattierung für das Diagramm fest.
 
@@ -600,7 +596,7 @@ obj << Frame3D( Set Marker Scale( 3 ), Set Marker Quality( 0.2625 ) );
 
 ### Set Marker Scale
 
-**Syntax:** obj << Set Marker Scale( number )
+**Syntax:** obj &lt;&lt; Set Marker Scale( number )
 
 **Beschreibung:** Legt die Symbolgröße für das Diagramm fest.
 
@@ -617,7 +613,7 @@ obj << Frame3D( Set Marker Scale( 3.5 ) );
 
 ### Set Marker Transparency
 
-**Syntax:** obj << Set Marker Transparency( fraction )
+**Syntax:** obj &lt;&lt; Set Marker Transparency( fraction )
 
 **Beschreibung:** Legt die Symboltransparenz für das Diagramm fest.
 
@@ -634,7 +630,7 @@ obj << Frame3D( Set Marker Transparency( 0.4125 ) );
 
 ### Set Oscillation
 
-**Syntax:** obj << Set Oscillation( X, Y, Z, duration )
+**Syntax:** obj &lt;&lt; Set Oscillation( X, Y, Z, duration )
 
 **Beschreibung:** Legt die Oszillationsrate des Diagramms fest.
 
@@ -651,7 +647,7 @@ obj << Frame3D( Set Rotation( -60, -3, 35 ), Set Oscillation( -54, 0, 38, 100 ) 
 
 ### Set Rotation
 
-**Syntax:** obj << Set Rotation( X, Y, Z )
+**Syntax:** obj &lt;&lt; Set Rotation( X, Y, Z )
 
 **Beschreibung:** Dreht den Rahmen zu den angegebenen Koordinaten.
 
@@ -668,7 +664,7 @@ obj << Frame3D( Set Rotation( -60, -3, 35 ) );
 
 ### Set Spin
 
-**Syntax:** obj << Set Spin(  dx, dy, sx, sy  )
+**Syntax:** obj &lt;&lt; Set Spin( dx, dy, sx, sy )
 
 **Beschreibung:** Dreht den Graphen um eine angegebene Achse. Die Werte dx und dy sind eine Deltabewegung der Maus ab dem Punkt (sx, sy).
 
@@ -685,7 +681,7 @@ obj << Frame3D( Set Spin( .01, .01, 0, 0 ) );
 
 ### Set Text Scale
 
-**Syntax:** obj << Set Text Scale( number )
+**Syntax:** obj &lt;&lt; Set Text Scale( number )
 
 **Beschreibung:** Legt die Textgröße für den Achsentext im Diagramm fest.
 
@@ -702,7 +698,7 @@ obj << Frame3D( Set Text Scale( 1.4 ) );
 
 ### Set View Ortho
 
-**Syntax:** obj << Set View Ortho( state=0|1 )
+**Syntax:** obj &lt;&lt; Set View Ortho( state=0|1 )
 
 **Beschreibung:** Zeigt das Diagramm orthografisch oder linear an.
 
@@ -719,7 +715,7 @@ obj << Frame3D( Set View Ortho( 1 ) );
 
 ### Set View Perspective
 
-**Syntax:** obj << Set View Perspective( fraction )
+**Syntax:** obj &lt;&lt; Set View Perspective( fraction )
 
 **Beschreibung:** Legt die Perspektive für die Ansicht des Diagramms fest.
 
@@ -736,7 +732,7 @@ obj << Frame3D( Set View Perspective( 0.275 ) );
 
 ### Set View Zoom
 
-**Syntax:** obj << Set View Zoom( number )
+**Syntax:** obj &lt;&lt; Set View Zoom( number )
 
 **Beschreibung:** Legt den Zoom für das Diagramm fest.
 
@@ -755,7 +751,7 @@ obj << Frame3D( Set View Zoom( 2 ) );
 
 ### Set Wall Color
 
-**Syntax:** obj << Set Wall Color( number )
+**Syntax:** obj &lt;&lt; Set Wall Color( number )
 
 **Beschreibung:** Legt die Wandfarbe für das Diagramm fest.
 
@@ -772,7 +768,7 @@ obj << Frame3D( Set Wall Color( -16775543 ) );
 
 ### Set Walls
 
-**Syntax:** obj << Set Walls( state=0|1 )
+**Syntax:** obj &lt;&lt; Set Walls( state=0|1 )
 
 **Beschreibung:** Zeigt die Wände des Diagramms an oder blendet sie aus. Standardmäßig ein.
 
@@ -789,7 +785,7 @@ obj << Frame3D( Set Walls( 1 ) );
 
 ### Set X Axis Color
 
-**Syntax:** obj << Set X Axis Color( color )
+**Syntax:** obj &lt;&lt; Set X Axis Color( color )
 
 **Beschreibung:** Legt die Farbe der X-Achse des Diagramms fest.
 
@@ -806,7 +802,7 @@ obj << Frame3D( Set X Axis Color( 5 ) );
 
 ### Set X Axis Label
 
-**Syntax:** obj << Set X Axis Label( string )
+**Syntax:** obj &lt;&lt; Set X Axis Label( string )
 
 **Beschreibung:** Legt die Beschriftung für die X-Achse des Diagramms fest.
 
@@ -823,7 +819,7 @@ obj << Frame3D( Set X Axis Label( "Iris Sepal Length" ) );
 
 ### Set Y Axis Color
 
-**Syntax:** obj << Set Y Axis Color( color )
+**Syntax:** obj &lt;&lt; Set Y Axis Color( color )
 
 **Beschreibung:** Legt die Farbe der Y-Achse des Diagramms fest.
 
@@ -840,7 +836,7 @@ obj << Frame3D( Set Y Axis Color( 11 ) );
 
 ### Set Y Axis Label
 
-**Syntax:** obj << Set Y Axis Label( string )
+**Syntax:** obj &lt;&lt; Set Y Axis Label( string )
 
 **Beschreibung:** Legt die Beschriftung für die Y-Achse des Diagramms fest.
 
@@ -857,7 +853,7 @@ obj << Frame3D( Set Y Axis Label( "Iris Petal Length" ) );
 
 ### Set Z Axis Color
 
-**Syntax:** obj << Set Z Axis Color( color )
+**Syntax:** obj &lt;&lt; Set Z Axis Color( color )
 
 **Beschreibung:** Legt die Farbe der Z-Achse des Diagramms fest.
 
@@ -874,7 +870,7 @@ obj << Frame3D( Set Z Axis Color( "Green" ) );
 
 ### Set Z Axis Label
 
-**Syntax:** obj << Set Z Axis Label( string )
+**Syntax:** obj &lt;&lt; Set Z Axis Label( string )
 
 **Beschreibung:** Legt die Beschriftung für die Z-Achse des Diagramms fest.
 
@@ -891,7 +887,7 @@ obj << Frame3D( Set Z Axis Label( "Iris Sepal Width" ) );
 
 ### XAxis
 
-**Syntax:** obj << XAxis( Min( number ), Max( number ), Inc( number ), Format( ) )
+**Syntax:** obj &lt;&lt; XAxis( Min( number ), Max( number ), Inc( number ), Format( ) )
 
 **Beschreibung:** Legt die Werte für die X-Achse des Diagramms fest.
 
@@ -908,7 +904,7 @@ obj << Frame3D( XAxis( Min( 3 ), Max( 10 ) ) );
 
 ### YAxis
 
-**Syntax:** obj << YAxis( Min( number ), Max( number ), Inc( number ), Format( ) )
+**Syntax:** obj &lt;&lt; YAxis( Min( number ), Max( number ), Inc( number ), Format( ) )
 
 **Beschreibung:** Legt die Werte für die Y-Achse des Diagramms fest.
 
@@ -925,7 +921,7 @@ obj << Frame3D( YAxis( Min( 1 ), Max( 10 ), Inc( 0.5 ) ) );
 
 ### Z Axis
 
-**Syntax:** obj << Z Axis( Min( number ), Max( number ), Inc( number ), Format( ) )
+**Syntax:** obj &lt;&lt; Z Axis( Min( number ), Max( number ), Inc( number ), Format( ) )
 
 **Beschreibung:** Legt die Werte für die Z-Achse des Diagramms fest.
 
@@ -942,7 +938,7 @@ obj << Frame3D( ZAxis( Min( 1 ), Max( 5 ), Inc( 0.25 ) ) );
 
 ### get light active
 
-**Syntax:** obj << get light active( light number )
+**Syntax:** obj &lt;&lt; get light active( light number )
 
 **Beschreibung:** Gibt die Aktivierung des angegebenen Lichts, das das Diagramm beleuchtet, zurück.
 
@@ -960,7 +956,7 @@ Show( p );
 
 ### get light color
 
-**Syntax:** obj << get light color( light number )
+**Syntax:** obj &lt;&lt; get light color( light number )
 
 **Beschreibung:** Gibt die angegebene Farbe des Lichts, das das Diagramm beleuchtet, als Liste zurück {red, green, blue}.
 
@@ -978,7 +974,7 @@ Show( c );
 
 ### get light position
 
-**Syntax:** obj << get light position( light number )
+**Syntax:** obj &lt;&lt; get light position( light number )
 
 **Beschreibung:** Gibt die angegebene Position des Lichts, das das Diagramm beleuchtet, als Liste zurück {x, y, z}.
 
@@ -996,7 +992,7 @@ Show( p );
 
 ### set light active
 
-**Syntax:** obj << set light active( light number, state=0|1 )
+**Syntax:** obj &lt;&lt; set light active( light number, state=0|1 )
 
 **Beschreibung:** Schaltet das angegebene Licht ein, das das Diagramm beleuchtet.
 
@@ -1013,7 +1009,7 @@ obj << Frame3D( Set Hide Lights Border( 0 ), Set Light Active( 4, 1 ) );
 
 ### set light color
 
-**Syntax:** obj << set light color( light number, red value, green value, blue value )
+**Syntax:** obj &lt;&lt; set light color( light number, red value, green value, blue value )
 
 **Beschreibung:** Legt die Farbe des Lichts fest, das das Diagramm beleuchtet.
 
@@ -1030,7 +1026,7 @@ obj << Frame3D( Set Hide Lights Border( 0 ), Set Light Color( 2, 240, 50, 70 ) )
 
 ### set light position
 
-**Syntax:** obj << set light position( light number, X, Y, Z )
+**Syntax:** obj &lt;&lt; set light position( light number, X, Y, Z )
 
 **Beschreibung:** Legt die Position des Lichts fest, das das Diagramm beleuchtet.
 

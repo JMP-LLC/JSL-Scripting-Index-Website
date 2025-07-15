@@ -6,7 +6,7 @@
 
 ### Get Description
 
-**Syntax:** string = jmplivepost << Get Description()
+**Syntax:** string = jmplivepost &lt;&lt; Get Description()
 
 **Beschreibung:** Ruft die Beschreibung des JMP Live-Berichts, JMP Live-Ordners oder JMP Live-Beitrags als Zeichenkette ab.
 
@@ -48,7 +48,7 @@ Write( "\!nDescription: ", report << Get Description );
 
 ### Get ID
 
-**Syntax:** string = jmplivepost << Get ID()
+**Syntax:** string = jmplivepost &lt;&lt; Get ID()
 
 **Beschreibung:** Ruft die ID für diesen JMP Live-Bericht, JMP Live-Ordner oder JMP Live-Beitrag als Zeichenkette ab.
 
@@ -91,7 +91,7 @@ Write( "\!n\!nID: ", report << Get ID );
 
 ### Get Path
 
-**Syntax:** string = jmplivepost << Get Path()
+**Syntax:** string = jmplivepost &lt;&lt; Get Path()
 
 **Beschreibung:** Ruft den Pfad dieses JMP Live-Berichts, -Ordners oder -Beitrags als Zeichenkette ab.
 
@@ -134,7 +134,7 @@ Write( "\!n\!nPath: ", report << Get Path );
 
 ### Get Title
 
-**Syntax:** string = jmplivepost << Get Title()
+**Syntax:** string = jmplivepost &lt;&lt; Get Title()
 
 **Beschreibung:** Ruft den Titel des JMP Live-Berichts, JMP Live-Ordners oder JMP Live-Beitrags als Zeichenkette ab.
 
@@ -177,7 +177,7 @@ Write( "\!nTitle: ", report << Get Title );
 
 ### Get Type
 
-**Syntax:** string = jmplivepost << Get Type()
+**Syntax:** string = jmplivepost &lt;&lt; Get Type()
 
 **Beschreibung:** Spezifischen Typ des Beitrags abrufen (Ordner, Daten oder Bericht)
 
@@ -221,7 +221,7 @@ Write( "\!nType: ", report << Get Type );
 
 ### Get URL
 
-**Syntax:** string = jmplivepost << Get URL()
+**Syntax:** string = jmplivepost &lt;&lt; Get URL()
 
 **Beschreibung:** Ruft die URL für diesen JMP Live-Bericht, JMP Live-Ordner oder JMP Live-Beitrag als Zeichenkette ab.
 
@@ -264,7 +264,7 @@ Write( "\!nURL: ", report << Get URL );
 
 ### Set Description
 
-**Syntax:** success = jmplivepost << Set Description("string value")
+**Syntax:** success = jmplivepost &lt;&lt; Set Description("string value")
 
 **Beschreibung:** Legt bei vorgegebener Zeichenkette die Beschreibung des JMP Live-Berichts, JMP Live-Ordners oder JMP Live-Beitrags fest. Gibt wahr oder falsch für Erfolg oder Fehler zurück.
 
@@ -314,7 +314,7 @@ Write( "\!nDecription: ", report << Get Description );
 
 ### Set Title
 
-**Syntax:** success = jmplivepost << Set Title("New Title")
+**Syntax:** success = jmplivepost &lt;&lt; Set Title("New Title")
 
 **Beschreibung:** Legt den Titel des JMP Live-Berichts, JMP Live-Ordners oder JMP Live-Beitrags fest. Gibt wahr oder falsch für Erfolg oder Fehler zurück.
 

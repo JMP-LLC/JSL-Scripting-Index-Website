@@ -2,8 +2,6 @@
 
 
 
-## Funciones
-
 ### Add To
 
 **Sintaxis:** y += x; Add To( y, x )

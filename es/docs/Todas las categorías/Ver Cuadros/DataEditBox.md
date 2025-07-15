@@ -6,7 +6,7 @@
 
 ### Blink
 
-**Sintaxis:** obj << Blink
+**Sintaxis:** obj &lt;&lt; Blink
 
 **Descripción:** Establece como intermitente la fila visualizada en el cuadro de edición de datos.
 
@@ -32,7 +32,7 @@ dataedit << Blink;
 
 ### Find
 
-**Sintaxis:** obj << Find( search term )
+**Sintaxis:** obj &lt;&lt; Find( search term )
 
 **Descripción:** Muestra la fila encontrada por el término de búsqueda introducido.
 
@@ -58,7 +58,7 @@ dataedit << Find( Contains( :State, "North Carolina" ) );
 
 ### Go to row
 
-**Sintaxis:** obj << Go to row( row )
+**Sintaxis:** obj &lt;&lt; Go to row( row )
 
 **Descripción:** Muestra la fila introducida en el cuadro de edición de datos.
 
@@ -84,7 +84,7 @@ dataedit << Go To Row( 23 );
 
 ### New Row
 
-**Sintaxis:** obj << New Row
+**Sintaxis:** obj &lt;&lt; New Row
 
 **Descripción:** Crea una nueva fila en la tabla de datos y muestra dicha fila en el cuadro de edición de datos.
 
@@ -110,7 +110,7 @@ dataedit << New Row;
 
 ### Next
 
-**Sintaxis:** obj << Next
+**Sintaxis:** obj &lt;&lt; Next
 
 **Descripción:** Muestra la siguiente fila seleccionada en el cuadro de edición de datos.
 
@@ -136,7 +136,7 @@ dataedit << Next;
 
 ### Next Selected
 
-**Sintaxis:** obj << Next Selected
+**Sintaxis:** obj &lt;&lt; Next Selected
 
 **Descripción:** De las filas seleccionadas, muestra la siguiente fila seleccionada en el cuadro de edición de datos.
 
@@ -163,7 +163,7 @@ dataedit << Next Selected;
 
 ### Prev
 
-**Sintaxis:** obj << Prev
+**Sintaxis:** obj &lt;&lt; Prev
 
 **Descripción:** Muestra la fila previa seleccionada en el cuadro de edición de datos.
 
@@ -190,7 +190,7 @@ dataedit << Prev;
 
 ### Prev Selected
 
-**Sintaxis:** obj << Prev Selected
+**Sintaxis:** obj &lt;&lt; Prev Selected
 
 **Descripción:** De las filas seleccionadas, muestra la fila previa seleccionada en el cuadro de edición de datos.
 
@@ -217,7 +217,7 @@ dataedit << Prev Selected;
 
 ### Save
 
-**Sintaxis:** obj << Save
+**Sintaxis:** obj &lt;&lt; Save
 
 **Descripción:** Guarda los valores de fila del cuadro de edición de datos en la tabla de datos.
 

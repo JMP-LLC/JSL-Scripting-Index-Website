@@ -6,7 +6,7 @@
 
 ### Close
 
-**構文:** workflow << Close()
+**構文:** workflow &lt;&lt; Close()
 
 **説明:** ワークフローを閉じる。
 
@@ -22,7 +22,7 @@ wf << Close();
 
 ### Execute Next
 
-**構文:** workflow << Execute Next()
+**構文:** workflow &lt;&lt; Execute Next()
 
 **説明:** ワークフローの現在のステップを実行し、実行ポインタを次のステップに移動させる。
 
@@ -38,7 +38,7 @@ wf << Execute Next();
 
 ### Get Execution Info
 
-**構文:** workflow << Get Execution Info(<index>)
+**構文:** workflow &lt;&lt; Get Execution Info(&lt;index&gt;)
 
 **説明:** ワークフローの実行済みのステップに関する情報を含んだ構造体を戻す。
 
@@ -55,7 +55,7 @@ wf << Get Execution Info( 1 );
 
 ### Get Step Count
 
-**構文:** workflow << Get Step Count
+**構文:** workflow &lt;&lt; Get Step Count
 
 **説明:** ワークフローのステップ数を戻す。
 
@@ -71,7 +71,7 @@ wf << Get Step Count;
 
 ### Get Step JSL
 
-**構文:** workflow << Get Step JSL(<index>)
+**構文:** workflow &lt;&lt; Get Step JSL(&lt;index&gt;)
 
 **説明:** ワークフロー内の指定のステップのJSLコードを戻す。
 
@@ -87,7 +87,7 @@ wf << Get Step JSL( 1 );
 
 ### Get Step Name
 
-**構文:** workflow << Get Step Name(<index>)
+**構文:** workflow &lt;&lt; Get Step Name(&lt;index&gt;)
 
 **説明:** ワークフロー内の指定のステップの名前を戻す。
 
@@ -103,7 +103,7 @@ wf << Get Step Name( 1 );
 
 ### Log Executed Steps
 
-**構文:** obj << Log Executed Steps( state=0|1 )
+**構文:** obj &lt;&lt; Log Executed Steps( state=0|1 )
 
 **説明:** 実行されたステップのJSLスクリプトをログに記録する。
 
@@ -120,7 +120,7 @@ wf << Resume();
 
 ### Presentation Mode
 
-**構文:** obj << Presentation Mode( state=0|1 )
+**構文:** obj &lt;&lt; Presentation Mode( state=0|1 )
 
 **説明:** プレゼンテーションモードでは、編集オプションや不要なサポートインターフェースが表示されなくなる。
 
@@ -136,7 +136,7 @@ wf << Presentation Mode( 1 );
 
 ### Resume
 
-**構文:** workflow << Resume()
+**構文:** workflow &lt;&lt; Resume()
 
 **説明:** ワークフローを実行または再開する。
 
@@ -152,7 +152,7 @@ wf << Resume();
 
 ### Set Execution Callback
 
-**構文:** workflow << Set Execution Callback(<callback>)
+**構文:** workflow &lt;&lt; Set Execution Callback(&lt;callback&gt;)
 
 **説明:** ワークフローにコールバックを設定する。このコールバックは、ステップの実行が終了するたびに関連情報とともに通知を受ける。
 
@@ -170,7 +170,7 @@ wf << Resume;
 
 ### Set Next Step To Execute
 
-**構文:** workflow << Set Next Step To Execute(<index>)
+**構文:** workflow &lt;&lt; Set Next Step To Execute(&lt;index&gt;)
 
 **説明:** 実行カーソルをワークフロー内のステップに移動させる。
 
@@ -186,7 +186,7 @@ wf << Set Next Step To Execute( 2 );
 
 ### Start Over
 
-**構文:** workflow << Start Over()
+**構文:** workflow &lt;&lt; Start Over()
 
 **説明:** ワークフローを最初の状態にリセットする。ワークフローで開いたすべてのテーブルとウィンドウを閉じる。
 

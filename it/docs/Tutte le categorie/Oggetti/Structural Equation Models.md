@@ -6,7 +6,7 @@
 
 ### Freq
 
-**Sintassi:** obj << Freq( column )
+**Sintassi:** obj &lt;&lt; Freq( column )
 
 ```jsl
 
@@ -37,7 +37,7 @@ obj = dt << Structural Equation Models(
 
 ### Groups
 
-**Sintassi:** obj << Groups( column )
+**Sintassi:** obj &lt;&lt; Groups( column )
 
 **Descrizione:** Specifica la variabile di raggruppamento per eseguire l&apos;analisi su più gruppi.
 
@@ -51,7 +51,7 @@ dt << Structural Equation Models( Model Variables( 4 :: 7 ), Groups( :Sex ) );
 
 ### Mean
 
-**Sintassi:** obj = Structural Equation Models(...<Mean( column )>...)
+**Sintassi:** obj = Structural Equation Models(...&lt;Mean( column )&gt;...)
 
 **Descrizione:** Specifica le medie per ogni variabile manifesta in una matrice di correlazione o covarianza.
 
@@ -80,7 +80,7 @@ Data Table( "Correlation" ) << Structural Equation Models(
 
 ### Model Variables
 
-**Sintassi:** obj << Model Variables( column(s) )
+**Sintassi:** obj &lt;&lt; Model Variables( column(s) )
 
 **Descrizione:** Specifica le variabili che saranno sottoposte all&apos;analisi.
 
@@ -98,7 +98,7 @@ obj = dt << Structural Equation Models(
 
 ### Std Dev
 
-**Sintassi:** obj = Structural Equation Models(...<Std Dev( column )>...)
+**Sintassi:** obj = Structural Equation Models(...&lt;Std Dev( column )&gt;...)
 
 **Descrizione:** Specifica le deviazioni standard per ogni variabile manifesta in una matrice di correlazione.
 
@@ -127,7 +127,7 @@ Data Table( "Correlation" ) << Structural Equation Models(
 
 ### Weight
 
-**Sintassi:** obj << Weight( column )
+**Sintassi:** obj &lt;&lt; Weight( column )
 
 ```jsl
 
@@ -195,7 +195,7 @@ obj = dt << Structural Equation Models(
 
 ### Action
 
-**Sintassi:** obj << Action
+**Sintassi:** obj &lt;&lt; Action
 
 **Descrizione:** Trapdoor generica all&apos;interno di una piattaforma per inserire espressioni da valutare. Imposta temporaneamente i contesti del riquadro di visualizzazione e della tabella di dati per la piattaforma.
 
@@ -213,7 +213,7 @@ dt << Bivariate(
 
 ### Add Manifest Variables
 
-**Sintassi:** obj << Add Manifest Variables
+**Sintassi:** obj &lt;&lt; Add Manifest Variables
 
 **Descrizione:** Riavvia la piattaforma utilizzando la specifica del modello esistente e includendo le variabili manifeste appena aggiunte.
 
@@ -230,7 +230,7 @@ obj << Add Manifest Variables();
 
 ### Apply Preset
 
-**Sintassi:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintassi:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descrizione:** Applica all’oggetto una preimpostazione precedentemente creata, aggiornando le opzioni e le personalizzazioni in base alle impostazioni salvate.
 
@@ -277,7 +277,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Automatic Recalc
 
-**Sintassi:** obj << Automatic Recalc( state=0|1 )
+**Sintassi:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Descrizione:** Ripete l&apos;analisi automaticamente per l&apos;esclusione e le modifiche ai dati. Se l&apos;opzione Ricalcolo automatico è attivata, si consiglia di usare i comandi Attendi(0) per garantire che le modifiche di esclusione e di dati abbiano effetto prima del ricalcolo.
 
@@ -310,7 +310,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Bootstrap Inference
 
-**Sintassi:** obj << Bootstrap Inference
+**Sintassi:** obj &lt;&lt; Bootstrap Inference
 
 **Descrizione:** Esegue il bootstrap per una selezione di stime specificata dall&apos;utente nei modelli stimati disponibili nel report SEM.
 
@@ -327,7 +327,7 @@ obj << Bootstrap Inference( Parameter Estimates( 1 ), Indirect Effects( 1 ) );
 
 ### Broadcast
 
-**Sintassi:** obj << Broadcast(message)
+**Sintassi:** obj &lt;&lt; Broadcast(message)
 
 **Descrizione:** Diffonde un messaggio a una piattaforma. Se i risultati di restituzione dei singoli oggetti sono tabelle, esse sono concatenate se possibile e il formato finale è identico al risultato dell&apos;opzione Salva tabella combinata in un riquadro della tabella o il risultato dell&apos;opzione Concatena utilizzando una colonna di origine. Oltre a quelli, i risultati sono memorizzati in un elenco e restituiti.
 
@@ -347,7 +347,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**Sintassi:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Sintassi:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Descrizione:** Aggiunge un pannello di controllo per modificare le variabili della piattaforma
 
@@ -365,7 +365,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Compare Selected Models
 
-**Sintassi:** obj << Compare Selected Models
+**Sintassi:** obj &lt;&lt; Compare Selected Models
 
 **Descrizione:** Confronta i modelli selezionati nella tabella Confronto di modelli.
 
@@ -382,7 +382,7 @@ obj << Compare Selected Models( {"Orthogonal 3-Factor CFA", "3-Factor CFA"} );
 
 ### Copy ByGroup Script
 
-**Sintassi:** obj << Copy ByGroup Script
+**Sintassi:** obj &lt;&lt; Copy ByGroup Script
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo inserisce negli Appunti.
 
@@ -420,7 +420,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Diagram Properties
 
-**Sintassi:** obj << Copy Diagram Properties
+**Sintassi:** obj &lt;&lt; Copy Diagram Properties
 
 **Descrizione:** Copia le proprietà del diagramma dei percorsi corrente negli Appunti. È quindi possibile incollare le proprietà in un altro diagramma dei percorsi SEM.
 
@@ -440,7 +440,7 @@ obj2 << Paste Diagram Properties();
 
 ### Copy Model Specification
 
-**Sintassi:** obj << Copy Model Specification
+**Sintassi:** obj &lt;&lt; Copy Model Specification
 
 **Descrizione:** Copia le specifiche correnti del modello di equazione strutturale negli Appunti. È quindi possibile incollare le specifiche del modello in un altro report della piattaforma SEM.
 
@@ -461,7 +461,7 @@ obj2 << Paste Model Specification();
 
 ### Copy Script
 
-**Sintassi:** obj << Copy Script
+**Sintassi:** obj &lt;&lt; Copy Script
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo inserisce negli Appunti.
 
@@ -493,7 +493,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Sintassi:** obj << Data Table Window
+**Sintassi:** obj &lt;&lt; Data Table Window
 
 **Descrizione:** Sposta in primo piano la finestra della tabella di dati per questa analisi.
 
@@ -562,7 +562,7 @@ obj = dt << Structural Equation Models(
 
 ### Fit
 
-**Sintassi:** obj << Fit
+**Sintassi:** obj &lt;&lt; Fit
 
 **Descrizione:** Determina il modello di equazione strutturale da stimare.
 
@@ -614,7 +614,7 @@ obj = dt << Structural Equation Models(
 
 ### Fit Unrestricted Model
 
-**Sintassi:** obj << Fit Unrestricted Model( state=0|1 )
+**Sintassi:** obj &lt;&lt; Fit Unrestricted Model( state=0|1 )
 
 **Descrizione:** Disattiva la stima del modello non ristretto, noto anche come saturato, al momento dell&apos;avvio della piattaforma.
 
@@ -633,7 +633,7 @@ obj = dt << Structural Equation Models(
 
 ### Full Information Multivariate Statistics
 
-**Sintassi:** obj << Full Information Multivariate Statistics( state=0|1 )
+**Sintassi:** obj &lt;&lt; Full Information Multivariate Statistics( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un report delle statistiche semplici multivariate dove le statistiche sono stimate con massima verosimiglianza con informazioni complete per rappresentare i dati mancanti.
 
@@ -652,7 +652,7 @@ obj << Full Information Multivariate Statistics( 1 );
 
 ### Generate R Code
 
-**Sintassi:** obj << Generate R Code
+**Sintassi:** obj &lt;&lt; Generate R Code
 
 **Descrizione:** Genera il codice R per il modello attualmente specificato. Il codice viene scritto in una finestra dell&apos;editor degli script.
 
@@ -669,7 +669,7 @@ obj << Generate R Code();
 
 ### Get By Levels
 
-**Sintassi:** obj << Get By Levels
+**Sintassi:** obj &lt;&lt; Get By Levels
 
 **Descrizione:** Restituisce un array associativo che mappa le colonne del gruppo di By ai rispettivi valori.
 
@@ -686,7 +686,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Sintassi:** obj << Get ByGroup Script
+**Sintassi:** obj &lt;&lt; Get ByGroup Script
 
 **Descrizione:** Crea uno script (JSL) per generare questa analisi e la restituisce come espressione.
 
@@ -725,7 +725,7 @@ Show( t );
 
 ### Get Container
 
-**Sintassi:** obj << Get Container
+**Sintassi:** obj &lt;&lt; Get Container
 
 **Descrizione:** Restituisce un riferimento al riquadro contenitore che racchiude il contenuto dell&apos;oggetto.
 
@@ -789,7 +789,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Sintassi:** obj << Get Data Table
+**Sintassi:** obj &lt;&lt; Get Data Table
 
 **Descrizione:** Restituisce un riferimento alla tabella di dati.
 
@@ -822,7 +822,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**Sintassi:** obj << Get Group Platform
+**Sintassi:** obj &lt;&lt; Get Group Platform
 
 **Descrizione:** Restituisce l&apos;oggetto Raggruppa piattaforma se la piattaforma fa parte di un gruppo. In caso contrario, restituisce Vuoto().
 
@@ -839,7 +839,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**Sintassi:** obj << Get Script
+**Sintassi:** obj &lt;&lt; Get Script
 
 **Descrizione:** Crea uno script (JSL) per generare questa analisi e la restituisce come espressione.
 
@@ -872,7 +872,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Sintassi:** obj << Get Script With Data Table
+**Sintassi:** obj &lt;&lt; Get Script With Data Table
 
 **Descrizione:** Crea uno script (JSL) per generare questa analisi facendo specifico riferimento a questa tabella di dati e la restituisce come espressione.
 
@@ -905,7 +905,7 @@ Show( t );
 
 ### Get Timing
 
-**Sintassi:** obj << Get Timing
+**Sintassi:** obj &lt;&lt; Get Timing
 
 **Descrizione:** Determina il tempo di avvio della piattaforma.
 
@@ -938,7 +938,7 @@ Show( t );
 
 ### Get Web Support
 
-**Sintassi:** obj << Get Web Support
+**Sintassi:** obj &lt;&lt; Get Web Support
 
 **Descrizione:** Restituisce un numero indicante il livello di supporto HTML interattivo per l&apos;oggetto visualizzato. 1 significa che alcuni o tutti gli elementi sono supportati. 0 significa nessun supporto.
 
@@ -954,7 +954,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Sintassi:** obj << Get Where Expr
+**Sintassi:** obj &lt;&lt; Get Where Expr
 
 **Descrizione:** Restituisce l&apos;espressione Where per il sottoinsieme di dati, se la piattaforma è stata avviata con By() o Where(). Altrimenti, restituisce Vuoto()
 
@@ -972,7 +972,7 @@ Show( biv[1] << Get Where Expr, biv2 << Get Where Expr );
 
 ### Hide Model
 
-**Sintassi:** obj << Hide Model
+**Sintassi:** obj &lt;&lt; Hide Model
 
 **Descrizione:** Nasconde i modelli in base alle selezioni nella tabella di confronto di modelli.
 
@@ -1020,7 +1020,7 @@ dt << Bivariate(
 
 ### Launch Explore Missing Values
 
-**Sintassi:** obj << Launch Explore Missing Values
+**Sintassi:** obj &lt;&lt; Launch Explore Missing Values
 
 **Descrizione:** Avvia la piattaforma Esplora valori mancanti.
 
@@ -1039,7 +1039,7 @@ obj << Launch Explore Missing Values( 1 );
 
 ### Launch Explore Outliers
 
-**Sintassi:** obj << Launch Explore Outliers
+**Sintassi:** obj &lt;&lt; Launch Explore Outliers
 
 **Descrizione:** Avvia la piattaforma Esplora outlier.
 
@@ -1058,7 +1058,7 @@ obj << Launch Explore Outliers( 1 );
 
 ### Local Data Filter
 
-**Sintassi:** obj << Local Data Filter
+**Sintassi:** obj &lt;&lt; Local Data Filter
 
 **Descrizione:** Filtra dati in specifici gruppi o range, ma localmente in questa piattaforma
 
@@ -1080,7 +1080,7 @@ dt << Distribution(
 
 ### Model Specification
 
-**Sintassi:** obj << Model Specification
+**Sintassi:** obj &lt;&lt; Model Specification
 
 **Descrizione:** Abilita la specifica di un modello di equazione strutturale.
 
@@ -1139,7 +1139,7 @@ preset = obj << New Preset();
 
 ### Paste Diagram Properties
 
-**Sintassi:** obj << Paste Diagram Properties
+**Sintassi:** obj &lt;&lt; Paste Diagram Properties
 
 **Descrizione:** Incolla le proprietà del diagramma dei percorsi dagli Appunti nel diagramma dei percorsi SEM corrente.
 
@@ -1159,7 +1159,7 @@ obj2 << Paste Diagram Properties();
 
 ### Paste Local Data Filter
 
-**Sintassi:** obj << Paste Local Data Filter
+**Sintassi:** obj &lt;&lt; Paste Local Data Filter
 
 **Descrizione:** Applicare il filtro sui dati locali dagli Appunti al report corrente.
 
@@ -1180,7 +1180,7 @@ dist2 << Paste Local Data Filter;
 
 ### Paste Model Specification
 
-**Sintassi:** obj << Paste Model Specification
+**Sintassi:** obj &lt;&lt; Paste Model Specification
 
 **Descrizione:** Incolla le specifiche del modello dagli Appunti nelle specifiche del modello corrente.
 
@@ -1201,7 +1201,7 @@ obj2 << Paste Model Specification();
 
 ### Path Diagram Properties
 
-**Sintassi:** obj << Path Diagram Properties
+**Sintassi:** obj &lt;&lt; Path Diagram Properties
 
 **JMP Versione aggiunta:** 15
 
@@ -1241,7 +1241,7 @@ obj = dt << Structural Equation Models(
 
 ### Redo Analysis
 
-**Sintassi:** obj << Redo Analysis
+**Sintassi:** obj &lt;&lt; Redo Analysis
 
 **Descrizione:** Ripete questa stessa analisi in una nuova finestra. L&apos;analisi sarà differente se i dati sono stati modificati.
 
@@ -1273,7 +1273,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**Sintassi:** obj << Redo ByGroup Analysis
+**Sintassi:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Descrizione:** Ripete questa stessa analisi in una nuova finestra. L&apos;analisi sarà differente se i dati sono stati modificati.
 
@@ -1311,7 +1311,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**Sintassi:** obj << Relaunch Analysis
+**Sintassi:** obj &lt;&lt; Relaunch Analysis
 
 **Descrizione:** Apre la finestra di avvio della piattaforma e richiama le impostazioni utilizzate per creare il report.
 
@@ -1343,7 +1343,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**Sintassi:** obj << Relaunch ByGroup
+**Sintassi:** obj &lt;&lt; Relaunch ByGroup
 
 **Descrizione:** Apre la finestra di avvio della piattaforma e richiama le impostazioni utilizzate per creare il report.
 
@@ -1381,7 +1381,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**Sintassi:** obj << Remove Column Switcher
+**Sintassi:** obj &lt;&lt; Remove Column Switcher
 
 **Descrizione:** Rimuove l&apos;ultimo Scambia colonne che è stato aggiunto alla piattaforma.
 
@@ -1401,7 +1401,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Sintassi:** obj << Remove Local Data Filter
+**Sintassi:** obj &lt;&lt; Remove Local Data Filter
 
 **Descrizione:** Se è stato creato un filtro di dati locali viene rimosso per ripristinare la piattaforma e utilizzare direttamente tutti i dati nella tabella di dati
 
@@ -1423,7 +1423,7 @@ dist << remove local data filter;
 
 ### Remove Manifest Variables
 
-**Sintassi:** obj << Remove Manifest Variables
+**Sintassi:** obj &lt;&lt; Remove Manifest Variables
 
 **Descrizione:** Riavvia la piattaforma utilizzando la specifica del modello esistente, senza le variabili manifeste rimosse.
 
@@ -1457,9 +1457,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Sintassi:** obj << Report;
-
-Report( obj )
+**Sintassi:** obj &lt;&lt; Report;Report( obj )
 
 **Descrizione:** Restituisce un riferimento all&apos;oggetto del report.
 
@@ -1493,7 +1491,7 @@ Show( t );
 
 ### Report View
 
-**Sintassi:** obj << Report View( "Completo"|"Riepilogo" )
+**Sintassi:** obj &lt;&lt; Report View( "Completo"|"Riepilogo" )
 
 **Descrizione:** La visualizzazione Report determina il livello di dettaglio visibile in un report della piattaforma. Full mostra tutti i dettagli mentre Summary mostra solo contenuti selezionati, in base alla piattaforma. Per un comportamento personalizzato, i riquadri di visualizzazione supportano un messaggio <<Set Summary Behavior.
 
@@ -1525,7 +1523,7 @@ obj << Report View( "Summary" );
 
 ### Reset Independence Model
 
-**Sintassi:** obj << Reset Independence Model
+**Sintassi:** obj &lt;&lt; Reset Independence Model
 
 **Descrizione:** Sostituisce un modello di indipendenza specificato dall&apos;utente con quello predefinito.
 
@@ -1543,7 +1541,7 @@ obj << Reset Independence Model();
 
 ### Robust Inference
 
-**Sintassi:** obj << Robust Inference( state=0|1 )
+**Sintassi:** obj &lt;&lt; Robust Inference( state=0|1 )
 
 **Descrizione:** Calcola gli errori standard sandwich per le stime dei parametri ML o FIML e le statistiche di stima robusta. Questa opzione è utilizzata per risultati con distribuzione non normale in cui si assume una distribuzione sottostante continua.
 
@@ -1560,7 +1558,7 @@ obj << Robust Inference( 1 );
 
 ### Save ByGroup Script to Data Table
 
-**Sintassi:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintassi:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e salvarla come proprietà della tabella nella tabella di dati. È possibile specificare un nome per lo script. L&apos;opzione Append Suffix aggiunge un suffisso numerico al nome dello script, che differenzia lo script da uno script esistente con lo stesso nome. L&apos;opzione Prompt richiede all&apos;utente di specificare un nome di script. L&apos;opzione Replace sostituisce uno script esistente con lo stesso nome.
 
@@ -1598,7 +1596,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Sintassi:** obj << Save ByGroup Script to Journal
+**Sintassi:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e aggiunge un pulsante con lo script al journal.
 
@@ -1636,7 +1634,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Sintassi:** obj << Save ByGroup Script to Script Window
+**Sintassi:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo aggiunge alla finestra di testo dello script corrente.
 
@@ -1674,7 +1672,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**Sintassi:** obj << Save Script for All Objects
+**Sintassi:** obj &lt;&lt; Save Script for All Objects
 
 **Descrizione:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -1706,7 +1704,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Sintassi:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintassi:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descrizione:** Salva uno script per tutti gli oggetti del report nella tabella di dati corrente. Questa opzione è utile quando sono presenti più report nella finestra. Lo script prende il nome dalla prima piattaforma, a meno che non si specifichi il nome dello script tra apici.
 
@@ -1780,7 +1778,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Sintassi:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintassi:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo salva come una proprietà di tabella nella tabella di dati.
 
@@ -1812,7 +1810,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Sintassi:** obj << Save Script to Journal
+**Sintassi:** obj &lt;&lt; Save Script to Journal
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e aggiunge un pulsante con lo script al journal.
 
@@ -1844,7 +1842,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Sintassi:** obj << Save Script to Report
+**Sintassi:** obj &lt;&lt; Save Script to Report
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo mostra nel report. Utile per avere una copia stampata di quanto è stato fatto.
 
@@ -1876,7 +1874,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Sintassi:** obj << Save Script to Script Window
+**Sintassi:** obj &lt;&lt; Save Script to Script Window
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo aggiunge alla finestra di testo dello script corrente.
 
@@ -1973,7 +1971,7 @@ dt << Distribution(
 
 ### Set as Independence Model
 
-**Sintassi:** obj << Set as Independence Model( number )
+**Sintassi:** obj &lt;&lt; Set as Independence Model( number )
 
 **Descrizione:** Sostituisce il modello di indipendenza predefinito con uno specificato dall&apos;utente.
 
@@ -2011,7 +2009,7 @@ obj = dt << Structural Equation Models(
 
 ### Sync to Data Table Changes
 
-**Sintassi:** obj << Sync to Data Table Changes
+**Sintassi:** obj &lt;&lt; Sync to Data Table Changes
 
 **Descrizione:** Sincronizza con l&apos;esclusione e le modifiche ai dati effettuate.
 
@@ -2028,7 +2026,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Sintassi:** obj << Title( "new title" )
+**Sintassi:** obj &lt;&lt; Title( "new title" )
 
 **Descrizione:** Imposta il titolo della piattaforma.
 
@@ -2060,7 +2058,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Sintassi:** obj << Top Report
+**Sintassi:** obj &lt;&lt; Top Report
 
 **Descrizione:** Restituisce un riferimento al nodo principale nel report.
 
@@ -2094,7 +2092,7 @@ Show( t );
 
 ### Transform Column
 
-**Sintassi:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Sintassi:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Descrizione:** Crea una colonna di trasformazione nel contesto locale di un oggetto, di solito una piattaforma. La colonna di trasformazione è attiva solo per la durata della piattaforma.
 
@@ -2115,7 +2113,7 @@ dt << Distribution(
 
 ### Univariate Simple Statistics
 
-**Sintassi:** obj << Univariate Simple Statistics( state=0|1 )
+**Sintassi:** obj &lt;&lt; Univariate Simple Statistics( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un report di statistiche semplici univariate, dove le statistiche sono calcolate per ciascuna colonna in modo indipendente da altre colonne che potrebbero includere dati mancanti.
 
@@ -2134,7 +2132,7 @@ obj << Univariate Simple Statistics( 1 );
 
 ### View Web XML
 
-**Sintassi:** obj << View Web XML
+**Sintassi:** obj &lt;&lt; View Web XML
 
 **Descrizione:** Restituisce il codice XML utilizzato per creare il report HTML interattivo.
 
@@ -2149,9 +2147,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**Sintassi:** obj = Structural Equation Models(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Structural Equation Models(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Impostare il tipo di finestra da creare per il report. Per impostazione predefinita verrà creata una finestra di report Visible. Una finestra Invisible non comparirà sullo schermo, ma è individuabile da funzioni come Window(). Una finestra Private risponde alla maggior parte dei messaggi della finestra, ma non è individuabile e deve essere indirizzata attraverso l&apos;oggetto report
 
@@ -2174,7 +2170,7 @@ New Window( "Bivariate Equation",
 
 #### All Modification Indices
 
-**Sintassi:** obj << All Modification Indices( state=0|1 )
+**Sintassi:** obj &lt;&lt; All Modification Indices( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un report che contiene le stime degli indici di modifica del modello. Questi valori possono essere usati per determinare quali parametri potrebbero essere aggiunti al modello per migliorare la stima.
 
@@ -2191,7 +2187,7 @@ obj << Modification Indices( 1 );
 
 #### Assess Measurement Model
 
-**Sintassi:** obj << Assess Measurement Model( state=0|1 )
+**Sintassi:** obj &lt;&lt; Assess Measurement Model( state=0|1 )
 
 **Descrizione:** Mostra o nasconde statistiche di vario tipo per quantificare l&apos;affidabilità e la validità dei test e delle misure, tra cui l&apos;affidabilità degli indicatori, i coefficienti omega e H e una matrice di validità costruita.
 
@@ -2208,7 +2204,7 @@ obj << Assess Measurement Model( 1 );
 
 #### Confidence Intervals
 
-**Sintassi:** obj << Confidence Intervals( state=0|1 )
+**Sintassi:** obj &lt;&lt; Confidence Intervals( state=0|1 )
 
 **Descrizione:** Mostra o nasconde intervalli di confidenza al 95% per tutte le stime dei parametri.
 
@@ -2225,7 +2221,7 @@ obj << Confidence Intervals( 1 );
 
 #### Copy Diagram Properties
 
-**Sintassi:** obj << Copy Diagram Properties
+**Sintassi:** obj &lt;&lt; Copy Diagram Properties
 
 **Descrizione:** Copia le proprietà del diagramma dei percorsi corrente negli Appunti. È quindi possibile incollare le proprietà in un altro diagramma dei percorsi SEM.
 
@@ -2245,7 +2241,7 @@ obj2 << Paste Diagram Properties();
 
 #### Copy Model Specification
 
-**Sintassi:** obj << Copy Model Specification
+**Sintassi:** obj &lt;&lt; Copy Model Specification
 
 **Descrizione:** Copia le specifiche correnti del modello di equazione strutturale negli Appunti. È quindi possibile incollare le specifiche del modello in un altro report della piattaforma SEM.
 
@@ -2264,7 +2260,7 @@ obj2 << Paste Model Specification();
 
 #### Correlation of Estimates
 
-**Sintassi:** obj << Correlation of Estimates( state=0|1 )
+**Sintassi:** obj &lt;&lt; Correlation of Estimates( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un report che contiene la matrice di correlazione delle stime dei parametri per il modello.
 
@@ -2281,7 +2277,7 @@ obj << Correlation of Estimates( 1 );
 
 #### Correlation of Estimates Heat Map
 
-**Sintassi:** obj << Correlation of Estimates Heat Map( state=0|1 )
+**Sintassi:** obj &lt;&lt; Correlation of Estimates Heat Map( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un report che contiene una heatmap delle correlazioni tra le stime del modello.
 
@@ -2298,7 +2294,7 @@ obj << Correlation of Estimates Heat Map( 1 );
 
 #### Covariance of Estimates
 
-**Sintassi:** obj << Covariance of Estimates( state=0|1 )
+**Sintassi:** obj &lt;&lt; Covariance of Estimates( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un report che contiene la matrice di covarianza delle stime dei parametri per il modello.
 
@@ -2315,7 +2311,7 @@ obj << Covariance of Estimates( 1 );
 
 #### Covariance of Estimates Heat Map
 
-**Sintassi:** obj << Covariance of Estimates Heat Map( state=0|1 )
+**Sintassi:** obj &lt;&lt; Covariance of Estimates Heat Map( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un report che contiene una heatmap delle covarianze tra le stime del modello.
 
@@ -2332,7 +2328,7 @@ obj << Covariance of Estimates Heat Map( 1 );
 
 #### Covariances
 
-**Sintassi:** obj << Covariances
+**Sintassi:** obj &lt;&lt; Covariances
 
 **Descrizione:** Aggiunge covarianze tra variabili nel modello.
 
@@ -2353,7 +2349,7 @@ obj = dt << Structural Equation Models(
 
 #### Define Time Values
 
-**Sintassi:** obj << Define Time Values
+**Sintassi:** obj &lt;&lt; Define Time Values
 
 **Descrizione:** Definisce le occasioni di misurazione per le osservazioni ripetute. Questi valori vengono usati per specificare i modelli longitudinali.
 
@@ -2393,7 +2389,7 @@ obj = dt << Structural Equation Models(
 
 #### Equation Details
 
-**Sintassi:** obj << Equation Details( state=0|1 )
+**Sintassi:** obj &lt;&lt; Equation Details( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un report che contiene i dettagli di ogni equazione nel modello.
 
@@ -2425,7 +2421,7 @@ obj << Equation Details( 0 );
 
 #### Fit Indices
 
-**Sintassi:** obj << Fit Indices( state=0|1 )
+**Sintassi:** obj &lt;&lt; Fit Indices( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un report che contiene gli indici di stima del modello.
 
@@ -2442,7 +2438,7 @@ obj << Fit Indices( 1 );
 
 #### Indirect Effects
 
-**Sintassi:** obj << Indirect Effects( state=0|1 )
+**Sintassi:** obj &lt;&lt; Indirect Effects( state=0|1 )
 
 **Descrizione:** Mostra o nasconde tutti gli effetti indiretti disponibili nel modello.
 
@@ -2457,7 +2453,7 @@ obj << Indirect Effects( 1 );
 
 #### Loadings
 
-**Sintassi:** obj << Loadings
+**Sintassi:** obj &lt;&lt; Loadings
 
 **Descrizione:** Aggiunge pesi fattoriali alle variabili latenti nel modello.
 
@@ -2485,7 +2481,7 @@ obj = dt << Structural Equation Models(
 
 #### Means/Intercepts
 
-**Sintassi:** obj << Means/Intercepts
+**Sintassi:** obj &lt;&lt; Means/Intercepts
 
 **Descrizione:** Aggiunge medie o intercette alle variabili nel modello.
 
@@ -2510,7 +2506,7 @@ obj = dt << Structural Equation Models(
 
 #### Model Implied Correlations
 
-**Sintassi:** obj << Model Implied Correlations( state=0|1 )
+**Sintassi:** obj &lt;&lt; Model Implied Correlations( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un report che contiene la matrice di correlazione implicita nel modello.
 
@@ -2527,7 +2523,7 @@ obj << Model Implied Correlations( 1 );
 
 #### Model Implied Correlations Heat Map
 
-**Sintassi:** obj << Model Implied Correlations Heat Map( state=0|1 )
+**Sintassi:** obj &lt;&lt; Model Implied Correlations Heat Map( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un report che contiene una heatmap delle correlazioni implicite del modello.
 
@@ -2544,7 +2540,7 @@ obj << Model Implied Correlations Heat Map( 1 );
 
 #### Model Implied Covariances
 
-**Sintassi:** obj << Model Implied Covariances( state=0|1 )
+**Sintassi:** obj &lt;&lt; Model Implied Covariances( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un report che contiene la matrice di covarianza implicita nel modello.
 
@@ -2561,7 +2557,7 @@ obj << Model Implied Covariances( 1 );
 
 #### Model Implied Covariances Heat Map
 
-**Sintassi:** obj << Model Implied Covariances Heat Map( state=0|1 )
+**Sintassi:** obj &lt;&lt; Model Implied Covariances Heat Map( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un report che contiene una heatmap delle covarianze implicite del modello.
 
@@ -2578,7 +2574,7 @@ obj << Model Implied Covariances Heat Map( 1 );
 
 #### Model Implied Means
 
-**Sintassi:** obj << Model Implied Means( state=0|1 )
+**Sintassi:** obj &lt;&lt; Model Implied Means( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un report che contiene le medie di ogni variabile implicita nel modello.
 
@@ -2595,7 +2591,7 @@ obj << Model Implied Means( 1 );
 
 #### Model Name
 
-**Sintassi:** obj << Model Name
+**Sintassi:** obj &lt;&lt; Model Name
 
 **Descrizione:** Imposta un nome di modello.
 
@@ -2618,7 +2614,7 @@ obj = dt << Structural Equation Models(
 
 #### Modification Indices
 
-**Sintassi:** obj << Modification Indices( state=0|1 )
+**Sintassi:** obj &lt;&lt; Modification Indices( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un report che contiene le stime degli indici di modifica del modello. Questi valori possono essere usati per determinare quali parametri potrebbero essere aggiunti al modello per migliorare la stima.
 
@@ -2635,7 +2631,7 @@ obj << Modification Indices( 1 );
 
 #### Modification Indices for Covariances
 
-**Sintassi:** obj << Modification Indices for Covariances( state=0|1 )
+**Sintassi:** obj &lt;&lt; Modification Indices for Covariances( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un report che contiene le stime degli indici di modifica del modello. Questi valori possono essere usati per determinare quali parametri potrebbero essere aggiunti al modello per migliorare la stima.
 
@@ -2652,7 +2648,7 @@ obj << Modification Indices for Covariances( 1 );
 
 #### Modification Indices for Loadings
 
-**Sintassi:** obj << Modification Indices for Loadings( state=0|1 )
+**Sintassi:** obj &lt;&lt; Modification Indices for Loadings( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un report che contiene le stime degli indici di modifica del modello. Questi valori possono essere usati per determinare quali parametri potrebbero essere aggiunti al modello per migliorare la stima.
 
@@ -2669,7 +2665,7 @@ obj << Modification Indices for Loadings( 1 );
 
 #### Modification Indices for Means
 
-**Sintassi:** obj << Modification Indices for Means( state=0|1 )
+**Sintassi:** obj &lt;&lt; Modification Indices for Means( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un report che contiene le stime degli indici di modifica del modello. Questi valori possono essere usati per determinare quali parametri potrebbero essere aggiunti al modello per migliorare la stima.
 
@@ -2712,7 +2708,7 @@ obj << Modification Indices for Means( 1 );
 
 #### Modification Indices for Regressions
 
-**Sintassi:** obj << Modification Indices for Regressions( state=0|1 )
+**Sintassi:** obj &lt;&lt; Modification Indices for Regressions( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un report che contiene le stime degli indici di modifica del modello. Questi valori possono essere usati per determinare quali parametri potrebbero essere aggiunti al modello per migliorare la stima.
 
@@ -2729,7 +2725,7 @@ obj << Modification Indices for Regressions( 1 );
 
 #### Modification Indices for Variances
 
-**Sintassi:** obj << Modification Indices for Variances( state=0|1 )
+**Sintassi:** obj &lt;&lt; Modification Indices for Variances( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un report che contiene le stime degli indici di modifica del modello. Questi valori possono essere usati per determinare quali parametri potrebbero essere aggiunti al modello per migliorare la stima.
 
@@ -2772,7 +2768,7 @@ obj << Modification Indices for Variances( 1 );
 
 #### New Latent
 
-**Sintassi:** obj << New Latent
+**Sintassi:** obj &lt;&lt; New Latent
 
 **Descrizione:** Aggiunge una nuova variabile latente nel modello.
 
@@ -2802,7 +2798,7 @@ obj = dt << Structural Equation Models(
 
 #### Normalized Residuals
 
-**Sintassi:** obj << Normalized Residuals( state=0|1 )
+**Sintassi:** obj &lt;&lt; Normalized Residuals( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un report che contiene una matrice dei residui normalizzati per il modello.
 
@@ -2819,7 +2815,7 @@ obj << Normalized Residuals( 1 );
 
 #### Normalized Residuals Heat Map
 
-**Sintassi:** obj << Normalized Residuals Heat Map( state=0|1 )
+**Sintassi:** obj &lt;&lt; Normalized Residuals Heat Map( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un report che contiene una heatmap dei residui normalizzati per il modello.
 
@@ -2836,7 +2832,7 @@ obj << Normalized Residuals Heat Map( 1 );
 
 #### Parameter Estimates
 
-**Sintassi:** obj << Parameter Estimates( state=0|1 )
+**Sintassi:** obj &lt;&lt; Parameter Estimates( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un report che contiene le stime non standardizzate dei parametri per il modello. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -2853,7 +2849,7 @@ obj << Parameter Estimates( 0 );
 
 #### Paste Diagram Properties
 
-**Sintassi:** obj << Paste Diagram Properties
+**Sintassi:** obj &lt;&lt; Paste Diagram Properties
 
 **Descrizione:** Incolla le proprietà del diagramma dei percorsi dagli Appunti nel diagramma dei percorsi SEM corrente.
 
@@ -2873,7 +2869,7 @@ obj2 << Paste Diagram Properties();
 
 #### Path Diagram Properties
 
-**Sintassi:** obj << Path Diagram Properties
+**Sintassi:** obj &lt;&lt; Path Diagram Properties
 
 **JMP Versione aggiunta:** 15
 
@@ -2913,7 +2909,7 @@ obj = dt << Structural Equation Models(
 
 #### Predicted Values Plot
 
-**Sintassi:** obj << Predicted Values Plot( state=0|1 )
+**Sintassi:** obj &lt;&lt; Predicted Values Plot( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un diagramma dei valori previsti per le variabili endogene nel modello.
 
@@ -2930,7 +2926,7 @@ obj << Predicted Values Plot( 1, 1 );
 
 #### Prediction Profiler
 
-**Sintassi:** obj << Prediction Profiler
+**Sintassi:** obj &lt;&lt; Prediction Profiler
 
 **Descrizione:** Mostra o nasconde un profiler di previsione per i risultati selezionati, dati i predittori selezionati e il modello specificato.
 
@@ -2952,7 +2948,7 @@ obj << Prediction Profiler(
 
 #### R Square for Endogenous Variables
 
-**Sintassi:** obj << R Square for Endogenous Variables( state=0|1 )
+**Sintassi:** obj &lt;&lt; R Square for Endogenous Variables( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un report con valori R-quadro per tutte le variabili endogene nel modello.
 
@@ -2969,7 +2965,7 @@ obj << R Square for Endogenous Variables( 1 );
 
 #### RAM Matrices
 
-**Sintassi:** obj << RAM Matrices( state=0|1 )
+**Sintassi:** obj &lt;&lt; RAM Matrices( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un report che contiene le matrici del modello usate nella notazione del modello di azione reticolare (RAM).
 
@@ -2986,7 +2982,7 @@ obj << RAM Matrices( 1 );
 
 #### Recall in Model Specification
 
-**Sintassi:** obj << Recall in Model Specification
+**Sintassi:** obj &lt;&lt; Recall in Model Specification
 
 **Descrizione:** Imposta il modello nel report Specifica del modello in base al modello specificato.
 
@@ -3003,7 +2999,7 @@ obj << Recall in Model Specification( 1 );
 
 #### Regressions
 
-**Sintassi:** obj << Regressions
+**Sintassi:** obj &lt;&lt; Regressions
 
 **Descrizione:** Aggiunge percorsi di regressione al modello.
 
@@ -3024,7 +3020,7 @@ obj = dt << Structural Equation Models(
 
 #### Remove Fit
 
-**Sintassi:** obj << Remove Fit
+**Sintassi:** obj &lt;&lt; Remove Fit
 
 **Descrizione:** Rimuove il report del modello specificato dalla finestra del report.
 
@@ -3041,7 +3037,7 @@ obj << Remove Fit( 1 );
 
 #### Residuals
 
-**Sintassi:** obj << Residuals( state=0|1 )
+**Sintassi:** obj &lt;&lt; Residuals( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un report che contiene una matrice dei residui per il modello. Questa matrice è la differenza tra la matrice di covarianza implicita nel modello e la matrice di covarianza del campione.
 
@@ -3058,7 +3054,7 @@ obj << Residuals( 1 );
 
 #### Save Bartlett Factor Scores
 
-**Sintassi:** obj << Save Bartlett Factor Scores
+**Sintassi:** obj &lt;&lt; Save Bartlett Factor Scores
 
 **Descrizione:** Salva una colonna con lo score fattore per ogni variabile in colonne nella tabella di dati. Gli score fattore sono calcolati in una colonna nascosta, anch&apos;essa aggiunta alla tabella di dati. Per stimare questi score è utilizzato il metodo di Bartlett.
 
@@ -3073,7 +3069,7 @@ obj << Save Bartlett Factor Scores();
 
 #### Save Factor Scores
 
-**Sintassi:** obj << Save Factor Scores
+**Sintassi:** obj &lt;&lt; Save Factor Scores
 
 **Descrizione:** Salva una colonna con lo score fattore per ogni variabile in colonne nella tabella di dati. Gli score fattore sono calcolati in una colonna nascosta, anch&apos;essa aggiunta alla tabella di dati. Per stimare questi score è utilizzato il metodo della regressione.
 
@@ -3090,7 +3086,7 @@ obj << Save Factor Scores();
 
 #### Save Observational Residuals
 
-**Sintassi:** obj << Save Observational Residuals
+**Sintassi:** obj &lt;&lt; Save Observational Residuals
 
 **Descrizione:** Salva nella tabella di dati colonne che contengono valori residui dei risultati osservati nel modello.
 
@@ -3107,7 +3103,7 @@ obj << Save Observational Residuals();
 
 #### Save Prediction Formulas
 
-**Sintassi:** obj << Save Prediction Formulas
+**Sintassi:** obj &lt;&lt; Save Prediction Formulas
 
 **Descrizione:** Salva nella tabella di dati colonne che contengono formule per i valori previsti dei risultati osservati nel modello.
 
@@ -3124,7 +3120,7 @@ obj << Save Prediction Formulas();
 
 #### Show Path Diagram
 
-**Sintassi:** obj << Show Path Diagram( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Path Diagram( state=0|1 )
 
 **Descrizione:** Mostra o nasconde il diagramma dei percorsi SEM. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -3141,7 +3137,7 @@ obj << Show Path Diagram( 0 );
 
 #### Specific Indirect Effects
 
-**Sintassi:** obj << Specific Indirect Effects
+**Sintassi:** obj &lt;&lt; Specific Indirect Effects
 
 **Descrizione:** Consente di indicare gli effetti indiretti specifici da stimare dal modello.
 
@@ -3158,7 +3154,7 @@ obj << Specific Indirect Effects( {"Ind60", "Dem65"} );
 
 #### Standardized Parameter Estimates
 
-**Sintassi:** obj << Standardized Parameter Estimates( state=0|1 )
+**Sintassi:** obj &lt;&lt; Standardized Parameter Estimates( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un report che contiene le stime standardizzate dei parametri per il modello.
 
@@ -3175,7 +3171,7 @@ obj << Standardized Parameter Estimates( 1 );
 
 #### Summary of Fit
 
-**Sintassi:** obj << Summary of Fit( state=0|1 )
+**Sintassi:** obj &lt;&lt; Summary of Fit( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un report che contiene dettagli della stima del modello. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -3192,7 +3188,7 @@ obj << Summary of Fit( 0 );
 
 #### Total Effects
 
-**Sintassi:** obj << Total Effects( state=0|1 )
+**Sintassi:** obj &lt;&lt; Total Effects( state=0|1 )
 
 **Descrizione:** Mostra o nasconde tutti gli effetti totali disponibili nel modello.
 
@@ -3207,7 +3203,7 @@ obj << Total Effects( 1 );
 
 #### Variances
 
-**Sintassi:** obj << Variances
+**Sintassi:** obj &lt;&lt; Variances
 
 **Descrizione:** Aggiunge varianze alle variabili nel modello.
 
@@ -3242,7 +3238,7 @@ obj = dt << Structural Equation Models(
 
 #### Constant Border Color
 
-**Sintassi:** obj << Path Diagram Properties( Constant Border Color ( color ) );
+**Sintassi:** obj &lt;&lt; Path Diagram Properties( Constant Border Color ( color ) );
 
 **Descrizione:** Modifica il colore del bordo delle variabili costanti nel diagramma dei percorsi.
 
@@ -3259,7 +3255,7 @@ obj << Path Diagram Properties( Show Means( 1 ), Constant Border Color( "Blue" )
 
 #### Constant Fill Color
 
-**Sintassi:** obj << Path Diagram Properties( Constant Fill Color ( color ) );
+**Sintassi:** obj &lt;&lt; Path Diagram Properties( Constant Fill Color ( color ) );
 
 **Descrizione:** Modifica il colore di riempimento delle variabili costanti nel diagramma dei percorsi.
 
@@ -3276,7 +3272,7 @@ obj << Path Diagram Properties( Show Means( 1 ), Constant Fill Color( "Blue" ) )
 
 #### Constant Font
 
-**Sintassi:** obj << Path Diagram Properties( Constant Font ( font ) );
+**Sintassi:** obj &lt;&lt; Path Diagram Properties( Constant Font ( font ) );
 
 **Descrizione:** Modifica il carattere delle variabili manifeste nel diagramma dei percorsi.
 
@@ -3293,7 +3289,7 @@ obj << Path Diagram Properties( Show Means( 1 ), Constant Font( "Sitka Small" ) 
 
 #### Constant Height
 
-**Sintassi:** obj << Path Diagram Properties( Constant Height ( number ) );
+**Sintassi:** obj &lt;&lt; Path Diagram Properties( Constant Height ( number ) );
 
 **Descrizione:** Modifica l&apos;altezza (pixel) delle variabili costanti nel diagramma dei percorsi.
 
@@ -3310,7 +3306,7 @@ obj << Path Diagram Properties( Show Means( 1 ), Constant Height( 20 ) );
 
 #### Constant Shape
 
-**Sintassi:** obj << Constant Shape
+**Sintassi:** obj &lt;&lt; Constant Shape
 
 **Descrizione:** Modifica l&apos;aspetto predefinito delle costanti nel diagramma dei percorsi, usate per rappresentare le medie e le intercette delle variabili.
 
@@ -3330,7 +3326,7 @@ obj << Path Diagram Properties(
 
 #### Constant Size Option
 
-**Sintassi:** obj << Path Diagram Properties( Constant Size Option ( <Default | Scale To Text | Custom> ) );
+**Sintassi:** obj &lt;&lt; Path Diagram Properties( Constant Size Option ( &lt;Default | Scale To Text | Custom&gt; ) );
 
 **Descrizione:** Cambia la modalità della dimensione per Costante nel diagramma dei percorsi.
 
@@ -3347,7 +3343,7 @@ obj << Path Diagram Properties( Constant Size Option( "Scale To Text" ) );
 
 #### Constant Text Color
 
-**Sintassi:** obj << Path Diagram Properties( Constant Text Color ( color ) );
+**Sintassi:** obj &lt;&lt; Path Diagram Properties( Constant Text Color ( color ) );
 
 **Descrizione:** Modifica il colore del testo delle variabili costanti nel diagramma dei percorsi.
 
@@ -3364,7 +3360,7 @@ obj << Path Diagram Properties( Show Means( 1 ), Constant Text Color( "Blue" ) )
 
 #### Constant Width
 
-**Sintassi:** obj << Path Diagram Properties( Constant Width ( number ) );
+**Sintassi:** obj &lt;&lt; Path Diagram Properties( Constant Width ( number ) );
 
 **Descrizione:** Modifica la larghezza (pixel) delle variabili costanti nel diagramma dei percorsi.
 
@@ -3381,7 +3377,7 @@ obj << Path Diagram Properties( Show Means( 1 ), Constant Width( 71 ) );
 
 #### Copy Diagram
 
-**Sintassi:** obj << Copy Diagram
+**Sintassi:** obj &lt;&lt; Copy Diagram
 
 **Descrizione:** Salva un&apos;immagine della finestra del diagramma negli Appunti.
 
@@ -3399,7 +3395,7 @@ rpt[Node Graph Box( 1 )] << Copy Diagram;
 
 #### Copy Diagram Properties
 
-**Sintassi:** obj << Copy Diagram Properties
+**Sintassi:** obj &lt;&lt; Copy Diagram Properties
 
 **Descrizione:** Salva una copia delle impostazioni di script specifiche per il diagramma negli Appunti. Queste impostazioni possono essere quindi applicate ad altri diagrammi.
 
@@ -3423,7 +3419,7 @@ other_diagram << Paste Diagram Properties;
 
 #### Dashed Lines for Nonsignificant p-values
 
-**Sintassi:** obj << Path Diagram Properties ("Dashed Lines for Nonsignificant p - values"n( 0 | 1 ) )
+**Sintassi:** obj &lt;&lt; Path Diagram Properties ("Dashed Lines for Nonsignificant p - values"n( 0 | 1 ) )
 
 **Descrizione:** Mostra o nasconde linee tratteggiate per percorsi con p-value non significativi. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -3440,7 +3436,7 @@ obj << Path Diagram Properties( "Dashed Lines for Nonsignificant p - values"n( 0
 
 #### Diagram Size
 
-**Sintassi:** obj << Path Diagram Properties( Diagram Size ( {x, y} ) )
+**Sintassi:** obj &lt;&lt; Path Diagram Properties( Diagram Size ( {x, y} ) )
 
 **Descrizione:** Modifica la dimensione del diagramma dei percorsi.
 
@@ -3470,7 +3466,7 @@ obj << Path Diagram Properties(
 
 #### Enable Grid
 
-**Sintassi:** obj << Path Diagram Properties ( Enable Grid( 0|1) )
+**Sintassi:** obj &lt;&lt; Path Diagram Properties ( Enable Grid( 0|1) )
 
 **Descrizione:** Attiva una griglia visiva nel diagramma dei percorsi.
 
@@ -3487,7 +3483,7 @@ obj << Path Diagram Properties( Enable Grid( 1 ) );
 
 #### Fill Nodes With R Squared
 
-**Sintassi:** obj << Path Diagram Properties ( Fill Nodes With R Squared ( 0|1) )
+**Sintassi:** obj &lt;&lt; Path Diagram Properties ( Fill Nodes With R Squared ( 0|1) )
 
 **Descrizione:** Specifica che i nodi nel modello stimato siano parzialmente riempiti in base al loro coefficiente di determinazione stimato. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -3504,7 +3500,7 @@ obj << Path Diagram Properties( Fill Nodes With R Squared( 1 ) );
 
 #### Latent Border Color
 
-**Sintassi:** obj << Path Diagram Properties( Latent Border Color ( color ) );
+**Sintassi:** obj &lt;&lt; Path Diagram Properties( Latent Border Color ( color ) );
 
 **Descrizione:** Modifica il colore del bordo delle variabili latenti nel diagramma dei percorsi.
 
@@ -3521,7 +3517,7 @@ obj << Path Diagram Properties( Latent Border Color( "Blue" ) );
 
 #### Latent Fill Color
 
-**Sintassi:** obj << Path Diagram Properties( Latent Fill Color ( color ) );
+**Sintassi:** obj &lt;&lt; Path Diagram Properties( Latent Fill Color ( color ) );
 
 **Descrizione:** Modifica il colore di riempimento delle variabili latenti nel diagramma dei percorsi.
 
@@ -3538,7 +3534,7 @@ obj << Path Diagram Properties( Latent Fill Color( "Blue" ) );
 
 #### Latent Font
 
-**Sintassi:** obj << Path Diagram Properties( Manifest Font ( font ) );
+**Sintassi:** obj &lt;&lt; Path Diagram Properties( Manifest Font ( font ) );
 
 **Descrizione:** Modifica il carattere delle variabili latenti nel diagramma dei percorsi.
 
@@ -3555,7 +3551,7 @@ obj << Path Diagram Properties( Latent Font( "Sitka Small" ) );
 
 #### Latent Height
 
-**Sintassi:** obj << Path Diagram Properties( Latent Height ( number ) );
+**Sintassi:** obj &lt;&lt; Path Diagram Properties( Latent Height ( number ) );
 
 **Descrizione:** Modifica l&apos;altezza (pixel) delle variabili latenti nel diagramma dei percorsi.
 
@@ -3572,7 +3568,7 @@ obj << Path Diagram Properties( Latent Height( 30 ) );
 
 #### Latent Shape
 
-**Sintassi:** obj << Latent Shape
+**Sintassi:** obj &lt;&lt; Latent Shape
 
 **Descrizione:** Modifica l&apos;aspetto predefinito delle variabili latenti nel diagramma dei percorsi.
 
@@ -3591,7 +3587,7 @@ obj << Path Diagram Properties(
 
 #### Latent Size Option
 
-**Sintassi:** obj << Path Diagram Properties( Latent Size Option ( <Default | Scale To Text | Custom> ) );
+**Sintassi:** obj &lt;&lt; Path Diagram Properties( Latent Size Option ( &lt;Default | Scale To Text | Custom&gt; ) );
 
 **Descrizione:** Cambia la modalità della dimensione per i nodi latenti nel diagramma dei percorsi.
 
@@ -3608,7 +3604,7 @@ obj << Path Diagram Properties( Latent Size Option( "Scale To Text" ) );
 
 #### Latent Text Color
 
-**Sintassi:** obj << Path Diagram Properties( Latent Text Color ( color ) );
+**Sintassi:** obj &lt;&lt; Path Diagram Properties( Latent Text Color ( color ) );
 
 **Descrizione:** Modifica il colore del testo delle variabili latenti nel diagramma dei percorsi.
 
@@ -3625,7 +3621,7 @@ obj << Path Diagram Properties( Latent Text Color( "Blue" ) );
 
 #### Latent Width
 
-**Sintassi:** obj << Path Diagram Properties( Latent Width ( number ) );
+**Sintassi:** obj &lt;&lt; Path Diagram Properties( Latent Width ( number ) );
 
 **Descrizione:** Modifica la larghezza (pixel) delle variabili latenti nel diagramma dei percorsi.
 
@@ -3642,7 +3638,7 @@ obj << Path Diagram Properties( Latent Width( 71 ) );
 
 #### Layout
 
-**Sintassi:** obj << Path Diagram Properties ( Layout("Left To Right"|"Top To Bottom") )
+**Sintassi:** obj &lt;&lt; Path Diagram Properties ( Layout("Left To Right"|"Top To Bottom") )
 
 **Descrizione:** Imposta il layout iniziale del diagramma dei percorsi.
 
@@ -3659,7 +3655,7 @@ obj << Path Diagram Properties( Layout( "Top To Bottom" ) );
 
 #### Lock Diagram
 
-**Sintassi:** obj << Path Diagram Properties ( Lock Diagram( 0|1) )
+**Sintassi:** obj &lt;&lt; Path Diagram Properties ( Lock Diagram( 0|1) )
 
 **Descrizione:** Blocca il diagramma dei percorsi in modo che le modifiche al modello non causino il cambiamento del layout.
 
@@ -3676,7 +3672,7 @@ obj << Path Diagram Properties( Lock Diagram( 1 ) );
 
 #### Manifest Border Color
 
-**Sintassi:** obj << Path Diagram Properties( Manifest Border Color ( color ) );
+**Sintassi:** obj &lt;&lt; Path Diagram Properties( Manifest Border Color ( color ) );
 
 **Descrizione:** Modifica il colore del bordo delle variabili manifeste nel diagramma dei percorsi.
 
@@ -3693,7 +3689,7 @@ obj << Path Diagram Properties( Manifest Border Color( "Blue" ) );
 
 #### Manifest Fill Color
 
-**Sintassi:** obj << Path Diagram Properties( Manifest Fill Color ( color ) );
+**Sintassi:** obj &lt;&lt; Path Diagram Properties( Manifest Fill Color ( color ) );
 
 **Descrizione:** Modifica il colore di riempimento delle variabili manifeste nel diagramma dei percorsi.
 
@@ -3710,7 +3706,7 @@ obj << Path Diagram Properties( Manifest Fill Color( "Blue" ) );
 
 #### Manifest Font
 
-**Sintassi:** obj << Path Diagram Properties( Manifest Font ( font ) );
+**Sintassi:** obj &lt;&lt; Path Diagram Properties( Manifest Font ( font ) );
 
 **Descrizione:** Modifica il carattere delle variabili manifeste nel diagramma dei percorsi.
 
@@ -3727,7 +3723,7 @@ obj << Path Diagram Properties( Manifest Font( "Sitka Small" ) );
 
 #### Manifest Height
 
-**Sintassi:** obj << Path Diagram Properties( Manifest Height ( number ) );
+**Sintassi:** obj &lt;&lt; Path Diagram Properties( Manifest Height ( number ) );
 
 **Descrizione:** Modifica l&apos;altezza (pixel) delle variabili manifeste nel diagramma dei percorsi.
 
@@ -3744,7 +3740,7 @@ obj << Path Diagram Properties( Manifest Height( 30 ) );
 
 #### Manifest Shape
 
-**Sintassi:** obj << Manifest Shape
+**Sintassi:** obj &lt;&lt; Manifest Shape
 
 **Descrizione:** Modifica l&apos;aspetto predefinito delle variabili manifeste nel diagramma dei percorsi.
 
@@ -3761,7 +3757,7 @@ obj << Path Diagram Properties( Manifest Shape( {Fill Color( "Green" )} ) );
 
 #### Manifest Size Option
 
-**Sintassi:** obj << Path Diagram Properties( Manifest Size Option ( <Default | Scale To Text | Custom> ) );
+**Sintassi:** obj &lt;&lt; Path Diagram Properties( Manifest Size Option ( &lt;Default | Scale To Text | Custom&gt; ) );
 
 **Descrizione:** Cambia la modalità della dimensione per i nodi manifesti nel diagramma dei percorsi.
 
@@ -3778,7 +3774,7 @@ obj << Path Diagram Properties( Manifest Size Option( "Scale To Text" ) );
 
 #### Manifest Text Color
 
-**Sintassi:** obj << Path Diagram Properties( Manifest Text Color ( color ) );
+**Sintassi:** obj &lt;&lt; Path Diagram Properties( Manifest Text Color ( color ) );
 
 **Descrizione:** Modifica il colore del testo delle variabili manifeste nel diagramma dei percorsi.
 
@@ -3795,7 +3791,7 @@ obj << Path Diagram Properties( Manifest Text Color( "Blue" ) );
 
 #### Manifest Width
 
-**Sintassi:** obj << Path Diagram Properties( Manifest Width ( number ) );
+**Sintassi:** obj &lt;&lt; Path Diagram Properties( Manifest Width ( number ) );
 
 **Descrizione:** Modifica la larghezza (pixel) delle variabili manifeste nel diagramma dei percorsi.
 
@@ -3812,7 +3808,7 @@ obj << Path Diagram Properties( Manifest Width( 67 ) );
 
 #### Paste Diagram Properties
 
-**Sintassi:** obj << Paste Diagram Properties
+**Sintassi:** obj &lt;&lt; Paste Diagram Properties
 
 **Descrizione:** Incolla una copia delle impostazioni di script specifiche per il diagramma dagli Appunti.
 
@@ -3836,7 +3832,7 @@ other_diagram << Paste Diagram Properties;
 
 #### Path Styles
 
-**Sintassi:** obj << Path Styles
+**Sintassi:** obj &lt;&lt; Path Styles
 
 **Descrizione:** Modifica l&apos;aspetto predefinito dei percorsi nel diagramma dei percorsi.
 
@@ -3853,7 +3849,7 @@ obj << Path Diagram Properties( Path Styles( {Color( "Green" )} ) );
 
 #### Path Thickness
 
-**Sintassi:** obj << Path Diagram Properties (Path Thickness( "Fixed"|"Map to Stdz. Estimates" ) )
+**Sintassi:** obj &lt;&lt; Path Diagram Properties (Path Thickness( "Fixed"|"Map to Stdz. Estimates" ) )
 
 **Descrizione:** Alterna se lo spessore dei percorsi nel diagramma è mantenuto a un valore fisso o è legato alla forza della sua stima standardizzata. "Fixed", per impostazione predefinita.
 
@@ -3870,7 +3866,7 @@ obj << Path Diagram Properties( Path Thickness( "Map to Stdz. Estimates" ) );
 
 #### Path Transparency
 
-**Sintassi:** obj << Path Diagram Properties (Path Transparency( "Fixed"|"Map to Stdz. Estimates" ) )
+**Sintassi:** obj &lt;&lt; Path Diagram Properties (Path Transparency( "Fixed"|"Map to Stdz. Estimates" ) )
 
 **Descrizione:** Alterna se la trasparenza dei percorsi nel diagramma è mantenuta a un valore fisso o è legato alla forza della sua stima standardizzata.
 
@@ -3887,7 +3883,7 @@ obj << Path Diagram Properties( Path Transparency( "Fixed" ) );
 
 #### Paths Alpha Level
 
-**Sintassi:** obj << Path Diagram Properties( Paths Alpha Level ( number) );
+**Sintassi:** obj &lt;&lt; Path Diagram Properties( Paths Alpha Level ( number) );
 
 **Descrizione:** Modifica la soglia minima del valore p per l&apos;utilizzo delle linee tratteggiate nel diagramma dei percorsi.
 
@@ -3904,7 +3900,7 @@ obj << Path Diagram Properties( Paths Alpha Level( 0.01 ) );
 
 #### Paths Color
 
-**Sintassi:** obj << Path Diagram Properties( Paths Color ( color) );
+**Sintassi:** obj &lt;&lt; Path Diagram Properties( Paths Color ( color) );
 
 **Descrizione:** Modifica il colore dei percorsi nel diagramma dei percorsi.
 
@@ -3921,7 +3917,7 @@ obj << Path Diagram Properties( Paths Color( "Green" ) );
 
 #### Paths Font
 
-**Sintassi:** obj << Path Diagram Properties( Paths Font ( font ) );
+**Sintassi:** obj &lt;&lt; Path Diagram Properties( Paths Font ( font ) );
 
 **Descrizione:** Modifica il carattere utilizzato per etichettare i percorsi nel diagramma dei percorsi.
 
@@ -3938,7 +3934,7 @@ obj << Path Diagram Properties( Paths Font( "Segoe Script", 12, "Bold" ) );
 
 #### Paths Opacity
 
-**Sintassi:** obj << Path Diagram Properties( Paths Opacity ( number) );
+**Sintassi:** obj &lt;&lt; Path Diagram Properties( Paths Opacity ( number) );
 
 **Descrizione:** Modifica l&apos;opacità dei percorsi nel diagramma dei percorsi.
 
@@ -3955,7 +3951,7 @@ obj << Path Diagram Properties( Paths Opacity( 0.5 ), Path Transparency( "Fixed"
 
 #### Paths Thickness
 
-**Sintassi:** obj << Path Diagram Properties( Paths Thickness ( number) );
+**Sintassi:** obj &lt;&lt; Path Diagram Properties( Paths Thickness ( number) );
 
 **Descrizione:** Modifica lo spessore dei percorsi nel diagramma dei percorsi.
 
@@ -3972,7 +3968,7 @@ obj << Path Diagram Properties( Paths Thickness( 2.7103 ) );
 
 #### Place Nodes
 
-**Sintassi:** obj << Path Diagram Properties( Place Nodes ( { {name1, x1, y1}, {name2, x2, y2}, ...} ) )
+**Sintassi:** obj &lt;&lt; Path Diagram Properties( Place Nodes ( { {name1, x1, y1}, {name2, x2, y2}, ...} ) )
 
 **Descrizione:** Controlla il posizionamento di singoli nodi nel diagramma dei percorsi.
 
@@ -4002,7 +3998,7 @@ obj << Path Diagram Properties(
 
 #### R2 Fill Color
 
-**Sintassi:** obj << Path Diagram Properties ( R2 Fill Color ( Color ) )
+**Sintassi:** obj &lt;&lt; Path Diagram Properties ( R2 Fill Color ( Color ) )
 
 **Descrizione:** Specifica il colore per il riempimento parziale che rappresenta un valore R-quadro stimato della variabile.
 
@@ -4019,7 +4015,7 @@ obj << Path Diagram Properties( R2 Fill Color( Cyan ) );
 
 #### Rotate Latent Groups
 
-**Sintassi:** obj << Rotate Latent Groups
+**Sintassi:** obj &lt;&lt; Rotate Latent Groups
 
 **Descrizione:** Ruota l&apos;orientamento di tutti gli indicatori latenti nel diagramma. Se si selezionano gruppi latenti, questa opzione consente di ruotare solo l&apos;orientamento di tali gruppi latenti selezionati.
 
@@ -4038,7 +4034,7 @@ diagram << Rotate Latent Groups;
 
 #### Rotate Loops
 
-**Sintassi:** obj << Path Diagram Properties( Rotate Loops ( { {name1, angle1}, {name2, angle2}, ...} ) )
+**Sintassi:** obj &lt;&lt; Path Diagram Properties( Rotate Loops ( { {name1, angle1}, {name2, angle2}, ...} ) )
 
 **Descrizione:** Controlla la rotazione dei cicli di varianza all&apos;interno del diagramma dei percorsi. Gli angoli sono misurati in radianti in senso orario.
 
@@ -4068,7 +4064,7 @@ obj << Path Diagram Properties(
 
 #### Show Constant Mean Square
 
-**Sintassi:** obj << Show Constant Mean Square( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Constant Mean Square( state=0|1 )
 
 **Descrizione:** Mostra o nasconde il bordo associato alla costante nel diagramma dei percorsi.
 
@@ -4085,7 +4081,7 @@ obj << Path Diagram Properties( Show Constant Mean Square( 1 ) );
 
 #### Show Covariances
 
-**Sintassi:** obj << Show Covariances( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Covariances( state=0|1 )
 
 **Descrizione:** Mostra o nasconde le frecce bidirezionali che rappresentano le covarianze nel diagramma dei percorsi. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -4102,7 +4098,7 @@ obj << Path Diagram Properties( Show Covariances( 0 ) );
 
 #### Show Equality Constraints
 
-**Sintassi:** obj << Show Equality Constraints( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Equality Constraints( state=0|1 )
 
 **Descrizione:** Mostra o nasconde i vincoli di uguaglianza (valori fissi o etichette) sui bordi (edge) nel diagramma dei percorsi. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -4119,7 +4115,7 @@ obj << Path Diagram Properties( Show Equality Constraints( 0 ) );
 
 #### Show Estimates
 
-**Sintassi:** obj << Show Estimates( "Non standardizzato"|"Standardizzato"|"Nessuno" )
+**Sintassi:** obj &lt;&lt; Show Estimates( "Non standardizzato"|"Standardizzato"|"Nessuno" )
 
 **Descrizione:** Mostra o nasconde le stime dei parametri non standardizzate nel diagramma dei percorsi.
 
@@ -4136,7 +4132,7 @@ obj << Path Diagram Properties( Show Estimates( "None" ) );
 
 #### Show Loadings
 
-**Sintassi:** obj << Show Loadings( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Loadings( state=0|1 )
 
 **Descrizione:** Mostra o nasconde gli indicatori della variabile latenti nel diagramma dei percorsi. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -4153,7 +4149,7 @@ obj << Path Diagram Properties( Show Loadings( 0 ) );
 
 #### Show Means/Intercepts
 
-**Sintassi:** obj << Show Means/Intercepts( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Means/Intercepts( state=0|1 )
 
 **Descrizione:** Mostra o nasconde le medie nella Piattaforma SEM.
 
@@ -4170,7 +4166,7 @@ obj << Path Diagram Properties( Show Means( 1 ) );
 
 #### Show R Squared Values
 
-**Sintassi:** obj << Show R Squared Values( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show R Squared Values( state=0|1 )
 
 **Descrizione:** Mostra o nasconde i valori di R-quadro all&apos;interno dei nodi nel diagramma dei percorsi.
 
@@ -4187,7 +4183,7 @@ obj << Path Diagram Properties( Show R Squared Values( 1 ) );
 
 #### Show Regressions
 
-**Sintassi:** obj << Show Regressions( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Regressions( state=0|1 )
 
 **Descrizione:** Mostra o nasconde le regressioni nella Piattaforma SEM. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -4204,7 +4200,7 @@ obj << Path Diagram Properties( Show Regressions( 0 ) );
 
 #### Show Variances
 
-**Sintassi:** obj << Show Variances( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Variances( state=0|1 )
 
 **Descrizione:** Mostra o nasconde le frecce bidirezionali che rappresentano le varianze nel diagramma percorso. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -4225,7 +4221,7 @@ obj << Path Diagram Properties( Show Variances( 0 ) );
 
 #### Covariances
 
-**Sintassi:** obj << Covariances
+**Sintassi:** obj &lt;&lt; Covariances
 
 **Descrizione:** Aggiunge covarianze tra variabili nel modello.
 
@@ -4246,7 +4242,7 @@ obj = dt << Structural Equation Models(
 
 #### Define Time Values
 
-**Sintassi:** obj << Define Time Values
+**Sintassi:** obj &lt;&lt; Define Time Values
 
 **Descrizione:** Definisce le occasioni di misurazione per le osservazioni ripetute. Questi valori vengono usati per specificare i modelli longitudinali.
 
@@ -4268,7 +4264,7 @@ obj = dt << Structural Equation Models(
 
 #### Loadings
 
-**Sintassi:** obj << Loadings
+**Sintassi:** obj &lt;&lt; Loadings
 
 **Descrizione:** Aggiunge pesi fattoriali alle variabili latenti nel modello.
 
@@ -4322,7 +4318,7 @@ obj = dt << Structural Equation Models(
 
 #### Means/Intercepts
 
-**Sintassi:** obj << Means/Intercepts
+**Sintassi:** obj &lt;&lt; Means/Intercepts
 
 **Descrizione:** Aggiunge medie o intercette alle variabili nel modello.
 
@@ -4347,7 +4343,7 @@ obj = dt << Structural Equation Models(
 
 #### Model Name
 
-**Sintassi:** obj << Model Name
+**Sintassi:** obj &lt;&lt; Model Name
 
 **Descrizione:** Specifica un nome per il modello.
 
@@ -4370,7 +4366,7 @@ obj = dt << Structural Equation Models(
 
 #### Model Notes
 
-**Sintassi:** obj << Model Notes
+**Sintassi:** obj &lt;&lt; Model Notes
 
 **Descrizione:** Specifica le note per il modello.
 
@@ -4396,7 +4392,7 @@ obj = dt << Structural Equation Models(
 
 #### New Latent
 
-**Sintassi:** obj << New Latent
+**Sintassi:** obj &lt;&lt; New Latent
 
 **Descrizione:** Aggiunge una nuova variabile latente nel modello.
 
@@ -4426,7 +4422,7 @@ obj = dt << Structural Equation Models(
 
 #### Regressions
 
-**Sintassi:** obj << Regressions
+**Sintassi:** obj &lt;&lt; Regressions
 
 **Descrizione:** Aggiunge percorsi di regressione al modello.
 
@@ -4447,7 +4443,7 @@ obj = dt << Structural Equation Models(
 
 #### Variances
 
-**Sintassi:** obj << Variances
+**Sintassi:** obj &lt;&lt; Variances
 
 **Descrizione:** Aggiunge varianze alle variabili nel modello.
 

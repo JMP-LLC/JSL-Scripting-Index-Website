@@ -6,7 +6,7 @@
 
 ### Auto Load
 
-**Syntaxe :** addin << Auto Load( boolean )
+**Syntaxe :** addin &lt;&lt; Auto Load( boolean )
 
 **Description :** Définit si un complément doit ou non être chargé automatiquement pendant le processus de démarrage de JMP.
 
@@ -23,7 +23,7 @@ If( !Is Missing( addin ),
 
 ### Display Name
 
-**Syntaxe :** name = addin << Display Name
+**Syntaxe :** name = addin &lt;&lt; Display Name
 
 **Description :** Renvoie le nom d&apos;affichage d&apos;un complément.
 
@@ -52,7 +52,7 @@ If( !Is Missing( addin ),
 
 ### Home Folder
 
-**Syntaxe :** folder = addin << Home Folder
+**Syntaxe :** folder = addin &lt;&lt; Home Folder
 
 **Description :** Renvoie le dossier de base d&apos;un complément.
 
@@ -81,7 +81,7 @@ If( !Is Missing( addin ),
 
 ### ID
 
-**Syntaxe :** id = addin << ID
+**Syntaxe :** id = addin &lt;&lt; ID
 
 **Description :** Renvoie l&apos;ID unique d&apos;un complément.
 
@@ -110,7 +110,7 @@ If( !Is Missing( addin ),
 
 ### Is Loaded
 
-**Syntaxe :** x = addin << Is Loaded
+**Syntaxe :** x = addin &lt;&lt; Is Loaded
 
 **Description :** Renvoie si un complément est actuellement chargé ou non.
 
@@ -139,7 +139,7 @@ If( !Is Missing( addin ),
 
 ### Load
 
-**Syntaxe :** addin << Load
+**Syntaxe :** addin &lt;&lt; Load
 
 **Description :** Charge un complément.
 
@@ -156,7 +156,7 @@ If( !Is Missing( addin ),
 
 ### Unload
 
-**Syntaxe :** addin << Unload
+**Syntaxe :** addin &lt;&lt; Unload
 
 **Description :** Désinstalle un complément.
 
@@ -173,7 +173,7 @@ If( !Is Missing( addin ),
 
 ### Version
 
-**Syntaxe :** ver = addin << Version
+**Syntaxe :** ver = addin &lt;&lt; Version
 
 **Description :** Renvoie le numéro de version d&apos;un complément.
 

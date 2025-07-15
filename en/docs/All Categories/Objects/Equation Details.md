@@ -6,13 +6,13 @@
 
 ### Composite Error
 
-**Syntax:** obj << Composite Error( state=0|1 )
+**Syntax:** obj &lt;&lt; Composite Error( state=0|1 )
 
 ### Show All Equations
 
-**Syntax:** obj << Show All Equations( state=0|1 )
+**Syntax:** obj &lt;&lt; Show All Equations( state=0|1 )
 
 ### Variance of the Error
 
-**Syntax:** obj << Variance of the Error( state=0|1 )
+**Syntax:** obj &lt;&lt; Variance of the Error( state=0|1 )
 

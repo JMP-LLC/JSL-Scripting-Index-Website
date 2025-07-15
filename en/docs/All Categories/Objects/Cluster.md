@@ -6,35 +6,35 @@
 
 ### Attribute ID
 
-**Syntax:** obj = Y(...<Attribute ID( column(s) )>...)
+**Syntax:** obj = Y(...&lt;Attribute ID( column(s) )&gt;...)
 
 **Description:** For stacked data, this identifies attributes, which would be columns (variables) if the data was not stacked.
 
 ### Freq
 
-**Syntax:** obj << Freq( column )
+**Syntax:** obj &lt;&lt; Freq( column )
 
 ### Label
 
-**Syntax:** obj << Label( column )
+**Syntax:** obj &lt;&lt; Label( column )
 
 ### Object ID
 
-**Syntax:** obj = Y(...<Object ID( column(s) )>...)
+**Syntax:** obj = Y(...&lt;Object ID( column(s) )&gt;...)
 
 **Description:** For stacked data, this identifies individuals to cluster. Otherwise, it is used to aggregate across each rows of a data.
 
 ### Ordering
 
-**Syntax:** obj << Ordering( column )
+**Syntax:** obj &lt;&lt; Ordering( column )
 
 ### Weight
 
-**Syntax:** obj << Weight( column )
+**Syntax:** obj &lt;&lt; Weight( column )
 
 ### Y
 
-**Syntax:** obj << Y( column(s) )
+**Syntax:** obj &lt;&lt; Y( column(s) )
 
 ## Hierarchical Cluster
 
@@ -58,7 +58,7 @@ obj = dt << Hierarchical Cluster( Y( :birth, :death ), Label( :country ) );
 
 #### By
 
-**Syntax:** obj << By( column(s) )
+**Syntax:** obj &lt;&lt; By( column(s) )
 
 ```jsl
 
@@ -107,7 +107,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Cluster Criterion
 
-**Syntax:** obj << Cluster Criterion( state=0|1 )
+**Syntax:** obj &lt;&lt; Cluster Criterion( state=0|1 )
 
 **Description:** Shows or hides the Cubic Clustering Criterion (CCC) for the entire range of number of clusters. The CCC is used to estimate the number of clusters, where larger values indicate a better fit.
 
@@ -121,7 +121,7 @@ obj = dt << Hierarchical Cluster( Y( :birth, :death ), Label( :country ), Cluste
 
 #### Cluster Summary
 
-**Syntax:** obj << Cluster Summary( state=0|1 )
+**Syntax:** obj &lt;&lt; Cluster Summary( state=0|1 )
 
 **Description:** Shows or hides summary statistics for each of the specified number of clusters.
 
@@ -139,7 +139,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Clustering History
 
-**Syntax:** obj << Clustering History( state=0|1 )
+**Syntax:** obj &lt;&lt; Clustering History( state=0|1 )
 
 **Description:** Shows or hides the agglomeration history in order of joins. The table contains distances and is sorted from nearest to farthest. On by default.
 
@@ -156,7 +156,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Color Clusters
 
-**Syntax:** obj << Color Clusters( state=0|1 )
+**Syntax:** obj &lt;&lt; Color Clusters( state=0|1 )
 
 **Description:** Colors the rows and the dendrogram labels by cluster membership. The colors are updated as the number of clusters is changed.
 
@@ -175,7 +175,7 @@ obj << Color Clusters( 1 );
 
 #### Color Map
 
-**Syntax:** obj << Color Map
+**Syntax:** obj &lt;&lt; Color Map
 
 **Description:** Shows or hides a color map next to the dendrogram.
 
@@ -196,11 +196,11 @@ obj << Color Map( Blue to Gray to Red );
 
 #### Column Cluster Criterion
 
-**Syntax:** obj << Column Cluster Criterion( state=0|1 )
+**Syntax:** obj &lt;&lt; Column Cluster Criterion( state=0|1 )
 
 #### Column Dendrogram Position
 
-**Syntax:** obj << Column Dendrogram Position( "Below"|"Above" )
+**Syntax:** obj &lt;&lt; Column Dendrogram Position( "Below"|"Above" )
 
 **Description:** Moves the position of the dendrogram for columns when two-way clustering is used.
 
@@ -219,7 +219,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Column Label Position
 
-**Syntax:** obj << Column Label Position( "Below"|"Above" )
+**Syntax:** obj &lt;&lt; Column Label Position( "Below"|"Above" )
 
 **Description:** Moves the position of the labels on the dendrogram for columns when two-way clustering is used.
 
@@ -239,7 +239,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Constellation Plot
 
-**Syntax:** obj << Constellation Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; Constellation Plot( state=0|1 )
 
 **Description:** Shows or hides an alternative way to present the information in the hierarchical clustering dendrogram. Each observation (row) is represented by an endpoint and each cluster join is represented by a new point. The lines that are drawn represent cluster membership.
 
@@ -258,7 +258,7 @@ obj << Constellation Plot( 1 );
 
 #### Dendrogram Scale
 
-**Syntax:** obj << Dendrogram Scale( "Distance Scale"|"Even Spacing"|"Geometric Spacing" )
+**Syntax:** obj &lt;&lt; Dendrogram Scale( "Distance Scale"|"Even Spacing"|"Geometric Spacing" )
 
 **Description:** Specifies the scale for the dendrogram. Even Spacing makes the spacing even across dendrogram branches. Geometric Spacing increases the spacing as a scale multiple up the tree in the dendrogram. Distance Scale uses branch spacing proportional to distances.
 
@@ -277,13 +277,13 @@ obj << Dendrogram Scale( Geometric Spacing );
 
 #### Dendrogram Width
 
-**Syntax:** obj << Dendrogram Width( number=min(max(256,n*3),500) )
+**Syntax:** obj &lt;&lt; Dendrogram Width( number=min(max(256,n*3),500) )
 
 **Description:** How wide the dendrogram frame is for the clustering of rows. "min(max(256,n*3),500)" by default.
 
 #### Distance Graph
 
-**Syntax:** obj << Distance Graph( state=0|1 )
+**Syntax:** obj &lt;&lt; Distance Graph( state=0|1 )
 
 **Description:** Shows or hides a graph that shows the distance overcome at each cluster join. On by default.
 
@@ -304,7 +304,7 @@ obj << Distance Graph( 1 );
 
 #### Get Clusters
 
-**Syntax:** obj << Get Clusters
+**Syntax:** obj &lt;&lt; Get Clusters
 
 **Description:** Returns a vector of cluster assignments for each row.
 
@@ -324,7 +324,7 @@ Show( c );
 
 #### Get Column Display Order
 
-**Syntax:** obj << Get Column Display Order
+**Syntax:** obj &lt;&lt; Get Column Display Order
 
 **Description:** Returns a vector of the display position for each column in two-way clustering.
 
@@ -342,7 +342,7 @@ rowOrder = obj << Get Column Display Order;
 
 #### Get Column Names
 
-**Syntax:** obj << Get Column Names
+**Syntax:** obj &lt;&lt; Get Column Names
 
 **Description:** Returns the column names in cluster order after two-way clustering.
 
@@ -358,7 +358,7 @@ Show( c );
 
 #### Get Display Order
 
-**Syntax:** obj << Get Display Order
+**Syntax:** obj &lt;&lt; Get Display Order
 
 **Description:** Returns a vector of the display position for each row in the cluster, with missing values for undisplayed rows.
 
@@ -375,7 +375,7 @@ rowOrder = obj << Get Display Order;
 
 #### Get Distance Matrix
 
-**Syntax:** obj << Get Distance Matrix
+**Syntax:** obj &lt;&lt; Get Distance Matrix
 
 **Description:** Returns the distance matrix used for hierarchical clustering.
 
@@ -484,7 +484,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Late Join Outliers
 
-**Syntax:** obj << Late Join Outliers( state=0|1 )
+**Syntax:** obj &lt;&lt; Late Join Outliers( state=0|1 )
 
 **Description:** Shows or hides a report on which items clustered very late in the agglomeration.
 
@@ -502,7 +502,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Legend
 
-**Syntax:** obj << Legend( state=0|1 )
+**Syntax:** obj &lt;&lt; Legend( state=0|1 )
 
 **Description:** Shows or hides a legend for the color map to the right of the dendrogram.
 
@@ -522,7 +522,7 @@ obj << Legend( 1 );
 
 #### Mark Clusters
 
-**Syntax:** obj << Mark Clusters( state=0|1 )
+**Syntax:** obj &lt;&lt; Mark Clusters( state=0|1 )
 
 **Description:** Assigns markers to the rows of the data table corresponding to the cluster to which the row belongs. The markers update if you change the number of clusters. If you deselect this option, the markers are no longer updated based on the number of clusters.
 
@@ -581,7 +581,7 @@ obj = dt << Hierarchical Cluster(
 
 #### More Color Map Columns
 
-**Syntax:** obj << More Color Map Columns( column )
+**Syntax:** obj &lt;&lt; More Color Map Columns( column )
 
 **Description:** Adds another color map based on the column specified.
 
@@ -599,7 +599,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Number of Clusters
 
-**Syntax:** obj << Number of Clusters( number )
+**Syntax:** obj &lt;&lt; Number of Clusters( number )
 
 **Description:** To set the number-of-clusters, the place to cut the tree to define cluster groups. There is a diamond-shaped drag icon that can also change the number of clusters.
 
@@ -617,13 +617,13 @@ obj = dt << Hierarchical Cluster(
 
 #### Number of Column Clusters
 
-**Syntax:** obj << Number of Column Clusters( number )
+**Syntax:** obj &lt;&lt; Number of Column Clusters( number )
 
 **Description:** Specifies the number of column clusters prior to saving. Available only for two-way clustering.
 
 #### Parallel Coord Plots
 
-**Syntax:** obj << Parallel Coord Plots
+**Syntax:** obj &lt;&lt; Parallel Coord Plots
 
 **Description:** Creates a parallel coordinate plot for each cluster, all contained in a separate window.
 
@@ -642,7 +642,7 @@ obj << Parallel Coord Plots;
 
 #### Pivot on Selected Cluster
 
-**Syntax:** obj << Pivot on Selected Cluster
+**Syntax:** obj &lt;&lt; Pivot on Selected Cluster
 
 **Description:** Reverses the order of the two sub-clusters of the currently selected cluster.
 
@@ -659,7 +659,7 @@ obj << Pivot on Selected Cluster;
 
 #### Release Zoom
 
-**Syntax:** obj << Release Zoom
+**Syntax:** obj &lt;&lt; Release Zoom
 
 **Description:** Releases the zoom on the dendrogram to the selected rows.
 
@@ -680,7 +680,7 @@ obj << Release Zoom;
 
 #### Row Dendrogram Position
 
-**Syntax:** obj << Row Dendrogram Position( "Left"|"Right" )
+**Syntax:** obj &lt;&lt; Row Dendrogram Position( "Left"|"Right" )
 
 **Description:** Moves the position of the dendrogram for rows.
 
@@ -698,7 +698,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Row Label Position
 
-**Syntax:** obj << Row Label Position( "Left"|"Right" )
+**Syntax:** obj &lt;&lt; Row Label Position( "Left"|"Right" )
 
 **Description:** Moves the position of the labels on the dendrogram for rows.
 
@@ -716,7 +716,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Row More Position
 
-**Syntax:** obj << Row More Position( "Left"|"Right" )
+**Syntax:** obj &lt;&lt; Row More Position( "Left"|"Right" )
 
 **Description:** Moves the position of the color map added with the More Color Map Columns command.
 
@@ -735,7 +735,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Save Cluster Hierarchy
 
-**Syntax:** obj << Save Cluster Hierarchy
+**Syntax:** obj &lt;&lt; Save Cluster Hierarchy
 
 **Description:** Creates a data table that contains information useful in reconstructing the dendrogram.
 
@@ -754,7 +754,7 @@ obj << Save Cluster Hierarchy;
 
 #### Save Cluster History
 
-**Syntax:** obj << Save Cluster History
+**Syntax:** obj &lt;&lt; Save Cluster History
 
 **Description:** Saves the table that appears in the Clustering History report as a new data table.
 
@@ -772,7 +772,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Save Cluster Means
 
-**Syntax:** obj << Save Cluster Means
+**Syntax:** obj &lt;&lt; Save Cluster Means
 
 **Description:** Saves a table of cluster means for the given number of clusters.
 
@@ -790,7 +790,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Save Cluster Tree
 
-**Syntax:** obj << Save Cluster Tree
+**Syntax:** obj &lt;&lt; Save Cluster Tree
 
 **Description:** Creates a data table that contains the nodes of the cluster tree.
 
@@ -809,7 +809,7 @@ obj << Save Cluster Tree;
 
 #### Save Clusters
 
-**Syntax:** obj << Save Clusters
+**Syntax:** obj &lt;&lt; Save Clusters
 
 **Description:** Creates a data table column that contains the cluster numbers.
 
@@ -828,13 +828,13 @@ obj << Save Clusters;
 
 #### Save Column Clusters
 
-**Syntax:** obj << Save Column Clusters
+**Syntax:** obj &lt;&lt; Save Column Clusters
 
 **Description:** Save a new data table that contains cluster membership information for the columns. Available only for two-way clustering.
 
 #### Save Constellation Coordinates
 
-**Syntax:** obj << Save Constellation Coordinates
+**Syntax:** obj &lt;&lt; Save Constellation Coordinates
 
 **Description:** Saves the coordinates of the constellation plot to a new column in the data table.
 
@@ -854,7 +854,7 @@ obj << Save Constellation Coordinates( 1 );
 
 #### Save Display Order
 
-**Syntax:** obj << Save Display Order
+**Syntax:** obj &lt;&lt; Save Display Order
 
 **Description:** Creates a data table column that contains the order in which the row appears in the dendrogram.
 
@@ -873,7 +873,7 @@ obj << Save Display Order;
 
 #### Save Distance Matrix
 
-**Syntax:** obj << Save Distance Matrix
+**Syntax:** obj &lt;&lt; Save Distance Matrix
 
 **Description:** Creates a data table that contains the distances between observations.
 
@@ -891,7 +891,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Save Formula for Closest Cluster
 
-**Syntax:** obj << Save Formula for Closest Cluster
+**Syntax:** obj &lt;&lt; Save Formula for Closest Cluster
 
 **Description:** Saves a formula column to the data table that gives the cluster number of the closest cluster mean.
 
@@ -910,7 +910,7 @@ obj << Save Formula for Closest Cluster;
 
 #### Scatterplot Matrix
 
-**Syntax:** obj << Scatterplot Matrix
+**Syntax:** obj &lt;&lt; Scatterplot Matrix
 
 **Description:** Creates a scatterplot matrix in a new window with confidence ellipses based on the current number of clusters.
 
@@ -928,13 +928,13 @@ obj = dt << Hierarchical Cluster(
 
 #### Set Random Seed
 
-**Syntax:** obj << Set Random Seed( number )
+**Syntax:** obj &lt;&lt; Set Random Seed( number )
 
 **Description:** Specifies a random seed to reproduce the results for future launches of the platform.
 
 #### Show Dendrogram
 
-**Syntax:** obj << Show Dendrogram( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Dendrogram( state=0|1 )
 
 **Description:** Enables you to turn off dendrogram if you want to see only the color map. On by default.
 
@@ -956,7 +956,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Show NCluster Handle
 
-**Syntax:** obj << Show NCluster Handle( state=0|1 )
+**Syntax:** obj &lt;&lt; Show NCluster Handle( state=0|1 )
 
 **Description:** Shows or hides the diamond handle that is used to choose the number of clusters on the dendrogram. On by default.
 
@@ -976,7 +976,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Standardize
 
-**Syntax:** obj << Standardize( "Unstandardized"|"Columns"|"Rows"|"Columns and Rows" )
+**Syntax:** obj &lt;&lt; Standardize( "Unstandardized"|"Columns"|"Rows"|"Columns and Rows" )
 
 **Description:** Alias for &apos;Standardize By&apos;, which specifies how to standardize the values prior to clustering.
 
@@ -1001,7 +1001,7 @@ obj = dt << Hierarchical Cluster(
 
 #### Standardize Data
 
-**Syntax:** obj << Standardize Data( state=0|1 )
+**Syntax:** obj &lt;&lt; Standardize Data( state=0|1 )
 
 **Description:** Old option name, still supported, but replaced by &apos;Standardize By&apos;.
 
@@ -1038,7 +1038,7 @@ obj << Two Way Clustering;
 
 #### Zoom to Selected Rows
 
-**Syntax:** obj << Zoom to Selected Rows
+**Syntax:** obj &lt;&lt; Zoom to Selected Rows
 
 **Description:** Zooms the dendrogram to the selected rows.
 
@@ -1080,7 +1080,7 @@ Show( rows );
 
 #### Distance between rows
 
-**Syntax:** distance = KDTable << Distance between rows( row1, row2 )
+**Syntax:** distance = KDTable &lt;&lt; Distance between rows( row1, row2 )
 
 **Description:** Returns the distance between two rows. Distance applies to removed rows as well as inserted rows.
 
@@ -1096,7 +1096,7 @@ Show( distance );
 
 #### Insert rows
 
-**Syntax:** n = KDTable << Insert rows( number|[ vector ] )
+**Syntax:** n = KDTable &lt;&lt; Insert rows( number|[ vector ] )
 
 **Description:** Enables you to re-insert rows into table searches. The row indexes do not change when rows are inserted or removed, and only the original rows can be removed and then (re)inserted. Returns the number of rows inserted. If a row was already inserted, it is ignored.
 
@@ -1118,7 +1118,7 @@ Show( rows );
 
 #### K nearest rows
 
-**Syntax:** {rows, dist} = KDTable << K nearest rows( stop, <position> )
+**Syntax:** {rows, dist} = KDTable &lt;&lt; K nearest rows( stop, &lt;position&gt; )
 
 **Description:** Returns the n nearest rows and distances to either a point or row (if position is specified) or all rows (if position is omitted), stopping the search when the distance limit is exceeded. Stop can be either n or {n,limit}. The optional position is a point either as (1xK) matrix where K is the number of dimensions or the number of a row. If position is not supplied, the nearest n rows to each row are returned in a (rows x n) matrix.
 
@@ -1134,7 +1134,7 @@ Show( rows );
 
 #### Remove rows
 
-**Syntax:** n = KDTable << Remove rows( number|[ vector ] )
+**Syntax:** n = KDTable &lt;&lt; Remove rows( number|[ vector ] )
 
 **Description:** Remove rows from table searches. The row indexes do not change when rows are inserted or removed, and only the original rows can be removed then (re)inserted. The removed row&apos;s index can still be used as a starting point for K nearest rows. Returns the number of rows removed. If a row was already removed, it is ignored.
 

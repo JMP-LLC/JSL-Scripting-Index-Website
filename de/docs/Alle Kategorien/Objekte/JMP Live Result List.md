@@ -6,7 +6,7 @@
 
 ### As Scriptable
 
-**Syntax:** jmplivereportlist = jmplivelist << As Scriptable()
+**Syntax:** jmplivereportlist = jmplivelist &lt;&lt; As Scriptable()
 
 **Beschreibung:** Gibt eine skriptfähige Liste von Objekten vom Typ JMP Live-Ordner, JMP Live-Bericht oder JMP Live-Beitrag abhängig von der Suchoperation zurück, die durchgeführt wurde, um die JMP Live-Ergebnisliste zu erzeugen.
 
@@ -55,7 +55,7 @@ If( jmpliveresult << Succeeded,
 
 ### Get Current Page Number
 
-**Syntax:** value = jmplivelist << Get Current Page Number()
+**Syntax:** value = jmplivelist &lt;&lt; Get Current Page Number()
 
 **Beschreibung:** Ruft die aktuelle Seitenzahl von Elementen in der Liste ab.
 
@@ -165,7 +165,7 @@ While( count > 0,
 
 ### Get Number Of Items
 
-**Syntax:** value = jmplivelist << Get Number Of Items()
+**Syntax:** value = jmplivelist &lt;&lt; Get Number Of Items()
 
 **Beschreibung:** Anzahl der Elemente in dieser Ergebnismenge abrufen.
 
@@ -250,7 +250,7 @@ If( jmpliveresult << Succeeded,
 
 ### Get Page
 
-**Syntax:** reportlist = jmplivelist << Get Page(value)
+**Syntax:** reportlist = jmplivelist &lt;&lt; Get Page(value)
 
 **Beschreibung:** Ruft die spezifische Seite von Objekten vom Typ JMP Live-Ordner, JMP Live-Bericht oder JMP Live-Beitrag innerhalb der gesamten Ergebnisliste einer Suchoperation ab.
 
@@ -360,7 +360,7 @@ While( count > 0,
 
 ### Next
 
-**Syntax:** reportlist = jmplivelist << Next()
+**Syntax:** reportlist = jmplivelist &lt;&lt; Next()
 
 **Beschreibung:** Gibt die nächste Seite der Ergebnisse einer Suchoperation zurück. Diese Liste kann abhängig von der Suchoperation JMP Live-Ordner, JMP Live-Berichte oder JMP Live-Beiträge enthalten.
 
@@ -470,7 +470,7 @@ While( count > 0,
 
 ### Previous
 
-**Syntax:** reportlist = jmplivelist << Previous()
+**Syntax:** reportlist = jmplivelist &lt;&lt; Previous()
 
 **Beschreibung:** Gibt die vorherige Seite der Ergebnisse einer Suchoperation zurück. Diese Liste kann abhängig von der Suchoperation JMP Live-Ordner, JMP Live-Berichte oder JMP Live-Beiträge enthalten.
 

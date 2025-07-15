@@ -6,9 +6,7 @@
 
 ### Enabled
 
-**構文:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**構文:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **説明:** 有効にされていないオブジェクトはキーボードまたはマウスによる入力に反応しない。このプロパティは子オブジェクトにも継承されるため、コンテナオブジェクトが無効になっていると、その下位のオブジェクトがすべて無効になる。
 
@@ -40,9 +38,7 @@ New Window( "enabled",
 
 ### Get Enabled
 
-**構文:** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**構文:** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **説明:** 有効にされていないオブジェクトはキーボードまたはマウスによる入力に反応しない。このプロパティは子オブジェクトにも継承されるため、コンテナオブジェクトが無効になっていると、その下位のオブジェクトがすべて無効になる。
 
@@ -74,7 +70,7 @@ New Window( "enabled",
 
 ### Get Namespace
 
-**構文:** obj << Get Namespace
+**構文:** obj &lt;&lt; Get Namespace
 
 **説明:** この表示オブジェクトの名前空間を戻す。
 
@@ -92,7 +88,7 @@ Show( ns:x, x );
 
 ### Get Properties
 
-**構文:** obj << Get Properties
+**構文:** obj &lt;&lt; Get Properties
 
 **説明:** ディスプレイボックスのプロパティとその値を含む連想配列を戻す。
 
@@ -106,7 +102,7 @@ bb << Get Properties;
 
 ### Get Property
 
-**構文:** obj << Get Property( "property" )
+**構文:** obj &lt;&lt; Get Property( "property" )
 
 **説明:** propertyで指定したプロパティの現在の設定を戻す。
 
@@ -120,7 +116,7 @@ bb << Get Property( "Enabled" );
 
 ### Get Property List
 
-**構文:** obj << Get Property List
+**構文:** obj &lt;&lt; Get Property List
 
 **説明:** ディスプレイボックスの持つプロパティのリストを戻す。
 
@@ -134,7 +130,7 @@ bb << Get Property List;
 
 ### Set Property
 
-**構文:** obj << Set Property( "property", value )
+**構文:** obj &lt;&lt; Set Property( "property", value )
 
 **説明:** ディスプレイボックスの、propertyで指定した名前のプロパティに値を設定する。
 
@@ -150,7 +146,7 @@ bb << Set Property( "Enabled", 0 );
 
 ### If Seg
 
-**構文:** seg = If Seg(<state=0|1>)
+**構文:** seg = If Seg(&lt;state=0|1&gt;)
 
 **説明:** セグメントの子を表示または非表示にするディスプレイセグメントを作成する。
 
@@ -170,7 +166,7 @@ seg = (frame << Find Seg( If Seg( 1 ) ));
 
 ### Append
 
-**構文:** obj << Append( seg2 )
+**構文:** obj &lt;&lt; Append( seg2 )
 
 **説明:** セグメントを、現在のセグメントの最後の子として追加する。
 
@@ -189,7 +185,7 @@ seg << Append( Lines Seg( [5 50 95 50] ) );
 
 ### Child
 
-**構文:** seg2 = obj << Child
+**構文:** seg2 = obj &lt;&lt; Child
 
 **説明:** ディスプレイセグメントの最初の子を戻す。
 
@@ -208,7 +204,7 @@ seg << Child; // not many segs support children
 
 ### Class Name
 
-**構文:** classname = obj << Class Name
+**構文:** classname = obj &lt;&lt; Class Name
 
 **説明:** ディスプレイボックスのクラス名を戻す。
 
@@ -227,7 +223,7 @@ seg << Class Name;
 
 ### Clip Shape
 
-**構文:** seg << Clip Shape(Boundaries(Shape File, [ID(string)]) | Path([string] | [matrix]) | Empty())
+**構文:** seg &lt;&lt; Clip Shape(Boundaries(Shape File, [ID(string)]) | Path([string] | [matrix]) | Empty())
 
 **説明:** 指定された地図シェープをもとに図やグラフをクリッピングする。クリッピングする領域は、シェープファイルやパスによって指定できる。シェープファイルを使用する場合は、IDをオプション指定してファイルの中から1つの領域を選択することもできる。IDを指定しなかった場合は、すべての領域を結合したものがクリッピング領域として使われる。Nx3行列やテキスト表記を使ってクリッピングするパスを指定することもできる。パスの行列は、X座標、Y座標、フラグの3列で構成される。フラグは0がコントロール点、1が移動、2が線分、3が3次ベジエ曲線で、パスを閉じる点の場合は負の値を指定する。一方、パスをテキスト表記するときにはSVG構文を使用する。
 
@@ -257,7 +253,7 @@ cs << Clip Shape( Boundaries( "US States" ) );
 
 ### Delete
 
-**構文:** obj << Delete
+**構文:** obj &lt;&lt; Delete
 
 **説明:** ディスプレイセグメントを削除する。
 
@@ -276,7 +272,7 @@ seg << Delete;
 
 ### Frame
 
-**構文:** FrameBox = obj << Frame
+**構文:** FrameBox = obj &lt;&lt; Frame
 
 **説明:** ディスプレイセグメントがあるフレームボックスを戻す。
 
@@ -295,7 +291,7 @@ seg << Frame;
 
 ### Get
 
-**構文:** 0|1 = obj << Get
+**構文:** 0|1 = obj &lt;&lt; Get
 
 **説明:** IfSegの状態を戻す。
 
@@ -316,7 +312,7 @@ seg << get;
 
 ### Get Clip Shape
 
-**構文:** obj << Get Clip Shape
+**構文:** obj &lt;&lt; Get Clip Shape
 
 **説明:** 現在、クリッピングしている領域を戻す。
 
@@ -347,7 +343,7 @@ cs << Get Clip Shape();
 
 ### Get Description
 
-**構文:** description = obj << Get Description
+**構文:** description = obj &lt;&lt; Get Description
 
 **説明:** ディスプレイセグメントの名前を取得する。
 
@@ -366,7 +362,7 @@ seg << get description();
 
 ### Parent
 
-**構文:** seg2 = obj << Parent
+**構文:** seg2 = obj &lt;&lt; Parent
 
 **説明:** ディスプレイセグメントの親を戻す。
 
@@ -385,7 +381,7 @@ seg << Parent;
 
 ### Set
 
-**構文:** obj << Set( state=0|1 )
+**構文:** obj &lt;&lt; Set( state=0|1 )
 
 **説明:** IfSeg内のディスプレイセグメントを表示または非表示にする。
 
@@ -409,7 +405,7 @@ seg << set( 1 );
 
 ### Set Description
 
-**構文:** obj << Set Description( description )
+**構文:** obj &lt;&lt; Set Description( description )
 
 **説明:** ディスプレイセグメントの名前を設定する。
 
@@ -428,7 +424,7 @@ seg << set description( "my seg" );
 
 ### Sib
 
-**構文:** seg2 = obj << Sib
+**構文:** seg2 = obj &lt;&lt; Sib
 
 **説明:** ディスプレイセグメントの兄弟(同レベルのもの)を戻す。
 
@@ -447,7 +443,7 @@ seg << Sib;
 
 ### Sib Append
 
-**構文:** obj << Sib Append( seg2 )
+**構文:** obj &lt;&lt; Sib Append( seg2 )
 
 **説明:** ディスプレイセグメントのすぐ後にディスプレイセグメントを表示する。
 
@@ -485,7 +481,7 @@ mapSeg << Sib Append( Line Seg( xval, yval, <<line color( "Green" ), <<line widt
 
 ### Sib Prepend
 
-**構文:** obj << Sib Prepend( seg2 )
+**構文:** obj &lt;&lt; Sib Prepend( seg2 )
 
 **説明:** ディスプレイセグメントのすぐ前にディスプレイセグメントを表示する。
 

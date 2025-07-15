@@ -2,11 +2,9 @@
 
 
 
-## Fonctions
-
 ### ATan
 
-**Syntaxe :** y = ArcTangent( x1, <x2=1> )
+**Syntaxe :** y = ArcTangent( x1, &lt;x2=1&gt; )
 
 **Description :** Renvoie la tangente trigonométrique inverse de x1/x2, où le résultat est dans l’intervalle[-Pi()/2, Pi()/2].
 
@@ -111,7 +109,7 @@ ArcSine( 0.5 );
 
 ### ArcTan
 
-**Syntaxe :** y = ArcTangent( x1, <x2=1> )
+**Syntaxe :** y = ArcTangent( x1, &lt;x2=1&gt; )
 
 **Description :** Renvoie la tangente trigonométrique inverse de x1/x2, où le résultat est dans l’intervalle[-Pi()/2, Pi()/2].
 
@@ -141,7 +139,7 @@ ArcTanH( 0.5 );
 
 ### ArcTangent
 
-**Syntaxe :** y = ArcTangent( x1, <x2=1> )
+**Syntaxe :** y = ArcTangent( x1, &lt;x2=1&gt; )
 
 **Description :** Renvoie la tangente trigonométrique inverse de x1/x2, où le résultat est dans l’intervalle[-Pi()/2, Pi()/2].
 

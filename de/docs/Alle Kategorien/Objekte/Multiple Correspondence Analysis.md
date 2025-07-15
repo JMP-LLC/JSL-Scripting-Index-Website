@@ -6,7 +6,7 @@
 
 ### 3D Correspondence Analysis
 
-**Syntax:** obj<<"3D Correspondence Analysis"n(1)
+**Syntax:** obj&lt;&lt;"3D Correspondence Analysis"n(1)
 
 **Beschreibung:** Zeigt ein 3D-Korrespondenzdiagramm an oder blendet es aus. Für die 3D-Korrespondenzanalyse sind mindestens vier Stufen für jede der X- und Y-Variablen erforderlich.
 
@@ -21,7 +21,7 @@ obj << "3D Correspondence Analysis"n( 1 );
 
 ### Cochran's Q Test
 
-**Syntax:** obj<<Cochran&apos;s Q Test(1)
+**Syntax:** obj&lt;&lt;Cochran&apos;s Q Test(1)
 
 **Beschreibung:** Zeigt Cochrans Q-Test an oder blendet ihn aus.
 
@@ -59,7 +59,7 @@ obj << Cochran's Q Test( 1 );
 
 ### Cross Table
 
-**Syntax:** obj << Cross Table( state=0|1 )
+**Syntax:** obj &lt;&lt; Cross Table( state=0|1 )
 
 **Beschreibung:** Zeigt eine Kontingenz- oder Burt-Tabelle an oder blendet sie aus. Standardmäßig ein.
 
@@ -74,7 +74,7 @@ obj << Cross Table( 0 );
 
 ### Cross Table of Supplementary Columns
 
-**Syntax:** obj << Cross Table of Supplementary Columns( state=0|1 )
+**Syntax:** obj &lt;&lt; Cross Table of Supplementary Columns( state=0|1 )
 
 **Beschreibung:** Zeigt eine Kreuztabelle zusätzlicher Spalten an oder blendet sie aus.
 
@@ -94,7 +94,7 @@ obj << Cross Table of Supplementary Columns( 0 );
 
 ### Cross Table of Supplementary Rows
 
-**Syntax:** obj << Cross Table of Supplementary Rows( state=0|1 )
+**Syntax:** obj &lt;&lt; Cross Table of Supplementary Rows( state=0|1 )
 
 **Beschreibung:** Zeigt eine Kreuztabelle zusätzlicher Zeilen an oder blendet sie aus.
 
@@ -114,7 +114,7 @@ obj << Cross Table of Supplementary Rows( 0 );
 
 ### Mosaic Plot
 
-**Syntax:** obj << Mosaic Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; Mosaic Plot( state=0|1 )
 
 **Beschreibung:** Zeigt ein Mosaikdiagramm der Daten an oder blendet es aus.
 
@@ -129,7 +129,7 @@ obj << Mosaic Plot( 1 );
 
 ### Proportional marker size
 
-**Syntax:** obj<<Proportional Marker Size(1)
+**Syntax:** obj&lt;&lt;Proportional Marker Size(1)
 
 **Beschreibung:** Legt die Größe jedes einzelnen Symbols im Korrespondenzdiagramm als proportional zur Häufigkeit der entsprechenden Gruppe fest.
 
@@ -144,7 +144,7 @@ obj << Proportional Marker Size( 1 );
 
 ### Save Coordinate Formula
 
-**Syntax:** obj<<Save Coordinates
+**Syntax:** obj&lt;&lt;Save Coordinates
 
 **Beschreibung:** Speichert die Koordinatenformel in einer neuen Spalte in der Datentabelle.
 
@@ -159,7 +159,7 @@ obj << Save Coordinate Formula( 2 );
 
 ### Save Coordinates
 
-**Syntax:** obj<<Save Coordinates
+**Syntax:** obj&lt;&lt;Save Coordinates
 
 **Beschreibung:** Speichert Spalten- oder Zeilenkoordinaten.
 
@@ -174,7 +174,7 @@ obj << Save Coordinates;
 
 ### Select dimension
 
-**Syntax:** obj << Select dimension( <specify dimension to plot> )
+**Syntax:** obj &lt;&lt; Select dimension( &lt;specify dimension to plot&gt; )
 
 **Beschreibung:** Wählt die Dimensionen aus, die als Achsen im Korrespondenzdiagramm verwendet werden.
 
@@ -189,7 +189,7 @@ obj << Select Dimension( 1, 3 );
 
 ### Show Adjusted Inertia
 
-**Syntax:** obj<<Show Adjusted Inertia(1)
+**Syntax:** obj&lt;&lt;Show Adjusted Inertia(1)
 
 **Beschreibung:** Zeigt korrigierte Trägheit an oder blendet sie aus.
 
@@ -204,7 +204,7 @@ obj << Show Adjusted Inertia( 1 );
 
 ### Show Coordinates
 
-**Syntax:** obj<<Show Coordinates(1)
+**Syntax:** obj&lt;&lt;Show Coordinates(1)
 
 **Beschreibung:** Zeigt Zeilen- und Spaltenkoordinaten an oder blendet sie aus.
 
@@ -219,7 +219,7 @@ obj << Show Coordinates( 1 );
 
 ### Show Detail
 
-**Syntax:** obj<<Show Detail(0)
+**Syntax:** obj&lt;&lt;Show Detail(0)
 
 **Beschreibung:** Zeigt Details der Trägheit und Chi-Quadrat-Zerlegung an oder blendet sie aus. Standardmäßig ein.
 
@@ -234,7 +234,7 @@ obj << Show Detail( 0 );
 
 ### Show Partial Contributions to Inertia
 
-**Syntax:** obj<<Show Partial Contributions to Inertia(1)
+**Syntax:** obj&lt;&lt;Show Partial Contributions to Inertia(1)
 
 **Beschreibung:** Zeigt partielle Beiträge zur Trägheit an oder blendet sie aus.
 
@@ -249,7 +249,7 @@ obj << Show Partial Contributions to Inertia( 1 );
 
 ### Show Plot
 
-**Syntax:** obj<<Show Plot(0)
+**Syntax:** obj&lt;&lt;Show Plot(0)
 
 **Beschreibung:** Zeigt ein Korrespondenzdiagramm an oder blendet es aus. Standardmäßig ein.
 
@@ -264,7 +264,7 @@ obj << Show Plot( 0 );
 
 ### Show Squared Cosines
 
-**Syntax:** obj<<Show Squared Cosines(1)
+**Syntax:** obj&lt;&lt;Show Squared Cosines(1)
 
 **Beschreibung:** Blendet eine Tabelle ein oder aus, die die quadrierten Kosinus von Variablen enthält.
 
@@ -279,7 +279,7 @@ obj << Show Squared Cosines( 1 );
 
 ### Show Summary Statistics
 
-**Syntax:** obj<<Show Summary Statistics(1)
+**Syntax:** obj&lt;&lt;Show Summary Statistics(1)
 
 **Beschreibung:** Zeigt statistische Kennzahlen zu Qualität, Masse und Trägheit an oder blendet sie aus.
 
@@ -294,7 +294,7 @@ obj << Show Summary Statistics( 1 );
 
 ### Tests for Independence
 
-**Syntax:** obj << Tests for Independence( state=0|1 )
+**Syntax:** obj &lt;&lt; Tests for Independence( state=0|1 )
 
 **Beschreibung:** Zeigt Tests auf Unabhängigkeit an oder blendet sie aus.
 
@@ -311,7 +311,7 @@ obj << Tests for Independence( 1 );
 
 ### Action
 
-**Syntax:** obj << Action
+**Syntax:** obj &lt;&lt; Action
 
 **Beschreibung:** Allzwecköffnung innerhalb einer Plattform zum Einfügen von auszuwertenden Ausdrücken. Setzt die Kontexte für Anzeigefeld und Datentabelle kurzzeitig auf die Plattform.
 
@@ -329,7 +329,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Syntax:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntax:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Beschreibung:** Wendet eine zuvor erstellte Voreinstellung auf das Objekt an und aktualisiert die Optionen und Anpassungen entsprechend den gespeicherten Einstellungen.
 
@@ -376,7 +376,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**Syntax:** obj << Automatic Recalc( state=0|1 )
+**Syntax:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Beschreibung:** Wiederholt die Analyse bei Ausschluss und Datenänderungen automatisch. Wenn die Option „Automatic Recalc“ eingeschaltet ist, sollten Sie in Betracht ziehen, Wait(0)-Befehle zu verwenden, um sicherzustellen, dass die Ausschlüsse und Datenänderungen vor der Neuberechnung wirksam werden.
 
@@ -395,7 +395,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**Syntax:** obj << Broadcast(message)
+**Syntax:** obj &lt;&lt; Broadcast(message)
 
 **Beschreibung:** Sendet eine Meldung an eine Plattform. Wenn es sich bei den zurückgegebenen Ergebnissen von einzelnen Objekten um Tabellen handelt, werden sie, wenn möglich, verkettet. Das endgültige Format ist entweder identisch mit dem Ergebnis der Option „Kombinierte Tabelle speichern“ in einem Tabellenfeld oder mit dem Ergebnis der Option „Verketten“ mithilfe einer Quellspalte. Ansonsten werden die Ergebnisse in einer Liste gespeichert und zurückgegeben.
 
@@ -415,7 +415,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**Syntax:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Syntax:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Beschreibung:** Fügt ein Bedienfeld zum Ändern der Variablen der Plattform hinzu
 
@@ -433,7 +433,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**Syntax:** obj << Copy ByGroup Script
+**Syntax:** obj &lt;&lt; Copy ByGroup Script
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und legt es in der Zwischenablage ab.
 
@@ -457,7 +457,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Syntax:** obj << Copy Script
+**Syntax:** obj &lt;&lt; Copy Script
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und legt es in der Zwischenablage ab.
 
@@ -475,7 +475,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Syntax:** obj << Data Table Window
+**Syntax:** obj &lt;&lt; Data Table Window
 
 **Beschreibung:** Zeigt das Fenster mit der Datentabelle für diese Analyse im Vordergrund an.
 
@@ -493,7 +493,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Syntax:** obj << Get By Levels
+**Syntax:** obj &lt;&lt; Get By Levels
 
 **Beschreibung:** Gibt ein assoziatives Array zurück, das die Nach-Gruppenspalten ihren Werten zuordnet.
 
@@ -510,7 +510,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Syntax:** obj << Get ByGroup Script
+**Syntax:** obj &lt;&lt; Get ByGroup Script
 
 **Beschreibung:** Erstellt ein Skript (JSL) zum Erzeugen dieser Analyse und gibt es als Ausdruck zurück.
 
@@ -535,7 +535,7 @@ Show( t );
 
 ### Get Container
 
-**Syntax:** obj << Get Container
+**Syntax:** obj &lt;&lt; Get Container
 
 **Beschreibung:** Gibt einen Verweis auf das Containerfeld zurück, das den Inhalt des Objekts enthält.
 
@@ -585,7 +585,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Syntax:** obj << Get Data Table
+**Syntax:** obj &lt;&lt; Get Data Table
 
 **Beschreibung:** Gibt eine Referenz auf die Datentabelle zurück.
 
@@ -604,7 +604,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**Syntax:** obj << Get Group Platform
+**Syntax:** obj &lt;&lt; Get Group Platform
 
 **Beschreibung:** Plattformobjekt der Gruppe zurückgeben, wenn diese Plattform Teil einer Gruppe ist. Andernfalls wird Empty() zurückgegeben.
 
@@ -621,7 +621,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**Syntax:** obj << Get Script
+**Syntax:** obj &lt;&lt; Get Script
 
 **Beschreibung:** Erstellt ein Skript (JSL) zum Erzeugen dieser Analyse und gibt es als Ausdruck zurück.
 
@@ -640,7 +640,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Syntax:** obj << Get Script With Data Table
+**Syntax:** obj &lt;&lt; Get Script With Data Table
 
 **Beschreibung:** Erstellt ein Skript (JSL) zum Erzeugen dieser Analyse und referenziert dabei spezifisch diese Datentabelle und gibt das Skript als Ausdruck zurück.
 
@@ -659,7 +659,7 @@ Show( t );
 
 ### Get Timing
 
-**Syntax:** obj << Get Timing
+**Syntax:** obj &lt;&lt; Get Timing
 
 **Beschreibung:** Steuert den Start der Plattform zeitlich.
 
@@ -678,7 +678,7 @@ Show( t );
 
 ### Get Web Support
 
-**Syntax:** obj << Get Web Support
+**Syntax:** obj &lt;&lt; Get Web Support
 
 **Beschreibung:** Gibt eine Zahl zurück, die angibt, ob für das Anzeigeobjekt interaktive HTML unterstützt wird. 1 bedeutet einige oder alle Elemente werden unterstützt. 0 bedeutet keine Unterstützung.
 
@@ -694,7 +694,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Syntax:** obj << Get Where Expr
+**Syntax:** obj &lt;&lt; Get Where Expr
 
 **Beschreibung:** Gibt den Ausdruck Where für die Teilmenge der Daten zurück, wenn die Plattform mit By() oder Where() gestartet wurde. Andernfalls wird Empty() zurückgegeben.
 
@@ -731,7 +731,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Syntax:** obj << Local Data Filter
+**Syntax:** obj &lt;&lt; Local Data Filter
 
 **Beschreibung:** Filtert Daten für bestimmte Gruppen oder Bereiche, aber nur lokal in dieser Plattform.
 
@@ -787,7 +787,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Syntax:** obj << Paste Local Data Filter
+**Syntax:** obj &lt;&lt; Paste Local Data Filter
 
 **Beschreibung:** Lokalen Datenfilter aus der Zwischenablage auf den aktuellen Bericht anwenden.
 
@@ -808,7 +808,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**Syntax:** obj << Redo Analysis
+**Syntax:** obj &lt;&lt; Redo Analysis
 
 **Beschreibung:** Führt die gleiche Analyse in einem neuen Fenster aus. Die Analyse ist unterschiedlich, wenn sich die Daten verändert haben.
 
@@ -826,7 +826,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**Syntax:** obj << Redo ByGroup Analysis
+**Syntax:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Beschreibung:** Führt die gleiche Analyse in einem neuen Fenster aus. Die Analyse ist unterschiedlich, wenn sich die Daten verändert haben.
 
@@ -850,7 +850,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**Syntax:** obj << Relaunch Analysis
+**Syntax:** obj &lt;&lt; Relaunch Analysis
 
 **Beschreibung:** Öffnet das Plattform-Startfenster und ruft die Einstellungen ab, die zum Erstellen des Berichts verwendet wurden.
 
@@ -868,7 +868,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**Syntax:** obj << Relaunch ByGroup
+**Syntax:** obj &lt;&lt; Relaunch ByGroup
 
 **Beschreibung:** Öffnet das Plattform-Startfenster und ruft die Einstellungen ab, die zum Erstellen des Berichts verwendet wurden.
 
@@ -892,7 +892,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**Syntax:** obj << Remove Column Switcher
+**Syntax:** obj &lt;&lt; Remove Column Switcher
 
 **Beschreibung:** Entfernt den letzten Spaltenwechsler, der der Plattform hinzugefügt wurde.
 
@@ -912,7 +912,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Syntax:** obj << Remove Local Data Filter
+**Syntax:** obj &lt;&lt; Remove Local Data Filter
 
 **Beschreibung:** Wenn ein lokaler Filter verwendet wurde, wird dieser entfernt und die Plattform verwendet wieder direkt alle Daten aus der Datentabelle
 
@@ -951,9 +951,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Syntax:** obj << Report;
-
-Report( obj )
+**Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Beschreibung:** Gibt eine Referenz auf das Berichtsobjekt zurück.
 
@@ -973,7 +971,7 @@ Show( t );
 
 ### Report View
 
-**Syntax:** obj << Report View( "Vollständig"|"Übersicht" )
+**Syntax:** obj &lt;&lt; Report View( "Vollständig"|"Übersicht" )
 
 **Beschreibung:** Die Berichtsanzeige legt das Detailniveau für einen Plattformbericht fest. Full zeigt alle Details an, während Summary abhängig von der Plattform nur ausgewählte Inhalte anzeigt. Für benutzerdefiniertes Verhalten unterstützen Anzeigefelder eine Meldung <<Set Summary Behavior.
 
@@ -991,7 +989,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**Syntax:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und speichert sie als Tabelleneigenschaft in der Datentabelle. Sie können einen Namen für das Skript angeben. Die Option Append Suffix hängt ein numerisches Suffix an den Skriptnamen an, das das Skript von einem vorhandenen Skript mit dem gleichen Namen unterscheidet. Die Option Prompt fordert den Benutzer auf, einen Skriptnamen anzugeben. Die Option Replace ersetzt ein vorhandenes Skript mit dem gleichen Namen.
 
@@ -1015,7 +1013,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Syntax:** obj << Save ByGroup Script to Journal
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und fügt eine Schaltfläche mit diesem Skript zum Journal hinzu.
 
@@ -1039,7 +1037,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Syntax:** obj << Save ByGroup Script to Script Window
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und hängt es an das Textfenster mit dem aktuellen Skript an.
 
@@ -1063,7 +1061,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**Syntax:** obj << Save Script for All Objects
+**Syntax:** obj &lt;&lt; Save Script for All Objects
 
 **Beschreibung:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -1081,7 +1079,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Syntax:** obj << Save Script for All Objects To Data Table( <name> )
+**Syntax:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Beschreibung:** Speichert ein Skript für alle Berichtsobjekte in der aktuellen Datentabelle. Diese Option ist nützlich, wenn Sie mehrere Berichte im Fenster haben. Das Skript wird nach der ersten Plattform benannt, sofern Sie keine Skriptnamen in Anführungszeichen angeben.
 
@@ -1127,7 +1125,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Syntax:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und speichert es als Tabelleneigenschaft in der Datentabelle.
 
@@ -1145,7 +1143,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Syntax:** obj << Save Script to Journal
+**Syntax:** obj &lt;&lt; Save Script to Journal
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und fügt eine Schaltfläche mit diesem Skript zum Journal hinzu.
 
@@ -1163,7 +1161,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Syntax:** obj << Save Script to Report
+**Syntax:** obj &lt;&lt; Save Script to Report
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und zeigt es im Bericht selbst an. Nützlich zum Anlegen eines gedruckten Nachweises der durchgeführten Aktivitäten.
 
@@ -1181,7 +1179,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Syntax:** obj << Save Script to Script Window
+**Syntax:** obj &lt;&lt; Save Script to Script Window
 
 **Beschreibung:** Erstellt ein JSL-Skript zum Erzeugen dieser Analyse und hängt es an das Textfenster mit dem aktuellen Skript an.
 
@@ -1264,7 +1262,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Syntax:** obj << Sync to Data Table Changes
+**Syntax:** obj &lt;&lt; Sync to Data Table Changes
 
 **Beschreibung:** Mit Ausgeschlossenen und vorgenommenen Datenänderungen synchronisieren.
 
@@ -1281,7 +1279,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Syntax:** obj << Title( "new title" )
+**Syntax:** obj &lt;&lt; Title( "new title" )
 
 **Beschreibung:** Legt den Titel für die Plattform fest.
 
@@ -1299,7 +1297,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Syntax:** obj << Top Report
+**Syntax:** obj &lt;&lt; Top Report
 
 **Beschreibung:** Gibt eine Referenz auf den Stammknoten im Bericht zurück.
 
@@ -1319,7 +1317,7 @@ Show( t );
 
 ### Transform Column
 
-**Syntax:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Syntax:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Beschreibung:** Transformationsspalte im lokalen Kontext eines Objekts erstellen, üblicherweise als Plattform. Die Transformationsspalte ist nur für die Lebensdauer der Plattform aktiv.
 
@@ -1340,7 +1338,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**Syntax:** obj << View Web XML
+**Syntax:** obj &lt;&lt; View Web XML
 
 **Beschreibung:** Gibt den XML-Code zurück, der zum Erstellen des interaktiven HTML-Berichts verwendet wird.
 
@@ -1355,9 +1353,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**Syntax:** obj = Multiple Correspondence Analysis(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Multiple Correspondence Analysis(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Typ des Fensters festlegen, das für den Bericht erstellt werden soll. Standardmäßig wird ein Berichtsfenster vom Typ Visible erstellt. Ein Fenster vom Typ Invisible wird auf dem Bildschirm nicht angezeigt, kann jedoch von Funktionen wie Window() erkannt werden. Ein Fenster vom Typ Private reagiert auf die meisten Fenstermeldungen, kann jedoch nicht erkannt werden und muss über das Berichtsobjekt adressiert werden.
 
@@ -1378,9 +1374,7 @@ New Window( "Bivariate Equation",
 
 ### By
 
-**Syntax:** obj = Multiple Correspondence Analysis(...<By( column(s) )>...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Multiple Correspondence Analysis(...&lt;By( column(s) )&gt;...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Führt eine separate Analyse für jede Stufe der angegebenen Spalte durch.
 
@@ -1403,9 +1397,7 @@ dt << Multiple Correspondence Analysis(
 
 ### Factor
 
-**Syntax:** obj = Multiple Correspondence Analysis(...<Factor( column(s) )>...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Multiple Correspondence Analysis(...&lt;Factor( column(s) )&gt;...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Gibt eine oder mehrere kategoriale Spalten an, die als Faktor- oder Erklärungsvariablen verwendet werden sollen.
 
@@ -1422,9 +1414,7 @@ dt << Multiple Correspondence Analysis(
 
 ### Freq
 
-**Syntax:** obj = Multiple Correspondence Analysis(...<Freq( column )>...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Multiple Correspondence Analysis(...&lt;Freq( column )&gt;...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Gibt eine Spalte an, deren Werte jeder Zeile eine Häufigkeit für die Analyse zuweisen.
 
@@ -1443,9 +1433,7 @@ dt << Multiple Correspondence Analysis(
 
 ### Response
 
-**Syntax:** obj = Multiple Correspondence Analysis(...Response( column(s) )...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Multiple Correspondence Analysis(...Response( column(s) )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Gibt die kategorialen Spalten für die Analyse an.
 
@@ -1462,9 +1450,7 @@ dt << Multiple Correspondence Analysis(
 
 ### Supplementary ID
 
-**Syntax:** obj = Multiple Correspondence Analysis(...<Supplementary ID( column )>...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Multiple Correspondence Analysis(...&lt;Supplementary ID( column )&gt;...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Gibt Spalten an, die Zeilen identifizieren, die als supplementär verwendet werden sollen.
 
@@ -1484,9 +1470,7 @@ obj << Cross Table of Supplementary Rows( 0 );
 
 ### Supplementary Variable
 
-**Syntax:** obj = Multiple Correspondence Analysis(...<Supplementary Variable( column(s) )>...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Multiple Correspondence Analysis(...&lt;Supplementary Variable( column(s) )&gt;...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Gibt eine oder mehrere zusätzliche Variablen an. Zusätzliche Variablen werden in keiner der Berechnungen in der Plattform verwendet und ihre Einbeziehung hat keinen Einfluss auf die Ergebnisse. Diese Variablen können die Interpretation der Daten verbessern oder in zukünftigen Analysen verwendet werden.
 
@@ -1500,9 +1484,7 @@ obj = dt << Multiple Correspondence Analysis( Y( :country ), X( :size ), Z( :sex
 
 ### X
 
-**Syntax:** obj = Multiple Correspondence Analysis(...<X( column(s) )>...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Multiple Correspondence Analysis(...&lt;X( column(s) )&gt;...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Gibt eine oder mehrere kategoriale Spalten an, die als Faktor- oder Erklärungsvariablen verwendet werden sollen.
 
@@ -1519,9 +1501,7 @@ dt << Multiple Correspondence Analysis(
 
 ### Y
 
-**Syntax:** obj = Multiple Correspondence Analysis(...Y( column(s) )...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Multiple Correspondence Analysis(...Y( column(s) )...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Gibt die kategorialen Spalten für die Analyse an.
 
@@ -1538,9 +1518,7 @@ dt << Multiple Correspondence Analysis(
 
 ### Z
 
-**Syntax:** obj = Multiple Correspondence Analysis(...<Z( column(s) )>...)
-
-<b>Element im Startfenster: Ja</b>
+**Syntax:** obj = Multiple Correspondence Analysis(...&lt;Z( column(s) )&gt;...)&lt;b&gt;Element im Startfenster: Ja&lt;/b&gt;
 
 **Beschreibung:** Gibt eine oder mehrere zusätzliche Variablen an. Zusätzliche Variablen werden in keiner der Berechnungen in der Plattform verwendet und ihre Einbeziehung hat keinen Einfluss auf die Ergebnisse. Diese Variablen können die Interpretation der Daten verbessern oder in zukünftigen Analysen verwendet werden.
 

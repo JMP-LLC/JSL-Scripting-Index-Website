@@ -2,11 +2,9 @@
 
 
 
-## 関数
-
 ### Close
 
-**構文:** Close( <dataTableRef|name>, <NoSave|Save( "path" )> )
+**構文:** Close( &lt;dataTableRef|name&gt;, &lt;NoSave|Save( "path" )&gt; )
 
 **説明:** 最初の引数で参照されるデータテーブル(デフォルトは現在のプロジェクトの現在のデータテーブル)を閉じる。(スクリプトがプロジェクト内で実行されていない場合はプロジェクトはなし。)
 
@@ -31,7 +29,7 @@ Close( exdt, NoSave );
 
 ### Close All
 
-**構文:** Close All( <Project(title|index|box|window)>, Data Tables | Reports | Journals, <invisible | private>, <NoSave|Save> )
+**構文:** Close All( &lt;Project(title|index|box|window)&gt;, Data Tables | Reports | Journals, &lt;invisible | private&gt;, &lt;NoSave|Save&gt; )
 
 **説明:** 現在開いている、特定のタイプ(データテーブル、ジャーナル、レポート)のリソースすべてを閉じる。
 
@@ -53,7 +51,7 @@ Close All( Data Tables, NoSave );
 
 ### Convert File Path
 
-**構文:** path = Convert File Path( path, <absolute|relative>, <posix|windows>, <base( path )>, <search> )
+**構文:** path = Convert File Path( path, &lt;absolute|relative&gt;, &lt;posix|windows&gt;, &lt;base( path )&gt;, &lt;search&gt; )
 
 **説明:** 変換したパスを戻す。
 
@@ -75,7 +73,7 @@ For Each( {pv},
 
 ### Copy Directory
 
-**構文:** rc = Copy Directory( from, to, <recursive(0|1)> )
+**構文:** rc = Copy Directory( from, to, &lt;recursive(0|1)&gt; )
 
 **説明:** ある場所から別の場所にディレクトリをコピーする。また、オプションで、サブディレクトリもコピーする。toのパスで指定された場所にディレクトリが作成されるので、コピーするディレクトリの名前を、toのパスに含めてはいけない。ディレクトリがコピーされた場合は1、ディレクトリがコピーできなかった場合は0を戻す。ディレクトリのパスが無効または存在しない場合はエラーを戻す。
 
@@ -140,7 +138,7 @@ Format( date, "ddmonyyyy:h:m:s" );/* 1 1 0 date:time */
 
 ### Create Excel Workbook
 
-**構文:** Create Excel Workbook(<Workbook Name>, <{List of open tables}>, <Optional list of worksheet names> )
+**構文:** Create Excel Workbook(&lt;Workbook Name&gt;, &lt;{List of open tables}&gt;, &lt;Optional list of worksheet names&gt; )
 
 **説明:** 開いているJMPデータテーブルからExcelワークブックを作成する。
 
@@ -189,7 +187,7 @@ Format( Creation Date( "$SAMPLE_DATA/Big Class.jmp" ), "ddmonyyyy:h:m:s" );
 
 ### Delete Directory
 
-**構文:** rc = Delete Directory( path, <Allow Undo( boolean )> )
+**構文:** rc = Delete Directory( path, &lt;Allow Undo( boolean )&gt; )
 
 **説明:** ディレクトリとその中のファイルおよびサブディレクトリを削除する。ディレクトリを削除した場合は1、削除できなかった場合またはパスが無効な場合は0を戻す。
 
@@ -211,7 +209,7 @@ Format( date, "ddmonyyyy:h:m:s" );/* 1 1 0 date:time */
 
 ### Delete File
 
-**構文:** rc = Delete File( path, <Allow Undo( boolean )> )
+**構文:** rc = Delete File( path, &lt;Allow Undo( boolean )&gt; )
 
 **説明:** ファイルを削除する。ファイルを削除した場合は1、削除できなかった場合は0を戻す。パスが無効または存在しない場合はエラーをスローする。
 
@@ -281,7 +279,7 @@ File Size( "$SAMPLE_DATA/Big Class.jmp" );
 
 ### Files In Directory
 
-**構文:** y = Files In Directory( "path", <recursive(0|1)>, <include hidden(0|1)> )
+**構文:** y = Files In Directory( "path", &lt;recursive(0|1)&gt;, &lt;include hidden(0|1)&gt; )
 
 **説明:** pathで指定されたディレクトリにあるファイルの名前をリストで戻す。引数Recursiveが指定されていない場合、結果のリストにはディレクトリ名も含まれる。
 
@@ -309,7 +307,7 @@ Filter Each( {fn}, Files In Directory( "$SAMPLE_DATA", recursive( 1 ) ),
 
 ### Find All
 
-**構文:** Find All( <Project(title|index|box|window)>, Data Tables | Reports | Journals, <invisible | private> )
+**構文:** Find All( &lt;Project(title|index|box|window)&gt;, Data Tables | Reports | Journals, &lt;invisible | private&gt; )
 
 **説明:** 現在開いている、特定のタイプ(データテーブル、ジャーナル、レポート)のリソースすべてを戻す。
 
@@ -471,7 +469,7 @@ Google Sheet Export(
 
 ### Google Sheet Import
 
-**構文:** Google Sheet Import(Email(address), Spreadsheet(url|id), <Sheets("sheetName1", ... "sheetNameN")>, <Sheet Settings( Has Column Headers(Boolean), Data Starts on Row(n), Cell Range(range), Import Cell Colors(Boolean), Supress Empty Columns(Boolean))>)
+**構文:** Google Sheet Import(Email(address), Spreadsheet(url|id), &lt;Sheets("sheetName1", ... "sheetNameN")&gt;, &lt;Sheet Settings( Has Column Headers(Boolean), Data Starts on Row(n), Cell Range(range), Import Cell Colors(Boolean), Supress Empty Columns(Boolean))&gt;)
 
 **説明:** Googleスプレッドシートファイルを開く。
 
@@ -589,7 +587,7 @@ If( x == JSON Literal( true ),
 
 ### JSON To Data Table
 
-**構文:** dt = JSON To Data Table( jsonstring, <Invisible( boolean ) | Private( boolean )>, <Guess(Stack(Boolean)|"Tall"|"Wide")>, <JSON Settings(...)> )
+**構文:** dt = JSON To Data Table( jsonstring, &lt;Invisible( boolean ) | Private( boolean )&gt;, &lt;Guess(Stack(Boolean)|"Tall"|"Wide")&gt;, &lt;JSON Settings(...)&gt; )
 
 **説明:** JSONテキストをJMPデータテーブルに変換する。
 
@@ -639,7 +637,7 @@ Format( Last Modification Date( "$SAMPLE_DATA/Big Class.jmp" ), "ddmonyyyy:h:m:s
 
 ### Load Text File
 
-**構文:** text = Load Text File( path, <Charset("best guess", <force("throw" | "alert" | "silent")>)>, <LineSeparator("\!N")>, <XMLParse>|<SASODSXML>|<JSON>|<BLOB( <readOffsetFromBegin(0)>|<readOffsetFromEnd(42)>, <readLength(2147483647)>, <base64Compressed( 1 /* 0: ascii~hex */)> )> )
+**構文:** text = Load Text File( path, &lt;Charset("best guess", &lt;force("throw" | "alert" | "silent")&gt;)&gt;, &lt;LineSeparator("\!N")&gt;, &lt;XMLParse&gt;|&lt;SASODSXML&gt;|&lt;JSON&gt;|&lt;BLOB( &lt;readOffsetFromBegin(0)&gt;|&lt;readOffsetFromEnd(42)&gt;, &lt;readLength(2147483647)&gt;, &lt;base64Compressed( 1 /* 0: ascii~hex */)&gt; )&gt; )
 
 **説明:** テキストファイル全体をJSL変数に読み込む。Load Text File()を指定すると、ファイルを指定するウィンドウが呼び出される。Load Text File( path )は文字列を戻す。XMLParseオプションはXMLをツリー構造に変換する。SASODSXMLは、SASのODSにおけるデフォルトのXML形式として解析する。[{JSON}]オプションはJSONをツリー構造に変換する。引数BLOB はBLOB形式のバイナリデータを戻す。BLOBに関するオプションの名前つきパラメータは、ファイルからテキストの一部を読み取る場合に用いる。
 
@@ -710,7 +708,7 @@ Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
 
 ### Open
 
-**構文:** Open( filePath, <data table options | Excel import options | text import options | SAS import options | HTML import options | esriShapeFile import options | PDF import options | other file options > )
+**構文:** Open( filePath, &lt;data table options | Excel import options | text import options | SAS import options | HTML import options | esriShapeFile import options | PDF import options | other file options &gt; )
 
 **説明:** ファイルから作成されたデータテーブルやその他のJMPファイル、またはオブジェクトへの参照を戻す。パスが指定されていない場合、「データファイルを開く」ダイアログが表示される。フォルダのパスが指定されている場合、システムのファイルブラウザが開かれ、オブジェクトは戻されない。使用できるオプションについては、構文リファレンスを参照。
 
@@ -950,7 +948,7 @@ Show( l );
 
 ### Pick Directory
 
-**構文:** path = Pick Directory( <prompt>, <path>, <Show Files( boolean )> )
+**構文:** path = Pick Directory( &lt;prompt&gt;, &lt;path&gt;, &lt;Show Files( boolean )&gt; )
 
 **説明:** ディレクトリを選択するウィンドウをユーザに表示し、そこで選択されたディレクトリのパス名を戻す。ウィンドウの上部にオプションのprompt文字列が表示される。Show Filesの位置は、3つの引数のうちどこでもよく、ブール値を取る。1はディレクトリの選択ウィンドウにファイルを表示し、0は表示しない。デフォルトの値は0。pathは、ディレクトリの選択ウィンドウに最初に表示されるディレクトリを指定する文字列。path文字列を使用する場合は、その前にprompt文字列がなければならないが、間にShow Filesがあってもよい。
 
@@ -976,7 +974,7 @@ Pick Directory( "Select a directory" );
 
 ### Pick File
 
-**構文:** path = Pick File( <prompt>, <initial directory>, <filterList>, <first filter>, <saveFlag=0|1>, <default file>, <multiple> )
+**構文:** path = Pick File( &lt;prompt&gt;, &lt;initial directory&gt;, &lt;filterList&gt;, &lt;first filter&gt;, &lt;saveFlag=0|1&gt;, &lt;default file&gt;, &lt;multiple&gt; )
 
 **説明:** ファイルを選択するための「開く」ウィンドウをユーザに表示し、そこで選択されたファイルのパス名を戻す。引数filterListは、"ラベル|接尾辞1;接尾辞2;..."という形式の文字列のリスト。引数first filterは、最初の状態で用いるフィルタを指定する。第5引数は、保存ウィンドウ(saveFlag = 1)または開くウィンドウ(saveFlag = 0)のどちらにするかを指定する。引数default fileは、最初に選択された状態にしておくファイルを指定する。引数multipleは、saveFlagが0の場合、複数ファイルの選択を可能とする。
 
@@ -1086,7 +1084,7 @@ Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
 
 ### Save Text File
 
-**構文:** f = Save Text File( path, text|blob, <mode("replace"|"append")> )
+**構文:** f = Save Text File( path, text|blob, &lt;mode("replace"|"append")&gt; )
 
 **説明:** 引数textによって指定された文字列を含むテキストファイルを、引数pathによって指定されたファイル名で作成する。保存が完了すると、Save Text File()関数は作成されたファイルの名前を戻す。
 
@@ -1139,7 +1137,7 @@ Show( Convert File Path( "Iris.jmp", search ) );
 
 ### Set Path Variable
 
-**構文:** Set Path Variable( name, <value> )
+**構文:** Set Path Variable( name, &lt;value&gt; )
 
 **説明:** たとえば、SAMPLE_DATAのような名前のパス変数を設定する。パス変数は、パスを指定した場合、設定された文字列に置換される。
 
@@ -1154,7 +1152,7 @@ Set Path Variable( "SAMPLE_DATA", Get Path Variable( "SAMPLE_DATA" ) );
 
 ### TripleS Import
 
-**構文:** TripleSImport( <path to xml file> )
+**構文:** TripleSImport( &lt;path to xml file&gt; )
 
 **説明:** Triple-Sファイルを開く。Triple-S形式は、1つのxmlまたはsssファイルと、1つのcsvファイルまたはdat/ascファイルで構成される。両ファイルは適切な拡張子付きの同じ名前でなければならず、また、同じディレクトリになければならない。データを書き出す際は、xmlまたはsssのフルパスを指定する。
 

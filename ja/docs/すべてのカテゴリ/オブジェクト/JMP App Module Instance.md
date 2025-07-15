@@ -6,7 +6,7 @@
 
 ### Create Objects
 
-**構文:** obj << Create Objects
+**構文:** obj &lt;&lt; Create Objects
 
 **説明:** モジュールインスタンスのオブジェクトを作成する。JMPアプリケーションモジュールのスクリプトの中でのみ呼び出せる。
 
@@ -19,7 +19,7 @@ Names Default To Here( 1 );
 
 ### Get Box
 
-**構文:** obj << Get Box
+**構文:** obj &lt;&lt; Get Box
 
 **説明:** モジュールインスタンスのディスプレイボックスを取得する。
 
@@ -37,7 +37,7 @@ inst << Get Box;
 
 ### Get Namespace
 
-**構文:** obj << Get Namespace
+**構文:** obj &lt;&lt; Get Namespace
 
 **説明:** モジュールインスタンスの名前空間を取得する。
 
@@ -51,7 +51,7 @@ app = JMP App();
 
 ### Get User Data
 
-**構文:** obj << Get User Data
+**構文:** obj &lt;&lt; Get User Data
 
 **説明:** モジュールのインスタンスに関連付けられているユーザデータを戻す。
 
@@ -64,7 +64,7 @@ Names Default To Here( 1 );
 
 ### Set User Data
 
-**構文:** inst << Set User Data(expr)
+**構文:** inst &lt;&lt; Set User Data(expr)
 
 **説明:** JMP AppモジュールインスタンスのJSL値を保存する。値には、数値、文字値、リスト、連想配列、またはその他のJSLタイプのものを使用可能。
 

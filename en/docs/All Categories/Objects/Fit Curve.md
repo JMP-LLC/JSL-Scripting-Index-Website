@@ -8,9 +8,7 @@
 
 #### Point Options
 
-**Syntax:** obj << ANOM( 1, Point Options( "Show Needles"|"Show Connected Points"|"Show Only Points" ) );
-
-scrobj << Point Options( "Show Needles"|"Show Connected Points"|"Show Only Points" )
+**Syntax:** obj &lt;&lt; ANOM( 1, Point Options( "Show Needles"|"Show Connected Points"|"Show Only Points" ) );scrobj &lt;&lt; Point Options( "Show Needles"|"Show Connected Points"|"Show Only Points" )
 
 **Description:** Specifies the drawing style of the points in the chart. You can choose between vertical needles, connected points, and points only. By default, the chart is drawn with needles that connect the points to the horizontal line that is drawn at the average.
 
@@ -28,9 +26,7 @@ scrobj << Point Options( "Show Connected Points" );
 
 #### Set Alpha Level
 
-**Syntax:** obj << ANOM( 1, Set Alpha Level( alpha ) );
-
-scrobj << Set Alpha Level( alpha )
+**Syntax:** obj &lt;&lt; ANOM( 1, Set Alpha Level( alpha ) );scrobj &lt;&lt; Set Alpha Level( alpha )
 
 **Description:** Changes the alpha level used to compute the decision limits.
 
@@ -48,9 +44,7 @@ scrobj << Set Alpha Level( 0.05 );
 
 #### Show Center Line
 
-**Syntax:** obj << ANOM( 1, Show Center Line( state=0|1 ) );
-
-scrobj << Show Center Line( state=0|1 )
+**Syntax:** obj &lt;&lt; ANOM( 1, Show Center Line( state=0|1 ) );scrobj &lt;&lt; Show Center Line( state=0|1 )
 
 **Description:** Shows or hides the center line (overall mean) on the ANOM chart. On by default.
 
@@ -68,9 +62,7 @@ scrobj << Show Center Line( 1 );
 
 #### Show Decision Limit Shading
 
-**Syntax:** obj << ANOM( 1, Show Decision Limit Shading( state=0|1 ) );
-
-scrobj << Show Decision Limit Shading( state=0|1 )
+**Syntax:** obj &lt;&lt; ANOM( 1, Show Decision Limit Shading( state=0|1 ) );scrobj &lt;&lt; Show Decision Limit Shading( state=0|1 )
 
 **Description:** Shows or hides the decision limit shading for the ANOM chart. On by default.
 
@@ -88,9 +80,7 @@ scrobj << Show Decision Limit Shading( 1 );
 
 #### Show Decision Limits
 
-**Syntax:** obj << ANOM( 1, Show Decision Limits( state=0|1 ) );
-
-scrobj << Show Decision Limits( state=0|1 )
+**Syntax:** obj &lt;&lt; ANOM( 1, Show Decision Limits( state=0|1 ) );scrobj &lt;&lt; Show Decision Limits( state=0|1 )
 
 **Description:** Shows or hides the decision limit lines for the ANOM chart. On by default.
 
@@ -108,9 +98,7 @@ scrobj << Show Decision Limits( 1 );
 
 #### Show Summary Report
 
-**Syntax:** obj << ANOM( 1, Show Summary Report( state=0|1 ) );
-
-scrobj << Show Summary Report( state=0|1 )
+**Syntax:** obj &lt;&lt; ANOM( 1, Show Summary Report( state=0|1 ) );scrobj &lt;&lt; Show Summary Report( state=0|1 )
 
 **Description:** Shows or hides a report that contains the group means and the decision limits.
 
@@ -147,7 +135,7 @@ obj << Fit Logistic 4P;
 
 ### By
 
-**Syntax:** obj = Fit Curve(...<By( column(s) )>...)
+**Syntax:** obj = Fit Curve(...&lt;By( column(s) )&gt;...)
 
 **Description:** Performs a separate analysis for each level of the specified column.
 
@@ -167,7 +155,7 @@ obj << Fit Logistic 4P;
 
 ### Freq
 
-**Syntax:** obj = Fit Curve(...<Freq( column )>...)
+**Syntax:** obj = Fit Curve(...&lt;Freq( column )&gt;...)
 
 **Description:** Specifies a column whose values assign a frequency to each row for the analysis.
 
@@ -188,7 +176,7 @@ obj << Fit Logistic 4P;
 
 ### Group
 
-**Syntax:** obj = Fit Curve(...<Group( column )>...)
+**Syntax:** obj = Fit Curve(...&lt;Group( column )&gt;...)
 
 **Description:** Specifies a grouping variable. The fitted model has separate parameters for each level of the grouping variable.
 
@@ -203,7 +191,7 @@ obj << Fit Logistic 4P;
 
 ### Regressor
 
-**Syntax:** obj = Fit Curve(...<Regressor( column )>...)
+**Syntax:** obj = Fit Curve(...&lt;Regressor( column )&gt;...)
 
 **Description:** Specifies the predictor variables.
 
@@ -233,7 +221,7 @@ obj << Fit Logistic 4P;
 
 ### Supplementary
 
-**Syntax:** obj = Fit Curve(...<Supplementary( column(s) )>...)
+**Syntax:** obj = Fit Curve(...&lt;Supplementary( column(s) )&gt;...)
 
 **Description:** Specifies one or more supplementary variables. Supplementary variables are not used in any of the calculations in the platform and including them does not affect the results. These variables can improve data interpretation or be used in future analyses.
 
@@ -248,7 +236,7 @@ obj << Fit Cubic;
 
 ### Weight
 
-**Syntax:** obj = Fit Curve(...<Weight( column )>...)
+**Syntax:** obj = Fit Curve(...&lt;Weight( column )&gt;...)
 
 **Description:** Specifies a column whose values assign a weight to each row for the analysis.
 
@@ -269,7 +257,7 @@ obj << Fit Logistic 4P;
 
 ### X
 
-**Syntax:** obj = Fit Curve(...<X( column )>...)
+**Syntax:** obj = Fit Curve(...&lt;X( column )&gt;...)
 
 **Description:** Specifies the predictor variables.
 
@@ -299,7 +287,7 @@ obj << Fit Logistic 4P;
 
 ### Z
 
-**Syntax:** obj = Fit Curve(...<Z( column(s) )>...)
+**Syntax:** obj = Fit Curve(...&lt;Z( column(s) )&gt;...)
 
 **Description:** Specifies one or more supplementary variables. Supplementary variables are not used in any of the calculations in the platform and including them does not affect the results. These variables can improve data interpretation or be used in future analyses.
 
@@ -316,7 +304,7 @@ obj << Fit Cubic;
 
 ### F1 Analysis
 
-**Syntax:** obj << F1 Analysis( Alpha( number ), Reference Level( level ), Bootstrap Samples( number ), Random Seed( number ))
+**Syntax:** obj &lt;&lt; F1 Analysis( Alpha( number ), Reference Level( level ), Bootstrap Samples( number ), Random Seed( number ))
 
 **Description:** Performs a dissolution curve analysis using the F1 difference factor, which measures the percent difference between the curves of the reference tablet and the curves of the test tablet at each time point.
 
@@ -341,7 +329,7 @@ obj << F1 Analysis(
 
 ### F2 Analysis
 
-**Syntax:** obj << F2 Analysis( Alpha( number ), Reference Level( level ), Bootstrap Samples( number ), Random Seed( number ))
+**Syntax:** obj &lt;&lt; F2 Analysis( Alpha( number ), Reference Level( level ), Bootstrap Samples( number ), Random Seed( number ))
 
 **Description:** Performs a dissolution curve analysis using the F2 similarity factor, which measures the similarity of percent dissolution between the curves of the reference tablet and the curves of the test tablet.
 
@@ -366,7 +354,7 @@ obj << F2 Analysis(
 
 ### Fit Antoine Equation
 
-**Syntax:** obj << Fit Antoine Equation
+**Syntax:** obj &lt;&lt; Fit Antoine Equation
 
 **Description:** Fits the Antoine model to the data. This model is often used to model vapor pressure as a function of temperature.
 
@@ -381,11 +369,11 @@ obj << Fit Antoine Equation;
 
 ### Fit Asymmetric Gaussian Peak
 
-**Syntax:** obj << Fit Asymmetric Gaussian Peak
+**Syntax:** obj &lt;&lt; Fit Asymmetric Gaussian Peak
 
 ### Fit Biexponential 4P
 
-**Syntax:** obj << Fit Biexponential 4P
+**Syntax:** obj &lt;&lt; Fit Biexponential 4P
 
 **Description:** Fits a four-parameter biexponential model to the data.
 
@@ -408,7 +396,7 @@ obj << Fit Biexponential 4P;
 
 ### Fit Biexponential 5P
 
-**Syntax:** obj << Fit Biexponential 5P
+**Syntax:** obj &lt;&lt; Fit Biexponential 5P
 
 **Description:** Fits a five-parameter biexponential model to the data.
 
@@ -431,7 +419,7 @@ obj << Fit Biexponential 5P;
 
 ### Fit Cell Growth 4P
 
-**Syntax:** obj << Fit Cell Growth 4P
+**Syntax:** obj &lt;&lt; Fit Cell Growth 4P
 
 **Description:** Fits a four-parameter growth and decay model to the data.
 
@@ -454,7 +442,7 @@ obj << Fit Cell Growth 4P;
 
 ### Fit Cubic
 
-**Syntax:** obj << Fit Cubic
+**Syntax:** obj &lt;&lt; Fit Cubic
 
 **Description:** Fits a cubic model to the data.
 
@@ -469,7 +457,7 @@ obj << Fit Cubic;
 
 ### Fit ExGaussian Peak
 
-**Syntax:** obj << Fit ExGaussian Peak
+**Syntax:** obj &lt;&lt; Fit ExGaussian Peak
 
 **Description:** Fits an exponentially modified Gaussian peak model to the data.
 
@@ -492,7 +480,7 @@ obj << Fit ExGaussian Peak;
 
 ### Fit Exponential 2P
 
-**Syntax:** obj << Fit Exponential 2P
+**Syntax:** obj &lt;&lt; Fit Exponential 2P
 
 **Description:** Fits a two-parameter exponential model to the data. The fitted response has an asymptote at zero.
 
@@ -507,7 +495,7 @@ obj << Fit Exponential 2P;
 
 ### Fit Exponential 3P
 
-**Syntax:** obj << Fit Exponential 3P
+**Syntax:** obj &lt;&lt; Fit Exponential 3P
 
 **Description:** Fits a three-parameter exponential model to the data. The fitted response is bounded by an estimated asymptote.
 
@@ -522,7 +510,7 @@ obj << Fit Exponential 3P;
 
 ### Fit First Order Rate
 
-**Syntax:** obj << Fit First Order Rate
+**Syntax:** obj &lt;&lt; Fit First Order Rate
 
 **Description:** Fits a first order rate model to the data. This is useful in modeling chemical reactions and is available only when the X values are nonnegative.
 
@@ -537,7 +525,7 @@ obj << Fit First Order Rate;
 
 ### Fit First Order with Equilibrium
 
-**Syntax:** obj << Fit First Order with Equilibrium
+**Syntax:** obj &lt;&lt; Fit First Order with Equilibrium
 
 **Description:** Fits a first order rate model with equilibrium to the data. This is useful in modeling chemical reactions and is available only when the X values are nonnegative.
 
@@ -552,7 +540,7 @@ obj << Fit First Order with Equilibrium;
 
 ### Fit First Order with Limits
 
-**Syntax:** obj << Fit First Order with Limits
+**Syntax:** obj &lt;&lt; Fit First Order with Limits
 
 **Description:** Fits a first order rate model with limits to the data. This is useful in modeling chemical reactions and is available only when the X values are nonnegative.
 
@@ -567,7 +555,7 @@ obj << Fit First Order with Limits;
 
 ### Fit Gaussian Peak
 
-**Syntax:** obj << Fit Gaussian Peak
+**Syntax:** obj &lt;&lt; Fit Gaussian Peak
 
 **Description:** Fits a Gaussian peak model to the data.
 
@@ -590,7 +578,7 @@ obj << Fit Gaussian Peak;
 
 ### Fit Gompertz 3P
 
-**Syntax:** obj << Fit Gompertz 3P
+**Syntax:** obj &lt;&lt; Fit Gompertz 3P
 
 **Description:** Fits a three-parameter Gompertz curve to the data. The fitted response is bounded between zero and an estimated asymptote.
 
@@ -615,7 +603,7 @@ obj << Fit Gompertz 3P;
 
 ### Fit Gompertz 4P
 
-**Syntax:** obj << Fit Gompertz 4P
+**Syntax:** obj &lt;&lt; Fit Gompertz 4P
 
 **Description:** Fits a four-parameter Gompertz curve to the data. The fitted response is bounded between two estimated asymptotes.
 
@@ -630,7 +618,7 @@ obj << Fit Gompertz 4P;
 
 ### Fit Higuchi
 
-**Syntax:** obj << Fit Higuchi
+**Syntax:** obj &lt;&lt; Fit Higuchi
 
 **Description:** Fits a Higuchi model to the data. This is a parametric technique to compare dissolution curves.
 
@@ -649,7 +637,7 @@ obj << Fit Higuchi;
 
 ### Fit Higuchi with Burst
 
-**Syntax:** obj << Fit Higuchi with Burst
+**Syntax:** obj &lt;&lt; Fit Higuchi with Burst
 
 **Description:** Fits a Higuchi model with a burst component to the data. This is a parametric technique to compare dissolution curves.
 
@@ -668,7 +656,7 @@ obj << Fit Higuchi with Burst;
 
 ### Fit Higuchi with Lag
 
-**Syntax:** obj << Fit Higuchi with Lag
+**Syntax:** obj &lt;&lt; Fit Higuchi with Lag
 
 **Description:** Fits a Higuchi model with a lag component to the data. This is a parametric technique to compare dissolution curves.
 
@@ -687,7 +675,7 @@ obj << Fit Higuchi with Lag;
 
 ### Fit Hixson-Crowell
 
-**Syntax:** obj << "Fit Hixson-Crowell"n
+**Syntax:** obj &lt;&lt; "Fit Hixson-Crowell"n
 
 **Description:** Fits a Hixson-Crowell model to the data. This is a parametric technique to compare dissolution curves.
 
@@ -706,7 +694,7 @@ obj << "Fit Hixson-Crowell"n;
 
 ### Fit Hixson-Crowell with Lag
 
-**Syntax:** obj << "Fit Hixson-Crowell with Lag"n
+**Syntax:** obj &lt;&lt; "Fit Hixson-Crowell with Lag"n
 
 **Description:** Fits a Hixson-Crowell model with a lag component to the data. This is a parametric technique to compare dissolution curves.
 
@@ -725,7 +713,7 @@ obj << "Fit Hixson-Crowell with Lag"n;
 
 ### Fit Hybrid Exponential
 
-**Syntax:** obj << Fit Hybrid Exponential
+**Syntax:** obj &lt;&lt; Fit Hybrid Exponential
 
 **Description:** Fits a Hybrid Exponential model to the data.
 
@@ -740,9 +728,7 @@ obj << Fit Hybrid Exponential;
 
 ### Fit Inverse Michaelis-Menten
 
-**Syntax:** obj << Fit Inverse Michaelis Menten; 
-
-obj << "Fit Inverse Michaelis-Menten"n
+**Syntax:** obj &lt;&lt; Fit Inverse Michaelis Menten; obj &lt;&lt; "Fit Inverse Michaelis-Menten"n
 
 **Description:** Fits the inverse Michaelis-Menten enzyme kinetics model to the data.
 
@@ -757,7 +743,7 @@ obj << Fit Inverse Michaelis Menten;
 
 ### Fit Korsmeyer-Peppas
 
-**Syntax:** obj << "Fit Korsmeyer-Peppas"n
+**Syntax:** obj &lt;&lt; "Fit Korsmeyer-Peppas"n
 
 **Description:** Fits a Korsmeyer-Peppas model to the data. This is a parametric technique to compare dissolution curves.
 
@@ -776,7 +762,7 @@ obj << "Fit Korsmeyer-Peppas"n;
 
 ### Fit Korsmeyer-Peppas with Burst
 
-**Syntax:** obj << "Fit Korsmeyer-Peppas with Burst"n
+**Syntax:** obj &lt;&lt; "Fit Korsmeyer-Peppas with Burst"n
 
 **Description:** Fits a Korsmeyer-Peppas model with a burst component to the data. This is a parametric technique to compare dissolution curves.
 
@@ -795,7 +781,7 @@ obj << "Fit Korsmeyer-Peppas with Burst"n;
 
 ### Fit Korsmeyer-Peppas with Lag
 
-**Syntax:** obj << "Fit Korsmeyer-Peppas with Lag"n
+**Syntax:** obj &lt;&lt; "Fit Korsmeyer-Peppas with Lag"n
 
 **Description:** Fits a Korsmeyer-Peppas model with a lag component to the data. This is a parametric technique to compare dissolution curves.
 
@@ -814,7 +800,7 @@ obj << "Fit Korsmeyer-Peppas with Lag"n;
 
 ### Fit Linear
 
-**Syntax:** obj << Fit Linear
+**Syntax:** obj &lt;&lt; Fit Linear
 
 **Description:** Fits a least squares regression model to the data. The fit line is shown on the plot and a fit report is provided.
 
@@ -829,7 +815,7 @@ obj << Fit Linear;
 
 ### Fit Logistic 2P
 
-**Syntax:** obj << Fit Logistic 2P
+**Syntax:** obj &lt;&lt; Fit Logistic 2P
 
 **Description:** Fits a two-parameter logistic curve to the data. The fitted response is bounded between asymptotes zero and one.
 
@@ -855,7 +841,7 @@ obj << Fit Logistic 2P;
 
 ### Fit Logistic 3P
 
-**Syntax:** obj << Fit Logistic 3P
+**Syntax:** obj &lt;&lt; Fit Logistic 3P
 
 **Description:** Fits a three-parameter logistic curve to the data. The fitted response is bounded between zero and an estimated asymptote.
 
@@ -880,7 +866,7 @@ obj << Fit Logistic 3P;
 
 ### Fit Logistic 4P
 
-**Syntax:** obj << Fit Logistic 4P
+**Syntax:** obj &lt;&lt; Fit Logistic 4P
 
 **Description:** Fits a four-parameter logistic model to the data. The fitted response is bounded between two estimated asymptotes.
 
@@ -895,7 +881,7 @@ obj << Fit Logistic 4P;
 
 ### Fit Logistic 4P Hill
 
-**Syntax:** obj << Fit Logistic 4P Hill
+**Syntax:** obj &lt;&lt; Fit Logistic 4P Hill
 
 **Description:** Fits a four-parameter logistic model to the data. The fitted response is bounded between two estimated asymptotes.
 
@@ -910,7 +896,7 @@ obj << Fit Logistic 4P Hill;
 
 ### Fit Logistic 4P Rodbard
 
-**Syntax:** obj << Fit Logistic 4P Rodbard
+**Syntax:** obj &lt;&lt; Fit Logistic 4P Rodbard
 
 **Description:** Fits a four-parameter logistic model to the data. The fitted response is bounded between two estimated asymptotes.
 
@@ -925,7 +911,7 @@ obj << Fit Logistic 4P Rodbard;
 
 ### Fit Logistic 5P
 
-**Syntax:** obj << Fit Logistic 5P
+**Syntax:** obj &lt;&lt; Fit Logistic 5P
 
 **Description:** Fits a five-parameter logistic model to the data. The fitted response is bounded between two estimated asymptotes. Unlike the other logistic curves, the five-parameter logistic is not symmetric.
 
@@ -940,7 +926,7 @@ obj << Fit Logistic 5P;
 
 ### Fit Lorentzian Peak
 
-**Syntax:** obj << Fit Lorentzian Peak
+**Syntax:** obj &lt;&lt; Fit Lorentzian Peak
 
 **Description:** Fits a Lorentzian peak model to the data.
 
@@ -963,7 +949,7 @@ obj << Fit Lorentzian Peak;
 
 ### Fit Mechanistic Growth
 
-**Syntax:** obj << Fit Mechanistic Growth
+**Syntax:** obj &lt;&lt; Fit Mechanistic Growth
 
 **Description:** Fits the mechanistic growth model to the data. This is a reparameterization of the Exponential 3P model.
 
@@ -978,9 +964,7 @@ obj << Fit Mechanistic Growth;
 
 ### Fit Michaelis-Menten
 
-**Syntax:** obj << Fit Michaelis Menten; 
-
-obj << "Fit Michaelis-Menten"n
+**Syntax:** obj &lt;&lt; Fit Michaelis Menten; obj &lt;&lt; "Fit Michaelis-Menten"n
 
 **Description:** Fits the Michaelis-Menten enzyme kinetics model to the data.
 
@@ -995,7 +979,7 @@ obj << Fit Michaelis Menten;
 
 ### Fit One Compartment Oral Dose
 
-**Syntax:** obj << Fit One Compartment Oral Dose
+**Syntax:** obj &lt;&lt; Fit One Compartment Oral Dose
 
 **Description:** Fits a One Compartment Oral Dose model to the data. This model is appropriate for modeling the concentration of drug in the body after an oral dose.
 
@@ -1014,11 +998,11 @@ obj << Fit One Compartment Oral Dose;
 
 ### Fit Pearson VII Peak
 
-**Syntax:** obj << Fit Pearson VII Peak
+**Syntax:** obj &lt;&lt; Fit Pearson VII Peak
 
 ### Fit Power Model
 
-**Syntax:** obj << Fit Power Model
+**Syntax:** obj &lt;&lt; Fit Power Model
 
 **Description:** Fits a power model to the data.
 
@@ -1033,7 +1017,7 @@ obj << Fit Power Model;
 
 ### Fit Probit 2P
 
-**Syntax:** obj << Fit Probit 2P
+**Syntax:** obj &lt;&lt; Fit Probit 2P
 
 **Description:** Fits a two-parameter probit curve to the data. The fitted response is bounded between asymptotes zero and one.
 
@@ -1059,7 +1043,7 @@ obj << Fit Probit 2P;
 
 ### Fit Probit 3P
 
-**Syntax:** obj << Fit Probit 3P
+**Syntax:** obj &lt;&lt; Fit Probit 3P
 
 **Description:** Fits a three-parameter probit curve to the data. The fitted response is bounded between zero and an estimated asymptote.
 
@@ -1084,7 +1068,7 @@ obj << Fit Probit 3P;
 
 ### Fit Probit 4P
 
-**Syntax:** obj << Fit Probit 4P
+**Syntax:** obj &lt;&lt; Fit Probit 4P
 
 **Description:** Fits a four-parameter probit model to the data. The fitted response is bounded between two estimated asymptotes.
 
@@ -1099,11 +1083,11 @@ obj << Fit Probit 4P;
 
 ### Fit Pseudo-Voigt
 
-**Syntax:** obj << Fit Pseudo-Voigt
+**Syntax:** obj &lt;&lt; Fit Pseudo-Voigt
 
 ### Fit Quadratic
 
-**Syntax:** obj << Fit Quadratic
+**Syntax:** obj &lt;&lt; Fit Quadratic
 
 **Description:** Fits a quadratic model to the data.
 
@@ -1118,7 +1102,7 @@ obj << Fit Quadratic;
 
 ### Fit Quartic
 
-**Syntax:** obj << Fit Quartic
+**Syntax:** obj &lt;&lt; Fit Quartic
 
 **Description:** Fits a fourth-order polynomial to the data.
 
@@ -1133,7 +1117,7 @@ obj << Fit Quartic;
 
 ### Fit Quintic
 
-**Syntax:** obj << Fit Quintic
+**Syntax:** obj &lt;&lt; Fit Quintic
 
 **Description:** Fits a fifth-order polynomial to the data.
 
@@ -1148,7 +1132,7 @@ obj << Fit Quintic;
 
 ### Fit Second Order
 
-**Syntax:** obj << Fit Second Order
+**Syntax:** obj &lt;&lt; Fit Second Order
 
 **Description:** Fits a second order rate model to the data. This is useful in modeling chemical reactions and is available only when the X values are nonnegative.
 
@@ -1163,7 +1147,7 @@ obj << Fit Second Order;
 
 ### Fit Second Order with Two Components
 
-**Syntax:** obj << Fit Second Order with Two Components
+**Syntax:** obj &lt;&lt; Fit Second Order with Two Components
 
 **Description:** Fits a second order rate model with two components to the data. This is useful in modeling chemical reactions and is available only when the X values are nonnegative.
 
@@ -1178,11 +1162,11 @@ obj << Fit Second Order with Two Components;
 
 ### Fit Skew Normal Peak
 
-**Syntax:** obj << Fit Skew Normal Peak
+**Syntax:** obj &lt;&lt; Fit Skew Normal Peak
 
 ### Fit Two Compartment IV Bolus Dose
 
-**Syntax:** obj << Fit Two Compartment IV Bolus Dose
+**Syntax:** obj &lt;&lt; Fit Two Compartment IV Bolus Dose
 
 **Description:** Fits a Two Compartment IV Bolus Dose model to the data. This model is appropriate for modeling the concentration of drug in the body after an intravenous bolus dose.
 
@@ -1205,7 +1189,7 @@ obj << Fit Two Compartment IV Bolus Dose;
 
 ### Fit Weibull Growth
 
-**Syntax:** obj << Fit Weibull Growth
+**Syntax:** obj &lt;&lt; Fit Weibull Growth
 
 **Description:** Fits a three-parameter Weibull Growth model to the data.
 
@@ -1220,7 +1204,7 @@ obj << Fit Weibull Growth;
 
 ### Multivariate Distance
 
-**Syntax:** obj << Multivariate Distance( Alpha( number ), Reference Level( level ))
+**Syntax:** obj &lt;&lt; Multivariate Distance( Alpha( number ), Reference Level( level ))
 
 **Description:** Performs a dissolution curve analysis using the Mahalanobis distance M, which measures the multivariate distance between the curves of the reference tablet and the curves of the test tablet.
 
@@ -1240,7 +1224,7 @@ obj << Multivariate Distance( Alpha( 0.1 ), Reference Level( "R01" ) );
 
 ### T2EQ
 
-**Syntax:** obj << T2EQ( Alpha( number ), Reference Level( level ))
+**Syntax:** obj &lt;&lt; T2EQ( Alpha( number ), Reference Level( level ))
 
 **Description:** Performs a dissolution curve analysis using the T2EQ equivalence test, which measures the multivariate distance between the curves of the reference tablet and the curves of the test tablet.
 
@@ -1262,7 +1246,7 @@ obj << T2EQ( Alpha( 0.05 ), Reference Level( "R01" ) );
 
 ### Action
 
-**Syntax:** obj << Action
+**Syntax:** obj &lt;&lt; Action
 
 **Description:** All-purpose trapdoor within a platform to insert expressions to evaluate. Temporarily sets the DisplayBox and DataTable contexts to the Platform.
 
@@ -1280,7 +1264,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Syntax:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntax:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Description:** Apply a previously created preset to the object, updating the options and customizations to match the saved settings.
 
@@ -1325,7 +1309,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Broadcast
 
-**Syntax:** obj << Broadcast(message)
+**Syntax:** obj &lt;&lt; Broadcast(message)
 
 **Description:** Broadcasts a message to a platform. If return results from individual objects are tables, they are concatenated if possible, and the final format is identical to either the result from the Save Combined Table option in a Table Box or the result from the Concatenate option using a Source column. Other than those, results are stored in a list and returned.
 
@@ -1343,7 +1327,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**Syntax:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Syntax:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Description:** Adds a control panel for changing the platform&apos;s variables
 
@@ -1361,7 +1345,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**Syntax:** obj << Copy ByGroup Script
+**Syntax:** obj &lt;&lt; Copy ByGroup Script
 
 **Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
 
@@ -1382,7 +1366,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Syntax:** obj << Copy Script
+**Syntax:** obj &lt;&lt; Copy Script
 
 **Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
 
@@ -1398,7 +1382,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Syntax:** obj << Data Table Window
+**Syntax:** obj &lt;&lt; Data Table Window
 
 **Description:** Move the data table window for this analysis to the front.
 
@@ -1414,7 +1398,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Syntax:** obj << Get By Levels
+**Syntax:** obj &lt;&lt; Get By Levels
 
 **Description:** Returns an associative array mapping the by group columns to their values.
 
@@ -1429,7 +1413,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Syntax:** obj << Get ByGroup Script
+**Syntax:** obj &lt;&lt; Get ByGroup Script
 
 **Description:** Creates a script (JSL) to produce this analysis and returns it as an expression.
 
@@ -1451,7 +1435,7 @@ Show( t );
 
 ### Get Container
 
-**Syntax:** obj << Get Container
+**Syntax:** obj &lt;&lt; Get Container
 
 **Description:** Returns a reference to the container box that holds the content for the object.
 
@@ -1499,7 +1483,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Syntax:** obj << Get Data Table
+**Syntax:** obj &lt;&lt; Get Data Table
 
 **Description:** Returns a reference to the data table.
 
@@ -1516,7 +1500,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**Syntax:** obj << Get Group Platform
+**Syntax:** obj &lt;&lt; Get Group Platform
 
 **Description:** Return the Group Platform object if this platform is part of a Group. Otherwise, returns Empty().
 
@@ -1533,7 +1517,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**Syntax:** obj << Get Script
+**Syntax:** obj &lt;&lt; Get Script
 
 **Description:** Creates a script (JSL) to produce this analysis and returns it as an expression.
 
@@ -1550,7 +1534,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Syntax:** obj << Get Script With Data Table
+**Syntax:** obj &lt;&lt; Get Script With Data Table
 
 **Description:** Creates a script(JSL) to produce this analysis specifically referencing this data table and returns it as an expression.
 
@@ -1567,7 +1551,7 @@ Show( t );
 
 ### Get Timing
 
-**Syntax:** obj << Get Timing
+**Syntax:** obj &lt;&lt; Get Timing
 
 **Description:** Times the platform launch.
 
@@ -1584,7 +1568,7 @@ Show( t );
 
 ### Get Web Support
 
-**Syntax:** obj << Get Web Support
+**Syntax:** obj &lt;&lt; Get Web Support
 
 **Description:** Return a number indicating the level of Interactive HTML support for the display object. 1 means some or all elements are supported. 0 means no support.
 
@@ -1600,7 +1584,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Syntax:** obj << Get Where Expr
+**Syntax:** obj &lt;&lt; Get Where Expr
 
 **Description:** Returns the Where expression for the data subset, if the platform was launched with By() or Where(). Otherwise, returns Empty()
 
@@ -1635,7 +1619,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Syntax:** obj << Local Data Filter
+**Syntax:** obj &lt;&lt; Local Data Filter
 
 **Description:** To filter data to specific groups or ranges, but local to this platform
 
@@ -1687,7 +1671,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Syntax:** obj << Paste Local Data Filter
+**Syntax:** obj &lt;&lt; Paste Local Data Filter
 
 **Description:** Apply the local data filter from the clipboard to the current report.
 
@@ -1708,7 +1692,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**Syntax:** obj << Redo Analysis
+**Syntax:** obj &lt;&lt; Redo Analysis
 
 **Description:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
 
@@ -1724,7 +1708,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**Syntax:** obj << Redo ByGroup Analysis
+**Syntax:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Description:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
 
@@ -1745,7 +1729,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**Syntax:** obj << Relaunch Analysis
+**Syntax:** obj &lt;&lt; Relaunch Analysis
 
 **Description:** Opens the platform launch window and recalls the settings that were used to create the report.
 
@@ -1761,7 +1745,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**Syntax:** obj << Relaunch ByGroup
+**Syntax:** obj &lt;&lt; Relaunch ByGroup
 
 **Description:** Opens the platform launch window and recalls the settings that were used to create the report.
 
@@ -1782,7 +1766,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**Syntax:** obj << Remove Column Switcher
+**Syntax:** obj &lt;&lt; Remove Column Switcher
 
 **Description:** Removes the most recent Column Switcher that has been added to the platform.
 
@@ -1802,7 +1786,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Syntax:** obj << Remove Local Data Filter
+**Syntax:** obj &lt;&lt; Remove Local Data Filter
 
 **Description:** If a local data filter has been created, this removes it and restores the platform to use all the data in the data table directly
 
@@ -1839,9 +1823,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Syntax:** obj << Report;
-
-Report( obj )
+**Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Description:** Returns a reference to the report object.
 
@@ -1859,7 +1841,7 @@ Show( t );
 
 ### Report View
 
-**Syntax:** obj << Report View( "Full"|"Summary" )
+**Syntax:** obj &lt;&lt; Report View( "Full"|"Summary" )
 
 **Description:** The report view determines the level of detail visible in a platform report. Full shows all of the detail, while Summary shows only select content, dependent on the platform. For customized behavior, display boxes support a <<Set Summary Behavior message.
 
@@ -1875,7 +1857,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**Syntax:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description:** Creates a JSL script to produce this analysis, and save it as a table property in the data table. You can specify a name for the script. The Append Suffix option appends a numeric suffix to the script name, which differentiates the script from an existing script with the same name. The Prompt option prompts the user to specify a script name. The Replace option replaces an existing script with the same name.
 
@@ -1896,7 +1878,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Syntax:** obj << Save ByGroup Script to Journal
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
 
@@ -1917,7 +1899,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Syntax:** obj << Save ByGroup Script to Script Window
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
 
@@ -1938,7 +1920,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**Syntax:** obj << Save Script for All Objects
+**Syntax:** obj &lt;&lt; Save Script for All Objects
 
 **Description:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -1954,7 +1936,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Syntax:** obj << Save Script for All Objects To Data Table( <name> )
+**Syntax:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Description:** Saves a script for all report objects to the current data table. This option is useful when you have multiple reports in the window. The script is named after the first platform unless you specify the script name in quotes.
 
@@ -1994,7 +1976,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Syntax:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description:** Create a JSL script to produce this analysis, and save it as a table property in the data table.
 
@@ -2010,7 +1992,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Syntax:** obj << Save Script to Journal
+**Syntax:** obj &lt;&lt; Save Script to Journal
 
 **Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
 
@@ -2026,7 +2008,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Syntax:** obj << Save Script to Report
+**Syntax:** obj &lt;&lt; Save Script to Report
 
 **Description:** Create a JSL script to produce this analysis, and show it in the report itself. Useful to preserve a printed record of what was done.
 
@@ -2042,7 +2024,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Syntax:** obj << Save Script to Script Window
+**Syntax:** obj &lt;&lt; Save Script to Script Window
 
 **Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
 
@@ -2123,7 +2105,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Syntax:** obj << Sync to Data Table Changes
+**Syntax:** obj &lt;&lt; Sync to Data Table Changes
 
 **Description:** Sync with the exclude and data changes that have been made.
 
@@ -2140,7 +2122,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Syntax:** obj << Title( "new title" )
+**Syntax:** obj &lt;&lt; Title( "new title" )
 
 **Description:** Sets the title of the platform.
 
@@ -2156,7 +2138,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Syntax:** obj << Top Report
+**Syntax:** obj &lt;&lt; Top Report
 
 **Description:** Returns a reference to the root node in the report.
 
@@ -2174,7 +2156,7 @@ Show( t );
 
 ### Transform Column
 
-**Syntax:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Syntax:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Description:** Create a transform column in the local context of an object, usually a platform. The transform column is active only for the lifetime of the platform.
 
@@ -2191,7 +2173,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**Syntax:** obj << View Web XML
+**Syntax:** obj &lt;&lt; View Web XML
 
 **Description:** Returns the XML code that is used to create the interactive HTML report.
 
@@ -2229,9 +2211,7 @@ New Window( "Bivariate Equation",
 
 #### Set Alpha Level
 
-**Syntax:** obj << Fit Command( Equivalence Test(..., Equivalence with Ratios( 1, Set Alpha Level( number )))); 
-
-obj << (Fit[name|number] << Equivalence Test(..., Equivalence with Ratios( 1, Set Alpha Level( number ))))
+**Syntax:** obj &lt;&lt; Fit Command( Equivalence Test(..., Equivalence with Ratios( 1, Set Alpha Level( number )))); obj &lt;&lt; (Fit[name|number] &lt;&lt; Equivalence Test(..., Equivalence with Ratios( 1, Set Alpha Level( number ))))
 
 **Description:** Sets the alpha level that is used to compute the confidence intervals on the equivalence chart.
 
@@ -2253,9 +2233,7 @@ obj << Fit Logistic 4P(
 
 #### Set Decision Lines
 
-**Syntax:** obj << Fit Command( Equivalence Test(..., Equivalence with Ratios( 1, Set Decision Lines( lower, upper )))); 
-
-obj << (Fit[name|number] << Equivalence Test(..., Equivalence with Ratios( 1, Set Decision Lines( lower, upper ))))
+**Syntax:** obj &lt;&lt; Fit Command( Equivalence Test(..., Equivalence with Ratios( 1, Set Decision Lines( lower, upper )))); obj &lt;&lt; (Fit[name|number] &lt;&lt; Equivalence Test(..., Equivalence with Ratios( 1, Set Decision Lines( lower, upper ))))
 
 **Description:** Sets the lower and upper decision lines on the equivalence chart.
 
@@ -2277,9 +2255,7 @@ obj << Fit Logistic 4P(
 
 #### Show Center Line
 
-**Syntax:** obj << Fit Command( Equivalence Test(..., Equivalence with Ratios( 1, Show Center Line( state=0|1 )))); 
-
-obj << (Fit[name|number] << Equivalence Test(..., Equivalence with Ratios( 1, Show Center Line( state=0|1 ))))
+**Syntax:** obj &lt;&lt; Fit Command( Equivalence Test(..., Equivalence with Ratios( 1, Show Center Line( state=0|1 )))); obj &lt;&lt; (Fit[name|number] &lt;&lt; Equivalence Test(..., Equivalence with Ratios( 1, Show Center Line( state=0|1 ))))
 
 **Description:** Shows or hides the center line on the equivalence chart. On by default.
 
@@ -2301,9 +2277,7 @@ obj << Fit Logistic 4P(
 
 #### Show Decision Limit Shading
 
-**Syntax:** obj << Fit Command( Equivalence Test(..., Equivalence with Ratios( 1, Show Decision Limit Shading( state=0|1 )))); 
-
-obj << (Fit[name|number] << Equivalence Test(..., Equivalence with Ratios( 1, Show Decision Limit Shading( state=0|1 ))))
+**Syntax:** obj &lt;&lt; Fit Command( Equivalence Test(..., Equivalence with Ratios( 1, Show Decision Limit Shading( state=0|1 )))); obj &lt;&lt; (Fit[name|number] &lt;&lt; Equivalence Test(..., Equivalence with Ratios( 1, Show Decision Limit Shading( state=0|1 ))))
 
 **Description:** Shows or hides the decision limit shading on the equivalence chart. On by default.
 
@@ -2325,9 +2299,7 @@ obj << Fit Logistic 4P(
 
 #### Show Decision Limits
 
-**Syntax:** obj << Fit Command( Equivalence Test(..., Equivalence with Ratios( 1, Show Decision Limits( state=0|1 )))); 
-
-obj << (Fit[name|number] << Equivalence Test(..., Equivalence with Ratios(1, Show Decision Limits( state=0|1 ))))
+**Syntax:** obj &lt;&lt; Fit Command( Equivalence Test(..., Equivalence with Ratios( 1, Show Decision Limits( state=0|1 )))); obj &lt;&lt; (Fit[name|number] &lt;&lt; Equivalence Test(..., Equivalence with Ratios(1, Show Decision Limits( state=0|1 ))))
 
 **Description:** Shows or hides the decision limit lines on the equivalence chart. On by default.
 
@@ -2349,9 +2321,7 @@ obj << Fit Logistic 4P(
 
 #### Show Summary Report
 
-**Syntax:** obj << Fit Command( Equivalence Test(..., Equivalence with Ratios( 1, Show Summary Report( state=0|1 )))); 
-
-obj << (Fit[name|number] << Equivalence Test(..., Equivalence with Ratios( 1, Show Summary Report( state=0|1 ))))
+**Syntax:** obj &lt;&lt; Fit Command( Equivalence Test(..., Equivalence with Ratios( 1, Show Summary Report( state=0|1 )))); obj &lt;&lt; (Fit[name|number] &lt;&lt; Equivalence Test(..., Equivalence with Ratios( 1, Show Summary Report( state=0|1 ))))
 
 **Description:** Shows or hides the Equivalence Summary report that contains the parameter estimates, the decision limits, and whether the parameter exceeded the limits.
 
@@ -2377,7 +2347,7 @@ obj << Fit Logistic 4P(
 
 #### CDOE Fit Plot
 
-**Syntax:** scrobj << CDOE Fit Plot( state=0|1 )
+**Syntax:** scrobj &lt;&lt; CDOE Fit Plot( state=0|1 )
 
 **Description:** Shows or hides a plot of the fitted values. If a Group variable is specified, there is also a grid of plots of the fitted values for each level of the Group variable. On by default.
 
@@ -2410,7 +2380,7 @@ scrobj << CDOE Fit Plot( 0 );
 
 #### CDOE Profiler
 
-**Syntax:** scrobj << CDOE Profiler( state=0|1 )
+**Syntax:** scrobj &lt;&lt; CDOE Profiler( state=0|1 )
 
 **Description:** Shows or hides the CDOE Profiler, which enables you to explore how the response changes based on the supplementary variables. On by default.
 
@@ -2442,7 +2412,7 @@ scrobj << CDOE Profiler( 0 );
 
 #### Diagnostic Plots
 
-**Syntax:** scrobj << Diagnostic Plots( state=0|1 )
+**Syntax:** scrobj &lt;&lt; Diagnostic Plots( state=0|1 )
 
 **Description:** Shows or hides actual by predicted and residual plots for the response variable. On by default.
 
@@ -2475,7 +2445,7 @@ scrobj << Diagnostic Plots( 0 );
 
 #### Generalized Regression for Model Parameters
 
-**Syntax:** scrobj << Generalized Regression for Model Parameters( state=0|1 )
+**Syntax:** scrobj &lt;&lt; Generalized Regression for Model Parameters( state=0|1 )
 
 **Description:** Shows or hides the Generalized Regression reports for each model parameter. On by default.
 
@@ -2508,7 +2478,7 @@ scrobj << Generalized Regression for Model Parameters( 0 );
 
 #### Save Prediction Formula
 
-**Syntax:** scrobj << Save Prediction Formula
+**Syntax:** scrobj &lt;&lt; Save Prediction Formula
 
 **Description:** Saves a new formula column to the original data table. The new column contains the prediction formula for the response.
 
@@ -2543,9 +2513,7 @@ scrobj << Save Prediction Formula;
 
 #### Area Under Curve
 
-**Syntax:** obj << Fit Command( Area Under Curve( state=0|1 )); 
-
-obj << (Fit[number|name] << Area Under Curve( state=0|1 ))
+**Syntax:** obj &lt;&lt; Fit Command( Area Under Curve( state=0|1 )); obj &lt;&lt; (Fit[number|name] &lt;&lt; Area Under Curve( state=0|1 ))
 
 **Description:** Calculates the area under the fitted prediction function.
 
@@ -2568,9 +2536,7 @@ obj << Fit Gaussian Peak( Area Under Curve( 1 ) );
 
 #### Compare Parameter Estimates
 
-**Syntax:** obj << Fit Command( Compare Parameter Estimates( state=0|1 )); 
-
-obj << (Fit[number|name] << Compare Parameter Estimates( state=0|1 ))
+**Syntax:** obj &lt;&lt; Fit Command( Compare Parameter Estimates( state=0|1 )); obj &lt;&lt; (Fit[number|name] &lt;&lt; Compare Parameter Estimates( state=0|1 ))
 
 **Description:** Compares the parameter estimate from each group to the overall mean. This comparison is done for each parameter.
 
@@ -2585,7 +2551,7 @@ obj << Fit Logistic 4P( Compare Parameter Estimates( 1 ) );
 
 #### Curve DOE Analysis
 
-**Syntax:** obj << (Fit[number|name] << Curve DOE Analysis( state=0|1 ))
+**Syntax:** obj &lt;&lt; (Fit[number|name] &lt;&lt; Curve DOE Analysis( state=0|1 ))
 
 **Description:** Launches a Generalized Regression report within the Fit Curve platform. A generalized regression model is fit to each parameter of the model using the supplementary variables as model effects.
 
@@ -2639,9 +2605,7 @@ obj << (Fit["Biexponential 5P"] << Curve DOE Analysis( 1 ));
 
 #### Custom Inverse Prediction
 
-**Syntax:** obj << Fit Command( Custom Inverse Prediction( Response( value ))); 
-
-obj << (Fit[number|name] << Custom Inverse Prediction( Response( value )))
+**Syntax:** obj &lt;&lt; Fit Command( Custom Inverse Prediction( Response( value ))); obj &lt;&lt; (Fit[number|name] &lt;&lt; Custom Inverse Prediction( Response( value )))
 
 **Description:** Predicts an X value for the specified response value.
 
@@ -2656,9 +2620,7 @@ obj << Fit Logistic 4P( Custom Inverse Prediction( Response( 0.9 ) ) );
 
 #### Equivalence Test
 
-**Syntax:** obj << Fit Command( Equivalence Test( Reference Group( column ))); 
-
-obj << (Fit[number|name] << Equivalence Test( Reference Group( column )))
+**Syntax:** obj &lt;&lt; Fit Command( Equivalence Test( Reference Group( column ))); obj &lt;&lt; (Fit[number|name] &lt;&lt; Equivalence Test( Reference Group( column )))
 
 **Description:** Tests whether the fitted curve for each group is practically equivalent to the fitted curve from a reference group.
 
@@ -2673,9 +2635,7 @@ obj << Fit Logistic 4P( Equivalence Test( Reference Group( "Standard" ) ) );
 
 #### Inflection Point
 
-**Syntax:** obj << Fit Command( Inflection Point( state=0|1 )); 
-
-obj << (Fit[number|name] << Inflection Point( state=0|1 ))
+**Syntax:** obj &lt;&lt; Fit Command( Inflection Point( state=0|1 )); obj &lt;&lt; (Fit[number|name] &lt;&lt; Inflection Point( state=0|1 ))
 
 **Description:** Shows or hides a report of the inflection point estimates for the model. This option is available only for Weibull Growth, Logistic 4P Rodbard, and Logistic 5P models.
 
@@ -2690,9 +2650,7 @@ obj << Fit Logistic 5P( Inflection Point( 1 ) );
 
 #### Make Parameter Table
 
-**Syntax:** obj << Fit Command( Make Parameter Table ); 
-
-obj << (Fit[number|name] << Make Parameter Table)
+**Syntax:** obj &lt;&lt; Fit Command( Make Parameter Table ); obj &lt;&lt; (Fit[number|name] &lt;&lt; Make Parameter Table)
 
 **Description:** Creates a summary table of parameter estimates.
 
@@ -2707,9 +2665,7 @@ obj << Fit Logistic 4P( Make Parameter Table );
 
 #### Peak Response
 
-**Syntax:** obj << Fit Command( Peak Response( state=0|1 ); 
-
-obj << (Fit[number|name] << Peak Response( state=0|1 ))
+**Syntax:** obj &lt;&lt; Fit Command( Peak Response( state=0|1 ); obj &lt;&lt; (Fit[number|name] &lt;&lt; Peak Response( state=0|1 ))
 
 **Description:** Calculates the estimate of the Y variable at the peak of the fitted curve. This option is available for Cell Growth 4P and One Compartment models.
 
@@ -2728,9 +2684,7 @@ obj << Fit One Compartment Oral Dose( Peak Response( 1 ) );
 
 #### Plot Actual by Predicted
 
-**Syntax:** obj << Fit Command( Plot Actual by Predicted( state=0|1 ); 
-
-obj << (Fit[number|name] << Plot Actual by Predicted( state=0|1 ))
+**Syntax:** obj &lt;&lt; Fit Command( Plot Actual by Predicted( state=0|1 ); obj &lt;&lt; (Fit[number|name] &lt;&lt; Plot Actual by Predicted( state=0|1 ))
 
 **Description:** Shows or hides a plot with the actual response values on the vertical axis and the predicted values on the horizontal axis. In good fits, points are near the diagonal. You can see which points are far from the diagonal, look for patterns, and visualize the test.
 
@@ -2745,9 +2699,7 @@ fc << (fit[1] << Plot Actual by Predicted( 1 ));
 
 #### Plot Residual by Predicted
 
-**Syntax:** obj << Fit Command( Plot Residual by Predicted( state=0|1 ); 
-
-obj << (Fit[number|name] << Plot Residual by Predicted( state=0|1 ))
+**Syntax:** obj &lt;&lt; Fit Command( Plot Residual by Predicted( state=0|1 ); obj &lt;&lt; (Fit[number|name] &lt;&lt; Plot Residual by Predicted( state=0|1 ))
 
 **Description:** Shows or hides a plot with the residuals on the vertical axis and the row number of the horizontal axis.
 
@@ -2762,9 +2714,7 @@ fc << (fit[1] << Plot Residual by Predicted( 1 ));
 
 #### Profiler
 
-**Syntax:** obj << Fit Command( Profiler( state=0|1 )); 
-
-obj << (Fit[number|name] << Profiler( state=0|1 ))
+**Syntax:** obj &lt;&lt; Fit Command( Profiler( state=0|1 )); obj &lt;&lt; (Fit[number|name] &lt;&lt; Profiler( state=0|1 ))
 
 **Description:** Shows or hides a profiler of the fitted prediction function and its first and second derivatives.
 
@@ -2784,7 +2734,7 @@ obj << (Fit["Logistic 4P"] << Profiler( 1 ));
 
 #### Remove Fit
 
-**Syntax:** obj << (Fit[number|name]<<Remove Fit)
+**Syntax:** obj &lt;&lt; (Fit[number|name]&lt;&lt;Remove Fit)
 
 **Description:** Removes the specified fit from the report.
 
@@ -2801,9 +2751,7 @@ obj << (Fit[1] << Remove Fit);
 
 #### Save Bootstrap Results
 
-**Syntax:** obj << Fit Command( Save Bootstrap Results ); 
-
-obj << (Fit[number] << Save Bootstrap Results)
+**Syntax:** obj &lt;&lt; Fit Command( Save Bootstrap Results ); obj &lt;&lt; (Fit[number] &lt;&lt; Save Bootstrap Results)
 
 **Description:** Saves columns to a new data table. The data table contains the bootstrap results from either an F1 or an F2 analysis.
 
@@ -2833,9 +2781,7 @@ obj << (fit[1] << Save Bootstrap Results);
 
 #### Save First Derivative
 
-**Syntax:** obj << Fit Command( Save First Derivative ); 
-
-obj << (Fit[number|name] << Save First Derivative)
+**Syntax:** obj &lt;&lt; Fit Command( Save First Derivative ); obj &lt;&lt; (Fit[number|name] &lt;&lt; Save First Derivative)
 
 **Description:** Saves a new formula column to the original data table. The new column contains the formula for the first derivative of the prediction.
 
@@ -2850,9 +2796,7 @@ obj << Fit Logistic 4P( Save First Derivative );
 
 #### Save Inverse Prediction Formula
 
-**Syntax:** obj << Fit Command( Save Inverse Prediction Formula ); 
-
-obj << (Fit[number|name] << Save Inverse Prediction Formula)
+**Syntax:** obj &lt;&lt; Fit Command( Save Inverse Prediction Formula ); obj &lt;&lt; (Fit[number|name] &lt;&lt; Save Inverse Prediction Formula)
 
 **Description:** Saves a new formula column to the original data table. The new column contains the formula for the inverse function of the fitted model.
 
@@ -2867,9 +2811,7 @@ obj << Fit Logistic 4P( Save Inverse Prediction Formula );
 
 #### Save Parametric Prediction Formula
 
-**Syntax:** obj << Fit Command( Save Parametric Prediction Formula ); 
-
-obj << (Fit[number|name] << Save Parametric Prediction Formula)
+**Syntax:** obj &lt;&lt; Fit Command( Save Parametric Prediction Formula ); obj &lt;&lt; (Fit[number|name] &lt;&lt; Save Parametric Prediction Formula)
 
 **Description:** Saves a new formula column to the original data table. The new column contains the prediction formula expressed in a way that can be used by the Nonlinear platform.
 
@@ -2889,9 +2831,7 @@ obj << (Fit["Logistic 4P"] << Save Parametric Prediction Formula);
 
 #### Save Prediction Formula
 
-**Syntax:** obj << Fit Command( Save Prediction Formula ); 
-
-obj << (Fit[number|name] << Save Prediction Formula)
+**Syntax:** obj &lt;&lt; Fit Command( Save Prediction Formula ); obj &lt;&lt; (Fit[number|name] &lt;&lt; Save Prediction Formula)
 
 **Description:** Saves a new formula column to the original data table. The new column contains the prediction formula for the current parameter estimates.
 
@@ -2911,9 +2851,7 @@ obj << (Fit[1] << Save Prediction Formula);
 
 #### Save Residual Formula
 
-**Syntax:** obj << Fit Command( Save Residual Formula ); 
-
-obj << (Fit[number|name] << Save Residual Formula)
+**Syntax:** obj &lt;&lt; Fit Command( Save Residual Formula ); obj &lt;&lt; (Fit[number|name] &lt;&lt; Save Residual Formula)
 
 **Description:** Saves a new formula column to the original data table. The new column contains a formula for the residuals.
 
@@ -2928,9 +2866,7 @@ obj << Fit Logistic 4P( Save Residual Formula );
 
 #### Save Stacked Data
 
-**Syntax:** obj << Fit Command( Save Stacked Data ); 
-
-obj << (Fit[number|name] << Save Stacked Data)
+**Syntax:** obj &lt;&lt; Fit Command( Save Stacked Data ); obj &lt;&lt; (Fit[number|name] &lt;&lt; Save Stacked Data)
 
 **Description:** Saves columns to a new data table. The data table contains the original data in the stacked format as well as a column for the predicted values of the response and a column for the residuals.
 
@@ -2949,9 +2885,7 @@ obj << Fit Higuchi( Save Stacked Data );
 
 #### Save Std Error of First Derivative
 
-**Syntax:** obj << Fit Command( Save Std Error of First Derivative ); 
-
-obj << (Fit[number|name] << Save Std Error of First Derivative)
+**Syntax:** obj &lt;&lt; Fit Command( Save Std Error of First Derivative ); obj &lt;&lt; (Fit[number|name] &lt;&lt; Save Std Error of First Derivative)
 
 **Description:** Saves a new column to the original data table. The new column contains the formula for the standard error of the first derivative of the prediction.
 
@@ -2966,9 +2900,7 @@ obj << Fit Logistic 4P( Save First Derivative, Save Std Error of First Derivativ
 
 #### Save Std Error of Predicted
 
-**Syntax:** obj << Fit Command( Save Std Error of Predicted ); 
-
-obj << (Fit[number|name] << Save Std Error of Predicted)
+**Syntax:** obj &lt;&lt; Fit Command( Save Std Error of Predicted ); obj &lt;&lt; (Fit[number|name] &lt;&lt; Save Std Error of Predicted)
 
 **Description:** Saves a new formula column to the original data table. The new column contains the formula to calculate the standard errors of the predictions.
 
@@ -2983,9 +2915,7 @@ obj << Fit Logistic 4P( Save Prediction Formula, Save Std Error of Predicted );
 
 #### Save Studentized Residual Formula
 
-**Syntax:** obj << Fit Command( Save Studentized Residual Formula ); 
-
-obj << (Fit[number|name] << Save Studentized Residual Formula)
+**Syntax:** obj &lt;&lt; Fit Command( Save Studentized Residual Formula ); obj &lt;&lt; (Fit[number|name] &lt;&lt; Save Studentized Residual Formula)
 
 **Description:** Saves a new formula column to the original data table. The new column contains the formula for the Studentized residuals, which are standard residuals divided by their estimated standard deviations.
 
@@ -3000,9 +2930,7 @@ obj << Fit Logistic 4P( Save Studentized Residual Formula );
 
 #### Test Parallelism
 
-**Syntax:** obj << Fit Command( Test Parallelism( state=0|1 )); 
-
-obj << (Fit[number|name] << Test Parallelism( state=0|1 ))
+**Syntax:** obj &lt;&lt; Fit Command( Test Parallelism( state=0|1 )); obj &lt;&lt; (Fit[number|name] &lt;&lt; Test Parallelism( state=0|1 ))
 
 **Description:** Tests whether the fitted curves have a similar shape across groups.
 
@@ -3017,9 +2945,7 @@ obj << Fit Logistic 4P( Test Parallelism( 1 ) );
 
 #### Time to Peak Response
 
-**Syntax:** obj << Fit Command( Time to Peak Response( state=0|1 )); 
-
-obj << (Fit[number|name] << Time to Peak Response( state=0|1 ))
+**Syntax:** obj &lt;&lt; Fit Command( Time to Peak Response( state=0|1 )); obj &lt;&lt; (Fit[number|name] &lt;&lt; Time to Peak Response( state=0|1 ))
 
 **Description:** Calculates the estimate of the X variable at the peak of the fitted curve. This option is available only for Cell Growth 4P and One Compartment models.
 

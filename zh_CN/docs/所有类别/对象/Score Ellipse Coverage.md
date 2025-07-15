@@ -6,13 +6,13 @@
 
 ### Remove Fit
 
-**语法:** obj << Remove Fit
+**语法:** obj &lt;&lt; Remove Fit
 
 **JMP添加的版本:** 15
 
 ### Shaded Contour
 
-**语法:** obj << Shaded Contour( state=0|1 )
+**语法:** obj &lt;&lt; Shaded Contour( state=0|1 )
 
 **说明:** 显示或隐藏着色等高线。
 

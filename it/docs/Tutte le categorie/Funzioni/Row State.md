@@ -2,8 +2,6 @@
 
 
 
-## Funzioni
-
 ### As Row State
 
 **Sintassi:** rs = As Row State( x )
@@ -27,7 +25,7 @@ For Each Row(
 
 ### Color Of
 
-**Sintassi:** y = Color Of( <rs> ); Color Of( <Row State( <r> )> ) = y
+**Sintassi:** y = Color Of( &lt;rs&gt; ); Color Of( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **Descrizione:** Restituisce la componente colore del valore specificato dello stato della riga, un indice tavolozza colori JMP positivo o un valore negativo codificato RGB. Se si utilizza Colore di come valore L, esso modifica il colore della riga corrente o (o r-esima) nella tabella di dati corrente.
 
@@ -78,7 +76,7 @@ Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 
 ### Excluded
 
-**Sintassi:** y = Excluded( <rs> ); Excluded( <Row State( <r> )> ) = y
+**Sintassi:** y = Excluded( &lt;rs&gt; ); Excluded( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **Descrizione:** Restituisce la componente esclusa del valore specificato dello stato della riga, 0 o 1. Se si utilizza la funzione Excluded() come valore L, esso modifica lo stato escluso della riga corrente o (o r-esima) nella tabella di dati corrente.
 
@@ -114,7 +112,7 @@ Excluded( Row State( 3 ) );
 
 ### Hidden
 
-**Sintassi:** y = Hidden( <rs> ); Hidden( <Row State( <r> )> ) = y
+**Sintassi:** y = Hidden( &lt;rs&gt; ); Hidden( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **Descrizione:** Restituisce la componente nascosta del valore specificato dello stato della riga, 0 o 1. Se si utilizza Nascosto come valore L, esso modifica lo stato nascosto della riga corrente o (o r-esima) nella tabella di dati corrente.
 
@@ -166,7 +164,7 @@ Row State( 3 ) = Combine States( Hue State( 5 ), Shade State( 1 ) );
 
 ### Labeled
 
-**Sintassi:** y = Labeled( <rs> ); Labeled( <Row State( <r> )> ) = y
+**Sintassi:** y = Labeled( &lt;rs&gt; ); Labeled( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **Descrizione:** Restituisce la componente etichettata del valore specificato dello stato della riga, 0 o 1. Se si utilizza Etichettato come valore L, esso modifica lo stato etichettato della riga corrente o (o r-esima) nella tabella di dati corrente.
 
@@ -202,7 +200,7 @@ Labeled( Row State( 3 ) );
 
 ### Marker Of
 
-**Sintassi:** y = Marker Of( <rs> ); Marker Of( <Row State( <r> )> ) = y
+**Sintassi:** y = Marker Of( &lt;rs&gt; ); Marker Of( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **Descrizione:** Restituisce l&apos;indicatore del valore specificato dello stato della riga. Se si utilizza Indicatore di come valore L, esso modifica l&apos;indicatore della riga corrente o (o r-esima) nella tabella di dati corrente.
 
@@ -238,7 +236,7 @@ Marker Of( Row State( 3 ) );
 
 ### Row State
 
-**Sintassi:** y = Row State( <dt>, <r> ); Row State( <dt>, <r> ) = y
+**Sintassi:** y = Row State( &lt;dt&gt;, &lt;r&gt; ); Row State( &lt;dt&gt;, &lt;r&gt; ) = y
 
 **Descrizione:** Restituisce lo stato della riga corrente (o r-esima) nella tabella di dati corrente. Se si utilizza la funzione Row State() come valore L, esso modifica lo stato della riga corrente (o r-esima) nella tabella di dati corrente.
 
@@ -255,7 +253,7 @@ Color To RGB( Color Of( Row State( 3 ) ) );
 
 ### Selected
 
-**Sintassi:** y = Selected( <rs> );Selected( <Row State( <r> )> ) = y
+**Sintassi:** y = Selected( &lt;rs&gt; );Selected( &lt;Row State( &lt;r&gt; )&gt; ) = y
 
 **Descrizione:** Restituisce la componente selezionata del valore specificato dello stato della riga, 0 o 1. Se si utilizza Selezionato come valore L, esso modifica lo stato modificato della riga corrente o (o r-esima) nella tabella di dati corrente.
 

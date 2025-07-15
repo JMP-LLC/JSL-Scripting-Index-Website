@@ -23,7 +23,7 @@ Show( x );
 
 ### Control
 
-**構文:** obj << Control( Echo( Boolean ) )
+**構文:** obj &lt;&lt; Control( Echo( Boolean ) )
 
 **説明:** Rの制御オプションを変更する。
 
@@ -38,7 +38,7 @@ RConnection << Submit( "rnorm(10)" );
 
 ### Disconnect
 
-**構文:** obj << Disconnect
+**構文:** obj &lt;&lt; Disconnect
 
 **説明:** JMP19で廃止されたため、指定しても無視されます。
 
@@ -52,7 +52,7 @@ RConnection << Disconnect;
 
 ### Execute
 
-**構文:** list = obj << Execute( { list of Inputs }, { list of Outputs }, statements )
+**構文:** list = obj &lt;&lt; Execute( { list of Inputs }, { list of Outputs }, statements )
 
 **説明:** 入力値のリストを送り、ステートメントを実行し、結果のリストを取得する。
 
@@ -77,7 +77,7 @@ Show( v, m, rc, x, z, a, d );
 
 ### Get
 
-**構文:** y = obj << Get( name )
+**構文:** y = obj &lt;&lt; Get( name )
 
 **説明:** Rからデータを取得する。引数nameには、数値、文字列、行列、リスト、データフレームといったタイプのR変数を指定することができる。
 
@@ -98,7 +98,7 @@ Close( dt1, No Save );
 
 ### Get Graphics
 
-**構文:** R graphics = obj << Get Graphics( format )
+**構文:** R graphics = obj &lt;&lt; Get Graphics( format )
 
 **説明:** JMP 19では廃止されたため、指定しても無視される。代わりに、デバイスをpng("r_plot.png")のようなファイル名に設定し、そのファイルを開いて画像を読み込む。このオプションはJMP 20で削除される予定。以下のコードは、回避方法を示している。
 
@@ -119,7 +119,7 @@ rc = Delete File( img_path );
 
 ### Get Version
 
-**構文:** version = obj << Get Version
+**構文:** version = obj &lt;&lt; Get Version
 
 **説明:** 現在の接続で使用されているRのバージョン番号を戻す。
 
@@ -134,7 +134,7 @@ Show( version );
 
 ### Is Connected
 
-**構文:** x = obj << Is Connected
+**構文:** x = obj &lt;&lt; Is Connected
 
 **説明:** アクティブなR接続がある場合に1、それ以外の場合は0を戻す。
 
@@ -164,7 +164,7 @@ Show( RName );
 
 ### Send
 
-**構文:** y = obj << Send( name, <R Name( name )> )
+**構文:** y = obj &lt;&lt; Send( name, &lt;R Name( name )&gt; )
 
 **説明:** Rにデータを送る。引数nameには、数値、文字列、行列、リスト、データテーブルといったデータタイプのJSL変数を指定することができる。
 
@@ -183,7 +183,7 @@ RConnection << Submit( "dt" );
 
 ### Send File
 
-**構文:** y = obj << Send File( filename, <R Name( name )> )
+**構文:** y = obj &lt;&lt; Send File( filename, &lt;R Name( name )&gt; )
 
 **説明:** データファイルをRに送ります。引数filenameは、Rに送られるファイルのパス名です。
 
@@ -200,7 +200,7 @@ RConnection << Send File( dtname );
 
 ### Set
 
-**構文:** y = obj << Set( name, <R Name( name )> )
+**構文:** y = obj &lt;&lt; Set( name, &lt;R Name( name )&gt; )
 
 **説明:** Rにデータを送る。引数nameには、数値、文字列、行列、リスト、データテーブルといったデータタイプのJSL変数を指定することができる。
 
@@ -219,7 +219,7 @@ RConnection << Submit( "dt" );
 
 ### Submit
 
-**構文:** obj << Submit( statements )
+**構文:** obj &lt;&lt; Submit( statements )
 
 **説明:** Rでステートメントをサブミットする。ステートメントは、文字列の値、または文字列の値のリスト。
 
@@ -251,7 +251,7 @@ rc = Delete File( img_path );
 
 ### Submit File
 
-**構文:** obj << Submit File( path )
+**構文:** obj &lt;&lt; Submit File( path )
 
 **説明:** 引数pathによって指定されたファイルにあるプログラムを、Rでサブミットする。
 

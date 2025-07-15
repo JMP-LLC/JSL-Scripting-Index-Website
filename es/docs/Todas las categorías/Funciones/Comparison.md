@@ -2,8 +2,6 @@
 
 
 
-## Funciones
-
 ### Equal
 
 **Sintaxis:** z = x == y == ...; z = Equal( x, y, ... )
@@ -21,7 +19,7 @@ Names Default To Here( 1 );
 
 ### Greater
 
-**Sintaxis:** z = x > y > ... ; z = Greater( x, y, ... )
+**Sintaxis:** z = x &gt; y &gt; ... ; z = Greater( x, y, ... )
 
 **Descripción:** Devuelve 1 si cada argumento es mayor que el siguiente y 0 en caso contrario.
 
@@ -36,7 +34,7 @@ Names Default To Here( 1 );
 
 ### Greater or Equal
 
-**Sintaxis:** z = x >= y >= ... ; z = Greater or Equal( x, y, ... )
+**Sintaxis:** z = x &gt;= y &gt;= ... ; z = Greater or Equal( x, y, ... )
 
 **Descripción:** Devuelve 1 si cada argumento es mayor o igual que el siguiente y 0 en caso contrario.
 
@@ -110,7 +108,7 @@ Is Same Color( To Color Space( "LUV", "red" ), "red" );
 
 ### Less
 
-**Sintaxis:** z = x < y < ... ; z = Less( x, y, ... )
+**Sintaxis:** z = x &lt; y &lt; ... ; z = Less( x, y, ... )
 
 **Descripción:** Devuelve 1 si cada argumento es menor que el siguiente y 0 en caso contrario.
 
@@ -125,7 +123,7 @@ Names Default To Here( 1 );
 
 ### Less LessEqual
 
-**Sintaxis:** z = x < y <= ... ; z = Less LessEqual( x, y, ... )
+**Sintaxis:** z = x &lt; y &lt;= ... ; z = Less LessEqual( x, y, ... )
 
 **Descripción:** Devuelve 1 si el primer argumento es menor que el segundo y cada uno de los argumentos salvo el primero es menor o igual que el argumento siguiente, y 0 en caso contrario.
 
@@ -140,7 +138,7 @@ Names Default To Here( 1 );
 
 ### Less or Equal
 
-**Sintaxis:** z = x <= y <= ... ; z = Less or Equal( x, y, ... )
+**Sintaxis:** z = x &lt;= y &lt;= ... ; z = Less or Equal( x, y, ... )
 
 **Descripción:** Devuelve 1 si cada argumento es menor o igual que el siguiente y 0 en caso contrario.
 
@@ -155,7 +153,7 @@ Names Default To Here( 1 );
 
 ### LessEqual Less
 
-**Sintaxis:** z = x <= y < ... ; z = LessEqual Less( x, y, ... )
+**Sintaxis:** z = x &lt;= y &lt; ... ; z = LessEqual Less( x, y, ... )
 
 **Descripción:** Devuelve 1 si el primer argumento es menor o igual que el segundo y cada uno de los argumentos salvo el primero es menor que el argumento siguiente, y 0 en caso contrario.
 

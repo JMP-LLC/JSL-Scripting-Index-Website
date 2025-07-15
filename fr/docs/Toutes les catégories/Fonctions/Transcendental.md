@@ -2,8 +2,6 @@
 
 
 
-## Fonctions
-
 ### Arrhenius
 
 **Syntaxe :** y = Arrhenius( tempC )
@@ -126,7 +124,7 @@ Digamma( 5 );
 
 ### Exp
 
-**Syntaxe :** y = Exp( <x=1> )
+**Syntaxe :** y = Exp( &lt;x=1&gt; )
 
 **Description :** Renvoie e élevé à la puissance x. L’argument peut être un nombre, une matrice ou une liste de nombres.
 
@@ -156,7 +154,7 @@ Show( ExpM1( 1.1e-18 ), Exp( 1.1e-18 ) - 1 );
 
 ### FFT
 
-**Syntaxe :** ret = FFT( L, <<inverse( 0 ), <<multivariate( 0 ), <<scale( 1.0 ) )
+**Syntaxe :** ret = FFT( L, &lt;&lt;inverse( 0 ), &lt;&lt;multivariate( 0 ), &lt;&lt;scale( 1.0 ) )
 
 **Description :** Réalise la transformation de Fourier rapide (FFT) sur l&apos;argument L, une liste requise formée de parties réelles et imaginaires des données sous forme de matrices. Si L n&apos;est formé que d&apos;une seule matrice, la matrice est considérée comme la partie réelle. Si L est formé de deux matrices, la première est la partie réelle et la deuxième est la partie imaginaire. Les deux matrices doivent avoir les mêmes dimensions et doivent contenir plus d&apos;une ligne. Trois arguments facultatifs sont disponibles : l’argument inverse détermine si la FFT inverse doit être réalisée ; l’argument multivariate détermine si la FFT spatiale ou multivariée doit être réalisée ; l’argument scale détermine la constante par laquelle multiplier les valeurs calculées. La structure des valeurs retournées est identique à celle du premier argument d’entrée, une liste d’une ou de deux matrices.
 
@@ -242,7 +240,7 @@ Factorial( 5 );
 
 ### Fit Transform To Normal
 
-**Syntaxe :** result = Fit Transform To Normal( Distribution(name), Y(vector), <Freq(vector)> )
+**Syntaxe :** result = Fit Transform To Normal( Distribution(name), Y(vector), &lt;Freq(vector)&gt; )
 
 **Description :** Ajuste une transformation pour la normalité pour un vecteur de données. Ceci inclut les distributions de Johnson Sl, Johnson Sb, Johnson Su et GLog. La fonction renvoie une liste contenant l’estimation des coefficients, la matrice de covariance, la log-vraisemblance, l’AICc, le BIC et un message de convergence.
 
@@ -272,7 +270,7 @@ Show( results );
 
 ### Gamma
 
-**Syntaxe :** y = Gamma( x, <limit> )
+**Syntaxe :** y = Gamma( x, &lt;limit&gt; )
 
 **Description :** Renvoie la fonction gamma de x, définie comme l&apos;intégrale de z^(x-1)*exp(-z) dz de 0 à ∞. Si la limite limit est présente, un gamma incomplet sera calculé avec cette limite d&apos;intégration.
 
@@ -317,7 +315,7 @@ Ln( Exp( 2 ) );
 
 ### Log
 
-**Syntaxe :** y = Log( x, <b> )
+**Syntaxe :** y = Log( x, &lt;b&gt; )
 
 **Description :** Renvoie le logarithme de base b de x ou le logarithme naturel de x sib n’est pas spécifié.
 
@@ -437,7 +435,7 @@ N Choose K( 5, 3 );
 
 ### Power
 
-**Syntaxe :** z = x ^ y; z = Power( x, <y=2> )
+**Syntaxe :** z = x ^ y; z = Power( x, &lt;y=2&gt; )
 
 **Description :** Renvoie x élevé à la puissance y. Si x est négatif, y doit être un entier.
 
@@ -452,7 +450,7 @@ Power( 2, 5 );
 
 ### Root
 
-**Syntaxe :** y = Root( x, <n=2> )
+**Syntaxe :** y = Root( x, &lt;n=2&gt; )
 
 **Description :** Renvoie la racine n-ième de x.
 
@@ -557,7 +555,7 @@ Scheffe Cubic( [1, -1, 1, -1, 1], [-1, -1, 1, 1, -1] );
 
 ### SlInv
 
-**Syntaxe :** x = SlInv( z, gamma, delta, theta, <sigma=1> )
+**Syntaxe :** x = SlInv( z, gamma, delta, theta, &lt;sigma=1&gt; )
 
 **Description :** Transforme une variable normale standard en une variable SL de Johnson.
 
@@ -572,7 +570,7 @@ SlInv( 1.96, 1.5, 2, 1 );
 
 ### SlTrans
 
-**Syntaxe :** z = SlTrans( x, gamma, delta, theta, <sigma=1> )
+**Syntaxe :** z = SlTrans( x, gamma, delta, theta, &lt;sigma=1&gt; )
 
 **Description :** Transforme une variable SL de Johnson en une variable normale standard.
 

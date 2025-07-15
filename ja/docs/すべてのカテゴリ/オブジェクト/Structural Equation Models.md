@@ -6,7 +6,7 @@
 
 ### Action
 
-**構文:** obj << Action
+**構文:** obj &lt;&lt; Action
 
 **説明:** 評価する式を挿入するための、プラットフォーム内の汎用トラップドア。プラットフォームに一時的にディスプレイボックスおよびデータテーブルのコンテキストを設定する。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**構文:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**構文:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **説明:** 作成されたプリセットをオブジェクトに適用する。保存された設定に合わせてオプションとカスタマイズが更新される。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**構文:** obj << Automatic Recalc( state=0|1 )
+**構文:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **説明:** データの除外や変更があった場合に分析を自動的にやり直す。Automatic Recalcオプションがオンになっている場合で、データの除外や変更が再計算の前に確実に適用されるようにするには、Wait(0)コマンドを使用すること。
 
@@ -104,7 +104,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**構文:** obj << Broadcast(message)
+**構文:** obj &lt;&lt; Broadcast(message)
 
 **説明:** メッセージをプラットフォームに一括適用する。個々のオブジェクトから戻される結果がデータテーブルである場合は、可能な限り連結する。その最終的な形式は、Table BoxのSave Combined Tableオプションの結果と同じになるか、またはソース列を使用したConcanateオプションの結果と同じになる。それ以外の場合、結果はリストの形で戻される。
 
@@ -124,7 +124,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**構文:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**構文:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **説明:** プラットフォームの変数を変更するための設定パネルを追加する。
 
@@ -142,7 +142,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**構文:** obj << Copy ByGroup Script
+**構文:** obj &lt;&lt; Copy ByGroup Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -180,7 +180,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**構文:** obj << Copy Script
+**構文:** obj &lt;&lt; Copy Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -212,7 +212,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**構文:** obj << Data Table Window
+**構文:** obj &lt;&lt; Data Table Window
 
 **説明:** この分析に使用したデータテーブルのウィンドウを手前に表示する。
 
@@ -244,7 +244,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**構文:** obj << Get By Levels
+**構文:** obj &lt;&lt; Get By Levels
 
 **説明:** By列が指定されている場合、列名をキー、データ値を値とした連想配列を戻す。
 
@@ -261,7 +261,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**構文:** obj << Get ByGroup Script
+**構文:** obj &lt;&lt; Get ByGroup Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -300,7 +300,7 @@ Show( t );
 
 ### Get Container
 
-**構文:** obj << Get Container
+**構文:** obj &lt;&lt; Get Container
 
 **説明:** オブジェクトのコンテンツを含んだコンテナボックスの参照を戻す。
 
@@ -364,7 +364,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**構文:** obj << Get Data Table
+**構文:** obj &lt;&lt; Get Data Table
 
 **説明:** データテーブルへの参照を戻す。
 
@@ -397,7 +397,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**構文:** obj << Get Group Platform
+**構文:** obj &lt;&lt; Get Group Platform
 
 **説明:** 該当のプラットフォームがグループに属している場合に、Group Platformオブジェクトを戻す。それ以外の場合はEmpty()を戻す。
 
@@ -414,7 +414,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**構文:** obj << Get Script
+**構文:** obj &lt;&lt; Get Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -447,7 +447,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**構文:** obj << Get Script With Data Table
+**構文:** obj &lt;&lt; Get Script With Data Table
 
 **説明:** この分析を再現するスクリプト(JSL)をデータテーブルへの参照も含めて生成し、それを式として戻す。
 
@@ -480,7 +480,7 @@ Show( t );
 
 ### Get Timing
 
-**構文:** obj << Get Timing
+**構文:** obj &lt;&lt; Get Timing
 
 **説明:** プラットフォームの起動にかかった時間を取得する。
 
@@ -513,7 +513,7 @@ Show( t );
 
 ### Get Web Support
 
-**構文:** obj << Get Web Support
+**構文:** obj &lt;&lt; Get Web Support
 
 **説明:** ディスプレイオブジェクトにおけるインタラクティブHTMLサポートのレベルを数値で戻す。1は、一部または全部の要素がサポートされていることを示し、0は、サポートされないことを示す。
 
@@ -529,7 +529,7 @@ Show( s );
 
 ### Get Where Expr
 
-**構文:** obj << Get Where Expr
+**構文:** obj &lt;&lt; Get Where Expr
 
 **説明:** プラットフォームがBy()またはWhere()を使って起動された場合に、データをサブセットするためのWhere式を戻す。By()やWhere()が使われていない場合はEmpty()を戻す。
 
@@ -566,7 +566,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**構文:** obj << Local Data Filter
+**構文:** obj &lt;&lt; Local Data Filter
 
 **説明:** このプラットフォームに対してのみ有効なフィルタで、データを特定のグループまたは範囲にフィルタリングする。
 
@@ -622,7 +622,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**構文:** obj << Paste Local Data Filter
+**構文:** obj &lt;&lt; Paste Local Data Filter
 
 **説明:** クリップボードにあるローカルデータフィルタを現在のレポートに適用する。
 
@@ -643,7 +643,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**構文:** obj << Redo Analysis
+**構文:** obj &lt;&lt; Redo Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -675,7 +675,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**構文:** obj << Redo ByGroup Analysis
+**構文:** obj &lt;&lt; Redo ByGroup Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -713,7 +713,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**構文:** obj << Relaunch Analysis
+**構文:** obj &lt;&lt; Relaunch Analysis
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -745,7 +745,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**構文:** obj << Relaunch ByGroup
+**構文:** obj &lt;&lt; Relaunch ByGroup
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -783,7 +783,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**構文:** obj << Remove Column Switcher
+**構文:** obj &lt;&lt; Remove Column Switcher
 
 **説明:** プラットフォームに最後に追加された列スイッチャーを削除する。
 
@@ -803,7 +803,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**構文:** obj << Remove Local Data Filter
+**構文:** obj &lt;&lt; Remove Local Data Filter
 
 **説明:** すでに作成されているローカルデータフィルタを削除し、プラットフォームはデータテーブル内のすべてのデータを使用した状態に戻る。
 
@@ -842,9 +842,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**構文:** obj << Report;
-
-Report( obj )
+**構文:** obj &lt;&lt; Report;Report( obj )
 
 **説明:** レポートオブジェクトへの参照を戻す。
 
@@ -878,7 +876,7 @@ Show( t );
 
 ### Report View
 
-**構文:** obj << Report View( "完全"|"要約" )
+**構文:** obj &lt;&lt; Report View( "完全"|"要約" )
 
 **説明:** レポートビューは、プラットフォームレポートの詳細を表示するかどうかを決定する。Fullはすべての詳細を表示し、Summaryはプラットフォームにより限定されたものだけを表示する。 動作をカスタマイズするため、各ディスプレイボックスは<<Set Summary Behaviorメッセージをサポートする。
 
@@ -910,7 +908,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**構文:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** 分析を再現するためのJSLスクリプトを作成し、データテーブルにテーブルプロパティとして保存する。スクリプトの名前を指定できる。Append Suffixオプションは、スクリプト名に数字の接尾辞を追加する。これにより、同名のスクリプトが存在していても区別できる。Promptオプションは、ユーザにスクリプト名の指定を促す。Replaceオプションは、同名の既存のスクリプトを置き換える。
 
@@ -948,7 +946,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**構文:** obj << Save ByGroup Script to Journal
+**構文:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -986,7 +984,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**構文:** obj << Save ByGroup Script to Script Window
+**構文:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -1024,7 +1022,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**構文:** obj << Save Script for All Objects
+**構文:** obj &lt;&lt; Save Script for All Objects
 
 **説明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -1056,7 +1054,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**構文:** obj << Save Script for All Objects To Data Table( <name> )
+**構文:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **説明:** すべてのレポートオブジェクトを再現するスクリプトを現在のデータテーブルに保存する。このオプションは、ウィンドウ内にレポートが複数ある場合に便利。作成されるスクリプトの名前は、引用符で囲んで指定しない限り、1つ目のプラットフォーム名となる。
 
@@ -1130,7 +1128,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**構文:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** この分析を再現するJSLスクリプトを生成し、データテーブルのテーブルプロパティとして保存する。
 
@@ -1162,7 +1160,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**構文:** obj << Save Script to Journal
+**構文:** obj &lt;&lt; Save Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -1194,7 +1192,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**構文:** obj << Save Script to Report
+**構文:** obj &lt;&lt; Save Script to Report
 
 **説明:** この分析を再現するJSLスクリプトを生成し、レポートウィンドウに表示する。分析手順の記録を結果と一緒に残せる。
 
@@ -1226,7 +1224,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**構文:** obj << Save Script to Script Window
+**構文:** obj &lt;&lt; Save Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -1323,7 +1321,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**構文:** obj << Sync to Data Table Changes
+**構文:** obj &lt;&lt; Sync to Data Table Changes
 
 **説明:** 除外やデータの変更が行われた場合に同期する。
 
@@ -1340,7 +1338,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**構文:** obj << Title( "new title" )
+**構文:** obj &lt;&lt; Title( "new title" )
 
 **説明:** プラットフォームのタイトルを設定する。
 
@@ -1372,7 +1370,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**構文:** obj << Top Report
+**構文:** obj &lt;&lt; Top Report
 
 **説明:** レポート内のルートノードへの参照を戻す。
 
@@ -1406,7 +1404,7 @@ Show( t );
 
 ### Transform Column
 
-**構文:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**構文:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **説明:** オブジェクトのローカルコンテキスト(通常はプラットフォーム)内に変換列を作成する。この変換列は、それを作成したプラットフォームの中のみで使用可能。
 
@@ -1425,7 +1423,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**構文:** obj << View Web XML
+**構文:** obj &lt;&lt; View Web XML
 
 **説明:** インタラクティブHTMLレポートの作成に使うXMLコードを戻す。
 
@@ -1461,7 +1459,7 @@ New Window( "Bivariate Equation",
 
 ### Freq
 
-**構文:** obj << Freq( column )
+**構文:** obj &lt;&lt; Freq( column )
 
 ```jsl
 
@@ -1492,7 +1490,7 @@ obj = dt << Structural Equation Models(
 
 ### Groups
 
-**構文:** obj << Groups( column )
+**構文:** obj &lt;&lt; Groups( column )
 
 **説明:** 多母集団分析におけるグループ変数を指定する。
 
@@ -1506,7 +1504,7 @@ dt << Structural Equation Models( Model Variables( 4 :: 7 ), Groups( :Sex ) );
 
 ### Mean
 
-**構文:** obj = Structural Equation Models(...<Mean( column )>...)
+**構文:** obj = Structural Equation Models(...&lt;Mean( column )&gt;...)
 
 **説明:** 相関行列または共分散行列を分析対象とする時に、顕在変数の平均が含まれた列を指定する。
 
@@ -1533,7 +1531,7 @@ Data Table( "Correlation" ) << Structural Equation Models(
 
 ### Model Variables
 
-**構文:** obj << Model Variables( column(s) )
+**構文:** obj &lt;&lt; Model Variables( column(s) )
 
 **説明:** 分析に用いる変数を指定する。
 
@@ -1551,7 +1549,7 @@ obj = dt << Structural Equation Models(
 
 ### Std Dev
 
-**構文:** obj = Structural Equation Models(...<Std Dev( column )>...)
+**構文:** obj = Structural Equation Models(...&lt;Std Dev( column )&gt;...)
 
 **説明:** 相関行列を分析対象とする時に、顕在変数の標準偏差が含まれた列を指定する。
 
@@ -1578,7 +1576,7 @@ Data Table( "Correlation" ) << Structural Equation Models(
 
 ### Weight
 
-**構文:** obj << Weight( column )
+**構文:** obj &lt;&lt; Weight( column )
 
 ```jsl
 
@@ -1646,7 +1644,7 @@ obj = dt << Structural Equation Models(
 
 ### Add Manifest Variables
 
-**構文:** obj << Add Manifest Variables
+**構文:** obj &lt;&lt; Add Manifest Variables
 
 **説明:** 既存のモデルで用いている変数群に、指定された顕在変数を追加する。
 
@@ -1663,7 +1661,7 @@ obj << Add Manifest Variables();
 
 ### Bootstrap Inference
 
-**構文:** obj << Bootstrap Inference
+**構文:** obj &lt;&lt; Bootstrap Inference
 
 **説明:** 「構造方程式モデル」レポートであてはめられたモデルに対して、ユーザによって選択された推定値のブートストラップ推測を実行する。
 
@@ -1680,7 +1678,7 @@ obj << Bootstrap Inference( Parameter Estimates( 1 ), Indirect Effects( 1 ) );
 
 ### Compare Selected Models
 
-**構文:** obj << Compare Selected Models
+**構文:** obj &lt;&lt; Compare Selected Models
 
 **説明:** 「モデルの比較」で選択されているモデルをカイ2乗検定などで比べる。
 
@@ -1697,7 +1695,7 @@ obj << Compare Selected Models( {"Orthogonal 3-Factor CFA", "3-Factor CFA"} );
 
 ### Copy Diagram Properties
 
-**構文:** obj << Copy Diagram Properties
+**構文:** obj &lt;&lt; Copy Diagram Properties
 
 **説明:** 現在のパス図のプロパティをクリップボードにコピーする。それを、別の構造方程式モデルのパス図に貼り付けることができる。
 
@@ -1717,7 +1715,7 @@ obj2 << Paste Diagram Properties();
 
 ### Copy Model Specification
 
-**構文:** obj << Copy Model Specification
+**構文:** obj &lt;&lt; Copy Model Specification
 
 **説明:** 現在の構造方程式モデルの設定をクリップボードにコピーする。それを、別の「構造方程式モデル」レポートに貼り付けることができる。
 
@@ -1773,7 +1771,7 @@ obj = dt << Structural Equation Models(
 
 ### Fit
 
-**構文:** obj << Fit
+**構文:** obj &lt;&lt; Fit
 
 **説明:** 構造方程式モデルを指定して、あてはめる。
 
@@ -1823,7 +1821,7 @@ obj = dt << Structural Equation Models(
 
 ### Fit Unrestricted Model
 
-**構文:** obj << Fit Unrestricted Model( state=0|1 )
+**構文:** obj &lt;&lt; Fit Unrestricted Model( state=0|1 )
 
 **説明:** このオプションをオンにすると、プラットフォームの起動時に、無構造モデル(飽和モデル)もあてはめる。
 
@@ -1842,7 +1840,7 @@ obj = dt << Structural Equation Models(
 
 ### Full Information Multivariate Statistics
 
-**構文:** obj << Full Information Multivariate Statistics( state=0|1 )
+**構文:** obj &lt;&lt; Full Information Multivariate Statistics( state=0|1 )
 
 **説明:** 多変量の枠組みで求めた基本統計量の表示/非表示を切り替える。この基本統計量は、欠測値を考慮した完全情報最尤法によって推定される。
 
@@ -1861,7 +1859,7 @@ obj << Full Information Multivariate Statistics( 1 );
 
 ### Generate R Code
 
-**構文:** obj << Generate R Code
+**構文:** obj &lt;&lt; Generate R Code
 
 **説明:** パズ図に現段階で指定されているモデルのRコードを生成する。このRコードは、スクリプトエディタウィンドウに書き込まれる。
 
@@ -1878,7 +1876,7 @@ obj << Generate R Code();
 
 ### Hide Model
 
-**構文:** obj << Hide Model
+**構文:** obj &lt;&lt; Hide Model
 
 **説明:** 「モデルの比較」表における選択にしたがってモデルを非表示にする。
 
@@ -1907,7 +1905,7 @@ obj = dt << Structural Equation Models(
 
 ### Launch Explore Missing Values
 
-**構文:** obj << Launch Explore Missing Values
+**構文:** obj &lt;&lt; Launch Explore Missing Values
 
 **説明:** 「欠測値を調べる」プラットフォームを起動する。
 
@@ -1926,7 +1924,7 @@ obj << Launch Explore Missing Values( 1 );
 
 ### Launch Explore Outliers
 
-**構文:** obj << Launch Explore Outliers
+**構文:** obj &lt;&lt; Launch Explore Outliers
 
 **説明:** 「外れ値を調べる」プラットフォームを起動する。
 
@@ -1945,7 +1943,7 @@ obj << Launch Explore Outliers( 1 );
 
 ### Model Specification
 
-**構文:** obj << Model Specification
+**構文:** obj &lt;&lt; Model Specification
 
 **説明:** 構造方程式モデルの指定を有効にする。
 
@@ -1968,7 +1966,7 @@ obj = dt << Structural Equation Models(
 
 ### Paste Diagram Properties
 
-**構文:** obj << Paste Diagram Properties
+**構文:** obj &lt;&lt; Paste Diagram Properties
 
 **説明:** クリップボードにあるパス図のプロパティを現在の構造方程式モデルのパス図に貼り付ける。
 
@@ -1988,7 +1986,7 @@ obj2 << Paste Diagram Properties();
 
 ### Paste Model Specification
 
-**構文:** obj << Paste Model Specification
+**構文:** obj &lt;&lt; Paste Model Specification
 
 **説明:** クリップボードにあるモデルの設定を現在のモデルの設定に貼り付ける。
 
@@ -2009,7 +2007,7 @@ obj2 << Paste Model Specification();
 
 ### Path Diagram Properties
 
-**構文:** obj << Path Diagram Properties
+**構文:** obj &lt;&lt; Path Diagram Properties
 
 **JMP追加されたバージョン:** 15
 
@@ -2049,7 +2047,7 @@ obj = dt << Structural Equation Models(
 
 ### Remove Manifest Variables
 
-**構文:** obj << Remove Manifest Variables
+**構文:** obj &lt;&lt; Remove Manifest Variables
 
 **説明:** 既存のモデルから、指定された変数を削除する。
 
@@ -2066,7 +2064,7 @@ obj << Remove Manifest Variables();
 
 ### Reset Independence Model
 
-**構文:** obj << Reset Independence Model
+**構文:** obj &lt;&lt; Reset Independence Model
 
 **説明:** ユーザが指定した独立モデルをデフォルトの独立モデルに戻す。
 
@@ -2084,7 +2082,7 @@ obj << Reset Independence Model();
 
 ### Robust Inference
 
-**構文:** obj << Robust Inference( state=0|1 )
+**構文:** obj &lt;&lt; Robust Inference( state=0|1 )
 
 **説明:** 最尤推定法(完全情報最尤推定法)に基づく点推定値に対して、サンドイッチ標準誤差を計算する。このサンドイッチ標準誤差は、確率分布が連続型であるが正規分布でない場合に対しても、ロバストな推測方法となっている。また、適合度統計量も、ロバストな推測の枠組みに基づくものを計算する。
 
@@ -2101,7 +2099,7 @@ obj << Robust Inference( 1 );
 
 ### Set as Independence Model
 
-**構文:** obj << Set as Independence Model( number )
+**構文:** obj &lt;&lt; Set as Independence Model( number )
 
 **説明:** デフォルトの独立モデルをユーザが指定したモデルに置き換える。
 
@@ -2137,7 +2135,7 @@ obj = dt << Structural Equation Models(
 
 ### Univariate Simple Statistics
 
-**構文:** obj << Univariate Simple Statistics( state=0|1 )
+**構文:** obj &lt;&lt; Univariate Simple Statistics( state=0|1 )
 
 **説明:** 単変量の枠組みで求めた基本統計量の表示/非表示を切り替える。この基本統計量は列ごとに算出され、他の列に欠測値があってもその影響を受けない。
 
@@ -2160,7 +2158,7 @@ obj << Univariate Simple Statistics( 1 );
 
 #### All Modification Indices
 
-**構文:** obj << All Modification Indices( state=0|1 )
+**構文:** obj &lt;&lt; All Modification Indices( state=0|1 )
 
 **説明:** モデル修正指標の表示/非表示を切り替える。この結果に基づいて、どのパラメータをモデルに追加すればあてはめが改善できるかを判断できる。
 
@@ -2177,7 +2175,7 @@ obj << Modification Indices( 1 );
 
 #### Assess Measurement Model
 
-**構文:** obj << Assess Measurement Model( state=0|1 )
+**構文:** obj &lt;&lt; Assess Measurement Model( state=0|1 )
 
 **説明:** 検定や指標の信頼性および妥当性を示す統計量の表示/非表示を切り替える。これらの統計量には、指標変数の信頼性、ω係数、H係数、構成概念妥当性行列などがある。
 
@@ -2194,7 +2192,7 @@ obj << Assess Measurement Model( 1 );
 
 #### Confidence Intervals
 
-**構文:** obj << Confidence Intervals( state=0|1 )
+**構文:** obj &lt;&lt; Confidence Intervals( state=0|1 )
 
 **説明:** すべてのパラメータ推定値について、95%信頼区間の表示/非表示を切り替える。
 
@@ -2211,7 +2209,7 @@ obj << Confidence Intervals( 1 );
 
 #### Copy Diagram Properties
 
-**構文:** obj << Copy Diagram Properties
+**構文:** obj &lt;&lt; Copy Diagram Properties
 
 **説明:** 現在のパス図のプロパティをクリップボードにコピーする。それを、別の構造方程式モデルのパス図に貼り付けることができる。
 
@@ -2231,7 +2229,7 @@ obj2 << Paste Diagram Properties();
 
 #### Copy Model Specification
 
-**構文:** obj << Copy Model Specification
+**構文:** obj &lt;&lt; Copy Model Specification
 
 **説明:** 現在の構造方程式モデルの設定をクリップボードにコピーする。それを、別の「構造方程式モデル」レポートに貼り付けることができる。
 
@@ -2250,7 +2248,7 @@ obj2 << Paste Model Specification();
 
 #### Correlation of Estimates
 
-**構文:** obj << Correlation of Estimates( state=0|1 )
+**構文:** obj &lt;&lt; Correlation of Estimates( state=0|1 )
 
 **説明:** 「推定値の相関」の表示/非表示を切り替える。これは、推定値間における相関係数行列である。
 
@@ -2267,7 +2265,7 @@ obj << Correlation of Estimates( 1 );
 
 #### Correlation of Estimates Heat Map
 
-**構文:** obj << Correlation of Estimates Heat Map( state=0|1 )
+**構文:** obj &lt;&lt; Correlation of Estimates Heat Map( state=0|1 )
 
 **説明:** 「推定値の相関」のヒートマップの表示/非表示を切り替える。これは、推定値間における相関係数行列のヒートマップである。
 
@@ -2284,7 +2282,7 @@ obj << Correlation of Estimates Heat Map( 1 );
 
 #### Covariance of Estimates
 
-**構文:** obj << Covariance of Estimates( state=0|1 )
+**構文:** obj &lt;&lt; Covariance of Estimates( state=0|1 )
 
 **説明:** パラメータ推定値の共分散行列の表示/非表示を切り替える。
 
@@ -2301,7 +2299,7 @@ obj << Covariance of Estimates( 1 );
 
 #### Covariance of Estimates Heat Map
 
-**構文:** obj << Covariance of Estimates Heat Map( state=0|1 )
+**構文:** obj &lt;&lt; Covariance of Estimates Heat Map( state=0|1 )
 
 **説明:** 「推定値の共分散」のヒートマップの表示/非表示を切り替える。これは、推定値間における共分散行列のヒートマップである。
 
@@ -2318,7 +2316,7 @@ obj << Covariance of Estimates Heat Map( 1 );
 
 #### Covariances
 
-**構文:** obj << Covariances
+**構文:** obj &lt;&lt; Covariances
 
 **説明:** モデルの変数間に共分散を追加する。
 
@@ -2339,7 +2337,7 @@ obj = dt << Structural Equation Models(
 
 #### Define Time Values
 
-**構文:** obj << Define Time Values
+**構文:** obj &lt;&lt; Define Time Values
 
 **説明:** 経時的モデルで用いる時点を設定する。設定された時点の値は、成長曲線モデルなどの経時的モデルで使われる。
 
@@ -2379,7 +2377,7 @@ obj = dt << Structural Equation Models(
 
 #### Equation Details
 
-**構文:** obj << Equation Details( state=0|1 )
+**構文:** obj &lt;&lt; Equation Details( state=0|1 )
 
 **説明:** モデルの各方程式に関する詳細の表示/非表示を切り替える。
 
@@ -2411,7 +2409,7 @@ obj << Equation Details( 0 );
 
 #### Fit Indices
 
-**構文:** obj << Fit Indices( state=0|1 )
+**構文:** obj &lt;&lt; Fit Indices( state=0|1 )
 
 **説明:** モデルの適合度指標に関するレポートの表示/非表示を切り替える。
 
@@ -2428,7 +2426,7 @@ obj << Fit Indices( 1 );
 
 #### Indirect Effects
 
-**構文:** obj << Indirect Effects( state=0|1 )
+**構文:** obj &lt;&lt; Indirect Effects( state=0|1 )
 
 **説明:** 「間接効果」レポートの表示/非表示を切り替える。このレポートには、該当のモデルから導出されるすべての間接効果が列挙される。
 
@@ -2443,7 +2441,7 @@ obj << Indirect Effects( 1 );
 
 #### Loadings
 
-**構文:** obj << Loadings
+**構文:** obj &lt;&lt; Loadings
 
 **説明:** モデルの潜在変数に因子負荷を追加する。
 
@@ -2471,7 +2469,7 @@ obj = dt << Structural Equation Models(
 
 #### Means/Intercepts
 
-**構文:** obj << Means/Intercepts
+**構文:** obj &lt;&lt; Means/Intercepts
 
 **説明:** モデルの変数に平均や切片を追加する。
 
@@ -2496,7 +2494,7 @@ obj = dt << Structural Equation Models(
 
 #### Model Implied Correlations
 
-**構文:** obj << Model Implied Correlations( state=0|1 )
+**構文:** obj &lt;&lt; Model Implied Correlations( state=0|1 )
 
 **説明:** モデルから求められる相関推定値のの 表示/非表示を切り替える。
 
@@ -2513,7 +2511,7 @@ obj << Model Implied Correlations( 1 );
 
 #### Model Implied Correlations Heat Map
 
-**構文:** obj << Model Implied Correlations Heat Map( state=0|1 )
+**構文:** obj &lt;&lt; Model Implied Correlations Heat Map( state=0|1 )
 
 **説明:** 「モデルから求められる相関推定値」のヒートマップの表示/非表示を切り替える。
 
@@ -2530,7 +2528,7 @@ obj << Model Implied Correlations Heat Map( 1 );
 
 #### Model Implied Covariances
 
-**構文:** obj << Model Implied Covariances( state=0|1 )
+**構文:** obj &lt;&lt; Model Implied Covariances( state=0|1 )
 
 **説明:** モデルから求めた共分散行列の表示/非表示を切り替える。
 
@@ -2547,7 +2545,7 @@ obj << Model Implied Covariances( 1 );
 
 #### Model Implied Covariances Heat Map
 
-**構文:** obj << Model Implied Covariances Heat Map( state=0|1 )
+**構文:** obj &lt;&lt; Model Implied Covariances Heat Map( state=0|1 )
 
 **説明:** 「モデルから求められる共分散推定値」のヒートマップの表示/非表示を切り替える。
 
@@ -2564,7 +2562,7 @@ obj << Model Implied Covariances Heat Map( 1 );
 
 #### Model Implied Means
 
-**構文:** obj << Model Implied Means( state=0|1 )
+**構文:** obj &lt;&lt; Model Implied Means( state=0|1 )
 
 **説明:** モデルから求めた変数の平均の表示/非表示を切り替える。
 
@@ -2581,7 +2579,7 @@ obj << Model Implied Means( 1 );
 
 #### Model Name
 
-**構文:** obj << Model Name
+**構文:** obj &lt;&lt; Model Name
 
 **説明:** モデル名を設定する。
 
@@ -2604,7 +2602,7 @@ obj = dt << Structural Equation Models(
 
 #### Modification Indices
 
-**構文:** obj << Modification Indices( state=0|1 )
+**構文:** obj &lt;&lt; Modification Indices( state=0|1 )
 
 **説明:** モデル修正指標の表示/非表示を切り替える。この結果に基づいて、どのパラメータをモデルに追加すればあてはめが改善できるかを判断できる。
 
@@ -2621,7 +2619,7 @@ obj << Modification Indices( 1 );
 
 #### Modification Indices for Covariances
 
-**構文:** obj << Modification Indices for Covariances( state=0|1 )
+**構文:** obj &lt;&lt; Modification Indices for Covariances( state=0|1 )
 
 **説明:** モデル修正指標の表示/非表示を切り替える。この結果に基づいて、どのパラメータをモデルに追加すればあてはめが改善できるかを判断できる。
 
@@ -2638,7 +2636,7 @@ obj << Modification Indices for Covariances( 1 );
 
 #### Modification Indices for Loadings
 
-**構文:** obj << Modification Indices for Loadings( state=0|1 )
+**構文:** obj &lt;&lt; Modification Indices for Loadings( state=0|1 )
 
 **説明:** モデル修正指標の表示/非表示を切り替える。この結果に基づいて、どのパラメータをモデルに追加すればあてはめが改善できるかを判断できる。
 
@@ -2655,7 +2653,7 @@ obj << Modification Indices for Loadings( 1 );
 
 #### Modification Indices for Means
 
-**構文:** obj << Modification Indices for Means( state=0|1 )
+**構文:** obj &lt;&lt; Modification Indices for Means( state=0|1 )
 
 **説明:** モデル修正指標の表示/非表示を切り替える。この結果に基づいて、どのパラメータをモデルに追加すればあてはめが改善できるかを判断できる。
 
@@ -2698,7 +2696,7 @@ obj << Modification Indices for Means( 1 );
 
 #### Modification Indices for Regressions
 
-**構文:** obj << Modification Indices for Regressions( state=0|1 )
+**構文:** obj &lt;&lt; Modification Indices for Regressions( state=0|1 )
 
 **説明:** モデル修正指標の表示/非表示を切り替える。この結果に基づいて、どのパラメータをモデルに追加すればあてはめが改善できるかを判断できる。
 
@@ -2715,7 +2713,7 @@ obj << Modification Indices for Regressions( 1 );
 
 #### Modification Indices for Variances
 
-**構文:** obj << Modification Indices for Variances( state=0|1 )
+**構文:** obj &lt;&lt; Modification Indices for Variances( state=0|1 )
 
 **説明:** モデル修正指標の表示/非表示を切り替える。この結果に基づいて、どのパラメータをモデルに追加すればあてはめが改善できるかを判断できる。
 
@@ -2758,7 +2756,7 @@ obj << Modification Indices for Variances( 1 );
 
 #### New Latent
 
-**構文:** obj << New Latent
+**構文:** obj &lt;&lt; New Latent
 
 **説明:** モデルに新しい潜在変数を追加する。
 
@@ -2788,7 +2786,7 @@ obj = dt << Structural Equation Models(
 
 #### Normalized Residuals
 
-**構文:** obj << Normalized Residuals( state=0|1 )
+**構文:** obj &lt;&lt; Normalized Residuals( state=0|1 )
 
 **説明:** 正規化した残差の行列の表示/非表示を切り替える。
 
@@ -2805,7 +2803,7 @@ obj << Normalized Residuals( 1 );
 
 #### Normalized Residuals Heat Map
 
-**構文:** obj << Normalized Residuals Heat Map( state=0|1 )
+**構文:** obj &lt;&lt; Normalized Residuals Heat Map( state=0|1 )
 
 **説明:** 正規化した残差のヒートマップの表示/非表示を切り替える。
 
@@ -2822,7 +2820,7 @@ obj << Normalized Residuals Heat Map( 1 );
 
 #### Parameter Estimates
 
-**構文:** obj << Parameter Estimates( state=0|1 )
+**構文:** obj &lt;&lt; Parameter Estimates( state=0|1 )
 
 **説明:** 標準化していないパラメータ推定値の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2839,7 +2837,7 @@ obj << Parameter Estimates( 0 );
 
 #### Paste Diagram Properties
 
-**構文:** obj << Paste Diagram Properties
+**構文:** obj &lt;&lt; Paste Diagram Properties
 
 **説明:** クリップボードにあるパス図のプロパティを現在の構造方程式モデルのパス図に貼り付ける。
 
@@ -2859,7 +2857,7 @@ obj2 << Paste Diagram Properties();
 
 #### Path Diagram Properties
 
-**構文:** obj << Path Diagram Properties
+**構文:** obj &lt;&lt; Path Diagram Properties
 
 **JMP追加されたバージョン:** 15
 
@@ -2899,7 +2897,7 @@ obj = dt << Structural Equation Models(
 
 #### Predicted Values Plot
 
-**構文:** obj << Predicted Values Plot( state=0|1 )
+**構文:** obj &lt;&lt; Predicted Values Plot( state=0|1 )
 
 **説明:** 予測値プロットの表示/非表示を切り替える。予測値プロットは、モデルの内生変数に対する予測値をプロットしたグラフである。
 
@@ -2916,7 +2914,7 @@ obj << Predicted Values Plot( 1, 1 );
 
 #### Prediction Profiler
 
-**構文:** obj << Prediction Profiler
+**構文:** obj &lt;&lt; Prediction Profiler
 
 **説明:** 選択された予測変数と結果変数に関して、予測プロファイルを表示する。
 
@@ -2938,7 +2936,7 @@ obj << Prediction Profiler(
 
 #### R Square for Endogenous Variables
 
-**構文:** obj << R Square for Endogenous Variables( state=0|1 )
+**構文:** obj &lt;&lt; R Square for Endogenous Variables( state=0|1 )
 
 **説明:** モデルにおけるすべての内生変数のR2乗値の表示/非表示を切り替える。
 
@@ -2955,7 +2953,7 @@ obj << R Square for Endogenous Variables( 1 );
 
 #### RAM Matrices
 
-**構文:** obj << RAM Matrices( state=0|1 )
+**構文:** obj &lt;&lt; RAM Matrices( state=0|1 )
 
 **説明:** RAM構造で表現されたモデル行列の表示/非表示を切り替える。
 
@@ -2972,7 +2970,7 @@ obj << RAM Matrices( 1 );
 
 #### Recall in Model Specification
 
-**構文:** obj << Recall in Model Specification
+**構文:** obj &lt;&lt; Recall in Model Specification
 
 **説明:** 当該のモデルを、「モデルの指定」レポートのモデルに設定する。
 
@@ -2989,7 +2987,7 @@ obj << Recall in Model Specification( 1 );
 
 #### Regressions
 
-**構文:** obj << Regressions
+**構文:** obj &lt;&lt; Regressions
 
 **説明:** モデルに回帰のパスを追加する。
 
@@ -3010,7 +3008,7 @@ obj = dt << Structural Equation Models(
 
 #### Remove Fit
 
-**構文:** obj << Remove Fit
+**構文:** obj &lt;&lt; Remove Fit
 
 **説明:** レポートウィンドウから、当該のモデルのレポートを削除する。
 
@@ -3027,7 +3025,7 @@ obj << Remove Fit( 1 );
 
 #### Residuals
 
-**構文:** obj << Residuals( state=0|1 )
+**構文:** obj &lt;&lt; Residuals( state=0|1 )
 
 **説明:** 残差行列の表示/非表示を切り替える。この残差行列は、モデルから求めた共分散行列と、標本共分散行列の差である。
 
@@ -3044,7 +3042,7 @@ obj << Residuals( 1 );
 
 #### Save Bartlett Factor Scores
 
-**構文:** obj << Save Bartlett Factor Scores
+**構文:** obj &lt;&lt; Save Bartlett Factor Scores
 
 **説明:** データテーブルに、各変数の因子スコアを含めた列を保存する。因子スコアは、非表示の列において中間の計算がなされ、その非表示の列もデータテーブルに追加される。 Bartlett法によって因子スコアを推定する。
 
@@ -3059,7 +3057,7 @@ obj << Save Bartlett Factor Scores();
 
 #### Save Factor Scores
 
-**構文:** obj << Save Factor Scores
+**構文:** obj &lt;&lt; Save Factor Scores
 
 **説明:** データテーブルに、各変数の因子スコアを含めた列を保存する。因子スコアは、非表示の列において中間の計算がなされ、その非表示の列もデータテーブルに追加される。 回帰法によって因子スコアを推定する。
 
@@ -3076,7 +3074,7 @@ obj << Save Factor Scores();
 
 #### Save Observational Residuals
 
-**構文:** obj << Save Observational Residuals
+**構文:** obj &lt;&lt; Save Observational Residuals
 
 **説明:** 観測された結果変数の残差を、データテーブルの新しい列に保存する。
 
@@ -3093,7 +3091,7 @@ obj << Save Observational Residuals();
 
 #### Save Prediction Formulas
 
-**構文:** obj << Save Prediction Formulas
+**構文:** obj &lt;&lt; Save Prediction Formulas
 
 **説明:** 観測された結果変数の予測値を求める計算式を、データテーブルの新しい列に保存する。
 
@@ -3110,7 +3108,7 @@ obj << Save Prediction Formulas();
 
 #### Show Path Diagram
 
-**構文:** obj << Show Path Diagram( state=0|1 )
+**構文:** obj &lt;&lt; Show Path Diagram( state=0|1 )
 
 **説明:** 構造方程式モデルにおけるパス図の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -3127,7 +3125,7 @@ obj << Show Path Diagram( 0 );
 
 #### Specific Indirect Effects
 
-**構文:** obj << Specific Indirect Effects
+**構文:** obj &lt;&lt; Specific Indirect Effects
 
 **説明:** 推定したい特定の間接効果を指定する。
 
@@ -3144,7 +3142,7 @@ obj << Specific Indirect Effects( {"Ind60", "Dem65"} );
 
 #### Standardized Parameter Estimates
 
-**構文:** obj << Standardized Parameter Estimates( state=0|1 )
+**構文:** obj &lt;&lt; Standardized Parameter Estimates( state=0|1 )
 
 **説明:** 標準化したパラメータ推定値の表示/非表示を切り替える。
 
@@ -3161,7 +3159,7 @@ obj << Standardized Parameter Estimates( 1 );
 
 #### Summary of Fit
 
-**構文:** obj << Summary of Fit( state=0|1 )
+**構文:** obj &lt;&lt; Summary of Fit( state=0|1 )
 
 **説明:** モデルのあてはめに関する詳細の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -3178,7 +3176,7 @@ obj << Summary of Fit( 0 );
 
 #### Total Effects
 
-**構文:** obj << Total Effects( state=0|1 )
+**構文:** obj &lt;&lt; Total Effects( state=0|1 )
 
 **説明:** 「総合効果」レポートの表示/非表示を切り替える。このレポートには、該当のモデルから導出されるすべての総合効果が列挙される。
 
@@ -3193,7 +3191,7 @@ obj << Total Effects( 1 );
 
 #### Variances
 
-**構文:** obj << Variances
+**構文:** obj &lt;&lt; Variances
 
 **説明:** モデルの変数に分散を追加する。
 
@@ -3228,7 +3226,7 @@ obj = dt << Structural Equation Models(
 
 #### Constant Border Color
 
-**構文:** obj << Path Diagram Properties( Constant Border Color ( color ) );
+**構文:** obj &lt;&lt; Path Diagram Properties( Constant Border Color ( color ) );
 
 **説明:** パス図において、定数要素の枠線の色を変更する。
 
@@ -3245,7 +3243,7 @@ obj << Path Diagram Properties( Show Means( 1 ), Constant Border Color( "Blue" )
 
 #### Constant Fill Color
 
-**構文:** obj << Path Diagram Properties( Constant Fill Color ( color ) );
+**構文:** obj &lt;&lt; Path Diagram Properties( Constant Fill Color ( color ) );
 
 **説明:** パス図において、定数要素の塗りつぶしの色を変更する。
 
@@ -3262,7 +3260,7 @@ obj << Path Diagram Properties( Show Means( 1 ), Constant Fill Color( "Blue" ) )
 
 #### Constant Font
 
-**構文:** obj << Path Diagram Properties( Constant Font ( font ) );
+**構文:** obj &lt;&lt; Path Diagram Properties( Constant Font ( font ) );
 
 **説明:** パス図において、顕在変数のフォントを変更する。
 
@@ -3279,7 +3277,7 @@ obj << Path Diagram Properties( Show Means( 1 ), Constant Font( "Sitka Small" ) 
 
 #### Constant Height
 
-**構文:** obj << Path Diagram Properties( Constant Height ( number ) );
+**構文:** obj &lt;&lt; Path Diagram Properties( Constant Height ( number ) );
 
 **説明:** パス図において、定数要素の高さ(ピクセル)を変更する。
 
@@ -3296,7 +3294,7 @@ obj << Path Diagram Properties( Show Means( 1 ), Constant Height( 20 ) );
 
 #### Constant Shape
 
-**構文:** obj << Constant Shape
+**構文:** obj &lt;&lt; Constant Shape
 
 **説明:** パス図において、定数のデフォルトの外観を変更する。変数の平均と切片に適用される。
 
@@ -3316,7 +3314,7 @@ obj << Path Diagram Properties(
 
 #### Constant Size Option
 
-**構文:** obj << Path Diagram Properties( Constant Size Option ( <Default | Scale To Text | Custom> ) );
+**構文:** obj &lt;&lt; Path Diagram Properties( Constant Size Option ( &lt;Default | Scale To Text | Custom&gt; ) );
 
 **説明:** パス図において、定数のノードの大きさに対するモードを変更する。
 
@@ -3333,7 +3331,7 @@ obj << Path Diagram Properties( Constant Size Option( "Scale To Text" ) );
 
 #### Constant Text Color
 
-**構文:** obj << Path Diagram Properties( Constant Text Color ( color ) );
+**構文:** obj &lt;&lt; Path Diagram Properties( Constant Text Color ( color ) );
 
 **説明:** パス図において、定数要素のテキストの色を変更する。
 
@@ -3350,7 +3348,7 @@ obj << Path Diagram Properties( Show Means( 1 ), Constant Text Color( "Blue" ) )
 
 #### Constant Width
 
-**構文:** obj << Path Diagram Properties( Constant Width ( number ) );
+**構文:** obj &lt;&lt; Path Diagram Properties( Constant Width ( number ) );
 
 **説明:** パス図において、定数要素の幅(ピクセル)を変更する。
 
@@ -3367,7 +3365,7 @@ obj << Path Diagram Properties( Show Means( 1 ), Constant Width( 71 ) );
 
 #### Copy Diagram
 
-**構文:** obj << Copy Diagram
+**構文:** obj &lt;&lt; Copy Diagram
 
 **説明:** パス図の画像をクリップボードに保存する。
 
@@ -3385,7 +3383,7 @@ rpt[Node Graph Box( 1 )] << Copy Diagram;
 
 #### Copy Diagram Properties
 
-**構文:** obj << Copy Diagram Properties
+**構文:** obj &lt;&lt; Copy Diagram Properties
 
 **説明:** 該当のパス図を設定するためのスクリプトをクリップボードにコピーする。コピーした設定は、他のダイヤグラムに適用できる。
 
@@ -3409,7 +3407,7 @@ other_diagram << Paste Diagram Properties;
 
 #### Dashed Lines for Nonsignificant p-values
 
-**構文:** obj << Path Diagram Properties ("Dashed Lines for Nonsignificant p - values"n( 0 | 1 ) )
+**構文:** obj &lt;&lt; Path Diagram Properties ("Dashed Lines for Nonsignificant p - values"n( 0 | 1 ) )
 
 **説明:** 有意でないパスを、破線とするか、実線のままにするかを、切り替える。 デフォルトではオン。
 
@@ -3426,7 +3424,7 @@ obj << Path Diagram Properties( "Dashed Lines for Nonsignificant p - values"n( 0
 
 #### Diagram Size
 
-**構文:** obj << Path Diagram Properties( Diagram Size ( {x, y} ) )
+**構文:** obj &lt;&lt; Path Diagram Properties( Diagram Size ( {x, y} ) )
 
 **説明:** パス図のサイズを変更する。
 
@@ -3456,7 +3454,7 @@ obj << Path Diagram Properties(
 
 #### Enable Grid
 
-**構文:** obj << Path Diagram Properties ( Enable Grid( 0|1) )
+**構文:** obj &lt;&lt; Path Diagram Properties ( Enable Grid( 0|1) )
 
 **説明:** パス図において、グリッド線を表示する。
 
@@ -3473,7 +3471,7 @@ obj << Path Diagram Properties( Enable Grid( 1 ) );
 
 #### Fill Nodes With R Squared
 
-**構文:** obj << Path Diagram Properties ( Fill Nodes With R Squared ( 0|1) )
+**構文:** obj &lt;&lt; Path Diagram Properties ( Fill Nodes With R Squared ( 0|1) )
 
 **説明:** パス図において、決定係数(R2乗)の大きさに応じて、ノードの一部を塗りつぶす。 デフォルトではオン。
 
@@ -3490,7 +3488,7 @@ obj << Path Diagram Properties( Fill Nodes With R Squared( 1 ) );
 
 #### Latent Border Color
 
-**構文:** obj << Path Diagram Properties( Latent Border Color ( color ) );
+**構文:** obj &lt;&lt; Path Diagram Properties( Latent Border Color ( color ) );
 
 **説明:** パス図において、潜在変数の枠線の色を変更する。
 
@@ -3507,7 +3505,7 @@ obj << Path Diagram Properties( Latent Border Color( "Blue" ) );
 
 #### Latent Fill Color
 
-**構文:** obj << Path Diagram Properties( Latent Fill Color ( color ) );
+**構文:** obj &lt;&lt; Path Diagram Properties( Latent Fill Color ( color ) );
 
 **説明:** パス図において、潜在変数の塗りつぶしの色を変更する。
 
@@ -3524,7 +3522,7 @@ obj << Path Diagram Properties( Latent Fill Color( "Blue" ) );
 
 #### Latent Font
 
-**構文:** obj << Path Diagram Properties( Manifest Font ( font ) );
+**構文:** obj &lt;&lt; Path Diagram Properties( Manifest Font ( font ) );
 
 **説明:** パス図において、潜在変数のフォントを変更する。
 
@@ -3541,7 +3539,7 @@ obj << Path Diagram Properties( Latent Font( "Sitka Small" ) );
 
 #### Latent Height
 
-**構文:** obj << Path Diagram Properties( Latent Height ( number ) );
+**構文:** obj &lt;&lt; Path Diagram Properties( Latent Height ( number ) );
 
 **説明:** パス図において、潜在変数の高さ(ピクセル)を変更する。
 
@@ -3558,7 +3556,7 @@ obj << Path Diagram Properties( Latent Height( 30 ) );
 
 #### Latent Shape
 
-**構文:** obj << Latent Shape
+**構文:** obj &lt;&lt; Latent Shape
 
 **説明:** パス図において、潜在変数のデフォルトの外観を変更する。
 
@@ -3577,7 +3575,7 @@ obj << Path Diagram Properties(
 
 #### Latent Size Option
 
-**構文:** obj << Path Diagram Properties( Latent Size Option ( <Default | Scale To Text | Custom> ) );
+**構文:** obj &lt;&lt; Path Diagram Properties( Latent Size Option ( &lt;Default | Scale To Text | Custom&gt; ) );
 
 **説明:** パス図において、潜在変数のノードの大きさに対するモードを変更する。
 
@@ -3594,7 +3592,7 @@ obj << Path Diagram Properties( Latent Size Option( "Scale To Text" ) );
 
 #### Latent Text Color
 
-**構文:** obj << Path Diagram Properties( Latent Text Color ( color ) );
+**構文:** obj &lt;&lt; Path Diagram Properties( Latent Text Color ( color ) );
 
 **説明:** パス図において、潜在変数のテキストの色を変更する。
 
@@ -3611,7 +3609,7 @@ obj << Path Diagram Properties( Latent Text Color( "Blue" ) );
 
 #### Latent Width
 
-**構文:** obj << Path Diagram Properties( Latent Width ( number ) );
+**構文:** obj &lt;&lt; Path Diagram Properties( Latent Width ( number ) );
 
 **説明:** パス図において、潜在変数の幅(ピクセル)を変更する。
 
@@ -3628,7 +3626,7 @@ obj << Path Diagram Properties( Latent Width( 71 ) );
 
 #### Layout
 
-**構文:** obj << Path Diagram Properties ( Layout("Left To Right"|"Top To Bottom") )
+**構文:** obj &lt;&lt; Path Diagram Properties ( Layout("Left To Right"|"Top To Bottom") )
 
 **説明:** パス図の最初のレイアウトを設定する。
 
@@ -3645,7 +3643,7 @@ obj << Path Diagram Properties( Layout( "Top To Bottom" ) );
 
 #### Lock Diagram
 
-**構文:** obj << Path Diagram Properties ( Lock Diagram( 0|1) )
+**構文:** obj &lt;&lt; Path Diagram Properties ( Lock Diagram( 0|1) )
 
 **説明:** パス図をロックし、モデルに変更を加えても、パス図のレイアウトは変更されないようにする。
 
@@ -3662,7 +3660,7 @@ obj << Path Diagram Properties( Lock Diagram( 1 ) );
 
 #### Manifest Border Color
 
-**構文:** obj << Path Diagram Properties( Manifest Border Color ( color ) );
+**構文:** obj &lt;&lt; Path Diagram Properties( Manifest Border Color ( color ) );
 
 **説明:** パス図において、顕在変数の枠線の色を変更する。
 
@@ -3679,7 +3677,7 @@ obj << Path Diagram Properties( Manifest Border Color( "Blue" ) );
 
 #### Manifest Fill Color
 
-**構文:** obj << Path Diagram Properties( Manifest Fill Color ( color ) );
+**構文:** obj &lt;&lt; Path Diagram Properties( Manifest Fill Color ( color ) );
 
 **説明:** パス図において、顕在変数の塗りつぶしの色を変更する。
 
@@ -3696,7 +3694,7 @@ obj << Path Diagram Properties( Manifest Fill Color( "Blue" ) );
 
 #### Manifest Font
 
-**構文:** obj << Path Diagram Properties( Manifest Font ( font ) );
+**構文:** obj &lt;&lt; Path Diagram Properties( Manifest Font ( font ) );
 
 **説明:** パス図において、顕在変数のフォントを変更する。
 
@@ -3713,7 +3711,7 @@ obj << Path Diagram Properties( Manifest Font( "Sitka Small" ) );
 
 #### Manifest Height
 
-**構文:** obj << Path Diagram Properties( Manifest Height ( number ) );
+**構文:** obj &lt;&lt; Path Diagram Properties( Manifest Height ( number ) );
 
 **説明:** パス図において、顕在変数の高さ(ピクセル)を変更する。
 
@@ -3730,7 +3728,7 @@ obj << Path Diagram Properties( Manifest Height( 30 ) );
 
 #### Manifest Shape
 
-**構文:** obj << Manifest Shape
+**構文:** obj &lt;&lt; Manifest Shape
 
 **説明:** パス図において、顕在変数のデフォルトの外観を変更する。
 
@@ -3747,7 +3745,7 @@ obj << Path Diagram Properties( Manifest Shape( {Fill Color( "Green" )} ) );
 
 #### Manifest Size Option
 
-**構文:** obj << Path Diagram Properties( Manifest Size Option ( <Default | Scale To Text | Custom> ) );
+**構文:** obj &lt;&lt; Path Diagram Properties( Manifest Size Option ( &lt;Default | Scale To Text | Custom&gt; ) );
 
 **説明:** パス図において、顕在変数のノードの大きさに対するモードを変更する。
 
@@ -3764,7 +3762,7 @@ obj << Path Diagram Properties( Manifest Size Option( "Scale To Text" ) );
 
 #### Manifest Text Color
 
-**構文:** obj << Path Diagram Properties( Manifest Text Color ( color ) );
+**構文:** obj &lt;&lt; Path Diagram Properties( Manifest Text Color ( color ) );
 
 **説明:** パス図において、顕在変数のテキストの色を変更する。
 
@@ -3781,7 +3779,7 @@ obj << Path Diagram Properties( Manifest Text Color( "Blue" ) );
 
 #### Manifest Width
 
-**構文:** obj << Path Diagram Properties( Manifest Width ( number ) );
+**構文:** obj &lt;&lt; Path Diagram Properties( Manifest Width ( number ) );
 
 **説明:** パス図において、顕在変数の幅(ピクセル)を変更する。
 
@@ -3798,7 +3796,7 @@ obj << Path Diagram Properties( Manifest Width( 67 ) );
 
 #### Paste Diagram Properties
 
-**構文:** obj << Paste Diagram Properties
+**構文:** obj &lt;&lt; Paste Diagram Properties
 
 **説明:** クリップボードにコピーされているパス図を設定するためのスクリプトを貼り付ける。
 
@@ -3822,7 +3820,7 @@ other_diagram << Paste Diagram Properties;
 
 #### Path Styles
 
-**構文:** obj << Path Styles
+**構文:** obj &lt;&lt; Path Styles
 
 **説明:** パス図において、パスのデフォルトの外観を変更する。
 
@@ -3839,7 +3837,7 @@ obj << Path Diagram Properties( Path Styles( {Color( "Green" )} ) );
 
 #### Path Thickness
 
-**構文:** obj << Path Diagram Properties (Path Thickness( "Fixed"|"Map to Stdz. Estimates" ) )
+**構文:** obj &lt;&lt; Path Diagram Properties (Path Thickness( "Fixed"|"Map to Stdz. Estimates" ) )
 
 **説明:** ダイヤグラムのパスの太さを、固定値にするか、標準化推定値の絶対値が大きいほど太くするかを、指定する。 デフォルトの値は"Fixed"。
 
@@ -3856,7 +3854,7 @@ obj << Path Diagram Properties( Path Thickness( "Map to Stdz. Estimates" ) );
 
 #### Path Transparency
 
-**構文:** obj << Path Diagram Properties (Path Transparency( "Fixed"|"Map to Stdz. Estimates" ) )
+**構文:** obj &lt;&lt; Path Diagram Properties (Path Transparency( "Fixed"|"Map to Stdz. Estimates" ) )
 
 **説明:** ダイヤグラムのパスの透明度を、固定値にするか、標準化推定値の絶対値が大きいほど濃くするかを、指定する。
 
@@ -3873,7 +3871,7 @@ obj << Path Diagram Properties( Path Transparency( "Fixed" ) );
 
 #### Paths Alpha Level
 
-**構文:** obj << Path Diagram Properties( Paths Alpha Level ( number) );
+**構文:** obj &lt;&lt; Path Diagram Properties( Paths Alpha Level ( number) );
 
 **説明:** パス図において、破線とするか、実線とするかの閾値を変更する。p値が閾値より大きければ破線となる。
 
@@ -3890,7 +3888,7 @@ obj << Path Diagram Properties( Paths Alpha Level( 0.01 ) );
 
 #### Paths Color
 
-**構文:** obj << Path Diagram Properties( Paths Color ( color) );
+**構文:** obj &lt;&lt; Path Diagram Properties( Paths Color ( color) );
 
 **説明:** パス図において、パスの色を変更する。
 
@@ -3907,7 +3905,7 @@ obj << Path Diagram Properties( Paths Color( "Green" ) );
 
 #### Paths Font
 
-**構文:** obj << Path Diagram Properties( Paths Font ( font ) );
+**構文:** obj &lt;&lt; Path Diagram Properties( Paths Font ( font ) );
 
 **説明:** パス図において、パスのラベルに使用されているフォントを変更する。
 
@@ -3924,7 +3922,7 @@ obj << Path Diagram Properties( Paths Font( "Segoe Script", 12, "Bold" ) );
 
 #### Paths Opacity
 
-**構文:** obj << Path Diagram Properties( Paths Opacity ( number) );
+**構文:** obj &lt;&lt; Path Diagram Properties( Paths Opacity ( number) );
 
 **説明:** パス図において、パスの不透明度を変更する。
 
@@ -3941,7 +3939,7 @@ obj << Path Diagram Properties( Paths Opacity( 0.5 ), Path Transparency( "Fixed"
 
 #### Paths Thickness
 
-**構文:** obj << Path Diagram Properties( Paths Thickness ( number) );
+**構文:** obj &lt;&lt; Path Diagram Properties( Paths Thickness ( number) );
 
 **説明:** パス図において、パスの太さを変更する。
 
@@ -3958,7 +3956,7 @@ obj << Path Diagram Properties( Paths Thickness( 2.7103 ) );
 
 #### Place Nodes
 
-**構文:** obj << Path Diagram Properties( Place Nodes ( { {name1, x1, y1}, {name2, x2, y2}, ...} ) )
+**構文:** obj &lt;&lt; Path Diagram Properties( Place Nodes ( { {name1, x1, y1}, {name2, x2, y2}, ...} ) )
 
 **説明:** パス図において、個々のノードを指定された座標に配置する。
 
@@ -3988,7 +3986,7 @@ obj << Path Diagram Properties(
 
 #### R2 Fill Color
 
-**構文:** obj << Path Diagram Properties ( R2 Fill Color ( Color ) )
+**構文:** obj &lt;&lt; Path Diagram Properties ( R2 Fill Color ( Color ) )
 
 **説明:** 決定係数(R2乗)の大きさに応じてノードを塗りつぶす時の色を指定する。
 
@@ -4005,7 +4003,7 @@ obj << Path Diagram Properties( R2 Fill Color( Cyan ) );
 
 #### Rotate Latent Groups
 
-**構文:** obj << Rotate Latent Groups
+**構文:** obj &lt;&lt; Rotate Latent Groups
 
 **説明:** パス図にあるすべての潜在変数の指示変数の向きを回転させる。複数の潜在変数が選択されている場合は、それらの潜在変数の指示変数だけの向きを回転させる。
 
@@ -4024,7 +4022,7 @@ diagram << Rotate Latent Groups;
 
 #### Rotate Loops
 
-**構文:** obj << Path Diagram Properties( Rotate Loops ( { {name1, angle1}, {name2, angle2}, ...} ) )
+**構文:** obj &lt;&lt; Path Diagram Properties( Rotate Loops ( { {name1, angle1}, {name2, angle2}, ...} ) )
 
 **説明:** パス図において、分散を示すループ曲線の位置を指定する。時計回りの角度で、単位をラジアンとして指定する。
 
@@ -4054,7 +4052,7 @@ obj << Path Diagram Properties(
 
 #### Show Constant Mean Square
 
-**構文:** obj << Show Constant Mean Square( state=0|1 )
+**構文:** obj &lt;&lt; Show Constant Mean Square( state=0|1 )
 
 **説明:** パス図において、定数に対するエッジの表示/非表示を切り替える。
 
@@ -4071,7 +4069,7 @@ obj << Path Diagram Properties( Show Constant Mean Square( 1 ) );
 
 #### Show Covariances
 
-**構文:** obj << Show Covariances( state=0|1 )
+**構文:** obj &lt;&lt; Show Covariances( state=0|1 )
 
 **説明:** パス図において、共分散を示す両方向の矢印を表示する。 デフォルトではオン。
 
@@ -4088,7 +4086,7 @@ obj << Path Diagram Properties( Show Covariances( 0 ) );
 
 #### Show Equality Constraints
 
-**構文:** obj << Show Equality Constraints( state=0|1 )
+**構文:** obj &lt;&lt; Show Equality Constraints( state=0|1 )
 
 **説明:** パス図のエッジに等号制約を表示する。それぞれの等号制約は、固定値またはラベルによって表示される。 デフォルトではオン。
 
@@ -4105,7 +4103,7 @@ obj << Path Diagram Properties( Show Equality Constraints( 0 ) );
 
 #### Show Estimates
 
-**構文:** obj << Show Estimates( "非標準化"|"標準化"|"なし" )
+**構文:** obj &lt;&lt; Show Estimates( "非標準化"|"標準化"|"なし" )
 
 **説明:** パス図において、標準化していないパラメータ推定値の表示/非表示を切り替える。
 
@@ -4122,7 +4120,7 @@ obj << Path Diagram Properties( Show Estimates( "None" ) );
 
 #### Show Loadings
 
-**構文:** obj << Show Loadings( state=0|1 )
+**構文:** obj &lt;&lt; Show Loadings( state=0|1 )
 
 **説明:** パス図において潜在変数に対する指標変数の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -4139,7 +4137,7 @@ obj << Path Diagram Properties( Show Loadings( 0 ) );
 
 #### Show Means/Intercepts
 
-**構文:** obj << Show Means/Intercepts( state=0|1 )
+**構文:** obj &lt;&lt; Show Means/Intercepts( state=0|1 )
 
 **説明:** 「構造方程式モデル」プラットフォームにおいて、平均の表示/非表示を切り替える。
 
@@ -4156,7 +4154,7 @@ obj << Path Diagram Properties( Show Means( 1 ) );
 
 #### Show R Squared Values
 
-**構文:** obj << Show R Squared Values( state=0|1 )
+**構文:** obj &lt;&lt; Show R Squared Values( state=0|1 )
 
 **説明:** パス図において、ノードの内側にR2乗の値を表示する。
 
@@ -4173,7 +4171,7 @@ obj << Path Diagram Properties( Show R Squared Values( 1 ) );
 
 #### Show Regressions
 
-**構文:** obj << Show Regressions( state=0|1 )
+**構文:** obj &lt;&lt; Show Regressions( state=0|1 )
 
 **説明:** 「構造方程式モデル」プラットフォームにおいて、回帰の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -4190,7 +4188,7 @@ obj << Path Diagram Properties( Show Regressions( 0 ) );
 
 #### Show Variances
 
-**構文:** obj << Show Variances( state=0|1 )
+**構文:** obj &lt;&lt; Show Variances( state=0|1 )
 
 **説明:** パス図において、分散を示す両方向の矢印を表示する。 デフォルトではオン。
 
@@ -4211,7 +4209,7 @@ obj << Path Diagram Properties( Show Variances( 0 ) );
 
 #### Covariances
 
-**構文:** obj << Covariances
+**構文:** obj &lt;&lt; Covariances
 
 **説明:** モデルの変数間に共分散を追加する。
 
@@ -4232,7 +4230,7 @@ obj = dt << Structural Equation Models(
 
 #### Define Time Values
 
-**構文:** obj << Define Time Values
+**構文:** obj &lt;&lt; Define Time Values
 
 **説明:** 経時的モデルで用いる時点を設定する。設定された時点の値は、成長曲線モデルなどの経時的モデルで使われる。
 
@@ -4254,7 +4252,7 @@ obj = dt << Structural Equation Models(
 
 #### Loadings
 
-**構文:** obj << Loadings
+**構文:** obj &lt;&lt; Loadings
 
 **説明:** モデルの潜在変数に因子負荷を追加する。
 
@@ -4306,7 +4304,7 @@ obj = dt << Structural Equation Models(
 
 #### Means/Intercepts
 
-**構文:** obj << Means/Intercepts
+**構文:** obj &lt;&lt; Means/Intercepts
 
 **説明:** モデルの変数に平均や切片を追加する。
 
@@ -4331,7 +4329,7 @@ obj = dt << Structural Equation Models(
 
 #### Model Name
 
-**構文:** obj << Model Name
+**構文:** obj &lt;&lt; Model Name
 
 **説明:** モデルの名前を指定する。
 
@@ -4354,7 +4352,7 @@ obj = dt << Structural Equation Models(
 
 #### Model Notes
 
-**構文:** obj << Model Notes
+**構文:** obj &lt;&lt; Model Notes
 
 **説明:** モデルに関するメモを指定する。
 
@@ -4380,7 +4378,7 @@ obj = dt << Structural Equation Models(
 
 #### New Latent
 
-**構文:** obj << New Latent
+**構文:** obj &lt;&lt; New Latent
 
 **説明:** モデルに新しい潜在変数を追加する。
 
@@ -4410,7 +4408,7 @@ obj = dt << Structural Equation Models(
 
 #### Regressions
 
-**構文:** obj << Regressions
+**構文:** obj &lt;&lt; Regressions
 
 **説明:** モデルに回帰のパスを追加する。
 
@@ -4431,7 +4429,7 @@ obj = dt << Structural Equation Models(
 
 #### Variances
 
-**構文:** obj << Variances
+**構文:** obj &lt;&lt; Variances
 
 **説明:** モデルの変数に分散を追加する。
 

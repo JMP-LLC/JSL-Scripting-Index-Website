@@ -6,9 +6,7 @@
 
 ### By
 
-**Sintassi:** obj = Response Screening(...<By( column(s) )>...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Response Screening(...&lt;By( column(s) )&gt;...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Esegue un&apos;analisi separata per ogni livello della colonna specificata.
 
@@ -31,9 +29,7 @@ obj = dt << Response Screening(
 
 ### Freq
 
-**Sintassi:** obj = Response Screening(...<Freq( column )>...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Response Screening(...&lt;Freq( column )&gt;...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica una colonna i cui valori assegnano una frequenza a ogni riga per l&apos;analisi.
 
@@ -52,9 +48,7 @@ obj = dt << Response Screening(
 
 ### Grouping
 
-**Sintassi:** obj = Response Screening(...<Grouping( column(s) )>...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Response Screening(...&lt;Grouping( column(s) )&gt;...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica le colonne categoriche come variabili di raggruppamento. Le righe assegnate a ciascun livello della colonna specificata sono analizzate separatamente.
 
@@ -72,9 +66,7 @@ obj = dt << Response Screening(
 
 ### Response
 
-**Sintassi:** obj = Response Screening(...Response( column(s) )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Response Screening(...Response( column(s) )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica le variabili di risposta che contengono le misure da analizzare.
 
@@ -91,9 +83,7 @@ obj = dt << Response Screening(
 
 ### Subgroup
 
-**Sintassi:** obj = Response Screening(...<Subgroup( column(s) )>...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Response Screening(...&lt;Subgroup( column(s) )&gt;...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica una o più variabili di sottogruppo. Quando viene definita una variabile di sottogruppo, vengono eseguite ulteriori stime per ogni categoria della variabile di sottogruppo.
 
@@ -111,9 +101,7 @@ obj = dt << Response Screening(
 
 ### Weight
 
-**Sintassi:** obj = Response Screening(...<Weight( column )>...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Response Screening(...&lt;Weight( column )&gt;...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica una colonna i cui valori assegnano un peso a ogni riga per l&apos;analisi.
 
@@ -132,9 +120,7 @@ obj = dt << Response Screening(
 
 ### X
 
-**Sintassi:** obj = Response Screening(...X( column(s) )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Response Screening(...X( column(s) )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica le variabili predittore
 
@@ -151,9 +137,7 @@ obj = dt << Response Screening(
 
 ### Y
 
-**Sintassi:** obj = Response Screening(...Y( column(s) )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Response Screening(...Y( column(s) )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica le variabili di risposta che contengono le misure da analizzare.
 
@@ -203,7 +187,7 @@ obj = dt << Response Screening( X( :Process ), Y( Eval( 8 :: 108 ) ) );
 
 ### Action
 
-**Sintassi:** obj << Action
+**Sintassi:** obj &lt;&lt; Action
 
 **Descrizione:** Trapdoor generica all&apos;interno di una piattaforma per inserire espressioni da valutare. Imposta temporaneamente i contesti del riquadro di visualizzazione e della tabella di dati per la piattaforma.
 
@@ -221,7 +205,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Sintassi:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintassi:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descrizione:** Applica all’oggetto una preimpostazione precedentemente creata, aggiornando le opzioni e le personalizzazioni in base alle impostazioni salvate.
 
@@ -268,7 +252,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Automatic Recalc
 
-**Sintassi:** obj << Automatic Recalc( state=0|1 )
+**Sintassi:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Descrizione:** Ripete l&apos;analisi automaticamente per l&apos;esclusione e le modifiche ai dati. Se l&apos;opzione Ricalcolo automatico è attivata, si consiglia di usare i comandi Attendi(0) per garantire che le modifiche di esclusione e di dati abbiano effetto prima del ricalcolo.
 
@@ -287,7 +271,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**Sintassi:** obj << Broadcast(message)
+**Sintassi:** obj &lt;&lt; Broadcast(message)
 
 **Descrizione:** Diffonde un messaggio a una piattaforma. Se i risultati di restituzione dei singoli oggetti sono tabelle, esse sono concatenate se possibile e il formato finale è identico al risultato dell&apos;opzione Salva tabella combinata in un riquadro della tabella o il risultato dell&apos;opzione Concatena utilizzando una colonna di origine. Oltre a quelli, i risultati sono memorizzati in un elenco e restituiti.
 
@@ -307,9 +291,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Cauchy
 
-**Sintassi:** obj = Response Screening(...Cauchy( state=0|1 )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Response Screening(...Cauchy( state=0|1 )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Stima i parametri usando la massima verosimiglianza e una funzione di collegamento di Cauchy. Questo metodo di stima presuppone che gli errori abbiano una distribuzione di Cauchy, che ha code più pesanti della distribuzione normale. Questo metodo riduce l&apos;enfasi sugli outlier.
 
@@ -323,7 +305,7 @@ dt << Response Screening( X( :Process ), Y( Eval( 8 :: 48 ) ), Cauchy( 1 ) );
 
 ### Column Switcher
 
-**Sintassi:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Sintassi:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Descrizione:** Aggiunge un pannello di controllo per modificare le variabili della piattaforma
 
@@ -341,9 +323,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Common X Scale
 
-**Sintassi:** obj = Response Screening(...Common X Scale( state=0|1 )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Response Screening(...Common X Scale( state=0|1 )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Segnala alla piattaforma che tutte le variabili continue X sono sulla stessa scala. Ciò è necessario per confrontare le inclinazioni di diverse variabili X.
 
@@ -361,9 +341,7 @@ dt << Response Screening(
 
 ### Common Y Scale
 
-**Sintassi:** obj = Response Screening(...Common Y Scale( state=0|1 )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Response Screening(...Common Y Scale( state=0|1 )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Segnala alla piattaforma che tutte le risposte continue sono sulla stessa scala. Ciò è necessario per confrontare le differenze delle medie o le inclinazioni.
 
@@ -404,7 +382,7 @@ obj = dt << Response Screening(
 
 ### Copy ByGroup Script
 
-**Sintassi:** obj << Copy ByGroup Script
+**Sintassi:** obj &lt;&lt; Copy ByGroup Script
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo inserisce negli Appunti.
 
@@ -428,7 +406,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Sintassi:** obj << Copy Script
+**Sintassi:** obj &lt;&lt; Copy Script
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo inserisce negli Appunti.
 
@@ -446,9 +424,7 @@ obj << Copy Script;
 
 ### Corr
 
-**Sintassi:** obj = Response Screening(...Corr( state=0|1 )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Response Screening(...Corr( state=0|1 )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Calcola la correlazione prodotto-momento di Pearson in termini di indici che sono definiti dall&apos;ordinamento dei valori.
 
@@ -466,7 +442,7 @@ dt << Response Screening(
 
 ### Data Table Window
 
-**Sintassi:** obj << Data Table Window
+**Sintassi:** obj &lt;&lt; Data Table Window
 
 **Descrizione:** Sposta in primo piano la finestra della tabella di dati per questa analisi.
 
@@ -484,9 +460,7 @@ obj << Data Table Window;
 
 ### Empirical Bayes Shrinkage
 
-**Sintassi:** obj = Response Screening(...Empirical Bayes Shrinkage( state=0|1 )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Response Screening(...Empirical Bayes Shrinkage( state=0|1 )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Restringe le stime della varianza residua attraverso una moda stimata a priori, prendendo in prestito la forza di tutte le stime. Ciò è utile quando si effettua lo screening di molte variabili Y continue su una scala comune.
 
@@ -505,7 +479,7 @@ dt << Response Screening(
 
 ### Fit Selected Items
 
-**Sintassi:** obj << Fit Selected Items
+**Sintassi:** obj &lt;&lt; Fit Selected Items
 
 **Descrizione:** Aggiunge i report Stima Y rispetto a X al report Screening della risposta. I report aggiunti corrispondono ai punti selezionati nei diagrammi o alle righe selezionate nella tabella dei risultati.
 
@@ -521,9 +495,7 @@ obj << Fit Selected Items;
 
 ### Force X Categorical
 
-**Sintassi:** obj = Response Screening(...Force X Categorical( state=0|1 )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Response Screening(...Force X Categorical( state=0|1 )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Ignora il tipo di modellizzazione e tratta tutte le colonne X come categoriche.
 
@@ -537,9 +509,7 @@ dt << Response Screening( X( :height, :sex ), Y( :age, :weight ), Force X Catego
 
 ### Force X Continuous
 
-**Sintassi:** obj = Response Screening(...Force X Continuous( state=0|1 )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Response Screening(...Force X Continuous( state=0|1 )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Ignora il tipo di modellizzazione e tratta tutte le colonne X come continue.
 
@@ -557,9 +527,7 @@ dt << Response Screening(
 
 ### Force Y Categorical
 
-**Sintassi:** obj = Response Screening(...Force Y Categorical( state=0|1 )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Response Screening(...Force Y Categorical( state=0|1 )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Ignora il tipo di modellizzazione e tratta tutte le colonne Y come categoriche.
 
@@ -573,9 +541,7 @@ dt << Response Screening( Y( :height, :sex ), X( :age, :weight ), Force Y Catego
 
 ### Force Y Continuous
 
-**Sintassi:** obj = Response Screening(...Force Y Continuous( state=0|1 )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Response Screening(...Force Y Continuous( state=0|1 )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Ignora il tipo di modellizzazione e tratta tutte le colonne Y come continue.
 
@@ -589,7 +555,7 @@ dt << Response Screening( Y( :age ), X( :height, :weight ), Force Y Continuous( 
 
 ### Get By Levels
 
-**Sintassi:** obj << Get By Levels
+**Sintassi:** obj &lt;&lt; Get By Levels
 
 **Descrizione:** Restituisce un array associativo che mappa le colonne del gruppo di By ai rispettivi valori.
 
@@ -606,7 +572,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Sintassi:** obj << Get ByGroup Script
+**Sintassi:** obj &lt;&lt; Get ByGroup Script
 
 **Descrizione:** Crea uno script (JSL) per generare questa analisi e la restituisce come espressione.
 
@@ -631,7 +597,7 @@ Show( t );
 
 ### Get Container
 
-**Sintassi:** obj << Get Container
+**Sintassi:** obj &lt;&lt; Get Container
 
 **Descrizione:** Restituisce un riferimento al riquadro contenitore che racchiude il contenuto dell&apos;oggetto.
 
@@ -681,7 +647,7 @@ New Window( "platform boxes",
 
 ### Get Crosstab RTF
 
-**Sintassi:** obj << Get Crosstab RTF( state=0|1 )
+**Sintassi:** obj &lt;&lt; Get Crosstab RTF( state=0|1 )
 
 **Descrizione:** Get an RTF source for a crosstab table.
 
@@ -689,7 +655,7 @@ New Window( "platform boxes",
 
 ### Get Crosstab Script
 
-**Sintassi:** obj << Get Crosstab Script( state=0|1 )
+**Sintassi:** obj &lt;&lt; Get Crosstab Script( state=0|1 )
 
 **Descrizione:** Get a JSL display script for a crosstab table.
 
@@ -697,7 +663,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Sintassi:** obj << Get Data Table
+**Sintassi:** obj &lt;&lt; Get Data Table
 
 **Descrizione:** Restituisce un riferimento alla tabella di dati.
 
@@ -716,7 +682,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**Sintassi:** obj << Get Group Platform
+**Sintassi:** obj &lt;&lt; Get Group Platform
 
 **Descrizione:** Restituisce l&apos;oggetto Raggruppa piattaforma se la piattaforma fa parte di un gruppo. In caso contrario, restituisce Vuoto().
 
@@ -733,7 +699,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get PValues
 
-**Sintassi:** obj << Get PValues
+**Sintassi:** obj &lt;&lt; Get PValues
 
 **Descrizione:** Restituisce un riferimento alla tabella dei p-value
 
@@ -753,7 +719,7 @@ Show( pvals );
 
 ### Get Script
 
-**Sintassi:** obj << Get Script
+**Sintassi:** obj &lt;&lt; Get Script
 
 **Descrizione:** Crea uno script (JSL) per generare questa analisi e la restituisce come espressione.
 
@@ -772,7 +738,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Sintassi:** obj << Get Script With Data Table
+**Sintassi:** obj &lt;&lt; Get Script With Data Table
 
 **Descrizione:** Crea uno script (JSL) per generare questa analisi facendo specifico riferimento a questa tabella di dati e la restituisce come espressione.
 
@@ -791,7 +757,7 @@ Show( t );
 
 ### Get Timing
 
-**Sintassi:** obj << Get Timing
+**Sintassi:** obj &lt;&lt; Get Timing
 
 **Descrizione:** Determina il tempo di avvio della piattaforma.
 
@@ -810,7 +776,7 @@ Show( t );
 
 ### Get Web Support
 
-**Sintassi:** obj << Get Web Support
+**Sintassi:** obj &lt;&lt; Get Web Support
 
 **Descrizione:** Restituisce un numero indicante il livello di supporto HTML interattivo per l&apos;oggetto visualizzato. 1 significa che alcuni o tutti gli elementi sono supportati. 0 significa nessun supporto.
 
@@ -826,7 +792,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Sintassi:** obj << Get Where Expr
+**Sintassi:** obj &lt;&lt; Get Where Expr
 
 **Descrizione:** Restituisce l&apos;espressione Where per il sottoinsieme di dati, se la piattaforma è stata avviata con By() o Where(). Altrimenti, restituisce Vuoto()
 
@@ -863,9 +829,7 @@ dt << Bivariate(
 
 ### Kappa
 
-**Sintassi:** obj = Response Screening(...Kappa( state=0|1 )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Response Screening(...Kappa( state=0|1 )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Aggiunge una nuova colonna chiamata Kappa alla tabella dei risultati. Kappa è una misura dell&apos;accordo tra Y e X.
 
@@ -879,9 +843,7 @@ dt << Response Screening( X( :From ), Y( :To ), Kappa( 1 ) );
 
 ### Kruskal Wallis Test
 
-**Sintassi:** obj = Response Screening(...Kruskal Wallis Test( state=0|1 )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Response Screening(...Kruskal Wallis Test( state=0|1 )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Calcola il test di Kruskal-Wallis, un test non parametrico (Wilcoxon) basato sui ranghi per Y continuo in funzione di X categoriale.
 
@@ -895,7 +857,7 @@ dt << Response Screening( X( :sex ), Y( :height, :weight ), Kruskal Wallis Test(
 
 ### Local Data Filter
 
-**Sintassi:** obj << Local Data Filter
+**Sintassi:** obj &lt;&lt; Local Data Filter
 
 **Descrizione:** Filtra dati in specifici gruppi o range, ma localmente in questa piattaforma
 
@@ -915,9 +877,7 @@ dt << Distribution(
 
 ### Max Comparison Levels
 
-**Sintassi:** obj = Response Screening(...Max Comparison Levels( number=100 )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Response Screening(...Max Comparison Levels( number=100 )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica il numero di livelli supportati nei confronti. "100", per impostazione predefinita.
 
@@ -935,9 +895,7 @@ dt << Response Screening(
 
 ### Max Logworth
 
-**Sintassi:** obj = Response Screening(...Max Logworth( number )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Response Screening(...Max Logworth( number )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Controlla la scala dei diagrammi che coinvolgono i valori di log valenza. I valori che superano il valore specificato sono rappresentati come il valore specificato per evitare scale estreme nei grafici di log valenza.
 
@@ -957,9 +915,7 @@ dt << Response Screening(
 
 ### Missing is Category
 
-**Sintassi:** obj = Response Screening(...Missing is Category( state=0|1 )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Response Screening(...Missing is Category( state=0|1 )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Tratta i valori mancanti di una variabile categorica come una categoria separata.
 
@@ -977,9 +933,7 @@ dt << Response Screening( X( :age ), Y( :sex ), Missing is Category( 1 ) );
 
 ### Negative Binomial Y
 
-**Sintassi:** obj = Response Screening(...Negative Binomial Y( state=0|1 )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Response Screening(...Negative Binomial Y( state=0|1 )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Stima ogni risposta Y come un conteggio con una distribuzione binomiale negativa.
 
@@ -1034,9 +988,7 @@ preset = obj << New Preset();
 
 ### No Report
 
-**Sintassi:** obj = Response Screening(...No Report( state=0|1 )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Response Screening(...No Report( state=0|1 )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Elimina la finestra dei report. Usare questa opzione per eseguire i comandi di salvataggio per ottenere risultati senza che compaia la finestra di report.
 
@@ -1078,9 +1030,7 @@ dt << Response Screening(
 
 ### Paired X and Y
 
-**Sintassi:** obj = Response Screening(...Paired X and Y( state=0|1 )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Response Screening(...Paired X and Y( state=0|1 )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Esegue i test solo per le colonne Y appaiate con le colonne X secondo il loro ordine nella finestra di avvio. Per esempio, Y1 è accoppiata con X1 e Y2 è accoppiata con X2.
 
@@ -1094,7 +1044,7 @@ dt << Response Screening( X( :age, :sex ), Y( :height, :weight ), Paired X and Y
 
 ### Paste Local Data Filter
 
-**Sintassi:** obj << Paste Local Data Filter
+**Sintassi:** obj &lt;&lt; Paste Local Data Filter
 
 **Descrizione:** Applicare il filtro sui dati locali dagli Appunti al report corrente.
 
@@ -1115,9 +1065,7 @@ dist2 << Paste Local Data Filter;
 
 ### Poisson Y
 
-**Sintassi:** obj = Response Screening(...Poisson Y( state=0|1 )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Response Screening(...Poisson Y( state=0|1 )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Stima ogni risposta Y come un conteggio con una distribuzione di Poisson.
 
@@ -1131,7 +1079,7 @@ dt << Response Screening( X( :clean ), Grouping( :failure ), Y( :N ), Poisson Y(
 
 ### Practical Difference Portion
 
-**Sintassi:** obj << Practical Difference Portion( number=0.10 )
+**Sintassi:** obj &lt;&lt; Practical Difference Portion( number=0.10 )
 
 **Descrizione:** Specifica la frazione del range di specifica che rappresenta una differenza considerata praticamente significativa. "0.10", per impostazione predefinita.
 
@@ -1150,15 +1098,13 @@ dt << Response Screening(
 
 ### Practical Differences and Equivalences
 
-**Sintassi:** obj << Practical Differences and Equivalences( Practical Portion(fraction) | Specific Difference(number) )
+**Sintassi:** obj &lt;&lt; Practical Differences and Equivalences( Practical Portion(fraction) | Specific Difference(number) )
 
 **Descrizione:** Data una differenza da rilevare, verifica se la differenza effettiva è significativamente maggiore o significativamente minore della differenza da rilevare in valore assoluto.
 
 ### Quartiles per Group
 
-**Sintassi:** obj = Response Screening(...Quartiles per Group( state=0|1 )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Response Screening(...Quartiles per Group( state=0|1 )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Calcola i quartili e il range per ciascun gruppo per Y continuo in funzione di X categoriale.
 
@@ -1195,7 +1141,7 @@ obj = dt << Response Screening(
 
 ### Redo Analysis
 
-**Sintassi:** obj << Redo Analysis
+**Sintassi:** obj &lt;&lt; Redo Analysis
 
 **Descrizione:** Ripete questa stessa analisi in una nuova finestra. L&apos;analisi sarà differente se i dati sono stati modificati.
 
@@ -1213,7 +1159,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**Sintassi:** obj << Redo ByGroup Analysis
+**Sintassi:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Descrizione:** Ripete questa stessa analisi in una nuova finestra. L&apos;analisi sarà differente se i dati sono stati modificati.
 
@@ -1237,7 +1183,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**Sintassi:** obj << Relaunch Analysis
+**Sintassi:** obj &lt;&lt; Relaunch Analysis
 
 **Descrizione:** Apre la finestra di avvio della piattaforma e richiama le impostazioni utilizzate per creare il report.
 
@@ -1255,7 +1201,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**Sintassi:** obj << Relaunch ByGroup
+**Sintassi:** obj &lt;&lt; Relaunch ByGroup
 
 **Descrizione:** Apre la finestra di avvio della piattaforma e richiama le impostazioni utilizzate per creare il report.
 
@@ -1279,7 +1225,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**Sintassi:** obj << Remove Column Switcher
+**Sintassi:** obj &lt;&lt; Remove Column Switcher
 
 **Descrizione:** Rimuove l&apos;ultimo Scambia colonne che è stato aggiunto alla piattaforma.
 
@@ -1299,7 +1245,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Sintassi:** obj << Remove Local Data Filter
+**Sintassi:** obj &lt;&lt; Remove Local Data Filter
 
 **Descrizione:** Se è stato creato un filtro di dati locali viene rimosso per ripristinare la piattaforma e utilizzare direttamente tutti i dati nella tabella di dati
 
@@ -1338,9 +1284,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Sintassi:** obj << Report;
-
-Report( obj )
+**Sintassi:** obj &lt;&lt; Report;Report( obj )
 
 **Descrizione:** Restituisce un riferimento all&apos;oggetto del report.
 
@@ -1360,7 +1304,7 @@ Show( t );
 
 ### Report View
 
-**Sintassi:** obj << Report View( "Completo"|"Riepilogo" )
+**Sintassi:** obj &lt;&lt; Report View( "Completo"|"Riepilogo" )
 
 **Descrizione:** La visualizzazione Report determina il livello di dettaglio visibile in un report della piattaforma. Full mostra tutti i dettagli mentre Summary mostra solo contenuti selezionati, in base alla piattaforma. Per un comportamento personalizzato, i riquadri di visualizzazione supportano un messaggio <<Set Summary Behavior.
 
@@ -1378,9 +1322,7 @@ obj << Report View( "Summary" );
 
 ### Robust
 
-**Sintassi:** obj = Response Screening(...Robust( state=0|1 )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Response Screening(...Robust( state=0|1 )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Stima i modelli di regressione e ANOVA utilizzando il metodo di stima M di Huber, che è resistente agli outlier.
 
@@ -1394,7 +1336,7 @@ dt << Response Screening( X( :Process ), Y( Eval( 8 :: 88 ) ), Robust( 1 ) );
 
 ### Save 2 by M
 
-**Sintassi:** obj << Name( "Save 2 by M table" )
+**Sintassi:** obj &lt;&lt; Name( "Save 2 by M table" )
 
 **Descrizione:** Salva le informazioni nel report Risultati 2 per M, così come altre statistiche di test, in una nuova tabella di dati.
 
@@ -1430,7 +1372,7 @@ obj << "Save 2 by M Table"n;
 
 ### Save ByGroup Script to Data Table
 
-**Sintassi:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintassi:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e salvarla come proprietà della tabella nella tabella di dati. È possibile specificare un nome per lo script. L&apos;opzione Append Suffix aggiunge un suffisso numerico al nome dello script, che differenzia lo script da uno script esistente con lo stesso nome. L&apos;opzione Prompt richiede all&apos;utente di specificare un nome di script. L&apos;opzione Replace sostituisce uno script esistente con lo stesso nome.
 
@@ -1454,7 +1396,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Sintassi:** obj << Save ByGroup Script to Journal
+**Sintassi:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e aggiunge un pulsante con lo script al journal.
 
@@ -1478,7 +1420,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Sintassi:** obj << Save ByGroup Script to Script Window
+**Sintassi:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo aggiunge alla finestra di testo dello script corrente.
 
@@ -1502,7 +1444,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Compare Means
 
-**Sintassi:** obj << Save Compare Means
+**Sintassi:** obj &lt;&lt; Save Compare Means
 
 **Descrizione:** Crea una tabella di dati che contiene i risultati dei test di tutti i confronti appaiati tra i livelli della variabile categorica.
 
@@ -1520,7 +1462,7 @@ dt << Response Screening(
 
 ### Save Means
 
-**Sintassi:** obj << Save Means
+**Sintassi:** obj &lt;&lt; Save Means
 
 **Descrizione:** Crea una tabella di dati che contiene i conteggi, le medie e le deviazioni standard per ogni livello della variabile categorica.
 
@@ -1534,7 +1476,7 @@ dt << Response Screening( X( :Process ), Y( Column Group( "Responses" ) ), Save 
 
 ### Save Means Differences
 
-**Sintassi:** obj << Save Means Differences
+**Sintassi:** obj &lt;&lt; Save Means Differences
 
 **Descrizione:** Crea una tabella di dati che contiene i risultati dei test di tutti i confronti appaiati tra i livelli della variabile categorica.
 
@@ -1552,7 +1494,7 @@ dt << Response Screening(
 
 ### Save Outlier Indicator
 
-**Sintassi:** obj << Save Outlier Indicator
+**Sintassi:** obj &lt;&lt; Save Outlier Indicator
 
 **Descrizione:** Salva un gruppo di colonne indicatore nella tabella di dati originale per indicare gli outlier.
 
@@ -1570,7 +1512,7 @@ dt << Response Screening(
 
 ### Save PValues
 
-**Sintassi:** obj << Save PValues
+**Sintassi:** obj &lt;&lt; Save PValues
 
 **Descrizione:** Crea una tabella di dati che contiene le informazioni nella tabella dei risultati.
 
@@ -1584,7 +1526,7 @@ dt << Response Screening( X( :Process ), Y( Column Group( "Responses" ) ), Save 
 
 ### Save Script for All Objects
 
-**Sintassi:** obj << Save Script for All Objects
+**Sintassi:** obj &lt;&lt; Save Script for All Objects
 
 **Descrizione:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -1602,7 +1544,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Sintassi:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintassi:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descrizione:** Salva uno script per tutti gli oggetti del report nella tabella di dati corrente. Questa opzione è utile quando sono presenti più report nella finestra. Lo script prende il nome dalla prima piattaforma, a meno che non si specifichi il nome dello script tra apici.
 
@@ -1648,7 +1590,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Sintassi:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintassi:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo salva come una proprietà di tabella nella tabella di dati.
 
@@ -1666,7 +1608,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Sintassi:** obj << Save Script to Journal
+**Sintassi:** obj &lt;&lt; Save Script to Journal
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e aggiunge un pulsante con lo script al journal.
 
@@ -1684,7 +1626,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Sintassi:** obj << Save Script to Report
+**Sintassi:** obj &lt;&lt; Save Script to Report
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo mostra nel report. Utile per avere una copia stampata di quanto è stato fatto.
 
@@ -1702,7 +1644,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Sintassi:** obj << Save Script to Script Window
+**Sintassi:** obj &lt;&lt; Save Script to Script Window
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo aggiunge alla finestra di testo dello script corrente.
 
@@ -1720,7 +1662,7 @@ obj << Save Script to Script Window;
 
 ### Save Std Residuals
 
-**Sintassi:** obj << Save Std Residuals
+**Sintassi:** obj &lt;&lt; Save Std Residuals
 
 **Descrizione:** Per ogni stima, aggiunge una colonna alla tabella di dati originale che contiene i residui divisi per la rispettiva deviazione standard stimata.
 
@@ -1738,7 +1680,7 @@ dt << Response Screening(
 
 ### Select Columns
 
-**Sintassi:** obj << Select Columns( condition )
+**Sintassi:** obj &lt;&lt; Select Columns( condition )
 
 **Descrizione:** Seleziona le colonne nella tabella di dati originale che corrispondono alle righe selezionate nella tabella dei risultati.
 
@@ -1754,7 +1696,7 @@ obj << Select Columns;
 
 ### Select Where
 
-**Sintassi:** obj << Select Where
+**Sintassi:** obj &lt;&lt; Select Where
 
 **Descrizione:** Seleziona elementi nella tabella del report che corrispondono a una particolare condizione.
 
@@ -1836,7 +1778,7 @@ dt << Distribution(
 
 ### Show Crosstab Report
 
-**Sintassi:** obj << Show Crosstab Report( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Crosstab Report( state=0|1 )
 
 **Descrizione:** Experimental Hidden Feature: Show the details for each X and Y combination in a crosstab cell
 
@@ -1844,7 +1786,7 @@ dt << Distribution(
 
 ### Show Means Differences
 
-**Sintassi:** obj << Show Means Differences
+**Sintassi:** obj &lt;&lt; Show Means Differences
 
 **Descrizione:** Mostra il diagramma Log valenza per differenza e il report Differenze delle medie nella finestra del report Screening della risposta. Questa opzione presuppone che le variabili Y siano su una scala comune.
 
@@ -1868,7 +1810,7 @@ Response Screening(
 
 ### Show Plots
 
-**Sintassi:** obj << Show Plots( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Plots( state=0|1 )
 
 **Descrizione:** Mostra o nasconde i diagrammi nella finestra del report. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1885,7 +1827,7 @@ obj << Show Result Tables( 0 );
 
 ### Show Report Tables
 
-**Sintassi:** obj << Show Report Tables( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Report Tables( state=0|1 )
 
 **Descrizione:** Mostra o nasconde le tabelle dei risultati nella finestra del report. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1902,7 +1844,7 @@ obj << Show Result Tables( 0 );
 
 ### Show Slopes
 
-**Sintassi:** obj << Show Slopes
+**Sintassi:** obj &lt;&lt; Show Slopes
 
 **Descrizione:** Mostra il diagramma Log valenza per inclinazione nella finestra del report Screening della risposta. Questa opzione presuppone che le variabili Y siano su una scala comune e che le variabili X siano su una scala comune.
 
@@ -1922,7 +1864,7 @@ Response Screening(
 
 ### Specific Difference to Detect
 
-**Sintassi:** obj << Specific Difference to Detect( number )
+**Sintassi:** obj &lt;&lt; Specific Difference to Detect( number )
 
 **Descrizione:** Specifica una differenza da rilevare piuttosto che una porzione di un range di specifica o sigma. Questa opzione presuppone che tutte le variabili Y siano sulla stessa scala.
 
@@ -1941,9 +1883,7 @@ dt << Response Screening(
 
 ### Subgroup Twoway
 
-**Sintassi:** obj = Response Screening(...Subgroup Twoway( state=0|1 )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Response Screening(...Subgroup Twoway( state=0|1 )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Stima tutte le combinazioni di sottogruppi a due vie. Questa opzione è disponibile solo quando è definita almeno una variabile Sottogruppo.
 
@@ -1962,7 +1902,7 @@ dt << Response Screening(
 
 ### Sync to Data Table Changes
 
-**Sintassi:** obj << Sync to Data Table Changes
+**Sintassi:** obj &lt;&lt; Sync to Data Table Changes
 
 **Descrizione:** Sincronizza con l&apos;esclusione e le modifiche ai dati effettuate.
 
@@ -1979,7 +1919,7 @@ dist << Sync To Data Table Changes;
 
 ### Tabbed Report Layout
 
-**Sintassi:** obj << Tabbed Report Layout( state=0|1 )
+**Sintassi:** obj &lt;&lt; Tabbed Report Layout( state=0|1 )
 
 **Descrizione:** Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1987,7 +1927,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Sintassi:** obj << Title( "new title" )
+**Sintassi:** obj &lt;&lt; Title( "new title" )
 
 **Descrizione:** Imposta il titolo della piattaforma.
 
@@ -2005,7 +1945,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Sintassi:** obj << Top Report
+**Sintassi:** obj &lt;&lt; Top Report
 
 **Descrizione:** Restituisce un riferimento al nodo principale nel report.
 
@@ -2025,7 +1965,7 @@ Show( t );
 
 ### Transform Column
 
-**Sintassi:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Sintassi:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Descrizione:** Crea una colonna di trasformazione nel contesto locale di un oggetto, di solito una piattaforma. La colonna di trasformazione è attiva solo per la durata della piattaforma.
 
@@ -2046,9 +1986,7 @@ dt << Distribution(
 
 ### Unthreaded
 
-**Sintassi:** obj = Response Screening(...Unthreaded( state=0|1 )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Response Screening(...Unthreaded( state=0|1 )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Elimina thread multipli.
 
@@ -2066,7 +2004,7 @@ dt << Response Screening(
 
 ### View Web XML
 
-**Sintassi:** obj << View Web XML
+**Sintassi:** obj &lt;&lt; View Web XML
 
 **Descrizione:** Restituisce il codice XML utilizzato per creare il report HTML interattivo.
 
@@ -2107,9 +2045,7 @@ Response Screening(
 
 ### Window View
 
-**Sintassi:** obj = Response Screening(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Response Screening(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Impostare il tipo di finestra da creare per il report. Per impostazione predefinita verrà creata una finestra di report Visible. Una finestra Invisible non comparirà sullo schermo, ma è individuabile da funzioni come Window(). Una finestra Private risponde alla maggior parte dei messaggi della finestra, ma non è individuabile e deve essere indirizzata attraverso l&apos;oggetto report
 

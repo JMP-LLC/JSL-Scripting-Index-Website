@@ -6,7 +6,7 @@
 
 ### Contains
 
-**Syntax:** bool = AAobj << Contains( key | AAobj )
+**Syntax:** bool = AAobj &lt;&lt; Contains( key | AAobj )
 
 **Beschreibung:** Ermitteln, ob der Schlüssel oder Schlüsselsatz im assoziativen Array enthalten ist. Unter „Enthält Element“ finden Sie ein einfacheres Beispiel.
 
@@ -25,7 +25,7 @@ Local(
 
 ### Contains Item
 
-**Syntax:** bool = AAobj << Contains Item( key )
+**Syntax:** bool = AAobj &lt;&lt; Contains Item( key )
 
 **Beschreibung:** Ermitteln, ob der Schlüssel im assoziativen Array enthalten ist. Siehe auch „Enthält“ mit zusätzlicher Fähigkeit.
 
@@ -40,7 +40,7 @@ Local( {rhymes = ["mouse" => "house", "car" => "star", "orange" => ""]},
 
 ### First
 
-**Syntax:** key = AAobj << first
+**Syntax:** key = AAobj &lt;&lt; first
 
 **Beschreibung:** Iterator für assoziatives Array.
 
@@ -60,7 +60,7 @@ Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"], x, words = ""}
 
 ### Get Contents
 
-**Syntax:** list = AAObj << Get Contents
+**Syntax:** list = AAObj &lt;&lt; Get Contents
 
 **Beschreibung:** Gibt den Inhalt des assoziativen Arrays als Liste zurück.
 
@@ -73,7 +73,7 @@ Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"]}, aa << Get Con
 
 ### Get Default Value
 
-**Syntax:** value = AAobj << Get Default Value()
+**Syntax:** value = AAobj &lt;&lt; Get Default Value()
 
 **Beschreibung:** Gibt den Wert zurück, den das assoziative Array für Schlüssel zurückgibt, die nicht gefunden werden.
 
@@ -92,7 +92,7 @@ Local( {aa = [=> 99], v1, v2}, /* initial value used for non-existing key is 99 
 
 ### Get Keys
 
-**Syntax:** list = AAObj << Get Keys
+**Syntax:** list = AAObj &lt;&lt; Get Keys
 
 **Beschreibung:** Gibt eine Liste der Schlüssel zurück, die im assoziativen Array gefunden werden.
 
@@ -105,7 +105,7 @@ Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"]}, aa << Get Key
 
 ### Get Value
 
-**Syntax:** value = AAobj << Get Value( key )
+**Syntax:** value = AAobj &lt;&lt; Get Value( key )
 
 **Beschreibung:** Gibt den Wert zuürck, der unter dem Schlüssel im assoziativen Array gespeichert ist.
 
@@ -120,7 +120,7 @@ Local( {prices = Associative Array( {{"pineapple", 1.25}, {"grape", .50}, {"oran
 
 ### Get Values
 
-**Syntax:** list = AAObj << Get Values
+**Syntax:** list = AAObj &lt;&lt; Get Values
 
 **Beschreibung:** Gibt eine Liste der Werte zurück, die im assoziativen Array gefunden werden.
 
@@ -133,7 +133,7 @@ Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"]}, aa << Get Val
 
 ### Insert
 
-**Syntax:** AAobj1 << Insert( AAobj2 | key,  { value } )
+**Syntax:** AAobj1 &lt;&lt; Insert( AAobj2 | key, { value } )
 
 **Beschreibung:** Fügt ein assoziatives Array in ein anderes assoziatives Array ein oder speichert den Wert unter dem Schlüssel im assoziativen Array. Unter „Element einfügen“ finden Sie ein einfacheres Beispiel.
 
@@ -149,7 +149,7 @@ Local( {decode = [".-" => "a", "-..." => "b"], others = ["..." => "s", "-.-." =>
 
 ### Insert Item
 
-**Syntax:** AAobj << Insert Item( key, value )
+**Syntax:** AAobj &lt;&lt; Insert Item( key, value )
 
 **Beschreibung:** Speichert den Wert unter dem Schlüssel im assoziativen Array. Siehe auch „Einfügen“ mit zusätzlicher Fähigkeit.
 
@@ -165,7 +165,7 @@ Local( {decode = [".-" => "a", "-..." => "b"]},
 
 ### Intersect
 
-**Syntax:** AAobj1 << Intersect( AAobj2 )
+**Syntax:** AAobj1 &lt;&lt; Intersect( AAobj2 )
 
 **Beschreibung:** Behandelt ein assoziatives Array als Objektsatz. Die Werte müssen für Objekte im Satz 1 sein. Der Standardwert muss 0 sein. Der aktuelle Satz wird durch die Schnittmenge mit dem Satz in der Meldung ersetzt.
 
@@ -212,7 +212,7 @@ dt << selectrows( desiredSelection << getkeys ); // males <= 12
 
 ### Next
 
-**Syntax:** key = AAobj << next( previous key )
+**Syntax:** key = AAobj &lt;&lt; next( previous key )
 
 **Beschreibung:** Iterator für assoziatives Array.
 
@@ -232,7 +232,7 @@ Local( {aa = [1 => "bun", 2 => "shoe", 3 => "tree", 4 => "door"], x, words = ""}
 
 ### Remove
 
-**Syntax:** AAobj1 << Remove( AAobj2 | key )
+**Syntax:** AAobj1 &lt;&lt; Remove( AAobj2 | key )
 
 **Beschreibung:** Entfernt den Schlüsselsatz oder den Schlüssel aus dem assoziativen Array. Unter „Element entfernen“ finden Sie ein einfacheres Beispiel.
 
@@ -248,7 +248,7 @@ Local( {primes = [2 => 1, 3 => 1, 4 => 1, 5 => 1, 6 => 1, 7 => 1, 8 => 1, 9 => 1
 
 ### Remove Item
 
-**Syntax:** AAobj << Remove Item( key )
+**Syntax:** AAobj &lt;&lt; Remove Item( key )
 
 **Beschreibung:** Entfernt den Schlüssel aus dem assoziativen Array. Siehe auch „Entfernen“ mit zusätzlicher Fähigkeit.
 
@@ -280,7 +280,7 @@ Local(
 
 ### Set Default Value
 
-**Syntax:** AAobj << Set Default Value( value )
+**Syntax:** AAobj &lt;&lt; Set Default Value( value )
 
 **Beschreibung:** Ändert den Wert, den das assoziative Array für Schlüssel zurückgibt, die nicht gefunden werden.
 
@@ -301,9 +301,7 @@ Local( {aa = [=> 99], v1, v2}, /* initial value used for non-existing key is 99 
 
 ### Associative Array
 
-**Syntax:** y = Associative Array( {{key1, value1}, ...} );
-
-y = Associative Array( keys, values )
+**Syntax:** y = Associative Array( {{key1, value1}, ...} );y = Associative Array( keys, values )
 
 **Beschreibung:** Erstellt ein assoziatives Array, das auch als Wörterbuch oder Hashmap bekannt ist. Im Format mit zwei Argumenten können Schlüssel und Werte eine Liste, eine Matrix oder eine Spalte in einer Datentabelle sein.
 

@@ -22,7 +22,7 @@ nb = Notebook();
 
 ### Enable Inline Logging
 
-**Syntax:** obj << Enable Inline Logging( 0|1 )
+**Syntax:** obj &lt;&lt; Enable Inline Logging( 0|1 )
 
 **Description:** Enables/disables the logging of output in notebook blocks.
 
@@ -39,7 +39,7 @@ nb << Enable Inline Logging( 0 );
 
 ### Export to a Workflow
 
-**Syntax:** obj << Export to a Workflow( <Create(wfb name)>|<AddTo(wfb name)> )
+**Syntax:** obj &lt;&lt; Export to a Workflow( &lt;Create(wfb name)&gt;|&lt;AddTo(wfb name)&gt; )
 
 **Description:** Exports the blocks of the notebook to a workflow.
 
@@ -60,7 +60,7 @@ nb << Export to a Workflow;
 
 ### Get Window
 
-**Syntax:** obj << Get Window
+**Syntax:** obj &lt;&lt; Get Window
 
 **Description:** Returns the window of this notebook.
 
@@ -77,7 +77,7 @@ nb << Get Window;
 
 ### Import .ipynb File
 
-**Syntax:** obj << Import .ipynb File( file path )
+**Syntax:** obj &lt;&lt; Import .ipynb File( file path )
 
 **Description:** Loads the provided .ipynb file as blocks in the notebook.
 
@@ -94,7 +94,7 @@ nb << Import .ipynb File( NOTEBOOKPATH );
 
 ### Run All Scripts
 
-**Syntax:** obj << Run All Scripts
+**Syntax:** obj &lt;&lt; Run All Scripts
 
 **Description:** Runs the full notebook.
 
@@ -116,7 +116,7 @@ nb << Run All Scripts;
 
 ### Show Embedded Log
 
-**Syntax:** obj << Show Embedded Log( 0|1 )
+**Syntax:** obj &lt;&lt; Show Embedded Log( 0|1 )
 
 **Description:** Enables/disables the embedded log in the notebook.
 
@@ -133,7 +133,7 @@ nb << Show Embedded Log( 1 );
 
 ### Title
 
-**Syntax:** obj << Title( title )
+**Syntax:** obj &lt;&lt; Title( title )
 
 **Description:** Sets the title of this notebook.
 
@@ -170,7 +170,7 @@ block = nb << Add New Block( "JSL", "Open (\!"$SAMPLE_DATA/Big Class.jmp\!")" );
 
 #### Block Name
 
-**Syntax:** obj << Block Name( name )
+**Syntax:** obj &lt;&lt; Block Name( name )
 
 **Description:** Sets/gets the title of this block.
 
@@ -188,7 +188,7 @@ block << Block Name( "Test Block Name" );
 
 #### Duplicate Block
 
-**Syntax:** obj << Duplicate Block
+**Syntax:** obj &lt;&lt; Duplicate Block
 
 **Description:** Duplicates this block and adds the new block as its sibling.
 
@@ -206,7 +206,7 @@ block << Duplicate Block;
 
 #### Get Content
 
-**Syntax:** obj << Get Content
+**Syntax:** obj &lt;&lt; Get Content
 
 **Description:** Gets the content of the block.
 
@@ -224,7 +224,7 @@ Show( block << Get Content );
 
 #### Get Output
 
-**Syntax:** obj << Get Output
+**Syntax:** obj &lt;&lt; Get Output
 
 **Description:** Gets the display tree output of the block.
 
@@ -247,7 +247,7 @@ block2 << Get Output;
 
 #### Import .ipynb File
 
-**Syntax:** obj << Import .ipynb File( file path )
+**Syntax:** obj &lt;&lt; Import .ipynb File( file path )
 
 **Description:** Loads the provided .ipynb file as blocks added to this section.
 
@@ -263,7 +263,7 @@ section << Import .ipynb File( NOTEBOOKPATH );
 
 #### Line Count
 
-**Syntax:** obj << Line Count( number )
+**Syntax:** obj &lt;&lt; Line Count( number )
 
 **Description:** Sets the maximum number of lines shown in this block before enabling scrolling. Set to zero to enable auto-sizing.
 
@@ -281,7 +281,7 @@ block << Line Count( 1 );
 
 #### Move Block Down
 
-**Syntax:** obj << Move Block Down
+**Syntax:** obj &lt;&lt; Move Block Down
 
 **Description:** Moves this block down by one in the list.
 
@@ -302,7 +302,7 @@ block << Move Block Down;
 
 #### Move Block Up
 
-**Syntax:** obj << Move Block Up
+**Syntax:** obj &lt;&lt; Move Block Up
 
 **Description:** Moves this block up by one in the list.
 
@@ -323,7 +323,7 @@ block2 << Move Block Up;
 
 #### Popout Results
 
-**Syntax:** obj << Popout Results
+**Syntax:** obj &lt;&lt; Popout Results
 
 **Description:** Sends the current output of this block to a new window.
 
@@ -346,7 +346,7 @@ block2 << Popout Results;
 
 #### Remove Block
 
-**Syntax:** obj << Remove Block
+**Syntax:** obj &lt;&lt; Remove Block
 
 **Description:** Removes this block from its parent.
 
@@ -364,7 +364,7 @@ block << Remove Block;
 
 #### Remove Section
 
-**Syntax:** obj << Remove Section
+**Syntax:** obj &lt;&lt; Remove Section
 
 **Description:** Removes this section from its parent.
 
@@ -380,7 +380,7 @@ section << Remove Section;
 
 #### Run Script
 
-**Syntax:** obj << Run Script
+**Syntax:** obj &lt;&lt; Run Script
 
 **Description:** Executes the contents of the current block.
 
@@ -399,7 +399,7 @@ block << Run Script;
 
 #### Run Section
 
-**Syntax:** obj << Run Section
+**Syntax:** obj &lt;&lt; Run Section
 
 **Description:** Runs the children of this section in order.
 
@@ -417,7 +417,7 @@ section << Run Section;
 
 #### Set Content
 
-**Syntax:** obj << Set Content( content )
+**Syntax:** obj &lt;&lt; Set Content( content )
 
 **Description:** Sets the content of the block.
 

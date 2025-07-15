@@ -2,11 +2,9 @@
 
 
 
-## Funktionen
-
 ### Close
 
-**Syntax:** Close( <dataTableRef|name>, <NoSave|Save( "path" )> )
+**Syntax:** Close( &lt;dataTableRef|name&gt;, &lt;NoSave|Save( "path" )&gt; )
 
 **Beschreibung:** Schließt die vom ersten Argument angegebene Datentabelle, bei der es sich standardmäßig um die aktuelle Datentabelle im aktuellen Projekt handelt (oder in keinem Projekt, wenn das Skript nicht in einem Projekt ausgeführt wird).
 
@@ -31,7 +29,7 @@ Close( exdt, NoSave );
 
 ### Close All
 
-**Syntax:** Close All( <Project(title|index|box|window)>, Data Tables | Reports | Journals, <invisible | private>, <NoSave|Save> )
+**Syntax:** Close All( &lt;Project(title|index|box|window)&gt;, Data Tables | Reports | Journals, &lt;invisible | private&gt;, &lt;NoSave|Save&gt; )
 
 **Beschreibung:** Schließt alle offenen Ressourcen eines bestimmten Typs: Datentabellen, Journale oder Berichte.
 
@@ -53,7 +51,7 @@ Close All( Data Tables, NoSave );
 
 ### Convert File Path
 
-**Syntax:** path = Convert File Path( path, <absolute|relative>, <posix|windows>, <base( path )>, <search> )
+**Syntax:** path = Convert File Path( path, &lt;absolute|relative&gt;, &lt;posix|windows&gt;, &lt;base( path )&gt;, &lt;search&gt; )
 
 **Beschreibung:** Gibt den konvertierten Pfad zurück.
 
@@ -75,7 +73,7 @@ For Each( {pv},
 
 ### Copy Directory
 
-**Syntax:** rc = Copy Directory( from, to, <recursive(0|1)> )
+**Syntax:** rc = Copy Directory( from, to, &lt;recursive(0|1)&gt; )
 
 **Beschreibung:** Kopiert Dateien aus einem Verzeichnis in ein anderes, kopiert optional Unterverzeichnisse. Der Verzeichnisname wird am Pfad to erstellt und darf nicht Teil des Pfads to sein. Gibt 1 zurück, wenn das Verzeichnis kopiert wurde. Gibt 0 zurück, wenn der Pfad nicht kopiert werden konnte. Gibt einen Fehler zurück, wenn der Pfad ungültig oder nicht vorhanden ist.
 
@@ -140,7 +138,7 @@ Format( date, "ddmonyyyy:h:m:s" );/* 1 1 0 date:time */
 
 ### Create Excel Workbook
 
-**Syntax:** Create Excel Workbook(<Workbook Name>, <{List of open tables}>, <Optional list of worksheet names> )
+**Syntax:** Create Excel Workbook(&lt;Workbook Name&gt;, &lt;{List of open tables}&gt;, &lt;Optional list of worksheet names&gt; )
 
 **Beschreibung:** Eine Excel-Arbeitsmappe aus geöffneten JMP-Datentabellen generieren
 
@@ -189,7 +187,7 @@ Format( Creation Date( "$SAMPLE_DATA/Big Class.jmp" ), "ddmonyyyy:h:m:s" );
 
 ### Delete Directory
 
-**Syntax:** rc = Delete Directory( path, <Allow Undo( boolean )> )
+**Syntax:** rc = Delete Directory( path, &lt;Allow Undo( boolean )&gt; )
 
 **Beschreibung:** Löscht ein Verzeichnis und die darin enthaltenen Dateien und Unterverzeichnisse. Gibt 1 zurück, wenn das Verzeichnis gelöscht wurde. Gibt 0 zurück, wenn das Verzeichnis nicht gelöscht werden konnte oder der Pfad ungültig ist.
 
@@ -211,7 +209,7 @@ Format( date, "ddmonyyyy:h:m:s" );/* 1 1 0 date:time */
 
 ### Delete File
 
-**Syntax:** rc = Delete File( path, <Allow Undo( boolean )> )
+**Syntax:** rc = Delete File( path, &lt;Allow Undo( boolean )&gt; )
 
 **Beschreibung:** Löscht eine Datei. Gibt 1 zurück, wenn die Datei gelöscht wurde. Gibt 0 zurück, wenn die Datei nicht gelöscht werden konnte. Gibt einen Fehler aus, wenn der Pfad ungültig oder nicht vorhanden ist.
 
@@ -281,7 +279,7 @@ File Size( "$SAMPLE_DATA/Big Class.jmp" );
 
 ### Files In Directory
 
-**Syntax:** y = Files In Directory( "path", <recursive(0|1)>, <include hidden(0|1)> )
+**Syntax:** y = Files In Directory( "path", &lt;recursive(0|1)&gt;, &lt;include hidden(0|1)&gt; )
 
 **Beschreibung:** Gibt die Liste von Dateinamen in einem von path angegebenen Verzeichnis zurück. Wenn das Argument Recursive nicht angegeben ist, werden Verzeichnisnamen in die Liste aufgenommen.
 
@@ -309,7 +307,7 @@ Filter Each( {fn}, Files In Directory( "$SAMPLE_DATA", recursive( 1 ) ),
 
 ### Find All
 
-**Syntax:** Find All( <Project(title|index|box|window)>, Data Tables | Reports | Journals, <invisible | private> )
+**Syntax:** Find All( &lt;Project(title|index|box|window)&gt;, Data Tables | Reports | Journals, &lt;invisible | private&gt; )
 
 **Beschreibung:** Findet alle offenen Ressourcen eines bestimmten Typs: Datentabellen, Journale oder Berichte.
 
@@ -471,7 +469,7 @@ Google Sheet Export(
 
 ### Google Sheet Import
 
-**Syntax:** Google Sheet Import(Email(address), Spreadsheet(url|id), <Sheets("sheetName1", ... "sheetNameN")>, <Sheet Settings( Has Column Headers(Boolean), Data Starts on Row(n), Cell Range(range), Import Cell Colors(Boolean), Supress Empty Columns(Boolean))>)
+**Syntax:** Google Sheet Import(Email(address), Spreadsheet(url|id), &lt;Sheets("sheetName1", ... "sheetNameN")&gt;, &lt;Sheet Settings( Has Column Headers(Boolean), Data Starts on Row(n), Cell Range(range), Import Cell Colors(Boolean), Supress Empty Columns(Boolean))&gt;)
 
 **Beschreibung:** Öffnet eine Google Tabellen-Datei.
 
@@ -589,7 +587,7 @@ If( x == JSON Literal( true ),
 
 ### JSON To Data Table
 
-**Syntax:** dt = JSON To Data Table( jsonstring, <Invisible( boolean ) | Private( boolean )>, <Guess(Stack(Boolean)|"Tall"|"Wide")>, <JSON Settings(...)> )
+**Syntax:** dt = JSON To Data Table( jsonstring, &lt;Invisible( boolean ) | Private( boolean )&gt;, &lt;Guess(Stack(Boolean)|"Tall"|"Wide")&gt;, &lt;JSON Settings(...)&gt; )
 
 **Beschreibung:** JSON-Text in eine JMP-Datentabelle umwandeln
 
@@ -639,7 +637,7 @@ Format( Last Modification Date( "$SAMPLE_DATA/Big Class.jmp" ), "ddmonyyyy:h:m:s
 
 ### Load Text File
 
-**Syntax:** text = Load Text File( path, <Charset("best guess", <force("throw" | "alert" | "silent")>)>, <LineSeparator("\!N")>, <XMLParse>|<SASODSXML>|<JSON>|<BLOB( <readOffsetFromBegin(0)>|<readOffsetFromEnd(42)>, <readLength(2147483647)>, <base64Compressed( 1 /* 0: ascii~hex */)> )> )
+**Syntax:** text = Load Text File( path, &lt;Charset("best guess", &lt;force("throw" | "alert" | "silent")&gt;)&gt;, &lt;LineSeparator("\!N")&gt;, &lt;XMLParse&gt;|&lt;SASODSXML&gt;|&lt;JSON&gt;|&lt;BLOB( &lt;readOffsetFromBegin(0)&gt;|&lt;readOffsetFromEnd(42)&gt;, &lt;readLength(2147483647)&gt;, &lt;base64Compressed( 1 /* 0: ascii~hex */)&gt; )&gt; )
 
 **Beschreibung:** Liest eine vollständige Textdatei in eine JSL-Variable ein. Load Text File() fragt einen Dateinamen ab. Load Text File( path ) gibt eine Zeichenkette zurück. Die Option XMLParse konvertiert XML in einen Ausdrucksbaum. SASODSXML wird als SAS ODS Standard-XML analysiert. Die Option [{JSON}] konvertiert JSON in einen Ausdrucksbaum. Das Argument BLOB gibt Binärdaten in einer JSL-Blobvariablen zurück. Optional benannte Parameter von BLOB ermöglichen das Lesen einer Teilzeichenkette aus der Datei.
 
@@ -710,7 +708,7 @@ Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
 
 ### Open
 
-**Syntax:** Open( filePath, <data table options | Excel import options | text import options | SAS import options | HTML import options | esriShapeFile import options | PDF import options | other file options > )
+**Syntax:** Open( filePath, &lt;data table options | Excel import options | text import options | SAS import options | HTML import options | esriShapeFile import options | PDF import options | other file options &gt; )
 
 **Beschreibung:** Gibt eine Referenz auf eine Datentabelle oder eine andere JMP-Datei oder auf ein über eine Datei erstelltes Objekt zurück. Wenn kein Pfad angegeben ist, wird das Dialogfeld „Öffnen“ angezeigt. Wenn ein Ordnerpfad angegeben ist, wird der Dateibrowser des Systems geöffnet und kein Objekt zurückgegeben. Eine vollständige Beschreibung der verfügbaren Optionen finden Sie in der Syntaxreferenz.
 
@@ -950,7 +948,7 @@ Show( l );
 
 ### Pick Directory
 
-**Syntax:** path = Pick Directory( <prompt>, <path>, <Show Files( boolean )> )
+**Syntax:** path = Pick Directory( &lt;prompt&gt;, &lt;path&gt;, &lt;Show Files( boolean )&gt; )
 
 **Beschreibung:** Erzeugt ein Fenster „Verzeichnis öffnen“ und gibt den Pfad des ausgewählten Verzeichnisses zurück. Die optionale Zeichenkette prompt wird im oberen Bereich des Fensters angezeigt. Bei Show Files kann es sich um eines der drei Argumente handeln, und akzeptiert wird ein Boolesches Argument. 1 zeigt Dateien im Verzeichnisauswahlfenster an, 0 zeigt keine Dateien an. Der Standardwert ist 0. Die Zeichenkette path gibt das Verzeichnis an, das zuerst im Verzeichnisauswahlfenster angezeigt wird. Wenn Sie die Zeichenkette path verwenden, muss sie auf die Zeichenkette prompt folgen, doch Show Files kann sich zwischen den beiden befinden.
 
@@ -976,7 +974,7 @@ Pick Directory( "Select a directory", "$DOCUMENTS", Show Files( 1 ) );
 
 ### Pick File
 
-**Syntax:** path = Pick File( <prompt>, <initial directory>, <filterList>, <first filter>, <saveFlag=0|1>, <default file>, <multiple> )
+**Syntax:** path = Pick File( &lt;prompt&gt;, &lt;initial directory&gt;, &lt;filterList&gt;, &lt;first filter&gt;, &lt;saveFlag=0|1&gt;, &lt;default file&gt;, &lt;multiple&gt; )
 
 **Beschreibung:** Zeigt dem Benutzer das Fenster „Öffnen“ an und gibt den Pfad der ausgewählten Datei zurück. Das Argument filterList ist eine Liste von Zeichenketten im Format: „Bezeichnung|Suffix1;Suffix2;...“. Das Argument first filter gibt an, welcher Filter anfänglich gezeigt wird. Das fünfte Argument gibt an, ob das Fenster zum Speichern (saveFlag = 1) oder Öffnen (saveFlag = 0) dient. Das Argument default file gibt die anfänglich ausgewählte Datei an. Das Argument multiple ermöglicht, dass mehrere Dateien ausgewählt werden können, wenn saveFlag = 0.
 
@@ -1086,7 +1084,7 @@ Char( rc4 ) || " " || Char( rc5 );/* 1 1 0 1 1 0 */
 
 ### Save Text File
 
-**Syntax:** f = Save Text File( path, text|blob, <mode("replace"|"append")> )
+**Syntax:** f = Save Text File( path, text|blob, &lt;mode("replace"|"append")&gt; )
 
 **Beschreibung:** Erzeugt eine Textdatei mit dem vom Argument path angegebenen Dateinamen und dem vom Zeichenkettenargument text angegebenen Inhalt. Wenn der Speichervorgang erfolgreich ist, gibt die Funktion Save Text File() den Pfadnamen der erstellten Datei zurück.
 
@@ -1139,7 +1137,7 @@ Show( Convert File Path( "Iris.jmp", search ) );
 
 ### Set Path Variable
 
-**Syntax:** Set Path Variable( name, <value> )
+**Syntax:** Set Path Variable( name, &lt;value&gt; )
 
 **Beschreibung:** Legt eine Pfadvariable fest, z. B. einen Namen wie SAMPLE_DATA, der, wenn er in Pfadnamen gefunden wird, ersetzt wird.
 
@@ -1154,7 +1152,7 @@ Set Path Variable( "SAMPLE_DATA", Get Path Variable( "SAMPLE_DATA" ) );
 
 ### TripleS Import
 
-**Syntax:** TripleSImport( <path to xml file> )
+**Syntax:** TripleSImport( &lt;path to xml file&gt; )
 
 **Beschreibung:** Öffnet Triple-S-Dateien. Das Triple-S-Format besteht aus einer XML- oder SSS-Datei und entweder einer CSV-Datei oder einer DAT-/ASC-Datei. Beide Dateien müssen den gleichen Namen mit der entsprechenden Erweiterung haben und müssen sich im selben Verzeichnis befinden. Geben Sie den Pfad der XML- oder SSS-Datei an, um die Daten zu importieren.
 

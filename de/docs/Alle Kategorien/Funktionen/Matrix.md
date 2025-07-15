@@ -2,8 +2,6 @@
 
 
 
-## Funktionen
-
 ### Add Vectors BLAS
 
 **Syntax:** z = Add Vectors BLAS( x, y, alpha )
@@ -52,7 +50,7 @@ Any( [1 0 2] );
 
 ### B Spline Coef
 
-**Syntax:** coef = B Spline Coef( x, Internal Knot Grid, <degree = 3>, <KnotEndPoints = min(x) || max(x)> )
+**Syntax:** coef = B Spline Coef( x, Internal Knot Grid, &lt;degree = 3&gt;, &lt;KnotEndPoints = min(x) || max(x)&gt; )
 
 **Beschreibung:** Gibt die Matrix von B-Spline-Koeffizienten zurück. Internal Knot Grid ist entweder die Anzahl der gewünschten Knotenpunkte basierend auf Perzentilen von x oder ein Vektor, der die internen Knotenpunkte angibt. Der optionale Parameter degree gibt den Grad der B-Splines mit einem Standardwert von 3 an. Der optionale Parameter KnotEndPoints benötigt eine 2x1-Matrix mit den Positionen [unten, oben] für die Knoten auf der Grenze. Die Knotenendpunkte haben standardmäßig die gleichen Min.- und Max.-Werte wie x. Das zweite Beispiel zeigt, wie B-Spline-Koeffizienten als Designmatrix in einem linearen Modell verwendet werden können.
 
@@ -174,7 +172,7 @@ Cholesky( [1 2, 2 13] );
 
 ### Correlation
 
-**Syntax:** y = Correlation( x , < <<"Pairwise" >, < <<"Shrink" >, < <<Freq(vector) >, < <<Weight(vector) > )
+**Syntax:** y = Correlation( x , &lt; &lt;&lt;"Pairwise" &gt;, &lt; &lt;&lt;"Shrink" &gt;, &lt; &lt;&lt;Freq(vector) &gt;, &lt; &lt;&lt;Weight(vector) &gt; )
 
 **Beschreibung:** Gibt die Korrelationsmatrix des Matrixarguments x zurück. Das Argument "Pairwise" verarbeitet fehlende Werte paarweise und nicht zeilenweise. Das Argument "Shrink" reduziert die nichtdiagonalen Elemente um einen Faktor, der über die in Schafer und Strimmer 2005 beschriebene Methode ermittelt wird. Die Argumente Freq und Weight geben Vektoren von Häufigkeits- bzw. Gewichtungswerten an.
 
@@ -189,7 +187,7 @@ Correlation( [1 3 5, 3 2 6, 5 6 1] );
 
 ### Covariance
 
-**Syntax:** y = Covariance( x , < <<"Pairwise" >, < <<"Shrink" >, < <<Freq(vector) >, < <<Weight(vector) > )
+**Syntax:** y = Covariance( x , &lt; &lt;&lt;"Pairwise" &gt;, &lt; &lt;&lt;"Shrink" &gt;, &lt; &lt;&lt;Freq(vector) &gt;, &lt; &lt;&lt;Weight(vector) &gt; )
 
 **Beschreibung:** Gibt die Kovarianzmatrix des Matrixarguments x zurück. Das Argument "Pairwise" verarbeitet fehlende Werte paarweise und nicht zeilenweise. Das Argument "Shrink" reduziert die nichtdiagonalen Elemente um einen Faktor, der über die in Schafer und Strimmer 2005 beschriebene Methode ermittelt wird. Die Argumente Freq und Weight geben Vektoren von Häufigkeits- bzw. Gewichtungswerten an.
 
@@ -204,7 +202,7 @@ Covariance( [1 3 5, 3 2 6, 5 6 1] );
 
 ### Design
 
-**Syntax:** y = Design( v, < levelsList|<<Levels, <<ElseMissing > )
+**Syntax:** y = Design( v, &lt; levelsList|&lt;&lt;Levels, &lt;&lt;ElseMissing &gt; )
 
 **Beschreibung:** Erzeugt eine Designmatrix, die eine Spalte mit Einsen (1) und Nullen (0) für jeden eindeutigen Wert des Arguments enthält. Verwenden Sie das Argument levelsList, um eine Liste der Stufen für die Designmatrix anzugeben. Wenn das Argument <<Levels angegeben ist, ist der Rückgabewert eine Liste mit der Designmatrix und einer Liste der Stufen. Wenn das Argument <<ElseMissing angegeben ist, werden Werte im Argument v, die nicht in der levelsList erscheinen, in der Designmatrix als fehlend eingetragen. Ansonsten werden in der Designmatrix Nullen (0) eingetragen.
 
@@ -233,7 +231,7 @@ Show( Design( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ### Design Last
 
-**Syntax:** y = Design Last( v, < levelsList, <<ElseMissing > )
+**Syntax:** y = Design Last( v, &lt; levelsList, &lt;&lt;ElseMissing &gt; )
 
 **Beschreibung:** Erstellt eine Designmatrix mit einer Spalte von Einsen (1) und Nullen (0) für alle bis auf den letzten eindeutigen Wert des Arguments. Die letzte Stufe ist als Zeile mit Nullen (0) codiert. Wenn das Argument levelsList angegeben ist, ist die letzte Stufe die letzte Stufe in levelsList. Ansonsten ist die letzte Stufe definiert als der größte Wert in v. Wenn das Argument <<Levels angegeben ist, ist der Rückgabewert eine Liste mit der Designmatrix und einer Liste der Stufen. Wenn das Argument <<ElseMissing angegeben ist, werden Werte im Argument v, die nicht in der levelsList erscheinen, in der Designmatrix als fehlend eingetragen. Ansonsten werden in der Designmatrix Nullen (0) eingetragen.
 
@@ -269,7 +267,7 @@ Show( Design Last( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ### Design Nom
 
-**Syntax:** y = Design Nom( v, < levelsList|<<Levels, <<ElseMissing > )
+**Syntax:** y = Design Nom( v, &lt; levelsList|&lt;&lt;Levels, &lt;&lt;ElseMissing &gt; )
 
 **Beschreibung:** Erzeugt eine Designmatrix, die eine Spalte mit Einsen (1) und Nullen (0) für alle bis auf den letzten eindeutigen Wert des Arguments enthält. Die letzte Stufe ist als Zeile mit Minus-Einsen (-1) codiert. Wenn das Argument levelsList angegeben ist, ist die letzte Stufe die letzte Stufe in levelsList. Ansonsten ist die letzte Stufe definiert als der größte Wert in v. Wenn das Argument <<Levels angegeben ist, ist der Rückgabewert eine Liste mit der Designmatrix und einer Liste der Stufen. Wenn das Argument <<ElseMissing angegeben ist, werden Werte im Argument v, die nicht in der levelsList erscheinen, in der Designmatrix als fehlend eingetragen. Ansonsten werden Nullen (0) in der Designmatrix eingetragen.
 
@@ -305,7 +303,7 @@ Show( Design Nom( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ### Design Ord
 
-**Syntax:** y = Design Ord( v, < levelsList|<<Levels, <<ElseMissing > )
+**Syntax:** y = Design Ord( v, &lt; levelsList|&lt;&lt;Levels, &lt;&lt;ElseMissing &gt; )
 
 **Beschreibung:** Erzeugt eine Designmatrix, die eine Spalte für alle bis auf den letzten eindeutigen Wert des Arguments enthält. Die erste Stufe ist als Zeile mit Nullen (0) codiert. Jede nachfolgende (n-te) Stufe im Argument levelsList ist als Zeile mit (n-1) Einsen (1) und dem Rest als Nullen (0) codiert. Wenn das Argument <<Levels angegeben ist, ist der Rückgabewert eine Liste mit der Designmatrix und einer Liste der Stufen. Wenn das Argument <<ElseMissing angegeben ist, werden Werte im Argument v, die nicht in der levelsList erscheinen, in der Designmatrix als fehlend eingetragen. Ansonsten werden Nullen (0) in der Designmatrix eingetragen.
 
@@ -341,7 +339,7 @@ Show( Design Ord( [1, 2, 3, 4, 5], {1, 2, 3, 4} ) );
 
 ### DesignF
 
-**Syntax:** y = DesignF( v, < levelsList|<<Levels, <<ElseMissing > )
+**Syntax:** y = DesignF( v, &lt; levelsList|&lt;&lt;Levels, &lt;&lt;ElseMissing &gt; )
 
 **Beschreibung:** Erzeugt eine Designmatrix, die eine Spalte mit Einsen (1) und Nullen (0) für alle bis auf den letzten eindeutigen Wert des Arguments enthält. Die letzte Stufe ist als Zeile mit Minus-Einsen (-1) codiert. Wenn das Argument levelsList angegeben ist, ist die letzte Stufe die letzte Stufe in levelsList. Ansonsten ist die letzte Stufe definiert als der größte Wert in v. Wenn das Argument <<Levels angegeben ist, ist der Rückgabewert eine Liste mit der Designmatrix und einer Liste der Stufen. Wenn das Argument <<ElseMissing angegeben ist, werden Werte im Argument v, die nicht in der levelsList erscheinen, in der Designmatrix als fehlend eingetragen. Ansonsten werden Nullen (0) in der Designmatrix eingetragen.
 
@@ -433,7 +431,7 @@ Show( exProd[4 :: 6, 4 :: 6] == (exB * 4) );
 
 ### Distance
 
-**Syntax:** y = Distance( x1, x2, <scales>, <powers> )
+**Syntax:** y = Distance( x1, x2, &lt;scales&gt;, &lt;powers&gt; )
 
 **Beschreibung:** Erzeugt eine Matrix der Abstände zwischen Zeilen von x1 und Zeilen von x2. Wenn Sie die Skalierung und Potenzen für jede Spalte benutzerspezifisch einrichten möchten, geben Sie die zusätzlichen Argumente scale und powers an. Für Kriging wird Exp(-distance(x1,x2)) verwendet.
 
@@ -581,7 +579,7 @@ E * Diag( M ) * E`;
 
 ### Eigen BLAS
 
-**Syntax:** z = Eigen BLAS( X, <nvec = ncol> )
+**Syntax:** z = Eigen BLAS( X, &lt;nvec = ncol&gt; )
 
 **JMP Version hinzugefügt:** 17
 
@@ -651,7 +649,7 @@ Estimate Factor Score(
 
 ### Fourier Basis Coef
 
-**Syntax:** coef = Fourier Basis Coef( x, Number Pairs, <Period = max(x)-min(x)+1> )
+**Syntax:** coef = Fourier Basis Coef( x, Number Pairs, &lt;Period = max(x)-min(x)+1&gt; )
 
 **Beschreibung:** Gibt die Matrix der Fourier-Basis-Koeffizienten zurück. Number Pairs ist die Anzahl von Sin()- und Cos()-Paaren für die Basis. Der optionale Parameter Period gibt die Periode für die trigonometrischen Funktionen an und hat den Standardwert Max(x) - Min(x) + 1.
 
@@ -704,7 +702,7 @@ Show( exProd[2, 1 :: 6] == Direct Product( exA[2, 1 :: 2], exB[2, 1 :: 3] ) );
 
 ### Hadamard
 
-**Syntax:** y = Hadamard( n, <normalize = 0> )
+**Syntax:** y = Hadamard( n, &lt;normalize = 0&gt; )
 
 **Beschreibung:** Erstellt eine Hadamard-Matrix der Ordnung n.
 
@@ -719,7 +717,7 @@ Show( Hadamard( 12 ), Hadamard( 12, 1 ) );
 
 ### Hough Line Transform
 
-**Syntax:** accum = Hough Line Transform( matrix, <NAngle(number)> <NRadius(number)> )
+**Syntax:** accum = Hough Line Transform( matrix, &lt;NAngle(number)&gt; &lt;NRadius(number)&gt; )
 
 **Beschreibung:** Gibt die Hough-Transformation zum Erkennen von Linien in Bilddaten zurück.
 
@@ -895,7 +893,7 @@ Identity( 2 );
 
 ### Index
 
-**Syntax:** ii = n1::n2; ii = n1::n2::n3; ii = Index( n1, n2, <n3=1>)
+**Syntax:** ii = n1::n2; ii = n1::n2::n3; ii = Index( n1, n2, &lt;n3=1&gt;)
 
 **Beschreibung:** Gibt eine Zeilenmatrix zurück, die die Folge der Werte von n1 bis n2 in Inkrementen von n3 zurückgibt.
 
@@ -940,7 +938,7 @@ Round( Inverse( [11 22, 33 44] ), 2 );
 
 ### Inv Update
 
-**Syntax:** y = Inv Update( S, X, <w=1> )
+**Syntax:** y = Inv Update( S, X, &lt;w=1&gt; )
 
 **Beschreibung:** Gibt eine aktualisierte inverse Matrix zurück, wobei das erste Argument S eine symmetrische positiv definite Matrix mit derselben Anzahl Spalten wie X ist, das zweite Argument X eine Matrix mit den hinzuzufügenden bzw. zu löschenden Zeilen ist und das dritte Argument w festlegt, ob Zeilen hinzuzufügen oder zu löschen sind (1 = Zeilen hinzufügen, -1 Zeilen löschen). Diese Funktion wird ausgewertet als S-w*S*X`*Inv(I+w*X*S*X`)*X*S, wobei I die Einheitsmatrix ist und Inv(A) die inverse Matrix von A bedeutet.
 
@@ -1018,7 +1016,7 @@ Is Matrix( [11 22 33] );
 
 ### J
 
-**Syntax:** y = J( nr, <nc>, <v> ); y = J( nr, nc ); y = J( n )
+**Syntax:** y = J( nr, &lt;nc&gt;, &lt;v&gt; ); y = J( nr, nc ); y = J( n )
 
 **Beschreibung:** Erstellt eine Matrix (nr x nc) von Werten, die vom dritten Argument bestimmt werden. Der Standardwert des zweiten Arguments ist gleich dem ersten Argument. Der Standardwert des dritten Arguments ist 1. Das dritte Argument kann jedoch eine Zahl, ein Variablenname einer Zahl oder JSL-Code sein. Wenn das dritte Argument Code ist, wird der Code ausgewertet und der Rückgabewert wird jedem Element in der Matrix zugewiesen, Element für Element, Zeile für Zeile.
 
@@ -1074,7 +1072,7 @@ tab = KDTable( [1 1 1, 1 2 1, 1 2 2, 2 2 2, 3 3 3, 4 5 6] );
 
 ### Least Squares Solve
 
-**Syntax:** {Beta, VarBeta} = Least Squares Solve(y, X, <<noIntercept, <<weights(optionalWeightVector), <<method("Sweep"|"GInv"))
+**Syntax:** {Beta, VarBeta} = Least Squares Solve(y, X, &lt;&lt;noIntercept, &lt;&lt;weights(optionalWeightVector), &lt;&lt;method("Sweep"|"GInv"))
 
 **Beschreibung:** Gibt eine Liste zurück, die einen Vektor der Schätzwerte, Beta = Inverse(X&apos;X)X&apos;y und die geschätzte Varianzmatrix von Beta enthält. Das optionale Argument <<noIntercept gibt ein Modell ohne Konstante an. Das optionale Argument <<weights gibt einen Vektor der Gewichtungen an, um gewichtete kleinste Quadrate durchzuführen. Das optionale Argument <<method ermöglicht Ihnen, zwischen der Standardmethode Sweep und einer verallgemeinerten inversen Methode ("GInv") zum Lösen der Normalgleichungen zu wählen.
 
@@ -1092,7 +1090,7 @@ X = [1, 2, 3, 4];
 
 ### Linear Regression
 
-**Syntax:** {Estimates, Std_Error, Diagnostics} = Linear Regression(y, X, <<noIntercept, <<printToLog, <<weight(WeightVector), <<freq(FrequencyVector)
+**Syntax:** {Estimates, Std_Error, Diagnostics} = Linear Regression(y, X, &lt;&lt;noIntercept, &lt;&lt;printToLog, &lt;&lt;weight(WeightVector), &lt;&lt;freq(FrequencyVector)
 
 **Beschreibung:** Passt eine lineare Regression für das angenommene Modell y = X * beta + error an. Das optionale Argument <<noIntercept gibt ein Modell ohne Konstante an. Das optionale Argument <<printToLog gibt an, dass eine Zusammenfassung der Anpassung im Logfenster dargestellt wird. Das optionale Argument weight gibt einen Vektor der Gewichtungen an, um gewichtete kleinste Quadrate durchzuführen, und das optionale Argument freq gibt einen Vektor der Häufigkeiten an. Gibt eine Liste mit Vektoren der Schätzwerte, einen Vektor der Standardfehler und eine Liste der Diagnose zurück. Die Liste der Diagnose enthält Vektoren der statistischen t- und p-Werte für die Schätzwerte sowie die r²- und korrigierten r²-Werte für die Regressionsanpassung.
 
@@ -1286,11 +1284,7 @@ AUpdate = Low Rank Symmetric Update BLAS( A, U, s );
 
 ### Matrix
 
-**Syntax:** y = Matrix( {{x11, ..., x1m}, {...}, {xn1, ..., xnm}} )
-
-y = Matrix( {x1, ..., xn} )
-
-y = Matrix( n, m )
+**Syntax:** y = Matrix( {{x11, ..., x1m}, {...}, {xn1, ..., xnm}} )y = Matrix( {x1, ..., xn} )y = Matrix( n, m )
 
 **Beschreibung:** Erzeugt eine n-x-m-Matrix. Wenn Sie eine Liste von n-Listen angeben, die jeweils m Zeilenwerte enthalten, wird die Matrix durch vertikale Verkettung der ausgewerteten Listen gebildet. Wenn Sie eine einzelne Liste von n Elementen angeben, ist der Rückgabewert ein n-x-1-Spaltenvektor. Wenn Sie zwei ganzzahlige Argumente angeben, ist der Rückgabewert eine Matrix aus Nullen, die n Zeilen und m Spalten enthält.
 
@@ -1474,7 +1468,7 @@ Print( NChooseK Matrix( 5, 3 ) );
 
 ### Ortho
 
-**Syntax:** L = Ortho( A, <Centered( 0 )>, <Scaled( 1 )> )
+**Syntax:** L = Ortho( A, &lt;Centered( 0 )&gt;, &lt;Scaled( 1 )&gt; )
 
 **Beschreibung:** Orthogonalisiert die Spalten einer Matrix. Option „Zentriert“ führt zur Summe 0. Option „Skaliert“ führt zur Einheitslänge.
 
@@ -1504,7 +1498,7 @@ Ortho Poly( 1 :: 10, 2 );
 
 ### P Spline Coef
 
-**Syntax:** coef = P Spline Coef( x, Internal Knot Grid, <degree = 3>, <KnotEndPoints = min(x) || max(x)> )
+**Syntax:** coef = P Spline Coef( x, Internal Knot Grid, &lt;degree = 3&gt;, &lt;KnotEndPoints = min(x) || max(x)&gt; )
 
 **Beschreibung:** Gibt die Matrix der P-Spline-Koeffizienten zurück. Internal Knot Grid ist entweder die Anzahl der gewünschten Knotenpunkte basierend auf Perzentilen von x oder ein Vektor, der die internen Knotenpunkte angibt. Der optionale Parameter degree gibt die Grade der P-Splines mit einem voreingestellten Wert von 3 an.
 
@@ -1539,7 +1533,7 @@ m;/* 1*1+1  1*1+2, 2*2+1  2*2+2, 3*3+1  3*3+2 */
 
 ### Print Matrix
 
-**Syntax:** s = Print Matrix( M, <<ignore locale( 0 ), <<style( "parseable" ), <<separate( ", " ), <<line begin( "[ " ), <<line end( " ]" ) )
+**Syntax:** s = Print Matrix( M, &lt;&lt;ignore locale( 0 ), &lt;&lt;style( "parseable" ), &lt;&lt;separate( ", " ), &lt;&lt;line begin( "[ " ), &lt;&lt;line end( " ]" ) )
 
 **Beschreibung:** Druckt die Matrix M. Das optionale Argument ignore locale legt fest, ob beim Drucken der Dezimaltrennzeichen das Gebietsschema berücksichtigt werden soll. Dabei bedeutet Null, dass das Gebietsschema berücksichtigt wird. Das optionale Argument style legt fest, ob ein Stil verwendet werden soll, und welcher Stil verwendet werden soll. Die verfügbaren Stile sind analysierbar (parseable), d.h. ein neu formatierter JSL-Matrixausdruck, latex und other. Wenn für das Argument style die Option other angegeben ist, definieren die letzten drei optionalen Argumente das Anfangs- und Endzeichen der gedruckten Zeilen und die Trennzeichen von verketteten Einträgen.
 
@@ -1609,7 +1603,7 @@ y = Quadratic Form BLAS( A, x );
 
 ### Random SVD
 
-**Syntax:** {U, M, V} = Random SVD( X , <nSingularValues=min(nRow,nCol)>, <nOver=10>, <nIter=2>)
+**Syntax:** {U, M, V} = Random SVD( X , &lt;nSingularValues=min(nRow,nCol)&gt;, &lt;nOver=10&gt;, &lt;nIter=2&gt;)
 
 **Beschreibung:** Berechnet die Singulärwertzerlegung der Matrix X mithilfe der randomisierten Singulärwertzerlegung, indem eine Liste {U, M, V} zurückgegeben wird, so dass U*diag(M)*V` gleich X ist.
 
@@ -1654,7 +1648,7 @@ Rank Index( [33, 22, 44, 11, ., 33] );
 
 ### Ranking
 
-**Syntax:** y = Ranking( x, < <<tie("average"|"row"|"minimum"|"maximum"|"arbitrary")> )
+**Syntax:** y = Ranking( x, &lt; &lt;&lt;tie("average"|"row"|"minimum"|"maximum"|"arbitrary")&gt; )
 
 **Beschreibung:** Gibt einen Vektor der Ränge der Werte von x zurück, zwischen niedrig und hoch von 1 bis n, bei Ranggleichheit arbiträr.
 
@@ -1670,7 +1664,7 @@ Ranking( [22, 11, 33, 11, 44, 55, 44, 44, 44], <<Tie( "minimum" ) );
 
 ### Ranking Tie
 
-**Syntax:** y = Ranking Tie( x, < <<tie("average"|"row"|"minimum"|"maximum"|"arbitrary")> )
+**Syntax:** y = Ranking Tie( x, &lt; &lt;&lt;tie("average"|"row"|"minimum"|"maximum"|"arbitrary")&gt; )
 
 **Beschreibung:** Gibt einen Vektor von Rängen der Werte von x zurück, Ränge bei Ranggleichheit gemittelt.
 
@@ -1685,7 +1679,7 @@ Ranking Tie( [33, 22, 44, 11, 33] );
 
 ### Robust PCA
 
-**Syntax:** {A,E} = Robust PCA( X , <Lambda(2/sqrt(max(nrow,ncol)))>, <tolerance=1e-10>,<maxit(75)>,<Center(1)>,<Scale(1)>
+**Syntax:** {A,E} = Robust PCA( X , &lt;Lambda(2/sqrt(max(nrow,ncol)))&gt;, &lt;tolerance=1e-10&gt;,&lt;maxit(75)&gt;,&lt;Center(1)&gt;,&lt;Scale(1)&gt;
 
 **Beschreibung:** Zerlegt robuste Daten in eine Matrix niederen Ranges und eine dünn besetzte Matrix der Residuen. Ausreißer werden in den Residuen erkannt. Es können auch fehlende Werte eingesetzt werden.
 
@@ -1752,7 +1746,7 @@ Scoring Impute(
 
 ### Shape
 
-**Syntax:** r = Shape( M, nr, <nc>, <<bycol)
+**Syntax:** r = Shape( M, nr, &lt;nc&gt;, &lt;&lt;bycol)
 
 **Beschreibung:** Formt die Matrix M oder den Skalar über Zeilen in nr Zeilen x nc Spalten um. Ein fehlender Wert ist zulässig für nr. Daten von M werden nach Bedarf repliziert, um die Matrix nr x nc zu füllen. Das optionale Argument <<bycol füllt die Daten nach Spalte. Standardmäßig werden die Daten nach Zeile gefüllt. Häufig verwendet zur Umformung eines Vektors in eine Matrix oder zur Vektorisierung einer Matrix.
 
@@ -1815,7 +1809,7 @@ Sort Descending( {111, 212, 133, 114, 55} );
 
 ### Sparse SVD
 
-**Syntax:** {U, M, V} = Sparse SVD( X , <nSingularValues=min(nRow,nCol)>, <tolerance=1e-10>)
+**Syntax:** {U, M, V} = Sparse SVD( X , &lt;nSingularValues=min(nRow,nCol)&gt;, &lt;tolerance=1e-10&gt;)
 
 **Beschreibung:** Berechnet die Singulärwertzerlegung der Matrix X mithilfe der implizit neu gestarteten, teilweise reorthogonalisierten Lanczos-Methode für dünnbesetzte Matrizen, indem eine Liste {U, M, V} zurückgegeben wird, so dass U*diag(M)*V` gleich X ist.
 
@@ -1830,7 +1824,7 @@ Sparse SVD( [11 22, 33 44], 1, 1e-8 );
 
 ### Spline Coef
 
-**Syntax:** coef = Spline Coef( x, y, lambda, <weights> )
+**Syntax:** coef = Spline Coef( x, y, lambda, &lt;weights&gt; )
 
 **Beschreibung:** Returns a five-column matrix of coefficients in the following order: knots||a||b||c||d for each of the unique values in x. The smoothing parameter lambda must be a positive value, where larger values of lambda result in greater stiffness of the spline. The optional weights vector specifies a weight for each value in x. A weight of zero removes the corresponding point from the spline fit.
 
@@ -1845,7 +1839,7 @@ Spline Eval( 0 :: 10, Spline Coef( 0 :: 10, Sqrt( 0 :: 10 ), 100 ) );
 
 ### Spline Eval
 
-**Syntax:** yhat = Spline Eval( x, coef, <extrapolation=-1> )
+**Syntax:** yhat = Spline Eval( x, coef, &lt;extrapolation=-1&gt; )
 
 **Beschreibung:** Wertet die Spline-Vorhersagen mithilfe der Matrix coef in der gleichen Form aus wie von der Funktion Spline Coef() zurückgegeben. extrapolation zeigt an, wie weit über den Spline-Bereich hinaus, angegeben als Bruchteil des Bereichs, die Auswertung ausgedehnt werden muss, bevor fehlende Werte zurückgegeben werden.
 
@@ -1880,7 +1874,7 @@ New Window( "Spline Fit",
 
 ### Spline Smooth
 
-**Syntax:** yhat = Spline Smooth( x, y, lambda, <weights> )
+**Syntax:** yhat = Spline Smooth( x, y, lambda, &lt;weights&gt; )
 
 **Beschreibung:** Returns the smoothed predicted values from a spline fit. The smoothing parameter lambda must be a positive value, where larger values of lambda result in greater stiffness of the spline. The optional weights vector specifies a weight for each value in x. A weight of zero removes the corresponding point from the spline fit.
 
@@ -1895,7 +1889,7 @@ Spline Smooth( 0 :: 10, Sqrt( 0 :: 10 ), 100 );
 
 ### Sweep
 
-**Syntax:** y = Sweep( A, <indices> )
+**Syntax:** y = Sweep( A, &lt;indices&gt; )
 
 **Beschreibung:** Gibt den Sweep der Matrix A auf diagonalen Pivots zurück, die von indices angegeben werden. Auf diese Weise kann eine Matrix pivotweise invertiert werden.
 
@@ -2074,7 +2068,7 @@ V Quantile( [11 22, 33 44, 35 46, 55 66], .25 );
 
 ### V Robust Standardize
 
-**Syntax:** b = V Robust Standardize( X, <center=1>, <scale=1> )
+**Syntax:** b = V Robust Standardize( X, &lt;center=1&gt;, &lt;scale=1&gt; )
 
 **Beschreibung:** Gibt eine Matrix zurück, die durch den Median zentriert und durch einen robusten Schätzer der Standardabweichung der Matrix X skaliert ist. Die optionalen Booleschen Argumente geben an, ob Zentrierung und Skalierung durchgeführt werden.
 
@@ -2151,7 +2145,7 @@ tab = VPTree( [1 1 1, 1 2 1, 1 2 2, 2 2 2, 3 3 3, 4 5 6] );
 
 ### Varimax
 
-**Syntax:** {R,T} = Varimax( F, <norm=1> )
+**Syntax:** {R,T} = Varimax( F, &lt;norm=1&gt; )
 
 **Beschreibung:** Führt eine Varimax-Rotation der angegebenen Matrix F durch. Gibt eine Liste zurück, die die rotierte Matrix und die orthogonale Rotationsmatrix enthält. Standardmäßig wird eine normalisierte Varimax-Rotation durchgeführt. Geben Sie norm = 0 an, um eine nicht-normalisierte Varimax-Rotation durchzuführen.
 
@@ -2198,7 +2192,7 @@ Vec Quadratic( exS, exX );
 
 ### Wavelet Basis Coef
 
-**Syntax:** y = Wavelet Basis Coef( x, grid, coef, <wavelet = "Haar" or "Biorthogonal" or "Coiflet" or "Daubechies" or "Symlet">, <param = 0> )
+**Syntax:** y = Wavelet Basis Coef( x, grid, coef, &lt;wavelet = "Haar" or "Biorthogonal" or "Coiflet" or "Daubechies" or "Symlet"&gt;, &lt;param = 0&gt; )
 
 **Beschreibung:** Gibt die Vorhersage an den Punkten x für das angegebene Wavelet-Modell zurück. Der Parameter grid ist ein Vektor, der das Raster der Daten für das Wavelet-Modell angibt. Der Parameter coef ist ein Vektor von Wavelet-Koeffizienten. Der Parameter wavelet ist der Name des Wavelet-Modells. Der optionale Parameter param ist der Wavelet-Modellparameter (sofern notwendig, Standardwert ist 0).
 

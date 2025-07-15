@@ -6,7 +6,7 @@
 
 ### Create Folder
 
-**구문:** liveresult = liveconnection << Create Folder(Title(folder_title), Parent Folder(id | path | JMP Live Folder), <Description(folder_description)>, <If Exists("use" | "fail" | "default")>)
+**구문:** liveresult = liveconnection &lt;&lt; Create Folder(Title(folder_title), Parent Folder(id | path | JMP Live Folder), &lt;Description(folder_description)&gt;, &lt;If Exists("use" | "fail" | "default")&gt;)
 
 **설명:** JMP Live에 새 폴더를 생성합니다. 반환된 JMP Live 결과 개체를 사용하여 새 폴더에 대한 JMP Live 폴더 개체를 얻을 수 있습니다. &apos;Title&apos;과 &apos;Parent Folder&apos;는 필수 파라미터이며 &apos;Parent Folder&apos;를 &apos;Parent&apos; 또는 &apos;Folder&apos;로 줄일 수 있습니다. &apos;Description&apos;은 선택적입니다. &apos;If Exists&apos;는 지정된 폴더가 이미 있는 경우 JMP Live에서 수행할 작업을 설정합니다. "use"는 기존 폴더를 반환하고, "fail"은 오류를 발생시키고, "default"는 새 폴더를 생성한 후 "(2)", "(3)" 등을 추가하여 고유한 이름을 지정합니다.
 
@@ -84,7 +84,7 @@ Show( subFolder2 );
 
 ### Delete Data
 
-**구문:** jmpliveresult = liveconnection << Delete Data(id | path | JMP Live Data)
+**구문:** jmpliveresult = liveconnection &lt;&lt; Delete Data(id | path | JMP Live Data)
 
 **설명:** 지정된 데이터 게시물을 삭제합니다. 작업이 성공하면 1을 반환하고 그렇지 않으면 0을 반환합니다.
 
@@ -134,7 +134,7 @@ If( result == 1,
 
 ### Delete Folder
 
-**구문:** jmpliveresult = liveconnection << Delete Folder(id | path | JMP Live Folder)
+**구문:** jmpliveresult = liveconnection &lt;&lt; Delete Folder(id | path | JMP Live Folder)
 
 **설명:** 지정된 폴더를 삭제합니다. 작업이 성공하면 1을 반환하고 그렇지 않으면 0을 반환합니다.
 
@@ -184,7 +184,7 @@ If( result == 1,
 
 ### Delete Report
 
-**구문:** jmpliveresult = liveconnection << Delete Report(id | path | JMP Live Report)
+**구문:** jmpliveresult = liveconnection &lt;&lt; Delete Report(id | path | JMP Live Report)
 
 **설명:** 지정된 보고서를 삭제합니다. 작업이 성공하면 1을 반환하고 그렇지 않으면 0을 반환합니다.
 
@@ -234,7 +234,7 @@ If( result == 1,
 
 ### Find Folders
 
-**구문:** jmpliveresult = liveconnection << Find Folders(<Search(search_string)>, <Publisher(user_name)>, <PageSize(val)>)
+**구문:** jmpliveresult = liveconnection &lt;&lt; Find Folders(&lt;Search(search_string)&gt;, &lt;Publisher(user_name)&gt;, &lt;PageSize(val)&gt;)
 
 **설명:** 검색 문자열, 게시자 또는 둘 다 사용하여 폴더를 찾습니다. 개별 폴더를 참조하는 데 사용할 수 있는 JMP Live 결과 목록이 반환되며 이 목록에서 후속 Next() 호출을 실행하여 더 많은 폴더를 반환할 수 있습니다. PageSize는 반환할 폴더 수를 지정하며 기본값은 10입니다. 모든 검색 파라미터는 선택적이며 아무것도 지정하지 않으면 모든 폴더가 반환됩니다.
 
@@ -291,7 +291,7 @@ For( i = 1, i <= folderlist << Get Number Of Items, i += 1,
 
 ### Find Posts
 
-**구문:** jmpliveresult = liveconnection << Find Posts(<Search(search_string)>, <Publisher(user_name)>, <PageSize(val)>)
+**구문:** jmpliveresult = liveconnection &lt;&lt; Find Posts(&lt;Search(search_string)&gt;, &lt;Publisher(user_name)&gt;, &lt;PageSize(val)&gt;)
 
 **설명:** 검색 문자열, 게시자 또는 둘 다 사용하여 게시물(폴더, 보고서, 데이터를 포함한 모든 항목)을 찾습니다. 개별 게시물을 참조하는 데 사용할 수 있는 JMP Live 결과 목록이 반환되며 이 목록에서 후속 Next() 호출을 실행하여 더 많은 게시물을 반환할 수 있습니다. PageSize는 반환할 게시물을 수를 지정하며 기본값은 10입니다. 모든 검색 파라미터는 선택적이며 아무것도 지정하지 않으면 모든 게시물이 반환됩니다.
 
@@ -370,7 +370,7 @@ For( i = 1, i <= postlist << Get Number Of Items, i += 1,
 
 ### Find Reports
 
-**구문:** jmpliveresult = liveconnection << Find Reports(<Search(search_string)>, <Publisher(user_name)>, <PageSize(val)>)
+**구문:** jmpliveresult = liveconnection &lt;&lt; Find Reports(&lt;Search(search_string)&gt;, &lt;Publisher(user_name)&gt;, &lt;PageSize(val)&gt;)
 
 **설명:** 검색 문자열, 게시자 또는 둘 다 사용하여 보고서를 찾습니다. 개별 보고서를 참조하는 데 사용할 수 있는 JMP Live 결과 목록이 반환되며 이 목록에서 후속 Next() 호출을 실행하여 더 많은 보고서를 반환할 수 있습니다. PageSize는 반환할 보고서 수를 지정하며 기본값은 10입니다. 모든 검색 파라미터는 선택적이며 아무것도 지정하지 않으면 모든 보고서가 반환됩니다.
 
@@ -446,7 +446,7 @@ For( i = 1, i <= reportlist << Get Number Of Items, i += 1,
 
 ### Find Spaces
 
-**구문:** jmpliveresult = liveconnection << Find Spaces(<Permissions( "Contribute" )>, <Search(search_string)>, <PageSize(val)>)
+**구문:** jmpliveresult = liveconnection &lt;&lt; Find Spaces(&lt;Permissions( "Contribute" )&gt;, &lt;Search(search_string)&gt;, &lt;PageSize(val)&gt;)
 
 **설명:** 선택적 검색 문자열과 선택적 &apos;권한&apos; 파라미터로 공간을 찾아서 기여를 허용하는 공간으로만 추가 필터링을 수행합니다. 현재 지원되는 권한 값은 &apos;기여&apos; 권한뿐입니다. 목록 내의 개별 공간을 참조하는 데 사용할 수 있는 JMP Live 결과 목록을 반환합니다. 결과 목록에 반환할 공간 항목 수를 나타내기 위해 페이징 값을 지정할 수 있습니다. 이 결과 목록에서 추가 Next() 호출을 실행하여 더 많은 공간을 가져올 수 있습니다.
 
@@ -494,7 +494,7 @@ For( i = 1, i <= spaceList << Get Number Of Items, i += 1,
 
 ### Get Connection Name
 
-**구문:** string = liveconnection << Get Connection Name()
+**구문:** string = liveconnection &lt;&lt; Get Connection Name()
 
 **설명:** JMP Live 연결 이름을 문자열로 가져옵니다.
 
@@ -511,7 +511,7 @@ Write( "Connection Name: ", connectionname );
 
 ### Get Data
 
-**구문:** liveresult = liveconnection << Get Data(id | path)
+**구문:** liveresult = liveconnection &lt;&lt; Get Data(id | path)
 
 **설명:** 데이터 게시물을 JMP Live 결과 개체로 가져와 해당 게시물에 대한 JMP Live 데이터 개체를 얻는 데 사용할 수 있습니다.
 
@@ -556,7 +556,7 @@ Write( "\!n\!nData post retrieved by path: ", dataPost );
 
 ### Get Folder
 
-**구문:** liveresult = liveconnection << Get Folder(id | path)
+**구문:** liveresult = liveconnection &lt;&lt; Get Folder(id | path)
 
 **설명:** 폴더 개체를 JMP Live 결과 개체로 가져와 해당 폴더에 대한 JMP Live 폴더 개체를 얻는 데 사용할 수 있습니다.
 
@@ -589,7 +589,7 @@ Write( "\!n\!nPath of retrieved folder: ", retrieved << Get Path );
 
 ### Get HTTP Request
 
-**구문:** httprequest = liveconnection << Get HTTP Request()
+**구문:** httprequest = liveconnection &lt;&lt; Get HTTP Request()
 
 **설명:** JMP Live REST 함수를 호출하는 데 사용할 수 있는 HTTP 요청 인스턴스를 반환합니다.
 
@@ -608,7 +608,7 @@ httprequest << Get Status Message();
 
 ### Get Post
 
-**구문:** liveresult = liveconnection << Get Post(id | path)
+**구문:** liveresult = liveconnection &lt;&lt; Get Post(id | path)
 
 **설명:** 게시물을 JMP Live 결과 개체로 가져와 해당 게시물에 대한 JMP Live 게시물 개체를 얻는 데 사용할 수 있습니다.
 
@@ -647,7 +647,7 @@ Write( "\!n\!nPost retrieved by path: ", postByPath );
 
 ### Get Report
 
-**구문:** liveresult = liveconnection << Get Report(id | path)
+**구문:** liveresult = liveconnection &lt;&lt; Get Report(id | path)
 
 **설명:** 보고서 게시물을 JMP Live 결과 개체로 가져와 해당 게시물에 대한 JMP Live 보고서 개체를 얻는 데 사용할 수 있습니다.
 
@@ -692,7 +692,7 @@ Write( "\!n\!nReport post retrieved by path: ", reportPost );
 
 ### Get URL
 
-**구문:** string = liveconnection << Get URL()
+**구문:** string = liveconnection &lt;&lt; Get URL()
 
 **설명:** 가능한 경우 JMP Live 사이트에 대한 URL을 가져옵니다.
 
@@ -709,7 +709,7 @@ Write( "URL: ", url );
 
 ### Get Username
 
-**구문:** string = liveconnection << Get Username()
+**구문:** string = liveconnection &lt;&lt; Get Username()
 
 **설명:** 가능한 경우 JMP Live 개체에서 사용자 이름을 가져옵니다.
 
@@ -726,7 +726,7 @@ Write( "Username: ", username );
 
 ### Is Logged In
 
-**구문:** value = liveconnection << Is Logged In()
+**구문:** value = liveconnection &lt;&lt; Is Logged In()
 
 **설명:** 인증된 세션이 서버에 설정되었는지 여부를 나타냅니다. 작업이 성공하면 1을 반환하고 그렇지 않으면 0을 반환합니다.
 
@@ -743,7 +743,7 @@ Write( "Logged In: ", isloggedin );
 
 ### Publish
 
-**구문:** liveresult = liveconnection << Publish(JMPLiveContent, Folder(id | path | JMP Live Folder), <Use Existing Data({{dt_or_name, data_id | data_path | JMP Live Data}})>)
+**구문:** liveresult = liveconnection &lt;&lt; Publish(JMPLiveContent, Folder(id | path | JMP Live Folder), &lt;Use Existing Data({{dt_or_name, data_id | data_path | JMP Live Data}})&gt;)
 
 **설명:** 보고서 또는 독립형 데이터를 JMP Live에 게시하고 JMP Live 결과 목록 개체를 반환합니다. 콘텐츠를 게시할 JMP Live 폴더를 지정해야 합니다. 하나의 Publish 명령에 보고서와 독립형 데이터를 함께 사용할 수 없습니다. JMP Live에 이미 있는 데이터를 사용하는 보고서를 게시할 경우 선택적 &apos;Use Existing Data&apos; 파라미터로 지정할 수 있습니다. 독립형 데이터를 게시할 때는 &apos;Use Existing Data&apos; 파라미터를 사용할 수 없습니다.
 
@@ -921,7 +921,7 @@ For( i = 1, i <= postlist << Get Number Of Items, i += 1,
 
 ### Replace
 
-**구문:** liveresult = liveconnection << Replace(JMPLiveContent, Report(id | path | JMP Live Report), <Use Existing Data({{dt_or_name, data_id | data_path | JMP Live Data}})>, <Update Existing Data({{dt_or_name, data_id | data_path | JMP Live Data}})>, <Publish New Data({dt_or_name})> )
+**구문:** liveresult = liveconnection &lt;&lt; Replace(JMPLiveContent, Report(id | path | JMP Live Report), &lt;Use Existing Data({{dt_or_name, data_id | data_path | JMP Live Data}})&gt;, &lt;Update Existing Data({{dt_or_name, data_id | data_path | JMP Live Data}})&gt;, &lt;Publish New Data({dt_or_name})&gt; )
 
 **설명:** 기존 JMP Live 보고서를 다른 보고서로 바꿉니다. 보고서에 제공되는 데이터를 다루는 방법을 지정하기 위해 데이터 옵션이 필요합니다. "Use Existing Data"는 JMP Live의 기존 데이터를 지정된 데이터에 사용하도록 서버에 지시합니다. "Update Existing Data"는 서버의 데이터를 명령에 제공된 데이터로 바꾸도록 서버에 지시합니다. "Publish New Data"는 새 데이터 테이블을 게시하고 대체할 보고서에 이를 사용하도록 서버에 지시합니다. "Publish New Data"가 모든 데이터 테이블의 기본 데이터 옵션이며 데이터 옵션을 조합하여 지정할 수 있습니다. JMP Live 결과 목록 개체가 반환됩니다.
 
@@ -1029,7 +1029,7 @@ Write( "\!n\!nOpen this URL to see results: ", folderURL );
 
 ### Update Data
 
-**구문:** jmpliveresult = liveconnection << Update Data( Data(id | path | JMP Live Data), dataTable | path | JMPLiveContent )
+**구문:** jmpliveresult = liveconnection &lt;&lt; Update Data( Data(id | path | JMP Live Data), dataTable | path | JMPLiveContent )
 
 **설명:** 데이터 게시물의 데이터 테이블이나 맵을 제공된 콘텐츠로 업데이트합니다. &apos;Data&apos; 파라미터는 업데이트할 JMP Live 데이터를 식별합니다. 두 번째 파라미터는 업데이트에 사용할 콘텐츠이며 데이터 테이블 개체, 데이터 테이블 경로 또는 데이터 테이블이나 맵에서 생성된 JMP Live 콘텐츠 개체가 될 수 있습니다.
 

@@ -6,7 +6,7 @@
 
 ### Action
 
-**構文:** obj << Action
+**構文:** obj &lt;&lt; Action
 
 **説明:** 評価する式を挿入するための、プラットフォーム内の汎用トラップドア。プラットフォームに一時的にディスプレイボックスおよびデータテーブルのコンテキストを設定する。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**構文:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**構文:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **説明:** 作成されたプリセットをオブジェクトに適用する。保存された設定に合わせてオプションとカスタマイズが更新される。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**構文:** obj << Automatic Recalc( state=0|1 )
+**構文:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **説明:** データの除外や変更があった場合に分析を自動的にやり直す。Automatic Recalcオプションがオンになっている場合で、データの除外や変更が再計算の前に確実に適用されるようにするには、Wait(0)コマンドを使用すること。
 
@@ -87,7 +87,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**構文:** obj << Broadcast(message)
+**構文:** obj &lt;&lt; Broadcast(message)
 
 **説明:** メッセージをプラットフォームに一括適用する。個々のオブジェクトから戻される結果がデータテーブルである場合は、可能な限り連結する。その最終的な形式は、Table BoxのSave Combined Tableオプションの結果と同じになるか、またはソース列を使用したConcanateオプションの結果と同じになる。それ以外の場合、結果はリストの形で戻される。
 
@@ -107,7 +107,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**構文:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**構文:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **説明:** プラットフォームの変数を変更するための設定パネルを追加する。
 
@@ -125,7 +125,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**構文:** obj << Copy ByGroup Script
+**構文:** obj &lt;&lt; Copy ByGroup Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -150,7 +150,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**構文:** obj << Copy Script
+**構文:** obj &lt;&lt; Copy Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -165,7 +165,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**構文:** obj << Data Table Window
+**構文:** obj &lt;&lt; Data Table Window
 
 **説明:** この分析に使用したデータテーブルのウィンドウを手前に表示する。
 
@@ -180,7 +180,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**構文:** obj << Get By Levels
+**構文:** obj &lt;&lt; Get By Levels
 
 **説明:** By列が指定されている場合、列名をキー、データ値を値とした連想配列を戻す。
 
@@ -197,7 +197,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**構文:** obj << Get ByGroup Script
+**構文:** obj &lt;&lt; Get ByGroup Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -223,7 +223,7 @@ Show( t );
 
 ### Get Container
 
-**構文:** obj << Get Container
+**構文:** obj &lt;&lt; Get Container
 
 **説明:** オブジェクトのコンテンツを含んだコンテナボックスの参照を戻す。
 
@@ -270,7 +270,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**構文:** obj << Get Data Table
+**構文:** obj &lt;&lt; Get Data Table
 
 **説明:** データテーブルへの参照を戻す。
 
@@ -286,7 +286,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**構文:** obj << Get Group Platform
+**構文:** obj &lt;&lt; Get Group Platform
 
 **説明:** 該当のプラットフォームがグループに属している場合に、Group Platformオブジェクトを戻す。それ以外の場合はEmpty()を戻す。
 
@@ -303,7 +303,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**構文:** obj << Get Script
+**構文:** obj &lt;&lt; Get Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -319,7 +319,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**構文:** obj << Get Script With Data Table
+**構文:** obj &lt;&lt; Get Script With Data Table
 
 **説明:** この分析を再現するスクリプト(JSL)をデータテーブルへの参照も含めて生成し、それを式として戻す。
 
@@ -335,7 +335,7 @@ Show( t );
 
 ### Get Timing
 
-**構文:** obj << Get Timing
+**構文:** obj &lt;&lt; Get Timing
 
 **説明:** プラットフォームの起動にかかった時間を取得する。
 
@@ -351,7 +351,7 @@ Show( t );
 
 ### Get Web Support
 
-**構文:** obj << Get Web Support
+**構文:** obj &lt;&lt; Get Web Support
 
 **説明:** ディスプレイオブジェクトにおけるインタラクティブHTMLサポートのレベルを数値で戻す。1は、一部または全部の要素がサポートされていることを示し、0は、サポートされないことを示す。
 
@@ -367,7 +367,7 @@ Show( s );
 
 ### Get Where Expr
 
-**構文:** obj << Get Where Expr
+**構文:** obj &lt;&lt; Get Where Expr
 
 **説明:** プラットフォームがBy()またはWhere()を使って起動された場合に、データをサブセットするためのWhere式を戻す。By()やWhere()が使われていない場合はEmpty()を戻す。
 
@@ -404,7 +404,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**構文:** obj << Local Data Filter
+**構文:** obj &lt;&lt; Local Data Filter
 
 **説明:** このプラットフォームに対してのみ有効なフィルタで、データを特定のグループまたは範囲にフィルタリングする。
 
@@ -460,7 +460,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**構文:** obj << Paste Local Data Filter
+**構文:** obj &lt;&lt; Paste Local Data Filter
 
 **説明:** クリップボードにあるローカルデータフィルタを現在のレポートに適用する。
 
@@ -481,7 +481,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**構文:** obj << Redo Analysis
+**構文:** obj &lt;&lt; Redo Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -496,7 +496,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**構文:** obj << Redo ByGroup Analysis
+**構文:** obj &lt;&lt; Redo ByGroup Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -521,7 +521,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**構文:** obj << Relaunch Analysis
+**構文:** obj &lt;&lt; Relaunch Analysis
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -536,7 +536,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**構文:** obj << Relaunch ByGroup
+**構文:** obj &lt;&lt; Relaunch ByGroup
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -561,7 +561,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**構文:** obj << Remove Column Switcher
+**構文:** obj &lt;&lt; Remove Column Switcher
 
 **説明:** プラットフォームに最後に追加された列スイッチャーを削除する。
 
@@ -581,7 +581,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**構文:** obj << Remove Local Data Filter
+**構文:** obj &lt;&lt; Remove Local Data Filter
 
 **説明:** すでに作成されているローカルデータフィルタを削除し、プラットフォームはデータテーブル内のすべてのデータを使用した状態に戻る。
 
@@ -620,9 +620,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**構文:** obj << Report;
-
-Report( obj )
+**構文:** obj &lt;&lt; Report;Report( obj )
 
 **説明:** レポートオブジェクトへの参照を戻す。
 
@@ -639,7 +637,7 @@ Show( t );
 
 ### Report View
 
-**構文:** obj << Report View( "完全"|"要約" )
+**構文:** obj &lt;&lt; Report View( "完全"|"要約" )
 
 **説明:** レポートビューは、プラットフォームレポートの詳細を表示するかどうかを決定する。Fullはすべての詳細を表示し、Summaryはプラットフォームにより限定されたものだけを表示する。 動作をカスタマイズするため、各ディスプレイボックスは<<Set Summary Behaviorメッセージをサポートする。
 
@@ -654,7 +652,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**構文:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** 分析を再現するためのJSLスクリプトを作成し、データテーブルにテーブルプロパティとして保存する。スクリプトの名前を指定できる。Append Suffixオプションは、スクリプト名に数字の接尾辞を追加する。これにより、同名のスクリプトが存在していても区別できる。Promptオプションは、ユーザにスクリプト名の指定を促す。Replaceオプションは、同名の既存のスクリプトを置き換える。
 
@@ -679,7 +677,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**構文:** obj << Save ByGroup Script to Journal
+**構文:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -704,7 +702,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**構文:** obj << Save ByGroup Script to Script Window
+**構文:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -729,7 +727,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**構文:** obj << Save Script for All Objects
+**構文:** obj &lt;&lt; Save Script for All Objects
 
 **説明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -744,7 +742,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**構文:** obj << Save Script for All Objects To Data Table( <name> )
+**構文:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **説明:** すべてのレポートオブジェクトを再現するスクリプトを現在のデータテーブルに保存する。このオプションは、ウィンドウ内にレポートが複数ある場合に便利。作成されるスクリプトの名前は、引用符で囲んで指定しない限り、1つ目のプラットフォーム名となる。
 
@@ -792,7 +790,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**構文:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** この分析を再現するJSLスクリプトを生成し、データテーブルのテーブルプロパティとして保存する。
 
@@ -807,7 +805,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**構文:** obj << Save Script to Journal
+**構文:** obj &lt;&lt; Save Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -822,7 +820,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**構文:** obj << Save Script to Report
+**構文:** obj &lt;&lt; Save Script to Report
 
 **説明:** この分析を再現するJSLスクリプトを生成し、レポートウィンドウに表示する。分析手順の記録を結果と一緒に残せる。
 
@@ -837,7 +835,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**構文:** obj << Save Script to Script Window
+**構文:** obj &lt;&lt; Save Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -917,7 +915,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**構文:** obj << Sync to Data Table Changes
+**構文:** obj &lt;&lt; Sync to Data Table Changes
 
 **説明:** 除外やデータの変更が行われた場合に同期する。
 
@@ -934,7 +932,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**構文:** obj << Title( "new title" )
+**構文:** obj &lt;&lt; Title( "new title" )
 
 **説明:** プラットフォームのタイトルを設定する。
 
@@ -949,7 +947,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**構文:** obj << Top Report
+**構文:** obj &lt;&lt; Top Report
 
 **説明:** レポート内のルートノードへの参照を戻す。
 
@@ -966,7 +964,7 @@ Show( t );
 
 ### Transform Column
 
-**構文:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**構文:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **説明:** オブジェクトのローカルコンテキスト(通常はプラットフォーム)内に変換列を作成する。この変換列は、それを作成したプラットフォームの中のみで使用可能。
 
@@ -985,7 +983,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**構文:** obj << View Web XML
+**構文:** obj &lt;&lt; View Web XML
 
 **説明:** インタラクティブHTMLレポートの作成に使うXMLコードを戻す。
 
@@ -1021,7 +1019,7 @@ New Window( "Bivariate Equation",
 
 ### By
 
-**構文:** obj = Functional Data Explorer(...<By( column(s) )>...)
+**構文:** obj = Functional Data Explorer(...&lt;By( column(s) )&gt;...)
 
 **説明:** 指定された列の各水準に対して、個別に分析を実行する。
 
@@ -1047,7 +1045,7 @@ obj = dt << Functional Data Explorer(
 
 ### Freq
 
-**構文:** obj = Functional Data Explorer(...<Freq( column )>...)
+**構文:** obj = Functional Data Explorer(...&lt;Freq( column )&gt;...)
 
 **説明:** 分析の際に各行の度数として用いる値の列を指定する。
 
@@ -1069,7 +1067,7 @@ obj = dt << Functional Data Explorer(
 
 ### Function
 
-**構文:** obj = Functional Data Explorer(...<Function( column )>...)
+**構文:** obj = Functional Data Explorer(...&lt;Function( column )&gt;...)
 
 **説明:** ID変数を指定する。このID変数は、個々の関数を識別するために使われる。
 
@@ -1085,7 +1083,7 @@ obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME 
 
 ### ID
 
-**構文:** obj = Functional Data Explorer(...<ID( column )>...)
+**構文:** obj = Functional Data Explorer(...&lt;ID( column )&gt;...)
 
 **説明:** ID変数を指定する。このID変数は、個々の関数を識別するために使われる。
 
@@ -1101,7 +1099,7 @@ obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME 
 
 ### Input
 
-**構文:** obj = Functional Data Explorer(...<Input( column )>...)
+**構文:** obj = Functional Data Explorer(...&lt;Input( column )&gt;...)
 
 **説明:** 入力変数を指定する。
 
@@ -1133,7 +1131,7 @@ obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME 
 
 ### Supplementary
 
-**構文:** obj = Functional Data Explorer(...<Supplementary( column(s) )>...)
+**構文:** obj = Functional Data Explorer(...&lt;Supplementary( column(s) )&gt;...)
 
 **説明:** 追加変数を指定する。追加変数は、モデルの推定には使用されないため、追加変数を含めても推定結果には影響しない。追加変数は、データの解釈やその後の分析に役立つ。
 
@@ -1155,7 +1153,7 @@ obj = dt << Functional Data Explorer(
 
 ### Validation
 
-**構文:** obj = Functional Data Explorer(...<Validation( column )>...)
+**構文:** obj = Functional Data Explorer(...&lt;Validation( column )&gt;...)
 
 **説明:** 検証セットを定義する数値列を指定する。異なる値が3つ以下の列でなければならない。
 
@@ -1177,7 +1175,7 @@ obj = dt << Functional Data Explorer(
 
 ### X
 
-**構文:** obj = Functional Data Explorer(...<X( column )>...)
+**構文:** obj = Functional Data Explorer(...&lt;X( column )&gt;...)
 
 **説明:** 入力変数を指定する。
 
@@ -1209,7 +1207,7 @@ obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME 
 
 ### Z
 
-**構文:** obj = Functional Data Explorer(...<Z( column(s) )>...)
+**構文:** obj = Functional Data Explorer(...&lt;Z( column(s) )&gt;...)
 
 **説明:** 追加変数を指定する。追加変数は、モデルの推定には使用されないため、追加変数を含めても推定結果には影響しない。追加変数は、データの解釈やその後の分析に役立つ。
 
@@ -1249,7 +1247,7 @@ obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME 
 
 ### B Splines
 
-**構文:** obj << B Splines
+**構文:** obj &lt;&lt; B Splines
 
 **説明:** B-スプライン曲線をデータにあてはめる。
 
@@ -1270,7 +1268,7 @@ obj = dt << Functional Data Explorer(
 
 ### B Splines Model Controls
 
-**構文:** obj << B Splines Model Controls
+**構文:** obj &lt;&lt; B Splines Model Controls
 
 **説明:** B-スプラインモデルをあてはめる前に「モデルの設定」パネルを開く。節点の数とスプライン次数を指定できる。
 
@@ -1291,7 +1289,7 @@ obj = dt << Functional Data Explorer(
 
 ### Baseline Correction
 
-**構文:** obj << Baseline Correction
+**構文:** obj &lt;&lt; Baseline Correction
 
 **説明:** Subtracts a baseline function from each individual function. You can perform automated baseline correction using either the statistics-sensitive nonlinear iterative peak-clipping (SNIP) or the alternating reweighted least squares solution technique. There is also an option to load a known baseline function from a data table.
 
@@ -1299,7 +1297,7 @@ obj = dt << Functional Data Explorer(
 
 ### Data Processing
 
-**構文:** obj << Data Processing( <options> )
+**構文:** obj &lt;&lt; Data Processing( &lt;options&gt; )
 
 **説明:** データの前処理を行う。オプションには、データの取捨、変換、配置、スペクトル、目標関数の操作がある。
 
@@ -1320,7 +1318,7 @@ obj = dt << Functional Data Explorer(
 
 ### Direct Functional PCA
 
-**構文:** obj << Direct Functional PCA
+**構文:** obj &lt;&lt; Direct Functional PCA
 
 **説明:** 基底関数モデルをあてはめずに、直接関数主成分分析を実行する。このオプションを使用するには、入力データが等間隔のグリッド上になければならない。
 
@@ -1342,7 +1340,7 @@ obj = dt << Functional Data Explorer(
 
 ### Fourier Basis
 
-**構文:** obj << Fourier Basis
+**構文:** obj &lt;&lt; Fourier Basis
 
 **説明:** 罰則付きB-スプライン曲線をデータにあてはめる。
 
@@ -1363,7 +1361,7 @@ obj = dt << Functional Data Explorer(
 
 ### Fourier Basis Model Controls
 
-**構文:** obj << Fourier Basis Model Controls
+**構文:** obj &lt;&lt; Fourier Basis Model Controls
 
 **説明:** Fourier基底モデルをあてはめる前に、「モデルの設定」パネルを開く。Fourierペアの数と期間を指定できる。
 
@@ -1384,7 +1382,7 @@ obj = dt << Functional Data Explorer(
 
 ### Multivariate Curve Resolution
 
-**構文:** obj << Multivariate Curve Resolution
+**構文:** obj &lt;&lt; Multivariate Curve Resolution
 
 **説明:** 多変量スペクトル分離(MCR; Multivariate Curve Resolution)を行う。このオプションを使用するには、入力データが等間隔のグリッド上になければならない。
 
@@ -1392,7 +1390,7 @@ obj = dt << Functional Data Explorer(
 
 ### Nonnegative SVD
 
-**構文:** obj << Nonnegative SVD
+**構文:** obj &lt;&lt; Nonnegative SVD
 
 **説明:** Performs a nonnegative singular value decomposition (SVD) on the stacked matrix of functions. A nonnegative SVD constrains the matrix decomposition so that the scores and loadings are greater than or equal to zero.
 
@@ -1400,7 +1398,7 @@ obj = dt << Functional Data Explorer(
 
 ### P Splines
 
-**構文:** obj << P Splines
+**構文:** obj &lt;&lt; P Splines
 
 **説明:** 罰則付きB-スプライン曲線をデータにあてはめる。
 
@@ -1421,7 +1419,7 @@ obj = dt << Functional Data Explorer(
 
 ### P Splines Model Controls
 
-**構文:** obj << P Splines Model Controls
+**構文:** obj &lt;&lt; P Splines Model Controls
 
 **説明:** P-スプラインモデルをあてはめる前に、「モデルの設定」パネルを開く。節点の数とスプライン次数を指定できる。
 
@@ -1442,7 +1440,7 @@ obj = dt << Functional Data Explorer(
 
 ### Peak Finding
 
-**構文:** obj << Peak Finding
+**構文:** obj &lt;&lt; Peak Finding
 
 **説明:** ピークを直接的に検出・要約する。もしくは、指定のパラメトリックモデルを使って、ピークを検出・要約する。
 
@@ -1450,7 +1448,7 @@ obj = dt << Functional Data Explorer(
 
 ### Penalized Nonnegative SVD
 
-**構文:** obj << Penalized Nonnegative SVD
+**構文:** obj &lt;&lt; Penalized Nonnegative SVD
 
 **説明:** 罰則付き非負値特異値分解によって、関数主成分分析を行う。このオプションを使用するには、入力データが等間隔のグリッド上になければならない。
 
@@ -1458,7 +1456,7 @@ obj = dt << Functional Data Explorer(
 
 ### Penalized SVD
 
-**構文:** obj << Penalized SVD
+**構文:** obj &lt;&lt; Penalized SVD
 
 **説明:** 罰則付き特異値分解によって、関数主成分分析を行う。このオプションを使用するには、入力データが等間隔のグリッド上になければならない。
 
@@ -1466,7 +1464,7 @@ obj = dt << Functional Data Explorer(
 
 ### Plot Mean Function
 
-**構文:** obj << Plot Mean Function( state=0|1 )
+**構文:** obj &lt;&lt; Plot Mean Function( state=0|1 )
 
 **説明:** 「要約」レポートにおいて、「平均関数」プロットの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1484,7 +1482,7 @@ obj << Plot Mean Function( 0 );
 
 ### Plot Median Function
 
-**構文:** obj << Plot Median Function( state=0|1 )
+**構文:** obj &lt;&lt; Plot Median Function( state=0|1 )
 
 **説明:** 「要約」レポートにおいて、「中央値関数」プロットの表示/非表示を切り替える。
 
@@ -1505,7 +1503,7 @@ obj = dt << Functional Data Explorer(
 
 ### Plot Standard Deviation Function
 
-**構文:** obj << Plot Standard Deviation Function( state=0|1 )
+**構文:** obj &lt;&lt; Plot Standard Deviation Function( state=0|1 )
 
 **説明:** 「要約」レポートにおいて、「標準偏差関数」プロットの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1523,7 +1521,7 @@ obj << Plot Standard Deviation Function( 0 );
 
 ### Save Data
 
-**構文:** obj << Save Data
+**構文:** obj &lt;&lt; Save Data
 
 **説明:** 事前処理した後のデータを、積み重ねた形式で新しいデータテーブルに保存する。
 
@@ -1543,7 +1541,7 @@ obj << Save Data;
 
 ### Unconstrained MCR
 
-**構文:** obj << Unconstrained MCR
+**構文:** obj &lt;&lt; Unconstrained MCR
 
 **説明:** 無制約多変量スペクトル分離(unconstrained MCR)を行う。このオプションを使用するには、入力データが等間隔のグリッド上になければならない。
 
@@ -1551,7 +1549,7 @@ obj << Save Data;
 
 ### Wavelets
 
-**構文:** obj << Wavelets
+**構文:** obj &lt;&lt; Wavelets
 
 **説明:** 複数のウェーブレットモデルをデータにあてはめる。このオプションを使用するには、入力データが等間隔のグリッド上になければならない。データが等間隔でない場合は、ウェーブレット分析を行う前にグリッドが自動的に作成される。
 
@@ -1571,7 +1569,7 @@ obj = dt << Functional Data Explorer( Y( :TMAX ), X( :Week of Year ), ID( :NAME 
 
 #### Align 0 to 1
 
-**構文:** obj << Data Processing( Align 0 to 1 )
+**構文:** obj &lt;&lt; Data Processing( Align 0 to 1 )
 
 **説明:** 入力(X)を0～1の範囲になるように変換する。
 
@@ -1592,7 +1590,7 @@ obj = dt << Functional Data Explorer(
 
 #### Align Maximum
 
-**構文:** obj << Data Processing( Align Maximum )
+**構文:** obj &lt;&lt; Data Processing( Align Maximum )
 
 **説明:** 出力(Y変数）が最大となる位置がゼロになるように入力(X変数)を整列する。
 
@@ -1613,7 +1611,7 @@ obj = dt << Functional Data Explorer(
 
 #### Align Minimum
 
-**構文:** obj << Data Processing( Align Minimum )
+**構文:** obj &lt;&lt; Data Processing( Align Minimum )
 
 **説明:** 出力(Y変数）が最小となる位置がゼロになるように入力(X変数)を整列する。
 
@@ -1634,7 +1632,7 @@ obj = dt << Functional Data Explorer(
 
 #### Align by Function
 
-**構文:** obj << Data Processing( Align by Function )
+**構文:** obj &lt;&lt; Data Processing( Align by Function )
 
 **説明:** すべての関数にて、入力変数(X)の範囲が揃うように配置する。
 
@@ -1655,7 +1653,7 @@ obj = dt << Functional Data Explorer(
 
 #### Baseline Correction
 
-**構文:** obj << Data Processing( Baseline Correction( Model( Linear|Quadratic|Cubic|Fit Exponential 2P|Fit Exponential 3P ), Correction Region( ), Baseline Regions( vector ), Anchor Points( vector ) ) )
+**構文:** obj &lt;&lt; Data Processing( Baseline Correction( Model( Linear|Quadratic|Cubic|Fit Exponential 2P|Fit Exponential 3P ), Correction Region( ), Baseline Regions( vector ), Anchor Points( vector ) ) )
 
 **説明:** ベースラインモデルをあてはめ、そのベースライン値を各関数から引く。ベースラインモデル・補正する区間・ベースラインを求める区間・アンカー点を指定できる。
 
@@ -1693,7 +1691,7 @@ obj = dt << Functional Data Explorer(
 
 #### Center
 
-**構文:** obj << Data Processing( Center )
+**構文:** obj &lt;&lt; Data Processing( Center )
 
 **説明:** 出力(Y変数)を中心化する。
 
@@ -1714,7 +1712,7 @@ obj = dt << Functional Data Explorer(
 
 #### Dynamic Time Warping
 
-**構文:** obj << Data Processing( Dynamic Time Warping( Reference( number ) ) )
+**構文:** obj &lt;&lt; Data Processing( Dynamic Time Warping( Reference( number ) ) )
 
 **説明:** 動的時間伸縮法(DTW; Dynamic Time Warping)を使って出力関数を揃える。DTWは、2つ以上の関数を揃えるのに最適な伸縮を見つける手法。
 
@@ -1735,7 +1733,7 @@ obj = dt << Functional Data Explorer(
 
 #### Exp
 
-**構文:** obj << Data Processing( Exp )
+**構文:** obj &lt;&lt; Data Processing( Exp )
 
 **説明:** 出力(Y変数)を指数で変換する。
 
@@ -1756,7 +1754,7 @@ obj = dt << Functional Data Explorer(
 
 #### Filter X
 
-**構文:** obj << Data Processing( Filter X( [lower, upper] ) )
+**構文:** obj &lt;&lt; Data Processing( Filter X( [lower, upper] ) )
 
 **説明:** 指定の区間の外にある入力値(X値)を削除する。
 
@@ -1773,7 +1771,7 @@ obj << Data Processing( Filter X( [5, 50] ) );
 
 #### Filter Y
 
-**構文:** obj << Data Processing( Filter Y( [lower, upper] ) )
+**構文:** obj &lt;&lt; Data Processing( Filter Y( [lower, upper] ) )
 
 **説明:** 指定された区間の外にある出力値(Y)を削除する。
 
@@ -1790,7 +1788,7 @@ obj << Data Processing( Filter Y( [., 100] ) );
 
 #### Load Targets
 
-**構文:** obj << Data Processing( Load Targets( "level" ) )
+**構文:** obj &lt;&lt; Data Processing( Load Targets( "level" ) )
 
 **説明:** 目標関数を指定する。
 
@@ -1811,7 +1809,7 @@ obj = dt << Functional Data Explorer(
 
 #### Log
 
-**構文:** obj << Data Processing( Log )
+**構文:** obj &lt;&lt; Data Processing( Log )
 
 **説明:** 出力(Y変数)を自然対数で変換する。
 
@@ -1832,7 +1830,7 @@ obj = dt << Functional Data Explorer(
 
 #### Log X
 
-**構文:** obj << Data Processing( Log X )
+**構文:** obj &lt;&lt; Data Processing( Log X )
 
 **説明:** 入力(X変数)を自然対数で変換する。
 
@@ -1853,7 +1851,7 @@ obj = dt << Functional Data Explorer(
 
 #### Logit
 
-**構文:** obj << Data Processing( Logit )
+**構文:** obj &lt;&lt; Data Processing( Logit )
 
 **説明:** 出力(Y変数)をロジット変換する。出力は0～1でなければならない。
 
@@ -1875,7 +1873,7 @@ obj = dt << Functional Data Explorer(
 
 #### MSC
 
-**構文:** obj << Data Processing( MSC )
+**構文:** obj &lt;&lt; Data Processing( MSC )
 
 **説明:** データに乗算的散乱補正(MSC; Multivariate Scatter Correction)を適用する。この手法は、個々の関数(ID変数の水準)ごとに単回帰をあてはめる。この単回帰の応答変数は関数の出力値であり、説明変数は関数全体の平均である。
 
@@ -1896,7 +1894,7 @@ obj = dt << Functional Data Explorer(
 
 #### Negation
 
-**構文:** obj << Data Processing( Negation )
+**構文:** obj &lt;&lt; Data Processing( Negation )
 
 **説明:** 出力(Y変数)の符号を逆にする。
 
@@ -1917,7 +1915,7 @@ obj = dt << Functional Data Explorer(
 
 #### Range 0 to 1
 
-**構文:** obj << Data Processing( Range 0 to 1 )
+**構文:** obj &lt;&lt; Data Processing( Range 0 to 1 )
 
 **説明:** 出力(Y変数)の範囲が0～1になるように変換する。
 
@@ -1938,11 +1936,7 @@ obj = dt << Functional Data Explorer(
 
 #### Reduce
 
-**構文:** obj << Data Processing( Reduce( Grid( number ) ) ); 
-
-obj << Data Processing( Reduce( Bin( number ) ) ); 
-
-obj << Data Processing( Reduce( Thin( number ) ) )
+**構文:** obj &lt;&lt; Data Processing( Reduce( Grid( number ) ) ); obj &lt;&lt; Data Processing( Reduce( Bin( number ) ) ); obj &lt;&lt; Data Processing( Reduce( Thin( number ) ) )
 
 **説明:** さまざまな手法のいずれかを使って、入力(X)のデータを減らす。
 
@@ -1959,7 +1953,7 @@ obj << Data Processing( Reduce( Thin( 2 ) ) );
 
 #### Remove Selected
 
-**構文:** obj << Data Processing( Remove Selected )
+**構文:** obj &lt;&lt; Data Processing( Remove Selected )
 
 **説明:** データテーブルで選択されている行のデータを削除する。
 
@@ -1978,7 +1972,7 @@ obj << Data Processing( Remove Selected );
 
 #### Remove Unselected
 
-**構文:** obj << Data Processing( Remove Unselected )
+**構文:** obj &lt;&lt; Data Processing( Remove Unselected )
 
 **説明:** 選択していない値を分析から除く。
 
@@ -1997,7 +1991,7 @@ obj << Data Processing( Remove Unselected );
 
 #### Remove Value
 
-**構文:** obj << Data Processing( Remove Value( number ) )
+**構文:** obj &lt;&lt; Data Processing( Remove Value( number ) )
 
 **説明:** 指定のY値を持つ観測値を削除する。
 
@@ -2015,7 +2009,7 @@ obj << Data Processing( Remove Value( 30 ) );
 
 #### Remove Zeros
 
-**構文:** obj << Data Processing( Remove Zeros )
+**構文:** obj &lt;&lt; Data Processing( Remove Zeros )
 
 **説明:** Y値が0である観測値を削除する。
 
@@ -2036,7 +2030,7 @@ obj = dt << Functional Data Explorer(
 
 #### Row Alignment
 
-**構文:** obj << Data Processing( Row Alignment )
+**構文:** obj &lt;&lt; Data Processing( Row Alignment )
 
 **説明:** 入力(X変数)を行番号とする。
 
@@ -2057,7 +2051,7 @@ obj = dt << Functional Data Explorer(
 
 #### SNV
 
-**構文:** obj << Data Processing( SNV )
+**構文:** obj &lt;&lt; Data Processing( SNV )
 
 **説明:** データに標準正規変量法(SNV法; Standard Normal Variate method)を適用する。この手法は、平均が0、標準偏差が1になるように個々の関数(ID変数の水準)を中心化・尺度化することで、出力を標準化する。
 
@@ -2078,7 +2072,7 @@ obj = dt << Functional Data Explorer(
 
 #### Savitzky-Golay Filter
 
-**構文:** obj << Data Processing( "Savitzky-Golay Filter"n )
+**構文:** obj &lt;&lt; Data Processing( "Savitzky-Golay Filter"n )
 
 **説明:** 各関数にSavitzky-Golayフィルタを適用する。このオプションを使用するには、入力データが等間隔のグリッド上になければならない。
 
@@ -2099,7 +2093,7 @@ obj = dt << Functional Data Explorer(
 
 #### Savitzky-Golay First Derivative
 
-**構文:** obj << Data Processing( "Savitzky-Golay First Derivative"n )
+**構文:** obj &lt;&lt; Data Processing( "Savitzky-Golay First Derivative"n )
 
 **説明:** Savitzky-Golayフィルタの1次微分を戻す。このオプションを使用するには、入力データが等間隔のグリッド上になければならない。
 
@@ -2120,7 +2114,7 @@ obj = dt << Functional Data Explorer(
 
 #### Savitzky-Golay Second Derivative
 
-**構文:** obj << Data Processing( "Savitzky-Golay Second Derivative"n )
+**構文:** obj &lt;&lt; Data Processing( "Savitzky-Golay Second Derivative"n )
 
 **説明:** Savitzky-Golayフィルタの2次微分を戻す。このオプションを使用するには、入力データが等間隔のグリッド上になければならない。
 
@@ -2141,7 +2135,7 @@ obj = dt << Functional Data Explorer(
 
 #### Square
 
-**構文:** obj << Data Processing( Square )
+**構文:** obj &lt;&lt; Data Processing( Square )
 
 **説明:** 出力(Y変数)の2乗で変換する。
 
@@ -2162,7 +2156,7 @@ obj = dt << Functional Data Explorer(
 
 #### Square Root
 
-**構文:** obj << Data Processing( Square Root )
+**構文:** obj &lt;&lt; Data Processing( Square Root )
 
 **説明:** 出力(Y変数)を平方根変換する。出力は非負でなければならない。
 
@@ -2183,7 +2177,7 @@ obj = dt << Functional Data Explorer(
 
 #### Standardize
 
-**構文:** obj << Data Processing( Standardize )
+**構文:** obj &lt;&lt; Data Processing( Standardize )
 
 **説明:** Y変数(出力)を、標準化(中心化および尺度化)する。
 
@@ -2208,9 +2202,7 @@ obj = dt << Functional Data Explorer(
 
 #### Diagnostic Plots
 
-**構文:** obj<< Model Name( Functional DOE Analysis( Diagnostic Plots( state=0|1 ) ) ); 
-
-scrobj << Diagnostic Plots( state=0|1 )
+**構文:** obj&lt;&lt; Model Name( Functional DOE Analysis( Diagnostic Plots( state=0|1 ) ) ); scrobj &lt;&lt; Diagnostic Plots( state=0|1 )
 
 **説明:** 「関数実験計画分析」レポートにおいて、「予測値と実測値のプロット」と「残差プロット」の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2236,9 +2228,7 @@ Report( obj )["FDOE Diagnostic Plots"] << Close( 0 );
 
 #### FDOE Profiler
 
-**構文:** obj << Model Name( Functional DOE Analysis( FDOE Profiler( state=0|1 ) ) ); 
-
-scrobj << FDOE Profiler( state=0|1 )
+**構文:** obj &lt;&lt; Model Name( Functional DOE Analysis( FDOE Profiler( state=0|1 ) ) ); scrobj &lt;&lt; FDOE Profiler( state=0|1 )
 
 **説明:** 関数実験計画プロファイルの表示/非表示を切り替える。このプロファイルでは、追加変数(Z変数)の値に応じて関数がどのように変化するかを調べることができる。 デフォルトではオン。
 
@@ -2265,7 +2255,7 @@ scrobj << FDOE Profiler( 1 );
 
 #### Generalized Regression FPC Model
 
-**構文:** obj << Model Name( Functional DOE Analysis( Generalized Regression FPC Model( FPC Number( number ), commands )))
+**構文:** obj &lt;&lt; Model Name( Functional DOE Analysis( Generalized Regression FPC Model( FPC Number( number ), commands )))
 
 **説明:** 関数実験計画分析オプションであてはめる一般化回帰モデルの設定を指定する。このコマンドは、デフォルトとは異なる設定を指定したいときに使用する。
 
@@ -2302,9 +2292,7 @@ Report( obj )["Generalized Regression for FPC Scores"] << Close( 0 );
 
 #### Generalized Regression for FPC Scores
 
-**構文:** obj << Model Name( Functional DOE Analysis( Generalized Regression for FPC Scores( state=0|1 ) ) ); 
-
-scrobj << Generalized Regression for FPC Scores( state=0|1 )
+**構文:** obj &lt;&lt; Model Name( Functional DOE Analysis( Generalized Regression for FPC Scores( state=0|1 ) ) ); scrobj &lt;&lt; Generalized Regression for FPC Scores( state=0|1 )
 
 **説明:** 関数主成分スコアに対する「一般化回帰」レポートの表示/非表示を切り替える。このレポートでは、各関数主成分スコアを応答変数にして、「一般化回帰」が実行される。 デフォルトではオン。
 
@@ -2330,11 +2318,7 @@ scrobj << Generalized Regression for FPC Scores( 0 );
 
 #### Save Prediction Formula
 
-**構文:** obj << Model Name( Functional DOE Analysis( Save Prediction Formula ) ); 
-
-obj << Wavelets( Wavelets DOE Analysis( 1, Save Prediction Formula ) ); 
-
-scrobj << Save Prediction Formula
+**構文:** obj &lt;&lt; Model Name( Functional DOE Analysis( Save Prediction Formula ) ); obj &lt;&lt; Wavelets( Wavelets DOE Analysis( 1, Save Prediction Formula ) ); scrobj &lt;&lt; Save Prediction Formula
 
 **説明:** 予測式を現在のデータテーブルの新しい列に保存する。元のデータの形式が「各行が1つの関数」または「各列が1つの関数」である場合は、このオプションにより元のデータを積み重ねた新しいデータテーブルが作成され、予測式の列が追加される。
 
@@ -2392,11 +2376,7 @@ scrobj << Save Prediction Formula;
 
 #### Save Residual Formula
 
-**構文:** obj << Model Name( Functional DOE Analysis( Save Residual Formula ) ); 
-
-obj << Wavelets( Wavelets DOE Analysis( 1, Save Residual Formula ) ); 
-
-scrobj << Save Residual Formula
+**構文:** obj &lt;&lt; Model Name( Functional DOE Analysis( Save Residual Formula ) ); obj &lt;&lt; Wavelets( Wavelets DOE Analysis( 1, Save Residual Formula ) ); scrobj &lt;&lt; Save Residual Formula
 
 **説明:** 残差の計算式を現在のデータテーブルの新しい列に保存する。元のデータの形式が「各行が1つの関数」または「各列が1つの関数」である場合は、このオプションにより元のデータを積み重ねた新しいデータテーブルが作成され、残差の計算式の列が追加される。
 
@@ -2458,9 +2438,7 @@ scrobj << Save Residual Formula;
 
 #### Customize Number of FPCs
 
-**構文:** obj << Model Name( Functional PCA( 1, Customize Number of FPCs( number ) ) ); 
-
-scrobj << Customize Number of FPCs( number )
+**構文:** obj &lt;&lt; Model Name( Functional PCA( 1, Customize Number of FPCs( number ) ) ); scrobj &lt;&lt; Customize Number of FPCs( number )
 
 **説明:** 関数主成分分析における関数主成分スコアの次元を指定する。関数主成分スコアの次元を変更すると、「関数の要約」レポートも更新される。
 
@@ -2489,9 +2467,7 @@ scrobj << Customize Number of FPCs( 2 );
 
 #### Diagnostic Plots
 
-**構文:** obj << Model Name( Functional PCA( 1, Diagnostic Plots( state=0|1 ) ); 
-
-scrobj << Diagnostic Plots( state=0|1 )
+**構文:** obj &lt;&lt; Model Name( Functional PCA( 1, Diagnostic Plots( state=0|1 ) ); scrobj &lt;&lt; Diagnostic Plots( state=0|1 )
 
 **説明:** 「関数主成分分析」レポートにおいて、「関数主成分分析 診断プロット」の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2521,9 +2497,7 @@ Report( obj )["FPCA Diagnostic Plots"] << Close( 0 );
 
 #### FPC Profiler
 
-**構文:** obj << Model Name( Functional PCA( 1, FPC Profiler( state=0|1 ) ) ); 
-
-scrobj << FPC Profiler( state=0|1 )
+**構文:** obj &lt;&lt; Model Name( Functional PCA( 1, FPC Profiler( state=0|1 ) ) ); scrobj &lt;&lt; FPC Profiler( state=0|1 )
 
 **説明:** 関数主成分スコアに対するプロファイルの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2552,9 +2526,7 @@ scrobj << FPC Profiler( 1 );
 
 #### Score Plot
 
-**構文:** obj << Model Name( Functional PCA( 1, Score Plot( state=0|1 ) ) ); 
-
-scrobj << Score Plot( state=0|1 )
+**構文:** obj &lt;&lt; Model Name( Functional PCA( 1, Score Plot( state=0|1 ) ) ); scrobj &lt;&lt; Score Plot( state=0|1 )
 
 **説明:** 関数主成分スコアをプロットした図の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2587,9 +2559,7 @@ scrobj << Score Plot( 1 );
 
 #### AICc
 
-**構文:** obj << Model Name( AICc ); 
-
-scrobj << AICc
+**構文:** obj &lt;&lt; Model Name( AICc ); scrobj &lt;&lt; AICc
 
 **説明:** B-スプライン・P-スプライン・Fourier基底のモデルで、モデル選択規準としてAICcを用いる。
 
@@ -2610,9 +2580,7 @@ obj = dt << Functional Data Explorer(
 
 #### BIC
 
-**構文:** obj << Model Name( BIC ); 
-
-scrobj << BIC
+**構文:** obj &lt;&lt; Model Name( BIC ); scrobj &lt;&lt; BIC
 
 **説明:** B-スプライン・P-スプライン・Fourier基底のモデルで、モデル選択規準としてBICを用いる。
 
@@ -2633,9 +2601,7 @@ obj = dt << Functional Data Explorer(
 
 #### Basis Function Coefficients
 
-**構文:** obj << Model Name( Basis Function Coefficients( state=0|1 ) ); 
-
-scrobj << Basis Function Coefficients( state=0|1 )
+**構文:** obj &lt;&lt; Model Name( Basis Function Coefficients( state=0|1 ) ); scrobj &lt;&lt; Basis Function Coefficients( state=0|1 )
 
 **説明:** 「基底関数係数」レポートの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2660,9 +2626,7 @@ Report( obj )["Basis Function Coefficients"] << Close( 0 );
 
 #### Diagnostic Plots
 
-**構文:** obj << Model Name( Diagnostic Plots( state=0|1 ) ); 
-
-scrobj << Diagnostic Plots( state=0|1 )
+**構文:** obj &lt;&lt; Model Name( Diagnostic Plots( state=0|1 ) ); scrobj &lt;&lt; Diagnostic Plots( state=0|1 )
 
 **説明:** 「診断プロット」レポートの表示/非表示を切り替える。このオプションは、ウェーブレットモデルや直接関数主成分分析モデルでは使用できない。 デフォルトではオン。
 
@@ -2687,9 +2651,7 @@ Report( obj )["B-Spline Diagnostic Plots"] << Close( 0 );
 
 #### Function Summaries
 
-**構文:** obj << Model Name( Function Summaries( state=0|1 ) ); 
-
-scrobj << Function Summaries( state=0|1 )
+**構文:** obj &lt;&lt; Model Name( Function Summaries( state=0|1 ) ); scrobj &lt;&lt; Function Summaries( state=0|1 )
 
 **説明:** 「関数の要約」レポートの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2714,9 +2676,7 @@ Report( obj )["Function Summaries"] << Close( 0 );
 
 #### Functional DOE Analysis
 
-**構文:** obj << Model Name( Functional DOE Analysis( ... ) ); 
-
-scrobj << Functional DOE Analysis( ... )
+**構文:** obj &lt;&lt; Model Name( Functional DOE Analysis( ... ) ); scrobj &lt;&lt; Functional DOE Analysis( ... )
 
 **説明:** 「関数データエクスプローラ」プラットフォームで「一般化回帰」レポートを起動する。追加変数(Z変数)をモデル効果として、それぞれの関数主成分スコアに一般化回帰モデルをあてはめる。
 
@@ -2738,9 +2698,7 @@ obj = dt << Functional Data Explorer(
 
 #### Functional PCA
 
-**構文:** obj << Model Name( Functional PCA( state= 0|1 ) ); 
-
-scrobj << Functional PCA( state=0|1 )
+**構文:** obj &lt;&lt; Model Name( Functional PCA( state= 0|1 ) ); scrobj &lt;&lt; Functional PCA( state=0|1 )
 
 **説明:** 「関数主成分分析」レポートの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2765,9 +2723,7 @@ scrobj << Functional PCA( 1 );
 
 #### GCV
 
-**構文:** obj << Model Name( GCV ); 
-
-scrobj << GCV
+**構文:** obj &lt;&lt; Model Name( GCV ); scrobj &lt;&lt; GCV
 
 **説明:** B-スプライン・P-スプライン・Fourier基底のモデルで、モデル選択規準として一般化交差検証(GCV)を用いる。
 
@@ -2788,9 +2744,7 @@ obj = dt << Functional Data Explorer(
 
 #### Plot Basis
 
-**構文:** obj << Model Name( Plot Basis( state=0|1 ) ); 
-
-scrobj << Plot Basis( state=0|1 )
+**構文:** obj &lt;&lt; Model Name( Plot Basis( state=0|1 ) ); scrobj &lt;&lt; Plot Basis( state=0|1 )
 
 **説明:** 基底関数プロットの表示/非表示を切り替える。このプロットでは、すべての基底関数が1つのプロットに描画される。このオプションは、ウェーブレットモデルや直接関数主成分分析モデルでは使用できない。
 
@@ -2811,9 +2765,7 @@ obj = dt << Functional Data Explorer(
 
 #### Random Coefficients
 
-**構文:** obj << Model Name( Random Coefficients( state=0|1 ) ); 
-
-scrobj << Random Coefficients( state=0|1 )
+**構文:** obj &lt;&lt; Model Name( Random Coefficients( state=0|1 ) ); scrobj &lt;&lt; Random Coefficients( state=0|1 )
 
 **説明:** 「ランダム係数」レポートの表示/非表示を切り替える。このレポートには、各関数に対して、基底関数のランダム係数が表示される。このオプションは、ウェーブレットモデルや直接関数主成分分析モデルでは使用できない。 デフォルトではオン。
 
@@ -2835,7 +2787,7 @@ Report( obj )["Random Coefficients by Function"] << Close( 0 );
 
 #### Remove Fit
 
-**構文:** obj << (Model["B Splines" | "P Splines" | "Fourier Basis" | "Wavelets" | "Direct Functional PCA"] << Remove Fit)
+**構文:** obj &lt;&lt; (Model["B Splines" | "P Splines" | "Fourier Basis" | "Wavelets" | "Direct Functional PCA"] &lt;&lt; Remove Fit)
 
 **説明:** 指定したあてはめをレポートから削除する。
 
@@ -2859,9 +2811,7 @@ obj << (Model["Fourier Basis"] << Remove Fit);
 
 #### Save Data
 
-**構文:** obj << Model Name( Save Data ); 
-
-scrobj << Save Data
+**構文:** obj &lt;&lt; Model Name( Save Data ); scrobj &lt;&lt; Save Data
 
 **説明:** 処理したデータを新しいデータテーブルに保存する。処理したデータは、積み重ねたデータ形式で保存される。
 
@@ -2901,15 +2851,13 @@ scrobj << Save Data;
 
 #### Save Script Options
 
-**構文:** obj << Save Script Options( "Save Script Saves Steps"|"Save Script Saves State"="Save Script Saves Steps" )
+**構文:** obj &lt;&lt; Save Script Options( "Save Script Saves Steps"|"Save Script Saves State"="Save Script Saves Steps" )
 
 **説明:** Specifies the type of script that is saved for reproducing the peak finding results. デフォルトの値は"Save Script Saves Steps"。
 
 #### Wavelets DOE Analysis
 
-**構文:** obj << Wavelets( Wavelets DOE Analysis( state=0|1 ) ); 
-
-scrobj << Wavelets DOE Analysis( state=0|1 )
+**構文:** obj &lt;&lt; Wavelets( Wavelets DOE Analysis( state=0|1 ) ); scrobj &lt;&lt; Wavelets DOE Analysis( state=0|1 )
 
 **説明:** 「関数データエクスプローラ」プラットフォームで「一般化回帰」レポートを起動する。追加変数(Z変数)をモデル効果として、ウェーブレット係数に一般化回帰モデルをあてはめる。
 
@@ -2935,7 +2883,7 @@ obj = dt << Functional Data Explorer(
 
 #### Customize Peak Summaries
 
-**構文:** obj << Peak Finding( Customize Peak Summaries(stat1(0|1), ..., statN(0|1)) )
+**構文:** obj &lt;&lt; Peak Finding( Customize Peak Summaries(stat1(0|1), ..., statN(0|1)) )
 
 **説明:** 「関数の要約」表に表示されている要約統計量をカスタマイズする。
 
@@ -2956,7 +2904,7 @@ obj = dt << Functional Data Explorer(
 
 #### Save Summaries
 
-**構文:** obj << Peak Finding( Save Summaries )
+**構文:** obj &lt;&lt; Peak Finding( Save Summaries )
 
 **説明:** 各関数の要約統計量を保存する。関数主成分分析のスコアも保存する。
 
@@ -2981,11 +2929,7 @@ obj = dt << Functional Data Explorer(
 
 #### Control Chart Builder
 
-**構文:** obj << B Splines( Control Chart Builder )
-
-obj << P Splines( Control Chart Builder )
-
-obj << Fourier Basis( Control Chart Builder )
+**構文:** obj &lt;&lt; B Splines( Control Chart Builder )obj &lt;&lt; P Splines( Control Chart Builder )obj &lt;&lt; Fourier Basis( Control Chart Builder )
 
 **説明:** 管理図ビルダーで関数主成分スコアを描く。
 
@@ -3006,11 +2950,7 @@ obj = dt << Functional Data Explorer(
 
 #### Customize Function Summaries
 
-**構文:** obj << B Splines( Customize Function Summaries(stat1(0|1), ..., statN(0|1)) )
-
-obj << P Splines( Customize Function Summaries(stat1(0|1), ..., statN(0|1)) )
-
-obj << Fourier Basis( Customize Function Summaries(stat1(0|1), ..., statN(0|1)) )
+**構文:** obj &lt;&lt; B Splines( Customize Function Summaries(stat1(0|1), ..., statN(0|1)) )obj &lt;&lt; P Splines( Customize Function Summaries(stat1(0|1), ..., statN(0|1)) )obj &lt;&lt; Fourier Basis( Customize Function Summaries(stat1(0|1), ..., statN(0|1)) )
 
 **説明:** 「関数の要約」表に表示されている要約統計量をカスタマイズする。
 
@@ -3041,11 +2981,7 @@ obj = dt << Functional Data Explorer(
 
 #### Save Summaries
 
-**構文:** obj << B Splines( Save Summaries )
-
-obj << P Splines( Save Summaries )
-
-obj << Fourier Basis( Save Summaries )
+**構文:** obj &lt;&lt; B Splines( Save Summaries )obj &lt;&lt; P Splines( Save Summaries )obj &lt;&lt; Fourier Basis( Save Summaries )
 
 **説明:** 各関数の要約統計量を保存する。関数主成分分析のスコアも保存する。
 
@@ -3070,9 +3006,7 @@ obj = dt << Functional Data Explorer(
 
 #### Diagnostic Plots
 
-**構文:** obj << Wavelets( Wavelets DOE Analysis( 1, Diagnostic Plots( state=0|1 ) ) ); 
-
-scrobj << Diagnostic Plots( state=0|1 )
+**構文:** obj &lt;&lt; Wavelets( Wavelets DOE Analysis( 1, Diagnostic Plots( state=0|1 ) ) ); scrobj &lt;&lt; Diagnostic Plots( state=0|1 )
 
 **説明:** 「ウェーブレット実験計画分析」レポートにおいて、「予測値と実測値のプロット」と「残差プロット」の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -3098,9 +3032,7 @@ Report( obj )["FDOE Diagnostic Plots"] << Close( 0 );
 
 #### FDOE Profiler
 
-**構文:** obj << Wavelets( Wavelets DOE Analysis( 1, FDOE Profiler( state=0|1 ) ) ); 
-
-scrobj << FDOE Profiler( state=0|1 )
+**構文:** obj &lt;&lt; Wavelets( Wavelets DOE Analysis( 1, FDOE Profiler( state=0|1 ) ) ); scrobj &lt;&lt; FDOE Profiler( state=0|1 )
 
 **説明:** 関数実験計画プロファイルの表示/非表示を切り替える。このプロファイルでは、追加変数(Z変数)の値に応じて関数がどのように変化するかを調べることができる。 デフォルトではオン。
 
@@ -3125,9 +3057,7 @@ scrobj << FDOE Profiler( 1 );
 
 #### Generalized Regression for Wavelets Coefficients
 
-**構文:** obj << Wavelets( Wavelets DOE Analysis( 1, Generalized Regression for Wavelets Coefficients( state=0|1 ) ) ); 
-
-scrobj << Generalized Regression for Wavelets Coefficients( state=0|1 )
+**構文:** obj &lt;&lt; Wavelets( Wavelets DOE Analysis( 1, Generalized Regression for Wavelets Coefficients( state=0|1 ) ) ); scrobj &lt;&lt; Generalized Regression for Wavelets Coefficients( state=0|1 )
 
 **説明:** ウェーブレット係数に対する「一般化回帰」レポートの表示/非表示を切り替える。このレポートでは、各ウェーブレット係数を応答変数にして、「一般化回帰」が実行される。 デフォルトではオン。
 
@@ -3156,11 +3086,7 @@ Report( obj )["Generalized Regression for Wavelets Coefficients"] << Close( 0 );
 
 #### Save Prediction Formula
 
-**構文:** obj << Model Name( Functional DOE Analysis( Save Prediction Formula ) ); 
-
-obj << Wavelets( Wavelets DOE Analysis( 1, Save Prediction Formula ) ); 
-
-scrobj << Save Prediction Formula
+**構文:** obj &lt;&lt; Model Name( Functional DOE Analysis( Save Prediction Formula ) ); obj &lt;&lt; Wavelets( Wavelets DOE Analysis( 1, Save Prediction Formula ) ); scrobj &lt;&lt; Save Prediction Formula
 
 **説明:** 予測式を現在のデータテーブルの新しい列に保存する。元のデータの形式が「各行が1つの関数」または「各列が1つの関数」である場合は、このオプションにより元のデータを積み重ねた新しいデータテーブルが作成され、予測式の列が追加される。
 
@@ -3218,11 +3144,7 @@ scrobj << Save Prediction Formula;
 
 #### Save Residual Formula
 
-**構文:** obj << Model Name( Functional DOE Analysis( Save Residual Formula ) ); 
-
-obj << Wavelets( Wavelets DOE Analysis( 1, Save Residual Formula ) ); 
-
-scrobj << Save Residual Formula
+**構文:** obj &lt;&lt; Model Name( Functional DOE Analysis( Save Residual Formula ) ); obj &lt;&lt; Wavelets( Wavelets DOE Analysis( 1, Save Residual Formula ) ); scrobj &lt;&lt; Save Residual Formula
 
 **説明:** 残差の計算式を現在のデータテーブルの新しい列に保存する。元のデータの形式が「各行が1つの関数」または「各列が1つの関数」である場合は、このオプションにより元のデータを積み重ねた新しいデータテーブルが作成され、残差の計算式の列が追加される。
 

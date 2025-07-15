@@ -25,7 +25,7 @@ s = Schedule(
 
 ### Clear Schedule
 
-**Syntaxe :** obj << Clear Schedule
+**Syntaxe :** obj &lt;&lt; Clear Schedule
 
 **Description :** Efface le planificateur de tous les événements actuellement planifiés.
 
@@ -43,7 +43,7 @@ s << Clear Schedule;
 
 ### Close
 
-**Syntaxe :** obj << Close
+**Syntaxe :** obj &lt;&lt; Close
 
 **Description :** Ferme le planificateur.
 
@@ -62,7 +62,7 @@ s << Close;
 
 ### Get Container
 
-**Syntaxe :** obj << Get Container
+**Syntaxe :** obj &lt;&lt; Get Container
 
 **Description :** Renvoie une référence à la zone conteneur où se trouve le contenu de l&apos;objet.
 
@@ -81,7 +81,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Restart
 
-**Syntaxe :** obj << Restart
+**Syntaxe :** obj &lt;&lt; Restart
 
 **Description :** Redémarre le planificateur après l’avoir arrêté pour qu’il exécute tous les événements actuellement planifiés.
 
@@ -101,7 +101,7 @@ s << Restart;
 
 ### Show Schedule
 
-**Syntaxe :** obj << Show Schedule
+**Syntaxe :** obj &lt;&lt; Show Schedule
 
 **Description :** Affiche l&apos;événement suivant actuellement planifié.
 
@@ -119,7 +119,7 @@ s << Show Schedule;
 
 ### Stop
 
-**Syntaxe :** obj << Stop
+**Syntaxe :** obj &lt;&lt; Stop
 
 **Description :** Arrête l’exécution par le planificateur de tous les événements actuellement planifiés.
 

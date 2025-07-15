@@ -6,7 +6,7 @@
 
 ### As Scriptable
 
-**構文:** jmplivereport = jmpliveresult << As Scriptable()
+**構文:** jmplivereport = jmpliveresult &lt;&lt; As Scriptable()
 
 **説明:** これ以降のスクリプトによる操作を行うために、JMP Live結果を生成した操作によって、JMP Liveレポート、JMP Liveフォルダ、またはJMP Live投稿を戻す。
 
@@ -33,7 +33,7 @@ If( worked == 1,
 
 ### Get Error Message
 
-**構文:** messagetext = jmpliveresult << Get Error Message()
+**構文:** messagetext = jmpliveresult &lt;&lt; Get Error Message()
 
 **説明:** 最後の操作で生成されたメッセージを文字列として取得する。
 
@@ -53,7 +53,7 @@ Write( "\!nHTTP Status Code: ", httpstatus, " Message: ", httpmessage );
 
 ### Get HTTP Status
 
-**構文:** statuscode = jmpliveresult << Get HTTP Status()
+**構文:** statuscode = jmpliveresult &lt;&lt; Get HTTP Status()
 
 **説明:** 最後の操作のHTTPステータスコードを取得する。HTTPステータスコードは、業界標準の整数コード。
 
@@ -73,7 +73,7 @@ Write( "\!nHTTP Status Code: ", httpstatus, " Message: ", httpmessage );
 
 ### Get JMP Live
 
-**構文:** liveconnection = jmpliveresult << Get JMP Live()
+**構文:** liveconnection = jmpliveresult &lt;&lt; Get JMP Live()
 
 **説明:** JMP Live接続オブジェクトを取得する。
 
@@ -98,7 +98,7 @@ Write( "\!nConnection Name: ", name );
 
 ### Get Response Type
 
-**構文:** responsevalue = jmpliveresult << Get Response Type()
+**構文:** responsevalue = jmpliveresult &lt;&lt; Get Response Type()
 
 **説明:** 最後の操作によって生成された応答の種類を文字列として取得する。
 
@@ -125,7 +125,7 @@ If( worked == 1,
 
 ### Succeeded
 
-**構文:** success = jmpliveresult << Succeeded()
+**構文:** success = jmpliveresult &lt;&lt; Succeeded()
 
 **説明:** 最後のアクションが正常に行われた(1)かそうでない(0)かを戻す。
 

@@ -6,7 +6,7 @@
 
 ### Action
 
-**语法:** obj << Action
+**语法:** obj &lt;&lt; Action
 
 **说明:** 平台内用于插入表达式以求值的所有用途的陷门。暂时将 DisplayBox 和 DataTable 上下文设置为平台。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**语法:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**语法:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **说明:** 将以前创建的预设应用到对象，从而更新选项和定制以匹配保存的设置。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**语法:** obj << Automatic Recalc( state=0|1 )
+**语法:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **说明:** 对排除和数据更改自动重新执行分析。若启用了“自动重新计算”选项，则应考虑使用 Wait(0) 命令来确保排除和数据更改在重新计算前生效。
 
@@ -90,7 +90,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**语法:** obj << Broadcast(message)
+**语法:** obj &lt;&lt; Broadcast(message)
 
 **说明:** 将消息广播到平台。若各个对象的返回结果是表，则它们会尽可能拼接，并且最终格式与表框中“保存合并表”选项的结果或使用“源”列的“拼接”选项的结果相同。除此之外，结果存储在列表中并返回。
 
@@ -110,7 +110,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**语法:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**语法:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **说明:** 添加用于更改平台变量的控制面板
 
@@ -128,7 +128,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**语法:** obj << Copy ByGroup Script
+**语法:** obj &lt;&lt; Copy ByGroup Script
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其置于剪贴板上。
 
@@ -152,7 +152,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**语法:** obj << Copy Script
+**语法:** obj &lt;&lt; Copy Script
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其置于剪贴板上。
 
@@ -170,7 +170,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**语法:** obj << Data Table Window
+**语法:** obj &lt;&lt; Data Table Window
 
 **说明:** 将该分析的数据表窗口移动到前面。
 
@@ -188,7 +188,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**语法:** obj << Get By Levels
+**语法:** obj &lt;&lt; Get By Levels
 
 **说明:** 返回将“依据”组列映射到其值的关联数组。
 
@@ -205,7 +205,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**语法:** obj << Get ByGroup Script
+**语法:** obj &lt;&lt; Get ByGroup Script
 
 **说明:** 创建生成该分析的脚本 (JSL)，并将其作为表达式返回。
 
@@ -230,7 +230,7 @@ Show( t );
 
 ### Get Container
 
-**语法:** obj << Get Container
+**语法:** obj &lt;&lt; Get Container
 
 **说明:** 返回对保留对象内容的容器框的引用。
 
@@ -280,7 +280,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**语法:** obj << Get Data Table
+**语法:** obj &lt;&lt; Get Data Table
 
 **说明:** 返回对该数据表的引用。
 
@@ -299,7 +299,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**语法:** obj << Get Group Platform
+**语法:** obj &lt;&lt; Get Group Platform
 
 **说明:** 若该平台是组的一部分，则返回组平台对象。否则返回 Empty()。
 
@@ -316,7 +316,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**语法:** obj << Get Script
+**语法:** obj &lt;&lt; Get Script
 
 **说明:** 创建生成该分析的脚本 (JSL)，并将其作为表达式返回。
 
@@ -335,7 +335,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**语法:** obj << Get Script With Data Table
+**语法:** obj &lt;&lt; Get Script With Data Table
 
 **说明:** 创建生成该分析的脚本 (JSL) 以专门引用该数据表，并将其作为表达式返回。
 
@@ -354,7 +354,7 @@ Show( t );
 
 ### Get Timing
 
-**语法:** obj << Get Timing
+**语法:** obj &lt;&lt; Get Timing
 
 **说明:** 平台启动过程计时。
 
@@ -373,7 +373,7 @@ Show( t );
 
 ### Get Web Support
 
-**语法:** obj << Get Web Support
+**语法:** obj &lt;&lt; Get Web Support
 
 **说明:** 返回一个数字，指示显示对象的交互式 HTML 支持的水平。1 表示支持部分或全部元素。0 表示不支持。
 
@@ -389,7 +389,7 @@ Show( s );
 
 ### Get Where Expr
 
-**语法:** obj << Get Where Expr
+**语法:** obj &lt;&lt; Get Where Expr
 
 **说明:** 若平台是使用 By() 或 Where() 启动的，则返回数据子集的 Where 表达式。否则返回 Empty()
 
@@ -426,7 +426,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**语法:** obj << Local Data Filter
+**语法:** obj &lt;&lt; Local Data Filter
 
 **说明:** 将数据过滤到特定的组或范围，但在该平台中是本地的
 
@@ -482,7 +482,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**语法:** obj << Paste Local Data Filter
+**语法:** obj &lt;&lt; Paste Local Data Filter
 
 **说明:** 将剪贴板中的本地数据过滤器应用于当前报表。
 
@@ -503,7 +503,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**语法:** obj << Redo Analysis
+**语法:** obj &lt;&lt; Redo Analysis
 
 **说明:** 在新窗口中重新运行相同的分析。若数据发生更改，分析也将不同。
 
@@ -521,7 +521,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**语法:** obj << Redo ByGroup Analysis
+**语法:** obj &lt;&lt; Redo ByGroup Analysis
 
 **说明:** 在新窗口中重新运行相同的分析。若数据发生更改，分析也将不同。
 
@@ -545,7 +545,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**语法:** obj << Relaunch Analysis
+**语法:** obj &lt;&lt; Relaunch Analysis
 
 **说明:** 打开平台启动窗口并重新调用曾用于创建报表的设置。
 
@@ -563,7 +563,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**语法:** obj << Relaunch ByGroup
+**语法:** obj &lt;&lt; Relaunch ByGroup
 
 **说明:** 打开平台启动窗口并重新调用曾用于创建报表的设置。
 
@@ -587,7 +587,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**语法:** obj << Remove Column Switcher
+**语法:** obj &lt;&lt; Remove Column Switcher
 
 **说明:** 删除已添加至平台的最近使用的“列切换器”。
 
@@ -607,7 +607,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**语法:** obj << Remove Local Data Filter
+**语法:** obj &lt;&lt; Remove Local Data Filter
 
 **说明:** 若已创建本地数据过滤器，这会将它删除并将平台恢复为直接使用数据表中的所有数据
 
@@ -646,9 +646,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**语法:** obj << Report;
-
-Report( obj )
+**语法:** obj &lt;&lt; Report;Report( obj )
 
 **说明:** 返回对该报表对象的引用。
 
@@ -668,7 +666,7 @@ Show( t );
 
 ### Report View
 
-**语法:** obj << Report View( "完全"|"汇总" )
+**语法:** obj &lt;&lt; Report View( "完全"|"汇总" )
 
 **说明:** 报表视图确定平台报表中可见的详细程度。Full 显示所有详细信息，而 Summary 仅显示根据平台确定的选定内容。对于定制行为，显示框支持 <<Set Summary Behavior 消息。
 
@@ -686,7 +684,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**语法:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**语法:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **说明:** 创建生成该分析的 JSL 脚本并将其保存为数据表中的表属性。您可以为脚本指定一个名称。Append Suffix 选项在脚本名称后追加一个数字后缀，用于将该脚本与现有的同名脚本区别出来。Prompt 选项提示用户指定脚本名称。Replace 选项会替换同名的现有脚本。
 
@@ -710,7 +708,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**语法:** obj << Save ByGroup Script to Journal
+**语法:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **说明:** 创建生成该分析的 JSL 脚本，并将一个按钮添加至包含该脚本的记录中。
 
@@ -734,7 +732,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**语法:** obj << Save ByGroup Script to Script Window
+**语法:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其追加至当前的脚本文本窗口中。
 
@@ -758,7 +756,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**语法:** obj << Save Script for All Objects
+**语法:** obj &lt;&lt; Save Script for All Objects
 
 **说明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -776,7 +774,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**语法:** obj << Save Script for All Objects To Data Table( <name> )
+**语法:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **说明:** 将所有报表对象的脚本保存至当前数据表。当您在该窗口中具有多个报表时，该选项很有用。除非您在引号中指定脚本名称，否则脚本将以第一个平台命名。
 
@@ -822,7 +820,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**语法:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**语法:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其作为表属性保存至数据表中。
 
@@ -840,7 +838,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**语法:** obj << Save Script to Journal
+**语法:** obj &lt;&lt; Save Script to Journal
 
 **说明:** 创建生成该分析的 JSL 脚本，并将一个按钮添加至包含该脚本的记录中。
 
@@ -858,7 +856,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**语法:** obj << Save Script to Report
+**语法:** obj &lt;&lt; Save Script to Report
 
 **说明:** 创建生成该分析的 JSL 脚本，并在报表中显示。有助于保留打印的已完成操作记录。
 
@@ -876,7 +874,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**语法:** obj << Save Script to Script Window
+**语法:** obj &lt;&lt; Save Script to Script Window
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其追加至当前的脚本文本窗口中。
 
@@ -959,7 +957,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**语法:** obj << Sync to Data Table Changes
+**语法:** obj &lt;&lt; Sync to Data Table Changes
 
 **说明:** 与已进行的排除和数据的更改同步。
 
@@ -976,7 +974,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**语法:** obj << Title( "new title" )
+**语法:** obj &lt;&lt; Title( "new title" )
 
 **说明:** 设置平台的标题。
 
@@ -994,7 +992,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**语法:** obj << Top Report
+**语法:** obj &lt;&lt; Top Report
 
 **说明:** 返回对报表中根节点的引用。
 
@@ -1014,7 +1012,7 @@ Show( t );
 
 ### Transform Column
 
-**语法:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**语法:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **说明:** 在对象（通常是平台）的本地上下文中创建变换列。变换列仅在平台的生命周期内是活动的。
 
@@ -1035,7 +1033,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**语法:** obj << View Web XML
+**语法:** obj &lt;&lt; View Web XML
 
 **说明:** 返回用于创建交互式 HTML 报表的 XML 代码。
 
@@ -1050,9 +1048,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**语法:** obj = Support Vector Machines(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>启动窗口项: 是</b>
+**语法:** obj = Support Vector Machines(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;启动窗口项: 是&lt;/b&gt;
 
 **说明:** 设置要为报表创建的窗口类型。默认情况下将创建 Visible 报表窗口。Invisible 窗口将不显示在屏幕上，但可被函数（例如 Window()）发现。Private 窗口会响应大多数窗口消息，但不可发现并且必须通过报表对象处理
 
@@ -1094,7 +1090,7 @@ obj = Support Vector Machines(
 
 ### By
 
-**语法:** obj = Support Vector Machines(...<By( column(s) )>...)
+**语法:** obj = Support Vector Machines(...&lt;By( column(s) )&gt;...)
 
 **JMP添加的版本:** 15
 
@@ -1138,7 +1134,7 @@ obj = Support Vector Machines(
 
 ### Freq
 
-**语法:** obj = Support Vector Machines(...<Freq( column )>...)
+**语法:** obj = Support Vector Machines(...&lt;Freq( column )&gt;...)
 
 **JMP添加的版本:** 15
 
@@ -1180,7 +1176,7 @@ obj = Support Vector Machines(
 
 ### Validation
 
-**语法:** obj = Support Vector Machines(...<Validation( column )>...)
+**语法:** obj = Support Vector Machines(...&lt;Validation( column )&gt;...)
 
 **JMP添加的版本:** 15
 
@@ -1240,7 +1236,7 @@ obj = Support Vector Machines(
 
 ### Cost
 
-**语法:** obj << Cost( number )
+**语法:** obj &lt;&lt; Cost( number )
 
 **说明:** 设置 SVM 拟合的成本参数。
 
@@ -1265,7 +1261,7 @@ obj = Support Vector Machines(
 
 ### Cost Max
 
-**语法:** obj << Cost Max( number )
+**语法:** obj &lt;&lt; Cost Max( number )
 
 **说明:** 为调节设计设置最大成本。
 
@@ -1291,7 +1287,7 @@ obj = Support Vector Machines(
 
 ### Cost Min
 
-**语法:** obj << Cost Min( number )
+**语法:** obj &lt;&lt; Cost Min( number )
 
 **说明:** 为调节设计设置最小成本。
 
@@ -1317,7 +1313,7 @@ obj = Support Vector Machines(
 
 ### Fit
 
-**语法:** obj << Fit
+**语法:** obj &lt;&lt; Fit
 
 **说明:** 指定支持向量机的核结构并以数据拟合。
 
@@ -1337,7 +1333,7 @@ obj = Support Vector Machines(
 
 ### Gamma
 
-**语法:** obj << Gamma( number )
+**语法:** obj &lt;&lt; Gamma( number )
 
 **说明:** 设置径向基核的 gamma 参数。
 
@@ -1362,7 +1358,7 @@ obj = Support Vector Machines(
 
 ### Gamma Max
 
-**语法:** obj << Gamma Max( number )
+**语法:** obj &lt;&lt; Gamma Max( number )
 
 **说明:** 为调节设计设置最大 Gamma。
 
@@ -1388,7 +1384,7 @@ obj = Support Vector Machines(
 
 ### Gamma Min
 
-**语法:** obj << Gamma Min( number )
+**语法:** obj &lt;&lt; Gamma Min( number )
 
 **说明:** 为调节设计设置最小 Gamma。
 
@@ -1414,7 +1410,7 @@ obj = Support Vector Machines(
 
 ### Go
 
-**语法:** obj << Go
+**语法:** obj &lt;&lt; Go
 
 **说明:** 开始求解支持向量机。
 
@@ -1434,7 +1430,7 @@ obj << Go;
 
 ### Number of Runs
 
-**语法:** obj << Number of Runs( number )
+**语法:** obj &lt;&lt; Number of Runs( number )
 
 **说明:** 为调节设计设置试验次数。
 
@@ -1487,7 +1483,7 @@ obj = Support Vector Machines(
 
 ### Tuning Design
 
-**语法:** obj << Tuning Design( state=0|1 )
+**语法:** obj &lt;&lt; Tuning Design( state=0|1 )
 
 **JMP添加的版本:** 16
 
@@ -1511,7 +1507,7 @@ obj = Support Vector Machines(
 
 #### Confusion Matrix
 
-**语法:** obj << (fit[number] << Confusion Matrix( state=0|1 ))
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Confusion Matrix( state=0|1 ))
 
 **说明:** 显示或隐藏实际响应与预测响应的交叉表矩阵。 默认开启。
 
@@ -1532,7 +1528,7 @@ obj << (fit[1] << Confusion Matrix( 0 ));
 
 #### Contour Profiler
 
-**语法:** obj << (fit[number] << Contour Profiler( state=0|1 ))
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Contour Profiler( state=0|1 ))
 
 **说明:** 显示或隐藏等高线刻画器。
 
@@ -1553,7 +1549,7 @@ obj << (Fit[1] << Contour Profiler( 1 ));
 
 #### Get Measures
 
-**语法:** obj << (fit[number] << Get Measures)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get Measures)
 
 **说明:** 从模型返回拟合测度汇总。
 
@@ -1575,7 +1571,7 @@ obj << (Fit[1] << Get Measures);
 
 #### Get Prediction Formula
 
-**语法:** obj << (fit[number] << Get Prediction Formula)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Get Prediction Formula)
 
 **说明:** 构造一个脚本，以便创建预测公式列并返回它。
 
@@ -1596,7 +1592,7 @@ obj << (fit[1] << Get Prediction Formula);
 
 #### Lift Curve
 
-**语法:** obj << (fit[number] << Lift Curve( state=0|1 ))
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Lift Curve( state=0|1 ))
 
 **说明:** 显示或隐藏“提升曲线”图。提升曲线绘制提升与观测对应部分的关系，并提供另一种方式来展示模型预测的能力。若您使用了验证，则会为训练集、验证集和测试集分别显示一个图。
 
@@ -1618,7 +1614,7 @@ obj << (fit[1] << Lift Curve( 1 ));
 
 #### Plot Actual by Predicted
 
-**语法:** obj << (fit[number] << Plot Actual By Predicted( state=0|1 ))
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Plot Actual By Predicted( state=0|1 ))
 
 **说明:** 对于指定的拟合，显示或隐藏训练集的图，其中 X 轴标绘预测值，Y 轴标绘实际值。若您使用了验证集和测试集，也会为它们显示图。 默认开启。
 
@@ -1639,7 +1635,7 @@ obj << (fit[1] << Plot Actual By Predicted( 0 ));
 
 #### Plot Residual by Predicted
 
-**语法:** obj << (fit[number] << Plot Residual By Predicted( state=0|1 ))
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Plot Residual By Predicted( state=0|1 ))
 
 **说明:** 对于指定的拟合，显示或隐藏训练集的图，其中 X 轴标绘预测值，Y 轴标绘残差值。若您使用了验证集和测试集，也会为它们显示图。
 
@@ -1660,7 +1656,7 @@ obj << (fit[1] << Plot Residual By Predicted( 1 ));
 
 #### Precision Recall Curve
 
-**语法:** obj << (fit[number] << Precision Recall Curve( state=0|1 ))
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Precision Recall Curve( state=0|1 ))
 
 **说明:** 显示或隐藏“精度-召回曲线”图，它包含响应变量每个水平的曲线。精度-召回曲线绘制不同阈值下的精度值和召回值。若您使用了验证，则会为训练集、验证集和测试集分别显示一个图。
 
@@ -1682,7 +1678,7 @@ obj << (fit[1] << Precision Recall Curve( 1 ));
 
 #### Profiler
 
-**语法:** obj << (fit[number] << Profiler( state=0|1 ))
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Profiler( state=0|1 ))
 
 **说明:** 显示指定拟合的“预测刻画器”图。
 
@@ -1703,7 +1699,7 @@ obj << (fit[1] << Profiler( 1 ));
 
 #### Publish Prediction Formula
 
-**语法:** obj << (fit[number] << Publish Prediction Formula)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Publish Prediction Formula)
 
 **说明:** 创建预测公式并将它们保存为“公式存储库”平台中的公式列脚本。
 
@@ -1724,7 +1720,7 @@ obj << (fit[1] << Publish Prediction Formula);
 
 #### Publish Probability Formula
 
-**语法:** obj << (fit[number] << Publish Probability Formula)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Publish Probability Formula)
 
 **说明:** 将每个响应水平的概率保存为数据表中的单独一列。
 
@@ -1745,7 +1741,7 @@ obj << (fit[1] << Publish Probability Formula);
 
 #### ROC Curve
 
-**语法:** obj << (fit[number] << ROC Curve( state=0|1 ))
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; ROC Curve( state=0|1 ))
 
 **说明:** 显示或隐藏响应变量每个水平的“受试者操作特征”(ROC) 曲线。ROC 曲线是（1 - 特异度）-灵敏度图。若您使用了验证，则会为训练集、验证集和测试集分别显示一个图。
 
@@ -1767,7 +1763,7 @@ obj << (fit[1] << ROC Curve( 1 ));
 
 #### Remove Fit
 
-**语法:** obj << (fit[number] << Remove Fit)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Remove Fit)
 
 **说明:** 删除整个模型报表。
 
@@ -1790,7 +1786,7 @@ obj << (Fit[1] << Remove Fit);
 
 #### Response Profile Plot
 
-**语法:** obj << (fit[number] << Response Profile Plot( state=0|1 ))
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Response Profile Plot( state=0|1 ))
 
 **说明:** 显示或隐藏“响应特征”图。 默认开启。
 
@@ -1811,7 +1807,7 @@ obj << (Fit[1] << Response Profile Plot( 0 ));
 
 #### Save Predicteds
 
-**语法:** obj << (fit[number] << Save Predicteds)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Save Predicteds)
 
 **说明:** 在数据表的新列中保存预测值。
 
@@ -1832,7 +1828,7 @@ obj << (fit[1] << Save Predicteds);
 
 #### Save Prediction Formula
 
-**语法:** obj << (fit[number] << Save Prediction Formula)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Save Prediction Formula)
 
 **说明:** 在数据表中创建包含预测公式的新列。
 
@@ -1853,7 +1849,7 @@ obj << (fit[1] << Save Prediction Formula);
 
 #### Save Probabilities
 
-**语法:** obj << (fit[number] << Save Probabilities)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Save Probabilities)
 
 **说明:** 将每个响应水平的概率保存为数据表中的单独一列。
 
@@ -1874,7 +1870,7 @@ obj << (fit[1] << Save Probabilities);
 
 #### Save Probability Formula
 
-**语法:** obj << (fit[number] << Save Probability Formula)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Save Probability Formula)
 
 **说明:** 将每个响应水平的概率保存为数据表中的单独一列。
 
@@ -1895,7 +1891,7 @@ obj << (fit[1] << Save Probability Formula);
 
 #### Save Validation
 
-**语法:** obj << (fit[number] << Save Validation)
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Save Validation)
 
 **说明:** 在数据表中创建一个新列，用于标识在训练、验证和检验数据集中使用的行。
 
@@ -1922,7 +1918,7 @@ obj << (Fit[1] << Save Validation);
 
 #### Support Vector Coefficients
 
-**语法:** obj << (fit[number] << Support Vector Coefficients( state=0|1 ))
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Support Vector Coefficients( state=0|1 ))
 
 **说明:** 显示或隐藏支持向量系数表。
 
@@ -1943,7 +1939,7 @@ obj << (Fit[1] << Support Vector Coefficients( 1 ));
 
 #### Surface Profiler
 
-**语法:** obj << (fit[number] << Surface Profiler( state=0|1 ))
+**语法:** obj &lt;&lt; (fit[number] &lt;&lt; Surface Profiler( state=0|1 ))
 
 **说明:** 显示或隐藏曲面刻画器。
 

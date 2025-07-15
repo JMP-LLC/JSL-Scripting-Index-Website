@@ -6,25 +6,25 @@
 
 ### Packed
 
-**Syntax:** obj << Packed
+**Syntax:** obj &lt;&lt; Packed
 
 **Description:** Packed
 
 ### Plot Choice
 
-**Syntax:** obj << Plot Choice( "Overview"|"Individual" )
+**Syntax:** obj &lt;&lt; Plot Choice( "Overview"|"Individual" )
 
 **Description:** On by default.
 
 ### Side by side
 
-**Syntax:** obj << Side by side
+**Syntax:** obj &lt;&lt; Side by side
 
 **Description:** Side by side
 
 ### Stacked
 
-**Syntax:** obj << Stacked
+**Syntax:** obj &lt;&lt; Stacked
 
 **Description:** Stacked
 

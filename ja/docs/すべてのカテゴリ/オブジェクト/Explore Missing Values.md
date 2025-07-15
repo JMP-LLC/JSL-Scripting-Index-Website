@@ -6,7 +6,7 @@
 
 ### Action
 
-**構文:** obj << Action
+**構文:** obj &lt;&lt; Action
 
 **説明:** 評価する式を挿入するための、プラットフォーム内の汎用トラップドア。プラットフォームに一時的にディスプレイボックスおよびデータテーブルのコンテキストを設定する。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**構文:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**構文:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **説明:** 作成されたプリセットをオブジェクトに適用する。保存された設定に合わせてオプションとカスタマイズが更新される。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**構文:** obj << Automatic Recalc( state=0|1 )
+**構文:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **説明:** データの除外や変更があった場合に分析を自動的にやり直す。Automatic Recalcオプションがオンになっている場合で、データの除外や変更が再計算の前に確実に適用されるようにするには、Wait(0)コマンドを使用すること。
 
@@ -87,7 +87,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**構文:** obj << Broadcast(message)
+**構文:** obj &lt;&lt; Broadcast(message)
 
 **説明:** メッセージをプラットフォームに一括適用する。個々のオブジェクトから戻される結果がデータテーブルである場合は、可能な限り連結する。その最終的な形式は、Table BoxのSave Combined Tableオプションの結果と同じになるか、またはソース列を使用したConcanateオプションの結果と同じになる。それ以外の場合、結果はリストの形で戻される。
 
@@ -107,7 +107,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**構文:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**構文:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **説明:** プラットフォームの変数を変更するための設定パネルを追加する。
 
@@ -125,7 +125,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**構文:** obj << Copy ByGroup Script
+**構文:** obj &lt;&lt; Copy ByGroup Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -145,7 +145,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**構文:** obj << Copy Script
+**構文:** obj &lt;&lt; Copy Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -160,7 +160,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**構文:** obj << Data Table Window
+**構文:** obj &lt;&lt; Data Table Window
 
 **説明:** この分析に使用したデータテーブルのウィンドウを手前に表示する。
 
@@ -175,7 +175,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**構文:** obj << Get By Levels
+**構文:** obj &lt;&lt; Get By Levels
 
 **説明:** By列が指定されている場合、列名をキー、データ値を値とした連想配列を戻す。
 
@@ -192,7 +192,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**構文:** obj << Get ByGroup Script
+**構文:** obj &lt;&lt; Get ByGroup Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -213,7 +213,7 @@ Show( t );
 
 ### Get Container
 
-**構文:** obj << Get Container
+**構文:** obj &lt;&lt; Get Container
 
 **説明:** オブジェクトのコンテンツを含んだコンテナボックスの参照を戻す。
 
@@ -260,7 +260,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**構文:** obj << Get Data Table
+**構文:** obj &lt;&lt; Get Data Table
 
 **説明:** データテーブルへの参照を戻す。
 
@@ -276,7 +276,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**構文:** obj << Get Group Platform
+**構文:** obj &lt;&lt; Get Group Platform
 
 **説明:** 該当のプラットフォームがグループに属している場合に、Group Platformオブジェクトを戻す。それ以外の場合はEmpty()を戻す。
 
@@ -293,7 +293,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**構文:** obj << Get Script
+**構文:** obj &lt;&lt; Get Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -309,7 +309,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**構文:** obj << Get Script With Data Table
+**構文:** obj &lt;&lt; Get Script With Data Table
 
 **説明:** この分析を再現するスクリプト(JSL)をデータテーブルへの参照も含めて生成し、それを式として戻す。
 
@@ -325,7 +325,7 @@ Show( t );
 
 ### Get Timing
 
-**構文:** obj << Get Timing
+**構文:** obj &lt;&lt; Get Timing
 
 **説明:** プラットフォームの起動にかかった時間を取得する。
 
@@ -341,7 +341,7 @@ Show( t );
 
 ### Get Web Support
 
-**構文:** obj << Get Web Support
+**構文:** obj &lt;&lt; Get Web Support
 
 **説明:** ディスプレイオブジェクトにおけるインタラクティブHTMLサポートのレベルを数値で戻す。1は、一部または全部の要素がサポートされていることを示し、0は、サポートされないことを示す。
 
@@ -357,7 +357,7 @@ Show( s );
 
 ### Get Where Expr
 
-**構文:** obj << Get Where Expr
+**構文:** obj &lt;&lt; Get Where Expr
 
 **説明:** プラットフォームがBy()またはWhere()を使って起動された場合に、データをサブセットするためのWhere式を戻す。By()やWhere()が使われていない場合はEmpty()を戻す。
 
@@ -394,7 +394,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**構文:** obj << Local Data Filter
+**構文:** obj &lt;&lt; Local Data Filter
 
 **説明:** このプラットフォームに対してのみ有効なフィルタで、データを特定のグループまたは範囲にフィルタリングする。
 
@@ -450,7 +450,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**構文:** obj << Paste Local Data Filter
+**構文:** obj &lt;&lt; Paste Local Data Filter
 
 **説明:** クリップボードにあるローカルデータフィルタを現在のレポートに適用する。
 
@@ -471,7 +471,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**構文:** obj << Redo Analysis
+**構文:** obj &lt;&lt; Redo Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -486,7 +486,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**構文:** obj << Redo ByGroup Analysis
+**構文:** obj &lt;&lt; Redo ByGroup Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -506,7 +506,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**構文:** obj << Relaunch Analysis
+**構文:** obj &lt;&lt; Relaunch Analysis
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -521,7 +521,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**構文:** obj << Relaunch ByGroup
+**構文:** obj &lt;&lt; Relaunch ByGroup
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -541,7 +541,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**構文:** obj << Remove Column Switcher
+**構文:** obj &lt;&lt; Remove Column Switcher
 
 **説明:** プラットフォームに最後に追加された列スイッチャーを削除する。
 
@@ -561,7 +561,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**構文:** obj << Remove Local Data Filter
+**構文:** obj &lt;&lt; Remove Local Data Filter
 
 **説明:** すでに作成されているローカルデータフィルタを削除し、プラットフォームはデータテーブル内のすべてのデータを使用した状態に戻る。
 
@@ -600,9 +600,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**構文:** obj << Report;
-
-Report( obj )
+**構文:** obj &lt;&lt; Report;Report( obj )
 
 **説明:** レポートオブジェクトへの参照を戻す。
 
@@ -619,7 +617,7 @@ Show( t );
 
 ### Report View
 
-**構文:** obj << Report View( "完全"|"要約" )
+**構文:** obj &lt;&lt; Report View( "完全"|"要約" )
 
 **説明:** レポートビューは、プラットフォームレポートの詳細を表示するかどうかを決定する。Fullはすべての詳細を表示し、Summaryはプラットフォームにより限定されたものだけを表示する。 動作をカスタマイズするため、各ディスプレイボックスは<<Set Summary Behaviorメッセージをサポートする。
 
@@ -634,7 +632,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**構文:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** 分析を再現するためのJSLスクリプトを作成し、データテーブルにテーブルプロパティとして保存する。スクリプトの名前を指定できる。Append Suffixオプションは、スクリプト名に数字の接尾辞を追加する。これにより、同名のスクリプトが存在していても区別できる。Promptオプションは、ユーザにスクリプト名の指定を促す。Replaceオプションは、同名の既存のスクリプトを置き換える。
 
@@ -654,7 +652,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**構文:** obj << Save ByGroup Script to Journal
+**構文:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -674,7 +672,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**構文:** obj << Save ByGroup Script to Script Window
+**構文:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -694,7 +692,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**構文:** obj << Save Script for All Objects
+**構文:** obj &lt;&lt; Save Script for All Objects
 
 **説明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -709,7 +707,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**構文:** obj << Save Script for All Objects To Data Table( <name> )
+**構文:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **説明:** すべてのレポートオブジェクトを再現するスクリプトを現在のデータテーブルに保存する。このオプションは、ウィンドウ内にレポートが複数ある場合に便利。作成されるスクリプトの名前は、引用符で囲んで指定しない限り、1つ目のプラットフォーム名となる。
 
@@ -747,7 +745,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**構文:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** この分析を再現するJSLスクリプトを生成し、データテーブルのテーブルプロパティとして保存する。
 
@@ -762,7 +760,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**構文:** obj << Save Script to Journal
+**構文:** obj &lt;&lt; Save Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -777,7 +775,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**構文:** obj << Save Script to Report
+**構文:** obj &lt;&lt; Save Script to Report
 
 **説明:** この分析を再現するJSLスクリプトを生成し、レポートウィンドウに表示する。分析手順の記録を結果と一緒に残せる。
 
@@ -792,7 +790,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**構文:** obj << Save Script to Script Window
+**構文:** obj &lt;&lt; Save Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -872,7 +870,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**構文:** obj << Sync to Data Table Changes
+**構文:** obj &lt;&lt; Sync to Data Table Changes
 
 **説明:** 除外やデータの変更が行われた場合に同期する。
 
@@ -889,7 +887,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**構文:** obj << Title( "new title" )
+**構文:** obj &lt;&lt; Title( "new title" )
 
 **説明:** プラットフォームのタイトルを設定する。
 
@@ -904,7 +902,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**構文:** obj << Top Report
+**構文:** obj &lt;&lt; Top Report
 
 **説明:** レポート内のルートノードへの参照を戻す。
 
@@ -921,7 +919,7 @@ Show( t );
 
 ### Transform Column
 
-**構文:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**構文:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **説明:** オブジェクトのローカルコンテキスト(通常はプラットフォーム)内に変換列を作成する。この変換列は、それを作成したプラットフォームの中のみで使用可能。
 
@@ -940,7 +938,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**構文:** obj << View Web XML
+**構文:** obj &lt;&lt; View Web XML
 
 **説明:** インタラクティブHTMLレポートの作成に使うXMLコードを戻す。
 
@@ -976,7 +974,7 @@ New Window( "Bivariate Equation",
 
 ### By
 
-**構文:** obj << By( column(s) )
+**構文:** obj &lt;&lt; By( column(s) )
 
 ```jsl
 
@@ -993,7 +991,7 @@ obj = dt << Explore Missing Values( Y( :OZONE, :CO, :SO2, :NO, :PM10 ), By( _byc
 
 ### Columns
 
-**構文:** obj << Columns( column(s) )
+**構文:** obj &lt;&lt; Columns( column(s) )
 
 ```jsl
 
@@ -1005,7 +1003,7 @@ obj = dt << Explore Missing Values( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );
 
 ### Validation
 
-**構文:** obj << Validation( column )
+**構文:** obj &lt;&lt; Validation( column )
 
 ```jsl
 
@@ -1017,7 +1015,7 @@ obj = dt << Explore Missing Values( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );
 
 ### Y
 
-**構文:** obj << Y( column(s) )
+**構文:** obj &lt;&lt; Y( column(s) )
 
 ```jsl
 
@@ -1047,7 +1045,7 @@ obj = dt << Explore Missing Values( Y( :OZONE, :CO, :SO2, :NO, :PM10 ) );
 
 ### ADI Loading Matrix
 
-**構文:** obj << ADI Loading Matrix( state=0|1 )
+**構文:** obj &lt;&lt; ADI Loading Matrix( state=0|1 )
 
 **説明:** 負荷量の表示/非表示を切り替える。レポートでは、表の各列が、1つの因子に対する負荷量となっている。
 
@@ -1068,7 +1066,7 @@ obj << ADI Loading Matrix( 1 );
 
 ### Automated Data Imputation
 
-**構文:** obj << Automated Data Imputation
+**構文:** obj &lt;&lt; Automated Data Imputation
 
 **説明:** 低ランク行列近似により欠測値を補完する。この方法では、低ランク近似の最適な次元をデータから自動的に選択する。
 
@@ -1085,7 +1083,7 @@ obj << Automated Data Imputation;
 
 ### Close
 
-**構文:** obj << Close
+**構文:** obj &lt;&lt; Close
 
 **説明:** 「欠測値に関する情報」レポートを閉じる。
 
@@ -1104,7 +1102,7 @@ obj << Close;
 
 ### Color Cells
 
-**構文:** obj << Color Cells( ALL or column1, column2, ... )
+**構文:** obj &lt;&lt; Color Cells( ALL or column1, column2, ... )
 
 **説明:** 「欠測値に関する情報」レポートで選択した列について、それらの列で欠測値を含むセルをデータテーブルで色付けする。
 
@@ -1119,7 +1117,7 @@ obj << Color cells( :OZONE );
 
 ### Color Rows
 
-**構文:** obj << Color Rows( ALL or column1, column2, ... )
+**構文:** obj &lt;&lt; Color Rows( ALL or column1, column2, ... )
 
 **説明:** 「欠測値に関する情報」レポートで選択した列について、それらの列で欠測値を含む行をデータテーブルで色付けする。
 
@@ -1134,7 +1132,7 @@ obj << Color rows( :OZONE );
 
 ### Exclude Rows
 
-**構文:** obj << Exclude Rows( ALL or column1, column2, ... )
+**構文:** obj &lt;&lt; Exclude Rows( ALL or column1, column2, ... )
 
 **説明:** 「欠測値に関する情報」レポートで選択した列について、それらの列で欠測値を含む行に対して除外列の状態をデータテーブルで適用する。
 
@@ -1149,7 +1147,7 @@ obj << Exclude rows( :OZONE );
 
 ### Get U V Sigma ADI Matrices
 
-**構文:** obj << Get U V Sigma ADI Matrices
+**構文:** obj &lt;&lt; Get U V Sigma ADI Matrices
 
 **説明:** 自動データ補完法で得られた低ランク近似のU, V, Σ行列を戻す。
 
@@ -1170,7 +1168,7 @@ obj << Get U V Sigma ADI Matrices;
 
 ### Maximum Dimension
 
-**構文:** obj << Maximum Dimension( number )
+**構文:** obj &lt;&lt; Maximum Dimension( number )
 
 **説明:** 自動データ補完で、次元の上限を設定する。
 
@@ -1190,7 +1188,7 @@ obj = dt << Explore Missing Values(
 
 ### Maximum Iteration
 
-**構文:** obj << Maximum Iteration( number=10 )
+**構文:** obj &lt;&lt; Maximum Iteration( number=10 )
 
 **説明:** 自動データ補完で、反復回数の上限値を設定する。 デフォルトの値は"10"。
 
@@ -1210,7 +1208,7 @@ obj = dt << Explore Missing Values(
 
 ### Missing Value Clustering
 
-**構文:** obj << Missing Value Clustering
+**構文:** obj &lt;&lt; Missing Value Clustering
 
 **説明:** 欠測値のパターンに対して階層型クラスター分析を行う。
 
@@ -1225,7 +1223,7 @@ obj << Missing Value Clustering;
 
 ### Missing Value Report
 
-**構文:** obj << Missing Value Report
+**構文:** obj &lt;&lt; Missing Value Report
 
 **説明:** 「欠測値に関する情報」レポートを表示する。このレポートには、各列について、列名と欠測値数がリストされる。
 
@@ -1240,7 +1238,7 @@ obj << Missing Value Report;
 
 ### Missing Value Snapshot
 
-**構文:** obj << Missing Value Snapshot
+**構文:** obj &lt;&lt; Missing Value Snapshot
 
 **説明:** 欠測値のセルプロットを表示する。セルプロットで黒いセルは欠測値を示す。
 
@@ -1255,7 +1253,7 @@ obj << Missing Value Snapshot;
 
 ### Multivariate Normal Imputation
 
-**構文:** obj << Multivariate Normal Imputation( Shrink Covariances( state=0|1 ) )
+**構文:** obj &lt;&lt; Multivariate Normal Imputation( Shrink Covariances( state=0|1 ) )
 
 **説明:** 多重正規分布に基づいて欠測値を補完する。共分散行列の推定を改善するために、縮小させた推定値を用いる。
 
@@ -1270,7 +1268,7 @@ obj << Multivariate Normal Imputation( Shrink Covariances( 1 ) );
 
 ### Multivariate RPCA Imputation
 
-**構文:** obj << Multivariate RPCA Imputation( Lambda( number ), Tolerance( number = 1e-7 ), MaxIt( number ) )
+**構文:** obj &lt;&lt; Multivariate RPCA Imputation( Lambda( number ), Tolerance( number = 1e-7 ), MaxIt( number ) )
 
 **説明:** ロバストな主成分分析に基づき欠測値を補完する。この方法は、低ランク行列近似（特異値分解）であるが、外れ値に対してロバストになるように工夫されている。この方法は、さまざまな横長のデータ（ワイドデータ）に対して有用。Lambdaのデフォルト値は2/sqrt(max(n, p))。ここで、nは行数、pは列数。min(n, p)が100より小さい場合、最大反復回数(MaxIt)は75。min(n, p)が100以上1000未満の場合、MaxItのデフォルト値は100。min(n,p)が1000以上の場合、MaxItのデフォルト値は200。指定された最大反復回数の後にアルゴリズムが収束しない場合、MaxIt が済んだ段階での解がレポートに表示される。
 
@@ -1285,7 +1283,7 @@ obj << Multivariate RPCA Imputation;
 
 ### Multivariate SVD Imputation
 
-**構文:** obj << Multivariate SVD Imputation( Number of Singular Vectors( number ), Maximum Iterations( number ), Show Iteration Log( state=0|1 ) )
+**構文:** obj &lt;&lt; Multivariate SVD Imputation( Number of Singular Vectors( number ), Maximum Iterations( number ), Show Iteration Log( state=0|1 ) )
 
 **説明:** 低ランク近似の特異値分解によって、欠測値を補完する。大規模なデータに対しても、処理に計算時間があまりかからない。
 
@@ -1305,7 +1303,7 @@ obj << Multivariate SVD Imputation(
 
 ### Options for Saving Imputed Values
 
-**構文:** obj << Options for Saving Imputed Values(1|2|3)
+**構文:** obj &lt;&lt; Options for Saving Imputed Values(1|2|3)
 
 **説明:** 自動データ補完法(ADI法)において、補完値をデータテーブルに保存する方法を指定する。［新しいデータテーブルを作成する］オプションを用いたい場合には1を、［現データテーブルに計算式を保存する］オプションを用いたい場合には2を、3は［現データテーブルの欠測を置き換える］オプションを用いたい場合には3を指定する。
 
@@ -1326,7 +1324,7 @@ obj = dt << Explore Missing Values(
 
 ### Select Rows
 
-**構文:** obj << Select Rows( ALL or column1, column2, ... )
+**構文:** obj &lt;&lt; Select Rows( ALL or column1, column2, ... )
 
 **説明:** 「欠測値に関する情報」レポートで選択した列について、それらの列で欠測値を含む行をデータテーブルで選択する。
 
@@ -1341,7 +1339,7 @@ obj << Select rows( :OZONE );
 
 ### Set Random Seed
 
-**構文:** obj << Set Random Seed( number=0 )
+**構文:** obj &lt;&lt; Set Random Seed( number=0 )
 
 **説明:** 自動データ補完で、乱数シード値を設定する。 デフォルトの値は"0"。
 
@@ -1361,7 +1359,7 @@ obj = dt << Explore Missing Values(
 
 ### Show only columns with missing
 
-**構文:** obj << Show only columns with missing( state=0|1 )
+**構文:** obj &lt;&lt; Show only columns with missing( state=0|1 )
 
 **説明:** 欠測値がない列をリストから削除する。
 
@@ -1376,7 +1374,7 @@ obj << Show Only Columns With Missing( 1 );
 
 ### Undo Imputation
 
-**構文:** obj << Undo Imputation
+**構文:** obj &lt;&lt; Undo Imputation
 
 **説明:** 補完した結果を、元の欠測値に戻す。最近の補完処理が、元に戻される
 
@@ -1395,7 +1393,7 @@ obj << Undo Imputation;
 
 ### Validation Proportion
 
-**構文:** obj << Validation Proportion( number=0.3 )
+**構文:** obj &lt;&lt; Validation Proportion( number=0.3 )
 
 **説明:** 自動データ補完で、検証セットとして用いる行の割合を設定する。 デフォルトの値は"0.3"。
 

@@ -2,8 +2,6 @@
 
 
 
-## 関数
-
 ### R Connect
 
 **構文:** RConnection = R Connect()
@@ -173,7 +171,7 @@ R name = R JMP Name to R Name( a b c );
 
 ### R Send
 
-**構文:** R Send( name, <R Name( as_name ) | "as_name"> )
+**構文:** R Send( name, &lt;R Name( as_name ) | "as_name"&gt; )
 
 **説明:** Rにデータを送る。引数nameには、数値、文字列、行列、リスト、データテーブル、データテーブル列といったデータタイプのものを指定することができる。
 
@@ -210,7 +208,7 @@ w = R Get( "weight" );
 
 ### R Send File
 
-**構文:** R Send File( filename, <R Name( name )> )
+**構文:** R Send File( filename, &lt;R Name( name )&gt; )
 
 **説明:** データファイルをRに送る。引数filenameは、Rに送られるファイルのパス名。
 

@@ -6,7 +6,7 @@
 
 ### Action
 
-**構文:** obj << Action
+**構文:** obj &lt;&lt; Action
 
 **説明:** 評価する式を挿入するための、プラットフォーム内の汎用トラップドア。プラットフォームに一時的にディスプレイボックスおよびデータテーブルのコンテキストを設定する。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**構文:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**構文:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **説明:** 作成されたプリセットをオブジェクトに適用する。保存された設定に合わせてオプションとカスタマイズが更新される。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**構文:** obj << Automatic Recalc( state=0|1 )
+**構文:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **説明:** データの除外や変更があった場合に分析を自動的にやり直す。Automatic Recalcオプションがオンになっている場合で、データの除外や変更が再計算の前に確実に適用されるようにするには、Wait(0)コマンドを使用すること。
 
@@ -94,7 +94,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**構文:** obj << Broadcast(message)
+**構文:** obj &lt;&lt; Broadcast(message)
 
 **説明:** メッセージをプラットフォームに一括適用する。個々のオブジェクトから戻される結果がデータテーブルである場合は、可能な限り連結する。その最終的な形式は、Table BoxのSave Combined Tableオプションの結果と同じになるか、またはソース列を使用したConcanateオプションの結果と同じになる。それ以外の場合、結果はリストの形で戻される。
 
@@ -114,7 +114,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**構文:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**構文:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **説明:** プラットフォームの変数を変更するための設定パネルを追加する。
 
@@ -132,7 +132,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**構文:** obj << Copy ByGroup Script
+**構文:** obj &lt;&lt; Copy ByGroup Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -160,7 +160,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**構文:** obj << Copy Script
+**構文:** obj &lt;&lt; Copy Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -182,7 +182,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**構文:** obj << Data Table Window
+**構文:** obj &lt;&lt; Data Table Window
 
 **説明:** この分析に使用したデータテーブルのウィンドウを手前に表示する。
 
@@ -204,7 +204,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**構文:** obj << Get By Levels
+**構文:** obj &lt;&lt; Get By Levels
 
 **説明:** By列が指定されている場合、列名をキー、データ値を値とした連想配列を戻す。
 
@@ -221,7 +221,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**構文:** obj << Get ByGroup Script
+**構文:** obj &lt;&lt; Get ByGroup Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -250,7 +250,7 @@ Show( t );
 
 ### Get Container
 
-**構文:** obj << Get Container
+**構文:** obj &lt;&lt; Get Container
 
 **説明:** オブジェクトのコンテンツを含んだコンテナボックスの参照を戻す。
 
@@ -304,7 +304,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**構文:** obj << Get Data Table
+**構文:** obj &lt;&lt; Get Data Table
 
 **説明:** データテーブルへの参照を戻す。
 
@@ -327,7 +327,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**構文:** obj << Get Group Platform
+**構文:** obj &lt;&lt; Get Group Platform
 
 **説明:** 該当のプラットフォームがグループに属している場合に、Group Platformオブジェクトを戻す。それ以外の場合はEmpty()を戻す。
 
@@ -344,7 +344,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**構文:** obj << Get Script
+**構文:** obj &lt;&lt; Get Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -367,7 +367,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**構文:** obj << Get Script With Data Table
+**構文:** obj &lt;&lt; Get Script With Data Table
 
 **説明:** この分析を再現するスクリプト(JSL)をデータテーブルへの参照も含めて生成し、それを式として戻す。
 
@@ -390,7 +390,7 @@ Show( t );
 
 ### Get Timing
 
-**構文:** obj << Get Timing
+**構文:** obj &lt;&lt; Get Timing
 
 **説明:** プラットフォームの起動にかかった時間を取得する。
 
@@ -413,7 +413,7 @@ Show( t );
 
 ### Get Web Support
 
-**構文:** obj << Get Web Support
+**構文:** obj &lt;&lt; Get Web Support
 
 **説明:** ディスプレイオブジェクトにおけるインタラクティブHTMLサポートのレベルを数値で戻す。1は、一部または全部の要素がサポートされていることを示し、0は、サポートされないことを示す。
 
@@ -429,7 +429,7 @@ Show( s );
 
 ### Get Where Expr
 
-**構文:** obj << Get Where Expr
+**構文:** obj &lt;&lt; Get Where Expr
 
 **説明:** プラットフォームがBy()またはWhere()を使って起動された場合に、データをサブセットするためのWhere式を戻す。By()やWhere()が使われていない場合はEmpty()を戻す。
 
@@ -466,7 +466,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**構文:** obj << Local Data Filter
+**構文:** obj &lt;&lt; Local Data Filter
 
 **説明:** このプラットフォームに対してのみ有効なフィルタで、データを特定のグループまたは範囲にフィルタリングする。
 
@@ -522,7 +522,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**構文:** obj << Paste Local Data Filter
+**構文:** obj &lt;&lt; Paste Local Data Filter
 
 **説明:** クリップボードにあるローカルデータフィルタを現在のレポートに適用する。
 
@@ -543,7 +543,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**構文:** obj << Redo Analysis
+**構文:** obj &lt;&lt; Redo Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -565,7 +565,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**構文:** obj << Redo ByGroup Analysis
+**構文:** obj &lt;&lt; Redo ByGroup Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -593,7 +593,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**構文:** obj << Relaunch Analysis
+**構文:** obj &lt;&lt; Relaunch Analysis
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -615,7 +615,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**構文:** obj << Relaunch ByGroup
+**構文:** obj &lt;&lt; Relaunch ByGroup
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -643,7 +643,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**構文:** obj << Remove Column Switcher
+**構文:** obj &lt;&lt; Remove Column Switcher
 
 **説明:** プラットフォームに最後に追加された列スイッチャーを削除する。
 
@@ -663,7 +663,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**構文:** obj << Remove Local Data Filter
+**構文:** obj &lt;&lt; Remove Local Data Filter
 
 **説明:** すでに作成されているローカルデータフィルタを削除し、プラットフォームはデータテーブル内のすべてのデータを使用した状態に戻る。
 
@@ -702,9 +702,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**構文:** obj << Report;
-
-Report( obj )
+**構文:** obj &lt;&lt; Report;Report( obj )
 
 **説明:** レポートオブジェクトへの参照を戻す。
 
@@ -728,7 +726,7 @@ Show( t );
 
 ### Report View
 
-**構文:** obj << Report View( "完全"|"要約" )
+**構文:** obj &lt;&lt; Report View( "完全"|"要約" )
 
 **説明:** レポートビューは、プラットフォームレポートの詳細を表示するかどうかを決定する。Fullはすべての詳細を表示し、Summaryはプラットフォームにより限定されたものだけを表示する。 動作をカスタマイズするため、各ディスプレイボックスは<<Set Summary Behaviorメッセージをサポートする。
 
@@ -750,7 +748,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**構文:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** 分析を再現するためのJSLスクリプトを作成し、データテーブルにテーブルプロパティとして保存する。スクリプトの名前を指定できる。Append Suffixオプションは、スクリプト名に数字の接尾辞を追加する。これにより、同名のスクリプトが存在していても区別できる。Promptオプションは、ユーザにスクリプト名の指定を促す。Replaceオプションは、同名の既存のスクリプトを置き換える。
 
@@ -778,7 +776,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**構文:** obj << Save ByGroup Script to Journal
+**構文:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -806,7 +804,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**構文:** obj << Save ByGroup Script to Script Window
+**構文:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -834,7 +832,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**構文:** obj << Save Script for All Objects
+**構文:** obj &lt;&lt; Save Script for All Objects
 
 **説明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -856,7 +854,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**構文:** obj << Save Script for All Objects To Data Table( <name> )
+**構文:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **説明:** すべてのレポートオブジェクトを再現するスクリプトを現在のデータテーブルに保存する。このオプションは、ウィンドウ内にレポートが複数ある場合に便利。作成されるスクリプトの名前は、引用符で囲んで指定しない限り、1つ目のプラットフォーム名となる。
 
@@ -910,7 +908,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**構文:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** この分析を再現するJSLスクリプトを生成し、データテーブルのテーブルプロパティとして保存する。
 
@@ -932,7 +930,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**構文:** obj << Save Script to Journal
+**構文:** obj &lt;&lt; Save Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -954,7 +952,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**構文:** obj << Save Script to Report
+**構文:** obj &lt;&lt; Save Script to Report
 
 **説明:** この分析を再現するJSLスクリプトを生成し、レポートウィンドウに表示する。分析手順の記録を結果と一緒に残せる。
 
@@ -976,7 +974,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**構文:** obj << Save Script to Script Window
+**構文:** obj &lt;&lt; Save Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -1063,7 +1061,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**構文:** obj << Sync to Data Table Changes
+**構文:** obj &lt;&lt; Sync to Data Table Changes
 
 **説明:** 除外やデータの変更が行われた場合に同期する。
 
@@ -1080,7 +1078,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**構文:** obj << Title( "new title" )
+**構文:** obj &lt;&lt; Title( "new title" )
 
 **説明:** プラットフォームのタイトルを設定する。
 
@@ -1102,7 +1100,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**構文:** obj << Top Report
+**構文:** obj &lt;&lt; Top Report
 
 **説明:** レポート内のルートノードへの参照を戻す。
 
@@ -1126,7 +1124,7 @@ Show( t );
 
 ### Transform Column
 
-**構文:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**構文:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **説明:** オブジェクトのローカルコンテキスト(通常はプラットフォーム)内に変換列を作成する。この変換列は、それを作成したプラットフォームの中のみで使用可能。
 
@@ -1145,7 +1143,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**構文:** obj << View Web XML
+**構文:** obj &lt;&lt; View Web XML
 
 **説明:** インタラクティブHTMLレポートの作成に使うXMLコードを戻す。
 
@@ -1181,7 +1179,7 @@ New Window( "Bivariate Equation",
 
 ### Columns
 
-**構文:** obj << Columns( column(s) )
+**構文:** obj &lt;&lt; Columns( column(s) )
 
 ```jsl
 
@@ -1200,7 +1198,7 @@ obj = dt << Factor Analysis(
 
 ### Freq
 
-**構文:** obj << Freq( column )
+**構文:** obj &lt;&lt; Freq( column )
 
 ```jsl
 
@@ -1221,7 +1219,7 @@ obj = dt << Factor Analysis(
 
 ### Weight
 
-**構文:** obj << Weight( column )
+**構文:** obj &lt;&lt; Weight( column )
 
 ```jsl
 
@@ -1242,7 +1240,7 @@ obj = dt << Factor Analysis(
 
 ### Y
 
-**構文:** obj << Y( column(s) )
+**構文:** obj &lt;&lt; Y( column(s) )
 
 ```jsl
 
@@ -1286,7 +1284,7 @@ obj = dt << Factor Analysis(
 
 ### Bartlett's Test of Sphericity
 
-**構文:** obj << Bartlett&apos;s Test of Sphericity( state=0|1 )
+**構文:** obj &lt;&lt; Bartlett&apos;s Test of Sphericity( state=0|1 )
 
 **説明:** 固有値の等分散性に対する検定の表示/非表示を切り替える。
 
@@ -1311,7 +1309,7 @@ obj << Bartlett's Test of Sphericity( 1 );
 
 ### Eigenvalues
 
-**構文:** obj << Eigenvalues( state=0|1 )
+**構文:** obj &lt;&lt; Eigenvalues( state=0|1 )
 
 **説明:** 相関行列、（共分散行列、または原点周りの積和行列の固有値を示した表を表示/非表示にする。この固有値の表には、全分散に対して各固有値が占める割合(寄与率)、寄与率を示す棒グラフ、累積寄与率が含まれている。 デフォルトではオン。
 
@@ -1335,7 +1333,7 @@ obj << Eigenvalues( 0 );
 
 ### Fit
 
-**構文:** obj << Fit( "PC"|"ML", "ONE"|"SMC", number, rotation method )
+**構文:** obj &lt;&lt; Fit( "PC"|"ML", "ONE"|"SMC", number, rotation method )
 
 **説明:** 分析者によって指定された方法・事前共通性・因子数・回転方法に基づいて、探索的因子分析モデルをあてはめる。使用できる推定方法は、「主軸」(PC)と「最尤法」(ML)。事前共通性として、「1」もしくは「SMC」(重相関係数の2乗)のいずれかに指定できる。使用できる回転方法は、Varimax、Biquartimax、Equamax、Factorparsimax、Orthomax、Parsimax、Quartimax、Biquartimin、Covarimin、Obbiquartimax、Obequamax、Obfactorparsimax、Oblimin、Obparsimax、Obquartimax、Obvarimax、Promax。
 
@@ -1356,7 +1354,7 @@ obj << Fit( "ML", "SMC", 2, "Varimax" );
 
 ### Kaiser-Meyer-Olkin Test
 
-**構文:** obj << "Kaiser-Meyer-Olkin Test"n( state=0|1 )
+**構文:** obj &lt;&lt; "Kaiser-Meyer-Olkin Test"n( state=0|1 )
 
 **説明:** Kaiser-Meyer-Olkin指標の表示/非表示を切り替える。この指標は、該当の変数におけるばらつきが、共通の潜在因子によるばらつきによって生じている程度を示します。
 
@@ -1381,7 +1379,7 @@ obj << "Kaiser-Meyer-Olkin Test"n( 1 );
 
 ### Scree Plot
 
-**構文:** obj << Scree Plot( state=0|1 )
+**構文:** obj &lt;&lt; Scree Plot( state=0|1 )
 
 **説明:** 各成分の固有値を折れ線で描いたプロットの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1461,7 +1459,7 @@ obj = dt << Factor Analysis(
 
 #### Arrow Lines
 
-**構文:** obj << (Fit[number] << Arrow Lines( state=0|1 ))
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Arrow Lines( state=0|1 ))
 
 **説明:** グラフ上における矢印線の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1486,7 +1484,7 @@ obj << (Fit[1] << Arrow Lines( 0 ));
 
 #### Copy Model Specification for SEM
 
-**構文:** obj << (Fit[number] << Copy Model Specification for SEM)
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Copy Model Specification for SEM)
 
 **説明:** 探索的因子分析モデルの定義をクリップボードにコピーする。コピーした後、「構造方程式モデル」プラットフォームにその定義を貼り付けて、該当の探索的因子モデルの適合度を確認することができる。
 
@@ -1508,7 +1506,7 @@ obj2 << Paste Model Specification;
 
 #### Eigenvalues
 
-**構文:** obj << (Fit[number] << Eigenvalues( state=0|1 ))
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Eigenvalues( state=0|1 ))
 
 **説明:** 縮小相関行列における固有値と共通分散の割合の表示/非表示を切り替える。
 
@@ -1530,7 +1528,7 @@ obj << (Fit[1] << Eigenvalues( 1 ));
 
 #### Factor Loading Plot
 
-**構文:** obj << (Fit[number] << Factor Loading Plot( state=0|1 ))
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Factor Loading Plot( state=0|1 ))
 
 **説明:** 回転後の因子負荷量プロットの表示/非表示を切り替える。3つ以上の因子をモデル化する場合、因子負荷量プロットは行列形式で表示される。 デフォルトではオン。
 
@@ -1555,7 +1553,7 @@ obj << (Fit[1] << Factor Loading Plot( 0 ));
 
 #### Factor Structure
 
-**構文:** obj << (Fit[number] << Factor Structure( state=0|1 ))
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Factor Structure( state=0|1 ))
 
 **説明:** 変数と共通因子との間の相関行列の表示/非表示を切り替える。このオプションは、回転方法が斜交回転の場合にのみ使用可能。 デフォルトではオン。
 
@@ -1580,7 +1578,7 @@ obj << (Fit[1] << Factor Structure( 0 ));
 
 #### Final Communality Estimates
 
-**構文:** obj << (Fit[number] << Final Communality Estimates( state=0|1 ))
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Final Communality Estimates( state=0|1 ))
 
 **説明:** 因子モデルをあてはめた後の共通性推定値の表示/非表示を切り替える。因子が直交している場合は、変数の最終的な共通性の推定値は、その変数の負荷量の2乗の合計に等しい。 デフォルトではオン。
 
@@ -1603,7 +1601,7 @@ obj << (Fit[1] << Final Communality Estimates( 0 ));
 
 #### Interfactor Correlations
 
-**構文:** obj << (Fit[number] << Interfactor Correlations( state=0|1 ))
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Interfactor Correlations( state=0|1 ))
 
 **説明:** 因子間相関行列の表示/非表示を切り替える。このオプションは、回転方法が斜交回転の場合にのみ使用可能。
 
@@ -1627,7 +1625,7 @@ obj << (Fit[1] << Interfactor Correlations( 1 ));
 
 #### Measures of Factor Scores
 
-**構文:** obj << (Fit[number] << Measures of Factor Scores( state=0|1 ))
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Measures of Factor Scores( state=0|1 ))
 
 **説明:** 因子スコアの決定性に関する指標の表示/非表示を切り替える。因子スコアの決定性に関する指標には、重相関、重相関の2乗、相関の最小値がある。
 
@@ -1653,7 +1651,7 @@ obj << (Fit[1] << Measures of Factor Scores( 1 ));
 
 #### Measures of Fit
 
-**構文:** obj << (Fit[number] << Measures of Fit( state=0|1 ))
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Measures of Fit( state=0|1 ))
 
 **説明:** 適合度指標の表示/非表示を切り替える。適合度指標には、Bartlett修正なしカイ2乗、AIC、BIC、Tucker-Lewisの指標、近似の平均平方誤差などがある。このオプションは、「因子分析の方法」として最尤法を選択した場合にのみ使用可能。 デフォルトではオン。
 
@@ -1678,7 +1676,7 @@ obj << (Fit[1] << Measures of Fit( 0 ));
 
 #### Prior Communality
 
-**構文:** obj << (Fit[number] << Prior Communality( state=0|1 ))
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Prior Communality( state=0|1 ))
 
 **説明:** 各変数の共通性に対する初期推定値の表示/非表示を切り替える。
 
@@ -1700,7 +1698,7 @@ obj << (Fit[1] << Prior Communality( 1 ));
 
 #### Remove Fit
 
-**構文:** obj << (Fit[number] << Remove Fit)
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Remove Fit)
 
 **説明:** 指定したあてはめをレポートから削除する。
 
@@ -1723,7 +1721,7 @@ obj << (Fit[1] << Remove Fit);
 
 #### Rotated Factor Loading
 
-**構文:** obj << (Fit[number] << Rotated Factor Loading( state=0|1 ))
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Rotated Factor Loading( state=0|1 ))
 
 **説明:** 回転後の因子負荷量行列の表示/非表示を切り替える。回転が直交である場合、因子負荷量は、変数と回転後の因子の相関を示す。 デフォルトではオン。
 
@@ -1748,7 +1746,7 @@ obj << (Fit[1] << Rotated Factor Loading( 0 ));
 
 #### Rotation Matrix
 
-**構文:** obj << (Fit[number] << Rotation Matrix( state=0|1 ))
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Rotation Matrix( state=0|1 ))
 
 **説明:** 因子回転するのに使われた行列の表示/非表示を切り替える。
 
@@ -1770,7 +1768,7 @@ obj << (Fit[1] << Rotation Matrix( 1 ));
 
 #### Save Factor Scores
 
-**構文:** obj << (Fit[number] << Save Factor Scores( state=0|1 ))
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Save Factor Scores( state=0|1 ))
 
 **説明:** Thurstone法で因子スコアを求める計算式の列を元のデータテーブルに作成する。
 
@@ -1794,7 +1792,7 @@ obj << (Fit[1] << Save Factor Scores);
 
 #### Save Factor Scores with Imputation
 
-**構文:** obj << (Fit[number] << Save Factor Scores with Imputation( state=0|1 ))
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Save Factor Scores with Imputation( state=0|1 ))
 
 **説明:** 欠測値は補完して因子スコアを求める計算式の列を元のデータテーブルに作成する。
 
@@ -1815,7 +1813,7 @@ obj << (Fit[1] << Save Factor Scores with Imputation);
 
 #### Score Plot
 
-**構文:** obj << (Fit[number] << Score Plot( state=0|1 ))
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Score Plot( state=0|1 ))
 
 **説明:** 因子スコアの散布図の表示/非表示を切り替える。3因子以上の場合、スコアプロットは行列形式で表示される。
 
@@ -1839,7 +1837,7 @@ obj << (Fit[1] << Score Plot( 1 ));
 
 #### Score Plot with Imputation
 
-**構文:** obj << (Fit[number] << Score Plot with Imputation( state=0|1 ))
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Score Plot with Imputation( state=0|1 ))
 
 **説明:** 欠測値を補完した因子スコアの散布図の表示/非表示を切り替える。
 
@@ -1860,7 +1858,7 @@ obj << (Fit[1] << Score Plot with Imputation( 1 ));
 
 #### Significance Test
 
-**構文:** obj << (Fit[number] << Significance Test( state=0|1 ))
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Significance Test( state=0|1 ))
 
 **説明:** 2つの有意性検定の結果の表示/非表示を切り替える。1つ目は、「共通の因子は1つも存在しない」という帰無仮説を検定し、もう1つは、「指定の因子数で十分である」という帰無仮説を検定する。 デフォルトではオン。
 
@@ -1885,7 +1883,7 @@ obj << (Fit[1] << Significance Test( 0 ));
 
 #### Standard Score Coefficients
 
-**構文:** obj << (Fit[number] << Standard Score Coefficients( state=0|1 ))
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Standard Score Coefficients( state=0|1 ))
 
 **説明:** 回転した因子の因子スコアを元のデータテーブルに保存する際の因子スコアの推定に使われる係数の表示/非表示を切り替える表。
 
@@ -1907,7 +1905,7 @@ obj << (Fit[1] << Standard Score Coefficients( 1 ));
 
 #### Target Matrix
 
-**構文:** obj << (Fit[number] << Target Matrix( state=0|1 ))
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Target Matrix( state=0|1 ))
 
 **説明:** プロマックス回転において基準とした行列の表示/非表示を切り替える。この行列は、バリマックス回転で求めている。このオプションは、回転方法がプロマックス回転の場合にのみ使用可能。
 
@@ -1929,7 +1927,7 @@ obj << (Fit[1] << Target Matrix( 1 ));
 
 #### Unrotated Factor Loading
 
-**構文:** obj << (Fit[number] << Unrotated Factor Loading( state=0|1 ))
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Unrotated Factor Loading( state=0|1 ))
 
 **説明:** 回転前の因子負荷量行列の表示/非表示を切り替える。
 
@@ -1951,7 +1949,7 @@ obj << (Fit[1] << Unrotated Factor Loading( 1 ));
 
 #### Unsorted and Rotated Factor Loading
 
-**構文:** obj << (Fit[number] << Unsorted and Rotated Factor Loading( state=0|1 ))
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Unsorted and Rotated Factor Loading( state=0|1 ))
 
 **説明:** 回転後の、並べ替えていない因子負荷量行列の表示/非表示を切り替える。
 
@@ -1977,7 +1975,7 @@ obj << (Fit[1] << Unsorted and Rotated Factor Loading( 1 ));
 
 #### Unsorted and Unrotated Factor Loading
 
-**構文:** obj << (Fit[number] << Unsorted and Unrotated Factor Loading( state=0|1 ))
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Unsorted and Unrotated Factor Loading( state=0|1 ))
 
 **説明:** 並べ替えや回転を行う前の因子負荷量行列の表示/非表示を切り替える。
 
@@ -2001,7 +1999,7 @@ obj << (Fit[1] << Unsorted and Unrotated Factor Loading( 1 ));
 
 #### Variance Explained by Each Factor
 
-**構文:** obj << (Fit[number] << Variance Explained by Each Factor( state=0|1 ))
+**構文:** obj &lt;&lt; (Fit[number] &lt;&lt; Variance Explained by Each Factor( state=0|1 ))
 
 **説明:** 回転後の各因子によって説明される共通分散の分散・パーセント・累積パーセントの表示/非表示を切り替える。このオプションは、回転方法が直交回転の場合にのみ使用可能。 デフォルトではオン。
 

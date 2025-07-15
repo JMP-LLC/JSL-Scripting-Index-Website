@@ -98,7 +98,7 @@ obj = dt << Bootstrap Forest(
 
 ### Bubble Plot
 
-**構文:** Bubble Plot( X( column ), Y( column ), <Sizes( column )>, <Time( column )>, <ID( column )>, <Coloring( column ) )
+**構文:** Bubble Plot( X( column ), Y( column ), &lt;Sizes( column )&gt;, &lt;Time( column )&gt;, &lt;ID( column )&gt;, &lt;Coloring( column ) )
 
 **説明:** 2次元のバブルの散布図を作成する。このグラフは、時間の変数を使ってアニメーションとして表示できる。追加の変数でバブルのサイズや色を表現することもできる。
 
@@ -117,7 +117,7 @@ obj = dt << Bubble Plot(
 
 ### CUSUM Control Chart
 
-**構文:** CUSUM Control Chart( Y( column ), <X( column )>, <By( column )>, <Data Units( 0|1 )>, <Show Excluded Region( 0|1 )>  )
+**構文:** CUSUM Control Chart( Y( column ), &lt;X( column )&gt;, &lt;By( column )&gt;, &lt;Data Units( 0|1 )&gt;, &lt;Show Excluded Region( 0|1 )&gt; )
 
 **説明:** 目標値からのサブグループ平均の偏差の累積和をプロットした管理図を作成する。この管理図は、表形式のCUSUM管理図とも呼ばれている。
 
@@ -155,7 +155,7 @@ obj = dt << Categorical( X( :sex, :marital status ), Responses( :country ) );
 
 ### Cell Plot
 
-**構文:** Cell Plot( Y( column(s) ), <X( column )> )
+**構文:** Cell Plot( Y( column(s) ), &lt;X( column )&gt; )
 
 **説明:** データテーブルの値と1対1で対応したセルを長方形のグリッドに並べる。セルの色はセルの値によって決まる。
 
@@ -176,7 +176,7 @@ obj = dt << Cell Plot(
 
 ### Choice
 
-**構文:** Choice( Profile DataTable( data table ), Profile ID( column ), Profile Effects( column(s) ), <Response Data Table( data table )>, <Subject Data Table( data table )>, <Response Profile ID Chosen( column )>, <Response Subject ID( column)>, <Response Grouping( column(s) )>, <Response Profile ID Choices( column(s) )>, <Profile Grouping( column(s) )>, <Subject Subject ID( column )>, <Subject Effects( column(s) )> )
+**構文:** Choice( Profile DataTable( data table ), Profile ID( column ), Profile Effects( column(s) ), &lt;Response Data Table( data table )&gt;, &lt;Subject Data Table( data table )&gt;, &lt;Response Profile ID Chosen( column )&gt;, &lt;Response Subject ID( column)&gt;, &lt;Response Grouping( column(s) )&gt;, &lt;Response Profile ID Choices( column(s) )&gt;, &lt;Profile Grouping( column(s) )&gt;, &lt;Subject Subject ID( column )&gt;, &lt;Subject Effects( column(s) )&gt; )
 
 **説明:** 顧客の嗜好について調べたデータに対して選択モデルをあてはめる。条件付きロジスティック回帰によって特定の属性をもつ製品が好まれる確率を推定する。
 
@@ -217,7 +217,7 @@ obj = Choice(
 
 ### Close
 
-**構文:** Close( data table name, <NoSave|Save("path")> )
+**構文:** Close( data table name, &lt;NoSave|Save("path")&gt; )
 
 **説明:** 第1引数で指定されたータテーブルを閉じる。第1引数のデフォルトは現在のデータテーブル。第2引数はデータテーブルを保存するのに使用される。データテーブルをJMPフォーマット以外の形式で保存する場合は、パスに適切なファイル拡張子を使用してください。NoSaveを指定すると、変更を保存するか破棄するかを尋ねるプロンプトが表示されない。
 
@@ -274,7 +274,7 @@ obj = dt << Contour Plot( X( :X, :Y ), Y( :Z ) );
 
 ### Contour Profiler
 
-**構文:** Contour Profiler( Y( column1, column2, ...  ) )
+**構文:** Contour Profiler( Y( column1, column2, ... ) )
 
 **説明:** 2つの因子で応答変数がどのように変化するかを示す、対話的な等高線図。プロットで使用されていない因子の値を変更することで、因子設定が応答変数の予測値に与える影響を詳しく調べられる。
 
@@ -293,7 +293,7 @@ obj = dt << Contour Profiler(
 
 ### Control Chart Builder
 
-**構文:** Control Chart Builder( Class( "Shewhart Variables"|"Shewhart Attribute"|"Short Run"|"Rare Event" ), Variables( variables ), <Chart( Position( number ), Points( Statistic( "statistic" ), <points options> ), Limits( Sigma( "sigma" ), <limits options> )> ) ) )
+**構文:** Control Chart Builder( Class( "Shewhart Variables"|"Shewhart Attribute"|"Short Run"|"Rare Event" ), Variables( variables ), &lt;Chart( Position( number ), Points( Statistic( "statistic" ), &lt;points options&gt; ), Limits( Sigma( "sigma" ), &lt;limits options&gt; )&gt; ) ) )
 
 **説明:** 工程の安定性や予測可能性を特定するための管理図をインタラクティブに作成できるようにする。[管理図ビルダー]プラットフォームで作成できる管理図は、IMR、XBar、短期操業管理図、ランチャート、P、NP、C、U、Laney P&apos;、Laney U&apos;、Levey-Jennings、平均のIMR管理図、三元管理図、まれなイベントの管理図。
 
@@ -866,7 +866,7 @@ obj = dt << Custom Profiler(
 
 ### Degradation
 
-**構文:** Degradation( Y( column ), Time( column ), Application( "Repeated Measures Degradation"|"Destructive Degradation"|"Stability Test" ), <X( column )>, <Label( column )>, <Freq( column )>, <Censor( column )>, <Censor Code( value )>, <Upper Spec Limit( value )>, <Lower Spec Limit( value )>, <Censoring Time( value )> )
+**構文:** Degradation( Y( column ), Time( column ), Application( "Repeated Measures Degradation"|"Destructive Degradation"|"Stability Test" ), &lt;X( column )&gt;, &lt;Label( column )&gt;, &lt;Freq( column )&gt;, &lt;Censor( column )&gt;, &lt;Censor Code( value )&gt;, &lt;Upper Spec Limit( value )&gt;, &lt;Lower Spec Limit( value )&gt;, &lt;Censoring Time( value )&gt; )
 
 **説明:** 線形や非線形の曲線を使って劣化をモデル化する。分析オプションには、安定性分析、疑似故障データの生成などがある。
 
@@ -894,7 +894,7 @@ obj = dt << Degradation(
 
 ### Destructive Degradation
 
-**構文:** Destructive Degradation( Y( column ), Time( column ), <X( column )>, <Freq( column )>, <Censor( column ), Censor Code( value )> )
+**構文:** Destructive Degradation( Y( column ), Time( column ), &lt;X( column )&gt;, &lt;Freq( column )&gt;, &lt;Censor( column ), Censor Code( value )&gt; )
 
 **説明:** 破壊劣化データをモデル化する。
 
@@ -1013,7 +1013,7 @@ obj = dt << EMP Measurement Systems Analysis(
 
 ### EWMA Control Chart
 
-**構文:** EWMA Control Chart( Y( column ), <Subgroup( column )>, <By( column )>, <Center Data( 1 )> )
+**構文:** EWMA Control Chart( Y( column ), &lt;Subgroup( column )&gt;, &lt;By( column )&gt;, &lt;Center Data( 1 )&gt; )
 
 **説明:** 指数加重移動平均の管理図と、個々の測定値またはサブグループ平均の管理図を作成する。EWMA管理図は、フィードバック制御管理図とも呼ばれている。
 
@@ -1092,7 +1092,7 @@ obj = dt << Factor Analysis(
 
 ### Fatigue Model
 
-**構文:** Fatigue Model( N( column ), X( column ), <Freq( column )>, <Censor( column ), Censor Code( value )> )
+**構文:** Fatigue Model( N( column ), X( column ), &lt;Freq( column )&gt;, &lt;Censor( column ), Censor Code( value )&gt; )
 
 **説明:** 疲労データを分析する。ここで使われる疲労モデルは、S-N曲線モデルともいう。
 
@@ -1127,7 +1127,7 @@ obj << Fit Logistic 4P;
 
 ### Fit Life by X
 
-**構文:** Fit Life by X( Y( column ), X( column ), Relationship( string ), Distribution( string ), <Censor( column )> )
+**構文:** Fit Life by X( Y( column ), X( column ), Relationship( string ), Distribution( string ), &lt;Censor( column )&gt; )
 
 **説明:** 単一の説明変数に基づいて、イベントまでの時間の分布を分析する。分析オプションには、加速寿命モデル、グループ全体の寿命分布、説明変数の変換などがある。
 
@@ -1239,7 +1239,7 @@ obj = dt << Gaussian Process( Y( :Y ), X( :X1, :X2 ) );
 
 ### Graph Builder
 
-**構文:** Graph Builder( Variables( X(column ), Y( column ), <Group X( column )>, <Group Y( column )>, <Shape( column )>, <Color( column )>, <Overlay( column )>, <Freq( column )> ), <Elements(...)> ) )
+**構文:** Graph Builder( Variables( X(column ), Y( column ), &lt;Group X( column )&gt;, &lt;Group Y( column )&gt;, &lt;Shape( column )&gt;, &lt;Color( column )&gt;, &lt;Overlay( column )&gt;, &lt;Freq( column )&gt; ), &lt;Elements(...)&gt; ) )
 
 **説明:** データをインタラクティブに探索するためのグラフィカルインターフェースを提供する。グラフのゾーンに列をドラッグしてさまざまなグラフを作成できる。グラフの種類には、散布図、等高線図、棒グラフ、面グラフ、箱ひげ図、ヒストグラム、ヒートマップ、円グラフ、ツリーマップ、モザイク図、地図などがある。
 
@@ -1367,7 +1367,7 @@ obj = dt << Logistic( Y( :Response ), X( :"ln(dose)"n ), Freq( :Count ) );
 
 ### Make Validation Column
 
-**構文:** Make Validation Column( <層別の列(columns)>, <グループの列(columns)>, <カットポイントの列(column)>, <カットポイント バッチID(column)> )
+**構文:** Make Validation Column( &lt;層別の列(columns)&gt;, &lt;グループの列(columns)&gt;, &lt;カットポイントの列(column)&gt;, &lt;カットポイント バッチID(column)&gt; )
 
 **説明:** データを学習用、検証用、テスト用に分割するための列を作成する。
 
@@ -1708,7 +1708,7 @@ obj = dt << Matched Pairs( X( :Dose ), Y( :BP 8M, :BP 8W ) );
 
 ### MaxDiff
 
-**構文:** MaxDiff( Profile DataTable( data table ), Profile ID( column ), Profile Effects( column(s) ), <Response Data Table( data table )>, <Subject Data Table( data table )>, <Response Profile ID Chosen( column )>, <Response Subject ID( column)>, <Response Grouping( column(s) )>, <Response Profile ID Choices( column(s) )>, <Profile Grouping( column(s) )>, <Subject Subject ID( column )>, <Subject Effects( column(s) )> )
+**構文:** MaxDiff( Profile DataTable( data table ), Profile ID( column ), Profile Effects( column(s) ), &lt;Response Data Table( data table )&gt;, &lt;Subject Data Table( data table )&gt;, &lt;Response Profile ID Chosen( column )&gt;, &lt;Response Subject ID( column)&gt;, &lt;Response Grouping( column(s) )&gt;, &lt;Response Profile ID Choices( column(s) )&gt;, &lt;Profile Grouping( column(s) )&gt;, &lt;Subject Subject ID( column )&gt;, &lt;Subject Effects( column(s) )&gt; )
 
 **説明:** 最も好まれる属性をもつ製品や、最も好まれない属性をもつ製品を探すための調査計画を作成する。
 
@@ -1731,7 +1731,7 @@ obj = dt << MaxDiff(
 
 ### Mixture Profiler
 
-**構文:** Mixture Profiler( Y( column1, column2, ...  ) )
+**構文:** Mixture Profiler( Y( column1, column2, ... ) )
 
 **説明:** 3つ以上の因子を持つ配合モデルに対し、保存された予測式の等高線を調べられる対話的な三角図。
 
@@ -1981,7 +1981,7 @@ obj = dt << Naive Bayes(
 
 ### Neural
 
-**構文:** Neural( Y( column ), X( columns ), <Validation( column )> )
+**構文:** Neural( Y( column ), X( columns ), &lt;Validation( column )&gt; )
 
 **説明:** 入力変数の関数を使用して柔軟なモデルをあてはめ、1つまたは複数の応答変数を予測する。柔軟なフレームワークには、隠れ層や、複数のS字型関数の組み合わせが含まれる。
 
@@ -1999,7 +1999,7 @@ obj = dt << Neural(
 
 ### New Table
 
-**構文:** New Table( name, <invisible>, <private>, <actions> )
+**構文:** New Table( name, &lt;invisible&gt;, &lt;private&gt;, &lt;actions&gt; )
 
 **説明:** 新しいデータテーブルを作成する。"Invisible"を指定すると、データテーブルは非表示になるが、JMPホームウィンドウにはリストされる。"Private"を指定すると、テーブルが完全に非表示になる。デフォルトの"Visible"を使用すると、通常のテーブルが作成され、表示され、JMPホームウィンドウにもリストされる。オプションのactions引数には、データテーブルがサポートするメッセージならどれでも使用できる。
 
@@ -2092,7 +2092,7 @@ obj = dt << Oneway( Y( :Height ), X( :Age ) );
 
 ### Open
 
-**構文:** Open( file path, <invisible>, <private>, <select columns(list)> | <ignore columns(list)>, <column names only>, <Table Info> )
+**構文:** Open( file path, &lt;invisible&gt;, &lt;private&gt;, &lt;select columns(list)&gt; | &lt;ignore columns(list)&gt;, &lt;column names only&gt;, &lt;Table Info&gt; )
 
 **説明:** JMPファイルを開くか、またはサポートされている別のタイプのファイルを読み込む。「Invisible」を指定すると、ファイルはJMPホームウィンドウにはリストされるが非表示のままとなり、「Private」を指定すると、ファイルが完全に非表示になる。「Select Columns」オプションは、指定した列のみを読み込む。「Ignore Columns」で指定した列は読み込まない。JMPファイルオプションの「Column Names Only」と「Table Info」では、データの読み込みもデータテーブルの作成も行われない。「Column Names Only」はデータテーブルの列名のリストを、「Table Info」はデータテーブルの列と行の数を戻す。「FIRST(n)&apos;/&apos;LAST(n)&apos;/&apos;RANDOM(n) 」オプションは、データテーブルのn行のみを読み込む。nが0～1の間の数である場合、nはデータテーブルの行の総数に占める割合として扱われる。
 
@@ -2155,7 +2155,7 @@ Print( info );
 
 ### Parallel Plot
 
-**構文:** Parallel Plot( Y( columns ),  <X( column )> )
+**構文:** Parallel Plot( Y( columns ), &lt;X( column )&gt; )
 
 **説明:** 複数の変数にわたる各行の値を線でつないだプロットを作成する。
 
@@ -2188,7 +2188,7 @@ obj = dt << Parallel Plot( Y( :hist0, :hist1, :hist3, :hist5 ) );
 
 ### Pareto Plot
 
-**構文:** Pareto Plot( Cause( column ), <X( column )>, <Subcategory( column )>, <Freq( column )>, <Weight( column )> )
+**構文:** Pareto Plot( Cause( column ), &lt;X( column )&gt;, &lt;Subcategory( column )&gt;, &lt;Freq( column )&gt;, &lt;Weight( column )&gt; )
 
 **説明:** 品質に関連する工程における項目の相対頻度を降順で表示する。分類変数を定義して層別パレート図を作成することもできる。
 
@@ -2296,7 +2296,7 @@ obj = dt << Principal Components(
 
 ### Process Capability
 
-**構文:** Process Capability( Process Variables (columns), < Spec Limits() > )
+**構文:** Process Capability( Process Variables (columns), &lt; Spec Limits() &gt; )
 
 **説明:** 各変数の工程能力分析を行い、複数の工程変数における工程能力を一度に分析するのに役立つグラフを作成する。仕様限界も定義できる。
 
@@ -2351,7 +2351,7 @@ obj = dt << Process Screening( Grouping( :Site ), Process Variables( Eval( 5 :: 
 
 ### Profiler
 
-**構文:** Profiler( Y( column1, <column2>, ..., <PredSE column1, PredSE column2>, ... ), <Expand> )
+**構文:** Profiler( Y( column1, &lt;column2&gt;, ..., &lt;PredSE column1, PredSE column2&gt;, ... ), &lt;Expand&gt; )
 
 **説明:** 因子の設定を変えると応答変数の予測値がどうなるかを調べられる、対話的なグラフ。プロファイルには、予測値のトレースが因子ごとに表示され、因子に対する応答変数の変化が一目でわかる。Expand引数は、起動ウィンドウの［中間計算式の展開］オプションに対応する。
 
@@ -2410,7 +2410,7 @@ dt << Profiler( Y( :Yield ), Profiler( 1, Desirability Functions( 1 ), ), Expand
 
 ### Recurrence Analysis
 
-**構文:** Recurrence Analysis( Y( column ), Cost( column ), Label( column ), <Grouping( column )> )
+**構文:** Recurrence Analysis( Y( column ), Cost( column ), Label( column ), &lt;Grouping( column )&gt; )
 
 **説明:** 再生性(再発性)のあるイベントが、どのように分布しているかを調べるための分析。修理ができるシステムの故障を調べるときに使われる。
 
@@ -2578,19 +2578,7 @@ obj = dt1 << Reliability Forecast(
 
 ### Reliability Growth
 
-**構文:** obj = Reliability Growth( Input Format( Time to Event ), Time to Event( column, <column> ), <Event Count( column )>, <Phase( column )> );
-
-
-
-obj = Reliability Growth( Input Format( Dates ), Timestamp( column, <column> ), <Event Count( column )>, <Phase( column )> );
-
-
-
-obj = Reliability Growth( Input Format( Concurrent Systems ), Time to Event( column, column, ... ), System ID( column ), <Phase( column )> )
-
-
-
-obj = Reliability Growth( Input Format( Parallel Systems ), Time to Event( column, column, ... ), <Event Count( column )>, System ID( column ), <Phase( column )> )
+**構文:** obj = Reliability Growth( Input Format( Time to Event ), Time to Event( column, &lt;column&gt; ), &lt;Event Count( column )&gt;, &lt;Phase( column )&gt; );obj = Reliability Growth( Input Format( Dates ), Timestamp( column, &lt;column&gt; ), &lt;Event Count( column )&gt;, &lt;Phase( column )&gt; );obj = Reliability Growth( Input Format( Concurrent Systems ), Time to Event( column, column, ... ), System ID( column ), &lt;Phase( column )&gt; )obj = Reliability Growth( Input Format( Parallel Systems ), Time to Event( column, column, ... ), &lt;Event Count( column )&gt;, System ID( column ), &lt;Phase( column )&gt; )
 
 **説明:** 設計に改善が組み込まれている修復可能なシステムにおいて、時間の経過に伴う信頼性の変化をモデル化する。 このプラットフォームでは複数の入力形式を使用できる。指定の詳細は各形式を参照。
 
@@ -2654,7 +2642,7 @@ obj = dt << Reliability Growth(
 
 ### Repeated Measures Degradation
 
-**構文:** Repeated Measures Degradation( Y( column ), Time( column ), <X( column )>, <Freq( column )>, <Censor( column ), Censor Code( value )> )
+**構文:** Repeated Measures Degradation( Y( column ), Time( column ), &lt;X( column )&gt;, &lt;Freq( column )&gt;, &lt;Censor( column ), Censor Code( value )&gt; )
 
 **説明:** 反復測定劣化データをBayes推定する。Bayes推定では、パラメータを確率変数とみなす。
 
@@ -2719,7 +2707,7 @@ obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Peta
 
 ### Scatterplot Matrix
 
-**構文:** Scatterplot Matrix( Y( columns ), <X( columns )>, <Group( column )>, <By( column )> )
+**構文:** Scatterplot Matrix( Y( columns ), &lt;X( columns )&gt;, &lt;Group( column )&gt;, &lt;By( column )&gt; )
 
 **説明:** 散布図行列を作成する。X変数が指定されていない場合は、Y変数のすべてのペアの散布図を作成する。1つ以上のX変数が指定されている場合は、X変数とY変数の散布図を作成する。
 
@@ -2806,7 +2794,7 @@ obj = dt << Surface Plot(
 
 ### Survival
 
-**構文:** Survival( Y( columns ), Censor( column ), <Grouping( column )> )
+**構文:** Survival( Y( columns ), Censor( column ), &lt;Grouping( column )&gt; )
 
 **説明:** 1つまたは複数のグループに対し、積-極限(Kaplan-Meier)法を使って生存関数を推定する。
 
@@ -2895,7 +2883,7 @@ obj = dt << Time Series Forecast( Y( :Y ), Grouping( :Series ), Time( :Time ) );
 
 ### Uplift
 
-**構文:** Uplift( Y( column ), X( columns ), Treatment( column )  )
+**構文:** Uplift( Y( column ), X( columns ), Treatment( column ) )
 
 **説明:** 処置の差を最大にするような分岐を選ぶ対話的パーティションツリーをあてはめる。モデルにより、処置に反応する可能性が最も高い個人のグループを特定できる。
 
@@ -3094,7 +3082,7 @@ Write( "\!n", cID:person[2], " likes ", Favs:color[4] );
 
 ### Add Properties to Table
 
-**構文:** obj << Add Properties to Table
+**構文:** obj &lt;&lt; Add Properties to Table
 
 **説明:** テーブルにプロパティを追加する。
 
@@ -3111,7 +3099,7 @@ dt2 << Add Properties to Table( proplist );
 
 ### Add Scripts to Table
 
-**構文:** obj << Add Scripts to Table
+**構文:** obj &lt;&lt; Add Scripts to Table
 
 **説明:** Add properties to tableの別名。
 
@@ -3128,7 +3116,7 @@ dt2 << Add scripts to table( proplist );
 
 ### Anonymize
 
-**構文:** obj << Anonymize( columns( columns ), <Output Table( name )> )
+**構文:** obj &lt;&lt; Anonymize( columns( columns ), &lt;Output Table( name )&gt; )
 
 **説明:** データの内容を識別できないようにした新しいデータテーブルを作成する。
 
@@ -3142,7 +3130,7 @@ dt << anonymize( columns( :name, :age ), output table name( "anonymized" ) );
 
 ### Apply Columns List Filter To Data Grid
 
-**構文:** obj << Apply Columns List Filter To Data Grid( state=0|1 )
+**構文:** obj &lt;&lt; Apply Columns List Filter To Data Grid( state=0|1 )
 
 **説明:** オンにすると、データテーブルの列リストのフィルタがデータグリッドに適用される。
 
@@ -3162,7 +3150,7 @@ dt << Apply Columns List Filter To Data Grid( 1 );
 
 ### Apply Formula
 
-**構文:** dt << Apply Formula([Columns(<col|{cols}|Group(col, count)|<group name>, [Ref(<name>)], [List Ref(<name>)]]+, [Output(In Place|In Place Formula|New Formula(<prefix>|New Static(<prefix>)], [Group(<name>)])
+**構文:** dt &lt;&lt; Apply Formula([Columns(&lt;col|{cols}|Group(col, count)|&lt;group name&gt;, [Ref(&lt;name&gt;)], [List Ref(&lt;name&gt;)]]+, [Output(In Place|In Place Formula|New Formula(&lt;prefix&gt;|New Static(&lt;prefix&gt;)], [Group(&lt;name&gt;)])
 
 **説明:** 計算式を使って1つまたは複数の列を変換し、その結果を計算式またはデータとして新しい列または既存の列に入れる。
 
@@ -3222,7 +3210,7 @@ Data Table( "Big Class" ) << Apply Formula(
 
 ### Begin Data Update
 
-**構文:** obj << Begin Data Update
+**構文:** obj &lt;&lt; Begin Data Update
 
 **説明:** End Data Updateコマンドに達するまで、更新処理のすべてのメッセージを保留する。この機能は、一度に多くのセルを更新するのに役立つ。データセル内の変更にのみこのコマンドは適用される。
 
@@ -3241,7 +3229,7 @@ dt << End Data Update;
 
 ### Checksum
 
-**構文:** obj << Checksum( < Version(version) >, < Include(flags) >, < Exclude(flags) > )
+**構文:** obj &lt;&lt; Checksum( &lt; Version(version) &gt;, &lt; Include(flags) &gt;, &lt; Exclude(flags) &gt; )
 
 **説明:** Compute the table&apos;s checksum. Available flags include: "ColData", "ColName", "ColDataType", "ColModelingType", "ColFormat", "ColInFormat", "ColFormatWidth", "ColAttributes", "ColProperties", "ColListCheck", "ColRangeCheck", "ColCompact", "ColLabel", "ColHidden", "ColExclude", "ColSelection", "ColState", "ColDisplayWidth", "TableVariables", "TableScripts", "RowExclude", "RowHidden", "RowLabel", "RowColor", "RowMarker", "RowSelection", "RowState"
 
@@ -3290,7 +3278,7 @@ dt << Checksum( Include( flags ) );
 
 ### Clear Cell Colors
 
-**構文:** obj << Clear Cell Colors
+**構文:** obj &lt;&lt; Clear Cell Colors
 
 **説明:** 選択されている列のセルの色を消去する。列が選択されていない場合は、すべての列のセルの色が消去される。
 
@@ -3330,7 +3318,7 @@ dt << Clear cell colors();
 
 ### Clear Column Selection
 
-**構文:** obj << Clear Column Selection
+**構文:** obj &lt;&lt; Clear Column Selection
 
 **説明:** データテーブルの選択された列をクリアする。
 
@@ -3346,7 +3334,7 @@ dt << Clear Column Selection();
 
 ### Clear Edit Lock
 
-**構文:** obj << Clear Edit Lock( [ <"Modify Cells">, <"Add rows">, <"Add Columns">, <"Delete Rows">, <"Delete Columns">] )
+**構文:** obj &lt;&lt; Clear Edit Lock( [ &lt;"Modify Cells"&gt;, &lt;"Add rows"&gt;, &lt;"Add Columns"&gt;, &lt;"Delete Rows"&gt;, &lt;"Delete Columns"&gt;] )
 
 **説明:** 対象のデータテーブルで、引数で指定した操作を行えるようにする。
 
@@ -3364,7 +3352,7 @@ dt << Clear Edit Lock( "Delete Columns" );
 
 ### Clear Properties Selection
 
-**構文:** obj << Clear Properties Selection( { property1, property2, ... )
+**構文:** obj &lt;&lt; Clear Properties Selection( { property1, property2, ... )
 
 **説明:** 指定されたテーブルプロパティの選択を解除する。プロパティ名またはプロパティの添え字のリストを指定する。リストを指定しなかった場合、選択されているすべてのプロパティの選択が解除される。
 
@@ -3396,7 +3384,7 @@ dt << clear properties selecction();
 
 ### Clone
 
-**構文:** dt << Clone( < Table Name(name) >, < Copy Formulas(1|0) >, < Eval Formulas(1|0) > )
+**構文:** dt &lt;&lt; Clone( &lt; Table Name(name) &gt;, &lt; Copy Formulas(1|0) &gt;, &lt; Eval Formulas(1|0) &gt; )
 
 **説明:** データテーブルのコピーを作成する。
 
@@ -3412,7 +3400,7 @@ dtClone = dt << Clone;
 
 ### Close Data Grid
 
-**構文:** obj << Close Data Grid
+**構文:** obj &lt;&lt; Close Data Grid
 
 **説明:** データグリッドを閉じる、または開く。
 
@@ -3426,7 +3414,7 @@ dt << Close Data Grid( 1 );
 
 ### Close Side Panels
 
-**構文:** obj << Close Side Panels
+**構文:** obj &lt;&lt; Close Side Panels
 
 **説明:** データテーブルのサイドパネルを閉じる、または開く。
 
@@ -3440,7 +3428,7 @@ dt << Close Side Panels( 1 );
 
 ### Close summary panels
 
-**構文:** obj << Close summary panels
+**構文:** obj &lt;&lt; Close summary panels
 
 **説明:** データテーブルの要約パネルを閉じる、または開く。
 
@@ -3456,11 +3444,11 @@ dt << Close Summary Panels( 1 );
 
 ### Cluster
 
-**構文:** obj << Cluster
+**構文:** obj &lt;&lt; Cluster
 
 ### Collapse All Column Groups
 
-**構文:** obj << Collapse All Column Groups
+**構文:** obj &lt;&lt; Collapse All Column Groups
 
 **説明:** すべての列グループを折りたたむ。
 
@@ -3481,7 +3469,7 @@ dt << Collapse All Column Groups;
 
 ### Column Filter
 
-**構文:** obj << Column Filter
+**構文:** obj &lt;&lt; Column Filter
 
 **説明:** Retrieves object to manipulate active column filter for the table.
 
@@ -3514,7 +3502,7 @@ dt << Apply Columns List Filter to Data Grid( 0 );
 
 ### Column Switcher
 
-**構文:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**構文:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **説明:** スタンドアロンの列スイッチャーを作成する
 
@@ -3572,7 +3560,7 @@ cs << Link Platform( b[2] );
 
 ### Combine Columns
 
-**構文:** obj << Combine Columns
+**構文:** obj &lt;&lt; Combine Columns
 
 **説明:** 複数の列を1つの列に結合する。元の各列の値は指定の区切り文字で区切られる。
 
@@ -3611,7 +3599,7 @@ dt << Combine Columns(
 
 ### Compare Data Tables
 
-**構文:** obj << Compare Data Tables( Compare with( Data Table( name )), <Compare table variables and scripts( 0|1)>, <show window>,<Compare columns attributes and properties( 0|1)>, <Compare data( 0|1 )>, <Show difference summary(0|1)>, <Show difference plot(0|1)> )
+**構文:** obj &lt;&lt; Compare Data Tables( Compare with( Data Table( name )), &lt;Compare table variables and scripts( 0|1)&gt;, &lt;show window&gt;,&lt;Compare columns attributes and properties( 0|1)&gt;, &lt;Compare data( 0|1 )&gt;, &lt;Show difference summary(0|1)&gt;, &lt;Show difference plot(0|1)&gt; )
 
 **説明:** 開いている2つのデータテーブルを比較し、データやメタデータの違いをレポートする。
 
@@ -3626,7 +3614,7 @@ dt << compare data tables( compare With( Data Table( "Students2" ) ) );
 
 ### Compress File When Saved
 
-**構文:** obj << Compress File When Saved( state=0|1 )
+**構文:** obj &lt;&lt; Compress File When Saved( state=0|1 )
 
 **説明:** データテーブルを保存する際にファイルを圧縮する。
 
@@ -3640,7 +3628,7 @@ dt << Compress File When Saved( 1 );
 
 ### Compress Selected Columns
 
-**構文:** obj << Compress Selected Columns( { column1, column2, ...} )
+**構文:** obj &lt;&lt; Compress Selected Columns( { column1, column2, ...} )
 
 **説明:** 各列を最もコンパクトな形式に圧縮する。
 
@@ -3658,7 +3646,7 @@ dt << Compress Selected Columns( {:Age, :sex, :Height, :Weight} );
 
 ### Concatenate
 
-**構文:** obj << Concatenate( <Private>, <Invisible>, Data Table( name ), <Data Table(name), ...> <Label( column )>, <Output Table( name ) | Append to first table>, <Keep Formulas>, <Create Source Column> )
+**構文:** obj &lt;&lt; Concatenate( &lt;Private&gt;, &lt;Invisible&gt;, Data Table( name ), &lt;Data Table(name), ...&gt; &lt;Label( column )&gt;, &lt;Output Table( name ) | Append to first table&gt;, &lt;Keep Formulas&gt;, &lt;Create Source Column&gt; )
 
 **説明:** 複数のデータテーブルの行を縦に連結し、新しいデータテーブルを作成するか、最初のデータテーブルを更新する。
 
@@ -3692,7 +3680,7 @@ dt << Concatenate(
 
 ### Copy Column Properties
 
-**構文:** obj << Copy Column Properties( <column 1 column 2, ...> )
+**構文:** obj &lt;&lt; Copy Column Properties( &lt;column 1 column 2, ...&gt; )
 
 **説明:** データテーブル内の複数の列の列プロパティをクリップボードにコピーする。列は、データテーブル内で選択するか、リストとして指定することができる。
 
@@ -3723,7 +3711,7 @@ New Window( "Script", Script Box( "//Try Paste here
 
 ### Copy Selected Properties
 
-**構文:** obj << Copy Selected Properties
+**構文:** obj &lt;&lt; Copy Selected Properties
 
 **説明:** 選択されているテーブルプロパティをクリップボードにコピーする。
 
@@ -3740,7 +3728,7 @@ New Window( "Script", Script Box( "//Try Paste here
 
 ### Copy Table Script
 
-**構文:** obj << Copy Table Script( <"No data"> )
+**構文:** obj &lt;&lt; Copy Table Script( &lt;"No data"&gt; )
 
 **説明:** データテーブルを再作成するスクリプトをクリップボードにコピーする。生成されたスクリプトには、データテーブル内に保存されているすべてのテーブルスクリプトも含まれる。また、「No Data」というキーワードを指定すると、スクリプトからデータ部分が省かれる。
 
@@ -3770,7 +3758,7 @@ New Window( "Script", Script Box( "//Try Paste here
 
 ### Debug Script
 
-**構文:** obj << Debug Script( name )
+**構文:** obj &lt;&lt; Debug Script( name )
 
 **説明:** データテーブルにプロパティとして保存されたスクリプトをデバッグする。
 
@@ -3784,11 +3772,11 @@ dt << Debug Script( "Distribution" );
 
 ### Decision Tree
 
-**構文:** obj << Decision Tree
+**構文:** obj &lt;&lt; Decision Tree
 
 ### Define Tag
 
-**構文:** Define Tag(<name>, [Color(<color>)], [Symbol(<symbol char>)], [Description(<text>)], [Replace(<existing tag name>)])
+**構文:** Define Tag(&lt;name&gt;, [Color(&lt;color&gt;)], [Symbol(&lt;symbol char&gt;)], [Description(&lt;text&gt;)], [Replace(&lt;existing tag name&gt;)])
 
 **説明:** テーブルで列のタグの定義を作成または更新する。タグがない場合は、作成する。オプションで色やシンボルなどの属性を割り当てる。
 
@@ -3831,7 +3819,7 @@ dt << Define Tag( "Identifier", Replace( "ID" ), Color( Blue ) );
 
 ### Delete Columns
 
-**構文:** obj << Delete Columns( <column>, <column>, ... )
+**構文:** obj &lt;&lt; Delete Columns( &lt;column&gt;, &lt;column&gt;, ... )
 
 **説明:** 指定した列を削除する。引数を指定しなかった場合、データテーブル内の選択されている列を削除する。
 
@@ -3874,7 +3862,7 @@ dt << Delete Columns( cols );
 
 ### Delete Filter View
 
-**構文:** obj << Delete Filter View( name | obj )
+**構文:** obj &lt;&lt; Delete Filter View( name | obj )
 
 **説明:** 指定されたフィルタビューを削除する。
 
@@ -3902,7 +3890,7 @@ dt << Delete Filter View( "Male" );
 
 ### Delete Scripts
 
-**構文:** obj << Delete Scripts( <script| {script 1, script 2, script 3, ...} > )
+**構文:** obj &lt;&lt; Delete Scripts( &lt;script| {script 1, script 2, script 3, ...} &gt; )
 
 **説明:** データテーブルから指定のスクリプトを削除する。
 
@@ -3937,7 +3925,7 @@ dt << Delete Scripts( list );
 
 ### Delete Table Property
 
-**構文:** obj << Delete Table Property
+**構文:** obj &lt;&lt; Delete Table Property
 
 **説明:** [Delete Scripts]の別名。
 
@@ -3956,7 +3944,7 @@ dt << Delete Table Property( "New Script" );
 
 ### Delete Table Variable
 
-**構文:** obj << Delete Table Variable( name )
+**構文:** obj &lt;&lt; Delete Table Variable( name )
 
 **説明:** データテーブルに保存されたテーブル変数を削除する。
 
@@ -3972,7 +3960,7 @@ dt << Delete Table Variable( "Days" );
 
 ### Delete Tag
 
-**構文:** Delete Tag(<tag>|{<tag>, <tag>, ...}, [force(0|1)
+**構文:** Delete Tag(&lt;tag&gt;|{&lt;tag&gt;, &lt;tag&gt;, ...}, [force(0|1)
 
 **説明:** テーブルからタグを削除する。Force(1)フラグが指定された場合を除き、列に使用されているタグは削除されない。
 
@@ -4005,7 +3993,7 @@ dt << Delete Tag( "ID", Force( 1 ) );
 
 ### Deselect Column Group
 
-**構文:** obj << Deselect Column Group( name of group | list of names )
+**構文:** obj &lt;&lt; Deselect Column Group( name of group | list of names )
 
 **説明:** 列グループの選択を解除する。 列グループが指定されなかった場合、すべての列グループの選択を解除する。
 
@@ -4023,7 +4011,7 @@ dt << deselect column group( "pollutants" );
 
 ### Disable Undo
 
-**構文:** obj << Disable Undo( state=0|1 )
+**構文:** obj &lt;&lt; Disable Undo( state=0|1 )
 
 **説明:** このオプションを指定すると、データテーブルでの操作が元に戻せなくなる。
 
@@ -4037,7 +4025,7 @@ dt << disable undo( 1 );
 
 ### End Data Update
 
-**構文:** obj << End Data Update
+**構文:** obj &lt;&lt; End Data Update
 
 **説明:** Begin Data Updateコマンドから、このコマンドまでの更新処理のすべてのメッセージを実行する。この機能は、一度に多くのセルを更新するのに役立つ。データセル内の変更にのみこのコマンドは適用される。
 
@@ -4056,7 +4044,7 @@ dt << End Data Update;
 
 ### Exclude Columns
 
-**構文:** obj << Exclude Columns( < 0|1 > | < { column1, column2, ... } >  )
+**構文:** obj &lt;&lt; Exclude Columns( &lt; 0|1 &gt; | &lt; { column1, column2, ... } &gt; )
 
 **説明:** 分析の実行から列を除外する。
 
@@ -4072,7 +4060,7 @@ dt << Exclude Columns( 1, {:Age, :Name} );
 
 ### Exit Filter View
 
-**構文:** obj << Exit Filter View
+**構文:** obj &lt;&lt; Exit Filter View
 
 **説明:** フィルタされていない表示に戻す。すでにフィルタされていない表示になっている場合は、何も行われない。
 
@@ -4093,7 +4081,7 @@ dt << Exit Filter View;
 
 ### Expand All Column Groups
 
-**構文:** obj << Expand All Column Groups
+**構文:** obj &lt;&lt; Expand All Column Groups
 
 **説明:** すべての列グループを展開する。
 
@@ -4133,7 +4121,7 @@ dt << Fit Model(
 
 ### Get Active Filter View
 
-**構文:** fv = obj << Get Active Filter View
+**構文:** fv = obj &lt;&lt; Get Active Filter View
 
 **説明:** アクティブなフィルタビューを取得する。FilterViewオブジェクトを戻す。
 
@@ -4154,7 +4142,7 @@ Show( fv active << Get Name );
 
 ### Get All Columns As Matrix
 
-**構文:** obj << Get All Columns As Matrix
+**構文:** obj &lt;&lt; Get All Columns As Matrix
 
 **説明:** データテーブルを行列で戻す。文字列は並べ替え順に従って1から順に番号が与えられる。
 
@@ -4169,7 +4157,7 @@ Show( m );
 
 ### Get As Report
 
-**構文:** obj << Get As Report
+**構文:** obj &lt;&lt; Get As Report
 
 **説明:** データテーブルをレポートにしたものを戻す。
 
@@ -4205,7 +4193,7 @@ jmp_report = New Window( "Big Class",
 
 ### Get Cell Height
 
-**構文:** obj << Get Cell Height
+**構文:** obj &lt;&lt; Get Cell Height
 
 **説明:** 行の表示の高さを取得する。
 
@@ -4219,7 +4207,7 @@ ht = dt << Get Cell Height;
 
 ### Get Column Group
 
-**構文:** obj << Get Column Group( name of column group | list of names )
+**構文:** obj &lt;&lt; Get Column Group( name of column group | list of names )
 
 **説明:** 列グループ内の列のリストを戻す。
 
@@ -4235,7 +4223,7 @@ dt << get column group( "xy" );
 
 ### Get Column Groups Names
 
-**構文:** obj << Get Column Groups Names
+**構文:** obj &lt;&lt; Get Column Groups Names
 
 **説明:** 列グループの名前を戻す。
 
@@ -4251,7 +4239,7 @@ dt << get column groups names;
 
 ### Get Column Names
 
-**構文:** obj << Get Column Names( <Numeric|Character|RowState>, <Continuous|Ordinal|Nominal>,<String> )
+**構文:** obj &lt;&lt; Get Column Names( &lt;Numeric|Character|RowState&gt;, &lt;Continuous|Ordinal|Nominal&gt;,&lt;String&gt; )
 
 **説明:** データテーブルにある列の列名を戻す。stringのキーワードが指定された場合、結果は文字列で戻される。
 
@@ -4270,7 +4258,7 @@ Show( SNames );
 
 ### Get Column Reference
 
-**構文:** obj << Get Column Reference( list of column names )
+**構文:** obj &lt;&lt; Get Column Reference( list of column names )
 
 **説明:** リスト内に文字列で指定したの列の参照を戻す。
 
@@ -4299,7 +4287,7 @@ Show( refList );
 
 ### Get Edit Lock
 
-**構文:** obj << Get Edit Lock
+**構文:** obj &lt;&lt; Get Edit Lock
 
 **説明:** 対象のデータテーブルにおいて現在、行えない操作の一覧をリストで戻す。
 
@@ -4315,7 +4303,7 @@ dt << Get Edit Lock();
 
 ### Get Excluded Columns
 
-**構文:** obj << Get Excluded Columns
+**構文:** obj &lt;&lt; Get Excluded Columns
 
 **説明:** 現在除外されている列を戻す。
 
@@ -4331,7 +4319,7 @@ Show( exCols );
 
 ### Get Excluded Rows
 
-**構文:** obj << Get Excluded Rows
+**構文:** obj &lt;&lt; Get Excluded Rows
 
 **説明:** データテーブルで現在除外されている行を戻す。Whereを使用する方法は、より推奨される。
 
@@ -4350,7 +4338,7 @@ Show( r1, r2 );
 
 ### Get Filter View
 
-**構文:** fv = obj << Get Filter View( name | <<Temporary | <<Unfiltered )
+**構文:** fv = obj &lt;&lt; Get Filter View( name | &lt;&lt;Temporary | &lt;&lt;Unfiltered )
 
 **説明:** Get a filter view by name, or get one of the special filter views by using <<Temporary or <<Unfiltered. If a filter view by the given name does not exist, returns Empty().
 
@@ -4373,7 +4361,7 @@ Show( (dt << Get Filter View( <<Unfiltered )) << Get Name );
 
 ### Get Filter Views
 
-**構文:** { fv, ... } = obj << Get Filter Views( < Temporary(0|1) >, < Unfiltered(0|1) > )
+**構文:** { fv, ... } = obj &lt;&lt; Get Filter Views( &lt; Temporary(0|1) &gt;, &lt; Unfiltered(0|1) &gt; )
 
 **説明:** すべてのフィルタビューのリストを取得する。デフォルトでは、フィルタされていない一時的なビューは含まれない。
 
@@ -4395,7 +4383,7 @@ Show( fvs << Get Name );
 
 ### Get Header Height
 
-**構文:** obj << Get Header Height
+**構文:** obj &lt;&lt; Get Header Height
 
 **説明:** 列見出しの表示の高さを取得する。
 
@@ -4409,7 +4397,7 @@ ht = dt << Get Header Height;
 
 ### Get Hidden Columns
 
-**構文:** obj << Get Hidden Columns
+**構文:** obj &lt;&lt; Get Hidden Columns
 
 **説明:** 現在非表示となっている列を戻す。
 
@@ -4425,7 +4413,7 @@ Show( hidCols );
 
 ### Get Hidden Rows
 
-**構文:** obj << Get Hidden Rows
+**構文:** obj &lt;&lt; Get Hidden Rows
 
 **説明:** データテーブルで現在非表示の行を戻す。Whereを使用する方法は、より推奨される。
 
@@ -4444,7 +4432,7 @@ Show( r1, r2 );
 
 ### Get Label Columns
 
-**構文:** obj << Get Label Columns
+**構文:** obj &lt;&lt; Get Label Columns
 
 **説明:** 行ラベルとして使われている列を戻す。
 
@@ -4461,7 +4449,7 @@ Show( labelCols );
 
 ### Get Labeled Rows
 
-**構文:** obj << Get Labeled Rows
+**構文:** obj &lt;&lt; Get Labeled Rows
 
 **説明:** データテーブルで現在ラベルの付いている行を戻す。Whereを使用する方法は、より推奨される。
 
@@ -4480,7 +4468,7 @@ Show( r1, r2 );
 
 ### Get Lock
 
-**構文:** obj << Get Lock( state=0|1 )
+**構文:** obj &lt;&lt; Get Lock( state=0|1 )
 
 **説明:** データテーブルがロックされているかどうかを確認する。
 
@@ -4500,7 +4488,7 @@ Show( a );
 
 ### Get MM SAS DATA Step for Formula Columns
 
-**構文:** obj << Get MM SAS DATA Step for Formula Columns
+**構文:** obj &lt;&lt; Get MM SAS DATA Step for Formula Columns
 
 **説明:** JMPデータテーブルの計算式列の式に対応するModel Manager用SAS DATAステップコードを作成する。
 
@@ -4515,7 +4503,7 @@ dt << Get MM SAS Data Step for Formula Columns;
 
 ### Get Name
 
-**構文:** obj << Get Name( <"Ignore Extension"> )
+**構文:** obj &lt;&lt; Get Name( &lt;"Ignore Extension"&gt; )
 
 **説明:** データテーブルの表示名を戻す。オプションの引数［Ignore Extension］を指定すると、拡張子を除いたデータテーブルの名前が戻される。
 
@@ -4543,7 +4531,7 @@ Show( n );
 
 ### Get Path
 
-**構文:** obj << Get Path
+**構文:** obj &lt;&lt; Get Path
 
 **説明:** データテーブルの完全パスを戻す。
 
@@ -4558,7 +4546,7 @@ Show( path );
 
 ### Get Property
 
-**構文:** obj << Get Property(  name  )
+**構文:** obj &lt;&lt; Get Property( name )
 
 **説明:** データテーブルのテーブルプロパティをスクリプトで戻す。
 
@@ -4573,7 +4561,7 @@ Show( s );
 
 ### Get Row ID Width
 
-**構文:** obj << Get Row ID Width
+**構文:** obj &lt;&lt; Get Row ID Width
 
 **説明:** 行番号の領域の表示幅を取得する。
 
@@ -4587,7 +4575,7 @@ ht = dt << Get Row ID Width;
 
 ### Get Row States
 
-**構文:** obj << Get Row States
+**構文:** obj &lt;&lt; Get Row States
 
 **説明:** データテーブルの各行がもつ行属性のエンコード値をベクトルで戻す。戻り値であるエンコード値は、Color Ofなどの関数で行属性として認識されないことに注意。戻り値の使用例については、例2を参照のこと。
 
@@ -4617,7 +4605,7 @@ Row State( dt2, 5 ) = Marker State( w );
 
 ### Get Rows Where
 
-**構文:** obj << Get Rows Where
+**構文:** obj &lt;&lt; Get Rows Where
 
 **説明:** データテーブル内でWhere条件に一致する行を戻す。代わりにWhereを使用する方法が、より推奨される。
 
@@ -4633,7 +4621,7 @@ Show( r1, r2 );
 
 ### Get SAS DATA Step for Formula Columns
 
-**構文:** obj << Get SAS DATA Step for Formula Columns
+**構文:** obj &lt;&lt; Get SAS DATA Step for Formula Columns
 
 **説明:** JMPデータテーブルの計算式列の式に対応するSAS DATAステップのコードを作成する。
 
@@ -4648,7 +4636,7 @@ dt << Get SAS Data Step for Formula Columns;
 
 ### Get Script
 
-**構文:** obj << Get Script( <script name> )
+**構文:** obj &lt;&lt; Get Script( &lt;script name&gt; )
 
 **説明:** リクエストされたスクリプトを戻す。 スクリプト名が指定されなかった場合、データテーブルを表すテキストを、データ内に保存されたすべてのスクリプトとともに戻す。
 
@@ -4675,7 +4663,7 @@ s = dt << Get Script( "Distribution" );
 
 ### Get Script Group
 
-**構文:** obj << Get Script Group( name of script group )
+**構文:** obj &lt;&lt; Get Script Group( name of script group )
 
 **説明:** グループに含まれているスクリプトのスクリプト名を、リストで戻す。
 
@@ -4699,7 +4687,7 @@ dt << run script( gb[2] );
 
 ### Get Script Groups Names
 
-**構文:** obj << Get Script Groups Names
+**構文:** obj &lt;&lt; Get Script Groups Names
 
 **説明:** 複数のスクリプトグループのグループ名を、リストで戻す。
 
@@ -4721,7 +4709,7 @@ gb = dt << get script groups names;
 
 ### Get Scroll Locked Columns
 
-**構文:** obj << Get Scroll Locked Columns
+**構文:** obj &lt;&lt; Get Scroll Locked Columns
 
 **説明:** 現在スクロールロックされている列を戻す。
 
@@ -4737,7 +4725,7 @@ Show( lockCols );
 
 ### Get Selected Columns
 
-**構文:** obj << Get Selected Columns
+**構文:** obj &lt;&lt; Get Selected Columns
 
 **説明:** データテーブルにおいて選択された列の名前を戻す。
 
@@ -4753,7 +4741,7 @@ Show( names );
 
 ### Get Selected Properties
 
-**構文:** obj << Get Selected Properties( <{list of properties}> )
+**構文:** obj &lt;&lt; Get Selected Properties( &lt;{list of properties}&gt; )
 
 **説明:** 現在、選択されているテーブルプロパティ(変数とスクリプト)をリストに取得する。どのテーブルプロパティを取得するかを、リストによって引数に指定してもよい。
 
@@ -4780,7 +4768,7 @@ proplist = dt << Get Selected Properties( {2, 4} );
 
 ### Get Selected Rows
 
-**構文:** obj << Get Selected Rows
+**構文:** obj &lt;&lt; Get Selected Rows
 
 **説明:** データテーブルにおいて現在選択されている行を戻す。
 
@@ -4797,7 +4785,7 @@ Show( r );
 
 ### Get Table Script Names
 
-**構文:** obj << Get Table Script Names
+**構文:** obj &lt;&lt; Get Table Script Names
 
 **説明:** データテーブルのすべてのテーブルプロパティの名前を戻す。
 
@@ -4812,7 +4800,7 @@ Show( names );
 
 ### Get Table Variable
 
-**構文:** obj << Get Table Variable( name )
+**構文:** obj &lt;&lt; Get Table Variable( name )
 
 **説明:** データテーブルにある指定のテーブル変数の値を戻す。
 
@@ -4828,7 +4816,7 @@ Show( var );
 
 ### Get Table Variable Names
 
-**構文:** obj << Get Table Variable Names
+**構文:** obj &lt;&lt; Get Table Variable Names
 
 **説明:** データテーブルのすべてのテーブル変数の名前を戻す。
 
@@ -4843,7 +4831,7 @@ Show( names );
 
 ### Get Tagged Columns
 
-**構文:** obj << Get Tagged Columns( tag|{tag1, tag2, ...}, [Intersection] )
+**構文:** obj &lt;&lt; Get Tagged Columns( tag|{tag1, tag2, ...}, [Intersection] )
 
 **説明:** 指定されたタグに一致する列のリストを戻す。Intersection引数がある場合は、指定したタグをすべて含んだ列のみを戻す。
 
@@ -4863,7 +4851,7 @@ dt << Get Tagged Columns( "Air Pollution Levels" );
 
 ### Get Transforms
 
-**構文:** dt << Get Transforms()
+**構文:** dt &lt;&lt; Get Transforms()
 
 **説明:** データテーブルに設定されている変換列のリストを取得する。
 
@@ -4882,7 +4870,7 @@ dt << Delete Columns( {:A, :B} );
 
 ### Get as Matrix
 
-**構文:** obj << Get as Matrix( <list of columns by name>, <list of columns by number>, <column range> )
+**構文:** obj &lt;&lt; Get as Matrix( &lt;list of columns by name&gt;, &lt;list of columns by number&gt;, &lt;column range&gt; )
 
 **説明:** データテーブルの特定の数値列を行列で戻す。デフォルトはすべての数値列。
 
@@ -4899,13 +4887,7 @@ Show( x );
 
 ### Group Columns
 
-**構文:** obj << Group Columns( first column, number )
-
-obj << Group Columns( {column1, column2, ...})
-
-obj << Group Columns(group name | Path({<a>, <b>, ...}), {column1, column2, ...})
-
-obj << Group Columns( group name | Path({<a>, <b>, ...}), first column, number )
+**構文:** obj &lt;&lt; Group Columns( first column, number )obj &lt;&lt; Group Columns( {column1, column2, ...})obj &lt;&lt; Group Columns(group name | Path({&lt;a&gt;, &lt;b&gt;, ...}), {column1, column2, ...})obj &lt;&lt; Group Columns( group name | Path({&lt;a&gt;, &lt;b&gt;, ...}), first column, number )
 
 **説明:** 複数の列をグループ化する。
 
@@ -4947,9 +4929,7 @@ group = dt << Group Columns( BP 8M, 9 );
 
 ### Group Scripts
 
-**構文:** obj << Group Scripts({ script1, script2, ...}) 
-
-obj << Group Scripts(group name | Path({<a>, <b>, ...}), {script1, script1, ...})
+**構文:** obj &lt;&lt; Group Scripts({ script1, script2, ...}) obj &lt;&lt; Group Scripts(group name | Path({&lt;a&gt;, &lt;b&gt;, ...}), {script1, script1, ...})
 
 **説明:** 複数のスクリプトを1つのグループにする。
 
@@ -4985,7 +4965,7 @@ dt << group scripts(
 
 ### Has Column
 
-**構文:** dt << Has Column( name, < Exact Match(1|0) > )
+**構文:** dt &lt;&lt; Has Column( name, &lt; Exact Match(1|0) &gt; )
 
 **説明:** データテーブルに指定した名前の列があるかどうかを調べる。
 
@@ -5018,7 +4998,7 @@ Show(
 
 ### Has data view
 
-**構文:** obj << Has data view
+**構文:** obj &lt;&lt; Has data view
 
 **説明:** データテーブルのウィンドウが開いて表示されている場合、真を戻す。
 
@@ -5032,7 +5012,7 @@ dt << Has Data View();
 
 ### Hide Columns
 
-**構文:** obj << Hide Columns( < 0|1 > | < { column1, column2, ... } >  )
+**構文:** obj &lt;&lt; Hide Columns( &lt; 0|1 &gt; | &lt; { column1, column2, ... } &gt; )
 
 **説明:** データグリッドで列を非表示にする。
 
@@ -5048,7 +5028,7 @@ dt << Hide Columns( 1, {:Age, :Name} );
 
 ### Is Dirty
 
-**構文:** obj << Is Dirty
+**構文:** obj &lt;&lt; Is Dirty
 
 **説明:** データテーブルが変更されたかどうかを調べる。
 
@@ -5066,7 +5046,7 @@ Show( b );
 
 ### Is Linked Subset
 
-**構文:** obj << Is Linked Subset
+**構文:** obj &lt;&lt; Is Linked Subset
 
 **説明:** データテーブルがリンクされたサブセットかどうかを調べる
 
@@ -5084,7 +5064,7 @@ Show( dt << Is Linked Subset, linkedSubset << Is Linked Subset, subset << Is Lin
 
 ### JMP Query Builder
 
-**構文:** obj << JMP Query Builder
+**構文:** obj &lt;&lt; JMP Query Builder
 
 **説明:** 1つまたは複数のJMPデータテーブルのクエリーを作成する。
 
@@ -5098,7 +5078,7 @@ dt << JMP Query Builder();
 
 ### Join
 
-**構文:** obj << Join( <Private>, <Invisible>,With( Data Table( name )), By Matching Columns( column1 = column2, ...), Selected( columns ), SelectedWith( columns ), <Drop Multiples( 0|1, 0|1 )>, <Include nonmatches( 0|1, 0|1 )>,<Copy formula( 0|1 )>, <Suppress Formula Evaluation>, <Update>, <Merge Same Name Columns>, <Preserve Main Table Order> )
+**構文:** obj &lt;&lt; Join( &lt;Private&gt;, &lt;Invisible&gt;,With( Data Table( name )), By Matching Columns( column1 = column2, ...), Selected( columns ), SelectedWith( columns ), &lt;Drop Multiples( 0|1, 0|1 )&gt;, &lt;Include nonmatches( 0|1, 0|1 )&gt;,&lt;Copy formula( 0|1 )&gt;, &lt;Suppress Formula Evaluation&gt;, &lt;Update&gt;, &lt;Merge Same Name Columns&gt;, &lt;Preserve Main Table Order&gt; )
 
 **説明:** 複数のデータテーブルを新しい1つのデータテーブルに結合する。データは、行ごと、互いの列の値によるマッチング、または直積により結合することができる。
 
@@ -5118,7 +5098,7 @@ dt << Join(
 
 ### Journal
 
-**構文:** obj << Journal
+**構文:** obj &lt;&lt; Journal
 
 **説明:** データテーブルからジャーナルを作成する。データグリッドだけが含まれ、ノート、変数、およびスクリプトは含まれない。
 
@@ -5132,7 +5112,7 @@ dt << Journal();
 
 ### Journal Link
 
-**構文:** dt << Journal Link( < Save( <filepath> ) | Embed( ) >, < Button Name( "Ben") > )
+**構文:** dt &lt;&lt; Journal Link( &lt; Save( &lt;filepath&gt; ) | Embed( ) &gt;, &lt; Button Name( "Ben") &gt; )
 
 **説明:** クリックするとデータテーブルが開かれるリンクボタンをジャーナルに追加する。embed()とsave()は、両方を同時には指定できない。embed()はオプションなし。save()オプションはdt<<save()と同じようにデータを保存する。リンクボタンのラベルを上書きするには、ButtonName()を使用する。戻り値として、追加されたリンクボタンへの参照が戻される。
 
@@ -5159,7 +5139,7 @@ Close( dt, "NoSave" );
 
 ### Last Modified
 
-**構文:** obj << Last Modified
+**構文:** obj &lt;&lt; Last Modified
 
 **説明:** データテーブルを最後に編集した日付を戻す。
 
@@ -5174,7 +5154,7 @@ Show( date );
 
 ### Lock Data Table
 
-**構文:** obj << Lock Data Table( state=0|1 )
+**構文:** obj &lt;&lt; Lock Data Table( state=0|1 )
 
 **説明:** データテーブルをロックして、値を編集または追加できないようにする。
 
@@ -5189,7 +5169,7 @@ dt << Lock Data Table( 1 );
 
 ### MSA Variability Chart
 
-**構文:** obj << MSA Variability Chart( Y( column ), X( columns ) )
+**構文:** obj &lt;&lt; MSA Variability Chart( Y( column ), X( columns ) )
 
 **説明:** 変動性図を表示する。測定値がカテゴリによってどのように異なるを、平均と分散で調べる。
 
@@ -5203,7 +5183,7 @@ dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ) );
 
 ### Make Indicator Columns
 
-**構文:** obj << Make Indicator Columns
+**構文:** obj &lt;&lt; Make Indicator Columns
 
 **説明:** 名義尺度や順序尺度の列から、カテゴリの個数だけ、指示変数(ダミー変数)の列を作成する。指示変数の列名は、元の列のデータ値。指示変数の値は0または1。
 
@@ -5217,7 +5197,7 @@ dt << Make Indicator Columns( columns( {:species, :season} ) );
 
 ### Make RowState Handler
 
-**構文:** rs = dt << Make RowState Handler( function(a) )
+**構文:** rs = dt &lt;&lt; Make RowState Handler( function(a) )
 
 **説明:** データテーブルに対して行属性のハンドラを作成する。関数の引数には行属性が変更された行の番号が代入される。
 
@@ -5234,9 +5214,7 @@ dt << Select Rows( 5 );
 
 ### Make SAS DATA Step
 
-**構文:** sd = dt << Make SAS Data Step( )
-
-sd = dt << Make SAS Data Step( SaveJMPMetadata(true) )
+**構文:** sd = dt &lt;&lt; Make SAS Data Step( )sd = dt &lt;&lt; Make SAS Data Step( SaveJMPMetadata(true) )
 
 **説明:** データテーブルをSASで作成するためのDATAステップを戻す。
 
@@ -5251,9 +5229,7 @@ Show( sd );
 
 ### Make SAS DATA Step Window
 
-**構文:** sd = dt << Make SAS Data Step Window( )
-
-sd = dt << Make SAS Data Step Window( SaveJMPMetadata(true) )
+**構文:** sd = dt &lt;&lt; Make SAS Data Step Window( )sd = dt &lt;&lt; Make SAS Data Step Window( SaveJMPMetadata(true) )
 
 **説明:** SASプログラム用の新しいウィンドウを開いて、データテーブルからSAS DATAステップを作成する。
 
@@ -5267,7 +5243,7 @@ sd = dt << Make SAS Data Step Window();
 
 ### Merge Referenced Data
 
-**構文:** obj << Merge Referenced Data
+**構文:** obj &lt;&lt; Merge Referenced Data
 
 **説明:** 参照先のデータテーブルのデータをマージし、リンクを解除することによってテーブルをスタンドアロンにする。参照している列のリンク参照プロパティも削除される。
 
@@ -5286,7 +5262,7 @@ dt2 << Merge Referenced Data();
 
 ### Missing Data Pattern
 
-**構文:** obj << Missing Data Pattern( columns( columns ), <Output Table( name )> )
+**構文:** obj &lt;&lt; Missing Data Pattern( columns( columns ), &lt;Output Table( name )&gt; )
 
 **説明:** データテーブル内の欠測値のパターンを見つけ、各パターンとその度数のテーブルを作成する。
 
@@ -5302,7 +5278,7 @@ dt << Missing Data Pattern(
 
 ### Move Column Group
 
-**構文:** obj << Move Column Group( name of group | Path({<a>, <b>, ...}), to first | to last | after(column) | after(group) | after(Path({<a>, <b>, ...})) )
+**構文:** obj &lt;&lt; Move Column Group( name of group | Path({&lt;a&gt;, &lt;b&gt;, ...}), to first | to last | after(column) | after(group) | after(Path({&lt;a&gt;, &lt;b&gt;, ...})) )
 
 **説明:** 列グループを指定の場所に移動する。 列グループの名前が指定されなかった場合、すべてのグループが対象となる。
 
@@ -5344,7 +5320,7 @@ dt << move column group( "xy", to first );
 
 ### Move Script Group
 
-**構文:** obj << Move Script Group( name of group | Path({<a>, <b>, ...}), to first | to last | after(script) | after(group) | after(Path({<a>, <b>, ...})) )
+**構文:** obj &lt;&lt; Move Script Group( name of group | Path({&lt;a&gt;, &lt;b&gt;, ...}), to first | to last | after(script) | after(group) | after(Path({&lt;a&gt;, &lt;b&gt;, ...})) )
 
 **説明:** スクリプトグループを指定の場所に移動する。グループ名が指定されなかった場合、すべてのスクリプトグループが対象となる。
 
@@ -5373,7 +5349,7 @@ dt << move script group( to first );
 
 ### Move Selected Scripts
 
-**構文:** obj << Move Selected Scripts( script|list of scripts|group|Path({<a>, <b>, ...}), to first | to last | after(script) | after(group) | after(Path({<a>, <b>, ...})) )
+**構文:** obj &lt;&lt; Move Selected Scripts( script|list of scripts|group|Path({&lt;a&gt;, &lt;b&gt;, ...}), to first | to last | after(script) | after(group) | after(Path({&lt;a&gt;, &lt;b&gt;, ...})) )
 
 **説明:** スクリプトを指定の場所に移動する。
 
@@ -5425,7 +5401,7 @@ dt << Move Selected scripts(
 
 ### Move down
 
-**構文:** obj << Move down
+**構文:** obj &lt;&lt; Move down
 
 **説明:** データテーブルの最初の行の値を列名で置き換え、列名をデフォルトの通し番号のついた名前に置き換える。
 
@@ -5441,7 +5417,7 @@ dt << Move down;
 
 ### Move up
 
-**構文:** obj << Move up
+**構文:** obj &lt;&lt; Move up
 
 **説明:** 列名をデータテーブルの最初の行の値で置き換える。
 
@@ -5457,7 +5433,7 @@ dt << Move up;
 
 ### Move up and append
 
-**構文:** obj << Move up and append
+**構文:** obj &lt;&lt; Move up and append
 
 **説明:** データテーブルの列名に、最初の行の値を追加する。
 
@@ -5473,7 +5449,7 @@ dt << Move up and append;
 
 ### New Data Box
 
-**構文:** obj << New Data Box( < <<Enable Filter Views(0|1) > )
+**構文:** obj &lt;&lt; New Data Box( &lt; &lt;&lt;Enable Filter Views(0|1) &gt; )
 
 **説明:** ディスプレイボックスツリーの中にデータテーブルビューを作成する。指定されたデータテーブルが、現在のデータテーブルになる。オプションのEnable Filter Views引数は、ビューがフィルタを許可するかどうかを制御する。デフォルトでは、許可する。
 
@@ -5497,7 +5473,7 @@ dtA = 0;
 
 ### New Data View
 
-**構文:** obj << New Data View
+**構文:** obj &lt;&lt; New Data View
 
 **説明:** データテーブルの新しいビューを作成する。このビューは元のデータテーブルとリンクしており、強調表示や変更などのすべてが、元のデータテーブルにも反映される。このビューは、同じデータテーブルのスクロールしないといけないような別の個所を同時に表示させたい場合に便利。
 
@@ -5511,7 +5487,7 @@ dt << New Data View();
 
 ### New Filter View
 
-**構文:** fv = dt << New Filter View( < name >, < Copy From(name|obj) >, < Temporary(0|1) >, < Active(0|1) >, < DataFilter(expr) >)
+**構文:** fv = dt &lt;&lt; New Filter View( &lt; name &gt;, &lt; Copy From(name|obj) &gt;, &lt; Temporary(0|1) &gt;, &lt; Active(0|1) &gt;, &lt; DataFilter(expr) &gt;)
 
 **説明:** 新しいフィルタビューを作成する。作成されたFilterViewオブジェクトが戻される。新しいフィルタビューは、デフォルトでアクティブになる。名前をつけなかったフィルタビューは、Temporaryが0に設定されていない限り、一時的になる。
 
@@ -5563,9 +5539,7 @@ dt << New Filter View( "Unknown Sex", CopyFrom( fv ), Active( 0 ) );
 
 ### New Script
 
-**構文:** New Property( name, script ) 
-
-New Script( name, script )
+**構文:** New Property( name, script ) New Script( name, script )
 
 **説明:** データテーブルにテーブルプロパティを新規作成し、それにスクリプトを設定する。
 
@@ -5579,7 +5553,7 @@ dt << New Script( "New Script", Distribution( Column( :Height, :Weight ), By( :s
 
 ### New Table Variable
 
-**構文:** obj << New Table Variable( name, number )
+**構文:** obj &lt;&lt; New Table Variable( name, number )
 
 **説明:** データテーブル内に新しい変数を作成し、定数を設定する。同名の変数がすでに存在する場合は、新しい変数の名前に番号が追加され一意のものとなる。多くの場合、類似のコマンドであるSet Table Variableの使用が推奨される。
 
@@ -5593,7 +5567,7 @@ dt << New Table Variable( "Days", 42 );
 
 ### OC Curves
 
-**構文:** obj << OC Curves
+**構文:** obj &lt;&lt; OC Curves
 
 **説明:** 工程で生じたシフトの大きさに対して、それを検出できずに、合格とする確率を表すグラフを作成する。
 
@@ -5601,7 +5575,7 @@ dt << New Table Variable( "Days", 42 );
 
 ### Partition
 
-**構文:** obj << Partition( Y( column ), X( column(s) ) )
+**構文:** obj &lt;&lt; Partition( Y( column ), X( column(s) ) )
 
 **説明:** 予測変数と応答値の関係に従ってデータを対話的に分岐することで、ディシジョンツリーを作成する。応答と予測変数は、連続量または離散値のどちらでもよい。
 
@@ -5619,7 +5593,7 @@ dt << Partition(
 
 ### Paste Column Properties
 
-**構文:** obj << Paste Column Properties
+**構文:** obj &lt;&lt; Paste Column Properties
 
 **説明:** クリップボードから、リスト形式で持たれている複数の列プロパティを、複数の列に貼り付ける。対象とする列をデータテーブルで選択する代わりに、列のリストを引数に指定することもできる。
 
@@ -5642,7 +5616,7 @@ dt2 << Paste Column Properties( {:T1, :T3} );
 
 ### Recode
 
-**構文:** obj << Recode
+**構文:** obj &lt;&lt; Recode
 
 **説明:** 列のデータ値を、指定された新しい値に置き換える
 
@@ -5657,7 +5631,7 @@ dt << Recode;
 
 ### Recode Column
 
-**構文:** obj << Recode Column(<source column reference>, {<transform>, ...}, <Update Properties(0|1)>, <By Word(Delimiters(<chars>)>, Target Column(<column reference> | <column name>))
+**構文:** obj &lt;&lt; Recode Column(&lt;source column reference&gt;, {&lt;transform&gt;, ...}, &lt;Update Properties(0|1)&gt;, &lt;By Word(Delimiters(&lt;chars&gt;)&gt;, Target Column(&lt;column reference&gt; | &lt;column name&gt;))
 
 **説明:** リストとして記述された変換をソース列の各値に適用し、結果を元の列または指定の列に保存する。By Wordオプションは、与えられた文字データをいくつかの入力値に分割する。それぞれの入力値に対して変換が適用される。
 
@@ -5685,7 +5659,7 @@ dt << Recode Column(
 
 ### Rename Column Group
 
-**構文:** obj << Rename Column Group( oldname | Path({<a>, <b>, ...}), newname )
+**構文:** obj &lt;&lt; Rename Column Group( oldname | Path({&lt;a&gt;, &lt;b&gt;, ...}), newname )
 
 **説明:** 列グループの名前を変更する。
 
@@ -5717,7 +5691,7 @@ dt << rename column group( "xy", "coordinates" );
 
 ### Rename Script Group
 
-**構文:** obj << Rename Script Group( oldname | Path({<a>, <b>, ...}), newname )
+**構文:** obj &lt;&lt; Rename Script Group( oldname | Path({&lt;a&gt;, &lt;b&gt;, ...}), newname )
 
 **説明:** スクリプトグループのグループ名を変更する。
 
@@ -5755,7 +5729,7 @@ dt << rename script group( "GB", "GraphBuilders" );
 
 ### Rename Table Property
 
-**構文:** obj << Rename Table Property( old name, new name )
+**構文:** obj &lt;&lt; Rename Table Property( old name, new name )
 
 **説明:** テーブルプロパティの名前を変更する。
 
@@ -5771,7 +5745,7 @@ dt << Rename Table Property( "New Script", "Great Script" );
 
 ### Rename Table Script
 
-**構文:** obj << Rename Table Script( old name, new name )
+**構文:** obj &lt;&lt; Rename Table Script( old name, new name )
 
 **説明:** テーブルスクリプトの名前を変更する。
 
@@ -5787,7 +5761,7 @@ dt << Rename Table Script( "New Script", "Great Script" );
 
 ### Rename Table Variable
 
-**構文:** obj << Rename Table Variable( old name, new name )
+**構文:** obj &lt;&lt; Rename Table Variable( old name, new name )
 
 **説明:** テーブル変数の名前を変更する。
 
@@ -5803,7 +5777,7 @@ dt << Rename Table Variable( "Days", "Hours" );
 
 ### Rerun Formulas
 
-**構文:** obj << Rerun Formulas
+**構文:** obj &lt;&lt; Rerun Formulas
 
 **説明:** データテーブル内のすべての列計算式を再評価する。
 
@@ -5818,7 +5792,7 @@ dt << Rerun Formulas;
 
 ### Reset Transforms
 
-**構文:** dt >> Reset Transforms()
+**構文:** dt &gt;&gt; Reset Transforms()
 
 **説明:** 変換列にアクセスすると、そのデータが後の使用に備えてキャッシュされる。この関数はそのデータを削除する。列にもう一度アクセスすればデータが再度作成される。
 
@@ -5834,7 +5808,7 @@ dt << Reset Transforms();
 
 ### Revert
 
-**構文:** obj << Revert
+**構文:** obj &lt;&lt; Revert
 
 **説明:** データテーブルへのすべての変更を元に戻す。
 
@@ -5853,7 +5827,7 @@ dt << revert();
 
 ### Run Formulas
 
-**構文:** obj << Run Formulas
+**構文:** obj &lt;&lt; Run Formulas
 
 **説明:** 保留されている計算式の評価を実行する。すべての計算式が評価されるわけではない。
 
@@ -5869,7 +5843,7 @@ Distribution( Column( :"N=1"n, :"N=5"n, :"N=10"n ) );
 
 ### Run Script
 
-**構文:** obj << Run Script( name )
+**構文:** obj &lt;&lt; Run Script( name )
 
 **説明:** データテーブルにテーブルプロパティとして保存されたスクリプトを実行する。
 
@@ -5883,9 +5857,7 @@ dt << Run Script( "Distribution" );
 
 ### Save
 
-**構文:** obj << Save( <filepath>, <file type> ) 
-
-obj << Save As( filepath, <file type> )
+**構文:** obj &lt;&lt; Save( &lt;filepath&gt;, &lt;file type&gt; ) obj &lt;&lt; Save As( filepath, &lt;file type&gt; )
 
 **説明:** データテーブルを、サポートされている任意の形式で保存する。サポートされている形式には、.jmp、.xls、.xlsx、.txt、.csv、.tsv、.xpt、.v8xpt、.stxがある。一部の形式はWindowsのみでサポートされている。詳細については、『JMPの使用法』を参照。
 
@@ -5905,9 +5877,7 @@ Close( dt, "NoSave" );
 
 ### Save As
 
-**構文:** obj << Save( <filepath>, <file type> ) 
-
-obj << Save As( filepath, <file type> )
+**構文:** obj &lt;&lt; Save( &lt;filepath&gt;, &lt;file type&gt; ) obj &lt;&lt; Save As( filepath, &lt;file type&gt; )
 
 **説明:** データテーブルを、サポートされている任意の形式で保存する。サポートされている形式には、.jmp、.xls、.xlsx、.txt、.csv、.tsv、.xpt、.v8xpt、.stxがある。一部の形式はWindowsのみでサポートされている。詳細については、『JMPの使用法』を参照。
 
@@ -5927,7 +5897,7 @@ Close( dt, "NoSave" );
 
 ### Save Database
 
-**構文:** obj << Save Database( connectInfo, TableName )
+**構文:** obj &lt;&lt; Save Database( connectInfo, TableName )
 
 **説明:** データテーブルをデータベースに保存する。
 
@@ -5941,7 +5911,7 @@ dt << Save Database( "Connect Dialog", "My_Class" );
 
 ### Screen Predictors
 
-**構文:** obj << Screen Predictors
+**構文:** obj &lt;&lt; Screen Predictors
 
 **説明:** 「説明変数のスクリーニング」の旧名。
 
@@ -5955,7 +5925,7 @@ obj = dt << Predictor Screening( Y( :Banding? ), X( Column Group( "Predictors" )
 
 ### Select Column Group
 
-**構文:** obj << Select Column Group( name of group | list of names )
+**構文:** obj &lt;&lt; Select Column Group( name of group | list of names )
 
 **説明:** 列グループを選択する。
 
@@ -5971,7 +5941,7 @@ dt << select column group( "xy", "pollutants" );
 
 ### Select Properties
 
-**構文:** obj << Select Properties( { property1, property2, ... )
+**構文:** obj &lt;&lt; Select Properties( { property1, property2, ... )
 
 **説明:** 指定されたテーブルプロパティを選択する。プロパティ名またはプロパティの添え字のリストを指定する。
 
@@ -5997,7 +5967,7 @@ proplist = dt << Select Properties( {"Bivariate", "Logistic"} );
 
 ### Select Script Group
 
-**構文:** obj << Select Script Group( <name of group | { group1, group2, ...} > )
+**構文:** obj &lt;&lt; Select Script Group( &lt;name of group | { group1, group2, ...} &gt; )
 
 **説明:** スクリプトグループを選択する。グループ名が指定されなかった場合、すべてのスクリプトグループを選択する。
 
@@ -6020,7 +5990,7 @@ dt << select script group( "VL" );
 
 ### Select Scripts
 
-**構文:** obj << Select Scripts( <name of script | { script1, script2, ...} > )
+**構文:** obj &lt;&lt; Select Scripts( &lt;name of script | { script1, script2, ...} &gt; )
 
 **説明:** 引数で指定されたスクリプト名のスクリプトを選択する。
 
@@ -6063,7 +6033,7 @@ dt << select scripts( a );
 
 ### Select columns
 
-**構文:** obj << Select columns( <column>, <column>, ... )
+**構文:** obj &lt;&lt; Select columns( &lt;column&gt;, &lt;column&gt;, ... )
 
 **説明:** 指定された列を選択する。すべての列を選択するには、キーワードとして「All」を指定する。
 
@@ -6105,13 +6075,13 @@ dt << Select Columns( clist );
 
 ### Sequencing Variants Toolset
 
-**構文:** obj << Sequencing Variants Toolset
+**構文:** obj &lt;&lt; Sequencing Variants Toolset
 
 **説明:** バリアント配列解析ツールセットアドインプラットフォームへのインターフェース
 
 ### Set Active Filter View
 
-**構文:** obj << Set Active Filter View( name | obj )
+**構文:** obj &lt;&lt; Set Active Filter View( name | obj )
 
 **説明:** アクティブなフィルタビューを設定する。
 
@@ -6133,7 +6103,7 @@ dt << Set Active Filter View( "Dream" );
 
 ### Set Cell Height
 
-**構文:** obj << Set Cell Height( number )
+**構文:** obj &lt;&lt; Set Cell Height( number )
 
 **説明:** データテーブルにおける各セルの縦幅を設定する。
 
@@ -6147,7 +6117,7 @@ dt << Set Cell Height( 20 );
 
 ### Set Dirty
 
-**構文:** obj << Set Dirty( state=0|1 )
+**構文:** obj &lt;&lt; Set Dirty( state=0|1 )
 
 **説明:** データテーブルが変更されていない場合でも、変更済みとする。これにより、閉じる際に、保存するかどうかを尋ねるダイアログが表示される。
 
@@ -6161,7 +6131,7 @@ dt << Set Dirty();
 
 ### Set Edit Lock
 
-**構文:** obj << Set Edit Lock( [ <"Modify Cells">, <"Add rows">, <"Add Columns">, <"Delete Rows">, <"Delete Columns">] )
+**構文:** obj &lt;&lt; Set Edit Lock( [ &lt;"Modify Cells"&gt;, &lt;"Add rows"&gt;, &lt;"Add Columns"&gt;, &lt;"Delete Rows"&gt;, &lt;"Delete Columns"&gt;] )
 
 **説明:** 対象のデータテーブルで、引数で指定した操作を行えないようにする。
 
@@ -6175,7 +6145,7 @@ dt << Set Edit Lock( "Add Rows", "Delete Columns" );
 
 ### Set Header Height
 
-**構文:** obj << Set Header Height( number )
+**構文:** obj &lt;&lt; Set Header Height( number )
 
 **説明:** 列見出しの表示の高さを設定する。
 
@@ -6189,7 +6159,7 @@ dt << Set Header Height( 20 );
 
 ### Set Label Columns
 
-**構文:** obj << Set Label Columns( column(s) )
+**構文:** obj &lt;&lt; Set Label Columns( column(s) )
 
 **説明:** データテーブルの選択された列にラベルの役割を割り当てる。
 
@@ -6204,7 +6174,7 @@ dt << Set Label Columns( :City, :State );
 
 ### Set Matrix
 
-**構文:** obj << Set Matrix( [ matrix with rows separated by commas ] )
+**構文:** obj &lt;&lt; Set Matrix( [ matrix with rows separated by commas ] )
 
 **説明:** 行列からデータテーブルを作成する。
 
@@ -6218,7 +6188,7 @@ dt << Set Matrix( [12 59 95, 12 61 123, 12 55 74, 12 66 145] );
 
 ### Set Name
 
-**構文:** obj << Set Name( new TableName )
+**構文:** obj &lt;&lt; Set Name( new TableName )
 
 **説明:** データテーブルの名前を変更する。
 
@@ -6232,7 +6202,7 @@ dt << Set Name( "New Class" );
 
 ### Set Property
 
-**構文:** obj << Set Property(  name, script  )
+**構文:** obj &lt;&lt; Set Property( name, script )
 
 **説明:** データテーブルにテーブルプロパティを新規作成し、それにスクリプトを設定する。
 
@@ -6246,7 +6216,7 @@ dt << Set Property( "New Script", Distribution( Column( :Height, :Weight ), By( 
 
 ### Set Row ID Width
 
-**構文:** obj << Set Row ID Width( number )
+**構文:** obj &lt;&lt; Set Row ID Width( number )
 
 **説明:** 行番号の領域の表示幅を設定する。
 
@@ -6260,7 +6230,7 @@ dt << Set Row ID Width( 80 );
 
 ### Set Row States
 
-**構文:** obj << Set Row States( [state1, state2, ... stateN] )
+**構文:** obj &lt;&lt; Set Row States( [state1, state2, ... stateN] )
 
 **説明:** データテーブルのすべての行に行属性を設定する。
 
@@ -6277,7 +6247,7 @@ dt << Set Row States(
 
 ### Set Scroll Lock Columns
 
-**構文:** obj << Set Scroll Lock Columns( column(s) )
+**構文:** obj &lt;&lt; Set Scroll Lock Columns( column(s) )
 
 **説明:** データテーブルの特定の列をスクロールされないようにロックする。背景色が変わって、列がロックされていることが示される。
 
@@ -6291,7 +6261,7 @@ dt << Set Scroll Lock Columns( :City );
 
 ### Set Table Variable
 
-**構文:** obj << Set Table Variable( name, number )
+**構文:** obj &lt;&lt; Set Table Variable( name, number )
 
 **説明:** データテーブル内に新しい変数を作成し、定数を設定する。同名の既存の変数は上書きされる。
 
@@ -6305,7 +6275,7 @@ dt << Set Table Variable( "Days", 42 );
 
 ### Show Header Filter Icons
 
-**構文:** obj << Show Header Filter Icons( state=0|1 )
+**構文:** obj &lt;&lt; Show Header Filter Icons( state=0|1 )
 
 **説明:** Show or hide the filter icons on columns in the current filter view.
 
@@ -6321,7 +6291,7 @@ dt << Show Header Filter Icons( 0 );
 
 ### Show Header Graphs
 
-**構文:** obj << Show Header Graphs( state=0|1 )
+**構文:** obj &lt;&lt; Show Header Graphs( state=0|1 )
 
 **説明:** Show or hide the header graphs in the data table display.
 
@@ -6337,7 +6307,7 @@ dt << Show Header Graphs( 0 );
 
 ### Show Header Groups
 
-**構文:** obj << Show Header Groups( state=0|1 )
+**構文:** obj &lt;&lt; Show Header Groups( state=0|1 )
 
 **説明:** Show or hide the column groups in the data table display.
 
@@ -6353,7 +6323,7 @@ dt << Show Header Groups( 0 );
 
 ### Show Header Statistics
 
-**構文:** obj << Show Header Statistics( state=0|1 )
+**構文:** obj &lt;&lt; Show Header Statistics( state=0|1 )
 
 **説明:** Show or hide the header statistics in the data table display.
 
@@ -6369,7 +6339,7 @@ dt << Show Header Statistics( 0 );
 
 ### Show Header Tags
 
-**構文:** obj << Show Header Tags( state=0|1 )
+**構文:** obj &lt;&lt; Show Header Tags( state=0|1 )
 
 **説明:** Show or hide the column tags in the data table display.
 
@@ -6385,7 +6355,7 @@ dt << Show Header Tags( 0 );
 
 ### Show Hidden Columns In Columns List
 
-**構文:** obj << Show Hidden Columns In Columns List( state=0|1 )
+**構文:** obj &lt;&lt; Show Hidden Columns In Columns List( state=0|1 )
 
 **説明:** オフにすると、非表示の属性を持つ列はデータテーブルの列リストにも表示されなくなる。これらの列が、データグリッドに表示されることはない。
 
@@ -6403,7 +6373,7 @@ dt << Show Hidden Columns In Columns List( 0 );
 
 ### Show Transforms
 
-**構文:** dt << Show Transforms()
+**構文:** dt &lt;&lt; Show Transforms()
 
 **説明:** データテーブルに含まれる変換列とそのプラットフォームに関する情報をログに出力する。これは情報の提供を目的としており、形式は変更される可能性がある。構文解析をすることはできない。
 
@@ -6421,7 +6391,7 @@ dt << Delete Columns( :A );
 
 ### Sort
 
-**構文:** obj << Sort( <Private>, <Invisible>, <Replace table>, By( column ), Order( ascending|descending ) )
+**構文:** obj &lt;&lt; Sort( &lt;Private&gt;, &lt;Invisible&gt;, &lt;Replace table&gt;, By( column ), Order( ascending|descending ) )
 
 **説明:** 指定された列の値で昇順または降順に並べ替えた新しいデータテーブルを作成する。
 
@@ -6447,7 +6417,7 @@ dt << Sort( replace table, By( :name ), Order( Ascending ) );
 
 ### Split
 
-**構文:** obj << Split( Split( columns ), Split by( column ), <Group(column)>, <Private>|<Invisible>, <Remaining Columns( Keep All | Drop All | Drop( columns ) | Keep( columns ) )>, <Copy formula( 0|1 )>, <Suppress formula evaluation( 0|1 )>, <Sort by Column Property>, <Output Table( "name" )> )
+**構文:** obj &lt;&lt; Split( Split( columns ), Split by( column ), &lt;Group(column)&gt;, &lt;Private&gt;|&lt;Invisible&gt;, &lt;Remaining Columns( Keep All | Drop All | Drop( columns ) | Keep( columns ) )&gt;, &lt;Copy formula( 0|1 )&gt;, &lt;Suppress formula evaluation( 0|1 )&gt;, &lt;Sort by Column Property&gt;, &lt;Output Table( "name" )&gt; )
 
 **説明:** 1つの列の複数の行を複数の列にマッピングした新しいデータテーブルを作成する。
 
@@ -6467,7 +6437,7 @@ dt << Split(
 
 ### Stack
 
-**構文:** obj << Stack( <Private>, <Invisible>, columns( columns ), <Source Label Column( string )>, <Stacked Data Column( string )>, <Copy formula( 0|1 )>, <Number of Series(n)>, <Contiguous>, <Drop All Other Columns(1) | Name("Non-stacked columns")(Keep( col1, ... )) | Name("Non-stacked columns")(Drop( col1, ... ))>, <Output Table( "name" )>) )
+**構文:** obj &lt;&lt; Stack( &lt;Private&gt;, &lt;Invisible&gt;, columns( columns ), &lt;Source Label Column( string )&gt;, &lt;Stacked Data Column( string )&gt;, &lt;Copy formula( 0|1 )&gt;, &lt;Number of Series(n)&gt;, &lt;Contiguous&gt;, &lt;Drop All Other Columns(1) | Name("Non-stacked columns")(Keep( col1, ... )) | Name("Non-stacked columns")(Drop( col1, ... ))&gt;, &lt;Output Table( "name" )&gt;) )
 
 **説明:** 複数の列の値を1列に積み重ねて新しいデータテーブルを作成する。
 
@@ -6520,7 +6490,7 @@ dt << Stack(
 
 ### Subscribe
 
-**構文:** obj << Subscribe( Key( <"client"> ), OnDeleteColumns| OnAddColumns| OnAddRows| OnDeleteRows| OnRenameColumn | OnClose | OnSave | OnRename (function) )
+**構文:** obj &lt;&lt; Subscribe( Key( &lt;"client"&gt; ), OnDeleteColumns| OnAddColumns| OnAddRows| OnDeleteRows| OnRenameColumn | OnClose | OnSave | OnRename (function) )
 
 **説明:** データテーブルの変更に関するメッセージを取得できるように登録する。keyには、参照できるようにするための登録名を指定する。そのオプションのパラメータclientは、データテーブルが閉じられる際に確認のダイアログを表示する。functionには、すでに定義された関数の名前または関数自体を指定する。On Close は、1つの引数(関数)のみを必要とする。その他のメッセージの場合は、データテーブルも引数として指定する。各登録は解除するまで有効。
 
@@ -6600,7 +6570,7 @@ dt << subscribe( "Test Add", onAddRows( addRowsFn, 3 ) );
 
 ### Subset
 
-**構文:** obj << Subset( <Private>, <Invisible>, <Selected columns>, <Columns(column list)>, <All rows | Selected Rows | Filtered Rows(where clause) | Rows([number, number, ...])>, <By(column list)>, <Sampling Rate(fraction)>, <Sample Size(integer)>, <Stratify(column list)>, <Link to original data table(0|1)>, <Copy formula(0|1)>, <Suppress Formula Evaluation>, <Keep by columns> )
+**構文:** obj &lt;&lt; Subset( &lt;Private&gt;, &lt;Invisible&gt;, &lt;Selected columns&gt;, &lt;Columns(column list)&gt;, &lt;All rows | Selected Rows | Filtered Rows(where clause) | Rows([number, number, ...])&gt;, &lt;By(column list)&gt;, &lt;Sampling Rate(fraction)&gt;, &lt;Sample Size(integer)&gt;, &lt;Stratify(column list)&gt;, &lt;Link to original data table(0|1)&gt;, &lt;Copy formula(0|1)&gt;, &lt;Suppress Formula Evaluation&gt;, &lt;Keep by columns&gt; )
 
 **説明:** 元のデータテーブルで選択されている行と列から新しいデータテーブルを作成する。サブセットにする行をランダムに選択することもできる。
 
@@ -6646,7 +6616,7 @@ dt << Subset( Rows( [28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40] ) );
 
 ### Summary
 
-**構文:** obj << Summary( <Private>, <Invisible>, FREQ(column | "none"), WEIGHT(column | "none"),Group( columns ),Subgroup(columns), <N (column)>, <Mean( column )>, <Std Dev( column )>, <Min( column )>, <Max( column )>, <Range( column )>, <Sum( column )>, <CV( column )>...,Include marginal statistics, Link to original data table (0|1),statistics column name format( "stat(column)" | "column" | "stat of column" | "column stat" | "stat") )
+**構文:** obj &lt;&lt; Summary( &lt;Private&gt;, &lt;Invisible&gt;, FREQ(column | "none"), WEIGHT(column | "none"),Group( columns ),Subgroup(columns), &lt;N (column)&gt;, &lt;Mean( column )&gt;, &lt;Std Dev( column )&gt;, &lt;Min( column )&gt;, &lt;Max( column )&gt;, &lt;Range( column )&gt;, &lt;Sum( column )&gt;, &lt;CV( column )&gt;...,Include marginal statistics, Link to original data table (0|1),statistics column name format( "stat(column)" | "column" | "stat of column" | "column stat" | "stat") )
 
 **説明:** 要約統計量の新しいデータテーブルを作成する。グループ変数が指定された場合は、その各水準が1行となる。グループ変数が複数ある場合はそれぞれの水準の組み合わせが1行となる。
 
@@ -6681,7 +6651,7 @@ dt << Summary(
 
 ### Suppress Formula Eval
 
-**構文:** obj << Suppress Formula Eval( state=0|1 )
+**構文:** obj &lt;&lt; Suppress Formula Eval( state=0|1 )
 
 **説明:** 自動評価を無効または有効にする。これは、行の追加、複数の分析の実行、および並べ替えの速度を速くしたい場合に便利。
 
@@ -6698,7 +6668,7 @@ dt << Suppress Formula Eval( 0 );
 
 ### Text to Columns
 
-**構文:** obj << Text to Columns( delimiters(<"separator">, <TAB>, <NEWLINE>), columns(column1, column2, ...) )
+**構文:** obj &lt;&lt; Text to Columns( delimiters(&lt;"separator"&gt;, &lt;TAB&gt;, &lt;NEWLINE&gt;), columns(column1, column2, ...) )
 
 **説明:** 区切り文字で区切られた文字値から別々の列を作成する。オプションで指示変数の列を作成することもできる。 区切り文字(separator)には、任意の文字値、もしくはキーワードとしてTABまたはNEWLINEが指定できる。
 
@@ -6728,13 +6698,13 @@ dt << Text To Columns(
 
 ### Torch Deep Learning
 
-**構文:** obj << Torch Deep Learning
+**構文:** obj &lt;&lt; Torch Deep Learning
 
 **説明:** Torch Deep Learningアドインプラットフォームへのインターフェース
 
 ### Transform Column
 
-**構文:** dt << Transform Column(<name>, Formula(<expression>), [Replace(0|1)], [Private(0|1)], [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]
+**構文:** dt &lt;&lt; Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Replace(0|1)], [Private(0|1)], [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]
 
 **説明:** 対象のテーブルに変換列を作成する。変換列は、普通の列と同様に使用できる。
 
@@ -6794,7 +6764,7 @@ dt << Delete Columns( :A );
 
 ### Transpose
 
-**構文:** obj << Transpose( <Private>, <Invisible>,columns( columns ), By( column ), <Label( column )>, <Output Table( name )> )
+**構文:** obj &lt;&lt; Transpose( &lt;Private&gt;, &lt;Invisible&gt;,columns( columns ), By( column ), &lt;Label( column )&gt;, &lt;Output Table( name )&gt; )
 
 **説明:** 元のテーブルの行と列を入れ替え、新しいデータテーブルを作成する。
 
@@ -6812,7 +6782,7 @@ dt << Transpose(
 
 ### Type 1 Gauge
 
-**構文:** obj << Type 1 Gauge( Y( column ) )
+**構文:** obj &lt;&lt; Type 1 Gauge( Y( column ) )
 
 **説明:** タイプ1ゲージを使用して、連続データの測定システムを分析し、1つの部品における測定プロセスの能力を評価します。
 
@@ -6833,7 +6803,7 @@ dt << Type 1 Gauge(
 
 ### Ungroup Columns
 
-**構文:** obj << Ungroup Columns( {column1, column2, ...} | Column Group( group name ) )
+**構文:** obj &lt;&lt; Ungroup Columns( {column1, column2, ...} | Column Group( group name ) )
 
 **説明:** 複数の列のグループを解除する。
 
@@ -6867,7 +6837,7 @@ dt << Ungroup Columns( Column Group( "Monday" ) );
 
 ### Ungroup Scripts
 
-**構文:** obj << Ungroup Scripts( name of script group | list of scripts )
+**構文:** obj &lt;&lt; Ungroup Scripts( name of script group | list of scripts )
 
 **説明:** グループになっているスクリプトのグループ化を解除する。 スクリプト名が引数で指定されなかった場合、現在、選択されているスクリプトがグループから除外される。スクリプト名が引数で指定されず、選択されているスクリプトもない場合、すべてのスクリプトがグループから除外される。
 
@@ -6913,7 +6883,7 @@ dt << ungroup scripts();
 
 ### Unsubscribe
 
-**構文:** obj << Unsubscribe( Key, OnDeleteColumns| OnAddColumns| OnAddRows| OnDeleteRows| OnClose | OnColRename | All )
+**構文:** obj &lt;&lt; Unsubscribe( Key, OnDeleteColumns| OnAddColumns| OnAddRows| OnDeleteRows| OnClose | OnColRename | All )
 
 **説明:** データテーブルへの以前の登録をキャンセルする。
 
@@ -6928,7 +6898,7 @@ dt << Unsubscribe( "myname", On Close );
 
 ### Update
 
-**構文:** obj << Update( With( Data Table( name )), Match Columns( column1 = column2, ...), Selected( columns ), Add columns from Update table(<ALL>, <NONE>, <{column1, column2, ...}>), Replace columns in main table(<ALL>, <NONE>, <{column1, column2, ...}>), <Ignore missing> )
+**構文:** obj &lt;&lt; Update( With( Data Table( name )), Match Columns( column1 = column2, ...), Selected( columns ), Add columns from Update table(&lt;ALL&gt;, &lt;NONE&gt;, &lt;{column1, column2, ...}&gt;), Replace columns in main table(&lt;ALL&gt;, &lt;NONE&gt;, &lt;{column1, column2, ...}&gt;), &lt;Ignore missing&gt; )
 
 **説明:** 元のデータテーブルに、より新しいデータを含むテーブルからデータを追加または置換して、データテーブルを更新する。
 
@@ -6995,7 +6965,7 @@ dt1 << Update(
 
 ### Update From Database
 
-**構文:** obj << Update From Database( connectInfo )
+**構文:** obj &lt;&lt; Update From Database( connectInfo )
 
 **説明:** データテーブル内のデータを、データベースから再読み込みしたデータで更新する。
 
@@ -7009,13 +6979,13 @@ dt << Update From Database( "Connect Dialog" );
 
 ### XGBoost
 
-**構文:** obj << XGBoost
+**構文:** obj &lt;&lt; XGBoost
 
 **説明:** XGBoostの試験的なインターフェース。XGBoostは、確率的勾配ブースティングに基づく予測を行う。
 
 ### set private
 
-**構文:** obj << set private( <1|0> )
+**構文:** obj &lt;&lt; set private( &lt;1|0&gt; )
 
 **説明:** テーブルをプライベートにする。プライベートテーブルは、データテーブルのリストとSubscribeから除外される。
 
@@ -7044,7 +7014,7 @@ Close( dt, No Save );
 
 #### Add Column Properties
 
-**構文:** obj << Add Column Properties
+**構文:** obj &lt;&lt; Add Column Properties
 
 **説明:** 選択した列にプロパティを追加する。
 
@@ -7058,7 +7028,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Add From Row States
 
-**構文:** obj << Add From Row States
+**構文:** obj &lt;&lt; Add From Row States
 
 **説明:** 行属性の列の値に、現在設定されている行属性を追加する。
 
@@ -7077,7 +7047,7 @@ col << Add From Row States();
 
 #### Add To Row States
 
-**構文:** obj << Add To Row States
+**構文:** obj &lt;&lt; Add To Row States
 
 **説明:** 列に保存されている行属性値をすべて、データテーブルで使われる行の属性に追加する。
 
@@ -7095,7 +7065,7 @@ col << Add To Row States();
 
 #### Codes to Labels
 
-**構文:** :col << Codes To Labels(<AssociativeArray>|<ListOfAssignments>)
+**構文:** :col &lt;&lt; Codes To Labels(&lt;AssociativeArray&gt;|&lt;ListOfAssignments&gt;)
 
 **説明:** 元データに付けられた値ラベルから文字値の列を作成する。
 
@@ -7138,7 +7108,7 @@ dt = Open( "$Sample_Data/Big Class.jmp" );
 
 #### Color Cell by Value
 
-**構文:** obj << Color Cell by Value( state=0|1 )
+**構文:** obj &lt;&lt; Color Cell by Value( state=0|1 )
 
 **説明:** 列内のセルの表示色を変更する。
 
@@ -7158,7 +7128,7 @@ Wait( 1 );
 
 #### Color Cells
 
-**構文:** obj << Color Cells( color, <row | { row1, row2, ...} > )
+**構文:** obj &lt;&lt; Color Cells( color, &lt;row | { row1, row2, ...} &gt; )
 
 **説明:** 列のセルを指定の色で塗る。行が指定されない場合、列全体を同じ色で塗る。
 
@@ -7197,7 +7167,7 @@ b = {2, 4, 6};
 
 #### Compact
 
-**構文:** :col << Compact( <1|0> )
+**構文:** :col &lt;&lt; Compact( &lt;1|0&gt; )
 
 **説明:** 文字タイプの列の内部構造を変更して、各値が1つだけ保存されるようにする。メモリの節約と処理の高速化につながる。オプションのSave Formatは、列の保存形式を制御する。圧縮形式はサイズが小さく、高速に読み込めるが、JMP 17以前のバージョンではテーブルを開くことができない。デフォルトでは環境設定の保存形式が使用される。
 
@@ -7226,7 +7196,7 @@ dt = Open( "$SAMPLE_DATA/Air Traffic.jmp" );
 
 #### Convert to Table Column
 
-**構文:** obj << Convert to Table Column
+**構文:** obj &lt;&lt; Convert to Table Column
 
 **説明:** 変換列をデータテーブルに追加する。
 
@@ -7243,7 +7213,7 @@ dt << Transform Column( "New Col", Formula( 1 ) );
 
 #### Copy from Row States
 
-**構文:** obj << Copy from Row States
+**構文:** obj &lt;&lt; Copy from Row States
 
 **説明:** 現在のデータテーブルにおけるすべての行属性を列にコピーする。
 
@@ -7257,7 +7227,7 @@ dt << New Column( "Row State Col", Row State, Copy from Row States );
 
 #### Copy to Row States
 
-**構文:** obj << Copy to Row States
+**構文:** obj &lt;&lt; Copy to Row States
 
 **説明:** 列に保存されている行属性値をすべて、データテーブルで使われる行の属性にコピーする。
 
@@ -7273,7 +7243,7 @@ col << Copy To Row States();
 
 #### Data Type
 
-**構文:** obj << Data Type(  "Numeric"|"Character"|"Expression"|"Row State", <Format("format string")>, <Input Format("format string")>, <1|2|4>, < <<Fail On Conversion Error >, < <<Return Failed Rows > )
+**構文:** obj &lt;&lt; Data Type( "Numeric"|"Character"|"Expression"|"Row State", &lt;Format("format string")&gt;, &lt;Input Format("format string")&gt;, &lt;1|2|4&gt;, &lt; &lt;&lt;Fail On Conversion Error &gt;, &lt; &lt;&lt;Return Failed Rows &gt; )
 
 **説明:** 列のデータタイプを設定する。オプションの引数を使って表示形式、入力形式、列が数値の場合は幅(バイト)も設定できる。Fail On Conversion Errorは、いずれかの値の変換に失敗した場合にデータタイプの変更を中止する。これは、文字タイプの列を数値タイプの列に変換するときに特に便利。Return Failed Rowsは、変換に失敗した行の番号をリストで戻す。
 
@@ -7342,7 +7312,7 @@ Show( r );
 
 #### Delete Formula
 
-**構文:** obj << Delete Formula
+**構文:** obj &lt;&lt; Delete Formula
 
 **説明:** 列の計算式をすべて削除する。
 
@@ -7356,7 +7326,7 @@ dt = Open( "$SAMPLE_DATA/Bank Loan.jmp" );
 
 #### Delete Property
 
-**構文:** obj << Delete Property( property name )
+**構文:** obj &lt;&lt; Delete Property( property name )
 
 **説明:** 指定されたプロパティを列から削除する。
 
@@ -7370,7 +7340,7 @@ dt = Open( "$SAMPLE_DATA/Bank Loan.jmp" );
 
 #### Eval Formula
 
-**構文:** obj << Eval Formula
+**構文:** obj &lt;&lt; Eval Formula
 
 **説明:** 列の計算式を評価する。
 
@@ -7386,15 +7356,7 @@ col << Eval Formula;
 
 #### Format
 
-**構文:** obj << Format( "Best|Fixed Dec...", <width>, <dec>, <"Use Thousands Separator">  )
-
-obj << Format( "mdy|ddmmyy|Long Date...", width )
-
-obj << Format( "Format Pattern", pattern )
-
-obj << Format("Currency", <Country symbol>, <width>, <"Use Thousands Separator"> ) 
-
-obj << Format("Use Thousands Separator" )
+**構文:** obj &lt;&lt; Format( "Best|Fixed Dec...", &lt;width&gt;, &lt;dec&gt;, &lt;"Use Thousands Separator"&gt; )obj &lt;&lt; Format( "mdy|ddmmyy|Long Date...", width )obj &lt;&lt; Format( "Format Pattern", pattern )obj &lt;&lt; Format("Currency", &lt;Country symbol&gt;, &lt;width&gt;, &lt;"Use Thousands Separator"&gt; ) obj &lt;&lt; Format("Use Thousands Separator" )
 
 **説明:** 列内のデータを表示するための形式を設定する。表示形式としては、列情報ダイアログの[表示形式]で設定できるすべての形式が指定できる。
 
@@ -7439,9 +7401,7 @@ dt = New Table( "hour24_times",
 
 #### Formula
 
-**構文:** obj << Set Formula( formula ) 
-
-obj << Formula( formula )
+**構文:** obj &lt;&lt; Set Formula( formula ) obj &lt;&lt; Formula( formula )
 
 **説明:** 列に計算式を設定する。
 
@@ -7456,7 +7416,7 @@ col << Set Formula( :Height / :Weight );
 
 #### Get Column Properties
 
-**構文:** obj << Get Column Properties
+**構文:** obj &lt;&lt; Get Column Properties
 
 **説明:** 選択した列に定義されているすべてのプロパティをコピーする。
 
@@ -7470,7 +7430,7 @@ dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 
 #### Get Compact
 
-**構文:** obj << Get Compact
+**構文:** obj &lt;&lt; Get Compact
 
 **説明:** 列がコンパクトに設定されているかどうか。
 
@@ -7499,7 +7459,7 @@ Show( :Airline << Get Compact );
 
 #### Get Data Table
 
-**構文:** obj << Get Data Table
+**構文:** obj &lt;&lt; Get Data Table
 
 **説明:** 該当の列を含んでいるデータテーブルを取得する。
 
@@ -7516,7 +7476,7 @@ Show( c << Get Name, c << Get Data Table );
 
 #### Get Data Type
 
-**構文:** obj << Get Data Type( <"English">  )
+**構文:** obj &lt;&lt; Get Data Type( &lt;"English"&gt; )
 
 **説明:** 列のデータタイプを戻す。キーワードの"English"を指定しない場合、データタイプは現在JMPで使用している言語で戻される。
 
@@ -7531,7 +7491,7 @@ Show( which );
 
 #### Get Data Type Length
 
-**構文:** obj << Get Data Type Length( <English> )
+**構文:** obj &lt;&lt; Get Data Type Length( &lt;English&gt; )
 
 **説明:** 列のデータタイプとデータ長を戻す。ほとんどの文字タイプの列のようにデータ長が固定されていない場合は、データタイプのみを戻す。
 
@@ -7564,7 +7524,7 @@ Show( nameTypeLength, ageTypeLength );
 
 #### Get Display Width
 
-**構文:** obj << Get Display Width
+**構文:** obj &lt;&lt; Get Display Width
 
 **説明:** 列の表示幅を取得する。
 
@@ -7579,7 +7539,7 @@ w = :Height << Get Display Width;
 
 #### Get Excluded
 
-**構文:** obj << Get Excluded
+**構文:** obj &lt;&lt; Get Excluded
 
 **説明:** 列が除外されている場合に1を戻す。
 
@@ -7594,7 +7554,7 @@ Show( s );
 
 #### Get Field Width
 
-**構文:** obj << Get Field Width
+**構文:** obj &lt;&lt; Get Field Width
 
 **説明:** データを表示するのに使用されている、列のフィールド幅を戻す。
 
@@ -7609,7 +7569,7 @@ Show( width );
 
 #### Get Format
 
-**構文:** obj << Get Format
+**構文:** obj &lt;&lt; Get Format
 
 **説明:** 列の形式を戻す。
 
@@ -7624,7 +7584,7 @@ Show( f );
 
 #### Get Formula
 
-**構文:** obj << Get Formula
+**構文:** obj &lt;&lt; Get Formula
 
 **説明:** 列の計算式を戻す。
 
@@ -7642,7 +7602,7 @@ Show( result );
 
 #### Get Group Name
 
-**構文:** obj << Get Group Name
+**構文:** obj &lt;&lt; Get Group Name
 
 **説明:** この列を含む列グループの名前またはパスを戻す。
 
@@ -7673,7 +7633,7 @@ Show( :height << Get Group Name );
 
 #### Get Header Background Color
 
-**構文:** obj << Get Header Background Color
+**構文:** obj &lt;&lt; Get Header Background Color
 
 **説明:** ヘッダの色を取得する。
 
@@ -7690,7 +7650,7 @@ Show( :height << Get Header Background Color );
 
 #### Get Header Chart Type
 
-**構文:** obj << Get Header Chart Type
+**構文:** obj &lt;&lt; Get Header Chart Type
 
 **説明:** データテーブルの列のヘッダに表示するグラフの種類を取得する。
 
@@ -7706,7 +7666,7 @@ Show( :height << Get Header Chart Type );
 
 #### Get Header Text Color
 
-**構文:** obj << Get Header Text Color
+**構文:** obj &lt;&lt; Get Header Text Color
 
 **説明:** ヘッダのテキストの色を取得する。
 
@@ -7723,7 +7683,7 @@ Show( :height << Get Header Text Color );
 
 #### Get Hidden
 
-**構文:** obj << Get Hidden
+**構文:** obj &lt;&lt; Get Hidden
 
 **説明:** 列が非表示の場合に1を戻す。
 
@@ -7738,7 +7698,7 @@ Show( s );
 
 #### Get Initial Data
 
-**構文:** obj << Get Initial Data
+**構文:** obj &lt;&lt; Get Initial Data
 
 **説明:** 列のデータの初期化に使用された値または式を取得する。
 
@@ -7754,7 +7714,7 @@ Column( dt, 1 ) << get initial data;
 
 #### Get Input Format
 
-**構文:** obj << Get Input Format
+**構文:** obj &lt;&lt; Get Input Format
 
 **説明:** 列にデータを入力する時に使用される形式を戻す。
 
@@ -7769,7 +7729,7 @@ Show( f );
 
 #### Get Labeled
 
-**構文:** obj << Get Labeled
+**構文:** obj &lt;&lt; Get Labeled
 
 **説明:** 列がラベルありに設定されている場合に1を戻す。
 
@@ -7784,7 +7744,7 @@ Show( s );
 
 #### Get List Check
 
-**構文:** obj << Get List Check
+**構文:** obj &lt;&lt; Get List Check
 
 **説明:** リストチェックを戻す(列に定義されている場合)。
 
@@ -7799,7 +7759,7 @@ Show( prop );
 
 #### Get Lock
 
-**構文:** obj << Get Lock
+**構文:** obj &lt;&lt; Get Lock
 
 **説明:** 列がロックされている場合、真を戻す。
 
@@ -7814,7 +7774,7 @@ Show( lock );
 
 #### Get Modeling Type
 
-**構文:** obj << Get Modeling Type( <"English">  )
+**構文:** obj &lt;&lt; Get Modeling Type( &lt;"English"&gt; )
 
 **説明:** 列の尺度を戻す。キーワードの"English"を指定しない場合、尺度は現在JMPで使用している言語で戻される。
 
@@ -7829,7 +7789,7 @@ Show( which );
 
 #### Get Name
 
-**構文:** obj << Get Name
+**構文:** obj &lt;&lt; Get Name
 
 **説明:** 列の名前を戻す。
 
@@ -7844,7 +7804,7 @@ Show( col name );
 
 #### Get Properties List
 
-**構文:** obj << Get Properties List
+**構文:** obj &lt;&lt; Get Properties List
 
 **説明:** この列に設定されたすべてのプロパティの名前のリストを取得する。
 
@@ -7858,7 +7818,7 @@ dt = Open( "$SAMPLE_DATA/Tiretread.jmp" );
 
 #### Get Property
 
-**構文:** obj << Get Property( Notes| Range Check| List Check| Missing Value Codes| Value Labels| Value Scores | Value Order | Value Colors| Color Gradient| Axis| Units| Response Limits| Design Role| Coding| Mixture| Factor Changes | Spec Limits| Control Limits| Process Screening | Sigma| Process Capability Distribution| MSA | Distribution | Time Frequency|  Map Role| Super Categories | Multiple Response | Target Level | Control Level| Profit Matrix | Expression Role | Event Handler | Link ID | Link Reference | Next In Hierarchy )
+**構文:** obj &lt;&lt; Get Property( Notes| Range Check| List Check| Missing Value Codes| Value Labels| Value Scores | Value Order | Value Colors| Color Gradient| Axis| Units| Response Limits| Design Role| Coding| Mixture| Factor Changes | Spec Limits| Control Limits| Process Screening | Sigma| Process Capability Distribution| MSA | Distribution | Time Frequency| Map Role| Super Categories | Multiple Response | Target Level | Control Level| Profit Matrix | Expression Role | Event Handler | Link ID | Link Reference | Next In Hierarchy )
 
 **説明:** 指定のプロパティを戻す(列に定義されている場合)。
 
@@ -7873,7 +7833,7 @@ Show( prop );
 
 #### Get Range Check
 
-**構文:** obj << Get Range Check
+**構文:** obj &lt;&lt; Get Range Check
 
 **説明:** 範囲チェックを戻す(列に定義されている場合)。
 
@@ -7889,7 +7849,7 @@ Show( check );
 
 #### Get Role
 
-**構文:** obj << Get Role( <"English">  )
+**構文:** obj &lt;&lt; Get Role( &lt;"English"&gt; )
 
 **説明:** 列の役割を戻す。キーワードの"English"を指定しない場合、役割は現在JMPで使用している言語で戻される。
 
@@ -7904,7 +7864,7 @@ Show( which );
 
 #### Get Script
 
-**構文:** obj << Get Script
+**構文:** obj &lt;&lt; Get Script
 
 **説明:** 列を再作成するスクリプトを戻す。
 
@@ -7919,7 +7879,7 @@ Show( s );
 
 #### Get Scroll Locked
 
-**構文:** obj << Get Scroll Locked
+**構文:** obj &lt;&lt; Get Scroll Locked
 
 **説明:** 列がスクロールロックされている場合に1を戻す。
 
@@ -7934,7 +7894,7 @@ Show( s );
 
 #### Get Selected
 
-**構文:** obj << Get Selected
+**構文:** obj &lt;&lt; Get Selected
 
 **説明:** 列が選択されている場合、1を戻す。
 
@@ -7949,7 +7909,7 @@ Show( s );
 
 #### Get Stored Values
 
-**構文:** obj << Get Stored Values
+**構文:** obj &lt;&lt; Get Stored Values
 
 **説明:** 列の値を、「欠測値のコード」列プロパティを無視して、そのまま戻す
 
@@ -7976,7 +7936,7 @@ Show( valuesList );
 
 #### Get Use Value Labels
 
-**構文:** obj << Get Use Value Labels
+**構文:** obj &lt;&lt; Get Use Value Labels
 
 **説明:** 「値ラベルの使用」のオン/オフの状態を戻す。
 
@@ -7991,7 +7951,7 @@ Show( flag );
 
 #### Get Value Labels
 
-**構文:** obj << Get Value Labels
+**構文:** obj &lt;&lt; Get Value Labels
 
 **説明:** 値ラベルを戻す(列に定義されている場合)。
 
@@ -8006,7 +7966,7 @@ Show( values );
 
 #### Get Values
 
-**構文:** obj << Get Values
+**構文:** obj &lt;&lt; Get Values
 
 **説明:** 列の値を戻す。
 
@@ -8057,7 +8017,7 @@ Show( valuesList );
 
 #### Ignore Errors
 
-**構文:** obj << Ignore Errors( state=0|1 )
+**構文:** obj &lt;&lt; Ignore Errors( state=0|1 )
 
 **説明:** 列計算式の評価時のエラーを無視するかどうかのフラグを設定する。
 
@@ -8073,9 +8033,7 @@ col << ignore errors( true );
 
 #### Input Format
 
-**構文:** obj << Input Format( format )
-
-obj << Input Format( "Format Pattern", pattern )
+**構文:** obj &lt;&lt; Input Format( format )obj &lt;&lt; Input Format( "Format Pattern", pattern )
 
 **説明:** 列にデータを入力する時に使用される形式を設定する。これは、日付や時間を入力する時によく使用される。
 
@@ -8108,7 +8066,7 @@ dt = New Table( "duration_table",
 
 #### Is Transform Column
 
-**構文:** obj << Is Transform Column
+**構文:** obj &lt;&lt; Is Transform Column
 
 **説明:** 列が変換列である場合は1、そうでない場合は0を戻す。
 
@@ -8124,7 +8082,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### IsTransformedOnSASExport
 
-**構文:** obj << IsTransformedOnSASExport
+**構文:** obj &lt;&lt; IsTransformedOnSASExport
 
 **説明:** SASデータセットへ書き出す際に、データが変更される場合に真を戻す。注: SASとJMPでは日付が異なって保存されるので、これは日付の列にのみ適用される。
 
@@ -8139,7 +8097,7 @@ Show( flag );
 
 #### Labels to Codes
 
-**構文:** :col << Labels to Codes(<AssociativeArray>|<ListOfAssignments>)
+**構文:** :col &lt;&lt; Labels to Codes(&lt;AssociativeArray&gt;|&lt;ListOfAssignments&gt;)
 
 **説明:** 文字値の列を、数値コードの列に変換する。作成された数値コードにはラベルが付与される。
 
@@ -8177,7 +8135,7 @@ dt = Open( "$Sample_Data/Big Class.jmp" );
 
 #### Lock
 
-**構文:** obj << Lock
+**構文:** obj &lt;&lt; Lock
 
 **説明:** どのような変更も行われないように列をロックする。
 
@@ -8191,7 +8149,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Preselect Role
 
-**構文:** obj << Preselect Role( "役割なし"|"X"|"Y"|"重み"|"度数"|"検証" )
+**構文:** obj &lt;&lt; Preselect Role( "役割なし"|"X"|"Y"|"重み"|"度数"|"検証" )
 
 **説明:** 役割を列に割り当てる。
 
@@ -8205,7 +8163,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Remove Value Labels
 
-**構文:** obj << Remove Value Labels
+**構文:** obj &lt;&lt; Remove Value Labels
 
 **説明:** 列に定義されている値ラベルをすべて削除する。
 
@@ -8219,7 +8177,7 @@ dt = Open( "$SAMPLE_DATA/CrabSatellites.jmp" );
 
 #### Reset Transform
 
-**構文:** obj << Reset Transform
+**構文:** obj &lt;&lt; Reset Transform
 
 **説明:** 変換列のキャッシュデータを削除する。列のデータにアクセスするとキャッシュが再び構築される。これを利用することで、メモリを減らしたり、外部情報に依存する計算式の再計算を可能にしたりできる。
 
@@ -8240,7 +8198,7 @@ Show( :"sqrt[height]"n[1] );
 
 #### Set Data Type
 
-**構文:** obj << Set Data Type(  "Numeric"|"Character"|"Expression"|"Row State", <Format("format string")>, <Input Format("format string")>, <1|2|4>, < <<Fail On Conversion Error >, < <<Return Failed Rows > )
+**構文:** obj &lt;&lt; Set Data Type( "Numeric"|"Character"|"Expression"|"Row State", &lt;Format("format string")&gt;, &lt;Input Format("format string")&gt;, &lt;1|2|4&gt;, &lt; &lt;&lt;Fail On Conversion Error &gt;, &lt; &lt;&lt;Return Failed Rows &gt; )
 
 **説明:** 列のデータタイプを設定する。オプションの引数を使って表示形式、入力形式、列が数値の場合は幅(バイト)も設定できる。Fail On Conversion Errorは、いずれかの値の変換に失敗した場合にデータタイプの変更を中止する。これは、文字タイプの列を数値タイプの列に変換するときに特に便利。Return Failed Rowsは、変換に失敗した行の番号をリストで戻す。
 
@@ -8309,7 +8267,7 @@ Show( r );
 
 #### Set Display Width
 
-**構文:** obj << Set Display Width( number )
+**構文:** obj &lt;&lt; Set Display Width( number )
 
 **説明:** 列の表示幅を変更する。
 
@@ -8325,7 +8283,7 @@ w = :Height << Get Display Width;
 
 #### Set Each Value
 
-**構文:** obj << Set Each Value( number )
+**構文:** obj &lt;&lt; Set Each Value( number )
 
 **説明:** 列のすべての値を、指定された定数に設定する。
 
@@ -8340,7 +8298,7 @@ dt:X << Set Each Value( 5 );
 
 #### Set Excluded
 
-**構文:** obj << Set Excluded
+**構文:** obj &lt;&lt; Set Excluded
 
 **説明:** 列を除外する。
 
@@ -8354,7 +8312,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Set Field Width
 
-**構文:** obj << Set Field Width( number )
+**構文:** obj &lt;&lt; Set Field Width( number )
 
 **説明:** データを表示するのに使用される、列のフィールド幅を設定する。
 
@@ -8368,9 +8326,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Set Formula
 
-**構文:** obj << Set Formula( formula ) 
-
-obj << Formula( formula )
+**構文:** obj &lt;&lt; Set Formula( formula ) obj &lt;&lt; Formula( formula )
 
 **説明:** 列に計算式を設定する。
 
@@ -8385,7 +8341,7 @@ col << Set Formula( :Height / :Weight );
 
 #### Set Header Background Color
 
-**構文:** obj << Set Header Background Color
+**構文:** obj &lt;&lt; Set Header Background Color
 
 **説明:** ヘッダの色を設定する。デフォルトの色を使用する場合は「None」を指定する。
 
@@ -8413,7 +8369,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Set Header Chart Type
 
-**構文:** obj << Set Header Chart Type
+**構文:** obj &lt;&lt; Set Header Chart Type
 
 **説明:** データテーブルの列のヘッダに表示するグラフの種類を設定する。
 
@@ -8429,7 +8385,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Set Header Text Color
 
-**構文:** obj << Set Header Text Color
+**構文:** obj &lt;&lt; Set Header Text Color
 
 **説明:** ヘッダのテキストの色を設定する。デフォルトの色を使用する場合は「None」を指定する。
 
@@ -8457,7 +8413,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Set Hidden
 
-**構文:** obj << Set Hidden
+**構文:** obj &lt;&lt; Set Hidden
 
 **説明:** 列を非表示にする。
 
@@ -8471,7 +8427,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Set Initial Data
 
-**構文:** obj << Set Initial Data
+**構文:** obj &lt;&lt; Set Initial Data
 
 **説明:** 任意の定数または簡単な式を指定して列のデータを初期化する。
 
@@ -8500,7 +8456,7 @@ Column( dt, 1 ) << set initial data( Log( 1 ) );
 
 #### Set Labeled
 
-**構文:** obj << Set Labeled
+**構文:** obj &lt;&lt; Set Labeled
 
 **説明:** その列のデータ値をラベルに使用する。
 
@@ -8516,7 +8472,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Set Modeling Type
 
-**構文:** obj << Set Modeling Type( "なし"|"連続尺度"|"順序尺度"|"名義尺度"|"行の属性"|"多重応答"|"非構造化テキスト"|"ベクトル" )
+**構文:** obj &lt;&lt; Set Modeling Type( "なし"|"連続尺度"|"順序尺度"|"名義尺度"|"行の属性"|"多重応答"|"非構造化テキスト"|"ベクトル" )
 
 **説明:** データテーブル列の尺度を設定する。
 
@@ -8530,7 +8486,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Set Name
 
-**構文:** obj << Set Name( name )
+**構文:** obj &lt;&lt; Set Name( name )
 
 **説明:** 列名を設定する。
 
@@ -8544,7 +8500,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Set Property
 
-**構文:** obj << Set Property( Notes | List Check | Range Check | Axis | Spec Limits | Control Limits | Sigma | Process Capability Distribution | Coding | Mixture | Design Role | Response Limits | Units | Value Order | Value Labels | Value Scores | Row Order Levels | Distribution | Time Frequency | Value Colors | Color Gradient | Missing Value Codes | Factor Change | Map Role | Supercategories | Multiple Response | Profit Matrix | Informative Missing | Expression Role | Link ID | Link Reference | Event Handler | Custom Property, {argument list} )
+**構文:** obj &lt;&lt; Set Property( Notes | List Check | Range Check | Axis | Spec Limits | Control Limits | Sigma | Process Capability Distribution | Coding | Mixture | Design Role | Response Limits | Units | Value Order | Value Labels | Value Scores | Row Order Levels | Distribution | Time Frequency | Value Colors | Color Gradient | Missing Value Codes | Factor Change | Map Role | Supercategories | Multiple Response | Profit Matrix | Informative Missing | Expression Role | Link ID | Link Reference | Event Handler | Custom Property, {argument list} )
 
 **説明:** 列のプロパティを設定する。
 
@@ -8558,7 +8514,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Set Scroll Locked
 
-**構文:** obj << Set Scroll Locked
+**構文:** obj &lt;&lt; Set Scroll Locked
 
 **説明:** 列をスクロールロックする。
 
@@ -8572,7 +8528,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Set Selected
 
-**構文:** obj << Set Selected( state=0|1 )
+**構文:** obj &lt;&lt; Set Selected( state=0|1 )
 
 **説明:** 列を選択する。
 
@@ -8586,7 +8542,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Set Use for Marker
 
-**構文:** obj << Set Use for Marker
+**構文:** obj &lt;&lt; Set Use for Marker
 
 **説明:** グラフのマーカーとしてこの列の値を使う。画像や文字列もマーカーとして使用できる。
 
@@ -8602,7 +8558,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Set Values
 
-**構文:** obj << Set Values( [ value1, value2, value3, ... ] )
+**構文:** obj &lt;&lt; Set Values( [ value1, value2, value3, ... ] )
 
 **説明:** 列に値を設定する。
 
@@ -8620,7 +8576,7 @@ New Column( "X" );
 
 #### SetLock
 
-**構文:** obj << SetLock
+**構文:** obj &lt;&lt; SetLock
 
 **説明:** どのような変更も行われないように列をロックする。
 
@@ -8634,7 +8590,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Suppress Eval
 
-**構文:** obj << Suppress Eval( state=0|1 )
+**構文:** obj &lt;&lt; Suppress Eval( state=0|1 )
 
 **説明:** 列の計算式の自動評価を抑制する。
 
@@ -8650,7 +8606,7 @@ col << suppress eval( true );
 
 #### Use Value Labels
 
-**構文:** obj << Use Value Labels( state=0|1 )
+**構文:** obj &lt;&lt; Use Value Labels( state=0|1 )
 
 **説明:** すべての出力において値ラベルを表示するかどうかを指定する。
 
@@ -8665,7 +8621,7 @@ Distribution( Column( :Color ) );
 
 #### Value Labels
 
-**構文:** obj << Value Labels( { value1 = "label1", value2 = "label2", ... } )
+**構文:** obj &lt;&lt; Value Labels( { value1 = "label1", value2 = "label2", ... } )
 
 **説明:** 値ラベルを設定する
 
@@ -8683,7 +8639,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Column
 
-**構文:** Column( <data table>, "column name"|column number )
+**構文:** Column( &lt;data table&gt;, "column name"|column number )
 
 **説明:** 指定のデータテーブル列への参照を戻す。
 
@@ -8699,7 +8655,7 @@ col = Column( "height" );
 
 #### Add Multiple Columns
 
-**構文:** obj << Add Multiple Columns( Column prefix, number of columns, <before first|after last|after(column)>, Character|Numeric|Row State, <fieldwidth(number)> )
+**構文:** obj &lt;&lt; Add Multiple Columns( Column prefix, number of columns, &lt;before first|after last|after(column)&gt;, Character|Numeric|Row State, &lt;fieldwidth(number)&gt; )
 
 **説明:** 現在のデータテーブルに複数の新しい列を作成する。
 
@@ -8713,7 +8669,7 @@ dt << Add Multiple Columns( "Date", 5, Character );
 
 #### Clear Column Selection
 
-**構文:** obj << Clear Column Selection
+**構文:** obj &lt;&lt; Clear Column Selection
 
 **説明:** データテーブルの選択された列をクリアする。
 
@@ -8729,7 +8685,7 @@ dt << Clear Column Selection();
 
 #### Clone Formula Column
 
-**構文:** obj << Clone Formula Column( column, n, <Substitute Column Reference( column1, list )> )
+**構文:** obj &lt;&lt; Clone Formula Column( column, n, &lt;Substitute Column Reference( column1, list )&gt; )
 
 **説明:** 指定したcolumnに基づいてn個の新しい計算式列を作成する。元の計算式にあるcolumn1への列参照は、 n 個すべての列についてlist内の各列に置き換えられる。元の計算式から複数の列参照を置き換える場合は、複数のSubstitute Column Reference引数を使用する。
 
@@ -8753,7 +8709,7 @@ dt << Clone Formula Column(
 
 #### Columns Manager
 
-**構文:** obj << Columns Manager
+**構文:** obj &lt;&lt; Columns Manager
 
 **説明:** 現在のテーブルで列マネージャーを開き、列のプロパティや統計量を表示する。
 
@@ -8769,7 +8725,7 @@ col1 = dt << Columns Manager;
 
 #### Combine Columns
 
-**構文:** obj << Combine Columns
+**構文:** obj &lt;&lt; Combine Columns
 
 **説明:** 複数の列に含まれているデータ値を、区切り文字で区切ったテキストにして1つの列に含める。
 
@@ -8808,7 +8764,7 @@ dt << Combine Columns(
 
 #### Compress Selected Columns
 
-**構文:** obj << Compress Selected Columns( { column1, column2, ... )
+**構文:** obj &lt;&lt; Compress Selected Columns( { column1, column2, ... )
 
 **説明:** 各列を最もコンパクトな形式に圧縮する。
 
@@ -8826,7 +8782,7 @@ dt << Compress Selected Columns( {:Age, :sex, :Height, :Weight} );
 
 #### Exclude/Unexclude
 
-**構文:** obj << Exclude( 0|1 )
+**構文:** obj &lt;&lt; Exclude( 0|1 )
 
 **説明:** 分析の実行から列を除外する。
 
@@ -8840,7 +8796,7 @@ dt:Name << Exclude( 1 );
 
 #### Formula
 
-**構文:** obj << Formula
+**構文:** obj &lt;&lt; Formula
 
 **説明:** 列に計算式を設定する。
 
@@ -8855,7 +8811,7 @@ col1 << Formula( :height / :weight );
 
 #### Freq
 
-**構文:** obj << Preselect Role( Freq )
+**構文:** obj &lt;&lt; Preselect Role( Freq )
 
 **説明:** データテーブルの列に[度数]の役割を割り当てる。
 
@@ -8870,7 +8826,7 @@ col << Preselect Role( "freq" );
 
 #### Go to
 
-**構文:** obj << Go to( column name|column number )
+**構文:** obj &lt;&lt; Go to( column name|column number )
 
 **説明:** データテーブルの指定された列を選択し、その列まで移動する。
 
@@ -8884,7 +8840,7 @@ dt << Go to( :BP 12F );
 
 #### Hide/Unhide
 
-**構文:** obj << Hide( 0|1 )
+**構文:** obj &lt;&lt; Hide( 0|1 )
 
 **説明:** データグリッド上に列を表示しない。
 
@@ -8898,7 +8854,7 @@ dt:Age << Hide( 1 );
 
 #### Invert Column Selection
 
-**構文:** obj << Invert Column Selection( <list of columns> )
+**構文:** obj &lt;&lt; Invert Column Selection( &lt;list of columns&gt; )
 
 **説明:** 現在の列の選択状態を逆転する。列のリストが指定された場合、リストにない列を選択する。
 
@@ -8928,7 +8884,7 @@ b = dt << Invert Column Selection( a );
 
 #### Label/Unlabel
 
-**構文:** obj << Label( 0|1 )
+**構文:** obj &lt;&lt; Label( 0|1 )
 
 **説明:** この列を、グラフ上で点を識別するためのラベルとして設定する。点を選択すると、列の値が表示される。
 
@@ -8942,7 +8898,7 @@ dt:Age << Label( 1 );
 
 #### Make Indicator Columns
 
-**構文:** obj << Make Indicator Columns
+**構文:** obj &lt;&lt; Make Indicator Columns
 
 **説明:** 選択した列から指示変数の列を作成する
 
@@ -8956,7 +8912,7 @@ dt << Make Indicator Columns( columns( {:species, :season} ) );
 
 #### Move Selected Columns
 
-**構文:** obj << Move Selected Columns( column|column list, To first|To last|After(column)|after(group)|after(Path({<a>, <b>, ...}) )
+**構文:** obj &lt;&lt; Move Selected Columns( column|column list, To first|To last|After(column)|after(group)|after(Path({&lt;a&gt;, &lt;b&gt;, ...}) )
 
 **説明:** データテーブルの選択された列を移動する。
 
@@ -9009,7 +8965,7 @@ dt << Move Selected Columns( To last );
 
 #### New Column
 
-**構文:** obj << New Column( <name>, <data type>, <modeling type>, <Format()>, <Formula()>, <Set Property()>, <Set Values()>, <Like()> )
+**構文:** obj &lt;&lt; New Column( &lt;name&gt;, &lt;data type&gt;, &lt;modeling type&gt;, &lt;Format()&gt;, &lt;Formula()&gt;, &lt;Set Property()&gt;, &lt;Set Values()&gt;, &lt;Like()&gt; )
 
 **説明:** 現在のデータテーブルに新しい列を作成する。
 
@@ -9062,7 +9018,7 @@ dt << New Column( "X", Formula( Random Uniform() ) );
 
 #### New Formula Column
 
-**構文:** dt << New Formula Column(Operation(name, <Category(name)>), Columns(columns), <Group By(columns)>)
+**構文:** dt &lt;&lt; New Formula Column(Operation(name, &lt;Category(name)&gt;), Columns(columns), &lt;Group By(columns)&gt;)
 
 **説明:** 指定した列を使い、演算とオプションのグループ列を適用してテーブル内に計算式列を作成する。必要であれば、計算方法を明確にするためにカテゴリを指定できる。作成された列への列参照のリストを戻す。
 
@@ -9094,7 +9050,7 @@ dt << New Formula Column(
 
 #### Next Selected Column
 
-**構文:** obj << Next Selected Column
+**構文:** obj &lt;&lt; Next Selected Column
 
 **説明:** 次に選択されている列に移動する。
 
@@ -9113,7 +9069,7 @@ dt << Next Selected Column;
 
 #### No Role
 
-**構文:** obj << Preselect Role( No Role )
+**構文:** obj &lt;&lt; Preselect Role( No Role )
 
 **説明:** データテーブルの列に割り当てられた役割を削除する。
 
@@ -9127,7 +9083,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Original Order
 
-**構文:** obj << Original Order
+**構文:** obj &lt;&lt; Original Order
 
 **説明:** データテーブルにおける列の並びを元の順序に戻す。
 
@@ -9144,7 +9100,7 @@ dt << Original Order();
 
 #### Paste Column Properties
 
-**構文:** obj << Paste Column Properties
+**構文:** obj &lt;&lt; Paste Column Properties
 
 **説明:** クリップボードから、リスト形式で持たれている複数の列プロパティを、複数の列に貼り付ける。対象とする列をデータテーブルで選択する代わりに、列のリストを引数に指定することもできる。
 
@@ -9165,7 +9121,7 @@ dt2 << Paste Column Properties( {:T1, :T3} );
 
 #### Previous Selected Column
 
-**構文:** obj << Previous Selected Column
+**構文:** obj &lt;&lt; Previous Selected Column
 
 **説明:** 前に選択されている列に移動する。
 
@@ -9185,7 +9141,7 @@ dt << Previous Selected Column;
 
 #### Reorder by Data Type
 
-**構文:** obj << Reorder by Data Type
+**構文:** obj &lt;&lt; Reorder by Data Type
 
 **説明:** データテーブルの列をデータタイプで並べ替える。
 
@@ -9200,7 +9156,7 @@ dt << Reorder By Data Type();
 
 #### Reorder by Modeling Type
 
-**構文:** obj << Reorder by Modeling Type
+**構文:** obj &lt;&lt; Reorder by Modeling Type
 
 **説明:** データテーブルの列を尺度で並べ替える。
 
@@ -9215,7 +9171,7 @@ dt << Reorder By Modeling Type();
 
 #### Reorder by Name
 
-**構文:** obj << Reorder by Name
+**構文:** obj &lt;&lt; Reorder by Name
 
 **説明:** データテーブルの列を列名で並べ替える。
 
@@ -9230,7 +9186,7 @@ dt << Reorder By Name();
 
 #### Reverse Order
 
-**構文:** obj << Reverse Order
+**構文:** obj &lt;&lt; Reverse Order
 
 **説明:** データテーブルにおける列の並び順を、そっくり逆にする。
 
@@ -9245,7 +9201,7 @@ dt << Reverse Order();
 
 #### Set Label Columns
 
-**構文:** obj << Set Label Columns( column(s) )
+**構文:** obj &lt;&lt; Set Label Columns( column(s) )
 
 **説明:** データテーブルの選択された列にラベルの役割を割り当てる。
 
@@ -9260,7 +9216,7 @@ dt << Set Label Columns( :City, :State );
 
 #### Set Scroll Lock Columns
 
-**構文:** obj << Set Scroll Lock Columns( column(s) )
+**構文:** obj &lt;&lt; Set Scroll Lock Columns( column(s) )
 
 **説明:** データテーブルの特定の列をスクロールされないようにロックする。背景色が変わって、列がロックされていることが示される。
 
@@ -9274,7 +9230,7 @@ dt << Set Scroll Lock Columns( :City );
 
 #### Text to Columns
 
-**構文:** obj << Text to Columns
+**構文:** obj &lt;&lt; Text to Columns
 
 **説明:** 区切り文字で区切ったテキストから、テキストごとの列もしくは指示変数の列を作成する。
 
@@ -9304,7 +9260,7 @@ dt << Text To Columns(
 
 #### Use for Marker
 
-**構文:** obj << UseForMarker( 0|1 )
+**構文:** obj &lt;&lt; UseForMarker( 0|1 )
 
 **説明:** グラフのマーカーとしてこの列の値を使う。画像や文字列もマーカーとして使用できる。
 
@@ -9320,7 +9276,7 @@ dt:Name << UseForMarker( 1 );
 
 #### Validation
 
-**構文:** obj << Preselect Role( Validation)
+**構文:** obj &lt;&lt; Preselect Role( Validation)
 
 **説明:** データテーブルの列に[検証]の役割を割り当てる。
 
@@ -9337,7 +9293,7 @@ col << Preselect Role( "Validation" );
 
 #### Weight
 
-**構文:** obj << Preselect Role( Weight )
+**構文:** obj &lt;&lt; Preselect Role( Weight )
 
 **説明:** データテーブルの列に[重み]の役割を割り当てる。
 
@@ -9351,7 +9307,7 @@ dt:Weight << Preselect Role( "weight" );
 
 #### X
 
-**構文:** obj << Preselect Role( X )
+**構文:** obj &lt;&lt; Preselect Role( X )
 
 **説明:** データテーブルの列に[X]の役割を割り当てる。
 
@@ -9366,7 +9322,7 @@ col << Preselect Role( "X" );
 
 #### Y
 
-**構文:** obj << Preselect Role( Y )
+**構文:** obj &lt;&lt; Preselect Role( Y )
 
 **説明:** データテーブルの列に[Y]の役割を割り当てる。
 
@@ -9384,7 +9340,7 @@ dt = Open( "$SAMPLE_DATA/Big Class.jmp" );
 
 #### Add Rows
 
-**構文:** obj << Add Rows( <n>, <At Start|At End|After(m)> | {list of (column name = value) pairs}) )
+**構文:** obj &lt;&lt; Add Rows( &lt;n&gt;, &lt;At Start|At End|After(m)&gt; | {list of (column name = value) pairs}) )
 
 **説明:** n個の行をデータテーブルの最初、最後、または指定した行の後ろに追加する。
 
@@ -9410,7 +9366,7 @@ dt << Add Rows( {name = "David", age = 15} );
 
 #### Clear Row States
 
-**構文:** obj << Clear Row States
+**構文:** obj &lt;&lt; Clear Row States
 
 **説明:** すべての行から、選択、除外、非表示、マーカー、ラベル、色などの属性をクリアする。
 
@@ -9426,7 +9382,7 @@ dt << Clear Row States;
 
 #### Clear Select
 
-**構文:** obj << Clear Select
+**構文:** obj &lt;&lt; Clear Select
 
 **説明:** 行の選択をクリアする。
 
@@ -9442,7 +9398,7 @@ dt << Clear Select();
 
 #### Clear Selected Row States
 
-**構文:** obj << Clear Selected Row States
+**構文:** obj &lt;&lt; Clear Selected Row States
 
 **説明:** 選択されている行から、選択、除外、非表示、マーカー、ラベル、色などの属性をクリアする。
 
@@ -9461,7 +9417,7 @@ dt << Clear Selected Row States;
 
 #### Color Rows by Row State
 
-**構文:** obj << Color Rows by Row State
+**構文:** obj &lt;&lt; Color Rows by Row State
 
 **説明:** データテーブルのセルに対して、行属性に基づく色付けの表示/非表示を切り替える。
 
@@ -9477,7 +9433,7 @@ dt << Color Rows by Row State;
 
 #### Color by Column
 
-**構文:** obj << Color by Column( column, <Color( number )>, <Color Theme( color theme )>, < Continuous scale(0|1)>, <Reverse scale(0|1)>, <Excluded Row( 0|1 ), <Make window with legend> )
+**構文:** obj &lt;&lt; Color by Column( column, &lt;Color( number )&gt;, &lt;Color Theme( color theme )&gt;, &lt; Continuous scale(0|1)&gt;, &lt;Reverse scale(0|1)&gt;, &lt;Excluded Row( 0|1 ), &lt;Make window with legend&gt; )
 
 **説明:** 指定された列の値に基づいて、データテーブルの各行に色を割り当てる。
 
@@ -9491,7 +9447,7 @@ dt << Color by Column( :Age );
 
 #### Color or Mark by Column
 
-**構文:** obj << Color or Mark by Column( column, <Color( number )>, <Color Theme( color theme )>, <Marker Theme( standard|hollow|solid|paired|classic|alphanumeric )> )
+**構文:** obj &lt;&lt; Color or Mark by Column( column, &lt;Color( number )&gt;, &lt;Color Theme( color theme )&gt;, &lt;Marker Theme( standard|hollow|solid|paired|classic|alphanumeric )&gt; )
 
 **説明:** 色やマーカーを特定の列の値に関連付ける。
 
@@ -9505,7 +9461,7 @@ dt << Color or Mark by Column( :Age );
 
 #### Colors
 
-**構文:** obj << Colors( color )
+**構文:** obj &lt;&lt; Colors( color )
 
 **説明:** 選択された行に色を付ける。マーカーを表示するすべてのグラフに反映される。
 
@@ -9523,7 +9479,7 @@ dt << Colors( "Red" );
 
 #### Data Filter
 
-**構文:** obj << Data Filter( <Location(x,y)>, <"Close Outline">, <"Local">, <Inverse(0|1)>, <Show Columns Selector(0|1)>, <Title(string)>, <Save And Restore Current Row States(0|1)>, <Conditional(0|1)>, <Auto Clear(0|1)>, <Group By AND(0|1)>, <Show Histograms And Bars(0|1)>, <Count Excluded Rows(0|1)>, <Mode(...)>, <Add Filter(Columns(...), Where(...), Display(...), <Select Missing(cols)>, <Order By Count(cols)>)>, <Favorites(...)>, <Animation(...)> )
+**構文:** obj &lt;&lt; Data Filter( &lt;Location(x,y)&gt;, &lt;"Close Outline"&gt;, &lt;"Local"&gt;, &lt;Inverse(0|1)&gt;, &lt;Show Columns Selector(0|1)&gt;, &lt;Title(string)&gt;, &lt;Save And Restore Current Row States(0|1)&gt;, &lt;Conditional(0|1)&gt;, &lt;Auto Clear(0|1)&gt;, &lt;Group By AND(0|1)&gt;, &lt;Show Histograms And Bars(0|1)&gt;, &lt;Count Excluded Rows(0|1)&gt;, &lt;Mode(...)&gt;, &lt;Add Filter(Columns(...), Where(...), Display(...), &lt;Select Missing(cols)&gt;, &lt;Order By Count(cols)&gt;)&gt;, &lt;Favorites(...)&gt;, &lt;Animation(...)&gt; )
 
 **説明:** データフィルタを作成または表示する。データフィルタでは、データの複雑なサブセットを対話式に指定できる。Modeオプションでは、フィルタでの選択でどの行属性を有効にするか指定する。Add Filterは、 Columns で指定した列やWhere句で指定したフィルタグループを追加する。複数のフィルタグループがある場合、 Group By ANDオプションの指定に従って組み合わせの動作が決まる。Localが指定された場合、フィルタはレポート内に表示され、それ以外のレポートにはフィルタリングは適用されない。
 
@@ -9575,7 +9531,7 @@ New Window( "Local Data Filter",
 
 #### Data View
 
-**構文:** obj << Data View
+**構文:** obj &lt;&lt; Data View
 
 **説明:** 現在選択されている行の新しいデータビューを作成する。
 
@@ -9590,7 +9546,7 @@ dt << Data View;
 
 #### Delete Rows
 
-**構文:** obj << Delete Rows
+**構文:** obj &lt;&lt; Delete Rows
 
 **説明:** 選択した行を削除する。
 
@@ -9607,7 +9563,7 @@ Show( r );
 
 #### Exclude/Unexclude
 
-**構文:** obj << Exclude/Unexclude
+**構文:** obj &lt;&lt; Exclude/Unexclude
 
 **説明:** 選択された行を計算から除外する。
 
@@ -9622,7 +9578,7 @@ r << Exclude;
 
 #### Get Rows
 
-**構文:** obj << Get Rows( number )
+**構文:** obj &lt;&lt; Get Rows( number )
 
 **説明:** 指定された行について、列の値をリストとして戻す。
 
@@ -9637,7 +9593,7 @@ dt << Get Rows( {1, 2, 3} );
 
 #### Go to Row
 
-**構文:** obj << Go to Row( row number )
+**構文:** obj &lt;&lt; Go to Row( row number )
 
 **説明:** 指定された行の行オブジェクトを戻し、その行に移動し、選択および強調表示する。
 
@@ -9651,7 +9607,7 @@ dt << Go To Row( 5 );
 
 #### Hide and Exclude
 
-**構文:** obj << Hide and Exclude
+**構文:** obj &lt;&lt; Hide and Exclude
 
 **説明:** 選択された行をグラフに表示せず、計算からも除外する。
 
@@ -9666,7 +9622,7 @@ r << Hide and Exclude;
 
 #### Hide/Unhide
 
-**構文:** obj << Hide/Unhide
+**構文:** obj &lt;&lt; Hide/Unhide
 
 **説明:** 選択された行をグラフに表示しない。
 
@@ -9681,7 +9637,7 @@ r << Hide;
 
 #### Insert Rows
 
-**構文:** obj << Insert Rows
+**構文:** obj &lt;&lt; Insert Rows
 
 **説明:** 選択されている行の前に行を挿入する。行が選択されていない場合は無効。
 
@@ -9698,7 +9654,7 @@ dt << Insert Rows;
 
 #### Invert Row Selection
 
-**構文:** obj << Invert Row Selection
+**構文:** obj &lt;&lt; Invert Row Selection
 
 **説明:** 現在の行の選択状態を逆転する。
 
@@ -9714,7 +9670,7 @@ r << Invert Row Selection;
 
 #### Label/Unlabel
 
-**構文:** obj << Label/Unlabel
+**構文:** obj &lt;&lt; Label/Unlabel
 
 **説明:** 選択された行にラベルを付ける。マーカーを表示するすべてのグラフに反映される。
 
@@ -9729,7 +9685,7 @@ r << Label;
 
 #### Marker by Column
 
-**構文:** obj << Marker by Column( column, <Marker( number )>, <Marker Theme( standard | hollow | solid | paired | classic | alphanumeric )>, <Color theme( string )>, < Continuous scale(0|1)>, <Reverse scale(0|1)>, <Excluded Row( 0|1 ), <Make window with legend> )
+**構文:** obj &lt;&lt; Marker by Column( column, &lt;Marker( number )&gt;, &lt;Marker Theme( standard | hollow | solid | paired | classic | alphanumeric )&gt;, &lt;Color theme( string )&gt;, &lt; Continuous scale(0|1)&gt;, &lt;Reverse scale(0|1)&gt;, &lt;Excluded Row( 0|1 ), &lt;Make window with legend&gt; )
 
 **説明:** 指定された列の値に基づいて、データテーブルの各行にマーカーを割り当てる。
 
@@ -9762,7 +9718,7 @@ dt << Marker By Column(
 
 #### Markers
 
-**構文:** obj << Markers( marker )
+**構文:** obj &lt;&lt; Markers( marker )
 
 **説明:** 選択された行のマーカーを変更する。マーカーを表示するすべてのグラフに反映される。
 
@@ -9777,7 +9733,7 @@ r << Markers( "+" );
 
 #### Move Rows
 
-**構文:** obj << Move Rows( At Start|At End|After(n) )
+**構文:** obj &lt;&lt; Move Rows( At Start|At End|After(n) )
 
 **説明:** データテーブルで選択された行を、指定の位置まで移動する。
 
@@ -9793,7 +9749,7 @@ r << Move Rows( At Start );
 
 #### Name Selection in Column
 
-**構文:** obj << Name Selection in Column( Column Name( name ), Selected( string ), Unselected( string ) )
+**構文:** obj &lt;&lt; Name Selection in Column( Column Name( name ), Selected( string ), Unselected( string ) )
 
 **説明:** 選択と非選択の状態を示す、2値のカテゴリカルな列を作成する。
 
@@ -9812,7 +9768,7 @@ dt << Name Selection in Column(
 
 #### Next Selected
 
-**構文:** obj << Next Selected
+**構文:** obj &lt;&lt; Next Selected
 
 **説明:** 選択されている行のうち、次の行へと移動する。
 
@@ -9828,7 +9784,7 @@ r << Next Selected;
 
 #### Previous Selected
 
-**構文:** obj << Previous Selected
+**構文:** obj &lt;&lt; Previous Selected
 
 **説明:** 選択されている行のうち、前の行へと移動する。
 
@@ -9844,7 +9800,7 @@ r << Previous Selected;
 
 #### Row Editor
 
-**構文:** obj << Row Editor
+**構文:** obj &lt;&lt; Row Editor
 
 **説明:** 選択した行の行編集ダイアログを開く。
 
@@ -9859,7 +9815,7 @@ r << Row Editor();
 
 #### Row Selection
 
-**構文:** obj << Row Selection( Select Where(condition), < current selection("extend" | "restrict" | "clear")>, <Dialog("Keep Dialog Open")>, <Match Case(0|1)> )
+**構文:** obj &lt;&lt; Row Selection( Select Where(condition), &lt; current selection("extend" | "restrict" | "clear")&gt;, &lt;Dialog("Keep Dialog Open")&gt;, &lt;Match Case(0|1)&gt; )
 
 **説明:** 定義された条件を満たすすべての行を選択する。オプションには、既存の選択をどう扱うかや、ダイアログの表示に関するものなどがある。[Match Case]を省略した場合、デフォルトで大文字と小文字が区別される。
 
@@ -9918,7 +9874,7 @@ dt << Row Selection( Select where( :name == "jane" ), Match Case( 0 ) );
 
 #### Select All Matching Cells
 
-**構文:** obj << Select All Matching Cells
+**構文:** obj &lt;&lt; Select All Matching Cells
 
 **説明:** 選択された列において、指定された行の値のいずれかと一致する行を、開いているすべてのデータテーブルにおいて選択する。
 
@@ -9936,7 +9892,7 @@ dt << Select All Matching Cells();
 
 #### Select All Rows
 
-**構文:** obj << Select All Rows
+**構文:** obj &lt;&lt; Select All Rows
 
 **説明:** データテーブルのすべての行を選択する。
 
@@ -9950,7 +9906,7 @@ dt << Select All Rows;
 
 #### Select Dominant
 
-**構文:** obj << Select Dominant( {column1, column2, ...},{0|1, 0|1, ...} )
+**構文:** obj &lt;&lt; Select Dominant( {column1, column2, ...},{0|1, 0|1, ...} )
 
 **説明:** パレート優位の高値(1)または低値(0)に位置する行を選択する。
 
@@ -9965,7 +9921,7 @@ dt << Select Dominant( {:height, :weight}, {0, 0} );
 
 #### Select Duplicate Rows
 
-**構文:** obj << Select Duplicate Rows( <match(column1, column2, ...)> )
+**構文:** obj &lt;&lt; Select Duplicate Rows( &lt;match(column1, column2, ...)&gt; )
 
 **説明:** 指定された列において値が重複している行を選択する。列が指定されなかった場合、テーブルのすべての列で行のマッチングを行う。重複している行の行数が戻り値として戻される。
 
@@ -9981,7 +9937,7 @@ dt << Select duplicate rows( Match( :age, :height ) );
 
 #### Select Excluded
 
-**構文:** obj << Select Excluded
+**構文:** obj &lt;&lt; Select Excluded
 
 **説明:** データテーブルの除外されている行をすべて選択する。
 
@@ -9999,7 +9955,7 @@ dt << Select Excluded;
 
 #### Select Hidden
 
-**構文:** obj << Select Hidden
+**構文:** obj &lt;&lt; Select Hidden
 
 **説明:** データテーブルの非表示の行をすべて選択する。
 
@@ -10017,7 +9973,7 @@ dt << Select Hidden;
 
 #### Select Labeled
 
-**構文:** obj << Select Labeled
+**構文:** obj &lt;&lt; Select Labeled
 
 **説明:** データテーブルのラベルの付いた行をすべて選択する。
 
@@ -10035,7 +9991,7 @@ dt << Select Labeled;
 
 #### Select Matching Cells
 
-**構文:** obj << Select Matching Cells
+**構文:** obj &lt;&lt; Select Matching Cells
 
 **説明:** 選択された列において、指定された行の値のいずれかと一致する行をすべて選択する。
 
@@ -10052,7 +10008,7 @@ dt << Select Matching Cells();
 
 #### Select Randomly
 
-**構文:** obj << Select Randomly( number | probability | Sample Size( number ) | Sampling Rate( probability ) )
+**構文:** obj &lt;&lt; Select Randomly( number | probability | Sample Size( number ) | Sampling Rate( probability ) )
 
 **説明:** 指定された割合だけランダムに行を選択する。
 
@@ -10088,7 +10044,7 @@ dt << Select Randomly( Sampling Rate( 0.3 ) );
 
 #### Select Rows
 
-**構文:** obj << Select Rows( [row1, row2, ...] )
+**構文:** obj &lt;&lt; Select Rows( [row1, row2, ...] )
 
 **説明:** 指定された行を選択する。
 
@@ -10102,7 +10058,7 @@ dt << Select Rows( [5, 7, 8, 10] );
 
 #### Select Where
 
-**構文:** obj << Select Where( condition, < current selection("extend" | "restrict" | "clear")> )
+**構文:** obj &lt;&lt; Select Where( condition, &lt; current selection("extend" | "restrict" | "clear")&gt; )
 
 **説明:** オプションには、選択可能な範囲の拡張または制限、選択内容の実行、ダイアログのみの表示、がある。
 
@@ -10144,7 +10100,7 @@ dt << Select Where( Contains( :name, "AR" ) );
 
 #### Get Data Filter
 
-**構文:** expr = obj << Get Data Filter
+**構文:** expr = obj &lt;&lt; Get Data Filter
 
 **説明:** フィルタビューのフィルタ定義を戻す。
 
@@ -10165,7 +10121,7 @@ Show( fv << Get Data Filter );
 
 #### Get Data Table
 
-**構文:** data table = obj << Get Data Table
+**構文:** data table = obj &lt;&lt; Get Data Table
 
 **説明:** フィルタビューを所有するテーブルを戻す。
 
@@ -10186,7 +10142,7 @@ Show( fv << Get Data Table );
 
 #### Get Name
 
-**構文:** string = obj << Get Name
+**構文:** string = obj &lt;&lt; Get Name
 
 **説明:** フィルタビューの名前を取得する。
 
@@ -10207,7 +10163,7 @@ Show( fv << Get Name );
 
 #### Get Show Hidden Rows
 
-**構文:** 0|1 = obj << Get Show Hidden Rows
+**構文:** 0|1 = obj &lt;&lt; Get Show Hidden Rows
 
 **説明:** このフィルタビューの[非表示の行を表示]設定を戻す。
 
@@ -10229,7 +10185,7 @@ Show( fv << Get Show Hidden Rows );
 
 #### Get Type
 
-**構文:** obj << Get Type
+**構文:** obj &lt;&lt; Get Type
 
 **説明:** フィルタビューの種類を取得する。種類には、Unfiltered (フィルタリングされていない)、Filtered (フィルタリングされている)、TemporaryFiltered (一時的にフィルタリングされている)がある。
 
@@ -10250,7 +10206,7 @@ Show( fv << Get Type, fv << Is Temporary, fv << Is Unfiltered );
 
 #### Is Locked
 
-**構文:** 0|1 = obj << Is Locked
+**構文:** 0|1 = obj &lt;&lt; Is Locked
 
 **説明:** このフィルタビューのロックの設定を戻す。
 
@@ -10272,7 +10228,7 @@ Show( fv << Is Locked );
 
 #### Is Temporary
 
-**構文:** 0|1 = obj << Is Temporary
+**構文:** 0|1 = obj &lt;&lt; Is Temporary
 
 **説明:** フィルタビューが一時的にフィルタリングされているビューの場合に1を戻す。
 
@@ -10293,7 +10249,7 @@ Show( fv << Get Type, fv << Is Temporary, fv << Is Unfiltered );
 
 #### Is Unfiltered
 
-**構文:** 0|1 = obj << Is Unfiltered
+**構文:** 0|1 = obj &lt;&lt; Is Unfiltered
 
 **説明:** フィルタビューがフィルタリングされていないビューの場合に1を戻す。
 
@@ -10314,7 +10270,7 @@ Show( fv << Get Type, fv << Is Temporary, fv << Is Unfiltered );
 
 #### Lock
 
-**構文:** obj << Lock( 0|1 )
+**構文:** obj &lt;&lt; Lock( 0|1 )
 
 **説明:** このフィルタビューを編集できないようにする。
 
@@ -10336,7 +10292,7 @@ Show( fv << Is Locked );
 
 #### Set Data Filter
 
-**構文:** obj << Set Data Filter( expr )
+**構文:** obj &lt;&lt; Set Data Filter( expr )
 
 **説明:** フィルタビューのフィルタ定義を変更する。フィルタリングされていないビューは、フィルタ定義を変更できない。
 
@@ -10373,7 +10329,7 @@ Show( fv << Get Data Filter );
 
 #### Set Name
 
-**構文:** string = obj << Set Name( name )
+**構文:** string = obj &lt;&lt; Set Name( name )
 
 **説明:** フィルタビューの名前を変更する。フィルタリングされていないビューと一時的にフィルタリングされたビューは、名前を変更できない。
 
@@ -10395,7 +10351,7 @@ Show( fv << Get Name );
 
 #### Show Hidden Rows
 
-**構文:** obj << Show Hidden Rows( 0|1 )
+**構文:** obj &lt;&lt; Show Hidden Rows( 0|1 )
 
 **説明:** このフィルタビューの[非表示の行を表示]設定を変更する。
 

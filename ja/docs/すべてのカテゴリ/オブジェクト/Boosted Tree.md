@@ -6,7 +6,7 @@
 
 ### Action
 
-**構文:** obj << Action
+**構文:** obj &lt;&lt; Action
 
 **説明:** 評価する式を挿入するための、プラットフォーム内の汎用トラップドア。プラットフォームに一時的にディスプレイボックスおよびデータテーブルのコンテキストを設定する。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**構文:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**構文:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **説明:** 作成されたプリセットをオブジェクトに適用する。保存された設定に合わせてオプションとカスタマイズが更新される。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**構文:** obj << Automatic Recalc( state=0|1 )
+**構文:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **説明:** データの除外や変更があった場合に分析を自動的にやり直す。Automatic Recalcオプションがオンになっている場合で、データの除外や変更が再計算の前に確実に適用されるようにするには、Wait(0)コマンドを使用すること。
 
@@ -92,7 +92,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Column Switcher
 
-**構文:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**構文:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **説明:** プラットフォームの変数を変更するための設定パネルを追加する。
 
@@ -110,7 +110,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy Script
 
-**構文:** obj << Copy Script
+**構文:** obj &lt;&lt; Copy Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -130,7 +130,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**構文:** obj << Data Table Window
+**構文:** obj &lt;&lt; Data Table Window
 
 **説明:** この分析に使用したデータテーブルのウィンドウを手前に表示する。
 
@@ -150,7 +150,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**構文:** obj << Get By Levels
+**構文:** obj &lt;&lt; Get By Levels
 
 **説明:** By列が指定されている場合、列名をキー、データ値を値とした連想配列を戻す。
 
@@ -167,7 +167,7 @@ biv << Get By Levels;
 
 ### Get Container
 
-**構文:** obj << Get Container
+**構文:** obj &lt;&lt; Get Container
 
 **説明:** オブジェクトのコンテンツを含んだコンテナボックスの参照を戻す。
 
@@ -219,7 +219,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**構文:** obj << Get Data Table
+**構文:** obj &lt;&lt; Get Data Table
 
 **説明:** データテーブルへの参照を戻す。
 
@@ -240,7 +240,7 @@ Show( N Rows( t ) );
 
 ### Get Script
 
-**構文:** obj << Get Script
+**構文:** obj &lt;&lt; Get Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -261,7 +261,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**構文:** obj << Get Script With Data Table
+**構文:** obj &lt;&lt; Get Script With Data Table
 
 **説明:** この分析を再現するスクリプト(JSL)をデータテーブルへの参照も含めて生成し、それを式として戻す。
 
@@ -282,7 +282,7 @@ Show( t );
 
 ### Get Timing
 
-**構文:** obj << Get Timing
+**構文:** obj &lt;&lt; Get Timing
 
 **説明:** プラットフォームの起動にかかった時間を取得する。
 
@@ -303,7 +303,7 @@ Show( t );
 
 ### Get Web Support
 
-**構文:** obj << Get Web Support
+**構文:** obj &lt;&lt; Get Web Support
 
 **説明:** ディスプレイオブジェクトにおけるインタラクティブHTMLサポートのレベルを数値で戻す。1は、一部または全部の要素がサポートされていることを示し、0は、サポートされないことを示す。
 
@@ -319,7 +319,7 @@ Show( s );
 
 ### Get Where Expr
 
-**構文:** obj << Get Where Expr
+**構文:** obj &lt;&lt; Get Where Expr
 
 **説明:** プラットフォームがBy()またはWhere()を使って起動された場合に、データをサブセットするためのWhere式を戻す。By()やWhere()が使われていない場合はEmpty()を戻す。
 
@@ -356,7 +356,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**構文:** obj << Local Data Filter
+**構文:** obj &lt;&lt; Local Data Filter
 
 **説明:** このプラットフォームに対してのみ有効なフィルタで、データを特定のグループまたは範囲にフィルタリングする。
 
@@ -412,7 +412,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**構文:** obj << Paste Local Data Filter
+**構文:** obj &lt;&lt; Paste Local Data Filter
 
 **説明:** クリップボードにあるローカルデータフィルタを現在のレポートに適用する。
 
@@ -433,7 +433,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**構文:** obj << Redo Analysis
+**構文:** obj &lt;&lt; Redo Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -453,7 +453,7 @@ obj << Redo Analysis;
 
 ### Relaunch Analysis
 
-**構文:** obj << Relaunch Analysis
+**構文:** obj &lt;&lt; Relaunch Analysis
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -473,7 +473,7 @@ obj << Relaunch Analysis;
 
 ### Remove Column Switcher
 
-**構文:** obj << Remove Column Switcher
+**構文:** obj &lt;&lt; Remove Column Switcher
 
 **説明:** プラットフォームに最後に追加された列スイッチャーを削除する。
 
@@ -493,7 +493,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**構文:** obj << Remove Local Data Filter
+**構文:** obj &lt;&lt; Remove Local Data Filter
 
 **説明:** すでに作成されているローカルデータフィルタを削除し、プラットフォームはデータテーブル内のすべてのデータを使用した状態に戻る。
 
@@ -532,9 +532,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**構文:** obj << Report;
-
-Report( obj )
+**構文:** obj &lt;&lt; Report;Report( obj )
 
 **説明:** レポートオブジェクトへの参照を戻す。
 
@@ -556,7 +554,7 @@ Show( t );
 
 ### Report View
 
-**構文:** obj << Report View( "完全"|"要約" )
+**構文:** obj &lt;&lt; Report View( "完全"|"要約" )
 
 **説明:** レポートビューは、プラットフォームレポートの詳細を表示するかどうかを決定する。Fullはすべての詳細を表示し、Summaryはプラットフォームにより限定されたものだけを表示する。 動作をカスタマイズするため、各ディスプレイボックスは<<Set Summary Behaviorメッセージをサポートする。
 
@@ -576,7 +574,7 @@ obj << Report View( "Summary" );
 
 ### Save Script for All Objects
 
-**構文:** obj << Save Script for All Objects
+**構文:** obj &lt;&lt; Save Script for All Objects
 
 **説明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -596,7 +594,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**構文:** obj << Save Script for All Objects To Data Table( <name> )
+**構文:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **説明:** すべてのレポートオブジェクトを再現するスクリプトを現在のデータテーブルに保存する。このオプションは、ウィンドウ内にレポートが複数ある場合に便利。作成されるスクリプトの名前は、引用符で囲んで指定しない限り、1つ目のプラットフォーム名となる。
 
@@ -646,7 +644,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**構文:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** この分析を再現するJSLスクリプトを生成し、データテーブルのテーブルプロパティとして保存する。
 
@@ -666,7 +664,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**構文:** obj << Save Script to Journal
+**構文:** obj &lt;&lt; Save Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -686,7 +684,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**構文:** obj << Save Script to Report
+**構文:** obj &lt;&lt; Save Script to Report
 
 **説明:** この分析を再現するJSLスクリプトを生成し、レポートウィンドウに表示する。分析手順の記録を結果と一緒に残せる。
 
@@ -706,7 +704,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**構文:** obj << Save Script to Script Window
+**構文:** obj &lt;&lt; Save Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -791,7 +789,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**構文:** obj << Sync to Data Table Changes
+**構文:** obj &lt;&lt; Sync to Data Table Changes
 
 **説明:** 除外やデータの変更が行われた場合に同期する。
 
@@ -808,7 +806,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**構文:** obj << Title( "new title" )
+**構文:** obj &lt;&lt; Title( "new title" )
 
 **説明:** プラットフォームのタイトルを設定する。
 
@@ -828,7 +826,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**構文:** obj << Top Report
+**構文:** obj &lt;&lt; Top Report
 
 **説明:** レポート内のルートノードへの参照を戻す。
 
@@ -850,7 +848,7 @@ Show( t );
 
 ### View Web XML
 
-**構文:** obj << View Web XML
+**構文:** obj &lt;&lt; View Web XML
 
 **説明:** インタラクティブHTMLレポートの作成に使うXMLコードを戻す。
 
@@ -867,7 +865,7 @@ xml = obj << View Web XML;
 
 ### By
 
-**構文:** obj << By( column(s) )
+**構文:** obj &lt;&lt; By( column(s) )
 
 ```jsl
 
@@ -890,7 +888,7 @@ obj = dt << Boosted Tree(
 
 ### Factor
 
-**構文:** obj << Factor( column(s) )
+**構文:** obj &lt;&lt; Factor( column(s) )
 
 ```jsl
 
@@ -907,7 +905,7 @@ obj = dt << Boosted Tree(
 
 ### Freq
 
-**構文:** obj << Freq( column )
+**構文:** obj &lt;&lt; Freq( column )
 
 ```jsl
 
@@ -926,7 +924,7 @@ obj = dt << Boosted Tree(
 
 ### Response
 
-**構文:** obj << Response( column(s) )
+**構文:** obj &lt;&lt; Response( column(s) )
 
 ```jsl
 
@@ -943,7 +941,7 @@ obj = dt << Boosted Tree(
 
 ### Validation
 
-**構文:** obj << Validation( column )
+**構文:** obj &lt;&lt; Validation( column )
 
 ```jsl
 
@@ -960,7 +958,7 @@ obj = dt << Boosted Tree(
 
 ### Weight
 
-**構文:** obj << Weight( column )
+**構文:** obj &lt;&lt; Weight( column )
 
 ```jsl
 
@@ -979,7 +977,7 @@ obj = dt << Boosted Tree(
 
 ### X
 
-**構文:** obj << X( column(s) )
+**構文:** obj &lt;&lt; X( column(s) )
 
 ```jsl
 
@@ -996,7 +994,7 @@ obj = dt << Boosted Tree(
 
 ### Y
 
-**構文:** obj << Y( column(s) )
+**構文:** obj &lt;&lt; Y( column(s) )
 
 ```jsl
 
@@ -1036,7 +1034,7 @@ obj = dt << Boosted Tree(
 
 ### Column Contributions
 
-**構文:** obj << Column Contributions( state=0|1 )
+**構文:** obj &lt;&lt; Column Contributions( state=0|1 )
 
 **説明:** 各入力変数の寄与を示すレポートの表示/非表示を切り替える。
 
@@ -1056,7 +1054,7 @@ obj << Column Contributions( 1 );
 
 ### Column Sampling Rate
 
-**構文:** obj << Column Sampling Rate( number )
+**構文:** obj &lt;&lt; Column Sampling Rate( number )
 
 **説明:** ツリーの各層に対して抽出する予測変数の列の割合を指定する。
 
@@ -1076,7 +1074,7 @@ obj = dt << Boosted Tree(
 
 ### Decision Threshold
 
-**構文:** obj << Decision Threshold( state = 0|1, Set Probability Threshold( number ) )
+**構文:** obj &lt;&lt; Decision Threshold( state = 0|1, Set Probability Threshold( number ) )
 
 **説明:** 各モデルの予測確率の分布や、予測値と実測値の表の表示/非表示を切り替える。確率の閾値を変更すると、分類の結果にどのように影響するかが確認できる。
 
@@ -1119,7 +1117,7 @@ obj = dt << Boosted Tree(
 
 ### Get Average Absolute Error Test
 
-**構文:** obj << Get Average Absolute Error Test
+**構文:** obj &lt;&lt; Get Average Absolute Error Test
 
 **説明:** テストセットの平均絶対偏差統計量を戻す。 検証セットを使用している場合のみ使用できる。
 
@@ -1204,7 +1202,7 @@ Show( aabs );
 
 ### Get Average Absolute Error Training
 
-**構文:** obj << Get Average Absolute Error Training
+**構文:** obj &lt;&lt; Get Average Absolute Error Training
 
 **説明:** 学習セットの平均絶対偏差統計量を戻す。
 
@@ -1275,7 +1273,7 @@ Show( aabs );
 
 ### Get Average Absolute Error Validation
 
-**構文:** obj << Get Average Absolute Error Validation
+**構文:** obj &lt;&lt; Get Average Absolute Error Validation
 
 **説明:** 検証セットの平均絶対偏差統計量を戻す。 検証セットを使用している場合のみ使用できる。
 
@@ -1350,7 +1348,7 @@ Show( aabs );
 
 ### Get Average Log Error Test
 
-**構文:** obj << Get Average Log Error Test
+**構文:** obj &lt;&lt; Get Average Log Error Test
 
 **説明:** テストデータの-log(p)の平均を戻す。pは応答の実測値が生じる確率の予測値。 検証セットを使用している場合のみ使用できる。
 
@@ -1436,7 +1434,7 @@ Show( avg );
 
 ### Get Average Log Error Training
 
-**構文:** obj << Get Average Log Error Training
+**構文:** obj &lt;&lt; Get Average Log Error Training
 
 **説明:** 学習データの-log(p)の平均を戻す。pは応答の実測値が生じる確率の予測値。
 
@@ -1507,7 +1505,7 @@ Show( avg );
 
 ### Get Average Log Error Validation
 
-**構文:** obj << Get Average Log Error Validation
+**構文:** obj &lt;&lt; Get Average Log Error Validation
 
 **説明:** 検証データの-log(p)の平均を戻す。pは応答の実測値が生じる確率の予測値。 検証セットを使用している場合のみ使用できる。
 
@@ -1583,7 +1581,7 @@ Show( avg );
 
 ### Get Confusion Matrix Test
 
-**構文:** obj << Get Confusion Matrix Test
+**構文:** obj &lt;&lt; Get Confusion Matrix Test
 
 **説明:** テストセットの混同行列を戻す。 検証セットを使用している場合のみ使用できる。
 
@@ -1668,7 +1666,7 @@ Show( cm );
 
 ### Get Confusion Matrix Training
 
-**構文:** obj << Get Confusion Matrix Training
+**構文:** obj &lt;&lt; Get Confusion Matrix Training
 
 **説明:** 学習セットの混同行列を戻す。
 
@@ -1745,7 +1743,7 @@ Show( cm );
 
 ### Get Confusion Matrix Validation
 
-**構文:** obj << Get Confusion Matrix Validation
+**構文:** obj &lt;&lt; Get Confusion Matrix Validation
 
 **説明:** 検証セットの混同行列を戻す。 検証セットを使用している場合のみ使用できる。
 
@@ -1823,7 +1821,7 @@ Show( cm );
 
 ### Get Confusion Rates Test
 
-**構文:** obj << Get Confusion Rates Test
+**構文:** obj &lt;&lt; Get Confusion Rates Test
 
 **説明:** テストセットの混同率を戻す。 検証セットを使用している場合のみ使用できる。
 
@@ -1908,7 +1906,7 @@ Show( cr );
 
 ### Get Confusion Rates Training
 
-**構文:** obj << Get Confusion Rates Training
+**構文:** obj &lt;&lt; Get Confusion Rates Training
 
 **説明:** 学習セットの混同率を戻す。
 
@@ -1985,7 +1983,7 @@ Show( cr );
 
 ### Get Confusion Rates Validation
 
-**構文:** obj << Get Confusion Rates Validation
+**構文:** obj &lt;&lt; Get Confusion Rates Validation
 
 **説明:** 検証セットの混同率を戻す。 検証セットを使用している場合のみ使用できる。
 
@@ -2063,7 +2061,7 @@ Show( cr );
 
 ### Get Gen RSquare Test
 
-**構文:** obj << Get Gen RSquare Test
+**構文:** obj &lt;&lt; Get Gen RSquare Test
 
 **説明:** テストセットの一般化R2乗を戻す。 検証セットを使用している場合のみ使用できる。
 
@@ -2148,7 +2146,7 @@ Show( r );
 
 ### Get Gen RSquare Training
 
-**構文:** obj << Get Gen RSquare Training
+**構文:** obj &lt;&lt; Get Gen RSquare Training
 
 **説明:** 学習セットの一般化R2乗を戻す。
 
@@ -2225,7 +2223,7 @@ Show( r );
 
 ### Get Gen RSquare Validation
 
-**構文:** obj << Get Gen RSquare Validation
+**構文:** obj &lt;&lt; Get Gen RSquare Validation
 
 **説明:** 検証セットの一般化R2乗を戻す。 検証セットを使用している場合のみ使用できる。
 
@@ -2303,7 +2301,7 @@ Show( r );
 
 ### Get MM SAS DATA Step
 
-**構文:** obj << Get MM SAS DATA Step
+**構文:** obj &lt;&lt; Get MM SAS DATA Step
 
 **説明:** SAS Model Managerに登録できるSASコードを作成し、ログウィンドウに戻す。
 
@@ -2323,7 +2321,7 @@ code = obj << Get MM SAS Data Step;
 
 ### Get MM Tolerant SAS DATA Step
 
-**構文:** obj << Get MM Tolerant SAS DATA Step
+**構文:** obj &lt;&lt; Get MM Tolerant SAS DATA Step
 
 **説明:** 欠測値を含んだデータ用にSAS Model Managerに登録できるSASコードを作成し、ログウィンドウに戻す。
 
@@ -2343,7 +2341,7 @@ code = obj << Get MM Tolerant SAS Data Step;
 
 ### Get Measures
 
-**構文:** obj << Get Measures
+**構文:** obj &lt;&lt; Get Measures
 
 **説明:** あてはめたモデルの適合度指標を戻す。
 
@@ -2365,7 +2363,7 @@ obj << Get Measures;
 
 ### Get Microseconds
 
-**構文:** obj << Get Microseconds
+**構文:** obj &lt;&lt; Get Microseconds
 
 **説明:** 分析にかかった時間(マイクロ秒)を戻す。
 
@@ -2386,7 +2384,7 @@ Show( time );
 
 ### Get Misclassification Rate Test
 
-**構文:** obj << Get Misclassification Rate Test
+**構文:** obj &lt;&lt; Get Misclassification Rate Test
 
 **説明:** テストセットの誤分類率を戻す。 検証セットを使用している場合のみ使用できる。
 
@@ -2471,7 +2469,7 @@ Show( rate );
 
 ### Get Misclassification Rate Training
 
-**構文:** obj << Get Misclassification Rate Training
+**構文:** obj &lt;&lt; Get Misclassification Rate Training
 
 **説明:** 学習セットの誤分類率を戻す。
 
@@ -2543,7 +2541,7 @@ Show( rate );
 
 ### Get Misclassification Rate Validation
 
-**構文:** obj << Get Misclassification Rate Validation
+**構文:** obj &lt;&lt; Get Misclassification Rate Validation
 
 **説明:** 検証セットの誤分類率を戻す。 検証セットを使用している場合のみ使用できる。
 
@@ -2622,7 +2620,7 @@ Show( rate );
 
 ### Get Precision Recall Area Test
 
-**構文:** obj << Get Precision Recall Area Test
+**構文:** obj &lt;&lt; Get Precision Recall Area Test
 
 **説明:** テストセットのPR曲線下面積を戻す。この曲線下面積を計算するには、PR曲線が表示されていなければならない。 検証セットを使用している場合のみ使用できる。
 
@@ -2686,7 +2684,7 @@ Show( area );
 
 ### Get Precision Recall Area Training
 
-**構文:** obj << Get Precision Recall Area Training
+**構文:** obj &lt;&lt; Get Precision Recall Area Training
 
 **説明:** 学習セットのPR曲線下面積を戻す。この曲線下面積を計算するには、PR曲線が表示されていなければならない。
 
@@ -2746,7 +2744,7 @@ Show( area );
 
 ### Get Precision Recall Area Validation
 
-**構文:** obj << Get Precision Recall Area Validation
+**構文:** obj &lt;&lt; Get Precision Recall Area Validation
 
 **説明:** 検証セットのPR曲線下面積を戻す。この曲線下面積を計算するには、PR曲線が表示されていなければならない。 検証セットを使用している場合のみ使用できる。
 
@@ -2807,7 +2805,7 @@ Show( area );
 
 ### Get Prediction Formula
 
-**構文:** obj << Get Prediction Formula
+**構文:** obj &lt;&lt; Get Prediction Formula
 
 **説明:** 予測式の列を作成するスクリプトを戻す。
 
@@ -2827,7 +2825,7 @@ obj << Get Prediction Formula;
 
 ### Get RMS Error Test
 
-**構文:** obj << Get RMS Error Test
+**構文:** obj &lt;&lt; Get RMS Error Test
 
 **説明:** テストデータのRMSE(平均平方誤差の平方根)を戻す。 検証セットを使用している場合のみ使用できる。
 
@@ -2848,7 +2846,7 @@ Show( rms );
 
 ### Get RMS Error Training
 
-**構文:** obj << Get RMS Error Training
+**構文:** obj &lt;&lt; Get RMS Error Training
 
 **説明:** 学習データのRMSE(平均平方誤差の平方根)を戻す。
 
@@ -2869,7 +2867,7 @@ Show( rms );
 
 ### Get RMS Error Validation
 
-**構文:** obj << Get RMS Error Validation
+**構文:** obj &lt;&lt; Get RMS Error Validation
 
 **説明:** 検証データのRMSE(平均平方誤差の平方根)を戻す。 検証セットを使用している場合のみ使用できる。
 
@@ -2890,7 +2888,7 @@ Show( rms );
 
 ### Get ROC Area Test
 
-**構文:** obj << Get ROC Area Test
+**構文:** obj &lt;&lt; Get ROC Area Test
 
 **説明:** テストデータのAUC(area under the curve)を戻す。このAUCは、受診者動作曲線(ROC曲線)における曲線の下の面積。AUCを計算するには、ROC曲線が表示されている必要がある。 検証セットを使用している場合のみ使用できる。
 
@@ -2954,7 +2952,7 @@ Show( area );
 
 ### Get ROC Area Training
 
-**構文:** obj << Get ROC Area Training
+**構文:** obj &lt;&lt; Get ROC Area Training
 
 **説明:** 学習データのAUCを戻す。AUC (Area Under Cuvve)は、受診者動作曲線(ROC曲線)の下の面積。AUCを計算するには、ROC曲線が表示されている必要がある。
 
@@ -3014,7 +3012,7 @@ Show( area );
 
 ### Get ROC Area Validation
 
-**構文:** obj << Get ROC Area Validation
+**構文:** obj &lt;&lt; Get ROC Area Validation
 
 **説明:** 検証データのAUCを戻す。AUC (Area Under Cuvve)は、受診者動作曲線(ROC曲線)の下の面積。AUCを計算するには、ROC曲線が表示されている必要がある。 検証セットを使用している場合のみ使用できる。
 
@@ -3075,7 +3073,7 @@ Show( area );
 
 ### Get RSquare Test
 
-**構文:** obj << Get RSquare Test
+**構文:** obj &lt;&lt; Get RSquare Test
 
 **説明:** テストセットのR2乗を戻す。 検証セットを使用している場合のみ使用できる。
 
@@ -3096,7 +3094,7 @@ Show( r );
 
 ### Get RSquare Training
 
-**構文:** obj << Get RSquare Training
+**構文:** obj &lt;&lt; Get RSquare Training
 
 **説明:** 学習セットのR2乗を戻す。
 
@@ -3117,7 +3115,7 @@ Show( r );
 
 ### Get RSquare Validation
 
-**構文:** obj << Get RSquare Validation
+**構文:** obj &lt;&lt; Get RSquare Validation
 
 **説明:** 検証セットのR2乗を戻す。 検証セットを使用している場合のみ使用できる。
 
@@ -3138,7 +3136,7 @@ Show( r );
 
 ### Get SAS DATA Step
 
-**構文:** obj << Get SAS DATA Step
+**構文:** obj &lt;&lt; Get SAS DATA Step
 
 **説明:** データにスコアをつけるためのSAS DATAステップを作成し、ログウィンドウに戻す。
 
@@ -3158,7 +3156,7 @@ code = obj << Get SAS Data Step;
 
 ### Get Seconds
 
-**構文:** obj << Get Seconds
+**構文:** obj &lt;&lt; Get Seconds
 
 **説明:** 分析にかかる時間(秒)を戻す。
 
@@ -3179,7 +3177,7 @@ Show( time );
 
 ### Get Tolerant Prediction Formula
 
-**構文:** obj << Get Tolerant Prediction Formula
+**構文:** obj &lt;&lt; Get Tolerant Prediction Formula
 
 **説明:** 欠測処理予測式の列を作成するスクリプトを戻す。
 
@@ -3199,7 +3197,7 @@ obj << Get Tolerant Prediction Formula;
 
 ### Get Tolerant SAS DATA Step
 
-**構文:** obj << Get Tolerant SAS DATA Step
+**構文:** obj &lt;&lt; Get Tolerant SAS DATA Step
 
 **説明:** 欠測値を含んだデータにスコアをつけるためのSAS DATAステップを作成し、ログウィンドウに戻す。欠測値は、ツリーの枝にランダムに割り当てられる。
 
@@ -3219,7 +3217,7 @@ code = obj << Get Tolerant SAS Data Step;
 
 ### Go
 
-**構文:** obj << Go
+**構文:** obj &lt;&lt; Go
 
 **説明:** 設定されたパラメータをもとに反復計算を開始する。
 
@@ -3314,7 +3312,7 @@ obj = dt << Boosted Tree(
 
 ### Lift Curve
 
-**構文:** obj << Lift Curve( state=0|1 )
+**構文:** obj &lt;&lt; Lift Curve( state=0|1 )
 
 **説明:** リフトチャートの表示/非表示を切り替える。リフトチャートは、観測値の割合に対してリフトをプロットしたもので、モデルの予測能力を別の観点から見ることができる。検証列を指定した場合は、学習セット・検証セット・テストセットのそれぞれに対してプロットが表示される。
 
@@ -3334,7 +3332,7 @@ obj << Lift Curve( 1 );
 
 ### Make SAS DATA Step
 
-**構文:** obj << Make SAS DATA Step
+**構文:** obj &lt;&lt; Make SAS DATA Step
 
 **説明:** データにスコアをつけるためのSAS DATAステップを作成し、スクリプトウィンドウに戻す。
 
@@ -3354,7 +3352,7 @@ obj << Make SAS Data Step;
 
 ### Make Tolerant SAS DATA Step
 
-**構文:** obj << Make Tolerant SAS DATA Step
+**構文:** obj &lt;&lt; Make Tolerant SAS DATA Step
 
 **説明:** 欠測値を含んだデータにスコアをつけるためのSAS DATAステップを作成し、スクリプトウィンドウに戻す。欠測値は、ツリーの枝にランダムに割り当てられる。
 
@@ -3374,7 +3372,7 @@ obj << Make Tolerant SAS Data Step;
 
 ### Maximum Depth
 
-**構文:** obj << Maximum Depth( number )
+**構文:** obj &lt;&lt; Maximum Depth( number )
 
 **説明:** ツリーサイズを、ノード数ではなく深さで制限する。
 
@@ -3560,7 +3558,7 @@ obj = dt << Boosted Tree(
 
 ### Plot Actual by Predicted
 
-**構文:** obj << Plot Actual by Predicted( state=0|1 )
+**構文:** obj &lt;&lt; Plot Actual by Predicted( state=0|1 )
 
 **説明:** X軸が予測値、Y軸が実測値であるプロットの表示/非表示を切り替える。
 
@@ -3580,7 +3578,7 @@ obj << Plot Actual by Predicted( 1 );
 
 ### Precision Recall Curve
 
-**構文:** obj << Precision Recall Curve( state=0|1 )
+**構文:** obj &lt;&lt; Precision Recall Curve( state=0|1 )
 
 **説明:** 応答変数の水準ごとに描かれるPR曲線の表示/非表示を切り替える。PR曲線は、さまざまな閾値における適合率と再現率をプロットしたもの。検証列を指定した場合は、学習セット・検証セット・テストセットのそれぞれに対してプロットが表示される。
 
@@ -3599,7 +3597,7 @@ obj << Precision Recall Curve( 1 );
 
 ### Profiler
 
-**構文:** obj << Profiler( state=0|1 )
+**構文:** obj &lt;&lt; Profiler( state=0|1 )
 
 **説明:** 予測プロファイルの表示/非表示を切り替える。予測プロファイルは、1因子ずつスライスしながら予測式を図示したものである。予測プロファイルでは、最適化を行える。
 
@@ -3618,7 +3616,7 @@ obj << Profiler( 1 );
 
 ### Publish Prediction Formula
 
-**構文:** obj << Publish Prediction Formula
+**構文:** obj &lt;&lt; Publish Prediction Formula
 
 **説明:** 予測式を作成し、列の計算式として「計算式デポ」プラットフォームに計算式列のスクリプトとして保存する。
 
@@ -3638,7 +3636,7 @@ obj << Publish Prediction Formula;
 
 ### Publish Tolerant Prediction Formula
 
-**構文:** obj << Publish Tolerant Prediction Formula
+**構文:** obj &lt;&lt; Publish Tolerant Prediction Formula
 
 **説明:** 欠測値がある場合でも予測する予測式を求め、その計算式の列を作成するスクリプトを「計算式デポ」に発行する。
 
@@ -3658,7 +3656,7 @@ obj << Publish Tolerant Prediction Formula;
 
 ### ROC Curve
 
-**構文:** obj << ROC Curve( state=0|1 )
+**構文:** obj &lt;&lt; ROC Curve( state=0|1 )
 
 **説明:** 応答変数の各水準に対し、ROC曲線(受診者動作特性曲線)の表示/非表示を切り替える。ROC曲線は、「感度」と「1-特異度」をプロットした曲線。検証列を指定した場合は、学習セット・検証セット・テストセットのそれぞれに対してプロットが表示される。
 
@@ -3678,7 +3676,7 @@ obj << ROC Curve( 1 );
 
 ### Row Sampling Rate
 
-**構文:** obj << Row Sampling Rate( number )
+**構文:** obj &lt;&lt; Row Sampling Rate( number )
 
 **説明:** ツリーの各層に対して抽出する学習行の割合を指定する。
 
@@ -3698,7 +3696,7 @@ obj = dt << Boosted Tree(
 
 ### Save Cumulative Details
 
-**構文:** obj << Save Cumulative Details
+**構文:** obj &lt;&lt; Save Cumulative Details
 
 **説明:** 検証データのR2乗を、ツリー番号とともに新しいデータテーブルに保存する。 検証セットを使用している場合のみ使用できる。
 
@@ -3718,7 +3716,7 @@ obj << Save Cumulative Details;
 
 ### Save Offset Estimates
 
-**構文:** obj << Save Offset Estimates
+**構文:** obj &lt;&lt; Save Offset Estimates
 
 **説明:** オフセット推定値をデータテーブルの新しい列に保存する。カテゴリカル応答の場合のみ使用可能。
 
@@ -3737,7 +3735,7 @@ obj << Save Offset Estimates;
 
 ### Save Predicteds
 
-**構文:** obj << Save Predicteds
+**構文:** obj &lt;&lt; Save Predicteds
 
 **説明:** 予測値をデータテーブルの新しい列に保存する。
 
@@ -3757,7 +3755,7 @@ obj << Save Predicteds;
 
 ### Save Prediction Formula
 
-**構文:** obj << Save Prediction Formula
+**構文:** obj &lt;&lt; Save Prediction Formula
 
 **説明:** 予測式をデータテーブルの新しい列に保存する。
 
@@ -3777,7 +3775,7 @@ obj << Save Prediction Formula;
 
 ### Save Residuals
 
-**構文:** obj << Save Residuals
+**構文:** obj &lt;&lt; Save Residuals
 
 **説明:** 残差をデータテーブルの新しい列に保存する。
 
@@ -3797,7 +3795,7 @@ obj << Save Residuals;
 
 ### Save Tolerant Prediction Formula
 
-**構文:** obj << Save Tolerant Prediction Formula
+**構文:** obj &lt;&lt; Save Tolerant Prediction Formula
 
 **説明:** 欠測値がある場合でも予測する式を、データテーブルの新しい列に保存する。
 
@@ -3817,7 +3815,7 @@ obj << Save Tolerant Prediction Formula;
 
 ### Save Tree Details
 
-**構文:** obj << Save Tree Details
+**構文:** obj &lt;&lt; Save Tree Details
 
 **説明:** 層、分岐、ラベル、および、それらに対する推定値を新しいデータテーブルに保存する。
 
@@ -3837,7 +3835,7 @@ obj << Save Tree Details;
 
 ### Set Random Seed
 
-**構文:** obj << Set Random Seed( number )
+**構文:** obj &lt;&lt; Set Random Seed( number )
 
 **説明:** 乱数シード値を指定する。乱数シード値を指定することにより、今後プラットフォームを起動したときに同じ結果を再現できる。
 
@@ -3904,7 +3902,7 @@ obj = dt << Bootstrap Forest(
 
 ### Show Trees
 
-**構文:** obj << Show Trees( "なし"|"名前の表示"|"名前・カテゴリの表示"|"名前・カテゴリ・推定値の表示" )
+**構文:** obj &lt;&lt; Show Trees( "なし"|"名前の表示"|"名前・カテゴリの表示"|"名前・カテゴリ・推定値の表示" )
 
 **説明:** 各層のツリーを一覧表示する。ツリーには、名前のみ、名前・カテゴリ、名前・カテゴリ・推定値を表示できる。
 
@@ -3926,7 +3924,7 @@ obj << Show Trees( Show names categories );
 
 ### Specify Profit Matrix
 
-**構文:** obj << Specify Profit Matrix
+**構文:** obj &lt;&lt; Specify Profit Matrix
 
 **説明:** 正分類および誤分類した時の利益およびコストを指定する。
 

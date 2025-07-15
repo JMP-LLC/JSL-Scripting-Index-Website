@@ -29,7 +29,7 @@ New Window( "test",
 
 ### Add Element
 
-**Syntaxe :** obj << Add Element( number|string|list|matrix )
+**Syntaxe :** obj &lt;&lt; Add Element( number|string|list|matrix )
 
 **Description :** Ajoute une nouvelle valeur à la boîte d’affichage.
 
@@ -48,13 +48,13 @@ col << Add Element( Random Uniform() * 100000 );
 
 ### Col ID
 
-**Syntaxe :** obj << Col ID( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Col ID( state=0|1 )
 
 **JMP Version ajoutée :** 17
 
 ### Copy Column
 
-**Syntaxe :** obj << Copy Column
+**Syntaxe :** obj &lt;&lt; Copy Column
 
 **Description :** Copier le contenu de la colonne dans le presse-papiers
 
@@ -62,7 +62,7 @@ col << Add Element( Random Uniform() * 100000 );
 
 ### Copy Selected Column Rows
 
-**Syntaxe :** obj << Copy Selected Column Rows
+**Syntaxe :** obj &lt;&lt; Copy Selected Column Rows
 
 **Description :** Copier les données des lignes sélectionnées au sein de la colonne dans le presse-papiers
 
@@ -70,7 +70,7 @@ col << Add Element( Random Uniform() * 100000 );
 
 ### Get
 
-**Syntaxe :** list or matrix = obj << Get( <i>, <"Unsorted"> )
+**Syntaxe :** list or matrix = obj &lt;&lt; Get( &lt;i&gt;, &lt;"Unsorted"&gt; )
 
 **Description :** Renvoie les valeurs dans une liste, ou la ie valeur. Par défaut, les valeurs sont renvoyées dans l&apos;ordre dans lequel elles apparaissent dans la table. Si Non trié est spécifié, les valeurs sont toujours dans le même ordre, peu importe comment la table de données est triée.
 
@@ -92,7 +92,7 @@ Print( col << Get );
 
 ### Get Base Data Font
 
-**Syntaxe :** font = obj << Get Base Data Font
+**Syntaxe :** font = obj &lt;&lt; Get Base Data Font
 
 **Description :** Renvoie la police de base utilisée pour le texte apparaissant dans la zone. Les polices de base sont des noms prédéfinis tels que Title, Text, Annotation, et autres, qui sont spécifiés dans les Préférences des polices.
 
@@ -114,13 +114,13 @@ col << Get Base Data Font;
 
 ### Get Col ID
 
-**Syntaxe :** obj << Get Col ID( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Get Col ID( state=0|1 )
 
 **JMP Version ajoutée :** 17
 
 ### Get Data Font Name
 
-**Syntaxe :** obj << Get Data Font Name
+**Syntaxe :** obj &lt;&lt; Get Data Font Name
 
 **Description :** Renvoie le nom de la police.
 
@@ -143,7 +143,7 @@ col << Get Data Font Name;
 
 ### Get Data Font Scale
 
-**Syntaxe :** obj << Get Data Font Scale
+**Syntaxe :** obj &lt;&lt; Get Data Font Scale
 
 **Description :** Renvoie le facteur d&apos;échelle actuel de la police.
 
@@ -165,7 +165,7 @@ col << Get Data Font Scale;
 
 ### Get Data Font Size
 
-**Syntaxe :** obj << Get Data Font Size
+**Syntaxe :** obj &lt;&lt; Get Data Font Size
 
 **Description :** Renvoie la taille de la police.
 
@@ -187,7 +187,7 @@ col << Get Data Font Size;
 
 ### Get Data Font Style
 
-**Syntaxe :** obj << Get Data Font Style
+**Syntaxe :** obj &lt;&lt; Get Data Font Style
 
 **Description :** Renvoie le nom du style de police.
 
@@ -211,7 +211,7 @@ col << Get Data Font Style;
 
 ### Get Font
 
-**Syntaxe :** obj << Get Font
+**Syntaxe :** obj &lt;&lt; Get Font
 
 ```jsl
 
@@ -231,7 +231,7 @@ col << Get Font;
 
 ### Get Heading
 
-**Syntaxe :** obj << Get Heading
+**Syntaxe :** obj &lt;&lt; Get Heading
 
 **Description :** Renvoie le texte d’en-tête de la colonne.
 
@@ -253,7 +253,7 @@ Print( col << Get Heading() );
 
 ### Hide/Unhide
 
-**Syntaxe :** obj << Hide/Unhide( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Hide/Unhide( state=0|1 )
 
 **Description :** Masque ou affiche la boîte d’affichage.
 
@@ -275,7 +275,7 @@ col << Hide( 1 );
 
 ### Lock Title
 
-**Syntaxe :** obj << Lock Title( boolean )
+**Syntaxe :** obj &lt;&lt; Lock Title( boolean )
 
 **Description :** Active ou désactive la modification des en-têtes de colonne
 
@@ -299,7 +299,7 @@ nb << Lock Title( 1 );
 
 ### Remove Element
 
-**Syntaxe :** obj << Remove Element( row number )
+**Syntaxe :** obj &lt;&lt; Remove Element( row number )
 
 **Description :** Supprime un élément de la colonne.
 
@@ -320,7 +320,7 @@ col << Remove Element( 2 );
 
 ### Set
 
-**Syntaxe :** obj << Set( <list>, <"Presorted"> )
+**Syntaxe :** obj &lt;&lt; Set( &lt;list&gt;, &lt;"Presorted"&gt; )
 
 **Description :** Définit les valeurs à partir d’une liste. Si Prétrié est spécifié, les valeurs s&apos;afficheront dans le même ordre que la liste passée, sinon les valeurs seront triées en fonction de l&apos;ordre de tri actuel de la table de données.
 
@@ -337,7 +337,7 @@ col << Set(
 
 ### Set Base Data Font
 
-**Syntaxe :** obj << Set Base Data Font( "Texte"|"En-tête"|"Titre"|"Petit"|"Mono"|"Éditeur de formules"|"Annotation"|"Axe"|"Marqueur"|"Titre de l&apos;axe"|"Étiquette du graphique"|"Légende"|"Titre du graphique"|"Légende"|"Table de données"|"Étiquette de survol" )
+**Syntaxe :** obj &lt;&lt; Set Base Data Font( "Texte"|"En-tête"|"Titre"|"Petit"|"Mono"|"Éditeur de formules"|"Annotation"|"Axe"|"Marqueur"|"Titre de l&apos;axe"|"Étiquette du graphique"|"Légende"|"Titre du graphique"|"Légende"|"Table de données"|"Étiquette de survol" )
 
 **Description :** Définit la police de base pour le texte apparaissant dans la zone.
 
@@ -360,13 +360,13 @@ col << Set Base Data Font( "Data" );
 
 ### Set Col ID
 
-**Syntaxe :** obj << Set Col ID( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Set Col ID( state=0|1 )
 
 **JMP Version ajoutée :** 17
 
 ### Set Data Font
 
-**Syntaxe :** obj << Set Data Font( fontName, <size>, <"bold italic underline strikeout">, <angle> )
+**Syntaxe :** obj &lt;&lt; Set Data Font( fontName, &lt;size&gt;, &lt;"bold italic underline strikeout"&gt;, &lt;angle&gt; )
 
 **Exemple 1**
 
@@ -406,7 +406,7 @@ col << Set Data Font( "Arial Black", 12, "Italic Underline" );
 
 ### Set Data Font Name
 
-**Syntaxe :** obj << Set Data Font Name( fontname )
+**Syntaxe :** obj &lt;&lt; Set Data Font Name( fontname )
 
 **Description :** Définit la police des chaînes de texte.
 
@@ -428,7 +428,7 @@ col << Set Data Font Name( "Arial Black" );
 
 ### Set Data Font Scale
 
-**Syntaxe :** obj << Set Data Font Scale( f )
+**Syntaxe :** obj &lt;&lt; Set Data Font Scale( f )
 
 **Description :** Définit un facteur d&apos;échelle pour la police actuelle. Le facteur d&apos;échelle sera appliqué à la taille déterminée par la police de base et la taille du point.
 
@@ -451,7 +451,7 @@ col << Set Data Font Scale( 2.0 );
 
 ### Set Data Font Size
 
-**Syntaxe :** obj << Set Data Font Size( n )
+**Syntaxe :** obj &lt;&lt; Set Data Font Size( n )
 
 **Description :** Définit la taille de police des chaînes de texte.
 
@@ -473,7 +473,7 @@ col << Set Data Font Size( 14 );
 
 ### Set Data Font Style
 
-**Syntaxe :** obj << Set Data Font Style( style )
+**Syntaxe :** obj &lt;&lt; Set Data Font Style( style )
 
 **Description :** Définit le style de police des chaînes de texte. Pour définir plusieurs styles à la fois, les placer dans la même chaîne, séparés par des espaces (voir l&apos;exemple 2 ci-dessous).
 
@@ -515,7 +515,7 @@ col << Set Data Font Style( "Italic Bold Underline" );
 
 ### Set Heading
 
-**Syntaxe :** obj << Set Heading( "string" )
+**Syntaxe :** obj &lt;&lt; Set Heading( "string" )
 
 **Description :** Modifie le texte d’en-tête de la colonne.
 
@@ -537,7 +537,7 @@ col << Set Heading( "New Column Header" );
 
 ### Set Resizable
 
-**Syntaxe :** obj << Set Resizable( boolean )
+**Syntaxe :** obj &lt;&lt; Set Resizable( boolean )
 
 **Description :** Active ou désactive la possibilité de redimensionner une colonne de manière interactive
 
@@ -561,7 +561,7 @@ nb << Set Resizable( 1 );
 
 ### Set Smart Shrinking
 
-**Syntaxe :** obj << Set Smart Shrinking( boolean )
+**Syntaxe :** obj &lt;&lt; Set Smart Shrinking( boolean )
 
 **Description :** Si activé, les colonnes dimensionnées en automatique ne se réduisent pas jusqu&apos;à ce que leur élément le plus large soit inférieur à 2/3 de leur largeur actuelle.
 
@@ -588,7 +588,7 @@ c << Set Smart Shrinking( true );
 
 ### Set Values
 
-**Syntaxe :** obj << Set Values( <list> )
+**Syntaxe :** obj &lt;&lt; Set Values( &lt;list&gt; )
 
 **Description :** Définit les valeurs à partir d’une liste.
 
@@ -608,7 +608,7 @@ scb << Set Values( {"A", "B", "C", "D", "E"} );
 
 ### Add Line Annotation
 
-**Syntaxe :** obj << Add Line Annotation
+**Syntaxe :** obj &lt;&lt; Add Line Annotation
 
 **Description :** Ajoute une ligne au haut de la boîte d’affichage.
 
@@ -625,7 +625,7 @@ rbiv << Add Line Annotation( Line( 160, 235, 240, 235 ) );
 
 ### Add Pin Annotation
 
-**Syntaxe :** obj << Add Pin Annotation
+**Syntaxe :** obj &lt;&lt; Add Pin Annotation
 
 **Description :** Ajoute une annotation épinglée en haut de la boîte d’affichage. La plupart des attributs (comme Index Row, UniqueID et FoundPt) sont conçus pour une utilisation interne uniquement.
 
@@ -658,7 +658,7 @@ dt << Bivariate(
 
 ### Add Polygon Annotation
 
-**Syntaxe :** obj << Add Polygon Annotation
+**Syntaxe :** obj &lt;&lt; Add Polygon Annotation
 
 **Description :** Ajoute un polygone au haut de la boîte d’affichage.
 
@@ -679,7 +679,7 @@ rbiv << Add Polygon Annotation(
 
 ### Add Simple Shape Annotation
 
-**Syntaxe :** obj << Add Simple Shape Annotation
+**Syntaxe :** obj &lt;&lt; Add Simple Shape Annotation
 
 **Description :** Ajoute une forme simple au haut de la boîte d’affichage.
 
@@ -697,7 +697,7 @@ rbiv << Add Simple Shape Annotation( Rectangle( 70, 180, 95, 215 ) );
 
 ### Add Text Annotation
 
-**Syntaxe :** obj << Add Text Annotation
+**Syntaxe :** obj &lt;&lt; Add Text Annotation
 
 **Description :** Ajoute un texte au haut de la boîte d’affichage.
 
@@ -717,7 +717,7 @@ rbiv << Add Text Annotation(
 
 ### Append
 
-**Syntaxe :** obj << Append( db2 )
+**Syntaxe :** obj &lt;&lt; Append( db2 )
 
 **Description :** Ajoute db2 à l’arbre d’affichage après db.
 
@@ -734,9 +734,7 @@ rbiv << append( Text Box( "=== below ===" ) );
 
 ### Background Color
 
-**Syntaxe :** obj << Background Color( color );
-
-color = obj << Get Background Color
+**Syntaxe :** obj &lt;&lt; Background Color( color );color = obj &lt;&lt; Get Background Color
 
 **Description :** Si la couleur de fond est définie, la boîte est remplie de cette couleur avant de dessiner son contenu. Si la couleur de fond n&apos;est pas définie, le fond et le contenu des boîtes contenantes sont visibles l&apos;un au travers de l&apos;autre.
 
@@ -758,9 +756,7 @@ tb << Background Color( "Yellow" );
 
 ### Border
 
-**Syntaxe :** obj << Border( sides );
-
-sides = obj << Get Border
+**Syntaxe :** obj &lt;&lt; Border( sides );sides = obj &lt;&lt; Get Border
 
 **Description :** Les bordures sont des lignes pleines dessinées tout autour d&apos;une boîte d&apos;affichage. Si vous spécifiez une seule valeur, celle-ci sera appliquée à toutes les bordures. Si vous spécifiez deux valeurs, elles seront appliquées aux bordures horizontales et verticales.
 
@@ -780,9 +776,7 @@ tb << Border( 1 );
 
 ### Border Color
 
-**Syntaxe :** obj << Border Color( color );
-
-color = obj << Get Border Color
+**Syntaxe :** obj &lt;&lt; Border Color( color );color = obj &lt;&lt; Get Border Color
 
 **Description :** Couleur facultative pour remplacer la couleur par défaut des bordures de boîte.
 
@@ -804,7 +798,7 @@ tb << Border Color( "Light Red" );
 
 ### Bring Window To Front
 
-**Syntaxe :** obj << Bring Window To Front
+**Syntaxe :** obj &lt;&lt; Bring Window To Front
 
 **Description :** Amène la fenêtre en premier plan.
 
@@ -820,7 +814,7 @@ w << Bring Window To Front;
 
 ### Child
 
-**Syntaxe :** obj << Child
+**Syntaxe :** obj &lt;&lt; Child
 
 **Description :** Renvoie l’enfant de la boîte d’affichage.
 
@@ -840,7 +834,7 @@ Print( axisChild << Class Name() );
 
 ### Class Name
 
-**Syntaxe :** obj << Class Name
+**Syntaxe :** obj &lt;&lt; Class Name
 
 **Description :** Renvoie le nom de la classe d’affichage associée à la boîte d’affichage.
 
@@ -858,7 +852,7 @@ axisbox << Class Name();
 
 ### Clone Box
 
-**Syntaxe :** obj << Clone Box
+**Syntaxe :** obj &lt;&lt; Clone Box
 
 **Description :** Crée une nouvelle copie de la boîte d’affichage.
 
@@ -877,7 +871,7 @@ rbiv << append( clonedBox );
 
 ### Close Window
 
-**Syntaxe :** obj << Close Window( <"NoSave"> )
+**Syntaxe :** obj &lt;&lt; Close Window( &lt;"NoSave"&gt; )
 
 **Description :** Ferme la fenêtre.
 
@@ -893,7 +887,7 @@ w << Close Window;
 
 ### Copy Data
 
-**Syntaxe :** obj << Copy Data
+**Syntaxe :** obj &lt;&lt; Copy Data
 
 **Description :** copie les données séparées par des tabulations d&apos;une matrice ou d&apos;un tableau dans le presse-papiers.
 
@@ -907,7 +901,7 @@ mat << CopyData;
 
 ### Copy Graph
 
-**Syntaxe :** obj << Copy Graph
+**Syntaxe :** obj &lt;&lt; Copy Graph
 
 **Description :** Copie une image du graphique et des axes dans le presse-papier.
 
@@ -925,7 +919,7 @@ rbiv = biv << report;
 
 ### Copy Picture
 
-**Syntaxe :** obj << Copy Picture
+**Syntaxe :** obj &lt;&lt; Copy Picture
 
 **Description :** Place une image de la boîte d’affichage dans le presse-papier.
 
@@ -942,7 +936,7 @@ rbiv << Copy Picture();
 
 ### Delete Box
 
-**Syntaxe :** obj << Delete Box
+**Syntaxe :** obj &lt;&lt; Delete Box
 
 **Description :** Supprime la boîte d’affichage.
 
@@ -960,7 +954,7 @@ axisbox << Delete Box();
 
 ### Deselect
 
-**Syntaxe :** obj << Deselect
+**Syntaxe :** obj &lt;&lt; Deselect
 
 **Description :** Désélectionne cet objet à utiliser par les commandes du menu Édition.
 
@@ -986,7 +980,7 @@ refresh = Function( {},
 
 ### Dispatch
 
-**Syntaxe :** obj << Dispatch( {outline node, ...}, display element, display element type, command )
+**Syntaxe :** obj &lt;&lt; Dispatch( {outline node, ...}, display element, display element type, command )
 
 **Description :** Envoie la commande command vers une partie spécifique d’un arbre d’affichage.
 
@@ -1003,9 +997,7 @@ rbiv << Dispatch( {}, "Bivar Plot", FrameBox, {Marker Size( 3 )} );
 
 ### Enabled
 
-**Syntaxe :** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**Syntaxe :** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Description :** Un objet qui n&apos;est pas activé ne répondra pas aux commandes du clavier ou de la souris. Cette propriété est héritée par les objets enfants, donc le fait de désactiver un objet de type conteneur entraînera la désactivation de tous les objets descendants.
 
@@ -1037,7 +1029,7 @@ New Window( "enabled",
 
 ### Find
 
-**Syntaxe :** obj << Find
+**Syntaxe :** obj &lt;&lt; Find
 
 **Description :** Renvoie une boîte d’affichage avec l’argument argument donné.
 
@@ -1055,7 +1047,7 @@ axisbox << Delete();
 
 ### Get Annotation
 
-**Syntaxe :** obj << Get Annotation
+**Syntaxe :** obj &lt;&lt; Get Annotation
 
 **Description :** Renvoie la première annotation ancrée à la boîte d&apos;affichage. Il est possible d&apos;accéder aux autres annotations en exécutant Sib() sur le résultat.
 
@@ -1077,9 +1069,7 @@ annotation << delete;
 
 ### Get Background Color
 
-**Syntaxe :** obj << Background Color( color );
-
-color = obj << Get Background Color
+**Syntaxe :** obj &lt;&lt; Background Color( color );color = obj &lt;&lt; Get Background Color
 
 **Description :** Si la couleur de fond est définie, la boîte est remplie de cette couleur avant de dessiner son contenu. Si la couleur de fond n&apos;est pas définie, le fond et le contenu des boîtes contenantes sont visibles l&apos;un au travers de l&apos;autre.
 
@@ -1101,9 +1091,7 @@ tb << Background Color( "Yellow" );
 
 ### Get Border
 
-**Syntaxe :** obj << Border( sides );
-
-sides = obj << Get Border
+**Syntaxe :** obj &lt;&lt; Border( sides );sides = obj &lt;&lt; Get Border
 
 **Description :** Les bordures sont des lignes pleines dessinées tout autour d&apos;une boîte d&apos;affichage. Si vous spécifiez une seule valeur, celle-ci sera appliquée à toutes les bordures. Si vous spécifiez deux valeurs, elles seront appliquées aux bordures horizontales et verticales.
 
@@ -1123,9 +1111,7 @@ tb << Border( 1 );
 
 ### Get Border Color
 
-**Syntaxe :** obj << Border Color( color );
-
-color = obj << Get Border Color
+**Syntaxe :** obj &lt;&lt; Border Color( color );color = obj &lt;&lt; Get Border Color
 
 **Description :** Couleur facultative pour remplacer la couleur par défaut des bordures de boîte.
 
@@ -1147,7 +1133,7 @@ tb << Border Color( "Light Red" );
 
 ### Get Content Size
 
-**Syntaxe :** obj << Get Content Size
+**Syntaxe :** obj &lt;&lt; Get Content Size
 
 **Description :** Renvoie la taille du contenu dans la fenêtre.
 
@@ -1163,7 +1149,7 @@ Show( c );
 
 ### Get Display Path
 
-**Syntaxe :** obj << Get Display Path( parent box, <receiver expr>, <Mode("XPath"|"Subscript")> )
+**Syntaxe :** obj &lt;&lt; Get Display Path( parent box, &lt;receiver expr&gt;, &lt;Mode("XPath"|"Subscript")&gt; )
 
 **Description :** Obtient une expression relativement robuste pour naviguer entre parent box et obj. Ce chemin n&apos;est pas garanti comme étant stable dans toutes les versions de JMP. Le receiver expr est intégré dans l&apos;expression de sortie s&apos;il est fourni. Sinon, l&apos;expression fournie pour parent box est utilisée à la place. Comme indiqué dans l&apos;exemple, ce message est principalement utile pour augmenter la robustesse d&apos;un chemin déjà disponible. Le mode XPath est défini par défaut.
 
@@ -1201,9 +1187,7 @@ subscript expr << Select;
 
 ### Get Enabled
 
-**Syntaxe :** obj << Enabled( state=0|1 );
-
-state = obj << Get Enabled
+**Syntaxe :** obj &lt;&lt; Enabled( state=0|1 );state = obj &lt;&lt; Get Enabled
 
 **Description :** Un objet qui n&apos;est pas activé ne répondra pas aux commandes du clavier ou de la souris. Cette propriété est héritée par les objets enfants, donc le fait de désactiver un objet de type conteneur entraînera la désactivation de tous les objets descendants.
 
@@ -1235,7 +1219,7 @@ New Window( "enabled",
 
 ### Get HTML
 
-**Syntaxe :** obj << Get HTML( <format> )
+**Syntaxe :** obj &lt;&lt; Get HTML( &lt;format&gt; )
 
 **Description :** Renvoie une chaîne contenant le code source HTLM de la boîte d’affichage.
 
@@ -1270,7 +1254,7 @@ Web( "$TEMP/Oneway.html", JMPWindow );
 
 ### Get Height
 
-**Syntaxe :** width = obj << Get Height
+**Syntaxe :** width = obj &lt;&lt; Get Height
 
 **Description :** Renvoie la hauteur de la boîte d’affichage.
 
@@ -1288,9 +1272,7 @@ fb << Get Height;
 
 ### Get Horizontal Alignment
 
-**Syntaxe :** obj << Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );
-
-"Default"|"Left"|"Center"|"Right" = obj << Get Horizontal Alignment
+**Syntaxe :** obj &lt;&lt; Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );"Default"|"Left"|"Center"|"Right" = obj &lt;&lt; Get Horizontal Alignment
 
 **Description :** L&apos;alignement horizontal gère le positionnement de la boîte dans un contenant lorsque la boîte ne remplit pas tout l&apos;espace.
 
@@ -1310,7 +1292,7 @@ lb << Horizontal Alignment( "Right" );
 
 ### Get Journal
 
-**Syntaxe :** obj << Get Journal
+**Syntaxe :** obj &lt;&lt; Get Journal
 
 **Description :** Renvoie une chaîne contenant le code source du journal de la boîte d’affichage.
 
@@ -1327,9 +1309,7 @@ Print( rbiv << Get Journal );
 
 ### Get Margin
 
-**Syntaxe :** obj << Margin( sides );
-
-sides = obj << Get Margin
+**Syntaxe :** obj &lt;&lt; Margin( sides );sides = obj &lt;&lt; Get Margin
 
 **Description :** La marge ajoute un espace entre la bordure de la boîte et les boîtes adjacentes. Utilisez des arguments nommés ou fournissez une liste de valeurs. Si une seule valeur est spécifiée, elle sera appliquée à tous les côtés. Si deux valeurs sont spécifiées, elles seront appliquées aux marges horizontale et verticale.
 
@@ -1350,7 +1330,7 @@ tb << Margin( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ### Get Max Size
 
-**Syntaxe :** width,height = obj << Get Max Size
+**Syntaxe :** width,height = obj &lt;&lt; Get Max Size
 
 **Description :** Renvoie la taille maximale de la boîte d’affichage afin de permettre l’ajustement automatique de la boîte.
 
@@ -1368,7 +1348,7 @@ fb << Get Max Size;
 
 ### Get Min Size
 
-**Syntaxe :** width,height = obj << Get Min Size
+**Syntaxe :** width,height = obj &lt;&lt; Get Min Size
 
 **Description :** Renvoie la taille minimale de la boîte d’affichage afin de permettre l’ajustement automatique de la boîte.
 
@@ -1386,7 +1366,7 @@ fb << Get Min Size;
 
 ### Get Namespace
 
-**Syntaxe :** obj << Get Namespace
+**Syntaxe :** obj &lt;&lt; Get Namespace
 
 **Description :** Renvoie l&apos;espace de noms associé à cet objet d&apos;affichage.
 
@@ -1404,7 +1384,7 @@ Show( ns:x, x );
 
 ### Get On Close
 
-**Syntaxe :** obj << Get On Close
+**Syntaxe :** obj &lt;&lt; Get On Close
 
 **Description :** Renvoie le script ou la fonction qui sera exécuté(e) à la fermeture de la fenêtre.
 
@@ -1429,9 +1409,7 @@ Show( w << Get On Close );
 
 ### Get Padding
 
-**Syntaxe :** obj << Padding( sides );
-
-sides = obj << Get Padding
+**Syntaxe :** obj &lt;&lt; Padding( sides );sides = obj &lt;&lt; Get Padding
 
 **Description :** Le remplissage ajoute un espace entre le contenu et la bordure de la boîte. Utilisez des arguments nommés ou fournissez une liste de valeurs. Si une seule valeur est spécifiée, elle sera appliquée à tous les côtés. Si deux valeurs sont spécifiées, elles seront appliquées aux remplissages horizontal et vertical.
 
@@ -1452,7 +1430,7 @@ tb << Padding( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ### Get Page Setup
 
-**Syntaxe :** obj << Get Page Setup
+**Syntaxe :** obj &lt;&lt; Get Page Setup
 
 **Description :** Obtenir les informations de mise en page du pdf
 
@@ -1467,7 +1445,7 @@ w << get page setup();
 
 ### Get Picture
 
-**Syntaxe :** obj << Get Picture( <Scale(factor)>, <Type("Bitmap" | "Scalable")>, <View("Picture" | "Screen" | "Print"), <Appearance("Default" | "Current")>, <SubRect(Left(number), Top(number), Right(number), Bottom(number))> )
+**Syntaxe :** obj &lt;&lt; Get Picture( &lt;Scale(factor)&gt;, &lt;Type("Bitmap" | "Scalable")&gt;, &lt;View("Picture" | "Screen" | "Print"), &lt;Appearance("Default" | "Current")&gt;, &lt;SubRect(Left(number), Top(number), Right(number), Bottom(number))&gt; )
 
 **Description :** Capture db comme objet image. L&apos;argument facultatif Scale restituera l&apos;image à une résolution mise à l&apos;échelle. La mise à l&apos;échelle requiert que la boîte d&apos;affichage soit ajustable. L&apos;argument Type détermine si le résultat sera une image vectorielle pouvant être mise à l&apos;échelle ou un bitmap. Par défaut, une image pouvant être mise a l&apos;échelle est renvoyée, ce qui convient à l&apos;enregistrement aux formats vectoriels comme PDF. L&apos;option View change le comportement de certaines boîtes. L&apos;option par défaut "Picture" affiche le rapport comme il le serait à l&apos;exportation au format image, avec les zones déroulées complètement affichées. Le mode d&apos;affichage "Screen" affiche le rapport comme vu à l&apos;écran, et "Print" affiche le rapport comme à l&apos;impression, sans aucune fonction de configuration de page. L&apos;option SubRect capturera une portion de l&apos;image résultante plutôt que l&apos;image entière. L&apos;option Appearance peut changer des couleurs de sortie "Default" aux couleurs "Current" comme vu à l&apos;écran. Les options View, SubRect et Appearance sont uniquement prises en charge pour Type "Bitmap".
 
@@ -1528,7 +1506,7 @@ New Window( "Example", rbiv << Get Picture );
 
 ### Get Project
 
-**Syntaxe :** project = obj << Get Project()
+**Syntaxe :** project = obj &lt;&lt; Get Project()
 
 **Description :** Renvoie le projet parent de la fenêtre, ou Empty() si elle ne se trouve pas dans un projet.
 
@@ -1546,7 +1524,7 @@ Show( c );
 
 ### Get Properties
 
-**Syntaxe :** obj << Get Properties
+**Syntaxe :** obj &lt;&lt; Get Properties
 
 **Description :** Renvoie un tableau associatif qui contient les propriétés de la boîte d&apos;affichage et leurs valeurs.
 
@@ -1562,7 +1540,7 @@ bb << Get Properties;
 
 ### Get Property
 
-**Syntaxe :** obj << Get Property( "property" )
+**Syntaxe :** obj &lt;&lt; Get Property( "property" )
 
 **Description :** Renvoie le paramètre actuel pour la property nommée.
 
@@ -1578,7 +1556,7 @@ bb << Get Property( "Enabled" );
 
 ### Get Property List
 
-**Syntaxe :** obj << Get Property List
+**Syntaxe :** obj &lt;&lt; Get Property List
 
 **Description :** Renvoie la liste des propriétés de la boîte d&apos;affichage.
 
@@ -1594,7 +1572,7 @@ bb << Get Property List;
 
 ### Get RTF
 
-**Syntaxe :** obj << Get RTF( <format> )
+**Syntaxe :** obj &lt;&lt; Get RTF( &lt;format&gt; )
 
 **Description :** Renvoie une chaîne contenant le code source RTF de la boîte d’affichage.
 
@@ -1629,7 +1607,7 @@ Open( "$TEMP/Oneway.rtf" );
 
 ### Get Row States
 
-**Syntaxe :** rs = obj << Get Row States( <dt> )
+**Syntaxe :** rs = obj &lt;&lt; Get Row States( &lt;dt&gt; )
 
 **Description :** Renvoie un vecteur contenant l&apos;état de ligne de toutes les lignes de la table de données spécifiée ou active. Les états de ligne peuvent être issus de la table ou du contexte du filtre de la zone.
 
@@ -1724,7 +1702,7 @@ updatetext();
 
 ### Get Show Window
 
-**Syntaxe :** obj << Get Show Window
+**Syntaxe :** obj &lt;&lt; Get Show Window
 
 **Description :** Renvoie la visibilité de la fenêtre.
 
@@ -1742,7 +1720,7 @@ Print( w << Get Show Window() );
 
 ### Get Size
 
-**Syntaxe :** width,height = obj << Get Size
+**Syntaxe :** width,height = obj &lt;&lt; Get Size
 
 **Description :** Renvoie la taille de la boîte d’affichage.
 
@@ -1760,7 +1738,7 @@ Print( fb << Get Size );
 
 ### Get Stretch
 
-**Syntaxe :** x,y = obj << Get Stretch
+**Syntaxe :** x,y = obj &lt;&lt; Get Stretch
 
 **Description :** Renvoie les drapeaux d&apos;ajustement pour la boîte d&apos;affichage dans les directions horizontale et verticale.
 
@@ -1789,7 +1767,7 @@ spacer << Get Stretch();
 
 ### Get Text
 
-**Syntaxe :** obj << Get Text
+**Syntaxe :** obj &lt;&lt; Get Text
 
 **Description :** Renvoie une chaîne contenant le texte de la boîte d’affichage.
 
@@ -1804,9 +1782,7 @@ a << Set Text( win << Get Text );
 
 ### Get Text Color
 
-**Syntaxe :** obj << Text Color( color );
-
-color = obj << Get Text Color
+**Syntaxe :** obj &lt;&lt; Text Color( color );color = obj &lt;&lt; Get Text Color
 
 **Description :** Le texte sera écrit dans une couleur de texte si celle-ci a été préalablement définie. Dans le cas contraire, la boîte héritera la couleur de la boîte conteneur.
 
@@ -1828,15 +1804,11 @@ tb << Text Color( "Red" );
 
 ### Get UI Only
 
-**Syntaxe :** obj << UI Only( state=0|1 );
-
-state = obj << Get UI Only
+**Syntaxe :** obj &lt;&lt; UI Only( state=0|1 );state = obj &lt;&lt; Get UI Only
 
 ### Get User Resizable
 
-**Syntaxe :** obj << User Resizable;
-
-obj << Get User Resizable
+**Syntaxe :** obj &lt;&lt; User Resizable;obj &lt;&lt; Get User Resizable
 
 **Description :** Si la zone peut être redimensionnée par l&apos;utilisateur, le curseur situé près du bord inférieur droit changera pour permettre un redimensionnement à l&apos;aide d&apos;un glisser-déposer.
 
@@ -1875,9 +1847,7 @@ scroll << User Resizable( {0, 0} );
 
 ### Get Vertical Alignment
 
-**Syntaxe :** obj << Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );
-
-"Default"|"Top"|"Center"|"Bottom" = obj << Get Vertical Alignment
+**Syntaxe :** obj &lt;&lt; Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );"Default"|"Top"|"Center"|"Bottom" = obj &lt;&lt; Get Vertical Alignment
 
 **Description :** L&apos;alignement vertical gère le positionnement de la boîte dans un conteneur lorsque la boîte ne remplit pas tout l&apos;espace..
 
@@ -1899,9 +1869,7 @@ lb << Vertical Alignment( "Bottom" );
 
 ### Get Visibility
 
-**Syntaxe :** obj << Visibility( "Visible"|"Hidden"|"Collapse" );
-
-"Visible"|"Hidden"|"Collapse" = obj << Get Visibility
+**Syntaxe :** obj &lt;&lt; Visibility( "Visible"|"Hidden"|"Collapse" );"Visible"|"Hidden"|"Collapse" = obj &lt;&lt; Get Visibility
 
 **Description :** La visibilité détermine si une boîte est affichée et si elle occupe un espace. La valeur par défaut de la visibilité "Visible" indique que l&apos;objet sera affiché. Une boîte "Hidden" n&apos;est pas affichée mais elle occupe encore un espace, alors qu&apos;une boîte "Collapsed" n&apos;occupe pas d&apos;espace dans la mise en page.
 
@@ -1922,7 +1890,7 @@ Show( tb << Get Visibility );
 
 ### Get Web Support
 
-**Syntaxe :** obj << Get Web Support
+**Syntaxe :** obj &lt;&lt; Get Web Support
 
 **Description :** Renvoyer un nombre indiquant le niveau de support HTML interactif pour l&apos;objet d&apos;affichage. 1 signifie que tout ou partie des éléments sont pris en charge. 0 signifie qu&apos;il n&apos;y a aucun support.
 
@@ -1938,7 +1906,7 @@ Show( s );
 
 ### Get Width
 
-**Syntaxe :** width = obj << Get Width
+**Syntaxe :** width = obj &lt;&lt; Get Width
 
 **Description :** Renvoie la largeur de la boîte d’affichage.
 
@@ -1956,7 +1924,7 @@ fb << Get Width;
 
 ### Get Window Icon
 
-**Syntaxe :** obj << Get Window Icon
+**Syntaxe :** obj &lt;&lt; Get Window Icon
 
 **Description :** Renvoie l’icône de la fenêtre.
 
@@ -1972,7 +1940,7 @@ Show( t );
 
 ### Get Window Position
 
-**Syntaxe :** obj << Get Window Position
+**Syntaxe :** obj &lt;&lt; Get Window Position
 
 **Description :** Renvoie la position de la fenêtre.
 
@@ -1988,7 +1956,7 @@ Show( p );
 
 ### Get Window Size
 
-**Syntaxe :** obj << Get Window Size
+**Syntaxe :** obj &lt;&lt; Get Window Size
 
 **Description :** Renvoie la taille de la fenêtre.
 
@@ -2004,7 +1972,7 @@ Show( s );
 
 ### Get Window Title
 
-**Syntaxe :** obj << Get Window Title
+**Syntaxe :** obj &lt;&lt; Get Window Title
 
 **Description :** Renvoie le titre de la fenêtre.
 
@@ -2020,7 +1988,7 @@ Show( t );
 
 ### Get Window View
 
-**Syntaxe :** obj << Get Window View
+**Syntaxe :** obj &lt;&lt; Get Window View
 
 **Description :** Renvoie l&apos;affichage de fenêtre actuel. Les fenêtres peuvent être « Visibles », « Invisibles », ou « Privées ».
 
@@ -2035,7 +2003,7 @@ Print( w << Get Window View() );
 
 ### Get XML
 
-**Syntaxe :** obj << Get XML( <English(0|1)>, <NoData(0|1)> )
+**Syntaxe :** obj &lt;&lt; Get XML( &lt;English(0|1)&gt;, &lt;NoData(0|1)&gt; )
 
 **Description :** Récupère l&apos;arbre d&apos;affichage au format XML. Par défaut, les chaînes sont renvoyées dans la langue locale et le XML contient les valeurs des données dans des boîtes. Utilisez l&apos;option English pour renvoyer des chaînes anglaises, le cas échéant. Utilisez l&apos;option NoData pour omettre les valeurs des données dans les boîtes, qui peuvent être volumineuses pour certains arbres d&apos;affichage.
 
@@ -2050,7 +2018,7 @@ a << set text( win << get xml );
 
 ### GetOffset
 
-**Syntaxe :** x,y = obj << GetOffset
+**Syntaxe :** x,y = obj &lt;&lt; GetOffset
 
 **Description :** Renvoie l&apos;offset de cette boîte d&apos;affichage en relation avec la boîte parent. Vous pouvez avoir besoin d&apos;utiliser le message <<parent dans une boucle pour cumuler plusieurs offsets.
 
@@ -2098,9 +2066,7 @@ New Window( "example",
 
 ### Horizontal Alignment
 
-**Syntaxe :** obj << Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );
-
-"Default"|"Left"|"Center"|"Right" = obj << Get Horizontal Alignment
+**Syntaxe :** obj &lt;&lt; Horizontal Alignment( "Default"|"Left"|"Center"|"Right" );"Default"|"Left"|"Center"|"Right" = obj &lt;&lt; Get Horizontal Alignment
 
 **Description :** L&apos;alignement horizontal gère le positionnement de la boîte dans un contenant lorsque la boîte ne remplit pas tout l&apos;espace.
 
@@ -2120,7 +2086,7 @@ lb << Horizontal Alignment( "Right" );
 
 ### Inval
 
-**Syntaxe :** obj << Inval
+**Syntaxe :** obj &lt;&lt; Inval
 
 **Description :** Invalider la boîte d&apos;affichage. La fenêtre sera actualisée lorsque le message <<Actualiser la fenêtre sera envoyé, ou lorsque le système d&apos;exploitation disposera de temps pour la mise à jour.
 
@@ -2164,7 +2130,7 @@ New Window( "Inval example",
 
 ### Is Dirty
 
-**Syntaxe :** obj << Is Dirty
+**Syntaxe :** obj &lt;&lt; Is Dirty
 
 **Description :** Obtient le statut de modification du document. 1 signifie que le document a été modifié et invitera l&apos;utilisateur à l&apos;enregistrer ; 0 signifie que le document n&apos;est pas modifié.
 
@@ -2186,7 +2152,7 @@ Show( ww << Is Dirty );
 
 ### Is Modal Dialog
 
-**Syntaxe :** obj << Is Modal Dialog
+**Syntaxe :** obj &lt;&lt; Is Modal Dialog
 
 **Description :** Renvoie vrai si la fenêtre est une boîte de dialogue modale. Utile uniquement si appelé à partir d&apos;un rappel de gestionnaire de fenêtre.
 
@@ -2205,7 +2171,7 @@ With Window Handler(
 
 ### Journal
 
-**Syntaxe :** obj << Journal
+**Syntaxe :** obj &lt;&lt; Journal
 
 **Description :** Crée un journal à partir de la boîte de dialogue.
 
@@ -2222,7 +2188,7 @@ rbiv << journal;
 
 ### Journal Window
 
-**Syntaxe :** obj << Journal Window
+**Syntaxe :** obj &lt;&lt; Journal Window
 
 **Description :** Ouvre une fenêtre de journal de la fenêtre.
 
@@ -2237,7 +2203,7 @@ w << Journal Window;
 
 ### Launch
 
-**Syntaxe :** obj << Launch
+**Syntaxe :** obj &lt;&lt; Launch
 
 **Description :** Calcule l’argument donné argument dans le contexte de la boîte d’affichage.
 
@@ -2259,7 +2225,7 @@ ob3 << launch( Bivariate( Y( :height ), X( :weight ) ) );
 
 ### Make RowState Handler
 
-**Syntaxe :** rs = obj << Make RowState Handler( <dt>, function(a) )
+**Syntaxe :** rs = obj &lt;&lt; Make RowState Handler( &lt;dt&gt;, function(a) )
 
 **Description :** Crée un gestionnaire d&apos;état de ligne pour la table de données spécifiée ou pour la table de données active. La fonction est appelée lorsque les états de ligne changent dans le contexte du filtre de la zone. L&apos;argument de la fonction contient les numéros de lignes modifiés, ou -1 si le filtre de l&apos;état de ligne a été modifié.
 
@@ -2354,9 +2320,7 @@ updatetext();
 
 ### Margin
 
-**Syntaxe :** obj << Margin( sides );
-
-sides = obj << Get Margin
+**Syntaxe :** obj &lt;&lt; Margin( sides );sides = obj &lt;&lt; Get Margin
 
 **Description :** La marge ajoute un espace entre la bordure de la boîte et les boîtes adjacentes. Utilisez des arguments nommés ou fournissez une liste de valeurs. Si une seule valeur est spécifiée, elle sera appliquée à tous les côtés. Si deux valeurs sont spécifiées, elles seront appliquées aux marges horizontale et verticale.
 
@@ -2377,7 +2341,7 @@ tb << Margin( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ### Maximize Window
 
-**Syntaxe :** obj << Maximize Window( <state=0|1> )
+**Syntaxe :** obj &lt;&lt; Maximize Window( &lt;state=0|1&gt; )
 
 **Description :** Agrandir la fenêtre. L&apos;argument par défaut est 1.
 
@@ -2395,7 +2359,7 @@ w << Maximize Window( 0 );
 
 ### Minimize Window
 
-**Syntaxe :** obj << Minimize Window( <state=0|1> )
+**Syntaxe :** obj &lt;&lt; Minimize Window( &lt;state=0|1&gt; )
 
 **Description :** Réduire la fenêtre. L&apos;argument par défaut est 1.
 
@@ -2413,7 +2377,7 @@ w << Minimize Window( 0 );
 
 ### Move Window
 
-**Syntaxe :** obj << Move Window( x,y )
+**Syntaxe :** obj &lt;&lt; Move Window( x,y )
 
 **Description :** Déplace la fenêtre à la position spécifiée.
 
@@ -2429,7 +2393,7 @@ w << Move Window( 500, 500 );
 
 ### Next
 
-**Syntaxe :** obj << Next
+**Syntaxe :** obj &lt;&lt; Next
 
 **Description :** Renvoie la boîte d’affichage immédiatement après celle-ci.
 
@@ -2447,7 +2411,7 @@ Print( next << Class Name() );
 
 ### On Close
 
-**Syntaxe :** obj << On Close( script )
+**Syntaxe :** obj &lt;&lt; On Close( script )
 
 **Description :** Définit l&apos;exécution d&apos;un script ou d&apos;une fonction à la fermeture d&apos;une fenêtre. Ce script renvoie 1 pour autoriser la fermeture, ou 0 pour empêcher la fermeture de la fenêtre.
 
@@ -2501,7 +2465,7 @@ w << On Close(
 
 ### Optimize Display
 
-**Syntaxe :** obj << Optimize Display
+**Syntaxe :** obj &lt;&lt; Optimize Display
 
 **Description :** Définit les largeurs de colonne et la fenêtre d&apos;une table de données pour une taille optimale.
 
@@ -2518,7 +2482,7 @@ dt << Optimize Display;
 
 ### Pad Window
 
-**Syntaxe :** obj << Pad Window( bool )
+**Syntaxe :** obj &lt;&lt; Pad Window( bool )
 
 **Description :** Ajoute ou supprime les marges de la fenêtre.
 
@@ -2535,9 +2499,7 @@ r << Pad Window( 0 );
 
 ### Padding
 
-**Syntaxe :** obj << Padding( sides );
-
-sides = obj << Get Padding
+**Syntaxe :** obj &lt;&lt; Padding( sides );sides = obj &lt;&lt; Get Padding
 
 **Description :** Le remplissage ajoute un espace entre le contenu et la bordure de la boîte. Utilisez des arguments nommés ou fournissez une liste de valeurs. Si une seule valeur est spécifiée, elle sera appliquée à tous les côtés. Si deux valeurs sont spécifiées, elles seront appliquées aux remplissages horizontal et vertical.
 
@@ -2558,7 +2520,7 @@ tb << Padding( Left( 20 ), Top( 20 ), Right( 20 ), Bottom( 20 ) );
 
 ### Page Break
 
-**Syntaxe :** obj << Page Break
+**Syntaxe :** obj &lt;&lt; Page Break
 
 **Description :** Insère un saut de page avant la boîte d’affichage.
 
@@ -2590,7 +2552,7 @@ ob3 << Page Break;
 
 ### Parent
 
-**Syntaxe :** obj << Parent
+**Syntaxe :** obj &lt;&lt; Parent
 
 **Description :** Renvoie le parent de la boîte d’affichage.
 
@@ -2609,7 +2571,7 @@ Print( axisParent << Class Name() );
 
 ### Prepend
 
-**Syntaxe :** obj << Prepend( db2 )
+**Syntaxe :** obj &lt;&lt; Prepend( db2 )
 
 **Description :** Ajoute db2 à l’arbre d’affichage avant db.
 
@@ -2626,7 +2588,7 @@ rbiv << prepend( Text Box( "=== above ===" ) );
 
 ### Prev Sib
 
-**Syntaxe :** obj << Prev Sib
+**Syntaxe :** obj &lt;&lt; Prev Sib
 
 **Description :** Renvoie le frère précédent de la boîte d’affichage.
 
@@ -2647,7 +2609,7 @@ Print( axisSibling << Class Name() );
 
 ### Print Window
 
-**Syntaxe :** obj << Print Window
+**Syntaxe :** obj &lt;&lt; Print Window
 
 **Description :** Imprime la fenêtre.
 
@@ -2662,7 +2624,7 @@ w << Print Window;
 
 ### Reshow
 
-**Syntaxe :** obj << Reshow
+**Syntaxe :** obj &lt;&lt; Reshow
 
 **Description :** Invalider la boîte d&apos;affichage et mettre à jour la fenêtre avec le nouveau contenu. Consulter les messages <<Inval et <<Actualiser la fenêtre si la synchronisation de la mise à jour requiert un contrôle plus poussé.
 
@@ -2691,7 +2653,7 @@ New Window( "Reshow example",
 
 ### Save Capture
 
-**Syntaxe :** obj << Save Capture( <"path">, <format>, <Add Sibling(n)> )
+**Syntaxe :** obj &lt;&lt; Save Capture( &lt;"path"&gt;, &lt;format&gt;, &lt;Add Sibling(n)&gt; )
 
 **Description :** Enregistre la capture d&apos;écran de la boîte d&apos;affichage au path spécifié. Si un path n&apos;est pas spécifié, la fenêtre Enregistrer sous s&apos;affiche.
 
@@ -2708,7 +2670,7 @@ rbiv << Save Capture( "$TEMP/jmp_example.png", "png" );
 
 ### Save HTML
 
-**Syntaxe :** obj << Save HTML( <pathname>, <format> )
+**Syntaxe :** obj &lt;&lt; Save HTML( &lt;pathname&gt;, &lt;format&gt; )
 
 **Description :** Enregistre le code source HTML et le dossier du graphique au format format spécifié.
 
@@ -2725,7 +2687,7 @@ rbiv << Save HTML( "$TEMP/jmp_example.html" );
 
 ### Save Interactive HTML
 
-**Syntaxe :** obj << Save Interactive HTML( <pathname>, <Boolean> )
+**Syntaxe :** obj &lt;&lt; Save Interactive HTML( &lt;pathname&gt;, &lt;Boolean&gt; )
 
 **Description :** Enregistre l&apos;HTML interactif avec les données dans un fichier. L&apos;argument Boolean indique que le rapport est statique.
 
@@ -2742,7 +2704,7 @@ rbiv << Save Interactive HTML( "$TEMP/jmp_example.html" );
 
 ### Save Journal
 
-**Syntaxe :** obj << Save Journal( <pathname> )
+**Syntaxe :** obj &lt;&lt; Save Journal( &lt;pathname&gt; )
 
 **Description :** Enregistre le code source du journal de la boîte d’affichage.
 
@@ -2759,7 +2721,7 @@ rbiv << Save Journal( "$TEMP/jmp_example.jrn" );
 
 ### Save MSWord
 
-**Syntaxe :** obj << Save MSWord( <pathname>, <format> )
+**Syntaxe :** obj &lt;&lt; Save MSWord( &lt;pathname&gt;, &lt;format&gt; )
 
 **Description :** Enregistre la boîte d’affichage en tant que document Microsoft Word. (Windows uniquement)
 
@@ -2776,7 +2738,7 @@ rbiv << Save MSWord( "$TEMP/jmp_example.doc" );
 
 ### Save PDF
 
-**Syntaxe :** obj << Save PDF( <pathname>, <Show Page Setup(0|1)>, <Portrait(0|1)> )
+**Syntaxe :** obj &lt;&lt; Save PDF( &lt;pathname&gt;, &lt;Show Page Setup(0|1)&gt;, &lt;Portrait(0|1)&gt; )
 
 **Description :** Enregistre un PDF de la boîte d’affichage.
 
@@ -2793,7 +2755,7 @@ rbiv << Save PDF( "$TEMP/jmp_example.pdf" );
 
 ### Save Picture
 
-**Syntaxe :** obj << Save Picture( <pathname>, <format>, <Scale(factor)>, <Type("Bitmap" | "Scalable")>, <View("Picture" | "Screen" | "Print"), <Appearance("Default" | "Current")>, <SubRect(Left(number), Top(number), Right(number), Bottom(number))> )
+**Syntaxe :** obj &lt;&lt; Save Picture( &lt;pathname&gt;, &lt;format&gt;, &lt;Scale(factor)&gt;, &lt;Type("Bitmap" | "Scalable")&gt;, &lt;View("Picture" | "Screen" | "Print"), &lt;Appearance("Default" | "Current")&gt;, &lt;SubRect(Left(number), Top(number), Right(number), Bottom(number))&gt; )
 
 **Description :** Enregistre une image de la boîte d&apos;affichage. Les formats pris en charge sont EMF (Windows), PICT (Macintosh), JPEG ou JPG, GIF et PNG. L&apos;argument facultatif Scale restituera l&apos;image à une résolution mise à l&apos;échelle. La mise à l&apos;échelle requiert que la boîte d&apos;affichage soit ajustable. L&apos;argument Type détermine si le résultat sera une image vectorielle pouvant être mise à l&apos;échelle ou un bitmap. Par défaut, une image pouvant être mise a l&apos;échelle est renvoyée, ce qui convient à l&apos;enregistrement aux formats vectoriels comme PDF. L&apos;option View change le comportement de certaines boîtes. L&apos;option par défaut "Picture" affiche le rapport comme il le serait à l&apos;exportation au format image, avec les zones déroulées complètement affichées. Le mode d&apos;affichage "Screen" affiche le rapport comme vu à l&apos;écran, et "Print" l&apos;affiche comme à l&apos;impression, sans aucune fonction de configuration de page. L&apos;option SubRect capturera une portion de l&apos;image résultante plutôt que l&apos;image entière. L&apos;option Appearance peut changer des couleurs de sortie "Default" aux couleurs "Current" comme vu à l&apos;écran. Les options View, SubRect et Appearance sont uniquement prises en charge pour Type "Bitmap".
 
@@ -2869,7 +2831,7 @@ rbiv << Save Picture( "$TEMP/jmp_example.png", "png" );
 
 ### Save Presentation
 
-**Syntaxe :** obj << Save Presentation( "filename.pptx", <Template("path\to\my_template.pptx")>, <Insert(Begin|End|#) | Replace(Begin|End|#) | Append>, <Outline Titles(None|Hide|TopLeft|TopRight|BottomLeft|BottomRight)>, <"EMF"|"PNG"|"JPG"|"Native"> )
+**Syntaxe :** obj &lt;&lt; Save Presentation( "filename.pptx", &lt;Template("path\to\my_template.pptx")&gt;, &lt;Insert(Begin|End|#) | Replace(Begin|End|#) | Append&gt;, &lt;Outline Titles(None|Hide|TopLeft|TopRight|BottomLeft|BottomRight)&gt;, &lt;"EMF"|"PNG"|"JPG"|"Native"&gt; )
 
 **Description :** Enregistre les tables de la boîte d&apos;affichage et les diapositives de graphiques dans une présentation qui peut être vue avec Microsoft PowerPoint ou un autre logiciel de présentation.
 
@@ -2886,7 +2848,7 @@ Open( "$TEMP/jmp_example.pptx" );
 
 ### Save RTF
 
-**Syntaxe :** obj << Save RTF( <pathname>, <format> )
+**Syntaxe :** obj &lt;&lt; Save RTF( &lt;pathname&gt;, &lt;format&gt; )
 
 **Description :** Enregistre le code source RTF avec le graphique au format format spécifié.
 
@@ -2903,7 +2865,7 @@ rbiv << Save RTF( "$TEMP/jmp_example.rtf", "png" );
 
 ### Save Text
 
-**Syntaxe :** obj << Save Text( <pathname>, <format> )
+**Syntaxe :** obj &lt;&lt; Save Text( &lt;pathname&gt;, &lt;format&gt; )
 
 **Description :** Enregistre un fichier contenant le texte de la boîte d’affichage.
 
@@ -2918,7 +2880,7 @@ a << save text( "$TEMP/jmp_example.txt" );
 
 ### Save Window Report
 
-**Syntaxe :** obj << Save Window Report( pathname, <embed data(0|1)> )
+**Syntaxe :** obj &lt;&lt; Save Window Report( pathname, &lt;embed data(0|1)&gt; )
 
 **Description :** Enregistre la fenêtre du rapport actuel dans un fichier de rapport JMP (.jrp).
 
@@ -2936,7 +2898,7 @@ d << Save Window Report( "$DOCUMENTS/test.jrp", embed data( 1 ) );
 
 ### Scroll Window
 
-**Syntaxe :** obj << Scroll Window( DisplayBox | <Relative(<v> | <h>,<v>)> | <Absolute(<v> | <h>,<v>) )
+**Syntaxe :** obj &lt;&lt; Scroll Window( DisplayBox | &lt;Relative(&lt;v&gt; | &lt;h&gt;,&lt;v&gt;)&gt; | &lt;Absolute(&lt;v&gt; | &lt;h&gt;,&lt;v&gt;) )
 
 **Description :** Ajustez la barre de défilement de la fenêtre de manière à afficher l&apos;objet DisplayBox donnée, ou à faire défiler un nombre relatif de pixels, ou à afficher un emplacement de pixel absolu. Pour remplacer un nombre de pixels, vous pouvez utiliser les mots-clés "Start" ou "End".
 
@@ -3020,7 +2982,7 @@ Wait( 1 );
 
 ### Select
 
-**Syntaxe :** obj << Select
+**Syntaxe :** obj &lt;&lt; Select
 
 **Description :** Sélectionne cet objet à utiliser par les commandes du menu Édition.
 
@@ -3035,7 +2997,7 @@ ex << Select;
 
 ### Set Content Size
 
-**Syntaxe :** obj << Set Content Size( x,y )
+**Syntaxe :** obj &lt;&lt; Set Content Size( x,y )
 
 **Description :** Définit la taille du contenu dans la fenêtre.
 
@@ -3061,7 +3023,7 @@ w << Set Content Size( 400, 300 );
 
 ### Set Dirty
 
-**Syntaxe :** obj << Set Dirty
+**Syntaxe :** obj &lt;&lt; Set Dirty
 
 **Description :** Définit le statut de modification du document. 0 n&apos;invitera pas à enregistrer ; 1 y invitera.
 
@@ -3083,7 +3045,7 @@ Show( ww << Is Dirty );
 
 ### Set Height
 
-**Syntaxe :** obj << Set Height( width )
+**Syntaxe :** obj &lt;&lt; Set Height( width )
 
 **Description :** Définit la hauteur de la boîte d’affichage.
 
@@ -3101,7 +3063,7 @@ fb << Set Height( 150 );
 
 ### Set Main Window
 
-**Syntaxe :** obj << Set Main Window
+**Syntaxe :** obj &lt;&lt; Set Main Window
 
 **Description :** Définit la fenêtre active en tant que fenêtre principale de JMP alors que la fenêtre principale précédente devient une fenêtre normale.
 
@@ -3116,7 +3078,7 @@ w << Set Main Window;
 
 ### Set Max Size
 
-**Syntaxe :** obj << Set Max Size( width,height )
+**Syntaxe :** obj &lt;&lt; Set Max Size( width,height )
 
 **Description :** Définit la taille maximale de cette boîte d’affichage afin de permettre l’ajustement automatique de la boîte.
 
@@ -3135,7 +3097,7 @@ fb << Get Max Size;
 
 ### Set Min Size
 
-**Syntaxe :** obj << Set Min Size( width,height )
+**Syntaxe :** obj &lt;&lt; Set Min Size( width,height )
 
 **Description :** Définit la taille minimale de cette boîte d’affichage afin de permettre l’ajustement automatique de la boîte.
 
@@ -3154,7 +3116,7 @@ fb << Get Min Size;
 
 ### Set Page Setup
 
-**Syntaxe :** obj << Set Page Setup( <margins(left, top, right, bottom)>, <scale(s)>, <portrait(0|1)>, <paper size(p)>, <Table of Contents(always, never, default)>  )
+**Syntaxe :** obj &lt;&lt; Set Page Setup( &lt;margins(left, top, right, bottom)&gt;, &lt;scale(s)&gt;, &lt;portrait(0|1)&gt;, &lt;paper size(p)&gt;, &lt;Table of Contents(always, never, default)&gt; )
 
 **Description :** Définit les informations de mise en page utilisées pour l&apos;impression ou l&apos;enregistrement en tant que PDF. Une table des matières peut éventuellement être générée à partir de boîtes de structure.
 
@@ -3178,7 +3140,7 @@ w << Save pdf( "$DOCUMENTS\test.pdf" );
 
 ### Set Print Footers
 
-**Syntaxe :** obj << Set Print Footers( left footer, center footer, right header )
+**Syntaxe :** obj &lt;&lt; Set Print Footers( left footer, center footer, right header )
 
 **Description :** Définit les pieds de page de gauche, du centre et de droite de la sortie imprimée
 
@@ -3197,7 +3159,7 @@ w << Print Window;
 
 ### Set Print Headers
 
-**Syntaxe :** obj << Set Print Headers( left header, center header, right header )
+**Syntaxe :** obj &lt;&lt; Set Print Headers( left header, center header, right header )
 
 **Description :** Définit les en-têtes de gauche, du centre et de droite de la sortie imprimée
 
@@ -3216,7 +3178,7 @@ w << Print Window;
 
 ### Set Property
 
-**Syntaxe :** obj << Set Property( "property", value )
+**Syntaxe :** obj &lt;&lt; Set Property( "property", value )
 
 **Description :** Définit la valeur pour la property nommée pour la boîte d&apos;affichage.
 
@@ -3232,7 +3194,7 @@ bb << Set Property( "Enabled", 0 );
 
 ### Set Report Title
 
-**Syntaxe :** obj << Set Report Title( "string" )
+**Syntaxe :** obj &lt;&lt; Set Report Title( "string" )
 
 **Description :** Modifie le titre du rapport.
 
@@ -3249,7 +3211,7 @@ rbiv << Set Report Title( "New Title" );
 
 ### Set Stretch
 
-**Syntaxe :** obj << Set Stretch( x,y )
+**Syntaxe :** obj &lt;&lt; Set Stretch( x,y )
 
 **Description :** Définit le comportement d&apos;ajustement horizontal et vertical de la boîte. Les boîtes ajustées avec Window seront redimensionnées lorsque la dimension de la fenêtre ou du séparateur est modifiée. Les boîtes ajustées pour Fill seront ajustées pour remplir l&apos;espace disponible dans leur conteneur. Les boîtes avec ajustement Off ne seront généralement pas ajustées. La plupart des boîtes sont réglées par défaut à Neutral, ce qui signifie que leur comportement sera déterminé en fonction de leurs boîtes enfant.
 
@@ -3304,7 +3266,7 @@ New Window( "Stretch",
 
 ### Set Summary Behavior
 
-**Syntaxe :** obj << Set Summary Behavior( "Default"|"Visible"|"Collapse" )
+**Syntaxe :** obj &lt;&lt; Set Summary Behavior( "Default"|"Visible"|"Collapse" )
 
 **Description :** Sets the behavior of the box when a report is viewed in Summary mode.
 
@@ -3323,7 +3285,7 @@ tb << Set Summary Behavior( "Visible" );
 
 ### Set Width
 
-**Syntaxe :** obj << Set Width( width )
+**Syntaxe :** obj &lt;&lt; Set Width( width )
 
 **Description :** Définit la largeur de la boîte d’affichage.
 
@@ -3341,7 +3303,7 @@ fb << Set Width( 400 );
 
 ### Set Window Icon
 
-**Syntaxe :** obj << Set Window Icon( icon name )
+**Syntaxe :** obj &lt;&lt; Set Window Icon( icon name )
 
 **Description :** Définit l’icône de la fenêtre.
 
@@ -3356,7 +3318,7 @@ w << Set Window Icon( "Scatter3D" );
 
 ### Set Window Size
 
-**Syntaxe :** obj << Set Window Size( x,y )
+**Syntaxe :** obj &lt;&lt; Set Window Size( x,y )
 
 **Description :** Définit la taille de la fenêtre.
 
@@ -3371,7 +3333,7 @@ w << Set Window Size( 800, 1200 );
 
 ### Set Window Title
 
-**Syntaxe :** obj << Set Window Title( "string" )
+**Syntaxe :** obj &lt;&lt; Set Window Title( "string" )
 
 **Description :** Modifie le titre de la fenêtre.
 
@@ -3388,7 +3350,7 @@ rbiv << Set Window Title( "New Title" );
 
 ### Show Properties
 
-**Syntaxe :** obj << Show Properties
+**Syntaxe :** obj &lt;&lt; Show Properties
 
 **Description :** Affiche un éditeur de propriétés des boîtes d&apos;affichage
 
@@ -3405,7 +3367,7 @@ rbiv << Show Properties();
 
 ### Show Tree Structure
 
-**Syntaxe :** obj << Show Tree Structure
+**Syntaxe :** obj &lt;&lt; Show Tree Structure
 
 **Description :** Affiche une structure hiérarchique de la boîte d’affichage et de ses nœuds.
 
@@ -3422,7 +3384,7 @@ rbiv << Show Tree Structure();
 
 ### Show Window
 
-**Syntaxe :** obj << Show Window( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Show Window( state=0|1 )
 
 **Description :** Affiche ou masque la fenêtre. Ceci s’avère utile pour les fenêtres provisoirement masquées. Actif par défaut.
 
@@ -3440,7 +3402,7 @@ w << Show Window( 1 );
 
 ### Sib
 
-**Syntaxe :** obj << Sib
+**Syntaxe :** obj &lt;&lt; Sib
 
 **Description :** Renvoie le frère de la boîte d’affichage.
 
@@ -3459,7 +3421,7 @@ Print( axisSibling << Class Name() );
 
 ### Sib Append
 
-**Syntaxe :** obj << Sib Append( Display box, Horizontal|Vertical )
+**Syntaxe :** obj &lt;&lt; Sib Append( Display box, Horizontal|Vertical )
 
 **Description :** Ajoute une boîte d’affichage immédiatement après celle-ci.
 
@@ -3484,7 +3446,7 @@ fb << sib append( Text Box( "=== below ===" ), "Vertical" );
 
 ### Sib Prepend
 
-**Syntaxe :** obj << Sib Prepend( Display box, Horizontal|Vertical )
+**Syntaxe :** obj &lt;&lt; Sib Prepend( Display box, Horizontal|Vertical )
 
 **Description :** Ajoute une boîte d’affichage immédiatement avant celle-ci.
 
@@ -3509,7 +3471,7 @@ fb << sib prepend( Text Box( "=== above ===" ), "Vertical" );
 
 ### Size Window
 
-**Syntaxe :** obj << Size Window( x,y )
+**Syntaxe :** obj &lt;&lt; Size Window( x,y )
 
 **Description :** Définit la taille de la fenêtre.
 
@@ -3524,9 +3486,7 @@ w << Size Window( 500, 500 );
 
 ### Text Color
 
-**Syntaxe :** obj << Text Color( color );
-
-color = obj << Get Text Color
+**Syntaxe :** obj &lt;&lt; Text Color( color );color = obj &lt;&lt; Get Text Color
 
 **Description :** Le texte sera écrit dans une couleur de texte si celle-ci a été préalablement définie. Dans le cas contraire, la boîte héritera la couleur de la boîte conteneur.
 
@@ -3548,7 +3508,7 @@ tb << Text Color( "Red" );
 
 ### Top Parent
 
-**Syntaxe :** obj << Top Parent
+**Syntaxe :** obj &lt;&lt; Top Parent
 
 **Description :** Renvoie le parent racine de la boîte d’affichage.
 
@@ -3566,13 +3526,11 @@ Print( rootParent << Class Name() );
 
 ### UI Only
 
-**Syntaxe :** obj << UI Only( state=0|1 );
-
-state = obj << Get UI Only
+**Syntaxe :** obj &lt;&lt; UI Only( state=0|1 );state = obj &lt;&lt; Get UI Only
 
 ### Update Window
 
-**Syntaxe :** obj << Update Window
+**Syntaxe :** obj &lt;&lt; Update Window
 
 **Description :** Mettre à jour la fenêtre contenant la boîte d&apos;affichage s&apos;il y a des régions invalidées. Le message <<Inval crée les régions invalidées.
 
@@ -3626,9 +3584,7 @@ New Window( "rect",
 
 ### User Resizable
 
-**Syntaxe :** obj << User Resizable;
-
-obj << Get User Resizable
+**Syntaxe :** obj &lt;&lt; User Resizable;obj &lt;&lt; Get User Resizable
 
 **Description :** Si la zone peut être redimensionnée par l&apos;utilisateur, le curseur situé près du bord inférieur droit changera pour permettre un redimensionnement à l&apos;aide d&apos;un glisser-déposer.
 
@@ -3667,9 +3623,7 @@ scroll << User Resizable( {0, 0} );
 
 ### Vertical Alignment
 
-**Syntaxe :** obj << Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );
-
-"Default"|"Top"|"Center"|"Bottom" = obj << Get Vertical Alignment
+**Syntaxe :** obj &lt;&lt; Vertical Alignment( "Default"|"Top"|"Center"|"Bottom" );"Default"|"Top"|"Center"|"Bottom" = obj &lt;&lt; Get Vertical Alignment
 
 **Description :** L&apos;alignement vertical gère le positionnement de la boîte dans un conteneur lorsque la boîte ne remplit pas tout l&apos;espace..
 
@@ -3691,9 +3645,7 @@ lb << Vertical Alignment( "Bottom" );
 
 ### Visibility
 
-**Syntaxe :** obj << Visibility( "Visible"|"Hidden"|"Collapse" );
-
-"Visible"|"Hidden"|"Collapse" = obj << Get Visibility
+**Syntaxe :** obj &lt;&lt; Visibility( "Visible"|"Hidden"|"Collapse" );"Visible"|"Hidden"|"Collapse" = obj &lt;&lt; Get Visibility
 
 **Description :** La visibilité détermine si une boîte est affichée et si elle occupe un espace. La valeur par défaut de la visibilité "Visible" indique que l&apos;objet sera affiché. Une boîte "Hidden" n&apos;est pas affichée mais elle occupe encore un espace, alors qu&apos;une boîte "Collapsed" n&apos;occupe pas d&apos;espace dans la mise en page.
 
@@ -3714,7 +3666,7 @@ Show( tb << Get Visibility );
 
 ### Window Class Name
 
-**Syntaxe :** obj << Window Class Name
+**Syntaxe :** obj &lt;&lt; Window Class Name
 
 **Description :** Renvoie le nom de la classe de fenêtre associée à la boîte d’affichage.
 
@@ -3732,7 +3684,7 @@ Show( rbiv << Window Class Name() );
 
 ### XPath
 
-**Syntaxe :** obj << XPath( XPath expression, <English(0|1)>, <NoData(0|1)> )
+**Syntaxe :** obj &lt;&lt; XPath( XPath expression, &lt;English(0|1)&gt;, &lt;NoData(0|1)&gt; )
 
 **Description :** Applique une expression Xpath à la représentation XML de l’arbre d’affichage et renvoie les résultats. Par défaut, les chaînes sont renvoyées dans la langue locale et le XML contient les valeurs des données dans des boîtes. Utilisez l&apos;option English pour renvoyer des chaînes anglaises, le cas échéant. Utilisez l&apos;option NoData pour omettre les valeurs des données dans les boîtes, ce qui peut être utile pour optimiser les performances des requêtes basées uniquement sur des attributs de boîte.
 
@@ -3815,7 +3767,7 @@ biv = dt << Run Script( "Bivariate" );
 
 ### Zoom Window
 
-**Syntaxe :** obj << Zoom Window
+**Syntaxe :** obj &lt;&lt; Zoom Window
 
 **Description :** Redimensionne la fenêtre de sorte qu&apos;elle soit suffisamment grande pour afficher tout son contenu.
 

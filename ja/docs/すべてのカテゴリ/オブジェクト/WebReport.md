@@ -6,7 +6,7 @@
 
 ### Add Image
 
-**構文:** obj << Add Image("path to image" | File("path to image"), <Title(...)>,<Description(...)>)
+**構文:** obj &lt;&lt; Add Image("path to image" | File("path to image"), &lt;Title(...)&gt;,&lt;Description(...)&gt;)
 
 **説明:** Webレポートに画像を追加する。オプションの引数として、タイトルや説明を指定できる。
 
@@ -26,7 +26,7 @@ webreport << Add Image(
 
 ### Add Report
 
-**構文:** obj << Add Report( jmpreport, <Title(...)>, <Description(...)>, <Publish Data(0|1)>, <Enable Warnings(0|1)>, <Optimization("Interactivity" | "Performance")> )
+**構文:** obj &lt;&lt; Add Report( jmpreport, &lt;Title(...)&gt;, &lt;Description(...)&gt;, &lt;Publish Data(0|1)&gt;, &lt;Enable Warnings(0|1)&gt;, &lt;Optimization("Interactivity" | "Performance")&gt; )
 
 **説明:** Webレポートにレポートを追加する。オプションの引数として、タイトルや説明を指定できる。
 
@@ -48,7 +48,7 @@ webreport << Add Report( jmpreport );
 
 ### Add Reports
 
-**構文:** obj << Add Reports( reports )
+**構文:** obj &lt;&lt; Add Reports( reports )
 
 **説明:** JMPレポートのリストを、デフォルトのオプションを使用してWebレポートに追加する。
 
@@ -82,7 +82,7 @@ If( N Items( windows ) > 0,
 
 ### Description
 
-**構文:** obj << Description(...)
+**構文:** obj &lt;&lt; Description(...)
 
 **説明:** Webレポートの説明を設定する。
 
@@ -118,7 +118,7 @@ If( !Is Empty( file ),
 
 ### Index
 
-**構文:** obj << Index( Title(...), <Description(...)>, <Timestamp(1 | 0)>, <Font(name, style)>, <Logo(image path)>, <CSS(css path)>, <Theme(Default | Orange | Blue | Red | Green | Black)>, <Style(LargeList | SmallList | Grid | Custom)> )
+**構文:** obj &lt;&lt; Index( Title(...), &lt;Description(...)&gt;, &lt;Timestamp(1 | 0)&gt;, &lt;Font(name, style)&gt;, &lt;Logo(image path)&gt;, &lt;CSS(css path)&gt;, &lt;Theme(Default | Orange | Blue | Red | Green | Black)&gt;, &lt;Style(LargeList | SmallList | Grid | Custom)&gt; )
 
 **説明:** Webレポートに独自のインデックスページを追加する。
 
@@ -159,7 +159,7 @@ If( !Is Empty( file ),
 
 ### Reset
 
-**構文:** obj << Reset()
+**構文:** obj &lt;&lt; Reset()
 
 **説明:** Webレポートを新しい値にリセットする。発行先、ファイルの場所、およびその他のキャッシュされた情報をクリアする。
 
@@ -193,7 +193,7 @@ webreport << Add Report( jmpreport );
 
 ### Save
 
-**構文:** obj << Save ("directory path", <Replace(<0>|<1>)>, <Publish Data(<0>|<1>)>)
+**構文:** obj &lt;&lt; Save ("directory path", &lt;Replace(&lt;0&gt;|&lt;1&gt;)&gt;, &lt;Publish Data(&lt;0&gt;|&lt;1&gt;)&gt;)
 
 **説明:** Webレポートを指定したディレクトリに保存する。正常に完了すると、発行したレポートのファイル名が戻される。ローカルに保存されるWebレポートには、ユーザデータを組み込むことができる。Publish Dataの値をfalseに設定すると、ユーザデータは組み込まれず、インタラクティブでないレポートが作成される。デフォルトの値はtrue。
 
@@ -219,7 +219,7 @@ If( !Is Empty( file ),
 
 ### Title
 
-**構文:** obj << Title(...)
+**構文:** obj &lt;&lt; Title(...)
 
 **説明:** Webレポートのタイトルを設定する。
 

@@ -6,7 +6,7 @@
 
 ### Control Chart Builder
 
-**Syntax:** Control Chart Builder( Class( "Shewhart Variables"|"Shewhart Attribute"|"Short Run"|"Rare Event" ), Variables( variables ), <Chart( Position( number ), Points( Statistic( "statistic" ), <points options> ), Limits( Sigma( "sigma" ), <limits options> )> ) ) )
+**Syntax:** Control Chart Builder( Class( "Shewhart Variables"|"Shewhart Attribute"|"Short Run"|"Rare Event" ), Variables( variables ), &lt;Chart( Position( number ), Points( Statistic( "statistic" ), &lt;points options&gt; ), Limits( Sigma( "sigma" ), &lt;limits options&gt; )&gt; ) ) )
 
 **Description:** Enables you to interactively create control charts, which are used to determine whether a process is stable and predictable. The Control Chart Builder platform can be used to create the following types of control charts: IMR, XBar, Short Run, Run, P, NP, C, U, Laney P&apos;, Laney U&apos;, Levey-Jennings, IMR on Means, Three Way, and Rare Event charts.
 
@@ -529,7 +529,7 @@ obj = dt << Control Chart Builder(
 
 ### Add Limits
 
-**Syntax:** obj << Chart( Position( number ), Add Limits( {LCL( number ), Avg( number ), UCL( number )} ) )
+**Syntax:** obj &lt;&lt; Chart( Position( number ), Add Limits( {LCL( number ), Avg( number ), UCL( number )} ) )
 
 **Description:** Adds an additional set of limits for the specified chart. The added limits appear as dashed lines.
 
@@ -544,7 +544,7 @@ obj << Chart( Position( 1 ), Add Limits( {LCL( 17.5 ), Avg( 20.25 ), UCL( 23 )} 
 
 ### Add Spec Limits
 
-**Syntax:** obj << Chart( Position( number ), Add Spec Limits( {LSL( number ), Target( number ), USL( number )} ) )
+**Syntax:** obj &lt;&lt; Chart( Position( number ), Add Spec Limits( {LSL( number ), Target( number ), USL( number )} ) )
 
 **Description:** Sets the specification limits for each Y variable.
 
@@ -559,7 +559,7 @@ obj << Chart( Position( 1 ), Add Spec Limits( {LSL( 18 ), Target( 20.1 ), USL( 2
 
 ### Alarm Script
 
-**Syntax:** obj << Alarm Script( Write( "..." )|Speak( "..." )|Mail( address, subject,"..." ) )
+**Syntax:** obj &lt;&lt; Alarm Script( Write( "..." )|Speak( "..." )|Mail( address, subject,"..." ) )
 
 **Description:** Sends a message whenever a point on a control chart fails a given test. The message can be sent to the log, can be spoken, or can be emailed.
 
@@ -588,7 +588,7 @@ obj << Alarm Script(
 
 ### Chart
 
-**Syntax:** obj << Chart( Position( number ), <Points( Statistic(),... )>, <Set Control Limits( { LCL(), UCL(), Avg() } )>, <Add Limits( { LCL(), UCL(), Avg() } )>, <Add Spec Limits( { LSL(), USL(), Target() } )>, <Limits( Sigma(), ... )>, <Warnings( Test number( state=0|1 ) )> )
+**Syntax:** obj &lt;&lt; Chart( Position( number ), &lt;Points( Statistic(),... )&gt;, &lt;Set Control Limits( { LCL(), UCL(), Avg() } )&gt;, &lt;Add Limits( { LCL(), UCL(), Avg() } )&gt;, &lt;Add Spec Limits( { LSL(), USL(), Target() } )&gt;, &lt;Limits( Sigma(), ... )&gt;, &lt;Warnings( Test number( state=0|1 ) )&gt; )
 
 **Description:** Sets the warning, limit, and point attributes for the chart that is specified by the Position argument.
 
@@ -614,7 +614,7 @@ obj = dt << Control Chart Builder(
 
 ### Class
 
-**Syntax:** obj << Class( "Shewhart Variables"|"Shewhart Attribute"|"Short Run"|"Rare Event" )
+**Syntax:** obj &lt;&lt; Class( "Shewhart Variables"|"Shewhart Attribute"|"Short Run"|"Rare Event" )
 
 **Description:** Specifies the class or family of point and sigma statistic combinations.
 
@@ -632,7 +632,7 @@ obj = dt << Control Chart Builder(
 
 ### Color By Product
 
-**Syntax:** obj << Color By Product( state=0|1 )
+**Syntax:** obj &lt;&lt; Color By Product( state=0|1 )
 
 **Description:** Colors the points plotted by the level of the product variable. On by default.
 
@@ -651,7 +651,7 @@ obj << Color By Product( 1 );
 
 ### Connect Thru Missing
 
-**Syntax:** obj << Connect Thru Missing( state=0|1 )
+**Syntax:** obj &lt;&lt; Connect Thru Missing( state=0|1 )
 
 **Description:** Determines whether points and lines are connected when some samples have missing values or excluded rows.
 
@@ -667,7 +667,7 @@ obj << Connect Thru Missing( 1 );
 
 ### Customize Tests
 
-**Syntax:** obj << Customize Tests( Test 1 | Test 2 | Test 3 | Test 4 | Test 5 | Test 6 | Test 7 | Test 8 (n, label) )
+**Syntax:** obj &lt;&lt; Customize Tests( Test 1 | Test 2 | Test 3 | Test 4 | Test 5 | Test 6 | Test 7 | Test 8 (n, label) )
 
 **Description:** Enables you to select, customize labels, and set the sigma-based distance parameters for Western Electric tests.
 
@@ -685,7 +685,7 @@ obj = dt << Control Chart Builder(
 
 ### Fit to Window
 
-**Syntax:** obj << Fit to Window( "Auto"|"On"|"Off"|"Maintain Aspect Ratio"="Off" )
+**Syntax:** obj &lt;&lt; Fit to Window( "Auto"|"On"|"Off"|"Maintain Aspect Ratio"="Off" )
 
 **Description:** Sets the auto stretching behavior of the report. "Off" by default.
 
@@ -701,7 +701,7 @@ obj << Fit to Window( "On" );
 
 ### Get Control Limits
 
-**Syntax:** obj << Get Control Limits( filename )
+**Syntax:** obj &lt;&lt; Get Control Limits( filename )
 
 **Description:** Imports control limits from a selected data table and replaces calculated limits on the chart.
 
@@ -721,7 +721,7 @@ obj << Get Control Limits( "$SAMPLE_DATA/Quality Control/CoatingLimits.jmp" );
 
 ### Get Product Statistics
 
-**Syntax:** obj << Get Product Statistics( filename )
+**Syntax:** obj &lt;&lt; Get Product Statistics( filename )
 
 **Description:** Imports values for the Short Run Product Target and Sigma from a specified data table.
 
@@ -740,7 +740,7 @@ obj << Get Product Statistics( "$SAMPLE_DATA/Quality Control/CoatingProductInfo.
 
 ### Get Spec Limits
 
-**Syntax:** obj << Get Spec Limits( filename )
+**Syntax:** obj &lt;&lt; Get Spec Limits( filename )
 
 **Description:** Imports specification limits from a file.
 
@@ -755,7 +755,7 @@ obj << Get Spec Limits( "$SAMPLE_DATA/CitySpecLimits.jmp" );
 
 ### Graph Borders
 
-**Syntax:** obj << Graph Borders( state=0|1 )
+**Syntax:** obj &lt;&lt; Graph Borders( state=0|1 )
 
 **Description:** Shows or hides the internal graph panel borders.
 
@@ -774,7 +774,7 @@ obj << Graph Borders( 1 );
 
 ### Graph Spacing
 
-**Syntax:** obj << Graph Spacing( gap=2 )
+**Syntax:** obj &lt;&lt; Graph Spacing( gap=2 )
 
 **Description:** Specifies the amount of space between the graph panels. "2" by default.
 
@@ -791,7 +791,7 @@ obj << Graph Spacing( 5 );
 
 ### Graph Spacing Color
 
-**Syntax:** obj << Graph Spacing Color( color )
+**Syntax:** obj &lt;&lt; Graph Spacing Color( color )
 
 **Description:** Specifies the color of the space between the graph panels.
 
@@ -808,7 +808,7 @@ obj << Graph Spacing Color( "Red" );
 
 ### Graph Spacing Transparency
 
-**Syntax:** obj << Graph Spacing Transparency( number )
+**Syntax:** obj &lt;&lt; Graph Spacing Transparency( number )
 
 **Description:** Specifies the transparency level of the space between the graph panels. Must be between 0 and 1.
 
@@ -825,7 +825,7 @@ obj << Graph Spacing Transparency( 0.3 );
 
 ### Include Missing Categories
 
-**Syntax:** obj << Include Missing Categories( state=0|1 )
+**Syntax:** obj &lt;&lt; Include Missing Categories( state=0|1 )
 
 **Description:** Includes an extra level for nominal and ordinal variables when the data contain missing values. On by default.
 
@@ -842,7 +842,7 @@ obj << Include Missing Categories( 0 );
 
 ### K Sigma
 
-**Syntax:** obj << K Sigma( value=3 )
+**Syntax:** obj &lt;&lt; K Sigma( value=3 )
 
 **Description:** Sets the K value to be multiplied by sigma to form the control limits about the average. "3" by default.
 
@@ -861,7 +861,7 @@ obj << K Sigma( 3 );
 
 ### Limits
 
-**Syntax:** obj << Chart( Position( number ), Limits( Sigma( "sigma" ), <Zones( state=0|1 )>, <Shade Zones( state=0|1 )>, <Set Control Limits( state=0|1 )>, <Show Upper Limit( state=0|1 )>, <Show Lower Limit( state=0|1 )>, <Show Center Line( state=0|1 )> ) )
+**Syntax:** obj &lt;&lt; Chart( Position( number ), Limits( Sigma( "sigma" ), &lt;Zones( state=0|1 )&gt;, &lt;Shade Zones( state=0|1 )&gt;, &lt;Set Control Limits( state=0|1 )&gt;, &lt;Show Upper Limit( state=0|1 )&gt;, &lt;Show Lower Limit( state=0|1 )&gt;, &lt;Show Center Line( state=0|1 )&gt; ) )
 
 **Description:** Provides options for changing the limit characteristics of the chart. Depending on the type of chart, you can assign one of the following values as the sigma argument: Range, Standard Deviation, Moving Range, Median Moving Range, Levey-Jennings, Poisson, Binomial, Negative Binomial, Weibull, Laney P Prime, or Laney U Prime.
 
@@ -883,7 +883,7 @@ obj << Chart(
 
 ### Limits Label Precision
 
-**Syntax:** obj << Limits Label Precision( number )
+**Syntax:** obj &lt;&lt; Limits Label Precision( number )
 
 **Description:** Specifies the precision that is displayed in the limits relative to the data.
 
@@ -901,7 +901,7 @@ obj << Limits Label Precision( 5 );
 
 ### OC Curve
 
-**Syntax:** obj << OC Curve
+**Syntax:** obj &lt;&lt; OC Curve
 
 **Description:** Shows in a new window, an Operator Characteristic Curve using the control limits and sigma from the control chart.
 
@@ -917,7 +917,7 @@ obj << OC Curve;
 
 ### Points
 
-**Syntax:** obj << Chart( Position( number ), Points( Statistic( "statistic" ), <Individual Points( state=0|1 )>, <Box Plots( state=0|1 )>, <Show Connect Line( state=0|1 )>, <Show Points( state=0|1 )> ) )
+**Syntax:** obj &lt;&lt; Chart( Position( number ), Points( Statistic( "statistic" ), &lt;Individual Points( state=0|1 )&gt;, &lt;Box Plots( state=0|1 )&gt;, &lt;Show Connect Line( state=0|1 )&gt;, &lt;Show Points( state=0|1 )&gt; ) )
 
 **Description:** Provides options for changing the point characteristics of the chart. Depending on the type of chart, you can assign one of the following values for the statistic argument: Average, Range, Standard Deviation, Moving Range on Means, Moving Range on Standard Deviation, Individual, Moving Range, Count, Proportion, Centered, Standardized, Range Centered, or Range Standardized.
 
@@ -937,7 +937,7 @@ obj << Chart( Position( 2 ), Points( Statistic( "Standard Deviation" ) ) );
 
 ### Product Statistics
 
-**Syntax:** obj << Product Statistics( ( column ) ( Product Level( l1 ( Target( number ), Sigma ( number ) ), <l2 ( Target( number ), Sigma ( number ) )) ), < (column ( Product Level( ... ) ) ) > )
+**Syntax:** obj &lt;&lt; Product Statistics( ( column ) ( Product Level( l1 ( Target( number ), Sigma ( number ) ), &lt;l2 ( Target( number ), Sigma ( number ) )) ), &lt; (column ( Product Level( ... ) ) ) &gt; )
 
 **Description:** Sets the values for the Short Run Product Target and Sigma.
 
@@ -958,7 +958,7 @@ obj << Product Statistics(
 
 ### Range Span
 
-**Syntax:** obj << Range Span( value=2 )
+**Syntax:** obj &lt;&lt; Range Span( value=2 )
 
 **Description:** Sets the value of the Range Span option that is used in the Moving Range charts. "2" by default.
 
@@ -974,7 +974,7 @@ obj << Range Span( 3 );
 
 ### Rerun All Tests
 
-**Syntax:** obj << Rerun All Tests
+**Syntax:** obj &lt;&lt; Rerun All Tests
 
 **Description:** Reruns all the currently selected tests and any associated alarm script.
 
@@ -1006,7 +1006,7 @@ obj << Rerun All Tests;
 
 ### Save Control Limits
 
-**Syntax:** obj << Save Control Limits( "in Column"|"in New Table"|"in New Tall Table" )
+**Syntax:** obj &lt;&lt; Save Control Limits( "in Column"|"in New Table"|"in New Tall Table" )
 
 **Description:** Saves control limits to either a column property or a new data table.
 
@@ -1031,7 +1031,7 @@ obj << Save Control Limits( "in New Table" );
 
 ### Save Product Statistics
 
-**Syntax:** obj << Save Product Statistics
+**Syntax:** obj &lt;&lt; Save Product Statistics
 
 **Description:** Saves columns to a new data table. The new data table contains the product statistics (target and sigma) for each level of the Part / Product variable.
 
@@ -1050,7 +1050,7 @@ obj << Save Product Statistics;
 
 ### Save Spec Limits
 
-**Syntax:** obj << Save Spec Limits
+**Syntax:** obj &lt;&lt; Save Spec Limits
 
 **Description:** Saves the specification limits to a new data table. This option is available only if specification limits have been set, with a Spec Limits column property, via JSL, Get Spec Limits file import or the Set Spec Limits option.
 
@@ -1066,7 +1066,7 @@ obj << Save Spec Limits;
 
 ### Save Summaries
 
-**Syntax:** obj << Save Summaries
+**Syntax:** obj &lt;&lt; Save Summaries
 
 **Description:** Saves a new data table for each chart. The data table includes a row for each sample and columns for the sample label, sample size, and product level, if a Product/Part variable is specified. For each chart, there are also columns for the individual point plotted, the chart type, UCL, Avg, LCL, and any selected tests that are failing.
 
@@ -1082,7 +1082,7 @@ obj << Save Summaries;
 
 ### Set Control Limits
 
-**Syntax:** obj << Chart( Position( number ), Set Control Limits( {LCL( number ), Avg( number ), UCL( number )} ) )
+**Syntax:** obj &lt;&lt; Chart( Position( number ), Set Control Limits( {LCL( number ), Avg( number ), UCL( number )} ) )
 
 **Description:** Sets the control limits for the specified chart.
 
@@ -1097,7 +1097,7 @@ obj << Chart( Position( 1 ), Set Control Limits( {LCL( 19 ), Avg( 20 ), UCL( 21 
 
 ### Set Last N Subgroups
 
-**Syntax:** obj << Set Last N Subgroups( number )
+**Syntax:** obj &lt;&lt; Set Last N Subgroups( number )
 
 **Description:** Changes the horizontal axis to show only the last N subgroups on the graph. The number of specified subgroups does not take into account excluded or hidden observations. This option is not available when there is a Phase variable with more than one level.
 
@@ -1113,7 +1113,7 @@ obj << Set Last n Subgroups( 5 );
 
 ### Set Sigma
 
-**Syntax:** obj << Set Sigma( value )
+**Syntax:** obj &lt;&lt; Set Sigma( value )
 
 **Description:** Sets the sigma value used in the Control Chart.
 
@@ -1130,7 +1130,7 @@ obj << Set Sigma( 1.8 );
 
 ### Set Subgroup Size
 
-**Syntax:** obj << Set Subgroup Size(  integer  )
+**Syntax:** obj &lt;&lt; Set Subgroup Size( integer )
 
 **Description:** Specifies the number of rows per subgroup.
 
@@ -1145,7 +1145,7 @@ obj << Set Subgroup Size( 4 );
 
 ### Show Alarm Report
 
-**Syntax:** obj << Show Alarm Report( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Alarm Report( state=0|1 )
 
 **Description:** Shows or hides the table of alarm rates and out of control samples.
 
@@ -1161,7 +1161,7 @@ obj << Show Alarm Report( 1 );
 
 ### Show Capability
 
-**Syntax:** obj << Show Capability( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Capability( state=0|1 )
 
 **Description:** Shows or hides the Process Capability Analysis report. On by default.
 
@@ -1184,7 +1184,7 @@ obj << Show Capability( 0 );
 
 ### Show Center Line
 
-**Syntax:** obj << Chart( Position( number ),  Limits( Show Center Line( state=0|1 ) ) )
+**Syntax:** obj &lt;&lt; Chart( Position( number ), Limits( Show Center Line( state=0|1 ) ) )
 
 **Description:** Shows or hides the center line. On by default.
 
@@ -1199,7 +1199,7 @@ obj << Chart( Position( 1 ), Limits( Show Center Line( 0 ) ) );
 
 ### Show Control Panel
 
-**Syntax:** obj << Show Control Panel( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Control Panel( state=0|1 )
 
 **Description:** Shows or hides the control panel. On by default.
 
@@ -1216,7 +1216,7 @@ obj << Show Control Panel( 0 );
 
 ### Show Excluded Region
 
-**Syntax:** obj << Show Excluded Region( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Excluded Region( state=0|1 )
 
 **Description:** Shows or hides the regions of the chart where samples have been excluded. On by default.
 
@@ -1235,7 +1235,7 @@ obj << Show Excluded Region( 0 );
 
 ### Show Limit Labels
 
-**Syntax:** obj << Show Limit Labels( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Limit Labels( state=0|1 )
 
 **Description:** Shows or hides the limit labels on the graph.
 
@@ -1251,7 +1251,7 @@ obj << Show Limit Labels( 1 );
 
 ### Show Limit Summaries
 
-**Syntax:** obj << Show Limit Summaries( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Limit Summaries( state=0|1 )
 
 **Description:** Shows or hides the Limit Summaries report. This report contains the control limits (LCL and UCL), the center line (Avg), the Points and Limits plotted, and the Sample Size for the chart. On by default.
 
@@ -1268,7 +1268,7 @@ obj << Show Limit Summaries( 0 );
 
 ### Show Lower Limit
 
-**Syntax:** obj << Chart( Position( number ),  Limits( Show Lower Limit( state=0|1 ) ) )
+**Syntax:** obj &lt;&lt; Chart( Position( number ), Limits( Show Lower Limit( state=0|1 ) ) )
 
 **Description:** Shows or hides the lower control limit. On by default.
 
@@ -1285,7 +1285,7 @@ obj = dt << Control Chart Builder(
 
 ### Show Product Separators
 
-**Syntax:** obj << Show Product Separators( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Product Separators( state=0|1 )
 
 **Description:** Shows or hides dashed vertical lines on the graph indicating the product changed. On by default.
 
@@ -1304,7 +1304,7 @@ obj << Show Product Separators( 0 );
 
 ### Show Sigma Report
 
-**Syntax:** obj << Show Sigma Report( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Sigma Report( state=0|1 )
 
 **Description:** Shows or hides the table of Overall Sigma, Within Sigma, Stability Index, and Mean. For Three Way charts, the Between Sigma and Between-and-Within Sigma are also shown.
 
@@ -1320,7 +1320,7 @@ obj << Show Sigma Report( 1 );
 
 ### Show Two Shewhart or Short Run Charts
 
-**Syntax:** obj << Show Two Shewhart or Short Run Charts( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Two Shewhart or Short Run Charts( state=0|1 )
 
 **Description:** Shows both the location and the dispersion chart. When the value of this option is 0, the dispersion chart is not shown. On by default.
 
@@ -1337,7 +1337,7 @@ obj = dt << Control Chart Builder(
 
 ### Show Upper Limit
 
-**Syntax:** obj << Chart( Position( number ),  Limits( Show Upper Limit( state=0|1 ) ) )
+**Syntax:** obj &lt;&lt; Chart( Position( number ), Limits( Show Upper Limit( state=0|1 ) ) )
 
 **Description:** Shows or hides the upper control limit. On by default.
 
@@ -1354,7 +1354,7 @@ obj = dt << Control Chart Builder(
 
 ### Size
 
-**Syntax:** obj << Size( width, height )
+**Syntax:** obj &lt;&lt; Size( width, height )
 
 **Description:** Sets the size of the graph.
 
@@ -1370,7 +1370,7 @@ obj << Size( 808, 586 );
 
 ### Sort by Subgroup
 
-**Syntax:** obj << Sort by Subgroup( state=0|1 )
+**Syntax:** obj &lt;&lt; Sort by Subgroup( state=0|1 )
 
 **Description:** Sorts the process data by the subgroup variable, or combination of nested subgroup variables, before calculations are performed. This option is available only if a Subgroup variable is specified.
 
@@ -1388,7 +1388,7 @@ obj << Sort by Subgroup( 1 );
 
 ### Test Excluded Subgroups
 
-**Syntax:** obj << Test Excluded Subgroups( state=0|1 )
+**Syntax:** obj &lt;&lt; Test Excluded Subgroups( state=0|1 )
 
 **Description:** Includes or excludes entirely excluded subgroups in the computation of tests. This option is available only when the Show Excluded Region option is selected. On by default.
 
@@ -1410,7 +1410,7 @@ dt << Select Rows( Index( 21, 24 ) ) << Exclude;
 
 ### Use Event Chooser
 
-**Syntax:** obj << Use Event Chooser( state=0|1 )
+**Syntax:** obj &lt;&lt; Use Event Chooser( state=0|1 )
 
 **Description:** Categorizes ordinal numeric data and offers individual numeric-level modeling selections. The Use Event Chooser option is available only for Attribute Charts that include numeric, non-continuous Y variables.
 
@@ -1441,7 +1441,7 @@ obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
 
 ### Variables
 
-**Syntax:** obj << Variables( Y( column ), <Subgroup( column)>, <Phase( column )>, <Part( column )> )
+**Syntax:** obj &lt;&lt; Variables( Y( column ), &lt;Subgroup( column)&gt;, &lt;Phase( column )&gt;, &lt;Part( column )&gt; )
 
 **Description:** Assigns the indicated variables to roles.
 
@@ -1456,7 +1456,7 @@ obj = dt << Control Chart Builder( Variables( Y( :Weight ) ) );
 
 ### n Trials
 
-**Syntax:** obj << n Trials( column | integer )
+**Syntax:** obj &lt;&lt; n Trials( column | integer )
 
 **Description:** Assigns a lot size for an attribute control chart.
 
@@ -1476,7 +1476,7 @@ obj = dt << Control Chart Builder(
 
 ### Action
 
-**Syntax:** obj << Action
+**Syntax:** obj &lt;&lt; Action
 
 **Description:** All-purpose trapdoor within a platform to insert expressions to evaluate. Temporarily sets the DisplayBox and DataTable contexts to the Platform.
 
@@ -1494,7 +1494,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Syntax:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntax:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Description:** Apply a previously created preset to the object, updating the options and customizations to match the saved settings.
 
@@ -1539,7 +1539,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Automatic Recalc
 
-**Syntax:** obj << Automatic Recalc( state=0|1 )
+**Syntax:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Description:** Redoes the analysis automatically for exclude and data changes. If the Automatic Recalc option is turned on, you should consider using Wait(0) commands to ensure that the exclude and data changes take effect before the recalculation.
 
@@ -1556,7 +1556,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Column Switcher
 
-**Syntax:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Syntax:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Description:** Adds a control panel for changing the platform&apos;s variables
 
@@ -1574,7 +1574,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy Script
 
-**Syntax:** obj << Copy Script
+**Syntax:** obj &lt;&lt; Copy Script
 
 **Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
 
@@ -1590,7 +1590,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Syntax:** obj << Data Table Window
+**Syntax:** obj &lt;&lt; Data Table Window
 
 **Description:** Move the data table window for this analysis to the front.
 
@@ -1606,7 +1606,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Syntax:** obj << Get By Levels
+**Syntax:** obj &lt;&lt; Get By Levels
 
 **Description:** Returns an associative array mapping the by group columns to their values.
 
@@ -1621,7 +1621,7 @@ biv << Get By Levels;
 
 ### Get Container
 
-**Syntax:** obj << Get Container
+**Syntax:** obj &lt;&lt; Get Container
 
 **Description:** Returns a reference to the container box that holds the content for the object.
 
@@ -1669,7 +1669,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Syntax:** obj << Get Data Table
+**Syntax:** obj &lt;&lt; Get Data Table
 
 **Description:** Returns a reference to the data table.
 
@@ -1686,7 +1686,7 @@ Show( N Rows( t ) );
 
 ### Get Script
 
-**Syntax:** obj << Get Script
+**Syntax:** obj &lt;&lt; Get Script
 
 **Description:** Creates a script (JSL) to produce this analysis and returns it as an expression.
 
@@ -1703,7 +1703,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Syntax:** obj << Get Script With Data Table
+**Syntax:** obj &lt;&lt; Get Script With Data Table
 
 **Description:** Creates a script(JSL) to produce this analysis specifically referencing this data table and returns it as an expression.
 
@@ -1720,7 +1720,7 @@ Show( t );
 
 ### Get Timing
 
-**Syntax:** obj << Get Timing
+**Syntax:** obj &lt;&lt; Get Timing
 
 **Description:** Times the platform launch.
 
@@ -1737,7 +1737,7 @@ Show( t );
 
 ### Get Web Support
 
-**Syntax:** obj << Get Web Support
+**Syntax:** obj &lt;&lt; Get Web Support
 
 **Description:** Return a number indicating the level of Interactive HTML support for the display object. 1 means some or all elements are supported. 0 means no support.
 
@@ -1753,7 +1753,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Syntax:** obj << Get Where Expr
+**Syntax:** obj &lt;&lt; Get Where Expr
 
 **Description:** Returns the Where expression for the data subset, if the platform was launched with By() or Where(). Otherwise, returns Empty()
 
@@ -1788,7 +1788,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Syntax:** obj << Local Data Filter
+**Syntax:** obj &lt;&lt; Local Data Filter
 
 **Description:** To filter data to specific groups or ranges, but local to this platform
 
@@ -1840,7 +1840,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Syntax:** obj << Paste Local Data Filter
+**Syntax:** obj &lt;&lt; Paste Local Data Filter
 
 **Description:** Apply the local data filter from the clipboard to the current report.
 
@@ -1861,7 +1861,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**Syntax:** obj << Redo Analysis
+**Syntax:** obj &lt;&lt; Redo Analysis
 
 **Description:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
 
@@ -1877,7 +1877,7 @@ obj << Redo Analysis;
 
 ### Relaunch Analysis
 
-**Syntax:** obj << Relaunch Analysis
+**Syntax:** obj &lt;&lt; Relaunch Analysis
 
 **Description:** Opens the platform launch window and recalls the settings that were used to create the report.
 
@@ -1893,7 +1893,7 @@ obj << Relaunch Analysis;
 
 ### Remove Column Switcher
 
-**Syntax:** obj << Remove Column Switcher
+**Syntax:** obj &lt;&lt; Remove Column Switcher
 
 **Description:** Removes the most recent Column Switcher that has been added to the platform.
 
@@ -1913,7 +1913,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Syntax:** obj << Remove Local Data Filter
+**Syntax:** obj &lt;&lt; Remove Local Data Filter
 
 **Description:** If a local data filter has been created, this removes it and restores the platform to use all the data in the data table directly
 
@@ -1950,9 +1950,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Syntax:** obj << Report;
-
-Report( obj )
+**Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Description:** Returns a reference to the report object.
 
@@ -1970,7 +1968,7 @@ Show( t );
 
 ### Report View
 
-**Syntax:** obj << Report View( "Full"|"Summary" )
+**Syntax:** obj &lt;&lt; Report View( "Full"|"Summary" )
 
 **Description:** The report view determines the level of detail visible in a platform report. Full shows all of the detail, while Summary shows only select content, dependent on the platform. For customized behavior, display boxes support a <<Set Summary Behavior message.
 
@@ -1986,7 +1984,7 @@ obj << Report View( "Summary" );
 
 ### Save Script for All Objects
 
-**Syntax:** obj << Save Script for All Objects
+**Syntax:** obj &lt;&lt; Save Script for All Objects
 
 **Description:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -2002,7 +2000,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Syntax:** obj << Save Script for All Objects To Data Table( <name> )
+**Syntax:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Description:** Saves a script for all report objects to the current data table. This option is useful when you have multiple reports in the window. The script is named after the first platform unless you specify the script name in quotes.
 
@@ -2042,7 +2040,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Syntax:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description:** Create a JSL script to produce this analysis, and save it as a table property in the data table.
 
@@ -2058,7 +2056,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Syntax:** obj << Save Script to Journal
+**Syntax:** obj &lt;&lt; Save Script to Journal
 
 **Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
 
@@ -2074,7 +2072,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Syntax:** obj << Save Script to Report
+**Syntax:** obj &lt;&lt; Save Script to Report
 
 **Description:** Create a JSL script to produce this analysis, and show it in the report itself. Useful to preserve a printed record of what was done.
 
@@ -2090,7 +2088,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Syntax:** obj << Save Script to Script Window
+**Syntax:** obj &lt;&lt; Save Script to Script Window
 
 **Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
 
@@ -2171,7 +2169,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Syntax:** obj << Sync to Data Table Changes
+**Syntax:** obj &lt;&lt; Sync to Data Table Changes
 
 **Description:** Sync with the exclude and data changes that have been made.
 
@@ -2188,7 +2186,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Syntax:** obj << Title( "new title" )
+**Syntax:** obj &lt;&lt; Title( "new title" )
 
 **Description:** Sets the title of the platform.
 
@@ -2204,7 +2202,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Syntax:** obj << Top Report
+**Syntax:** obj &lt;&lt; Top Report
 
 **Description:** Returns a reference to the root node in the report.
 
@@ -2222,7 +2220,7 @@ Show( t );
 
 ### View Web XML
 
-**Syntax:** obj << View Web XML
+**Syntax:** obj &lt;&lt; View Web XML
 
 **Description:** Returns the XML code that is used to create the interactive HTML report.
 

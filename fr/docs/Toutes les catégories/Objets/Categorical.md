@@ -6,7 +6,7 @@
 
 ### By
 
-**Syntaxe :** obj << By( column(s) )
+**Syntaxe :** obj &lt;&lt; By( column(s) )
 
 ```jsl
 
@@ -27,7 +27,7 @@ obj = dt << Categorical(
 
 ### Freq
 
-**Syntaxe :** obj << Freq( column )
+**Syntaxe :** obj &lt;&lt; Freq( column )
 
 ```jsl
 
@@ -48,7 +48,7 @@ obj = dt << Categorical(
 
 ### Grouping Category
 
-**Syntaxe :** obj << Grouping Category( column(s) )
+**Syntaxe :** obj &lt;&lt; Grouping Category( column(s) )
 
 ```jsl
 
@@ -63,7 +63,7 @@ obj = dt << Categorical(
 
 ### ID
 
-**Syntaxe :** obj << ID( column )
+**Syntaxe :** obj &lt;&lt; ID( column )
 
 ```jsl
 
@@ -78,7 +78,7 @@ obj = dt << Categorical(
 
 ### Sample Size
 
-**Syntaxe :** obj << Sample Size( column )
+**Syntaxe :** obj &lt;&lt; Sample Size( column )
 
 ```jsl
 
@@ -93,7 +93,7 @@ obj = dt << Categorical(
 
 ### X
 
-**Syntaxe :** obj << X( column(s) )
+**Syntaxe :** obj &lt;&lt; X( column(s) )
 
 ```jsl
 
@@ -129,7 +129,7 @@ obj = dt << Categorical(
 
 ### Agreement Statistic
 
-**Syntaxe :** obj << Agreement Statistic( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Agreement Statistic( state=0|1 )
 
 **Description :** Teste dans quelle mesure les évaluateurs concordent entre eux et si le manque de concordance est symétrique. Disponible uniquement pour une réponse Concordance des évaluateurs. Actif par défaut.
 
@@ -149,9 +149,7 @@ obj << Agreement Statistic( 1 );
 
 ### Aligned Responses
 
-**Syntaxe :** obj = Categorical(...Aligned Responses( columns )...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Categorical(...Aligned Responses( columns )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Résume les données de plusieurs colonnes qui ont les mêmes niveaux de réponse dans un rapport unique.
 
@@ -168,7 +166,7 @@ obj = dt << Categorical(
 
 ### Arrange in Rows
 
-**Syntaxe :** obj << Arrange in Rows( number )
+**Syntaxe :** obj &lt;&lt; Arrange in Rows( number )
 
 **Description :** Réorganise les rapports de manière à ce qu&apos;ils dépassent de la page. Spécifiez le nombre de rapports à afficher dans chaque ligne.
 
@@ -190,7 +188,7 @@ obj << Arrange in Rows( 1 );
 
 ### Binomial
 
-**Syntaxe :** obj << Binomial( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Binomial( state=0|1 )
 
 **Description :** Effectue un test du khi-deux d’indépendance des niveaux de réponse en supposant une distribution binomiale pour chaque catégorie. Remarque : disponible uniquement pour les réponses multiples.
 
@@ -208,7 +206,7 @@ obj << Homogeneity Test( 1 );
 
 ### Cell Chisq
 
-**Syntaxe :** obj << Cell Chisq( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Cell Chisq( state=0|1 )
 
 **Description :** Affiche ou masque les p-valeurs pour chaque cellule dans la table pour un test du khi deux d&apos;indépendance. Les p-valeurs sont coloriées et ombrées selon le dénombrement observé, s&apos;il est supérieur ou inférieur au dénombrement attendu.
 
@@ -223,7 +221,7 @@ obj << Cell Chisq( 1 );
 
 ### Cell Chisq FDR
 
-**Syntaxe :** obj << Cell Chisq FDR( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Cell Chisq FDR( state=0|1 )
 
 **Description :** Affiche ou masque les p-values ajustées pour le FDR (taux de fausses découvertes) pour chaque cellule dans la table pour un test du khi deux d&apos;indépendance. Les p-values ajustées pour le FDR sont coloriées et ombrées selon que le dénombrement observé est supérieur ou inférieur au dénombrement attendu.
 
@@ -240,7 +238,7 @@ obj << Cell Chisq( 1 );
 
 ### ChiSquare Test Choices
 
-**Syntaxe :** obj << ChiSquare Test Choices( "Rapport de vraisemblance et Pearson"|"Rapport de vraisemblance uniquement"|"Pearson uniquement" )
+**Syntaxe :** obj &lt;&lt; ChiSquare Test Choices( "Rapport de vraisemblance et Pearson"|"Rapport de vraisemblance uniquement"|"Pearson uniquement" )
 
 **Description :** Spécifie les tests affichés dans les tests de l&apos;homogénéité, soit le khi deux du rapport de vraisemblance, soit le khi deux de Pearson, ou les deux. Disponible uniquement pour une réponse unique.
 
@@ -259,7 +257,7 @@ obj << Test Response Homogeneity( 1 );
 
 ### Compare Each Cell
 
-**Syntaxe :** obj << Compare Each Cell( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Compare Each Cell( state=0|1 )
 
 **Description :** Compare chaque niveau de réponse par rapport à tous les autres niveaux combinés dans l&apos;ensemble des niveaux d&apos;une variable de regroupement.
 
@@ -277,7 +275,7 @@ obj << Compare Each Cell( 1 );
 
 ### Compare Each Cell FDR
 
-**Syntaxe :** obj << Compare Each Cell FDR( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Compare Each Cell FDR( state=0|1 )
 
 **Description :** Compare chaque niveau de la réponse par rapport à tous les autres niveaux combinés dans l&apos;ensemble des niveaux d&apos;une variable de regroupement, avec l&apos;ajustement FDR (taux de fausses découvertes).
 
@@ -297,7 +295,7 @@ obj << Compare Each Cell FDR( 1 );
 
 ### Compare Each Sample
 
-**Syntaxe :** obj << Compare Each Sample( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Compare Each Sample( state=0|1 )
 
 **Description :** Compare les réponses dans l&apos;ensemble des niveaux d&apos;une variable de regroupement.
 
@@ -315,7 +313,7 @@ obj << Compare Each Sample( 1 );
 
 ### Compare Each Sample FDR
 
-**Syntaxe :** obj << Compare Each Sample FDR( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Compare Each Sample FDR( state=0|1 )
 
 **Description :** Compare les réponses dans l&apos;ensemble des niveaux d&apos;une variable de groupement avec l&apos;ajustement FDR (taux de fausses découvertes).
 
@@ -335,7 +333,7 @@ obj << Compare Each Sample FDR( 1 );
 
 ### Conditional Association
 
-**Syntaxe :** obj << Conditional Association( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Conditional Association( state=0|1 )
 
 **Description :** Affiche ou masque le taux d&apos;obtention d&apos;une réponse dans une colonne, en ayant la même réponse dans une ligne. Disponible uniquement pour les modèles Réponses multiples, Réponses multiples délimitées et Réponses multiples par identifiant avec Occurrences uniques dans l&apos;identifiant sélectionné.
 
@@ -356,9 +354,7 @@ obj = dt << Categorical(
 
 ### Confidence Interval Coverage
 
-**Syntaxe :** obj = Categorical(...Confidence Interval Coverage( number=0.95 )...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Categorical(...Confidence Interval Coverage( number=0.95 )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Définit la couverture des intervalles de confiance pour les taux et le partage des réponses. La couverture est égale à (1-alpha). "0.95" par défaut.
 
@@ -377,7 +373,7 @@ obj = dt << Categorical(
 
 ### Confidence Limits Format
 
-**Syntaxe :** obj << Confidence Limits Format( format, <options> )
+**Syntaxe :** obj &lt;&lt; Confidence Limits Format( format, &lt;options&gt; )
 
 **Description :** Formate les bornes de l&apos;intervalle de confiance pour les valeurs Partage et Taux dans la table de données. La valeur par défaut est « pourcentage », 6, 2.
 
@@ -400,7 +396,7 @@ obj << Confidence Limits Format( "Percent", 6, 0 );
 
 ### Contents Summary
 
-**Syntaxe :** obj << Contents Summary( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Contents Summary( state=0|1 )
 
 **Description :** Recueille tous les tests et les p-valeurs dans un rapport.
 
@@ -418,9 +414,7 @@ obj << Contents Summary( 1 );
 
 ### Count Missing Responses
 
-**Syntaxe :** obj = Categorical(...Count Missing Responses( state=0|1 )...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Categorical(...Count Missing Responses( state=0|1 )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Inclut les valeurs manquantes en tant que catégorie de réponse.
 
@@ -438,7 +432,7 @@ Categorical(
 
 ### Count Test
 
-**Syntaxe :** obj << Count Test( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Count Test( state=0|1 )
 
 **Description :** Effectue un test du khi-deux d’indépendance des taux en utilisant une régression de Poisson. Remarque : disponible uniquement pour les réponses multiples.
 
@@ -456,7 +450,7 @@ obj << Count Test( 1 );
 
 ### Crosstab
 
-**Syntaxe :** obj << Crosstab( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Crosstab( state=0|1 )
 
 **Description :** Génère une tabulation croisée des dénombrements avec les niveaux de réponse définissant les colonnes et les niveaux de variable de regroupement définissant les lignes. Actif par défaut.
 
@@ -475,7 +469,7 @@ obj << Crosstab( 1 );
 
 ### Crosstab Transposed
 
-**Syntaxe :** obj << Crosstab Transposed( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Crosstab Transposed( state=0|1 )
 
 **Description :** Génère une tabulation croisée des dénombrements avec les niveaux de réponse définissant les lignes et les niveaux de variable de regroupement définissant les colonnes.
 
@@ -493,7 +487,7 @@ obj << Crosstab Transposed( 1 );
 
 ### Exclude Nonresponses
 
-**Syntaxe :** obj << Exclude Nonresponses( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Exclude Nonresponses( state=0|1 )
 
 **Description :** Exclut les non réponses du nombre et des tests d&apos;homogénéité lors de la comparaison de plusieurs catégories de réponse. Les cellules vides ou manquantes sont traitées comme des non réponses. Il n&apos;est pas recommandé d&apos;utiliser une catégorie séparée.
 
@@ -518,7 +512,7 @@ obj << Exclude Nonresponses( 1 );
 
 ### FDR Adjusted PValues
 
-**Syntaxe :** obj << FDR Adjusted PValues( state=0|1 )
+**Syntaxe :** obj &lt;&lt; FDR Adjusted PValues( state=0|1 )
 
 **Description :** Les p-valeurs ajustées de taux de fausses découvertes (Benjamini et Hochberg, 1995) sont utilisées lorsqu&apos;il existe de nombreuses p-valeurs et qu&apos;il est facile pour des tests de devenir significatifs simplement par chance.
 
@@ -541,7 +535,7 @@ obj << FDR Adjusted PValues( 1 );
 
 ### Filter
 
-**Syntaxe :** obj << Filter( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Filter( state=0|1 )
 
 **Description :** Filtre les données sur des groupes ou des étendues spécifiques, localement.
 
@@ -565,7 +559,7 @@ obj << Filter( 0 );
 
 ### Force Crosstab Shading
 
-**Syntaxe :** obj << Force Crosstab Shading( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Force Crosstab Shading( state=0|1 )
 
 **Description :** Utilise l&apos;ombrage sur les rapports de table croisée, même si les préférences globales sont définies pour ne pas utiliser l’ombrage. Actif par défaut.
 
@@ -585,7 +579,7 @@ obj << Force Crosstab Shading( 1 );
 
 ### Force Labels Horizontal
 
-**Syntaxe :** obj << Force Labels Horizontal( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Force Labels Horizontal( state=0|1 )
 
 **Description :** Utilise des étiquettes horizontales sur le tableau croisé, quelle que soit la longueur du texte. Le texte de l&apos;étiquette est ajusté sur plusieurs lignes plutôt que pivoté.
 
@@ -606,13 +600,13 @@ obj << Force Labels Horizontal( 1 );
 
 ### Format Elements
 
-**Syntaxe :** obj << Format Elements
+**Syntaxe :** obj &lt;&lt; Format Elements
 
 **Description :** Ouvre une fenêtre qui vous permet de spécifier les formats de différents éléments du rapport.
 
 ### Frequencies
 
-**Syntaxe :** obj << Frequencies( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Frequencies( state=0|1 )
 
 **Description :** Affiche ou masque la table Fréquence dans le rapport. Actif par défaut.
 
@@ -632,7 +626,7 @@ obj << Frequencies( 1 );
 
 ### Frequencies Format
 
-**Syntaxe :** obj << Frequencies Format( format, <options> )
+**Syntaxe :** obj &lt;&lt; Frequencies Format( format, &lt;options&gt; )
 
 **Description :** Formate les valeurs de fréquence dans la table de données. La valeur par défaut est « décimale fixe », 7, 0.
 
@@ -651,7 +645,7 @@ obj << Frequencies Format( "Fixed Dec", 7, 2 );
 
 ### Frequency Chart
 
-**Syntaxe :** obj << Frequency Chart( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Frequency Chart( state=0|1 )
 
 **Description :** Affiche ou masque le graphique de fréquence dans le rapport.
 
@@ -669,9 +663,7 @@ obj << Frequency Chart( 1 );
 
 ### Grouping Option
 
-**Syntaxe :** obj = Categorical(...Grouping Option( "Combinaisons"|"Chacun individuellement"|"Les deux" )...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Categorical(...Grouping Option( "Combinaisons"|"Chacun individuellement"|"Les deux" )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Définit la méthode de groupement pour les variables X.
 
@@ -689,7 +681,7 @@ obj = dt << Categorical(
 
 ### Hide Nonsignificant
 
-**Syntaxe :** obj << Hide Nonsignificant( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Hide Nonsignificant( state=0|1 )
 
 **Description :** Supprime les rapports non significatifs.
 
@@ -713,13 +705,13 @@ obj << Hide Nonsignificant( 1 );
 
 ### Highlight Cells
 
-**Syntaxe :** obj << Highlight Cells
+**Syntaxe :** obj &lt;&lt; Highlight Cells
 
 **Description :** Surligne les cellules satisfaisant aux conditions spécifiées.
 
 ### Homogeneity Test
 
-**Syntaxe :** obj << Homogeneity Test( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Homogeneity Test( state=0|1 )
 
 **Description :** Effectue un test du khi-deux d’indépendance des niveaux de réponse en supposant une distribution binomiale pour chaque catégorie. Remarque : disponible uniquement pour les réponses multiples.
 
@@ -761,9 +753,7 @@ obj = Categorical(
 
 ### Include Responses Not in Data
 
-**Syntaxe :** obj = Categorical(...Include Responses Not in Data( state=0|1 )...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Categorical(...Include Responses Not in Data( state=0|1 )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Affiche les catégories de réponse qui présentent des étiquettes de valeur, même si elles n&apos;apparaissent pas dans les données.
 
@@ -783,9 +773,7 @@ obj << Include Responses Not in Data( 1 );
 
 ### Indicator Group
 
-**Syntaxe :** obj = Categorical(...Indicator Group( columns )...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Categorical(...Indicator Group( columns )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Résume les données d&apos;une variable à réponses multiples où les réponses se trouvent dans plusieurs colonnes d&apos;indicateurs.
 
@@ -805,7 +793,7 @@ obj = dt << Categorical(
 
 ### Mean Confidence Interval
 
-**Syntaxe :** obj << Mean Confidence Interval( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Mean Confidence Interval( state=0|1 )
 
 **Description :** Affiche ou masque l&apos;intervalle de confiance pour les moyennes
 
@@ -825,7 +813,7 @@ obj << Mean Confidence Interval( 1 );
 
 ### Mean Score
 
-**Syntaxe :** obj << Mean Score( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Mean Score( state=0|1 )
 
 **Description :** Affiche les scores de la moyenne, basés sur des codes numérique bruts ou des scores de valeur, dans la table croisée.
 
@@ -843,7 +831,7 @@ obj << Mean Score( 1 );
 
 ### Mean Score Comparisons
 
-**Syntaxe :** obj << Mean Score Comparisons( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Mean Score Comparisons( state=0|1 )
 
 **Description :** Compare les scores de la moyenne dans l&apos;ensemble des catégories de regroupement.
 
@@ -861,7 +849,7 @@ obj << Mean Score Comparisons( 1 );
 
 ### Mean Score Comparisons FDR
 
-**Syntaxe :** obj << Mean Score Comparisons FDR( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Mean Score Comparisons FDR( state=0|1 )
 
 **Description :** Compare les scores de la moyenne dans l&apos;ensemble des catégories de regroupement.
 
@@ -881,7 +869,7 @@ obj << Mean Score Comparisons FDR( 1 );
 
 ### Mean Score Comparisons as Suffix
 
-**Syntaxe :** obj << Mean Score Comparisons as Suffix( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Mean Score Comparisons as Suffix( state=0|1 )
 
 **Description :** Compare les scores de la moyenne dans l&apos;ensemble des catégories de regroupement.
 
@@ -899,7 +887,7 @@ obj << Mean Score Comparisons Suffixed( 1 );
 
 ### Mean Std Error
 
-**Syntaxe :** obj << Mean Std Error( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Mean Std Error( state=0|1 )
 
 **Description :** Affiche ou masque l&apos;erreur standard pour les moyennes
 
@@ -919,7 +907,7 @@ obj << Mean Std Error( 1 );
 
 ### Means Format
 
-**Syntaxe :** obj << Means Format( format, <options> )
+**Syntaxe :** obj &lt;&lt; Means Format( format, &lt;options&gt; )
 
 **Description :** Formate les scores des moyennes dans la table de données. La valeur par défaut est « Fixed », 6, 2.
 
@@ -941,9 +929,7 @@ obj << Means Format( "Fixed", 6, 4 );
 
 ### Multiple Delimited
 
-**Syntaxe :** obj = Categorical(...Multiple Delimited( column )...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Categorical(...Multiple Delimited( column )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Résume les données d&apos;une variable à réponses multiples où les réponses sont dans une seule colonne avec chaque réponse séparée par une virgule, un point-virgule ou une tabulation.
 
@@ -961,9 +947,7 @@ obj = dt << Categorical(
 
 ### Multiple Response
 
-**Syntaxe :** obj = Categorical(...Multiple Response( columns )...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Categorical(...Multiple Response( columns )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Résume les données d&apos;une variable à réponses multiples dont chaque réponse possible est enregistrée dans sa propre colonne.
 
@@ -981,9 +965,7 @@ obj = dt << Categorical(
 
 ### Multiple Response by ID
 
-**Syntaxe :** obj = Categorical(...Multiple Response by ID( column )...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Categorical(...Multiple Response by ID( column )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Résume les données d&apos;une variable à réponses multiples comprenant une seule colonne de réponses et une deuxième colonne contenant un ID pour le sujet.
 
@@ -1003,9 +985,7 @@ obj = dt << Categorical(
 
 ### Order Response Levels High to Low
 
-**Syntaxe :** obj = Categorical(...Order Response Levels High to Low( state=0|1 )...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Categorical(...Order Response Levels High to Low( state=0|1 )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Réorganise le rapport de manière à ce que les catégories ayant les plus hautes valeurs se retrouvent au sommet.
 
@@ -1023,7 +1003,7 @@ obj = dt << Categorical(
 
 ### Order by Significance
 
-**Syntaxe :** obj << Order by Significance( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Order by Significance( state=0|1 )
 
 **Description :** Réorganise les rapports de manière à placer les plus significatifs au sommet.
 
@@ -1047,7 +1027,7 @@ obj << Order by Significance( 1 );
 
 ### Poisson
 
-**Syntaxe :** obj << Poisson( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Poisson( state=0|1 )
 
 **Description :** Effectue un test du khi-deux d’indépendance des taux en utilisant une régression de Poisson. Remarque : disponible uniquement pour les réponses multiples.
 
@@ -1065,7 +1045,7 @@ obj << Count Test( 1 );
 
 ### Rate Confidence Interval
 
-**Syntaxe :** obj << Rate Confidence Interval( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Rate Confidence Interval( state=0|1 )
 
 **Description :** Affiche ou masque l&apos;intervalle de confiance pour la probabilité du taux. L&apos;intervalle de confiance est un intervalle normal qui utilise les erreurs standard du modèle linéaire de Poisson.
 
@@ -1083,7 +1063,7 @@ obj << Rate Confidence Interval( 1 );
 
 ### Rate Per Case
 
-**Syntaxe :** obj << Rate Per Case( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Rate Per Case( state=0|1 )
 
 **Description :** Affiche ou masque la table Taux par cas dans le rapport. Actif par défaut.
 
@@ -1106,7 +1086,7 @@ obj << Rate Per Case( 1 );
 
 ### Rate per Case Responding
 
-**Syntaxe :** obj << Rate per Case Responding( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Rate per Case Responding( state=0|1 )
 
 **Description :** Affiche ou masque le taux de réponse par cas correspondant (données manquantes exclues).
 
@@ -1127,9 +1107,7 @@ obj << Rate Per Case Responding( 1 );
 
 ### Rater Agreement
 
-**Syntaxe :** obj = Categorical(...Rater Agreement( columns )...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Categorical(...Rater Agreement( columns )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Résume les données de plusieurs colonnes contenant les évaluations d&apos;une même question ou élément, données par différentes personnes (évaluateurs).
 
@@ -1146,7 +1124,7 @@ obj = dt << Categorical(
 
 ### Relative Risk
 
-**Syntaxe :** obj << Relative Risk( state=0|1, {}, {level of interest} )
+**Syntaxe :** obj &lt;&lt; Relative Risk( state=0|1, {}, {level of interest} )
 
 **Description :** Affiche ou masque les risques relatifs pour une variable de regroupement à deux niveaux pour chaque niveau de réponse. Disponible lorsque la variable de regroupement a deux niveaux ou est une réponse multiple et que l&apos;option Occurrences uniques dans l&apos;identifiant est sélectionnée.
 
@@ -1168,9 +1146,7 @@ obj << Relative Risk( 1, {}, {"after"} );
 
 ### Repeated Measures
 
-**Syntaxe :** obj = Categorical(...Repeated Measures( columns )...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Categorical(...Repeated Measures( columns )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Résume les données de plusieurs colonnes contenant les réponses aux mêmes questions à différents points temporels.
 
@@ -1187,9 +1163,7 @@ obj = dt << Categorical(
 
 ### Response Frequencies
 
-**Syntaxe :** obj = Categorical(...Response Frequencies( columns )...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Categorical(...Response Frequencies( columns )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Résume une variable à réponses multiples où la fréquence de chaque réponse possible est enregistrée dans sa propre colonne.
 
@@ -1210,7 +1184,7 @@ obj = dt << Categorical(
 
 ### Response Levels
 
-**Syntaxe :** obj << Response Levels( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Response Levels( state=0|1 )
 
 **Description :** Affiche ou masque les niveaux de données pour chaque réponse. Actif par défaut.
 
@@ -1230,9 +1204,7 @@ obj << Response Levels( 1 );
 
 ### Responses
 
-**Syntaxe :** obj = Categorical(...Responses( column )...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Categorical(...Responses( column )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Résume les réponses d&apos;une seule colonne. Si plusieurs colonnes sont sélectionnées, le rapport catégoriel contient un rapport distinct pour chaque colonne individuelle.
 
@@ -1249,7 +1221,7 @@ obj = dt << Categorical(
 
 ### Save Contingency Table
 
-**Syntaxe :** obj << Save Contingency Table
+**Syntaxe :** obj &lt;&lt; Save Contingency Table
 
 **Description :** Enregistre les valeurs du tableau croisé dans une nouvelle table de données. La nouvelle table de données utilise les noms de colonne d&apos;origine.
 
@@ -1269,13 +1241,13 @@ obj << Save Contingency Table;
 
 ### Save DocX File
 
-**Syntaxe :** obj << Save DocX File
+**Syntaxe :** obj &lt;&lt; Save DocX File
 
 **Description :** Undocumented and Experimental Feature
 
 ### Save Excel File
 
-**Syntaxe :** obj << Save Excel File
+**Syntaxe :** obj &lt;&lt; Save Excel File
 
 **Description :** Enregistre les tables dans un fichier Excel.
 
@@ -1296,7 +1268,7 @@ obj << Save Excel File(
 
 ### Save Frequencies
 
-**Syntaxe :** obj << Save Frequencies
+**Syntaxe :** obj &lt;&lt; Save Frequencies
 
 **Description :** Enregistre les fréquences dans une nouveau tableau.
 
@@ -1314,7 +1286,7 @@ obj << Save Frequencies;
 
 ### Save Mean Scores
 
-**Syntaxe :** obj << Save Mean Scores
+**Syntaxe :** obj &lt;&lt; Save Mean Scores
 
 **Description :** Enregistre les scores de la moyenne pour chaque groupe d&apos;échantillons dans une nouvelle table.
 
@@ -1332,7 +1304,7 @@ obj << Save Mean Scores;
 
 ### Save Rate Per Case
 
-**Syntaxe :** obj << Save Rate Per Case
+**Syntaxe :** obj &lt;&lt; Save Rate Per Case
 
 **Description :** Enregistre le taux pas cas dans une nouvelle table de données.
 
@@ -1354,7 +1326,7 @@ obj << Save Rate Per Case;
 
 ### Save Share of Responses
 
-**Syntaxe :** obj << Save Share of Responses
+**Syntaxe :** obj &lt;&lt; Save Share of Responses
 
 **Description :** Enregistre le partage des réponses dans un nouveau tableau.
 
@@ -1372,7 +1344,7 @@ obj << Save Share of Responses;
 
 ### Save Stacked Table
 
-**Syntaxe :** obj << Save Stacked Table
+**Syntaxe :** obj &lt;&lt; Save Stacked Table
 
 **Description :** Enregistre les valeurs du tableau croisé dans une nouvelle table de données. La nouvelle table de données utilise des noms de colonne généraux.
 
@@ -1392,7 +1364,7 @@ obj << Save Stacked Table;
 
 ### Save Test Homogeneity
 
-**Syntaxe :** obj << Save Test Homogeneity
+**Syntaxe :** obj &lt;&lt; Save Test Homogeneity
 
 **Description :** Enregistre les résultats des tests d&apos;homogénéité dans une nouvelle table de données.
 
@@ -1410,7 +1382,7 @@ obj << Save Test Homogeneity;
 
 ### Save Test Rates
 
-**Syntaxe :** obj << Save Test Rates
+**Syntaxe :** obj &lt;&lt; Save Test Rates
 
 **Description :** Enregistre les résultats de l&apos;option Test des réponses multiples dans une nouvelle table de données.
 
@@ -1432,7 +1404,7 @@ obj << Save Test Rates;
 
 ### Save Transposed Frequencies
 
-**Syntaxe :** obj << Save Transposed Frequencies
+**Syntaxe :** obj &lt;&lt; Save Transposed Frequencies
 
 **Description :** Enregistre les fréquences transposées dans une nouvelle table de données.
 
@@ -1450,7 +1422,7 @@ obj << Save Transposed Frequencies;
 
 ### Save Transposed Rate Per Case
 
-**Syntaxe :** obj << Save Transposed Rate Per Case
+**Syntaxe :** obj &lt;&lt; Save Transposed Rate Per Case
 
 **Description :** Enregistre le taux transformé par cas transposé dans un nouveau tableau.
 
@@ -1472,7 +1444,7 @@ obj << Save Transposed Rate Per Case;
 
 ### Save Transposed Share of Responses
 
-**Syntaxe :** obj << Save Transposed Share of Responses
+**Syntaxe :** obj &lt;&lt; Save Transposed Share of Responses
 
 **Description :** Enregistre le partage des réponses transposé dans un nouveau tableau.
 
@@ -1490,7 +1462,7 @@ obj << Save Transposed Share of Responses;
 
 ### Save tTests and pValues
 
-**Syntaxe :** obj << Save tTests and pValues
+**Syntaxe :** obj &lt;&lt; Save tTests and pValues
 
 **Description :** Enregistrez t tests et p-valeurs des tests Comparer les moyennes dans une nouvelle table de données.
 
@@ -1508,7 +1480,7 @@ obj << Save ttests and pvalues;
 
 ### Share Chart
 
-**Syntaxe :** obj << Share Chart( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Share Chart( state=0|1 )
 
 **Description :** Affiche ou masque le graphique de partage dans le rapport.
 
@@ -1528,7 +1500,7 @@ obj << Share Chart( 1 );
 
 ### Share Confidence Interval
 
-**Syntaxe :** obj << Share Confidence Interval( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Share Confidence Interval( state=0|1 )
 
 **Description :** Affiche ou masque l&apos;intervalle de confiance pour la probabilité de réponse de partage. L&apos;intervalle de confiance est construit à l&apos;aide de la méthode de test du score de Wilson.
 
@@ -1546,7 +1518,7 @@ obj << Share Confidence Interval( 1 );
 
 ### Share Of Responses
 
-**Syntaxe :** obj << Share Of Responses( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Share Of Responses( state=0|1 )
 
 **Description :** Affiche ou masque la table Partage des réponses dans le rapport. Actif par défaut.
 
@@ -1566,7 +1538,7 @@ obj << Share of Responses( 1 );
 
 ### Shares and Rates Format
 
-**Syntaxe :** obj << Shares and Rates Format( format, <options> )
+**Syntaxe :** obj &lt;&lt; Shares and Rates Format( format, &lt;options&gt; )
 
 **Description :** Formate les valeurs Partage, Taux, et Taux par réponse dans la table de données. La valeur par défaut est « pourcentage », 6, 1.
 
@@ -1587,9 +1559,7 @@ obj << Shares and Rates Format( "Percent", 7, 2 );
 
 ### Shorten Labels
 
-**Syntaxe :** obj = Categorical(...Shorten Labels( state=0|1 )...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Categorical(...Shorten Labels( state=0|1 )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Raccourcit les étiquettes en supprimant les préfixes et les suffixes.
 
@@ -1613,7 +1583,7 @@ obj << Shorten Labels( 1 );
 
 ### Show Columns Used in Report
 
-**Syntaxe :** obj << Show Columns Used in Report( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Show Columns Used in Report( state=0|1 )
 
 **Description :** Affiche ou masque les informations des colonnes utilisées dans le rapport. Cette option affecte uniquement les colonnes qui ont un nom SPSS ou SAS ou une propriété Colonne d&apos;étiquette SPSS ou SAS.
 
@@ -1631,13 +1601,13 @@ obj << Show Columns Used in Report( 1 );
 
 ### Show Highlight Legend
 
-**Syntaxe :** obj << Show Highlight Legend( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Show Highlight Legend( state=0|1 )
 
 **Description :** Actif par défaut.
 
 ### Show Supercategories
 
-**Syntaxe :** obj << Show Supercategories( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Show Supercategories( state=0|1 )
 
 **Description :** Affiche ou masque les supercatégories. Actif par défaut.
 
@@ -1666,7 +1636,7 @@ obj << Show Supercategories( 1 );
 
 ### Show Warnings
 
-**Syntaxe :** obj << Show Warnings( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Show Warnings( state=0|1 )
 
 **Description :** Affiche les avertissements des tests du khi deux associés aux échantillons de petite taille.
 
@@ -1687,7 +1657,7 @@ obj << Show Warnings( 1 );
 
 ### Std Dev Format
 
-**Syntaxe :** obj << Std Dev Format( format, <options> )
+**Syntaxe :** obj &lt;&lt; Std Dev Format( format, &lt;options&gt; )
 
 **Description :** Formate les scores des écarts-types dans la table de données. La valeur par défaut est « Fixed », 6, 2.
 
@@ -1709,7 +1679,7 @@ obj << Std Dev Format( "Fixed", 6, 4 );
 
 ### Std Dev Score
 
-**Syntaxe :** obj << Std Dev Score( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Std Dev Score( state=0|1 )
 
 **Description :** Affiche le score d&apos;écart-type, basé sur des codes numériques bruts ou des scores de valeur, dans la table croisée.
 
@@ -1727,9 +1697,7 @@ obj << Std Dev Score( 1 );
 
 ### Structured
 
-**Syntaxe :** obj = Categorical(...Structured( Column * nestedColumn ... + rightColumn, sideColumn + lowerColumns...  )...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Categorical(...Structured( Column * nestedColumn ... + rightColumn, sideColumn + lowerColumns... )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Génère une tabulation croisée structurée de deux variables ou plus.
 
@@ -1748,7 +1716,7 @@ obj = dt << Categorical(
 
 ### Supercategories
 
-**Syntaxe :** obj << Supercategories( column, ({Group (name, {level1, level2, ... levelN})}) )
+**Syntaxe :** obj &lt;&lt; Supercategories( column, ({Group (name, {level1, level2, ... levelN})}) )
 
 **Description :** Spécifie des supercatégories pour agréger localement les catégories de réponses.
 
@@ -1774,7 +1742,7 @@ obj = dt << Categorical(
 
 ### Test Response Homogeneity
 
-**Syntaxe :** obj << Test Response Homogeneity( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Test Response Homogeneity( state=0|1 )
 
 **Description :** Teste l&apos;homogénéité de la colonne de réponse, en effectuant à la fois les tests du khi deux de Pearson et du rapport de vraisemblance. Disponible uniquement pour une réponse unique.
 
@@ -1792,7 +1760,7 @@ obj << Test Response Homogeneity( 1 );
 
 ### Total Cases
 
-**Syntaxe :** obj << Total Cases( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Total Cases( state=0|1 )
 
 **Description :** Pour les variables à réponses multiples, affiche le nombre total de cas dans la table croisée. Actif par défaut.
 
@@ -1815,7 +1783,7 @@ obj << Total Cases( 1 );
 
 ### Total Cases Responding
 
-**Syntaxe :** obj << Total Cases Responding( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Total Cases Responding( state=0|1 )
 
 **Description :** Pour les variables à réponses multiples, affiche le nombre total de cas ayant répondu au moins une fois dans la table croisée. Actif par défaut.
 
@@ -1838,7 +1806,7 @@ obj << Total Cases Responding( 1 );
 
 ### Total Responses
 
-**Syntaxe :** obj << Total Responses( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Total Responses( state=0|1 )
 
 **Description :** Affiche le nombre total de réponses dans la table croisée. Actif par défaut.
 
@@ -1858,13 +1826,13 @@ obj << Total Responses( 1 );
 
 ### Totals First
 
-**Syntaxe :** obj << Totals First( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Totals First( state=0|1 )
 
 **Description :** Affiche les totaux de la réponse proche du haut ou de la gauche du tableau croisé, mais uniquement si les totaux sont identiques dans plusieurs tables dans chaque colonne.
 
 ### Transition Report
 
-**Syntaxe :** obj << Transition Report( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Transition Report( state=0|1 )
 
 **Description :** Affiche ou masque un rapport indiquant le changement des catégories dans le temps. Disponible uniquement pour le modèle Mesures répétées. Actif par défaut.
 
@@ -1882,7 +1850,7 @@ obj << Transition Report( 1 );
 
 ### Transposed Freq Chart
 
-**Syntaxe :** obj << Transposed Freq Chart( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Transposed Freq Chart( state=0|1 )
 
 **Description :** Affiche ou masque un graphique de fréquence transposé qui contient une colonne pour chaque niveau de réponse et les lignes horizontales pour les différents niveaux d’échantillons.
 
@@ -1897,9 +1865,7 @@ obj << Transposed Freq Chart( 1 );
 
 ### Unique Occurrences within ID
 
-**Syntaxe :** obj = Categorical(...Unique Occurrences within ID( state=0|1 )...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Categorical(...Unique Occurrences within ID( state=0|1 )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Aligne les réponses multiples dans les lignes qui ont le même identifiant.
 
@@ -1922,7 +1888,7 @@ obj = dt << Categorical(
 
 ### Action
 
-**Syntaxe :** obj << Action
+**Syntaxe :** obj &lt;&lt; Action
 
 **Description :** Trappe tout usage dans une plate-forme pour y insérer les expressions à calculer. Définit provisoirement les contextes des boîtes d’affichage et des tables de données dans la plate-forme.
 
@@ -1940,7 +1906,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Syntaxe :** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntaxe :** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Description :** Appliquez une préconfiguration créée précédemment à l&apos;objet, ce qui met à jour les options et les personnalisations pour correspondre aux paramètres enregistrés.
 
@@ -1991,7 +1957,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**Syntaxe :** obj << Automatic Recalc( state=0|1 )
+**Syntaxe :** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Description :** Refait l&apos;analyse automatiquement pour l&apos;exclusion et les modifications de données. Si l&apos;option Nouveau calcul automatique est activée, envisagez d&apos;utiliser les commandes Wait(0) pour vous assurer que l&apos;exclusion et les modifications de données sont prises en compte avant le recalcul.
 
@@ -2010,7 +1976,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**Syntaxe :** obj << Broadcast(message)
+**Syntaxe :** obj &lt;&lt; Broadcast(message)
 
 **Description :** Diffuse un message sur une plate-forme. Si les résultats de renvoi des objets individuels sont des tables, elles sont concaténées si possible, et le format final est identique au résultat de l&apos;option Enregistrer la table de données combinée dans une boîte de tableau ou au résultat de l&apos;option Concaténer avec une colonne Source. Sinon, les résultats sont stockés dans une liste et renvoyés.
 
@@ -2030,7 +1996,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**Syntaxe :** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Syntaxe :** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Description :** Ajoute un panneau de contrôle pour changer les variables de la plate-forme.
 
@@ -2046,7 +2012,7 @@ Column Switcher( :marital status, {:sex, :country, :marital status} );
 
 ### Copy ByGroup Script
 
-**Syntaxe :** obj << Copy ByGroup Script
+**Syntaxe :** obj &lt;&lt; Copy ByGroup Script
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis le place dans le presse-papiers.
 
@@ -2070,7 +2036,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Syntaxe :** obj << Copy Script
+**Syntaxe :** obj &lt;&lt; Copy Script
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis le place dans le presse-papiers.
 
@@ -2088,7 +2054,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Syntaxe :** obj << Data Table Window
+**Syntaxe :** obj &lt;&lt; Data Table Window
 
 **Description :** Déplace en premier plan la fenêtre de la table de données utilisée dans cette analyse.
 
@@ -2106,7 +2072,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Syntaxe :** obj << Get By Levels
+**Syntaxe :** obj &lt;&lt; Get By Levels
 
 **Description :** Renvoie un tableau associatif de mappage des colonnes par groupe à leurs valeurs.
 
@@ -2123,7 +2089,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Syntaxe :** obj << Get ByGroup Script
+**Syntaxe :** obj &lt;&lt; Get ByGroup Script
 
 **Description :** Crée un script (JSL) pour produire cette analyse et la renvoyer sous forme d’une expression.
 
@@ -2148,7 +2114,7 @@ Show( t );
 
 ### Get Container
 
-**Syntaxe :** obj << Get Container
+**Syntaxe :** obj &lt;&lt; Get Container
 
 **Description :** Renvoie une référence à la zone conteneur où se trouve le contenu de l&apos;objet.
 
@@ -2203,7 +2169,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Syntaxe :** obj << Get Data Table
+**Syntaxe :** obj &lt;&lt; Get Data Table
 
 **Description :** Renvoie une référence à la table de données.
 
@@ -2222,7 +2188,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**Syntaxe :** obj << Get Group Platform
+**Syntaxe :** obj &lt;&lt; Get Group Platform
 
 **Description :** Renvoie l&apos;objet de Plate-forme de groupe si cette plate-forme fait partie d&apos;un groupe. Sinon, renvoie Empty().
 
@@ -2239,7 +2205,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**Syntaxe :** obj << Get Script
+**Syntaxe :** obj &lt;&lt; Get Script
 
 **Description :** Crée un script (JSL) pour produire cette analyse et la renvoyer sous forme d’une expression.
 
@@ -2258,7 +2224,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Syntaxe :** obj << Get Script With Data Table
+**Syntaxe :** obj &lt;&lt; Get Script With Data Table
 
 **Description :** Crée un script (JSL) pour produire cette analyse faisant spécifiquement référence à cette table de données et la renvoyer sous forme d’une expression.
 
@@ -2277,7 +2243,7 @@ Show( t );
 
 ### Get Timing
 
-**Syntaxe :** obj << Get Timing
+**Syntaxe :** obj &lt;&lt; Get Timing
 
 **Description :** Détermine une heure de lancement de la plate-forme.
 
@@ -2296,7 +2262,7 @@ Show( t );
 
 ### Get Web Support
 
-**Syntaxe :** obj << Get Web Support
+**Syntaxe :** obj &lt;&lt; Get Web Support
 
 **Description :** Renvoyer un nombre indiquant le niveau de support HTML interactif pour l&apos;objet d&apos;affichage. 1 signifie que tout ou partie des éléments sont pris en charge. 0 signifie qu&apos;il n&apos;y a aucun support.
 
@@ -2312,7 +2278,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Syntaxe :** obj << Get Where Expr
+**Syntaxe :** obj &lt;&lt; Get Where Expr
 
 **Description :** Renvoie l&apos;expression Where pour le sous-ensemble de données, si la plate-forme a été lancée avec By() ou Where(). Sinon, renvoie la Empty()
 
@@ -2353,7 +2319,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Syntaxe :** obj << Local Data Filter
+**Syntaxe :** obj &lt;&lt; Local Data Filter
 
 **Description :** Permet de filtrer les données locales, dans la plate-forme concernée, par groupes ou étendues spécifiques
 
@@ -2411,7 +2377,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Syntaxe :** obj << Paste Local Data Filter
+**Syntaxe :** obj &lt;&lt; Paste Local Data Filter
 
 **Description :** Appliquer le filtre des données locales du presse-papiers au rapport actif.
 
@@ -2432,7 +2398,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**Syntaxe :** obj << Redo Analysis
+**Syntaxe :** obj &lt;&lt; Redo Analysis
 
 **Description :** Exécute à nouveau cette même analyse dans une nouvelle fenêtre. L&apos;analyse sera différente si les données ont été modifiées.
 
@@ -2450,7 +2416,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**Syntaxe :** obj << Redo ByGroup Analysis
+**Syntaxe :** obj &lt;&lt; Redo ByGroup Analysis
 
 **Description :** Exécute à nouveau cette même analyse dans une nouvelle fenêtre. L&apos;analyse sera différente si les données ont été modifiées.
 
@@ -2474,7 +2440,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**Syntaxe :** obj << Relaunch Analysis
+**Syntaxe :** obj &lt;&lt; Relaunch Analysis
 
 **Description :** Ouvre la fenêtre de lancement de la plate-forme et rappelle les paramètres utilisés pour créer le rapport.
 
@@ -2492,7 +2458,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**Syntaxe :** obj << Relaunch ByGroup
+**Syntaxe :** obj &lt;&lt; Relaunch ByGroup
 
 **Description :** Ouvre la fenêtre de lancement de la plate-forme et rappelle les paramètres utilisés pour créer le rapport.
 
@@ -2516,7 +2482,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**Syntaxe :** obj << Remove Column Switcher
+**Syntaxe :** obj &lt;&lt; Remove Column Switcher
 
 **Description :** Supprime le sélecteur de colonne le plus récent ajouté à la plate-forme.
 
@@ -2534,7 +2500,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Syntaxe :** obj << Remove Local Data Filter
+**Syntaxe :** obj &lt;&lt; Remove Local Data Filter
 
 **Description :** Permet de supprimer un filtre de données locales créé précédemment et rétablit toutes les valeurs des données directement dans la table de données utilisée dans la plate-forme.
 
@@ -2577,9 +2543,7 @@ obj << Render Preset(
 
 ### Report
 
-**Syntaxe :** obj << Report;
-
-Report( obj )
+**Syntaxe :** obj &lt;&lt; Report;Report( obj )
 
 **Description :** Renvoie une référence à l’objet rapport.
 
@@ -2599,7 +2563,7 @@ Show( t );
 
 ### Report View
 
-**Syntaxe :** obj << Report View( "Complet"|"Résumé" )
+**Syntaxe :** obj &lt;&lt; Report View( "Complet"|"Résumé" )
 
 **Description :** L&apos;affichage du rapport détermine le niveau de détail visible dans un rapport de plate-forme. Full affiche tous les détails, alors que Summary affiche uniquement le contenu sélectionné, selon la plate-forme. Pour un comportement personnalisé, les boîtes d&apos;affichage prennent en charge un message <<Set Summary Behavior.
 
@@ -2617,7 +2581,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**Syntaxe :** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntaxe :** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;enregistre sous forme de propriété de table dans la table de données. Vous pouvez spécifier un nom pour le script. L&apos;option Append Suffix ajoute un suffixe numérique au nom du script, ce qui différentie le script d&apos;un script existant portant le même nom. L&apos;option Prompt invite l&apos;utilisateur à spécifier un nom de script. L&apos;option Replace remplace un script existant avec le même nom.
 
@@ -2641,7 +2605,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Syntaxe :** obj << Save ByGroup Script to Journal
+**Syntaxe :** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis ajoute un bouton dans le journal qui contient ce script.
 
@@ -2665,7 +2629,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Syntaxe :** obj << Save ByGroup Script to Script Window
+**Syntaxe :** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;ajoute à la fenêtre de script active.
 
@@ -2689,7 +2653,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**Syntaxe :** obj << Save Script for All Objects
+**Syntaxe :** obj &lt;&lt; Save Script for All Objects
 
 **Description :** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -2707,7 +2671,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Syntaxe :** obj << Save Script for All Objects To Data Table( <name> )
+**Syntaxe :** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Description :** Enregistre un script pour tous les objets de rapport dans la table de données active. Cette option est utile lorsque vous avez plusieurs rapports dans la fenêtre. Le script est nommé d&apos;après la première plate-forme, sauf si vous spécifiez le nom du script entre guillemets.
 
@@ -2753,7 +2717,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Syntaxe :** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntaxe :** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;enregistre sous forme de propriété de tableau dans la table de données.
 
@@ -2773,7 +2737,7 @@ obj << Save Script to Data Table(
 
 ### Save Script to Journal
 
-**Syntaxe :** obj << Save Script to Journal
+**Syntaxe :** obj &lt;&lt; Save Script to Journal
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis ajoute un bouton dans le journal qui contient ce script.
 
@@ -2791,7 +2755,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Syntaxe :** obj << Save Script to Report
+**Syntaxe :** obj &lt;&lt; Save Script to Report
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;affiche dans le rapport lui-même. Utile pour conserver une trace écrite de ce qui a été effectué.
 
@@ -2809,7 +2773,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Syntaxe :** obj << Save Script to Script Window
+**Syntaxe :** obj &lt;&lt; Save Script to Script Window
 
 **Description :** Crée un script JSL pour réaliser cette analyse, puis l&apos;ajoute à la fenêtre de script active.
 
@@ -2904,7 +2868,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Syntaxe :** obj << Sync to Data Table Changes
+**Syntaxe :** obj &lt;&lt; Sync to Data Table Changes
 
 **Description :** Sync avec l&apos;exclusion et les modifications apportées aux données.
 
@@ -2921,7 +2885,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Syntaxe :** obj << Title( "new title" )
+**Syntaxe :** obj &lt;&lt; Title( "new title" )
 
 **Description :** Définit le titre de la plate-forme.
 
@@ -2939,7 +2903,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Syntaxe :** obj << Top Report
+**Syntaxe :** obj &lt;&lt; Top Report
 
 **Description :** Renvoie une référence au nœud racine dans le rapport.
 
@@ -2959,7 +2923,7 @@ Show( t );
 
 ### Transform Column
 
-**Syntaxe :** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Syntaxe :** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Description :** Créez une colonne de transformation dans le contexte local d&apos;un objet, généralement une plate-forme. La colonne de transformation est active uniquement pendant la durée de vie de la plateforme.
 
@@ -2984,7 +2948,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**Syntaxe :** obj << View Web XML
+**Syntaxe :** obj &lt;&lt; View Web XML
 
 **Description :** Renvoie le code XML utilisé pour créer le rapport au format HTML interactif.
 
@@ -2999,9 +2963,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**Syntaxe :** obj = Categorical(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Élément lanceur : Oui</b>
+**Syntaxe :** obj = Categorical(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Élément lanceur : Oui&lt;/b&gt;
 
 **Description :** Définir le type de fenêtre à créer pour le rapport. Par défaut, une fenêtre de rapport Visible sera créée. Une fenêtre Invisible ne s&apos;affichera pas à l&apos;écran, mais sera visible par les fonctions comme Window(). Une fenêtre Private répond à la plupart des messages de fenêtre mais n&apos;est pas visible et doit être adressée au moyen de l&apos;objet rapport
 

@@ -6,17 +6,17 @@
 
 ### Export Candidate Set to Data Table
 
-**構文:** obj << Export Candidate Set to Data Table
+**構文:** obj &lt;&lt; Export Candidate Set to Data Table
 
 ### Select Runs
 
-**構文:** obj << Select Runs( number )
+**構文:** obj &lt;&lt; Select Runs( number )
 
 ### Select Table Columns
 
-**構文:** obj << Select Table Columns
+**構文:** obj &lt;&lt; Select Table Columns
 
 ### Show Table Columns
 
-**構文:** obj << Show Table Columns( state=0|1 )
+**構文:** obj &lt;&lt; Show Table Columns( state=0|1 )
 

@@ -6,7 +6,7 @@
 
 ### Dump
 
-**構文:** res = obj << Dump()
+**構文:** res = obj &lt;&lt; Dump()
 
 **説明:** このデータコネクタのコンテンツを、種類と非デフォルト値を含む仕様の文字列として取得する。
 
@@ -24,7 +24,7 @@ New Data Connector(
 
 ### Get
 
-**構文:** res = obj << Get( OPTION )
+**構文:** res = obj &lt;&lt; Get( OPTION )
 
 **説明:** オプションの値を取得する。
 
@@ -40,7 +40,7 @@ dc << Get( Supports Schemas );
 
 ### Open
 
-**構文:** res = obj << Open()
+**構文:** res = obj &lt;&lt; Open()
 
 **説明:** このデータコネクタで指定されているとおりに新しいデータテーブルを開く。
 
@@ -57,7 +57,7 @@ New Data Connector(
 
 ### Save
 
-**構文:** obj << Save( file path )
+**構文:** obj &lt;&lt; Save( file path )
 
 **説明:** このデータコネクタのコンテンツをファイルに保存する。ファイルのコンテンツは<< Dump()の結果と等しい。
 
@@ -75,7 +75,7 @@ New Data Connector(
 
 ### Set
 
-**構文:** obj << Set( < Option1( value1 ) >, ..., < OptionN( valueN ) > )
+**構文:** obj &lt;&lt; Set( &lt; Option1( value1 ) &gt;, ..., &lt; OptionN( valueN ) &gt; )
 
 **説明:** オプションの値を設定する。一度に複数のオプションの値を設定できる。
 
@@ -92,7 +92,7 @@ Show( dc << Get( Block Fetch ), dc << Get( Supports Schemas ) );
 
 ### Type
 
-**構文:** res = obj << Type()
+**構文:** res = obj &lt;&lt; Type()
 
 **説明:** データコネクタの種類を取得する。
 

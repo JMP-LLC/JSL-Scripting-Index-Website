@@ -6,7 +6,7 @@
 
 ### Compare Data Tables
 
-**構文:** Compare Data Tables( <Compare with( Data Table( name ))>, <show window(0 | 1)>, <limit(integer)>, <Compare table properties(0 | 1)>, <Compare column attributes and properties(0 | 1)>, <Compare data(0 | 1)>, <Fuzzy compare( <0 | 1>, <Relative Error(number)>)>, <Show difference summary(0 | 1)>, <Show difference plot(0 | 1)> )
+**構文:** Compare Data Tables( &lt;Compare with( Data Table( name ))&gt;, &lt;show window(0 | 1)&gt;, &lt;limit(integer)&gt;, &lt;Compare table properties(0 | 1)&gt;, &lt;Compare column attributes and properties(0 | 1)&gt;, &lt;Compare data(0 | 1)&gt;, &lt;Fuzzy compare( &lt;0 | 1&gt;, &lt;Relative Error(number)&gt;)&gt;, &lt;Show difference summary(0 | 1)&gt;, &lt;Show difference plot(0 | 1)&gt; )
 
 **説明:** 開いている2つのデータテーブルを比較し、データやメタデータの違いをレポートする。
 
@@ -23,7 +23,7 @@ obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
 
 ### Are Data Different
 
-**構文:** obj << Are Data Different
+**構文:** obj &lt;&lt; Are Data Different
 
 **説明:** 2つのテーブルのデータが異なるかどうかを、true(1)またはfalse(0)で戻す。
 
@@ -57,7 +57,7 @@ obj << Auto Compare( 1 );
 
 ### Close
 
-**構文:** obj << Close
+**構文:** obj &lt;&lt; Close
 
 **説明:** Compare Data Tableオブジェクトを閉じる。
 
@@ -91,7 +91,7 @@ obj << Compare();
 
 ### Compare Column Attributes and Properties
 
-**構文:** obj << Compare Column Attributes and Properties( state=0|1 )
+**構文:** obj &lt;&lt; Compare Column Attributes and Properties( state=0|1 )
 
 **説明:** 列の属性とプロパティを比較するフラグをオンまたはオフにする。 デフォルトではオン。
 
@@ -107,7 +107,7 @@ obj << compare column attributes and properties( 1 );
 
 ### Compare Data
 
-**構文:** obj << Compare Data( state=0|1 )
+**構文:** obj &lt;&lt; Compare Data( state=0|1 )
 
 **説明:** 列のデータを比較するフラグをオンまたはオフにする。 デフォルトではオン。
 
@@ -123,7 +123,7 @@ obj << compare data( 0 );
 
 ### Compare Table Properties
 
-**構文:** obj << Compare Table Properties( state=0|1 )
+**構文:** obj &lt;&lt; Compare Table Properties( state=0|1 )
 
 **説明:** テーブル変数とテーブルスクリプトを比較するフラグをオンまたはオフにする。 デフォルトではオン。
 
@@ -139,7 +139,7 @@ obj << compare table properties;
 
 ### Compare With
 
-**構文:** obj << Compare With( Data Table( name ) )
+**構文:** obj &lt;&lt; Compare With( Data Table( name ) )
 
 **説明:** 最初のテーブルをこのテーブルと比較する。真(true)または偽(false)を戻す。
 
@@ -155,7 +155,7 @@ same = obj << compare with( dt2 );
 
 ### Copy Script
 
-**構文:** obj << Copy Script
+**構文:** obj &lt;&lt; Copy Script
 
 **説明:** Compare Data Tablesスクリプトをクリップボードにコピーする。
 
@@ -171,7 +171,7 @@ obj << Copy Script;
 
 ### Fuzzy Compare
 
-**構文:** obj << Fuzzy Compare( <(state= 1 | 0)>, <Relative Error (number)> )
+**構文:** obj &lt;&lt; Fuzzy Compare( &lt;(state= 1 | 0)&gt;, &lt;Relative Error (number)&gt; )
 
 **説明:** 列のデータを比較するフラグをオンまたはオフにする。
 
@@ -187,7 +187,7 @@ obj << fuzzy compare( relative error( 0.0001 ) );
 
 ### Get column attributes differences
 
-**構文:** obj << Get column attributes differences( columns( column) )
+**構文:** obj &lt;&lt; Get column attributes differences( columns( column) )
 
 **説明:** 比較した列の中で異なる属性のリストを取得する。
 
@@ -203,7 +203,7 @@ attribDiff = (obj << Get columns attributes differences( :name ));
 
 ### Get column properties differences
 
-**構文:** obj << Get column properties differences( columns( column) )
+**構文:** obj &lt;&lt; Get column properties differences( columns( column) )
 
 **説明:** 比較した列の中で異なる列プロパティのリストを取得する。
 
@@ -219,7 +219,7 @@ propDiff = (obj << Get columns properties differences( :name ));
 
 ### Get columns list
 
-**構文:** obj << Get columns list( ( <differed in data> |  <differed in properties> | <mismatched data type> | <differed in attributes>) )
+**構文:** obj &lt;&lt; Get columns list( ( &lt;differed in data&gt; | &lt;differed in properties&gt; | &lt;mismatched data type&gt; | &lt;differed in attributes&gt;) )
 
 **説明:** データ、列プロパティ、データタイプ、または他の列属性が異なる列のリストを取得する。
 
@@ -236,7 +236,7 @@ Show( colDiff );
 
 ### Get difference summary matrix
 
-**構文:** obj << Get difference summary matrix
+**構文:** obj &lt;&lt; Get difference summary matrix
 
 **説明:** 相違点の要約を行列として取得する。行列の各列は「相違点の要約」表の列に対応する。最初の列「アクション」は、行列では-1(削除)、0(置換)、および1(追加)となる。
 
@@ -252,7 +252,7 @@ mtx = (obj << Get Difference Summary matrix);
 
 ### Get table scripts difference list
 
-**構文:** obj << Get table scripts difference list
+**構文:** obj &lt;&lt; Get table scripts difference list
 
 **説明:** 異なる、または欠けているテーブルスクリプトのリストを取得する。
 
@@ -268,7 +268,7 @@ scriptDiff = (obj << Get table scripts difference list);
 
 ### Get table variables difference list
 
-**構文:** obj << Get table variables difference list
+**構文:** obj &lt;&lt; Get table variables difference list
 
 **説明:** 異なる、または欠けているテーブル変数のリストを取得する。
 
@@ -284,7 +284,7 @@ tvdiff = (obj << Get table variables difference list);
 
 ### Get unmatched columns list
 
-**構文:** obj << Get unmatched columns list
+**構文:** obj &lt;&lt; Get unmatched columns list
 
 **説明:** マッチしなかった列、つまり比較対象となる列が見つからなかった列のリストを取得する。
 
@@ -426,7 +426,7 @@ obj << Ignore Whitespace( 1 );
 
 ### Limit
 
-**構文:** obj << Limit( integer )
+**構文:** obj &lt;&lt; Limit( integer )
 
 **説明:** 相違点の数を制限する。制限数に達すると比較が停止されます。
 
@@ -442,7 +442,7 @@ obj << limit( 100 );
 
 ### Link
 
-**構文:** Link({"col1", "col2", <ID(0|1)>, <No Compare(0|1)>, <Fuzzy Compare(<Ignore Case(0|1)>, <Ignore Whitespace(0|1)>, <Ignore Missing(0|1)>, <Relative Error(<amount>)>)>
+**構文:** Link({"col1", "col2", &lt;ID(0|1)&gt;, &lt;No Compare(0|1)&gt;, &lt;Fuzzy Compare(&lt;Ignore Case(0|1)&gt;, &lt;Ignore Whitespace(0|1)&gt;, &lt;Ignore Missing(0|1)&gt;, &lt;Relative Error(&lt;amount&gt;)&gt;)&gt;
 
 **説明:** 比較する列のペアとその他の比較オプションを指定する。
 
@@ -460,7 +460,7 @@ obj << Link( {:age, :weight}, );
 
 ### Relative Error
 
-**構文:** obj << Relative Error( integer )
+**構文:** obj &lt;&lt; Relative Error( integer )
 
 **説明:** ファジー比較の相対誤差を設定する。
 
@@ -476,7 +476,7 @@ obj << Relative Error( 0.00001 );
 
 ### Report
 
-**構文:** obj << Report
+**構文:** obj &lt;&lt; Report
 
 **説明:** レポートオブジェクトへの参照を戻す。
 
@@ -494,7 +494,7 @@ Show( t );
 
 ### Row Alignment
 
-**構文:** obj << Row Alignment (Flexible by Row|By Row|Use ID Columns)
+**構文:** obj &lt;&lt; Row Alignment (Flexible by Row|By Row|Use ID Columns)
 
 **説明:** 比較のために行の揃え方を設定する。
 
@@ -518,7 +518,7 @@ obj << Row Alignment( "By Row" );
 
 ### Save Difference Summary
 
-**構文:** obj << Save Difference Summary( <invisible(0 | 1)> )
+**構文:** obj &lt;&lt; Save Difference Summary( &lt;invisible(0 | 1)&gt; )
 
 **説明:** 相違点の要約をデータテーブルに保存する。
 
@@ -534,7 +534,7 @@ summaryDT = (obj << save difference summary( invisible ));
 
 ### Save Script to Data Table
 
-**構文:** obj << Save Script to Data Table
+**構文:** obj &lt;&lt; Save Script to Data Table
 
 **説明:** Compare Data Tablesスクリプトをテーブルプロパティとしてデータテーブルに保存する。
 
@@ -550,7 +550,7 @@ obj << Save Script to Data Table;
 
 ### Save Script to Journal
 
-**構文:** obj << Save Script to Journal
+**構文:** obj &lt;&lt; Save Script to Journal
 
 **説明:** Compare Data Tablesスクリプトを含むボタンをジャーナルに追加する。
 
@@ -566,7 +566,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Script Window
 
-**構文:** obj << Save Script to Script Window
+**構文:** obj &lt;&lt; Save Script to Script Window
 
 **説明:** Compare Data Tablesスクリプトを現在のスクリプトウィンドウに追加する。
 
@@ -582,7 +582,7 @@ obj << Save Script to Script Window;
 
 ### Show Window
 
-**構文:** obj << Show Window( Show window( 0|1) )
+**構文:** obj &lt;&lt; Show Window( Show window( 0|1) )
 
 **説明:** Compare Data Tableのウィンドウの表示/非表示を切り替える。
 
@@ -616,7 +616,7 @@ obj << Show Fuzzy Differences( 1 );
 
 ### Unlink
 
-**構文:** Unlink(<column name 1>, <column name 2>)
+**構文:** Unlink(&lt;column name 1&gt;, &lt;column name 2&gt;)
 
 **説明:** 列の比較を削除する。
 

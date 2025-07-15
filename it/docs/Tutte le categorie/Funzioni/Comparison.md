@@ -2,8 +2,6 @@
 
 
 
-## Funzioni
-
 ### Equal
 
 **Sintassi:** z = x == y == ...; z = Equal( x, y, ... )
@@ -21,7 +19,7 @@ Names Default To Here( 1 );
 
 ### Greater
 
-**Sintassi:** z = x > y > ... ; z = Greater( x, y, ... )
+**Sintassi:** z = x &gt; y &gt; ... ; z = Greater( x, y, ... )
 
 **Descrizione:** Restituisce 1 se ciascun argomento è maggiore del successivo e 0 in caso contrario.
 
@@ -36,7 +34,7 @@ Names Default To Here( 1 );
 
 ### Greater or Equal
 
-**Sintassi:** z = x >= y >= ... ; z = Greater or Equal( x, y, ... )
+**Sintassi:** z = x &gt;= y &gt;= ... ; z = Greater or Equal( x, y, ... )
 
 **Descrizione:** Restituisce 1 se ciascun argomento è maggiore o uguale al successivo e 0 in caso contrario.
 
@@ -110,7 +108,7 @@ Is Same Color( To Color Space( "LUV", "red" ), "red" );
 
 ### Less
 
-**Sintassi:** z = x < y < ... ; z = Less( x, y, ... )
+**Sintassi:** z = x &lt; y &lt; ... ; z = Less( x, y, ... )
 
 **Descrizione:** Restituisce 1 se ciascun argomento è minore del successivo e 0 in caso contrario.
 
@@ -125,7 +123,7 @@ Names Default To Here( 1 );
 
 ### Less LessEqual
 
-**Sintassi:** z = x < y <= ... ; z = Less LessEqual( x, y, ... )
+**Sintassi:** z = x &lt; y &lt;= ... ; z = Less LessEqual( x, y, ... )
 
 **Descrizione:** Restituisce 1 se il primo argomento è minore del secondo e se ciascun argomento eccetto il primo è minore o uguale al successivo; restituisce 0 in caso contrario.
 
@@ -140,7 +138,7 @@ Names Default To Here( 1 );
 
 ### Less or Equal
 
-**Sintassi:** z = x <= y <= ... ; z = Less or Equal( x, y, ... )
+**Sintassi:** z = x &lt;= y &lt;= ... ; z = Less or Equal( x, y, ... )
 
 **Descrizione:** Restituisce 1 se ciascun argomento è minore o uguale al successivo e 0 in caso contrario.
 
@@ -155,7 +153,7 @@ Names Default To Here( 1 );
 
 ### LessEqual Less
 
-**Sintassi:** z = x <= y < ... ; z = LessEqual Less( x, y, ... )
+**Sintassi:** z = x &lt;= y &lt; ... ; z = LessEqual Less( x, y, ... )
 
 **Descrizione:** Restituisce 1 se il primo argomento è minore o uguale al secondo e se ciascun argomento eccetto il primo è minore del successivo; restituisce 0 in caso contrario.
 

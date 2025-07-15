@@ -6,7 +6,7 @@
 
 ### Close
 
-**Syntax:** obj << Close
+**Syntax:** obj &lt;&lt; Close
 
 **Beschreibung:** (Nur Windows) Schließt das Datenfeed-Objekt und sein Fenster.
 
@@ -24,7 +24,7 @@ feed << Close;
 
 ### Connect
 
-**Syntax:** obj << Connect( Port(  "com1"|"com2"|"lpt1"... ), Parity( even|odd|none ), Baud rate( 4800|9600 ), Data bits( 8|7 ), <Stop bits( 0|1|2 )>, <DTR_DSR( 0|1 )>, <RTS_CTS( 0|1 )>, <XON_XOFF( 1|0 )> )
+**Syntax:** obj &lt;&lt; Connect( Port( "com1"|"com2"|"lpt1"... ), Parity( even|odd|none ), Baud rate( 4800|9600 ), Data bits( 8|7 ), &lt;Stop bits( 0|1|2 )&gt;, &lt;DTR_DSR( 0|1 )&gt;, &lt;RTS_CTS( 0|1 )&gt;, &lt;XON_XOFF( 1|0 )&gt; )
 
 **Beschreibung:** (Nur Windows) Richtet die Porteinstellungen für die Verbindung zum Gerät ein.
 
@@ -40,7 +40,7 @@ feed = Open Datafeed(
 
 ### Disconnect
 
-**Syntax:** obj << Disconnect
+**Syntax:** obj &lt;&lt; Disconnect
 
 **Beschreibung:** (Nur Windows) Trennt das Gerät von der Datenfeed-Warteschlange, lässt das Datenfeed-Objekt jedoch aktiv.
 
@@ -57,7 +57,7 @@ feed << Disconnect;
 
 ### EOL
 
-**Syntax:** obj << EOL( "CR"|"LF"|"CRLF" )
+**Syntax:** obj &lt;&lt; EOL( "CR"|"LF"|"CRLF" )
 
 **Beschreibung:** (Nur Windows) Legt den als Trennzeichen verwendeten Zeilenendewert, der beim Analysieren eingehender Datenzeilen verwendet wird, fest. Der Wert wird auch als Abschlusszeichen in ausgehenden Datenzeilen verwendet. CR = ASCII-Zeichen 13 (Zeilenschaltung). LF = ASCII-Zeichen 10 (Zeilenvorschub). CRLF verwendet CR und LF nacheinander.
 
@@ -83,7 +83,7 @@ For( exi = 0, exi < 5, exi++,
 
 ### Get Container
 
-**Syntax:** obj << Get Container
+**Syntax:** obj &lt;&lt; Get Container
 
 **Beschreibung:** Gibt einen Verweis auf das Containerfeld zurück, das den Inhalt des Objekts enthält.
 
@@ -101,7 +101,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Line
 
-**Syntax:** line = obj << Get Line
+**Syntax:** line = obj &lt;&lt; Get Line
 
 **Beschreibung:** (Nur Windows) Gibt eine Zeile aus der Datenfeed-Warteschlange zurück und entfernt sie.
 
@@ -120,7 +120,7 @@ exfeed = Open Datafeed(
 
 ### Get Lines
 
-**Syntax:** list = obj << Get Lines
+**Syntax:** list = obj &lt;&lt; Get Lines
 
 **Beschreibung:** (Nur Windows) Gibt alle Zeilen aus der Datenfeed-Warteschlange zurück und entfernt sie.
 
@@ -144,7 +144,7 @@ For( exi = 0, exi < 5, exi++,
 
 ### Print Queue
 
-**Syntax:** obj << Print Queue
+**Syntax:** obj &lt;&lt; Print Queue
 
 **Beschreibung:** (Nur Windows) Druckt die interne Warteschlange der Meldungen ins Logfenster.
 
@@ -161,7 +161,7 @@ exfeed << print queue;/* or red triangle menu item */;
 
 ### Queue Line
 
-**Syntax:** obj << Queue Line( string )
+**Syntax:** obj &lt;&lt; Queue Line( string )
 
 **Beschreibung:** (Nur Windows) Sendet eine Zeile ans Ende der Datenfeed-Warteschlange.
 
@@ -185,7 +185,7 @@ For( exi = 0, exi < 5, exi++,
 
 ### Restart
 
-**Syntax:** obj << Restart
+**Syntax:** obj &lt;&lt; Restart
 
 **Beschreibung:** (Nur Windows) Startet die Verarbeitung von Zeilen in der Warteschlange neu.
 
@@ -204,7 +204,7 @@ feed << Restart;
 
 ### Set Script
 
-**Syntax:** obj << Set Script( script )
+**Syntax:** obj &lt;&lt; Set Script( script )
 
 **Beschreibung:** (Nur Windows) Weist das Skript zu, das bei jedem Empfang einer Datenzeile ausgeführt wird.
 
@@ -220,7 +220,7 @@ feed = Open Datafeed(
 
 ### Stop
 
-**Syntax:** obj << Stop
+**Syntax:** obj &lt;&lt; Stop
 
 **Beschreibung:** (Nur Windows) Stoppt die Verarbeitung von Zeilen in der Warteschlange.
 
@@ -237,7 +237,7 @@ feed << Stop;
 
 ### Write
 
-**Syntax:** obj << Write( string )
+**Syntax:** obj &lt;&lt; Write( string )
 
 **Beschreibung:** (Nur Windows) Sendet eine Zeichenkette an das Datenfeed-Gerät.
 
@@ -260,7 +260,7 @@ exfeed << Write( "Ready" );
 
 ### Write Line
 
-**Syntax:** obj << Write Line( string )
+**Syntax:** obj &lt;&lt; Write Line( string )
 
 **Beschreibung:** (Nur Windows) Sendet die Zeichenkette an das Datenfeed-Gerät. Wenn für den Datenfeed EOL festgelegt ist, werden die Zeichenketten vom angegebenen EOL-Wert beendet. Wenn EOL nicht festgelegt ist, wird die Zeile mit CRLF beendet.
 
@@ -283,7 +283,7 @@ exfeed << Write Line( "Ready" );
 
 ### Write Lines
 
-**Syntax:** obj << Write Lines( list )
+**Syntax:** obj &lt;&lt; Write Lines( list )
 
 **Beschreibung:** (Nur Windows) Sendet eine Liste von Zeichenketten an das Datenfeed-Gerät. Wenn für den Datenfeed EOL festgelegt ist, wird jede Zeichenkette durch den EOL-Wert getrennt. Wenn EOL nicht festgelegt ist, wird jede Zeile mit CRLF getrennt.
 

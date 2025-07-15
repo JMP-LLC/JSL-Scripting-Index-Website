@@ -6,7 +6,7 @@
 
 ### Compare Data Tables
 
-**Sintaxis:** Compare Data Tables( <Compare with( Data Table( name ))>, <show window(0 | 1)>, <limit(integer)>, <Compare table properties(0 | 1)>, <Compare column attributes and properties(0 | 1)>, <Compare data(0 | 1)>, <Fuzzy compare( <0 | 1>, <Relative Error(number)>)>, <Show difference summary(0 | 1)>, <Show difference plot(0 | 1)> )
+**Sintaxis:** Compare Data Tables( &lt;Compare with( Data Table( name ))&gt;, &lt;show window(0 | 1)&gt;, &lt;limit(integer)&gt;, &lt;Compare table properties(0 | 1)&gt;, &lt;Compare column attributes and properties(0 | 1)&gt;, &lt;Compare data(0 | 1)&gt;, &lt;Fuzzy compare( &lt;0 | 1&gt;, &lt;Relative Error(number)&gt;)&gt;, &lt;Show difference summary(0 | 1)&gt;, &lt;Show difference plot(0 | 1)&gt; )
 
 **Descripción:** Compara dos tablas de datos abiertas e informa de las diferencias entre los datos, así como los metadatos.
 
@@ -23,7 +23,7 @@ obj = dt << Compare Data Tables( compare With( Data Table( "Students2" ) ) );
 
 ### Are Data Different
 
-**Sintaxis:** obj << Are Data Different
+**Sintaxis:** obj &lt;&lt; Are Data Different
 
 **Descripción:** Devuelve true o false dependiendo de si los datos de las dos tablas son distintos o no.
 
@@ -57,7 +57,7 @@ obj << Auto Compare( 1 );
 
 ### Close
 
-**Sintaxis:** obj << Close
+**Sintaxis:** obj &lt;&lt; Close
 
 **Descripción:** Cierra el objeto de Comparar tablas de datos
 
@@ -91,7 +91,7 @@ obj << Compare();
 
 ### Compare Column Attributes and Properties
 
-**Sintaxis:** obj << Compare Column Attributes and Properties( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Compare Column Attributes and Properties( state=0|1 )
 
 **Descripción:** Establece o borra la marca de comparación de los atributos y las propiedades de columnas. Opción activada de forma predeterminada.
 
@@ -107,7 +107,7 @@ obj << compare column attributes and properties( 1 );
 
 ### Compare Data
 
-**Sintaxis:** obj << Compare Data( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Compare Data( state=0|1 )
 
 **Descripción:** Establece o borra la marca de comparación de los datos de columnas. Opción activada de forma predeterminada.
 
@@ -123,7 +123,7 @@ obj << compare data( 0 );
 
 ### Compare Table Properties
 
-**Sintaxis:** obj << Compare Table Properties( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Compare Table Properties( state=0|1 )
 
 **Descripción:** Establece o borra la marca de comparación de los scripts y las variables de tabla. Opción activada de forma predeterminada.
 
@@ -139,7 +139,7 @@ obj << compare table properties;
 
 ### Compare With
 
-**Sintaxis:** obj << Compare With( Data Table( name ) )
+**Sintaxis:** obj &lt;&lt; Compare With( Data Table( name ) )
 
 **Descripción:** Compara la primera tabla con esta tabla. Devuelve verdadero o falso.
 
@@ -155,7 +155,7 @@ same = obj << compare with( dt2 );
 
 ### Copy Script
 
-**Sintaxis:** obj << Copy Script
+**Sintaxis:** obj &lt;&lt; Copy Script
 
 **Descripción:** Sitúa al portapapeles el script Comparar tablas de datos.
 
@@ -171,7 +171,7 @@ obj << Copy Script;
 
 ### Fuzzy Compare
 
-**Sintaxis:** obj << Fuzzy Compare( <(state= 1 | 0)>, <Relative Error (number)> )
+**Sintaxis:** obj &lt;&lt; Fuzzy Compare( &lt;(state= 1 | 0)&gt;, &lt;Relative Error (number)&gt; )
 
 **Descripción:** Establece o borra la marca de comparación de los datos de columnas.
 
@@ -187,7 +187,7 @@ obj << fuzzy compare( relative error( 0.0001 ) );
 
 ### Get column attributes differences
 
-**Sintaxis:** obj << Get column attributes differences( columns( column) )
+**Sintaxis:** obj &lt;&lt; Get column attributes differences( columns( column) )
 
 **Descripción:** Presenta la lista de atributos de columnas que difieren para las columnas que se comparan.
 
@@ -203,7 +203,7 @@ attribDiff = (obj << Get columns attributes differences( :name ));
 
 ### Get column properties differences
 
-**Sintaxis:** obj << Get column properties differences( columns( column) )
+**Sintaxis:** obj &lt;&lt; Get column properties differences( columns( column) )
 
 **Descripción:** Presenta la lista de propiedades de columnas que difieren para las columnas que se comparan.
 
@@ -219,7 +219,7 @@ propDiff = (obj << Get columns properties differences( :name ));
 
 ### Get columns list
 
-**Sintaxis:** obj << Get columns list( ( <differed in data> |  <differed in properties> | <mismatched data type> | <differed in attributes>) )
+**Sintaxis:** obj &lt;&lt; Get columns list( ( &lt;differed in data&gt; | &lt;differed in properties&gt; | &lt;mismatched data type&gt; | &lt;differed in attributes&gt;) )
 
 **Descripción:** Presenta la lista de columnas que difieren en datos, propiedades de columna, tipo de datos u otros atributos de columna.
 
@@ -236,7 +236,7 @@ Show( colDiff );
 
 ### Get difference summary matrix
 
-**Sintaxis:** obj << Get difference summary matrix
+**Sintaxis:** obj &lt;&lt; Get difference summary matrix
 
 **Descripción:** Obtiene el resumen de diferencias en forma de matriz. Las columnas de la matriz corresponden a las columnas del resumen de diferencias. La primera columna, acción, está representada en la matriz con -1 para Eliminar, 0 para Sustituir, y 1 para Añadir.
 
@@ -252,7 +252,7 @@ mtx = (obj << Get Difference Summary matrix);
 
 ### Get table scripts difference list
 
-**Sintaxis:** obj << Get table scripts difference list
+**Sintaxis:** obj &lt;&lt; Get table scripts difference list
 
 **Descripción:** Presenta la lista de scripts de tabla que faltan o difieren.
 
@@ -268,7 +268,7 @@ scriptDiff = (obj << Get table scripts difference list);
 
 ### Get table variables difference list
 
-**Sintaxis:** obj << Get table variables difference list
+**Sintaxis:** obj &lt;&lt; Get table variables difference list
 
 **Descripción:** Presenta la lista de variables de tabla que faltan o difieren.
 
@@ -284,7 +284,7 @@ tvdiff = (obj << Get table variables difference list);
 
 ### Get unmatched columns list
 
-**Sintaxis:** obj << Get unmatched columns list
+**Sintaxis:** obj &lt;&lt; Get unmatched columns list
 
 **Descripción:** Presenta la lista de columnas sin asociar, aquellas que no tienen unas columnas correspondientes con las que compararse
 
@@ -426,7 +426,7 @@ obj << Ignore Whitespace( 1 );
 
 ### Limit
 
-**Sintaxis:** obj << Limit( integer )
+**Sintaxis:** obj &lt;&lt; Limit( integer )
 
 **Descripción:** Establece el límite para el número de diferencia. La comparación se detendrá al alcanzar el límite.
 
@@ -442,7 +442,7 @@ obj << limit( 100 );
 
 ### Link
 
-**Sintaxis:** Link({"col1", "col2", <ID(0|1)>, <No Compare(0|1)>, <Fuzzy Compare(<Ignore Case(0|1)>, <Ignore Whitespace(0|1)>, <Ignore Missing(0|1)>, <Relative Error(<amount>)>)>
+**Sintaxis:** Link({"col1", "col2", &lt;ID(0|1)&gt;, &lt;No Compare(0|1)&gt;, &lt;Fuzzy Compare(&lt;Ignore Case(0|1)&gt;, &lt;Ignore Whitespace(0|1)&gt;, &lt;Ignore Missing(0|1)&gt;, &lt;Relative Error(&lt;amount&gt;)&gt;)&gt;
 
 **Descripción:** Especifica pares de columnas que comparar y otras opciones de comparación.
 
@@ -460,7 +460,7 @@ obj << Link( {:age, :weight}, );
 
 ### Relative Error
 
-**Sintaxis:** obj << Relative Error( integer )
+**Sintaxis:** obj &lt;&lt; Relative Error( integer )
 
 **Descripción:** Establece el error relativo para la comparación aproximada.
 
@@ -476,7 +476,7 @@ obj << Relative Error( 0.00001 );
 
 ### Report
 
-**Sintaxis:** obj << Report
+**Sintaxis:** obj &lt;&lt; Report
 
 **Descripción:** Devuelve una referencia al objeto informe.
 
@@ -494,7 +494,7 @@ Show( t );
 
 ### Row Alignment
 
-**Sintaxis:** obj << Row Alignment (Flexible by Row|By Row|Use ID Columns)
+**Sintaxis:** obj &lt;&lt; Row Alignment (Flexible by Row|By Row|Use ID Columns)
 
 **Descripción:** Establece el modo en el que se alinean las filas para la comparación. 
 
@@ -518,7 +518,7 @@ obj << Row Alignment( "By Row" );
 
 ### Save Difference Summary
 
-**Sintaxis:** obj << Save Difference Summary( <invisible(0 | 1)> )
+**Sintaxis:** obj &lt;&lt; Save Difference Summary( &lt;invisible(0 | 1)&gt; )
 
 **Descripción:** Guarda el resumen de diferencias en una tabla de datos.
 
@@ -534,7 +534,7 @@ summaryDT = (obj << save difference summary( invisible ));
 
 ### Save Script to Data Table
 
-**Sintaxis:** obj << Save Script to Data Table
+**Sintaxis:** obj &lt;&lt; Save Script to Data Table
 
 **Descripción:** Guarda como propiedad de tabla en la tabla de datos el script Comparar tablas de datos.
 
@@ -550,7 +550,7 @@ obj << Save Script to Data Table;
 
 ### Save Script to Journal
 
-**Sintaxis:** obj << Save Script to Journal
+**Sintaxis:** obj &lt;&lt; Save Script to Journal
 
 **Descripción:** Agrega un botón al diario que contiene el script Comparar tablas de datos.
 
@@ -566,7 +566,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Script Window
 
-**Sintaxis:** obj << Save Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save Script to Script Window
 
 **Descripción:** Añade el script Comparar tablas de datos a la ventana de texto del script actual.
 
@@ -582,7 +582,7 @@ obj << Save Script to Script Window;
 
 ### Show Window
 
-**Sintaxis:** obj << Show Window( Show window( 0|1) )
+**Sintaxis:** obj &lt;&lt; Show Window( Show window( 0|1) )
 
 **Descripción:** Muestra u oculta la ventana para Comparar tablas de datos
 
@@ -616,7 +616,7 @@ obj << Show Fuzzy Differences( 1 );
 
 ### Unlink
 
-**Sintaxis:** Unlink(<column name 1>, <column name 2>)
+**Sintaxis:** Unlink(&lt;column name 1&gt;, &lt;column name 2&gt;)
 
 **Descripción:** Quita la comparación de columnas.
 

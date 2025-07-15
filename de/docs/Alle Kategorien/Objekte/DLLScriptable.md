@@ -6,7 +6,7 @@
 
 ### Call DLL
 
-**Syntax:** obj << Call DLL( function name, signature, args )
+**Syntax:** obj &lt;&lt; Call DLL( function name, signature, args )
 
 **Beschreibung:** Ruft eine angegebene Funktion innerhalb der DLL mit einer vorgegebenen Signatur und vorgegebenen Argumenten auf.
 
@@ -25,7 +25,7 @@ If( Host is( "Windows" ),
 
 ### Declare Function
 
-**Syntax:** obj << Declare Function( name, Convention( STDCALL| CDECL| Pascal ), Alias( string ), Arg( Int8| UInt8| Int16| UInt16| Int32| UInt32| Int64| UInt64| Float| Double| AnsiString| UnicodeString| Struct| IntPtr| UIntPtr| ObjPtr, string ), Returns( type ); )
+**Syntax:** obj &lt;&lt; Declare Function( name, Convention( STDCALL| CDECL| Pascal ), Alias( string ), Arg( Int8| UInt8| Int16| UInt16| Int32| UInt32| Int64| UInt64| Float| Double| AnsiString| UnicodeString| Struct| IntPtr| UIntPtr| ObjPtr, string ), Returns( type ); )
 
 **Beschreibung:** Deklariert den Rückgabetyp und die Parametertypen einer in der DLL defininerten Funktion, so dass sie erfolgreich aus JSL aufgerufen werden kann.
 
@@ -52,7 +52,7 @@ If( Host is( "Windows" ),
 
 ### Get Declaration JSL
 
-**Syntax:** obj << Get Declaration JSL
+**Syntax:** obj &lt;&lt; Get Declaration JSL
 
 **Beschreibung:** Ruft die Deklarations-JSL aus der DLL ab und zeigt sie im Log an. Diese Meldung gilt nur für DLLs, die die Funktion _JMP_Declarations() enthalten.
 
@@ -66,7 +66,7 @@ dll = Load DLL( /*DLL with JSL keyword*/ );
 
 ### Show Functions
 
-**Syntax:** obj << Show Functions
+**Syntax:** obj &lt;&lt; Show Functions
 
 **Beschreibung:** Liste der deklarierten Funktionen zum Log weiterleiten
 
@@ -92,7 +92,7 @@ If( Host is( "Windows" ),
 
 ### Unload DLL
 
-**Syntax:** obj << Unload DLL
+**Syntax:** obj &lt;&lt; Unload DLL
 
 **Beschreibung:** Entlädt die DLL.
 
@@ -113,7 +113,7 @@ If( Host is( "Windows" ),
 
 ### Load DLL
 
-**Syntax:** dll = Load DLL( file path | Base Name( file path without extension ), < AutoDeclare( bool | Quiet | Verbose) | Quiet | Verbose )> )
+**Syntax:** dll = Load DLL( file path | Base Name( file path without extension ), &lt; AutoDeclare( bool | Quiet | Verbose) | Quiet | Verbose )&gt; )
 
 **Beschreibung:** Lädt eine DLL, auf die der angegebene Pfad zeigt.
 

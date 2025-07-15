@@ -6,7 +6,7 @@
 
 ### Custom Graph
 
-**구문:** New Window(Window title, <Editable|Dialog>, Graph Box( named arguments, ..., script segment
+**구문:** New Window(Window title, &lt;Editable|Dialog&gt;, Graph Box( named arguments, ..., script segment
 
 **설명:** 사용자 스크립트를 사용하여 그래프를 생성합니다.
 
@@ -34,7 +34,7 @@ obj = New Window( "Example",
 
 ### Append Seg
 
-**구문:** obj << Append Seg( display seg )
+**구문:** obj &lt;&lt; Append Seg( display seg )
 
 **설명:** 프레임 상자에 표시 세그먼트를 추가합니다.
 
@@ -50,11 +50,11 @@ New Window( "Example",
 
 ### Background Map
 
-**구문:** obj << Background Map
+**구문:** obj &lt;&lt; Background Map
 
 ### Bottom
 
-**구문:** obj << Bottom( number )
+**구문:** obj &lt;&lt; Bottom( number )
 
 ### FrameSize
 
@@ -128,111 +128,111 @@ New Window( "Example",
 
 ### Get Background Color
 
-**구문:** obj << Get Background Color( color )
+**구문:** obj &lt;&lt; Get Background Color( color )
 
 ### Get Background Fill
 
-**구문:** obj << Get Background Fill( state=0|1 )
+**구문:** obj &lt;&lt; Get Background Fill( state=0|1 )
 
 ### Get Bottom
 
-**구문:** obj << Get Bottom
+**구문:** obj &lt;&lt; Get Bottom
 
 ### Get Graphics Script
 
-**구문:** obj << Get Graphics Script
+**구문:** obj &lt;&lt; Get Graphics Script
 
 ### Get Height
 
-**구문:** obj << Get Height
+**구문:** obj &lt;&lt; Get Height
 
 ### Get Left
 
-**구문:** obj << Get Left
+**구문:** obj &lt;&lt; Get Left
 
 ### Get Right
 
-**구문:** obj << Get Right
+**구문:** obj &lt;&lt; Get Right
 
 ### Get Sides
 
-**구문:** obj << Get Sides
+**구문:** obj &lt;&lt; Get Sides
 
 ### Get Top
 
-**구문:** obj << Get Top
+**구문:** obj &lt;&lt; Get Top
 
 ### Get Width
 
-**구문:** obj << Get Width
+**구문:** obj &lt;&lt; Get Width
 
 ### Get X Axis
 
-**구문:** obj << Get X Axis
+**구문:** obj &lt;&lt; Get X Axis
 
 ### Get X Name
 
-**구문:** obj << Get X Name
+**구문:** obj &lt;&lt; Get X Name
 
 ### Get Y Axis
 
-**구문:** obj << Get Y Axis
+**구문:** obj &lt;&lt; Get Y Axis
 
 ### Get Y Name
 
-**구문:** obj << Get Y Name
+**구문:** obj &lt;&lt; Get Y Name
 
 ### Left
 
-**구문:** obj << Left( number )
+**구문:** obj &lt;&lt; Left( number )
 
 ### Right
 
-**구문:** obj << Right( number )
+**구문:** obj &lt;&lt; Right( number )
 
 ### Set Background Color
 
-**구문:** obj << Set Background Color( color )
+**구문:** obj &lt;&lt; Set Background Color( color )
 
 ### Set Background Fill
 
-**구문:** obj << Set Background Fill( state=0|1 )
+**구문:** obj &lt;&lt; Set Background Fill( state=0|1 )
 
 ### Set Graphics Script
 
-**구문:** obj << Set Graphics Script
+**구문:** obj &lt;&lt; Set Graphics Script
 
 ### Set Height
 
-**구문:** obj << Set Height
+**구문:** obj &lt;&lt; Set Height
 
 ### Set Width
 
-**구문:** obj << Set Width
+**구문:** obj &lt;&lt; Set Width
 
 ### Set X Axis
 
-**구문:** obj << Set X Axis
+**구문:** obj &lt;&lt; Set X Axis
 
 ### Set X Name
 
-**구문:** obj << Set X Name
+**구문:** obj &lt;&lt; Set X Name
 
 ### Set Y Axis
 
-**구문:** obj << Set Y Axis
+**구문:** obj &lt;&lt; Set Y Axis
 
 ### Set Y Name
 
-**구문:** obj << Set Y Name
+**구문:** obj &lt;&lt; Set Y Name
 
 ### Sides
 
-**구문:** obj << Sides( number )
+**구문:** obj &lt;&lt; Sides( number )
 
 ### Suppress Axes
 
-**구문:** obj << Suppress Axes
+**구문:** obj &lt;&lt; Suppress Axes
 
 **설명:** 그래프 상자의 축을 숨깁니다.
 
@@ -274,7 +274,7 @@ obj = New Window( "Example",
 
 ### Top
 
-**구문:** obj << Top( number )
+**구문:** obj &lt;&lt; Top( number )
 
 ### X Scale
 

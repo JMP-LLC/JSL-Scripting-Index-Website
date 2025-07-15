@@ -6,7 +6,7 @@
 
 ### Get Description
 
-**语法:** string = jmplivepost << Get Description()
+**语法:** string = jmplivepost &lt;&lt; Get Description()
 
 **说明:** 以字符串形式获取 JMP Live 报表、JMP Live 文件夹或 JMP Live 帖子的说明。
 
@@ -48,7 +48,7 @@ Write( "\!nDescription: ", report << Get Description );
 
 ### Get ID
 
-**语法:** string = jmplivepost << Get ID()
+**语法:** string = jmplivepost &lt;&lt; Get ID()
 
 **说明:** 以字符串形式获取该 JMP Live 报表、JMP Live 文件夹或 JMP Live 帖子的 ID。
 
@@ -91,7 +91,7 @@ Write( "\!n\!nID: ", report << Get ID );
 
 ### Get Path
 
-**语法:** string = jmplivepost << Get Path()
+**语法:** string = jmplivepost &lt;&lt; Get Path()
 
 **说明:** 以字符串形式获取该 JMP Live 报表、文件夹或帖子的路径。
 
@@ -134,7 +134,7 @@ Write( "\!n\!nPath: ", report << Get Path );
 
 ### Get Title
 
-**语法:** string = jmplivepost << Get Title()
+**语法:** string = jmplivepost &lt;&lt; Get Title()
 
 **说明:** 以字符串形式获取 JMP Live 报表、JMP Live 文件夹或 JMP Live 帖子的标题。
 
@@ -177,7 +177,7 @@ Write( "\!nTitle: ", report << Get Title );
 
 ### Get Type
 
-**语法:** string = jmplivepost << Get Type()
+**语法:** string = jmplivepost &lt;&lt; Get Type()
 
 **说明:** 获取特定类型的帖子（文件夹、数据或报表）
 
@@ -221,7 +221,7 @@ Write( "\!nType: ", report << Get Type );
 
 ### Get URL
 
-**语法:** string = jmplivepost << Get URL()
+**语法:** string = jmplivepost &lt;&lt; Get URL()
 
 **说明:** 以字符串形式获取该 JMP Live 报表、JMP Live 文件夹或 JMP Live 帖子的 URL。
 
@@ -264,7 +264,7 @@ Write( "\!nURL: ", report << Get URL );
 
 ### Set Description
 
-**语法:** success = jmplivepost << Set Description("string value")
+**语法:** success = jmplivepost &lt;&lt; Set Description("string value")
 
 **说明:** 给定一个字符串，设置 JMP Live 报表、JMP Live 文件夹或 JMP Live 帖子的说明。返回 True 或 False 表示成功或失败。
 
@@ -314,7 +314,7 @@ Write( "\!nDecription: ", report << Get Description );
 
 ### Set Title
 
-**语法:** success = jmplivepost << Set Title("New Title")
+**语法:** success = jmplivepost &lt;&lt; Set Title("New Title")
 
 **说明:** 设置 JMP Live 报表、JMP Live 文件夹或 JMP Live 帖子的标题。返回 True 或 False 表示成功或失败。
 

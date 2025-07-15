@@ -25,7 +25,7 @@ s = Schedule(
 
 ### Clear Schedule
 
-**構文:** obj << Clear Schedule
+**構文:** obj &lt;&lt; Clear Schedule
 
 **説明:** 現在スケジュールされているすべてのイベントをキャンセルする。
 
@@ -43,7 +43,7 @@ s << Clear Schedule;
 
 ### Close
 
-**構文:** obj << Close
+**構文:** obj &lt;&lt; Close
 
 **説明:** スケジューラを閉じる。
 
@@ -62,7 +62,7 @@ s << Close;
 
 ### Get Container
 
-**構文:** obj << Get Container
+**構文:** obj &lt;&lt; Get Container
 
 **説明:** オブジェクトのコンテンツを含んだコンテナボックスの参照を戻す。
 
@@ -81,7 +81,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Restart
 
-**構文:** obj << Restart
+**構文:** obj &lt;&lt; Restart
 
 **説明:** 現在スケジュールされているすべてのイベントの実行を停止した後、スケジューラを再始動させる。
 
@@ -101,7 +101,7 @@ s << Restart;
 
 ### Show Schedule
 
-**構文:** obj << Show Schedule
+**構文:** obj &lt;&lt; Show Schedule
 
 **説明:** 現在スケジュールされている次のイベントを表示する。
 
@@ -119,7 +119,7 @@ s << Show Schedule;
 
 ### Stop
 
-**構文:** obj << Stop
+**構文:** obj &lt;&lt; Stop
 
 **説明:** 現在スケジュールされているすべてのイベントの実行を停止する。
 

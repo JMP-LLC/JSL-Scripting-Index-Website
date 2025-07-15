@@ -6,9 +6,7 @@
 
 ### Noise Factors
 
-**Sintaxis:** obj = Mixture Profiler(...<Noise Factors( column(s) )>...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Mixture Profiler(...&lt;Noise Factors( column(s) )&gt;...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica factores de ruido, que deben ser columnas que sean ingredientes de las columnas de fórmulas. Los factores de ruido se utilizan para estudiar la robustez (o planitud) con respecto a la variación transmitida desde estos factores. El perfilador resultante incluye las derivadas de las fórmulas con respecto a los factores de ruido.
 
@@ -72,9 +70,7 @@ obj = dt << Custom Profiler(
 
 ### Prediction Formula
 
-**Sintaxis:** obj = Mixture Profiler(...Prediction Formula( column(s) )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Mixture Profiler(...Prediction Formula( column(s) )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica las columnas de respuesta que contienen fórmulas.
 
@@ -88,9 +84,7 @@ obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
 
 ### Y
 
-**Sintaxis:** obj = Mixture Profiler(...Y( column(s) )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Mixture Profiler(...Y( column(s) )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica las columnas de respuesta que contienen fórmulas.
 
@@ -106,7 +100,7 @@ obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
 
 ### Mixture Profiler
 
-**Sintaxis:** Mixture Profiler( Y( column1, column2, ...  ) )
+**Sintaxis:** Mixture Profiler( Y( column1, column2, ... ) )
 
 **Descripción:** Crea un gráfico ternario interactivo que le permite explorar los contornos de las fórmulas de predicción guardadas para modelos de mezcla con tres o más factores.
 
@@ -122,7 +116,7 @@ obj = dt << Mixture Profiler( Y( :Pred Formula Y ) );
 
 ### Animation
 
-**Sintaxis:** obj << Animation( <Tour Type( "Sequential"|("Single Factor",factorname)|"Random"|"Data Sequential"|"Data Random" )>, <Speed(ticks)>, <Go>, <Stop> )
+**Sintaxis:** obj &lt;&lt; Animation( &lt;Tour Type( "Sequential"|("Single Factor",factorname)|"Random"|"Data Sequential"|"Data Random" )&gt;, &lt;Speed(ticks)&gt;, &lt;Go&gt;, &lt;Stop&gt; )
 
 **Descripción:** Inicia o detiene la animación del perfilador. También puede especificar cómo recorre la animación las combinaciones de factores.
 
@@ -141,7 +135,7 @@ obj << Animation( "Stop" );
 
 ### Append Settings to Table
 
-**Sintaxis:** obj << Append Settings to Table
+**Sintaxis:** obj &lt;&lt; Append Settings to Table
 
 **Descripción:** Guarda la configuración del perfilador actual como una nueva fila al final de la tabla de datos.
 
@@ -156,7 +150,7 @@ obj << Append Settings to Table;
 
 ### Broadcast Factor Settings
 
-**Sintaxis:** obj << Broadcast Factor Settings
+**Sintaxis:** obj &lt;&lt; Broadcast Factor Settings
 
 **Descripción:** Envía la configuración de los factores para el perfilador actual a todos los demás perfiladores. Esta opción no vincula los perfiladores.
 
@@ -186,7 +180,7 @@ obj << Broadcast Factor Settings;
 
 ### Contour Grid
 
-**Sintaxis:** obj << Contour Grid( minimum, maximum, increment, y column )
+**Sintaxis:** obj &lt;&lt; Contour Grid( minimum, maximum, increment, y column )
 
 **Descripción:** Dibuja una cuadrícula de contorno en el perfilador de mezclas. La cuadrícula se basa en los intervalos especificados.
 
@@ -202,7 +196,7 @@ obj << Contour Grid( 5, 20, 3, :PredFormula Y );
 
 ### Contour Profiler
 
-**Sintaxis:** obj << Contour Profiler( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Contour Profiler( state=0|1 )
 
 **Descripción:** Muestra u oculta el perfilador de contorno.
 
@@ -217,7 +211,7 @@ obj << Contour Profiler( 1 );
 
 ### Contour Value
 
-**Sintaxis:** obj << Contour Value( y1( number, <Min( number )>, <Max( number )>), y2(...) )
+**Sintaxis:** obj &lt;&lt; Contour Value( y1( number, &lt;Min( number )&gt;, &lt;Max( number )&gt;), y2(...) )
 
 **Descripción:** Establece valores de contorno específicos para respuestas en el perfilador de mezclas.
 
@@ -232,7 +226,7 @@ obj << Contour Value( Pred Formula Y( 18.167, Min( 5 ), Max( 20 ) ) );
 
 ### Copy Settings Script
 
-**Sintaxis:** obj << Copy Settings Script
+**Sintaxis:** obj &lt;&lt; Copy Settings Script
 
 **Descripción:** Copia la configuración actual de los factores en el portapapeles. La configuración se puede pegar posteriormente en otro perfilador.
 
@@ -261,7 +255,7 @@ obj2 << Paste Settings Script;
 
 ### Custom Profiler
 
-**Sintaxis:** obj << Custom Profiler( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Custom Profiler( state=0|1 )
 
 **Descripción:** Muestra u oculta el perfilador personalizado.
 
@@ -276,7 +270,7 @@ obj << Custom Profiler( 1 );
 
 ### Formulas for OPTMODEL
 
-**Sintaxis:** obj << Formulas for OPTMODEL
+**Sintaxis:** obj &lt;&lt; Formulas for OPTMODEL
 
 **Descripción:** Guarda las fórmulas de predicción del modelo en un nuevo archivo como instrucciones SAS para PROC OPTMODEL.
 
@@ -291,7 +285,7 @@ obj << Formulas for OPTMODEL;
 
 ### Get Constraints
 
-**Sintaxis:** obj << Get Constraints
+**Sintaxis:** obj &lt;&lt; Get Constraints
 
 **Descripción:** Devuelve una lista de restricciones de factores.
 
@@ -309,7 +303,7 @@ obj << Get Constraints;
 
 ### Get Factor Settings
 
-**Sintaxis:** obj << Get Factor Settings
+**Sintaxis:** obj &lt;&lt; Get Factor Settings
 
 **Descripción:** Devuelve la configuración del factor actual en forma de lista.
 
@@ -324,7 +318,7 @@ obj << Get Factor Settings;
 
 ### Get Factor Settings Script
 
-**Sintaxis:** obj << Get Factor Settings Script
+**Sintaxis:** obj &lt;&lt; Get Factor Settings Script
 
 **Descripción:** Devuelve la configuración actual de los factores como una expresión que se puede utilizar en un script.
 
@@ -339,7 +333,7 @@ obj << Get Factor Settings Script;
 
 ### Get Simulator
 
-**Sintaxis:** obj << Get Simulator
+**Sintaxis:** obj &lt;&lt; Get Simulator
 
 **Descripción:** Devuelve una referencia al simulador.
 
@@ -367,7 +361,7 @@ obj2 << Simulation Experiment;
 
 ### Left Factor
 
-**Sintaxis:** obj << Left Factor( column )
+**Sintaxis:** obj &lt;&lt; Left Factor( column )
 
 **Descripción:** Especifica el factor que se muestra en la parte izquierda del gráfico ternario.
 
@@ -383,7 +377,7 @@ obj << Left Factor( :p1 );
 
 ### Link Profilers
 
-**Sintaxis:** obj << Link Profilers( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Link Profilers( state=0|1 )
 
 **Descripción:** Vincula todos los perfiladores en un único informe, de forma que un cambio en un factor de un perfilador provoca que tal factor cambie a este valor en todos los demás perfiladores.
 
@@ -402,9 +396,7 @@ obj << Term Value( :Silica( 1.78 ), :Sulfur( 2.34 ) );
 
 ### Number of Grid Points
 
-**Sintaxis:** obj = Mixture Profiler(...Number of Grid Points( number )...)
-
-<b>Elemento de inicio: Sí</b>
+**Sintaxis:** obj = Mixture Profiler(...Number of Grid Points( number )...)&lt;b&gt;Elemento de inicio: Sí&lt;/b&gt;
 
 **Descripción:** Especifica el número de puntos de cuadrícula en cada uno de los tres ejes que se utilizarán para la evaluación de los contornos.
 
@@ -420,7 +412,7 @@ obj << Number of Grid Points( 140 );
 
 ### Paste Settings Script
 
-**Sintaxis:** obj << Paste Settings Script
+**Sintaxis:** obj &lt;&lt; Paste Settings Script
 
 **Descripción:** Pega la configuración del perfilador del portapapeles en un perfilador de otro informe.
 
@@ -449,7 +441,7 @@ obj2 << Paste Settings Script;
 
 ### Predict for Another Table
 
-**Sintaxis:** obj << Predict for Another Table( <data table> )
+**Sintaxis:** obj &lt;&lt; Predict for Another Table( &lt;data table&gt; )
 
 **Descripción:** Agrega columnas de predicción a una tabla de datos especificada, utilizando los factores de dicha tabla. Esta opción solo está disponible para respuestas continuas.
 
@@ -469,7 +461,7 @@ obj << Predict For Another Table( dt2 );
 
 ### Prediction Profiler
 
-**Sintaxis:** obj << Prediction Profiler( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Prediction Profiler( state=0|1 )
 
 **Descripción:** Muestra u oculta el perfilador de predicción.
 
@@ -484,7 +476,7 @@ obj << Prediction Profiler( 1 );
 
 ### Remember Settings
 
-**Sintaxis:** obj << Remember Settings
+**Sintaxis:** obj &lt;&lt; Remember Settings
 
 **Descripción:** Agrega un nodo de esquema al informe con los valores de la configuración de factores.
 
@@ -499,7 +491,7 @@ obj << Remember Settings;
 
 ### Remove Contour Grid
 
-**Sintaxis:** obj << Remove Contour Grid
+**Sintaxis:** obj &lt;&lt; Remove Contour Grid
 
 **Descripción:** Quita la cuadrícula de contorno superpuesta en el perfilador de mezclas.
 
@@ -516,7 +508,7 @@ obj << Remove Contour Grid;
 
 ### Reset
 
-**Sintaxis:** obj << Reset
+**Sintaxis:** obj &lt;&lt; Reset
 
 **Descripción:** Actualiza las predicciones con los valores actuales.
 
@@ -532,7 +524,7 @@ obj << Reset;
 
 ### Right Factor
 
-**Sintaxis:** obj << Right Factor( column )
+**Sintaxis:** obj &lt;&lt; Right Factor( column )
 
 **Descripción:** Especifica el factor que se muestra en la parte derecha del gráfico ternario.
 
@@ -548,7 +540,7 @@ obj << Right Factor( :p2 );
 
 ### Save Expanded Formulas
 
-**Sintaxis:** obj << Save Expanded Formulas
+**Sintaxis:** obj &lt;&lt; Save Expanded Formulas
 
 **Descripción:** Guarda una nueva columna de fórmulas en la tabla de datos. La nueva columna contiene referencias de fórmulas resueltas dentro de las fórmulas utilizadas como variables Y para ver las variables subyacentes. Esta opción solo está disponible después de seleccionar la opción Expandir fórmulas intermedias en la ventana de inicio o de especificar el mensaje Expandir en el script del perfilador.
 
@@ -563,7 +555,7 @@ obj << Save Expanded Formulas;
 
 ### Set Script
 
-**Sintaxis:** obj << Set Script( Function( {arguments}, <{locals}>, expr ) )
+**Sintaxis:** obj &lt;&lt; Set Script( Function( {arguments}, &lt;{locals}&gt;, expr ) )
 
 **Descripción:** Establece un script que se ejecuta cada vez que cambia un factor.
 
@@ -580,7 +572,7 @@ obj << Term Value( :Silica( 1 ) );
 
 ### Set to Data in Row
 
-**Sintaxis:** obj << Set to Data in Row( row number )
+**Sintaxis:** obj &lt;&lt; Set to Data in Row( row number )
 
 **Descripción:** Asigna los valores de una fila de la tabla de datos a las variables X en el perfilador.
 
@@ -596,7 +588,7 @@ obj << Set to Data in Row( 4 );
 
 ### Show Constraints
 
-**Sintaxis:** obj << Show Constraints( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Show Constraints( state=0|1 )
 
 **Descripción:** Muestra u oculta el sombreado resultante de aplicar todas las restricciones sobre los factores. Opción activada de forma predeterminada.
 
@@ -613,7 +605,7 @@ obj << Show Constraints( 0 );
 
 ### Show Current Value
 
-**Sintaxis:** obj << Show Current Value( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Show Current Value( state=0|1 )
 
 **Descripción:** Muestra u oculta un retículo tridireccional en los valores de la mezcla actual sobre el gráfico ternario. Opción activada de forma predeterminada.
 
@@ -629,7 +621,7 @@ obj << Show Current Value( 1 );
 
 ### Show Formulas
 
-**Sintaxis:** obj << Show Formulas
+**Sintaxis:** obj &lt;&lt; Show Formulas
 
 **Descripción:** Abre una ventana de scripts que contiene JSL para todas las fórmulas que se estén perfilando.
 
@@ -644,7 +636,7 @@ obj << Show Formulas;
 
 ### Show Points
 
-**Sintaxis:** obj << Show Points( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Show Points( state=0|1 )
 
 **Descripción:** Muestra u oculta los puntos individuales en el gráfico ternario. Opción activada de forma predeterminada.
 
@@ -660,7 +652,7 @@ obj << Show Points( 1 );
 
 ### Specify Factor Values
 
-**Sintaxis:** obj << Specify Factor Values
+**Sintaxis:** obj &lt;&lt; Specify Factor Values
 
 **Descripción:** Abre una ventana que permite especificar valores de factores.
 
@@ -675,7 +667,7 @@ obj << Specify Factor Values;
 
 ### Surface Profiler
 
-**Sintaxis:** obj << Surface Profiler( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Surface Profiler( state=0|1 )
 
 **Descripción:** Muestra u oculta el perfilador de superficie.
 
@@ -690,7 +682,7 @@ obj << Surface Profiler( 1 );
 
 ### Term Value
 
-**Sintaxis:** obj << Term Value( x1( number, <Min( number )>, <Max( number )> ),x2( number  <Min( number )>, <Max( number )> ), ... )
+**Sintaxis:** obj &lt;&lt; Term Value( x1( number, &lt;Min( number )&gt;, &lt;Max( number )&gt; ),x2( number &lt;Min( number )&gt;, &lt;Max( number )&gt; ), ... )
 
 **Descripción:** Establece valores de términos específicos para los factores en el perfilador de mezclas.
 
@@ -706,7 +698,7 @@ obj << Term Value( :p1( 0.804905315083495 ), :p2( 0.0386246849165042 ), :p3( 0.1
 
 ### Top Factor
 
-**Sintaxis:** obj << Top Factor( column )
+**Sintaxis:** obj &lt;&lt; Top Factor( column )
 
 **Descripción:** Especifica el factor que se muestra en la parte superior del gráfico ternario.
 
@@ -722,7 +714,7 @@ obj << Top Factor( :p3 );
 
 ### Unthreaded
 
-**Sintaxis:** obj << Unthreaded( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Unthreaded( state=0|1 )
 
 **Descripción:** To suppress any multithreading in evaluating the profile traces, the contour grid, and the optimizer trips.
 
@@ -744,7 +736,7 @@ obj << Maximize Desirability;
 
 ### Up Dots
 
-**Sintaxis:** obj << Up Dots( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Up Dots( state=0|1 )
 
 **Descripción:** Muestra u oculta los puntos junto a las líneas de contorno. Estos puntos indican la dirección ascendente de la respuesta. Opción activada de forma predeterminada.
 
@@ -762,7 +754,7 @@ obj << Up Dots( 0 );
 
 ### Action
 
-**Sintaxis:** obj << Action
+**Sintaxis:** obj &lt;&lt; Action
 
 **Descripción:** Trampa multiuso dentro de una plataforma para insertar expresiones que se desean evaluar. Temporalmente establece los contextos de cuadros de visualización y tablas de datos en la plataforma.
 
@@ -780,7 +772,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descripción:** Aplica al objeto un preajuste creado previamente, actualizando las opciones y personalizaciones para que coincidan con la configuración guardada.
 
@@ -827,7 +819,7 @@ obj2 << Apply Preset( preset );
 
 ### Column Switcher
 
-**Sintaxis:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Sintaxis:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Descripción:** Añade un panel de control para cambiar las variables de la plataforma
 
@@ -845,7 +837,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy Script
 
-**Sintaxis:** obj << Copy Script
+**Sintaxis:** obj &lt;&lt; Copy Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -860,7 +852,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Sintaxis:** obj << Data Table Window
+**Sintaxis:** obj &lt;&lt; Data Table Window
 
 **Descripción:** Mueve al frente la ventana de la tabla de datos que se utiliza en este análisis.
 
@@ -875,7 +867,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Sintaxis:** obj << Get By Levels
+**Sintaxis:** obj &lt;&lt; Get By Levels
 
 **Descripción:** Devuelve un arreglo asociativo que asigna las columnas Por grupo a sus valores.
 
@@ -892,7 +884,7 @@ biv << Get By Levels;
 
 ### Get Container
 
-**Sintaxis:** obj << Get Container
+**Sintaxis:** obj &lt;&lt; Get Container
 
 **Descripción:** Devuelve una referencia al cuadro contenedor que incluye el contenido del objeto.
 
@@ -939,7 +931,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Sintaxis:** obj << Get Data Table
+**Sintaxis:** obj &lt;&lt; Get Data Table
 
 **Descripción:** Devuelve una referencia a la tabla de datos.
 
@@ -955,7 +947,7 @@ Show( N Rows( t ) );
 
 ### Get Script
 
-**Sintaxis:** obj << Get Script
+**Sintaxis:** obj &lt;&lt; Get Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -971,7 +963,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Sintaxis:** obj << Get Script With Data Table
+**Sintaxis:** obj &lt;&lt; Get Script With Data Table
 
 **Descripción:** Crea un script (JSL) para generar este análisis haciendo referencia específica a esta tabla de datos y lo devuelve en forma de expresión.
 
@@ -987,7 +979,7 @@ Show( t );
 
 ### Get Timing
 
-**Sintaxis:** obj << Get Timing
+**Sintaxis:** obj &lt;&lt; Get Timing
 
 **Descripción:** Determina el tiempo de inicio de una plataforma.
 
@@ -1003,7 +995,7 @@ Show( t );
 
 ### Get Web Support
 
-**Sintaxis:** obj << Get Web Support
+**Sintaxis:** obj &lt;&lt; Get Web Support
 
 **Descripción:** Devuelve un número que indica el nivel de compatibilidad del HTML interactivo para el objeto de visualización. 1 significa que algunos o todos los elementos son compatibles. 0 significa que no existe compatibilidad.
 
@@ -1019,7 +1011,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Sintaxis:** obj << Get Where Expr
+**Sintaxis:** obj &lt;&lt; Get Where Expr
 
 **Descripción:** Devuelve la expresión Where para el subconjunto de datos, si la plataforma se inició con By() o Where(). De lo contrario, devuelve Empty().
 
@@ -1056,7 +1048,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Sintaxis:** obj << Local Data Filter
+**Sintaxis:** obj &lt;&lt; Local Data Filter
 
 **Descripción:** Para filtrar los datos según grupos o rangos determinados, pero locales para esta plataforma.
 
@@ -1112,7 +1104,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Sintaxis:** obj << Paste Local Data Filter
+**Sintaxis:** obj &lt;&lt; Paste Local Data Filter
 
 **Descripción:** Se aplica el filtro de datos locales del portapapeles al informe actual.
 
@@ -1133,7 +1125,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**Sintaxis:** obj << Redo Analysis
+**Sintaxis:** obj &lt;&lt; Redo Analysis
 
 **Descripción:** Vuelve a ejecutar el mismo análisis en una ventana nueva. Si los datos han cambiado, el análisis será distinto.
 
@@ -1148,7 +1140,7 @@ obj << Redo Analysis;
 
 ### Relaunch Analysis
 
-**Sintaxis:** obj << Relaunch Analysis
+**Sintaxis:** obj &lt;&lt; Relaunch Analysis
 
 **Descripción:** Abre la ventana de inicio de la plataforma y recupera la configuración que se utilizó para crear el informe.
 
@@ -1163,7 +1155,7 @@ obj << Relaunch Analysis;
 
 ### Remove Column Switcher
 
-**Sintaxis:** obj << Remove Column Switcher
+**Sintaxis:** obj &lt;&lt; Remove Column Switcher
 
 **Descripción:** Quita el Cambiador de columnas más reciente que se haya agregado a la plataforma.
 
@@ -1183,7 +1175,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Sintaxis:** obj << Remove Local Data Filter
+**Sintaxis:** obj &lt;&lt; Remove Local Data Filter
 
 **Descripción:** Si se ha creado un filtro de datos local, esto lo eliminará y restaurará la plataforma para usar todos los datos de la tabla de datos directamente.
 
@@ -1222,9 +1214,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Sintaxis:** obj << Report;
-
-Report( obj )
+**Sintaxis:** obj &lt;&lt; Report;Report( obj )
 
 **Descripción:** Devuelve una referencia al objeto informe.
 
@@ -1241,7 +1231,7 @@ Show( t );
 
 ### Report View
 
-**Sintaxis:** obj << Report View( "Completa"|"Resumen" )
+**Sintaxis:** obj &lt;&lt; Report View( "Completa"|"Resumen" )
 
 **Descripción:** La vista del informe determina el nivel de detalle visible en el informe de una plataforma. Full muestra todos los detalles, mientras que Summary solo muestra el contenido seleccionado, con independencia de la plataforma. Para el comportamiento personalizado, los cuadros de visualización admiten un mensaje <<Set Summary Behavior.
 
@@ -1256,7 +1246,7 @@ obj << Report View( "Summary" );
 
 ### Save Script for All Objects
 
-**Sintaxis:** obj << Save Script for All Objects
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects
 
 **Descripción:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -1271,7 +1261,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Sintaxis:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descripción:** Guarda un script para todos los objetos de informe en la tabla de datos actual. Esta opción es útil cuando tiene varios informes en la ventana. El script recibe el nombre de la primera plataforma a menos que especifique el nombre del script entre comillas.
 
@@ -1309,7 +1299,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Sintaxis:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis y lo guarda en forma de propiedad de tabla en la tabla de datos.
 
@@ -1324,7 +1314,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Sintaxis:** obj << Save Script to Journal
+**Sintaxis:** obj &lt;&lt; Save Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -1339,7 +1329,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Sintaxis:** obj << Save Script to Report
+**Sintaxis:** obj &lt;&lt; Save Script to Report
 
 **Descripción:** Crea un script JSL para generar este análisis y lo muestra en el propio informe. Resulta útil para conservar un registro impreso de lo que se ha hecho.
 
@@ -1354,7 +1344,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Sintaxis:** obj << Save Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -1434,7 +1424,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Sintaxis:** obj << Sync to Data Table Changes
+**Sintaxis:** obj &lt;&lt; Sync to Data Table Changes
 
 **Descripción:** Realiza una sincronización con las modificaciones de datos y de exclusión que se hayan realizado.
 
@@ -1451,7 +1441,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Sintaxis:** obj << Title( "new title" )
+**Sintaxis:** obj &lt;&lt; Title( "new title" )
 
 **Descripción:** Establece el título de la plataforma.
 
@@ -1466,7 +1456,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Sintaxis:** obj << Top Report
+**Sintaxis:** obj &lt;&lt; Top Report
 
 **Descripción:** Devuelve una referencia al nodo raíz del informe.
 
@@ -1483,7 +1473,7 @@ Show( t );
 
 ### View Web XML
 
-**Sintaxis:** obj << View Web XML
+**Sintaxis:** obj &lt;&lt; View Web XML
 
 **Descripción:** Devuelve el código XML que se utiliza para crear el informe HTML interactivo.
 

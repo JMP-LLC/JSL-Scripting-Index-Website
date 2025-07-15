@@ -2,8 +2,6 @@
 
 
 
-## Fonctions
-
 ### Arg
 
 **Syntaxe :** y = Arg( x, i )

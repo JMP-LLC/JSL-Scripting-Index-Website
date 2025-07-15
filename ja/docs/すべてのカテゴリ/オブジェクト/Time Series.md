@@ -8,7 +8,7 @@
 
 #### Actual
 
-**構文:** obj << Actual( state=0|1 )
+**構文:** obj &lt;&lt; Actual( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、実測値のデータ列も保存する。 デフォルトではオン。
 
@@ -23,7 +23,7 @@ obj << Arima( 1, 0, 0, Actual( 1 ), Save Columns );
 
 #### Autocorrelations
 
-**構文:** obj << Autocorrelations( state=0|1 )
+**構文:** obj &lt;&lt; Autocorrelations( state=0|1 )
 
 **説明:** 自己相関プロットの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -46,11 +46,11 @@ obj = Time Series(
 
 #### Confidence Intervals
 
-**構文:** obj << Confidence Intervals( number )
+**構文:** obj &lt;&lt; Confidence Intervals( number )
 
 #### Create SAS Job
 
-**構文:** obj << Create SAS Job
+**構文:** obj &lt;&lt; Create SAS Job
 
 **説明:** PROC ARIMAによる分析を実行するためのSASプログラムを作成する。
 
@@ -66,7 +66,7 @@ obj2 << Create SAS Job;
 
 #### Innovations
 
-**構文:** obj << Innovations( state=0|1 )
+**構文:** obj &lt;&lt; Innovations( state=0|1 )
 
 **説明:** デフォルトではオン。
 
@@ -74,7 +74,7 @@ obj2 << Create SAS Job;
 
 #### Lower Confidence Limit
 
-**構文:** obj << Lower Confidence Limit( state=0|1 )
+**構文:** obj &lt;&lt; Lower Confidence Limit( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、下側95%信頼限界のデータ列も保存する。 デフォルトではオン。
 
@@ -89,7 +89,7 @@ obj << Arima( 1, 0, 0, Lower Confidence Limit( 1 ), Save Columns );
 
 #### No Constrain
 
-**構文:** obj << No Constrain( state=0|1 )
+**構文:** obj &lt;&lt; No Constrain( state=0|1 )
 
 **説明:** ARIMAモデルを推定する際に、自己回帰パラメータを定常領域内に、移動平均パラメータを反転可能領域内に位置させるという制約を課さない。
 
@@ -104,7 +104,7 @@ obj << Arima( 1, 1, 0, No Constrain( 1 ) );
 
 #### No Intercept
 
-**構文:** obj << No Intercept( state=0|1 )
+**構文:** obj &lt;&lt; No Intercept( state=0|1 )
 
 **説明:** ARIMAモデルの切片を0に固定する。
 
@@ -119,7 +119,7 @@ obj << Arima( 1, 1, 0, No Intercept( 1 ) );
 
 #### Partial Autocorrelations
 
-**構文:** obj << Partial Autocorrelations( state=0|1 )
+**構文:** obj &lt;&lt; Partial Autocorrelations( state=0|1 )
 
 **説明:** 偏自己相関プロットの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -142,7 +142,7 @@ obj = Time Series(
 
 #### Plot
 
-**構文:** obj << Plot( state=0|1 )
+**構文:** obj &lt;&lt; Plot( state=0|1 )
 
 **説明:** 残差プロットの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -165,7 +165,7 @@ obj = Time Series(
 
 #### Predicted
 
-**構文:** obj << Predicted( state=0|1 )
+**構文:** obj &lt;&lt; Predicted( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、予測値のデータ列も保存する。 デフォルトではオン。
 
@@ -180,7 +180,7 @@ obj << Arima( 1, 0, 0, Predicted( 1 ), Save Columns );
 
 #### Prediction Interval
 
-**構文:** obj << Prediction Interval( level )
+**構文:** obj &lt;&lt; Prediction Interval( level )
 
 **説明:** ARIMAモデルの予測に関する信頼区間の水準を設定する。デフォルトは0.95。
 
@@ -195,13 +195,13 @@ obj << Arima( 1, 1, 0, Forecasting Interval( 0.99 ) );
 
 #### Remove Fit
 
-**構文:** obj << Remove Fit
+**構文:** obj &lt;&lt; Remove Fit
 
 **JMP追加されたバージョン:** 16
 
 #### Residuals
 
-**構文:** obj << Residuals( state=0|1 )
+**構文:** obj &lt;&lt; Residuals( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、残差のデータ列も保存する。 デフォルトではオン。
 
@@ -216,7 +216,7 @@ obj << Arima( 1, 0, 0, Residuals( 1 ), Save Columns );
 
 #### Save Columns
 
-**構文:** obj << Save Columns
+**構文:** obj &lt;&lt; Save Columns
 
 **説明:** 応答変数の実測値、予測値、標準偏差、残差、95%予測区間を含んだ新しいデータテーブルを作成する。このオプションは、すべてのARIMAモデル、平滑化モデル、伝達関数モデルで使用できる。
 
@@ -232,7 +232,7 @@ obj2 << Save Columns;
 
 #### Save Prediction Formula
 
-**構文:** obj << Save Prediction Formula
+**構文:** obj &lt;&lt; Save Prediction Formula
 
 **説明:** データテーブルの新しい列に予測式を保存する。このオプションはすべてのARIMAモデルと平滑化モデルで使用できる。
 
@@ -248,7 +248,7 @@ obj2 << Save Prediction Formula;
 
 #### Show Confidence Interval
 
-**構文:** obj << Show Confidence Interval( state=0|1 )
+**構文:** obj &lt;&lt; Show Confidence Interval( state=0|1 )
 
 **説明:** 時系列予測プロットにおいて、予測区間の表示/非表示を切り替える。このオプションはすべてのARIMAモデルと平滑化モデルで使用できる。 デフォルトではオン。
 
@@ -264,7 +264,7 @@ obj2 << Show Confidence Interval( 0 );
 
 #### Show Points
 
-**構文:** obj << Show Points( state=0|1 )
+**構文:** obj &lt;&lt; Show Points( state=0|1 )
 
 **説明:** 時系列予測プロットにおいて、点の表示/非表示を切り替える。このオプションはすべてのARIMAモデルと平滑化モデルで使用できる。 デフォルトではオン。
 
@@ -281,7 +281,7 @@ obj << Arima( 1, 0, 0, Show Points( 1 ) );
 
 #### Show Prediction Interval
 
-**構文:** obj << Show Prediction Interval( state=0|1 )
+**構文:** obj &lt;&lt; Show Prediction Interval( state=0|1 )
 
 **説明:** 時系列予測プロットにおいて、予測区間の表示/非表示を切り替える。このオプションはすべてのARIMAモデルと平滑化モデルで使用できる。 デフォルトではオン。
 
@@ -297,7 +297,7 @@ obj2 << Show Prediction Interval( 0 );
 
 #### Std Error of Predicted
 
-**構文:** obj << Std Error of Predicted( state=0|1 )
+**構文:** obj &lt;&lt; Std Error of Predicted( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、予測値の標準誤差のデータ列も保存する。 デフォルトではオン。
 
@@ -312,7 +312,7 @@ obj << Arima( 1, 0, 0, Std Error of Predicted( 1 ), Save Columns );
 
 #### Time
 
-**構文:** obj << Time( state=0|1 )
+**構文:** obj &lt;&lt; Time( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、時間のデータ列も保存する。 デフォルトではオン。
 
@@ -327,7 +327,7 @@ obj << Arima( 1, 0, 0, Time( 0 ), Save Columns );
 
 #### Upper Confidence Limit
 
-**構文:** obj << Upper Confidence Limit( state=0|1 )
+**構文:** obj &lt;&lt; Upper Confidence Limit( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、上側95%信頼限界のデータ列も保存する。 デフォルトではオン。
 
@@ -342,7 +342,7 @@ obj << Arima( 1, 0, 0, Upper Confidence Limit( 1 ), Save Columns );
 
 #### Variogram
 
-**構文:** obj << Variogram( state=0|1 )
+**構文:** obj &lt;&lt; Variogram( state=0|1 )
 
 **説明:** バリオグラムの表示/非表示を切り替える。
 
@@ -367,7 +367,7 @@ obj = Time Series(
 
 ### Action
 
-**構文:** obj << Action
+**構文:** obj &lt;&lt; Action
 
 **説明:** 評価する式を挿入するための、プラットフォーム内の汎用トラップドア。プラットフォームに一時的にディスプレイボックスおよびデータテーブルのコンテキストを設定する。
 
@@ -385,7 +385,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**構文:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**構文:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **説明:** 作成されたプリセットをオブジェクトに適用する。保存された設定に合わせてオプションとカスタマイズが更新される。
 
@@ -432,7 +432,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**構文:** obj << Automatic Recalc( state=0|1 )
+**構文:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **説明:** データの除外や変更があった場合に分析を自動的にやり直す。Automatic Recalcオプションがオンになっている場合で、データの除外や変更が再計算の前に確実に適用されるようにするには、Wait(0)コマンドを使用すること。
 
@@ -448,7 +448,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**構文:** obj << Broadcast(message)
+**構文:** obj &lt;&lt; Broadcast(message)
 
 **説明:** メッセージをプラットフォームに一括適用する。個々のオブジェクトから戻される結果がデータテーブルである場合は、可能な限り連結する。その最終的な形式は、Table BoxのSave Combined Tableオプションの結果と同じになるか、またはソース列を使用したConcanateオプションの結果と同じになる。それ以外の場合、結果はリストの形で戻される。
 
@@ -468,7 +468,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**構文:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**構文:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **説明:** プラットフォームの変数を変更するための設定パネルを追加する。
 
@@ -486,7 +486,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**構文:** obj << Copy ByGroup Script
+**構文:** obj &lt;&lt; Copy ByGroup Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -506,7 +506,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**構文:** obj << Copy Script
+**構文:** obj &lt;&lt; Copy Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -521,7 +521,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**構文:** obj << Data Table Window
+**構文:** obj &lt;&lt; Data Table Window
 
 **説明:** この分析に使用したデータテーブルのウィンドウを手前に表示する。
 
@@ -536,7 +536,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**構文:** obj << Get By Levels
+**構文:** obj &lt;&lt; Get By Levels
 
 **説明:** By列が指定されている場合、列名をキー、データ値を値とした連想配列を戻す。
 
@@ -553,7 +553,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**構文:** obj << Get ByGroup Script
+**構文:** obj &lt;&lt; Get ByGroup Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -574,7 +574,7 @@ Show( t );
 
 ### Get Container
 
-**構文:** obj << Get Container
+**構文:** obj &lt;&lt; Get Container
 
 **説明:** オブジェクトのコンテンツを含んだコンテナボックスの参照を戻す。
 
@@ -621,7 +621,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**構文:** obj << Get Data Table
+**構文:** obj &lt;&lt; Get Data Table
 
 **説明:** データテーブルへの参照を戻す。
 
@@ -637,7 +637,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**構文:** obj << Get Group Platform
+**構文:** obj &lt;&lt; Get Group Platform
 
 **説明:** 該当のプラットフォームがグループに属している場合に、Group Platformオブジェクトを戻す。それ以外の場合はEmpty()を戻す。
 
@@ -654,7 +654,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**構文:** obj << Get Script
+**構文:** obj &lt;&lt; Get Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -670,7 +670,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**構文:** obj << Get Script With Data Table
+**構文:** obj &lt;&lt; Get Script With Data Table
 
 **説明:** この分析を再現するスクリプト(JSL)をデータテーブルへの参照も含めて生成し、それを式として戻す。
 
@@ -686,7 +686,7 @@ Show( t );
 
 ### Get Timing
 
-**構文:** obj << Get Timing
+**構文:** obj &lt;&lt; Get Timing
 
 **説明:** プラットフォームの起動にかかった時間を取得する。
 
@@ -702,7 +702,7 @@ Show( t );
 
 ### Get Web Support
 
-**構文:** obj << Get Web Support
+**構文:** obj &lt;&lt; Get Web Support
 
 **説明:** ディスプレイオブジェクトにおけるインタラクティブHTMLサポートのレベルを数値で戻す。1は、一部または全部の要素がサポートされていることを示し、0は、サポートされないことを示す。
 
@@ -718,7 +718,7 @@ Show( s );
 
 ### Get Where Expr
 
-**構文:** obj << Get Where Expr
+**構文:** obj &lt;&lt; Get Where Expr
 
 **説明:** プラットフォームがBy()またはWhere()を使って起動された場合に、データをサブセットするためのWhere式を戻す。By()やWhere()が使われていない場合はEmpty()を戻す。
 
@@ -755,7 +755,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**構文:** obj << Local Data Filter
+**構文:** obj &lt;&lt; Local Data Filter
 
 **説明:** このプラットフォームに対してのみ有効なフィルタで、データを特定のグループまたは範囲にフィルタリングする。
 
@@ -811,7 +811,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**構文:** obj << Paste Local Data Filter
+**構文:** obj &lt;&lt; Paste Local Data Filter
 
 **説明:** クリップボードにあるローカルデータフィルタを現在のレポートに適用する。
 
@@ -832,7 +832,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**構文:** obj << Redo Analysis
+**構文:** obj &lt;&lt; Redo Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -847,7 +847,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**構文:** obj << Redo ByGroup Analysis
+**構文:** obj &lt;&lt; Redo ByGroup Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -867,7 +867,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**構文:** obj << Relaunch Analysis
+**構文:** obj &lt;&lt; Relaunch Analysis
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -882,7 +882,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**構文:** obj << Relaunch ByGroup
+**構文:** obj &lt;&lt; Relaunch ByGroup
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -902,7 +902,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**構文:** obj << Remove Column Switcher
+**構文:** obj &lt;&lt; Remove Column Switcher
 
 **説明:** プラットフォームに最後に追加された列スイッチャーを削除する。
 
@@ -922,7 +922,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**構文:** obj << Remove Local Data Filter
+**構文:** obj &lt;&lt; Remove Local Data Filter
 
 **説明:** すでに作成されているローカルデータフィルタを削除し、プラットフォームはデータテーブル内のすべてのデータを使用した状態に戻る。
 
@@ -961,9 +961,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**構文:** obj << Report;
-
-Report( obj )
+**構文:** obj &lt;&lt; Report;Report( obj )
 
 **説明:** レポートオブジェクトへの参照を戻す。
 
@@ -980,7 +978,7 @@ Show( t );
 
 ### Report View
 
-**構文:** obj << Report View( "完全"|"要約" )
+**構文:** obj &lt;&lt; Report View( "完全"|"要約" )
 
 **説明:** レポートビューは、プラットフォームレポートの詳細を表示するかどうかを決定する。Fullはすべての詳細を表示し、Summaryはプラットフォームにより限定されたものだけを表示する。 動作をカスタマイズするため、各ディスプレイボックスは<<Set Summary Behaviorメッセージをサポートする。
 
@@ -995,7 +993,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**構文:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** 分析を再現するためのJSLスクリプトを作成し、データテーブルにテーブルプロパティとして保存する。スクリプトの名前を指定できる。Append Suffixオプションは、スクリプト名に数字の接尾辞を追加する。これにより、同名のスクリプトが存在していても区別できる。Promptオプションは、ユーザにスクリプト名の指定を促す。Replaceオプションは、同名の既存のスクリプトを置き換える。
 
@@ -1015,7 +1013,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**構文:** obj << Save ByGroup Script to Journal
+**構文:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -1035,7 +1033,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**構文:** obj << Save ByGroup Script to Script Window
+**構文:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -1055,7 +1053,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**構文:** obj << Save Script for All Objects
+**構文:** obj &lt;&lt; Save Script for All Objects
 
 **説明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -1070,7 +1068,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**構文:** obj << Save Script for All Objects To Data Table( <name> )
+**構文:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **説明:** すべてのレポートオブジェクトを再現するスクリプトを現在のデータテーブルに保存する。このオプションは、ウィンドウ内にレポートが複数ある場合に便利。作成されるスクリプトの名前は、引用符で囲んで指定しない限り、1つ目のプラットフォーム名となる。
 
@@ -1108,7 +1106,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**構文:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** この分析を再現するJSLスクリプトを生成し、データテーブルのテーブルプロパティとして保存する。
 
@@ -1123,7 +1121,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**構文:** obj << Save Script to Journal
+**構文:** obj &lt;&lt; Save Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -1138,7 +1136,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**構文:** obj << Save Script to Report
+**構文:** obj &lt;&lt; Save Script to Report
 
 **説明:** この分析を再現するJSLスクリプトを生成し、レポートウィンドウに表示する。分析手順の記録を結果と一緒に残せる。
 
@@ -1153,7 +1151,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**構文:** obj << Save Script to Script Window
+**構文:** obj &lt;&lt; Save Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -1233,7 +1231,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**構文:** obj << Sync to Data Table Changes
+**構文:** obj &lt;&lt; Sync to Data Table Changes
 
 **説明:** 除外やデータの変更が行われた場合に同期する。
 
@@ -1250,7 +1248,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**構文:** obj << Title( "new title" )
+**構文:** obj &lt;&lt; Title( "new title" )
 
 **説明:** プラットフォームのタイトルを設定する。
 
@@ -1265,7 +1263,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**構文:** obj << Top Report
+**構文:** obj &lt;&lt; Top Report
 
 **説明:** レポート内のルートノードへの参照を戻す。
 
@@ -1282,7 +1280,7 @@ Show( t );
 
 ### Transform Column
 
-**構文:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**構文:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **説明:** オブジェクトのローカルコンテキスト(通常はプラットフォーム)内に変換列を作成する。この変換列は、それを作成したプラットフォームの中のみで使用可能。
 
@@ -1301,7 +1299,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**構文:** obj << View Web XML
+**構文:** obj &lt;&lt; View Web XML
 
 **説明:** インタラクティブHTMLレポートの作成に使うXMLコードを戻す。
 
@@ -1337,7 +1335,7 @@ New Window( "Bivariate Equation",
 
 ### By
 
-**構文:** obj << By( column(s) )
+**構文:** obj &lt;&lt; By( column(s) )
 
 ```jsl
 
@@ -1354,7 +1352,7 @@ obj = dt << Time Series( Y( :steel shipments ), By( _bycol ) );
 
 ### Input List
 
-**構文:** obj << Input List( column(s) )
+**構文:** obj &lt;&lt; Input List( column(s) )
 
 ```jsl
 
@@ -1366,7 +1364,7 @@ obj = dt << Time Series( Y( :steel shipments ) );
 
 ### Time ID
 
-**構文:** obj << Time ID( column )
+**構文:** obj &lt;&lt; Time ID( column )
 
 ```jsl
 
@@ -1378,7 +1376,7 @@ obj = dt << Time Series( Y( :steel shipments ) );
 
 ### X
 
-**構文:** obj << X( column )
+**構文:** obj &lt;&lt; X( column )
 
 ```jsl
 
@@ -1390,7 +1388,7 @@ obj = dt << Time Series( Y( :steel shipments ) );
 
 ### Y
 
-**構文:** obj << Y( column(s) )
+**構文:** obj &lt;&lt; Y( column(s) )
 
 ```jsl
 
@@ -1420,7 +1418,7 @@ obj = dt << Time Series( Y( :steel shipments ) );
 
 ### AR Coefficients
 
-**構文:** obj << AR Coefficients( state=0|1 )
+**構文:** obj &lt;&lt; AR Coefficients( state=0|1 )
 
 **説明:** 自己相関係数プロットの表示/非表示を切り替える。
 
@@ -1435,7 +1433,7 @@ obj << AR Coefficients( 1 );
 
 ### ARIMA
 
-**構文:** obj << ARIMA( p, d, q, <No Intercept( 0|1 )>, <No Constrain( 0|1 )>, <Confidence Intervals( level )> )
+**構文:** obj &lt;&lt; ARIMA( p, d, q, &lt;No Intercept( 0|1 )&gt;, &lt;No Constrain( 0|1 )&gt;, &lt;Confidence Intervals( level )&gt; )
 
 **説明:** ARIMAモデルをあてはめる。ARIMA(p,d,q)モデルの次数p、d、qを設定すること。信頼水準を0.95以外にするには、levelを設定する。
 
@@ -1451,7 +1449,7 @@ obj << arima( 1, 0, 0, No Intercept( 1 ), No Constrain( 1 ), Confidence Interval
 
 ### ARIMA Model Group
 
-**構文:** obj << ARIMA Model Group( AR(p0,p1),Diff(d0,d1),MA(q0,q1),Seasonal AR(P0,P1),Seasonal Diff(D0,D1),Seasonal MA(Q0,Q1),Seasonal Period(S0,S1),Confidence Intervals(C),Intercept(1),Constrain fit(1) )
+**構文:** obj &lt;&lt; ARIMA Model Group( AR(p0,p1),Diff(d0,d1),MA(q0,q1),Seasonal AR(P0,P1),Seasonal Diff(D0,D1),Seasonal MA(Q0,Q1),Seasonal Period(S0,S1),Confidence Intervals(C),Intercept(1),Constrain fit(1) )
 
 **説明:** 指定した範囲にある次数の、複数のARIMAモデルをあてはめる。
 
@@ -1466,7 +1464,7 @@ obj << ARIMA Model Group( AR( 0, 2 ), MA( 0, 2 ) );
 
 ### Autocorrelation
 
-**構文:** obj << Autocorrelation( state=0|1 )
+**構文:** obj &lt;&lt; Autocorrelation( state=0|1 )
 
 **説明:** 自己相関プロットの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1495,7 +1493,7 @@ obj = dt << Time Series( Y( :Steel Shipments ), Autocorrelation Lags( 10 ) );
 
 ### Combine and Save Forecasts from Models
 
-**構文:** obj << Combine and Save Forecasts from Models
+**構文:** obj &lt;&lt; Combine and Save Forecasts from Models
 
 **説明:** レポートにあるすべてのモデルの結果をまとめて保存した新しいデータテーブルを作成する。
 
@@ -1503,7 +1501,7 @@ obj = dt << Time Series( Y( :Steel Shipments ), Autocorrelation Lags( 10 ) );
 
 ### Connecting Lines
 
-**構文:** obj << Connecting Lines( state=0|1 )
+**構文:** obj &lt;&lt; Connecting Lines( state=0|1 )
 
 **説明:** 時系列プロットにおいて、点をつなぐ線の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1518,7 +1516,7 @@ obj << Connecting Lines( 1 );
 
 ### Cross Correlation
 
-**構文:** obj << Cross Correlation( state=0|1 )
+**構文:** obj &lt;&lt; Cross Correlation( state=0|1 )
 
 **説明:** 相互相関プロットの表示/非表示を切り替える。
 
@@ -1533,7 +1531,7 @@ obj << Cross Correlation( 1 );
 
 ### Damped-Trend Linear Exponential Smoothing
 
-**構文:** obj << Damped-Trend Linear Exponential Smoothing( Zero to One|Unconstrained|Stable Invertible|Custom( (Damping|Level)( Unconstrained| Bounded( lower, upper )| Fixed( value ) )), <Confidence Intervals(level)> )
+**構文:** obj &lt;&lt; Damped-Trend Linear Exponential Smoothing( Zero to One|Unconstrained|Stable Invertible|Custom( (Damping|Level)( Unconstrained| Bounded( lower, upper )| Fixed( value ) )), &lt;Confidence Intervals(level)&gt; )
 
 **説明:** ダンプトレンド平滑化モデルをあてはめる。
 
@@ -1550,7 +1548,7 @@ Time Series(
 
 ### Difference
 
-**構文:** obj << Difference( d, <D>, <S> )
+**構文:** obj &lt;&lt; Difference( d, &lt;D&gt;, &lt;S&gt; )
 
 **説明:** 時系列データの差分を計算し、その差分の自己相関や偏自己相関をグラフにする。差分は、 (1-B)^d * (1-B^S)^D * y_t で求められる。ここで、y_tは時系列の観測値、BはB * y_t = y_(t-1)で定義される差分演算子、dは季節性のない差分の次数、Dは季節性のある差分の次数、Sは1季節あたりの観測値の個数。
 
@@ -1566,7 +1564,7 @@ obj << Difference( 1, 1, 12 );
 
 ### Double Exponential Smoothing
 
-**構文:** obj << Double Exponential Smoothing( Zero to One|Unconstrained|Stable Invertible|Custom( Level( Unconstrained| Bounded( lower, upper )| Fixed( value ) )), <Confidence Intervals(level)> )
+**構文:** obj &lt;&lt; Double Exponential Smoothing( Zero to One|Unconstrained|Stable Invertible|Custom( Level( Unconstrained| Bounded( lower, upper )| Fixed( value ) )), &lt;Confidence Intervals(level)&gt; )
 
 **説明:** 2重指数平滑化モデルをあてはめる。
 
@@ -1588,7 +1586,7 @@ Time Series(
 
 ### Fit Recommended ETS
 
-**構文:** obj << Fit Recommended ETS( Period( m ),Constrained( "Yes"|"No" ) )
+**構文:** obj &lt;&lt; Fit Recommended ETS( Period( m ),Constrained( "Yes"|"No" ) )
 
 **説明:** 推奨される状態空間平滑化モデルをあてはめる。
 
@@ -1638,7 +1636,7 @@ obj << Number of Forecast Periods( 100 );
 
 ### Generate Simulation
 
-**構文:** obj << Generate Simulation( id, seed, length, n )
+**構文:** obj &lt;&lt; Generate Simulation( id, seed, length, n )
 
 **説明:** あてはめたモデルの将来の軌道を複数作成し、データテーブルにまとめる。作成されたデータテーブルへの参照を戻す。
 
@@ -1654,7 +1652,7 @@ dt = obj << Generate Simulation( 1, 11111, 100, 5 );
 
 ### Get Model Specs
 
-**構文:** obj << Get Model Specs
+**構文:** obj &lt;&lt; Get Model Specs
 
 **説明:** 指定されたモデルの推定結果を、名前付きリストの形式で戻す。この結果には、推定値と標準誤差が含まれる。ARIMA、季節ARIMA、平滑化モデル、伝達関数モデルで使用できる。
 
@@ -1671,7 +1669,7 @@ Show( l );
 
 ### Get Models
 
-**構文:** obj << Get Models
+**構文:** obj &lt;&lt; Get Models
 
 **説明:** モデルの記述を名前とした、モデル結果の名前付きリストを戻す。出力に含まれるのは推定値と標準誤差。ARIMA、季節ARIMA、すべての平滑化モデル、および伝達関数モデルで使用可能。
 
@@ -1688,7 +1686,7 @@ Show( l );
 
 ### Hide All Reports
 
-**構文:** obj << Hide All Reports
+**構文:** obj &lt;&lt; Hide All Reports
 
 **説明:** レポートウィンドウにおける「モデルの比較」表に表示されているすべてのモデルを非表示にする。
 
@@ -1704,7 +1702,7 @@ obj << Hide All Model Reports;
 
 ### Input Series
 
-**構文:** obj << Input Series( Column, <ARIMA( )>| <Prewhitening( )> ... )
+**構文:** obj &lt;&lt; Input Series( Column, &lt;ARIMA( )&gt;| &lt;Prewhitening( )&gt; ... )
 
 **説明:** 入力系列に送るメッセージをまとめて指定する。注:入力リスト(Input List)の変数を指定する必要がある。
 
@@ -1719,7 +1717,7 @@ obj << Input Series( :Input Gas Rate, ARIMA( 1, 0, 0 ) );
 
 ### Keep Best Models
 
-**構文:** obj << Keep Best Models( "AIC"|"SBC" )
+**構文:** obj &lt;&lt; Keep Best Models( "AIC"|"SBC" )
 
 **説明:** あてはめたモデルのなかで最良のモデルだけを残して、残りのモデルをレポートから削除する。
 
@@ -1758,7 +1756,7 @@ obj << Number of Forecast Periods( 100 );
 
 ### Linear Exponential Smoothing
 
-**構文:** obj << Linear Exponential Smoothing( Zero to One|Unconstrained|Stable Invertible|Custom( (Trend|Level)( Unconstrained| Bounded( lower, upper )| Fixed( value ) )), <Confidence Intervals(level)> )
+**構文:** obj &lt;&lt; Linear Exponential Smoothing( Zero to One|Unconstrained|Stable Invertible|Custom( (Trend|Level)( Unconstrained| Bounded( lower, upper )| Fixed( value ) )), &lt;Confidence Intervals(level)&gt; )
 
 **説明:** 線形指数平滑化モデルをあてはめる。
 
@@ -1782,7 +1780,7 @@ Time Series(
 
 ### Maximum Iterations
 
-**構文:** obj << Maximum Iterations( maxIter=250 )
+**構文:** obj &lt;&lt; Maximum Iterations( maxIter=250 )
 
 **説明:** ARIMAモデルのあてはめで使用する、最適化の反復最大回数をリセットする。 デフォルトの値は"250"。
 
@@ -1798,7 +1796,7 @@ obj << ARIMA( 1, 0, 0 );
 
 ### Mean Line
 
-**構文:** obj << Mean Line( state=0|1 )
+**構文:** obj &lt;&lt; Mean Line( state=0|1 )
 
 **説明:** 時系列プロットにおいて、平均を示す線の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1813,13 +1811,13 @@ obj << Mean Line( 1 );
 
 ### Model Comparison Report
 
-**構文:** obj << Model Comparison Report
+**構文:** obj &lt;&lt; Model Comparison Report
 
 **説明:** 「モデルの比較」レポートを設定する。
 
 ### Number of Forecast Periods
 
-**構文:** obj << Number of Forecast Periods( number )
+**構文:** obj &lt;&lt; Number of Forecast Periods( number )
 
 **説明:** 予測する期数をリセットし、予測レポートを更新する。
 
@@ -1835,7 +1833,7 @@ obj << Number of Forecast Periods( 100 );
 
 ### Partial Autocorrelation
 
-**構文:** obj << Partial Autocorrelation( state=0|1 )
+**構文:** obj &lt;&lt; Partial Autocorrelation( state=0|1 )
 
 **説明:** 偏自己相関プロットの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1850,7 +1848,7 @@ obj << Partial Autocorrelation( 1 );
 
 ### Prewhitening
 
-**構文:** obj << Prewhitening( Order(p, d, q), Seasonal(P, D, Q, S) )
+**構文:** obj &lt;&lt; Prewhitening( Order(p, d, q), Seasonal(P, D, Q, S) )
 
 **説明:** 白色化のための次数を設定する。
 
@@ -1871,7 +1869,7 @@ obj = dt << Time Series(
 
 ### Remove All Simulation
 
-**構文:** obj << Remove All Simulation
+**構文:** obj &lt;&lt; Remove All Simulation
 
 **説明:** 将来の軌道のシミュレーションをすべて削除する。
 
@@ -1890,7 +1888,7 @@ obj << Remove All Simulation;
 
 ### Remove Cycle
 
-**構文:** obj << Remove Cycle( Units per Cycle( number ), Has Constant( 0|1 ) )
+**構文:** obj &lt;&lt; Remove Cycle( Units per Cycle( number ), Has Constant( 0|1 ) )
 
 **説明:** 余弦関数(コサイン関数)によって循環成分を推定し、それをデータから除去する。
 
@@ -1905,13 +1903,13 @@ obj << Remove Cycle( Units per Cycle( 12 ), Has Constant( 1 ) );
 
 ### Remove Fit
 
-**構文:** obj << Remove Fit
+**構文:** obj &lt;&lt; Remove Fit
 
 **JMP追加されたバージョン:** 16
 
 ### Remove Linear Trend
 
-**構文:** obj << Remove Linear Trend
+**構文:** obj &lt;&lt; Remove Linear Trend
 
 **説明:** 線形トレンドを推定し、その線形トレンドをデータから取り除く。
 
@@ -1926,7 +1924,7 @@ obj << Remove Linear Trend;
 
 ### Remove Model Simulation
 
-**構文:** obj << Remove Model Simulation( id )
+**構文:** obj &lt;&lt; Remove Model Simulation( id )
 
 **説明:** あてはめたモデルの将来の軌道のシミュレーションを削除する。
 
@@ -1945,7 +1943,7 @@ obj << Remove Model Simulation( 1 );
 
 ### Save Spectral Density
 
-**構文:** obj << Save Spectral Density
+**構文:** obj &lt;&lt; Save Spectral Density
 
 **説明:** スペクトル密度をテーブルに保存する。
 
@@ -1960,7 +1958,7 @@ obj << Save Spectral Density;
 
 ### Seasonal ARIMA
 
-**構文:** obj << Seasonal ARIMA( p, d, q, P, D, Q, S, <No Intercept( 0|1 )>, <No Constrain( 0|1 )>, <Confidence Intervals( level )> )
+**構文:** obj &lt;&lt; Seasonal ARIMA( p, d, q, P, D, Q, S, &lt;No Intercept( 0|1 )&gt;, &lt;No Constrain( 0|1 )&gt;, &lt;Confidence Intervals( level )&gt; )
 
 **説明:** 季節ARIMAモデルをあてはめる。ARIMA(p,d,q)(P,D,Q)Sモデルの次数p、d、q、P、D、Q、Sを設定すること。
 
@@ -1987,7 +1985,7 @@ obj << seasonal arima(
 
 ### Seasonal Exponential Smoothing
 
-**構文:** obj << Seasonal Exponential Smoothing( Zero to One|Unconstrained|Custom( (Level| Seasonal)( Unconstrained| Bounded( lower, upper )| Fixed( value ) )), <Confidence Intervals(level)> )
+**構文:** obj &lt;&lt; Seasonal Exponential Smoothing( Zero to One|Unconstrained|Custom( (Level| Seasonal)( Unconstrained| Bounded( lower, upper )| Fixed( value ) )), &lt;Confidence Intervals(level)&gt; )
 
 **説明:** 季節指数平滑化モデルをあてはめる。
 
@@ -2007,7 +2005,7 @@ Time Series(
 
 ### Set Seed
 
-**構文:** obj << Set Seed( seed )
+**構文:** obj &lt;&lt; Set Seed( seed )
 
 **説明:** 乱数シード値を設定する。
 
@@ -2026,17 +2024,17 @@ obj << Simulate Once( 1 );
 
 ### Show Box-Cox Transformation Plot
 
-**構文:** obj << Show Box-Cox Transformation Plot( state=0|1 )
+**構文:** obj &lt;&lt; Show Box-Cox Transformation Plot( state=0|1 )
 
 **JMP追加されたバージョン:** 16
 
 ### Show Lag Plot
 
-**構文:** obj << Show Lag Plot( state=0|1 )
+**構文:** obj &lt;&lt; Show Lag Plot( state=0|1 )
 
 ### Show Points
 
-**構文:** obj << Show Points( state=0|1 )
+**構文:** obj &lt;&lt; Show Points( state=0|1 )
 
 **説明:** 時系列プロットにおいて、点の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2051,7 +2049,7 @@ obj << Show Points( 1 );
 
 ### Simple Exponential Smoothing
 
-**構文:** obj << Simple Exponential Smoothing( Zero to One|Unconstrained|Stable Invertible|Custom( Level( Unconstrained| Bounded( lower, upper )| Fixed( value ) )), <Confidence Intervals(level)> )
+**構文:** obj &lt;&lt; Simple Exponential Smoothing( Zero to One|Unconstrained|Stable Invertible|Custom( Level( Unconstrained| Bounded( lower, upper )| Fixed( value ) )), &lt;Confidence Intervals(level)&gt; )
 
 **説明:** 1重指数平滑化モデルをあてはめる。
 
@@ -2073,7 +2071,7 @@ Time Series(
 
 ### Simple Moving Average
 
-**構文:** obj << Simple Moving Average
+**構文:** obj &lt;&lt; Simple Moving Average
 
 **説明:** 単純移動平均モデルをあてはめる。引数の指定がない場合、モデル設定のダイアログを開く。引数の指定がある場合は、そのモデルをあてはめる。単純移動平均モデルのスクリプト可能なハンドルを戻り値として戻す。使用できる引数については、「単純移動平均 (Simple Moving Average) 」を参照のこと。
 
@@ -2089,11 +2087,11 @@ sma << Add Model( 10 );
 
 ### Simple Moving Average Centering Method
 
-**構文:** obj << Simple Moving Average Centering Method( "中心化なし"|"中心化"|"中心化し、偶数サイズの場合は二重" )
+**構文:** obj &lt;&lt; Simple Moving Average Centering Method( "中心化なし"|"中心化"|"中心化し、偶数サイズの場合は二重" )
 
 ### Simulate More
 
-**構文:** obj << Simulate More( id, n )
+**構文:** obj &lt;&lt; Simulate More( id, n )
 
 **説明:** あてはめたモデルの将来の軌道を複数シミュレーションする。
 
@@ -2111,7 +2109,7 @@ obj << Simulate More( 2, 3 );
 
 ### Simulate Once
 
-**構文:** obj << Simulate Once( id )
+**構文:** obj &lt;&lt; Simulate Once( id )
 
 **説明:** あてはめたモデルの将来の軌道を1本シミュレーションする。
 
@@ -2129,7 +2127,7 @@ obj << Simulate Once( 2 );
 
 ### Spectral Density
 
-**構文:** obj << Spectral Density( state=0|1 )
+**構文:** obj &lt;&lt; Spectral Density( state=0|1 )
 
 **説明:** スペクトル密度グラフの表示/非表示を切り替える。
 
@@ -2144,7 +2142,7 @@ obj << Spectral Density( 1 );
 
 ### State Space Smoothing
 
-**構文:** obj << State Space Smoothing( Error Type( "Additive"|"Multiplicative" ),Trend Type( "None"|"Additive"|"Multiplicative" ),Seasonal Type( "None"|"Additive"|"Multiplicative" ),Damped( "Yes"|"No" ),Period( m ),Constrained( "Yes"|"No" ) )
+**構文:** obj &lt;&lt; State Space Smoothing( Error Type( "Additive"|"Multiplicative" ),Trend Type( "None"|"Additive"|"Multiplicative" ),Seasonal Type( "None"|"Additive"|"Multiplicative" ),Damped( "Yes"|"No" ),Period( m ),Constrained( "Yes"|"No" ) )
 
 **説明:** 状態空間平滑化モデルをあてはめる。
 
@@ -2168,7 +2166,7 @@ obj << State Space Smoothing(
 
 ### Time Series Graph
 
-**構文:** obj << Time Series Graph( state=0|1 )
+**構文:** obj &lt;&lt; Time Series Graph( state=0|1 )
 
 **説明:** 基本時系列プロットのオン/オフを切り替える。 デフォルトではオン。
 
@@ -2183,7 +2181,7 @@ obj << Time Series Graph( 1 );
 
 ### Transfer Function
 
-**構文:** obj << Transfer Function( Order(p, d, q), Seasonal(P, D, Q, S), input1(Order(p, d, q), Seasonal(P, D, Q, S), Lag(lag)), <input2(Order(p, d, q), Seasonal(P, D, Q, S), Lag(lag))>, ..., <No Intercept(flag1)>, <No Constrain(flag2)>, <Alternative Parameterization( flag3 )>, <Confidence Intervals( level )>, <Number of Forecast Periods( nAhead )> )
+**構文:** obj &lt;&lt; Transfer Function( Order(p, d, q), Seasonal(P, D, Q, S), input1(Order(p, d, q), Seasonal(P, D, Q, S), Lag(lag)), &lt;input2(Order(p, d, q), Seasonal(P, D, Q, S), Lag(lag))&gt;, ..., &lt;No Intercept(flag1)&gt;, &lt;No Constrain(flag2)&gt;, &lt;Alternative Parameterization( flag3 )&gt;, &lt;Confidence Intervals( level )&gt;, &lt;Number of Forecast Periods( nAhead )&gt; )
 
 **説明:** 伝達関数モデルをあてはめる。
 
@@ -2229,7 +2227,7 @@ obj << Number of Forecast Periods( 100 );
 
 ### Variogram
 
-**構文:** obj << Variogram( state=0|1 )
+**構文:** obj &lt;&lt; Variogram( state=0|1 )
 
 **説明:** バリオグラムの表示/非表示を切り替える。
 
@@ -2244,7 +2242,7 @@ obj << Variogram( 1 );
 
 ### Winters Method
 
-**構文:** obj << Winters Method( Zero to One|Unconstrained|Custom( (Level|Seasonal|Trend)( Unconstrained| Seasonal| Bounded( lower, upper )| Fixed( value ) )), <Confidence Intervals(level)> )
+**構文:** obj &lt;&lt; Winters Method( Zero to One|Unconstrained|Custom( (Level|Seasonal|Trend)( Unconstrained| Seasonal| Bounded( lower, upper )| Fixed( value ) )), &lt;Confidence Intervals(level)&gt; )
 
 **説明:** Winter法による平滑化モデルをあてはめる。
 
@@ -2268,7 +2266,7 @@ Time Series(
 
 ### X11
 
-**構文:** obj << X11( Additive|Multiplicative )
+**構文:** obj &lt;&lt; X11( Additive|Multiplicative )
 
 **説明:** 米国国勢調査局によって提案されたX-11法によって、トレンドや季節的影響を求める。
 
@@ -2287,7 +2285,7 @@ obj << X11( Additive );
 
 #### Actual
 
-**構文:** obj << Actual( state=0|1 )
+**構文:** obj &lt;&lt; Actual( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、実測値のデータ列も保存する。 デフォルトではオン。
 
@@ -2302,7 +2300,7 @@ obj << Arima( 1, 0, 0, Actual( 1 ), Save Columns );
 
 #### Autocorrelations
 
-**構文:** obj << Autocorrelations( state=0|1 )
+**構文:** obj &lt;&lt; Autocorrelations( state=0|1 )
 
 **説明:** 自己相関プロットの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2325,11 +2323,11 @@ obj = Time Series(
 
 #### Confidence Intervals
 
-**構文:** obj << Confidence Intervals( number )
+**構文:** obj &lt;&lt; Confidence Intervals( number )
 
 #### Create SAS Job
 
-**構文:** obj << Create SAS Job
+**構文:** obj &lt;&lt; Create SAS Job
 
 **説明:** PROC ARIMAによる分析を実行するためのSASプログラムを作成する。
 
@@ -2345,7 +2343,7 @@ obj2 << Create SAS Job;
 
 #### Innovations
 
-**構文:** obj << Innovations( state=0|1 )
+**構文:** obj &lt;&lt; Innovations( state=0|1 )
 
 **説明:** デフォルトではオン。
 
@@ -2353,7 +2351,7 @@ obj2 << Create SAS Job;
 
 #### Lower Confidence Limit
 
-**構文:** obj << Lower Confidence Limit( state=0|1 )
+**構文:** obj &lt;&lt; Lower Confidence Limit( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、下側95%信頼限界のデータ列も保存する。 デフォルトではオン。
 
@@ -2368,7 +2366,7 @@ obj << Arima( 1, 0, 0, Lower Confidence Limit( 1 ), Save Columns );
 
 #### No Constrain
 
-**構文:** obj << No Constrain( state=0|1 )
+**構文:** obj &lt;&lt; No Constrain( state=0|1 )
 
 **説明:** ARIMAモデルを推定する際に、自己回帰パラメータを定常領域内に、移動平均パラメータを反転可能領域内に位置させるという制約を課さない。
 
@@ -2383,7 +2381,7 @@ obj << Arima( 1, 1, 0, No Constrain( 1 ) );
 
 #### No Intercept
 
-**構文:** obj << No Intercept( state=0|1 )
+**構文:** obj &lt;&lt; No Intercept( state=0|1 )
 
 **説明:** ARIMAモデルの切片を0に固定する。
 
@@ -2398,7 +2396,7 @@ obj << Arima( 1, 1, 0, No Intercept( 1 ) );
 
 #### Partial Autocorrelations
 
-**構文:** obj << Partial Autocorrelations( state=0|1 )
+**構文:** obj &lt;&lt; Partial Autocorrelations( state=0|1 )
 
 **説明:** 偏自己相関プロットの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2421,7 +2419,7 @@ obj = Time Series(
 
 #### Plot
 
-**構文:** obj << Plot( state=0|1 )
+**構文:** obj &lt;&lt; Plot( state=0|1 )
 
 **説明:** 残差プロットの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2444,7 +2442,7 @@ obj = Time Series(
 
 #### Predicted
 
-**構文:** obj << Predicted( state=0|1 )
+**構文:** obj &lt;&lt; Predicted( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、予測値のデータ列も保存する。 デフォルトではオン。
 
@@ -2459,7 +2457,7 @@ obj << Arima( 1, 0, 0, Predicted( 1 ), Save Columns );
 
 #### Prediction Interval
 
-**構文:** obj << Prediction Interval( level )
+**構文:** obj &lt;&lt; Prediction Interval( level )
 
 **説明:** ARIMAモデルの予測に関する信頼区間の水準を設定する。デフォルトは0.95。
 
@@ -2474,13 +2472,13 @@ obj << Arima( 1, 1, 0, Forecasting Interval( 0.99 ) );
 
 #### Remove Fit
 
-**構文:** obj << Remove Fit
+**構文:** obj &lt;&lt; Remove Fit
 
 **JMP追加されたバージョン:** 16
 
 #### Residuals
 
-**構文:** obj << Residuals( state=0|1 )
+**構文:** obj &lt;&lt; Residuals( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、残差のデータ列も保存する。 デフォルトではオン。
 
@@ -2495,7 +2493,7 @@ obj << Arima( 1, 0, 0, Residuals( 1 ), Save Columns );
 
 #### Save Columns
 
-**構文:** obj << Save Columns
+**構文:** obj &lt;&lt; Save Columns
 
 **説明:** 応答変数の実測値、予測値、標準偏差、残差、95%予測区間を含んだ新しいデータテーブルを作成する。このオプションは、すべてのARIMAモデル、平滑化モデル、伝達関数モデルで使用できる。
 
@@ -2511,7 +2509,7 @@ obj2 << Save Columns;
 
 #### Save Prediction Formula
 
-**構文:** obj << Save Prediction Formula
+**構文:** obj &lt;&lt; Save Prediction Formula
 
 **説明:** データテーブルの新しい列に予測式を保存する。このオプションはすべてのARIMAモデルと平滑化モデルで使用できる。
 
@@ -2527,7 +2525,7 @@ obj2 << Save Prediction Formula;
 
 #### Show Confidence Interval
 
-**構文:** obj << Show Confidence Interval( state=0|1 )
+**構文:** obj &lt;&lt; Show Confidence Interval( state=0|1 )
 
 **説明:** 時系列予測プロットにおいて、予測区間の表示/非表示を切り替える。このオプションはすべてのARIMAモデルと平滑化モデルで使用できる。 デフォルトではオン。
 
@@ -2543,7 +2541,7 @@ obj2 << Show Confidence Interval( 0 );
 
 #### Show Points
 
-**構文:** obj << Show Points( state=0|1 )
+**構文:** obj &lt;&lt; Show Points( state=0|1 )
 
 **説明:** 時系列予測プロットにおいて、点の表示/非表示を切り替える。このオプションはすべてのARIMAモデルと平滑化モデルで使用できる。 デフォルトではオン。
 
@@ -2560,7 +2558,7 @@ obj << Arima( 1, 0, 0, Show Points( 1 ) );
 
 #### Show Prediction Interval
 
-**構文:** obj << Show Prediction Interval( state=0|1 )
+**構文:** obj &lt;&lt; Show Prediction Interval( state=0|1 )
 
 **説明:** 時系列予測プロットにおいて、予測区間の表示/非表示を切り替える。このオプションはすべてのARIMAモデルと平滑化モデルで使用できる。 デフォルトではオン。
 
@@ -2576,7 +2574,7 @@ obj2 << Show Prediction Interval( 0 );
 
 #### Std Error of Predicted
 
-**構文:** obj << Std Error of Predicted( state=0|1 )
+**構文:** obj &lt;&lt; Std Error of Predicted( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、予測値の標準誤差のデータ列も保存する。 デフォルトではオン。
 
@@ -2591,7 +2589,7 @@ obj << Arima( 1, 0, 0, Std Error of Predicted( 1 ), Save Columns );
 
 #### Time
 
-**構文:** obj << Time( state=0|1 )
+**構文:** obj &lt;&lt; Time( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、時間のデータ列も保存する。 デフォルトではオン。
 
@@ -2606,7 +2604,7 @@ obj << Arima( 1, 0, 0, Time( 0 ), Save Columns );
 
 #### Upper Confidence Limit
 
-**構文:** obj << Upper Confidence Limit( state=0|1 )
+**構文:** obj &lt;&lt; Upper Confidence Limit( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、上側95%信頼限界のデータ列も保存する。 デフォルトではオン。
 
@@ -2621,7 +2619,7 @@ obj << Arima( 1, 0, 0, Upper Confidence Limit( 1 ), Save Columns );
 
 #### Variogram
 
-**構文:** obj << Variogram( state=0|1 )
+**構文:** obj &lt;&lt; Variogram( state=0|1 )
 
 **説明:** バリオグラムの表示/非表示を切り替える。
 
@@ -2648,7 +2646,7 @@ obj = Time Series(
 
 #### Autocorrelation
 
-**構文:** obj << Autocorrelation( state=0|1 )
+**構文:** obj &lt;&lt; Autocorrelation( state=0|1 )
 
 **説明:** 差分レポートで自己相関の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2663,7 +2661,7 @@ obj << Difference( 1, 0, 0, Autocorrelation( 1 ) );
 
 #### Connecting Lines
 
-**構文:** obj << Connecting Lines( state=0|1 )
+**構文:** obj &lt;&lt; Connecting Lines( state=0|1 )
 
 **説明:** 差グラフ上で点をつなぐ線の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2678,7 +2676,7 @@ obj << Difference( 1, 0, 0, Connecting Lines( 1 ) );
 
 #### Difference Graph
 
-**構文:** obj << Difference Graph( state=0|1 )
+**構文:** obj &lt;&lt; Difference Graph( state=0|1 )
 
 **説明:** 差グラフの表示/非表示を切り替える デフォルトではオン。
 
@@ -2693,7 +2691,7 @@ obj << Difference( 1, 0, 0, Difference Graph( 1 ) );
 
 #### Mean Line
 
-**構文:** obj << Mean Line( state=0|1 )
+**構文:** obj &lt;&lt; Mean Line( state=0|1 )
 
 **説明:** 差グラフ上で平均を示す線の表示/非表示を切り替える。
 
@@ -2708,7 +2706,7 @@ obj << Difference( 1, 0, 0, Mean Line( 1 ) );
 
 #### Partial Autocorrelation
 
-**構文:** obj << Partial Autocorrelation( state=0|1 )
+**構文:** obj &lt;&lt; Partial Autocorrelation( state=0|1 )
 
 **説明:** 差分レポートで偏自己相関の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2723,13 +2721,13 @@ obj << Difference( 1, 0, 0, Partial Autocorrelation( 1 ) );
 
 #### Remove Fit
 
-**構文:** obj << Remove Fit
+**構文:** obj &lt;&lt; Remove Fit
 
 **JMP追加されたバージョン:** 16
 
 #### Save
 
-**構文:** obj << Save
+**構文:** obj &lt;&lt; Save
 
 **説明:** 差分の値をデータテーブルの新しい列に保存する。
 
@@ -2744,7 +2742,7 @@ obj << Difference( 1, 0, 0, Save );
 
 #### Show Points
 
-**構文:** obj << Show Points( state=0|1 )
+**構文:** obj &lt;&lt; Show Points( state=0|1 )
 
 **説明:** 差グラフ上の点の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2759,7 +2757,7 @@ obj << Difference( 1, 0, 0, Show Points( 1 ) );
 
 #### Variogram
 
-**構文:** obj << Variogram( state=0|1 )
+**構文:** obj &lt;&lt; Variogram( state=0|1 )
 
 **説明:** 差分レポートでバリオグラムの表示/非表示を切り替える。
 
@@ -2778,7 +2776,7 @@ obj << Difference( 1, 0, 0, Variogram( 1 ) );
 
 #### Actual
 
-**構文:** obj << Actual( state=0|1 )
+**構文:** obj &lt;&lt; Actual( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、実測値のデータ列も保存する。 デフォルトではオン。
 
@@ -2793,7 +2791,7 @@ obj << Arima( 1, 0, 0, Actual( 1 ), Save Columns );
 
 #### Autocorrelations
 
-**構文:** obj << Autocorrelations( state=0|1 )
+**構文:** obj &lt;&lt; Autocorrelations( state=0|1 )
 
 **説明:** 自己相関プロットの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2816,11 +2814,11 @@ obj = Time Series(
 
 #### Confidence Intervals
 
-**構文:** obj << Confidence Intervals( number )
+**構文:** obj &lt;&lt; Confidence Intervals( number )
 
 #### Create SAS Job
 
-**構文:** obj << Create SAS Job
+**構文:** obj &lt;&lt; Create SAS Job
 
 **説明:** PROC ARIMAによる分析を実行するためのSASプログラムを作成する。
 
@@ -2836,7 +2834,7 @@ obj2 << Create SAS Job;
 
 #### Innovations
 
-**構文:** obj << Innovations( state=0|1 )
+**構文:** obj &lt;&lt; Innovations( state=0|1 )
 
 **説明:** デフォルトではオン。
 
@@ -2844,7 +2842,7 @@ obj2 << Create SAS Job;
 
 #### Lower Confidence Limit
 
-**構文:** obj << Lower Confidence Limit( state=0|1 )
+**構文:** obj &lt;&lt; Lower Confidence Limit( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、下側95%信頼限界のデータ列も保存する。 デフォルトではオン。
 
@@ -2859,7 +2857,7 @@ obj << Arima( 1, 0, 0, Lower Confidence Limit( 1 ), Save Columns );
 
 #### No Constrain
 
-**構文:** obj << No Constrain( state=0|1 )
+**構文:** obj &lt;&lt; No Constrain( state=0|1 )
 
 **説明:** ARIMAモデルを推定する際に、自己回帰パラメータを定常領域内に、移動平均パラメータを反転可能領域内に位置させるという制約を課さない。
 
@@ -2874,7 +2872,7 @@ obj << Arima( 1, 1, 0, No Constrain( 1 ) );
 
 #### No Intercept
 
-**構文:** obj << No Intercept( state=0|1 )
+**構文:** obj &lt;&lt; No Intercept( state=0|1 )
 
 **説明:** ARIMAモデルの切片を0に固定する。
 
@@ -2889,7 +2887,7 @@ obj << Arima( 1, 1, 0, No Intercept( 1 ) );
 
 #### Partial Autocorrelations
 
-**構文:** obj << Partial Autocorrelations( state=0|1 )
+**構文:** obj &lt;&lt; Partial Autocorrelations( state=0|1 )
 
 **説明:** 偏自己相関プロットの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2912,7 +2910,7 @@ obj = Time Series(
 
 #### Plot
 
-**構文:** obj << Plot( state=0|1 )
+**構文:** obj &lt;&lt; Plot( state=0|1 )
 
 **説明:** 残差プロットの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2935,7 +2933,7 @@ obj = Time Series(
 
 #### Predicted
 
-**構文:** obj << Predicted( state=0|1 )
+**構文:** obj &lt;&lt; Predicted( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、予測値のデータ列も保存する。 デフォルトではオン。
 
@@ -2950,7 +2948,7 @@ obj << Arima( 1, 0, 0, Predicted( 1 ), Save Columns );
 
 #### Prediction Interval
 
-**構文:** obj << Prediction Interval( level )
+**構文:** obj &lt;&lt; Prediction Interval( level )
 
 **説明:** ARIMAモデルの予測に関する信頼区間の水準を設定する。デフォルトは0.95。
 
@@ -2965,13 +2963,13 @@ obj << Arima( 1, 1, 0, Forecasting Interval( 0.99 ) );
 
 #### Remove Fit
 
-**構文:** obj << Remove Fit
+**構文:** obj &lt;&lt; Remove Fit
 
 **JMP追加されたバージョン:** 16
 
 #### Residuals
 
-**構文:** obj << Residuals( state=0|1 )
+**構文:** obj &lt;&lt; Residuals( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、残差のデータ列も保存する。 デフォルトではオン。
 
@@ -2986,7 +2984,7 @@ obj << Arima( 1, 0, 0, Residuals( 1 ), Save Columns );
 
 #### Save Columns
 
-**構文:** obj << Save Columns
+**構文:** obj &lt;&lt; Save Columns
 
 **説明:** 応答変数の実測値、予測値、標準偏差、残差、95%予測区間を含んだ新しいデータテーブルを作成する。このオプションは、すべてのARIMAモデル、平滑化モデル、伝達関数モデルで使用できる。
 
@@ -3002,7 +3000,7 @@ obj2 << Save Columns;
 
 #### Save Prediction Formula
 
-**構文:** obj << Save Prediction Formula
+**構文:** obj &lt;&lt; Save Prediction Formula
 
 **説明:** データテーブルの新しい列に予測式を保存する。このオプションはすべてのARIMAモデルと平滑化モデルで使用できる。
 
@@ -3018,7 +3016,7 @@ obj2 << Save Prediction Formula;
 
 #### Show Confidence Interval
 
-**構文:** obj << Show Confidence Interval( state=0|1 )
+**構文:** obj &lt;&lt; Show Confidence Interval( state=0|1 )
 
 **説明:** 時系列予測プロットにおいて、予測区間の表示/非表示を切り替える。このオプションはすべてのARIMAモデルと平滑化モデルで使用できる。 デフォルトではオン。
 
@@ -3034,7 +3032,7 @@ obj2 << Show Confidence Interval( 0 );
 
 #### Show Points
 
-**構文:** obj << Show Points( state=0|1 )
+**構文:** obj &lt;&lt; Show Points( state=0|1 )
 
 **説明:** 時系列予測プロットにおいて、点の表示/非表示を切り替える。このオプションはすべてのARIMAモデルと平滑化モデルで使用できる。 デフォルトではオン。
 
@@ -3051,7 +3049,7 @@ obj << Arima( 1, 0, 0, Show Points( 1 ) );
 
 #### Show Prediction Interval
 
-**構文:** obj << Show Prediction Interval( state=0|1 )
+**構文:** obj &lt;&lt; Show Prediction Interval( state=0|1 )
 
 **説明:** 時系列予測プロットにおいて、予測区間の表示/非表示を切り替える。このオプションはすべてのARIMAモデルと平滑化モデルで使用できる。 デフォルトではオン。
 
@@ -3067,7 +3065,7 @@ obj2 << Show Prediction Interval( 0 );
 
 #### Std Error of Predicted
 
-**構文:** obj << Std Error of Predicted( state=0|1 )
+**構文:** obj &lt;&lt; Std Error of Predicted( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、予測値の標準誤差のデータ列も保存する。 デフォルトではオン。
 
@@ -3082,7 +3080,7 @@ obj << Arima( 1, 0, 0, Std Error of Predicted( 1 ), Save Columns );
 
 #### Time
 
-**構文:** obj << Time( state=0|1 )
+**構文:** obj &lt;&lt; Time( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、時間のデータ列も保存する。 デフォルトではオン。
 
@@ -3097,7 +3095,7 @@ obj << Arima( 1, 0, 0, Time( 0 ), Save Columns );
 
 #### Upper Confidence Limit
 
-**構文:** obj << Upper Confidence Limit( state=0|1 )
+**構文:** obj &lt;&lt; Upper Confidence Limit( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、上側95%信頼限界のデータ列も保存する。 デフォルトではオン。
 
@@ -3112,7 +3110,7 @@ obj << Arima( 1, 0, 0, Upper Confidence Limit( 1 ), Save Columns );
 
 #### Variogram
 
-**構文:** obj << Variogram( state=0|1 )
+**構文:** obj &lt;&lt; Variogram( state=0|1 )
 
 **説明:** バリオグラムの表示/非表示を切り替える。
 
@@ -3139,7 +3137,7 @@ obj = Time Series(
 
 #### Actual
 
-**構文:** obj << Actual( state=0|1 )
+**構文:** obj &lt;&lt; Actual( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、実測値のデータ列も保存する。 デフォルトではオン。
 
@@ -3154,7 +3152,7 @@ obj << Arima( 1, 0, 0, Actual( 1 ), Save Columns );
 
 #### Autocorrelations
 
-**構文:** obj << Autocorrelations( state=0|1 )
+**構文:** obj &lt;&lt; Autocorrelations( state=0|1 )
 
 **説明:** 自己相関プロットの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -3177,11 +3175,11 @@ obj = Time Series(
 
 #### Confidence Intervals
 
-**構文:** obj << Confidence Intervals( number )
+**構文:** obj &lt;&lt; Confidence Intervals( number )
 
 #### Create SAS Job
 
-**構文:** obj << Create SAS Job
+**構文:** obj &lt;&lt; Create SAS Job
 
 **説明:** PROC ARIMAによる分析を実行するためのSASプログラムを作成する。
 
@@ -3197,7 +3195,7 @@ obj2 << Create SAS Job;
 
 #### Innovations
 
-**構文:** obj << Innovations( state=0|1 )
+**構文:** obj &lt;&lt; Innovations( state=0|1 )
 
 **説明:** デフォルトではオン。
 
@@ -3205,7 +3203,7 @@ obj2 << Create SAS Job;
 
 #### Lower Confidence Limit
 
-**構文:** obj << Lower Confidence Limit( state=0|1 )
+**構文:** obj &lt;&lt; Lower Confidence Limit( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、下側95%信頼限界のデータ列も保存する。 デフォルトではオン。
 
@@ -3220,7 +3218,7 @@ obj << Arima( 1, 0, 0, Lower Confidence Limit( 1 ), Save Columns );
 
 #### No Constrain
 
-**構文:** obj << No Constrain( state=0|1 )
+**構文:** obj &lt;&lt; No Constrain( state=0|1 )
 
 **説明:** ARIMAモデルを推定する際に、自己回帰パラメータを定常領域内に、移動平均パラメータを反転可能領域内に位置させるという制約を課さない。
 
@@ -3235,7 +3233,7 @@ obj << Arima( 1, 1, 0, No Constrain( 1 ) );
 
 #### No Intercept
 
-**構文:** obj << No Intercept( state=0|1 )
+**構文:** obj &lt;&lt; No Intercept( state=0|1 )
 
 **説明:** ARIMAモデルの切片を0に固定する。
 
@@ -3250,7 +3248,7 @@ obj << Arima( 1, 1, 0, No Intercept( 1 ) );
 
 #### Partial Autocorrelations
 
-**構文:** obj << Partial Autocorrelations( state=0|1 )
+**構文:** obj &lt;&lt; Partial Autocorrelations( state=0|1 )
 
 **説明:** 偏自己相関プロットの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -3273,7 +3271,7 @@ obj = Time Series(
 
 #### Plot
 
-**構文:** obj << Plot( state=0|1 )
+**構文:** obj &lt;&lt; Plot( state=0|1 )
 
 **説明:** 残差プロットの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -3296,7 +3294,7 @@ obj = Time Series(
 
 #### Predicted
 
-**構文:** obj << Predicted( state=0|1 )
+**構文:** obj &lt;&lt; Predicted( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、予測値のデータ列も保存する。 デフォルトではオン。
 
@@ -3311,7 +3309,7 @@ obj << Arima( 1, 0, 0, Predicted( 1 ), Save Columns );
 
 #### Prediction Interval
 
-**構文:** obj << Prediction Interval( level )
+**構文:** obj &lt;&lt; Prediction Interval( level )
 
 **説明:** ARIMAモデルの予測に関する信頼区間の水準を設定する。デフォルトは0.95。
 
@@ -3326,13 +3324,13 @@ obj << Arima( 1, 1, 0, Forecasting Interval( 0.99 ) );
 
 #### Remove Fit
 
-**構文:** obj << Remove Fit
+**構文:** obj &lt;&lt; Remove Fit
 
 **JMP追加されたバージョン:** 16
 
 #### Residuals
 
-**構文:** obj << Residuals( state=0|1 )
+**構文:** obj &lt;&lt; Residuals( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、残差のデータ列も保存する。 デフォルトではオン。
 
@@ -3347,7 +3345,7 @@ obj << Arima( 1, 0, 0, Residuals( 1 ), Save Columns );
 
 #### Save Columns
 
-**構文:** obj << Save Columns
+**構文:** obj &lt;&lt; Save Columns
 
 **説明:** 応答変数の実測値、予測値、標準偏差、残差、95%予測区間を含んだ新しいデータテーブルを作成する。このオプションは、すべてのARIMAモデル、平滑化モデル、伝達関数モデルで使用できる。
 
@@ -3363,7 +3361,7 @@ obj2 << Save Columns;
 
 #### Save Prediction Formula
 
-**構文:** obj << Save Prediction Formula
+**構文:** obj &lt;&lt; Save Prediction Formula
 
 **説明:** データテーブルの新しい列に予測式を保存する。このオプションはすべてのARIMAモデルと平滑化モデルで使用できる。
 
@@ -3379,7 +3377,7 @@ obj2 << Save Prediction Formula;
 
 #### Show Confidence Interval
 
-**構文:** obj << Show Confidence Interval( state=0|1 )
+**構文:** obj &lt;&lt; Show Confidence Interval( state=0|1 )
 
 **説明:** 時系列予測プロットにおいて、予測区間の表示/非表示を切り替える。このオプションはすべてのARIMAモデルと平滑化モデルで使用できる。 デフォルトではオン。
 
@@ -3395,7 +3393,7 @@ obj2 << Show Confidence Interval( 0 );
 
 #### Show Points
 
-**構文:** obj << Show Points( state=0|1 )
+**構文:** obj &lt;&lt; Show Points( state=0|1 )
 
 **説明:** 時系列予測プロットにおいて、点の表示/非表示を切り替える。このオプションはすべてのARIMAモデルと平滑化モデルで使用できる。 デフォルトではオン。
 
@@ -3412,7 +3410,7 @@ obj << Arima( 1, 0, 0, Show Points( 1 ) );
 
 #### Show Prediction Interval
 
-**構文:** obj << Show Prediction Interval( state=0|1 )
+**構文:** obj &lt;&lt; Show Prediction Interval( state=0|1 )
 
 **説明:** 時系列予測プロットにおいて、予測区間の表示/非表示を切り替える。このオプションはすべてのARIMAモデルと平滑化モデルで使用できる。 デフォルトではオン。
 
@@ -3428,7 +3426,7 @@ obj2 << Show Prediction Interval( 0 );
 
 #### Std Error of Predicted
 
-**構文:** obj << Std Error of Predicted( state=0|1 )
+**構文:** obj &lt;&lt; Std Error of Predicted( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、予測値の標準誤差のデータ列も保存する。 デフォルトではオン。
 
@@ -3443,7 +3441,7 @@ obj << Arima( 1, 0, 0, Std Error of Predicted( 1 ), Save Columns );
 
 #### Time
 
-**構文:** obj << Time( state=0|1 )
+**構文:** obj &lt;&lt; Time( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、時間のデータ列も保存する。 デフォルトではオン。
 
@@ -3458,7 +3456,7 @@ obj << Arima( 1, 0, 0, Time( 0 ), Save Columns );
 
 #### Upper Confidence Limit
 
-**構文:** obj << Upper Confidence Limit( state=0|1 )
+**構文:** obj &lt;&lt; Upper Confidence Limit( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、上側95%信頼限界のデータ列も保存する。 デフォルトではオン。
 
@@ -3473,7 +3471,7 @@ obj << Arima( 1, 0, 0, Upper Confidence Limit( 1 ), Save Columns );
 
 #### Variogram
 
-**構文:** obj << Variogram( state=0|1 )
+**構文:** obj &lt;&lt; Variogram( state=0|1 )
 
 **説明:** バリオグラムの表示/非表示を切り替える。
 
@@ -3500,7 +3498,7 @@ obj = Time Series(
 
 #### Actual
 
-**構文:** obj << Actual( state=0|1 )
+**構文:** obj &lt;&lt; Actual( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、実測値のデータ列も保存する。 デフォルトではオン。
 
@@ -3515,7 +3513,7 @@ obj << Arima( 1, 0, 0, Actual( 1 ), Save Columns );
 
 #### Autocorrelations
 
-**構文:** obj << Autocorrelations( state=0|1 )
+**構文:** obj &lt;&lt; Autocorrelations( state=0|1 )
 
 **説明:** 自己相関プロットの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -3538,11 +3536,11 @@ obj = Time Series(
 
 #### Confidence Intervals
 
-**構文:** obj << Confidence Intervals( number )
+**構文:** obj &lt;&lt; Confidence Intervals( number )
 
 #### Create SAS Job
 
-**構文:** obj << Create SAS Job
+**構文:** obj &lt;&lt; Create SAS Job
 
 **説明:** PROC ARIMAによる分析を実行するためのSASプログラムを作成する。
 
@@ -3558,7 +3556,7 @@ obj2 << Create SAS Job;
 
 #### Innovations
 
-**構文:** obj << Innovations( state=0|1 )
+**構文:** obj &lt;&lt; Innovations( state=0|1 )
 
 **説明:** デフォルトではオン。
 
@@ -3566,7 +3564,7 @@ obj2 << Create SAS Job;
 
 #### Lower Confidence Limit
 
-**構文:** obj << Lower Confidence Limit( state=0|1 )
+**構文:** obj &lt;&lt; Lower Confidence Limit( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、下側95%信頼限界のデータ列も保存する。 デフォルトではオン。
 
@@ -3581,7 +3579,7 @@ obj << Arima( 1, 0, 0, Lower Confidence Limit( 1 ), Save Columns );
 
 #### No Constrain
 
-**構文:** obj << No Constrain( state=0|1 )
+**構文:** obj &lt;&lt; No Constrain( state=0|1 )
 
 **説明:** ARIMAモデルを推定する際に、自己回帰パラメータを定常領域内に、移動平均パラメータを反転可能領域内に位置させるという制約を課さない。
 
@@ -3596,7 +3594,7 @@ obj << Arima( 1, 1, 0, No Constrain( 1 ) );
 
 #### No Intercept
 
-**構文:** obj << No Intercept( state=0|1 )
+**構文:** obj &lt;&lt; No Intercept( state=0|1 )
 
 **説明:** ARIMAモデルの切片を0に固定する。
 
@@ -3611,7 +3609,7 @@ obj << Arima( 1, 1, 0, No Intercept( 1 ) );
 
 #### Partial Autocorrelations
 
-**構文:** obj << Partial Autocorrelations( state=0|1 )
+**構文:** obj &lt;&lt; Partial Autocorrelations( state=0|1 )
 
 **説明:** 偏自己相関プロットの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -3634,7 +3632,7 @@ obj = Time Series(
 
 #### Plot
 
-**構文:** obj << Plot( state=0|1 )
+**構文:** obj &lt;&lt; Plot( state=0|1 )
 
 **説明:** 残差プロットの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -3657,7 +3655,7 @@ obj = Time Series(
 
 #### Predicted
 
-**構文:** obj << Predicted( state=0|1 )
+**構文:** obj &lt;&lt; Predicted( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、予測値のデータ列も保存する。 デフォルトではオン。
 
@@ -3672,7 +3670,7 @@ obj << Arima( 1, 0, 0, Predicted( 1 ), Save Columns );
 
 #### Prediction Interval
 
-**構文:** obj << Prediction Interval( level )
+**構文:** obj &lt;&lt; Prediction Interval( level )
 
 **説明:** ARIMAモデルの予測に関する信頼区間の水準を設定する。デフォルトは0.95。
 
@@ -3687,13 +3685,13 @@ obj << Arima( 1, 1, 0, Forecasting Interval( 0.99 ) );
 
 #### Remove Fit
 
-**構文:** obj << Remove Fit
+**構文:** obj &lt;&lt; Remove Fit
 
 **JMP追加されたバージョン:** 16
 
 #### Residuals
 
-**構文:** obj << Residuals( state=0|1 )
+**構文:** obj &lt;&lt; Residuals( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、残差のデータ列も保存する。 デフォルトではオン。
 
@@ -3708,7 +3706,7 @@ obj << Arima( 1, 0, 0, Residuals( 1 ), Save Columns );
 
 #### Save Columns
 
-**構文:** obj << Save Columns
+**構文:** obj &lt;&lt; Save Columns
 
 **説明:** 応答変数の実測値、予測値、標準偏差、残差、95%予測区間を含んだ新しいデータテーブルを作成する。このオプションは、すべてのARIMAモデル、平滑化モデル、伝達関数モデルで使用できる。
 
@@ -3724,7 +3722,7 @@ obj2 << Save Columns;
 
 #### Save Prediction Formula
 
-**構文:** obj << Save Prediction Formula
+**構文:** obj &lt;&lt; Save Prediction Formula
 
 **説明:** データテーブルの新しい列に予測式を保存する。このオプションはすべてのARIMAモデルと平滑化モデルで使用できる。
 
@@ -3740,7 +3738,7 @@ obj2 << Save Prediction Formula;
 
 #### Show Confidence Interval
 
-**構文:** obj << Show Confidence Interval( state=0|1 )
+**構文:** obj &lt;&lt; Show Confidence Interval( state=0|1 )
 
 **説明:** 時系列予測プロットにおいて、予測区間の表示/非表示を切り替える。このオプションはすべてのARIMAモデルと平滑化モデルで使用できる。 デフォルトではオン。
 
@@ -3756,7 +3754,7 @@ obj2 << Show Confidence Interval( 0 );
 
 #### Show Points
 
-**構文:** obj << Show Points( state=0|1 )
+**構文:** obj &lt;&lt; Show Points( state=0|1 )
 
 **説明:** 時系列予測プロットにおいて、点の表示/非表示を切り替える。このオプションはすべてのARIMAモデルと平滑化モデルで使用できる。 デフォルトではオン。
 
@@ -3773,7 +3771,7 @@ obj << Arima( 1, 0, 0, Show Points( 1 ) );
 
 #### Show Prediction Interval
 
-**構文:** obj << Show Prediction Interval( state=0|1 )
+**構文:** obj &lt;&lt; Show Prediction Interval( state=0|1 )
 
 **説明:** 時系列予測プロットにおいて、予測区間の表示/非表示を切り替える。このオプションはすべてのARIMAモデルと平滑化モデルで使用できる。 デフォルトではオン。
 
@@ -3789,7 +3787,7 @@ obj2 << Show Prediction Interval( 0 );
 
 #### Std Error of Predicted
 
-**構文:** obj << Std Error of Predicted( state=0|1 )
+**構文:** obj &lt;&lt; Std Error of Predicted( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、予測値の標準誤差のデータ列も保存する。 デフォルトではオン。
 
@@ -3804,7 +3802,7 @@ obj << Arima( 1, 0, 0, Std Error of Predicted( 1 ), Save Columns );
 
 #### Time
 
-**構文:** obj << Time( state=0|1 )
+**構文:** obj &lt;&lt; Time( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、時間のデータ列も保存する。 デフォルトではオン。
 
@@ -3819,7 +3817,7 @@ obj << Arima( 1, 0, 0, Time( 0 ), Save Columns );
 
 #### Upper Confidence Limit
 
-**構文:** obj << Upper Confidence Limit( state=0|1 )
+**構文:** obj &lt;&lt; Upper Confidence Limit( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、上側95%信頼限界のデータ列も保存する。 デフォルトではオン。
 
@@ -3834,7 +3832,7 @@ obj << Arima( 1, 0, 0, Upper Confidence Limit( 1 ), Save Columns );
 
 #### Variogram
 
-**構文:** obj << Variogram( state=0|1 )
+**構文:** obj &lt;&lt; Variogram( state=0|1 )
 
 **説明:** バリオグラムの表示/非表示を切り替える。
 
@@ -3861,7 +3859,7 @@ obj = Time Series(
 
 #### Actual
 
-**構文:** obj << Actual( state=0|1 )
+**構文:** obj &lt;&lt; Actual( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、実測値のデータ列も保存する。 デフォルトではオン。
 
@@ -3876,7 +3874,7 @@ obj << Arima( 1, 0, 0, Actual( 1 ), Save Columns );
 
 #### Autocorrelations
 
-**構文:** obj << Autocorrelations( state=0|1 )
+**構文:** obj &lt;&lt; Autocorrelations( state=0|1 )
 
 **説明:** 自己相関プロットの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -3899,11 +3897,11 @@ obj = Time Series(
 
 #### Confidence Intervals
 
-**構文:** obj << Confidence Intervals( number )
+**構文:** obj &lt;&lt; Confidence Intervals( number )
 
 #### Create SAS Job
 
-**構文:** obj << Create SAS Job
+**構文:** obj &lt;&lt; Create SAS Job
 
 **説明:** PROC ARIMAによる分析を実行するためのSASプログラムを作成する。
 
@@ -3919,7 +3917,7 @@ obj2 << Create SAS Job;
 
 #### Innovations
 
-**構文:** obj << Innovations( state=0|1 )
+**構文:** obj &lt;&lt; Innovations( state=0|1 )
 
 **説明:** デフォルトではオン。
 
@@ -3927,7 +3925,7 @@ obj2 << Create SAS Job;
 
 #### Lower Confidence Limit
 
-**構文:** obj << Lower Confidence Limit( state=0|1 )
+**構文:** obj &lt;&lt; Lower Confidence Limit( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、下側95%信頼限界のデータ列も保存する。 デフォルトではオン。
 
@@ -3942,7 +3940,7 @@ obj << Arima( 1, 0, 0, Lower Confidence Limit( 1 ), Save Columns );
 
 #### No Constrain
 
-**構文:** obj << No Constrain( state=0|1 )
+**構文:** obj &lt;&lt; No Constrain( state=0|1 )
 
 **説明:** ARIMAモデルを推定する際に、自己回帰パラメータを定常領域内に、移動平均パラメータを反転可能領域内に位置させるという制約を課さない。
 
@@ -3957,7 +3955,7 @@ obj << Arima( 1, 1, 0, No Constrain( 1 ) );
 
 #### No Intercept
 
-**構文:** obj << No Intercept( state=0|1 )
+**構文:** obj &lt;&lt; No Intercept( state=0|1 )
 
 **説明:** ARIMAモデルの切片を0に固定する。
 
@@ -3972,7 +3970,7 @@ obj << Arima( 1, 1, 0, No Intercept( 1 ) );
 
 #### Partial Autocorrelations
 
-**構文:** obj << Partial Autocorrelations( state=0|1 )
+**構文:** obj &lt;&lt; Partial Autocorrelations( state=0|1 )
 
 **説明:** 偏自己相関プロットの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -3995,7 +3993,7 @@ obj = Time Series(
 
 #### Plot
 
-**構文:** obj << Plot( state=0|1 )
+**構文:** obj &lt;&lt; Plot( state=0|1 )
 
 **説明:** 残差プロットの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -4018,7 +4016,7 @@ obj = Time Series(
 
 #### Predicted
 
-**構文:** obj << Predicted( state=0|1 )
+**構文:** obj &lt;&lt; Predicted( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、予測値のデータ列も保存する。 デフォルトではオン。
 
@@ -4033,7 +4031,7 @@ obj << Arima( 1, 0, 0, Predicted( 1 ), Save Columns );
 
 #### Prediction Interval
 
-**構文:** obj << Prediction Interval( level )
+**構文:** obj &lt;&lt; Prediction Interval( level )
 
 **説明:** ARIMAモデルの予測に関する信頼区間の水準を設定する。デフォルトは0.95。
 
@@ -4048,13 +4046,13 @@ obj << Arima( 1, 1, 0, Forecasting Interval( 0.99 ) );
 
 #### Remove Fit
 
-**構文:** obj << Remove Fit
+**構文:** obj &lt;&lt; Remove Fit
 
 **JMP追加されたバージョン:** 16
 
 #### Residuals
 
-**構文:** obj << Residuals( state=0|1 )
+**構文:** obj &lt;&lt; Residuals( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、残差のデータ列も保存する。 デフォルトではオン。
 
@@ -4069,7 +4067,7 @@ obj << Arima( 1, 0, 0, Residuals( 1 ), Save Columns );
 
 #### Save Columns
 
-**構文:** obj << Save Columns
+**構文:** obj &lt;&lt; Save Columns
 
 **説明:** 応答変数の実測値、予測値、標準偏差、残差、95%予測区間を含んだ新しいデータテーブルを作成する。このオプションは、すべてのARIMAモデル、平滑化モデル、伝達関数モデルで使用できる。
 
@@ -4085,7 +4083,7 @@ obj2 << Save Columns;
 
 #### Save Prediction Formula
 
-**構文:** obj << Save Prediction Formula
+**構文:** obj &lt;&lt; Save Prediction Formula
 
 **説明:** データテーブルの新しい列に予測式を保存する。このオプションはすべてのARIMAモデルと平滑化モデルで使用できる。
 
@@ -4101,7 +4099,7 @@ obj2 << Save Prediction Formula;
 
 #### Show Confidence Interval
 
-**構文:** obj << Show Confidence Interval( state=0|1 )
+**構文:** obj &lt;&lt; Show Confidence Interval( state=0|1 )
 
 **説明:** 時系列予測プロットにおいて、予測区間の表示/非表示を切り替える。このオプションはすべてのARIMAモデルと平滑化モデルで使用できる。 デフォルトではオン。
 
@@ -4117,7 +4115,7 @@ obj2 << Show Confidence Interval( 0 );
 
 #### Show Points
 
-**構文:** obj << Show Points( state=0|1 )
+**構文:** obj &lt;&lt; Show Points( state=0|1 )
 
 **説明:** 時系列予測プロットにおいて、点の表示/非表示を切り替える。このオプションはすべてのARIMAモデルと平滑化モデルで使用できる。 デフォルトではオン。
 
@@ -4134,7 +4132,7 @@ obj << Arima( 1, 0, 0, Show Points( 1 ) );
 
 #### Show Prediction Interval
 
-**構文:** obj << Show Prediction Interval( state=0|1 )
+**構文:** obj &lt;&lt; Show Prediction Interval( state=0|1 )
 
 **説明:** 時系列予測プロットにおいて、予測区間の表示/非表示を切り替える。このオプションはすべてのARIMAモデルと平滑化モデルで使用できる。 デフォルトではオン。
 
@@ -4150,7 +4148,7 @@ obj2 << Show Prediction Interval( 0 );
 
 #### Std Error of Predicted
 
-**構文:** obj << Std Error of Predicted( state=0|1 )
+**構文:** obj &lt;&lt; Std Error of Predicted( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、予測値の標準誤差のデータ列も保存する。 デフォルトではオン。
 
@@ -4165,7 +4163,7 @@ obj << Arima( 1, 0, 0, Std Error of Predicted( 1 ), Save Columns );
 
 #### Time
 
-**構文:** obj << Time( state=0|1 )
+**構文:** obj &lt;&lt; Time( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、時間のデータ列も保存する。 デフォルトではオン。
 
@@ -4180,7 +4178,7 @@ obj << Arima( 1, 0, 0, Time( 0 ), Save Columns );
 
 #### Upper Confidence Limit
 
-**構文:** obj << Upper Confidence Limit( state=0|1 )
+**構文:** obj &lt;&lt; Upper Confidence Limit( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、上側95%信頼限界のデータ列も保存する。 デフォルトではオン。
 
@@ -4195,7 +4193,7 @@ obj << Arima( 1, 0, 0, Upper Confidence Limit( 1 ), Save Columns );
 
 #### Variogram
 
-**構文:** obj << Variogram( state=0|1 )
+**構文:** obj &lt;&lt; Variogram( state=0|1 )
 
 **説明:** バリオグラムの表示/非表示を切り替える。
 
@@ -4222,7 +4220,7 @@ obj = Time Series(
 
 #### Actual
 
-**構文:** obj << Actual( state=0|1 )
+**構文:** obj &lt;&lt; Actual( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、実測値のデータ列も保存する。 デフォルトではオン。
 
@@ -4237,7 +4235,7 @@ obj << Arima( 1, 0, 0, Actual( 1 ), Save Columns );
 
 #### Autocorrelations
 
-**構文:** obj << Autocorrelations( state=0|1 )
+**構文:** obj &lt;&lt; Autocorrelations( state=0|1 )
 
 **説明:** 自己相関プロットの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -4260,11 +4258,11 @@ obj = Time Series(
 
 #### Confidence Intervals
 
-**構文:** obj << Confidence Intervals( number )
+**構文:** obj &lt;&lt; Confidence Intervals( number )
 
 #### Create SAS Job
 
-**構文:** obj << Create SAS Job
+**構文:** obj &lt;&lt; Create SAS Job
 
 **説明:** PROC ARIMAによる分析を実行するためのSASプログラムを作成する。
 
@@ -4280,7 +4278,7 @@ obj2 << Create SAS Job;
 
 #### Innovations
 
-**構文:** obj << Innovations( state=0|1 )
+**構文:** obj &lt;&lt; Innovations( state=0|1 )
 
 **説明:** デフォルトではオン。
 
@@ -4288,7 +4286,7 @@ obj2 << Create SAS Job;
 
 #### Lower Confidence Limit
 
-**構文:** obj << Lower Confidence Limit( state=0|1 )
+**構文:** obj &lt;&lt; Lower Confidence Limit( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、下側95%信頼限界のデータ列も保存する。 デフォルトではオン。
 
@@ -4303,7 +4301,7 @@ obj << Arima( 1, 0, 0, Lower Confidence Limit( 1 ), Save Columns );
 
 #### No Constrain
 
-**構文:** obj << No Constrain( state=0|1 )
+**構文:** obj &lt;&lt; No Constrain( state=0|1 )
 
 **説明:** ARIMAモデルを推定する際に、自己回帰パラメータを定常領域内に、移動平均パラメータを反転可能領域内に位置させるという制約を課さない。
 
@@ -4318,7 +4316,7 @@ obj << Arima( 1, 1, 0, No Constrain( 1 ) );
 
 #### No Intercept
 
-**構文:** obj << No Intercept( state=0|1 )
+**構文:** obj &lt;&lt; No Intercept( state=0|1 )
 
 **説明:** ARIMAモデルの切片を0に固定する。
 
@@ -4333,7 +4331,7 @@ obj << Arima( 1, 1, 0, No Intercept( 1 ) );
 
 #### Partial Autocorrelations
 
-**構文:** obj << Partial Autocorrelations( state=0|1 )
+**構文:** obj &lt;&lt; Partial Autocorrelations( state=0|1 )
 
 **説明:** 偏自己相関プロットの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -4356,7 +4354,7 @@ obj = Time Series(
 
 #### Plot
 
-**構文:** obj << Plot( state=0|1 )
+**構文:** obj &lt;&lt; Plot( state=0|1 )
 
 **説明:** 残差プロットの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -4379,7 +4377,7 @@ obj = Time Series(
 
 #### Predicted
 
-**構文:** obj << Predicted( state=0|1 )
+**構文:** obj &lt;&lt; Predicted( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、予測値のデータ列も保存する。 デフォルトではオン。
 
@@ -4394,7 +4392,7 @@ obj << Arima( 1, 0, 0, Predicted( 1 ), Save Columns );
 
 #### Prediction Interval
 
-**構文:** obj << Prediction Interval( level )
+**構文:** obj &lt;&lt; Prediction Interval( level )
 
 **説明:** ARIMAモデルの予測に関する信頼区間の水準を設定する。デフォルトは0.95。
 
@@ -4409,13 +4407,13 @@ obj << Arima( 1, 1, 0, Forecasting Interval( 0.99 ) );
 
 #### Remove Fit
 
-**構文:** obj << Remove Fit
+**構文:** obj &lt;&lt; Remove Fit
 
 **JMP追加されたバージョン:** 16
 
 #### Residuals
 
-**構文:** obj << Residuals( state=0|1 )
+**構文:** obj &lt;&lt; Residuals( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、残差のデータ列も保存する。 デフォルトではオン。
 
@@ -4430,7 +4428,7 @@ obj << Arima( 1, 0, 0, Residuals( 1 ), Save Columns );
 
 #### Save Columns
 
-**構文:** obj << Save Columns
+**構文:** obj &lt;&lt; Save Columns
 
 **説明:** 応答変数の実測値、予測値、標準偏差、残差、95%予測区間を含んだ新しいデータテーブルを作成する。このオプションは、すべてのARIMAモデル、平滑化モデル、伝達関数モデルで使用できる。
 
@@ -4446,7 +4444,7 @@ obj2 << Save Columns;
 
 #### Save Prediction Formula
 
-**構文:** obj << Save Prediction Formula
+**構文:** obj &lt;&lt; Save Prediction Formula
 
 **説明:** データテーブルの新しい列に予測式を保存する。このオプションはすべてのARIMAモデルと平滑化モデルで使用できる。
 
@@ -4462,7 +4460,7 @@ obj2 << Save Prediction Formula;
 
 #### Show Confidence Interval
 
-**構文:** obj << Show Confidence Interval( state=0|1 )
+**構文:** obj &lt;&lt; Show Confidence Interval( state=0|1 )
 
 **説明:** 時系列予測プロットにおいて、予測区間の表示/非表示を切り替える。このオプションはすべてのARIMAモデルと平滑化モデルで使用できる。 デフォルトではオン。
 
@@ -4478,7 +4476,7 @@ obj2 << Show Confidence Interval( 0 );
 
 #### Show Points
 
-**構文:** obj << Show Points( state=0|1 )
+**構文:** obj &lt;&lt; Show Points( state=0|1 )
 
 **説明:** 時系列予測プロットにおいて、点の表示/非表示を切り替える。このオプションはすべてのARIMAモデルと平滑化モデルで使用できる。 デフォルトではオン。
 
@@ -4495,7 +4493,7 @@ obj << Arima( 1, 0, 0, Show Points( 1 ) );
 
 #### Show Prediction Interval
 
-**構文:** obj << Show Prediction Interval( state=0|1 )
+**構文:** obj &lt;&lt; Show Prediction Interval( state=0|1 )
 
 **説明:** 時系列予測プロットにおいて、予測区間の表示/非表示を切り替える。このオプションはすべてのARIMAモデルと平滑化モデルで使用できる。 デフォルトではオン。
 
@@ -4511,7 +4509,7 @@ obj2 << Show Prediction Interval( 0 );
 
 #### Std Error of Predicted
 
-**構文:** obj << Std Error of Predicted( state=0|1 )
+**構文:** obj &lt;&lt; Std Error of Predicted( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、予測値の標準誤差のデータ列も保存する。 デフォルトではオン。
 
@@ -4526,7 +4524,7 @@ obj << Arima( 1, 0, 0, Std Error of Predicted( 1 ), Save Columns );
 
 #### Time
 
-**構文:** obj << Time( state=0|1 )
+**構文:** obj &lt;&lt; Time( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、時間のデータ列も保存する。 デフォルトではオン。
 
@@ -4541,7 +4539,7 @@ obj << Arima( 1, 0, 0, Time( 0 ), Save Columns );
 
 #### Upper Confidence Limit
 
-**構文:** obj << Upper Confidence Limit( state=0|1 )
+**構文:** obj &lt;&lt; Upper Confidence Limit( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、上側95%信頼限界のデータ列も保存する。 デフォルトではオン。
 
@@ -4556,7 +4554,7 @@ obj << Arima( 1, 0, 0, Upper Confidence Limit( 1 ), Save Columns );
 
 #### Variogram
 
-**構文:** obj << Variogram( state=0|1 )
+**構文:** obj &lt;&lt; Variogram( state=0|1 )
 
 **説明:** バリオグラムの表示/非表示を切り替える。
 
@@ -4583,7 +4581,7 @@ obj = Time Series(
 
 #### Add Model
 
-**構文:** obj << Add Model( Window Width, <Centered> )
+**構文:** obj &lt;&lt; Add Model( Window Width, &lt;Centered&gt; )
 
 **説明:** 単純移動平均モデルを追加する。単純移動平均の各モデルは、移動平均を計算するウィンドウ幅が異なっている。オプションの引数で、中心化するかどうかを指定する。
 
@@ -4599,7 +4597,7 @@ sma << Add Model( 15, Centered );
 
 #### Connecting Lines
 
-**構文:** obj << Connecting Lines( <1|0> )
+**構文:** obj &lt;&lt; Connecting Lines( &lt;1|0&gt; )
 
 **説明:** グラフに接続線を表示する。
 
@@ -4614,7 +4612,7 @@ sma = obj << Simple Moving Average( Connecting Lines );
 
 #### Get Results
 
-**構文:** obj << Get Results
+**構文:** obj &lt;&lt; Get Results
 
 **説明:** すべての単純移動平均モデルを、JSLのオブジェクトとして戻す。
 
@@ -4629,7 +4627,7 @@ resultobj = obj << Simple Moving Average( Get Result );
 
 #### Remove Model
 
-**構文:** obj << Remove Model( Window Width, <Centered> )
+**構文:** obj &lt;&lt; Remove Model( Window Width, &lt;Centered&gt; )
 
 **説明:** 単純移動平均モデルを削除する。単純移動平均の各モデルは、移動平均を計算するウィンドウ幅が異なっている。
 
@@ -4644,13 +4642,13 @@ obj << Simple Moving Average( Remove Model( 5 ) );
 
 #### Remove Report
 
-**構文:** obj << Remove Report
+**構文:** obj &lt;&lt; Remove Report
 
 **JMP追加されたバージョン:** 16
 
 #### Save to Data Table
 
-**構文:** obj << Save to Data Table
+**構文:** obj &lt;&lt; Save to Data Table
 
 **説明:** すべての単純移動平均モデルの結果をデータテーブルに保存し、そのデータテーブルに対する参照を戻す。
 
@@ -4665,7 +4663,7 @@ resultdt = obj << Simple Moving Average( Save to Data Table );
 
 #### Show Points
 
-**構文:** obj << Show Points( <1|0> )
+**構文:** obj &lt;&lt; Show Points( &lt;1|0&gt; )
 
 **説明:** グラフに点を表示する。
 
@@ -4684,7 +4682,7 @@ sma = obj << Simple Moving Average( Show Points( 0 ) );
 
 #### Alternative Parameterization
 
-**構文:** obj << Alternative Parameterization( state=0|1 )
+**構文:** obj &lt;&lt; Alternative Parameterization( state=0|1 )
 
 **説明:** 分子の多項式において、一般的な回帰係数を因数分解してパラメータ化するかどうかを指定する。
 
@@ -4709,7 +4707,7 @@ obj << Transfer Function(
 
 #### Autocorrelations
 
-**構文:** obj << Autocorrelations( state=0|1 )
+**構文:** obj &lt;&lt; Autocorrelations( state=0|1 )
 
 **説明:** 自己相関プロットの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -4730,11 +4728,11 @@ obj << Transfer Function(
 
 #### Compute Objective
 
-**構文:** obj << Compute Objective
+**構文:** obj &lt;&lt; Compute Objective
 
 #### Create SAS Job
 
-**構文:** obj << Create SAS Job
+**構文:** obj &lt;&lt; Create SAS Job
 
 **説明:** PROC ARIMAによる分析を実行するためのSASプログラムを作成する。
 
@@ -4754,13 +4752,13 @@ obj << Transfer Function(
 
 #### Import New Inputs
 
-**構文:** obj << Import New Inputs
+**構文:** obj &lt;&lt; Import New Inputs
 
 **JMP追加されたバージョン:** 16
 
 #### Maximum Iterations
 
-**構文:** obj << Maximum Iterations( number )
+**構文:** obj &lt;&lt; Maximum Iterations( number )
 
 **説明:** 反復の最大回数を指定する。
 
@@ -4785,7 +4783,7 @@ obj << Transfer Function(
 
 #### No Constrain
 
-**構文:** obj << No Constrain( state=0|1 )
+**構文:** obj &lt;&lt; No Constrain( state=0|1 )
 
 **説明:** AR係数およびMA係数に制約を課さない。
 
@@ -4810,7 +4808,7 @@ obj << Transfer Function(
 
 #### No Intercept
 
-**構文:** obj << No Intercept( state=0|1 )
+**構文:** obj &lt;&lt; No Intercept( state=0|1 )
 
 **説明:** 切片を0に固定する。
 
@@ -4835,7 +4833,7 @@ obj << Transfer Function(
 
 #### Number of Forecast Periods
 
-**構文:** obj << Number of Forecast Periods( number )
+**構文:** obj &lt;&lt; Number of Forecast Periods( number )
 
 **説明:** 予測する期間の数を指定する。
 
@@ -4860,7 +4858,7 @@ obj << Transfer Function(
 
 #### Partial Autocorrelations
 
-**構文:** obj << Partial Autocorrelations( state=0|1 )
+**構文:** obj &lt;&lt; Partial Autocorrelations( state=0|1 )
 
 **説明:** 偏自己相関プロットの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -4881,7 +4879,7 @@ obj << Transfer Function(
 
 #### Plot
 
-**構文:** obj << Plot( state=0|1 )
+**構文:** obj &lt;&lt; Plot( state=0|1 )
 
 **説明:** 残差プロットの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -4902,7 +4900,7 @@ obj << Transfer Function(
 
 #### Prediction Interval
 
-**構文:** obj << Prediction Interval( number )
+**構文:** obj &lt;&lt; Prediction Interval( number )
 
 **説明:** 表示される信頼区間の水準を設定する。
 
@@ -4927,13 +4925,13 @@ obj << Transfer Function(
 
 #### Remove Fit
 
-**構文:** obj << Remove Fit
+**構文:** obj &lt;&lt; Remove Fit
 
 **JMP追加されたバージョン:** 16
 
 #### Save Columns
 
-**構文:** obj << Save Columns
+**構文:** obj &lt;&lt; Save Columns
 
 **説明:** 応答変数の実測値、予測値、標準偏差、残差、95%予測区間を含んだ新しいデータテーブルを作成する。このオプションは、すべてのARIMAモデル、平滑化モデル、伝達関数モデルで使用できる。
 
@@ -4953,7 +4951,7 @@ obj << Transfer Function(
 
 #### Variogram
 
-**構文:** obj << Variogram( state=0|1 )
+**構文:** obj &lt;&lt; Variogram( state=0|1 )
 
 **説明:** バリオグラムの表示/非表示を切り替える。
 
@@ -4978,7 +4976,7 @@ obj << Transfer Function(
 
 #### Actual
 
-**構文:** obj << Actual( state=0|1 )
+**構文:** obj &lt;&lt; Actual( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、実測値のデータ列も保存する。 デフォルトではオン。
 
@@ -4993,7 +4991,7 @@ obj << Arima( 1, 0, 0, Actual( 1 ), Save Columns );
 
 #### Autocorrelations
 
-**構文:** obj << Autocorrelations( state=0|1 )
+**構文:** obj &lt;&lt; Autocorrelations( state=0|1 )
 
 **説明:** 自己相関プロットの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -5016,11 +5014,11 @@ obj = Time Series(
 
 #### Confidence Intervals
 
-**構文:** obj << Confidence Intervals( number )
+**構文:** obj &lt;&lt; Confidence Intervals( number )
 
 #### Create SAS Job
 
-**構文:** obj << Create SAS Job
+**構文:** obj &lt;&lt; Create SAS Job
 
 **説明:** PROC ARIMAによる分析を実行するためのSASプログラムを作成する。
 
@@ -5036,7 +5034,7 @@ obj2 << Create SAS Job;
 
 #### Innovations
 
-**構文:** obj << Innovations( state=0|1 )
+**構文:** obj &lt;&lt; Innovations( state=0|1 )
 
 **説明:** デフォルトではオン。
 
@@ -5044,7 +5042,7 @@ obj2 << Create SAS Job;
 
 #### Lower Confidence Limit
 
-**構文:** obj << Lower Confidence Limit( state=0|1 )
+**構文:** obj &lt;&lt; Lower Confidence Limit( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、下側95%信頼限界のデータ列も保存する。 デフォルトではオン。
 
@@ -5059,7 +5057,7 @@ obj << Arima( 1, 0, 0, Lower Confidence Limit( 1 ), Save Columns );
 
 #### No Constrain
 
-**構文:** obj << No Constrain( state=0|1 )
+**構文:** obj &lt;&lt; No Constrain( state=0|1 )
 
 **説明:** ARIMAモデルを推定する際に、自己回帰パラメータを定常領域内に、移動平均パラメータを反転可能領域内に位置させるという制約を課さない。
 
@@ -5074,7 +5072,7 @@ obj << Arima( 1, 1, 0, No Constrain( 1 ) );
 
 #### No Intercept
 
-**構文:** obj << No Intercept( state=0|1 )
+**構文:** obj &lt;&lt; No Intercept( state=0|1 )
 
 **説明:** ARIMAモデルの切片を0に固定する。
 
@@ -5089,7 +5087,7 @@ obj << Arima( 1, 1, 0, No Intercept( 1 ) );
 
 #### Partial Autocorrelations
 
-**構文:** obj << Partial Autocorrelations( state=0|1 )
+**構文:** obj &lt;&lt; Partial Autocorrelations( state=0|1 )
 
 **説明:** 偏自己相関プロットの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -5112,7 +5110,7 @@ obj = Time Series(
 
 #### Plot
 
-**構文:** obj << Plot( state=0|1 )
+**構文:** obj &lt;&lt; Plot( state=0|1 )
 
 **説明:** 残差プロットの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -5135,7 +5133,7 @@ obj = Time Series(
 
 #### Predicted
 
-**構文:** obj << Predicted( state=0|1 )
+**構文:** obj &lt;&lt; Predicted( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、予測値のデータ列も保存する。 デフォルトではオン。
 
@@ -5150,7 +5148,7 @@ obj << Arima( 1, 0, 0, Predicted( 1 ), Save Columns );
 
 #### Prediction Interval
 
-**構文:** obj << Prediction Interval( level )
+**構文:** obj &lt;&lt; Prediction Interval( level )
 
 **説明:** ARIMAモデルの予測に関する信頼区間の水準を設定する。デフォルトは0.95。
 
@@ -5165,13 +5163,13 @@ obj << Arima( 1, 1, 0, Forecasting Interval( 0.99 ) );
 
 #### Remove Fit
 
-**構文:** obj << Remove Fit
+**構文:** obj &lt;&lt; Remove Fit
 
 **JMP追加されたバージョン:** 16
 
 #### Residuals
 
-**構文:** obj << Residuals( state=0|1 )
+**構文:** obj &lt;&lt; Residuals( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、残差のデータ列も保存する。 デフォルトではオン。
 
@@ -5186,7 +5184,7 @@ obj << Arima( 1, 0, 0, Residuals( 1 ), Save Columns );
 
 #### Save Columns
 
-**構文:** obj << Save Columns
+**構文:** obj &lt;&lt; Save Columns
 
 **説明:** 応答変数の実測値、予測値、標準偏差、残差、95%予測区間を含んだ新しいデータテーブルを作成する。このオプションは、すべてのARIMAモデル、平滑化モデル、伝達関数モデルで使用できる。
 
@@ -5202,7 +5200,7 @@ obj2 << Save Columns;
 
 #### Save Prediction Formula
 
-**構文:** obj << Save Prediction Formula
+**構文:** obj &lt;&lt; Save Prediction Formula
 
 **説明:** データテーブルの新しい列に予測式を保存する。このオプションはすべてのARIMAモデルと平滑化モデルで使用できる。
 
@@ -5218,7 +5216,7 @@ obj2 << Save Prediction Formula;
 
 #### Show Confidence Interval
 
-**構文:** obj << Show Confidence Interval( state=0|1 )
+**構文:** obj &lt;&lt; Show Confidence Interval( state=0|1 )
 
 **説明:** 時系列予測プロットにおいて、予測区間の表示/非表示を切り替える。このオプションはすべてのARIMAモデルと平滑化モデルで使用できる。 デフォルトではオン。
 
@@ -5234,7 +5232,7 @@ obj2 << Show Confidence Interval( 0 );
 
 #### Show Points
 
-**構文:** obj << Show Points( state=0|1 )
+**構文:** obj &lt;&lt; Show Points( state=0|1 )
 
 **説明:** 時系列予測プロットにおいて、点の表示/非表示を切り替える。このオプションはすべてのARIMAモデルと平滑化モデルで使用できる。 デフォルトではオン。
 
@@ -5251,7 +5249,7 @@ obj << Arima( 1, 0, 0, Show Points( 1 ) );
 
 #### Show Prediction Interval
 
-**構文:** obj << Show Prediction Interval( state=0|1 )
+**構文:** obj &lt;&lt; Show Prediction Interval( state=0|1 )
 
 **説明:** 時系列予測プロットにおいて、予測区間の表示/非表示を切り替える。このオプションはすべてのARIMAモデルと平滑化モデルで使用できる。 デフォルトではオン。
 
@@ -5267,7 +5265,7 @@ obj2 << Show Prediction Interval( 0 );
 
 #### Std Error of Predicted
 
-**構文:** obj << Std Error of Predicted( state=0|1 )
+**構文:** obj &lt;&lt; Std Error of Predicted( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、予測値の標準誤差のデータ列も保存する。 デフォルトではオン。
 
@@ -5282,7 +5280,7 @@ obj << Arima( 1, 0, 0, Std Error of Predicted( 1 ), Save Columns );
 
 #### Time
 
-**構文:** obj << Time( state=0|1 )
+**構文:** obj &lt;&lt; Time( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、時間のデータ列も保存する。 デフォルトではオン。
 
@@ -5297,7 +5295,7 @@ obj << Arima( 1, 0, 0, Time( 0 ), Save Columns );
 
 #### Upper Confidence Limit
 
-**構文:** obj << Upper Confidence Limit( state=0|1 )
+**構文:** obj &lt;&lt; Upper Confidence Limit( state=0|1 )
 
 **説明:** [列の保存]コマンドを実行したとき、上側95%信頼限界のデータ列も保存する。 デフォルトではオン。
 
@@ -5312,7 +5310,7 @@ obj << Arima( 1, 0, 0, Upper Confidence Limit( 1 ), Save Columns );
 
 #### Variogram
 
-**構文:** obj << Variogram( state=0|1 )
+**構文:** obj &lt;&lt; Variogram( state=0|1 )
 
 **説明:** バリオグラムの表示/非表示を切り替える。
 

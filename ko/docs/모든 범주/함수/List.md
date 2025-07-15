@@ -2,8 +2,6 @@
 
 
 
-## 함수
-
 ### As List
 
 **구문:** y = As List( matrix )
@@ -21,7 +19,7 @@ As List( [11 22 33, 44 55 66] );
 
 ### Concat Items
 
-**구문:** string = Concat Items( {list of strings}, <separatorString> )
+**구문:** string = Concat Items( {list of strings}, &lt;separatorString&gt; )
 
 **설명:** 문자열 목록을 긴 문자열 하나로 결합합니다. 각 문자열은 구분 기호(지정하지 않을 경우 공백)로 구분합니다.
 
@@ -64,7 +62,7 @@ Eval List( {x, y} );
 
 ### Insert
 
-**구문:** z = Insert( x, y, <i> )
+**구문:** z = Insert( x, y, &lt;i&gt; )
 
 **설명:** y를 i번째 위치에 삽입한 목록 i의 복사본을 반환합니다. 선택적 인수 x가 지정되지 않은 경우 마지막에 삽입합니다.
 
@@ -80,7 +78,7 @@ z = Insert( z, 99, 2 );
 
 ### Insert Into
 
-**구문:** Insert Into( x, y, <i> )
+**구문:** Insert Into( x, y, &lt;i&gt; )
 
 **설명:** y를 삽입하여 목록, 연관 배열 또는 표시 상자 x를 수정합니다. 목록 및 표시 상자는 위치를 지정하기 위한 i인수를 선택적으로 사용할 수 있도록 지원합니다. 위치를 지정하지 않으면 마지막에 추가됩니다. x 인수는 변수여야 합니다.
 
@@ -136,7 +134,7 @@ Is List( {1, 2, 3} );
 
 ### Items
 
-**구문:** wl = Items(<[first last]>, s, <delim>, <Include Boundary Delimiters(0|1)>)
+**구문:** wl = Items(&lt;[first last]&gt;, s, &lt;delim&gt;, &lt;Include Boundary Delimiters(0|1)&gt;)
 
 **설명:** delim 인수에 지정된 문자 중 하나로만 구분된 하위 문자열 목록을 반환합니다(비어 있을 수 있음). delim이 없으면 공백 문자가 사용됩니다. delim이 빈 문자열이면 각 문자가 별개의 항목으로 처리됩니다.
 
@@ -275,7 +273,7 @@ N Items( hlist );
 
 ### Remove
 
-**구문:** y = Remove( x, <i>, <n=1> ); y = Remove( x, {list} )
+**구문:** y = Remove( x, &lt;i&gt;, &lt;n=1&gt; ); y = Remove( x, {list} )
 
 **설명:** i번째 항목부터 시작해 n개의 항목을 삭제하거나 list 인수로 지정된 항목 목록을 삭제하여 목록 x의 복사본을 반환합니다.
 
@@ -290,7 +288,7 @@ Remove( {11, 22, 33, 44, 55}, 3, 2 );
 
 ### Remove From
 
-**구문:** Remove From( x, <i>, <n=1> )
+**구문:** Remove From( x, &lt;i&gt;, &lt;n=1&gt; )
 
 **설명:** 항목을 제거하여 목록, 연관 배열 또는 표시 상자 x를 수정합니다. 연관 배열에서는 키 값 i를 사용하여 제거할 항목을 지정합니다. 목록 및 표시 상자에서는 i 위치에 있는 항목부터 제거합니다. n 옵션이 지정된 경우 목록에서는 여러 항목을 한 번에 제거합니다. x 인수는 변수여야 합니다.
 
@@ -450,7 +448,7 @@ Show( Set Unique( :sports ) );
 
 ### Shift
 
-**구문:** y = Shift( x, <n=1> )
+**구문:** y = Shift( x, &lt;n=1&gt; )
 
 **설명:** 처음 n개 항목을 목록 끝으로 이동하여 목록 x의 복사본을 반환합니다. n이 음수인 경우 마지막 n개 항목을 시작 위치로 이동합니다.
 
@@ -465,7 +463,7 @@ Shift( {11, 22, 33, 44, 55}, 2 );
 
 ### Shift Into
 
-**구문:** Shift Into( x, <n=1> )
+**구문:** Shift Into( x, &lt;n=1&gt; )
 
 **설명:** 처음 n개 항목을 목록 끝으로 이동하여 목록 또는 표시 상자 x를 수정합니다. n이 음수인 경우 마지막 n개 항목을 시작 위치로 이동합니다. x 인수는 변수여야 합니다.
 
@@ -527,9 +525,7 @@ ex;
 
 ### Substitute
 
-**구문:** y = Substitute( x, patternExpr1, replacementExpr1, ... )
-
-y = Substitute( x, patternString1, replacementString1, ..., < <<IGNORECASE > )
+**구문:** y = Substitute( x, patternExpr1, replacementExpr1, ... )y = Substitute( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
 
 **설명:** 각 패턴 표현식의 인스턴스를 해당하는 대체 표현식으로 바꿔 문자열, 목록 또는 표현식 x의 복사본을 반환합니다. x가 문자열인 경우 선택적 <<IGNORECASE 인수를 설정하면 대/소문자 구분 없이 매칭할 수 있습니다.
 
@@ -592,9 +588,7 @@ Substitute( "Apple,APPLE,apple", "apple", "orange", <<IGNORECASE );
 
 ### Substitute Into
 
-**구문:** Substitute Into( x, patternExpr1, replacementExpr1, ... )
-
-Substitute Into( x, patternString1, replacementString1, ..., < <<IGNORECASE > )
+**구문:** Substitute Into( x, patternExpr1, replacementExpr1, ... )Substitute Into( x, patternString1, replacementString1, ..., &lt; &lt;&lt;IGNORECASE &gt; )
 
 **설명:** 각 패턴 표현식의 인스턴스를 해당하는 대체 표현식으로 바꿔 문자열, 목록 또는 표현식 x를 수정합니다. x 인수는 변수여야 합니다. x가 문자열인 경우 선택적 <<IGNORECASE 인수를 설정하면 대/소문자 구분 없이 매칭할 수 있습니다.
 
@@ -646,7 +640,7 @@ Show( s );
 
 ### Words
 
-**구문:** wl = Words( <[first last]>, s, <delim>)
+**구문:** wl = Words( &lt;[first last]&gt;, s, &lt;delim&gt;)
 
 **설명:** delim 인수에 지정된 문자로 구분된 하위 문자열 목록을 반환합니다. delim이 없으면 공백 문자가 사용됩니다. delim이 빈 문자열이면 각 문자가 별개의 단어로 처리됩니다.
 

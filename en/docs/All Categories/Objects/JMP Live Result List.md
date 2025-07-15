@@ -6,7 +6,7 @@
 
 ### As Scriptable
 
-**Syntax:** jmplivereportlist = jmplivelist << As Scriptable()
+**Syntax:** jmplivereportlist = jmplivelist &lt;&lt; As Scriptable()
 
 **Description:** Returns a scriptable list of JMP Live Folder, JMP Live Report, or JMP Live Post objects depending on the Find operation that was performed to produce the JMP Live Result List.
 
@@ -53,7 +53,7 @@ If( jmpliveresult << Succeeded,
 
 ### Get Current Page Number
 
-**Syntax:** value = jmplivelist << Get Current Page Number()
+**Syntax:** value = jmplivelist &lt;&lt; Get Current Page Number()
 
 **Description:** Gets the current page number of items within the list.
 
@@ -161,7 +161,7 @@ While( count > 0,
 
 ### Get Number Of Items
 
-**Syntax:** value = jmplivelist << Get Number Of Items()
+**Syntax:** value = jmplivelist &lt;&lt; Get Number Of Items()
 
 **Description:** Get the number of items in this result set.
 
@@ -244,7 +244,7 @@ If( jmpliveresult << Succeeded,
 
 ### Get Page
 
-**Syntax:** reportlist = jmplivelist << Get Page(value)
+**Syntax:** reportlist = jmplivelist &lt;&lt; Get Page(value)
 
 **Description:** Gets the specific page of JMP Live Folder, JMP Live Report, or JMP Live Post objects within the entire result list of a find operation.
 
@@ -352,7 +352,7 @@ While( count > 0,
 
 ### Next
 
-**Syntax:** reportlist = jmplivelist << Next()
+**Syntax:** reportlist = jmplivelist &lt;&lt; Next()
 
 **Description:** Returns the next page of results in a find operation. This list can contain JMP Live Folders, JMP Live Reports, or JMP Live Posts depending on the find operation.
 
@@ -460,7 +460,7 @@ While( count > 0,
 
 ### Previous
 
-**Syntax:** reportlist = jmplivelist << Previous()
+**Syntax:** reportlist = jmplivelist &lt;&lt; Previous()
 
 **Description:** Returns the previous page of results in a find operation. This list can contain JMP Live Folders, JMP Live Reports, or JMP Live Posts depending on the find operation.
 

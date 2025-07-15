@@ -2,11 +2,9 @@
 
 
 
-## 函数
-
 ### CAS Connect
 
-**语法:** CAS Connect(<URL(...)>, <Username(...)>, <Password(...)>, <Prompt(Never | Always | IfNeeded)>, <Session("session id")>, <Proxy Server("http://my_proxy:80")>, <Proxy User("proxy_username")>, <Bypass Proxy("http://localhost:80")>, <Certificates(...)>, <Verify Certificates(1 | 0)>, <No Verify Certificates(1 | 0)>, <Timeout(seconds)>, <Authorization Method("Basic" | "Bearer")>)
+**语法:** CAS Connect(&lt;URL(...)&gt;, &lt;Username(...)&gt;, &lt;Password(...)&gt;, &lt;Prompt(Never | Always | IfNeeded)&gt;, &lt;Session("session id")&gt;, &lt;Proxy Server("http://my_proxy:80")&gt;, &lt;Proxy User("proxy_username")&gt;, &lt;Bypass Proxy("http://localhost:80")&gt;, &lt;Certificates(...)&gt;, &lt;Verify Certificates(1 | 0)&gt;, &lt;No Verify Certificates(1 | 0)&gt;, &lt;Timeout(seconds)&gt;, &lt;Authorization Method("Basic" | "Bearer")&gt;)
 
 **说明:** 连接至新的 CAS 服务器。CAS 连接使用 URL、User name、Password 参数以及可选参数 Prompt 和 Session。Prompt 可以为 IfNeeded、Always 或 Never。若 Prompt 参数为 IfNeeded 或 Always，则可以忽略 URL、user name 和 password。Prompt 的默认值为 Never。Session 可用于重新连接至现有的 CAS 会话。会话必须对连接中使用的 URL、user name 和 password 有效。可选 Certificates 参数用于为与 CAS 的 https 连接提供受信任的证书 。可选的 Verify Certificates 或 No Verify Certificates 参数用于临时接受自签名证书。可选的 Proxy Server 参数用于在代理环境中提供代理主机。可选的 Proxy User 参数用于提供代理环境的用户和密码信息。可选的 Bypass Proxy 参数用于绕过某些主机的代理。可选 Timeout 参数可设置 CAS 连接操作的超时值。可选 Authorization Method 参数指定 JMP 如何与 CAS 连接。这取决于 CAS 部署。
 
@@ -28,7 +26,7 @@ cas = CAS Connect(
 
 ### CAS Delete Table
 
-**语法:** CAS Delete Table(tablename, <remove>)
+**语法:** CAS Delete Table(tablename, &lt;remove&gt;)
 
 **说明:** 该操作删除文件系统表。in memory 表不受影响。指定“静音”将隐藏不存在的表的错误。指定 remACs 将删除表的访问控制。指定“删除”还将从内存中删除表。
 
@@ -64,7 +62,7 @@ CAS Disconnect();
 
 ### CAS Export Data
 
-**语法:** y = CAS Export Data(jmp_data_table, cas_libref, cas_dataset, <named_arguments>)
+**语法:** y = CAS Export Data(jmp_data_table, cas_libref, cas_dataset, &lt;named_arguments&gt;)
 
 **说明:** 将表导出至 CAS 服务器。jmp_data_table 是要导出的 JMP 数据表，而 cas_libref 和 cas_dataset 是 CAS 服务器上的目标位置。可选的命名参数为 Save(1|0)。当表导出至 CAS 时，它不会保留到 CAS 文件系统，除非使用了“保存”选项。大多数 CAS 操作在内存中执行。
 
@@ -81,7 +79,7 @@ CAS Export Data( Open( "$SAMPLE_DATA\Big Class.jmp" ), "CASUSER", "Big Class" );
 
 ### CAS Get Data Sets
 
-**语法:** y = CAS Get Data Sets(<"caslib">)
+**语法:** y = CAS Get Data Sets(&lt;"caslib"&gt;)
 
 **说明:** 获取可用的 CAS 数据集列表。这些数据集位于 CAS 文件系统中。可选参数将数据集列表限制为 CAS 逻辑库。若没有使用参数，则数据集列表包含完全限定的数据集名称 (library.dataset)。若使用了参数，则数据集列表是数据集名称的列表。
 
@@ -121,7 +119,7 @@ Show( libraries );
 
 ### CAS Import Data
 
-**语法:** dt = CAS Import Data(libref, dataset, <named_arguments>)
+**语法:** dt = CAS Import Data(libref, dataset, &lt;named_arguments&gt;)
 
 **说明:** 从 CAS 服务器导入表。可选的命名参数为 Invisible(0|1)、Private(0|1) 和 UseLabelsForVarNames(0|1)。
 
@@ -156,7 +154,7 @@ Show( connected );
 
 ### CAS Remove Table
 
-**语法:** CAS Remove Table(tablename, <delete>)
+**语法:** CAS Remove Table(tablename, &lt;delete&gt;)
 
 **说明:** 该操作会删除 in-memory 表。使用保存操作创建的表不受影响。指定删除也将从文件系统中删除表。
 
@@ -174,7 +172,7 @@ CAS Remove Table( "Casuser", "Big Class" );
 
 ### CAS Table To Data Table
 
-**语法:** dt = CAS Table To Data Table(jsonstring, <Invisible(1|0) | Private(1|0) | Use Labels for Var Names(1|0)>)
+**语法:** dt = CAS Table To Data Table(jsonstring, &lt;Invisible(1|0) | Private(1|0) | Use Labels for Var Names(1|0)&gt;)
 
 **说明:** 将 SAS CAS 表 JSON 文本转换为 JMP 数据表。
 
@@ -485,7 +483,7 @@ cas << Submit( action );
 
 ### New CAS Server
 
-**语法:** cas = New CAS Server(<...>)
+**语法:** cas = New CAS Server(&lt;...&gt;)
 
 **说明:** 创建新的 CAS 服务器。
 

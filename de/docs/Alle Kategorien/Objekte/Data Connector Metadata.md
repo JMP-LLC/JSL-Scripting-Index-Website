@@ -6,7 +6,7 @@
 
 ### Get Description
 
-**Syntax:**  metadata << Get Description()
+**Syntax:** metadata &lt;&lt; Get Description()
 
 **Beschreibung:** Ruft die Beschreibung des Datenkonnektors ab
 
@@ -22,7 +22,7 @@ description = metadata << Get Description();
 
 ### Get Driver
 
-**Syntax:**  metadata << Get Driver()
+**Syntax:** metadata &lt;&lt; Get Driver()
 
 **Beschreibung:** Ruft den Treiber des Datenkonnektors ab, sofern einer vorhanden ist.
 
@@ -38,7 +38,7 @@ type = metadata << Get Driver();
 
 ### Get Name
 
-**Syntax:**  metadata << Get Name()
+**Syntax:** metadata &lt;&lt; Get Name()
 
 **Beschreibung:** Ruft den Namen des Datenkonnektors ab
 
@@ -54,7 +54,7 @@ name = metadata << Get Name();
 
 ### Get Path
 
-**Syntax:** metadaata << Get Path()
+**Syntax:** metadaata &lt;&lt; Get Path()
 
 **Beschreibung:** Ruft den Pfad des Datenkonnektors ab
 
@@ -70,7 +70,7 @@ path = metadata << Get Path();
 
 ### Get Type
 
-**Syntax:**  metadata << Get Type()
+**Syntax:** metadata &lt;&lt; Get Type()
 
 **Beschreibung:** Ruft den Typ des Datenkonnektors ab
 
@@ -86,7 +86,7 @@ type = metadata << Get Type();
 
 ### Set Description
 
-**Syntax:**  metadata << Set Description(description)
+**Syntax:** metadata &lt;&lt; Set Description(description)
 
 **Beschreibung:** Legt die Beschreibung des Datenkonnektors fest
 
@@ -102,7 +102,7 @@ metadata << Set Description( "My frequently used SQL Server connection." );
 
 ### Set Name
 
-**Syntax:**  metadata << Set Name( name )
+**Syntax:** metadata &lt;&lt; Set Name( name )
 
 **Beschreibung:** Legt den Namen des Datenkonnektors fest
 

@@ -6,7 +6,7 @@
 
 ### Action
 
-**構文:** obj << Action
+**構文:** obj &lt;&lt; Action
 
 **説明:** 評価する式を挿入するための、プラットフォーム内の汎用トラップドア。プラットフォームに一時的にディスプレイボックスおよびデータテーブルのコンテキストを設定する。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**構文:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**構文:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **説明:** 作成されたプリセットをオブジェクトに適用する。保存された設定に合わせてオプションとカスタマイズが更新される。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**構文:** obj << Automatic Recalc( state=0|1 )
+**構文:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **説明:** データの除外や変更があった場合に分析を自動的にやり直す。Automatic Recalcオプションがオンになっている場合で、データの除外や変更が再計算の前に確実に適用されるようにするには、Wait(0)コマンドを使用すること。
 
@@ -87,7 +87,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**構文:** obj << Broadcast(message)
+**構文:** obj &lt;&lt; Broadcast(message)
 
 **説明:** メッセージをプラットフォームに一括適用する。個々のオブジェクトから戻される結果がデータテーブルである場合は、可能な限り連結する。その最終的な形式は、Table BoxのSave Combined Tableオプションの結果と同じになるか、またはソース列を使用したConcanateオプションの結果と同じになる。それ以外の場合、結果はリストの形で戻される。
 
@@ -107,7 +107,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**構文:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**構文:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **説明:** プラットフォームの変数を変更するための設定パネルを追加する。
 
@@ -125,7 +125,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**構文:** obj << Copy ByGroup Script
+**構文:** obj &lt;&lt; Copy ByGroup Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -145,7 +145,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**構文:** obj << Copy Script
+**構文:** obj &lt;&lt; Copy Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -160,7 +160,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**構文:** obj << Data Table Window
+**構文:** obj &lt;&lt; Data Table Window
 
 **説明:** この分析に使用したデータテーブルのウィンドウを手前に表示する。
 
@@ -175,7 +175,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**構文:** obj << Get By Levels
+**構文:** obj &lt;&lt; Get By Levels
 
 **説明:** By列が指定されている場合、列名をキー、データ値を値とした連想配列を戻す。
 
@@ -192,7 +192,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**構文:** obj << Get ByGroup Script
+**構文:** obj &lt;&lt; Get ByGroup Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -213,7 +213,7 @@ Show( t );
 
 ### Get Container
 
-**構文:** obj << Get Container
+**構文:** obj &lt;&lt; Get Container
 
 **説明:** オブジェクトのコンテンツを含んだコンテナボックスの参照を戻す。
 
@@ -260,7 +260,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**構文:** obj << Get Data Table
+**構文:** obj &lt;&lt; Get Data Table
 
 **説明:** データテーブルへの参照を戻す。
 
@@ -276,7 +276,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**構文:** obj << Get Group Platform
+**構文:** obj &lt;&lt; Get Group Platform
 
 **説明:** 該当のプラットフォームがグループに属している場合に、Group Platformオブジェクトを戻す。それ以外の場合はEmpty()を戻す。
 
@@ -293,7 +293,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**構文:** obj << Get Script
+**構文:** obj &lt;&lt; Get Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -309,7 +309,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**構文:** obj << Get Script With Data Table
+**構文:** obj &lt;&lt; Get Script With Data Table
 
 **説明:** この分析を再現するスクリプト(JSL)をデータテーブルへの参照も含めて生成し、それを式として戻す。
 
@@ -325,7 +325,7 @@ Show( t );
 
 ### Get Timing
 
-**構文:** obj << Get Timing
+**構文:** obj &lt;&lt; Get Timing
 
 **説明:** プラットフォームの起動にかかった時間を取得する。
 
@@ -341,7 +341,7 @@ Show( t );
 
 ### Get Web Support
 
-**構文:** obj << Get Web Support
+**構文:** obj &lt;&lt; Get Web Support
 
 **説明:** ディスプレイオブジェクトにおけるインタラクティブHTMLサポートのレベルを数値で戻す。1は、一部または全部の要素がサポートされていることを示し、0は、サポートされないことを示す。
 
@@ -357,7 +357,7 @@ Show( s );
 
 ### Get Where Expr
 
-**構文:** obj << Get Where Expr
+**構文:** obj &lt;&lt; Get Where Expr
 
 **説明:** プラットフォームがBy()またはWhere()を使って起動された場合に、データをサブセットするためのWhere式を戻す。By()やWhere()が使われていない場合はEmpty()を戻す。
 
@@ -394,7 +394,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**構文:** obj << Local Data Filter
+**構文:** obj &lt;&lt; Local Data Filter
 
 **説明:** このプラットフォームに対してのみ有効なフィルタで、データを特定のグループまたは範囲にフィルタリングする。
 
@@ -450,7 +450,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**構文:** obj << Paste Local Data Filter
+**構文:** obj &lt;&lt; Paste Local Data Filter
 
 **説明:** クリップボードにあるローカルデータフィルタを現在のレポートに適用する。
 
@@ -471,7 +471,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**構文:** obj << Redo Analysis
+**構文:** obj &lt;&lt; Redo Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -486,7 +486,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**構文:** obj << Redo ByGroup Analysis
+**構文:** obj &lt;&lt; Redo ByGroup Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -506,7 +506,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**構文:** obj << Relaunch Analysis
+**構文:** obj &lt;&lt; Relaunch Analysis
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -521,7 +521,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**構文:** obj << Relaunch ByGroup
+**構文:** obj &lt;&lt; Relaunch ByGroup
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -541,7 +541,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**構文:** obj << Remove Column Switcher
+**構文:** obj &lt;&lt; Remove Column Switcher
 
 **説明:** プラットフォームに最後に追加された列スイッチャーを削除する。
 
@@ -561,7 +561,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**構文:** obj << Remove Local Data Filter
+**構文:** obj &lt;&lt; Remove Local Data Filter
 
 **説明:** すでに作成されているローカルデータフィルタを削除し、プラットフォームはデータテーブル内のすべてのデータを使用した状態に戻る。
 
@@ -600,9 +600,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**構文:** obj << Report;
-
-Report( obj )
+**構文:** obj &lt;&lt; Report;Report( obj )
 
 **説明:** レポートオブジェクトへの参照を戻す。
 
@@ -619,7 +617,7 @@ Show( t );
 
 ### Report View
 
-**構文:** obj << Report View( "完全"|"要約" )
+**構文:** obj &lt;&lt; Report View( "完全"|"要約" )
 
 **説明:** レポートビューは、プラットフォームレポートの詳細を表示するかどうかを決定する。Fullはすべての詳細を表示し、Summaryはプラットフォームにより限定されたものだけを表示する。 動作をカスタマイズするため、各ディスプレイボックスは<<Set Summary Behaviorメッセージをサポートする。
 
@@ -634,7 +632,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**構文:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** 分析を再現するためのJSLスクリプトを作成し、データテーブルにテーブルプロパティとして保存する。スクリプトの名前を指定できる。Append Suffixオプションは、スクリプト名に数字の接尾辞を追加する。これにより、同名のスクリプトが存在していても区別できる。Promptオプションは、ユーザにスクリプト名の指定を促す。Replaceオプションは、同名の既存のスクリプトを置き換える。
 
@@ -654,7 +652,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**構文:** obj << Save ByGroup Script to Journal
+**構文:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -674,7 +672,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**構文:** obj << Save ByGroup Script to Script Window
+**構文:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -694,7 +692,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**構文:** obj << Save Script for All Objects
+**構文:** obj &lt;&lt; Save Script for All Objects
 
 **説明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -709,7 +707,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**構文:** obj << Save Script for All Objects To Data Table( <name> )
+**構文:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **説明:** すべてのレポートオブジェクトを再現するスクリプトを現在のデータテーブルに保存する。このオプションは、ウィンドウ内にレポートが複数ある場合に便利。作成されるスクリプトの名前は、引用符で囲んで指定しない限り、1つ目のプラットフォーム名となる。
 
@@ -747,7 +745,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**構文:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** この分析を再現するJSLスクリプトを生成し、データテーブルのテーブルプロパティとして保存する。
 
@@ -762,7 +760,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**構文:** obj << Save Script to Journal
+**構文:** obj &lt;&lt; Save Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -777,7 +775,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**構文:** obj << Save Script to Report
+**構文:** obj &lt;&lt; Save Script to Report
 
 **説明:** この分析を再現するJSLスクリプトを生成し、レポートウィンドウに表示する。分析手順の記録を結果と一緒に残せる。
 
@@ -792,7 +790,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**構文:** obj << Save Script to Script Window
+**構文:** obj &lt;&lt; Save Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -872,7 +870,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**構文:** obj << Sync to Data Table Changes
+**構文:** obj &lt;&lt; Sync to Data Table Changes
 
 **説明:** 除外やデータの変更が行われた場合に同期する。
 
@@ -889,7 +887,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**構文:** obj << Title( "new title" )
+**構文:** obj &lt;&lt; Title( "new title" )
 
 **説明:** プラットフォームのタイトルを設定する。
 
@@ -904,7 +902,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**構文:** obj << Top Report
+**構文:** obj &lt;&lt; Top Report
 
 **説明:** レポート内のルートノードへの参照を戻す。
 
@@ -921,7 +919,7 @@ Show( t );
 
 ### Transform Column
 
-**構文:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**構文:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **説明:** オブジェクトのローカルコンテキスト(通常はプラットフォーム)内に変換列を作成する。この変換列は、それを作成したプラットフォームの中のみで使用可能。
 
@@ -940,7 +938,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**構文:** obj << View Web XML
+**構文:** obj &lt;&lt; View Web XML
 
 **説明:** インタラクティブHTMLレポートの作成に使うXMLコードを戻す。
 
@@ -976,7 +974,7 @@ New Window( "Bivariate Equation",
 
 ### By
 
-**構文:** obj = Variability Chart(...<By( column(s) )>...)
+**構文:** obj = Variability Chart(...&lt;By( column(s) )&gt;...)
 
 **説明:** 変数の水準ごとに1つずつ、複数のレポートを作成する。
 
@@ -995,7 +993,7 @@ obj = dt << Variability Chart(
 
 ### Freq
 
-**構文:** obj = Variability Chart(...<Freq( column )>...)
+**構文:** obj = Variability Chart(...&lt;Freq( column )&gt;...)
 
 **説明:** この列の値を、分析の際に各行の度数として用いる。
 
@@ -1010,7 +1008,7 @@ obj = dt << Variability Chart( Y( :Measurement ), X( :Operator, :part# ), Freq( 
 
 ### Grouping
 
-**構文:** obj = Variability Chart(...<Grouping( column(s) )>...)
+**構文:** obj = Variability Chart(...&lt;Grouping( column(s) )&gt;...)
 
 **説明:** グループ変数とするカテゴリカル尺度の列を指定する。リスト最後の列は、部品または測定ユニットとみなされる。
 
@@ -1062,7 +1060,7 @@ obj = dt << Variability Chart( Response( :Measurement ), X( :Operator, :part# ) 
 
 ### Standard
 
-**構文:** obj = Variability Chart(...<Standard( column )>...)
+**構文:** obj = Variability Chart(...&lt;Standard( column )&gt;...)
 
 **説明:** 基準値（参照値）が含まれている列を指定する。基準値とは，測定対象の部品がもつ真値である。
 
@@ -1081,7 +1079,7 @@ obj = dt << Variability Chart(
 
 ### X
 
-**構文:** obj = Variability Chart(...<X( column(s) )>...)
+**構文:** obj = Variability Chart(...&lt;X( column(s) )&gt;...)
 
 **説明:** グループ変数とするカテゴリカル尺度の列を指定する。リスト最後の列は、部品または測定ユニットとみなされる。
 
@@ -1192,7 +1190,7 @@ obj << (Variability Analysis[1] << Variance Components( 1 ));
 
 ### Edit MSA Metadata
 
-**構文:** obj << Edit MSA Metadata( :column( Lower Tolerance( number ), Upper Tolerance( number ), <Historical Mean( number ), Historical Process Sigma( number )> ) )
+**構文:** obj &lt;&lt; Edit MSA Metadata( :column( Lower Tolerance( number ), Upper Tolerance( number ), &lt;Historical Mean( number ), Historical Process Sigma( number )&gt; ) )
 
 **説明:** すべての分析に対し、許容範囲・許容限界・履歴平均・履歴工程シグマを追加または編集するためのウィンドウを開く。レポートは自動的に更新される。
 
@@ -1277,7 +1275,7 @@ obj << (Variability Analysis[1] << Variance Components( 1 ));
 
 ### Save All Metadata to Table
 
-**構文:** obj << Save All Metadata to Table( < MSA( state=0|1 ) >, < Measurement Sigma( state=0|1 ) >, < Tolerance as Specs( state=0|1 ) > )
+**構文:** obj &lt;&lt; Save All Metadata to Table( &lt; MSA( state=0|1 ) &gt;, &lt; Measurement Sigma( state=0|1 ) &gt;, &lt; Tolerance as Specs( state=0|1 ) &gt; )
 
 **説明:** 測定データの各列の測定システム分析メタデータと「測定のシグマ」を、新しいデータテーブルにまとめる。データテーブルは縦長の形式で、測定変数1つにつき1行を含む。許容下限と許容上限の値を追加の列として保存するオプションもある。
 
@@ -1304,7 +1302,7 @@ obj << Save All Metadata to Table;
 
 ### Save Metadata as Column Properties
 
-**構文:** obj << Save Metadata as Column Properties( < MSA( 0|1 ) >, < Measurement Sigma( 0|1 ) >, < Tolerance as Specs( 0|1 ) > )
+**構文:** obj &lt;&lt; Save Metadata as Column Properties( &lt; MSA( 0|1 ) &gt;, &lt; Measurement Sigma( 0|1 ) &gt;, &lt; Tolerance as Specs( 0|1 ) &gt; )
 
 **説明:** 測定データの各列について、測定システム分析メタデータと「測定のシグマ」を、元のデータテーブルの列に列プロパティとして保存する。許容下限と許容上限の値を「仕様限界」列プロパティとして保存するオプションもある。
 
@@ -1390,7 +1388,7 @@ obj = dt << Variability Chart(
 
 ### Variability Analysis
 
-**構文:** obj << Variability Analysis
+**構文:** obj &lt;&lt; Variability Analysis
 
 **説明:** 測定値の各列に対して、「変動性分析」レポートのオプションを指定する。
 
@@ -1413,7 +1411,7 @@ obj = dt << Variability Chart(
 
 #### Confidence Intervals
 
-**構文:** obj << (Variability Analysis[number] << Bias Report(Confidence Intervals( state=0|1 )))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Bias Report(Confidence Intervals( state=0|1 )))
 
 **説明:** 「基準ごとの測定バイアス」セクションのグラフにおいて、信頼区間の表示/非表示を切り替える。このオプションは、起動ウィンドウにて基準値の列を指定した場合にのみ使用可能。
 
@@ -1433,7 +1431,7 @@ obj << (Variability Analysis[1] << Bias Report( Confidence Intervals( 1 ) ));
 
 #### Measurement Error Graphs
 
-**構文:** obj << (Variability Analysis[number] << Bias Report(Measurement Error Graphs( state=0|1 )))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Bias Report(Measurement Error Graphs( state=0|1 )))
 
 **説明:** 部品別のバイアス示すグラフの表示/非表示を切り替える。このオプションは、起動ウィンドウにて基準値の列を指定した場合にのみ使用可能。
 
@@ -1457,7 +1455,7 @@ obj << (Variability Analysis[1] << Bias Report( Measurement Error Graphs( 1 ) ))
 
 #### Point Options
 
-**構文:** obj << (Variability Analysis[number] << Heterogeneity of Variance Tests(1, Point Options("Show Needles" | "Show Connected Points" | "Show Only Points")))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Heterogeneity of Variance Tests(1, Point Options("Show Needles" | "Show Connected Points" | "Show Only Points")))
 
 **説明:** グラフにおける点のスタイルを指定する。垂線、接続線、点のみから選択できる。デフォルトでは、全体平均の水平線からの垂線でグラフが描かれる。
 
@@ -1473,7 +1471,7 @@ Heterogeneity of Variance Tests( 1, Point Options( Show Only Points ) ));
 
 #### Set Alpha Level
 
-**構文:** obj << (Variability Analysis[number] << Heterogeneity of Variance Tests(1, Set Alpha Level( number )))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Heterogeneity of Variance Tests(1, Set Alpha Level( number )))
 
 **説明:** 決定限界の計算に使う有意水準を変更する。
 
@@ -1489,7 +1487,7 @@ Heterogeneity of Variance Tests( 1, Set Alpha Level( 0.1 ) ));
 
 #### Show Center Line
 
-**構文:** obj << (Variability Analysis[number] << Heterogeneity of Variance Tests(1, Show Center Line(state=0|1)))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Heterogeneity of Variance Tests(1, Show Center Line(state=0|1)))
 
 **説明:** 中心線（ADMの全体平均）の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1505,7 +1503,7 @@ Heterogeneity of Variance Tests( 1, Show Center Line( 0 ) ));
 
 #### Show Decision Limit Shading
 
-**構文:** obj << (Variability Analysis[number] << Heterogeneity of Variance Tests(1, Show Decision Limit Shading(state=0|1)))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Heterogeneity of Variance Tests(1, Show Decision Limit Shading(state=0|1)))
 
 **説明:** ANOMV-Levene (ADM)のグラフにおいて、決定限界に対する陰影の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1521,7 +1519,7 @@ Heterogeneity of Variance Tests( 1, Show Decision Limit Shading( 0 ) ));
 
 #### Show Decision Limits
 
-**構文:** obj << (Variability Analysis[number] << Heterogeneity of Variance Tests(1, Show Decision Limits(state=0|1)))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Heterogeneity of Variance Tests(1, Show Decision Limits(state=0|1)))
 
 **説明:** ANOMV-Levene (ADM)のグラフにおいて、決定限界の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1537,7 +1535,7 @@ Heterogeneity of Variance Tests( 1, Show Decision Limits( 0 ) ));
 
 #### Show Summary Report
 
-**構文:** obj << (Variability Analysis[number] << Heterogeneity of Variance Tests(1, Show Summary Report(state=0|1)))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Heterogeneity of Variance Tests(1, Show Summary Report(state=0|1)))
 
 **説明:** グループの標準偏差と対応する決定限界を含むレポートの表示/非表示を切り替える。
 
@@ -1557,7 +1555,7 @@ Heterogeneity of Variance Tests( 1, Show Summary Report( 1 ) ));
 
 #### Linearity by Groups
 
-**構文:** obj << (Variability Analysis[number] << Linearity Study(1, Linearity By Groups( state=0|1 )))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Linearity Study(1, Linearity By Groups( state=0|1 )))
 
 **説明:** モデルの各因子に対する直線性グラフの表示/非表示を切り替える。
 
@@ -1578,7 +1576,7 @@ obj << (Variability Analysis[1] << Linearity Study( 1, Linearity By Groups( 1 ) 
 
 #### Set Alpha Level
 
-**構文:** obj << (Variability Analysis[number] << Linearity Study(1, Set Alpha Level( number )))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Linearity Study(1, Set Alpha Level( number )))
 
 **説明:** バイアスの信頼区間における有意水準を指定する。 デフォルトの値は"0.05"。
 
@@ -1598,7 +1596,7 @@ obj << (Variability Analysis[1] << Linearity Study( 1, Set Alpha Level( .01 ) ))
 
 #### Show Avg Bias Points
 
-**構文:** obj << (Variability Analysis[number] << Linearity Study(1, Show Avg Bias Points( state=0|1 )))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Linearity Study(1, Show Avg Bias Points( state=0|1 )))
 
 **説明:** グラフにおいて、平均バイアス点の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1623,7 +1621,7 @@ obj << (Variability Analysis[1] << Linearity Study( 1, Show Avg Bias Points( 1 )
 
 #### Show Bias Points
 
-**構文:** obj << (Variability Analysis[number] << Linearity Study(1, Show Bias Points( state=0|1 )))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Linearity Study(1, Show Bias Points( state=0|1 )))
 
 **説明:** グラフにおいて、バイアス点の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1648,7 +1646,7 @@ obj << (Variability Analysis[1] << Linearity Study( 1, Show Bias Points( 1 ) ));
 
 #### Show Fit Confidence Curves
 
-**構文:** obj << (Variability Analysis[number] << Linearity Study(1, Show Fit Confidence Curves( state=0|1 )))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Linearity Study(1, Show Fit Confidence Curves( state=0|1 )))
 
 **説明:** グラフにおいて、回帰直線に対する信頼区間の曲線の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1673,7 +1671,7 @@ obj << (Variability Analysis[1] << Linearity Study( 1, Show Fit Confidence Curve
 
 #### Show Line of Fit
 
-**構文:** obj << (Variability Analysis[number] << Linearity Study(1, Show Line of Fit( state=0|1 )))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Linearity Study(1, Show Line of Fit( state=0|1 )))
 
 **説明:** グラフにおいて、回帰直線の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1698,7 +1696,7 @@ obj << (Variability Analysis[1] << Linearity Study( 1, Show Line of Fit( 1 ) ));
 
 #### Show Overall Avg Bias Line
 
-**構文:** obj << (Variability Analysis[number] << Linearity Study(1, Show Overall Avg Bias Line( state=0|1 )))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Linearity Study(1, Show Overall Avg Bias Line( state=0|1 )))
 
 **説明:** グラフにおいて、全体平均バイアス線の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1727,7 +1725,7 @@ obj << (Variability Analysis[1] << Linearity Study( 1, Show Overall Avg Bias Lin
 
 #### AIAG Labels
 
-**構文:** obj << (Variability Analysis[number] << AIAG Labels( state=0|1 ))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; AIAG Labels( state=0|1 ))
 
 **説明:** ゲージR&R分析で、AIAG方式ラベルの表示/非表示を切り替える。このAIAG方式ラベルは、米国自動車工業会(AIAG)の定義によるもの。 デフォルトではオン。
 
@@ -1752,7 +1750,7 @@ obj << (Variability Analysis[1] << AIAG Labels( 1 ));
 
 #### Bias Report
 
-**構文:** obj << (Variability Analysis[number] << Bias Report( state=0|1 ))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Bias Report( state=0|1 ))
 
 **説明:** バイアルレポートの表示/非表示を切り替える。バイアスレポートは、観測値と基準値との差に関する情報がレポートされる。このオプションは、起動ウィンドウにて基準値の列を指定した場合にのみ使用可能。
 
@@ -1772,7 +1770,7 @@ obj << (Variability Analysis[1] << Bias Report( 1 ));
 
 #### Connect Cell Means
 
-**構文:** obj << (Variability Analysis[number] << Connect Cell Means( state=0|1 ))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Connect Cell Means( state=0|1 ))
 
 **説明:** 変動性図において、セル平均をつなぐ折れ線の表示/非表示を切り替える。
 
@@ -1787,7 +1785,7 @@ obj << (Variability Analysis[1] << Connect Cell Means( 1 ));
 
 #### Discrimination Ratio
 
-**構文:** obj << (Variability Analysis[number] << Discrimination Ratio( state=0|1 ))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Discrimination Ratio( state=0|1 ))
 
 **説明:** 指定のモデルにおける判別比の表示/非表示を切り替える。
 
@@ -1807,7 +1805,7 @@ obj << (Variability Analysis[1] << Discrimination Ratio( 1 ));
 
 #### Edit MSA Metadata
 
-**構文:** obj << (Variability Analysis[number] << Edit MSA Metadata(Lower Tolerance(number), Upper Tolerance(number), Tolerance Range(number), Historical Mean(number), Historical Process Sigma(number)))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Edit MSA Metadata(Lower Tolerance(number), Upper Tolerance(number), Tolerance Range(number), Historical Mean(number), Historical Process Sigma(number)))
 
 **説明:** すべての分析に対し、許容範囲・許容限界・履歴平均・履歴工程シグマを追加または編集するためのウィンドウを開く。レポートは自動的に更新される。
 
@@ -1832,7 +1830,7 @@ obj << (Variability Analysis[1] << Edit MSA Metadata(
 
 #### Group Means of Std Dev
 
-**構文:** obj << (Variability Analysis[number] << Group Means of Std Dev( state=0|1 ))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Group Means of Std Dev( state=0|1 ))
 
 **説明:** 標準偏差図において、セルの標準偏差のグループ平均を示す線の表示/非表示を切り替える。
 
@@ -1847,7 +1845,7 @@ obj << (Variability Analysis[1] << Group Means of Std Dev( 1 ));
 
 #### Heterogeneity of Variance Tests
 
-**構文:** obj << (Variability Analysis[number] << Heterogeneity of Variance Tests( state=0|1 ))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Heterogeneity of Variance Tests( state=0|1 ))
 
 **説明:** グループ間で分散を比較したレポートの表示/非表示を切り替える。レポートには、モデルの各因子に対する等分散性検定のグラフが含まれる。
 
@@ -1866,7 +1864,7 @@ obj << (Variability Analysis[1] << Heterogeneity of Variance Tests( 1 ));
 
 #### Linearity Study
 
-**構文:** obj << (Variability Analysis[number] << Linearity Study( state=0|1 ))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Linearity Study( state=0|1 ))
 
 **説明:** 基準値をX変数、バイアスをY変数として回帰分析を実行する。
 
@@ -1887,7 +1885,7 @@ obj << (Variability Analysis[1] << Linearity Study( 1 ));
 
 #### Mean Diamonds
 
-**構文:** obj << (Variability Analysis[number] << Mean Diamonds( state=0|1 ))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Mean Diamonds( state=0|1 ))
 
 **説明:** 変動性図において、「平均のひし形」の表示/非表示を切り替える。ここでの「平均のひし形」で示される信頼区間は、各セルの群内標準偏差に基づき算出されている
 
@@ -1902,7 +1900,7 @@ obj << (Variability Analysis[1] << Mean Diamonds( 1 ));
 
 #### Mean Plots
 
-**構文:** obj << (Variability Analysis[number] << Mean Plots( state=0|1 ))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Mean Plots( state=0|1 ))
 
 **説明:** 平均プロットの表示/非表示を切り替える。この平均プロットは、因子ごとに1つのグラフとなっており、因子の各水準に対する平均がプロットされる。
 
@@ -1921,7 +1919,7 @@ obj << (Variability Analysis[1] << Mean Plots( 1 ));
 
 #### Mean of Std Dev
 
-**構文:** obj << (Variability Analysis[number] << Mean of Std Dev( state=0|1 ))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Mean of Std Dev( state=0|1 ))
 
 **説明:** 標準偏差図において、標準偏差の平均を示すグレーの破線の表示/非表示を切り替える。
 
@@ -1936,7 +1934,7 @@ obj << (Variability Analysis[1] << Mean of Std Dev( 1 ));
 
 #### Misclassification Probabilities
 
-**構文:** obj << (Variability Analysis[number] << Misclassification Probabilities( state=0|1 ))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Misclassification Probabilities( state=0|1 ))
 
 **説明:** 誤分類率のレポートの表示/非表示を切り替える。誤差分類率は、あてはめたモデルから計算される。
 
@@ -1957,7 +1955,7 @@ obj << (Variability Analysis[1] << Misclassification Probabilities( 1 ));
 
 #### Points Jittered
 
-**構文:** obj << (Variability Analysis[number] << Points Jittered( state=0|1 ))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Points Jittered( state=0|1 ))
 
 **説明:** 変動性図の点を横方向にランダムにずらして表示する。
 
@@ -1972,7 +1970,7 @@ obj << (Variability Analysis[1] << Points Jittered( 1 ));
 
 #### S Control Limits
 
-**構文:** obj << (Variability Analysis[number] << S Control Limits( state=0|1 ))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; S Control Limits( state=0|1 ))
 
 **説明:** 標準偏差図において、下側管理限界(LCL)と上側管理限界(UCL)を示す赤い線の表示/非表示を切り替える。
 
@@ -1987,7 +1985,7 @@ obj << (Variability Analysis[1] << S Control Limits( 1 ));
 
 #### Show Box Plots
 
-**構文:** obj << (Variability Analysis[number] << Show Box Plots( state=0|1 ))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Show Box Plots( state=0|1 ))
 
 **説明:** 変動性図において、セルごとの箱ひげ図の表示/非表示を切り替える。
 
@@ -2002,7 +2000,7 @@ obj << (Variability Analysis[1] << Show Box Plots( 1 ));
 
 #### Show Cell Means
 
-**構文:** obj << (Variability Analysis[number] << Show Cell Means( state=0|1 ))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Show Cell Means( state=0|1 ))
 
 **説明:** 変動性図において、各セルの平均を示すマーカーの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2020,7 +2018,7 @@ obj << (Variability Analysis[1] << Show Cell Means( 1 ));
 
 #### Show Grand Mean
 
-**構文:** obj << (Variability Analysis[number] << Show Grand Mean( state=0|1 ))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Show Grand Mean( state=0|1 ))
 
 **説明:** 全体平均の表示/非表示を切り替える。この全体平均は、グラフ全体を横切るグレーの点線で表される。
 
@@ -2035,7 +2033,7 @@ obj << (Variability Analysis[1] << Show Grand Mean( 1 ));
 
 #### Show Grand Median
 
-**構文:** obj << (Variability Analysis[number] << Show Grand Median( state=0|1 ))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Show Grand Median( state=0|1 ))
 
 **説明:** 全体中央値の表示/非表示を切り替える。この全体中央値は、グラフ全体を横切る青い点線で表される。
 
@@ -2050,7 +2048,7 @@ obj << (Variability Analysis[1] << Show Grand Median( 1 ));
 
 #### Show Group Means
 
-**構文:** obj << (Variability Analysis[number] << Show Group Means( state=0|1 ))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Show Group Means( state=0|1 ))
 
 **説明:** セルのグループ平均の表示/非表示を切り替える。このグループ平均は、横の実線で表される。
 
@@ -2065,7 +2063,7 @@ obj << (Variability Analysis[1] << Show Group Means( 1 ));
 
 #### Show Points
 
-**構文:** obj << (Variability Analysis[number] << Show Points( state=0|1 ))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Show Points( state=0|1 ))
 
 **説明:** 変動性図において、点の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2083,7 +2081,7 @@ obj << (Variability Analysis[1] << Show Points( 1 ));
 
 #### Show Range Bars
 
-**構文:** obj << (Variability Analysis[number] << Show Range Bars( state=0|1 ))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Show Range Bars( state=0|1 ))
 
 **説明:** 各セルの最小値と最大値を示すバーの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2101,7 +2099,7 @@ obj << (Variability Analysis[1] << Show Range Bars( 1 ));
 
 #### Show Separators
 
-**構文:** obj << (Variability Analysis[number] << Show Separators( state=0|1 ))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Show Separators( state=0|1 ))
 
 **説明:** 変動性図において、グループ変数の水準間に描く区切り線の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2119,7 +2117,7 @@ obj << (Variability Analysis[1] << Show Separators( 1 ));
 
 #### Show Standard Mean
 
-**構文:** obj << (Variability Analysis[number] << Show Standard Mean( state=0|1 ))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Show Standard Mean( state=0|1 ))
 
 **説明:** 基準値の平均を示す線の表示/非表示を切り替える。このオプションは、起動ウィンドウにて基準値の列を指定した場合にのみ使用可能。
 
@@ -2135,7 +2133,7 @@ obj << (Variability Analysis[1] << Show Standard Mean( 1 ));
 
 #### Std Dev Chart
 
-**構文:** obj << (Variability Analysis[number] << Std Dev Chart( state=0|1 ))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Std Dev Chart( state=0|1 ))
 
 **説明:** セルごとの標準偏差のグラフの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2153,7 +2151,7 @@ obj << (Variability Analysis[1] << Std Dev Chart( 1 ));
 
 #### Std Dev Plots
 
-**構文:** obj << (Variability Analysis[number] << Std Dev Plots( state=0|1 ))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Std Dev Plots( state=0|1 ))
 
 **説明:** 標準偏差プロットの表示/非表示を切り替える。この標準偏差プロットは、因子ごとに1つのグラフとなっており、因子の各水準に対する標準偏差がプロットされる。
 
@@ -2172,7 +2170,7 @@ obj << (Variability Analysis[1] << Std Dev Plots( 1 ));
 
 #### Variability Chart
 
-**構文:** obj << (Variability Analysis[number] << Variability Chart( state=0|1 ))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Variability Chart( state=0|1 ))
 
 **説明:** 変動性図の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -2190,7 +2188,7 @@ obj << (Variability Analysis[1] << Variability Chart( 1 ));
 
 #### Variability Summary Report
 
-**構文:** obj << (Variability Analysis[number] << Variability Summary Report( state=0|1 ))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Variability Summary Report( state=0|1 ))
 
 **説明:** 平均・標準偏差・変動係数(CV)・平均の標準誤差・下側信頼区間・上側信頼区間を含むレポートの表示/非表示を切り替える。このレポートには、最小値・最大値・範囲・中央値も表示される。
 
@@ -2205,7 +2203,7 @@ obj << (Variability Analysis[1] << Variability Summary Report( 1 ));
 
 #### Variance Components
 
-**構文:** obj << (Variability Analysis[number] << Variance Components( state=0|1 ))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Variance Components( state=0|1 ))
 
 **説明:** 指定したモデルの分散成分の表示/非表示を切り替える。
 
@@ -2225,7 +2223,7 @@ obj << (Variability Analysis[1] << Variance Components( 1 ));
 
 #### Vertical Charts
 
-**構文:** obj << (Variability Analysis[number] << Vertical Charts( state=0|1 ))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; Vertical Charts( state=0|1 ))
 
 **説明:** 変動性図を回転させる。
 
@@ -2240,7 +2238,7 @@ obj << (Variability Analysis[1] << Vertical Charts( 1 ));
 
 #### XBar Control Limits
 
-**構文:** obj << (Variability Analysis[number] << XBar Control Limits( state=0|1 ))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; XBar Control Limits( state=0|1 ))
 
 **説明:** 変動性図において、下側管理限界(LCL)と上側管理限界(UCL)を示す線の表示/非表示を切り替える。
 
@@ -2255,7 +2253,7 @@ obj << (Variability Analysis[1] << XBar Control Limits( 1 ));
 
 #### ゲージR&Rレポート
 
-**構文:** obj << (Variability Analysis[number] << "Gauge R & R Report"n( state=0|1 ))
+**構文:** obj &lt;&lt; (Variability Analysis[number] &lt;&lt; "Gauge R & R Report"n( state=0|1 ))
 
 **説明:** ゲージR&R分析（測定の再現性と繰り返し性に関する分析）の要約レポートを作成する。
 

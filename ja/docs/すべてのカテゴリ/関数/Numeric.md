@@ -2,8 +2,6 @@
 
 
 
-## 関数
-
 ### Abs
 
 **構文:** y = Abs( x )
@@ -66,7 +64,7 @@ Floor( 1.2 );
 
 ### Integrate
 
-**構文:** y = Integrate( expr, varname, lowLimit, upLimit, <<Tolerance(1e-10), <<StoreInfo(list), <<StartingValue(val) )
+**構文:** y = Integrate( expr, varname, lowLimit, upLimit, &lt;&lt;Tolerance(1e-10), &lt;&lt;StoreInfo(list), &lt;&lt;StartingValue(val) )
 
 **説明:** Gander and Gautschi (2000)の数値積分によって、1次元の積分を行う。varnameで指定した変数に値が割り当てられている場合、または<<StartingValue()オプションの引数が開始値を指定している場合は、積分の精度を高めるためにその値を基準値として使う。積分区間において無限を設定したい場合には、lowLimitやupLimitに欠測値を指定する。<<StoreInfo()を指定した場合、<<StoreInfo()の引数に数値計算を診断した情報が含まれる。<<Tolerance()が指定された場合、<<Tolerance() の値が自動積分の許容誤差として使用され、積分の評価に使われる。小さい値を指定するほど実行に時間がかかるが、精度が増す。
 
@@ -160,7 +158,7 @@ Normal Integrate(
 
 ### Num Deriv
 
-**構文:** y = Num Deriv( f( x, ... ),  <parnum>)
+**構文:** y = Num Deriv( f( x, ... ), &lt;parnum&gt;)
 
 **説明:** 関数f( x,... )を数値微分により偏微分した結果を戻す。Num Deriv関数の2番目の引数に、偏微分する引数を指定する。2番目の引数を指定しなかった場合、関数の最初の変数に対する偏微分が求められる。偏微分はf( x,... )の引数に指定されている数値の箇所で評価される。
 
@@ -193,7 +191,7 @@ Num Deriv2( f( 2 ) );
 
 ### Round
 
-**構文:** y = Round( x, <n> )
+**構文:** y = Round( x, &lt;n&gt; )
 
 **説明:** xを、小数点以下n 桁に丸める(nが指定されていない場合には整数に丸める)。引数nは負の数でも可。
 

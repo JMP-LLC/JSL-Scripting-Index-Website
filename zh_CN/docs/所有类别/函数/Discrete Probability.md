@@ -2,8 +2,6 @@
 
 
 
-## 函数
-
 ### Beta Binomial Distribution
 
 **语法:** cumprob = Beta Binomial Distribution( k, p, n, delta )
@@ -382,7 +380,7 @@ New Window( "Example: Gamma Poisson Quantile",
 
 ### Hypergeometric Distribution
 
-**语法:** cumprob = Hypergeometric Distribution( N, K, n, x, <r> )
+**语法:** cumprob = Hypergeometric Distribution( N, K, n, x, &lt;r&gt; )
 
 **说明:** 返回超几何分布随机变量小于等于 x 的概率，其中 N 是总体大小，K 是关注类别的项数，n 是样本大小，x 是关注数，r 是可选优势比。
 
@@ -421,7 +419,7 @@ New Window( "Example: Hypergeometric Distribution",
 
 ### Hypergeometric Probability
 
-**语法:** prob = Hypergeometric Probability( N, K, n, x, <r> )
+**语法:** prob = Hypergeometric Probability( N, K, n, x, &lt;r&gt; )
 
 **说明:** 返回超几何分布随机变量等于 x 的概率，其中 N 是总体大小，K 是关注类别的项数，n 是样本大小，x 是关注数，r 是可选优势比。
 

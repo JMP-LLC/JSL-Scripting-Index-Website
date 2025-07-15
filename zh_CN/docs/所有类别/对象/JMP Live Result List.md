@@ -6,7 +6,7 @@
 
 ### As Scriptable
 
-**语法:** jmplivereportlist = jmplivelist << As Scriptable()
+**语法:** jmplivereportlist = jmplivelist &lt;&lt; As Scriptable()
 
 **说明:** 根据为生成 JMP Live 结果列表而执行的查找操作，返回 JMP Live 文件夹、JMP Live 报表或 JMP Live 帖子对象的可脚本化列表。
 
@@ -55,7 +55,7 @@ If( jmpliveresult << Succeeded,
 
 ### Get Current Page Number
 
-**语法:** value = jmplivelist << Get Current Page Number()
+**语法:** value = jmplivelist &lt;&lt; Get Current Page Number()
 
 **说明:** 获取列表中项的当前页码。
 
@@ -165,7 +165,7 @@ While( count > 0,
 
 ### Get Number Of Items
 
-**语法:** value = jmplivelist << Get Number Of Items()
+**语法:** value = jmplivelist &lt;&lt; Get Number Of Items()
 
 **说明:** 获取该结果集里的项数。
 
@@ -250,7 +250,7 @@ If( jmpliveresult << Succeeded,
 
 ### Get Page
 
-**语法:** reportlist = jmplivelist << Get Page(value)
+**语法:** reportlist = jmplivelist &lt;&lt; Get Page(value)
 
 **说明:** 在查找操作的整个结果列表中获取 JMP Live 文件夹、JMP Live 报表或 JMP Live 帖子对象的特定页面。
 
@@ -360,7 +360,7 @@ While( count > 0,
 
 ### Next
 
-**语法:** reportlist = jmplivelist << Next()
+**语法:** reportlist = jmplivelist &lt;&lt; Next()
 
 **说明:** 返回查找操作中的下一页结果。该列表可以包含 JMP Live 文件夹、JMP Live 报表或 JMP Live 帖子，具体取决于查找操作。
 
@@ -470,7 +470,7 @@ While( count > 0,
 
 ### Previous
 
-**语法:** reportlist = jmplivelist << Previous()
+**语法:** reportlist = jmplivelist &lt;&lt; Previous()
 
 **说明:** 返回查找操作中的上一页结果。该列表可以包含 JMP Live 文件夹、JMP Live 报表或 JMP Live 帖子，具体取决于查找操作。
 

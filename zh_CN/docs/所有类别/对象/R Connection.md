@@ -23,7 +23,7 @@ Show( x );
 
 ### Control
 
-**语法:** obj << Control( Echo( Boolean ) )
+**语法:** obj &lt;&lt; Control( Echo( Boolean ) )
 
 **说明:** 更改 R 的控制选项。
 
@@ -38,7 +38,7 @@ RConnection << Submit( "rnorm(10)" );
 
 ### Disconnect
 
-**语法:** obj << Disconnect
+**语法:** obj &lt;&lt; Disconnect
 
 **说明:** 在 JMP 19 中已废弃且没有任何作用。
 
@@ -52,7 +52,7 @@ RConnection << Disconnect;
 
 ### Execute
 
-**语法:** list = obj << Execute( { list of Inputs }, { list of Outputs }, statements )
+**语法:** list = obj &lt;&lt; Execute( { list of Inputs }, { list of Outputs }, statements )
 
 **说明:** 发送输入列表、执行语句并返回输出列表。
 
@@ -77,7 +77,7 @@ Show( v, m, rc, x, z, a, d );
 
 ### Get
 
-**语法:** y = obj << Get( name )
+**语法:** y = obj &lt;&lt; Get( name )
 
 **说明:** 从 R 返回数据，其中 name 参数可以代表下列任何 R 数据类型 ( numeric | string | matrix | list | data frame)。
 
@@ -98,7 +98,7 @@ Close( dt1, No Save );
 
 ### Get Graphics
 
-**语法:** R graphics = obj << Get Graphics( format )
+**语法:** R graphics = obj &lt;&lt; Get Graphics( format )
 
 **说明:** 在 JMP 19 中已废弃且没有任何作用。作为替代方式，将设备设置为 png("r_plot.png") 之类的文件名，然后打开该文件以检索图像。该选项将从 JMP 20 中删除。下面的代码显示了解决方法。
 
@@ -119,7 +119,7 @@ rc = Delete File( img_path );
 
 ### Get Version
 
-**语法:** version = obj << Get Version
+**语法:** version = obj &lt;&lt; Get Version
 
 **说明:** 返回当前连接中使用的 R 的版本号。
 
@@ -134,7 +134,7 @@ Show( version );
 
 ### Is Connected
 
-**语法:** x = obj << Is Connected
+**语法:** x = obj &lt;&lt; Is Connected
 
 **说明:** 若存在活动的 R 连接，则返回 1；否则返回 0。
 
@@ -164,7 +164,7 @@ Show( RName );
 
 ### Send
 
-**语法:** y = obj << Send( name, <R Name( name )> )
+**语法:** y = obj &lt;&lt; Send( name, &lt;R Name( name )&gt; )
 
 **说明:** 将数据发送至 R，其中 name 参数可以代表下列任何 JMP 数据类型 ( numeric | string | matrix | list | data table)。
 
@@ -183,7 +183,7 @@ RConnection << Submit( "dt" );
 
 ### Send File
 
-**语法:** y = obj << Send File( filename, <R Name( name )> )
+**语法:** y = obj &lt;&lt; Send File( filename, &lt;R Name( name )&gt; )
 
 **说明:** 将数据文件发送至 R，其中 filename 参数是一个字符串，用于指定将要发送至 R 的文件的路径名。
 
@@ -200,7 +200,7 @@ RConnection << Send File( dtname );
 
 ### Set
 
-**语法:** y = obj << Set( name, <R Name( name )> )
+**语法:** y = obj &lt;&lt; Set( name, &lt;R Name( name )&gt; )
 
 **说明:** 将数据发送至 R，其中 name 参数可以代表下列任何 JMP 数据类型 ( numeric | string | matrix | list | data table)。
 
@@ -219,7 +219,7 @@ RConnection << Submit( "dt" );
 
 ### Submit
 
-**语法:** obj << Submit( statements )
+**语法:** obj &lt;&lt; Submit( statements )
 
 **说明:** 将语句发送到 R。语句可以单个字符串值形式，也可以是字符串值列表。
 
@@ -251,7 +251,7 @@ rc = Delete File( img_path );
 
 ### Submit File
 
-**语法:** obj << Submit File( path )
+**语法:** obj &lt;&lt; Submit File( path )
 
 **说明:** 使用 path 参数指定的文件将语句提交至 R。
 

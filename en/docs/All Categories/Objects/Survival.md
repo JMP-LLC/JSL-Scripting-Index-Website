@@ -6,7 +6,7 @@
 
 ### Survival
 
-**Syntax:** Survival( Y( columns ), Censor( column ), <Grouping( column )> )
+**Syntax:** Survival( Y( columns ), Censor( column ), &lt;Grouping( column )&gt; )
 
 **Description:** Calculates estimates of survival functions using the product-limit (Kaplan-Meier) method for one or more groups.
 
@@ -22,7 +22,7 @@ obj = dt << Survival( Y( :days ), Censor( :Censor ), Grouping( :Group ) );
 
 ### By
 
-**Syntax:** obj << By( column(s) )
+**Syntax:** obj &lt;&lt; By( column(s) )
 
 ```jsl
 
@@ -39,7 +39,7 @@ obj = dt << Survival( Y( :days ), Censor( :Censor ), Grouping( :Group ), By( _by
 
 ### Censor
 
-**Syntax:** obj << Censor( column )
+**Syntax:** obj &lt;&lt; Censor( column )
 
 ```jsl
 
@@ -51,7 +51,7 @@ obj = dt << Survival( Y( :days ), Censor( :Censor ), Grouping( :Group ) );
 
 ### Freq
 
-**Syntax:** obj << Freq( column )
+**Syntax:** obj &lt;&lt; Freq( column )
 
 ```jsl
 
@@ -64,7 +64,7 @@ obj = dt << Survival( Y( :days ), Censor( :Censor ), Grouping( :Group ), Freq( _
 
 ### Grouping
 
-**Syntax:** obj << Grouping( column )
+**Syntax:** obj &lt;&lt; Grouping( column )
 
 ```jsl
 
@@ -76,7 +76,7 @@ obj = dt << Survival( Y( :days ), Censor( :Censor ), Grouping( :Group ) );
 
 ### Time to Event
 
-**Syntax:** obj << Time to Event( column(s) )
+**Syntax:** obj &lt;&lt; Time to Event( column(s) )
 
 ```jsl
 
@@ -88,7 +88,7 @@ obj = dt << Survival( Y( :days ), Censor( :Censor ), Grouping( :Group ) );
 
 ### Y
 
-**Syntax:** obj << Y( column(s) )
+**Syntax:** obj &lt;&lt; Y( column(s) )
 
 ```jsl
 
@@ -116,7 +116,7 @@ obj = dt << Survival( Y( :Time ), Censor( :Censor ), Censor Code( 0 ) );
 
 ### Competing Causes
 
-**Syntax:** obj << Competing Causes( column )
+**Syntax:** obj &lt;&lt; Competing Causes( column )
 
 **Description:** Performs an estimation of the Weibull model using the specified causes to indicate a failure event and other causes to indicate censored observations. The fitted distribution appears as a dashed line in the Survival Plot.
 
@@ -131,7 +131,7 @@ obj << Competing Causes( :Failure Cause );
 
 ### Connect Quantile Points
 
-**Syntax:** obj << Connect Quantile Points( state=0|1 )
+**Syntax:** obj &lt;&lt; Connect Quantile Points( state=0|1 )
 
 **Description:** Shows or hides the lines in the Exponential Plot, the Weibull Plot, and the LogNormal Plot. On by default.
 
@@ -148,7 +148,7 @@ obj << Connect Quantile Points( 0 );
 
 ### Estimate Survival Probability
 
-**Syntax:** obj << Estimate Survival Probability( [time1, time2, ...], Alpha( level ) )
+**Syntax:** obj &lt;&lt; Estimate Survival Probability( [time1, time2, ...], Alpha( level ) )
 
 **Description:** Estimates survival probabilities and confidence intervals for the specified time values using the fitted distributions.
 
@@ -164,7 +164,7 @@ obj << Estimate Survival Probability( [100, 200, 300], Alpha( 0.001 ) );
 
 ### Estimate Time Quantile
 
-**Syntax:** obj << Estimate Time Quantile( [p1, p2, ...], Alpha( level ) )
+**Syntax:** obj &lt;&lt; Estimate Time Quantile( [p1, p2, ...], Alpha( level ) )
 
 **Description:** Estimates a time quantile and confidence intervals for each specified survival probability using the fitted distributions.
 
@@ -180,7 +180,7 @@ obj << Estimate Time Quantile( [0.5, 0.9, 0.95], Alpha( 0.01 ) );
 
 ### Exponential Fit
 
-**Syntax:** obj << Exponential Fit( state=0|1 )
+**Syntax:** obj &lt;&lt; Exponential Fit( state=0|1 )
 
 **Description:** Shows or hides the Exponential Parameter Estimates table. This option also adds a linear fit to the exponential cumulative distribution function in the Exponential Plot.
 
@@ -197,7 +197,7 @@ obj << Exponential Fit( 1 );
 
 ### Exponential Plot
 
-**Syntax:** obj << Exponential Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; Exponential Plot( state=0|1 )
 
 **Description:** Shows or hides the Exponential Plot, which shows the cumulative exponential failure probability by time for each group. Lines that are approximately linear empirically indicate the appropriateness of using an exponential model for further analysis.
 
@@ -212,7 +212,7 @@ obj << Exponential Plot( 1 );
 
 ### Failure Plot
 
-**Syntax:** obj << Failure Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; Failure Plot( state=0|1 )
 
 **Description:** Shows or hides the failure plot, which contains overlaid failure curves (proportion failing over time) for each group. A failure plot reverses the vertical axis to show the number of failures rather than the number of survivors. This is useful in reliability analysis.
 
@@ -227,7 +227,7 @@ obj << Failure Plot( 1 );
 
 ### Fitted Distribution Plots
 
-**Syntax:** obj << Fitted Distribution Plots( state=0|1 )
+**Syntax:** obj &lt;&lt; Fitted Distribution Plots( state=0|1 )
 
 **Description:** Shows or hides a set of plots for each fitted distribution. The set of plots includes the fitted survival function, the fitted density function, and the fitted hazard function. If you have not performed a fit, no plot appears.
 
@@ -243,7 +243,7 @@ obj << Fitted Distribution Plots( 1 );
 
 ### Fitted Failure CI
 
-**Syntax:** obj << Fitted Failure CI( state=0|1 )
+**Syntax:** obj &lt;&lt; Fitted Failure CI( state=0|1 )
 
 **Description:** Shows or hides confidence intervals for each group in the Failure Plot. A set of intervals is plotted for each of the fitted distributions.
 
@@ -259,7 +259,7 @@ obj << Fitted Failure CI( 1 );
 
 ### Fitted Quantile
 
-**Syntax:** obj << Fitted Quantile( state=0|1 )
+**Syntax:** obj &lt;&lt; Fitted Quantile( state=0|1 )
 
 **Description:** Shows or hides straight-line fits for each group in the Exponential Plot, the Weibull Plot, and the LogNormal Plot.
 
@@ -277,7 +277,7 @@ obj << Fitted Quantile( 0 );
 
 ### Fitted Quantile CI Lines
 
-**Syntax:** obj << Fitted Quantile CI Lines( state=0|1 )
+**Syntax:** obj &lt;&lt; Fitted Quantile CI Lines( state=0|1 )
 
 **Description:** Shows or hides the 95% confidence bands for each group in the Exponential Plot, the Weibull Plot, and the LogNormal Plot.
 
@@ -294,7 +294,7 @@ obj << Fitted Quantile CI Lines( 1 );
 
 ### Fitted Quantile CI Shaded
 
-**Syntax:** obj << Fitted Quantile CI Shaded( state=0|1 )
+**Syntax:** obj &lt;&lt; Fitted Quantile CI Shaded( state=0|1 )
 
 **Description:** Shows or hides shaded regions for the 95% confidence bands for each group in the Exponential Plot, the Weibull Plot, and the LogNormal Plot.
 
@@ -311,7 +311,7 @@ obj << Fitted Quantile CI Shaded( 1 );
 
 ### Fitted Survival CI
 
-**Syntax:** obj << Fitted Survival CI( state=0|1 )
+**Syntax:** obj &lt;&lt; Fitted Survival CI( state=0|1 )
 
 **Description:** Shows or hides confidence intervals for each group in the Survival Plot. A set of intervals is plotted for each of the fitted distributions.
 
@@ -327,7 +327,7 @@ obj << Fitted Survival CI( 1 );
 
 ### LogNormal Fit
 
-**Syntax:** obj << LogNormal Fit( state=0|1 )
+**Syntax:** obj &lt;&lt; LogNormal Fit( state=0|1 )
 
 **Description:** Shows or hides the LogNormal Parameter Estimates table. This option also adds a linear fit to the lognormal cumulative distribution function in the LogNormal Plot.
 
@@ -344,7 +344,7 @@ obj << LogNormal Fit( 1 );
 
 ### LogNormal Plot
 
-**Syntax:** obj << LogNormal Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; LogNormal Plot( state=0|1 )
 
 **Description:** Shows or hides the LogNormal Plot, which shows the cumulative lognormal failure probability by log(time) for each group. Lines that are approximately linear empirically indicate the appropriateness of using a lognormal model for further analysis.
 
@@ -359,7 +359,7 @@ obj << LogNormal Plot( 1 );
 
 ### Midstep Quantile Points
 
-**Syntax:** obj << Midstep Quantile Points( state=0|1 )
+**Syntax:** obj &lt;&lt; Midstep Quantile Points( state=0|1 )
 
 **Description:** Specifies that the modified Kaplan-Meier plotting positions are used in the Exponential Plot, the Weibull Plot, and the LogNormal Plot. These plotting positions are equivalent to taking mid-step positions of the Kaplan-Meier curve, rather than the bottom-of-step positions. On by default.
 
@@ -395,7 +395,7 @@ obj = dt << Survival(
 
 ### Save Estimates
 
-**Syntax:** obj << Save Estimates
+**Syntax:** obj &lt;&lt; Save Estimates
 
 **Description:** Creates a new data table that contains survival and failure estimates, confidence intervals, and other distribution statistics for each group.
 
@@ -410,7 +410,7 @@ obj << Save Estimates;
 
 ### Show Combined
 
-**Syntax:** obj << Show Combined( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Combined( state=0|1 )
 
 **Description:** Shows or hides the combined Kaplan-Meier survival functions on both the survival and failure plots.
 
@@ -427,7 +427,7 @@ obj << Show Combined( 1 );
 
 ### Show Confid Interval
 
-**Syntax:** obj << Show Confid Interval( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Confid Interval( state=0|1 )
 
 **Description:** Shows or hides the 95% pointwise confidence bands for the Kaplan-Meier survival functions in the Survival Plot and the Failure Plot. This option also shows confidence bands for the combined survival functions when the Show Combined option is selected.
 
@@ -446,7 +446,7 @@ obj << Show Combined( 1 );
 
 ### Show Kaplan Meier
 
-**Syntax:** obj << Show Kaplan Meier( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Kaplan Meier( state=0|1 )
 
 **Description:** Shows or hides the Kaplan-Meier survival functions for each group on both the survival and failure plots. On by default.
 
@@ -467,7 +467,7 @@ obj << Show Kaplan Meier( 1 );
 
 ### Show Points
 
-**Syntax:** obj << Show Points( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Points( state=0|1 )
 
 **Description:** Shows or hides the points in the Survival Plot and the Failure Plot. Failures appear at the bottom of the steps, and censored observations are indicated by points above the steps.
 
@@ -484,7 +484,7 @@ obj << Show Points( 1 );
 
 ### Show Shaded Pointwise CI
 
-**Syntax:** obj << Show Shaded Pointwise CI( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Shaded Pointwise CI( state=0|1 )
 
 **Description:** Shows or hides shaded regions for the 95% pointwise confidence bands for the Kaplan-Meier survival functions in the Survival Plot and the Failure Plot. This option also shows shaded confidence regions for the combined survival functions when the Show Combined option is selected.
 
@@ -499,7 +499,7 @@ obj << Show Shaded Pointwise CI( 1 );
 
 ### Show Shaded Simultaneous CI
 
-**Syntax:** obj << Show Shaded Simultaneous CI( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Shaded Simultaneous CI( state=0|1 )
 
 **Description:** Shows or hides shaded regions for the 95% simultaneous confidence bands for the Kaplan-Meier survival functions in the Survival Plot and the Failure Plot. This option also shows confidence bands for the combined survival functions when the Show Combined option is selected.
 
@@ -514,7 +514,7 @@ obj << Show Shaded Simultaneous CI( 1 );
 
 ### Show Simultaneous CI
 
-**Syntax:** obj << Show Simultaneous CI( state=0|1 )
+**Syntax:** obj &lt;&lt; Show Simultaneous CI( state=0|1 )
 
 **Description:** Shows or hides the 95% simultaneous confidence bands for the Kaplan-Meier survival functions in the Survival Plot and the Failure Plot. This option also shows confidence bands for the combined survival functions when the Show Combined option is selected.
 
@@ -529,7 +529,7 @@ obj << Show Simultaneous CI( 1 );
 
 ### Survival Plot
 
-**Syntax:** obj << Survival Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; Survival Plot( state=0|1 )
 
 **Description:** Shows or hides the survival plot, which contains overlaid survival curves for each group. On by default.
 
@@ -546,7 +546,7 @@ obj << Survival Plot( 1 );
 
 ### Weibull Fit
 
-**Syntax:** obj << Weibull Fit( state=0|1 )
+**Syntax:** obj &lt;&lt; Weibull Fit( state=0|1 )
 
 **Description:** Shows or hides the Extreme-Value Parameter Estimates and Weibull Parameter Estimates tables. This option also adds a linear fit to the Weibull cumulative distribution function in the Weibull Plot.
 
@@ -563,7 +563,7 @@ obj << Weibull Fit( 1 );
 
 ### Weibull Plot
 
-**Syntax:** obj << Weibull Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; Weibull Plot( state=0|1 )
 
 **Description:** Shows or hides the Weibull Plot, which shows the cumulative Weibull failure probability by log(time) for each group. Lines that are approximately linear empirically indicate the appropriateness of using a Weibull model for further analysis.
 
@@ -580,7 +580,7 @@ obj << Weibull Plot( 1 );
 
 ### Action
 
-**Syntax:** obj << Action
+**Syntax:** obj &lt;&lt; Action
 
 **Description:** All-purpose trapdoor within a platform to insert expressions to evaluate. Temporarily sets the DisplayBox and DataTable contexts to the Platform.
 
@@ -598,7 +598,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Syntax:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Syntax:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Description:** Apply a previously created preset to the object, updating the options and customizations to match the saved settings.
 
@@ -643,7 +643,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Automatic Recalc
 
-**Syntax:** obj << Automatic Recalc( state=0|1 )
+**Syntax:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Description:** Redoes the analysis automatically for exclude and data changes. If the Automatic Recalc option is turned on, you should consider using Wait(0) commands to ensure that the exclude and data changes take effect before the recalculation.
 
@@ -659,7 +659,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**Syntax:** obj << Broadcast(message)
+**Syntax:** obj &lt;&lt; Broadcast(message)
 
 **Description:** Broadcasts a message to a platform. If return results from individual objects are tables, they are concatenated if possible, and the final format is identical to either the result from the Save Combined Table option in a Table Box or the result from the Concatenate option using a Source column. Other than those, results are stored in a list and returned.
 
@@ -677,7 +677,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**Syntax:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Syntax:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Description:** Adds a control panel for changing the platform&apos;s variables
 
@@ -695,7 +695,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**Syntax:** obj << Copy ByGroup Script
+**Syntax:** obj &lt;&lt; Copy ByGroup Script
 
 **Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
 
@@ -715,7 +715,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Syntax:** obj << Copy Script
+**Syntax:** obj &lt;&lt; Copy Script
 
 **Description:** Create a JSL script to produce this analysis, and put it on the clipboard.
 
@@ -730,7 +730,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Syntax:** obj << Data Table Window
+**Syntax:** obj &lt;&lt; Data Table Window
 
 **Description:** Move the data table window for this analysis to the front.
 
@@ -745,7 +745,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**Syntax:** obj << Get By Levels
+**Syntax:** obj &lt;&lt; Get By Levels
 
 **Description:** Returns an associative array mapping the by group columns to their values.
 
@@ -760,7 +760,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Syntax:** obj << Get ByGroup Script
+**Syntax:** obj &lt;&lt; Get ByGroup Script
 
 **Description:** Creates a script (JSL) to produce this analysis and returns it as an expression.
 
@@ -781,7 +781,7 @@ Show( t );
 
 ### Get Container
 
-**Syntax:** obj << Get Container
+**Syntax:** obj &lt;&lt; Get Container
 
 **Description:** Returns a reference to the container box that holds the content for the object.
 
@@ -828,7 +828,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Syntax:** obj << Get Data Table
+**Syntax:** obj &lt;&lt; Get Data Table
 
 **Description:** Returns a reference to the data table.
 
@@ -844,7 +844,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**Syntax:** obj << Get Group Platform
+**Syntax:** obj &lt;&lt; Get Group Platform
 
 **Description:** Return the Group Platform object if this platform is part of a Group. Otherwise, returns Empty().
 
@@ -861,7 +861,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**Syntax:** obj << Get Script
+**Syntax:** obj &lt;&lt; Get Script
 
 **Description:** Creates a script (JSL) to produce this analysis and returns it as an expression.
 
@@ -877,7 +877,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Syntax:** obj << Get Script With Data Table
+**Syntax:** obj &lt;&lt; Get Script With Data Table
 
 **Description:** Creates a script(JSL) to produce this analysis specifically referencing this data table and returns it as an expression.
 
@@ -893,7 +893,7 @@ Show( t );
 
 ### Get Timing
 
-**Syntax:** obj << Get Timing
+**Syntax:** obj &lt;&lt; Get Timing
 
 **Description:** Times the platform launch.
 
@@ -909,7 +909,7 @@ Show( t );
 
 ### Get Web Support
 
-**Syntax:** obj << Get Web Support
+**Syntax:** obj &lt;&lt; Get Web Support
 
 **Description:** Return a number indicating the level of Interactive HTML support for the display object. 1 means some or all elements are supported. 0 means no support.
 
@@ -925,7 +925,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Syntax:** obj << Get Where Expr
+**Syntax:** obj &lt;&lt; Get Where Expr
 
 **Description:** Returns the Where expression for the data subset, if the platform was launched with By() or Where(). Otherwise, returns Empty()
 
@@ -960,7 +960,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**Syntax:** obj << Local Data Filter
+**Syntax:** obj &lt;&lt; Local Data Filter
 
 **Description:** To filter data to specific groups or ranges, but local to this platform
 
@@ -1012,7 +1012,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Syntax:** obj << Paste Local Data Filter
+**Syntax:** obj &lt;&lt; Paste Local Data Filter
 
 **Description:** Apply the local data filter from the clipboard to the current report.
 
@@ -1033,7 +1033,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**Syntax:** obj << Redo Analysis
+**Syntax:** obj &lt;&lt; Redo Analysis
 
 **Description:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
 
@@ -1048,7 +1048,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**Syntax:** obj << Redo ByGroup Analysis
+**Syntax:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Description:** Rerun this same analysis in a new window. The analysis will be different if the data has changed.
 
@@ -1068,7 +1068,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**Syntax:** obj << Relaunch Analysis
+**Syntax:** obj &lt;&lt; Relaunch Analysis
 
 **Description:** Opens the platform launch window and recalls the settings that were used to create the report.
 
@@ -1083,7 +1083,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**Syntax:** obj << Relaunch ByGroup
+**Syntax:** obj &lt;&lt; Relaunch ByGroup
 
 **Description:** Opens the platform launch window and recalls the settings that were used to create the report.
 
@@ -1103,7 +1103,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**Syntax:** obj << Remove Column Switcher
+**Syntax:** obj &lt;&lt; Remove Column Switcher
 
 **Description:** Removes the most recent Column Switcher that has been added to the platform.
 
@@ -1123,7 +1123,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Syntax:** obj << Remove Local Data Filter
+**Syntax:** obj &lt;&lt; Remove Local Data Filter
 
 **Description:** If a local data filter has been created, this removes it and restores the platform to use all the data in the data table directly
 
@@ -1160,9 +1160,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Syntax:** obj << Report;
-
-Report( obj )
+**Syntax:** obj &lt;&lt; Report;Report( obj )
 
 **Description:** Returns a reference to the report object.
 
@@ -1179,7 +1177,7 @@ Show( t );
 
 ### Report View
 
-**Syntax:** obj << Report View( "Full"|"Summary" )
+**Syntax:** obj &lt;&lt; Report View( "Full"|"Summary" )
 
 **Description:** The report view determines the level of detail visible in a platform report. Full shows all of the detail, while Summary shows only select content, dependent on the platform. For customized behavior, display boxes support a <<Set Summary Behavior message.
 
@@ -1194,7 +1192,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**Syntax:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description:** Creates a JSL script to produce this analysis, and save it as a table property in the data table. You can specify a name for the script. The Append Suffix option appends a numeric suffix to the script name, which differentiates the script from an existing script with the same name. The Prompt option prompts the user to specify a script name. The Replace option replaces an existing script with the same name.
 
@@ -1214,7 +1212,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Syntax:** obj << Save ByGroup Script to Journal
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
 
@@ -1234,7 +1232,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Syntax:** obj << Save ByGroup Script to Script Window
+**Syntax:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
 
@@ -1254,7 +1252,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**Syntax:** obj << Save Script for All Objects
+**Syntax:** obj &lt;&lt; Save Script for All Objects
 
 **Description:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -1269,7 +1267,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Syntax:** obj << Save Script for All Objects To Data Table( <name> )
+**Syntax:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Description:** Saves a script for all report objects to the current data table. This option is useful when you have multiple reports in the window. The script is named after the first platform unless you specify the script name in quotes.
 
@@ -1307,7 +1305,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Syntax:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Syntax:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Description:** Create a JSL script to produce this analysis, and save it as a table property in the data table.
 
@@ -1322,7 +1320,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Syntax:** obj << Save Script to Journal
+**Syntax:** obj &lt;&lt; Save Script to Journal
 
 **Description:** Create a JSL script to produce this analysis, and add a Button to the journal containing this script.
 
@@ -1337,7 +1335,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Syntax:** obj << Save Script to Report
+**Syntax:** obj &lt;&lt; Save Script to Report
 
 **Description:** Create a JSL script to produce this analysis, and show it in the report itself. Useful to preserve a printed record of what was done.
 
@@ -1352,7 +1350,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Syntax:** obj << Save Script to Script Window
+**Syntax:** obj &lt;&lt; Save Script to Script Window
 
 **Description:** Create a JSL script to produce this analysis, and append it to the current Script text window.
 
@@ -1432,7 +1430,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**Syntax:** obj << Sync to Data Table Changes
+**Syntax:** obj &lt;&lt; Sync to Data Table Changes
 
 **Description:** Sync with the exclude and data changes that have been made.
 
@@ -1449,7 +1447,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**Syntax:** obj << Title( "new title" )
+**Syntax:** obj &lt;&lt; Title( "new title" )
 
 **Description:** Sets the title of the platform.
 
@@ -1464,7 +1462,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Syntax:** obj << Top Report
+**Syntax:** obj &lt;&lt; Top Report
 
 **Description:** Returns a reference to the root node in the report.
 
@@ -1481,7 +1479,7 @@ Show( t );
 
 ### Transform Column
 
-**Syntax:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Syntax:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Description:** Create a transform column in the local context of an object, usually a platform. The transform column is active only for the lifetime of the platform.
 
@@ -1498,7 +1496,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**Syntax:** obj << View Web XML
+**Syntax:** obj &lt;&lt; View Web XML
 
 **Description:** Returns the XML code that is used to create the interactive HTML report.
 
@@ -1536,7 +1534,7 @@ New Window( "Bivariate Equation",
 
 #### Hazard Plot
 
-**Syntax:** obj << Hazard Plot( state=0|1 )
+**Syntax:** obj &lt;&lt; Hazard Plot( state=0|1 )
 
 **Description:** Shows or hides a plot of the hazard functions for the data based on the competing causes analysis.
 
@@ -1552,7 +1550,7 @@ obj << Hazard Plot( 1 );
 
 #### Omit Causes
 
-**Syntax:** obj << Omit Causes( cause1, <cause2>, ... )
+**Syntax:** obj &lt;&lt; Omit Causes( cause1, &lt;cause2&gt;, ... )
 
 **Description:** Enables you to remove specific cause values from the analysis. The survival estimates are automatically recalculated. This option can be used to illustrate the alternative where specific causes are no longer hazardous.
 
@@ -1568,7 +1566,7 @@ obj << Omit Causes( "accident" );
 
 #### Save Cause Coordinates
 
-**Syntax:** obj << Save Cause Coordinates
+**Syntax:** obj &lt;&lt; Save Cause Coordinates
 
 **Description:** Saves a new column to the original data table. The new column is calculated as log(-log(Surv)). This value is often plotted against the time variable for the different values of a grouping variable, such as the code for type of failure.
 
@@ -1584,7 +1582,7 @@ obj << Save Cause Coordinates;
 
 #### Simulate
 
-**Syntax:** obj << Simulate( number )
+**Syntax:** obj &lt;&lt; Simulate( number )
 
 **Description:** Creates a new data table that contains simulated time and cause information. The fitted Weibull distribution is used to simulate the new data.
 
@@ -1600,7 +1598,7 @@ obj << Simulate( 1000 );
 
 #### Weibull Lines
 
-**Syntax:** obj << Weibull Lines( state=0|1 )
+**Syntax:** obj &lt;&lt; Weibull Lines( state=0|1 )
 
 **Description:** Shows or hides Weibull lines in the survival plot.
 

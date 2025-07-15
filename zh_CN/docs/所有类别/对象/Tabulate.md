@@ -6,7 +6,7 @@
 
 ### Action
 
-**语法:** obj << Action
+**语法:** obj &lt;&lt; Action
 
 **说明:** 平台内用于插入表达式以求值的所有用途的陷门。暂时将 DisplayBox 和 DataTable 上下文设置为平台。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**语法:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**语法:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **说明:** 将以前创建的预设应用到对象，从而更新选项和定制以匹配保存的设置。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**语法:** obj << Automatic Recalc( state=0|1 )
+**语法:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **说明:** 对排除和数据更改自动重新执行分析。若启用了“自动重新计算”选项，则应考虑使用 Wait(0) 命令来确保排除和数据更改在重新计算前生效。
 
@@ -92,7 +92,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Column Switcher
 
-**语法:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**语法:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **说明:** 添加用于更改平台变量的控制面板
 
@@ -110,7 +110,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy Script
 
-**语法:** obj << Copy Script
+**语法:** obj &lt;&lt; Copy Script
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其置于剪贴板上。
 
@@ -130,7 +130,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**语法:** obj << Data Table Window
+**语法:** obj &lt;&lt; Data Table Window
 
 **说明:** 将该分析的数据表窗口移动到前面。
 
@@ -150,7 +150,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**语法:** obj << Get By Levels
+**语法:** obj &lt;&lt; Get By Levels
 
 **说明:** 返回将“依据”组列映射到其值的关联数组。
 
@@ -167,7 +167,7 @@ biv << Get By Levels;
 
 ### Get Container
 
-**语法:** obj << Get Container
+**语法:** obj &lt;&lt; Get Container
 
 **说明:** 返回对保留对象内容的容器框的引用。
 
@@ -219,7 +219,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**语法:** obj << Get Data Table
+**语法:** obj &lt;&lt; Get Data Table
 
 **说明:** 返回对该数据表的引用。
 
@@ -240,7 +240,7 @@ Show( N Rows( t ) );
 
 ### Get Script
 
-**语法:** obj << Get Script
+**语法:** obj &lt;&lt; Get Script
 
 **说明:** 创建生成该分析的脚本 (JSL)，并将其作为表达式返回。
 
@@ -261,7 +261,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**语法:** obj << Get Script With Data Table
+**语法:** obj &lt;&lt; Get Script With Data Table
 
 **说明:** 创建生成该分析的脚本 (JSL) 以专门引用该数据表，并将其作为表达式返回。
 
@@ -282,7 +282,7 @@ Show( t );
 
 ### Get Timing
 
-**语法:** obj << Get Timing
+**语法:** obj &lt;&lt; Get Timing
 
 **说明:** 平台启动过程计时。
 
@@ -303,7 +303,7 @@ Show( t );
 
 ### Get Web Support
 
-**语法:** obj << Get Web Support
+**语法:** obj &lt;&lt; Get Web Support
 
 **说明:** 返回一个数字，指示显示对象的交互式 HTML 支持的水平。1 表示支持部分或全部元素。0 表示不支持。
 
@@ -319,7 +319,7 @@ Show( s );
 
 ### Get Where Expr
 
-**语法:** obj << Get Where Expr
+**语法:** obj &lt;&lt; Get Where Expr
 
 **说明:** 若平台是使用 By() 或 Where() 启动的，则返回数据子集的 Where 表达式。否则返回 Empty()
 
@@ -356,7 +356,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**语法:** obj << Local Data Filter
+**语法:** obj &lt;&lt; Local Data Filter
 
 **说明:** 将数据过滤到特定的组或范围，但在该平台中是本地的
 
@@ -412,7 +412,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**语法:** obj << Paste Local Data Filter
+**语法:** obj &lt;&lt; Paste Local Data Filter
 
 **说明:** 将剪贴板中的本地数据过滤器应用于当前报表。
 
@@ -433,7 +433,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**语法:** obj << Redo Analysis
+**语法:** obj &lt;&lt; Redo Analysis
 
 **说明:** 在新窗口中重新运行相同的分析。若数据发生更改，分析也将不同。
 
@@ -453,7 +453,7 @@ obj << Redo Analysis;
 
 ### Relaunch Analysis
 
-**语法:** obj << Relaunch Analysis
+**语法:** obj &lt;&lt; Relaunch Analysis
 
 **说明:** 打开平台启动窗口并重新调用曾用于创建报表的设置。
 
@@ -473,7 +473,7 @@ obj << Relaunch Analysis;
 
 ### Remove Column Switcher
 
-**语法:** obj << Remove Column Switcher
+**语法:** obj &lt;&lt; Remove Column Switcher
 
 **说明:** 删除已添加至平台的最近使用的“列切换器”。
 
@@ -493,7 +493,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**语法:** obj << Remove Local Data Filter
+**语法:** obj &lt;&lt; Remove Local Data Filter
 
 **说明:** 若已创建本地数据过滤器，这会将它删除并将平台恢复为直接使用数据表中的所有数据
 
@@ -532,9 +532,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**语法:** obj << Report;
-
-Report( obj )
+**语法:** obj &lt;&lt; Report;Report( obj )
 
 **说明:** 返回对该报表对象的引用。
 
@@ -556,7 +554,7 @@ Show( t );
 
 ### Report View
 
-**语法:** obj << Report View( "完全"|"汇总" )
+**语法:** obj &lt;&lt; Report View( "完全"|"汇总" )
 
 **说明:** 报表视图确定平台报表中可见的详细程度。Full 显示所有详细信息，而 Summary 仅显示根据平台确定的选定内容。对于定制行为，显示框支持 <<Set Summary Behavior 消息。
 
@@ -576,7 +574,7 @@ obj << Report View( "Summary" );
 
 ### Save Script for All Objects
 
-**语法:** obj << Save Script for All Objects
+**语法:** obj &lt;&lt; Save Script for All Objects
 
 **说明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -596,7 +594,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**语法:** obj << Save Script for All Objects To Data Table( <name> )
+**语法:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **说明:** 将所有报表对象的脚本保存至当前数据表。当您在该窗口中具有多个报表时，该选项很有用。除非您在引号中指定脚本名称，否则脚本将以第一个平台命名。
 
@@ -646,7 +644,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**语法:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**语法:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其作为表属性保存至数据表中。
 
@@ -666,7 +664,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**语法:** obj << Save Script to Journal
+**语法:** obj &lt;&lt; Save Script to Journal
 
 **说明:** 创建生成该分析的 JSL 脚本，并将一个按钮添加至包含该脚本的记录中。
 
@@ -686,7 +684,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**语法:** obj << Save Script to Report
+**语法:** obj &lt;&lt; Save Script to Report
 
 **说明:** 创建生成该分析的 JSL 脚本，并在报表中显示。有助于保留打印的已完成操作记录。
 
@@ -706,7 +704,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**语法:** obj << Save Script to Script Window
+**语法:** obj &lt;&lt; Save Script to Script Window
 
 **说明:** 创建生成该分析的 JSL 脚本，并将其追加至当前的脚本文本窗口中。
 
@@ -791,7 +789,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**语法:** obj << Sync to Data Table Changes
+**语法:** obj &lt;&lt; Sync to Data Table Changes
 
 **说明:** 与已进行的排除和数据的更改同步。
 
@@ -808,7 +806,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**语法:** obj << Title( "new title" )
+**语法:** obj &lt;&lt; Title( "new title" )
 
 **说明:** 设置平台的标题。
 
@@ -828,7 +826,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**语法:** obj << Top Report
+**语法:** obj &lt;&lt; Top Report
 
 **说明:** 返回对报表中根节点的引用。
 
@@ -850,7 +848,7 @@ Show( t );
 
 ### View Web XML
 
-**语法:** obj << View Web XML
+**语法:** obj &lt;&lt; View Web XML
 
 **说明:** 返回用于创建交互式 HTML 报表的 XML 代码。
 
@@ -888,7 +886,7 @@ obj = dt << Tabulate(
 
 ### Add
 
-**语法:** add (<Column Table | Row Table>(table index), <before first | <before | after>(<analysis column | grouping column | statistic>(<operand name | index>))>, <analysis column | grouping column | statistic>(operand name)),
+**语法:** add (&lt;Column Table | Row Table&gt;(table index), &lt;before first | &lt;before | after&gt;(&lt;analysis column | grouping column | statistic&gt;(&lt;operand name | index&gt;))&gt;, &lt;analysis column | grouping column | statistic&gt;(operand name)),
 
 **说明:** Used with 修改表 to add columns and statistics to an existing table. Also serves as an alias for 添加表
 
@@ -939,7 +937,7 @@ obj << modify table( column table( 1 ), Add( Before First, Statistics( Range ) )
 
 ### Add Table
 
-**语法:** Add Table( <Column Table( )>, <Row Table( )> )
+**语法:** Add Table( &lt;Column Table( )&gt;, &lt;Row Table( )&gt; )
 
 **说明:** 若当前没有表，则将表添加至窗口，否则将表追加至现有表对象。
 
@@ -1029,7 +1027,7 @@ obj << modifytable( column table( 1 ), analysis columns( :CO ) );
 
 ### Change Item Label
 
-**语法:** obj << Change Item Label( Statistics( stat name, new string ) )
+**语法:** obj &lt;&lt; Change Item Label( Statistics( stat name, new string ) )
 
 **说明:** 更改表中文本项字段的标签。
 
@@ -1080,7 +1078,7 @@ obj << modify table( row table( 1 ), columns by categories( :Money ) );
 
 ### Delete
 
-**语法:** delete( <analysis columns | grouping columns | statistics>(operand name, operand name, ...))
+**语法:** delete( &lt;analysis columns | grouping columns | statistics&gt;(operand name, operand name, ...))
 
 **说明:** Used with 修改表 to remove columns and statistics from an existing table.
 
@@ -1105,9 +1103,7 @@ obj << modify table( column table( 1 ), delete( analysis columns( :Assets ) ) );
 
 ### Display Column Width
 
-**语法:** obj << Display Column Width( Data Column( <Column Table(n)>, path ), <width> );
-
-obj << Display Column Width( Row Label( <Row Table(n)>, path ), <width> )
+**语法:** obj &lt;&lt; Display Column Width( Data Column( &lt;Column Table(n)&gt;, path ), &lt;width&gt; );obj &lt;&lt; Display Column Width( Row Label( &lt;Row Table(n)&gt;, path ), &lt;width&gt; )
 
 **说明:** 设置或返回“制表”报表表中列的显示宽度。Path 是一系列带引号的列标题，用于跟踪列路径。Width 是以像素为单位的列宽。使用 Data Column 可定义表主体中的列或使用 Row Label 定义行标签区域中的列。若报表中有多个表，则使用 Column Table(n) 或 Row Table(n) 指定path 应用于哪个表。若未指定 width，该选项返回指定列的当前宽度。
 
@@ -1197,7 +1193,7 @@ obj << Freq( :Count );
 
 ### Full Path Column Name
 
-**语法:** obj << Full Path Column Name( true | false )
+**语法:** obj &lt;&lt; Full Path Column Name( true | false )
 
 **说明:** 若设置，输出表的列名应包括分组列名
 
@@ -1280,13 +1276,13 @@ obj << ID( :Division );
 
 ### Ignore duplicate responses
 
-**语法:** obj << Ignore duplicate responses( Grouping Columns( column ), true | false )
+**语法:** obj &lt;&lt; Ignore duplicate responses( Grouping Columns( column ), true | false )
 
 **JMP添加的版本:** 19
 
 ### Ignore duplicates in multiple response columns
 
-**语法:** obj << Ignore duplicates in multiple response columns( state=0|1 )
+**语法:** obj &lt;&lt; Ignore duplicates in multiple response columns( state=0|1 )
 
 **说明:** Ignores duplicate responses in multiple response columns. Each repeated response is treated as a single occurrence.
 
@@ -1294,7 +1290,7 @@ obj << ID( :Division );
 
 ### Include missing for grouping columns
 
-**语法:** obj << Include missing for grouping columns( state=0|1 )
+**语法:** obj &lt;&lt; Include missing for grouping columns( state=0|1 )
 
 **说明:** 在当前表中添加包含所有分组列的缺失值计数的单独列。
 
@@ -1311,7 +1307,7 @@ obj = dt << Tabulate(
 
 ### Make Into Data Table
 
-**语法:** obj << Make Into Data Table( <Invisible(bool) | Private(bool)>, <Output Table ( table name)>, <Full Path Column Name(bool)> )
+**语法:** obj &lt;&lt; Make Into Data Table( &lt;Invisible(bool) | Private(bool)&gt;, &lt;Output Table ( table name)&gt;, &lt;Full Path Column Name(bool)&gt; )
 
 **说明:** 根据制表中创建的表创建新的数据表。
 
@@ -1365,7 +1361,7 @@ obj << Make into Data Table( Full Path Column Name( 1 ) );
 
 ### Max scroll locked columns
 
-**语法:** obj << Max scroll locked columns( number=3 )
+**语法:** obj &lt;&lt; Max scroll locked columns( number=3 )
 
 **说明:** Set the maximum number of columns to be scroll locked. Either all or none of the row header columns will be locked. 默认开启。
 
@@ -1388,11 +1384,11 @@ obj << Make Into Data Table;
 
 ### Missing sum is zero
 
-**语法:** obj << Missing sum is zero( state=0|1 )
+**语法:** obj &lt;&lt; Missing sum is zero( state=0|1 )
 
 ### Modify Table
 
-**语法:** obj << Modify Table( <Column Table | Row Table>(table index), ... )
+**语法:** obj &lt;&lt; Modify Table( &lt;Column Table | Row Table&gt;(table index), ... )
 
 **说明:** Modifies an existing table.
 
@@ -1439,7 +1435,7 @@ obj << modify table( column table( 1 ), delete( analysis columns( :Assets ) ) );
 
 ### Modify Table Option
 
-**语法:** obj << Modify Table Option
+**语法:** obj &lt;&lt; Modify Table Option
 
 **说明:** Used with 修改表 to modify table options in an existing table.
 
@@ -1483,7 +1479,7 @@ obj << Modify Table(
 
 ### Move
 
-**语法:** move (<Column Table | Row Table>(table index), <analysis column | grouping column | statistic>(<operand name | index>)), <before first | <before | after>(<analysis column | grouping column | statistic>(<operand name | index>)>)
+**语法:** move (&lt;Column Table | Row Table&gt;(table index), &lt;analysis column | grouping column | statistic&gt;(&lt;operand name | index&gt;)), &lt;before first | &lt;before | after&gt;(&lt;analysis column | grouping column | statistic&gt;(&lt;operand name | index&gt;)&gt;)
 
 **说明:** Used with 修改表 to move columns and statistics in an existing table.
 
@@ -1541,11 +1537,11 @@ obj << modify table(
 
 ### Order By Count
 
-**语法:** obj << Order By Count( Grouping Columns( column ), true | false )
+**语法:** obj &lt;&lt; Order By Count( Grouping Columns( column ), true | false )
 
 ### Order by count of grouping columns
 
-**语法:** obj << Order by count of grouping columns( state=0|1 )
+**语法:** obj &lt;&lt; Order by count of grouping columns( state=0|1 )
 
 **说明:** 按表中的计数对分组列的水平排序。
 
@@ -1560,7 +1556,7 @@ obj << Order by Count of Grouping Columns( 1 );
 
 ### Pack
 
-**语法:** obj << Pack( <Analysis columns | Statistics>(operand name, ...), <Template> )
+**语法:** obj &lt;&lt; Pack( &lt;Analysis columns | Statistics&gt;(operand name, ...), &lt;Template&gt; )
 
 **说明:** 将多个统计量堆叠填充到表中的一个列。“Template”选项指定项的格式。
 
@@ -1633,7 +1629,7 @@ obj << page column( :sex( "F" ) );
 
 ### Plot Scale
 
-**语法:** obj << Plot Scale( min, max )
+**语法:** obj &lt;&lt; Plot Scale( min, max )
 
 **说明:** 设置条形图的尺度。
 
@@ -1655,7 +1651,7 @@ obj << Plot Scale( 0, 25 );
 
 ### Remove Column Label
 
-**语法:** obj << Remove Column Label( Grouping Columns( column ) )
+**语法:** obj &lt;&lt; Remove Column Label( Grouping Columns( column ) )
 
 **说明:** 删除表中指定的列标签。
 
@@ -1676,7 +1672,7 @@ obj << Remove Column Label( Grouping Columns( :Region ) );
 
 ### Restore Column Label
 
-**语法:** obj << Restore Column Label( Grouping Columns( column ) )
+**语法:** obj &lt;&lt; Restore Column Label( Grouping Columns( column ) )
 
 **说明:** 恢复之前删除的、表中指定的列标签。
 
@@ -1698,7 +1694,7 @@ obj << Restore Column Label( Grouping Columns( :Region ) );
 
 ### Retype
 
-**语法:** Retype( <Analysis Columns | Grouping Columns>( operand name, ... ), <Analysis Column | Gropuing Column> )
+**语法:** Retype( &lt;Analysis Columns | Grouping Columns&gt;( operand name, ... ), &lt;Analysis Column | Gropuing Column&gt; )
 
 **说明:** Used with 修改表 to convert between analysis columns and grouping columns in an existing table.
 
@@ -1721,7 +1717,7 @@ obj << Modify Table( Column Table( 1 ), Retype( Grouping Column( :age ) ), Analy
 
 ### Save grouping as tags in data table export
 
-**语法:** obj << Save grouping as tags in data table export( state=0|1 )
+**语法:** obj &lt;&lt; Save grouping as tags in data table export( state=0|1 )
 
 **说明:** Sets if the grouping levels should be included in the data table as column tags. 默认开启。
 
@@ -1744,7 +1740,7 @@ obj << Make Into Data Table;
 
 ### Scroll lock row headers in data table export
 
-**语法:** obj << Scroll lock row headers in data table export( state=0|1 )
+**语法:** obj &lt;&lt; Scroll lock row headers in data table export( state=0|1 )
 
 **说明:** Sets if the columns containing the row headers should be scroll locked. 默认开启。
 
@@ -1826,7 +1822,7 @@ Tabulate(
 
 ### Show Chart
 
-**语法:** obj << Show Chart( state=0|1 )
+**语法:** obj &lt;&lt; Show Chart( state=0|1 )
 
 **说明:** 显示或隐藏从制表中所创建表生成的条形图。
 
@@ -1846,11 +1842,11 @@ obj << Show Chart( 1 );
 
 ### Show Control
 
-**语法:** obj << Show Control( state=0|1 )
+**语法:** obj &lt;&lt; Show Control( state=0|1 )
 
 ### Show Control Panel
 
-**语法:** obj << Show Control Panel( state=0|1 )
+**语法:** obj &lt;&lt; Show Control Panel( state=0|1 )
 
 **说明:** 显示或隐藏用于操控制表中所创建表的控制面板。 默认开启。
 
@@ -1870,7 +1866,7 @@ obj << Show Control Panel( 1 );
 
 ### Show Shading
 
-**语法:** obj << Show Shading( state=0|1 )
+**语法:** obj &lt;&lt; Show Shading( state=0|1 )
 
 **说明:** 显示或隐藏制表中所创建表中交替显示的着色和不着色线。 默认开启。
 
@@ -1890,7 +1886,7 @@ obj << Show Shading( 1 );
 
 ### Show Table
 
-**语法:** obj << Show Table( state=0|1 )
+**语法:** obj &lt;&lt; Show Table( state=0|1 )
 
 **说明:** 显示或隐藏制表中创建的表。 默认开启。
 
@@ -1910,7 +1906,7 @@ obj << Show Table( 1 );
 
 ### Show Test Build Panel
 
-**语法:** obj << Show Test Build Panel( state=0|1 )
+**语法:** obj &lt;&lt; Show Test Build Panel( state=0|1 )
 
 **说明:** 显示或隐藏为表的测试版本控制抽样的面板。
 
@@ -1930,7 +1926,7 @@ obj << Show Test Build Panel( 1 );
 
 ### Show Tooltip
 
-**语法:** obj << Show Tooltip( state=0|1 )
+**语法:** obj &lt;&lt; Show Tooltip( state=0|1 )
 
 **说明:** 当鼠标指针停留在拖放区以及制表输出的菜单上时显示或隐藏工具提示。
 
@@ -1998,7 +1994,7 @@ obj = dt << Tabulate(
 
 ### Test Build
 
-**语法:** obj << Test Build( Sample Size( number ) )
+**语法:** obj &lt;&lt; Test Build( Sample Size( number ) )
 
 **说明:** 显示使用大小为 number 的测试版数据样本的表。
 
@@ -2018,7 +2014,7 @@ obj << Test Build( Sample Size( 100 ) );
 
 ### Test Data View
 
-**语法:** obj << Test Data View
+**语法:** obj &lt;&lt; Test Data View
 
 **说明:** 显示用作样本（用于构建测试表）的数据表。
 
@@ -2039,7 +2035,7 @@ obj << Test Data View;
 
 ### Undo
 
-**语法:** obj << Undo
+**语法:** obj &lt;&lt; Undo
 
 **说明:** 删除对当前表进行的上一次操作所产生的影响。
 
@@ -2061,7 +2057,7 @@ obj << undo;
 
 ### Uniform plot scale
 
-**语法:** obj << Uniform plot scale( state=0|1 )
+**语法:** obj &lt;&lt; Uniform plot scale( state=0|1 )
 
 **说明:** 将所有子类别的尺度设置为针对条形图是相同的。 默认开启。
 
@@ -2083,7 +2079,7 @@ obj << Uniform Plot Scale( 1 );
 
 ### Unpack
 
-**语法:** obj << Unpack( <Analysis columns | Statistics>(operand name, ...) )
+**语法:** obj &lt;&lt; Unpack( &lt;Analysis columns | Statistics&gt;(operand name, ...) )
 
 **说明:** Unpacks a packed set of columns.
 

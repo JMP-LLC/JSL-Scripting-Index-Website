@@ -6,7 +6,7 @@
 
 ### As Scriptable
 
-**Sintaxis:** jmplivereportlist = jmplivelist << As Scriptable()
+**Sintaxis:** jmplivereportlist = jmplivelist &lt;&lt; As Scriptable()
 
 **Descripción:** Devuelve una lista que admite scripts de los objetos de la carpeta de JMP Live, el informe de JMP Live o la publicación de JMP Live dependiendo de la operación de búsqueda que se llevó a cabo para generar la lista de resultados de JMP Live.
 
@@ -55,7 +55,7 @@ If( jmpliveresult << Succeeded,
 
 ### Get Current Page Number
 
-**Sintaxis:** value = jmplivelist << Get Current Page Number()
+**Sintaxis:** value = jmplivelist &lt;&lt; Get Current Page Number()
 
 **Descripción:** Obtiene el número de página actual de los elementos de la lista.
 
@@ -165,7 +165,7 @@ While( count > 0,
 
 ### Get Number Of Items
 
-**Sintaxis:** value = jmplivelist << Get Number Of Items()
+**Sintaxis:** value = jmplivelist &lt;&lt; Get Number Of Items()
 
 **Descripción:** Obtiene el número de elementos en este conjunto de resultados.
 
@@ -250,7 +250,7 @@ If( jmpliveresult << Succeeded,
 
 ### Get Page
 
-**Sintaxis:** reportlist = jmplivelist << Get Page(value)
+**Sintaxis:** reportlist = jmplivelist &lt;&lt; Get Page(value)
 
 **Descripción:** Obtiene la página específica de los objetos de la carpeta de JMP Live, el informe de JMP Live o la publicación de JMP Live dentro de toda la lista de resultados de una operación de búsqueda.
 
@@ -360,7 +360,7 @@ While( count > 0,
 
 ### Next
 
-**Sintaxis:** reportlist = jmplivelist << Next()
+**Sintaxis:** reportlist = jmplivelist &lt;&lt; Next()
 
 **Descripción:** Devuelve la siguiente página de resultados en una operación de búsqueda. Esta lista puede contener carpetas de JMP Live, informes de JMP Live o publicaciones de JMP Live dependiendo de la operación de búsqueda.
 
@@ -470,7 +470,7 @@ While( count > 0,
 
 ### Previous
 
-**Sintaxis:** reportlist = jmplivelist << Previous()
+**Sintaxis:** reportlist = jmplivelist &lt;&lt; Previous()
 
 **Descripción:** Devuelve la página anterior de resultados en una operación de búsqueda. Esta lista puede contener carpetas de JMP Live, informes de JMP Live o publicaciones de JMP Live dependiendo de la operación de búsqueda.
 

@@ -6,7 +6,7 @@
 
 ### Define Class
 
-**语法:** Define Class("class name", <Base Class{ "base class name", ... }>, <Show( All( boolean ) | ( Members( boolean ) | Methods( boolean ) | Functions( boolean ) )+ )>, { method* | member* | function* } )
+**语法:** Define Class("class name", &lt;Base Class{ "base class name", ... }&gt;, &lt;Show( All( boolean ) | ( Members( boolean ) | Methods( boolean ) | Functions( boolean ) )+ )&gt;, { method* | member* | function* } )
 
 **说明:** 创建一个分类，其中创建的所有分类方法和分类变量仅在指定的分类名称内定义。
 
@@ -31,7 +31,7 @@ clref = New Object( Test() );
 
 ### Clone
 
-**语法:** obj << Clone
+**语法:** obj &lt;&lt; Clone
 
 **说明:** 复制类引用的内容以生成新对象
 
@@ -59,7 +59,7 @@ Show( clref == nclref );
 
 ### Contains
 
-**语法:** obj << Contains( string )
+**语法:** obj &lt;&lt; Contains( string )
 
 **说明:** 若分类包含指定的字符串表达式，则返回 1；否则返回 0。
 
@@ -85,7 +85,7 @@ result = clref << Contains( "nObs" );
 
 ### Delete Class
 
-**语法:** clref << Delete Class( < Force( boolean ) > )
+**语法:** clref &lt;&lt; Delete Class( &lt; Force( boolean ) &gt; )
 
 **说明:** 删除该分类。
 
@@ -112,7 +112,7 @@ Show( clref );
 
 ### Equal
 
-**语法:** obj << Equal( classref )
+**语法:** obj &lt;&lt; Equal( classref )
 
 **说明:** 比较类引用参数与目标类引用是否相等。
 
@@ -141,7 +141,7 @@ Show( clref << Equal( nclref ) );
 
 ### First
 
-**语法:** obj << First
+**语法:** obj &lt;&lt; First
 
 **说明:** 返回该分类中第一项的字符串表达式。
 
@@ -167,7 +167,7 @@ result = clref << First;
 
 ### Get Contents
 
-**语法:** obj << Get Contents
+**语法:** obj &lt;&lt; Get Contents
 
 **说明:** 返回该分类中的项列表。每个元素为包含键及其关联值的两项列表。
 
@@ -193,7 +193,7 @@ result = clref << Get Contents;
 
 ### Get Keys
 
-**语法:** obj << Get Keys
+**语法:** obj &lt;&lt; Get Keys
 
 **说明:** 返回该分类中的键列表，每个键为该分类中包含的单个项的字符串表示。
 
@@ -219,7 +219,7 @@ result = clref << Get Keys;
 
 ### Get Name
 
-**语法:** obj << Get Name
+**语法:** obj &lt;&lt; Get Name
 
 **说明:** 返回该分类的名称。
 
@@ -245,7 +245,7 @@ class name = clref << Get Name;
 
 ### Get Value
 
-**语法:** obj << Get Value( string )
+**语法:** obj &lt;&lt; Get Value( string )
 
 **说明:** 返回该分类中指定项的值。“字符串”为该项的键。
 
@@ -271,7 +271,7 @@ result = clref << Get Value( "nObs" );
 
 ### Get Values
 
-**语法:** obj << Get Values
+**语法:** obj &lt;&lt; Get Values
 
 **说明:** 返回该分类中每项对应的值列表。
 
@@ -297,7 +297,7 @@ result = clref << Get Values;
 
 ### Insert
 
-**语法:** obj << Insert( string, value )
+**语法:** obj &lt;&lt; Insert( string, value )
 
 **说明:** 插入字符串表达式，将指定值插入该分类。
 
@@ -324,7 +324,7 @@ Show( clref );
 
 ### Lock Class
 
-**语法:** obj << Lock Class( <string, | {string, ...}>* )
+**语法:** obj &lt;&lt; Lock Class( &lt;string, | {string, ...}&gt;* )
 
 **说明:** 锁定该分类中的所有方法成员或指定的命名成员，并防止添加、更改或删除它们。
 
@@ -351,7 +351,7 @@ Try( clref:nObs = 40, "clref is locked." );
 
 ### N Items
 
-**语法:** obj << N Items
+**语法:** obj &lt;&lt; N Items
 
 **说明:** 返回该分类中包含的项数目。
 
@@ -377,7 +377,7 @@ n = clref << N Items;
 
 ### Next
 
-**语法:** obj << Next( string )
+**语法:** obj &lt;&lt; Next( string )
 
 **说明:** 返回该分类中指定的键后面的下一项的字符串表达式。
 
@@ -403,7 +403,7 @@ result = clref << Next( "addition" );
 
 ### Remove
 
-**语法:** obj << Remove( <string | {string, ...}>* )
+**语法:** obj &lt;&lt; Remove( &lt;string | {string, ...}&gt;* )
 
 **说明:** 从分类中删除指定的字符串表达式。
 
@@ -430,7 +430,7 @@ Show( clref );
 
 ### Show Contents
 
-**语法:** obj << Show Contents
+**语法:** obj &lt;&lt; Show Contents
 
 **说明:** 显示 JMP 日志中分类的内容。
 
@@ -456,7 +456,7 @@ result = clref << Show Contents;
 
 ### Unlock Class
 
-**语法:** obj << Unlock Class( <string | {string, ...}>* )
+**语法:** obj &lt;&lt; Unlock Class( &lt;string | {string, ...}&gt;* )
 
 **说明:** 解锁包含防止被添加、更改或删除的方法成员的锁定分类。
 

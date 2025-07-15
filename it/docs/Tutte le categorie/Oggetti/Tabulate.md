@@ -27,7 +27,7 @@ obj = dt << Tabulate(
 
 ### Action
 
-**Sintassi:** obj << Action
+**Sintassi:** obj &lt;&lt; Action
 
 **Descrizione:** Trapdoor generica all&apos;interno di una piattaforma per inserire espressioni da valutare. Imposta temporaneamente i contesti del riquadro di visualizzazione e della tabella di dati per la piattaforma.
 
@@ -45,7 +45,7 @@ dt << Bivariate(
 
 ### Add
 
-**Sintassi:** add (<Column Table | Row Table>(table index), <before first | <before | after>(<analysis column | grouping column | statistic>(<operand name | index>))>, <analysis column | grouping column | statistic>(operand name)),
+**Sintassi:** add (&lt;Column Table | Row Table&gt;(table index), &lt;before first | &lt;before | after&gt;(&lt;analysis column | grouping column | statistic&gt;(&lt;operand name | index&gt;))&gt;, &lt;analysis column | grouping column | statistic&gt;(operand name)),
 
 **Descrizione:** Used with Modifica tabella to add columns and statistics to an existing table. Also serves as an alias for Aggiungi tabella
 
@@ -96,7 +96,7 @@ obj << modify table( column table( 1 ), Add( Before First, Statistics( Range ) )
 
 ### Add Table
 
-**Sintassi:** Add Table( <Column Table( )>, <Row Table( )> )
+**Sintassi:** Add Table( &lt;Column Table( )&gt;, &lt;Row Table( )&gt; )
 
 **Descrizione:** Aggiunge una tabella alla finestra se non è presente, oppure accoda una tabella all&apos;oggetto tabella esistente.
 
@@ -186,7 +186,7 @@ obj << modifytable( column table( 1 ), analysis columns( :CO ) );
 
 ### Apply Preset
 
-**Sintassi:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintassi:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descrizione:** Applica all’oggetto una preimpostazione precedentemente creata, aggiornando le opzioni e le personalizzazioni in base alle impostazioni salvate.
 
@@ -233,7 +233,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Automatic Recalc
 
-**Sintassi:** obj << Automatic Recalc( state=0|1 )
+**Sintassi:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Descrizione:** Ripete l&apos;analisi automaticamente per l&apos;esclusione e le modifiche ai dati. Se l&apos;opzione Ricalcolo automatico è attivata, si consiglia di usare i comandi Attendi(0) per garantire che le modifiche di esclusione e di dati abbiano effetto prima del ricalcolo.
 
@@ -254,7 +254,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Change Item Label
 
-**Sintassi:** obj << Change Item Label( Statistics( stat name, new string ) )
+**Sintassi:** obj &lt;&lt; Change Item Label( Statistics( stat name, new string ) )
 
 **Descrizione:** Modifica l&apos;etichetta di un campo di immissione di testo nella tabella.
 
@@ -274,7 +274,7 @@ obj << Change Item Label( Statistics( Mean, "Average" ) );
 
 ### Column Switcher
 
-**Sintassi:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Sintassi:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Descrizione:** Aggiunge un pannello di controllo per modificare le variabili della piattaforma
 
@@ -323,7 +323,7 @@ obj << modify table( row table( 1 ), columns by categories( :Money ) );
 
 ### Copy Script
 
-**Sintassi:** obj << Copy Script
+**Sintassi:** obj &lt;&lt; Copy Script
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo inserisce negli Appunti.
 
@@ -343,7 +343,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**Sintassi:** obj << Data Table Window
+**Sintassi:** obj &lt;&lt; Data Table Window
 
 **Descrizione:** Sposta in primo piano la finestra della tabella di dati per questa analisi.
 
@@ -363,7 +363,7 @@ obj << Data Table Window;
 
 ### Delete
 
-**Sintassi:** delete( <analysis columns | grouping columns | statistics>(operand name, operand name, ...))
+**Sintassi:** delete( &lt;analysis columns | grouping columns | statistics&gt;(operand name, operand name, ...))
 
 **Descrizione:** Used with Modifica tabella to remove columns and statistics from an existing table.
 
@@ -388,9 +388,7 @@ obj << modify table( column table( 1 ), delete( analysis columns( :Assets ) ) );
 
 ### Display Column Width
 
-**Sintassi:** obj << Display Column Width( Data Column( <Column Table(n)>, path ), <width> );
-
-obj << Display Column Width( Row Label( <Row Table(n)>, path ), <width> )
+**Sintassi:** obj &lt;&lt; Display Column Width( Data Column( &lt;Column Table(n)&gt;, path ), &lt;width&gt; );obj &lt;&lt; Display Column Width( Row Label( &lt;Row Table(n)&gt;, path ), &lt;width&gt; )
 
 **Descrizione:** Imposta o restituisce la larghezza di visualizzazione di una colonna in una tabella del report Disponi in tabella. Path è una sequenza di intestazioni di colonna tra virgolette che traccia il percorso della colonna. Width è la larghezza di una colonna in pixel. Usare Data Column per definire le colonne nel corpo principale della tabella o Row Label per le colonne nell&apos;area delle etichette delle righe. Se sono presenti più tabelle nel report, usare Column Table(n) o Row Table(n) per specificare a quale tabella si applicano path. Se width non è specificato, questa opzione restituisce la larghezza corrente della colonna specificata.
 
@@ -480,7 +478,7 @@ obj << Freq( :Count );
 
 ### Full Path Column Name
 
-**Sintassi:** obj << Full Path Column Name( true | false )
+**Sintassi:** obj &lt;&lt; Full Path Column Name( true | false )
 
 **Descrizione:** Se impostato, il nome della colonna per la tabella di output deve includere i nomi delle colonne di raggruppamento
 
@@ -501,7 +499,7 @@ obj << Make Into Data Table;
 
 ### Get By Levels
 
-**Sintassi:** obj << Get By Levels
+**Sintassi:** obj &lt;&lt; Get By Levels
 
 **Descrizione:** Restituisce un array associativo che mappa le colonne del gruppo di By ai rispettivi valori.
 
@@ -518,7 +516,7 @@ biv << Get By Levels;
 
 ### Get Container
 
-**Sintassi:** obj << Get Container
+**Sintassi:** obj &lt;&lt; Get Container
 
 **Descrizione:** Restituisce un riferimento al riquadro contenitore che racchiude il contenuto dell&apos;oggetto.
 
@@ -570,7 +568,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Sintassi:** obj << Get Data Table
+**Sintassi:** obj &lt;&lt; Get Data Table
 
 **Descrizione:** Restituisce un riferimento alla tabella di dati.
 
@@ -591,7 +589,7 @@ Show( N Rows( t ) );
 
 ### Get Script
 
-**Sintassi:** obj << Get Script
+**Sintassi:** obj &lt;&lt; Get Script
 
 **Descrizione:** Crea uno script (JSL) per generare questa analisi e la restituisce come espressione.
 
@@ -612,7 +610,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Sintassi:** obj << Get Script With Data Table
+**Sintassi:** obj &lt;&lt; Get Script With Data Table
 
 **Descrizione:** Crea uno script (JSL) per generare questa analisi facendo specifico riferimento a questa tabella di dati e la restituisce come espressione.
 
@@ -633,7 +631,7 @@ Show( t );
 
 ### Get Timing
 
-**Sintassi:** obj << Get Timing
+**Sintassi:** obj &lt;&lt; Get Timing
 
 **Descrizione:** Determina il tempo di avvio della piattaforma.
 
@@ -654,7 +652,7 @@ Show( t );
 
 ### Get Web Support
 
-**Sintassi:** obj << Get Web Support
+**Sintassi:** obj &lt;&lt; Get Web Support
 
 **Descrizione:** Restituisce un numero indicante il livello di supporto HTML interattivo per l&apos;oggetto visualizzato. 1 significa che alcuni o tutti gli elementi sono supportati. 0 significa nessun supporto.
 
@@ -670,7 +668,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Sintassi:** obj << Get Where Expr
+**Sintassi:** obj &lt;&lt; Get Where Expr
 
 **Descrizione:** Restituisce l&apos;espressione Where per il sottoinsieme di dati, se la piattaforma è stata avviata con By() o Where(). Altrimenti, restituisce Vuoto()
 
@@ -769,13 +767,13 @@ dt << Bivariate(
 
 ### Ignore duplicate responses
 
-**Sintassi:** obj << Ignore duplicate responses( Grouping Columns( column ), true | false )
+**Sintassi:** obj &lt;&lt; Ignore duplicate responses( Grouping Columns( column ), true | false )
 
 **JMP Versione aggiunta:** 19
 
 ### Ignore duplicates in multiple response columns
 
-**Sintassi:** obj << Ignore duplicates in multiple response columns( state=0|1 )
+**Sintassi:** obj &lt;&lt; Ignore duplicates in multiple response columns( state=0|1 )
 
 **Descrizione:** Ignores duplicate responses in multiple response columns. Each repeated response is treated as a single occurrence.
 
@@ -783,7 +781,7 @@ dt << Bivariate(
 
 ### Include missing for grouping columns
 
-**Sintassi:** obj << Include missing for grouping columns( state=0|1 )
+**Sintassi:** obj &lt;&lt; Include missing for grouping columns( state=0|1 )
 
 **Descrizione:** Aggiunge una colonna separata contenente conteggi dei valori mancanti per tutte le colonne di raggruppamento nella tabella corrente.
 
@@ -800,7 +798,7 @@ obj = dt << Tabulate(
 
 ### Local Data Filter
 
-**Sintassi:** obj << Local Data Filter
+**Sintassi:** obj &lt;&lt; Local Data Filter
 
 **Descrizione:** Filtra dati in specifici gruppi o range, ma localmente in questa piattaforma
 
@@ -820,7 +818,7 @@ dt << Distribution(
 
 ### Make Into Data Table
 
-**Sintassi:** obj << Make Into Data Table( <Invisible(bool) | Private(bool)>, <Output Table ( table name)>, <Full Path Column Name(bool)> )
+**Sintassi:** obj &lt;&lt; Make Into Data Table( &lt;Invisible(bool) | Private(bool)&gt;, &lt;Output Table ( table name)&gt;, &lt;Full Path Column Name(bool)&gt; )
 
 **Descrizione:** Crea una nuova tabella di dati dalla tabella creata con la funzione di disposizione in tabella.
 
@@ -874,7 +872,7 @@ obj << Make into Data Table( Full Path Column Name( 1 ) );
 
 ### Max scroll locked columns
 
-**Sintassi:** obj << Max scroll locked columns( number=3 )
+**Sintassi:** obj &lt;&lt; Max scroll locked columns( number=3 )
 
 **Descrizione:** Set the maximum number of columns to be scroll locked. Either all or none of the row header columns will be locked. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -899,11 +897,11 @@ obj << Make Into Data Table;
 
 ### Missing sum is zero
 
-**Sintassi:** obj << Missing sum is zero( state=0|1 )
+**Sintassi:** obj &lt;&lt; Missing sum is zero( state=0|1 )
 
 ### Modify Table
 
-**Sintassi:** obj << Modify Table( <Column Table | Row Table>(table index), ... )
+**Sintassi:** obj &lt;&lt; Modify Table( &lt;Column Table | Row Table&gt;(table index), ... )
 
 **Descrizione:** Modifies an existing table.
 
@@ -950,7 +948,7 @@ obj << modify table( column table( 1 ), delete( analysis columns( :Assets ) ) );
 
 ### Modify Table Option
 
-**Sintassi:** obj << Modify Table Option
+**Sintassi:** obj &lt;&lt; Modify Table Option
 
 **Descrizione:** Used with Modifica tabella to modify table options in an existing table.
 
@@ -994,7 +992,7 @@ obj << Modify Table(
 
 ### Move
 
-**Sintassi:** move (<Column Table | Row Table>(table index), <analysis column | grouping column | statistic>(<operand name | index>)), <before first | <before | after>(<analysis column | grouping column | statistic>(<operand name | index>)>)
+**Sintassi:** move (&lt;Column Table | Row Table&gt;(table index), &lt;analysis column | grouping column | statistic&gt;(&lt;operand name | index&gt;)), &lt;before first | &lt;before | after&gt;(&lt;analysis column | grouping column | statistic&gt;(&lt;operand name | index&gt;)&gt;)
 
 **Descrizione:** Used with Modifica tabella to move columns and statistics in an existing table.
 
@@ -1088,11 +1086,11 @@ preset = obj << New Preset();
 
 ### Order By Count
 
-**Sintassi:** obj << Order By Count( Grouping Columns( column ), true | false )
+**Sintassi:** obj &lt;&lt; Order By Count( Grouping Columns( column ), true | false )
 
 ### Order by count of grouping columns
 
-**Sintassi:** obj << Order by count of grouping columns( state=0|1 )
+**Sintassi:** obj &lt;&lt; Order by count of grouping columns( state=0|1 )
 
 **Descrizione:** Ordina i livelli delle colonne di raggruppamento in base ai conteggi nella tabella.
 
@@ -1107,7 +1105,7 @@ obj << Order by Count of Grouping Columns( 1 );
 
 ### Pack
 
-**Sintassi:** obj << Pack( <Analysis columns | Statistics>(operand name, ...), <Template> )
+**Sintassi:** obj &lt;&lt; Pack( &lt;Analysis columns | Statistics&gt;(operand name, ...), &lt;Template&gt; )
 
 **Descrizione:** Riunisce più statistiche in una colonna della tabella. L&apos;opzione Template specifica la formattazione degli elementi.
 
@@ -1180,7 +1178,7 @@ obj << page column( :sex( "F" ) );
 
 ### Paste Local Data Filter
 
-**Sintassi:** obj << Paste Local Data Filter
+**Sintassi:** obj &lt;&lt; Paste Local Data Filter
 
 **Descrizione:** Applicare il filtro sui dati locali dagli Appunti al report corrente.
 
@@ -1201,7 +1199,7 @@ dist2 << Paste Local Data Filter;
 
 ### Plot Scale
 
-**Sintassi:** obj << Plot Scale( min, max )
+**Sintassi:** obj &lt;&lt; Plot Scale( min, max )
 
 **Descrizione:** Imposta la scala del grafico a barre.
 
@@ -1223,7 +1221,7 @@ obj << Plot Scale( 0, 25 );
 
 ### Redo Analysis
 
-**Sintassi:** obj << Redo Analysis
+**Sintassi:** obj &lt;&lt; Redo Analysis
 
 **Descrizione:** Ripete questa stessa analisi in una nuova finestra. L&apos;analisi sarà differente se i dati sono stati modificati.
 
@@ -1243,7 +1241,7 @@ obj << Redo Analysis;
 
 ### Relaunch Analysis
 
-**Sintassi:** obj << Relaunch Analysis
+**Sintassi:** obj &lt;&lt; Relaunch Analysis
 
 **Descrizione:** Apre la finestra di avvio della piattaforma e richiama le impostazioni utilizzate per creare il report.
 
@@ -1263,7 +1261,7 @@ obj << Relaunch Analysis;
 
 ### Remove Column Label
 
-**Sintassi:** obj << Remove Column Label( Grouping Columns( column ) )
+**Sintassi:** obj &lt;&lt; Remove Column Label( Grouping Columns( column ) )
 
 **Descrizione:** Rimuove l&apos;etichetta della colonna specificata nella tabella.
 
@@ -1284,7 +1282,7 @@ obj << Remove Column Label( Grouping Columns( :Region ) );
 
 ### Remove Column Switcher
 
-**Sintassi:** obj << Remove Column Switcher
+**Sintassi:** obj &lt;&lt; Remove Column Switcher
 
 **Descrizione:** Rimuove l&apos;ultimo Scambia colonne che è stato aggiunto alla piattaforma.
 
@@ -1304,7 +1302,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Sintassi:** obj << Remove Local Data Filter
+**Sintassi:** obj &lt;&lt; Remove Local Data Filter
 
 **Descrizione:** Se è stato creato un filtro di dati locali viene rimosso per ripristinare la piattaforma e utilizzare direttamente tutti i dati nella tabella di dati
 
@@ -1343,9 +1341,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Sintassi:** obj << Report;
-
-Report( obj )
+**Sintassi:** obj &lt;&lt; Report;Report( obj )
 
 **Descrizione:** Restituisce un riferimento all&apos;oggetto del report.
 
@@ -1367,7 +1363,7 @@ Show( t );
 
 ### Report View
 
-**Sintassi:** obj << Report View( "Completo"|"Riepilogo" )
+**Sintassi:** obj &lt;&lt; Report View( "Completo"|"Riepilogo" )
 
 **Descrizione:** La visualizzazione Report determina il livello di dettaglio visibile in un report della piattaforma. Full mostra tutti i dettagli mentre Summary mostra solo contenuti selezionati, in base alla piattaforma. Per un comportamento personalizzato, i riquadri di visualizzazione supportano un messaggio <<Set Summary Behavior.
 
@@ -1387,7 +1383,7 @@ obj << Report View( "Summary" );
 
 ### Restore Column Label
 
-**Sintassi:** obj << Restore Column Label( Grouping Columns( column ) )
+**Sintassi:** obj &lt;&lt; Restore Column Label( Grouping Columns( column ) )
 
 **Descrizione:** Ripristina nella tabella l&apos;etichetta della colonna precedentemente rimossa.
 
@@ -1409,7 +1405,7 @@ obj << Restore Column Label( Grouping Columns( :Region ) );
 
 ### Retype
 
-**Sintassi:** Retype( <Analysis Columns | Grouping Columns>( operand name, ... ), <Analysis Column | Gropuing Column> )
+**Sintassi:** Retype( &lt;Analysis Columns | Grouping Columns&gt;( operand name, ... ), &lt;Analysis Column | Gropuing Column&gt; )
 
 **Descrizione:** Used with Modifica tabella to convert between analysis columns and grouping columns in an existing table.
 
@@ -1432,7 +1428,7 @@ obj << Modify Table( Column Table( 1 ), Retype( Grouping Column( :age ) ), Analy
 
 ### Save Script for All Objects
 
-**Sintassi:** obj << Save Script for All Objects
+**Sintassi:** obj &lt;&lt; Save Script for All Objects
 
 **Descrizione:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -1452,7 +1448,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Sintassi:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintassi:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descrizione:** Salva uno script per tutti gli oggetti del report nella tabella di dati corrente. Questa opzione è utile quando sono presenti più report nella finestra. Lo script prende il nome dalla prima piattaforma, a meno che non si specifichi il nome dello script tra apici.
 
@@ -1502,7 +1498,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Sintassi:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintassi:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo salva come una proprietà di tabella nella tabella di dati.
 
@@ -1522,7 +1518,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Sintassi:** obj << Save Script to Journal
+**Sintassi:** obj &lt;&lt; Save Script to Journal
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e aggiunge un pulsante con lo script al journal.
 
@@ -1542,7 +1538,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Sintassi:** obj << Save Script to Report
+**Sintassi:** obj &lt;&lt; Save Script to Report
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo mostra nel report. Utile per avere una copia stampata di quanto è stato fatto.
 
@@ -1562,7 +1558,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Sintassi:** obj << Save Script to Script Window
+**Sintassi:** obj &lt;&lt; Save Script to Script Window
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo aggiunge alla finestra di testo dello script corrente.
 
@@ -1582,7 +1578,7 @@ obj << Save Script to Script Window;
 
 ### Save grouping as tags in data table export
 
-**Sintassi:** obj << Save grouping as tags in data table export( state=0|1 )
+**Sintassi:** obj &lt;&lt; Save grouping as tags in data table export( state=0|1 )
 
 **Descrizione:** Sets if the grouping levels should be included in the data table as column tags. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1605,7 +1601,7 @@ obj << Make Into Data Table;
 
 ### Scroll lock row headers in data table export
 
-**Sintassi:** obj << Scroll lock row headers in data table export( state=0|1 )
+**Sintassi:** obj &lt;&lt; Scroll lock row headers in data table export( state=0|1 )
 
 **Descrizione:** Sets if the columns containing the row headers should be scroll locked. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1752,7 +1748,7 @@ Tabulate(
 
 ### Show Chart
 
-**Sintassi:** obj << Show Chart( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Chart( state=0|1 )
 
 **Descrizione:** Mostra/Nasconde un grafico a barre generato dalla tabella creata con la funzione di disposizione in tabella.
 
@@ -1772,11 +1768,11 @@ obj << Show Chart( 1 );
 
 ### Show Control
 
-**Sintassi:** obj << Show Control( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Control( state=0|1 )
 
 ### Show Control Panel
 
-**Sintassi:** obj << Show Control Panel( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Control Panel( state=0|1 )
 
 **Descrizione:** Mostra/Nasconde il pannello di controllo utilizzato per modificare la tabella creata con la funzione di disposizione in tabella. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1796,7 +1792,7 @@ obj << Show Control Panel( 1 );
 
 ### Show Shading
 
-**Sintassi:** obj << Show Shading( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Shading( state=0|1 )
 
 **Descrizione:** Mostra/Nasconde linee alternate ombreggiate o non ombreggiate sulla tabella creata con la funzione di disposizione in tabella. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1816,7 +1812,7 @@ obj << Show Shading( 1 );
 
 ### Show Table
 
-**Sintassi:** obj << Show Table( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Table( state=0|1 )
 
 **Descrizione:** Mostra/Nasconde la tabella creata con la funzione di disposizione in tabella. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1836,7 +1832,7 @@ obj << Show Table( 1 );
 
 ### Show Test Build Panel
 
-**Sintassi:** obj << Show Test Build Panel( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Test Build Panel( state=0|1 )
 
 **Descrizione:** Mostra/Nasconde il pannello che controlla il campionamento per la creazione del test della tabella.
 
@@ -1856,7 +1852,7 @@ obj << Show Test Build Panel( 1 );
 
 ### Show Tooltip
 
-**Sintassi:** obj << Show Tooltip( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Tooltip( state=0|1 )
 
 **Descrizione:** Mostra/Nasconde le descrizioni comando quando si passa il mouse su zone di rilascio e menu dell&apos;output Disponi in tabella.
 
@@ -1924,7 +1920,7 @@ obj = dt << Tabulate(
 
 ### Sync to Data Table Changes
 
-**Sintassi:** obj << Sync to Data Table Changes
+**Sintassi:** obj &lt;&lt; Sync to Data Table Changes
 
 **Descrizione:** Sincronizza con l&apos;esclusione e le modifiche ai dati effettuate.
 
@@ -1941,7 +1937,7 @@ dist << Sync To Data Table Changes;
 
 ### Test Build
 
-**Sintassi:** obj << Test Build( Sample Size( number ) )
+**Sintassi:** obj &lt;&lt; Test Build( Sample Size( number ) )
 
 **Descrizione:** Visualizza la tabella utilizzando un campione del build di test dei dati con dimensione number.
 
@@ -1961,7 +1957,7 @@ obj << Test Build( Sample Size( 100 ) );
 
 ### Test Data View
 
-**Sintassi:** obj << Test Data View
+**Sintassi:** obj &lt;&lt; Test Data View
 
 **Descrizione:** Visualizza la tabella di dati utilizzata come campione per creare la tabella del test.
 
@@ -1982,7 +1978,7 @@ obj << Test Data View;
 
 ### Title
 
-**Sintassi:** obj << Title( "new title" )
+**Sintassi:** obj &lt;&lt; Title( "new title" )
 
 **Descrizione:** Imposta il titolo della piattaforma.
 
@@ -2002,7 +1998,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Sintassi:** obj << Top Report
+**Sintassi:** obj &lt;&lt; Top Report
 
 **Descrizione:** Restituisce un riferimento al nodo principale nel report.
 
@@ -2024,7 +2020,7 @@ Show( t );
 
 ### Undo
 
-**Sintassi:** obj << Undo
+**Sintassi:** obj &lt;&lt; Undo
 
 **Descrizione:** Rimuove l&apos;effetto dell&apos;ultima operazione effettuata sulla tabella corrente.
 
@@ -2046,7 +2042,7 @@ obj << undo;
 
 ### Uniform plot scale
 
-**Sintassi:** obj << Uniform plot scale( state=0|1 )
+**Sintassi:** obj &lt;&lt; Uniform plot scale( state=0|1 )
 
 **Descrizione:** Imposta le scale in modo uguale per tutte le sottocategorie del grafico a barre. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -2068,7 +2064,7 @@ obj << Uniform Plot Scale( 1 );
 
 ### Unpack
 
-**Sintassi:** obj << Unpack( <Analysis columns | Statistics>(operand name, ...) )
+**Sintassi:** obj &lt;&lt; Unpack( &lt;Analysis columns | Statistics&gt;(operand name, ...) )
 
 **Descrizione:** Unpacks a packed set of columns.
 
@@ -2096,7 +2092,7 @@ obj << Modify Table( Column Table( 1 ), Unpack( Analysis Columns( :City MPG ) ) 
 
 ### View Web XML
 
-**Sintassi:** obj << View Web XML
+**Sintassi:** obj &lt;&lt; View Web XML
 
 **Descrizione:** Restituisce il codice XML utilizzato per creare il report HTML interattivo.
 

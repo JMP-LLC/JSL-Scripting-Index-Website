@@ -2,8 +2,6 @@
 
 
 
-## Funzioni
-
 ### Abs
 
 **Sintassi:** y = Abs( x )
@@ -66,7 +64,7 @@ Floor( 1.2 );
 
 ### Integrate
 
-**Sintassi:** y = Integrate( expr, varname, lowLimit, upLimit, <<Tolerance(1e-10), <<StoreInfo(list), <<StartingValue(val) )
+**Sintassi:** y = Integrate( expr, varname, lowLimit, upLimit, &lt;&lt;Tolerance(1e-10), &lt;&lt;StoreInfo(list), &lt;&lt;StartingValue(val) )
 
 **Descrizione:** Integra un&apos;espressione rispetto a un valore scalare usando il metodo della quadratura adattiva di Gander e Gautschi (2000). Se la variabile specificata con varname ha un valore assegnato o l&apos;argomento opzionale <<StartingValue() specifica un valore di partenza, quel valore è usato come valore tipico per migliorare la precisione dell&apos;integrale. Per specificare range infiniti di integrazione, impostare lowLimit e/o upLimit a mancante. Se è specificato <<StoreInfo(), l&apos;argomento di <<StoreInfo() conterrà le diagnostiche della routine di integrazione numerica. Se è specificato <<Tolleranza(), l&apos;argomento di <<Tolleranza() è usato come livello di tolleranza nella funzione di autointegrazione usata per valutare l&apos;integrale. Valori inferiori producono un runtime più lungo, ma risultati più precisi.
 
@@ -160,7 +158,7 @@ Normal Integrate(
 
 ### Num Deriv
 
-**Sintassi:** y = Num Deriv( f( x, ... ),  <parnum>)
+**Sintassi:** y = Num Deriv( f( x, ... ), &lt;parnum&gt;)
 
 **Descrizione:** Restituisce la derivata numerica della funzione f( x,... ) rispetto a uno dei suoi argomenti. È possibile specificare quell&apos;argomento come secondo argomento nella funzione Num Deriv. Se non viene specificato alcun secondo argomento, la derivata è eseguita rispetto al primo argomento della funzione. La derivata è valutata utilizzando i valori numerici specificati nell&apos;espressione della funzione  f( x,... ).
 
@@ -193,7 +191,7 @@ Num Deriv2( f( 2 ) );
 
 ### Round
 
-**Sintassi:** y = Round( x, <n> )
+**Sintassi:** y = Round( x, &lt;n&gt; )
 
 **Descrizione:** Arrotonda x a n cifre dopo la virgola decimale (o 0 cifre se n non è specificato). Nota: l&apos;argomento n può essere negativo.
 

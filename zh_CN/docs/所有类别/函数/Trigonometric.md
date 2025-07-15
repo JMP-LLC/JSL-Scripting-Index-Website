@@ -2,11 +2,9 @@
 
 
 
-## 函数
-
 ### ATan
 
-**语法:** y = ArcTangent( x1, <x2=1> )
+**语法:** y = ArcTangent( x1, &lt;x2=1&gt; )
 
 **说明:** 返回 x1/x2 的反三角正切函数，结果在 [-Pi()/2, Pi()/2] 范围内。
 
@@ -111,7 +109,7 @@ ArcSine( 0.5 );
 
 ### ArcTan
 
-**语法:** y = ArcTangent( x1, <x2=1> )
+**语法:** y = ArcTangent( x1, &lt;x2=1&gt; )
 
 **说明:** 返回 x1/x2 的反三角正切函数，结果在 [-Pi()/2, Pi()/2] 范围内。
 
@@ -141,7 +139,7 @@ ArcTanH( 0.5 );
 
 ### ArcTangent
 
-**语法:** y = ArcTangent( x1, <x2=1> )
+**语法:** y = ArcTangent( x1, &lt;x2=1&gt; )
 
 **说明:** 返回 x1/x2 的反三角正切函数，结果在 [-Pi()/2, Pi()/2] 范围内。
 

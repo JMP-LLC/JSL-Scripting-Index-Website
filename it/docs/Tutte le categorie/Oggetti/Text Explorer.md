@@ -6,7 +6,7 @@
 
 ### By
 
-**Sintassi:** obj << By( column(s) )
+**Sintassi:** obj &lt;&lt; By( column(s) )
 
 **Descrizione:** Produce report multipli, uno per ogni livello delle variabili.
 
@@ -27,7 +27,7 @@ obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ), By( _bycol ) )
 
 ### ID
 
-**Sintassi:** obj << ID( column )
+**Sintassi:** obj &lt;&lt; ID( column )
 
 **Descrizione:** Una colonna utilizzata per identificare rispondenti separati nella tabella di dati di output Salva DTM in pila per associazione e nel report Analisi delle classi latenti.
 
@@ -47,7 +47,7 @@ obj << Save Stacked DTM For Association;
 
 ### Text Columns
 
-**Sintassi:** obj << Text Columns( column(s) )
+**Sintassi:** obj &lt;&lt; Text Columns( column(s) )
 
 **Descrizione:** Una colonna di testo che contiene i documenti da elaborare. Ogni valore di riga viene trattato come un documento.
 
@@ -63,7 +63,7 @@ obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 
 ### Validation
 
-**Sintassi:** obj << Validation( column )
+**Sintassi:** obj &lt;&lt; Validation( column )
 
 **Descrizione:** Una colonna numerica contenente due o tre valori distinti. Se ci sono due valori, il valore più piccolo definisce il set di training e il valore più grande definisce il set di validazione. Se ci sono tre valori, questi valori definiscono il set di training, di validazione e di test, in ordine crescente di dimensione. Se ci sono più di tre valori, vengono ignorati tutti tranne i tre più piccoli.
 
@@ -105,7 +105,7 @@ obj = dt << Text Explorer( Text Columns( :Reasons Not to Floss ) );
 
 ### Action
 
-**Sintassi:** obj << Action
+**Sintassi:** obj &lt;&lt; Action
 
 **Descrizione:** Trapdoor generica all&apos;interno di una piattaforma per inserire espressioni da valutare. Imposta temporaneamente i contesti del riquadro di visualizzazione e della tabella di dati per la piattaforma.
 
@@ -123,7 +123,7 @@ dt << Bivariate(
 
 ### Add Delimiters
 
-**Sintassi:** obj << Add Delimiters( "string" )
+**Sintassi:** obj &lt;&lt; Add Delimiters( "string" )
 
 **Descrizione:** Aggiunge caratteri di delimitazione forniti dall&apos;utente, in una singola stringa, all&apos;elenco predefinito dei caratteri di delimitazione per la suddivisione delle parole.
 
@@ -141,7 +141,7 @@ obj << Add Delimiters( "{}" );
 
 ### Add Phrase Exceptions
 
-**Sintassi:** obj << Add Phrase Exceptions( list )
+**Sintassi:** obj &lt;&lt; Add Phrase Exceptions( list )
 
 **Descrizione:** Aggiunge un elenco di frasi da rimuovere dall&apos;elenco dei termini.
 
@@ -159,7 +159,7 @@ obj << Add Phrase Exceptions( {"every time"} );
 
 ### Add Phrases
 
-**Sintassi:** obj << Add Phrases( list )
+**Sintassi:** obj &lt;&lt; Add Phrases( list )
 
 **Descrizione:** Aggiunge un elenco di frasi all&apos;elenco dei termini per essere analizzate come termini singoli. I conteggi dei termini sono aggiornati di conseguenza.
 
@@ -174,7 +174,7 @@ obj << Add Phrases( {"twice a day", "every time"} );
 
 ### Add Recode Exceptions
 
-**Sintassi:** obj << Add Recode Exceptions( { {pair1}, {pair2}, ...} )
+**Sintassi:** obj &lt;&lt; Add Recode Exceptions( { {pair1}, {pair2}, ...} )
 
 **Descrizione:** Aggiunge un elenco di stringhe di testo ricodificate da rimuovere.
 
@@ -192,7 +192,7 @@ obj << Add Recode Exceptions( {"neglagent", "negligent"} );
 
 ### Add Recodes
 
-**Sintassi:** obj << Add Recodes( { {pair1}, {pair2}, ...} )
+**Sintassi:** obj &lt;&lt; Add Recodes( { {pair1}, {pair2}, ...} )
 
 **Descrizione:** Aggiunge un elenco di coppie di parole da ricodificare.
 
@@ -208,7 +208,7 @@ obj << Show Recodes( 1 );
 
 ### Add Stem Exceptions
 
-**Sintassi:** obj << Add Stem Exceptions( list )
+**Sintassi:** obj &lt;&lt; Add Stem Exceptions( list )
 
 **Descrizione:** Aggiunge un elenco di parole che sono escluse dalla lemmatizzazione.
 
@@ -226,7 +226,7 @@ obj << Add Stem Exceptions( {"care", "brush", "like"} );
 
 ### Add Stem Overrides
 
-**Sintassi:** obj << Add Stem Overrides( list )
+**Sintassi:** obj &lt;&lt; Add Stem Overrides( list )
 
 **Descrizione:** Aggiunge un elenco di parole la cui lemmatizzazione è sempre consentita.
 
@@ -245,7 +245,7 @@ obj << Add Stem Exceptions( {"care", "brush", "like"} );
 
 ### Add Stop Word Exceptions
 
-**Sintassi:** obj << Add Stop Word Exceptions( list )
+**Sintassi:** obj &lt;&lt; Add Stop Word Exceptions( list )
 
 **Descrizione:** Aggiunge un elenco di parole da rimuovere come stop word e da aggiungere all&apos;elenco dei termini.
 
@@ -262,7 +262,7 @@ obj << Add Stop Word Exceptions( {"again", "are"} );
 
 ### Add Stop Words
 
-**Sintassi:** obj << Add Stop Words( list )
+**Sintassi:** obj &lt;&lt; Add Stop Words( list )
 
 **Descrizione:** Aggiunge un elenco di parole da rimuovere dall&apos;elenco dei termini e da ignorare nell&apos;analisi.
 
@@ -279,7 +279,7 @@ obj << Add Stop Words( {"use", "feel", "like"} );
 
 ### Apply Preset
 
-**Sintassi:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintassi:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descrizione:** Applica all’oggetto una preimpostazione precedentemente creata, aggiornando le opzioni e le personalizzazioni in base alle impostazioni salvate.
 
@@ -326,7 +326,7 @@ obj << Apply Preset( "Sample Presets", "t-Tests", Folder( "Compare Means" ) );
 
 ### Automatic Recalc
 
-**Sintassi:** obj << Automatic Recalc( state=0|1 )
+**Sintassi:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **Descrizione:** Ripete l&apos;analisi automaticamente per l&apos;esclusione e le modifiche ai dati. Se l&apos;opzione Ricalcolo automatico è attivata, si consiglia di usare i comandi Attendi(0) per garantire che le modifiche di esclusione e di dati abbiano effetto prima del ricalcolo.
 
@@ -342,7 +342,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**Sintassi:** obj << Broadcast(message)
+**Sintassi:** obj &lt;&lt; Broadcast(message)
 
 **Descrizione:** Diffonde un messaggio a una piattaforma. Se i risultati di restituzione dei singoli oggetti sono tabelle, esse sono concatenate se possibile e il formato finale è identico al risultato dell&apos;opzione Salva tabella combinata in un riquadro della tabella o il risultato dell&apos;opzione Concatena utilizzando una colonna di origine. Oltre a quelli, i risultati sono memorizzati in un elenco e restituiti.
 
@@ -362,7 +362,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Cloud Width
 
-**Sintassi:** obj << Cloud Width( number )
+**Sintassi:** obj &lt;&lt; Cloud Width( number )
 
 **Descrizione:** Imposta la larghezza del word cloud in base al numero di pixel specificato.
 
@@ -378,7 +378,7 @@ obj << Cloud Width( 150 );
 
 ### Coloring
 
-**Sintassi:** obj << Coloring( "Nessuno"|"Colore uniforme"|"Grigi arbitrari"|"Colori arbitrari"|"Per valori della colonna..." )
+**Sintassi:** obj &lt;&lt; Coloring( "Nessuno"|"Colore uniforme"|"Grigi arbitrari"|"Colori arbitrari"|"Per valori della colonna..." )
 
 **Descrizione:** Specifica la colorazione dei termini nel word cloud.
 
@@ -394,7 +394,7 @@ obj << Coloring( "Arbitrary Colors" );
 
 ### Column Switcher
 
-**Sintassi:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**Sintassi:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **Descrizione:** Aggiunge un pannello di controllo per modificare le variabili della piattaforma
 
@@ -412,7 +412,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**Sintassi:** obj << Copy ByGroup Script
+**Sintassi:** obj &lt;&lt; Copy ByGroup Script
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo inserisce negli Appunti.
 
@@ -432,7 +432,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**Sintassi:** obj << Copy Script
+**Sintassi:** obj &lt;&lt; Copy Script
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo inserisce negli Appunti.
 
@@ -447,7 +447,7 @@ obj << Copy Script;
 
 ### Custom Stemmer
 
-**Sintassi:** obj << Custom Stemmer( Function( {string, dot}, ... ) )
+**Sintassi:** obj &lt;&lt; Custom Stemmer( Function( {string, dot}, ... ) )
 
 **Descrizione:** Esegue la lemmatizzazione secondo le specifiche dell&apos;utente. Specifica una funzione che prende l&apos;argomento &apos;stringa&apos; (un termine di un documento), lo analizza per determinare quale pattern contiene e, se necessario, sostituisce i caratteri con l&apos;argomento &apos;punto&apos;. Questa funzione sostituisce l&apos;algoritmo standard di lemmatizzazione. Ogni parola che viene cambiata dovrebbe includere il punto di lemmatizzazione alla fine. Se la lemmatizzazione è abilitata per la piattaforma in uso, questa funzione viene chiamata per ogni termine univoco trovato nel corpus.
 
@@ -474,9 +474,7 @@ obj << Custom Stemmer(
 
 ### Customize Regex
 
-**Sintassi:** obj = Text Explorer(...Customize Regex( state=0|1 )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Text Explorer(...Customize Regex( state=0|1 )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Apre l&apos;editor Espressione regolare di Explorer del testo per modificare le impostazioni delle espressioni regolari. Questa opzione è disponibile solo con il metodo di tokenizzazione regex.
 
@@ -493,7 +491,7 @@ obj << Customize Regex();
 
 ### Data Table Window
 
-**Sintassi:** obj << Data Table Window
+**Sintassi:** obj &lt;&lt; Data Table Window
 
 **Descrizione:** Sposta in primo piano la finestra della tabella di dati per questa analisi.
 
@@ -508,7 +506,7 @@ obj << Data Table Window;
 
 ### Discriminant Analysis
 
-**Sintassi:** obj << Discriminant Analysis( Maximum Number of Terms( number ), Minimum Number of Terms( number ), Weighting( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ), Number oc Singular Vectors( number ), Column( :column name ) )
+**Sintassi:** obj &lt;&lt; Discriminant Analysis( Maximum Number of Terms( number ), Minimum Number of Terms( number ), Weighting( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ), Number oc Singular Vectors( number ), Column( :column name ) )
 
 **Descrizione:** Prevede una classificazione di ogni documento in una categoria di una colonna di risposta specificata utilizzando l&apos;analisi discriminante lineare della matrice dei termini del documento.
 
@@ -532,7 +530,7 @@ obj << Discriminant Analysis(
 
 ### Font
 
-**Sintassi:** obj << Font( font )
+**Sintassi:** obj &lt;&lt; Font( font )
 
 **Descrizione:** Specifica il carattere, lo stile e la dimensione dei termini nel word cloud.
 
@@ -548,7 +546,7 @@ obj << Font( "Arial Narrow", 11, "Plain" );
 
 ### Get By Levels
 
-**Sintassi:** obj << Get By Levels
+**Sintassi:** obj &lt;&lt; Get By Levels
 
 **Descrizione:** Restituisce un array associativo che mappa le colonne del gruppo di By ai rispettivi valori.
 
@@ -565,7 +563,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**Sintassi:** obj << Get ByGroup Script
+**Sintassi:** obj &lt;&lt; Get ByGroup Script
 
 **Descrizione:** Crea uno script (JSL) per generare questa analisi e la restituisce come espressione.
 
@@ -586,7 +584,7 @@ Show( t );
 
 ### Get Container
 
-**Sintassi:** obj << Get Container
+**Sintassi:** obj &lt;&lt; Get Container
 
 **Descrizione:** Restituisce un riferimento al riquadro contenitore che racchiude il contenuto dell&apos;oggetto.
 
@@ -633,7 +631,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Sintassi:** obj << Get Data Table
+**Sintassi:** obj &lt;&lt; Get Data Table
 
 **Descrizione:** Restituisce un riferimento alla tabella di dati.
 
@@ -649,7 +647,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**Sintassi:** obj << Get Group Platform
+**Sintassi:** obj &lt;&lt; Get Group Platform
 
 **Descrizione:** Restituisce l&apos;oggetto Raggruppa piattaforma se la piattaforma fa parte di un gruppo. In caso contrario, restituisce Vuoto().
 
@@ -666,7 +664,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**Sintassi:** obj << Get Script
+**Sintassi:** obj &lt;&lt; Get Script
 
 **Descrizione:** Crea uno script (JSL) per generare questa analisi e la restituisce come espressione.
 
@@ -682,7 +680,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Sintassi:** obj << Get Script With Data Table
+**Sintassi:** obj &lt;&lt; Get Script With Data Table
 
 **Descrizione:** Crea uno script (JSL) per generare questa analisi facendo specifico riferimento a questa tabella di dati e la restituisce come espressione.
 
@@ -698,7 +696,7 @@ Show( t );
 
 ### Get Timing
 
-**Sintassi:** obj << Get Timing
+**Sintassi:** obj &lt;&lt; Get Timing
 
 **Descrizione:** Determina il tempo di avvio della piattaforma.
 
@@ -714,7 +712,7 @@ Show( t );
 
 ### Get Web Support
 
-**Sintassi:** obj << Get Web Support
+**Sintassi:** obj &lt;&lt; Get Web Support
 
 **Descrizione:** Restituisce un numero indicante il livello di supporto HTML interattivo per l&apos;oggetto visualizzato. 1 significa che alcuni o tutti gli elementi sono supportati. 0 significa nessun supporto.
 
@@ -730,7 +728,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Sintassi:** obj << Get Where Expr
+**Sintassi:** obj &lt;&lt; Get Where Expr
 
 **Descrizione:** Restituisce l&apos;espressione Where per il sottoinsieme di dati, se la piattaforma è stata avviata con By() o Where(). Altrimenti, restituisce Vuoto()
 
@@ -767,7 +765,7 @@ dt << Bivariate(
 
 ### Include Builtin Phrases
 
-**Sintassi:** obj << Include Builtin Phrases( state=0|1 )
+**Sintassi:** obj &lt;&lt; Include Builtin Phrases( state=0|1 )
 
 **Descrizione:** Specifica che le frasi incorporate sono incluse nelle frasi che sono usate nel processo di tokenizzazione. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -783,7 +781,7 @@ obj << Include Builtin Phrases( 0 );
 
 ### Include Builtin Stop Words
 
-**Sintassi:** obj << Include Builtin Stop Words( state=0|1 )
+**Sintassi:** obj &lt;&lt; Include Builtin Stop Words( state=0|1 )
 
 **Descrizione:** Specifica che le stop word incorporate sono incluse nelle stop word utilizzate nel processo di tokenizzazione. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -799,9 +797,7 @@ obj << Include Builtin Stop Words( 0 );
 
 ### Language
 
-**Sintassi:** obj = Text Explorer(...Language( "Visualizza lingua"|"Inglese"|"Tedesco"|"Spagnolo"|"Francese"|"Italiano"|"Giapponese"|"Cinese (semplificato)"|"Cinese (tradizionale)"|"Coreano" )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Text Explorer(...Language( "Visualizza lingua"|"Inglese"|"Tedesco"|"Spagnolo"|"Francese"|"Italiano"|"Giapponese"|"Cinese (semplificato)"|"Cinese (tradizionale)"|"Coreano" )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica la lingua utilizzata per l&apos;elaborazione dei testi. La scelta influisce sulla lemmatizzazione e gli elenchi integrati di stop word, ricodifiche e frasi.
 
@@ -815,7 +811,7 @@ obj = dt << Text Explorer( TextColumns( :Reasons Not to Floss ), Language( "Germ
 
 ### Latent Class Analysis
 
-**Sintassi:** obj << Latent Class Analysis( Number of Clusters( number ), Maximum Number of Terms( number ), Minimum Term Frequency( number ) )
+**Sintassi:** obj &lt;&lt; Latent Class Analysis( Number of Clusters( number ), Maximum Number of Terms( number ), Minimum Term Frequency( number ) )
 
 **Descrizione:** Raggruppa i documenti in cluster di documenti simili usando un&apos;analisi di classi latenti sulla matrice binaria pesata dei termini del documento.
 
@@ -835,11 +831,7 @@ obj << Latent Class Analysis(
 
 ### Latent Semantic Analysis
 
-**Sintassi:** obj << Latent Semantic Analysis( Maximum Number of Terms( number ), Minimum Term Frequency( number ), Weighting( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ), Number of Singular Vectors( number ), Centering and Scaling( "Centered and Scaled",|"Centered"|"Uncentered" ) ); 
-
- 
-
-obj << SVD( Maximum Number of Terms( number ), Minimum Term Frequency( number ), Weighting( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ), Number of Singular Vectors( number ), Centering and Scaling( "Centered and Scaled",|"Centered"|"Uncentered" ) )
+**Sintassi:** obj &lt;&lt; Latent Semantic Analysis( Maximum Number of Terms( number ), Minimum Term Frequency( number ), Weighting( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ), Number of Singular Vectors( number ), Centering and Scaling( "Centered and Scaled",|"Centered"|"Uncentered" ) ); obj &lt;&lt; SVD( Maximum Number of Terms( number ), Minimum Term Frequency( number ), Weighting( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ), Number of Singular Vectors( number ), Centering and Scaling( "Centered and Scaled",|"Centered"|"Uncentered" ) )
 
 **Descrizione:** Effettua una scomposizione sparsa di valori singolari della matrice dei termini del documento.
 
@@ -881,7 +873,7 @@ obj << SVD(
 
 ### Layout
 
-**Sintassi:** obj << Layout( "Ordinato"|"Alfabetico"|"Centrato " )
+**Sintassi:** obj &lt;&lt; Layout( "Ordinato"|"Alfabetico"|"Centrato " )
 
 **Descrizione:** Specifica la disposizione dei termini nel word cloud.
 
@@ -897,7 +889,7 @@ obj << Layout( "Alphabetical" );
 
 ### Local Data Filter
 
-**Sintassi:** obj << Local Data Filter
+**Sintassi:** obj &lt;&lt; Local Data Filter
 
 **Descrizione:** Filtra dati in specifici gruppi o range, ma localmente in questa piattaforma
 
@@ -917,9 +909,7 @@ dt << Distribution(
 
 ### Maximum Characters per Word
 
-**Sintassi:** obj = Text Explorer(...Maximum Characters per Word( number=50 )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Text Explorer(...Maximum Characters per Word( number=50 )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica il massimo number di caratteri che può contenere una parola per essere inclusa come termine nell&apos;analisi. "50", per impostazione predefinita.
 
@@ -936,9 +926,7 @@ obj = dt << Text Explorer(
 
 ### Maximum Number of Phrases
 
-**Sintassi:** obj = Text Explorer(...Maximum Number of Phrases( number=5000 )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Text Explorer(...Maximum Number of Phrases( number=5000 )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica il number massimo di frasi che compaiono nell&apos;elenco delle frasi. "5000", per impostazione predefinita.
 
@@ -955,9 +943,7 @@ obj = dt << Text Explorer(
 
 ### Maximum Words per Phrase
 
-**Sintassi:** obj = Text Explorer(...Maximum Words per Phrase( number=4 )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Text Explorer(...Maximum Words per Phrase( number=4 )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica il number massimo di parole che una frase può contenere da includere come frase nell&apos;analisi. "4", per impostazione predefinita.
 
@@ -976,9 +962,7 @@ obj = dt << Text Explorer(
 
 ### Minimum Characters per Word
 
-**Sintassi:** obj = Text Explorer(...Minimum Characters per Word( number=1 )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Text Explorer(...Minimum Characters per Word( number=1 )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica il number di caratteri che deve contenere una parola per essere inclusa come termine nell&apos;analisi. "1", per impostazione predefinita.
 
@@ -995,7 +979,7 @@ obj = dt << Text Explorer(
 
 ### Minimum Frequency for Phrase
 
-**Sintassi:** obj << Minimum Frequency for Phrase( number )
+**Sintassi:** obj &lt;&lt; Minimum Frequency for Phrase( number )
 
 **Descrizione:** Specifica il number di occorrenze di una frase affinché sia inclusa nell&apos;elenco delle frasi. Per impostazione predefinita non esiste un minimo.
 
@@ -1046,7 +1030,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**Sintassi:** obj << Paste Local Data Filter
+**Sintassi:** obj &lt;&lt; Paste Local Data Filter
 
 **Descrizione:** Applicare il filtro sui dati locali dagli Appunti al report corrente.
 
@@ -1067,7 +1051,7 @@ dist2 << Paste Local Data Filter;
 
 ### Phrases Alphabetical
 
-**Sintassi:** obj << Phrases Alphabetical( state=0|1 )
+**Sintassi:** obj &lt;&lt; Phrases Alphabetical( state=0|1 )
 
 **Descrizione:** Ordina l&apos;elenco delle frasi alfabeticamente. L&apos;impostazione predefinita è l&apos;ordinamento per conteggio decrescente.
 
@@ -1082,7 +1066,7 @@ obj << Phrases Alphabetical( 1 );
 
 ### Redo Analysis
 
-**Sintassi:** obj << Redo Analysis
+**Sintassi:** obj &lt;&lt; Redo Analysis
 
 **Descrizione:** Ripete questa stessa analisi in una nuova finestra. L&apos;analisi sarà differente se i dati sono stati modificati.
 
@@ -1097,7 +1081,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**Sintassi:** obj << Redo ByGroup Analysis
+**Sintassi:** obj &lt;&lt; Redo ByGroup Analysis
 
 **Descrizione:** Ripete questa stessa analisi in una nuova finestra. L&apos;analisi sarà differente se i dati sono stati modificati.
 
@@ -1117,7 +1101,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**Sintassi:** obj << Relaunch Analysis
+**Sintassi:** obj &lt;&lt; Relaunch Analysis
 
 **Descrizione:** Apre la finestra di avvio della piattaforma e richiama le impostazioni utilizzate per creare il report.
 
@@ -1132,7 +1116,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**Sintassi:** obj << Relaunch ByGroup
+**Sintassi:** obj &lt;&lt; Relaunch ByGroup
 
 **Descrizione:** Apre la finestra di avvio della piattaforma e richiama le impostazioni utilizzate per creare il report.
 
@@ -1152,7 +1136,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**Sintassi:** obj << Remove Column Switcher
+**Sintassi:** obj &lt;&lt; Remove Column Switcher
 
 **Descrizione:** Rimuove l&apos;ultimo Scambia colonne che è stato aggiunto alla piattaforma.
 
@@ -1172,7 +1156,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**Sintassi:** obj << Remove Local Data Filter
+**Sintassi:** obj &lt;&lt; Remove Local Data Filter
 
 **Descrizione:** Se è stato creato un filtro di dati locali viene rimosso per ripristinare la piattaforma e utilizzare direttamente tutti i dati nella tabella di dati
 
@@ -1211,9 +1195,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Sintassi:** obj << Report;
-
-Report( obj )
+**Sintassi:** obj &lt;&lt; Report;Report( obj )
 
 **Descrizione:** Restituisce un riferimento all&apos;oggetto del report.
 
@@ -1230,7 +1212,7 @@ Show( t );
 
 ### Report View
 
-**Sintassi:** obj << Report View( "Completo"|"Riepilogo" )
+**Sintassi:** obj &lt;&lt; Report View( "Completo"|"Riepilogo" )
 
 **Descrizione:** La visualizzazione Report determina il livello di dettaglio visibile in un report della piattaforma. Full mostra tutti i dettagli mentre Summary mostra solo contenuti selezionati, in base alla piattaforma. Per un comportamento personalizzato, i riquadri di visualizzazione supportano un messaggio <<Set Summary Behavior.
 
@@ -1245,11 +1227,7 @@ obj << Report View( "Summary" );
 
 ### Rotated SVD
 
-**Sintassi:** obj << Topic Analysis( Number of Topics ( number ) ) 
-
- 
-
-obj << Rotated SVD( Number of Topics( number ) )
+**Sintassi:** obj &lt;&lt; Topic Analysis( Number of Topics ( number ) ) obj &lt;&lt; Rotated SVD( Number of Topics( number ) )
 
 **Descrizione:** Effettua una decomposizione ai valori singolari ruotata varimax della matrice dei termini del documento per generare gruppi di termini denominati topic.
 
@@ -1299,11 +1277,7 @@ obj << Rotated SVD( Number of Topics( 5 ) );
 
 ### SVD
 
-**Sintassi:** obj << Latent Semantic Analysis( Maximum Number of Terms( number ), Minimum Term Frequency( number ), Weighting( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ), Number of Singular Vectors( number ), Centering and Scaling( "Centered and Scaled",|"Centered"|"Uncentered" ) ); 
-
- 
-
-obj << SVD( Maximum Number of Terms( number ), Minimum Term Frequency( number ), Weighting( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ), Number of Singular Vectors( number ), Centering and Scaling( "Centered and Scaled",|"Centered"|"Uncentered" ) )
+**Sintassi:** obj &lt;&lt; Latent Semantic Analysis( Maximum Number of Terms( number ), Minimum Term Frequency( number ), Weighting( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ), Number of Singular Vectors( number ), Centering and Scaling( "Centered and Scaled",|"Centered"|"Uncentered" ) ); obj &lt;&lt; SVD( Maximum Number of Terms( number ), Minimum Term Frequency( number ), Weighting( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ), Number of Singular Vectors( number ), Centering and Scaling( "Centered and Scaled",|"Centered"|"Uncentered" ) )
 
 **Descrizione:** Effettua una scomposizione sparsa di valori singolari della matrice dei termini del documento.
 
@@ -1345,7 +1319,7 @@ obj << SVD(
 
 ### Save ByGroup Script to Data Table
 
-**Sintassi:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintassi:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e salvarla come proprietà della tabella nella tabella di dati. È possibile specificare un nome per lo script. L&apos;opzione Append Suffix aggiunge un suffisso numerico al nome dello script, che differenzia lo script da uno script esistente con lo stesso nome. L&apos;opzione Prompt richiede all&apos;utente di specificare un nome di script. L&apos;opzione Replace sostituisce uno script esistente con lo stesso nome.
 
@@ -1365,7 +1339,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**Sintassi:** obj << Save ByGroup Script to Journal
+**Sintassi:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e aggiunge un pulsante con lo script al journal.
 
@@ -1385,7 +1359,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**Sintassi:** obj << Save ByGroup Script to Script Window
+**Sintassi:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo aggiunge alla finestra di testo dello script corrente.
 
@@ -1405,7 +1379,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save DTM Formula
 
-**Sintassi:** obj << Save DTM Formula( Maximum Number of Terms( number ), Minimum Term Frequency( number ), Weight( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ) )
+**Sintassi:** obj &lt;&lt; Save DTM Formula( Maximum Number of Terms( number ), Minimum Term Frequency( number ), Weight( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ) )
 
 **Descrizione:** Salva una colonna della formula con valore vettoriale nella tabella di dati usando la funzione JSL Text Score. La lunghezza del vettore dipende dalle opzioni specificate dall&apos;utente per il numero massimo di termini, la frequenza minima dei termini e la ponderazione.
 
@@ -1425,7 +1399,7 @@ obj << Save DTM Formula(
 
 ### Save Document Term Matrix
 
-**Sintassi:** obj << Save Document Term Matrix( Maximum Number of Terms( number ), Minimum Term Frequency( number ), Weight( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ) )
+**Sintassi:** obj &lt;&lt; Save Document Term Matrix( Maximum Number of Terms( number ), Minimum Term Frequency( number ), Weight( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ) )
 
 **Descrizione:** Salva colonne nella tabella di dati per ogni colonna della matrice dei termini del documento. Il numero di colonne dipende dalle opzioni specificate dall&apos;utente per il numero massimo di termini, la frequenza minima dei termini e la ponderazione.
 
@@ -1445,7 +1419,7 @@ obj << Save Document Term Matrix(
 
 ### Save Script for All Objects
 
-**Sintassi:** obj << Save Script for All Objects
+**Sintassi:** obj &lt;&lt; Save Script for All Objects
 
 **Descrizione:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -1460,7 +1434,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Sintassi:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintassi:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descrizione:** Salva uno script per tutti gli oggetti del report nella tabella di dati corrente. Questa opzione è utile quando sono presenti più report nella finestra. Lo script prende il nome dalla prima piattaforma, a meno che non si specifichi il nome dello script tra apici.
 
@@ -1498,7 +1472,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Sintassi:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintassi:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo salva come una proprietà di tabella nella tabella di dati.
 
@@ -1513,7 +1487,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Sintassi:** obj << Save Script to Journal
+**Sintassi:** obj &lt;&lt; Save Script to Journal
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e aggiunge un pulsante con lo script al journal.
 
@@ -1528,7 +1502,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Sintassi:** obj << Save Script to Report
+**Sintassi:** obj &lt;&lt; Save Script to Report
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo mostra nel report. Utile per avere una copia stampata di quanto è stato fatto.
 
@@ -1543,7 +1517,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Sintassi:** obj << Save Script to Script Window
+**Sintassi:** obj &lt;&lt; Save Script to Script Window
 
 **Descrizione:** Crea uno script JSL per generare questa analisi e lo aggiunge alla finestra di testo dello script corrente.
 
@@ -1558,7 +1532,7 @@ obj << Save Script to Script Window;
 
 ### Save Stacked DTM for Association
 
-**Sintassi:** obj << Save Stacked DTM for Association
+**Sintassi:** obj &lt;&lt; Save Stacked DTM for Association
 
 **Descrizione:** Salva una versione in pila della matrice dei termini del documento in una nuova tabella di dati. Se è specificata una variabile ID nella finestra di avvio di Explorer del testo, la variabile ID è usata per identificare le righe da cui ogni termine proviene nella tabella di dati del testo originale.
 
@@ -1574,7 +1548,7 @@ obj << Save Stacked DTM For Association;
 
 ### Save Term Table
 
-**Sintassi:** obj << Save Term Table
+**Sintassi:** obj &lt;&lt; Save Term Table
 
 **Descrizione:** Crea una tabella di dati JMP che contiene ogni termine dell&apos;elenco dei termini, il numero di occorrenze e il numero di documenti che contiene ogni termine.
 
@@ -1590,7 +1564,7 @@ obj << Save Term Table;
 
 ### SaveRegexColumn
 
-**Sintassi:** obj << SaveRegexColumn( text )
+**Sintassi:** obj &lt;&lt; SaveRegexColumn( text )
 
 **Descrizione:** Salva le espressioni regolari personalizzate specificate in una nuova colonna nella tabella di dati.
 
@@ -1626,7 +1600,7 @@ dt << Text Explorer(
 
 ### Score Terms by Column
 
-**Sintassi:** obj << Score Terms by Column( column )
+**Sintassi:** obj &lt;&lt; Score Terms by Column( column )
 
 **Descrizione:** Salva gli score basati su valori in una specifica colonna della tabella di dati creata dall&apos;opzione Salva tabella dei termini. Gli score di ciascun termine sono il valore medio della colonna specificata ponderati con il numero di occorrenze del termine in ciascuna riga.
 
@@ -1707,7 +1681,7 @@ dt << Distribution(
 
 ### Sentiment Analysis
 
-**Sintassi:** obj << Sentiment Analysis( state=0|1 )
+**Sintassi:** obj &lt;&lt; Sentiment Analysis( state=0|1 )
 
 **Descrizione:** Identifica i termini sentiment nei documenti utilizzando l&apos;analisi lessicale e classifica i documenti in base al sentiment positivo, negativo e generale.
 
@@ -1724,7 +1698,7 @@ sent = obj << Sentiment Analysis( 1 );
 
 ### Set Delimiters
 
-**Sintassi:** obj << Set Delimiters( "string" )
+**Sintassi:** obj &lt;&lt; Set Delimiters( "string" )
 
 **Descrizione:** Sostituisce l&apos;elenco predefinito dei caratteri di delimitazione per la suddivisione delle parole con caratteri forniti dall&apos;utente in una singola stringa.
 
@@ -1741,7 +1715,7 @@ obj << Set Delimiters( " " );
 
 ### Set Regex
 
-**Sintassi:** obj << Set Regex( ... )
+**Sintassi:** obj &lt;&lt; Set Regex( ... )
 
 **Descrizione:** Sostituisce le espressioni regolari predefinite utilizzate nel metodo di tokenizzazione Regex.
 
@@ -1756,7 +1730,7 @@ obj << Set Regex( Library( "Words" ) );
 
 ### Show Delimiters
 
-**Sintassi:** obj << Show Delimiters( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Delimiters( state=0|1 )
 
 **Descrizione:** Mostra o nasconde i delimitatori usati per la tokenizzazione. Questa opzione è disponibile solo quando il metodo di tokenizzazione è Parole di base.
 
@@ -1773,7 +1747,7 @@ obj << Show Delimiters( 1 );
 
 ### Show Filters for all Tables
 
-**Sintassi:** obj << Show Filters for all Tables( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Filters for all Tables( state=0|1 )
 
 **Descrizione:** Mostra o nasconde i filtri che possono essere usati per la ricerca nelle tabelle del report. Questa opzione si applica alle seguenti tabelle: Stop Word, Frasi specificate, Eccezioni dei lemmi, Elenco di termini, Elenco di frasi e Report dei lemmi.
 
@@ -1791,7 +1765,7 @@ obj << Show Filters for All Tables( 1 );
 
 ### Show Legend
 
-**Sintassi:** obj << Show Legend( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Legend( state=0|1 )
 
 **Descrizione:** Mostra o nasconde la legenda del word cloud. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1809,7 +1783,7 @@ obj << Show Legend( 0 );
 
 ### Show Phrase List
 
-**Sintassi:** obj << Show Phrase List( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Phrase List( state=0|1 )
 
 **Descrizione:** Mostra o nasconde il report Elenco delle frasi. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1825,7 +1799,7 @@ obj << Show Phrase List( 0 );
 
 ### Show Recodes
 
-**Sintassi:** obj << Show Recodes( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Recodes( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un elenco dei termini ricodificati.
 
@@ -1843,7 +1817,7 @@ obj << Show Recodes( 1 );
 
 ### Show Selected Rows
 
-**Sintassi:** obj << Show Selected Rows
+**Sintassi:** obj &lt;&lt; Show Selected Rows
 
 **Descrizione:** Apre una finestra che contiene il testo dei documenti che si trovano nelle righe al momento selezionate.
 
@@ -1860,7 +1834,7 @@ obj << Show Selected Rows( 1 );
 
 ### Show Specified Phrases
 
-**Sintassi:** obj << Show Specified Phrases( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Specified Phrases( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un elenco delle frasi che sono state specificate dall&apos;utente per essere trattate come termini.
 
@@ -1877,7 +1851,7 @@ Report( obj )["Specified Phrases"] << Close( 0 );
 
 ### Show Stem Exceptions
 
-**Sintassi:** obj << Show Stem Exceptions( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Stem Exceptions( state=0|1 )
 
 **Descrizione:** Mostra o nasconde i termini che sono esclusi dalla lemmatizzazione.
 
@@ -1893,7 +1867,7 @@ obj << Show Stem Exceptions( 1 );
 
 ### Show Stem Report
 
-**Sintassi:** obj << Show Stem Report( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Stem Report( state=0|1 )
 
 **Descrizione:** Mostra o nasconde il report Lemmatizzazione che contiene due tabelle di risultati di lemmatizzazione.
 
@@ -1910,7 +1884,7 @@ obj << Show Stem Report( 1 );
 
 ### Show Stop Words
 
-**Sintassi:** obj << Show Stop Words( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Stop Words( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un elenco di stop word che sono usate nell&apos;analisi.
 
@@ -1926,7 +1900,7 @@ obj << Show Stop Words( 1 );
 
 ### Show Summary Counts
 
-**Sintassi:** obj << Show Summary Counts( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Summary Counts( state=0|1 )
 
 **Descrizione:** Mostra o nasconde una tabella di conteggi riassuntivi. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1942,7 +1916,7 @@ obj << Show Summary Counts( 0 );
 
 ### Show Term List
 
-**Sintassi:** obj << Show Term List( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Term List( state=0|1 )
 
 **Descrizione:** Mostra o nasconde il report Elenco dei termini. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -1958,7 +1932,7 @@ obj << Show Term List( 0 );
 
 ### Show Term and Phrase Options
 
-**Sintassi:** obj << Show Term and Phrase Options( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Term and Phrase Options( state=0|1 )
 
 **Descrizione:** Mostra o nasconde i pulsanti nel report Elenchi di termini e frasi che corrispondono alle opzioni disponibili nei menu a comparsa per ogni elenco.
 
@@ -1974,7 +1948,7 @@ obj << Show Term and Phrase Options( 1 );
 
 ### Show Word Cloud
 
-**Sintassi:** obj << Show Word Cloud( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Word Cloud( state=0|1 )
 
 **Descrizione:** Mostra o nasconde il word cloud.
 
@@ -1990,9 +1964,7 @@ obj << Show Word Cloud( 1 );
 
 ### Stemming
 
-**Sintassi:** obj = Text Explorer(...Stemming( "Nessuna lemmatizzazione"|"Lemmatizza per combinare"|"Lemmatizza tutti i termini" )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Text Explorer(...Stemming( "Nessuna lemmatizzazione"|"Lemmatizza per combinare"|"Lemmatizza tutti i termini" )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica un metodo di combinazione dei termini con caratteri iniziali simili ma finali diversi.
 
@@ -2008,7 +1980,7 @@ obj << Stemming( "Stem All Terms" );
 
 ### Sync to Data Table Changes
 
-**Sintassi:** obj << Sync to Data Table Changes
+**Sintassi:** obj &lt;&lt; Sync to Data Table Changes
 
 **Descrizione:** Sincronizza con l&apos;esclusione e le modifiche ai dati effettuate.
 
@@ -2025,7 +1997,7 @@ dist << Sync To Data Table Changes;
 
 ### Term Selection
 
-**Sintassi:** obj << Term Selection( Models( Model( Response Column( <column> ), <other models> )), Model Choice( <index> ))
+**Sintassi:** obj &lt;&lt; Term Selection( Models( Model( Response Column( &lt;column&gt; ), &lt;other models&gt; )), Model Choice( &lt;index&gt; ))
 
 **Descrizione:** Analizza quali termini spiegano meglio le diverse risposte. La selezione dei termini è utile anche per la sentiment analysis quando le risposte sono valutazioni.
 
@@ -2083,7 +2055,7 @@ term = obj << Term Selection(
 
 ### Terms Alphabetical
 
-**Sintassi:** obj << Terms Alphabetical( state=0|1 )
+**Sintassi:** obj &lt;&lt; Terms Alphabetical( state=0|1 )
 
 **Descrizione:** Ordina l&apos;elenco dei termini alfabeticamente. L&apos;impostazione predefinita è l&apos;ordinamento per conteggio decrescente.
 
@@ -2098,7 +2070,7 @@ obj << Terms Alphabetical( 1 );
 
 ### Title
 
-**Sintassi:** obj << Title( "new title" )
+**Sintassi:** obj &lt;&lt; Title( "new title" )
 
 **Descrizione:** Imposta il titolo della piattaforma.
 
@@ -2113,9 +2085,7 @@ obj << Title( "My Platform" );
 
 ### Tokenizing
 
-**Sintassi:** obj = Text Explorer(...Tokenizing( "Regex"|"Parole di base" )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Text Explorer(...Tokenizing( "Regex"|"Parole di base" )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Specifica un metodo di analisi del testo in termini o token. I metodi disponibili sono Regex e Parole di base.
 
@@ -2131,7 +2101,7 @@ obj << Tokenizing( "Basic Words" );
 
 ### Top Report
 
-**Sintassi:** obj << Top Report
+**Sintassi:** obj &lt;&lt; Top Report
 
 **Descrizione:** Restituisce un riferimento al nodo principale nel report.
 
@@ -2148,11 +2118,7 @@ Show( t );
 
 ### Topic Analysis
 
-**Sintassi:** obj << Topic Analysis( Number of Topics ( number ) ) 
-
- 
-
-obj << Rotated SVD( Number of Topics( number ) )
+**Sintassi:** obj &lt;&lt; Topic Analysis( Number of Topics ( number ) ) obj &lt;&lt; Rotated SVD( Number of Topics( number ) )
 
 **Descrizione:** Effettua una decomposizione ai valori singolari ruotata varimax della matrice dei termini del documento per generare gruppi di termini denominati topic.
 
@@ -2202,7 +2168,7 @@ obj << Rotated SVD( Number of Topics( 5 ) );
 
 ### Transform Column
 
-**Sintassi:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**Sintassi:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **Descrizione:** Crea una colonna di trasformazione nel contesto locale di un oggetto, di solito una piattaforma. La colonna di trasformazione è attiva solo per la durata della piattaforma.
 
@@ -2223,9 +2189,7 @@ dt << Distribution(
 
 ### Treat Numbers as Words
 
-**Sintassi:** obj = Text Explorer(...Treat Numbers as Words( state=0|1 )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Text Explorer(...Treat Numbers as Words( state=0|1 )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Considera le parole interamente composte da cifre come token. Disponibile solo con il metodo di tokenizzazione Parole di base.
 
@@ -2242,7 +2206,7 @@ obj << Treat Numbers as Words( 1 );
 
 ### View Web XML
 
-**Sintassi:** obj << View Web XML
+**Sintassi:** obj &lt;&lt; View Web XML
 
 **Descrizione:** Restituisce il codice XML utilizzato per creare il report HTML interattivo.
 
@@ -2257,9 +2221,7 @@ xml = obj << View Web XML;
 
 ### Window View
 
-**Sintassi:** obj = Text Explorer(...Window View( "Visible"|"Invisible"|"Private" )...)
-
-<b>Elemento Finestra di dialogo di avvio: Sì</b>
+**Sintassi:** obj = Text Explorer(...Window View( "Visible"|"Invisible"|"Private" )...)&lt;b&gt;Elemento Finestra di dialogo di avvio: Sì&lt;/b&gt;
 
 **Descrizione:** Impostare il tipo di finestra da creare per il report. Per impostazione predefinita verrà creata una finestra di report Visible. Una finestra Invisible non comparirà sullo schermo, ma è individuabile da funzioni come Window(). Una finestra Private risponde alla maggior parte dei messaggi della finestra, ma non è individuabile e deve essere indirizzata attraverso l&apos;oggetto report
 
@@ -2282,7 +2244,7 @@ New Window( "Bivariate Equation",
 
 #### Discriminant Analysis
 
-**Sintassi:** obj << Discriminant Analysis( Maximum Number of Terms( number ), Minimum Number of Terms( number ), Weighting( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ), Number oc Singular Vectors( number ), Column( :column name ) )
+**Sintassi:** obj &lt;&lt; Discriminant Analysis( Maximum Number of Terms( number ), Minimum Number of Terms( number ), Weighting( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ), Number oc Singular Vectors( number ), Column( :column name ) )
 
 **Descrizione:** Prevede una classificazione di ogni documento in una categoria di una colonna di risposta specificata utilizzando l&apos;analisi discriminante lineare della matrice dei termini del documento.
 
@@ -2305,7 +2267,7 @@ obj2 = obj << Discriminant Analysis(
 
 #### Canonical Plot
 
-**Sintassi:** obj << Canonical Plot( state=0|1, N Canon( number ) )
+**Sintassi:** obj &lt;&lt; Canonical Plot( state=0|1, N Canon( number ) )
 
 **Descrizione:** Mostra o nasconde un diagramma dei documenti e delle medie di gruppo nello spazio canonico. Lo spazio canonico è lo spazio che principalmente separa i gruppi.
 
@@ -2329,7 +2291,7 @@ obj2 << Canonical Plot( 1, N Canon( 3 ) );
 
 #### Remove
 
-**Sintassi:** obj << Remove
+**Sintassi:** obj &lt;&lt; Remove
 
 **Descrizione:** Rimuove il report Analisi discriminante dalla finestra del report Explorer del testo.
 
@@ -2354,7 +2316,7 @@ obj2 << Remove;
 
 #### Save Canonical Scores
 
-**Sintassi:** obj << Save Canonical Scores( N Canon( number ) )
+**Sintassi:** obj &lt;&lt; Save Canonical Scores( N Canon( number ) )
 
 **Descrizione:** Salva nella tabella di dati le colonne che contengono gli score dallo spazio canonico per ogni osservazione. Lo spazio canonico è lo spazio che principalmente separa i gruppi.
 
@@ -2378,7 +2340,7 @@ obj2 << Save Canonical Scores( N Canon( 3 ) );
 
 #### Save Probabilities
 
-**Sintassi:** obj << Save Probabilities
+**Sintassi:** obj &lt;&lt; Save Probabilities
 
 **Descrizione:** Salva una colonna di probabilità nella tabella di dati per ogni livello di risposta oltre a una colonna che contiene la risposta più probabile.
 
@@ -2402,7 +2364,7 @@ obj2 << Save Probabilities;
 
 #### Save Probability Formulas
 
-**Sintassi:** obj << Save Probability Formulas
+**Sintassi:** obj &lt;&lt; Save Probability Formulas
 
 **Descrizione:** Salva colonne con formule nella tabella di dati per la previsione della risposta più probabile. Queste colonne usano la funzione Text Score per calcolare la probabilità per ogni livello di risposta.
 
@@ -2430,7 +2392,7 @@ obj2 << Save Probability Formulas;
 
 #### Latent Class Analysis
 
-**Sintassi:** obj << Latent Class Analysis( Number of Clusters( number ), Maximum Number of Terms( number ), Minimum Term Frequency( number ) )
+**Sintassi:** obj &lt;&lt; Latent Class Analysis( Number of Clusters( number ), Maximum Number of Terms( number ), Minimum Term Frequency( number ) )
 
 **Descrizione:** Raggruppa i documenti in cluster di documenti simili usando un&apos;analisi di classi latenti sulla matrice binaria pesata dei termini del documento.
 
@@ -2451,7 +2413,7 @@ obj2 = obj << Latent Class Analysis(
 
 #### Cluster Mixture Probabilities
 
-**Sintassi:** obj << Cluster Mixture Probabilities( state=0|1 )
+**Sintassi:** obj &lt;&lt; Cluster Mixture Probabilities( state=0|1 )
 
 **Descrizione:** Mostra o nasconde una tabella di probabilità di appartenenza di un&apos;osservazione a ciascun cluster. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -2474,7 +2436,7 @@ obj2 << Cluster Mixture Probabilities( 0 );
 
 #### Cluster Probabilities by Row
 
-**Sintassi:** obj << Cluster Probabilities by Row( state=0|1 )
+**Sintassi:** obj &lt;&lt; Cluster Probabilities by Row( state=0|1 )
 
 **Descrizione:** Mostra o nasconde la tabella Probabilità della miscela, che contiene le probabilità di appartenenza al cluster per ogni riga. La colonna Cluster più probabile indica il cluster con la più elevata probabilità di appartenenza per ogni riga. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -2495,7 +2457,7 @@ obj2 << Cluster Probabilities by row( 0 );
 
 #### Color by Cluster
 
-**Sintassi:** obj << Color by Cluster
+**Sintassi:** obj &lt;&lt; Color by Cluster
 
 **Descrizione:** Colora ogni riga della tabella dei dati in base al suo cluster più probabile.
 
@@ -2515,7 +2477,7 @@ obj2 << Color by Cluster;
 
 #### MDS Plot
 
-**Sintassi:** obj << MDS Plot( state=0|1 )
+**Sintassi:** obj &lt;&lt; MDS Plot( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un diagramma di scaling multidimensionale, che è una rappresentazione bidimensionale della prossimità dei cluster. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -2536,7 +2498,7 @@ obj2 << MDS Plot( 0 );
 
 #### Remove
 
-**Sintassi:** obj << Remove
+**Sintassi:** obj &lt;&lt; Remove
 
 **Descrizione:** Rimuove il report di Analisi delle classi latenti dal report Explorer del testo.
 
@@ -2557,7 +2519,7 @@ obj2 << Remove;
 
 #### Rename Clusters
 
-**Sintassi:** obj << Rename Clusters( "name1", "name2", ...  )
+**Sintassi:** obj &lt;&lt; Rename Clusters( "name1", "name2", ... )
 
 **Descrizione:** Consente di aggiungere nomi descrittivi per uno o più cluster
 
@@ -2580,7 +2542,7 @@ obj2 << Rename Clusters( "First", "Second", "Third", "Fourth", "Fifth" );
 
 #### Save Probabilities
 
-**Sintassi:** obj << Save Probabilities
+**Sintassi:** obj &lt;&lt; Save Probabilities
 
 **Descrizione:** Salva la probabilità di appartenenza di un documento a ciascun cluster come colonna separata nella tabella di dati.
 
@@ -2600,7 +2562,7 @@ obj2 << Save Probabilities;
 
 #### Save Probability Formulas
 
-**Sintassi:** obj << Save Probability Formulas
+**Sintassi:** obj &lt;&lt; Save Probability Formulas
 
 **Descrizione:** Salva una colonna della formula nella tabella di dati per ogni cluster e una colonna della formula per il cluster più probabile.
 
@@ -2620,7 +2582,7 @@ obj2 << Save Probability Formulas;
 
 #### Set Random Seed
 
-**Sintassi:** obj << Latent Class Analysis( Set Random Seed( number ) )
+**Sintassi:** obj &lt;&lt; Latent Class Analysis( Set Random Seed( number ) )
 
 **Descrizione:** Imposta un seme casuale per l&apos;analisi.
 
@@ -2642,7 +2604,7 @@ obj2 = obj << Latent Class Analysis(
 
 #### Term Probabilities by Cluster
 
-**Sintassi:** obj << Term Probabilities by Cluster( state=0|1 )
+**Sintassi:** obj &lt;&lt; Term Probabilities by Cluster( state=0|1 )
 
 **Descrizione:** Mostra o nasconde una tabella di termini con una stima per ogni cluster. La stima è la probabilità condizionata che un documento contenga il termine, dato che il documento appartiene a un particolare cluster. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -2663,7 +2625,7 @@ obj2 << Term Probabilities by Cluster( 0 );
 
 #### Top Terms by Cluster
 
-**Sintassi:** obj << Top Terms by Cluster( state=0|1 )
+**Sintassi:** obj &lt;&lt; Top Terms by Cluster( state=0|1 )
 
 **Descrizione:** Mostra o nasconde una tabella dei dieci termini con gli score più alti in ogni cluster. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -2686,7 +2648,7 @@ obj2 << Top Terms by Cluster( 0 );
 
 #### Word Clouds by Cluster
 
-**Sintassi:** obj << Word Clouds by Cluster( state=0|1 )
+**Sintassi:** obj &lt;&lt; Word Clouds by Cluster( state=0|1 )
 
 **Descrizione:** Mostra o nasconde una matrice di cloud di parole, una per ogni cluster.
 
@@ -2712,11 +2674,7 @@ obj2 << Word Clouds by Cluster( 1 );
 
 #### Rotated SVD
 
-**Sintassi:** obj << Topic Analysis( Number of Topics ( number ) ) 
-
- 
-
-obj << Rotated SVD( Number of Topics( number ) )
+**Sintassi:** obj &lt;&lt; Topic Analysis( Number of Topics ( number ) ) obj &lt;&lt; Rotated SVD( Number of Topics( number ) )
 
 **Descrizione:** Effettua una decomposizione ai valori singolari ruotata varimax della matrice dei termini del documento per generare gruppi di termini denominati topic.
 
@@ -2743,11 +2701,7 @@ obj3 = obj2 << Topic Analysis( Number of Topics( 5 ) );
 
 #### Topic Analysis
 
-**Sintassi:** obj << Topic Analysis( Number of Topics ( number ) ) 
-
- 
-
-obj << Rotated SVD( Number of Topics( number ) )
+**Sintassi:** obj &lt;&lt; Topic Analysis( Number of Topics ( number ) ) obj &lt;&lt; Rotated SVD( Number of Topics( number ) )
 
 **Descrizione:** Effettua una decomposizione ai valori singolari ruotata varimax della matrice dei termini del documento per generare gruppi di termini denominati topic.
 
@@ -2776,7 +2730,7 @@ obj3 = obj2 << Topic Analysis( Number of Topics( 5 ) );
 
 #### Remove
 
-**Sintassi:** obj << Remove
+**Sintassi:** obj &lt;&lt; Remove
 
 **Descrizione:** Rimuove il report Analisi degli argomenti dal report SVD.
 
@@ -2807,7 +2761,7 @@ obj3 << Remove;
 
 #### Rename Topics
 
-**Sintassi:** obj << Rename Topics
+**Sintassi:** obj &lt;&lt; Rename Topics
 
 **Descrizione:** Consente di aggiungere nomi descrittivi per uno o più argomenti.
 
@@ -2838,7 +2792,7 @@ obj3 << Rename Topics( "Too Busy", "Less Often", "Difficult", "Bed", "Week" );
 
 #### Rotation Matrix
 
-**Sintassi:** obj << Rotation Matrix( state=0|1 )
+**Sintassi:** obj &lt;&lt; Rotation Matrix( state=0|1 )
 
 **Descrizione:** Mostra o nasconde una matrice di rotazione per la rotazione varimax.
 
@@ -2869,7 +2823,7 @@ Report( obj )["Rotation Matrix"] << Close( 0 );
 
 #### Save Document Topic Vectors
 
-**Sintassi:** obj << Save Document Topic Vectors
+**Sintassi:** obj &lt;&lt; Save Document Topic Vectors
 
 **Descrizione:** Salva i vettori singolari dall&apos;analisi dei topic in nuove colonne nella tabella di dati.
 
@@ -2899,7 +2853,7 @@ obj3 << Save Document Topic Vectors;
 
 #### Save Item Topic Vectors
 
-**Sintassi:** obj << Save Item Topic Vectors
+**Sintassi:** obj &lt;&lt; Save Item Topic Vectors
 
 **Descrizione:** Salva i vettori degli argomenti in una nuova tabella di dati Score argomento elemento.
 
@@ -2929,7 +2883,7 @@ obj3 << Save Item Topic Vectors;
 
 #### Save Term Topic Vectors
 
-**Sintassi:** obj << Save Term Topic Vectors
+**Sintassi:** obj &lt;&lt; Save Term Topic Vectors
 
 **Descrizione:** Salva i vettori di argomento dall&apos;analisi dei topic come colonne in una nuova tabella di dati. Se è già aperta una tabella dei termini, allora le colonne vengono salvate in quella tabella di dati.
 
@@ -2960,7 +2914,7 @@ obj3 << Save Term Topic Vectors;
 
 #### Save Topic Vector Formula
 
-**Sintassi:** obj << Save Topic Vector Formula
+**Sintassi:** obj &lt;&lt; Save Topic Vector Formula
 
 **Descrizione:** Salva nella tabella di dati una formula con il tipo di modellizzazione Vettore che contiene la decomposizione ai valori singolari ruotata. La colonna risultante utilizza la funzione Text Score.
 
@@ -2990,7 +2944,7 @@ obj3 << Save Topic Vector Formula;
 
 #### Save Transaction Topic Vectors
 
-**Sintassi:** obj << Save Transaction Topic Vectors
+**Sintassi:** obj &lt;&lt; Save Transaction Topic Vectors
 
 **Descrizione:** Salva un numero specificato dall&apos;utente di vettori singolari dalla decomposizione ai valori singolari ruotati (vettori argomento) in nuove colonne della tabella di dati.
 
@@ -3020,7 +2974,7 @@ obj3 << Save Transaction Topic Vectors;
 
 #### Top Loadings by Topic
 
-**Sintassi:** obj << Top Loadings by Topic( state=0|1 )
+**Sintassi:** obj &lt;&lt; Top Loadings by Topic( state=0|1 )
 
 **Descrizione:** Mostra o nasconde il report Pesi principali per argomento, che contiene una tabella di termini per ogni argomento. I termini in ogni tabella sono quelli che hanno i pesi fattoriali più grandi in valore assoluto per ogni argomento. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -3051,7 +3005,7 @@ obj3 << Top Loadings by Topic( 0 );
 
 #### Topic Loadings
 
-**Sintassi:** obj << Topic Loadings( state=0|1 )
+**Sintassi:** obj &lt;&lt; Topic Loadings( state=0|1 )
 
 **Descrizione:** Mostra o nasconde la tabella Pesi argomento, che contiene una matrice dei pesi fattoriali tra gli argomenti per ogni termine. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -3083,7 +3037,7 @@ obj3 << Topic Loadings( 0 );
 
 #### Topic Scatterplot Matrix
 
-**Sintassi:** obj << Topic Scatterplot Matrix( state=0|1 )
+**Sintassi:** obj &lt;&lt; Topic Scatterplot Matrix( state=0|1 )
 
 **Descrizione:** Mostra/nasconde una matrice del grafico a dispersione dei vettori ruotati di scomposizione di valori singolari.
 
@@ -3114,7 +3068,7 @@ obj3 << Topic Scatterplot Matrix( 1 );
 
 #### Topic Scores
 
-**Sintassi:** obj << Topic Scores( state=0|1 )
+**Sintassi:** obj &lt;&lt; Topic Scores( state=0|1 )
 
 **Descrizione:** Mostra o nasconde una matrice di score tra gli argomenti per ogni documento. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -3146,7 +3100,7 @@ obj3 << Topic Scores( 0 );
 
 #### Topic Scores Plots
 
-**Sintassi:** obj << Topic Scores Plots( state=0|1 )
+**Sintassi:** obj &lt;&lt; Topic Scores Plots( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un report che contiene un diagramma degli score degli argomenti per ogni documento. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -3178,7 +3132,7 @@ obj3 << Topic Scores Plots( 0 );
 
 #### Variance Explained by Each Topic
 
-**Sintassi:** obj << Variance Explained by Each Topic( state=0|1 )
+**Sintassi:** obj &lt;&lt; Variance Explained by Each Topic( state=0|1 )
 
 **Descrizione:** Mostra o nasconde una tabella che contiene la varianza spiegata da ogni argomento. La tabella include anche le colonne della percentuale e della percentuale cumulativa della variazione che è spiegata da ogni argomento.
 
@@ -3210,7 +3164,7 @@ Report( obj )["Variance Explained by Each Topic"] << Close( 0 );
 
 #### Word Clouds by Topic
 
-**Sintassi:** obj << Word Clouds by Topic( state=0|1 )
+**Sintassi:** obj &lt;&lt; Word Clouds by Topic( state=0|1 )
 
 **Descrizione:** Mostra o nasconde una matrice di cloud di parole, una per ogni topic.
 
@@ -3246,11 +3200,7 @@ Report( obj )["Word Clouds by Topic"] << Close( 0 );
 
 #### Latent Semantic Analysis
 
-**Sintassi:** obj << Latent Semantic Analysis( Maximum Number of Terms( number ), Minimum Term Frequency( number ), Weighting( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ), Number of Singular Vectors( number ), Centering and Scaling( "Centered and Scaled",|"Centered"|"Uncentered" ) ); 
-
- 
-
-obj << SVD( Maximum Number of Terms( number ), Minimum Term Frequency( number ), Weighting( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ), Number of Singular Vectors( number ), Centering and Scaling( "Centered and Scaled",|"Centered"|"Uncentered" ) )
+**Sintassi:** obj &lt;&lt; Latent Semantic Analysis( Maximum Number of Terms( number ), Minimum Term Frequency( number ), Weighting( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ), Number of Singular Vectors( number ), Centering and Scaling( "Centered and Scaled",|"Centered"|"Uncentered" ) ); obj &lt;&lt; SVD( Maximum Number of Terms( number ), Minimum Term Frequency( number ), Weighting( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ), Number of Singular Vectors( number ), Centering and Scaling( "Centered and Scaled",|"Centered"|"Uncentered" ) )
 
 **Descrizione:** Effettua una scomposizione sparsa di valori singolari della matrice dei termini del documento.
 
@@ -3271,11 +3221,7 @@ obj2 = obj << Latent Semantic Analysis(
 
 #### SVD
 
-**Sintassi:** obj << Latent Semantic Analysis( Maximum Number of Terms( number ), Minimum Term Frequency( number ), Weighting( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ), Number of Singular Vectors( number ), Centering and Scaling( "Centered and Scaled",|"Centered"|"Uncentered" ) ); 
-
- 
-
-obj << SVD( Maximum Number of Terms( number ), Minimum Term Frequency( number ), Weighting( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ), Number of Singular Vectors( number ), Centering and Scaling( "Centered and Scaled",|"Centered"|"Uncentered" ) )
+**Sintassi:** obj &lt;&lt; Latent Semantic Analysis( Maximum Number of Terms( number ), Minimum Term Frequency( number ), Weighting( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ), Number of Singular Vectors( number ), Centering and Scaling( "Centered and Scaled",|"Centered"|"Uncentered" ) ); obj &lt;&lt; SVD( Maximum Number of Terms( number ), Minimum Term Frequency( number ), Weighting( "Binary"|"Ternary"|"Frequency"|"Log Freq"|"TF IDF" ), Number of Singular Vectors( number ), Centering and Scaling( "Centered and Scaled",|"Centered"|"Uncentered" ) )
 
 **Descrizione:** Effettua una scomposizione sparsa di valori singolari della matrice dei termini del documento.
 
@@ -3298,7 +3244,7 @@ obj2 = obj << Latent Semantic Analysis(
 
 #### Cluster Documents
 
-**Sintassi:** obj << Cluster Documents( state=0|1 )
+**Sintassi:** obj &lt;&lt; Cluster Documents( state=0|1 )
 
 **Descrizione:** Mostra/nasconde un&apos;analisi della clusterizzazione gerarchica dei documenti nei dati.
 
@@ -3322,7 +3268,7 @@ obj2 << Cluster Documents( 1 );
 
 #### Cluster Items
 
-**Sintassi:** obj << Cluster Items( state=0|1 )
+**Sintassi:** obj &lt;&lt; Cluster Items( state=0|1 )
 
 **Descrizione:** Mostra/nasconde un&apos;analisi della clusterizzazione gerarchica dei termini nei dati.
 
@@ -3341,7 +3287,7 @@ obj2 << Cluster Items( 1 );
 
 #### Cluster Terms
 
-**Sintassi:** obj << Cluster Terms( state=0|1 )
+**Sintassi:** obj &lt;&lt; Cluster Terms( state=0|1 )
 
 **Descrizione:** Mostra/nasconde un&apos;analisi della clusterizzazione gerarchica dei termini nei dati.
 
@@ -3365,7 +3311,7 @@ obj2 << obj << Cluster Terms( 1 );
 
 #### Cluster Transactions
 
-**Sintassi:** obj << Cluster Transactions( state=0|1 )
+**Sintassi:** obj &lt;&lt; Cluster Transactions( state=0|1 )
 
 **Descrizione:** Mostra/nasconde un&apos;analisi della clusterizzazione gerarchica dei documenti nei dati.
 
@@ -3384,7 +3330,7 @@ obj2 << Cluster Transactions( 1 );
 
 #### Remove
 
-**Sintassi:** obj << Remove
+**Sintassi:** obj &lt;&lt; Remove
 
 **Descrizione:** Rimuove il report SVD dalla finestra del report Explorer del testo.
 
@@ -3409,9 +3355,7 @@ obj2 << Remove;
 
 #### Rotated SVD
 
-**Sintassi:** obj << Topic Analysis( Number of Topics ( number ) )   
-
-obj << Rotated SVD( Number of Topics( number ) )
+**Sintassi:** obj &lt;&lt; Topic Analysis( Number of Topics ( number ) ) obj &lt;&lt; Rotated SVD( Number of Topics( number ) )
 
 **Descrizione:** Effettua una decomposizione ai valori singolari ruotata varimax della matrice dei termini del documento per generare gruppi di termini denominati topic.
 
@@ -3438,7 +3382,7 @@ obj2 << Topic Analysis( Number of Topics( 5 ) );
 
 #### SVD Scatterplot Matrix
 
-**Sintassi:** obj << SVD Scatterplot Matrix( state=0|1, Number of Vectors( number ) )
+**Sintassi:** obj &lt;&lt; SVD Scatterplot Matrix( state=0|1, Number of Vectors( number ) )
 
 **Descrizione:** Mostra/Nasconde una matrice del grafico a dispersione dei vettori di scomposizione di valori singolari dei termini e del documento per ogni diagramma SVD.
 
@@ -3462,7 +3406,7 @@ obj2 << SVD Scatterplot Matrix( 1, Number of Vectors( 8 ) );
 
 #### Save Document Singular Vectors
 
-**Sintassi:** obj << Save Document Singular Vectors(number)
+**Sintassi:** obj &lt;&lt; Save Document Singular Vectors(number)
 
 **Descrizione:** Salva in nuove colonne della tabella di dati il numero specificato di vettori singolari dalla decomposizione ai valori singolari del documento.
 
@@ -3486,7 +3430,7 @@ obj2 << Save Document Singular Vectors( 5 );
 
 #### Save Item SVD
 
-**Sintassi:** obj << Save Item SVD
+**Sintassi:** obj &lt;&lt; Save Item SVD
 
 **Descrizione:** Crea una tabella di dati che contiene un numero di vettori singolari che è possibile specificare per ogni elemento. Questi sono i valori singolari a destra della matrice degli elementi della transazione.
 
@@ -3510,7 +3454,7 @@ obj2 << Save Item SVD( 5 );
 
 #### Save Item Singular Vectors
 
-**Sintassi:** obj << Save Item Singular Vectors
+**Sintassi:** obj &lt;&lt; Save Item Singular Vectors
 
 **Descrizione:** Crea una tabella di dati che contiene un numero di vettori singolari che è possibile specificare per ogni elemento. Questi sono i valori singolari a destra della matrice degli elementi della transazione.
 
@@ -3534,7 +3478,7 @@ obj2 << Save Item Singular Vectors( 5 );
 
 #### Save Singular Vector Formula
 
-**Sintassi:** obj << Save Singular Vector Formula
+**Sintassi:** obj &lt;&lt; Save Singular Vector Formula
 
 **Descrizione:** Salva nella tabella di dati una colonna della formula con valore vettoriale che contiene la decomposizione ai valori singolari del documento. La colonna della formula usa la funzione Text Score.
 
@@ -3558,7 +3502,7 @@ obj2 << Save Singular Vector Formula;
 
 #### Save Term Singular Vectors
 
-**Sintassi:** obj << Save Term Singular Vectors( number )
+**Sintassi:** obj &lt;&lt; Save Term Singular Vectors( number )
 
 **Descrizione:** Salva come colonne in una nuova tabella di dati il numero specificato di vettori singolari dalla decomposizione ai valori singolari dei termini. Ogni riga corrisponde a un termine. Se è già aperta una tabella dei termini, allora le colonne vengono salvate in tale tabella di dati.
 
@@ -3582,7 +3526,7 @@ obj2 << Save Term Singular Vectors( 5 );
 
 #### Save Transaction SVD
 
-**Sintassi:** obj << Save Transaction SVD
+**Sintassi:** obj &lt;&lt; Save Transaction SVD
 
 **Descrizione:** Crea una tabella di dati che contiene un numero di vettori singolari che è possibile specificare per ogni transazione. Questi sono i valori singolari a sinistra della matrice degli elementi della transazione.
 
@@ -3606,7 +3550,7 @@ obj2 << Save Transaction SVD( 5 );
 
 #### Save Transaction Singular Vectors
 
-**Sintassi:** obj << Save Transaction Singular Vectors
+**Sintassi:** obj &lt;&lt; Save Transaction Singular Vectors
 
 **Descrizione:** Crea una tabella di dati che contiene un numero di vettori singolari che è possibile specificare per ogni transazione. Questi sono i valori singolari a sinistra della matrice degli elementi della transazione.
 
@@ -3630,7 +3574,7 @@ obj2 << Save Transaction Singular Vectors( 5 );
 
 #### Select Near Neighbors
 
-**Sintassi:** obj << Select Near Neighbors( number=10 )
+**Sintassi:** obj &lt;&lt; Select Near Neighbors( number=10 )
 
 **Descrizione:** Trova e seleziona i k vicini più prossimi dei punti selezionati nel diagramma SVD del documento. "10", per impostazione predefinita.
 
@@ -3655,9 +3599,7 @@ obj2 << Select Near Neighbors( 8 );
 
 #### Topic Analysis
 
-**Sintassi:** obj << Topic Analysis( Number of Topics ( number ) )   
-
-obj << Rotated SVD( Number of Topics( number ) )
+**Sintassi:** obj &lt;&lt; Topic Analysis( Number of Topics ( number ) ) obj &lt;&lt; Rotated SVD( Number of Topics( number ) )
 
 **Descrizione:** Effettua una decomposizione ai valori singolari ruotata varimax della matrice dei termini del documento per generare gruppi di termini denominati topic.
 
@@ -3707,7 +3649,7 @@ sent = obj << Sentiment Analysis( 1 );
 
 #### Add Feature Words
 
-**Sintassi:** obj << Add Feature Words( list )
+**Sintassi:** obj &lt;&lt; Add Feature Words( list )
 
 **Descrizione:** Aggiunge un elenco di parole da classificare come funzioni.
 
@@ -3725,7 +3667,7 @@ sent << Add Feature Words( {"floss"} );
 
 #### Add Intensifier Exception Words
 
-**Sintassi:** obj << Add Intensifier Exception Words( list )
+**Sintassi:** obj &lt;&lt; Add Intensifier Exception Words( list )
 
 **Descrizione:** Aggiunge un elenco di termini intensificatori da rimuovere dall&apos;analisi.
 
@@ -3744,7 +3686,7 @@ sent << Add Intensifier Exception Words( {"almost"} );
 
 #### Add Intensifier Words
 
-**Sintassi:** obj << Add Intensifier Words( {{<word, multiplier>}, {<word>, <multiplier>}, ... } )
+**Sintassi:** obj &lt;&lt; Add Intensifier Words( {{&lt;word, multiplier&gt;}, {&lt;word&gt;, &lt;multiplier&gt;}, ... } )
 
 **Descrizione:** Aggiunge un elenco di parole da usare come termini intensificatori nell&apos;analisi. I moltiplicatori sono numeri in virgola mobile generalmente utilizzati nel range [-2, 2].
 
@@ -3763,7 +3705,7 @@ sent << Add Intensifier Words( {{"extreme", 1.8}, {"extremely", 1.8}} );
 
 #### Add Negation Exception Words
 
-**Sintassi:** obj << Add Negation Exception Words( list )
+**Sintassi:** obj &lt;&lt; Add Negation Exception Words( list )
 
 **Descrizione:** Aggiunge un elenco di termini di negazione da rimuovere dall&apos;analisi.
 
@@ -3782,7 +3724,7 @@ sent << Add Negation Exception Words( {"without"} );
 
 #### Add Negation Words
 
-**Sintassi:** obj << Add Negation Words( list )
+**Sintassi:** obj &lt;&lt; Add Negation Words( list )
 
 **Descrizione:** Aggiunge un elenco di parole da usare come termini di negazione nell&apos;analisi.
 
@@ -3801,7 +3743,7 @@ sent << Add Negation Words( {"dont"} );
 
 #### Add Sentiment Exception Words
 
-**Sintassi:** obj << Add Sentiment Exception Words( list )
+**Sintassi:** obj &lt;&lt; Add Sentiment Exception Words( list )
 
 **Descrizione:** Aggiunge un elenco di termini sentiment da rimuovere dall&apos;analisi.
 
@@ -3820,7 +3762,7 @@ sent << Add Sentiment Exception Words( {"easy"} );
 
 #### Add Sentiment Words
 
-**Sintassi:** obj << Add Sentiment Words( {{<word>, <score>}, {<word>, <score>}, ... } )
+**Sintassi:** obj &lt;&lt; Add Sentiment Words( {{&lt;word&gt;, &lt;score&gt;}, {&lt;word&gt;, &lt;score&gt;}, ... } )
 
 **Descrizione:** Aggiunge un elenco di parole da usare come termini di sentiment nell&apos;analisi. Gli score sono numeri interi compresi nel range [-100, 100].
 
@@ -3839,7 +3781,7 @@ sent << Add Sentiment Words( {{"difficult", -70}, {"necessary", -20}} );
 
 #### Include Builtin Intensifier Terms
 
-**Sintassi:** obj << Include Builtin Intensifier Terms( state=0|1 )
+**Sintassi:** obj &lt;&lt; Include Builtin Intensifier Terms( state=0|1 )
 
 **Descrizione:** Specifica che i termini intensificatori incorporati sono inclusi nei termini intensificatori utilizzati nella sentiment analysis. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -3858,7 +3800,7 @@ sent << Include Builtin Intensifier Terms( 0 );
 
 #### Include Builtin Negation Terms
 
-**Sintassi:** obj << Include Builtin Negation Terms( state=0|1 )
+**Sintassi:** obj &lt;&lt; Include Builtin Negation Terms( state=0|1 )
 
 **Descrizione:** Specifica che i termini di negazione incorporati sono inclusi nei termini di negazione usati per la sentiment analysis. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -3877,7 +3819,7 @@ sent << Include Builtin Negation Terms( 0 );
 
 #### Include Builtin Sentiment Terms
 
-**Sintassi:** obj << Include Builtin Sentiment Terms( state=0|1 )
+**Sintassi:** obj &lt;&lt; Include Builtin Sentiment Terms( state=0|1 )
 
 **Descrizione:** Specifica che i termini sentiment incorporati sono inclusi nei termini sentiment utilizzati nella sentiment analysis. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -3896,7 +3838,7 @@ sent << Include Builtin Sentiment Terms( 0 );
 
 #### Parse Documents
 
-**Sintassi:** obj << Parse Documents( state=0|1 )
+**Sintassi:** obj &lt;&lt; Parse Documents( state=0|1 )
 
 **Descrizione:** Specifica che è utilizzata l&apos;elaborazione del linguaggio naturale (NLP) per analizzare i documenti. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -3915,7 +3857,7 @@ sent << Parse Documents( 0 );
 
 #### Save Count of Sentiment Scores by Document
 
-**Sintassi:** obj << Save Count of Sentiment Scores by Document
+**Sintassi:** obj &lt;&lt; Save Count of Sentiment Scores by Document
 
 **Descrizione:** Salva una colonna nella tabella di dati per ogni termine di sentiment. Ogni colonna contiene i conteggi delle occorrenze di ogni termine di sentiment in ogni documento.
 
@@ -3933,7 +3875,7 @@ sent << Save Count of Sentiment Scores by Document;
 
 #### Save Document Scores
 
-**Sintassi:** obj << Save Document Scores
+**Sintassi:** obj &lt;&lt; Save Document Scores
 
 **Descrizione:** Salva gli score dei documenti in nuove colonne della tabella di dati.
 
@@ -3951,7 +3893,7 @@ sent << Save Document Scores;
 
 #### Score Column
 
-**Sintassi:** obj << Score Column( column )
+**Sintassi:** obj &lt;&lt; Score Column( column )
 
 **Descrizione:** Specifica una colonna che contiene informazioni note da confrontare con il sentiment calcolato.
 
@@ -3969,7 +3911,7 @@ sent << Score Column( :Gender );
 
 #### Scoring
 
-**Sintassi:** obj << Scoring( "Scalato"|"Min Max" )
+**Sintassi:** obj &lt;&lt; Scoring( "Scalato"|"Min Max" )
 
 **Descrizione:** Imposta lo stile per calcolare lo score complessivo dei documenti. L&apos;opzione Scalato somma gli score delle frasi positive e negative e poi divide la somma per il numero di frasi. L&apos;opzione Min Max è calcolata come la somma dello score massimo positivo e dello score minimo negativo.
 
@@ -3988,7 +3930,7 @@ sent << Scoring( "Min Max" );
 
 #### Show Feature Finder
 
-**Sintassi:** obj << Show Feature Finder( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Feature Finder( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un report che consente di porzionare i sentiment in base alle caratteristiche selezionate. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -4008,7 +3950,7 @@ sent << Show Feature Finder( 0 );
 
 #### Show Intensifier Terms
 
-**Sintassi:** obj << Show Intensifier Terms( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Intensifier Terms( state=0|1 )
 
 **Descrizione:** Mostra o nasconde la tabella dei termini intensificatori. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -4028,7 +3970,7 @@ sent << Show Intensifier Terms( 0 );
 
 #### Show Negation Terms
 
-**Sintassi:** obj << Show Negation Terms( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Negation Terms( state=0|1 )
 
 **Descrizione:** Mostra o nasconde la tabella dei termini di negazione. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -4048,7 +3990,7 @@ sent << Show Negation Terms( 0 );
 
 #### Show Sentiment Cloud
 
-**Sintassi:** obj << Show Sentiment Cloud( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Sentiment Cloud( state=0|1 )
 
 **Descrizione:** Mostra o nasconde il word cloud delle frasi di sentiment.
 
@@ -4066,7 +4008,7 @@ sent << Show Sentiment Cloud( 1 );
 
 #### Show Sentiment Terms
 
-**Sintassi:** obj << Show Sentiment Terms( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Sentiment Terms( state=0|1 )
 
 **Descrizione:** Mostra o nasconde la tabella dei termini di sentiment. Per impostazione predefinita l&apos;opzione è attivata.
 
@@ -4090,7 +4032,7 @@ sent << Show Sentiment Terms( 0 );
 
 #### Term Selection
 
-**Sintassi:** obj << Term Selection( Models( Model( Response Column( <column> ), <other models> )), Model Choice( <index> ))
+**Sintassi:** obj &lt;&lt; Term Selection( Models( Model( Response Column( &lt;column&gt; ), &lt;other models&gt; )), Model Choice( &lt;index&gt; ))
 
 **Descrizione:** Analizza quali termini spiegano meglio le diverse risposte. La selezione dei termini è utile anche per la sentiment analysis quando le risposte sono valutazioni.
 
@@ -4150,7 +4092,7 @@ term = obj << Term Selection(
 
 #### Model Choice
 
-**Sintassi:** obj << Term Selection( Model Choice(<index>) )
+**Sintassi:** obj &lt;&lt; Term Selection( Model Choice(&lt;index&gt;) )
 
 **Descrizione:** Specifica qual è il modello corrente per l&apos;area di riepilogo.
 
@@ -4208,7 +4150,7 @@ term = obj << Term Selection(
 
 #### Models
 
-**Sintassi:** obj << Term Selection( Models( Model( Response Column( <column> ), <other models> )))
+**Sintassi:** obj &lt;&lt; Term Selection( Models( Model( Response Column( &lt;column&gt; ), &lt;other models&gt; )))
 
 **Descrizione:** Specifica le informazioni necessarie a generare un modello.
 
@@ -4266,7 +4208,7 @@ term = obj << Term Selection(
 
 #### Remove
 
-**Sintassi:** obj << Remove
+**Sintassi:** obj &lt;&lt; Remove
 
 **Descrizione:** Rimuove il report Selezione dei termini dalla finestra del report Explorer del testo.
 
@@ -4326,7 +4268,7 @@ term << Remove;
 
 #### Save Document Scores
 
-**Sintassi:** obj << Save Document Scores
+**Sintassi:** obj &lt;&lt; Save Document Scores
 
 **Descrizione:** Salva gli score dei documenti in nuove colonne della tabella di dati.
 
@@ -4385,7 +4327,7 @@ term << Save Document Scores;
 
 #### Save Prediction Formulas
 
-**Sintassi:** obj << Save Prediction Formulas
+**Sintassi:** obj &lt;&lt; Save Prediction Formulas
 
 **Descrizione:** Salva colonne nella tabella di dati che contengono le formule di previsione per l&apos;analisi al momento selezionata.
 
@@ -4444,7 +4386,7 @@ term << Save Prediction Formulas;
 
 #### Save Term Score DTM
 
-**Sintassi:** obj << Save Term Score DTM
+**Sintassi:** obj &lt;&lt; Save Term Score DTM
 
 **Descrizione:** Salva colonne nella tabella di dati per ogni termine rilevante nell&apos;analisi al momento selezionata.
 
@@ -4503,7 +4445,7 @@ term << Save Term Score DTM;
 
 #### Show Term Cloud
 
-**Sintassi:** obj << Show Term Cloud( state=0|1 )
+**Sintassi:** obj &lt;&lt; Show Term Cloud( state=0|1 )
 
 **Descrizione:** Mostra o nasconde un cloud di parole dei termini del coefficiente.
 

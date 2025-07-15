@@ -6,7 +6,7 @@
 
 ### Action
 
-**構文:** obj << Action
+**構文:** obj &lt;&lt; Action
 
 **説明:** 評価する式を挿入するための、プラットフォーム内の汎用トラップドア。プラットフォームに一時的にディスプレイボックスおよびデータテーブルのコンテキストを設定する。
 
@@ -24,7 +24,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**構文:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**構文:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **説明:** 作成されたプリセットをオブジェクトに適用する。保存された設定に合わせてオプションとカスタマイズが更新される。
 
@@ -71,7 +71,7 @@ obj << Apply Preset( "Sample Presets", "Compare Distributions" );
 
 ### Automatic Recalc
 
-**構文:** obj << Automatic Recalc( state=0|1 )
+**構文:** obj &lt;&lt; Automatic Recalc( state=0|1 )
 
 **説明:** データの除外や変更があった場合に分析を自動的にやり直す。Automatic Recalcオプションがオンになっている場合で、データの除外や変更が再計算の前に確実に適用されるようにするには、Wait(0)コマンドを使用すること。
 
@@ -87,7 +87,7 @@ dt << Select Rows( 5 ) << Exclude( 1 );
 
 ### Broadcast
 
-**構文:** obj << Broadcast(message)
+**構文:** obj &lt;&lt; Broadcast(message)
 
 **説明:** メッセージをプラットフォームに一括適用する。個々のオブジェクトから戻される結果がデータテーブルである場合は、可能な限り連結する。その最終的な形式は、Table BoxのSave Combined Tableオプションの結果と同じになるか、またはソース列を使用したConcanateオプションの結果と同じになる。それ以外の場合、結果はリストの形で戻される。
 
@@ -107,7 +107,7 @@ objs[1] << Broadcast( Save Summaries );
 
 ### Column Switcher
 
-**構文:** obj << Column Switcher(column reference, {column reference, ...}, < Title(title) >, < Close Outline(0|1) >, < Retain Axis Settings(0|1) >, < Layout(0|1) >)
+**構文:** obj &lt;&lt; Column Switcher(column reference, {column reference, ...}, &lt; Title(title) &gt;, &lt; Close Outline(0|1) &gt;, &lt; Retain Axis Settings(0|1) &gt;, &lt; Layout(0|1) &gt;)
 
 **説明:** プラットフォームの変数を変更するための設定パネルを追加する。
 
@@ -125,7 +125,7 @@ ColumnSwitcherObject = obj << Column Switcher(
 
 ### Copy ByGroup Script
 
-**構文:** obj << Copy ByGroup Script
+**構文:** obj &lt;&lt; Copy ByGroup Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -148,7 +148,7 @@ obj[1] << Copy ByGroup Script;
 
 ### Copy Script
 
-**構文:** obj << Copy Script
+**構文:** obj &lt;&lt; Copy Script
 
 **説明:** この分析を再現するJSLスクリプトを生成し、クリップボードにコピーする。
 
@@ -163,7 +163,7 @@ obj << Copy Script;
 
 ### Data Table Window
 
-**構文:** obj << Data Table Window
+**構文:** obj &lt;&lt; Data Table Window
 
 **説明:** この分析に使用したデータテーブルのウィンドウを手前に表示する。
 
@@ -178,7 +178,7 @@ obj << Data Table Window;
 
 ### Get By Levels
 
-**構文:** obj << Get By Levels
+**構文:** obj &lt;&lt; Get By Levels
 
 **説明:** By列が指定されている場合、列名をキー、データ値を値とした連想配列を戻す。
 
@@ -195,7 +195,7 @@ biv << Get By Levels;
 
 ### Get ByGroup Script
 
-**構文:** obj << Get ByGroup Script
+**構文:** obj &lt;&lt; Get ByGroup Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -219,7 +219,7 @@ Show( t );
 
 ### Get Container
 
-**構文:** obj << Get Container
+**構文:** obj &lt;&lt; Get Container
 
 **説明:** オブジェクトのコンテンツを含んだコンテナボックスの参照を戻す。
 
@@ -266,7 +266,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Data Table
 
-**構文:** obj << Get Data Table
+**構文:** obj &lt;&lt; Get Data Table
 
 **説明:** データテーブルへの参照を戻す。
 
@@ -282,7 +282,7 @@ Show( N Rows( t ) );
 
 ### Get Group Platform
 
-**構文:** obj << Get Group Platform
+**構文:** obj &lt;&lt; Get Group Platform
 
 **説明:** 該当のプラットフォームがグループに属している場合に、Group Platformオブジェクトを戻す。それ以外の場合はEmpty()を戻す。
 
@@ -299,7 +299,7 @@ group << Layout( "Arrange in Tabs" );
 
 ### Get Script
 
-**構文:** obj << Get Script
+**構文:** obj &lt;&lt; Get Script
 
 **説明:** この分析を再現するスクリプト(JSL)を生成し、それを式として戻す。
 
@@ -315,7 +315,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**構文:** obj << Get Script With Data Table
+**構文:** obj &lt;&lt; Get Script With Data Table
 
 **説明:** この分析を再現するスクリプト(JSL)をデータテーブルへの参照も含めて生成し、それを式として戻す。
 
@@ -331,7 +331,7 @@ Show( t );
 
 ### Get Timing
 
-**構文:** obj << Get Timing
+**構文:** obj &lt;&lt; Get Timing
 
 **説明:** プラットフォームの起動にかかった時間を取得する。
 
@@ -347,7 +347,7 @@ Show( t );
 
 ### Get Web Support
 
-**構文:** obj << Get Web Support
+**構文:** obj &lt;&lt; Get Web Support
 
 **説明:** ディスプレイオブジェクトにおけるインタラクティブHTMLサポートのレベルを数値で戻す。1は、一部または全部の要素がサポートされていることを示し、0は、サポートされないことを示す。
 
@@ -363,7 +363,7 @@ Show( s );
 
 ### Get Where Expr
 
-**構文:** obj << Get Where Expr
+**構文:** obj &lt;&lt; Get Where Expr
 
 **説明:** プラットフォームがBy()またはWhere()を使って起動された場合に、データをサブセットするためのWhere式を戻す。By()やWhere()が使われていない場合はEmpty()を戻す。
 
@@ -400,7 +400,7 @@ dt << Bivariate(
 
 ### Local Data Filter
 
-**構文:** obj << Local Data Filter
+**構文:** obj &lt;&lt; Local Data Filter
 
 **説明:** このプラットフォームに対してのみ有効なフィルタで、データを特定のグループまたは範囲にフィルタリングする。
 
@@ -456,7 +456,7 @@ preset = obj << New Preset();
 
 ### Paste Local Data Filter
 
-**構文:** obj << Paste Local Data Filter
+**構文:** obj &lt;&lt; Paste Local Data Filter
 
 **説明:** クリップボードにあるローカルデータフィルタを現在のレポートに適用する。
 
@@ -477,7 +477,7 @@ dist2 << Paste Local Data Filter;
 
 ### Redo Analysis
 
-**構文:** obj << Redo Analysis
+**構文:** obj &lt;&lt; Redo Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -492,7 +492,7 @@ obj << Redo Analysis;
 
 ### Redo ByGroup Analysis
 
-**構文:** obj << Redo ByGroup Analysis
+**構文:** obj &lt;&lt; Redo ByGroup Analysis
 
 **説明:** 同じ分析をやり直し新しいウィンドウに表示する。データが変更されていると分析結果は異なる。
 
@@ -515,7 +515,7 @@ obj[1] << Redo ByGroup Analysis;
 
 ### Relaunch Analysis
 
-**構文:** obj << Relaunch Analysis
+**構文:** obj &lt;&lt; Relaunch Analysis
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -530,7 +530,7 @@ obj << Relaunch Analysis;
 
 ### Relaunch ByGroup
 
-**構文:** obj << Relaunch ByGroup
+**構文:** obj &lt;&lt; Relaunch ByGroup
 
 **説明:** プラットフォームの起動ウィンドウを開き、レポートを作成した時の設定を表示する。
 
@@ -553,7 +553,7 @@ obj[1] << Relaunch ByGroup;
 
 ### Remove Column Switcher
 
-**構文:** obj << Remove Column Switcher
+**構文:** obj &lt;&lt; Remove Column Switcher
 
 **説明:** プラットフォームに最後に追加された列スイッチャーを削除する。
 
@@ -573,7 +573,7 @@ obj << Remove Column Switcher;
 
 ### Remove Local Data Filter
 
-**構文:** obj << Remove Local Data Filter
+**構文:** obj &lt;&lt; Remove Local Data Filter
 
 **説明:** すでに作成されているローカルデータフィルタを削除し、プラットフォームはデータテーブル内のすべてのデータを使用した状態に戻る。
 
@@ -612,9 +612,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**構文:** obj << Report;
-
-Report( obj )
+**構文:** obj &lt;&lt; Report;Report( obj )
 
 **説明:** レポートオブジェクトへの参照を戻す。
 
@@ -631,7 +629,7 @@ Show( t );
 
 ### Report View
 
-**構文:** obj << Report View( "完全"|"要約" )
+**構文:** obj &lt;&lt; Report View( "完全"|"要約" )
 
 **説明:** レポートビューは、プラットフォームレポートの詳細を表示するかどうかを決定する。Fullはすべての詳細を表示し、Summaryはプラットフォームにより限定されたものだけを表示する。 動作をカスタマイズするため、各ディスプレイボックスは<<Set Summary Behaviorメッセージをサポートする。
 
@@ -646,7 +644,7 @@ obj << Report View( "Summary" );
 
 ### Save ByGroup Script to Data Table
 
-**構文:** Save ByGroup Script to Data Table( <name>, < <<Append Suffix(0|1)>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save ByGroup Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Append Suffix(0|1)&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** 分析を再現するためのJSLスクリプトを作成し、データテーブルにテーブルプロパティとして保存する。スクリプトの名前を指定できる。Append Suffixオプションは、スクリプト名に数字の接尾辞を追加する。これにより、同名のスクリプトが存在していても区別できる。Promptオプションは、ユーザにスクリプト名の指定を促す。Replaceオプションは、同名の既存のスクリプトを置き換える。
 
@@ -669,7 +667,7 @@ obj[1] << Save ByGroup Script to Data Table;
 
 ### Save ByGroup Script to Journal
 
-**構文:** obj << Save ByGroup Script to Journal
+**構文:** obj &lt;&lt; Save ByGroup Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -692,7 +690,7 @@ obj[1] << Save ByGroup Script to Journal;
 
 ### Save ByGroup Script to Script Window
 
-**構文:** obj << Save ByGroup Script to Script Window
+**構文:** obj &lt;&lt; Save ByGroup Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -715,7 +713,7 @@ obj[1] << Save ByGroup Script to Script Window;
 
 ### Save Script for All Objects
 
-**構文:** obj << Save Script for All Objects
+**構文:** obj &lt;&lt; Save Script for All Objects
 
 **説明:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -730,7 +728,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**構文:** obj << Save Script for All Objects To Data Table( <name> )
+**構文:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **説明:** すべてのレポートオブジェクトを再現するスクリプトを現在のデータテーブルに保存する。このオプションは、ウィンドウ内にレポートが複数ある場合に便利。作成されるスクリプトの名前は、引用符で囲んで指定しない限り、1つ目のプラットフォーム名となる。
 
@@ -774,7 +772,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**構文:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**構文:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **説明:** この分析を再現するJSLスクリプトを生成し、データテーブルのテーブルプロパティとして保存する。
 
@@ -789,7 +787,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**構文:** obj << Save Script to Journal
+**構文:** obj &lt;&lt; Save Script to Journal
 
 **説明:** この分析を再現するJSLスクリプトを生成し、ジャーナルにそのスクリプトのボタンを追加する。
 
@@ -804,7 +802,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**構文:** obj << Save Script to Report
+**構文:** obj &lt;&lt; Save Script to Report
 
 **説明:** この分析を再現するJSLスクリプトを生成し、レポートウィンドウに表示する。分析手順の記録を結果と一緒に残せる。
 
@@ -819,7 +817,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**構文:** obj << Save Script to Script Window
+**構文:** obj &lt;&lt; Save Script to Script Window
 
 **説明:** この分析を再現するJSLスクリプトを生成し、現在のスクリプトウィンドウに表示する。
 
@@ -899,7 +897,7 @@ dt << Distribution(
 
 ### Sync to Data Table Changes
 
-**構文:** obj << Sync to Data Table Changes
+**構文:** obj &lt;&lt; Sync to Data Table Changes
 
 **説明:** 除外やデータの変更が行われた場合に同期する。
 
@@ -916,7 +914,7 @@ dist << Sync To Data Table Changes;
 
 ### Title
 
-**構文:** obj << Title( "new title" )
+**構文:** obj &lt;&lt; Title( "new title" )
 
 **説明:** プラットフォームのタイトルを設定する。
 
@@ -931,7 +929,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**構文:** obj << Top Report
+**構文:** obj &lt;&lt; Top Report
 
 **説明:** レポート内のルートノードへの参照を戻す。
 
@@ -948,7 +946,7 @@ Show( t );
 
 ### Transform Column
 
-**構文:** obj = <Platform>(... Transform Column(<name>, Formula(<expression>), [Random Seed(<n>)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
+**構文:** obj = &lt;Platform&gt;(... Transform Column(&lt;name&gt;, Formula(&lt;expression&gt;), [Random Seed(&lt;n&gt;)], [Numeric|Character|Expression], [Continuous|Nominal|Ordinal|Unstructured Text], [column properties]) ...)
 
 **説明:** オブジェクトのローカルコンテキスト(通常はプラットフォーム)内に変換列を作成する。この変換列は、それを作成したプラットフォームの中のみで使用可能。
 
@@ -967,7 +965,7 @@ dt << Distribution(
 
 ### View Web XML
 
-**構文:** obj << View Web XML
+**構文:** obj &lt;&lt; View Web XML
 
 **説明:** インタラクティブHTMLレポートの作成に使うXMLコードを戻す。
 
@@ -1003,7 +1001,7 @@ New Window( "Bivariate Equation",
 
 ### By
 
-**構文:** obj << By( column(s) )
+**構文:** obj &lt;&lt; By( column(s) )
 
 **説明:** 変数の水準ごとに1つずつ、複数のレポートを作成する。
 
@@ -1025,7 +1023,7 @@ obj = dt << Scatterplot 3D(
 
 ### Coloring
 
-**構文:** obj << Coloring( column )
+**構文:** obj &lt;&lt; Coloring( column )
 
 **説明:** 指定した変数の値に応じて、マーカーを色分けする。
 
@@ -1042,7 +1040,7 @@ obj = dt << Scatterplot 3D(
 
 ### Columns
 
-**構文:** obj << Columns( column(s) )
+**構文:** obj &lt;&lt; Columns( column(s) )
 
 **説明:** 3次元グラフのX・Y・Z座標に使うための変数。
 
@@ -1056,7 +1054,7 @@ obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Peta
 
 ### Freq
 
-**構文:** obj << Freq( column )
+**構文:** obj &lt;&lt; Freq( column )
 
 **説明:** この列の値を、分析の際に各行の度数として用いる。
 
@@ -1074,7 +1072,7 @@ obj = dt << Scatterplot 3D(
 
 ### Weight
 
-**構文:** obj << Weight( column )
+**構文:** obj &lt;&lt; Weight( column )
 
 **説明:** この列の値を、分析の際に各行の重みとして用いる。
 
@@ -1092,7 +1090,7 @@ obj = dt << Scatterplot 3D(
 
 ### Y
 
-**構文:** obj << Y( column(s) )
+**構文:** obj &lt;&lt; Y( column(s) )
 
 **説明:** 3次元グラフのX・Y・Z座標に使うための変数。
 
@@ -1124,7 +1122,7 @@ obj = dt << Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Peta
 
 ### Biplot Rays
 
-**構文:** obj << Biplot Rays( state=0|1 )
+**構文:** obj &lt;&lt; Biplot Rays( state=0|1 )
 
 **説明:** グラフ上でバイプロット線の表示/非表示を切り替える。主成分の場合はデフォルトでオン。
 
@@ -1140,7 +1138,7 @@ obj << Biplot Rays( 1 );
 
 ### Circle Size
 
-**構文:** obj << Circle Size( number=0.2 )
+**構文:** obj &lt;&lt; Circle Size( number=0.2 )
 
 **説明:** [重み]または[度数]の列が指定されている場合に、また、スクリプトではSized Pointsが指定されている場合に、マーカーサイズを設定する。 デフォルトの値は"0.2"。
 
@@ -1161,7 +1159,7 @@ obj = dt << Scatterplot 3D(
 
 ### Connect Points
 
-**構文:** obj << Connect Points( state=0|1, <group column name> )
+**構文:** obj &lt;&lt; Connect Points( state=0|1, &lt;group column name&gt; )
 
 **説明:** 点をつなぐ線の表示/非表示を切り替える。オプションで点をグループ分けできる。
 
@@ -1176,7 +1174,7 @@ obj << Connect Points( 1, :Species );
 
 ### Drop Line Thickness
 
-**構文:** obj << Drop Line Thickness( fraction=0.03 )
+**構文:** obj &lt;&lt; Drop Line Thickness( fraction=0.03 )
 
 **説明:** 垂線の太さを設定する。 デフォルトの値は"0.03"。
 
@@ -1193,7 +1191,7 @@ obj << Drop Line Thickness( 0.8 );
 
 ### Drop Lines
 
-**構文:** obj << Drop Lines( state=0|1 )
+**構文:** obj &lt;&lt; Drop Lines( state=0|1 )
 
 **説明:** グラフ上の各点から第1変数と第3変数で定義された平面に引いた垂線の表示/非表示を切り替える。
 
@@ -1208,7 +1206,7 @@ obj << Drop Lines( 1 );
 
 ### Ellipsoid Coverage
 
-**構文:** obj << Ellipsoid Coverage( fraction=0.5 )
+**構文:** obj &lt;&lt; Ellipsoid Coverage( fraction=0.5 )
 
 **説明:** 楕円の累積確率を設定する。たとえば0.5に設定すると、データの半分が、密度が高いほうから含められる。 デフォルトの値は"0.5"。
 
@@ -1224,7 +1222,7 @@ obj << Normal Contour Ellipsoids( 1, :Species );
 
 ### Ellipsoid Transparency
 
-**構文:** obj << Ellipsoid Transparency( fraction=0.5 )
+**構文:** obj &lt;&lt; Ellipsoid Transparency( fraction=0.5 )
 
 **説明:** 楕円の透明度を設定する。0は透明、1は不透明。 デフォルトの値は"0.5"。
 
@@ -1240,7 +1238,7 @@ obj << Normal Contour Ellipsoids( 1, :Species );
 
 ### Frame3D
 
-**構文:** obj << Frame3D( <commands passed to Frame3D> )
+**構文:** obj &lt;&lt; Frame3D( &lt;commands passed to Frame3D&gt; )
 
 **説明:** 表示コマンドを3Dプロットに送信する。
 
@@ -1255,7 +1253,7 @@ obj << Frame3D( Set View Zoom( 0.9075 ) );
 
 ### Jitter
 
-**構文:** obj << Jitter( state=0|1 )
+**構文:** obj &lt;&lt; Jitter( state=0|1 )
 
 **説明:** 散布図上で点を少しずらして重なりをなくす。 デフォルトではオン。
 
@@ -1269,11 +1267,11 @@ obj = Scatterplot 3D( Y( :Petal length, :Petal width, :Species ), Jitter( 0 ) );
 
 ### Legend
 
-**構文:** obj << Legend( <Legend Model ID> )
+**構文:** obj &lt;&lt; Legend( &lt;Legend Model ID&gt; )
 
 ### Nonpar Density Contour
 
-**構文:** obj << Nonpar Density Contour( state=0|1, <group column name> )
+**構文:** obj &lt;&lt; Nonpar Density Contour( state=0|1, &lt;group column name&gt; )
 
 **説明:** 点の周りにカーネル密度の等密度面を描く。
 
@@ -1288,7 +1286,7 @@ obj << Nonpar Density Contour( 1, :Species );
 
 ### Nonpar Density Contour Settings
 
-**構文:** obj << Nonpar Density Contour Settings( surface, on=0|1, <quantile>, <transparency>, <color> )
+**構文:** obj &lt;&lt; Nonpar Density Contour Settings( surface, on=0|1, &lt;quantile&gt;, &lt;transparency&gt;, &lt;color&gt; )
 
 **説明:** 等値面の設定
 
@@ -1304,7 +1302,7 @@ obj << Nonpar Density Contour Settings( 1, 1, .5, .6, Green );
 
 ### Normal Contour Ellipsoids
 
-**構文:** obj << Normal Contour Ellipsoids( state=0|1, <group column name> )
+**構文:** obj &lt;&lt; Normal Contour Ellipsoids( state=0|1, &lt;group column name&gt; )
 
 **説明:** 確率楕円体の表示/非表示を切り替える。
 
@@ -1319,7 +1317,7 @@ obj << Normal Contour Ellipsoids( 1, :Species );
 
 ### Principal Components
 
-**構文:** obj << Principal Components( state=0|1 )
+**構文:** obj &lt;&lt; Principal Components( state=0|1 )
 
 **説明:** 主成分分析のレポートを表示し、グラフにバイプロット線を表示する。
 
@@ -1334,7 +1332,7 @@ obj << Principal Components;
 
 ### Remove Prin Comp
 
-**構文:** obj << Remove Prin Comp
+**構文:** obj &lt;&lt; Remove Prin Comp
 
 **説明:** 主成分分析のレポート、および、グラフからバイプロットを削除する。
 
@@ -1351,7 +1349,7 @@ obj << Remove Prin Comp;
 
 ### Rotated Components
 
-**構文:** obj << Rotated Components( PC|ML, ONE|SMC , number, Varimax| Biquartimax| Quartimax|Equamax|Orthomax| Factorparsimax... )
+**構文:** obj &lt;&lt; Rotated Components( PC|ML, ONE|SMC , number, Varimax| Biquartimax| Quartimax|Equamax|Orthomax| Factorparsimax... )
 
 **説明:** 成分のいくつかの要素が座標空間に近づくように成分を回転し、レポートを表示する。第2パラメータは、事前共通性を示す、行列の対角要素を定義するもので、値はSMCまたはONE(主成分)。
 
@@ -1366,7 +1364,7 @@ obj << Rotated Components( PC, ONE, 3, Varimax );
 
 ### Save Prin Components
 
-**構文:** obj << Save Prin Components( number )
+**構文:** obj &lt;&lt; Save Prin Components( number )
 
 **説明:** 主成分スコアを、データテーブルの新しい列に保存する。
 
@@ -1382,7 +1380,7 @@ obj << Save Prin Components( 3 );
 
 ### Save Rotated Components
 
-**構文:** obj << Save Rotated Components
+**構文:** obj &lt;&lt; Save Rotated Components
 
 **説明:** 回転後の主成分スコアを、データテーブルの新しい列に保存する。
 
@@ -1398,7 +1396,7 @@ obj << Save Rotated Components;
 
 ### Show Controls
 
-**構文:** obj << Show Controls( state=0|1 )
+**構文:** obj &lt;&lt; Show Controls( state=0|1 )
 
 **説明:** 散布図の下部にある設定パネルの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1413,7 +1411,7 @@ obj << Show Controls( 1 );
 
 ### Show Points
 
-**構文:** obj << Show Points( state=0|1 )
+**構文:** obj &lt;&lt; Show Points( state=0|1 )
 
 **説明:** 散布図上の点の表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1428,7 +1426,7 @@ obj << Show Points( 1 );
 
 ### Show Ray Labels
 
-**構文:** obj << Show Ray Labels( state=0|1 )
+**構文:** obj &lt;&lt; Show Ray Labels( state=0|1 )
 
 **説明:** バイプロット線のラベルの表示/非表示を切り替える。 デフォルトではオン。
 
@@ -1445,7 +1443,7 @@ obj << Show Ray Labels( 1 );
 
 ### Sized Points
 
-**構文:** obj << Sized Points( state=0|1 )
+**構文:** obj &lt;&lt; Sized Points( state=0|1 )
 
 **説明:** 散布図上の点を拡大/縮小する。
 
@@ -1460,7 +1458,7 @@ obj << Sized Points( 1 );
 
 ### Std Prin Components
 
-**構文:** obj << Std Prin Components( state=0|1 )
+**構文:** obj &lt;&lt; Std Prin Components( state=0|1 )
 
 **説明:** 標準化した主成分分析のレポートを表示し、グラフにバイプロット線を表示する。
 
@@ -1495,11 +1493,7 @@ obj = Scatterplot 3D( Y( :Sepal length, :Sepal width, :Petal length, :Petal widt
 
 #### Add Ellipsoid
 
-**構文:** obj << Add Ellipsoid( 4x4 matrix )
-
-obj << Add Ellipsoid(3x3 cov,3x1 means)
-
-obj << Add Ellipsoid(3x3 corr,3x1 means,3x1 std dev)
+**構文:** obj &lt;&lt; Add Ellipsoid( 4x4 matrix )obj &lt;&lt; Add Ellipsoid(3x3 cov,3x1 means)obj &lt;&lt; Add Ellipsoid(3x3 corr,3x1 means,3x1 std dev)
 
 **説明:** プロットに楕円を描画する。
 
@@ -1522,7 +1516,7 @@ obj << Frame3D(
 
 #### Add Markers
 
-**構文:** obj << Add Markers( [ nx1 X matrix ], [ nx1 Y matrix ], [ nx1 Z matrix ] )
+**構文:** obj &lt;&lt; Add Markers( [ nx1 X matrix ], [ nx1 Y matrix ], [ nx1 Z matrix ] )
 
 **説明:** プロットにn個のマーカーを描画する。
 
@@ -1539,7 +1533,7 @@ obj << Frame3D( Add Markers( [2 3 4], [5 6 7], [1 8 9] ) );
 
 #### Add Vector
 
-**構文:** obj << Add Vector( [ 3xn from matrix ], [ 3xn to matrix ], FromCap( CutOff|Sphere|Point|Feather ), ToCap( CutOff|Sphere|Point|Feather ), Facets( Triangle|Square|Round ), Shaft Color( color ), Shaft Thickness( number ), From Thickness( number ), To Thickness( number ), From Color( number ), To Color( number ) ) )
+**構文:** obj &lt;&lt; Add Vector( [ 3xn from matrix ], [ 3xn to matrix ], FromCap( CutOff|Sphere|Point|Feather ), ToCap( CutOff|Sphere|Point|Feather ), Facets( Triangle|Square|Round ), Shaft Color( color ), Shaft Thickness( number ), From Thickness( number ), To Thickness( number ), From Color( number ), To Color( number ) ) )
 
 **説明:** プロットにベクトルまたは矢印を描画する。
 
@@ -1556,7 +1550,7 @@ obj << Frame3D( Add Vector( [4.5 2 1], [7.5 4 6], FromCap( "Feather" ), ToCap( "
 
 #### Get Axes
 
-**構文:** obj << Get Axes
+**構文:** obj &lt;&lt; Get Axes
 
 **説明:** プロットの軸の表示状態を戻す。
 
@@ -1574,7 +1568,7 @@ Show( s );
 
 #### Get Box
 
-**構文:** obj << Get Box
+**構文:** obj &lt;&lt; Get Box
 
 **説明:** プロットのボックスフレームの表示状態を戻す。
 
@@ -1592,7 +1586,7 @@ Show( s );
 
 #### Get Grab Handles
 
-**構文:** obj << Get Grab Handles
+**構文:** obj &lt;&lt; Get Grab Handles
 
 **説明:** プロットのグラブハンドルの表示状態を戻す。
 
@@ -1610,7 +1604,7 @@ Show( s );
 
 #### Get Graph Size
 
-**構文:** obj << Get Graph Size
+**構文:** obj &lt;&lt; Get Graph Size
 
 **説明:** グラフのサイズを戻す。
 
@@ -1628,7 +1622,7 @@ Show( s );
 
 #### Get Grids
 
-**構文:** obj << Get Grids
+**構文:** obj &lt;&lt; Get Grids
 
 **説明:** プロットのグリッドの表示状態を戻す。
 
@@ -1646,7 +1640,7 @@ Show( s );
 
 #### Get Hide Lights Border
 
-**構文:** obj << Get Hide Lights Border
+**構文:** obj &lt;&lt; Get Hide Lights Border
 
 **説明:** プロットの周りのライト枠の状態を戻す。
 
@@ -1664,7 +1658,7 @@ Show( state );
 
 #### Get Line Scale
 
-**構文:** obj << Get Line Scale
+**構文:** obj &lt;&lt; Get Line Scale
 
 **説明:** プロットのグリッドの線幅を戻す。
 
@@ -1682,7 +1676,7 @@ Show( w );
 
 #### Get Marker Quality
 
-**構文:** obj << Get Marker Quality
+**構文:** obj &lt;&lt; Get Marker Quality
 
 **説明:** プロットのマーカー特性(形状や濃淡などの綺麗さ)を戻す。
 
@@ -1700,7 +1694,7 @@ Show( q );
 
 #### Get Marker Scale
 
-**構文:** obj << Get Marker Scale
+**構文:** obj &lt;&lt; Get Marker Scale
 
 **説明:** プロットのマーカーサイズを戻す。
 
@@ -1718,7 +1712,7 @@ Show( s );
 
 #### Get Marker Transparency
 
-**構文:** obj << Get Marker Transparency
+**構文:** obj &lt;&lt; Get Marker Transparency
 
 **説明:** プロットのマーカーの透明度を戻す。
 
@@ -1736,7 +1730,7 @@ Show( t );
 
 #### Get Rotation
 
-**構文:** obj << Get Rotation
+**構文:** obj &lt;&lt; Get Rotation
 
 **説明:** フレームの現在の回転を戻す。
 
@@ -1754,7 +1748,7 @@ Show( r );
 
 #### Get Text Scale
 
-**構文:** obj << Get Text Scale
+**構文:** obj &lt;&lt; Get Text Scale
 
 **説明:** プロットの軸テキストのテキストサイズを戻す。
 
@@ -1772,7 +1766,7 @@ Show( s );
 
 #### Get View Ortho
 
-**構文:** obj << Get View Ortho
+**構文:** obj &lt;&lt; Get View Ortho
 
 **説明:** プロットにおける平行投影の状態を戻す。
 
@@ -1790,7 +1784,7 @@ Show( o );
 
 #### Get View Perspective
 
-**構文:** obj << Get View Perspective
+**構文:** obj &lt;&lt; Get View Perspective
 
 **説明:** プロットの透視投影を戻す。
 
@@ -1808,7 +1802,7 @@ Show( p );
 
 #### Get View Zoom
 
-**構文:** obj << Get View Zoom
+**構文:** obj &lt;&lt; Get View Zoom
 
 **説明:** プロットの現在のズームを戻す。
 
@@ -1826,7 +1820,7 @@ Show( z );
 
 #### Get Wall Color
 
-**構文:** obj << Get Wall Color
+**構文:** obj &lt;&lt; Get Wall Color
 
 **説明:** プロットの壁の色を戻す。
 
@@ -1844,7 +1838,7 @@ Show( c );
 
 #### Get Walls
 
-**構文:** obj << Get Walls
+**構文:** obj &lt;&lt; Get Walls
 
 **説明:** プロットの壁の表示状態を戻す。
 
@@ -1862,7 +1856,7 @@ Show( s );
 
 #### Get X Axis Color
 
-**構文:** obj << Get X Axis Color
+**構文:** obj &lt;&lt; Get X Axis Color
 
 **説明:** プロットのX軸の色を戻す。
 
@@ -1880,7 +1874,7 @@ Show( c );
 
 #### Get X Axis Label
 
-**構文:** obj << Get X Axis Label
+**構文:** obj &lt;&lt; Get X Axis Label
 
 **説明:** プロットのX軸のラベルを戻す。
 
@@ -1898,7 +1892,7 @@ Show( label );
 
 #### Get Y Axis Color
 
-**構文:** obj << Get Y Axis Color
+**構文:** obj &lt;&lt; Get Y Axis Color
 
 **説明:** プロットのY軸の色を戻す。
 
@@ -1916,7 +1910,7 @@ Show( c );
 
 #### Get Y Axis Label
 
-**構文:** obj << Get Y Axis Label
+**構文:** obj &lt;&lt; Get Y Axis Label
 
 **説明:** プロットのY軸のラベルを戻す。
 
@@ -1934,7 +1928,7 @@ Show( label );
 
 #### Get Z Axis Color
 
-**構文:** obj << Get Z Axis Color
+**構文:** obj &lt;&lt; Get Z Axis Color
 
 **説明:** プロットのZ軸の色を戻す。
 
@@ -1952,7 +1946,7 @@ Show( c );
 
 #### Get Z Axis Label
 
-**構文:** obj << Get Z Axis Label
+**構文:** obj &lt;&lt; Get Z Axis Label
 
 **説明:** プロットのZ軸のラベルを戻す。
 
@@ -1970,7 +1964,7 @@ Show( label );
 
 #### Set Axes
 
-**構文:** obj << Set Axes( state=0|1 )
+**構文:** obj &lt;&lt; Set Axes( state=0|1 )
 
 **説明:** プロットのX、Y、Z軸の表示/非表示を切り替える。デフォルトでは表示。
 
@@ -1987,7 +1981,7 @@ obj << Frame3D( Set Axes( 1 ) );
 
 #### Set Box
 
-**構文:** obj << Set Box( state=0|1 )
+**構文:** obj &lt;&lt; Set Box( state=0|1 )
 
 **説明:** プロットのボックスフレームの表示/非表示を切り替える。デフォルトでは表示。
 
@@ -2004,7 +1998,7 @@ obj << Frame3D( Set Box( 1 ) );
 
 #### Set Graph Size
 
-**構文:** obj << Set Graph Size( x, y )
+**構文:** obj &lt;&lt; Set Graph Size( x, y )
 
 **説明:** グラフのサイズを設定する。
 
@@ -2021,7 +2015,7 @@ obj << Frame3D( Set Graph Size( 700, 800 ) );
 
 #### Set Grids
 
-**構文:** obj << Set Grids( state=0|1 )
+**構文:** obj &lt;&lt; Set Grids( state=0|1 )
 
 **説明:** プロットのグリッドの表示/非表示を切り替える。デフォルトでは表示。
 
@@ -2038,7 +2032,7 @@ obj << Frame3D( Set Grids( 1 ) );
 
 #### Set Hide Lights Border
 
-**構文:** obj << Set Hide Lights Border( state=0|1 )
+**構文:** obj &lt;&lt; Set Hide Lights Border( state=0|1 )
 
 **説明:** プロットの周りのライト枠の表示/非表示を切り替える。デフォルトでは表示。
 
@@ -2055,7 +2049,7 @@ obj << Frame3D( Set Hide Lights Border( 0 ) );
 
 #### Set Line Scale
 
-**構文:** obj << Set Line Scale( number )
+**構文:** obj &lt;&lt; Set Line Scale( number )
 
 **説明:** プロットのグリッドの線幅を設定する。
 
@@ -2072,7 +2066,7 @@ obj << Frame3D( Set Line Scale( 6.5 ) );
 
 #### Set Marker Quality
 
-**構文:** obj << Set Marker Quality( number )
+**構文:** obj &lt;&lt; Set Marker Quality( number )
 
 **説明:** プロットのマーカー特性(形状や濃淡などの綺麗さ)を設定する。
 
@@ -2089,7 +2083,7 @@ obj << Frame3D( Set Marker Scale( 3 ), Set Marker Quality( 0.2625 ) );
 
 #### Set Marker Scale
 
-**構文:** obj << Set Marker Scale( number )
+**構文:** obj &lt;&lt; Set Marker Scale( number )
 
 **説明:** プロットのマーカーサイズを設定する。
 
@@ -2106,7 +2100,7 @@ obj << Frame3D( Set Marker Scale( 3.5 ) );
 
 #### Set Marker Transparency
 
-**構文:** obj << Set Marker Transparency( fraction )
+**構文:** obj &lt;&lt; Set Marker Transparency( fraction )
 
 **説明:** プロットにマーカーの透明度を設定する。
 
@@ -2123,7 +2117,7 @@ obj << Frame3D( Set Marker Transparency( 0.4125 ) );
 
 #### Set Oscillation
 
-**構文:** obj << Set Oscillation( X, Y, Z, duration )
+**構文:** obj &lt;&lt; Set Oscillation( X, Y, Z, duration )
 
 **説明:** プロットの振幅を設定する。
 
@@ -2140,7 +2134,7 @@ obj << Frame3D( Set Rotation( -60, -3, 35 ), Set Oscillation( -54, 0, 38, 100 ) 
 
 #### Set Rotation
 
-**構文:** obj << Set Rotation( X, Y, Z )
+**構文:** obj &lt;&lt; Set Rotation( X, Y, Z )
 
 **説明:** 指定の座標にフレームを回転する。
 
@@ -2157,7 +2151,7 @@ obj << Frame3D( Set Rotation( -60, -3, 35 ) );
 
 #### Set Spin
 
-**構文:** obj << Set Spin(  dx, dy, sx, sy  )
+**構文:** obj &lt;&lt; Set Spin( dx, dy, sx, sy )
 
 **説明:** 指定の軸上でグラフを回転する。dxとdyの値は、ポイント(sx, sy)からどれだけ動かすかの値。
 
@@ -2174,7 +2168,7 @@ obj << Frame3D( Set Spin( .01, .01, 0, 0 ) );
 
 #### Set Text Scale
 
-**構文:** obj << Set Text Scale( number )
+**構文:** obj &lt;&lt; Set Text Scale( number )
 
 **説明:** プロットの軸テキストのテキストサイズを設定する。
 
@@ -2191,7 +2185,7 @@ obj << Frame3D( Set Text Scale( 1.4 ) );
 
 #### Set View Ortho
 
-**構文:** obj << Set View Ortho( state=0|1 )
+**構文:** obj &lt;&lt; Set View Ortho( state=0|1 )
 
 **説明:** プロットを平行投影(直交射影)で表示する。
 
@@ -2208,7 +2202,7 @@ obj << Frame3D( Set View Ortho( 1 ) );
 
 #### Set View Perspective
 
-**構文:** obj << Set View Perspective( fraction )
+**構文:** obj &lt;&lt; Set View Perspective( fraction )
 
 **説明:** プロットの透視投影を設定する。
 
@@ -2225,7 +2219,7 @@ obj << Frame3D( Set View Perspective( 0.275 ) );
 
 #### Set View Zoom
 
-**構文:** obj << Set View Zoom( number )
+**構文:** obj &lt;&lt; Set View Zoom( number )
 
 **説明:** プロットのズームを設定する。
 
@@ -2244,7 +2238,7 @@ obj << Frame3D( Set View Zoom( 2 ) );
 
 #### Set Wall Color
 
-**構文:** obj << Set Wall Color( number )
+**構文:** obj &lt;&lt; Set Wall Color( number )
 
 **説明:** プロットの壁の色を設定する。
 
@@ -2261,7 +2255,7 @@ obj << Frame3D( Set Wall Color( -16775543 ) );
 
 #### Set Walls
 
-**構文:** obj << Set Walls( state=0|1 )
+**構文:** obj &lt;&lt; Set Walls( state=0|1 )
 
 **説明:** プロットの壁の表示/非表示を切り替える。デフォルトでは表示。
 
@@ -2278,7 +2272,7 @@ obj << Frame3D( Set Walls( 1 ) );
 
 #### Set X Axis Color
 
-**構文:** obj << Set X Axis Color( color )
+**構文:** obj &lt;&lt; Set X Axis Color( color )
 
 **説明:** プロットのX軸の色を設定する。
 
@@ -2295,7 +2289,7 @@ obj << Frame3D( Set X Axis Color( 5 ) );
 
 #### Set X Axis Label
 
-**構文:** obj << Set X Axis Label( string )
+**構文:** obj &lt;&lt; Set X Axis Label( string )
 
 **説明:** プロットのX軸のラベルを設定する。
 
@@ -2312,7 +2306,7 @@ obj << Frame3D( Set X Axis Label( "Iris Sepal Length" ) );
 
 #### Set Y Axis Color
 
-**構文:** obj << Set Y Axis Color( color )
+**構文:** obj &lt;&lt; Set Y Axis Color( color )
 
 **説明:** プロットのY軸の色を設定する。
 
@@ -2329,7 +2323,7 @@ obj << Frame3D( Set Y Axis Color( 11 ) );
 
 #### Set Y Axis Label
 
-**構文:** obj << Set Y Axis Label( string )
+**構文:** obj &lt;&lt; Set Y Axis Label( string )
 
 **説明:** プロットのY軸のラベルを設定する。
 
@@ -2346,7 +2340,7 @@ obj << Frame3D( Set Y Axis Label( "Iris Petal Length" ) );
 
 #### Set Z Axis Color
 
-**構文:** obj << Set Z Axis Color( color )
+**構文:** obj &lt;&lt; Set Z Axis Color( color )
 
 **説明:** プロットのZ軸の色を設定する。
 
@@ -2363,7 +2357,7 @@ obj << Frame3D( Set Z Axis Color( "Green" ) );
 
 #### Set Z Axis Label
 
-**構文:** obj << Set Z Axis Label( string )
+**構文:** obj &lt;&lt; Set Z Axis Label( string )
 
 **説明:** プロットのZ軸のラベルを設定する。
 
@@ -2380,7 +2374,7 @@ obj << Frame3D( Set Z Axis Label( "Iris Sepal Width" ) );
 
 #### XAxis
 
-**構文:** obj << XAxis( Min( number ), Max( number ), Inc( number ), Format( ) )
+**構文:** obj &lt;&lt; XAxis( Min( number ), Max( number ), Inc( number ), Format( ) )
 
 **説明:** プロットのX軸の値を設定する。
 
@@ -2397,7 +2391,7 @@ obj << Frame3D( XAxis( Min( 3 ), Max( 10 ) ) );
 
 #### YAxis
 
-**構文:** obj << YAxis( Min( number ), Max( number ), Inc( number ), Format( ) )
+**構文:** obj &lt;&lt; YAxis( Min( number ), Max( number ), Inc( number ), Format( ) )
 
 **説明:** プロットのY軸の値を設定する。
 
@@ -2414,7 +2408,7 @@ obj << Frame3D( YAxis( Min( 1 ), Max( 10 ), Inc( 0.5 ) ) );
 
 #### Z Axis
 
-**構文:** obj << Z Axis( Min( number ), Max( number ), Inc( number ), Format( ) )
+**構文:** obj &lt;&lt; Z Axis( Min( number ), Max( number ), Inc( number ), Format( ) )
 
 **説明:** プロットのZ軸の値を設定する。
 
@@ -2431,7 +2425,7 @@ obj << Frame3D( ZAxis( Min( 1 ), Max( 5 ), Inc( 0.25 ) ) );
 
 #### get light active
 
-**構文:** obj << get light active( light number )
+**構文:** obj &lt;&lt; get light active( light number )
 
 **説明:** プロットを照らす指定のライトのオン/オフの状態を戻す。
 
@@ -2449,7 +2443,7 @@ Show( p );
 
 #### get light color
 
-**構文:** obj << get light color( light number )
+**構文:** obj &lt;&lt; get light color( light number )
 
 **説明:** プロットを照らす指定のライトの色をリスト{red, green, blue}で戻す。
 
@@ -2467,7 +2461,7 @@ Show( c );
 
 #### get light position
 
-**構文:** obj << get light position( light number )
+**構文:** obj &lt;&lt; get light position( light number )
 
 **説明:** プロットを照らす指定のライトの位置をリスト{x, y, z}で戻す。
 
@@ -2485,7 +2479,7 @@ Show( p );
 
 #### set light active
 
-**構文:** obj << set light active( light number, state=0|1 )
+**構文:** obj &lt;&lt; set light active( light number, state=0|1 )
 
 **説明:** プロットを照らす指定のライトをオンにする。
 
@@ -2502,7 +2496,7 @@ obj << Frame3D( Set Hide Lights Border( 0 ), Set Light Active( 4, 1 ) );
 
 #### set light color
 
-**構文:** obj << set light color( light number, red value, green value, blue value )
+**構文:** obj &lt;&lt; set light color( light number, red value, green value, blue value )
 
 **説明:** プロットを照らすライトの色を設定する。
 
@@ -2519,7 +2513,7 @@ obj << Frame3D( Set Hide Lights Border( 0 ), Set Light Color( 2, 240, 50, 70 ) )
 
 #### set light position
 
-**構文:** obj << set light position( light number, X, Y, Z )
+**構文:** obj &lt;&lt; set light position( light number, X, Y, Z )
 
 **説明:** プロットを照らすライトの位置を設定する。
 

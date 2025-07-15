@@ -2,8 +2,6 @@
 
 
 
-## 函数
-
 ### Add
 
 **语法:** y = x0 + x1; y = Add( x0, x1, ... )
@@ -57,7 +55,7 @@ Hex(/* make it printable */ Blob MD5(/* get the hash */
 
 ### Blob Peek
 
-**语法:** blobResult = Blob Peek( blob, offset, <length> )
+**语法:** blobResult = Blob Peek( blob, offset, &lt;length&gt; )
 
 **说明:** 根据给定 blob 的一小部分字节创建新的 blob。offset 参数从零开始计数，因此第一个字节的偏移为零。
 
@@ -87,7 +85,7 @@ Build Information();
 
 ### Caption
 
-**语法:** y = Caption( <{h, v}>, text | remove, <Delayed( seconds )>, <Font(font)>, <Font Size(size)>, <Text Color(color)>, <Back Color(color)>, <Spoken(bool)> )
+**语法:** y = Caption( &lt;{h, v}&gt;, text | remove, &lt;Delayed( seconds )&gt;, &lt;Font(font)&gt;, &lt;Font Size(size)&gt;, &lt;Text Color(color)&gt;, &lt;Back Color(color)&gt;, &lt;Spoken(bool)&gt; )
 
 **说明:** 在 {h, v} 指定的位置显示包含 text 参数指定的文本的说明文字窗口。Delayed( seconds ) 参数设置每个说明文字前面的等待时间（以秒表示）。
 
@@ -123,7 +121,7 @@ Caption(
 
 ### Clipboard Capture
 
-**语法:** clp = Clipboard Capture( box << Copy )
+**语法:** clp = Clipboard Capture( box &lt;&lt; Copy )
 
 **说明:** If the JSL within this function would have normally copied something to the OS Clipboard, it is instead copied to a Clipboard object and returned.
 
@@ -143,7 +141,7 @@ Show( clp << Get Flavor Data( "Text", <<Text ) );
 
 ### Current Journal
 
-**语法:** y = Current Journal( <Project(title|index|box|window)> )
+**语法:** y = Current Journal( &lt;Project(title|index|box|window)&gt; )
 
 **说明:** 返回对当前项目中当前记录的引用（若项目中没有运行脚本则没有项目）。
 
@@ -305,7 +303,7 @@ Disable Proxy Settings( 1 );
 
 ### Divide
 
-**语法:** y = x0 / x1; y = Divide( x0, <x1>, ... )
+**语法:** y = x0 / x1; y = Divide( x0, &lt;x1&gt;, ... )
 
 **说明:** 从第一个参数除以所有的后续参数。参数可以是数字、矩阵或数字列表。当仅使用一个参数调用时，结果将为倒数。
 
@@ -447,11 +445,7 @@ Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
 
 ### Format Pattern
 
-**语法:** s = Format( x, "Format Pattern", pattern, <width>, <dec>)
-
-x = In Format( s, "Format Pattern", pattern, < <<Use Locale(b=1)> )
-
-obj = Format("Format Pattern", pattern, <width>, <dec>)
+**语法:** s = Format( x, "Format Pattern", pattern, &lt;width&gt;, &lt;dec&gt;)x = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )obj = Format("Format Pattern", pattern, &lt;width&gt;, &lt;dec&gt;)
 
 **说明:** 格式模式是定义日期时间格式的字符串，例如“<YYYY></><MM></><DD> <hh><:><mm><:><ss><ampm>”。尖括号中的模式部分称为字段描述符。字段描述符表示一个值（例如“<YYYY>”，这是一个四位数的年份）或其他日期时间文本（例如，“</>”，它是一个特定于语言/区域的日期分隔符）。格式模式使您可以构建 JMP 中未提供的格式。这些格式可用于格式化和输入数据。
 
@@ -589,7 +583,7 @@ Get Clipboard();
 
 ### Get Expr Location
 
-**语法:** Get Expr Location(<expression>, [{"TokenStartLine"|"TokenStartCol"|"TokenStart"|"TokenLength"|"TreeStart"|"TreeEnd"|"TreeLength"}+]
+**语法:** Get Expr Location(&lt;expression&gt;, [{"TokenStartLine"|"TokenStartCol"|"TokenStart"|"TokenLength"|"TreeStart"|"TreeEnd"|"TreeLength"}+]
 
 **说明:** 检索解析表达式中顶部标记的位置。默认调用返回 {the source file, TokenStartLine, TokenStartCol, TokenLength}。
 
@@ -693,7 +687,7 @@ Show( aa );
 
 ### Get Platform Preference
 
-**语法:** Get Platform Preferences( < platformName < ( optionName, ... ) > ... > )
+**语法:** Get Platform Preferences( &lt; platformName &lt; ( optionName, ... ) &gt; ... &gt; )
 
 **说明:** 获取指定的平台首选项。
 
@@ -708,7 +702,7 @@ Get Platform Preferences( Bivariate( Fit Line ), DOE );
 
 ### Get Platform Preferences
 
-**语法:** Get Platform Preferences( < platformName < ( optionName, ... ) > ... > )
+**语法:** Get Platform Preferences( &lt; platformName &lt; ( optionName, ... ) &gt; ... &gt; )
 
 **说明:** 获取指定的平台首选项。
 
@@ -723,7 +717,7 @@ Get Platform Preferences( Bivariate( Fit Line ), DOE );
 
 ### Get Policies
 
-**语法:** Get Policies( <Machine|User|Both> )
+**语法:** Get Policies( &lt;Machine|User|Both&gt; )
 
 **说明:** 返回包含当前策略名称和值的关联数组。
 
@@ -1113,7 +1107,7 @@ New Window( "editor", Script Box( x ) );
 
 ### Load DLL
 
-**语法:** dll = Load DLL( file path | Base Name( file path without extension ), < AutoDeclare( bool | Quiet | Verbose) | Quiet | Verbose )> )
+**语法:** dll = Load DLL( file path | Base Name( file path without extension ), &lt; AutoDeclare( bool | Quiet | Verbose) | Quiet | Verbose )&gt; )
 
 **说明:** 加载指定路径所指向的 DLL。
 
@@ -1150,7 +1144,7 @@ If( Host is( "Windows" ),
 
 ### Log Table Messages
 
-**语法:** Log Table Messages( <On|Off>, <Enable(subject, ...)>, <Disable(subject, ...)>, <Include(msgname, ...)>, <Exclude(msgname, )>
+**语法:** Log Table Messages( &lt;On|Off&gt;, &lt;Enable(subject, ...)&gt;, &lt;Disable(subject, ...)&gt;, &lt;Include(msgname, ...)&gt;, &lt;Exclude(msgname, )&gt;
 
 **说明:** Control logging of data table messages (such as DtMsgClose). By default logging is off, but all subjects are enabled. (If you turn logging on, you do not need to enable the subjects you&apos;re interested in.) Only a subset of all messages are logged. Not available in retail builds.
 
@@ -1213,7 +1207,7 @@ Log Table Messages( Disable( "Table" ) );
 
 ### Mail
 
-**语法:** Mail( "address", "subject", "message", <"attachment filepath"> | { "attachment filepath", ...} )
+**语法:** Mail( "address", "subject", "message", &lt;"attachment filepath"&gt; | { "attachment filepath", ...} )
 
 **说明:** 若操作系统允许，则创建一个指定的传出邮件消息。并不是所有选项都适用于所有操作系统版本。详细信息，请参见帮助。
 
@@ -1228,7 +1222,7 @@ Mail( "test@example.com", "revelation", "JMP is great.", "$SAMPLE_DATA/Big Class
 
 ### Main Menu
 
-**语法:** menu = Main Menu( command, <window name> )
+**语法:** menu = Main Menu( command, &lt;window name&gt; )
 
 **说明:** 执行指定的主菜单命令。
 
@@ -1339,7 +1333,7 @@ Print( tax * Name( "taxable income(2011)" ) );
 
 ### New Clipboard
 
-**语法:** clp = New Clipboard( <<<Get From OS> )
+**语法:** clp = New Clipboard( &lt;&lt;&lt;Get From OS&gt; )
 
 **说明:** Creates a new Clipboard, either empty or with access to the OS clipboard.
 
@@ -1357,7 +1351,7 @@ New Window( "Img", clp << Get Flavor Data( "Graphic" ) )
 
 ### New HTTP Request
 
-**语法:** obj = New HTTP Request(URL(...), Method(...), <Form(<Fields(...)>, <Files(...)>)> | <File(...)> | <Blob(...)> | <JSON(...)>, <QueryString(...)>, <Headers(...)>, <Username(...)>, <Password(...)>)
+**语法:** obj = New HTTP Request(URL(...), Method(...), &lt;Form(&lt;Fields(...)&gt;, &lt;Files(...)&gt;)&gt; | &lt;File(...)&gt; | &lt;Blob(...)&gt; | &lt;JSON(...)&gt;, &lt;QueryString(...)&gt;, &lt;Headers(...)&gt;, &lt;Username(...)&gt;, &lt;Password(...)&gt;)
 
 **说明:** 创建请求以发送至 Web 服务。
 
@@ -1776,7 +1770,7 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ### Polytope Uniform Random
 
-**语法:** points = Polytope Uniform Random( numSamples, A, b, L, U, neq, nle, nge, <nwarm=200>, <nstride=25> )
+**语法:** points = Polytope Uniform Random( numSamples, A, b, L, U, neq, nle, nge, &lt;nwarm=200&gt;, &lt;nstride=25&gt; )
 
 **说明:** 在凸多面体上生成随机的均匀点。numSamples 参数指定要生成的随机点数目。A 参数为约束系数矩阵。B 参数为约束的右侧值。L 和 U 参数分别为变量的下限和上限。neq、mle 和 nge 参数分别为等式约束个数、小于等于约束的个数以及大于等于约束的个数。nwarm 参数为将点写入输出矩阵前的预热重复次数。nstride 参数为写入输出矩阵的各点之间的重复次数。注意: 列出约束时必须先列出等式约束，然后列出小于等于约束，最后列出大于等于约束。
 
@@ -1872,7 +1866,7 @@ Preferences( Graph marker size( "Large" ) );
 
 ### Register Addin
 
-**语法:** Register Addin( uniqueId, homeFolder, <displayName(name)>, <MinJMPVersion(version)>, <MaxJMPVersion(version)>, <LoadsAtStartup(autoLoad)>, <LoadNow(load)> )
+**语法:** Register Addin( uniqueId, homeFolder, &lt;displayName(name)&gt;, &lt;MinJMPVersion(version)&gt;, &lt;MaxJMPVersion(version)&gt;, &lt;LoadsAtStartup(autoLoad)&gt;, &lt;LoadNow(load)&gt; )
 
 **说明:** 注册插件
 
@@ -1957,19 +1951,7 @@ Show( Rummage( Window( dt ), "graph builder", Algorithm( "Basic" ) )[1 :: 3] << 
 
 ### Run Program
 
-**语法:** obj = Run Program(
-
-    Executable( "path/etc.exe" ),
-
-  < Options( {"/a", "/b etc" } ) >,
-
-  < Parameter( optParm ) >,
-
-  < Read Function( Function( {this, optParm}, etc ) | "text" | "blob" ) >,
-
-  < Write Function( Function( {this, optParm}, etc ) ) >
-
-)
+**语法:** obj = Run Program( Executable( "path/etc.exe" ), &lt; Options( {"/a", "/b etc" } ) &gt;, &lt; Parameter( optParm ) &gt;, &lt; Read Function( Function( {this, optParm}, etc ) | "text" | "blob" ) &gt;, &lt; Write Function( Function( {this, optParm}, etc ) ) &gt;)
 
 **说明:** 使用 stdin 和 stdout 控制外部程序。
 
@@ -2094,7 +2076,7 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ### Set Policy
 
-**语法:** Set Policy("PolicyName", <Empty()|#|"value"> )
+**语法:** Set Policy("PolicyName", &lt;Empty()|#|"value"&gt; )
 
 **JMP添加的版本:** 18
 
@@ -2130,7 +2112,7 @@ Preferences( Graph marker size( "Large" ) );
 
 ### Set Toolbar Visibility
 
-**语法:** rc = Set Toolbar Visibility( "toolbar-name" | Default | All, <window-class-name | All>, <True | False> )
+**语法:** rc = Set Toolbar Visibility( "toolbar-name" | Default | All, &lt;window-class-name | All&gt;, &lt;True | False&gt; )
 
 **说明:** 设置给定类别窗口的给定工具栏的可见性。toolbar-name 是工具栏的内部名称。若 Default 作为工具栏名称传入，则指定的窗口类恢复为该类窗口的默认工具栏集。window-class-name 的示例为数据表、脚本、报表和记录。若 window-class-name 为 All，则为所有类别的窗口设置指定工具栏的可见性。
 
@@ -2210,7 +2192,7 @@ Show Addins Dialog();
 
 ### Show Commands
 
-**语法:** Show Commands( <keyword=Builtins> )
+**语法:** Show Commands( &lt;keyword=Builtins&gt; )
 
 **说明:** 创建一个或多个数据表，其中包含有关各种 JSL 组件的信息。keyword 参数确定输出表的内容。为内置运算符和函数指定“内置”（默认值）。为对象的所有可脚本化命令指定“脚本化”。为可脚本化命令的英语和本地化版本指定“翻译”。为与显示框和显示段相关的可脚本化命令指定“显示框”。为可脚本化对象的名称指定“脚本化名称”。为平台名称指定“平台名称”。
 
@@ -2272,7 +2254,7 @@ Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
 
 ### Socket
 
-**语法:** socketHandle = Socket( <STREAM | DGRAM> )
+**语法:** socketHandle = Socket( &lt;STREAM | DGRAM&gt; )
 
 **说明:** 创建可与本机或其他联网计算机进行套接字通信的套接字变量。默认参数为 STREAM。尝试访问您公司的网站。
 
@@ -2317,7 +2299,7 @@ If( rc[2] == "ok",
 
 ### Speak
 
-**语法:** Speak( text, <Wait( sync )> )
+**语法:** Speak( text, &lt;Wait( sync )&gt; )
 
 **说明:** 若操作系统支持，则读出文本。指定可选 Wait(true) 参数会延迟脚本在语音读完之后执行。
 
@@ -2389,7 +2371,7 @@ Unregister Addin( "com.mycompany.myaddin" );
 
 ### Web
 
-**语法:** Web( string, <JMP Window> )
+**语法:** Web( string, &lt;JMP Window&gt; )
 
 **说明:** 在默认 Web 浏览器中打开储存在“string”中的 URL 或文件。可选的第二个参数指定在 JMP 浏览器窗口中打开 HTML。
 
@@ -2434,7 +2416,7 @@ Web( "http://www.jmp.com/" );
 
 ### With Clipboard
 
-**语法:** two = With Clipboard( clp, box << Paste; 1 + 1 )
+**语法:** two = With Clipboard( clp, box &lt;&lt; Paste; 1 + 1 )
 
 **说明:** If the JSL within this function would have normally pasted something from the OS Clipboard, it is instead pasted from the provided Clipboard object.
 

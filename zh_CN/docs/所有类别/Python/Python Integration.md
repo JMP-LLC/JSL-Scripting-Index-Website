@@ -379,7 +379,7 @@ print(jmp.current())
 
 ### eval
 
-**语法:** result = eval(<string>|<Expression>)
+**语法:** result = eval(&lt;string&gt;|&lt;Expression&gt;)
 
 **说明:** 计算参数并返回结果。
 
@@ -398,7 +398,7 @@ print(result)
 
 ### from_dataframe
 
-**语法:** result = jmp.from_dataframe(<library.Dataframe>, allow_copy=<boolean>, allow_csv_fallback=<boolean>)
+**语法:** result = jmp.from_dataframe(&lt;library.Dataframe&gt;, allow_copy=&lt;boolean&gt;, allow_csv_fallback=&lt;boolean&gt;)
 
 **说明:** 从协议兼容逻辑库的数据框返回一个 jmp.DataTable 对象。
 
@@ -544,7 +544,7 @@ print(dt)
 
 ### from_dataframe_using_csv
 
-**语法:** result = jmp.from_dataframe_using_csv(<library.Dataframe>)
+**语法:** result = jmp.from_dataframe_using_csv(&lt;library.Dataframe&gt;)
 
 **说明:** 使用提供的 CSV 转换方法从逻辑库的数据框返回一个 jmp.DataTable 对象。
 
@@ -579,7 +579,7 @@ print(dt)
 
 ### open
 
-**语法:** obj = jmp.open(&apos;file_path&apos; < , visibility=&apos;Invisible | Private&apos; )
+**语法:** obj = jmp.open(&apos;file_path&apos; &lt; , visibility=&apos;Invisible | Private&apos; )
 
 **说明:** 打开位于 file_path 的文件。若该文件是 .jmp 文件或导入到 JMP 数据表的文件，则返回的对象将是 DataTable 对象。否则将返回 True 或 False 来表示成功或失败。可选的可见性参数将控制打开的文件是否在视图中隐藏。“不可见”仅是在视图中隐藏，而仍然出现在最近使用的文件菜单和主窗口中。对于“私有”表，返回的引用是对表的唯一引用，它不会出现在任何文件列表中。
 
@@ -715,7 +715,7 @@ print(pi)
 
 ### run_jsl
 
-**语法:** result = jmp.run_jsl(&apos;JSL script contents&apos; <, echo = True | False | None > )
+**语法:** result = jmp.run_jsl(&apos;JSL script contents&apos; &lt;, echo = True | False | None &gt; )
 
 **说明:** 从 Python 环境中运行 JSL 脚本，包括 JSL Python 接口函数。可选的 echo= 参数（设置为 False 或 None 时）会停止显示的 JSL 源代码回显至日志。对于 Python Send() / Get() 支持的相同 JSL 对象类型，将返回结果。脚本失败或不支持的 JSL 对象类型将返回 None。
 
@@ -894,7 +894,7 @@ jmp.run_jsl("""
 
 #### _do_as_data_source
 
-**语法:** def _do_as_data_source(self) -> jmp.DataSource:
+**语法:** def _do_as_data_source(self) -&gt; jmp.DataSource:
 
 **说明:** Subclasses should override this function to create a connection. The returned connection, in the form of a subclass of jmp.DataSource, enables integration with Query Builder.
 
@@ -950,7 +950,7 @@ New SQL Query(
 
 #### _do_open
 
-**语法:** def _do_open(self) -> jmp.DataTable:
+**语法:** def _do_open(self) -&gt; jmp.DataTable:
 
 **说明:** Subclasses can override this function to open a table directly. This function implements the Open message in JSL (New Data Connector(...) << Open()).
 
@@ -1038,7 +1038,7 @@ New Data Connector(
 
 #### __init__
 
-**语法:** field = jmp.DataConnectorField(type, <default=DEFAULT_VALUE,> <tooltip="TOOLTIP" | None,> <ui_name="UI NAME" | None,> <credential="CREDENTIAL TYPE" | None,> <sensitive=True | False,> <mask_input=True | False>)
+**语法:** field = jmp.DataConnectorField(type, &lt;default=DEFAULT_VALUE,&gt; &lt;tooltip="TOOLTIP" | None,&gt; &lt;ui_name="UI NAME" | None,&gt; &lt;credential="CREDENTIAL TYPE" | None,&gt; &lt;sensitive=True | False,&gt; &lt;mask_input=True | False&gt;)
 
 **说明:** DataConnectorField defines a field.
 
@@ -1267,7 +1267,7 @@ New Data Connector( Type( "Python:__main__:ExampleConnectorType" ) ) << Open();
 
 #### get_schemas
 
-**语法:** def get_schemas(self) -> Sequence[str] | None:
+**语法:** def get_schemas(self) -&gt; Sequence[str] | None:
 
 **说明:** Subclasses can override this function to provide a list of the schemas in the data source. If this function is not overridden or it returns None, the data source is assumed to not support schemas.
 
@@ -1319,7 +1319,7 @@ New SQL Query(
 
 #### get_tables
 
-**语法:** def get_tables(self, schema: str) -> Sequence[str]:
+**语法:** def get_tables(self, schema: str) -&gt; Sequence[str]:
 
 **说明:** Subclasses should override this function to provide a list of the tables in the data source. If schemas are supported, this list should include only the tables under the schema that is passed. If schemas are not supported, the schema parameter should be ignored.
 
@@ -1367,7 +1367,7 @@ New SQL Query(
 
 #### open_table
 
-**语法:** def open_table(self, schema: str, table: str) -> jmp.DataTable | str:
+**语法:** def open_table(self, schema: str, table: str) -&gt; jmp.DataTable | str:
 
 **说明:** Subclasses should override this function to get the table data for the named table. If schemas are not supported, the value of the schema argument can be ignored. The function should return a jmp.DataTable or a string containing a path to a file in a data format supported by JMP.
 
@@ -1460,7 +1460,7 @@ New SQL Query(
 
 #### open_table_with_settings
 
-**语法:** def open_table_with_settings(self, schema: str, table: str, settings: str | None) -> (jmp.DataTable, str | None):
+**语法:** def open_table_with_settings(self, schema: str, table: str, settings: str | None) -&gt; (jmp.DataTable, str | None):
 
 **说明:** 子类可覆盖该函数而不是 open_table 以提供表的打开设置的自定义处理方式。该函数与 open_table 类似，但也会在调用时带有现有配置（若存在）。它必须返回一个数据表，同时还必须返回新配置（若有）；缺失的设置用 None 表示。
 
@@ -1756,9 +1756,7 @@ print(f'Data length of dt[-1] (weight column): {dt[-1].data_length}')
 
 #### display_width
 
-**语法:** col_obj.display_width
-
-col_obj.display_width = <int>
+**语法:** col_obj.display_widthcol_obj.display_width = &lt;int&gt;
 
 **说明:** 更改列的显示宽度。
 
@@ -1795,9 +1793,7 @@ print(f"Updated Data Type of dt['age']: {dt['age'].dtype}")
 
 #### format
 
-**语法:** col_obj.format
-
-col_obj.format = tuple< <string>|<int>, ... >
+**语法:** col_obj.formatcol_obj.format = tuple&lt; &lt;string&gt;|&lt;int&gt;, ... &gt;
 
 **说明:** 获取格式
 
@@ -1839,9 +1835,7 @@ print(dt[3].format)
 
 #### formula
 
-**语法:** col_obj.formula
-
-col_obj.formula = <Expression | string>
+**语法:** col_obj.formulacol_obj.formula = &lt;Expression | string&gt;
 
 **说明:** 在给定 Expression 对象或表示有效 JSL 的字符串的情况下，设置列公式。
 
@@ -1894,9 +1888,7 @@ print(f"Updated Modeling Type of dt['age']: {dt['age'].mtype}")
 
 #### name
 
-**语法:** col_obj.name
-
-col_obj.name = <string>
+**语法:** col_obj.namecol_obj.name = &lt;string&gt;
 
 **说明:** 列名称属性，可读且可设置。
 
@@ -2040,7 +2032,7 @@ print(column2)
 
 #### __init__
 
-**语法:** dt = jmp.DataTable(<name=&apos;table_name&apos;>, <rows=n>, <visibility=&apos;Invisible&apos; | &apos;Private&apos; )
+**语法:** dt = jmp.DataTable(&lt;name=&apos;table_name&apos;&gt;, &lt;rows=n&gt;, &lt;visibility=&apos;Invisible&apos; | &apos;Private&apos; )
 
 **说明:** 创建具有 n 行名称为“table_name”的新数据表。参数和关键字是可选的，除非仅指定了行或参数顺序被颠倒。
 
@@ -2174,7 +2166,7 @@ print(dt)
 
 #### add_rows
 
-**语法:** add_rows(rows, <at=-1>)
+**语法:** add_rows(rows, &lt;at=-1&gt;)
 
 **说明:** 将行添加至 DataTable。rows 是必需的。at 是可选的。若 at 是 0，则在表的开始处插入。若它是 <0，则在表的结尾处插入。否则，若 at 是 m，则在第 m 行（基于 0 的索引）插入。
 
@@ -2192,9 +2184,7 @@ dt.add_rows(2, at=12) # 0-based indexing
 
 #### cell_height
 
-**语法:** dt.cell_height
-
-dt.cell_height = <int>
+**语法:** dt.cell_heightdt.cell_height = &lt;int&gt;
 
 **说明:** 设置每个数据表单元格的显示高度。
 
@@ -2213,7 +2203,7 @@ print(dt.cell_height)
 
 #### close
 
-**语法:** dt.close( <save= True | False>)
+**语法:** dt.close( &lt;save= True | False&gt;)
 
 **说明:** 关闭 DataTable 对象上的方法。与 JSL 类似，若不带参数调用，则默认保存该文件。要放弃文件（例如创建为临时表的文件），为了更清楚，可以使用 dt.close(False) 或 dt.close(save=False)。
 
@@ -2268,9 +2258,7 @@ print(r)
 
 #### name
 
-**语法:** dt.name
-
-dt.name = &apos;string&apos;
+**语法:** dt.namedt.name = &apos;string&apos;
 
 **说明:** name 属性同时是数据表名称的 setter 和 getter。
 
@@ -2303,17 +2291,7 @@ print(f'Number of columns: {dt.ncols}')
 
 #### new_column
 
-**语法:** dt.new_column(  name=&apos;column_name&apos;,
-
-                            dtype=jmp.Numeric | .Character | .RowState | .Expression,
-
-                            mtype=jmp.ModelingType.Continuous | ... | TypeNone
-
-                            dlen=len   cell type&apos;s data length especially for numeric
-
-                                    8(double),4(int32),2(int16),1(int8)
-
-                            where=n insert column after column n
+**语法:** dt.new_column( name=&apos;column_name&apos;, dtype=jmp.Numeric | .Character | .RowState | .Expression, mtype=jmp.ModelingType.Continuous | ... | TypeNone dlen=len cell type&apos;s data length especially for numeric 8(double),4(int32),2(int16),1(int8) where=n insert column after column n
 
 **说明:** 创建新的数据表列，可选地指定名称、列类型、数据长度和建模类型
 
@@ -2377,9 +2355,7 @@ print(f'Number of rows: {dt.nrows}')
 
 #### row_states
 
-**语法:** dt.row_states
-
-dt.row_states = [state1, state2, ..., stateN]
+**语法:** dt.row_statesdt.row_states = [state1, state2, ..., stateN]
 
 **说明:** 为数据表中的所有行设置行状态。
 
@@ -2434,7 +2410,7 @@ print(dt.row_states)
 
 #### save
 
-**语法:** dt.save( < path=&apos;file_path&apos; > )
+**语法:** dt.save( &lt; path=&apos;file_path&apos; &gt; )
 
 **说明:** 使用表名将数据表保存到当前目录。可选的路径参数允许保存到其他位置或名称。
 
@@ -2452,9 +2428,7 @@ dt.save('BC_lowercase.jmp')
 
 #### scripts
 
-**语法:** dt.scripts
-
-dt.scripts = <dict<str : <str | Expression>>>
+**语法:** dt.scriptsdt.scripts = &lt;dict&lt;str : &lt;str | Expression&gt;&gt;&gt;
 
 **说明:** 脚本属性允许读写数据表脚本。
 
@@ -2687,7 +2661,7 @@ print(expr1 == expr3)
 
 #### __init__
 
-**语法:** Expression(jsl=<string>)
+**语法:** Expression(jsl=&lt;string&gt;)
 
 **说明:** 创建新的 Expression 对象。
 
@@ -2744,9 +2718,7 @@ print(expr)
 
 #### jsl
 
-**语法:** expr_obj.jsl
-
-expr_obj.jsl = <string>
+**语法:** expr_obj.jslexpr_obj.jsl = &lt;string&gt;
 
 **说明:** Expression jsl 属性，是可读并且可设置的。
 
@@ -2817,7 +2789,7 @@ print(image1 == image3)
 
 #### __init__
 
-**语法:** jmp.Image(path=<string>)
+**语法:** jmp.Image(path=&lt;string&gt;)
 
 **说明:** 创建新的 Image 对象。
 
@@ -2901,7 +2873,7 @@ print(image1 != image3)
 
 #### __init__
 
-**语法:** prj = jmp.Project(<name=&apos;Project name&apos;>)
+**语法:** prj = jmp.Project(&lt;name=&apos;Project name&apos;&gt;)
 
 **说明:** 创建新的 Project 对象以供访问 JMP 项目和文件。
 
@@ -3089,9 +3061,7 @@ print(rs1 == rs3)
 
 #### __init__
 
-**语法:** jmp.RowState(selected?=<boolean>, hidden?=<booleane>, labeled?=<boolean>, excluded?=<boolean>, color?=<int>, marker?=<int>)
-
-jmp.RowState(value=<int>)
+**语法:** jmp.RowState(selected?=&lt;boolean&gt;, hidden?=&lt;booleane&gt;, labeled?=&lt;boolean&gt;, excluded?=&lt;boolean&gt;, color?=&lt;int&gt;, marker?=&lt;int&gt;)jmp.RowState(value=&lt;int&gt;)
 
 **说明:** 创建新的 RowState 对象。RowState 是一个对象，它包含 JMP 数据表中的行可以具有的六种特征中的任何一种: 已选定、已隐藏、已排除、已添加标签、已着色和已标记。
 
@@ -3148,9 +3118,7 @@ print(rs)
 
 #### color
 
-**语法:** rs_obj.color
-
-rs_obj.color = <int>
+**语法:** rs_obj.colorrs_obj.color = &lt;int&gt;
 
 **说明:** RowState 着色属性，是可读和可设置的。颜色从 0 到 84 之间选择。（0-15 基本色，16-31 深色，32-47 浅色，48-63 极深色，64-79 极浅色，80-84 灰色）
 
@@ -3169,9 +3137,7 @@ print(rs)
 
 #### excluded
 
-**语法:** rs_obj.excluded
-
-rs_obj.excluded = <boolean>
+**语法:** rs_obj.excludedrs_obj.excluded = &lt;boolean&gt;
 
 **说明:** RowState 已排除属性，是可读和可设置的。
 
@@ -3190,9 +3156,7 @@ print(rs)
 
 #### hidden
 
-**语法:** rs_obj.hidden
-
-rs_obj.hidden = <boolean>
+**语法:** rs_obj.hiddenrs_obj.hidden = &lt;boolean&gt;
 
 **说明:** RowState 已隐藏属性，是可读和可设置的。
 
@@ -3211,9 +3175,7 @@ print(rs)
 
 #### labeled
 
-**语法:** rs_obj.labeled
-
-rs_obj.labeled = <boolean>
+**语法:** rs_obj.labeledrs_obj.labeled = &lt;boolean&gt;
 
 **说明:** RowState 已添加标签属性，是可读和可设置的。
 
@@ -3232,9 +3194,7 @@ print(rs)
 
 #### marker
 
-**语法:** rs_obj.marker
-
-rs_obj.marker = <int>
+**语法:** rs_obj.markerrs_obj.marker = &lt;int&gt;
 
 **说明:** RowState 标记属性，是可读和可设置的。标记从 0 到 31 之间选择
 
@@ -3253,9 +3213,7 @@ print(rs)
 
 #### selected
 
-**语法:** rs_obj.selected
-
-rs_obj.selected = <boolean>
+**语法:** rs_obj.selectedrs_obj.selected = &lt;boolean&gt;
 
 **说明:** RowState 已选定属性，是可读和可设置的。
 
@@ -3708,7 +3666,7 @@ print( jmp.here.values() )
 
 #### get_credentials()
 
-**语法:** jmp.live.get_credentials(<credential_name>)
+**语法:** jmp.live.get_credentials(&lt;credential_name&gt;)
 
 **说明:** 在 JMP Live 数据刷新脚本中，返回分配给脚本的具有给定名称的凭证（若未提供名称，则为默认凭证）。返回值是具有“username”、“password”和“key_file_path”键的目录。
 
@@ -4196,7 +4154,7 @@ print(jmp.current())
 
 #### eval
 
-**语法:** result = eval(<string>|<Expression>)
+**语法:** result = eval(&lt;string&gt;|&lt;Expression&gt;)
 
 **说明:** 计算参数并返回结果。
 
@@ -4215,7 +4173,7 @@ print(result)
 
 #### from_dataframe
 
-**语法:** result = jmp.from_dataframe(<library.Dataframe>, allow_copy=<boolean>, allow_csv_fallback=<boolean>)
+**语法:** result = jmp.from_dataframe(&lt;library.Dataframe&gt;, allow_copy=&lt;boolean&gt;, allow_csv_fallback=&lt;boolean&gt;)
 
 **说明:** 从协议兼容逻辑库的数据框返回一个 jmp.DataTable 对象。
 
@@ -4361,7 +4319,7 @@ print(dt)
 
 #### from_dataframe_using_csv
 
-**语法:** result = jmp.from_dataframe_using_csv(<library.Dataframe>)
+**语法:** result = jmp.from_dataframe_using_csv(&lt;library.Dataframe&gt;)
 
 **说明:** 使用提供的 CSV 转换方法从逻辑库的数据框返回一个 jmp.DataTable 对象。
 
@@ -4396,7 +4354,7 @@ print(dt)
 
 #### open
 
-**语法:** obj = jmp.open(&apos;file_path&apos; < , visibility=&apos;Invisible | Private&apos; )
+**语法:** obj = jmp.open(&apos;file_path&apos; &lt; , visibility=&apos;Invisible | Private&apos; )
 
 **说明:** 打开位于 file_path 的文件。若该文件是 .jmp 文件或导入到 JMP 数据表的文件，则返回的对象将是 DataTable 对象。否则将返回 True 或 False 来表示成功或失败。可选的可见性参数将控制打开的文件是否在视图中隐藏。“不可见”仅是在视图中隐藏，而仍然出现在最近使用的文件菜单和主窗口中。对于“私有”表，返回的引用是对表的唯一引用，它不会出现在任何文件列表中。
 
@@ -4532,7 +4490,7 @@ print(pi)
 
 #### run_jsl
 
-**语法:** result = jmp.run_jsl(&apos;JSL script contents&apos; <, echo = True | False | None > )
+**语法:** result = jmp.run_jsl(&apos;JSL script contents&apos; &lt;, echo = True | False | None &gt; )
 
 **说明:** 从 Python 环境中运行 JSL 脚本，包括 JSL Python 接口函数。可选的 echo= 参数（设置为 False 或 None 时）会停止显示的 JSL 源代码回显至日志。对于 Python Send() / Get() 支持的相同 JSL 对象类型，将返回结果。脚本失败或不支持的 JSL 对象类型将返回 None。
 
@@ -4617,7 +4575,7 @@ print( jmp.table('Big Class') )
 
 #### __init__
 
-**语法:** jmpex.R.R( <&apos;rpy2&apos;> )
+**语法:** jmpex.R.R( &lt;&apos;rpy2&apos;&gt; )
 
 **说明:** 用于创建 R 扩展类对象的函数。用于指定 R 支持后端的可选参数。目前仅支持“rpy2”。若未指定参数，则这是默认值。
 

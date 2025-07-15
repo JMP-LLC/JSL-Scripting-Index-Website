@@ -2,11 +2,9 @@
 
 
 
-## 함수
-
 ### Col Shuffle
 
-**구문:** y = Col Shuffle(<byVar, <Excluded( Row State() )>, ...>)
+**구문:** y = Col Shuffle(&lt;byVar, &lt;Excluded( Row State() )&gt;, ...&gt;)
 
 **설명:** 1에서 현재 데이터 테이블의 행 수 사이의 랜덤 정수를 반환합니다. 열 계산식에 사용할 경우 Col Shuffle()은 각 행 번호가 한 번만 나타나도록 행 번호 순서를 랜덤 방식으로 지정합니다. 이 순서는 여러 번 진행되는 실행의 효율을 높이기 위해 내부적으로 캐시됩니다.
 
@@ -49,7 +47,7 @@ dt << New Column( "Col Shuffle for each Sex grouped by Excluded",
 
 ### Make KFold Formula
 
-**구문:** y = Make KFold Formula( folds, Y Columns( cols ), <<Stratification Columns( cols ), <<Grouping Columns( cols ) )
+**구문:** y = Make KFold Formula( folds, Y Columns( cols ), &lt;&lt;Stratification Columns( cols ), &lt;&lt;Grouping Columns( cols ) )
 
 **설명:** 열 계산식에 사용할 경우 folds개 수준의 검증 열을 생성합니다. 이 JSL 함수는 주로 검증 열 생성 플랫폼에서 계산식 열을 생성하는 데 사용됩니다.
 
@@ -85,7 +83,7 @@ dt << New Column( "Stratified KFold",
 
 ### Make Validation Formula
 
-**구문:** y = Make Validation Formula( rates, <<Stratification Columns( cols ), <<Grouping Columns( cols ), <<Cutpoint Column ( col ), <<Cutpoint Batch ID( col ), <<Determine cutpoints using( "Proportions"|"Numbers of Rows"|"Fixed Time or Date"|"Elapsed Time" ), <<Assign Extra Rows( "To Training"|"To Validation"|"To Test" ) )
+**구문:** y = Make Validation Formula( rates, &lt;&lt;Stratification Columns( cols ), &lt;&lt;Grouping Columns( cols ), &lt;&lt;Cutpoint Column ( col ), &lt;&lt;Cutpoint Batch ID( col ), &lt;&lt;Determine cutpoints using( "Proportions"|"Numbers of Rows"|"Fixed Time or Date"|"Elapsed Time" ), &lt;&lt;Assign Extra Rows( "To Training"|"To Validation"|"To Test" ) )
 
 **설명:** 열 계산식에 사용할 경우 2수준 또는 3수준 검증 열을 생성합니다. rates 인수는 각각 훈련, 검증 및 테스트 데이터의 비율을 포함하는 3 x 1 행렬입니다. 이 JSL 함수는 주로 검증 열 생성 플랫폼에서 계산식 열을 생성하는 데 사용됩니다.
 
@@ -145,7 +143,7 @@ dt << New Column( "Validation",
 
 ### Random Beta
 
-**구문:** y = Random Beta( alpha, beta, <theta=0>, <sigma=1> )
+**구문:** y = Random Beta( alpha, beta, &lt;theta=0&gt;, &lt;sigma=1&gt; )
 
 **설명:** 베타 분포에서 난수를 반환합니다.
 
@@ -166,7 +164,7 @@ Show( x, v );
 
 ### Random Beta Binomial
 
-**구문:** y = Random Beta Binomial( n, p, <delta=0> )
+**구문:** y = Random Beta Binomial( n, p, &lt;delta=0&gt; )
 
 **설명:** 성공 확률 p이고 상관 delta이며 시행 횟수가 n인 베타 이항 분포에서 난수를 반환합니다.
 
@@ -275,7 +273,7 @@ Show( x, v );
 
 ### Random ChiSquare
 
-**구문:** y = Random ChiSquare( df, <nonCentrality=0> )
+**구문:** y = Random ChiSquare( df, &lt;nonCentrality=0&gt; )
 
 **설명:** 카이제곱 분포에서 난수를 반환합니다.
 
@@ -338,7 +336,7 @@ Show( x, v );
 
 ### Random F
 
-**구문:** y = Random F( dfnum, dfden, <nonCentrality=0> )
+**구문:** y = Random F( dfnum, dfden, &lt;nonCentrality=0&gt; )
 
 **설명:** F 분포에서 난수를 반환합니다.
 
@@ -359,7 +357,7 @@ Show( x, v );
 
 ### Random Frechet
 
-**구문:** y = Random Frechet( <mu=0>, <sigma=1> )
+**구문:** y = Random Frechet( &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **설명:** Fréchet 분포에서 난수를 반환합니다.
 
@@ -401,7 +399,7 @@ Show( x, v );
 
 ### Random Gamma
 
-**구문:** y = Random Gamma( alpha, <scale=1> )
+**구문:** y = Random Gamma( alpha, &lt;scale=1&gt; )
 
 **설명:** 감마 분포에서 난수를 반환합니다.
 
@@ -422,7 +420,7 @@ Show( x, v );
 
 ### Random Gamma Poisson
 
-**구문:** y = Random Gamma Poisson( lambda, <sigma=1> )
+**구문:** y = Random Gamma Poisson( lambda, &lt;sigma=1&gt; )
 
 **설명:** 모수가 lambda 및 sigma인 감마 Poisson 분포에서 난수를 반환합니다.
 
@@ -443,7 +441,7 @@ Show( x, v );
 
 ### Random GenGamma
 
-**구문:** y = Random GenGamma( <mu=0>, <sigma=1>, <lambda=0> )
+**구문:** y = Random GenGamma( &lt;mu=0&gt;, &lt;sigma=1&gt;, &lt;lambda=0&gt; )
 
 **설명:** 모수가 mu, sigma 및 lambda인 확장된 일반화 감마 분포에서 난수를 반환합니다.
 
@@ -572,7 +570,7 @@ Show( x, v );
 
 ### Random Johnson Sl
 
-**구문:** y = Random Johnson Sl( gamma, delta, theta, <sigma=1> )
+**구문:** y = Random Johnson Sl( gamma, delta, theta, &lt;sigma=1&gt; )
 
 **설명:** Johnson Sl 분포에서 난수를 반환합니다.
 
@@ -614,7 +612,7 @@ Show( x, v );
 
 ### Random LEV
 
-**구문:** y = Random LEV( <mu=0>, <sigma=1> )
+**구문:** y = Random LEV( &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **설명:** LEV 분포에서 난수를 반환합니다.
 
@@ -635,7 +633,7 @@ Show( x, v );
 
 ### Random LogGenGamma
 
-**구문:** y = Random LogGenGamma( <mu=0>, <sigma=1>, <lambda=0> )
+**구문:** y = Random LogGenGamma( &lt;mu=0&gt;, &lt;sigma=1&gt;, &lt;lambda=0&gt; )
 
 **설명:** 모수가 mu, sigma 및 lambda인 로그 일반화 감마 분포에서 난수를 반환합니다.
 
@@ -656,7 +654,7 @@ Show( x, v );
 
 ### Random Logistic
 
-**구문:** y = Random Logistic( <mu=0>, <sigma=1> )
+**구문:** y = Random Logistic( &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **설명:** 로지스틱 분포에서 난수를 반환합니다.
 
@@ -677,7 +675,7 @@ Show( x, v );
 
 ### Random Loglogistic
 
-**구문:** y = Random Loglogistic( <mu=0>, <sigma=1> )
+**구문:** y = Random Loglogistic( &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **설명:** 로그로지스틱 분포에서 난수를 반환합니다.
 
@@ -698,7 +696,7 @@ Show( x, v );
 
 ### Random Lognormal
 
-**구문:** y = Random Lognormal( <mu=0>, <sigma=1> )
+**구문:** y = Random Lognormal( &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **설명:** 위치 모수가 mu이고 척도 모수가 sigma인 로그 정규 분포에서 난수를 반환합니다.
 
@@ -751,7 +749,7 @@ New Window( "Example: Random Lognormal and Empirical Distribution",
 
 ### Random Multivariate Normal
 
-**구문:** y = Random Multivariate Normal( mean, covar, <nrows=1>)
+**구문:** y = Random Multivariate Normal( mean, covar, &lt;nrows=1&gt;)
 
 **설명:** 평균 벡터가 mean인 다변량 정규 분포를 따르는 nrows x p 행렬과 공분산 행렬 covar(양의 준정부호 행렬일 수 있음)를 반환합니다. 여기서 p는 covar의 행 수로 정의됩니다.
 
@@ -814,7 +812,7 @@ New Window( "Example: Neg Binomial Probability",
 
 ### Random Normal
 
-**구문:** y = Random Normal( <mu=0>, <sigma=1> )
+**구문:** y = Random Normal( &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **설명:** 평균 mu 및 표준편차 sigma의 정규 분포에서 난수를 반환합니다.
 
@@ -965,7 +963,7 @@ Random Normal();
 
 ### Random SEV
 
-**구문:** y = Random SEV( <mu=0>, <sigma=1> )
+**구문:** y = Random SEV( &lt;mu=0&gt;, &lt;sigma=1&gt; )
 
 **설명:** SEV 분포에서 난수를 반환합니다.
 
@@ -1025,7 +1023,7 @@ Show( x, v );
 
 ### Random Seed State
 
-**구문:** Random Seed State( <seed state> )
+**구문:** Random Seed State( &lt;seed state&gt; )
 
 **설명:** BLOB 개체에서 난수 시드값 상태를 가져오거나 복원합니다.
 
@@ -1057,11 +1055,7 @@ Random Shuffle( exA );
 
 ### Random Triangular
 
-**구문:** y = Random Triangular( a, b, c );
-
-y = Random Triangular( b, c );
-
-y = Random Triangular( b )
+**구문:** y = Random Triangular( a, b, c );y = Random Triangular( b, c );y = Random Triangular( b )
 
 **설명:** 하한이 a이고 모드가 b이며 상한이 c인 삼각 분포에서 난수를 반환합니다. Random Triangular(b,c)는 Random Triangular(0,b,c)와 동등합니다. Random Triangular(b)는 Random Triangular(0,b,1)과 동등합니다.
 
@@ -1080,7 +1074,7 @@ Show( x, y );
 
 ### Random Uniform
 
-**구문:** y = Random Uniform( <min>, <max> )
+**구문:** y = Random Uniform( &lt;min&gt;, &lt;max&gt; )
 
 **설명:** min과 max 사이의 균등 분포에서 난수를 반환합니다(경계값 포함 안 함).
 
@@ -1112,7 +1106,7 @@ Random Uniform( 1, 10 );
 
 ### Random Weibull
 
-**구문:** y = Random Weibull( beta, <alpha=1> )
+**구문:** y = Random Weibull( beta, &lt;alpha=1&gt; )
 
 **설명:** Weibull 분포에서 난수를 반환합니다.
 
@@ -1255,7 +1249,7 @@ dt << Distribution(
 
 ### Random t
 
-**구문:** y = Random t( df, <nonCentrality=0> )
+**구문:** y = Random t( df, &lt;nonCentrality=0&gt; )
 
 **설명:** t 분포에서 난수를 반환합니다.
 
@@ -1276,7 +1270,7 @@ Show( x, v );
 
 ### Resample Freq
 
-**구문:** Resample Freq( <rate=1>, <column> )
+**구문:** Resample Freq( &lt;rate=1&gt;, &lt;column&gt; )
 
 **설명:** 복원 표집을 위한 빈도 수를 생성하며 붓스트랩 표본에 유용합니다. 인수를 지정하지 않으면 100% 재표집 표본이 생성됩니다. rate 인수는 재표집 비율을 지정합니다. column 인수를 지정할 경우 선택된 표본 크기는 rate에 지정한 열의 합을 곱한 값입니다. rate가 음수이면 빈도 비율이 허용됨을 나타냅니다.
 

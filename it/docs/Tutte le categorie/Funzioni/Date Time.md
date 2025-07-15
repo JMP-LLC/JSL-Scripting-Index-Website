@@ -2,11 +2,9 @@
 
 
 
-## Funzioni
-
 ### Abbrev Date
 
-**Sintassi:** s = Abbrev Date( datetime, <format> )
+**Sintassi:** s = Abbrev Date( datetime, &lt;format&gt; )
 
 **Descrizione:** Restituisce una rappresentazione specifica locale abbreviata di un valore di data e ora.
 
@@ -51,7 +49,7 @@ As Date( Date DMY( 15, 7, 2000 ) );
 
 ### Date Difference
 
-**Sintassi:** delta = Date Difference( dt1, dt2, intervalName, <alignment="start"> )
+**Sintassi:** delta = Date Difference( dt1, dt2, intervalName, &lt;alignment="start"&gt; )
 
 **Descrizione:** Restituisce la differenza in intervalli di due valori di data/ora. I valori supportati di intervalName sono "Anno", "Trimestre", "Mese", "Settimana", "Giorno", "Ora", "Minuto", "Secondo" e "Numerico". Un alignment di "Start" include intervalli completi o parziali, mentre "Actual" include solo intervalli completi. Un alignment di "Fractional" restituisce differenze frazionarie, usando medie per la durata degli intervalli di "Anno", "Trimestre", e "Mese".
 
@@ -86,7 +84,7 @@ Date Difference( Date DMY( 31, 1, 2015 ), Date DMY( 1, 3, 2015 ), "Month", "frac
 
 ### Date Increment
 
-**Sintassi:** d = Date Increment( datetime, intervalName, <incr=1>, <alignment="start"> )
+**Sintassi:** d = Date Increment( datetime, intervalName, &lt;incr=1&gt;, &lt;alignment="start"&gt; )
 
 **Descrizione:** Restituisce un nuovo valore di data/ora aggiungendo incr numero di intervalli. I valori supportati di intervalName sono "Anno", "Trimestre", "Mese", "Settimana", "Giorno", "Ora", "Minuto", "Secondo", e "Numerico". Un alignment di "Start" tronca all&apos;intervallo più vicino prima di aggiungere l&apos;incremento, mentre "Actual" mantiene l&apos;intero input di data/ora. Un alignment di "Fractional" consente valori incr frazionari, usando medie per la durata degli intervalli "Anno", "Trimestre" e "Mese".
 
@@ -196,9 +194,7 @@ v = Days In Month( 2016, 2 );
 
 ### Format
 
-**Sintassi:** s = Format( x, formatString, <options> )
-
-s = Format( x, "Format Pattern", pattern, <options> )
+**Sintassi:** s = Format( x, formatString, &lt;options&gt; )s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
 
 **Descrizione:** Restituisce il numero nel formato specificato. I formati comprendono elementi nella finestra di dialogo Informazioni sulla colonna, come "Migliore" e "h:m:s". Vedere la Guida su un argomento per ulteriori opzioni, tra cui p-value, valuta, data e ora e formati geografici.
 
@@ -244,9 +240,7 @@ Show( Format( 88.54, "Best" ), Format( 88.54, "Best", "Full Precision" ) );
 
 ### Format Date
 
-**Sintassi:** s = Format( x, formatString, <options> )
-
-s = Format( x, "Format Pattern", pattern, <options> )
+**Sintassi:** s = Format( x, formatString, &lt;options&gt; )s = Format( x, "Format Pattern", pattern, &lt;options&gt; )
 
 **Descrizione:** Restituisce il numero nel formato specificato. I formati comprendono elementi nella finestra di dialogo Informazioni sulla colonna, come "Migliore" e "h:m:s". Vedere la Guida su un argomento per ulteriori opzioni, tra cui p-value, valuta, data e ora e formati geografici.
 
@@ -302,7 +296,7 @@ Show( it );
 
 ### Hour
 
-**Sintassi:** hr = Hour( datetime, <12> )
+**Sintassi:** hr = Hour( datetime, &lt;12&gt; )
 
 **Descrizione:** Restituisce l&apos;ora di un valore di data e ora, in modalità 12 ore (12, 1 - 11) o 24 ore (0 - 23).
 
@@ -332,7 +326,7 @@ ISO Year( Today() );
 
 ### In Days
 
-**Sintassi:** y = In Days( <x=1> )
+**Sintassi:** y = In Days( &lt;x=1&gt; )
 
 **Descrizione:** Converte x da un numero di giorni nel numero equivalente di secondi.
 
@@ -347,7 +341,7 @@ In Days( 1.5 );
 
 ### In Hours
 
-**Sintassi:** y = In Hours( <x=1> )
+**Sintassi:** y = In Hours( &lt;x=1&gt; )
 
 **Descrizione:** Converte x da un numero di ore nel numero equivalente di secondi.
 
@@ -362,7 +356,7 @@ In Hours( 0.5 );
 
 ### In Minutes
 
-**Sintassi:** y = In Minutes( <x=1> )
+**Sintassi:** y = In Minutes( &lt;x=1&gt; )
 
 **Descrizione:** Converte x da un numero di minuti nel numero equivalente di secondi.
 
@@ -377,7 +371,7 @@ In Minutes( 1 );
 
 ### In Weeks
 
-**Sintassi:** y = In Weeks( <x=1> )
+**Sintassi:** y = In Weeks( &lt;x=1&gt; )
 
 **Descrizione:** Converte x da un numero di settimane nel numero equivalente di secondi.
 
@@ -392,7 +386,7 @@ In Weeks( 1 );
 
 ### In Years
 
-**Sintassi:** y = In Years( <x=1> )
+**Sintassi:** y = In Years( &lt;x=1&gt; )
 
 **Descrizione:** Converte x da un numero di anni nel numero equivalente di secondi.
 
@@ -407,9 +401,7 @@ In Years( 1 );
 
 ### Informat
 
-**Sintassi:** dt = In Format( s, formatString, < <<Use Locale(b=1)>, < <<Restrict > )
-
-dt = In Format( s, "Format Pattern", pattern, < <<Use Locale(b=1)> )
+**Sintassi:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; )dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
 
 **Descrizione:** Analizza una stringa di un dato formato. Se si tratta di un formato di data e ora, il valore è espresso come se fosse racchiuso in Come data(), restituendo la data nel formato ggmmmaaaa. L&apos;opzione facoltativa <<Restrict utilizzata con il formatString "migliore" consente solo la conversione usando formati interi, decimali e scientifici.
 
@@ -482,7 +474,7 @@ v = Is Leap Year( 2016 );
 
 ### Long Date
 
-**Sintassi:** s = Long Date( datetime, <format> )
+**Sintassi:** s = Long Date( datetime, &lt;format&gt; )
 
 **Descrizione:** Restituisce una rappresentazione specifica locale lunga di un valore di data e ora.
 
@@ -497,7 +489,7 @@ Long Date( Today() );
 
 ### MDYHMS
 
-**Sintassi:** s = MDYHMS( datetime, <format> )
+**Sintassi:** s = MDYHMS( datetime, &lt;format&gt; )
 
 **Descrizione:** Restituisce la rappresentazione di un valore di data e ora ordinata come segue: mese, giorno, anno, ora, minuto, secondo.
 
@@ -557,9 +549,7 @@ Nth Day Of Week in the Month( Date MDY( 11, 28, 2019 ) );
 
 ### Parse Date
 
-**Sintassi:** dt = In Format( s, formatString, < <<Use Locale(b=1)>, < <<Restrict > )
-
-dt = In Format( s, "Format Pattern", pattern, < <<Use Locale(b=1)> )
+**Sintassi:** dt = In Format( s, formatString, &lt; &lt;&lt;Use Locale(b=1)&gt;, &lt; &lt;&lt;Restrict &gt; )dt = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )
 
 **Descrizione:** Analizza una stringa di un dato formato. Se si tratta di un formato di data e ora, il valore è espresso come se fosse racchiuso in Come data(), restituendo la data nel formato ggmmmaaaa. L&apos;opzione facoltativa <<Restrict utilizzata con il formatString "migliore" consente solo la conversione usando formati interi, decimali e scientifici.
 
@@ -647,7 +637,7 @@ Second( Today() );
 
 ### Short Date
 
-**Sintassi:** s = Short Date( datetime, <format> )
+**Sintassi:** s = Short Date( datetime, &lt;format&gt; )
 
 **Descrizione:** Restituisce una rappresentazione specifica locale numerica (GG/MM/AAAA) di un valore di data e ora.
 
@@ -710,7 +700,7 @@ As Date( Today() );
 
 ### Week Of Year
 
-**Sintassi:** d = Week Of Year( datetime, <rule=1> )
+**Sintassi:** d = Week Of Year( datetime, &lt;rule=1&gt; )
 
 **Descrizione:** Restituisce la settimana dell&apos;anno che contiene un valore data-ora usando una delle tre regole. Impostazione predefinita (regola 1), la settimana inizia la domenica con la prima domenica dell&apos;anno nella settimana 2. La settimana 1 sarà una settimana parziale o vuota (come nel 2006). Per la regola 2, la prima domenica è nella settimana 1, con i giorni precedenti nella settimana 0. Per la regola 3, viene restituito il numero della settimana ISO, dove le settimane iniziano di lunedì e la settimana 1 è la prima settimana dell&apos;anno con quattro giorni in quell&apos;anno. Con le settimane ISO, è possibile che i primi o gli ultimi tre giorni dell&apos;anno appartengano al numero di settimana dell&apos;anno vicino.
 

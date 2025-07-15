@@ -6,7 +6,7 @@
 
 ### Create Instance
 
-**構文:** instance = obj << Create Instance( <parameters> )
+**構文:** instance = obj &lt;&lt; Create Instance( &lt;parameters&gt; )
 
 **説明:** モジュールのインスタンスを作成する。パラメータは、モジュールスクリプトで定義されたOnModuleLoad()関数に渡される。
 
@@ -23,7 +23,7 @@ modules[1] << Create Instance;
 
 ### Get Application
 
-**構文:** app = obj << Get Application
+**構文:** app = obj &lt;&lt; Get Application
 
 **説明:** そのモジュールを所有するアプリケーションを取得する。
 

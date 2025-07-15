@@ -6,7 +6,7 @@
 
 ### Blink
 
-**Syntax:** obj << Blink
+**Syntax:** obj &lt;&lt; Blink
 
 **Description:** Blinks the row displayed in the Data Edit Box.
 
@@ -32,7 +32,7 @@ dataedit << Blink;
 
 ### Find
 
-**Syntax:** obj << Find( search term )
+**Syntax:** obj &lt;&lt; Find( search term )
 
 **Description:** Shows the row found by the inputted search term.
 
@@ -58,7 +58,7 @@ dataedit << Find( Contains( :State, "North Carolina" ) );
 
 ### Go to row
 
-**Syntax:** obj << Go to row( row )
+**Syntax:** obj &lt;&lt; Go to row( row )
 
 **Description:** Shows the inputted row in the Data Edit Box.
 
@@ -84,7 +84,7 @@ dataedit << Go To Row( 23 );
 
 ### New Row
 
-**Syntax:** obj << New Row
+**Syntax:** obj &lt;&lt; New Row
 
 **Description:** Creates a new row in the data table and shows that row in the Data Edit Box.
 
@@ -110,7 +110,7 @@ dataedit << New Row;
 
 ### Next
 
-**Syntax:** obj << Next
+**Syntax:** obj &lt;&lt; Next
 
 **Description:** Show the next selected row in the Data Edit Box.
 
@@ -136,7 +136,7 @@ dataedit << Next;
 
 ### Next Selected
 
-**Syntax:** obj << Next Selected
+**Syntax:** obj &lt;&lt; Next Selected
 
 **Description:** From the rows selected, show the next selected row in the Data Edit Box.
 
@@ -163,7 +163,7 @@ dataedit << Next Selected;
 
 ### Prev
 
-**Syntax:** obj << Prev
+**Syntax:** obj &lt;&lt; Prev
 
 **Description:** Show the previous selected row in the Data Edit Box.
 
@@ -190,7 +190,7 @@ dataedit << Prev;
 
 ### Prev Selected
 
-**Syntax:** obj << Prev Selected
+**Syntax:** obj &lt;&lt; Prev Selected
 
 **Description:** From the rows selected, show the previous selected row in the Data Edit Box.
 
@@ -217,7 +217,7 @@ dataedit << Prev Selected;
 
 ### Save
 
-**Syntax:** obj << Save
+**Syntax:** obj &lt;&lt; Save
 
 **Description:** Saves the row values in the Data Edit Box to the data table.
 

@@ -2,8 +2,6 @@
 
 
 
-## 함수
-
 ### And
 
 **구문:** y = x1 & x2; y = And( x1, x2, ... )
@@ -87,7 +85,7 @@ For( i = 1, i <= 10, i++,
 
 ### Filter Each
 
-**구문:** list = Filter Each({<value>, <index>} | {<element>, <index | {row, col}>} | {<key | {key, value}>, <index>} | {<values | {value1, ..., valueN}>, <index>}, list | matrix | associative array | expression | Across( container1, ..., <containerN>, <Count( "Longest" | "Shortest" | "Enforce Equal" | n )> ), <locals list>, body)
+**구문:** list = Filter Each({&lt;value&gt;, &lt;index&gt;} | {&lt;element&gt;, &lt;index | {row, col}&gt;} | {&lt;key | {key, value}&gt;, &lt;index&gt;} | {&lt;values | {value1, ..., valueN}&gt;, &lt;index&gt;}, list | matrix | associative array | expression | Across( container1, ..., &lt;containerN&gt;, &lt;Count( "Longest" | "Shortest" | "Enforce Equal" | n )&gt; ), &lt;locals list&gt;, body)
 
 **설명:** For Each 함수가 수행하는 모든 작업을 수행하고 부울 값 결과에 따라 원래 컨테이너에서 필터링된 값 목록도 반환합니다. 결과 유형은 입력 컨테이너 유형과 매칭됩니다. Matrix 입력의 경우 행렬 크기를 알 수 없으므로 행 벡터 행렬이 반환됩니다.
 
@@ -154,7 +152,7 @@ Trim( s );
 
 ### For Each
 
-**구문:** For Each({<value>, <index>} | {<element>, <index | {row, col}>} | {<key | {key, value}>, <index>} | {<values | {value1, ..., valueN}>, <index>}, list | matrix | associative array | expression | Across( container1, ..., <containerN>, <Count( "Longest" | "Shortest" | "Enforce Equal" | n )> ), <locals list>, body)
+**구문:** For Each({&lt;value&gt;, &lt;index&gt;} | {&lt;element&gt;, &lt;index | {row, col}&gt;} | {&lt;key | {key, value}&gt;, &lt;index&gt;} | {&lt;values | {value1, ..., valueN}&gt;, &lt;index&gt;}, list | matrix | associative array | expression | Across( container1, ..., &lt;containerN&gt;, &lt;Count( "Longest" | "Shortest" | "Enforce Equal" | n )&gt; ), &lt;locals list&gt;, body)
 
 **설명:** 각 반복에서 값, 요소 또는 키를 제공하여 목록, 행렬, 연관 배열 또는 표현식 컨테이너를 반복합니다. 각 반복에 인덱스 번호도 사용할 수 있습니다. 연관 배열 컨테이너의 경우 두 항목 목록을 사용하여 키와 값에 액세스할 수 있습니다. 행렬 컨테이너의 경우 기본적으로 선형 인덱스가 제공되지만 두 항목 목록을 사용하여 행 및 열 인덱스에 액세스할 수 있습니다. 이러한 기호는 기본 제공 로컬 블록과 함께 루프 본문 내에만 제공됩니다. 첫 번째 반복 기호가 설정된 후 초기화되는 로컬 목록도 제공할 수 있습니다.
 
@@ -250,7 +248,7 @@ For Each( {element, index}, 10 :: 15, Show( element, index ) );
 
 ### For Each Row
 
-**구문:** y = For Each Row( <dt>, body )
+**구문:** y = For Each Row( &lt;dt&gt;, body )
 
 **설명:** 현재 데이터 테이블의 각 행에 대해 인수에 있는 표현식을 반복적으로 실행합니다.
 
@@ -266,7 +264,7 @@ For Each Row( :height = -:height );
 
 ### If
 
-**구문:** y = If( condition1, result1, <condition2, result2>, ..., <elseResult> )
+**구문:** y = If( condition1, result1, &lt;condition2, result2&gt;, ..., &lt;elseResult&gt; )
 
 **설명:** 각 인수 쌍의 첫 번째 인수를 평가하고 결과가 0이 되지 않는 첫 번째 condition 인수에 해당하는 result 표현식의 평가 결과를 반환합니다. condition 인수는 순서대로 평가됩니다. condition 인수가 모두 0이 되면 선택적인 elseResult가 평가된 후 그 결과가 반환됩니다. elseResult가 지정되지 않은 경우 조건이 모두 true가 아니면 결측값이 반환됩니다. condition 인수가 모두 결측값이 되면 결측값이 반환됩니다.
 
@@ -284,7 +282,7 @@ If( Random Uniform() < 0.5,
 
 ### IfMZ
 
-**구문:** y = IfMZ( condition1, result1, <condition2, result2>, ..., <elseResult> )
+**구문:** y = IfMZ( condition1, result1, &lt;condition2, result2&gt;, ..., &lt;elseResult&gt; )
 
 **설명:** 각 인수 쌍의 첫 번째 인수를 평가하고 결과가 0이 되지 않는 첫 번째 condition 인수에 해당하는 result 표현식의 평가 결과를 반환합니다. condition 인수는 순서대로 평가됩니다. condition 인수가 모두 0 또는 결측값이 되면 선택적인 elseResult가 평가된 후 그 결과가 반환됩니다. elseResult가 지정되지 않은 경우 조건이 모두 true가 아니면 결측값이 반환됩니다. IfMZ()는 평가되는 condition 인수의 결측값이 0으로 처리되는 If()와 동등합니다.
 
@@ -304,7 +302,7 @@ Show( If( x == 1, 10, x == 2, 20, 30 ) );
 
 ### IfMax
 
-**구문:** y = IfMax( expr1, result1, expr2, result2, ..., <allMissingResult> )
+**구문:** y = IfMax( expr1, result1, expr2, result2, ..., &lt;allMissingResult&gt; )
 
 **설명:** 인수의 모든 쌍을 비교하여 가장 큰 인수에 해당하는 결과를 반환합니다. 동률이 존재하면 첫번째 최대값에 해당하는 결과를 반환합니다. 비교를 위한 모든 인수가 결측이면 마지막 결과를 반환합니다. 비교를 위한 인수의 표현식 결과는 숫자이어야 합니다.
 
@@ -322,7 +320,7 @@ highestScorer = IfMax( TomScore, "Tom", JonScore, "Jon", TimScore, "Tim", "Noone
 
 ### IfMin
 
-**구문:** y = IfMin( expr1, result1, expr2, result2, ..., <allMissingResult> )
+**구문:** y = IfMin( expr1, result1, expr2, result2, ..., &lt;allMissingResult&gt; )
 
 **설명:** 인수의 모든 쌍을 비교하여 가장 작은 인수에 해당하는 결과를 반환합니다. 동률이 존재하면 첫번째 최소값에 해당하는 결과를 반환합니다. 비교를 위한 모든 인수가 결측이면 마지막 결과를 반환합니다. 비교를 위한 인수의 표현식 결과는 숫자이어야 합니다.
 
@@ -340,11 +338,7 @@ lowestScorer = IfMin( TomScore, "Tom", JonScore, "Jon", TimScore, "Tim", "Noone"
 
 ### Interpolate
 
-**구문:** y = Interpolate(x|xmatrix|xlist, x1, y1, x2, y2);
-
-y = Interpolate(x | xmatrix | xlist, xmatrix, ymatrix);
-
-z = Interpolate({ x, y }, xvector, yvector, zmatrix)
+**구문:** y = Interpolate(x|xmatrix|xlist, x1, y1, x2, y2);y = Interpolate(x | xmatrix | xlist, xmatrix, ymatrix);z = Interpolate({ x, y }, xvector, yvector, zmatrix)
 
 **설명:** x가 사이에 있고 해당 yi 인수를 선형으로 보간하는 xi 인수를 찾습니다. xi 인수는 순서대로 지정해야 합니다.
 
@@ -745,7 +739,7 @@ OrMZ( 1 < 2, 3 < 2 );
 
 ### Return
 
-**구문:** Return(<Expr>, ..., <ExprN>)
+**구문:** Return(&lt;Expr&gt;, ..., &lt;ExprN&gt;)
 
 **설명:** 사용자 정의 함수에서 표현식 값을 반환합니다.
 
@@ -794,9 +788,7 @@ Show( f( 7, 15 ) );
 
 ### Step
 
-**구문:** y = Step( x, x1, y1, x2, y2, ... )
-
-y = Step( x, [x1, x2, ...], [y1, y2, ...] )
+**구문:** y = Step( x, x1, y1, x2, y2, ... )y = Step( x, [x1, x2, ...], [y1, y2, ...] )
 
 **설명:** xi가 x 인수보다 작거나 같음을 충족하는 가장 큰 xi 값에 해당하는 yi 인수를 반환합니다. xi 인수는 순서대로 지정해야 합니다.
 
@@ -829,7 +821,7 @@ For( i = 1, i <= 10, i++,
 
 ### Transform Each
 
-**구문:** list = Transform Each({<value>, <index>} | {<element>, <index | {row, col}>} | {<key | {key, value}>, <index>} | {<values | {value1, ..., valueN}>, <index>}, list | matrix | associative array | expression | Across( container1, ..., <containerN>, <Count( "Longest" | "Shortest" | "Enforce Equal" | n )> ), <Output( "List" | "Matrix" | "Associative Array" | "Expression", <expr head name> )>, <locals list>, body)
+**구문:** list = Transform Each({&lt;value&gt;, &lt;index&gt;} | {&lt;element&gt;, &lt;index | {row, col}&gt;} | {&lt;key | {key, value}&gt;, &lt;index&gt;} | {&lt;values | {value1, ..., valueN}&gt;, &lt;index&gt;}, list | matrix | associative array | expression | Across( container1, ..., &lt;containerN&gt;, &lt;Count( "Longest" | "Shortest" | "Enforce Equal" | n )&gt; ), &lt;Output( "List" | "Matrix" | "Associative Array" | "Expression", &lt;expr head name&gt; )&gt;, &lt;locals list&gt;, body)
 
 **설명:** For Each 함수가 수행하는 모든 작업을 수행하고 각 반복의 결과가 포함된 컨테이너도 반환합니다. 기본적으로 입력 컨테이너 유형과 매칭되는 컨테이너를 반환하지만 Output 인수를 사용하여 변경할 수 있습니다. List 또는 Expression 출력의 경우 결과가 없으면 Empty()가 사용되고, Matrix 출력의 경우 결과가 없거나 결과가 숫자가 아니면 숫자 결측값이 사용됩니다. Associative Array 출력의 경우에는 결과가 없으면 키가 존재하지 않습니다. Continue()를 사용하면 해당 반복에 대해 값을 반환하지 않는 것과 같습니다.
 

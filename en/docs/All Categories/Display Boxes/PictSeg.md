@@ -6,7 +6,7 @@
 
 ### Bounds
 
-**Syntax:** obj << Bounds( left(value), right(value), top(value), bottom(value) )
+**Syntax:** obj &lt;&lt; Bounds( left(value), right(value), top(value), bottom(value) )
 
 **Description:** Sets the boundaries of the PictSeg in axes coordinates.
 
@@ -26,7 +26,7 @@ imgSeg << bounds( Left( 0 ), Right( 100 ), top( 100 ), bottom( 0 ) );
 
 ### Contrast
 
-**Syntax:** obj << filter("contrast")
+**Syntax:** obj &lt;&lt; filter("contrast")
 
 **Description:** Applies contrast to the image in the PictSeg. A positive value makes the image brighter, a negative value makes the image darker. Useful value is -10 to 10.
 
@@ -48,7 +48,7 @@ imgSeg << Filter( "contrast", 3 );
 
 ### Crop
 
-**Syntax:** obj << Crop
+**Syntax:** obj &lt;&lt; Crop
 
 **Description:** Crops the PictSeg to the specified size, removing any portion of the image outside the specified bounds. The order is implied as left, top, right, bottom. This might cause the image to be distorted as the aspect ratio is not preserved.
 
@@ -71,7 +71,7 @@ imgSeg << Crop( 10, 90, 90, 10 );
 
 ### Despeckle
 
-**Syntax:** obj << filter("despeckle")
+**Syntax:** obj &lt;&lt; filter("despeckle")
 
 **Description:** Applies a despeckling filter to the image in the PictSeg, to remove noise.
 
@@ -93,7 +93,7 @@ imgSeg << Filter( "despeckle" );
 
 ### Edge
 
-**Syntax:** obj << filter("edge")
+**Syntax:** obj &lt;&lt; filter("edge")
 
 **Description:** Applies an edge detection filter to the image in the PictSeg. Edges are drawn as black, everything else becomes white.
 
@@ -115,7 +115,7 @@ imgSeg << Filter( "edge" );
 
 ### Enhance
 
-**Syntax:** obj << filter("enhance")
+**Syntax:** obj &lt;&lt; filter("enhance")
 
 **Description:** Applies an enhancement filter to the image in the PictSeg, making the image appear crisper.
 
@@ -137,7 +137,7 @@ imgSeg << Filter( "enhance" );
 
 ### Fill Graph
 
-**Syntax:** obj << Fill Graph
+**Syntax:** obj &lt;&lt; Fill Graph
 
 **Description:** Sets the bounds to be the extents of the axes, causing the PictSeg to fill the graph. This might cause the image to be distorted as the aspect ratio is not preserved.
 
@@ -157,7 +157,7 @@ imgSeg << fill graph;
 
 ### Flip both
 
-**Syntax:** obj << flip both
+**Syntax:** obj &lt;&lt; flip both
 
 **Description:** Flips the image in the PictSeg in both a vertical and horizontal direction.
 
@@ -179,7 +179,7 @@ imgSeg << flip both;
 
 ### Flip horizontal
 
-**Syntax:** obj << flip horizontal
+**Syntax:** obj &lt;&lt; flip horizontal
 
 **Description:** Flips the image in the PictSeg in a horizontal direction.
 
@@ -201,7 +201,7 @@ imgSeg << flip horizontal;
 
 ### Flip vertical
 
-**Syntax:** obj << flip vertical
+**Syntax:** obj &lt;&lt; flip vertical
 
 **Description:** Flips the image in the PictSeg in a vertical direction.
 
@@ -223,7 +223,7 @@ imgSeg << flip vertical;
 
 ### Gamma
 
-**Syntax:** obj << filter("gamma")
+**Syntax:** obj &lt;&lt; filter("gamma")
 
 **Description:** Adjusts the gamma in the image in the PictSeg. Useful range is 0 to 10. A value of 0 to 1, decreases the gamma. A value greater than 1 increases the gamma.
 
@@ -245,7 +245,7 @@ imgSeg << Filter( "gamma", 1.5 );
 
 ### Gaussian Blur
 
-**Syntax:** obj << filter("gaussian blur", radius, sigma)
+**Syntax:** obj &lt;&lt; filter("gaussian blur", radius, sigma)
 
 **Description:** Applies a blur to the image in the PictSeg. Useful range for radius is 0 to 5.
 
@@ -267,7 +267,7 @@ imgSeg << Filter( "gaussian blur", 0.0, 1.0 );
 
 ### Get Bounds
 
-**Syntax:** {left, right, top, bottom} = obj << Get Bounds
+**Syntax:** {left, right, top, bottom} = obj &lt;&lt; Get Bounds
 
 **Description:** Returns the boundaries of the PictSeg in axes coordinates in the order of left, right, top and bottom.
 
@@ -289,7 +289,7 @@ imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
 
 ### Get Size
 
-**Syntax:** {width, height} = obj << Get Size
+**Syntax:** {width, height} = obj &lt;&lt; Get Size
 
 **Description:** Returns the size of the PictSeg in pixel coordinates as width and height.
 
@@ -311,7 +311,7 @@ imgSeg = imgBox << FindSeg( PictSeg( 1 ) );
 
 ### Lock
 
-**Syntax:** obj << Lock( state=0|1 )
+**Syntax:** obj &lt;&lt; Lock( state=0|1 )
 
 **Description:** Locks the image in the PictSeg in place, preventing it from being moved, resized or rotated interactively.
 
@@ -333,7 +333,7 @@ imgSeg << lock( 1 );
 
 ### Median
 
-**Syntax:** obj << filter("median")
+**Syntax:** obj &lt;&lt; filter("median")
 
 **Description:** Applies a median filter to the image in the PictSeg. This replaces each pixel value with the median average of the surrounding pixels.
 
@@ -355,7 +355,7 @@ imgSeg << Filter( "median" );
 
 ### Move
 
-**Syntax:** obj << Move( xcenter, ycenter )
+**Syntax:** obj &lt;&lt; Move( xcenter, ycenter )
 
 **Description:** Moves the center of the image to the specified x,y location, where xcenter and ycenter are expressed in axes coordinates.
 
@@ -373,7 +373,7 @@ imgSeg << Move( 75, 75 );
 
 ### Negate
 
-**Syntax:** obj << filter("negate")
+**Syntax:** obj &lt;&lt; filter("negate")
 
 **Description:** Applies a filter to the image in the PictSeg which reverses the colors. Red, green, blue becomes cyan, yellow magenta, white becomes black, etc.
 
@@ -395,7 +395,7 @@ imgSeg << Filter( "negate" );
 
 ### Normalize
 
-**Syntax:** obj << filter("normalize")
+**Syntax:** obj &lt;&lt; filter("normalize")
 
 **Description:** Applies a normalization filter to the image in the PictSeg. This takes the range of the pixel values in the image and stretches them out across the color range, creating a wider contrast of colors.
 
@@ -417,7 +417,7 @@ imgSeg << Filter( "normalize" );
 
 ### Open
 
-**Syntax:** obj << Open( filename )
+**Syntax:** obj &lt;&lt; Open( filename )
 
 **Description:** Opens an image file and adds the image to the PictSeg.
 
@@ -436,7 +436,7 @@ imgBox << AddImage(
 
 ### Reduce Noise
 
-**Syntax:** obj << filter("reduce noise", radius)
+**Syntax:** obj &lt;&lt; filter("reduce noise", radius)
 
 **Description:** Applies a noise reduction filter to the image in the PictSeg. This averages a pixel with its neighbors, based on the radius. Useful range is 0 to 5.
 
@@ -458,7 +458,7 @@ imgSeg << Filter( "reduce noise", 2.0 );
 
 ### Remove
 
-**Syntax:** obj << Remove
+**Syntax:** obj &lt;&lt; Remove
 
 **Description:** Removes the PictSeg from the display box.
 
@@ -481,7 +481,7 @@ imgSeg << remove;
 
 ### Rotate
 
-**Syntax:** obj << Rotate( degrees )
+**Syntax:** obj &lt;&lt; Rotate( degrees )
 
 **Description:** Rotates the PictSeg in a clockwise direction by the specified number of degrees.
 
@@ -503,7 +503,7 @@ imgSeg << rotate( 45 );
 
 ### SetSize
 
-**Syntax:** obj << SetSize( {width, height} )
+**Syntax:** obj &lt;&lt; SetSize( {width, height} )
 
 **Description:** Sets the size of the PictSeg in pixel coordinates as width and height.
 
@@ -526,7 +526,7 @@ imgSeg << setSize( {300, 500} );
 
 ### Sharpen
 
-**Syntax:** obj << filter("sharpen")
+**Syntax:** obj &lt;&lt; filter("sharpen")
 
 **Description:** Applies a sharpening filter to the image in the PictSeg, making the image appear crisper.
 
@@ -548,7 +548,7 @@ imgSeg << Filter( "sharpen" );
 
 ### Specify Size
 
-**Syntax:** obj << Specify Size
+**Syntax:** obj &lt;&lt; Specify Size
 
 **Description:** Sets the bounds of the PictSeg. Similar to set bounds except the order is implied as left, top, right, bottom. This might cause the image to be distorted as the aspect ratio is not preserved.
 
@@ -568,7 +568,7 @@ imgSeg << Specify Size( 0, 100, 100, 0 );
 
 ### Transparency
 
-**Syntax:** obj << Transparency( transparency )
+**Syntax:** obj &lt;&lt; Transparency( transparency )
 
 **Description:** Sets the transparency for the PictSeg where 0.0 is completely transparent and 1.0 is completely opaque.
 

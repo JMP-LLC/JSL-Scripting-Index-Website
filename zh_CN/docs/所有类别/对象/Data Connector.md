@@ -6,7 +6,7 @@
 
 ### Dump
 
-**语法:** res = obj << Dump()
+**语法:** res = obj &lt;&lt; Dump()
 
 **说明:** 以指定类型和任何非默认值的规格字符串形式，获取该数据连接器的内容。
 
@@ -24,7 +24,7 @@ New Data Connector(
 
 ### Get
 
-**语法:** res = obj << Get( OPTION )
+**语法:** res = obj &lt;&lt; Get( OPTION )
 
 **说明:** 获取选项的值。
 
@@ -40,7 +40,7 @@ dc << Get( Supports Schemas );
 
 ### Open
 
-**语法:** res = obj << Open()
+**语法:** res = obj &lt;&lt; Open()
 
 **说明:** 以该数据连接器指定的形式打开新的数据表。
 
@@ -57,7 +57,7 @@ New Data Connector(
 
 ### Save
 
-**语法:** obj << Save( file path )
+**语法:** obj &lt;&lt; Save( file path )
 
 **说明:** 将该数据连接器的内容保存至文件。文件内容与 << Dump() 的结果相同。
 
@@ -75,7 +75,7 @@ New Data Connector(
 
 ### Set
 
-**语法:** obj << Set( < Option1( value1 ) >, ..., < OptionN( valueN ) > )
+**语法:** obj &lt;&lt; Set( &lt; Option1( value1 ) &gt;, ..., &lt; OptionN( valueN ) &gt; )
 
 **说明:** 设置任意数量的选项的值。
 
@@ -92,7 +92,7 @@ Show( dc << Get( Block Fetch ), dc << Get( Supports Schemas ) );
 
 ### Type
 
-**语法:** res = obj << Type()
+**语法:** res = obj &lt;&lt; Type()
 
 **说明:** 获取数据连接器的类型。
 

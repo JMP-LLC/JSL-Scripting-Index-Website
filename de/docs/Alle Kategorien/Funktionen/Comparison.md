@@ -2,8 +2,6 @@
 
 
 
-## Funktionen
-
 ### Equal
 
 **Syntax:** z = x == y == ...; z = Equal( x, y, ... )
@@ -21,7 +19,7 @@ Names Default To Here( 1 );
 
 ### Greater
 
-**Syntax:** z = x > y > ... ; z = Greater( x, y, ... )
+**Syntax:** z = x &gt; y &gt; ... ; z = Greater( x, y, ... )
 
 **Beschreibung:** Gibt 1 zurück, wenn jedes Argument größer als das nächste Argument ist, andernfalls 0.
 
@@ -36,7 +34,7 @@ Names Default To Here( 1 );
 
 ### Greater or Equal
 
-**Syntax:** z = x >= y >= ... ; z = Greater or Equal( x, y, ... )
+**Syntax:** z = x &gt;= y &gt;= ... ; z = Greater or Equal( x, y, ... )
 
 **Beschreibung:** Gibt 1 zurück, wenn jedes Argument größer oder gleich dem nächsten Argument ist, andernfalls 0.
 
@@ -110,7 +108,7 @@ Is Same Color( To Color Space( "LUV", "red" ), "red" );
 
 ### Less
 
-**Syntax:** z = x < y < ... ; z = Less( x, y, ... )
+**Syntax:** z = x &lt; y &lt; ... ; z = Less( x, y, ... )
 
 **Beschreibung:** Gibt 1 zurück, wenn jedes Argument kleiner als das nächste Argument ist, andernfalls 0.
 
@@ -125,7 +123,7 @@ Names Default To Here( 1 );
 
 ### Less LessEqual
 
-**Syntax:** z = x < y <= ... ; z = Less LessEqual( x, y, ... )
+**Syntax:** z = x &lt; y &lt;= ... ; z = Less LessEqual( x, y, ... )
 
 **Beschreibung:** Gibt 1 zurück, wenn das erste Argument kleiner als das zweite Argument ist und jedes Argument außer dem ersten kleiner oder gleich dem nächsten Argument ist, andernfalls 0.
 
@@ -140,7 +138,7 @@ Names Default To Here( 1 );
 
 ### Less or Equal
 
-**Syntax:** z = x <= y <= ... ; z = Less or Equal( x, y, ... )
+**Syntax:** z = x &lt;= y &lt;= ... ; z = Less or Equal( x, y, ... )
 
 **Beschreibung:** Gibt 1 zurück, wenn jedes Argument kleiner oder gleich dem nächsten Argument ist, andernfalls 0.
 
@@ -155,7 +153,7 @@ Names Default To Here( 1 );
 
 ### LessEqual Less
 
-**Syntax:** z = x <= y < ... ; z = LessEqual Less( x, y, ... )
+**Syntax:** z = x &lt;= y &lt; ... ; z = LessEqual Less( x, y, ... )
 
 **Beschreibung:** Gibt 1 zurück, wenn das erste Argument kleiner oder gleich dem zweiten Argument ist und jedes Argument außer dem ersten kleiner als das nächste Argument ist, andernfalls 0.
 

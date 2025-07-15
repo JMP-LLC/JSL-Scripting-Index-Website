@@ -14,25 +14,25 @@
 
 ### Arguments
 
-**Sintaxis:** obj << Arguments
+**Sintaxis:** obj &lt;&lt; Arguments
 
 **Descripción:** Permite la especificación de opciones para ejecutar la plataforma desde la ventana de scripts.
 
 ### Run Cmd
 
-**Sintaxis:** obj << Run Cmd
+**Sintaxis:** obj &lt;&lt; Run Cmd
 
 **Descripción:** Determina la tarea del conjunto de herramientas de variantes de secuenciación que se ejecutará desde la ventana de scripts.
 
 ### Run Spec
 
-**Sintaxis:** obj << Run Spec
+**Sintaxis:** obj &lt;&lt; Run Spec
 
 **Descripción:** Determina la tarea del conjunto de herramientas de variantes de secuenciación que se ejecutará desde la ventana de la interfaz.
 
 ### Specification
 
-**Sintaxis:** obj << Specification
+**Sintaxis:** obj &lt;&lt; Specification
 
 **Descripción:** Permite la especificación de una tarea.
 
@@ -40,7 +40,7 @@
 
 ### Action
 
-**Sintaxis:** obj << Action
+**Sintaxis:** obj &lt;&lt; Action
 
 **Descripción:** Trampa multiuso dentro de una plataforma para insertar expresiones que se desean evaluar. Temporalmente establece los contextos de cuadros de visualización y tablas de datos en la plataforma.
 
@@ -58,7 +58,7 @@ dt << Bivariate(
 
 ### Apply Preset
 
-**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, <Folder( folder {, folder2, ...} )> )
+**Sintaxis:** Apply Preset( preset ); Apply Preset( source, label, &lt;Folder( folder {, folder2, ...} )&gt; )
 
 **Descripción:** Aplica al objeto un preajuste creado previamente, actualizando las opciones y personalizaciones para que coincidan con la configuración guardada.
 
@@ -105,7 +105,7 @@ obj2 << Apply Preset( preset );
 
 ### Copy Script
 
-**Sintaxis:** obj << Copy Script
+**Sintaxis:** obj &lt;&lt; Copy Script
 
 **Descripción:** Crea un script JSL para generar este análisis y lo pone en el portapapeles.
 
@@ -118,7 +118,7 @@ obj << Copy Script;
 
 ### Get By Levels
 
-**Sintaxis:** obj << Get By Levels
+**Sintaxis:** obj &lt;&lt; Get By Levels
 
 **Descripción:** Devuelve un arreglo asociativo que asigna las columnas Por grupo a sus valores.
 
@@ -135,7 +135,7 @@ biv << Get By Levels;
 
 ### Get Container
 
-**Sintaxis:** obj << Get Container
+**Sintaxis:** obj &lt;&lt; Get Container
 
 **Descripción:** Devuelve una referencia al cuadro contenedor que incluye el contenido del objeto.
 
@@ -180,7 +180,7 @@ New Window( "platform boxes",
 
 ### Get Data Table
 
-**Sintaxis:** obj << Get Data Table
+**Sintaxis:** obj &lt;&lt; Get Data Table
 
 **Descripción:** Devuelve una referencia a la tabla de datos.
 
@@ -194,7 +194,7 @@ Show( N Rows( t ) );
 
 ### Get Script
 
-**Sintaxis:** obj << Get Script
+**Sintaxis:** obj &lt;&lt; Get Script
 
 **Descripción:** Crea un script (JSL) para generar este análisis y lo devuelve en forma de expresión.
 
@@ -208,7 +208,7 @@ Show( t );
 
 ### Get Script With Data Table
 
-**Sintaxis:** obj << Get Script With Data Table
+**Sintaxis:** obj &lt;&lt; Get Script With Data Table
 
 **Descripción:** Crea un script (JSL) para generar este análisis haciendo referencia específica a esta tabla de datos y lo devuelve en forma de expresión.
 
@@ -222,7 +222,7 @@ Show( t );
 
 ### Get Timing
 
-**Sintaxis:** obj << Get Timing
+**Sintaxis:** obj &lt;&lt; Get Timing
 
 **Descripción:** Determina el tiempo de inicio de una plataforma.
 
@@ -236,7 +236,7 @@ Show( t );
 
 ### Get Web Support
 
-**Sintaxis:** obj << Get Web Support
+**Sintaxis:** obj &lt;&lt; Get Web Support
 
 **Descripción:** Devuelve un número que indica el nivel de compatibilidad del HTML interactivo para el objeto de visualización. 1 significa que algunos o todos los elementos son compatibles. 0 significa que no existe compatibilidad.
 
@@ -252,7 +252,7 @@ Show( s );
 
 ### Get Where Expr
 
-**Sintaxis:** obj << Get Where Expr
+**Sintaxis:** obj &lt;&lt; Get Where Expr
 
 **Descripción:** Devuelve la expresión Where para el subconjunto de datos, si la plataforma se inició con By() o Where(). De lo contrario, devuelve Empty().
 
@@ -342,9 +342,7 @@ obj << Render Preset( Expr( Oneway( Y( :A ), X( :B ), Each Pair( 1 ) ) ) );
 
 ### Report
 
-**Sintaxis:** obj << Report;
-
-Report( obj )
+**Sintaxis:** obj &lt;&lt; Report;Report( obj )
 
 **Descripción:** Devuelve una referencia al objeto informe.
 
@@ -359,7 +357,7 @@ Show( t );
 
 ### Save Script for All Objects
 
-**Sintaxis:** obj << Save Script for All Objects
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects
 
 **Descripción:** Creates a script for all report objects in the window and appends it to the current Script window. This option is useful when you have multiple reports in the window.
 
@@ -372,7 +370,7 @@ obj << Save Script for All Objects;
 
 ### Save Script for All Objects To Data Table
 
-**Sintaxis:** obj << Save Script for All Objects To Data Table( <name> )
+**Sintaxis:** obj &lt;&lt; Save Script for All Objects To Data Table( &lt;name&gt; )
 
 **Descripción:** Guarda un script para todos los objetos de informe en la tabla de datos actual. Esta opción es útil cuando tiene varios informes en la ventana. El script recibe el nombre de la primera plataforma a menos que especifique el nombre del script entre comillas.
 
@@ -396,7 +394,7 @@ obj[1] << Save Script for All Objects To Data Table( "My Script" );
 
 ### Save Script to Data Table
 
-**Sintaxis:** Save Script to Data Table( <name>, < <<Prompt(0|1)>, < <<Replace(0|1)> );
+**Sintaxis:** Save Script to Data Table( &lt;name&gt;, &lt; &lt;&lt;Prompt(0|1)&gt;, &lt; &lt;&lt;Replace(0|1)&gt; );
 
 **Descripción:** Crea un script JSL para generar este análisis y lo guarda en forma de propiedad de tabla en la tabla de datos.
 
@@ -409,7 +407,7 @@ obj << Save Script to Data Table( "My Analysis", <<Prompt( 0 ), <<Replace( 0 ) )
 
 ### Save Script to Journal
 
-**Sintaxis:** obj << Save Script to Journal
+**Sintaxis:** obj &lt;&lt; Save Script to Journal
 
 **Descripción:** Crea un script JSL para generar este análisis y añade un botón al diario que contiene este script.
 
@@ -422,7 +420,7 @@ obj << Save Script to Journal;
 
 ### Save Script to Report
 
-**Sintaxis:** obj << Save Script to Report
+**Sintaxis:** obj &lt;&lt; Save Script to Report
 
 **Descripción:** Crea un script JSL para generar este análisis y lo muestra en el propio informe. Resulta útil para conservar un registro impreso de lo que se ha hecho.
 
@@ -435,7 +433,7 @@ obj << Save Script to Report;
 
 ### Save Script to Script Window
 
-**Sintaxis:** obj << Save Script to Script Window
+**Sintaxis:** obj &lt;&lt; Save Script to Script Window
 
 **Descripción:** Crea un script JSL para generar este análisis y lo añade a la ventana de texto Script actual.
 
@@ -513,7 +511,7 @@ dt << Distribution(
 
 ### Title
 
-**Sintaxis:** obj << Title( "new title" )
+**Sintaxis:** obj &lt;&lt; Title( "new title" )
 
 **Descripción:** Establece el título de la plataforma.
 
@@ -526,7 +524,7 @@ obj << Title( "My Platform" );
 
 ### Top Report
 
-**Sintaxis:** obj << Top Report
+**Sintaxis:** obj &lt;&lt; Top Report
 
 **Descripción:** Devuelve una referencia al nodo raíz del informe.
 
@@ -541,7 +539,7 @@ Show( t );
 
 ### View Web XML
 
-**Sintaxis:** obj << View Web XML
+**Sintaxis:** obj &lt;&lt; View Web XML
 
 **Descripción:** Devuelve el código XML que se utiliza para crear el informe HTML interactivo.
 
@@ -560,31 +558,31 @@ xml = obj << View Web XML;
 
 #### Auto Send Output to Files List
 
-**Sintaxis:** obj << Auto Send Output to Files List( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Auto Send Output to Files List( state=0|1 )
 
 **Descripción:** Envía los archivos de salida al panel de lista de archivos.
 
 #### Bam Files
 
-**Sintaxis:** obj << Bam Files
+**Sintaxis:** obj &lt;&lt; Bam Files
 
 **Descripción:** Especifica los archivos BAM.
 
 #### Bcf Files
 
-**Sintaxis:** obj << Bcf Files
+**Sintaxis:** obj &lt;&lt; Bcf Files
 
 **Descripción:** Especifica los archivos BCF.
 
 #### Caller
 
-**Sintaxis:** obj << Caller( "Multialélico"|"Consenso"="Multialélico" )
+**Sintaxis:** obj &lt;&lt; Caller( "Multialélico"|"Consenso"="Multialélico" )
 
 **Descripción:** "Multialélico" de forma predeterminada.
 
 #### Copy Task Specification
 
-**Sintaxis:** obj << Copy Task Specification
+**Sintaxis:** obj &lt;&lt; Copy Task Specification
 
 **Descripción:** Copia en el portapapeles las especificaciones actuales del conjunto de herramientas de variantes de secuenciación.
 
@@ -592,91 +590,91 @@ xml = obj << View Web XML;
 
 #### Files
 
-**Sintaxis:** obj << Files
+**Sintaxis:** obj &lt;&lt; Files
 
 **Descripción:** Cargar archivos de entrada para ejecutarlos en SamTools.
 
 #### Ploidy
 
-**Sintaxis:** obj << Ploidy( number=2 )
+**Sintaxis:** obj &lt;&lt; Ploidy( number=2 )
 
 **Descripción:** "2" de forma predeterminada.
 
 #### Recall in Task Specification
 
-**Sintaxis:** obj << Recall in Task Specification
+**Sintaxis:** obj &lt;&lt; Recall in Task Specification
 
 **Descripción:** Establece la especificación de la tarea del informe Especificación de la tarea en el modelo especificado.
 
 #### Ref Files
 
-**Sintaxis:** obj << Ref Files
+**Sintaxis:** obj &lt;&lt; Ref Files
 
 **Descripción:** Especifica los archivos del genoma de referencia.
 
 #### Remove Run
 
-**Sintaxis:** obj << ( Run[number] << Remove Run( state=0|1 ) )
+**Sintaxis:** obj &lt;&lt; ( Run[number] &lt;&lt; Remove Run( state=0|1 ) )
 
 **Descripción:** Quita el informe de la corrida especificado de la ventana de resultados.
 
 #### Results Folder
 
-**Sintaxis:** obj << Results Folder
+**Sintaxis:** obj &lt;&lt; Results Folder
 
 **Descripción:** Especifica la carpeta de resultados.
 
 #### Sam Files
 
-**Sintaxis:** obj << Sam Files
+**Sintaxis:** obj &lt;&lt; Sam Files
 
 **Descripción:** Especifica los archivos SAM.
 
 #### Send Output to Files List
 
-**Sintaxis:** obj << Send Output to Files List( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Send Output to Files List( state=0|1 )
 
 **Descripción:** Envía los archivos de salida al panel de lista de archivos.
 
 #### Sort Reads By
 
-**Sintaxis:** obj << Sort Reads By( "Coordenadas"|"Alfanumérica"|"Lexicográfica"="Coordenadas" )
+**Sintaxis:** obj &lt;&lt; Sort Reads By( "Coordenadas"|"Alfanumérica"|"Lexicográfica"="Coordenadas" )
 
 **Descripción:** "Coordenadas" de forma predeterminada.
 
 #### Summary
 
-**Sintaxis:** obj << Summary( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Summary( state=0|1 )
 
 **Descripción:** Muestra u oculta un informe que contiene detalles de la corrida. Opción activada de forma predeterminada.
 
 #### Target Regions
 
-**Sintaxis:** obj << Target Regions
+**Sintaxis:** obj &lt;&lt; Target Regions
 
 **Descripción:** Establece las regiones de destino. La especificación de regiones requiere que el archivo BAM esté ordenado por coordenadas e indexado.
 
 #### Task
 
-**Sintaxis:** obj << Task( "Índice Fasta"|"Convertir SAM en BAM"|"Ordenar lecturas"|"Agregar coordenadas de apareamiento"|"Quitar duplicados"|"Fusionar archivos"|"Índice BAM"|"Convertir BAM en SAM"|"Extraer lecturas asignadas"|"Extraer lecturas no asignadas"|"Extraer regiones objetivo"|"Extraer correctamente alineado"|"Extraer primera lectura"|"Errores de coincidencia e inserciones de etiquetas"|"Alineación del conteo"|"Alineación del conteo por marca"|"Alineación del conteo por referencia"|"Generar estadísticos"|"Generar la calidad de la alineación base"|"Generar profundidad de lectura"|"Compresión Bgzip"|"Descompresión Bgzip"|"Generar verosimilitudes genotípicas"|"Generar llamadas genotípicas"|"Convertir BCF en VCF"|"Convertir VCF en BCF" )
+**Sintaxis:** obj &lt;&lt; Task( "Índice Fasta"|"Convertir SAM en BAM"|"Ordenar lecturas"|"Agregar coordenadas de apareamiento"|"Quitar duplicados"|"Fusionar archivos"|"Índice BAM"|"Convertir BAM en SAM"|"Extraer lecturas asignadas"|"Extraer lecturas no asignadas"|"Extraer regiones objetivo"|"Extraer correctamente alineado"|"Extraer primera lectura"|"Errores de coincidencia e inserciones de etiquetas"|"Alineación del conteo"|"Alineación del conteo por marca"|"Alineación del conteo por referencia"|"Generar estadísticos"|"Generar la calidad de la alineación base"|"Generar profundidad de lectura"|"Compresión Bgzip"|"Descompresión Bgzip"|"Generar verosimilitudes genotípicas"|"Generar llamadas genotípicas"|"Convertir BCF en VCF"|"Convertir VCF en BCF" )
 
 **Descripción:** Determina la tarea que se debe ejecutar.
 
 #### Title
 
-**Sintaxis:** obj << Title
+**Sintaxis:** obj &lt;&lt; Title
 
 **Descripción:** Establece un título.
 
 #### Unthreaded
 
-**Sintaxis:** obj << Unthreaded( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Unthreaded( state=0|1 )
 
 **Descripción:** Utiliza únicamente el subproceso principal para los cálculos
 
 #### Vcf Files
 
-**Sintaxis:** obj << Vcf Files
+**Sintaxis:** obj &lt;&lt; Vcf Files
 
 **Descripción:** Especifica los archivos VCF.
 
@@ -686,91 +684,91 @@ xml = obj << View Web XML;
 
 #### Auto Send Output to Files List
 
-**Sintaxis:** obj << Auto Send Output to Files List( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Auto Send Output to Files List( state=0|1 )
 
 **Descripción:** Envía los archivos de salida al panel de lista de archivos.
 
 #### Bam Files
 
-**Sintaxis:** obj << Bam Files
+**Sintaxis:** obj &lt;&lt; Bam Files
 
 **Descripción:** Especifica los archivos BAM.
 
 #### Bcf Files
 
-**Sintaxis:** obj << Bcf Files
+**Sintaxis:** obj &lt;&lt; Bcf Files
 
 **Descripción:** Especifica los archivos BCF.
 
 #### Caller
 
-**Sintaxis:** obj << Caller( "Multialélico"|"Consenso"="Multialélico" )
+**Sintaxis:** obj &lt;&lt; Caller( "Multialélico"|"Consenso"="Multialélico" )
 
 **Descripción:** "Multialélico" de forma predeterminada.
 
 #### Files
 
-**Sintaxis:** obj << Files
+**Sintaxis:** obj &lt;&lt; Files
 
 **Descripción:** Cargar archivos de entrada para ejecutarlos en SamTools.
 
 #### Ploidy
 
-**Sintaxis:** obj << Ploidy( number=2 )
+**Sintaxis:** obj &lt;&lt; Ploidy( number=2 )
 
 **Descripción:** Especifica un número positivo que indica el nivel de ploidías. "2" de forma predeterminada.
 
 #### Ref Files
 
-**Sintaxis:** obj << Ref Files
+**Sintaxis:** obj &lt;&lt; Ref Files
 
 **Descripción:** Especifica los archivos del genoma de referencia.
 
 #### Results Folder
 
-**Sintaxis:** obj << Results Folder
+**Sintaxis:** obj &lt;&lt; Results Folder
 
 **Descripción:** Especifica la carpeta de resultados.
 
 #### Sam Files
 
-**Sintaxis:** obj << Sam Files
+**Sintaxis:** obj &lt;&lt; Sam Files
 
 **Descripción:** Especifica los archivos SAM.
 
 #### Sort Reads By
 
-**Sintaxis:** obj << Sort Reads By( "Coordenadas"|"Alfanumérica"|"Lexicográfica"="Coordenadas" )
+**Sintaxis:** obj &lt;&lt; Sort Reads By( "Coordenadas"|"Alfanumérica"|"Lexicográfica"="Coordenadas" )
 
 **Descripción:** "Coordenadas" de forma predeterminada.
 
 #### Target Regions
 
-**Sintaxis:** obj << Target Regions
+**Sintaxis:** obj &lt;&lt; Target Regions
 
 **Descripción:** Establece las regiones de destino. La especificación de regiones requiere que el archivo BAM esté ordenado por coordenadas e indexado.
 
 #### Task
 
-**Sintaxis:** obj << Task( "Índice Fasta"|"Convertir SAM en BAM"|"Ordenar lecturas"|"Agregar coordenadas de apareamiento"|"Quitar duplicados"|"Fusionar archivos"|"Índice BAM"|"Convertir BAM en SAM"|"Extraer lecturas asignadas"|"Extraer lecturas no asignadas"|"Extraer regiones objetivo"|"Extraer correctamente alineado"|"Extraer primera lectura"|"Errores de coincidencia e inserciones de etiquetas"|"Alineación del conteo"|"Alineación del conteo por marca"|"Alineación del conteo por referencia"|"Generar estadísticos"|"Generar la calidad de la alineación base"|"Generar profundidad de lectura"|"Compresión Bgzip"|"Descompresión Bgzip"|"Generar verosimilitudes genotípicas"|"Generar llamadas genotípicas"|"Convertir BCF en VCF"|"Convertir VCF en BCF"="Índice Fasta" )
+**Sintaxis:** obj &lt;&lt; Task( "Índice Fasta"|"Convertir SAM en BAM"|"Ordenar lecturas"|"Agregar coordenadas de apareamiento"|"Quitar duplicados"|"Fusionar archivos"|"Índice BAM"|"Convertir BAM en SAM"|"Extraer lecturas asignadas"|"Extraer lecturas no asignadas"|"Extraer regiones objetivo"|"Extraer correctamente alineado"|"Extraer primera lectura"|"Errores de coincidencia e inserciones de etiquetas"|"Alineación del conteo"|"Alineación del conteo por marca"|"Alineación del conteo por referencia"|"Generar estadísticos"|"Generar la calidad de la alineación base"|"Generar profundidad de lectura"|"Compresión Bgzip"|"Descompresión Bgzip"|"Generar verosimilitudes genotípicas"|"Generar llamadas genotípicas"|"Convertir BCF en VCF"|"Convertir VCF en BCF"="Índice Fasta" )
 
 **Descripción:** Determina la tarea que se debe ejecutar. "Índice Fasta" de forma predeterminada.
 
 #### Title
 
-**Sintaxis:** obj << Title
+**Sintaxis:** obj &lt;&lt; Title
 
 **Descripción:** Establece un título.
 
 #### Unthreaded
 
-**Sintaxis:** obj << Unthreaded( state=0|1 )
+**Sintaxis:** obj &lt;&lt; Unthreaded( state=0|1 )
 
 **Descripción:** Utiliza únicamente el subproceso principal para los cálculos
 
 #### Vcf Files
 
-**Sintaxis:** obj << Vcf Files
+**Sintaxis:** obj &lt;&lt; Vcf Files
 
 **Descripción:** Especifica los archivos VCF.
 

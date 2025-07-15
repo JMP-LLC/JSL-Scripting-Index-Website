@@ -24,7 +24,7 @@ feed = Open Datafeed(
 
 ### Close
 
-**语法:** obj << Close
+**语法:** obj &lt;&lt; Close
 
 **说明:** （仅限 Windows）关闭数据传送对象及其窗口。
 
@@ -42,7 +42,7 @@ feed << Close;
 
 ### Connect
 
-**语法:** obj << Connect( Port(  "com1"|"com2"|"lpt1"... ), Parity( even|odd|none ), Baud rate( 4800|9600 ), Data bits( 8|7 ), <Stop bits( 0|1|2 )>, <DTR_DSR( 0|1 )>, <RTS_CTS( 0|1 )>, <XON_XOFF( 1|0 )> )
+**语法:** obj &lt;&lt; Connect( Port( "com1"|"com2"|"lpt1"... ), Parity( even|odd|none ), Baud rate( 4800|9600 ), Data bits( 8|7 ), &lt;Stop bits( 0|1|2 )&gt;, &lt;DTR_DSR( 0|1 )&gt;, &lt;RTS_CTS( 0|1 )&gt;, &lt;XON_XOFF( 1|0 )&gt; )
 
 **说明:** （仅限 Windows）设置设备连接的端口设置。
 
@@ -58,7 +58,7 @@ feed = Open Datafeed(
 
 ### Disconnect
 
-**语法:** obj << Disconnect
+**语法:** obj &lt;&lt; Disconnect
 
 **说明:** （仅限 Windows）断开设备与数据传送队列的连接，但保留数据传送对象为活动状态。
 
@@ -75,7 +75,7 @@ feed << Disconnect;
 
 ### EOL
 
-**语法:** obj << EOL( "CR"|"LF"|"CRLF" )
+**语法:** obj &lt;&lt; EOL( "CR"|"LF"|"CRLF" )
 
 **说明:** （仅限 Windows）设置解析传入数据行时用作分隔符的行结束值。该值也用作传出数据行中的终止符。CR = ASCII 字符 13（回车符）。LF = ASCII 字符 10（换行符）。CRLF 将按顺序使用 CR 和 LF。
 
@@ -101,7 +101,7 @@ For( exi = 0, exi < 5, exi++,
 
 ### Get Container
 
-**语法:** obj << Get Container
+**语法:** obj &lt;&lt; Get Container
 
 **说明:** 返回对保留对象内容的容器框的引用。
 
@@ -119,7 +119,7 @@ Show( (t << XPath( "//OutlineBox" )) << Get Title );
 
 ### Get Line
 
-**语法:** line = obj << Get Line
+**语法:** line = obj &lt;&lt; Get Line
 
 **说明:** （仅限 Windows）返回并从数据传送队列中删除一行。
 
@@ -138,7 +138,7 @@ exfeed = Open Datafeed(
 
 ### Get Lines
 
-**语法:** list = obj << Get Lines
+**语法:** list = obj &lt;&lt; Get Lines
 
 **说明:** （仅限 Windows）以列表方式返回并从数据传送队列中删除所有行。
 
@@ -162,7 +162,7 @@ For( exi = 0, exi < 5, exi++,
 
 ### Print Queue
 
-**语法:** obj << Print Queue
+**语法:** obj &lt;&lt; Print Queue
 
 **说明:** （仅限 Windows）将内部消息队列打印至日志窗口。
 
@@ -179,7 +179,7 @@ exfeed << print queue;/* or red triangle menu item */;
 
 ### Queue Line
 
-**语法:** obj << Queue Line( string )
+**语法:** obj &lt;&lt; Queue Line( string )
 
 **说明:** （仅限 Windows）将一行发送至数据传送队列的结尾处。
 
@@ -203,7 +203,7 @@ For( exi = 0, exi < 5, exi++,
 
 ### Restart
 
-**语法:** obj << Restart
+**语法:** obj &lt;&lt; Restart
 
 **说明:** （仅限 Windows）重新开始处理排入队列的行。
 
@@ -222,7 +222,7 @@ feed << Restart;
 
 ### Set Script
 
-**语法:** obj << Set Script( script )
+**语法:** obj &lt;&lt; Set Script( script )
 
 **说明:** （仅限 Windows）分配每次接收到一行数据时运行的脚本。
 
@@ -238,7 +238,7 @@ feed = Open Datafeed(
 
 ### Stop
 
-**语法:** obj << Stop
+**语法:** obj &lt;&lt; Stop
 
 **说明:** （仅限 Windows）停止处理排入队列的行。
 
@@ -255,7 +255,7 @@ feed << Stop;
 
 ### Write
 
-**语法:** obj << Write( string )
+**语法:** obj &lt;&lt; Write( string )
 
 **说明:** （仅限 Windows）将字符串发送至数据传送设备。
 
@@ -278,7 +278,7 @@ exfeed << Write( "Ready" );
 
 ### Write Line
 
-**语法:** obj << Write Line( string )
+**语法:** obj &lt;&lt; Write Line( string )
 
 **说明:** （仅限 Windows）
 
@@ -301,7 +301,7 @@ exfeed << Write Line( "Ready" );
 
 ### Write Lines
 
-**语法:** obj << Write Lines( list )
+**语法:** obj &lt;&lt; Write Lines( list )
 
 **说明:** （仅限 Windows）将字符串列表发送至数据传送设备。若数据传送设置了 EOL，则每个字符串由 EOL 值分隔。若未设置 EOL，则使用 CRLF 分隔每行。
 

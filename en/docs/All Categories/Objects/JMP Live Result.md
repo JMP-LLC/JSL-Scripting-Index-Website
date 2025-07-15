@@ -6,7 +6,7 @@
 
 ### As Scriptable
 
-**Syntax:** jmplivereport = jmpliveresult << As Scriptable()
+**Syntax:** jmplivereport = jmpliveresult &lt;&lt; As Scriptable()
 
 **Description:** Depending on the operation that produced the JMP Live Result, returns a JMP Live Report, JMP Live Folder or JMP Live Post for further scripting operations.
 
@@ -31,7 +31,7 @@ If( worked == 1,
 
 ### Get Error Message
 
-**Syntax:** messagetext = jmpliveresult << Get Error Message()
+**Syntax:** messagetext = jmpliveresult &lt;&lt; Get Error Message()
 
 **Description:** Gets any message produced by the last operation as a string.
 
@@ -49,7 +49,7 @@ Write( "\!nHTTP Status Code: ", httpstatus, " Message: ", httpmessage );
 
 ### Get HTTP Status
 
-**Syntax:** statuscode = jmpliveresult << Get HTTP Status()
+**Syntax:** statuscode = jmpliveresult &lt;&lt; Get HTTP Status()
 
 **Description:** Gets the HTTP status code from the last operation. This is an industry standard integer code.
 
@@ -67,7 +67,7 @@ Write( "\!nHTTP Status Code: ", httpstatus, " Message: ", httpmessage );
 
 ### Get JMP Live
 
-**Syntax:** liveconnection = jmpliveresult << Get JMP Live()
+**Syntax:** liveconnection = jmpliveresult &lt;&lt; Get JMP Live()
 
 **Description:** Retrieves the underlying JMP Live Connection object.
 
@@ -90,7 +90,7 @@ Write( "\!nConnection Name: ", name );
 
 ### Get Response Type
 
-**Syntax:** responsevalue = jmpliveresult << Get Response Type()
+**Syntax:** responsevalue = jmpliveresult &lt;&lt; Get Response Type()
 
 **Description:** Gets the type of response produced by the last operation as a string.
 
@@ -115,7 +115,7 @@ If( worked == 1,
 
 ### Succeeded
 
-**Syntax:** success = jmpliveresult << Succeeded()
+**Syntax:** success = jmpliveresult &lt;&lt; Succeeded()
 
 **Description:** Returns whether the last action was successful (1) or not (0).
 

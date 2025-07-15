@@ -2,8 +2,6 @@
 
 
 
-## 함수
-
 ### Add
 
 **구문:** y = x0 + x1; y = Add( x0, x1, ... )
@@ -57,7 +55,7 @@ Hex(/* make it printable */ Blob MD5(/* get the hash */
 
 ### Blob Peek
 
-**구문:** blobResult = Blob Peek( blob, offset, <length> )
+**구문:** blobResult = Blob Peek( blob, offset, &lt;length&gt; )
 
 **설명:** 지정된 BLOB의 바이트 하위 범위에서 새 BLOB를 만듭니다. offset 인수는 0에서 시작하므로 첫 번째 바이트는 오프셋 0에 있습니다.
 
@@ -87,7 +85,7 @@ Build Information();
 
 ### Caption
 
-**구문:** y = Caption( <{h, v}>, text | remove, <Delayed( seconds )>, <Font(font)>, <Font Size(size)>, <Text Color(color)>, <Back Color(color)>, <Spoken(bool)> )
+**구문:** y = Caption( &lt;{h, v}&gt;, text | remove, &lt;Delayed( seconds )&gt;, &lt;Font(font)&gt;, &lt;Font Size(size)&gt;, &lt;Text Color(color)&gt;, &lt;Back Color(color)&gt;, &lt;Spoken(bool)&gt; )
 
 **설명:** {h, v}로 지정된 위치에 text 인수로 지정된 텍스트가 포함된 캡션 창을 표시합니다. Delayed( seconds ) 인수는 각 캡션 전에 대기 시간(초)을 설정합니다.
 
@@ -123,7 +121,7 @@ Caption(
 
 ### Clipboard Capture
 
-**구문:** clp = Clipboard Capture( box << Copy )
+**구문:** clp = Clipboard Capture( box &lt;&lt; Copy )
 
 **설명:** If the JSL within this function would have normally copied something to the OS Clipboard, it is instead copied to a Clipboard object and returned.
 
@@ -143,7 +141,7 @@ Show( clp << Get Flavor Data( "Text", <<Text ) );
 
 ### Current Journal
 
-**구문:** y = Current Journal( <Project(title|index|box|window)> )
+**구문:** y = Current Journal( &lt;Project(title|index|box|window)&gt; )
 
 **설명:** 현재 프로젝트(또는 프로젝트의 스크립트를 실행 중이지 않은 경우 프로젝트 없음)의 현재 저널에 대한 참조를 반환합니다.
 
@@ -305,7 +303,7 @@ Disable Proxy Settings( 1 );
 
 ### Divide
 
-**구문:** y = x0 / x1; y = Divide( x0, <x1>, ... )
+**구문:** y = x0 / x1; y = Divide( x0, &lt;x1&gt;, ... )
 
 **설명:** 첫 번째 인수에서 이후의 모든 인수를 나눕니다. 인수는 숫자, 행렬 또는 숫자 목록일 수 있습니다. 하나의 인수만 사용하여 호출할 경우 결과는 역수가 됩니다.
 
@@ -447,11 +445,7 @@ Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
 
 ### Format Pattern
 
-**구문:** s = Format( x, "Format Pattern", pattern, <width>, <dec>)
-
-x = In Format( s, "Format Pattern", pattern, < <<Use Locale(b=1)> )
-
-obj = Format("Format Pattern", pattern, <width>, <dec>)
+**구문:** s = Format( x, "Format Pattern", pattern, &lt;width&gt;, &lt;dec&gt;)x = In Format( s, "Format Pattern", pattern, &lt; &lt;&lt;Use Locale(b=1)&gt; )obj = Format("Format Pattern", pattern, &lt;width&gt;, &lt;dec&gt;)
 
 **설명:** 형식 패턴은 "<YYYY></><MM></><DD> <hh><:><mm><:><ss><ampm>"과 같이 날짜/시간 형식을 정의하는 문자열입니다. 패턴에서 꺾쇠 괄호로 묶인 부분을 필드 설명자라고 합니다. 필드 설명자는 값(예: "<YYYY>" 4자리 연도) 또는 기타 날짜/시간 텍스트(예: "</>" 로케일별 날짜 구분 기호)를 나타냅니다. 형식 패턴을 사용하면 JMP에서 제공하지 않는 형식을 생성할 수 있습니다. 이러한 형식은 데이터 형식 지정 및 입력에 모두 사용할 수 있습니다.
 
@@ -594,7 +588,7 @@ Get Clipboard();
 
 ### Get Expr Location
 
-**구문:** Get Expr Location(<expression>, [{"TokenStartLine"|"TokenStartCol"|"TokenStart"|"TokenLength"|"TreeStart"|"TreeEnd"|"TreeLength"}+]
+**구문:** Get Expr Location(&lt;expression&gt;, [{"TokenStartLine"|"TokenStartCol"|"TokenStart"|"TokenLength"|"TreeStart"|"TreeEnd"|"TreeLength"}+]
 
 **설명:** 파싱된 표현식에서 상위 토큰의 위치를 가져옵니다. 기본 호출의 반환 값은 {소스 파일, TokenStartLine, TokenStartCol, TokenLength}입니다.
 
@@ -698,7 +692,7 @@ Show( aa );
 
 ### Get Platform Preference
 
-**구문:** Get Platform Preferences( < platformName < ( optionName, ... ) > ... > )
+**구문:** Get Platform Preferences( &lt; platformName &lt; ( optionName, ... ) &gt; ... &gt; )
 
 **설명:** 지정된 플랫폼 환경 설정을 가져옵니다.
 
@@ -713,7 +707,7 @@ Get Platform Preferences( Bivariate( Fit Line ), DOE );
 
 ### Get Platform Preferences
 
-**구문:** Get Platform Preferences( < platformName < ( optionName, ... ) > ... > )
+**구문:** Get Platform Preferences( &lt; platformName &lt; ( optionName, ... ) &gt; ... &gt; )
 
 **설명:** 지정된 플랫폼 환경 설정을 가져옵니다.
 
@@ -728,7 +722,7 @@ Get Platform Preferences( Bivariate( Fit Line ), DOE );
 
 ### Get Policies
 
-**구문:** Get Policies( <Machine|User|Both> )
+**구문:** Get Policies( &lt;Machine|User|Both&gt; )
 
 **설명:** 현재 정책 이름과 값을 포함하는 연관 배열을 반환합니다.
 
@@ -1116,7 +1110,7 @@ New Window( "editor", Script Box( x ) );
 
 ### Load DLL
 
-**구문:** dll = Load DLL( file path | Base Name( file path without extension ), < AutoDeclare( bool | Quiet | Verbose) | Quiet | Verbose )> )
+**구문:** dll = Load DLL( file path | Base Name( file path without extension ), &lt; AutoDeclare( bool | Quiet | Verbose) | Quiet | Verbose )&gt; )
 
 **설명:** 지정한 경로가 가리키는 DLL을 로드합니다.
 
@@ -1153,7 +1147,7 @@ If( Host is( "Windows" ),
 
 ### Log Table Messages
 
-**구문:** Log Table Messages( <On|Off>, <Enable(subject, ...)>, <Disable(subject, ...)>, <Include(msgname, ...)>, <Exclude(msgname, )>
+**구문:** Log Table Messages( &lt;On|Off&gt;, &lt;Enable(subject, ...)&gt;, &lt;Disable(subject, ...)&gt;, &lt;Include(msgname, ...)&gt;, &lt;Exclude(msgname, )&gt;
 
 **설명:** Control logging of data table messages (such as DtMsgClose). By default logging is off, but all subjects are enabled. (If you turn logging on, you do not need to enable the subjects you&apos;re interested in.) Only a subset of all messages are logged. Not available in retail builds.
 
@@ -1216,7 +1210,7 @@ Log Table Messages( Disable( "Table" ) );
 
 ### Mail
 
-**구문:** Mail( "address", "subject", "message", <"attachment filepath"> | { "attachment filepath", ...} )
+**구문:** Mail( "address", "subject", "message", &lt;"attachment filepath"&gt; | { "attachment filepath", ...} )
 
 **설명:** 운영 체제에서 허용하는 경우 지정된 대로 보내는 이메일 메시지를 생성합니다. 모든 옵션이 모든 운영 체제 버전에서 작동하는 것은 아닙니다. 자세한 내용은 도움말을 참조하십시오.
 
@@ -1231,7 +1225,7 @@ Mail( "test@example.com", "revelation", "JMP is great.", "$SAMPLE_DATA/Big Class
 
 ### Main Menu
 
-**구문:** menu = Main Menu( command, <window name> )
+**구문:** menu = Main Menu( command, &lt;window name&gt; )
 
 **설명:** 지정한 메인 메뉴 명령을 실행합니다.
 
@@ -1339,7 +1333,7 @@ Print( tax * Name( "taxable income(2011)" ) );
 
 ### New Clipboard
 
-**구문:** clp = New Clipboard( <<<Get From OS> )
+**구문:** clp = New Clipboard( &lt;&lt;&lt;Get From OS&gt; )
 
 **설명:** Creates a new Clipboard, either empty or with access to the OS clipboard.
 
@@ -1357,7 +1351,7 @@ New Window( "Img", clp << Get Flavor Data( "Graphic" ) )
 
 ### New HTTP Request
 
-**구문:** obj = New HTTP Request(URL(...), Method(...), <Form(<Fields(...)>, <Files(...)>)> | <File(...)> | <Blob(...)> | <JSON(...)>, <QueryString(...)>, <Headers(...)>, <Username(...)>, <Password(...)>)
+**구문:** obj = New HTTP Request(URL(...), Method(...), &lt;Form(&lt;Fields(...)&gt;, &lt;Files(...)&gt;)&gt; | &lt;File(...)&gt; | &lt;Blob(...)&gt; | &lt;JSON(...)&gt;, &lt;QueryString(...)&gt;, &lt;Headers(...)&gt;, &lt;Username(...)&gt;, &lt;Password(...)&gt;)
 
 **설명:** 웹 서비스로 전송할 요청을 생성합니다.
 
@@ -1761,7 +1755,7 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ### Polytope Uniform Random
 
-**구문:** points = Polytope Uniform Random( numSamples, A, b, L, U, neq, nle, nge, <nwarm=200>, <nstride=25> )
+**구문:** points = Polytope Uniform Random( numSamples, A, b, L, U, neq, nle, nge, &lt;nwarm=200&gt;, &lt;nstride=25&gt; )
 
 **설명:** 볼록 다포체(polytope)에 균등하게 분포하는 난수(점)를 생성합니다. numSamples 인수는 생성할 점의 수를 지정합니다. A 인수는 제약 조건 계수 행렬입니다. B 인수는 제약 조건의 오른쪽 값입니다. L 및 U 인수는 각각 변수의 하한 및 상한입니다. neq, mle 및 nge 인수는 각각 등식 제약 조건의 수, 제약 조건 수보다 작거나 같은 숫자, 제약 조건 수보다 크거나 같은 숫자입니다. nwarm 인수는 점이 출력 행렬에 작성되기 전의 워밍업 반복의 수입니다. nstride 인수는 출력 행렬에 작성되는 각 점 사이의 반복 수입니다. 제약 조건은 등식, 보다 작거나 같음, 보다 크거나 같음의 순서로 나열되어야 합니다.
 
@@ -1854,7 +1848,7 @@ Preferences( Graph marker size( "Large" ) );
 
 ### Register Addin
 
-**구문:** Register Addin( uniqueId, homeFolder, <displayName(name)>, <MinJMPVersion(version)>, <MaxJMPVersion(version)>, <LoadsAtStartup(autoLoad)>, <LoadNow(load)> )
+**구문:** Register Addin( uniqueId, homeFolder, &lt;displayName(name)&gt;, &lt;MinJMPVersion(version)&gt;, &lt;MaxJMPVersion(version)&gt;, &lt;LoadsAtStartup(autoLoad)&gt;, &lt;LoadNow(load)&gt; )
 
 **설명:** 추가기능을 등록합니다.
 
@@ -1931,19 +1925,7 @@ Show( Rummage( Window( dt ), "graph builder", Algorithm( "Basic" ) )[1 :: 3] << 
 
 ### Run Program
 
-**구문:** obj = Run Program(
-
-    Executable( "path/etc.exe" ),
-
-  < Options( {"/a", "/b etc" } ) >,
-
-  < Parameter( optParm ) >,
-
-  < Read Function( Function( {this, optParm}, etc ) | "text" | "blob" ) >,
-
-  < Write Function( Function( {this, optParm}, etc ) ) >
-
-)
+**구문:** obj = Run Program( Executable( "path/etc.exe" ), &lt; Options( {"/a", "/b etc" } ) &gt;, &lt; Parameter( optParm ) &gt;, &lt; Read Function( Function( {this, optParm}, etc ) | "text" | "blob" ) &gt;, &lt; Write Function( Function( {this, optParm}, etc ) ) &gt;)
 
 **설명:** stdin 및 stdout을 사용하여 외부 프로그램을 제어합니다.
 
@@ -2068,7 +2050,7 @@ Platform Preferences( Bivariate( Fit Line( 1 ) ) );
 
 ### Set Policy
 
-**구문:** Set Policy("PolicyName", <Empty()|#|"value"> )
+**구문:** Set Policy("PolicyName", &lt;Empty()|#|"value"&gt; )
 
 **JMP추가된 버전:** 18
 
@@ -2104,7 +2086,7 @@ Preferences( Graph marker size( "Large" ) );
 
 ### Set Toolbar Visibility
 
-**구문:** rc = Set Toolbar Visibility( "toolbar-name" | Default | All, <window-class-name | All>, <True | False> )
+**구문:** rc = Set Toolbar Visibility( "toolbar-name" | Default | All, &lt;window-class-name | All&gt;, &lt;True | False&gt; )
 
 **설명:** 지정된 창 클래스에 대한 지정된 도구 모음의 표시 여부를 설정합니다. toolbar-name은 도구 모음의 내부 이름입니다. Default가 도구 모음 이름으로 전달되면 지정된 창 클래스가 해당 창 클래스에 대해 설정된 기본 도구 모음으로 복원됩니다. window-class-name의 예로는 Data Table, Script, Report 및 Journal이 있습니다. window-class-name이 All이면 지정된 도구 모음에 대한 표시 여부가 모든 창 클래스에 대해 설정됩니다.
 
@@ -2182,7 +2164,7 @@ Show Addins Dialog();
 
 ### Show Commands
 
-**구문:** Show Commands( <keyword=Builtins> )
+**구문:** Show Commands( &lt;keyword=Builtins&gt; )
 
 **설명:** 다양한 JSL 구성 요소에 대한 정보가 포함된 하나 이상의 데이터 테이블을 생성합니다. keyword 인수는 출력 테이블의 내용을 결정합니다. 기본 제공 연산자 및 함수에 대해 Builtins(기본값)를 지정합니다. 개체의 모든 스크립트 가능 명령에 대해 Scriptables를 지정합니다. 영어 및 로컬라이즈된 버전의 스크립트 가능 명령에 대해 Translations를 지정합니다. 표시 상자 및 표시 세그먼트와 관련된 스크립트 가능 명령에 대해 Display Boxes를 지정합니다. 스크립트 가능 개체의 이름에 대해 Scriptable Names를 지정합니다. 플랫폼 이름에 대해 Platform Names를 지정합니다.
 
@@ -2244,7 +2226,7 @@ Scatterplot 3D( Y( :Col1, :Col2, :Col3 ) );
 
 ### Socket
 
-**구문:** socketHandle = Socket( <STREAM | DGRAM> )
+**구문:** socketHandle = Socket( &lt;STREAM | DGRAM&gt; )
 
 **설명:** 이 컴퓨터 또는 네트워크에 연결된 다른 컴퓨터의 소켓과 통신할 수 있는 소켓 변수를 생성합니다. 기본 인수는 STREAM입니다. 귀사의 웹 사이트와 통신을 시도해 보십시오.
 
@@ -2289,7 +2271,7 @@ If( rc[2] == "ok",
 
 ### Speak
 
-**구문:** Speak( text, <Wait( sync )> )
+**구문:** Speak( text, &lt;Wait( sync )&gt; )
 
 **설명:** 운영 체제에서 지원되는 경우 텍스트를 읽어 줍니다. 선택적 Wait(true) 인수를 지정하면 읽어주기가 완료될 때까지 스크립트 실행이 지연됩니다.
 
@@ -2361,7 +2343,7 @@ Unregister Addin( "com.mycompany.myaddin" );
 
 ### Web
 
-**구문:** Web( string, <JMP Window> )
+**구문:** Web( string, &lt;JMP Window&gt; )
 
 **설명:** string에 저장된 파일 또는 URL을 기본 웹 브라우저에서 엽니다. 두 번째 인수(선택적)는 HTML이 JMP 브라우저 창에서 열리도록 지정합니다.
 
@@ -2404,7 +2386,7 @@ New Table( "Example",
 
 ### With Clipboard
 
-**구문:** two = With Clipboard( clp, box << Paste; 1 + 1 )
+**구문:** two = With Clipboard( clp, box &lt;&lt; Paste; 1 + 1 )
 
 **설명:** If the JSL within this function would have normally pasted something from the OS Clipboard, it is instead pasted from the provided Clipboard object.
 

@@ -75,7 +75,7 @@ If( !Check SAS Dependencies(),
 
 ### SAS Connect
 
-**Syntaxe :** SAS Connect(<( data_connector_or_id )>, <Prompt( Always|Never|IfNeeded )>)
+**Syntaxe :** SAS Connect(&lt;( data_connector_or_id )&gt;, &lt;Prompt( Always|Never|IfNeeded )&gt;)
 
 **Description :** Ouvre une connexion SAS.
 
@@ -160,7 +160,7 @@ If( Check SAS Dependencies(),
 
 #### Get Log
 
-**Syntaxe :** obj << Get Log
+**Syntaxe :** obj &lt;&lt; Get Log
 
 **Description :** Renvoie une chaîne contenant les contenus de la fenêtre de log de la connexion active au serveur SAS.
 
@@ -183,7 +183,7 @@ Show( log );
 
 #### Get Output
 
-**Syntaxe :** obj << Get Output
+**Syntaxe :** obj &lt;&lt; Get Output
 
 **Description :** Renvoie une chaîne contenant les contenus de la fenêtre de log de la connexion active au serveur SAS.
 
@@ -202,7 +202,7 @@ Show( out );
 
 #### Get Output Datasets
 
-**Syntaxe :** obj << Get Output Datasets
+**Syntaxe :** obj &lt;&lt; Get Output Datasets
 
 **Description :** Renvoie une chaîne contenant les contenus de la fenêtre de log de la connexion active au serveur SAS.
 
@@ -231,7 +231,7 @@ Show( data );
 
 #### Connect
 
-**Syntaxe :** sas << Connect( <( data_connector_or_id )>, <Prompt( Always|Never|IfNeeded )>)
+**Syntaxe :** sas &lt;&lt; Connect( &lt;( data_connector_or_id )&gt;, &lt;Prompt( Always|Never|IfNeeded )&gt;)
 
 **Description :** Tentez de reconnecter un objet de connexion à un serveur SAS qui s&apos;est déconnecté.
 
@@ -249,7 +249,7 @@ sas << Connect();
 
 #### Current CAS Connection
 
-**Syntaxe :** result = sas << Current CAS Connection()
+**Syntaxe :** result = sas &lt;&lt; Current CAS Connection()
 
 **Description :** Obtient la connexion au serveur CAS actif.
 
@@ -280,7 +280,7 @@ Show( connected );
 
 #### Data Set Exists
 
-**Syntaxe :** result = sas << Data Set Exists( libref, dsname )
+**Syntaxe :** result = sas &lt;&lt; Data Set Exists( libref, dsname )
 
 **Description :** Renvoie 1 si un jeu de données SAS est présent.
 
@@ -310,7 +310,7 @@ Show( result );
 
 #### Disconnect
 
-**Syntaxe :** obj << Disconnect
+**Syntaxe :** obj &lt;&lt; Disconnect
 
 **Description :** Déconnectez cette connexion au serveur SAS.
 
@@ -327,9 +327,7 @@ sas << Disconnect();
 
 #### Export Data
 
-**Syntaxe :** y = sas << Export Data( dt, libref, dataset, <named_arguments> );
-
-y = sas << SAS Export Data( dt, libref.dataset, <named_arguments> )
+**Syntaxe :** y = sas &lt;&lt; Export Data( dt, libref, dataset, &lt;named_arguments&gt; );y = sas &lt;&lt; SAS Export Data( dt, libref.dataset, &lt;named_arguments&gt; )
 
 **Description :** Exporte une table de données JMP en tant que jeu de données SAS sur la connexion active au serveur SAS. Les arguments nommés facultatifs comprennent Columns(list|col1,col2,...,coln), les arguments à valeur de chaîne Password, AlterPassword, ReadPassword, et WritePassword, ainsi que les arguments à valeur booléenne HonorExcludedRows, PreserveSASColumnNames, PreserveSASFormats, ReplaceExisting, ExistingAlterPassword, et SaveJMPMetadata. Renvoie 1 si l&apos;exportation a réussi, 0 dans le cas contraire.
 
@@ -345,7 +343,7 @@ sas << Export Data( Open( "$SAMPLE_DATA/Big Class.jmp" ), "WORK", "BIGCLASS" );
 
 #### Get Data Sets
 
-**Syntaxe :** result = sas << Get Data Sets( libref )
+**Syntaxe :** result = sas &lt;&lt; Get Data Sets( libref )
 
 **Description :** Renvoie une liste des jeux de données définis dans une bibliothèque SAS.
 
@@ -362,7 +360,7 @@ Show( result );
 
 #### Get Host Name
 
-**Syntaxe :** var = sas << Get Host Name( )
+**Syntaxe :** var = sas &lt;&lt; Get Host Name( )
 
 **Description :** Obtenir le nom d&apos;hôte du serveur SAS
 
@@ -379,7 +377,7 @@ Show( result );
 
 #### Get Lib Refs
 
-**Syntaxe :** result = sas << Get Lib Refs()
+**Syntaxe :** result = sas &lt;&lt; Get Lib Refs()
 
 **Description :** Renvoie une liste des références de bibliothèque SAS actuellement définies à partir de la connexion active au serveur SAS.
 
@@ -396,7 +394,7 @@ Show( result );
 
 #### Get Log
 
-**Syntaxe :** result = sas << Get Log()
+**Syntaxe :** result = sas &lt;&lt; Get Log()
 
 **Description :** Renvoie une chaîne contenant les contenus de la fenêtre de log de la connexion active au serveur SAS.
 
@@ -418,7 +416,7 @@ Show( result );
 
 #### Get Macro Var
 
-**Syntaxe :** var = sas << GetMacroVar( "name" )
+**Syntaxe :** var = sas &lt;&lt; GetMacroVar( "name" )
 
 **Description :** Obtenir la valeur d&apos;une variable macro SAS
 
@@ -435,7 +433,7 @@ Show( result );
 
 #### Get Macro Var Names
 
-**Syntaxe :** var = sas << GetMacroVarNames( )
+**Syntaxe :** var = sas &lt;&lt; GetMacroVarNames( )
 
 **Description :** Obtenir une liste des variables macro SAS
 
@@ -452,7 +450,7 @@ Show( result );
 
 #### Get Option Names
 
-**Syntaxe :** var = sas << GetOptionNames( )
+**Syntaxe :** var = sas &lt;&lt; GetOptionNames( )
 
 **Description :** Obtenir une liste des options SAS
 
@@ -469,7 +467,7 @@ Show( result );
 
 #### Get Option Value
 
-**Syntaxe :** var = sas << Get Option Value( "name" )
+**Syntaxe :** var = sas &lt;&lt; Get Option Value( "name" )
 
 **Description :** Obtenir la valeur d&apos;une option SAS
 
@@ -486,7 +484,7 @@ Show( result );
 
 #### Get Output
 
-**Syntaxe :** result = sas << Get Output()
+**Syntaxe :** result = sas &lt;&lt; Get Output()
 
 **Description :** Renvoie une chaîne contenant la sortie de liste de la dernière soumission de code SAS à la connexion à un serveur SAS active.
 
@@ -504,7 +502,7 @@ Show( result );
 
 #### Get Results
 
-**Syntaxe :** result = sas << Get Results()
+**Syntaxe :** result = sas &lt;&lt; Get Results()
 
 **Description :** Obtenir les résultats de la dernière soumission pour ce serveur
 
@@ -522,7 +520,7 @@ Show( result );
 
 #### Get Submit Status
 
-**Syntaxe :** result = sas << Get Submit Status()
+**Syntaxe :** result = sas &lt;&lt; Get Submit Status()
 
 **Description :** Obtenir l&apos;état de la dernière soumission pour ce serveur
 
@@ -540,9 +538,7 @@ Show( result );
 
 #### Get Var Info
 
-**Syntaxe :** result = sas << Get Var Info( libref, dataset );
-
-result = sas << Get Var Info( libref.dataset )
+**Syntaxe :** result = sas &lt;&lt; Get Var Info( libref, dataset );result = sas &lt;&lt; Get Var Info( libref.dataset )
 
 **Description :** Obtenir des informations sur les variables dans un jeu de données SAS
 
@@ -559,9 +555,7 @@ Show( result );
 
 #### Get Var Names
 
-**Syntaxe :** result = sas << Get Var Names( libref, dataset );
-
-result = sas << SAS Get Var Names( libref.dataset )
+**Syntaxe :** result = sas &lt;&lt; Get Var Names( libref, dataset );result = sas &lt;&lt; SAS Get Var Names( libref.dataset )
 
 **Description :** Récupère les noms de variable contenus dans le jeu de données spécifié à partir de la connexion à un serveur SAS active.
 
@@ -578,7 +572,7 @@ Show( result );
 
 #### Get Version
 
-**Syntaxe :** ver = sas << GetVersion( < Long > )
+**Syntaxe :** ver = sas &lt;&lt; GetVersion( &lt; Long &gt; )
 
 **Description :** Obtenir la version de SAS
 
@@ -595,7 +589,7 @@ Show( result );
 
 #### Get Work Folder
 
-**Syntaxe :** obj << Get Work Folder
+**Syntaxe :** obj &lt;&lt; Get Work Folder
 
 **Description :** Obtenir le répertoire de la bibliothèque de TRAVAIL du serveur
 
@@ -612,9 +606,7 @@ Show( result );
 
 #### Import Data
 
-**Syntaxe :** dt = sas << Import Data( libref, dataset, <named_arguments> );
-
-dt = sas << Import Data( libref.dataset|path, <named_arguments> )
+**Syntaxe :** dt = sas &lt;&lt; Import Data( libref, dataset, &lt;named_arguments&gt; );dt = sas &lt;&lt; Import Data( libref.dataset|path, &lt;named_arguments&gt; )
 
 **Description :** Importe un jeu de données SAS à partir de la connexion à un serveur SAS active dans une table de données JMP. Les arguments nommés facultatifs comprennent Sample(<arguments_nommés>), Columns(liste|col1,col2,...,coln), arguments à valeur de chaîne Where, et arguments à valeur booléenne ConvertCustomFormats, Invisible, UseLabelsForVarNames, SQLTableVariable. Renvoie un objet table de données JMP.
 
@@ -630,7 +622,7 @@ dt = sas << Import Data( "SASHELP.CLASS" );
 
 #### List Output Data Sets
 
-**Syntaxe :** sas << List Output Data Sets(sas code)
+**Syntaxe :** sas &lt;&lt; List Output Data Sets(sas code)
 
 **Description :** Répertorie les jeux de données de sortie pour le code SAS spécifié
 
@@ -653,7 +645,7 @@ Show( datasets );
 
 #### Name
 
-**Syntaxe :** serverName = sas << Name
+**Syntaxe :** serverName = sas &lt;&lt; Name
 
 **Description :** Renvoie le nom du serveur.
 
@@ -670,7 +662,7 @@ Show( serverName );
 
 #### Submit
 
-**Syntaxe :** result = sas << Submit( <GetSASLog(<True|False|OnError>, <OnSubmitComplete(script)>, <OpenOutputDatasets(<All|None, UseLabelsForVarNames(1|0),dataset1,dataset2,...,datasetN>)>, <ODSFormat>, <ODS Style>, <Title>, <OpenODSResults>, <NoOutputWindow>
+**Syntaxe :** result = sas &lt;&lt; Submit( &lt;GetSASLog(&lt;True|False|OnError&gt;, &lt;OnSubmitComplete(script)&gt;, &lt;OpenOutputDatasets(&lt;All|None, UseLabelsForVarNames(1|0),dataset1,dataset2,...,datasetN&gt;)&gt;, &lt;ODSFormat&gt;, &lt;ODS Style&gt;, &lt;Title&gt;, &lt;OpenODSResults&gt;, &lt;NoOutputWindow&gt;
 
 **Description :** Soumet le code SAS à la connexion active au serveur SAS. Renvoie 1 en cas de réussite, 0 dans le cas contraire.
 
@@ -691,7 +683,7 @@ sas << Submit(
 
 #### Submit File
 
-**Syntaxe :** result = sas << Submit File( "filename.sas" )
+**Syntaxe :** result = sas &lt;&lt; Submit File( "filename.sas" )
 
 **Description :** Soumet un fichier contenant le code SAS à la connexion active au serveur SAS. Les arguments facultatifs nommés sont identiques à ceux des soumissions SAS. Renvoie 1 en cas de réussite, 0 dans le cas contraire.
 

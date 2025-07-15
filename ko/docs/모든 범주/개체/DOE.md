@@ -12,25 +12,25 @@
 
 ### Factor
 
-**구문:** obj << Factor( column(s) )
+**구문:** obj &lt;&lt; Factor( column(s) )
 
 ### Response
 
-**구문:** obj << Response( column(s) )
+**구문:** obj &lt;&lt; Response( column(s) )
 
 ### X
 
-**구문:** obj << X( column(s) )
+**구문:** obj &lt;&lt; X( column(s) )
 
 ### Y
 
-**구문:** obj << Y( column(s) )
+**구문:** obj &lt;&lt; Y( column(s) )
 
 ## 항목 메시지
 
 ### A-Optimality Parameter Weights
 
-**구문:** obj << A-Optimality Parameter Weights
+**구문:** obj &lt;&lt; A-Optimality Parameter Weights
 
 **설명:** A-최적 설계를 생성하는 데 사용할 가중치를 설정합니다.
 
@@ -52,7 +52,7 @@ DOE(
 
 ### ALT Factor Settings
 
-**구문:** obj << ALT Factor Settings
+**구문:** obj &lt;&lt; ALT Factor Settings
 
 **설명:** 가속 수명 시험 계획의 지정된 요인 번호에 대해 요인 이름, 수준 수, 요인 변환, 사용 조건 및 시험 조건을 지정할 수 있도록 허용합니다.
 
@@ -74,7 +74,7 @@ DOE(
 
 ### ALT Plan Setup
 
-**구문:** obj << ALT Plan Setup( 1|2|3 )
+**구문:** obj &lt;&lt; ALT Plan Setup( 1|2|3 )
 
 **설명:** 가속 수명 시험 계획에 대한 초기 모형 선택을 지정합니다.
 
@@ -96,7 +96,7 @@ DOE(
 
 ### Add Alias Term
 
-**구문:** obj << Add Alias Term
+**구문:** obj &lt;&lt; Add Alias Term
 
 **설명:** 별칭 항 목록에 별칭 항을 추가합니다. 목록의 각 효과에 대해 요인 번호 및 멱을 지정합니다. 쉼표로 효과를 구분하여 교호작용을 생성합니다.
 
@@ -111,7 +111,7 @@ d << Add Alias Term( {1, 2} );
 
 ### Add Constraint
 
-**구문:** obj << Add Constraint
+**구문:** obj &lt;&lt; Add Constraint
 
 **설명:** 행렬로 선형 제약 조건을 추가합니다. 각 행은 제약 조건을 나타냅니다. 마지막 열은 부등식 제약 조건의 오른쪽에 있는 값입니다. JSL에서는 부등식 제약 조건이 오른쪽에 있는 값보다 작거나 같아야 합니다.
 
@@ -131,7 +131,7 @@ DOE(
 
 ### Add Factor
 
-**구문:** obj << Add Factor( Continuous|Discrete Numeric|Blocking|Constant|Categorical|Mixture )
+**구문:** obj &lt;&lt; Add Factor( Continuous|Discrete Numeric|Blocking|Constant|Categorical|Mixture )
 
 **설명:** 지정된 유형의 요인과 선택적 인수를 추가합니다. 아무것도 지정하지 않을 경우 연속형 요인이 추가됩니다.
 
@@ -149,7 +149,7 @@ d << Add Factor( Constant, 3, "X5" );
 
 ### Add Functional Response
 
-**구문:** obj << Add Functional Response
+**구문:** obj &lt;&lt; Add Functional Response
 
 **설명:** 지정된 이름, 런당 측정값 수 및 값을 사용하여 함수 반응을 추가합니다.
 
@@ -171,7 +171,7 @@ DOE(
 
 ### Add Potential Term
 
-**구문:** obj << Add Potential Term
+**구문:** obj &lt;&lt; Add Potential Term
 
 **설명:** 모형 항 목록에 If Possible 항을 추가합니다. 목록의 각 효과에 대해 요인 번호 및 멱을 지정합니다. 쉼표로 효과를 구분하여 교호작용을 생성합니다.
 
@@ -186,7 +186,7 @@ d << Add Potential Term( {1, 2} );
 
 ### Add Response
 
-**구문:** obj << Add Response( goal, name, lower limit, upper limit, importance, lower detection limit, upper detection limit )
+**구문:** obj &lt;&lt; Add Response( goal, name, lower limit, upper limit, importance, lower detection limit, upper detection limit )
 
 **설명:** 지정된 목표, 이름, 하한, 상한 및 중요도가 있는 반응을 추가합니다.
 
@@ -210,7 +210,7 @@ DOE( Custom Design, Add Response( Match Target, "Y", ., ., 1, 10, 30 ) );
 
 ### Add Term
 
-**구문:** obj << Add Term
+**구문:** obj &lt;&lt; Add Term
 
 **설명:** 모형 항 목록에 "필수" 항을 추가합니다. 효과는 {요인 번호, 멱}으로 지정됩니다. 쉼표로 효과를 구분하여 교호작용을 생성할 수 있습니다.
 
@@ -225,7 +225,7 @@ d << Add Term( {1, 2} );
 
 ### Additional Designs
 
-**구문:** obj << Additional Designs
+**구문:** obj &lt;&lt; Additional Designs
 
 **설명:** 참조 설계와 비교할 최대 9개까지의 추가적인 설계를 지정합니다.
 
@@ -247,7 +247,7 @@ DOE(
 
 ### Allow covariate rows to be repeated
 
-**구문:** obj << Allow covariate rows to be repeated( state=0|1 )
+**구문:** obj &lt;&lt; Allow covariate rows to be repeated( state=0|1 )
 
 **설명:** 설계에서 공변량 행을 반복할 수 있는지 여부를 지정합니다.
 
@@ -277,7 +277,7 @@ DOE(
 
 ### Augment Method
 
-**구문:** obj << Augment Method( Replicate|Centerpoints|Fold Over|Add Axial|Augment )
+**구문:** obj &lt;&lt; Augment Method( Replicate|Centerpoints|Fold Over|Add Axial|Augment )
 
 **설명:** 확대 방법의 유형 및 해당 모수를 지정합니다.
 
@@ -340,7 +340,7 @@ d << Augment Method( Add Axial, 1, 2 );
 
 ### Blocks
 
-**구문:** obj << Blocks
+**구문:** obj &lt;&lt; Blocks
 
 **설명:** 균형 불완비 블록 설계(BIBD)에 대한 블록 크기를 지정합니다.
 
@@ -357,7 +357,7 @@ d << Make Design;
 
 ### Center Points
 
-**구문:** obj << Center Points
+**구문:** obj &lt;&lt; Center Points
 
 **설명:** 중앙점에서의 반복 횟수를 지정합니다.
 
@@ -394,7 +394,7 @@ DOE(
 
 ### Change Anticipated Coefficients
 
-**구문:** obj << Change Anticipated Coefficients
+**구문:** obj &lt;&lt; Change Anticipated Coefficients
 
 **설명:** 검정력 분석의 예상 계수를 변경합니다.
 
@@ -409,7 +409,7 @@ d << Change Anticipated Coefficients( [1 2 3 4 2 2 2 3 3 3] );
 
 ### Change Factor Settings
 
-**구문:** obj << Change Factor Settings
+**구문:** obj &lt;&lt; Change Factor Settings
 
 **설명:** 첫 번째 인수에 포함한 연속형 또는 혼합물 요인의 최소값, 최대값 및 이름을 지정합니다. 초기에 요인을 사전 정의한 플랫폼에 가장 유용합니다.
 
@@ -437,7 +437,7 @@ d << Change Factor Settings( 3, 0, 0.8, "C" );
 
 ### Check Inscribe
 
-**구문:** obj << Check Inscribe
+**구문:** obj &lt;&lt; Check Inscribe
 
 **설명:** 축 점이 범위의 아래쪽 및 위쪽 끝에 놓이도록 설계의 척도를 재조정합니다.
 
@@ -452,7 +452,7 @@ d << Check Inscribe;
 
 ### Choice Design Table Output
 
-**구문:** obj << Choice Design Table Output( "별도"|"결합" )
+**구문:** obj &lt;&lt; Choice Design Table Output( "별도"|"결합" )
 
 **설명:** 선택 설계에 대한 데이터 테이블 생성 방법을 지정합니다.
 
@@ -472,7 +472,7 @@ DOE(
 
 ### D Efficiency Weight
 
-**구문:** obj << D Efficiency Weight
+**구문:** obj &lt;&lt; D Efficiency Weight
 
 **설명:** 이 옵션을 사용하여 D-효율도의 상대 중요도 및 별칭 축소를 조절할 수 있습니다. 0에서 1 사이의 숫자를 지정하십시오.
 
@@ -491,7 +491,7 @@ DOE(
 
 ### Design Search Time
 
-**구문:** obj << Design Search Time( number )
+**구문:** obj &lt;&lt; Design Search Time( number )
 
 **설명:** 설계를 검색할 시간(초)을 지정합니다.
 
@@ -508,7 +508,7 @@ DOE(
 
 ### Disallowed Combinations
 
-**구문:** obj << Disallowed Combinations
+**구문:** obj &lt;&lt; Disallowed Combinations
 
 **설명:** 설계에서 제외되어야 하는 모든 요인 조합에 대해 true를 반환하는 스크립트를 제공할 수 있습니다.
 
@@ -528,7 +528,7 @@ DOE(
 
 ### Discrete Numeric Powers Set to Necessary
 
-**구문:** obj << Discrete Numeric Powers Set to Necessary( state=0|1 )
+**구문:** obj &lt;&lt; Discrete Numeric Powers Set to Necessary( state=0|1 )
 
 **설명:** 이산 수치형 요인의 멱이 필수 모형 항인지 여부를 지정합니다.
 
@@ -547,7 +547,7 @@ DOE(
 
 ### Distribution Choice
 
-**구문:** obj << Distribution Choice
+**구문:** obj &lt;&lt; Distribution Choice
 
 **설명:** 가속 수명 시험 계획에 대한 분포를 지정합니다.
 
@@ -569,7 +569,7 @@ DOE(
 
 ### Enforce Use of Selected Covariate Rows
 
-**구문:** obj << Enforce Use of Selected Covariate Rows( state=0|1 )
+**구문:** obj &lt;&lt; Enforce Use of Selected Covariate Rows( state=0|1 )
 
 **설명:** 선택한 모든 공변량 행을 설계에 포함할지 여부를 지정합니다.
 
@@ -599,7 +599,7 @@ DOE(
 
 ### FFF Optimality Criterion
 
-**구문:** obj << FFF Optimality Criterion( "MaxPro"|"Centroid" )
+**구문:** obj &lt;&lt; FFF Optimality Criterion( "MaxPro"|"Centroid" )
 
 **설명:** 설계에 사용되는 기준을 지정합니다. 권장 값은 기본값입니다.
 
@@ -637,7 +637,7 @@ DOE(
 
 ### Find Subset
 
-**구문:** obj << Find Subset
+**구문:** obj &lt;&lt; Find Subset
 
 **설명:** 꼭지점 설계의 D-최적 부분집합을 찾습니다.
 
@@ -652,7 +652,7 @@ d << Find Subset( 10 );
 
 ### GOSSDDetails
 
-**구문:** obj << GOSSDDetails
+**구문:** obj &lt;&lt; GOSSDDetails
 
 **설명:** 현재 요인 설정을 목록으로 반환합니다.
 
@@ -668,7 +668,7 @@ Show( d << GOSSDDetails );
 
 ### GOSSDStructure
 
-**구문:** obj << GOSSDStructure
+**구문:** obj &lt;&lt; GOSSDStructure
 
 **설명:** GOSSD의 구조를 지정합니다.
 
@@ -684,7 +684,7 @@ d << GOSSDStructure( 6, 8 );
 
 ### Get Alias Matrix
 
-**구문:** obj << Get Alias Matrix
+**구문:** obj &lt;&lt; Get Alias Matrix
 
 **설명:** 설계 평가로부터 별칭 행렬을 반환합니다.
 
@@ -699,7 +699,7 @@ d << Get Alias Matrix;
 
 ### Get Design Diagnostics
 
-**구문:** obj << Get Design Diagnostics
+**구문:** obj &lt;&lt; Get Design Diagnostics
 
 **설명:** D 효율도, G 효율도, A 효율도 및 예측 평균 분산을 반환합니다.
 
@@ -714,7 +714,7 @@ d << Get Design Diagnostics;
 
 ### Get Effect Power
 
-**구문:** obj << Get Effect Power
+**구문:** obj &lt;&lt; Get Effect Power
 
 **설명:** 효과 추정값에 대한 멱의 벡터를 반환합니다.
 
@@ -729,7 +729,7 @@ d << Get Effect Power;
 
 ### Get Estimation Efficiencies
 
-**구문:** obj << Get Estimation Efficiencies
+**구문:** obj &lt;&lt; Get Estimation Efficiencies
 
 **설명:** 이상적 설계와 비교하여 각 모수 추정값의 증가한 너비에 대한 벡터를 반환합니다.
 
@@ -744,7 +744,7 @@ d << Get Estimation Efficiencies;
 
 ### Get MaxPro Values
 
-**구문:** obj << Get MaxPro Values
+**구문:** obj &lt;&lt; Get MaxPro Values
 
 **설명:** 범주형 요인의 수준을 기반으로 하는 하위 설계를 포함하여 빠르고 유연한 설계에 대한 MaxPro 값을 반환합니다.
 
@@ -765,7 +765,7 @@ d << Get MaxPro Values;
 
 ### Get Number of Random Starts
 
-**구문:** obj << Get Number of Random Starts
+**구문:** obj &lt;&lt; Get Number of Random Starts
 
 **설명:** 설계 생성에 사용되는 랜덤 시작 횟수를 반환합니다.
 
@@ -773,7 +773,7 @@ d << Get MaxPro Values;
 
 ### Get Power
 
-**구문:** obj << Get Power
+**구문:** obj &lt;&lt; Get Power
 
 **설명:** 모수 추정값에 대한 멱의 벡터를 반환합니다.
 
@@ -788,7 +788,7 @@ d << Get Power;
 
 ### Get Prediction Variances
 
-**구문:** obj << Get Prediction Variances
+**구문:** obj &lt;&lt; Get Prediction Variances
 
 **설명:** 설계 공간 비율 그림에서 예측 분산 벡터를 반환합니다.
 
@@ -808,7 +808,7 @@ d << Get Prediction Variances;
 
 ### Get X Matrix
 
-**구문:** obj << Get X Matrix
+**구문:** obj &lt;&lt; Get X Matrix
 
 **설명:** 설계 행렬(행렬 X라고도 함)을 반환합니다.
 
@@ -823,7 +823,7 @@ d << Get X Matrix;
 
 ### Group New Runs Into Separate Block
 
-**구문:** obj << Group New Runs Into Separate Block
+**구문:** obj &lt;&lt; Group New Runs Into Separate Block
 
 **설명:** 설계 확대 시 새로운 런을 별개의 블록으로 그룹화하는 블록 요인을 추가합니다.
 
@@ -838,7 +838,7 @@ d << Group New Runs Into Separate Block;
 
 ### Load Constraints
 
-**구문:** obj << Load Constraints
+**구문:** obj &lt;&lt; Load Constraints
 
 **설명:** 이 실험에 사용할 수 있도록 이전에 저장한 요인 제약 조건 테이블을 불러옵니다.
 
@@ -858,7 +858,7 @@ d = DOE(
 
 ### Load Design
 
-**구문:** obj << Load Design
+**구문:** obj &lt;&lt; Load Design
 
 **설명:** 설계 불러오기
 
@@ -872,7 +872,7 @@ d << Load Design();
 
 ### Load Factors
 
-**구문:** obj << Load Factors
+**구문:** obj &lt;&lt; Load Factors
 
 **설명:** 이 실험에 사용할 수 있도록 이전에 저장한 요인 테이블을 불러옵니다.
 
@@ -886,7 +886,7 @@ DOE( Custom Design, Load Factors );
 
 ### Load Responses
 
-**구문:** obj << Load Responses
+**구문:** obj &lt;&lt; Load Responses
 
 **설명:** 이전에 저장한 반응 데이터 테이블을 불러옵니다.
 
@@ -900,7 +900,7 @@ DOE( Custom Design, Load Responses );
 
 ### Local Design
 
-**구문:** obj << Local Design( state=0|1 )
+**구문:** obj &lt;&lt; Local Design( state=0|1 )
 
 **설명:** 사전 평균에 대한 로컬 설계를 생성할지 여부를 지정합니다.
 
@@ -923,7 +923,7 @@ DOE(
 
 ### Make Design
 
-**구문:** obj << Make Design
+**구문:** obj &lt;&lt; Make Design
 
 **설명:** 스크립트에 지정한 설계를 생성합니다.
 
@@ -938,7 +938,7 @@ d << Make Design;
 
 ### Make Model
 
-**구문:** obj << Make Model( Linear|Interactions|RSM )
+**구문:** obj &lt;&lt; Make Model( Linear|Interactions|RSM )
 
 **설명:** 지정된 모형의 모형 항 목록에 항을 추가합니다.
 
@@ -964,7 +964,7 @@ d << Make Model( Interactions );
 
 ### Make Strip Plot Design
 
-**구문:** obj << Make Strip Plot Design
+**구문:** obj &lt;&lt; Make Strip Plot Design
 
 **설명:** 변경하기 힘든 요인이 매우 변경하기 힘든 요인과 독립적으로 변하는 경우 조각구 설계를 지정합니다.
 
@@ -984,7 +984,7 @@ d << Make Strip Plot Design;
 
 ### Make Table
 
-**구문:** obj << Make Table
+**구문:** obj &lt;&lt; Make Table
 
 **설명:** 현재 설계에서 데이터 테이블을 생성합니다.
 
@@ -999,7 +999,7 @@ d << Make Table;
 
 ### Make Test Plan
 
-**구문:** obj << Make Test Plan
+**구문:** obj &lt;&lt; Make Test Plan
 
 **설명:** 가속 수명 시험 계획에 대한 시험 계획을 생성합니다.
 
@@ -1022,7 +1022,7 @@ DOE(
 
 ### MaxPro Categorical Weight
 
-**구문:** obj << MaxPro Categorical Weight
+**구문:** obj &lt;&lt; MaxPro Categorical Weight
 
 **설명:** MaxPro 가중치를 지정하십시오. 1보다 큰 값은 동일한 범주형 수준을 가진 점 간의 간격을 늘립니다.
 
@@ -1042,7 +1042,7 @@ DOE(
 
 ### Mixture Design Type
 
-**구문:** obj << Mixture Design Type( Simplex Centroid|Simplex Lattice|ABCD|Extreme Vertices|Space Filling )
+**구문:** obj &lt;&lt; Mixture Design Type( Simplex Centroid|Simplex Lattice|ABCD|Extreme Vertices|Space Filling )
 
 **설명:** 혼합물 설계의 유형을 지정합니다. 두 번째 인수로 모수를 지정하지 않으면 기본 모수가 사용됩니다.
 
@@ -1099,7 +1099,7 @@ d << Mixture Design Type( Space Filling, 25 );
 
 ### Mixture Sum
 
-**구문:** obj << Mixture Sum
+**구문:** obj &lt;&lt; Mixture Sum
 
 **설명:** 모든 성분의 합이 1이 아닌 다른 값이 되도록 표현하려는 경우 이 옵션을 사용하십시오. 혼합물 총계는 모든 성분의 합입니다.
 
@@ -1119,7 +1119,7 @@ DOE(
 
 ### Nesting Structure
 
-**구문:** obj << Nesting Structure
+**구문:** obj &lt;&lt; Nesting Structure
 
 **설명:** 설계의 내포 구조를 지정합니다. 내포를 나타내려면 대괄호로 묶은 목록을 사용합니다(첫 번째 요소는 내포 요인, 두 번째 요소는 내포된 요인 또는 구조를 대괄호로 묶은 목록). 교차된 요인 또는 구조를 나타내려면 수평 연결 기호(&apos;||&apos;)를 사용합니다.
 
@@ -1138,7 +1138,7 @@ DOE(
 
 ### Number of Column Starts
 
-**구문:** obj << Number of Column Starts
+**구문:** obj &lt;&lt; Number of Column Starts
 
 **설명:** 주효과 선별 설계의 각 요인에 대해 랜덤 열이 최적화되는 횟수를 지정합니다.
 
@@ -1160,7 +1160,7 @@ DOE(
 
 ### Number of Extra Runs
 
-**구문:** obj << Number of Extra Runs
+**구문:** obj &lt;&lt; Number of Extra Runs
 
 **설명:** 확증적 선별 설계에 포함할 추가 런 수를 지정합니다.
 
@@ -1183,7 +1183,7 @@ DOE(
 
 ### Number of Starts
 
-**구문:** obj << Number of Starts
+**구문:** obj &lt;&lt; Number of Starts
 
 **설명:** 전체 설계를 최적화하기 위해 설계가 재생성되는 횟수를 지정합니다.
 
@@ -1203,7 +1203,7 @@ DOE(
 
 ### Optimality Criterion
 
-**구문:** obj << Optimality Criterion( "권장 사항"|"D-최적 설계 생성"|"I-최적 설계 생성"|"A-최적 설계 생성"|"최적 설계 별칭 생성" )
+**구문:** obj &lt;&lt; Optimality Criterion( "권장 사항"|"D-최적 설계 생성"|"I-최적 설계 생성"|"A-최적 설계 생성"|"최적 설계 별칭 생성" )
 
 **설명:** 설계에 사용되는 기준을 지정합니다. 권장 값은 기본값입니다.
 
@@ -1241,7 +1241,7 @@ DOE(
 
 ### Order Column
 
-**구문:** obj << Order Column
+**구문:** obj &lt;&lt; Order Column
 
 **설명:** 데이터 테이블이 생성될 때 순서 열을 요청합니다.
 
@@ -1259,7 +1259,7 @@ d << OrderColumn( 1 );
 
 ### Prior Parameter Variance
 
-**구문:** obj << Prior Parameter Variance
+**구문:** obj &lt;&lt; Prior Parameter Variance
 
 **설명:** 이 옵션을 사용하여 (가능한 경우만) 모형의 항에 사용되는 가중치를 조절할 수 있습니다. 값이 높을수록 사전 정보가 더 많고 분산이 작음을 의미합니다. 분산은 입력된 값에 대한 역수입니다.
 
@@ -1281,7 +1281,7 @@ DOE(
 
 ### Prior Specification Choice
 
-**구문:** obj << Prior Specification Choice
+**구문:** obj &lt;&lt; Prior Specification Choice
 
 **설명:** 사전 모수를 지정하기 위한 옵션을 설정합니다. 여기서 1은 절편 지정을 나타내고 2는 분위수 지정을 나타냅니다.
 
@@ -1303,7 +1303,7 @@ DOE(
 
 ### Reference Design
 
-**구문:** obj << Reference Design
+**구문:** obj &lt;&lt; Reference Design
 
 **설명:** 설계 비교를 위한 참조 설계를 지정합니다.
 
@@ -1325,7 +1325,7 @@ DOE(
 
 ### Remove Alias Term
 
-**구문:** obj << Remove Alias Term
+**구문:** obj &lt;&lt; Remove Alias Term
 
 **설명:** 별칭 항 목록에서 항을 제거합니다. 목록의 각 효과에 대해 요인 번호 및 멱을 지정합니다. 쉼표로 효과를 구분하여 교호작용을 생성합니다.
 
@@ -1340,7 +1340,7 @@ d << Remove Alias Term( {1, 1}, {3, 1} );
 
 ### Remove All Alias Terms
 
-**구문:** obj << Remove All Alias Terms
+**구문:** obj &lt;&lt; Remove All Alias Terms
 
 **설명:** 별칭 항 목록에서 모든 별칭 항을 제거합니다.
 
@@ -1355,7 +1355,7 @@ d << Remove All Alias Terms;
 
 ### Remove Term
 
-**구문:** obj << Remove Term
+**구문:** obj &lt;&lt; Remove Term
 
 **설명:** 모형 항 목록에서 항을 제거합니다. 목록의 각 효과에 대해 요인 번호 및 멱을 지정합니다. 쉼표로 효과를 구분하여 교호작용을 생성합니다.
 
@@ -1371,7 +1371,7 @@ d << Remove Term( {3, 2} );
 
 ### Replicates
 
-**구문:** obj << Replicates
+**구문:** obj &lt;&lt; Replicates
 
 **설명:** 반복 런 수를 지정합니다. MSA 설계의 경우 두 번째 인수는 반복 구조를 지정합니다. 0=완전 랜덤화, 1=일괄 반복, 2=빠른 반복
 
@@ -1406,7 +1406,7 @@ d = DOE(
 
 ### Report
 
-**구문:** obj << Report
+**구문:** obj &lt;&lt; Report
 
 **설명:** 보고서 개체에 대한 참조를 반환합니다.
 
@@ -1422,7 +1422,7 @@ Show( t );
 
 ### Save Constraints
 
-**구문:** obj << Save Constraints
+**구문:** obj &lt;&lt; Save Constraints
 
 **설명:** 다른 실험에 사용할 수 있도록 현재 실험의 요인 제약 조건을 JMP 테이블에 저장합니다.
 
@@ -1444,7 +1444,7 @@ DOE(
 
 ### Save Factors
 
-**구문:** obj << Save Factors
+**구문:** obj &lt;&lt; Save Factors
 
 **설명:** 방금 생성한 요인을 다른 실험에 사용할 수 있도록 JMP 테이블에 저장합니다.
 
@@ -1464,7 +1464,7 @@ DOE(
 
 ### Save Responses
 
-**구문:** obj << Save Responses
+**구문:** obj &lt;&lt; Save Responses
 
 **설명:** 생성한 반응을 JMP 데이터 테이블로 저장합니다. 다른 실험에서 이러한 반응을 불러올 수 있습니다.
 
@@ -1484,13 +1484,13 @@ DOE(
 
 ### Save Script to Data Table
 
-**구문:** obj << Save Script to Data Table
+**구문:** obj &lt;&lt; Save Script to Data Table
 
 **설명:** 이 설계를 재현할 스크립트를 생성합니다.
 
 ### Save Script to Script Window
 
-**구문:** obj << Save Script to Script Window
+**구문:** obj &lt;&lt; Save Script to Script Window
 
 **설명:** 이 설계를 재현할 스크립트를 생성합니다.
 
@@ -1509,7 +1509,7 @@ DOE(
 
 ### Save X Matrix
 
-**구문:** obj << Save X Matrix( state=0|1 )
+**구문:** obj &lt;&lt; Save X Matrix( state=0|1 )
 
 **설명:** 설계 행렬(행렬 X라고도 함)을 설계가 포함된 JMP 데이터 테이블에 테이블 특성으로 저장합니다.
 
@@ -1529,7 +1529,7 @@ DOE(
 
 ### Screening Type
 
-**구문:** obj << Screening Type
+**구문:** obj &lt;&lt; Screening Type
 
 **설명:** 주효과 선별 설계(직교 또는 직교에 가까움)를 지정합니다.
 
@@ -1550,7 +1550,7 @@ d << Make Design;
 
 ### Select Covariate Rows
 
-**구문:** obj << Select Covariate Rows
+**구문:** obj &lt;&lt; Select Covariate Rows
 
 **설명:** DOE에서 선택할 공변량 테이블의 행을 지정합니다.
 
@@ -1580,7 +1580,7 @@ DOE(
 
 ### Set ALT Probability of Interest
 
-**구문:** obj << Set ALT Probability of Interest
+**구문:** obj &lt;&lt; Set ALT Probability of Interest
 
 **설명:** 가속 수명 시험 계획에 대한 관심 확률을 설정합니다.
 
@@ -1602,7 +1602,7 @@ DOE(
 
 ### Set ALT Time Range
 
-**구문:** obj << Set ALT Time Range
+**구문:** obj &lt;&lt; Set ALT Time Range
 
 **설명:** 가속 수명 시험 계획에 대한 관심 시간 범위를 설정합니다.
 
@@ -1624,7 +1624,7 @@ DOE(
 
 ### Set Average Cluster Size
 
-**구문:** obj << Set Average Cluster Size
+**구문:** obj &lt;&lt; Set Average Cluster Size
 
 **설명:** 쾌속 유연 채움 설계 군집화에 대한 랜덤 점 개수를 제어합니다.
 
@@ -1643,7 +1643,7 @@ DOE(
 
 ### Set Axial Choice
 
-**구문:** obj << Set Axial Choice( 1|2|3|4 )
+**구문:** obj &lt;&lt; Set Axial Choice( 1|2|3|4 )
 
 **설명:** 축 값 설정을 지정합니다. 회전은 1, 직교는 2, 평면 위는 3, 사용자 지정은 4를 사용하십시오.
 
@@ -1657,7 +1657,7 @@ d << Set Axial Choice( 2 );
 
 ### Set Axial Value
 
-**구문:** obj << Set Axial Value
+**구문:** obj &lt;&lt; Set Axial Value
 
 **설명:** 사용자 지정 축 값을 지정합니다.
 
@@ -1671,7 +1671,7 @@ d << Set Axial Value( 2 );
 
 ### Set Candidate Runs
 
-**구문:** obj << Set Candidate Runs
+**구문:** obj &lt;&lt; Set Candidate Runs
 
 **설명:** 가속 수명 시험 계획에 대한 후보 런을 설정합니다.
 
@@ -1694,7 +1694,7 @@ DOE(
 
 ### Set Delta For Power
 
-**구문:** obj << Set Delta For Power
+**구문:** obj &lt;&lt; Set Delta For Power
 
 **설명:** 검정력 분석의 예상 계수 값을 지정합니다. 예상 계수는 지정된 값의 2분의 1이 됩니다.
 
@@ -1713,7 +1713,7 @@ DOE(
 
 ### Set Expected Number of Respondents
 
-**구문:** obj << Set Expected Number of Respondents
+**구문:** obj &lt;&lt; Set Expected Number of Respondents
 
 **설명:** 설문 조사별 기대 응답자 수를 설정합니다.
 
@@ -1732,7 +1732,7 @@ DOE(
 
 ### Set Generators
 
-**구문:** obj << Set Generators
+**구문:** obj &lt;&lt; Set Generators
 
 **설명:** 선별 설계에 사용할 생성자를 지정합니다.
 
@@ -1745,7 +1745,7 @@ DOE( Screening Design, {Add Factor, Add Factor, Add Factor, Make Design( 1 ), Se
 
 ### Set Inspection Times
 
-**구문:** obj << Set Inspection Times
+**구문:** obj &lt;&lt; Set Inspection Times
 
 **설명:** 가속 수명 시험 계획에 대한 검사 횟수를 설정합니다.
 
@@ -1768,7 +1768,7 @@ DOE(
 
 ### Set Length of Test
 
-**구문:** obj << Set Length of Test
+**구문:** obj &lt;&lt; Set Length of Test
 
 **설명:** 가속 수명 시험 계획에 대한 시험 시간을 설정합니다.
 
@@ -1790,7 +1790,7 @@ DOE(
 
 ### Set Level Values
 
-**구문:** obj << Set Level Values
+**구문:** obj &lt;&lt; Set Level Values
 
 **설명:** 가속 수명 시험 계획의 가속 요인에 대한 수준 값을 설정합니다.
 
@@ -1813,7 +1813,7 @@ DOE(
 
 ### Set Monitoring Choice
 
-**구문:** obj << Set Monitoring Choice
+**구문:** obj &lt;&lt; Set Monitoring Choice
 
 **설명:** 가속 수명 시험 계획에 대한 모니터링 유형을 지정합니다.
 
@@ -1835,7 +1835,7 @@ DOE(
 
 ### Set N Subplots
 
-**구문:** obj << Set N Subplots
+**구문:** obj &lt;&lt; Set N Subplots
 
 **설명:** 변경하기 힘든 요인 및 매우 변경하기 힘든 요인이 모두 있는 경우의 하위구 수를 지정합니다.
 
@@ -1855,7 +1855,7 @@ d << Set N Subplots( 8 );
 
 ### Set N Whole Plots
 
-**구문:** obj << Set N Whole Plots
+**구문:** obj &lt;&lt; Set N Whole Plots
 
 **설명:** 변경하기 힘든 요인 또는 매우 변경하기 힘든 요인이 있는 경우의 주구 수를 지정합니다.
 
@@ -1869,7 +1869,7 @@ d << Set N Whole Plots( 6 );
 
 ### Set Number of Attributes
 
-**구문:** obj << Set Number of Attributes
+**구문:** obj &lt;&lt; Set Number of Attributes
 
 **설명:** 한 선택 집합 안에서 변경될 수 있는 속성 수를 설정합니다.
 
@@ -1888,7 +1888,7 @@ DOE(
 
 ### Set Number of Choice Sets
 
-**구문:** obj << Set Number of Choice Sets
+**구문:** obj &lt;&lt; Set Number of Choice Sets
 
 **설명:** 설문 조사별 선택 집합 수를 설정합니다.
 
@@ -1907,7 +1907,7 @@ DOE(
 
 ### Set Number of FDS points
 
-**구문:** obj << Set Number of FDS points
+**구문:** obj &lt;&lt; Set Number of FDS points
 
 **설명:** 설계 공간 비율 그림을 생성하는 데 사용할 점의 수를 설정합니다.
 
@@ -1926,7 +1926,7 @@ DOE(
 
 ### Set Number of Profiles
 
-**구문:** obj << Set Number of Profiles
+**구문:** obj &lt;&lt; Set Number of Profiles
 
 **설명:** 선택 집합별 프로파일 수를 설정합니다.
 
@@ -1945,7 +1945,7 @@ DOE(
 
 ### Set Number of Surveys
 
-**구문:** obj << Set Number of Surveys
+**구문:** obj &lt;&lt; Set Number of Surveys
 
 **설명:** 선택 설계에 대한 설문 조사 수를 설정합니다.
 
@@ -1964,7 +1964,7 @@ DOE(
 
 ### Set Number of Units
 
-**구문:** obj << Set Number of Units
+**구문:** obj &lt;&lt; Set Number of Units
 
 **설명:** 가속 수명 시험 계획에 대한 시험 유닛 수를 설정합니다.
 
@@ -1986,7 +1986,7 @@ DOE(
 
 ### Set Prior Correlation ALT
 
-**구문:** obj << Set Prior Correlation ALT
+**구문:** obj &lt;&lt; Set Prior Correlation ALT
 
 **설명:** 가속 수명 시험 계획에 대한 사전 상관을 설정합니다.
 
@@ -2010,7 +2010,7 @@ DOE(
 
 ### Set Prior Mean ALT
 
-**구문:** obj << Set Prior Mean ALT
+**구문:** obj &lt;&lt; Set Prior Mean ALT
 
 **설명:** 가속 수명 시험 계획에 대한 사전 평균을 설정합니다.
 
@@ -2032,7 +2032,7 @@ DOE(
 
 ### Set Prior Mean Choice
 
-**구문:** obj << Set Prior Mean Choice
+**구문:** obj &lt;&lt; Set Prior Mean Choice
 
 **설명:** 선택 설계에 대한 사전 평균을 설정합니다.
 
@@ -2051,7 +2051,7 @@ DOE(
 
 ### Set Prior Quantile ALT
 
-**구문:** obj << Set Prior Quantile ALT
+**구문:** obj &lt;&lt; Set Prior Quantile ALT
 
 **설명:** 분위수를 기반으로 사전 절편을 지정하기 위한 정보를 설정합니다.
 
@@ -2074,7 +2074,7 @@ DOE(
 
 ### Set Prior Std Error ALT
 
-**구문:** obj << Set Prior Std Error ALT
+**구문:** obj &lt;&lt; Set Prior Std Error ALT
 
 **설명:** 가속 수명 시험 계획에 대한 사전 표준 오차를 설정합니다.
 
@@ -2098,7 +2098,7 @@ DOE(
 
 ### Set Prior Variance ALT
 
-**구문:** obj << Set Prior Variance ALT
+**구문:** obj &lt;&lt; Set Prior Variance ALT
 
 **설명:** 가속 수명 시험 계획에 대한 사전 분산을 설정합니다.
 
@@ -2120,7 +2120,7 @@ DOE(
 
 ### Set Prior Variance Matrix
 
-**구문:** obj << Set Prior Variance Matrix
+**구문:** obj &lt;&lt; Set Prior Variance Matrix
 
 **설명:** 선택 설계에 대한 사전 분산 행렬을 설정합니다.
 
@@ -2139,7 +2139,7 @@ DOE(
 
 ### Set RMSE
 
-**구문:** obj << Set RMSE
+**구문:** obj &lt;&lt; Set RMSE
 
 **설명:** 검정력 분석에 예상 RMSE(제곱근 평균 제곱 오차)를 지정합니다.
 
@@ -2154,7 +2154,7 @@ d << Set RMSE( 1.5 );
 
 ### Set Random Seed
 
-**구문:** obj << Set Random Seed
+**구문:** obj &lt;&lt; Set Random Seed
 
 **설명:** 강의에 유용합니다. 난수 시드값을 특정 값으로 설정함으로써 모든 학급 구성원이 동일한 설계를 사용하게 할 수 있습니다.
 
@@ -2173,7 +2173,7 @@ DOE(
 
 ### Set Run Order
 
-**구문:** obj << Set Run Order
+**구문:** obj &lt;&lt; Set Run Order
 
 **설명:** 설계에서 데이터 테이블을 만들 때 어떤 방법으로 런 순서를 설정해야 하는지를 지정합니다.
 
@@ -2189,7 +2189,7 @@ d << Make Table;
 
 ### Set Runs Per Random Block
 
-**구문:** obj << Set Runs Per Random Block
+**구문:** obj &lt;&lt; Set Runs Per Random Block
 
 **설명:** 설계의 랜덤 블록 크기를 지정합니다.
 
@@ -2208,7 +2208,7 @@ d << Set Runs Per Random Block( 4 );
 
 ### Set Sample Size
 
-**구문:** obj << Set Sample Size
+**구문:** obj &lt;&lt; Set Sample Size
 
 **설명:** 설계가 생성되기 전의 표본 크기를 지정합니다. 지정된 숫자가 설계 도구에 표시된 최소값보다 작을 경우 표본 크기가 최소값으로 설정됩니다.
 
@@ -2223,7 +2223,7 @@ d << Set Sample Size( 12 );
 
 ### Set Significance Level
 
-**구문:** obj << Set Significance Level
+**구문:** obj &lt;&lt; Set Significance Level
 
 **설명:** 검정력 분석의 유의 수준을 변경합니다.
 
@@ -2238,7 +2238,7 @@ d << Set Significance Level( 0.10 );
 
 ### Set Strength
 
-**구문:** obj << Set Strength
+**구문:** obj &lt;&lt; Set Strength
 
 **설명:** 덮기 배열 강도를 설정합니다.
 
@@ -2253,7 +2253,7 @@ d << Make Table;
 
 ### Show Blocking Options
 
-**구문:** obj << Show Blocking Options
+**구문:** obj &lt;&lt; Show Blocking Options
 
 **설명:** 확증적 선별 설계에 대한 블록 선택 및 블록 수를 지정합니다. 0 값을 지정하면 블록이 없음을 나타냅니다.
 
@@ -2297,7 +2297,7 @@ DOE(
 
 ### Simulate Responses
 
-**구문:** obj << Simulate Responses( state=0|1 )
+**구문:** obj &lt;&lt; Simulate Responses( state=0|1 )
 
 **설명:** 반응에 대한 데이터를 JMP 설계 테이블에 저장합니다. DOE 강의에 사용할 수 있습니다.
 
@@ -2317,7 +2317,7 @@ DOE(
 
 ### Solve for Power
 
-**구문:** obj << Solve for Power
+**구문:** obj &lt;&lt; Solve for Power
 
 **설명:** 검정력이 지정된 값에 가깝도록 검정력 분석의 예상 계수를 설정합니다.
 
@@ -2338,7 +2338,7 @@ DOE(
 
 ### Space Filling Design Type
 
-**구문:** obj << Space Filling Design Type( Sphere Packing|Latin Hypercube|Uniform|Minimum Potential|Maximum Entropy|IMSE Optimal|Fast Flexible Filling )
+**구문:** obj &lt;&lt; Space Filling Design Type( Sphere Packing|Latin Hypercube|Uniform|Minimum Potential|Maximum Entropy|IMSE Optimal|Fast Flexible Filling )
 
 **설명:** 공간 채움 설계의 유형과 런 수를 지정합니다.
 
@@ -2395,7 +2395,7 @@ d << Make Design;
 
 ### Sphere Radius
 
-**구문:** obj << Sphere Radius
+**구문:** obj &lt;&lt; Sphere Radius
 
 **설명:** 구형 설계 영역을 지정하며 영역의 반지름을 설정할 수 있습니다.
 
@@ -2414,7 +2414,7 @@ DOE(
 
 ### Split Plot Variance Ratio
 
-**구문:** obj << Split Plot Variance Ratio( Whole Plot Ratio | [Whole Plot Ratio, Subplot Ratio] )
+**구문:** obj &lt;&lt; Split Plot Variance Ratio( Whole Plot Ratio | [Whole Plot Ratio, Subplot Ratio] )
 
 **설명:** 변경하기 힘든 요인의 경우 주구 오차 분산 대 런 간의 오차 분산의 비를 지정합니다. 변경하기 힘든 요인 및 매우 변경하기 힘든 요인의 경우 주구 및 하위구 오차 대 런 간의 오차의 비를 지정합니다.
 
@@ -2453,7 +2453,7 @@ d << Make Design;
 
 ### Suppress Cotter Designs
 
-**구문:** obj << Suppress Cotter Designs( state=0|1 )
+**구문:** obj &lt;&lt; Suppress Cotter Designs( state=0|1 )
 
 **설명:** 선별 설계 목록에 Cotter 설계를 표시하거나 숨깁니다. 이 옵션은 기본값으로 선택됨. 즉, Cotter 설계가 처음에는 선별 설계 목록에 없습니다. 기본적으로 설정되어 있습니다.
 
@@ -2473,7 +2473,7 @@ DOE(
 
 ### Table of Correlations
 
-**구문:** obj << Table of Correlations
+**구문:** obj &lt;&lt; Table of Correlations
 
 **설명:** 설계 진단에서 상관계수표를 사용하여 데이터 테이블을 생성합니다.
 
@@ -2494,7 +2494,7 @@ DOE(
 
 ### Theta
 
-**구문:** obj << Theta
+**구문:** obj &lt;&lt; Theta
 
 **설명:** 공간 채움 설계에 대한 공분산 모수 벡터를 지정합니다.
 
@@ -2508,7 +2508,7 @@ d << Theta( [2, 3] );
 
 ### Treatments
 
-**구문:** obj << Treatments
+**구문:** obj &lt;&lt; Treatments
 
 **설명:** 균형 불완비 블록 설계(BIBD)에 대한 처리 수를 지정합니다.
 
@@ -2525,7 +2525,7 @@ d << Make Design;
 
 ### Use Bayesian information
 
-**구문:** obj << Use Bayesian information( state=0|1 )
+**구문:** obj &lt;&lt; Use Bayesian information( state=0|1 )
 
 **설명:** 설계 진단을 위해 베이지안 설정의 사전 정보를 사용합니다.
 
@@ -2550,7 +2550,7 @@ DOE(
 
 ### Use Blue to Red color theme for color map
 
-**구문:** obj << Use Blue to Red color theme for color map( state=0|1 )
+**구문:** obj &lt;&lt; Use Blue to Red color theme for color map( state=0|1 )
 
 **설명:** 상관 색상 맵에 파랑-빨강 색상 테마를 사용합니다.
 
@@ -2558,7 +2558,7 @@ DOE(
 
 ### Use Prior Uncertainty
 
-**구문:** obj << Use Prior Uncertainty( state=0|1 )
+**구문:** obj &lt;&lt; Use Prior Uncertainty( state=0|1 )
 
 **설명:** 최적 설계를 생성하기 위해 사전 불확도를 사용할지 여부를 지정합니다.
 
@@ -2583,7 +2583,7 @@ DOE(
 
 ### Utility Neutral Design
 
-**구문:** obj << Utility Neutral Design( state=0|1 )
+**구문:** obj &lt;&lt; Utility Neutral Design( state=0|1 )
 
 **설명:** 효용 중립 선택 설계를 생성할지 여부를 지정합니다.
 
